@@ -5,16 +5,27 @@ description: Frequently asked questions and answers.
 
 ## Introduction
 
+## 简介
+
 ### What is Flutter?
+
+### 什么是 Flutter？
 
 Flutter is Google’s mobile app SDK for crafting high-quality
 native experiences on iOS and Android in record time.
 Flutter works with existing code, is used by developers
 and organizations around the world, and is free and open source.
 
+Flutter 是 Google 的一个移动 UI 框架，用于在 iOS 和 Android 上创造高质量的绝妙原生体验。
+Flutter 可以和世界上的开发人员和开发组织广泛使用的那些现存代码一起使用，并且是开源的、免费的。
+
 ### What does Flutter do?
 
+### Flutter 是干什么的？
+
 For users, Flutter makes beautiful app UIs come to life.
+
+对于用户来说，Flutter 让漂亮的应用 UI 变得生动有趣。
 
 For developers, Flutter lowers the bar to entry
 for building mobile apps. It speeds up development of
@@ -319,6 +330,10 @@ Dart scores highly for us on the following primary criteria:
   The majority of Flutter is built in the same language we give to our users, so
   we need to stay productive at 100k's lines of code, without sacrificing
   approachability or readability of the framework and widgets for our developers.
+  
+  **开发人员生产力**。Flutter 的主要价值之一是通过让开发人员用同一套代码创建适用于 iOS 和 Android 的应用而节省开发资源。使用高生产力的语言加速开发，并提升 Flutter 的吸引力。
+  这对于我们的框架团队和开发人员都很重要。
+  Flutter 本身的大部分内容所用的语言都和我们提供给用户的一样，所以我们要让十万行代码保持生产力，而不会牺牲框架和部件对我们开发人员的可达性和可读性。
 
 * _Object-orientation_. For Flutter, we want a language that's suited to
   Flutter's problem domain: creating visual user experiences. The industry has

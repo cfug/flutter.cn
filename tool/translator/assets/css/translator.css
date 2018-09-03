@@ -1,0 +1,15 @@
+[translation-origin=on] {
+    border-top: 1px dashed lightgray !important;
+}
+
+[translation-origin=off] {
+    display: none !important;
+}
+
+h1[translation-result] + h1[translation-origin=on] {
+    margin-top: -24px;
+}
+
+h2[translation-result] + h2[translation-origin=on] {
+    margin-top: -12px;
+}

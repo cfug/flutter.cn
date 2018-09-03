@@ -1,0 +1,17 @@
+{
+  "name": "translator",
+  "version": "1.0.0",
+  "description": "Post processor for website translation function",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Zhicheng WANG<asnowwolf@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-replace": "^1.0.0",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {}
+}

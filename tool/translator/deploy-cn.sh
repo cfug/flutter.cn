@@ -6,6 +6,8 @@ set -e
 commitSha=$(git rev-parse --short HEAD)
 commitMessage=$(git log --oneline -n 1)
 
+bundle install
+
 bundle exec jekyll build
 
 cd `dirname $0`

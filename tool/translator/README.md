@@ -132,7 +132,7 @@ english
 翻译完内容之后：
 
 1. 先按照 <https://github.com/flutter/website> 中的指示建立起原文编译环境
-1. （有权限的人）运行 `tool/translator/deploy-cn.sh` 将其推送到 github pages 进行发布
+1. （有权限的账号，且仅限于 CI 环境）运行 `tool/translator/deploy-cn.sh` 将其推送到 github pages 进行发布
 
 ## 额外注意
 

@@ -52,14 +52,26 @@ english
 
 注意：不要省略中间和末尾的空行。
 
-### markdown 表格
+### markdown 表头/其它内容
 
 对原有内容套上 <t> 标签，如：
 
 ```
 <t>one</t><t>一</t> | <t>two</t><t>二</t> | <t>three</t><t>三</t>
 ----|----|----
-<t>four</t><t>四</t> | <t>five</t><t>五</t> | <t>six</t><t>六</t>
+four | five | six
+
+```
+
+### markdown 表体
+
+在紧下一行书写中文（可任意添加空格进行对齐），如：
+
+```
+<t>one</t><t>一</t> | <t>two</t><t>二</t> | <t>three</t><t>三</t>
+----|----|----
+four | five | six
+四    | 五   | 六
 
 ```
 
@@ -122,11 +134,7 @@ english
 翻译完内容之后：
 
 1. 先按照 <https://github.com/flutter/website> 中的指示建立起原文编译环境
-1. 进入 `tool/translator` 子目录
-1. 准备 NodeJS 环境
-1. 运行 `npm install`
-1. 运行 `npm start` 进行双语化处理
-1. 把 `tool/translator/_site` 作为静态网站进行发布
+1. （有权限的人）运行 `tool/translator/deploy-cn.sh` 将其推送到 github pages 进行发布
 
 ## 同步更新
 

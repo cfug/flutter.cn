@@ -29,6 +29,7 @@ then
 fi
 
 cp -r _site/* /tmp/flutter-docs-cn/
+cp CNAME /tmp/flutter-docs-cn/
 
 cd /tmp/flutter-docs-cn
 

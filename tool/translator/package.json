@@ -13,5 +13,14 @@
     "gulp-replace": "^1.0.0",
     "rimraf": "^2.6.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/marked": "^0.4.2",
+    "@types/node": "^10.12.10",
+    "chai": "^4.2.0",
+    "marked": "^0.5.2",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6"
+  }
 }

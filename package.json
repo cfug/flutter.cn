@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "firebase-tools": "^6.0.0",
-    "superstatic": "^6.0.0"
+    "superstatic": "^6.0.0",
+    "unescape": "^1.0.1"
   }
 }

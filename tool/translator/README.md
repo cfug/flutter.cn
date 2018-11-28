@@ -136,6 +136,10 @@ english
 1. 先按照 <https://github.com/flutter/website> 中的指示建立起原文编译环境
 1. （有权限的人）运行 `tool/translator/deploy-cn.sh` 将其推送到 github pages 进行发布
 
+## 额外注意
+
+因为构架脚本使用了 Bundle ，需要确保在在本机上安装了 Ruby 与 Bundle，推荐使用 [RVM](https://ruby-china.org/wiki/rvm-guide) 新建一个虚拟环境做隔离
+
 ## 同步更新
 
 用 WebStorm/IntelliJ 的 git 合并功能合并远程更新并处理合并冲突即可。

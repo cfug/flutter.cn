@@ -2,9 +2,7 @@
 
 ## 参见样本
 
-`src/index.md`
-
-`src/faq.md`
+[src/docs/resources/faq.md](/src/docs/resources/faq.md)
 
 ## 翻译语法
 

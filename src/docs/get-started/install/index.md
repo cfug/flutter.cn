@@ -3,7 +3,7 @@ title: Install
 title: 安装
 next:
   title: Set up an editor
-  title: 设置编辑器
+  title: 准备编辑器
   path: /get-started/editor
 toc: false
 ---

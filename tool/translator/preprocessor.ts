@@ -115,11 +115,11 @@ class MarkdownRenderer implements Renderer {
 
   list(body, ordered, start) {
     const prefix = ordered ? '1.' : '-';
-    return body.replace(/^__prefix__/gm, prefix);
+    return body.replace(/^__prefix__/gm, prefix).replace(/\n+/g, '\n') + '\n';
   };
 
   listitem(text) {
-    return '__prefix__ ' + text.replace(/^(1.|-)/gm, '  $1');
+    return '__prefix__ ' + text.replace(/^(1.|-)/gm, '  $1') + '\n';
   };
 
   paragraph(text: string): string {

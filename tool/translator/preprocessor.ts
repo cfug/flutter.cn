@@ -50,6 +50,7 @@ function shouldKeep(token: Token, nextToken: Token) {
 }
 
 export function clearBody(body: string): string {
+  body = body.replace(/^({{.*}})$/gm, '\n$1\n');
   const tokens = lexer(body);
   for (let i = tokens.length - 1; i >= 0; --i) {
     if (tokens[i].type === 'space') {
@@ -172,7 +173,7 @@ class MarkdownRenderer implements Renderer {
     if (title) {
       return `[${text}](${href} "${title}")`;
     } else {
-      return `[${text}](${href}`;
+      return `[${text}](${href})`;
     }
   }
 

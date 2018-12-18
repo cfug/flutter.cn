@@ -10,7 +10,7 @@ toc: false
 
 Select the operating system on which you are installing Flutter:
 
-你想要把 Flutter 安装到如下哪个操作系统里呢？
+你想把 Flutter 安装在哪个操作系统呢？
 
 <div class="card-deck mb-8">
 {% for os in site.os-list %}

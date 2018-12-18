@@ -4,7 +4,7 @@ title: 安装
 next:
   title: Set up an editor
   title: 设置编辑器
-  path: /get-started/editor
+  path: /docs/get-started/editor
 toc: false
 ---
 

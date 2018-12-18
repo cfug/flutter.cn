@@ -13,7 +13,7 @@ ${clearBody(body)}`;
 }
 
 export function splitHeadAndBody(text: string): { head: string, body: string } {
-  const matches = text.trim().match(/^-{3,}\s+([\s\S]*?)\n-{3,}\s*\n([\s\S]+)$/i);
+  const matches = text.trim().match(/^-{3,}\s+([\s\S]*?)\n-{3,}\s*\n?([\s\S]*)$/i);
 
   if (matches) {
     return { head: matches[1], body: matches[2] };

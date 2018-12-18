@@ -13,6 +13,13 @@ comment: abc
 comment: abc`);
     expect(body).match(/^#[\s\S]*$/);
   });
+  it('should split to header and body when no body', () => {
+    const { head, body } = splitHeadAndBody(`---
+title: abc
+---`);
+    expect(head).eql(`title: abc`);
+    expect(body).eql('');
+  });
 
   it('should remove translated english from header', () => {
     const { head } = splitHeadAndBody(src);

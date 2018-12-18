@@ -1,9 +1,9 @@
 import { lexer, parser, Renderer, Token } from 'marked';
-import Table = marked.Tokens.Table;
 import * as unescape from 'unescape';
+import Table = marked.Tokens.Table;
 
 export function preprocess(text: string): string {
-  const {head, body} = splitHeadAndBody(text);
+  const { head, body } = splitHeadAndBody(text);
 
   return `---
 ${clearHead(head)}
@@ -16,9 +16,9 @@ export function splitHeadAndBody(text: string): { head: string, body: string } {
   const matches = text.trim().match(/^-{3,}\s+([\s\S]*?)\n-{3,}\s*\n([\s\S]+)$/i);
 
   if (matches) {
-    return {head: matches[1], body: matches[2]};
+    return { head: matches[1], body: matches[2] };
   } else {
-    return {head: '', body: text};
+    return { head: '', body: text };
   }
 }
 
@@ -50,7 +50,7 @@ function shouldKeep(token: Token, nextToken: Token) {
 }
 
 export function clearBody(body: string): string {
-  body = body.replace(/^({{.*}})$/gm, '\n$1\n');
+  body = body.replace(/^({[{%].*[%}]})$/gm, '\n$1\n');
   const tokens = lexer(body);
   for (let i = tokens.length - 1; i >= 0; --i) {
     if (tokens[i].type === 'space') {
@@ -60,7 +60,7 @@ export function clearBody(body: string): string {
   let i = 0;
   while (i < tokens.length) {
     const token = tokens[i];
-    const nextToken = tokens[i + 1] || {type: 'space'};
+    const nextToken = tokens[i + 1] || { type: 'space' };
     if (token.type === 'table') {
       clearTable(token);
     }
@@ -70,7 +70,7 @@ export function clearBody(body: string): string {
     }
     ++i;
   }
-  return parser(tokens, {renderer: new MarkdownRenderer()}).replace(/<t>(.*?)<\/t><t>(.*?)<\/t>/g, '$2');
+  return parser(tokens, { renderer: new MarkdownRenderer() }).replace(/<t>(.*?)<\/t><t>(.*?)<\/t>/g, '$2');
 }
 
 export function clearTable(token: Table): void {
@@ -114,13 +114,12 @@ class MarkdownRenderer implements Renderer {
   }
 
   list(body, ordered, start) {
-    var type = ordered ? 'ol' : 'ul',
-        startatt = (ordered && start !== 1) ? (' start="' + start + '"') : '';
-    return '<' + type + startatt + '>\n' + body + '</' + type + '>\n\n';
+    const prefix = ordered ? '1.' : '-';
+    return body.replace(/^__prefix__/gm, prefix);
   };
 
   listitem(text) {
-    return '<li>' + text + '</li>\n';
+    return '__prefix__ ' + text.replace(/^(1.|-)/gm, '  $1');
   };
 
   paragraph(text: string): string {

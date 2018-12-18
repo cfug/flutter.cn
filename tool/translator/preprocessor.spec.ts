@@ -4,19 +4,18 @@ import { expect } from 'chai';
 
 describe('preprocessor', function () {
   it('should split to header and body', () => {
-    const {head, body} = splitHeadAndBody(src);
+    const { head, body } = splitHeadAndBody(src);
     expect(head).eql(`title: FAQ
 title: 常见问答
 description: Frequently asked questions and answers.
 description: 常见问题与解答
 comment: abc
-comment: abc
-`);
+comment: abc`);
     expect(body).match(/^#[\s\S]*$/);
   });
 
   it('should remove translated english from header', () => {
-    const {head} = splitHeadAndBody(src);
+    const { head } = splitHeadAndBody(src);
     expect(clearHead(head)).eql(`title: 常见问答
 description: 常见问题与解答
 comment: abc
@@ -24,7 +23,7 @@ comment: abc`);
   });
 
   it('should remove translated english from body', () => {
-    const {body} = splitHeadAndBody(src);
+    const { body } = splitHeadAndBody(src);
     expect(clearBody(body)).eql(`## 简介
 
 ### 什么是 Flutter？
@@ -36,6 +35,20 @@ Flutter 可以和世界上的开发人员和开发组织广泛使用的那些现
 
 对于用户来说，Flutter 让漂亮的应用 UI 变得生动有趣。
 
+> 
+> 测试
+> 
+
+1. 标题
+
+1. 名称
+
+  - 姓名1
+
+  - 姓名2
+
+{% include catalogpage.html category="Accessibility" %}
+
 For developers, Flutter lowers the bar to entry
 for building mobile apps. It speeds up development of
 mobile apps and reduces the cost and complexity
@@ -44,6 +57,15 @@ of app production across iOS and Android.
 For designers, Flutter helps deliver the original design vision,
 without loss of fidelity or compromises. It also
 acts as a productive prototyping tool.
+
+|   |  单位 |  控件 |  集成 | 
+|--|--|--|--|
+|  **置信度** |  低 |  较高 |  最高 | 
+|  **维护成本** |  低 |  较高 |  最高 | 
+|  **Dependencies** |  Few |  More |  Lots | 
+|  **Execution speed** |  Quick |  Slower |  Slowest | 
+
+abc
 
 `);
   });
@@ -72,23 +94,15 @@ Flutter 可以和世界上的开发人员和开发组织广泛使用的那些现
 > 测试
 > 
 
-<ol>
-<li>标题
+1. 标题
 
-</li>
-<li>名称
+1. 名称
 
-<ul>
-<li>姓名1
+  - 姓名1
 
-</li>
-<li>姓名2
+  - 姓名2
 
-</li>
-</ul>
-
-</li>
-</ol>
+{% include catalogpage.html category="Accessibility" %}
 
 For developers, Flutter lowers the bar to entry
 for building mobile apps. It speeds up development of

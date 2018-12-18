@@ -11,5 +11,8 @@
     "firebase-tools": "^6.0.0",
     "superstatic": "^6.0.0",
     "unescape": "^1.0.1"
+    "diff2html-cli": "^2.6.0",
+    "firebase-tools": "^6.1.2",
+    "superstatic": "^6.0.0"
   }
 }

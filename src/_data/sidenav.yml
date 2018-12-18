@@ -119,14 +119,10 @@
     - title: Tools & techniques
       permalink: /docs/development/tools
       children:
-        - title: IDEs
-          expanded: true
-          permalink: /docs/development/tools/ide
-          children:
-            - title: Android Studio / IntelliJ
-              permalink: /docs/development/tools/ide/android-studio
-            - title: Visual Studio Code
-              permalink: /docs/development/tools/ide/vs-code
+        - title: Android Studio / IntelliJ
+          permalink: /docs/development/tools/android-studio
+        - title: Visual Studio Code
+          permalink: /docs/development/tools/vs-code
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -178,8 +174,6 @@
       permalink: /docs/resources/inside-flutter
     - title: Technical overview
       permalink: /docs/resources/technical-overview
-    - title: Development philosophy
-      permalink: /docs/resources/design-principles
     # - title: Flutter best practices # TODO
     - title: Technical videos for learning Flutter
       permalink: /docs/resources/videos

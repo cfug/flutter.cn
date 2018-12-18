@@ -71,7 +71,7 @@ the top left, by default.
     child: Text(
       "Lorem ipsum",
       style: [[highlight]]TextStyle(
-        fontSize: 24.0
+        fontSize: 24.0,
         fontWeight: FontWeight.w900,
         fontFamily: "Georgia",
       ),[[/highlight]]
@@ -197,7 +197,7 @@ the child Container sizes itself to match the parent.
   background-color: #ef5350; /* red 400 */
   padding: 16px;
   color: #ffffff;
-[[highlight]]    width: 100%;
+[[highlight]]  width: 100%;
   max-width: 240px; [[/highlight]]
 }
 {% endprettify %}

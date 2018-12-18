@@ -157,7 +157,7 @@ Studio](https://developer.android.com/studio/),
 and [VS Code](https://code.visualstudio.com/).
 
 See [editor configuration](/get-started/editor) for setup details, and
-['Developing Flutter apps in an IDE'](/docs/development/tools/ide)
+['Developing Flutter apps in an IDE'](/docs/development/tools/android-studio)
 for tips on how to use the plugins.
 
 Alternatively, you can use a combination of the `flutter` command in a terminal
@@ -243,7 +243,7 @@ No. Instead, Flutter provides a set of widgets
 (including Material Design and Cupertino (iOS-styled) widgets),
 managed and rendered by Flutter's framework and engine.
 You can browse a
-[catalog of Flutter's widgets](/docs/development/ui/widgets/catalog).
+[catalog of Flutter's widgets](/docs/development/ui/widgets).
 
 We are hoping the end-result will be higher quality apps. If we reused
 the OEM widgets, the quality and performance of Flutter apps would be
@@ -364,22 +364,35 @@ or directly) dart:mirrors or dart:html.
 
 ### How big is the Flutter engine?
 
-In November 2018, we measured the size of a
-[minimal Flutter app](https://github.com/flutter/flutter/tree/8470b4a44174ad092d99f4cd0629dbd9ea3c6b31/examples/hello_world)
+In December 2018, we measured the download size of a
+[minimal Flutter app](https://github.com/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world)
 (no Material Components, just a single `Center` widget, built with
 `flutter build apk`), bundled and compressed as a release APK, to be
-approximately 4.20 MB.
+approximately 4.06&nbsp;MB.
 
 For this simple app,
-the core engine is approximately 2.77 MB (compressed),
-the framework + app code is approximately 820 KB (compressed),
-the LICENSE file is 53 KB (compressed),
-necessary Java code (classes.dex) is 62 KB (compressed),
-and there is approximately 450 KB of (compressed) ICU data.
+the core engine is approximately 2.7&nbsp;MB (compressed),
+the framework + app code is approximately 820.6&nbsp;KB (compressed),
+the LICENSE file is 53.5&nbsp;KB (compressed),
+necessary Java code (classes.dex) is 61.8&nbsp;KB (compressed),
+and there is approximately 450.4&nbsp;KB of (compressed) ICU data.
 
-Of course, YMMV, and we recommend that you measure your own app,
-by running `flutter build apk` and looking at
-`build/app/outputs/apk/release/app-release.apk`.
+These numbers were measured using [apkanalyzer](https://developer.android.com/studio/command-line/apkanalyzer),
+which is also built into [Android Studio](https://developer.android.com/studio/build/apk-analyzer).
+
+On iOS, a release IPA of the same app has a download size of 10.8&nbsp;MB on an
+iPhone X, as reported by Apple's App Store Connect. The IPA is larger than the
+APK mainly because Apple encrypts binaries within the IPA, making the compression
+less efficient (see the [iOS App Store Specific Considerations](https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS) section of Apple's
+[QA1795](https://developer.apple.com/library/archive/qa/qa1795/_index.html)).
+
+Of course, YMMV, and we recommend that you measure your own app. To measure an
+Android app, run `flutter build apk` and load the APK
+(`build/app/outputs/apk/release/app-release.apk`) into Android Studio
+([instructions](https://developer.android.com/studio/build/apk-analyzer)) for a
+detailed size report. To measure an iOS app, upload a release IPA to Apple's
+App Store Connect ([instructions](https://flutter.io/docs/deployment/ios)) and
+obtain the size report from there.
 
 ## Capabilities
 
@@ -441,7 +454,12 @@ adaptations in our widgets.
 
 ### Does Flutter run on the web?
 
-No. We are not working to provide a web version of Flutter.
+We're working on an experimental project called [Hummingbird][]. It is a
+web-based implementation of the Flutter runtime that takes advantage of the
+capability of the Dart platform to compile to JavaScript. This enables Flutter
+code to run on the standards-based web without change.
+
+[Hummingbird]: https://medium.com/flutter-io/hummingbird-building-flutter-for-the-web-e687c2a023a8
 
 ### Can I use Flutter to build desktop apps?
 
@@ -713,7 +731,7 @@ are triggered by a similar callback mechanism. The
 class, which is used as the basis of the animation system, formalizes a
 subscription model for events with multiple listeners.
 
-* Class-based object-orientated programming: Most of the APIs of the framework
+* Class-based object-oriented programming: Most of the APIs of the framework
 are built using classes with inheritance. We use an approach whereby we define
 very high-level APIs in our base classes, then specialize them iteratively in
 subclasses. For example, our render objects have a base class
@@ -723,7 +741,7 @@ that is agnostic regarding the coordinate system, and then we have a subclass
 that introduces the opinion that the geometry should be based on the Cartesian
 coordinate system (x/width and y/height).
 
-* Prototype-based object-orientated programming: The
+* Prototype-based object-oriented programming: The
 [ScrollPhysics](https://docs.flutter.io/flutter/widgets/ScrollPhysics-class.html)
 class chains instances to compose the physics that apply to scrolling
 dynamically at runtime. This lets the system compose, for example, paging
@@ -865,7 +883,7 @@ Flutter is an open source project. Currently, the bulk of the development is
 done by engineers at Google. If you're excited about Flutter, we encourage
 you to join the community and contribute to Flutter!
 
-[widgets]: /docs/development/ui/widgets/catalog
+[widgets]: /docs/development/ui/widgets
 
 ### What are Flutter's guiding principles?
 

@@ -1,17 +1,18 @@
 ---
-title: Flutter SDK Archive
+title: Flutter SDK archive
 short-title: Archive
+description: Flutter SDK archive
 toc: false
 ---
 
 <style>
 .scrollable-table {
   overflow-y: scroll;
-  height: 20rem;
+  max-height: 20rem;
 }
 </style>
 
-The Beta channel contains the most stable Flutter builds. See [Flutter’s
+The {{site.sdk.channel | capitalize }} channel contains the most stable Flutter builds. See [Flutter’s
 channels][] for details.
 
 {% comment %} Nav tabs {% endcomment -%}

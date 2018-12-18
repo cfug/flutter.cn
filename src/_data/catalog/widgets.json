@@ -236,6 +236,16 @@
     "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B_udO5B8pzrzdXVuTlBoOTBjcU0/components_buttons_other1.png'>"
   },
   {
+    "name": "DropdownButton",
+    "description": "Shows the currently selected item and an arrow that opens a menu for selecting another item.",
+    "categories": [],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/DropdownButton-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "PopupMenuButton",
     "sample": "PopupMenuButton",
     "description": "Displays a menu when pressed and calls onSelected when the menu is dismissed because an item was selected.",
@@ -408,13 +418,23 @@
   },
   {
     "name": "LinearProgressIndicator",
-    "description": "Progress and activity indicators are visual indications of an app loading content. The LinearProgressIndicator widget implements this component. In addition you may also use the CircularProgressIndicator widget.",
+    "description": "A material design linear progress indicator, also known as a progress bar.",
     "categories": [],
     "subcategories": [
       "Information displays"
     ],
     "link": "https://docs.flutter.io/flutter/material/LinearProgressIndicator-class.html",
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWkJiRjRLbzRNS3M/components_progress_and_activity.png'>"
+  },
+  {
+    "name": "CircularProgressIndicator",
+    "description": "A material design circular progress indicator, which spins to indicate that the application is busy.",
+    "categories": [],
+    "subcategories": [
+      "Information displays"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/CircularProgressIndicator-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "GridView",
@@ -565,6 +585,16 @@
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPicker-class.html",
     "image": "<img alt='' src='/images/widget-catalog/cupertino-picker.png'>"
+  },
+  {
+    "name": "CupertinoPopupSurface",
+    "description": "Rounded rectangle surface that looks like an iOS popup surface, such as an alert dialog or action sheet.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPopupSurface-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoSegmentedControl",
@@ -939,7 +969,7 @@
     "categories": [
     ],
     "subcategories": [
-      "Layout helpers"
+      "Multi-child layout widgets"
     ],
     "link": "https://docs.flutter.io/flutter/widgets/LayoutBuilder-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
@@ -1627,6 +1657,28 @@
     "subcategories": [
     ],
     "link": "https://docs.flutter.io/flutter/widgets/AnimatedWidgetBaseState-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Expanded",
+    "categories": [
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "description": "A widget that expands a child of a Row, Column, or Flex.",
+    "link": "https://docs.flutter.io/flutter/widgets/Expanded-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "PageView",
+    "description": "A scrollable list that works page by page.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/PageView-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   }
 ]

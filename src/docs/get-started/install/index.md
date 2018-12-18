@@ -3,8 +3,8 @@ title: Install
 title: 安装
 next:
   title: Set up an editor
-  title: 准备编辑器
-  path: /get-started/editor
+  title: 设置编辑器
+  path: /docs/get-started/editor
 toc: false
 ---
 

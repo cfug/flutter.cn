@@ -98,11 +98,11 @@ function containsChinese(text: string): boolean {
 
 class MarkdownRenderer implements Renderer {
   code(code: string, language: string = '', isEscaped: boolean = false): string {
-    return '```' + language + '\n' + code + '\n' + '```\n\n';
+    return '```' + language + '\n' + unescape(code) + '\n' + '```\n\n';
   }
 
   blockquote(quote: string): string {
-    const lines = quote.trim().split('\n');
+    const lines = unescape(quote).trim().split('\n');
     return ['', ...lines, ''].map(line => '> ' + line).join('\n') + '\n\n';
   }
 
@@ -111,7 +111,7 @@ class MarkdownRenderer implements Renderer {
   }
 
   heading(text: string, level: number, raw: string): string {
-    return repeat('#', level) + ' ' + text + '\n\n';
+    return repeat('#', level) + ' ' + unescape(text) + '\n\n';
   }
 
   hr(): string {
@@ -124,7 +124,7 @@ class MarkdownRenderer implements Renderer {
   };
 
   listitem(text) {
-    return '__prefix__ ' + text.replace(/^(1.|-)/gm, '  $1') + '\n';
+    return '__prefix__ ' + unescape(text).replace(/^(1.|-)/gm, '  $1') + '\n';
   };
 
   paragraph(text: string): string {
@@ -134,7 +134,7 @@ class MarkdownRenderer implements Renderer {
   private tableHeader = '';
 
   table(header: string, body: string): string {
-    const result = header /*+ '\n'*/ + '|' + this.tableHeader + '\n' + body + '\n';
+    const result = unescape(header) /*+ '\n'*/ + '|' + this.tableHeader + '\n' + unescape(body) + '\n';
     this.tableHeader = '';
     return result;
   }
@@ -154,15 +154,15 @@ class MarkdownRenderer implements Renderer {
   }
 
   strong(text: string): string {
-    return `**${text}**`;
+    return `**${unescape(text)}**`;
   }
 
   em(text: string): string {
-    return `*${text}*`;
+    return `*${unescape(text)}*`;
   }
 
   codespan(code: string): string {
-    return '`' + code + '`';
+    return '`' + unescape(code) + '`';
   }
 
   br(): string {
@@ -170,22 +170,22 @@ class MarkdownRenderer implements Renderer {
   }
 
   del(text: string): string {
-    return `~~${text}~~`;
+    return `~~${unescape(text)}~~`;
   }
 
   link(href: string, title: string, text: string): string {
     if (title) {
-      return `[${text}](${href} "${title}")`;
+      return `[${unescape(text)}](${href} "${unescape(title)}")`;
     } else {
-      return `[${text}](${href})`;
+      return `[${unescape(text)}](${href})`;
     }
   }
 
   image(href: string, title: string, text: string): string {
     if (title) {
-      return `![${text}](${href} "${title}")`;
+      return `![${unescape(text)}](${href} "${unescape(title)}")`;
     } else {
-      return `![${text}](${href})`;
+      return `![${unescape(text)}](${href})`;
     }
   }
 

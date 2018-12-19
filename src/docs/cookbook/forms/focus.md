@@ -1,5 +1,6 @@
 ---
 title: Focus on a Text Field
+title: Text Field 上的焦点
 ---
 
 When a text field is selected and accepting input, it is said to have "focus."

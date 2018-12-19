@@ -1,5 +1,6 @@
 ---
 title: Working with Tabs
+title: 使用 Tabs
 ---
 
 Working with tabs is a common pattern in apps following the Material Design

@@ -1,75 +1,75 @@
-- title: 快速上手
+- title: 开始使用 Flutter
   children:
-    - title: 1. 安装
+    - title: 1. 安装和环境配置
       permalink: /docs/get-started/install
-    - title: 2. Set up an editor
+    - title: 2. 编辑工具设定
       permalink: /docs/get-started/editor
-    - title: 3. Test drive
+    - title: 3. 开发体验初探
       permalink: /docs/get-started/test-drive
-    - title: 4. Write your first app
+    - title: 4. 编写第一个 Flutter 应用
       permalink: /docs/get-started/codelab
-    - title: 5. Learn more
+    - title: 5. 了解更多
       permalink: /docs/get-started/learn-more
     - divider
-    - title: From another platform?
+    - title: 拥有移动平台开发经验？
       expanded: true
       children:
-        - title: Flutter for Android devs
+        - title: 给 Android 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/android-devs
-        - title: Flutter for iOS devs
+        - title: 给 iOS 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/ios-devs
-        - title: Flutter for React Native devs
+        - title: 给 React Native 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/react-native-devs
-        - title: Flutter for web devs
+        - title: 给 Web 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/web-devs
-        - title: Flutter for Xamarin.Forms devs
+        - title: 给 Xamarin.Forms 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/xamarin-forms-devs
-    - title: "Dart language overview"
+    - title: "Dart 语言概览"
       permalink: https://www.dartlang.org/guides/language
 
-- title: Samples & codelabs
+- title: 样例代码和 Codelabs
   children:
-    - title: Sample apps on GitHub
+    - title: GitHub 上样例应用
       permalink: https://github.com/flutter/samples/blob/master/INDEX.md
     - title: Cookbook
       permalink: /docs/cookbook
     - title: Codelabs
       permalink: /docs/codelabs
 
-- title: Development
+- title: 开发文档
   expanded: true
   permalink: /docs/development
   children:
-    - title: User interface
+    - title: 用户界面
       permalink: /docs/development/ui
       children:
-        - title: Introduction to Widgets
+        - title: Widgets 介绍
           permalink: /docs/development/ui/widgets-intro
-        - title: Building layouts
+        - title: 布局构建
           permalink: /docs/development/ui/layout
-        - title: Adding interactivity
+        - title: 交互添加
           permalink: /docs/development/ui/interactive
-        - title: Assets and images
+        - title: 资源和图片
           permalink: /docs/development/ui/assets-and-images
-        - title: Navigation & routing
+        - title: 路由和导航
           permalink: /docs/development/ui/navigation
         # Commenting out the following entry per
         # https://github.com/flutter/website/issues/1496#issuecomment-431455211
         # - title: Inspect an app's UI
         #   permalink: /docs/development/ui/inspector
-        - title: Animations
+        - title: 动画效果
           permalink: /docs/development/ui/animations
           children:
-            - title: Introduction
+            - title: 介绍
               permalink: /docs/development/ui/animations
               match-page-url-exactly: true
-            - title: Animations overview
+            - title: 概览
               permalink: /docs/development/ui/animations/overview
-            - title: Animations tutorial
+            - title: 教程
               permalink: /docs/development/ui/animations/tutorial
-            - title: Hero animations
+            - title: 主动画 (Hero animations)
               permalink: /docs/development/ui/animations/hero-animations
-            - title: Staggered animations
+            - title: 交织动画 (Staggered animations)
               permalink: /docs/development/ui/animations/staggered-animations
         - title: Advanced UI
           permalink: /docs/development/ui/advanced

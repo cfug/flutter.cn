@@ -1,5 +1,6 @@
 ---
 title: Fade a Widget in and out
+title: Widget 的淡入淡出效果
 ---
 
 As UI developers, we often need to show and hide elements on screen. However,

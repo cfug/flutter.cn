@@ -1,7 +1,10 @@
 ---
 title: Displaying SnackBars
+title: 显示 SnackBars
+short-title: SnackBars
 short-title: SnackBars
 description: How to implement a SnackBar to display messages.
+description: 学习使用 SnackBar 展示消息。
 ---
 
 In some cases, it can be handy to briefly inform our users when certain actions

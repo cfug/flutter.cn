@@ -1,5 +1,6 @@
 ---
 title: Building a form with validation
+title: 构建一个有验证判断的表单
 ---
 
 Apps often require users to enter information into a text field. For

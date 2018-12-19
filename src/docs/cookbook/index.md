@@ -1,5 +1,6 @@
 ---
 title: Cookbook
+title: Cookbook
 ---
 
 This cookbook contains recipes that demonstrate how to solve common problems

@@ -1,7 +1,10 @@
 ---
 title: Using Themes to share colors and font styles
+title: 使用 Themes 统一颜色和字体风格
+short-title: Themes
 short-title: Themes
 description: How to share colors and font styles throughout an app using Themes.
+description: 学习如何使用 Themes 统一颜色和字体风格。
 ---
 
 In order to share colors and font styles throughout our app, we can take

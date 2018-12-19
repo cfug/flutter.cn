@@ -1,5 +1,6 @@
 ---
 title: Create and style a text field
+title: 文本框的创建和设定
 ---
 
 Text fields allow users to type text into our apps. Text fields can be used to

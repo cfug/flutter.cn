@@ -1,5 +1,6 @@
 ---
 title: Handling changes to a text field
+title: 响应文本框内容的更改
 ---
 
 In some cases, it can be handy to run a callback function every time the text

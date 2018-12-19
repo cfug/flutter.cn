@@ -1,5 +1,6 @@
 ---
 title: Updating the UI based on orientation
+title: 根据屏幕方向更新界面
 ---
 
 In certain cases, it can be handy to update the design of an app when the user

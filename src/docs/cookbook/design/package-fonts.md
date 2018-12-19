@@ -1,5 +1,6 @@
 ---
 title: Exporting fonts from a package
+title: 从 package 里导出字体
 ---
 
 Rather than declaring a font as part of our app, we can declare a font as part

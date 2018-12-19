@@ -1,7 +1,10 @@
 ---
 title: Using custom fonts
+title: 使用自定义字体
 short-title: Custom fonts
+short-title: 自定义字体
 description: How to use custom fonts.
+description: 学习如何在 Flutter 里使用自定义字体
 ---
 
 While Android and iOS offer high quality system fonts, one of the most common

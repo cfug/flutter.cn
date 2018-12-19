@@ -1,5 +1,6 @@
 ---
 title: Retrieve the value of a text field
+title: 获取文本框的输入值
 ---
 
 In this recipe, we'll see how to retrieve the text a user has typed into a text

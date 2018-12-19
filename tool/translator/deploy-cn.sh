@@ -37,6 +37,6 @@ git init
 git add .
 git commit --allow-empty -am "${commitMessage}"
 
-git push -f -u origin master
+git push -u origin master
 
 cd -

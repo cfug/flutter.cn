@@ -5,11 +5,16 @@ import Table = marked.Tokens.Table;
 export function preprocess(text: string): string {
   const { head, body } = splitHeadAndBody(text);
 
+  const cleanHead = clearHead(head);
+  const cleanBody = clearBody(body);
+  if (!cleanHead) {
+    return cleanBody;
+  }
   return `---
-${clearHead(head)}
+${cleanHead}
 ---
 
-${clearBody(body)}`;
+${cleanBody}`;
 }
 
 export function splitHeadAndBody(text: string): { head: string, body: string } {

@@ -1,6 +1,6 @@
 ---
 title: Write your first Flutter app, part 1
-title: 编写第一个 Flutter 应用（第一部分，共两部分）
+title: 编写第一个 Flutter 应用（第一部分，共两部分）
 short-title: Write your first app
 short-title: 编写第一个 Flutter 应用
 prev:

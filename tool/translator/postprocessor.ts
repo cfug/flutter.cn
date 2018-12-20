@@ -2,19 +2,26 @@ import { JSDOM } from 'jsdom';
 
 export function postprocess(content: string): string {
   const dom = new JSDOM(content);
-  mark(dom.window.document.body);
-  swap(dom.window.document.body);
+  const body = dom.window.document.body;
+  mark(body, 'p,h1,h2,h3,h4,h5,h6,header');
+  mark(body, 't,span,a');
+  mark(body, 'table>tbody>tr');
+  swap(body);
   return dom.serialize();
 }
 
-function mark(body: HTMLElement): void {
-  const chinese = body.querySelectorAll('p,h1,h2,h3,h4,h5,h6');
-  chinese.forEach(it => {
-    if (containsChinese(it.textContent)) {
-      it.setAttribute('translation-result', 'on');
-      const prev = it.previousElementSibling;
+function mark(body: HTMLElement, selector: string): void {
+  const elements = body.querySelectorAll(selector);
+  elements.forEach(node => {
+    if (containsChinese(node.textContent)) {
+      node.setAttribute('translation-result', 'on');
+      const prev = node.previousElementSibling;
       if (prev && !containsChinese(prev.textContent)) {
         prev.setAttribute('translation-origin', 'off');
+        // 交换 id，中文内容应该占用原文的 id
+        const id = prev.getAttribute('id');
+        prev.removeAttribute('id');
+        node.setAttribute('id', id);
       }
     }
   });
@@ -22,9 +29,9 @@ function mark(body: HTMLElement): void {
 
 function swap(body: HTMLElement): void {
   const pairList = body.querySelectorAll('[translation-origin]+[translation-result]');
-  pairList.forEach(it => {
-    const prev = it.previousElementSibling;
-    it.parentElement.insertBefore(it, prev);
+  pairList.forEach(node => {
+    const prev = node.previousElementSibling;
+    node.parentElement.insertBefore(node, prev);
   });
 }
 

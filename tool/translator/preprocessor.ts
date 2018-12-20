@@ -78,12 +78,15 @@ export function clearBody(body: string): string {
   return unwrap(parser(tokens, { renderer: new MarkdownRenderer() }).replace(/<t>(.*?)<\/t><t>(.*?)<\/t>/g, '$2'));
 }
 
-function wrap(text: string): string {
-  return text.replace(/^({[{%].*[%}]})$/gm, '\n`$1`\n');
+export function wrap(text: string): string {
+  return text.replace(/^ *({% diff .*?%}[\s\S]*?{% enddiff %})$/gm, '```keep\n_$1_\n```')
+      .replace(/^({[{%].*[%}]})$/gm, '\n`$1`\n');
 }
 
-function unwrap(text: string): string {
-  return text.replace(/^`({[{%].*[%}]})`$/gm, '$1');
+export function unwrap(text: string): string {
+  return text
+      .replace(/^`({[{%].*[%}]})`$/gm, '$1')
+      .replace(/^```keep\n_({% diff .*?%}[\s\S]*?{% enddiff %})_\n```$/gm, '$1');
 }
 
 export function clearTable(token: Table): void {

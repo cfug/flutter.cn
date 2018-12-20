@@ -1,5 +1,5 @@
 import { describe, it } from 'mocha';
-import { clearBody, clearHead, preprocess, splitHeadAndBody } from './preprocessor';
+import { clearBody, clearHead, preprocess, splitHeadAndBody, unwrap, wrap } from './preprocessor';
 import { expect } from 'chai';
 
 describe('preprocessor', function () {
@@ -21,6 +21,65 @@ title: abc
     expect(body).eql('');
   });
 
+  it('should wrap special blocks', () => {
+    expect(wrap(`    {% diff from="dependencies" %}
+    --- 1-base/pubspec.yaml
+    +++ 2-use-package/pubspec.yaml
+    @@ -2,10 +2,13 @@
+     description: A startup-namer app.
+     version: 1.0.0+1
+
+     dependencies:
+       flutter:
+         sdk: flutter
+       cupertino_icons: ^0.1.2
+    +  english_words: ^3.1.0
+    {% enddiff %}`))
+        .eql(`\`\`\`keep
+_{% diff from="dependencies" %}
+    --- 1-base/pubspec.yaml
+    +++ 2-use-package/pubspec.yaml
+    @@ -2,10 +2,13 @@
+     description: A startup-namer app.
+     version: 1.0.0+1
+
+     dependencies:
+       flutter:
+         sdk: flutter
+       cupertino_icons: ^0.1.2
+    +  english_words: ^3.1.0
+    {% enddiff %}_
+\`\`\``);
+  });
+
+  it('should wrap and unwrap to original text', () => {
+    expect(unwrap(wrap(`    {% diff from="dependencies" %}
+    --- 1-base/pubspec.yaml
+    +++ 2-use-package/pubspec.yaml
+    @@ -2,10 +2,13 @@
+     description: A startup-namer app.
+     version: 1.0.0+1
+
+     dependencies:
+       flutter:
+         sdk: flutter
+       cupertino_icons: ^0.1.2
+    +  english_words: ^3.1.0
+    {% enddiff %}`)))
+        .eql(`{% diff from="dependencies" %}
+    --- 1-base/pubspec.yaml
+    +++ 2-use-package/pubspec.yaml
+    @@ -2,10 +2,13 @@
+     description: A startup-namer app.
+     version: 1.0.0+1
+
+     dependencies:
+       flutter:
+         sdk: flutter
+       cupertino_icons: ^0.1.2
+    +  english_words: ^3.1.0
+    {% enddiff %}`);
+  });
   it('should remove translated english from header', () => {
     const { head } = splitHeadAndBody(src);
     expect(clearHead(head)).eql(`title: 常见问答

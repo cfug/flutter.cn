@@ -6,7 +6,8 @@ export function postprocess(content: string): string {
   mark(body, 'p,h1,h2,h3,h4,h5,h6,header');
   mark(body, 't,span,a');
   mark(body, 'table>tbody>tr');
-  mark(body, 'li');
+  mark(body, 'li.toc-entry');
+  markToc(body);
   swap(body);
   return dom.serialize();
 }
@@ -15,9 +16,9 @@ function mark(body: HTMLElement, selector: string): void {
   const elements = body.querySelectorAll(selector);
   elements.forEach(node => {
     if (containsChinese(node.textContent)) {
-      node.setAttribute('translation-result', 'on');
       const prev = node.previousElementSibling;
       if (prev && prev.tagName === node.tagName && !containsChinese(prev.textContent)) {
+        node.setAttribute('translation-result', 'on');
         prev.setAttribute('translation-origin', 'off');
         // 交换 id，中文内容应该占用原文的 id
         const id = prev.getAttribute('id');
@@ -28,6 +29,23 @@ function mark(body: HTMLElement, selector: string): void {
         const href = prev.getAttribute('href');
         if (href) {
           node.setAttribute('href', href);
+        }
+      }
+    }
+  });
+}
+
+function markToc(body: HTMLElement): void {
+  const items = body.querySelectorAll('li.toc-entry[translation-result]');
+  items.forEach(li => {
+    if (containsChinese(li.textContent)) {
+      const prev = li.previousElementSibling;
+      if (prev && prev.tagName === li.tagName && !containsChinese(prev.textContent)) {
+        const prevAnchor = prev.querySelector('a');
+        const anchor = li.querySelector('a');
+        const href = prevAnchor.getAttribute('href');
+        if (href) {
+          anchor.setAttribute('href', href);
         }
       }
     }

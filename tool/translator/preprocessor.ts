@@ -55,7 +55,7 @@ function shouldKeep(token: Token, nextToken: Token) {
 }
 
 export function clearBody(body: string): string {
-  body = body.replace(/^({[{%].*[%}]})$/gm, '\n$1\n');
+  body = wrap(body);
   const tokens = lexer(body);
   for (let i = tokens.length - 1; i >= 0; --i) {
     if (tokens[i].type === 'space') {
@@ -75,7 +75,15 @@ export function clearBody(body: string): string {
     }
     ++i;
   }
-  return parser(tokens, { renderer: new MarkdownRenderer() }).replace(/<t>(.*?)<\/t><t>(.*?)<\/t>/g, '$2');
+  return unwrap(parser(tokens, { renderer: new MarkdownRenderer() }).replace(/<t>(.*?)<\/t><t>(.*?)<\/t>/g, '$2'));
+}
+
+function wrap(text: string): string {
+  return text.replace(/^({[{%].*[%}]})$/gm, '\n`$1`\n');
+}
+
+function unwrap(text: string): string {
+  return text.replace(/^`({[{%].*[%}]})`$/gm, '$1');
 }
 
 export function clearTable(token: Table): void {
@@ -120,7 +128,7 @@ class MarkdownRenderer implements Renderer {
 
   list(body, ordered, start) {
     const prefix = ordered ? '1.' : '-';
-    return body.replace(/^__prefix__/gm, prefix).replace(/\n+/g, '\n') + '\n';
+    return body.replace(/^__prefix__/gm, prefix).replace(/\n+/g, '\n') + '\n\n';
   };
 
   listitem(text) {

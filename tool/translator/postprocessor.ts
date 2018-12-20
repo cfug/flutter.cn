@@ -6,6 +6,7 @@ export function postprocess(content: string): string {
   mark(body, 'p,h1,h2,h3,h4,h5,h6,header');
   mark(body, 't,span,a');
   mark(body, 'table>tbody>tr');
+  mark(body, 'li');
   swap(body);
   return dom.serialize();
 }
@@ -16,7 +17,7 @@ function mark(body: HTMLElement, selector: string): void {
     if (containsChinese(node.textContent)) {
       node.setAttribute('translation-result', 'on');
       const prev = node.previousElementSibling;
-      if (prev && !containsChinese(prev.textContent)) {
+      if (prev && prev.tagName === node.tagName && !containsChinese(prev.textContent)) {
         prev.setAttribute('translation-origin', 'off');
         // 交换 id，中文内容应该占用原文的 id
         const id = prev.getAttribute('id');

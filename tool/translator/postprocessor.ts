@@ -21,8 +21,10 @@ function mark(body: HTMLElement, selector: string): void {
         prev.setAttribute('translation-origin', 'off');
         // 交换 id，中文内容应该占用原文的 id
         const id = prev.getAttribute('id');
-        prev.removeAttribute('id');
-        node.setAttribute('id', id);
+        if (id) {
+          prev.removeAttribute('id');
+          node.setAttribute('id', id);
+        }
       }
     }
   });

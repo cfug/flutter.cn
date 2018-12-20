@@ -1,8 +1,11 @@
 ---
 title: Learn more
+title: 了解更多
 description: More resources to help you learn Flutter.
+description: 更多 Flutter 学习资料。
 prev:
   title: Write your first Flutter app
+  title: 编写第一个 Flutter 应用
   path: /docs/get-started/codelab
 toc: false
 ---

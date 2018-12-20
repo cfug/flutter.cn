@@ -1,8 +1,10 @@
 ---
-title: MacOS install
-short-title: MacOS
+title: macOS install
+title: macOS 下 Flutter 的安装和开发环境配置
+short-title: macOS
 next:
   title: Set up an editor
+  title: 编辑工具设定
   path: /docs/get-started/editor
 ---
 
@@ -33,4 +35,8 @@ first Flutter app.
 
 ## Next step
 
+## 下一步
+
 [Next step: Configure Editor](/docs/get-started/editor)
+
+[下一步: 编辑工具设定](/docs/get-started/editor)

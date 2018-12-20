@@ -1,11 +1,15 @@
 ---
-title: Write your first Flutter app, part 1
+title: Write your first Flutter app, part 1
+title: 编写第一个 Flutter 应用（第一部分，共两部分）
 short-title: Write your first app
+short-title: 编写第一个 Flutter 应用
 prev:
   title: Test drive
+  title: 开发体验初探
   path: /docs/get-started/test-drive
 next:
   title: Learn more
+  title: 了解更多
   path: /docs/get-started/learn-more
 diff2html: true
 ---

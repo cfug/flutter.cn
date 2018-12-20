@@ -1,9 +1,9 @@
 ---
 title: Install
-title: 安装
+title: 安装和环境配置
 next:
   title: Set up an editor
-  title: 设置编辑器
+  title: 编辑工具设定
   path: /docs/get-started/editor
 toc: false
 ---

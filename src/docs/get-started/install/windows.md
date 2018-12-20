@@ -1,9 +1,11 @@
 ---
 title: Windows install
+title: Linux 下 Flutter 的安装和开发环境配置
 short-title: Windows
 # js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Set up an editor
+  title: 编辑工具设定
   path: /docs/get-started/editor
 ---
 
@@ -28,7 +30,11 @@ To install and run Flutter, your development environment must meet these minimum
 
 ## Next step
 
+## 下一步
+
 [Next step: Configure Editor](/docs/get-started/editor)
+
+[下一步: 编辑工具设定](/docs/get-started/editor)
 
 [Git for Windows]: https://git-scm.com/download/win
 [Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell

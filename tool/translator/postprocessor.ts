@@ -25,6 +25,10 @@ function mark(body: HTMLElement, selector: string): void {
           prev.removeAttribute('id');
           node.setAttribute('id', id);
         }
+        const href = prev.getAttribute('href');
+        if (href) {
+          node.setAttribute('href', href);
+        }
       }
     }
   });

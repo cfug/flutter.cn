@@ -1,6 +1,7 @@
 require('ts-node/register');
 
 const {preprocess} = require('./preprocessor');
+const {postprocess} = require('./postprocessor');
 
 const gulp = require('gulp');
 const replace = require('gulp-replace');
@@ -19,9 +20,16 @@ gulp.task('prepare-assets', ['copy-all'], () => {
       .pipe(gulp.dest('_site/assets/'));
 });
 
-gulp.task('translate', ['prepare-assets'], () => {
+gulp.task('preprocess', () => {
+  return gulp.src('../../src/docs/**/*.md')
+      .pipe(replace(/[\s\S]*/, preprocess))
+      .pipe(gulp.dest('../../src/docs'));
+});
+
+gulp.task('postprocess', ['prepare-assets'], () => {
   return gulp.src('./_site/**/*.html')
   // 添加 translator
+      .pipe(replace(/[\s\S]*/, postprocess))
       .pipe(replace(/<\/body>/im, '  <script async="" defer="" src="/assets/js/translator.js"></script>\n</body>'))
       .pipe(replace(/<\/head>/im, '  <link href="/assets/css/translator.css" rel="stylesheet">\n  </head>'))
       // 替换 GA UA id
@@ -34,10 +42,4 @@ gulp.task('translate', ['prepare-assets'], () => {
       .pipe(replace(/https:\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.5.0\/css\/font-awesome.min.css/gim, '/assets/css/font-awesome.min.css'))
       .pipe(replace(/\/\/survey.g.doubleclick.net\/async_survey\?site=at3ul57xpub2vk3oxt2ytw365i/gim, '/assets/js/async_survey.js'))
       .pipe(gulp.dest('_site/'));
-});
-
-gulp.task('preprocess', () => {
-  return gulp.src('../../src/docs/**/*.md')
-      .pipe(replace(/[\s\S]*/, preprocess))
-      .pipe(gulp.dest('../../src/docs'));
 });

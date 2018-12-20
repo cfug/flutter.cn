@@ -11,12 +11,14 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-replace": "^1.0.0",
+    "jsdom": "^13.1.0",
     "natives": "^1.1.6",
     "rimraf": "^2.6.2",
     "unescape": "^1.0.1"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
+    "@types/jsdom": "^12.2.0",
     "@types/marked": "^0.4.2",
     "@types/node": "^10.12.10",
     "chai": "^4.2.0",

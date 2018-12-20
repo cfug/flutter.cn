@@ -10,7 +10,6 @@ bundle install
 
 cd `dirname $0`
 
-# 从源文件中把中文所对应的英文剃掉
 gulp preprocess
 
 cd -
@@ -21,7 +20,7 @@ cd `dirname $0`
 
 npm install
 
-gulp translate
+gulp postprocess
 
 if [[ ! -d "/tmp/flutter-docs-cn" ]]
 then
@@ -37,6 +36,6 @@ git init
 git add .
 git commit --allow-empty -am "${commitMessage}"
 
-git push -u origin master
+git push -u -f origin master
 
 cd -

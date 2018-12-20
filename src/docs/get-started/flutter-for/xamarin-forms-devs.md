@@ -1,6 +1,8 @@
 ---
 title: Flutter for Xamarin.Forms developers
+title: 给 Xamarin.Forms 开发者的 Flutter 指南
 description: Learn how to apply Xamarin.Forms developer knowledge when building Flutter apps.
+description: 学习如何把 Xamarin.Forms 的开发经验应用到 Flutter 应用的开发中。
 ---
 
 This document is meant for Xamarin.Forms developers looking to apply their

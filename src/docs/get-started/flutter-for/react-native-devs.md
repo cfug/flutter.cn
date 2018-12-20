@@ -1,6 +1,8 @@
 ---
 title: Flutter for React Native developers
+title: 给 React Native 开发者的 Flutter 指南
 description: Learn how to apply React Native developer knowledge when building Flutter apps.
+description: 学习如何把 React Native 的开发经验应用到 Flutter 应用的开发中。
 ---
 
 This document is for React Native (RN) developers looking to apply their

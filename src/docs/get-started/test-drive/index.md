@@ -1,10 +1,13 @@
 ---
 title: Test drive
+title: 开发体验初探
 prev:
   title: Set up an editor
+  title: 编辑工具设定
   path: /docs/get-started/editor
 next:
   title: Write your first Flutter app
+  title: 编写第一个 Flutter 应用
   path: /docs/get-started/codelab
 toc: false
 ---

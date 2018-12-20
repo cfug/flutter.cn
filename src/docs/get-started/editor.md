@@ -1,16 +1,13 @@
 ---
 title: Set up an editor
-title: 准备编辑器
+title: 编辑工具设定
 prev:
   title: Install
-  title: 安装
+  title: 安装和环境配置
   path: /docs/get-started/install
 next:
   title: Test drive
-  title: 在设备上测试
-  path: /docs/get-started/install
-next:
-  title: Test drive
+  title: 开发体验初探
   path: /docs/get-started/test-drive
 toc: false
 ---

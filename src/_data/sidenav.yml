@@ -71,52 +71,52 @@
               permalink: /docs/development/ui/animations/hero-animations
             - title: 交织动画 (Staggered animations)
               permalink: /docs/development/ui/animations/staggered-animations
-        - title: Advanced UI
+        - title: 用户界面（UI）进阶
           permalink: /docs/development/ui/advanced
           children:
             - title: Focus handling system # Where did this go?
-            - title: Slivers
+            - title: 滑动效果 (Slivers)
               permalink: /docs/development/ui/advanced/slivers
-            - title: Gestures
+            - title: 手势
               permalink: /docs/development/ui/advanced/gestures
         - title: Platform-specific theming
-        - title: Widget catalog
+        - title: 核心 Widget 目录
           permalink: /docs/development/ui/widgets
-    - title: Data & backend
+    - title: 数据调用和后端
       permalink: /docs/development/data-and-backend
       children:
-        - title: State management
+        - title: State 管理
           permalink: /docs/development/data-and-backend/state-mgmt
-        - title: JSON and serialization
+        - title: JSON 和序列化数据
           permalink: /docs/development/data-and-backend/json
         - title: Back-end services
-        - title: Firebase
+        - title: 使用 Firebase
           permalink: /docs/development/data-and-backend/firebase
-    - title: Accessibility & internationalization # TODO: use: Accessibility & localization
+    - title: 应用的无障碍和国际化 # TODO: use: Accessibility & localization
       permalink: /docs/development/accessibility-and-localization
       children:
-        - title: Accessibility
+        - title: 无障碍
           permalink: /docs/development/accessibility-and-localization/accessibility
-        - title: Internationalization
+        - title: 国际化
           permalink: /docs/development/accessibility-and-localization/internationalization
-    - title: Platform integration
+    - title: 平台集成
       permalink: /docs/development/platform-integration
       children:
         - title: Embedding Flutter views in non-Flutter apps
-        - title: Writing platform-specific code
+        - title: 撰写双端平台代码（插件编写实现）
           permalink: /docs/development/platform-integration/platform-channels
-    - title: Packages & plugins
+    - title: Dart 和Packages 和 plugins
       permalink: /docs/development/packages-and-plugins
       children:
-        - title: Using packages
+        - title: 使用 packages
           permalink: /docs/development/packages-and-plugins/using-packages
-        - title: Developing packages & plugins
+        - title: Package 的开发和提交
           permalink: /docs/development/packages-and-plugins/developing-packages
-        - title: Background processes
+        - title: 后台进程
           permalink: /docs/development/packages-and-plugins/background-processes
-        - title: Package site
-          permalink: http://pub.dartlang.org/flutter
-    - title: Tools & techniques
+        - title: Package 网站
+          permalink: http://pub.flutter-io.cn/flutter
+    - title: 开发工具和技术细节
       permalink: /docs/development/tools
       children:
         - title: Android Studio / IntelliJ
@@ -126,70 +126,70 @@
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
-            - title: Upgrading
+            - title: 版本升级
               permalink: /docs/development/tools/sdk/upgrading
-            - title: Archive
+            - title: 版本归档
               permalink: /docs/development/tools/sdk/archive
-        - title: Hot reload
+        - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload
-        - title: Code formatting
+        - title: 代码格式
           permalink: /docs/development/tools/formatting
         - title: Widget inspector
           permalink: /docs/development/tools/inspector
 
-- title: Testing & optimization
+- title: 测试和优化
   permalink: /docs/testing
   children:
-    - title: Debugging
+    - title: 调试 Flutter 应用
       permalink: /docs/testing/debugging
-    - title: Using OEM debuggers
+    - title: 使用原生的调试器
       permalink: /docs/testing/oem-debuggers
-    - title: Flutter's build modes
+    - title: 编译模式(Debug/Release/Profile)
       permalink: /docs/testing/build-modes
-    - title: Testing
+    - title: 测试 Flutter 应用
       permalink: /docs/testing
       match-page-url-exactly: true
-    - title: Performance profiling
+    - title: Flutter 性能分析
       permalink: /docs/testing/ui-performance
     # TODO(chalin): The following entry is not in the IA, so I'm commenting it out for now. Should it be here?
     # We don't have this page yet, so that's fine.
     # - title: Making your compiled app smaller
 
-- title: Deployment
+- title: 打包部署
   children:
-    - title: Creating flavors for Flutter
+    - title: 使用 flavors 打包双端
       permalink:  /docs/deployment/flavors
-    - title: Build and release for Android
+    - title: 打包和发布 Android 应用
       permalink: /docs/deployment/android
-    - title: Build and release for iOS
+    - title: 打包和发布 iOS 应用
       permalink: /docs/deployment/ios
-    - title: Continuous deployment with fastlane
+    - title: 使用 fastlane 持续交付
       permalink: /docs/deployment/fastlane-cd
 
-- title: Resources
+- title: 资源列表
   children:
-    - title: Dart resources
+    - title: Dart 资源列表
       permalink: /docs/resources/bootstrap-into-dart
-    - title: Inside Flutter
+    - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
-    - title: Technical overview
+    - title: 技术概览
       permalink: /docs/resources/technical-overview
     # - title: Flutter best practices # TODO
-    - title: Technical videos for learning Flutter
+    - title: 学习 Flutter 的视频列表
       permalink: /docs/resources/videos
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
-    - title: FAQ
+    - title: 常见问题解答
       permalink: /docs/resources/faq
 
-- title: Reference
+- title: 参考资料
   expanded: true
   children:
-    - title: Tutorials
+    - title: Flutter 教程
       permalink: /docs/reference/tutorials
-    - title: Widget index
+    - title: Flutter Widget 目录
       permalink: /docs/reference/widgets
-    - title: API reference
+    - title: Flutter API 文档
       permalink: https://docs.flutter.io
-    - title: Package site
+    - title: Package 网站
       permalink: https://pub.dartlang.org/flutter

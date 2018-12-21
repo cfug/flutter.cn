@@ -1,6 +1,6 @@
 ---
 title: Codelabs
-title: Cdelabs
+title: Codelabs
 description: "Codelabs to help you quickly get started programming Flutter."
 description: "Codelabs 是一种引导式的动手编码教程体验，帮助你更好的掌握 Flutter 编程技巧"
 ---

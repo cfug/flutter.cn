@@ -17,12 +17,13 @@
 
           <li class="nav-item">
             <a class="nav-link
-                {%- if page_url_path == '/docs' or page_url_path contains '/docs/' %} active {%- endif -%}" href="/docs">Docs</a>
+                {%- if page_url_path == '/docs' or page_url_path contains '/docs/' %} active {%- endif -%}" href="/docs">开发文档</a>
           </li>
           <div class="site-sidebar site-sidebar--header d-md-none">
             {% include sidenav.html nav=site.data.sidenav %}
           </div>
 
+<!-- 
           <li class="nav-item">
             <a class="nav-link
                 {%- if page_url_path == '/showcase' %} active {%- endif -%}" href="/showcase">Showcase</a>
@@ -31,6 +32,7 @@
             <a class="nav-link
                 {%- if page_url_path == '/community' %} active {%- endif -%}" href="/community">Community</a>
           </li>
+ -->
         </ul>
         <form action="/search/" class="site-header__search form-inline">
           <input class="site-header__searchfield form-control" type="search" name="q" id="q" autocomplete="off" placeholder="Search" aria-label="Search">

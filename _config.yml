@@ -1,5 +1,5 @@
 # Site settings
-title: Flutter 中文文档 - Flutter 社区中文资源
+title: Flutter
 # description: TBC
 email: flutter-dev@googlegroups.com
 url: https://flutter.io
@@ -7,7 +7,7 @@ port: 4002
 github_username: flutter
 repo:
   organization: https://github.com/flutter
-  this: https://github.com/cfug/flutter.cn
+  this: https://github.com/flutter/website
   flutter: https://github.com/flutter/flutter
 branch: master
 
@@ -16,12 +16,12 @@ sdk: # Flutter SDK
 
 social:
   twitter: https://twitter.com/flutterio
-  youtube: https://space.bilibili.com/64169458/channel/detail?cid=44351
+  youtube: https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
 
 api: https://docs.flutter.io
 pub: https://pub.dartlang.org
 pub-api: https://pub.dartlang.org/documentation
-pub-pkg: https://pub.flutter-io.cn/packages
+pub-pkg: https://pub.dartlang.org/packages
 flutter-medium: https://medium.com/flutter-io
 medium: https://medium.com
 
@@ -85,18 +85,18 @@ os-list: [Windows, macOS, Linux]
 alert:
   important: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fas fa-exclamation-circle"></i> **重点提醒：**
+    <i class="fas fa-exclamation-circle"></i> **Important:**
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-info-circle"></i> **备忘：**
+    <i class="fas fa-info-circle"></i> **Note:**
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
-    <i class="far fa-lightbulb"></i> **小提示：**
+    <i class="far fa-lightbulb"></i> **Tip:**
   warning: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fas fa-exclamation-triangle"></i> **请注意：:**
+    <i class="fas fa-exclamation-triangle"></i> **Warning:**
   end: </aside>
 
   # callout_danger: '<div class="bs-callout bs-callout-danger">'

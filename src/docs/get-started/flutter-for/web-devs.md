@@ -1,6 +1,6 @@
 ---
 title: Flutter for web developers
-title: 给 Web 开发者的 Flutter 指南
+title: 给 Android 开发者的 Flutter 指南
 description: Learn how to apply Web developer knowledge when building Flutter apps.
 description: 学习如何把 Web 的开发经验应用到 Flutter 应用的开发中。
 css-old: [two_column.css]

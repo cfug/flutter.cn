@@ -1,6 +1,5 @@
 ---
 title: Introduction to widgets
-title: Widgets 介绍
 ---
 
 {% comment %} This page needs more cleanup. API references should be accumulated

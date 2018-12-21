@@ -1,6 +1,8 @@
 ---
 title: Building Layouts
+title: 布局构建
 description: Learn how Flutter's layout mechanism works and how to build a layout.
+description: 了解 Flutter 的布局机制和如何构建布局。
 ---
 
 {% assign api = 'https://docs.flutter.io/flutter' -%}

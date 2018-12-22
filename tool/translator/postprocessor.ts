@@ -5,7 +5,7 @@ export function postprocess(content: string): string {
   const body = dom.window.document.body;
   mark(body, 'p,h1,h2,h3,h4,h5,h6,header');
   mark(body, 't,span,a');
-  mark(body, 'table>tbody>tr');
+  mark(body, 'table>tbody>tr,table>thead>tr');
   mark(body, 'li.toc-entry');
   markToc(body);
   swap(body);

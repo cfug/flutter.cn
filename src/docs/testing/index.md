@@ -37,7 +37,8 @@ Automated testing falls into a few categories:
 Here is a table summarizing the tradeoffs concerning the choice between
 different kinds of tests:
 
-|                      | <t>Unit</t><t>单位</t>   | Widget | Integration |
+|                      | Unit   | Widget | Integration |
+|                      | 单元测试   | 部件测试 | 集成测试 |
 |----------------------|--------|--------|-------------|
 | **Confidence**       | Low    | Higher | Highest     |
 | **置信度**       | 低    | 高 | 最高     |

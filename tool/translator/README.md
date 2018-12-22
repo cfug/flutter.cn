@@ -66,7 +66,8 @@ four | five | six
 在紧下一行书写中文（可任意添加空格进行对齐），如：
 
 ```
-<t>one</t><t>一</t> | <t>two</t><t>二</t> | <t>three</t><t>三</t>
+one | two | three
+一 | 二 | 三
 ----|----|----
 four | five | six
 四    | 五   | 六

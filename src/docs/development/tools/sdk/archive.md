@@ -1,7 +1,10 @@
 ---
 title: Flutter SDK archive
+title: Flutter SDK 归档列表
 short-title: Archive
+short-title: 归档
 description: Flutter SDK archive
+description: Flutter SDK 归档列表
 toc: false
 ---
 

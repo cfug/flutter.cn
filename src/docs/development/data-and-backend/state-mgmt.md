@@ -1,6 +1,8 @@
 ---
 title: State management
+title: State 管理
 description: How to structure an app to manage the state of the data flowing through it.
+description: 如何架构你的工程并其数据进行 state 管理。#TODO
 ---
 
 "How do I best manage the state of the UI controls in a medium-to-large

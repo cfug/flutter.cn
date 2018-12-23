@@ -1,6 +1,8 @@
 ---
 title: Hot reload
+title: 热重载 (Hot reload)
 description: Speed up development using Flutter's hot reload feature.
+description: 使用热重载提高你的开发速度和体验。
 ---
 
 Flutter's hot reload feature helps you quickly and easily experiment, build

@@ -1,6 +1,8 @@
 ---
 title: Hero Animations
+title: 主动画过渡
 short-title: Hero
+short-title: 主动画
 ---
 
 {{site.alert.secondary}}

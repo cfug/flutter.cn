@@ -1,7 +1,10 @@
 ---
 title: Developing packages & plugins
+title: Flutter Packages 的开发和提交
 short-title: Developing
+short-title: 开发和提交
 description: How to write packages and plugins for Flutter.
+description: 如何编写和提交你的 Packages。
 ---
 
 ## Package introduction

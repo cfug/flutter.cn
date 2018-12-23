@@ -1,6 +1,6 @@
 ---
 title: Write your first Flutter app, part 1
-title: 编写第一个 Flutter 应用（第一部分，共两部分）
+title: 编写第一个 Flutter 应用
 short-title: Write your first app
 short-title: 编写第一个 Flutter 应用
 prev:
@@ -587,7 +587,7 @@ In this codelab, you've:
 * Created a lazily loaded, infinite scrolling list.
 
 If you would like to extend this app, proceed to
-[part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
+[part 2](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2)
 on the
 [Google Developers Codelabs](https://codelabs.developers.google.com) site,
 where you add the following functionality:

@@ -1,7 +1,10 @@
 ---
 title: Upgrading Flutter
+title: 升级你的 Flutter 版本
 short-title: Upgrading
+short-title: 升级
 description: Upgrading Flutter
+description: 升级你的 Flutter 版本
 ---
 
 No matter which [Flutter release channel][] you follow,

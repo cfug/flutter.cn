@@ -1,6 +1,8 @@
 ---
 title: Staggered Animations
+title: 交织动画
 short-title: Staggered
+short-title: 交织动画
 ---
 
 {{site.alert.secondary}}

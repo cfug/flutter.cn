@@ -1,6 +1,8 @@
 ---
 title: Adding assets and images
+title: 添加资源和图片
 short-title: Assets and images
+short-title: 资源和图片
 ---
 
 Flutter apps can include both code and _assets_ (sometimes called

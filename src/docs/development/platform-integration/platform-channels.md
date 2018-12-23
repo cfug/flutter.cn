@@ -1,6 +1,8 @@
 ---
 title: Writing custom platform-specific code
+title: 撰写双端平台代码（插件编写实现）
 short-title: Platform-specific code
+short-title: 平台相关代码
 ---
 
 This guide describes how to write custom platform-specific code. Some

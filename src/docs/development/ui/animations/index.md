@@ -1,6 +1,10 @@
 ---
 title: Introduction to animations
+title: 动画效果介绍
+short-title: Introduction to animations
+short-title: 介绍
 description: How to perform animations in Flutter
+description: 如何使用 Flutter 实现动画效果
 ---
 
 Well-designed animations makes a UI feel more intuitive,

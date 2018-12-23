@@ -1,5 +1,6 @@
 ---
 title: Internationalizing Flutter Apps
+title: Flutter 应用里的国际化
 ---
 
 {{site.alert.secondary}}

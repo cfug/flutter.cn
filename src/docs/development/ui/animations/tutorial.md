@@ -1,7 +1,10 @@
 ---
 title: Animations tutorial
+title: 教程 | 在 Flutter 应用里实现动画效果
 short-title: Tutorial
+short-title: 教程
 description: A tutorial showing how to build explicit animations in Flutter.
+description: 如何在 Flutter 中实现动画效果。
 ---
 
 {{site.alert.secondary}}

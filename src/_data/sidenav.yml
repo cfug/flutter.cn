@@ -105,10 +105,10 @@
         - title: Embedding Flutter views in non-Flutter apps
         - title: 撰写双端平台代码（插件编写实现）
           permalink: /docs/development/platform-integration/platform-channels
-    - title: Dart 和Packages 和 plugins
+    - title: Packages (纯 Dart 和原生插件)
       permalink: /docs/development/packages-and-plugins
       children:
-        - title: 使用 packages
+        - title: 使用 Packages
           permalink: /docs/development/packages-and-plugins/using-packages
         - title: Package 的开发和提交
           permalink: /docs/development/packages-and-plugins/developing-packages
@@ -137,7 +137,7 @@
         - title: Widget inspector
           permalink: /docs/development/tools/inspector
 
-- title: 测试和优化
+- title: 测试和调优
   permalink: /docs/testing
   children:
     - title: 调试 Flutter 应用

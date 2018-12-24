@@ -1,6 +1,8 @@
 ---
 title: Continuous Delivery using fastlane with Flutter
+title: 使用 fastlane 持续交付
 description: How to use fastlane to automate continuous building and releasing of your Flutter app.
+description: 使用 fastlane 持续交付你的 Flutter 应用
 ---
 
 Follow continuous delivery best practices with Flutter to make sure your

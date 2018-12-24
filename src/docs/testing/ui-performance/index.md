@@ -1,7 +1,10 @@
 ---
 title: Flutter Performance Profiling
+title: Flutter 性能分析
 subtitle: Where to look when your Flutter app drops frames in the UI.
+subtitle: 找出你的 Flutter 应用 UI 在哪里掉帧了
 description: Diagnosing UI performance issues in Flutter.
+description: 诊断 Flutter 里的 UI 性能问题。
 ---
 
 {{site.alert.secondary}}

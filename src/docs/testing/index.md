@@ -1,5 +1,6 @@
 ---
 title: Testing Flutter apps
+title: 测试 Flutter 应用
 ---
 
 The more features your app has, the harder it is to test manually.

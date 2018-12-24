@@ -1,5 +1,6 @@
 ---
 title: Create a horizontal list
+title: 创建一个水平滑动的列表
 ---
 
 At times, you may want to create a List that scrolls horizontally rather than

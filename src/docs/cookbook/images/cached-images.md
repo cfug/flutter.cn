@@ -1,5 +1,6 @@
 ---
 title: Working with cached images
+title: 使用缓存图片
 ---
 
 In some cases, it can be handy to cache images as they're downloaded from the

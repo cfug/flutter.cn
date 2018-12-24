@@ -1,5 +1,6 @@
 ---
 title: Return data from a screen
+title: 从一个页面回传数据
 ---
 
 In some cases, we might want to return data from a new screen. For example, say

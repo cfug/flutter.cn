@@ -1,5 +1,6 @@
 ---
 title: Navigate to a new screen and back
+title: 导航到一个新页面和返回
 ---
 
 Most apps contain several screens for displaying different types of information.

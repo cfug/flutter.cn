@@ -1,5 +1,6 @@
 ---
 title: Display images from the internet
+title: 显示网络上的远程图片
 ---
 
 Displaying images is fundamental for most mobile apps. Flutter provides the

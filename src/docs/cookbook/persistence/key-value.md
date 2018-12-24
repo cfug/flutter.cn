@@ -1,5 +1,6 @@
 ---
 title: Storing key-value data on disk
+title: 存储键值对数据
 ---
 
 If we have a relatively small collection of key-values that we'd like to save,

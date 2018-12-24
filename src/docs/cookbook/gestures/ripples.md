@@ -1,5 +1,6 @@
 ---
 title: Adding Material Touch Ripples
+title: 添加点按涟漪效果 (Material Design)
 ---
 
 While designing an app that should follow the Material Design Guidelines, we'll

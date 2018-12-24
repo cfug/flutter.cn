@@ -1,5 +1,6 @@
 ---
 title: Creating lists with different types of items
+title: 创建拥有不同列表项的列表
 ---
 
 We often need to create lists that display different types of content. For

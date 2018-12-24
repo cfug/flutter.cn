@@ -1,5 +1,6 @@
 ---
 title: Making authenticated requests
+title: 发起 HTTP 认证授权请求
 ---
 
 In order to fetch data from many web services, you need to provide

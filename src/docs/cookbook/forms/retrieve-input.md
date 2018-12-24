@@ -1,4 +1,4 @@
----
+ ---
 title: Retrieve the value of a text field
 title: 获取文本框的输入值
 ---

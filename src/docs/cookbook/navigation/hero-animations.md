@@ -1,5 +1,6 @@
 ---
 title: Animating a Widget across screens
+title: 一个 Widget 的跨页面切换 (Hero animations)
 ---
 
 It's often helpful to guide users through our apps as they navigate from screen

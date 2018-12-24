@@ -1,5 +1,6 @@
 ---
 title: Working with WebSockets
+title: 发起 WebSockets 请求
 ---
 
 In addition to normal HTTP requests, we can connect to servers using WebSockets.

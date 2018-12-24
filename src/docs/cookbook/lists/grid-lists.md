@@ -1,5 +1,6 @@
 ---
 title: Creating a Grid List
+title: 创建一个网格列表
 ---
 
 In some cases, you might want to display your items as a Grid rather than

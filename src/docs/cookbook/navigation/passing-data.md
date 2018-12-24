@@ -1,5 +1,6 @@
 ---
 title: Send data to a new screen
+title: 传递数据到新页面
 ---
 
 Oftentimes, we not only want to navigate to a new screen, but also pass some

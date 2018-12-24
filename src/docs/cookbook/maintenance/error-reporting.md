@@ -1,5 +1,6 @@
 ---
 title: Report errors to a service
+title: 把报错信息通过服务上传
 ---
 
 While we always do our best to create apps that are free of bugs, they're sure

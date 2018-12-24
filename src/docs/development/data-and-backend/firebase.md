@@ -1,6 +1,8 @@
 ---
 title: Firebase
+title: 使用 Firestore 调用 Firebase 服务
 description: How to use Firebase and Firestore with Flutter.
+description: 如何使用 Firestore 调用 Firebase 服务。
 ---
 
 Firebase is a Backend-as-a-Service (BaaS) app development platform

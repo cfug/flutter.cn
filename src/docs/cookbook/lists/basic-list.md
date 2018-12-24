@@ -1,5 +1,6 @@
 ---
 title: Basic List
+title: 基础列表
 ---
 
 Displaying lists of data is a fundamental pattern for mobile apps. Flutter

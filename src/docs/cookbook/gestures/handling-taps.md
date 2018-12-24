@@ -1,5 +1,6 @@
 ---
 title: Handling Taps
+title: 捕获和处理点击动作
 ---
 
 We not only want to display information to our users, we want our users to

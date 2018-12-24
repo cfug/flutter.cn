@@ -1,5 +1,6 @@
 ---
 title: Fade in images with a placeholder
+title: 占位符和网络图片淡入
 ---
 
 When displaying images using the default `Image` widget, you might notice they

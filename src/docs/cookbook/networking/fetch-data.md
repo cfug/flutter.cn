@@ -1,5 +1,6 @@
 ---
 title: Fetch data from the internet
+title: 获取网络数据
 ---
 
 Fetching data from the internet is necessary for most apps. Luckily, Dart and

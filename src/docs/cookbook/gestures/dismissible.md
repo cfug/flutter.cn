@@ -1,5 +1,6 @@
 ---
 title: Implement Swipe to Dismiss
+title: 实现『滑动清除』效果
 ---
 
 The "Swipe to dismiss" pattern is common in many mobile apps. For example, if

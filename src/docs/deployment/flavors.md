@@ -1,7 +1,10 @@
 ---
 title: Creating flavors for Flutter
+title: 在 Android Studio 里配置 flavors 构建双端
+short-title: Flavors
 short-title: Flavors
 description: How to create build flavors specific to different release types or development environments.
+description: 通过多渠道发布功能在 Android Studio 里构建和发布双端。
 ---
 
 Do you need to set up product flavors for different development

@@ -1,6 +1,6 @@
 ---
 title: Preparing an Android App for Release
-title: 打包你的 Android 应用（用于发布）
+title: 打包和发布到 Android 平台
 short-title: Android
 ---
 

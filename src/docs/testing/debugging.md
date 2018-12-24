@@ -1,5 +1,6 @@
 ---
 title: Debugging Flutter apps
+title: 调试 Flutter 应用
 ---
 
 There are a wide variety of tools and features to help debug Flutter

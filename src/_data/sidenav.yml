@@ -144,7 +144,7 @@
       permalink: /docs/testing/debugging
     - title: 使用原生的调试器
       permalink: /docs/testing/oem-debuggers
-    - title: 编译模式(Debug/Release/Profile)
+    - title: 构建模式 (Debug/Release/Profile)
       permalink: /docs/testing/build-modes
     - title: 测试 Flutter 应用
       permalink: /docs/testing
@@ -157,11 +157,11 @@
 
 - title: 打包部署
   children:
-    - title: 使用 flavors 打包双端
+    - title: 配置 flavors 构建双端
       permalink:  /docs/deployment/flavors
-    - title: 打包和发布 Android 应用
+    - title: 打包和发布到 Android 平台
       permalink: /docs/deployment/android
-    - title: 打包和发布 iOS 应用
+    - title: 打包和发布到 iOS 平台
       permalink: /docs/deployment/ios
     - title: 使用 fastlane 持续交付
       permalink: /docs/deployment/fastlane-cd

@@ -1,6 +1,8 @@
 ---
 title: Widget catalog
+title: 核心 Widget 目录
 short-title: Widgets
+short-title: 核心 Widgets
 toc: false
 ---
 

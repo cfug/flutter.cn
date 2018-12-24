@@ -1,5 +1,6 @@
 ---
 title: Creating Useful Bug Reports
+title: 如何有效提出 Bug
 ---
 
 The instructions in this document detail the current steps required to provide the most

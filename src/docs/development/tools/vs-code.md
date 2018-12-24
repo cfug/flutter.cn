@@ -1,7 +1,10 @@
 ---
 title: Visual Studio Code
+title: 在 VS Code 里开发 Flutter 应用
+short-title: VS Code
 short-title: VS Code
 description: How to develop Flutter apps in Visual Studio Code.
+description: 如何在 VS Code 里开发 Flutter 应用。
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">

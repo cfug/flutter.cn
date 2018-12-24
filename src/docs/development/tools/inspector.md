@@ -1,6 +1,8 @@
 ---
 title: Widget inspector
+title: Widget inspector
 description: A brief overview of Flutter's widget inspector.
+description: Flutter 的 Widget inspector 概览。
 ---
 
 The Flutter widget inspector is powerful tool for visualizing and exploring

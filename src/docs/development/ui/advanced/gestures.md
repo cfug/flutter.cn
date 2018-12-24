@@ -1,5 +1,6 @@
 ---
 title: Taps, drags, and other gestures
+title: 点击、拖动和其他手势
 ---
 
 This document explains how to listen for, and respond to,

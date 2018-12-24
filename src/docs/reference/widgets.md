@@ -1,6 +1,8 @@
 ---
 title: Flutter widget index
+title: Flutter Widget 目录
 short-title: Widgets
+short-title: Widget 目录
 show_breadcrumbs: false
 toc: false
 ---

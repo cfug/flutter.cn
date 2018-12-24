@@ -1,6 +1,8 @@
 ---
 title: Using packages
+title: 在 Flutter 里使用 Packages
 description: Learn how to use packages in your Flutter app.
+description: 学习如何在你的 Flutter 应用里使用 Packages。
 ---
 
 Flutter supports using shared packages contributed by other developers

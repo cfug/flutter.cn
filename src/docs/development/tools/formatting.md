@@ -1,6 +1,8 @@
 ---
 title: Code formatting
+title: 代码格式
 description: Flutter's code formatter formats your code along recommended style guidelines.
+description: Flutter 的代码格式化工具以及推荐的代码格式。
 ---
 
 

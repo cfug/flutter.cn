@@ -1,5 +1,6 @@
 ---
 title: JSON and serialization
+title: JSON 和序列化数据
 ---
 
 It is hard to think of a mobile app that doesn't need to communicate with a

@@ -1,5 +1,6 @@
 ---
 title: Slivers
+title: 滑动效果 (Slivers)
 ---
 
 A sliver is a portion of a scrollable area. You can use slivers to

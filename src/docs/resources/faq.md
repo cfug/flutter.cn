@@ -1,5 +1,6 @@
 ---
 title: FAQ
+title: 常见问题与解答
 description: Frequently asked questions and answers.
 description: 常见问题与解答
 ---

@@ -1,5 +1,7 @@
 ---
 title: Preparing an iOS App for Release
+title: 打包和发布到 iOS 平台
+short-title: iOS
 short-title: iOS
 ---
 

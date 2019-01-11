@@ -24,9 +24,6 @@ env:
   global:
     - JEKYLL_ENV=production
     - TZ=US/Pacific # normalize build timestamp
-  matrix:
-    - TASK="./tool/check-code.sh"
-    - TASK="bundle exec jekyll build"
 
 before_install:
   - source ./tool/env-set.sh
@@ -36,19 +33,13 @@ install:
   - ./tool/install.sh
   # - ./tool/shared/write-ci-info.sh -v
 
-script: $TASK
+script:
+  - ./tool/check-code.sh
+  - ./tool/translator/build.sh
+  - ./tool/translator/deploy.sh
 
 after_script:
   - if [[ $TASK == *build* ]]; then ./tool/shared/check-links.sh --external || travis_terminate 1; fi
-
-deploy:
-  - provider: script
-    script: ./tool/shared/deploy.sh --robots ok default
-    skip_cleanup: true
-    on:
-      repo: flutter/website
-      branch: master
-      condition: $TASK == *build*
 
 # Only run Travis jobs for named branches (to avoid double builds for each PR)
 branches:

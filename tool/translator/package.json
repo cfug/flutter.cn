@@ -4,7 +4,9 @@
   "description": "Post processor for website translation function",
   "main": "index.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "preprocess": "gulp preprocess",
+    "postprocess": "gulp postprocess"
   },
   "author": "Zhicheng WANG<asnowwolf@gmail.com>",
   "license": "MIT",

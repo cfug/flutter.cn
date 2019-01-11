@@ -1,6 +1,6 @@
 ---
 title: Performance profiling with integration tests
-title: 集成测试里的性能分析
+title: 性能分析
 ---
 
 When it comes to mobile apps, performance is critical to user experience. Users

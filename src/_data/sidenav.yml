@@ -27,7 +27,7 @@
     - title: "Dart 语言概览"
       permalink: https://www.dartlang.org/guides/language
 
-- title: 样例代码和 Codelabs
+- title: 教程和样例代码
   children:
     - title: GitHub 上样例应用
       permalink: https://github.com/flutter/samples/blob/master/INDEX.md
@@ -35,6 +35,8 @@
       permalink: /docs/cookbook
     - title: Codelabs
       permalink: /docs/codelabs
+    - title: 教程
+      permalink: /docs/reference/tutorials
 
 - title: 开发文档
   expanded: true
@@ -185,8 +187,6 @@
 - title: 参考资料
   expanded: true
   children:
-    - title: Flutter 教程
-      permalink: /docs/reference/tutorials
     - title: Flutter Widget 目录
       permalink: /docs/reference/widgets
     - title: Flutter API 文档

@@ -16,14 +16,19 @@ $(function () {
   initVideoModal();
   initCarousel();
   initSnackbar();
-  prettyPrint();
+
+  addCopyCodeButtonsEverywhere(); // Must be before tooltip activation.
+  $('[data-toggle="tooltip"]').tooltip();
+  setupClipboardJS();
 
   // New (dash) tabs
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
   // Old tabs
   setupToolsTabs($('#tab-set-install'), 'tab-install-', 'io.flutter.tool-id');
   setupToolsTabs($('#tab-set-os'), 'tab-os-', null, getOS());
-})
+
+  prettyPrint();
+});
 
 // TODO(chalin): Copied (& tweaked) from site-www, consider moving into site-shared
 function adjustToc() {
@@ -31,7 +36,7 @@ function adjustToc() {
 
   var tocId = '#site-toc--side';
   var tocWrapper = $(tocId);
-  $(tocWrapper).find('.site-toc--button__page-top').click(function() {
+  $(tocWrapper).find('.site-toc--button__page-top').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 'fast');
   })
 
@@ -143,7 +148,7 @@ function initCarousel() {
 }
 
 function initSnackbar() {
-  var SNACKBAR_SELECTOR ='.snackbar';
+  var SNACKBAR_SELECTOR = '.snackbar';
   var SNACKBAR_ACTION_SELECTOR = '.snackbar__action';
   var snackbars = $(SNACKBAR_SELECTOR);
 
@@ -153,4 +158,61 @@ function initSnackbar() {
       snackbar.fadeOut();
     });
   })
+}
+
+function setupClipboardJS() {
+  var clipboard = new ClipboardJS('.code-excerpt__copy-btn'); // [data-clipboard-target]
+  clipboard.on('success', _copiedFeedback);
+}
+
+function _copiedFeedback(e) {
+  // e.action === 'copy'
+  // e.text === copied text
+  e.clearSelection(); // Unselect copied code
+
+  var copied = 'Copied';
+  var target = e.trigger;
+  var title = target.getAttribute('title') || target.getAttribute('data-original-title')
+  var savedTitle;
+
+  if (title === copied) return;
+
+  savedTitle = title;
+  setTimeout(function () {
+    _changeTooltip(target, savedTitle);
+  }, 1500);
+
+  _changeTooltip(target, copied);
+}
+
+function _changeTooltip(target, text) {
+  target.setAttribute('title', text);
+  $(target).tooltip('dispose'); // Dispose of tip with old title
+  $(target).tooltip('show'); // Recreate tip with new title ...
+  if (!$(target).is(":hover")) {
+    $(target).tooltip('hide'); // ... but hide it if it isn't being hovered over
+  }
+}
+
+function addCopyCodeButtonsEverywhere() {
+  var elts = $('pre');
+  elts.wrap(function (i) {
+    return $(this).parent('div.code-excerpt__code').length === 0
+      ? '<div class="code-excerpt__code"></div>'
+      : '';
+  });
+  elts.wrap(function (i) {
+    return '<div id="code-excerpt-' + i + '"></div>'
+  });
+
+  elts.parent() // === div#code-excerpt-X
+    .parent() // === div.code-excerpt__code
+    .prepend(function (i) {
+      return '' +
+        '<button class="code-excerpt__copy-btn" type="button"' +
+        '    data-toggle="tooltip" title="Copy code"' +
+        '    data-clipboard-target="#code-excerpt-' + i + '">' +
+        '  <i class="material-icons">content_copy</i>' +
+        '</button>';
+    });
 }

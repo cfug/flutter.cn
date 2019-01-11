@@ -11,7 +11,7 @@ JSON, sooner or later.
 This guide looks into ways of using JSON with Flutter. It covers which
 JSON solution to use in different scenarios, and why.
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.info}}
   **Terminology:** _Encoding_ and _serialization_ are the same thing&mdash;turning
   a data structure into a string. _Decoding_ and _deserialization_ are the
   opposite process&mdash;turning a string into a data structure.
@@ -21,7 +21,7 @@ JSON solution to use in different scenarios, and why.
   To avoid confusion, this doc uses "serialization" when referring to the
   overall process, and "encoding" and "decoding" when specifically
   referring to those processes.
-</aside>
+{{site.alert.end}}
 
 ## Which JSON serialization method is right for me?
 
@@ -39,9 +39,9 @@ small errors.
 ### Use manual serialization for smaller projects
 
 Manual JSON decoding refers to using the built-in JSON decoder in
-`dart:convert`. It involves passing the raw JSON string to the `json.decode()`
-method, and then looking up the values you need in the `Map<String, dynamic>`
-the method returns. It has no external dependencies or particular setup process,
+`dart:convert`. It involves passing the raw JSON string to the `jsonDecode()`
+function, and then looking up the values you need in the resulting
+`Map<String, dynamic>`. It has no external dependencies or particular setup process,
 and it's good for a quick proof of concept.
 
 Manual decoding does not perform well when your project becomes bigger.
@@ -75,13 +75,13 @@ medium or a larger project. To see an example of code generation based JSON
 encoding, see
 [Serializing JSON using code generation libraries](#code-generation).
 
-## Is there a GSON/Jackson/Moshi equivalent in Flutter?
+## Is there a GSON/<wbr>Jackson/<wbr>Moshi equivalent in Flutter?
 
 The simple answer is no.
 
-Such a library would require using runtime reflection, which is disabled in
-Flutter. Runtime reflection interferes with _tree shaking_, which Dart has
-supported for quite a long time. With tree shaking, you can “shake off” unused
+Such a library would require using runtime [reflection][], which is disabled in
+Flutter. Runtime reflection interferes with [tree shaking][], which Dart has
+supported for quite a long time. With tree shaking, you can "shake off" unused
 code from your release builds. This optimizes the app's size significantly.
 
 Since reflection makes all code implicitly used by default, it makes tree
@@ -89,12 +89,11 @@ shaking difficult. The tools cannot know what parts are unused at runtime, so
 the redundant code is hard to strip away. App sizes cannot be easily optimized
 when using reflection.
 
-<aside class="alert alert-info" markdown="1">
-**What about dartson?**
-
-The [dartson](https://pub.dartlang.org/packages/dartson) library uses runtime
-reflection, which makes it not compatible with Flutter.
-</aside>
+{{site.alert.info}}
+  **What about dartson?** The
+  [dartson](https://pub.dartlang.org/packages/dartson) library uses runtime
+  [reflection][], which makes it incompatible with Flutter.
+{{site.alert.end}}
 
 Although you cannot use runtime reflection with Flutter, some libraries give
 you similarly easy to use APIs but are based on code generation instead. This
@@ -121,20 +120,19 @@ With `dart:convert`, you can encode this JSON model in two ways.
 
 ### Serializing JSON inline
 
-By looking at [the dart:convert JSON
-documentation](https://api.dartlang.org/stable/dart-convert/JsonCodec-class.html),
-you'll see that you can decode the JSON by calling the `json.decode` method,
+By looking at the [dart:convert][dart:convert] documentation,
+you'll see that you can decode the JSON by calling the `jsonDecode()` function,
 with the JSON string as the method argument.
 
 <!-- skip -->
 ```dart
-Map<String, dynamic> user = json.decode(json);
+Map<String, dynamic> user = jsonDecode(jsonString);
 
 print('Howdy, ${user['name']}!');
 print('We sent the verification link to ${user['email']}.');
 ```
 
-Unfortunately, `json.decode()` merely returns a `Map<String, dynamic>`, meaning
+Unfortunately, `jsonDecode()` returns a `Map<String, dynamic>`, meaning
 that you do not know the types of the values until runtime. With this approach,
 you lose most of the statically typed language features: type safety,
 autocompletion and most importantly, compile-time exceptions. Your code will
@@ -149,9 +147,9 @@ JSON lives in a map structure.
 Combat the previously mentioned problems by introducing a plain model
 class, called `User` in this example. Inside the `User` class, you'll find:
 
-* A `User.fromJson` constructor, for constructing a new `User` instance from a
+* A `User.fromJson()` constructor, for constructing a new `User` instance from a
   map structure.
-* A `toJson` method, which converts a `User` instance into a map.
+* A `toJson()` method, which converts a `User` instance into a map.
 
 With this approach, the _calling code_ can have type safety,
 autocompletion for the `name` and `email` fields, and compile-time exceptions.
@@ -185,26 +183,26 @@ itself. With this new approach, you can decode a user easily.
 
 <!-- skip -->
 ```dart
-Map userMap = json.decode(json);
+Map userMap = jsonDecode(jsonString);
 var user = new User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');
 ```
 
-To encode a user, pass the `User` object to the `json.encode` method.
-You don't need to call the `toJson` method, since `json.encode`
+To encode a user, pass the `User` object to the `jsonEncode()` function.
+You don't need to call the `toJson()` method, since `jsonEncode()`
 already does it for you.
 
 <!-- skip -->
 ```dart
-String json = json.encode(user);
+String json = jsonEncode(user);
 ```
 
 With this approach, the calling code doesn't have to worry about JSON
 serialization at all. However, the model class still definitely has to.
 In a production app, you would want to ensure that the serialization
-works properly. In practice, the `User.fromJson` and `User.toJson`
+works properly. In practice, the `User.fromJson()` and `User.toJson()`
 methods both need to have unit tests in place to verify correct behavior.
 
 However, real-world scenarios are not usually that simple.
@@ -283,7 +281,7 @@ class User {
   String email;
 
   /// A necessary factory constructor for creating a new User instance
-  /// from a map. Pass the map to the generated `_$UserFromJson` constructor.
+  /// from a map. Pass the map to the generated `_$UserFromJson()` constructor.
   /// The constructor is named after the source class, in this case User.
   factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
 
@@ -316,7 +314,7 @@ When creating `json_serializable` classes the first time, you'll get errors
 similar to what is shown in the image below.
 
 ![IDE warning when the generated code for a model class does not exist
-yet.](/images/json/ide_warning.png)
+yet.](/images/json/ide_warning.png){:.mw-100}
 
 These errors are entirely normal and are simply because the generated code for
 the model class does not exist yet. To resolve this, run the code
@@ -350,14 +348,14 @@ you do not have actually to make any changes to our previous code.
 
 <!-- skip -->
 ```dart
-Map userMap = json.decode(json);
+Map userMap = jsonDecode(jsonString);
 var user = User.fromJson(userMap);
 ```
 The same goes for encoding. The calling API is the same as before.
 
 <!-- skip -->
 ```dart
-String json = json.encode(user);
+String json = jsonEncode(user);
 ```
 
 With `json_serializable`, you can forget any manual JSON serialization in the
@@ -371,11 +369,15 @@ appropriately.
 
 For more information, see the following resources:
 
-* [JsonCodec
-  documentation](https://api.dartlang.org/stable/dart-convert/JsonCodec-class.html)
+* [dart:convert][] and [JsonCodec][] documentation
 * [The
   json_serializable package in Pub](https://pub.dartlang.org/packages/json_serializable)
 * [json_serializable
   examples in GitHub](https://github.com/dart-lang/json_serializable/blob/master/example/lib/example.dart)
 * [Discussion
   about dart:mirrors in Flutter](https://github.com/flutter/flutter/issues/1150)
+
+[dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
+[JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
+[reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
+[tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking

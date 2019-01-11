@@ -184,20 +184,17 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
     list:
 
-    <?code-excerpt "1-base/pubspec.yaml" diff-with="2-use-package/pubspec.yaml" from="dependencies" to="english"?>
-    {% diff from="dependencies" %}
+    <?code-excerpt "1-base/pubspec.yaml" diff-with="2-use-package/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
+    ```diff
     --- 1-base/pubspec.yaml
     +++ 2-use-package/pubspec.yaml
-    @@ -2,10 +2,13 @@
-     description: A startup-namer app.
-     version: 1.0.0+1
-
+    @@ -5,4 +5,5 @@
      dependencies:
        flutter:
          sdk: flutter
        cupertino_icons: ^0.1.2
     +  english_words: ^3.1.0
-    {% enddiff %}
+    ```
 
  2. While viewing the pubspec in Android Studio's editor view,
     click **Packages get**. This pulls the package into
@@ -230,15 +227,10 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     using the string "Hello World":
 
     <?code-excerpt "1-base/lib/main.dart" diff-with="2-use-package/lib/main.dart" from="class"?>
-    {% diff from="class" %}
+    ```diff
     --- 1-base/lib/main.dart
     +++ 2-use-package/lib/main.dart
-    @@ -1,10 +1,12 @@
-     import 'package:flutter/material.dart';
-    +import 'package:english_words/english_words.dart';
-
-     void main() => runApp(MyApp());
-
+    @@ -5,6 +6,7 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -255,7 +247,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
              ),
            ),
          );
-    {% enddiff %}
+    ```
 
     {{site.alert.note}}
       "Pascal case" (also known as "upper camel case"),
@@ -360,7 +352,7 @@ a child inside the existing `MyApp` stateless widget.
     the following diff:
 
     <?code-excerpt "2-use-package/lib/main.dart" diff-with="3-stateful-widget/lib/main.dart" to="}"?>
-    {% diff %}
+    ```diff
     --- 2-use-package/lib/main.dart
     +++ 3-stateful-widget/lib/main.dart
     @@ -6,7 +6,6 @@
@@ -371,7 +363,7 @@ a child inside the existing `MyApp` stateless widget.
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -14,9 +13,27 @@
+    @@ -14,8 +13,8 @@
                title: Text('Welcome to Flutter'),
              ),
              body: Center(
@@ -381,7 +373,7 @@ a child inside the existing `MyApp` stateless widget.
            ),
          );
        }
-    {% enddiff %}
+    ```
 
  5. Restart the app.
     The app should behave as before, displaying a word
@@ -526,14 +518,11 @@ lazily, on demand.
  5. In the `MyApp` class, update the `build()` method by changing the title, and
     changing the home to be a `RandomWords` widget:
 
-    <?code-excerpt "3-stateful-widget/lib/main.dart" diff-with="4-infinite-list/lib/main.dart" from="class MyApp" to="}"?>
-    {% diff %}
+    <?code-excerpt "3-stateful-widget/lib/main.dart" diff-with="4-infinite-list/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
+    ```diff
     --- 3-stateful-widget/lib/main.dart
     +++ 4-infinite-list/lib/main.dart
-    @@ -3,36 +3,68 @@
-
-     void main() => runApp(MyApp());
-
+    @@ -6,15 +6,8 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -551,7 +540,7 @@ lazily, on demand.
     +      home: RandomWords(),
          );
        }
-    {% enddiff %}
+    ```
 
  6. Restart the app. You should see a list of word pairings no matter how far
     you scroll.

@@ -7,7 +7,6 @@ prev:
   title: Write your first Flutter app
   title: 编写第一个 Flutter 应用
   path: /docs/get-started/codelab
-toc: false
 ---
 
 Learn more about the Flutter framework:

@@ -5,7 +5,6 @@ next:
   title: Set up an editor
   title: 编辑工具设定
   path: /docs/get-started/editor
-toc: false
 ---
 
 Select the operating system on which you are installing Flutter:

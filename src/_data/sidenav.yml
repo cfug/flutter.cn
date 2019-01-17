@@ -11,7 +11,7 @@
     - title: 5. 了解更多
       permalink: /docs/get-started/learn-more
     - divider
-    - title: 拥有移动平台开发经验？
+    - title: 拥有其他平台开发经验？
       expanded: true
       children:
         - title: 给 Android 开发者的 Flutter 指南

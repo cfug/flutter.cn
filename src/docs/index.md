@@ -24,6 +24,8 @@ description: Flutter 开发文档页面.
 
 Welcome to the revamped Flutter website!
 
+欢迎
+
 We've spent the last few months redesigning the website and how its
 information is organized. We hope you can more easily find the docs
 you are looking for. Some of the changes to the website include:

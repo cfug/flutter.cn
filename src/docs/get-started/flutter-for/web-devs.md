@@ -125,7 +125,7 @@ In Flutter, you set the background color using a
 [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)’s
 `decoration` property.
 
-在 Flutter 中，你通过 [Container](https://docs.flutter.io/flutter/widgets/Container-class.html) 的 `decoration` 属性来设置背景颜色。
+在 Flutter 中，你可以通过 [Container](https://docs.flutter.io/flutter/widgets/Container-class.html) 的 `decoration` 属性来设置背景颜色。
 
 The CSS examples use the hex color equivalents to the Material color palette.
 
@@ -445,7 +445,7 @@ identity object and use its scale() method to specify the scaling factor.
 
 When you scale a parent widget, its child widgets are scaled accordingly.
 
-当你缩放一个父亲 widget 时，它的儿子 widget 也会相应被缩放。
+当你缩放一个父 widget 时，它的子 widget 也会相应被缩放。
 <div class="lefthighlight">
 {% prettify css %}
 <div class="greybox">

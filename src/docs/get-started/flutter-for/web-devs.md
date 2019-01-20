@@ -79,7 +79,7 @@ color properties are individual properties of a
 child of a
 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
 
-CSS 所处理的字体样式、大小以及其他文本属性，（在 Flutter 中）都是一个 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget 子节点 [TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html) 中的单独属性。
+CSS 所处理的字体样式、大小以及其他文本属性，都是一个 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget 子元素 [TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html) 中单独的属性。
 
 In both HTML and Flutter, child elements or widgets are anchored at
 the top left, by default.
@@ -125,7 +125,7 @@ In Flutter, you set the background color using a
 [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)’s
 `decoration` property.
 
-在 Flutter 中，你通过 [Container](https://docs.flutter.io/flutter/widgets/Container-class.html) 中一个叫 `decoration` 的属性来设置背景颜色。
+在 Flutter 中，你通过 [Container](https://docs.flutter.io/flutter/widgets/Container-class.html) 的 `decoration` 属性来设置背景颜色。
 
 The CSS examples use the hex color equivalents to the Material color palette.
 
@@ -221,7 +221,7 @@ Container. Create a new
 widget with a `minWidth` or `maxWidth`.
 
 要指定一个 [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)
-widget 的宽度，请使用它的 `width` 属性。和 CSS 中的 max-width 属性用于指定容器宽度可调整的最大值不同的是，这里指定的是一个固定宽度。要在 Flutter 中模拟该效果，可以使用 Container 的 `constraints` 属性。新建一个带有 `minWidth` 和 `maxWidth` 属性的 [BoxConstraints](https://docs.flutter.io/flutter/rendering/BoxConstraints-class.html) widget。 
+widget 的宽度，请使用它的 `width` 属性。和 CSS 中的 max-width 属性用于指定容器可调整的宽度最大值不同的是，这里指定的是一个固定宽度。要在 Flutter 中模拟该效果，可以使用 Container 的 `constraints` 属性。新建一个带有 `minWidth` 和 `maxWidth` 属性的 [BoxConstraints](https://docs.flutter.io/flutter/rendering/BoxConstraints-class.html) widget。 
 
 For nested Containers, if the parent’s width is less than the child’s width,
 the child Container sizes itself to match the parent.
@@ -864,7 +864,7 @@ var container = Container( // grey box
 The following examples show how to specify fonts and other text attributes. They
 also show how to transform text strings, customize spacing, and create excerpts.
 
-以下示例展示了如何设置字体和其他文本属性。他们同时还展示了如何变换字符串、自定义间距以及生成摘录。
+以下示例展示了如何设置字体和其他文本属性。他们同时还展示了如何变换文本字符、自定义间距以及生成摘要。
 
 ### Adjusting text spacing
 ### 文字间距调整
@@ -947,7 +947,7 @@ widget instead. Its `text` property can specify one or more
 [TextSpan](https://docs.flutter.io/flutter/painting/TextSpan-class.html) widgets
 that can be individually styled.
 
-一个 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget 允许你展示同一类格式的文本。为了展现具有多种样式（本例中，是一个带重音的单词）的文本，请改用 [RichText](https://docs.flutter.io/flutter/widgets/RichText-class.html) widget。它的 `text` 属性可以指定一个或多个可以单独设置样式的 [TextSpan](https://docs.flutter.io/flutter/painting/TextSpan-class.html) widget。
+一个 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget 允许你展示同一类样式的文本。为了展现具有多种样式（本例中，是一个带重音的单词）的文本，需要改用 [RichText](https://docs.flutter.io/flutter/widgets/RichText-class.html) widget。它的 `text` 属性可以指定一个或多个可以单独设置样式的 [TextSpan](https://docs.flutter.io/flutter/painting/TextSpan-class.html) widget。
 
 In the following example, "Lorem" is in a TextSpan widget with the default
 (inherited) text styling, and "ipsum" is in a separate TextSpan with custom
@@ -1025,14 +1025,14 @@ An excerpt displays the initial line(s) of text in a paragraph, and handles the
 overflow text, often using an ellipsis. In HTML/CSS an excerpt can be no longer
 than one line. Truncating after multiple lines requires some JavaScript code.
 
-一个摘录会展示一个段落中文本的初始行内容，并常用省略号处理溢出的文本内容。在 HTML/CSS 中，摘录不能超过一行。 在多行之后进行截断需要运行一些 JavaScript 代码。
+一个摘要会展示一个段落中文本的初始行内容，并常用省略号处理溢出的文本内容。在 HTML/CSS 中，摘录不能超过一行。 在多行之后进行截断需要运行一些 JavaScript 代码。
 
 In Flutter, use the `maxLines` property of a
 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html)
 widget to specify the number of lines to include in the excerpt, and the
 `overflow` property for handling overflow text.
 
-在 Flutter 中，使用 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget 的 `maxLines` 属性来指定包含在摘录中的行数，以及用 `overflow` 属性来处理溢出文本。
+在 Flutter 中，使用 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget 的 `maxLines` 属性来指定包含在摘要中的行数，以及 `overflow` 属性来处理溢出文本。
 
 <div class="lefthighlight">
 {% prettify css %}

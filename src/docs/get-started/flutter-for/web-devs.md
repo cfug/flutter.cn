@@ -25,6 +25,12 @@ The examples assume:
     box-sizing: border-box;
   }
   ```
+* HTML 文件以 `<!DOCTYPE html>` 开头，且为了与 Flutter 模型保持一致，所有 HTML 元素的 CSS 盒模型被设置为 [`border-box`](https://css-tricks.com/box-sizing/)。
+  ```css
+  {
+    box-sizing: border-box;
+  }
+  ```
 * In Flutter, the default styling of the "Lorem ipsum" text is defined by the
   `bold24Roboto` variable as follows, to keep the syntax simple:
   ```dart
@@ -33,13 +39,6 @@ The examples assume:
     fontSize: 24.0,
     fontWeight: FontWeight.w900,
   );
-  ```
-
-* HTML 文件以 `<!DOCTYPE html>` 开头，且为了与 Flutter 模型保持一致，所有 HTML 元素的 CSS 盒模型被设置为 [`border-box`](https://css-tricks.com/box-sizing/)。
-  ```css
-  {
-    box-sizing: border-box;
-  }
   ```
 * 在 Flutter 中，为了保持语法简洁，"Lorem ipsum" 文本的默认样式由如下 `bold24Roboto` 变量定义：
   ```dart
@@ -55,7 +54,7 @@ The examples assume:
 How is react-style, or _declarative_, programming different than the
 traditional imperative style?
 
-react-style 或_声明式_编程与传统的命令式风格有何不同？
+react-style 或 _声明式_ 编程与传统的命令式风格有何不同？
 
 For a comparison, see [Introduction to declarative
 UI](/docs/get-started/flutter-for/declarative).

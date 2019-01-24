@@ -19,14 +19,15 @@ highlighting, widget editing assists, run & debug support, and more.
 
 你可以使用任意文本编辑器，结合我们的命令行工具来开发 Flutter 应用。
 然而，我们推荐使用我们的编辑器插件以获取更好的开发体验。这些插件提供了代码补全、
-代码高亮、widget 辅助编辑、支持运行和调试等功能。
+代码高亮、widget 辅助编辑，以及为项目的运行和调试提供支持等。
 
 Follow the steps below to add an editor plugin for Android Studio, IntelliJ, or
 VS Code. If you want to use a different editor, that's OK, skip ahead to the
 [next step: Test drive](/docs/get-started/test-drive).
 
 参考以下步骤为 Android Studio、IntelliJ 或者 VS Code 添加编辑器插件。
-如果你想使用其他的编辑器，请直接打开 [下一节: 开发体验初探](/docs/get-started/test-drive)。
+如果你想使用其他的编辑器，请直接打开 [下一节: 开发体验初探](/docs/get-started/test-drive)，
+来查看使用其他文本编辑器配合命令行工具来创建和运行 Flutter 应用。
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -51,9 +52,9 @@ Android Studio offers a complete, integrated IDE experience for Flutter.
 
 Android Studio 为 Flutter 提供了一个完整的集成开发环境。
 
-* [Android Studio](https://developer.android.com/studio), version 3.0 or later
+* [Android Studio](https://developer.android.google.cn/studio), version 3.0 or later
 
-  [Android Studio](https://developer.android.com/studio)，3.0 或之后的版本
+  [Android Studio](https://developer.android.google.cn/studio)，3.0 或之后的版本
 
 Alternatively, you can also use IntelliJ:
 
@@ -123,7 +124,7 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
  1. Invoke **View > Command Palette...**.
 
-    打开 **查看 > 命令面板**。
+    打开 **查看 > 命令面板…**。
 
  1. Type "install", and select **Extensions: Install Extensions**.
 
@@ -141,11 +142,11 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
 ## Validate your setup with the Flutter Doctor
 
-## 通过 FLutter Doctor 验证安装
+## 通过 Flutter Doctor 命令验证是否安装成功
 
  1. Invoke **View > Command Palette...**.
 
-    打开 **查看 > 命令面板**。
+    打开 **查看 > 命令面板…**。
 
  1. Type "doctor", and select the **Flutter: Run Flutter Doctor**.
 

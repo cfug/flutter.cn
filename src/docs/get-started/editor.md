@@ -52,7 +52,7 @@ Android Studio offers a complete, integrated IDE experience for Flutter.
 
 Android Studio 为 Flutter 提供了一个完整的集成开发环境。
 
-* [Android Studio](https://developer.android.google.cn/studio), version 3.0 or later
+* [Android Studio](https://developer.android.com/studio), version 3.0 or later
 
   [Android Studio](https://developer.android.google.cn/studio)，3.0 或之后的版本
 

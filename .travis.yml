@@ -36,11 +36,21 @@ install:
 script:
   - ./tool/check-code.sh
   - ./tool/translator/build.sh
-  - ./tool/translator/deploy.sh
 
 after_script:
   - if [[ $TASK == *build* ]]; then ./tool/shared/check-links.sh --external || travis_terminate 1; fi
 
+deploy:
+  - provider: script
+    script: ./tool/translator/deploy.sh
+    skip_cleanup: true
+    on:
+      repo: cfug/flutter.cn
+      branch: master
+      condition: $TASK == *build*
+
+
 # Only run Travis jobs for named branches (to avoid double builds for each PR)
 branches:
   only: [master, /^\d\.x$/, /^\d-dev$/, /travis-build/]
+

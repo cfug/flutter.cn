@@ -19,7 +19,7 @@ highlighting, widget editing assists, run & debug support, and more.
 
 你可以使用任意文本编辑器，结合我们的命令行工具来开发 Flutter 应用。
 然而，我们推荐使用我们的编辑器插件以获取更好的开发体验。这些插件提供了代码补全、
-代码高亮、widget 辅助编辑，以及为项目的运行和调试提供支持等。
+代码高亮、widget 辅助编辑的功能，以及为项目的运行和调试提供支持等。
 
 Follow the steps below to add an editor plugin for Android Studio, IntelliJ, or
 VS Code. If you want to use a different editor, that's OK, skip ahead to the

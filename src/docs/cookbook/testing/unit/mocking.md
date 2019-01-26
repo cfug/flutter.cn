@@ -4,44 +4,31 @@ title: 使用 Mockito 模拟依赖关系
 short-title: Mocking
 ---
 
-In certain cases, unit tests may depend on classes that fetch data from live
-web services or databases. This is inconvenient for a few reasons:
+某些情况下，单元测试可能会依赖需要从线上 Web 服务或数据库中获取数据的类。这样会带来一些不便，原因如下： 
 
-  * Calling live services or databases will slow down test execution.
-  * A passing test may start failing if a web service or database returns
-  unexpected results. This is known as a "flaky test."
-  * It is difficult to test all possible success & failure scenarios using a
-  live web service or database.
+* 访问线上服务或数据库会拖慢测试执行效率。
+* 原本可以通过的测试可能会失败，因为 Web 服务或数据库可能会返回不符合预期的结果。这种情况被称作“flaky test”。
+* 使用线上 web 服务或数据库来测试很难覆盖全所有可能成功或失败的场景。
 
-Therefore, rather than relying on a live web service or database, we can "mock"
-these dependencies. Mocks allow us to emulate a live web service or database and
-return specific results depending on the situation.
+因此，最好不要依赖线上 web 服务或数据库，我们可以把这些依赖 “模拟（mock）”出来 。模拟（Mock）允许我们仿造一个线上服务或数据库，并且可以根据条件返回特定结果。
 
-Generally speaking, we can mock dependencies by creating an alternative
-implementation of a class. We can write these alternative implementations by
-hand or make use of the
-[Mockito package]({{site.pub-pkg}}/mockito) as a shortcut.
+通常来说，可以通过创建类的另一种实现来模拟（mock）这种依赖。类的另一种实现可以手写，也可以借助 [Mockito 包]({{site.pub-pkg}}/mockito)，后者简单一些。
 
-This recipe demonstrates the basics of mocking using the Mockito package.
-For more information, please see the
-[Mockito package documentation]({{site.pub-pkg}}/mockito).
+以下内容只介绍了 Mockito 包的基本用法，更多用法请参考 [Mockito 包文档]({{site.pub-pkg}}/mockito)。
 
-## Directions
+## 使用步骤
 
-  1. Add the `mockito` dependency
-  2. Create a function to test
-  3. Create a test file with a mock `http.Client`
-  4. Write a test for each condition
-  5. Run the tests
+1. 添加 `mockito` 依赖
+2. 创建一个要测试的函数
+3. 创建一个模拟了 `http.Client` 的测试文件
+4. 给每一个条件写一个测试
+5. 执行这些测试
 
-## 1. Add the `mockito` dependency
+1. 添加 `mockito` 依赖
 
-In order to use the `mockito` package, we first need to add it to our
-`pubspec.yaml` file along with the `flutter_test` dependency in the
-`dev_dependencies` section.
+为了使用 mockito 包，首先将其和 `flutter_test` 的依赖一起添加到 `pubspec.yaml` 文件的 `dev_dependencies` 部分：
 
-We'll also be using the `http` package in this example, and will define that
-dependency in the `dependencies` section.
+本例中还使用了 `http` 包，需要添加到 `dependencies` 部分：
 
 ```yaml
 dependencies:
@@ -52,20 +39,15 @@ dev_dependencies:
   mockito: <newest_version>
 ```
 
-## 2. Create a function to test
 
-In this example, we'll want to unit test the `fetchPost` function from the
-[Fetch data from the internet](/docs/cookbook/networking/fetch-data/) recipe. In
-order to test this function, we need to make two changes:
+2. 创建一个要测试的函数
 
-  1. Provide an `http.Client` to the function. This will allow us to provide the
-  correct `http.Client` depending on the situation. For Flutter and server-side
-  projects, we can provide an `http.IOClient`. For Browser apps, we can provide
-  an `http.BrowserClient`. For tests, we will provide a mock `http.Client`.
-  2. Use the provided `client` to fetch data from the internet, rather than the
-  static `http.get` method, which is difficult to mock.
+本例中，我们要对[获取网络数据](/docs/cookbook/networking/fetch-data/)章节的 `fetchPost` 函数进行单元测试。为了便于测试，我们需要做两个改动：
 
-The function should now look like this:
+1. 给函数提供一个 `http.Client`。这样的话我们可以在不同情形下提供相应的 `http.Client` 实例。如果是 Flutter 以及服务端项目，可以提供 `http.IOClient `。如果是浏览器应用，可以提供 `http.BrowserClient`。为了测试，我们要提供一个模拟的 `http.Client`。
+2. 使用上面提供的 `client` 来请求网络数据，不要用 `http.get` 这个静态方法，因为它比较难以模拟。
+
+函数经过改动之后：
 
 <!-- skip -->
 ```dart
@@ -83,21 +65,16 @@ Future<Post> fetchPost(http.Client client) async {
 }
 ```
 
-## 3. Create a test file with a mock `http.Client`
+3. 创建一个模拟了 http.Client 的测试文件
 
-Next, we'll need to create our test file along with a `MockClient` class.
-Following the advice in the
-[Introduction to unit testing](/docs/cookbook/testing/unit/) recipe, we will
-create a file called `fetch_post_test.dart` file in the root `test` folder.
+接下来，创建测试文件，我们需要在文件中创建 `MockitoClient` 类。遵循[单元测试介绍](/docs/cookbook/testing/unit/)章节的建议，我们在根目录下的 `test` 文件夹中创建一个名字为 `fetch_post_test.dart` 的文件。
 
-The `MockClient` class will implement the `http.Client` class. This will allow
-us to pass the `MockClient` to our `fetchPost` function, and allow us to return
-different http responses in each test.
+`MockClient` 类会实现 `http.Client` 类。如此一来，我们就可以把 `MockClient` 传给 `fetchPost` 函数，还可以在每个测试中返回不同的 http 请求结果。
 
 <!-- skip -->
 ```dart
-// Create a MockClient using the Mock class provided by the Mockito package.
-// We will create new instances of this class in each test.
+// 使用 Mockito 包提供的 Mock 类来创建 MockClient
+// 每个测试中我们都会创建一个新的 MockClient 实例。
 class MockClient extends Mock implements http.Client {}
 
 main() {
@@ -105,23 +82,20 @@ main() {
 }
 ```
 
-## 4. Write a test for each condition
+4. 给每一个条件写一个测试
 
-If we think about our `fetchPost` function, it will do one of two things:
+回过头来看，`fetchPost` 函数会完成下面两件事中的一件：
 
-  1. Return a `Post` if the http call succeeds
-  2. Throw an `Exception` if the http call fails
+1. 如果 http 请求成功，返回 `Post`。
+2. 如果 http 请求失败，抛出 `Exception`。
 
-Therefore, we'll want to test these two conditions. We can use the `MockClient`
-class to return an "Ok" response for the success test, and an error response
-for the unsuccessful test.
+因此，我们要测试这两种条件。可以使用 `MockClient` 类为成功的测试返回一个 "OK" 的请求结果，为不成功的测试返回一个错误的请求结果。
 
-To achieve this, we'll use the `when` function provided by Mockito.
+我们使用 Mockito 的 `when` 函数来达到以上目的：
 
-<!-- skip -->
 ```dart
-// Create a MockClient using the Mock class provided by the Mockito package.
-// We will create a new instances of this class in each test.
+// 使用 Mockito 包提供的 Mock 类来创建 MockClient
+// 每个测试中我们都会创建一个这个类的新实例。
 class MockClient extends Mock implements http.Client {}
 
 main() {
@@ -129,8 +103,7 @@ main() {
     test('returns a Post if the http call completes successfully', () async {
       final client = MockClient();
 
-      // Use Mockito to return a successful response when it calls the
-      // provided http.Client
+      // 调用外部提供的 http.Client 时，用 Mockito 返回请求成功的结果。
       when(client.get('https://jsonplaceholder.typicode.com/posts/1'))
           .thenAnswer((_) async => http.Response('{"title": "Test"}', 200));
 
@@ -149,26 +122,16 @@ main() {
     });
   });
 }
-```
 
-### 5. Run the tests
+5. 执行测试
 
-Now that we have a `fetchPost` function with tests in place, we can run the
-tests!
+现在我们有了一个带测试的 `fetchPost` 函数，开始执行测试！
 
 ```terminal
 $ flutter test test/counter_test.dart
 ```
 
-You can also run tests inside your favorite editor by following the instructions
-in the
-[Introduction to unit testing](/docs/cookbook/testing/unit#run-tests-using-intellij-or-vscode)
-recipe.
+你也可以参考[单元测试介绍](/docs/cookbook/testing/unit#run-tests-using-intellij-or-vscode)章节用自己喜欢的编辑器来执行测试。
 
-### Summary
-
-In this example, we've learned how to use Mockito to test functions or classes
-that depend on web services or databases. This is only a short introduction to
-the Mockito library and the concept of mocking. For more information, please
-see the documentation provided by the
-[Mockito package](https://pub.dartlang.org/packages/mockito).
+### 总结
+通过本例，我们已经学会了如何用 Mockito 来测试对 web 服务或数据库有依赖的函数或者是类。这里只是简短地介绍了 Mockito 库以及模拟（mocking）的概念。更多内容请移步至[Mockito包](https://pub.dartlang.org/packages/mockito)。

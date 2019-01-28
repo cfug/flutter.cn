@@ -93,6 +93,7 @@ main() {
 
 我们使用 Mockito 的 `when` 函数来达到以上目的：
 
+<!-- skip -->
 ```dart
 // 使用 Mockito 包提供的 Mock 类来创建 MockClient
 // 每个测试中我们都会创建一个这个类的新实例。

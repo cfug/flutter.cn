@@ -24,7 +24,7 @@ short-title: Mocking
 4. 给每一个条件写一个测试
 5. 执行这些测试
 
-1. 添加 `mockito` 依赖
+### 1. 添加 `mockito` 依赖
 
 为了使用 mockito 包，首先将其和 `flutter_test` 的依赖一起添加到 `pubspec.yaml` 文件的 `dev_dependencies` 部分：
 
@@ -40,7 +40,7 @@ dev_dependencies:
 ```
 
 
-2. 创建一个要测试的函数
+### 2. 创建一个要测试的函数
 
 本例中，我们要对[获取网络数据](/docs/cookbook/networking/fetch-data/)章节的 `fetchPost` 函数进行单元测试。为了便于测试，我们需要做两个改动：
 
@@ -65,7 +65,7 @@ Future<Post> fetchPost(http.Client client) async {
 }
 ```
 
-3. 创建一个模拟了 http.Client 的测试文件
+### 3. 创建一个模拟了 http.Client 的测试文件
 
 接下来，创建测试文件，我们需要在文件中创建 `MockitoClient` 类。遵循[单元测试介绍](/docs/cookbook/testing/unit/)章节的建议，我们在根目录下的 `test` 文件夹中创建一个名字为 `fetch_post_test.dart` 的文件。
 
@@ -82,7 +82,7 @@ main() {
 }
 ```
 
-4. 给每一个条件写一个测试
+### 4. 给每一个条件写一个测试
 
 回过头来看，`fetchPost` 函数会完成下面两件事中的一件：
 
@@ -123,8 +123,9 @@ main() {
     });
   });
 }
+```
 
-5. 执行测试
+### 5. 执行测试
 
 现在我们有了一个带测试的 `fetchPost` 函数，开始执行测试！
 

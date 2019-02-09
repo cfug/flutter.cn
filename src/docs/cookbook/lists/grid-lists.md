@@ -1,15 +1,20 @@
 ---
 title: Creating a Grid List
 title: 创建一个网格列表
+prev:
+  title: Create a horizontal list
+  path: /docs/cookbook/lists/horizontal-list
+next:
+  title: Creating lists with different types of items
+  path: /docs/cookbook/lists/mixed-list
 ---
 
 In some cases, you might want to display your items as a Grid rather than
 a normal list of items that come one after the next. For this task, we'll employ
-the [`GridView`](https://docs.flutter.io/flutter/widgets/GridView-class.html)
-Widget.
+the [`GridView`]({{site.api}}/flutter/widgets/GridView-class.html) Widget.
 
 The simplest way to get started using grids is by using the
-[`GridView.count`](https://docs.flutter.io/flutter/widgets/GridView/GridView.count.html)
+[`GridView.count`]({{site.api}}/flutter/widgets/GridView/GridView.count.html)
 constructor, because it allow us to specify how many rows or columns we'd like.
 
 In this example, we'll generate a List of 100 Widgets that display their

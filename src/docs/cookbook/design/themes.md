@@ -5,6 +5,12 @@ short-title: Themes
 short-title: Themes
 description: How to share colors and font styles throughout an app using Themes.
 description: 学习如何使用 Themes 统一颜色和字体风格。
+prev:
+  title: Updating the UI based on orientation
+  path: /docs/cookbook/design/orientation
+next:
+  title: Using custom fonts
+  path: /docs/cookbook/design/fonts
 ---
 
 In order to share colors and font styles throughout our app, we can take
@@ -21,7 +27,7 @@ colors and font styles for AppBars, Buttons, Checkboxes, and more.
 
 In order to share a Theme containing colors and font styles across our entire
 app, we can provide
-[`ThemeData`](https://docs.flutter.io/flutter/material/ThemeData-class.html)
+[`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html)
 to the `MaterialApp` constructor.
 
 If no `theme` is provided, Flutter creates a fallback theme under the hood.
@@ -50,7 +56,7 @@ MaterialApp(
 );
 ```
 
-Please see the [ThemeData](https://docs.flutter.io/flutter/material/ThemeData-class.html)
+Please see the [ThemeData]({{site.api}}/flutter/material/ThemeData-class.html)
 documentation to see all of the colors and fonts you can define.
 
 ## Themes for part of an application
@@ -84,7 +90,7 @@ Theme(
 
 Rather than overriding everything, it often makes sense to extend the parent
 theme. We can achieve this by using the
-[`copyWith`](https://docs.flutter.io/flutter/material/ThemeData/copyWith.html)
+[`copyWith`]({{site.api}}/flutter/material/ThemeData/copyWith.html)
 method.
 
 <!-- skip -->

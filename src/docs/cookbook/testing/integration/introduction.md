@@ -1,6 +1,12 @@
 ---
 title: An introduction to integration testing
 short-title: Introduction
+prev:
+  title: Storing key-value data on disk
+  path: /docs/cookbook/persistence/key-value
+next:
+  title: Performance profiling
+  path: /docs/cookbook/testing/integration/profiling
 ---
 
 Unit tests and Widget tests are handy for testing individual classes, functions,
@@ -13,7 +19,7 @@ real device or emulator and then "drive" the application from a separate test
 suite, checking to make sure everything is correct along the way.
 
 To create this test pair, we can use the
-[flutter_driver](https://docs.flutter.io/flutter/flutter_driver/flutter_driver-library.html)
+[flutter_driver]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html)
 package. It provides tools to create instrumented apps and drive those apps
 from a test suite.
 
@@ -37,7 +43,7 @@ counter app produced by the `flutter create` command. This app allows
 a user to tap on a button to increase a counter.
 
 Furthermore, we'll also need to provide a
-[`ValueKey`](https://docs.flutter.io/flutter/foundation/ValueKey-class.html) to
+[`ValueKey`]({{site.api}}/flutter/foundation/ValueKey-class.html) to
 the `Text` and `FloatingActionButton` Widgets. This allows us to identify
 and interact with these specific Widgets inside the test suite.
 
@@ -182,7 +188,7 @@ Now that we have an instrumented app, we can write tests for it! This
 will involve four steps:
 
   1. Create
-  [`SeralizableFinders`](https://docs.flutter.io/flutter/flutter_driver/CommonFinders-class.html)
+  [`SeralizableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html)
   to locate specific Widgets
   2. Connect to the app before our tests run in the `setUpAll` function
   3. Test the important scenarios

@@ -26,7 +26,7 @@ if [[ ! -d "/tmp/flutter-docs-cn" ]]
 then
     git clone git@github.com:cfug/flutter.cn-prebuilt.git /tmp/flutter-docs-cn
 else
-    rm -rf /tmp/flutter-docs-cn
+    rm -rf /tmp/flutter-docs-cn/
     git clone git@github.com:cfug/flutter.cn-prebuilt.git /tmp/flutter-docs-cn
 fi
 

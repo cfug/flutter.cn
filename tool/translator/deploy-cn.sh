@@ -25,6 +25,9 @@ gulp postprocess
 if [[ ! -d "/tmp/flutter-docs-cn" ]]
 then
     git clone git@github.com:cfug/flutter.cn-prebuilt.git /tmp/flutter-docs-cn
+else
+    rm -rf /tmp/flutter-docs-cn
+    git clone git@github.com:cfug/flutter.cn-prebuilt.git /tmp/flutter-docs-cn
 fi
 
 cp -r _site/* /tmp/flutter-docs-cn/
@@ -34,6 +37,7 @@ cd /tmp/flutter-docs-cn
 
 git init
 git add .
+git remote add origin git@github.com:cfug/flutter.cn-prebuilt.git
 git commit --allow-empty -am "${commitMessage}"
 
 git push -u -f origin master

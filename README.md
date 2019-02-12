@@ -1,4 +1,4 @@
-# [Flutter][]'s website <img src="https://flutter.io/images/flutter-mark-square-100.png" width="5%">
+# [Flutter][]'s website ![Flutter logo][]
 
 [![Build Status][]][Repo on Travis]
 
@@ -20,7 +20,7 @@ If you want/need to build, read on.
 
 Install the following tools if you don't have them already.
 
-- **bash**, the Bourne shell. These instructions assume you're using `bash` -- setup might not work using other shells.
+- **bash**, the Bourne shell. These instructions assume you're using `bash` -- setup might not work if you use another shell.
 - **[nvm][]**, the Node Version Manager.
 - **[rvm][]**, the Ruby Version Manager.
 - **[Flutter][Flutter install]**
@@ -30,9 +30,9 @@ Install the following tools if you don't have them already.
 carefully. In particular, configure your shell/environment so
 that the tools are available in every terminal/command window you create.
 
-### 2. Clone this repo _and_ its submodule
+### 2. Clone this repo _and_ its submodules
 
-> NOTE: This repo has a git _submodule_, which affects how you clone it.
+> NOTE: This repo has git _submodules_, which affects how you clone it.
 
 To **clone [this repo][]**, follow the instructions given in the
 GitHub help on [Cloning a repository][], and _choose one_ of the following
@@ -45,9 +45,8 @@ submodule-cloning techniques:
   this command from the repo root:<br>
   `git submodule update --init --remote`
 
-> IMPORTANT:
-> Whenever you update your repo, update the submodule as well:<br>
-> `git pull; git submodule update --init --remote`
+> NOTE: At any time during development you can use the submodule command to
+> refresh submodules: &nbsp;`git pull; git submodule update --init --remote`
 
 ### 3. Run installation scripts
 
@@ -73,30 +72,24 @@ if you already have the required packages installed.
 ## Developing
 
  1. Create a branch.
-
  1. Make your changes.
-
  1. Test your changes by serving the site locally. Run either **one** of these commands:
-
     - `./tool/serve.sh`
 
     or
-
     - `bundle exec jekyll serve --incremental --watch --livereload --port 4002`
 
       **Note**: Unless you're editing files under `site-shared`, you can safely
       ignore `ERROR: directory is already being watched` messages.
       For details, see [#1363](https://github.com/flutter/website/issues/1363).
-
  1. Prior to submitting, validate site links:<br>
     `./tool/shared/check-links.sh`
-    
-> TIP:
-> Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
-> happen when you pull from master and lots of image files have moved.) To fix this,
-> stop the `serve.sh` script, remove the generated site files by hand, and then
-> restart the `serve.sh` script:
-> 
+
+> TIP: Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
+> happen, for example, when you pull from master and lots of files have moved.)
+> To fix Jekyll, stop the `serve.sh` script, remove the generated site files by
+> hand, and then restart the `serve.sh` script:
+>
 > ```
 > ^C
 > $ rm -Rf ./_site/* ./.jekyll*
@@ -126,25 +119,25 @@ You can deploy your local edits to a personal staging site as follows (steps 1 a
     Now using alias staging (<your project name>)
     ```
 
- 1. Tell Firebase to deploy:
+Alternatively, you can skip the previous steps and just use the deploy script:
 
-    ```console
-    $ ./tool/shared/deploy.sh --local my-foo
+```console
+$ ./tool/shared/deploy.sh --local my-foo
 
-    === Deploying to '<your project name>'...
+=== Deploying to '<your project name>'...
 
-    i  deploying hosting
-    i  hosting: preparing _site directory for upload...
-    ✔  hosting: 213 files uploaded successfully
-    i  starting release process (may take several minutes)...
+i  deploying hosting
+i  hosting: preparing _site directory for upload...
+✔  hosting: 213 files uploaded successfully
+i  starting release process (may take several minutes)...
 
-    ✔  Deploy complete!
-    ```
+✔  Deploy complete!
+```
 
 ## Deploying to the official site
 
-Deploy to the `default` firebase project (hosting the official site) using this
-command:
+Usually, official site deploys are performed by Travis. In the event that you
+need to manually deploy, use the deploy script and the `default` project:
 
 ```
 ./tool/shared/deploy.sh --local --robots ok default
@@ -170,7 +163,7 @@ class ExampleWidget extends StatelessWidget {
 }
 ```
 
-## Advanced stylization of code blocks
+## (Deprecated) Advanced stylization of code blocks
 
 Do you want to highlight (make the background yellow)
 code inside a code block? Do you want to strike-through
@@ -209,18 +202,7 @@ The `prettify` plugin will also unindent your code.
 If you want to see how this functionality was added to this site, refer to
 [this commit](https://github.com/flutter/website/commit/ea15f52fe47d3a7b6313ac58d07c66f3b29fe74d).
 
-## Including a region of a file
-
-You can include a specific range of lines from a file:
-
-```ruby
-{% include includelines filename=PATH start=INT count=INT %}
-```
-
-`PATH` must be inside of `_include`. If you are including source code,
-place that code into `_include/code` to follow our convention.
-
-## Code snippet validation
+## (Deprecated) Code snippet validation
 
 The code snippets in the markdown documentation are validated as part of the
 build process. Anything within a '\`\`\`dart' code fence will be extracted into
@@ -237,7 +219,7 @@ its own file and checked for analysis issues. Some ways to tweak that:
 
 [Flutter]: https://flutter.io
 
-## Updating the Sample Catalog
+## (Deprecated) Updating the Sample Catalog
 
 The sample catalog's markdown files are generated by running [sample_page.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/bin/sample_page.dart) from the Flutter github repo. Starting from the root of the Flutter repo:
 ```
@@ -259,6 +241,7 @@ The `sample_page.dart` app will print a list of all of the `"sample"` properties
 [Cloning a repository]: https://help.github.com/articles/cloning-a-repository
 [Dart install]: https://www.dartlang.org/install
 [Flutter install]: /get-started/install
+[Flutter logo]: https://github.com/dart-lang/site-shared/blob/master/src/_assets/image/flutter/icon/64.png?raw=1
 [Firebase]: https://firebase.google.com/
 [first-timers SVG]: https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square
 [first-timers]: https://www.firsttimersonly.com/

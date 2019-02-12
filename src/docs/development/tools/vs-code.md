@@ -18,8 +18,8 @@ description: 如何在 VS Code 里开发 Flutter 应用。
 
 ## Installation and setup
 
-Follow the [Set up an editor](/docs/get-started/editor?ide=vscode) instructions to
-install the Dart and Flutter extensions (also called plugins).
+Follow the [Set up an editor](/docs/get-started/editor?ide=vscode)
+instructions to install the Dart and Flutter extensions (also called plugins).
 
 ### Updating the extension {#updating}
 
@@ -29,8 +29,8 @@ VS Code automatically updates extensions when updates are available.
 To install updates manually:
 
  1. Click on the Extensions button in the Side Bar
- 1. If the Flutter extension is shown with an available update, click the update button and then
-    the reload button
+ 1. If the Flutter extension is shown with an available update,
+    click the update button and then the reload button
 
 ## Creating projects
 
@@ -57,8 +57,8 @@ The Flutter extension performs code analysis that enables:
 
 * Syntax highlighting.
 * Code completions based on rich type analysis.
-* Navigating to type declarations (**Go to Definition** or `F12`), and finding type
-  usages (**Find All References** or `Shift`+`F12`).
+* Navigating to type declarations (**Go to Definition** or `F12`),
+  and finding type usages (**Find All References** or `Shift`+`F12`).
 * Viewing all current source code problems
   (**View > Problems** or `Ctrl`+`Shift`+`M` (`Cmd`+`Shift`+`M` on macOS)).
   Any analysis issues are shown in the Problems pane:<br>
@@ -66,8 +66,8 @@ The Flutter extension performs code analysis that enables:
 
 ## Running and Debugging
 
-Start debugging by clicking **Debug > Start Debugging** from the main IDE window or
-press `F5`.
+Start debugging by clicking **Debug > Start Debugging** from the main
+IDE window or press `F5`.
 
 ### Selecting a target device
 
@@ -132,7 +132,8 @@ During a debug session, several additional debugging commands are added to the
 ### Debugging with Observatory
 
 Observatory is an additional debugging and profiling tool presented with an
-html-based UI. For details see the [Observatory page](https://dart-lang.github.io/observatory/).
+html-based UI. For details see the [Observatory
+page](https://dart-lang.github.io/observatory/).
 
 To open Observatory:
 
@@ -217,7 +218,7 @@ command from the [Command Palette][], or press `Ctrl`+`F5`.
 ### Known issues and feedback
 
 All known bugs are tracked in the issue tracker: [Dart and Flutter extensions GitHub issue
-tracker](https://github.com/Dart-Code/Dart-Code/issues).
+tracker]({{site.github}}/Dart-Code/Dart-Code/issues).
 
 We very much welcome feedback, both on bugs/issues and feature requests. Prior
 to filing new issues:

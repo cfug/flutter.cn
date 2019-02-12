@@ -1,6 +1,13 @@
 ---
 title: Performance profiling with integration tests
 title: 性能分析
+title: Performance profiling
+prev:
+  title: An introduction to integration testing
+  path: /docs/cookbook/testing/integration/introduction
+next:
+  title: Scrolling
+  path: /docs/cookbook/testing/integration/scrolling
 ---
 
 When it comes to mobile apps, performance is critical to user experience. Users

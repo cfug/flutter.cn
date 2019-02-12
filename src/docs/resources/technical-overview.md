@@ -21,18 +21,18 @@ typography, icons, and more.
 <object type="image/svg+xml" data="/images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 
 This is a demo app from the
-[Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
+[Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
 a collection of Flutter sample apps you can run after installing Flutter
 and setting up your environment. Shrine has high-quality scrolling images,
 interactive cards, buttons, dropdown lists, and a shopping cart page.
 To look at the single codebase for this and more examples,
 [visit our GitHub
-repository](https://github.com/flutter/flutter/tree/master/examples).
+repository]({{site.github}}/flutter/flutter/tree/master/examples).
 
 这是一个来自 [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo) 的示例应用，Gallery 是一个在安装完 Flutter 并配置好环境后可以立即运行的 Flutter 示例应用集合。Shrine 有高质量的滚动图片、交互式卡片、按钮、下拉列表以及一个购物车页面。[访问我们的 GitHub 项目](https://github.com/flutter/flutter/tree/master/examples)以查看该应用的代码库与更多示例。
 
 No mobile development experience is required to get started. Apps are written
-in [Dart](https://www.dartlang.org), which looks familiar if you've used a
+in [Dart]({{site.dart-site}}), which looks familiar if you've used a
 language like Java or JavaScript. Experience with object-oriented languages
 is definitely helpful, but even non-programmers have made Flutter apps!
 
@@ -121,15 +121,16 @@ compares the new and old widgets and efficiently updates the user interface.
 #### 组合 > 继承
 
 Widgets are themselves often composed of many small, single-purpose widgets that
-combine to produce powerful effects.  For example, [Container](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/container.dart),
+combine to produce powerful effects.  For example,
+[Container]({{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/container.dart),
 a commonly-used widget, is made up of several widgets responsible for layout,
 painting, positioning, and sizing. Specifically, Container is made up of
-[LimitedBox](https://docs.flutter.io/flutter/widgets/LimitedBox-class.html),
-[ConstrainedBox](https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html),
-[Align](https://docs.flutter.io/flutter/widgets/Align-class.html),
-[Padding](https://docs.flutter.io/flutter/widgets/Padding-class.html),
-[DecoratedBox](https://docs.flutter.io/flutter/widgets/DecoratedBox-class.html),
-and [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html)
+[LimitedBox]({{site.api}}/flutter/widgets/LimitedBox-class.html),
+[ConstrainedBox]({{site.api}}/flutter/widgets/ConstrainedBox-class.html),
+[Align]({{site.api}}/flutter/widgets/Align-class.html),
+[Padding]({{site.api}}/flutter/widgets/Padding-class.html),
+[DecoratedBox]({{site.api}}/flutter/widgets/DecoratedBox-class.html),
+and [Transform]({{site.api}}/flutter/widgets/Transform-class.html)
 widgets.  Rather than subclassing Container to produce a customized effect, you
 can compose these, and other, simple widgets in novel ways.
 
@@ -170,7 +171,7 @@ Flutter 框架由一系列层结构组成，每一层都建立在前一层之上
 The upper layers of the framework are used more frequently than the lower
 layers. For the complete set of libraries that make up
 the Flutter's layered framework, see our
-[API documentation](https://docs.flutter.io).
+[API documentation]({{site.api}}).
 
 框架上层会比下层使用的更频繁。有关组成 Flutter 层次框架的完整库集可以参阅我们的 [API 文档](https://docs.flutter.io)。
 
@@ -200,17 +201,17 @@ wish into the lower layers.
 ### 构建 widget
 
 You define the unique characteristics of a widget by implementing a
-[build](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
+[build]({{site.api}}/flutter/widgets/StatelessWidget/build.html)
 function that returns a tree (or hierarchy) of widgets. This tree represents
 the widget's part of the user interface in more concrete terms.
 For example, a toolbar widget might have a build function that returns
-a [horizontal layout](https://docs.flutter.io/flutter/widgets/Row-class.html)
-of some [text](https://docs.flutter.io/flutter/widgets/Text-class.html) and
-[various](https://docs.flutter.io/flutter/material/IconButton-class.html)
-[buttons](https://docs.flutter.io/flutter/material/PopupMenuButton-class.html).
+a [horizontal layout]({{site.api}}/flutter/widgets/Row-class.html)
+of some [text]({{site.api}}/flutter/widgets/Text-class.html) and
+[various]({{site.api}}/flutter/material/IconButton-class.html)
+[buttons]({{site.api}}/flutter/material/PopupMenuButton-class.html).
 The framework then recursively asks each of these widgets to build until the
 process bottoms out in [fully concrete
-widgets](https://docs.flutter.io/flutter/widgets/RenderObjectWidget-class.html),
+widgets]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html),
 which the framework then stitches together into a tree.
 
 你可以通过完善 [build](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html) 函数来定义一个 widget 拥有的特性，该函数返回一个 widget 树（或者层次结构）。该树通过更具体的方式来表示用户界面上的 widget 部分。例如，一个 toolbar widget 可能会有一个返回一些[水平布局](https://docs.flutter.io/flutter/widgets/Row-class.html)[文本](https://docs.flutter.io/flutter/widgets/Text-class.html)和[各种](https://docs.flutter.io/flutter/material/IconButton-class.html)[按钮](https://docs.flutter.io/flutter/material/PopupMenuButton-class.html)的构建函数。框架会递归地去构建这些 widget 直到达到最底层[完全具象的 widget](https://docs.flutter.io/flutter/widgets/RenderObjectWidget-class.html)，然后将它们拼接成一棵树。
@@ -243,21 +244,21 @@ needs to be rebuilt to update the UI.
 如果一个 widget 的特性需要根据用户交互或其他因素改变，那么这个 widget 是*有状态*的。例如，如果一个 widget 包含一个随用户点击按钮而递增的计数器，则计数器的值便是 widget 的状态。当该值更改时，则需要重新构建 widget 以更新 UI。
 
 These widgets subclass
-[StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
+[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
 (rather than
-[StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html))
+[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html))
 and store their mutable state in a subclass of
-[State](https://docs.flutter.io/flutter/widgets/State-class.html).
+[State]({{site.api}}/flutter/widgets/State-class.html).
 
 这些 widget 继承自 [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)（而不是 [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html)）并将它们可变的状态存储在 [State](https://docs.flutter.io/flutter/widgets/State-class.html) 的一个子类中。
 
 <object type="image/svg+xml" data="/images/whatisflutter/diagram-state.svg" style="width: 85%; height: 85%"></object>
 
 Whenever you mutate a State object (e.g., increment the counter), you must call
-[setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() to
+[setState]({{site.api}}/flutter/widgets/State/setState.html)() to
 signal the framework to update the user interface by calling the State's build
-method again. For an example of managing state, see the
-[MyApp template](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl)
+method again. For an example of managing state, see the [MyApp
+template]({{site.github}}/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl)
 that's created with each new Flutter project.
 
 不论何时你操作一个 State 对象（例如，递增计数器），你必须调用 [setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() 来通知框架通过重新调用 State 的构建函数，以此达到更新用户界面的目的。有关状态管理的示例，可以查看随着任何一个新 Flutter 项目生成的 [MyApp 模版](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl)。
@@ -287,9 +288,9 @@ Next steps:
 
 1.  [Follow the Flutter Getting Started guide](/docs/get-started).
     [查阅 Flutter 上手指南](/docs/get-started)。
-1.  Try [Building Layouts in Flutter](/docs/development/ui/layout) and
+1.  Try [Building Layouts tutorial](/docs/development/ui/layout/tutorial) and
     [Adding Interactivity to Your Flutter App](/docs/development/ui/interactive).
-    尝试[在 Flutter 中构建布局](/docs/development/ui/layout)及[为你的 Flutter 应用添加交互](/docs/development/ui/interactive)。
+    尝试[布局构建教程](/docs/development/ui/layout)及[为你的 Flutter 应用添加交互](/docs/development/ui/interactive)。
 1.  Follow a detailed example in [Tour of the Widget
     Framework](/docs/development/ui/widgets-intro).
     跟着 [Widget 介绍](/docs/development/ui/widgets-intro)中的详细示例做一做。
@@ -315,8 +316,8 @@ We're open source and would love to hear from you.
   [关注我们的推特：@flutterio](https://twitter.com/flutterio/)
 
 
-[issues]: https://github.com/flutter/flutter/issues
-[apidocs]: https://docs.flutter.io
-[so]: https://stackoverflow.com/tags/flutter
-[mailinglist]: https://groups.google.com/d/forum/flutter-dev
+[issues]: {{site.github}}/flutter/flutter/issues
+[apidocs]: {{site.api}}
+[so]: {{site.so}}/tags/flutter
+[mailinglist]: {{site.groups}}/d/forum/flutter-dev
 [gitter]: https://gitter.im/flutter/flutter

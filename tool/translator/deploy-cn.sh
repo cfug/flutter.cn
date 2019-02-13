@@ -42,3 +42,5 @@ git commit --allow-empty -am "${commitMessage}"
 git push -u -f origin master
 
 cd -
+
+rm -rf /tmp/flutter-docs-cn/index.html && rm -rf /tmp/flutter-docs-cn/robots.txt && rm -rf /tmp/flutter-docs-cn/CNAME

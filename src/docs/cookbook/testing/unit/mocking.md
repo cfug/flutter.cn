@@ -58,7 +58,7 @@ For more information, please see the
 
   1. Add the `mockito` dependency
 
-     添加 `mockito` 依赖
+     添加 `mockito` 和 `test` 依赖
 
   2. Create a function to test
 
@@ -96,8 +96,7 @@ dependency in the `dependencies` section.
 dependencies:
   http: <newest_version>
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  test: <newest_version>
   mockito: <newest_version>
 ```
 
@@ -249,7 +248,7 @@ run the tests.
 现在我们有了一个带测试的 `fetchPost` 函数，开始执行测试！
 
 ```terminal
-$ flutter test test/counter_test.dart
+$ dart test/fetch_post_test.dart
 ```
 
 You can also run tests inside your favorite editor by following the

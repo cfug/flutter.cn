@@ -10,13 +10,13 @@ title: 技术概览
 Flutter is a mobile app SDK for building high-performance, high-fidelity,
 apps for iOS and Android, from a single codebase.
 
-Flutter 是一款移动应用 SDK，可通过单一代码库构建高性能、高质量的 iOS 和 Android 应用。
+Flutter 是 Google 用以帮助开发者通过一套代码，在 iOS 和 Android 两个平台开发高质量原生 UI 的移动 SDK。
 
 The goal is to enable developers to deliver high-performance apps that feel
 natural on different platforms. We embrace differences in scrolling behaviors,
 typography, icons, and more.
 
-它的目的是帮助开发者分发在不同平台都表现良好的高性能应用。我们接受应用在滚动操作、排版、图标以及其他方面的差异。
+Flutter 旨在帮助开发者创作媲美原生的高性能应用，并遵从了各个平台不同的滚动行为、排版布局、图标样式等。
 
 <object type="image/svg+xml" data="/images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 

@@ -237,6 +237,9 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。用这种方式执行
 
 
   * **IntelliJ**
+  
+  * **IntelliJ**
+
     1. Open the `counter_test.dart` file
 
        打开文件 `counter_test.dart`
@@ -254,6 +257,9 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。用这种方式执行
        *或者，也可以使用快捷键!*
 
   * **VSCode**
+  
+  * **VSCode**
+
     1. Open the `counter_test.dart` file
 
        打开文件 `counter_test.dart`

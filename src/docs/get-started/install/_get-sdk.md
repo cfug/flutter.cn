@@ -34,7 +34,7 @@
  1. Add the `flutter` tool to your path:
 
     ```terminal
-    $ export PATH=$PATH:`pwd`/flutter/bin
+    $ export PATH="$PATH:`pwd`/flutter/bin"
     ```
 
     This command sets your `PATH` variable for the _current_ terminal window only.
@@ -69,7 +69,7 @@ For example:
     • Android SDK at /Users/obiwan/Library/Android/sdk
     <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
     • Try re-installing or updating your Android SDK,
-      visit https://flutter.io/setup/#android-setup for detailed instructions.
+      visit {{site.url}}/setup/#android-setup for detailed instructions.
 </pre>
 
 The following sections describe how to perform these tasks and finish the setup

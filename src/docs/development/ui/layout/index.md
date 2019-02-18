@@ -1,435 +1,20 @@
 ---
-title: Building Layouts
-title: 布局构建
+title: Layouts in Flutter
+title: Flutter 中的布局
+short-title: Layout
+short-title: 布局
 description: Learn how Flutter's layout mechanism works and how to build a layout.
 description: 了解 Flutter 的布局机制和如何构建布局。
 diff2html: true
 ---
 
-{% comment %}
-  TODO: address https://github.com/flutter/website/issues/2154 by adjusting the
-  definitions of the code and file Liquid variables below. Eventually consolidate
-  with examples and exFile.
-{% endcomment -%}
-
-{% assign api = 'https://docs.flutter.io/flutter' -%}
-
+{% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 {% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
 {% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/examples/flutter_gallery/lib/demo {%- endcapture -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
-
-{{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
-
-  * How Flutter's layout mechanism works.
-  * How to lay out widgets vertically and horizontally.
-  * How to build a Flutter layout.
-{{site.alert.end}}
-
-This is a guide to building layouts in Flutter.
-You'll build the layout for the following app:
-
-{% include app-figure.md img-class="site-mobile-screenshot border"
-    image="ui/layout/lakes.jpg" caption="The finished app" %}
-
-This guide then takes a step back to explain Flutter's approach to layout,
-and shows how to place a single widget on the screen.
-After a discussion of how to lay widgets out horizontally and vertically,
-some of the most common layout widgets are covered.
-
-## Building a layout
-
-If you want a "big picture" understanding of the layout mechanism,
-start with [Flutter's approach to layout](#flutters-approach-to-layout).
-
-### Step 0: Create the app base code
-
-Make sure you've [set up](/docs/get-started/install) your environment,
-then do the following:
-
- 1. [Create a basic "Hello World" Flutter app][hello-world].
- 2. Change the app bar title and the app title as follows:
-
-    <?code-excerpt "codelabs/startup_namer/1-base/lib/main.dart" diff-with="layout/lakes/step0/lib/main.dart"?>
-    ```diff
-    --- codelabs/startup_namer/1-base/lib/main.dart
-    +++ layout/lakes/step0/lib/main.dart
-    @@ -6,10 +6,10 @@
-       @override
-       Widget build(BuildContext context) {
-         return MaterialApp(
-    -      title: 'Welcome to Flutter',
-    +      title: 'Flutter Layout Demo',
-           home: Scaffold(
-             appBar: AppBar(
-    -          title: Text('Welcome to Flutter'),
-    +          title: Text('Top Lakes'),
-             ),
-             body: Center(
-               child: Text('Hello World'),
-    ```
-
-[hello-world]: /docs/get-started/codelab#step-1-create-the-starter-flutter-app
-
-### Step 1: Diagram the layout
-
-The first step is to break the layout down to its basic elements:
-
-* Identify the rows and columns.
-* Does the layout include a grid?
-* Are there overlapping elements?
-* Does the UI need tabs?
-* Notice areas that require alignment, padding, or borders.
-
-First, identify the larger elements. In this example, four elements are
-arranged into a column: an image, two rows, and a block of text.
-
-{% include app-figure.md img-class="site-mobile-screenshot border"
-    image="ui/layout/lakes-column-elts.png" caption="Column elements (circled in red)" %}
-
-Next, diagram each row. The first row, called the Title
-section, has 3 children: a column of text, a star icon,
-and a number. Its first child, the column, contains 2 lines of text.
-That first column takes a lot of space, so it must be wrapped in an
-Expanded widget.
-
-{% include app-figure.md image="ui/layout/title-section-parts.png" alt="Title section" %}
-
-The second row, called the Button section, also has
-3 children: each child is a column that contains an icon and text.
-
-{% include app-figure.md image="ui/layout/button-section-diagram.png" alt="Button section" %}
-
-Once the layout has been diagrammed, it's easiest to take a bottom-up
-approach to implementing it. To minimize the visual
-confusion of deeply nested layout code, place some of the implementation
-in variables and functions.
-
-### Step 2: Implement the title row
-
-<?code-excerpt path-base="layout/lakes/step2"?>
-
-First, you'll build the left column in the title section. Add the following code
-at the top of the `build()` method of the `MyApp` class:
-
-{% code_excerpt "lib/main.dart (titleSection)" %}
-Widget titleSection = Container(
-  padding: const EdgeInsets.all(32.0),
-  child: Row(
-    children: [
-      Expanded(
-        /*1*/
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /*2*/
-            Container(
-              padding: const EdgeInsets.only(bottom: 8.0),
-              child: Text(
-                'Oeschinen Lake Campground',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Text(
-              'Kandersteg, Switzerland',
-              style: TextStyle(
-                color: Colors.grey[500],
-              ),
-            ),
-          ],
-        ),
-      ),
-      /*3*/
-      Icon(
-        Icons.star,
-        color: Colors.red[500],
-      ),
-      Text('41'),
-    ],
-  ),
-);
-{% endcode_excerpt %}
-
-{:.numbered-code-notes}
- 1. Putting a Column inside an Expanded widget stretches the column to use all
-    remaining free space in the row. Setting the `crossAxisAlignment` property to
-    `CrossAxisAlignment.start` positions the column at the start of the row.
- 2. Putting the first row of text inside a Container enables you to add padding.
-    The second child in the Column, also text, displays as grey.
- 3. The last two items in the title row are a star icon, painted red,
-    and the text "41". The entire row is in a Container and padded
-    along each edge by 32 pixels.
-
-Add the title section to the app body like this:
-
-<?code-excerpt path-base="layout/lakes"?>
-<?code-excerpt "step0/lib/main.dart" diff-with="step2/lib/main.dart" from="return MaterialApp"?>
-```diff
---- step0/lib/main.dart
-+++ step2/lib/main.dart
-@@ -8,11 +46,13 @@
-     return MaterialApp(
-       title: 'Flutter Layout Demo',
-       home: Scaffold(
-         appBar: AppBar(
-           title: Text('Top Lakes'),
-         ),
--        body: Center(
--          child: Text('Hello World'),
-+        body: Column(
-+          children: [
-+            titleSection,
-+          ],
-         ),
-       ),
-     );
-```
-
-{{site.alert.tip}}
-  - When pasting code into your app, indentation can
-    become skewed. You can fix this in your Flutter editor
-    using the [automatic reformatting support](/docs/development/tools/formatting).
-  - For a faster development experience, try Flutter's [hot reload][] feature.
-  - If you have problems, compare your code to [lib/main.dart][].
-
-  [hot reload]: /docs/development/tools/hot-reload
-  [lib/main.dart]: {{examples}}/layout/lakes/step2/lib/main.dart
-{{site.alert.end}}
-
-### Step 3: Implement the button row
-
-The button section contains 3 columns that use the same layout&mdash;an
-icon over a row of text. The columns in this row are evenly spaced,
-and the text and icons are painted with the primary color.
-
-Since the code for building each row is almost identical, create a private
-helper method named `buildButtonColumn()`, which takes a color, an Icon and
-Text, and returns a column with its widgets painted in the given color.
-
-<!-- skip -->
-<?code-excerpt "step3/lib/main.dart (_buildButtonColumn)"?>
-```dart
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // ···
-  }
-
-  Column _buildButtonColumn(Color color, IconData icon, String label) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, color: color),
-        Container(
-          margin: const EdgeInsets.only(top: 8.0),
-          child: Text(
-            label,
-            style: TextStyle(
-              fontSize: 12.0,
-              fontWeight: FontWeight.w400,
-              color: color,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-```
-
-The function adds the icon directly to the column. The text is inside a
-Container with a top-only margin, separating the text from the icon.
-
-Build the row containing these columns by calling the function and passing the
-[Icon][] and text specific to that column. Align the columns along the main axis
-using `MainAxisAlignment.spaceEvenly` to arrange the free space evenly before,
-between, and after each column. Add the following code just below the
-`titleSection` declaration inside the `build()` method:
-
-<!-- skip -->
-<?code-excerpt "step3/lib/main.dart (buttonSection)"?>
-```dart
-Color color = Theme.of(context).primaryColor;
-
-Widget buttonSection = Container(
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: [
-      _buildButtonColumn(color, Icons.call, 'CALL'),
-      _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
-      _buildButtonColumn(color, Icons.share, 'SHARE'),
-    ],
-  ),
-);
-```
-
-Add the button section to the body:
-
-<?code-excerpt "step2/lib/main.dart" diff-with="step3/lib/main.dart" from="return MaterialApp" to="}"?>
-```diff
---- step2/lib/main.dart
-+++ step3/lib/main.dart
-@@ -46,3 +59,3 @@
-     return MaterialApp(
-       title: 'Flutter Layout Demo',
-       home: Scaffold(
-@@ -52,8 +65,9 @@
-         body: Column(
-           children: [
-             titleSection,
-+            buttonSection,
-           ],
-         ),
-       ),
-     );
-   }
-```
-
-### Step 4: Implement the text section
-
-Define the text section as a variable. Put the text in a Container and add
-padding along each edge. Add the following code just below the `buttonSection`
-declaration:
-
-<!-- skip -->
-<?code-excerpt "step4/lib/main.dart (textSection)"?>
-```dart
-Widget textSection = Container(
-  padding: const EdgeInsets.all(32.0),
-  child: Text(
-    'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-        'Alps. Situated 1,578 meters above sea level, it is one of the '
-        'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-        'half-hour walk through pastures and pine forest, leads you to the '
-        'lake, which warms to 20 degrees Celsius in the summer. Activities '
-        'enjoyed here include rowing, and riding the summer toboggan run.',
-    softWrap: true,
-  ),
-);
-```
-
-By setting `softwrap` to true, text lines will fill the column width before
-wrapping at a word boundary.
-
-Add the text section to the body:
-
-<?code-excerpt "step3/lib/main.dart" diff-with="step4/lib/main.dart" from="return MaterialApp"?>
-```diff
---- step3/lib/main.dart
-+++ step4/lib/main.dart
-@@ -59,3 +72,3 @@
-     return MaterialApp(
-       title: 'Flutter Layout Demo',
-       home: Scaffold(
-@@ -66,6 +79,7 @@
-           children: [
-             titleSection,
-             buttonSection,
-+            textSection,
-           ],
-         ),
-       ),
-```
-
-### Step 5: Implement the image section
-
-Three of the four column elements are now complete, leaving only the image.
-Add the image file to the example:
-
-* Create an `images` directory at the top of the project.
-* Add [`lake.jpg`]({{rawExFile}}/layout/lakes/step5/images/lake.jpg).
-
-  {{site.alert.info}}
-    Note that `wget` doesn't work for saving this binary file. The original image
-    is [available online][] under a Creative Commons license, but it's large and
-    slow to fetch.
-
-    [available online]: https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=
-  {{site.alert.end}}
-
-* Update the `pubspec.yaml` file to include an `assets` tag. This makes the
-  image available to your code.
-
-  <?code-excerpt "step4/pubspec.yaml" diff-with="step5/pubspec.yaml"?>
-  ```diff
-  --- step4/pubspec.yaml
-  +++ step5/pubspec.yaml
-  @@ -17,3 +17,5 @@
-
-   flutter:
-     uses-material-design: true
-  +  assets:
-  +    - images/lake.jpg
-  ```
-
-Now you can reference the image from your code:
-
-  <?code-excerpt "step4/lib/main.dart" diff-with="step5/lib/main.dart"?>
-  ```diff
-  --- step4/lib/main.dart
-  +++ step5/lib/main.dart
-  @@ -77,6 +77,12 @@
-           ),
-           body: Column(
-             children: [
-  +            Image.asset(
-  +              'images/lake.jpg',
-  +              width: 600.0,
-  +              height: 240.0,
-  +              fit: BoxFit.cover,
-  +            ),
-               titleSection,
-               buttonSection,
-               textSection,
-  ```
-
-`BoxFit.cover` tells the framework that the image should be as small as
-possible but cover its entire render box.
-
-### Step 6: Final touch
-
-In this final step, arrange all of the elements in a `ListView`, rather than a
-`Column`, because a `ListView` supports app body scrolling when the app is run
-on a small device.
-
-<?code-excerpt "step5/lib/main.dart" diff-with="step6/lib/main.dart" diff-u="6" from="return MaterialApp"?>
-```diff
---- step5/lib/main.dart
-+++ step6/lib/main.dart
-@@ -72,13 +77,13 @@
-     return MaterialApp(
-       title: 'Flutter Layout Demo',
-       home: Scaffold(
-         appBar: AppBar(
-           title: Text('Top Lakes'),
-         ),
--        body: Column(
-+        body: ListView(
-           children: [
-             Image.asset(
-               'images/lake.jpg',
-               width: 600.0,
-               height: 240.0,
-               fit: BoxFit.cover,
-```
-
-**Dart code:** [main.dart]({{examples}}/layout/lakes/step6/lib/main.dart)<br>
-**Image:** [images]({{examples}}/layout/lakes/step6/images)<br>
-**Pubspec:** [pubspec.yaml]({{examples}}/layout/lakes/step6/pubspec.yaml)
-
-That's it! When you hot reload the app, you should see the same app layout as
-the screenshot at the top of this page.
-
-You can add interactivity to this layout by following [Adding Interactivity to
-Your Flutter App](/docs/development/ui/interactive).
-
-## Flutter's approach to layout
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
@@ -463,7 +48,7 @@ The second screenshot displays the visual layout, showing a row of
   `debugPaintSizeEnabled` set to true so you can see the visual layout.
   For more information, see
   [Visual debugging](/docs/testing/debugging#visual-debugging), a section in
-  [Debugging Flutter Apps](/docs/testing/debugging).
+  [Debugging Flutter apps](/docs/testing/debugging).
 {{site.alert.end}}
 
 Here's a diagram of the widget tree for this UI:
@@ -472,210 +57,185 @@ Here's a diagram of the widget tree for this UI:
 {:.text-center}
 
 Most of this should look as you might expect, but you might be wondering
-about the Containers (shown in pink). Container is a widget that allows
-you to customize its child widget. Use a Container when you want to
+about the containers (shown in pink). [Container][] is a widget class that allows
+you to customize its child widget. Use a `Container` when you want to
 add padding, margins, borders, or background color, to name some of its
 capabilities.
 
-In this example, each Text widget is placed in a Container to add margins.
-The entire Row is also placed in a Container to add padding around the row.
+In this example, each [Text][] widget is placed in a `Container` to add margins.
+The entire [Row][] is also placed in a `Container` to add padding around the
+row.
 
 The rest of the UI in this example is controlled by properties.
-Set an Icon's color using its `color` property.
-Use Text's `style` property to set the font, its color, weight, and so on.
-Columns and Rows have properties that allow you to specify how their
+Set an [Icon][]'s color using its `color` property.
+Use the `Text.style` property to set the font, its color, weight, and so on.
+Columns and rows have properties that allow you to specify how their
 children are aligned vertically or horizontally, and how much space
 the children should occupy.
 
 ## Lay out a widget
 
-{{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+How do you layout a single widget in Flutter? This section shows you how to
+create and display a simple widget. It also shows the entire code for a simple
+Hello World app.
 
-  {% comment %}
-    * Create an [Image]({{api}}/widgets/Image-class.html),
-      [Icon]({{api}}/widgets/Icon-class.html),
-      or [Text]({{api}}/widgets/Text-class.html) widget.
-    * Add it to a layout widget, such as
-      [Center]({{api}}/widgets/Center-class.html),
-      [Align]({{api}}/widgets/Align-class.html),
-      [SizedBox]({{api}}/widgets/SizedBox-class.html),
-      or [ListView]({{api}}/widgets/ListView-class.html),
-      to name a few.
-    * Add the layout widget to the root of the widget tree.
-  {% endcomment -%}
+In Flutter, it takes only a few steps to put text, an icon, or an image on the
+screen.
 
-  * Even the app itself is a widget.
-  * It's easy to create a widget and add it to a layout widget.
-  * To display the widget on the device, add the layout widget to the app widget.
-  * It's easiest to use
-    [Scaffold]({{api}}/material/Scaffold-class.html),
-    a widget from the Material Components library, which provides a default banner,
-    background color, and has API for adding drawers, snack bars,
-    and bottom sheets.
-  * If you prefer, you can build an app that only uses standard widgets
-    from the widgets library.
-{{site.alert.end}}
+### 1. Select a layout widget
 
-How do you layout a single widget in Flutter?
-This section shows how to create a simple widget and display it on screen.
-It also shows the entire code for a simple Hello World app.
+Choose from a variety of [layout widgets][] based
+on how you want to align or constrain the visible widget,
+as these characteristics are typically passed on to the
+contained widget.
 
-In Flutter,
-it takes only a few steps to put text, an icon, or an image on the screen.
+This example uses [Center][] which centers its content
+horizontally and vertically.
 
-<ol markdown="1">
+### 2. Create a visible widget
 
-<li markdown="1"> Select a layout widget to hold the object.<br>
-    Choose from a variety of [layout widgets](/docs/development/ui/widgets) based
-    on how you want to align or constrain the visible widget,
-    as these characteristics are typically passed on to the
-    contained widget.
-    This example uses Center which centers its content
-    horizontally and vertically.
-</li>
+For example, create a [Text][] widget:
 
-<li markdown="1"> Create a widget to hold the visible object.<br>
+<?code-excerpt "layout/base/lib/main.dart (text)" replace="/child: //g"?>
+```dart
+Text('Hello World'),
+```
 
-{{site.alert.note}}
-  Flutter apps are written in the [Dart language](https://www.dartlang.org/).
-  If you know Java or similar object-oriented coding languages, Dart
-  will feel very familiar. If not, you might try
-  [DartPad](https://www.dartlang.org/tools/dartpad), an interactive Dart
-  playground you can use from any browser. The
-  [Language Tour](https://www.dartlang.org/guides/language) provides an
-  overview of the features of the Dart Language.
-{{site.alert.end}}
+Create an [Image][] widget:
 
-For example, create a Text widget:
+<?code-excerpt "layout/lakes/step5/lib/main.dart (Image-asset)" remove="/width|height/"?>
+```dart
+Image.asset(
+  'images/lake.jpg',
+  fit: BoxFit.cover,
+),
+```
 
-<!-- skip -->
-{% prettify dart %}
-Text('Hello World', style: TextStyle(fontSize: 32.0))
-{% endprettify %}
+Create an [Icon][] widget:
 
-Create an Image widget:
+<?code-excerpt "layout/lakes/step5/lib/main.dart (Icon)"?>
+```dart
+Icon(
+  Icons.star,
+  color: Colors.red[500],
+),
+```
 
-<!-- skip -->
-{% prettify dart %}
-Image.asset('images/myPic.jpg', fit: BoxFit.cover)
-{% endprettify %}
+### 3. Add the visible widget to the layout widget
 
-Create an Icon widget:
+<?code-excerpt path-base="layout/base"?>
 
-<!-- skip -->
-{% prettify dart %}
-Icon(Icons.star, color: Colors.red[500])
-{% endprettify %}
+All layout widgets have either of the following:
 
-</li>
+- A `child` property if they take a single child -- for example, `Center` or
+  `Container`
+- A `children` property if they take a list of widgets -- for example, `Row`,
+  `Column`, `ListView`, or `Stack`.
 
-<li markdown="1"> Add the visible widget to the layout widget.<br>
-    All layout widgets have a `child` property if they take a single
-    child (for example, Center or Container),
-    or a `children` property if they take a list of widgets (for example,
-    Row, Column, ListView, or Stack).
+Add the `Text` widget to the `Center` widget:
 
-Add the Text widget to the Center widget:
-
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "lib/main.dart (centered-text)" replace="/body: //g"?>
+```dart
 Center(
-  child: Text('Hello World', style: TextStyle(fontSize: 32.0))
-{% endprettify %}
+  child: Text('Hello World'),
+),
+```
 
-</li>
+### 4. Add the layout widget to the page
 
-<li markdown="1"> Add the layout widget to the page.<br>
-   A Flutter app is, itself, a widget and most widgets have a
-   [build()]({{api}}/widgets/StatelessWidget/build.html)
-   method. Declaring the widget in the app's build method displays the widget
-   on the device.
+A Flutter app is itself a widget, and most widgets have a [build()][]
+method. Instantiating and returning a widget in the app's `build()` method
+displays the widget.
 
-   For a Material app, you can add the Center widget directly to the
-  `body` property for the home page.
+#### Material apps
 
-<!-- code/layout/hello-world/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
+For a `Material` app, you can use a [Scaffold][] widget; it provides a default
+banner, background color, and has API for adding drawers, snack bars, and bottom
+sheets. Then you can add the `Center` widget directly to the `body` property for
+the home page.
+
+<?code-excerpt path-base="layout/base"?>
+<?code-excerpt "lib/main.dart (MyApp)" title?>
+```dart
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Text('Hello World', style: TextStyle(fontSize: 32.0)),
+    return MaterialApp(
+      title: 'Flutter layout demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter layout demo'),
+        ),
+        body: Center(
+          child: Text('Hello World'),
+        ),
       ),
     );
   }
 }
-{% endprettify %}
+```
 
 {{site.alert.note}}
-  The Material Components library implements widgets that follow
-  [Material Design principles](https://material.io/guidelines/).
-  When designing your UI, you can exclusively use widgets from the standard
-  [widgets library]({{api}}/widgets/widgets-library.html),
-  or you can use widgets from [Material Components]({{api}}/material/material-library.html).
-  You can mix widgets from both libraries,
-  you can customize existing widgets,
-  or you can build your own set of custom widgets.
+  The [Material library][] implements widgets that follow [Material
+  Design][] principles. When designing your UI, you can exclusively use
+  widgets from the standard [widgets library][], or you can use widgets from
+  the Material library. You can mix widgets from both libraries, you can
+  customize existing widgets, or you can build your own set of custom
+  widgets.
 {{site.alert.end}}
 
-For a non-Material app, you can add the Center widget to the app's `build()`
-method:
+#### Non-Material apps
 
-<!-- code/layout/widgets-only/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-// This app doesn't use any Material Components, such as Scaffold.
-// Normally, an app that doesn't use Scaffold has a black background
-// and the default text color is black. This app changes its background
-// to white and its text color to dark grey to mimic a Material app.
-import 'package:flutter/material.dart';
+For a non-Material app, you can add the `Center` widget to the app's
+`build()` method:
 
-void main() {
-  runApp(MyApp());
-}
-
+<?code-excerpt path-base="layout/non_material"?>
+<?code-excerpt "lib/main.dart (MyApp)" title?>
+```dart
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: Colors.white),
       child: Center(
-        child: Text('Hello World',
-            textDirection: TextDirection.ltr,
-            style: TextStyle(fontSize: 40.0, color: Colors.black87)),
+        child: Text(
+          'Hello World',
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+            fontSize: 32,
+            color: Colors.black87,
+          ),
+        ),
       ),
     );
   }
 }
-{% endprettify %}
+```
 
-Note that, by default, the non-Material app doesn't include an AppBar, title,
-or background color. If you want these features in a non-Material app,
-you have to build them yourself. This app changes the background color to
-white and the text to dark grey to mimic a Material app.
+By default a non-Material app doesn't include an `AppBar`, title, or background
+color. If you want these features in a non-Material app, you have to build them
+yourself. This app changes the background color to white and the text to dark
+grey to mimic a Material app.
 
-</li>
+<div class="row">
+<div class="col-md-6" markdown="1">
+  That's it! When you run the app, you should see _Hello World_.
 
-</ol>
-
-That's it! When you run the app, you should see:
-
-{% include app-figure.md img-class="site-mobile-screenshot border w-75"
-    image="ui/layout/hello-world.png" alt="Hello World" %}
-
-**Dart code** (Material app): [main.dart]({{code}}/layout/hello-world/main.dart)<br>
-**Dart code** (widgets-only app): [main.dart]({{code}}/layout/widgets-only/main.dart)
+  App source code:
+  - [Material app]({{examples}}/layout/base)
+  - [Non-Material app]({{examples}}/layout/non_material)
+</div>
+<div class="col-md-6">
+  {% include app-figure.md img-class="site-mobile-screenshot border w-75"
+      image="ui/layout/hello-world.png" alt="Hello World" %}
+</div>
+</div>
 
 <hr>
 
-<a name="rows-and-columns"></a>
 ## Lay out multiple widgets vertically and horizontally
+
+<?code-excerpt path-base=""?>
 
 One of the most common layout patterns is to arrange widgets vertically
 or horizontally. You can use a Row widget to arrange widgets horizontally,
@@ -694,11 +254,9 @@ and a Column widget to arrange widgets vertically.
 {{site.alert.end}}
 
 To create a row or column in Flutter, you add a list of children widgets to a
-[Row]({{api}}/widgets/Row-class.html) or
-[Column]({{api}}/widgets/Column-class.html) widget.
-In turn, each child can itself be a row or column, and so on.
-The following example shows how it is possible to nest rows or columns inside
-of rows or columns.
+[Row][] or [Column][] widget. In turn, each child can itself be a row or column,
+and so on. The following example shows how it is possible to nest rows or
+columns inside of rows or columns.
 
 This layout is organized as a Row. The row contains two children:
 a column on the left, and an image on the right:
@@ -753,7 +311,7 @@ classes offer a variety of constants for controlling alignment.
   you need to update the pubspec file to access them&mdash;this
   example uses `Image.asset` to display the images.  For more information,
   see this example's [pubspec.yaml
-  file]({{code}}/layout/row/pubspec.yaml),
+  file]({{examples}}/layout/row/pubspec.yaml),
   or [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images).
   You don't need to do this if you're referencing online images using
   `Image.network`.
@@ -766,14 +324,22 @@ horizontal space evenly between, before, and after each image.
 
 <div class="row">
 <div class="col-lg-8">
-  {% include includelines filename="code/layout/row/main.dart" start=40 count=8 %}
+  <?code-excerpt "layout/row_column/lib/main.dart (Row)" replace="/Row/[!$&!]/g"?>
+  {% prettify dart context="html" %}
+  [!Row!](
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Image.asset('images/pic1.jpg'),
+      Image.asset('images/pic2.jpg'),
+      Image.asset('images/pic3.jpg'),
+    ],
+  );
+  {% endprettify %}
 </div>
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/row-spaceevenly-visual.png class="mw-100" alt="Row with 3 evenly spaced images" %}
 
-  **Dart code:** [main.dart]({{code}}/layout/row/main.dart)<br>
-  **Images:** [images]({{code}}/layout/row/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/row/pubspec.yaml)
+  **App source:** [row_column]({{examples}}/layout/row_column)
 </div>
 </div>
 
@@ -784,12 +350,20 @@ setting the main axis alignment to `spaceEvenly` divides the free vertical
 space evenly between, above, and below each image.
 
 <div class="row">
-<div class="col-lg-8" markdown="1">
-  {% include includelines filename="code/layout/column/main.dart" start=40 count=8 %}
+<div class="col-lg-8">
+  <?code-excerpt "layout/row_column/lib/main.dart (Column)" replace="/Column/[!$&!]/g"?>
+  {% prettify dart context="html" %}
+  [!Column!](
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Image.asset('images/pic1.jpg'),
+      Image.asset('images/pic2.jpg'),
+      Image.asset('images/pic3.jpg'),
+    ],
+  );
+  {% endprettify %}
 
-  **Dart code:** [main.dart]({{code}}/layout/column/main.dart)<br>
-  **Images:** [images]({{code}}/layout/column/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/column/pubspec.yaml)
+  **App source:** [row_column]({{examples}}/layout/row_column)
 </div>
 <div class="col-lg-4 text-center">
   {% asset ui/layout/column-visual.png class="mb-4" height="250px"
@@ -797,64 +371,82 @@ space evenly between, above, and below each image.
 </div>
 </div>
 
-{{site.alert.note}}
-  When a layout is too large to fit the device, a red strip appears along the
-  affected edge. For example, the row in the following screenshot is too
-  wide for the device's screen:
-
-  {% asset ui/layout/layout-too-large.png class="mb-4 mw-100" alt="Overly-wide image" %}
-  {:.text-center}
-
-  Widgets can be sized to fit within a row or column by using an Expanded widget,
-  which is described in the [Sizing widgets](#sizing-widgets) section below.
-{{site.alert.end}}
-
 ### Sizing widgets
 
-Perhaps you want a widget to occupy twice as much space as its siblings.
-You can place the child of a row or column in an
-[Expanded]({{api}}/widgets/Expanded-class.html)
-widget to control widget sizing along the main axis.
-The Expanded widget has a `flex` property, an integer that determines
-the flex factor for a widget. The default flex factor for an Expanded
-widget is 1.
+When a layout is too large to fit a device, a yellow and black striped pattern
+appears along the affected edge. Here is an [example][sizing] of a row that is
+too wide:
 
-For example, to create a row of three widgets where the middle widget is twice
-as wide as the other two widgets, set the flex factor on the middle widget to 2:
+{% asset ui/layout/layout-too-large.png class="mw-100" alt="Overly-wide row" %}
+{:.text-center}
 
-<div class="row">
-<div class="col-lg-8">
-  {% include includelines filename="code/layout/row-expanded/main.dart" start=40 count=15 %}
-</div>
-<div class="col-lg-4" markdown="1">
-  {% asset ui/layout/row-expanded-visual.png class="mw-100"
-      alt="Row of 3 images with the middle image twice as wide as the others" %}
-
-  **Dart code:** [main.dart]({{code}}/layout/row-expanded/main.dart)<br>
-  **Images:** [images]({{code}}/layout/row-expanded/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/row-expanded/pubspec.yaml)
-</div>
-</div>
-
-To fix the example in the previous section where the row of 3 images was
-too wide for its render box, and resulted in the red strip,
-wrap each widget with an Expanded widget.
-By default, each widget has a flex factor of 1, assigning one-third of
-the row to each widget.
+Widgets can be sized to fit within a row or column by using the [Expanded][]
+widget. To fix the previous example where the row of images is too wide for its
+render box, wrap each image with an `Expanded` widget.
 
 <div class="row">
 <div class="col-lg-8">
-  {% include includelines filename="code/layout/row-expanded-2/main.dart" start=40 count=14 %}
+  <?code-excerpt "layout/sizing/lib/main.dart (expanded-images)" replace="/Expanded/[!$&!]/g"?>
+  {% prettify dart context="html" %}
+  Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      [!Expanded!](
+        child: Image.asset('images/pic1.jpg'),
+      ),
+      [!Expanded!](
+        child: Image.asset('images/pic2.jpg'),
+      ),
+      [!Expanded!](
+        child: Image.asset('images/pic3.jpg'),
+      ),
+    ],
+  );
+  {% endprettify %}
 </div>
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/row-expanded-2-visual.png class="mw-100"
       alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space" %}
 
-  **Dart code:** [main.dart]({{code}}/layout/row-expanded-2/main.dart)<br>
-  **Images:** [images]({{code}}/layout/row-expanded-2/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/row-expanded-2/pubspec.yaml)
+  **App source:** [sizing]({{examples}}/layout/sizing)
 </div>
 </div>
+
+Perhaps you want a widget to occupy twice as much space as its siblings. For
+this, use the `Expanded` widget `flex` property, an integer that determines the
+flex factor for a widget. The default flex factor is 1. The following code sets
+the flex factor of the middle image to 2:
+
+<div class="row">
+<div class="col-lg-8">
+  <?code-excerpt "layout/sizing/lib/main.dart (expanded-images-with-flex)" replace="/flex.*/[!$&!]/g"?>
+  {% prettify dart context="html" %}
+  Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Expanded(
+        child: Image.asset('images/pic1.jpg'),
+      ),
+      Expanded(
+        [!flex: 2,!]
+        child: Image.asset('images/pic2.jpg'),
+      ),
+      Expanded(
+        child: Image.asset('images/pic3.jpg'),
+      ),
+    ],
+  );
+  {% endprettify %}
+</div>
+<div class="col-lg-4" markdown="1">
+  {% asset ui/layout/row-expanded-visual.png class="mw-100"
+      alt="Row of 3 images with the middle image twice as wide as the others" %}
+
+  **App source:** [sizing]({{examples}}/layout/sizing)
+</div>
+</div>
+
+[sizing]: {{examples}}/layout/sizing
 
 ### Packing widgets
 
@@ -865,34 +457,25 @@ uses this property to pack the star icons together.
 
 <div class="row">
 <div class="col-lg-8">
-  <!-- code/layout/packed/main.dart -->
-  <!-- skip -->
-  {% prettify dart %}
-  class _MyHomePageState extends State<MyHomePage> {
-    @override
-    Widget build(BuildContext context) {
-      var packedRow = Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.star, color: Colors.green[500]),
-          Icon(Icons.star, color: Colors.green[500]),
-          Icon(Icons.star, color: Colors.green[500]),
-          Icon(Icons.star, color: Colors.black),
-          Icon(Icons.star, color: Colors.black),
-        ],
-      );
-
-    // ...
-  }
+  <?code-excerpt "layout/pavlova/lib/main.dart (stars)" replace="/mainAxisSize.*/[!$&!]/g; /\w+ \w+ = //g; /;//g"?>
+  {% prettify dart context="html" %}
+  Row(
+    [!mainAxisSize: MainAxisSize.min,!]
+    children: [
+      Icon(Icons.star, color: Colors.green[500]),
+      Icon(Icons.star, color: Colors.green[500]),
+      Icon(Icons.star, color: Colors.green[500]),
+      Icon(Icons.star, color: Colors.black),
+      Icon(Icons.star, color: Colors.black),
+    ],
+  )
   {% endprettify %}
 </div>
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/packed.png class="border mw-100"
       alt="Row of 5 stars, packed together in the middle of the row" %}
 
-  **Dart code:** [main.dart]({{code}}/layout/packed/main.dart)<br>
-  **Icons:** [Icons class]({{api}}/material/Icons-class.html)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/packed/pubspec.yaml)
+  **App source:** [pavlova]({{examples}}/layout/pavlova)
 </div>
 </div>
 
@@ -918,46 +501,39 @@ The widget tree for the ratings row:
 The `ratings` variable creates a row containing a smaller row of 5 star icons,
 and text:
 
-<!-- code/layout/pavlova/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    //...
+<?code-excerpt "layout/pavlova/lib/main.dart (ratings)" replace="/ratings/[!$&!]/g"?>
+```dart
+var stars = Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    Icon(Icons.star, color: Colors.green[500]),
+    Icon(Icons.star, color: Colors.green[500]),
+    Icon(Icons.star, color: Colors.green[500]),
+    Icon(Icons.star, color: Colors.black),
+    Icon(Icons.star, color: Colors.black),
+  ],
+);
 
-    var ratings = Container(
-      padding: EdgeInsets.all(20.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.star, color: Colors.black),
-              Icon(Icons.star, color: Colors.black),
-              Icon(Icons.star, color: Colors.black),
-              Icon(Icons.star, color: Colors.black),
-              Icon(Icons.star, color: Colors.black),
-            ],
-          ),
-          Text(
-            '170 Reviews',
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Roboto',
-              letterSpacing: 0.5,
-              fontSize: 20.0,
-            ),
-          ),
-        ],
+final [!ratings!] = Container(
+  padding: EdgeInsets.all(20),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      stars,
+      Text(
+        '170 Reviews',
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.w800,
+          fontFamily: 'Roboto',
+          letterSpacing: 0.5,
+          fontSize: 20,
+        ),
       ),
-    );
-    //...
-  }
-}
-{% endprettify %}
+    ],
+  ),
+);
+```
 
 {{site.alert.tip}}
   To minimize the visual confusion that can result from heavily nested layout
@@ -972,115 +548,94 @@ an icon and two lines of text, as you can see in its widget tree:
 
 The `iconList` variable defines the icons row:
 
-<!-- code/layout/pavlova/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    // ...
+<?code-excerpt "layout/pavlova/lib/main.dart (iconList)" replace="/iconList/[!$&!]/g"?>
+```dart
+final descTextStyle = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.w800,
+  fontFamily: 'Roboto',
+  letterSpacing: 0.5,
+  fontSize: 18,
+  height: 2,
+);
 
-    var descTextStyle = TextStyle(
-      color: Colors.black,
-      fontWeight: FontWeight.w800,
-      fontFamily: 'Roboto',
-      letterSpacing: 0.5,
-      fontSize: 18.0,
-      height: 2.0,
-    );
-
-    // DefaultTextStyle.merge allows you to create a default text
-    // style that is inherited by its child and all subsequent children.
-    var iconList = DefaultTextStyle.merge(
-      style: descTextStyle,
-      child: Container(
-        padding: EdgeInsets.all(20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+// DefaultTextStyle.merge() allows you to create a default text
+// style that is inherited by its child and all subsequent children.
+final [!iconList!] = DefaultTextStyle.merge(
+  style: descTextStyle,
+  child: Container(
+    padding: EdgeInsets.all(20),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
           children: [
-            Column(
-              children: [
-                Icon(Icons.kitchen, color: Colors.green[500]),
-                Text('PREP:'),
-                Text('25 min'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(Icons.timer, color: Colors.green[500]),
-                Text('COOK:'),
-                Text('1 hr'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(Icons.restaurant, color: Colors.green[500]),
-                Text('FEEDS:'),
-                Text('4-6'),
-              ],
-            ),
+            Icon(Icons.kitchen, color: Colors.green[500]),
+            Text('PREP:'),
+            Text('25 min'),
           ],
         ),
-      ),
-    );
-    // ...
-  }
-}
-{% endprettify %}
+        Column(
+          children: [
+            Icon(Icons.timer, color: Colors.green[500]),
+            Text('COOK:'),
+            Text('1 hr'),
+          ],
+        ),
+        Column(
+          children: [
+            Icon(Icons.restaurant, color: Colors.green[500]),
+            Text('FEEDS:'),
+            Text('4-6'),
+          ],
+        ),
+      ],
+    ),
+  ),
+);
+```
 
-The `leftColumn` variable contains the ratings and icons rows, as well as
-the title and text that describes the Pavlova:
+The `leftColumn` variable contains the ratings and icons rows, as well as the
+title and text that describes the Pavlova:
 
-<!-- code/layout/pavlova/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    //...
+<?code-excerpt "layout/pavlova/lib/main.dart (leftColumn)" replace="/leftColumn/[!$&!]/g"?>
+```dart
+final [!leftColumn!] = Container(
+  padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+  child: Column(
+    children: [
+      titleText,
+      subTitle,
+      ratings,
+      iconList,
+    ],
+  ),
+);
+```
 
-    var leftColumn = Container(
-      padding: EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 20.0),
-      child: Column(
-        children: [
-          titleText,
-          subTitle,
-          ratings,
-          iconList,
-        ],
-      ),
-    );
-    //...
-  }
-}
-{% endprettify %}
-
-The left column is placed in a Container to constrain its width.
+The left column is placed in a `Container` to constrain its width.
 Finally, the UI is constructed with the entire row (containing the
-left column and the image) inside a Card.
+left column and the image) inside a `Card`.
 
-The Pavlova image is from
-[Pixabay](https://pixabay.com/en/photos/?q=pavlova&image_type=&cat=&min_width=&min_height=)
-and is available under the Creative Commons license.
-You can embed an image from the net using `Image.network` but,
+The [Pavlova image][] is from [Pixabay][].
+You can embed an image from the net using `Image.network()` but,
 for this example, the image is saved to an images directory in the project,
-added to the [pubspec file,]({{code}}/layout/pavlova/pubspec.yaml)
-and accessed using `Images.asset`. For more information, see
-[Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images).
+added to the [pubspec file,]({{examples}}/layout/pavlova/pubspec.yaml)
+and accessed using `Images.asset()`. For more information, see
+[Adding assets and images](/docs/development/ui/assets-and-images).
 
-<!-- code/layout/pavlova/main.dart -->
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "layout/pavlova/lib/main.dart (body)"?>
+```dart
 body: Center(
   child: Container(
-    margin: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
-    height: 600.0,
+    margin: EdgeInsets.fromLTRB(0, 40, 0, 30),
+    height: 600,
     child: Card(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 440.0,
+            width: 440,
             child: leftColumn,
           ),
           mainImage,
@@ -1089,44 +644,38 @@ body: Center(
     ),
   ),
 ),
-{% endprettify %}
+```
 
-<div class="row">
-<div class="col-lg-3" markdown="1">
-  **Dart code:** [main.dart]({{code}}/layout/pavlova/main.dart)<br>
-  **Images:** [images]({{code}}/layout/pavlova/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/pavlova/pubspec.yaml)
-</div>
-<div class="col-lg-9" markdown="1">
-  {{site.alert.tip}}
-    The Pavlova example runs best horizontally on a wide device, such as a tablet.
-    If you are running this example in the iOS simulator, you can select a
-    different device using the **Hardware > Device** menu. For this example, we
-    recommend the iPad Pro. You can change its orientation to landscape mode using
-    **Hardware > Rotate**. You can also change the size of the simulator window
-    (without changing the number of logical pixels) using **Window > Scale**.
-  {{site.alert.end}}
-</div>
-</div>
+{{site.alert.tip}}
+  The Pavlova example runs best horizontally on a wide device, such as a tablet.
+  If you are running this example in the iOS simulator, you can select a
+  different device using the **Hardware > Device** menu. For this example, we
+  recommend the iPad Pro. You can change its orientation to landscape mode using
+  **Hardware > Rotate**. You can also change the size of the simulator window
+  (without changing the number of logical pixels) using **Window > Scale**.
+{{site.alert.end}}
+
+**App source:** [pavlova]({{examples}}/layout/pavlova)
+
+[Pavlova image]: https://pixabay.com/en/photos/pavlova
+[Pixabay]: https://pixabay.com/en/photos/pavlova
 
 <hr>
 
 ## Common layout widgets
 
-Flutter has a rich library of layout widgets, but here a few of those most
+Flutter has a rich library of layout widgets. Here are a few of those most
 commonly used. The intent is to get you up and running as quickly as possible,
 rather than overwhelm you with a complete list.  For information on other
-available widgets, refer to the [Widget Overview](/docs/development/ui/widgets),
-or use the Search box in the [API reference docs](https://docs.flutter.io/).
+available widgets, refer to the [Widget catalog][],
+or use the Search box in the [API reference docs]({{api}}).
 Also, the widget pages in the API docs often make suggestions
 about similar widgets that might better suit your needs.
 
 The following widgets fall into two categories: standard widgets from the
-[widgets library,]({{api}}/widgets/widgets-library.html)
-and specialized widgets from the
-[Material Components library]({{api}}/material/material-library.html).
-Any app can use the widgets library but only Material apps can use the
-Material Components library.
+[widgets library][], and specialized widgets from the [Material library][]. Any
+app can use the widgets library but only Material apps can use the Material
+Components library.
 
 ### Standard widgets
 
@@ -1136,7 +685,7 @@ Material Components library.
 * [ListView](#listview): Lays widgets out as a scrollable list.
 * [Stack](#stack): Overlaps a widget on top of another.
 
-### Material Components
+### Material widgets
 
 * [Card](#card): Organizes related info into a box with rounded corners and a
   drop shadow.
@@ -1145,10 +694,10 @@ Material Components library.
 
 ### Container
 
-Many layouts make liberal use of Containers to separate widgets with padding,
-or to add borders or margins. You can change the device's background by
-placing the entire layout into a Container and changing its background color
-or image.
+Many layouts make liberal use of [Container][]s to separate widgets using
+padding, or to add borders or margins. You can change the device's background
+by placing the entire layout into a `Container` and changing its background
+color or image.
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
@@ -1169,87 +718,69 @@ or image.
 #### Examples (Container)
 {:.no_toc}
 
-In addition to the example below,
-many examples in this tutorial use Container. You can also find more
-Container examples in the [Flutter
-Gallery][].
+This layout consists of a column with two rows, each containing 2 images. A
+[Container][] is used to change the background color of the column to a lighter
+grey.
 
 <div class="row">
-<div class="col-lg-6" markdown="1">
-  This layout consists of a column of two rows, each containing 2 images.
-  Each image uses a Container to add a rounded grey border and margins.
-  The Column, which contains the rows of images,
-  uses a Container to change the background color to a lighter grey.
-
-  **Dart code:** [main.dart]({{code}}/layout/container/main.dart), snippet below<br>
-  **Images:** [images]({{code}}/layout/container/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/container/pubspec.yaml)
+<div class="col-lg-7">
+  <?code-excerpt "layout/container/lib/main.dart (column)" replace="/\bContainer/[!$&!]/g;"?>
+  {% prettify dart context="html" %}
+  Widget _buildImageColumn() => [!Container!](
+        decoration: BoxDecoration(
+          color: Colors.black26,
+        ),
+        child: Column(
+          children: [
+            _buildImageRow(1),
+            _buildImageRow(3),
+          ],
+        ),
+      );
+  {% endprettify %}
 </div>
-<div class="col-lg-6 text-center">
+<div class="col-lg-5 text-center">
   {% asset ui/layout/container.png class="mb-4 mw-100" width="230px"
       alt="Screenshot showing 2 rows, each containing 2 images" %}
 </div>
 </div>
 
-<!-- code/layout/container/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
+A `Container` is also used to add a rounded border and margins to each image:
 
-    var container = Container(
-      decoration: BoxDecoration(
-        color: Colors.black26,
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 10.0, color: Colors.black38),
-                    borderRadius:
-                        const BorderRadius.all(const Radius.circular(8.0)),
-                  ),
-                  margin: const EdgeInsets.all(4.0),
-                  child: Image.asset('images/pic1.jpg'),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 10.0, color: Colors.black38),
-                    borderRadius:
-                        const BorderRadius.all(const Radius.circular(8.0)),
-                  ),
-                  margin: const EdgeInsets.all(4.0),
-                  child: Image.asset('images/pic2.jpg'),
-                ),
-              ),
-            ],
-          ),
-          // ...
-          // [[highlight]]See the definition for the second row on GitHub:[[/highlight]]
-          // [[highlight]]{{code}}/layout/container/main.dart[[/highlight]]
-        ],
+<?code-excerpt "layout/container/lib/main.dart (row)" replace="/\bContainer/[!$&!]/g;"?>
+```dart
+Widget _buildDecoratedImage(int imageIndex) => Expanded(
+      child: [!Container!](
+        decoration: BoxDecoration(
+          border: Border.all(width: 10, color: Colors.black38),
+          borderRadius: const BorderRadius.all(const Radius.circular(8)),
+        ),
+        margin: const EdgeInsets.all(4),
+        child: Image.asset('images/pic$imageIndex.jpg'),
       ),
     );
-    //...
-  }
-}
-{% endprettify %}
+
+Widget _buildImageRow(int imageIndex) => Row(
+      children: [
+        _buildDecoratedImage(imageIndex),
+        _buildDecoratedImage(imageIndex + 1),
+      ],
+    );
+```
+
+You can find more `Container` examples in the [tutorial][] and the [Flutter
+Gallery][].
+
+**App source:** [container]({{examples}}/layout/container)
 
 <hr>
 
 ### GridView
 
-Use [GridView]({{api}}/widgets/GridView-class.html)
-to lay widgets out as a two-dimensional list. GridView provides two
-pre-fabricated lists, or you can build your own custom grid.
-When a GridView detects that its contents are too long to fit the render box,
-it automatically scrolls.
+Use [GridView][] to lay widgets out as a two-dimensional list. `GridView`
+provides two pre-fabricated lists, or you can build your own custom grid. When a
+`GridView` detects that its contents are too long to fit the render box, it
+automatically scrolls.
 
 #### Summary (GridView)
 {:.no_toc}
@@ -1283,9 +814,7 @@ it automatically scrolls.
 
   Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.
 
-  **Dart code:** [main.dart]({{code}}/layout/grid/main.dart), snippet below<br>
-  **Images:** [images]({{code}}/layout/grid/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/grid/pubspec.yaml)
+  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/gridview-count-flutter-gallery.png class="mw-100"
@@ -1294,51 +823,28 @@ it automatically scrolls.
 
   Uses `GridView.count` to create a grid that's 2 tiles wide in portrait mode,
   and 3 tiles wide in landscape mode. The titles are created by setting the
-  `footer` property for each GridTile.
+  `footer` property for each [GridTile][].
 
   **Dart code:** [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
   from the [Flutter Gallery][]
 </div>
 </div>
 
-<!-- code/layout/grid/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-// The images are saved with names pic1.jpg, pic2.jpg...pic30.jpg.
-// The List.generate constructor allows an easy way to create
+<?code-excerpt "layout/grid_and_list/lib/main.dart (grid)" replace="/\GridView/[!$&!]/g;"?>
+```dart
+Widget _buildGrid() => [!GridView!].extent(
+    maxCrossAxisExtent: 150,
+    padding: const EdgeInsets.all(4),
+    mainAxisSpacing: 4,
+    crossAxisSpacing: 4,
+    children: _buildGridTileList(30));
+
+// The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
+// The List.generate() constructor allows an easy way to create
 // a list when objects have a predictable naming pattern.
-List<Container> _buildGridTileList(int count) {
-
-  return List<Container>.generate(
-      count,
-      (int index) =>
-          Container(child: Image.asset('images/pic${index+1}.jpg')));
-}
-
-Widget buildGrid() {
-  return GridView.extent(
-      maxCrossAxisExtent: 150.0,
-      padding: const EdgeInsets.all(4.0),
-      mainAxisSpacing: 4.0,
-      crossAxisSpacing: 4.0,
-      children: _buildGridTileList(30));
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: buildGrid(),
-      ),
-    );
-  }
-}
-{% endprettify %}
-
+List<Container> _buildGridTileList(int count) => List.generate(
+    count, (i) => Container(child: Image.asset('images/pic$i.jpg')));
+```
 
 <hr>
 
@@ -1351,10 +857,10 @@ its content is too long for its render box.
 #### Summary (ListView)
 {:.no_toc}
 
-* A specialized Column for organizing a list of boxes
+* A specialized [Column][] for organizing a list of boxes
 * Can be laid out horizontally or vertically
 * Detects when its content won't fit and provides scrolling
-* Less configurable than Column, but easier to use and supports scrolling
+* Less configurable than `Column`, but easier to use and supports scrolling
 
 #### Examples (ListView)
 {:.no_toc}
@@ -1365,20 +871,18 @@ its content is too long for its render box.
       alt="ListView containing movie theaters and restaurants" %}
   {:.text-center}
 
-  Uses ListView to display a list of businesses using ListTiles. A Divider
+  Uses `ListView` to display a list of businesses using `ListTile`s. A `Divider`
   separates the theaters from the restaurants.
 
-  **Dart code:** [main.dart]({{code}}/layout/listview/main.dart), snippet below<br>
-  **Icons:** [Icons class]({{api}}/material/Icons-class.html)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/listview/pubspec.yaml)
+  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/listview-flutter-gallery.png class="border mw-100"
       alt="ListView containing shades of blue" %}
   {:.text-center}
 
-  Uses ListView to display the [Colors]({{api}}/material/Colors-class.html) from
-  the [Material Design palette](https://material.io/guidelines/style/color.html)
+  Uses `ListView` to display the [Colors]({{api}}/material/Colors-class.html) from
+  the [Material Design palette]({{site.material}}/guidelines/style/color.html)
   for a particular color family.
 
   **Dart code:** [colors_demo.dart]({{demo}}/colors_demo.dart) from the
@@ -1386,54 +890,45 @@ its content is too long for its render box.
 </div>
 </div>
 
-<!-- code/layout/listview/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-List<Widget> list = <Widget>[
-  ListTile(
-    title: Text('CineArts at the Empire',
-        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: Text('85 W Portal Ave'),
-    leading: Icon(
-      Icons.theaters,
-      color: Colors.blue[500],
-    ),
-  ),
-  ListTile(
-    title: Text('The Castro Theater',
-        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: Text('429 Castro St'),
-    leading: Icon(
-      Icons.theaters,
-      color: Colors.blue[500],
-    ),
-  ),
-  // ...
-  // [[highlight]]See the rest of the column defined on GitHub:[[/highlight]]
-  // [[highlight]]{{code}}/layout/listview/main.dart[[/highlight]]
-];
+<?code-excerpt "layout/grid_and_list/lib/main.dart (list)" replace="/\ListView/[!$&!]/g;"?>
+```dart
+Widget _buildList() => [!ListView!](
+      children: [
+        _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
+        _tile('The Castro Theater', '429 Castro St', Icons.theaters),
+        _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
+        _tile('Roxie Theater', '3117 16th St', Icons.theaters),
+        _tile('United Artists Stonestown Twin', '501 Buckingham Way',
+            Icons.theaters),
+        _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
+        Divider(),
+        _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
+        _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
+        _tile(
+            'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
+        _tile('La Ciccia', '291 30th St', Icons.restaurant),
+      ],
+    );
 
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // ...
-      body: Center(
-        child: ListView(
-          children: list,
-        ),
+ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
+      title: Text(title,
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 20,
+          )),
+      subtitle: Text(subtitle),
+      leading: Icon(
+        icon,
+        color: Colors.blue[500],
       ),
     );
-  }
-}
-{% endprettify %}
+```
 
 <hr>
 
 ### Stack
 
-Use [Stack]({{api}}/widgets/Stack-class.html)
-to arrange widgets on top of a base widget&mdash;often an image.
+Use [Stack][] to arrange widgets on top of a base widget&mdash;often an image.
 The widgets can completely or partially overlap the base widget.
 
 #### Summary (Stack)
@@ -1442,7 +937,7 @@ The widgets can completely or partially overlap the base widget.
 * Use for widgets that overlap another widget
 * The first widget in the list of children is the base widget;
   subsequent children are overlaid on top of that base widget
-* A Stack's content can't scroll
+* A `Stack`'s content can't scroll
 * You can choose to clip children that exceed the render box
 
 #### Examples (Stack)
@@ -1453,20 +948,18 @@ The widgets can completely or partially overlap the base widget.
   {% asset ui/layout/stack.png class="mw-100" width="200px" alt="Circular avatar image with a label" %}
   {:.text-center}
 
-  Uses Stack to overlay a Container (that displays its Text on a translucent
-  black background) on top of a Circle Avatar.
-  The Stack offsets the text using the `alignment` property and
-  Alignments.
+  Uses `Stack` to overlay a `Container` (that displays its `Text` on a translucent
+  black background) on top of a `CircleAvatar`.
+  The `Stack` offsets the text using the `alignment` property and
+  `Alignment`s.
 
-  **Dart code:** [main.dart]({{code}}/layout/stack/main.dart), snippet below<br>
-  **Image:** [images]({{code}}/layout/stack/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/stack/pubspec.yaml)
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-5" markdown="1">
   {% asset ui/layout/stack-flutter-gallery.png class="mw-100" alt="An image with a grey gradient across the top" %}
   {:.text-center}
 
-  Uses Stack to overlay a gradient to the top of the image. The gradient
+  Uses `Stack` to overlay a gradient to the top of the image. The gradient
   ensures that the toolbar's icons are distinct against the image.
 
   **Dart code:** [contacts_demo.dart]({{demo}}/contacts_demo.dart)
@@ -1474,74 +967,61 @@ The widgets can completely or partially overlap the base widget.
 </div>
 </div>
 
-<!-- code/layout/stack/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    var stack = Stack(
-      alignment: const Alignment(0.6, 0.6),
-      children: [
-        CircleAvatar(
-          backgroundImage: AssetImage('images/pic.jpg'),
-          radius: 100.0,
+<?code-excerpt "layout/card_and_stack/lib/main.dart (Stack)" replace="/\bStack/[!$&!]/g;"?>
+```dart
+Widget _buildStack() => [!Stack!](
+    alignment: const Alignment(0.6, 0.6),
+    children: [
+      CircleAvatar(
+        backgroundImage: AssetImage('images/pic.jpg'),
+        radius: 100,
+      ),
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.black45,
         ),
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.black45,
-          ),
-          child: Text(
-            'Mia B',
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+        child: Text(
+          'Mia B',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
-      ],
-    );
-    // ...
-  }
-}
-{% endprettify %}
+      ),
+    ],
+  );
+```
 
 <hr>
 
 ### Card
 
-A Card, from the Material Components library, contains related nuggets of information
-and can be composed from almost any widget, but is often used with ListTile.
-Card has a single child, but its child can be a column, row, list, grid,
-or other widget that supports multiple children. By default, a Card shrinks
-its size to 0 by 0 pixels. You can use
-[SizedBox]({{api}}/widgets/SizedBox-class.html) to
-constrain the size of a card.
+A [Card][], from the [Material library][], contains related nuggets of
+information and can be composed from almost any widget, but is often used with
+[ListTile][]. `Card` has a single child, but its child can be a column, row,
+list, grid, or other widget that supports multiple children. By default, a
+`Card` shrinks its size to 0 by 0 pixels. You can use [SizedBox][] to constrain
+the size of a card.
 
-In Flutter, a Card features slightly rounded corners
-and a drop shadow, giving it a 3D effect.
-Changing a Card's `elevation`
-property allows you to control the drop shadow effect.
-Setting the elevation to 24.0, for example, visually lifts the Card further
-from the surface and causes the shadow to become more dispersed.
-For a list of supported elevation values, see
-[Elevation and
-Shadows](https://material.io/guidelines/material-design/elevation-shadows.html)
-in the [Material guidelines](https://material.io/guidelines/).
-Specifying an unsupported value disables the drop shadow entirely.
+In Flutter, a `Card` features slightly rounded corners and a drop shadow, giving
+it a 3D effect. Changing a `Card`'s `elevation` property allows you to control
+the drop shadow effect. Setting the elevation to 24, for example, visually lifts
+the `Card` further from the surface and causes the shadow to become more
+dispersed. For a list of supported elevation values, see [Elevation][] in the
+[Material guidelines][Material Design]. Specifying an unsupported value disables
+the drop shadow entirely.
 
 #### Summary (Card)
 {:.no_toc}
 
-* Implements a [Material Design
-  card](https://material.io/guidelines/components/cards.html)
+* Implements a [Material card][]
 * Used for presenting related nuggets of information
-* Accepts a single child, but that child can be a Row, Column, or other
+* Accepts a single child, but that child can be a `Row`, `Column`, or other
   widget that holds a list of children
 * Displayed with rounded corners and a drop shadow
-* A Card's content can't scroll
-* From the Material Components library
+* A `Card`'s content can't scroll
+* From the [Material library][]
 
 #### Examples (Card)
 {:.no_toc}
@@ -1551,83 +1031,75 @@ Specifying an unsupported value disables the drop shadow entirely.
   {% asset ui/layout/card.png class="mw-100" alt="Card containing 3 ListTiles" %}
   {:.text-center}
 
-  A Card containing 3 ListTiles and sized by wrapping it with a
-  SizedBox. A Divider separates the first and second ListTiles.
+  A `Card` containing 3 ListTiles and sized by wrapping it with a `SizedBox`. A
+  `Divider` separates the first and second `ListTiles`.
 
-  **Dart code:** [main.dart]({{code}}/layout/card/main.dart), snippet below<br>
-  **Icons:** [Icons class]({{api}}/material/Icons-class.html)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/card/pubspec.yaml)
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6" markdown="1">
-  {% asset ui/layout/card-flutter-gallery.png class="mw-100" alt="Card containing an image, text and buttons" %}
+  {% asset ui/layout/card-flutter-gallery.png class="mw-100"
+      alt="Card containing an image, text and buttons" %}
   {:.text-center}
 
-  A Card containing an image and text.
+  A `Card` containing an image and text.
 
   **Dart code:** [cards_demo.dart]({{demo}}/material/cards_demo.dart)
   from the [Flutter Gallery][]
 </div>
 </div>
 
-<!-- code/layout/card/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    var card = SizedBox(
-      height: 210.0,
-      child: Card(
-        child: Column(
-          children: [
-            ListTile(
-              title: Text('1625 Main Street',
-                  style: TextStyle(fontWeight: FontWeight.w500)),
-              subtitle: Text('My City, CA 99984'),
-              leading: Icon(
-                Icons.restaurant_menu,
-                color: Colors.blue[500],
-              ),
+<?code-excerpt "layout/card_and_stack/lib/main.dart (Card)" replace="/\bCard/[!$&!]/g;"?>
+```dart
+Widget _buildCard() => SizedBox(
+    height: 210,
+    child: [!Card!](
+      child: Column(
+        children: [
+          ListTile(
+            title: Text('1625 Main Street',
+                style: TextStyle(fontWeight: FontWeight.w500)),
+            subtitle: Text('My City, CA 99984'),
+            leading: Icon(
+              Icons.restaurant_menu,
+              color: Colors.blue[500],
             ),
-            Divider(),
-            ListTile(
-              title: Text('(408) 555-1212',
-                  style: TextStyle(fontWeight: FontWeight.w500)),
-              leading: Icon(
-                Icons.contact_phone,
-                color: Colors.blue[500],
-              ),
+          ),
+          Divider(),
+          ListTile(
+            title: Text('(408) 555-1212',
+                style: TextStyle(fontWeight: FontWeight.w500)),
+            leading: Icon(
+              Icons.contact_phone,
+              color: Colors.blue[500],
             ),
-            ListTile(
-              title: Text('costa@example.com'),
-              leading: Icon(
-                Icons.contact_mail,
-                color: Colors.blue[500],
-              ),
+          ),
+          ListTile(
+            title: Text('costa@example.com'),
+            leading: Icon(
+              Icons.contact_mail,
+              color: Colors.blue[500],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-    );
-  //...
-}
-{% endprettify %}
-
+    ),
+  );
+```
 <hr>
 
 ### ListTile
 
-Use ListTile, a specialized row widget from the Material Components library, for
-an easy way to create a row containing up to 3 lines of text and optional
-leading and trailing icons. ListTile is most commonly used in Card or ListView,
-but can be used elsewhere.
+Use [ListTile][], a specialized row widget from the [Material library][], for an
+easy way to create a row containing up to 3 lines of text and optional leading
+and trailing icons. `ListTile` is most commonly used in [Card][] or
+[ListView][], but can be used elsewhere.
 
 #### Summary (ListTile)
 {:.no_toc}
 
 * A specialized row that contains up to 3 lines of text and optional icons
-* Less configurable than Row, but easier to use
-* From the Material Components library
+* Less configurable than `Row`, but easier to use
+* From the [Material library][]
 
 #### Examples (ListTile)
 {:.no_toc}
@@ -1637,15 +1109,16 @@ but can be used elsewhere.
   {% asset ui/layout/card.png class="mw-100" alt="Card containing 3 ListTiles" %}
   {:.text-center}
 
-  A Card containing 3 ListTiles.<br>
-  **Dart code:** See [Card examples](#examples-card).
+  A `Card` containing 3 `ListTiles`.
+
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/listtile-flutter-gallery.png class="border mw-100" height="200px"
       alt="3 ListTiles, each containing a pull-down button" %}
   {:.text-center}
 
-  Uses ListTile to list 3 drop down button types.<br>
+  Uses `ListTile` to list 3 drop down button types.<br>
   **Dart code:** [buttons_demo.dart]({{demo}}/material/buttons_demo.dart)
   from the [Flutter Gallery][]
 </div>
@@ -1657,6 +1130,8 @@ but can be used elsewhere.
 
 The following resources may help when writing layout code.
 
+* [Layout tutorial](/docs/development/ui/layout/tutorial)
+: Learn how to build a layout.
 * [Widget Overview](/docs/development/ui/widgets)
 : Describes many of the widgets available in Flutter.
 * [HTML/CSS Analogs in Flutter](/docs/get-started/flutter-for/web-devs)
@@ -1664,14 +1139,38 @@ The following resources may help when writing layout code.
   to Flutter features.
 * [Flutter Gallery][]
 : Demo app showcasing many Material Design widgets and other Flutter features.
-* [Flutter API documentation](https://docs.flutter.io/)
+* [Flutter API documentation]({{api}})
 : Reference documentation for all of the Flutter libraries.
 * [Dealing with Box Constraints in Flutter](/docs/development/ui/layout/box-constraints)
 : Discusses how widgets are constrained by their render boxes.
 * [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images)
 : Explains how to add images and other assets to your app's package.
-* [Zero to One with Flutter](https://medium.com/@mravn/zero-to-one-with-flutter-43b13fd7b354)
+* [Zero to One with Flutter]({{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354)
 : One person's experience writing his first Flutter app.
 
-[Flutter Gallery]: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
+[build()]: {{api}}/widgets/StatelessWidget/build.html
+[Card]: {{api}}/material/Card-class.html
+[Center]: {{api}}/widgets/Center-class.html
+[Column]: {{api}}/widgets/Column-class.html
+[Container]: {{api}}/widgets/Container-class.html
+[Elevation]: {{site.material}}/design/environment/elevation.html
+[Expanded]: {{api}}/widgets/Expanded-class.html
+[Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
+[GridView]: {{api}}/widgets/GridView-class.html
+[GridTile]: {{api}}/material/GridTile-class.html
 [Icon]: {{api}}/material/Icons-class.html
+[Image]: {{api}}/widgets/Image-class.html
+[layout widgets]: /docs/development/ui/widgets/layout
+[ListTile]: {{api}}/material/ListTile-class.html
+[ListView]: {{api}}/widgets/ListView-class.html
+[Material card]: {{site.material}}/design/components/cards.html
+[Material Design]: {{site.material}}/design
+[Material library]: {{api}}/material/material-library.html
+[Row]: {{api}}/widgets/Row-class.html
+[Scaffold]: {{api}}/material/Scaffold-class.html
+[SizedBox]: {{api}}/widgets/SizedBox-class.html
+[Stack]: {{api}}/widgets/Stack-class.html
+[Text]: {{api}}/widgets/Text-class.html
+[tutorial]: /docs/development/ui/layout/tutorial
+[widgets library]: {{api}}/widgets/widgets-library.html
+[Widget catalog]: /docs/development/ui/widgets

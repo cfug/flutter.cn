@@ -42,7 +42,7 @@ after_script:
 
 deploy:
   - provider: script
-    script: ./tool/translator/deploy.sh
+    script: ./tool/translator/deploy-cn.sh
     skip_cleanup: true
     on:
       repo: cfug/flutter.cn

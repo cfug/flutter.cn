@@ -52,7 +52,7 @@ Android Studio offers a complete, integrated IDE experience for Flutter.
 
 Android Studio 为 Flutter 提供了一个完整的集成开发环境。
 
-* [Android Studio](https://developer.android.com/studio), version 3.0 or later
+* [Android Studio]({{site.android-dev}}/studio), version 3.0 or later
 
   [Android Studio](https://developer.android.google.cn/studio)，3.0 或之后的版本
 
@@ -132,11 +132,14 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
  1. Type "flutter" in the extensions search field, select **Flutter** in the list,
     and click **Install**. This also installs the required Dart plugin.
+<<<<<<< HEAD
 
     在扩展搜索输入框中输入 "flutter"，然后在列表中选择 **Flutter** 并单击 **安装**。
     此过程中会自动安装必需的 Dart 插件。
 
  1. Click **Reload to Activate** to reload VS Code.
+=======
+>>>>>>> 4f2d3ad58a425fc263d379b7b8d9802f5510f6fe
 
     点击 **重新加载** 以重新启动 VS Code。
 

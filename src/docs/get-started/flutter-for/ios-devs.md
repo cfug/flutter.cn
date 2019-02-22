@@ -600,12 +600,12 @@ The following example builds a Map.
 {% prettify dart %}
 void main() {
   runApp(MaterialApp(
-​    home: MyAppHome(), // becomes the route named '/'
-​    routes: <String, WidgetBuilder> {
-​      '/a': (BuildContext context) => MyPage(title: 'page A'),
-​      '/b': (BuildContext context) => MyPage(title: 'page B'),
-​      '/c': (BuildContext context) => MyPage(title: 'page C'),
-​    },
+    home: MyAppHome(), // becomes the route named '/'
+    routes: <String, WidgetBuilder> {
+      '/a': (BuildContext context) => MyPage(title: 'page A'),
+      '/b': (BuildContext context) => MyPage(title: 'page B'),
+      '/c': (BuildContext context) => MyPage(title: 'page C'),
+    },
   ));
 }
 {% endprettify %}
@@ -703,7 +703,7 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-​    widgets = json.decode(response.body);
+    widgets = json.decode(response.body);
   });
 }
 {% endprettify %}
@@ -2144,7 +2144,7 @@ the `Text` widget:
 {% prettify dart %}
 body: Center(
   child: TextField(
-​    decoration: InputDecoration(hintText: "This is a hint"),
+    decoration: InputDecoration(hintText: "This is a hint"),
   ),
 )
 {% endprettify %}

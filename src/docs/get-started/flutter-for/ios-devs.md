@@ -87,7 +87,8 @@ Flutter 包含了 [Material Components]({{site.material}}/develop/flutter/) 库�
 
 But Flutter is flexible and expressive enough to implement any design language.
 On iOS, you can use the [Cupertino widgets](/docs/development/ui/widgets/cupertino)
-to produce an interface that looks like [Apple's iOS design language](https://developer.apple.com/design/resources).
+to produce an interface that looks like
+[Apple's iOS design language](https://developer.apple.com/design/resources).
 但是 Flutter 的灵活性和表现力使其能够适配任何的设计语言。在 iOS 中，你可以通过 [Cupertino widgets](/docs/development/ui/widgets/cupertino) 
 来构造类似于[Apple iOS 设计语言](https://developer.apple.com/design/resources/)的接口。
 
@@ -282,13 +283,13 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Sample App',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​      ),
-​      home: SampleAppPage(),
-​    );
+    return MaterialApp(
+      title: 'Sample App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SampleAppPage(),
+    );
   }
 }
 
@@ -303,37 +304,37 @@ class _SampleAppPageState extends State<SampleAppPage> {
   // Default value for toggle
   bool toggle = true;
   void _toggle() {
-​    setState(() {
-​      toggle = !toggle;
-​    });
+    setState(() {
+      toggle = !toggle;
+    });
   }
 
   _getToggleChild() {
-​    if (toggle) {
-​      return Text('Toggle One');
-​    } else {
-​      return CupertinoButton(
-​        onPressed: () {},
-​        child: Text('Toggle Two'),
-​      );
-​    }
+    if (toggle) {
+      return Text('Toggle One');
+    } else {
+      return CupertinoButton(
+        onPressed: () {},
+        child: Text('Toggle Two'),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​      appBar: AppBar(
-​        title: Text("Sample App"),
-​      ),
-​      body: Center(
-​        child: _getToggleChild(),
-​      ),
-​      floatingActionButton: FloatingActionButton(
-​        onPressed: _toggle,
-​        tooltip: 'Update Text',
-​        child: Icon(Icons.update),
-​      ),
-​    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sample App"),
+      ),
+      body: Center(
+        child: _getToggleChild(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _toggle,
+        tooltip: 'Update Text',
+        child: Icon(Icons.update),
+      ),
+    );
   }
 }
 {% endprettify %}
@@ -381,13 +382,13 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Fade Demo',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​      ),
-​      home: MyFadeTest(title: 'Fade Demo'),
-​    );
+    return MaterialApp(
+      title: 'Fade Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyFadeTest(title: 'Fade Demo'),
+    );
   }
 }
 
@@ -406,40 +407,40 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 
   @override
   void initState() {
-​    controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
-​    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​      appBar: AppBar(
-​        title: Text(widget.title),
-​      ),
-​      body: Center(
-​        child: Container(
-​          child: FadeTransition(
-​            opacity: curve,
-​            child: FlutterLogo(
-​              size: 100.0,
-​            )
-​          )
-​        )
-​      ),
-​      floatingActionButton: FloatingActionButton(
-​        tooltip: 'Fade',
-​        child: Icon(Icons.brush),
-​        onPressed: () {
-​          controller.forward();
-​        },
-​      ),
-​    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Container(
+          child: FadeTransition(
+            opacity: curve,
+            child: FlutterLogo(
+              size: 100.0,
+            )
+          )
+        )
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Fade',
+        child: Icon(Icons.brush),
+        onPressed: () {
+          controller.forward();
+        },
+      ),
+    );
   }
 
   @override
   dispose() {
-​    controller.dispose();
-​    super.dispose();
+    controller.dispose();
+    super.dispose();
   }
 }
 {% endprettify %}
@@ -475,14 +476,14 @@ class SignaturePainter extends CustomPainter {
   final List<Offset> points;
 
   void paint(Canvas canvas, Size size) {
-​    var paint = Paint()
-​      ..color = Colors.black
-​      ..strokeCap = StrokeCap.round
-​      ..strokeWidth = 5.0;
-​    for (int i = 0; i < points.length - 1; i++) {
-​      if (points[i] != null && points[i + 1] != null)
-​        canvas.drawLine(points[i], points[i + 1], paint);
-​    }
+    var paint = Paint()
+      ..color = Colors.black
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 5.0;
+    for (int i = 0; i < points.length - 1; i++) {
+      if (points[i] != null && points[i + 1] != null)
+        canvas.drawLine(points[i], points[i + 1], paint);
+    }
   }
 
   bool shouldRepaint(SignaturePainter other) => other.points != points;
@@ -497,18 +498,18 @@ class SignatureState extends State<Signature> {
   List<Offset> _points = <Offset>[];
 
   Widget build(BuildContext context) {
-​    return GestureDetector(
-​      onPanUpdate: (DragUpdateDetails details) {
-​        setState(() {
-​          RenderBox referenceBox = context.findRenderObject();
-​          Offset localPosition =
-​          referenceBox.globalToLocal(details.globalPosition);
-​          _points = List.from(_points)..add(localPosition);
-​        });
-​      },
-​      onPanEnd: (DragEndDetails details) => _points.add(null),
-​      child: CustomPaint(painter: SignaturePainter(_points), size: Size.infinite),
-​    );
+    return GestureDetector(
+      onPanUpdate: (DragUpdateDetails details) {
+        setState(() {
+          RenderBox referenceBox = context.findRenderObject();
+          Offset localPosition =
+          referenceBox.globalToLocal(details.globalPosition);
+          _points = List.from(_points)..add(localPosition);
+        });
+      },
+      onPanEnd: (DragEndDetails details) => _points.add(null),
+      child: CustomPaint(painter: SignaturePainter(_points), size: Size.infinite),
+    );
   }
 }
 {% endprettify %}
@@ -546,7 +547,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-​    return RaisedButton(onPressed: () {}, child: Text(label));
+    return RaisedButton(onPressed: () {}, child: Text(label));
   }
 }
 {% endprettify %}
@@ -557,7 +558,7 @@ Then use `CustomButton`, just as you'd use any other Flutter widget:
 @override
 Widget build(BuildContext context) {
   return Center(
-​    child: CustomButton("Hello"),
+    child: CustomButton("Hello"),
   );
 }
 {% endprettify %}
@@ -728,13 +729,13 @@ void main() {
 class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Sample App',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​      ),
-​      home: SampleAppPage(),
-​    );
+    return MaterialApp(
+      title: 'Sample App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SampleAppPage(),
+    );
   }
 }
 
@@ -750,37 +751,37 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   @override
   void initState() {
-​    super.initState();
+    super.initState();
 
     loadData();
   }
 
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​      appBar: AppBar(
-​        title: Text("Sample App"),
-​      ),
-​      body: ListView.builder(
-​          itemCount: widgets.length,
-​          itemBuilder: (BuildContext context, int position) {
-​            return getRow(position);
-​          }));
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sample App"),
+      ),
+      body: ListView.builder(
+          itemCount: widgets.length,
+          itemBuilder: (BuildContext context, int position) {
+            return getRow(position);
+          }));
   }
 
   Widget getRow(int i) {
-​    return Padding(
-​      padding: EdgeInsets.all(10.0),
-​      child: Text("Row ${widgets[i]["title"]}")
-​    );
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Text("Row ${widgets[i]["title"]}")
+    );
   }
 
   loadData() async {
-​    String dataURL = "https://jsonplaceholder.typicode.com/posts";
-​    http.Response response = await http.get(dataURL);
-​    setState(() {
-​      widgets = json.decode(response.body);
-​    });
+    String dataURL = "https://jsonplaceholder.typicode.com/posts";
+    http.Response response = await http.get(dataURL);
+    setState(() {
+      widgets = json.decode(response.body);
+    });
   }
 }
 {% endprettify %}
@@ -811,7 +812,7 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-​    widgets = json.decode(response.body);
+    widgets = json.decode(response.body);
   });
 }
 {% endprettify %}
@@ -848,7 +849,7 @@ loadData() async {
   List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
 
   setState(() {
-​    widgets = msg;
+    widgets = msg;
   });
 }
 
@@ -861,8 +862,8 @@ static dataLoader(SendPort sendPort) async {
   sendPort.send(port.sendPort);
 
   await for (var msg in port) {
-​    String data = msg[0];
-​    SendPort replyTo = msg[1];
+    String data = msg[0];
+    SendPort replyTo = msg[1];
 
     String dataURL = data;
     http.Response response = await http.get(dataURL);
@@ -902,13 +903,13 @@ void main() {
 class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Sample App',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​      ),
-​      home: SampleAppPage(),
-​    );
+    return MaterialApp(
+      title: 'Sample App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SampleAppPage(),
+    );
   }
 }
 
@@ -924,58 +925,58 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   @override
   void initState() {
-​    super.initState();
-​    loadData();
+    super.initState();
+    loadData();
   }
 
   showLoadingDialog() {
-​    if (widgets.length == 0) {
-​      return true;
-​    }
+    if (widgets.length == 0) {
+      return true;
+    }
 
     return false;
   }
 
   getBody() {
-​    if (showLoadingDialog()) {
-​      return getProgressDialog();
-​    } else {
-​      return getListView();
-​    }
+    if (showLoadingDialog()) {
+      return getProgressDialog();
+    } else {
+      return getListView();
+    }
   }
 
   getProgressDialog() {
-​    return Center(child: CircularProgressIndicator());
+    return Center(child: CircularProgressIndicator());
   }
 
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​        appBar: AppBar(
-​          title: Text("Sample App"),
-​        ),
-​        body: getBody());
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Sample App"),
+        ),
+        body: getBody());
   }
 
   ListView getListView() => ListView.builder(
-​      itemCount: widgets.length,
-​      itemBuilder: (BuildContext context, int position) {
-​        return getRow(position);
-​      });
+      itemCount: widgets.length,
+      itemBuilder: (BuildContext context, int position) {
+        return getRow(position);
+      });
 
   Widget getRow(int i) {
-​    return Padding(padding: EdgeInsets.all(10.0), child: Text("Row ${widgets[i]["title"]}"));
+    return Padding(padding: EdgeInsets.all(10.0), child: Text("Row ${widgets[i]["title"]}"));
   }
 
   loadData() async {
-​    ReceivePort receivePort = ReceivePort();
-​    await Isolate.spawn(dataLoader, receivePort.sendPort);
+    ReceivePort receivePort = ReceivePort();
+    await Isolate.spawn(dataLoader, receivePort.sendPort);
 
     // The 'echo' isolate sends its SendPort as the first message
     SendPort sendPort = await receivePort.first;
-    
+
     List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
-    
+
     setState(() {
       widgets = msg;
     });
@@ -983,16 +984,16 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 // the entry point for the isolate
   static dataLoader(SendPort sendPort) async {
-​    // Open the ReceivePort for incoming messages.
-​    ReceivePort port = ReceivePort();
+    // Open the ReceivePort for incoming messages.
+    ReceivePort port = ReceivePort();
 
     // Notify any other isolates what port this isolate listens to.
     sendPort.send(port.sendPort);
-    
+
     await for (var msg in port) {
       String data = msg[0];
       SendPort replyTo = msg[1];
-    
+
       String dataURL = data;
       http.Response response = await http.get(dataURL);
       // Lots of JSON to parse
@@ -1001,9 +1002,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future sendReceive(SendPort port, msg) {
-​    ReceivePort response = ReceivePort();
-​    port.send([msg, response.sendPort]);
-​    return response.first;
+    ReceivePort response = ReceivePort();
+    port.send([msg, response.sendPort]);
+    return response.first;
   }
 }
 {% endprettify %}
@@ -1036,11 +1037,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 [...]
   loadData() async {
-​    String dataURL = "https://jsonplaceholder.typicode.com/posts";
-​    http.Response response = await http.get(dataURL);
-​    setState(() {
-​      widgets = json.decode(response.body);
-​    });
+    String dataURL = "https://jsonplaceholder.typicode.com/posts";
+    http.Response response = await http.get(dataURL);
+    setState(() {
+      widgets = json.decode(response.body);
+    });
   }
 }
 {% endprettify %}
@@ -1080,13 +1081,13 @@ void main() {
 class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Sample App',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​      ),
-​      home: SampleAppPage(),
-​    );
+    return MaterialApp(
+      title: 'Sample App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SampleAppPage(),
+    );
   }
 }
 
@@ -1102,51 +1103,51 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   @override
   void initState() {
-​    super.initState();
-​    loadData();
+    super.initState();
+    loadData();
   }
 
   showLoadingDialog() {
-​    return widgets.length == 0;
+    return widgets.length == 0;
   }
 
   getBody() {
-​    if (showLoadingDialog()) {
-​      return getProgressDialog();
-​    } else {
-​      return getListView();
-​    }
+    if (showLoadingDialog()) {
+      return getProgressDialog();
+    } else {
+      return getListView();
+    }
   }
 
   getProgressDialog() {
-​    return Center(child: CircularProgressIndicator());
+    return Center(child: CircularProgressIndicator());
   }
 
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​        appBar: AppBar(
-​          title: Text("Sample App"),
-​        ),
-​        body: getBody());
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Sample App"),
+        ),
+        body: getBody());
   }
 
   ListView getListView() => ListView.builder(
-​      itemCount: widgets.length,
-​      itemBuilder: (BuildContext context, int position) {
-​        return getRow(position);
-​      });
+      itemCount: widgets.length,
+      itemBuilder: (BuildContext context, int position) {
+        return getRow(position);
+      });
 
   Widget getRow(int i) {
-​    return Padding(padding: EdgeInsets.all(10.0), child: Text("Row ${widgets[i]["title"]}"));
+    return Padding(padding: EdgeInsets.all(10.0), child: Text("Row ${widgets[i]["title"]}"));
   }
 
   loadData() async {
-​    String dataURL = "https://jsonplaceholder.typicode.com/posts";
-​    http.Response response = await http.get(dataURL);
-​    setState(() {
-​      widgets = json.decode(response.body);
-​    });
+    String dataURL = "https://jsonplaceholder.typicode.com/posts";
+    http.Response response = await http.get(dataURL);
+    setState(() {
+      widgets = json.decode(response.body);
+    });
   }
 }
 {% endprettify %}
@@ -1286,13 +1287,12 @@ package to use i10n machinery, such as date/time formatting.
 dependencies:
   # ...
   flutter_localizations:
-​    sdk: flutter
+    sdk: flutter
   intl: "^0.15.6"
 {% endprettify %}
 
 To use the `flutter_localizations` package,
 specify the `localizationsDelegates` and `supportedLocales` on the app widget:
-使用 `flutter_localizations` 的话，请在应用 widget 中指定 `localizationsDelegates` 和 `supportedLocales`：
 
 {% prettify dart %}
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -1304,9 +1304,9 @@ MaterialApp(
    GlobalWidgetsLocalizations.delegate,
  ],
  supportedLocales: [
-​    const Locale('en', 'US'), // English
-​    const Locale('he', 'IL'), // Hebrew
-​    // ... other locales the app supports
+    const Locale('en', 'US'), // English
+    const Locale('he', 'IL'), // Hebrew
+    // ... other locales the app supports
   ],
   // ...
 )
@@ -1468,13 +1468,13 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Sample App',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​      ),
-​      home: SampleAppPage(),
-​    );
+    return MaterialApp(
+      title: 'Sample App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SampleAppPage(),
+    );
   }
 }
 
@@ -1488,20 +1488,20 @@ class SampleAppPage extends StatefulWidget {
 class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​      appBar: AppBar(
-​        title: Text("Sample App"),
-​      ),
-​      body: ListView(children: _getListData()),
-​    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sample App"),
+      ),
+      body: ListView(children: _getListData()),
+    );
   }
 
   _getListData() {
-​    List<Widget> widgets = [];
-​    for (int i = 0; i < 100; i++) {
-​      widgets.add(Padding(padding: EdgeInsets.all(10.0), child: Text("Row $i")));
-​    }
-​    return widgets;
+    List<Widget> widgets = [];
+    for (int i = 0; i < 100; i++) {
+      widgets.add(Padding(padding: EdgeInsets.all(10.0), child: Text("Row $i")));
+    }
+    return widgets;
   }
 }
 {% endprettify %}
@@ -1525,13 +1525,13 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Sample App',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​      ),
-​      home: SampleAppPage(),
-​    );
+    return MaterialApp(
+      title: 'Sample App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SampleAppPage(),
+    );
   }
 }
 
@@ -1545,28 +1545,28 @@ class SampleAppPage extends StatefulWidget {
 class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​      appBar: AppBar(
-​        title: Text("Sample App"),
-​      ),
-​      body: ListView(children: _getListData()),
-​    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sample App"),
+      ),
+      body: ListView(children: _getListData()),
+    );
   }
 
   _getListData() {
-​    List<Widget> widgets = [];
-​    for (int i = 0; i < 100; i++) {
-​      widgets.add(GestureDetector(
-​        child: Padding(
-​          padding: EdgeInsets.all(10.0),
-​          child: Text("Row $i"),
-​        ),
-​        onTap: () {
-​          print('row tapped');
-​        },
-​      ));
-​    }
-​    return widgets;
+    List<Widget> widgets = [];
+    for (int i = 0; i < 100; i++) {
+      widgets.add(GestureDetector(
+        child: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Text("Row $i"),
+        ),
+        onTap: () {
+          print('row tapped');
+        },
+      ));
+    }
+    return widgets;
   }
 }
 {% endprettify %}
@@ -1606,13 +1606,13 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Sample App',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​      ),
-​      home: SampleAppPage(),
-​    );
+    return MaterialApp(
+      title: 'Sample App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SampleAppPage(),
+    );
   }
 }
 
@@ -1628,36 +1628,36 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   @override
   void initState() {
-​    super.initState();
-​    for (int i = 0; i < 100; i++) {
-​      widgets.add(getRow(i));
-​    }
+    super.initState();
+    for (int i = 0; i < 100; i++) {
+      widgets.add(getRow(i));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​      appBar: AppBar(
-​        title: Text("Sample App"),
-​      ),
-​      body: ListView(children: widgets),
-​    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sample App"),
+      ),
+      body: ListView(children: widgets),
+    );
   }
 
   Widget getRow(int i) {
-​    return GestureDetector(
-​      child: Padding(
-​        padding: EdgeInsets.all(10.0),
-​        child: Text("Row $i"),
-​      ),
-​      onTap: () {
-​        setState(() {
-​          widgets = List.from(widgets);
-​          widgets.add(getRow(widgets.length + 1));
-​          print('row $i');
-​        });
-​      },
-​    );
+    return GestureDetector(
+      child: Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Text("Row $i"),
+      ),
+      onTap: () {
+        setState(() {
+          widgets = List.from(widgets);
+          widgets.add(getRow(widgets.length + 1));
+          print('row $i');
+        });
+      },
+    );
   }
 }
 {% endprettify %}
@@ -1679,13 +1679,13 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Sample App',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​      ),
-​      home: SampleAppPage(),
-​    );
+    return MaterialApp(
+      title: 'Sample App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SampleAppPage(),
+    );
   }
 }
 
@@ -1701,40 +1701,40 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   @override
   void initState() {
-​    super.initState();
-​    for (int i = 0; i < 100; i++) {
-​      widgets.add(getRow(i));
-​    }
+    super.initState();
+    for (int i = 0; i < 100; i++) {
+      widgets.add(getRow(i));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​      appBar: AppBar(
-​        title: Text("Sample App"),
-​      ),
-​      body: ListView.builder(
-​        itemCount: widgets.length,
-​        itemBuilder: (BuildContext context, int position) {
-​          return getRow(position);
-​        },
-​      ),
-​    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sample App"),
+      ),
+      body: ListView.builder(
+        itemCount: widgets.length,
+        itemBuilder: (BuildContext context, int position) {
+          return getRow(position);
+        },
+      ),
+    );
   }
 
   Widget getRow(int i) {
-​    return GestureDetector(
-​      child: Padding(
-​        padding: EdgeInsets.all(10.0),
-​        child: Text("Row $i"),
-​      ),
-​      onTap: () {
-​        setState(() {
-​          widgets.add(getRow(widgets.length + 1));
-​          print('row $i');
-​        });
-​      },
-​    );
+    return GestureDetector(
+      child: Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Text("Row $i"),
+      ),
+      onTap: () {
+        setState(() {
+          widgets.add(getRow(widgets.length + 1));
+          print('row $i');
+        });
+      },
+    );
   }
 }
 {% endprettify %}
@@ -1772,12 +1772,12 @@ in a vertical format.
 @override
 Widget build(BuildContext context) {
   return ListView(
-​    children: <Widget>[
-​      Text('Row One'),
-​      Text('Row Two'),
-​      Text('Row Three'),
-​      Text('Row Four'),
-​    ],
+    children: <Widget>[
+      Text('Row One'),
+      Text('Row Two'),
+      Text('Row Three'),
+      Text('Row Four'),
+    ],
   );
 }
 {% endprettify %}
@@ -1916,24 +1916,24 @@ void initState() {
 class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​      body: Center(
-​        child: GestureDetector(
-​          child: RotationTransition(
-​            turns: curve,
-​            child: FlutterLogo(
-​              size: 200.0,
-​            )),
-​          onDoubleTap: () {
-​            if (controller.isCompleted) {
-​              controller.reverse();
-​            } else {
-​              controller.forward();
-​            }
-​          },
-​        ),
-​      ),
-​    );
+    return Scaffold(
+      body: Center(
+        child: GestureDetector(
+          child: RotationTransition(
+            turns: curve,
+            child: FlutterLogo(
+              size: 200.0,
+            )),
+          onDoubleTap: () {
+            if (controller.isCompleted) {
+              controller.reverse();
+            } else {
+              controller.forward();
+            }
+          },
+        ),
+      ),
+    );
   }
 }
 {% endprettify %}
@@ -1984,14 +1984,14 @@ the primary swatch is set to blue and text selection color is red.
 class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Sample App',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​        textSelectionColor: Colors.red
-​      ),
-​      home: SampleAppPage(),
-​    );
+    return MaterialApp(
+      title: 'Sample App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        textSelectionColor: Colors.red
+      ),
+      home: SampleAppPage(),
+    );
   }
 }
 {% endprettify %}
@@ -2021,15 +2021,15 @@ Then assign the font to your `Text` widget:
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-​    appBar: AppBar(
-​      title: Text("Sample App"),
-​    ),
-​    body: Center(
-​      child: Text(
-​        'This is a custom font text',
-​        style: TextStyle(fontFamily: 'MyCustomFont'),
-​      ),
-​    ),
+    appBar: AppBar(
+      title: Text("Sample App"),
+    ),
+    body: Center(
+      child: Text(
+        'This is a custom font text',
+        style: TextStyle(fontFamily: 'MyCustomFont'),
+      ),
+    ),
   );
 }
 {% endprettify %}
@@ -2087,42 +2087,42 @@ class _MyFormState extends State<MyForm> {
 
   @override
   void dispose() {
-​    // Clean up the controller when disposing of the Widget.
-​    myController.dispose();
-​    super.dispose();
+    // Clean up the controller when disposing of the Widget.
+    myController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​      appBar: AppBar(
-​        title: Text('Retrieve Text Input'),
-​      ),
-​      body: Padding(
-​        padding: const EdgeInsets.all(16.0),
-​        child: TextField(
-​          controller: myController,
-​        ),
-​      ),
-​      floatingActionButton: FloatingActionButton(
-​        // When the user presses the button, show an alert dialog with the
-​        // text the user has typed into our text field.
-​        onPressed: () {
-​          return showDialog(
-​            context: context,
-​            builder: (context) {
-​              return AlertDialog(
-​                // Retrieve the text the user has typed in using our
-​                // TextEditingController
-​                content: Text(myController.text),
-​              );
-​            },
-​          );
-​        },
-​        tooltip: 'Show me the value!',
-​        child: Icon(Icons.text_fields),
-​      ),
-​    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Retrieve Text Input'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: TextField(
+          controller: myController,
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        // When the user presses the button, show an alert dialog with the
+        // text the user has typed into our text field.
+        onPressed: () {
+          return showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                // Retrieve the text the user has typed in using our
+                // TextEditingController
+                content: Text(myController.text),
+              );
+            },
+          );
+        },
+        tooltip: 'Show me the value!',
+        child: Icon(Icons.text_fields),
+      ),
+    );
   }
 }
 {% endprettify %}
@@ -2167,13 +2167,13 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-​    return MaterialApp(
-​      title: 'Sample App',
-​      theme: ThemeData(
-​        primarySwatch: Colors.blue,
-​      ),
-​      home: SampleAppPage(),
-​    );
+    return MaterialApp(
+      title: 'Sample App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SampleAppPage(),
+    );
   }
 }
 
@@ -2189,37 +2189,37 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   @override
   Widget build(BuildContext context) {
-​    return Scaffold(
-​      appBar: AppBar(
-​        title: Text("Sample App"),
-​      ),
-​      body: Center(
-​        child: TextField(
-​          onSubmitted: (String text) {
-​            setState(() {
-​              if (!isEmail(text)) {
-​                _errorText = 'Error: This is not an email';
-​              } else {
-​                _errorText = null;
-​              }
-​            });
-​          },
-​          decoration: InputDecoration(hintText: "This is a hint", errorText: _getErrorText()),
-​        ),
-​      ),
-​    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sample App"),
+      ),
+      body: Center(
+        child: TextField(
+          onSubmitted: (String text) {
+            setState(() {
+              if (!isEmail(text)) {
+                _errorText = 'Error: This is not an email';
+              } else {
+                _errorText = null;
+              }
+            });
+          },
+          decoration: InputDecoration(hintText: "This is a hint", errorText: _getErrorText()),
+        ),
+      ),
+    );
   }
 
   _getErrorText() {
-​    return _errorText;
+    return _errorText;
   }
 
   bool isEmail(String emailString) {
-​    String emailRegexp =
-​        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    String emailRegexp =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 
     RegExp regExp = RegExp(emailRegexp);
-    
+
     return regExp.hasMatch(emailString);
   }
 }

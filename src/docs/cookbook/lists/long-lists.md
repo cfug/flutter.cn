@@ -1,11 +1,18 @@
 ---
 title: Working with long lists
 title: 长列表的处理
+prev:
+  title: Creating lists with different types of items
+  path: /docs/cookbook/lists/mixed-list
+next:
+  title: Report errors to a service
+  path: /docs/cookbook/maintenance/error-reporting
 ---
 
-The standard [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
+The standard [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
 constructor works well for small lists. In order to work with lists that contain
-a large number of items, it's best to use the [`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html)
+a large number of items, it's best to use the
+[`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)
 constructor.
 
 Whereas the default `ListView` constructor requires us to create all items at
@@ -19,7 +26,7 @@ might be a list of messages, search results, or products in a store. Most of
 the time, this data will come from the internet or a database.
 
 For this example, we'll generate a list of 10000 Strings using the
-[`List.generate`](https://docs.flutter.io/flutter/dart-core/List/List.generate.html)
+[`List.generate`]({{site.api}}/flutter/dart-core/List/List.generate.html)
 constructor.
 
 <!-- skip -->

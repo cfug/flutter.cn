@@ -17,7 +17,6 @@ diff2html: true
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
 
 {% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='site-image-right' %}
-<?code-excerpt path-base="codelabs/startup_namer"?>
 
 {%- comment %}
   Code highlights in this page are green, to match diff additions.
@@ -31,10 +30,10 @@ you can complete this tutorial. You don’t need
 previous experience with Dart or mobile programming.
 
 This guide is part 1 of a two-part codelab. You can find
-[part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
-on [Google Developers](https://codelabs.developers.google.com).
-[Part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
-can also be found on [Google Developers](https://codelabs.developers.google.com).
+[part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
+on [Google Developers]({{site.codelabs}}).
+[Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
+can also be found on [Google Developers]({{site.codelabs}}).
 
 ## What you'll build in part 1
 {:.no_toc}
@@ -57,7 +56,7 @@ The animated GIF shows how the app works at the completion of part 1.
   * How to implement a stateful widget.
   * How to create an infinite, lazily loaded list.
 
-  In [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
+  In [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
   of this codelab, you'll add interactivity, modify the app's theme, and
   add the ability to navigate to a new screen (called a _route_ in Flutter).
 {{site.alert.end}}
@@ -81,6 +80,8 @@ The animated GIF shows how the app works at the completion of part 1.
 
 ## Step 1: Create the starter Flutter app
 
+<?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
+
 Create a simple, templated Flutter app, using the instructions in
 [Getting Started with your first Flutter app.](/docs/get-started/test-drive#create-app)
 Name the project **startup_namer** (instead of _myapp_).
@@ -99,7 +100,7 @@ where the Dart code lives.
     Replace with the following code, which displays "Hello World" in the center
     of the screen.
 
-    <?code-excerpt "1-base/lib/main.dart"?>
+    <?code-excerpt "lib/main.dart" title?>
     ```dart
     import 'package:flutter/material.dart';
 
@@ -151,7 +152,7 @@ where the Dart code lives.
 {:.no_toc}
 
 * This example creates a Material app.
-  [Material](https://material.io/guidelines/) is a visual design language
+  [Material]({{site.material}}/guidelines) is a visual design language
   that is standard on mobile and the web. Flutter offers a rich set
   of Material widgets.
 * The `main()` method uses arrow (`=>`) notation.
@@ -173,21 +174,22 @@ where the Dart code lives.
 ## Step 2: Use an external package
 
 In this step, you’ll start using an open-source package named
-[english_words](https://pub.dartlang.org/packages/english_words),
+[english_words]({{site.pub}}/packages/english_words),
 which contains a few thousand of the most used
 English words plus some utility functions.
 
 You can find the `english_words` package, as well as many other open source
-packages, on [the Package site](https://pub.dartlang.org/flutter).
+packages, on the [Pub site]({{site.pub}}/flutter).
 
  1. The pubspec file manages the assets and dependencies for a Flutter app. In
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
     list:
 
-    <?code-excerpt "1-base/pubspec.yaml" diff-with="2-use-package/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
+    <?code-excerpt path-base="codelabs/startup_namer"?>
+    <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
     ```diff
-    --- 1-base/pubspec.yaml
-    +++ 2-use-package/pubspec.yaml
+    --- step1_base/pubspec.yaml
+    +++ step2_use_package/pubspec.yaml
     @@ -5,4 +5,5 @@
      dependencies:
        flutter:
@@ -212,12 +214,12 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
 
  3. In `lib/main.dart`, import the new package:
 
-    <!-- skip -->
-    <?code-excerpt "2-use-package/lib/main.dart" retain="/^import/" replace="/import.*?english.*/[!$&!]/g" indent-by="2"?>
-    {% prettify dart %}
+    <?code-excerpt path-base="codelabs/startup_namer/step2_use_package"?>
+    <?code-excerpt "lib/main.dart" title retain="/^import/" replace="/import.*?english.*/[!$&!]/g" indent-by="2"?>
+    ```dart
       import 'package:flutter/material.dart';
       [!import 'package:english_words/english_words.dart';!]
-    {% endprettify %}
+    ```
 
     As you type, Android Studio gives you suggestions for libraries to import.
     It then renders the import string in gray, letting you know that the
@@ -226,10 +228,11 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
  4. Use the English words package to generate the text instead of
     using the string "Hello World":
 
-    <?code-excerpt "1-base/lib/main.dart" diff-with="2-use-package/lib/main.dart" from="class"?>
+    <?code-excerpt path-base="codelabs/startup_namer"?>
+    <?code-excerpt "{step1_base,step2_use_package}/lib/main.dart" from="class"?>
     ```diff
-    --- 1-base/lib/main.dart
-    +++ 2-use-package/lib/main.dart
+    --- step1_base/lib/main.dart
+    +++ step2_use_package/lib/main.dart
     @@ -5,6 +6,7 @@
      class MyApp extends StatelessWidget {
        @override
@@ -275,10 +278,12 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
 If your app is not running correctly, look for typos. If needed,
 use the code at the following links to get back on track.
 
-* [pubspec.yaml]({{code-url}}/startup_namer/2-use-package/pubspec.yaml)
-* [lib/main.dart]({{code-url}}/startup_namer/2-use-package/lib/main.dart)
+* [pubspec.yaml]({{code-url}}/startup_namer/step2_use_package/pubspec.yaml)
+* [lib/main.dart]({{code-url}}/startup_namer/step2_use_package/lib/main.dart)
 
 ## Step 3: Add a Stateful widget
+
+<?code-excerpt path-base="codelabs/startup_namer/step3_stateful_widget"?>
 
 State<em>less</em> widgets are immutable, meaning that their
 properties can’t change&mdash;all values are final.
@@ -297,22 +302,21 @@ a child inside the existing `MyApp` stateless widget.
  1. Create a minimal state class. Add the following to the bottom
     of `main.dart`:
 
-    <!-- skip -->
-    <?code-excerpt "3-stateful-widget/lib/main.dart (RWS-class-only)" plaster="// TODO Add build() method" indent-by="2"?>
-    {% prettify dart %}
+    <?code-excerpt "lib/main.dart (RandomWordsState)" title region="RWS-class-only" plaster="// TODO Add build() method" indent-by="2"?>
+    ```dart
       class RandomWordsState extends State<RandomWords> {
         // TODO Add build() method
       }
-    {% endprettify %}
+    ```
 
     Notice the declaration `State<RandomWords>`. This indicates that we're
     using the generic
-    [State](https://docs.flutter.io/flutter/widgets/State-class.html)
+    [State]({{site.api}}/flutter/widgets/State-class.html)
     class specialized for use with `RandomWords`. Most of the app's logic
     and state resides here&mdash;it maintains the state for the `RandomWords`
     widget. This class saves the generated word pairs, which grows infinitely
     as the user scrolls, and favorite word pairs (in
-    [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)),
+    [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)),
     as the user adds or removes them from the list by toggling the heart icon.
 
     `RandomWordsState` depends on the `RandomWords` class. You'll add that next.
@@ -320,14 +324,13 @@ a child inside the existing `MyApp` stateless widget.
  2. Add the stateful `RandomWords` widget to `main.dart`.
     The `RandomWords` widget does little else beside creating its State class:
 
-    <!-- skip -->
-    <?code-excerpt "3-stateful-widget/lib/main.dart (RandomWords)" indent-by="2"?>
-    {% prettify dart %}
+    <?code-excerpt "lib/main.dart (RandomWords)" title indent-by="2"?>
+    ```dart
       class RandomWords extends StatefulWidget {
         @override
         RandomWordsState createState() => new RandomWordsState();
       }
-    {% endprettify %}
+    ```
 
     After adding the state class, the IDE complains that
     the class is missing a build method. Next, you'll add a basic
@@ -336,9 +339,8 @@ a child inside the existing `MyApp` stateless widget.
 
  3. Add the `build()` method to `RandomWordsState`:
 
-    <!-- skip -->
-    <?code-excerpt "3-stateful-widget/lib/main.dart (RandomWordsState)" indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
-    {% prettify dart %}
+    <?code-excerpt "lib/main.dart (RandomWordsState)" title indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
+    ```dart
       class RandomWordsState extends State<RandomWords> {
         [!@override!]
         [!Widget build(BuildContext context) {!]
@@ -346,15 +348,16 @@ a child inside the existing `MyApp` stateless widget.
         [!  return Text(wordPair.asPascalCase);!]
         [!}!]
       }
-    {% endprettify %}
+    ```
 
  4. Remove the word generation code from `MyApp` by making the changes shown in
     the following diff:
 
-    <?code-excerpt "2-use-package/lib/main.dart" diff-with="3-stateful-widget/lib/main.dart" to="}"?>
+    <?code-excerpt path-base="codelabs/startup_namer"?>
+    <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
     ```diff
-    --- 2-use-package/lib/main.dart
-    +++ 3-stateful-widget/lib/main.dart
+    --- step2_use_package/lib/main.dart
+    +++ step3_stateful_widget/lib/main.dart
     @@ -6,7 +6,6 @@
      class MyApp extends StatelessWidget {
        @override
@@ -399,9 +402,11 @@ a child inside the existing `MyApp` stateless widget.
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
-* [lib/main.dart]({{code-url}}/startup_namer/3-stateful-widget/lib/main.dart)
+* [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
 
 ## Step 4: Create an infinite scrolling ListView
+
+<?code-excerpt path-base="codelabs/startup_namer/step4_infinite_list"?>
 
 In this step, you'll expand `RandomWordsState` to generate
 and display a list of word pairings. As the user scrolls, the list
@@ -413,21 +418,19 @@ lazily, on demand.
     class for saving suggested word pairings.
     Also, add a `_biggerFont` variable for making the font size larger.
 
-    <!-- skip -->
-    <?code-excerpt "4-infinite-list/lib/main.dart (RWS-var)" indent-by="2" replace="/final .*/[!$&!]/g"?>
-    {% prettify dart %}
+    <?code-excerpt "lib/main.dart" title region="RWS-var" indent-by="2" replace="/final .*/[!$&!]/g"?>
+    ```dart
       class RandomWordsState extends State<RandomWords> {
         [!final _suggestions = <WordPair>[];!]
         [!final _biggerFont = const TextStyle(fontSize: 18.0);!]
         // ···
       }
-    {% endprettify %}
+    ```
 
     {{site.alert.note}}
       Prefixing an identifier with an underscore [enforces
-      privacy](https://www.dartlang.org/guides/language/language-tour)
-      in the Dart
-      language.
+      privacy]({{site.dart-site}}/guides/language/language-tour)
+      in the Dart language.
     {{site.alert.end}}
 
     Next, you'll add a `_buildSuggestions()` function to the `RandomWordsState`
@@ -443,9 +446,8 @@ lazily, on demand.
 
  2. Add a `_buildSuggestions()` function to the `RandomWordsState` class:
 
-    <!-- skip -->
-    <?code-excerpt "4-infinite-list/lib/main.dart (_buildSuggestions)" indent-by="2"?>
-    {% prettify dart %}
+    <?code-excerpt "lib/main.dart (_buildSuggestions)" title indent-by="2"?>
+    ```dart
       Widget _buildSuggestions() {
         return ListView.builder(
             padding: const EdgeInsets.all(16.0),
@@ -459,7 +461,7 @@ lazily, on demand.
               return _buildRow(_suggestions[index]);
             });
       }
-    {% endprettify %}
+    ```
 
     {:.numbered-code-notes}
      1. The `itemBuilder` callback is called once per suggested word pairing,
@@ -481,9 +483,8 @@ lazily, on demand.
 
  3. Add a `_buildRow()` function to `RandomWordsState`:
 
-    <!-- skip -->
-    <?code-excerpt "4-infinite-list/lib/main.dart (_buildRow)" indent-by="2"?>
-    {% prettify dart %}
+    <?code-excerpt "lib/main.dart (_buildRow)" title indent-by="2"?>
+    ```dart
       Widget _buildRow(WordPair pair) {
         return ListTile(
           title: Text(
@@ -492,18 +493,17 @@ lazily, on demand.
           ),
         );
       }
-    {% endprettify %}
+    ```
 
  4. In the `RandomWordsState` class, update the `build()` method to use
     `_buildSuggestions()`, rather than directly calling the word
     generation library.
-    ([Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html)
+    ([Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 
-    <!-- skip -->
-    <?code-excerpt "4-infinite-list/lib/main.dart (RWS-build)" replace="/(\n  )(return.*|  .*|\);)/$1[!$2!]/g" indent-by="2"?>
-    {% prettify dart %}
+    <?code-excerpt "lib/main.dart (build)" title region="RWS-build" replace="/(\n  )(return.*|  .*|\);)/$1[!$2!]/g" indent-by="2"?>
+    ```dart
       @override
       Widget build(BuildContext context) {
         [!return Scaffold(!]
@@ -513,15 +513,16 @@ lazily, on demand.
         [!  body: _buildSuggestions(),!]
         [!);!]
       }
-    {% endprettify %}
+    ```
 
  5. In the `MyApp` class, update the `build()` method by changing the title, and
     changing the home to be a `RandomWords` widget:
 
-    <?code-excerpt "3-stateful-widget/lib/main.dart" diff-with="4-infinite-list/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
+    <?code-excerpt path-base="codelabs/startup_namer"?>
+    <?code-excerpt "{step3_stateful_widget,step4_infinite_list}/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
     ```diff
-    --- 3-stateful-widget/lib/main.dart
-    +++ 4-infinite-list/lib/main.dart
+    --- step3_stateful_widget/lib/main.dart
+    +++ step4_infinite_list/lib/main.dart
     @@ -6,15 +6,8 @@
      class MyApp extends StatelessWidget {
        @override
@@ -555,7 +556,7 @@ lazily, on demand.
 If your app is not running correctly, you can use the code at the following link
 to get back on track.
 
-* [lib/main.dart]({{code-url}}/startup_namer/4-infinite-list/lib/main.dart)
+* [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
 ## Next steps
 {:.no_toc}
@@ -576,9 +577,9 @@ In this codelab, you've:
 * Created a lazily loaded, infinite scrolling list.
 
 If you would like to extend this app, proceed to
-[part 2](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2)
+[part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2/index.html)
 on the
-[Google Developers Codelabs](https://codelabs.developers.google.com) site,
+[Google Developers Codelabs]({{site.codelabs}}) site,
 where you add the following functionality:
 
 * Implement interactivity by adding a clickable heart icon to save

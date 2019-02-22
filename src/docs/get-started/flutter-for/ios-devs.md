@@ -74,11 +74,11 @@ that get "inflated" into actual view objects under the hood.
 还有，和 `UIView` 不同，Flutter 的 widget 是轻量级的，一部分就是源于它的不可变特性。因为它并不
 是视图对象，也不直接绘制任何内容，而是作为对 UI 及其特性的一种描述，被添加到实际视图对象中。
 
-Flutter includes the [Material Components](https://material.io/develop/flutter/)
+Flutter includes the [Material Components]({{site.material}}/develop/flutter/)
 library. These are widgets that implement the
-[Material Design guidelines](https://material.io/design/). Material Design is a
+[Material Design guidelines]({{site.material}}/design/). Material Design is a
 flexible design system [optimized for all
-platforms](https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
 including iOS.
 Flutter 包含了 [Material Components](https://material.io/develop/flutter/) 库。内容都是
 一些遵循了 [Material Design 设计规范](https://material.io/design/) 的组件。Material Design 是
@@ -88,9 +88,9 @@ Flutter 包含了 [Material Components](https://material.io/develop/flutter/) �
 But Flutter is flexible and expressive enough to implement any design language.
 On iOS, you can use the [Cupertino widgets](/docs/development/ui/widgets/cupertino)
 to produce an interface that looks like
-[Apple's iOS design language](https://developer.apple.com/design/resources/).
 Flutter 的灵活性和表现力足以实现任何的设计语言。在 iOS 中，你可以通过 [Cupertino 组件](/docs/development/ui/widgets/cupertino) 
 来构造类似于[苹果 iOS 设计语言](https://developer.apple.com/design/resources/)的接口。
+[Apple's iOS design language](https://developer.apple.com/design/resources).
 
 ### How do I update `Widget`s?
 ### 我该如何更新 `Widget`？
@@ -146,7 +146,6 @@ the `Text` widget you'll find it subclasses `StatelessWidget`.
 下面是如何使用 `StatelessWidget` 的示例。`Text` 是一个常用的 `StatelessWidget`。如果你看了
 `Text` 的源码，就会发现它继承于 `StatelessWidget`。
 
-<!-- skip -->
 {% prettify dart %}
 Text(
   'I like Flutter!',
@@ -170,7 +169,6 @@ update it when the user clicks the button.
 For example:
 下面是示例代码：
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -228,7 +226,6 @@ a widget tree.
 
 The following example shows how to display a simple widget with padding:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -266,7 +263,6 @@ control that child's creation with a boolean flag.
 The following example shows how to toggle between two widgets when the user clicks
 the `FloatingActionButton`:
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -364,7 +360,6 @@ The following example shows how to write a `FadeTransition` that fades the widge
 into a logo when you press the `FloatingActionButton`:
 下面的示例描述了当你点击 `FloatingActionButton`时，如何写一个视图渐淡出成标志的 `FadeTransition`。
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -456,9 +451,8 @@ To learn how to implement a signature painter in Flutter, see Collin's answer on
 [StackOverflow][].
 想要学习在 Flutter 里如何实现一个画笔，可以学习 Collin 在 [StackOverflow] 里的回答。
 
-[StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
-<!-- skip -->
 {% prettify dart %}
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
@@ -530,7 +524,6 @@ rather than by extending `RaisedButton`:
 例如，应该如何构建一个创建时包含文本的 `CustomButton`？需要创建一个合成了一个 `RaisedButton` 和一个
 文本标签的 CustomButton，而不是继承 `RaisedButton`：
 
-<!-- skip -->
 {% prettify dart %}
 class CustomButton extends StatelessWidget {
   final String label;
@@ -546,7 +539,6 @@ class CustomButton extends StatelessWidget {
 
 Then use `CustomButton`, just as you'd use any other Flutter widget:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -591,7 +583,6 @@ To navigate between pages, you have a couple options:
 The following example builds a Map.
 下面的示例构建了一个 `Map`：
 
-<!-- skip -->
 {% prettify dart %}
 void main() {
   runApp(MaterialApp(
@@ -608,7 +599,6 @@ void main() {
 Navigate to a route by `push`ing its name to the `Navigator`.
 通过把路由的名字传递给 `Naivgator` 来实现跳转。
 
-<!-- skip -->
 {% prettify dart %}
 Navigator.of(context).pushNamed('/b');
 {% endprettify %}
@@ -623,7 +613,6 @@ For example, to start a ‘location’ route that lets the user select their
 location, you might do the following:
 例如，要跳转到”定位“页面来让用户选择他们的位置，你需要做如下事情：
 
-<!-- skip -->
 {% prettify dart %}
 Map coordinates = await Navigator.of(context).pushNamed('/location');
 {% endprettify %}
@@ -632,7 +621,6 @@ And then, inside your ‘location’ route, once the user has selected their
 location, `pop()` the stack with the result:
 然后，在”定位“页面中，一旦用户选择了自己的定位，`pop()` 退出页面并返回结果。
 
-<!-- skip -->
 {% prettify dart %}
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 {% endprettify %}
@@ -644,11 +632,12 @@ In iOS, to send the user to another application, you use a
 specific URL scheme. For the system level apps, the scheme
 depends on the app. To implement this functionality in Flutter,
 create a native platform integration, or use an
-[existing plugin](https://pub.dartlang.org/flutter/), such as
-[`url_launcher`](https://pub.dartlang.org/packages/url_launcher).
+[existing plugin]({{site.pub}}/flutter), such as
+[`url_launcher`]({{site.pub-pkg}}/url_launcher).
 在 iOS 里，想要跳转到其他应用，可以使用特定的 URL scheme。系统应用的 scheme 都是
 取决于应用的。在 Flutter 里想要实现这个功能，需要创建原生平台的整合层，或者
-使用已经存在的[插件](https://pub.dartlang.org/flutter/)，例如[`url_launcher`](https://pub.dartlang.org/packages/url_launcher)。
+使用已经存在的[插件](https://pub.dartlang.org/flutter/)，例如
+[`url_launcher`](https://pub.dartlang.org/packages/url_launcher)。
 
 ### How do I pop back to the iOS native viewcontroller?
 ### 如何退回到 iOS 的 native 视图控制器？
@@ -695,7 +684,6 @@ For example, you can run network code without causing the UI to hang by using
 `async`/`await` and letting Dart do the heavy lifting:
 例如，你可以使用 `async`/`await` 来执行网络代码以避免 UI 挂起，让 Dart 来完成这个繁重的任务：
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
@@ -714,7 +702,6 @@ which triggers a rebuild of the widget sub-tree and updates the data.
 The following example loads data asynchronously and displays it in a `ListView`:
 下面的示例展示了异步加载数据，并在 `ListView` 中展示出来：
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -806,7 +793,6 @@ For I/O-bound work, declare the function as an `async` function,
 and `await` on long-running tasks inside the function:
 对于 I/O 操作，把方法声明为 `async` 方法，然后通过 `await` 来等待异步方法的执行完成：
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
@@ -838,7 +824,6 @@ The following example shows, in a simple isolate, how to share data back to
 the main thread to update the UI.
 下面的例子展示了在一个简单的 isolate 中，如何把数据共享到主线程用来更新 UI。
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   ReceivePort receivePort = ReceivePort();
@@ -1014,7 +999,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ### 如何发起网络请求？
 
 Making a network call in Flutter is easy when you use the popular
-[`http` package](https://pub.dartlang.org/packages/http). This abstracts
+[`http` package]({{site.pub-pkg}}/http). This abstracts
 away a lot of the networking that you might normally implement yourself,
 making it simple to make network calls.
 在 Flutter 里，使用常用的 [`http` 库](https://pub.dartlang.org/packages/http)构造
@@ -1023,7 +1008,6 @@ making it simple to make network calls.
 To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 要使用 `http` 库，需要在 `pubspec.yaml` 中把它添加为依赖：
 
-<!-- skip -->
 {% prettify yaml %}
 dependencies:
   ...
@@ -1033,7 +1017,6 @@ dependencies:
 To make a network call, call `await` on the `async` function `http.get()`:
 构造网络请求，需要在 `async` 方法 `http.get()` 中调用 `await`：
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -1072,7 +1055,6 @@ then render the `ProgressIndicator`. Otherwise, render the
 （当 `widgets.length == 0`），渲染 `ProgressIndicator`。否则，使用网络请求返回的数据
 渲染 `ListView`。
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -1180,18 +1162,16 @@ my-assets/data.json
 Declare the asset in the `pubspec.yaml` file:
 在 `pubspec.yaml` 中声明 assets：
 
-<!-- skip -->
 {% prettify yaml %}
 assets:
  - my-assets/data.json
 {% endprettify %}
 
 And then access it from code using an
-[`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html):
+[`AssetBundle`]({{site.api}}/flutter/services/AssetBundle-class.html):
 然后在代码中通过 [`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html) 访问
 资源:
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
@@ -1203,7 +1183,7 @@ Future<String> loadAsset() async {
 
 For images, Flutter follows a simple density-based format like iOS. Image assets
 might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier. The so-called
-[`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html)
+[`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
 expresses the ratio of physical pixels in a single logical pixel.
 对于图片，Flutter 和 iOS 一样遵循了一个简单的基于分辨率的格式。Image assets 可能是 `1.0x`，`2.0x`，
 `3.0x` 或者其他任意的倍数。而 [`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html) 则
@@ -1232,7 +1212,6 @@ images/3.0x/my_icon.png  // 3.0x image
 Next, declare these images in the `pubspec.yaml` file:
 接着，在 `pubspec.yaml` 文件中声明这些图片：
 
-<!-- skip -->
 {% prettify yaml %}
 assets:
  - images/my_icon.png
@@ -1241,7 +1220,6 @@ assets:
 You can now access your images using `AssetImage`:
 现在你可以使用 `AssetImage` 访问你的图片了：
 
-<!-- skip -->
 {% prettify dart %}
 return AssetImage("images/a_dot_burr.jpeg");
 {% endprettify %}
@@ -1249,7 +1227,6 @@ return AssetImage("images/a_dot_burr.jpeg");
 or directly in an `Image` widget:
 或者直接使用 `Image` widget：
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -1271,7 +1248,6 @@ access them from there. For example:
 iOS 里有 `Localizable.strings` 文件，而 Flutter 则不同，目前并没有关于字符串的处理系统。
 目前，最佳的方案就是在静态区声明你的文本，然后进行访问。例如：
 
-<!-- skip -->
 {% prettify dart %}
 class Strings {
   static String welcomeMessage = "Welcome To Flutter";
@@ -1281,20 +1257,18 @@ class Strings {
 You can access your strings as such:
 你可以这样访问字符串：
 
-<!-- skip -->
 {% prettify dart %}
 Text(Strings.welcomeMessage)
 {% endprettify %}
 
 By default, Flutter only supports US English for its strings. If you need to
 add support for other languages, include the `flutter_localizations`
-package. You might also need to add Dart's [`intl`](https://pub.dartlang.org/packages/intl)
+package. You might also need to add Dart's [`intl`]({{site.pub-pkg}}/intl)
 package to use i10n machinery, such as date/time formatting.
 默认情况下，Flutter 只支持美式英语。如果你需要添加其他语言支持，请引入 `flutter_localizations` 库。
 同时你可能还需要添加 [`intl`](https://pub.dartlang.org/packages/intl) 库来使用 i10n 机制，比如
 日期/时间的格式化等。
 
-<!-- skip -->
 {% prettify yaml %}
 dependencies:
   # ...
@@ -1307,7 +1281,6 @@ To use the `flutter_localizations` package,
 specify the `localizationsDelegates` and `supportedLocales` on the app widget:
 使用 `flutter_localizations` 的话，请在应用 widget 中指定 `localizationsDelegates` 和 `supportedLocales`：
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -1342,20 +1315,20 @@ localizable copy, if you want those to be localized too.
 
 
 When initialized, the `WidgetsApp` (or `MaterialApp`) creates a
-[`Localizations`](https://docs.flutter.io/flutter/widgets/Localizations-class.html)
+[`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html)
 widget for you, with the delegates you specify.
 The current locale for the device is always accessible from the `Localizations`
 widget from the current context (in the form of a `Locale` object), or using the
-[`Window.locale`](https://docs.flutter.io/flutter/dart-ui/Window/locale.html).
+[`Window.locale`]({{site.api}}/flutter/dart-ui/Window/locale.html).
 当初始化的时候，`WidgetsApp`（或 `MaterialApp`）会根据你提供的 delegates 创建一个 
 [`Localizations`](https://docs.flutter.io/flutter/widgets/Localizations-class.html) widget。
 `Localizations` widget 可以随时从当前上下文中中获取设备所用的语言，也可以使用 [`Window.locale`](https://docs.flutter.io/flutter/dart-ui/Window/locale.html)。
 
 To access localized resources, use the `Localizations.of()` method to
 access a specific localizations class that is provided by a given delegate.
-Use the [`intl_translation`](https://pub.dartlang.org/packages/intl_translation)
+Use the [`intl_translation`]({{site.pub-pkg}}/intl_translation)
 package to extract translatable copy to
-[arb](https://code.google.com/p/arb/wiki/ApplicationResourceBundleSpecification)
+[arb]({{site.github}}/googlei18n/app-resource-bundle)
 files for translating, and importing them back into the app for using them
 with `intl`.
 要使用本地化资源，使用 `Localizations.of()` 方法可以访问提供代理的特定本地化类。
@@ -1387,9 +1360,10 @@ respective build systems.
 While there is a Podfile in the iOS folder in your
 Flutter project, only use this if you are adding native
 dependencies needed for per-platform integration. In general, use
-`pubspec.yaml` to declare external dependencies in Flutter. A good place to
-find great packages for Flutter is
-[Pub](https://pub.dartlang.org/flutter/packages/).
+
+`pubspec.yaml` to declare external dependencies in Flutter.
+A good place to find great packages for Flutter is the
+[Pub site]({{site.pub}}/flutter/packages).
 如果你的 Flutter 项目 iOS 文件夹中存在 Podfile，那么请仅在里面添加原生平台的依赖。总而言之，
 在 Flutter 中使用 `pubspec.yaml` 来声明外部依赖。Flutter 中一个能够查找优秀包的地方是 
 [Pub](https://pub.dartlang.org/flutter/packages/)。
@@ -1444,7 +1418,7 @@ has no equivalent event.
 For more details on the meaning of these states, see
 [`AppLifecycleStatus` documentation][].
 
-[`AppLifecycleStatus` documentation]: https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 关于这些状态的更多细节，请参看 [`AppLifecycleStatus` 文档](https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html)。
 
 ## Layouts
@@ -1468,7 +1442,6 @@ and smooth.
 由于 Flutter 中 widget 的不可变特性，你需要向 `ListView` 传递一个 widget 列表，Flutter 会确保滚动
 快速而流畅。
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1526,7 +1499,6 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 在 iOS 里，可以通过 `tableView:didSelectRowAtIndexPath:` 代理方法来实现。
 而在 Flutter 里，需要通过传递进来的 widget 的 touch 处理来实现。
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1608,7 +1580,6 @@ as shown in the next example.
 一个更新 `ListView` 的简单方法就是，在 `setState()` 创建一个新的 `List`，然后拷贝旧列表中的
 所有数据到新列表。这样虽然简单，但是像下面示例一样数据量很大时，并不推荐这样做。
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1682,7 +1653,6 @@ list or a list with very large amounts of data.
 一个推荐的，高效且有效的方法就是使用 `ListView.Builder` 来构建列表。当你的数据量很大，
 且需要构建动态列表时，这个方法会非常好用。
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1783,7 +1753,6 @@ in a vertical format.
 在 Flutter 中，最简单的办法就是使用 `ListView` widget。它和 iOS 中的 `ScrollView` 以
 及 `TableView` 表现一致，也可以给它的子 widget 做垂直排版。
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -1919,7 +1888,6 @@ The following example shows a `GestureDetector` that rotates the Flutter logo
 on a double tap:
 下面的示例展示了 `GestureDetector` 是如何在双击时旋转 Flutter 的logo 的：
 
-<!-- skip -->
 {% prettify dart %}
 AnimationController controller;
 CurvedAnimation curve;
@@ -1976,7 +1944,7 @@ specific functionality.
 
 But Flutter is flexible and expressive enough to implement any design language.
 On iOS, you can use the
-[Cupertino library](https://docs.flutter.io/flutter/cupertino/cupertino-library.html)
+[Cupertino library]({{site.api}}/flutter/cupertino/cupertino-library.html)
 to produce an interface that adheres to the [Human Interface
 Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/).
 For the full set of these widgets, see the
@@ -1997,7 +1965,6 @@ the primary swatch is set to blue and text selection color is red.
 定义所有子组件颜色和样式，可以直接传递 `ThemeData` 对象给 `MaterialApp` widget。例如，
 在下面的代码中，primary swatch 被设置为蓝色，而文本选中后的颜色被设置为红色。
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   @override
@@ -2024,7 +1991,6 @@ import images.
 在 iOS 里，可以在项目中引入任何的 `ttf` 字体文件，并在 `info.plist` 文件中创建引用。
 在 Flutter 里，把字体放到一个文件夹中，然后在 `pubspec.yaml` 文件中引用它，就和引用图片一样。
 
-<!-- skip -->
 {% prettify yaml %}
 fonts:
    - family: MyCustomFont
@@ -2036,7 +2002,6 @@ fonts:
 Then assign the font to your `Text` widget:
 然后在 `Text` widget 中指定字体：
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -2093,14 +2058,13 @@ user input, or action on it. How does that work in Flutter?
 
 In practice forms are handled, like everything in Flutter, by specialized
 widgets. If you have a `TextField` or a `TextFormField`, you can supply a
-[`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
+[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
 to retrieve user input:
 和 Flutter 的其他部分一样，表单处理要通过特定的 widget 来实现。如果你有一个 `TextField` 或者 `TextFormField`，
 你可以通
 过 [`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html) 来
 获取用户的输入：
 
-<!-- skip -->
 {% prettify dart %}
 class _MyFormState extends State<MyForm> {
   // Create a text controller and use it to retrieve the current value.
@@ -2163,7 +2127,6 @@ the `Text` widget:
 在 Flutter 里，通过向 `Text` widget 传递一个 `InputDecoration` 对象，你可以轻易的显示
 文本框的提示信息，或是 placeholder。
 
-<!-- skip -->
 {% prettify dart %}
 body: Center(
   child: TextField(
@@ -2185,7 +2148,6 @@ update the state, and pass a new `InputDecoration` object.
 然而，你并不想在一开始就显示错误信息。相反，在用户输入非法数据后，应该更新状态，并传递一个新
 的 `InputDecoration` 对象。
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -2285,7 +2247,7 @@ In addition to directly using platform channels, you can use a variety of pre-ma
 the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
-write your own integration. Plugins are found [on Pub](https://pub.dartlang.org/),
+write your own integration. Plugins are found [on the Pub site]({{site.pub}}),
 Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 除了直接使用 platform channels 之外，也可以使用一系列包含了原生代码和 Dart代码，实现了特定功能的
@@ -2302,13 +2264,13 @@ and [publish it on Pub](/docs/development/packages-and-plugins/developing-packag
 ### How do I access the GPS sensor?
 ### 如何访问 GPS 传感器？
 
-Use the [`geolocator`](https://pub.dartlang.org/packages/geolocator) community plugin.
+Use the [`geolocator`]({{site.pub-pkg}}/geolocator) community plugin.
 使用 [`geolocator`](https://pub.dartlang.org/packages/geolocator) 插件。
 
 ### How do I access the camera?
 ### 如何访问相机？
 
-The [`image_picker`](https://pub.dartlang.org/packages/image_picker) plugin is popular
+The [`image_picker`]({{site.pub-pkg}}/image_picker) plugin is popular
 for accessing the camera.
 [`image_picker`](https://pub.dartlang.org/packages/image_picker) 是常用的访问相机的插件。
 
@@ -2316,29 +2278,29 @@ for accessing the camera.
 ### 如何使用 Facebook 登录？
 
 To log in with Facebook, use the
-[`flutter_facebook_login`](https://pub.dartlang.org/packages/flutter_facebook_login) community plugin.
+[`flutter_facebook_login`]({{site.pub-pkg}}/flutter_facebook_login) community plugin.
 登录 Facebook 可以使用 [`flutter_facebook_login`](https://pub.dartlang.org/packages/flutter_facebook_login) 插件。
 
 ### How do I use Firebase features?
 ### 如何使用 Firebase 特性？
 
 Most Firebase functions are covered by
-[first party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
+[first party plugins]({{site.pub}}/flutter/packages?q=firebase).
 These plugins are first-party integrations, maintained by the Flutter team:
 大多数的 Firebase 特性都在 [官方插件](https://pub.dartlang.org/flutter/packages?q=firebase) 中实现了。
 这些插件由 Flutter 官方团队维护：
 
- * [`firebase_admob`](https://pub.dartlang.org/packages/firebase_admob) for Firebase AdMob
- * [`firebase_analytics`](https://pub.dartlang.org/packages/firebase_analytics) for Firebase Analytics
- * [`firebase_auth`](https://pub.dartlang.org/packages/firebase_auth) for Firebase Auth
- * [`firebase_core`](https://pub.dartlang.org/packages/firebase_core) for Firebase's Core package
- * [`firebase_database`](https://pub.dartlang.org/packages/firebase_database) for Firebase RTDB
- * [`firebase_storage`](https://pub.dartlang.org/packages/firebase_storage) for Firebase Cloud Storage
- * [`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging) for Firebase Messaging (FCM)
- * [`cloud_firestore`](https://pub.dartlang.org/packages/cloud_firestore) for Firebase Cloud Firestore
+ * [`firebase_admob`]({{site.pub-pkg}}/firebase_admob) for Firebase AdMob
+ * [`firebase_analytics`]({{site.pub-pkg}}/firebase_analytics) for Firebase Analytics
+ * [`firebase_auth`]({{site.pub-pkg}}/firebase_auth) for Firebase Auth
+ * [`firebase_core`]({{site.pub-pkg}}/firebase_core) for Firebase's Core package
+ * [`firebase_database`]({{site.pub-pkg}}/firebase_database) for Firebase RTDB
+ * [`firebase_storage`]({{site.pub-pkg}}/firebase_storage) for Firebase Cloud Storage
+ * [`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging) for Firebase Messaging (FCM)
+ * [`cloud_firestore`]({{site.pub-pkg}}/cloud_firestore) for Firebase Cloud Firestore
 
-You can also find some third-party Firebase plugins on Pub that cover areas
-not directly covered by the first-party plugins.
+You can also find some third-party Firebase plugins on the Pub site that
+cover areas not directly covered by the first-party plugins.
 在 Pub 上你也可以找到一些第三方的 Firebase 插件，主要实现了官方插件没有直接实现的功能。
 
 ### How do I build my own custom native integrations?
@@ -2369,7 +2331,7 @@ known as the `UserDefaults`.
 在 iOS 里，可以使用属性列表存储一个键值对的集合，也就是我们所说的 `UserDefaults`。
 
 In Flutter, access equivalent functionality using the
-[Shared Preferences plugin](https://pub.dartlang.org/packages/shared_preferences).
+[Shared Preferences plugin]({{site.pub-pkg}}/shared_preferences).
 This plugin wraps the functionality of both `UserDefaults` and the Android
 equivalent, `SharedPreferences`.
 在 Flutter 里，可以使用 [Shared Preferences plugin](https://pub.dartlang.org/packages/shared_preferences) 插件
@@ -2385,7 +2347,7 @@ relate to your models.
 关联模型的查询变得更加简单。
 
 In Flutter, access this functionality using the
-[SQFlite](https://pub.dartlang.org/packages/sqflite) plugin.
+[SQFlite]({{site.pub-pkg}}/sqflite) plugin.
 在 Flutter 里，可以使用 [SQFlite](https://pub.dartlang.org/packages/sqflite) 插件来
 实现这个功能。
 
@@ -2404,7 +2366,7 @@ In Flutter, access this functionality using the
 在 Flutter 里，使用 `firebase_messaging` 插件来实现这个功能。
 
 For more information on using the Firebase Cloud Messaging API, see the
-[`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging)
+[`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging)
 plugin documentation.
 关于 Firebase Cloud Messaging API 的更多信息，可以
 参看 [`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging) 插件文档。

@@ -1,15 +1,21 @@
 ---
 title: Making authenticated requests
 title: 发起 HTTP 认证授权请求
+prev:
+  title: Fetch data from the internet
+  path: /docs/cookbook/networking/fetch-data
+next:
+  title: Parsing JSON in the background
+  path: /docs/cookbook/networking/background-parsing
 ---
 
 In order to fetch data from many web services, you need to provide
 authorization. There are many ways to do this, but perhaps the most common
-requires using the `Authorization` HTTP header.
+uses the `Authorization` HTTP header.
 
 ## Add Authorization Headers
 
-The [`http`](https://pub.dartlang.org/packages/http) package provides a
+The [`http`]({{site.pub-pkg}}/http) package provides a
 convenient way to add headers to your requests. You can also take advantage of
 the `dart:io` package for common `HttpHeaders`.
 
@@ -18,7 +24,7 @@ the `dart:io` package for common `HttpHeaders`.
 Future<http.Response> fetchPost() {
   return http.get(
     'https://jsonplaceholder.typicode.com/posts/1',
-    // Send authorization headers to your backend
+    // Send authorization headers to the backend
     headers: {HttpHeaders.authorizationHeader: "Basic your_api_token_here"},
   );
 }
@@ -26,8 +32,8 @@ Future<http.Response> fetchPost() {
 
 ## Complete example
 
-This example builds upon the [Fetching Data from the Internet](/docs/cookbook/networking/fetch-data/)
-recipe.
+This example builds upon the [Fetching Data from the
+Internet](/docs/cookbook/networking/fetch-data/) recipe.
 
 ```dart
 import 'dart:async';

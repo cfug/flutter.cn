@@ -1,6 +1,12 @@
 ---
 title: Send data to a new screen
 title: 传递数据到新页面
+prev:
+  title: Return data from a screen
+  path: /docs/cookbook/navigation/returning-data
+next:
+  title: Fetch data from the internet
+  path: /docs/cookbook/networking/fetch-data
 ---
 
 Oftentimes, we not only want to navigate to a new screen, but also pass some
@@ -90,11 +96,11 @@ class DetailScreen extends StatelessWidget {
     // Use the Todo to create our UI
     return Scaffold(
       appBar: AppBar(
-        title: Text("${todo.title}"),
+        title: Text(todo.title),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: Text('${todo.description}'),
+        child: Text(todo.description),
       ),
     );
   }
@@ -107,9 +113,10 @@ With our `DetailScreen` in place, we're ready to perform the Navigation! In our
 case, we'll want to Navigate to the `DetailScreen` when a user taps on a Todo in
 our List. When we do so, we'll also want to pass the Todo to the `DetailScreen`.
 
-To achieve this, we'll write an [`onTap`](https://docs.flutter.io/flutter/material/ListTile/onTap.html)
+To achieve this, we'll write an
+[`onTap`]({{site.api}}/flutter/material/ListTile/onTap.html)
 callback for our `ListTile` Widget. Within our `onTap` callback, we'll once
-again employ the [`Navigator.push`](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
+again employ the [`Navigator.push`]({{site.api}}/flutter/widgets/Navigator/push.html)
 method.
 
 <!-- skip -->
@@ -209,11 +216,11 @@ class DetailScreen extends StatelessWidget {
     // Use the Todo to create our UI
     return Scaffold(
       appBar: AppBar(
-        title: Text("${todo.title}"),
+        title: Text(todo.title),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: Text('${todo.description}'),
+        child: Text(todo.description),
       ),
     );
   }

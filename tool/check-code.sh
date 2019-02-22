@@ -10,8 +10,9 @@ if [[ $1 == --clean ]]; then
 fi
 
 if [[ $1 == --help || $1 == -h ]]; then
-  echo "Usage: $0 [--clean]"
+  echo "Usage: $0 [--clean] [--no-test] [--filter=example-path-pattern]"
+  echo "  --filter pattern   Will skip example apps whose name does not match pattern."
   exit 0
 fi
 
-exec ./tool/build_check_deploy.sh --no-build --no-check-links
+exec ./tool/build_check_deploy.sh --no-build --no-check-links $*

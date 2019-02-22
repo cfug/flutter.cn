@@ -1,19 +1,26 @@
 ---
 title: Display images from the internet
 title: 显示网络上的远程图片
+prev:
+  title: Implement Swipe to Dismiss
+  path: /docs/cookbook/gestures/dismissible
+next:
+  title: Fade in images with a placeholder
+  path: /docs/cookbook/images/fading-in-images
 ---
 
 Displaying images is fundamental for most mobile apps. Flutter provides the
-[`Image`](https://docs.flutter.io/flutter/widgets/Image-class.html) Widget to
+[`Image`]({{site.api}}/flutter/widgets/Image-class.html) Widget to
 display different types of images.
 
-In order to work with images from a URL, use the [`Image.network`](https://docs.flutter.io/flutter/widgets/Image/Image.network.html)
+In order to work with images from a URL, use the
+[`Image.network`]({{site.api}}/flutter/widgets/Image/Image.network.html)
 constructor.
 
 <!-- skip -->
 ```dart
 Image.network(
-  'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+  'https://picsum.photos/250?image=9',
 )
 ```
 
@@ -58,7 +65,7 @@ class MyApp extends StatelessWidget {
           title: Text(title),
         ),
         body: Image.network(
-          'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+          'https://picsum.photos/250?image=9',
         ),
       ),
     );

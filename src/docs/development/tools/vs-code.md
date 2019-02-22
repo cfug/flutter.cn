@@ -18,8 +18,8 @@ description: 如何在 VS Code 里开发 Flutter 应用。
 
 ## Installation and setup
 
-Follow the [Set up an editor](/docs/get-started/editor?ide=vscode) instructions to
-install the Dart and Flutter extensions (also called plugins).
+Follow the [Set up an editor](/docs/get-started/editor?ide=vscode)
+instructions to install the Dart and Flutter extensions (also called plugins).
 
 ### Updating the extension {#updating}
 
@@ -29,8 +29,8 @@ VS Code automatically updates extensions when updates are available.
 To install updates manually:
 
  1. Click on the Extensions button in the Side Bar
- 1. If the Flutter extension is shown with an available update, click the update button and then
-    the reload button
+ 1. If the Flutter extension is shown with an available update,
+    click the update button and then the reload button
 
 ## Creating projects
 
@@ -57,8 +57,8 @@ The Flutter extension performs code analysis that enables:
 
 * Syntax highlighting.
 * Code completions based on rich type analysis.
-* Navigating to type declarations (**Go to Definition** or `F12`), and finding type
-  usages (**Find All References** or `Shift`+`F12`).
+* Navigating to type declarations (**Go to Definition** or `F12`),
+  and finding type usages (**Find All References** or `Shift`+`F12`).
 * Viewing all current source code problems
   (**View > Problems** or `Ctrl`+`Shift`+`M` (`Cmd`+`Shift`+`M` on macOS)).
   Any analysis issues are shown in the Problems pane:<br>
@@ -66,8 +66,8 @@ The Flutter extension performs code analysis that enables:
 
 ## Running and Debugging
 
-Start debugging by clicking **Debug > Start Debugging** from the main IDE window or
-press `F5`.
+Start debugging by clicking **Debug > Start Debugging** from the main
+IDE window or press `F5`.
 
 ### Selecting a target device
 
@@ -129,17 +129,19 @@ During a debug session, several additional debugging commands are added to the
 * **Toggle Slow-Mode Banner**: Hide the slow mode banner even when running a
   debug build.
 
-### Debugging with Observatory
+### Debugging with Dart DevTools
 
-Observatory is an additional debugging and profiling tool presented with an
-html-based UI. For details see the [Observatory page](https://dart-lang.github.io/observatory/).
-
-To open Observatory:
-
- 1. Run your app in debug mode.
- 1. Run the **Open Observatory** command from the [Command Palette][].
+Dart DevTools are a set of debugging and profiling tools presented
+with an html-based UI. DevTools replaces the previous
+browser-based profiling tool, Observatory.
+DevTools is still in development, but you can preview it now by
+downloading the [repo][].
+The [docs][] are still being written, but DevTools provides similar
+CPU/GPU performance profiling and should be easier to use than Observatory.
 
 ## Editing tips for Flutter code
+
+If you have additional tips we should share, please [let us know][]!
 
 ### Assists & Quick Fixes
 
@@ -216,11 +218,11 @@ command from the [Command Palette][], or press `Ctrl`+`F5`.
 
 ### Known issues and feedback
 
-All known bugs are tracked in the issue tracker: [Dart and Flutter extensions GitHub issue
-tracker](https://github.com/Dart-Code/Dart-Code/issues).
+All known bugs are tracked in the issue tracker:
+[Dart and Flutter extensions GitHub issue tracker][].
 
-We very much welcome feedback, both on bugs/issues and feature requests. Prior
-to filing new issues:
+We very much welcome feedback, both on bugs/issues and feature requests.
+Prior to filing new issues:
 
 * Do a quick search in the issue trackers to see if the issue is already
   tracked.
@@ -230,4 +232,6 @@ to filing new issues:
 When filing new issues, include [flutter doctor][] output.
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[flutter doctor]: {{site.url}}/bug-reports/#provide-some-flutter-diagnostics
+[flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
+[let us know]: {{site.github}}/flutter/website/issues/new
+[Dart and Flutter extensions GitHub issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues

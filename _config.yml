@@ -2,7 +2,7 @@
 title: Flutter 中文文档 - Flutter 社区中文资源
 # description: TBC
 email: flutter-dev@googlegroups.com
-url: https://flutter.io
+url: https://flutter.dev
 port: 4002
 github_username: flutter
 repo:
@@ -25,19 +25,19 @@ social:
 dart-site: https://www.dartlang.org
 news: https://news.dartlang.org
 api: https://docs.flutter.io
-pub: https://pub.dartlang.org
+pub: https://pub.flutter-io.cn
 pub-api: https://pub.dartlang.org/documentation
 pub-pkg: https://pub.flutter-io.cn/packages
 flutter-medium: https://medium.com/flutter-io
 medium: https://medium.com
-dartpad: https://dartpad.dartlang.org
-material: https://material.io
+dartpad: https://dartpad.cn
+material: https://material-io.cn
 so: https://stackoverflow.com
 github: https://github.com
-android-dev: https://developer.android.com
-codelabs: https://codelabs.developers.google.com
+android-dev: https://developer.android.google.cn
+codelabs: https://codelabs.flutter-io.cn
 groups: https://groups.google.com
-firebase: https://firebase.google.com
+firebase: https://firebase.google.cn
 
 defaults:
 - scope:

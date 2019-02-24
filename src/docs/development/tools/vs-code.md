@@ -18,7 +18,7 @@ description: 如何在 VS Code 里开发 Flutter 应用。
 
 ## Installation and setup
 
-Follow the [Set up an editor](/docs/get-started/editor?ide=vscode)
+Follow the [Set up an editor](/docs/get-started/editor?tab=vscode)
 instructions to install the Dart and Flutter extensions (also called plugins).
 
 ### Updating the extension {#updating}
@@ -129,15 +129,15 @@ During a debug session, several additional debugging commands are added to the
 * **Toggle Slow-Mode Banner**: Hide the slow mode banner even when running a
   debug build.
 
-### Debugging with Dart DevTools
+### The Flutter Inspector, performance profiling, and Dart DevTools
 
-Dart DevTools are a set of debugging and profiling tools presented
-with an html-based UI. DevTools replaces the previous
-browser-based profiling tool, Observatory.
-DevTools is still in development, but you can preview it now by
-downloading the [repo][].
-The [docs][] are still being written, but DevTools provides similar
-CPU/GPU performance profiling and should be easier to use than Observatory.
+Dart DevTools are a set of debugging and profiling tools presented with
+an html-based UI. DevTools replaces the previous browser-based profiling
+tool, Observatory, and includes functionality previously only available to
+IntelliJ, like the Flutter Inspector.
+
+DevTools is still in development but is available to preview. For
+installation and getting started instructions, see the [DevTools' docs][].
 
 ## Editing tips for Flutter code
 
@@ -232,6 +232,7 @@ Prior to filing new issues:
 When filing new issues, include [flutter doctor][] output.
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
+[DevTools' docs]: https://flutter.github.io/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [let us know]: {{site.github}}/flutter/website/issues/new
 [Dart and Flutter extensions GitHub issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues

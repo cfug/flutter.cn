@@ -42,6 +42,7 @@ How is react-style, or _declarative_, programming different than the
 traditional imperative style?
 For a comparison, see [Introduction to declarative
 UI](/docs/get-started/flutter-for/declarative).
+
 这里有一份关于响应式编程，或者说_声明式编程_和传统的命令式编程有什么不同之处的文章，你可以
 浏览[声明式 UI 介绍](/docs/get-started/flutter-for/declarative)。
 {{site.alert.end}}
@@ -49,12 +50,14 @@ UI](/docs/get-started/flutter-for/declarative).
 On iOS, most of what you create in the UI is done using view objects, which are
 instances of the `UIView` class. These can act as containers for other `UIView`
 classes, which form your layout.
+
 在 iOS 中，你在 UI 中创建的大部分视图都是 `UIView` 的实例。而在构造布局时，这些视图也可以作为其他
 视图的容器。
 
 In Flutter, the rough equivalent to a `UIView` is a `Widget`. Widgets don't map
 exactly to iOS views, but while you're getting acquainted with how Flutter works
 you can think of them as "the way you declare and construct UI".
+
 在 Flutter 中，同 `UIView` 能够进行类比的就是 `Widget` 了。但 `Widget` 和 iOS 里的视图
 并不能同等对待，不过当你想要了解 Flutter 的工作原理时，你可以把它理解为“声明和构造 UI 的方法”。
 

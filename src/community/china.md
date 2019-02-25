@@ -12,7 +12,7 @@ The Flutter community has made a Simplified Chinese version of the
 Flutter site website available at
 [https://flutter-io.cn](https://flutter-io.cn).
 
-欢迎你来到由中国 Flutter 社区成员维护的中文 Flutter 资源网站：[https://flutter-io.cn](https://flutter-io.cn)
+欢迎你来到由中国 Flutter 社区维护的中文 Flutter 资源网站：[https://flutter-io.cn](https://flutter-io.cn)
 
 If you’d like to install Flutter using an [installation
 bundle](/docs/development/tools/sdk/archive),
@@ -21,10 +21,10 @@ to speed it up. For example:
 
 如果你需要下载 [Flutter SDK 的独立打包文件](/docs/development/tools/sdk/archive)，你可以将下载链接前缀替换为你信任的镜像链接。
 
-* Original URL:<br>
+* 原始链接:<br>
   [`https://storage.googleapis.com/{{path}}`](https://storage.googleapis.com/{{path}})
 
-* Mirrored URL:<br>
+* 镜像之后的链接:<br>
   [`https://storage.flutter-io.cn/{{path}}`](https://storage.flutter-io.cn/{{path}})
 
 You must also set two environment variables to upgrade Flutter and use the pub
@@ -34,15 +34,17 @@ package repository in China. Instructions are below.
 设置方式如下：
 
 {{site.alert.important}}
+
   Use mirror sites only if you _trust_ the provider.
   The Flutter team cannot verify their reliability or security.
   
   使用任意镜像网站的时候，你必须确保你 _信任_ 你的镜像提供者。
   Flutter 团队无法确保他们的安全性。
+  
 {{site.alert.end}}
 
 ## Configuring Flutter to use a mirror site
-## 为 Flutter 设定通过镜像
+## 为 Flutter 设定镜像配置
 
 If you’re installing or using Flutter in China, it may be helpful to use
 a trustworthy local mirror site that hosts Flutter’s dependencies.
@@ -92,7 +94,7 @@ interested in setting up your own mirror in China, contact
 for assistance.
 
 `flutter-io.cn` 所提供的镜像由中国的 Flutter 开发者社区提供和维护，
-我们（Flutter 团队）无法保证其的长期稳定运作，你可以自由使用其他可信的机构提供的镜像服务。
+Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其他可信的机构提供的镜像服务。
 如果你想在中国设定自己的镜像，请与通过邮件群组获得帮助：[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)。
 
 ## Community-run mirror sites

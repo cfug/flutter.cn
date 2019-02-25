@@ -7,9 +7,11 @@ description: How to implement a SnackBar to display messages.
 description: 学习使用 SnackBar 展示消息。
 prev:
   title: Add a Drawer to a screen
+  title: 在屏幕上添加一个 Drawer
   path: /docs/cookbook/design/drawer
 next:
   title: Exporting fonts from a package
+  title: 从 package 里导出字体
   path: /docs/cookbook/design/package-fonts
 ---
 

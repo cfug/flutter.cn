@@ -7,9 +7,11 @@ description: How to use custom fonts.
 description: 学习如何在 Flutter 里使用自定义字体
 prev:
   title: Using Themes to share colors and font styles
+  title: 使用 Themes 统一颜色和字体风格
   path: /docs/cookbook/design/themes
 next:
   title: Working with Tabs
+  title: 使用 Tabs
   path: /docs/cookbook/design/tabs
 ---
 

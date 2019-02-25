@@ -3,9 +3,11 @@ title: Implement Swipe to Dismiss
 title: 实现「滑动清除」效果
 prev:
   title: Handling Taps
+  title: 捕获和处理点击动作
   path: /docs/cookbook/gestures/handling-taps
 next:
   title: Display images from the internet
+  title: 显示网络上的远程图片
   path: /docs/cookbook/images/network-image
 ---
 

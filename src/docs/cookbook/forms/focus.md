@@ -3,9 +3,11 @@ title: Focus on a Text Field
 title: Text Field 上的焦点
 prev:
   title: Create and style a text field
+  title: 文本框的创建和设定
   path: /docs/cookbook/forms/text-input
 next:
   title: Handling changes to a text field
+  title: 响应文本框内容的更改
   path: /docs/cookbook/forms/text-field-changes
 ---
 

@@ -7,9 +7,11 @@ description: How to share colors and font styles throughout an app using Themes.
 description: 学习如何使用 Themes 统一颜色和字体风格。
 prev:
   title: Updating the UI based on orientation
+  title: 根据屏幕方向更新界面
   path: /docs/cookbook/design/orientation
 next:
   title: Using custom fonts
+  title: 使用自定义字体
   path: /docs/cookbook/design/fonts
 ---
 

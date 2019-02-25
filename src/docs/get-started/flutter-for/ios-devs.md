@@ -703,7 +703,7 @@ create a native platform integration, or use an
 在 iOS 里，想要跳转到其他应用，可以使用特定的 URL scheme。对于系统级别的应用，scheme 都是
 取决于应用的。在 Flutter 里想要实现这个功能，需要创建原生平台的整合层，或者
 使用已经存在的[插件]({{site.pub-pkg}}/flutter/)，例如
-[`url_launcher`]({{site.pub-pkg}}/packages/url_launcher)。
+[`url_launcher`]({{site.pub-pkg}}/url_launcher)。
 
 ### How do I pop back to the iOS native viewcontroller?
 ### 如何退回到 iOS 原生的 viewcontroller？
@@ -738,7 +738,7 @@ loop&mdash;that is, the `Looper` that is attached to the main thread.
 
 Dart 是单线程执行模型，支持 `Isolate`（一种在其他线程运行 Dart 代码的方法）、事件循环和异步编程。
 除非生成了 `Isolate`，否则所有 Dart 代码将永远在主 UI 线程运行，并由事件循环驱动。Flutter 中的事件循环
-类似于 iOS 中的 main loop，也就是主线程上的 `Looper`。
+类似于 iOS 中的 main loop&mdash;，也就是主线程上的 `Looper`。
 
 Dart’s single-threaded model doesn’t mean you are required to run everything as
 a blocking operation that causes the UI to freeze. Instead,
@@ -1083,7 +1083,7 @@ Making a network call in Flutter is easy when you use the popular
 away a lot of the networking that you might normally implement yourself,
 making it simple to make network calls.
 
-在 Flutter 里，想要构造网络请求十分简单，直接使用 [`http` 库]({{site.pub-pkg}}/packages/http)即可。它把你可能要实现的网络操作进行了抽象封装，让处理网络请求变得十分简单。
+在 Flutter 里，想要构造网络请求十分简单，直接使用 [`http` 库]({{site.pub-pkg}}/http)即可。它把你可能要实现的网络操作进行了抽象封装，让处理网络请求变得十分简单。
 
 To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
@@ -1364,7 +1364,7 @@ package. You might also need to add Dart's [`intl`]({{site.pub-pkg}}/intl)
 package to use i10n machinery, such as date/time formatting.
 
 默认情况下，Flutter 只支持美式英语的本地化字符串。如果你需要添加其他语言支持，请引入 `flutter_localizations` 库。
-同时你可能还需要添加 [`intl`]({{site.pub-pkg}}/packages/intl) 库来使用 i10n 机制，比如
+同时你可能还需要添加 [`intl`]({{site.pub-pkg}}/intl) 库来使用 i10n 机制，比如
 日期/时间的格式化等。
 
 {% prettify yaml %}
@@ -1422,7 +1422,7 @@ widget from the current context (in the form of a `Locale` object), or using the
 当初始化的时候，`WidgetsApp`（或 `MaterialApp`）会根据你提供的 delegates 创建一个 
 [`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html) widget。
 `Localizations` widget 可以随时从当前上下文中中获取设备所用的语言，
-也可以使用 [`Window.locale`]({{site.api}}/flutter/widgets/Localizations-class.html)。
+也可以使用 [`Window.locale`]({{site.api}}/flutter/dart-ui/Window/locale.html)。
 
 To access localized resources, use the `Localizations.of()` method to
 access a specific localizations class that is provided by a given delegate.
@@ -1965,74 +1965,84 @@ Using `GestureDetector` you can listen to a wide range of gestures such as:
 你可以使用 `GestureDetector` 来监听更多的手势，例如：
 
 * Tapping
+  
+  单击事件
 
   * `onTapDown` — A pointer that might cause a tap has contacted the screen at a
     particular location.
     
-    `onTapDown` —— 在特定区域手指接触了屏幕。
+    `onTapDown` —— 用户在特定区域发生点触屏幕的一个即时操作。
     
   * `onTapUp` — A pointer that triggers a tap has stopped contacting the
     screen at a particular location.
 
-    `onTapUp` —— 在特定区域手指离开了屏幕。
+    `onTapUp` —— 用户在特定区域发生触摸抬起的一个即时操作。
     
   * `onTap` — A tap has occurred.
 
-    `onTap` —— 发生了一次 tap 事件。
+    `onTap` —— 从点触屏幕之后到触摸抬起之间的单击操作。
     
   * `onTapCancel` — The pointer that previously triggered the `onTapDown` won't
     cause a tap.
     
-    `onTapCancel` —— 触发了 `onTapDown`，但最终没有触发 tap 事件。
+    `onTapCancel` —— 用户在之前触发了 `onTapDown` 时间，但未触发 tap 事件。
 
 * Double tapping
+  
+  双击事件
 
   * `onDoubleTap` — The user tapped the screen at the same location twice in
     quick succession.
     
-    `onDoubleTap` —— 用户在同一位置快速点击了屏幕两次。
+    `onDoubleTap` —— 用户在同一位置发生快速点击屏幕两次的操作。
 
 * Long pressing
+
+  长按事件
 
   * `onLongPress` — A pointer has remained in contact with the screen at the same
     location for a long period of time.
     
-    `onLongPress` —— 手指在同一位置长时间接触屏幕。
+    `onLongPress` —— 用户在同一位置长时间触摸屏幕的操作。
 
 * Vertical dragging
+
+  垂直拖动事件
 
   * `onVerticalDragStart` — A pointer has contacted the screen and might begin to
     move vertically.
     
-    `onVerticalDragStart` —— 手指接触屏幕，并且将要垂直移动。
+    `onVerticalDragStart` —— 用户手指接触屏幕，并且将要进行垂直移动事件。
   
   * `onVerticalDragUpdate` — A pointer in contact with the screen
     has moved further in the vertical direction.
     
-    `onVerticalDragUpdate` —— 手指接触屏幕，已经且将继续垂直移动。
+    `onVerticalDragUpdate` —— 用户手指接触屏幕，已经开始垂直移动，且会持续进行移动。
     
   * `onVerticalDragEnd` — A pointer that was previously in contact with the
     screen and moving vertically is no longer in contact with the screen and was
     moving at a specific velocity when it stopped contacting the screen.
     
-    `onVerticalDragEnd` —— 之前手指接触了屏幕并垂直移动，并且停止接触前还在以一定的速率移动。
+    `onVerticalDragEnd` —— 用户之前手指接触了屏幕并发生了垂直移动操作，并且停止接触前还在以一定的速率移动。
 
 * Horizontal dragging
+
+  水平拖动事件
 
   * `onHorizontalDragStart` — A pointer has contacted the screen and might begin
     to move horizontally.
     
-    `onHorizontalDragStart` —— 手指接触屏幕，并且将要水平移动。
+    `onHorizontalDragStart` —— 用户手指接触屏幕，并且将要进行水平移动事件。
     
   * `onHorizontalDragUpdate` — A pointer in contact with the screen
     has moved further in the horizontal direction.
     
-    `onHorizontalDragUpdate` —— 手指接触屏幕，已经且将继续水平移动。
+    `onHorizontalDragUpdate` —— 用户手指接触屏幕，已经开始水平移动，且会持续进行移动。
     
   * `onHorizontalDragEnd` — A pointer that was previously in contact with the
     screen and moving horizontally is no longer in contact with the screen.
     
-    `onHorizontalDragEnd` —— 之前手指接触了屏幕并水平移动，并且停止接触前还在以一定的速率移动中。
+    `onHorizontalDragEnd` —— 用户之前手指接触了屏幕并发生了水平移动操作，并且停止接触前还在以一定的速率移动。
 
 The following example shows a `GestureDetector` that rotates the Flutter logo
 on a double tap:
@@ -2434,7 +2444,7 @@ and [publish it on Pub](/docs/development/packages-and-plugins/developing-packag
 
 Use the [`geolocator`]({{site.pub-pkg}}/geolocator) community plugin.
 
-使用 [`geolocator`]({{site.pub-pkg}}/packages/geolocator) 插件，这一插件由社区提供。
+使用 [`geolocator`]({{site.pub-pkg}}/geolocator) 插件，这一插件由社区提供。
 
 ### How do I access the camera?
 ### 如何访问相机？
@@ -2442,7 +2452,7 @@ Use the [`geolocator`]({{site.pub-pkg}}/geolocator) community plugin.
 The [`image_picker`]({{site.pub-pkg}}/image_picker) plugin is popular
 for accessing the camera.
 
-[`image_picker`]({{site.pub-pkg}}/packages/image_picker) 是常用的访问相机的插件。
+[`image_picker`]({{site.pub-pkg}}/image_picker) 是常用的访问相机的插件。
 
 ### How do I log in with Facebook?
 ### 如何使用 Facebook 登录？
@@ -2450,7 +2460,7 @@ for accessing the camera.
 To log in with Facebook, use the
 [`flutter_facebook_login`]({{site.pub-pkg}}/flutter_facebook_login) community plugin.
 
-登录 Facebook 可以使用 [`flutter_facebook_login`]({{site.pub-pkg}}/packages/flutter_facebook_login) 插件。
+登录 Facebook 可以使用 [`flutter_facebook_login`]({{site.pub-pkg}}/flutter_facebook_login) 插件。
 
 ### How do I use Firebase features?
 ### 如何集成 Firebase 的功能？
@@ -2463,13 +2473,37 @@ These plugins are first-party integrations, maintained by the Flutter team:
 这些插件由 Flutter 官方团队维护：
 
  * [`firebase_admob`]({{site.pub-pkg}}/firebase_admob) for Firebase AdMob
+
+   搭配 [`firebase_admob`]({{site.pub-pkg}}/firebase_admob) 插件来使用 Firebase AdMob
+
  * [`firebase_analytics`]({{site.pub-pkg}}/firebase_analytics) for Firebase Analytics
+
+   搭配 [`firebase_analytics`]({{site.pub-pkg}}/firebase_analytics) 插件来使用 Firebase Analytics
+
  * [`firebase_auth`]({{site.pub-pkg}}/firebase_auth) for Firebase Auth
+   
+   搭配 [`firebase_auth`]({{site.pub-pkg}}/firebase_auth) 插件来使用 Firebase Auth
+
  * [`firebase_core`]({{site.pub-pkg}}/firebase_core) for Firebase's Core package
+   
+   搭配 [`firebase_core`]({{site.pub-pkg}}/firebase_core) 插件来使用 Firebase 核心库
+
  * [`firebase_database`]({{site.pub-pkg}}/firebase_database) for Firebase RTDB
+   
+   搭配 [`firebase_database`]({{site.pub-pkg}}/firebase_database) 插件来使用 Firebase RTDB
+
  * [`firebase_storage`]({{site.pub-pkg}}/firebase_storage) for Firebase Cloud Storage
+
+   搭配 [`firebase_storage`]({{site.pub-pkg}}/firebase_storage) 插件来使用 Firebase Cloud Storage
+
  * [`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging) for Firebase Messaging (FCM)
+
+   搭配 [`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging) 插件来使用 Firebase Messaging (FCM)
+
  * [`cloud_firestore`]({{site.pub-pkg}}/cloud_firestore) for Firebase Cloud Firestore
+   
+   搭配 [`cloud_firestore`]({{site.pub-pkg}}/cloud_firestore) 插件来使用 Firebase Cloud Firestore
+
 
 You can also find some third-party Firebase plugins on the Pub site that
 cover areas not directly covered by the first-party plugins.
@@ -2510,7 +2544,7 @@ In Flutter, access equivalent functionality using the
 This plugin wraps the functionality of both `UserDefaults` and the Android
 equivalent, `SharedPreferences`.
 
-在 Flutter 里，可以使用 [Shared Preferences 插件]({{site.pub-pkg}}/packages/shared_preferences)
+在 Flutter 里，可以使用 [Shared Preferences 插件]({{site.pub-pkg}}/shared_preferences)
 来实现相同的功能。这个插件封装了 `UserDefaults` 以及 Android 里类似的 `SharedPreferences`。
 
 ### What is the equivalent to CoreData in Flutter?
@@ -2549,4 +2583,4 @@ For more information on using the Firebase Cloud Messaging API, see the
 plugin documentation.
 
 关于 Firebase Cloud Messaging API 的更多信息，可以
-查看 [`firebase_messaging`]({{site.pub-pkg}}/packages/firebase_messaging) 插件文档。
+查看 [`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging) 插件文档。

@@ -3,9 +3,11 @@ title: Handling Taps
 title: 捕获和处理点击动作
 prev:
   title: Adding Material Touch Ripples
+  title: 添加点按涟漪效果 (Material Design)
   path: /docs/cookbook/gestures/ripples
 next:
   title: Implement Swipe to Dismiss
+  title: 实现「滑动清除」效果
   path: /docs/cookbook/gestures/dismissible
 ---
 

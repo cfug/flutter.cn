@@ -3,9 +3,11 @@ title: Exporting fonts from a package
 title: 从 package 里导出字体
 prev:
   title: Displaying SnackBars
+  title: 显示 SnackBars
   path: /docs/cookbook/design/snackbars
 next:
   title: Updating the UI based on orientation
+  title: 根据屏幕方向更新界面
   path: /docs/cookbook/design/orientation
 ---
 

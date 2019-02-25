@@ -3,9 +3,11 @@ title: Working with Tabs
 title: 使用 Tabs
 prev:
   title: Using custom fonts
+  title: 使用自定义字体
   path: /docs/cookbook/design/fonts
 next:
   title: Building a form with validation
+  title: 构建一个有验证判断的表单
   path: /docs/cookbook/forms/validation
 ---
 

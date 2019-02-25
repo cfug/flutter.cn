@@ -3,9 +3,11 @@ title: Retrieve the value of a text field
 title: 获取文本框的输入值
 prev:
   title: Handling changes to a text field
+  title: 响应文本框内容的更改
   path: /docs/cookbook/forms/text-field-changes
 next:
   title: Adding Material Touch Ripples
+  title: 添加点按涟漪效果 (Material Design)
   path: /docs/cookbook/gestures/ripples
 ---
 

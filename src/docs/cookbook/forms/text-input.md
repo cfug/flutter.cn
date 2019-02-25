@@ -3,9 +3,11 @@ title: Create and style a text field
 title: 文本框的创建和设定
 prev:
   title: Building a form with validation
+  title: 构建一个有验证判断的表单
   path: /docs/cookbook/forms/validation
 next:
   title: Focus on a Text Field
+  title: Text Field 上的焦点
   path: /docs/cookbook/forms/focus
 ---
 

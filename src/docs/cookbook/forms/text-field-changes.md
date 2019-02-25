@@ -3,9 +3,11 @@ title: Handling changes to a text field
 title: 响应文本框内容的更改
 prev:
   title: Focus on a Text Field
+  title: Text Field 上的焦点
   path: /docs/cookbook/forms/focus
 next:
   title: Retrieve the value of a text field
+  title: 获取文本框的输入值
   path: /docs/cookbook/forms/retrieve-input
 ---
 

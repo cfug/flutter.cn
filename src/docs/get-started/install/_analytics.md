@@ -10,5 +10,5 @@
 
   [Privacy Policy]: https://policies.google.com/privacy
 
-  [隐私政策]：https://policies.google.com/privacy
+  [隐私政策]：https://policies.google.cn/privacy
 </aside>

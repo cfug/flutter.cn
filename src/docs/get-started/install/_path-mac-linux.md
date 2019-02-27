@@ -2,6 +2,7 @@
 
 ### 更新 PATH 环境变量
 
+
 You can update your PATH variable for the current session only at the command
 line, as shown in [Get the Flutter SDK](#get-sdk). You'll probably want to
 update this variable permanently, so you can run `flutter` commands in any terminal session.
@@ -17,17 +18,17 @@ a new window. For example:
  1. Determine the directory where you placed the Flutter SDK. You will
     need this in Step 3.
 
- 1. 首先决定你想要将 Flutter SDK 放置在哪一个目录内，获取并记录这个目录的路径，你将要在第 3 步中用到它。
+    首先决定你想要将 Flutter SDK 放置在哪一个目录内，获取并记录这个目录的路径，你将要在第 3 步中用到它。
 
  2. Open (or create) `$HOME/.bash_profile`. The file path and filename might be
     different on your machine.
  
- 2. 打开（或者创建）`$HOME/.bash_profile`，这里的路径和文件名在你的机器上可能会有所不同。
+    打开（或者创建）`$HOME/.bash_profile`，这里的路径和文件名在你的机器上可能会有所不同。
 
  3. Add the following line and change `[PATH_TO_FLUTTER_GIT_DIRECTORY]` to be
     the path where you cloned Flutter's git repo:
 
- 3. 在文件中增加下列这行命令，并将其中的 `[PATH_TO_FLUTTER_GIT_DIRECTORY]` 更改为你第一步获取到的路径：
+    在文件中增加下列这行命令，并将其中的 `[PATH_TO_FLUTTER_GIT_DIRECTORY]` 更改为你第一步获取到的路径：
 
     ```terminal
     $ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
@@ -35,11 +36,11 @@ a new window. For example:
 
  4. Run `source $HOME/.bash_profile` to refresh the current window.
 
- 4. 运行 `source $HOME/.bash_profile` 来刷新当前命令行窗口。
+    运行 `source $HOME/.bash_profile` 来刷新当前命令行窗口。
  
  5. Verify that the `flutter/bin` directory is now in your PATH by running:
 
- 5. 通过运行以下命令来验证 `flutter/bin` 文件夹是否已经添加到 PATH 环境变量中：
+    通过运行以下命令来验证 `flutter/bin` 文件夹是否已经添加到 PATH 环境变量中：
 
     ```terminal
     $ echo $PATH

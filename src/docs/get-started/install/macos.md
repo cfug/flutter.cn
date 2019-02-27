@@ -14,6 +14,7 @@ next:
 
 ## 系统配置要求
 
+
 To install and run Flutter, your development environment must meet these minimum requirements:
 
 想要安装并运行 Flutter，你的开发环境需要最低满足以下要求：
@@ -46,6 +47,7 @@ To install and run Flutter, your development environment must meet these minimum
 
 ## 平台配置
 
+
 MacOS supports developing Flutter apps for both iOS and Android. Complete at
 least one of the two platform setup steps now, to be able to build and run your
 first Flutter app.
@@ -60,6 +62,7 @@ macOS 可以允许开发 iOS 和 Android 两个平台的 Flutter 应用，你可
 ## Next step
 
 ## 下一步
+
 
 [Next step: Configure Editor](/docs/get-started/editor)
 

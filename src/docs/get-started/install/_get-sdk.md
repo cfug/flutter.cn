@@ -10,10 +10,11 @@
 
 ## 获取 Flutter SDK {#get-sdk}
 
+
  1. Download the following installation bundle to get the latest {{site.sdk.channel}} release of the
     Flutter SDK:
 
- 1. 下载以下安装包来获取最新的 {{site.sdk.channel}} Flutter SDK：
+    下载以下安装包来获取最新的 {{site.sdk.channel}} Flutter SDK：
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
@@ -24,7 +25,7 @@
 
  2. Extract the file in the desired location, for example:
 
- 2. 将文件解压到目标路径, 比如:
+    将文件解压到目标路径, 比如:
 
     {% comment %}
       Our JS also updates the filename in this template, but it doesn't include the terminal formatting:
@@ -42,7 +43,7 @@
 
  3. Add the `flutter` tool to your path:
 
- 3. 配置 `flutter` 的 PATH 环境变量：
+    配置 `flutter` 的 PATH 环境变量：
 
     ```terminal
     $ export PATH="$PATH:`pwd`/flutter/bin"
@@ -58,6 +59,7 @@ You are now ready to run Flutter commands!
 
 现在你可以愉快地运行 Flutter 的命令了！
 
+
 {{site.alert.note}}
   To update an existing version of Flutter, see
   [Upgrading Flutter](/docs/development/tools/sdk/upgrading).
@@ -69,6 +71,7 @@ You are now ready to run Flutter commands!
 ### Run flutter doctor
 
 ### 运行 flutter doctor 命令
+
 
 Run the following command to see if there are any dependencies you need to
 install to complete the setup (for verbose output, add the `-v` flag):

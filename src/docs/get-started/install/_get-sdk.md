@@ -8,14 +8,23 @@
 
 ## Get the Flutter SDK {#get-sdk}
 
+## 获取 Flutter SDK {#get-sdk}
+
  1. Download the following installation bundle to get the latest {{site.sdk.channel}} release of the
     Flutter SDK:
+
+ 1. 下载以下安装包来获取最新的 {{site.sdk.channel}} Flutter SDK：
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds, see the [SDK
     archive](/docs/development/tools/sdk/archive) page.
- 1. Extract the file in the desired location, for example:
+
+    想要获取到其他版本的安装包，可以查看[ SDK 归档](/docs/development/tools/sdk/archive)页面。
+
+ 2. Extract the file in the desired location, for example:
+
+ 2. 将文件解压到目标路径, 比如:
 
     {% comment %}
       Our JS also updates the filename in this template, but it doesn't include the terminal formatting:
@@ -31,7 +40,9 @@
     $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
     ```
 
- 1. Add the `flutter` tool to your path:
+ 3. Add the `flutter` tool to your path:
+
+ 3. 配置 `flutter` 的 PATH 环境变量：
 
     ```terminal
     $ export PATH="$PATH:`pwd`/flutter/bin"
@@ -41,17 +52,28 @@
     To permanently add Flutter to your path, see [Update your
     path](#update-your-path).
 
+    这个命令配置了 `PATH` 环境变量，且只会在你 _当前_ 命令行窗口中生效。如果想让它永久生效，请查看[更新 PATH 环境变量](#update-your-path)。
+
 You are now ready to run Flutter commands!
+
+现在你可以愉快地运行 Flutter 的命令了！
 
 {{site.alert.note}}
   To update an existing version of Flutter, see
   [Upgrading Flutter](/docs/development/tools/sdk/upgrading).
+  
+  如果想要升级当前的 Flutter 版本，可以查看[升级 Flutter](/docs/development/tools/sdk/upgrading)。
+
 {{site.alert.end}}
 
 ### Run flutter doctor
 
+### 运行 flutter doctor 命令
+
 Run the following command to see if there are any dependencies you need to
 install to complete the setup (for verbose output, add the `-v` flag):
+
+通过运行以下命令来查看当前环境是否还需要安装什么别的依赖（如果想查看更详细的输出，增加一个 `-v` 参数即可）：
 
 ```terminal
 $ flutter doctor
@@ -62,7 +84,11 @@ window. The Dart SDK is bundled with Flutter; it is not necessary to install
 Dart separately. Check the output carefully for other software you may need to
 install or further tasks to perform (shown in **bold** text).
 
+这个命令会检查你当前的配置环境，并在命令行窗口中生成一份报告。安装 Flutter 会附带安装 Dart SDK，所以不需要再对 Dart 进行单独安装。你需要仔细阅读上述命令生成的报告，看看别漏了一些需要安装的依赖，或者需要之后执行的命令（这个会以加粗的文本显示出来）。
+
 For example:
+
+比如你可能会看到下面这样的输出：
 
 <pre>
 [-] Android toolchain - develop for Android devices
@@ -75,7 +101,11 @@ For example:
 The following sections describe how to perform these tasks and finish the setup
 process.
 
+之后的部分会向你描述如果执行这些命令来完成整体的配置过程。
+
 Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you’ve set everything up correctly.
+
+当你安装了任一缺失部分的依赖后，可以再次运行 `flutter doctor` 命令来确认是否成功安装。
 
 {% include_relative _analytics.md %}

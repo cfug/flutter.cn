@@ -178,7 +178,7 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
           Store. For details about membership types, see
           [Choosing a Membership][].
 
-        * 在开始你的第一个 iOS 项目开发之前，你需要先在 Xcode 中登陆你的 Apple 开发者账号 ![Xcode account add][]{:.mw-100}
+          在开始你的第一个 iOS 项目开发之前，你需要先在 Xcode 中登陆你的 Apple 开发者账号 ![Xcode account add][]{:.mw-100}
           任何 Apple ID 都可以进行开发和测试。如果想将应用上架 App Store，你需要加入 Apple Developer Program，你可以在 [Choosing a Membership][] 页面中查看详细的说明。
          
 
@@ -192,7 +192,7 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
           Then, go to the Settings app on the iOS device, select **General >
           Device Management** and trust your Certificate.
 
-        * 当你第一次将设备连接到开发机用于开发时，你需要分别在 Mac 和开发机上进行信任设备的操作。当你第一次连接时，会有个弹窗，点击 `Trust` 即可。
+          当你第一次将设备连接到开发机用于开发时，你需要分别在 Mac 和开发机上进行信任设备的操作。当你第一次连接时，会有个弹窗，点击 `Trust` 即可。
 
           ![Trust Mac][]{:.mw-100}
 
@@ -200,9 +200,11 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
 
         * If automatic signing fails in Xcode, verify that the project's
           **General > Identity > Bundle Identifier** value is unique.
+          
           ![Check the app's Bundle ID][]{:.mw-100}
 
-        * 如果 Xcode 的自动签名失败了，你可以检查以下项目中 **General > Identity > Bundle Identifier** 里的值是否是唯一的。
+          如果 Xcode 的自动签名失败了，你可以检查以下项目中 **General > Identity > Bundle Identifier** 里的值是否是唯一的。
+          
           ![Check the app's Bundle ID][]{:.mw-100}
 
  5. Start your app by running `flutter run`.

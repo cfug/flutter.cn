@@ -4,9 +4,11 @@ title: 导航到一个新页面和返回
 description: How to navigate between routes
 prev:
   title: Animating a Widget across screens
+  title: 跨页面切换的动效 Widget (Hero animations)
   path: /docs/cookbook/navigation/hero-animations
 next:
   title: Navigate with named routes
+  title: 导航到对应名称的 routes 里
   path: /docs/cookbook/navigation/named-routes
 ---
 

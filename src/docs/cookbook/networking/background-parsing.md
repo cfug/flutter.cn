@@ -3,9 +3,11 @@ title: Parsing JSON in the background
 title: 在后台处理 JSON 数据解析
 prev:
   title: Making authenticated requests
+  title: 发起 HTTP 认证授权请求
   path: /docs/cookbook/networking/authenticated-requests
 next:
   title: Working with WebSockets
+  title: 发起 WebSockets 请求
   path: /docs/cookbook/networking/web-sockets
 ---
 

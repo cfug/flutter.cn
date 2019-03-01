@@ -3,9 +3,11 @@ title: Creating a Grid List
 title: 创建一个网格列表
 prev:
   title: Create a horizontal list
+  title: 创建一个水平滑动的列表
   path: /docs/cookbook/lists/horizontal-list
 next:
   title: Creating lists with different types of items
+  title: 创建拥有不同列表项的列表
   path: /docs/cookbook/lists/mixed-list
 ---
 

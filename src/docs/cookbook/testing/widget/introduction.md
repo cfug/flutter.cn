@@ -1,11 +1,14 @@
 ---
 title: An introduction to widget testing
+title: Widget 测试介绍
 short-title: Introduction
 prev:
   title: Mock dependencies using Mockito
+  title: 使用 Mockito 模拟依赖关系
   path: /docs/cookbook/testing/unit/mocking
 next:
   title: Finding widgets
+  title: 定位到目标 widgets
   path: /docs/cookbook/testing/widget/finders
 ---
 

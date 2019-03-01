@@ -3,9 +3,11 @@ title: Fetch data from the internet
 title: 获取网络数据
 prev:
   title: Send data to a new screen
+  title: 传递数据到新页面
   path: /docs/cookbook/navigation/passing-data
 next:
   title: Making authenticated requests
+  title: 发起 HTTP 认证授权请求
   path: /docs/cookbook/networking/authenticated-requests
 ---
 

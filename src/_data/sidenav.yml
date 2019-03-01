@@ -24,7 +24,7 @@
           permalink: /docs/get-started/flutter-for/web-devs
         - title: 给 Xamarin.Forms 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/xamarin-forms-devs
-    - title: "Dart 语言概览"
+    - title: Dart 语言概览
       permalink: https://www.dartlang.org/guides/language
 
 - title: 教程和样例代码
@@ -64,10 +64,6 @@
           permalink: /docs/development/ui/assets-and-images
         - title: 路由和导航
           permalink: /docs/development/ui/navigation
-        # Commenting out the following entry per
-        # https://github.com/flutter/website/issues/1496#issuecomment-431455211
-        # - title: Inspect an app's UI
-        #   permalink: /docs/development/ui/inspector
         - title: 动画效果
           permalink: /docs/development/ui/animations
           children:
@@ -146,6 +142,8 @@
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
+        - title: Dart DevTools
+          permalink: https://flutter.github.io/devtools/
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -157,8 +155,8 @@
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式
           permalink: /docs/development/tools/formatting
-        - title: Widget inspector
-          permalink: /docs/development/tools/inspector
+        - title: Flutter inspector
+          permalink: https://flutter.github.io/devtools/inspector
 
 - title: 测试和调优
   permalink: /docs/testing

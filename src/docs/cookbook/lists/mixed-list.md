@@ -3,9 +3,11 @@ title: Creating lists with different types of items
 title: 创建拥有不同列表项的列表
 prev:
   title: Creating a Grid List
+  title: 创建一个网格列表
   path: /docs/cookbook/lists/grid-lists
 next:
   title: Working with long lists
+  title: 长列表的处理
   path: /docs/cookbook/lists/long-lists
 ---
 

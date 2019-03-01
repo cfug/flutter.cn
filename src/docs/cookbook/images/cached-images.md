@@ -3,9 +3,11 @@ title: Working with cached images
 title: 使用缓存图片
 prev:
   title: Fade in images with a placeholder
+  title: 占位符和网络图片淡入
   path: /docs/cookbook/images/fading-in-images
 next:
   title: Basic List
+  title: 基础列表
   path: /docs/cookbook/lists/basic-list
 ---
 

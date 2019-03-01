@@ -3,9 +3,11 @@ title: Working with WebSockets
 title: 发起 WebSockets 请求
 prev:
   title: Parsing JSON in the background
+  title: 在后台处理 JSON 数据解析
   path: /docs/cookbook/networking/background-parsing
 next:
   title: Persist data with SQLite
+  title: 用 SQLite 做数据持久化
   path: /docs/cookbook/persistence/sqlite
 ---
 

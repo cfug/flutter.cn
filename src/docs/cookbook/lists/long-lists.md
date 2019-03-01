@@ -3,9 +3,11 @@ title: Working with long lists
 title: 长列表的处理
 prev:
   title: Creating lists with different types of items
+  title: 创建拥有不同列表项的列表
   path: /docs/cookbook/lists/mixed-list
 next:
   title: Report errors to a service
+  title: 把报错信息通过服务上传
   path: /docs/cookbook/maintenance/error-reporting
 ---
 

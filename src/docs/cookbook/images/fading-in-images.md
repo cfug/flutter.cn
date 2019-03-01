@@ -3,9 +3,11 @@ title: Fade in images with a placeholder
 title: 占位符和网络图片淡入
 prev:
   title: Display images from the internet
+  title: 显示网络上的远程图片
   path: /docs/cookbook/images/network-image
 next:
   title: Working with cached images
+  title: 使用缓存图片
   path: /docs/cookbook/images/cached-images
 ---
 

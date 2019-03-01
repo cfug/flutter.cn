@@ -1,11 +1,14 @@
 ---
 title: An introduction to integration testing
+title: 集成测试介绍
 short-title: Introduction
 prev:
   title: Storing key-value data on disk
+  title: 存储键值对数据
   path: /docs/cookbook/persistence/key-value
 next:
   title: Performance profiling
+  title: 性能分析
   path: /docs/cookbook/testing/integration/profiling
 ---
 

@@ -3,9 +3,11 @@ title: Animating a Widget across screens
 title: 跨页面切换的动效 Widget (Hero animations)
 prev:
   title: Report errors to a service
+  title: 把报错信息通过服务上传
   path: /docs/cookbook/maintenance/error-reporting
 next:
   title: Navigate to a new screen and back
+  title: 导航到一个新页面和返回
   path: /docs/cookbook/navigation/navigation-basics
 ---
 

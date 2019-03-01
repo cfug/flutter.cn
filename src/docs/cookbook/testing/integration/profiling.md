@@ -4,9 +4,11 @@ title: 性能分析
 title: Performance profiling
 prev:
   title: An introduction to integration testing
+  title: Flutter 集成测试介绍
   path: /docs/cookbook/testing/integration/introduction
 next:
   title: Scrolling
+  title: 列表滚动
   path: /docs/cookbook/testing/integration/scrolling
 ---
 

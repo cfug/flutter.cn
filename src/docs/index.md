@@ -4,7 +4,7 @@ title: Flutter 开发文档
 short-title: Docs
 short-title: 文档
 description: The landing page for Flutter documentation.
-description: Flutter 开发文档页面.
+description: Flutter 开发文档页面。
 ---
 
 <div class="card-deck">

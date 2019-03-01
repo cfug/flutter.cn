@@ -3,9 +3,11 @@ title: Navigate with named routes
 title: 导航到对应名称的 routes 里
 prev:
   title: Navigate to a new screen and back
+  title: 导航到一个新页面和返回
   path: /docs/cookbook/navigation/navigation-basics
 next:
   title: Return data from a screen
+  title: 从一个页面回传数据
   path: /docs/cookbook/navigation/returning-data
 ---
 

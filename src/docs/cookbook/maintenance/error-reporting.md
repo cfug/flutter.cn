@@ -3,9 +3,11 @@ title: Report errors to a service
 title: 把报错信息通过服务上传
 prev:
   title: Working with long lists
+  title: 长列表的处理
   path: /docs/cookbook/lists/long-lists
 next:
   title: Animating a Widget across screens
+  title: 跨页面切换的动效 Widget (Hero animations)
   path: /docs/cookbook/navigation/hero-animations
 ---
 

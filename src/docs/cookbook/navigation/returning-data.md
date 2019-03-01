@@ -3,9 +3,11 @@ title: Return data from a screen
 title: 从一个页面回传数据
 prev:
   title: Navigate with named routes
+  title: 导航到对应名称的 routes 里
   path: /docs/cookbook/navigation/named-routes
 next:
   title: Send data to a new screen
+  title: 传递数据到新页面
   path: /docs/cookbook/navigation/passing-data
 ---
 

@@ -2,9 +2,11 @@
 title: Persist data with SQLite
 prev:
   title: Working with WebSockets
+  title: 发起 WebSockets 请求
   path: /docs/cookbook/networking/web-sockets
 next:
   title: Reading and Writing Files
+  title: 文件读写
   path: /docs/cookbook/persistence/reading-writing-files
 ---
 

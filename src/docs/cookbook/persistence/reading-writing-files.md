@@ -3,9 +3,11 @@ title: Reading and Writing Files
 title: 文件读写
 prev:
   title: Persist data with SQLite
+  title: 用 SQLite 做数据持久化
   path: /docs/cookbook/persistence/sqlite
 next:
   title: Storing key-value data on disk
+  title: 存储键值对数据
   path: /docs/cookbook/persistence/key-value
 ---
 

@@ -3,9 +3,11 @@ title: Storing key-value data on disk
 title: 存储键值对数据
 prev:
   title: Reading and Writing Files
+  title: 文件读写
   path: /docs/cookbook/persistence/reading-writing-files
 next:
   title: An introduction to integration testing
+  title: 集成测试介绍
   path: /docs/cookbook/testing/integration/introduction
 ---
 

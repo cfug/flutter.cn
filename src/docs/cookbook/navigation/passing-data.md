@@ -3,9 +3,11 @@ title: Send data to a new screen
 title: 传递数据到新页面
 prev:
   title: Return data from a screen
+  title: 从一个页面回传数据
   path: /docs/cookbook/navigation/returning-data
 next:
   title: Fetch data from the internet
+  title: 获取网络数据
   path: /docs/cookbook/networking/fetch-data
 ---
 

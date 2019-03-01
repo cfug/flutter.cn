@@ -3,9 +3,11 @@ title: Making authenticated requests
 title: 发起 HTTP 认证授权请求
 prev:
   title: Fetch data from the internet
+  title: 获取网络数据
   path: /docs/cookbook/networking/fetch-data
 next:
   title: Parsing JSON in the background
+  title: 在后台处理 JSON 数据解析
   path: /docs/cookbook/networking/background-parsing
 ---
 

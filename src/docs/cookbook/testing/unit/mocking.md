@@ -4,9 +4,11 @@ title: 使用 Mockito 模拟依赖关系
 short-title: Mocking
 prev:
   title: An introduction to unit testing
+  title: 单元测试介绍
   path: /docs/cookbook/testing/unit/introduction
 next:
   title: An introduction to widget testing
+  title: Widget 测试介绍
   path: /docs/cookbook/testing/widget/introduction
 ---
 

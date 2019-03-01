@@ -64,7 +64,6 @@
           permalink: /docs/development/ui/assets-and-images
         - title: 路由和导航
           permalink: /docs/development/ui/navigation
-
         - title: 动画效果
           permalink: /docs/development/ui/animations
           children:

@@ -3,9 +3,11 @@ title: Display images from the internet
 title: 显示网络上的远程图片
 prev:
   title: Implement Swipe to Dismiss
+  title: 实现「滑动清除」效果
   path: /docs/cookbook/gestures/dismissible
 next:
   title: Fade in images with a placeholder
+  title: 占位符和网络图片淡入
   path: /docs/cookbook/images/fading-in-images
 ---
 

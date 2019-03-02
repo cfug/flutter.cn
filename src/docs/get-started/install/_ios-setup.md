@@ -201,15 +201,13 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
         * If automatic signing fails in Xcode, verify that the project's
           **General > Identity > Bundle Identifier** value is unique.
           
-          ![Check the app's Bundle ID][]{:.mw-100}
-
           如果 Xcode 的自动签名失败了，你可以检查以下项目中 **General > Identity > Bundle Identifier** 里的值是否是唯一的。
           
           ![Check the app's Bundle ID][]{:.mw-100}
 
  5. Start your app by running `flutter run`.
 
-    运行 `flutter run` 命令运行你的应用。
+    执行 `flutter run` 命令来运行你的应用。
 
 [Check the app's Bundle ID]: /images/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: https://developer.apple.com/support/compare-memberships

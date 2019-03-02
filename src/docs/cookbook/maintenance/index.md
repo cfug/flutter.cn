@@ -1,6 +1,5 @@
 ---
-title: Maintenance
-title: 维护
+title: 维护 (Maintenance)
 ---
 
 {% include cookbook_group_index.md %}

@@ -1,7 +1,6 @@
 ---
-title: Performance profiling with integration tests
-title: 性能分析
 title: Performance profiling
+title: 性能分析
 prev:
   title: An introduction to integration testing
   title: Flutter 集成测试介绍

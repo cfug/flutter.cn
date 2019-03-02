@@ -95,14 +95,15 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
     [hardware
     acceleration]({{site.android-dev}}/studio/run/emulator-acceleration).
 
-    在 Emulated Performance 下选择 **Hardware - GLES 2.0** 选项来开启[硬件加速]({{site.android-dev}}/studio/run/emulator-acceleration)。
+    在 Emulated Performance 下选择 **Hardware - GLES 2.0** 选项来开启
+    [硬件加速]({{site.android-dev}}/studio/run/emulator-acceleration)。
 
  6. Verify the AVD configuration is correct, and select **Finish**.
+    
+    确保 AVD 选项配置正确，并选择 **Finish** 选项。
 
     For details on the above steps, see [Managing
     AVDs]({{site.android-dev}}/studio/run/managing-avds).
-
-    确保 AVD 选项配置正确，并选择 **Finish** 选项。
 
     想要查看上述步骤的更多详细信息，请查看 [Managing AVDs]({{site.android-dev}}/studio/run/managing-avds) 页面。
 
@@ -110,4 +111,5 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
     The emulator starts up and displays the default canvas for your selected OS version
     and device.
 
-    在 Android Virtual Device Manager 中，点击工具栏中的 **Run** 选项，模拟器会启动并为你所选择的系统版本和设备显示出相应的界面。
+    在 Android Virtual Device Manager 中，点击工具栏中的 **Run** 选项，
+    模拟器会启动并为你所选择的系统版本和设备显示出相应的界面。

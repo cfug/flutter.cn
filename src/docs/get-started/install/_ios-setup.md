@@ -186,8 +186,6 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
           development, you will need to trust both your Mac and the Development
           Certificate on that device. Select `Trust` in the dialog prompt when
           first connecting the iOS device to your Mac.
-
-          ![Trust Mac][]{:.mw-100}
           
           当你第一次将设备连接到开发机用于开发时，你需要分别在 Mac 和开发机上进行信任设备的操作。
           当你第一次连接时，会有个弹窗，点击 `Trust` 即可。

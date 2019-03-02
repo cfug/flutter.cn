@@ -201,7 +201,8 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
         * If automatic signing fails in Xcode, verify that the project's
           **General > Identity > Bundle Identifier** value is unique.
           
-          如果 Xcode 的自动签名失败了，你可以检查以下项目中 **General > Identity > Bundle Identifier** 里的值是否是唯一的。
+          如果 Xcode 的自动签名失败了，你可以检查以下项目中
+          **General > Identity > Bundle Identifier** 里的值是否是唯一的。
           
           ![Check the app's Bundle ID][]{:.mw-100}
 

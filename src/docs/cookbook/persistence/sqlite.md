@@ -1,5 +1,6 @@
 ---
 title: Persist data with SQLite
+title: 用 SQLite 做数据持久化
 prev:
   title: Working with WebSockets
   title: 发起 WebSockets 请求

@@ -24,9 +24,9 @@ description: Flutter 开发文档页面。
 
 Flutter released [version
 1.2](https://developers.googleblog.com/2019/02/launching-flutter-12-at-mobile-world.html)
-today at Mobile World Congress (MWC) in Barcelona!
+at Mobile World Congress (MWC) in Barcelona!
 
-In addition, here are some new docs we've released:
+In addition, here are some recent new docs:
 
 * We've updated our [state management
   advice](/docs/development/data-and-backend/state-mgmt/intro).

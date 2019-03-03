@@ -242,7 +242,9 @@ Future<void> updateDog(Dog dog) async {
     'dogs',
     dog.toMap(),
     // Ensure we only update the Dog with a matching id
-    where: "id = ${dog.id}",
+    where: "id = ?",
+    // Pass the Dog's id through as a whereArg to prevent SQL injection
+    whereArgs: [dog.id],
   );
 }
 
@@ -256,6 +258,14 @@ await updateDog(Dog(
 // And you could print the updated results
 print(await dogs()); // Prints Fido with age 42.
 ```
+
+{{site.alert.warning}}
+Always use `whereArgs` to pass arguments to a `where` statement. This 
+helps safeguard against SQL injection attacks. 
+
+Do not use string interpolation, such as `where: "id = ${dog.id}"`!
+{{site.alert.end}}
+
 
 ## 8. Delete a `Dog` from the database
 
@@ -278,7 +288,9 @@ Future<void> deleteDog(int id) async {
   await db.delete(
     'dogs',
     // Use a `where` clause to delete a specific dog
-    where: "id = $id",
+    where: "id = ?",
+    // Pass the Dog's id through as a whereArg to prevent SQL injection
+    whereArgs: [id],
   );
 }
 ```
@@ -355,7 +367,9 @@ void main() async {
       'dogs',
       dog.toMap(),
       // Ensure we only update the Dog with a matching id
-      where: "id = ${dog.id}",
+      where: "id = ?",
+      // Pass the Dog's id through as a whereArg to prevent SQL injection
+      whereArgs: [dog.id],
     );
   }
 
@@ -367,7 +381,9 @@ void main() async {
     await db.delete(
       'dogs',
       // Use a `where` clause to delete a specific dog
-      where: "id = $id",
+      where: "id = ?",
+      // Pass the Dog's id through as a whereArg to prevent SQL injection
+      whereArgs: [id],
     );
   }
 

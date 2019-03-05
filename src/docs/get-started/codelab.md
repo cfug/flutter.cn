@@ -29,13 +29,21 @@ concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
 previous experience with Dart or mobile programming.
 
+这是一个指引你完成第一个 Flutter 应用的手把手操作教程（我们也之为是 codelab）。
+我们将会着手创建一个简单的 Flutter 应用，无需 Dart 语言和移动开发语言经验，
+只需你具备面向对象语言开发基础（如变量，循环和条件语句）即可。
+
 This guide is part 1 of a two-part codelab. You can find
 [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
 on [Google Developers]({{site.codelabs}}).
 [Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
 can also be found on [Google Developers]({{site.codelabs}}).
 
+完整的教程分为两部分，本页面是第一部分的内容，
+你可以在这里查看[第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0)的内容。
+
 ## What you'll build in part 1
+## 第一部分的内容概览
 {:.no_toc}
 
 You’ll implement a simple mobile app that generates proposed names for a
@@ -44,17 +52,43 @@ saving the best ones. The code lazily generates names.
 As the user scrolls, more names are generated.
 There is no limit to how far a user can scroll.
 
+你将完成一个简单的移动应用程序，功能是：为一个创业公司生成建议的公司名称。
+用户可以选择和取消选择的名称、保存喜欢的名称。该代码一次生成十个名称，当用户滚动时，会生成一新批名称。
+
 The animated GIF shows how the app works at the completion of part 1.
 
+页面上方的这个 GIF 可以引导你预览本 codelab 做完之后的应用效果图。
+
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
+  <h4 class="no_toc">第一部分，我们将共同构建：/h4>
+
   * How to write a Flutter app that looks natural on both iOS and Android.
+  
+    Flutter 如何在 Android 和 iOS 系统里自动适应不同的 UI 体系
+
   * Basic structure of a Flutter app.
+
+    Flutter 工程/项目的基本结构
+  
   * Finding and using packages to extend functionality.
+ 
+    查找和使用 packages 来扩展功能
+
   * Using hot reload for a quicker development cycle.
+   
+    使用热重载 (hot reload) 加快开发周期
+
   * How to implement a stateful widget.
+  
+    如何实现有状态的 widget
+
   * How to create an infinite, lazily loaded list.
+
+    如何创建一个无限的、延迟加载的列表
+
 
   In [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
   of this codelab, you'll add interactivity, modify the app's theme, and

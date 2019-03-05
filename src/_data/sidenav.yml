@@ -48,17 +48,15 @@
         - title: Widgets 介绍
           permalink: /docs/development/ui/widgets-intro
         - title: 布局构建
-          permalink: /docs/development/ui/layout
-        - title: 交互添加
           children:
-            - title: Layouts in Flutter
+            - title: Flutter 中的布局
               permalink: /docs/development/ui/layout
               match-page-url-exactly: true
-            - title: Tutorial
+            - title: 布局构建教程
               permalink: /docs/development/ui/layout/tutorial
-            - title: Box constraints
+            - title: 边界约束 (Box constraints)
               permalink: /docs/development/ui/layout/box-constraints
-        - title: Adding interactivity
+        - title: 交互添加
           permalink: /docs/development/ui/interactive
         - title: 资源和图片
           permalink: /docs/development/ui/assets-and-images
@@ -92,23 +90,22 @@
     - title: 数据调用和后端
       permalink: /docs/development/data-and-backend
       children:
-        - title: State 管理
+        - title: 状态 (State) 管理
           permalink: /docs/development/data-and-backend/state-mgmt
           children:
-            - title: Introduction
+            - title: 状态管理介绍
               permalink: /docs/development/data-and-backend/state-mgmt/intro
-            - title: Think declaratively
+            - title: 声明式的编程思维
               permalink: /docs/development/data-and-backend/state-mgmt/declarative
-            - title: Ephemeral vs app state
+            - title: 短时 (ephemeral) 和共享 (app) 状态
               permalink: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
-            - title: Simple app state management
+            - title: 简单的共享 (app) 状态管理
               permalink: /docs/development/data-and-backend/state-mgmt/simple
-            - title: Options
+            - title: 状态管理参考
               permalink: /docs/development/data-and-backend/state-mgmt/options
-        - title: JSON and serialization
         - title: JSON 和序列化数据
           permalink: /docs/development/data-and-backend/json
-        - title: Back-end services
+        - title: 后端服务
         - title: 使用 Firebase
           permalink: /docs/development/data-and-backend/firebase
     - title: 应用的无障碍和国际化 # TODO: use: Accessibility & localization
@@ -138,11 +135,11 @@
     - title: 开发工具和技术细节
       permalink: /docs/development/tools
       children:
-        - title: Android Studio / IntelliJ
+        - title: Android Studio 或类 IntelliJ 系列
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
-        - title: Dart DevTools
+        - title: Dart 调试工具
           permalink: https://flutter.github.io/devtools/
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
@@ -155,7 +152,7 @@
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式
           permalink: /docs/development/tools/formatting
-        - title: Flutter inspector
+        - title: Flutter Inspector
           permalink: https://flutter.github.io/devtools/inspector
 
 - title: 测试和调优
@@ -170,9 +167,8 @@
     - title: 测试 Flutter 应用
       permalink: /docs/testing
       match-page-url-exactly: true
-    - title: Performance best practices
+    - title: 性能优化最佳实践
       permalink: /docs/testing/best-practices
-    - title: Performance profiling
     - title: Flutter 性能分析
       permalink: /docs/testing/ui-performance
     # We don't have this page yet.
@@ -211,6 +207,6 @@
     - title: Flutter Widget 目录
       permalink: /docs/reference/widgets
     - title: Flutter API 文档
-      permalink: https://docs.flutter.io
+      permalink: https://docs.flutter. cn
     - title: Package 网站
-      permalink: https://pub.dartlang.org/flutter
+      permalink: https://pub.flutter-io.cn/flutter

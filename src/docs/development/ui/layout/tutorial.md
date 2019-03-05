@@ -1,7 +1,10 @@
 ---
 title: Layout tutorial
+title: 布局构建教程
 short-title: Tutorial
+short-title: 布局教程
 description: Learn how to build a layout.
+description: 学习如何在 Flutter 里构建布局。
 diff2html: true
 ---
 

@@ -1,8 +1,9 @@
 ---
 title: List of state management approaches
-title: 状态（State）管理参考
+title: 状态 (State) 管理参考
 prev:
   title: Simple app state management
+  title: 简单的共享 (app) 状态管理
   path: /docs/development/data-and-backend/state-mgmt/simple
 ---
 

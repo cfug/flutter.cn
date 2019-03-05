@@ -1,6 +1,8 @@
 ---
 title: Dealing with box constraints
+title: 处理边界约束 (Box constraints) 的问题
 short-title: Box constraints
+short-title: 边界约束 (Box constraints)
 ---
 
 {{site.alert.note}}

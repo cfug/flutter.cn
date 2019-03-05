@@ -1,10 +1,15 @@
 ---
 title: Differentiate between ephemeral state and app state
+title: 短时 (ephemeral) 和共享 (app) 状态的区别
+short-title: Ephemeral versus app state
+short-title: 区分短时和共享状态
 prev:
   title: Start thinking declaratively
+  title: 声明式的编程思维
   path: /docs/development/data-and-backend/state-mgmt/declarative
 next:
   title: Simple app state management
+  title: 简单的共享 (app) 状态管理
   path: /docs/development/data-and-backend/state-mgmt/simple
 ---
 

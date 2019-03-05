@@ -1,10 +1,13 @@
 ---
 title: Simple app state management
+title: 简单的共享 (app) 状态管理
 prev:
   title: Ephemeral versus app state
+  title: 短时 (ephemeral) 和共享 (app) 状态
   path: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
 next:
   title: List of approaches
+  title: 状态 (State) 管理参考
   path: /docs/development/data-and-backend/state-mgmt/options
 ---
 

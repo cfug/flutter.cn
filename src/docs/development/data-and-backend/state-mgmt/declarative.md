@@ -1,10 +1,13 @@
 ---
 title: Start thinking declaratively
+title: 状态管理中的声明式编程思维
 prev:
   title: Intro
+  title: 状态 (State) 管理介绍
   path: /docs/development/data-and-backend/state-mgmt
 next:
   title: Ephemeral versus app state
+  title: 短时 (ephemeral) 和共享 (app) 状态
   path: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
 ---
 

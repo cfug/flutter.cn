@@ -3,9 +3,8 @@ title: An introduction to integration testing
 title: 集成测试介绍
 short-title: Introduction
 prev:
-  title: Storing key-value data on disk
-  title: 存储键值对数据
-  path: /docs/cookbook/persistence/key-value
+  title: Take a picture using the Camera
+  path: /docs/cookbook/plugins/picture-using-camera
 next:
   title: Performance profiling
   title: 性能分析

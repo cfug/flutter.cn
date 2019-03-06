@@ -16,7 +16,7 @@ The Flutter team is coming to you [live this week from Mobile World Congress](h
 
 ![announced-12-at-mwc19](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/announced-12-at-mwc19.png){:width="85%"}
 
-### Flutter 1.2
+## Flutter 1.2
 
 Flutter 1.2 is the first feature update for Flutter. We've focused this release on a few major areas:
 
@@ -64,9 +64,9 @@ Lastly, Flutter 1.2 includes the Dart 2.2 SDK, an update that brings significant
 然后每季度向 “稳定版” 渠道发布可在生产环境下使用的更新版本。
 上个月发布的 1.1 是测试版本，因此 1.2 是我们的首个稳定更新版本。
 
-### New Tools for Flutter Developers
+## New Tools for Flutter Developers
 
-### 新的调试工具
+## 新的调试工具
 
 Mobile developers come from a variety of backgrounds and often prefer different programming tools and editors. Flutter itself supports different tools, including first-class support for Android Studio and Visual Studio Code as well as support for building apps from the command line, so we knew we needed flexibility in how we expose debugging and runtime inspection tools.
 
@@ -100,9 +100,9 @@ We plan to invest further in this new web-based tooling for both Flutter and Dar
 
 为了给 Flutter 和 Dart 开发者创造更好的开发体验，我们将进一步加大对基于 web 的调试工具的投入。此外，随着 web 集成技术的不断发展，我们还计划将这些服务直接添加到 Visual Studio Code 等工具中。
 
-### What's next for Flutter?
+## What's next for Flutter?
 
-### 下一步工作
+## 下一步工作
 
 In addition to the engineering work, we took some time after Flutter 1.0 to [document our 2019 roadmap](https://github.com/flutter/flutter/wiki/Roadmap), and you'll see that we've got plenty of work ahead of us.
 
@@ -113,9 +113,9 @@ A big focus for 2019 is growing Flutter beyond mobile platforms. At [Flutter Li
 2019 年的一个工作重点是将 Flutter 的应用范围扩展到移动平台之外。我们在 Flutter Live 上启动了 [Hummingbird 计划](https://youtu.be/5SZZfpkVhwk?list=PLOU2XLYxmsILq4ysYNWXq5TOGLgYDJgVD&t=175)，加快推进 Flutter 在 Web 端的发展。我们会接下来的几个月里公布该项目的初步技术成果，请大家拭目以待！另外，我们还计划将 Flutter 引入到桌面开发中。因此，除了上述框架层面的开发工作之外，我们还会通过 [Flutter 跨平台桌面应用计划 (Flutter Desktop Embedding Project)](https://github.com/google/flutter-desktop-embedding) 帮助各位开发者在 Windows 和 Mac 等操作系统上封装和部署应用。
 
 
-### Flutter Create: what can you do with 5K of Dart?
+## Flutter Create: what can you do with 5K of Dart?
 
-### Flutter Create: 您能使用 5K 的 Dart 代码做些什么？
+## Flutter Create: 您能使用 5K 的 Dart 代码做些什么？
 
 This week, we're also excited to launch [Flutter Create](http://flutter.dev/create), a contest that challenges you to build something interesting, inspiring, and beautiful with Flutter using five kilobytes or less of Dart code. 5K isn't a lot --- for a typical MP3 file, it's about a third of a second of music --- but we're betting you can amaze us with what you can achieve in Flutter with such a small amount of code.
 
@@ -127,9 +127,9 @@ The contest runs until April 7th, so you've got a few weeks to build something c
 
 挑战赛将于 4 月 7 日结束，因此您将有几周的时间来构建出色应用。我们准备了一些很棒的奖品，其中包括一台搭载 14 核处理器和 128GB 内存的[顶配版 iMac Pro 工作站](https://www.apple.com/imac-pro/specs/)，价值超过 10,000 美元！我们将在 [Google I/O 大会](https://events.google.com/io/)上宣布获胜者名单，并且还会在此期间开展多个 Flutter 演讲、Codelab 课程和活动，敬请期待！
 
-### In closing
+## In closing
 
-### 结语
+## 结语
 
 Flutter is now one of the top 20 software repos on Github, and the worldwide community grows with every passing month. Between meetups in [Chennai, India](https://twitter.com/Nikkitagandhi/status/1099745911985467392), articles from [Port Harcourt, Nigeria](https://twitter.com/Zfinix1/status/1079892033060392962), apps from [Copenhagen, Denmark](https://twitter.com/koorankka/status/1098579826355642368)and incubation studios in [New York City, USA](https://www.hotreload.io/), it's clear that Flutter continues to become a worldwide phenomenon, thanks to you. You can see Flutter in [apps that have hundreds of millions of users](https://play.google.com/store/apps/details?id=com.alibaba.intl.android.apps.poseidon), and in apps from [entrepreneurs who are bringing their first idea to market](https://play.google.com/store/apps/details?id=com.kissaan.gomitra). It's exciting to see the range of ideas you have, and we hope that we can help you express them with Flutter.
 

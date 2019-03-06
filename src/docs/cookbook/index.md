@@ -1,6 +1,6 @@
 ---
 title: Cookbook
-title: Cookbook
+title: 实用教程
 ---
 
 This cookbook contains recipes that demonstrate how to solve common problems

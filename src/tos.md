@@ -1,27 +1,32 @@
 ---
-title: Disclaimer
-title: Flutter 中文社区资源网站特别说明 / 免责条款
+title: Terms of Service
 ---
 
-*英文在下面 (ENGLISH BELOW)*
+The Flutter website (the "Website") is hosted by Google. By using and / or
+visiting the Website, you consent to be bound by Google's general
+[Terms of Service][] and [Privacy Policy][].
 
-### 网站所有权相关
+The "Flutter" name and the Flutter logo
+{% asset shared/flutter/logo/square.svg width="32px" alt="Flutter logo" class="align-baseline" %}
+(the "Flutter Marks") are trademarks owned by Google and are not included
+within the assets licensed under the Creative Commons Attribution 4.0
+International License.  Google grants you a non-transferable,
+non-exclusive, royalty-free limited license to use the Flutter Marks
+subject to your compliance with the [Flutter Brand Guidelines](/brand).
+Except as set forth above, nothing herein grants or should be deemed
+to grant to you any right, title or interest in or to the Flutter Marks.
 
-声明：你正在浏览的网站不隶属于谷歌或 Alphabet 公司，它由热爱 Flutter 和开源技术，以及希望在中国向全球 Flutter 做贡献的开发者们维护。
-“Flutter”这几个文字和 Flutter 图标 {% asset shared/flutter/logo/square.svg width="32px" alt="Flutter logo" class="align-baseline" %}
-及任何相关标志均为 Google LLC 公司的商标，商标的使用容并不包含在 CC 4.0 协议里。
+As noted above, Google owns the Flutter trademarks, but we license them
+so they can be used by the developer community to support the Flutter
+SDK, including through training materials and other community content.
 
-flutter-io.cn 和 flutter.cn 以及其分站均在本免责条款下运行。
+At the same time, it's important to make sure that people don't
+use the marks in ways that could cause confusion or otherwise misuse
+the marks, so we have prepared [brand guidelines](/brand) that describe the
+allowed uses of the marks. Our goal in protecting the Flutter trademarks
+is to benefit the entire community by ensuring that the marks are only used
+in ways that are consistent with Google's mission to provide a free and open
+source SDK.
 
-### 告用户书
-
-
-
-
-### Ownership
-
-Note: This is an independent website that run by the developers in China
-who are really passionate and enthusiastic on contribute Flutter from China,
-it's not affiliated with or endorsed by Google and / or Alphabet.
-The “Flutter” name and the Flutter logo Flutter logo {% asset shared/flutter/logo/square.svg width="32px" alt="Flutter logo" class="align-baseline" %}(the “Flutter Marks”) are trademarks owned by Google.
-
+[Terms of Service]: https://policies.google.com/terms
+[Privacy Policy]: https://policies.google.com/privacy

@@ -122,7 +122,7 @@ The animated GIF shows how the app works at the completion of part 1.
     or [iOS](install/macos#deploy-to-ios-devices)) connected to your
     computer and set to developer mode.
     
-    开启开发者模式 (developer mode) 的 ([Android](install/macos#set-up-your-android-device) 和 / 或 [iOS](install/macos#deploy-to-ios-devices) 真机；
+    开启开发者模式 (developer mode) 的 [Android](install/macos#set-up-your-android-device) 和 / 或 [iOS](install/macos#deploy-to-ios-devices) 真机；
 
   * The [iOS simulator](install/macos#set-up-the-ios-simulator).
     

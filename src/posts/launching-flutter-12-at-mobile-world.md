@@ -139,12 +139,12 @@ Flutter 现已进入 Github Top 20 软件库，与此同时，Flutter 全球社�
 
 *Attendees of a Flutter deep dive at Technozzare, SRM University.*
 
-*在印度 SRM大学 Technozzare 参加 Flutter 高级研讨会的与会者*
+*在印度 SRM 大学参加 Flutter 高级研讨会的与会者*
 
 Finally, we've recently launched a YouTube channel exclusively dedicated to Flutter. Be sure to subscribe at [flutter.dev/youtube](https://flutter.dev/youtube) for shows including the [Boring Flutter Development Show](https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl), [Widget of the Week](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG), and [Flutter in Focus](https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2). You'll also find a new case study from [Dream11, a popular Indian fantasy sports site](https://youtu.be/lCeRZhoqEP8), as well as other [Developer Stories](https://www.youtube.com/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759). See you there!
 
-我们最近还在 YouTube 网站上专门为 Flutter 开设了一个新频道。
-包含了大家非常喜爱的一些视频合集如 [Boring Flutter Development Show](https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl)、[Widget of the Week](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG) 和 [Flutter in Focus](https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)，同时也欢迎前来学习 [Dream11 是如何使用 Flutter 的](https://youtu.be/lCeRZhoqEP8)，以及 [其他的开发者故事](https://www.youtube.com/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759)等。
-欢迎前来 [flutter.dev/youtube](https://flutter.dev/youtube) 进行订阅观看！
+我们最近还在 YouTube 网站上专门为 Flutter 开设了一个新频道。欢迎前来 [flutter.dev/youtube](https://flutter.dev/youtube) 进行订阅观看！
+这个频道包含了大家非常喜爱的一些视频合集如 [Boring Flutter Development Show](https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl)、[Widget of the Week](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG) 和 [Flutter in Focus](https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)，
+同时也欢迎前来学习 [Dream11 是如何使用 Flutter 的](https://youtu.be/lCeRZhoqEP8) ，以及 [其他的开发者故事](https://www.youtube.com/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759)等。
 
 ![welcome-to-flutter-yt-channel](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/welcome-to-flutter-yt-channel.png){:width="85%"}

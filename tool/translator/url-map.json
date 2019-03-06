@@ -1,0 +1,11 @@
+{
+  "https://fonts.googleapis.com/icon?family=Material+Icons": "/assets/translator/css/material-icons.css",
+  "https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500|Roboto+Mono:400,700|Material+Icons": "/assets/translator/css/material-roboto.css",
+  "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css": "/assets/translator/css/github.min.css",
+  "https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.4.0/diff2html.min.css": "/assets/translator/css/diff2html.min.css",
+  "https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.4.0/diff2html.min.js": "/assets/translator/js/diff2html.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.4.0/diff2html-ui.min.js": "/assets/translator/js/diff2html-ui.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js": "/assets/translator/js/highlight.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dart.min.js": "/assets/translator/js/languages/dart.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js": "/assets/translator/js/languages/yaml.min.js"
+}

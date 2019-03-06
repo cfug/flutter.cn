@@ -22,8 +22,8 @@ the fact that there are trade-offs between different kinds of testing, seen
 below.
 
 |                      | Unit   | Widget | Integration |
-|                      | 单元测试   | 部件测试 | 集成测试 |
 |----------------------|--------|--------|-------------|
+|                      | 单元测试   | 部件测试 | 集成测试 |
 | **Confidence**       | Low    | Higher | Highest     |
 | **置信度**       | 低    | 高 | 最高     |
 | **Maintenance cost** | Low    | Higher | Highest     |

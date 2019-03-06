@@ -14,7 +14,7 @@ The Flutter team is coming to you [live this week from Mobile World Congress](h
 其实，这个大会对 Flutter 有着特别的纪念意义，因为 Flutter 的首个 beta 测试版正是在去年的 MWC 大会上与大家见面的，自此以后，Flutter 的发展速度远[超我们的想象](http://sotagtrends.com/?tags=[ionic-framework,react-native,flutter,xamarin]&relative=false)。
 如今我们再次聚首 MWC 大会，发布 Flutter 稳定版本的首个更新，以此庆祝 Flutter 诞生一周年。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/announced-12-at-mwc19.png)
+![announced-12-at-mwc19](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/announced-12-at-mwc19.png){:width="85%"}
 
 ### Flutter 1.2
 
@@ -94,7 +94,7 @@ Alongside Flutter 1.2, we're delighted to preview a new [web-based suite of pro
 
     日志记录视图: 显示应用所记录的活动以及网络、框架和垃圾回收等事件。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/flutter-devtools-preview.png)
+![flutter-devtools-preview](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/flutter-devtools-preview.png){:width="85%"}
 
 We plan to invest further in this new web-based tooling for both Flutter and Dart developers and, as integration for web-based experiences improves, we plan to build these services directly into tools like Visual Studio Code.
 
@@ -121,7 +121,7 @@ This week, we're also excited to launch [Flutter Create](http://flutter.dev/cre
 
 [Flutter Create 挑战赛](http://flutter.dev/create)将从本周起开始接收报名，你敢来参加吗？参赛者需要利用 Flutter 构建充满创意和趣味的精美应用，并把这一切全部浓缩到 5K 的 Dart 代码里。5K 并不多，按照普通 MP3 格式的标准来算，差不多相当于三分之一秒的音乐。但我们敢说，有了 Flutter 的帮助，即使是使用如此少量的代码，您也能制作出令人大开眼界的应用。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/flutter-create-contest-heroimg.png)
+![flutter-create-contest](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/flutter-create-contest-heroimg.png){:width="85%"}
 
 The contest runs until April 7th, so you've got a few weeks to build something cool. We have some great prizes, including a [fully-loaded iMac Pro developer workstation](https://www.apple.com/imac-pro/specs/) with a 14-core processor and 128GB of memory that is worth over $10,000! We'll be announcing the winners at [Google I/O](https://events.google.com/io/), where we'll have a number of Flutter talks, codelabs and activities.
 
@@ -135,7 +135,7 @@ Flutter is now one of the top 20 software repos on Github, and the worldwide com
 
 Flutter 现已进入 Github Top 20 软件库，与此同时，Flutter 全球社区也在以惊人的速度蓬勃发展，为世界各地的开发者正带去独特的编程乐趣——[印度清奈的开发者聚会](https://twitter.com/Nikkitagandhi/status/1099745911985467392)，[尼日利亚哈科特港的报道](https://twitter.com/Zfinix1/status/1079892033060392962)，[丹麦哥本哈根的应用](https://twitter.com/koorankka/status/1098579826355642368)，以及[美国纽约的孵化工作室](https://www.hotreload.io/) —— 从中我们可以清楚地看到 Flutter 正在成为一种全球现象，而这一切都离不开您的贡献！Flutter 作为移动开发领域一股不容小觑的新生力量，不仅为开发者赢得了[亿万用户](https://play.google.com/store/apps/details?id=com.alibaba.intl.android.apps.poseidon)，还[帮助创业者把理念推向市场](https://play.google.com/store/apps/details?id=com.kissaan.gomitra)。我们非常高兴看到您拥有如此多的创意，也希望能够帮助您使用 Flutter 来呈现这些创意。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/flutter-deep-dive-srmu.jpg)
+![flutter-deep-dive-srmu](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/flutter-deep-dive-srmu.jpg){:width="85%"}
 
 *Attendees of a Flutter deep dive at Technozzare, SRM University.*
 
@@ -147,4 +147,4 @@ Finally, we've recently launched a YouTube channel exclusively dedicated to Flut
 包含了大家非常喜爱的一些视频合集如 [Boring Flutter Development Show](https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl)、[Widget of the Week](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG) 和 [Flutter in Focus](https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)，同时也欢迎前来学习 [Dream11 是如何使用 Flutter 的](https://youtu.be/lCeRZhoqEP8)，以及 [其他的开发者故事](https://www.youtube.com/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759)等。
 欢迎前来 [flutter.dev/youtube](https://flutter.dev/youtube) 进行订阅观看！
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/welcome-to-flutter-yt-channel.png)
+![welcome-to-flutter-yt-channel](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/welcome-to-flutter-yt-channel.png){:width="85%"}

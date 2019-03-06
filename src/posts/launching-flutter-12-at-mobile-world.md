@@ -1,7 +1,7 @@
 ---
 title: Launching Flutter 1.2 at Mobile World Congress
 title: 首个稳定更新版 —— Flutter 1.2 发布
-toc: false
+toc: true
 ---
 
 *Posted by the Flutter team*

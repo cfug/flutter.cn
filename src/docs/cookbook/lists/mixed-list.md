@@ -6,9 +6,8 @@ prev:
   title: 创建一个网格列表
   path: /docs/cookbook/lists/grid-lists
 next:
-  title: Working with long lists
-  title: 长列表的处理
-  path: /docs/cookbook/lists/long-lists
+  title: Place a floating app bar above a list
+  path: /docs/cookbook/lists/floating-app-bar
 ---
 
 We often need to create lists that display different types of content. For

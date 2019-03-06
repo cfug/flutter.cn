@@ -1,5 +1,5 @@
 ---
-title: Write your first Flutter app, part 1
+title: Write your first Flutter app, part 1
 title: 编写第一个 Flutter 应用
 short-title: Write your first app
 short-title: 编写第一个 Flutter 应用
@@ -63,7 +63,7 @@ The animated GIF shows how the app works at the completion of part 1.
 
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
-  <h4 class="no_toc">第一部分，我们将共同构建：/h4>
+  <h4 class="no_toc">第一部分，我们将共同构建：</h4>
 
   * How to write a Flutter app that looks natural on both iOS and Android.
   
@@ -88,7 +88,6 @@ The animated GIF shows how the app works at the completion of part 1.
   * How to create an infinite, lazily loaded list.
 
     如何创建一个无限的、延迟加载的列表
-
 
   In [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
   of this codelab, you'll add interactivity, modify the app's theme, and

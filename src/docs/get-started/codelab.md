@@ -109,7 +109,7 @@ The animated GIF shows how the app works at the completion of part 1.
   This codelab assumes Android Studio, but you can use your preferred
   editor.
   
-  你需要安装两部分内容来完成本次实验：[Flutter SDK](/docs/get-started/install) 安装和
+  你需要安装两部分内容来完成本次实验：[Flutter SDK 安装](/docs/get-started/install) 和
   [编辑器 (editor)](/docs/get-started/editor)设置。
   本 codelab 里，我们以 macOS 环境下的 Android Studio 以做演示，
   但你可以选用更顺手的配置。

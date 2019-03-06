@@ -29,7 +29,7 @@ To look at the single codebase for this and more examples,
 [visit our GitHub
 repository]({{site.github}}/flutter/flutter/tree/master/examples).
 
-这是一个名为 [Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo) 的示例应用，Gallery 是一个在安装完 Flutter 并配置好环境后可以立即运行的 Flutter 示例应用集合。Shrine 有高质量的滚动图片、交互式卡片、按钮、下拉列表以及一个购物车页面。[访问我们的 GitHub 项目]({{site.github}}/flutter/flutter/tree/master/examples)以查看该应用的代码库与更多示例。
+这是一个名为 [Gallery 的示例应用]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo) ，Gallery 是一个在安装完 Flutter 并配置好环境后可以立即运行的 Flutter 示例应用集合。Shrine 有高质量的滚动图片、交互式卡片、按钮、下拉列表以及一个购物车页面。[访问我们的 GitHub 项目]({{site.github}}/flutter/flutter/tree/master/examples)以查看该应用的代码库与更多示例。
 
 No mobile development experience is required to get started. Apps are written
 in [Dart]({{site.dart-site}}), which looks familiar if you've used a

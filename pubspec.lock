@@ -7,7 +7,7 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.35.1"
+    version: "0.35.3"
   args:
     dependency: transitive
     description:
@@ -42,7 +42,7 @@ packages:
       name: build_daemon
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.0"
+    version: "0.4.2"
   build_resolvers:
     dependency: transitive
     description:
@@ -56,7 +56,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.7"
+    version: "1.2.8"
   build_runner_core:
     dependency: transitive
     description:
@@ -77,7 +77,7 @@ packages:
       name: built_value
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.3.0"
+    version: "6.3.1"
   charcode:
     dependency: transitive
     description:
@@ -165,7 +165,7 @@ packages:
       name: front_end
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.11"
+    version: "0.1.13"
   glob:
     dependency: transitive
     description:
@@ -186,7 +186,18 @@ packages:
       name: html
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "0.13.3+3"
+=======
+    version: "0.13.4+1"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.12.0+1"
+>>>>>>> f4d06a9f5d4d3064f8f7313d84e72316dcc6450b
   http_multi_server:
     dependency: transitive
     description:
@@ -228,7 +239,7 @@ packages:
       name: kernel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.11"
+    version: "0.3.13"
   linkcheck:
     dependency: "direct dev"
     description:
@@ -271,6 +282,16 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+<<<<<<< HEAD
+=======
+  package_resolver:
+    dependency: transitive
+    description:
+      name: package_resolver
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.10"
+>>>>>>> f4d06a9f5d4d3064f8f7313d84e72316dcc6450b
   path:
     dependency: transitive
     description:
@@ -340,7 +361,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.4"
+    version: "1.5.5"
   stack_trace:
     dependency: transitive
     description:

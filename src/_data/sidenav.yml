@@ -31,7 +31,7 @@
   children:
     - title: GitHub 上样例应用
       permalink: https://github.com/flutter/samples/blob/master/INDEX.md
-    - title: Cookbook
+    - title: 实用教程 (Cookbook)
       permalink: /docs/cookbook
     - title: Codelabs
       permalink: /docs/codelabs

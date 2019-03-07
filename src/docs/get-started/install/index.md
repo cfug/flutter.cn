@@ -25,8 +25,10 @@ Select the operating system on which you are installing Flutter:
 </div>
 
 {{site.alert.important}}
+
   If you're in China, first read [Using Flutter in China](/community/china).
   
   如果你在中国的网络环境下使用 Flutter，请先看一下[这篇文章](/community/china)，查看是否需要对网络环境进行特别设置。
+
 {{site.alert.end}}
 

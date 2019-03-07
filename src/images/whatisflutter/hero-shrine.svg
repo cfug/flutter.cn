@@ -1,7 +1,7 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css?family=Roboto:500');
+      @import url('/assets/translator/css/material-roboto.css');
       .cls-1 {
         fill: #bdbdbd;
       }

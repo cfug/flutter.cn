@@ -29,8 +29,6 @@ Select your development tool of choice for writing, building, and running Flutte
     <a class="nav-link" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="false">Visual Studio Code</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="terminal-tab" href="#terminal" role="tab" aria-controls="terminal" aria-selected="false">Terminal & editor</a>
-    
     <a class="nav-link" id="terminal-tab" href="#terminal" role="tab" aria-controls="terminal" aria-selected="false">终端 & 文本编辑器</a>
   </li>
 </ul>

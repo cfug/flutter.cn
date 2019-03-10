@@ -39,7 +39,7 @@ contains a simple demo app that uses [Material Components][].
 
  1. Locate the VS Code status bar (the blue bar at the bottom of the window):<br> 
     
-    找到 VS Code 的状态栏(窗口底部蓝色的条)
+    找到 VS Code 的状态栏(窗口底部蓝色的条)<br> 
     ![status bar][]{:.mw-100}
 
  1. Select a device from the **Device Selector** area.

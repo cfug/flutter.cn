@@ -1,10 +1,12 @@
 <div class="tab-pane" id="terminal" role="tabpanel" aria-labelledby="terminal-tab" markdown="1">
 
 ## Create the app
+
 ## 创建应用程序
 
 Use the `flutter create` command to create a new project:
-使用 `flutter create` 命令来创建新的工程
+
+使用 `flutter create` 命令来创建新的工程：
 
 ```terminal
 $ flutter create myapp
@@ -21,6 +23,7 @@ contains a simple demo app that uses
 {% include_relative _main-code-note.md %}
 
 ## Run the app
+
 ## 运行程序
 
  1. Check that an Android device is running. If none are shown, follow the

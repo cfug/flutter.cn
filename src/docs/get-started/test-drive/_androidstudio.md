@@ -34,7 +34,7 @@ The above commands create a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].
 
 上面的步骤会创建一个叫做 myapp 的 Flutter 项目目录，
-里面会包含一个用到 [Material Components][] 的简单的示例程序。
+里面会包含一个用到 [Material 组件][] 的简单的示例程序。
 
 {% include_relative _main-code-note.md  %}
 
@@ -75,4 +75,6 @@ contains a simple demo app that uses [Material Components][].
 [Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
 [Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
 [Material Components]: {{site.material}}/guidelines
+[管理 AVDs]: {{site.android-dev}}/studio/run/managing-avds
+[Material 组件]: {{site.material}}/guidelines
 </div>

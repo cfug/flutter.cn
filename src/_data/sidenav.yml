@@ -131,7 +131,7 @@
         - title: 后台进程
           permalink: /docs/development/packages-and-plugins/background-processes
         - title: Package 网站
-          permalink: http://pub.flutter-io.cn/flutter
+          permalink: https://pub.flutter-io.cn/flutter
     - title: 开发工具和技术细节
       permalink: /docs/development/tools
       children:

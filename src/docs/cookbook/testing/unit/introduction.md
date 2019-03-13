@@ -80,23 +80,6 @@ dev_dependencies:
   test: <latest_version>
 ```
 
-If you're working on a package that will only be used for Flutter apps, or if
-we need to write Widget tests, depend on the `flutter_test` package instead.
-It includes everything from the `test` package, as well as
-additional utilities for testing Widgets.
-
-如果我们写的包只用于 Flutter app，或者我们要写 Widget 的测试，
-那么可以依赖 `flutter_test` 而不是 `test`。
-因为 `flutter_test` 包含 `test`，并且还提供了额外功能用于测试 Widget。
-
-
-```yaml
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-```
-
-
 ## 2. Create a test file
 
 ## 2. 创建测试文件

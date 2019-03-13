@@ -1,6 +1,10 @@
 ---
 title: Fade a Widget in and out
 title: Widget 的淡入淡出效果
+prev:
+  title: Animate the properties of a Container
+  title: Container 里的动画渐变效果
+  path: /docs/cookbook/animation/animated-container
 next:
   title: Add a Drawer to a screen
   title: 在屏幕上添加一个 Drawer

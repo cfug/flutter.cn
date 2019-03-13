@@ -35,7 +35,7 @@ Learn more at the following links, many of which have been contributed by the Fl
   a video by MTechViral
 * [Flutter state management&mdash;scoped model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
 * [Scoped model package]({{site.pub-pkg}}/scoped_model)
-
+* [Widget - State - Context - InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/), by Didier Bolelens
 ## Redux
 
 * [Animation Management with Redux and Flutter](https://www.youtube.com/watch?v=9ZkLtr0Fbgk), a video from DartConf 2018 [Accompanying article on Medium]({{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa)
@@ -57,3 +57,9 @@ Learn more at the following links, many of which have been contributed by the Fl
 * [Architect your Flutter project using BLoC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1),
   by Sagar Suri
 * [Bloc Library](https://felangel.github.io/bloc), by Felix Angelov
+* [Reactive Programming - Streams - BLoC - Practical Use Cases](https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases), by Didier Boelens
+
+## MobX
+
+* [MobX.dart, Hassle free state-management for your Dart and Flutter apps](https://github.com/mobxjs/mobx.dart)
+* [Getting started with MobX.dart](https://mobx.pub/getting-started)

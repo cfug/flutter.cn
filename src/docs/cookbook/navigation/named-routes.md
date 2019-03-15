@@ -6,9 +6,9 @@ prev:
   title: 导航到一个新页面和返回
   path: /docs/cookbook/navigation/navigation-basics
 next:
-  title: Return data from a screen
-  title: 从一个页面回传数据
-  path: /docs/cookbook/navigation/returning-data
+  title: Pass arguments to a named route
+  title: 给特定的 route 传参
+  path: /docs/cookbook/navigation/navigate-with-arguments
 ---
 
 In the

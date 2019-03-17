@@ -42,17 +42,21 @@ If you wish to run Flutter commands in the regular Windows console, take these s
   variables for your account**
 
   在开始菜单的搜索功能键入“env”，然后选择**编辑当前用户的环境变量**
+  
 * Under **User variables** check if there is an entry called **Path**:
 
   在 **User variables** 一栏中，检查是否有 **Path** 这个条目：
+  
   * If the entry does exist, append the full path to `flutter\bin` using `;` as a separator from existing values.
 
     如果存在，直接把 `flutter\bin` 目录的完整路径以 `;` 作为分隔加到已有的值后面。
+    
   * If the entry does not exist, create a new user variable named `Path` with the full path to `flutter\bin` as its value.
 
     如果不存在的话，在用户环境变量中创建一个新的 `Path` 变量，然后将 `flutter\bin` 所在的完整路径作为新变量的值。
 
 Note that you will have to close and reopen any existing console windows for these changes to take effect.
+
 注意，你需要关闭和重新启动已经打开的各个控制台窗口，这样下次启动控制台时才能访问到刚才修改的变量。
 
 ### Run `flutter doctor`

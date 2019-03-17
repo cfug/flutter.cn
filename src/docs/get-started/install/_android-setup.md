@@ -4,11 +4,13 @@
 
 
 {{site.alert.note}}
+
   Flutter relies on a full installation of Android Studio to supply
   its Android platform dependencies. However, you can write your
   Flutter apps in a number of editors; a later step will discuss that.
 
-  Flutter 依赖 Android Studio 的全量安装来为其提供 Android 平台的支持。但你也可以使用其他的编辑器来写 Flutter 应用，稍后会说明讨论这个问题。
+  Flutter 依赖 Android Studio 的全量安装来为其提供 Android 平台的支持。
+  但你也可以使用其他的编辑器来写 Flutter 应用，稍后会说明讨论这个问题。
 
 {{site.alert.end}}
 
@@ -25,13 +27,12 @@
     installs the latest Android SDK, Android SDK Platform-Tools, and Android SDK
     Build-Tools, which are required by Flutter when developing for Android.
 
-    运行 Android Studio，并进入 'Android Studio Setup Wizard', 这会安装最新的 Android SDK，Android SDK Platform-Tools 以及 Android SDK
-    Build-Tools，这些都是在开发 Android Flutter 应用中所需要的。
+    运行 Android Studio，并进入 'Android Studio Setup Wizard'，这会安装最新的 Android SDK，
+    Android SDK Platform-Tools 以及 Android SDK Build-Tools，这些都是在开发 Android Flutter 应用时所需要的。
 
 ### Set up your Android device
 
 ### 配置 Android 设备
-
 
 To prepare to run and test your Flutter app on an Android device, you'll need an
 Android device running Android 4.1 (API level 16) or higher.

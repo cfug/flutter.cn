@@ -43,6 +43,7 @@ can also be found on [Google Developers]({{site.codelabs}}).
 你可以在这里查看[第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0)的内容。
 
 ## What you'll build in part 1
+
 ## 第一部分的内容概览
 {:.no_toc}
 
@@ -245,7 +246,6 @@ where the Dart code lives.
 ### Observations
 
 ### 观察和分析
-
 {:.no_toc}
 
 * This example creates a Material app.
@@ -439,7 +439,6 @@ packages, on the [Pub site]({{site.pub}}/flutter).
 ### Problems?
 
 ### 遇到问题?
-
 {:.no_toc}
 
 If your app is not running correctly, look for typos. If needed,
@@ -614,7 +613,6 @@ a child inside the existing `MyApp` stateless widget.
 ### Problems?
 
 ### 遇到问题？
-
 {:.no_toc}
 
 If your app is not running correctly, you can use the code
@@ -625,6 +623,7 @@ at the following link to get back on track.
 * [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
 
 ## Step 4: Create an infinite scrolling ListView
+
 ## 第四步：创建一个无限滚动的 ListView
 
 <?code-excerpt path-base="codelabs/startup_namer/step4_infinite_list"?>
@@ -829,7 +828,6 @@ lazily, on demand.
 ### Problems?
 
 ### 遇到问题？
-
 {:.no_toc}
 
 If your app is not running correctly, you can use the code at the following link

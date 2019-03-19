@@ -43,6 +43,7 @@ can also be found on [Google Developers]({{site.codelabs}}).
 你可以在这里查看[第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0)的内容。
 
 ## What you'll build in part 1
+{:.no_toc}
 
 ## 第一部分的内容概览
 {:.no_toc}
@@ -244,6 +245,7 @@ where the Dart code lives.
     {{site.alert.end}}
 
 ### Observations
+{:.no_toc}
 
 ### 观察和分析
 {:.no_toc}
@@ -437,6 +439,7 @@ packages, on the [Pub site]({{site.pub}}/flutter).
     {% endindent %}
 
 ### Problems?
+{:.no_toc}
 
 ### 遇到问题?
 {:.no_toc}
@@ -611,6 +614,7 @@ a child inside the existing `MyApp` stateless widget.
 
 
 ### Problems?
+{:.no_toc}
 
 ### 遇到问题？
 {:.no_toc}
@@ -826,6 +830,7 @@ lazily, on demand.
     {% endindent %}
 
 ### Problems?
+{:.no_toc}
 
 ### 遇到问题？
 {:.no_toc}
@@ -838,6 +843,7 @@ to get back on track.
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
 ## Next steps
+{:.no_toc}
 
 ## 下一步
 {:.no_toc}

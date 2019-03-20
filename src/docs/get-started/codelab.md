@@ -29,7 +29,7 @@ concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
 previous experience with Dart or mobile programming.
 
-这是一个指引你完成第一个 Flutter 应用的手把手操作教程（我们也之为是 codelab）。
+这是一个指引你完成第一个 Flutter 应用的手把手操作教程（我们也称之为是 codelab）。
 我们将会着手创建一个简单的 Flutter 应用，无需 Dart 语言和移动开发语言经验，
 只需你具备面向对象语言开发基础（如变量，循环和条件语句）即可。
 

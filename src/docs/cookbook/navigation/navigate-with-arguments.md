@@ -1,10 +1,13 @@
 ---
 title: Pass arguments to a named route
+title: 给特定的 route 传参
 prev:
   title: Navigate with named routes
+  title: 导航到对应名称的 routes 里
   path: /docs/cookbook/navigation/named-routes
 next:
   title: Return data from a screen
+  title: 从一个页面回传数据
   path: /docs/cookbook/navigation/returning-data
 ---
  

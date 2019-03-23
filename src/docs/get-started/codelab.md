@@ -516,7 +516,7 @@ a child inside the existing `MyApp` stateless widget.
 
     `RandomWordsState` depends on the `RandomWords` class. You'll add that next.
     
-    `RandomWordsState` 继承自 `RandomWords`，我们接下来会创建这个类。
+    `RandomWordsState` 依赖 `RandomWords`，我们接下来会创建这个类。
 
  2. Add the stateful `RandomWords` widget to `main.dart`.
     The `RandomWords` widget does little else beside creating its State class:

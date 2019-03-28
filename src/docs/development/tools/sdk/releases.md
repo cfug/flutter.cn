@@ -1,10 +1,10 @@
 ---
-title: Flutter SDK archive
-title: Flutter SDK 归档列表
-short-title: Archive
-short-title: 归档
-description: Flutter SDK archive
-description: Flutter SDK 归档列表
+title: Flutter SDK releases
+title: Flutter SDK 版本列表
+short-title: Releases
+short-title: 版本列表
+description: All current Flutter SDK releases, both stable and developer.
+description: 所有 Flutter SDK 的版本列表，包括稳定版和开发版。
 toc: false
 ---
 

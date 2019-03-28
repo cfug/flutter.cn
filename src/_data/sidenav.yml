@@ -146,7 +146,7 @@
           children:
             - title: 版本升级
               permalink: /docs/development/tools/sdk/upgrading
-            - title: 版本归档
+            - title: 版本列表
               permalink: /docs/development/tools/sdk/archive
         - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload

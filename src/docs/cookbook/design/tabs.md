@@ -44,9 +44,7 @@ create a `TabController` for us and make it available to all descendant Widgets.
 
 ## 1. 创建`TabController`
 
-为了使用tab, 我们必须保证我们所选的tab和它的内容是同步变化的。所以这里
-
-我们需要使用[`TabController`]({{site.api}}/flutter/material/TabController-class.html).
+为了使tab标签工作, 我们必须保证我们所选的tab和它的内容是同步变化的。所以这里我们需要使用[`TabController`]({{site.api}}/flutter/material/TabController-class.html).
 
 我们可以手动创建一个 `TabController` 或者使用
 [`DefaultTabController`]({{site.api}}/flutter/material/DefaultTabController-class.html) Widget。最简单选择是使用 `DefaultTabController` Widget ，因为它会帮我们创建出一个可以供所有后代Widgets使用的`TabController` 。
@@ -74,7 +72,7 @@ Widgets and place it within an
 
 ## 2. 创建tab标签
 
-现在我们已经成功创建了 `TabController` ， 接下来我们可以用 [`TabBar`]({{site.api}}/flutter/material/TabController-class.html)Widget来创建我们的导航tab。
+现在我们已经成功创建了 `TabController` ， 接下来我们可以用 [`TabBar`]({{site.api}}/flutter/material/TabController-class.html)Widget来创建tab标签。
  在这个示例里，我们将会创建一个包含三个 [`Tab`]({{site.api}}/flutter/material/Tab-class.html)Widget的`TabBar`。
  并把它放在[`AppBar`]({{site.api}}/flutter/material/AppBar-class.html) Widget里面。
 
@@ -101,7 +99,7 @@ By default, the `TabBar` looks up the Widget tree for the nearest
 `DefaultTabController`. If you're manually creating a `TabController`, you'll
 need to pass it to the `TabBar`.
 
-TabBar默认将会在Widget树中向上寻找离它最近的一个`DefaultTabController`节点作为自己的`TabController`。如果你想手动创建`TabController`，那么你必须将它作为参数传给 `TabBar`。
+ `TabBar`默认将会在Widget树中向上寻找离它最近的一个`DefaultTabController`节点作为自己的`TabController`。如果你想手动创建`TabController`，那么你必须将它作为参数传给 `TabBar`。
 
 ## 3. Create content for each tab
 
@@ -116,7 +114,7 @@ For this purpose, we'll employ the
 
 ## 3. 为每个tab标签创建内容
 
-现在我们成功创建了导航tab，接下来我们想要在点击导航tab时显示对应的内容。
+现在我们成功创建了tab标签，接下来我们想要在点击tab标签时显示对应的内容。
 为了实现这个效果，我们将使用[`TabBarView`]({{site.api}}/flutter/material/TabBarView-class.html) Widget。
 
 *Note:* `TabBarView`中内容的顺序很重要， 它必须与`TabBar`中tab的顺序相对应!

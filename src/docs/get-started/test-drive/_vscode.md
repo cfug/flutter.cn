@@ -69,10 +69,10 @@ contains a simple demo app that uses [Material Components][].
     当应用启动以后&mdash; 处理进度会出现在 **Debug Console** 页面中。
 
 {% capture save_changes -%}
-
+{% comment %}
   : invoke **File > Save All**,
   or click **Hot Reload** (the green circular arrow button).
-
+{% endcomment -%}
   : 打开 **File > Save All**,
   或者点击 **Hot Reload** (绿色的带有圆形箭头的按钮)。
   

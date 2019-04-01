@@ -59,13 +59,8 @@ contains a simple demo app that uses [Material Components][].
     点击工具栏中的 Run 图标，或者在菜单中选择 **Run > Run**。
 
 {% capture save_changes -%}
-
-  : invoke **Save All**, or click **Hot Reload**
-
-  : 选择 **Save All**，或者点击**热重载**
-
-  <i class="material-icons align-bottom">offline_bolt</i>.
-
+  {% comment %}: invoke **Save All**, or click **Hot Reload** {% endcomment -%}
+  : 选择 **Save All**，或者点击**热重载** <i class="material-icons align-bottom">offline_bolt</i>.
   {% comment %} Or, as an alternative:
     {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}.
   {% endcomment -%}

@@ -21,17 +21,17 @@ the [material library]({{site.api}}/flutter/material/material-library.html).
 
 ## 步骤
 
-    1. Create a `TabController`
-
-       创建 `TabController`
-
-    2. Create the tabs
+  1. Create a `TabController`
+     
+     创建 `TabController`
+  
+  2. Create the tabs
     
-       创建 tabs 
+     创建 tabs
+     
+  3. Create content for each tab
     
-    3. Create content for each tab
-    
-       为每个 tab 创建内容
+     为每个 tab 创建内容
 
 ## 1. Create a `TabController`
 

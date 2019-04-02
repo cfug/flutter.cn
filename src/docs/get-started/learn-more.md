@@ -37,7 +37,7 @@ Learn more about the Flutter framework from the following pages:
 ## 其他资源
 
 * [Flutter 示例]({{site.github}}/flutter/samples/blob/master/INDEX.md)
-* [Flutter cookbook](/docs/cookbook)
+* [Flutter 实用教程 (cookbook)](/docs/cookbook)
 * [Dart 语言指引](/docs/resources/bootstrap-into-dart)
 * [Flutter API 文档]({{site.api}})
 * [Udacity 线上课程](https://cn.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)

@@ -3,7 +3,7 @@ title: Updating the UI based on orientation
 title: 根据屏幕方向更新界面
 prev:
   title: Exporting fonts from a package
-  title: 从 package 里导出字体
+  title: 以 package 的方式使用字体
   path: /docs/cookbook/design/package-fonts
 next:
   title: Using Themes to share colors and font styles

@@ -11,7 +11,7 @@ prev:
   path: /docs/cookbook/design/drawer
 next:
   title: Exporting fonts from a package
-  title: 从 package 里导出字体
+  title: 以 package 的方式使用字体
   path: /docs/cookbook/design/package-fonts
 ---
 

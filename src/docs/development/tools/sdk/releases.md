@@ -44,6 +44,9 @@ Installation bundles are not available for master. However, you can get the SDK
 directly from [GitHub repo]({{site.repo.flutter}}) by cloning the master channel,
 and then triggering a download of the SDK dependencies:
 
+我们并没有对 master channel 的提供打包下载，不过，你可以通过 `git clone` 我们在 
+[Github 上 repo]({{site.repo.flutter}}) 的 master 分支来使用。
+
 ```terminal
 $ git clone -b master https://github.com/flutter/flutter.git
 $ ./flutter/bin/flutter --version
@@ -52,5 +55,7 @@ $ ./flutter/bin/flutter --version
 For additional details on how our installation bundles are structured, see
 [Installation bundles][].
 
-[Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
+关于安装包结构的更多信息，请查看这个页面：[Installation bundles][]。
+
+[Flutter's channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles

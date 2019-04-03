@@ -147,7 +147,7 @@
             - title: 版本升级
               permalink: /docs/development/tools/sdk/upgrading
             - title: 版本列表
-              permalink: /docs/development/tools/sdk/archive
+              permalink: /docs/development/tools/sdk/releases
         - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式

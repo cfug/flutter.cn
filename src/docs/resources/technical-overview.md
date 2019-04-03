@@ -351,9 +351,9 @@ We're open source and would love to hear from you.
 
   [报告问题，功能需求与文档][issues]
   
-- [Follow us on Twitter: @flutterio](https://twitter.com/flutterio/)
+- [Follow us on Twitter: @flutterdev](https://twitter.com/flutterdev/)
 
-  [关注我们的推特：@flutterio](https://twitter.com/flutterio/)
+  [关注我们的推特：@flutterdev](https://twitter.com/flutterio/)
 
 
 [issues]: {{site.github}}/flutter/flutter/issues

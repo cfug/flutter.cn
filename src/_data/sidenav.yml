@@ -76,7 +76,7 @@
               permalink: /docs/development/ui/animations/hero-animations
             - title: 交织动画 (Staggered animations)
               permalink: /docs/development/ui/animations/staggered-animations
-        - title: 用户界面（UI）进阶
+        - title: 用户界面 (UI) 进阶
           permalink: /docs/development/ui/advanced
           children:
             - title: Focus handling system # Where did this go?
@@ -119,9 +119,9 @@
       permalink: /docs/development/platform-integration
       children:
         - title: Embedding Flutter views in non-Flutter apps
-        - title: 撰写双端平台代码（插件编写实现）
+        - title: 撰写双端平台代码 (插件编写实现)
           permalink: /docs/development/platform-integration/platform-channels
-    - title: Packages（纯 Dart 和原生插件）
+    - title: Packages (纯 Dart 和原生插件)
       permalink: /docs/development/packages-and-plugins
       children:
         - title: 使用 Packages
@@ -146,8 +146,8 @@
           children:
             - title: 版本升级
               permalink: /docs/development/tools/sdk/upgrading
-            - title: 版本归档
-              permalink: /docs/development/tools/sdk/archive
+            - title: 版本列表
+              permalink: /docs/development/tools/sdk/releases
         - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式

@@ -7,7 +7,7 @@ next:
   path: /docs/cookbook/animation/opacity-animation
 ---
 
-The [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html)
+The [`Container`]({{site.api}}/flutter/widgets/Container-class.html)
 class provides a convenient way to create a widget with specific properties:
 width, height, background color, padding, borders, and more.
 
@@ -20,7 +20,7 @@ indicate that an item has been selected by the user.
 简单的动画通常会在一段时间内改变这些属性。例如你可能想将背景颜色逐渐从灰色变为绿色来告诉用户已经选择了某个项目。
 
 To animate these properties, Flutter provides the
-[`AnimatedContainer`](https://docs.flutter.io/flutter/widgets/AnimatedContainer-class.html)
+[`AnimatedContainer`]({{site.api}}/flutter/widgets/AnimatedContainer-class.html)
 widget. Like the `Container` Widget, `AnimatedContainer` allows you to define
 the width, height, background colors, and more. However, when the
 `AnimatedContainer` is rebuilt with new properties, it automatically
@@ -55,8 +55,8 @@ background color, and border radius when the user taps a button.
 ## 1. 创建一个拥有默认属性的 StatefulWidget
 
 To start, create
-[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
-and [`State`](https://docs.flutter.io/flutter/widgets/State-class.html) classes.
+[`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
+and [`State`]({{site.api}}/flutter/widgets/State-class.html) classes.
 Use the custom State class to define the properties you need to change over
 time. In this example, that includes the width, height, color, and border
 radius. In addition, you can also define the default value of each property.
@@ -125,7 +125,7 @@ AnimatedContainer(
 
 Finally, start the animation by rebuilding the `AnimatedContainer` with
 new properties. How to trigger a rebuild? When it comes to `StatefulWidgets`,
-[`setState`](https://docs.flutter.io/flutter/widgets/State/setState.html) is the
+[`setState`]({{site.api}}/flutter/widgets/State/setState.html) is the
 solution. 
 
 最后将设置新的属性触发 `AnimatedContainer` 重建并启动动画。那么如何触发重建呢？当我们提到 `StatefulWidgets` 时，[`setState`](https://docs.flutter.io/flutter/widgets/State/setState.html)就行了。

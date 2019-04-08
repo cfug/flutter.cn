@@ -21,17 +21,17 @@ the [material library]({{site.api}}/flutter/material/material-library.html).
 
 ## 步骤
 
-    1. Create a `TabController`
-
-       创建 `TabController`
-
-    2. Create the tabs
+  1. Create a `TabController`
+     
+     创建 `TabController`
+  
+  2. Create the tabs
     
-       创建 tabs 
+     创建 tabs
+     
+  3. Create content for each tab
     
-    3. Create content for each tab
-    
-       为每个 tab 创建内容
+     为每个 tab 创建内容
 
 ## 1. Create a `TabController`
 
@@ -51,7 +51,6 @@ create a `TabController` for us and make it available to all descendant Widgets.
 我们既可以手动创建一个 `TabController` 也能够直接使用 [`DefaultTabController`]({{site.api}}/flutter/material/DefaultTabController-class.html) Widget。最简单的选择是使用 `DefaultTabController` Widget，因为它能够创建出一个可供所有子 Widgets 使用的 `TabController`。
 
 <!-- skip -->
-
 ```dart
 DefaultTabController(
   // The number of tabs / content sections we need to display
@@ -74,7 +73,6 @@ Widgets and place it within an
 现在我们已经成功创建了 `TabController`，接下来就可以用 [`TabBar`]({{site.api}}/flutter/material/TabController-class.html) Widget 来创建 tabs 。下面这个示例创建了包含三组 [`Tab`]({{site.api}}/flutter/material/Tab-class.html) Widget 的 `TabBar`（一个），并把它放置于 [`AppBar`]({{site.api}}/flutter/material/AppBar-class.html) Widget 中。
 
 <!-- skip -->
-
 ```dart
 DefaultTabController(
   length: 3,
@@ -114,7 +112,6 @@ For this purpose, we'll employ the
 *注意：* `TabBarView` 中内容的顺序很重要，它必须与 `TabBar` 中tab的顺序相对应!
 
 <!-- skip -->
-
 ```dart
 TabBarView(
   children: [

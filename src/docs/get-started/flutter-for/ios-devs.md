@@ -13,6 +13,16 @@ way to get started learning Flutter development.
 这篇文章是为那些想将已有的 iOS 开发经验运用到 Flutter 开发中的 iOS 开发者所作。
 如果你理解 iOS framework 的基本原理，那么你可以将这篇文章作为学习 Flutter 开发的起点。
 
+Before diving into this doc, you may want to watch a 15-minute video from
+the [Flutter Youtube channel](https://www.youtube.com/flutterdev) about
+the Cupertino package.
+
+在开始本文档之前，建议先浏览一下这个 15 分钟的视频，
+了解一下 Cupertino package 是什么吧：
+[https://www.youtube.com/watch?v=3PdUaidHc-E](https://www.youtube.com/watch?v=3PdUaidHc-E)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Your iOS knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
 capabilities and configurations. Flutter is a new way to build UIs for mobile,
@@ -1493,7 +1503,7 @@ Flutter 中的屏幕也是使用 Widgets 表示的，因为“万物皆 widget�
 `Route` 之间切换，而不同的路由则代表了不同的屏幕或页面，或是不同的状态，也可能是渲染相同的数据。
 
 ### How do I listen to iOS lifecycle events?
-### 如何监听 iOS 中的声明周期？
+### 如何监听 iOS 中的生命周期？
 
 In iOS, you can override methods to the `ViewController` to capture lifecycle
 methods for the view itself, or register lifecycle callbacks in the
@@ -1507,7 +1517,7 @@ listening to the `didChangeAppLifecycleState()` change event.
 
 The observable lifecycle events are:
 
-可监听的声明周期事件有：
+可监听的生命周期事件有：
 
 * `inactive` — The application is in an inactive state and is not receiving
 user input. This event only works on iOS, as there is no equivalent event on
@@ -2128,7 +2138,7 @@ To customize the colors and styles of any child components, pass a
 `ThemeData` object to the `MaterialApp` widget. For example, in the code below,
 the primary swatch is set to blue and text selection color is red.
 
-定义所有子组件颜色和样式，可以直接传递 `ThemeData` 对象给 `MaterialApp` widget。例如，
+定义所有子组件颜色和样式，可以直接传递 `ThemeData` 对象给 `MaterialApp` widget。���如，
 在下面的代码中，primary swatch 被设置为蓝色，而文本选中后的颜色被设置为红色。
 
 {% prettify dart %}

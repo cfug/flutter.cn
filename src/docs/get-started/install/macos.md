@@ -29,7 +29,7 @@ To install and run Flutter, your development environment must meet these minimum
 
 - **Tools**: Flutter depends on these command-line tools being available in your environment.
 
-  **Tools**：Flutter 需要要求你开发环境中已经配置了以下命令行工具。
+  **命令工具**：Flutter 需要你的开发环境中已经配置了以下命令行工具。
 
   - `bash`
   - `curl`

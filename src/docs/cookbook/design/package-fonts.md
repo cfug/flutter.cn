@@ -1,6 +1,6 @@
 ---
 title: Exporting fonts from a package
-title: 从 package 里导出字体
+title: 以 package 的方式使用字体
 prev:
   title: Displaying SnackBars
   title: 显示 SnackBars
@@ -16,7 +16,8 @@ of a separate package. This is a convenient way to share the same font across
 several different projects, or for coders publishing their packages to the
 [Pub site][].
 
-除了能够直接将字体声明为应用的一部分之外，你还可以将字体声明为单独 package 的一部分。这是一种能够让开发者非常便捷地在多个项目之间共享相同字体或者将 package 发布到 [Pub site][] 的方式。
+自定义字体，除了可以把字体文件作为应用的一部分之外，还可以通过 package 的方式使用，
+这样有助于跨项目的字体共享，也可以更方便的发布到 [Pub site][]。
 
 ## Directions
 
@@ -42,12 +43,14 @@ To export a font from a package, you need to import the font files into the
 `lib` folder of the package project. You can place font files directly in the
 `lib` folder or in a subdirectory, such as `lib/fonts`.
 
-要从 package 中导出字体，需要将字体文件导入 package 项目的 `lib` 文件夹中。你既可以将字体文件直接放在 `lib` 文件夹中，也可以放在子目录中，例如 `lib/fonts`。
+通过 package 的方式使用字体，需要将字体文件导入 package 项目的 `lib` 文件夹中。
+你既可以将字体文件直接放在 `lib` 文件夹中，也可以放在子目录中，例如 `lib/fonts`。
 
 In this example, assume you've got a Flutter library called
 `awesome_package` with fonts living in a `lib/fonts` folder.
 
-在此示例中，假设你已有一个叫做 `awesome_package` 的 Flutter package，其中包含了 `lib/fonts` 文件夹中的字体资源。
+在此示例中，假设你已有一个名为 `awesome_package` 的 library，
+其中包含了 `lib/fonts` 文件夹中的字体资源。
 
 ```
 awesome_package/
@@ -65,7 +68,8 @@ awesome_package/
 You can now consume the package and use the fonts it provides.
 This involves updating the `pubspec.yaml` in the *app's* root directory.
 
-现在你可以使用该 package 以及它提供的字体。这将涉及到更新位于*应用程序*根目录下的 `pubspec.yaml`。
+现在你可以使用该 package 以及它提供的字体。
+我们来编辑 *应用程序* 根目录下的 `pubspec.yaml` 文件。
 
 ### Add the package to the project
 
@@ -89,7 +93,8 @@ To declare package fonts, you must must prefix the path to the font with
 `packages/awesome_package`. This tells Flutter to look in the `lib` folder
 of the package for the font.
 
-要想声明 package 中的字体，必须在 `packages/awesome_package` 的路径前加上字体声明。这将会让 Flutter 检索到 `lib` package 的文件夹中的字体。
+要想声明 package 中的字体，必须在 `packages/awesome_package` 的路径前加上字体声明。
+这将会让 Flutter 检索到 `lib` package 的文件夹中的字体。
 
 ```yaml
 flutter:
@@ -109,7 +114,8 @@ You can use a [`TextStyle`][] to change the appearance of text.
 To use package fonts, you need to not only declare which font you'd like to use,
 you need to declare the `package` the font belongs to.
 
-你可以使用 [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) 来更改文本的外观。在使用 package 中的字体时，你不仅需要声明该文字所要使用的字体，还需要声明字体所属的 `package`。
+你可以使用 [`TextStyle`]() 来更改文本的外观。
+在使用 package 中的字体时，你不仅需要声明该文字所要使用的字体，还需要声明字体所属的 `package`。
 
 <!-- skip -->
 ```dart

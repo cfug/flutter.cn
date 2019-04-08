@@ -441,17 +441,16 @@ though we are planning further investment in this area.
 
 ### Does Flutter run on the web?
 
-We're working on an experimental project called [Hummingbird][]. It is a
-web-based implementation of the Flutter runtime that takes advantage of the
-capability of the Dart platform to compile to JavaScript. This enables Flutter
-code to run on the standards-based web without change.
-
-[Hummingbird]: {{site.flutter-medium}}/hummingbird-building-flutter-for-the-web-e687c2a023a8
+We're [working on porting Flutter to the Web]({{site.flutter-medium}}/hummingbird-building-flutter-for-the-web-e687c2a023a8),
+by taking advantage of the capability of the Dart platform to compile to JavaScript.
+This will enable Flutter code to run on the standards-based Web without change.
+This is not currently available.
 
 ### Can I use Flutter to build desktop apps?
 
-We are focused on mobile-first use cases. However, Flutter is open source and we
-encourage the community to use Flutter in a variety of interesting ways.
+Yes, but right now it's not very well supported.
+We're working on making this a first class experience.
+Our current progress is documented [on our wiki](https://github.com/flutter/flutter/wiki/Desktop-shells).
 
 ### Can I use Flutter inside of my existing native app?
 

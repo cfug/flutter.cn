@@ -1503,7 +1503,7 @@ Flutter 中的屏幕也是使用 Widgets 表示的，因为“万物皆 widget�
 `Route` 之间切换，而不同的路由则代表了不同的屏幕或页面，或是不同的状态，也可能是渲染相同的数据。
 
 ### How do I listen to iOS lifecycle events?
-### 如何监听 iOS 中的声明周期？
+### 如何监听 iOS 中的生命周期？
 
 In iOS, you can override methods to the `ViewController` to capture lifecycle
 methods for the view itself, or register lifecycle callbacks in the
@@ -1517,7 +1517,7 @@ listening to the `didChangeAppLifecycleState()` change event.
 
 The observable lifecycle events are:
 
-可监听的声明周期事件有：
+可监听的生命周期事件有：
 
 * `inactive` — The application is in an inactive state and is not receiving
 user input. This event only works on iOS, as there is no equivalent event on

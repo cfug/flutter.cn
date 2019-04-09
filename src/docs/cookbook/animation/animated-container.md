@@ -134,7 +134,7 @@ For this example, add a button to the app. When the user taps the button, update
 the properties with a new width, height, background color and border radius 
 inside a call to `setState`.
 
-在这个例子中，我们给应用添加了一个按钮。当用户点击按钮时，将会调用 `setState` 去刷新它的宽度，高度，背景颜色和边框半径等属性。
+在这个例子中，我们给应用添加了一个按钮。当用户点击按钮时，将会调用 `setState` 去刷新它的宽度、高度、背景颜色和边框半径等属性。
 
 In a real app, you most often transition between fixed values (for example, from
 a grey to a green background). For this app, generate new values each time the

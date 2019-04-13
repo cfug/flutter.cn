@@ -1,6 +1,6 @@
 ---
 title: Flutter's build modes
-title: FLutter 的构建模式选择
+title: Flutter 的构建模式选择
 description: Describes Flutter's build modes and when you should use debug, release, or profile mode?
 description: 在使用 Flutter 构建的时候，你应该选择哪种模式呢？Debug、Release、或者是 Profile 模式？
 ---

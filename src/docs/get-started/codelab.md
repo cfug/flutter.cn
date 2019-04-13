@@ -222,8 +222,7 @@ where the Dart code lives.
 
     {{site.alert.end}}
 
- 2. [Run the app](/docs/get-started/test-drive#androidstudio) by clicking
-    the green arrow in the IDE.
+ 2. Run the app [in the way your IDE describes](/docs/get-started/test-drive).
     You should see either Android or iOS output, depending on your device.
 
     [运行](/docs/get-started/test-drive#androidstudio)你的工程项目，
@@ -421,8 +420,7 @@ packages, on the [Pub site]({{site.pub}}/flutter).
       
     {{site.alert.end}}
 
- 5. If the app is running, use the hot reload button
-    <i class="material-icons align-bottom">offline_bolt</i>
+ 5. If the app is running, [hot reload](/docs/get-started/test-drive)
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
     chosen at random, in the running app.
@@ -678,14 +676,15 @@ lazily, on demand.
     The `ListView` class provides a builder property, `itemBuilder`, that's a
     factory builder and callback function specified as an anonymous function.
     Two parameters are passed to the function&mdash;the `BuildContext`,
-    and the row iterator, `i`. The iterator begins at 0 and increments
-    each time the function is called, once for every suggested word pairing.
-    This model allows the suggested list to grow infinitely as the user scrolls.
+    and the row iterator, `i`. The iterator begins at 0 and increments each
+    time the function is called. It increments twice for every suggested word pairing: 
+    once for the ListTile, and once for the Divider. This model allows the suggested
+    list to grow infinitely as the user scrolls.
     
-    `ListView` 类提供了一个 `builder` 属性，`itemBuilder` 值是一个匿名回调函数，
-    接受两个参数 `BuildContext` 和行迭代器 `i`。迭代器从 0 开始，
-    每调用一次该函数，`i` 就会自增 1，对于每个建议的单词对都会执行一次。
-    该模型允许建议的单词对列表在用户滚动时无限增长。
+    `ListView` 类提供了一个名为 `itemBuilder` 的 builder 属性，这是一个工厂匿名回调函数，
+    接受两个参数 `BuildContext` 和行迭代器 `i`。迭代器从 0 开始，每调用一次该函数 `i` 就会自增，
+    每次建议的单词对都会让其递增两次，一次是 ListTile，另一次是 Divider。
+    它用于创建一个在用户滚动时候无限增长的列表。
 
  2. Add a `_buildSuggestions()` function to the `RandomWordsState` class:
  

@@ -570,7 +570,7 @@ Key information:
   even for images with transparency.
 * The Photo class does not include the Hero in its widget tree.
   For the animation to work, the hero
-  wraps the `RadialExpansion` widget, which wraps the hero.
+  wraps the `RadialExpansion` widget.
 
 ### RadialExpansion class
 
@@ -603,7 +603,7 @@ class RadialExpansion extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) {[[/highlight]]
+  Widget build(BuildContext context) 
     return [[highlight]]ClipOval([[/highlight]]
       child: [[highlight]]Center([[/highlight]]
         child: [[highlight]]SizedBox([[/highlight]]

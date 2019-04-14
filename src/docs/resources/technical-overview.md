@@ -170,7 +170,7 @@ Widgets 本身往往是由许多小的、具有单一用途的 widget 组成，�
 The class hierarchy is shallow and broad to maximize the possible number of
 combinations.
 
-类层次结构在最大化可能的组合数上是浅而广的。
+类层次结构是浅而广的，以支持尽可能多的组合。
 
 <object type="image/svg+xml" data="/images/whatisflutter/diagram-widgetclass.svg" style="width: 100%; height: 100%;"></object>
 

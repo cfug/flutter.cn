@@ -140,7 +140,7 @@ You can respond to events, like user interaction, by telling the framework to
 replace a widget in the hierarchy with another widget.  The framework then
 compares the new and old widgets and efficiently updates the user interface.
 
-你可以通过告诉框架将层次结构中的一个 widget 替换为另一个，以此响应事件，如用户交互。框架将会对比新旧 widget 并及时更新用户界面。
+你可以通过告诉框架将层次结构中的一个 widget 替换为另一个来响应事件，如用户交互。框架将会对比新旧 widget 并及时更新用户界面。
 
 #### Composition > inheritance
 

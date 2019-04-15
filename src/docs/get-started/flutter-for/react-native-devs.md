@@ -10,41 +10,58 @@ existing RN knowledge to build mobile apps with Flutter. If you understand
 the fundamentals of the RN framework then you can use this document as a
 way to get started learning Flutter development.
 
+本文面向希望基于现有的 React Native 的知识结构使用 Flutter 开发移动端应用的开发者。如果你已经对 RN 的框架有所了解，那么你可以通过这个文档入门 Flutter 开发。
+
 This document can be used as a cookbook by jumping around and finding
 questions that are most relevant to your needs.
 
+本文可以当做查询手册使用，里面涉及到的问题基本上可以满足需求。
 
 ## Introduction to Dart for JavaScript Developers
+
+## 针对 JavaScript 开发者的 Dart 介绍
 
 Like React Native, Flutter uses reactive-style views. However, while RN
 transpiles to native widgets, Flutter compiles all the way to native code.
 Flutter controls each pixel on the screen, which avoids performance problems
 caused by the need for a JavaScript bridge.
 
+和 React Native 一样，Flutter 使用 reactive 风格的视图。然而，RN 需要被转译为本地对应的控件，而 Flutter 是直接编译成本地原生代码。Flutter 可以控制屏幕上的每一个像素，如此可以避免由于使用 JavaScript Bridge 导致的性能问题。
+
 Dart is an easy language to learn and offers the following features:
+
+Dart 学习起来非常简单而且有如下特性：
 
 * Provides an open-source, scalable programming language for building web,
   server, and mobile apps.
+* 它针对 web 服务和移动应用开发提供了一种开源的，可扩展的编程语言。
 * Provides an object-oriented, single inheritance language that uses a C-style
   syntax that is AOT-compiled into native.
+* 它提供了一种面向对象的单继承语言，使用 C 语言风格的语法并且可通过 AOT 编译为本地代码。
 * Transcompiles optionally into JavaScript.
+* 可转译为 JavaScript 代码。
 * Supports interfaces and abstract classes.
-
+* 支持接口和抽象类。
 A few examples of the differences between JavaScript and Dart are described
 below.
+下面的几个例子解释了 JavaScript 和 Dart 的区别。
 
 ### Entry point
+### 切入点
 
 JavaScript doesn't have a pre-defined entry function—you define the entry point.
-
+JavaScript 并没有预定义的入口函数。
 ```js
+
 // JavaScript
 function startHere() {
   // Can be used as entry point
+  //这里可以当做入口函数
 }
 ```
 In Dart, every app must have a top-level `main()` function that serves as the
 entry point to the app.
+在 Dart 里，每个应用程序必须有一个最顶级的 `main()` 函数，该函数作为应用程序的入口函数。
 
 <!-- skip -->
 ```dart

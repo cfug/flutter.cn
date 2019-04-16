@@ -83,12 +83,7 @@ wrap a section of our app in a `Theme` Widget.
 There are two ways to approach this: creating unique `ThemeData`, or
 extending the parent theme.
 
-有以下两种方式：
-
-- 定义一个独立的 `ThemeData`
-- 从父级 theme 扩展
-
-下面为你分别介绍。
+有以下两种方式：定义一个独立的 `ThemeData`，或者从父级 theme 扩展。下面为你分别介绍。
 
 ### Creating unique `ThemeData`
 
@@ -122,7 +117,7 @@ theme. We can achieve this by using the
 [`copyWith`]({{site.api}}/flutter/material/ThemeData/copyWith.html)
 method.
 
-相比从头开始定义一套样式，从父级 them 扩展可能更常规一些，使用 [`copyWith`]({{site.api}}/flutter/material/ThemeData/copyWith.html) 方法即可。
+相比从头开始定义一套样式，从父级 theme 扩展可能更常规一些，使用 [`copyWith`]({{site.api}}/flutter/material/ThemeData/copyWith.html) 方法即可。
 
 <!-- skip -->
 ```dart

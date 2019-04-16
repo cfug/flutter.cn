@@ -11,8 +11,6 @@ next:
   path: /docs/cookbook/design/snackbars
 ---
 
-hahaahaa
-
 In apps that employ Material Design, there are two primary options for
 navigation: tabs and drawers. When there is insufficient space to support tabs,
 Drawers provide a handy alternative.
@@ -23,20 +21,27 @@ In Flutter, we can use the [`Drawer`]({{site.api}}/flutter/material/Drawer-class
 Widget in combination with a [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html)
 to create a layout with a Material Design Drawer.
 
-在Flutter中，我们可以将 [`Drawer`]({{site.api}}/flutter/material/Drawer-class.html) 小部件与 [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html) 结合使用来创建一个带有Material Design Drawer的布局。
+在Flutter中，我们可以将 [`Drawer`]({{site.api}}/flutter/material/Drawer-class.html) 小部件与 [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html) 结合使用来创建一个带有 Material Design 风格的抽屉布局。
 
 ## Directions
 
+## 步骤
+
   1. Create a `Scaffold`
+
+     创建一个 `Scaffold`
+
   2. Add a drawer
+
+     添加一个抽屉
+
   3. Populate the drawer with items
+
+     使用小部件填充抽屉
+
   4. Close the drawer programmatically
 
-## 步骤
-  1. 创建一个 `Scaffold`
-  2. 添加一个抽屉
-  3. 使用小部件填充抽屉
-  4. 以编程的方式关闭抽屉
+     以编程的方式关闭抽屉
 
 ## 1. Create a `Scaffold`
 
@@ -48,11 +53,11 @@ Widget. The Scaffold Widget provides a consistent visual structure to apps that
 follow the Material Design Guidelines. It also supports special Material Design
 components, such as Drawers, AppBars, and SnackBars.
 
-为了向我们的应用添加抽屉，我们需要将其包装在 [Scaffold]({{site.api}}/flutter/material/Scaffold-class.html) 小部件中。 Scaffold Widget 为遵循 Material Design Guidelines 的应用程序提供一致的可视化结构。 它还支持一些特殊的Material Design组件，例如Drawers，AppBars和SnackBars。
+为了向我们的应用添加抽屉，我们需要将其包装在 [Scaffold]({{site.api}}/flutter/material/Scaffold-class.html) 小部件中。 Scaffold Widget 为遵循 Material 设计守则的应用程序提供一致的可视化结构。 它还支持一些特殊的 Material Design 组件，例如 Drawers，AppBars和SnackBars。
 
 In this case, we'll want to create a `Scaffold` with a `drawer`:
 
-这样，我们就可以创建一个带有 `drawer` 的 `Scaffold` ：
+在这个例子中，我们想要创建一个带有 `drawer` 的 `Scaffold` ：
 
 <!-- skip -->
 ```dart
@@ -91,7 +96,7 @@ While we could use a `Column` Widget, `ListView` is handy in this situation
 because it will allow users to scroll through the drawer if the content takes up
 more space than the screen supports.
 
-既然我们有了一个'抽屉'，我们就可以向其中添加内容。在这个例子中，我们将使用 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)。虽然我们也可以使用 `Column` 小部件，但是 `ListView` 在这种情况下是更好的选择，因为如果内容占用的空间比屏幕支持的更多，它将允许用户滚动抽屉。
+既然我们有了一个 `Drawer`，我们就可以向其中添加内容。在这个例子中，我们将使用 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)。虽然我们也可以使用 `Column` 小部件，但是 `ListView` 在这种情况下是更好的选择，因为如果内容占用的空间比屏幕支持的更多，它将允许用户滚动抽屉。
 
 We will populate the `ListView` with a
 [`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html)
@@ -99,7 +104,7 @@ and two [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
 Widgets. For more information on working with Lists, please see the
 [list recipes](/docs/cookbook#lists).
 
-我们将使用 [`Drawer Header`]({{site.api}}/flutter/material/DrawerHeader-class.html) 和两个 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) 小部件填充 `ListView` 。 有关使用列表的更多信息，请参阅 [list recipes](/docs/cookbook#lists)。
+我们将使用 [`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html) 和两个 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) 小部件填充 `ListView`。 有关使用列表的更多信息，请参阅 [list recipes](/docs/cookbook#lists)。
 
 <!-- skip -->
 ```dart
@@ -146,8 +151,7 @@ achieve this? Using the [Navigator]({{site.api}}/flutter/widgets/Navigator-class
 用户点击某个部件后，我们经常要关闭抽屉。 我们怎样才能做到这一点？ 使用 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)！
 
 When a user opens the Drawer, Flutter adds the drawer to the navigation
-stack under the hood. Therefore, to close the drawer, we can call
-`Navigator.pop(context)`.
+stack under the hood. Therefore, to close the drawer, we can call `Navigator.pop(context)`.
 
 当用户打开抽屉时，Flutter将抽屉小部件盖在当前导航堆栈上。 因此，要关闭抽屉，我们可以调用 `Navigator.pop（context）`。
 
@@ -166,7 +170,7 @@ ListTile(
 
 ## Complete example
 
-## 完整示例
+## 一个完整的例子
 
 ```dart
 import 'package:flutter/material.dart';

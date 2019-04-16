@@ -96,7 +96,7 @@ While we could use a `Column` Widget, `ListView` is handy in this situation
 because it will allow users to scroll through the drawer if the content takes up
 more space than the screen supports.
 
-既然我们有了一个 `Drawer`，我们现在就可以向其中添加内容。在这个例子中，我们将使用 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)。虽然我们也可以使用 `Column` 小部件，但是 `ListView` 在这种情况下是更好的选择，因为如果内容所占用的空间超出屏幕的话，它将能够允许用户滚动内容。
+既然已经有了一个 `Drawer`，我们现在就可以向其中添加内容。在这个例子中，我们将使用 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)。虽然你也可以使用 `Column` 小部件，但是 `ListView` 在这种情况下将是更好的选择，因为如果内容所占用的空间超出了屏幕的话，它将能够允许用户进行滚动。
 
 We will populate the `ListView` with a
 [`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html)

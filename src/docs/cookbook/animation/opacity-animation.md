@@ -16,7 +16,7 @@ quickly popping elements on and off the screen can feel jarring to end users.
 Instead, you can fade elements in and out with an opacity animation to create
 a smooth experience.
 
-在实现 UI 设计时，我们经常需要在屏幕上显示或隐藏各种元素。如若这个过程只是让某个元素快速地出现活着消失，用户们肯定不买帐。我们一般会使用不透明动画让元素淡入淡出，以创建出更加流畅的用户体验。
+在实现 UI 设计时，我们经常需要在屏幕上显示或隐藏各种元素。如若这个过程只是让某个元素快速地出现或者消失，用户们肯定不买帐。我们一般会使用不透明动画让元素淡入淡出，以创建出更加流畅的用户体验。
 
 In Flutter, you can achieve this task using the [`AnimatedOpacity`][] Widget.
 

@@ -15,13 +15,13 @@ In apps that employ Material Design, there are two primary options for
 navigation: tabs and drawers. When there is insufficient space to support tabs,
 Drawers provide a handy alternative.
 
-在 Material Design 设计准则里，主要提供了两种导航方式：Tab 和 Drawer。 当没有足够的空间来支持 tab 导航时，drawer 提供了一个方便的选择。
+在 Material Design 设计准则里，主要提供了两种导航方式：Tab 和 Drawer。 当没有足够的空间来支持 tab 导航时，drawer 提供了另一个方便的选择。
 
 In Flutter, we can use the [`Drawer`]({{site.api}}/flutter/material/Drawer-class.html)
 Widget in combination with a [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html)
 to create a layout with a Material Design Drawer.
 
-在 Flutter中，我们可以将 [`Drawer`]({{site.api}}/flutter/material/Drawer-class.html) Widget 与 [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html) 结合使用来创建一个具有 Material Design 风格的 drawer 布局。
+在 Flutter中，我们可以将 [`Drawer`]({{site.api}}/flutter/material/Drawer-class.html) Widget 与 [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html) 结合使用来创建一个具有 Material Design 风格的 Drawer 布局。
 
 ## Directions
 
@@ -41,7 +41,7 @@ to create a layout with a Material Design Drawer.
 
   4. Close the drawer programmatically
 
-     通过代码关闭 drawer
+     通过编程关闭 drawer
 
 ## 1. Create a `Scaffold`
 
@@ -104,7 +104,7 @@ and two [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
 Widgets. For more information on working with Lists, please see the
 [list recipes](/docs/cookbook#lists).
 
-我们将使用 [`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html) 和两个 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) Widget 填充 `ListView`。有关使用列表的更多信息，请参阅 [list recipes](/docs/cookbook#lists)。
+我们将使用 [`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html) 和两个 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) Widget 填充 `ListView`。有关使用 List 的更多信息，请参阅 [list recipes](/docs/cookbook#lists)。
 
 <!-- skip -->
 ```dart
@@ -143,16 +143,16 @@ Drawer(
 
 ## 4. Close the drawer programmatically
 
-## 4. 通过代码关闭 drawer
+## 4. 通过编程关闭 drawer
 
 After a user taps on an item, we often want to close the drawer. How can we
 achieve this? Using the [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)!
 
-当用户点击某个部件后，我们经常需要要关闭 drawer。那么怎样才能做到这一点呢？请使用 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)！
+我们经常需要在用户点击某个项目后，就将 Drawer 关掉。那么怎样才能做到这一点呢？请使用 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)！
 
 When a user opens the Drawer, Flutter adds the drawer to the navigation stack under the hood. Therefore, to close the drawer, we can call `Navigator.pop(context)`.
 
-当用户打开 drawer 时，Flutter 会将 drawer Widget 覆盖在当前的导航堆栈上。 因此，要关闭 drawer，我们可以调用 `Navigator.pop（context）`。
+当用户打开 Drawer 时，Flutter 会将 drawer Widget 覆盖在当前的导航堆栈上。 因此，要关闭 drawer，我们可以通过调用 `Navigator.pop(context)` 来实现。
 
 <!-- skip -->
 ```dart

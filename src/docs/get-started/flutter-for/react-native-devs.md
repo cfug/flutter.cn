@@ -71,10 +71,13 @@ main() {
 ```
 
 Try it out in [DartPad]({{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1).
+可以在这里查看效果 [DartPad]({{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1)。
 
 ### Printing to the console
+### 在控制台打印输出
 
 To print to the console in Dart, use `print()`.
+在 Dart 中如果需要在控制台进行输出，调用 `print()`。
 
 ```js
 // JavaScript
@@ -89,13 +92,16 @@ print('Hello world!');
 
 Try it out in
 [DartPad]({{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5).
+可以在这里查看效果 [DartPad]({{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5)。
 
 ### Variables
+### 变量
 
 Dart is type safe—it uses a combination of static type checking and runtime
 checks to ensure that a variable’s value always matches the variable’s static
 type. Although types are mandatory, some type annotations are optional because
 Dart performs type inference.
+Dart 是类型安全的，它结合静态类型检查和运行时检查来保证变量的值总是和变量的静态类型相匹配。虽然类型是语法要求
 
 #### Creating and assigning variables
 

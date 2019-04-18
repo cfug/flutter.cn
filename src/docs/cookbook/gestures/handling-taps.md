@@ -42,7 +42,7 @@ we approach this?
 ```dart
 // Our GestureDetector wraps our button
 GestureDetector(
-  // 当他的孩子元素被点击，显示一个 snackbar (When the child is tapped, show a snackbar)
+  // 当它的子元素被点击，显示一个 snackbar (When the child is tapped, show a snackbar)
   onTap: () {
     final snackBar = SnackBar(content: Text("Tap"));
 

@@ -254,7 +254,7 @@ The release bundle for your app is created at
 
 {{site.alert.note}}
   As of this writing, the app bundle command only generates **armeabi-v7a**
-  compatible libs. Follow [Issue 18494]() for more information.
+  compatible libs. Follow [Issue 18494][Issue 18494] for more information.
 {{site.alert.end}} 
 
 ## Testing an app Bundle

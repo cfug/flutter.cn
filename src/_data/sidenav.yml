@@ -191,6 +191,8 @@
       permalink: /docs/resources/bootstrap-into-dart
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
+    - title: 平台行为差异和适配
+      permalink: /docs/resources/platform-adaptations
     - title: 技术概览
       permalink: /docs/resources/technical-overview
     # - title: Flutter best practices # TODO

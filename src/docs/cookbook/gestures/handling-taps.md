@@ -17,25 +17,38 @@ tapping and dragging? We'll use the
 [`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)
 Widget!
 
+我们的 app 不仅要把信息展示给用户，还要和用户进行交互。怎么响应用户的点击，拖动等操作行为呢？ 我们使用
+[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)
+Widget！
+
 Say we want to make a custom button that shows a snackbar when tapped. How would
 we approach this?
 
+我们来实现一个按钮，当用户点击的时候显示 snackbar 消息。要怎么做呢？
+
 ## Directions
 
+## 步骤
+
   1. Create the button
+
+     创建一个按钮。
+
   2. Wrap it in a `GestureDetector` with an `onTap` callback
+
+     用 `GestureDetector` 包裹按钮，并传入 `onTap` 回调函数。
 
 <!-- skip -->
 ```dart
 // Our GestureDetector wraps our button
 GestureDetector(
-  // When the child is tapped, show a snackbar
+  // 当它的子元素被点击，显示一个 snackbar (When the child is tapped, show a snackbar)
   onTap: () {
     final snackBar = SnackBar(content: Text("Tap"));
 
     Scaffold.of(context).showSnackBar(snackBar);
   },
-  // Our Custom Button!
+  // 这个是我们的自定义按钮 (Our Custom Button!)
   child: Container(
     padding: EdgeInsets.all(12.0),
     decoration: BoxDecoration(
@@ -49,16 +62,28 @@ GestureDetector(
 
 ## Notes
 
+## 注意
+
   1. If you'd like to add the Material Ripple effect to your button, please
   see the "[Adding Material Touch ripples](/docs/cookbook/gestures/ripples/)" recipe.
+      
+     如果你想添加点按涟漪效果 (Material Design) 请参考文章“[添加点按涟漪效果 (Material Design)](/docs/cookbook/gestures/ripples/)”。
+
   2. While we've created a custom button to demonstrate these concepts, Flutter
   includes a handful of buttons out of the box:
   [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html),
   [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html),
   and [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html)
 
+     这里为了说明原理，我们创建了自定义的按钮，其实 Flutter 已经为我们准备了很多现成的按钮供我们使用：
+  [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html)，
+  [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html)，
+  和 [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html) 等。
+
 
 ## Complete example
+
+## 完整代码
 
 ```dart
 import 'package:flutter/material.dart';

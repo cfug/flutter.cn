@@ -78,7 +78,7 @@ awesome_app/
 Now that you have a font to work with, you need to tell Flutter where to
 find it. You can do so by including a font definition in the `pubspec.yaml`.
 
-现在，已经将导入字体到项目中，接下来你需要告诉 Flutter 到哪里找到它。你可以像下面这样在 `pubspec.yaml` 中声明它。
+现在，已经将导入字体到项目中，接下来你需要告诉 Flutter 到哪里找到它。你可以在 `pubspec.yaml` 中像下面这样声明。
 
 ```yaml
 flutter:
@@ -110,7 +110,7 @@ The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
 These files contain the outlines for the glyphs in the font. When building the
 app, these files are included in the app's asset bundle.
 
-`asset` 是字体文件相对于 `pubspec.yaml` 的相对路径。这些文件包含字体中字形的轮廓。构建应用程序时，这些文件包含在应用程序的资源包中。
+`asset` 是字体文件相对于 `pubspec.yaml` 的相对路径。这些文件定义了字体中字形的轮廓。构建应用程序时，这些文件包含在应用程序的资源包中。
 
 A single font can reference many different files with different outline weights
 and styles:
@@ -124,6 +124,7 @@ and styles:
     [`fontWeight`]({{site.api}}/flutter/painting/TextStyle/fontWeight.html)
     property of a
     [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) object.
+
   * The `style` property specifies whether the outlines in the file are
     `italic` or `normal`. These values correspond to the
     [`FontStyle`]({{site.api}}/flutter/dart-ui/FontStyle-class.html)
@@ -193,7 +194,7 @@ object specifies a weight or style for which is there is no exact font file, the
 engine uses one of the more generic files for the font and attempts to
 extrapolate outlines for the requested weight and style.
 
-如若 [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) 指定的字体样式缺少对应的字体文件，Engine 则会使用一个更加通用的字体文件，并尝试推断所请求的字体厚度和样式的轮廓。
+如若 [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) 指定的字体样式缺少对应的字体文件，Engine 则会使用一个更加通用的字体文件，并尝试推断所请求的字体 weight 和样式的轮廓。
 
 ## Complete example
 

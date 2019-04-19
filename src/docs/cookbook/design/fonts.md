@@ -20,8 +20,7 @@ requests from designers is to use custom fonts. For example, you may have a
 custom-built font from a designer, or maybe you downloaded a font from
 [Google Fonts](https://fonts.google.com).
 
-尽管 Android 和 iOS 已经提供了一套高质量系统字体，但是很多时候我们仍然需要使用自定
-义字体。例如，你可能需要使用字体设计师提供的自定义字体，或者想要使用 [Google Fonts](https://fonts.google.com) 中提供的字体。
+尽管 Android 和 iOS 已经提供了一套高质量系统字体，但是很多时候我们仍然需要使用自定义字体。例如，你可能需要使用字体设计师提供的自定义字体，或者想要使用 [Google Fonts](https://fonts.google.com) 中提供的字体。
 
 Flutter works out of the box with custom fonts. You can apply fonts across an
 entire app or to individual Widgets.
@@ -33,13 +32,20 @@ Flutter 提供了一套开箱即用的方法来使用自定义字体。能够用
 ## 步骤
 
   1. Import the font files
-     导入字体文件
+
+      导入字体文件
+
   2. Declare the font in the `pubspec.yaml`
-     在 `pubspec.yaml` 中声明字体
+
+      在 `pubspec.yaml` 中声明字体
+
   3. Set a font as the default
-     设置字体为默认字体
+
+      设置字体为默认字体
+
   4. Use a font in a specific Widget
-     将字体应用于特定 Widget
+  
+      将字体应用于特定 Widget
 
 ## 1. Import the font files
 
@@ -49,14 +55,12 @@ In order to work with a font, you need to import the font files into the
 project.  It is common practice to put font files in a `fonts` or `assets`
 folder at the root of a Flutter project.
 
-首先，将字体文件导入到项目中。你可以在项目根目录下创建一个名叫 `fonts`
-或者 `assets` 中、的文件夹，用于存放字体文件资源。
+要想使用字体 ，需要先将字体文件导入到项目中。你可以在项目根目录下创建一个名叫 `fonts` 或者 `assets` 的文件夹，用于存放字体文件资源。
 
 For example, if you want to import the Raleway and Roboto Mono font files into
 a project, the folder structure would look like this:
 
-例如，如果你想要在项目中导入 Raleway 和 Roboto Mono 字体，项目文件夹结构将会如
-下所示：
+例如，如果你想要在项目中导入 Raleway 和 Roboto Mono 字体，项目文件夹结构将会如下所示：
 
 ```
 awesome_app/
@@ -74,8 +78,7 @@ awesome_app/
 Now that you have a font to work with, you need to tell Flutter where to
 find it. You can do so by including a font definition in the `pubspec.yaml`.
 
-现在，已经将导入字体到项目中，接下来你需要告诉 Flutter 到哪里找到它。你可以
-像下面这样在 `pubspec.yaml` 中声明它。
+现在，已经将导入字体到项目中，接下来你需要告诉 Flutter 到哪里找到它。你可以像下面这样在 `pubspec.yaml` 中声明它。
 
 ```yaml
 flutter:
@@ -101,14 +104,13 @@ The `family` determines the name of the font, which you use in the
 property of a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
 object.
 
-`family` 属性定义了字体的名称，你会在 [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) 的 [`fontFamily`]({{site.api}}/flutter/painting/TextStyle/fontFamily.html) 属性中用到。
+`family` 属性定义了字体的名称，你可以在 [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) 的 [`fontFamily`]({{site.api}}/flutter/painting/TextStyle/fontFamily.html) 属性中用到。
 
 The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
 These files contain the outlines for the glyphs in the font. When building the
 app, these files are included in the app's asset bundle.
 
-`asset` 是字体文件相对于 `pubspec.yaml` 的相对路径。这些文件包含字体
-中字形的轮廓。构建应用程序时，这些文件包含在应用程序的资源包中。
+`asset` 是字体文件相对于 `pubspec.yaml` 的相对路径。这些文件包含字体中字形的轮廓。构建应用程序时，这些文件包含在应用程序的资源包中。
 
 A single font can reference many different files with different outline weights
 and styles:
@@ -137,8 +139,7 @@ and styles:
 You have two options for how to apply fonts to text: as the default font
 or only within specific Widgets.
 
-对于如何使用这些字体，你有两种选择：将其设置为默认字体，或者仅在某些特定 Widget 
-中使用。
+对于如何使用这些字体，你有两种选择：将其设置为默认字体，或者仅在某些特定 Widget 中使用。
 
 To use a font as the default, set the `fontFamily` property as part of
 the app's `theme`. The value provided to `fontFamily` must match the `family`
@@ -159,8 +160,7 @@ MaterialApp(
 For more information on themes, please view the ["Using Themes to share colors
 and font styles"](/docs/cookbook/design/themes) recipe.
 
-有关主题的更多信息，请参阅 ["Using Themes to share colors
-and font styles"](/docs/cookbook/design/themes) 说明。
+有关主题的更多信息，请参阅 ["Using Themes to share colors and font styles"](/docs/cookbook/design/themes) 说明。
 
 ## 4. Use the font in a specific Widget
 

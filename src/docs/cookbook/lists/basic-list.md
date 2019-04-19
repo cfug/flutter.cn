@@ -15,12 +15,18 @@ Displaying lists of data is a fundamental pattern for mobile apps. Flutter
 includes the [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
 Widget to make working with lists a breeze!
 
+显示数据列表是移动端应用程序的基本样式。Flutter 包含的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) Widget 能够让列表的实现变得轻而易举。
+
 ## Create a ListView
+
+## 创建一个 ListView
 
 Using the standard `ListView` constructor is perfect for lists that contain only
 a few items. We will also employ the built-in
 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
 Widget to give our items a visual structure.
+
+使用标准的 `ListView` 构造函数非常适合仅包含少量条目的列表。我们还将使用内置的 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) Widget 来给我们的条目提供可视化结构。
 
 <!-- skip -->
 ```dart
@@ -43,6 +49,8 @@ ListView(
 ```
 
 ## Complete example
+
+## 完整示例
 
 ```dart
 import 'package:flutter/material.dart';
@@ -83,3 +91,5 @@ class MyApp extends StatelessWidget {
 ```
 
 ![Basic List Demo](/images/cookbook/basic-list.png){:.site-mobile-screenshot}
+
+

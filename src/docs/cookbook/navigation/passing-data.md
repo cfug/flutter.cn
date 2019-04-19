@@ -132,7 +132,7 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 使用 Todo 对象构建UI (Use the Todo to create our UI)
+    // 使用 Todo 对象构建 UI (Use the Todo to create our UI)
     return Scaffold(
       appBar: AppBar(
         title: Text(todo.title),

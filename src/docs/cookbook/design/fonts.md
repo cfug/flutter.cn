@@ -25,7 +25,7 @@ custom-built font from a designer, or maybe you downloaded a font from
 Flutter works out of the box with custom fonts. You can apply fonts across an
 entire app or to individual Widgets.
 
-Flutter 为自定义字体提供了一套开箱即用的方法。你不仅能够将其用于整个 App，还可以用在个别 Widget 中。
+Flutter 为自定义字体提供了一套开箱即用的方法。你不仅能够将其用于整个 app，还可以用在个别 Widget 中。
 
 ## Directions
 

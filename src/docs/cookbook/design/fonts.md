@@ -133,7 +133,7 @@ and styles:
     and can be used in the
     [fontStyle]({{site.api}}/flutter/painting/TextStyle/fontStyle.html)
     property of a
-    [`TextStyle`]({{site.api}} /flutter/painting/TextStyle-class.html) object.
+    [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) object.
 
     `style` 属性指定文件中字体的轮廓是否为 `italic` 或 `normal`。这些值对应 [`FontStyle`]({{site.api}}/flutter/dart-ui/FontStyle-class.html) 并能够在 [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) 对象的 [fontStyle]({{site.api}}/flutter/painting/TextStyle/fontStyle.html) 属性上使用。
 

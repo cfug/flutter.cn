@@ -128,7 +128,7 @@ and styles:
     and can be used in the
     [fontStyle]({{site.api}}/flutter/painting/TextStyle/fontStyle.html)
     property of a
-    [`TextStyle`]({{site.api}}* /flutter/painting/TextStyle-class.html) object.
+    [`TextStyle`]({{site.api}} /flutter/painting/TextStyle-class.html) object.
 
 ## 3. Set a font as the default
 
@@ -179,7 +179,6 @@ Once again, the `fontFamily` must match the `family` name declared in the
 在这个例子中，你将会在 `Text`Widget 中应用 RobotoMono 字体。同样的，fontFamily 的值必须与 pubspec.yaml 中声明的值相匹配。
 
 <!-- skip -->
-
 ```dart
 Text(
   'Roboto Mono sample',

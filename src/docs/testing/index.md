@@ -7,11 +7,11 @@ The more features your app has, the harder it is to test manually. Automated
 tests help ensure that your app performs correctly before you publish it, while
 retaining your feature and bug fix velocity.
 
-您的应用程序具有的功能越多，人工测试就越困难。自动化测试有助于确保您的应用程序在发布之前可以正确的运行，同时保持功能和问题修复速度。
+您的应用程序具有的功能越多，人工测试就越困难。自动化测试有助于您的应用程序在发布之前正确运行，同时保证功能，并且可以快速的修复问题。
 
 Automated testing falls into a few categories:
 
-自动化测试分为几个类别：
+自动化测试可分为以下几类：
 
 - A [_unit test_](#unit-tests) tests a single function, method, or class. 
     
@@ -20,12 +20,12 @@ Automated testing falls into a few categories:
 - A [_widget test_](#widget-tests) (in other UI frameworks referred to as _component test_) tests
   a single widget. 
 
-    [_widget 测试_](#widget-tests)（在其他UI框架中指 _组件测试_）测试单一的 widget。
+    [_widget 测试_](#widget-tests)（在其他 UI 框架中指 _组件测试_）测试单一的 widget 。
 
 - An [_integration test_](#integration-tests)
   tests a complete app or a large part of an app.
 
-    [_集成测试_](#integration-tests) 测试一个完整的应用程序或者应用程序的一个大的部分。
+    [_集成测试_](#integration-tests) 测试一个完整的应用程序或者一个应用程序的大部分功能。
   
 Generally speaking, a well-tested app has many unit and widget tests, tracked by
 [code coverage](https://en.wikipedia.org/wiki/Code_coverage), plus enough
@@ -33,7 +33,7 @@ integration tests to cover all the important use cases. This advice is based on
 the fact that there are trade-offs between different kinds of testing, seen
 below.
 
-一般来说，一个经过良好测试的应用程序会有许多单元测试和 widget 测试，并且使用[代码覆盖率](https://en.wikipedia.org/wiki/Code_coverage)进行追踪，还会有足够的集成测试来覆盖所有的重要使用场景。这一建议是基于这样一个事实，即在不同类型的测试之间存在权衡，如下所示。
+一般来说，在自动化测试方面做的比较好的应用程序会有许多单元测试和 widget 测试，并且使用[代码覆盖率](https://en.wikipedia.org/wiki/Code_coverage)进行追踪，还会有足够的集成测试来覆盖所有的重要使用场景。这样做是因为不同类型的测试之间需要权衡，如下所示。
 
 |                      | <t>Unit</t><t>单元测试</t> | <t>Widget</t><t>Widget 测试</t> | <t>Integration</t><t>集成测试</t> |
 |----------------------|--------|--------|-------------|
@@ -59,7 +59,7 @@ out](/cookbook/testing/mocking). Unit tests generally don't read from or write
 to disk, render to screen, or receive user actions from outside the process
 running the test.
 
-[_单元测试_] 测试单一的函数，方法或类。单元测试的目标是验证逻辑单元在各种条件下的正确性。被测试单元的外部依赖通常是[模拟出来的](/cookbook/testing/mocking)。单元测试通常不会读写磁盘，将数据渲染到屏幕，也不会从运行测试进程的外部去接收用户的操作。
+[_单元测试_] 测试单一的函数，方法或类。单元测试的目标是验证逻辑单元在各种条件下的正确性。被测试单元的外部依赖通常需要[模拟](/cookbook/testing/mocking)。单元测试通常不会读写磁盘，将数据渲染到屏幕，也不会从运行测试进程的外部去接收用户的操作。
 
 ### Recipes
 
@@ -77,7 +77,7 @@ and interacts as expected. Testing a widget involves multiple classes and
 requires a test environment that provides the appropriate widget lifecycle
 context. 
 
-_widget 测试_（在其他UI框架中指 _组件测试_）测试单一的 widget。widget 测试的目标是验证 widget 的 UI 表现和交互行为是否符合预期。测试一个  widget 涉及多个类，并且测试环境需要能够提供合适的 widget 生命周期的上下文。
+_widget 测试_（在其他 UI 框架中指 _组件测试_）测试单一的 widget 。widget 测试的目标是验证 widget 的 UI 表现和交互行为是否符合预期。测试一个 widget 涉及多个类，并且测试环境需要提供具有 widget 生命周期的上下文。
 
 For example, the Widget being tested should be able to receive and 
 respond to user actions and events, perform layout, and instantiate child 
@@ -85,7 +85,7 @@ widgets. A widget test is therefore more comprehensive than a unit test. However
 unit test, a widget test's environment is replaced with an implementation much
 simpler than a full-blown UI system.
 
-例如，被测试的 widget 应该可以接收和响应用户操作和事件，进行布局，并实例化子 widget。所以，widget 测试比单元测试更全面。但是，就像单元测试一样，widget 测试环境实现上会比成熟的 UI 系统简单得多。
+例如，被测试的 widget 可以接收和响应用户操作和事件，进行布局，并实例化子 widget 。所以，widget 测试比单元测试更全面。但是，就像单元测试一样，widget 测试环境实现上比成熟的 UI 系统简单得多。
 
 ### Recipes
 
@@ -102,13 +102,13 @@ of an integration test is to verify that all the widgets and services being
 tested work together other as expected. Furthermore, you can use integration
 tests to verify your app's performance.
 
-_集成测试_ 测试一个完整的应用程序或者应用程序的一个大的部分。集成测试的目标是验证正在测试的所有 widget 和服务是否按照预期的方式一起工作。此外，还可以使用集成测试来验证应用程序的性能。
+_集成测试_ 测试一个完整的应用程序或者一个应用程序的大部分功能。集成测试的目标是验证正在测试的所有 widget 和服务是否按照预期的方式一起工作。此外，还可以使用集成测试来验证应用程序的性能。
 
 Generally, an _integration test_ runs on a real device or an OS emulator, such
 as iOS Simulator or Android Emulator. The app under test is typically isolated
 from the test driver code to avoid skewing the results.
 
-通常情况下，一个 _集成测试_ 运行在真机或 OS 模拟器上，如 iOS 模拟器（iOS Simulator）或 Android 模拟器（Android Emulator）。测试中的应用程序通常与测试驱动程序代码隔离，以避免出现结果偏差。
+通常情况下，一个 _集成测试_ 运行在真机或 OS 模拟器上，如 iOS 模拟器 (iOS Simulator) 或 Android 模拟器 (Android Emulator) 。测试中的应用程序通常与测试驱动程序代码隔离，以避免结果出现偏差。
 
 ### Recipes
 
@@ -124,12 +124,12 @@ Continuous integration (CI) services allow you to run your tests automatically
 when pushing new code changes. This provides timely feedback on whether the code
 changes work as expected and do not introduce bugs.
 
-持续集成(CI)服务允许您在推送新代码（代码变更）时自动运行测试。它提供了当代码变更后，是否仍然按预期工作并且不引入新问题的及时反馈。
+持续集成 (CI) 服务允许您在推送新代码（代码变更）时自动运行测试。当代码变更后，会立即收到关于代码是否仍按预期工作、是否引入新问题的反馈。
 
 For information on running tests on various continuous integration services,
 please see the following: 
 
-有关各种持续集成服务的运行测试的信息，参考如下：
+有关各种持续集成服务的信息，参考如下：
 
 * [Continuous Delivery using fastlane with
   Flutter](/docs/deployment/fastlane-cd/)

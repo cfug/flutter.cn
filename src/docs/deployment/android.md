@@ -61,7 +61,8 @@ especially:
 ## 添加一个启动图标
 
 When a new Flutter app is created, it has a default Launcher icon. To
-customize this icon you might want to check out the [Flutter Launcher Icons]({{site.pub}}/packages/flutter_launcher_icons) package.
+customize this icon you might want to check out the [Flutter Launcher
+Icons]({{site.pub}}/packages/flutter_launcher_icons) package.
 当一个新的 Flutter app 被创建的时候，它有一个默认的启动图标。要自定义这个图标，你可能需要看看 [Flutter Launcher Icons]({{site.pub}}/packages/flutter_launcher_icons) 这个部分。
 
 Alternatively, if you want to do it manually, here's how:

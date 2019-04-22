@@ -15,7 +15,7 @@ Displaying lists of data is a fundamental pattern for mobile apps. Flutter
 includes the [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
 Widget to make working with lists a breeze!
 
-显示数据列表是移动端应用程序的基本样式。Flutter 包含的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) Widget 能够让列表的实现变得轻而易举。
+用列表展示数据是移动应用开发中较为常用的方式，Flutter 自带的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) Widget 可以帮助你轻松的实现一个列表。
 
 ## Create a ListView
 

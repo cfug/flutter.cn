@@ -59,11 +59,11 @@ the following recipes:
 
   * [Fade in images with a placeholder](/docs/cookbook/images/fading-in-images/)
   
-  * [占位符和网络图片淡入](/docs/cookbook/images/fading-in-images/)
+    [占位符和网络图片淡入](/docs/cookbook/images/fading-in-images/)
   
   * [Working with cached images](/docs/cookbook/images/cached-images/)
   
-  * [使用缓存图片](/docs/cookbook/images/cached-images/)
+    [使用缓存图片](/docs/cookbook/images/cached-images/)
 
 ## Complete example
 

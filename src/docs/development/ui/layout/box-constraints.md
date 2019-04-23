@@ -20,7 +20,7 @@ constraints by their parent, and size themselves within those
 constraints. Constraints consist of minimum and maximum widths and
 heights; sizes consist of a specific width and height.
 
-Flutter 中的 widget 由在其底层的 [`RenderBox`]({{site.api}}/flutter/rendering/RenderBox-class.html) 对象渲染而成。渲染框由其父级Widget给出约束，并根据这些约束调整自身尺寸大小。约束是由最小宽度、最大宽度、最小高度、最大高度四个方面构成；尺寸大小则由特定的宽度和高度两个方面构成 。
+Flutter 中的 widget 由在其底层的 [`RenderBox`]({{site.api}}/flutter/rendering/RenderBox-class.html) 对象渲染而成。渲染框由其父级 Widget 给出约束，并根据这些约束调整自身尺寸大小。约束是由最小宽度、最大宽度、最小高度、最大高度四个方面构成；尺寸大小则由特定的宽度和高度两个方面构成 。
 
 Generally, there are three kinds of boxes, in terms of how they handle
 their constraints:

@@ -26,7 +26,7 @@ a few items. We will also employ the built-in
 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
 Widget to give our items a visual structure.
 
-使用标准的 `ListView` 构造函数非常适合仅包含少量条目的列表。我们还将使用内置的 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) Widget 来给我们的条目提供可视化结构。
+使用标准的 `ListView` 构造方法非常适合只有少量数据的列表。我们还将使用内置的 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) Widget 来给我们的条目提供可视化结构。
 
 <!-- skip -->
 ```dart

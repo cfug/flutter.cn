@@ -9,7 +9,7 @@ short-title: 边界约束 (Box constraints)
   You may be directed to this page if the framework detects a problem involving
   box constraints.
 
-  你被引导到本页面，是因为Flutter框架检测到你可能遇到涉及框约束的问题。 
+  你被引导到本页面，是因为 Flutter 框架检测到你可能遇到涉及边界约束的问题。 
 
 {{site.alert.end}}
 
@@ -20,22 +20,27 @@ constraints by their parent, and size themselves within those
 constraints. Constraints consist of minimum and maximum widths and
 heights; sizes consist of a specific width and height.
 
-Flutter中的 widget 由在其底层的 [`RenderBox`]({{site.api}}/flutter/rendering/RenderBox-class.html) 对象渲染而成。渲染框由其父级Widget给出约束, 并根据这些约束调整自身尺寸大小。约束是由最小宽度、最大宽度、最小高度、最大高度四个方面构成； 尺寸大小则由特定的宽度和高度两个方面构成 。
+Flutter 中的 widget 由在其底层的 [`RenderBox`]({{site.api}}/flutter/rendering/RenderBox-class.html) 对象渲染而成。渲染框由其父级Widget给出约束，并根据这些约束调整自身尺寸大小。约束是由最小宽度、最大宽度、最小高度、最大高度四个方面构成；尺寸大小则由特定的宽度和高度两个方面构成 。
 
 Generally, there are three kinds of boxes, in terms of how they handle
 their constraints:
 
+一般来说，从如何处理约束的角度来看，有以下三种类型的渲染框：
+
 - Those that try to be as big as possible.
   For example, the boxes used by [`Center`]({{site.api}}/flutter/widgets/Center-class.html) and [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html).
+
+  尽可能大。比如 [`Center`]({{site.api}}/flutter/widgets/Center-class.html) 和 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 的渲染框。
+
 - Those that try to be the same size as their children.
   For example, the boxes used by [`Transform`]({{site.api}}/flutter/widgets/Transform-class.html) and [`Opacity`]({{site.api}}/flutter/widgets/Opacity-class.html).
+
+  与子 widget 一样大，比如 [`Transform`]({{site.api}}/flutter/widgets/Transform-class.html) 和 [`Opacity`]({{site.api}}/flutter/widgets/Opacity-class.html) 的渲染框。
+
 - Those that try to be a particular size.
   For example, the boxes used by [`Image`]({{site.api}}/flutter/dart-ui/Image-class.html) and [`Text`]({{site.api}}/flutter/widgets/Text-class.html).
 
-一般来说，从如何处理约束的角度来看，有以下三种类型的渲染框：
-- 尽可能大。比如 [`Center`]({{site.api}}/flutter/widgets/Center-class.html) 和 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 的渲染框。
-- 与子 widget 一样大，比如 [`Transform`]({{site.api}}/flutter/widgets/Transform-class.html) 和 [`Opacity`]({{site.api}}/flutter/widgets/Opacity-class.html) 的渲染框。
-- 特定大小，比如  [`Image`]({{site.api}}/flutter/dart-ui/Image-class.html) 和 [`Text`]({{site.api}}/flutter/widgets/Text-class.html) 的渲染框。
+  特定大小，比如  [`Image`]({{site.api}}/flutter/dart-ui/Image-class.html) 和 [`Text`]({{site.api}}/flutter/widgets/Text-class.html) 的渲染框。
 
 Some widgets, for example [`Container`]({{site.api}}/flutter/widgets/Container-class.html), vary from type to type based on
 their constructor arguments. In the case of [`Container`]({{site.api}}/flutter/widgets/Container-class.html), it defaults
@@ -64,7 +69,7 @@ means that if you nest a bunch of boxes inside each other at the root
 of your application's render tree, they'll all exactly fit in each
 other, forced by these tight constraints.
 
-约束有时是"紧密的"，这意味着这些约束严格地限定了渲染框在定夺自身尺寸方面的空间（例如：当约束的最小宽度和最大宽度相同时，这种情况下，我们称这个约束有紧密宽度），这方面的主要例子是 App Widget，它是 [`RenderView`]({{site.api}}/flutter/rendering/RenderView-class.html) 类里面的一个 widget ：由应用程序的 [`build`]({{site.api}}/flutter/widgets/State/build.html) 函数返回的子 widget 渲染框被指定了一个约束，该约束强制 App Widget 精确填充应用程序的内容区域(通常是整个屏幕)。Flutter 中的许多渲染框，特别是那些只包含单个 widget 的渲染框，都会将自身的约束传递给他们的子级 widget 。这意味着如果您在应用程序渲染树的根部嵌套了一些渲染框，这些框将会在受到约束的影响下相互适应彼此。
+约束有时是"紧密的"，这意味着这些约束严格地限定了渲染框在定夺自身尺寸方面的空间（例如：当约束的最小宽度和最大宽度相同时，这种情况下，我们称这个约束有紧密宽度），这方面的主要例子是 App Widget，它是 [`RenderView`]({{site.api}}/flutter/rendering/RenderView-class.html) 类里面的一个 widget: 由应用程序的 [`build`]({{site.api}}/flutter/widgets/State/build.html) 函数返回的子 widget 渲染框被指定了一个约束，该约束强制 App Widget 精确填充应用程序的内容区域(通常是整个屏幕)。Flutter 中的许多渲染框，特别是那些只包含单个 widget 的渲染框，都会将自身的约束传递给他们的子级 widget。这意味着如果您在应用程序渲染树的根部嵌套了一些渲染框，这些框将会在受到约束的影响下相互适应彼此。
 
 Some boxes _loosen_ the constraints, meaning the maximum is maintained
 but the minimum is removed. For example,
@@ -75,7 +80,7 @@ but the minimum is removed. For example,
 Unbounded constraints
 ---------------------
 
-  无边界约束
+无边界约束
 ---------------------
 
 In certain situations, the constraint that is given to a box is
@@ -145,4 +150,4 @@ In the _cross_ direction, i.e. in their width for
 (horizontal flex), they must never be unbounded,
 otherwise they would not be able to reasonably align their children.
 
-在交叉方向上，如 [`Column`]({{site.api}}/flutter/widgets/Column-class.html) (垂直的 flex )的宽度和 [`Row`]({{site.api}}/flutter/widgets/Row-class.html) (水平的 flex )的高度，它们必将不能是无界的，否则它们将无法合理地对齐它们的子 widget 。
+在交叉方向上，如 [`Column`]({{site.api}}/flutter/widgets/Column-class.html)（垂直的 flex）的宽度和 [`Row`]({{site.api}}/flutter/widgets/Row-class.html)（水平的 flex）的高度，它们必将不能是无界的，否则它们将无法合理地对齐它们的子 widget。

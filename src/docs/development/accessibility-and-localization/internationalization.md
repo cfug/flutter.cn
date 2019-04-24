@@ -47,8 +47,8 @@ can also be internationalized using the same classes and logic.
 By default, Flutter only provides US English localizations. To add
 support for other languages, an application must specify additional
 MaterialApp properties, and include a separate package called
-`flutter_localizations`.  As of May 2018, this package supports 24
-languages.
+`flutter_localizations`.  As of April 2019, this package supports about
+52 languages.
 
 To use flutter_localizations, add the package as a dependency to your
 `pubspec.yaml` file:
@@ -74,8 +74,9 @@ MaterialApp(
    GlobalWidgetsLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale('en', 'US'), // English
-    const Locale('he', 'IL'), // Hebrew
+    const Locale('en'), // English
+    const Locale('he'), // Hebrew
+    const Locale('zh'), // Chinese
     // ... other locales the app supports
   ],
   // ...
@@ -188,7 +189,9 @@ different delegate of the same base type is specified with the app's
 
 The flutter_localizations package includes multi-language
 implementations of the localizations interfaces called
-GlobalMaterialLocalizations and GlobalWidgetsLocalizations.
+[GlobalMaterialLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html)
+and 
+[GlobalWidgetsLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html).
 International apps must specify localization delegates for
 these classes as described in [Setting up an internationalized
 app.](#setting-up)
@@ -203,8 +206,9 @@ MaterialApp(
    GlobalWidgetsLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale('en', 'US'), // English
-    const Locale('he', 'IL'), // Hebrew
+    const Locale('en'), // English
+    const Locale('he'), // Hebrew
+    const Locale('zh'), // Chinese
     // ... other locales the app supports
   ],
   // ...
@@ -216,7 +220,7 @@ of the corresponding classes. For example,
 `GlobalMaterialLocalizations.delegate` is a LocalizationsDelegate
 that produces an instance of GlobalMaterialLocalizations.
 
-As of May 2018, the global localization classes support [about 24
+As of April 2019, the global localization classes support [about 52
 languages.]({{site.github}}/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)
 
 <a name="defining-class"></a>
@@ -278,7 +282,7 @@ In this case that would just be the DemoLocalizations class.
 <a name="specifying-supportedlocales"></a>
 ## Specifying the app's supported&shy;Locales parameter
 
-Although Flutter's Material Components library includes support for about 16
+Although Flutter's flutter_localizations library includes support for about 52
 languages, only English language translations are available by default.
 It's up to the developer to decide exactly which languages
 to support, since it wouldn't make sense for the toolkit
@@ -381,6 +385,94 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
   @override
   bool shouldReload(DemoLocalizationsDelegate old) => false;
 }
+{% endprettify %}
+
+<a name="adding-language"></a>
+## Adding support for a new language
+
+An app that needs to support a language that's not included in
+[GlobalMaterialLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html)
+has to do some extra work: it must provide about 70 translations
+("localizations") for words or phrases.
+
+As an example, we'll show how to add support for the Belarusan
+language.
+
+A new GlobalMaterialLocalizations subclass defines the
+localizations that the Material library depends on.
+A new LocalizationsDelegate subclass, which serves
+as factory for the GlobalMaterialLocalizations subclass, 
+must also be defined.
+
+Here's [the source code for a complete example](
+{{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart), 
+less the actual Belarusan translations, of an app that includes support for a new language.
+
+The locale-specific GlobalMaterialLocalizations subclass is called
+`BeMaterialLocalizations`, and the LocalizationsDelegate subclass is
+`_BeMaterialLocalizationsDelegate`. The value of
+`BeMaterialLocalizations.delegate` is an instance of the delegate, and
+it's all that's needed by an app that uses these localizations.
+
+The delegate class includes basic date and number format
+localizations. All of the other localizations are defined by String
+valued property getters in BeMaterialLocalizations, like this:
+
+{% prettify dart %}
+@override
+String get backButtonTooltip => r'Back';
+
+@override
+String get cancelButtonLabel => r'CANCEL';
+
+@override
+String get closeButtonLabel => r'CLOSE';
+
+// etc..
+{% endprettify %}
+
+These are the English translations of course. To complete the job you 
+need to change the return value of each getter to an appropriate 
+Belarusan string.
+
+The getters return "raw" Dart strings that have an r prefix, like
+`r'About $applicationName'`, because sometimes the strings contain
+variables with a `$` prefix. The variables are expanded by parameterized 
+localization methods: 
+{% prettify dart %}
+@override
+String get aboutListTileTitleRaw => r'About $applicationName';
+
+@override
+String aboutListTileTitle(String applicationName) {
+  final String text = aboutListTileTitleRaw;
+  return text.replaceFirst(r'$applicationName', applicationName);
+}
+{% endprettify %}
+
+For more information about localization strings, see the 
+[flutter_localizations README](
+{{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md).
+
+Once you've implemented your language-specific subclasses of 
+GlobalMaterialLocalizations and LocalizationsDelegate, you just 
+need to add the language and a delegate instance to your app. 
+Here's some code that sets the app's language to Belarusan and 
+adds the BeMaterialLocalizations delegate instance to the app's
+localizationsDelegates list:
+
+{% prettify dart %}
+MaterialApp(
+  localizationsDelegates: [
+    GlobalWidgetsLocalizations.delegate,
+    GlobalMaterialLocalizations.delegate,
+    BeMaterialLocalizations.delegate,
+  ],
+  supportedLocales: [
+    const Locale('be', 'BY')
+  ],
+  home: ...
+)
 {% endprettify %}
 
 <a name="dart-tools"></a>

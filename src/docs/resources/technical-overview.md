@@ -140,7 +140,7 @@ You can respond to events, like user interaction, by telling the framework to
 replace a widget in the hierarchy with another widget.  The framework then
 compares the new and old widgets and efficiently updates the user interface.
 
-你可以通过告诉框架将层次结构中的一个 widget 替换为另一个，以此响应事件，如用户交互。框架将会对比新旧 widget 并及时更新用户界面。
+你可以通过告诉框架将层次结构中的一个 widget 替换为另一个来响应事件，如用户交互。框架将会对比新旧 widget 并及时更新用户界面。
 
 #### Composition > inheritance
 
@@ -170,7 +170,7 @@ Widgets 本身往往是由许多小的、具有单一用途的 widget 组成，�
 The class hierarchy is shallow and broad to maximize the possible number of
 combinations.
 
-类层次结构在最大化可能的组合数上是浅而广的。
+类层次结构是浅而广的，以支持尽可能多的组合。
 
 <object type="image/svg+xml" data="/images/whatisflutter/diagram-widgetclass.svg" style="width: 100%; height: 100%;"></object>
 

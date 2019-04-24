@@ -24,6 +24,8 @@
           permalink: /docs/get-started/flutter-for/web-devs
         - title: 给 Xamarin.Forms 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/xamarin-forms-devs
+        - title: 声明式 UI 介绍
+          permalink: /docs/get-started/flutter-for/declarative
     - title: Dart 语言概览
       permalink: https://www.dartlang.org/guides/language
 
@@ -191,6 +193,8 @@
       permalink: /docs/resources/bootstrap-into-dart
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
+    - title: 平台行为差异和适配
+      permalink: /docs/resources/platform-adaptations
     - title: 技术概览
       permalink: /docs/resources/technical-overview
     # - title: Flutter best practices # TODO

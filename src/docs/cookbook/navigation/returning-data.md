@@ -16,7 +16,7 @@ we push a new screen that presents two options to a user. When the user taps on
 an option, we'll want to inform our first screen of the user's selection so it
 can act on that information!
 
-在某些场景，我们需要在回退到上一屏的时候，同时返回一些数据。比如，我们跳转到新的一屏，有两个选项让用户选择，当用户点击某个选项后会返回到第一屏，同时在第一屏可以知道用户选择的信息。
+在某些场景下，我们需要在回退到上一屏时同时返回一些数据。比如，我们跳转到新的一屏，有两个选项让用户选择，当用户点击某个选项后会返回到第一屏，同时在第一屏可以知道用户选择的信息。
 
 How can we achieve this? Using
 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)!

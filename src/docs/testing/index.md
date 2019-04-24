@@ -152,7 +152,7 @@ please see the following:
 
 * [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
   
-    [Flutter 中的 Codemagic 持续集成/持续交付](https://blog.codemagic.io/getting-started-with-codemagic/)
+  [Flutter 中的 Codemagic 持续集成/持续交付](https://blog.codemagic.io/getting-started-with-codemagic/)
 
 * [Flutter CI/CD with Bitrise](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
   

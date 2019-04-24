@@ -20,7 +20,7 @@ Automated testing falls into a few categories:
 - A [_widget test_](#widget-tests) (in other UI frameworks referred to as _component test_) tests
   a single widget. 
 
-    [_widget 测试_](#widget-tests)（在其他 UI 框架中指 _组件测试_）测试单一的 widget 。
+  [_Widget 测试_](#widget-tests)（在其他 UI 框架中指 _组件测试_）测试单一的 widget 。
 
 - An [_integration test_](#integration-tests)
   tests a complete app or a large part of an app.

@@ -68,7 +68,7 @@ class Todo {
 
 Second, we'll want to display a list of Todos. In this example, we'll generate
 20 todos and show them using a ListView. For more information on working with
-Lists, please see the [`Basic List`](/docs/cookbook/lists/basic-list/) recipe.
+Lists, please see the [`Basic List`](/docs/cookbook/lists/basic-list) recipe.
 
 第二步，我们需要显示一个待办事项列表，生成 20 条待办事项并用 `ListView` 显示。如果你想了解更多关于列表显示的内容，请阅读文档 [`基础列表`](/docs/cookbook/lists/basic-list)。
 

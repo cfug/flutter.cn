@@ -1570,7 +1570,7 @@ cell for each index path, and the size of the cells.
 
 在 iOS 里，你可能使用 `UITableView` 或者 `UICollectionView` 来展示一个列表。而在 Flutter 里，
 你可以使用 `ListView` 来达到类似的实现。
-在 iOS 中，你通过 delegate 方法���确定显示的行数，相应位置的 cell，以及 cell 的尺寸。
+在 iOS 中，你通过 delegate 方法来确定显示的行数，相应位置的 cell，以及 cell 的尺寸。
 
 Due to Flutter’s immutable widget pattern, you pass a list of widgets to your
 `ListView`, and Flutter takes care of making sure that scrolling is fast

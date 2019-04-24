@@ -25,7 +25,7 @@ Automated testing falls into a few categories:
 - An [_integration test_](#integration-tests)
   tests a complete app or a large part of an app.
 
-    [_集成测试_](#integration-tests) 测试一个完整的应用程序或者一个应用程序的大部分功能。
+  [_集成测试_](#integration-tests) 测试一个完整的应用程序或者一个应用程序的大部分功能。
   
 Generally speaking, a well-tested app has many unit and widget tests, tracked by
 [code coverage](https://en.wikipedia.org/wiki/Code_coverage), plus enough

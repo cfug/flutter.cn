@@ -224,7 +224,7 @@ to do something with the information that's returned!
 In this case, we'll show a Snackbar displaying the result. To do so, we'll
 update the `_navigateAndDisplaySelection` method in our `SelectionButton`.
 
-在本例中，我们用一个 snackbar 显示结果， 我们来更新 `SelectionButton` 类中的 `_navigateAndDisplaySelection` 方法。
+在本例中，我们用一个 snackbar 显示结果，我们来更新 `SelectionButton` 类中的 `_navigateAndDisplaySelection` 方法。
 
 <!-- skip -->
 ```dart

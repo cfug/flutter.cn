@@ -219,7 +219,7 @@ RaisedButton(
 Now that we're launching a selection screen and awaiting the result, we'll want
 to do something with the information that's returned!
 
-现在，我们跳转到选择界面并等待返回结果， 当结果返回时我们可以做些事情。
+现在，我们跳转到选择界面并等待返回结果，当结果返回时我们可以做些事情。
 
 In this case, we'll show a Snackbar displaying the result. To do so, we'll
 update the `_navigateAndDisplaySelection` method in our `SelectionButton`.

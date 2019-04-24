@@ -77,7 +77,7 @@ and interacts as expected. Testing a widget involves multiple classes and
 requires a test environment that provides the appropriate widget lifecycle
 context. 
 
-_widget 测试_（在其他 UI 框架中指 _组件测试_）测试单一的 widget 。widget 测试的目标是验证 widget 的 UI 表现和交互行为是否符合预期。测试一个 widget 涉及多个类，并且测试环境需要提供具有 widget 生命周期的上下文。
+_Widget 测试_（在其他 UI 框架中指 _组件测试_）是用来测试单一的 widget，widget 测试的目标是验证 widget 的 UI 表现和交互行为是否符合预期。测试一个 widget 涉及多个类，并且测试环境需要提供具有 widget 生命周期的上下文。
 
 For example, the Widget being tested should be able to receive and 
 respond to user actions and events, perform layout, and instantiate child 

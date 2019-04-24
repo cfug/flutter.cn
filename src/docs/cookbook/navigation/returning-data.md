@@ -214,7 +214,7 @@ RaisedButton(
 
 ## 5. Show a snackbar on the home screen with the selection
 
-## 5. 在主屏界面显示 snackbar ，展示选中的项目
+## 5. 在主屏界面显示一个 snackbar，展示选中的项目
 
 Now that we're launching a selection screen and awaiting the result, we'll want
 to do something with the information that's returned!

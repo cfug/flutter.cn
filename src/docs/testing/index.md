@@ -7,7 +7,7 @@ The more features your app has, the harder it is to test manually. Automated
 tests help ensure that your app performs correctly before you publish it, while
 retaining your feature and bug fix velocity.
 
-通常一个应用的功能越多，手工测试就越困难。自动化测试有助于我们的应用在发布之前保持运行的稳定性和功能的完整性，并且可以快速的修复问题。
+通常一个应用的功能越多，手工测试就越困难。自动化测试在发布之前运行，有助于保证我们应用的稳定性和功能的完整性，并且可以快速修复问题。
 
 Automated testing falls into a few categories:
 

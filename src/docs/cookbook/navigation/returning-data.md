@@ -175,7 +175,7 @@ order to return data to the first screen, we'll need to use the
 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)
 method.
 
-接下来我们来更新两个按钮的 `onPressed` 回调函数， 使用 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html) 回退界面并返回数据给主屏界面。
+接下来我们来更新两个按钮的 `onPressed` 回调函数，使用 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html) 回退界面并返回数据给主屏界面。
 
 `Navigator.pop` accepts an optional second argument called `result`. If we
 provide a result, it will be returned to the `Future` in our SelectionButton!

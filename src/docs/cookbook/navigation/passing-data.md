@@ -154,7 +154,7 @@ With our `DetailScreen` in place, we're ready to perform the Navigation! In our
 case, we'll want to Navigate to the `DetailScreen` when a user taps on a Todo in
 our List. When we do so, we'll also want to pass the Todo to the `DetailScreen`.
 
-上面写完了 `DetailScreen` ， 现在该执行界面跳转啦！ 我们想让用户在点击列表中的某个待办事项时跳转到 `DetailScreen` 界面，同时能传递点击的这条代办事项对象 (`Todo` 对象) 。
+上面写完了 `DetailScreen` ，现在该执行界面跳转啦！我们想让用户在点击列表中的某个待办事项时跳转到 `DetailScreen` 界面，同时能传递点击的这条代办事项对象（`Todo` 对象） 。
 
 To achieve this, we'll write an
 [`onTap`]({{site.api}}/flutter/material/ListTile/onTap.html)

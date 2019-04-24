@@ -121,7 +121,7 @@ Now, we'll need to build a selection screen! It will contain two buttons. When
 a user taps on a button, it should close the selection screen and let the home
 screen know which button was tapped!
 
-现在来构建选择界面， 它包含两个按钮，当任意一个按钮被点击的时候，关闭选择页面回退到主屏界面，并让主屏界面知道哪个按钮被点击了。
+现在来构建选择界面，它包含两个按钮，当任意一个按钮被点击的时候，关闭选择页面回退到主屏界面，并让主屏界面知道哪个按钮被点击了。
 
 For now, we'll define the UI, and figure out how to return data in the next
 step.

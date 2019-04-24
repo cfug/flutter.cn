@@ -21,7 +21,7 @@ Remember: Screens are Just Widgets&trade;. In this example, we'll create a List
 of Todos. When a todo is tapped on, we'll navigate to a new screen (Widget) that
 displays information about the todo.
 
-还记得么，某个全屏的界面仅仅是个 Widget。 在这个例子中，我们会创建一个待办事项列表， 当某个事项被点击的时候，会跳转到新的一屏 (是个 Widget) ，在新的一屏显示待办事项的详细信息。
+还记得么，全屏的界面也只是 Widget。在这个例子中，我们会创建一个待办事项列表， 当某个事项被点击的时候，会跳转到新的一屏 (Widget)，在新的一屏显示待办事项的详细信息。
 
 ## Directions
 

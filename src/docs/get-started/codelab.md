@@ -143,7 +143,8 @@ The animated GIF shows how the app works at the completion of part 1.
 <?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
 
 Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter app.](/docs/get-started/test-drive#create-app)
+[Getting Started with your first Flutter
+app.](/docs/get-started/test-drive#create-app)
 Name the project **startup_namer** (instead of _myapp_).
 
 按照 [这个指南](/docs/get-started/test-drive#create-app) 中所描述的步骤，
@@ -526,7 +527,7 @@ a child inside the existing `MyApp` stateless widget.
     ```dart
       class RandomWords extends StatefulWidget {
         @override
-        RandomWordsState createState() => new RandomWordsState();
+        RandomWordsState createState() => RandomWordsState();
       }
     ```
 

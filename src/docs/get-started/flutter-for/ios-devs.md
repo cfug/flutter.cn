@@ -35,6 +35,11 @@ everything to use Flutter.
 非 UI 层面的任务，它通过插件机制来和 iOS（Android）系统进行通信。如果你很精通 iOS 开
 发，使用 Flutter 并不需要完全从头开始。
 
+Flutter also already makes a number of adaptations in the framework for you 
+when running on iOS. For a list, see [Platform adaptations](/docs/resources/platform-adaptations).
+
+Flutter 框架针对 iOS 平台做了一些适配，在 [平台行为差异和适配](/docs/resources/platform-adaptations) 里可以了解更多。
+
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
@@ -642,6 +647,7 @@ Flutter 中也有类似的实现，使用 `Navigator` 和 `Routes`。一个 `Rou
 To navigate between pages, you have a couple options:
 想要在不同页面间跳转，你有两个选择：
 
+<<<<<<< HEAD
 * Specify a `Map` of route names. (MaterialApp)
   
   构建由 route 名称组成的 `Map`（MaterialApp）
@@ -651,12 +657,16 @@ To navigate between pages, you have a couple options:
   直接跳转到一个 route（WidgetApp）
 
 The following example builds a `Map`.
+=======
+* Specify a `Map` of route names.
+* Directly navigate to a route.
+>>>>>>> 63b2723157e3e26c37ac156ed74f5dca7fb9992d
 
 下面的示例构建了一个 `Map`：
 
 {% prettify dart %}
 void main() {
-  runApp(MaterialApp(
+  runApp(CupertinoApp(
     home: MyAppHome(), // becomes the route named '/'
     routes: <String, WidgetBuilder> {
       '/a': (BuildContext context) => MyPage(title: 'page A'),
@@ -1560,7 +1570,7 @@ cell for each index path, and the size of the cells.
 
 在 iOS 里，你可能使用 `UITableView` 或者 `UICollectionView` 来展示一个列表。而在 Flutter 里，
 你可以使用 `ListView` 来达到类似的实现。
-在 iOS 中，你通过 delegate 方法来确定显示的行数，相应位置的 cell，以及 cell 的尺寸。
+在 iOS 中，你通过 delegate 方法���确定显示的行数，相应位置的 cell，以及 cell 的尺寸。
 
 Due to Flutter’s immutable widget pattern, you pass a list of widgets to your
 `ListView`, and Flutter takes care of making sure that scrolling is fast

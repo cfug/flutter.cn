@@ -21,7 +21,7 @@ can act on that information!
 How can we achieve this? Using
 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)!
 
-要怎么做呢？ 使用 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html) ！
+这里我们要怎么做呢？ 使用 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html) ！
 
 ## Directions
 

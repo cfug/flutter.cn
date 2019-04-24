@@ -1,7 +1,10 @@
 ---
 title: Introduction to declarative UI
+title: 声明式 UI 介绍
 short-title: Declarative UI
+short-title: 声明式 UI
 description: Explains the difference between a declarative and imperative programming style.
+description: 描述和解释声明式和命令式编程思想的差异。
 ---
 
 _This introduction describes the conceptual difference between the

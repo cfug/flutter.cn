@@ -162,7 +162,7 @@ callback for our `ListTile` Widget. Within our `onTap` callback, we'll once
 again employ the [`Navigator.push`]({{site.api}}/flutter/widgets/Navigator/push.html)
 method.
 
-想要实现这些， 我们来编写 `ListTile` widget 的 `onTap` 回调函数， 继续使用 [`Navigator.push`]({{site.api}}/flutter/widgets/Navigator/push.html) 方法。
+想要实现这些，我们来编写 `ListTile` widget 的 `onTap` 回调函数，继续使用 [`Navigator.push`]({{site.api}}/flutter/widgets/Navigator/push.html) 方法。
 
 <!-- skip -->
 ```dart

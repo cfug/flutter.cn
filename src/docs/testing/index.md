@@ -139,7 +139,7 @@ please see the following:
 * [Test Flutter apps on
   Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
 
-    [使用 Travis 测试 Flutter 应用]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
+  [使用 Travis 测试 Flutter 应用]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
 
 * [GitLab Continuous Integration
   (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).

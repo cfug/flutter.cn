@@ -50,7 +50,7 @@ displays information about the todo.
 First, we'll need a simple way to represent Todos. For this example, we'll
 create a class that contains two pieces of data: the title and description.
 
-首先， 我们需要一个简单的方式来描述待办事项。 我们创建一个类叫做 `Todo`， 包含 `title` 和`description` 两个成员变量。
+首先，我们需要一个简单的方式来描述待办事项。我们创建一个类叫做 `Todo`，包含 `title` 和`description` 两个成员变量。
 
 <!-- skip -->
 ```dart

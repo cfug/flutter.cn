@@ -33,7 +33,7 @@ integration tests to cover all the important use cases. This advice is based on
 the fact that there are trade-offs between different kinds of testing, seen
 below.
 
-一般来说，在自动化测试方面做的比较好的应用程序会有许多单元测试和 widget 测试，并且使用[代码覆盖率](https://en.wikipedia.org/wiki/Code_coverage)进行追踪，还会有足够的集成测试来覆盖所有的重要使用场景。这样做是因为不同类型的测试之间需要权衡，如下所示。
+一般来说，在自动化测试方面做的比较好的应用程序会有许多单元测试和 widget 测试，并且使用 [代码覆盖率](https://en.wikipedia.org/wiki/Code_coverage) 进行追踪，还会有足够的集成测试来覆盖所有的重要使用场景。这样做是因为不同类型的测试之间需要权衡，如下所示：
 
 |                      | <t>Unit</t><t>单元测试</t> | <t>Widget</t><t>Widget 测试</t> | <t>Integration</t><t>集成测试</t> |
 |----------------------|--------|--------|-------------|

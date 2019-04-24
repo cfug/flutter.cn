@@ -156,4 +156,4 @@ please see the following:
 
 * [Flutter CI/CD with Bitrise](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
   
-    [使用 Bitrise 进行 Flutter 持续集成/持续交付](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
+  [使用 Bitrise 进行 Flutter 持续集成/持续交付](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)

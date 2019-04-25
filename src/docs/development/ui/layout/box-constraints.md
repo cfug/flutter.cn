@@ -6,10 +6,10 @@ short-title: 边界约束 (Box constraints)
 ---
 
 {{site.alert.note}}
-  You may be directed to this page if the framework detects a problem involving
+ You may be directed to this page if the framework detects a problem involving
   box constraints.
 
-  你被引导到本页面，是因为 Flutter 框架检测到你可能遇到涉及边界约束的问题。 
+  被引导到本页面，是因为 Flutter 框架检测到你可能遇到涉及边界约束的问题。 
 
 {{site.alert.end}}
 

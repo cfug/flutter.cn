@@ -14,7 +14,7 @@ next:
 In this recipe, we'll see how to retrieve the text a user has typed into a text
 field.
 
-在这个章节中，我们将会介绍如何获取文本框的输入值。
+这个章节讲解的是如何获取文本框的输入值。
 
 ## Directions
 

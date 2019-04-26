@@ -85,7 +85,7 @@ together throughout this recipe.
 
 ### 1. Add the `flutter_test` dependency
 
-###    添加一个 flutter_test 依赖
+###    添加一个 `flutter_test` 依赖
 
 Before we can begin writing tests, we'll need to include the `flutter_test`
 dependency in the `dev_dependencies` section of our `pubspec.yaml` file. If
@@ -139,7 +139,7 @@ class MyWidget extends StatelessWidget {
 
 ### 3. Create a `testWidgets` test
 
-###    创建一个 testWidgets 测试方法
+###    创建一个 `testWidgets` 测试方法
 
 Now that we have a Widget to test, we can begin writing our first test! To get
 started, we'll use the

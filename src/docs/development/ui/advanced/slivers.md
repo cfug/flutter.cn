@@ -17,7 +17,7 @@ DeMystified]({{site.flutter-medium}}/slivers-demystified-6ff68ab0296f),
 an article on Medium's [Flutter Publication]({{site.flutter-medium}}).
 
 有关在 Flutter 中实现滑动效果的信息，包括 
-[SliverList]({{site.api}}/flutter/widgets/SliverList-class.html)，
+[SliverList]({{site.api}}/flutter/widgets/SliverList-class.html)、
 [SliverGrid]({{site.api}}/flutter/widgets/SliverGrid-class.html) 和
 [SliverAppBar]({{site.api}}/flutter/material/SliverAppBar-class.html)，可以详见 Medium [Flutter Publication]({{site.flutter-medium}}) 中的文章 —— [Slivers,DeMystified]({{site.flutter-medium}}/slivers-demystified-6ff68ab0296f)。
 

@@ -48,19 +48,19 @@ $ flutter create --template=package hello
 * `lib/hello.dart`：
    - package 的 Dart 实现代码。
 * `test/hello_test.dart`：
-   - package 的[单元测试](/docs/testing#unit-testing)。
+   - package 的 [单元测试](/docs/testing#unit-testing)。
 
 ### 第二步：实现 package
 
 对于纯粹的 Dart package，只要在 `lib/<package name>.dart` 文件中添加功能实现，或在 `lib`
 目录中的多个文件中添加功能实现。
 
-如果要对 package 进行测试，在 `test` 目录下添加[单元测试](/docs/testing#unit-testing)。
+如果要对 package 进行测试，在 `test` 目录下添加 [单元测试](/docs/testing#unit-testing)。
 
 关于如何组织 package 内容的更多详细信息，请参考 [Dart library
 package]({{site.dart-site}}/guides/libraries/create-library-packages) 文档。
 
-## 开发插件 packages {#plugin}
+## 开发插件 package {#plugin}
 
 如果想要开发一个调用特定平台 API 的 package，你需要开发一个插件 packgae。插件 packgae
 是 Dart package 的特别版本，除了上述内容外，它还包含为 Android（使用 Java 或 Kotlin）、
@@ -185,7 +185,7 @@ channel](/docs/development/platform-integration/platform-channels) 完成的。
 关于如何编写 API 文档的建议，请参阅 [Effective Dart:
 Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation)。
 
-## 提交 packages {#publish}
+## 提交 package {#publish}
 
 一旦完成了 package 的实现，你便可以将其提交到 [Pub site]({{site.pub}})
 上，以便其他开发者可以轻松地使用它。
@@ -205,7 +205,7 @@ $ flutter packages pub publish --dry-run
 $ flutter packages pub publish
 ```
 
-有关提交的详细信息，请查阅关于 Pub 站点的[提交文档]({{site.dart-site}}/tools/pub/publishing)。
+有关提交的详细信息，请查阅关于 Pub 站点的 [提交文档]({{site.dart-site}}/tools/pub/publishing)。
 
 ## Package 依赖处理 {#dependencies}
 
@@ -255,7 +255,7 @@ Pod::Spec.new do |s|
 
 假设你想在 `hello` package 中使用 `some_package` 和
 `other_package`，且它们依赖于不同版本的 `url_launcher`。于是我们便有了潜在的冲突。避免这种情况的最好方法是 package
-的作者在指定依赖项时使用[版本范围]({{site.dart-site}}/tools/pub/dependencies#version-constraints)而非特定版本。
+的作者在指定依赖项时使用 [版本范围]({{site.dart-site}}/tools/pub/dependencies#version-constraints) 而非特定版本。
 
 ```yaml
 dependencies:

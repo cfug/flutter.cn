@@ -48,7 +48,7 @@ $ flutter create --template=package hello
 * `lib/hello.dart`：
    - package 的 Dart 实现代码。
 * `test/hello_test.dart`：
-   - package 的 [单元测试](/docs/testing#unit-testing)。
+   - package 的[单元测试](/docs/testing#unit-testing)。
 
 ### 第二步：实现 package
 
@@ -60,7 +60,7 @@ $ flutter create --template=package hello
 关于如何组织 package 内容的更多详细信息，请参考 [Dart library
 package]({{site.dart-site}}/guides/libraries/create-library-packages) 文档。
 
-## 开发插件 package {#plugin}
+## 开发插件 packages {#plugin}
 
 如果想要开发一个调用特定平台 API 的 package，你需要开发一个插件 packgae。插件 packgae
 是 Dart package 的特别版本，除了上述内容外，它还包含为 Android（使用 Java 或 Kotlin）、
@@ -104,24 +104,23 @@ $ flutter create --template=plugin -i swift -a kotlin hello
 
 #### 步骤 2a：定义 package API（.dart）
 
-插件 package 的 API 在 Dart 代码中定义。使用你钟爱的 [Flutter 编辑器](/docs/get-started/editor)
-打开 `hello/` 主目录. 并找到 `lib/hello.dart` 文件。
+插件 package 的 API 在 Dart 代码中定义。使用你钟爱的 [Flutter 编辑器](/docs/get-started/editor)，
+打开 `hello/` 主目录，并找到 `lib/hello.dart` 文件。
 
 #### 步骤 2b：添加 Android 平台代码（.java/.kt）
 
 我们建议你使用 Android Studio 来编辑 Android 代码。
 
 使用 Android Studio 编辑 Android 平台代码之前，首先确保代码至少被构建过一次（即从
-IDE / 编辑器执行示例程序，或在终端中执行以下命令：`cd hello/example; flutter build apk`）。
+IDE/编辑器执行示例程序，或在终端中执行以下命令：`cd hello/example; flutter build apk`）。
 
 接下来，
 
 1. 启动 Android Studio
-1. 在 “Welcome to Android Studio” 对话框中选择 “Import project”，或在菜单中选择
-“File > New > Import Project...”，
+1. 在“Welcome to Android Studio”对话框中选择“Import project”，或在菜单中选择“File > New > Import Project...”，
 然后选择 `hello/example/android/build.gradle` 文件。
-1. 在 “Gradle Sync” 对话框中，选择 ”OK“。
-1. 在 “Android Gradle Plugin Update” 对话框中，选择 “Don't remind me again
+1. 在“Gradle Sync”对话框中，选择“OK”。
+1. 在“Android Gradle Plugin Update”对话框中，选择“Don't remind me again
    for this project”。
 
 插件的 Android 平台代码位于
@@ -134,12 +133,12 @@ IDE / 编辑器执行示例程序，或在终端中执行以下命令：`cd hell
 我们建议你使用 Xcode 来编辑 iOS 代码。
 
 使用 Xcode 编辑 iOS 平台代码之前，首先确保代码至少被构建过一次（即从
-IDE / 编辑器执行示例程序，或在终端中执行以下命令：`cd hello/example; flutter build ios --no-codesign`）。
+IDE/编辑器执行示例程序，或在终端中执行以下命令：`cd hello/example; flutter build ios --no-codesign`）。
 
 下一步，
 
 1. 启动 Xcode
-1. 选择 “File > Open”， 然后选择 `hello/example/ios/Runner.xcworkspace` 文件。
+1. 选择“File > Open”， 然后选择 `hello/example/ios/Runner.xcworkspace` 文件。
 
 插件的 iOS 平台代码位于项目导航中的 `Pods/Development
 Pods/hello/Classes/`。
@@ -186,7 +185,7 @@ channel](/docs/development/platform-integration/platform-channels) 完成的。
 关于如何编写 API 文档的建议，请参阅 [Effective Dart:
 Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation)。
 
-## 提交 package {#publish}
+## 提交 packages {#publish}
 
 一旦完成了 package 的实现，你便可以将其提交到 [Pub site]({{site.pub}})
 上，以便其他开发者可以轻松地使用它。

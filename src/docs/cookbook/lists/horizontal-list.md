@@ -15,7 +15,7 @@ At times, you may want to create a List that scrolls horizontally rather than
 vertically. The [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
 Widget supports horizontal lists out of the box.
 
-有时，你可能想要创建一个水平而不是竖直滑动的列表。[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) Widget 支持水平列表。
+有时，你可能想要创建一个水平滑动（而不是竖直滑动）的列表。[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) Widget 本身就支持水平列表的创建。
 
 We'll use the standard `ListView` constructor, passing through a horizontal
 `scrollDirection`, which will override the default vertical direction.

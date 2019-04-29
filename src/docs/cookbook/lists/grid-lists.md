@@ -12,23 +12,44 @@ next:
 ---
 
 In some cases, you might want to display your items as a Grid rather than
+
+有时候，你可能希望以网格形式展示内容
+
 a normal list of items that come one after the next. For this task, we'll employ
+
+而不是以逐条展示内容的普通列表。对于本文的任务，我们将采用
+
 the [`GridView`]({{site.api}}/flutter/widgets/GridView-class.html) Widget.
 
+[`GridView`]({{site.api}}/flutter/widgets/GridView-class.html) Widget。
+
 The simplest way to get started using grids is by using the
+
+开始使用网格最简单的方式，就是通过使用
+
 [`GridView.count`]({{site.api}}/flutter/widgets/GridView/GridView.count.html)
+
+[`GridView.count`]({{site.api}}/flutter/widgets/GridView/GridView.count.html)
+
 constructor, because it allow us to specify how many rows or columns we'd like.
 
+构造方法，因为它允许我们指定有多少行多少列。
+
 In this example, we'll generate a List of 100 Widgets that display their
+
+在例子中，我们将创建一个有 100 个 Widget 的 List 来展示
+
 index in the list. This will help us visualize how `GridView`  works.
+
+他们的索引。这将帮助我们想象 `GridView` 是如何工作的。
 
 <!-- skip -->
 ```dart
 GridView.count(
-  // Create a grid with 2 columns. If you change the scrollDirection to
-  // horizontal, this would produce 2 rows.
+  // 创建一个两列的网格。如果你把 scrollDirection 改成了（Create a grid with 2 columns. If you change the scrollDirection to）
+  // horizontal ，这将会变成两行。（horizontal, this would produce 2 rows.）
   crossAxisCount: 2,
-  // Generate 100 Widgets that display their index in the List
+  // 创建 100 个展示在 List 中索引的 Widget（Generate 100 Widgets that display their index in the List）
   children: List.generate(100, (index) {
     return Center(
       child: Text(
@@ -41,6 +62,8 @@ GridView.count(
 ```
 
 ## Complete example
+
+## 完整示例
 
 ```dart
 import 'package:flutter/material.dart';
@@ -61,10 +84,10 @@ class MyApp extends StatelessWidget {
           title: Text(title),
         ),
         body: GridView.count(
-          // Create a grid with 2 columns. If you change the scrollDirection to
-          // horizontal, this would produce 2 rows.
+          // 创建一个两列的网格。如果你把 scrollDirection 改成了（Create a grid with 2 columns. If you change the scrollDirection to）
+          // horizontal ，这将会变成两行。（horizontal, this would produce 2 rows.）
           crossAxisCount: 2,
-          // Generate 100 Widgets that display their index in the List
+          // 创建 100 个展示在 List 中索引的 Widget（Generate 100 Widgets that display their index in the List）
           children: List.generate(100, (index) {
             return Center(
               child: Text(

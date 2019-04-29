@@ -288,8 +288,7 @@ where the Dart code lives.
   that describes how to display the widget in terms of other,
   lower level widgets.
 
-  一个 widget 的主要工作是提供一个 `build()` 方法来描述如何
-  根据其他较低级别的 widgets 来显示自己。
+  一个 widget 的主要工作是提供一个 `build()` 方法来描述如何根据其他较低级别的 widgets 来显示自己。
 
 
 * The body for this example consists of a `Center` widget containing
@@ -298,7 +297,7 @@ where the Dart code lives.
 
   本示例中的 body 的 widget 树中包含了一个 `Center` widget，
   Center widget 又包含一个 `Text` 子 widget，
-  Center widget 可以将其子 widget 树对其到屏幕中心。
+  Center widget 可以将其子 widget 树对齐到屏幕中心。
 
   
 ## Step 2: Use an external package

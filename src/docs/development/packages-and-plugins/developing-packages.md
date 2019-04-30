@@ -14,7 +14,7 @@ description: 如何编写和提交你的 Packages。
 Packages enable the creation of modular code that can be shared easily. A
 minimal package consists of:
 
-通过 Package 可以创建易于共享的模块化代码。一个最基本的 package 由以下内容构成：
+通过使用 packages （的模式）可以创建易于共享的模块化代码。一个最基本的 package 由以下内容构成：
 
 * A `pubspec.yaml` file: A metadata file that declares the package name,
   version, author, etc.
@@ -44,7 +44,7 @@ minimal package consists of:
 
 Packages can contain several kinds of content:
 
-Package 可以包含以下几种类别：
+Package 包含以下两种类别：
 
 * *Dart packages*: General packages written in Dart, for example the
   [`path`]({{site.pub}}/packages/path) package. Some of these may
@@ -52,7 +52,7 @@ Package 可以包含以下几种类别：
   Flutter framework, restricting their use to Flutter only, for example the
   [`fluro`]({{site.pub}}/packages/fluro) package.
 
-  Dart packages：用 Dart 编写的传统 package，比如
+  纯 Dart 库：用 Dart 编写的传统 package，比如
   [`path`]({{site.pub}}/packages/path)。其中一些可能包含 Flutter
   的特定功能，因此依赖于 Flutter 框架，其使用范围仅限于 Flutter，比如
   [`fluro`]({{site.pub}}/packages/fluro)。
@@ -62,14 +62,13 @@ Package 可以包含以下几种类别：
   Java or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
   the [`battery`]({{site.pub}}/packages/battery) plugin package.
 
-  原生插件 packages：包含使用 Dart 编写的 API，针对 Android（使用 Java 或 Kotlin）和/或
-  iOS（使用 ObjC 或 Swift）特定平台的实现。一个具体的例子是
-  [`battery`]({{site.pub}}/packages/battery)。
-
+  原生插件：使用 Dart 编写的，按需使用
+  Java 或 Kotlin、ObjC 或 Swift 分别在 Android 和/或 iOS 平台实现的 package。
+  一个具体的例子是 [`battery`]({{site.pub}}/packages/battery)。
 
 ## Developing Dart packages {#dart}
 
-## 开发 Dart packages {#dart}
+## 开发纯 Dart 库的 packages {#dart}
 
 ### Step 1: Create the package
 
@@ -77,7 +76,7 @@ Package 可以包含以下几种类别：
 
 To create a Dart package, use the `--template=package` flag with `flutter create`:
 
-想要创建 Dart package，请使用带有 `--template=package` 标志的 `flutter create` 命令：
+想要创建纯 Dart 库的 package，请使用带有 `--template=package` 标志的 `flutter create` 命令：
 
 ```terminal
 $ flutter create --template=package hello
@@ -90,16 +89,14 @@ specialized content:
 
 * `lib/hello.dart`:
    - The Dart code for the package.
-
-   `lib/hello.dart`：
+     
      package 的 Dart 实现代码。
 
 * `test/hello_test.dart`:
    - The [unit tests](/docs/testing#unit-testing) for the package.
-
-   `test/hello_test.dart`：
-     package 的 [单元测试](/docs/testing#unit-testing)。
-
+     
+     Package 的 [单元测试](/docs/testing#unit-testing)。
+     
 ### Step 2: Implement the package
 
 ### 第二步：实现 package
@@ -107,7 +104,7 @@ specialized content:
 For pure Dart packages, simply add the functionality inside the main
 `lib/<package name>.dart` file, or in several files in the `lib` directory.
 
-对于纯 Dart package，只要在 `lib/<package name>.dart` 文件中添加功能实现，或在 `lib`
+对于纯 Dart 库的 package，只要在 `lib/<package name>.dart` 文件中添加功能实现，或在 `lib`
 目录中的多个文件中添加功能实现。
 
 To test the package, add [unit tests](/docs/testing#unit-testing)
@@ -125,7 +122,7 @@ package]({{site.dart-site}}/guides/libraries/create-library-packages) 文档。
 
 ## Developing plugin packages {#plugin}
 
-## 开发插件 package {#plugin}
+## 开发原生插件类型的 packages {#plugin}
 
 If you want to develop a package that calls into platform-specific APIs, you
 need to develop a plugin package. A plugin package is a specialized version of a
@@ -135,11 +132,10 @@ iOS (Objective-C or Swift code), or for both. The API is connected to the
 platform-specific implementation(s) using [platform
 channels](/docs/development/platform-integration/platform-channels).
 
-如果想要开发一个调用特定平台 API 的 package，你需要开发一个插件 packgae。插件 packgae
-是 Dart package 的特别版本，除了上述内容外，它还包含为 Android（使用 Java 或 Kotlin）、
-iOS（使用 Objective-C 或 Swift）或两者编写的特定于平台的实现。API 使用 [platform
-channel](/docs/development/platform-integration/platform-channels)
-来关联到特定平台。
+如果想要开发一个调用特定平台 API 的 package，你需要开发一个原生插件 packgae。原生插件 packgae
+是 Dart package 的特别版本，除了要实现 Dart package 要实现的内容，还需要按需使用
+Java 或 Kotlin、ObjC 或 Swift 分别在 Android 和/或 iOS 平台实现，你可以使用 [platform
+channel](/docs/development/platform-integration/platform-channels) API 来实现特定平台的调用。
 
 ### Step 1: Create the package
 
@@ -147,7 +143,7 @@ channel](/docs/development/platform-integration/platform-channels)
 
 To create a plugin package, use the `--template=plugin` flag with `flutter create`.
 
-想要创建插件 package，请使用带有 `--template=plugin` 标志的 `flutter create` 命令。
+想要创建原生插件 package，请使用带有 `--template=plugin` 标志的 `flutter create` 命令。
 
 Use the `--org` option to specify your organization, using reverse domain name
 notation. This value is used in various package and bundle identifiers in the
@@ -166,26 +162,22 @@ specialized content:
 
 * `lib/hello.dart`:
    - The Dart API for the plugin.
-
-   `lib/hello.dart`：
+     
      Dart 插件 API 实现。
 
 * <code>android/src/main/java/com/example/&#8203;hello/HelloPlugin.java</code>:
    - The Android platform specific implementation of the plugin API.
-
-   <code>android/src/main/java/com/example/&#8203;hello/HelloPlugin.java</code>：
-     Android 平台插件 API 实现。
+     
+     Android 平台原生插件 API 实现。
 
 * `ios/Classes/HelloPlugin.m`:
    - The iOS platform specific implementation of the plugin API.
-
-   `ios/Classes/HelloPlugin.m`：
-     iOS 平台插件 API 实现。
+     
+     iOS 平台原生插件 API 实现。     
 
 * `example/`:
    - A Flutter app that depends on the plugin, and illustrates how to use it.
-
-   `example/`：
+   
      一个依赖于该插件并说明了如何使用它的 Flutter 应用。
 
 By default, the plugin project uses Objective-C for iOS code and
@@ -208,7 +200,7 @@ As a plugin package contains code for several platforms written in several
 programming languages, some specific steps are needed to ensure a smooth
 experience.
 
-由于插件 package 包含使用多种编程语言编写的多个平台代码，因此需要一些特定步骤来保证体验的流畅性。
+由于原生插件类型的 package 包含了使用多种编程语言编写的多个平台代码，因此需要一些特定步骤来保证体验的流畅性。
 
 #### Step 2a: Define the package API (.dart)
 
@@ -218,7 +210,7 @@ The API of the plugin package is defined in Dart code. Open the main `hello/`
 folder in your favorite [Flutter editor](/docs/get-started/editor). Locate the file
 `lib/hello.dart`.
 
-插件 package 的 API 在 Dart 代码中定义。使用你钟爱的 [Flutter 编辑器](/docs/get-started/editor)，
+原生插件类型 package 的 API 在 Dart 代码中要首先定义好，使用你钟爱的 [Flutter 编辑器](/docs/get-started/editor)，
 打开 `hello/` 主目录，并找到 `lib/hello.dart` 文件。
 
 #### Step 2b: Add Android platform code (.java/.kt)

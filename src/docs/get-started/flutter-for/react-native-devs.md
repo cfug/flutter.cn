@@ -34,22 +34,32 @@ Dart 学习起来非常简单而且有如下特性：
 
 * Provides an open-source, scalable programming language for building web,
   server, and mobile apps.
+
 * 它针对 web 服务和移动应用开发提供了一种开源的，可扩展的编程语言。
 * Provides an object-oriented, single inheritance language that uses a C-style
   syntax that is AOT-compiled into native.
+
 * 它提供了一种面向对象的单继承语言，使用 C 语言风格的语法并且可通过 AOT 编译为本地代码。
+
 * Transcompiles optionally into JavaScript.
+
 * 可转译为 JavaScript 代码。
+
 * Supports interfaces and abstract classes.
+
 * 支持接口和抽象类。
+
 A few examples of the differences between JavaScript and Dart are described
 below.
+
 下面的几个例子解释了 JavaScript 和 Dart 的区别。
 
 ### Entry point
+
 ### 切入点
 
 JavaScript doesn't have a pre-defined entry function—you define the entry point.
+
 JavaScript 并没有预定义的入口函数。
 ```js
 
@@ -61,6 +71,7 @@ function startHere() {
 ```
 In Dart, every app must have a top-level `main()` function that serves as the
 entry point to the app.
+
 在 Dart 里，每个应用程序必须有一个最顶级的 `main()` 函数，该函数作为应用程序的入口函数。
 
 <!-- skip -->
@@ -71,12 +82,15 @@ main() {
 ```
 
 Try it out in [DartPad]({{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1).
+
 可以在这里查看效果 [DartPad]({{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1)。
 
 ### Printing to the console
+
 ### 在控制台打印输出
 
 To print to the console in Dart, use `print()`.
+
 在 Dart 中如果需要在控制台进行输出，调用 `print()`。
 
 ```js
@@ -92,6 +106,7 @@ print('Hello world!');
 
 Try it out in
 [DartPad]({{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5).
+
 可以在这里查看效果 [DartPad]({{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5)。
 
 ### Variables
@@ -101,14 +116,17 @@ Dart is type safe—it uses a combination of static type checking and runtime
 checks to ensure that a variable’s value always matches the variable’s static
 type. Although types are mandatory, some type annotations are optional because
 Dart performs type inference.
-Dart 是类型安全的，它结合静态类型检查和运行时检查来保证变量的值总是和变量的静态类型相匹配。虽然类型是语法要求
+Dart 是类型安全的，它结合静态类型检查和运行时检查来保证变量的值总是和变量的静态类型相匹配。虽然类型是语法要求，有些类型标注也并不是必须要填的，因为 Dart 使用类型推断。
 
 #### Creating and assigning variables
+#### 创建变量并赋值
 
 In JavaScript, variables cannot be typed.
+在 JavaScript 中，变量是无法指定类型的。
 
 In [Dart]({{site.dart-site}}/dart-2), variables must either be explicitly
 typed or the type system must infer the proper type automatically.
+在 [Dart]({{site.dart-site}}/dart-2) 中，变量要么被显式定义类型，要么系统会自动判断变量的类型。
 
 ```js
 // JavaScript
@@ -126,16 +144,26 @@ var otherName = 'Dart'; // Inferred string.
 Try it out in
 [DartPad]({{site.dartpad}}/3f4625c16e05eec396d6046883739612).
 
+可以在这里查看效果 [DartPad]({{site.dartpad}}/3f4625c16e05eec396d6046883739612)。
+
 For more information, see [Dart's Type
 System]({{site.dart-site}}/guides/language/sound-dart).
 
+如果想了解更多相关信息，请转向该页面 [Dart's Type
+System]({{site.dart-site}}/guides/language/sound-dart)。
+
 #### Default value
 
+#### 默认值
+
 In JavaScript, uninitialized variables are `undefined`.
+在 JavaScript 中， 未初始化的变量是 'undefined'。
 
 In Dart, uninitialized variables have an initial value of `null`. Because
 numbers are objects in Dart, even uninitialized variables with numeric types
 have the value `null`.
+
+在 Dart 中，未初始化的变量会有一个初始值 `null`。因为数字在 Dart 是对象，甚至未初始化的数字类型的变量也会是 `null`。
 
 ```js
 // JavaScript
@@ -152,12 +180,20 @@ int x; // == null
 Try it out in
 [DartPad]({{site.dartpad}}/57ec21faa8b6fe2326ffd74e9781a2c7).
 
+可以在这里查看效果 [DartPad]({{site.dartpad}}/57ec21faa8b6fe2326ffd74e9781a2c7)。
+
+
 For more information, see the documentation on
 [variables]({{site.dart-site}}/guides/language/language-tour#variables).
 
+可以在这里查看效果 [variables]({{site.dart-site}}/guides/language/language-tour#variables)。
+
 ### Checking for null or zero
+### 检查 null　或者零值。
 
 In JavaScript, values of 1 or any non-null objects are treated as true.
+
+在 JavaScript 中，1 或者任何非空对象都相当于 true。
 
 ```js
 // JavaScript
@@ -171,6 +207,8 @@ if (!zero) {
 }
 ```
 In Dart, only the boolean value `true` is treated as true.
+
+在 Dart 中，只有布尔类型值 `true` 才是 true。
 
 <!-- skip -->
 ```dart
@@ -188,10 +226,15 @@ if (zero == 0) {
 Try it out in
 [DartPad]({{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6).
 
+可以在这里查看效果 [DartPad]({{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6)。
+
 ### Functions
+### 函数
 
 Dart and JavaScript functions are generally similar. The primary difference is
 the declaration.
+
+Dart 和 JavaScript 中的函数很相似。最大的区别是声明格式。
 
 ```js
 // JavaScript
@@ -215,19 +258,31 @@ bool fn() {
 Try it out in
 [DartPad]({{site.dartpad}}/5454e8bfadf3000179d19b9bc6be9918).
 
+可以在这里查看效果 [DartPad]({{site.dartpad}}/5454e8bfadf3000179d19b9bc6be9918)。
+
 For more information, see the documentation on
 [functions]({{site.dart-site}}/guides/language/language-tour#functions).
 
+如果想了解更多相关信息，请转向该页面 [functions]({{site.dart-site}}/guides/language/language-tour#functions)。
+
 ### Asynchronous programming
 
+### 异步编程
+
 #### Futures
+
+#### Futures##
 
 Like JavaScript, Dart supports single-threaded execution. In JavaScript,
 the Promise object represents the eventual completion (or failure)
 of an asynchronous operation and its resulting value.
 
+和 JavaScript 类似，Dart 支持单线程。在 JavaScript 中， Promise 对象代表异步操作的完成或者失败。
+
 Dart uses [`Future`]({{site.dart-site}}/tutorials/language/futures)
 objects to handle this.
+
+Dart 使用 [`Future`]({{site.dart-site}}/tutorials/language/futures) 对象来处理这个。
 
 ```js
 // JavaScript
@@ -258,15 +313,25 @@ _getIPAddress() {
 Try it out in
 [DartPad]({{site.dartpad}}/5a0017d09b6823d0248d965b93133e2e).
 
+可以在这里查看效果 [DartPad]({{site.dartpad}}/5a0017d09b6823d0248d965b93133e2e)。
+
 For more information, see the documentation on
 [Futures]({{site.dart-site}}/tutorials/language/futures).
 
+如果想了解更多相关信息，请参考 [Futures]({{site.dart-site}}/tutorials/language/futures) 的相关文档。
+
 #### `async` and `await`
+
+#### `async` 和 `await`
 
 The `async` function declaration defines an asynchronous function.
 
+`async` 函数声明定义了一个异步函数。
+
 In JavaScript, the `async` function returns a `Promise`. The `await` operator is
 used to wait for a `Promise`.
+
+在 JavaScript 中， `async` 函数返回一个 `Promise`。`await` 操作符用于等待 `Promise`。
 
 ```js
 // JavaScript
@@ -283,6 +348,8 @@ In Dart, an `async` function returns a `Future`, and the body of the function is
 scheduled for execution later. The `await` operator is used to wait for a
 `Future`.
 
+在 Dart 中，`async` 函数返回一个 `Future`，而函数体会在未来执行。`await` 操作符用于等待 `Future`。
+
 <!-- skip -->
 ```dart
 // Dart
@@ -297,14 +364,26 @@ _getIPAddress() async {
 Try it out in
 [DartPad]({{site.dartpad}}/04bb4334985107cddcd021322398c918).
 
+可以在这里查看效果 [DartPad]({{site.dartpad}}/04bb4334985107cddcd021322398c918)。
+
 For more information, see the documentation for [`async` and
 `await`]({{site.dart-site}}/guides/language/language-tour#asynchrony-support).
 
+如果想了解更多相关信息，请参考 [`async` and
+`await`]({{site.dart-site}}/guides/language/language-tour#asynchrony-support) 的相关文档。
+
 ## The basics
+
+## 基本知识##
+
 ### How do I create a Flutter app?
+
+### 如何创建一个 Flutter 应用？
 
 To create an app using React Native, you would run `create-react-native-app`
 from the command line.
+
+如果要使用 React Native 创建应用，你需要在命令行里运行 `create-react-native-app`。
 
 {% prettify %}
 $ create-react-native-app <projectname>
@@ -312,9 +391,16 @@ $ create-react-native-app <projectname>
 
 To create an app in Flutter, do one of the following:
 
+要在 Flutter 中创建应用，完成下面其中一项即可：
+
 * Use the `flutter create` command from the command line. Make sure that the
   Flutter SDK is in your PATH.
+
+* 在命令行中运行命令 `flutter create`。不过要提前确认 Flutter SDK 已经在 PATH 中定义。
+
 * Use an IDE with the Flutter and Dart plugins installed.
+
+* 使用带有 Flutter 和 Dart 插件的 IDE。
 
 {% prettify %}
 $ flutter create <projectname>
@@ -325,23 +411,43 @@ walks you through creating a button-click counter app. Creating a Flutter
 project builds all the files that you need to run a sample app on both Android
 and iOS devices.
 
+如果想要了解更多内容，详见 [Getting Started](/docs/get-started)，在该页面会手把手教你创建一个点击按钮进行计数的应用。创建一个 Flutter 项目就可以构建 Android 和 iOS 设备上运行应用所需的所有文件。
+
 ### How do I run my app?
+
+### 我如何运行应用呢？
 
 In React Native, you would run `npm run` or `yarn run` from the project
  directory.
 
+在 React Native, 你可以在项目文件夹中运行 `npm run` 或者 `yarn run`。
+
  You can run Flutter apps in a couple of ways:
+ 你可以通过如下几个途径运行 Flutter 应用程序：
 
  * Use `flutter run` from the project's root directory.
+
+ * 在项目根目录运行 `flutter run`。
+
  * Use the "run" option in an IDE with the Flutter and Dart plugins.
+
+ * 在带有 Flutter 和 Dart 插件的 IDE 中使用 "run" 选项。
 
  Your app runs on a connected device, the iOS simulator, or the Android emulator.
 
+ 你的应用程序会在已连接的设备、iOS 模拟器或者 Android 模拟器上运行。
+
 For more information, see the Flutter [Getting Started](/docs/get-started) documentation.
+
+如果想了解更多相关信息，可以参考 Flutter 的 [Getting Started](/docs/get-started) 相关文档。
 
 ### How do I import widgets?
 
+### 如何导入控件
+
 In React Native, you need to import each required component.
+
+在 React Native 中，你需要导入每一个所需的组件。
 
 ```js
 //React Native
@@ -350,6 +456,8 @@ import { StyleSheet, Text, View } from "react-native";
 ```
 
 In Flutter, to use widgets from the Material Design library, import the `material.dart` package. To use iOS style widgets, import the Cupertino library. To use a more basic widget set, import the Widgets library. Or, you can write your own widget library and import that.
+
+在 Flutter 中，如果要使用 Material Design 库里的控件，导入 `material.dart` 包。如果要使用 iOS 风格的控件，导入 Cupertino 库。如果要使用更加基本的控件，导入 Widget 库。或者，你可以实现自己的控件库并导入。
 
 <!-- skip -->
 ```dart
@@ -361,12 +469,21 @@ import 'package:flutter/my_widgets.dart';
 Whichever widget package you import, Dart pulls in only the widgets that are
  used in your app.
 
+无论你导入哪个库，Dart 仅仅引用你应用中用到的控件。
+
 For more information, see the [Flutter Widgets Catalog](/docs/development/ui/widgets).
+
+如果想了解更多相关信息，可以参考 [Flutter Widgets Catalog](/docs/development/ui/widgets)。
+
 
 ### What is the equivalent of the React Native "Hello world!" app in Flutter?
 
+### 在 Flutter 里有没有类似 React Native 中 "Hello world!" 应用程序？
+
 In React Native, the `HelloWorldApp` class extends `React.Component` and
 implements the render method by returning a view component.
+
+在 React Native，`HelloWorldApp` 继承自 `React.Component` 并且通过返回 view 对象实现了 render 方法。
 
 ```js
 // React Native
@@ -395,6 +512,8 @@ const styles = StyleSheet.create({
 
 In Flutter, you can create an identical "Hello world!" app using the `Center` and `Text` widgets from the core widget library. The `Center` widget becomes the root of the widget tree and has one child, the `Text` widget.
 
+在 Flutter 中，你可以使用核心控件库中的 `Center` 和 `Text` 控件创建对应的 "Hello world!" 应用程序。`Center` 控件是控件树中的根，而且只有 `Text` 一个子控件。
+
 <!-- skip -->
 ```dart
 // Flutter
@@ -416,15 +535,23 @@ void main() {
 The following images show the Android and iOS UI for the basic Flutter
 "Hello world!" app.
 
+下面的图片展示了 Android 和 iOS 中的基本 Flutter "Hello world!" 应用程序的界面。
+
 {% include android-ios-figure-pair.md image="react-native/hello-world-basic.png" alt="Hello world app" class="border" %}
 
 Now that you've seen the most basic Flutter app, the next section shows how to
 take advantage of Flutter's rich widget libraries to create a modern, polished
 app.
 
+现在大家已经明白了最基本的 Flutter 应用，接下来会告诉大家如何利用 Flutter 丰富的控件库来创建主流的华丽的应用程序。
+
 ### How do I use widgets and nest them to form a widget tree?
 
+### 我如何使用控件并且把它们封装起来组成一个控件树？
+
 In Flutter, almost everything is a widget.
+
+在 Flutter 中，几乎任何元素都是控件。
 
 Widgets are the basic building blocks of an app's user interface. You compose
 widgets into a hierarchy, called a widget tree. Each widget nests inside a
@@ -432,15 +559,29 @@ parent widget and inherits properties from its parent. Even the application
 object itself is a widget. There is no separate “application” object. Instead,
 the root widget serves this role.
 
+控件是构建应用软件用户界面的基本元素。你可以将控件按照一定的层次组合，成为控件树。每个控件内嵌在父控件中，并且继承了父控件的属性。甚至应用程序本身就是一个控件。并没有一个独立的应用程序对象。反而 root 控件充当了这个角色。
+
 A widget can define:
 
+一个控件可以定义：
+
 * A structural element—like a button or menu
+
+* 一个结构化的元素 - 类似按钮或者菜单
+
 * A stylistic element—like a font or color scheme
+
+* 一个风格化的元素 - 类似字体或者颜色方案
+
 * An aspect of layout—like padding or alignment
+
+* 布局元素 - 类似填充区或者对齐元素
 
 The following example shows the "Hello world!" app using widgets from the
 Material library. In this example, the widget tree is nested inside the
 `MaterialApp` root widget.
+
+下面的示例展示了使用 Material 库里控件实现的 "Hello world!" 应用程序。在这个示例中，该控件树是包含在 `MaterialApp` root 控件里的。
 
 
 <!-- skip -->
@@ -472,9 +613,14 @@ class MyApp extends StatelessWidget {
 
 The following images show "Hello world!" built from Material Design widgets. You get more functionality for free than in the basic "Hello world!" app.
 
+下面的图片为大家展示了通过 Material Design 控件所实现的 "Hello world!" 应用。你可以免费获得比 "Hello world!" 应用更多的功能。
+
 {% include android-ios-figure-pair.md image="react-native/hello-world.png" alt="Hello world app" %}
 
 When writing an app, you'll use two types of widgets:
+
+当编写应用代码的时候，你将用到下述两种控件：
+
 [StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html) or
  [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
 A StatelessWidget is just what it sounds like—a
@@ -482,21 +628,31 @@ A StatelessWidget is just what it sounds like—a
   appearance. A StatefulWidget dynamically changes state based on data
    received, or user input.
 
+无状态控件 (StatelessWidget) 就像它的名字一样，是一个没有状态的控件。无状态控件一旦创建，就不会改变。而有状态控件 (StatefulWidget) 会基于接收到的数据或者用户输入的数据动态改变状态。
+
 The important difference between stateless and stateful widgets is that
  StatefulWidgets have a State object that stores state data and carries it over
   across tree rebuilds, so it's not lost.
+
+无状态控件和有状态控件之间的主要区别是有状态控件包含一个 State 对象，会缓存状态数据，并且控件树的重构也会携带该数据。因此状态不会丢失。
 
 In simple or basic apps it's easy to nest widgets, but as the code base gets
 larger and the app becomes complex, you should break deeply nested widgets into
 functions that return the widget or smaller classes. Creating separate functions
 and widgets allows you to reuse the components within the app.
 
+在简单的或者基本的应用程序中，封装控件非常简单，但是随着代码量的增加并且应用程序的功能变得更加复杂，你应该将层级复杂的控件封装到函数中或者稍小一些的类。创建独立的函数和控件可以让你更好地复用应用中组件。
+
 ### How do I create reusable components?
+
+### 如何创建可复用的组件？
 
 In React Native, you would define a class to create a reusable component and then use
 `props` methods to set or return properties and values of the selected elements.
 In the example below, the `CustomCard` class is defined and then used inside a
 parent class.
+
+在 React Native 中，你可以定义一个类来创建一个可复用的组件然后使用 `props` 方法来设置或者返回属性或者所选元素的值。在下面的示例中，`CustomCard` 类在父类中被定义和调用。
 
 ```js
 // React Native
@@ -521,6 +677,8 @@ class CustomCard extends React.Component {
 In Flutter, define a class to create a custom widget and then reuse the
 widget. You can also define and call a function that returns a reusable widget
 as shown in the `build` function in the following example.
+
+在 Flutter 中，定义一个类来创建一个自定义控件然后复用这个控件。你可以定义并且调用函数来返回一个可复用的控件，正如下面示例中 `build` 函数所示的那样。
 
 {% prettify dart %}
 
@@ -562,22 +720,33 @@ CustomCard(
 In the previous example, the constructor for the `CustomCard` class uses Dart's curly brace syntax `{ }` to indicate named [optional
 parameters]({{site.dart-site}}/guides/language/language-tour#optional-parameters).
 
+在之前的示例，`CustomCard` 类的构造函数使用 Dart 的曲括号 `{ }` 来表示可选参数 [optional
+parameters]({{site.dart-site}}/guides/language/language-tour#optional-parameters)。
+
 To require these fields, either remove the curly braces from the constructor, or
 add `@required` to the constructor.
 
-
+如果将这些参数设定为必填参数，要么从构造函数中删掉曲括号，或者在构造函数中加上 `@required`。
 
 The following screenshots show an example of the reusable CustomCard class.
+
+下面的截图展示了可复用的 CustomCard 类的示例。
 
 {% include android-ios-figure-pair.md image="react-native/custom-cards.png" alt="Custom cards" class="border" %}
 
 
 ## Project structure and resources
 
+## 项目结构和资源
+
 ### Where do I start writing the code?
+
+### 该从哪开始写代码呢？
 
 Start with the `main.dart` file. It's autogenerated when you create a
 Flutter app.
+
+从 `main.dart` 文件开始。当你创建 Flutter 应用的时候会自动生成这个文件。
 
 <!-- skip -->
 ```dart
@@ -590,9 +759,15 @@ void main(){
 In Flutter, the entry point file is `’projectname’/lib/main.dart` and execution
 starts from the `main` function.
 
+在 Flutter 中，入口文件是 `’projectname’/lib/main.dart` 而程序执行是从 `main` 函数开始的。
+
 ### How are files structured in a Flutter app?
 
+### Flutter 应用程序中的文件是如何组织的？
+
 When you create a new Flutter project, it builds the following directory structure. You can customize it later, but this is where you start.
+
+当你创建一个新的 Flutter 工程的时候，它会创建如下所示的文件夹结构。你可以自定义这个结构，不过这是整个开发的起点。
 
 ```
 ┬
@@ -613,18 +788,52 @@ When you create a new Flutter project, it builds the following directory structu
                    This is equivalent to the package.json file in React Native.
 ```
 
+```
+┬
+└ projectname
+  ┬
+  ├ android      - 包含 Android 相关文件。
+  ├ build        - 存储 iOS 和 Android 构建文件。
+  ├ ios          - 包含 iOS 相关文件。
+  ├ lib          - 包含外部可访问 Dart 源文件。
+    ┬
+    └ src        - 包含附加源文件。
+    └ main.dart  - Flutter 程序入口和新应用程序的起点。
+                   当你创建 Flutter 工程的时候会自动生成这些文件。
+
+                   你从这里开始写 Dart 代码
+  ├ test         - 包含自动测试文件。
+  └ pubspec.yaml - 包含 Flutter 应用程序的元数据。
+                   这个文件相当于 React Native 里的 package.json 文件。
+```
+
 ### Where do I put my resources and assets and how do I use them?
+
+### 我该把资源文件放到哪并且如何调用呢？
 
 A Flutter resource or asset is a file that is bundled and deployed with your app
 and is accessible at runtime. Flutter apps can include the following asset
 types:
+
+一个 Flutter 资源就是打包到你应用程序里的一个文件并且在程序运行的时候可以访问。Flutter 应用程序可以包含下述几种资源类型：
+
 * Static data such as JSON files
+
+* 静态数据  比如 JSON 文件
+
 * Configuration files
+
+* 配置文件
+
 * Icons and images (JPEG, PNG, GIF, Animated GIF, WebP, Animated WebP, BMP,
   and WBMP)
 
+* 图标和图片 (JPEG, PNG, GIF, Animated GIF, WebP, Animated WebP, BMP, and WBMP)
+
 Flutter uses the `pubspec.yaml` file, located at the root of your project, to
 identify assets required by an app.
+
+Flutter 使用 `pubspec.yaml` 文件来确定应用程序中的资源。该文件在工程的根目录。
 
 ```yaml
 flutter:
@@ -639,6 +848,8 @@ file, where the asset file is located. The order in which the assets are
 declared does not matter. The actual directory used (`assets` in this case) does
 not matter. However, while assets can be placed in any app directory, it's a
 best practice to place them in the `assets` directory.
+
+`assets` 确定了需要包含在应用程序中的文件。每个资源都会在 `pubspec.yaml` 中定义所存储的相对路径。资源定义的顺序没有特殊要求。实际的文件夹（在这里指 `assets` ）也没影响。但是，由于资源可以放置于程序的任何目录，所以放在 `assets` 文件夹是比较好的。
 
 During a build, Flutter places assets into a special archive called the *asset
 bundle*, which apps read from at runtime. When an asset’s path is specified in

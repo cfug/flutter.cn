@@ -531,7 +531,7 @@ You can find the following debugging resources on
 
 * [Debug your app]({{site.android-dev}}/studio/debug)
 
-  [调试您的应用]({{site.android-dev}}/studio/debug)
+  [调试你的应用]({{site.android-dev}}/studio/debug)
 
 * [Android Debug Bridge (adb)]({{site.android-dev}}/studio/command-line/adb)
 

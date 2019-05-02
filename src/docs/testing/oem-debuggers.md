@@ -11,7 +11,7 @@ description: 如何连接各开发平台的调试器调试 Flutter 应用，比�
 
   This doc is not yet complete. The iOS instructions are in process.
 
-  该文档暂未完成。IOS 的相关说明正在编写中。
+  该文档暂未完成。iOS 的相关说明正在编写中。
 
 {{site.alert.end}}
 
@@ -179,7 +179,7 @@ TODO: Android 提示 - 在 Mac 上如何设置快捷键？
 The rest of this guide shows how to set up your environment to debug OEM
 code. As you'd expect, the process works differently for iOS and Android.
 
-这篇指南剩下的部分显示如何搭建原生代码的调试环境。你应该可以想象到，对于 iOS 和 Android 这个过程是不同的。
+这篇指南剩下的部分介绍了如何搭建原生代码的调试环境。你应该可以想象到，对于 iOS 和 Android 这个过程是不同的。
 
 {% comment %}
 
@@ -420,7 +420,7 @@ dev_dependencies:
 
    点击调试按钮（{% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %}）来同时打开调试面板并启动应用。
    等待应用在设备上启动并在调试面板中显示 **Connected**。
-   （第一次可能需要一分钟，但是之后的启动回变快。）
+   （第一次可能需要一分钟，但是之后的启动会变快。）
    应用包含两个按钮：1）**Launch in browser** 在你的手机默认浏览器中打开 flutter.io 和 2）**Launch in app** 在你的应用中打开 flutter.io。
 
   {% asset 'testing/debugging/oem/launch-flutter-io.png' alt='screenshot containing two buttons for opening flutter.io' %}
@@ -456,7 +456,7 @@ dev_dependencies:
 
 * In the debug pane, you should now see a tab for **Android Debugger**.
 
-  在调试窗口中，你现在应该可以看到一个 **Android Debugger** 标签页。
+  在调试面板中，你现在应该可以看到一个 **Android Debugger** 标签页。
 
 * In the project pane, expand
   <strong><em>app_name</em> > android > app > src > main > java > io.flutter plugins</strong>.
@@ -476,7 +476,7 @@ Dart 和原生调试器都在与同一个进程交互。使用其中一个或者
   
   The Dart debug pane with two breakpoints set in `lib/main.dart`.
 
-  Dart 调试窗口和 `lib/main.dart` 中的两个断点。
+  Dart 调试面板和 `lib/main.dart` 中的两个断点。
 
   {% asset 'testing/debugging/oem/android-debugger.png' alt='screenshot of Android Studio in the Android debug pane.' %}
 
@@ -535,7 +535,7 @@ You can find the following debugging resources on
 
 * [Android Debug Bridge (adb)]({{site.android-dev}}/studio/command-line/adb)
 
-  [Android 调试桥]({{site.android-dev}}/studio/command-line/adb)
+  [Android 调试桥（adb）]({{site.android-dev}}/studio/command-line/adb)
 
 ### iOS
 

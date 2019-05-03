@@ -858,8 +858,12 @@ the same name in adjacent subdirectories. These files are also included in the
 asset bundle along with the specified asset. Flutter uses asset variants when
 choosing resolution-appropriate images for your app.
 
+在构建期间，Flutter 会将资源放到一个称为 *asset bundle* 的归档文件中，应用程序可以在运行时访问该文件。当一个资源在 `pubspec.yaml` 中被声明时，构建进程会查询和这个文件相关的子文件夹路径。这些文件也会被包含在 asset bundle 中。当你为应用程序选择和屏幕显示分辨率相关的图片时，Flutter 会使用 asset variants。
+
 In React Native, you would add a static image by placing the image file in a
 source code directory and referencing it.
+
+在 React Native，你可以在源码文件夹中通过添加文件来增加一个静态图片并且在代码中引用它。
 
 ```js
 <Image source={require("./my-icon.png")} />
@@ -867,6 +871,8 @@ source code directory and referencing it.
 
 In Flutter, add a static image to your app using the `AssetImage` class in a
 widget’s build method.
+
+在 Flutter 中，如果要增加静态图片的话就在控件的 build 方法中使用 `AssetImage` 类。
 
 <!-- skip -->
 ```dart
@@ -876,12 +882,21 @@ image: AssetImage('assets/background.png'),
 For more information, see [Adding Assets and Images in
 Flutter](/docs/development/ui/assets-and-images).
 
+如果想了解更多相关信息，请参考 [Adding Assets and Images in
+Flutter](/docs/development/ui/assets-and-images)。
+
 ### How do I load images over a network?
+
+### 如何在网络中加载图片？
 
 In React Native, you would specify the `uri` in the `source` prop of the `Image`
 component and also provide the size if needed.
 
+在 React Native，你可以在 `Image` 的 `source` 属性中设置 `uri` 和所需的尺寸。
+
 In Flutter, use the `Image.network` constructor to include an image from a URL.
+
+在 Flutter 中，使用 `Image.network` 构造函数来实现通过地址加载图片的操作。
 
 <!-- skip -->
 ```dart
@@ -892,20 +907,31 @@ body: Image.network(
 
 ### How do I install packages and package plugins?
 
+### 我如何安装依赖包和包插件？
+
 Flutter supports using shared packages contributed by other developers to the
 Flutter and Dart ecosystems. This allows you to quickly build your app without
 having to develop everything from scratch. Packages that contain
 platform-specific code are known as package plugins.
 
+Flutter 支持开发者向 Flutter 和 Dart 生态系统贡献的代码包。这样可以使大量开发者快速构建应用程序而无需重复造轮。而平台相关的代码包就被称为包插件。
+
 In React Native, you would use `yarn add {package-name}` or `npm install --save
 {package-name}` to install packages from the command line.
 
+在 React Native 中，你可以在命令行中运行 `yarn add {package-name}` 或者 `npm install --save
+{package-name}` 来安装代码包。
+
 In Flutter, install a package using the following instructions:
+
+在 Flutter 中，安装代码包需要按照如下的步骤：
 
 1. Add the package name and version to the `pubspec.yaml` dependencies section.
 The example below shows how to add the `google_sign_in` Dart package to the
 `pubspec.yaml` file. Check your spaces when working in the YAML file because
 **white space matters**!
+
+1. 在 `pubspec.yaml` 的 dependencies 区域添加包名和版本。下面的例子向大家展示了如何将 `google_sign_in` 的 Dart 包添加到 `pubspec.yaml` 中。一定要检查一下 YAML 文件中的空格。因为 **空格很重要**!
 
 ```yaml
 dependencies:
@@ -917,7 +943,12 @@ dependencies:
 2. Install the package from the command line by using `flutter packages get`.
    If using an IDE, it often runs `flutter packages get` for you, or it might
    prompt you to do so.
+
+2. 在命令行中输入 `flutter packages get` 来安装代码包。如果使用 IDE，它自己会运行 `flutter packages get`，或者它会提示你是不是要运行该命令。
+
 3. Import the package into your app code as shown below:
+
+3. 向下面代码一样在程序中引用代码包：
 
 <!-- skip -->
 ```dart
@@ -929,14 +960,26 @@ Packages](/docs/development/packages-and-plugins/using-packages) and
 [Developing Packages &
 Plugins](/docs/development/packages-and-plugins/developing-packages).
 
+如果想了解更多相关信息，请参考 [Using
+Packages](/docs/development/packages-and-plugins/using-packages) and
+[Developing Packages &
+Plugins](/docs/development/packages-and-plugins/developing-packages)。
+
 You can find many packages shared by Flutter developers in the [Flutter
 Packages]({{site.pub}}/flutter/) section of
 the [Pub site]({{site.pub}}).
 
+你可以找到很多 Flutter 开发者分享的代码包，就在 [Flutter
+Packages]({{site.pub}}/flutter/) 的 [Pub site]({{site.pub}}).
+
 ## Flutter widgets
+
+## Flutter 控件
 
 In Flutter, you build your UI out of widgets that describe what their view
 should look like given their current configuration and state.
+
+在 Flutter 中，你可以基于控件打造你自己的 UI，通过控件当前的设置和状态会呈现相应的页面效果。
 
 Widgets are often composed of many small, single-purpose widgets that are nested
 to produce powerful effects. For example, the Container widget consists of
@@ -946,6 +989,8 @@ Specifically, the `Container` widget includes the `LimitedBox`,
 Rather than subclassing `Container` to produce a customized effect, you can
 compose these and other simple widgets in new and unique ways.
 
+控件常常通过很多小的，单一功能的控件组成，通过这样的封装往往能够实现很棒的效果。
+
 The `Center` widget is another example of how you can control the layout. To
 center a widget, wrap it in a `Center` widget and then use layout
 widgets for alignment, row, columns, and grids. These layout widgets do not have
@@ -953,20 +998,35 @@ a visual representation of their own. Instead, their sole purpose is to control
 some aspect of another widget’s layout. To understand why a widget renders in a
 certain way, it’s often helpful to inspect the neighboring widgets.
 
+`Center` 控件是另一个用于控制布局的示例。如果要居中一个控件，就把它封装到 `Center` 控件中，然后使用布局控件来进行对齐，行、列和网格。这些布局控件并不可见。而他们的作用就是控制其它控件的布局。如果想搞清楚为什么一个控件会有这样的效果，有效的方法是研究它临近的控件。
+
 For more information, see the [Flutter Technical
 Overview](/docs/resources/technical-overview).
+
+如果想了解更多相关信息，请参考 [Flutter Technical
+Overview](/docs/resources/technical-overview)。
 
 For more information about the core widgets from the Widgets package, see
 [Flutter Basic Widgets](/docs/development/ui/widgets/basics), the
 [Flutter Widget Catalog](/docs/development/ui/widgets), or the
 [Flutter Widget Index](/docs/reference/widgets).
 
+如果想了解更多关于 Widgets 包中的核心控件，请参考 [Flutter Basic Widgets](/docs/development/ui/widgets/basics), the
+[Flutter Widget Catalog](/docs/development/ui/widgets), or the
+[Flutter Widget Index](/docs/reference/widgets)。
+
 ## Views
+
+## 视图
 
 ### What is the equivalent of the `View` container?
 
+### 与 `View` 等价容器的是什么？
+
 In React Native, `View` is a container that supports layout with `Flexbox`,
 style, touch handling, and accessibility controls.
+
+在 React Native 中， `View` 是支持 `Flexbox` 布局、风格化、触摸事件处理和访问性控制的容器。
 
 In Flutter, you can use the core layout widgets in the Widgets library, such
 as  [Container]({{site.api}}/flutter/widgets/Container-class.html),
@@ -974,14 +1034,27 @@ as  [Container]({{site.api}}/flutter/widgets/Container-class.html),
 [Row]({{site.api}}/flutter/widgets/Row-class.html),
 and [Center]({{site.api}}/flutter/widgets/Center-class.html).
 
+在 Flutter 中，你可以使用 Widgets 库中的核心布局控件，比如 [Container]({{site.api}}/flutter/widgets/Container-class.html),
+[Column]({{site.api}}/flutter/widgets/Column-class.html)，
+[Row]({{site.api}}/flutter/widgets/Row-class.html)，
+和 [Center]({{site.api}}/flutter/widgets/Center-class.html)。
+
 For more information, see the [Layout Widgets](/docs/development/ui/widgets/layout) catalog.
+
+如果想了解更多相关信息，请参考 [Layout Widgets](/docs/development/ui/widgets/layout) catalog。
 
 ### What is the equivalent of `FlatList` or `SectionList`?
 
+### 和 `FlatList` 或者 `SectionList` 相对应的是什么？
+
 A `List` is a scrollable list of components arranged vertically.
+
+`List` 是一个可以滚动的纵向排列的组件列表。
 
 In React Native, `FlatList` or `SectionList` are used to render simple or
 sectioned lists.
+
+在 React Native 中，`FlatList` 或者 `SectionList` 用于渲染简单的或者分组的列表。
 
 ```js
 // React Native
@@ -998,6 +1071,9 @@ takes an explicit list of children.
 is most appropriate for a small number of widgets. For a large or infinite list,
 use `ListView.builder`, which builds its children on demand and only builds
 those children that are visible.
+
+[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 是 Flutter 最常用的滑动控件。默认构造函数需要一个数据列表的参数。
+[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 非常适合用于少量子控件的列表。如果列表的元素比较多，可以使用 `ListView.builder`，它会按需构建子项并且只创建可见的子项。
 
 
 <!-- skip -->
@@ -1020,9 +1096,16 @@ To learn how to implement an infinite scrolling list, see the
 [Write Your First Flutter App,
 Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1) codelab.
 
+如果要了解如何实现无限滑动列表，请参考 [Write Your First Flutter App,
+Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1) codelab。
+
 ### How do I use a Canvas to draw or paint?
 
+### 如何使用 Canvas 绘图？
+
 In React Native, canvas components aren't present so third party libraries like `react-native-canvas` are used.
+
+在 React Native 中，canvas 组件是不可见的，所以需要使用类似 `react-native-canvas` 这样的组件。
 
 ```js
 // React Native
@@ -1048,10 +1131,15 @@ In Flutter, you can use the
 and [`CustomPainter`]({{site.api}}/flutter/rendering/CustomPainter-class.html)
 classes to draw to the canvas.
 
+在 Flutter 中，你可以使用 [`CustomPaint`]({{site.api}}/flutter/widgets/CustomPaint-class.html)
+和 [`CustomPainter`]({{site.api}}/flutter/rendering/CustomPainter-class.html) 进行绘图。
+
 The following example shows how to draw during the paint phase using the
 `CustomPaint` widget. It implements the abstract class, CustomPainter,
 and passes it to CustomPaint's painter property. CustomPaint subclasses
 must implement the `paint` and `shouldRepaint` methods.
+
+下面的示例代码展示了如何使用 `CustomPaint` 进行绘图。它实现了抽象类 CustomPainter，然后将它赋值给 CustomPainter 的 painter 属性。CustomPainter 子类必须实现 `paint` 和 `shouldRepaint` 方法。
 
 <!-- skip -->
 ```dart
@@ -1089,13 +1177,19 @@ class _MyCanvasState extends State<MyCanvas> {
 
 ## Layouts
 
+## 布局
+
 ### How do I use widgets to define layout properties?
+
+### 如何使用控件来定义布局属性？
 
 In React Native, most of the layout can be done with the props that are passed
 to a specific component. For example, you could use the `style` prop on the
 `View` component in order to specify the flexbox properties. To arrange your
 components in a column, you would specify a prop such as:
 `flexDirection: “column”`.
+
+在 React Native 中，大多数布局需要通过向指定的组件传递属性参数进行设置。比如，你可以使用 `View` 的 `style` 来设置 flexbox 属性。如果要整理一列的组件，你可以使用如下的属性设置：`flexDirection: “column”`。
 
 ```js
 // React Native
@@ -1112,6 +1206,8 @@ components in a column, you would specify a prop such as:
 In Flutter, the layout is primarily defined by widgets specifically designed to
  provide layout, combined with control widgets and their style properties.
 
+在 Flutter 中，布局主要是由专门的控件定义的，它们同控制类控件和样式属性一起发挥功能。
+
 For example, the
 [Column]({{site.api}}/flutter/widgets/Column-class.html) and
 [Row]({{site.api}}/flutter/widgets/Row-class.html) widgets
@@ -1120,6 +1216,10 @@ A [Container]({{site.api}}/flutter/widgets/Container-class.html)
 widget takes a combination of layout and styling properties, and a
 [`Center`]({{site.api}}/flutter/widgets/Center-class.html) widget centers
 its child widgets.
+
+比如，[Column]({{site.api}}/flutter/widgets/Column-class.html) 和
+[Row]({{site.api}}/flutter/widgets/Row-class.html) 控件
+接受一个数组的子元素并且分别按照纵向和横向进行排列。
 
 <!-- skip -->
 ```dart
@@ -1152,21 +1252,35 @@ For example, [`Padding`]({{site.api}}/flutter/widgets/Padding-class.html),
 [`Align`]({{site.api}}/flutter/widgets/Align-class.html),
 and [`Stack`]({{site.api}}/flutter/widgets/Stack-class.html).
 
+Flutter 在核心控件库中提供多种不同的布局控件。比如[`Padding`]({{site.api}}/flutter/widgets/Padding-class.html)，
+[`Align`]({{site.api}}/flutter/widgets/Align-class.html)，
+和 [`Stack`]({{site.api}}/flutter/widgets/Stack-class.html)。
+
 For a complete list, see [Layout Widgets](/docs/development/ui/widgets/layout).
+
+要得到完整的控件列表，请参考 [Layout Widgets](/docs/development/ui/widgets/layout)。
 
 {% include android-ios-figure-pair.md image="react-native/basic-layout.gif" alt="Layout" class="border" %}
 
 ### How do I layer widgets?
 
+### 如何为控件分层？
+
 In React Native, components can be layered using `absolute` positioning.
+
+在 React Native 中，组件可以通过 `absolute` 划分层次。
 
 Flutter uses the
 [`Stack`]({{site.api}}/flutter/widgets/Stack-class.html)
 widget to arrange children widgets in layers.
 The widgets can entirely or partially overlap the base widget.
 
+在 Flutter 中使用 [`Stack`]({{site.api}}/flutter/widgets/Stack-class.html) 控件将子控件进行分层。该控件可以将整体或者部分的子控件进行分层。
+
 The `Stack` widget positions its children relative to the edges of its box.
 This class is useful if you simply want to overlap several children widgets.
+
+`Stack` 控件将子控件根据容器的边界进行布局。如果你仅仅想把子控件重叠摆放的话，这个控件非常合适。
 
 <!-- skip -->
 ```dart
@@ -1192,17 +1306,27 @@ The previous example uses `Stack` to overlay a Container (that displays its `Tex
 on a translucent black background) on top of a `CircleAvatar`. The Stack offsets
 the text using the alignment property and Alignment coordinates.
 
+上面的示例代码使用 `Stack` 将一个 Container （将 `Text` 显示在一个半透明的黑色背景上）覆盖在一个 `CircleAvatar` 上。Stack 使用对齐属性和 Alignment 坐标微调文本。
+
 {% include android-ios-figure-pair.md image="react-native/stack.png" alt="Stack" class="border" %}
 
 For more information, see the
 [Stack]({{site.api}}/flutter/widgets/Stack-class.html) class documentation.
 
+如果想了解更多相关信息，请参考 [Stack]({{site.api}}/flutter/widgets/Stack-class.html) class documentation。
+
 ## Styling
+
+## 风格化
 
 ### How do I style my components?
 
+### 如何设置组件的风格？
+
 In React Native, inline styling and `stylesheets.create` are used to style
 components.
+
+在 React Native 中，内联风格化和 `stylesheets.create` 可以用于设置组件的风格。
 
 ```js
 // React Native
@@ -1226,6 +1350,8 @@ In Flutter, a `Text` widget can take a `TextStyle` class for its style property.
 If you want to use the same text style in multiple places, you can create a
 [`TextStyle`]({{site.api}}/flutter/dart-ui/TextStyle-class.html)
 class and use it for multiple `Text` widgets.
+
+在 Flutter 中， `Text` 控件可以接受 `TextStyle` 作为它的风格化属性。如果你想在不同的场合使用相同的文本风格，你可以创建一个 [`TextStyle`]({{site.api}}/flutter/dart-ui/TextStyle-class.html) 类，并且在多个 `Text` 控件中使用它。
 
 <!-- skip -->
 ```dart
@@ -1254,11 +1380,18 @@ Center(
 
 ### How do I use `Icons` and `Colors`?
 
+### 我如何使用 `Icons` 和 `Colors` 呢？
+
 React Native doesn't include support for icons so third party libraries are used.
+
+React Native 并不包含默认图标，所以需要使用第三方库。
 
 In Flutter, importing the Material library also pulls in the rich set of
 [Material icons]({{site.api}}/flutter/material/Icons-class.html)
 and [colors]({{site.api}}/flutter/material/Colors-class.html).
+
+在 Flutter 中，引用 Material 库的时候就同时引入了 [Material icons]({{site.api}}/flutter/material/Icons-class.html)
+和 [colors]({{site.api}}/flutter/material/Colors-class.html)。
 
 <!-- skip -->
 ```dart
@@ -1273,9 +1406,13 @@ name: my_awesome_application
 flutter: [[highlight]]uses-material-design: true[[/highlight]]
 {% endprettify %}
 
+当使用 `Icons` 类时，确保在项目的 `pubspec.yaml` 文件中设置 `uses-material-design: true`。这样保证 `MaterialIcons` 相关字体被包含在你的应用中。
+
 Flutter's [Cupertino (iOS-style)](/docs/development/ui/widgets/cupertino) package provides high
 fidelity widgets for the current iOS design language. To use the `CupertinoIcons`
 font, add a dependency for `cupertino_icons` in your project's  `pubspec.yaml` file.
+
+Flutter 的 [Cupertino (iOS-style)](/docs/development/ui/widgets/cupertino) 包为 iOS 设计语言提供高分辨率的控件。要使用 `CupertinoIcons` 字体，在项目的 `pubspec.yaml` 文件中添加 `cupertino_icons` 的依赖即可。
 
 ```yaml
 name: my_awesome_application
@@ -1290,8 +1427,13 @@ property in `MaterialApp` to the `ThemeData` object. The
 class provides colors from the Material Design [color
 palette]({{site.material}}/guidelines/style/color.html).
 
+要在全局范围内自定义组件的颜色和风格，使用 `ThemeData` 为不同的主题指定默认颜色。在 `MaterialApp` 的主题属性中设置 `ThemeData` 对象。[`Colors`]({{site.api}}/flutter/material/Colors-class.html) 类提供 Material Design [color
+palette]({{site.material}}/guidelines/style/color.html) 中所提供的颜色配置。
+
 The following example sets the primary swatch to `blue` and the text
 selection to `red`.
+
+下面的示例代码将主色调设置为 `blue` 然后文本颜色设置为 `red`。
 
 <!-- skip -->
 {% prettify dart %}
@@ -1312,8 +1454,12 @@ class SampleApp extends StatelessWidget {
 
 ### How do I add style themes?
 
+### 如何增加风格化主题？
+
 In React Native, common themes are defined for components in stylesheets and
 then used in components.
+
+在 React Native，常用主题都定义在 stylesheets 中。
 
 In Flutter, create uniform styling for almost everything by defining the
  styling in the
@@ -1321,6 +1467,8 @@ In Flutter, create uniform styling for almost everything by defining the
 class and passing it to the theme property in the
 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 widget.
+
+在 Flutter 中，为所有组件创建统一风格可以在 [`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html) 类中定义，并将它赋值给 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的主题属性。
 
 <!-- skip -->
 ```dart
@@ -1340,6 +1488,8 @@ A `Theme` can be applied even without using the `MaterialApp` widget. The
 [`Theme`]({{site.api}}/flutter/material/Theme-class.html)
 widget takes a `ThemeData` in its `data` parameter and applies the
 `ThemeData` to all of its children widgets.
+
+`Theme` 可以在不使用 `MaterialApp` 控件的情况下使用。[`Theme`]({{site.api}}/flutter/material/Theme-class.html) 接受一个 `ThemeData` 参数，并且将 `ThemeData` 应用于它的全部子控件。
 
 <!-- skip -->
 ```dart
@@ -1361,16 +1511,24 @@ widget takes a `ThemeData` in its `data` parameter and applies the
 
 ## State Management
 
+## 状态管理
+
 State is information that can be read synchronously when a widget is built
 or information that might change during the lifetime of a widget.
 To manage app state in Flutter, use a
 [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
 paired with a State object.
 
+当控件被创建或者在控件的生命周期中有信息发生改变时所产生的信息叫做状态。要在 Flutter 中管理应用程序的状态，使用 [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html) 和 State 对象。
+
 ### The StatelessWidget
+
+### StatelessWidget 控件
 
 A `StatelessWidget` in Flutter is a widget that doesn't require a state
 change&mdash;it has no internal state to manage.
+
+`StatelessWidget` 在 Flutter 中是一个不需要状态改变的控件，它没有内部的状态。
 
 Stateless widgets are useful when the part of the user interface you are
 describing does not depend on anything other than the configuration information
@@ -1378,12 +1536,19 @@ in the object itself and the
 [`BuildContext`]({{site.api}}/flutter/widgets/BuildContext-class.html)
 in which the widget is inflated.
 
+当你展现给用户的界面并不依赖其它任何配置信息并且使用 [`BuildContext`]({{site.api}}/flutter/widgets/BuildContext-class.html)
+ 来解析控件，则需要使用无状态控件。
+
 [AboutDialog]({{site.api}}/flutter/material/AboutDialog-class.html),
 [CircleAvatar]({{site.api}}/flutter/material/CircleAvatar-class.html),
 and [Text]({{site.api}}/flutter/widgets/Text-class.html) are examples
 of stateless widgets which subclass
 [StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html).
 
+[AboutDialog]({{site.api}}/flutter/material/AboutDialog-class.html)、
+[CircleAvatar]({{site.api}}/flutter/material/CircleAvatar-class.html)
+和 [Text]({{site.api}}/flutter/widgets/Text-class.html) 是
+[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html) 的子类，并且是很典型的无状态控件。
 
 <!-- skip -->
 ```dart
@@ -1412,16 +1577,30 @@ In the previous example, you used the constructor of the `MyStatelessWidget` cla
 to pass the `text`, which is marked as `final`. This class extends
  `StatelessWidget`&mdash;it contains immutable data.
 
+ 在上面的例子中，你用到了 `MyStatelessWidget` 类的构造函数来传递 `text`。并且它被标记为 `final`。该类继承了 `StatelessWidget`，它包含不可数的数据。
+
 The `build` method of a stateless widget is typically called in only three
  situations:
 
+无状态控件的 `build` 方法通常只有在三种情况下会被调用：
+
 * When the widget is inserted into a tree
+
+* 当控件被插入到控件树中
+
 * When the widget's parent changes its configuration
+
+* 当控件的父控件改变了配置
+
 * When an
   [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
   it depends on, changes
 
+* 当所依赖的 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html) 发生了改变
+
 ### The StatefulWidget
+
+### StatefulWidget 控件
 
 A [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
 is a widget that changes state. Use the `setState` method to manage the
@@ -1643,6 +1822,8 @@ class App extends React.Component {
   }
 }
 ```
+
+
 
 In Flutter, you assign a local variable or function marked `final` with the
  property received in the parameterized constructor.

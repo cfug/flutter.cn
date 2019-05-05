@@ -19,7 +19,7 @@ more convenient to locate Widgets using the tools provided by the
 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
 package.
 
-在测试环境下，为了定位 Widgets，我们需要用到 `Finder` 类。我们可以编写自己的 `finder`classes，不过通常使用 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html) 包提供的工具来定位 Widgets 更加方便。
+在测试环境下，为了定位 Widgets，我们需要用到 `Finder` 类。我们可以编写自己的 `finder` classes，不过通常使用 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html) 包提供的工具来定位 Widgets 更加方便。
 
 In this recipe, we'll look at the
 [`find`]({{api}}/flutter_test/find-constant.html)

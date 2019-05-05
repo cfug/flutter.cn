@@ -14,9 +14,8 @@ We often need to create lists that display different types of content. For
 example, we might be working on a List that shows a heading followed by a few
 items related to the heading, followed by another heading, and so on.
 
-我们经常需要创建展示不同类型内容的列表。比方说，
-我们可能在开发一个列表，它显示一个标题，后跟一些与
-标题相关的项目，然后是另一个标题，依此类推。
+我们经常需要创建展示不同类型内容的列表。比方说，我们可能在开发一个列表，它显示一个标题，
+后跟一些与标题相关的项目，然后是另一个标题，依此类推。
 
 How would we create such a structure with Flutter?
 
@@ -56,17 +55,17 @@ and `MessageItem`.
 
 <!-- skip -->
 ```dart
-// List 可以包含的不同类型项的基类（The base class for the different types of items the List can contain）
+// 一个 List 可以包含的不同类型项的基类（The base class for the different types of items the List can contain）
 abstract class ListItem {}
 
-// 包含展示标题数据的一种 ListItem（A ListItem that contains data to display a heading）
+// 包含标题数据的一种 ListItem（A ListItem that contains data to display a heading）
 class HeadingItem implements ListItem {
   final String heading;
 
   HeadingItem(this.heading);
 }
 
-// 包含展示消息数据的一种 ListItem（A ListItem that contains data to display a message）
+// 包含消息数据的一种 ListItem（A ListItem that contains data to display a message）
 class MessageItem implements ListItem {
   final String sender;
   final String body;
@@ -82,7 +81,7 @@ class MessageItem implements ListItem {
 Most of the time, we'd fetch data from the internet or a local database and
 convert that data into a list of items.
 
-大部分时候，我们从网络上或本地数据库获取数据，并将数据转换成一个项目列表。
+大部分时候，我们从网络或本地数据库获取数据，并将数据转换成一个项目列表。
 
 For this example, we'll generate a list of items to work with. The list will
 contain a header followed by five messages. Rinse, repeat.
@@ -115,7 +114,7 @@ In general, we'll want to provide a `builder` function that checks for what type
 of item we're dealing with, and returns the appropriate Widget for that type of
 item.
 
-通常，我们需要提供一个 `builder` 函数来检查我们正在处理的项目类型，
+通常，我们需要提供一个 `builder` 函数来确定我们正在处理的项目类型，
 并返回该类型项目的相应 Widget。
 
 In this example, using the `is` keyword to check the type of item we're dealing
@@ -124,7 +123,8 @@ appropriate type. However, there are different ways to approach this problem if
 you prefer another pattern!
 
 在这个例子中，我们使用 `is` 关键字来检查我们正在处理的项目类型。
-这样做速度很快，并会自动将每个项目转换为适当的类型。但是，如果您更喜欢其他模式，有不同的方法可以解决此问题！
+这样做速度很快，并会自动将每个项目转换为适当的类型。
+不过，如果你更喜欢其他模式，也能通过其他方式解决此问题！
 
 <!-- skip -->
 ```dart

@@ -54,14 +54,14 @@ First, we'll need a [`Form`]({{site.api}}/flutter/widgets/Form-class.html)
 to work with. The `Form` Widget acts as a container to group and validate
 multiple form fields.
 
-首先，我们需要创建一个表单组件 [`Form`]({{site.api}}/flutter/widgets/Form-class.html) 作为容器承载和验证多个表单域。
+首先，我们需要创建一个表单组件 [`Form`]({{site.api}}/flutter/widgets/Form-class.html) 作为容器承载和验证多个表单域。
 
 When we create the form, we'll also need to provide a
 [`GlobalKey`]({{site.api}}/flutter/widgets/GlobalKey-class.html).
 This will uniquely identify the `Form` that we're working with, and will allow
 us to validate the form in a later step.
 
-当我们创建表单 `Form` 的时候，需要提供一个 [`GlobalKey`]({{site.api}}/flutter/widgets/GlobalKey-class.html)。`GlobalKey` 唯一标识了这个表单 `Form`，在后续的表单验证步骤中，也起到了关键的作用。
+当我们创建表单 `Form` 的时候，需要提供一个 [`GlobalKey`]({{site.api}}/flutter/widgets/GlobalKey-class.html)。`GlobalKey` 唯一标识了这个表单 `Form`，在后续的表单验证步骤中，也起到了关键的作用。
 
 <!-- skip -->
 ```dart
@@ -114,7 +114,7 @@ enter text! This is the job of a
 The `TextFormField` Widget renders a material design text input and knows how to
 display validation errors when they occur.
 
-在前面步骤中，已经创建出表单 `Form` 了，此时还需要提供一个 [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html) 让用户输入文本信息。`TextFormField` 是遵循 material 设计风格的文本输入框，并且能够在输入验证不通过时显示错误提醒。
+在前面步骤中，已经创建出表单 `Form` 了，此时还需要提供一个 [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html) 让用户输入文本信息。`TextFormField` 是遵循 material 设计风格的文本输入框，并且能够在输入验证不通过时显示错误提醒。
 
 How can we validate the input? By providing a `validator` function to the
 `TextFormField`. If there is an error with the information the user has
@@ -122,12 +122,12 @@ provided, the `validator` function must return a `String` containing
 an error message. If there are no errors, the function should not return
 anything.
 
-那我们该如何去验证输入是否正确呢？只需要给 `TextFormField` 加入 `validator` 函数就可以了。`validator` 函数会校验用户输入的信息，如果信息有误，会返回包含出错原因的字符串 `String`。如果信息无误，则不返回。
+那我们该如何去验证输入是否正确呢？只需要给 `TextFormField` 加入 `validator` 函数就可以了。`validator` 函数会校验用户输入的信息，如果信息有误，会返回包含出错原因的字符串 `String`。如果信息无误，则不返回。
 
 In this example, we will create a `validator` that ensures the `TextFormField`
 isn't empty. If it is empty, we will return a friendly error message!
 
-在下面的实例中，我们会在 `TextFormField` 中加入一个 `validator` 验证函数，它的功能是判断用户输入的文本是否为空，如果为空，就返回「请输入文本」的友情提示。
+在下面的实例中，我们会在 `TextFormField` 中加入一个 `validator` 验证函数，它的功能是判断用户输入的文本是否为空，如果为空，就返回「请输入文本」的友情提示。
 
 <!-- skip -->
 ```dart
@@ -154,7 +154,7 @@ When the user attempts to submit the form, we'll need to check if the form is
 valid. If it is, we will show a success message. If the text field has no
 content, we'll want to display the error message.
 
-当用户提交表单后，我们会预先检查表单信息是否有效。如果文本框没有输入任何内容，表单无效，会在文本框区域展示错误提示。如果文本框有内容，表单有效，则会展示验证通过的 SnackBar。
+当用户提交表单后，我们会预先检查表单信息是否有效。如果文本框没有输入任何内容，表单无效，会在文本框区域展示错误提示。如果文本框有内容，表单有效，则会展示验证通过的 SnackBar。
 
 <!-- skip -->
 ```dart
@@ -191,7 +191,7 @@ If everything looks good, the method returns `true`. If any text field contains
 errors, it will display the error message for each invalid text field and return
 `false`.
 
-`FormState` 类包含了 `validate` 方法。当 `validate` 方法被调用的时候，会遍历运行表单中所有文本框的 `validator` 函数。如果所有 `validator` 函数验证都通过，`validate` 方法返回 `true`。如果有某个文本框验证不通过，就会在那个文本框区域显示错误提示，同时 `validate` 方法返回 `false`。
+`FormState` 类包含了 `validate` 方法。当 `validate` 方法被调用的时候，会遍历运行表单中所有文本框的 `validator` 函数。如果所有 `validator` 函数验证都通过，`validate` 方法返回 `true`。如果有某个文本框验证不通过，就会在那个文本框区域显示错误提示，同时 `validate` 方法返回 `false`。
 
 ## Complete example
 

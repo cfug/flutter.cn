@@ -31,7 +31,7 @@ from the internet.
 
 ## In-Memory
 
-## 内存中
+## 从内存加载占位符
 
 In this example, you'll use the
 [transparent_image]({{site.pub-pkg}}/transparent_image)
@@ -91,9 +91,13 @@ class MyApp extends StatelessWidget {
 
 ### From asset bundle
 
+### 从本地存储加载占位符
+
 You can also consider using local assets for placeholders. First, add the asset
 to the project’s `pubspec.yaml` file (for more details see
 [Assets and images](/docs/development/ui/assets-and-images)):
+
+也可以考虑使用本地资源作为占位符。首先将资源添加到项目的 `pubspec.yaml` 文件中（更多细节请参阅 [Assets and images](/docs/development/ui/assets-and-images)）：
 
 <!-- skip -->
 ```diff
@@ -106,6 +110,8 @@ Then, use the
 [FadeInImage.assetNetwork()]({{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html)
 constructor:
 
+然后使用 [FadeInImage.assetNetwork()]({{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html) 构造函数：
+
 <!-- skip -->
 ```dart
 FadeInImage.assetNetwork(
@@ -115,6 +121,8 @@ FadeInImage.assetNetwork(
 ```
 
 ### Complete example
+
+### 完整样例
 
 ```dart
 import 'package:flutter/material.dart';

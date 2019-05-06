@@ -19,7 +19,7 @@ more convenient to locate Widgets using the tools provided by the
 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
 package.
 
-在测试环境下，为了定位 Widgets，我们需要用到 `Finder` 类。我们可以编写自己的 `finder` classes，不过通常使用 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html) 包提供的工具来定位 Widgets 更加方便。
+在测试环境下，为了定位 Widgets，我们需要用到 `Finder` 类。我们可以编写自己的 `finder`classes，不过通常使用 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html) 包提供的工具来定位 Widgets 更加方便。
 
 In this recipe, we'll look at the
 [`find`]({{api}}/flutter_test/find-constant.html)
@@ -45,7 +45,7 @@ review the [Introduction to Widget testing](/docs/cookbook/testing/integration) 
   
   2. Find a Widget with a specific `Key`
   
-     使用具体 `Key` 查找Widget
+     使用具体 `Key` 查找 Widget
   
   3. Find a specific Widget instance
   
@@ -54,7 +54,7 @@ review the [Introduction to Widget testing](/docs/cookbook/testing/integration) 
 
 ### 1. Find a `Text` Widget
 
-###    查找Text Widget
+### 一. 查找 Text Widget
 
 In our tests, we often need to find Widgets that contain specific text. This is
 exactly what the `find.text` method is for. It will create a `Finder` that
@@ -79,7 +79,7 @@ testWidgets('finds a Text Widget', (WidgetTester tester) async {
 
 ### 2. Find a Widget with a specific `Key`
 
-###    使用具体 `Key` 查找Widget
+### 二. 使用具体 `Key` 查找 Widget
 
 In some cases, we may want to find a Widget based on the Key that has been
 provided to it. This can be handy if we're displaying multiple instances of the
@@ -110,7 +110,7 @@ testWidgets('finds a Widget using a Key', (WidgetTester tester) async {
 
 ### 3. Find a specific Widget instance
 
-###    查找具体的 Widget 实例
+### 三. 查找具体的 Widget 实例
 
 Finally, we might be interested in locating a specific instance of a Widget.
 For example, this can be useful when creating Widgets that take a `child`

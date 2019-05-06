@@ -31,24 +31,24 @@ The `flutter_test` package provides the following tools for testing Widgets:
   * The [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html),
   which allows us to build and interact with Widgets in a test environment.
   
-    [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html)，使用该工具可在测试环境下建立 Widget 并与其交互。
+  * [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html)，使用该工具可在测试环境下建立 Widget 并与其交互。
   
   * The [`testWidgets`]({{api}}/flutter_test/testWidgets.html)
   function. This function will automatically create a new `WidgetTester` for
   each test case, and is used in place of the normal `test` function.
   
-     [`testWidgets`]({{api}}/flutter_test/testWidgets.html) 函数，此函数会自动为每个测试创建一个 `WidgetTester`，用来代替普通的 `test` 函数。
+  * [`testWidgets`]({{api}}/flutter_test/testWidgets.html) 函数，此函数会自动为每个测试创建一个 `WidgetTester`，用来代替普通的 `test` 函数。
      
   * [`Finder`]({{api}}/flutter_test/Finder-class.html)
   classes. These allow us to search for Widgets in the test environment.
   
-    [`Finder`]({{api}}/flutter_test/Finder-class.html) 类，允许我们在测试环境下查找 Widget。
+  * [`Finder`]({{api}}/flutter_test/Finder-class.html) 类，允许我们在测试环境下查找 Widget。
     
   * Widget-specific [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html)
   constants, which help us verify whether a `Finder` locates a Widget or
   multiple Widgets in the test environment.
   
-    Widget-specific [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html) 常量，该常量在测试环境下帮助我们验证 `Finder` 是否定位到一个或多个 Widgets。
+  * Widget-specific [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html) 常量，该常量在测试环境下帮助我们验证 `Finder` 是否定位到一个或多个 Widgets。
 
 If this sounds overwhelming, don't worry! We'll see how all of these pieces fit
 together throughout this recipe.
@@ -85,7 +85,7 @@ together throughout this recipe.
 
 ### 1. Add the `flutter_test` dependency
 
-###    添加一个 `flutter_test` 依赖
+### 一. 添加一个 `flutter_test` 依赖
 
 Before we can begin writing tests, we'll need to include the `flutter_test`
 dependency in the `dev_dependencies` section of our `pubspec.yaml` file. If
@@ -102,7 +102,7 @@ dev_dependencies:
 
 ### 2. Create a Widget to test
 
-###    创建一个测试用的 Widget
+### 二. 创建一个测试用的 Widget
 
 Next, we'll need to create a Widget that we can test! For this recipe, we'll
 create a Widget that displays a `title` and `message`.
@@ -139,7 +139,7 @@ class MyWidget extends StatelessWidget {
 
 ### 3. Create a `testWidgets` test
 
-###    创建一个 `testWidgets` 测试方法
+### 三. 创建一个 `testWidgets` 测试方法
 
 Now that we have a Widget to test, we can begin writing our first test! To get
 started, we'll use the
@@ -168,7 +168,7 @@ void main() {
 
 ### 4. Build the Widget using the `WidgetTester`
 
-###    使用 `WidgetTester` 建立 Widget
+### 四. 使用 `WidgetTester` 建立 Widget
 
 Next, we'll want to build `MyWidget` inside the test environment. To do so, we
 can use the
@@ -212,12 +212,12 @@ one of the following methods to ask Flutter to build our Widget once again.
   - [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
   : Triggers a rebuild of the Widget after a given duration.
   
-    [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)：在一段给定时间后重建 Widget。
+  - [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)：在一段给定时间后重建 Widget。
     
   - [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
   : Repeatedly calls pump with the given duration until there are no longer any frames scheduled. This essentially waits for all animations to complete.
   
-    [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)：在给定期间内不断重复调用 pump 直到完成所有绘制帧。一般需要等到所有动画全部完成。
+  - [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)：在给定期间内不断重复调用 pump 直到完成所有绘制帧。一般需要等到所有动画全部完成。
 
 These methods provide fine-grained control over the build lifecycle, which is
 particularly useful while testing.
@@ -226,7 +226,7 @@ particularly useful while testing.
 
 ### 5. Search for our Widget using a `Finder`
 
-###    使用 `Finder` 查找 Widget
+### 五. 使用 `Finder` 查找 Widget
 
 Now that we've built our Widget in the test environment, we'll want to search
 through the Widget tree for the `title` and `message` Text Widgets using a
@@ -247,7 +247,7 @@ For more information about `Finder` classes, please see the
 [Finding Widgets in a Widget Test](/docs/cookbook/testing/widget/finders)
 recipe.
 
-关于 `Finder` classes 的更多信息，请参阅 [Finding Widgets in a Widget Test](/docs/cookbook/testing/widget/finders) 章节。
+关于 `Finder`classes 的更多信息，请参阅 [Finding Widgets in a Widget Test](/docs/cookbook/testing/widget/finders) 章节。
 
 <!-- skip -->
 ```dart
@@ -264,7 +264,7 @@ void main() {
 
 ### 6. Verify our Widget is working using a `Matcher`
 
-###    使用 `Matcher` 验证 Widget 是否正常工作
+### 六. 使用 `Matcher` 验证 Widget 是否正常工作
 
 Finally, we can verify the title and message `Text` Widgets appear on screen
 using the `Matcher` constants provided by `flutter_test`. `Matcher` classes are
@@ -309,17 +309,17 @@ common cases.
   * [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)
   : verifies that no Widgets are found
   
-    [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)：验证没有可被查找的 Widgets。
+  * [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)：验证没有可被查找的 Widgets。
     
   * [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)
   : verifies one or more Widgets are found
   
-    [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)：验证一个或多个 Widgets 被找到。
+  * [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)：验证一个或多个 Widgets 被找到。
     
   * [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)
   : verifies a specific number of Widgets are found
   
-    [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)：验证特定数量的 Widgets 被找到
+  * [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)：验证特定数量的 Widgets 被找到
 
 ### Complete example
 

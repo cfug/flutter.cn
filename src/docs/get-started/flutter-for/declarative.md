@@ -30,8 +30,7 @@ transition between various UI states, Flutter, by contrast,
 lets the developer describe the current UI state and leaves the
 transitioning to the framework.
 
-为了减轻开发人员的负担，无需编写如何在不同的 UI 状态之间进行切换的代码，Flutter 相反，让开发人员描述当前的 UI 状态，并将
-转换交给框架。
+为了减轻开发人员的负担，无需编写如何在不同的 UI 状态之间进行切换的代码，Flutter 相反，让开发人员描述当前的 UI 状态，并将转换交给框架。
 
 This, however, requires a slight shift in thinking for how to manipulate UI.
 
@@ -50,7 +49,7 @@ In the imperative style, you would typically go to ViewB’s owner
 and retrieve the instance `b` using selectors or with `findViewById` or similar,
 and invoke mutations on it (and implicitly invalidate it). For example:
 
-在命令式风格中，你通常需要使用选择器 `findViewById` 或类似函数获取到 ViewB 的实例 `b` 和所有权，并调用转变（并隐式的使其失效）。例如：
+在命令式风格中，你通常需要使用选择器 `findViewById` 或类似函数获取到 ViewB 的实例 `b` 和所有权，并调用相关的修改的方法（并隐式的使其失效）。例如：
 
 ```java
 // Imperative style
@@ -90,6 +89,4 @@ RenderObjects persist between frames and Flutter’s lightweight Widgets
 tell the framework to mutate the RenderObjects between states.
 The Flutter framework handles the rest.
 
-在这里，当用户界面发生变化时， Flutter 不会修改旧的实例 `b` ，而是构造新的 Widget 实例。框架使用 RenderObjects 管理传统 UI 对象的职责（比如维护布局的状态）。RenderObjects 在帧之间保持不变，Flutter 的轻量级 Widget 通知框架在状态之间修改 RenderObjects。 
-
-Flutter 框架则处理其余部分。
+在这里，当用户界面发生变化时， Flutter 不会修改旧的实例 `b` ，而是构造新的 Widget 实例。框架使用 RenderObjects 管理传统 UI 对象的职责（比如维护布局的状态）。RenderObjects 在帧之间保持不变，Flutter 的轻量级 Widget 通知框架在状态之间修改 RenderObjects。 Flutter 框架则处理其余部分。

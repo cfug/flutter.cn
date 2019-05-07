@@ -8,10 +8,12 @@ During a typical development cycle, you test an app using
 `flutter run` at the command line, the **Run** and **Debug**
 toolbar buttons in IntelliJ. By default,
 Flutter builds a *debug* version of your app.
+
 在一般的开发过程中，我们可以使用 `flutter run` 命令，或者 IntelliJ 工具栏中的 **Run** 和 **Debug** 来测试 app。这时候，Flutter 默认会为我们构建 app 的 **调试** 版本。
 
 When you're ready to prepare a *release* version for Android, for example to
 [publish to the Google Play Store][play], follow the steps on this page.
+
 当想要发布 app 时，比如[发布到 Google Play Store][play]，可以按照以下步骤来准备 Android 平台的 **发布** 版本。
 
 ## Review the App Manifest
@@ -20,6 +22,7 @@ When you're ready to prepare a *release* version for Android, for example to
 Review the default [App Manifest][manifest] file `AndroidManifest.xml` located
 in `<app dir>/android/app/src/main` and verify the values are correct,
 especially:
+
 检查位于 `<app dir>/android/app/src/main` 的默认 [App Manifest][manifest] 文件 `AndroidManifest.xml`，并确认各个值都设置正确，特别是：
 
 * `application`: Edit the `android:label` in the
@@ -38,6 +41,7 @@ especially:
 Review the default [Gradle build file][gradlebuild] file `build.gradle`
 located in `<app dir>/android/app` and verify the values are correct,
 especially:
+
 检查位于 `<app dir>/android/app` 的默认 [Gradle build file][gradlebuild]，并确认各个值都设置正确，特别是：
 
 * `defaultConfig`:
@@ -62,9 +66,11 @@ especially:
 When a new Flutter app is created, it has a default Launcher icon. To
 customize this icon you might want to check out the [Flutter Launcher
 Icons]({{site.pub}}/packages/flutter_launcher_icons) package.
+
 当我们创建一个新的 Flutter app 的时候，它会有一个默认的启动图标。要自定义这个图标，可以参考 [Flutter Launcher Icons]({{site.pub}}/packages/flutter_launcher_icons)。
 
 Alternatively, if you want to do it manually, here's how:
+
 或者，如果我们想手动操作，可以参考以下方法：
 
 1. Review the [Android Launcher Icons][launchericons] guidelines for icon
@@ -92,6 +98,7 @@ Alternatively, if you want to do it manually, here's how:
 
 To publish on the Play store, you need to give your app a digital
 signature. Use the following instructions to sign your app.
+
 要想把 app 发布到 Play store，还需要给 app 一个数字签名。我们可以采用以下步骤来为 app 签名：
 
 ### Create a keystore
@@ -99,23 +106,27 @@ signature. Use the following instructions to sign your app.
 If you have an existing keystore, skip to the next step. If not, create one
 by running the following at the command line:
 `keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key`
+
 如果我们已经有一个密钥库，可以跳到下一步。如果没有，在命令行中运行以下的命令来创建一个：
 `keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key`
 
 *Note:* Keep this file private; do not check it into public source control.
-**注意：**保证这个文件的私有性，不要将它提交到公共的代码管理空间。
+
+**注意：** 保证这个文件的私有性，不要将它提交到公共的代码管理空间。
 
 *Note:* `keytool` might not be in your path. It is part of the Java JDK,
 which is installed as part of Android Studio. For the concrete path,
 run `flutter doctor -v` and see the path printed after 'Java binary at:',
 and then use that fully qualified path replacing `java` with `keytool`.
-**注意：**`keytool` 可能不在我们的系统路径中。它是 Java JDK 的一部分，在安装 Android Studio 的时候会被一起安装。运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。
+
+**注意：** `keytool` 可能不在我们的系统路径中。它是 Java JDK 的一部分，在安装 Android Studio 的时候会被一起安装。运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。
 
 ### Reference the keystore from the app
 ### 从 app 中引用密钥库
 
 Create a file named `<app dir>/android/key.properties` that contains a
 reference to your keystore:
+
 创建一个名为 `<app dir>/android/key.properties` 的文件，它包含了密钥库位置的定义：
 
 ```
@@ -132,13 +143,15 @@ storeFile=<密钥库的位置，e.g. /Users/<用户名>/key.jks>
 ```
 
 *Note:* Keep this file private; do not check it into public source control.
-**注意：**保证这个文件的私有性，不要将它提交到公共的代码管理空间。
+
+**注意：** 保证这个文件的私有性，不要将它提交到公共的代码管理空间。
 
 ### Configure signing in gradle
 ### 在 gradle 中配置签名
 
 Configure signing for your app by editing the
 `<app dir>/android/app/build.gradle` file.
+
 通过编辑 `<app dir>/android/app/build.gradle` 文件来为我们的 app 配置签名：
 
 1. Replace:
@@ -224,6 +237,7 @@ Configure signing for your app by editing the
 ```
 
 Release builds of your app will now be signed automatically.
+
 现在我们 app 的发布版本就会被自动签名了。
 
 
@@ -234,17 +248,20 @@ By default, Flutter does not obfuscate or minify the Android host.
 If you intend to use third-party Java or Android libraries,
 you may want to reduce the size of the APK or protect that code from
 reverse engineering.
+
 默认情况下，Flutter 不会做混淆或者缩小 Android host 的工作。如果 app 使用了第三方的 Java 或者 Android 库，我们会希望减小 APK 的大小，或者保护代码不被反编译出来。
 
 For information on obfuscating Dart code, see [Obfuscating Dart
 Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)
 in the [Flutter wiki]({{site.github}}/flutter/flutter/wiki).
+
 要了解混淆 Dart 代码的相关信息，可以参考 [Flutter wiki]({{site.github}}/flutter/flutter/wiki) 上的 [Obfuscating Dart Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)。
 
 ### Step 1 - Configure Proguard
 ### 步骤1 - 配置 Proguard
 
 Create `/android/app/proguard-rules.pro` file and add rules listed below.
+
 创建 `/android/app/proguard-rules.pro` 文件并添加下面的规则。
 
 ```
@@ -260,14 +277,16 @@ Create `/android/app/proguard-rules.pro` file and add rules listed below.
 The configuration above only protects Flutter engine libraries.
 Any additional libraries (for example, Firebase) require their own
 rules to be added.
+
 以上这样的配置只是对 Flutter 引擎库做保护。如果想要保护其他的库（例如，Firebase），需要为它们添加自己的规则。
 
 ### Step 2 - Enable obfuscation and/or minification
-### 步骤2 - 启用混淆以及/或缩减
+### 步骤2 - 启用混淆以及/或压缩
 
 Open `/android/app/build.gradle` file and locate `buildTypes` definition.
 Inside `release` configuration set `minifiyEnabled` and `useProguard` flags
 to true. You have to also point ProGuard to the file you have created in step 1.
+
 在 `/android/app/build.gradle` 文件找到 `buildTypes` 的定义。
 在 `release` 配置中设置 `minifiyEnabled` 和 `useProguard` 为 true。另外我们必须再设置 Proguard 指向步骤 1 中我们创建的文件。
 
@@ -294,16 +313,19 @@ android {
 
 Note: Obfuscation and minification can considerably extend compile time
 of the Android application.
-注意：混淆和缩减会大大增加 Android 应用程序的编译时间。
+
+注意：混淆和压缩会大大增加 Android 应用程序的编译时间。
 
 ## Building a release APK
 ## 构建 APK 的发布版本
 
 This section describes how to build a release APK. If you completed the
 signing steps in the previous section, the release APK will be signed.
+
 这个部分讲述如何构建 APK 的发布版本。如果在前面的部分中已经完成了签名步骤，发布版本的 APK 会被自动签名。
 
 Using the command line:
+
 使用如下命令来构建发布版本：
 
 1. `cd <app dir>` (replace `<app dir>` with your application's directory).
@@ -313,6 +335,7 @@ Using the command line:
 
 The release APK for your app is created at
 `<app dir>/build/app/outputs/apk/release/app-release.apk`.
+
 运行之后，会在如下路径生成 app 的发布版本 APK。
 `<app dir>/build/app/outputs/apk/release/app-release.apk`。
 
@@ -321,9 +344,11 @@ The release APK for your app is created at
 
 Follow these steps to install the APK built in the previous step on a
 connected Android device.
+
 按照如下这些步骤，将前一步中构建出来的 APK 安装到 Android 设备上。
 
 Using the command line:
+
 使用如下命令：
 
 1. Connect your Android device to your computer with a USB cable.
@@ -338,6 +363,7 @@ Using the command line:
 
 For detailed instructions on publishing the release version of an app to the
 Google Play Store, see the [Google Play publishing documentation][play].
+
 要了解如何发布一个 app 到 Google Play Store，可以参考 [Google Play publishing documentation][play]。
 
 ## Building a release app bundle
@@ -345,6 +371,7 @@ Google Play Store, see the [Google Play publishing documentation][play].
 
 This section describes how to build a release app bundle. If you completed
 the signing steps in the previous section, the release bundle will be signed.
+
 这个部分描述了如何构建一个发布的 app bundle。如果在前面的部分已经完成了签名步骤，发布的 bundle 会被签名。
 
 From the command line:
@@ -363,22 +390,24 @@ From the command line:
 
 The release bundle for your app is created at
 `<app dir>/build/app/outputs/bundle/release/app.aab`.
+
 运行之后，会在如下路径生成我们 app 的发布 bundle：
 `<app dir>/build/app/outputs/bundle/release/app.aab`
 
 {{site.alert.note}}
   As of this writing, the app bundle command only generates **armeabi-v7a**
   compatible libs. Follow [Issue 18494][Issue 18494] for more information.
-{{site.alert.end}} 
-{{site.alert.note}}
+  
   在撰写本文时，app bundle 命令只生成了 **armeabi-v7a** 的兼容库。更多的信息请参阅 [Issue 18494][Issue 18494]。
 {{site.alert.end}} 
+
 
 ## Testing an app Bundle
 ## 测试 app Bundle
 
 An app bundle can be tested in multiple ways. This section describes a couple
 ways in which to test an app bundle.
+
 我们可以用多种方式来测试 app bundle。这个部分描述测试 app bundle 的几种方式。
 
 ### Offline using the bundle tool

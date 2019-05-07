@@ -89,7 +89,7 @@ Flutter 代码经常会构建一定深度的树形数据结构，如在 `build` 
 
 Here is an example of automatically formatted code *with* trailing commas:
 
-自动格式化的时候，末尾处有逗号的例子：
+自动格式化的时候，末尾处 *加入* 逗号的例子：
 
 ![Automatically formatted code with trailing commas]({% asset tools/android-studio/trailing-comma-with.png @path %})
 

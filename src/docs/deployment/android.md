@@ -58,7 +58,7 @@ especially:
   * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level,
      and the API level on which the app is designed to run. Consult the API
      level section in the [versions documentation][versions] for details.
-  * `minSdkVersion` & `targetSdkVersion`：指定支持的最低 API 版本，以及我们 app 的目标 API 版本。具体可以参考 [版本文档][versions]中的 API 版本部分。
+  * `minSdkVersion` & `targetSdkVersion`：指定支持的最低 API 版本，以及我们 app 的目标 API 版本。具体可以参考 [版本文档][versions] 中的 API 版本部分。
 
 ## Adding a Launcher icon
 ## 添加一个启动图标

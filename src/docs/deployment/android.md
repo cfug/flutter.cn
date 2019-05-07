@@ -426,7 +426,7 @@ ways in which to test an app bundle.
 1. If you have done done so already, download `bundletool` from the
 [GitHub repository](https://github.com/google/bundletool).
    
-   从 [GitHub仓库](https://github.com/google/bundletool)下载 `bundletool`。
+   从 [GitHub仓库](https://github.com/google/bundletool) 下载 `bundletool`。
 1. [Generate a set of
 APKs](https://developer.android.com/studio/command-line/bundletool#generate_apks)
 from your app bundle.
@@ -436,7 +436,7 @@ from your app bundle.
 APKs](https://developer.android.com/studio/command-line/bundletool#deploy_with_bundletool)
 to connected devices.
    
-   [部署 APK ](https://developer.android.com/studio/command-line/bundletool#deploy_with_bundletool)到设备上。
+   [部署 APK](https://developer.android.com/studio/command-line/bundletool#deploy_with_bundletool) 到设备上。
 
 ### Online using Google Play
 ### 在线使用 Google Play
@@ -450,7 +450,7 @@ it in production.
 bundle](https://developer.android.com/studio/publish/upload-bundle)
 to the Play Store.
    
-   按照[这些步骤上传 bundle](https://developer.android.com/studio/publish/upload-bundle) 到 Play Store上。
+   按照 [这些步骤上传 bundle](https://developer.android.com/studio/publish/upload-bundle) 到 Play Store上。
 
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element

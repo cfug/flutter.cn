@@ -47,7 +47,7 @@ Preferences.
 Install the `Flutter` extension (see [Editor setup](/docs/get-started/editor))
 to get automatic formatting of code in VS Code.
 
-在 VS Code 中安装 `Flutter` 扩展（见章节[启动编辑器](/docs/get-started/editor)）来进行代码的自动格式化。
+在 VS Code 中安装 `Flutter` 扩展（见章节 [编辑工具设定](/docs/get-started/editor)）来进行代码的自动格式化。
 
 To automatically format the code in the current source code window, right-click
 in the code window and select `Format Document`. You can add a keyboard

@@ -9,12 +9,12 @@ During a typical development cycle, you test an app using
 toolbar buttons in IntelliJ. By default,
 Flutter builds a *debug* version of your app.
 
-在一般的开发过程中，我们可以使用 `flutter run` 命令，或者 IntelliJ 工具栏中的 **Run** 和 **Debug** 来测试 app。这时候，Flutter 默认会为我们构建 app 的 **调试** 版本。
+在一般的开发过程中，我们可以使用 `flutter run` 命令，或者 IntelliJ 工具栏中的 **Run** 和 **Debug** 来测试 app。这时候，Flutter 默认会为我们构建 app 的**调试**版本。
 
 When you're ready to prepare a *release* version for Android, for example to
 [publish to the Google Play Store][play], follow the steps on this page.
 
-当想要发布 app 时，比如[发布到 Google Play Store][play]，可以按照以下步骤来准备 Android 平台的 **发布** 版本。
+当想要发布 app 时，比如[发布到 Google Play Store][play]，可以按照以下步骤来准备 Android 平台的**发布**版本。
 
 ## Review the App Manifest
 ## 检查 App Manifest
@@ -75,19 +75,21 @@ Alternatively, if you want to do it manually, here's how:
 
 1. Review the [Android Launcher Icons][launchericons] guidelines for icon
    design.
+   
    查看 [Android Launcher Icons][launchericons] 指南中图标设计部分。
 
 1. In the `<app dir>/android/app/src/main/res/` directory, place your icon files
    in folders named using [configuration qualifiers][].
    The default `mipmap-` folders demonstrate the correct naming convention.
+   
    在 `<app dir>/android/app/src/main/res/` 目录下, 把我们的图标文件放在以[配置限定符][]命名的文件夹中。
    类似默认的 `mipmap-` 文件夹这样的命名方式。
 
 1. In `AndroidManifest.xml`, update the [`application`][applicationtag] tag's
    `android:icon` attribute to reference icons from the previous step (for
    example, `<application android:icon="@mipmap/ic_launcher" ...`).
-   在 `AndroidManifest.xml` 中，更新 [`application`][applicationtag] 标签中的
-   `android:icon` 属性来引用上一步骤中我们自己的图标文件（例如，`<application android:icon="@mipmap/ic_launcher" ...`)。
+   
+   在 `AndroidManifest.xml` 中，更新 [`application`][applicationtag] 标签中的 `android:icon` 属性来引用上一步骤中我们自己的图标文件（例如，`<application android:icon="@mipmap/ic_launcher" ...`)。
 
 1. To verify the icon has been replaced, run your app using `flutter run`
    and inspect the app icon in the Launcher.
@@ -249,7 +251,7 @@ If you intend to use third-party Java or Android libraries,
 you may want to reduce the size of the APK or protect that code from
 reverse engineering.
 
-默认情况下，Flutter 不会做混淆或者缩小 Android host 的工作。如果 app 使用了第三方的 Java 或者 Android 库，我们会希望减小 APK 的大小，或者保护代码不被反编译出来。
+默认情况下，Flutter 不会做混淆或者压缩 Android host 的工作。如果 app 使用了第三方的 Java 或者 Android 库，我们会希望减小 APK 的大小，或者保护代码不被反编译出来。
 
 For information on obfuscating Dart code, see [Obfuscating Dart
 Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)
@@ -329,15 +331,16 @@ Using the command line:
 使用如下命令来构建发布版本：
 
 1. `cd <app dir>` (replace `<app dir>` with your application's directory).
+   
    `cd <app dir>` （将 `<app dir>` 替换为我们 app 的目录)。
 1. Run `flutter build apk` (`flutter build` defaults to `--release`).
+   
    运行 `flutter build apk` （`flutter build` 默认带有 `--release` 参数）。
 
 The release APK for your app is created at
 `<app dir>/build/app/outputs/apk/release/app-release.apk`.
 
-运行之后，会在如下路径生成 app 的发布版本 APK。
-`<app dir>/build/app/outputs/apk/release/app-release.apk`。
+运行之后，会在 `<app dir>/build/app/outputs/apk/release/app-release.apk` 路径中生成 app 的发布版本 APK。
 
 ## Installing a release APK on a device
 ## 在设备上安装发布版本 APK
@@ -352,10 +355,13 @@ Using the command line:
 使用如下命令：
 
 1. Connect your Android device to your computer with a USB cable.
+   
    用 USB 线将 Android 设备连接到电脑上。
 1. `cd <app dir>` where `<app dir>` is your application directory.
+   
    `cd <app dir>`，`<app dir>` 是我们 app 的目录。
 1. Run `flutter install` .
+   
    运行 `flutter install`。
 
 ## Publishing an APK to the Google Play Store
@@ -378,12 +384,15 @@ From the command line:
 使用如下命令：
 
 1. Enter `cd <app dir>`. (Replace `<app, dir>` with your application's directory.)
+   
    运行 `cd <app dir>`。（将 `<app, dir>` 替换为我们 app 的目录）。
 1. Run `flutter build appbundle`. (Running `flutter build` defaults to a release build.)
+   
    运行 `flutter build appbundle`。（运行 `flutter build` 默认构建一个发布版本)。
 1. To generate a different variant of bundle, you can enter
    <nobr>`flutter build appbundle --release --target-platform=android-arm`.</nobr>
    This generates a bundle for android-arm.
+   
    为了生成各个不同平台的 bundle ，可以运行
    <nobr>`flutter build appbundle --release --target-platform=android-arm`。</nobr>
    它会生成 android-arm 平台的 bundle。
@@ -391,8 +400,8 @@ From the command line:
 The release bundle for your app is created at
 `<app dir>/build/app/outputs/bundle/release/app.aab`.
 
-运行之后，会在如下路径生成我们 app 的发布 bundle：
-`<app dir>/build/app/outputs/bundle/release/app.aab`
+运行之后，会在 `<app dir>/build/app/outputs/bundle/release/app.aab` 路径生成我们 app 的发布 bundle。
+
 
 {{site.alert.note}}
   As of this writing, the app bundle command only generates **armeabi-v7a**
@@ -415,14 +424,17 @@ ways in which to test an app bundle.
 
 1. If you have done done so already, download `bundletool` from the
 [GitHub repository](https://github.com/google/bundletool).
+   
    从 [GitHub仓库](https://github.com/google/bundletool)下载 `bundletool`。
 1. [Generate a set of
 APKs](https://developer.android.com/studio/command-line/bundletool#generate_apks)
 from your app bundle.
+   
    从我们的 app bundle [产生一系列 APK ](https://developer.android.com/studio/command-line/bundletool#generate_apks)。
 1. [Deploy the
 APKs](https://developer.android.com/studio/command-line/bundletool#deploy_with_bundletool)
 to connected devices.
+   
    [部署 APK ](https://developer.android.com/studio/command-line/bundletool#deploy_with_bundletool)到设备上。
 
 ### Online using Google Play
@@ -431,10 +443,12 @@ to connected devices.
 1. Upload your bundle to Google Play to test it. You can use the internal
 test track, or the alpha or beta channels to test the bundle before releasing
 it in production.
+   
    上传我们的 bundle 到 Google Play上进行测试。在发布之前，我们可以使用内部测试追踪，或者 alpha 或者 beta 通道来测试 bundle。
 2. Follow [these steps to upload your
 bundle](https://developer.android.com/studio/publish/upload-bundle)
 to the Play Store.
+   
    按照[这些步骤上传 bundle](https://developer.android.com/studio/publish/upload-bundle) 到 Play Store上。
 
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro

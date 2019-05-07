@@ -1,6 +1,6 @@
 ---
 title: Code formatting
-title: 代码格式
+title: 代码格式化
 description: Flutter's code formatter formats your code along recommended style guidelines.
 description: Flutter 的代码格式化工具以及推荐的代码格式。
 ---
@@ -93,7 +93,7 @@ Here is an example of automatically formatted code *with* trailing commas:
 
 ![Automatically formatted code with trailing commas]({% asset tools/android-studio/trailing-comma-with.png @path %})
 
-![末尾处有逗号进行代码自动格式化的情况]({% asset tools/android-studio/trailing-comma-with.png @path %})
+![末尾处有逗号进行代码自动格式化的情况(Automatically formatted code with trailing commas)]({% asset tools/android-studio/trailing-comma-with.png @path %})
 
 And the same code automatically formatted code *without* trailing commas:
 
@@ -101,4 +101,4 @@ And the same code automatically formatted code *without* trailing commas:
 
 ![Automatically formatted code without trailing commas]({% asset tools/android-studio/trailing-comma-without.png @path %})
 
-![末尾处没有逗号进行代码自动格式化的情况]({% asset tools/android-studio/trailing-comma-without.png @path %})
+![末尾处没有逗号进行代码自动格式化的情况(Automatically formatted code without trailing commas)]({% asset tools/android-studio/trailing-comma-without.png @path %})

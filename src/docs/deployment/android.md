@@ -14,7 +14,7 @@ Flutter builds a *debug* version of your app.
 When you're ready to prepare a *release* version for Android, for example to
 [publish to the Google Play Store][play], follow the steps on this page.
 
-当想要发布 app 时，比如[发布到 Google Play Store][play]，可以按照以下步骤来准备 Android 平台的**发布**版本。
+当想要发布 app 时，比如 [发布到 Google Play Store][play]，可以按照以下步骤来准备 Android 平台的**发布**版本。
 
 ## Review the App Manifest
 ## 检查 App Manifest
@@ -53,12 +53,12 @@ especially:
      and the version number display string. You can do this by setting
      the `version` property in the pubspec.yaml file. Consult the version
      information guidance in the [versions documentation][versions].
-  * `versionCode` & `versionName`：指定 app 的内部版本号，以及用于显示的版本号，这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。具体可以参考[版本文档][versions]中的版本信息指南。
+  * `versionCode` & `versionName`：指定 app 的内部版本号，以及用于显示的版本号，这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。具体可以参考 [版本文档][versions] 中的版本信息指南。
 
   * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level,
      and the API level on which the app is designed to run. Consult the API
      level section in the [versions documentation][versions] for details.
-  * `minSdkVersion` & `targetSdkVersion`：指定支持的最低 API 版本，以及我们 app 的目标 API 版本。具体可以参考[版本文档][versions]中的 API 版本部分。
+  * `minSdkVersion` & `targetSdkVersion`：指定支持的最低 API 版本，以及我们 app 的目标 API 版本。具体可以参考 [版本文档][versions]中的 API 版本部分。
 
 ## Adding a Launcher icon
 ## 添加一个启动图标
@@ -82,7 +82,7 @@ Alternatively, if you want to do it manually, here's how:
    in folders named using [configuration qualifiers][].
    The default `mipmap-` folders demonstrate the correct naming convention.
    
-   在 `<app dir>/android/app/src/main/res/` 目录下, 把我们的图标文件放在以[配置限定符][]命名的文件夹中。
+   在 `<app dir>/android/app/src/main/res/` 目录下, 把我们的图标文件放在以 [配置限定符][] 命名的文件夹中。
    类似默认的 `mipmap-` 文件夹这样的命名方式。
 
 1. In `AndroidManifest.xml`, update the [`application`][applicationtag] tag's
@@ -381,6 +381,7 @@ the signing steps in the previous section, the release bundle will be signed.
 这个部分描述了如何构建一个发布的 app bundle。如果在前面的部分已经完成了签名步骤，发布的 bundle 会被签名。
 
 From the command line:
+
 使用如下命令：
 
 1. Enter `cd <app dir>`. (Replace `<app, dir>` with your application's directory.)

@@ -24,7 +24,6 @@ onto the screen.
 
 与标准的 `ListView` 构造函数需要一次性创建所有列表项不同的是，`ListView.builder` 构造函数只在列表项从屏幕外滑入屏幕时才去创建列表项。
 
-
 ## 1. Create a data source
 
 ## 1. 创建数据源

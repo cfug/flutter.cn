@@ -70,7 +70,7 @@
     iOS 和 Android 的开发二进制文件：
 
 
-    ```
+    ```terminal
     $ flutter precache
     ```
 

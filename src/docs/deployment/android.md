@@ -450,7 +450,7 @@ ways in which to test an app bundle.
 
 ### 离线使用 bundle 工具
 
-1. If you have done done so already, download `bundletool` from the
+1. If you have done so already, download `bundletool` from the
 [GitHub repository](https://github.com/google/bundletool).
    
    从 [GitHub仓库](https://github.com/google/bundletool) 下载 `bundletool`。

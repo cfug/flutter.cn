@@ -115,5 +115,3 @@ class MyApp extends StatelessWidget {
 ```
 
 ![Long Lists Demo](/images/cookbook/long-lists.gif){:.site-mobile-screenshot}
-
-![长列表处理演示](/images/cookbook/long-lists.gif){:.site-mobile-screenshot}

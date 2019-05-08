@@ -47,7 +47,7 @@ their constructor arguments. In the case of [`Container`]({{site.api}}/flutter/w
 to trying to be as big as possible, but if you give it a `width`, for
 instance, it tries to honor that and be that particular size.
 
-对于一些诸如 [`Container`]({{site.api}}/flutter/widgets/Container-class.html) 的 widget ，其尺寸会因构造方法的参数而异，就 [`Container`]({{site.api}}/flutter/widgets/Container-class.html) 来说，它默认是尽可能大的，而一旦给它一个特定的宽度，那么它就会遵照这个特定的宽度来调整自身尺寸；
+对于一些诸如 [`Container`]({{site.api}}/flutter/widgets/Container-class.html) 的 widget ，其尺寸会因构造方法的参数而异，就 [`Container`]({{site.api}}/flutter/widgets/Container-class.html) 来说，它默认是尽可能大的，而一旦给它一个特定的宽度，那么它就会遵照这个特定的宽度来调整自身尺寸。
 
 Others, for example [`Row`]({{site.api}}/flutter/widgets/Row-class.html) and [`Column`]({{site.api}}/flutter/widgets/Column-class.html) (flex boxes) vary based on the
 constraints they are given, as described below in the "Flex" section.
@@ -69,7 +69,7 @@ means that if you nest a bunch of boxes inside each other at the root
 of your application's render tree, they'll all exactly fit in each
 other, forced by these tight constraints.
 
-约束有时是"紧密的"，这意味着这些约束严格地限定了渲染框在定夺自身尺寸方面的空间（例如：当约束的最小宽度和最大宽度相同时，这种情况下，我们称这个约束有紧密宽度），这方面的主要例子是 App Widget，它是 [`RenderView`]({{site.api}}/flutter/rendering/RenderView-class.html) 类里面的一个 widget: 由应用程序的 [`build`]({{site.api}}/flutter/widgets/State/build.html) 函数返回的子 widget 渲染框被指定了一个约束，该约束强制 App Widget 精确填充应用程序的内容区域(通常是整个屏幕)。Flutter 中的许多渲染框，特别是那些只包含单个 widget 的渲染框，都会将自身的约束传递给他们的子级 widget。这意味着如果您在应用程序渲染树的根部嵌套了一些渲染框，这些框将会在受到约束的影响下相互适应彼此。
+约束有时是"紧密的"，这意味着这些约束严格地限定了渲染框在定夺自身尺寸方面的空间（例如：当约束的最小宽度和最大宽度相同时，这种情况下，我们称这个约束有紧密宽度），这方面的主要例子是 App Widget，它是 [`RenderView`]({{site.api}}/flutter/rendering/RenderView-class.html) 类里面的一个 widget: 由应用程序的 [`build`]({{site.api}}/flutter/widgets/State/build.html) 函数返回的子 widget 渲染框被指定了一个约束，该约束强制 App Widget 精确填充应用程序的内容区域(通常是整个屏幕)。Flutter 中的许多渲染框，特别是那些只包含单个 widget 的渲染框，都会将自身的约束传递给他们的子级 widget。这意味着如果你在应用程序渲染树的根部嵌套了一些渲染框，这些框将会在受到约束的影响下相互适应彼此。
 
 Some boxes _loosen_ the constraints, meaning the maximum is maintained
 but the minimum is removed. For example,
@@ -87,7 +87,7 @@ In certain situations, the constraint that is given to a box is
 _unbounded_, or infinite. This means that either the maximum width or
 the maximum height is set to `double.INFINITY`.
 
-在某些情况下，传递给框的约束是_无边界_的或无限的。这意味着约束的最大宽度或最大高度为`double.INFINITY`。
+在某些情况下，传递给框的约束是 _无边界_ 的或无限的。这意味着约束的最大宽度或最大高度为`double.INFINITY`。
 
 A box that tries to be as big as possible won't function usefully when
 given an unbounded constraint and, in debug mode, such a combination
@@ -114,7 +114,7 @@ inside a horizontally scrolling [`ListView`]({{site.api}}/flutter/widgets/ListVi
 the inner one tries to be as wide as possible, which is infinitely
 wide, since the outer one is scrollable in that direction.
 
-特别是 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 会试图扩展以适应其交叉方向可用空间(比如说，如果它是一个垂直滚动块，它将试图扩充到与其父 widget 一样宽)。如果让垂直滚动的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 嵌套在水平滚动的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 内，那么被嵌套在里面的垂直滚动的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 将会试图尽可能宽，直到无限宽，因为将其嵌套的是一个水平滚动的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) ，它可以在水平方向上一直滚动。
+特别是 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 会试图扩展以适应其交叉方向可用空间(比如说，如果它是一个垂直滚动块，它将试图扩充到与其父 widget 一样宽)。如果让垂直滚动的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 嵌套在水平滚动的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 内，那么被嵌套在里面的垂直滚动的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 将会试图尽可能宽，直到无限宽，因为将其嵌套的是一个水平滚动的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)，它可以在水平方向上一直滚动。
 
 Flex
 ----
@@ -141,7 +141,7 @@ when the flex box is inside
 another flex box or inside a scrollable. If you do, you'll get an
 exception message pointing you at this document.
 
-在无边界约束条件下，它们试图让其子widget自适应这个给定的方向。在这种情况下，不能将子widget的`flex`属性设置为0（默认值）以外的任何值。这意味着在widget库中，当一个flex框嵌套在另外一个flex框或者嵌套在可滚动区域内时，不能使用 [`Expanded`]({{site.api}}/flutter/widgets/Expanded-class.html) 。如果这样做了，就会收到异常，该异常信息会把你引导到本页面。
+在无边界约束条件下，它们试图让其子 widget 自适应这个给定的方向。在这种情况下，不能将子 widget 的`flex`属性设置为0（默认值）以外的任何值。这意味着在 widget 库中，当一个 flex 框嵌套在另外一个 flex 框或者嵌套在可滚动区域内时，不能使用 [`Expanded`]({{site.api}}/flutter/widgets/Expanded-class.html) 。如果这样做了，就会收到异常，该异常信息会把你引导到本页面。
 
 In the _cross_ direction, i.e. in their width for
 [`Column`]({{site.api}}/flutter/widgets/Column-class.html)

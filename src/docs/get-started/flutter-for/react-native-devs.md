@@ -1608,12 +1608,16 @@ state changes for a `StatefulWidget`. A call to `setState` tells the Flutter
 framework that something has changed in a state, which causes an app to
 rerun the `build` method so that the app can reflect the change.
 
+[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html) 是携带状态变化的控件。通过调用 `setState` 方法可以管理 `StatefulWidget` 的状态。当调用 `setState` 的时候，程序会通知 Flutter 框架有状态发生了改变，然后会重新运行 `build` 方法来更新应用的状态。
+
 State is information that can be read synchronously when a widget is built and
 might change during the lifetime of the widget. It's the responsibility of the
 widget implementer to ensure that the state is promptly notified when the state
 changes. Use `StatefulWidget` when a widget can change dynamically.
 For example, the state of the widget changes by typing into a form,
 or moving a slider. Or, it can change over time—perhaps a data feed updates the UI.
+
+状态是在控件被创建期间可以被同步读取的信息，并且在控件的生命周期中会发生改变。实现该控件的时候要注意保证党状态发生改变的时候程序能够获得相应的提醒。当控件能够动态改变的时候，请使用 `StatefulWidget`。比如，某个控件会随着用户填写表单或者移动滑块的时候发生改变。亦或者随着数据源更新的时候发生改变。
 
 [Checkbox]({{site.api}}/flutter/material/Checkbox-class.html),
 [Radio]({{site.api}}/flutter/material/Radio-class.html),
@@ -1624,9 +1628,19 @@ and [TextField]({{site.api}}/flutter/material/TextField-class.html)
 are examples of stateful widgets, that subclass
 [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
 
+[Checkbox]({{site.api}}/flutter/material/Checkbox-class.html),
+[Radio]({{site.api}}/flutter/material/Radio-class.html),
+[Slider]({{site.api}}/flutter/material/Slider-class.html),
+[InkWell]({{site.api}}/flutter/material/InkWell-class.html),
+[Form]({{site.api}}/flutter/widgets/Form-class.html),
+和 [TextField]({{site.api}}/flutter/material/TextField-class.html)
+都是有状态的控件 [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
+
 The following example declares a `StatefulWidget` which requires a `createState()`
 method. This method creates the state object that manages the widget's state,
 `_MyStatefulWidgetState`.
+
+下面的示例代码声明了一个 `StatefulWidget`，需要实现 `createState()` 方法。该方法创建一个对象来管理控件的状态，也就是 `_MyStatefulWidgetState`。
 
 <!-- skip -->
 ```dart
@@ -1643,6 +1657,8 @@ The following state class, `_MyStatefulWidgetState`, implements the `build()`
 method for the widget. When the state changes, for example, when the user toggles
 the button, `setState` is called with the new toggle value. This causes the
 framework to rebuild this widget in the UI.
+
+下面的状态类，`_MyStatefulWidgetState`，实现了 `build()` 方法。当状态发生改变的时候，比如说用户点击了开关按钮，这时 `setState` 就会被调用，并且将新的开关状态传进来。这就会使整体框架重构这个控件。
 
 <!-- skip -->
 ```dart
@@ -1701,34 +1717,70 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
 ### What are the StatefulWidget and StatelessWidget best practices?
 
+### StatefulWidget 和 StatelessWidget 的最佳实践是什么？
+
 Here are a few things to consider when designing your widget.
+
+下面有一些设计原则供大家参考。
 
 #### 1. Determine whether a widget should be a StatefulWidget or a StatelessWidget
 
+### 1. 确定一个控件应该是 StatefulWidget 还是 StatelessWidget
 
 In Flutter, widgets are either Stateful or Stateless—depending on whether
 they depend on a state change.
 
+在 Flutter 中，控件要么是有状态的，要么是无状态的。这取决于控件是否依赖状态的改变。
+
 * If a widget changes—the user interacts with it or a data feed interrupts
   the UI, then it’s Stateful.
+
+* 如果一个控件发生了改变，而它所处的用户界面或者数据中断了 UI，那么该控件就是有状态的。
+
 * If a widget is final or immutable, then it's Stateless.
+
+* 如果一个控件是 final 类型或者 immutable 类型的，那么该控件是无状态的。
 
 #### 2. Determine which object manages the widget’s state (for a StatefulWidget)
 
+#### 2. 确定哪个对象来控制控件的状态（ 针对 StatefulWidget ）。
+
 In Flutter, there are three primary ways to manage state:
 
+在 Flutter 中，有三种途径来管理状态：
+
 * The widget manages its own state
+
+* 控件管理它的自身状态
+
 * The parent widget manages the widget’s state
+
+* 由其父控件管理控件状态
+
 * A mix-and-match approach
 
+* 通过混搭的方式
+
 When deciding which approach to use, consider the following principles:
+
+当决定了使用哪个途径后，要考虑下述的几个原则：
 
 * If the state in question is user data, for example the checked or unchecked
   mode of a checkbox, or the position of a slider, then the state is best managed
   by the parent widget.
+
+* 如果状态信息是用户数据，比如 checkbox 是被勾选还是未被勾选，或者滑块的位置，那么父控件会很好的处理当前控件的状态。
+
 * If the state in question is aesthetic, for example an animation, then the
   widget itself best manages the state.
-* When in doubt, let the parent widget manage the child widget's state.
+
+* 如果状态是和外观效果相关的，比如动画，那么控件自己会处理状态的变化。
+
+* When in doubt, let the parent widget manage the child widget's state.‘
+
+* 如果无法确定，那么父控件会处理子控件的状态。
+
+
 
 #### 3. Subclass StatefulWidget and State
 

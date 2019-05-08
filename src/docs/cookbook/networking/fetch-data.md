@@ -38,7 +38,7 @@ Flutter provide tools for this type of work.
 The [`http`]({{site.pub-pkg}}/http) package provides the
 simplest way to fetch data from the internet.
 
-[`http`]({{site.pub-pkg}}/http) 包为我们提供了获取网络数据的最简单的方法。
+[`http`]({{site.pub-pkg}}/http) 包为我们提供了获取网络数据最简单的方法。
 
 To install the `http` package, you must add it to the dependencies section
 of the `pubspec.yaml`. You can [find the latest version of the http package on
@@ -100,13 +100,13 @@ First, create a `Post` class that contains the data from the
 network request. It will include a factory constructor that 
 creates a `Post` from json.
 
-首先，创建一个包含请求返回数据的 `Post` 类。而且这个类还需要一个可以利用 json 创建 `Post` 的的工厂构造器。
+首先，创建一个包含网络请求返回数据的 `Post` 类。而且这个类还需要一个可以利用 json 创建 `Post` 的工厂构造器。
 
 Converting JSON by hand is only one option. For more information,
 please see the full article on [JSON and
 serialization](/docs/development/data-and-backend/json).
 
-手动转换 JSON 是我们唯一的选项。想了解更多，请查看完整的文章 [JSON 和序列化数据](/docs/development/data-and-backend/json)。
+手动转换 JSON 是我们目前唯一的选项。想了解更多，请查看完整的文章 [JSON 和序列化数据](/docs/development/data-and-backend/json)。
 
 <!-- skip -->
 ```dart
@@ -131,12 +131,12 @@ class Post {
 
 ### Convert the `http.Response` to a `Post`
 
-### 将 `http.Response` 转换成一个 `Post`
+### 将 `http.Response` 转换成 `Post`
 
 Now, update the `fetchPost` function to return a `Future<Post>`. To do so,
 you'll need to:
 
-现在，更新 `fetchPost` 函数来返回一个 `Future<Post>`。因此，我们需要做以下几步：
+现在，我们需要更新 `fetchPost` 函数并返回 `Future<Post>`。为了实现这个目标，我们需要做以下几步：
 
   1. Convert the response body into a json `Map` with the `dart:convert`
      package.
@@ -145,7 +145,7 @@ you'll need to:
   3. If the server returns an unexpected response, throw an error
 
   1. 用 `dart:convert` 包将响应体转换成一个 json `Map`。
-  2. 如果服务器返回了一个状态码为 200 的 "OK" 响应，就使用 `fromJson` 工厂方法将 json `Map` 转换成 `Post`。
+  2. 如果服务器返回了一个状态码为 200 的 "OK" 响应，那么就使用 `fromJson` 工厂方法将 json `Map` 转换成 `Post`。
   3. 如果服务器返回的不是我们预期的响应，那么就抛出错误。
 
 <!-- skip -->
@@ -167,7 +167,7 @@ Future<Post> fetchPost() async {
 Hooray! Now you've got a function that we can call to fetch a Post from the
 internet.
 
-棒极了！现在你就有了一个可以获取网络数据的完整函数啦。
+太棒了！现在你就拥有了一个可以获取网络数据的完整函数啦。
 
 ## 4. Fetch and Display the data
 
@@ -178,7 +178,7 @@ In order to fetch the data and display it on screen, you can use the
 widget. The `FutureBuilder` Widget comes with Flutter and makes it easy
 to work with async data sources.
 
-为了在屏幕上获取并展示数据，你可以使用 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) 部件。这个由 Flutter 提供的 `FutureBuilder` 部件可以让处理异步数据源变的非常简单。
+为了能够获取数据并在屏幕上展示它，你可以使用 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) 组件。这个由 Flutter 提供的 `FutureBuilder` 组件可以让处理异步数据源变的非常简单。
 
 You must provide two parameters:
 
@@ -253,7 +253,7 @@ You can see a working example of this in the complete example below.
 
 ### Call it in the lifecycle of a `StatefulWidget`'s state
 
-### 在 `StatefulWidget` 的生命中期中调用
+### 在 `StatefulWidget` 状态的生命周期中调用
 
 If your widget is stateful, you can call the fetch method in either the
 [`initState`]({{site.api}}/flutter/widgets/State/initState.html) or

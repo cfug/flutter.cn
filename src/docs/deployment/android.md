@@ -350,7 +350,7 @@ Using the command line:
 
 1. `cd <app dir>` (replace `<app dir>` with your application's directory).
    
-   `cd <app dir>` （将 `<app dir>` 替换为我们 app 的目录)。
+   `cd <app dir>` （将 `<app dir>` 替换为我们 app 的目录）。
 1. Run `flutter build apk` (`flutter build` defaults to `--release`).
    
    运行 `flutter build apk` （`flutter build` 默认带有 `--release` 参数）。
@@ -408,9 +408,11 @@ From the command line:
 1. Enter `cd <app dir>`. (Replace `<app, dir>` with your application's directory.)
    
    运行 `cd <app dir>`。（将 `<app, dir>` 替换为我们 app 的目录）。
+   
 1. Run `flutter build appbundle`. (Running `flutter build` defaults to a release build.)
    
-   运行 `flutter build appbundle`。（运行 `flutter build` 默认构建一个发布版本)。
+   运行 `flutter build appbundle`。（运行 `flutter build` 默认构建一个发布版本。)
+   
 1. To generate a different variant of bundle, you can enter
    <nobr>`flutter build appbundle --release --target-platform=android-arm`.</nobr>
    This generates a bundle for android-arm.

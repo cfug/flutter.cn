@@ -21,14 +21,14 @@ We hope these resources make Dart easy for you to learn, too.
   _top-level functions_, _named parameters_, _async / await_, and lots more.
   
 [Dart 语言学习之旅]({{site.dart-site}}/guides/language/language-tour)
-: 你学习 Dart 语言最好的介绍。学习 Dart 的特性，比如 _强类型_，_闭包_,_库_,_词法作用域_,_顶级函数_,_命名参数_,_async / await_, 以及更多。
+: 你学习 Dart 语言最好的介绍。学习 Dart 的特性，比如_强类型_、_闭包_、_库_、_词法作用域_、_顶级函数_、_命名参数_、_async / await_, 以及更多。
 
 [Library tour]({{site.dart-site}}/guides/libraries/library-tour)
 : A good overview of Dart's powerful core libraries. Learn about
   Dart's support for collections, async, math, numbers, strings, JSON, and more.
 
 [Dart 库学习之旅]({{site.dart-site}}/guides/libraries/library-tour)
-: 一个很好的关于 Dart 的强大的核心库的概览。学习关于 Dart 对于 集合、async、math、number、strings、JSON 的支持。
+: 一个很好的关于 Dart 的强大的核心库的概览。学习关于 Dart 对于集合、async、math、number、strings、JSON 的支持。
 
 [Intro to Dart for Java Developers Codelab]({{site.codelabs}}/codelabs/from-java-to-dart)
 : Use your Java knowledge to get up and running quickly with Dart. Learn about
@@ -36,7 +36,7 @@ We hope these resources make Dart easy for you to learn, too.
   Tutorial.
 
 [给 Java 开发者的 Dart 入门代码实验室]({{site.codelabs}}/codelabs/from-java-to-dart)
-: 使用你的 Java 知识来提升和加快学习 Dart 的速度。从这个 Java 指南中学习关于类、构造器、参数、和接口及相关案例。
+: 使用你的 Java 知识来提升和加快学习 Dart 的速度。从这个 Java 指南中学习关于类、构造器、参数和接口及相关案例。
 
 [Effective Dart]({{site.dart-site}}/guides/language/effective-dart)
 : Guides for style, authoring documentation, usage, and more.

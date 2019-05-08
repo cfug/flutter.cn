@@ -29,13 +29,14 @@ especially:
 * `application`: Edit the `android:label` in the
   [`application`][applicationtag] tag to reflect the final name of the app.
   
-* `application`：编辑 [`application`][applicationtag] 标签中的 `android:label` 来设置 app 的最终名字。
+  `application`：编辑 [`application`][applicationtag] 标签中的 `android:label` 来设置 app 的最终名字。
 
 * `uses-permission`: Remove the `android.permission.INTERNET`
   [permission][permissiontag] if your application code does not need Internet
   access. The standard template includes this tag to enable communication
   between Flutter tools and a running app.
-* `uses-permission`：如果 app 不需要访问 Internet，移除 `android.permission.INTERNET` [权限][permissiontag]。标准模版里包含了这个权限，是为了允许 Flutter 工具和正在运行的 app 之间的通信。
+  
+  `uses-permission`：如果 app 不需要访问 Internet，移除 `android.permission.INTERNET` [权限][permissiontag]。标准模版里包含了这个权限，是为了允许 Flutter 工具和正在运行的 app 之间的通信。
 
 ## Review the build configuration
 
@@ -51,20 +52,20 @@ especially:
 
   * `applicationId`: Specify the final, unique (Application Id)[appid]
   
-  * `applicationId`：指定最终的，唯一的（Application Id）[appid]
+    `applicationId`：指定最终的，唯一的（Application Id）[appid]
 
   * `versionCode` & `versionName`: Specify the internal app version number,
      and the version number display string. You can do this by setting
      the `version` property in the pubspec.yaml file. Consult the version
      information guidance in the [versions documentation][versions].
      
-  * `versionCode` & `versionName`：指定 app 的内部版本号，以及用于显示的版本号，这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。具体可以参考 [版本文档][versions] 中的版本信息指南。
+    `versionCode` & `versionName`：指定 app 的内部版本号，以及用于显示的版本号，这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。具体可以参考 [版本文档][versions] 中的版本信息指南。
 
   * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level,
      and the API level on which the app is designed to run. Consult the API
      level section in the [versions documentation][versions] for details.
      
-  * `minSdkVersion` & `targetSdkVersion`：指定支持的最低 API 版本，以及我们 app 的目标 API 版本。具体可以参考 [版本文档][versions] 中的 API 版本部分。
+    `minSdkVersion` & `targetSdkVersion`：指定支持的最低 API 版本，以及我们 app 的目标 API 版本。具体可以参考 [版本文档][versions] 中的 API 版本部分。
 
 ## Adding a Launcher icon
 
@@ -425,10 +426,12 @@ The release bundle for your app is created at
 
 
 {{site.alert.note}}
+
   As of this writing, the app bundle command only generates **armeabi-v7a**
   compatible libs. Follow [Issue 18494][Issue 18494] for more information.
   
   在撰写本文时，app bundle 命令只生成了 **armeabi-v7a** 的兼容库。更多的信息请参阅 [Issue 18494][Issue 18494]。
+  
 {{site.alert.end}} 
 
 

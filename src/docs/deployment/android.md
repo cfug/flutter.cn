@@ -17,6 +17,7 @@ When you're ready to prepare a *release* version for Android, for example to
 当想要发布 app 时，比如 [发布到 Google Play Store][play]，可以按照以下步骤来准备 Android 平台的**发布**版本。
 
 ## Review the App Manifest
+
 ## 检查 App Manifest
 
 Review the default [App Manifest][manifest] file `AndroidManifest.xml` located
@@ -27,6 +28,7 @@ especially:
 
 * `application`: Edit the `android:label` in the
   [`application`][applicationtag] tag to reflect the final name of the app.
+  
 * `application`：编辑 [`application`][applicationtag] 标签中的 `android:label` 来设置 app 的最终名字。
 
 * `uses-permission`: Remove the `android.permission.INTERNET`
@@ -36,6 +38,7 @@ especially:
 * `uses-permission`：如果 app 不需要访问 Internet，移除 `android.permission.INTERNET` [权限][permissiontag]。标准模版里包含了这个权限，是为了允许 Flutter 工具和正在运行的 app 之间的通信。
 
 ## Review the build configuration
+
 ## 检查构建配置
 
 Review the default [Gradle build file][gradlebuild] file `build.gradle`
@@ -47,20 +50,24 @@ especially:
 * `defaultConfig`:
 
   * `applicationId`: Specify the final, unique (Application Id)[appid]
+  
   * `applicationId`：指定最终的，唯一的（Application Id）[appid]
 
   * `versionCode` & `versionName`: Specify the internal app version number,
      and the version number display string. You can do this by setting
      the `version` property in the pubspec.yaml file. Consult the version
      information guidance in the [versions documentation][versions].
+     
   * `versionCode` & `versionName`：指定 app 的内部版本号，以及用于显示的版本号，这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。具体可以参考 [版本文档][versions] 中的版本信息指南。
 
   * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level,
      and the API level on which the app is designed to run. Consult the API
      level section in the [versions documentation][versions] for details.
+     
   * `minSdkVersion` & `targetSdkVersion`：指定支持的最低 API 版本，以及我们 app 的目标 API 版本。具体可以参考 [版本文档][versions] 中的 API 版本部分。
 
 ## Adding a Launcher icon
+
 ## 添加一个启动图标
 
 When a new Flutter app is created, it has a default Launcher icon. To
@@ -93,9 +100,11 @@ Alternatively, if you want to do it manually, here's how:
 
 1. To verify the icon has been replaced, run your app using `flutter run`
    and inspect the app icon in the Launcher.
+   
    用 `flutter run` 运行 app，检查启动程序中的 app 图标是否已经替换成我们自己的图标文件。
 
 ## Signing the app
+
 ## 为 app 签名
 
 To publish on the Play store, you need to give your app a digital
@@ -104,7 +113,9 @@ signature. Use the following instructions to sign your app.
 要想把 app 发布到 Play store，还需要给 app 一个数字签名。我们可以采用以下步骤来为 app 签名：
 
 ### Create a keystore
+
 ### 创建一个密钥库
+
 If you have an existing keystore, skip to the next step. If not, create one
 by running the following at the command line:
 `keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key`
@@ -124,6 +135,7 @@ and then use that fully qualified path replacing `java` with `keytool`.
 **注意：** `keytool` 可能不在我们的系统路径中。它是 Java JDK 的一部分，在安装 Android Studio 的时候会被一起安装。运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。
 
 ### Reference the keystore from the app
+
 ### 从 app 中引用密钥库
 
 Create a file named `<app dir>/android/key.properties` that contains a
@@ -149,6 +161,7 @@ storeFile=<密钥库的位置，e.g. /Users/<用户名>/key.jks>
 **注意：** 保证这个文件的私有性，不要将它提交到公共的代码管理空间。
 
 ### Configure signing in gradle
+
 ### 在 gradle 中配置签名
 
 Configure signing for your app by editing the
@@ -244,6 +257,7 @@ Release builds of your app will now be signed automatically.
 
 
 ## Enabling Proguard
+
 ## 启用 Proguard
 
 By default, Flutter does not obfuscate or minify the Android host.
@@ -260,7 +274,8 @@ in the [Flutter wiki]({{site.github}}/flutter/flutter/wiki).
 要了解混淆 Dart 代码的相关信息，可以参考 [Flutter wiki]({{site.github}}/flutter/flutter/wiki) 上的 [Obfuscating Dart Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)。
 
 ### Step 1 - Configure Proguard
-### 步骤1 - 配置 Proguard
+
+### 步骤　1 - 配置 Proguard
 
 Create `/android/app/proguard-rules.pro` file and add rules listed below.
 
@@ -283,7 +298,8 @@ rules to be added.
 以上这样的配置只是对 Flutter 引擎库做保护。如果想要保护其他的库（例如，Firebase），需要为它们添加自己的规则。
 
 ### Step 2 - Enable obfuscation and/or minification
-### 步骤2 - 启用混淆以及/或压缩
+
+### 步骤　2 - 启用混淆以及/或压缩
 
 Open `/android/app/build.gradle` file and locate `buildTypes` definition.
 Inside `release` configuration set `minifiyEnabled` and `useProguard` flags
@@ -319,6 +335,7 @@ of the Android application.
 注意：混淆和压缩会大大增加 Android 应用程序的编译时间。
 
 ## Building a release APK
+
 ## 构建 APK 的发布版本
 
 This section describes how to build a release APK. If you completed the
@@ -343,6 +360,7 @@ The release APK for your app is created at
 运行之后，会在 `<app dir>/build/app/outputs/apk/release/app-release.apk` 路径中生成 app 的发布版本 APK。
 
 ## Installing a release APK on a device
+
 ## 在设备上安装发布版本 APK
 
 Follow these steps to install the APK built in the previous step on a
@@ -365,6 +383,7 @@ Using the command line:
    运行 `flutter install`。
 
 ## Publishing an APK to the Google Play Store
+
 ## 发布 APK 到 Google Play Store
 
 For detailed instructions on publishing the release version of an app to the
@@ -373,6 +392,7 @@ Google Play Store, see the [Google Play publishing documentation][play].
 要了解如何发布一个 app 到 Google Play Store，可以参考 [Google Play publishing documentation][play]。
 
 ## Building a release app bundle
+
 ## 构建发布的 app bundle
 
 This section describes how to build a release app bundle. If you completed
@@ -413,6 +433,7 @@ The release bundle for your app is created at
 
 
 ## Testing an app Bundle
+
 ## 测试 app Bundle
 
 An app bundle can be tested in multiple ways. This section describes a couple
@@ -421,17 +442,20 @@ ways in which to test an app bundle.
 我们可以用多种方式来测试 app bundle。这个部分描述测试 app bundle 的几种方式。
 
 ### Offline using the bundle tool
+
 ### 离线使用 bundle 工具
 
 1. If you have done done so already, download `bundletool` from the
 [GitHub repository](https://github.com/google/bundletool).
    
    从 [GitHub仓库](https://github.com/google/bundletool) 下载 `bundletool`。
+   
 1. [Generate a set of
 APKs](https://developer.android.com/studio/command-line/bundletool#generate_apks)
 from your app bundle.
    
    从我们的 app bundle [产生一系列 APK ](https://developer.android.com/studio/command-line/bundletool#generate_apks)。
+   
 1. [Deploy the
 APKs](https://developer.android.com/studio/command-line/bundletool#deploy_with_bundletool)
 to connected devices.
@@ -439,6 +463,7 @@ to connected devices.
    [部署 APK](https://developer.android.com/studio/command-line/bundletool#deploy_with_bundletool) 到设备上。
 
 ### Online using Google Play
+
 ### 在线使用 Google Play
 
 1. Upload your bundle to Google Play to test it. You can use the internal
@@ -446,6 +471,7 @@ test track, or the alpha or beta channels to test the bundle before releasing
 it in production.
    
    上传我们的 bundle 到 Google Play上进行测试。在发布之前，我们可以使用内部测试追踪，或者 alpha 或者 beta 通道来测试 bundle。
+   
 2. Follow [these steps to upload your
 bundle](https://developer.android.com/studio/publish/upload-bundle)
 to the Play Store.

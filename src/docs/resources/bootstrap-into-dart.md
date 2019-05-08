@@ -21,7 +21,7 @@ We hope these resources make Dart easy for you to learn, too.
   _top-level functions_, _named parameters_, _async / await_, and lots more.
   
 [Dart 语言学习之旅]({{site.dart-site}}/guides/language/language-tour)
-: 你学习 Dart 语言最好的介绍。学习 Dart 的特性，比如_强类型_、_闭包_、_库_、_词法作用域_、_顶级函数_、_命名参数_、_async / await_, 以及更多。
+: 你学习 Dart 语言最好的介绍。学习 Dart 的特性，比如 _强类型_、_闭包_、_库_、_词法作用域_、_顶级函数_、_命名参数_、_async / await_， 以及更多。
 
 [Library tour]({{site.dart-site}}/guides/libraries/library-tour)
 : A good overview of Dart's powerful core libraries. Learn about

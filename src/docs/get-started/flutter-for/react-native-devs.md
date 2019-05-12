@@ -1784,11 +1784,15 @@ When deciding which approach to use, consider the following principles:
 
 #### 3. Subclass StatefulWidget and State
 
+#### 3. 继承 StatefulWidget 和 状态
+
 The `MyStatefulWidget` class manages its own state—it extends
 `StatefulWidget`, it overrides the `createState()` method to create the State
 object, and the framework calls `createState()` to build the widget. In this
 example, `createState()` creates an instance of `_MyStatefulWidgetState`, which
 is implemented in the next best practice.
+
+`MyStatefulWidget` 类管理它自身的状态 - 它继承自 `StatefulWidget`，重写了 `createState()` 方法。该方法创建了 State 对象，同时框架会调用 `createState()` 方法来构建控件。在这个例子中，`createState()` 方法创建了一个 `_MyStatefulWidgetState` 实例。下面的最佳实践中也实现了类似的方法。
 
 <!-- skip -->
 ```dart
@@ -1811,7 +1815,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
 #### 4. Add the StatefulWidget into the widget tree
 
+#### 4. 将 StatefulWidget 添加到控件树中
+
 Add your custom `StatefulWidget` to the widget tree in the app’s build method.
+
+将你自定义的 `StatefulWidget` 通过应用程序的 build 方法添加到控件树中。
 
 <!-- skip -->
 ```dart
@@ -1835,9 +1843,13 @@ class MyStatelessWidget extends StatelessWidget {
 
 ## Props
 
+## Props
+
 In React Native, most components can be customized when they are created with
 different parameters or properties, called `props`. These
 parameters can be used in a child component using `this.props`.
+
+在 React Native 中，大多数组件都可以在创建的时候通过不同的参数或者属性来自定义，叫做 `props`。这些参数可以在子组件中通过 `this.props` 进行调用。
 
 ```js
 // React Native
@@ -1880,6 +1892,8 @@ class App extends React.Component {
 In Flutter, you assign a local variable or function marked `final` with the
  property received in the parameterized constructor.
 
+在 Flutter 中，你可以将构造函数中的参数值赋值给标记为 `final` 的本地变量或者函数。
+
 <!-- skip -->
 ```dart
 // Flutter
@@ -1917,16 +1931,24 @@ CustomCard(
 
 ## Local storage
 
+## 本地存储
+
 If you don't need to store a lot of data and it doesn't require
 structure, you can use `shared_preferences` which allows you to
 read and write persistent key-value pairs of primitive data
 types: booleans, floats, ints, longs, and strings.
 
+如果你不需要在本地存储太多数据同时也不需要存储结构化数据，那么你可以使用 `shared_preferences`，通过它来读写一些原始数据类型键值对，数据类型包括 boolean, float, ints, longs 和 string。
+
 ### How do I store persistent key-value pairs that are global to the app?
+
+### 如何存储在应用程序中全局有效的键值对？
 
 In React Native, you use the `setItem` and `getItem` functions of the
 `AsyncStorage` component to store and retrieve data that is persistent and
 global to the app.
+
+在 React Native，可以使用 `AsyncStorage` 中的 `setItem` 和 `getItem` 函数来存储和读取应用程序中的全局数据。
 
 ```js
 // React Native
@@ -1945,6 +1967,8 @@ to the app. The `shared_preferences` plugin wraps `NSUserDefaults` on iOS
 and `SharedPreferences` on Android, providing a persistent store for simple data.
 To use the plugin, add `shared_preferences` as a dependency in the `pubspec.yaml`
 file then import the package in your Dart file.
+
+在 Flutter 中，使用 [`shared_preferences`]({{site.github}}/flutter/plugins/tree/master/packages/shared_preferences) 插件来存储和访问应用程序内全局有效的键值对数据。`shared_preferences` 插件封装了 iOS 中的 `NSUserDefaults` 和 Android 中的 `SharedPreferences` 来实现简单数据的持续存储。如果要使用该插件，可以在 `pubspec.yaml` 中添加依赖 `shared_preferences`，然后再 Dart 文件中引用包即可。
 
 ```yaml
 dependencies:
@@ -1966,6 +1990,8 @@ appropriate getter method provided by the `SharedPreferences` class. For each
 setter there is a corresponding getter method, for example, `getInt`, `getBool`,
 and `getString`.
 
+要实现持久数据存储，使用 `SharedPreferences` 类提供的 setter 方法即可。Setter 方法适用于多种原始类型数据，比如 `setInt`, `setBool`, 和 `setString`。要读取数据，使用 `SharedPreferences` 类中相应的 getter 方法。对于每一个 setter 方法都有对应的 getter 方法。 比如，`getInt`, `getBool`, 和 `getString`。
+
 
 <!-- skip -->
 ```dart
@@ -1980,19 +2006,29 @@ setState(() {
 
 ## Routing
 
+## 路径
+
 Most apps contain several screens for displaying different types of information.
 For example, you might have a product screen that displays images where users
 could tap on a product image to get more information about the product on a new
 screen.
 
+大多数应用都会包含多个页面来显示不同类型的数据。比如，你有一个页面展示商品列表，用户可以通过点击其中的任意一个商品在另外一个页面查看该商品的详细信息。
+
 In Android, new screens are new Activities. In iOS, new screens are new
 ViewControllers. In Flutter, screens are just Widgets! And to navigate to new
 screens in Flutter, use the Navigator widget.
 
+在 Android 中，新的页面是 Activity。 在 iOS 中，新的页面是 ViewController。在 Flutter 中，页面就是控件！如果在 Flutter 中要切换页面，使用 Navigator 控件即可。
+
 ### How do I navigate between screens?
+
+### 如何在页面之间进行切换？
 
 In React Native, there are three main navigators: StackNavigator, TabNavigator,
 and DrawerNavigator. Each provides a way to configure and define the screens.
+
+在 React Native，有三种主要的导航控件：StackNavigator, TabNavigator, 和 DrawerNavigator。每个都提供了配置和定义页面的方法。
 
 ```js
 // React Native
@@ -2020,6 +2056,10 @@ In Flutter, there are two main widgets used to navigate between screens:
 * A [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)
   is a widget that manages routes.
 
+在 Flutter 中，有两种主要的控件实现页面之间的切换：
+* [Route]({{site.api}}/flutter/widgets/Route-class.html) 是应用程序页面的一个抽象类。
+* A [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html) 是管理页面路径的控件。
+
 A `Navigator` is defined as a widget that manages a set of child widgets with a
 stack discipline. The navigator manages a stack of `Route` objects and provides
 methods for managing the stack, like
@@ -2029,6 +2069,9 @@ A list of routes might be specified in the
 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 widget, or they might be built on the fly, for example, in hero animations.
 The following example specifies named routes in the `MaterialApp` widget.
+
+`Navigator` 以堆栈的方式管理子控件。它的堆栈里存储的是 `Route` 对象，并且提供方法管理整个堆栈，比如 [`Navigator.push`]({{site.api}}/flutter/widgets/Navigator/push.html)
+和 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)。路径列表需要在 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 中指定。或者在页面切换的时候进行构建，比如 hero 动画。下面的例子在 `MaterialApp` 控件中指定了页面切换路径。
 
 <!-- skip -->
 ```dart
@@ -2056,6 +2099,8 @@ method of the `Navigator` widget is used to specify the `BuildContext`
 The name of the route is passed to the `pushNamed` function to
 navigate to the specified route.
 
+要切换到一个已命名的路径，`Navigator` 中的 [of]({{site.api}}/flutter/widgets/Navigator/of.html) 方法被用于指定 `BuildContext` ( 该对象可以定位到控件树中的一个具体的控件)。路径的名称传递到 `pushNamed` 函数来切换至指定的路径。
+
 <!-- skip -->
 ```dart
 Navigator.of(context).pushNamed('/a');
@@ -2071,6 +2116,8 @@ widget is a modal route that replaces the entire screen with a platform-adaptive
 transition. It takes a
 [`WidgetBuilder`]({{site.api}}/flutter/widgets/WidgetBuilder.html)
 as a required parameter.
+
+你可以使用 `Navigator` 中的 push 方法添加 [`route`]({{site.api}}/flutter/widgets/Route-class.html) 到 navigator 的历史队列中，其中包含 [`context`]({{site.api}}/flutter/widgets/BuildContext-class.html) 并且可以切换到指定页面。在下面的例子中，[`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html) 是一个模式化路径，可以将整个页面通过平台自适应切换方式进行切换。它需要一个 [`WidgetBuilder`]({{site.api}}/flutter/widgets/WidgetBuilder.html) 参数。
 
 <!-- skip -->
 ```dart

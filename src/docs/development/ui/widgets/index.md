@@ -10,8 +10,8 @@ Create beautiful apps faster with Flutter's collection of visual, structural,
 platform, and interactive widgets. In addition to browsing widgets by category,
 you can also see all the widgets in the [widget index](/docs/reference/widgets).
 
-借助 Flutter 的视觉、结构、平台和交互组件集合，可以更快的创建漂亮的应用程序。除了按类别浏览组件以外，你
-还可以在[组件清单](/docs/reference/widgets)中查看到所有的组件。
+借助 Flutter 的视觉、结构、平台和交互的 Widget 集合，可以更快的创建漂亮的应用程序。除了按类别浏览 Widget 以外，你
+还可以在 [Widget 清单](/docs/reference/widgets)中查看到所有的 Widget。
 
 <div class="card-deck card-deck--responsive">
 {% assign categories = site.data.catalog.index | sort: 'name' -%}

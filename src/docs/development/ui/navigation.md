@@ -12,23 +12,20 @@ For a discussion of how to use Flutter's Navigator class with various types of r
 
 关于如何使用 Flutter 的 Navigator 来切换不同类型的路由，查看 [Navigator 的 API 文档]({{site.api}}/flutter/widgets/Navigator-class.html).
 
-下述 [cookbook 覆盖了 {{page.title | downcase }}][cookbook]:
 
 The following [cookbook recipes cover {{page.title | downcase }}][cookbook]:
 
-* [Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics)
-* [Send data to a new screen](/docs/cookbook/navigation/passing-data)
-* [Return data from a screen](/docs/cookbook/navigation/returning-data)
-* [Navigate with named routes](/docs/cookbook/navigation/named-routes)
-* [Animating a widget across screens](/docs/cookbook/navigation/hero-animations)
-
-
 下述 [cookbook 覆盖了 {{page.title | downcase }}][cookbook]:
 
-* [导航到一个新的界面并返回](/docs/cookbook/navigation/navigation-basics)
-* [发送数据到一个新的界面](/docs/cookbook/navigation/passing-data)
-* [从一个界面返回数据](/docs/cookbook/navigation/returning-data)
-* [使用名称进行导航](/docs/cookbook/navigation/named-routes)
-* [在不同屏幕之间使用组件动画](/docs/cookbook/navigation/hero-animations)
+* [Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics)
+  [导航到一个新的界面并返回](/docs/cookbook/navigation/navigation-basics)
+* [Send data to a new screen](/docs/cookbook/navigation/passing-data)
+  [发送数据到一个新的界面](/docs/cookbook/navigation/passing-data)
+* [Return data from a screen](/docs/cookbook/navigation/returning-data)
+  [从一个界面返回数据](/docs/cookbook/navigation/returning-data)
+* [Navigate with named routes](/docs/cookbook/navigation/named-routes)
+  [使用名称进行导航](/docs/cookbook/navigation/named-routes)
+* [Animating a widget across screens](/docs/cookbook/navigation/hero-animations)
+  [在不同屏幕之间使用组件动画](/docs/cookbook/navigation/hero-animations)
 
 [cookbook]: /docs/cookbook#navigation

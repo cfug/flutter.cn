@@ -69,13 +69,15 @@ contains a simple demo app that uses [Material Components][].
     当应用启动以后&mdash; 处理进度会出现在 **Debug Console** 页面中。
 
 {% capture save_changes -%}
-{% comment %}
-  : invoke **File > Save All**,
-  or click **Hot Reload** (the green circular arrow button).
-{% endcomment -%}
-  : 打开 **File > Save All**,
-  或者点击 **Hot Reload** (绿色的带有圆形箭头的按钮)。
+  : invoke **Save All**, or click **Hot Reload**
+  <i class="material-icons align-bottom">offline_bolt</i>.
   
+  : 打开 **File > Save All**,
+  或者点击 **Hot Reload** <i class="material-icons align-bottom">offline_bolt</i> (绿色的带有圆形箭头的按钮)。
+
+  {% comment %} Or, as an alternative:
+    {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}.
+  {% endcomment -%}
 {% endcapture %}
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}

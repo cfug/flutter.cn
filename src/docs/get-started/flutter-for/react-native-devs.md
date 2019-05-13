@@ -2127,15 +2127,23 @@ Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)
 
 ### How do I use tab navigation and drawer navigation?
 
+### 如何使用 tab 导航和 drawer 导航？ 
+
 In Material Design apps, there are two primary options for Flutter navigation:
 tabs and drawers. When there is insufficient space to support tabs, drawers
 provide a good alternative.
 
+在 Material Design 应用程序中，Flutter 的导航形式主要有两种：tab 和 drawer。如果没有足够的控件可以容纳 tab，drawer 就是个不错的选择。
+
 
 #### Tab navigation
 
+### Tab 导航
+
 In React Native, `createBottomTabNavigator` and `TabNavigation`  are used to
 show tabs and for tab navigation.
+
+在 React Native 中，`createBottomTabNavigator` 和 `TabNavigation` 用来显示 tab 和 tab 导航。
 
 ```js
 // React Native
@@ -2156,6 +2164,12 @@ Flutter provides several specialized widgets for drawer and tab navigation:
   a material design TabBar tab.
 * [TabBarView]({{site.api}}/flutter/material/TabBarView-class.html)&mdash;Displays
   the widget that corresponds to the currently selected tab.
+
+Flutter 针对 drawer 和 tab 导航提供几种专用的 widget：
+* [TabController]({{site.api}}/flutter/material/TabController-class.html)&mdash;将 tab 与 TabBar 和 TabBarView 结合起来使用。
+* [TabBar]({{site.api}}/flutter/material/TabBar-class.html)&mdash;水平显示一行 tab。
+* [Tab]({{site.api}}/flutter/material/Tab-class.html)&mdash;创建一个 material design 风格的 TabBar 中的 tab。
+* [TabBarView]({{site.api}}/flutter/material/TabBarView-class.html)&mdash;显示目前所选 tab 所对应的 widget。
 
 
 <!-- skip -->
@@ -2180,6 +2194,8 @@ number of tabs. A `TickerProvider` is required to trigger the notification whene
 a frame triggers a state change. The `TickerProvider` is `vsync`. Pass the
 `vsync: this` argument to the `TabController` constructor whenever you create
 a new `TabController`.
+
+要将 tab 选项与 `TabBar` 和 `TabBarView` 结合起来使用就需要 `TabController`。 `TabController` 的构造函数中的 `length` 参数定义了 tab 的总数。当状态变化时，需要使用 `TickerProvider` 来触发通知。`TickerProvider` 是 `vsync`。当你需要创建新的 `TabController` 时，将 `vsync: this` 作为构造函数的参数即可。
 
 The [TickerProvider]({{site.api}}/flutter/scheduler/TickerProvider-class.html)
 is an interface implemented by classes that can vend

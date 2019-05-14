@@ -1,6 +1,14 @@
 ---
 title: Finding widgets
-title: 定位 Widgets
+title: 定位到目标 Widgets
+prev:
+  title: An introduction to widget testing
+  title: Widget 测试介绍
+  path: /docs/cookbook/testing/widget/introduction
+next:
+  title: Tapping, dragging and entering text
+  title: 点击、拖拽事件和文本输入
+  path: /docs/cookbook/testing/widget/tap-drag
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
@@ -19,7 +27,7 @@ consult the
 [`CommonFinders` documentation]({{api}}/flutter_driver/CommonFinders-class.html).
 
 If you're unfamiliar with Widget testing and the role of `Finder` classes,
-review the [Introduction to Widget testing](/docs/cookbook/testing/integration) recipe.
+review the [Introduction to widget testing](/docs/cookbook/testing/widget/introduction) recipe.
 
 ### Directions
 

@@ -1,6 +1,13 @@
 ---
 title: Creating lists with different types of items
 title: 创建拥有不同列表项的列表
+prev:
+  title: Creating a Grid List
+  title: 创建一个网格列表
+  path: /docs/cookbook/lists/grid-lists
+next:
+  title: Place a floating app bar above a list
+  path: /docs/cookbook/lists/floating-app-bar
 ---
 
 We often need to create lists that display different types of content. For
@@ -67,7 +74,7 @@ final items = List<ListItem>.generate(
 ## 2. Convert the data source into a List of Widgets
 
 In order to handle converting each item into a Widget, we'll employ the
-[`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html)
+[`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)
 constructor.
 
 In general, we'll want to provide a `builder` function that checks for what type

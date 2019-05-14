@@ -1,6 +1,14 @@
 ---
 title: Implement Swipe to Dismiss
-title: 实现『滑动清除』效果
+title: 实现「滑动清除」效果
+prev:
+  title: Handling Taps
+  title: 捕获和处理点击动作
+  path: /docs/cookbook/gestures/handling-taps
+next:
+  title: Display images from the internet
+  title: 显示网络上的远程图片
+  path: /docs/cookbook/images/network-image
 ---
 
 The "Swipe to dismiss" pattern is common in many mobile apps. For example, if
@@ -8,8 +16,8 @@ we're writing an email app, we might want to allow our users to swipe away email
 messages in a list. When they do, we'll want to move the item from the Inbox to
 the Trash.
 
-Flutter makes this task easy by providing the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html)
-Widget.
+Flutter makes this task easy by providing the
+[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) Widget.
 
 ## Directions
 
@@ -58,7 +66,8 @@ the item from the list and display a Snackbar. In a real app, you might need to
 perform more complex logic, such as removing the item from a web service or
 database.
 
-This is where the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html)
+This is where the
+[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html)
 Widget comes into play! In our example, we'll update our `itemBuilder` function
 to return a `Dismissible` Widget.
 

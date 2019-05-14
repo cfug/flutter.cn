@@ -1,6 +1,6 @@
 ---
 title: Creating flavors for Flutter
-title: 在 Flutter 项目中使用 flavors 构建
+title: 配置 flavors 构建双端
 short-title: Flavors
 short-title: Flavors
 description: How to create build flavors specific to different release types or development environments.
@@ -15,11 +15,10 @@ These articles address flavors for both iOS and Android.
 如何使用 flavors 配置多渠道构建？社区已经提供许多有用的文章。这些文章直接讲述如何在 iOS 和 Android 上配置 flavor。
 
 Please see
-[Creating flavors of a Flutter app](https://cogitas.net/creating-flavors-of-a-flutter-app/)
-and
-[Flavoring Flutter](https://medium.com/@salvatoregiordanoo/flavoring-flutter-392aaa875f36).
+[Creating flavors of a Flutter app](https://cogitas.net/creating-flavors-of-a-flutter-app/),
+[Flavoring Flutter]({{site.medium}}/@salvatoregiordanoo/flavoring-flutter-392aaa875f36) and [Flutter Ready to Go]({{site.medium}}/flutter-community/flutter-ready-to-go-e59873f9d7de).
 
 请查看
-[Creating flavors of a Flutter app](https://cogitas.net/creating-flavors-of-a-flutter-app/)
-和
-[Flavoring Flutter](https://medium.com/@salvatoregiordanoo/flavoring-flutter-392aaa875f36)。
+[Creating flavors of a Flutter app](https://cogitas.net/creating-flavors-of-a-flutter-app/)，
+[Flavoring Flutter]({{site.medium}}/@salvatoregiordanoo/flavoring-flutter-392aaa875f36) 和 [Flutter Ready to Go]({{site.medium}}/flutter-community/flutter-ready-to-go-e59873f9d7de)。
+

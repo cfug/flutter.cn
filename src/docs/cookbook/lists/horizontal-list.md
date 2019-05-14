@@ -1,14 +1,26 @@
 ---
 title: Create a horizontal list
 title: 创建一个水平滑动的列表
+prev:
+  title: Basic List
+  title: 基础列表
+  path: /docs/cookbook/lists/basic-list
+next:
+  title: Creating a Grid List
+  title: 创建一个网格列表
+  path: /docs/cookbook/lists/grid-lists
 ---
 
 At times, you may want to create a List that scrolls horizontally rather than
-vertically. The [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
+vertically. The [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
 Widget supports horizontal lists out of the box.
+
+有时，你可能想要创建一个水平滑动（而不是竖直滑动）的列表。[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) Widget 本身就支持水平列表的创建。
 
 We'll use the standard `ListView` constructor, passing through a horizontal
 `scrollDirection`, which will override the default vertical direction.
+
+我们将会使用标准的 `ListView` 构造方法，通过指定 `scrollDirection` 的值为水平方向，来覆盖默认的竖直方向。
 
 <!-- skip -->
 ```dart
@@ -41,6 +53,8 @@ ListView(
 ```
 
 ## Complete example
+
+## 完整示例
 
 ```dart
 import 'package:flutter/material.dart';
@@ -94,3 +108,5 @@ class MyApp extends StatelessWidget {
 ```
 
 ![Horizontal List Demo](/images/cookbook/horizontal-list.gif){:.site-mobile-screenshot}
+
+

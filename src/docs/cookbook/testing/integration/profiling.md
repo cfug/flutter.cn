@@ -1,6 +1,14 @@
 ---
-title: Performance profiling with integration tests
+title: Performance profiling
 title: 性能分析
+prev:
+  title: An introduction to integration testing
+  title: Flutter 集成测试介绍
+  path: /docs/cookbook/testing/integration/introduction
+next:
+  title: Scrolling
+  title: 列表滚动
+  path: /docs/cookbook/testing/integration/scrolling
 ---
 
 When it comes to mobile apps, performance is critical to user experience. Users
@@ -47,7 +55,7 @@ method provided by the
 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
 class.
 
-This method runs the the provided function and records a
+This method runs the provided function and records a
 [`Timeline`]({{site.api}}/flutter/flutter_driver/Timeline-class.html)
 with detailed information about the performance of the app. In this example, we
 provide a function that scrolls through the list of items, ensuring a specific

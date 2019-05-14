@@ -10,7 +10,7 @@ platform-specific functionality is available through existing packages;
 please see [using packages](/docs/development/packages-and-plugins/using-packages).
 
 Flutter uses a flexible system that allows you to call platform-specific APIs
-whether available in Java or Kotlin code on Android, or in ObjectiveC or Swift
+whether available in Java or Kotlin code on Android, or in Objective-C or Swift
 code on iOS.
 
 Flutter's platform-specific API support does not rely on code generation, but
@@ -23,6 +23,16 @@ rather on a flexible message passing style:
  calls into any number of platform-specific APIs&mdash;using the native
  programming language&mdash;and sends back a response to the *client*, the Flutter
  portion of your app.
+ 
+ <aside id="note" class="alert alert-info" markdown="1">
+**Note:** This guide addresses using the platform channel mechanism if you need 
+to use the platform's APIs or libraries in Java/Kotlin/Objective-C or Swift. But
+you can also write platform-specific Dart code in your Flutter app by inspecting
+the [defaultTargetPlatform]({{site.api}}/flutter/foundation/defaultTargetPlatform.html)
+property. [Platform adaptations](/docs/resources/platform-adaptations) lists some 
+platform-specific adaptations Flutter automatically does for you in the 
+framework.
+</aside>
 
 ## Architectural overview: platform channels {#architecture}
 
@@ -43,18 +53,18 @@ result. These classes allow you to develop a platform plugin with very little
 
 *Note*: If desired, method calls can also be sent in the reverse direction, with
 the platform acting as client to methods implemented in Dart. A concrete example
-of this is the [`quick_actions`](https://pub.dartlang.org/packages/quick_actions) plugin.
+of this is the [`quick_actions`]({{site.pub}}/packages/quick_actions) plugin.
 
-[MethodChannel]: https://docs.flutter.io/flutter/services/MethodChannel-class.html
-[MethodChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/MethodChannel.html
-[MethodChanneliOS]: https://docs.flutter.io/objcdoc/Classes/FlutterMethodChannel.html
+[MethodChannel]: {{site.api}}/flutter/services/MethodChannel-class.html
+[MethodChannelAndroid]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
+[MethodChanneliOS]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
 
 ### Platform channel data types support and codecs {#codec}
 
 The standard platform channels use a standard message codec that supports
 efficient binary serialization of simple JSON-like values, such as booleans,
 numbers, Strings, byte buffers, and List and Maps of these (see
-[`StandardMessageCodec`](https://docs.flutter.io/flutter/services/StandardMessageCodec-class.html))
+[`StandardMessageCodec`]({{site.api}}/flutter/services/StandardMessageCodec-class.html))
 for details). The serialization and deserialization of these values to and from
 messages happens automatically when you send and receive values.
 
@@ -90,9 +100,9 @@ packages](/docs/development/packages-and-plugins/developing-packages#plugin)),
 but the platform channel code is still written in the same way.
 
 *Note*: The full, runnable source-code for this example is available in
-[`/examples/platform_channel/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
+[`/examples/platform_channel/`]({{site.github}}/flutter/flutter/tree/master/examples/platform_channel)
 for Android with Java and iOS with Objective-C. For iOS with Swift, see
-[`/examples/platform_channel_swift/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel_swift).
+[`/examples/platform_channel_swift/`]({{site.github}}/flutter/flutter/tree/master/examples/platform_channel_swift).
 
 ### Step 1: Create a new app project {#example-project}
 
@@ -593,7 +603,7 @@ batteryChannel.setMethodCallHandler({
     result(FlutterMethodNotImplemented)
     return
   }
-  self.receiveBatteryLevel(result: result)
+  self?.receiveBatteryLevel(result: result)
 })
 ```
 
@@ -622,7 +632,7 @@ message passing using a custom message codec. Further, you can use the
 specialized [`BinaryCodec`][BinaryCodec], [`StringCodec`][StringCodec], and
 [`JSONMessageCodec`][JSONMessageCodec] classes, or create your own codec.
 
-[BasicMessageChannel]: https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html
-[BinaryCodec]: https://docs.flutter.io/flutter/services/BinaryCodec-class.html
-[StringCodec]: https://docs.flutter.io/flutter/services/StringCodec-class.html
-[JSONMessageCodec]: https://docs.flutter.io/flutter/services/JSONMessageCodec-class.html
+[BasicMessageChannel]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
+[BinaryCodec]: {{site.api}}/flutter/services/BinaryCodec-class.html
+[StringCodec]: {{site.api}}/flutter/services/StringCodec-class.html
+[JSONMessageCodec]: {{site.api}}/flutter/services/JSONMessageCodec-class.html

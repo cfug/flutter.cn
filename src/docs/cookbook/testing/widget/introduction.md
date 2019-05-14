@@ -1,11 +1,20 @@
 ---
 title: An introduction to widget testing
+title: Widget 测试介绍
 short-title: Introduction
+prev:
+  title: Mock dependencies using Mockito
+  title: 使用 Mockito 模拟依赖关系
+  path: /docs/cookbook/testing/unit/mocking
+next:
+  title: Finding widgets
+  title: 定位到目标 widgets
+  path: /docs/cookbook/testing/widget/finders
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
 
-In the [introduction to unit testing](/docs/cookbook/testing/unit) recipe, we
+In the [introduction to unit testing](/docs/cookbook/testing/unit/introduction) recipe, we
 learned how to test Dart classes using the `test` package. In order to test
 Widget classes, we'll need a few additional tools provided by the
 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)

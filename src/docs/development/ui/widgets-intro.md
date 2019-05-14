@@ -8,7 +8,7 @@ at the end of the page to avoid repeating links. {% endcomment -%}
 
 {% assign api = site.api | append: '/flutter' -%}
 
-Flutter widgets are built using a modern react-style framework, which takes
+Flutter widgets are built using a modern framework that takes
 inspiration from [React](https://reactjs.org). The central idea is
 that you build your UI out of widgets. Widgets describe what their view
 should look like given their current configuration and state. When a widget's
@@ -182,7 +182,7 @@ flutter:
   uses-material-design: true
 ```
 
-Many widgets need to be inside of a
+Many Material Design widgets need to be inside of a
 [MaterialApp]({{api}}/material/MaterialApp-class.html) to display properly, in
 order to inherit theme data. Therefore, we run the application with a
 [MaterialApp]({{api}}/material/MaterialApp-class.html).
@@ -288,6 +288,14 @@ own widgets.
 
 More information: [Material components](/docs/development/ui/widgets/material)
 
+<aside id="note" class="alert alert-info" markdown="1">
+**Note:** Material is one of the 2 bundled designs included with Flutter. For a 
+more iOS-centric design, see [Cupertino components](/docs/development/ui/widgets/cupertino)
+which has its own set of [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html), 
+[CupertinoNavigationBar]({{api}}/cupertino/CupertinoNavigationBar-class.html) etc.
+</aside>
+
+
 ## Handling gestures
 
 Most applications include some form of user interaction with the system. The
@@ -344,7 +352,7 @@ More information: [Gestures in Flutter](/docs/development/ui/advanced/gestures)
 
 Thus far, we've used only stateless widgets. Stateless widgets receive arguments
 from their parent widget, which they store in
-[final](https://www.dartlang.org/guides/language/language-tour#final-and-const)
+[final]({{site.dart-site}}/guides/language/language-tour#final-and-const)
 member variables. When a widget is asked to
 [build]({{api}}/widgets/StatelessWidget/build.html), it uses these stored
 values to derive new arguments for the widgets it creates.
@@ -544,7 +552,7 @@ class ShoppingListItem extends StatelessWidget {
 
 The `ShoppingListItem` widget follows a common pattern for stateless widgets. It
 stores the values it receives in its constructor in
-[final](https://www.dartlang.org/guides/language/language-tour#final-and-const)
+[final]({{site.dart-site}}/guides/language/language-tour#final-and-const)
 member variables, which it then uses during its
 [build]({{api}}/widgets/StatelessWidget/build.html) function. For example, the
 `inCart` boolean toggles between two visual appearances: one that uses the

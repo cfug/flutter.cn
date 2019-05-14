@@ -1,6 +1,14 @@
 ---
 title: Animating a Widget across screens
 title: 跨页面切换的动效 Widget (Hero animations)
+prev:
+  title: Report errors to a service
+  title: 把报错信息通过服务上传
+  path: /docs/cookbook/maintenance/error-reporting
+next:
+  title: Navigate to a new screen and back
+  title: 导航到一个新页面和返回
+  path: /docs/cookbook/navigation/navigation-basics
 ---
 
 It's often helpful to guide users through our apps as they navigate from screen
@@ -9,7 +17,7 @@ Widget from one screen to the next. This creates a visual anchor connecting
 the two screens.
 
 How can we animate a Widget from one screen to the next with Flutter? Using the
-[`Hero`](https://docs.flutter.io/flutter/widgets/Hero-class.html) Widget!
+[`Hero`]({{site.api}}/flutter/widgets/Hero-class.html) Widget!
 
 ## Directions
 
@@ -43,7 +51,7 @@ class MainScreen extends StatelessWidget {
           }));
         },
         child: Image.network(
-          'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+          'https://picsum.photos/250?image=9',
         ),
       ),
     );
@@ -60,7 +68,7 @@ class DetailScreen extends StatelessWidget {
         },
         child: Center(
           child: Image.network(
-            'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+            'https://picsum.photos/250?image=9',
           ),
         ),
       ),
@@ -84,7 +92,7 @@ requires two arguments:
 Hero(
   tag: 'imageHero',
   child: Image.network(
-    'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+    'https://picsum.photos/250?image=9',
   ),
 );
 ```
@@ -103,7 +111,7 @@ screens will work!
 Hero(
   tag: 'imageHero',
   child: Image.network(
-    'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+    'https://picsum.photos/250?image=9',
   ),
 );
 ```
@@ -140,7 +148,7 @@ class MainScreen extends StatelessWidget {
         child: Hero(
           tag: 'imageHero',
           child: Image.network(
-            'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+            'https://picsum.photos/250?image=9',
           ),
         ),
         onTap: () {
@@ -162,7 +170,7 @@ class DetailScreen extends StatelessWidget {
           child: Hero(
             tag: 'imageHero',
             child: Image.network(
-              'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+              'https://picsum.photos/250?image=9',
             ),
           ),
         ),

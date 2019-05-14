@@ -1,27 +1,56 @@
 ---
 title: Exporting fonts from a package
-title: 从 package 里导出字体
+title: 以 package 的方式使用字体
+prev:
+  title: Displaying SnackBars
+  title: 显示 SnackBars
+  path: /docs/cookbook/design/snackbars
+next:
+  title: Updating the UI based on orientation
+  title: 根据屏幕方向更新界面
+  path: /docs/cookbook/design/orientation
 ---
 
-Rather than declaring a font as part of our app, we can declare a font as part
+Rather than declaring a font as part of an app, you can declare a font as part
 of a separate package. This is a convenient way to share the same font across
-several different projects or for coders publishing their packages to the
-[pub website](https://pub.dartlang.org/).
+several different projects, or for coders publishing their packages to the
+[Pub site][].
+
+自定义字体，除了可以把字体文件作为应用的一部分之外，还可以通过 package 的方式使用，
+这样有助于跨项目的字体共享，也可以更方便的发布到 [Pub site][]。
 
 ## Directions
 
+## 步骤
+
   1. Add a font to a package
-  2. Add the package and font to our app
+
+     将字体添加到 package
+  
+  2. Add the package and font to the app
+  
+     将 package 和字体添加到应用
+  
   3. Use the font
+  
+     使用字体
 
 ## 1. Add fonts to a package
 
-To export a font from a package, we need to import the font files into the `lib`
-folder of our package project. We can place font files directly in the `lib`
-folder or in a subdirectory, such as `lib/fonts`.
+## 1. 将字体添加到 package
 
-In this example, we'll assume we've got a Flutter library called
+To export a font from a package, you need to import the font files into the
+`lib` folder of the package project. You can place font files directly in the
+`lib` folder or in a subdirectory, such as `lib/fonts`.
+
+通过 package 的方式使用字体，需要将字体文件导入 package 项目的 `lib` 文件夹中。
+你既可以将字体文件直接放在 `lib` 文件夹中，也可以放在子目录中，例如 `lib/fonts`。
+
+In this example, assume you've got a Flutter library called
 `awesome_package` with fonts living in a `lib/fonts` folder.
+
+在此示例中，假设你已有一个名为 `awesome_package` 的 library，
+其中包含了 `lib/fonts` 文件夹中的字体资源。
 
 ```
 awesome_package/
@@ -32,12 +61,19 @@ awesome_package/
       Raleway-Italic.ttf
 ```
 
-## 2. Add the package and fonts to our app
+## 2. Add the package and fonts to the app
 
-We can now consume the package and use the fonts it provides. This involves
-updating the `pubspec.yaml` in our *app's* root directory.
+## 2. 将 package 和字体添加到应用
+
+You can now consume the package and use the fonts it provides.
+This involves updating the `pubspec.yaml` in the *app's* root directory.
+
+现在你可以使用该 package 以及它提供的字体。
+我们来编辑 *应用程序* 根目录下的 `pubspec.yaml` 文件。
 
 ### Add the package to the project
+
+### 将 package 添加到项目中
 
 ```yaml
 dependencies:
@@ -46,12 +82,19 @@ dependencies:
 
 ### Declare the font assets
 
-Now that we've imported the package, we need to tell Flutter where to find the
-fonts from our `awesome_package`.
+### 声明字体资源
 
-To declare package fonts, we must must prefix the path to the font with
-`packages/awesome_package`. This will tell Flutter to look in the `lib` folder
+Now that you've imported the package, you need to tell Flutter where to
+find the fonts from the `awesome_package`.
+
+现在已经导入了 package，你需要告诉 Flutter 在 `awesome_package` 中哪里可以找到字体。
+
+To declare package fonts, you must must prefix the path to the font with
+`packages/awesome_package`. This tells Flutter to look in the `lib` folder
 of the package for the font.
+
+要想声明 package 中的字体，必须在 `packages/awesome_package` 的路径前加上字体声明。
+这将会让 Flutter 检索到 `lib` package 的文件夹中的字体。
 
 ```yaml
 flutter:
@@ -65,10 +108,14 @@ flutter:
 
 ## 3. Use the font
 
-We can use a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-to change the appearance of text. To use package fonts, we need to not only
-declare which font we'd like to use, we need to declare the `package` the font
-belongs to.
+## 3. 使用字体
+
+You can use a [`TextStyle`][] to change the appearance of text.
+To use package fonts, you need to not only declare which font you'd like to use,
+you need to declare the `package` the font belongs to.
+
+你可以使用 [`TextStyle`]() 来更改文本的外观。
+在使用 package 中的字体时，你不仅需要声明该文字所要使用的字体，还需要声明字体所属的 `package`。
 
 <!-- skip -->
 ```dart
@@ -83,9 +130,16 @@ Text(
 
 ## Complete example
 
+## 一个完整的例子
+
 ### Fonts
 
-The Raleway and RobotoMono fonts were downloaded from [Google Fonts](https://fonts.google.com/).
+### 字体
+
+The Raleway and RobotoMono fonts were downloaded from
+[Google Fonts](https://fonts.google.com).
+
+这里所使用的 Raleway 和 RobotoMono 字体都是从 [Google Fonts](https://fonts.google.com/) 下载的 。
 
 ### `pubspec.yaml`
 
@@ -133,10 +187,10 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // The AppBar will use the app-default Raleway font
+      // The AppBar uses the app-default Raleway font.
       appBar: AppBar(title: Text('Package Fonts')),
       body: Center(
-        // This Text Widget will use the RobotoMono font
+        // This Text Widget uses the RobotoMono font.
         child: Text(
           'Using the Raleway font from the awesome_package',
           style: TextStyle(
@@ -152,3 +206,5 @@ class MyHomePage extends StatelessWidget {
 
 ![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
+[Pub site]: {{site.pub}} 
+[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html

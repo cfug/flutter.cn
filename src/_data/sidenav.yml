@@ -11,7 +11,7 @@
     - title: 5. 了解更多
       permalink: /docs/get-started/learn-more
     - divider
-    - title: 拥有移动平台开发经验？
+    - title: 拥有其他平台开发经验？
       expanded: true
       children:
         - title: 给 Android 开发者的 Flutter 指南
@@ -24,18 +24,20 @@
           permalink: /docs/get-started/flutter-for/web-devs
         - title: 给 Xamarin.Forms 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/xamarin-forms-devs
-    - title: "Dart 语言概览"
+        - title: 声明式 UI 介绍
+          permalink: /docs/get-started/flutter-for/declarative
+    - title: Dart 语言概览
       permalink: https://www.dartlang.org/guides/language
 
 - title: 教程和样例代码
   children:
     - title: GitHub 上样例应用
       permalink: https://github.com/flutter/samples/blob/master/INDEX.md
-    - title: Cookbook
+    - title: 实用教程 (Cookbook)
       permalink: /docs/cookbook
     - title: Codelabs
       permalink: /docs/codelabs
-    - title: 教程
+    - title: 实践教程
       permalink: /docs/reference/tutorials
 
 - title: 开发文档
@@ -48,17 +50,20 @@
         - title: Widgets 介绍
           permalink: /docs/development/ui/widgets-intro
         - title: 布局构建
-          permalink: /docs/development/ui/layout
+          children:
+            - title: Flutter 中的布局
+              permalink: /docs/development/ui/layout
+              match-page-url-exactly: true
+            - title: 布局构建教程
+              permalink: /docs/development/ui/layout/tutorial
+            - title: 边界约束 (Box constraints)
+              permalink: /docs/development/ui/layout/box-constraints
         - title: 交互添加
           permalink: /docs/development/ui/interactive
         - title: 资源和图片
           permalink: /docs/development/ui/assets-and-images
         - title: 路由和导航
           permalink: /docs/development/ui/navigation
-        # Commenting out the following entry per
-        # https://github.com/flutter/website/issues/1496#issuecomment-431455211
-        # - title: Inspect an app's UI
-        #   permalink: /docs/development/ui/inspector
         - title: 动画效果
           permalink: /docs/development/ui/animations
           children:
@@ -73,7 +78,7 @@
               permalink: /docs/development/ui/animations/hero-animations
             - title: 交织动画 (Staggered animations)
               permalink: /docs/development/ui/animations/staggered-animations
-        - title: 用户界面（UI）进阶
+        - title: 用户界面 (UI) 进阶
           permalink: /docs/development/ui/advanced
           children:
             - title: Focus handling system # Where did this go?
@@ -87,11 +92,22 @@
     - title: 数据调用和后端
       permalink: /docs/development/data-and-backend
       children:
-        - title: State 管理
+        - title: 状态 (State) 管理
           permalink: /docs/development/data-and-backend/state-mgmt
+          children:
+            - title: 状态管理介绍
+              permalink: /docs/development/data-and-backend/state-mgmt/intro
+            - title: 声明式的编程思维
+              permalink: /docs/development/data-and-backend/state-mgmt/declarative
+            - title: 短时 (ephemeral) 和共享 (app) 状态
+              permalink: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
+            - title: 简单的共享 (app) 状态管理
+              permalink: /docs/development/data-and-backend/state-mgmt/simple
+            - title: 状态管理参考
+              permalink: /docs/development/data-and-backend/state-mgmt/options
         - title: JSON 和序列化数据
           permalink: /docs/development/data-and-backend/json
-        - title: Back-end services
+        - title: 后端服务
         - title: 使用 Firebase
           permalink: /docs/development/data-and-backend/firebase
     - title: 应用的无障碍和国际化 # TODO: use: Accessibility & localization
@@ -105,9 +121,9 @@
       permalink: /docs/development/platform-integration
       children:
         - title: Embedding Flutter views in non-Flutter apps
-        - title: 撰写双端平台代码（插件编写实现）
+        - title: 撰写双端平台代码 (插件编写实现)
           permalink: /docs/development/platform-integration/platform-channels
-    - title: Packages（纯 Dart 和原生插件）
+    - title: Packages (纯 Dart 和原生插件)
       permalink: /docs/development/packages-and-plugins
       children:
         - title: 使用 Packages
@@ -117,27 +133,29 @@
         - title: 后台进程
           permalink: /docs/development/packages-and-plugins/background-processes
         - title: Package 网站
-          permalink: http://pub.flutter-io.cn/flutter
+          permalink: https://pub.flutter-io.cn/flutter
     - title: 开发工具和技术细节
       permalink: /docs/development/tools
       children:
-        - title: Android Studio / IntelliJ
+        - title: Android Studio 或类 IntelliJ 系列
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
+        - title: Dart 调试工具
+          permalink: https://flutter.github.io/devtools/
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
             - title: 版本升级
               permalink: /docs/development/tools/sdk/upgrading
-            - title: 版本归档
-              permalink: /docs/development/tools/sdk/archive
+            - title: 版本列表
+              permalink: /docs/development/tools/sdk/releases
         - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload
-        - title: 代码格式
+        - title: 代码格式化
           permalink: /docs/development/tools/formatting
-        - title: Widget inspector
-          permalink: /docs/development/tools/inspector
+        - title: Flutter Inspector
+          permalink: https://flutter.github.io/devtools/inspector
 
 - title: 测试和调优
   permalink: /docs/testing
@@ -151,10 +169,11 @@
     - title: 测试 Flutter 应用
       permalink: /docs/testing
       match-page-url-exactly: true
+    - title: 性能优化最佳实践
+      permalink: /docs/testing/best-practices
     - title: Flutter 性能分析
       permalink: /docs/testing/ui-performance
-    # TODO(chalin): The following entry is not in the IA, so I'm commenting it out for now. Should it be here?
-    # We don't have this page yet, so that's fine.
+    # We don't have this page yet.
     # - title: Making your compiled app smaller
 
 - title: 打包部署
@@ -174,10 +193,12 @@
       permalink: /docs/resources/bootstrap-into-dart
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
+    - title: 平台行为差异和适配
+      permalink: /docs/resources/platform-adaptations
     - title: 技术概览
       permalink: /docs/resources/technical-overview
     # - title: Flutter best practices # TODO
-    - title: 学习 Flutter 的视频列表
+    - title: Flutter 技术视频资源
       permalink: /docs/resources/videos
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
@@ -190,6 +211,6 @@
     - title: Flutter Widget 目录
       permalink: /docs/reference/widgets
     - title: Flutter API 文档
-      permalink: https://docs.flutter.io
+      permalink: https://docs.flutter.cn
     - title: Package 网站
-      permalink: https://pub.dartlang.org/flutter
+      permalink: https://pub.flutter-io.cn/flutter

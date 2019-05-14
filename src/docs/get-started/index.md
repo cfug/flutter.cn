@@ -1,4 +1,5 @@
 ---
+layout: toc
 title: Get started
 title: 开始使用 Flutter
 short-title: Get started

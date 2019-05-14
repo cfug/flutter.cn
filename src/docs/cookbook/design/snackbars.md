@@ -5,6 +5,14 @@ short-title: SnackBars
 short-title: SnackBars
 description: How to implement a SnackBar to display messages.
 description: 学习使用 SnackBar 展示消息。
+prev:
+  title: Add a Drawer to a screen
+  title: 在屏幕上添加一个 Drawer
+  path: /docs/cookbook/design/drawer
+next:
+  title: Exporting fonts from a package
+  title: 以 package 的方式使用字体
+  path: /docs/cookbook/design/package-fonts
 ---
 
 In some cases, it can be handy to briefly inform our users when certain actions
@@ -13,7 +21,7 @@ want to inform them the message has been deleted. We might even want to give
 them an option to undo the action!
 
 In Material Design, this is the job of a
-[SnackBar](https://docs.flutter.io/flutter/material/SnackBar-class.html).
+[SnackBar]({{site.api}}/flutter/material/SnackBar-class.html).
 
 ## Directions
 
@@ -28,9 +36,9 @@ give our apps a consistent visual structure. In this case, we'll need to display
 the `SnackBar` at the bottom of the screen, without overlapping other important
 Widgets, such as the `FloatingActionButton`!
 
-The [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html)
+The [Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
 Widget from the
-[material library](https://docs.flutter.io/flutter/material/material-library.html)
+[material library]({{site.api}}/flutter/material/material-library.html)
 creates this visual structure for us and ensures important Widgets don't
 overlap!
 

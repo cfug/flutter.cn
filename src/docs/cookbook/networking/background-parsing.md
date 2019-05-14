@@ -15,7 +15,7 @@ By default, Dart apps do all of their work on a single thread. In many cases,
 this model simplifies coding and is fast enough that it does not result in
 poor app performance or stuttering animations, often called "jank."
 
-Dart 应用通常只会在单线程中处理它们的工作。并且在大多数情况中，这种模式不但简化了代码并且速度也够快，基本不会出现像动画卡顿以及性能不足这种『不靠谱』的问题。
+Dart 应用通常只会在单线程中处理它们的工作。并且在大多数情况中，这种模式不但简化了代码而且速度也够快，基本不会出现像动画卡顿以及性能不足这种「不靠谱」的问题。
 
 However, you may need to perform an expensive computation, such as parsing a
 very large JSON document. If this work takes more than 16 milliseconds, your

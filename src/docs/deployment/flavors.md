@@ -3,8 +3,7 @@ title: Creating flavors for Flutter
 title: 在 Flutter 项目中使用 flavors 构建
 short-title: Flavors
 short-title: Flavors
-description: How to create build flavors specific to different release types or development enviro
-nments.
+description: How to create build flavors specific to different release types or development environments.
 description: 使用 flavors 配置多渠道构建。
 ---
 

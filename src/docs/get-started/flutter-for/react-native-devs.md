@@ -2209,11 +2209,20 @@ If you are creating an AnimationController from a State, then you can use the
 or [`SingleTickerProviderStateMixin`]({{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html)
 classes to obtain a suitable `TickerProvider`.
 
+[TickerProvider]({{site.api}}/flutter/scheduler/TickerProvider-class.html) 接口可以用于生成 [`Ticker`]({{site.api}}/flutter/scheduler/Ticker-class.html) 对象。
+当有对象被触发通知后会用到 Tickers，不过它通常都是被 [`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html) 间接调用。
+`AnimationControllers` 需要 `TickerProvider` 来获得对应的 `Ticker`。 
+如果你通过 State 创建了一个 AnimationController，那么你就可以使用 [`TickerProviderStateMixin`]({{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html) 或者
+[`SingleTickerProviderStateMixin`]({{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html) 来获得对应的 `TickerProvider`。
+
 The [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html)
 widget wraps a new `TabBar` widget and creates two tabs. The `TabBarView` widget
 is passed as the `body` parameter of the `Scaffold` widget. All screens
 corresponding to the `TabBar` widget’s tabs are children to the `TabBarView`
 widget along with the same `TabController`.
+
+[`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html) 
+封装了一个新的 `TabBar` 控件，其中包含两个 tab。`TabBarView` 作为 `body` 参数传递到 `Scaffold` 中。所有和 `TabBar` 中的 tab 相关的页面均是 `TabBarView` 的子控件，并且都对应同一个 `TabController`。
 
 
 <!-- skip -->
@@ -2249,8 +2258,12 @@ class _NavigationHomePageState extends State<NavigationHomePage> with SingleTick
 
 #### Drawer navigation
 
+#### Drawer navigation
+
 In React Native, import the needed react-navigation packages and then use
 `createDrawerNavigator` and `DrawerNavigation`.
+
+在 React Native 中，导入所需的 react-navigation 包，然后使用 `createDrawerNavigator` 和 `DrawerNavigation` 实现。
 
 ```js
 // React Native
@@ -2271,6 +2284,8 @@ visual structure to apps that follow the
 [Material Design]({{site.material}}/design) guidelines. It also supports
 special Material Design components, such as `Drawers`, `AppBars`, and `SnackBars`.
 
+在 Flutter 中，我们可以结合 `Drawer` 和 `Scaffold` 一起使用来实现 Material Design 风格的 drawer 布局。如果要在应用程序中添加 `Drawer`， 可以将它封装在 `Scaffold` 控件中。`Scaffold` 控件提供了一种一致的界面风格，它遵循 [Material Design]({{site.material}}/design) 的设计原则。同时它还支持一些特殊的 Material Design 组件，比如 `Drawers`，`AppBars`， 和 `SnackBars`。
+
 The `Drawer` widget is a Material Design panel that slides in horizontally from
 the edge of a `Scaffold` to show navigation links in an application. You can
 provide a [`Button`]({{site.api}}/flutter/material/RaisedButton-class.html),
@@ -2279,6 +2294,9 @@ or a list of items to display as the child to the `Drawer` widget.
 In the following example, the
 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
 widget provides the navigation on tap.
+
+`Drawer` 就是一个 Material Design 窗格，它可以从 `Scaffold` 边缘水平滑动显示应用程序的导航选项。你可以在里面添加 [`Button`]({{site.api}}/flutter/material/RaisedButton-class.html)， [`Text`]({{site.api}}/flutter/widgets/Text-class.html)。或者添加一个列表的元素作为 `Drawer` 的子控件。
+在下面的例子中，[`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) 提供了点击导航。###
 
 <!-- skip -->
 ```dart
@@ -2299,6 +2317,8 @@ The `Scaffold` widget also includes an `AppBar` widget that automatically
 displays an appropriate IconButton to show the `Drawer` when a Drawer is
 available in the `Scaffold`. The `Scaffold` automatically handles the
 edge-swipe gesture to show the `Drawer`.
+
+`Scaffold` 还包含一个 `AppBar`。它会自动显示一个图标按钮来表明 `Scaffold` 中有一个`Drawer`。`Scaffold` 会自动处理边缘的滑动手势来显示 `Drawer`。
 
 <!-- skip -->
 ```dart

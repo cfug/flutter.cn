@@ -125,13 +125,13 @@ Dismissible(
   onDismissed: (direction) {
     // Remove the item from our data source.
 
-	// 从数据源中移除项目
+    // 从数据源中移除项目
     setState(() {
       items.removeAt(index);
     });
     // Show a snackbar! This snackbar could also contain "Undo" actions.
 
-	// 展示一个 snackbar！这个snackbar也可以包含“撤销”动作。
+    // 展示一个 snackbar！这个snackbar也可以包含“撤销”动作。
     Scaffold
         .of(context)
         .showSnackBar(SnackBar(content: Text("$item dismissed")));
@@ -160,6 +160,8 @@ For this purpose, we'll provide a `background` parameter to the `Dismissible`.
 <!-- skip -->
 ```dart
 Dismissible(
+  // Show a red background as the item is swiped away
+  
   // 列表项被滑出时，显示一个红色背景
   background: Container(color: Colors.red),
   key: Key(item),
@@ -247,7 +249,7 @@ class MyAppState extends State<MyApp> {
                     .showSnackBar(SnackBar(content: Text("$item dismissed")));
               },
               // Show a red background as the item is swiped away
-			  
+
               // 列表项被滑出时，显示一个红色背景
               background: Container(color: Colors.red),
               child: ListTile(title: Text('$item')),

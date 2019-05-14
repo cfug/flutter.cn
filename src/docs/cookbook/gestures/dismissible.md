@@ -129,6 +129,7 @@ Dismissible(
     setState(() {
       items.removeAt(index);
     });
+
     // Show a snackbar! This snackbar could also contain "Undo" actions.
 
     // 展示一个 snackbar！这个snackbar也可以包含“撤销”动作。
@@ -161,7 +162,7 @@ For this purpose, we'll provide a `background` parameter to the `Dismissible`.
 ```dart
 Dismissible(
   // Show a red background as the item is swiped away
-  
+
   // 列表项被滑出时，显示一个红色背景
   background: Container(color: Colors.red),
   key: Key(item),

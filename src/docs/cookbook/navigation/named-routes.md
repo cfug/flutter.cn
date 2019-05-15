@@ -18,21 +18,20 @@ pushing it to the
 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html).
 
 在[导航到一个新页面和返回](/docs/cookbook/navigation/navigation-basics/)一节中，
-我们通过创建一个新的路由并将它推到[`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html)类中学习到了如何导航到新的一个界面（screen）。
+我们通过创建一个新的路由并将它推到 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 类中学习到了如何导航到新的一个界面（screen）。
 
 However, if we need to navigate to the same screen in many parts of our apps,
 this can result in code duplication. In these cases, it can be handy to define
 a "named route," and use the named route for Navigation.
 
-然而，如果我们需要在应用的很多地方导航到同一界面，这样做可能会导致代码重复。
-在这种情况下，定义“命名路由(named route)“并使用它进行导航就会非常方便。
+然而，如果我们需要在应用的很多地方导航到同一界面，这样做可能会导致代码重复。在这种情况下，定义“命名路由(named route)“并使用它进行导航就会非常方便。
 
 To work with named routes, we can use the
 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
 function. This example will replicate the functionality from the original
 recipe, demonstrating how to use named routes instead.
 
-要使用命名路由，我们可以使用[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)方法。下面的例子将通过实现之前一节中的功能，演示如何使用“命名路由”。
+要使用命名路由，我们可以使用 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法。下面的例子将通过实现之前一节中的功能，演示如何使用“命名路由”。
 
 ## Directions
 
@@ -48,11 +47,11 @@ recipe, demonstrating how to use named routes instead.
 
   3. Navigate to the second screen using `Navigator.pushNamed`
 
-     使用`Navigator.pushNamed`跳转到第二个界面
+     使用 `Navigator.pushNamed` 跳转到第二个界面
 
   4. Return to the first screen using `Navigator.pop`
 
-     使用`Navigator.pop`返回到第一个界面
+     使用 `Navigator.pop` 返回到第一个界面
 
 ## 1. Create two screens
 
@@ -62,7 +61,7 @@ First, we'll need two screens to work with. The first screen will contain a
 button that navigates to the second screen. The second screen will contain a
 button that navigates back to the first.
 
-首先，我们需要两个界面来开始。第一个界面将包含一个跳转到第二个界面的按钮。 第二个界面将包含一个跳转回第一个界面的按钮。
+首先，我们需要两个界面来开始。第一个界面将包含一个跳转到第二个界面的按钮。第二个界面将包含一个跳转回第一个界面的按钮。
 
 
 ```dart
@@ -113,14 +112,13 @@ Next, we'll need to define our routes by providing additional properties to the
 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 constructor: the `initialRoute` and the `routes` themselves.
 
-接下来，我们需要通过为[`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
-的构造函数提供额外的属性来定义我们的路由：`initialRoute`和`routes`本身。
+接下来，我们需要通过为 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的构造函数提供额外的属性来定义我们的路由：`initialRoute`和`routes`本身。
 
 The `initialRoute` property defines which route our app should start with. The
 `routes` property defines the available named routes and the Widgets that should
 be built when we navigate to those routes.
 
-`initialRoute`属性定义了应用应该从哪个路由启动。`routes`属性定义了所有可用的命名路由，以及当我们跳转到这些路由时应该构建的 Widgets。
+`initialRoute` 属性定义了应用应该从哪个路由启动。`routes` 属性定义了所有可用的命名路由，以及当我们跳转到这些路由时应该构建的 Widgets。
 
 
 
@@ -141,7 +139,7 @@ MaterialApp(
 
 Note: When using `initialRoute`, be sure you do not define a `home` property.
 
-注意：当使用`initialRoute`时，需要确保你没有同时定义`home`属性。
+注意：当使用 `initialRoute` 时，需要确保你没有同时定义 `home` 属性。
 
 ## 3. Navigate to the second screen
 
@@ -153,16 +151,16 @@ we'll use the
 function. This tells Flutter to build the Widget defined in our `routes` table
 and launch the screen.
 
-通过 Widgets 和路由，我们就可以开始进行页面跳转！在这里，我们将使用`Navigator.pushNamed`函数。它会告诉 Flutter 去构建在我们在`routes`表中定义的 Widget 并启动该界面。
+通过 Widgets 和路由，我们就可以开始进行页面跳转！在这里，我们将使用 `Navigator.pushNamed` 函数。它会告诉 Flutter 去构建在我们在 `routes` 表中定义的 Widget 并启动该界面。
 
 In the `build` method of our `FirstScreen` Widget, we'll update the `onPressed`
 callback:
 
-在`FirstScreen` Widget 的`build`方法中，我们将更新`onPressed`回调：
+在 `FirstScreen` Widget 的 `build` 方法中，我们将更新 `onPressed` 回调：
 
 <!-- skip -->
 ```dart
-// 在`FirstScreen` Widget中（Within the `FirstScreen` Widget）
+// 在 `FirstScreen` Widget中（Within the `FirstScreen` Widget）
 onPressed: () {
   // 使用命名路由跳转到第二个界面（Navigate to the second screen using a named route）
   Navigator.pushNamed(context, '/second');
@@ -177,7 +175,7 @@ In order to navigate back to the first page, we can use the
 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)
 function.
 
-为了能够跳转回第一个页面，我们可以使用[`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)方法。
+为了能够跳转回第一个页面，我们可以使用 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html) 方法。
 
 <!-- skip -->
 ```dart

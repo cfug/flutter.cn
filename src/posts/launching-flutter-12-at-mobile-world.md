@@ -8,7 +8,7 @@ toc: true
 
 *由 Flutter 团队发布*
 
-The Flutter team is coming to you [live this week from Mobile World Congress](https://www.mwcbarcelona.com/session/flutter-google-toolkit-for-building-mobile-experiences/)in Barcelona, the largest annual gathering of the mobile technology industry. One year ago, we announced the first beta of Flutter at this same event, and since then [Flutter has grown faster than we could have imagined](http://sotagtrends.com/?tags=[ionic-framework,react-native,flutter,xamarin]&relative=false). So it seems fitting that we celebrate this anniversary occasion with our first stable update release for Flutter.
+The Flutter team is coming to you [live this week from Mobile World Congress](https://www.mwcbarcelona.com/session/flutter-google-toolkit-for-building-mobile-experiences/)in Barcelona, the largest annual gathering of the mobile technology industry. One year ago, we announced the first beta of Flutter at this same event, and since then [Flutter has grown faster than we could have imagined](http://sotagtrends.com/?tags=[ionic-framework,react-native,flutter,xamarin]&relative=false). So it seems fitting that we celebrate this anniversary occasion with our first stable update release for Flutter.
 
 2019 [世界移动通信大会](https://www.mwcbarcelona.com/session/flutter-google-toolkit-for-building-mobile-experiences/) (MWC 大会) 于 2 月 27 日在巴塞罗那顺利拉开帷幕。值此移动盛会，Flutter 团队宣布正式推出 Flutter 1.2。
 其实，这个大会对 Flutter 有着特别的纪念意义，因为 Flutter 的首个 beta 测试版正是在去年的 MWC 大会上与大家见面的，自此以后，Flutter 的发展速度远[超我们的想象](http://sotagtrends.com/?tags=[ionic-framework,react-native,flutter,xamarin]&relative=false)。
@@ -71,7 +71,7 @@ Lastly, Flutter 1.2 includes the Dart 2.2 SDK, an update that brings significant
 Mobile developers come from a variety of backgrounds and often prefer different programming tools and editors. Flutter itself supports different tools, including first-class support for Android Studio and Visual Studio Code as well as support for building apps from the command line, so we knew we needed flexibility in how we expose debugging and runtime inspection tools.
 
 每位开发者都有着不同的技术背景，偏爱的编程工具和编辑器也不尽相同。
-为此，Flutter 添加了多种工具支持，其中包括 Android Studio 和 Visual Studio Code 的 一级支持，以及支持命令行构建工具，这也就意味着开发者需要更加灵活的调试和运行时检查工具。
+为此，Flutter 添��了多种工具支持，其中包括 Android Studio 和 Visual Studio Code 的 一级支持，以及支持命令行构建工具，这也就意味着开发者需要更加灵活的调试和运行时检查工具。
 
 Alongside Flutter 1.2, we're delighted to preview a new [web-based suite of programming tools to help Flutter developers debug and analyze their apps](https://flutter.github.io/devtools/). These tools are now available for installation alongside the extensions and add-ins for Visual Studio Code and Android Studio, and offer a number of capabilities:
 
@@ -106,7 +106,7 @@ We plan to invest further in this new web-based tooling for both Flutter and Dar
 
 In addition to the engineering work, we took some time after Flutter 1.0 to [document our 2019 roadmap](https://github.com/flutter/flutter/wiki/Roadmap), and you'll see that we've got plenty of work ahead of us.
 
-发布 Flutter 1.0 之后，除了日常开发工作之外，我们还规划了 [Flutter 2019 产品路线图](https://github.com/flutter/flutter/wiki/Roadmap)，从中您会发现我们未来仍很多工作要做。
+发布 Flutter 1.0 ��后，除了日常开发工作之外，我们还规划了 [Flutter 2019 产品路线图](https://github.com/flutter/flutter/wiki/Roadmap)，从中您会发现我们未来仍很多工作要做。
 
 A big focus for 2019 is growing Flutter beyond mobile platforms. At [Flutter Live, we announced a project codenamed "Hummingbird"](https://youtu.be/5SZZfpkVhwk?list=PLOU2XLYxmsILq4ysYNWXq5TOGLgYDJgVD&t=175), which brings Flutter to the web, and we plan to share a technical preview in the coming months. In addition, we continue to work on bringing Flutter to desktop-class devices; this requires work both at the framework level as described above, as well as the ability to package and deploy applications for operating systems like Windows and Mac, in which we're investing through our [Flutter Desktop Embedding project](https://github.com/google/flutter-desktop-embedding).
 

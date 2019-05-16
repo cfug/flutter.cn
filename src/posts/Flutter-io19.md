@@ -4,8 +4,6 @@ title: Flutter 1.5 发布: 适用于移动、Web、嵌入式和桌面平台的�
 toc: true
 ---
 
-_Posted by the Flutter Team_
-
 **作者: Flutter 团队**
 
 Today marks an important milestone for the [Flutter framework](https://flutter.dev/), as we expand our focus from mobile to incorporate a broader set of devices and form factors. At I/O, we’re releasing our first technical preview of [Flutter for web](https://flutter.dev/web), announcing that Flutter is powering Google’s smart display platform including the Google Home Hub, and delivering our first steps towards supporting desktop-class apps with Chrome OS.

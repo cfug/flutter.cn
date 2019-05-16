@@ -24,14 +24,14 @@ However, if we need to navigate to the same screen in many parts of our apps,
 this can result in code duplication. In these cases, it can be handy to define
 a "named route," and use the named route for Navigation.
 
-然而，如果我们需要在应用的很多地方导航到同一界面，这样做可能会导致代码重复。在这种情况下，定义“命名路由(named route)“并使用它进行导航就会非常方便。
+然而，如果我们需要在应用的很多地方导航到同一界面，这样做就会导致代码重复。在这种情况下，定义“命名路由(named route)“并使用它进行导航就会非常方便。
 
 To work with named routes, we can use the
 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
 function. This example will replicate the functionality from the original
 recipe, demonstrating how to use named routes instead.
 
-要使用命名路由，我们可以使用 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法。下面的例子将通过实现之前一节中的功能，演示如何使用“命名路由”。
+要使用命名路由，我们可以使用 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法。下面的例子展示如何使用“命名路由”来实现前一节中的功能。
 
 ## Directions
 
@@ -112,7 +112,7 @@ Next, we'll need to define our routes by providing additional properties to the
 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 constructor: the `initialRoute` and the `routes` themselves.
 
-接下来，我们需要通过为 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的构造函数提供额外的属性来定义我们的路由：`initialRoute`和`routes`本身。
+接下来，我们需要通过为 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的构造函数额外的属性：`initialRoute`和`routes`自身，来定义我们的路由。
 
 The `initialRoute` property defines which route our app should start with. The
 `routes` property defines the available named routes and the Widgets that should
@@ -151,7 +151,7 @@ we'll use the
 function. This tells Flutter to build the Widget defined in our `routes` table
 and launch the screen.
 
-通过 Widgets 和路由，我们就可以开始进行页面跳转！在这里，我们将使用 `Navigator.pushNamed` 函数。它会告诉 Flutter 去构建在我们在 `routes` 表中定义的 Widget 并启动该界面。
+准备好了 Widgets 和路由，我们就可以开始进行页面跳转！在这里，我们将使用 `Navigator.pushNamed` 函数。它会告诉 Flutter 去构建我们在 `routes` 表中定义的 Widget 并启动该界面。
 
 In the `build` method of our `FirstScreen` Widget, we'll update the `onPressed`
 callback:
@@ -240,7 +240,7 @@ class SecondScreen extends StatelessWidget {
         child: RaisedButton(
           onPressed: () {
             // 通过从堆栈弹出当前路由（Navigate back to the first screen by popping the current route）
-            // 来返回到第一个屏幕（off the stack）
+            // 来返回到第一个界面（off the stack）
             Navigator.pop(context);
           },
           child: Text('Go back!'),

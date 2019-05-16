@@ -24,7 +24,7 @@ However, if we need to navigate to the same screen in many parts of our apps,
 this can result in code duplication. In these cases, it can be handy to define
 a "named route," and use the named route for Navigation.
 
-然而，如果我们需要在应用的很多地方导航到同一界面，这样做就会导致代码重复。在这种情况下，定义“命名路由(named route)“并使用它进行导航就会非常方便。
+然而，如果我们需要在应用的很多地方导航到同一界面，这样做就会导致代码重复。在这种情况下，定义“命名路由(named route)”并使用它进行导航就会非常方便。
 
 To work with named routes, we can use the
 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
@@ -112,7 +112,7 @@ Next, we'll need to define our routes by providing additional properties to the
 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 constructor: the `initialRoute` and the `routes` themselves.
 
-接下来，我们需要通过为 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的构造函数额外的属性：`initialRoute`和`routes`自身，来定义我们的路由。
+接下来，我们需要通过为 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的构造函数额外的属性：`initialRoute` 和 `routes` 自身，来定义我们的路由。
 
 The `initialRoute` property defines which route our app should start with. The
 `routes` property defines the available named routes and the Widgets that should

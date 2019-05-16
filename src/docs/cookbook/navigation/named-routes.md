@@ -182,7 +182,7 @@ function.
 // 在 SecondScreen Widget 中（Within the SecondScreen Widget）
 onPressed: () {
   // 通过从堆栈弹出当前路由（Navigate back to the first screen by popping the current route）
-  // 来返回到第一个屏幕（off the stack）
+  // 来返回到第一个界面（off the stack）
   Navigator.pop(context);
 }
 ```

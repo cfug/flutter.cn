@@ -15,4 +15,4 @@ nt mark '_site/**/*.html'
 
 cd tool/translator
 
-gulp
+npx gulp

@@ -9,7 +9,7 @@ Flutter supports using shared packages contributed by other developers
 to the Flutter and Dart ecosystems. This allows you to quickly build
 your app without having to develop everything from scratch.
 
-Flutter 支持使用由其他开发者贡献到 Flutter 和 Dart 生态系统的共享 package。这使你可以快速构建你的应用程序，而不用从头开始开发所有一切。
+Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共享 package，这意味着你可以快速构建应用而不是一切从零开始。
 
 Existing packages enable many use cases, for example, making network requests
 ([`http`](/docs/cookbook/networking/fetch-data)), custom navigation/route handling
@@ -61,7 +61,7 @@ To add a package 'css_colors' to an app:
 
 1. Depend on it
 
-   依赖它
+   添加依赖
    * Open the `pubspec.yaml` file located inside your app folder, and add
      `css_colors:` under `dependencies`.
 
@@ -69,16 +69,18 @@ To add a package 'css_colors' to an app:
 
 1. Install it
 
-   安装它
+   安装
    * From the terminal: Run `flutter packages get`<br/>
    **OR**
      
      在命令行中运行：`flutter packages get`<br/>
    **或者**
+
    * From Android Studio/IntelliJ: Click 'Packages Get' in the action
      ribbon at the top of `pubspec.yaml`
      
      在 Android Studio/IntelliJ 中点击 `pubspec.yaml` 文件顶部操作功能区的 'Package Get'
+
    * From VS Code: Click 'Get Packages' located in right side of the action
      ribbon at the top of `pubspec.yaml`
 
@@ -86,7 +88,7 @@ To add a package 'css_colors' to an app:
     
 1. Import it
 
-   导入它
+   导入
    * Add a corresponding `import` statement in your Dart code.
 
      在 Dart 代码中添加相关的 `import` 语句。
@@ -94,6 +96,7 @@ To add a package 'css_colors' to an app:
 1. Stop and restart the app, if necessary
 
    如果有必要，停止并重启应用
+
    * If the package brings platform-specific code (Java/Kotlin for Android,
      Swift/Objective-C for iOS), that code must be built into your app.
      Hot reload and hot restart do this only for the Dart code of the
@@ -139,7 +142,7 @@ see the
 well as a list of all prior versions ([url_launcher
 versions]({{site.pub-pkg}}/url_launcher#-versions-tab-)).
 
-所有 package 都有一个版本号，在它们的 `pubspec.yaml` 文件中指定。Pub 会在其名称旁边显示当前版本号（例如，参阅 [url_launcher]({{site.pub-pkg}}/url_launcher) package）以及所有先前版本的列表（[url_launcher
+所有 package 都有一个版本号，在它们的 `pubspec.yaml` 文件中指定。Pub Site 会在其名称旁边显示当前版本号（例如，参阅 [url_launcher]({{site.pub-pkg}}/url_launcher) package）以及所有先前版本的列表（[url_launcher
 versions]({{site.pub-pkg}}/url_launcher#-versions-tab-)）。
 
 When a package is added to `pubspec.yaml` using the shorthand form `plugin1:`
@@ -419,6 +422,5 @@ class DemoPage extends StatelessWidget {
    before adding the plugin). When you click the 'Show Flutter homepage'
    you should see the phone's default browser open, and the Flutter
    homepage appear.
-
 
    运行应用（如果你的应用在添加插件之前已经运行，请停止并重启应用）。当你点击 'Show Flutter homepage' 时，你将看到手机默认浏览器打开并出现 Flutter 主页。

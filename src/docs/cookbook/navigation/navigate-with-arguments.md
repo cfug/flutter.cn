@@ -17,7 +17,7 @@ a common identifier. In some cases, you may also need to pass arguments to a
 named route. For example, you may wish to navigate to the `/user` route and
 pass information about the user to that route.
 
-[`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 组件支持通过使用通用标识符从应用程序的任何地方导航到特定路由。在某些情况下，你可能还希望能够传递参数给特定路由。例如，你想要导航到 `/user` 路由并携带上用户信息。
+[`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 组件支持通过使用通用标识符从应用程序的任何地方导航到特定路由。在某些情况下，你可能还希望能够传递参数给特定路由。例如，你希望导航到 `/user` 路由并携带上用户信息。
 
 In Flutter, you can accomplish this task by providing additional `arguments` to
 the

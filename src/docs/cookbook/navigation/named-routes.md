@@ -18,7 +18,7 @@ pushing it to the
 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html).
 
 在[导航到一个新页面和返回](/docs/cookbook/navigation/navigation-basics/)一节中，
-我们通过创建一个新的路由并将它推到 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 类中学习到了如何导航到新的一个界面（screen）。
+我们通过创建一个新的路由并将它推到 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 类中学习到了如何导航到新的一个界面 (screen)。
 
 However, if we need to navigate to the same screen in many parts of our apps,
 this can result in code duplication. In these cases, it can be handy to define

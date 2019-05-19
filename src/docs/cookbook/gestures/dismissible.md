@@ -113,26 +113,16 @@ Widget 登场了！在我们的例子中，还要更新`itemBuilder`函数并返
 <!-- skip -->
 ```dart
 Dismissible(
-  // Each Dismissible must contain a Key. Keys allow Flutter to
-  // uniquely identify Widgets.
-
-  // 每个Dismissible实例都必须包含一个Key。Key让Flutter能够对Widgets做唯一标识。
+  // 每个Dismissible实例都必须包含一个Key。Key让Flutter能够对Widgets做唯一标识。(Each Dismissible must contain a Key. Keys allow Flutter to uniquely identify Widgets.)
   key: Key(item),
-  // We also need to provide a function that will tell our app
-  // what to do after an item has been swiped away.
-
-  // 我们还需要提供一个函数，告诉应用，在项目被移出后，要做什么。
+  // 我们还需要提供一个函数，告诉应用，在项目被移出后，要做什么。(We also need to provide a function that will tell our app what to do after an item has been swiped away.)
   onDismissed: (direction) {
-    // Remove the item from our data source.
-
-    // 从数据源中移除项目
+    // 从数据源中移除项目(Remove the item from our data source.)
     setState(() {
       items.removeAt(index);
     });
 
-    // Show a snackbar! This snackbar could also contain "Undo" actions.
-
-    // 展示一个 snackbar！这个snackbar也可以包含“撤销”动作。
+    // 展示一个 snackbar！这个snackbar也可以包含“撤销”动作。(Show a snackbar! This snackbar could also contain "Undo" actions.)
     Scaffold
         .of(context)
         .showSnackBar(SnackBar(content: Text("$item dismissed")));
@@ -161,9 +151,7 @@ For this purpose, we'll provide a `background` parameter to the `Dismissible`.
 <!-- skip -->
 ```dart
 Dismissible(
-  // Show a red background as the item is swiped away
-
-  // 列表项被滑出时，显示一个红色背景
+  // 列表项被滑出时，显示一个红色背景(Show a red background as the item is swiped away)
   background: Container(color: Colors.red),
   key: Key(item),
   onDismissed: (direction) {
@@ -191,10 +179,7 @@ void main() {
   runApp(MyApp());
 }
 
-// MyApp is a StatefulWidget. This allows us to update the state of the
-// Widget whenever an item is removed.
-
-// MyApp是一个StatefulWidget。这样，我们就能够在列表项被移除的时候，更新Widget的状态。
+// MyApp是一个StatefulWidget。这样，我们就能够在列表项被移除的时候，更新Widget的状态。(MyApp is a StatefulWidget. This allows us to update the state of the Widget whenever an item is removed.)
 class MyApp extends StatefulWidget {
   MyApp({Key key}) : super(key: key);
 
@@ -226,32 +211,20 @@ class MyAppState extends State<MyApp> {
             final item = items[index];
 
             return Dismissible(
-              // Each Dismissible must contain a Key. Keys allow Flutter to
-              // uniquely identify Widgets.
-
-              // 每个Dismissible实例都必须包含一个Key。Key让Flutter能够对Widgets做唯一标识。
+              // 每个Dismissible实例都必须包含一个Key。Key让Flutter能够对Widgets做唯一标识。(Each Dismissible must contain a Key. Keys allow Flutter to uniquely identify Widgets.)
               key: Key(item),
-              // We also need to provide a function that tells our app
-              // what to do after an item has been swiped away.
-
-              // 我们还需要提供一个函数，告诉应用，在项目被移出后，要做什么。
+              // 我们还需要提供一个函数，告诉应用，在项目被移出后，要做什么。(We also need to provide a function that tells our app what to do after an item has been swiped away.)
               onDismissed: (direction) {
-                // Remove the item from our data source.
-
-                // 从数据源中移除项目
+                // 从数据源中移除项目(Remove the item from our data source.)
                 setState(() {
                   items.removeAt(index);
                 });
 
-                // Then show a snackbar!
-
-                // 展示一个 snackbar！
+                // 展示一个 snackbar！(Then show a snackbar!)
                 Scaffold.of(context)
                     .showSnackBar(SnackBar(content: Text("$item dismissed")));
               },
-              // Show a red background as the item is swiped away
-
-              // 列表项被滑出时，显示一个红色背景
+              // 列表项被滑出时，显示一个红色背景(Show a red background as the item is swiped away)
               background: Container(color: Colors.red),
               child: ListTile(title: Text('$item')),
             );

@@ -28,34 +28,33 @@ providing a persistent store for simple data.
 
 ## Directions
 
-##步骤
+## 步骤
 
-1. Add the dependency
+  1. Add the dependency
 
-   添加依赖
+     添加依赖
 
-2. Save Data
+  2. Save Data
 
-   保存数据
+     保存数据
 
-3. Read Data
+  3. Read Data
 
-   读取数据
+     读取数据
 
-4. Remove Data
+  4. Remove Data
 
-   移除数据
+     移除数据
 
 ## 1. Add the dependency
 
-##1. 添加依赖
+## 1. 添加依赖
 
 Before starting, you need to add the
 [shared_preferences]({{site.pub-pkg}}/shared_preferences)
 plugin to the `pubspec.yaml` file:
 
 在开始之前，你需要在 `pubspec.yaml` 文件中添加 [shared_preferences]({{site.pub-pkg}}/shared_preferences) 插件：
-
 
 ```yaml
 dependencies:
@@ -66,7 +65,7 @@ dependencies:
 
 ## 2. Save data
 
-##2. 保存数据
+## 2. 保存数据
 
 To persist data, use the setter methods provided by the
 `SharedPreferences` class. Setter methods are available for various primitive
@@ -91,7 +90,7 @@ prefs.setInt('counter', counter);
 
 ## 3. Read data
 
-##3. 读取数据
+## 3. 读取数据
 
 To read data, use the appropriate getter method provided by the
 `SharedPreferences` class. For each setter there is a corresponding getter.
@@ -100,7 +99,6 @@ For example, you can use the `getInt`, `getBool`, and `getString` methods.
 要读取数据，请使用 `SharedPreferences` 类相应的 getter 方法。对于每一个 setter 方法都有对应的 getter 方法。例如，你可以使用 `getInt`， `getBool`，和 `getString` 方法。
 
 <!-- skip -->
-
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -110,14 +108,13 @@ final counter = prefs.getInt('counter') ?? 0;
 
 ## 4. Remove data
 
-##4. 移除数据
+## 4. 移除数据
 
 To delete data, use the `remove` method.
 
 使用 `remove` 方法删除数据。
 
 <!-- skip -->
-
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -126,7 +123,7 @@ prefs.remove('counter');
 
 ## Supported types
 
-##支持类型
+## 支持类型
 
 While it is easy and convenient to use key-value storage, it has limitations:
 
@@ -150,7 +147,7 @@ on the Android developers website.
 
 ## Testing support
 
-##测试支持
+## 测试支持
 
 It can be a good idea to test code that persists data using
 `shared_preferences`. To do so, you'll need to mock out the
@@ -164,7 +161,6 @@ by running the following code in a `setupAll` method in your test files:
 你可以在测试中通过在测试文件的  `setupAll`  方法中运行以下代码，对  `SharedPreferences`  的值进行初始：
 
 <!-- skip -->
-
 ```dart
 const MethodChannel('plugins.flutter.io/shared_preferences')
   .setMockMethodCallHandler((MethodCall methodCall) async {
@@ -177,7 +173,7 @@ const MethodChannel('plugins.flutter.io/shared_preferences')
 
 ## Example
 
-##示例
+## 示例
 
 ```dart
 import 'package:flutter/material.dart';

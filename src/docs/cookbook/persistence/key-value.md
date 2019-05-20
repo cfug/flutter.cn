@@ -7,7 +7,7 @@ prev:
   path: /docs/cookbook/persistence/reading-writing-files
 next:
   title: Play and pause a video
-  Title: 视频的播放和暂停
+  title: 视频的播放和暂停
   path: /docs/cookbook/plugins/play-video
 ---
 

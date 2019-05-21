@@ -119,7 +119,7 @@ the amount of work required during layout:
   parent gives the child the same constraints as the child received
   during the previous layout.
 
-* 如果父节点对子节点使用与上一次布局中相同的约束，且子节点没有将自己的布局标记为脏，
+  如果父节点对子节点使用与上一次布局中相同的约束，且子节点没有将自己的布局标记为脏，
   那么该节点可立即从布局中返回，以切断布局的向下传递。
 
 * Whenever a parent calls a child's layout method, the parent indicates
@@ -129,7 +129,7 @@ the amount of work required during layout:
   a new size because the parent is guaranteed that the new size will
   conform to the existing constraints.
 
-* 当父节点调用子节点的布局方法时，父节点会指示它是否使用从子节点返回的大小信息。
+  当父节点调用子节点的布局方法时，父节点会指示它是否使用从子节点返回的大小信息。
   如果父节点经常不使用此信息，即使子节点重新选择了大小，父节点依旧无需重新计算其布局，
   这是因为父节点需要保证新的大小符合现有约束。
 
@@ -143,7 +143,7 @@ the amount of work required during layout:
   in its layout, because the child cannot change size without new
   constraints from its parent.
 
-* **严格**约束是指恰好由一个有效几何满足的约束。比如，如果最小最大宽度彼此相等，
+  **严格**约束是指恰好由一个有效几何满足的约束。比如，如果最小最大宽度彼此相等，
   且最小最大高度彼此相等，那么满足这些约束的唯一大小便是具有该宽度及高度的大小。
   如果父节点提供了严格约束，即便父节点在布局中使用了子节点的大小，在子节点重新计算布局时，
   父节点的布局也无需重新计算，这是因为子节点在没有父节点新约束的情况下无法更改其大小。
@@ -156,7 +156,7 @@ the amount of work required during layout:
   layout depends on the child's size_, because the child cannot change
   size without new constraints from its parent.
 
-* 渲染对象可以声明仅使用父节点提供的约束来确定其几何信息。
+  渲染对象可以声明仅使用父节点提供的约束来确定其几何信息。
   此类声明通知框架：**即便约束为非严格约束，以及父节点的布局取决于子节点的大小，**
   该渲染对象父节点的布局在子节点的布局重新计算时仍无需重新计算，这是因为子节点在没有父节点新约束的情况下无法更改其大小。
 
@@ -242,15 +242,15 @@ following cases:
 element 的子节点来决定是否重用该 element。子列表协调算法针对以下情况进行了优化：
 
 * The old child list is empty.
-* 旧的子列表为空。
+  旧的子列表为空。
 * The two lists are identical.
-* 两个列表完全相同。
+  两个列表完全相同。
 * There is an insertion or removal of one or more widgets in exactly
   one place in the list.
-* 在列表的某个位置插入或删除一个或多个 widget。
+  在列表的某个位置插入或删除一个或多个 widget。
 * If each list contains a widget with the same key, the two widgets are
   matched.
-* 如果每个列表包含相同 key 的 widget，则匹配这两个 widget。
+  如果每个列表包含相同 key 的 widget，则匹配这两个 widget。
 
 The general approach is to match up the beginning and end of both child
 lists by comparing the runtime type and key of each widget,
@@ -335,7 +335,7 @@ the major algorithms discussed above.
   supports only a single child and, as a result, has a simpler layout
   method that takes less time to execute.
 
-* **子模型无关。**与大多数使用子列表的工具包不同，Flutter 渲染树不会记住一个特定的子模型。比如，类
+  **子模型无关。**与大多数使用子列表的工具包不同，Flutter 渲染树不会记住一个特定的子模型。比如，类
   `RenderBox` 存在一个抽象的 `visitChildren()` 方法，而非具体的 **firstChild** 和
   **nextSibling** 接口。许多子类仅支持直接作为其成员变量的单个子项，而非子项列表。比如，由于
   `RenderPadding` 仅支持单个子节点，因此它拥有一个更为简单、高效的布局方法。
@@ -352,7 +352,7 @@ the major algorithms discussed above.
   painting calculations in the render tree happen more often than the
   widget-to-render tree handoff and can avoid repeated coordinate conversions.
 
-* **视觉渲染树、 widget 逻辑树。** 在 Flutter 中，渲染树在与设备无关的视觉坐标系中运行，这意味着即使
+  **视觉渲染树、 widget 逻辑树。** 在 Flutter 中，渲染树在与设备无关的视觉坐标系中运行，这意味着即使
   x 轴的读取方向是从右到左，其左侧的值依旧小于右侧。widget
   树通常在逻辑坐标中运行，这意味着拥有**开始**和**结束**值的视觉解释取决于读取方向。逻辑坐标到视觉坐标的转换是在
   widget 树和渲染树之间的切换中完成的。这种方法更为高效的原因是，渲染树中的布局和绘制计算比
@@ -367,7 +367,7 @@ the major algorithms discussed above.
   can avoid recomputing its text layout as long as its parent supplies
   the same layout constraints, which is common, even during tree surgery.
 
-* **通过专门的渲染对象处理文本。** 大多数渲染对象都不清楚文本的复杂性。相反，文本是由专门的渲染对象 `RenderParagraph`
+  **通过专门的渲染对象处理文本。** 大多数渲染对象都不清楚文本的复杂性。相反，文本是由专门的渲染对象 `RenderParagraph`
   进行处理，它是渲染树中的一个叶子节点。开发者使用组合形式将文本并入到用户界面中，而非使用文本感知渲染对象进行子类化。该模式意味着
   `RenderParagraph` 可避免文本布局在父节点提供相同布局约束下的重复计算，这是非常常见的，即使在树优化期间也是如此。
 
@@ -381,7 +381,7 @@ the major algorithms discussed above.
   a change to an _Animation<Color>_ might trigger only the paint phase
   rather than both the build and paint phases.
 
-* **可观察对象。** Flutter 使用模型观察及响应设计模式。显而易见，响应模式占主导地位，但
+  **可观察对象。** Flutter 使用模型观察及响应设计模式。显而易见，响应模式占主导地位，但
   Flutter 在某些叶子节点的数据结构上使用了可观察对象。比如 **Animation**
   会在值发生变化时通知观察者列表。Flutter 将这些可观察对象从 widget
   树转移到渲染树中，渲染树直接监听这些对象，并在它们改变时仅让管道的相关阶段无效。比如，更改

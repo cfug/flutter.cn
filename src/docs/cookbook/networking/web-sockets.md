@@ -28,14 +28,20 @@ back the same message you send to it.
 ## 使用步骤
 
   1. Connect to a WebSocket server
+
+     连接 WebSocket 服务器
+
   2. Listen for messages from the server
+
+     监听来自服务器的消息
+
   3. Send Data to the Server
+
+     向服务器发送数据
+  
   4. Close the WebSocket connection
 
-  1. 连接 WebSocket 服务器
-  2. 监听来自服务器的消息
-  3. 向服务器发送数据
-  4. 关闭 WebSocket 连接
+     关闭 WebSocket 连接
 
 ## 1. Connect to a WebSocket server
 

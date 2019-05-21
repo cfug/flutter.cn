@@ -21,15 +21,20 @@ Flutter provide tools for this type of work.
 ## 使用步骤
 
   1. Add the `http` package
+
+     添加 `http` 包
+
   2. Make a network request using the `http` package
+
+     使用 `http` 包进行网络请求
+
   3. Convert the response into a custom Dart object
+
+     将返回的响应转换成一个自定义的 Dart 对象
+
   4. Fetch and Display the data with Flutter
 
-  5. 添加 `http` 包
-  6. 使用 `http` 包进行网络请求
-  7. 将返回的响应转换成一个自定义的 Dart 对象
-  8. 使用 Flutter 对数据进行获取和展示
-
+     使用 Flutter 对数据进行获取和展示
 
 ## 1. Add the `http` package
 
@@ -140,13 +145,17 @@ you'll need to:
 
   1. Convert the response body into a json `Map` with the `dart:convert`
      package.
+
+     用 `dart:convert` 包将响应体转换成一个 json `Map`。
+
   2. If the server returns an "OK" response with a status code of 200, convert
      the json `Map` into a `Post` using the `fromJson` factory method.
+
+     如果服务器返回了一个状态码为 200 的 "OK" 响应，那么就使用 `fromJson` 工厂方法将 json `Map` 转换成 `Post`。
+
   3. If the server returns an unexpected response, throw an error
 
-  1. 用 `dart:convert` 包将响应体转换成一个 json `Map`。
-  2. 如果服务器返回了一个状态码为 200 的 "OK" 响应，那么就使用 `fromJson` 工厂方法将 json `Map` 转换成 `Post`。
-  3. 如果服务器返回的不是我们预期的响应，那么就抛出错误。
+     如果服务器返回的不是我们预期的响应，那么就抛出错误。
 
 <!-- skip -->
 ```dart
@@ -186,11 +195,13 @@ You must provide two parameters:
 
   1. The `Future` you want to work with. In this case, call the
      `fetchPost()` function.
+
+     你想要处理的 `Future`。在这里就是调用 `fetchPost()` 函数。
+
   2. A `builder` function that tells Flutter what to render, depending on the
      state of the `Future`: loading, success, or error.
 
-  1. 你想要处理的 `Future`。在这里就是调用 `fetchPost()` 函数。
-  2. 一个告诉 Flutter 渲染哪些内容的 `builder` 函数，同时这也依赖于 `Future` 的状态：loading、success 或者是 error。
+     一个告诉 Flutter 渲染哪些内容的 `builder` 函数，同时这也依赖于 `Future` 的状态：loading、success 或者是 error。
 
 <!-- skip -->
 ```dart

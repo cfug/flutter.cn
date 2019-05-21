@@ -35,14 +35,20 @@ In Flutter, you can use a separate
 ## 使用步骤
 
   1. Add the `http` package
+
+     添加 `http` 包
+
   2. Make a network request using the `http` package
+
+     使用 `http` 包发起一个网络请求
+
   3. Convert the response into a List of Photos
+
+     将响应转换成一列照片
+
   4. Move this work to a separate isolate
 
-  1. 添加 `http` 包
-  2. 使用 `http` 包发起一个网络请求
-  3. 将响应转换成一列照片
-  4. 将这个工作移交给一个单独的 isolate
+     将这个工作移交给一个单独的 isolate
 
 ## 1. Add the `http` package
 
@@ -132,10 +138,12 @@ Now, update the `fetchPhotos` function so it can return a
 现在，为了让 `fetchPhotos` 方法可以返回一个 `Future<List<Photo>>`，我们需要以下两点更新：
 
   1. Create a `parsePhotos` that converts the response body into a `List<Photo>`
+
+     创建一个可以将响应体转换成 `List<Photo>` 的方法：`parsePhotos` 
+  
   2. Use the `parsePhotos` function in the `fetchPhotos` function
 
-  1. 创建一个可以将响应体转换成 `List<Photo>` 的方法：`parsePhotos` 
-  2. 在 `fetchPhotos` 方法中使用 `parsePhotos` 方法
+     在 `fetchPhotos` 方法中使用 `parsePhotos` 方法
 
 <!-- skip -->
 ```dart

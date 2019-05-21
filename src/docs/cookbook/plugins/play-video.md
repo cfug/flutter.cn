@@ -144,9 +144,9 @@ establishes the connection to the video and prepare the controller for playback.
 
 在播放视频前，需要对播放控制器进行初始化。初始化过程主要是与视频源建立连接和播放控制的准备。
 
-To create an initialize the `VideoPlayerController`, please:
+To create and initialize the `VideoPlayerController`, please:
 
-初始化 `VideoPlayerController` 请遵循以下步骤：
+创建和初始化 `VideoPlayerController` 时，请遵循以下步骤：
 
   1. Create a `StatefulWidget` with a companion `State` class 
 

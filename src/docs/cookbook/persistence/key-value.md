@@ -79,7 +79,6 @@ in-memory. Then, persist the data to disk.
 Setter 方法做两件事：首先，同步更新 key-value 到内存中，然后保存到磁盘中。
 
 <!-- skip -->
-
 ```dart
 // obtain shared preferences
 final prefs = await SharedPreferences.getInstance();
@@ -99,7 +98,6 @@ For example, you can use the `getInt`, `getBool`, and `getString` methods.
 要读取数据，请使用 `SharedPreferences` 类相应的 getter 方法。对于每一个 setter 方法都有对应的 getter 方法。例如，你可以使用 `getInt`， `getBool`，和 `getString` 方法。
 
 <!-- skip -->
-
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -116,7 +114,6 @@ To delete data, use the `remove` method.
 使用 `remove` 方法删除数据。
 
 <!-- skip -->
-
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -163,7 +160,6 @@ by running the following code in a `setupAll` method in your test files:
 在你的测试中，你可以通过在测试文件的 `setupAll` 方法中添加运行以下代码，对 `SharedPreferences` 的值进行初始：
 
 <!-- skip -->
-
 ```dart
 const MethodChannel('plugins.flutter.io/shared_preferences')
   .setMockMethodCallHandler((MethodCall methodCall) async {
@@ -179,7 +175,6 @@ const MethodChannel('plugins.flutter.io/shared_preferences')
 ## 示例
 
 <!-- skip -->
-
 ```dart
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

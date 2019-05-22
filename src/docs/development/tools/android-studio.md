@@ -640,7 +640,7 @@ build error when you open the `android` project. Run `flutter pub get` in
 the app's root directory and rebuild the project by selecting **Build > Make**
 to fix it.
 
-如果你还未运行过你的 Flutter 应用，可能会在打开 `android` 项目时，看到 Android Studio 构建失败的报告。运行项目根目录的 `flutter packages get`，并通过点击 **Build > Make** 重建项目，可修复该问题。
+如果你还未运行过你的 Flutter 应用，可能会在打开 `android` 项目时，看到 Android Studio 构建失败的报告。运行项目根目录的 `flutter pub get`，并通过点击 **Build > Make** 重建项目，可修复该问题。
 
 ## Editing Android code in IntelliJ IDEA {#edit-android-code}
 

@@ -418,16 +418,12 @@ dev_dependencies:
    opens flutter.dev in your phone's default browser and 2) **Launch
    in app** opens flutter.dev within your app.
 
-<<<<<<< HEAD
-  {% asset 'testing/debugging/oem/launch-flutter-dev.png' alt='screenshot containing two buttons for opening flutter.dev' %}
-=======
    点击调试按钮（{% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %}）来同时打开调试面板并启动应用。
    等待应用在设备上启动并在调试面板中显示 **Connected**。
    （第一次可能需要一分钟，但是之后的启动会变快。）
    应用包含两个按钮：1）**Launch in browser** 在你的手机默认浏览器中打开 flutter.io 和 2）**Launch in app** 在你的应用中打开 flutter.io。
 
-  {% asset 'testing/debugging/oem/launch-flutter-io.png' alt='screenshot containing two buttons for opening flutter.io' %}
->>>>>>> a3cddb8e34113bbb31420cbf2dd216ae95dde8fd
+  {% asset 'testing/debugging/oem/launch-flutter-dev.png' alt='screenshot containing two buttons for opening flutter.dev' %}
 
 * Click the **Attach debugger to Android process** button (
   {% asset 'testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug' %} )
@@ -454,9 +450,10 @@ dev_dependencies:
    (or <strong>com.<em>company</em>.<em>app_name</em></strong>)
    process for the Motorola Moto G.
 
-  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev' %}
-  
   选择你想附加到的进程。在这个例子中是 Motorola Moto G 的 `com.google.clickcount`（或 <strong>com.<em>company</em>.<em>app_name</em></strong>）进程。
+  
+  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev' %}
+
 
 * In the debug pane, you should now see a tab for **Android Debugger**.
 

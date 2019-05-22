@@ -1,7 +1,7 @@
 ---
 title: Codelabs
 title: Codelabs
-description: "Codelabs to help you quickly get started programming Flutter."
+description: "Codelabs help you quickly get started programming Flutter."
 description: "Codelabs 是一种引导式的动手编码教程体验，帮助你更好的掌握 Flutter 编程技巧"
 ---
 
@@ -16,6 +16,12 @@ description: "Codelabs 是一种引导式的动手编码教程体验，帮助你
 #### 编写你的第一个 Flutter App，第二部分
 
 [开始本篇](https://codelabs.flutter.cn/codelabs/first-flutter-app-pt2-cn/index.html)
+
+#### Flutter 布局基础教程
+
+[开始本篇](/docs/codelabs/layout-basics)
+
+在线使用 DartPad 来进行 Flutter 布局的学习。
 
 你将完成一个简单的移动应用程序，功能是：为一个创业公司生成建议的公司名称（第二部分）。
 在本节，你将在一个基础的 Flutter 应用里加入交互功能，
@@ -90,8 +96,8 @@ description: "Codelabs 是一种引导式的动手编码教程体验，帮助你
 For a full list of available Flutter codelabs, see the
 [Flutter category]({{site.codelabs}}/?cat=Flutter)
 on [Google Developers]({{site.codelabs}}).
-If the previous link doesn't work for you, try
-[this mirror of the Flutter codelabs](https://codelabs.flutter-io.cn/).
+If the previous link doesn't work, try [this
+mirror of the Flutter codelabs](https://codelabs.flutter-io.cn/).
 
 查看所有的 Flutter Codelab，
 请在 [Google Developers Codelabs 网站](https://codelabs.developers.google.com) 
@@ -101,7 +107,7 @@ If the previous link doesn't work for you, try
 {% comment %}
 // Right now, there's only the Java->Dart lab, which is also in the
 // Flutter category, so this is (effectively) a dupe link.
+
 For Dart-specific codelabs, see the
 [codelabs]({{site.dart-site}}/codelabs) page on the
 [Dart site]({{site.dart-site}}).
-{% endcomment %}

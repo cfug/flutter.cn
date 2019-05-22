@@ -71,7 +71,7 @@ widget to take up as little space as possible.
 Here's the example you just finished. Try setting the `Row`'s
 `mainAxisSize` property to `MainAxisSize.min` and see what happens.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=9ac4ade5961150a27d3e547b667c8037&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=9ac4ade5961150a27d3e547b667c8037&fw=true" width="100%" height="400px"></iframe>
 
 ### Main axis alignment
 
@@ -109,7 +109,7 @@ There are six different values available in the `MainAxisAlignment` enum:
 The row below has its `mainAxisAlignment` set to start. Try changing it to the
 other values and re-running the code to see how things move around.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=0c97de625a9aa5c3194f9eecbd73ec1a&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=0c97de625a9aa5c3194f9eecbd73ec1a&fw=true" width="100%" height="400px"></iframe>
 ### Cross axis alignment
 
 The cross axis for `Row` widgets is the vertical axis,
@@ -149,7 +149,7 @@ that another property be set as well, so you
 will see an error if you try that one.
 Don't worry, though&mdash;it's covered in the next section.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=610aa31bbd09c90b5cede790bb6c3854&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=610aa31bbd09c90b5cede790bb6c3854&fw=true" width="100%" height="400px"></iframe>
 
 ### Baseline alignment
 
@@ -172,7 +172,7 @@ property to `baseline`, and experiment with different
 values for `textBaseline` as well (there's an enum called
 `TextBaseline` that contains the valid baseline values).
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=8c4a0571b161755c8d9235df947d268e&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=8c4a0571b161755c8d9235df947d268e&fw=true" width="100%" height="400px"></iframe>
 
 ### Flexible children
 
@@ -215,7 +215,7 @@ This combination (a `flex` factor of 1 and a tight `fit`)
 is so popular, there's a whole widget just to make
 using them easier: `Expanded`.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=c7ba00c50151ab2e5c0c2194686fef93&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=c7ba00c50151ab2e5c0c2194686fef93&fw=true" width="100%" height="400px"></iframe>
 
 ### Flex factors
 
@@ -242,7 +242,7 @@ In this example, all three of the `Row`'s children are `Flexible`.
 Try changing their `flex` values and
 re-running the code to see how the widgets' sizes adjust.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=4ab5409b566272c8f2cd28feddb0a995&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=4ab5409b566272c8f2cd28feddb0a995&fw=true" width="100%" height="400px"></iframe>
 
 ### What happens if you run out of space?
 
@@ -264,7 +264,7 @@ The `Row` below contains a single widget that's way too wide to fit. Run the
 code as-is to see what happens, then try modifying the width of the
 `Container` to make it fit.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=5a59d93119dc5b6eb1725235fde137cf&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=5a59d93119dc5b6eb1725235fde137cf&fw=true" width="100%" height="400px"></iframe>
 
 ### Try using SizedBox to make space
 
@@ -277,7 +277,7 @@ appropriate width in between.
 Trying making some space between these two list items by placing a
 `SizedBox` with a `width` of 100 between them.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=0c3e1ce8177a2f0cc8e2275d5260b348&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=0c3e1ce8177a2f0cc8e2275d5260b348&fw=true" width="100%" height="400px"></iframe>
 
 ### Spacers expand to make space
 
@@ -290,7 +290,7 @@ leftover space.
 Try adding a `Spacer` in between the first and second children of the
 `Row` below.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=dd68c1eb491e7a22a2ceb4127d78e504&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=dd68c1eb491e7a22a2ceb4127d78e504&fw=true" width="100%" height="400px"></iframe>
 
 ### Wait, wasn't I going to learn about Columns, too?
 
@@ -308,7 +308,7 @@ Here's a `Column` with some children of various sizes and its most important
 properties set. Try fiddling around with them and you'll see that the
 `Column` works like a vertical `Row.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=6cafe7beab954e72fed2fd2393a29f6c&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=6cafe7beab954e72fed2fd2393a29f6c&fw=true" width="100%" height="400px"></iframe>
 
 ### Putting it all together
 
@@ -341,7 +341,7 @@ style: Theme.of(context).textTheme.headline
 * Set the `Column`'s `mainAxisSize` to `MainAxisSize.min`,
   so the card won't expand to the full height of the window.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=5e7e9352bca878f446d4347f324e2f63&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=5e7e9352bca878f446d4347f324e2f63&fw=true&split=60" width="100%" height="800px"></iframe>
 
 Business cards often have an icon or logo in the top-left corner,
 so the next step is to add one to yours. Start by wrapping the
@@ -366,7 +366,7 @@ Now you can add the `Icon`:
       works nicely.
     * Set the `Icon`'s `size`.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=684e599476eef2ec4b4508e6b2186c03&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=684e599476eef2ec4b4508e6b2186c03&fw=true&split=60" width="100%" height="800px"></iframe>
 
 Your first `Row` is now complete! There are two more to go, though,
 and you need a `Column` to put them in.
@@ -396,7 +396,7 @@ Then, finish up your new `Column` with these steps:
   * A `SizedBox` with a height of 16
   * Another empty `Row`
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=19ead6db4f42ce112fc0a7d2e0922466&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=19ead6db4f42ce112fc0a7d2e0922466&fw=true&split=60" width="100%" height="800px"></iframe>
 
 There are just a few steps to go now. Next up is the second row.
 Add the following to its list of children:
@@ -411,7 +411,7 @@ You can fix this by setting the `Row`'s `mainAxisAlignment`
 property to `spaceBetween`, which puts any extra space between
 the two `Text` widgets.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=e6e07bbe96255b762163cf3e40906944&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=e6e07bbe96255b762163cf3e40906944&fw=true&split=60" width="100%" height="800px"></iframe>
 
 The last step is to get those icons in place at the bottom of the card:
 
@@ -428,4 +428,4 @@ The last step is to get those icons in place at the bottom of the card:
 * Set the `Row`'s `mainAxisAlignment` property to
   `MainAxisAlignment.spaceAround`
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=2234a5ccada200eb1e018b12fa95d57d&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=2234a5ccada200eb1e018b12fa95d57d&fw=true&split=60" width="100%" height="800px"></iframe>

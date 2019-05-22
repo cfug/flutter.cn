@@ -5,6 +5,23 @@ description: "Codelabs to help you quickly get started programming Flutter."
 description: "Codelabs 是一种引导式的动手编码教程体验，帮助你更好的掌握 Flutter 编程技巧"
 ---
 
+#### 编写你的第一个 Flutter App，第一部分
+
+[开始本篇](https://codelabs.flutter.cn/codelabs/first-flutter-app-pt1-cn/index.html)
+
+你将完成一个简单的移动应用程序，功能是：为一个创业公司生成建议的公司名称（第一部分）。
+本节里，你将会着手创建一个简单的 Flutter 应用，无需 Dart 语言和移动开发语言经验，
+只需你具备面向对象语言开发基础（如变量，循环和条件语句）即可。
+
+#### 编写你的第一个 Flutter App，第二部分
+
+[开始本篇](https://codelabs.flutter.cn/codelabs/first-flutter-app-pt2-cn/index.html)
+
+你将完成一个简单的移动应用程序，功能是：为一个创业公司生成建议的公司名称（第二部分）。
+在本节，你将在一个基础的 Flutter 应用里加入交互功能，
+同时创建第二个页面（Flutter 里称之为 route）用户可以进入这个页面。
+最终，你将可以修改应用的主题（配色）。
+
 #### 在 Flutter 应用中添加谷歌地图 (英文)
 
 [开始本篇]({{site.codelabs}}/codelabs/google-maps-in-flutter/index.html)
@@ -67,23 +84,6 @@ description: "Codelabs 是一种引导式的动手编码教程体验，帮助你
 
 比编写你的第一个 Flutter App 略复杂一些，本节你将会创建一个简单的聊天应用，
 并为 iOS 和 Android 制定了 UI 界面。
-
-#### 编写你的第一个 Flutter App，第一部分
-
-[开始本篇](https://codelabs.flutter.cn/codelabs/first-flutter-app-pt1-cn/index.html)
-
-你将完成一个简单的移动应用程序，功能是：为一个创业公司生成建议的公司名称（第一部分）。
-本节里，你将会着手创建一个简单的 Flutter 应用，无需 Dart 语言和移动开发语言经验，
-只需你具备面向对象语言开发基础（如变量，循环和条件语句）即可。
-
-#### 编写你的第一个 Flutter App，第二部分
-
-[开始本篇](https://codelabs.flutter.cn/codelabs/first-flutter-app-pt2-cn/index.html)
-
-你将完成一个简单的移动应用程序，功能是：为一个创业公司生成建议的公司名称（第二部分）。
-在本节，你将在一个基础的 Flutter 应用里加入交互功能，
-同时创建第二个页面（Flutter 里称之为 route）用户可以进入这个页面。
-最终，你将可以修改应用的主题（配色）。
 
 ---
 

@@ -348,8 +348,8 @@ packages, on the [Pub site]({{site.pub}}/flutter).
     你可以在控制台中看到以下内容：
 
     ```terminal
-    $ flutter packages get
-    Running "flutter packages get" in startup_namer...
+    $ flutter pub get
+    Running "flutter pub get" in startup_namer...
     Process finished with exit code 0
     ```
 

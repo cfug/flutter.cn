@@ -636,11 +636,11 @@ you can open the Android files as their own project from the start:
    打开 flutter 应用根目录下的 `android` 子目录。例如，项目名为 `flutter_app`，则打开 `flutter_app/android`。
 
 If you haven't run your Flutter app yet, you may see Android Studio report a
-build error when you open the `android` project. Run `flutter packages get` in
+build error when you open the `android` project. Run `flutter pub get` in
 the app's root directory and rebuild the project by selecting **Build > Make**
 to fix it.
 
-如果你还未运行过你的 Flutter 应用，可能会在打开 `android` 项目时，看到 Android Studio 构建失败的报告。运行项目根目录的 `flutter packages get`，并通过点击 **Build > Make** 重建项目，可修复该问题。
+如果你还未运行过你的 Flutter 应用，可能会在打开 `android` 项目时，看到 Android Studio 构建失败的报告。运行项目根目录的 `flutter pub get`，并通过点击 **Build > Make** 重建项目，可修复该问题。
 
 ## Editing Android code in IntelliJ IDEA {#edit-android-code}
 

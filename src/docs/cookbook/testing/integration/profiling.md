@@ -277,7 +277,6 @@ void main() {
       // Optionally, write the entire timeline to disk in a json format. This
       // file can be opened in the Chrome browser's tracing tools found by
       // navigating to chrome://tracing.
-      
       // 可选项，将完整的 timeline 以 json 文件的形式写入磁盘。
       // 可以用 Chrome 浏览器的跟踪工具打开这个文件。跟踪工具可以在 Chorme 浏览器的地址栏里输入 chrome://tracing 打开。
       summary.writeTimelineToFile('scrolling_timeline', pretty: true);

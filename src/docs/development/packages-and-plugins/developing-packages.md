@@ -463,7 +463,7 @@ Next, run the dry-run command to see if everything passes analysis:
 接下来，运行 dry-run 命令以检验是否所有内容都通过了分析：
 
 ```terminal
-$ flutter packages pub publish --dry-run
+$ flutter pub publish --dry-run
 ```
 
 Finally, run the actual publish command:
@@ -471,7 +471,7 @@ Finally, run the actual publish command:
 最后，运行以下提交命令：
 
 ```terminal
-$ flutter packages pub publish
+$ flutter pub publish
 ```
 
 For details on publishing, see the

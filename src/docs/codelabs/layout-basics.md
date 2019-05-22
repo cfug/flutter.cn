@@ -53,7 +53,7 @@ on the right and moves left.
 Below is a widget called `MyWidget` that builds a single `Row`.
 Try adding three `BlueBox` widgets to its list of children.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=76e993732820ef908ea8424744b9996d&fw=true" width="100%" height="400px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=76e993732820ef908ea8424744b9996d&fw=true" width="100%" height="400px"></iframe>
 
 ### Main axis size
 

@@ -2348,6 +2348,8 @@ Widget build(BuildContext context) {
 
 ## Gesture detection and touch event handling
 
+## 手势检测和触摸事件处理
+
 To listen for and respond to gestures, Flutter supports taps, drags, and
 scaling. The gesture system in Flutter has two separate layers. The first layer
 includes raw pointer events, which describe the location and movement of
@@ -2355,10 +2357,16 @@ pointers, (such as touches, mice, and styli movements), across the screen. The
 second layer includes gestures, which describe semantic actions that consist of
 one or more pointer movements.
 
+Flutter 支持点击、拖拽和缩放手势来监听和相应手势操作。Flutter 中的手势处理有两个独立的层。第一层是指针事件，指针事件定义了指针在屏幕上的位置和动作，比如触摸、鼠标和触摸笔。第二层指手势，主要是语义层面的动作，里面包含一种或者多种指针动作。
+
 ### How do I add a click or press listeners to a widget?
+
+### 如何为控件添加点击或者按压的监听器？
 
 In React Native, listeners are added to components using `PanResponder` or
 the `Touchable` components.
+
+在 React Native 中，使用 `PanResponder` 或者 `Touchable` 组件来添加监听器。
 
 ```js
 // React Native
@@ -2377,6 +2385,8 @@ the `Touchable` components.
 For more complex gestures and combining several touches into a single gesture,
 [`PanResponder`](https://facebook.github.io/react-native/docs/panresponder.html)
 is used.
+
+对于更加复杂手势以及将多个触摸添加到单独的一个手势中，可以使用 [`PanResponder`](https://facebook.github.io/react-native/docs/panresponder.html)。
 
 ```js
 // React Native
@@ -2410,6 +2420,8 @@ In Flutter, to add a click (or press) listener to a widget, use a button
 or a touchable widget that has an `onPress: field`. Or, add gesture detection
 to any widget by wrapping it in a
 [`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html).
+
+在 Flutter 中，要为控件添加点击或者按压监听器，使用带有 `onPress: field` 的按钮或者可触摸控件即可。或者，用任何控件封装 [`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)，在其中添加手势检测。
 
 <!-- skip -->
 ```dart
@@ -2445,19 +2457,30 @@ GestureDetector(
 For more information, including a list of Flutter `GestureDetector` callbacks,
 see the [GestureDetector class][].
 
+如果想要了解更多详细内容，包括 Flutter 的 `GestureDetector` 回调函数的列表，请查看页面 [`GestureDetector class`]({{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties)。
+
+
 [GestureDetector class]: {{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties
 
 {% include android-ios-figure-pair.md image="react-native/flutter-gestures.gif" alt="Gestures" class="border" %}
 
 ## Making HTTP network requests
 
+## 发起 HTTP 网络请求
+
 Fetching data from the internet is common for most apps. And in Flutter,
 the `http` package provides the simplest way to fetch data from the internet.
 
+对于大多数应用程序来说都需要从互联网上获取数据。在 Flutter 中，`http` 包提供了从互联网获取数据的最简单的途径。
+
 ### How do I fetch data from API calls?
+
+### 如何通过 API 调用来获得数据呢？
 
 React Native provides the Fetch API for networking—you make a fetch request
 and then receive the response to get the data.
+
+React Native 提供 Fetch API 实现网络编程，你可以发起请求，然后接收响应来获得数据。
 
 ```js
 // React Native
@@ -2476,6 +2499,8 @@ _getIPAddress = () => {
 Flutter uses the `http` package. To install the `http` package, add it to
 the dependencies section of our pubspec.yaml.
 
+Flutter 使用 `http` 包。如果要安装 `http` 包，将它添加到 pubspec.yaml 的 dependencies 部分。
+
 ```yaml
 dependencies:
   flutter:
@@ -2487,12 +2512,16 @@ Flutter uses the
 [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html)
 core HTTP support client. To create an HTTP Client, import `dart:io`.
 
+Flutter 使用 [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html) 提供核心的 HTTP 客户端支持，要创建一个 HTTP 客户端，引用 `dart:io`。
+
 <!-- skip -->
 ```dart
 import 'dart:io';
 ```
 
 The client supports the following HTTP operations: GET, POST, PUT, and DELETE.
+
+客户端支持如下所列的 HTTP 操作：GET, POST, PUT 和 DELETE。
 
 <!-- skip -->
 ```dart
@@ -2514,16 +2543,26 @@ _getIPAddress() async {
 
 ## Form input
 
+## 输入表单
+
 Text fields allow users to type text into your app so they can be used to build
 forms, messaging apps, search experiences, and more. Flutter provides two
 core text field widgets:
 [TextField]({{site.api}}/flutter/material/TextField-class.html) and
 [TextFormField]({{site.api}}/flutter/material/TextFormField-class.html).
 
+TextField 用于在应用程序中输入文本，这样就可以实现创建表单、短消息应用、搜索框等等功能。Flutter 提供两个核心文本输入控件：
+[TextField]({{site.api}}/flutter/material/TextField-class.html) 和
+[TextFormField]({{site.api}}/flutter/material/TextFormField-class.html).
+
 ### How do I use text field widgets?
+
+### 如何使用文本输入控件？
 
 In React Native, to enter text you use a `TextInput` component to show a text
 input box and then use the callback to store the value in a variable.
+
+在 React Native 里，可以使用 `TextInput` 组件来输入文本，它会显示一个输入框，然后通过回调函数来传递输入值。
 
 ```js
 // React Native
@@ -2539,9 +2578,13 @@ In Flutter, use the
 class to manage a `TextField` widget. Whenever the text field is modified,
 the controller notifies its listeners.
 
+在 Flutter 中，使用 [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html) 类来管理 `TextField` 控件。当用户修改文本的时候，controller 会通知监听器。
+
 Listeners read the text and selection properties to learn what the user typed
 into the field. You can access the text in `TextField` by the `text` property of
 the controller.
+
+监听器读取文本和选项属性来获知用户所输入的内容。你可以通过 `TextField` 中的 `text` 属性获得用户输入的文本数据。
 
 <!-- skip -->
 ```dart
@@ -2576,7 +2619,11 @@ widget that displays the alert message, and the text from
 the `TextField` is accessed by the `text` property of the
 [TextEditingController]({{site.api}}/flutter/widgets/TextEditingController-class.html).
 
+在这个例子中，当用户点击提交按钮的时候，会弹出窗口显示当前输入的文本内容。可以使用 [`alertDialog`]({{site.api}}/flutter/material/AlertDialog-class.html) 控件显示提示信息，`TextField` 的文本通过 `text` 属性来获得，该属性属于 [TextEditingController]({{site.api}}/flutter/widgets/TextEditingController-class.html)。
+
 ### How do I use Form widgets?
+
+### 如何使用 Form 控件呢？
 
 In Flutter, use the
 [`Form`]({{site.api}}/flutter/widgets/Form-class.html)
@@ -2590,6 +2637,8 @@ object is used to save, reset, or validate
 each `FormField` that is a descendant of this `Form`. To obtain the `FormState`,
 you can use  `Form.of` with a context whose ancestor is the Form, or pass a
 `GlobalKey` to the Form constructor and call `GlobalKey.currentState`.
+
+在 Flutter 中，当需要使用带有提交按钮和 [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html) 组件的复合控件时，就会用到 [`Form`]({{site.api}}/flutter/widgets/Form-class.html)。`TextFormField` 内含一个 [`onSaved`]({{site.api}}/flutter/widgets/FormField/onSaved.html) 参数，它可以设置一个回调函数，当表单存储的时候会回调该函数。`FormState` 用于存储、重置或者验证 `Form` 内含的每个 `FormField`。你可以通过将当前表单的 context 属性赋值给 `Form.of` 来获得 `FormState`。或者在表单的构造函数里使用 `GlobalKey`，然后调用 `GlobalKey.currentState` 来获得 `FormState`。
 
 <!-- skip -->
 ```dart
@@ -2621,6 +2670,8 @@ Form(
 The following example shows how `Form.save()` and `formKey` (which is a
 `GlobalKey`) are used to save the form on submit.
 
+下面的示例代码展示了 `Form.save()` 和 `formKey`（这个实际上是 `GlobalKey`）如何被用于表单提交的。
+
 <!-- skip -->
 ```dart
 void _submit() {
@@ -2642,12 +2693,18 @@ void _submit() {
 
 ## Platform-specific code
 
+## 平台相关代码
+
 When building a cross-platform app, you want to re-use as much code as
 possible across platforms. However, scenarios may arise where it makes sense for
 the code to be different depending on the OS. This requires a separate
 implementation by declaring a specific platform.
 
+当构建跨平台应用程序的时候，你会尽量多地复用代码。然而，根据不同的应用场景，代码会根据平台的不同有所变化。这就需要提前声明具体的平台来进行独立的实现。
+
 In React Native, the following implementation would be used:
+
+在 React Native 中，下面的实现代码会被用到：
 
 ```js
 // React Native
@@ -2660,6 +2717,8 @@ if (Platform.OS === "ios") {
 }
 ```
 In Flutter, use the following implementation:
+
+而在 Flutter 中，则是下面这样的实现：
 <!-- skip -->
 ```dart
 // Flutter
@@ -2676,19 +2735,29 @@ if (Theme.of(context).platform == TargetPlatform.iOS) {
 
 ## Debugging
 
+## 调试
+
 Before running your applications, verify your code with `flutter analyze`. The
 Flutter analyzer (which is a wrapper around the `dartanalyzer` tool) examines
 your code and helps identify possible issues. If you’re using a Flutter-enabled
 IDE, this occurs automatically.
 
+在运行应用程序之前，可以使用 `flutter analyze` 检验一下代码。Flutter analyzer （它封装了 `dartanalyzer` 工具）可以验证你的代码并且帮助你定位潜在的问题。如果你使用的是启用了 Flutter 的 IDE 的话，这个过程是全自动的。
+
 ### How do I access the in-app developer menu?
+
+### 如何打开程序里的开发者菜单？
 
 In React Native, the developer menu can be accessed by shaking your device: ⌘D
 for the iOS Simulator or ⌘M for Android emulator.
 
+在 React Native 中，开发者菜单可以通过摇动设备打开：对于 iOS 模拟器的快捷键是 ⌘D 而 Android 模拟器的快捷键是 ⌘M。
+
 In Flutter, if you are using an IDE, you can use the IDE tools. If you start
 your application using `flutter run` you can also access the menu by typing `h`
 in the terminal window, or type the following shortcuts:
+
+在 Flutter 中，如果你使用 IDE，那么可以直接使用 IDE 工具。如果你是通过命令行运行 `flutter run` 来启动应用程序的，你可以在命令行窗口通过输入 `h` 来打开菜单，或者参考下面的快捷键说明：
 
 <div class="table-wrapper" markdown="1">
 | Action| Terminal Shortcut| Debug functions and properties|
@@ -2706,15 +2775,38 @@ in the terminal window, or type the following shortcuts:
 {:.table.table-striped}
 </div>
 
+<div class="table-wrapper" markdown="1">
+| 功能| 命令行快捷键| 调试功能和属性|
+| :------- | :------: | :------ |
+| 应用程序的控件层级| `w`| debugDumpApp()|
+| 渲染程序的控件树 | `t`| debugDumpRenderTree()|
+| 层| `L`| debugDumpLayerTree()|
+| 可访问性 | `S` (遍历顺序) 或者<br>`U` (反转点击测试顺序)|debugDumpSemantics()|
+| 打开或者关闭控件窗口 | `i` | WidgetsApp. showWidgetInspectorOverride|
+| 显示或者隐藏框架线条| `p` | debugPaintSizeEnabled|
+| 模拟不同的操作系统| `o` | defaultTargetPlatform|
+| 叠加显示性能参数| `P` | WidgetsApp. showPerformanceOverlay|
+| 将截屏保存为 flutter.png| `s` ||
+| 退出| `q` ||
+{:.table.table-striped}
+</div>
+
+
 ### How do I perform a hot reload?
+
+### 如何进行热重载？
 
 Flutter’s hot reload feature helps you quickly and easily experiment, build UIs,
 add features, and fix bugs. Instead of recompiling your app every time you make
 a change, you can hot reload your app instantly. The app is updated to reflect
 your change, and the current state of the app is preserved.
 
+Flutter 的热重载特性可以帮助你快速便捷地实验、构建 UI 和各种特性以及修复 bug。每次修改代码以后，你只需直接热重载你的应用程序即可，而无需重新进行编译。应用程序会根据你的修改进行相应的更新，而程序原有的状态则会被保留。
+
 In React Native, the shortcut is ⌘R for the iOS Simulator and tapping R twice on
 Android emulators.
+
+在 React Native 中，iOS 模拟器对应的快捷键是 ⌘R ，对应 Android 模拟器的快捷键是点击两次 R 。
 
 In Flutter, If you are using IntelliJ IDE or Android Studio, you can select Save
 All (⌘s/ctrl-s), or you can click the Hot Reload button on the toolbar. If you
@@ -2722,10 +2814,16 @@ are running the app at the command line using `flutter run`, type `r` in the
 Terminal window. You can also perform a full restart by typing `R` in the
 Terminal window.
 
+在 Flutter 中，如果你使用的是 IntelliJ 或者 Android Studio，可以使用 Save All (⌘s/ctrl-s)，或者可以点击工具栏上的 Hot Reload 按钮。如果你是在命令行里使用 `flutter run` 命令运行的程序，在窗口里输入 `r` 即可。也可以输入 `R` 进行彻底的重启。
+
 ### What tools can I use to debug my app in Flutter?
+
+### 在 Flutter 中使用什么工具可以调试应用程序呢？
 
 There are several options and tools you can use when you need to debug your
 Flutter app.
+
+关于 Flutter 应用程序的调试，有多个可选方式和工具供你选择。
 
 In addition to the Flutter analyzer, the
 [`Dart Observatory`](https://dart-lang.github.io/observatory/) is a tool used to
@@ -2733,13 +2831,19 @@ profile and debug your Dart applications. If you started your application using
 `flutter run` in Terminal, you can open the web page at the Observatory URL
 printed to the terminal window, for example:  `http://127.0.0.1:8100/`.
 
+除了 Flutter analyzer，还可以使用 [`Dart Observatory`](https://dart-lang.github.io/observatory/)，它可用于调试 Dart 应用程序。如果你是通过命令行运行 `flutter run` 启动应用程序的，可以打开 Observatory URL 所显示的地址，比如：`http://127.0.0.1:8100/`。
+
 The Observatory includes support for profiling, examining the heap, observing
 executed lines of code, debugging memory leaks and memory fragmentation. For
 more information, see the
 [Observatory documentation](https://dart-lang.github.io/observatory/).
 Observatory is included for free when you download and install the Dart SDK.
 
+Observatory 包括程序运行状态监控，堆栈测试，运行代码监视，内存泄漏和内存分段调试。如果想了解更多详细内容，请参考 [Observatory documentation](https://dart-lang.github.io/observatory/)。
+
 If you're using an IDE, you can debug your application using the IDE debugger.
+
+如果你在使用 IDE，那么你可以直接使用 IDE 内置的调试器进行调试。
 
 If you're using IntelliJ and Android Studio, you can use the Flutter Inspector.
  The Flutter Inspector makes it much easier to understand why your application
@@ -2750,18 +2854,34 @@ If you're using IntelliJ and Android Studio, you can use the Flutter Inspector.
 * View properties for individual widgets
 * Quickly identify layout issues and determine their cause
 
+如果你使用的是 IntelliJ 和 Android Studio，你可以使用 Flutter Inspector。
+Flutter Inspector 很好上手，并且可以帮你洞悉应用程序图像渲染的过程。通过它，你可以：
+* 以控件树的形式查看应用程序的 UI 结构
+* 在设备或者模拟器上选择某一个点，然后找到该位置图像对应的控件
+* 查看每个控件的属性
+* 快速定位布局问题并找到原因
+
 The Flutter Inspector view can be opened from View > Tool Windows > Flutter
 Inspector. Content is shown only when an app is running.
+
+Flutter Inspector 窗口可以通过如下步骤打开：View > Tool Windows > Flutter
+Inspector。只有在应用程序运行的时候才会显示内容。
 
 To inspect a specific widget, select the **Toggle inspect mode** action in the
 toolbar, then click on the desired widget on an attached phone or simulator. The
 widget is highlighted in your app’s UI. You’ll see the widget in the widget
 hierarchy in IntelliJ and the individual properties for that widget.
 
+如果要查看特定的控件，在工具栏中选择 **Toggle inspect mode** ，然后在已连接的手机或者模拟器上点击对应的控件。该控件会高亮显示。你就可以在 IntelliJ 看到对应的控件层级和控件属性。
+
 For more information, see
 [Debugging Flutter Apps](/docs/testing/debugging).
 
+更多详细内容，请查看 [Debugging Flutter Apps](/docs/testing/debugging)。
+
 ## Animation
+
+## 动画
 
 Well-designed animation makes a UI feel intuitive, contributes to the look and
 feel of a polished app, and improves the user experience. Flutter’s animation
@@ -2770,7 +2890,11 @@ SDK includes many Material Design widgets that include standard
 motion effects and you can easily customize these effects to personalize your
 app.
 
+精美的动画效果会使得 UI 更加直观，可以提升整体视觉效果，使应用显得更加精致，从而提升用户体验。Flutter 的动画框架使得开发者能够更方便地实现简单和复杂的动画。Flutter SDK 含有很多 Material Design 控件。其中已经包括了标准的动画效果，你可以很方便地自定义这些效果。
+
 In React Native, Animated APIs are used to create animations.
+
+在 React Native 中，动画 API 用于创建动画。
 
 In Flutter, use the
 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html)
@@ -2781,7 +2905,11 @@ its state (completed or dismissed). The `AnimationController` class lets you
 play an animation forward or in reverse, or stop animation and set the animation
 to a specific value to customize the motion.
 
+在 Flutter 中，使用 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html) 类和 [`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html) 类实现动画。`Animation` 是抽象类，内含其当前的值和它的状态（已完成或者已取消）。`AnimationController` 类可以正向或者反向播放动画或者停止动画以及为动画设置特定值来自定义动画。
+
 ### How do I add a simple fade-in animation?
+
+### 如何添加一个简单的淡入动画效果？
 
 In the React Native example below, an animated component, `FadeInView` is
 created using the Animated API. The initial opacity state, final state, and the
@@ -2789,6 +2917,8 @@ duration over which the transition occurs are defined. The animation component
 is added inside the `Animated` component, the opacity state `fadeAnim` is mapped
 to the opacity of the Text component that we want to animate, and then,
 `start()` is called to start the animation.
+
+在下面的 React Native 示例中，有一个动画组件，也就是 `FadeInView`，它是使用 Animated API 创建的。定义了初始的不透明状态，最终状态和动画切换之间的时间间隔。在 `Animated` 中添加了动画组件，不透明状态 `fadeAnim` 映射到我们想要添加动画效果的文本组件上，然后在开始动画的时候调用 `start()`。
 
 ```js
 // React Native
@@ -2825,6 +2955,8 @@ during a given duration. The animation controller generates a new value
 whenever the device running your app is ready to display a new frame.
 Typically, this rate is around 60 values per second.
 
+要在 Flutter 中实现相同的动画效果，创建一个 [`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html) 对象，叫它 `controller`，并且指定时间间隔。在默认配置下， `AnimationController` 会在给定时间间隔线性的生成从 0.0 到 1.0 的数值。当你的程序可以显示新一帧画面的时候，AnimationController 会生成一个新的值。通常，这个频率在每秒 60 个值。
+
 When defining an `AnimationController`, you must pass in a `vsync` object. The
 presence of `vsync` prevents offscreen animations from consuming unnecessary
 resources. You can use your stateful object as the `vsync` by adding
@@ -2832,21 +2964,29 @@ resources. You can use your stateful object as the `vsync` by adding
 needs a TickerProvider, which is configured using the `vsync` argument on the
 constructor.
 
+当定义 `AnimationController` 的时候，你必须传入一个 `vsync` 对象。`vsync` 会防止屏幕显示区域之外的动画消耗不必要的资源。你可以通过添加 `TickerProviderStateMixin` 到类定义中来使用有状态的对象。`AnimationController` 需要传入一个 TickerProvider，它是通过构造函数里的 `vsync` 参数进行配置的。
+
 A [`Tween`]({{site.api}}/flutter/animation/Tween-class.html)
 describes the interpolation between a beginning and ending value
 or the mapping from an input range to an output range. To use a `Tween` object
 with an animation, call the `Tween` object's `animate` method and pass it the
 `Animation` object that you want to modify.
 
+[`Tween`]({{site.api}}/flutter/animation/Tween-class.html) 定义了起始和结束值之间或者输入段到输出段之间的过渡。如果要在动画中使用 `Tween` 对象，调用 `Tween` 对象的 `animate` 方法，然后把它赋给你要修改的 `Animation` 对象。
+
 For this example, a
 [`FadeTransition`]({{site.api}}/flutter/widgets/FadeTransition-class.html)
 widget is used and the `opacity` property is mapped to the `animation` object.
+
+在这个例子中，用到了 [`FadeTransition`]({{site.api}}/flutter/widgets/FadeTransition-class.html) 控件，它的 `opacity` 属性映射到了 `animation` 对象上。
 
 To start the animation, use `controller.forward()`. Other operations can also be
 performed using the controller such as `fling()` or `repeat()`. For this
 example, the
 [`FlutterLogo`]({{site.api}}/flutter/material/FlutterLogo-class.html)
 widget is used inside the `FadeTransition` widget.
+
+要开始动画，使用 `controller.forward()`。其它的操作也可以使用控制器里的方法，比如 `fling()` 或者 `repeat()`。这个例子里，[`FlutterLogo`]({{site.api}}/flutter/material/FlutterLogo-class.html) 控件被用于 `FadeTransition` 控件中。
 
 <!-- skip -->
 ```dart
@@ -2898,12 +3038,18 @@ class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
 
 ### How do I add swipe animation to cards?
 
+### 如何为卡片添加滑动动画呢？
+
 In React Native, either the `PanResponder` or third-party libraries are used for
 swipe animation.
+
+在 React Native 中，无论  `PanResponder` 或者第三方库都可被用于滑动动画。
 
 In Flutter, to add a swipe animation, use the
 [`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html)
 widget and nest the child widgets.
+
+在 Flutter 中，要添加滑动动画，使用 [`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html)控件封装其它子控件即可。
 
 <!-- skip -->
 ```dart
@@ -2922,8 +3068,12 @@ child: Dismissible(
 
 ## React Native and Flutter Widget equivalent components
 
+## React Native 和 Flutter 控件对等的组件
+
 The following table lists commonly-used React Native components mapped to the
 corresponding Flutter widget and common widget properties.
+
+下面的表格列举了通用的 React Native 组件与对应的 Flutter 控件和通用的控件属性。
 
 <div class="table-wrapper" markdown="1">
 | React Native Component                                                                    | Flutter Widget                                                                                             | Description                                                                                                                            |
@@ -2995,5 +3145,78 @@ corresponding Flutter widget and common widget properties.
 | [Slider](https://facebook.github.io/react-native/docs/slider.html)                      | [Slider]({{site.api}}/flutter/material/Slider-class.html)                                      | Used to select from a range of values.                                                                                                                                                                       |
 |                                                                                         | value [required]                                                                                          | [ double ] The current value of the slider.                                                                                                                                                                           |
 |                                                                                         | onChanged [required]                                                                                      | Called when the user selects a new value for the slider.                                                                                                                                                      |
+{:.table.table-striped}
+</div>
+
+<div class="table-wrapper" markdown="1">
+| React Native Component                                                                    | Flutter 控件                                                                                             | 描述                                                                                                                            |
+| ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| [Button](https://facebook.github.io/react-native/docs/button.html)                        | [Raised Button]({{site.api}}/flutter/material/RaisedButton-class.html)                           | 基本的悬浮按钮                                                                              |
+|                                                                                           |  onPressed [required]                                                                                        | 该回调函数在当按钮被点击的时候被触发。                                                       |
+|                                                                                           | Child                                                                              | 按钮的标签                                                                                                     |
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+| [Button](https://facebook.github.io/react-native/docs/button.html)                        | [Flat Button]({{site.api}}/flutter/material/FlatButton-class.html)                               | 基本的平面按钮                                                                                                       |
+|                                                                                           |  onPressed [required]                                                                                        | 该回调函数在当按钮被点击的时候被触发。                                                        |
+|                                                                                           | Child                                                                              | The button's label.                                                                                                      |
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+| [ScrollView](https://facebook.github.io/react-native/docs/scrollview.html)                | [ListView]({{site.api}}/flutter/widgets/ListView-class.html)                                    | 一个可滑动的纵向排列的控件列表。|
+||        children                                                                              |   ( <Widget\> [ ])  要显示的子控件列表
+||controller |[ [Scroll Controller]({{site.api}}/flutter/widgets/ScrollController-class.html) ] 可用于控制滑动控件的对象
+||itemExtent|[ double ] 如果非空，那么强制所有子控件在滑动方向上增加给定的距离
+||scroll Direction|[ [Axis]({{site.api}}/flutter/painting/Axis-class.html) ] 滑动页面的滑动轴
+||                                                                                                            |                                                                                                                                        |
+| [FlatList](https://facebook.github.io/react-native/docs/flatlist.html)                    | [ListView. builder()]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)               | 根据需要创建的一组控件的构造函数。
+||itemBuilder [required] |[[ Indexed Widget Builder]({{site.api}}/flutter/widgets/IndexedWidgetBuilder.html)] 根据需要创建子控件。当元素序号大于等于零并且小于队列元素总数时，该回调函数会被调用。
+||itemCount |[ int ] 优化了 ListView 对于最大滑动范围的预估能力。
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+| [Image]({{site.api}}/flutter/widgets/Image-class.html)                         | [Image](https://facebook.github.io/react-native/docs/image.html)                                           | 显示图片的控件。                                                                                                    |
+|                                                                                           |  image [required]                                                                                          | 要显示的图片                                              |
+|                                                                                           | Image. asset                                                                                                | 有多个构造函数可以用于指定图片。       |
+|                                                                                           | 宽, 高, 颜色, alignment                                                                            | 图片的风格和布局。                                                                                                         |
+|                                                                                           | fit                                                                                                        | 将图片内嵌到布局对应的空间里。I                       |
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+| [Modal](https://facebook.github.io/react-native/docs/modal.html)                          | [ModalRoute]({{site.api}}/flutter/widgets/ModalRoute-class.html)                                | 避免和之前路径交叉的路径。               |
+|                                                                                           | animation                                                                                                  | 路径切换的动画和之前路径向前切换的动画。        |
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+|  [Activity Indicator](https://facebook.github.io/react-native/docs/activityindicator.html) | [Circular Progress Indicator]({{site.api}}/flutter/material/CircularProgressIndicator-class.html) | 一个圆形的进度条控件。                                        |
+|                                                                                           | strokeWidth                                                                                                | 圆形线条的宽度。         |
+|                                                                                           | backgroundColor                                                                                            | 指示进度的背景色。默认是当前主题的 `ThemeData.backgroundColor`。
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+|  [Activity Indicator](https://facebook.github.io/react-native/docs/activityindicator.html) | [Linear Progress Indicator]({{site.api}}/flutter/material/LinearProgressIndicator-class.html)     | 一个水平条形的进度条。                                                         |
+|                                                                                           | value                                                                                                      | 进度值。       |
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+| [Refresh Control](https://facebook.github.io/react-native/docs/refreshcontrol.html)        | [Refresh Indicator]({{site.api}}/flutter/material/RefreshIndicator-class.html)                   | 支持 Material 中滑动刷新的控件     |
+|                                                                                           | color                                                                                                      | 进度指示的前景色。         |
+|                                                                                           | onRefresh                                                                                                  | 当用户拖拽刷新指示器想要刷新的时候会调用该函数。  |
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+| [View](https://facebook.github.io/react-native/docs/view.html)                            | [Container]({{site.api}}/flutter/widgets/Container-class.html)                                  | 封装子控件的控件。      |
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+| [View](https://facebook.github.io/react-native/docs/view.html)                            | [Column]({{site.api}}/flutter/widgets/Column-class.html)                                        | 将子控件纵向排列的控件。                     |
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+| [View](https://facebook.github.io/react-native/docs/view.html)                            | [Row]({{site.api}}/flutter/widgets/Row-class.html)                                              | 将子控件横向排列的控件。                   |
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+| [View](https://facebook.github.io/react-native/docs/view.html)                            | [Center]({{site.api}}/flutter/widgets/Center-class.html)                                        | 将子控件放置于中央的控件。                                  |
+|                                                                                           |                                                                                                            |                                                                                                                                        |
+| [View](https://facebook.github.io/react-native/docs/view.html)                            | [Padding]({{site.api}}/flutter/widgets/Padding-class.html)                                      | 将子控件按照给定的间隔进行排列的控件。              |
+|                                                                                           | padding [required]                                                                                         | [ EdgeInsets ] 子控件间隔。
+|||
+| [Touchable Opacity](https://facebook.github.io/react-native/docs/touchableopacity.html)    | [Gesture Detector]({{site.api}}/flutter/widgets/GestureDetector-class.html)                      | 检测手势的控件。                                                                    |
+|                                                                                           | onTap                                                                                                      | 当点击的时候会调用。         |
+|                                                                                           | onDoubleTap                                                                                                | 当两次点击的时候会调用。
+|||
+| [Text Input]({{site.api}}/flutter/services/TextInput-class.html)                | [Text Input](https://facebook.github.io/react-native/docs/textinput.html)                                   | 调用系统文本输入的接口。                                |
+|                                                                                           | controller                                                                                                 | [ [Text Editing Controller]({{site.api}}/flutter/widgets/TextEditingController-class.html) ] 用于获取或者修改文本。
+|||
+| [Text](https://facebook.github.io/react-native/docs/text.html)                          | [Text]({{site.api}}/flutter/widgets/Text-class.html)                                            | 以单一的样式显示文本的文本控件。                                                                              |
+|                                                                                         | data                                                                                                      | [ String ] 要显示的文本。                                                                                                                                                                          |
+|                                                                                         | textDirection                                                                                             | [ [Text Align]({{site.api}}/flutter/dart-ui/TextAlign-class.html) ]文本的方向。    |
+|                                                                                         |                                                                                                           |                                                                                                                                                                                                              |
+| [Switch](https://facebook.github.io/react-native/docs/switch.html)                      | [Switch]({{site.api}}/flutter/material/Switch-class.html)                                      | Material Design 样式的开关。                                                                                                                                         |
+|                                                                                         | value [required]                                                                                          | [ boolean ] 开关的开启或者闭合状态。                                                                                                                                                                 |
+|                                                                                         | onChanged [required]                                                                                      | [ callback ] 当用户点击开关的时候调用。                   |
+|                                                                                         |                                                                                                           |                                                                                                                                                                                                              |
+| [Slider](https://facebook.github.io/react-native/docs/slider.html)                      | [Slider]({{site.api}}/flutter/material/Slider-class.html)                                      | 选择一个范围的值。                                                                                                                               |
+|                                                                                         | value [required]                                                                                          | [ double ] 当前滑动器的值。                                                                                                                                                                           |
+|                                                                                         | onChanged [required]                                                                                      | 当用户为滑动器选择了新的值时会调用                                                                       |
 {:.table.table-striped}
 </div>

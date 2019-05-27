@@ -12,7 +12,7 @@ _If you are already familiar with state management in reactive apps, you can
 skip this section, though you might want to review the [list of different 
 approaches](/docs/development/data-and-backend/state-mgmt/options)._
 
-_如果你早已在响应式 App 中使用了状态管理，你可以跳过这个部分，你可能需要看一下[状态 (State) 管理参考](/docs/development/data-and-backend/state-mgmt/options)。_
+_如果你早已熟悉响应式 App 中的状态管理，你可以跳过这个部分，不过这里也有一些关于 [状态 (State) 管理参考](/docs/development/data-and-backend/state-mgmt/options) 的信息供你查阅。_
 
 {% asset development/data-and-backend/state-mgmt/state-management-explainer width="100%" alt="A short animated gif that shows the workings of a simple declarative state management system. This is explained in full in one of the following pages. Here it's just a decoration." %}
 
@@ -24,7 +24,7 @@ As you explore Flutter, there comes a time when you need to share application
 state between screens, across your app. There are many approaches you can take, 
 and many questions to think about.
 
-当你探索 Flutter 时，有时需要在整个应用程序之中的不同屏幕之间共享应用程序状态。这里有许多你可以采用的方案、可以思考的问题。
+当你使用 Futter 进行开发时，有时会需要在 app 的不同界面中，共享应用程序的状态，在这里你可以找到许多有用的方案以及一些可以深思的问题。
 
 In the following pages, you will learn the basics of dealing with state in 
 Flutter apps.

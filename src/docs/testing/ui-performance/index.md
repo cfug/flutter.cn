@@ -283,6 +283,8 @@ complicated to render quickly.
 
 <center>红色竖条表明当前帧的渲染和绘制都很耗时<br>当两张图表都是红色时，就要开始对 UI 线程（Dart VM）进行诊断了。</center><br>
 
+### Displaying the performance overlay
+
 ### 显示性能图层
 
 You can toggle display of the performance overlay as follows:
@@ -656,6 +658,8 @@ This dump takes a long time to generate and isn't particularly readable.
   
 * [`debugPrintMarkNeedsPaintStacks`][]<br>
   和 `debugPrintMarkNeedsLayoutStack`相似，作用于过度绘制。
+
+You can learn about other debug flags in [Debugging Flutter apps][].
 
 可以在 [Debugging Flutter apps][] 中了解到其他的调试参数。
 

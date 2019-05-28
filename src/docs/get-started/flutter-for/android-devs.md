@@ -44,7 +44,7 @@ traditional imperative style?
 For a comparison, see [Introduction to declarative
 UI](/docs/get-started/flutter-for/declarative).
 
-响应式或者申明式的编程和传统的命令式风格有什么不同呢？
+响应式或者声明式的编程和传统的命令式风格有什么不同呢？
 作为对比，请查阅 [声明式 UI 介绍](/docs/get-started/flutter-for/declarative)。
 {{site.alert.end}}
 
@@ -57,7 +57,7 @@ acquainted with how Flutter works you can think of them as
 
 Android 中的 `View` 是显示在屏幕上的一切的基础。按钮、工具栏、输入框以及一切内容都是 `View`。
 而 Flutter 中 `View` 的大致对应物是`Widget`。Widget 并非完全对应于 Android 中的 View，
-但是在你熟悉 Flutter 的工作原理的过程中可以把它们看做“申明和构建 UI 的方式”。
+但是在你熟悉 Flutter 的工作原理的过程中可以把它们看做“声明和构建 UI 的方式”。
 
 However, these have a few differences to a `View`. To start, widgets have a
 different lifespan: they are immutable and only exist until they need to be
@@ -650,7 +650,7 @@ which you can `pop()` routes when you want to "go back".
 
 In Android, you declare your activities inside the app's `AndroidManifest.xml`.
 
-在 Android 中，在应用的 `AndroidManifest.xml` 文件中申明 Activity。
+在 Android 中，在应用的 `AndroidManifest.xml` 文件中声明 Activity。
 
 In Flutter, you have a couple options to navigate between pages:
 
@@ -1057,7 +1057,7 @@ you would keep _any_ sort of work out of the main thread in Android.
 For I/O-bound work, declare the function as an `async` function,
 and `await` on long-running tasks inside the function:
 
-对于和 I/O 绑定的任务，将方法申明为 `async` 方法，并在方法内 `await` 一个长时间运行的任务：
+对于和 I/O 绑定的任务，将方法声明为 `async` 方法，并在方法内 `await` 一个长时间运行的任务：
 
 {% prettify dart %}
 loadData() async {
@@ -1829,7 +1829,7 @@ Column, Row, and Stack widgets. You can specify rules for the widgets
 constructors on how the children are laid out relative to the parent.
 
 你可以通过组合使用 Column、Row 和 Stack Widget 实现 RelativeLayout 的效果。
-你还可以在 Widget 构造器内申明孩子相对父亲的布局规则。
+你还可以在 Widget 构造器内声明孩子相对父亲的布局规则。
 
 For a good example of building a RelativeLayout in Flutter, see Collin's
 answer on
@@ -1874,7 +1874,7 @@ both a ScrollView and an Android ListView.
 
 FlutterView handles the config change if AndroidManifest.xml contains:
 
-FlutterView 会处理配置的变化，前提条件是在 AndroidManifest.xml 文件中申明了：
+FlutterView 会处理配置的变化，前提条件是在 AndroidManifest.xml 文件中声明了：
 
 {% prettify yaml %}
 android:configChanges="orientation|screenSize"
@@ -2726,7 +2726,7 @@ in the top level widget.
 
 Flutter 提供开箱即用的优美的 Material Design 实现，可以满足你通常需要的各种样式和主题的需求。
 不同于 Android 中你在 XML 文件中定义主题并在 AndroidManifest.xml 中将其赋值给你的应用，
-Flutter 中是在顶层 Widget 上申明主题。
+Flutter 中是在顶层 Widget 上声明主题。
 
 To take full advantage of Material Components in your app, you can declare a top
 level widget `MaterialApp` as the entry point to your application. MaterialApp
@@ -2734,7 +2734,7 @@ is a convenience widget that wraps a number of widgets that are commonly
 required for applications implementing Material Design. It builds upon a WidgetsApp by
 adding Material specific functionality.
 
-为了在应用中利用好 Material 组件，你可以在应用中申明一个顶层 Widget `MeterialApp` 作为入口。
+为了在应用中利用好 Material 组件，你可以在应用中声明一个顶层 Widget `MeterialApp` 作为入口。
 MaterialApp 是一个包装了一系列 Widget 的为你给予便利的 Widget，而这些 Widget 通常是实现 
 Material Design 的应用所必须的。它基于 WidgetsApp 并添加了 Material 相关的功能。
 

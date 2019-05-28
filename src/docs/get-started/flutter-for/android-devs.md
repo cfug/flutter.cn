@@ -137,7 +137,7 @@ with `StatefulWidget` and tell the Flutter framework that the widget’s `State`
 has been updated so it can update that widget.
 
 如果你想要根据 HTTP 请求返回的数据或者用户的交互来动态地更新界面，那么你就必须使用 `StatefulWidget`，
-并告诉 Flutter 框架 Widget 的 `状态`(`State`)更新了，以便 Flutter 可以更新这个 Widget。
+并告诉 Flutter 框架 Widget 的`状态` (`State`) 更新了，以便 Flutter 可以更新这个 Widget。
 
 The important thing to note here is at the core both stateless and stateful
 widgets behave the same. They rebuild every frame, the difference is the
@@ -256,7 +256,7 @@ with a widget tree.
 
 The following example shows how to display a simple widget with padding:
 
-以下示例展示了如何显示一个带有填充(padding)的简单 Widget：
+以下示例展示了如何显示一个带有填充 (padding) 的简单 Widget：
 
 {% prettify dart %}
   @override
@@ -384,7 +384,7 @@ that signals when vsync happens, and produces a linear interpolation between
 `Animation`s and attach them to the controller.
 
 Flutter 通过 `Animation<double>` 的子类 `AnimationController` 来暂停、播放、停止以及逆向
-播放动画。它需要一个 `Ticker` 在垂直同步(vsync)的时候发出信号，并且在运行的时候创建一个介于 
+播放动画。它需要一个 `Ticker` 在垂直同步 (vsync) 的时候发出信号，并且在运行的时候创建一个介于 
 0 和 1 之间的线性插值。然后你就可以创建一个或多个 `Animation`，并将它们绑定到控制器上。
 
 For example, you might use `CurvedAnimation` to implement an animation
@@ -493,14 +493,14 @@ on the same low-level rendering engine, Skia. As a result, painting to a
 canvas in Flutter is a very familiar task for Android developers.
 
 在 Android 中，你可以使用 `Canvas` 和 `Drawable` 将图片和形状绘制到屏幕上。Flutter 也有一个
-类似于 `Canvas` 的 API，因为它基于相同的底层渲染引擎 Skia。因此，在 Flutter 中用画布(canvas)
+类似于 `Canvas` 的 API，因为它基于相同的底层渲染引擎 Skia。因此，在 Flutter 中用画布 (canvas) 
 进行绘制对于 Android 开发者来说是一件非常熟悉的工作。
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
 and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
-Flutter 有两个帮助你用画布(canvas)进行绘制的类：`CustomPaint` 和 `CustomPainter`，后者
+Flutter 有两个帮助你用画布 (canvas) 进行绘制的类：`CustomPaint` 和 `CustomPainter`，后者
 可以实现自定义的绘制算法。
 
 To learn how to implement a signature painter in Flutter, see Collin's answer on
@@ -577,7 +577,7 @@ you provide a different behavior&mdash;for example, custom layout logic.
 
 在 Flutter 中，通过 [组合](/docs/resources/technical-overview#everythings-a-widget) 
 更小的 Widget 来创建自定义 Widget（而不是继承它们）。这和 Android 中实现一个自定义的 `ViewGroup` 
-有些类似，所有的构建 UI 的模块代码都在手边，不过由你提供不同的行为&mdash;例如，自定义布局(layout)逻辑。
+有些类似，所有的构建 UI 的模块代码都在手边，不过由你提供不同的行为&mdash;例如，自定义布局 (layout) 逻辑。
 
 For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a `RaisedButton` with
@@ -645,8 +645,8 @@ which you can `pop()` routes when you want to "go back".
 
 `Route` 是应用内屏幕和页面的抽象，`Navigator` 是管理路径 route 的工具。一个 route 对象大致对应于
 一个 `Activity`，但是它的含义是不一样的。Navigator 可以通过对 route 进行压栈和弹栈操作实现页面
-的跳转。Navigator 的工作原理和栈相似，你可以将想要跳转到的 route 压栈(`push()`)，想要返回
-的时候将 route 弹栈(`pop()`)。
+的跳转。Navigator 的工作原理和栈相似，你可以将想要跳转到的 route 压栈 (`push()`)，想要返回
+的时候将 route 弹栈 (`pop()`)。
 
 In Android, you declare your activities inside the app's `AndroidManifest.xml`.
 
@@ -683,7 +683,7 @@ The following example builds a Map.
 
 Navigate to a route by `push`ing its name to the `Navigator`.
 
-通过将 route 名`压栈`(`push`)到 `Navigator` 中来跳转到这个 route。
+通过将 route 名`压栈` (`push`) 到 `Navigator` 中来跳转到这个 route。
 
 {% prettify dart %}
 Navigator.of(context).pushNamed('/b');
@@ -887,7 +887,7 @@ Map coordinates = await Navigator.of(context).pushNamed('/location');
 And then, inside your location route, once the user has selected their location
 you can `pop` the stack with the result:
 
-然后，在你的位置 route 内，一旦用户选择了位置，你就可以弹栈(`pop`)并返回结果：
+然后，在你的位置 route 内，一旦用户选择了位置，你就可以弹栈 (`pop`) 并返回结果：
 
 {% prettify dart %}
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
@@ -1305,7 +1305,7 @@ dependencies:
 
 To make a network call, call `await` on the `async` function `http.get()`:
 
-如果要发起一个网络请求，在异步(`async`)方法 `http.get()` 上调用 `await` 即可：
+如果要发起一个网络请求，在异步 (`async`) 方法 `http.get()` 上调用 `await` 即可：
 
 {% prettify dart %}
 import 'dart:convert';
@@ -1444,7 +1444,7 @@ While Android treats resources and assets as distinct items, Flutter apps have
 only assets. All resources that would live in the `res/drawable-*`
 folders on Android, are placed in an assets folder for Flutter.
 
-虽然 Android 区分对待资源文件(resources)和资产文件(assets)，但是 Flutter 应用只有资产文件(assets)。
+虽然 Android 区分对待资源文件 (resources) 和资产文件 (assets)，但是 Flutter 应用只有资产文件 (assets)。
 所有原本在 Android 中应该放在 `res/drawable-*` 文件夹中的资源文件，在 Flutter 中都放在一个 
 assets 文件夹中。
 
@@ -1455,7 +1455,7 @@ The so-called
 [`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
 expresses the ratio of physical pixels in a single logical pixel.
 
-Flutter 遵循一个简单的类似 iOS 的密度相关的格式。文件可以是一倍(`1.0x`)、两倍(`2.0x`)、三倍(`3.0x`)
+Flutter 遵循一个简单的类似 iOS 的密度相关的格式。文件可以是一倍 (`1.0x`)、两倍 (`2.0x`)、三倍 (`3.0x`) 
 或其它的任意倍数。Flutter 没有 `dp` 单位，但是有逻辑像素尺寸，基本和设备无关的像素尺寸是一样的。名称为 
 [`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html) 
 的尺寸表示在单一逻辑像素标准下设备物理像素的比例。
@@ -1485,7 +1485,7 @@ accessible from the native side, and vice versa, native assets and resources
 weren’t available to Flutter, as they lived in separate folders.
 
 需要注意的是，在 Flutter 1.0 beta 2 之前，在 Flutter 中定义的文件不能被原生端访问，反之亦然，
-原生端定义的资产文件(assets)和资源文件(resources)也无法被 Flutter 访问，因为它们是放置于
+原生端定义的资产文件 (assets) 和资源文件 (resources) 也无法被 Flutter 访问，因为它们是放置于
 不同的文件夹中的。
 
 As of Flutter beta 2, assets are stored in the native asset folder,

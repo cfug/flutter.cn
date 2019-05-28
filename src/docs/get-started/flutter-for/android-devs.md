@@ -56,7 +56,7 @@ acquainted with how Flutter works you can think of them as
 "the way you declare and construct UI".
 
 Android 中的 `View` 是显示在屏幕上的一切的基础。按钮、工具栏、输入框以及一切内容都是 `View`。
-而 Flutter 中 `View` 的大致对应物是`控件`(`Widget`)。Widget 并非完全对应于 Android 中的 View，
+而 Flutter 中 `View` 的大致对应物是`Widget`。Widget 并非完全对应于 Android 中的 View，
 但是在你熟悉 Flutter 的工作原理的过程中可以把它们看做“申明和构建 UI 的方式”。
 
 However, these have a few differences to a `View`. To start, widgets have a

@@ -35,7 +35,7 @@ that are most relevant to your needs.
 
 ### What is the equivalent of a `View` in Flutter?
 
-### `视图`(`View`)在 Flutter 中的对应概念是什么？
+### `视图` 在 Flutter 中的对应概念是什么？
 
 {{site.alert.secondary}}
 How is react-style, or _declarative_, programming different than the

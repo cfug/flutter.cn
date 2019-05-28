@@ -38,6 +38,7 @@ that are most relevant to your needs.
 ### `视图` 在 Flutter 中的对应概念是什么？
 
 {{site.alert.secondary}}
+
 How is react-style, or _declarative_, programming different than the
 traditional imperative style?
 For a comparison, see [Introduction to declarative

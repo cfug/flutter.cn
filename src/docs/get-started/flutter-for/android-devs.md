@@ -31,7 +31,7 @@ that are most relevant to your needs.
 
 ## Views
 
-## 视图(Views)
+## 视图 (Views)
 
 ### What is the equivalent of a `View` in Flutter?
 

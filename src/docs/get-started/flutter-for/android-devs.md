@@ -115,7 +115,7 @@ This is where the concept of Stateful and Stateless widgets comes from. A
 `StatelessWidget` is just what it sounds like&mdash;a widget with no state
 information.
 
-这就是有状态(Stateful)和无状态(Stateless) Widget 概念的来源。`StatelessWidget` 如其
+这就是有状态 (Stateful) 和无状态 (Stateless) Widget 概念的来源。`StatelessWidget` 如其
 字面意思&mdash;没有状态信息的 Widget。
 
 `StatelessWidgets` are useful when the part of the user interface

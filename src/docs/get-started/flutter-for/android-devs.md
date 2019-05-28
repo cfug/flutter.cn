@@ -45,7 +45,7 @@ For a comparison, see [Introduction to declarative
 UI](/docs/get-started/flutter-for/declarative).
 
 响应式或者申明式的编程和传统的命令式风格有什么不同呢？
-作为对比，请查阅 [申明式界面简介](/docs/get-started/flutter-for/declarative)。
+作为对比，请查阅 [声明式 UI 介绍](/docs/get-started/flutter-for/declarative)。
 {{site.alert.end}}
 
 In Android, the `View` is the foundation of everything that shows up on the

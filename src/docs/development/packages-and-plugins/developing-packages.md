@@ -463,8 +463,10 @@ Next, run the dry-run command to see if everything passes analysis:
 接下来，运行 dry-run 命令以检验是否所有内容都通过了分析：
 
 ```terminal
-$ flutter pub publish --dry-run
+$ flutter pub pub publish --dry-run
 ```
+
+(Note the redundant `pub pub`, which is needed until [issue #33302)(https://github.com/flutter/flutter/issues/33302) is resolved).
 
 Finally, run the actual publish command:
 

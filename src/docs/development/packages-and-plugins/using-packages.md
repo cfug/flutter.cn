@@ -71,14 +71,14 @@ For a complete example, see [CSS Colors example](#css-example) below.
 
 ### 冲突解决
 
-Suppose you want to use `some_package` and `other_package` in your package
-`hello`, and both of these depend on `url_launcher`, but in different
-versions. Then we have a potential conflict. The best way to avoid this
+Suppose you want to use `some_package` and `other_package` in your app `counter`
+(or your own package), and both of these depend on `url_launcher`, but
+in different versions. Then we have a potential conflict. The best way to avoid this
 is for package authors to use [version
 ranges]({{site.dart-site}}/tools/pub/dependencies#version-constraints)
 rather than specific versions when specifying dependencies.
 
-假设你想在 `hello` package 中使用 `some_package` 和
+假设你想在 `counter` 应用（或 package）中使用 `some_package` 和
 `other_package`，且它们依赖于不同版本的 `url_launcher`。于是我们便有了潜在的冲突。避免这种情况的最好方法是 package
 的作者在指定依赖项时使用 [版本范围]({{site.dart-site}}/tools/pub/dependencies#version-constraints) 而非特定版本。
 
@@ -101,16 +101,16 @@ package 特定平台 [Gradle modules][] 和/或 [CocoaPods][] 的依赖关系。
 Even if `some_package` and `other_package` declare incompatible versions for
 `url_launcher`, it may still be that they actually use `url_launcher` in
 compatible ways. Then the conflict can be dealt with by adding
-a dependency override declaration to the `pubspec.yaml` file in `hello`,
+a dependency override declaration to the `pubspec.yaml` file in `counter`,
 forcing the use of a particular version.
 
 即使 `some_package` 和 `other_package` 声明了不兼容的 `url_launcher`
-版本，它们实际上仍可能以兼容的方式使用 `url_launcher`。可在 `hello` 中的
+版本，它们实际上仍可能以兼容的方式使用 `url_launcher`。可在 `counter` 中的
 `pubspec.yaml` 文件中添加一个依赖覆盖声明来强制使用特定版本，从而处理冲突。
 
-Forcing the use of `url_launcher` version `0.4.3` in `hello/pubspec.yaml`:
+Forcing the use of `url_launcher` version `0.4.3` in `counter/pubspec.yaml`:
 
-在 `hello/pubspec.yaml` 中强制使用版本为 `0.4.3` 的 `url_launcher`：
+在 `counter/pubspec.yaml` 中强制使用版本为 `0.4.3` 的 `url_launcher`：
 
 ```yaml
 dependencies:
@@ -127,9 +127,9 @@ declaration must be added to Gradle build logic instead.
 如果依赖冲突项不是 package 自身，而是如 `guava` 这样特定于 Android 的库，那么依赖的覆盖声明必须添加到
 Gradle 的构建逻辑中。
 
-Forcing the use of `guava` version `23.0` in `hello/android/build.gradle`:
+Forcing the use of `guava` version `23.0` in `counter/android/build.gradle`:
 
-在 `hello/android/build.gradle` 中强制使用版本为 `23.0` 的 `guava`：
+在 `counter/android/build.gradle` 中强制使用版本为 `23.0` 的 `guava`：
 
 ```groovy
 configurations.all {

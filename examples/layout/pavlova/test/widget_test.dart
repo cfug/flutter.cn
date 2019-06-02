@@ -11,7 +11,7 @@ void main() {
     var exceptions = [];
     FlutterError.onError = (FlutterErrorDetails details) async {
       exceptions.add(details.exception);
-      // print('FlutterError.onError: $details'); // Uncomment for error details
+      print('FlutterError.onError: $details'); // Uncomment for error details
     };
 
     await tester.pumpWidget(new MyApp());

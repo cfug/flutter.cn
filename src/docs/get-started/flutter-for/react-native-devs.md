@@ -1,7 +1,10 @@
 ---
 title: Flutter for React Native developers
+
 title: 给 React Native 开发者的 Flutter 指南
+
 description: Learn how to apply React Native developer knowledge when building Flutter apps.
+
 description: 学习如何把 React Native 的开发经验应用到 Flutter 应用的开发中。
 ---
 
@@ -36,6 +39,7 @@ Dart 学习起来非常简单而且有如下特性：
   server, and mobile apps.
 
 * 它针对 web 服务和移动应用开发提供了一种开源的，可扩展的编程语言。
+
 * Provides an object-oriented, single inheritance language that uses a C-style
   syntax that is AOT-compiled into native.
 
@@ -56,11 +60,12 @@ below.
 
 ### Entry point
 
-### 切入点
+### 入口函数
 
 JavaScript doesn't have a pre-defined entry function—you define the entry point.
 
 JavaScript 并没有预定义的入口函数。
+
 ```js
 
 // JavaScript
@@ -110,22 +115,27 @@ Try it out in
 可以在这里查看效果 [DartPad]({{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5)。
 
 ### Variables
+
 ### 变量
 
 Dart is type safe—it uses a combination of static type checking and runtime
 checks to ensure that a variable’s value always matches the variable’s static
 type. Although types are mandatory, some type annotations are optional because
 Dart performs type inference.
+
 Dart 是类型安全的，它结合静态类型检查和运行时检查来保证变量的值总是和变量的静态类型相匹配。虽然类型是语法要求，有些类型标注也并不是必须要填的，因为 Dart 使用类型推断。
 
 #### Creating and assigning variables
+
 #### 创建变量并赋值
 
 In JavaScript, variables cannot be typed.
+
 在 JavaScript 中，变量是无法指定类型的。
 
 In [Dart]({{site.dart-site}}/dart-2), variables must either be explicitly
 typed or the type system must infer the proper type automatically.
+
 在 [Dart]({{site.dart-site}}/dart-2) 中，变量要么被显式定义类型，要么系统会自动判断变量的类型。
 
 ```js
@@ -137,8 +147,16 @@ var name = "JavaScript";
 ```dart
 // Dart
 String name = 'dart'; // Explicitly typed as a string.
+
+String name = 'dart'; // 显式声明为字符串。
+
 var otherName = 'Dart'; // Inferred string.
+
+var otherName = 'Dart'; // 推断为字符串。
+
 // Both are acceptable in Dart.
+
+// 两种定义方式在 Dart 中都可以。
 ```
 
 Try it out in
@@ -157,6 +175,7 @@ System]({{site.dart-site}}/guides/language/sound-dart)。
 #### 默认值
 
 In JavaScript, uninitialized variables are `undefined`.
+
 在 JavaScript 中， 未初始化的变量是 'undefined'。
 
 In Dart, uninitialized variables have an initial value of `null`. Because
@@ -186,9 +205,10 @@ Try it out in
 For more information, see the documentation on
 [variables]({{site.dart-site}}/guides/language/language-tour#variables).
 
-可以在这里查看效果 [variables]({{site.dart-site}}/guides/language/language-tour#variables)。
+如果想了解更多详细内容，请查看这个文档 [variables]({{site.dart-site}}/guides/language/language-tour#variables)。
 
 ### Checking for null or zero
+
 ### 检查 null　或者零值。
 
 In JavaScript, values of 1 or any non-null objects are treated as true.
@@ -229,6 +249,7 @@ Try it out in
 可以在这里查看效果 [DartPad]({{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6)。
 
 ### Functions
+
 ### 函数
 
 Dart and JavaScript functions are generally similar. The primary difference is
@@ -271,7 +292,7 @@ For more information, see the documentation on
 
 #### Futures
 
-#### Futures##
+#### Futures
 
 Like JavaScript, Dart supports single-threaded execution. In JavaScript,
 the Promise object represents the eventual completion (or failure)
@@ -282,7 +303,7 @@ of an asynchronous operation and its resulting value.
 Dart uses [`Future`]({{site.dart-site}}/tutorials/language/futures)
 objects to handle this.
 
-Dart 使用 [`Future`]({{site.dart-site}}/tutorials/language/futures) 对象来处理这个。
+Dart 使用 [`Future`]({{site.dart-site}}/tutorials/language/futures) 对象来实现该机制。
 
 ```js
 // JavaScript
@@ -396,7 +417,7 @@ To create an app in Flutter, do one of the following:
 * Use the `flutter create` command from the command line. Make sure that the
   Flutter SDK is in your PATH.
 
-* 在命令行中运行命令 `flutter create`。不过要提前确认 Flutter SDK 已经在 PATH 中定义。
+* 在命令行中运行命令 `flutter create`。不过要提前确认 Flutter SDK 已经在系统环境变量 PATH 中定义。
 
 * Use an IDE with the Flutter and Dart plugins installed.
 
@@ -423,6 +444,7 @@ In React Native, you would run `npm run` or `yarn run` from the project
 在 React Native, 你可以在项目文件夹中运行 `npm run` 或者 `yarn run`。
 
  You can run Flutter apps in a couple of ways:
+
  你可以通过如下几个途径运行 Flutter 应用程序：
 
  * Use `flutter run` from the project's root directory.
@@ -914,7 +936,7 @@ Flutter and Dart ecosystems. This allows you to quickly build your app without
 having to develop everything from scratch. Packages that contain
 platform-specific code are known as package plugins.
 
-Flutter 支持开发者向 Flutter 和 Dart 生态系统贡献的代码包。这样可以使大量开发者快速构建应用程序而无需重复造轮。而平台相关的代码包就被称为包插件。
+Flutter 支持使用开发者向 Flutter 和 Dart 生态系统贡献的代码包。这样可以使大量开发者快速构建应用程序而无需重复造车轮。而平台相关的代码包就被称为包插件。
 
 In React Native, you would use `yarn add {package-name}` or `npm install --save
 {package-name}` to install packages from the command line.
@@ -989,7 +1011,8 @@ Specifically, the `Container` widget includes the `LimitedBox`,
 Rather than subclassing `Container` to produce a customized effect, you can
 compose these and other simple widgets in new and unique ways.
 
-控件常常通过很多小的，单一功能的控件组成，通过这样的封装往往能够实现很棒的效果。
+控件常常通过很多小的，单一功能的控件组成，通过这样的封装往往能够实现很棒的效果。比如， Container 控件包含多种控件，分别负责布局、绘图、位置变化和尺寸变化。准确的说，`Container` 控件包括 `LimitedBox`,
+`ConstrainedBox`, `Align`, `Padding`, `DecoratedBox`, 和 `Transform` 控件。与其继承 `Container` 来实现自定义效果，不如直接修改这些控件来实现效果。
 
 The `Center` widget is another example of how you can control the layout. To
 center a widget, wrap it in a `Center` widget and then use layout
@@ -1313,7 +1336,7 @@ the text using the alignment property and Alignment coordinates.
 For more information, see the
 [Stack]({{site.api}}/flutter/widgets/Stack-class.html) class documentation.
 
-如果想了解更多相关信息，请参考 [Stack]({{site.api}}/flutter/widgets/Stack-class.html) class documentation。
+如果想了解更多相关信息，请参考 [Stack]({{site.api}}/flutter/widgets/Stack-class.html) 类文档。
 
 ## Styling
 
@@ -1407,6 +1430,10 @@ flutter: [[highlight]]uses-material-design: true[[/highlight]]
 {% endprettify %}
 
 当使用 `Icons` 类时，确保在项目的 `pubspec.yaml` 文件中设置 `uses-material-design: true`。这样保证 `MaterialIcons` 相关字体被包含在你的应用中。
+{% prettify dart %}
+name: my_awesome_application
+flutter: [[highlight]]uses-material-design: true[[/highlight]]
+{% endprettify %}
 
 Flutter's [Cupertino (iOS-style)](/docs/development/ui/widgets/cupertino) package provides high
 fidelity widgets for the current iOS design language. To use the `CupertinoIcons`
@@ -1577,7 +1604,7 @@ In the previous example, you used the constructor of the `MyStatelessWidget` cla
 to pass the `text`, which is marked as `final`. This class extends
  `StatelessWidget`&mdash;it contains immutable data.
 
- 在上面的例子中，你用到了 `MyStatelessWidget` 类的构造函数来传递 `text`。并且它被标记为 `final`。该类继承了 `StatelessWidget`，它包含不可数的数据。
+在上面的例子中，你用到了 `MyStatelessWidget` 类的构造函数来传递 `text`。并且它被标记为 `final`。该类继承了 `StatelessWidget`，它包含不可数的数据。
 
 The `build` method of a stateless widget is typically called in only three
  situations:
@@ -2028,7 +2055,7 @@ screens in Flutter, use the Navigator widget.
 In React Native, there are three main navigators: StackNavigator, TabNavigator,
 and DrawerNavigator. Each provides a way to configure and define the screens.
 
-在 React Native，有三种主要的导航控件：StackNavigator, TabNavigator, 和 DrawerNavigator。每个都提供了配置和定义页面的方法。
+在 React Native，有三种主要的导航控件：StackNavigator, TabNavigator 和 DrawerNavigator。每个都提供了配置和定义页面的方法。
 
 ```js
 // React Native
@@ -2058,7 +2085,7 @@ In Flutter, there are two main widgets used to navigate between screens:
 
 在 Flutter 中，有两种主要的控件实现页面之间的切换：
 * [Route]({{site.api}}/flutter/widgets/Route-class.html) 是应用程序页面的一个抽象类。
-* A [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html) 是管理页面路径的控件。
+* [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html) 是管理页面路径的控件。
 
 A `Navigator` is defined as a widget that manages a set of child widgets with a
 stack discipline. The navigator manages a stack of `Route` objects and provides
@@ -2258,7 +2285,7 @@ class _NavigationHomePageState extends State<NavigationHomePage> with SingleTick
 
 #### Drawer navigation
 
-#### Drawer navigation
+#### Drawer 导航
 
 In React Native, import the needed react-navigation packages and then use
 `createDrawerNavigator` and `DrawerNavigation`.

@@ -19,6 +19,6 @@ void main() {
     // TODO: test more app features.
 
     expect(
-        exceptions, ['FlutterError:A RenderFlex overflowed by 209 pixels on the bottom.']);
+        exceptions, [FlutterError:A RenderFlex overflowed by 209 pixels on the bottom.]);
   });
 }

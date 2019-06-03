@@ -245,5 +245,4 @@ and the horizontal drag will be recognized immediately, which means the first
 pixel of horizontal movement can be treated as a drag and the user will not need
 to wait for further gesture disambiguation.
 
-
 手势竞技场在仅有一个横向（或者纵向）拖动识别器的时候是非常高效的。在此示例中，竞技场中只有一个横向识别器，横向拖动就能够被立即识别到，这意味着横向移动产生的每一个像素都能够被立即处理成横向拖动手势，而并不需要等待进一步的手势消歧处理。

@@ -68,7 +68,8 @@ contains a simple demo app that uses [Material Components][].
 
 {% capture ide_profile -%}
   to invoke the menu item **Run > Profile** in the IDE, or
-  
+{% endcapture %}
+{% capture ide_profile_zhcn -%}
   点击 IDE 的菜单项目 **Run > Profile**，或者
 {% endcapture %}
 

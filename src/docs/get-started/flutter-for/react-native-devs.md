@@ -38,20 +38,20 @@ Dart 学习起来非常简单而且有如下特性：
 * Provides an open-source, scalable programming language for building web,
   server, and mobile apps.
 
-* 它针对 web 服务和移动应用开发提供了一种开源的，可扩展的编程语言。
+  它针对 web 服务和移动应用开发提供了一种开源的，可扩展的编程语言。
 
 * Provides an object-oriented, single inheritance language that uses a C-style
   syntax that is AOT-compiled into native.
 
-* 它提供了一种面向对象的单继承语言，使用 C 语言风格的语法并且可通过 AOT 编译为本地代码。
+  它提供了一种面向对象的单继承语言，使用 C 语言风格的语法并且可通过 AOT 编译为本地代码。
 
 * Transcompiles optionally into JavaScript.
 
-* 可转译为 JavaScript 代码。
+  可转译为 JavaScript 代码。
 
 * Supports interfaces and abstract classes.
 
-* 支持接口和抽象类。
+  支持接口和抽象类。
 
 A few examples of the differences between JavaScript and Dart are described
 below.
@@ -417,11 +417,11 @@ To create an app in Flutter, do one of the following:
 * Use the `flutter create` command from the command line. Make sure that the
   Flutter SDK is in your PATH.
 
-* 在命令行中运行命令 `flutter create`。不过要提前确认 Flutter SDK 已经在系统环境变量 PATH 中定义。
+  在命令行中运行命令 `flutter create`。不过要提前确认 Flutter SDK 已经在系统环境变量 PATH 中定义。
 
 * Use an IDE with the Flutter and Dart plugins installed.
 
-* 使用带有 Flutter 和 Dart 插件的 IDE。
+  使用带有 Flutter 和 Dart 插件的 IDE。
 
 {% prettify %}
 $ flutter create <projectname>
@@ -449,11 +449,11 @@ In React Native, you would run `npm run` or `yarn run` from the project
 
  * Use `flutter run` from the project's root directory.
 
- * 在项目根目录运行 `flutter run`。
+   在项目根目录运行 `flutter run`。
 
  * Use the "run" option in an IDE with the Flutter and Dart plugins.
 
- * 在带有 Flutter 和 Dart 插件的 IDE 中使用 "run" 选项。
+   在带有 Flutter 和 Dart 插件的 IDE 中使用 "run" 选项。
 
  Your app runs on a connected device, the iOS simulator, or the Android emulator.
 
@@ -589,15 +589,15 @@ A widget can define:
 
 * A structural element—like a button or menu
 
-* 一个结构化的元素 - 类似按钮或者菜单
+  一个结构化的元素 - 类似按钮或者菜单
 
 * A stylistic element—like a font or color scheme
 
-* 一个风格化的元素 - 类似字体或者颜色方案
+  一个风格化的元素 - 类似字体或者颜色方案
 
 * An aspect of layout—like padding or alignment
 
-* 布局元素 - 类似填充区或者对齐元素
+  布局元素 - 类似填充区或者对齐元素
 
 The following example shows the "Hello world!" app using widgets from the
 Material library. In this example, the widget tree is nested inside the
@@ -841,16 +841,16 @@ types:
 
 * Static data such as JSON files
 
-* 静态数据  比如 JSON 文件
+  静态数据  比如 JSON 文件
 
 * Configuration files
 
-* 配置文件
+  配置文件
 
 * Icons and images (JPEG, PNG, GIF, Animated GIF, WebP, Animated WebP, BMP,
   and WBMP)
 
-* 图标和图片 (JPEG, PNG, GIF, Animated GIF, WebP, Animated WebP, BMP, and WBMP)
+  图标和图片 (JPEG, PNG, GIF, Animated GIF, WebP, Animated WebP, BMP, and WBMP)
 
 Flutter uses the `pubspec.yaml` file, located at the root of your project, to
 identify assets required by an app.
@@ -1613,17 +1613,17 @@ The `build` method of a stateless widget is typically called in only three
 
 * When the widget is inserted into a tree
 
-* 当控件被插入到控件树中
+  当控件被插入到控件树中
 
 * When the widget's parent changes its configuration
 
-* 当控件的父控件改变了配置
+  当控件的父控件改变了配置
 
 * When an
   [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
   it depends on, changes
 
-* 当所依赖的 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html) 发生了改变
+  当所依赖的 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html) 发生了改变
 
 ### The StatefulWidget
 
@@ -1762,11 +1762,11 @@ they depend on a state change.
 * If a widget changes—the user interacts with it or a data feed interrupts
   the UI, then it’s Stateful.
 
-* 如果一个控件发生了改变，而它所处的用户界面或者数据中断了 UI，那么该控件就是有状态的。
+  如果一个控件发生了改变，而它所处的用户界面或者数据中断了 UI，那么该控件就是有状态的。
 
 * If a widget is final or immutable, then it's Stateless.
 
-* 如果一个控件是 final 类型或者 immutable 类型的，那么该控件是无状态的。
+  如果一个控件是 final 类型或者 immutable 类型的，那么该控件是无状态的。
 
 #### 2. Determine which object manages the widget’s state (for a StatefulWidget)
 
@@ -1778,15 +1778,15 @@ In Flutter, there are three primary ways to manage state:
 
 * The widget manages its own state
 
-* 控件管理它的自身状态
+  控件管理它的自身状态
 
 * The parent widget manages the widget’s state
 
-* 由其父控件管理控件状态
+  由其父控件管理控件状态
 
 * A mix-and-match approach
 
-* 通过混搭的方式
+  通过混搭的方式
 
 When deciding which approach to use, consider the following principles:
 
@@ -1796,16 +1796,16 @@ When deciding which approach to use, consider the following principles:
   mode of a checkbox, or the position of a slider, then the state is best managed
   by the parent widget.
 
-* 如果状态信息是用户数据，比如 checkbox 是被勾选还是未被勾选，或者滑块的位置，那么父控件会很好的处理当前控件的状态。
+  如果状态信息是用户数据，比如 checkbox 是被勾选还是未被勾选，或者滑块的位置，那么父控件会很好的处理当前控件的状态。
 
 * If the state in question is aesthetic, for example an animation, then the
   widget itself best manages the state.
 
-* 如果状态是和外观效果相关的，比如动画，那么控件自己会处理状态的变化。
+  如果状态是和外观效果相关的，比如动画，那么控件自己会处理状态的变化。
 
 * When in doubt, let the parent widget manage the child widget's state.‘
 
-* 如果无法确定，那么父控件会处理子控件的状态。
+  如果无法确定，那么父控件会处理子控件的状态。
 
 
 
@@ -2078,14 +2078,18 @@ export default (MyApp1 = DrawerNavigator({
 ```
 
 In Flutter, there are two main widgets used to navigate between screens:
+
+在 Flutter 中，有两种主要的控件实现页面之间的切换：
+
 * A [Route]({{site.api}}/flutter/widgets/Route-class.html)
   is an abstraction for an app screen or page.
+
+  [Route]({{site.api}}/flutter/widgets/Route-class.html) 是应用程序页面的一个抽象类。
+
 * A [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)
   is a widget that manages routes.
 
-在 Flutter 中，有两种主要的控件实现页面之间的切换：
-* [Route]({{site.api}}/flutter/widgets/Route-class.html) 是应用程序页面的一个抽象类。
-* [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html) 是管理页面路径的控件。
+  [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html) 是管理页面路径的控件。
 
 A `Navigator` is defined as a widget that manages a set of child widgets with a
 stack discipline. The navigator manages a stack of `Route` objects and provides
@@ -2183,20 +2187,30 @@ const MyApp = TabNavigator(
 ```
 
 Flutter provides several specialized widgets for drawer and tab navigation:
+
+Flutter 针对 drawer 和 tab 导航提供几种专用的 widget：
+
 * [TabController]({{site.api}}/flutter/material/TabController-class.html)&mdash;Coordinates
   the tab selection between a TabBar and a TabBarView.
+
+  [TabController]({{site.api}}/flutter/material/TabController-class.html)&mdash;将 tab 与 TabBar 和 TabBarView 结合起来使用。
+
 * [TabBar]({{site.api}}/flutter/material/TabBar-class.html)&mdash;Displays
   a horizontal row of tabs.
+
+  [TabBar]({{site.api}}/flutter/material/TabBar-class.html)&mdash;水平显示一行 tab。
+
 * [Tab]({{site.api}}/flutter/material/Tab-class.html)&mdash;Creates
   a material design TabBar tab.
+
+  [Tab]({{site.api}}/flutter/material/Tab-class.html)&mdash;创建一个 material design 风格的 TabBar 中的 tab。
+
 * [TabBarView]({{site.api}}/flutter/material/TabBarView-class.html)&mdash;Displays
   the widget that corresponds to the currently selected tab.
 
-Flutter 针对 drawer 和 tab 导航提供几种专用的 widget：
-* [TabController]({{site.api}}/flutter/material/TabController-class.html)&mdash;将 tab 与 TabBar 和 TabBarView 结合起来使用。
-* [TabBar]({{site.api}}/flutter/material/TabBar-class.html)&mdash;水平显示一行 tab。
-* [Tab]({{site.api}}/flutter/material/Tab-class.html)&mdash;创建一个 material design 风格的 TabBar 中的 tab。
-* [TabBarView]({{site.api}}/flutter/material/TabBarView-class.html)&mdash;显示目前所选 tab 所对应的 widget。
+  [TabBarView]({{site.api}}/flutter/material/TabBarView-class.html)&mdash;显示目前所选 tab 所对应的 widget。
+
+
 
 
 <!-- skip -->
@@ -2875,18 +2889,27 @@ If you're using an IDE, you can debug your application using the IDE debugger.
 If you're using IntelliJ and Android Studio, you can use the Flutter Inspector.
  The Flutter Inspector makes it much easier to understand why your application
   is rendering the way it does. It allows you to:
-* View the UI structure of your app as a tree of widgets
-* Select a point on your device or simulator and find the corresponding widget
- that rendered those pixels
-* View properties for individual widgets
-* Quickly identify layout issues and determine their cause
 
 如果你使用的是 IntelliJ 和 Android Studio，你可以使用 Flutter Inspector。
 Flutter Inspector 很好上手，并且可以帮你洞悉应用程序图像渲染的过程。通过它，你可以：
-* 以控件树的形式查看应用程序的 UI 结构
-* 在设备或者模拟器上选择某一个点，然后找到该位置图像对应的控件
-* 查看每个控件的属性
-* 快速定位布局问题并找到原因
+
+* View the UI structure of your app as a tree of widgets
+
+  以控件树的形式查看应用程序的 UI 结构
+
+* Select a point on your device or simulator and find the corresponding widget
+ that rendered those pixels
+
+  在设备或者模拟器上选择某一个点，然后找到该位置图像对应的控件
+
+* View properties for individual widgets
+
+  查看每个控件的属性
+
+* Quickly identify layout issues and determine their cause
+
+  快速定位布局问题并找到原因
+
 
 The Flutter Inspector view can be opened from View > Tool Windows > Flutter
 Inspector. Content is shown only when an app is running.

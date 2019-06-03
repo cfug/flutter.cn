@@ -81,11 +81,9 @@ you may be providing to the `Scaffold` Widget!
 <!-- skip -->
 ```dart
 Scaffold(
-  // No appBar property provided, only the body!
-  // 不需要设置 appBar 属性，只需要 body!
+  // 不需要设置 appBar 属性，只需要 body!（No appBar property provided, only the body!）
   body: CustomScrollView(
-    // Add the app bar and list of items as slivers in the next steps
-    // 下一步我们将在列表里把 app bar 作为一个 slivers 添加进去
+    // 下一步我们将在列表里把 app bar 作为一个 slivers 添加进去（Add the app bar and list of items as slivers in the next steps）
     slivers: <Widget>[]
   ),
 );
@@ -133,15 +131,11 @@ CustomScrollView(
   slivers: <Widget>[
     SliverAppBar(
       title: Text('Floating app bar'),
-      // Allows the user to reveal the app bar if they begin scrolling back
-      // up the list of items
-      // 允许用户在开始向上滚动列表时显示 app bar
+      // 允许用户在开始向上滚动列表时显示 app bar（Allows the user to reveal the app bar if they begin scrolling back up the list of items）
       floating: true,
-      // Display a placeholder Widget to visualize the shrinking size
-      // 用一个占位组件来显示收缩的范围
+      // 用一个占位组件来显示收缩的范围（Display a placeholder Widget to visualize the shrinking size）
       flexibleSpace: Placeholder(),
-      // Make the initial height of the SliverAppBar larger than normal
-      // 使 SliverAppBar 的初始高度大于正常高度
+      // 使 SliverAppBar 的初始高度大于正常高度（Make the initial height of the SliverAppBar larger than normal）
       expandedHeight: 200,
     ),
   ],
@@ -187,15 +181,11 @@ like the the `ListView.builder` Widget.
 // Create a SliverList
 // 创建一个 SliverList
 SliverList(
-  // That uses a delegate to build items as they're scrolled on screen. 
-  // 用代理在列表滚动的时候加载列表项
+  // 用代理在列表滚动的时候加载列表项（That uses a delegate to build items as they're scrolled on screen. ）
   delegate: SliverChildBuilderDelegate(
-    // The builder function returns a ListTile with a title that
-    // displays the index of the current item
-    // 构造函数返回一个展示当前列表项序号的 ListTile
+    // 构造函数返回一个展示当前列表项序号的 ListTile（The builder function returns a ListTile with a title that displays the index of the current item）
     (context, index) => ListTile(title: Text('Item #$index')),
-    // Builds 1000 ListTiles
-    // 展示 1000 个列表项
+    // 展示 1000 个列表项（Builds 1000 ListTiles）
     childCount: 1000,
   ),
 )

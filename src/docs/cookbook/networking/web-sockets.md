@@ -15,27 +15,52 @@ In addition to normal HTTP requests, you can connect to servers using
 WebSockets.  WebSockets allow for two-way communication with a server
 without polling.
 
+除了普通的 HTTP 请求，你还可以通过 WebSockets 来连接服务器。WebSockets 可以以非轮询的方式与服务器进行双向通信。
+
 In this example, you'll connect to a [test server provided by
 websocket.org](http://www.websocket.org/echo.html). The server simply sends
 back the same message you send to it.
 
+在这里，你可以连接一个[由 websocket.org 提供的测试服务器](http://www.websocket.org/echo.html)。该服务器只会返回你发送的信息。
+
 ## Directions
 
+## 使用步骤
+
   1. Connect to a WebSocket server
+
+     连接 WebSocket 服务器
+
   2. Listen for messages from the server
+
+     监听来自服务器的消息
+
   3. Send Data to the Server
+
+     向服务器发送数据
+  
   4. Close the WebSocket connection
 
+     关闭 WebSocket 连接
+
 ## 1. Connect to a WebSocket server
+
+## 1. 连接 WebSocket 服务器
 
 The [web_socket_channel]({{site.pub-pkg}}/web_socket_channel)
 package provides the tools you'll need to connect to a WebSocket server.
 
+[web_socket_channel]({{site.pub-pkg}}/web_socket_channel) 包提供了连接 WebSocket 服务器所需的一些工具。
+
 The package provides a `WebSocketChannel` that allows you to both listen for
 messages from the server and push messages to the server.
 
+该包提供的 `WebSocketChannel` 不仅可以让你监听到来自服务器的消息还可以让你向服务器推送消息。
+
 In Flutter, create a `WebSocketChannel` that connects to a server
 in one line:
+
+在 Flutter 中，只用一行代码就可以创建一个连接到服务器的 `WebSocketChannel`。
 
 <!-- skip -->
 ```dart
@@ -44,16 +69,25 @@ final channel = IOWebSocketChannel.connect('ws://echo.websocket.org');
 
 ## 2. Listen for messages from the server
 
+## 2. 监听来自服务器的消息
+
 Now that you've established a connection, you can listen to messages from the
 server.
 
+建立了连接之后，你就可以监听来自服务器的消息了。
+
 After you send a message to the test server, it sends the same message back.
+
+当你向测试服务器发送一条消息之后，它会将同样的消息发送回来。
 
 How to listen for messages and display them? In this example, you'll use
 a [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)
 Widget to listen for new messages and a
 [`Text`]({{site.api}}/flutter/widgets/Text-class.html)
 Widget to display them.
+
+那么如何监听到这些消息并展示他们呢？在这个例子中，我们用 [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html) 组件
+来监听新消息，用 [`Text`]({{site.api}}/flutter/widgets/Text-class.html) 组件来展示它们。
 
 <!-- skip -->
 ```dart
@@ -67,23 +101,37 @@ StreamBuilder(
 
 ### How does this work?
 
+### 这样为什么可行？
+
 The `WebSocketChannel` provides a
 [`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html)
 of messages from the server.
+
+`WebSocketChannel` 提供了一个来自服务器的消息 [`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html)。
 
 The `Stream` class is a fundamental part of the `dart:async` package. It
 provides a way to listen to async events from a data source. Unlike `Future`,
 which returns a single async response, the `Stream` class can deliver many
 events over time.
 
+这个 `Stream` 类是 `dart:async` 包的基本组成部分。它提供了一个从数据源监听异步事件的方法。和 `Future` 不一样的是，`Future` 只能返回一个单独的异步
+响应，而 `Stream` 类可以随着时间的推移传递很多事件。
+
 The [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)
 Widget connects to a `Stream` and asks Flutter to rebuild every time it
 receives an event using the given `builder` function.
 
+[`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html) 组件会和 `Stream` 建立起连接，并且每当它接收到一个使用给定 `builder` 函数
+的事件时，就会通知 Flutter 去 rebuild。
+
 ## 3. Send Data to the Server
+
+## 3. 向服务器发送数据
 
 In order to send data to the server, `add` messages to the `sink` provided
 by the `WebSocketChannel`.
+
+要向服务器发送数据，可以使用 `WebSocketChannel` 提供的 `sink` 下的 `add` 方法来发送信息。
 
 <!-- skip -->
 ```dart
@@ -92,17 +140,27 @@ channel.sink.add('Hello!');
 
 ### How does this work
 
+### 这又是如何工作的呢
+
 The `WebSocketChannel` provides a
 [`StreamSink`]({{site.api}}/flutter/dart-async/StreamSink-class.html)
 to push messages to the server.
 
+`WebSocketChannel` 提供了一个 [`StreamSink`]({{site.api}}/flutter/dart-async/StreamSink-class.html) 来向服务器推送消息。
+
 The `StreamSink` class provides a general way to add sync or async events to a
 data source.
 
+这个 `StreamSink` 类提供了一个可以向数据源添加同步或者异步事件的通用方法。
+
 ## 4. Close the WebSocket connection
+
+## 4. 关闭 WebSocket 连接
 
 After you're done using the WebSocket, close the connection.
 To do so, close the `sink`.
+
+当你使用完 WebSocket 之后，记得关闭这个连接。要关闭这个 WebSocket 连接，只需要关闭 `sink`。
 
 <!-- skip -->
 ```dart
@@ -110,6 +168,8 @@ channel.sink.close();
 ```
 
 ## Complete example
+
+## 完整代码
 
 ```dart
 import 'package:flutter/foundation.dart';

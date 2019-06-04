@@ -109,7 +109,7 @@ medium or a larger project. To see an example of code generation based JSON
 encoding, see
 [Serializing JSON using code generation libraries](#code-generation).
 
-当你有一个中大型项目时，你可能想要为你的 JSON 序列化数据使用生成的代码。要看基于代码生成的 JSON 编码，见[使用代码生成库序列化 JSON 数据](#code-generation)。
+当你有一个中大型项目时，你可能想要为你的 JSON 序列化数据使用生成的代码。要看基于代码生成的 JSON 编码，见 [使用代码生成库序列化 JSON 数据](#code-generation)。
 
 ## Is there a GSON/<wbr>Jackson/<wbr>Moshi equivalent in Flutter?
 

@@ -44,7 +44,7 @@ help.
     but you can use most of the same tools to diagnose other performance
     problems.
     
-     应用的性能不只是由一次测量（measure）决定的。性能有时取决于原生速度，同时也也取决于 UI 的流畅性，不卡顿。其他性能指标还包括 I/O 或者网速。本文主要聚焦于第二种性能（UI流畅性），但其中的大多数工具也能被用来分析其他性能问题。
+     应用的性能不只是由一次测量（measure）决定的。性能有时取决于原生速度，同时也取决于 UI 的流畅性，不卡顿。其他性能指标还包括 I/O 或者网速。本文主要聚焦于第二种性能（UI流畅性），但其中的大多数工具也能被用来分析其他性能问题。
      
   - To perform tracing inside your Dart code, see [Tracing any Dart code
     performance][] in the [Debugging Flutter apps][] page.
@@ -101,7 +101,7 @@ or emulators, is generally not indicative of the final
 behavior of release mode builds. _You should consider checking performance
 on the slowest device that your users might reasonably use._
 
-几乎全部的 Flutter 应用性能调试都应该在真实的 Android 或者 iOS 设备上以分析模式进行。通常来说，调试模式或者是模拟器上运行的应用的性能指标和发布模式的行为并不相同。 _应该考虑在用户使用的最慢的设备上检查性能。_
+几乎全部的 Flutter 应用性能调试都应该在真实的 Android 或者 iOS 设备上以分析模式进行。通常来说，调试模式或者是模拟器上运行的应用的性能指标和发布模式的表现并不相同。 _应该考虑在用户使用的最慢的设备上检查性能。_
 
 {{site.alert.secondary}}
   <h4 class="no_toc" markdown="1">**Why you should run on a real device:**</h4>
@@ -139,7 +139,7 @@ functionality to allow debugging performance problems.
 For example, profile mode provides tracing information to
 profiling tools.
 
-除了一些调试性能问题所必须的额外方法，Flutter 的分析模式和发布模式的编译和运行基本相同。例如，分析模式提供了分析工具的追踪信息。
+除了一些调试性能问题所必须的额外方法，Flutter 的分析模式和发布模式的编译和运行基本相同。例如，分析模式为分析工具提供了追踪信息。
 
 Launch the app in profile mode as follows:
 
@@ -277,6 +277,8 @@ If a red vertical bar appears in the GPU graph, the scene is too
 complicated to render quickly.
 
 每一帧都应该在 1/60 秒（大约 16ms）内创建并显示。如果有一帧超时（任意图像）而无法显示，就导致了卡顿，图表之一就会展示出来一个红色竖条。
+如果是在 UI 图表出现了红色竖条，则表明 Dart 代码消耗了大量资源。
+而如果红色竖条是在 GPU 图表出现的，意味着场景太复杂导致无法快速渲染。
 
 <center><img src="/docs/testing/ui-performance/images/performance-overlay-jank.png" alt="Screenshot of performance overlay showing jank with red bars."></center>
 <center>The vertical red bars indicate that the current frame is expensive to both render and paint.<br>When both graphs have red, start by diagnosing the UI thread (Dart VM).</center><br>
@@ -641,7 +643,7 @@ This dump takes a long time to generate and isn't particularly readable.
   repaint boundaries.
   
 * [`debugRepaintRainbowEnabled`][]<br>
-  可以在 widget inspector 打开 **More Actions** 菜单，并选择 **Show Repaint Rainbow** 来开启这个参数。如果任何静态 widget 在循环七彩跑马灯，（比如说一个静态 header），这些区域就有着额外的重绘边界。
+  可以在 widget inspector 打开 **More Actions** 菜单，并选择 **Show Repaint Rainbow** 来开启这个参数。如果任何静态 widget 在循环七彩跑马灯，（比如说一个静态的头部控件），这些区域就有着额外的重绘边界。
   
 * [`debugPrintMarkNeedsLayoutStack`][]<br>
   Enable this flag if you're seeing more layouts than you expect

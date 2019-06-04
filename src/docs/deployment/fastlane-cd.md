@@ -9,97 +9,6 @@ Follow continuous delivery best practices with Flutter to make sure your
 application is delivered to your beta testers and validated on a frequent basis
 without resorting to manual workflows.
 
-This guide shows how to integrate [fastlane](https://docs.fastlane.tools), an
-open-source tool suite, with your existing testing and continuous integration
-(CI) workflows (for example, Travis or Cirrus).
-
-## Local setup
-
-It's recommended that you test the build and deployment process locally before
-migrating to a cloud-based system. You could also choose to perform continuous
-delivery from a local machine.
-
-1. Install fastlane `gem install fastlane` or `brew cask install fastlane`.
-1. Create your Flutter project, and when ready, make sure that your project builds via
-    * ![Android](/images/fastlane-cd/android.png) `flutter build apk --release`; and
-    * ![iOS](/images/fastlane-cd/ios.png) `flutter build ios --release --no-codesign`.
-1. Initialize the fastlane projects for each platform.
-    * ![Android](/images/fastlane-cd/android.png) In your `[project]/android`
-    directory, run `fastlane init`.
-    * ![iOS](/images/fastlane-cd/ios.png) In your `[project]/ios` directory,
-    run `fastlane init`.
-1. Edit the `Appfile`s to ensure they have adequate metadata for your app.
-    * ![Android](/images/fastlane-cd/android.png) Check that `package_name` in
-    `[project]/android/Appfile` matches your package name in AndroidManifest.xml.
-    * ![iOS](/images/fastlane-cd/ios.png) Check that `app_identifier` in
-    `[project]/ios/Appfile` also matches Info.plist's bundle identifier. Fill in
-    `apple_id`, `itc_team_id`, `team_id` with your respective account info.
-1. Set up your local login credentials for the stores.
-    * ![Android](/images/fastlane-cd/android.png) Follow the [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply)
-    and ensure that `fastlane supply init` successfully syncs data from your
-    Play Store console. _Treat the .json file like your password and do not check
-    it into any public source control repositories._
-    * ![iOS](/images/fastlane-cd/ios.png) Your iTunes Connect username is already
-    in your `Appfile`'s `apple_id` field. Set the `FASTLANE_PASSWORD` shell
-    environment variable with your iTunes Connect password. Otherwise, you'll be
-    prompted when uploading to iTunes/TestFlight.
-1. Set up code signing.
-    * ![Android](/images/fastlane-cd/android.png) On Android, there are two
-    signing keys: deployment and upload. The end-users download the .apk signed
-    with the 'deployment key'. An 'upload key' is used to authenticate the .apk
-    uploaded by developers onto the Play Store and is re-signed with the
-    deployment key once in the Play Store.
-        * It's highly recommended to use the automatic cloud managed signing for
-        the deployment key. For more information, see the [official Play Store documentation](https://support.google.com/googleplay/android-developer/answer/7384423?hl=en).
-        * Follow the [key generation
-          steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk)
-        to create your upload key.
-        * Configure gradle to use your upload key when building your app in
-        release mode by editing `android.buildTypes.release` in
-        `[project]/android/app/build.gradle`.
-    * ![iOS](/images/fastlane-cd/ios.png) On iOS, create and sign using a
-    distribution certificate instead of a development certificate when you're
-    ready to test and deploy using TestFlight or App Store.
-        * Create and download a distribution certificate in your [Apple Developer Account console](https://developer.apple.com/account/ios/certificate/).
-        * `open [project]/ios/Runner.xcworkspace/` and select the distribution
-        certificate in your target's settings pane.
-1. Create a `Fastfile` script for each platform.
-    * ![Android](/images/fastlane-cd/android.png) On Android, follow the
-    [fastlane Android beta deployment guide](https://docs.fastlane.tools/getting-started/android/beta-deployment/).
-    Your edit could be as simple as adding a `lane` that calls `upload_to_play_store`.
-    Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
-    to use the apk `flutter build` already built.
-    * ![iOS](/images/fastlane-cd/ios.png) On iOS, follow the [fastlane iOS beta deployment guide](https://docs.fastlane.tools/getting-started/ios/beta-deployment/).
-    Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
-    `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
-    build is required since `flutter build` builds an .app rather than archiving
-    .ipas for release.
-
-You're now ready to perform deployments locally or migrate the deployment
-process to a continuous integration (CI) system.
-
-## Running deployment locally
-
-1. Build the release mode app.
-    * ![Android](/images/fastlane-cd/android.png) `flutter build apk --release`.
-    * ![iOS](/images/fastlane-cd/ios.png) `flutter build ios --release --no-codesign`.
-    No need to sign now since fastlane will sign when archiving.
-1. Run the Fastfile script on each platform.
-    * ![Android](/images/fastlane-cd/android.png) `cd android` then
-    `fastlane [name of the lane you created]`.
-    * ![iOS](/images/fastlane-cd/ios.png) `cd ios` then
-    `fastlane [name of the lane you created]`.
-
-## Cloud build and deploy setup
-
-First, follow the local setup section described in 'Local setup' to make sure
-the process works before migrating onto a cloud system like Travis.
-
-The main thing to consider is that since cloud instances are ephemeral and
-Follow continuous delivery best practices with Flutter to make sure your
-application is delivered to your beta testers and validated on a frequent basis
-without resorting to manual workflows.
-
 按照Flutter的持续交付最佳实践，确保你的应用程序持续交付给测试人员并持续验证，而无需借助手动工作流程。
 
 
@@ -456,4 +365,3 @@ of fastlane in action. Also see the Flutter framework repository's
 repo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery) 使用 fastlane 连续部署。
 有关 fastlane 实际运行示例，请参阅源代码。
 另请参阅 Flutter 框架仓库库的 [Cirrus 脚本]({{site.github}}/flutter/flutter/blob/master/.cirrus.yml)。
-

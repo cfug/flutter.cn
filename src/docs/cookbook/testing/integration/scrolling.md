@@ -60,7 +60,7 @@ As we did in the [Introduction to integration
 testing](/docs/cookbook/testing/integration) recipe, we'll also add keys to the
 widgets we want to interact with inside our integration tests.
 
-正如我们在[集成测试简介](https://github.com/cfug/flutter.cn/blob/master/docs/cookbook/testing/integration)章节中做的那样，我们还将向集成测试内我们需要互动的 `Widgets` 添加`keys`
+正如我们在[集成测试简介](https://github.com/cfug/flutter.cn/blob/master/docs/cookbook/testing/integration)章节中做的那样，我们还将向集成测试内我们需要互动的 `Widgets` 添加 `keys`
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -153,7 +153,7 @@ class provides three methods for scrolling through lists:
   it completely into view. Some Widgets, such as
   [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html),
   render items on-demand.  
-  如果使用 `scrollIntoView` 方法，我们假定 `Widget` 已被实例化和渲染。为了验证 `apps` 在不同的设备了能够很好的运行，我们可以对具有不同屏幕大小的设备运行集成测试。因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，所以是否渲染特定的 `Widget` 取决于屏幕的大小。
+  如果使用 `scrollIntoView` 方法，我们假定 `Widget` 已被实例化和渲染。为了验证 `app` 在不同的设备了能够很好的运行，我们可以对具有不同屏幕大小的设备运行集成测试。因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，所以是否渲染特定的 `Widget` 取决于屏幕的大小。
   - The
   [`scrollUntilVisible`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html)
   method scrolls through a list until a specific Widget is visible.  
@@ -174,14 +174,14 @@ oftentimes the most robust option. Why?
   screen sizes. Since `ListView.builder` will render items on-demand,
   whether or not a particular Widget has been rendered can depend
   on the size of the screen.  
-如果使用 `scrollIntoView` 方法，我们假定 `Widget` 已被实例化和渲染。为了验证 `apps` 在不同的设备了能够很好的运行，我们可以对具有不同屏幕大小的设备运行集成测试。因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，所以是否渲染特定的 `Widget` 取决于屏幕的大小。
+如果使用 `scrollIntoView` 方法，我们假定 `Widget` 已被实例化和渲染。为了验证 `app` 在不同的设备了能够很好的运行，我们可以对具有不同屏幕大小的设备运行集成测试。因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，所以是否渲染特定的 `Widget` 取决于屏幕的大小。
 
 Therefore, rather than assuming we know the height of all the items in a list,
 or that a particular Widget will be rendered on all devices, we can use the
 `scrollUntilVisible` method to repeatedly scroll through a list of items until
 we find what we're looking for!
 
-因此，我们可以使用 `scrollUntilVisible` 方法反复滚动项目列表直到找到要查找的列表项，而不是假定我们知道列表中所有项的高度，或者一个特定的 `Widget` 将在所有设备上渲染。
+所以，我们既不需要知道所有列表项的高度，也不需要知道一个特定的 `Widget` 在不同的屏幕大小的设备上是否被渲染，我们只需要调用 `scrollUntilVisible ` 方法反复滚动列表直到找到要查找的列表项。
 
 Let's see how we can use the `scrollUntilVisible` method to look through the
 list for a particular item! This code lives in a file called

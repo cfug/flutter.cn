@@ -7,29 +7,70 @@ prev:
   path: /docs/development/data-and-backend/state-mgmt/simple
 ---
 
-State management is a complex topic. If you feel that some of your questions haven't been answered, or that the approach described on these pages is not viable for your use cases, you are probably right.
+State management is a complex topic. If you feel that some of your questions
+haven't been answered, or that the approach described on these pages
+is not viable for your use cases, you are probably right.
 
-Learn more at the following links, many of which have been contributed by the Flutter community:
+状态管理是一个复杂的议题。如果你觉得有些问题没有得到回答，或者说这些页面上描述的方法对于你的场景不适用，你也许是对的。
+
+Learn more at the following links, many of which have been contributed
+by the Flutter community:
+
+通过下面的链接了解更多的信息，其中有很多信息都是由 Flutter 社区提供。
 
 ## General overview
+
+## 概览
 
 * [Build reactive mobile apps with Flutter](https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be),
   a video from Google I/O 2018, and an
   [accompanying article]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
+
+  [使用 Flutter 构建响应式移动应用](https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be)，一段来自 Google I/O 2018 的视频，和一篇 [随附文章]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
+
 * [Flutter Architecture Samples](http://fluttersamples.com/), by Brian Egan
+
+  Brian Egan 编写的 [Flutter 架构示例](http://fluttersamples.com/)
+
+## setState
 
 ## setState
 
 * [Adding interactivity to your Flutter app](/docs/development/ui/interactive),
   a Flutter tutorial
+
+  [给你的 Flutter app 添加交互](/docs/development/ui/interactive)，一篇 Flutter 教程
+
 * [Basic state management in Google Flutter]({{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d),
   by Agung Surya
 
-## InheritedWidget &amp; Scoped model
+  Agung Surya 编写的 [Google Flutter 中的基本状态管理]({{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d)
 
+## InheritedWidget &amp; InheritedModel 
+
+## InheritedWidget &amp; InheritedModel 
+
+* [InheritedWidget docs](https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html)
+
+  [InheritedWidget 文档](https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html)
+
+* [Managing Flutter Application State With InheritedWidgets]({{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1),
+  by Hans Muller
+* [Inheriting Widgets](https://medium.com/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1),
+  by Mehmet Fidanboylu
 * [Using Flutter Inherited Widgets
   Effectively](https://ericwindmill.com/posts/using-flutter-inherited-widgets-effectively/),
   by Eric Windmill
+* [Widget - State - Context -
+  InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/),
+  by Didier Bolelens
+
+## Provider &amp; Scoped Model
+
+* [Provider package]({{site.pub-pkg}}/provider)
+* [Scoped Model package]({{site.pub-pkg}}/scoped_model)
+* [Simple State Management]({{site.url}}/docs/development/data-and-backend/state-mgmt/simple),
+  the previous page in this section
 * [You might not need Redux: The Flutter edition](https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7), by Ryan Edge
 * [Managing state with the scoped model pattern in Dart's Flutter
   framework](https://www.youtube.com/watch?v=-MCeWP3rgI0),
@@ -39,10 +80,6 @@ Learn more at the following links, many of which have been contributed by the Fl
   a video by MTechViral
 * [Flutter state management&mdash;scoped
   model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
-* [Scoped model package]({{site.pub-pkg}}/scoped_model)
-* [Widget - State - Context -
-  InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/),
-  by Didier Bolelens
 
 ## Redux
 
@@ -71,3 +108,8 @@ Learn more at the following links, many of which have been contributed by the Fl
 
 * [MobX.dart, Hassle free state-management for your Dart and Flutter apps](https://github.com/mobxjs/mobx.dart)
 * [Getting started with MobX.dart](https://mobx.pub/getting-started)
+* [Flutter: State Management with Mobx](https://developer.school/posts/flutter-state-management-with-mobx/) by Paul Halliday
+
+## Provider
+
+* [Getting Started with Provider](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/) by Paul Halliday

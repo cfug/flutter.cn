@@ -405,7 +405,7 @@ API returns objects with _snake\_case_, and you want to use
 _lowerCamelCase_ in your models,
 you can use the `@JsonKey` annotation with a name parameter:
 
-如果需要，你可以很容易自定义命名策略。例如，如果 API 返回带有 **_snake\_case_** 的对象，并且你想要在你的模型里使用**_小驼峰_**的命名方式，你可以使用带有一个 name 参数的 `@JsonKey`  注解。
+如果需要，你可以很容易自定义命名策略。例如，如果 API 返回带有 **_snake\_case_** 的对象，并且你想要在你的模型里使用**_小驼峰_**的命名方式，你可以使用带有一个 name 参数的 `@JsonKey` 注解。
 
 <!-- skip -->
 ```dart

@@ -14,7 +14,7 @@ pointer events, which describe the location and movement of pointers (e.g.,
 touches, mice, and styli) across the screen. The second layer has _gestures_,
 which describe semantic actions that consist of one or more pointer movements.
 
-Flutter 中的手势有两个不同的层次：第一层是原始的指向事件，描述了屏幕上由触摸板、鼠标、指示笔触发的指针的位置和移动。第二层包含 _gestures_，描述了由上述一个或多个指针移动组成的具有特殊语义的操作。
+Flutter 中的手势有两个不同的层次：第一层是原始的指针指向事件，描述了屏幕上由触摸板、鼠标、指示笔触发的指针的位置和移动。第二层包含 _gestures_，描述了由上述一个或多个指针移动组成的具有特殊语义的操作。
 
 
 ## Pointers
@@ -24,7 +24,7 @@ Flutter 中的手势有两个不同的层次：第一层是原始的指向事件
 Pointers represent raw data about the user's interaction with the device's
 screen.  There are four types of pointer events:
 
-Pointers 代表的是人机界面交互的原始数据。一共有四种指针事件：
+Pointer 代表的是人机界面交互的原始数据。一共有四种指针事件：
 
 - [`PointerDownEvent`]({{site.api}}/flutter/gestures/PointerDownEvent-class.html)
   The pointer has contacted the screen at a particular location.
@@ -45,7 +45,7 @@ Pointers 代表的是人机界面交互的原始数据。一共有四种指针�
   Input from this pointer is no longer directed towards this app.
 
 
-  [`PointerCancelEvent`]({{site.api}}/flutter/gestures/PointerCancelEvent-class.html) 指针的输入已经不再指向此应用程序
+  [`PointerCancelEvent`]({{site.api}}/flutter/gestures/PointerCancelEvent-class.html) 指针的输入已经不再指向此应用
 
 On pointer down, the framework does a _hit test_ on your app to determine which
 widget exists at the location where the pointer contacted the screen. The
@@ -73,7 +73,7 @@ recognized from multiple individual pointer events, potentially even multiple
 individual pointers. Gestures can dispatch multiple events, corresponding to the
 lifecycle of the gesture (e.g., drag start, drag update, and drag end):
 
-Gestures 代表的是语义操作（比如点击、拖动、缩放）。通常由一系列单独的指针事件组成，甚至是一系列单独的指针组成。Gestures 可以分发多种事件，对应着手势的生命周期（比如开始拖动、拖动更新、结束拖动）。
+Gesture 代表的是语义操作（比如点击、拖动、缩放）。通常由一系列单独的指针事件组成，甚至是一系列单独的指针组成。Gesture 可以分发多种事件，对应着手势的生命周期（比如开始拖动、拖动更新、结束拖动）。
 
 - Tap
 
@@ -197,7 +197,7 @@ If you are not using those widgets, but you want the "ink splash" effect on a
 tap, you can use
 [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html).
 
-如果使用了 Material Components，它里面的很多组件都已经能够支持响应点击或者手势事件。比如 [IconButton]({{site.api}}/flutter/material/IconButton-class.html) 和 [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html) 响应了按压事件（点击事件），[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 响应了滚动事件。如果使用了上述组件，你也可以使用 [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html) 来实现点击的“水波纹”效果。
+如果使用 Material 风格的组件，其中的许多组件都能够支持响应点击或者手势事件。比如 [IconButton]({{site.api}}/flutter/material/IconButton-class.html) 和 [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html) 响应了按压事件（点击事件），[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 响应了滚动事件。如果使用了上述组件，你也可以使用 [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html) 来实现点击的“水波纹”效果。
 
 ### Gesture disambiguation
 
@@ -245,4 +245,4 @@ and the horizontal drag will be recognized immediately, which means the first
 pixel of horizontal movement can be treated as a drag and the user will not need
 to wait for further gesture disambiguation.
 
-手势竞技场在仅有一个横向（或者纵向）拖动识别器的时候是非常高效的。在此示例中，竞技场中只有一个横向识别器，横向拖动就能够被立即识别到，这意味着横向移动产生的每一个像素都能够被立即处理成横向拖动手势，而并不需要等待进一步的手势消歧处理。
+手势竞技场在仅有一个横向（或者纵向）拖动识别器的时候是非常高效的。在此示例中，竞技场中只有一个横向识别器，横向拖动就能够被立即识别到，这意味着横向移动从第一个像素开始就能够被立即处理成横向拖动手势，而并不需要等待进一步的手势消歧处理。

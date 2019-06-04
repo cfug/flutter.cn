@@ -42,13 +42,6 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    // Invisible pre-element to avoid modifying styles on headings.
-    &[id]:not(.no_toc)::before { @include header-clearance; }
-
-    // This case is for jekyll-toc entries that use the computed header id, rather than
-    // the Kramdown id override specified using the {#foo} markdown-extension syntax.
-    > a[id]::before { @include header-clearance; }
-
     //
     // Jekyll-toc heading anchor links (adapted from site-www)
     //
@@ -80,5 +73,10 @@
     }
 
     &:hover > .anchor > .octicon-link { opacity: 1 }
+  }
+
+  // Embedded DartPad
+  iframe {
+    border: 1px solid #ccc;
   }
 }

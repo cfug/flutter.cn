@@ -4,55 +4,37 @@ title: Flutter 开发文档
 short-title: Docs
 short-title: 文档
 description: The landing page for Flutter documentation.
-description: Flutter 开发文档页面.
+description: Flutter 开发文档页面。
 ---
 
-<div class="card-deck">
 {% for card in site.data.docs_cards -%}
-  <a class="card" href="{{card.url}}">
-    <div class="card-body">
-      <header class="card-title">{{card.name}}</header>
-      <p class="card-text">{{card.description}}</p>
-    </div>
-  </a>
+  {% capture index0Modulo3 %}{{ forloop.index0 | modulo:3 }}{% endcapture %}
+  {% capture indexModulo3 %}{{ forloop.index | modulo:3 }}{% endcapture %}
+  {% if index0Modulo3 == '0' %}
+  <div class="card-deck mb-4">
+  {% endif %}
+    <a class="card" href="{{card.url}}">
+      <div class="card-body">
+        <header class="card-title">{{card.name}}</header>
+        <p class="card-text">{{card.description}}</p>
+      </div>
+    </a>
+  {% if indexModulo3 == '0' %}
+  </div>
+  {% endif %}
 {% endfor -%}
-</div>
 
-## What's new on flutter.io
+## What's new on the site
 
-**November 5, 2018**
+**May 7, 2019, Google I/O Edition**
 
-Welcome to the revamped Flutter website!
+[Flutter 1.5](https://developers.googleblog.com/2019/05/Flutter-io19.html) is live!
 
-欢迎
+For more information on updates, see the [release
+notes](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
+or [download the release](/docs/development/tools/sdk/archive).
 
-We've spent the last few months redesigning the website and how its
-information is organized. We hope you can more easily find the docs
-you are looking for. Some of the changes to the website include:
-
-* Revised [front](/) page
-* Revised [showcase](/showcase) page
-* Revised [community](/community) page
-* Revised navigation in the left side bar
-* Table of contents on the right side of most pages
-
-Some of the new content includes:
-
-* Deep dive on Flutter internals,
-  [Inside Flutter](/docs/resources/inside-flutter)
-* [Technical videos](/docs/resources/videos)
-* [State management](/docs/development/data-and-backend/state-mgmt)
-* [Background Dart
-  processes](/docs/development/packages-and-plugins/background-processes)
-* [Flutter's build modes](/docs/testing/build-modes)
-{% comment %}
-* How to connect [a native debugger _and_
-  a Dart debugger to your app](/docs/testing/oem-debuggers)
-  (not yet complete)
-{% endcomment %}
-
-If you have questions or comments about the revamped site, [file an
-issue]({{site.repo.this}}/issues).
+[What's new archive](/docs/whats-new-archive)
 
 ## New to Flutter?
 
@@ -60,20 +42,14 @@ Once you've gone through [Get Started](/docs/get-started/install),
 including [Write Your First Flutter App,](/docs/get-started/codelab)
 here are some next steps.
 
-[Flutter for Android developers](/docs/get-started/flutter-for/android-devs)
-: Review these tips if you have Android experience.
+### Docs
 
-[Flutter for iOS developers](/docs/get-started/flutter-for/ios-devs)
-: Review these tips if you have iOS experience.
-
-[Flutter for Web developers](/docs/get-started/flutter-for/web-devs)
-: Review these HTML -> Flutter analogs if you have web experience.
-
-[Flutter for React Native developers](/docs/get-started/flutter-for/react-native-devs)
-: Review these tips if you have React Native experience.
-
-[Flutter for Xamarin.Forms developers](/docs/get-started/flutter-for/xamarin-forms-devs)
-: Review these tips if you have Xamarin Forms experience.
+Coming from another platform? Check out: 
+[Android](/docs/get-started/flutter-for/android-devs),
+[iOS](/docs/get-started/flutter-for/ios-devs),
+[Web](/docs/get-started/flutter-for/web-devs),
+[React Native](/docs/get-started/flutter-for/react-native-devs),
+[Xamarin.Forms](/docs/get-started/flutter-for/xamarin-forms-devs)
 
 [Building layouts in Flutter](/docs/development/ui/layout)
 : Learn how to create layouts in Flutter, where everything is a widget.
@@ -87,50 +63,39 @@ here are some next steps.
 [FAQ](/docs/resources/faq)
 : Get the answers to frequently asked questions.
 
+### Videos
+
+We also have some helpful videos on our [Flutter Youtube
+channel]({{site.social.youtube}})!  In particular, check
+out the Flutter in Focus series, and learn about other
+series on our [videos](/docs/resources/videos) page.
+
+<iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
+[Flutter in Focus playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+
+In Flutter, "everything is a widget"! If you want to better understand the
+two kinds of widgets, Stateless and Stateful, see the following videos,
+part of the [Flutter in
+Focus](https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2) series.
+
+<iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/wE7khGHVkYY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe width="560" height="315" src="https://www.youtube.com/embed/AqCMFXEmf3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Want to skill up?
 
-Once you’ve mastered the basics, try these pages.
+If you learn best by watching engineers write code, make mistakes, and fix them,
+check out the [Boring Flutter
+Show](https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s)
+video series:
 
-[Cookbook](/docs/cookbook)
-: A (growing) collection of recipes that address common Flutter use cases.
+<iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Boring Flutter Show playlist](https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s)
 
-[Sample apps on GitHub](https://github.com/flutter/samples/blob/master/INDEX.md)
-: A (growing) collection of sample apps that show Flutter best practices.
+You may also find these docs useful:
 
-[Adding assets and images in Flutter](/docs/development/ui/assets-and-images)
-: How to add resources to a Flutter app.
+* [Using packages](/docs/development/packages-and-plugins/using-packages)
+* [Adding assets and images](/docs/development/ui/assets-and-images)
+* [Navigation and routing](/docs/development/ui/navigation)
+* [State management](/docs/development/data-and-backend/state-mgmt/intro)
+* [Animations](/docs/development/ui/animations)
 
-[Animations in Flutter](/docs/development/ui/animations)
-: How to create standard, hero, or staggered animations, to
-  name a few animations styles that Flutter supports.
-
-[Navigation and routing](/docs/development/ui/navigation)
-: How to create and navigate to a new screen (called a _route_ in Flutter).
-
-[Internationalization](/docs/development/accessibility-and-localization/internationalization)
-: Go global! How to internationalize your Flutter app.
-
-[Effective Dart](https://www.dartlang.org/guides/language/effective-dart)
-: Guides on how to write better Dart code.
-
-## Specialized topics
-
-Dive deeper into topics that interest you.
-
-[Flutter Widget inspector](/docs/development/tools/inspector)
-: How to use the widget inspector, a powerful tool that allows
-  you to explore widget trees, disable the "DEBUG"
-  banner, display the performance overlay, and much more.
-
-[Custom fonts](/docs/cookbook/design/fonts)
-: How to add new fonts to your app.
-
-[Text input](/docs/cookbook/forms/text-input)
-: How to set up basic text input.
-
-[Debugging Flutter apps](/docs/testing/debugging)
-: Tools and tips for debugging your app.
-
-This is not a complete list. Please use the left navigation,
-or the search field to find other topics.

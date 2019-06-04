@@ -6,31 +6,13 @@ set -e
 commitSha=$(git rev-parse --short HEAD)
 commitMessage=$(git log --oneline -n 1)
 
-bundle install
+rm -rf /tmp/flutter.cn-prebuilt/ || true
 
-cd `dirname $0`
+git clone https://cfug-deploy:${CFUG_DEPLOY_KEY}@github.com/cfug-deploy/flutter.cn-prebuilt.git /tmp/flutter.cn-prebuilt
 
-gulp preprocess
+cp -r _site/* /tmp/flutter.cn-prebuilt/
 
-cd -
-
-bundle exec jekyll build
-
-cd `dirname $0`
-
-npm install
-
-gulp postprocess
-
-if [[ ! -d "/tmp/flutter-docs-cn" ]]
-then
-    git clone git@github.com:cfug/flutter.cn-prebuilt.git /tmp/flutter-docs-cn
-fi
-
-cp -r _site/* /tmp/flutter-docs-cn/
-cp CNAME /tmp/flutter-docs-cn/
-
-cd /tmp/flutter-docs-cn
+cd /tmp/flutter.cn-prebuilt
 
 git init
 git add .

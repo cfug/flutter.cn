@@ -1,6 +1,6 @@
 ---
 title: Flutter's build modes
-title: FLutter 的构建模式选择
+title: Flutter 的构建模式选择
 description: Describes Flutter's build modes and when you should use debug, release, or profile mode?
 description: 在使用 Flutter 构建的时候，你应该选择哪种模式呢？Debug、Release、或者是 Profile 模式？
 ---
@@ -9,7 +9,7 @@ The Flutter tooling supports three modes when compiling your app,
 and a headless mode for testing.
 This doc explains the three modes and tells you when to use which.
 For more information on headless testing, see
-[Unit testing.](/docs/testing#unit-testing)
+[Unit testing.](/docs/testing#unit-tests)
 
 You choose the compilation mode depending on where you are in
 the development cycle. Are you debugging your code? Do you
@@ -22,7 +22,7 @@ The following describes each mode and when to use it.
 In _debug mode_, the app is set up for debugging on the physical
 device, emulator, or simulator. Debug mode means that:
 
-* [Assertions](https://www.dartlang.org/guides/language/language-tour#assert)
+* [Assertions]({{site.dart-site}}/guides/language/language-tour#assert)
    are enabled.
 * [Observatory](https://dart-lang.github.io/observatory) is enabled,
    allowing you to use the dart debugger.
@@ -77,5 +77,5 @@ Your IDE also supports these modes. Android Studio, for example,
 provides a **Run > Profile...** menu option.
 
 For more information on these modes, see
-[Flutter's modes](https://github.com/flutter/flutter/wiki/Flutter%27s-modes)
-in the [Flutter SDK wiki](https://github.com/flutter/flutter/wiki).
+[Flutter's modes]({{site.github}}/flutter/flutter/wiki/Flutter%27s-modes)
+in the [Flutter SDK wiki]({{site.github}}/flutter/flutter/wiki).

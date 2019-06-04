@@ -3,20 +3,16 @@
 set -x
 set -e
 
-cd `dirname $0`
-
-npm install
-
-npm run preprocess
-
-cd -
-
-bundle install
-
 bundle exec jekyll build
 
-cd `dirname $0`
+cp -r tool/translator/assets/*  _site/assets/
 
-npm run postprocess
+npm i -g @awesome-fe/translate@0.3.4
 
-cd -
+nt inject '_site/**/*.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./tool/translator/url-map.json -t ./tool/translator/text-map.json
+
+nt mark '_site/**/*.html'
+
+cd tool/translator
+
+npx gulp

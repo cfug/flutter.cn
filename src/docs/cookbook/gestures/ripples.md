@@ -1,12 +1,20 @@
 ---
 title: Adding Material Touch Ripples
 title: 添加点按涟漪效果 (Material Design)
+prev:
+  title: Retrieve the value of a text field
+  title: 获取文本框的输入值
+  path: /docs/cookbook/forms/retrieve-input
+next:
+  title: Handling Taps
+  title: 捕获和处理点击动作
+  path: /docs/cookbook/gestures/handling-taps
 ---
 
 While designing an app that should follow the Material Design Guidelines, we'll
 want to add the ripple animation to Widgets when tapped.
 
-Flutter provides the [`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html)
+Flutter provides the [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html)
 Widget to achieve this effect.
 
 ## Directions

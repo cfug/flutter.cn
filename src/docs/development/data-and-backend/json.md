@@ -60,8 +60,8 @@ JSON serialization with code generation means having an external library
 generate the encoding boilerplate for you. After some initial setup,
 you run a file watcher that generates the code from your model classes.
 For example,
-[json_serializable](https://pub.dartlang.org/packages/json_serializable) and
-[built_value](https://pub.dartlang.org/packages/built_value)
+[json_serializable]({{site.pub}}/packages/json_serializable) and
+[built_value]({{site.pub}}/packages/built_value)
 are these kinds of libraries.
 
 This approach scales well for a larger project. No hand-written
@@ -91,7 +91,7 @@ when using reflection.
 
 {{site.alert.info}}
   **What about dartson?** The
-  [dartson](https://pub.dartlang.org/packages/dartson) library uses runtime
+  [dartson]({{site.pub}}/packages/dartson) library uses runtime
   [reflection][], which makes it incompatible with Flutter.
 {{site.alert.end}}
 
@@ -217,7 +217,7 @@ and decoding for you.  Luckily, there is!
 
 Although there are other libraries available, this guide uses the
 [json_serializable
-package](https://pub.dartlang.org/packages/json_serializable),
+package]({{site.pub}}/packages/json_serializable),
 an automated source code generator that generates the JSON serialization
 boilerplate for you.
 
@@ -233,7 +233,8 @@ are dependencies that are not included in our app source code&mdash;they
 are only used in the development environment.
 
 The latest versions of these required dependencies can be seen by following
-[the pubspec file](https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml)
+[the pubspec
+file](https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml)
 in the JSON serializable example.
 
 **pubspec.yaml**
@@ -249,7 +250,7 @@ dev_dependencies:
   json_serializable: ^2.0.0
 ```
 
-Run `flutter packages get` inside your project root folder (or click
+Run `flutter pub get` inside your project root folder (or click
 **Packages Get** in your editor) to make these new dependencies available
 in your project.
 
@@ -261,7 +262,6 @@ from the previous samples.
 
 **user.dart**
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:json_annotation/json_annotation.dart';
 
@@ -293,7 +293,7 @@ class User {
 {% endprettify %}
 
 With this setup, the source code generator generates code for encoding
-and encoding the `name` and `email` fields from JSON.
+and decoding the `name` and `email` fields from JSON.
 
 If needed, it is also easy to customize the naming strategy. For example, if the
 API returns objects with _snake\_case_, and you want to use
@@ -324,7 +324,7 @@ There are two ways of running the code generator.
 
 #### One-time code generation
 
-By running `flutter packages pub run build_runner build` in the project root,
+By running `flutter pub run build_runner build` in the project root,
 you generate JSON serialization code for your models whenever they are needed.
 This triggers a one-time build that goes through the source files, picks the
 relevant ones, and generates the necessary serialization code for them.
@@ -337,7 +337,7 @@ build manually every time you make changes in your model classes.
 A _watcher_ makes our source code generation process more convenient. It
 watches changes in our project files and automatically builds the necessary
 files when needed. Start the watcher by running
-`flutter packages pub run build_runner watch` in the project root.
+`flutter pub run build_runner watch` in the project root.
 
 It is safe to start the watcher once and leave it running in the background.
 
@@ -371,11 +371,11 @@ For more information, see the following resources:
 
 * [dart:convert][] and [JsonCodec][] documentation
 * [The
-  json_serializable package in Pub](https://pub.dartlang.org/packages/json_serializable)
+  json_serializable package in Pub]({{site.pub}}/packages/json_serializable)
 * [json_serializable
-  examples in GitHub](https://github.com/dart-lang/json_serializable/blob/master/example/lib/example.dart)
+  examples in GitHub]({{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart)
 * [Discussion
-  about dart:mirrors in Flutter](https://github.com/flutter/flutter/issues/1150)
+  about dart:mirrors in Flutter]({{site.github}}/flutter/flutter/issues/1150)
 
 [dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html

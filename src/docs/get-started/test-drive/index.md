@@ -14,8 +14,11 @@ toc: false
 
 This page describes how to create a new Flutter app from templates, run it, and experience "hot reload" after you make changes to the app.
 
-Select your development tool of choice for writing, building, and running
-Flutter apps.
+本页面讲解如何通过模板实现一个 Flutter 应用，执行并且在修改程序之后触发“热重载 (hot reload)”功能。
+
+Select your development tool of choice for writing, building, and running Flutter apps.
+
+选择你用于编写、编译、执行 Flutter 应用的开发环境吧。
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -26,7 +29,7 @@ Flutter apps.
     <a class="nav-link" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="false">Visual Studio Code</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="terminal-tab" href="#terminal" role="tab" aria-controls="terminal" aria-selected="false">Terminal & editor</a>
+    <a class="nav-link" id="terminal-tab" href="#terminal" role="tab" aria-controls="terminal" aria-selected="false">终端 & 文本编辑器</a>
   </li>
 </ul>
 
@@ -39,4 +42,8 @@ Flutter apps.
 
 ## Next step
 
+## 下一步
+
 You'll next learn some core Flutter concepts by creating a small app.
+
+接下来，你会通过一个小的应用学到一些 Flutter 的核心概念。

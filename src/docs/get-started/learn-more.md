@@ -9,27 +9,42 @@ prev:
   path: /docs/get-started/codelab
 ---
 
-Learn more about the Flutter framework:
+Learn more about the Flutter framework from the following pages:
 
-* [Flutter for Android developers](/docs/get-started/flutter-for/android-devs)
-* [Flutter for iOS developers](/docs/get-started/flutter-for/ios-devs)
-* [Flutter for React Native developers](/docs/get-started/flutter-for/react-native-devs)
-* [Flutter for Xamarin.Forms developers](/docs/get-started/flutter-for/xamarin-forms-devs)
-* [Flutter for web developers](/docs/get-started/flutter-for/web-devs)
-* [Building layouts in Flutter](/docs/development/ui/layout) tutorial
-* [Add interactivity](/docs/development/ui/interactive) tutorial
-* [Introduction to widgets](/docs/development/ui/widgets-intro)
-* [Flutter API Docs](https://docs.flutter.io/)
-* [flutter.io (this website)](/)
+通过下面的文档列表了解更多关于 Flutter 框架的内容：
 
-Other resources:
+## Flutter basics
 
-* [Udacity online Flutter training](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
-* [Flutter Cookbook](/docs/cookbook)
-* [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart) codelab
-* [Bootstrap into Dart: learn more about the language](/docs/resources/bootstrap-into-dart)
+## 基础
+
+* [Widgets 介绍](/docs/development/ui/widgets-intro)
+* [布局构建教程](/docs/development/ui/layout/tutorial)
+* [为你的 Flutter 应用加入交互体验](/docs/development/ui/interactive)
+
+## Apply your existing knowledge
+
+## 应用其他平台开发经验
+
+* [给 Android 开发者的 Flutter 指南](/docs/get-started/flutter-for/android-devs)
+* [为 Java 开发人员准备的Dart 教程](https://codelabs.flutter-io.cn/codelabs/from-java-to-dart-cn/index.html)
+* [给 iOS 开发者的 Flutter 指南](/docs/get-started/flutter-for/ios-devs)
+* [给 React Native 开发者的 Flutter 指南](/docs/get-started/flutter-for/react-native-devs)
+* [给 Web 开发者的 Flutter 指南](/docs/get-started/flutter-for/web-devs)
+* [给 Xamarin.Forms 开发者的 Flutter 指南](/docs/get-started/flutter-for/xamarin-forms-devs)
+
+## Other resources
+
+## 其他资源
+
+* [Flutter 示例]({{site.github}}/flutter/samples/blob/master/INDEX.md)
+* [Flutter 实用教程 (cookbook)](/docs/cookbook)
+* [Dart 语言指引](/docs/resources/bootstrap-into-dart)
+* [Flutter API 文档]({{site.api}})
+* [Udacity 线上课程](https://cn.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 
 Reach out to us at our [mailing list][]. We'd love to hear from you!
+
+通过邮件列表与我们取得联系 [mailing list][]，我们非常乐意听到你的反馈！
 
 Happy Fluttering!
 

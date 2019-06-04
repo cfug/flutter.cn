@@ -1,6 +1,10 @@
 ---
 title: Tapping, dragging and entering text
 title: 点击、拖拽事件和文本输入
+prev:
+  title: Finding widgets
+  title: 定位到目标 widgets
+  path: /docs/cookbook/testing/widget/finders
 ---
 
 {% assign api = site.api | append: '/flutter' -%}

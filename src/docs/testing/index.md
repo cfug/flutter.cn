@@ -4,338 +4,156 @@ title: 测试 Flutter 应用
 ---
 
 The more features your app has, the harder it is to test manually.
-Automated tests help ensure that your app performs
-correctly before you publish it, while retaining your feature and bug fix
-velocity.
+Automated tests help ensure that your app performs correctly before
+you publish it, while retaining your feature and bug fix velocity.
+
+通常一个应用的功能越多，手工测试就越困难。自动化测试在发布之前运行，有助于保证我们应用的稳定性和功能的完整性，并且可以快速修复问题。
 
 Automated testing falls into a few categories:
 
-- A _unit test_ tests a single function, method, or class. External dependencies
-  of the unit under test are generally [mocked out](/cookbook/testing/mocking).
-  Unit tests generally don't read from or write to disk, render to screen,
-  or receive user actions from outside the process running the test. The goal
-  of a unit test is to verify the correctness of a unit of logic under a
-  variety of conditions.
-- A _widget test_ (in other UI frameworks referred to as _component test_) tests
-  a single widget. Testing a widget involves multiple classes and requires a
-  test environment that provides the appropriate widget lifecycle context. For
-  example, it should be able to receive and respond to user actions and events,
-  perform layout, and instantiate child widgets. A widget test is
-  therefore more comprehensive than a unit test. However, like a unit test, a
-  widget test's environment is replaced with an implementation much simpler than
-  a full-blown UI system. The goal of a widget test is to verify that the
-  widget's UI looks and interacts as expected.
-- An [_integration test_](https://en.wikipedia.org/wiki/Integration_testing)
-  tests a complete app or a large part of an app. Generally, an
-  _integration test_ runs on a real device or an OS emulator, such as iOS
-  Simulator or Android Emulator. The app under test is typically isolated from
-  the test driver code to avoid skewing the results. The goal of an integration
-  test is to verify that the app functions correctly as a whole, that all the
-  widgets it is composed of integrate with each other as expected. You can also
-  use your integration tests to verify your app's performance.
+自动化测试可分为以下几类：
 
-Here is a table summarizing the tradeoffs concerning the choice between
-different kinds of tests:
+- A [_unit test_](#unit-tests) tests a single function, method, or class. 
+    
+  [_单元测试_](#unit-tests) 测试单一的函数，方法或类。
 
-|                      | Unit   | Widget | Integration |
-|                      | 单元测试   | 部件测试 | 集成测试 |
+- A [_widget test_](#widget-tests) (in other UI frameworks referred to as _component test_) tests
+  a single widget. 
+
+  [_Widget 测试_](#widget-tests)（在其他 UI 框架中指 _组件测试_）测试单一的 widget 。
+
+- An [_integration test_](#integration-tests)
+  tests a complete app or a large part of an app.
+
+  [_集成测试_](#integration-tests) 测试一个完整的应用或者一个应用的大部分功能。
+  
+Generally speaking, a well-tested app has many unit and widget tests, tracked by
+[code coverage](https://en.wikipedia.org/wiki/Code_coverage), plus enough
+integration tests to cover all the important use cases. This advice is based on
+the fact that there are trade-offs between different kinds of testing, seen
+below.
+
+一般来说，在自动化测试方面做的比较好的应用会有许多单元测试和 widget 测试，并且使用 [代码覆盖率](https://en.wikipedia.org/wiki/Code_coverage) 进行追踪，还会有足够的集成测试来覆盖所有的重要使用场景。这样做是因为不同类型的测试之间需要权衡，如下所示：
+
+|                      | <t>Unit</t><t>单元测试</t> | <t>Widget</t><t>Widget 测试</t> | <t>Integration</t><t>集成测试</t> |
 |----------------------|--------|--------|-------------|
 | **Confidence**       | Low    | Higher | Highest     |
-| **置信度**       | 低    | 高 | 最高     |
+| **置信度**            | 低    | 较高 | 最高     |
 | **Maintenance cost** | Low    | Higher | Highest     |
+| **维护成本**           | 低    | 较高 | 最高     |
 | **Dependencies**     | Few    | More   | Most        |
+| **依赖程度**              | 少    | 较多   | 最多        |
 | **Execution speed**  | Quick  | Slower | Slowest     |
-{:.table.table-striped}
-
-{{site.alert.tip}}
-  A well-tested app has many unit and widget tests,
-  tracked by [code coverage](https://en.wikipedia.org/wiki/Code_coverage),
-  plus enough integration tests to cover all the important use cases.
-{{site.alert.end}}
-
-
-## Unit testing
-
-Some Flutter libraries, such as `dart:ui`, aren't available in the standalone
-Dart VM that ships with the default Dart SDK. The `flutter test` command lets
-you run your tests in a local Dart VM with a headless version of the Flutter
-Engine, which supplies these libraries. Using this command you can run any test,
-whether it depends on Flutter libraries or not.
-
-Write a Flutter unit test as a normal `package:test` test. Writing unit tests
-using `package:test` is documented on the [Dart
-testing](https://github.com/dart-lang/test/blob/master/README.md)
-repo.
-
-Example:
-
-Add this file to `test/unit_test.dart`:
-
-{% prettify dart %}
-import 'package:test/test.dart';
-
-void main() {
-  test('my first unit test', () {
-    /**highlight*/var answer = 42;/*-highlight*/
-    expect(answer, 42);
-  });
-}
-{% endprettify %}
-
-In addition, you must add the following block to your `pubspec.yaml`:
-
-```yaml
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-```
-
-{{site.alert.note}}
-  The dev dependency on `flutter_test` is required even if
-  your test doesn't explicitly import `flutter_test`,
-  because the test framework uses `flutter_test` behind the scenes.
-{{site.alert.end}}
-
-To run the test, run `flutter test test/unit_test.dart` from your
-project directory (not from the `test` subdirectory).
-
-To run all your tests, run `flutter test` from your project directory.
-
-For information on how to create mock services, see
-[Mock dependencies using Mockito](/cookbook/testing/mocking).
-
-
-## Widget testing
-
-You implement a widget test in a similar way as a unit test. To perform an
-interaction with a widget in your test, use the
-[`WidgetTester`](https://docs.flutter.io/flutter/flutter_test/WidgetTester-class.html)
-utility that Flutter provides. For example, you can send tap and scroll
-gestures. You can also use
-[`WidgetTester`](https://docs.flutter.io/flutter/flutter_test/WidgetTester-class.html)
-to find child widgets in the widget tree, read text, and verify that the values
-of widget properties are correct.
-
-Example:
+| **执行速度**           | 快  | 较慢 | 最慢     |
+{:.table.table-striped} 
 
-Add this file to `test/widget_test.dart`:
-
-```dart
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-void main() {
-  testWidgets('my first widget test', (WidgetTester tester) async {
-    // You can use keys to locate the widget you need to test
-    var sliderKey = UniqueKey();
-    var value = 0.0;
-
-    // Tells the tester to build a UI based on the widget tree passed to it
-    await tester.pumpWidget(
-      StatefulBuilder(
-        builder: (BuildContext context, StateSetter setState) {
-          return MaterialApp(
-            home: Material(
-              child: Center(
-                child: Slider(
-                  key: sliderKey,
-                  value: value,
-                  onChanged: (double newValue) {
-                    setState(() {
-                      value = newValue;
-                    });
-                  },
-                ),
-              ),
-            ),
-          );
-        },
-      ),
-    );
-    expect(value, equals(0.0));
 
-    // Taps on the widget found by key
-    await tester.tap(find.byKey(sliderKey));
+## Unit tests
 
-    // Verifies that the widget updated the value correctly
-    expect(value, equals(0.5));
-  });
-}
-```
+## 单元测试
 
-Run `flutter test test/widget_test.dart`.
+A _unit test_ tests a single function, method, or class. The goal of a unit test
+is to verify the correctness of a unit of logic under a variety of conditions.
+External dependencies of the unit under test are generally [mocked
+out](/cookbook/testing/mocking). Unit tests generally don't read from or write
+to disk, render to screen, or receive user actions from outside the process
+running the test.
 
-Check out [`package:flutter_test` API](https://docs.flutter.io/flutter/flutter_test/flutter_test-library.html)
-for all the utilities available for widget testing.
+[_单元测试_] 测试单一的函数，方法或类。单元测试的目标是验证逻辑单元在各种条件下的正确性。被测试单元的外部依赖通常需要[模拟](/cookbook/testing/mocking)。单元测试通常不会读写磁盘，将数据渲染到屏幕，也不会从运行测试进程的外部去接收用户的操作。
 
-To help debug widget tests, you can use the [`debugDumpApp()`](https://docs.flutter.io/flutter/widgets/debugDumpApp.html) function to visualize the UI state of your test or simply `flutter run test/widget_test.dart` to see your test run in your preferred runtime environment such as a simulator or a device. During a `flutter run` session on a widget test, you can also interactively tap parts of the screen for the Flutter tool to print the suggested [`Finder`](https://docs.flutter.io/flutter/flutter_test/CommonFinders-class.html).
+### Recipes
 
+### 更多信息
 
-## Integration testing
+{% include testing_toc.md type='unit' %} 
 
-A Flutter integration test is also written using `package:test`. A full test is a
-pair - a test script and a Flutter app instrumented to receive commands
-from the test. Unlike unit and widget tests, integration test code does not run
-in the same process as the app that's being tested. Instead, the tested
-app is launched on a _real device_ or in an _emulator_ (e.g. Android
-Emulator or iOS Simulator). The test script runs on your computer. It connects
-to the app and issues commands to the app to perform various
-user actions. This is known as "driving" the app. Flutter provides tools
-and APIs, collectively referred to as _Flutter Driver_, to do just that.
+## Widget tests
 
-> If you are familiar with Selenium/WebDriver (web), Espresso (Android) or UI
-> Automation (iOS), then Flutter Driver is Flutter's equivalent to those
-> integration testing tools. In addition, Flutter Driver provides API for
-> recording performance traces (a.k.a. the _timeline_) from actions performed
-> by the test.
+## Widget测试
 
-Flutter Driver is:
-
-* a command-line tool `flutter drive`
-* a package `package:flutter_driver` ([API](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver-class.html))
-
-Together, the two allow you to:
-
-* create instrumented app for integration testing
-* write a test
-* run the test
-
-### Adding the flutter_driver dependency
-
-To use `flutter_driver`, you must add the following block to your `pubspec.yaml`:
-
-```yaml
-dev_dependencies:
-  flutter_driver:
-    sdk: flutter
-```
-
-### Creating instrumented Flutter apps
-
-An instrumented app is a Flutter app that has the Flutter Driver
-_extension_ enabled. To enable the extension call `enableFlutterDriverExtension()`.
-
-Example:
-
-Let's assume you have an app with the entry point in
-`my_app/lib/main.dart`. To create an instrumented version of it, create a Dart
-file under `my_app/test_driver/`. Name it after the feature you are testing;
-let's go for `user_list_scrolling.dart` located in my_app/test_driver/:
+A _widget test_ (in other UI frameworks referred to as _component test_)
+tests a single widget. The goal of a widget test is to verify that the
+widget's UI looks and interacts as expected. Testing a widget involves
+multiple classes and requires a test environment that provides the
+appropriate widget lifecycle context.
 
-```dart
-// This line imports the extension
-import 'package:flutter_driver/driver_extension.dart';
+_Widget 测试_（在其他 UI 框架中指 _组件测试_）是用来测试单一的 widget，widget 测试的目标是验证 widget 的 UI 表现和交互行为是否符合预期。测试一个 widget 涉及多个类，并且测试环境需要提供具有 widget 生命周期的上下文。
 
-void main() {
-  // This line enables the extension
-  enableFlutterDriverExtension();
+For example, the Widget being tested should be able to receive and 
+respond to user actions and events, perform layout, and instantiate child 
+widgets. A widget test is therefore more comprehensive than a unit test.
+However, like a unit test, a widget test's environment is replaced with
+an implementation much simpler than a full-blown UI system.
 
-  // Call the `main()` of your app or call `runApp` with whatever widget
-  // you are interested in testing.
-}
-```
+例如，被测试的 widget 可以接收和响应用户操作和事件，进行布局，并实例化子 widget 。所以，widget 测试比单元测试更全面。但是，就像单元测试一样，widget 测试环境实现上比成熟的 UI 系统简单得多。
 
-### Writing integration tests
+### Recipes
 
-An integration test is a plain `package:test` test that uses the Flutter Driver
-API to tell the app what to do and then verifies that the app
-did it.
-
-Example:
-
-Just for fun let's also make our test record the performance timeline. Let's
-create a test file `user_list_scrolling_test.dart` located in `my_app/test_driver/`:
-
-```dart
-import 'dart:async';
-
-// Imports the Flutter Driver API
-import 'package:flutter_driver/flutter_driver.dart';
-import 'package:test/test.dart';
-
-void main() {
-  group('scrolling performance test', () {
-    FlutterDriver driver;
-
-    setUpAll(() async {
-      // Connects to the app
-      driver = await FlutterDriver.connect();
-    });
-
-    tearDownAll(() async {
-      if (driver != null) {
-        // Closes the connection
-        driver.close();
-      }
-    });
-
-    test('measure', () async {
-      // Record the performance timeline of things that happen inside the closure
-      Timeline timeline = await driver.traceAction(() async {
-        // Find the scrollable user list
-        SerializableFinder userList = find.byValueKey('user-list');
-
-        // Scroll down 5 times
-        for (int i = 0; i < 5; i++) {
-          // Scroll 300 pixels down, for 300 millis
-          await driver.scroll(
-              userList, 0.0, -300.0, Duration(milliseconds: 300));
-
-          // Emulate a user's finger taking its time to go back to the original
-          // position before the next scroll
-          await Future<void>.delayed(Duration(milliseconds: 500));
-        }
-
-        // Scroll up 5 times
-        for (int i = 0; i < 5; i++) {
-          await driver.scroll(
-              userList, 0.0, 300.0, Duration(milliseconds: 300));
-          await Future<void>.delayed(Duration(milliseconds: 500));
-        }
-      });
-
-      // The `timeline` object contains all the performance data recorded during
-      // the scrolling session. It can be digested into a handful of useful
-      // aggregate numbers, such as "average frame build time".
-      TimelineSummary summary = TimelineSummary.summarize(timeline);
-
-      // The following line saves the timeline summary to a JSON file.
-      summary.writeSummaryToFile('scrolling_performance', pretty: true);
-
-      // The following line saves the raw timeline data as JSON.
-      summary.writeTimelineToFile('scrolling_performance', pretty: true);
-    });
-  });
-}
-```
-
-### Running integration tests
-
-To run the test on an Android device, connect the device via USB to your
-computer and enable USB debugging. Then run the following command:
-
-```
-flutter drive --target=my_app/test_driver/user_list_scrolling.dart
-```
-
-This command:
-
-* builds the `--target` app and install it on the device
-* launches the app
-* runs the `user_list_scrolling_test.dart` test located in `my_app/test_driver/`
-
-You might be wondering how the command finds the correct test file. The
-`flutter drive` command uses a convention to look for the test file in the same
-directory as the instrumented `--target` app that has the same file name
-but for the `_test` suffix in it.
-
-## Continuous integration and testing
-
-For information on continuous deployment and testing, see the following:
-
-* [Continuous Delivery using fastlane with Flutter](/docs/deployment/fastlane-cd/)
-* [Test Flutter apps on Travis](https://medium.com/flutter-io/test-flutter-apps-on-travis-3fd5142ecd8c)
-* [GitLab Continuous Integration (GitLab CI/CD](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
-  You'll need to create and configure a `.gitlab-ci.yml` file. You can [find an
-  example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
-  in the [flutter_redux library](https://github.com/brianegan/flutter_redux).
+### 更多信息
+
+{% include testing_toc.md type='widget' %} 
+
+## Integration tests
+
+## 集成测试
+
+An _integration test_ tests a complete app or a large part of an app. The goal
+of an integration test is to verify that all the widgets and services being
+tested work together as expected. Furthermore, you can use integration
+tests to verify your app's performance.
+
+_集成测试_ 测试一个完整的应用或者一个应用的大部分功能。集成测试的目标是验证正在测试的所有 widget 和服务是否按照预期的方式一起工作。此外，还可以使用集成测试来验证应用的性能。
+
+Generally, an _integration test_ runs on a real device or an OS emulator, such
+as iOS Simulator or Android Emulator. The app under test is typically isolated
+from the test driver code to avoid skewing the results.
+
+通常情况下，一个 _集成测试_ 运行在真机或 OS 模拟器上，如 iOS 模拟器 (iOS Simulator) 或 Android 模拟器 (Android Emulator) 。测试中的应用通常与测试驱动程序代码隔离，以避免结果出现偏差。
+
+### Recipes
+
+### 更多信息
+
+{% include testing_toc.md type='integration' %}
+  
+## Continuous integration services
+
+## 持续集成服务
+
+Continuous integration (CI) services allow you to run your tests automatically
+when pushing new code changes. This provides timely feedback on whether the code
+changes work as expected and do not introduce bugs.
+
+持续集成 (CI) 服务允许我们在推送新代码（代码变更）时自动运行测试。当代码变更后，会立即收到关于代码是否仍按预期工作、是否引入新问题的反馈。
+
+For information on running tests on various continuous integration services,
+please see the following: 
+
+有关各种持续集成服务的信息，参考如下：
+
+* [Continuous Delivery using fastlane with
+  Flutter](/docs/deployment/fastlane-cd/)
+
+  [Flutter 中使用 fastlane 进行持续交付](/docs/deployment/fastlane-cd/)
+
+* [Test Flutter apps on
+  Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
+
+  [使用 Travis 测试 Flutter 应用]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
+
+* [GitLab Continuous Integration
+  (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
+  You'll need to create and configure a `.gitlab-ci.yml` file. You can 
+  [find an example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
+  in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
+
+  [GitLab 持续集成（GitLab CI/CD）](https://docs.gitlab.com/ee/ci/README.html#doc-nav)。需要创建，并且配置 `.gitlab-ci.yml` 文件。可以在 [flutter_redux 库]({{site.github}}/brianegan/flutter_redux)中[找到例子](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)。
+
+
+* [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
+  
+  [Flutter 中的 Codemagic 持续集成/持续交付](https://blog.codemagic.io/getting-started-with-codemagic/)
+
+* [Flutter CI/CD with Bitrise](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
+  
+  [使用 Bitrise 进行 Flutter 持续集成/持续交付](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)

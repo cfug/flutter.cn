@@ -22,13 +22,13 @@ JSON solution to use in different scenarios, and why.
   However, _serialization_ also commonly refers to the entire process of
   translating data structures to and from a more easily readable format.
 
-  **术语：** **编码**和**序列化数据**是一回事 - 将数据结构转换为字符串。**解码**和**反序列化数据**则是相反的过程 - 将字符串转换为数据结构。然而，**序列化数据**通常也指将数据结构转换为更加易读的数据格式的整个过程。
+  **术语：** **_编码_**和**_序列化数据_**是一回事 - 将数据结构转换为字符串。**_解码_**和**_反序列化数据_**则是相反的过程 - 将字符串转换为数据结构。然而，**_序列化数据_**通常也指将数据结构转换为更加易读的数据格式的整个过程。
 
   To avoid confusion, this doc uses "serialization" when referring to the
   overall process, and "encoding" and "decoding" when specifically
   referring to those processes.
 
-  为了避免混淆，本文档在涉及到整个过程时使用 ”序列化数据“，在特指这些过程时使用 ”编码“ 和 ”解码“。
+  为了避免混淆，本文档在涉及到整个过程时使用”序列化数据“，在特指这些过程时使用”编码“和”解码“。
 {{site.alert.end}}
 
 ## Which JSON serialization method is right for me?
@@ -41,11 +41,11 @@ This article covers two general strategies for working with JSON:
 
 * Manual serialization
 
-* 手动序列化数据
+  手动序列化数据
 
 * Automated serialization using code generation
 
-* 利用代码生成进行自动序列化数据
+  利用代码生成进行自动序列化数据
 
 Different projects come with different complexities and use cases. For smaller
 proof-of-concept projects or quick prototypes, using code generators might be
@@ -124,7 +124,7 @@ Flutter. Runtime reflection interferes with [tree shaking][], which Dart has
 supported for quite a long time. With tree shaking, you can "shake off" unused
 code from your release builds. This optimizes the app's size significantly.
 
-这样的库需要使用运行时 [reflection][]，这在 Flutter 中是被禁用的。运行时 reflection 会影响被 Dart 支持了相当久的 [tree shaking][]。通过 tree shaking，你可以从你的发布版本中 ”抖掉“ 不需要使用的代码。这会显著优化 App 的体积。
+这样的库需要使用运行时 [reflection][]，这在 Flutter 中是被禁用的。运行时 reflection 会影响被 Dart 支持了相当久的 [tree shaking][]。通过 tree shaking，你可以从你的发布版本中”抖掉“不需要使用的代码。这会显著优化 App 的体积。
 
 Since reflection makes all code implicitly used by default, it makes tree
 shaking difficult. The tools cannot know what parts are unused at runtime, so
@@ -217,17 +217,19 @@ class, called `User` in this example. Inside the `User` class, you'll find:
 
 * A `User.fromJson()` constructor, for constructing a new `User` instance from a
   map structure.
+
+  一个 `User.fromJson()` 结构，用于从 map 结构中构造一个新的 `User` 实例
+
 * A `toJson()` method, which converts a `User` instance into a map.
 
-* 一个 `User.fromJson()` 结构，用于从 map 结构中构造一个新的 `User` 实例
-* 一个 `toJson()` 方法，这个方法会将 `User` 实例转换为一个 map
+  一个 `toJson()` 方法，这个方法会将 `User` 实例转换为一个 map
 
 With this approach, the _calling code_ can have type safety,
 autocompletion for the `name` and `email` fields, and compile-time exceptions.
 If you make typos or treat the fields as `int`s instead of `String`s,
 the app won't compile, instead of crashing at runtime.
 
-通过这种方法，**调用代码**可以拥有类型安全，`name` 和 `email` 字段的自动完成以及编译时异常（检测）。如果你发生了笔误或者把 `String` 类型的字段看成了 `int` 类型，App 将不会编译，而不是在运行时崩溃。
+通过这种方法，**_调用代码_**可以拥有类型安全，`name` 和 `email` 字段的自动完成以及编译时异常（检测）。如果你发生了笔误或者把 `String` 类型的字段看成了 `int` 类型，App 将不会编译，而不是在运行时崩溃。
 
 **user.dart**
 
@@ -323,7 +325,7 @@ dependency, and two _dev dependencies_. In short, _dev dependencies_
 are dependencies that are not included in our app source code&mdash;they
 are only used in the development environment.
 
-要在你的项目中包含 `json_serializable`，你需要一个常规依赖，以及两个 **dev 依赖**。简单来说， **dev 依赖**是不包括在我们的 App 源代码中的依赖 - 它们只会被用在开发环境中。
+要在你的项目中包含 `json_serializable`，你需要一个常规依赖，以及两个 **_dev 依赖_**。简单来说， **_dev 依赖_**是不包括在我们的 App 源代码中的依赖 - 它们只会被用在开发环境中。
 
 The latest versions of these required dependencies can be seen by following
 [the pubspec
@@ -403,7 +405,7 @@ API returns objects with _snake\_case_, and you want to use
 _lowerCamelCase_ in your models,
 you can use the `@JsonKey` annotation with a name parameter:
 
-如果需要，你可以很容易自定义命名策略。例如，如果 API 返回带有 **snake_case** 的对象，并且你想要在你的模型里使用**小驼峰**的命名方式，你可以使用带有一个 name 参数的 `@JsonKey`  注解。
+如果需要，你可以很容易自定义命名策略。例如，如果 API 返回带有 **_snake\_case_** 的对象，并且你想要在你的模型里使用**_小驼峰_**的命名方式，你可以使用带有一个 name 参数的 `@JsonKey`  注解。
 
 <!-- skip -->
 ```dart
@@ -460,7 +462,7 @@ watches changes in our project files and automatically builds the necessary
 files when needed. Start the watcher by running
 `flutter pub run build_runner watch` in the project root.
 
-**监听器**让我们的源代码生成过程更加方便。它监听我们项目中的文件变化并且会在需要的时候自动构建必要的文件。通过在项目根目录运行 `flutter pub run build_runner watch` 启动监听。
+**_监听器_**让我们的源代码生成过程更加方便。它监听我们项目中的文件变化并且会在需要的时候自动构建必要的文件。通过在项目根目录运行 `flutter pub run build_runner watch` 启动监听。
 
 It is safe to start the watcher once and leave it running in the background.
 
@@ -496,7 +498,7 @@ to write automated tests to ensure that the serialization works&mdash;it's
 now _the library's responsibility_ to make sure the serialization works
 appropriately.
 
-使用 `json_serializable`，在 `User` 类中你可以忘记手动序列化任意的 JSON 数据。源代码生成器会创建一个名为 `user.g.dart` 的文件，它包含了所有必须的序列化数据逻辑。你不必再编写自动化测试来确保序列化数据奏效。- 现在由**库来负责**确保序列化数据能正确地奏效。
+使用 `json_serializable`，在 `User` 类中你可以忘记手动序列化任意的 JSON 数据。源代码生成器会创建一个名为 `user.g.dart` 的文件，它包含了所有必须的序列化数据逻辑。你不必再编写自动化测试来确保序列化数据奏效。- 现在由**_库来负责_**确保序列化数据能正确地奏效。
 
 ## Further references
 
@@ -508,19 +510,19 @@ For more information, see the following resources:
 
 * [dart:convert][] and [JsonCodec][] documentation
 
-* [dart:convert][] 和 [JsonCodec][] 文档
+  [dart:convert][] 和 [JsonCodec][] 文档
 * [The
   json_serializable package in Pub]({{site.pub}}/packages/json_serializable)
 
-* [Pub 中的 json_serializable package]({{site.pub}}/packages/json_serializable)  
+  [Pub 中的 json_serializable package]({{site.pub}}/packages/json_serializable)  
 * [json_serializable
   examples in GitHub]({{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart)
 
-* [GitHub 中的 json_serializable 例子]({{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart)
+  [GitHub 中的 json_serializable 例子]({{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart)
 * [Discussion
   about dart:mirrors in Flutter]({{site.github}}/flutter/flutter/issues/1150)
 
-* [Flutter 中有关 dart:mirrors 的讨论]({{site.github}}/flutter/flutter/issues/1150)
+  [Flutter 中有关 dart:mirrors 的讨论]({{site.github}}/flutter/flutter/issues/1150)
 
 [dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html

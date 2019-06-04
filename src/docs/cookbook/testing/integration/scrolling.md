@@ -60,7 +60,7 @@ As we did in the [Introduction to integration
 testing](/docs/cookbook/testing/integration) recipe, we'll also add keys to the
 widgets we want to interact with inside our integration tests.
 
-正如我们在[集成测试简介](https://github.com/cfug/flutter.cn/blob/master/docs/cookbook/testing/integration)章节中做的那样，我们还将向集成测试内我们需要互动的 `Widgets` 添加 `keys`
+正如我们在[集成测试简介](https://github.com/cfug/flutter.cn/blob/master/docs/cookbook/testing/integration)章节中做的那样，我们还将向集成测试内我们需要互动的 `Widgets` 添加 `keys`。
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -116,7 +116,7 @@ class MyApp extends StatelessWidget {
 Next, we'll need to create an instrumented version of our app. This code lives
 in a file called `test_driver/app.dart`.
 
-接下来，我们需要创建 `app` 的测试版本，这段代码位于 `test_driver/app.dart` 文件中
+接下来，我们需要创建 `app` 的测试版本，这段代码位于 `test_driver/app.dart` 文件中。
 
 <!-- skip -->
 ```dart
@@ -146,18 +146,18 @@ class provides three methods for scrolling through lists:
   - The
   [`scroll`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scroll.html)
   method allows us to scroll through a specific list by a given amount.  
-  [`scroll`](https://github.com/cfug/flutter.cn/blob/master/src/docs/cookbook/testing/integration/%7B%7Bsite.api%7D%7D/flutter/flutter_driver/FlutterDriver/scroll.html) 方法允许我们按给定的数量滚动特定的列表
+  [`scroll`](https://github.com/cfug/flutter.cn/blob/master/src/docs/cookbook/testing/integration/%7B%7Bsite.api%7D%7D/flutter/flutter_driver/FlutterDriver/scroll.html) 方法允许我们按给定的数量滚动特定的列表。
   - The
   [`scrollIntoView`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollIntoView.html)
   method finds a specific Widget that's already been rendered, and will scroll
   it completely into view. Some Widgets, such as
   [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html),
   render items on-demand.  
-  如果使用 `scrollIntoView` 方法，我们假定 `Widget` 已被实例化和渲染。为了验证 `app` 在不同的设备了能够很好的运行，我们可以对具有不同屏幕大小的设备运行集成测试。因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，所以是否渲染特定的 `Widget` 取决于屏幕的大小。
+  [`scrollIntoView`](https://github.com/cfug/flutter.cn/blob/master/src/docs/cookbook/testing/integration/%7B%7Bsite.api%7D%7D/flutter/flutter_driver/FlutterDriver/scrollIntoView.html) 方法找到已经被渲染的特定的 `Widget` ，并将它完全滚动到视图中。某些 `Widget`，比如 [`ListView.builder`](https://github.com/cfug/flutter.cn/blob/master/src/docs/cookbook/testing/integration/%7B%7Bsite.api%7D%7D/flutter/widgets/ListView/ListView.builder.html) ，只有在将要显示的时候才会去渲染列表项。
   - The
   [`scrollUntilVisible`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html)
   method scrolls through a list until a specific Widget is visible.  
-[`scrollUntilVisible`](https://github.com/cfug/flutter.cn/blob/master/src/docs/cookbook/testing/integration/%7B%7Bsite.api%7D%7D/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html)方法会滚动列表直到特定的 `Widget` 显示
+[`scrollUntilVisible`](https://github.com/cfug/flutter.cn/blob/master/src/docs/cookbook/testing/integration/%7B%7Bsite.api%7D%7D/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html)方法会滚动列表直到特定的 `Widget` 显示出来。
 
 
 While all three methods work for specific use-cases, `scrollUntilVisible` is
@@ -167,7 +167,7 @@ oftentimes the most robust option. Why?
 
   1. If we use the `scroll` method alone, we might incorrectly assume the height
   of each item in the list. This could lead to scrolling too much or too little.  
-  如果只使用 `scroll` 方法，我们可能错误地假定列表中每一项的高度，这可能导致滚动的太多或太少
+  如果只使用 `scroll` 方法，我们可能错误地假定列表中每一项的高度，这可能导致滚动的太多或太少。
   2. If we use the `scrollIntoView` method, we assume the Widget has been
   instantiated and rendered. In order to verify our apps work on a broad range
   of devices, we might run our integration tests against devices with different
@@ -187,7 +187,7 @@ Let's see how we can use the `scrollUntilVisible` method to look through the
 list for a particular item! This code lives in a file called
 `test_driver/app_test.dart`.
 
-让我们看一下如何通过 `scrollUntilVisible` 方法去寻找列表中特定的一项，这段代码位于 `test_driver/app_test.dart` 文件中
+让我们看一下如何通过 `scrollUntilVisible` 方法去寻找列表中特定的一项，这段代码位于 `test_driver/app_test.dart` 文件中。
 
 ```dart
 // Imports the Flutter Driver API
@@ -248,7 +248,7 @@ void main() {
 Finally, we can run the test using the following command from the root of the
 project:
 
-最后，我们在项目根目录下使用以下命令来运行测试
+最后，我们在项目根目录下使用以下命令来运行测试：
 
 ```
 flutter drive --target=test_driver/app.dart

@@ -148,7 +148,9 @@ CSS 示例使用十六进制颜色，这等价于材质调色板。
     ),
     width: 320.0,
     height: 240.0,
-[[highlight]]    color: Colors.grey[300],[[/highlight]]
+    [[highlight]]decoration: BoxDecoration(
+      color: Colors.grey[300],
+    ),[[/highlight]]
   );
 {% endprettify %}
 </div>

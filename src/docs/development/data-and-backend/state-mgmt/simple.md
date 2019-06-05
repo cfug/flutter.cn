@@ -211,24 +211,23 @@ at all, but it's an easy class to work with.)
 In our shopping app example, we want to manage the state of the cart in a
 `ChangeNotifier`. We create a new class that extends it, like so:
 
-<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)"?>
+<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
 ```dart
-class CartModel extends ChangeNotifier {
+class CartModel extends [!ChangeNotifier!] {
   /// Internal, private state of the cart.
   final List<Item> _items = [];
 
   /// An unmodifiable view of the items in the cart.
   UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
 
-  /// The current total price of all items (assuming all items cost $1).
-  int get totalPrice => _items.length;
+  /// The current total price of all items (assuming all items cost $42).
+  int get totalPrice => _items.length * 42;
 
   /// Adds [item] to cart. This is the only way to modify the cart from outside.
   void add(Item item) {
     _items.add(item);
-    // This call tells [Model] that it should rebuild the widgets that
-    // depend on it.
-    notifyListeners();
+    // This call tells the widgets that are listening to this model to rebuild.
+    [!notifyListeners!]();
   }
 }
 ```
@@ -240,7 +239,7 @@ model itself and its business logic.
 
 `ChangeNotifier` is part of `flutter:foundation` and doesn't depend on 
 any higher-level classes in Flutter. It's easily testable (you don't even need
-to use [widget testing](/docs/testing#widget-testing) for it). For example,
+to use [widget testing](/docs/testing#widget-tests) for it). For example,
 here's a simple unit test of `CartModel`:
 
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
@@ -269,11 +268,11 @@ You don't want to place `ChangeNotifierProvider` higher than necessary
 (because you don't want to pollute the scope). But in our case,
 the only widget that is on top of both `MyCart` and `MyCatalog` is `MyApp`.
 
-<?code-excerpt "state_mgmt/simple/lib/main.dart (main)"?>
+<?code-excerpt "state_mgmt/simple/lib/main.dart (main)" replace="/ChangeNotifierProvider/[!$&!]/g"?>
 ```dart
 void main() {
   runApp(
-    ChangeNotifierProvider(
+    [!ChangeNotifierProvider!](
       builder: (context) => CartModel(),
       child: MyApp(),
     ),
@@ -288,11 +287,11 @@ of `CartModel`. `ChangeNotifierProvider` is smart enough _not_ to rebuild
 
 If you want to provide more than one class, you can use `MultiProvider`:
 
-<?code-excerpt "state_mgmt/simple/lib/main.dart (multi-provider-main)" replace="/multiProviderMain/main/g"?>
+<?code-excerpt "state_mgmt/simple/lib/main.dart (multi-provider-main)" replace="/multiProviderMain/main/g;/MultiProvider/[!$&!]/g"?>
 ```dart
 void main() {
   runApp(
-    MultiProvider(
+    [!MultiProvider!](
       providers: [
         ChangeNotifierProvider(builder: (context) => CartModel()),
         Provider(builder: (context) => SomeOtherClass()),
@@ -310,9 +309,9 @@ Now that `CartModel` is provided to widgets in our app through the
 
 This is done through the `Consumer` widget.
 
-<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (descendant)"?>
+<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (descendant)" replace="/Consumer/[!$&!]/g"?>
 ```dart
-return Consumer<CartModel>(
+return [!Consumer!]<CartModel>(
   builder: (context, cart, child) {
     return Text("Total price: ${cart.totalPrice}");
   },
@@ -344,18 +343,18 @@ If you have a large widget subtree under your `Consumer`
 that _doesn't_ change when the model changes, you can construct it
 once and get it through the builder.
 
-<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)"?>
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)" replace="/\bchild\b/[!$&!]/g"?>
 ```dart
 return Consumer<CartModel>(
-  builder: (context, cart, child) => Stack(
+  builder: (context, cart, [!child!]) => Stack(
         children: [
           // Use SomeExpensiveWidget here, without rebuilding every time.
-          child,
+          [!child!],
           Text("Total price: ${cart.totalPrice}"),
         ],
       ),
   // Build the expensive widget here.
-  child: SomeExpensiveWidget(),
+  [!child!]: SomeExpensiveWidget(),
 );
 ```
 
@@ -412,9 +411,9 @@ rebuild a widget that doesn't need to be rebuilt.
 For this use case, we can use `Provider.of`, with the `listen` parameter
 set to `false`. 
 
-<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)"?>
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
-Provider.of<CartModel>(context, listen: false).add(item);
+Provider.of<CartModel>(context, [!listen: false!]).add(item);
 ```
 
 Using the above line in a build method will not cause this widget to

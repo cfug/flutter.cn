@@ -192,14 +192,14 @@ oftentimes the most robust option. Why?
   whether or not a particular Widget has been rendered can depend
   on the size of the screen.
   
-  如果使用 `scrollIntoView` 方法，我们假定 Widget 已被实例化和渲染。为了验证   app 在不同的设备了能够很好的运行，我们可以对具有不同屏幕大小的设备运行集成测试。因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，所以是否渲染特定的 Widget 取决于屏幕的大小。
+  如果使用 `scrollIntoView` 方法，我们假定 Widget 已被实例化和渲染。为了验证 app 在不同的设备了能够很好的运行，我们可以对具有不同屏幕大小的设备运行集成测试。因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，所以是否渲染特定的 Widget 取决于屏幕的大小。
 
 Therefore, rather than assuming we know the height of all the items in a list,
 or that a particular Widget will be rendered on all devices, we can use the
 `scrollUntilVisible` method to repeatedly scroll through a list of items until
 we find what we're looking for!
 
-所以，我们既不需要知道所有列表项的高度，也不需要知道一个特定的 Widget 在不同的屏幕大小的设备上是否被渲染，我们只需要调用 `scrollUntilVisible ` 方法反复滚动列表直到找到要查找的列表项。
+所以，我们既不需要知道所有列表项的高度，也不需要知道一个特定的 Widget 在不同的屏幕大小的设备上是否被渲染，我们只需要调用 `scrollUntilVisible` 方法反复滚动列表直到找到要查找的列表项。
 
 Let's see how we can use the `scrollUntilVisible` method to look through the
 list for a particular item! This code lives in a file called

@@ -24,7 +24,7 @@ class, which is included in the
 [`flutter_driver`]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html)
 package:
 
-为了使滚动列表通过集成测试，我们可以使用 [`flutter_driver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 这个 package 中的 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html) 类：
+为了在集成测试中检验滚动列表，我们可以使用 [`flutter_driver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 这个 package 中的 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html) 类：
 
 In this recipe, we'll learn how to scroll through a list of items in order to
 verify a specific Widget is being displayed, and discuss the pros on cons of
@@ -32,26 +32,26 @@ different approaches. If you're just getting started with integration testing,
 please read through the [Introduction to integration
 testing](/docs/cookbook/testing/integration) recipe.
 
-在本章节，我们将学习如何滚动项目列表验证是否正在显示特定的 Widget，并讨论不同方法的优缺点。如果您刚刚开始进行集成测试，请阅读[集成测试介绍](/docs/cookbook/testing/integration)获取更多信息。
+在本章节，我们将学习如何在滚动列表中验证是否正在显示特定的 Widget，并讨论不同方法的优缺点。如果您刚刚开始进行集成测试，请阅读[集成测试介绍](/docs/cookbook/testing/integration)获取更多信息。
 
 ### Directions
 
 ### 步骤
   1. Create an app with a list of items
-  
-  创建带有列表的 app
+     
+     创建带有列表的 app
   
   2. Instrument the app
 
-  测试 app
+     测试 app
   
   3. Write a test that scrolls through the list
   
-  编写列表滚动的测试用例
+     编写列表滚动的测试用例
   
   4. Run the test
 
-  运行测试
+     运行测试
 
 ### 1. Create an app with a list of items
 
@@ -69,7 +69,7 @@ As we did in the [Introduction to integration
 testing](/docs/cookbook/testing/integration) recipe, we'll also add keys to the
 widgets we want to interact with inside our integration tests.
 
-正如我们在[集成测试简介](/docs/cookbook/testing/integration)章节中做的那样，我们还将向集成测试内我们需要互动的 Widgets 添加 keys。
+正如我们在[集成测试简介](/docs/cookbook/testing/integration)章节中做的那样，我们还将向集成测试内我们需要互动的 Widget 添加 key。
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -183,7 +183,7 @@ oftentimes the most robust option. Why?
   1. If we use the `scroll` method alone, we might incorrectly assume the height
   of each item in the list. This could lead to scrolling too much or too little.
   
-  如果只使用 `scroll` 方法，我们可能错误地假定列表中每一项的高度，这可能导致滚动的太多或太少。
+     如果只使用 `scroll` 方法，我们可能错误地假定列表中每一项的高度，这可能导致滚动的太多或太少。
   
   2. If we use the `scrollIntoView` method, we assume the Widget has been
   instantiated and rendered. In order to verify our apps work on a broad range
@@ -192,7 +192,7 @@ oftentimes the most robust option. Why?
   whether or not a particular Widget has been rendered can depend
   on the size of the screen.
   
-  如果使用 `scrollIntoView` 方法，我们假定 Widget 已被实例化和渲染。为了验证 app 在不同的设备了能够很好的运行，我们可以对具有不同屏幕大小的设备运行集成测试。因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，所以是否渲染特定的 Widget 取决于屏幕的大小。
+     如果使用 `scrollIntoView` 方法，我们假定 Widget 已被实例化和渲染。为了验证 app 在不同的设备了能够很好的运行，我们可以对具有不同屏幕大小的设备运行集成测试。因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，所以是否渲染特定的 Widget 取决于屏幕的大小。
 
 Therefore, rather than assuming we know the height of all the items in a list,
 or that a particular Widget will be rendered on all devices, we can use the

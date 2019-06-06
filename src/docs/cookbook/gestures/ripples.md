@@ -14,13 +14,24 @@ next:
 While designing an app that should follow the Material Design Guidelines, we'll
 want to add the ripple animation to Widgets when tapped.
 
+在开发符合 Material Design 设计规范的 app 时， 想要添加点按涟漪效果。
+
 Flutter provides the [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html)
 Widget to achieve this effect.
 
+Flutter 提供了 [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html) Widget 来实现这个功能。
+
 ## Directions
 
+## 步骤
+
   1. Create a Widget we want to tap
+
+     创建一个想要点击的 Widget
+
   2. Wrap it in an `InkWell` Widget to manage tap callbacks and ripple animations
+
+     用 `InkWell` Widget 包裹它，并设置回调函数， 就可以显示涟漪动画了。
 
 <!-- skip -->
 ```dart
@@ -40,6 +51,8 @@ InkWell(
 ```
 
 ## Complete example
+
+## 完整例子
 
 ```dart
 import 'package:flutter/material.dart';

@@ -32,7 +32,7 @@ different approaches. If you're just getting started with integration testing,
 please read through the [Introduction to integration
 testing](/docs/cookbook/testing/integration) recipe.
 
-在本章节，我们将学习如何滚动项目列表验证是否正在显示特定的 Widget，并讨论不同方法的优缺点。如果您刚刚开始进行集成测试，请阅读[`集成测试介绍`](/docs/cookbook/testing/integration)获取更多信息。
+在本章节，我们将学习如何滚动项目列表验证是否正在显示特定的 Widget，并讨论不同方法的优缺点。如果您刚刚开始进行集成测试，请阅读[集成测试介绍](/docs/cookbook/testing/integration)获取更多信息。
 
 ### Directions
 

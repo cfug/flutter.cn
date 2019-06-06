@@ -186,7 +186,7 @@ by the Flutter community:
 
 * [Flutter: State Management with Mobx](https://developer.school/posts/flutter-state-management-with-mobx/) by Paul Halliday
 
-  [Flutter：使用 Mobx 进行状态管理](https://developer.school/posts/flutter-state-management-with-mobx/) by Paul Halliday
+  由 Paul Halliday 提供的 [Flutter：使用 Mobx 进行状态管理](https://developer.school/posts/flutter-state-management-with-mobx/)
 
 ## Provider
 
@@ -194,4 +194,4 @@ by the Flutter community:
 
 * [Getting Started with Provider](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/) by Paul Halliday
 
-  [Provider 入门](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/) by Paul Halliday
+  由 Paul Halliday [Provider 入门](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/)

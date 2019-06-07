@@ -14,7 +14,7 @@ next:
 While designing an app that should follow the Material Design Guidelines, we'll
 want to add the ripple animation to Widgets when tapped.
 
-在开发符合 Material Design 设计规范的 app 时， 想要添加点按涟漪效果。
+当我们在开发遵循 Material Design 规范应用的时候，我们可能会需要为某个 Widgets 的点击加入涟漪效果。
 
 Flutter provides the [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html)
 Widget to achieve this effect.

@@ -49,7 +49,7 @@ To install the `http` package, you must add it to the dependencies section
 of the `pubspec.yaml`. You can [find the latest version of the http package on
 the Pub site]({{site.pub}}/packages/http#-installing-tab-).
 
-安装 `http` 包之前，你必须先把它添加到 `pubspec.yaml` 的依赖区域。你可以在[Pub site 找到 http 包的最新版本]({{site.pub}}/packages/http#-installing-tab-)。
+安装 `http` 包之前，你必须先把它添加到 `pubspec.yaml` 的依赖区域。你可以在 [Pub site 找到 http 包的最新版本]({{site.pub}}/packages/http#-installing-tab-)。
 
 ```yaml
 dependencies:
@@ -81,11 +81,14 @@ The `http.get()` method returns a `Future` that contains a `Response`.
     a core Dart class for working with async operations.
     It is used to represent a potential value or error that will
     be available at some time in the future.
+    
+    [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) 是 Dart 用来处理异步操作的一个核心类。它通常代表一个可能的值或者将来或许会用到的错误。
+    
   * The `http.Response` class contains the data received from a successful
     http call.
-
-  * [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) 是 Dart 用来处理异步操作的一个核心类。它通常代表一个可能的值或者将来或许会用到的错误。
-  * `http.Response` 类包含成功的 http 请求接收到的数据。
+    
+    `http.Response` 类包含成功的 http 请求接收到的数据。
+    
 
 ## 3. Convert the response into a custom Dart object
 
@@ -304,10 +307,12 @@ please see the following recipes:
 关于如何测试这个功能，请查看下面的说明：
 
   * [Introduction to unit testing](/docs/cookbook/testing/unit/introduction)
+  
+    [单元测试介绍](/docs/cookbook/testing/unit/introduction)
+    
   * [Mock dependencies using Mockito](/docs/cookbook/testing/unit/mocking)
-
-  * [单元测试介绍](/docs/cookbook/testing/unit/introduction)
-  * [使用 Mockito 模拟依赖](/docs/cookbook/testing/unit/mocking)
+ 
+    [使用 Mockito 模拟依赖](/docs/cookbook/testing/unit/mocking)
 
 
 ## Complete example

@@ -57,7 +57,7 @@ by the Flutter community:
 * [Managing Flutter Application State With InheritedWidgets]({{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1),
   by Hans Muller
 
-  由 Hans Muller 提供的 [Managing Flutter Application State With InheritedWidgets]({{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1)
+  由 Hans Muller 提供的 [使用 InheritedWidgets 管理 Flutter 应用状态]({{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1)
 
 * [Inheriting Widgets](https://medium.com/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1),
   by Mehmet Fidanboylu

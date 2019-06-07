@@ -118,7 +118,7 @@ More broadly, [LinkedIn recently conducted a study](https://learning.linkedin.co
 
 Flutter is also being used on the desktop. For some months, we’ve been working on the desktop as [an experimental project](https://github.com/google/flutter-desktop-embedding). But now we’re graduating this into Flutter engine, integrating this work directly into the mainline repo. While these targets are not production-ready yet, we have published early [instructions for developing Flutter apps to run on Mac, Windows, and Linux](https://github.com/flutter/flutter/wiki/Desktop-shells).
 
-Flutter 目前也被用于桌面平台。在过去几个月，我们一直在研究桌面���台这一 [实验性项目](https://github.com/google/flutter-desktop-embedding)。但现在该项目逐渐演变成 Flutter 引擎，并将这项工作直接集成到 mainline repo 中。尽管这些目标尚未在生产环境中部署，但我们已发布早期说明，以便开发 [在 Mac、Windows 和 Linux 上运行的 Flutter 应用](https://github.com/flutter/flutter/wiki/Desktop-shells)。
+Flutter 目前也被用于桌面平台。在过去几个月，我们一直在研究桌面平台这一 [实验性项目](https://github.com/google/flutter-desktop-embedding)。但现在该项目逐渐演变成 Flutter 引擎，并将这项工作直接集成到 mainline repo 中。尽管这些目标尚未在生产环境中部署，但我们已发布早期说明，以便开发 [在 Mac、Windows 和 Linux 上运行的 Flutter 应用](https://github.com/flutter/flutter/wiki/Desktop-shells)。
 
 Another quickly growing Flutter platform is Chrome OS, with millions of Chromebooks being sold every year, particularly in education. Chrome OS is a perfect environment for Flutter, both for running Flutter apps, and as a developer platform, since it supports execution of both Android and Linux apps. With Chrome OS, you can use Visual Studio Code or Android Studio to develop a Flutter app that you can test and run locally on the same device without an emulator. You can also publish Flutter apps for Chrome OS to the Play Store, where millions of others can benefit from your creation.
 

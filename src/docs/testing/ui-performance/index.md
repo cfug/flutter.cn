@@ -516,7 +516,8 @@ When you encounter calls to `saveLayer`, ask yourself these questions:
 
 当遇到对 `saveLayer` 的调用时，先问问自己：
 
-* Does the app need this effect?
+ * Does the app need this effect?
+   应用是否需要这个效果？
 
 * 应用是否需要这个效果？
 

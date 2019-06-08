@@ -91,7 +91,7 @@ by the Flutter community:
 * [Simple State Management]({{site.url}}/docs/development/data-and-backend/state-mgmt/simple),
   the previous page in this section
 
-  [简单的状态管理]({{site.url}}/docs/development/data-and-backend/state-mgmt/simple)，本节的上一页
+  本节的上一页，[简单的状态管理]({{site.url}}/docs/development/data-and-backend/state-mgmt/simple)
 
 * [You might not need Redux: The Flutter edition](https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7), by Ryan Edge
 
@@ -148,12 +148,12 @@ by the Flutter community:
 * [Building a (large) Flutter app with Redux](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/),
   by Hillel Coren
 
-  Hillel Coren 提供的 [使用 Redux 构建一个（大型）Flutter app](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/)
+  由 Hillel Coren 提供的 [使用 Redux 构建一个（大型）Flutter app](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/)
 
 * [Fish-Redux - An assembled flutter application framework based on Redux](https://github.com/alibaba/fish-redux/),
   by Alibaba
 
-  阿里巴巴提供的 [Fish-Redux - 基于 Redux 的集成 Flutter 应用框架](https://github.com/alibaba/fish-redux/)
+  由阿里巴巴提供的 [Fish-Redux - 基于 Redux 的集成 Flutter 应用框架](https://github.com/alibaba/fish-redux/)
 
 ## BLoC / Rx
 

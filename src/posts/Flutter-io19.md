@@ -67,11 +67,11 @@ Here’s what Eric von Coelln, Executive Director of Puzzles at the New York Tim
 以下是《纽约时报》解谜游戏执行总监 Eric von Coelln 对 Flutter 使用体验的看法:
 
 > _"The New York Times Crossword has more than 400,000 stand-alone subscriptions and is a daily ritual for puzzle solvers. Along with the Crossword, we’ve grown our portfolio of digital puzzles that reaches more than two million solvers each month._
-
+> 
 > “《纽约时报》纵横字谜游戏的单独订阅数量已超过 40 万份，玩这款游戏已经成为解谜者每天必做的事情。除了纵横字谜游戏，我们还开发了数字解谜游戏，每个月都吸引了超过 200 万名解谜者。 
 
 > _We were already beginning to explore Flutter as a potential solution to the challenge of quickly developing engaging, high-quality mobile experiences. Now the addition of being able to publish to web makes Flutter an even more appealing option to quickly deploy across all of our user platforms. This update of our old Flash-based KenKen game into a multi-platform playable experience is something we’re excited to bring to our solvers this year.”_
-
+> 
 > 我们已经开始探索 Flutter，并将其作为快速开发有趣和优质的移动体验这一挑战的潜在解决方案。现在，我们能够在 Web 端发布游戏，这使 Flutter 成为在所有用户平台快速部署内容的更具吸引力的选择。之前基于 Flash 的 KenKen 游戏经过更新，能够提供多平台的畅玩体验。今年我们很高兴能为解谜者带来全新体验。"
 
 There’s lots more to say about Flutter for web than we have space for here, so check out the dedicated [article about Flutter for web](https://medium.com/flutter-io/bringing-flutter-to-the-web-904de05f0df0) on the Flutter blog.

@@ -516,18 +516,14 @@ When you encounter calls to `saveLayer`, ask yourself these questions:
 
 当遇到对 `saveLayer` 的调用时，先问问自己：
 
- * Does the app need this effect?
+* Does the app need this effect?
    应用是否需要这个效果？
 
-* 应用是否需要这个效果？
-
 * Can any of these calls be eliminated?
-
-* 可以减少调用么？
+  可以减少调用么？
 
 * Can I apply the same effect to an individual element instead of a group?
-
-* 可以对单独元素操作而不是一组元素么？
+  可以对单独元素操作而不是一组元素么？
 
 #### Checking for non-cached images
 

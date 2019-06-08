@@ -65,7 +65,7 @@ by the Flutter community:
   由 Mehmet Fidanboylu 提供的 [Inheriting Widgets](https://medium.com/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1)
 
 * [Using Flutter Inherited Widgets
-  Effectively](https://ericwindmill.com/posts/using-flutter-inherited-widgets-effectively/),
+  Effectively](https://ericwindmill.com/articles/inherited_widget/),
   by Eric Windmill
 
   由 Eric Windmill 提供的 [有效的使用 Flutter Inherited Widgets](https://ericwindmill.com/posts/using-flutter-inherited-widgets-effectively/)

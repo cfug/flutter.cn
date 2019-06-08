@@ -3,9 +3,9 @@ title: Testing Flutter apps
 title: 测试 Flutter 应用
 ---
 
-The more features your app has, the harder it is to test manually. Automated
-tests help ensure that your app performs correctly before you publish it, while
-retaining your feature and bug fix velocity.
+The more features your app has, the harder it is to test manually.
+Automated tests help ensure that your app performs correctly before
+you publish it, while retaining your feature and bug fix velocity.
 
 通常一个应用的功能越多，手工测试就越困难。自动化测试在发布之前运行，有助于保证我们应用的稳定性和功能的完整性，并且可以快速修复问题。
 
@@ -71,19 +71,19 @@ running the test.
 
 ## Widget测试
 
-A _widget test_ (in other UI frameworks referred to as _component test_) tests a
-single widget. The goal of a widget test is to verify that the widget's UI looks
-and interacts as expected. Testing a widget involves multiple classes and
-requires a test environment that provides the appropriate widget lifecycle
-context. 
+A _widget test_ (in other UI frameworks referred to as _component test_)
+tests a single widget. The goal of a widget test is to verify that the
+widget's UI looks and interacts as expected. Testing a widget involves
+multiple classes and requires a test environment that provides the
+appropriate widget lifecycle context.
 
 _Widget 测试_（在其他 UI 框架中指 _组件测试_）是用来测试单一的 widget，widget 测试的目标是验证 widget 的 UI 表现和交互行为是否符合预期。测试一个 widget 涉及多个类，并且测试环境需要提供具有 widget 生命周期的上下文。
 
 For example, the Widget being tested should be able to receive and 
 respond to user actions and events, perform layout, and instantiate child 
-widgets. A widget test is therefore more comprehensive than a unit test. However, like a
-unit test, a widget test's environment is replaced with an implementation much
-simpler than a full-blown UI system.
+widgets. A widget test is therefore more comprehensive than a unit test.
+However, like a unit test, a widget test's environment is replaced with
+an implementation much simpler than a full-blown UI system.
 
 例如，被测试的 widget 可以接收和响应用户操作和事件，进行布局，并实例化子 widget 。所以，widget 测试比单元测试更全面。但是，就像单元测试一样，widget 测试环境实现上比成熟的 UI 系统简单得多。
 
@@ -99,7 +99,7 @@ simpler than a full-blown UI system.
 
 An _integration test_ tests a complete app or a large part of an app. The goal
 of an integration test is to verify that all the widgets and services being
-tested work together other as expected. Furthermore, you can use integration
+tested work together as expected. Furthermore, you can use integration
 tests to verify your app's performance.
 
 _集成测试_ 测试一个完整的应用或者一个应用的大部分功能。集成测试的目标是验证正在测试的所有 widget 和服务是否按照预期的方式一起工作。此外，还可以使用集成测试来验证应用的性能。

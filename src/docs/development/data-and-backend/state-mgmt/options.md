@@ -11,7 +11,7 @@ State management is a complex topic. If you feel that some of your questions
 haven't been answered, or that the approach described on these pages
 is not viable for your use cases, you are probably right.
 
-状态管理是一个复杂的议题。如果你觉得有些问题没有得到回答，或者说这些页面上描述的方法对于你的场景不适用，你也许是对的。
+状态管理是一个复杂的议题。你可能会遇到有些问题没有得到解答或者有些描述与预期不符。
 
 Learn more at the following links, many of which have been contributed
 by the Flutter community:
@@ -148,7 +148,7 @@ by the Flutter community:
 * [Building a (large) Flutter app with Redux](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/),
   by Hillel Coren
 
-  Hillel Coren 提供的 [使用 Redux 构建一个（大的）Flutter app](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/)
+  Hillel Coren 提供的 [使用 Redux 构建一个（大型）Flutter app](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/)
 
 * [Fish-Redux - An assembled flutter application framework based on Redux](https://github.com/alibaba/fish-redux/),
   by Alibaba

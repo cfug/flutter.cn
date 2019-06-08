@@ -14,7 +14,7 @@ functions directly by reading their current value and listening to their
 state changes or they can use the animations as the basis of more elaborate
 animations that they pass along to other widgets.
 
-Flutter 中的动画系统基于类对象 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html)。组件可以直接将这些动画合并到自己的构造函数中来读取它们的当前值或者监听它们的状态变化，或者可以将其作为的更复杂动画的基础传递给其他组件。
+Flutter 中的动画系统基于类对象 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html)。Widgets 可以直接将这些动画合并到自己的构造函数中来读取它们的当前值或者监听它们的状态变化，或者可以将其作为的更复杂动画的基础传递给其他 widgets。
 
 ## Animation
 
@@ -27,7 +27,7 @@ over the lifetime of the animation. Most widgets that perform an animation
 receive an `Animation` object as a parameter, from which they read the current
 value of the animation and to which they listen for changes to that value.
 
-动画系统的首要组成部分就是 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html) 类。一个动画表现为可在它的生命周期内发生变化的特定类型的值。大多数需要执行动画的组件都需要接收一个 `Animation` 对象作为参数，从而能从中获取到动画的当前状态值以及应该监听哪些具体值的更改。
+动画系统的首要组成部分就是 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html) 类。一个动画表现为可在它的生命周期内发生变化的特定类型的值。大多数需要执行动画的 widgets 都需要接收一个 `Animation` 对象作为参数，从而能从中获取到动画的当前状态值以及应该监听哪些具体值的更改。
 
 ### `addListener`
 
@@ -42,7 +42,7 @@ object that listens to an animation will call
 itself in its listener callback to notify the widget system that it needs to
 rebuild with the new value of the animation.
 
-每当动画的状态值发生变化时，动画都会通知所有通过 [`addListener`]({{site.api}}/flutter/animation/Animation/addListener.html) 添加的监听器。通常，一个正在监听动画的 [`State`]({{site.api}}/flutter/widgets/State-class.html) 对象会调用自身的 [`setState`]({{site.api}}/flutter/widgets/State/setState.html) 方法，将自身传入这些监听器的回调函数来通知组件系统需要根据新状态值进行重新构建。
+每当动画的状态值发生变化时，动画都会通知所有通过 [`addListener`]({{site.api}}/flutter/animation/Animation/addListener.html) 添加的监听器。通常，一个正在监听动画的 [`State`]({{site.api}}/flutter/widgets/State-class.html) 对象会调用自身的 [`setState`]({{site.api}}/flutter/widgets/State/setState.html) 方法，将自身传入这些监听器的回调函数来通知 widget 系统需要根据新状态值进行重新构建。
 
 This pattern is so common that there are two widgets that help widgets rebuild
 when animations change value:
@@ -56,8 +56,8 @@ function. The second, `AnimatedBuilder`, is useful for more complex widgets
 that wish to include an animation as part of a larger build function. To use
 `AnimatedBuilder`, simply construct the widget and pass it a `builder` function.
 
-这种模式非常常见，所以有两个组件可以帮助其他组件在动画改变值时进行重新构建：[`AnimatedWidget`]({{site.api}}/flutter/widgets/AnimatedWidget-class.html) 和 
-[`AnimatedBuilder`]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html)。第一个组件是 `AnimatedWidget`，对于无状态动画组件来说是尤其有用的。要使用 `AnimatedBuilder`，只需继承它并实现一个 [`build`]({{site.api}}/flutter/widgets/AnimatedWidget/build.html) 方法。第二个组件是 `AnimatedBuilder`，对于希望将动画作为复杂组件构造函数的其中一部分的情况非常有用。要使用 `AnimatedBuilder`，只需构造组件并将 `AnimatedBuilder` 传递给组件的 `builder` 方法。
+这种模式非常常见，所以有两个 widgets 可以帮助其他 widgets 在动画改变值时进行重新构建：[`AnimatedWidget`]({{site.api}}/flutter/widgets/AnimatedWidget-class.html) 和 
+[`AnimatedBuilder`]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html)。第一个是 `AnimatedWidget`，对于无状态动画 widgets 来说是尤其有用的。要使用 `AnimatedBuilder`，只需继承它并实现一个 [`build`]({{site.api}}/flutter/widgets/AnimatedWidget/build.html) 方法。第二个是 `AnimatedBuilder`，对于希望将动画作为复杂 widgets 构造函数的其中一部分的情况非常有用。要使用 `AnimatedBuilder`，只需构造 widget 并将 `AnimatedBuilder` 传递给 widget 的 `builder` 方法。
 
 ### `addStatusListener`
 
@@ -136,7 +136,7 @@ with an animation to get a concrete value:
    for widgets that are already listening to the animation and hence
    rebuilding whenever the animation changes value.
 
-   你可以用 [`evaluate`]({{site.api}}/flutter/animation/Animatable/evaluate.html) 方法处理动画的当前值从而得到对应的插值。这种方法对于已经监听动画并因此在动画改变值时重新构建的组件是最有效的。
+   你可以用 [`evaluate`]({{site.api}}/flutter/animation/Animatable/evaluate.html) 方法处理动画的当前值从而得到对应的插值。这种方法对于已经监听动画并因此在动画改变值时重新构建的 widgets 是最有效的。
 
 2. You can [`animate`]({{site.api}}/flutter/animation/Animatable/animate.html)
    the tween based on the animation. Rather than returning a single value, the
@@ -145,7 +145,7 @@ with an animation to get a concrete value:
    another widget, which can then read the current value that incorporates
    the tween as well as listen for changes to the value.
 
-   你可以用 [`animate`]({{site.api}}/flutter/animation/Animatable/animate.html) 方法处理一个动画。相对于返回单个值，animate 方法返回一个包含补间动画插值的新的 `Animation`。这种方法对于当你想要将新创建的动画提供给另一个组件时最有效，这个组件可以直接读取包含补间动画的插值以及监听对应插值的更改。
+   你可以用 [`animate`]({{site.api}}/flutter/animation/Animatable/animate.html) 方法处理一个动画。相对于返回单个值，animate 方法返回一个包含补间动画插值的新的 `Animation`。这种方法对于当你想要将新创建的动画提供给另一个 widget 时最有效，它可以直接读取包含补间动画的插值以及监听对应插值的更改。
 
 
 ## Architecture

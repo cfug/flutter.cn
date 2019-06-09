@@ -38,7 +38,7 @@ reactive frameworks, you will find packages and tutorials listed on the
 
 ## Our example {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
 
-## 我们的示例 {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="一个显示正在使用的 Flutter 应用的 gif 动画。它最初的画面是一个登录页面。 用户登录以后转向类别页面，里面有一个元素列表。用户点击了几个元素，被点击的元素会被标注为 " added "。用户点击按钮，然后页面转向购物车视图。可以看到已选的元素都在那。再回到类别页面，所选择的元素也仍然保持 “ added ”。动画结束。" class='site-image-right' %}
+## 我们的示例 {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="一个显示正在使用的 Flutter 应用的 gif 动画。它最初的画面是一个登录页面。 用户登录以后转向类别页面，里面有一个商品列表。用户点击了几个商品，被点击的商品会被标注为 " added "。用户点击按钮，然后页面转向购物车视图。可以看到已选的商品都在那。再回到类别页面，所选择的商品也仍然保持 “ added ”。动画结束。" class='site-image-right' %}
 
 For illustration, consider the following simple app.
 
@@ -63,7 +63,7 @@ Here's the app visualized as a widget tree.
 
 {% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="A widget tree with MyApp at the top, and MyLoginScreen, MyCatalog and MyCart below it. MyLoginScreen and MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems." %}
 
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="MyApp 位于控件树的最顶部，然后下面是 MyLoginScreen， MyCatalog 和 MyCart。MyLoginScreen 和 MyCart 是控件树的叶子节点。MyCatalog have two 子节点: MyAppBar 和 MyListItem 列表。" %}
+{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="MyApp 位于控件树的最顶部，然后下面是 MyLoginScreen， MyCatalog 和 MyCart。MyLoginScreen 和 MyCart 是控件树的叶子节点。MyCatalog 有两个子节点: MyAppBar 和 MyListItem 列表。" %}
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
@@ -88,7 +88,7 @@ state of the cart?
 
 ## Lifting state up
 
-## 将状态提高
+## 提高状态的层级
 
 In Flutter, it makes sense to keep the state above the widgets that use it.
 
@@ -315,7 +315,7 @@ to `notifyListeners()`. Call this method any time the model changes in a way
 that might change your app's UI. Everything else in `CartModel` is the 
 model itself and its business logic.
 
-唯一一行和 `ChangeNotifier` 相关的代码就是调用 `notifyListeners()`。当模型发生改变并且需要更新 UI 的时候可以调用该方法。而其他的元素就属于`CartModel` 和它本身的业务逻辑。
+唯一一行和 `ChangeNotifier` 相关的代码就是调用 `notifyListeners()`。当模型发生改变并且需要更新 UI 的时候可以调用该方法。而剩下的代码就是 `CartModel` 和它本身的业务逻辑。
 
 `ChangeNotifier` is part of `flutter:foundation` and doesn't depend on 
 any higher-level classes in Flutter. It's easily testable (you don't even need
@@ -373,7 +373,7 @@ of `CartModel`. `ChangeNotifierProvider` is smart enough _not_ to rebuild
 `CartModel` unless absolutely necessary. It will also automatically call
 `dispose()` on `CartModel` when the instance is no longer needed.  
 
-请注意我们定义了一个 builder 来创建一个 `CartModel` 的实例。`ChangeNotifierProvider` 非常聪明，它不会重复实例化 `CartModel`，除非在个别场景下。如果该实例已经不会再被调用，`ChangeNotifierProvider` 也会自动调用 `CartModel` 的 `dispose()` 方法。
+请注意我们定义了一个 builder 来创建一个 `CartModel` 的实例。`ChangeNotifierProvider` 非常聪明，它 _不会_ 重复实例化 `CartModel`，除非在个别场景下。如果该实例已经不会再被调用，`ChangeNotifierProvider` 也会自动调用 `CartModel` 的 `dispose()` 方法。
 
 If you want to provide more than one class, you can use `MultiProvider`:
 
@@ -440,7 +440,7 @@ the `ChangeNotifier`. It's what we were asking for in the first place. You can
 use the data in the model to define what the UI should look like 
 at any given point.
 
-builder 函数的第一个参数是 `ChangeNotifier` 的实例。在最开始的时候就需要提供这个实例。你可以通过该实例定义 UI 的内容。
+builder 函数的第二个参数是 `ChangeNotifier` 的实例。在最开始的时候就需要提供这个实例。你可以通过该实例定义 UI 的内容。
 
 The third attribute is `child`, which is there for optimization.
 If you have a large widget subtree under your `Consumer`
@@ -515,7 +515,7 @@ button wants to allow the user to remove everything from the cart.
 It doesn't need to display the contents of the cart,
 it just needs to call the `clear()` method.
 
-有的时候你不需要模型中的 _数据_ 来改变 UI，但是你可能还是需要访问该数据。比如，`ClearCart` 按钮希望用户能够清空购物车的所有商品。它不需要显示购物车里的内容，只需要调用 `clear()` 方法。
+有的时候你不需要模型中的 _数据_ 来改变 UI，但是你可能还是需要访问该数据。比如，`ClearCart` 按钮能够清空购物车的所有商品。它不需要显示购物车里的内容，只需要调用 `clear()` 方法。
 
 We could use `Consumer<CartModel>` for this,
 but that would be wasteful. We'd be asking the framework to

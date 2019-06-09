@@ -70,6 +70,7 @@ To add a package 'css_colors' to an app:
 1. Install it
 
    安装
+
    * From the terminal: Run `flutter pub get`<br/>
    **OR**
      
@@ -118,6 +119,7 @@ For a complete example, see [CSS Colors example](#css-example) below.
 完整示例，参阅下面的 [CSS Colors example](#css-example) 。
 
 ### Conflict resolution
+
 
 ### 冲突解决
 
@@ -411,8 +413,8 @@ class DemoPage extends StatelessWidget {
 1. Run the app. When you click the 'Show Flutter homepage' you should see the
    phone's default browser open, and the Flutter homepage appear.
 
-
    运行应用。当你点击 'Show Flutter homepage' 时，你将看到手机默认浏览器打开并出现 Flutter 主页。
+   
 ### Example: Using the URL Launcher package to launch the browser {#url-example}
 
 ### 例子：使用 URL Launcher package 来打开浏览器 {#url-example}
@@ -502,4 +504,5 @@ class DemoPage extends StatelessWidget {
    you should see the phone's default browser open, and the Flutter
    homepage appear.
 
-   运行应用（如果你的应用在添加插件之前已经运行，请停止并重启应用）。当你点击 'Show Flutter homepage' 时，你将看到手机默认浏览器打开并出现 Flutter 主页。
+   运行应用（如果你的应用在添加插件之前已经运行，请停止并重启应用）。
+   当你点击 'Show Flutter homepage' 时，你将看到手机默认浏览器打开并出现 Flutter 主页。

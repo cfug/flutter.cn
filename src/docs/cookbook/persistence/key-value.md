@@ -7,12 +7,15 @@ prev:
   path: /docs/cookbook/persistence/reading-writing-files
 next:
   title: Play and pause a video
+  title: 视频的播放和暂停
   path: /docs/cookbook/plugins/play-video
 ---
 
 If you have a relatively small collection of key-values that you'd like
 to save, you can use the
 [shared_preferences]({{site.pub}}/packages/shared_preferences) plugin.
+
+如果你要存储的键值集合相对较少，则可以用 [shared_preferences]({{site.pub}}/packages/shared_preferences) 插件。
 
 Normally you would have to write native platform integrations for storing
 data on both platforms. Fortunately, the
@@ -21,18 +24,37 @@ plugin can be used to persist key-value data on disk. The shared preferences
 plugin wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
 
+通常你需要在两个平台用原生的方式存储数据。幸运的是 [shared_preferences]({{site.pub-pkg}}/shared_preferences) 插件可以把 key-value 保存到磁盘中。它通过封装 iOS 上的 `NSUserDefaults` 和 Android 上的 `SharedPreferences` 为简单数据提供持久化存储。
+
 ## Directions
 
+## 步骤
+
   1. Add the dependency
+
+     添加依赖
+
   2. Save Data
+
+     保存数据
+
   3. Read Data
+
+     读取数据
+
   4. Remove Data
 
+     移除数据
+
 ## 1. Add the dependency
+
+## 1. 添加依赖
 
 Before starting, you need to add the
 [shared_preferences]({{site.pub-pkg}}/shared_preferences)
 plugin to the `pubspec.yaml` file:
+
+在开始之前，你需要在 `pubspec.yaml` 文件中添加 [shared_preferences]({{site.pub-pkg}}/shared_preferences) 插件：
 
 ```yaml
 dependencies:
@@ -43,12 +65,18 @@ dependencies:
 
 ## 2. Save data
 
+## 2. 保存数据
+
 To persist data, use the setter methods provided by the
 `SharedPreferences` class. Setter methods are available for various primitive
 types, such as `setInt`, `setBool`, and `setString`.
 
+要存储数据，请使用 `SharedPreferences` 类的 setter 方法。Setter方法可用于各种基本数据类型，例如  `setInt`，`setBool`， 和 `setString`。
+
 Setter methods do two things: First, synchronously update the key-value pair
 in-memory. Then, persist the data to disk.
+
+Setter 方法做两件事：首先，同步更新 key-value 到内存中，然后保存到磁盘中。
 
 <!-- skip -->
 ```dart
@@ -61,9 +89,13 @@ prefs.setInt('counter', counter);
 
 ## 3. Read data
 
+## 3. 读取数据
+
 To read data, use the appropriate getter method provided by the
 `SharedPreferences` class. For each setter there is a corresponding getter.
 For example, you can use the `getInt`, `getBool`, and `getString` methods.
+
+要读取数据，请使用 `SharedPreferences` 类相应的 getter 方法。对于每一个 setter 方法都有对应的 getter 方法。例如，你可以使用 `getInt`， `getBool`，和 `getString` 方法。
 
 <!-- skip -->
 ```dart
@@ -75,7 +107,11 @@ final counter = prefs.getInt('counter') ?? 0;
 
 ## 4. Remove data
 
+## 4. 移除数据
+
 To delete data, use the `remove` method.
+
+使用 `remove` 方法删除数据。
 
 <!-- skip -->
 ```dart
@@ -86,25 +122,42 @@ prefs.remove('counter');
 
 ## Supported types
 
+## 支持类型
+
 While it is easy and convenient to use key-value storage, it has limitations:
+
+虽然使用 key-value 存储非常简单方便，但是它也有以下局限性：
 
 * Only primitive types can be used: `int`, `double`, `bool`, `string` and
   `stringList`
+  
+  只能用于基本数据类型： `int`，`double`，`bool`，`string` 和 `stringList`
+  
 * It's not designed to store a lot of data.
+
+  不适用于大量数据的存储。
 
 For more information about Shared Preferences on Android, see
 [Shared preferences
 documentation]({{site.android-dev}}/guide/topics/data/data-storage#pref)
 on the Android developers website.
 
+关于 Android 平台上 Shared Preferences 的更多信息，请前往 Android 开发者网站上查看 [Shared preferences 文档]({{site.android-dev}}/guide/topics/data/data-storage#pref) 。
+
 ## Testing support
+
+## 测试支持
 
 It can be a good idea to test code that persists data using
 `shared_preferences`. To do so, you'll need to mock out the
 `MethodChannel` used by the `shared_preferences` library.
 
+使用 `shared_preferences` 存储数据来测试代码是一个不错的思路。为此，你需要模拟出 `shared_preferences` 库的 `MethodChannel` 方法。
+
 You can populate `SharedPreferences` with initial values in your tests
 by running the following code in a `setupAll` method in your test files:
+
+在你的测试中，你可以通过在测试文件的 `setupAll` 方法中添加运行以下代码，对 `SharedPreferences` 的值进行初始：
 
 <!-- skip -->
 ```dart
@@ -119,6 +172,9 @@ const MethodChannel('plugins.flutter.io/shared_preferences')
 
 ## Example
 
+## 示例
+
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -202,3 +258,4 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
+

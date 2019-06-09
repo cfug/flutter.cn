@@ -77,7 +77,7 @@ To create a new Flutter project from the Flutter starter app template:
 
  1. If you might publish this app, [set the company domain](#note).
  
-    如果打算发布此应用，需要[设置公司域名](#note)。
+    如果打算发布此应用，需要 [设置公司域名](#note)。
 
  1. Click **Finish**.
 
@@ -115,14 +115,13 @@ files:
     在 IDE 中，点击 **Welcome** 窗口，或者主窗口 **File > New > Project** 中的 **Create New Project**。
     
     {{site.alert.important}}
+    
       Do *not* use the **New > Project from existing sources** option for
       Flutter projects.
-    {{site.alert.end}}
- 
-    {{site.alert.important}}
+      
       对于 Flutter 项目，请*不要*使用 **New > Project from existing sources**。
     {{site.alert.end}}
-    
+ 
  1. Select **Flutter** in the menu, and click **Next**.
   
     在菜单中选择 **Flutter**，点击 **Next**。
@@ -175,8 +174,6 @@ Running and debugging are controlled from the main toolbar:
 
 ![Main IntelliJ toolbar]({% asset tools/android-studio/main-toolbar.png @path %})
 
-![主工具栏]({% asset tools/android-studio/main-toolbar.png @path %})
-
 ### Selecting a target
 
 ### 选择目标设备
@@ -187,12 +184,11 @@ specific buttons on the right-hand side of the toolbar.
 在 IDE 中打开 Flutter 项目时，你会在工具栏的右侧看到一组 Flutter 的特定按钮。
 
 {{site.alert.note}}
+
   If the Run and Debug buttons are disabled, and no targets are listed,
   Flutter has not been able to discover any connected iOS or Android devices or
   simulators.  You need to connect a device, or start a simulator, to proceed.
-{{site.alert.end}}
-
-{{site.alert.note}}
+  
   如果 Run 和 Debug 按钮不可用，且未显示目标设备，则 Flutter 未发现任何已连接的 iOS 、Android 设备或模拟器。你需要连接设备或启动模拟器才能继续。
 {{site.alert.end}}
 
@@ -215,8 +211,6 @@ specific buttons on the right-hand side of the toolbar.
 
     点击工具栏中的 **Run** 按钮，或选择 **Run > Run**。
     底部的 **Run** 窗口会有日志输出：<br>
-
-    ![Log pane]({% asset tools/android-studio/log.png @path %})
 
     ![Log pane]({% asset tools/android-studio/log.png @path %})
 
@@ -254,7 +248,7 @@ Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the _hot reload_ feature. See
 [Using hot reload](hot-reload) for details.
 
-Flutter 有效加快开发周期。使用 _热重载_ 功能，你可以在修改源码后，几乎马上看到效果。详细信息请查阅[使用热重载](hot-reload)。
+Flutter 有效加快开发周期。使用 _热重载_ 功能，你可以在修改源码后，几乎马上看到效果。详细信息请查阅 [使用热重载](hot-reload)。
 
 ## Advanced debugging
 
@@ -270,14 +264,12 @@ and then open the Flutter inspector tool window using
 
 要调试布局问题，请在 **Debug** 模式下运行应用，然后使用 **View > Tool Windows > Flutter Inspector** 打开 Flutter 检查器窗口。
 
-![Flutter Inspector Window]({% asset tools/android-studio/visual-debugging.png @path %})
-
 ![Flutter Inspector Window]({% asset tools/android-studio/visual-debugging-zh-cn.png @path %})
 
 This offers many debugging tools; for details on these see
 [Debugging Flutter apps][].
 
-这里提供了许多调试工具，详细信息请查阅[调试 Flutter 应用][]。
+这里提供了许多调试工具，详细信息请查阅 [调试 Flutter 应用][]。
 
 * **Enable select widget mode**: Select a widget on the device to inspect
   in the [Flutter Inspector](/docs/development/tools/inspector).
@@ -342,8 +334,6 @@ using **View > Tool Windows > Flutter Performance**.
 
 ![Flutter performance window]({% asset tools/android-studio/widget-rebuild-info.png @path %})
 
-![Flutter 性能窗口]({% asset tools/android-studio/widget-rebuild-info.png @path %})
-
 To see the stats about which widgets are being rebuilt, and how often,
 click **Show widget rebuild information** in the **Performance** pane.
 The exact count of the rebuilds for this frame displays in the second
@@ -356,15 +346,15 @@ Otherwise, a grey spinning circle displays.
 点击 **Performance** 窗口中的 **Show widget rebuild information**，查看正在重载的 widget 统计信息和重载频率。右边第二列显示了所在框架的重载次数。如果重载次数过多，会显示一个黄色旋转圆圈。最右一列显示了进入当前页面后 widget 的重载次数。对于未重载的小部件，将显示一个灰色圆圈，否则将显示一个灰色旋转圆圈。
 
 {{site.alert.secondary}}
+
   The app shown in this screenshot has been designed to deliver
   poor performance, and the rebuild profiler gives you a clue
   about what is happening in the frame that might cause poor
   performance. The widget rebuild profiler is not a diagnostic
   tool, by itself, about poor performance.
-{{site.alert.end}}
-
-{{site.alert.secondary}}
+  
   截图中的应用性能较差，通过重载分析器，你可以找到导致性能差的线索。重载分析器不是一个性能诊断工具，但它和性能有关。
+
 {{site.alert.end}}
 
 The purpose of this feature is to make you aware when widgets are
@@ -423,7 +413,7 @@ And remember, _the widget rebuild information is only available in
 a debug build_. Test the app's performance on a real device in a profile
 build, but debug performance issues in a debug build.
 
-记住，_widget 的重载信息只在调试版本中可用_。在真机上使用分析版本进行应用性能分析，使用调试版本进行性能问题调试。
+记住，_widget 的重载信息只在 debug 版本中可用_。在真机上使用分析版本进行应用性能分析，使用调试版本进行性能问题调试。
 
 ### Debugging with Dart DevTools
 
@@ -438,7 +428,7 @@ Dart DevTools 是一组调试和分析工具，使用了 html 的 UI。DevTools 
 DevTools is still in development but is available to preview. For
 installation and getting started instructions, see the [DevTools' docs][].
 
-DevTools 仍在开发中，但可供预览。有关安装和入门说明，查阅 [DevTools' 文档][]
+DevTools 仍在开发中，但可供预览。有关安装和入门说明，查阅 [DevTools 文档][]
 
 ## Editing tips for Flutter code
 
@@ -460,8 +450,6 @@ the lightbulb, or by using the keyboard shortcut
 as illustrated here:
 
 Assists 辅助功能是特定代码标识符相关的代码修改。当光标放在 Flutter widget 上时，黄色灯泡图标会指示可用的修改，可以通过点击灯泡进行修改，或使用键盘快捷键（在 Linux 和 Windows 上使用 `Alt`+`Enter`，在 macOS 上使用 `Option`+`Return`），如下图所示：
-
-![IntelliJ editing assists]({% asset tools/android-studio/assists.gif @path %})
 
 ![IntelliJ editing assists]({% asset tools/android-studio/assists.gif @path %})
 
@@ -509,8 +497,6 @@ completion window:
 
 ![IntelliJ live templates]({% asset tools/android-studio/templates.gif @path %})
 
-![IntelliJ 实时模板]({% asset tools/android-studio/templates.gif @path %})
-
 The Flutter plugin includes the following templates:
 
 Flutter 插件包含了以下模板：
@@ -528,7 +514,7 @@ Flutter 插件包含了以下模板：
   associated State subclass, including a field initialized with an
   `AnimationController`.
 
-  前缀 `stful`：创建一个 `StatefulWidget` 的子类，并关联 State 子类，包含一个 `AnimationController` 的初始化字段。
+  前缀 `stanim`：创建一个 `StatefulWidget` 的子类，并关联 State 子类，包含一个 `AnimationController` 的初始化字段。
 
 You can also define custom templates in **Settings > Editor > Live Templates**.
 
@@ -650,11 +636,11 @@ you can open the Android files as their own project from the start:
    打开 flutter 应用根目录下的 `android` 子目录。例如，项目名为 `flutter_app`，则打开 `flutter_app/android`。
 
 If you haven't run your Flutter app yet, you may see Android Studio report a
-build error when you open the `android` project. Run `flutter packages get` in
+build error when you open the `android` project. Run `flutter pub get` in
 the app's root directory and rebuild the project by selecting **Build > Make**
 to fix it.
 
-如果你还未运行过你的 Flutter 应用，可能会在打开 `android` 项目时，看到 Android Studio 构建失败的报告。运行项目根目录的 `flutter packages get`，并通过点击 **Build > Make** 重建项目，可修复该问题。
+如果你还未运行过你的 Flutter 应用，可能会在打开 `android` 项目时，看到 Android Studio 构建失败的报告。运行项目根目录的 `flutter pub get`，并通过点击 **Build > Make** 重建项目，可修复该问题。
 
 ## Editing Android code in IntelliJ IDEA {#edit-android-code}
 
@@ -750,7 +736,7 @@ When filing new issues, include the output of [`flutter doctor`][].
 
 [DevTools' docs]: https://flutter.github.io/devtools
 
-[DevTools' 文档]: https://flutter.github.io/devtools
+[DevTools 文档]: https://flutter.github.io/devtools
 
 [GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
 

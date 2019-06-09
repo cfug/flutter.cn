@@ -34,7 +34,7 @@ into some code, check out
 
 The minimal Flutter app simply calls the [runApp()][] function with a widget:
 
-一个最基小的 Flutter 工程只需要在组件中调用 [runApp()](https://api.flutter.dev/flutter/widgets/runApp.html) 方法。
+创建一个最小的 Flutter 工程只需要在组件中调用 [runApp()](https://api.flutter.dev/flutter/widgets/runApp.html) 方法，并传入一个 Widget 即可。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -61,9 +61,9 @@ on screen. The text direction needs to be specified in this instance; when the
 MaterialApp widget is used, this is taken care of for you, as demonstrated
 later.
 
-[runApp()](https://api.flutter.dev/flutter/widgets/runApp.html) 会持有组件，并且使该组件成为组件树结构中的根节点。在这个实例中：一棵组件树有两个组件，
-[中心组件](https://api.flutter.dev/flutter/widgets/Center-class.html)及其子组件，文本组件。框架在布局时，根组件会铺满整个屏幕，也就是说 ”Hello World”
-会在屏幕中居中显示。在该例中我们需要指定文本的位置，如果使用 MaterialApp 组件时，你需要考虑这一点，之后我们会进一步的描述。
+[runApp()](https://api.flutter.dev/flutter/widgets/runApp.html) 会持有 [Widget]({{api}}/widgets/Widget-class.html)，并且使该组件成为组件树结构中的根节点。在这个实例中：一棵组件树有两个组件，
+[Center](https://api.flutter.dev/flutter/widgets/Center-class.html) 组件及其子组件，[Text]({{api}}/widgets/Text-class.html) 组件。框架在布局时，根组件会铺满整个屏幕，也就是说 ”Hello World”
+会在屏幕中居中显示。在该例中我们需要指定文本的方向为从左到右，当使用 MaterialApp 组件时，你需要考虑这一点，之后我们会进一步的描述。
 
 When writing an app, you'll commonly author new widgets that are subclasses of
 either [StatelessWidget]({{api}}/widgets/StatelessWidget-class.html) or
@@ -75,9 +75,10 @@ widgets in turn until the process bottoms out in widgets that represent the
 underlying [RenderObject]({{api}}/rendering/RenderObject-class.html), which
 computes and describes the geometry of the widget.
 
-在写应用的过程中，你可能会创建一个新的组件继承无状态组件或有状态组件，这取决于该组件是否有管理组件的状态。
-组件的主要工作是是实现[构建](https://api.flutter.dev/flutter/widgets/StatelessWidget/build.html)方法。
-该方法描述了其他更低层级的组件。框架会逐一构建这些组件直到最底层的计算和描述组件的[渲染对象](https://api.flutter.dev/flutter/rendering/RenderObject-class.html)组件构建完成。
+在写应用的过程中，你通常会创建一个新的组件继承 [StatelessWidget]({{api}}/widgets/StatelessWidget-class.html) 或 
+[StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)，这取决于 widget 是否有管理组件的状态。
+组件的主要工作是是实现 [build](https://api.flutter.dev/flutter/widgets/StatelessWidget/build.html) 方法。
+该方法描述了其他更低层级的组件。框架会逐一构建这些组件直到最底层的代表 [RenderObject](https://api.flutter.dev/flutter/rendering/RenderObject-class.html) 的组件创建完成， [RenderObject](https://api.flutter.dev/flutter/rendering/RenderObject-class.html) 它用来计算和描述组件的几何形状的。
 
 ## Basic widgets
 
@@ -113,7 +114,7 @@ Flutter 有很多基础组件，下面列出的组件是一些常用组件：
    
 * [Stack](https://api.flutter.dev/flutter/widgets/Stack-class.html)：和以线性(水平或垂直)布局为主的组件不一样，
    [栈](https://api.flutter.dev/flutter/widgets/Stack-class.html)组件可以让组件居于绘制顺序的顶部。
-   你可以让[指定位置](https://api.flutter.dev/flutter/widgets/Positioned-class.html)组件成为
+   你可以让 [Positioned](https://api.flutter.dev/flutter/widgets/Positioned-class.html) 组件成为
    [栈](https://api.flutter.dev/flutter/widgets/Stack-class.html)的子组件，居于栈的上，右，下，左的位置。栈是基于 Web 中的绝对位置布局模型设计的。
 
  * [Container]({{api}}/widgets/Container-class.html): The
@@ -243,8 +244,8 @@ ratio in which they consume the available space using the
 [flex]({{api}}/widgets/Expanded-class.html#flex) argument to
 [Expanded]({{api}}/widgets/Expanded-class.html).
 
-上例中的 MyAppBar 组件创建了一个高为56像素的[容器](https://api.flutter.dev/flutter/widgets/Container-class.html)，
-左右内边缘为8像素。在容器里面，MyAppBar 以[水平](https://api.flutter.dev/flutter/widgets/Row-class.html)
+上例中的 MyAppBar 组件创建了一个高为 56 像素的[容器](https://api.flutter.dev/flutter/widgets/Container-class.html)，
+左右内边缘为 8 像素。在容器里面，MyAppBar 以[水平](https://api.flutter.dev/flutter/widgets/Row-class.html)
 布局来布局子元素。中间子元素也就是标题组件，设为[扩展](https://api.flutter.dev/flutter/widgets/Expanded-class.html)
 填充，也就是它要填充剩余空间。你可以定义多个[扩展](https://api.flutter.dev/flutter/widgets/Expanded-class.html)
 子元素，然后用 [flex](https://api.flutter.dev/flutter/widgets/Expanded-class.html) 属性设置每个子元素所占的比进行[扩展](https://api.flutter.dev/flutter/widgets/Expanded-class.html)。

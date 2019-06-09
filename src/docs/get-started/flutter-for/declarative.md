@@ -17,7 +17,7 @@ _这篇介绍描述了 Flutter 所使用的声明式 UI 和许多其他 UI 框�
 ## 为什么是声明式 UI？
 
 Frameworks from Win32 to web to Android and iOS typically use an imperative
-style of UI programming. This may be the style you’re most familiar
+style of UI programming. This might be the style you’re most familiar
 with&mdash;where you manually construct a full-functioned UI entity,
 such as a UIView or equivalent, and later mutate it using methods and
 setters when the UI changes.
@@ -59,8 +59,8 @@ ViewC c3 = new ViewC(...)
 b.add(c3)
 ```
 
-You may also need to replicate this configuration in the constructor of
-ViewB since the source of truth for the UI may outlive instance `b` itself.
+You might also need to replicate this configuration in the constructor of
+ViewB since the source of truth for the UI might outlive instance `b` itself.
 
 由于 UI 真实的来源可能比实例 `b` 本身的存活周期更长，你可能还需要在 ViewB 的构造函数中复制此配置。
 

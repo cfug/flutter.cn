@@ -27,7 +27,6 @@ The following describes each mode and when to use it.
 ## Debug
 ## Debug 模式
 
-## Debug 模式
 In _debug mode_, the app is set up for debugging on the physical
 device, emulator, or simulator. Debug mode means that:
 

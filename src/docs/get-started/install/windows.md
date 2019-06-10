@@ -1,6 +1,6 @@
 ---
 title: Windows install
-title: Windows 下 Flutter 的安装和开发环境配置
+title: 在 Windows 操作系统上安装和配置 Flutter 开发环境
 short-title: Windows
 # js: [{defer: true, url: /assets/archive.js}]
 next:

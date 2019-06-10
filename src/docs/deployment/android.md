@@ -53,7 +53,7 @@ Icons]({{site.pub}}/packages/flutter_launcher_icons) package.
 
 Alternatively, if you want to do it manually, here's how:
 
-1. Review the [Android Launcher Icons][launchericons] guidelines for icon
+1. Review the [Material Design Product Icons][launchericons] guidelines for icon
    design.
 
 1. In the `<app dir>/android/app/src/main/res/` directory, place your icon files
@@ -264,7 +264,7 @@ ways in which to test an app bundle.
 
 ### Offline using the bundle tool
 
-1. If you have done done so already, download `bundletool` from the
+1. If you have done so already, download `bundletool` from the
 [GitHub repository](https://github.com/google/bundletool).
 1. [Generate a set of
 APKs](https://developer.android.com/studio/command-line/bundletool#generate_apks)
@@ -289,7 +289,7 @@ to the Play Store.
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [versions]: {{site.android-dev}}/studio/publish/versioning
-[launchericons]: {{site.android-dev}}/guide/practices/ui_guidelines/icon_design_launcher
+[launchericons]: https://material.io/design/iconography/
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [Issue 18494]: https://github.com/flutter/flutter/issues/18494

@@ -13,7 +13,7 @@ way to get started learning Flutter development.
 这篇文章是为那些想将已有的 iOS 开发经验运用到 Flutter 开发中的 iOS 开发者所作。
 如果你理解 iOS framework 的基本原理，那么你可以将这篇文章作为学习 Flutter 开发的起点。
 
-Before diving into this doc, you may want to watch a 15-minute video from
+Before diving into this doc, you might want to watch a 15-minute video from
 the [Flutter Youtube channel](https://www.youtube.com/flutterdev) about
 the Cupertino package.
 

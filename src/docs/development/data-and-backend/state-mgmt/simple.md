@@ -17,10 +17,10 @@ and the difference between [ephemeral and app
 state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app),
 you are ready to learn about simple app state management.
 
-On this page, we are going to be using the `scoped_model` package.
+On this page, we are going to be using the `provider` package.
 If you are new to Flutter and you don't have a strong reason to choose
 another approach (Redux, Rx, hooks, etc.), this is probably the approach
-you should start with. `scoped_model` is easy to understand and it doesn't
+you should start with. `provider` is easy to understand and it doesn't
 use much code. It also uses concepts that are applicable in every other
 approach.
 
@@ -105,7 +105,7 @@ construct new widgets in the build methods of their parents,
 if you want to change `contents`, it needs to live in `MyCart`'s
 parent or above.
 
-<?code-excerpt "state_mgmt/simple/lib/src/scoped_model.dart (myTapHandler)"?>
+<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (myTapHandler)"?>
 ```dart
 // GOOD
 void myTapHandler(BuildContext context) {
@@ -116,7 +116,7 @@ void myTapHandler(BuildContext context) {
 
 Now `MyCart` has only one code path for building any version of the UI.
 
-<?code-excerpt "state_mgmt/simple/lib/src/scoped_model.dart (build)"?>
+<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (build)"?>
 ```dart
 // GOOD
 Widget build(BuildContext context) {
@@ -185,56 +185,62 @@ kinds of widgets&mdash;`InheritedWidget`, `InheritedNotifier`,
 because they are a bit low-level for what we're trying to do.
 
 Instead, we are going to use a package that works with the low-level
-widgets but is simple to use. It's called `scoped_model`.
+widgets but is simple to use. It's called `provider`.
 
-With `scoped_model`, you don't need to worry about callbacks or
+With `provider`, you don't need to worry about callbacks or
 `InheritedWidgets`. But you do need to understand 3 concepts:
 
-* Model
-* ScopedModel
-* ScopedModelDescendant
+* ChangeNotifier
+* ChangeNotifierProvider
+* Consumer
 
 
-## Model
+## ChangeNotifier
 
-In `scoped_model`, the `Model` encapsulates your application state.
-For very simple apps, you get by with a single model. In complex ones,
-you'll have several models.
+`ChangeNotifier` is a simple class included in the Flutter SDK which provides
+change notification to its listeners. In other words, if something is 
+a `ChangeNotifier`, you can subscribe to its changes. (It is a form of 
+Observable, for those familiar with the term.)
+
+In `provider`, `ChangeNotifier` is one way to encapsulate your application 
+state. For very simple apps, you get by with a single `ChangeNotifier`. 
+In complex ones, you'll have several models, and therefore several 
+`ChangeNotifiers`. (You don't need to use `ChangeNotifier` with `provider`
+at all, but it's an easy class to work with.)
 
 In our shopping app example, we want to manage the state of the cart in a
-`Model`. We create a new class that extends Model. Like so:
+`ChangeNotifier`. We create a new class that extends it, like so:
 
-<?code-excerpt "state_mgmt/simple/lib/src/scoped_model.dart (model)"?>
+<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
 ```dart
-class CartModel extends Model {
+class CartModel extends [!ChangeNotifier!] {
   /// Internal, private state of the cart.
   final List<Item> _items = [];
 
   /// An unmodifiable view of the items in the cart.
   UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
 
-  /// The current total price of all items (assuming all items cost $1).
-  int get totalPrice => _items.length;
+  /// The current total price of all items (assuming all items cost $42).
+  int get totalPrice => _items.length * 42;
 
   /// Adds [item] to cart. This is the only way to modify the cart from outside.
   void add(Item item) {
     _items.add(item);
-    // This call tells [Model] that it should rebuild the widgets that
-    // depend on it.
-    notifyListeners();
+    // This call tells the widgets that are listening to this model to rebuild.
+    [!notifyListeners!]();
   }
 }
 ```
 
-The only code that is specific to `Model` is the call to `notifyListeners()`.
-Call this method any time the model changes in a way that might change your
-app's UI. Everything else in `CartModel` is the model itself and its business
-logic.
+The only code that is specific to `ChangeNotifier` is the call 
+to `notifyListeners()`. Call this method any time the model changes in a way 
+that might change your app's UI. Everything else in `CartModel` is the 
+model itself and its business logic.
 
-Model doesn't depend on any high-level classes in Flutter, so it's easily
-testable (you don't even need to use [widget
-testing](/docs/testing#widget-testing) for it). For example,
-here's a simple unit test of CartModel:
+`ChangeNotifier` is part of `flutter:foundation` and doesn't depend on 
+any higher-level classes in Flutter. It's easily testable (you don't even need
+to use [widget testing](/docs/testing#widget-tests) for it). For example,
+here's a simple unit test of `CartModel`:
 
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
 ```dart
@@ -248,68 +254,65 @@ test('adding item increases total cost', () {
 });
 ```
 
-But `Model` really starts to make sense when used with the rest of the
-`scoped_model` package.
 
+## ChangeNotifierProvider
 
-## ScopedModel
+`ChangeNotifierProvider` is the widget that provides an instance of 
+a `ChangeNotifier` to its descendants. It comes from the `provider` package.
 
-`ScopedModel` is the widget that provides an instance of `Model` to its
-descendants.
+We already know where to put `ChangeNotifierProvider`: above the widgets that
+will need to access it. In the case of `CartModel`, that means somewhere 
+above both `MyCart` and `MyCatalog`.
 
-We already know where to put it: above the widgets that will need to access it.
-In the case of `CartModel`, that means somewhere above both `MyCart`
-and `MyCatalog`.
-
-You don't want to place `ScopedModel` higher than necessary
+You don't want to place `ChangeNotifierProvider` higher than necessary
 (because you don't want to pollute the scope). But in our case,
 the only widget that is on top of both `MyCart` and `MyCatalog` is `MyApp`.
 
-<?code-excerpt "state_mgmt/simple/lib/main.dart (main)"?>
+<?code-excerpt "state_mgmt/simple/lib/main.dart (main)" replace="/ChangeNotifierProvider/[!$&!]/g"?>
 ```dart
 void main() {
-  final cart = CartModel();
-
-  // You could optionally connect [cart] with some database here.
-
   runApp(
-    ScopedModel<CartModel>(
-      model: cart,
+    [!ChangeNotifierProvider!](
+      builder: (context) => CartModel(),
       child: MyApp(),
     ),
   );
 }
 ```
 
-Note that we're creating `ScopedModel<CartModel>` (read: "ScopedModel
-of CartModel"). The `scoped_model` package relies on types to find the
-right model, and the `<CartModel>` part makes it clear what type we're
-providing here.
+Note that we're defining a builder which will create a new instance
+of `CartModel`. `ChangeNotifierProvider` is smart enough _not_ to rebuild
+`CartModel` unless absolutely necessary. It will also automatically call
+`dispose()` on `CartModel` when the instance is no longer needed.  
 
-If you want to provide more than one model, you need to nest the ScopedModels:
+If you want to provide more than one class, you can use `MultiProvider`:
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/main.dart (multi-provider-main)" replace="/multiProviderMain/main/g;/MultiProvider/[!$&!]/g"?>
 ```dart
-ScopedModel<SomeOtherModel>(
-  model: myOtherModel,
-  child: ScopedModel<CartModel>(
-    model: cart,
-    child: MyApp(),
-  ),
-)
+void main() {
+  runApp(
+    [!MultiProvider!](
+      providers: [
+        ChangeNotifierProvider(builder: (context) => CartModel()),
+        Provider(builder: (context) => SomeOtherClass()),
+      ],
+      child: MyApp(),
+    ),
+  );
+}
 ```
 
-## ScopedModelDescendant
+## Consumer
 
 Now that `CartModel` is provided to widgets in our app through the
-`ScopedModel<CartModel>` declaration at the top, we can start using it.
+`ChangeNotifierProvider` declaration at the top, we can start using it.
 
-This is done through the `ScopedModelDescendant` widget.
+This is done through the `Consumer` widget.
 
-<?code-excerpt "state_mgmt/simple/lib/src/scoped_model.dart (descendant)"?>
+<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (descendant)" replace="/Consumer/[!$&!]/g"?>
 ```dart
-return ScopedModelDescendant<CartModel>(
-  builder: (context, child, cart) {
+return [!Consumer!]<CartModel>(
+  builder: (context, cart, child) {
     return Text("Total price: ${cart.totalPrice}");
   },
 );
@@ -317,54 +320,53 @@ return ScopedModelDescendant<CartModel>(
 
 We must specify the type of the model that we want to access.
 In this case, we want `CartModel`, so we write
-`ScopedModelDescendant<CartModel>`. If you don't specify
-the generic (`<CartModel>`), the `scoped_model` package
-won't be able to help you. As mentioned above,
-`scoped_model` is based on types, and without the type,
-it doesn't know what you want.
+`Consumer<CartModel>`. If you don't specify the generic (`<CartModel>`),
+the `provider` package won't be able to help you. `provider` is based on types,
+and without the type, it doesn't know what you want.
 
-The only required argument of the `ScopedModelDescendant` widget
+The only required argument of the `Consumer` widget
 is the builder. Builder is a function that is called whenever the
-model changes. (In other words, when you call `notifyListeners()`
+`ChangeNotifier` changes. (In other words, when you call `notifyListeners()`
 in your model, all the builder methods of all the corresponding
-`ScopedModelDescendant` widgets are called.)
+`Consumer` widgets are called.)
 
 The builder is called with three attributes. The first one is `context`,
-which you also get in every build method. 
+which you also get in every build method.
 
-The second attribute is `child`, which is there for optimization.
-If you have a large widget subtree under your `ScopedModelDescendant`
+The second argument of the builder function is the instance of 
+the `ChangeNotifier`. It's what we were asking for in the first place. You can
+use the data in the model to define what the UI should look like 
+at any given point.
+
+The third attribute is `child`, which is there for optimization.
+If you have a large widget subtree under your `Consumer`
 that _doesn't_ change when the model changes, you can construct it
 once and get it through the builder.
 
-<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)"?>
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)" replace="/\bchild\b/[!$&!]/g"?>
 ```dart
-return ScopedModelDescendant<CartModel>(
-  builder: (context, child, cart) => Stack(
+return Consumer<CartModel>(
+  builder: (context, cart, [!child!]) => Stack(
         children: [
           // Use SomeExpensiveWidget here, without rebuilding every time.
-          child,
+          [!child!],
           Text("Total price: ${cart.totalPrice}"),
         ],
       ),
   // Build the expensive widget here.
-  child: SomeExpensiveWidget(),
+  [!child!]: SomeExpensiveWidget(),
 );
 ```
 
-The third argument of the builder function is the model. That's
-what we were asking for in the first place. You can use the data
-in the model to define what the UI should look like at any given point.
-
-It is best practice to put your `ScopedModelDescendant` widgets as
-deep in the tree as possible. You don't want to rebuild large portions
-of the UI just because some detail somewhere changed.
+It is best practice to put your `Consumer` widgets as deep in the tree
+as possible. You don't want to rebuild large portions of the UI
+just because some detail somewhere changed.
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
 // DON'T DO THIS
-return ScopedModelDescendant<CartModel>(
-  builder: (context, child, cart) {
+return Consumer<CartModel>(
+  builder: (context, cart, child) {
     return HumongousWidget(
       // ...
       child: AnotherMonstrousWidget(
@@ -385,8 +387,8 @@ return HumongousWidget(
   // ...
   child: AnotherMonstrousWidget(
     // ...
-    child: ScopedModelDescendant<CartModel>(
-      builder: (context, child, cart) {
+    child: Consumer<CartModel>(
+      builder: (context, cart, child) {
         return Text('Total price: ${cart.totalPrice}');
       },
     ),
@@ -394,7 +396,7 @@ return HumongousWidget(
 );
 ```
 
-### ScopedModel.of
+### Provider.of
 
 Sometimes, you don't really need the _data_ in the model to change the
 UI but you still need to access it. For example, a `ClearCart`
@@ -402,33 +404,31 @@ button wants to allow the user to remove everything from the cart.
 It doesn't need to display the contents of the cart,
 it just needs to call the `clear()` method.
 
-We could use `ScopedModelDescendant<CartModel>` for this,
+We could use `Consumer<CartModel>` for this,
 but that would be wasteful. We'd be asking the framework to
-rebuild a widget that doesn't need to be rebuilt. 
+rebuild a widget that doesn't need to be rebuilt.
 
-For this use case, we can use `ScopedModel.of`. 
+For this use case, we can use `Provider.of`, with the `listen` parameter
+set to `false`. 
 
-<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)"?>
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
-ScopedModel.of<CartModel>(context).add(item);
+Provider.of<CartModel>(context, [!listen: false!]).add(item);
 ```
 
 Using the above line in a build method will not cause this widget to
 rebuild when `notifyListeners` is called.
 
-Note: You can also use `ScopedModelDescendant<CartModel>(builder: myBuilder,
-rebuildOnChange: false)` but that's longer and requires you to define the
-builder function.
 
 ## Putting it all together
 
 You can [check out the
-example]({{site.github}}/filiph/samples/tree/scoped-model-shopper/model_shopper)
+example]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)
 covered in this article. If you want something simpler,
 you can see how the simple Counter app looks like when [built with
-scoped_model](https://github.com/flutter/samples/tree/master/scoped_model_counter).
+`provider`](https://github.com/flutter/samples/tree/master/provider_counter).
 
-When you're ready to play around with `scoped_model` yourself,
+When you're ready to play around with `provider` yourself,
 don't forget to add the dependency on it to your `pubspec.yaml` first.
 
 ```yaml
@@ -441,11 +441,11 @@ dependencies:
   flutter:
     sdk: flutter
 
-  scoped_model: ^1.0.0
+  provider: ^2.0.0
 
 dev_dependencies:
   # ...
 ```
 
-Now you can `import 'package:scoped_model/scoped_model.dart';`
+Now you can `import 'package:provider/provider.dart';`
 and start building.

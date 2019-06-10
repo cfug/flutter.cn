@@ -152,7 +152,7 @@
               permalink: /docs/development/tools/sdk/releases
         - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload
-        - title: 代码格式
+        - title: 代码格式化
           permalink: /docs/development/tools/formatting
         - title: Flutter Inspector
           permalink: https://flutter.github.io/devtools/inspector

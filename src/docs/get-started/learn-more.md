@@ -26,7 +26,7 @@ Learn more about the Flutter framework from the following pages:
 ## 应用其他平台开发经验
 
 * [给 Android 开发者的 Flutter 指南](/docs/get-started/flutter-for/android-devs)
-* [为 Java 开发人员准备的Dart 教程](https://codelabs.flutter-io.cn/codelabs/from-java-to-dart-cn/index.html)
+* [为 Java 开发人员准备的 Dart 教程](https://codelabs.flutter-io.cn/codelabs/from-java-to-dart-cn/index.html)
 * [给 iOS 开发者的 Flutter 指南](/docs/get-started/flutter-for/ios-devs)
 * [给 React Native 开发者的 Flutter 指南](/docs/get-started/flutter-for/react-native-devs)
 * [给 Web 开发者的 Flutter 指南](/docs/get-started/flutter-for/web-devs)
@@ -40,6 +40,7 @@ Learn more about the Flutter framework from the following pages:
 * [Flutter 实用教程 (cookbook)](/docs/cookbook)
 * [Dart 语言指引](/docs/resources/bootstrap-into-dart)
 * [Flutter API 文档]({{site.api}})
+* [Udemy 线上课程 (英文): The Complete Flutter Developer Bootcamp Using Dart](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart)
 * [Udacity 线上课程](https://cn.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 
 Reach out to us at our [mailing list][]. We'd love to hear from you!

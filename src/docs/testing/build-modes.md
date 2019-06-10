@@ -74,7 +74,7 @@ supported on the simulator or emulator, means that:
 
 * Debugging information is stripped out.
 
-* 调试信息是不可见的。
+  调试信息是不可见的。
 
 * Debugging is disabled.
 

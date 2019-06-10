@@ -50,7 +50,7 @@ and `MyCart` widgets, respectively). It could be a shopping app,
 but you can imagine the same structure in a simple social networking
 app (replace catalog for "wall" and cart for "favorites").
 
-程序有三个独立的页面：一个登陆提示，一个类别页面，一个购物车页面（分别用 `MyLoginScreen`, `MyCatalog`，`MyCart`控件来展示）。虽然看上去是一个购物应用程序，但是你也可以和社交网络应用类比（把类别页面替换成朋友圈，把购物车替换成关注的人）。
+程序有三个独立的页面：一个登陆提示，一个类别页面，一个购物车页面（分别用 `MyLoginScreen`, `MyCatalog`，`MyCart` widget 来展示）。虽然看上去是一个购物应用程序，但是你也可以和社交网络应用类比（把类别页面替换成朋友圈，把购物车替换成关注的人）。
 
 The catalog screen includes a custom app bar (`MyAppBar`)
 and a scrolling view of many list items (`MyListItems`).
@@ -59,18 +59,18 @@ and a scrolling view of many list items (`MyListItems`).
 
 Here's the app visualized as a widget tree.
 
-这是应用程序对应的可视化的控件树。
+这是应用程序对应的可视化的 widget 树。
 
 {% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="A widget tree with MyApp at the top, and MyLoginScreen, MyCatalog and MyCart below it. MyLoginScreen and MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems." %}
 
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="MyApp 位于控件树的最顶部，然后下面是 MyLoginScreen， MyCatalog 和 MyCart。MyLoginScreen 和 MyCart 是控件树的叶子节点。MyCatalog 有两个子节点: MyAppBar 和 MyListItem 列表。" %}
+{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="MyApp 位于 widget 树的最顶部，然后下面是 MyLoginScreen， MyCatalog 和 MyCart。MyLoginScreen 和 MyCart 是 widget 树的叶子节点。MyCatalog 有两个子节点: MyAppBar 和 MyListItem 列表。" %}
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
 {% endcomment %}
 
 {% comment %}
-  上面控件树的图片可以在这个地址找到: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
+  上面 widget 树的图片可以在这个地址找到: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
 {% endcomment %}
 
 So we have at least 6 subclasses of `Widget`. Many of them will need
@@ -92,7 +92,7 @@ state of the cart?
 
 In Flutter, it makes sense to keep the state above the widgets that use it.
 
-在 Flutter 中，有必要将状态置于对应控件之上。
+在 Flutter 中，有必要将状态置于对应 widget 之上。
 
 Why? In declarative frameworks like Flutter, if you want to change the UI,
 you have to rebuild it. There is no easy way to have
@@ -101,7 +101,7 @@ imperatively change a widget from outside, by calling a method on it.
 And even if you could make this work, you would be fighting the
 framework instead of letting it help you.
 
-为什么呢？在类似 Flutter 的声明式框架中，如果你想要修改 UI，那么你需要重构它。并没有类似 `MyCart.updateWith(somethingNew)` 的简单调用方法。换言之，无法通过调用方法从外部修改一个控件。即便是你自己实现了这样的模式，那也是和整个框架不兼容。
+为什么呢？在类似 Flutter 的声明式框架中，如果你想要修改 UI，那么你需要重构它。并没有类似 `MyCart.updateWith(somethingNew)` 的简单调用方法。换言之，无法通过调用方法从外部修改一个 widget 。即便是你自己实现了这样的模式，那也是和整个框架不兼容。
 <!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
@@ -114,7 +114,7 @@ void myTapHandler() {
 Even if you get the above code to work, you will then have to deal
 with the following in the `MyCart` widget:
 
-即使你实现了上面的代码，也得处理 `MyCart` 控件中的代码： 
+即使你实现了上面的代码，也得处理 `MyCart`  widget 中的代码： 
 
 <!-- skip -->
 ```dart
@@ -142,7 +142,7 @@ construct new widgets in the build methods of their parents,
 if you want to change `contents`, it needs to live in `MyCart`'s
 parent or above.
 
-在 Flutter 中，每次当控件内容发生改变的时候，你就创建一个新的。你会调用 `MyCart(contents)`（构造函数），而不是 `MyCart.updateWith(somethingNew)`（调用方法）。因为你只能通过父类的 build 方法来构建新控件，如果你想修改 `contents`，就需要调用 `MyCart` 的父类甚至更高一级的类。
+在 Flutter 中，每次当 widget 内容发生改变的时候，你就创建一个新的。你会调用 `MyCart(contents)`（构造函数），而不是 `MyCart.updateWith(somethingNew)`（调用方法）。因为你只能通过父类的 build 方法来构建新 widget ，如果你想修改 `contents`，就需要调用 `MyCart` 的父类甚至更高一级的类。
 
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (myTapHandler)"?>
 ```dart
@@ -175,7 +175,7 @@ it rebuilds `MyCart` from above (more on that later). Because of this,
 what to show for any given `contents`. When that changes, the old
 `MyCart` widget disappears and is completely replaced by the new one.
 
-在我们的例子中，`contents`会存在于 `MyApp` 的生命周期中。当它发生改变的时候，它会从上层重构 `MyCart` 。因为这个机制，所以 `MyCart` 无需考虑生命周期的问题&mdash;它只需要针对 `contents` 声明所需显示内容即可。当内容发生改变的时候，旧的 `MyCart` 控件就会消失，完全被新的控件替代。
+在我们的例子中，`contents`会存在于 `MyApp` 的生命周期中。当它发生改变的时候，它会从上层重构 `MyCart` 。因为这个机制，所以 `MyCart` 无需考虑生命周期的问题&mdash;它只需要针对 `contents` 声明所需显示内容即可。当内容发生改变的时候，旧的 `MyCart`  widget 就会消失，完全被新的 widget 替代。
 
 {% asset development/data-and-backend/state-mgmt/simple-widget-tree-with-cart alt="Same widget tree as above, but now we show a small 'cart' badge next to MyApp, and there are two arrows here. One comes from one of the MyListItems to the 'cart', and another one goes from the 'cart' to the MyCart widget." %}
 
@@ -192,7 +192,7 @@ what to show for any given `contents`. When that changes, the old
 This is what we mean when we say that widgets are immutable.
 They don't change&mdash;they get replaced.
 
-这就是我们所说的控件是不可变的。因为它们会直接被替换。
+这就是我们所说的 widget 是不可变的。因为它们会直接被替换。
 
 Now that we know where to put the state of the cart, let's see how
 to access it.
@@ -245,13 +245,13 @@ kinds of widgets&mdash;`InheritedWidget`, `InheritedNotifier`,
 `InheritedModel`, and more. We won't be covering those here,
 because they are a bit low-level for what we're trying to do.
 
-幸运的是 Flutter 内含一种机制可以让空间为它的下游空间提供数据和服务（换言之，不仅仅是它的子节点，所有在它下层的控件都可以）。就像你所了解的， Flutter 中的 _Everything is a Widget™_。这里的机制也是一种控件&mdash;`InheritedWidget`, `InheritedNotifier`,
-`InheritedModel`等等。我们这里不会详细解释他们，因为这些控件都太底层。
+幸运的是 Flutter 内含一种机制可以让空间为它的下游空间提供数据和服务（换言之，不仅仅是它的子节点，所有在它下层的 widget 都可以）。就像你所了解的， Flutter 中的 _Everything is a Widget™_。这里的机制也是一种 widget &mdash;`InheritedWidget`, `InheritedNotifier`,
+`InheritedModel`等等。我们这里不会详细解释他们，因为这些 widget 都太底层。
 
 Instead, we are going to use a package that works with the low-level
 widgets but is simple to use. It's called `provider`.
 
-我们会用一个包来和这些底层的控件打交道，就是 `provider` 包。
+我们会用一个包来和这些底层的 widget 打交道，就是 `provider` 包。
 
 With `provider`, you don't need to worry about callbacks or
 `InheritedWidgets`. But you do need to understand 3 concepts:
@@ -342,13 +342,13 @@ test('adding item increases total cost', () {
 `ChangeNotifierProvider` is the widget that provides an instance of 
 a `ChangeNotifier` to its descendants. It comes from the `provider` package.
 
-`ChangeNotifierProvider` 控件可以返回一个 `ChangeNotifier` 实例。它属于 `provider` 包。
+`ChangeNotifierProvider`  widget 可以返回一个 `ChangeNotifier` 实例。它属于 `provider` 包。
 
 We already know where to put `ChangeNotifierProvider`: above the widgets that
 will need to access it. In the case of `CartModel`, that means somewhere 
 above both `MyCart` and `MyCatalog`.
 
-我们已经知道了该把 `ChangeNotifierProvider` 放在什么位置：在需要访问它的控件之上。在 `CartModel` 里，也就意味着将它置于 `MyCart` 和 `MyCatalog` 之上。
+我们已经知道了该把 `ChangeNotifierProvider` 放在什么位置：在需要访问它的 widget 之上。在 `CartModel` 里，也就意味着将它置于 `MyCart` 和 `MyCatalog` 之上。
 
 You don't want to place `ChangeNotifierProvider` higher than necessary
 (because you don't want to pollute the scope). But in our case,
@@ -399,11 +399,11 @@ void main() {
 Now that `CartModel` is provided to widgets in our app through the
 `ChangeNotifierProvider` declaration at the top, we can start using it.
 
-现在 `CartModel` 已经通过 `ChangeNotifierProvider` 在应用中与控件相关联。我们可以开始调用它了。
+现在 `CartModel` 已经通过 `ChangeNotifierProvider` 在应用中与 widget 相关联。我们可以开始调用它了。
 
 This is done through the `Consumer` widget.
 
-调用需要通过 `Consumer` 控件。
+调用需要通过 `Consumer`  widget 。
 
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (descendant)" replace="/Consumer/[!$&!]/g"?>
 ```dart
@@ -428,7 +428,7 @@ is the builder. Builder is a function that is called whenever the
 in your model, all the builder methods of all the corresponding
 `Consumer` widgets are called.)
 
-`Consumer` 控件唯一需要的参数就是 builder。 当 `ChangeNotifier`  发生变化的时候会调用 builder 这个函数。（换言之，当你在模型中调用 `notifyListeners()` 时， 所有和 `Consumer` 相关的 builder 方法都会被调用。）
+`Consumer`  widget 唯一需要的参数就是 builder。 当 `ChangeNotifier`  发生变化的时候会调用 builder 这个函数。（换言之，当你在模型中调用 `notifyListeners()` 时， 所有和 `Consumer` 相关的 builder 方法都会被调用。）
 
 The builder is called with three attributes. The first one is `context`,
 which you also get in every build method.
@@ -468,7 +468,7 @@ It is best practice to put your `Consumer` widgets as deep in the tree
 as possible. You don't want to rebuild large portions of the UI
 just because some detail somewhere changed.
 
-最好能把 `Consumer` 放在控件树尽量低的位置上。你总不希望 UI 上任何一点小变化就全盘重新构建控件吧。
+最好能把 `Consumer` 放在 widget 树尽量低的位置上。你总不希望 UI 上任何一点小变化就全盘重新构建 widget 吧。
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
@@ -521,7 +521,7 @@ We could use `Consumer<CartModel>` for this,
 but that would be wasteful. We'd be asking the framework to
 rebuild a widget that doesn't need to be rebuilt.
 
-我们可以使用 `Consumer<CartModel>` 来实现这个效果，不过这么实现有点浪费。因为我们让整体框架重构了一个无需重构的控件。
+我们可以使用 `Consumer<CartModel>` 来实现这个效果，不过这么实现有点浪费。因为我们让整体框架重构了一个无需重构的 widget 。
 
 For this use case, we can use `Provider.of`, with the `listen` parameter
 set to `false`. 
@@ -536,7 +536,7 @@ Provider.of<CartModel>(context, [!listen: false!]).add(item);
 Using the above line in a build method will not cause this widget to
 rebuild when `notifyListeners` is called.
 
-在 build 方法中使用上面的代码，当 `notifyListeners` 被调用的时候，并不会使控件被重构。
+在 build 方法中使用上面的代码，当 `notifyListeners` 被调用的时候，并不会使 widget 被重构。
 
 
 ## Putting it all together

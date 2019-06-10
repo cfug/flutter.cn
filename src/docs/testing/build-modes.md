@@ -78,7 +78,7 @@ supported on the simulator or emulator, means that:
 
 * Debugging is disabled.
 
-* 调试是禁用的。
+  调试是禁用的。
 
 * Compilation is optimized for fast startup, fast execution, and small
   package sizes.

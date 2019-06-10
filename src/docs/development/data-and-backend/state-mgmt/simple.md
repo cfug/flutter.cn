@@ -28,13 +28,13 @@ you should start with. `provider` is easy to understand and it doesn't
 use much code. It also uses concepts that are applicable in every other
 approach.
 
-在这里，我们打算使用 `provider` 包。如果你是初学 Flutter ，而且也没有打算选择别的方式来实现（Redux, Rx, hooks 等等），那么这就是你应该入门使用的。`provider` 非常好理解而且不需要写很多代码。它也会用到一些在其它实现方式中用到的通用概念。
+在这里，我们打算使用 `provider` package。如果你是初学 Flutter ，而且也没有打算选择别的方式来实现（Redux, Rx, hooks 等等），那么这就是你应该入门使用的。`provider` 非常好理解而且不需要写很多代码。它也会用到一些在其它实现方式中用到的通用概念。
 
 That said, if you have strong background in state management from other
 reactive frameworks, you will find packages and tutorials listed on the
 [following page](/docs/development/data-and-backend/state-mgmt/options).
 
-即便如此，如果从其它响应式框架上积累了丰富的状态管理经验的话，那么你可以在下面这个页面中找到相关的包和教程。[following page](/docs/development/data-and-backend/state-mgmt/options)。
+即便如此，如果从其它响应式框架上积累了丰富的状态管理经验的话，那么你可以在下面这个页面中找到相关的package和教程。[following page](/docs/development/data-and-backend/state-mgmt/options)。
 
 ## Our example {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
 
@@ -251,12 +251,12 @@ because they are a bit low-level for what we're trying to do.
 Instead, we are going to use a package that works with the low-level
 widgets but is simple to use. It's called `provider`.
 
-我们会用一个包来和这些底层的 widget 打交道，就是 `provider` 包。
+我们会用一个 package 来和这些底层的 widget 打交道，就是 `provider`  package 。
 
 With `provider`, you don't need to worry about callbacks or
 `InheritedWidgets`. But you do need to understand 3 concepts:
 
-`provider` 包中，你无须关心回调或者 `InheritedWidgets`。但是你需要理解三个概念：
+`provider`  package 中，你无须关心回调或者 `InheritedWidgets`。但是你需要理解三个概念：
 
 * ChangeNotifier
 * ChangeNotifierProvider
@@ -288,20 +288,17 @@ In our shopping app example, we want to manage the state of the cart in a
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
 ```dart
 class CartModel extends [!ChangeNotifier!] {
-  /// Internal, private state of the cart.
-  //// 内部的，购物车的私有状态
+  /// Internal, private state of the cart.  内部的，购物车的私有状态
   final List<Item> _items = [];
 
-  /// An unmodifiable view of the items in the cart.
-  /// 购物车里的商品视图无法改变
+  /// An unmodifiable view of the items in the cart.  购物车里的商品视图无法改变
+
   UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
 
-  /// The current total price of all items (assuming all items cost $42).
-  /// 现在全部商品的总价格（假设他们加起来 $42）
+  /// The current total price of all items (assuming all items cost $42).  现在全部商品的总价格（假设他们加起来 $42）
   int get totalPrice => _items.length * 42;
 
-  /// Adds [item] to cart. This is the only way to modify the cart from outside.
-  /// 将 [item] 添加到购物车。这是唯一一种能从外部改变购物车的方法。
+  /// Adds [item] to cart. This is the only way to modify the cart from outside.  将 [item] 添加到购物车。这是唯一一种能从外部改变购物车的方法。
   void add(Item item) {
     _items.add(item);
     // This call tells the widgets that are listening to this model to rebuild.
@@ -342,7 +339,7 @@ test('adding item increases total cost', () {
 `ChangeNotifierProvider` is the widget that provides an instance of 
 a `ChangeNotifier` to its descendants. It comes from the `provider` package.
 
-`ChangeNotifierProvider`  widget 可以返回一个 `ChangeNotifier` 实例。它属于 `provider` 包。
+`ChangeNotifierProvider`  widget 可以返回一个 `ChangeNotifier` 实例。它属于 `provider` package。
 
 We already know where to put `ChangeNotifierProvider`: above the widgets that
 will need to access it. In the case of `CartModel`, that means somewhere 
@@ -472,8 +469,7 @@ just because some detail somewhere changed.
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
-// DON'T DO THIS
-// 别这么写
+// DON'T DO THIS 别这么写
 return Consumer<CartModel>(
   builder: (context, cart, child) {
     return HumongousWidget(

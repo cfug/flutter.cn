@@ -87,7 +87,7 @@ supported on the simulator or emulator, means that:
 
 * Service extensions are disabled.
 
-* 服务扩展是禁用的。
+  服务扩展是禁用的。
 
 The command `flutter run --release` compiles to release mode.
 Your IDE also supports these modes.  Android Studio, for example,

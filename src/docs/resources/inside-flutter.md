@@ -19,6 +19,7 @@ Flutter 使用线性算法、操作高效且具有大量恒定因子优化的树
 widget。通过一些额外的机制，该设计也允许开发者利用回调（用于构建用户可见的 widget）来轻松创建无限滚动列表。
 
 ## Aggressive composability
+
 ## 积极可组合性
 
 One of the most distinctive aspects of Flutter is its _aggressive
@@ -51,6 +52,7 @@ following subsections.
 为了支持 widget 层的积极可组合性，Flutter 在 widget 和树渲染层使用了大量的高效算法和优化措施，这些将在下面小节中进行介绍。
 
 ### Sublinear layout
+
 ### 次线性布局
 
 With a large number of widgets and render objects, the key to good
@@ -129,7 +131,7 @@ the amount of work required during layout:
   a new size because the parent is guaranteed that the new size will
   conform to the existing constraints.
 
-  当父节点调用子节点的布局方法时，父节点会指示它是否使用从子节点返回的大小信息。
+  当父节点调用子节点的布局方法时，父节点会表明它是否使用从子节点返回的大小信息。
   如果父节点经常不使用此信息，即使子节点重新选择了大小，父节点依旧无需重新计算其布局，
   这是因为父节点需要保证新的大小符合现有约束。
 
@@ -167,6 +169,7 @@ them are visited during layout.
 这些优化措施的效果是，当渲染对象包含脏节点时，在布局过程中，只有这些节点以及它们周围子树的有限节点才允许被访问。
 
 ### Sublinear widget building
+
 ### 次线性 widget 构建
 
 Similar to the layout algorithm, Flutter's widget building algorithm
@@ -225,11 +228,12 @@ elements that introduce a new `InheritedWidget`.
 
 构建过程中，Flutter 同时使用 `InheritedWidgets` 来避免父链的遍历。如果 widget
 经常遍历它们的父链，比如确定当前的主题颜色，那么构建阶段树的深底将变为 O(N²)，由于
-Flutter 的积极可组合性，其数量可能非常巨大。为了避免这些父链的遍历，框架通过 `InheritedWidget`
-在每个 element 中维护的哈希表来向下传递 element 树中的信息。通常情况下，多个 element
-引用相同的哈希表，并且该表仅在 element 引入新的 `InheritedWidget` 时改变。
+Flutter 的积极可组合性，其数量可能非常巨大。为了避免这些父链的遍历，框架通过在每个
+element 上维护一个 `InheritedWidget` 哈希表来向下传递 element 树中的信息。通常情况下，多个
+element 引用相同的哈希表，并且该表仅在 element 引入新的 `InheritedWidget` 时改变。
 
 ### Linear reconciliation
+
 ### 线性协调
 
 Contrary to popular belief, Flutter does not employ a tree-diffing
@@ -263,12 +267,13 @@ children are discarded and rebuilt from scratch whereas matched children
 are rebuilt with their new widgets.
 
 通常的策略是比较每个 widget 的运行时类型和 key
-来匹配子列表的头部及底部，这可能在包含所有不匹配的子节点的每个列表中间找到非空范围。
+来匹配子列表的头部及尾部，这可能在包含所有不匹配的子节点的每个列表中间找到非空范围。
 然后，框架将旧的子列表中的子项放入基于其 key 的哈希表中。接下来，框架遍历新子列表的范围，并根据
 key 对哈希表进行查询匹配。无法匹配的子项将会被丢弃并从头开始重建，匹配到的子项则使用它们新的
 widget 进行重建。
 
 ### Tree surgery
+
 ### 树结构优化
 
 Reusing elements is important for performance because elements own
@@ -317,6 +322,7 @@ developers to achieve effects such as hero transitions and navigation.
 开发者广泛使用全局 key 和全局树更新来实现 hero transition 及导航等效果。
 
 ### Constant-factor optimizations
+
 ### 恒定因子优化
 
 In addition to these algorithmic optimizations, achieving aggressive
@@ -335,7 +341,7 @@ the major algorithms discussed above.
   supports only a single child and, as a result, has a simpler layout
   method that takes less time to execute.
 
-  **子模型无关。**与大多数使用子列表的工具包不同，Flutter 渲染树不会记住一个特定的子模型。比如，类
+  **子模型无关**。与大多数使用子列表的工具包不同，Flutter 渲染树不会记住一个特定的子模型。比如，类
   `RenderBox` 存在一个抽象的 `visitChildren()` 方法，而非具体的 **firstChild** 和
   **nextSibling** 接口。许多子类仅支持直接作为其成员变量的单个子项，而非子项列表。比如，由于
   `RenderPadding` 仅支持单个子节点，因此它拥有一个更为简单、高效的布局方法。
@@ -352,7 +358,7 @@ the major algorithms discussed above.
   painting calculations in the render tree happen more often than the
   widget-to-render tree handoff and can avoid repeated coordinate conversions.
 
-  **视觉渲染树、 widget 逻辑树。** 在 Flutter 中，渲染树在与设备无关的视觉坐标系中运行，这意味着即使
+  **视觉渲染树、 widget 逻辑树**。 在 Flutter 中，渲染树在与设备无关的视觉坐标系中运行，这意味着即使
   x 轴的读取方向是从右到左，其左侧的值依旧小于右侧。widget
   树通常在逻辑坐标中运行，这意味着拥有**开始**和**结束**值的视觉解释取决于读取方向。逻辑坐标到视觉坐标的转换是在
   widget 树和渲染树之间的切换中完成的。这种方法更为高效的原因是，渲染树中的布局和绘制计算比
@@ -367,7 +373,7 @@ the major algorithms discussed above.
   can avoid recomputing its text layout as long as its parent supplies
   the same layout constraints, which is common, even during tree surgery.
 
-  **通过专门的渲染对象处理文本。** 大多数渲染对象都不清楚文本的复杂性。相反，文本是由专门的渲染对象 `RenderParagraph`
+  **通过专门的渲染对象处理文本**。 大多数渲染对象都不清楚文本的复杂性。相反，文本是由专门的渲染对象 `RenderParagraph`
   进行处理，它是渲染树中的一个叶子节点。开发者使用组合形式将文本并入到用户界面中，而非使用文本感知渲染对象进行子类化。该模式意味着
   `RenderParagraph` 可避免文本布局在父节点提供相同布局约束下的重复计算，这是非常常见的，即使在树优化期间也是如此。
 
@@ -381,10 +387,10 @@ the major algorithms discussed above.
   a change to an _Animation<Color>_ might trigger only the paint phase
   rather than both the build and paint phases.
 
-  **可观察对象。** Flutter 使用模型观察及响应设计模式。显而易见，响应模式占主导地位，但
+  **可观察对象**。 Flutter 使用模型观察及响应设计模式。显而易见，响应模式占主导地位，但
   Flutter 在某些叶子节点的数据结构上使用了可观察对象。比如 **Animation**
   会在值发生变化时通知观察者列表。Flutter 将这些可观察对象从 widget
-  树转移到渲染树中，渲染树直接监听这些对象，并在它们改变时仅让管道的相关阶段无效。比如，更改
+  树转移到渲染树中，渲染树直接监听这些对象，并在它们改变时仅重绘管道的相关阶段。比如，更改
   **Animation\<Color\>** 可能只触发绘制阶段，而非整个构建和绘制阶段。
 
 Taken together and summed over the large trees created by aggressive
@@ -393,6 +399,7 @@ composition, these optimizations have a substantial effect on performance.
 总的来说，这些优化对通过积极组合方式产生的大型树结构的性能产生了重大影响。
 
 ## Infinite scrolling
+
 ## 无限滚动
 
 Infinite scrolling lists are notoriously difficult for toolkits.
@@ -407,6 +414,7 @@ and _building widgets on demand_.
 widget，即它们只在滚动过程中才对用户可见。该功能需要**视窗感知布局**及**按需构建 widget**的支持。
 
 ### Viewport-aware layout
+
 ### 视窗感知布局
 
 Like most things in Flutter, scrollable widgets are built using
@@ -460,6 +468,7 @@ to the header, the list, or the grid.
 而不管这些子节点是否属于标题、列表或网格。
 
 ### Building widgets on demand
+
 ### 按需构建 widget
 
 If Flutter had a strict _build-then-layout-then-paint_ pipeline,
@@ -505,6 +514,7 @@ the edge of the viewport.
 在视窗口边缘滚动进出视图期间修改渲染树至关重要。
 
 ## API Ergonomics
+
 ## 人机工程 API
 
 Being fast only matters if the framework can actually be used effectively.
@@ -527,6 +537,7 @@ in aid of usability.
 本节将要讨论 Flutter API 设计中为提高可用性所做的一些决策。
 
 ### Specializing APIs to match the developer's mindset
+
 ### 与开发者思维模式相匹配的专项 API
 
 The base class for nodes in Flutter's `Widget`, `Element`, and `RenderObject`
@@ -621,6 +632,7 @@ to wrap this pattern in a trivial reusable widget.
 widget 来执行该操作，因此 `Visibility` 的存在便是将此模式封装在一个简单的可重用 widget 中。
 
 ### Explicit arguments
+
 ### 明确的参数
 
 UI frameworks tend to have many properties, such that a developer is
@@ -646,6 +658,7 @@ positive form (for example, `enabled: true` rather than `disabled: false`).
 类型的参数和属性始终以肯定的形式命名（比如，使用 `enabled: true` 而非 `disabled: false`）。
 
 ### Paving over pitfalls
+
 ### 参数陷阱
 
 A technique used in a number of places in the Flutter framework is to
@@ -714,6 +727,7 @@ such that there are very few invalid combinations.
 但它们都经过精心设计且大部分都能够彼此相交，因此很少出现无效组合。
 
 ### Reporting error cases aggressively
+
 ### 主动报告错误
 
 Not all error conditions can be designed out. For those that remain,
@@ -750,6 +764,7 @@ to further documentation.
 最常见的错误包含详细说明（在某些情况下会包含避免错误的示例代码），或指向其他文档的链接。
 
 ### Reactive paradigm
+
 ### 响应式
 
 Mutable tree-based APIs suffer from a dichotomous access pattern:
@@ -776,6 +791,8 @@ configuration.
 Flutter 在 widget 层引入了一个使用响应式来操作底层渲染树的组合机制。该 API
 通过将树的创建和更新步骤整合到一个单一的树结构描述（构建）中，从而将树操作抽象出来，
 这包括：每次系统状态更新之后，开发者用于描述用户界面的新配置；框架对于新配置所需要进行的一系列树更新计算。
+
+### Interpolation
 
 ### 插值
 
@@ -895,6 +912,7 @@ the transition can be seamlessly performed.
 `lerpFrom` 圆形到正方形的中间类，就可以无缝进行转换。
 
 ## Conclusion
+
 ## 结论
 
 Flutter’s slogan, "everything is a widget," revolves around building

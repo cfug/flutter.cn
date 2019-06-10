@@ -32,13 +32,13 @@ flutter:
 
 注意只包含目录下根节点的所有文件，如果要添加子目录下的文件，需要给每个目录创建节点。
 
-### Asset 打包
+### 资源打包
 
 该 `assets` 部分的 `flutter` 部分需要指定包含在应用程序中的文件。 每个资源都通过相对于 `pubspec.yaml` 文件所在位置的路径进行标识。资源的声明顺序是无关紧要的。资源的实际目录可以是任意文件夹（在本示例中是 `assets` ）
 
 在一次构建中，Flutter将assets放到 _asset bundle_ 的特殊归档中，以便应用程序在运行时读取它们。
 
-### Asset 变体
+### 资源变体
 
 构建过程支持asset变体：不同版本的资源可能会显示在不同的上下文中。 在 `pubspec.yaml` 的 `assets` 部分中指定的资源路径，会在构建过程中，查找同级子目录中相同名称的任何文件。这些文件会与指定的asset一起
 被打包在资源bundle中。
@@ -86,7 +86,7 @@ Asset bundle 通过指定一个逻辑键（key），允许你读取 string/text�
 和 image/binary（`load`）。在编译期间，这个逻辑键（key）会映射在 `pubspec.yaml` 中指定的资源路径。
 
 
-### 加载 text assets
+### 加载文本assets
 
 每个Flutter应用程序都有一个[`rootBundle`]({{site.api}}/flutter/services/rootBundle.html)对象， 
 可以轻松访问主资源bundle。还可以直接使用 `package:flutter/services.dart` 中

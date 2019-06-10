@@ -112,3 +112,10 @@ For Dart-specific codelabs, see the
 [codelabs]({{site.dart-site}}/codelabs) page on the
 [Dart site]({{site.dart-site}}).
 {% endcomment %}
+
+### Other resources
+
+### 其他资源
+
+* [The Complete Flutter Development Bootcamp Using
+  Dart](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart)

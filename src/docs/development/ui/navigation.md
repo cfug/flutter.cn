@@ -12,14 +12,17 @@ For a discussion of how to use Flutter's Navigator class with various types of r
 
 关于如何使用 Flutter 中的 Navigator 来切换不同的导航路径，可以查阅 [Navigator 的 API 文档]({{site.api}}/flutter/widgets/Navigator-class.html).
 
-
 The following [cookbook recipes cover {{page.title | downcase }}][cookbook]:
 
 下述的一些 [实用教程（cookbook）也涵盖了{{page.title | downcase }}的内容][cookbook]:
 
-* [Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics)
+* [Navigate with named routes](/docs/cookbook/navigation/navigation-basics)
 
   [导航到一个新页面和返回](/docs/cookbook/navigation/navigation-basics)
+  
+* [Navigate with named routes](/docs/cookbook/navigation/named-routes)
+
+  [导航到对应名称的 routes 里](/docs/cookbook/navigation/named-routes)
   
 * [Send data to a new screen](/docs/cookbook/navigation/passing-data)
 
@@ -29,12 +32,13 @@ The following [cookbook recipes cover {{page.title | downcase }}][cookbook]:
 
   [从一个页面回传数据](/docs/cookbook/navigation/returning-data)
   
-* [Navigate with named routes](/docs/cookbook/navigation/named-routes)
-
-  [导航到对应名称的 routes 里](/docs/cookbook/navigation/named-routes)
-  
 * [Animating a widget across screens](/docs/cookbook/navigation/hero-animations)
 
   [跨页面切换的动效 Widget (Hero animations)](/docs/cookbook/navigation/hero-animations)
 
 [cookbook]: /docs/cookbook#navigation
+
+{% comment %}
+TODO: the CN documentation here has some problem with the CN to English toggle, 
+considering delete the ref.
+{% endcomment -%}

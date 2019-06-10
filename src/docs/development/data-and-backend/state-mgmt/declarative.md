@@ -21,8 +21,7 @@ Many assumptions that you might have don't apply to Flutter. For example, in
 Flutter it's okay to rebuild parts of your UI from scratch instead of modifying 
 it. Flutter is fast enough to do that, even on every frame if needed.
 
-许多你可能有的假设并没有应用在 Flutter 中。例如，在 Flutter 应用中你可以重新构建某一部分的用户界面任，而不是修改它。
-如果你需要的话，Flutter 甚至在每一帧上都可以很快做到这一点。
+许多你可能有的假设并没有应用在 Flutter 中。例如，在 Flutter 应用中你可以重新构建某一部分的用户界面任，而不是修改它。 如果你需要的话，Flutter 甚至在每一帧上都可以很快做到这一点。
 
 Flutter is _declarative_. This means that Flutter builds its user interface to 
 reflect the current state of your app:

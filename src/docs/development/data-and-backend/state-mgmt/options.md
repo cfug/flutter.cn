@@ -11,7 +11,7 @@ State management is a complex topic. If you feel that some of your questions
 haven't been answered, or that the approach described on these pages
 is not viable for your use cases, you are probably right.
 
-状态管理是一个复杂的议题。你可能会遇到有些问题没有得到解答或者有些描述与预期不符。
+状态管理是一个复杂的议题。你可能遇到此教程暂未解答的问题，或者与此教程结果不符的现象。
 
 Learn more at the following links, many of which have been contributed
 by the Flutter community:
@@ -26,7 +26,7 @@ by the Flutter community:
   a video from Google I/O 2018, and an
   [accompanying article]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
 
-  [使用 Flutter 构建响应式移动应用](https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be)，视频来自 Google I/O 2018，和一篇 [随附文章]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
+  [使用 Flutter 构建响应式移动应用](https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be)，视频来自 Google I/O 2018，以及一篇 [随附文章]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
 
 * [Flutter Architecture Samples](http://fluttersamples.com/), by Brian Egan
 

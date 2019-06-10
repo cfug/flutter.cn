@@ -84,7 +84,7 @@ supported on the simulator or emulator, means that:
 * Compilation is optimized for fast startup, fast execution, and small
   package sizes.
   
-* 编译针对快速启动、快速执行和小的 package 的大小进行了优化。
+  编译针对快速启动、快速执行和小的 package 的大小进行了优化。
 
 * Service extensions are disabled.
 

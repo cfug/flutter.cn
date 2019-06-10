@@ -70,7 +70,7 @@ supported on the simulator or emulator, means that:
 
 * Assertions are disabled.
 
-* 断点是不可用的。
+  断点是不可用的。
 
 * Debugging information is stripped out.
 

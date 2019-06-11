@@ -15,13 +15,13 @@ If you're coming to Flutter from an imperative framework (such as Android SDK or
 iOS UIKit), you need to start thinking about app development from a new 
 perspective. 
 
-如果你是从命令式编程框架（例如 Android SDK 或者 iOS UIKit）转到 Flutter 开发的话，你需要从新的角度开始考虑 APP 开发了。
+如果你是从命令式框架（例如 Android SDK 或者 iOS UIKit）转到 Flutter 应用，那么，你需要开始从一个新的角度来考虑 app 开发了。
 
 Many assumptions that you might have don't apply to Flutter. For example, in 
 Flutter it's okay to rebuild parts of your UI from scratch instead of modifying 
 it. Flutter is fast enough to do that, even on every frame if needed.
 
-许多你可能有的假设并没有应用在 Flutter 中。例如，在 Flutter 应用中你可以重新构建某一部分的用户界面，而不是修改它。 如果你需要的话，Flutter 甚至在每一帧上都可以很快做到这一点。
+因此，很多在命令式框架下的假设可能并不适用于 Flutter。例如，在 Flutter 应用中这是可行的，你可以重新构建部分用户界面，而不是去修改它。 如果有需要的话，Flutter 甚至可以在每一帧上都很快做到这点。
 
 Flutter is _declarative_. This means that Flutter builds its user interface to 
 reflect the current state of your app:
@@ -44,13 +44,13 @@ interface. There is no imperative changing of the UI itself (like
 Read more about the declarative approach to UI programming [in 
 the get started guide](/docs/get-started/flutter-for/declarative). 
 
-在入门指南中你可以阅读更多有关用户界面编程的声明方法的更多信息。
+在入门指南中你可以阅读更多有声明式的编程思维。
 
 The declarative style of UI programming has many benefits. Remarkably, there is 
 only one code path for any state of the UI. You describe what the UI should look 
 like for any given state, once — and that is it.
 
-用户界面编程的声明式风格有许多好处。值得注意的是，用户界面任何状态的改变都只有一种编码途径。一旦给定任意状态，你就描述了用户界面应该长什么样，并且它就是这样。
+声明式的编程风格有许多好处。值得注意的是，用户界面任何状态的改变都只有一种编码途径。一旦给定任意状态，你就描述了用户界面应该长什么样，并且它就是这样。
 
 At first, this style of programming may not seem as intuitive as the imperative 
 style. This is why this section is here. Read on.

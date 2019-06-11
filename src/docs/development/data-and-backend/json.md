@@ -8,7 +8,7 @@ web server or easily store structured data at some point. When making
 network-connected apps, the chances are that it needs to consume some good old
 JSON, sooner or later.
 
-很难想象一个移动应用会不需要与 web 服务器通信或者在某些时候轻松地存储结构化数据。当创造需要网络连接的应用时，它可能迟早会消耗一些旧的 JSON。
+很难想象一个移动应用会不需要与 web 服务器通信或者在某些时候轻松地存储结构化数据。当创造需要网络连接的应用时，它可能迟早会处理一些旧的 JSON。
 
 This guide looks into ways of using JSON with Flutter. It covers which
 JSON solution to use in different scenarios, and why.
@@ -22,13 +22,13 @@ JSON solution to use in different scenarios, and why.
   However, _serialization_ also commonly refers to the entire process of
   translating data structures to and from a more easily readable format.
 
-  **术语：** **_编码_**和**_序列化数据_**是一回事 - 将数据结构转换为字符串。**_解码_**和**_反序列化数据_**则是相反的过程 - 将字符串转换为数据结构。然而，**_序列化数据_**通常也指将数据结构转换为更加易读的数据格式的整个过程。
+  **术语：**_编码_ 和 _序列化数据_ 是一回事 - 将数据结构转换为字符串。_解码_ 和 _反序列化数据_ 则是相反的过程 - 将字符串转换为数据结构。然而，_序列化数据_ 通常也指将数据结构转换为更加易读的数据格式的整个过程。
 
   To avoid confusion, this doc uses "serialization" when referring to the
   overall process, and "encoding" and "decoding" when specifically
   referring to those processes.
 
-  为了避免混淆，本文档在涉及到整个过程时使用”序列化数据“，在特指这些过程时使用”编码“和”解码“。
+  为了避免混淆，本文档在涉及到整个过程时使用“序列化数据”，在特指这些过程时使用“编码”和“解码”。
 {{site.alert.end}}
 
 ## Which JSON serialization method is right for me?
@@ -65,14 +65,14 @@ function, and then looking up the values you need in the resulting
 `Map<String, dynamic>`. It has no external dependencies or particular setup process,
 and it's good for a quick proof of concept.
 
-手动 JSON 解码是指在 `dart:convert` 中使用内置的 JSON 解码器。它包括将原始 JSON 字符串传递给 `jsonDecode()` 方法，然后在产生的计算结果中寻找你需要的值。它没有外部依赖或者特定的设置过程，这有利于快速证明概念。
+手动 JSON 解码是指在 `dart:convert` 中使用内置的 JSON 解码器。它包括将原始 JSON 字符串传递给 `jsonDecode()` 方法，然后在产生的 `Map<String, dynamic>` 计算结果中寻找你需要的值。它没有外部依赖或者特定的设置过程，这有利于快速证明概念。
 
 Manual decoding does not perform well when your project becomes bigger.
 Writing decoding logic by hand can become hard to manage and error-prone.
 If you have a typo when accessing an nonexistent JSON
 field, your code throws an error during runtime.
 
-当你的项目变大时，手动解码表现得并不理想。手动编写解码逻辑会变得难以管理并容易出错。如果你产生了笔误去获取一个不存在的 JSON，你的代码会在运行时抛出一个错误。
+当你的项目变大时，手动解码表现得并不理想。手动编写解码逻辑会变得难以管理并容易出错。如果你产生了笔误去获取一个不存在的 JSON 字段，你的代码会在运行时抛出一个错误。
 
 If you do not have many JSON models in your project and are looking to test a
 concept quickly, manual serialization might be the way you want to start.
@@ -102,14 +102,14 @@ compile-time. The downside with code generation is that it requires some
 initial setup. Also, the generated source files may produce visual clutter
 in your project navigator.
 
-这种方法适用于大型项目。不需要手动编写模板，当试图去获取不存在的 JSON 时的笔误会在编译阶段被发现。代码生成的缺点是它需要一些初始化设置。并且，生成的源文件可能在你的项目路由中产生一些视觉上的混乱。
+这种方法适用于大型项目。不需要手动编写模板，当试图去获取不存在的 JSON 字段时的笔误会在编译阶段被发现。代码生成的缺点是它需要一些初始化设置。并且，生成的源文件可能在你的项目导航中产生一些视觉上的混乱。
 
 You might want to use generated code for JSON serialization when you have a
 medium or a larger project. To see an example of code generation based JSON
 encoding, see
 [Serializing JSON using code generation libraries](#code-generation).
 
-当你有一个中大型项目时，你可能想要为你的 JSON 序列化数据使用生成的代码。要看基于代码生成的 JSON 编码，见 [使用代码生成库序列化 JSON 数据](#code-generation)。
+当你有一个中大型项目时，你可能想要使用生成的代码来进行 JSON 序列化。要看基于代码生成的 JSON 编码，见 [使用代码生成库序列化 JSON 数据](#code-generation)。
 
 ## Is there a GSON/<wbr>Jackson/<wbr>Moshi equivalent in Flutter?
 
@@ -124,21 +124,21 @@ Flutter. Runtime reflection interferes with [tree shaking][], which Dart has
 supported for quite a long time. With tree shaking, you can "shake off" unused
 code from your release builds. This optimizes the app's size significantly.
 
-这样的库需要使用运行时 [reflection][]，这在 Flutter 中是被禁用的。运行时 reflection 会影响被 Dart 支持了相当久的 [tree shaking][]。通过 tree shaking，你可以从你的发布版本中”抖掉“不需要使用的代码。这会显著优化 App 的体积。
+这样的库需要使用运行时 [反射][]，这在 Flutter 中是被禁用的。运行时反射会影响被 Dart 支持了相当久的 [tree shaking][]。通过 tree shaking，你可以从你的发布版本中“抖掉”不需要使用的代码。这会显著优化 App 的体积。
 
 Since reflection makes all code implicitly used by default, it makes tree
 shaking difficult. The tools cannot know what parts are unused at runtime, so
 the redundant code is hard to strip away. App sizes cannot be easily optimized
 when using reflection.
 
-由于 reflection 会默认让所有的代码被隐式使用，这让 tree shaking 变得困难。工具不知道哪一部分在运行时不会被用到，所以冗余的代码很难被清除。当使用 reflection 时，App 的体积不能被轻易优化。
+由于反射会默认让所有的代码被隐式使用，这让 tree shaking 变得困难。工具不知道哪一部分在运行时不会被用到，所以冗余的代码很难被清除。当使用反射时，App 的体积不能被轻易优化。
 
 {{site.alert.info}}
   **What about dartson?** The
   [dartson]({{site.pub}}/packages/dartson) library uses runtime
   [reflection][], which makes it incompatible with Flutter.
 
-  **dartson 怎么样？**[dartson]({{site.pub}}/packages/dartson) 是一个使用运行时 [reflection][] 的库，这让它不能兼容 Flutter。
+  **dartson 怎么样？**[dartson]({{site.pub}}/packages/dartson) 是一个使用运行时 [反射][] 的库，这让它不能兼容 Flutter。
 {{site.alert.end}}
 
 Although you cannot use runtime reflection with Flutter, some libraries give
@@ -146,7 +146,7 @@ you similarly easy to use APIs but are based on code generation instead. This
 approach is covered in more detail in the [code generation
 libraries](#code-generation) section.
 
-尽管你不能在 Flutter 中使用运行时 reflection，还是有一些库提供了基于代码生成的方便使用的 API。这个方法的更多细节在 [代码生成库](#code-generation) 部分。
+尽管你不能在 Flutter 中使用运行时反射，还是有一些库提供了基于代码生成的方便使用的 API。这个方法的更多细节在 [代码生成库](#code-generation) 部分。
 
 <a name="manual-encoding"></a>
 ## Serializing JSON manually using dart:convert
@@ -182,7 +182,7 @@ By looking at the [dart:convert][dart:convert] documentation,
 you'll see that you can decode the JSON by calling the `jsonDecode()` function,
 with the JSON string as the method argument.
 
-通过查阅 [dart:convert][dart:convert] 文档，你会看到你可以将 JSON 字符串作为方法的参数来调用 `jsonDecode()` 方法来编码 JSON。
+通过查阅 [dart:convert][dart:convert] 文档，你会看到你可以将 JSON 字符串作为方法的参数来调用 `jsonDecode()` 方法来解码 JSON。
 
 <!-- skip -->
 ```dart
@@ -198,13 +198,13 @@ you lose most of the statically typed language features: type safety,
 autocompletion and most importantly, compile-time exceptions. Your code will
 become instantly more error-prone.
 
-不幸的是，`jsonDecode()` 返回一个 `Map<String, dynamic>`，这意味着你在运行时以前都不知道值的类型。使用这个方法，你失去了大部分的静态类型语言特性：类型安全，自动完成并且最重要的，编译时异常。你的代码会立即变得更加容易出错。
+不幸的是，`jsonDecode()` 返回一个 `Map<String, dynamic>`，这意味着你在运行时以前都不知道值的类型。使用这个方法，你失去了大部分的静态类型语言特性：类型安全，自动补全以及最重要的编译时异常。你的代码会立即变得更加容易出错。
 
 For example, whenever you access the `name` or `email` fields, you could quickly
 introduce a typo. A typo that the compiler doesn't know about since the
 JSON lives in a map structure.
 
-例如，当你获取 `name` 或者 `email` 字段，你可能很快引入一个笔误。由于 JSON 存在于 map 结构中，编译器并不知道这个笔误。
+例如，当你获取 `name` 或者 `email` 字段，你可能很快引入一个笔误。然而编译器却无法知道 map 中有 JSON 笔误，编译器并不知道这个笔误。
 
 ### Serializing JSON inside model classes
 
@@ -218,7 +218,7 @@ class, called `User` in this example. Inside the `User` class, you'll find:
 * A `User.fromJson()` constructor, for constructing a new `User` instance from a
   map structure.
 
-  一个 `User.fromJson()` 结构，用于从 map 结构中构造一个新的 `User` 实例
+  一个 `User.fromJson()` 构造函数，用于从 map 结构中构造一个新的 `User` 实例
 
 * A `toJson()` method, which converts a `User` instance into a map.
 
@@ -229,7 +229,7 @@ autocompletion for the `name` and `email` fields, and compile-time exceptions.
 If you make typos or treat the fields as `int`s instead of `String`s,
 the app won't compile, instead of crashing at runtime.
 
-通过这种方法，**_调用代码_**可以拥有类型安全，`name` 和 `email` 字段的自动完成以及编译时异常（检测）。如果你发生了笔误或者把 `String` 类型的字段看成了 `int` 类型，App 将不会编译，而不是在运行时崩溃。
+通过这种方法，_调用代码_ 可以拥有类型安全，`name` 和 `email` 字段的自动完成以及编译时异常（检测）。如果你发生了笔误或者把 `String` 类型的字段看成了 `int` 类型，App 将不会编译，而不是在运行时崩溃。
 
 **user.dart**
 
@@ -284,7 +284,7 @@ In a production app, you would want to ensure that the serialization
 works properly. In practice, the `User.fromJson()` and `User.toJson()`
 methods both need to have unit tests in place to verify correct behavior.
 
-通过这种方法，被调用的代码根本不需要担心序列化 JSON 数据的问题。然而，模型类仍然是必须的。在一个生产环境下的 App，你可能希望确保序列化数据能正确奏效。在实践中， `User.fromJson()` 和 `User.toJson()` 方法都需要单元测试以便验证正确的行为。
+通过这种方法，被调用的代码根本不需要担心序列化 JSON 数据的问题。然而，模型类仍然是必须的。在一个生产环境下的 App，你可能希望确保序列化数据能正确奏效。在实践中，`User.fromJson()` 和 `User.toJson()` 方法都需要单元测试以便验证正确的行为。
 
 However, real-world scenarios are not usually that simple.
 It's unlikely that you would use such small JSON responses.
@@ -325,7 +325,7 @@ dependency, and two _dev dependencies_. In short, _dev dependencies_
 are dependencies that are not included in our app source code&mdash;they
 are only used in the development environment.
 
-要在你的项目中包含 `json_serializable`，你需要一个常规依赖，以及两个 **_dev 依赖_**。简单来说， **_dev 依赖_**是不包括在我们的 App 源代码中的依赖 - 它们只会被用在开发环境中。
+要在你的项目中包含 `json_serializable`，你需要一个常规依赖，以及两个 _dev 依赖_。简单来说，_dev 依赖_ 是不包括在我们的 App 源代码中的依赖 - 它们只会被用在开发环境中。
 
 The latest versions of these required dependencies can be seen by following
 [the pubspec
@@ -361,7 +361,7 @@ The following shows how to convert the `User` class to a `json_serializable`
 one. For the sake of simplicity, this code uses the simplified JSON model
 from the previous samples.
 
-下面显示了怎样将 `User` 类转换为一个 `json_serializable`。简单起见，该代码使用了前面的例子中的简化的 JSON 模型。
+下面显示了怎样将 `User` 类转换为 `json_serializable` 后的类。简单起见，该代码使用了前面的例子中的简化的 JSON 模型。
 
 **user.dart**
 
@@ -398,14 +398,14 @@ class User {
 With this setup, the source code generator generates code for encoding
 and decoding the `name` and `email` fields from JSON.
 
-通过这个设置，源代码生成器从 JSON 中生成用于编码和解码 `name` 以及 `email` 字段的代码。
+通过这个设置，源代码生成器将生成用于 JSON 编码及解码 `name` 以及 `email` 字段的代码。
 
 If needed, it is also easy to customize the naming strategy. For example, if the
 API returns objects with _snake\_case_, and you want to use
 _lowerCamelCase_ in your models,
 you can use the `@JsonKey` annotation with a name parameter:
 
-如果需要，你可以很容易自定义命名策略。例如，如果 API 返回带有 **_snake\_case_** 的对象，并且你想要在你的模型里使用**_小驼峰_**的命名方式，你可以使用带有一个 name 参数的 `@JsonKey` 注解。
+如果需要，你可以很容易自定义命名策略。例如，如果 API 返回带有蛇形命名方式的对象，并且你想要在你的模型里使用 _小驼峰_ 的命名方式，你可以使用带有一个 name 参数的 `@JsonKey` 注解。
 
 <!-- skip -->
 ```dart
@@ -462,7 +462,7 @@ watches changes in our project files and automatically builds the necessary
 files when needed. Start the watcher by running
 `flutter pub run build_runner watch` in the project root.
 
-**_监听器_**让我们的源代码生成过程更加方便。它监听我们项目中的文件变化并且会在需要的时候自动构建必要的文件。通过在项目根目录运行 `flutter pub run build_runner watch` 启动监听。
+_监听器_ 让我们的源代码生成过程更加方便。它监听我们项目中的文件变化并且会在需要的时候自动构建必要的文件。通过在项目根目录运行 `flutter pub run build_runner watch` 启动监听。
 
 It is safe to start the watcher once and leave it running in the background.
 
@@ -498,7 +498,7 @@ to write automated tests to ensure that the serialization works&mdash;it's
 now _the library's responsibility_ to make sure the serialization works
 appropriately.
 
-使用 `json_serializable`，在 `User` 类中你可以忘记手动序列化任意的 JSON 数据。源代码生成器会创建一个名为 `user.g.dart` 的文件，它包含了所有必须的序列化数据逻辑。你不必再编写自动化测试来确保序列化数据奏效。- 现在由**_库来负责_**确保序列化数据能正确地奏效。
+使用 `json_serializable`，在 `User` 类中你可以忘记手动序列化任意的 JSON 数据。源代码生成器会创建一个名为 `user.g.dart` 的文件，它包含了所有必须的序列化数据逻辑。你不必再编写自动化测试来确保序列化数据奏效。- 现在由 _库来负责_ 确保序列化数据能正确地奏效。
 
 ## Further references
 
@@ -526,5 +526,5 @@ For more information, see the following resources:
 
 [dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
-[reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
+[反射]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking

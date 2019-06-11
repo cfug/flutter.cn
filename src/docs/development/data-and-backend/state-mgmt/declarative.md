@@ -21,7 +21,7 @@ Many assumptions that you might have don't apply to Flutter. For example, in
 Flutter it's okay to rebuild parts of your UI from scratch instead of modifying 
 it. Flutter is fast enough to do that, even on every frame if needed.
 
-因此，很多在命令式框架下的假设可能并不适用于 Flutter。例如，在 Flutter 应用中这是可行的，你可以重新构建部分用户界面，而不是去修改它。 如果有需要的话，Flutter 甚至可以在每一帧上都很快做到这点。
+因此，很多在命令式框架下的假设可能并不适用于 Flutter。例如，在 Flutter 应用中这是可行的，重新构建你的部分界面，而不是直接去修改它。 如果有需要的话，Flutter 甚至可以在每一帧上都很快做到这点。
 
 Flutter is _declarative_. This means that Flutter builds its user interface to 
 reflect the current state of your app:
@@ -44,7 +44,7 @@ interface. There is no imperative changing of the UI itself (like
 Read more about the declarative approach to UI programming [in 
 the get started guide](/docs/get-started/flutter-for/declarative). 
 
-在入门指南中你可以阅读更多有声明式的编程思维。
+在入门指南中你可以阅读更多有关声明式编程思维的信息。
 
 The declarative style of UI programming has many benefits. Remarkably, there is 
 only one code path for any state of the UI. You describe what the UI should look 

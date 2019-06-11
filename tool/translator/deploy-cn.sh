@@ -8,7 +8,7 @@ commitMessage=$(git log --oneline -n 1)
 
 rm -rf /tmp/flutter.cn-prebuilt/ || true
 
-git clone https://asnowwolf:${GITHUB_ACCESS_TOKEN}@github.com/cfug/flutter.cn-prebuilt.git /tmp/flutter.cn-prebuilt
+git clone https://cfug-deploy:${CFUG_DEPLOY_KEY}@github.com/cfug-deploy/flutter.cn-prebuilt.git /tmp/flutter.cn-prebuilt
 
 cp -r _site/* /tmp/flutter.cn-prebuilt/
 

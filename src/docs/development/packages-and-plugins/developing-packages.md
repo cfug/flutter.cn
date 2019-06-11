@@ -93,9 +93,9 @@ specialized content:
      package 的 Dart 实现代码。
 
 * `test/hello_test.dart`:
-   - The [unit tests](/docs/testing#unit-testing) for the package.
+   - The [unit tests](/docs/testing#unit-tests) for the package.
      
-     Package 的 [单元测试](/docs/testing#unit-testing)。
+     Package 的 [单元测试](/docs/testing#unit-tests)。
      
 ### Step 2: Implement the package
 
@@ -107,10 +107,10 @@ For pure Dart packages, simply add the functionality inside the main
 对于纯 Dart 库的 package，只要在 `lib/<package name>.dart` 文件中添加功能实现，或在 `lib`
 目录中的多个文件中添加功能实现。
 
-To test the package, add [unit tests](/docs/testing#unit-testing)
+To test the package, add [unit tests](/docs/testing#unit-tests)
 in a `test` directory.
 
-如果要对 package 进行测试，在 `test` 目录下添加 [单元测试](/docs/testing#unit-testing)。
+如果要对 package 进行测试，在 `test` 目录下添加 [单元测试](/docs/testing#unit-tests)。
 
 For additional details on how to organize the package contents, see the
 [Dart library
@@ -463,8 +463,10 @@ Next, run the dry-run command to see if everything passes analysis:
 接下来，运行 dry-run 命令以检验是否所有内容都通过了分析：
 
 ```terminal
-$ flutter pub publish --dry-run
+$ flutter pub pub publish --dry-run
 ```
+
+(Note the redundant `pub pub`, which is needed until [issue #33302](https://github.com/flutter/flutter/issues/33302) is resolved).
 
 Finally, run the actual publish command:
 

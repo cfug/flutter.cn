@@ -39,7 +39,7 @@ If you have a specific request, please
   as it guides you through a progression of tween animations using
   different aspects of the animation APIs.
 
-* [动画教程](/docs/development/ui/animations/tutorial)<br>
+  [动画教程](/docs/development/ui/animations/tutorial)<br>
   阐释了 Flutter 动画包中的基本类（控制器，动画，曲线，监听器，构建器），这些可以帮助您使用不同的动画 APIs 完成补间动画。
 
 * [Zero to One with Flutter, part
@@ -47,7 +47,7 @@ If you have a specific request, please
   2]({{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
   Medium articles showing how to create an animated chart using tweening.
 
-* [使用 Flutter 从零到一, 第一部分]({{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354) 和 [第二部分]({{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
+  [使用 Flutter 从零到一, 第一部分]({{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354) 和 [第二部分]({{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
   Medium 文章中有介绍如何使用补间动画创建图表动画。
 
 * [Building Beautiful UIs with
@@ -57,7 +57,7 @@ If you have a specific request, please
   shows how to animate the new message&mdash;sliding it from the input area up
   to the message list.
 
-* [使用 Flutter 构建美观 UIs]({{site.codelabs}}/codelabs/flutter)<br>
+  [使用 Flutter 构建美观 UIs]({{site.codelabs}}/codelabs/flutter)<br>
   Codelab 演示如何构建简单的聊天应用程序。[步骤 7 (应用动画化)]({{site.codelabs}}/codelabs/flutter/#6)
 
 We also have some videos that discuss aspects of Flutter animation.
@@ -138,7 +138,7 @@ gestures.
   [AnimationController<wbr>.animateWith][AnimationController.animateWith] and
   [SpringSimulation][].
 
-* 请参考 API 文档 [AnimationController<wbr>.animateWith][AnimationController.animateWith] 和
+  请参考 API 文档 [AnimationController<wbr>.animateWith][AnimationController.animateWith] 和
   [SpringSimulation][]。
 
 ## Common animation patterns
@@ -166,7 +166,7 @@ animate adding an element to a list, or removing a selected element.
 The internal Dart list is synced as the user modifies the list using
 the plus (+) and minus (-) buttons.
 
-* [AnimatedList example](/docs/catalog/samples/animated-list)<br>
+  [AnimatedList example](/docs/catalog/samples/animated-list)<br>
 这个来自 [Sample App Catalog](/docs/catalog/samples) 的演示展示了如何动态添加元素至列表或删除选定元素。当用户使用 plus (+) 和 minus (-) 按钮修改列表时，会同步到内部 Dart 列表。
 
 ### Shared element transition
@@ -183,17 +183,17 @@ shared element transitions between routes (pages) using the Hero widget.
 * [Hero Animations](/docs/development/ui/animations/hero-animations)
 How to create two styles of Hero animations:
 
-* [Hero Animations](/docs/development/ui/animations/hero-animations) 如何创建两种风格的 Hero 动画：
+  [Hero Animations](/docs/development/ui/animations/hero-animations) 如何创建两种风格的 Hero 动画：
 
   * The hero flies from one page to another while changing position
     and size.
     
-  * 当改变位置和大小时，Hero 从一页飞至另一页。
+    当改变位置和大小时，Hero 从一页飞至另一页。
     
   * The hero's boundary changes shape, from a circle to a square,
     as its flies from one page to another.
     
-  * Hero 的边界改变形状由圆变方，同时从一页飞至另一页。
+    Hero 的边界改变形状由圆变方，同时从一页飞至另一页。
 
 * [Flutter Gallery][]<br>
 You can build the Gallery app yourself, or download it from the Play Store.
@@ -201,7 +201,7 @@ The
 [Shrine]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart)
 demo includes an example of a Hero animation.
 
-* [Flutter Gallery][]<br>
+  [Flutter Gallery][]<br>
 您可以自己自己创建 Gallery 应用程序，或者到 Play 商店中下载。[Shrine]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart) 演示中有关于 Hero 动画的示例。
 
 * Also see the API documentation for the
@@ -210,13 +210,13 @@ demo includes an example of a Hero animation.
 [PageRoute]({{site.api}}/flutter/widgets/PageRoute-class.html)
 classes.
 
-* 另请参阅 API 文档 [Hero,]({{site.api}}/flutter/widgets/Hero-class.html)
+  另请参阅 API 文档 [Hero,]({{site.api}}/flutter/widgets/Hero-class.html)
 [Navigator,]({{site.api}}/flutter/widgets/Navigator-class.html) 
 [PageRoute]({{site.api}}/flutter/widgets/PageRoute-class.html)。
 
 ### Staggered animation
 
-### 交错动画
+### 交织动画
 
 Animations that are broken into smaller motions, where some of the motion is delayed.
 The smaller animations may be sequential, or may partially or completely overlap.
@@ -225,7 +225,7 @@ The smaller animations may be sequential, or may partially or completely overlap
 
 * [Staggered Animations](/docs/development/ui/animations/staggered-animations)
 
-* [交错动画](/docs/development/ui/animations/staggered-animations)
+  [交织动画](/docs/development/ui/animations/staggered-animations)
 
 {% comment %}
   Save so I can remember how to add it back later.
@@ -249,14 +249,14 @@ Learn more about Flutter animations at the following links:
 A look at some of the major classes in the animations library,
 and Flutter's animation architecture.
 
-* [动画：技术概览](/docs/development/ui/animations/overview.html)<br>
+  [动画概览](/docs/development/ui/animations/overview.html)<br>
 动画库中主要类简介，以及 Flutter 动画结构。
 
 * [Animation and Motion Widgets](/docs/development/ui/widgets/animation)<br>
 A catalog of some of the animation widgets provided in the Flutter APIs.
 
-* [动画及动作 Widgets](/docs/development/ui/widgets/animation)<br>
-Flutter APIs 提供的 动画 widgets 目录。
+  [动画及动作 Widgets](/docs/development/ui/widgets/animation)<br>
+Flutter APIs 提供的动画 widgets 目录。
 
 {% comment %}
 Until the landing page for the animation library is reworked, leave this

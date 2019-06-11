@@ -371,6 +371,11 @@ all. These include:
 
 您可能还会遇到极少数根本不支持热重载的情况。这些包括：
 
+* Changes on `initState()` are not reflected by hot reload. A hot restart is 
+  required.
+  
+  更改 `initState()` 方法，热重载后不会产生效果，需要重新启动。
+
 * Enumerated types are changed to regular classes or regular classes are changed
   to enumerated types. For example, if you change:
   
@@ -436,10 +441,15 @@ last compilation. The following libraries are recompiled:
 调用热重载时，主机会查看自上次编译以来编辑的代码。重新编译以下文件：
 
 * Any libraries with changed code.
+
   任何有代码更改的文件。
+  
 * The application's main library.
+
   应用程序的主入口文件。
+  
 * The libraries from the main library leading to affected libraries.
+
   受主入口文件影响的文件。
 
 In Dart 2, those libraries' Dart source code are turned into

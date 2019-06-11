@@ -13,7 +13,7 @@ way to get started learning Flutter development.
 这篇文章是为那些想将已有的 iOS 开发经验运用到 Flutter 开发中的 iOS 开发者所作。
 如果你理解 iOS framework 的基本原理，那么你可以将这篇文章作为学习 Flutter 开发的起点。
 
-Before diving into this doc, you may want to watch a 15-minute video from
+Before diving into this doc, you might want to watch a 15-minute video from
 the [Flutter Youtube channel](https://www.youtube.com/flutterdev) about
 the Cupertino package.
 
@@ -730,6 +730,7 @@ create a native platform integration, or use an
 
 Calling `SystemNavigator.pop()` from your Dart code invokes the
 following iOS code:
+
 在 Dart 代码中调用 `SystemNavigator.pop()` 将会调用下面的 iOS 代码：
 
 ```
@@ -741,6 +742,7 @@ UIViewController* viewController = [UIApplication sharedApplication].keyWindow.r
 
 If that doesn't do what you want, you can create your own
 [platform channel](/docs/development/platform-integration/platform-channels) to invoke arbitrary iOS code.
+
 如果这不是你需要的功能，你可以创建你自己的[平台通道](/docs/development/platform-integration/platform-channels)来调用
 对应的 iOS 代码。
 
@@ -1532,6 +1534,7 @@ The observable lifecycle events are:
 * `inactive` — The application is in an inactive state and is not receiving
 user input. This event only works on iOS, as there is no equivalent event on
 Android.
+  
   `inactive` - 应用当前处于不活跃状态，不接收用户输入事件。
   这个事件只在 iOS 上有效，Android 中没有类似的状态。
   
@@ -1633,6 +1636,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 In iOS, you implement the delegate method, `tableView:didSelectRowAtIndexPath:`.
 In Flutter, use the touch handling provided by the passed-in widgets.
+
 在 iOS 里，可以通过 `tableView:didSelectRowAtIndexPath:` 代理方法来实现。
 而在 Flutter 里，需要通过 widget 传递进来的 touch 响应处理来实现。
 

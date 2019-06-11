@@ -2737,9 +2737,9 @@ void _submit() {
 ## 平台相关代码
 
 When building a cross-platform app, you want to re-use as much code as
-possible across platforms. However, scenarios may arise where it makes sense for
-the code to be different depending on the OS. This requires a separate
-implementation by declaring a specific platform.
+possible across platforms. However, scenarios might arise where it
+makes sense for the code to be different depending on the OS.
+This requires a separate implementation by declaring a specific platform.
 
 当构建跨平台应用程序的时候，你会尽量多地复用代码。然而，根据不同的应用场景，代码会根据平台的不同有所变化。这就需要提前声明具体的平台来进行独立的实现。
 

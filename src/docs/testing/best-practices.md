@@ -41,7 +41,7 @@ when designing your app:
   they change: 
 
   避免在一个超长的 `build()` 方法中返回一个过于庞大的 Widget。
-  把他们分拆乘不同的 Widget，并进行封装，另外他们要这样改变：
+  把他们分拆成不同的 Widget，并进行封装，另外他们要这样改变：
 
   * When `setState()` is called on a State, all descendent widgets will 
     rebuild. Therefore, localize the `setState()` call to the part of 

@@ -12,7 +12,7 @@ Flutter 始终致力于支持那些希望开发出能让包括失明、运动障
 
 Flutter supports three components for accessibility support:
 
-为实现辅助功能，Flutter 提供了三种组件：
+为实现无障碍支持，Flutter 提供了三种组件：
 
 * **[Large fonts](#large-fonts)**: Render text widgets with user-specified font
   sizes
@@ -154,7 +154,7 @@ helps all users when viewing an interface on devices in extreme lighting
 conditions, such as when exposed to direct sunlight or on a display with low
 brightness.
 
-高对比度能够使文本和图像更易于阅读。除了使具有各种视觉障碍的用户受益外，在极端光照条件下（例如在直射阳光下或在低亮度显示器上）观看设备上界面时，高对比度能够帮助所有用户。
+高对比度能够使文本和图像更易于阅读。除了使具有各种视觉障碍的用户受益外，高对比度也能够帮助所有用户在极端光照条件下（例如在直射阳光下或在低亮度显示器上）观看设备上的界面。
 
 The [W3C recommends][]: 
 

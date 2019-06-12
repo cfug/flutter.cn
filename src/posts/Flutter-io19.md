@@ -105,7 +105,7 @@ Flutter continues to grow in popularity and adoption. A [growing roster of deman
 Flutter 越来越受欢迎，使用人数也越来越多。[有需求的客户](https://flutter.dev/showcase)不断增加，其中包括 eBay、Sonos、Square、Capital One、Alibaba 和 Tencent。这些公司正在利用 Flutter 开发应用，并从中发现乐趣！以下是 eBay 的高级开发者 Larry McKenzie 对 Flutter 的看法:
 
 > _“Flutter is fast! Features that once took us multiple days to implement can be finished in a single day. Many problems we used to spend a lot of time on, simply no longer occur. Our team can now focus on creating more polished user experiences and delivering functionality. Flutter is enabling us to exceed expectations!”_
-
+>
 > _“Flutter 运行速度很快！过去需要很多天才能实现的功能，现在只需一天就能完成。过去我们花费很多时间处理的问题，如今再也不会发生了。我们的团队现在可以专注于创建更出色的用户体验和提供相关功能。Flutter 让我们能够超越期望！”_
 
 More broadly, [LinkedIn recently conducted a study](https://learning.linkedin.com/blog/tech-tips/the-fastest-growing-skills-among-software-engineers--and-how-to-) that showed **Flutter is the single fastest-growing skill among software engineers**, based on site members claiming it on their profile over the last 12 months. And in the recent 2019 StackOverflow developer survey, [Flutter was listed as one of the most-loved developer frameworks](https://insights.stackoverflow.com/survey/2019#technology-_-most-loved-dreaded-and-wanted-other-frameworks-libraries-and-tools).

@@ -591,7 +591,7 @@ has to do some extra work: it must provide about 70 translations
 如果你要开发一个 app 需要支持的语言不在 [GlobalMaterialLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html) 当中，
 那就需要做一些额外的工作：它必须提供大概 70 个字和词的翻译（本地化）。
 
-As an example, we'll show how to add support for the Belarusan
+As an example, we'll show how to add support for the Belarusian
 language.
 
 举个例子，我们将给大家展示如何支持白俄罗斯语。
@@ -607,7 +607,7 @@ must also be defined.
 
 Here's [the source code for a complete example](
 {{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart), 
-less the actual Belarusan translations, of an app that includes support for a new language.
+less the actual Belarusian translations, of an app that includes support for a new language.
 
 这是支持添加一种新语言的[一个完整例子的源码]({{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart)，
 相对实际上要翻译的白俄罗斯语数量，我们只翻译了部分。
@@ -643,7 +643,7 @@ String get closeButtonLabel => r'CLOSE';
 
 These are the English translations of course. To complete the job you 
 need to change the return value of each getter to an appropriate 
-Belarusan string.
+Belarusian string.
 
 当然，这些都是英语翻译。为了完成本地化操作，你需要把每一个 getter 的返回值翻译成合适的白俄罗斯语字符。
 
@@ -675,7 +675,7 @@ For more information about localization strings, see the
 Once you've implemented your language-specific subclasses of 
 GlobalMaterialLocalizations and LocalizationsDelegate, you just 
 need to add the language and a delegate instance to your app. 
-Here's some code that sets the app's language to Belarusan and 
+Here's some code that sets the app's language to Belarusian and 
 adds the BeMaterialLocalizations delegate instance to the app's
 localizationsDelegates list:
 

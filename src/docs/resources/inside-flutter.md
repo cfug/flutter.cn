@@ -13,10 +13,10 @@ With some additional details, this design also makes it easy for developers
 to create infinite scrolling lists using callbacks that build exactly those
 widgets that are visible to the user.
 
-本文档解释了使 Flutter API 正常工作的 Flutter 工具包内部工作原理。由于 Flutter widget
-是以积极组合的形式构建的，所以使用 Flutter 构建的用户界面含有大量 widget。为了支撑这些负载，
-Flutter 使用线性算法、操作高效且具有大量恒定因子优化的树形结构来布局和构建
-widget。通过一些额外的机制，该设计也允许开发者利用回调（用于构建用户可见的 widget）来轻松创建无限滚动列表。
+本文档解释了使 Flutter API 正常工作的 Flutter 工具包内部工作原理。由于 Flutter Widget
+是以积极组合的形式构建的，所以使用 Flutter 构建的用户界面含有大量 Widget。为了支撑这些负载，
+Flutter 使用了次线性算法来布局和构建 Widget，这些数据结构使树形结构优化更加高效，并且具有很多常量因子优化。
+通过一些额外的机制，该设计也允许开发者利用回调（用于构建用户可见的 Widget）来轻松创建无限滚动列表。
 
 ## Aggressive composability
 
@@ -29,9 +29,9 @@ For example, `Padding` is a widget rather than a property of other widgets.
 As a result, user interfaces built with Flutter consist of many,
 many widgets.
 
-积极可组合性是 Flutter 最为独特的一个特性。Widget 通过组合其他 widget 的方式进行构建，并且这些
-widget 自身由更基础的 widget 构建。比如，`Padding` 是一个 widget 而非其他 widget
-的属性。因此，使用 Flutter 创建的用户界面是由多个 widget 组成的。
+组合性是 Flutter 最为出众的一个特性。Widget 通过组合其他 Widget 的方式进行构建，并且这些
+Widget 自身由更基础的 Widget 构建。比如，`Padding` 是一个 Widget 而非其他 Widget
+的属性。因此，使用 Flutter 创建的用户界面是由多个 Widget 组成的。
 
 The widget building recursion bottoms out in `RenderObjectWidgets`,
 which are widgets that create nodes in the underlying _render_ tree.
@@ -40,16 +40,16 @@ interface, which is computed during _layout_ and used during _painting_ and
 _hit testing_. Most Flutter developers do not author render objects directly
 but instead manipulate the render tree using widgets.
 
-Widget 通过递归底层的 RenderObjectWidget 来进行构建，RenderObjectWidget 是在底层渲染树中创建节点的的
-widget。渲染树是用来存储用户界面几何信息（**布局**期间计算、**绘制**及**命中测试**期间使用）的数据结构。大多数
-Flutter 开发者无需直接创建这些对象，而是使用 widget 来操纵渲染树。
+Widget 递归构建的底层是 RenderObjectWidget，它将在渲染树的底部创建子节点。
+渲染树是一种存储用户界面几何信息的数据结构，该几何信息在**布局**期间计算并在**绘制**及**命中测试**期间使用。大多数
+Flutter 开发者无需直接创建这些对象，而是使用 Widget 来操纵渲染树。
 
 In order to support aggressive composability at the widget layer,
 Flutter uses a number of efficient algorithms and optimizations at
 both the widget and render tree layers, which are described in the
 following subsections.
 
-为了支持 widget 层的积极可组合性，Flutter 在 widget 和树渲染层使用了大量的高效算法和优化措施，这些将在下面小节中进行介绍。
+为了支持 Widget 层的积极可组合性，Flutter 在 Widget 和树渲染层使用了大量的高效算法和优化措施，这些将在下面小节中进行介绍。
 
 ### Sublinear layout
 
@@ -66,7 +66,7 @@ layout performance_ in the common case of subsequently updating an
 existing layout. Typically, the amount of time spent in layout should
 scale more slowly than the number of render objects.
 
-使用大量 widget 及渲染对象并保持高性能的关键是使用高效的算法。
+使用大量 Widget 及渲染对象并保持高性能的关键是使用高效的算法。
 其中最重要的是确定渲染对象几何空间（比如大小和位置）的**布局**算法的性能。其他一些工具包使用
 O(N²) 或更糟糕的布局算法（例如，约束域中的不动点迭代）。Flutter
 的目标在于布局初始化的线性性能，及一般情况下更新现有布局的`次线性布局性能`。通常情况下，布局所花费的时间应该比对象渲染要多得多。
@@ -103,7 +103,7 @@ returns from layout. As a result, the parent is free to reposition
 the child without needing to recompute the child's layout.
 
 针对这个通用协议，Flutter 拥有多种实现。最常用的是 `RenderBox`，它以二维的笛卡尔坐标进行运算。
-在盒子布局中，约束是最小最大宽度及最小最大高度。在布局过程中，子节点通过选择这些边界内的大小来确定其几何信息。
+在盒子布局中，约束是最小及最大宽高。在布局过程中，子节点通过选择这些边界内的大小来确定其几何信息。
 子节点在布局中返回后，由父节点确定该子节点在父坐标系中的位置 <sup><a href="#a3">3</a></sup>。
 注意，子节点的布局并不取决于它的位置，这是因为它的位置直到它从布局中返回后才确定。
 因此父节点可以在无需重新计算子节点布局的情况下重新定位子节点的位置信息。
@@ -170,7 +170,7 @@ them are visited during layout.
 
 ### Sublinear widget building
 
-### 次线性 widget 构建
+### 次线性 Widget 构建
 
 Similar to the layout algorithm, Flutter's widget building algorithm
 is sublinear. After being built, the widgets are held by the _element
@@ -180,10 +180,10 @@ _immutable_, which means (among other things), they cannot remember their
 parent or child relationships with other widgets. The element tree also
 holds the _state_ objects associated with stateful widgets.
 
-Flutter 使用类似于布局的次线性算法来构建 widget。widget 构建完成后，它们将被保留了用户页面逻辑结构的
-**element 树**保存。element 树是非常有必要的，这是因为 widget
-自身是**不可变的**，这意味着（其他情况除外），它们无法记住父（或子）节点与其他 widget 的关系。element
-还保存了与 stateful widget 相关联的 **state** 对象。
+Flutter 使用类似于布局的次线性算法来构建 Widget。Widget 构建完成后，它们将被保留了用户页面逻辑结构的
+**element 树**保存。element 树是非常有必要的，这是因为 Widget
+自身是**不可变的**，这意味着（其他情况除外），它们无法记住父（或子）节点与其他 Widget 的关系。element
+还保存了与 Stateful Widget 相关联的 **state** 对象。
 
 In response to user input (or other stimuli), an element can become dirty,
 for example if the developer calls `setState()` on the associated state
@@ -210,11 +210,11 @@ the old widget. Developers exploit this optimization to implement the
 _reprojection_ pattern, in which a widget includes a prebuilt child
 widget stored as a member variable in its build.
 
-由于 widget 是**不可变的**，因此父节点使用相同的 widget 来重新构建
+由于 Widget 是**不可变的**，因此父节点使用相同的 Widget 来重新构建
 element，如果 element 没有将自己标记为脏，那么该 element
-可立即从构建中返回，以切断构建的向下传递。另外，element 只需比较两个 widget
-所引用的对象标识来确定新 widget 与旧 widget 是否相同。开发者可利用该优化实现**投影**模式，即 widget
-包含了被存储为成员变量、在构建过程中预先构建的子 widget。
+可立即从构建中返回，以切断构建的向下传递。另外，element 只需比较两个 Widget
+所引用的对象标识来确定新 Widget 与旧 Widget 是否相同。开发者可利用该优化实现**投影**模式，即
+Widget 包含了被存储为成员变量、在构建过程中预先构建的子 Widget
 
 During build, Flutter also avoids walking the parent chain using
 `InheritedWidgets`. If widgets commonly walked their parent chain,
@@ -226,7 +226,7 @@ a hash table of `InheritedWidget`s at each element. Typically, many
 elements will reference the same hash table, which changes only at
 elements that introduce a new `InheritedWidget`.
 
-构建过程中，Flutter 同时使用 `InheritedWidgets` 来避免父链的遍历。如果 widget
+构建过程中，Flutter 同时使用 `InheritedWidgets` 来避免父链的遍历。如果 Widget
 经常遍历它们的父链，比如确定当前的主题颜色，那么构建阶段树的深底将变为 O(N²)，由于
 Flutter 的积极可组合性，其数量可能非常巨大。为了避免这些父链的遍历，框架通过在每个
 element 上维护一个 `InheritedWidget` 哈希表来向下传递 element 树中的信息。通常情况下，多个
@@ -246,15 +246,22 @@ following cases:
 element 的子节点来决定是否重用该 element。子列表协调算法针对以下情况进行了优化：
 
 * The old child list is empty.
+
   旧的子列表为空。
+
 * The two lists are identical.
+
   两个列表完全相同。
+
 * There is an insertion or removal of one or more widgets in exactly
   one place in the list.
-  在列表的某个位置插入或删除一个或多个 widget。
+
+  在列表的某个位置插入或删除一个或多个 Widget。
+
 * If each list contains a widget with the same key, the two widgets are
   matched.
-  如果每个列表包含相同 key 的 widget，则匹配这两个 widget。
+
+  如果新旧列表都包含相同 key 的 Widget，那么这两个 Widget 就会被认为是相同的。
 
 The general approach is to match up the beginning and end of both child
 lists by comparing the runtime type and key of each widget,
@@ -266,11 +273,10 @@ child list and queries the hash table by key for matches. Unmatched
 children are discarded and rebuilt from scratch whereas matched children
 are rebuilt with their new widgets.
 
-通常的策略是比较每个 widget 的运行时类型和 key
-来匹配子列表的头部及尾部，这可能在包含所有不匹配的子节点的每个列表中间找到非空范围。
-然后，框架将旧的子列表中的子项放入基于其 key 的哈希表中。接下来，框架遍历新子列表的范围，并根据
-key 对哈希表进行查询匹配。无法匹配的子项将会被丢弃并从头开始重建，匹配到的子项则使用它们新的
-widget 进行重建。
+通常的做法是从新旧子列表的头部和尾部开始对每一个 Widget 的运行时类型和 key
+进行匹配，这样就可能找到在两个列表中间所有不匹配子节点的（非空）范围。然后框架将旧子列表中该范围内的子项根据它的
+key 放入一个哈希表中。接下来，框架将会遍历新的子列表以寻找该范围内能够匹配哈希表中的 key
+的子项。无法匹配的子项将会被丢弃并从头开始重建，匹配到的子项则使用它们新的 Widget 进行重建。
 
 ### Tree surgery
 
@@ -285,7 +291,7 @@ often avoiding entire subtree walks. In fact, reusing elements is
 so valuable that Flutter supports _non-local_ tree mutations that
 preserve state and layout information.
 
-重用 element 对性能非常重要，这是因为 element 拥有两份关键数据：stateful widget
+重用 element 对性能非常重要，这是因为 element 拥有两份关键数据：Stateful Widget
 的状态对象及底层的渲染对象。当框架能够重用 element 时，用户界面的逻辑状态信息是不变的，
 并且可以重用之前计算的布局信息，这通常可以避免遍历整棵子树。事实上，重用 element
 是非常有价值的，因为 Flutter 支持**全局**树更新，以此保留状态和布局信息。
@@ -299,9 +305,9 @@ a fresh element at that location, the framework will check the hash
 table and reparent the existing element from its previous location to
 its new location, preserving the entire subtree.
 
-开发者可通过将 `GlobalKey` 与其中一个 widget 相关联来实施全局树更新。每个全局 key
+开发者可通过将 `GlobalKey` 与其中一个 Widget 相关联来实施全局树更新。每个全局 key
 在整个应用中都是唯一的，并使用特定于线程的哈希表进行注册。在构建过程中，开发者可以使用全局 key
-将 widget 移动到 element 树的任意位置。框架将不会在该位置上重新构建 element，而是检查哈希表并将现有的
+将 Widget 移动到 element 树的任意位置。框架将不会在该位置上重新构建 element，而是检查哈希表并将现有的
 element 从之前的位置移动到新的位置，从而保留整棵子树。
 
 The render objects in the reparented subtree are able to preserve
@@ -358,11 +364,11 @@ the major algorithms discussed above.
   painting calculations in the render tree happen more often than the
   widget-to-render tree handoff and can avoid repeated coordinate conversions.
 
-  **视觉渲染树、 widget 逻辑树**。 在 Flutter 中，渲染树在与设备无关的视觉坐标系中运行，这意味着即使
-  x 轴的读取方向是从右到左，其左侧的值依旧小于右侧。widget
+  **视觉渲染树、Widget 逻辑树**。 在 Flutter 中，渲染树在与设备无关的视觉坐标系中运行，这意味着即使
+  x 轴的读取方向是从右到左，其左侧的值依旧小于右侧。Widget
   树通常在逻辑坐标中运行，这意味着拥有**开始**和**结束**值的视觉解释取决于读取方向。逻辑坐标到视觉坐标的转换是在
-  widget 树和渲染树之间的切换中完成的。这种方法更为高效的原因是，渲染树中的布局和绘制计算比
-  widget 到渲染树的切换更加频繁，并且可以避免重复的坐标转换。
+  Widget 树和渲染树之间的切换中完成的。这种方法更为高效的原因是，渲染树中的布局和绘制计算比
+  Widget 到渲染树的切换更加频繁，并且可以避免重复的坐标转换。
 
 * **Text handled by a specialized render object.** The vast majority
   of render objects are ignorant of the complexities of text. Instead,
@@ -389,7 +395,7 @@ the major algorithms discussed above.
 
   **可观察对象**。 Flutter 使用模型观察及响应设计模式。显而易见，响应模式占主导地位，但
   Flutter 在某些叶子节点的数据结构上使用了可观察对象。比如 **Animation**
-  会在值发生变化时通知观察者列表。Flutter 将这些可观察对象从 widget
+  会在值发生变化时通知观察者列表。Flutter 将这些可观察对象从 Widget
   树转移到渲染树中，渲染树直接监听这些对象，并在它们改变时仅重绘管道的相关阶段。比如，更改
   **Animation\<Color\>** 可能只触发绘制阶段，而非整个构建和绘制阶段。
 
@@ -411,7 +417,7 @@ and _building widgets on demand_.
 
 对于工具包来说，实现无限滚动列表是非常困难的。Flutter
 支持基于**构造器**模式实现的简单无限滚动列表界面，其中 `ListView` 使用回调按需构建
-widget，即它们只在滚动过程中才对用户可见。该功能需要**视窗感知布局**及**按需构建 widget**的支持。
+Widget，即它们只在滚动过程中才对用户可见。该功能需要**视窗感知布局**及**按需构建 Widget**的支持。
 
 ### Viewport-aware layout
 
@@ -425,7 +431,7 @@ view. However, rather than having `RenderBox` children, a viewport has
 `RenderSliver` children, known as _slivers_, which have a viewport-aware
 layout protocol.
 
-同 Flutter 中的大多数东西一样，可滚动的 widget 是基于组合模式构建的。可滚动 widget 的外部是一个
+同 Flutter 中的大多数东西一样，可滚动的 Widget 是基于组合模式构建的。可滚动 Widget 的外部是一个
 `Viewport`，这是一个拥有更大内部空间的盒子，这意味着它的子节点可以超出视窗口的边界并滚动到可视区域中。
 但是，视窗口没有 `RenderBox` 子节点，而是拥有被称为 **sliver**，实现了视窗感知协议的
 `RenderSliver` 子节点。
@@ -469,7 +475,7 @@ to the header, the list, or the grid.
 
 ### Building widgets on demand
 
-### 按需构建 widget
+### 按需构建 Widget
 
 If Flutter had a strict _build-then-layout-then-paint_ pipeline,
 the foregoing would be insufficient to implement an infinite scrolling
@@ -484,8 +490,8 @@ render object currently performing layout_.
 
 如果 Flutter 拥有一个严格的**从构建到布局，再到绘制**的管道，那么前面的内容将不足以实现无限滚动列表，
 这是因为只有在布局阶段才能通过视窗口获取可用的空间信息。如果没有额外的机制，在布局阶段构建用于填充空间的
-widget 已经太迟了。Flutter 使用将管道的构建与布局交叉在一起的方式来解决这个问题。在布局阶段的任意时刻，
-**只要这些 widget 是当前布局的渲染对象的子节点**，框架就可以按需构建新的 widget。
+Widget 已经太迟了。Flutter 使用将管道的构建与布局交叉在一起的方式来解决这个问题。在布局阶段的任意时刻，
+**只要这些 Widget 是当前布局的渲染对象的子节点**，框架就可以按需构建新的 Widget。
 
 Interleaving build and layout is possible only because of the strict
 controls on information propagation in the build and layout algorithms.
@@ -529,7 +535,7 @@ the need specifically for sample code and illustrative diagrams.
 速度只有在框架能够被有效使用时才有意义。为了引导设计更高可用性的 Flutter API，Flutter
 已经在与开发者进行的广泛用户体验研究中进行了反复测试。这些研究有时证实了已有的设计决策，
 有时有助于引导功能的优先级，有时会改变 API 的设计方向。比如，Flutter 的 API
-记录很多，用户体验的研究不仅证实了这些文档的价值，也同时强调了示例代码及说明性图表的重要性。
+文档很多，用户体验的研究不仅证实了这些文档的价值，也同时强调了示例代码及说明性图表的重要性。
 
 This section discusses some of the decisions made in Flutter's API design
 in aid of usability.
@@ -557,8 +563,8 @@ concept of children. `RenderPadding` takes a single child, so it has storage
 for a single pointer to a single child. `RenderFlex` takes an arbitrary
 number of children and manages it as a linked list.
 
-大多数 `Widget` 对象都有一个子 `Widget` 对象，因此它只暴露了一个 `child` 参数。一些 widget
-支持任意数量的子节点，并暴露了一个获取子节点列表的 `children` 参数。有些 widget
+大多数 `Widget` 对象都有一个子 `Widget` 对象，因此它只暴露了一个 `child` 参数。一些 Widget
+支持任意数量的子节点，并暴露了一个获取子节点列表的 `children` 参数。有些 Widget
 无任何子节点、不保留内存且无任何参数。同样的，`RenderObjects` 暴露特定于子模型的 API。`RenderImage`
 是一个没有子节点的叶子节点。`RenderPadding` 只持有一个子节点，因此它有一个指向单个子节点的指针存储空间。`RenderFlex`
 接受任意数量的子节点，并通过链表对其进行管理。
@@ -585,7 +591,7 @@ children, for example, defining the first child to be the prefix value
 and the second to be the suffix, the dedicated child model allows for
 dedicated named properties to be used instead.
 
-`Chip` widget 和 `InputDecoration` 对象具有与其控制中的插槽相匹配的字段。
+`Chip` Widget 和 `InputDecoration` 对象具有与其控制中的插槽相匹配的字段。
 如果一个通用子模型将强制语义定义在子列表之上，比如将第一个子节点定义为前缀，
 第二个子节点定义为后缀，那么专用子模型允许使用特有的命名属性。
 
@@ -619,7 +625,7 @@ that pattern is unnecessary because searching for `space`
 uncovers the `Spacer` widget, which uses `Expanded` and `SizedBox` directly
 to achieve the effect.
 
-专门存在一些琐碎的 widget，以便开发者在寻找问题解决方案时能够发现并使用它们。一旦知道如何使用 `Expanded`
+专门存在一些琐碎的 Widget，以便开发者在寻找问题解决方案时能够发现并使用它们。一旦知道如何使用 `Expanded`
 和大小为零的 `SizedBox` 子部件，就可以轻松地为行或列添加空格，但你会发现这种模式是没有必要的，因为搜索
 `space` 所找到的 `Spacer`，它是直接使用 `Expanded` 和 `SizedBox` 来达到同样的效果的。
 
@@ -628,8 +634,8 @@ widget subtree in the build at all. However, developers typically expect
 there to be a widget to do this, and so the `Visibility` widget exists
 to wrap this pattern in a trivial reusable widget.
 
-同理，可以通过在构建过程中不包含 widget 子树来轻松隐藏 widget 子树。但开发者通常希望有一个
-widget 来执行该操作，因此 `Visibility` 的存在便是将此模式封装在一个简单的可重用 widget 中。
+同理，可以通过在构建过程中不包含 Widget 子树来轻松隐藏 Widget 子树。但开发者通常希望有一个
+Widget 来执行该操作，因此 `Visibility` 的存在便是将此模式封装在一个简单的可重用 Widget 中。
 
 ### Explicit arguments
 
@@ -728,7 +734,7 @@ such that there are very few invalid combinations.
 
 ### Reporting error cases aggressively
 
-### 主动报告错误
+### 积极报告错误
 
 Not all error conditions can be designed out. For those that remain,
 in debug builds, Flutter generally attempts to catch the errors very
@@ -739,7 +745,7 @@ cause an exception to be thrown.
 
 并非所有的错误都能被设计出来。对于那些遗漏的错误，在 debug 版本中，Flutter
 通常会尝试尽早捕获并立即报告。它使用了大量的断言，对构造函数参数进行了详细的完整性检查，
-并监视其生命周期，一旦检测到不一致，它们会立即引发异常，
+并监视其生命周期，一旦检测到不一致，它们会立即引发异常。
 
 In some cases, this is taken to extremes: for example, when running
 unit tests, regardless of what else the test is doing, every `RenderBox`
@@ -748,8 +754,7 @@ sizing methods fulfill the intrinsic sizing contract. This helps catch
 errors in APIs that might otherwise not be exercised.
 
 这在某些情况下是极端情况：比如，在执行单元测试时，无论测试用例正在做什么，每个 `RenderBox`
-子类都会主动地检查其内部大小调整方法是否满足内部大小调整契约。这有助于捕获 API
-中可能无法执行的错误。
+子类都会主动地检查其内部大小调整方法是否满足内部大小调整契约。这有助于捕获可能无法执行的 API 错误。
 
 When exceptions are thrown, they include as much information as
 is available. Some of Flutter's error messages proactively probe the
@@ -788,7 +793,7 @@ of the user interface is described by the developer and the framework
 computes the series of tree mutations necessary to reflect this new
 configuration.
 
-Flutter 在 widget 层引入了一个使用响应式来操作底层渲染树的组合机制。该 API
+Flutter 在 Widget 层引入了一个使用响应式来操作底层渲染树的组合机制。该 API
 通过将树的创建和更新步骤整合到一个单一的树结构描述（构建）中，从而将树操作抽象出来，
 这包括：每次系统状态更新之后，开发者用于描述用户界面的新配置；框架对于新配置所需要进行的一系列树更新计算。
 
@@ -817,7 +822,7 @@ keeps a record of the current value of the input, and begins an animation
 sequence whenever the input value changes, transitioning from the current
 value to the new value over a specified duration.
 
-每个可执行隐式动画的特性都包含一个 stateful widget，它用于记录输入的当前值，并在输入值改变时开始执行动画序列，
+每个可执行隐式动画的特性都包含一个 Stateful Widget，它用于记录输入的当前值，并在输入值改变时开始执行动画序列，
 并在指定的持续时间内从当前值转换为新值。
 
 This is implemented using `lerp` (linear interpolation) functions using
@@ -897,7 +902,7 @@ the available classes, and a private class is defined to describe the
 intermediate stage. This is the case, for instance, when interpolating
 between a `CircleBorder` and a `RoundedRectangleBorder`.
 
-在某些情况下，插值本身不能被任何可用的类描述，并且定义类一个私有类来描述中间状态。比如在
+在某些情况下，插值本身不能被任何可用的类描述，并且定义一个私有类来描述中间状态。比如在
 `CircleBorder` 和 `RoundedRectangleBorder` 之间进行插值时就是如此。
 
 This mechanism has one further added advantage: it can handle interpolation
@@ -924,9 +929,9 @@ With some additional design, these data structures also make it
 easy for developers to create infinite scrolling lists that build
 widgets on demand when they become visible.
 
-Flutter 一切都是 widget 的口号是围绕着通过组合 widget 来构建用户界面，widget
-又由更为基础的 widget 构成。这种积极组合的结果是需要精心设计的算法和数据结构才能有效处理大量的
-widget。通过一些额外的机制，这些数据结构还能使开发者轻松构建无限滚动列表，以便在 widget
+Flutter 一切都是 Widget 的口号是围绕着通过组合 Widget 来构建用户界面，Widget
+又由更为基础的 Widget 构成。这种积极组合的结果是需要精心设计的算法和数据结构才能有效处理大量的
+Widget。通过一些额外的机制，这些数据结构还能使开发者轻松构建无限滚动列表，以便在 Widget
 可见时进行按需构建。
 
 ---
@@ -975,25 +980,25 @@ widget。通过一些额外的机制，这些数据结构还能使开发者轻�
   it will be updated twice. This redundant build is limited to the
   widget itself and does not impact its descendants.
 
-<sup><a name="a4">4</a></sup>  该规则有一个例外。正如[按需构建 widget](#building-widgets-on-demand)
-  中所描述的，由于布局约束的变化，一些 widget 可以被重建。如果 widget
-  在同一帧中因与此无关的原因被标记为脏，同时也由于它受布局约束的影响，该 widget
-  将会被构建两次。该次冗余构建仅限于 widget 自身，并不会影响其后代节点。
+<sup><a name="a4">4</a></sup>  该规则有一个例外。正如[按需构建 Widget](#building-widgets-on-demand)
+  中所描述的，由于布局约束的变化，一些 Widget 可以被重建。如果 Widget
+  在同一帧中因与此无关的原因被标记为脏，同时也由于它受布局约束的影响，该 Widget
+  将会被构建两次。该次冗余构建仅限于 Widget 自身，并不会影响其后代节点。
 
 <sup><a name="a5">5</a></sup> A key is an opaque object optionally
   associated with a widget whose equality operator is used to influence
   the reconciliation algorithm.
 
-<sup><a name="a5">5</a></sup> 键是一个可选的与 widget 相关联的不透明对象，它的相等操作符用于影响协调算法。
+<sup><a name="a5">5</a></sup> 键是一个可选的与 Widget 相关联的不透明对象，它的相等操作符用于影响协调算法。
 
 <sup><a name="a6">6</a></sup>  For accessibility, and to give applications
   a few extra milliseconds between when a widget is built and when it
   appears on the screen, the viewport creates (but does not paint)
   widgets for a few hundred pixels before and after the visible widgets.
 
-<sup><a name="a6">6</a></sup>  对于可访问性，并在 widget
-  构建及在窗口显示的过程中为应用提供几毫米的时间，视窗口会在可见 widget
-  的前后为几百个像素构建（但不进行绘制）widget。
+<sup><a name="a6">6</a></sup>  对于可访问性，并在 Widget
+  构建及在窗口显示的过程中为应用提供几毫米的时间，视窗口会在可见 Widget
+  的前后为几百个像素构建（但不进行绘制）Widget。
 
 <sup><a name="a7">7</a></sup>  This approach was first made popular by
   Facebook's React library.

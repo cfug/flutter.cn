@@ -11,9 +11,9 @@ app, and is accessible at runtime. Common types of assets include
 static data (for example, JSON files), configuration files, icons, and
 images (JPEG, WebP, GIF, animated WebP/GIF, PNG, BMP, and WBMP).
 
-Flutter应用程序包含代码和 assets（有时称为资源）。资源是被打包到应用程序安装包中，
-可以在运行时访问的一种文件。常见的资源类型包括静态数据（例如JSON文件），配置文件，图标和
-图片（JPEG，WebP，GIF，动画WebP / GIF，PNG，BMP和WBMP）。
+Flutter 应用程序包含代码和 _assets_（有时称为资源）。资源是被打包到应用程序安装包中，
+可以在运行时访问的一种文件。常见的资源类型包括静态数据（例如 JSON 文件），配置文件，图标和
+图片（JPEG，WebP，GIF，动画 WebP / GIF，PNG，BMP 和 WBMP）。
 
 ## Specifying assets
 

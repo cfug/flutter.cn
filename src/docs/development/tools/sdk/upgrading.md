@@ -11,7 +11,7 @@ No matter which [Flutter release channel][] you follow,
 you can use the `flutter` command to upgrade your Flutter SDK
 and the packages that your app depends on.
 
-无论你使用哪个 [Flutter发布频道][] ，你都可以使用 `flutter` 命令来更新Flutter SDK 和你app所依赖的packages
+无论你使用哪个 [Flutter发布频道][Flutter release channel] ，你都可以使用 `flutter` 命令来更新Flutter SDK 和你app所依赖的packages
 
 ## One-time setup
 ## 一次性设置

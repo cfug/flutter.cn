@@ -59,12 +59,26 @@ steps:
 
 每一个 iOS 应用都与一个在 Apple 注册的唯一的 Bundle ID 关联。想要为你的 App 注册一个 Bundle ID，跟着下面的步骤
 
-1. Open the [App IDs][devportal_appids] page of your developer account.  在你的开发者账号页面打开 [App IDs][devportal_appids] 页面。
-1. Click **+** to create a new Bundle ID.  点击 **+** 来创建一个新的 Bundle ID。
-1. Enter an app name, select **Explicit App ID**, and enter an ID.  输入一个 App 名称，选择 **确切的 App ID**，然后输入一个 ID。
-1. Select the services your app will use, then click **Continue**. 选择你的 App 将要使用的服务，然后点击 **继续**
+1. Open the [App IDs][devportal_appids] page of your developer account.
+
+   在你的开发者账号页面打开 [App IDs][devportal_appids] 页面。
+
+1. Click **+** to create a new Bundle ID.  
+
+   点击 **+** 来创建一个新的 Bundle ID。
+
+1. Enter an app name, select **Explicit App ID**, and enter an ID.  
+
+   输入一个 App 名称，选择 **确切的 App ID**，然后输入一个 ID。
+
+1. Select the services your app will use, then click **Continue**. 
+    
+   选择你的 App 将要使用的服务，然后点击 **继续**
+
 1. On the next page, confirm the details and click **Register** to register
-   your Bundle ID.  在下一页，确认细节并点击 **注册** 来注册你的 Bundle ID。
+   your Bundle ID.  
+   
+   在下一页，确认细节并点击 **注册** 来注册你的 Bundle ID。
 
 ### Create an application record on App Store Connect
 ### 在 App Store Connect 创建一个应用记录
@@ -73,17 +87,34 @@ Next, you'll register your app on App Store Connect:
 
 接下来，你需要在 App Store Connect 注册你的 App：
 
-1. Open [App Store Connect][appstoreconnect_login] in your browser.  在你的浏览器里打开 [App Store Connect][appstoreconnect_login]。
-1. On the App Store Connect landing page, click **My Apps**. 在 App Store Connect 的落地页，点击 **我的 App**。
+1. Open [App Store Connect][appstoreconnect_login] in your browser.  
+    
+   在你的浏览器里打开 [App Store Connect][appstoreconnect_login]。
+    
+1. On the App Store Connect landing page, click **My Apps**. 
+
+   在 App Store Connect 的落地页，点击 **我的 App**。
+
 1. Click **+** in the top-left corner of the My Apps page, then select
-   **New App**.  在我的 App 页面的顶部左侧 ，点击 **+** ，然后选择 **新 App**。
+   **New App**.  
+   
+   在我的 App 页面的顶部左侧 ，点击 **+** ，然后选择 **新 App**。
+
 1. Fill in your app details in the form that appears. In the Platforms section,
    ensure that iOS is checked. Since Flutter does not currently support tvOS,
-   leave that checkbox unchecked. Click **Create**. 在出现的表单中填写你的 App 细节。在平台部分，确保 iOS 被选中。由于 Flutter 暂时不支持 tvOS ，让它的选项保持未选中。点击 **创建**。
+   leave that checkbox unchecked. Click **Create**. 
+   
+   在出现的表单中填写你的 App 细节。在平台部分，确保 iOS 被选中。由于 Flutter 暂时不支持 tvOS ，让它的选项保持未选中。点击 **创建**。
+   
 1. Navigate to the application details for your app and select **App
-   Information** from the sidebar.  跳转到你的 App 的详情，然后从侧边栏选择 **App 信息** 。
+   Information** from the sidebar.  
+   
+   跳转到你的 App 的详情，然后从侧边栏选择 **App 信息** 。
+   
 1. In the General Information section, select the Bundle ID you registered in
-   the preceding step. 在基础信息部分， 选择你在前一步注册的 BundleID。
+   the preceding step. 
+   
+   在基础信息部分， 选择你在前一步注册的 BundleID。
 
 For a detailed overview, see [Add an app to your account][appstoreconnect_guide_register].
 
@@ -101,11 +132,19 @@ For detailed procedures and descriptions, see [Prepare for app distribution]
 Navigate to your target's settings in Xcode:
 在 Xcode 中跳转到你的目标设置：
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.  在 Xcode 中，打开你的 App 的 `ios` 目录中的 `Runner.xcworkspace`
+1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.  
+
+   在 Xcode 中，打开你的 App 的 `ios` 目录中的 `Runner.xcworkspace`
+   
 1. To view your app's settings, select the **Runner** project in the Xcode
    project navigator. Then, in the main view sidebar, select the **Runner**
-   target.    想要看你的 App 的设置，在 Xcode 的项目导航栏中选择 **Runner** 
-1. Select the **General** tab.  选择 **General** tab
+   target.    
+   
+   想要看你的 App 的设置，在 Xcode 的项目导航栏中选择 **Runner** 
+   
+1. Select the **General** tab.  
+   
+   选择 **General** tab
 
 Next, you'll verify the most important settings:
 
@@ -117,9 +156,12 @@ In the Identity section:
 
   * `Display Name:` the name of the app to be displayed on the home screen and
     elsewhere.
-  * `显示名称`：这个 App 将会在主屏幕以及其他地方展示的名字。
+    
+    这个 App 将会在主屏幕以及其他地方展示的名字。
+    
   * `Bundle Identifier:` the App ID you registered on App Store Connect.
-  * `Bundle Identifier:`  你在 App Store Connect 注册的 App ID。
+    
+     你在 App Store Connect 注册的 App ID。
 
 In the Signing section:
 
@@ -129,10 +171,13 @@ In the Signing section:
     app signing and provisioning. This is set `true` by default, which should
     be sufficient for most apps. For more complex scenarios, see the [Code
     Signing Guide][codesigning_guide].
-  * `Automatically manage signing` 是否需要 Xcode 自动管理 App 签名和设置。这个默认被设置为 `true` ，对于绝大多数 App 来说都是适用的。对于更复杂的场景，查看 [代码签名指南][codesigning_guide]。
+    
+    `Automatically manage signing` 是否需要 Xcode 自动管理 App 签名和设置。这个默认被设置为 `true` ，对于绝大多数 App 来说都是适用的。对于更复杂的场景，查看 [代码签名指南][codesigning_guide]。
+    
   * `Team:` select the team associated with your registered Apple Developer
     account. If required, select **Add Account...**, then update this setting.
-  * `Team` ：选择关联到你注册的 Apple 开发者账户的团队。如果需要，选择 **Add Account...**, 然后更新选项。
+    
+    `Team` ：选择关联到你注册的 Apple 开发者账户的团队。如果需要，选择 **Add Account...**, 然后更新选项。
 
 In the Deployment Info section:
 
@@ -142,7 +187,8 @@ In the Deployment Info section:
     Flutter supports iOS 8.0 and later. If your app includes Objective-C or
     Swift code that makes use of APIs that were unavailable in iOS 8, update
     this setting appropriately.
-  * `Deployment Target:` 你的 App 将会支持的最低版本的 iOS 。Flutter 支持 iOS 8.0 及以后的版本。如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，设置到合适的版本。
+    
+    `Deployment Target:` 你的 App 将会支持的最低版本的 iOS 。Flutter 支持 iOS 8.0 及以后的版本。如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，设置到合适的版本。
 
 The General tab of your project settings should resemble the following:
 你项目的 General tab 应该看起来像是这样的：
@@ -162,10 +208,18 @@ step, you'll replace these placeholder icons with your app's icons:
 
 当一个新的 Flutter App 被创建时，一个占位图标就会被创建。在这一步，你将使用你自己的图标替换占位图标：
 
-1. Review the [iOS App Icon][appicon] guidelines. 回顾 [iOS App 图标][appicon] 指南。
+1. Review the [iOS App Icon][appicon] guidelines. 
+
+   回顾 [iOS App 图标][appicon] 指南。
+
 1. In the Xcode project navigator, select `Assets.xcassets` in the `Runner`
-   folder. Update the placeholder icons with your own app icons. 在 Xcode 项目导航栏，选择 `Runner` 目录中的 `Assets.xcassets`，更新占位图标为你自己的 App 的图标。
-1. Verify the icon has been replaced by running your app using `flutter run`. 通过执行 `flutter run` 来验证你的图标是否已经被替换。
+   folder. Update the placeholder icons with your own app icons. 
+   
+   在 Xcode 项目导航栏，选择 `Runner` 目录中的 `Assets.xcassets`，更新占位图标为你自己的 App 的图标。
+   
+1. Verify the icon has been replaced by running your app using `flutter run`. 
+   
+   通过执行 `flutter run` 来验证你的图标是否已经被替换。
 
 ## Create a build archive
 ## 创建一个构建归档
@@ -185,39 +239,69 @@ On the command line, follow these steps in your application directory:
 
 在命令行中你的应用目录下执行如下步骤：
 
-1. Run `flutter build ios` to create a release build (`flutter build` defaults to `--release`). 执行 `flutter build ios` 来创建一个 release 构建(`flutter build` 默认指向 `--release`)。
+1. Run `flutter build ios` to create a release build (`flutter build` defaults to `--release`).
+   
+   执行 `flutter build ios` 来创建一个 release 构建(`flutter build` 默认指向 `--release`)。
+   
 1. To ensure that Xcode refreshes the release mode configuration, close and
    re-open your Xcode workspace. For Xcode 8.3 and later, this step is not
-   required. 为了确保 Xcode 刷新了发布模式的配置，关闭并重新打开你的 Xcode 工作空间。对于 Xcode 8.3 及以后版本，这一步不是必须的。
+   required. 
+   
+   为了确保 Xcode 刷新了发布模式的配置，关闭并重新打开你的 Xcode 工作空间。对于 Xcode 8.3 及以后版本，这一步不是必须的。
 
 In Xcode, configure the app version and build:
 
 在 Xcode中，配置 App 的版本，并开始构建：
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder. 在 Xcode 中，打开你应用 `ios` 目录中的 `Runner.xcworkspace`
-1. Select **Product > Scheme > Runner**. 选择 **Product > Scheme > Runner**
-1. Select **Product > Destination > Generic iOS Device**. 选择 **Product > Destination > Generic iOS Device**
+1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder. 
+
+   在 Xcode 中，打开你应用 `ios` 目录中的 `Runner.xcworkspace`
+   
+1. Select **Product > Scheme > Runner**. 
+
+   选择 **Product > Scheme > Runner**
+   
+1. Select **Product > Destination > Generic iOS Device**. 
+
+   选择 **Product > Destination > Generic iOS Device**
+   
 1. Select **Runner** in the Xcode project navigator, then select the **Runner**
-   target in the settings view sidebar.  在 Xcode 项目导航栏中选择 **Runner**，然后在设置界面侧边栏选择 **Runner** 目标。
+   target in the settings view sidebar.  
+   
+   在 Xcode 项目导航栏中选择 **Runner**，然后在设置界面侧边栏选择 **Runner** 目标。
+   
 1. In the Identity section, update the **Version** to the user-facing
-   version number you wish to publish. 在 Identity 部分，更新 **Version** 为你想要发布的用户可见的版本号。
+   version number you wish to publish. 
+   
+   在 Identity 部分，更新 **Version** 为你想要发布的用户可见的版本号。
+   
 1. In the Identity section, update the **Build** identifier to a unique
    build number used to track this build on App Store Connect. Each upload requires a
-   unique build number. 在 Identity 部分，更新 **Build** 标示为一个唯一的 Build 数字，用来在 App Store Connect 上去追踪。每一个上传都需要一个独立的 Build 数字。
+   unique build number. 
+   
+   在 Identity 部分，更新 **Build** 标示为一个唯一的 Build 数字，用来在 App Store Connect 上去追踪。每一个上传都需要一个独立的 Build 数字。
 
 Finally, create a build archive and upload it to App Store Connect:
 
 最后，创建一个构建归档并将其上传到 App Store Connect：
 
-1. Select **Product > Archive** to produce a build archive. 选择 **Product > Archive** 来生成一个构建归档 
+1. Select **Product > Archive** to produce a build archive. 
+
+   选择 **Product > Archive** 来生成一个构建归档 
 1. In the sidebar of the Xcode Organizer window, select your iOS app, then
-   select the build archive you just produced. 在 Xcode 组织界面的侧边栏中，选择你的 iOS app，然后选择你刚刚的生成的构建归档。
+   select the build archive you just produced. 
+   
+   在 Xcode 组织界面的侧边栏中，选择你的 iOS app，然后选择你刚刚的生成的构建归档。
 1. Click the **Validate...** button. If any issues are reported, address them
    and produce another build. You can reuse the same build ID until you upload
-   an archive. 点击 **Validate...** 按钮。如果报告了任何问题，记录下他们并重新开始一个新的构建。你可以使用同一个 Build ID 直到你上传了一个归档。
+   an archive. 
+   
+   点击 **Validate...** 按钮。如果报告了任何问题，记录下他们并重新开始一个新的构建。你可以使用同一个 Build ID 直到你上传了一个归档。
 1. After the archive has been successfully validated, click **Upload to App
    Store...**. You can follow the status of your build in the Activities
-   tab of your app's details page on [App Store Connect][appstoreconnect_login].  当这个归档校验成功以后，点击 **Upload to App Store...**。你可以在 [App Store Connect][appstoreconnect_login] 中你的 App 的页面中的活动 Tab 查看你的构建的状态。
+   tab of your app's details page on [App Store Connect][appstoreconnect_login].  
+   
+   当这个归档校验成功以后，点击 **Upload to App Store...**。你可以在 [App Store Connect][appstoreconnect_login] 中你的 App 的页面中的活动 Tab 查看你的构建的状态。
 
 You should receive an email within 30 minutes notifying you that your build has
 been validated and is available to release to testers on TestFlight. At this
@@ -240,12 +324,23 @@ TestFlight.
 [TestFlight][testflight] 允许开发者发布他们的 App 给内部或外部的测试人员。在这一个可选的步骤中，你将会发布你的构建到 Testflight。
 
 1. Navigate to the TestFlight tab of your app's application details page on
-   [App Store Connect][appstoreconnect_login]. 在[App Store Connect][appstoreconnect_login]中，你的应用的详情页面跳转到 TestFlight Tab。
-1. Select **Internal Testing** in the sidebar. 在侧边栏选择 **Internal Testing**。
-1. Select the build to publish to testers, then click **Save**. 选择要发布给测试人员的构建，然后点击 **保存**。
+   [App Store Connect][appstoreconnect_login]. 
+   
+   在[App Store Connect][appstoreconnect_login]中，你的应用的详情页面跳转到 TestFlight Tab。
+   
+1. Select **Internal Testing** in the sidebar. 
+
+   在侧边栏选择 **Internal Testing**。
+   
+1. Select the build to publish to testers, then click **Save**. 
+   
+   选择要发布给测试人员的构建，然后点击 **保存**。
+   
 1. Add the email addresses of any internal testers. You can add additional
    internal users in the Users and Roles page of App Store Connect, available from
-   the dropdown menu at the top of the page. 为每一个内部测试人员添加邮件。你可以在 App Store Connect 的用户与角色页面添加额外的内部用户，他们将会出现在页面顶部的下拉菜单中。
+   the dropdown menu at the top of the page. 
+   
+   为每一个内部测试人员添加邮件。你可以在 App Store Connect 的用户与角色页面添加额外的内部用户，他们将会出现在页面顶部的下拉菜单中。
 
 For more details, see [Distribute an app using TestFlight]
 [distributionguide_testflight].
@@ -262,11 +357,18 @@ submit your app for review and release to the App Store:
 
 1. Select **Pricing and Availability** from the sidebar of your app's
    application details page on [App Store Connect][appstoreconnect_login] and
-   complete the required information.  从你的 App 在 [App Store Connect][appstoreconnect_login] 的页面中的侧边栏中选择 **Pricing and Availability**，然后完善所有的必填信息。
+   complete the required information.  
+   
+   从你的 App 在 [App Store Connect][appstoreconnect_login] 的页面中的侧边栏中选择 **Pricing and Availability**，然后完善所有的必填信息。
 1. Select the status from the sidebar. If this is the first release of this
    app, its status will be **1.0 Prepare for Submission**. Complete all
-   required fields. 从侧边栏选择状态。如果这是第一次发布这个 App，这个状态将会是 **1.0 Prepare for Submission**，填写所有需要填写的区域。
-1. Click **Submit for Review**. 点击 **提交审核**
+   required fields. 
+   
+   从侧边栏选择状态。如果这是第一次发布这个 App，这个状态将会是 **1.0 Prepare for Submission**，填写所有需要填写的区域。
+   
+1. Click **Submit for Review**. 
+
+   点击 **提交审核**
 
 Apple will notify you when their app review process is complete. Your app will
 be released according to the instructions you specified in the **Version
@@ -277,7 +379,7 @@ Apple 将会在他们的审核过程结束后提醒你。你的 App 将会根据
 For more details, see [Distribute an app through the App Store]
 [distributionguide_submit].
 
-关于更多写进，查看 [通过 App Store 分发一个 App][distributionguide_submit].
+关于更多细节，查看 [通过 App Store 分发一个 App][distributionguide_submit].
 
 ## Troubleshooting
 ## 故障排除

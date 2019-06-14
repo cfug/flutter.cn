@@ -20,7 +20,9 @@ diff2html: true
 
   * How to use the fundamental classes from the animation library to add
     animation to a widget.
-  * 如何使用动画库中的基本类为 widget 添加动画。
+
+    如何使用动画库中的基本类为 widget 添加动画。
+  
   * When to use `AnimatedWidget` vs. `AnimatedBuilder`.
   * `AnimatedWidget` 和 `AnimatedBuilder` 的应用区别。
 {{site.alert.end}}

@@ -11,7 +11,7 @@ No matter which [Flutter release channel][] you follow,
 you can use the `flutter` command to upgrade your Flutter SDK
 and the packages that your app depends on.
 
-无论你使用哪个[Flutter发布频道][]，你都可以使用 `flutter` 命令来更新Flutter SDK 和你app所依赖的packages
+无论你使用哪个 [Flutter发布频道][] ，你都可以使用 `flutter` 命令来更新Flutter SDK 和你app所依赖的packages
 
 ## One-time setup
 ## 一次性设置
@@ -94,6 +94,7 @@ Flutter有[4个发布频道][Flutter发布频道]：
 除非你需要更加新的版本。
 
 To view your current channel, use the following command:
+
 要查看你当前使用的哪个频道，使用下面的命令：
 
 ```terminal

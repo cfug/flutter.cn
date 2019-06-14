@@ -24,6 +24,8 @@
           permalink: /docs/get-started/flutter-for/web-devs
         - title: 给 Xamarin.Forms 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/xamarin-forms-devs
+        - title: 声明式 UI 介绍
+          permalink: /docs/get-started/flutter-for/declarative
     - title: Dart 语言概览
       permalink: https://www.dartlang.org/guides/language
 
@@ -150,7 +152,7 @@
               permalink: /docs/development/tools/sdk/releases
         - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload
-        - title: 代码格式
+        - title: 代码格式化
           permalink: /docs/development/tools/formatting
         - title: Flutter Inspector
           permalink: https://flutter.github.io/devtools/inspector

@@ -17,6 +17,8 @@ a common identifier. In some cases, you may also need to pass arguments to a
 named route. For example, you may wish to navigate to the `/user` route and
 pass information about the user to that route.
 
+[`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 组件支持通过使用通用标识符从应用程序的任何地方导航到特定路由。在某些情况下，你可能还希望能够传递参数给特定路由。例如，你希望导航到 `/user` 路由并携带上用户信息。
+
 In Flutter, you can accomplish this task by providing additional `arguments` to
 the
 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
@@ -30,22 +32,45 @@ or
 [`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html)
 constructor.
 
+在 Flutter 中，你能通过提供额外的 `arguments` 给 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法方便地完成这个任务。通过使用 [`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html) 方法或 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 和 [`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html) 构造器中的 [`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html) 来获取参数。
+
 This recipe demonstrates how to pass arguments to a named route and read the
 arguments using `ModelRoute.of` and `onGenerateRoute`.
 
+这个章节讲解的是如何给特定路由传递参数并使用 `ModelRoute.of` 和 `onGenerateRoute` 来读取参数。
+
 ## Directions
 
+## 步骤
+
   1. Define the arguments you need to pass
+
+     定义需要传递的参数
+
   2. Create a widget that extracts the arguments
+
+     创建组件来获取参数
+
   3. Register the widget in the `routes` table 
+
+     把组件注册到路由表中
+
   4. Navigate to the widget
 
+     导航到组件
+
 ## 1. Define the arguments you need to pass
+
+## 1. 定义需要传递的参数
 
 First, define the arguments you need to pass to the new route. In this example,
 pass two pieces of data: The `title` of the screen and a `message`.
 
+首先，定义需要传递给新路由的参数。在这个示例中，传递了两个数据： 页面的标题 `title` 和内容 `message`。
+
 To pass both pieces of data, create a class that stores this information.
+
+创建包含 title 和 message 字段的实体类来同时传递这两个数据。
 
 <!-- skip -->
 ```dart
@@ -61,10 +86,14 @@ class ScreenArguments {
 
 ## 2. Create a widget that extracts the arguments
 
+## 2. 创建组件来获取参数
+
 Next, create a widget that extracts and displays the `title` and `message` from
 the `ScreenArguments`. To access the `ScreenArguments`, use the
 [`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
 method. This method returns the current route with the arguments.
+
+接着，创建组件，从 `ScreenArguments` 提取 `title` 和 `message` 参数并展示。为了访问 `ScreenArguments`，可以使用 [`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html) 方法。这个方法返回的是当前路由及其携带的参数。
 
 <!-- skip -->
 ```dart
@@ -92,8 +121,12 @@ class ExtractArgumentsScreen extends StatelessWidget {
 
 ## 3. Register the widget in the `routes` table
 
+## 3. 把组件注册到路由表中
+
 Next, add an entry to the `routes` provided to the `MaterialApp` Widget. The
 `routes` define which widget should be created based on the name of the route.  
+
+然后，在 `MaterialApp` 的路由表 `routes` 中增加一个入口。路由表 `routes` 会根据路由的名称来决定需要创建哪个路由。 
 
 <!-- skip -->
 ```dart
@@ -107,12 +140,16 @@ MaterialApp(
 
 ## 4. Navigate to the widget
 
+## 4. 导航到组件
+
 Finally, navigate to the `ExtractArgumentsScreen` when a user taps a button
 using
 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html).
 Provide the arguments to the route via the `arguments` property. The
 `ExtractArgumentsScreen` extracts the `title` and `message` from these
 arguments.
+
+最后，在用户点击按钮后导航到 `ExtractArgumentsScreen`。在 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法的 `arguments` 属性里提供需要传递的参数。随后，`ExtractArgumentsScreen` 就可以从参数中提取 `title` 和 `message`。
 
 <!-- skip -->
 ```dart
@@ -137,13 +174,19 @@ RaisedButton(
 
 ## Alternatively, extract the arguments using `onGenerateRoute`
 
+## 此外，还可以使用 `onGenerateRoute` 提取参数
+
 Instead of extracting the arguments directly inside the widget, you can also
 extract the arguments inside an
 [`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
 function and pass them to a widget.
 
+除了直接从组件里提取参数，你也可以通过 [`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html) 函数提取参数，然后把参数传递给组件。
+
 The `onGenerateRoute` function creates the correct route based on the given
 `RouteSettings`.
+
+`onGenerateRoute` 函数会基于给定的 `RouteSettings` 来创建正确的路由。
 
 <!-- skip -->
 ```dart
@@ -173,6 +216,8 @@ MaterialApp(
 ```
 
 ## Complete example
+
+## 完整示例
 
 ```dart
 import 'package:flutter/material.dart';

@@ -143,7 +143,8 @@ The animated GIF shows how the app works at the completion of part 1.
 <?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
 
 Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter app.](/docs/get-started/test-drive#create-app)
+[Getting Started with your first Flutter
+app.](/docs/get-started/test-drive#create-app)
 Name the project **startup_namer** (instead of _myapp_).
 
 按照 [这个指南](/docs/get-started/test-drive#create-app) 中所描述的步骤，
@@ -287,8 +288,7 @@ where the Dart code lives.
   that describes how to display the widget in terms of other,
   lower level widgets.
 
-  一个 widget 的主要工作是提供一个 `build()` 方法来描述如何
-  根据其他较低级别的 widgets 来显示自己。
+  一个 widget 的主要工作是提供一个 `build()` 方法来描述如何根据其他较低级别的 widgets 来显示自己。
 
 
 * The body for this example consists of a `Center` widget containing
@@ -297,7 +297,7 @@ where the Dart code lives.
 
   本示例中的 body 的 widget 树中包含了一个 `Center` widget，
   Center widget 又包含一个 `Text` 子 widget，
-  Center widget 可以将其子 widget 树对其到屏幕中心。
+  Center widget 可以将其子 widget 树对齐到屏幕中心。
 
   
 ## Step 2: Use an external package
@@ -348,8 +348,8 @@ packages, on the [Pub site]({{site.pub}}/flutter).
     你可以在控制台中看到以下内容：
 
     ```terminal
-    $ flutter packages get
-    Running "flutter packages get" in startup_namer...
+    $ flutter pub get
+    Running "flutter pub get" in startup_namer...
     Process finished with exit code 0
     ```
 
@@ -526,7 +526,7 @@ a child inside the existing `MyApp` stateless widget.
     ```dart
       class RandomWords extends StatefulWidget {
         @override
-        RandomWordsState createState() => new RandomWordsState();
+        RandomWordsState createState() => RandomWordsState();
       }
     ```
 
@@ -677,7 +677,7 @@ lazily, on demand.
     factory builder and callback function specified as an anonymous function.
     Two parameters are passed to the function&mdash;the `BuildContext`,
     and the row iterator, `i`. The iterator begins at 0 and increments each
-    time the function is called. It increments twice for every suggested word pairing: 
+    time the function is called. It increments twice for every suggested word pairing:
     once for the ListTile, and once for the Divider. This model allows the suggested
     list to grow infinitely as the user scrolls.
     
@@ -840,6 +840,8 @@ to get back on track.
 如果你的应用没有正常运行，你可以使用一下链接中的代码对比更正。
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
+
+{% include run-profile.md %}
 
 ## Next steps
 {:.no_toc}

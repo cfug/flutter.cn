@@ -81,10 +81,10 @@ Alternatively, if you want to do it manually, here's how:
 
 或者，如果我们想手动操作，可以参考以下方法：
 
-1. Review the [Android Launcher Icons][launchericons] guidelines for icon
+1. Review the [Material Design Product Icons][launchericons] guidelines for icon
    design.
    
-   查看 [Android Launcher Icons][launchericons] 指南中图标设计部分。
+   查看 [Material Design Product Icons][launchericons] 指南中图标设计部分。
 
 1. In the `<app dir>/android/app/src/main/res/` directory, place your icon files
    in folders named using [configuration qualifiers][].
@@ -490,7 +490,7 @@ to the Play Store.
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [versions]: {{site.android-dev}}/studio/publish/versioning
-[launchericons]: {{site.android-dev}}/guide/practices/ui_guidelines/icon_design_launcher
+[launchericons]: https://material.io/design/iconography/
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [配置限定符]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [play]: {{site.android-dev}}/distribute/googleplay/start

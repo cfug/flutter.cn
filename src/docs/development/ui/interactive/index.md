@@ -397,7 +397,9 @@ check your code against the interactive Lakes example on GitHub.
 如果您的代码无法运行，请在 IDE 中查找可能的错误。[调试 Flutter 应用程序](/docs/testing/debugging)可能会有所帮助。如果仍然无法找到问题，请根据 GitHub 上的示例检查代码。
 
 * [lib/main.dart]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/main.dart)
-* [pubspec.yaml]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;no changes to this file 此文件没有变化
+* [pubspec.yaml]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;no changes to this file 
+* [pubspec.yaml]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;此文件没有变化
+* [lakes.jpg](https://github.com/flutter/website/tree/master/src/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
 * [lakes.jpg](https://github.com/flutter/website/tree/master/src/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file 此文件没有变化
 
 If you still have questions, refer to [Get support.](/community)

@@ -157,7 +157,6 @@ class DetailScreen extends StatelessWidget {
 
 ## 4. Navigate and pass data to the detail screen
 
-<<<<<<< HEAD
 ## 4. 传递数据并跳转到待办事项详细信息界面
 
 With a `DetailScreen` in place,
@@ -172,18 +171,6 @@ To capture the user's tap, write an
 callback for the `ListTile` widget. Within the `onTap()` callback, 
 use the
 [`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
-=======
-With a `DetailScreen` in place,
-you're ready to perform the Navigation.
-In this example, navigate to the `DetailScreen` when a user
-taps a todo in the list. Pass the todo to the `DetailScreen`.
-
-To capture the user's tap, write an
-[`onTap()`]({{site.api}}/flutter/material/ListTile/onTap.html)
-callback for the `ListTile` widget. Within the `onTap()` callback, 
-use the
-[`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
->>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
 method.
 
 想要实现这些，我们来编写 `ListTile` widget 的 `onTap()` 回调函数，继续使用 [`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html) 方法。

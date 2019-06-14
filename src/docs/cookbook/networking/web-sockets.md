@@ -146,15 +146,10 @@ The `WebSocketChannel` provides a
 [`StreamSink`]({{site.api}}/flutter/dart-async/StreamSink-class.html)
 to push messages to the server.
 
-<<<<<<< HEAD
 `WebSocketChannel` 提供了一个 [`StreamSink`]({{site.api}}/flutter/dart-async/StreamSink-class.html) 来向服务器推送消息。
 
-The `StreamSink` class provides a general way to add sync or async events to a
-data source.
-=======
 The `StreamSink` class provides a general way to add sync or async
 events to a data source.
->>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
 
 这个 `StreamSink` 类提供了一个可以向数据源添加同步或者异步事件的通用方法。
 

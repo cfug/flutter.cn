@@ -647,20 +647,15 @@ Flutter 中也有类似的实现，使用 `Navigator` 和 `Routes`。一个 `Rou
 To navigate between pages, you have a couple options:
 想要在不同页面间跳转，你有两个选择：
 
-<<<<<<< HEAD
-* Specify a `Map` of route names. (MaterialApp)
+* Specify a `Map` of route names.
   
-  构建由 route 名称组成的 `Map`（MaterialApp）
+  构建由 route 名称组成的 `Map`；
   
-* Directly navigate to a route. (WidgetApp)
+* Directly navigate to a route.
   
-  直接跳转到一个 route（WidgetApp）
+  直接跳转到一个 route。
 
 The following example builds a `Map`.
-=======
-* Specify a `Map` of route names.
-* Directly navigate to a route.
->>>>>>> 63b2723157e3e26c37ac156ed74f5dca7fb9992d
 
 下面的示例构建了一个 `Map`：
 

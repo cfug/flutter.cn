@@ -3,12 +3,8 @@ title: Navigate to a new screen and back
 title: 导航到一个新页面和返回
 description: How to navigate between routes
 prev:
-<<<<<<< HEAD
   title: Animate a widget across screens
   title: 跨页面切换的动效 Widget (Hero animations)
-=======
-  title: Animate a widget across screens
->>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
   path: /docs/cookbook/navigation/hero-animations
 next:
   title: Navigate with named routes

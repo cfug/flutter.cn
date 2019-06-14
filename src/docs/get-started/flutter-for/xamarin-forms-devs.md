@@ -3005,7 +3005,6 @@ In Flutter you declare themes in the top level widget.
 
 在 Flutter 中，需要在最顶级 widget 中声明主题。
 
-<<<<<<< HEAD
 To take full advantage of Material Components in your app,
 you can declare a top level widget `MaterialApp` as the entry
 point to your application. MaterialApp is a convenience widget

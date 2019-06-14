@@ -1,10 +1,6 @@
 ---
-<<<<<<< HEAD
 title: Handle scrolling
 title: 列表滚动
-=======
-title: Handle scrolling
->>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
 prev:
   title: Performance profiling
   title: 性能分析

@@ -288,15 +288,11 @@ DevTools 仍处于开发阶段，但是已有可用预览。可在 [DevTools' �
 
 ## Editing tips for Flutter code
 
-<<<<<<< HEAD
 ## Flutter 代码编写建议
 
 If you have additional tips we should share, [let us know][]!
-=======
-If you have additional tips we should share, [let us know][]!
->>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
 
-如果你有其他很好的建议，请[联系我们][]!
+如果你有其他更好的建议，请[联系我们][]!
 
 ### Assists & Quick Fixes
 

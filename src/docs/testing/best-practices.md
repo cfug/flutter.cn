@@ -127,33 +127,24 @@ Some general rules when applying specific effects:
   clipping is disabled (`Clip.none`), so you must explicitly enable it when
   needed. 
 
-<<<<<<< HEAD
-Other widgets that might trigger `saveLayer()` and are potentially costly:
-=======
   **Clipping** 不会调用 `saveLayer()`（除非明确使用 `Clip.antiAliasWithSaveLayer`），
   因此这些操作没有 Opacity 那么耗时，但仍然很耗时，所以请谨慎使用。
 
-Other widgets that may trigger `saveLayer()` and are potentially costly:
->>>>>>> 8324835e1d827bb4e9964adf5025ea54c992f348
+Other widgets that might trigger `saveLayer()` and are potentially costly:
 
 其他会触发`saveLayer()` 的 widget，可能也会代价高昂。
 
 * [ShaderMask]({{site.api}}/flutter/widgets/ShaderMask-class.html)
-  [ShaderMask]({{site.api}}/flutter/widgets/ShaderMask-class.html)
 * [ColorFilter]({{site.api}}/flutter/dart-ui/ColorFilter-class.html)
-<<<<<<< HEAD
-* [Chip]({{site.api}}/flutter/material/Chip-class.html)&mdash;might
-  cause call to `saveLayer()` if `disabledColorAlpha != 0xff`
-* [Text]({{site.api}}/flutter/widgets/Text-class.html)&mdash;might
-=======
-  [ColorFilter]({{site.api}}/flutter/dart-ui/ColorFilter-class.html)
 * [Chip]({{site.api}}/flutter/material/Chip-class.html)&mdash;may
   cause call to `saveLayer()` if `disabledColorAlpha != 0xff`
+  
   [Chip]({{site.api}}/flutter/material/Chip-class.html)&mdash;
-  当 `disabledColorAlpha != 0xff` 的时候，会调用 `saveLayer()`
+  当 `disabledColorAlpha != 0xff` 的时候，会调用 `saveLayer()`  
+
 * [Text]({{site.api}}/flutter/widgets/Text-class.html)&mdash;may
->>>>>>> 8324835e1d827bb4e9964adf5025ea54c992f348
   cause call to `saveLayer()` if there's an `overflowShader`
+  
   [Text]({{site.api}}/flutter/widgets/Text-class.html)&mdash;
   当有 `overflowShader` 时，会调用`saveLayer()`
 

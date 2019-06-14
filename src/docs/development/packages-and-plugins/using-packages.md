@@ -36,11 +36,11 @@ see [Adding assets and images](/docs/development/ui/assets-and-images).
 
 ## Using packages
 
-<<<<<<< HEAD
 ## 使用 package
-=======
+
 The following section describes how to use existing published packages.
->>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
+
+下面的内容将为你描述如何使用已经发布了的 packages。
 
 ### Searching for packages
 
@@ -524,8 +524,7 @@ To use this plugin:
    You should see the default browser open on the device,
    displaying the Flutter homepage.
 
-
    运行应用（如果你的应用在添加插件之前已经运行，请停止并重启应用）。
-   当你点击 **Show Flutter homepage** 时，你将看到手机默认浏览器打开并出现 Flutter 主页。
-=======
->>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
+   当你点击 **Show Flutter homepage** 时，
+   你将看到手机默认浏览器打开并出现 Flutter 主页。
+   

@@ -15,7 +15,7 @@ description: How to internationalize your Flutter app.
   * How to manage locale-specific app values.
   * How to define the locales an app supports.
   
-  * 如何去跟踪设备的语言环境（用户首选的语言）。
+  * 如何去获取设备的语言环境（用户首选的语言）。
   * 如何去管理特定语言环境下的 app 值。
   * 如何去定义 app 支持的语言环境。
   
@@ -223,7 +223,7 @@ that the child depends on. The
 widget creates a Localizations widget and rebuilds it if the system's locale changes.
 
 [`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html) 
-widget 定义了它的孩子节点的语言环境和依赖的本地化的资源。
+widget 定义了它的子节点的语言环境和依赖的本地化的资源。
 [WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html) 创建了一个本地化的 widget，如果系统的语言环境变化了，它会重建这个 widget。
 
 You can always lookup an app's current locale with `Localizations.localeOf()`:
@@ -323,8 +323,7 @@ They're included automatically unless a
 different delegate of the same base type is specified with the app's
 `localizationsDelegates` parameter.
 
-为了把事情尽可能地小型化和容易化，
-Flutter package 包括的 MaterialLocalizations 和 WidgetsLocalizations 的接口都仅仅提供美式英语的值。
+Flutter package 包括的 MaterialLocalizations 和 WidgetsLocalizations 的接口都只提供美式英语的值，这样使得它尽可能小而简单。
 这些实现的类被分别称为 DefaultMaterialLocalizations 和 DefaultWidgetsLocalizations。它们会被自动地引入程序，除非你在 `localizationsDelegates` 
 参数中，相同的基本类型指定了一个不同的 delegate。
 

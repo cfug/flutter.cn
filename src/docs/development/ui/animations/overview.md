@@ -14,7 +14,7 @@ functions directly by reading their current value and listening to their
 state changes or they can use the animations as the basis of more elaborate
 animations that they pass along to other widgets.
 
-Flutter 中的动画系统基于 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html)。Widgets 可以直接将这些动画合并到自己的构造函数中来读取它们的当前值或者监听它们的状态变化，或者可以将其作为的更复杂动画的基础传递给其他 widgets。
+Flutter 中的动画系统基于 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html)。Widgets 可以直接将这些动画合并到自己的 build 方法中来读取它们的当前值或者监听它们的状态变化，或者可以将其作为的更复杂动画的基础传递给其他 widgets。
 
 ## Animation
 
@@ -57,7 +57,7 @@ that wish to include an animation as part of a larger build function. To use
 `AnimatedBuilder`, simply construct the widget and pass it a `builder` function.
 
 这种模式非常常见，所以有两个 widgets 可以帮助其他 widgets 在动画改变值时进行重新构建：[`AnimatedWidget`]({{site.api}}/flutter/widgets/AnimatedWidget-class.html) 和 
-[`AnimatedBuilder`]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html)。第一个是 `AnimatedWidget`，对于无状态动画 widgets 来说是尤其有用的。要使用 `AnimatedWidget`，只需继承它并实现一个 [`build`]({{site.api}}/flutter/widgets/AnimatedWidget/build.html) 方法。第二个是 `AnimatedBuilder`，对于希望将动画作为复杂 widgets 构造函数的其中一部分的情况非常有用。要使用 `AnimatedBuilder`，只需构造 widget 并将 `AnimatedBuilder` 传递给 widget 的 `builder` 方法。
+[`AnimatedBuilder`]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html)。第一个是 `AnimatedWidget`，对于无状态动画 widgets 来说是尤其有用的。要使用 `AnimatedWidget`，只需继承它并实现一个 [`build`]({{site.api}}/flutter/widgets/AnimatedWidget/build.html) 方法。第二个是 `AnimatedBuilder`，对于希望将动画作为复杂 widgets 的 build 方法的其中一部分的情况非常有用。要使用 `AnimatedBuilder`，只需构造 widget 并将 `AnimatedBuilder` 传递给 widget 的 `builder` 方法。
 
 ### `addStatusListener`
 
@@ -150,7 +150,7 @@ with an animation to get a concrete value:
 
 ## Architecture
 
-## 模块
+## 架构
 
 Animations are actually built from a number of core building blocks.
 

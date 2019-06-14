@@ -1146,7 +1146,7 @@ focuses on a widget. Several of them includes layout widgets.
 
 ## Other resources
 
-The following resources may help when writing layout code.
+The following resources might help when writing layout code.
 
 * [Layout tutorial](/docs/development/ui/layout/tutorial)
 : Learn how to build a layout.

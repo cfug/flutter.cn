@@ -61,7 +61,7 @@ We hope these resources make Dart easy for you to learn, too.
 [异步编程: Streams 指南]({{site.dart-site}}/docs/tutorials/streams)
 : 这能够帮助你在 Dart 核心库中熟练使用 Streams。其中 Streams 可以用来替代重复使用的回调。比如，我们在 [File 类]({{site.api}}/flutter/dart-io/File-class.html) 中可以使用 Streams 从文件中读取字节。
 
-Want to learn more and maybe contribute? Check out the
+Want to learn more and perhaps contribute? Check out the
 [Dart community]({{site.dart-site}}/community).
 
 如果你想了解更多信息或是想要参与贡献，欢迎查看我们的 [Dart 社区]({{site.dart-site}}/community)。

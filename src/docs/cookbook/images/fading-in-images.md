@@ -6,7 +6,7 @@ prev:
   title: 显示网络上的远程图片
   path: /docs/cookbook/images/network-image
 next:
-  title: Working with cached images
+  title: Work with cached images
   title: 使用缓存图片
   path: /docs/cookbook/images/cached-images
 ---
@@ -17,15 +17,15 @@ to your users.
 
 当使用默认的 `Image` widget 显示图片时，你可能会注意到图片只是在加载完后直接显示到屏幕上。用户可能会觉得这看起来不舒服。
 
-Instead, wouldn't it be nice if you could display a placeholder at first,
-and images would fade in as they're loaded? You can use the
+Instead, wouldn't it be nice to display a placeholder at first,
+and images would fade in as they're loaded? Use the
 [`FadeInImage`]({{site.api}}/flutter/widgets/FadeInImage-class.html)
-Widget packaged with Flutter for exactly this purpose.
+widget for exactly this purpose.
 
 此外，如果可以先展示占位符，待图片加载完成后淡入显示图片不是很酷么？可以使用 Flutter 自带的 [`FadeInImage`]({{site.api}}/flutter/widgets/FadeInImage-class.html) Widget 来实现这个功能。
 
-`FadeInImage` works with images of any type: in-memory, local assets, or images
-from the internet.
+`FadeInImage` works with images of any type: in-memory, local assets,
+or images from the internet.
 
 `FadeInImage` 适用于任何类型的图片：内存中的，本地存储的，抑或是网络上的。
 
@@ -33,7 +33,7 @@ from the internet.
 
 ## 从内存加载占位符
 
-In this example, you'll use the
+In this example, use the
 [transparent_image]({{site.pub-pkg}}/transparent_image)
 package for a simple transparent placeholder.
 
@@ -93,9 +93,10 @@ class MyApp extends StatelessWidget {
 
 ### 从本地存储加载占位符
 
-You can also consider using local assets for placeholders. First, add the asset
-to the project’s `pubspec.yaml` file (for more details see
-[Assets and images](/docs/development/ui/assets-and-images)):
+You can also consider using local assets for placeholders.
+First, add the asset to the project’s `pubspec.yaml` file
+(for more details, see
+[Adding assets and images](/docs/development/ui/assets-and-images)):
 
 也可以考虑使用本地资源作为占位符。首先将资源添加到项目的 `pubspec.yaml` 文件中（更多细节请参阅 [Assets and images](/docs/development/ui/assets-and-images)）：
 

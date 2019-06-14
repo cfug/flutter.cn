@@ -1,5 +1,5 @@
 ---
-title: Animate the properties of a Container
+title: Animate the properties of a container
 title: Container 里的动画渐变效果
 next:
   title: Fade a Widget in and out
@@ -14,14 +14,15 @@ width, height, background color, padding, borders, and more.
 [`Container`]({{site.api}}/flutter/widgets/Container-class.html) 类提供了一系列实用方法，能够便捷地创建出一个具有指定宽度、高度、背景颜色、外边距和边框等属性的 Widget。
 
 Simple animations often involve changing these properties over time.
-For example, you may want to animate the background color from grey to green to
+For example,
+you might want to animate the background color from grey to green to
 indicate that an item has been selected by the user.
 
 简单的动画通常会在一段时间内改变这些属性。例如你可能想将灰色背景逐渐变为绿色背景来告诉用户已经选择了某个项目。
 
 To animate these properties, Flutter provides the
 [`AnimatedContainer`]({{site.api}}/flutter/widgets/AnimatedContainer-class.html)
-widget. Like the `Container` Widget, `AnimatedContainer` allows you to define
+widget. Like the `Container` widget, `AnimatedContainer` allows you to define
 the width, height, background colors, and more. However, when the
 `AnimatedContainer` is rebuilt with new properties, it automatically
 animates between the old and new values. In Flutter, these types of
@@ -30,8 +31,10 @@ animations are known as "implicit animations."
 为了制作这样的简单动画效果，Flutter 提供了 [`AnimatedContainer`]({{site.api}}/flutter/widgets/AnimatedContainer-class.html) Widget。与 `Container` 一样，`AnimatedContainer` 也可以设置它的宽度、高度以及背景颜色等等。但是 `AnimatedContainer` 在使用新属性进行重建时，将会自动在旧值和新值之间生成动画。这种动画在 Flutter 中被称为“隐式动画”。
 
 This recipe describes how to use an `AnimatedContainer` to animate the size,
-background color, and border radius when the user taps a button.
+background color, and border radius when the user taps a button
+using the following steps:
 
+<<<<<<< HEAD
 下面这篇教程将介绍如何使用 `AnimatedContainer` 实现当用户点击按钮时改变它的大小，背景颜色，以及边框半径的动画。
 
 ## Directions
@@ -47,6 +50,11 @@ background color, and border radius when the user taps a button.
      创建一个使用这些属性的 `AnimatedContainer`
 
   3. Start the animation by rebuilding with new properties
+=======
+  1. Create a StatefulWidget with default properties.
+  2. Build an `AnimatedContainer` using the properties.
+  3. Start the animation by rebuilding with new properties.
+>>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
 
      通过设置新的属性触发重建并启动动画
 
@@ -57,16 +65,21 @@ background color, and border radius when the user taps a button.
 To start, create
 [`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
 and [`State`]({{site.api}}/flutter/widgets/State-class.html) classes.
-Use the custom State class to define the properties you need to change over
+Use the custom State class to define the properties that change over
 time. In this example, that includes the width, height, color, and border
-radius. In addition, you can also define the default value of each property.
+radius. You can also define the default value of each property.
 
+<<<<<<< HEAD
 首先你需要创建一个 [`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
 类和 [`State`]({{site.api}}/flutter/widgets/State-class.html) 类。
 然后在 State 类中定义需要随时间更改的属性。在这个示例中，我们将会改变其宽度、高度、颜色和边框半径。此外，你还可以定义其他默认属性。
 
 These properties must belong to a custom `State` class so they can be updated
 when the user taps a button.
+=======
+These properties belong to a custom `State` class so they
+can be updated when the user taps a button.
+>>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
 
 但是这些属性必须定义在 `State` 类中，这样我们才能在用户点击按钮时更新它们。
 
@@ -87,17 +100,22 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 
   @override
   Widget build(BuildContext context) {
-    // Fill this out in the next steps
+    // Fill this out in the next steps.
   }
 }
 ```
 
 ## 2. Build an `AnimatedContainer` using the properties
 
+<<<<<<< HEAD
 ## 2. 创建一个使用这些属性的 AnimatedContainer
 
 Next, you can build the `AnimatedContainer` using the properties defined in the
 previous step. Furthermore, you must provide a `duration` that defines how long
+=======
+Next, build the `AnimatedContainer` using the properties defined in the
+previous step. Furthermore, provide a `duration` that defines how long
+>>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
 the animation should run. 
 
 接下来，你就可以使用上一步中定义的属性来构建 `AnimatedContainer`。此外，你还必须提供一个 `duration` 它将定义这个动画应该运行多长时间。
@@ -124,21 +142,31 @@ AnimatedContainer(
 ## 3. 通过设置新的属性触发重建并启动动画
 
 Finally, start the animation by rebuilding the `AnimatedContainer` with
-new properties. How to trigger a rebuild? When it comes to `StatefulWidgets`,
-[`setState`]({{site.api}}/flutter/widgets/State/setState.html) is the
-solution. 
+the new properties. How to trigger a rebuild? Use the
+[`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
+method. 
 
+<<<<<<< HEAD
 最后将设置新的属性触发 `AnimatedContainer` 重建并启动动画。那么如何触发重建呢？当我们提到 `StatefulWidgets` 时，[`setState`]({{site.api}}/flutter/widgets/State/setState.html) 就行了。
 
 For this example, add a button to the app. When the user taps the button, update
+=======
+Add a button to the app. When the user taps the button, update
+>>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
 the properties with a new width, height, background color and border radius 
-inside a call to `setState`.
+inside a call to `setState()`.
 
+<<<<<<< HEAD
 在这个例子中，我们给应用添加了一个按钮。当用户点击按钮时，将会调用 `setState` 去刷新它的宽度、高度、背景颜色和边框半径等属性。
 
 In a real app, you most often transition between fixed values (for example, from
 a grey to a green background). For this app, generate new values each time the
 user taps the button.
+=======
+A real app typically transitions between fixed values (for example,
+from a grey to a green background). For this app,
+generate new values each time the user taps the button.
+>>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
 
 实际项目通常只会在某些固定值之间进行转换（例如从灰色背景过渡到绿色背景）。在这个应用中，每次用户点击按钮都会生成新的值。
 

@@ -71,7 +71,10 @@ From a console window which has the Flutter directory in the path (see above), r
 C:\src\flutter>flutter doctor
 ```
 
-This command checks your environment and displays a report of the status of your Flutter installation. Check the output carefully for other software you may need to install or further tasks to perform (shown in **bold** text).
+This command checks your environment and displays a report of the status
+of your Flutter installation. Check the output carefully for other
+software you might need to install or further tasks to perform
+(shown in **bold** text).
 
 上述命令会检查你的现有环境，然后把检测结果以报告形式呈现出来。仔细阅读它显示的内容，检查是否有尚未安装的软件或是有其他的步骤需要完成（通常会以**粗体**呈现）。
 

@@ -1,8 +1,8 @@
 ---
-title: Storing key-value data on disk
+title: Store key-value data on disk
 title: 存储键值对数据
 prev:
-  title: Reading and Writing Files
+  title: Read and write files
   title: 文件读写
   path: /docs/cookbook/persistence/reading-writing-files
 next:
@@ -11,14 +11,15 @@ next:
   path: /docs/cookbook/plugins/play-video
 ---
 
-If you have a relatively small collection of key-values that you'd like
+If you have a relatively small collection of key-values 
 to save, you can use the
 [shared_preferences]({{site.pub}}/packages/shared_preferences) plugin.
 
 如果你要存储的键值集合相对较少，则可以用 [shared_preferences]({{site.pub}}/packages/shared_preferences) 插件。
 
-Normally you would have to write native platform integrations for storing
-data on both platforms. Fortunately, the
+Normally,
+you would have to write native platform integrations for storing
+data on both iOS and Android. Fortunately, the
 [shared_preferences]({{site.pub-pkg}}/shared_preferences)
 plugin can be used to persist key-value data on disk. The shared preferences
 plugin wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
@@ -26,23 +27,23 @@ providing a persistent store for simple data.
 
 通常你需要在两个平台用原生的方式存储数据。幸运的是 [shared_preferences]({{site.pub-pkg}}/shared_preferences) 插件可以把 key-value 保存到磁盘中。它通过封装 iOS 上的 `NSUserDefaults` 和 Android 上的 `SharedPreferences` 为简单数据提供持久化存储。
 
-## Directions
+This recipe uses the following steps:
 
-## 步骤
+这个教程包含以下步骤：
 
-  1. Add the dependency
+  1. Add the dependency.
 
      添加依赖
 
-  2. Save Data
+  2. Save Data.
 
      保存数据
 
-  3. Read Data
+  3. Read Data.
 
      读取数据
 
-  4. Remove Data
+  4. Remove Data.
 
      移除数据
 
@@ -50,7 +51,7 @@ providing a persistent store for simple data.
 
 ## 1. 添加依赖
 
-Before starting, you need to add the
+Before starting, add the
 [shared_preferences]({{site.pub-pkg}}/shared_preferences)
 plugin to the `pubspec.yaml` file:
 
@@ -101,7 +102,7 @@ For example, you can use the `getInt`, `getBool`, and `getString` methods.
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
-// Try reading data from the counter key. If it does not exist, return 0.
+// Try reading data from the counter key. If it doesn't exist, return 0.
 final counter = prefs.getInt('counter') ?? 0;
 ```
 
@@ -109,9 +110,9 @@ final counter = prefs.getInt('counter') ?? 0;
 
 ## 4. 移除数据
 
-To delete data, use the `remove` method.
+To delete data, use the `remove()` method.
 
-使用 `remove` 方法删除数据。
+使用 `remove()` 方法删除数据。
 
 <!-- skip -->
 ```dart
@@ -124,12 +125,13 @@ prefs.remove('counter');
 
 ## 支持类型
 
-While it is easy and convenient to use key-value storage, it has limitations:
+Although key-value storage is easy and convenient to use,
+it has limitations:
 
 虽然使用 key-value 存储非常简单方便，但是它也有以下局限性：
 
-* Only primitive types can be used: `int`, `double`, `bool`, `string` and
-  `stringList`
+* Only primitive types can be used: `int`, `double`, `bool`, `string`,
+  and `stringList`.
   
   只能用于基本数据类型： `int`，`double`，`bool`，`string` 和 `stringList`
   
@@ -137,8 +139,8 @@ While it is easy and convenient to use key-value storage, it has limitations:
 
   不适用于大量数据的存储。
 
-For more information about Shared Preferences on Android, see
-[Shared preferences
+For more information about shared preferences on Android, see the
+[shared preferences
 documentation]({{site.android-dev}}/guide/topics/data/data-storage#pref)
 on the Android developers website.
 
@@ -148,16 +150,17 @@ on the Android developers website.
 
 ## 测试支持
 
-It can be a good idea to test code that persists data using
-`shared_preferences`. To do so, you'll need to mock out the
+It's a good idea to test code that persists data using
+`shared_preferences`. You can do this by mocking out the
 `MethodChannel` used by the `shared_preferences` library.
 
 使用 `shared_preferences` 存储数据来测试代码是一个不错的思路。为此，你需要模拟出 `shared_preferences` 库的 `MethodChannel` 方法。
 
-You can populate `SharedPreferences` with initial values in your tests
-by running the following code in a `setupAll` method in your test files:
+Populate `SharedPreferences` with initial values in your tests
+by running the following code in a `setupAll()` method in
+your test files:
 
-在你的测试中，你可以通过在测试文件的 `setupAll` 方法中添加运行以下代码，对 `SharedPreferences` 的值进行初始：
+在你的测试中，你可以通过在测试文件的 `setupAll()` 方法中添加运行以下代码，对 `SharedPreferences` 的值进行初始：
 
 <!-- skip -->
 ```dart

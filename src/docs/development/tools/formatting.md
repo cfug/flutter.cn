@@ -6,8 +6,8 @@ description: Flutter 的代码格式化工具以及推荐的代码格式。
 ---
 
 
-While your code may follow any preferred style&mdash;in our
-experience&mdash;teams of developers may find it more productive to:
+While your code might follow any preferred style&mdash;in our
+experience&mdash;teams of developers might find it more productive to:
 
 每个人都有自己喜欢的代码样式。但是根据我们的经验，下面这些做法可以提高团队的开发效率：
 
@@ -19,8 +19,8 @@ experience&mdash;teams of developers may find it more productive to:
   
   通过自动格式化代码来保证统一的代码样式。
 
-The alternative is often tiring formatting debates during code reviews, where
-time may be better spent on code behavior rather than code style.
+The alternative is often tiring formatting debates during code reviews,
+where time might be better spent on code behavior rather than code style.
 
 如果没有统一的代码样式，当进行代码审查的时候，可能会为了一些样式的问题而进行争论，从而浪费时间。代码审查最好把时间花在代码的行为上，而不是代码的样式上。
 

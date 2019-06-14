@@ -6,7 +6,7 @@ description: 开发 Flutter 应用时的技术学习视频。
 ---
 
 These Flutter videos, produced both internally at Google and by the
-Flutter community, may help if you are a visual learner.
+Flutter community, might help if you are a visual learner.
 
 Note that many people make Flutter videos. This page shows some that
 we like, but there are many others.

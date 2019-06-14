@@ -127,7 +127,7 @@ changes work as expected and do not introduce bugs.
 持续集成 (CI) 服务允许我们在推送新代码（代码变更）时自动运行测试。当代码变更后，会立即收到关于代码是否仍按预期工作、是否引入新问题的反馈。
 
 For information on running tests on various continuous integration services,
-please see the following: 
+see the following: 
 
 有关各种持续集成服务的信息，参考如下：
 

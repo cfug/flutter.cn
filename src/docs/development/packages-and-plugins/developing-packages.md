@@ -47,7 +47,7 @@ Packages can contain several kinds of content:
 Package 包含以下两种类别：
 
 * *Dart packages*: General packages written in Dart, for example the
-  [`path`]({{site.pub}}/packages/path) package. Some of these may
+  [`path`]({{site.pub}}/packages/path) package. Some of these might
   contain Flutter specific functionality and thus have a dependency on the
   Flutter framework, restricting their use to Flutter only, for example the
   [`fluro`]({{site.pub}}/packages/fluro) package.

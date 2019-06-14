@@ -131,7 +131,7 @@ flutter:
 ... 那么 `graphics/my_icon.png`， `graphics/background.png` 和 `graphics/dark/background.png` 同时被包含。
 
 Flutter uses asset variants when choosing resolution appropriate
-images; see below. In the future, this mechanism may be extended to
+images; see below. In the future, this mechanism might be extended to
 include variants for different locales or regions, reading directions,
 etc.
 

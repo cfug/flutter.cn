@@ -100,7 +100,7 @@ To print to the console in Dart, use `print()`.
 
 ```js
 // JavaScript
-console.log("Hello world!");
+console.log('Hello world!');
 ```
 
 <!-- skip -->
@@ -140,7 +140,7 @@ typed or the type system must infer the proper type automatically.
 
 ```js
 // JavaScript
-var name = "JavaScript";
+var name = 'JavaScript';
 ```
 
 <!-- skip -->
@@ -219,11 +219,11 @@ In JavaScript, values of 1 or any non-null objects are treated as true.
 // JavaScript
 var myNull = null;
 if (!myNull) {
-  console.log("null is treated as false");
+  console.log('null is treated as false');
 }
 var zero = 0;
 if (!zero) {
-  console.log("0 is treated as false");
+  console.log('0 is treated as false');
 }
 ```
 In Dart, only the boolean value `true` is treated as true.
@@ -307,32 +307,53 @@ Dart 使用 [`Future`]({{site.dart-site}}/tutorials/language/futures) 对象来�
 
 ```js
 // JavaScript
-_getIPAddress = () => {
-  const url="https://httpbin.org/ip";
-  return fetch(url)
-    .then(response => response.json())
-    .then(responseJson => {
-      console.log(responseJson.origin);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-};
+class Example {
+  _getIPAddress() {
+    const url = 'https://httpbin.org/ip';
+    return fetch(url)
+      .then(response => response.json())
+      .then(responseJson => {
+        const ip = responseJson.origin;
+        return ip;
+      });
+  }
+}
+
+function main() {
+  const example = new Example();
+  example
+    ._getIPAddress()
+    .then(ip => console.log(ip))
+    .catch(error => console.error(error));
+}
+
+main();
 ```
 
 <!-- skip -->
 ```dart
 // Dart
-_getIPAddress() {
-  final url = 'https://httpbin.org/ip';
-  HttpRequest.request(url).then((value) {
-      print(json.decode(value.responseText)['origin']);
-  }).catchError((error) => print(error));
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+class Example {
+  Future<String> _getIPAddress() {
+    final url = 'https://httpbin.org/ip';
+    return http.get(url).then((response) {
+      String ip = jsonDecode(response.body)['origin'];
+      return ip;
+    });
+  }
+}
+
+main() {
+  final example = new Example();
+  example
+      ._getIPAddress()
+      .then((ip) => print(ip))
+      .catchError((error) => print(error));
 }
 ```
-
-Try it out in
-[DartPad]({{site.dartpad}}/5a0017d09b6823d0248d965b93133e2e).
 
 可以在这里查看效果 [DartPad]({{site.dartpad}}/5a0017d09b6823d0248d965b93133e2e)。
 
@@ -356,13 +377,27 @@ used to wait for a `Promise`.
 
 ```js
 // JavaScript
-async _getIPAddress() {
-  const url="https://httpbin.org/ip";
-  const response = await fetch(url);
-  const json = await response.json();
-  const data = await json.origin;
-  console.log(data);
+class Example {
+  async _getIPAddress() {
+    const url = 'https://httpbin.org/ip';
+    const response = await fetch(url);
+    const responseJson = await response.json();
+    const ip = responseJson.origin;
+    return ip;
+  }
 }
+
+async function main() {
+  const example = new Example();
+  try {
+    const ip = await example._getIPAddress();
+    console.log(ip);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+main();
 ```
 
 In Dart, an `async` function returns a `Future`, and the body of the function is
@@ -374,16 +409,28 @@ scheduled for execution later. The `await` operator is used to wait for a
 <!-- skip -->
 ```dart
 // Dart
-_getIPAddress() async {
-  final url = 'https://httpbin.org/ip';
-  var request = await HttpRequest.request(url);
-  String ip = json.decode(request.responseText)['origin'];
-  print(ip);
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+class Example {
+  Future<String> _getIPAddress() async {
+    final url = 'https://httpbin.org/ip';
+    final response = await http.get(url);
+    String ip = jsonDecode(response.body)['origin'];
+    return ip;
+  }
+}
+
+main() async {
+  final example = new Example();
+  try {
+    final ip = await example._getIPAddress();
+    print(ip);
+  } catch (error) {
+    print(error);
+  }
 }
 ```
-
-Try it out in
-[DartPad]({{site.dartpad}}/04bb4334985107cddcd021322398c918).
 
 可以在这里查看效果 [DartPad]({{site.dartpad}}/04bb4334985107cddcd021322398c918)。
 
@@ -473,8 +520,8 @@ In React Native, you need to import each required component.
 
 ```js
 //React Native
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 ```
 
 In Flutter, to use widgets from the Material Design library, import the `material.dart` package. To use iOS style widgets, import the Cupertino library. To use a more basic widget set, import the Widgets library. Or, you can write your own widget library and import that.
@@ -509,8 +556,8 @@ implements the render method by returning a view component.
 
 ```js
 // React Native
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
   render() {
@@ -525,9 +572,9 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 ```
@@ -774,7 +821,7 @@ Flutter app.
 ```dart
 // Dart
 void main(){
- print("Hello, this is the main function.");
+ print('Hello, this is the main function.');
 }
 ```
 
@@ -888,7 +935,7 @@ source code directory and referencing it.
 在 React Native，你可以在源码文件夹中通过添加文件来增加一个静态图片并且在代码中引用它。
 
 ```js
-<Image source={require("./my-icon.png")} />
+<Image source={require('./my-icon.png')} />
 ```
 
 In Flutter, add a static image to your app using the `AssetImage` class in a
@@ -1133,8 +1180,8 @@ In React Native, canvas components aren't present so third party libraries like 
 ```js
 // React Native
 handleCanvas = canvas => {
-  const ctx = canvas.getContext("2d");
-  ctx.fillStyle = "skyblue";
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'skyblue';
   ctx.beginPath();
   ctx.arc(75, 75, 50, 0, 2 * Math.PI);
   ctx.fillRect(150, 100, 300, 300);
@@ -1219,9 +1266,9 @@ components in a column, you would specify a prop such as:
 <View
   style={%raw%}{{
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center"
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }}{%endraw%}
 >
 ```
@@ -1313,7 +1360,7 @@ Stack(
   children: <Widget>[
     CircleAvatar(
       backgroundImage: NetworkImage(
-        "https://avatars3.githubusercontent.com/u/14101776?v=4"),
+        'https://avatars3.githubusercontent.com/u/14101776?v=4'),
     ),
     Container(
       decoration: BoxDecoration(
@@ -1354,7 +1401,7 @@ components.
 ```js
 // React Native
 <View style={styles.container}>
-  <Text style={%raw%}{{ fontSize: 32, color: "cyan", fontWeight: "600" }}{%endraw%}>
+  <Text style={%raw%}{{ fontSize: 32, color: 'cyan', fontWeight: '600' }}{%endraw%}>
     This is a sample text
   </Text>
 </View>
@@ -1362,9 +1409,9 @@ components.
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 ```
@@ -1582,7 +1629,7 @@ of stateless widgets which subclass
 // Flutter
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyStatelessWidget(text: "StatelessWidget Example to show immutable data"));
+void main() => runApp(MyStatelessWidget(text: 'StatelessWidget Example to show immutable data'));
 
 class MyStatelessWidget extends StatelessWidget {
   final String text;
@@ -1886,7 +1933,7 @@ class CustomCard extends React.Component {
       <View>
         <Text> Card {this.props.index} </Text>
         <Button
-          title="Press"
+          title='Press'
           onPress={() => this.props.onPress(this.props.index)}
         />
       </View>
@@ -1896,7 +1943,7 @@ class CustomCard extends React.Component {
 class App extends React.Component {
 
   onPress = index => {
-    console.log("Card ", index);
+    console.log('Card ', index);
   };
 
   render() {
@@ -1979,8 +2026,8 @@ global to the app.
 
 ```js
 // React Native
-await AsyncStorage.setItem( "counterkey", json.stringify(++this.state.counter));
-AsyncStorage.getItem("counterkey").then(value => {
+await AsyncStorage.setItem( 'counterkey', json.stringify(++this.state.counter));
+AsyncStorage.getItem('counterkey').then(value => {
   if (value != null) {
     this.setState({ counter: value });
   }
@@ -2061,7 +2108,7 @@ and DrawerNavigator. Each provides a way to configure and define the screens.
 // React Native
 const MyApp = TabNavigator(
   { Home: { screen: HomeScreen }, Notifications: { screen: tabNavScreen } },
-  { tabBarOptions: { activeTintColor: "#e91e63" } }
+  { tabBarOptions: { activeTintColor: '#e91e63' } }
 );
 const SimpleApp = StackNavigator({
   Home: { screen: MyApp },
@@ -2182,7 +2229,7 @@ import { createBottomTabNavigator } from 'react-navigation';
 
 const MyApp = TabNavigator(
   { Home: { screen: HomeScreen }, Notifications: { screen: tabNavScreen } },
-  { tabBarOptions: { activeTintColor: "#e91e63" } }
+  { tabBarOptions: { activeTintColor: '#e91e63' } }
 );
 ```
 
@@ -2347,7 +2394,7 @@ Drawer(
     leading: Icon(Icons.change_history),
     title: Text('Screen2'),
     onTap: () {
-      Navigator.of(context).pushNamed("/b");
+      Navigator.of(context).pushNamed('/b');
     },
   ),
   elevation: 20.0,
@@ -2372,13 +2419,13 @@ Widget build(BuildContext context) {
         leading: Icon(Icons.change_history),
         title: Text('Screen2'),
         onTap: () {
-          Navigator.of(context).pushNamed("/b");
+          Navigator.of(context).pushNamed('/b');
         },
       ),
       elevation: 20.0,
     ),
     appBar: AppBar(
-      title: Text("Home"),
+      title: Text('Home'),
     ),
     body: Container(),
   );
@@ -2413,10 +2460,10 @@ the `Touchable` components.
 // React Native
 <TouchableOpacity
   onPress={() => {
-    console.log("Press");
+    console.log('Press');
   }}
   onLongPress={() => {
-    console.log("Long Press");
+    console.log('Long Press');
   }}
 >
   <Text>Tap or Long Press</Text>
@@ -2470,7 +2517,7 @@ to any widget by wrapping it in a
 GestureDetector(
   child: Scaffold(
     appBar: AppBar(
-      title: Text("Gestures"),
+      title: Text('Gestures'),
     ),
     body: Center(
       child: Column(
@@ -2526,7 +2573,7 @@ React Native 提供 Fetch API 实现网络编程，你可以发起请求，然�
 ```js
 // React Native
 _getIPAddress = () => {
-  fetch("https://httpbin.org/ip")
+  fetch('https://httpbin.org/ip')
     .then(response => response.json())
     .then(responseJson => {
       this.setState({ _ipAddress: responseJson.origin });
@@ -2573,7 +2620,7 @@ _getIPAddress() async {
   var request = await httpClient.getUrl(url);
   var response = await request.close();
   var responseBody = await response.transform(utf8.decoder).join();
-  String ip = json.decode(responseBody)['origin'];
+  String ip = jsonDecode(responseBody)['origin'];
   setState(() {
     _ipAddress = ip;
   });
@@ -2635,7 +2682,7 @@ final TextEditingController _controller = TextEditingController();
 TextField(
   controller: _controller,
   decoration: InputDecoration(
-    hintText: 'Type something', labelText: "Text Field "
+    hintText: 'Type something', labelText: 'Text Field '
   ),
 ),
 RaisedButton(
@@ -2749,12 +2796,12 @@ In React Native, the following implementation would be used:
 
 ```js
 // React Native
-if (Platform.OS === "ios") {
-  return "iOS";
-} else if (Platform.OS === "android") {
-  return "android";
+if (Platform.OS === 'ios') {
+  return 'iOS';
+} else if (Platform.OS === 'android') {
+  return 'android';
 } else {
-  return "not recognised";
+  return 'not recognised';
 }
 ```
 In Flutter, use the following implementation:
@@ -2764,13 +2811,13 @@ In Flutter, use the following implementation:
 ```dart
 // Flutter
 if (Theme.of(context).platform == TargetPlatform.iOS) {
-  return "iOS";
+  return 'iOS';
 } else if (Theme.of(context).platform == TargetPlatform.android) {
-  return "android";
+  return 'android';
 } else if (Theme.of(context).platform == TargetPlatform.fuchsia) {
-  return "fuchsia";
+  return 'fuchsia';
 } else {
-  return "not recognised ";
+  return 'not recognised ';
 }
 ```
 

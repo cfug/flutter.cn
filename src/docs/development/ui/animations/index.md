@@ -7,17 +7,18 @@ description: How to perform animations in Flutter
 description: 如何使用 Flutter 实现动画效果
 ---
 
-Well-designed animations makes a UI feel more intuitive, contribute to the slick
-look and feel of a polished app, and improve the user experience. Flutter's
-animation support makes it easy to implement a variety of animation types. Many
-widgets, especially [Material widgets][], come with the standard motion effects
-defined in their design spec, but it's also possible to customize these effects.
+Well-designed animations makes a UI feel more intuitive, contribute to
+the slick look and feel of a polished app, and improve the user experience.
+Flutter's animation support makes it easy to implement a variety of
+animation types. Many widgets, especially [Material widgets][],
+come with the standard motion effects defined in their design spec,
+but it's also possible to customize these effects.
 
 设计巧妙的动画可以使UI体验更加直观，使应用程序拥有华丽的视觉效果和感受，提供更好的用户体验。flutter 提供的动画支持可以轻松实现各种动画类型。许多 widgets 尤其是 [Material widgets][]，在其设计规范定义中都自带标准动画效果，不过也支持定制效果。
 
-The following resources are a good place to start learning the Flutter animation
-framework. Each of these documents shows, step by step, how to write animation
-code.
+The following resources are a good place to start learning the Flutter
+animation framework. Each of these documents shows, step by step,
+how to write animation code.
 
 通过下面的资源可以很好的学习 Flutter 动画框架。这些文档循序渐进地讲解如何编写动画代码。
 
@@ -25,7 +26,7 @@ code.
 More documentation is in the works on how to implement common design
 patterns, such as shared element transitions,
 and physics-based animations.
-If you have a specific request, please
+If you have a specific request, 
 [file an issue]({{site.github}}/flutter/website/issues).
 {% endcomment -%}
 
@@ -218,8 +219,9 @@ classes.
 
 ### 交织动画
 
-Animations that are broken into smaller motions, where some of the motion is delayed.
-The smaller animations may be sequential, or may partially or completely overlap.
+Animations that are broken into smaller motions, where some of the motion
+is delayed.  The smaller animations might be sequential,
+or might partially or completely overlap.
 
 动画被分解成较小的动作，其中一些动作被延迟。这些小动画可以是连续的，也可以部分或完全重叠。
 

@@ -50,9 +50,11 @@ The declarative style of UI programming has many benefits. Remarkably, there is
 only one code path for any state of the UI. You describe what the UI should look 
 like for any given state, once — and that is it.
 
-声明式的编程风格有许多好处。值得注意的是，用户界面任何状态的改变都只有一种编码途径。一旦给定任意状态，你就描述了用户界面应该长什么样，并且它就是这样。
+声明式的编程风格有许多好处。值得注意的是，用户界面任何状态的改变都只有一种编码途径。
+一旦给定任意状态，你就描述了用户界面应该长什么样，并且它就是这样。
 
 At first, this style of programming may not seem as intuitive as the imperative 
 style. This is why this section is here. Read on.
 
-刚开始的时候，这种编码风格可能看起来不像命令式的那么直观。这也是本章为什么出现在这的原因。继续阅读。
+刚开始的时候，这种编码风格可能看起来不像命令式的那么直观。
+这也是本章为什么出现在这的原因。

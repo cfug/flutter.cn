@@ -151,15 +151,17 @@ device name (or the message **No Devices**).
 ![Flutter 设备]({% asset tools/vs-code/device_status_bar.png @path %}){:width="450px"}
 
 {{site.alert.note}}
-  - If you do not see a Flutter version number or device info your project may
-    not have been detected as a Flutter project. Please ensure the folder that
-    contains your `pubspec.yaml` is inside a VS Code **Workspace Folder**
+  - If you do not see a Flutter version number or device info your project
+    might not have been detected as a Flutter project. Ensure the
+    folder that contains your `pubspec.yaml` is inside a VS Code
+    **Workspace Folder**.
     
     如果你没看到 Flutter 版本号或者设备信息，你的项目可能不被识别为一个 Flutter 项目。请确认 VS Code **Workspace Folder** 的目录中是否含有 `pubspec.yaml`。
     
   - If the status bar reads **No Devices** Flutter has not been
     able to discover any connected iOS or Android devices or simulators.
-    You need to connect a device, or start a simulator, to proceed.
+    You need to connect a device, or start a simulator or emulator,
+    to proceed.
     
     如果状态栏显示**无设备**表明 Flutter 没有发现任何已连接的 IOS、Android 或者模拟器。你需要连接设备或者启动模拟器。       
 {{site.alert.end}}
@@ -288,19 +290,19 @@ DevTools 仍处于开发阶段，但是已有可用预览。可在 [DevTools' �
 
 ## Flutter 代码编写建议
 
-If you have additional tips we should share, please [let us know][]!
+If you have additional tips we should share, [let us know][]!
 
-如果你有其他很好的建议，请[联系我们][]!
+如果你有其他更好的建议，请[联系我们][]!
 
 ### Assists & Quick Fixes
 
 ### 辅助和快速修复
 
-Assists are code changes related to a certain code identifier. A number of these
-are available when the cursor is placed on a Flutter widget identifier, as
-indicated by the yellow lightbulb icon. The assist can be invoked by clicking
-the lightbulb, or by using the keyboard shortcut `Ctrl`+`.` (`Cmd`+`.` on Mac), as
-illustrated here:
+Assists are code changes related to a certain code identifier.
+A number of these are available when the cursor is placed on a
+Flutter widget identifier, as indicated by the yellow lightbulb icon.
+The assist can be invoked by clicking the lightbulb, or by using the
+keyboard shortcut `Ctrl`+`.` (`Cmd`+`.` on Mac), as illustrated here:
 
 辅助是与特定代码标识符相关的代码更改。多数情况下在鼠标放在 Flutter widget 标识符上可用，通过黄色的灯泡图标表示。辅助可以通过点击灯泡，或者使用快捷键 `Ctrl`+`.` (Mac 用 `Cmd`+`.`)，如图所示：
 

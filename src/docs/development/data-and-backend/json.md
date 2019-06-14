@@ -99,7 +99,7 @@ are these kinds of libraries.
 This approach scales well for a larger project. No hand-written
 boilerplate is needed, and typos when accessing JSON fields are caught at
 compile-time. The downside with code generation is that it requires some
-initial setup. Also, the generated source files may produce visual clutter
+initial setup. Also, the generated source files might produce visual clutter
 in your project navigator.
 
 这种方法适用于大型项目。不需要手动编写模板，当试图去获取不存在的 JSON 字段时的笔误会在编译阶段被发现。代码生成的缺点是它需要一些初始化设置。并且，生成的源文件可能在你的项目导航中产生一些视觉上的混乱。

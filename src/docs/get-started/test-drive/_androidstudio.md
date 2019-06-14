@@ -4,21 +4,21 @@
 
 ## 创建应用 {#create-app}
 
- 1. Select **File > New Flutter Project**.
+ 1. Open the IDE and select ***Start a new Flutter project***.
 
-    打开 **文件 > 新建 Flutter 项目**.
+    打开 IDE，选择 **新 Flutter 项目 (Start a new Flutter project)**.
     
- 1. Select **Flutter application** as the project type, and press **Next**.
+ 1. Select **Flutter Application** as the project type. Then click **Next**.
 
     选择 **Flutter 应用程序** 作为项目类型， 然后点 **下一步**
 
- 1. Make sure that the **Flutter SDK Path** text field specifies the
-    location of the SDK. Install the SDK if you haven't yet done so.
+ 1. Verify the Flutter SDK path specifies the SDK’s location 
+    (select **Install SDK...** if the text field is blank).
 
     确认 **Flutter SDK 路径** 区域所示路径是正确的 SDK 路径。
-    如果你还没有安装 SDK，需要先进行安装。
+    如果你还没有安装 SDK，需要先进行安装，选择 **Install SDK...**。
     
- 1. Enter a project name (for example, `myapp`), and press **Next**.
+ 1. Enter a project name (for example, `myapp`). Then click **Next**.
 
     输入项目名称(比如 'myapp'), 然后点击**下一步**。
     
@@ -26,9 +26,23 @@
     
     点击 **完成**。
     
- 1. Wait for Android Studio to install the SDK, and create the project.
+ 1. Wait for Android Studio to install the SDK and create the project.
     
     待 Android Studio 安装 SDK 后，创建项目。
+
+{{site.alert.note}}
+
+  When creating a new Flutter app, some Flutter IDE plugins ask for a company domain name in reverse order,
+  something like `com.example`. The company domain name and project name are used together as the package name
+  for Android (the Bundle ID for iOS) when the app is released. If you think that the app might be released,
+  it’s better to specify the package name now. The package name can’t be changed once the app is released,
+  so make the name unique.
+  
+  每当创建一个新的 Flutter 应用时候，一些 Flutter IDE 插件会请你输入一个类似 `com.example`
+  的包名 (package name)，包名（在 iOS 里叫套装 ID）一般都是把公司域名的反着写了。
+  如果你的应用打算上架商店，建议一开始的时候把这个全网唯一的包名设置好，因为应用上架之后就不能再修改了。
+  
+{{site.alert.end}}
 
 The above commands create a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].

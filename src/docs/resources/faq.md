@@ -288,10 +288,11 @@ on every commit.
 
 ### Flutter 是否带有依赖注入 (dependency injection) 的框架或解决方案？
 
-Not at this time. Please share your ideas at
+Not at this time. Share your ideas at
 [{{site.email}}](mailto:{{site.email}}).
 
-现在还没有。如果您有这方面的建议，请通过 [{{flutter-dev@googlegroups.com}}](mailto:{{site.email}})  邮箱与我们联系。
+现在还没有。如果您有这方面的建议，请通过
+[{{flutter-dev@googlegroups.com}}](mailto:{{site.email}}) 邮箱与我们联系。
 
 ## Technology
 
@@ -313,17 +314,19 @@ Flutter 使用 C、C++、Dart 和 Skia (2D 渲染引擎) 构建。您可以参�
 ### Flutter 如何在 Android 上运行我的代码？
 
 The engine's C and C++ code are compiled with Android's NDK. The Dart code
-(both the SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM and x86
-libraries. Those libraries are included in a "runner" Android project, and the whole
-thing is built into an APK. When launched, the app loads the Flutter library.
-Any rendering, input or event handling, and so on, are delegated to the compiled
-Flutter and app code. This is similar to the way many game engines work.
+(both the SDK's and yours) are ahead-of-time (AOT) compiled into a native,
+ARM and x86 libraries. Those libraries are included in a "runner" Android
+project, and the whole thing is built into an APK. When launched,
+the app loads the Flutter library.
+Any rendering, input or event handling, and so on, is delegated to the
+compiled Flutter and app code. This is similar to the way many game engines
+work.
 
 引擎的 C 和 C++ 代码使用 Android 的 NDK 编译。Dart 代码 (SDK 的和您写的) 都是预先 (ahead-of-time, AOT) 编译成本地 ARM 及 x86 库。这些库被包含在一个 Android "runner" 项目中，然后整套内容被编译成一个 APK。当应用启动时，它会加载 Flutter 库。任何渲染、输入或事件处理等都会 delegate 给编译好的 Flutter 和应用代码。这个工作机制与很多游戏引擎颇为相似。
 
-Debug mode builds use a virtual machine (VM) to run Dart code (hence the "debug"
-banner they show to remind people that they're slightly slower) in order to
-enable stateful hot reload.
+Debug mode builds use a virtual machine (VM) to run Dart code
+(hence the "debug" banner they show to remind people that they're
+slightly slower) in order to enable stateful hot reload.
 
 调试模式时则使用虚拟机 (VM) 来运行 Dart 代码（因此这时会显示 "Debug" 字样，以提醒开发者速度会稍微变慢)，这样便可以启用有状态热重载 (Stateful Hot Reload)。
 
@@ -333,16 +336,17 @@ enable stateful hot reload.
 
 The engine's C and C++ code are compiled with LLVM. The Dart code (both the
 SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM library.
-That library is included in a "runner" iOS project, and the whole thing is built
-into an `.ipa`. When launched, the app loads the Flutter library. Any rendering,
-input or event handling, and so on, are delegated to the compiled Flutter and
-app code. This is similar to the way many game engines work.
+That library is included in a "runner" iOS project, and the whole thing is
+built into an `.ipa`. When launched, the app loads the Flutter library.
+Any rendering, input or event handling, and so on, are delegated to the
+compiled Flutter and app code. This is similar to the way many game engines
+work.
 
 引擎的 C 和 C++ 代码使用 LLVM 编译。Dart 代码 (SDK 的和您的) 都是预先 (ahead-of-time, AOT) 编译成本地 ARM 库。这些库被包含在一个 iOS "runner" 项目中，然后整套内容被编译成一个 .ipa。当应用启动时，它会加载 Flutter 库。任何渲染、输入或事件处理等都会 delegate 给编译好的 Flutter 和应用代码。这个工作机制与很多游戏引擎颇为相似。
 
-Debug mode builds use a virtual machine (VM) to run Dart code (hence the "debug"
-banner they show to remind people that they're slightly slower) in order to
-enable stateful hot reload.
+Debug mode builds use a virtual machine (VM) to run Dart code (hence the
+"debug" banner they show to remind people that they're slightly slower)
+in order to enable stateful hot reload.
 
 调试模式时则使用虚拟机 (VM) 来运行 Dart 代码 (因此这时会显示 "Debug" 字样，以提醒开发者速度会稍微变慢)，这样便可以启用有状态热重载 (Stateful Hot Reload)。
 
@@ -358,7 +362,7 @@ You can browse a
 
 不会。相反，Flutter 自己提供了一套 widget (包括 Material Design 和 iOS 风格的 Cupertino widget)，由 Flutter 的框架和引擎负责管理和渲染。你可以在这里浏览 [Flutter widget 目录](/docs/development/ui/widgets)。
 
-We are hoping the end-result will be higher quality apps. If we reused
+We hope that the end-result is higher quality apps. If we reused
 the OEM widgets, the quality and performance of Flutter apps would be
 limited by the quality of those widgets.
 
@@ -399,7 +403,7 @@ help lower app development and maintenance costs.
 
 The Flutter team watches the adoption and demand for new mobile
 widgets from iOS and Android, and aims to work with the community
-to build support for new widgets. This work may come in the form
+to build support for new widgets. This work might come in the form
 of lower-level framework features, new composable widgets, or new
 widget implementations.
 
@@ -475,8 +479,8 @@ Dart scores highly for us on the following primary criteria:
 在评估时，Dart 在以下主要标准上得分很高:
 
 * _Developer productivity_. One of Flutter's main value propositions is that it
-  saves engineering resources by letting developers create apps for both iOS and
-  Android with the same codebase. Using a highly productive language
+  saves engineering resources by letting developers create apps for both
+  iOS and Android with the same codebase. Using a highly productive language
   accelerates developers further and makes Flutter more attractive.
   This was very important to both our framework team as well as our developers.
   The majority of Flutter is built in the same language we give to our users, so
@@ -519,8 +523,8 @@ Dart scores highly for us on the following primary criteria:
 
 ### Flutter 能运行任何 Dart 代码吗？
 
-Flutter should be able to run most Dart code that does not import (transitively,
-or directly) dart:mirrors or dart:html.
+Flutter should be able to run most Dart code that does not import
+(transitively, or directly) dart:mirrors or dart:html.
 
 Flutter 应该能够运行大多数没有引用 dart:mirrors 或 dart:html (不论是直接还是间接引用) 的 Dart 代码。
 
@@ -814,7 +818,7 @@ across mobile platforms.
 Yes, Flutter supports calling into the platform, including integrating with
 Java or Kotlin code on Android, and ObjectiveC or Swift code on iOS.
 This is enabled via a flexible message passing style where a Flutter app
-may send and receive messages to the mobile platform using a
+might send and receive messages to the mobile platform using a
 [`BasicMessageChannel`]({{site.api}}/flutter/services/BasicMessageChannel-class.html).
 
 可以，Flutter 支持调用 (包括集成) Android 上的 Java 或者 Kotlin 代码，或者 iOS 上的 ObjectiveC 或 Swift 代码。这是通过灵活的消息传递方式实现的，Flutter 应用可以使用 [`BasicMessageChannel`]({{site.api}}/flutter/services/BasicMessageChannel-class.html) 向移动平台收发消息。
@@ -838,7 +842,7 @@ iOS and Android.
 Not at this time. Because Flutter apps are pre-compiled for production,
 and binary size is always a concern with mobile apps, we disabled
 dart:mirrors. We are curious what you might need reflection/mirrors
-for&mdash;please let us know at [{{site.email}}](mailto:{{site.email}}).
+for&mdash;let us know at [{{site.email}}](mailto:{{site.email}}).
 
 现在暂时还不行。由于 Flutter 应用已经针对最终产物进行了预编译，并且控制二进制内容体积始终是现代移动应用需要面对的一个问题，所以我们禁用了 dart:mirrors。我们很想知道您需要反射 / 镜像系统的目的&mdash;请通过如下地址反馈给我们您的想法：[{{flutter-dev@googlegroups.com}}](mailto:{{site.email}})。
 
@@ -1195,11 +1199,11 @@ lay out an entire scene with a single pass.
 
 ### 我该如何获得技术支持？
 
-If you think you've encountered a bug, please file it in our
-[issue tracker]({{site.github}}/flutter/flutter/issues). We
-encourage you to use
+If you think you've encountered a bug, file it in our
+[issue tracker]({{site.github}}/flutter/flutter/issues).
+You might also use
 [Stack Overflow]({{site.so}}/tags/flutter) for "HOWTO" type questions.
-For discussions, please join our mailing list at
+For discussions, join our mailing list at
 [{{site.email}}](mailto:{{site.email}}).
 
 如果您觉得遇到 bug 了，请提交至我们的[问题追踪入口]({{site.github}}/flutter/flutter/issues)。我们也鼓励您在 [Stack Overflow]({{site.so}}/tags/flutter) 中多多使用“如何 (how to) ...“来搜索解答。如果您希望直接与我们沟通，请使用我们的官方邮件地址 [{{flutter-dev@googlegroups.com}}](mailto:{{site.email}})。 
@@ -1255,7 +1259,8 @@ license]({{site.github}}/flutter/flutter/blob/master/LICENSE).
 
 框架部分则自成一体，且 [只有一份简单的许可协议]({{site.github}}/flutter/flutter/blob/master/LICENSE)。
 
-In addition, any Dart packages you use may have their own license requirements.
+In addition, any Dart packages you use might have their own license
+requirements.
 
 另外，您使用的其他 Dart 代码包可能有其独有的许可协议。
 

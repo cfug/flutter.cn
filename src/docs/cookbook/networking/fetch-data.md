@@ -6,33 +6,34 @@ prev:
   title: 传递数据到新页面
   path: /docs/cookbook/navigation/passing-data
 next:
-  title: Making authenticated requests
+  title: Make authenticated requests
   title: 发起 HTTP 认证授权请求
   path: /docs/cookbook/networking/authenticated-requests
 ---
 
-Fetching data from the internet is necessary for most apps. Luckily, Dart and
-Flutter provide tools for this type of work.
+Fetching data from the internet is necessary for most apps.
+Luckily, Dart and Flutter provide tools, such as the
+`http` package, for this type of work.
 
 对于大部分应用来说，获取网络数据都是必不可少的一个功能。幸运的是，Dart 和 Flutter 就为我们提供了这样的工具。
 
-## Directions
+This recipe uses the following steps:
 
-## 使用步骤
+这个教程包含以下步骤：
 
-  1. Add the `http` package
+  1. Add the `http` package.
 
      添加 `http` 包
 
-  2. Make a network request using the `http` package
+  2. Make a network request using the `http` package.
 
      使用 `http` 包进行网络请求
 
-  3. Convert the response into a custom Dart object
+  3. Convert the response into a custom Dart object.
 
      将返回的响应转换成一个自定义的 Dart 对象
 
-  4. Fetch and Display the data with Flutter
+  4. Fetch and display the data with Flutter.
 
      使用 Flutter 对数据进行获取和展示
 
@@ -45,9 +46,10 @@ simplest way to fetch data from the internet.
 
 [`http`]({{site.pub-pkg}}/http) 包为我们提供了获取网络数据最简单的方法。
 
-To install the `http` package, you must add it to the dependencies section
-of the `pubspec.yaml`. You can [find the latest version of the http package on
-the Pub site]({{site.pub}}/packages/http#-installing-tab-).
+To install the `http` package, add it to the dependencies section
+of the `pubspec.yaml`. You can find the latest version of the
+[http package]({{site.pub}}/packages/http#-installing-tab-)
+on the Pub site.
 
 安装 `http` 包之前，你必须先把它添加到 `pubspec.yaml` 的依赖区域。你可以在 [Pub site 找到 http 包的最新版本]({{site.pub}}/packages/http#-installing-tab-)。
 
@@ -60,8 +62,8 @@ dependencies:
 
 ## 2. 进行网络请求
 
-In this example, you'll fetch a sample post from the
-[JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) using the
+In this example, fetch a sample post from the
+[JSONPlaceholder](https://jsonplaceholder.typicode.com/) using the
 [http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
 
 在这里，你可以使用 [http.get()]({{site.pub-api}}/http/latest/http/get.html) 方法从 [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) 上获取到一个样本数据。
@@ -79,8 +81,8 @@ The `http.get()` method returns a `Future` that contains a `Response`.
 
   * [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) is
     a core Dart class for working with async operations.
-    It is used to represent a potential value or error that will
-    be available at some time in the future.
+    A Future object represents a potential value or error that will be
+    available at some time in the future.
     
     [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) 是 Dart 用来处理异步操作的一个核心类。它通常代表一个可能的值或者将来或许会用到的错误。
     
@@ -105,13 +107,13 @@ convert the `http.Response` into a Dart object.
 ### 创建一个 `Post` 类
 
 First, create a `Post` class that contains the data from the
-network request. It will include a factory constructor that 
-creates a `Post` from json.
+network request. It includes a factory constructor that 
+creates a `Post` from JSON.
 
 首先，创建一个包含网络请求返回数据的 `Post` 类。而且这个类还需要一个可以利用 json 创建 `Post` 的工厂构造器。
 
 Converting JSON by hand is only one option. For more information,
-please see the full article on [JSON and
+see the full article on [JSON and
 serialization](/docs/development/data-and-backend/json).
 
 手动转换 JSON 是我们目前唯一的选项。想了解更多，请查看完整的文章 [JSON 和序列化数据](/docs/development/data-and-backend/json)。
@@ -141,22 +143,22 @@ class Post {
 
 ### 将 `http.Response` 转换成 `Post`
 
-Now, update the `fetchPost` function to return a `Future<Post>`. To do so,
-you'll need to:
+Now, use the following steps to update the `fetchPost()`
+function to return a `Future<Post>`:
 
-现在，我们需要更新 `fetchPost` 函数并返回 `Future<Post>`。为了实现这个目标，我们需要做以下几步：
+现在，我们需要更新 `fetchPost()` 函数并返回 `Future<Post>`。为了实现这个目标，我们需要做以下几步：
 
-  1. Convert the response body into a json `Map` with the `dart:convert`
+  1. Convert the response body into a JSON `Map` with the `dart:convert`
      package.
 
      用 `dart:convert` 包将响应体转换成一个 json `Map`。
 
   2. If the server returns an "OK" response with a status code of 200, convert
-     the json `Map` into a `Post` using the `fromJson` factory method.
+     the JSON `Map` into a `Post` using the `fromJson()` factory method.
 
      如果服务器返回了一个状态码为 200 的 "OK" 响应，那么就使用 `fromJson` 工厂方法将 json `Map` 转换成 `Post`。
 
-  3. If the server returns an unexpected response, throw an error
+  3. If the server returns an unexpected response, throw an error.
 
      如果服务器返回的不是我们预期的响应，那么就抛出错误。
 
@@ -167,7 +169,7 @@ Future<Post> fetchPost() async {
       await http.get('https://jsonplaceholder.typicode.com/posts/1');
 
   if (response.statusCode == 200) {
-    // If server returns an OK response, parse the JSON
+    // If server returns an OK response, parse the JSON.
     return Post.fromJson(json.decode(response.body));
   } else {
     // If that response was not OK, throw an error.
@@ -176,18 +178,18 @@ Future<Post> fetchPost() async {
 }
 ```
 
-Hooray! Now you've got a function that we can call to fetch a Post from the
+Hooray! Now you've got a function that fetches a post from the
 internet.
 
 太棒了！现在你就拥有了一个可以获取网络数据的完整函数啦。
 
-## 4. Fetch and Display the data
+## 4. Fetch and display the data
 
 ## 4. 获取并展示数据
 
-In order to fetch the data and display it on screen, you can use the
+To fetch the data and display it on screen, use the
 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
-widget. The `FutureBuilder` Widget comes with Flutter and makes it easy
+widget. The `FutureBuilder` widget comes with Flutter and makes it easy
 to work with async data sources.
 
 为了能够获取数据并在屏幕上展示它，你可以使用 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) 组件。这个由 Flutter 提供的 `FutureBuilder` 组件可以让处理异步数据源变的非常简单。
@@ -217,7 +219,7 @@ FutureBuilder<Post>(
       return Text("${snapshot.error}");
     }
 
-    // By default, show a loading spinner
+    // By default, show a loading spinner.
     return CircularProgressIndicator();
   },
 );
@@ -233,13 +235,13 @@ Although it's convenient, it's not recommended to put a call to an API in a
 虽然这样会比较方便，但是我们仍然不推荐将 API 调用置于 `build()` 方法内部。
 
 Flutter calls the `build()` method every time it wants to change anything
-in the view, and this happens surprisingly often.  If you leave the fetch
+in the view, and this happens surprisingly often. If you leave the fetch
 call in your `build()` method, you'll flood the API with unnecessary calls
 and slow down your app.
 
 每当 Flutter 需要改变视图中的一些内容时（这个发生的频率非常高），就会调用 `build()` 方法。因此，如果你将数据请求置于 `build()` 内部，就会造成大量的无效调用，同时还会拖慢应用程序的速度。
 
-Here are some better options so it'll only hit the API when the page is
+Here are some better options so it only hits the API when the page is
 initially loaded.
 
 关于如何在页面初始化的时候，只调用 API，下面有一些更好的选择。
@@ -269,21 +271,22 @@ You can see a working example of this in the complete example below.
 
 ### 在 `StatefulWidget` 状态的生命周期中调用
 
-If your widget is stateful, you can call the fetch method in either the
-[`initState`]({{site.api}}/flutter/widgets/State/initState.html) or
-[`didChangeDependencies`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
+If your widget is stateful, call the fetch method in either the
+[`initState()`]({{site.api}}/flutter/widgets/State/initState.html) or
+[`didChangeDependencies()`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
 methods.
+
 
 如果你的组件是有状态的，你可以在 [`initState`]({{site.api}}/flutter/widgets/State/initState.html) 或者 [`didChangeDependencies`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html) 方法中调用 fetch 方法。
 
-`initState` is called exactly once and then never again.
+The `initState()` method is called exactly once and then never again.
 If you want to have the option of reloading the API in response to an
 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
-changing, put the call into the `didChangeDependencies` method.  See
+changing, put the call into the `didChangeDependencies()` method.  See
 [`State`]({{site.api}}/flutter/widgets/State-class.html) for more
 details.
 
-`initState` 只会被调用一次而且再也不会被调用。如果你需要在 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html) 改变的时候可以重新载入的话，可以把数据调用放在 `didChangeDependencies` 方法中。想了解更多详细内容请查看 [`State`]({{site.api}}/flutter/widgets/State-class.html)。
+`initState()` 只会被调用一次而且再也不会被调用。如果你需要在 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html) 改变的时候可以重新载入的话，可以把数据调用放在 `didChangeDependencies` 方法中。想了解更多详细内容请查看 [`State`]({{site.api}}/flutter/widgets/State-class.html)。
 
 <!-- skip -->
 ```dart
@@ -302,7 +305,7 @@ class _MyAppState extends State<MyApp> {
 ## 测试
 
 For information on how to test this functionality,
-please see the following recipes:
+see the following recipes:
 
 关于如何测试这个功能，请查看下面的说明：
 
@@ -331,7 +334,7 @@ Future<Post> fetchPost() async {
       await http.get('https://jsonplaceholder.typicode.com/posts/1');
 
   if (response.statusCode == 200) {
-    // If the call to the server was successful, parse the JSON
+    // If the call to the server was successful, parse the JSON.
     return Post.fromJson(json.decode(response.body));
   } else {
     // If that call was not successful, throw an error.
@@ -385,7 +388,7 @@ class MyApp extends StatelessWidget {
                 return Text("${snapshot.error}");
               }
 
-              // By default, show a loading spinner
+              // By default, show a loading spinner.
               return CircularProgressIndicator();
             },
           ),

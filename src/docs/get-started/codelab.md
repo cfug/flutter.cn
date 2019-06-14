@@ -600,10 +600,10 @@ a child inside the existing `MyApp` stateless widget.
 
   **Reloading...<br>
   Some program elements were changed during reload but did not run when
-  the view was reassembled; you may need to restart the app (by pressing "R")
+  the view was reassembled; you might need to restart the app (by pressing "R")
   for the changes to have an effect.**
 
-  It may be a false positive, but restarting ensures that your changes
+  It might be a false positive, but restarting ensures that your changes
   are reflected in the app's UI.
   
   因为重启应用之后就可以生效，故这可能是误报。
@@ -713,7 +713,7 @@ lazily, on demand.
         and places each suggestion into a `ListTile` row. For even rows, the
         function adds a `ListTile` row for the word pairing. For odd rows, the
         function adds a `Divider` widget to visually separate the entries. Note
-        that the divider may be difficult to see on smaller devices.
+        that the divider might be difficult to see on smaller devices.
         
         对于每个建议的单词对都会调用一次 itemBuilder，然后将单词对添加到 ListTile 行中。
         在偶数行，该函数会为单词对添加一个 ListTile row，

@@ -127,14 +127,14 @@ changes work as expected and do not introduce bugs.
 持续集成 (CI) 服务允许我们在推送新代码（代码变更）时自动运行测试。当代码变更后，会立即收到关于代码是否仍按预期工作、是否引入新问题的反馈。
 
 For information on running tests on various continuous integration services,
-please see the following: 
+see the following: 
 
 有关各种持续集成服务的信息，参考如下：
 
 * [Continuous Delivery using fastlane with
   Flutter](/docs/deployment/fastlane-cd/)
 
-  [Flutter 中使用 fastlane 进行持续交付](/docs/deployment/fastlane-cd/)
+  [Flutter 里的持续部署](/docs/deployment/cd/#fastlane)
 
 * [Test Flutter apps on
   Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)

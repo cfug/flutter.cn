@@ -1,12 +1,12 @@
 ---
-title: Parsing JSON in the background
+title: Parse JSON in the background
 title: 在后台处理 JSON 数据解析
 prev:
-  title: Making authenticated requests
+  title: Make authenticated requests
   title: 发起 HTTP 认证授权请求
   path: /docs/cookbook/networking/authenticated-requests
 next:
-  title: Working with WebSockets
+  title: Work with WebSockets
   title: 发起 WebSockets 请求
   path: /docs/cookbook/networking/web-sockets
 ---
@@ -17,16 +17,17 @@ poor app performance or stuttering animations, often called "jank."
 
 Dart 应用通常只会在单线程中处理它们的工作。并且在大多数情况中，这种模式不但简化了代码而且速度也够快，基本不会出现像动画卡顿以及性能不足这种「不靠谱」的问题。
 
-However, you may need to perform an expensive computation, such as parsing a
-very large JSON document. If this work takes more than 16 milliseconds, your
-users will experience jank.
+However, you might need to perform an expensive computation, such as parsing a
+very large JSON document. If this work takes more than 16 milliseconds,
+your users experience jank.
 
 但是，当你需要进行一个非常复杂的计算时，例如解析一个巨大的 JSON 文档。如果这项工作耗时超过了 16 毫秒， 那么你的用户就会感受到不靠谱。
 
 To avoid jank, you need to perform expensive computations like this in the
-background. On Android, this would mean scheduling work on a different thread.
+background. On Android, this means scheduling work on a different thread.
 In Flutter, you can use a separate
 [Isolate]({{site.api}}/flutter/dart-isolate/Isolate-class.html).
+This recipe uses the following steps:
 
 为了避免这种不靠谱的情况，像上面那样消耗性能的计算就应该放在后台处理。在 Android 平台上，这意味着在一个不同的线程中调度工作。而在 Flutter 中，你可以使用一个单独的 [Isolate]({{site.api}}/flutter/dart-isolate/Isolate-class.html)。
 
@@ -34,19 +35,19 @@ In Flutter, you can use a separate
 
 ## 使用步骤
 
-  1. Add the `http` package
+  1. Add the `http` package.
 
      添加 `http` 包
 
-  2. Make a network request using the `http` package
+  2. Make a network request using the `http` package.
 
      使用 `http` 包发起一个网络请求
 
-  3. Convert the response into a List of Photos
+  3. Convert the response into a list of photos.
 
      将响应转换成一列照片
 
-  4. Move this work to a separate isolate
+  4. Move this work to a separate isolate.
 
      将这个工作移交给一个单独的 isolate
 
@@ -69,9 +70,9 @@ dependencies:
 
 ## 2. 发起一个网络请求
 
-In this example, you'll fetch a JSON large document that contains a list of
+In this example, fetch a JSON large document that contains a list of
 5000 photo objects from the [JSONPlaceholder REST
-API](https://jsonplaceholder.typicode.com)
+API](https://jsonplaceholder.typicode.com),
 using the [http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
 
 在这个例子中，你将会使用 [http.get()]({{site.pub-api}}/http/latest/http/get.html) 方法通过 [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com) 获取到一个包含 5000 张图片对象的超大 JSON 文档。
@@ -83,18 +84,20 @@ Future<http.Response> fetchPhotos(http.Client client) async {
 }
 ```
 
-Note: You're providing an `http.Client` to the function in this example.
-This makes the function easier to test and use in different environments.
+{{site.alert.note}}
+  You're providing an `http.Client` to the function in this example.
+  This makes the function easier to test and use in different environments.
+{{site.alert.end}}
 
 注意：在这个例子中你需要给方法添加了一个 `http.Client` 参数。这将使得该方法测试起来更容易同时也可以在不同环境中使用。
 
-## 3. Parse and Convert the json into a List of Photos
+## 3. Parse and convert the JSON into a list of photos
 
 ## 3. 解析并将 json 转换成一列图片
 
 Next, following the guidance from the [Fetch data from the
 internet](/docs/cookbook/networking/fetch-data)
-recipe, you'll want to convert the `http.Response` into a list of Dart objects.
+recipe, convert the `http.Response` into a list of Dart objects.
 This makes the data easier to work with in the future.
 
 接下来，根据[获取网络数据](/docs/cookbook/networking/fetch-data)的说明，为了让接下来的数据处理更简单，你需要将 `http.Response` 转换成一列 Dart 对象。
@@ -104,8 +107,8 @@ This makes the data easier to work with in the future.
 ### 创建一个 `Photo` 类
 
 First, create a `Photo` class that contains data about a photo.
-You will include a `fromJson` factory method to make it easy to create a
-`Photo` starting with a json object.
+Include a `fromJson()` factory method to make it easy to create a
+`Photo` starting with a JSON object.
 
 首先，创建一个包含图片数据的 `Photo` 类。还需要一个 `fromJson` 的工厂方法，使得通过 json 创建 `Photo` 变的更加方便。
 
@@ -128,26 +131,28 @@ class Photo {
 }
 ```
 
-### Convert the response into a List of Photos
+### Convert the response into a list of photos
 
 ### 将响应转换成一列图片
 
-Now, update the `fetchPhotos` function so it can return a
-`Future<List<Photo>>`. To do so, you'll need to:
+Now, use the following instructions to update the
+`fetchPhotos()` function so that it returns a
+`Future<List<Photo>>`:
 
-现在，为了让 `fetchPhotos` 方法可以返回一个 `Future<List<Photo>>`，我们需要以下两点更新：
+现在，为了让 `fetchPhotos()` 方法可以返回一个 `Future<List<Photo>>`，我们需要以下两点更新：
 
-  1. Create a `parsePhotos` that converts the response body into a `List<Photo>`
+  1. Create a `parsePhotos()` function that converts the response
+     body into a `List<Photo>`.
 
-     创建一个可以将响应体转换成 `List<Photo>` 的方法：`parsePhotos` 
+     创建一个可以将响应体转换成 `List<Photo>` 的方法：`parsePhotos()` 
   
-  2. Use the `parsePhotos` function in the `fetchPhotos` function
+  2. Use the `parsePhotos()` function in the `fetchPhotos()` function.
 
-     在 `fetchPhotos` 方法中使用 `parsePhotos` 方法
+     在 `fetchPhotos()` 方法中使用 `parsePhotos()` 方法
 
 <!-- skip -->
 ```dart
-// A function that converts a response body into a List<Photo>
+// A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
@@ -166,20 +171,20 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 ## 4. 将这部分工作移交到单独的 isolate 中
 
-If you run the `fetchPhotos` function on a slower phone, you may notice the app
-freezes for a brief moment as it parses and converts the json. This is jank,
-and we want to be rid of it.
+If you run the `fetchPhotos()` function on a slower device,
+you might notice the app freezes for a brief moment as it parses and
+converts the JSON. This is jank, and you want to be rid of it.
 
-如果你在一台很慢的手机上运行 `fetchPhotos` 函数，你或许会注意到应用会有点卡顿，因为它需要解析并转换 json。显然这并不好，所以你要避免它。
+如果你在一台很慢的手机上运行 `fetchPhotos()` 函数，你或许会注意到应用会有点卡顿，因为它需要解析并转换 json。显然这并不好，所以你要避免它。
 
-So how can we do that? By moving the parsing and conversion to a background
-isolate using the [`compute`]({{site.api}}/flutter/foundation/compute.html)
-function provided by Flutter. The `compute` function runs expensive
+You can remove the jank by moving the parsing and conversion to a background
+isolate using the [`compute()`]({{site.api}}/flutter/foundation/compute.html)
+function provided by Flutter. The `compute()` function runs expensive
 functions in a background isolate and returns the result. In this case,
-we want to run the `parsePhotos` function in the background.
+run the `parsePhotos()` function in the background.
 
-那么我们究竟可以做什么呢？那就是通过 Flutter 提供的 [`compute`]({{site.api}}/flutter/foundation/compute.html) 方法将解析和转换的工作移交到一个后台 isolate 中。
-这个 `compute` 函数可以在后台 isolate 中运行复杂的函数并返回结果。在这里，我们就需要将 `parsePhotos` 方法放入后台。
+那么我们究竟可以做什么呢？那就是通过 Flutter 提供的 [`compute()`]({{site.api}}/flutter/foundation/compute.html) 方法将解析和转换的工作移交到一个后台 isolate 中。
+这个 `compute()` 函数可以在后台 isolate 中运行复杂的函数并返回结果。在这里，我们就需要将 `parsePhotos()` 方法放入后台。
 
 <!-- skip -->
 ```dart
@@ -187,12 +192,12 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
       await client.get('https://jsonplaceholder.typicode.com/photos');
 
-  // Use the compute function to run parsePhotos in a separate isolate
+  // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
 }
 ```
 
-## Notes on working with Isolates
+## Notes on working with isolates
 
 ## 使用 Isolates 需要注意的地方
 
@@ -202,7 +207,7 @@ simple objects such as the `List<Photo>` in this example.
 
 Isolates 通过来回传递消息来交流。这些消息可以是任何值，它们可以是 `null`、`num`、`bool`、`double` 或者 `String`，哪怕是像这个例子中的 `List<Photo>` 这样简单对象都没问题。
 
-You may experience errors if you try to pass more complex objects, such as
+You might experience errors if you try to pass more complex objects, such as
 a `Future` or `http.Response` between isolates.
 
 当你试图传递更复杂的对象时，你可能会遇到错误，例如在 isolates 之间的 `Future` 或者 `http.Response`。
@@ -223,11 +228,11 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
       await client.get('https://jsonplaceholder.typicode.com/photos');
 
-  // Use the compute function to run parsePhotos in a separate isolate
+  // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
 }
 
-// A function that converts a response body into a List<Photo>
+// A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
@@ -313,4 +318,4 @@ class PhotosList extends StatelessWidget {
 }
 ```
 
-![Isolate Demo](/images/cookbook/isolate.gif){:.site-mobile-screenshot}
+![Isolate demo](/images/cookbook/isolate.gif){:.site-mobile-screenshot}

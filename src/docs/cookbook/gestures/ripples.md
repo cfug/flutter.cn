@@ -1,43 +1,43 @@
 ---
-title: Adding Material Touch Ripples
+title: Add Material touch ripples
 title: 添加点按涟漪效果 (Material Design)
 prev:
   title: Retrieve the value of a text field
   title: 获取文本框的输入值
   path: /docs/cookbook/forms/retrieve-input
 next:
-  title: Handling Taps
+  title: Handle taps
   title: 捕获和处理点击动作
   path: /docs/cookbook/gestures/handling-taps
 ---
 
-While designing an app that should follow the Material Design Guidelines, we'll
-want to add the ripple animation to Widgets when tapped.
+Widgets that follow the Material Design guidelines display
+a ripple animation when tapped.
 
 当我们在开发遵循 Material Design 规范应用的时候，我们可能会需要为某个 Widgets 的点击加入涟漪效果。
 
-Flutter provides the [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html)
-Widget to achieve this effect.
+Flutter provides the
+[`InkWell`]({{site.api}}/flutter/material/InkWell-class.html)
+widget to perform this effect. Create a ripple effect using
+the following steps:
 
-Flutter 提供了 [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html) Widget 来实现这个功能。
+Flutter 提供了 [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html) Widget 来实现这个功能。你可以通过以下步骤实现涟漪效果：
 
-## Directions
 
-## 步骤
-
-  1. Create a Widget we want to tap
+  1. Create a widget that supports tap.
 
      创建一个想要点击的 Widget
 
-  2. Wrap it in an `InkWell` Widget to manage tap callbacks and ripple animations
+  2. Wrap it in an `InkWell` widget to manage tap callbacks and
+     ripple animations.
 
      用 `InkWell` Widget 包裹它，并设置回调函数， 就可以显示涟漪动画了。
 
 <!-- skip -->
 ```dart
-// The InkWell Wraps our custom flat button Widget
+// The InkWell wraps the custom flat button widget.
 InkWell(
-  // When the user taps the button, show a snackbar
+  // When the user taps the button, show a snackbar.
   onTap: () {
     Scaffold.of(context).showSnackBar(SnackBar(
       content: Text('Tap'),
@@ -90,9 +90,9 @@ class MyHomePage extends StatelessWidget {
 class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // The InkWell Wraps our custom flat button Widget
+    // The InkWell wraps the custom flat button widget.
     return InkWell(
-      // When the user taps the button, show a snackbar
+      // When the user taps the button, show a snackbar.
       onTap: () {
         Scaffold.of(context).showSnackBar(SnackBar(
           content: Text('Tap'),

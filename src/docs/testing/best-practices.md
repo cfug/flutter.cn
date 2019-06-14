@@ -88,19 +88,22 @@ Also see:
 Use effects carefully, as they can be expensive. Some of them invoke
 `saveLayer()` behind the scenes, which can be an expensive operation.
 
-由于代价很大，请谨慎使用效果。一些效果的背后调用了性能代价很大的 `saveLayer()` 方法。
+由于代价很大，请谨慎使用效果。
+一些效果的背后调用了性能代价很大的 `saveLayer()` 方法。
 
-{{site.alert.note}}
-**Why is savelayer expensive?**<br>
-Calling `saveLayer()` allocates an offscreen buffer. Drawing content
-into the offscreen buffer may trigger render target switches that
-are particularly slow in older GPUs.
-{{site.alert.end}}
+{{site.alert.secondary}}
 
-{{site.alert.note}}
-**为什么 saveLayer 代价很大？**<br>
-调用 `saveLayer()` 会开辟一片离屏缓冲区。
-将内容绘制到离屏缓冲区可能会触发渲染目标切换，这些切换在较早期的 GPU 中特别慢。
+  <h4>Why is savelayer expensive?</h4>
+  
+  <h4>为什么 saveLayer 代价很大？</h4>
+  
+  Calling `saveLayer()` allocates an offscreen buffer. Drawing content
+  into the offscreen buffer might trigger render target switches that
+  are particularly slow in older GPUs.
+
+  调用 `saveLayer()` 会开辟一片离屏缓冲区。
+  将内容绘制到离屏缓冲区可能会触发渲染目标切换，这些切换在较早期的 GPU 中特别慢。
+  
 {{site.alert.end}}
 
 Some general rules when applying specific effects:
@@ -127,20 +130,21 @@ Some general rules when applying specific effects:
   **Clipping** 不会调用 `saveLayer()`（除非明确使用 `Clip.antiAliasWithSaveLayer`），
   因此这些操作没有 Opacity 那么耗时，但仍然很耗时，所以请谨慎使用。
 
-Other widgets that may trigger `saveLayer()` and are potentially costly:
+Other widgets that might trigger `saveLayer()` and are potentially costly:
 
 其他会触发`saveLayer()` 的 widget，可能也会代价高昂。
 
 * [ShaderMask]({{site.api}}/flutter/widgets/ShaderMask-class.html)
-  [ShaderMask]({{site.api}}/flutter/widgets/ShaderMask-class.html)
 * [ColorFilter]({{site.api}}/flutter/dart-ui/ColorFilter-class.html)
-  [ColorFilter]({{site.api}}/flutter/dart-ui/ColorFilter-class.html)
 * [Chip]({{site.api}}/flutter/material/Chip-class.html)&mdash;may
   cause call to `saveLayer()` if `disabledColorAlpha != 0xff`
+  
   [Chip]({{site.api}}/flutter/material/Chip-class.html)&mdash;
-  当 `disabledColorAlpha != 0xff` 的时候，会调用 `saveLayer()`
+  当 `disabledColorAlpha != 0xff` 的时候，会调用 `saveLayer()`  
+
 * [Text]({{site.api}}/flutter/widgets/Text-class.html)&mdash;may
   cause call to `saveLayer()` if there's an `overflowShader`
+  
   [Text]({{site.api}}/flutter/widgets/Text-class.html)&mdash;
   当有 `overflowShader` 时，会调用`saveLayer()`
 
@@ -221,13 +225,14 @@ render a frame as fast as possible. Why?
 每一帧渲染时间低于 16ms，你可能不必担心性能问题以及一些性能陷阱，
 但仍然应该致力于尽可能快地渲染每一帧。为什么？
 
-* Lowering the frame render time below 16ms may not make a visual
-  difference, but it will **improve battery life** and thermal issues.
+
+* Lowering the frame render time below 16ms might not make a visual
+  difference, but it **improves battery life** and thermal issues.
 
   将帧渲染时间降低到 16ms 以下可能在视觉上看不出来什么变化，
   但可以**延长电池寿命**以及避免发热问题。
 
-* It may run fine on your device, but consider performance for the
+* It might run fine on your device, but consider performance for the
   lowest device you are targeting.
 
   可能在你当前测试设备上运行良好，但请考虑在应用所支持的最低端设备上的情况。

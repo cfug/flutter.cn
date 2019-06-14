@@ -1894,9 +1894,9 @@ content exceeds its viewable space.
   );
 {% endprettify %}
 
-You might have used a `Grid` in Xamarin.Forms to implement widgets that
-overlay other widgets.  In Flutter, you accomplish this with the
-`Stack` widget.
+You might have used a `Grid` in Xamarin.Forms to implement widgets
+that overlay other widgets.
+In Flutter, you accomplish this with the `Stack` widget
 
 您可能在 Xamarin.Forms 中使用 `Grid` 来实现覆盖其他 widget 的 widget。
 在 Flutter 中，您可以使用 `Stack` widget 来完成这一操作。
@@ -2554,16 +2554,18 @@ ItemBuilder 函数类似于 Android 适配器中的 `getView` 函数；
 Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead adds to it.
 
-最后，但也是最重要的，要注意 `onTap()` 函数不再重新创建列表，而是用 `.add` 添加给它的。
+最后，但也是最重要的，要注意 `onTap()` 函数不再重新创建列表，
+而是用 `.add` 添加给它的。
 
-For more information, see [Write your first Flutter app,
+For more information, see
+[Write your first Flutter app,
 part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
 and [Write your first Flutter app,
 part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
 
 更多信息，请访问
-[编写您的第一个 Flutter 应用程序，第1部分]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
-和 [编写您的第一个 Flutter 应用程序，第2部分]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
+[编写您的第一个 Flutter 应用程序，第1部分]({{site.codelabs}}/codelabs/first-flutter-app-pt1-cn/index.html)
+和 [编写您的第一个 Flutter 应用程序，第2部分]({{site.codelabs}}/codelabs/first-flutter-app-pt2-cn/index.html)
 
 ## Working with text
 
@@ -3003,7 +3005,6 @@ In Flutter you declare themes in the top level widget.
 
 在 Flutter 中，需要在最顶级 widget 中声明主题。
 
-<<<<<<< HEAD
 To take full advantage of Material Components in your app,
 you can declare a top level widget `MaterialApp` as the entry
 point to your application. MaterialApp is a convenience widget

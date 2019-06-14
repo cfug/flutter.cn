@@ -134,7 +134,7 @@ The **5: Debug** button toggles display of the debug pane.
 
 ### Flutter inspector
 
-There are two other features provided by the Flutter plugin that you may
+There are two other features provided by the Flutter plugin that you might
 find useful. The Flutter inspector is a tool for visualizing and exploring
 the Flutter widget tree and helps you:
 
@@ -159,7 +159,7 @@ right of the Android Studio window.
 ### Flutter outline
 
 The Flutter Outline displays the build method in visual form.
-Note that this may be different than the widget tree for the
+Note that this might be different than the widget tree for the
 build method. Toggle display of the outline using the vertical
 button to the right of the AS window.
 
@@ -466,7 +466,7 @@ dev_dependencies:
   在项目面板，展开 <strong><em>app_name</em> > android > app > src > main > java > io.flutter plugins</strong>。
   双击 **GeneratedProjectRegistrant** 在编辑面板中打开 Java 代码。
 
-Both the Dart and OEM debuggers are interacting with the the same process.
+Both the Dart and OEM debuggers are interacting with the same process.
 User either, or both, to set breakpoints, examine stack, resume execution...
 In other words, DEBUG!
 

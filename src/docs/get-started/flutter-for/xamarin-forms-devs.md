@@ -79,8 +79,8 @@ public class App: Application
 In Flutter, "everything is a widget", even the application itself.
 The following example shows `MyApp`, a simple application `Widget`.
 
-在 Flutter 中，“万物皆部件”，甚至连应用本身也是。
-接下来的示例展示了 `MyApp` ,一个简单的应用 `部件（Widget）`。
+在 Flutter 中，“万物皆 widget”，甚至连应用本身也是。
+接下来的示例展示了 `MyApp` ,一个简单的应用 `Widget`。
 
 {% prettify dart %}
 class MyApp extends StatelessWidget {
@@ -114,10 +114,10 @@ or you can use the lower level
 [WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html),
 which you can customize in any way you want.
 
-在 Flutter 中，指定一个应用部件来控制你的根页面。
+在 Flutter 中，指定一个应用程序 widget 来控制你的根页面。
 你可以使用一个
 [MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
-部件，他支持[Material Design]({{site.material}}/design)，或者你也可以使用等级较低的
+widget，他支持[Material Design]({{site.material}}/design)，或者你也可以使用等级较低的
 [WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html)，可供你随心所欲地定制。
 
 The following code defines the home page, a stateful widget. In Flutter,
@@ -125,8 +125,8 @@ all widgets are immutable, but two types of widgets are supported:
 stateful and stateless. Examples of a stateless widget are titles,
 icons, or images.
 
-接下来的代码定义了一个主页，一个有状态的部件。在 Flutter 中，除了以下两个类型的部件外，其它部件都是不可变的：
-有状态和无状态部件。无状态部件的示例都是标题、图标或图片。
+接下来的代码定义了一个主页，一个有状态的 widget。在 Flutter 中，除了以下两个类型的 widget 外，其它 widget 都是不可变的：
+有状态和无状态 widget。无状态 widget 的示例都是标题、图标或图片。
 
 The following example uses MaterialApp, which holds its root page in the
 `home` property.
@@ -136,7 +136,9 @@ The following example uses MaterialApp, which holds its root page in the
 {% prettify dart %}
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  // 这个部件是你的应用程序的根部件。
+  
+  // 这个 widget 是你的应用程序的根 widget。
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -153,15 +155,15 @@ class MyApp extends StatelessWidget {
 From here, your actual first page is another `Widget`,
 in which you create your state.
 
-从这里开始，真正的首页是另一个你在里面创建了状态的 `部件`。
+从这里开始，真正的首页是另一个你在里面创建了状态的 `widget`。
 
 A stateful widget, such as MyHomePage below, consists of two parts.
 The first part, which is itself immutable, creates a State object
 that holds the state of the object. The State object persists over
 the life of the widget.
 
-一个有状态部件，例如下面的 MyHomePage，包含两个部分。
-第一部分，是它自身不变的，创建一个状态对象（State object）来管控对象的状态。状态对象持续存在于小部件的整个生命周期中。
+一个有状态 widget，例如下面的 MyHomePage，包含两个部分。
+第一部分，是它自身不变的，创建一个状态对象（State object）来管控对象的状态。状态对象持续存在于 widget 的整个生命周期中。
 
 {% prettify dart %}
 class MyHomePage extends StatefulWidget {
@@ -176,15 +178,15 @@ class MyHomePage extends StatefulWidget {
 
 The `State` object implements the `build()` method for the stateful widget.
 
-`状态`对象实现了有状态部件中的`构建`方法。
+`状态`对象实现了有状态 widget 中的`构建`方法。
 
 When the state of the widget tree changes, call `setState()`, which triggers
 a build of that portion of the UI.  Make sure to call `setState()` only
 when necessary, and only on the part of the widget tree that has changed,
 or it can result in poor UI performance.
 
-当部件树的状态发生了改变，将会调用  `setState()`  触发部件当中该部分UI的构建。
-确保只在需要时调用 `setState()` ，并且在只有部分部件树发生变化时调用，否则会造成糟糕的UI性能表现。
+当 widget 树的状态发生了改变，将会调用  `setState()`  触发 widget 当中该部分UI的构建。
+确保只在需要时调用 `setState()` ，并且在只有部分 widget 树发生变化时调用，否则会造成糟糕的UI性能表现。
 
 {% prettify dart %}
 class _MyHomePageState extends State<MyHomePage> {
@@ -235,8 +237,8 @@ the UI (also known as widget tree), is immutable, meaning you
 can't change its state once it's built. You change fields in your
 `State` class, then call `setState()` to rebuild the entire widget tree again.
 
-在 Flutter 中的UI（也就是这里所说的部件树）是不可变的，意思是说它一旦被构建，你就无法再改变他的状态。
-当你修改`状态` 类中的字段，就要再次调用 `setState` 来重新构建整个小部件树。
+在 Flutter 中的UI（也就是这里所说的 widget 树）是不可变的，意思是说它一旦被构建，你就无法再改变他的状态。
+当你修改`状态` 类中的字段，就要再次调用 `setState` 来重新构建整个 widget 树。
 
 This way of generating UI is different than Xamarin.Forms,
 but there are many benefits to this approach.
@@ -274,8 +276,8 @@ In Flutter, almost everything is a widget. A `Page`, called a `Route` in
 Flutter, is a widget.  Buttons, progress bars, and animation controllers
 are all widgets. When building a route, you create a widget tree.
 
-在 Flutter 中，几乎所有东西都是一个部件。一个`页面`——在 Flutter 中被称作`路由（Route）`，是一个部件。
-按钮、进度条、动画控制器都是部件。当构建一个路由时，就会创建一棵部件树。
+在 Flutter 中，几乎所有东西都是一个 widget 。一个`页面`在 Flutter 中被称作`路由（Route）`，也是一个 widget。
+按钮、进度条、动画控制器都是 widget 。当构建一个路由时，就会创建一棵 widget 树。
 
 Flutter includes the [Material
 Components](/docs/development/ui/widgets/material)
@@ -286,7 +288,7 @@ platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.
 including iOS.
 
 Flutter 包含 [Material 组件](/docs/development/ui/widgets/material)库。
-这些是实现了 [Material Design 指南]({{site.material}}/design)的部件。
+这些都是实现了 [Material Design 指南]({{site.material}}/design)的 widget。
 Material Design 是一个灵活的[针对所有平台]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines)的设计系统，包括 iOS。
 
 But Flutter is flexible and expressive enough to implement any design language.
@@ -297,11 +299,11 @@ to produce an interface that looks like
 
 不过， Flutter 有足够灵活和自描述性（expressive）去实现任何设计语言。
 举个例子，在 iOS 上，你可以用 [Cupertino
- 部件](/docs/development/ui/widgets/cupertino)来生成一个看起来像[苹果 iOS 设计语言](https://developer.apple.com/design/resources/)的接口。
+ widget](/docs/development/ui/widgets/cupertino)来生成一个看起来像[苹果 iOS 设计语言](https://developer.apple.com/design/resources/)的接口。
 
 ### How do I update `Widget`s?
 
-### 如何更新 `部件`？
+### 如何更新 `widget`？
 
 In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has
 properties and methods. You update your `Element` by updating a property,
@@ -312,55 +314,55 @@ and this is propagated down to the native control.
 In Flutter, `Widget`s are immutable and you can't directly update them
 by changing a property, instead you have to work with the widget's state.
 
-在 Flutter 中，`部件`是不可变的，你不可以直接地通过修改一个属性来更新它们，而是应该使用部件的状态。
+在 Flutter 中，`Widget`是不可变的，你不可以直接地通过修改一个属性来更新它们，而是应该使用 widget 的状态。
 
 This is where the concept of Stateful vs Stateless widgets comes from. A
 `StatelessWidget` is just what it sounds like&mdash;a widget with no state
 information.
 
-有状态的 vs 无状态的部件概念就是出自这里。`无状态部件（StatelessWidget）`顾名思义，就是一个没有状态信息的部件。
+有状态 widget 和无状态 widget 的概念就是出自这里。`无状态 widget（StatelessWidget）`顾名思义，就是一个没有状态信息的 widget。
 
 `StatelessWidgets` are useful when the part of the user interface
 you are describing does not depend on anything other than the configuration
 information in the object.
 
-当你在描绘用户界面的一个不依赖除对象中的配置信息之外任何东西的部分时，`无状态部件` 是有用的。
+当你在描绘用户界面的一个不依赖除对象中的配置信息之外任何东西的部分时，`StatelessWidgets` 是有用的。
 
 For example, in Xamarin.Forms, this is similar to placing an `Image`
 with your logo. The logo is not going to change during runtime, so
 use a `StatelessWidget` in Flutter.
 
 举个例子，在 Xamarin.Forms 中，可以轻而易举地用你的logo替换一张`图片`。
-这个logo将不会在运行过程中修改，所以在 Flutter 会使用`无状态部件`。
+这个logo将不会在运行过程中修改，所以在 Flutter 会使用`StatelessWidget`。
 
 If you want to dynamically change the UI based on data received
 after making an HTTP call or user interaction then you have to work
 with `StatefulWidget` and tell the Flutter framework that the widget’s
 `State` has been updated so it can update that widget.
 
-如果你想动态地基于进行了HTTP调用或者用户交互后接收到的数据来修改UI，你需要使用`有状态部件（StatefulWidget）`并告诉 Flutter 框架这个部件的`状态`已经被更新了所以它可以更新那个部件。
+如果你想动态地基于进行了HTTP调用或者用户交互后接收到的数据来修改UI，你需要使用`StatefulWidget`并告诉 Flutter 框架这个 widget 的`状态（State）`已经被更新了所以它可以更新那个 widget。
 
 The important thing to note here is at the core both stateless and stateful
 widgets behave the same. They rebuild every frame, the difference is the
 `StatefulWidget` has a `State` object that stores state data across frames
 and restores it.
 
-这里要记下的重要内容是有状态和无状态部件的核心行为都是一样的。他们重建每个结构，不同的是`有状态部件`拥有一个`状态（State）`对象来跨结构储存状态数据和恢复它。
+这里要记下的重要内容是有状态和无状态 widget 的核心行为都是一样的。他们重建每个结构，不同的是`StatefulWidget`拥有一个`状态（State）`对象来跨结构储存状态数据和恢复它。
 
 If you are in doubt, then always remember this rule: if a widget changes
 (because of user interactions, for example) it’s stateful.
 However, if a widget reacts to change, the containing parent widget can
 still be stateless if it doesn't itself react to change.
 
-如果你有疑惑，那么就记住这个规则：如果一个部件改变了（例如是因为用户交互），它就是有状态的。
-相反，如果一个部件对修改作出反应，包含它的父部件如果本身没有对修改作出反应，仍然可以是无状态的。
+如果你有疑惑，那么就记住这个规则：如果一个 widget 改变了（例如是因为用户交互），它就是有状态的。
+相反，如果一个 widget 对修改作出反应，包含它的父 widget 如果本身没有对修改作出反应，仍然可以是无状态的。
 
 The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
 the `Text` widget you'll find it subclasses `StatelessWidget`.
 
-接下来的示例展示了如何使用一个`无状态部件（StatelessWidget）`。一个公共的
-`无状态部件`是`文本（Text）`部件。如果你查阅`文本`的实现，你会发现他是 `StatelessWidget` 的子类。
+接下来的示例展示了如何使用一个`StatelessWidget`。一个公共的
+`StatelessWidget`是`Text` widget。如果你查阅`文本`的实现，你会发现他是 `StatelessWidget` 的子类。
 
 {% prettify dart %}
 new Text(
@@ -372,7 +374,7 @@ new Text(
 As you can see, the `Text` widget has no state information associated with it,
 it renders what is passed in its constructors and nothing more.
 
-如你所见，`文本`部件没有状态信息与它关联，它只渲染在它的构造函数中呈现的内容，没有更多。
+如你所见，`文本` widget 没有状态信息与它关联，它只渲染在它的构造函数中呈现的内容，没有更多。
 
 But, what if you want to make "I Like Flutter" change dynamically, for
 example when clicking a `FloatingActionButton`?
@@ -383,7 +385,7 @@ To achieve this, wrap the `Text` widget in a `StatefulWidget` and
 update it when the user clicks the button, as shown in the following
 example:
 
-为了实现这个目标，需要将 `Text` 部件封装到一个`有状态的部件（StatefulWidget）`中，并在用用户点击按钮时更新它，
+为了实现这个目标，需要将 `Text` widget 封装到一个`StatefulWidget`中，并在用用户点击按钮时更新它，
 正如接下来的例子：
 
 {% prettify dart %}
@@ -444,18 +446,18 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### How do I lay out my widgets? What is the equivalent of an XAML file?
 
-### 该如何布局我的部件呢？ 什么东西可以等价于一个 XAML 文件？
+### 该如何布局我的 widget 呢？ 什么东西可以等价于一个 XAML 文件？
 
 In Xamarin.Forms, most developers write layouts in XAML,
 though sometimes in C#.
 In Flutter, you write your layouts with a widget tree in code.
 
 在 Xamarin.Forms 中，大部分开发者用 XAML 写布局，尽管有时用 C#。
-在 Flutter 中编码一棵部件树来编写布局。
+在 Flutter 中编码一棵 widget 树来编写布局。
 
 The following example shows how to display a simple widget with padding:
 
-接下来的示例展示如何显示一个简单的带填充（padding）的部件：
+接下来的示例展示如何显示一个简单的带填充（padding）的 widget：
 
 {% prettify dart %}
   @override
@@ -478,7 +480,7 @@ The following example shows how to display a simple widget with padding:
 You can view the layouts that Flutter has to offer in the [widget
 catalog](/docs/development/ui/widgets/layout).
 
-您可以查看 Flutter 在[小部件目录](/docs/development/ui/widgets/layout)中提供的布局。
+您可以查看 Flutter 在[widget 目录](/docs/development/ui/widgets/layout)中提供的布局。
 
 ### How do I add or remove an Element from my layout?
 
@@ -495,13 +497,13 @@ In Flutter, because widgets are immutable there is no direct equivalent.
 Instead, you can pass a function to the parent that returns a widget,
 and control that child's creation with a boolean flag.
 
-在 Flutter 中，因为部件都是不可变的，所以没有直接对等的东西。
-相反，你可以将一个返回一个部件的函数传递给父级，并用布尔标控制它的子部件的创建。
+在 Flutter 中，因为 widget 都是不可变的，所以没有直接对等的东西。
+相反，你可以将一个返回一个 widget 的函数传递给父级，并用布尔标控制它的子 widget 的创建。
 
 The following example shows how to toggle between two widgets when the user
 clicks the `FloatingActionButton`:
 
-下面的示例展示当用户点击 `FloatingActionButton` 时，如何在两个部件之间切换。
+下面的示例展示当用户点击 `FloatingActionButton` 时，如何在两个 widget 之间切换。
 
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
@@ -566,7 +568,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### How do I animate a widget?
 
-### 如何让一个部件动起来？
+### 如何让一个 widget 动起来？
 
 In Xamarin.Forms, you create simple animations using ViewExtensions that
 include methods such as `FadeTo` and `TranslateTo`.
@@ -597,7 +599,7 @@ and produces a linear interpolation between 0 and 1 on each frame
 while it's running. You then create one or more
 `Animation`s and attach them to the controller.
 
-在 Flutter 中，通过封装小部件到一个动画部件中，可以使用动画类库来让部件动起来。
+在 Flutter 中，通过封装 widget 到一个动画 widget 中，可以使用动画类库来让 widget 动起来。
 使用一个 `AnimationController` ，即一个可以暂停、寻找、停止和倒退动画的 `Animation<double>` 。
 它需要一个`滴答器（Ticker）`，当垂直同步（vsync）发生时，会发出信号，并在运行时的每一帧都会产生0和1之间的线性插值。
 然后你可以创建一个或多个`动画`并把它们附加到控制器上。
@@ -610,18 +612,18 @@ Like widgets, animations in Flutter work with composition.
 
 举个例子，你可以使用 `CurvedAnimation` 来实现一个沿着插值曲线的动画。
 在这个场景中，控制器说一个动画进展的“大师”源，而 `CurvedAnimation` 计算用来替代控制器默认线性运动的曲线。
-跟部件一样，Flutter 中的动画与组成一起工作。
+跟 widget 一样，Flutter 中的动画与组成一起工作。
 
 When building the widget tree, you assign the `Animation` to an animated
 property of a widget, such as the opacity of a `FadeTransition`,
 and tell the controller to start the animation.
 
-当你在构建一个部件树，赋值一个`动画（Animation）`给一个部件的一个动画属性时，比如 `渐退（FadeTransition）`的 不透明度，会告诉控制器开始执行动画。
+当你在构建一个 widget 树，赋值一个`动画（Animation）`给一个 widget 的一个动画属性时，比如 `渐退（FadeTransition）`的 不透明度，会告诉控制器开始执行动画。
 
 The following example shows how to write a `FadeTransition` that fades
 the widget into a logo when you press the `FloatingActionButton`:
 
-下面的实例展示如何去写一个 `渐退（FadeTransition）`，当你按下 `FloatingActionButton` 时，它会把部件渐变到一个logo。
+下面的实例展示如何去写一个 `渐退（FadeTransition）`，当你按下 `FloatingActionButton` 时，它会把 widget 渐变到一个logo。
 
 {% prettify dart %}
 import 'package:flutter/material.dart';
@@ -691,7 +693,7 @@ For more information, see
 the [Animations tutorial](/docs/development/ui/animations/tutorial),
 and the [Animations overview](/docs/development/ui/animations).
 
-更多信息，可以查阅 [动画 & 运动部件](/docs/development/ui/widgets/animation)， 
+更多信息，可以查阅 [动画 & 运动 widget](/docs/development/ui/widgets/animation)， 
 [动画教程](/docs/development/ui/animations/tutorial)，
 以及[动画概述](/docs/development/ui/animations)。
 
@@ -769,7 +771,7 @@ class SignaturePainter extends CustomPainter {
 
 ### Where is the widget's opacity?
 
-### 小部件的不透明度在哪里？
+### widget 的不透明度在哪里？
 
 On Xamarin.Forms, all `VisualElement`s have an Opacity.
 In Flutter, you need to wrap a widget in an
@@ -777,11 +779,11 @@ In Flutter, you need to wrap a widget in an
 to accomplish this.
 
 Xamarin.Forms 上，所有 `虚拟元素（VisualElement）`都拥有一个不透明度。
-在 Flutter 中，你需要封装一个部件到一个 [不透明度部件]({{site.api}}/flutter/widgets/Opacity-class.html) 来实现它。
+在 Flutter 中，你需要封装一个 widget 到一个 [不透明度 widget]({{site.api}}/flutter/widgets/Opacity-class.html) 来实现它。
 
 ### How do I build custom widgets?
 
-### 如何构建一个自定义部件？
+### 如何构建一个自定义 widget ？
 
 In Xamarin.Forms, you typically subclass `VisualElement`,
 or use a pre-existing `VisualElement`, to override and
@@ -796,7 +798,8 @@ It is somewhat similar to implementing a custom control based off a
 `Grid` with numerous `VisualElement`s added in, while extending with
 custom logic.
 
-在 Flutter 中，通过 [组合（composing）](/docs/resources/technical-overview#everythings-a-widget) 更小的部件（而不是扩展它们）来构建一个自定义部件
+在 Flutter 中，通过 [组合（composing）](/docs/resources/technical-overview#everythings-a-widget) 更小的 widget（而不是扩展它们）来构建一个自定义 widget。
+这有点类似于基于 `Grid` 实现自定义控件，其中添加了大量 `VisualElement`，同时使用自定义逻辑进行扩展。
 
 For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a `RaisedButton`
@@ -820,7 +823,7 @@ class CustomButton extends StatelessWidget {
 
 Then use `CustomButton`, just as you'd use any other Flutter widget:
 
-然后就可以像使用其他 Flutter 部件一样使用这个`自定义按钮`。
+然后就可以像使用其他 Flutter widget 一样使用这个`自定义按钮`。
 
 {% prettify dart %}
 @override
@@ -853,7 +856,7 @@ a `Navigator` is a
 that manages routes.
 
 Flutter 也有类似的实现，使用了一个`导航器（Navigator）`和`路由（Routes）`。
-一个`路由`是一个应用程序里一个`页面`的抽象，而一个`导航器`是一个管理路由的[部件](/docs/resources/technical-overview#everythings-a-widget)。
+一个`路由`是一个应用程序里一个`页面`的抽象，而一个`导航器`是一个管理路由的 [widget](/docs/resources/technical-overview#everythings-a-widget)。
 
 A route dd maps to a `Page`. The navigator works in a similar way to the
 Xamarin.Forms `NavigationPage`, in that it can `push()` and `pop()` routes
@@ -999,7 +1002,7 @@ loadData() async {
 Once the awaited network call is done, update the UI by calling `setState()`,
 which triggers a rebuild of the widget sub-tree and updates the data.
 
-一旦完成`等待`的网络调用后，通过调用 `setState()` 更新UI，这将触发小部件子树的重新构建并更新数据。
+一旦完成`等待`的网络调用后，通过调用 `setState()` 更新UI，这将触发 widget 子树的重新构建并更新数据。
 
 The following example loads data asynchronously and displays it
 in a `ListView`:
@@ -1373,7 +1376,7 @@ Show the progress programmatically by controlling when it's rendered
 through a boolean flag. Tell Flutter to update its state before your
 long-running task starts, and hide it after it ends.
 
-在 Flutter 中，使用一个 `加载指示器（ ProgressIndicator）`部件。
+在 Flutter 中，使用一个 `加载指示器（ ProgressIndicator）`widget。
 通过一个布尔标志控制何时渲染来以编程方式显示进度。
 告诉 Flutter 在长时间运行的任务开始之前更新它的状态，并在任务结束后隐藏它。
 
@@ -1579,7 +1582,7 @@ return new AssetImage("images/a_dot_burr.jpeg");
 
 or directly in an `Image` widget:
 
-或者可以直接在一个 `Image` 部件中访问：
+或者可以直接在一个 `Image` widget 中访问：
 
 {% prettify dart %}
 @override
@@ -1642,7 +1645,7 @@ dependencies:
 To use the `flutter_localizations` package,
 specify the `localizationsDelegates` and `supportedLocales` on the app widget:
 
-使用 `flutter_localizations` 包时，要在应用程序的部件上指定 `localizationsDelegates` 和 `supportedLocales`：
+使用 `flutter_localizations` 包时，要在应用程序的 widget 上指定 `localizationsDelegates` 和 `supportedLocales`：
 
 {% prettify dart %}
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -1672,7 +1675,7 @@ values, but you'll need to provide one or more delegates for your own app's
 localizable copy, if you want those to be localized too.
 
 委托包含实际的本地化值，而  `supportedLocales` 定义了应用程序支持哪些本地化。
-上面的示例使用了一个 `MaterialApp`，因此它为基本小部件本地化值提供了一个 `GlobalWidgetsLocalizations`，为Material小部件本地化提供了一个 `MaterialWidgetsLocalizations`。
+上面的示例使用了一个 `MaterialApp`，因此它为基本 widget 本地化值提供了一个 `GlobalWidgetsLocalizations`，为Material widget 的本地化提供了一个 `MaterialWidgetsLocalizations`。
 如果你的应用程序使用 `WidgetsApp` ，你就不需要后者了。
 请注意，这两个委托包含“默认”值，但是如果您希望它们也本地化，则需要为您自己的应用程序的可本地化副本提供一个或多个委托。
 
@@ -1686,8 +1689,8 @@ or using the
 
 初始化后， `WidgetsApp` （或 `MaterialApp`）为您创建一个
 [`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html)
-小部件，其中包含您指定的委托。
-设备的当前区域设置总是可以从当前上下文的 `Localizations` 小部件(以 `Locale` 对象的形式)或使用 [`Window.locale`]({{site.api}}/flutter/dart-ui/Window/locale.html) 访问。
+widget，其中包含您指定的委托。
+设备的当前区域设置总是可以从当前上下文的 `Localizations` widget (以 `Locale` 对象的形式)或使用 [`Window.locale`]({{site.api}}/flutter/dart-ui/Window/locale.html) 访问。
 
 To access localized resources, use the `Localizations.of()` method to
 access a specific localizations class that is provided by a given delegate.
@@ -1822,14 +1825,14 @@ horizontal or vertical.  Flutter has a similar approach,
 however you would use the `Row` or `Column` widgets.
 
 在 Xamarin.Forms 中，可以创建一个带水平或垂直`方向`的 `StackLayout` 。
-Flutter 也有类似的方法，不过您将使用 `Row` 或 `Column` 小部件。
+Flutter 也有类似的方法，不过您将使用 `Row` 或 `Column` widget。
 
 If you notice the two code samples are identical with the exception of the
 "Row" and "Column" widget. The children are the same and this feature can be
 exploited to develop rich layouts that can change overtime with the same
 children.
 
-如果您注意到除了“Row” 和“Column”小部件之外，这两个代码示例是相同的。
+如果您注意到除了“Row” 和“Column” widget 之外，这两个代码示例是相同的。
 这些子元素是相同的，可以利用这个特性开发丰富的布局，这些布局可以随着时间的推移而改变。
 
 {% prettify dart %}
@@ -1895,8 +1898,8 @@ You might have used a `Grid` in Xamarin.Forms to implement widgets that
 overlay other widgets.  In Flutter, you accomplish this with the
 `Stack` widget.
 
-您可能在 Xamarin.Forms 中使用 `Grid` 来实现覆盖其他小部件的小部件。
-在 Flutter 中，您可以使用 `Stack` 小部件来完成这一操作。
+您可能在 Xamarin.Forms 中使用 `Grid` 来实现覆盖其他 widget 的 widget。
+在 Flutter 中，您可以使用 `Stack` widget 来完成这一操作。
 
 This sample creates two icons that overlap each other.
 
@@ -1926,8 +1929,8 @@ if the content is larger than the device screen, it scrolls.
 In Flutter, the closest match is the `SingleChildScrollView` widget.
 You simply fill the Widget with the content that you want to be scrollable.
 
-在 Flutter 中，最接近的是 `SingleChildScrollView` 小部件。
-您只需用想要可滚动的内容来填充小部件。
+在 Flutter 中，最接近的是 `SingleChildScrollView` widget。
+您只需用想要可滚动的内容来填充 widget。
 
 {% prettify dart %}
   @override
@@ -1945,7 +1948,7 @@ but in Flutter this is far more optimized
 and less intensive than a Xamarin.Forms `ListView`,
 which is backing on to platform specific controls.
 
-如果您想在滚动条中包含许多项，即使是不同的`小部件`类型，也可以使用 `ListView`。
+如果您想在滚动条中包含许多项，即使是不同的`Widget`类型，也可以使用 `ListView`。
 这可能看起来有点过火，但在 Flutter 中，它比 Xamarin.Forms 的回到平台特定控件的 `ListView` 优化得多，松散得多。
 
 {% prettify dart %}
@@ -1981,7 +1984,7 @@ android:configChanges="orientation|screenSize"
 
 ### How do I add GestureRecognizers to a widget in Flutter?
 
-### 如何在Flutter中向小部件添加手势识别器?
+### 如何在Flutter中向 widget 添加手势识别器?
 
 In Xamarin.Forms, `Element`s might contain a click event you
 can attach to. Many elements also contain a `Command` that is
@@ -1995,7 +1998,7 @@ tied to this event. Alternatively you would use the
     handle it in the function. For example, the RaisedButton has an
     `onPressed` parameter:
 
- 1. 如果小部件支持事件发现（detection），那么可以将函数传递给它并在函数中处理它：
+ 1. 如果 widget 支持事件发现（detection），那么可以将函数传递给它并在函数中处理它：
 
     <!-- skip -->
     ```dart
@@ -2013,7 +2016,7 @@ tied to this event. Alternatively you would use the
     widget in a GestureDetector and pass a function to the
     `onTap` parameter.
 
-2. 如果小部件不支持事件发现，则将小部件封装在手势检测器（GestureDetector）中，并将函数传递给“onTap”参数。
+2. 如果 widget 不支持事件发现，则将 widget 封装在手势检测器（GestureDetector）中，并将函数传递给“onTap”参数。
 
     <!-- skip -->
     ```dart
@@ -2037,7 +2040,7 @@ tied to this event. Alternatively you would use the
 
 ### How do I handle other gestures on widgets?
 
-### 我如何处理小部件上的其他手势?
+### 我如何处理 widget 上的其他手势?
 
 In Xamarin.Forms you would add a `GestureRecognizer` to the
 `VisualElement`. You would normally be limited to `TapGestureRecognizer`,
@@ -2233,7 +2236,7 @@ Due to Flutter's immutable widget pattern, you pass a list of
 widgets to your `ListView`, and Flutter takes care of making sure
 that scrolling is fast and smooth.
 
-由于 Flutter 的不可变的小部件模式，您将一个小部件列表传递给您的 `ListView`，Flutter 会负责确保滚动速度快且平稳。
+由于 Flutter 的不可变的 widget 模式，您将一个 widget 列表传递给您的 `ListView`，Flutter 会负责确保滚动速度快且平稳。
 
 {% prettify dart %}
 import 'package:flutter/material.dart';
@@ -2298,7 +2301,7 @@ behaviors change.
 
 In Flutter, use the touch handling provided by the passed-in widgets.
 
-在 Flutter 中，使用传入小部件提供的触摸处理。
+在 Flutter 中，使用传入 widget 提供的触摸处理。
 
 {% prettify dart %}
 import 'package:flutter/material.dart';
@@ -2377,8 +2380,8 @@ anything has changed. When it gets to your
 `ListView`, it performs a `==` check, and determines that the two
 `ListView`s are the same. Nothing has changed, so no update is required.
 
-在 Flutter 中，情况略有不同。如果您要在 `setState()` 内更新小部件列表，您将很快看到您的数据在视觉上没有发生变化。
-这是因为当 `setState()` 被调用时，Flutter 的渲染引擎会检查小部件树是否发生了更改。
+在 Flutter 中，情况略有不同。如果您要在 `setState()` 内更新 widget 列表，您将很快看到您的数据在视觉上没有发生变化。
+这是因为当 `setState()` 被调用时，Flutter 的渲染引擎会检查 widget 树是否发生了更改。
 当它到达您的 `ListView` 时，会执行 `==` 检查，并确定这两个 `ListView` 是相同的。
 没有任何更改，就不需要更新。
 
@@ -2568,7 +2571,7 @@ part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
 
 ### How do I set custom fonts on my text widgets?
 
-### 如何在文本（Text）小部件上设置自定义字体?
+### 如何在文本（Text） widget 上设置自定义字体?
 
 In Xamarin.Forms, you would have to add a custom font in each native
 project. Then, in your `Element` you would assign this font name
@@ -2612,14 +2615,14 @@ Widget build(BuildContext context) {
 
 ### How do I style my text widgets?
 
-### 如何设置文本小部件的样式？
+### 如何设置文本 widget 的样式？
 
 Along with fonts, you can customize other styling elements on a `Text` widget.
 The style parameter of a `Text` widget takes a `TextStyle` object,
 where you can customize many parameters, such as:
 
-除了字体，您还可以在`文本`小部件上定制其他样式元素。
-`文本` 小部件的样式参数接受一个 `TextStyle` 对象，您可以在其中定制许多参数，比如:
+除了字体，您还可以在`文本` widget 上定制其他样式元素。
+`文本` widget 的样式参数接受一个 `TextStyle` 对象，您可以在其中定制许多参数，比如:
 
 * `color`
 * `decoration`
@@ -2656,7 +2659,7 @@ or a `TextFormField`, you can supply a
 [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
 to retrieve user input:
 
-在 Flutter 中检索信息是由专门的小部件处理的，这是跟原来的习惯不同的。
+在 Flutter 中检索信息是由专门的 widget 处理的，这是跟原来的习惯不同的。
 如果你有一个 `TextField` 或 `TextFormField` ，你可以提供一个 
 [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html) 
 来检索用户输入:
@@ -2732,7 +2735,7 @@ In Flutter, you can easily show a "hint" or a placeholder text
 for your input by adding an InputDecoration object to the
 decoration constructor parameter for the text widget.
 
-在 Flutter 中，通过在文本小部件的装饰器构造函数参数中添加 `InputDecoration` 对象，可以轻松地为输入显示“提示”或占位符文本。
+在 Flutter 中，通过在文本 widget 的装饰器构造函数参数中添加 `InputDecoration` 对象，可以轻松地为输入显示“提示”或占位符文本。
 
 {% prettify dart %}
 body: new Center(
@@ -2755,7 +2758,7 @@ validation error, you would need to create new properties and
 In Flutter, you pass through an InputDecoration object to the
 decoration constructor for the text widget.
 
-在 Flutter 中，我们将 `InputDecoration` 对象传递给文本小部件的装饰器构造函数。
+在 Flutter 中，我们将 `InputDecoration` 对象传递给文本 widget 的装饰器构造函数。
 
 However, you don't want to start off by showing an error.
 Instead, when the user has entered invalid data,
@@ -2998,7 +3001,7 @@ Xamarin.Forms 确实有一个全局的 `资源字典`，可以为你的应用程
 
 In Flutter you declare themes in the top level widget.
 
-在 Flutter 中，需要在最顶级部件中声明主题。
+在 Flutter 中，需要在最顶级 widget 中声明主题。
 
 <<<<<<< HEAD
 To take full advantage of Material Components in your app,
@@ -3008,22 +3011,22 @@ that wraps a number of widgets that are commonly required for
 applications implementing Material Design. It builds upon a WidgetsApp by
 adding Material-specific functionality.
 
-要在应用程序中充分利用 Material 组件，需要声明一个最顶级部件 `MaterialApp` 作为应用程序的入口点。
-MaterialApp 是一个方便的小部件，它封装了许多实现Material Design的应用程序通常需要的各种小部件。
+要在应用程序中充分利用 Material 组件，需要声明一个最顶级 widget `MaterialApp` 作为应用程序的入口点。
+MaterialApp 是一个方便的 widget，它封装了许多实现Material Design的应用程序通常需要的各种 widget。
 它通过添加 Material 的指定功能来构建一个 WidgetsApp。
 
 You can also use a `WidgetApp` as your app widget,
 which provides some of the same functionality,
 but is not as rich as `MaterialApp`.
 
-还可以使用一个 `WidgetApp` 作为应用程序的部件，它提供了一些相同的功能，但没有 `MaterialApp` 丰富。
+还可以使用一个 `WidgetApp` 作为应用程序的 widget，它提供了一些相同的功能，但没有 `MaterialApp` 丰富。
 
 To customize the colors and styles of any child components,
 pass a `ThemeData` object to the `MaterialApp` widget.
 For example, in the following code,
 the primary swatch is set to blue and text selection color is red.
 
-要定制任何子组件的颜色和样式，请将`主题数据（ThemeData）`对象传递给`MaterialApp`小部件。
+要定制任何子组件的颜色和样式，请将`主题数据（ThemeData）`对象传递给`MaterialApp` widget。
 例如，在下面的代码中，主色调设置为蓝色，文本选择颜框色为红色。
 
 {% prettify dart %}

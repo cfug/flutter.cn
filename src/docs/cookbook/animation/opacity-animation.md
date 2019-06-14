@@ -64,50 +64,38 @@ Container(
 
 ## 2. Define a `StatefulWidget`
 
-<<<<<<< HEAD
 ## 2. 定义一个 `StatefulWidget`
 
-Now that you have a green box to animate, you'll need a way to know whether the
-box should be visible or invisible. To accomplish this, use a
-[`StatefulWidget`][].
-
-我们要对这个绿色的方框进行动画。那么为了表示这个方框的状态是否可见，你需要使用 [`StatefulWidget`][]。
-
-A `StatefulWidget` is a class that creates a `State` object. The `State` object
-holds some data about our app and provides a way to update that data. When you
-update the data, you can also ask Flutter to rebuild our UI with those changes.
-
-`StatefulWidget` 是一个类，它将会创建一个 `State` 对象。而这个 `State` 对象将包含与这个应用相关的一些数据，并且能够更新它们。当你更新数据时，可以让Flutter使用这些更改去重建用户界面。
-
-In this case, you'll have one piece of data: a boolean representing whether the
-button is visible or invisible.
-
-在这个示例中，我们将使用一个布尔值来表示其是否可见。
-
-To construct a `StatefulWidget`, you need to create two classes: A
-`StatefulWidget` and a corresponding `State` class. Pro tip: The Flutter plugins
-for Android Studio and VSCode include the `stful` snippet to quickly generate
-this code.
-=======
 Now that you have a green box to animate,
 you need a way to know whether the box should be visible.
 To accomplish this, use a [`StatefulWidget`][].
+
+我们要对这个绿色的方框进行动画。
+那么为了表示这个方框的状态是否可见，你需要使用 [`StatefulWidget`][]。
 
 A `StatefulWidget` is a class that creates a `State` object.
 The `State` object holds some data about the app and provides a way to
 update that data. When updating the data,
 you can also ask Flutter to rebuild the UI with those changes.
 
+`StatefulWidget` 是一个类，它将会创建一个 `State` 对象。
+而这个 `State` 对象将包含与这个应用相关的一些数据，并且能够更新它们。
+当你更新数据时，可以让Flutter使用这些更改去重建用户界面。
+
 In this case, you have one piece of data:
 a boolean representing whether the button is visible.
+
+在这个示例中，我们将使用一个布尔值来表示其是否可见。
 
 To construct a `StatefulWidget`, create two classes: A
 `StatefulWidget` and a corresponding `State` class.
 Pro tip: The Flutter plugins for Android Studio and VSCode include
 the `stful` snippet to quickly generate this code.
->>>>>>> 1a5945d6b1397ed6f3e224e0bcd7377069cd897f
 
-要构造一个 `StatefulWidget`，你需要创建两个类：一个 `StatefulWidget` 类以及与其对应的 `State` 类。小提示：Android Studio 和 VSCode 的 Flutter 插件都包含了 `stful` 片段，能够快速生成该代码。
+要构造一个 `StatefulWidget`，
+你需要创建两个类：一个 `StatefulWidget` 类以及与其对应的 `State` 类。
+小提示：Android Studio 和 VSCode 的 Flutter 插件都包含了 `stful` 片段，
+能够快速生成该代码。
 
 <!-- skip -->
 ```dart

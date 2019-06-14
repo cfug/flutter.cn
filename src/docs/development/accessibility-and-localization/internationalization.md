@@ -12,12 +12,16 @@ description: How to internationalize your Flutter app.
   <h4 class="no_toc">你将学习到</h4>
 
   * How to track the device's locale (the user's preferred language).
+  
+    如何去获取设备的语言环境（用户首选的语言）。
+    
   * How to manage locale-specific app values.
+  
+    如何去管理特定语言环境下的 app 值。
+  
   * How to define the locales an app supports.
   
-  * 如何去获取设备的语言环境（用户首选的语言）。
-  * 如何去管理特定语言环境下的 app 值。
-  * 如何去定义 app 支持的语言环境。
+    如何去定义 app 支持的语言环境。
   
 {{site.alert.end}}
 
@@ -58,11 +62,13 @@ can also be internationalized using the same classes and logic.
 
   * [Minimal
     internationalization]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
+    
+    [最简单的国际化实现示例]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
+    
   * [Internationalization based on the `intl`
     package]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
     
-  * [最简单的国际化实现示例]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
-  * [基于 `intl` package 的国际化实现示例]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
+    [基于 `intl` package 的国际化实现示例]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
   
 {{site.alert.end}}
 
@@ -200,7 +206,7 @@ should also be fully differentiated for more nuanced localization.
 <a name="tracking-locale"></a>
 ## Tracking the locale: The Locale class and the Localizations widget
 
-## 跟踪语言环境：Locale 类和 Localizations Widget
+## 获取语言环境：Locale 类和 Localizations Widget
 
 The [`Locale`]({{site.api}}/flutter/dart-ui/Locale-class.html)
 class is used to identify the user's language. Mobile devices support
@@ -720,7 +726,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
  1. With the app's root directory as the current directory, generate
     `l10n/intl_messages.arb` from `lib/main.dart`:
     
- 1. 在 app 的根目录，使用 `lib/main.dart` 生成 `l10n/intl_messages.arb`：
+    在 app 的根目录，使用 `lib/main.dart` 生成 `l10n/intl_messages.arb`：
 
     ```terminal
     $ flutter pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
@@ -740,7 +746,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     `intl_messages_<locale>.dart` for each `intl_<locale>.arb` file and
     `intl_messages_all.dart`, which imports all of the messages files:
     
- 2. 在 app 的根目录，生成每个 `intl_<locale>.arb` 文件对应的 `intl_messages_<locale>.dart` 文件，
+    在 app 的根目录，生成每个 `intl_<locale>.arb` 文件对应的 `intl_messages_<locale>.dart` 文件，
  以及 `intl_messages_all.dart` 文件，它引入了所有的信息文件。
 
     ```terminal

@@ -57,13 +57,15 @@ To prepare to run and test your Flutter app on the iOS simulator, follow these s
     $ open -a Simulator
     ```
 
- 2. Make sure your simulator is using a 64-bit device (iPhone 5s or later) by checking the settings
-    in the simulator's **Hardware > Device** menu.
+ 2. Make sure your simulator is using a 64-bit device (iPhone 5s or later)
+    by checking the settings in the simulator's **Hardware > Device** menu.
 
     通过模拟器菜单中的 **Hardware > Device** 选项检查当前模拟器是否是 64 位机型（iPhone 5S 或之后的机型）。
 
- 3. Depending on your development machine's screen size, simulated high-screen-density iOS devices
-    may overflow your screen. Set the device scale under the **Window > Scale** menu in the simulator.
+ 3. Depending on your development machine's screen size,
+    simulated high-screen-density iOS devices
+    might overflow your screen. Set the device scale under the
+    **Window > Scale** menu in the simulator.
 
     根据你当前开发机器的屏幕尺寸，模拟器模拟出来的高密度屏幕的设备可能会占满你的屏幕，你可以通过菜单中的 **Window > Scale** 选项来更改模拟器的缩放比例。
 
@@ -171,7 +173,8 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
 
         在 `Runner` 项目的设置页面中，确保 **General > Signing > Team** 选项下的 Development Team 选中状态。当你选择一个 team 后，Xcode 会为其创建并下载相应的 Development Certificate，并将你的账号在设备上进行注册，然后根据实际需求进行 provisioning profile 的配置。
 
-        * To start your first iOS development project, you may need to sign into
+        * To start your first iOS development project, you might need
+          to sign into
           Xcode with your Apple ID. ![Xcode account add][]{:.mw-100}
           Development and testing is supported for any Apple ID. Enrolling in the
           Apple Developer Program is required to distribute your app to the App

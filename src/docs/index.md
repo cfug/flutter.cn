@@ -26,15 +26,15 @@ description: Flutter 开发文档页面。
 
 ## What's new on the site
 
-**February 26, 2019**
+**May 7, 2019, Google I/O Edition**
 
-Flutter released [version
-1.2](https://developers.googleblog.com/2019/02/launching-flutter-12-at-mobile-world.html)
-at Mobile World Congress (MWC) in Barcelona. For more information, see the
-[release notes](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1)
+[Flutter 1.5](https://developers.googleblog.com/2019/05/Flutter-io19.html) is live!
+
+For more information on updates, see the [release
+notes](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
 or [download the release](/docs/development/tools/sdk/archive).
 
-For a listing of new docs, see [what's new](/docs/whats-new-archive).
+[What's new archive](/docs/whats-new-archive)
 
 ## New to Flutter?
 
@@ -91,7 +91,7 @@ video series:
 <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Boring Flutter Show playlist](https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s)
 
-You may also find these docs useful:
+You might also find these docs useful:
 
 * [Using packages](/docs/development/packages-and-plugins/using-packages)
 * [Adding assets and images](/docs/development/ui/assets-and-images)

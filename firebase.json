@@ -40,6 +40,7 @@
 
 
       { "source": "/accessibility", "destination": "/docs/development/accessibility-and-localization/accessibility", "type": 301 },
+      { "source": "/adaptations", "destination": "/docs/resources/platform-adaptations", "type": 301 },
       { "source": "/android-release", "destination": "/docs/deployment/android", "type": 301 },
       { "source": "/animations", "destination": "/docs/development/ui/animations", "type": 301 },
       { "source": "/animations/:rest*", "destination": "/docs/development/ui/animations/:rest*", "type": 301 },
@@ -61,7 +62,7 @@
       { "source": "/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/developing-packages", "destination": "/docs/development/packages-and-plugins/developing-packages", "type": 301 },
       { "source": "/faq", "destination": "/docs/resources/faq", "type": 301 },
-      { "source": "/fastlane-cd", "destination": "/docs/deployment/fastlane-cd", "type": 301 },
+      { "source": "/cd", "destination": "/docs/deployment/cd", "type": 301 },
       { "source": "/flutter-for-:platform*", "destination": "/docs/get-started/flutter-for/:platform*-devs", "type": 301 },
       { "source": "/formatting", "destination": "/docs/development/tools/formatting", "type": 301 },
       { "source": "/gestures", "destination": "/docs/development/ui/advanced/gestures", "type": 301 },
@@ -102,10 +103,12 @@
       { "source": "/using-ide-vscode", "destination": "/docs/development/tools/vs-code", "type": 301 },
       { "source": "/using-packages", "destination": "/docs/development/packages-and-plugins/using-packages", "type": 301 },
       { "source": "/web-analogs", "destination": "/docs/get-started/flutter-for/web-devs", "type": 301 },
+      { "source": "/webflutter.dev/web", "destination": "/web", "type": 301 },
       { "source": "/widgets", "destination": "/docs/development/ui/widgets/catalog", "type": 301 },
       { "source": "/widgets/:rest*", "destination": "/docs/development/ui/widgets/:rest*", "type": 301 },
       { "source": "/widgets-intro", "destination": "/docs/development/ui/widgets-intro", "type": 301 },
-      { "source": "/youtube", "destination": "https://youtube.com/flutterdev", "type": 301 }
+      { "source": "/youtube", "destination": "https://youtube.com/flutterdev", "type": 301 },
+      { "source": "/desktop", "destination": "https://github.com/flutter/flutter/wiki/Desktop-shells", "type": 302 }
     ]
   }
 }

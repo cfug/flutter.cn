@@ -17,9 +17,7 @@ and the difference between [ephemeral and app
 state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app),
 you are ready to learn about simple app state management.
 
-现在大家已经了解了 [declarative UI
-programming](/docs/development/data-and-backend/state-mgmt/declarative) 和 [ephemeral and app
-state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app) 之间的区别，现在可以学习如何管理简单的全局应用状态。
+现在大家已经了解了 [声明式的编程思维](/docs/development/data-and-backend/state-mgmt/declarative) 和 [局部与全局状态](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app) 之间的区别，现在可以学习如何管理简单的全局应用状态。
 
 On this page, we are going to be using the `provider` package.
 If you are new to Flutter and you don't have a strong reason to choose
@@ -28,13 +26,13 @@ you should start with. `provider` is easy to understand and it doesn't
 use much code. It also uses concepts that are applicable in every other
 approach.
 
-在这里，我们打算使用 `provider` package。如果你是初学 Flutter ，而且也没有打算选择别的方式来实现（Redux, Rx, hooks 等等），那么这就是你应该入门使用的。`provider` 非常好理解而且不需要写很多代码。它也会用到一些在其它实现方式中用到的通用概念。
+在这里，我们打算使用 `provider` package。如果你是 Flutter 的初学者，而且也没有很重要的理由必须选择别的方式来实现（Redux、Rx、hooks 等等），那么这就是你应该入门使用的。`provider` 非常好理解而且不需要写很多代码。它也会用到一些在其它实现方式中用到的通用概念。
 
 That said, if you have strong background in state management from other
 reactive frameworks, you will find packages and tutorials listed on the
 [following page](/docs/development/data-and-backend/state-mgmt/options).
 
-即便如此，如果从其它响应式框架上积累了丰富的状态管理经验的话，那么你可以在下面这个页面中找到相关的package和教程。[following page](/docs/development/data-and-backend/state-mgmt/options)。
+即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，那么可以在下面这个页面中找到相关的 package 和教程。[这个页面](/docs/development/data-and-backend/state-mgmt/options)。
 
 ## Our example {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
 
@@ -92,7 +90,7 @@ state of the cart?
 
 In Flutter, it makes sense to keep the state above the widgets that use it.
 
-在 Flutter 中，有必要将状态置于对应 widget 之上。
+在 Flutter 中，有必要将存储状态的对象置于控件树中对应 widget 的上层。
 
 Why? In declarative frameworks like Flutter, if you want to change the UI,
 you have to rebuild it. There is no easy way to have
@@ -101,7 +99,7 @@ imperatively change a widget from outside, by calling a method on it.
 And even if you could make this work, you would be fighting the
 framework instead of letting it help you.
 
-为什么呢？在类似 Flutter 的声明式框架中，如果你想要修改 UI，那么你需要重构它。并没有类似 `MyCart.updateWith(somethingNew)` 的简单调用方法。换言之，无法通过调用方法从外部修改一个 widget 。即便是你自己实现了这样的模式，那也是和整个框架不兼容。
+为什么呢？在类似 Flutter 的声明式框架中，如果你想要修改 UI，那么你需要重构它。并没有类似 `MyCart.updateWith(somethingNew)` 的简单调用方法。换言之，你很难通过外部调用方法修改一个 widget。即便你自己实现了这样的模式，那也是和整个框架不相兼容。
 <!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
@@ -142,7 +140,7 @@ construct new widgets in the build methods of their parents,
 if you want to change `contents`, it needs to live in `MyCart`'s
 parent or above.
 
-在 Flutter 中，每次当 widget 内容发生改变的时候，你就创建一个新的。你会调用 `MyCart(contents)`（构造函数），而不是 `MyCart.updateWith(somethingNew)`（调用方法）。因为你只能通过父类的 build 方法来构建新 widget ，如果你想修改 `contents`，就需要调用 `MyCart` 的父类甚至更高一级的类。
+在 Flutter 中，每次当 widget 内容发生改变的时候，你就需要构造一个新的。你会调用 `MyCart(contents)`（构造函数），而不是 `MyCart.updateWith(somethingNew)`（调用方法）。因为你只能通过父类的 build 方法来构建新 widget ，如果你想修改 `contents`，就需要调用 `MyCart` 的父类甚至更高一级的类。
 
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (myTapHandler)"?>
 ```dart
@@ -207,7 +205,7 @@ When user clicks on one of the items in the catalog,
 it’s added to the cart. But since the cart lives above `MyListItem`,
 how do we do that?
 
-当用户点击类别页面中的一个元素，它会被添加到购物车里。但是因为购物车在 `MyListItem` 之上，我们该如何实现呢？
+当用户点击类别页面中的一个元素，它会被添加到购物车里。然而当购物车在 widget 树中，处于 MyListItem 的层级之上时，又该如何访问状态呢？
 
 A simple option is to provide a callback that `MyListItem` can call
 when it is clicked. Dart's functions are first class objects,
@@ -245,7 +243,7 @@ kinds of widgets&mdash;`InheritedWidget`, `InheritedNotifier`,
 `InheritedModel`, and more. We won't be covering those here,
 because they are a bit low-level for what we're trying to do.
 
-幸运的是 Flutter 内含一种机制可以让空间为它的下游空间提供数据和服务（换言之，不仅仅是它的子节点，所有在它下层的 widget 都可以）。就像你所了解的， Flutter 中的 _Everything is a Widget™_。这里的机制也是一种 widget &mdash;`InheritedWidget`, `InheritedNotifier`,
+幸运的是 Flutter 在 widget 中存在一种机制，能够为其子孙节点提供数据和服务。（换言之，不仅仅是它的子节点，所有在它下层的 widget 都可以）。就像你所了解的， Flutter 中的 _Everything is a Widget™_。这里的机制也是一种 widget &mdash;`InheritedWidget`, `InheritedNotifier`,
 `InheritedModel`等等。我们这里不会详细解释他们，因为这些 widget 都太底层。
 
 Instead, we are going to use a package that works with the low-level
@@ -270,7 +268,7 @@ change notification to its listeners. In other words, if something is
 a `ChangeNotifier`, you can subscribe to its changes. (It is a form of 
 Observable, for those familiar with the term.)
 
-`ChangeNotifier` 是 Flutter SDK 中的一个简单的类。它用于向监听器发送通知。换言之，如果被定义为 `ChangeNotifier`，你可以订阅它的状态变化。（这和大家所熟悉的 Observable 形式相类似）。
+`ChangeNotifier` 是 Flutter SDK 中的一个简单的类。它用于向监听器发送通知。换言之，如果被定义为 `ChangeNotifier`，你可以订阅它的状态变化。（这和大家所熟悉的观察者模式相类似）。
 
 In `provider`, `ChangeNotifier` is one way to encapsulate your application 
 state. For very simple apps, you get by with a single `ChangeNotifier`. 
@@ -339,7 +337,7 @@ test('adding item increases total cost', () {
 `ChangeNotifierProvider` is the widget that provides an instance of 
 a `ChangeNotifier` to its descendants. It comes from the `provider` package.
 
-`ChangeNotifierProvider`  widget 可以返回一个 `ChangeNotifier` 实例。它属于 `provider` package。
+`ChangeNotifierProvider`  widget 可以向其子孙节点暴露一个 `ChangeNotifier` 实例。它属于 `provider` package。
 
 We already know where to put `ChangeNotifierProvider`: above the widgets that
 will need to access it. In the case of `CartModel`, that means somewhere 
@@ -374,7 +372,7 @@ of `CartModel`. `ChangeNotifierProvider` is smart enough _not_ to rebuild
 
 If you want to provide more than one class, you can use `MultiProvider`:
 
-如果你想实现多个类，可以使用 `MultiProvider`：
+如果你想提供更多状态，可以使用 `MultiProvider`：
 
 <?code-excerpt "state_mgmt/simple/lib/main.dart (multi-provider-main)" replace="/multiProviderMain/main/g;/MultiProvider/[!$&!]/g"?>
 ```dart
@@ -400,7 +398,7 @@ Now that `CartModel` is provided to widgets in our app through the
 
 This is done through the `Consumer` widget.
 
-调用需要通过 `Consumer`  widget 。
+完成这一步需要通过 `Consumer`  widget 。
 
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (descendant)" replace="/Consumer/[!$&!]/g"?>
 ```dart
@@ -425,7 +423,7 @@ is the builder. Builder is a function that is called whenever the
 in your model, all the builder methods of all the corresponding
 `Consumer` widgets are called.)
 
-`Consumer`  widget 唯一需要的参数就是 builder。 当 `ChangeNotifier`  发生变化的时候会调用 builder 这个函数。（换言之，当你在模型中调用 `notifyListeners()` 时， 所有和 `Consumer` 相关的 builder 方法都会被调用。）
+`Consumer`  widget 唯一必须的参数就是 builder。 当 `ChangeNotifier`  发生变化的时候会调用 builder 这个函数。（换言之，当你在模型中调用 `notifyListeners()` 时， 所有和 `Consumer` 相关的 builder 方法都会被调用。）
 
 The builder is called with three attributes. The first one is `context`,
 which you also get in every build method.
@@ -437,14 +435,14 @@ the `ChangeNotifier`. It's what we were asking for in the first place. You can
 use the data in the model to define what the UI should look like 
 at any given point.
 
-builder 函数的第二个参数是 `ChangeNotifier` 的实例。在最开始的时候就需要提供这个实例。你可以通过该实例定义 UI 的内容。
+builder 函数的第二个参数是 `ChangeNotifier` 的实例。它是我们最开始就能得到的实例。你可以通过该实例定义 UI 的内容。
 
 The third attribute is `child`, which is there for optimization.
 If you have a large widget subtree under your `Consumer`
 that _doesn't_ change when the model changes, you can construct it
 once and get it through the builder.
 
-第三个参数是 `child`，用于优化目的。如果 `Consumer` 下面有一个庞大的子树，当模型发生改变的时候，该子树 _并不会_ 改变，那么你就可以创建它，然后通过 builder 获得它。
+第三个参数是 `child`，用于优化目的。如果 `Consumer` 下面有一个庞大的子树，当模型发生改变的时候，该子树 _并不会_ 改变，那么你就可以仅仅创建它一次，然后通过 builder 获得该实例。
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)" replace="/\bchild\b/[!$&!]/g"?>
 ```dart
@@ -545,7 +543,7 @@ covered in this article. If you want something simpler,
 you can see how the simple Counter app looks like when [built with
 `provider`](https://github.com/flutter/samples/tree/master/provider_counter).
 
-你可以在文章中 [看一下示例]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)。如果你想参考稍微简单一点的示例，可以看看 Counter 是如何实现的。[built with
+你可以在文章中 [看一下示例]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)。如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何基于 provider 实现的。[built with
 `provider`](https://github.com/flutter/samples/tree/master/provider_counter).
 
 When you're ready to play around with `provider` yourself,

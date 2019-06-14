@@ -134,7 +134,7 @@ see the following:
 * [Continuous Delivery using fastlane with
   Flutter](/docs/deployment/fastlane-cd/)
 
-  [Flutter 中使用 fastlane 进行持续交付](/docs/deployment/fastlane-cd/)
+  [Flutter 里的持续部署](/docs/deployment/cd/#fastlane)
 
 * [Test Flutter apps on
   Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)

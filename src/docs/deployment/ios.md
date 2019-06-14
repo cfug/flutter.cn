@@ -57,7 +57,7 @@ Every iOS application is associated with a Bundle ID, a unique identifier
 registered with Apple. To register a Bundle ID for your app, follow these
 steps:
 
-每一个 iOS 应用都与一个在 Apple 注册的唯一的 Bundle ID 关联。想要为你的 APp 注册一个 Bundle ID，跟着下面的步骤
+每一个 iOS 应用都与一个在 Apple 注册的唯一的 Bundle ID 关联。想要为你的 App 注册一个 Bundle ID，跟着下面的步骤
 
 1. Open the [App IDs][devportal_appids] page of your developer account.  在你的开发者账号页面打开 [App IDs][devportal_appids] 页面。
 1. Click **+** to create a new Bundle ID.  点击 **+** 来创建一个新的 Bundle ID。
@@ -105,7 +105,7 @@ Navigate to your target's settings in Xcode:
 1. To view your app's settings, select the **Runner** project in the Xcode
    project navigator. Then, in the main view sidebar, select the **Runner**
    target.    想要看你的 App 的设置，在 Xcode 的项目导航栏中选择 **Runner** 
-1. Select the **General** tab.  选择 **通用** tab
+1. Select the **General** tab.  选择 **General** tab
 
 Next, you'll verify the most important settings:
 
@@ -142,7 +142,7 @@ In the Deployment Info section:
     Flutter supports iOS 8.0 and later. If your app includes Objective-C or
     Swift code that makes use of APIs that were unavailable in iOS 8, update
     this setting appropriately.
-  * `Deployment Target:` 你的 App 将会支持的最低版本的 iOS 。Flutter 支持 iOS 8.0 及以后的版本。如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，更新这个设置到合适的项目。
+  * `Deployment Target:` 你的 App 将会支持的最低版本的 iOS 。Flutter 支持 iOS 8.0 及以后的版本。如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，设置到合适的版本。
 
 The General tab of your project settings should resemble the following:
 你项目的 General tab 应该看起来像是这样的：

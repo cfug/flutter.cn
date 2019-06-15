@@ -193,8 +193,7 @@ how Flutter performs a hero animation.
     the destination route. During its flight, the hero is moved to
     an application overlay, so that it appears on top of both routes.
     
-    Flutter 框架设置了一个 [矩形
-    tween]({{site.api}}/flutter/animation/RectTween-class.html)，
+    Flutter 框架设置了一个 [RectTween 类]({{site.api}}/flutter/animation/RectTween-class.html)，
     用来定义 hero 从原页面飞至目标页面的边界。
     在飞翔过程中，hero 移动到一个应用图层，这样它可以在两个页面上方显示。
     

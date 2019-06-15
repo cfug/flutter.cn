@@ -46,7 +46,7 @@ If you want to use pub manually, you can run it directly by setting the
 
 {{site.alert.warning}}
 不要使用 `pub get` 或 `pub upgrade` 命令来管理 Flutter apps 的依赖，
-而是使用 `flutter pub get`或 `flutter pub upgrade`。
+而是使用 `flutter pub get` 或 `flutter pub upgrade`。
 如果你想手动使用 pub，你可以通过设置 `FLUTTER_ROOT` 环境变量来直接运行。
 {{site.alert.end}}
 
@@ -58,8 +58,8 @@ To update both the Flutter SDK and the packages that your app depends on,
 use the `flutter upgrade` command from the root of your app
 (the same directory that contains the `pubspec.yaml` file):
 
-为了升级你app依赖的Flutter SDK和packages，
-在app根目录执行 `flutter upgrade` 命令
+为了升级你 app 依赖的 Flutter SDK 和 packages，
+在 app 根目录执行 `flutter upgrade` 命令
 （与包含 `pubspec.yaml` 文件的目录相同）：
 
 ```terminal
@@ -71,15 +71,15 @@ that's available on your Flutter channel.
 Then this command updates each package that your app depends on
 to the most recent compatible version.
 
-这个命令首先获取你的Flutter渠道可用的最新的Flutter SDK版本。
-接着这个命令更新你app依赖的每一个package，到最新的兼容版本。
+这个命令首先获取你的 Flutter 渠道可用的最新的 Flutter SDK 版本。
+接着这个命令更新你 app 依赖的每一个 package，到最新的兼容版本。
 
 If you want an even more recent version of the Flutter SDK,
 switch to a less stable Flutter channel
 and then run `flutter upgrade`.
 
-如果你想使用一个更加新的Flutter SDK版本，
-切换到不太稳定的Flutter频道，并且运行 `flutter upgrade`。
+如果你想使用一个更加新的 Flutter SDK 版本，
+切换到不太稳定的 Flutter 频道，并且运行 `flutter upgrade`。
 
 ## Switching Flutter channels
 
@@ -90,7 +90,7 @@ Flutter has [four release channels][Flutter release channel]:
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
-Flutter有[4个发布频道][Flutter发布频道]：
+Flutter 有[4个发布频道][Flutter发布频道]：
 **stable**, **beta**, **dev**, 和 **master**。
 我们推荐使用 **{{site.sdk.channel}}** 频道
 除非你需要更加新的版本。
@@ -109,7 +109,7 @@ to download the Flutter SDK and dependent packages.
 For example:
 
 要切换到其它频道，使用 `flutter channel <channel-name>`。
-当你切换了频道以后，使用 `flutter upgrade` 下载Flutter SDK和依赖的packages。
+当你切换了频道以后，使用 `flutter upgrade` 下载 Flutter SDK 和依赖的 packages。
 例如：
 
 ```terminal
@@ -123,7 +123,7 @@ you can download it from the [Flutter SDK archive][].
 {{site.alert.end}}
 
 {{site.alert.note}}
-如果你需要一个指定的Flutter SDK版本,
+如果你需要一个指定的 Flutter SDK 版本,
 你可以从 [Flutter SDK archive][] 下载.
 {{site.alert.end}}
 
@@ -134,8 +134,8 @@ If you've modified your `pubspec.yaml` file or you want to update
 only the packages that your app depends upon (instead of both the packages and
 Flutter itself), then use one of the `flutter pub` commands.
 
-如果你已经修改了 `pubspec.yaml` 文件，或者你想仅仅更新你app依赖的packages
-（而不是同时更新packages和Flutter SDK）
+如果你已经修改了 `pubspec.yaml` 文件，或者你想仅仅更新你 app 依赖的 packages
+（而不是同时更新 packages 和 Flutter SDK）
 就使用 `flutter pub` 命令之一。
 
 To get all the dependencies listed in the `pubspec.yaml` file,

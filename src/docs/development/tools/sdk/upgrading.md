@@ -19,7 +19,7 @@ and the packages that your app depends on.
 For the `flutter` command to work correctly,
 your app's `pubspec.yaml` file must require the Flutter SDK.
 
-为了让 `flutter` 命令正确工作，你app的 `pubspec.yaml` 文件必须要求使用Flutter SDK。
+为了让 `flutter` 命令正确工作，你工程下的 `pubspec.yaml` 文件必须要求使用 Flutter SDK。
 
 For example, the following snippet specifies that the
 `flutter` and `flutter_test` packages require the Flutter SDK:

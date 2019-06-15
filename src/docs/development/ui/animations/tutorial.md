@@ -55,21 +55,32 @@ Flutter SDK 也提供过渡动画，比如 [FadeTransition][]，[SizeTransition]
 
   * [Animation][], a core class in Flutter's animation library,
     interpolates the values used to guide an animation.
-  * [Animation][]，Flutter 动画库中的核心类，插入用于指导动画的值。
+    
+    [Animation][]，Flutter 动画库中的核心类，插入用于指导动画的值。
+    
   * An `Animation` object knows the current state of an animation (for example,
     whether it's started, stopped, or moving forward or in reverse),
     but doesn't know anything about what appears onscreen.
-  * `Animation` 对象知道动画目前的状态（例如，是否开始，暂停，前进或倒退），但是对屏幕上显示的内容一无所知。
+    
+    `Animation` 对象知道动画目前的状态（例如，是否开始，暂停，前进或倒退），但是对屏幕上显示的内容一无所知。
+    
   * An [AnimationController][] manages the `Animation`.
-  * [AnimationController][] 管理 `Animation`。
+  
+    [AnimationController][] 管理 `Animation`。
+    
   * A [CurvedAnimation][] defines progression as a non-linear curve.
-  * [CurvedAnimation][] 定义进程为非线性曲线。
+  
+    [CurvedAnimation][] 定义进程为非线性曲线。
+    
   * A [Tween][] interpolates between the range of data as used by the
     object being animated. For example, a `Tween` might define an interpolation
     from red to blue, or from 0 to 255.
-  * [Tween][] 为动画对象插入一个范围值。例如，`Tween` 可以定义插入值由红到蓝，或从 0 到 255。
+    
+    [Tween][] 为动画对象插入一个范围值。例如，`Tween` 可以定义插入值由红到蓝，或从 0 到 255。
+  
   * Use Listeners and StatusListeners to monitor animation state changes.
-  * 使用 Listeners 和 StatusListeners 监视动画状态变化。
+  
+    使用 Listeners 和 StatusListeners 监视动画状态变化。
 {{site.alert.end}}
 
 The animation system in Flutter is based on typed [Animation][] objects. Widgets
@@ -197,9 +208,7 @@ starts again (without stopping the clock, so it's as if it had
 been ticking the whole time, but without using the CPU.)
 To use your custom State object as the `vsync`, include the
 `TickerProviderStateMixin` when defining the custom State class.
-{% endcomment -%}
 
-{% comment %}
 `vsync` 对象将动画控制器的时钟系统和 widget 的可见性连结，所以当动画 widget 切换到后台，时钟停止；而当 widget 恢复前台运行，时钟重新启动（这个过程时钟并不终止，可被认为一直在运行中，只是不占用 CPU）。在定义自定义状态类时，也可将自定义状态对象用作 `vsync`，包括 `TickerProviderStateMixin`。
 {% endcomment -%}
 
@@ -281,9 +290,7 @@ Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
 
 {{site.alert.note}}
   The `animate()` method returns an [Animation][], not an [Animatable][].
-{{site.alert.end}}
-
-{{site.alert.note}}
+  
   `animate()` 方法会返回一个 [Animation][]，而不是 [Animatable][]。
 {{site.alert.end}}
 
@@ -338,17 +345,26 @@ Each section provides a link to the source code for that example.
 
   * How to add basic animation to a widget using `addListener()` and
     `setState()`.
-  * 如何使用 `addListener()` 和 `setState()` 为 widget 添加基础动画。
+    
+    如何使用 `addListener()` 和 `setState()` 为 widget 添加基础动画。
+    
   * Every time the Animation generates a new number, the `addListener()`
     function calls `setState()`.
-  * 每次动画生成一个新的数字，`addListener()` 函数就会调用 `setState()`。
+    
+    每次动画生成一个新的数字，`addListener()` 函数就会调用 `setState()`。
+    
   * How to define an `AnimatedController` with the required `vsync` parameter.
-  * 如何使用所需的 `vsync` 参数定义一个 `AnimatedController`。
+    如何使用所需的 `vsync` 参数定义一个 `AnimatedController`。
+    
   * Understanding the "`..`" syntax in "`..addListener`", also known as Dart's
     _cascade notation_.
-  * 理解 "`..addListener`" 中的 "`..`" 语法，也称为 Dart 的 _cascade notation_。
+    
+    理解 "`..addListener`" 中的 "`..`" 语法，也称为 Dart 的 _cascade notation_。
+    
   * To make a class private, start its name with an underscore (`_`).
-  * 如需使类私有，在名字前面添加下划线（`_`）。
+  
+    如需使类私有，在名字前面添加下划线（`_`）。
+    
 {{site.alert.end}}
 
 So far you've learned how to generate a sequence of numbers over time. Nothing
@@ -520,16 +536,21 @@ With these few changes, you’ve created your first animation in Flutter!
 
   * How to use the [AnimatedWidget][] helper class (instead of `addListener()`
     and `setState()`) to create a widget that animates.
-  * 如何使用 [AnimatedWidget][] 帮助类（代替 `addListener()` 和 `setState()`）创建动画 widget。
+    
+    如何使用 [AnimatedWidget][] 帮助类（代替 `addListener()` 和 `setState()`）创建动画 widget。
+    
   * Use `AnimatedWidget` to create a widget that performs a reusable animation.
     To separate the transition from the widget, use an
     [AnimatedBuilder.](#refactoring-with-animatedbuilder)
-  * 利用 `AnimatedWidget` 创建一个可以运行重复使用动画的 widget。如需区分 widget 过渡，可以使用 [AnimatedBuilder.](#refactoring-with-animatedbuilder)。
+    
+    利用 `AnimatedWidget` 创建一个可以运行重复使用动画的 widget。如需区分 widget 过渡，可以使用 [AnimatedBuilder.](#refactoring-with-animatedbuilder)。
+    
   * Examples of `AnimatedWidget`s in the Flutter API: AnimatedBuilder,
     AnimatedModal&shy;Barrier, DecoratedBox&shy;Transition, FadeTransition,
     Positioned&shy;Transition, Relative&shy;Positioned&shy;Transition,
     RotationTransition, ScaleTransition, SizeTransition, SlideTransition.
-  * Flutter API 中的 `AnimatedWidget`：AnimatedBuilder,
+    
+    Flutter API 中的 `AnimatedWidget`：AnimatedBuilder,
     AnimatedModal&shy;Barrier, DecoratedBox&shy;Transition, FadeTransition,
     Positioned&shy;Transition, Relative&shy;Positioned&shy;Transition,
     RotationTransition, ScaleTransition, SizeTransition, SlideTransition。
@@ -632,10 +653,13 @@ passes the `Animation` object to `AnimatedLogo`:
 
   * Use `addStatusListener()` for notifications of changes to the animation's
     state, such as starting, stopping, or reversing direction.
-  * 使用 `addStatusListener()` 作为动画状态的变更提示，比如开始，结束，或改变方向。
+    
+    使用 `addStatusListener()` 作为动画状态的变更提示，比如开始，结束，或改变方向。
+    
   * Run an animation in an infinite loop by reversing direction when
     the animation has either completed or returned to its starting state.
-  * 通过在动画完成或返回起始状态时改变方向，使动画无限循环。
+    
+    通过在动画完成或返回起始状态时改变方向，使动画无限循环。
 {{site.alert.end}}
 
 It’s often helpful to know when an animation changes state, such as finishing,
@@ -715,18 +739,25 @@ end. This creates a "breathing" effect:
   <h4 class="no_toc">要点</h4>
 
   * An [AnimatedBuilder][] understands how to render the transition.
-  * [AnimatedBuilder][] 知道如何渲染过渡效果
+  
+    [AnimatedBuilder][] 知道如何渲染过渡效果
+    
   * An `AnimatedBuilder` doesn't know how to render the widget, nor does it
     manage the Animation object.
-  * 但 `AnimatedBuilder` 不会渲染 widget，也不会控制动画对象。
+    
+    但 `AnimatedBuilder` 不会渲染 widget，也不会控制动画对象。
+    
   * Use `AnimatedBuilder` to describe an animation as part of a build method
     for another widget. If you simply want to define a widget with a reusable
     animation, use [AnimatedWidget.](#simplifying-with-animatedwidget)
-  * 使用 `AnimatedBuilder` 描述一个动画是其他 widget 构建方法的一部分。如果只是单纯需要用可重复使用的动画定义一个 widget，可参考 [AnimatedWidget.](#simplifying-with-animatedwidget)。
+    
+    使用 `AnimatedBuilder` 描述一个动画是其他 widget 构建方法的一部分。如果只是单纯需要用可重复使用的动画定义一个 widget，可参考 [AnimatedWidget.](#simplifying-with-animatedwidget)。
+    
   * Examples of `AnimatedBuilders` in the Flutter API: `BottomSheet`, `ExpansionTile`,
     `PopupMenu`, `ProgressIndicator`, `RefreshIndicator`, `Scaffold`, `SnackBar`, `TabBar`,
     `TextField`.
-  * Flutter API 中 `AnimatedBuilders`：`BottomSheet`, `ExpansionTile`,
+    
+    Flutter API 中 `AnimatedBuilders`：`BottomSheet`, `ExpansionTile`,
     `PopupMenu`, `ProgressIndicator`, `RefreshIndicator`, `Scaffold`, `SnackBar`, `TabBar`,
     `TextField`。
 {{site.alert.end}}
@@ -739,11 +770,16 @@ is to separate responsibilities into different classes:
 [animate3]({{examples}}/animation/animate3/lib/main.dart) 示例代码中有个问题，就是改变动画需要改变渲染 logo 的widget。较好的解决办法是，将任务区分到不同类里：
 
 * Render the logo
-* 渲染 logo
+
+  渲染 logo
+  
 * Define the Animation object
-* 定义动画对象
+
+  定义动画对象
+  
 * Render the transition
-* 渲染过渡效果
+
+  渲染过渡效果
 
 You can accomplish this separation with the help of the `AnimatedBuilder` class.
 An `AnimatedBuilder` is a separate class in the render tree. Like `AnimatedWidget`,
@@ -875,7 +911,9 @@ above.
 
   * The [Curves][] class defines an array of commonly used curves that you can
     use with a [CurvedAnimation][].
-  * [Curves][] 类定义了一列常用的曲线，您可以配合 [CurvedAnimation][] 来使用。
+    
+    [Curves][] 类定义了一列常用的曲线，您可以配合 [CurvedAnimation][] 来使用。
+    
 {{site.alert.end}}
 
 In this section, you'll build on the example from [monitoring the progress of
@@ -892,9 +930,7 @@ to opaque.
   is for illustrative purposes only. If you were tweening opacity and size in
   production code, you'd probably use [FadeTransition][] and [SizeTransition][]
   instead.
-{{site.alert.end}}
-
-{{site.alert.note}}
+  
   这个示例展示了如何在同一个动画控制器中使用复合补间动画，每个补间动画控制一个动画的不同效果。仅用于说明目的。如果您需要在代码中加入渐变不透明度和尺寸效果，可能需要用 [FadeTransition][] 和 [SizeTransition][] 来代替。
 {{site.alert.end}}
 

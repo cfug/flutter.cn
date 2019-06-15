@@ -16,15 +16,15 @@ In some cases, it can be handy to read and write files to disk.
 This can be used to persist data across app launches,
 or to download data from the internet and save it for later offline use.
 
-在某些场景下，Flutter可以便捷的在磁盘上读写文件。
-通常用于应用程序启动后持久化数据，或者保存从 Internet 下载的数据以便离线使用。
+磁盘文件的读写操作可能会相对方便地实现某些业务场景。
+它常见于应用启动期间产生的持久化数据，或者从网络下载数据供离线使用。
 
 In order to save files to disk, you'll need to combine the
 [`path_provider` plugin]({{site.pub-pkg}}/path_provider) with
 the [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html)
 library.
 
-通过使用 [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html) 库中的 [`path_provider`]({{site.pub-pkg}}/path_provider) 插件，你可以在磁盘上保存文件。
+为了将文件保存到磁盘，你需要结合使用 [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html) 库中的 [`path_provider`]({{site.pub-pkg}}/path_provider) 这个 package。
 
 ## Directions
 
@@ -40,7 +40,7 @@ library.
   
   3. Write data to the file
   
-     向文件写数据
+     将数据写入文件
   
   4. Read data from the file
   
@@ -55,39 +55,42 @@ In this example, you'll display a counter. When the counter changes, you'll
 write data on disk so you can read it again when the app loads.
 Therefore, you must wonder: Where should I store this data?
 
-在这个示例中，你将显示一个计数器。当计数器改变了之后你会将数据写入磁盘，然后你可以在应用程序启动的时候再读出来。
-因此，你要思考：“我应该将数据存放在哪里？”
+这个例子里，我们将会显示一个计数器，当计数器发生变化时，你将在磁盘中写入数据，
+以便在应用加载时重新读取这些数据。因此，你一定想知道：我应该将这些数据存储在哪里？
 
 The [`path_provider`]({{site.pub-pkg}}/path_provider) plugin
 provides a platform-agnostic way to access commonly used locations on the
 device's filesystem. The plugin currently supports access to two filesystem
 locations:
 
-[`path_provider`]({{site.pub-pkg}}/path_provider) 插件在不同设备的文件系统中提供了一个平台无关的方式获得常用路径：
-
+[`path_provider`]({{site.pub-pkg}}/path_provider) 这个 package 提供了一种与平台无关的方法，
+用于访问设备文件系统上的常用位置。该插件目前支持访问两个文件系统位置
 
   * *Temporary directory:* A temporary directory (cache) that the system can
     clear at any time. On iOS, this corresponds to the value that
-    [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory)
-    returns. On Android, this is the value that
+    [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory) returns. On Android, this is the value that
     [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir())
     returns.
     
-    *临时文件夹：*这是一个系统可以随时清空的临时（缓存）文件夹。在 iOS 上 对应 [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory) 的返回值。
-    在 Android 上对应 [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir()) 的返回值。
+     *临时文件夹：* 这是一个系统可以随时清空的临时（缓存）文件夹。在 iOS 上 对应 
+     [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory) 的返回值；
+     在 Android 上对应 [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir()) 的返回值。
     
   * *Documents directory:* A directory for the app to store files that only
     it can access. The system clears the directory only when the app is deleted.
     On iOS, this corresponds to `NSDocumentDirectory`. On Android, this is the
     `AppData` directory.
     
-    *文档文件夹：*这是一个给本应用程序提供存储文件且只有本应用程序可以读取的文件夹。系统仅在应用程序被删除后才会清空这个文件夹。
-    在 iOS 上对应于 `NSDocumentDirectory`。 在 Android 上对应于 `AppData` 文件夹。
+    *Documents 目录：* 供应用使用，用于存储只能由该应用访问的文件。
+    只有在删除应用时，系统才会清除这个目录。
+    在 iOS 上，这个目录对应于 `NSDocumentDirectory`。
+    在 Android 上，则是 `AppData` 目录。    
     
 In this case, you'll want to store information in the documents directory.
 You can find the path to the documents directory as follows:
 
-如果你想在 *文档文件夹* 存储数据，你可以使用下面的方法找到 *文档文件夹*：
+在本示例中，你需要将信息存储在 Documents 目录中。
+可以按如下所示，找到 Documents 目录路径：
 
 <!-- skip -->
 ```dart
@@ -107,7 +110,10 @@ file's full location. You can use the
 [`File`]({{site.api}}/flutter/dart-io/File-class.html)
 class from the [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
 library to achieve this.
-现在你已经知道将文件存储在什么地方，你需要创建一个文件全路径的引用。你可以使用 [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html) 库的 [`File`]({{site.api}}/flutter/dart-io/File-class.html) 来实现。
+
+确定文件的存储位置后，需要创建对文件完整位置的引用。
+为此，你可以使用 [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
+库的 [`File`]({{site.api}}/flutter/dart-io/File-class.html) 类来实现。
 
 <!-- skip -->
 ```dart
@@ -119,14 +125,14 @@ Future<File> get _localFile async {
 
 ## 3. Write data to the file
 
-## 3. 向文件写数据
+## 3. 将数据写入文件
 
 Now that you have a `File` to work with, use it to read and write data.
 First, write some data to the file. Since you're working with a counter,
 you'll simply store the integer as a String.
 
-现在有了一个 `File` 的帮助，可以使用它来读写数据。
-首先，向文件写入一些数据。 既然你在做计数器，那么你只需要把一个整型数据存储成字符串。
+现在你已经有了可以使用的 `File`，接下来使用这个文件来读写数据。
+首先，将一些数据写入该文件。由于使用了计数器，因此只需将整数存储为 String 即可。
 
 <!-- skip -->
 ```dart
@@ -145,8 +151,8 @@ Future<File> writeCounter(int counter) async {
 Now that you have some data on disk, you can read it.
 Once again, use the `File` class.
 
-现在你的磁盘上已经有了数据，你可以读取它了。
-这一次还是要用到 `File` 类。
+现在，你的磁盘上已经有了一些数据可供读取。
+此时同样需要使用 `File` 类。
 
 <!-- skip -->
 ```dart
@@ -169,38 +175,34 @@ Future<int> readCounter() async {
 
 ## 测试
 
-
 In order to test code that interacts with files, you'll need to Mock calls to
 the `MethodChannel`. The `MethodChannel` is the class that Flutter uses to
 communicate with the host platform.
 
-为了测试与文件交互的代码，你需要进行 Mock 调用`MethodChannel`。
-`MethodChannel` 是Flutter用来与主机平台通信的类。
+为了测试代码与文件的交互情况，你需要对 `MethodChannel` 发起 Mock 调用。
+`MethodChannel` 是 Flutter 用于与主平台通信的类。
 
 In these tests, you can't interact with the filesystem on a device.
 You'll need to interact with the test environment's filesystem.
 
-在这些测试中，你无法与设备上的文件系统进行交互。 你需要与测试环境的文件系统进行交互。
+在这些测试中，无法与设备上的文件系统进行交互，你将会与测试环境的文件系统进行交互。
 
 To mock the method call, provide a `setupAll` function in the test file.
 This function runs before the tests are executed.
 
-要模拟方法调用，在测试文件中提供了`setupAll`函数。 此函数在执行测试之前运行。
+要模拟方法调用，请在测试文件中提供 `setupAll` 函数。这样会先运行这个函数，然后再执行测试。
 
 <!-- skip -->
 ```dart
 setUpAll(() async {
-  // Create a temporary directory to work with
-  // 提供一个临时文件夹作为工作空间
+  // Create a temporary directory to work with (提供一个临时文件夹作为工作空间)
   final directory = await Directory.systemTemp.createTemp();
 
-  // Mock out the MethodChannel for the path_provider plugin
-  // 为 path_provider 插件提供一个模拟的 MethodChannel。
+  // Mock out the MethodChannel for the path_provider plugin (为 path_provider 插件提供一个模拟的 MethodChannel)  
   const MethodChannel('plugins.flutter.io/path_provider')
       .setMockMethodCallHandler((MethodCall methodCall) async {
     // If you're getting the apps documents directory, return the path to the
-    // temp directory on the test environment instead.
-    // 如果您要获取应用程序文档目录，请返回测试环境中的临时目录的路径。
+    // temp directory on the test environment instead. (如果您要获取应用的 Documents 目录，请返回测试环境中的临时目录的路径)
     if (methodCall.method == 'getApplicationDocumentsDirectory') {
       return directory.path;
     }

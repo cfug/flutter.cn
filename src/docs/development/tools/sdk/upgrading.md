@@ -81,7 +81,8 @@ and then run `flutter upgrade`.
 切换到不太稳定的Flutter频道，并且运行 `flutter upgrade`。
 
 ## Switching Flutter channels
-## 切换Flutter频道
+
+## 切换 Flutter 发布渠道
 
 Flutter has [four release channels][Flutter release channel]:
 **stable**, **beta**, **dev**, and **master**.

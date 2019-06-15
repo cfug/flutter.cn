@@ -4,23 +4,34 @@ short-title: Hero
 ---
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What you’ll learn</h4>
 
-  <h4 class="no_toc">内容</h4>
+  <h4 class="no_toc">你将会在这里学到：</h4>
 
   * The _hero_ refers to the widget that flies between screens.
-  * _hero_ 指的是在屏幕间飞跃的 widget。
+  
+    _hero_ 指的是在屏幕间飞跃的 widget。
+    
   * Create a hero animation using Flutter's Hero widget.
-  * 用 Flutter's Hero widget 创建 hero 动画
+  
+    用 Flutter's Hero widget 创建 hero 动画。
+    
   * Fly the hero from one screen to another.
-  * 使 hero 从原页面飞至新页面。
+  
+    使 hero 从原页面飞至新页面。
+    
   * Animate the transformation of a hero's shape from circular to
     rectangular while flying it from one screen to another.
-  * 当 hero 从原页面飞至新页面时，使 hero 的形状由圆形动态过渡为正方形。
+    
+    当 hero 从原页面飞至新页面时，使 hero 的形状由圆形动态过渡为正方形。
+    
   * The Hero widget in Flutter implements a style of animation
     commonly known as _shared element transitions_ or
     _shared element animations._
-  * Flutter 中的 Hero widget 实现的动画类型也称为 _共享元素过渡_ 或 _共享元素动画_。
+    
+    Flutter 中的 Hero widget 实现的动画类型也称为 _共享元素过渡_ 或 _共享元素动画_。
+    
 {{site.alert.end}}
 
 You've probably seen hero animations many times. For example, a screen displays
@@ -30,8 +41,8 @@ one screen to another is called a _hero animation_ in Flutter, though the same
 motion is sometimes referred to as a _shared element transition_.
 
 你可能经常遇到 hero 动画。比如，页面上显示的代售商品列表。
-选择一件商品，则飞至包含更多细节和“购买”按钮的新页面。
-在 Flutter 中，图像从页面飞至另一个称为 _hero 动画_，相同的动作有时也被称为 _共享元素过渡_。
+选择一件商品后，应用会跳转至包含更多细节以及“购买”按钮的新页面。
+在 Flutter 中，图像从当前页面转到另一个页面称为 _hero 动画_，相同的动作有时也被称为 _共享元素过渡_。
 
 You might want to watch this one-minute video introducing the Hero widget:
 
@@ -46,41 +57,42 @@ during flight.
 这个指南演示了如何创建标准 hero 动画，以及 hero 动画如何在飞行过程中将图像形状由圆形变成正方形。
 
 <aside class="alert alert-info" markdown="1">
+
   **Examples**: This guide provides examples of each hero animation style at
   the following links.
-
-  * [Standard hero animation code](#standard-hero-animation-code)
-  * [Radial hero animation code](#radial-hero-animation-code)
-</aside>
-
-<aside class="alert alert-info" markdown="1">
+  
   **示例**: 这个指南在下面的链接中为每种类型的 hero 动画提供示例。
+  
   * [Standard hero animation code](#standard-hero-animation-code)
   * [Radial hero animation code](#radial-hero-animation-code)
+  
 </aside>
 
 <aside class="alert alert-info" markdown="1">
   **New to Flutter?**
+  
+  **刚接触 Flutter？**
+ 
   This page assumes you know how to create a layout using Flutter’s
   widgets.  For more information, see [Building Layouts in
   Flutter](/docs/development/ui/layout).
+  
+  这部分假定您已经了解如何使用 Flutter 的 widget 创建布局。更多信息请参见 [Building Layouts in
+  Flutter](/docs/development/ui/layout)。  
+  
 </aside>
 
-<aside class="alert alert-info" markdown="1">
-  **刚接触 Flutter？**
-  这部分假定您已经了解如何使用 Flutter 的 widget 创建布局。更多信息请参见 [Building Layouts in
-  Flutter](/docs/development/ui/layout)。
-</aside>
 
 <aside class="alert alert-info" markdown="1">
   **Terminology:**
+  
+  **术语：**  
+  
   A [_Route_](/docs/cookbook/navigation/navigation-basics) describes a page or screen
   in a Flutter app.
-</aside>
-
-<aside class="alert alert-info" markdown="1">
-  **术语：**
-  在 Flutter app 中，[_Route_](/docs/cookbook/navigation/navigation-basics) 描述一个页面
+  
+  在 Flutter app 中，[_Route_](/docs/cookbook/navigation/navigation-basics) 用来描述一个页面。
+  
 </aside>
 
 You can create this animation in Flutter with Hero widgets. As the hero animates
@@ -190,18 +202,17 @@ how Flutter performs a hero animation.
 
 <aside class="alert alert-info" markdown="1">
 
-  **Terminology:**
+  **Terminology:**  
+  
+  **术语：**
+  
   If the concept of tweens or tweening is new to you, see the
   [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
   
-  **术语：**
   如果您不了解 tween 或者 tweening 的概念，请参考
   [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
 
 </aside>
-
-<aside class="alert alert-info" markdown="1">
-  </aside>
 
 Hero animations are implemented using two
 [Hero]({{site.api}}/flutter/widgets/Hero-class.html)
@@ -214,6 +225,9 @@ Hero 动画需要使用两个 [Hero]({{site.api}}/flutter/widgets/Hero-class.htm
 
 <aside class="alert alert-info" markdown="1">
   **Note about dialogs:**
+  
+  **注意对话框：**  
+  
   Heroes fly from one PageRoute to another. Dialogs
   (displayed with `showDialog()`, for example), use PopupRoutes,
   which are not PageRoutes.  At least for now,
@@ -221,7 +235,6 @@ Hero 动画需要使用两个 [Hero]({{site.api}}/flutter/widgets/Hero-class.htm
   For further developments (and a possible workaround), [watch this
   issue.]({{site.github}}/flutter/flutter/issues/10667)
   
-   **注意对话框：**
   Heroes 从一个页面飞至另一个。对话框（例如，显示 `showDialog()`），
   使用 PopupRoutes，而不是 PageRoutes。
   至少现在不是，您无法在对话框中使用 hero 动画。更多内容（和可能的替代方法），
@@ -318,17 +331,17 @@ the following:
   described in the Material motion spec. Flutter now knows where the hero ends
   up.
 
-* 使用 Material motion spec 中介绍的曲线运动计算 destination hero 路径，后台运行。Flutter 限制知道 hero 应在何处终止。
+  使用 Material motion spec 中介绍的曲线运动计算 destination hero 路径，后台运行。Flutter 限制知道 hero 应在何处终止。
 
 * Places the destination hero in the overlay, at the same location and size as
   the _source_ hero. Adding a hero to the overlay changes its Z-order so that it
   appears on top of all routes.
 
-* 将 destination hero 放到图层，与 _source_ hero 相同的位置和大小。添加一个 hero 到图层改变其 Z-order，这样才可以出现在所有页面的上面。
+  将 destination hero 放到图层，与 _source_ hero 相同的位置和大小。添加一个 hero 到图层改变其 Z-order，这样才可以出现在所有页面的上面。
 
 * Moves the source hero offscreen.
 
-* 将 source hero 移至后台运行。
+  将 source hero 移至后台运行。
 
 ---
 
@@ -369,15 +382,15 @@ When the flight completes:
 * Flutter moves the hero widget from the overlay to the destination route. The
   overlay is now empty.
 
-* Flutter 将 hero widget 从图层移动到目标页面。图层现在是空的。
+  Flutter 将 hero widget 从图层移动到目标页面。图层现在是空的。
 
 * The destination hero appears in its final position in the destination route.
 
-* destination hero 出现在目标图层的最终位置。
+  destination hero 出现在目标图层的最终位置。
 
 * The source hero is restored to its route.
 
-* source hero 被储存到原页面中。
+  source hero 被储存到原页面中。
 
 ---
 
@@ -459,6 +472,7 @@ Specifies a screen or page. Most apps, beyond the most basic,
 
 <a name="standard-hero-animation-code"></a>
 <aside class="alert alert-info" markdown="1">
+
   **Standard hero animation code**
 
   **标准 hero 动画代码**
@@ -773,15 +787,15 @@ provided example to your needs.** The heavy lifting is done for you.
 
 <aside class="alert alert-info" markdown="1">
   **Pro tip:**
+  
+  **技巧：**
+  
   The radial hero animation involves intersecting a round shape with
   a square shape. This can be hard to see, even when slowing
   the animation with `timeDilation`, so you might consider enabling
   Flutter's [visual debugging mode](/docs/testing/debugging#visual-debugging)
   during development.
-</aside>
-
-<aside class="alert alert-info" markdown="1">
-  **技巧：**
+  
   径向 hero 动画设计圆形和正方形的交叉。这个很难看出来，即使使用 `timeDilation` 来减慢动画。所以在开发时，可以考虑启用 Flutter 的 [visual debugging mode](/docs/testing/debugging#visual-debugging)。
 </aside>
 
@@ -806,12 +820,14 @@ During the transformation,
 the ClipOval scales from `minRadius` to `maxRadius` while the
 [ClipRect]({{site.api}}/flutter/widgets/ClipRect-class.html)
 maintains a constant size.
+
+蓝色渐变（代表图像），表明剪裁形状交叉的位置。在过渡的开始，交叉的结果是圆形剪裁 ([ClipOval]({{site.api}}/flutter/widgets/ClipOval-class.html))。在过渡过程中，ClipOval 由 `minRadius` 缩放至 `maxRadius`，[ClipRect]({{site.api}}/flutter/widgets/ClipRect-class.html) 则保持原尺寸。
+
 At the end of the transition the intersection of the circular and
 rectangular clips yield a rectangle that's the same size as the hero
 widget. In other words, at the end of the transition the image is no
 longer clipped.
 
-蓝色渐变（代表图像），表明剪裁形状交叉的位置。在过渡的开始，交叉的结果是圆形剪裁 ([ClipOval]({{site.api}}/flutter/widgets/ClipOval-class.html))。在过渡过程中，ClipOval 由 `minRadius` 缩放至 `maxRadius`，[ClipRect]({{site.api}}/flutter/widgets/ClipRect-class.html) 则保持原尺寸。
 在过渡结束时，圆形和矩形剪裁的交集产生一个与 hero widget 相同大小的矩形。也就是说，在过渡结束时，图片已不再被剪裁。
 
 [Create a new Flutter example](/docs/get-started/test-drive) and

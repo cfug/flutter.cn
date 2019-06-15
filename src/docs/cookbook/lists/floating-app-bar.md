@@ -71,7 +71,7 @@ of slivers, such as `SliverList`, `SliverGridList`, and `SliverAppBar`.
 In fact, the `ListView` and `GridView` widgets use the `SliverList` and
 `SliverGrid` widgets to implement scrolling.
 
-可以放在 `CustomScrollView` 里的可滚动列表和组件我们称之为 _slivers_。有几种类型的 slivers，比如 `SliverList`、`SliverGridList` 和 `SliverAppBar`！实际上，`ListView` 和 `GridView` 组件底层使用的就是 `SliverList` 和 `SliverGrid`！
+可以放在 `CustomScrollView` 里的可滚动列表和组件我们称之为 **slivers**。有几种类型的 slivers，比如 `SliverList`、`SliverGridList` 和 `SliverAppBar`！实际上，`ListView` 和 `GridView` 组件底层使用的就是 `SliverList` 和 `SliverGrid`！
 
 For this example, create a `CustomScrollView` that contains a 
 `SliverAppBar` and a `SliverList`. In addition, remove any app bars

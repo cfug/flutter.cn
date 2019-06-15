@@ -25,7 +25,7 @@ details about the product.
   **Terminology**: In Flutter, _screens_ and _pages_ are called _routes_.
   The remainder of this recipe refers to routes.
   
-  **术语**: 在 Flutter 中，_屏 (screen)_ 和 _页面 (page)_ 都叫做 _路由 (route)_，
+  **术语**: 在 Flutter 中，**屏 (screen)** 和 **页面 (page)** 都叫做 **路由 (route)**，
   在下文中统称为“路由 (route)”。
   
 {{site.alert.end}}

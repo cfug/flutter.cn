@@ -12,7 +12,7 @@ _If you are already familiar with state management in reactive apps, you can
 skip this section, though you might want to review the [list of different 
 approaches](/docs/development/data-and-backend/state-mgmt/options)._
 
-_如果你早已熟悉响应式 App 中的状态管理，你可以跳过这个部分，不过这里也有一些关于 [状态 (State) 管理参考](/docs/development/data-and-backend/state-mgmt/options) 的信息供你查阅。_
+**如果你早已熟悉响应式 App 中的状态管理，你可以跳过这个部分，不过这里也有一些关于 [状态 (State) 管理参考](/docs/development/data-and-backend/state-mgmt/options) 的信息供你查阅。**
 
 {% asset development/data-and-backend/state-mgmt/state-management-explainer width="100%" alt="A short animated gif that shows the workings of a simple declarative state management system. This is explained in full in one of the following pages. Here it's just a decoration." %}
 

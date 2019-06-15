@@ -13,11 +13,17 @@ short-title: 交互添加
   <h4 class="no_toc">你会学到什么</h4>
 
   * How to respond to taps.
-  * 如何响应点击。
+    
+    如何响应点击。
+  
   * How to create a custom widget.
-  * 如何创建自定义 widget。
+  
+    如何创建自定义 widget。
+  
   * The difference between stateless and stateful widgets.
-  * 无状态和有状态 widget 之间的区别。
+    
+    无状态和有状态 widget 之间的区别。
+    
 {{site.alert.end}}
 
 How do you modify your app to make it react to user input?

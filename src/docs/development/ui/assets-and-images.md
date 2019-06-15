@@ -411,8 +411,6 @@ Flutter assets are readily available to platform code via AssetManager on Androi
 
 ### Android
 
-### Android
-
 On Android the assets are available via the [AssetManager API]({{site.android-dev}}/reference/android/content/res/AssetManager).
 The lookup key used in for instance [openFd]({{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String)) is obtained from
 `lookupKeyForAsset` on [PluginRegistry.Registrar]({{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) or `getLookupKeyForAsset` on
@@ -454,8 +452,6 @@ AssetManager assetManager = registrar.context().getAssets();
 String key = registrar.lookupKeyForAsset("icons/heart.png");
 AssetFileDescriptor fd = assetManager.openFd(key);
 ```
-
-### iOS
 
 ### iOS
 
@@ -514,8 +510,6 @@ native Android or iOS applications.
 
 #### Android
 
-#### Android
-
 In your Flutter project's root directory, navigate to `.../android/app/src/main/res`.
 The various bitmap resource folders such as `mipmap-hdpi` already contain placeholder images named
 `ic_launcher.png`. Simply replace them with your desired assets respecting the recommended icon size
@@ -538,8 +532,6 @@ If you rename the .png files, you must also match the new name in your
 标签的 `android:icon` 属性中更新名称。
 
 {{site.alert.end}}
-
-#### iOS
 
 #### iOS
 
@@ -580,16 +572,12 @@ the launch screen will persist forever.
 
 #### Android
 
-#### Android
-
 To add a "splash screen" to your Flutter application, navigate to `.../android/app/src/main`. In `res/drawable/launch_background.xml`, You can use this [layer list drawable]({{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList) XML to customize the look of your launch screen. The existing template provides an example for adding a image to to the middle of a white splash screen in commented code. You can uncomment it or use other [drawables]({{site.android-dev}}/guide/topics/resources/drawable-resource) to achieve the intended effect.
 
 将启动屏幕「splash screen」添加到你的 Flutter 应用程序， 请导航至 `.../android/app/src/main` 路径。
 在 `res/drawable/launch_background.xml` 文件中 ，通过使用
 [图层列表]({{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList)  XML 来实现自定义启动页。
 现有模板提供了一个示例，用于将图片添加到白色启动页的中间（注释代码中）。你也可以取消注释使用 [可绘制对象资源]({{site.android-dev}}/guide/topics/resources/drawable-resource) 来实现预期效果。
-
-#### iOS
 
 #### iOS
 

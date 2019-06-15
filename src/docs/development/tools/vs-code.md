@@ -23,7 +23,7 @@ description: 如何在 VS Code 里开发 Flutter 应用。
 Follow the [Set up an editor](/docs/get-started/editor?tab=vscode)
 instructions to install the Dart and Flutter extensions (also called plugins).
 
-根据[配置编辑器](/docs/get-started/editor?tab=vscode)指引来安装 Dart 和 Flutter 扩展（也叫做插件）。
+根据 [配置编辑器](/docs/get-started/editor?tab=vscode) 的指引来安装 Dart 和 Flutter 扩展（也叫做插件）。
 
 ### Updating the extension {#updating}
 

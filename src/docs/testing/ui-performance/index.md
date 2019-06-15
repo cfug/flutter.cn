@@ -150,7 +150,7 @@ Launch the app in profile mode as follows:
 {% comment %}
 Not yet available in VS Code.
 
-目前还不支持 VS Code
+目前还不支持 VS Code。
 {% endcomment %}
 
 - In Android Studio and IntelliJ, use the
@@ -210,11 +210,14 @@ and use it to diagnose the cause of jank in your application.
 The following screenshot shows the performance overlay running on the Flutter
 Gallery example:
 
-本节阐述如何打开 [性能图层][] 并用其来分析应用中卡顿的原因。下面的截图展示了 Flutter Gallery 样例的性能图层：
+本节阐述如何打开 [性能图层][PerformanceOverlay] 并用其来分析应用中卡顿的原因。下面的截图展示了 Flutter Gallery 样例的性能图层：
 
 <center><img src="/docs/testing/ui-performance/images/performance-overlay-green.png" alt="screenshot of performance overlay showing zero jank"></center>
-<center>Performance overlay showing the GPU thread (top), and UI thread (bottom).
-	The vertical green bars represent the current frame.</center><br>
+
+<center>GPU 线程的性能情况在上面，UI 线程显示在下面，垂直的绿色条条代表的是当前帧。</center><br>
+
+<!-- <center>Performance overlay showing the GPU thread (top), and UI thread (bottom).
+	The vertical green bars represent the current frame.</center><br> -->
 
 Flutter uses several threads to do its work. All your Dart code runs on
 the UI thread. Although you have no direct access to any other thread,
@@ -283,7 +286,7 @@ complicated to render quickly.
 而如果红色竖条是在 GPU 图表出现的，意味着场景太复杂导致无法快速渲染。
 
 <center><img src="/docs/testing/ui-performance/images/performance-overlay-jank.png" alt="Screenshot of performance overlay showing jank with red bars."></center>
-<center>The vertical red bars indicate that the current frame is expensive to both render and paint.<br>When both graphs have red, start by diagnosing the UI thread (Dart VM).</center><br>
+<!-- <center>The vertical red bars indicate that the current frame is expensive to both render and paint.<br>When both graphs have red, start by diagnosing the UI thread (Dart VM).</center><br> -->
 
 <center>红色竖条表明当前帧的渲染和绘制都很耗时<br>当两张图表都是红色时，就要开始对 UI 线程（Dart VM）进行诊断了。</center><br>
 
@@ -508,6 +511,7 @@ other potentially expensive operations, such as clipping or shadows.
 打开开关之后，运行应用并检查是否有图像的轮廓闪烁。如果有新的帧渲染的话，容器就会闪烁。举个例子，也许有一组对象的透明度要使用 `saveLayer` 来渲染。在这种情况下，相比通过 widget 树中高层次的父 widget 操作，单独对每个 widget 来应用透明度可能性能会更好。其他可能大量消耗资源的操作也同理，比如裁剪或者阴影。
 
 <aside class="alert alert-info" markdown="1">
+
   **Note:** Opacity, clipping, and shadows are not, in themselves, a bad idea.
   However, applying them to the top of the widget tree might cause extra calls to
   `saveLayer`, and needless processing.
@@ -521,12 +525,15 @@ When you encounter calls to `saveLayer`, ask yourself these questions:
 当遇到对 `saveLayer` 的调用时，先问问自己：
 
 * Does the app need this effect?
-   应用是否需要这个效果？
+
+  应用是否需要这个效果？
 
 * Can any of these calls be eliminated?
+
   可以减少调用么？
 
 * Can I apply the same effect to an individual element instead of a group?
+
   可以对单独元素操作而不是一组元素么？
 
 #### Checking for non-cached images
@@ -631,7 +638,7 @@ This dump takes a long time to generate and isn't particularly readable.
   view the render tree in the widget inspector.
   To do so, bring up the widget inspector and select the **Render Tree** tab.
   
-*  `debugDumpRenderTree()`<br>
+   `debugDumpRenderTree()`<br>
   在 widget inspector 中检视渲染树，而不是使用这个参数转储渲染树到文件。
   使用 widget inspector 并选择 **Render Tree** 标签。
   
@@ -643,7 +650,7 @@ This dump takes a long time to generate and isn't particularly readable.
   (for example, a static header), those areas are candidates for adding
   repaint boundaries.
   
-* [`debugRepaintRainbowEnabled`][]<br>
+  [`debugRepaintRainbowEnabled`][]<br>
   可以在 widget inspector 打开 **More Actions** 菜单，并选择 **Show Repaint Rainbow** 来开启这个参数。如果任何静态 widget 在循环七彩跑马灯，（比如说一个静态的头部控件），这些区域就有着额外的重绘边界。
   
 * [`debugPrintMarkNeedsLayoutStack`][]<br>
@@ -653,13 +660,13 @@ This dump takes a long time to generate and isn't particularly readable.
   stack traces showing why each render object is being marked dirty for
   layout.
   
-* [`debugPrintMarkNeedsLayoutStack`][]<br>
+  [`debugPrintMarkNeedsLayoutStack`][]<br>
   如果发现比预期更多的 layout，打开这个参数，（比如说时间轴上、分析文件中、或者是在一个 layout 方法的 `print` 状态内）。开启后，控制台会大量输出堆栈跟踪信息来展示为什么每个渲染对象被 layout 标记为 dirty。
   
 * [`debugPrintMarkNeedsPaintStacks`][]<br>
   Similar to `debugPrintMarkNeedsLayoutStack`, but for excess painting.
   
-* [`debugPrintMarkNeedsPaintStacks`][]<br>
+  [`debugPrintMarkNeedsPaintStacks`][]<br>
   和 `debugPrintMarkNeedsLayoutStack`相似，作用于过度绘制。
 
 You can learn about other debug flags in [Debugging Flutter apps][].
@@ -678,19 +685,19 @@ integration test framework, you can generate metrics to track the following:
 
 * Jank
 
-* 卡顿
+  卡顿
 
 * Download size
 
-* 下载大小
+  下载大小
 
 * Battery efficiency
 
-* 电池性能
+  电池性能
 
 * Startup time
 
-* 启动时间
+  启动时间
 
 Tracking these benchmarks allows you to be informed when a regression is
 introduced that adversely affects performance.
@@ -711,13 +718,27 @@ and debugging in Flutter:
 
 以下链接提供了关于 Flutter 工具的使用和 Flutter 调试的更多信息：
 
-* [Debugging Flutter apps][]
+* Debugging Flutter apps][]
+
+  [调试 Flutter 应用][Debugging Flutter apps]；
+
 * [Widget inspector][]
 * [Flutter Inspector talk][], presented at DartConf 2018
+
+  [Flutter Inspector talk][], 一个在 DartConf 2018 大会的演讲；
+
 * [Why Flutter Uses Dart][], an article on Hackernoon
+
+  [为什么 Flutter 使用 Dart (Why Flutter Uses Dart)][Why Flutter Uses Dart], Hackernoon 专栏的一篇文章
+
 * [Dart DevTools][]: performance tooling for Dart and Flutter apps
+
+  [Dart 开发者工具][Dart DevTools]: Dart 和 Flutter 应用的开发者性能调试工具；
+
 * [Flutter API][] docs, particularly the [PerformanceOverlay][] class, and the
   [dart:developer][] package
+
+  [Flutter API][] 文档, 特别是 [PerformanceOverlay][] 这个类和 [dart:developer][] 这个 package。
 
 [IntelliJ Flutter inspector window]: {% asset tools/android-studio/visual-debugging.png @path %}
 

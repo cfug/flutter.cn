@@ -18,8 +18,6 @@ Flutter 中的动画系统基于 [`Animation`]({{site.api}}/flutter/animation/An
 
 ## Animation
 
-## Animation
-
 The primary building block of the animation system is the
 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html)
 class.  An animation represents a value of a specific type that can change
@@ -28,8 +26,6 @@ receive an `Animation` object as a parameter, from which they read the current
 value of the animation and to which they listen for changes to that value.
 
 动画系统的首要组成部分就是 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html) 类。一个动画表现为可在它的生命周期内发生变化的特定类型的值。大多数需要执行动画的 widgets 都需要接收一个 `Animation` 对象作为参数，从而能从中获取到动画的当前状态值以及应该监听哪些具体值的更改。
-
-### `addListener`
 
 ### `addListener`
 
@@ -61,8 +57,6 @@ that wish to include an animation as part of a larger build function. To use
 
 ### `addStatusListener`
 
-### `addStatusListener`
-
 Animations also provide an
 [`AnimationStatus`]({{site.api}}/flutter/animation/AnimationStatus-class.html),
 which indicates how the animation will evolve over time. Whenever the animation's
@@ -76,8 +70,6 @@ to 1.0 will be `dismissed` when their value is 0.0. An animation might then run
 animation reaches the `completed` status.
 
 动画还提供了一个 [`AnimationStatus`]({{site.api}}/flutter/animation/AnimationStatus-class.html)，表示动画将如何随时间进行变化。每当动画的状态发生变化时，动画都会通知所有通过 [`addStatusListener`]({{site.api}}/flutter/animation/Animation/addStatusListener.html) 添加的监听器。通常情况下，动画会从 `dismissed` 状态开始，表示它处于变化区间的开始点。举例来说，从 0.0 到 1.0 的动画在 `dismissed` 状态时的值应该是 0.0。动画进行的下一状态可能是 `forward`（比如从 0.0 到 1.0）或者 `reverse`（比如从 1.0 到 0.0）。最终，如果动画到达其区间的结束点（比如 1.0），则动画会变成 `completed` 状态。
-
-## Animation&shy;Controller
 
 ## Animation&shy;Controller
 
@@ -146,7 +138,6 @@ with an animation to get a concrete value:
    the tween as well as listen for changes to the value.
 
    你可以用 [`animate`]({{site.api}}/flutter/animation/Animatable/animate.html) 方法处理一个动画。相对于返回单个值，animate 方法返回一个包含补间动画插值的新的 `Animation`。这种方法对于当你想要将新创建的动画提供给另一个 widget 时最有效，它可以直接读取包含补间动画的插值以及监听对应插值的更改。
-
 
 ## Architecture
 
@@ -232,8 +223,6 @@ There are [various concrete implementations]({{site.api}}/flutter/physics/physic
 of the `Simulation` class for different effects.
 
 针对不同的效果，`Simulation` 类有 [各种具体实现]({{site.api}}/flutter/physics/physics-library.html)。
-
-### Animatables
 
 ### Animatables
 

@@ -59,7 +59,10 @@ out](/cookbook/testing/mocking). Unit tests generally don't read from or write
 to disk, render to screen, or receive user actions from outside the process
 running the test.
 
-[_单元测试_] 测试单一的函数，方法或类。单元测试的目标是验证逻辑单元在各种条件下的正确性。被测试单元的外部依赖通常需要[模拟](/cookbook/testing/mocking)。单元测试通常不会读写磁盘，将数据渲染到屏幕，也不会从运行测试进程的外部去接收用户的操作。
+_单元测试_ 测试单一的函数，方法或类。
+单元测试的目标是验证逻辑单元在各种条件下的正确性。
+被测试单元的外部依赖通常需要 [模拟](/cookbook/testing/mocking)。
+单元测试通常不会读写磁盘，将数据渲染到屏幕，也不会从运行测试进程的外部去接收用户的操作。
 
 ### Recipes
 

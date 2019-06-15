@@ -34,8 +34,6 @@ by the Flutter community:
 
 ## setState
 
-## setState
-
 * [Adding interactivity to your Flutter app](/docs/development/ui/interactive),
   a Flutter tutorial
 
@@ -45,8 +43,6 @@ by the Flutter community:
   by Agung Surya
 
   由 Agung Surya 提供的 [Google Flutter 中的基本状态管理]({{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d)
-
-## InheritedWidget &amp; InheritedModel 
 
 ## InheritedWidget &amp; InheritedModel 
 
@@ -75,8 +71,6 @@ by the Flutter community:
   by Didier Bolelens
 
   由 Didier Bolelens 提供的 [Widget - State - Context - InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/)
-
-## Provider &amp; Scoped Model
 
 ## Provider &amp; Scoped Model
 
@@ -113,8 +107,6 @@ by the Flutter community:
   model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
 
   [Flutter 的状态管理&mdash;Scoped Model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
-
-## Redux
 
 ## Redux
 
@@ -157,8 +149,6 @@ by the Flutter community:
 
 ## BLoC / Rx
 
-## BLoC / Rx
-
 * [Architect your Flutter project using BLoC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1),
   by Sagar Suri
 
@@ -174,8 +164,6 @@ by the Flutter community:
 
 ## MobX
 
-## MobX
-
 * [MobX.dart, Hassle free state-management for your Dart and Flutter apps](https://github.com/mobxjs/mobx.dart)
 
   [MobX.dart，为你的 Dart 和 Flutter 应用提供无忧的状态管理](https://github.com/mobxjs/mobx.dart)
@@ -187,8 +175,6 @@ by the Flutter community:
 * [Flutter: State Management with Mobx](https://developer.school/posts/flutter-state-management-with-mobx/) by Paul Halliday
 
   由 Paul Halliday 提供的 [Flutter：使用 Mobx 进行状态管理](https://developer.school/posts/flutter-state-management-with-mobx/)
-
-## Provider
 
 ## Provider
 

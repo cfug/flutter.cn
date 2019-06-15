@@ -132,8 +132,8 @@ demonstrates a fling animation. Select one of the images from
 the grid and zoom in. You can pan the image with flinging or dragging
 gestures.
 
-* [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-在 **材质组件** 下，[网格]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) 示例演示了一个抛物动画。从网格中选取一个图像并放大。您可以通过使用投掷和拖动来平移图像。
+ [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
+在 **Material 组件** 下，[网格]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) 示例演示了一个抛物动画。从网格中选取一个图像并放大。您可以通过使用投掷和拖动来平移图像。
 
 * Also see the API documentation for
   [AnimationController<wbr>.animateWith][AnimationController.animateWith] and

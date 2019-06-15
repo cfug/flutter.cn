@@ -196,8 +196,6 @@ Also see:
 
 * [Listview.builder]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) API
 
-  [Listview.builder]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) API
-
 ###  Build and display frames in 16ms
 
 ### 在 16ms 内渲染完成每一帧

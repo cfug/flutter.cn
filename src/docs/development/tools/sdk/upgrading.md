@@ -46,7 +46,7 @@ If you want to use pub manually, you can run it directly by setting the
 
 {{site.alert.warning}}
 不要使用 `pub get` 或 `pub upgrade` 命令来管理 Flutter apps 的依赖，
-而是使用  `flutter pub get`或 `flutter pub upgrade`。
+而是使用 `flutter pub get`或 `flutter pub upgrade`。
 如果你想手动使用pub，你可以通过设置 `FLUTTER_ROOT` 环境变量来直接运行。
 {{site.alert.end}}
 

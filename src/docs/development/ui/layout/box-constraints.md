@@ -75,7 +75,7 @@ Some boxes _loosen_ the constraints, meaning the maximum is maintained
 but the minimum is removed. For example,
 [`Center`]({{site.api}}/flutter/widgets/Center-class.html).
 
-有些渲染框_放松_了约束，即：约束中只有最大宽度，最大高度，但没有最小宽度，最小高度，例如 [`Center`]({{site.api}}/flutter/widgets/Center-class.html) 。
+有些渲染框**放松**了约束，即：约束中只有最大宽度，最大高度，但没有最小宽度，最小高度，例如 [`Center`]({{site.api}}/flutter/widgets/Center-class.html) 。
 
 Unbounded constraints
 ---------------------
@@ -87,7 +87,7 @@ In certain situations, the constraint that is given to a box is
 _unbounded_, or infinite. This means that either the maximum width or
 the maximum height is set to `double.INFINITY`.
 
-在某些情况下，传递给框的约束是 _无边界_ 的或无限的。这意味着约束的最大宽度或最大高度为`double.INFINITY`。
+在某些情况下，传递给框的约束是 **无边界** 的或无限的。这意味着约束的最大宽度或最大高度为`double.INFINITY`。
 
 A box that tries to be as big as possible won't function usefully when
 given an unbounded constraint and, in debug mode, such a combination

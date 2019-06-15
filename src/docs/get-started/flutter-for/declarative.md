@@ -11,7 +11,7 @@ _This introduction describes the conceptual difference between the
 declaractive style used by Flutter, and the imperative style used by
 many other UI frameworks._
 
-_这篇介绍描述了 Flutter 所使用的声明式 UI 和许多其他 UI 框架所使用的命令式 UI 的概念性差异_
+**这篇介绍描述了 Flutter 所使用的声明式 UI 和许多其他 UI 框架所使用的命令式 UI 的概念性差异**
 
 ## Why a declarative UI?
 ## 为什么是声明式 UI？

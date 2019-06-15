@@ -15,7 +15,7 @@ the code of a live running app without restarting or losing app state.
 Make a change to app source, tell your IDE or command-line tool that you
 want to hot reload, and see the change in your simulator, emulator, or device.
 
-Flutter 通过 _热重载_ 提供快速开发周期，该功能支持应用程序在运行状态下重载代码
+Flutter 通过 **热重载** 提供快速开发周期，该功能支持应用程序在运行状态下重载代码
 而无需重新启动应用程序或者丢失程序运行状态。
 修改一下代码，然后告诉IDE或者命令行工具你需要热重载，
 然后看一下模拟器或者设备上应用的变化
@@ -44,7 +44,7 @@ Flutter 通过 _热重载_ 提供快速开发周期，该功能支持应用程�
     
       Do _not_ stop your app. Let your app run.
       
-      _不要_ 停止应用。保持应用处于运行状态。
+      **不要** 停止应用。保持应用处于运行状态。
       
     {{site.alert.end}}
 

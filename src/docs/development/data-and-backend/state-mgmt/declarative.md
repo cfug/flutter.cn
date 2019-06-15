@@ -26,7 +26,7 @@ it. Flutter is fast enough to do that, even on every frame if needed.
 Flutter is _declarative_. This means that Flutter builds its user interface to 
 reflect the current state of your app:
 
-Flutter 应用是 _声明式_ 的，这也就意味着 Flutter 构建的用户界面就是应用的当前状态。
+Flutter 应用是 **声明式** 的，这也就意味着 Flutter 构建的用户界面就是应用的当前状态。
 
 {% asset development/data-and-backend/state-mgmt/ui-equals-function-of-state alt="A mathematical formula of UI = f(state). 'UI' is the layout on the screen. 'f' is your build methods. 'state' is the application state." %}
 

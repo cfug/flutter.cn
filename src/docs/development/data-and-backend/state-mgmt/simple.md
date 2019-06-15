@@ -34,9 +34,13 @@ reactive frameworks, you will find packages and tutorials listed on the
 
 即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，那么可以在下面这个页面中找到相关的 package 和教程。[这个页面](/docs/development/data-and-backend/state-mgmt/options)。
 
-## Our example {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
+## Our example
 
-## 我们的示例 {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="一个显示正在使用的 Flutter 应用的 gif 动画。它最初的画面是一个登录页面。 用户登录以后转向类别页面，里面有一个商品列表。用户点击了几个商品，被点击的商品会被标注为 " added "。用户点击按钮，然后页面转向购物车视图。可以看到已选的商品都在那。再回到类别页面，所选择的商品也仍然保持 “ added ”。动画结束。" class='site-image-right' %}
+## 示例
+
+{% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
+
+{% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="一个显示正在使用的 Flutter 应用的 gif 动画。它最初的画面是一个登录页面。 用户登录以后转向类别页面，里面有一个商品列表。用户点击了几个商品，被点击的商品会被标注为 " added "。用户点击按钮，然后页面转向购物车视图。可以看到已选的商品都在那。再回到类别页面，所选择的商品也仍然保持 “ added ”。动画结束。" class='site-image-right' %}
 
 For illustration, consider the following simple app.
 

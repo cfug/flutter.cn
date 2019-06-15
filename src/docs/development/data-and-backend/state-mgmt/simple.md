@@ -94,7 +94,7 @@ state of the cart?
 
 In Flutter, it makes sense to keep the state above the widgets that use it.
 
-在 Flutter 中，有必要将存储状态的对象置于控件树中对应 widget 的上层。
+在 Flutter 中，有必要将存储状态的对象置于 widget 树中对应 widget 的上层。
 
 Why? In declarative frameworks like Flutter, if you want to change the UI,
 you have to rebuild it. There is no easy way to have

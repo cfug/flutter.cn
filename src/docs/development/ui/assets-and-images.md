@@ -274,7 +274,7 @@ That is, if `.../my_icon.png` is 72px by 72px, then `.../3.0x/my_icon.png`
 should be 216px by 216px; but they both will render into 72px by 72px
 (in logical pixels) if width and height are not specified.
 
-如果在 `Image` 控件上未指定渲染图像的宽度和高度，通常会扩展资源来保证与主资源相同的屏幕空间量，
+如果在 `Image` widget 上未指定渲染图像的宽度和高度，通常会扩展资源来保证与主资源相同的屏幕空间量，
 并不是相同的物理像素，只是分辨率更高。 换句话说，`.../my_icon.png` 是 72 px 乘 72 px，
 那么 `.../3.0x/my_icon.png` 应该是 216 px 乘 216 px；但如果未指定宽度和高度，
 它们都将渲染为 72 px 乘 72 px（以逻辑像素为单位）。

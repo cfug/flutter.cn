@@ -2305,7 +2305,8 @@ You can find more information and the full code listing in
 [Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input),
 from the [Flutter Cookbook](/docs/cookbook).
 
-你在 [Flutter Cookbook](/docs/cookbook) 的 [Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input) 中可以找到更多的相关内容以及详细的代码列表。
+你在 [Flutter Cookbook](/docs/cookbook) 的 [获取文本框的输入值](/docs/cookbook/forms/retrieve-input) 
+教程中可以找到更多的相关内容以及详细的代码列表。
 
 ### What is the equivalent of a placeholder in a text field?
 ### TextField 中的 placeholder 相当于什么？

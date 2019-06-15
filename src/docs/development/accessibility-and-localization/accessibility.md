@@ -17,17 +17,17 @@ Flutter supports three components for accessibility support:
 * **[Large fonts](#large-fonts)**: Render text widgets with user-specified font
   sizes
 
-  **[大字体](#large-fonts)**: 使用用户指定的字体大小呈现文本控件
+    [大字体](#large-fonts)**: 使用用户指定的字体大小呈现文本 widget 
 
 * **[Screen readers](#screen-readers)**: Communicate spoken feedback about UI
   contents
 
-  **[读屏器](#screen-readers)**: 通过语音反馈传达用户界面的内容
+    [读屏器](#screen-readers)**: 通过语音反馈传达用户界面的内容
 
 * **[Sufficient contrast](#sufficient-contrast)**: Render widgets with colors
   that have sufficient contrast
 
-  **[高对比度](#sufficient-contrast)**:  在渲染控件时，使用具有高对比度的颜色
+    [高对比度](#sufficient-contrast)**: 在渲染 widget 时，使用具有高对比度的颜色
 
 ## Inspecting Accessibility support
 
@@ -91,7 +91,7 @@ Both Android and iOS contain system settings to configure the desired font
 sizes used by apps. Flutter text widgets respect this OS setting when
 determining font sizes.
 
-Android 和 iOS 都包含配置应用程序所需字体大小的系统设置。在确定字体大小时， Flutter 文本控件会遵循当前系统设置。
+Android 和 iOS 都包含配置应用程序所需字体大小的系统设置。在确定字体大小时， Flutter 文本 widget 会遵循当前系统设置。
 
 ### Tips for developers
 
@@ -114,7 +114,8 @@ The following two screenshots show the standard Flutter app template rendered
 with the default iOS font setting, and with the largest font setting selected in
 iOS accessibility settings.
 
-以下两个屏幕截图分别显示了使用默认 iOS 字体设置呈现的标准 Flutter 应用程序，和使用 iOS 辅助功能设置中选择的最大字体设置呈现的 Flutter 应用程序。
+以下两个屏幕截图分别显示了使用默认 iOS 字体设置呈现的标准
+Flutter 应用程序，和使用 iOS 辅助功能设置中选择的最大字体设置呈现的 Flutter 应用程序。
 
 <div class="row">
   <div class="col-md-6">
@@ -132,7 +133,7 @@ iOS accessibility settings.
 Screen readers ([TalkBack][], [VoiceOver][]) enable visually
 impaired users to get spoken feedback about the contents of the screen.
 
-读屏器（[TalkBack](), [VoiceOver]()）可以使视障用户通过语音获得相关的屏幕内容。
+读屏器 ([TalkBack](), [VoiceOver]()) 可以使视障用户通过语音获得相关的屏幕内容。
 
 ### Tips for developers
 
@@ -142,7 +143,8 @@ Turn on VoiceOver or TalkBack on your device and navigate around your app. If
 you run into any issues, use the [Semantics widget][] to customize the
 accessibility experience of your app.
 
-在您的设备上启用 VoiceOver 或 TalkBack 来浏览您的应用。如果遇到任何问题，可以使用[语义控件]()来自定义您应用程序的无障碍体验。
+在您的设备上启用 VoiceOver 或 TalkBack 来浏览您的应用。
+如果遇到任何问题，可以使用[语义 widget][Semantics widget]来自定义您应用程序的无障碍体验。
 
 ## Sufficient contrast
 
@@ -154,20 +156,21 @@ helps all users when viewing an interface on devices in extreme lighting
 conditions, such as when exposed to direct sunlight or on a display with low
 brightness.
 
-高对比度能够使文本和图像更易于阅读。除了使具有各种视觉障碍的用户受益外，高对比度也能够帮助所有用户在极端光照条件下（例如在直射阳光下或在低亮度显示器上）观看设备上的界面。
+高对比度能够使文本和图像更易于阅读。除了使具有各种视觉障碍的用户受益外，
+高对比度也能够帮助所有用户在极端光照条件下 (例如在直射阳光下或在低亮度显示器上) 观看设备上的界面。
 
 The [W3C recommends][]: 
 
-[W3C 建议]():
+[W3C 建议][W3C recommends]:
 
 * At least 4.5:1 for small text (below 18 point regular or 14 point bold)
 
-  小文本至少 4.5：1（低于 18 像素常规或 14 像素粗体）
+  小文本至少 4.5:1 (低于 18 像素常规或 14 像素粗体) 
   
 * At least 3.0:1 for large text (18 point and above regular or 14 point and
   above bold)
 
-  大文本至少 3.0：1（18 像素及以上常规或 14 像素及以上粗体）
+  大文本至少 3.0:1 (18 像素及以上常规或 14 像素及以上粗体) 
 
 
 ### Tips for developers
@@ -181,7 +184,7 @@ Make sure any images you include have sufficient contrast.
 When specifying colors on widgets, make sure sufficient contrast is used between
 foreground and background color selections.
 
-在控件上指定颜色时，请确保在前景色和背景色之间具备足够的对比度。
+在 widget 上指定颜色时，请确保在前景色和背景色之间具备足够的对比度。
 
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
 [Semantics widget]: {{site.api}}/flutter/widgets/Semantics-class.html

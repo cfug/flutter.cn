@@ -478,7 +478,7 @@ In this step, you’ll add a stateful widget, `RandomWords`, which creates
 its `State` class, `RandomWordsState`. You'll then use `RandomWords` as
 a child inside the existing `MyApp` stateless widget.
 
-在这一步，你将添加一个 stateful widget（有状态的控件）—— `RandomWords`，
+在这一步，你将添加一个 stateful widget（有状态的 widget）—— `RandomWords`，
 它会创建自己的状态类 —— `RandomWordsState`，然后你需要将 `RandomWords`
 内嵌到已有的无状态的 `MyApp` widget。
 
@@ -507,7 +507,7 @@ a child inside the existing `MyApp` stateless widget.
     
     注意一下 `State<RandomWords>` 的声明。这表明我们在使用专门用于 `RandomWords` 的 
     [State]({{site.api}}/flutter/widgets/State-class.html) 泛型类。
-    应用的大部分逻辑和状态都在这里 —— 它会维护 RandomWords 控件的状态。
+    应用的大部分逻辑和状态都在这里 —— 它会维护 RandomWords widget 的状态。
     这个类会保存代码生成的单词对，这个单词对列表会随着用户滑动而无限增长，
     另外还会保存用户喜爱的单词对（第二部分），
     也即当用户点击爱心图标的时候会从喜爱的列表中添加或者移除当前单词对。
@@ -771,7 +771,7 @@ lazily, on demand.
 
     更新 RandomWordsState 的 build 方法以使用 _buildSuggestions()，
     而不是直接调用单词生成库，代码更改后如下：
-    （使用 ([Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
+    （使用 [Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
     类实现基础的 Material Design 布局）
 
     <?code-excerpt "lib/main.dart (build)" title region="RWS-build" replace="/(\n  )(return.*|  .*|\);)/$1[!$2!]/g" indent-by="2"?>

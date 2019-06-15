@@ -269,8 +269,10 @@ might in a Xamarin.Forms application. These pages would then hold
 `Element`s to display the various controls. In Xamarin.Forms an `Entry`
 or `Button` are examples of an `Element`.
 
-一个 `ContentPage`、`TabbedPage`、`MasterDetailPage` 就是你可以在 Xamarin.Forms 应用程序中使用的全部页面类型。
-这些页面会控制`元素（Element）`来显示各种控件。在 Xamarin.Forms 中，`Entry` 或者 `Button` 就是一个 `元素` 的示例。
+一个 `ContentPage`、`TabbedPage`、`MasterDetailPage`
+就是你可以在 Xamarin.Forms 应用程序中使用的全部页面类型。
+这些页面会控制`元素（Element）`来显示各种控件。
+在 Xamarin.Forms 中，`Entry` 或者 `Button` 就是一个 `元素` 的示例。
 
 In Flutter, almost everything is a widget. A `Page`, called a `Route` in
 Flutter, is a widget.  Buttons, progress bars, and animation controllers
@@ -309,7 +311,8 @@ In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has
 properties and methods. You update your `Element` by updating a property,
 and this is propagated down to the native control.
 
-在 Xamarin.Forms 中，每一个`页面`或者`元素`都是一个有状态的类，拥有一些属性和方法。通过更新一个属性来更新你的元素，而且这会传递到原生控件。
+在 Xamarin.Forms 中，每一个`页面`或者`元素`都是一个有状态的类，
+拥有一些属性和方法。通过更新一个属性来更新你的元素，而且这会传递到原生控件。
 
 In Flutter, `Widget`s are immutable and you can't directly update them
 by changing a property, instead you have to work with the widget's state.
@@ -798,7 +801,9 @@ It is somewhat similar to implementing a custom control based off a
 `Grid` with numerous `VisualElement`s added in, while extending with
 custom logic.
 
-在 Flutter 中，通过 [组合（composing）](/docs/resources/technical-overview#everythings-a-widget) 更小的 widget（而不是扩展它们）来构建一个自定义 widget。
+在 Flutter 中，通过
+[组合（composing）](/docs/resources/technical-overview#everythings-a-widget)
+更小的 widget（而不是扩展它们）来构建一个自定义 widget。
 这有点类似于基于 `Grid` 实现自定义控件，其中添加了大量 `VisualElement`，同时使用自定义逻辑进行扩展。
 
 For example, how do you build a `CustomButton` that takes a label in

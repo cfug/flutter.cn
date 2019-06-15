@@ -24,7 +24,7 @@ your app's `pubspec.yaml` file must require the Flutter SDK.
 For example, the following snippet specifies that the
 `flutter` and `flutter_test` packages require the Flutter SDK:
 
-例如，下面的片段指定 `flutter`  和  `flutter_test` packages使用Flutter SDK：
+例如，下面的代码段指定了 `flutter` 和 `flutter_test` packages 依赖 Flutter SDK：
 
 ```yaml
 name: hello_world

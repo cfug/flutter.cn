@@ -434,7 +434,7 @@ DevTools 仍在开发中，但可供预览。有关安装和入门说明，查�
 
 ## Flutter 代码编辑提示
 
-If you have additional tips we should share, please [let us know][]!
+If you have additional tips we should share, [let us know][]!
 
 如果你有其他我们应该提供的代码提示建议，请[告诉我们][]!
 
@@ -635,12 +635,12 @@ you can open the Android files as their own project from the start:
 
    打开 flutter 应用根目录下的 `android` 子目录。例如，项目名为 `flutter_app`，则打开 `flutter_app/android`。
 
-If you haven't run your Flutter app yet, you may see Android Studio report a
-build error when you open the `android` project. Run `flutter packages get` in
+If you haven't run your Flutter app yet, you might see Android Studio report a
+build error when you open the `android` project. Run `flutter pub get` in
 the app's root directory and rebuild the project by selecting **Build > Make**
 to fix it.
 
-如果你还未运行过你的 Flutter 应用，可能会在打开 `android` 项目时，看到 Android Studio 构建失败的报告。运行项目根目录的 `flutter packages get`，并通过点击 **Build > Make** 重建项目，可修复该问题。
+如果你还未运行过你的 Flutter 应用，可能会在打开 `android` 项目时，看到 Android Studio 构建失败的报告。运行项目根目录的 `flutter pub get`，并通过点击 **Build > Make** 重建项目，可修复该问题。
 
 ## Editing Android code in IntelliJ IDEA {#edit-android-code}
 
@@ -698,7 +698,7 @@ location of the Android SDK:
 
 ### 已知问题和反馈
 
-Important known issues that may impact your experience are documented
+Important known issues that might impact your experience are documented
 in the [Flutter plugin README][] file.
 
 [Flutter 插件 README][] 文件中记录了可能影响你使用体验的已知重要问题。

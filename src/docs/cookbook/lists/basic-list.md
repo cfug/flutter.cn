@@ -1,8 +1,8 @@
 ---
-title: Basic List
+title: Use lists
 title: 基础列表
 prev:
-  title: Working with cached images
+  title: Work with cached images
   title: 使用缓存图片
   path: /docs/cookbook/images/cached-images
 next:
@@ -11,9 +11,10 @@ next:
   path: /docs/cookbook/lists/horizontal-list
 ---
 
-Displaying lists of data is a fundamental pattern for mobile apps. Flutter
-includes the [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
-Widget to make working with lists a breeze!
+Displaying lists of data is a fundamental pattern for mobile apps.
+Flutter includes the
+[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
+widget to make working with lists a breeze.
 
 用列表展示数据是移动应用开发中较为常用的方式，Flutter 自带的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) Widget 可以帮助你轻松的实现一个列表。
 
@@ -21,10 +22,10 @@ Widget to make working with lists a breeze!
 
 ## 创建一个 ListView
 
-Using the standard `ListView` constructor is perfect for lists that contain only
-a few items. We will also employ the built-in
+Using the standard `ListView` constructor is perfect for lists that
+contain only a few items. The built-in
 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
-Widget to give our items a visual structure.
+widget is a way to give items a visual structure.
 
 使用标准的 `ListView` 构造方法非常适合只有少量数据的列表。我们还将使用内置的 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) Widget 来给我们的条目提供可视化结构。
 

@@ -1,29 +1,28 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
 import 'package:state_mgmt/src/common.dart';
 
 CartModel somehowGetMyCartModel(BuildContext context) {
-  return ScopedModel.of<CartModel>(context, rebuildOnChange: true);
+  return Provider.of<CartModel>(context);
 }
 
 // #docregion model
-class CartModel extends Model {
+class CartModel extends ChangeNotifier {
   /// Internal, private state of the cart.
   final List<Item> _items = [];
 
   /// An unmodifiable view of the items in the cart.
   UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
 
-  /// The current total price of all items (assuming all items cost $1).
-  int get totalPrice => _items.length;
+  /// The current total price of all items (assuming all items cost $42).
+  int get totalPrice => _items.length * 42;
 
   /// Adds [item] to cart. This is the only way to modify the cart from outside.
   void add(Item item) {
     _items.add(item);
-    // This call tells [Model] that it should rebuild the widgets that
-    // depend on it.
+    // This call tells the widgets that are listening to this model to rebuild.
     notifyListeners();
   }
 }
@@ -42,8 +41,8 @@ class MyCartTotalWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // #docregion descendant
-    return ScopedModelDescendant<CartModel>(
-      builder: (context, child, cart) {
+    return Consumer<CartModel>(
+      builder: (context, cart, child) {
         return Text("Total price: ${cart.totalPrice}");
       },
     );

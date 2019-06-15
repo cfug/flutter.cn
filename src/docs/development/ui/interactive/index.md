@@ -1,10 +1,7 @@
 ---
 title: Adding Interactivity to Your Flutter App
-
 title: 为你的 Flutter 应用加入交互体验
-
 short-title: Adding Interactivity
-
 short-title: 交互添加
 ---
 

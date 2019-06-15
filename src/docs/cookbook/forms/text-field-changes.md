@@ -137,12 +137,16 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 {{site.alert.note}}
+
   Remember to dispose of the `TextEditingController` when it's no
   longer needed. This ensures that you discard any resources used
   by the object.
+
+  请在 `TextEditingController` 使用完毕时将其 `dispose` ，
+  从而确保所有被这个对象所使用的资源被释放。
+
 {{site.alert.end}}
 
-注意：请在 `TextEditingController` 使用完毕时将其 `dispose` ，从而确保所有被这个对象所使用的资源被释放。
 
 ### Connect the `TextEditingController` to a text field
 

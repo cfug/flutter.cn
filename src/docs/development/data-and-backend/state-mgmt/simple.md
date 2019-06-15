@@ -116,7 +116,7 @@ void myTapHandler() {
 Even if you get the above code to work, you will then have to deal
 with the following in the `MyCart` widget:
 
-即使你实现了上面的代码，也得处理 `MyCart`  widget 中的代码： 
+即使你实现了上面的代码，也得处理 `MyCart` widget 中的代码：
 
 <!-- skip -->
 ```dart
@@ -144,7 +144,7 @@ construct new widgets in the build methods of their parents,
 if you want to change `contents`, it needs to live in `MyCart`'s
 parent or above.
 
-在 Flutter 中，每次当 widget 内容发生改变的时候，你就需要构造一个新的。你会调用 `MyCart(contents)`（构造函数），而不是 `MyCart.updateWith(somethingNew)`（调用方法）。因为你只能通过父类的 build 方法来构建新 widget ，如果你想修改 `contents`，就需要调用 `MyCart` 的父类甚至更高一级的类。
+在 Flutter 中，每次当 widget 内容发生改变的时候，你就需要构造一个新的。你会调用 `MyCart(contents)`（构造函数），而不是 `MyCart.updateWith(somethingNew)`（调用方法）。因为你只能通过父类的 build 方法来构建新 widget，如果你想修改 `contents`，就需要调用 `MyCart` 的父类甚至更高一级的类。
 
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (myTapHandler)"?>
 ```dart
@@ -253,12 +253,12 @@ because they are a bit low-level for what we're trying to do.
 Instead, we are going to use a package that works with the low-level
 widgets but is simple to use. It's called `provider`.
 
-我们会用一个 package 来和这些底层的 widget 打交道，就是 `provider`  package 。
+我们会用一个 package 来和这些底层的 widget 打交道，就是 `provider` package 。
 
 With `provider`, you don't need to worry about callbacks or
 `InheritedWidgets`. But you do need to understand 3 concepts:
 
-`provider`  package 中，你无须关心回调或者 `InheritedWidgets`。但是你需要理解三个概念：
+`provider` package 中，你无须关心回调或者 `InheritedWidgets`。但是你需要理解三个概念：
 
 * ChangeNotifier
 * ChangeNotifierProvider
@@ -290,17 +290,17 @@ In our shopping app example, we want to manage the state of the cart in a
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
 ```dart
 class CartModel extends [!ChangeNotifier!] {
-  /// Internal, private state of the cart.  内部的，购物车的私有状态
+  /// Internal, private state of the cart. 内部的，购物车的私有状态
   final List<Item> _items = [];
 
-  /// An unmodifiable view of the items in the cart.  购物车里的商品视图无法改变
+  /// An unmodifiable view of the items in the cart. 购物车里的商品视图无法改变
 
   UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
 
-  /// The current total price of all items (assuming all items cost $42).  现在全部商品的总价格（假设他们加起来 $42）
+  /// The current total price of all items (assuming all items cost $42). 现在全部商品的总价格（假设他们加起来 $42）
   int get totalPrice => _items.length * 42;
 
-  /// Adds [item] to cart. This is the only way to modify the cart from outside.  将 [item] 添加到购物车。这是唯一一种能从外部改变购物车的方法。
+  /// Adds [item] to cart. This is the only way to modify the cart from outside. 将 [item] 添加到购物车。这是唯一一种能从外部改变购物车的方法。
   void add(Item item) {
     _items.add(item);
     // This call tells the widgets that are listening to this model to rebuild.
@@ -341,7 +341,7 @@ test('adding item increases total cost', () {
 `ChangeNotifierProvider` is the widget that provides an instance of 
 a `ChangeNotifier` to its descendants. It comes from the `provider` package.
 
-`ChangeNotifierProvider`  widget 可以向其子孙节点暴露一个 `ChangeNotifier` 实例。它属于 `provider` package。
+`ChangeNotifierProvider` widget 可以向其子孙节点暴露一个 `ChangeNotifier` 实例。它属于 `provider` package。
 
 We already know where to put `ChangeNotifierProvider`: above the widgets that
 will need to access it. In the case of `CartModel`, that means somewhere 
@@ -402,7 +402,7 @@ Now that `CartModel` is provided to widgets in our app through the
 
 This is done through the `Consumer` widget.
 
-完成这一步需要通过 `Consumer`  widget 。
+完成这一步需要通过 `Consumer` widget。
 
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (descendant)" replace="/Consumer/[!$&!]/g"?>
 ```dart
@@ -519,7 +519,7 @@ We could use `Consumer<CartModel>` for this,
 but that would be wasteful. We'd be asking the framework to
 rebuild a widget that doesn't need to be rebuilt.
 
-我们可以使用 `Consumer<CartModel>` 来实现这个效果，不过这么实现有点浪费。因为我们让整体框架重构了一个无需重构的 widget 。
+我们可以使用 `Consumer<CartModel>` 来实现这个效果，不过这么实现有点浪费。因为我们让整体框架重构了一个无需重构的 widget。
 
 For this use case, we can use `Provider.of`, with the `listen` parameter
 set to `false`. 

@@ -151,6 +151,7 @@ device name (or the message **No Devices**).
 ![Flutter 设备]({% asset tools/vs-code/device_status_bar.png @path %}){:width="450px"}
 
 {{site.alert.note}}
+
   - If you do not see a Flutter version number or device info your project
     might not have been detected as a Flutter project. Ensure the
     folder that contains your `pubspec.yaml` is inside a VS Code

@@ -251,9 +251,10 @@ but there are many benefits to this approach.
 
 ### What is the equivalent of a `Page` or `Element` in Flutter?
 
-## 在 Flutter 中 `页面（Page）` 与 `元素（Element）`的相同点是什么？ 
+### 在 Flutter 中 `页面（Page）` 与 `元素（Element）`的相同点是什么？
 
 {{site.alert.secondary}}
+
   How is react-style, or _declarative_, programming different than the
   traditional imperative style?
   For a comparison, see [Introduction to declarative
@@ -2003,7 +2004,7 @@ tied to this event. Alternatively you would use the
     handle it in the function. For example, the RaisedButton has an
     `onPressed` parameter:
 
- 1. 如果 widget 支持事件发现（detection），那么可以将函数传递给它并在函数中处理它：
+    如果 widget 支持事件发现（detection），那么可以将函数传递给它并在函数中处理它：
 
     <!-- skip -->
     ```dart
@@ -2021,7 +2022,7 @@ tied to this event. Alternatively you would use the
     widget in a GestureDetector and pass a function to the
     `onTap` parameter.
 
-2. 如果 widget 不支持事件发现，则将 widget 封装在手势检测器（GestureDetector）中，并将函数传递给“onTap”参数。
+   如果 widget 不支持事件发现，则将 widget 封装在手势检测器（GestureDetector）中，并将函数传递给“onTap”参数。
 
     <!-- skip -->
     ```dart
@@ -2045,7 +2046,7 @@ tied to this event. Alternatively you would use the
 
 ### How do I handle other gestures on widgets?
 
-### 我如何处理 widget 上的其他手势?
+### 我如何处理 widget 上的其他手势？
 
 In Xamarin.Forms you would add a `GestureRecognizer` to the
 `VisualElement`. You would normally be limited to `TapGestureRecognizer`,
@@ -2294,7 +2295,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### How do I know which list item has been clicked?
 
-### 如何知道哪个列表项被点击了?
+### 如何知道哪个列表项被点击了？
 
 In Xamarin.Forms, the ListView has an `ItemTapped` method to find out
 which item was clicked. There are many other techniques you might have
@@ -2366,7 +2367,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### How do I update a ListView dynamically?
 
-### 如何动态更新ListView ?
+### 如何动态更新 ListView ?
 
 In Xamarin.Forms, if you bound the `ItemsSource` property to
 an `ObservableCollection` you would just update the list in your
@@ -2652,7 +2653,7 @@ where you can customize many parameters, such as:
 
 ### How do I retrieve user input?
 
-### 如何检索用户输入?
+### 如何检索用户输入？
 
 Xamarin.Forms `element`s allow you to directly query the `element`
 to determine the state of any of its properties,

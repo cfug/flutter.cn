@@ -148,13 +148,16 @@ CustomScrollView(
 ```
 
 {{site.alert.tip}}
+
   Play around with the [various properties you can pass to the `SliverAppBar`
   widget]({{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html),
   and use hot reload to see the results. For example, use an `Image`
   widget for the `flexibleSpace` property to create a background image that
   shrinks in size as it's scrolled offscreen.
-
-试试 [`SliverAppBar` 支持的各种属性]({{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html)，并使用热重载来查看结果。例如，你可以给 `flexibleSpace` 提供一个 `Image` 组件来创建一个背景图像，当它在屏幕外滚动时会缩小尺寸。
+  
+  试试 [`SliverAppBar` 支持的各种属性]({{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html)，
+  并使用热重载来查看结果。例如，你可以给 `flexibleSpace`
+  提供一个 `Image` widget 来创建一个背景图像，当它在屏幕外滚动时会缩小尺寸。
 {{site.alert.end}}
 
 

@@ -45,6 +45,7 @@ can also be internationalized using the same classes and logic.
 和大多数应用一样，下面的教程主要都是使用 Flutter MaterialApp 类编写。那些使用更底层的 WidgetsApp 类编写的应用也能通过使用相同的类和逻辑来进行国际化。
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">Sample internationalized apps</h4>
   
   <h4 class="no_toc">国际化的 app 示例</h4>

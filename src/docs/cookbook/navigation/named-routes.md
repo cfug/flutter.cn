@@ -147,10 +147,11 @@ MaterialApp(
 ```
 
 {{site.alert.warning}}
-  When using `initialRoute`, **don't** define a `home` property.
-{{site.alert.end}}
 
-注意：当使用 `initialRoute` 时，需要确保你没有同时定义 `home` 属性。
+  When using `initialRoute`, **don't** define a `home` property.
+
+  当使用 `initialRoute` 时，需要确保你没有同时定义 `home` 属性。
+{{site.alert.end}}
 
 ## 3. Navigate to the second screen
 

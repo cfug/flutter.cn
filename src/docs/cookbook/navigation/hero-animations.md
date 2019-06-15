@@ -51,6 +51,7 @@ handle animations in the next steps.
 在这个示例中，将在两个页面中展示相同的图片。当用户在第一个页面点击图片，会通过一个转场动画切换到第二个页面。现在，我们将会创建页面的视觉结构，并在后续步骤中处理动画。
 
 {{site.alert.note}}
+
   This example builds upon the
   [Navigate to a new screen and
   back](/docs/cookbook/navigation/navigation-basics)
@@ -162,13 +163,17 @@ Hero(
 ```
 
 {{site.alert.note}}
+
   This code is identical to what you have on the first screen.
   As a best practice, create a reusable widget instead of
   repeating code. This example uses identical code for both
   widgets, for simplicity.
-{{site.alert.end}}
 
-提示： 这份代码和第一个页面中的代码是相同的。实际上，可以创建一个可复用的组件来代替这些重复的代码。但是在这个示例中，重复的代码会更易于讲解和演示。
+  这份代码和第一个页面中的代码是相同的。
+  实际上，可以创建一个可复用的组件来代替这些重复的代码。
+  但是在这个示例中，重复的代码会更易于讲解和演示。
+  
+{{site.alert.end}}
 
 ## Complete example
 

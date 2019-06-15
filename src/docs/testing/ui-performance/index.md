@@ -8,6 +8,7 @@ description: 诊断 Flutter 里的 UI 性能问题。
 ---
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What you’ll learn</h4>
 
   <h4 class="no_toc">你将学到</h4>
@@ -67,6 +68,7 @@ choose the slowest device that your users might use.
 
 {% comment %}
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What's the point?</h4>
 
   <h4 class="no_toc">重点是</h4>
@@ -398,6 +400,7 @@ cached images.
 可能读者已经对 Flutter Gallery 样例应用相当熟悉了。要在 Flutter Gallery 中使用性能图层，请使用与 Flutter 一起安装的 [examples][] 目录的副本在分析模式下运行应用。应用的代码中已经写好了通过应用菜单动态触发图层，同时允许对 `saveLayer` 的调用和当前已缓存的图片的检查。
 
 {{site.alert.note}}
+
   You can’t enable the performance overlay in the Flutter
   Gallery app downloaded from the App Store. That version of the app
   is compiled to release mode (not profile mode), and doesn’t provide
@@ -427,6 +430,7 @@ basis.
 Dart DevTool 提供诸如性能分析、堆测试以及显示代码覆盖率等功能。DevTool 的 _timeline_ 界面可以让开发者逐帧分析应用的 UI 性能。
 
 {{site.alert.note}}
+
   Observatory is being replaced by Dart DevTools.
   This browser-based tool is still in development but is available to preview. For
   installation and getting started instructions, see the [DevTools' docs][].

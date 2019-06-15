@@ -187,6 +187,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 ```
 
 {{site.alert.warning}}
+
   If you do not initialize the `CameraController`,
   you *cannot* use the camera to display a preview and take pictures.
 
@@ -204,12 +205,15 @@ display a preview of the camera's feed.
 接着，你能够使用 `camera` 中的 `CameraPreview` 组件来展示相机预览帧流。
 
 {{site.alert.secondary}}
+
   **Remember** You must wait until the controller has finished
   initializing before working with the camera. Therefore,
   you must wait for the `_initializeControllerFuture()` created
   in the previous step to complete before showing a `CameraPreview`.
   
-  **请记住**： 在使用相机前，请确保控制器已经完成初始化。因此，你一定要等待前一个步骤创建 `_initializeControllerFuture()` 执行完毕才去展示 `CameraPreview`。
+  **请记住**： 在使用相机前，请确保控制器已经完成初始化。
+  因此，你一定要等待前一个步骤创建 `_initializeControllerFuture()`
+  执行完毕才去展示 `CameraPreview`。
   
 {{site.alert.end}}
 

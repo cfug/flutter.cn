@@ -41,37 +41,14 @@ This recipe uses the following steps:
 
 步骤：
 
-  1. Add the dependencies.
-  
-     添加依赖；
-  	
-  2. Define the `Dog` data model.
-  	 
-  	 定义 `Dog（狗）` 数据模型；
-     
-  3. Open the database.
-     
-     打开数据库；
-     
-  4. Create the `dogs` table.
-  
-  	 创建 `dogs` 数据表；
-  
-  5. Insert a `Dog` into the database.
-  
-     将一条 `Dog` 数据插入数据库；
-  
-  6. Retrieve the list of dogs.
-  
-     查询所有狗狗的数据；
-     
-  7. Update a `Dog` in the database.
-     
-     更新（修改）一条 `Dog` 的数据；
-  	
-  7. Delete a `Dog` from the database.
-     
-     删除一条 `Dog` 的数据。
+1. 添加依赖
+1. 定义 `Dog（狗）` 数据模型；
+1. 打开数据库；
+1. 创建 `dogs` 数据表；
+1. 将一条 `Dog` 数据插入数据库；
+1. 查询所有狗狗的数据；
+1. 更新（修改）一条 `Dog` 的数据；
+1. 删除一条 `Dog` 的数据。
 
 ## 1. Add the dependencies
 
@@ -391,7 +368,6 @@ print(await dogs()); // Prints Fido with age 42.
   
 {{site.alert.end}}
 
-
 ## 8. Delete a `Dog` from the database
 
 ## 8. 删除一条 `Dog` 的数据
@@ -438,21 +414,21 @@ To run the example:
 
 运行示例需要以下几步：
 
-  1. Create a new Flutter project.
-  
-  	 创建一个新的 Flutter 工程；
+1. Create a new Flutter project.
+   
+   创建一个新的 Flutter 工程；
   	 
-  2. Add the `sqfite` and `path` packages to your `pubspec.yaml`.
+2. Add the `sqfite` and `path` packages to your `pubspec.yaml`.
+   
+   将 `sqfite` 和 `path` 包添加到 `pubspec.yaml` 文件里；
   
-     将 `sqfite` 和 `path` 包添加到 `pubspec.yaml` 文件里；
+3. Paste the following code into a new file called `lib/db_test.dart`.
   
-  3. Paste the following code into a new file called `lib/db_test.dart`.
+   将以下代码粘贴在 `lib/db_test.dart` 文件里（若无则新建，若有则覆盖）；
   
-     将以下代码粘贴在 `lib/db_test.dart` 文件里（若无则新建，若有则覆盖）；
+4. Run the code with `flutter run lib/db_test.dart`.
   
-  4. Run the code with `flutter run lib/db_test.dart`.
-  
-     运行 `flutter run lib/db_test.dart`。
+   运行 `flutter run lib/db_test.dart`。
 
 ```dart
 import 'dart:async';

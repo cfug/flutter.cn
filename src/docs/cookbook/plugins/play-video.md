@@ -140,7 +140,9 @@ permissions, create a `VideoPlayerController`. The
 `VideoPlayerController` class allows you to connect to different types of
 videos and control playback.
 
-`video_player` 插件成功安装且权限设置完成后，需要创建一个 `VideoPlayerController`。`VideoPlayerController` 类允许你播放不同类型的视频并进行播放控制。
+`video_player` 插件成功安装且权限设置完成后，
+需要创建一个 `VideoPlayerController`。
+`VideoPlayerController` 类允许你播放不同类型的视频并进行播放控制。
 
 Before you can play videos, you must also `initialize` the controller.
 This establishes the connection to the video and prepare the
@@ -154,7 +156,7 @@ To create and initialize the `VideoPlayerController` do the following:
 
   1. Create a `StatefulWidget` with a companion `State` class 
 
-    创建一个 `StatefulWidget` 组件和 `State` 类
+     创建一个 `StatefulWidget` 组件和 `State` 类
 
   2. Add a variable to the `State` class to store the `VideoPlayerController`
 

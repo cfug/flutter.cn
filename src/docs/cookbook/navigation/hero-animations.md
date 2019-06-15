@@ -116,14 +116,11 @@ The `Hero` widget requires two arguments:
 <dl>
   <dt>`tag`</dt>
   
-  <dd>An object that identifies the `Hero`.
-      It must be the same on both screens.</dd>
-  <dd>作为 `Hero` 组件的标识，在这两个页面中必须相同</dd>      
+  <dd>An object that identifies the `Hero`. It must be the same on both screens.</dd><dd>作为 `Hero` 组件的标识，在这两个页面中必须相同</dd>      
 
   <dt>`child`</dt>
   
-  <dd>The widget to animate across screens.</dd>
-  <dd>被施予动画的组件 </dd>
+  <dd>The widget to animate across screens.</dd><dd>被施予动画的 widget</dd>
   
 </dl>
 

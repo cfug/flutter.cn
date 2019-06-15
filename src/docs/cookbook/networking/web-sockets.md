@@ -169,7 +169,7 @@ channel.sink.close();
 
 ## Complete example
 
-## 完整代码
+## 完整样例
 
 ```dart
 import 'package:flutter/foundation.dart';

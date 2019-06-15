@@ -228,7 +228,7 @@ extrapolate outlines for the requested weight and style.
 
 ## Complete example
 
-## 一个完整的例子
+## 完整样例
 
 ### Fonts
 

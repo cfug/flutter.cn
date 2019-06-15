@@ -239,7 +239,7 @@ the project contains two files:
 
 ### Complete example
 
-### 完整示例
+### 完整样例
 
 ```dart
 import 'package:flutter_driver/flutter_driver.dart';

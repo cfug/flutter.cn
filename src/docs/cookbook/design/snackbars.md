@@ -137,7 +137,7 @@ final snackBar = SnackBar(
 
 ## Complete example
 
-## 完整示例
+## 完整样例
 {{site.alert.note}}
 
   In this example, the SnackBar displays when a user taps a button.

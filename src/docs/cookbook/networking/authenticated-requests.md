@@ -42,7 +42,7 @@ Future<http.Response> fetchPost() {
 
 ## Complete example
 
-## 完整示例
+## 完整样例
 
 This example builds upon the [Fetching data from the
 internet](/docs/cookbook/networking/fetch-data) recipe.

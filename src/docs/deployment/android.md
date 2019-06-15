@@ -7,8 +7,12 @@ description: 如何打包把 App 发布到 Play 商店。
 ---
 
 {{site.alert.warning}}
+
   This page describes the Android release process as of the
   1.7.4 release of the Flutter SDK.
+  
+  本页面描述的 Android 发布流程基于 1.7.4 版本之后的 Flutter SDK。
+  
 {{site.alert.end}}
 
 During a typical development cycle,
@@ -32,15 +36,41 @@ This page covers the following topics:
 本页面的内容包含如下主题：
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
+
+  [添加启动图标](#adding-a-launcher-icon)
+  
 * [Signing the app](#signing-the-app)
+
+  [创建一个密钥库](#signing-the-app)
+  
 * [Enabling Proguard](#enabling-proguard)
+
+  [启用混淆器](#enabling-proguard)
+
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
+
+  [检查 app manifest 文件](#reviewing-the-app-manifest)
+
 * [Reviewing the build configuration](#reviewing-the-build-configuration)
+
+  [检查构建配置](#reviewing-the-build-configuration)
+
 * [Building the app for release](#building-the-app-for-release)
+
+  [为发布构建应用程序](#building-the-app-for-release)
+
 * [Publishing to the Google Play Store](#publishing-to-the-google-play-store)
+
+  [发布到 Google Play Store](#publishing-to-the-google-play-store)
+
 * [Android release FAQ](#android-release-faq)
 
+  [安卓发布常见问题](#android-release-faq)
+
+
 ## Adding a launcher icon
+
+## 添加启动图标
 
 When a new Flutter app is created, it has a default launcher icon.
 To customize this icon, you might want to check out the
@@ -133,6 +163,8 @@ keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000
 
 ### Reference the keystore from the app
 
+### 从 app 中引用密钥库
+
 Create a file named `<app dir>/android/key.properties`
 that contains a reference to your keystore:
 
@@ -166,9 +198,8 @@ Configure signing for your app by editing the
 
 
 <ol markdown="1">
-<li markdown="1">Replace the following:
 
-<li markdown="1">替换如下内容，
+<li markdown="1">将如下内容：
 ```
    android {
 ```
@@ -188,9 +219,7 @@ Configure signing for your app by editing the
 ```
 </li>
 
-<li markdown="1"> Replace the following:
-
-<li markdown="1"> 替换如下内容，
+<li markdown="1"> 将如下内容：
 
 ```
    buildTypes {
@@ -231,7 +260,7 @@ Release builds of your app will now be signed automatically.
 
 ## Enabling Proguard
 
-## 启用 Proguard
+## 启用混淆器
 
 By default, Flutter does not obfuscate or minify the Android host.
 If you intend to use third-party Java, Kotlin, or Android libraries,
@@ -313,6 +342,9 @@ android {
 {{site.alert.note}}
   Obfuscation and minification can considerably extend compile time
   of the Android application.
+  
+  混淆和压缩会大大地延长安卓应用程序的编译时间。
+  
 {{site.alert.end}}
 
 ## Reviewing the app manifest
@@ -376,19 +408,33 @@ especially:
 
 ## Building the app for release
 
+## 为发布构建应用程序
+
 You have two possible release formats when publishing to
 the Play Store.
 
+当要发布到 Play Store 时，你有两种可能的发布方式
+
 * App bundle (preferred)
+  
+  App bundle (推荐）
+  
 * APK
 
 {{site.alert.note}}
   The Google Play Store prefers the app bundle format.
   For more information, see [Android App Bundle][bundle] and
   [About Android App Bundles][bundle2].
+  
+  Google Play Store 更推荐 app bundle 方式.
+  更多信息可以参考 [Android App Bundle][bundle] and
+  [About Android App Bundles][bundle2].
+  
 {{site.alert.end}}
 
 ### Build an app bundle
+
+### 构建一个 app bundle
 
 This section describes how to build a release app bundle.
 If you completed the signing steps,
@@ -415,38 +461,71 @@ From the command line:
 The release bundle for your app is created at
 `<app dir>/build/app/outputs/bundle/release/app.aab`.
 
+你的应用的 release bundle 会被创建到
+`<app dir>/build/app/outputs/bundle/release/app.aab`.
+
 By default, the app bundle contains your Dart code and the Flutter
 runtime compiled for [armeabi-v7a][] (32-bit) and [arm64-v8a][] (64-bit).
 
+此 app bundle 会默认地包含为 [armeabi-v7a][] (32-bit) 和 [arm64-v8a][] (64-bit) 编译的 Dart 和 Fluter 运行时代码。
+
 ### Test the app bundle
+
+### 测试 app bundle
 
 An app bundle can be tested in multiple ways&mdash;this section
 describes two.
 
+一个 app bundle 可以用多种方法测试，这里介绍两种。
+
 #### Offline using the bundle tool
+
+#### 离线使用 bundle tool
 
 1. If you haven't done so already, download `bundletool` from the
    [GitHub repository][].
-1. [Generate a set of APKs][apk-set] from your app bundle.
-1. [Deploy the APKs][apk-deploy] to connected devices.
+   
+   如果你还没准备好，可以从 [GitHub repository][] 下载 `bundletool`
+   
+2. [Generate a set of APKs][apk-set] from your app bundle.
+
+   从你的 app bundle [Generate a set of APKs][apk-set]
+
+3. [Deploy the APKs][apk-deploy] to connected devices.
+
+  [Deploy the APKs][apk-deploy] 连接到你的设备
 
 #### Online using Google Play
+
+#### 在线使用 Google Play
 
 1. Upload your bundle to Google Play to test it.
    You can use the internal test track,
    or the alpha or beta channels to test the bundle before
    releasing it in production.
+   
+   上传你的 bundle 到 Google Play 去测试它。或者在正式发布之前用 alpha 或 beta 频道去测试。
+   
 2. Follow [these steps to upload your bundle][upload-bundle]
    to the Play Store.
+   
+   按照 [these steps to upload your bundle][upload-bundle] 上传到 Play Store。
 
 ### Build an APK
+
+### 构建一个 APK
 
 Although app bundles are preferred over APKs, there are stores
 that don't yet support app bundles. In this case, build a release
 APK for each target ABI (Application Binary Interface).
 
+虽然 app bundle 比 APKs 更被推荐使用， 但是有一些 Store 目前还不支持 app bundle方式。
+这种情况下，要为各种目标 ABI (Application Binary Interface) 分别构建发布的 APK 文件。
+
 If you completed the signing steps,
 the APK will be signed.
+
+如果你完成签名步骤， APK 就被签名了。
 
 From the command line:
 
@@ -464,6 +543,8 @@ From the command line:
 
 This command results in two APK files:
 
+这个命令会生成两个 APK 文件：
+
 * `<app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
 * `<app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
 
@@ -472,7 +553,12 @@ your code compiled for _all_ the target ABIs. Such APKs are larger in
 size than their split counterparts, causing the user to download
 native binaries that are not applicable to their device's architecture.
 
+如果移除 `--split-per-abi` 将会生成一个包含_所有_目标 ABI 的 fat APK 文件。这种 APK 文件将会在
+比单独构建的 APK 文件尺寸要大，会导致用户下载一些不适用于其设备架构的二进制文件。
+
 ### Install an APK on a device
+
+### 在设备上安装 APK 文件
 
 Follow these steps to install the APK on a connected Android device.
 
@@ -496,6 +582,8 @@ From the command line:
 
 ## Publishing to the Google Play Store
 
+## 发布到 Google Play Store
+
 For detailed instructions on publishing your app to the Google Play Store,
 see the [Google Play launch][play] documentation.
 
@@ -504,10 +592,16 @@ see the [Google Play launch][play] documentation.
 
 ## Android release FAQ
 
+## 安卓发布常见问题
+
 Here are some commonly asked questions about deployment for
 Android apps.
 
+这里是一些关于安卓应用程序发布的常见问题。
+
 ### When should I build app bundles versus APKs?
+
+### 我应该什么时候构建 app bundles 而不是 APKs?
 
 The Google Play Store recommends that you deploy app bundles
 over APKs because they allow a more efficient delivery of the
@@ -515,7 +609,12 @@ application to your users. However, if you’re distributing
 your application by means other than the Play Store,
 an APK may be your only option.
 
+Google Play Store 相对于 APKs 更建议你发布 app bundles， 因为那样应用程序会更有效率地
+交付给你的用户。但是，如果你想将应用程序发布到其他的应用商店， APK可能是唯一选项。
+
 ### What is a fat APK?
+
+### 什么是 fat APK?
 
 A [fat APK][] is a single APK that contains binaries for multiple
 ABIs embedded within it. This has the benefit that the single APK
@@ -525,35 +624,55 @@ causing users to download and store more bytes when installing
 your application. When building APKs instead of app bundles,
 it is strongly recommended to build split APKs,
 as described in [build an APK](#build-an-apk) using the
-`--split-per-abi` flag.
+`--split-per-abi` .
+
+一个 [fat APK][] 是一个包含了支持多个 ABI 架构的 APK 文件。这样做的好处是单个 APK 可以运行在多个架构上，因此
+具有更广泛的兼容性。但同时缺点就是文件体积会比较大，导致用户在安装你的应用程序时会下载和储存更多的字节。当构建 APKs 而不是
+app bundles 时强烈建议分开构建 APKs，如 [build an APK](#build-an-apk) 所描述的那样，使用 `--split-per-abi` 指令。
 
 ### What are the supported target architectures?
+
+### 哪些目标架构是被支持的?
 
 When building your application in release mode,
 Flutter apps can be compiled for [armeabi-v7a][] (32-bit)
 and [arm64-v8a][] (64-bit). Flutter does not currently support
 building for x86 Android (See [Issue 9253][]).
 
+当使用 release 模式构建你的应用程序时, Flutter app 可以基于 [armeabi-v7a][] (32-bit)
+和 [arm64-v8a][] (64-bit)被编译。Flutter 目前不支持 x86 Android (参考 [Issue 9253][]).
+
 ### How do I sign the app bundle created by `flutter build appbundle`?
+
+### 如何为一个使用 `flutter build appbundle` 创建的 app bundle 签名？
 
 See [Signing the app](#signing-the-app).
 
 ### How do I build a release from within Android Studio?
 
+### 如何使用 Android Studio 构建一个发布？
+
 In Android Studio, open the existing `android/`
 folder under your app’s folder. Then,
 select **build.gradle (Module: app)** in the project panel:
 
-{% asset deployment/android/gradle-script-menu.png alt='screenshot of gradle build script menu' %}
+在Android Studio中, 打开你的 app 文件夹下的 `android/`
+文件夹. 然后在项目面板中选择 **build.gradle (Module: app)** :
+
+{% asset 'deployment/android/gradle-script-menu.png' alt='screenshot of gradle build script menu' %}
 
 Next, select the build variant. Click **Build > Select Build Variant**
 in the main menu. Select any of the variants in the **Build Variants**
 panel (debug is the default):
 
-{% asset deployment/android/build-variant-menu.png alt='screenshot of build variant menu' %}
+接下来，选择构建变体。在主菜单中点击 **Build > Select Build Variant**。从 **Build Variants** 面板中选择任意一个变体 （默认是 debug）。
+
+{% asset 'deployment/android/build-variant-menu.png' alt='screenshot of build variant menu' %}
 
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.
+
+生成的 app bundle 或 APK 文件会在你的 app 所在文件夹下的 `build/app/outputs` 文件夹下。
 
 {% comment %}
 ### Are there any special considerations with add-to-app?

@@ -215,7 +215,7 @@ a `Future` or `http.Response` between isolates.
 
 ## Complete example
 
-## 完整示例
+## 完整样例
 
 ```dart
 import 'dart:async';

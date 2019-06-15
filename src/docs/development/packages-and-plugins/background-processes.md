@@ -18,7 +18,7 @@ conventional thread in that it doesn’t share memory with the main program.
 You’ll set up your isolate for background execution using callbacks and
 a callback dispatcher.
 
-这个功能的机制主要是设置一个 isolate。_isolate_ 是 Dart 中的多线程模型，不过其与传统线程的不同之处在于它不与主进程共享内存。
+这个功能的机制主要是设置一个 isolate。**isolate** 是 Dart 中的多线程模型，不过其与传统线程的不同之处在于它不与主进程共享内存。
 你可以使用回调和回调调度器来设置 isolate，从而使应用被切换进后台时仍能执行一些业务。
 
 For more information and a geofencing example that uses background

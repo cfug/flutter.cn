@@ -157,7 +157,7 @@ Ways to avoid calls to `saveLayer()`:
   For more information, see
   [Opacity]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image).
 
-  要在图像中实现淡入淡出，请考虑使用FadeInImage小部件，该小部件使用GPU的片段着色器应用渐变不透明度。
+  要在图像中实现淡入淡出，请考虑使用 FadeInImage 小部件，该小部件使用 GPU 的片段着色器应用渐变不透明度。
   了解更多详情，请参见 [Opacity]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image)。
 
 * To create a rectangle with rounded corners, instead of applying a
@@ -209,7 +209,7 @@ If missing frames (jankyness) is a concern, then 16ms for each of
 the build and render stages is OK.
 
 由于构建和渲染有两个独立的线程，因此构建时间为 16ms，60Hz 显示器上渲染时间为 16ms。
-如果需要考虑延迟，就要在 16ms _或更短_ 的时间内构建和显示帧。
+如果需要考虑延迟，就要在 16ms **或更短** 的时间内构建和显示帧。
 请注意，这意味着构建需要少于 8ms，渲染也需要少于 8ms，总计 16ms 或更短。
 如果需要考虑丢帧（jankyness），那么每个构建和渲染阶段的 16ms 都可以。
 

@@ -49,7 +49,7 @@ The examples assume:
 How is react-style, or _declarative_, programming different than the
 traditional imperative style?
 
-react-style 或 _声明式_ 编程与传统的命令式风格有何不同？
+react-style 或 **声明式** 编程与传统的命令式风格有何不同？
 
 For a comparison, see [Introduction to declarative
 UI](/docs/get-started/flutter-for/declarative).

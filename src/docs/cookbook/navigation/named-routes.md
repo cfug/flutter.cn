@@ -25,7 +25,7 @@ of your app, this approach can result in code duplication.
 The solution is to define a _named route_,
 and use the named route for navigation.
 
-然而，如果我们需要在应用的很多地方导航到同一界面，这样做就会导致代码重复。在这种情况下，定义_命名路由(named route)_并使用它进行导航就会非常方便。
+然而，如果我们需要在应用的很多地方导航到同一界面，这样做就会导致代码重复。在这种情况下，定义**命名路由(named route)**并使用它进行导航就会非常方便。
 
 To work with named routes, use the
 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
@@ -206,7 +206,7 @@ onPressed: () {
 
 ## Complete example
 
-## 完整示例
+## 完整样例
 
 ```dart
 import 'package:flutter/material.dart';

@@ -79,7 +79,7 @@ GestureDetector(
 
 ## Complete example
 
-## 完整代码
+## 完整样例
 
 ```dart
 import 'package:flutter/material.dart';

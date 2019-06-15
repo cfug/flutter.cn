@@ -581,7 +581,7 @@ obtain the size report from there.
 
 ## Capabilities
 
-## Capabilities
+## 赋能
 
 ### What kind of app performance can I expect?
 
@@ -610,7 +610,6 @@ from the home screen after every reload.
 
 另外，Flutter 的热重载是有状态的 (stateful)，这意味着重新加载后 app 的状态会被保留。这样即使您修改的界面在应用很深的位置，重载后您也能直接看到修改后的该界面，而无需从应用首页开始重新操作。
 
-
 ### How is 'hot reload' different from 'hot restart'?
 
 ### 热重载 (hot reload) 相比较热重启 (hot restart) 的区别在哪里？
@@ -637,7 +636,6 @@ types of code changes cannot be hot reloaded though:
 See [Using Hot Reload](/docs/development/tools/hot-reload) for additional details.
 
 更多关于热重载的详细信息，请查看 [Using Hot Reload](/docs/development/tools/hot-reload)。
-
 
 ### Where can I deploy my Flutter app?
 
@@ -950,7 +948,7 @@ Chromebooks]({{site.github}}/flutter/flutter/labels/platform-arc).
 
 ## Framework
 
-## Framework
+## 框架
 
 ### Why is the build() method on State, not StatefulWidget?
 
@@ -1193,7 +1191,7 @@ lay out an entire scene with a single pass.
 
 ## Project
 
-## Project
+## 工程管理
 
 ### Where can I get support?
 

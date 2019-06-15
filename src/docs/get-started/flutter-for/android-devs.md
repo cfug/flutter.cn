@@ -86,7 +86,7 @@ platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.
 including iOS.
 
 Flutter 支持 [Material Components]({{site.material}}/develop/flutter) 库。
-它提供实现了 [Material Design 设计规范]({{site.material}}/design) 的控件。
+它提供实现了 [Material Design 设计规范]({{site.material}}/design) 的 widgets。
 Meterial Design 是一套 [为所有平台优化]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines) （包括 iOS）的灵活的设计系统。
 
 
@@ -284,7 +284,7 @@ catalog](/docs/development/ui/widgets/layout).
 
 ### How do I add or remove a component from my layout?
 
-## 如何在布局中添加或删除一个组件？
+### 如何在布局中添加或删除一个组件？
 
 In Android, you call `addChild()` or `removeChild()` on a parent to dynamically
 add or remove child views. In Flutter, because widgets are immutable there is
@@ -1766,7 +1766,7 @@ linearly&mdash;either horizontally or vertically.
 In Flutter, use the Row widget or Column
 widget to achieve the same result.
 
-在 Android 中，LinearLayout 用于线性布局你的控件&mdash;水平或者垂直。
+在 Android 中，LinearLayout 用于线性布局 widget 的&mdash;水平或者垂直。
 在 Flutter 中，使用 Row 或者 Column Widget 来实现相同的效果。
 
 If you notice the two code samples are identical with the exception of the
@@ -1845,7 +1845,7 @@ Collin 在 [StackOverflow]({{site.so}}/questions/44396075/equivalent-of-relative
 In Android, use a ScrollView to lay out your widgets&mdash;if the user's
 device has a smaller screen than your content, it scrolls.
 
-在 Android 中，使用 ScrollView 布局控件&mdash;如果用户的设备屏幕比应用的内容区域小，用户可以滑动内容。
+在 Android 中，使用 ScrollView 布局 widget&mdash;如果用户的设备屏幕比应用的内容区域小，用户可以滑动内容。
 
 In Flutter, the easiest way to do this is using the ListView widget. This might
 seem like overkill coming from Android, but in Flutter a ListView widget is

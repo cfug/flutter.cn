@@ -18,7 +18,8 @@ For example, an app might have a screen that displays products.
 When the user taps the image of a product, a new screen displays
 details about the product.
 
-我们通常会用“屏”来表示应用的不同页面（界面），比如，某个应用有一“屏”展示商品列表，当用户点击某个商品的图片，会跳到新的一“屏”展示商品的详细信息。
+我们通常会用“屏”来表示应用的不同页面（界面）。
+比如，某个应用有一“屏”展示商品列表，当用户点击某个商品的图片，会跳到新的一“屏”展示商品的详细信息。
 
 {{site.alert.secondary}}
 
@@ -34,7 +35,7 @@ In Android, a route is equivalent to an Activity.
 In iOS, a route is equivalent to a ViewController.
 In Flutter, a route is just a widget.
 
-在 Android 开发中，Activity 相当于“路由” , 在 iOS 开发中，ViewController 相当于“路由”。
+在 Android 开发中，Activity 相当于“路由”，在 iOS 开发中，ViewController 相当于“路由”。
 在 Flutter 中，“路由”也是一个 Widget。
 
 Navigate to a new route using the

@@ -33,25 +33,25 @@ The `flutter_test` package provides the following tools for testing widgets:
     which allows building and interacting with widgets in a test
     environment.
   
-  * [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html)，使用该工具可在测试环境下建立 Widget 并与其交互。
+    [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html)，使用该工具可在测试环境下建立 Widget 并与其交互。
   
   * The [`testWidgets()`]({{api}}/flutter_test/testWidgets.html)
     function, which automatically creates a new `WidgetTester` for
     each test case, and is used in place of the normal `test()` function.
   
-  * [`testWidgets`]({{api}}/flutter_test/testWidgets.html) 函数，此函数会自动为每个测试创建一个 `WidgetTester`，用来代替普通的 `test` 函数。
+    [`testWidgets`]({{api}}/flutter_test/testWidgets.html) 函数，此函数会自动为每个测试创建一个 `WidgetTester`，用来代替普通的 `test` 函数。
      
   * [`Finder`]({{api}}/flutter_test/Finder-class.html)
   classes. These allow us to search for Widgets in the test environment.
   
-  * [`Finder`]({{api}}/flutter_test/Finder-class.html) 类，允许我们在测试环境下查找 Widget。
+    [`Finder`]({{api}}/flutter_test/Finder-class.html) 类，允许我们在测试环境下查找 Widget。
     
   * Widget-specific
     [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html)
     constants, which help verify whether a `Finder` locates a widget or
     multiple widgets in the test environment.
   
-  * Widget-specific [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html) 常量，该常量在测试环境下帮助我们验证 `Finder` 是否定位到一个或多个 Widgets。
+    Widget-specific [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html) 常量，该常量在测试环境下帮助我们验证 `Finder` 是否定位到一个或多个 Widgets。
 
 If this sounds overwhelming, don't worry. Learn how all of these pieces fit
 together throughout this recipe, which uses the following steps:
@@ -211,15 +211,17 @@ Use one of the following methods to ask Flutter to rebuild the widget.
 
 例如，如果我们点击调用 `setState` 的按钮，在测试环境中，Flutter 并不会自动重建你的 Widget。我们需要用以下列举的方法来让 Flutter 再一次建立我们的 Widget。
 
-  - [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
-  : Triggers a rebuild of the widget after a given duration.
+  - [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)<br>
+  Triggers a rebuild of the widget after a given duration.
   
-  - [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)：在一段给定时间后重建 Widget。
+    [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)<br>
+    在一段给定时间后重建 Widget。
     
-  - [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
-  : Repeatedly calls pump with the given duration until there are no longer any frames scheduled. This essentially waits for all animations to complete.
+  - [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)<br>
+  Repeatedly calls pump with the given duration until there are no longer any frames scheduled. This essentially waits for all animations to complete.
   
-  - [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)：在给定期间内不断重复调用 pump 直到完成所有绘制帧。一般需要等到所有动画全部完成。
+    [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)<br>
+    在给定期间内不断重复调用 pump 直到完成所有绘制帧。一般需要等到所有动画全部完成。
 
 These methods provide fine-grained control over the build lifecycle,
 which is particularly useful while testing.
@@ -310,20 +312,23 @@ matchers for common cases.
 
 除了 `findsOneWidget`，`flutter_test` 还为常见情况提供了其他的 matchers。
 
-  * [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)
-  : verifies that no widgets are found
+  * [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)<br>
+    verifies that no widgets are found
 
-  * [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)：验证没有可被查找的 Widgets。
+    [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)<br>
+    验证没有可被查找的 Widgets。
     
-  * [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)
-  : verifies that one or more widgets are found
+  * [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)<br>
+    verifies that one or more widgets are found
   
-  * [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)：验证一个或多个 Widgets 被找到。
+    [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)<br>
+    验证一个或多个 Widgets 被找到。
     
-  * [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)
-  : verifies that a specific number of widgets are found
+  * [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)<br>
+   verifies that a specific number of widgets are found
   
-  * [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)：验证特定数量的 Widgets 被找到
+    [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)<br>
+    验证特定数量的 Widgets 被找到。
 
 ### Complete example
 

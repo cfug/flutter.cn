@@ -151,7 +151,7 @@ To update to the _latest compatible versions_ of
 all the dependencies listed in the `pubspec.yaml` file,
 use the `upgrade` command:
 
-为了更新 `pubspec.yaml` 文件里列出的所有依赖到 _最新的兼容版本_ ，使用 `upgrade` 命令
+为了更新 `pubspec.yaml` 文件里列出的所有依赖到 **最新的兼容版本** ，使用 `upgrade` 命令
 
 ```terminal
 $ flutter pub upgrade
@@ -159,6 +159,7 @@ $ flutter pub upgrade
 
 
 ## Keeping informed
+
 ## 保持知情
 
 We publish breaking change announcements to our [mailing list][].

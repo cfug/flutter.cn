@@ -92,6 +92,7 @@ class MyCustomFormState extends State<MyCustomForm> {
 ```
 
 {{site.alert.tip}}
+
   Using a `GlobalKey` is the recommended way to access a form.
   However, if you have a more complex widget tree, you can use the
   [`Form.of()`]({{site.api}}/flutter/widgets/Form/of.html) method to

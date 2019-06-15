@@ -77,7 +77,7 @@ widget. The `OrientationBuilder` calculates the current `Orientation` by
 comparing the width and height available to the parent widget,
 and rebuilds when the size of the parent changes.
 
-为了确定当前的屏幕方向 `Orientation`，我们可以使用 `OrientationBuilder`控件。
+为了确定当前的屏幕方向 `Orientation`，我们可以使用 `OrientationBuilder` widget。
 [`OrientationBuilder`]({{site.api}}/flutter/widgets/OrientationBuilder-class.html)
 通过比较父 widget 的可用宽度和高度来计算当前的 `Orientation`，
 并在父窗口大小更改时重建。

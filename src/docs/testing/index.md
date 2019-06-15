@@ -20,7 +20,7 @@ Automated testing falls into a few categories:
 - A [_widget test_](#widget-tests) (in other UI frameworks referred to as _component test_) tests
   a single widget. 
 
-  [_Widget 测试_](#widget-tests)（在其他 UI 框架中指 _组件测试_）测试单一的 widget 。
+  [_Widget 测试_](#widget-tests)（在其他 UI 框架中指 **组件测试**）测试单一的 widget 。
 
 - An [_integration test_](#integration-tests)
   tests a complete app or a large part of an app.
@@ -59,7 +59,10 @@ out](/cookbook/testing/mocking). Unit tests generally don't read from or write
 to disk, render to screen, or receive user actions from outside the process
 running the test.
 
-[_单元测试_] 测试单一的函数，方法或类。单元测试的目标是验证逻辑单元在各种条件下的正确性。被测试单元的外部依赖通常需要[模拟](/cookbook/testing/mocking)。单元测试通常不会读写磁盘，将数据渲染到屏幕，也不会从运行测试进程的外部去接收用户的操作。
+_单元测试_ 测试单一的函数，方法或类。
+单元测试的目标是验证逻辑单元在各种条件下的正确性。
+被测试单元的外部依赖通常需要 [模拟](/cookbook/testing/mocking)。
+单元测试通常不会读写磁盘，将数据渲染到屏幕，也不会从运行测试进程的外部去接收用户的操作。
 
 ### Recipes
 
@@ -77,7 +80,7 @@ widget's UI looks and interacts as expected. Testing a widget involves
 multiple classes and requires a test environment that provides the
 appropriate widget lifecycle context.
 
-_Widget 测试_（在其他 UI 框架中指 _组件测试_）是用来测试单一的 widget，widget 测试的目标是验证 widget 的 UI 表现和交互行为是否符合预期。测试一个 widget 涉及多个类，并且测试环境需要提供具有 widget 生命周期的上下文。
+**Widget 测试**（在其他 UI 框架中指 **组件测试**）是用来测试单一的 widget，widget 测试的目标是验证 widget 的 UI 表现和交互行为是否符合预期。测试一个 widget 涉及多个类，并且测试环境需要提供具有 widget 生命周期的上下文。
 
 For example, the Widget being tested should be able to receive and 
 respond to user actions and events, perform layout, and instantiate child 
@@ -108,7 +111,7 @@ Generally, an _integration test_ runs on a real device or an OS emulator, such
 as iOS Simulator or Android Emulator. The app under test is typically isolated
 from the test driver code to avoid skewing the results.
 
-通常情况下，一个 _集成测试_ 运行在真机或 OS 模拟器上，如 iOS 模拟器 (iOS Simulator) 或 Android 模拟器 (Android Emulator) 。测试中的应用通常与测试驱动程序代码隔离，以避免结果出现偏差。
+通常情况下，一个 **集成测试** 运行在真机或 OS 模拟器上，如 iOS 模拟器 (iOS Simulator) 或 Android 模拟器 (Android Emulator) 。测试中的应用通常与测试驱动程序代码隔离，以避免结果出现偏差。
 
 ### Recipes
 

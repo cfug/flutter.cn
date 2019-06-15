@@ -6,6 +6,7 @@ short-title: 交互添加
 ---
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What you’ll learn</h4>
   <h4 class="no_toc">你会学到什么</h4>
 
@@ -147,17 +148,17 @@ A _stateless_ widget has no internal state to manage.
 
 一个 _stateless_ widget 没有内部状态.
 
-[Icon](https://docs.flutter.io/flutter/widgets/Icon-class.html),
-[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html),
-and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are
+[Icon]({{site.api}}/flutter/widgets/Icon-class.html),
+[IconButton]({{site.api}}/flutter/material/IconButton-class.html),
+and [Text]({{site.api}}/flutter/widgets/Text-class.html) are
 examples of stateless widgets, which subclass
-[StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
+[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html).
 
 
-[Icon](https://docs.flutter.io/flutter/widgets/Icon-class.html),
-[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html),
-和 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) 都是无状态 widget, 他们都是
-[StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html)的子类。
+[Icon]({{site.api}}/flutter/widgets/Icon-class.html),
+[IconButton]({{site.api}}/flutter/material/IconButton-class.html),
+和 [Text]({{site.api}}/flutter/widgets/Text-class.html) 都是无状态 widget, 他们都是
+[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html)的子类。
 
 A _stateful_ widget is dynamic. The user can interact with a stateful widget
 (by typing into a form, or moving a slider, for example),
@@ -166,17 +167,17 @@ or it changes over time (perhaps a data feed causes the UI to update).
 一个 _stateful_ widget 是动态的. 用户可以和其交互
 (例如输入一个表单、 或者移动一个 slider 滑块),或者可以随时间改变 (也许是数据改变导致的 UI 更新).
 
-[Checkbox](https://docs.flutter.io/flutter/material/Checkbox-class.html),
-[Radio](https://docs.flutter.io/flutter/material/Radio-class.html),
-[Slider](https://docs.flutter.io/flutter/material/Slider-class.html),
-[InkWell](https://docs.flutter.io/flutter/material/InkWell-class.html),
-[Form](https://docs.flutter.io/flutter/widgets/Form-class.html), and
-[TextField](https://docs.flutter.io/flutter/material/TextField-class.html)
+[Checkbox]({{site.api}}/flutter/material/Checkbox-class.html),
+[Radio]({{site.api}}/flutter/material/Radio-class.html),
+[Slider]({{site.api}}/flutter/material/Slider-class.html),
+[InkWell]({{site.api}}/flutter/material/InkWell-class.html),
+[Form]({{site.api}}/flutter/widgets/Form-class.html), and
+[TextField]({{site.api}}/flutter/material/TextField-class.html)
 are examples of stateful widgets, which subclass
-[StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html).
+[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
 
 都是 stateful widgets, 他们都是
-[StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)的子类。
+[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)的子类。
 
 <a name="creating-stateful-widget"></a>
 ## Creating a stateful widget
@@ -308,13 +309,13 @@ The state object stores this information in the
 
 The state object also defines the `build` method. This `build` method
 creates a row containing a red IconButton, and Text.  The widget uses
-[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html),
+[IconButton]({{site.api}}/flutter/material/IconButton-class.html),
 (instead of Icon), because it has an `onPressed` property that
 defines the callback method for handling a tap.
 IconButton also has an `icon` property that holds the Icon.
 
 状态对象也定义了 `build` 方法。这个 `build` 方法创建一个包含红色 IconButton 和 Text 的行。
-该 widget 使用 [IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html)（而不是 Icon），
+该 widget 使用 [IconButton]({{site.api}}/flutter/material/IconButton-class.html)（而不是 Icon），
 因为它具有一个 onPressed 属性，该属性定义了处理点击的回调方法。IconButton 也有一个 `icon` 的属性，持有图标。
 
 The `_toggleFavorite()` method, which is called when the IconButton is pressed,
@@ -579,10 +580,10 @@ grey for inactive.
 <img src="/docs/development/ui/interactive/images/tapbox-active-state.png" style="border:1px solid black" alt="a large green box with the text, 'Active'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/docs/development/ui/interactive/images/tapbox-inactive-state.png" style="border:1px solid black" alt="a large grey box with the text, 'Inactive'">
 
 These examples use
-[GestureDetector](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
+[GestureDetector]({{site.api}}/flutter/widgets/GestureDetector-class.html)
 to capture activity on the Container.
 
-这些示例使用 [GestureDetector](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html) 捕获 Container 上的用户动作。
+这些示例使用 [GestureDetector]({{site.api}}/flutter/widgets/GestureDetector-class.html) 捕获 Container 上的用户动作。
 
 <a name="self-managed"></a>
 ### The widget manages its own state
@@ -591,12 +592,12 @@ to capture activity on the Container.
 
 Sometimes it makes the most sense for the widget to manage its state internally.
 For example,
-[ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html)
+[ListView]({{site.api}}/flutter/widgets/ListView-class.html)
 automatically scrolls when its content exceeds the render box. Most
 developers using ListView don't want to manage ListView's
 scrolling behavior, so ListView itself manages its scroll offset.
 
-有时，widget 在内部管理其状态是最好的。例如， 当 [ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html) 的内容超过渲染框时，
+有时，widget 在内部管理其状态是最好的。例如， 当 [ListView]({{site.api}}/flutter/widgets/ListView-class.html) 的内容超过渲染框时，
 ListView 自动滚动。大多数使用 ListView 的开发人员不想管理 ListView 的滚动行为，因此 ListView 本身管理其滚动偏移量。
 
 The `_TapboxAState` class:
@@ -693,14 +694,14 @@ class MyApp extends StatelessWidget {
 
 Often it makes the most sense for the parent widget to manage the state
 and tell its child widget when to update. For example,
-[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html)
+[IconButton]({{site.api}}/flutter/material/IconButton-class.html)
 allows you to treat an icon as a tappable button.
 IconButton is a stateless widget because we decided that
 the parent widget needs to know whether the button has been tapped,
 so it can take appropriate action.
 
 一般来说父 widget 管理状态并告诉其子 widget 何时更新通常是最合适的。
-例如，[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html) 允许您将图标视为可点按的按钮。
+例如，[IconButton]({{site.api}}/flutter/material/IconButton-class.html) 允许您将图标视为可点按的按钮。
 IconButton 是一个无状态的小部件，因为我们认为父 widget 需要知道该按钮是否被点击来采取相应的处理。
 
 In the following example, TapboxB exports its state to its parent
@@ -808,13 +809,13 @@ class TapboxB extends StatelessWidget {
 When creating API, consider using the `@required` annotation for
 any parameters that your code relies on.
 To use `@required`, import the [foundation
-library](https://docs.flutter.io/flutter/foundation/foundation-library.html)
+library]({{site.api}}/flutter/foundation/foundation-library.html)
 (which re-exports Dart's
 [meta.dart](https://pub.dartlang.org/packages/meta) library):
 
 **提示:**
  在创建 API 时，请考虑使用 @required 为代码所依赖的任何参数使用注解。
- 要使用 @required 注解，请导入 [foundation library](https://docs.flutter.io/flutter/foundation/foundation-library.html) （该库重新导出 Dart 的 [meta.dart](https://pub.dartlang.org/packages/meta)）
+ 要使用 @required 注解，请导入 [foundation library]({{site.api}}/flutter/foundation/foundation-library.html) （该库重新导出 Dart 的 [meta.dart](https://pub.dartlang.org/packages/meta)）
  
 <pre>
 import 'package:flutter/foundation.dart';
@@ -887,10 +888,10 @@ _TapboxCState 对象:
   
 * On a tap event, passes that state change to the parent widget to take
   appropriate action using the
-  [widget](https://docs.flutter.io/flutter/widgets/State/widget.html)
+  [widget]({{site.api}}/flutter/widgets/State/widget.html)
   property.
 
-  当点击时，[widget](https://docs.flutter.io/flutter/widgets/State/widget.html) 属性将状态的改变传递给父 widget 并进行合适的操作.
+  当点击时，[widget]({{site.api}}/flutter/widgets/State/widget.html) 属性将状态的改变传递给父 widget 并进行合适的操作.
 
 <!-- skip -->
 {% prettify dart %}
@@ -1014,23 +1015,23 @@ Flutter 提供各种按钮和类似的交互式 widget。这些 widget 中的大
 它们定义了一组具有质感的UI组件。
 
 If you prefer, you can use
-[GestureDetector](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
+[GestureDetector]({{site.api}}/flutter/widgets/GestureDetector-class.html)
 to build interactivity into any custom widget. You can find examples of
 GestureDetector in [Managing state](#managing-state), and in the
 [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery).
 
-如果你愿意，你可以使用 [GestureDetector](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html) 来给任何自定义 widget 添加交互性。
+如果你愿意，你可以使用 [GestureDetector]({{site.api}}/flutter/widgets/GestureDetector-class.html) 来给任何自定义 widget 添加交互性。
 您可以在[管理状态](#managing-state)和[Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)中找到 GestureDetector 的示例。
 
 <aside class="alert alert-info" markdown="1">
 **Note:**
 Flutter also provides a set of iOS-style widgets called
-[Cupertino](https://docs.flutter.io/flutter/cupertino/cupertino-library.html).
+[Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html).
 </aside>
 
 **注意:**
-Futter还提供了一组名为 [Cupertino](https://docs.flutter.io/flutter/cupertino/cupertino-library.html) 的 iOS 风格的小部件 。
+Futter还提供了一组名为 [Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html) 的 iOS 风格的小部件 。
 </aside>
 
 When you need interactivity,
@@ -1042,23 +1043,23 @@ it's easiest to use one of the prefabricated widgets. Here's a partial list:
 
 ### 标准 widgets:
 
-* [Form](https://docs.flutter.io/flutter/widgets/Form-class.html)
-* [FormField](https://docs.flutter.io/flutter/widgets/FormField-class.html)
+* [Form]({{site.api}}/flutter/widgets/Form-class.html)
+* [FormField]({{site.api}}/flutter/widgets/FormField-class.html)
 
 ### Material Components:
 
 ### 质感组件
 
-* [Checkbox](https://docs.flutter.io/flutter/material/Checkbox-class.html)
-* [DropdownButton](https://docs.flutter.io/flutter/material/DropdownButton-class.html)
-* [FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html)
-* [FloatingActionButton](https://docs.flutter.io/flutter/material/FloatingActionButton-class.html)
-* [IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html)
-* [Radio](https://docs.flutter.io/flutter/material/Radio-class.html)
-* [RaisedButton](https://docs.flutter.io/flutter/material/RaisedButton-class.html)
-* [Slider](https://docs.flutter.io/flutter/material/Slider-class.html)
-* [Switch](https://docs.flutter.io/flutter/material/Switch-class.html)
-* [TextField](https://docs.flutter.io/flutter/material/TextField-class.html)
+* [Checkbox]({{site.api}}/flutter/material/Checkbox-class.html)
+* [DropdownButton]({{site.api}}/flutter/material/DropdownButton-class.html)
+* [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html)
+* [FloatingActionButton]({{site.api}}/flutter/material/FloatingActionButton-class.html)
+* [IconButton]({{site.api}}/flutter/material/IconButton-class.html)
+* [Radio]({{site.api}}/flutter/material/Radio-class.html)
+* [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html)
+* [Slider]({{site.api}}/flutter/material/Slider-class.html)
+* [Switch]({{site.api}}/flutter/material/Switch-class.html)
+* [TextField]({{site.api}}/flutter/material/TextField-class.html)
 
 ## Resources
 
@@ -1083,10 +1084,10 @@ The following resources may help when adding interactivity to your app.
   [Flutter中的手势](/docs/development/ui/advanced/gestures)<br>
   Flutter 手势机制的描述
 
-* [Flutter API documentation](https://docs.flutter.io)<br>
+* [Flutter API documentation]({{site.api}})<br>
   Reference documentation for all of the Flutter libraries.
   
-  [Flutter API 文档](https://docs.flutter.io/)<br>
+  [Flutter API 文档]({{site.api}}/)<br>
   所有 Flutter 库的参考文档.
 
 * [Flutter

@@ -16,6 +16,7 @@ JSON solution to use in different scenarios, and why.
 本指南介绍了如何在 Flutter 中使用 JSON。包括了如何在不同场景中使用相应的 JSON 解决方案以及为什么要这么做。
 
 {{site.alert.info}}
+
   **Terminology:** _Encoding_ and _serialization_ are the same thing&mdash;turning
   a data structure into a string. _Decoding_ and _deserialization_ are the
   opposite process&mdash;turning a string into a data structure.
@@ -134,6 +135,7 @@ when using reflection.
 由于反射会默认让所有的代码被隐式使用，这让 tree shaking 变得困难。工具不知道哪一部分在运行时不会被用到，所以冗余的代码很难被清除。当使用反射时，App 的体积不能被轻易优化。
 
 {{site.alert.info}}
+
   **What about dartson?** The
   [dartson]({{site.pub}}/packages/dartson) library uses runtime
   [reflection][], which makes it incompatible with Flutter.

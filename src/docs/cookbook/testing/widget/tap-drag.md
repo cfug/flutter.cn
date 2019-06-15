@@ -93,9 +93,20 @@ see the relevant recipes:
 为了聚焦在测试上，本章节并不会提供如何构建一个待办清单应用的具体教程。如果想要知道这个应用是如何构建的，请参考以下章节：
 
   * [Create and style a text field](/docs/cookbook/forms/text-input)
+
+    [文本框的创建和设定](/docs/cookbook/forms/text-input)
+
   * [Handle taps](/docs/cookbook/gestures/handling-taps)
+
+    [捕获和处理点击动作](/docs/cookbook/gestures/handling-taps)
+
   * [Create a basic list](/docs/cookbook/lists/basic-list)
+
+    [基础列表](/docs/cookbook/lists/basic-list)
+
   * [Implement swipe to dismiss](/docs/cookbook/gestures/dismissible)
+
+    [实现「滑动清除」效果](/docs/cookbook/gestures/dismissible)
 
 ```dart
 class TodoList extends StatefulWidget {
@@ -188,14 +199,23 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
 ```
 
 {{site.alert.note}}
+
   This recipe builds upon previous widget testing recipes.
   To learn the core concepts of widget testing,
   see the following recipes:
 
-**请注意：** 这个章节建立在前面的 Widget 测试的相关章节上。参考如下章节，获取关于 Widget 测试的更多内容：
+  这个章节的内容建立在前面的 widget 测试的相关章节上，
+  请参考如下章节，获取关于 Widget 测试的更多内容：
 
-  * [Introduction to widget testing](.)
+  * [Introduction to widget testing](/docs/cookbook/testing/widget)
+
+    [Widget 测试介绍](/docs/cookbook/testing/widget)
+
   * [Finding widgets in a widget test](finders)
+  
+    [Widget 测试介绍](finders)
+
+{{site.alert.end}}
 
 ### 3. Ensure tapping a button adds the todo
 

@@ -157,7 +157,7 @@ Ways to avoid calls to `saveLayer()`:
   For more information, see
   [Opacity]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image).
 
-  要在图像中实现淡入淡出，请考虑使用FadeInImage小部件，该小部件使用GPU的片段着色器应用渐变不透明度。
+  要在图像中实现淡入淡出，请考虑使用 FadeInImage 小部件，该小部件使用 GPU 的片段着色器应用渐变不透明度。
   了解更多详情，请参见 [Opacity]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image)。
 
 * To create a rectangle with rounded corners, instead of applying a
@@ -195,8 +195,6 @@ Also see:
   time]({{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3)
 
 * [Listview.builder]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) API
-
-  [Listview.builder]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) API
 
 ###  Build and display frames in 16ms
 

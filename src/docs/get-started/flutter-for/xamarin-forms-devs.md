@@ -251,9 +251,10 @@ but there are many benefits to this approach.
 
 ### What is the equivalent of a `Page` or `Element` in Flutter?
 
-## 在 Flutter 中 `页面（Page）` 与 `元素（Element）`的相同点是什么？ 
+### 在 Flutter 中 `页面（Page）` 与 `元素（Element）`的相同点是什么？
 
 {{site.alert.secondary}}
+
   How is react-style, or _declarative_, programming different than the
   traditional imperative style?
   For a comparison, see [Introduction to declarative
@@ -269,8 +270,10 @@ might in a Xamarin.Forms application. These pages would then hold
 `Element`s to display the various controls. In Xamarin.Forms an `Entry`
 or `Button` are examples of an `Element`.
 
-一个 `ContentPage`、`TabbedPage`、`MasterDetailPage` 就是你可以在 Xamarin.Forms 应用程序中使用的全部页面类型。
-这些页面会控制`元素（Element）`来显示各种控件。在 Xamarin.Forms 中，`Entry` 或者 `Button` 就是一个 `元素` 的示例。
+一个 `ContentPage`、`TabbedPage`、`MasterDetailPage`
+就是你可以在 Xamarin.Forms 应用程序中使用的全部页面类型。
+这些页面会控制`元素（Element）`来显示各种控件。
+在 Xamarin.Forms 中，`Entry` 或者 `Button` 就是一个 `元素` 的示例。
 
 In Flutter, almost everything is a widget. A `Page`, called a `Route` in
 Flutter, is a widget.  Buttons, progress bars, and animation controllers
@@ -309,7 +312,8 @@ In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has
 properties and methods. You update your `Element` by updating a property,
 and this is propagated down to the native control.
 
-在 Xamarin.Forms 中，每一个`页面`或者`元素`都是一个有状态的类，拥有一些属性和方法。通过更新一个属性来更新你的元素，而且这会传递到原生控件。
+在 Xamarin.Forms 中，每一个`页面`或者`元素`都是一个有状态的类，
+拥有一些属性和方法。通过更新一个属性来更新你的元素，而且这会传递到原生控件。
 
 In Flutter, `Widget`s are immutable and you can't directly update them
 by changing a property, instead you have to work with the widget's state.
@@ -798,7 +802,9 @@ It is somewhat similar to implementing a custom control based off a
 `Grid` with numerous `VisualElement`s added in, while extending with
 custom logic.
 
-在 Flutter 中，通过 [组合（composing）](/docs/resources/technical-overview#everythings-a-widget) 更小的 widget（而不是扩展它们）来构建一个自定义 widget。
+在 Flutter 中，通过
+[组合（composing）](/docs/resources/technical-overview#everythings-a-widget)
+更小的 widget（而不是扩展它们）来构建一个自定义 widget。
 这有点类似于基于 `Grid` 实现自定义控件，其中添加了大量 `VisualElement`，同时使用自定义逻辑进行扩展。
 
 For example, how do you build a `CustomButton` that takes a label in
@@ -1998,7 +2004,7 @@ tied to this event. Alternatively you would use the
     handle it in the function. For example, the RaisedButton has an
     `onPressed` parameter:
 
- 1. 如果 widget 支持事件发现（detection），那么可以将函数传递给它并在函数中处理它：
+    如果 widget 支持事件发现（detection），那么可以将函数传递给它并在函数中处理它：
 
     <!-- skip -->
     ```dart
@@ -2016,7 +2022,7 @@ tied to this event. Alternatively you would use the
     widget in a GestureDetector and pass a function to the
     `onTap` parameter.
 
-2. 如果 widget 不支持事件发现，则将 widget 封装在手势检测器（GestureDetector）中，并将函数传递给“onTap”参数。
+   如果 widget 不支持事件发现，则将 widget 封装在手势检测器（GestureDetector）中，并将函数传递给“onTap”参数。
 
     <!-- skip -->
     ```dart
@@ -2040,7 +2046,7 @@ tied to this event. Alternatively you would use the
 
 ### How do I handle other gestures on widgets?
 
-### 我如何处理 widget 上的其他手势?
+### 我如何处理 widget 上的其他手势？
 
 In Xamarin.Forms you would add a `GestureRecognizer` to the
 `VisualElement`. You would normally be limited to `TapGestureRecognizer`,
@@ -2289,7 +2295,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### How do I know which list item has been clicked?
 
-### 如何知道哪个列表项被点击了?
+### 如何知道哪个列表项被点击了？
 
 In Xamarin.Forms, the ListView has an `ItemTapped` method to find out
 which item was clicked. There are many other techniques you might have
@@ -2361,7 +2367,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### How do I update a ListView dynamically?
 
-### 如何动态更新ListView ?
+### 如何动态更新 ListView ?
 
 In Xamarin.Forms, if you bound the `ItemsSource` property to
 an `ObservableCollection` you would just update the list in your
@@ -2647,7 +2653,7 @@ where you can customize many parameters, such as:
 
 ### How do I retrieve user input?
 
-### 如何检索用户输入?
+### 如何检索用户输入？
 
 Xamarin.Forms `element`s allow you to directly query the `element`
 to determine the state of any of its properties,

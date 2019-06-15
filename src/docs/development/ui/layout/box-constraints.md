@@ -6,6 +6,7 @@ short-title: 边界约束 (Box constraints)
 ---
 
 {{site.alert.note}}
+
   You might be directed to this page if the framework detects a problem
   involving box constraints.
 

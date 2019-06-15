@@ -23,7 +23,7 @@ description: 如何在 VS Code 里开发 Flutter 应用。
 Follow the [Set up an editor](/docs/get-started/editor?tab=vscode)
 instructions to install the Dart and Flutter extensions (also called plugins).
 
-根据[配置编辑器](/docs/get-started/editor?tab=vscode)指引来安装 Dart 和 Flutter 扩展（也叫做插件）。
+根据 [配置编辑器](/docs/get-started/editor?tab=vscode) 的指引来安装 Dart 和 Flutter 扩展（也叫做插件）。
 
 ### Updating the extension {#updating}
 
@@ -151,6 +151,7 @@ device name (or the message **No Devices**).
 ![Flutter 设备]({% asset tools/vs-code/device_status_bar.png @path %}){:width="450px"}
 
 {{site.alert.note}}
+
   - If you do not see a Flutter version number or device info your project
     might not have been detected as a Flutter project. Ensure the
     folder that contains your `pubspec.yaml` is inside a VS Code
@@ -221,7 +222,7 @@ Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the _hot reload_ feature. See
 [Using hot reload](hot-reload) for details.
 
-Flutter 提供一流的开发周期，通过 _hot reload_ 特性使你在几乎修改代码的同时就能看到变化。详情请看[使用热重载](hot-reload)。
+Flutter 提供一流的开发周期，通过 **hot reload** 特性使你在几乎修改代码的同时就能看到变化。详情请看[使用热重载](hot-reload)。
 
 ## Advanced debugging
 

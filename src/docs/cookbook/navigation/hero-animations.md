@@ -116,14 +116,11 @@ The `Hero` widget requires two arguments:
 <dl>
   <dt>`tag`</dt>
   
-  <dd>An object that identifies the `Hero`.
-      It must be the same on both screens.</dd>
-  <dd>作为 `Hero` 组件的标识，在这两个页面中必须相同</dd>      
+  <dd>An object that identifies the `Hero`. It must be the same on both screens.</dd><dd>作为 `Hero` 组件的标识，在这两个页面中必须相同</dd>      
 
   <dt>`child`</dt>
   
-  <dd>The widget to animate across screens.</dd>
-  <dd>被施予动画的组件 </dd>
+  <dd>The widget to animate across screens.</dd><dd>被施予动画的 widget</dd>
   
 </dl>
 
@@ -163,13 +160,17 @@ Hero(
 ```
 
 {{site.alert.note}}
+
   This code is identical to what you have on the first screen.
   As a best practice, create a reusable widget instead of
   repeating code. This example uses identical code for both
   widgets, for simplicity.
-{{site.alert.end}}
 
-提示： 这份代码和第一个页面中的代码是相同的。实际上，可以创建一个可复用的组件来代替这些重复的代码。但是在这个示例中，重复的代码会更易于讲解和演示。
+  这份代码和第一个页面中的代码是相同的。
+  实际上，可以创建一个可复用的组件来代替这些重复的代码。
+  但是在这个示例中，重复的代码会更易于讲解和演示。
+  
+{{site.alert.end}}
 
 ## Complete example
 

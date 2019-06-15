@@ -38,7 +38,7 @@ package repository in China. Instructions are below.
   Use mirror sites only if you _trust_ the provider.
   The Flutter team cannot verify their reliability or security.
   
-  使用任意镜像网站的时候，你必须确保你 _信任_ 你的镜像提供者。
+  使用任意镜像网站的时候，你必须确保你 **信任** 你的镜像提供者。
   Flutter 团队无法确保他们的安全性。
   
 {{site.alert.end}}

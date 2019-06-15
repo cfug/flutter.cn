@@ -154,7 +154,7 @@ keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000
   'Java binary at:'. Then use that fully qualified path
   replacing `java` (at the end) with `keytool`.
   
-  **注意：** `keytool` 可能不在我们的系统路径中。
+  `keytool` 可能不在我们的系统路径中。
   它是 Java JDK 的一部分，在安装 Android Studio 的时候会被一起安装。
   运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，
   然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。
@@ -340,6 +340,7 @@ android {
 ```
 
 {{site.alert.note}}
+
   Obfuscation and minification can considerably extend compile time
   of the Android application.
   
@@ -422,6 +423,7 @@ the Play Store.
 * APK
 
 {{site.alert.note}}
+
   The Google Play Store prefers the app bundle format.
   For more information, see [Android App Bundle][bundle] and
   [About Android App Bundles][bundle2].

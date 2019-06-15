@@ -24,7 +24,8 @@ When a todo is tapped, navigate to a new screen (widget) that
 displays information about the todo.
 This recipe uses the following steps:
 
-还记得么，全屏的界面也只是 Widget。在这个例子中，我们会创建一个待办事项列表， 当某个事项被点击的时候，会跳转到新的一屏 (Widget)，在新的一屏显示待办事项的详细信息。
+还记得么，全屏的界面也只是 Widget。在这个例子中，我们会创建一个待办事项列表，
+当某个事项被点击的时候，会跳转到新的一屏 (Widget)，在新的一屏显示待办事项的详细信息。
 
 ## Directions
 
@@ -118,6 +119,7 @@ This generates 20 todos and displays them in a ListView.
 
 Now, create the second screen. The title of the screen contains the
 title of the todo, and the body of the screen shows the description.
+
 现在，我们来创建第二个全屏的界面， 界面的标题是待办事项的标题， 界面下面显示待办事项的描述信息。
 
 Since the detail screen is a normal `StatelessWidget`,

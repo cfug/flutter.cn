@@ -14,7 +14,7 @@ pointer events, which describe the location and movement of pointers (e.g.,
 touches, mice, and styli) across the screen. The second layer has _gestures_,
 which describe semantic actions that consist of one or more pointer movements.
 
-Flutter 中的手势有两个不同的层次：第一层是原始的指针指向事件，描述了屏幕上由触摸板、鼠标、指示笔等触发的指针的位置和移动。第二层包含 _gestures_，描述了由上述一个或多个指针移动组成的具有特殊语义的操作。
+Flutter 中的手势有两个不同的层次：第一层是原始的指针指向事件，描述了屏幕上由触摸板、鼠标、指示笔等触发的指针的位置和移动。第二层包含 **gestures**，描述了由上述一个或多个指针移动组成的具有特殊语义的操作。
 
 
 ## Pointers
@@ -55,7 +55,7 @@ the tree and are dispatched to all the widgets on the path from the innermost
 widget to the root of the tree. There is no mechanism for canceling or stopping
 pointer events from being dispatched further.
 
-在指针下落事件中，框架做了一个 _hit test_ 的操作确定与屏幕发生接触的位置上有哪些组件以及分发给最内部的组件去响应。事件会沿着组件树从这个最内部的组件向组件树的根部冒泡分发。并且不存在用于取消或停止指针事件进行进一步分发的机制。
+在指针下落事件中，框架做了一个 **hit test** 的操作确定与屏幕发生接触的位置上有哪些组件以及分发给最内部的组件去响应。事件会沿着组件树从这个最内部的组件向组件树的根部冒泡分发。并且不存在用于取消或停止指针事件进行进一步分发的机制。
 
 To listen to pointer events directly from the widgets layer, use a
 [`Listener`]({{site.api}}/flutter/widgets/Listener-class.html)
@@ -217,7 +217,7 @@ screen, the framework disambiguates which gesture the user intends by having
 each recognizer join the _gesture arena_. The gesture arena determines which
 gesture wins using the following rules:
 
-当屏幕上的指定指针有多个手势识别器时，框架会通过给每个手势识别器加入 _gesture arena_ 来处理手势消歧。gesture arena，也称作手势竞技场，会利用下述规则确定哪个手势在竞争中胜出：
+当屏幕上的指定指针有多个手势识别器时，框架会通过给每个手势识别器加入 **gesture arena** 来处理手势消歧。gesture arena，也称作手势竞技场，会利用下述规则确定哪个手势在竞争中胜出：
 
 - At any time, a recognizer can declare defeat and leave the arena.  If there's
   only one recognizer left in the arena, that recognizer is the winner.

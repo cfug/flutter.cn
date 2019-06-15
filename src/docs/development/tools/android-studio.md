@@ -84,6 +84,7 @@ To create a new Flutter project from the Flutter starter app template:
     点击 **Finish**。
 
 {{site.alert.secondary}}
+
   <h4 id="note" class="no_toc">Setting the company domain</h4>
 
   <h4 id="note" class="no_toc">设置公司域名</h4>

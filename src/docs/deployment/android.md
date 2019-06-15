@@ -7,8 +7,12 @@ description: 如何打包把 App 发布到 Play 商店。
 ---
 
 {{site.alert.warning}}
+
   This page describes the Android release process as of the
   1.7.4 release of the Flutter SDK.
+  
+  本页面描述的 Android 发布流程基于 1.7.4 版本之后的 Flutter SDK。
+  
 {{site.alert.end}}
 
 During a typical development cycle,
@@ -194,7 +198,6 @@ Configure signing for your app by editing the
 
 
 <ol markdown="1">
-<li markdown="1">Replace the following:
 
 <li markdown="1">将如下内容：
 ```
@@ -215,8 +218,6 @@ Configure signing for your app by editing the
    android {
 ```
 </li>
-
-<li markdown="1"> Replace the following:
 
 <li markdown="1"> 将如下内容：
 

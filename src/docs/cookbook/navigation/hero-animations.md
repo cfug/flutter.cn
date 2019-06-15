@@ -51,6 +51,7 @@ handle animations in the next steps.
 在这个示例中，将在两个页面中展示相同的图片。当用户在第一个页面点击图片，会通过一个转场动画切换到第二个页面。现在，我们将会创建页面的视觉结构，并在后续步骤中处理动画。
 
 {{site.alert.note}}
+
   This example builds upon the
   [Navigate to a new screen and
   back](/docs/cookbook/navigation/navigation-basics)

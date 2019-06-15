@@ -79,7 +79,7 @@ switch to a less stable Flutter channel
 and then run `flutter upgrade`.
 
 如果你想使用一个更加新的 Flutter SDK 版本，
-切换到不太稳定的 Flutter 频道，并且运行 `flutter upgrade`。
+切换到不太稳定的 Flutter 渠道，并且运行 `flutter upgrade`。
 
 ## Switching Flutter channels
 
@@ -90,14 +90,14 @@ Flutter has [four release channels][Flutter release channel]:
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
-Flutter 有[4个发布频道][Flutter发布频道]：
+Flutter 有[4个发布渠道][Flutter release channel]：
 **stable**, **beta**, **dev**, 和 **master**。
-我们推荐使用 **{{site.sdk.channel}}** 频道
+我们推荐使用 **{{site.sdk.channel}}** 渠道
 除非你需要更加新的版本。
 
 To view your current channel, use the following command:
 
-要查看你当前使用的哪个频道，使用下面的命令：
+要查看你当前使用的哪个渠道，使用下面的命令：
 
 ```terminal
 $ flutter channel
@@ -108,8 +108,8 @@ Once you've changed your channel, use `flutter upgrade`
 to download the Flutter SDK and dependent packages.
 For example:
 
-要切换到其它频道，使用 `flutter channel <channel-name>`。
-当你切换了频道以后，使用 `flutter upgrade` 下载 Flutter SDK 和依赖的 packages。
+要切换到其它渠道，使用 `flutter channel <channel-name>`。
+当你切换了渠道以后，使用 `flutter upgrade` 下载 Flutter SDK 和依赖的 packages。
 例如：
 
 ```terminal
@@ -174,5 +174,5 @@ Plus, we'd love to hear from you!
 [mailing list]: {{site.groups}}/forum/#!forum/flutter-dev
 
 [Flutter SDK 档案]: /docs/development/tools/sdk/archive
-[Flutter 发布频道]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
+[Flutter 发布渠道]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 [邮件列表]: {{site.groups}}/forum/#!forum/flutter-dev

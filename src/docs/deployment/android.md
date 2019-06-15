@@ -1,3 +1,4 @@
+---
 title: Preparing an Android app for release
 title: 打包和发布到 Android 平台
 short-title: Android
@@ -388,8 +389,6 @@ the Play Store.
 {{site.alert.end}}
 
 ### Build an app bundle
-
-
 
 This section describes how to build a release app bundle.
 If you completed the signing steps,

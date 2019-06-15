@@ -52,7 +52,7 @@ InkWell(
 
 ## Complete example
 
-## 完整例子
+### 完整样例
 
 ```dart
 import 'package:flutter/material.dart';

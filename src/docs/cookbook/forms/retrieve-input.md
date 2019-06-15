@@ -144,7 +144,7 @@ FloatingActionButton(
 
 ## Complete example
 
-## 完整示例
+## 完整样例
 
 ```dart
 import 'package:flutter/material.dart';

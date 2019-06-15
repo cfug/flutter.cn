@@ -238,7 +238,7 @@ FlutterError.onError = (FlutterErrorDetails details) {
 
 ## Complete example
 
-## 完整示例
+## 完整样例
 
 To view a working example, see the
 [Crashy]({{site.github}}/flutter/crashy) example app.

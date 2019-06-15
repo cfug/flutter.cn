@@ -47,7 +47,7 @@ Packages can contain several kinds of content:
 Package 包含以下两种类别：
 
 * *Dart packages*: General packages written in Dart, for example the
-  [`path`]({{site.pub}}/packages/path) package. Some of these may
+  [`path`]({{site.pub}}/packages/path) package. Some of these might
   contain Flutter specific functionality and thus have a dependency on the
   Flutter framework, restricting their use to Flutter only, for example the
   [`fluro`]({{site.pub}}/packages/fluro) package.
@@ -93,9 +93,9 @@ specialized content:
      package 的 Dart 实现代码。
 
 * `test/hello_test.dart`:
-   - The [unit tests](/docs/testing#unit-testing) for the package.
+   - The [unit tests](/docs/testing#unit-tests) for the package.
      
-     Package 的 [单元测试](/docs/testing#unit-testing)。
+     Package 的 [单元测试](/docs/testing#unit-tests)。
      
 ### Step 2: Implement the package
 
@@ -107,10 +107,10 @@ For pure Dart packages, simply add the functionality inside the main
 对于纯 Dart 库的 package，只要在 `lib/<package name>.dart` 文件中添加功能实现，或在 `lib`
 目录中的多个文件中添加功能实现。
 
-To test the package, add [unit tests](/docs/testing#unit-testing)
+To test the package, add [unit tests](/docs/testing#unit-tests)
 in a `test` directory.
 
-如果要对 package 进行测试，在 `test` 目录下添加 [单元测试](/docs/testing#unit-testing)。
+如果要对 package 进行测试，在 `test` 目录下添加 [单元测试](/docs/testing#unit-tests)。
 
 For additional details on how to organize the package contents, see the
 [Dart library
@@ -463,15 +463,17 @@ Next, run the dry-run command to see if everything passes analysis:
 接下来，运行 dry-run 命令以检验是否所有内容都通过了分析：
 
 ```terminal
-$ flutter packages pub publish --dry-run
+$ flutter pub pub publish --dry-run
 ```
+
+(Note the redundant `pub pub`, which is needed until [issue #33302](https://github.com/flutter/flutter/issues/33302) is resolved).
 
 Finally, run the actual publish command:
 
 最后，运行以下提交命令：
 
 ```terminal
-$ flutter packages pub publish
+$ flutter pub publish
 ```
 
 For details on publishing, see the
@@ -553,83 +555,4 @@ Pod::Spec.new do |s|
 You can now `#import "UrlLauncherPlugin.h"` and access the `UrlLauncherPlugin` class in the source code
 at `hello/ios/Classes`.
 
-现在你可以在 `hello/ios/Classes` 目录下的源代码文件中使用 `#import "UrlLauncherPlugin.h"` 并访问类 `UrlLauncherPlugin`。
-
-### Conflict resolution
-
-### 冲突解决
-
-Suppose you want to use `some_package` and `other_package` in your package
-`hello`, and both of these depend on `url_launcher`, but in different
-versions. Then we have a potential conflict. The best way to avoid this
-is for package authors to use [version
-ranges]({{site.dart-site}}/tools/pub/dependencies#version-constraints)
-rather than specific versions when specifying dependencies.
-
-假设你想在 `hello` package 中使用 `some_package` 和
-`other_package`，且它们依赖于不同版本的 `url_launcher`。于是我们便有了潜在的冲突。避免这种情况的最好方法是 package
-的作者在指定依赖项时使用 [版本范围]({{site.dart-site}}/tools/pub/dependencies#version-constraints) 而非特定版本。
-
-```yaml
-dependencies:
-  url_launcher: ^0.4.2    # Good, any 0.4.x with x >= 2 will do.
-  image_picker: '0.1.1'   # Not so good, only 0.1.1 will do.
-```
-
-If `some_package` declares the dependencies above and `other_package`
-declares a compatible  `url_launcher` dependency like `'0.4.5'` or `^0.4.0`,
-`pub` is able to resolve the issue automatically. Similar
-remarks apply to plugin packages' platform-specific dependencies on
-[Gradle modules][] and/or [CocoaPods][].
-
-如果 `some_package` 声明了以上依赖，并且 `other_package` 声明了一个兼容的
-`url_launcher` 依赖项，如 `'0.4.5'` 或 `^0.4.0`，`pub` 能够自动解决冲突问题。类似的注解也适用于插件
-package 特定平台 [Gradle modules][] 和/或 [CocoaPods][] 的依赖关系。
-
-Even if `some_package` and `other_package` declare incompatible versions for
-`url_launcher`, it may still be that they actually use `url_launcher` in
-compatible ways. Then the conflict can be dealt with by adding
-a dependency override declaration to the `pubspec.yaml` file in `hello`,
-forcing the use of a particular version.
-
-即使 `some_package` 和 `other_package` 声明了不兼容的 `url_launcher`
-版本，它们实际上仍可能以兼容的方式使用 `url_launcher`。可在 `hello` 中的
-`pubspec.yaml` 文件中添加一个依赖覆盖声明来强制使用特定版本，从而处理冲突。
-
-Forcing the use of `url_launcher` version `0.4.3` in `hello/pubspec.yaml`:
-
-在 `hello/pubspec.yaml` 中强制使用版本为 `0.4.3` 的 `url_launcher`：
-
-```yaml
-dependencies:
-  some_package:
-  other_package:
-dependency_overrides:
-  url_launcher: '0.4.3'
-```
-
-If the conflicting dependency is not itself a package,
-but an Android-specific library like `guava`, the dependency override
-declaration must be added to Gradle build logic instead.
-
-如果依赖冲突项不是 package 自身，而是如 `guava` 这样特定于 Android 的库，那么依赖的覆盖声明必须添加到
-Gradle 的构建逻辑中。
-
-Forcing the use of `guava` version `23.0` in `hello/android/build.gradle`:
-
-在 `hello/android/build.gradle` 中强制使用版本为 `23.0` 的 `guava`：
-
-```groovy
-configurations.all {
-    resolutionStrategy {
-        force 'com.google.guava:guava:23.0-android'
-    }
-}
-```
-
-CocoaPods does not currently offer dependency override functionality.
-
-CocoaPods 目前尚不提供依赖项覆盖功能。
-
-[CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
-[Gradle modules]: https://docs.gradle.org/current/userguide/introduction_dependency_management.html
+现在你可以在 `hello/ios/Classes` 目录下的源代码文件中使用 `#import "UrlLauncherPlugin.h"` 并访问 `UrlLauncherPlugin` 这个类了。

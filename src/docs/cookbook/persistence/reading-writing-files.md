@@ -1,48 +1,48 @@
 ---
-title: Reading and Writing Files
+title: Read and write files
 title: 文件读写
 prev:
   title: Persist data with SQLite
   title: 用 SQLite 做数据持久化
   path: /docs/cookbook/persistence/sqlite
 next:
-  title: Storing key-value data on disk
+  title: Store key-value data on disk
   title: 存储键值对数据
   path: /docs/cookbook/persistence/key-value
 ---
 
-
-In some cases, it can be handy to read and write files to disk.
-This can be used to persist data across app launches,
-or to download data from the internet and save it for later offline use.
+In some cases, you need to read and write files to disk.
+For example, you may need to persist data across app launches,
+or download data from the internet and save it for later offline use.
 
 磁盘文件的读写操作可能会相对方便地实现某些业务场景。
 它常见于应用启动期间产生的持久化数据，或者从网络下载数据供离线使用。
 
-In order to save files to disk, you'll need to combine the
-[`path_provider` plugin]({{site.pub-pkg}}/path_provider) with
+To save files to disk, combine the
+[`path_provider`]({{site.pub-pkg}}/path_provider) plugin with
 the [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html)
 library.
 
-为了将文件保存到磁盘，你需要结合使用 [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html) 库中的 [`path_provider`]({{site.pub-pkg}}/path_provider) 这个 package。
+为了将文件保存到磁盘，你需要结合使用 [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html) 
+库中的 [`path_provider`]({{site.pub-pkg}}/path_provider) 这个 package。
 
 ## Directions
 
 ## 步骤
 
-  1. Find the correct local path
+  1. Find the correct local path.
   
      找到正确的本地路径
      
-  2. Create a reference to the file location
+  2. Create a reference to the file location.
   
      创建一个指向文件位置的引用
   
-  3. Write data to the file
+  3. Write data to the file.
   
      将数据写入文件
   
-  4. Read data from the file
+  4. Read data from the file.
   
      从文件读取数据
      
@@ -51,17 +51,17 @@ library.
 
 ## 1. 找到正确的本地路径
 
-In this example, you'll display a counter. When the counter changes, you'll
+This example displays a counter. When the counter changes,
 write data on disk so you can read it again when the app loads.
-Therefore, you must wonder: Where should I store this data?
+Where should you store this data?
 
 这个例子里，我们将会显示一个计数器，当计数器发生变化时，你将在磁盘中写入数据，
 以便在应用加载时重新读取这些数据。因此，你一定想知道：我应该将这些数据存储在哪里？
 
 The [`path_provider`]({{site.pub-pkg}}/path_provider) plugin
 provides a platform-agnostic way to access commonly used locations on the
-device's filesystem. The plugin currently supports access to two filesystem
-locations:
+device's file system. The plugin currently supports access to
+two file system locations:
 
 [`path_provider`]({{site.pub-pkg}}/path_provider) 这个 package 提供了一种与平台无关的方法，
 用于访问设备文件系统上的常用位置。该插件目前支持访问两个文件系统位置
@@ -77,16 +77,17 @@ locations:
      在 Android 上对应 [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir()) 的返回值。
     
   * *Documents directory:* A directory for the app to store files that only
-    it can access. The system clears the directory only when the app is deleted.
-    On iOS, this corresponds to `NSDocumentDirectory`. On Android, this is the
-    `AppData` directory.
+    it can access. The system clears the directory only when the app
+    is deleted.
+    On iOS, this corresponds to the `NSDocumentDirectory`.
+    On Android, this is the `AppData` directory.
     
     *Documents 目录：* 供应用使用，用于存储只能由该应用访问的文件。
     只有在删除应用时，系统才会清除这个目录。
     在 iOS 上，这个目录对应于 `NSDocumentDirectory`。
     在 Android 上，则是 `AppData` 目录。    
     
-In this case, you'll want to store information in the documents directory.
+This example stores information in the documents directory.
 You can find the path to the documents directory as follows:
 
 在本示例中，你需要将信息存储在 Documents 目录中。
@@ -105,7 +106,7 @@ Future<String> get _localPath async {
 
 ## 2. 创建一个指向文件位置的引用
 
-Once you know where to store the file, you'll need to create a reference to the
+Once you know where to store the file, create a reference to the
 file's full location. You can use the
 [`File`]({{site.api}}/flutter/dart-io/File-class.html)
 class from the [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
@@ -127,19 +128,22 @@ Future<File> get _localFile async {
 
 ## 3. 将数据写入文件
 
-Now that you have a `File` to work with, use it to read and write data.
-First, write some data to the file. Since you're working with a counter,
-you'll simply store the integer as a String.
+Now that you have a File to work with,
+use it to read and write data.
+First, write some data to the file.
+The counter is an integer, but is written to the
+file as a string using the `'$counter'` syntax.
 
 现在你已经有了可以使用的 `File`，接下来使用这个文件来读写数据。
-首先，将一些数据写入该文件。由于使用了计数器，因此只需将整数存储为 String 即可。
+首先，将一些数据写入该文件。由于使用了计数器，因此只需将整数存储为字符串格式，
+使用 `'$counter'` 即可调用。
 
 <!-- skip -->
 ```dart
 Future<File> writeCounter(int counter) async {
   final file = await _localFile;
 
-  // Write the file
+  // Write the file.
   return file.writeAsString('$counter');
 }
 ```
@@ -160,12 +164,12 @@ Future<int> readCounter() async {
   try {
     final file = await _localFile;
 
-    // Read the file
+    // Read the file.
     String contents = await file.readAsString();
 
     return int.parse(contents);
   } catch (e) {
-    // If encountering an error, return 0
+    // If encountering an error, return 0.
     return 0;
   }
 }
@@ -175,19 +179,18 @@ Future<int> readCounter() async {
 
 ## 测试
 
-In order to test code that interacts with files, you'll need to Mock calls to
-the `MethodChannel`. The `MethodChannel` is the class that Flutter uses to
-communicate with the host platform.
+To test code that interacts with files, you need to mock calls to
+the `MethodChannel`&mdash;the class that 
+communicates with the host platform. For security reasons,
+you can't directly interact with the file system on a device,
+so you interact with the test environment's file system.
 
-为了测试代码与文件的交互情况，你需要对 `MethodChannel` 发起 Mock 调用。
+为了测试代码与文件的交互情况，你需要对 `MethodChannel` 发起模拟调用。
 `MethodChannel` 是 Flutter 用于与主平台通信的类。
+出于安全起见，在这些测试中是无法与设备上的文件系统进行交互的，
+你将会与测试环境的文件系统进行交互。
 
-In these tests, you can't interact with the filesystem on a device.
-You'll need to interact with the test environment's filesystem.
-
-在这些测试中，无法与设备上的文件系统进行交互，你将会与测试环境的文件系统进行交互。
-
-To mock the method call, provide a `setupAll` function in the test file.
+To mock the method call, provide a `setupAll()` function in the test file.
 This function runs before the tests are executed.
 
 要模拟方法调用，请在测试文件中提供 `setupAll` 函数。这样会先运行这个函数，然后再执行测试。
@@ -195,10 +198,11 @@ This function runs before the tests are executed.
 <!-- skip -->
 ```dart
 setUpAll(() async {
-  // Create a temporary directory to work with (提供一个临时文件夹作为工作空间)
+
+  // Create a temporary directory. (提供一个临时文件夹作为工作空间)
   final directory = await Directory.systemTemp.createTemp();
 
-  // Mock out the MethodChannel for the path_provider plugin (为 path_provider 插件提供一个模拟的 MethodChannel)  
+  // Mock out the MethodChannel for the path_provider plugin. (为 path_provider 插件提供一个模拟的 MethodChannel)  
   const MethodChannel('plugins.flutter.io/path_provider')
       .setMockMethodCallHandler((MethodCall methodCall) async {
     // If you're getting the apps documents directory, return the path to the

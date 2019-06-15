@@ -4,8 +4,6 @@ title: Flutter 1.5 发布: 适用于移动、Web、嵌入式和桌面平台的�
 toc: true
 ---
 
-_Posted by the Flutter Team_
-
 **作者: Flutter 团队**
 
 Today marks an important milestone for the [Flutter framework](https://flutter.dev/), as we expand our focus from mobile to incorporate a broader set of devices and form factors. At I/O, we’re releasing our first technical preview of [Flutter for web](https://flutter.dev/web), announcing that Flutter is powering Google’s smart display platform including the Google Home Hub, and delivering our first steps towards supporting desktop-class apps with Chrome OS.
@@ -70,10 +68,10 @@ Here’s what Eric von Coelln, Executive Director of Puzzles at the New York Tim
 
 > _"The New York Times Crossword has more than 400,000 stand-alone subscriptions and is a daily ritual for puzzle solvers. Along with the Crossword, we’ve grown our portfolio of digital puzzles that reaches more than two million solvers each month._
 > 
-> _We were already beginning to explore Flutter as a potential solution to the challenge of quickly developing engaging, high-quality mobile experiences. Now the addition of being able to publish to web makes Flutter an even more appealing option to quickly deploy across all of our user platforms. This update of our old Flash-based KenKen game into a multi-platform playable experience is something we’re excited to bring to our solvers this year.”_
-
 > “《纽约时报》纵横字谜游戏的单独订阅数量已超过 40 万份，玩这款游戏已经成为解谜者每天必做的事情。除了纵横字谜游戏，我们还开发了数字解谜游戏，每个月都吸引了超过 200 万名解谜者。 
->
+
+> _We were already beginning to explore Flutter as a potential solution to the challenge of quickly developing engaging, high-quality mobile experiences. Now the addition of being able to publish to web makes Flutter an even more appealing option to quickly deploy across all of our user platforms. This update of our old Flash-based KenKen game into a multi-platform playable experience is something we’re excited to bring to our solvers this year.”_
+> 
 > 我们已经开始探索 Flutter，并将其作为快速开发有趣和优质的移动体验这一挑战的潜在解决方案。现在，我们能够在 Web 端发布游戏，这使 Flutter 成为在所有用户平台快速部署内容的更具吸引力的选择。之前基于 Flash 的 KenKen 游戏经过更新，能够提供多平台的畅玩体验。今年我们很高兴能为解谜者带来全新体验。"
 
 There’s lots more to say about Flutter for web than we have space for here, so check out the dedicated [article about Flutter for web](https://medium.com/flutter-io/bringing-flutter-to-the-web-904de05f0df0) on the Flutter blog.
@@ -107,8 +105,8 @@ Flutter continues to grow in popularity and adoption. A [growing roster of deman
 Flutter 越来越受欢迎，使用人数也越来越多。[有需求的客户](https://flutter.dev/showcase)不断增加，其中包括 eBay、Sonos、Square、Capital One、Alibaba 和 Tencent。这些公司正在利用 Flutter 开发应用，并从中发现乐趣！以下是 eBay 的高级开发者 Larry McKenzie 对 Flutter 的看法:
 
 > _“Flutter is fast! Features that once took us multiple days to implement can be finished in a single day. Many problems we used to spend a lot of time on, simply no longer occur. Our team can now focus on creating more polished user experiences and delivering functionality. Flutter is enabling us to exceed expectations!”_
-
->_“Flutter 运行速度很快！过去需要很多天才能实现的功能，现在只需一天就能完成。过去我们花费很多时间处理的问题，如今再也不会发生了。我们的团队现在可以专注于创建更出色的用户体验和提供相关功能。Flutter 让我们能够超越期望！”_
+>
+> _“Flutter 运行速度很快！过去需要很多天才能实现的功能，现在只需一天就能完成。过去我们花费很多时间处理的问题，如今再也不会发生了。我们的团队现在可以专注于创建更出色的用户体验和提供相关功能。Flutter 让我们能够超越期望！”_
 
 More broadly, [LinkedIn recently conducted a study](https://learning.linkedin.com/blog/tech-tips/the-fastest-growing-skills-among-software-engineers--and-how-to-) that showed **Flutter is the single fastest-growing skill among software engineers**, based on site members claiming it on their profile over the last 12 months. And in the recent 2019 StackOverflow developer survey, [Flutter was listed as one of the most-loved developer frameworks](https://insights.stackoverflow.com/survey/2019#technology-_-most-loved-dreaded-and-wanted-other-frameworks-libraries-and-tools).
 

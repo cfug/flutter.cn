@@ -13,15 +13,14 @@ way to get started learning Flutter development.
 这篇文章是为那些想将已有的 iOS 开发经验运用到 Flutter 开发中的 iOS 开发者所作。
 如果你理解 iOS framework 的基本原理，那么你可以将这篇文章作为学习 Flutter 开发的起点。
 
-Before diving into this doc, you may want to watch a 15-minute video from
+Before diving into this doc, you might want to watch a 15-minute video from
 the [Flutter Youtube channel](https://www.youtube.com/flutterdev) about
 the Cupertino package.
 
 在开始本文档之前，建议先浏览一下这个 15 分钟的视频，
 了解一下 Cupertino package 是什么吧：
-[https://www.youtube.com/watch?v=3PdUaidHc-E](https://www.youtube.com/watch?v=3PdUaidHc-E)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55647852&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 Your iOS knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
@@ -647,20 +646,15 @@ Flutter 中也有类似的实现，使用 `Navigator` 和 `Routes`。一个 `Rou
 To navigate between pages, you have a couple options:
 想要在不同页面间跳转，你有两个选择：
 
-<<<<<<< HEAD
-* Specify a `Map` of route names. (MaterialApp)
+* Specify a `Map` of route names.
   
-  构建由 route 名称组成的 `Map`（MaterialApp）
+  构建由 route 名称组成的 `Map`；
   
-* Directly navigate to a route. (WidgetApp)
+* Directly navigate to a route.
   
-  直接跳转到一个 route（WidgetApp）
+  直接跳转到一个 route。
 
 The following example builds a `Map`.
-=======
-* Specify a `Map` of route names.
-* Directly navigate to a route.
->>>>>>> 63b2723157e3e26c37ac156ed74f5dca7fb9992d
 
 下面的示例构建了一个 `Map`：
 
@@ -730,6 +724,7 @@ create a native platform integration, or use an
 
 Calling `SystemNavigator.pop()` from your Dart code invokes the
 following iOS code:
+
 在 Dart 代码中调用 `SystemNavigator.pop()` 将会调用下面的 iOS 代码：
 
 ```
@@ -741,6 +736,7 @@ UIViewController* viewController = [UIApplication sharedApplication].keyWindow.r
 
 If that doesn't do what you want, you can create your own
 [platform channel](/docs/development/platform-integration/platform-channels) to invoke arbitrary iOS code.
+
 如果这不是你需要的功能，你可以创建你自己的[平台通道](/docs/development/platform-integration/platform-channels)来调用
 对应的 iOS 代码。
 
@@ -1532,6 +1528,7 @@ The observable lifecycle events are:
 * `inactive` — The application is in an inactive state and is not receiving
 user input. This event only works on iOS, as there is no equivalent event on
 Android.
+  
   `inactive` - 应用当前处于不活跃状态，不接收用户输入事件。
   这个事件只在 iOS 上有效，Android 中没有类似的状态。
   
@@ -1633,6 +1630,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 In iOS, you implement the delegate method, `tableView:didSelectRowAtIndexPath:`.
 In Flutter, use the touch handling provided by the passed-in widgets.
+
 在 iOS 里，可以通过 `tableView:didSelectRowAtIndexPath:` 代理方法来实现。
 而在 Flutter 里，需要通过 widget 传递进来的 touch 响应处理来实现。
 

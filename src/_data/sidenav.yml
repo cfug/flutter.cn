@@ -184,8 +184,8 @@
       permalink: /docs/deployment/android
     - title: 打包和发布到 iOS 平台
       permalink: /docs/deployment/ios
-    - title: 使用 fastlane 持续交付
-      permalink: /docs/deployment/fastlane-cd
+    - title: 持续部署
+      permalink: /docs/deployment/cd
 
 - title: 资源列表
   children:

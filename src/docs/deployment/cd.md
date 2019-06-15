@@ -23,6 +23,8 @@ open-source tool suite, with your existing testing and continuous integration
 
 ### Local setup
 
+### 本地设置
+
 It's recommended that you test the build and deployment process locally before
 migrating to a cloud-based system. You could also choose to perform continuous
 delivery from a local machine.
@@ -81,15 +83,18 @@ delivery from a local machine.
     it into any public source control repositories._
     
       ![Android](/images/fastlane-cd/android.png) 按照
-      [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply) 操作，并且确保 `fastlane supply init` 成功同步Google Play商店控制台中的数据。
-      将 .json 文件视为你的密码，不要将其检入任何公共源代码控制存储库。
+      [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply) 操作，并且确保 `fastlane supply init` 成功同步了你在 Google Play 商店控制台中的数据。
+     *.json 文件与密码一样重要，切勿将其公开在任何公共源代码控制存储库。*
     
     * ![iOS](/images/cd/ios.png) Your iTunes Connect username is already
     in your `Appfile`'s `apple_id` field. Set the `FASTLANE_PASSWORD` shell
     environment variable with your iTunes Connect password. Otherwise, you'll be
     prompted when uploading to iTunes/TestFlight.
     
-      ![iOS](/images/fastlane-cd/ios.png)首先在你 `Appfile` 文件的的 `apple_id` 字段中设置好 iTunes 用户名。将你的 iTunes 密码作为 `FASTLANE_PASSWORD` 字段设置为shell环境变量。否则，上传到 iTunes/TestFlight时会提示你。    
+      ![iOS](/images/fastlane-cd/ios.png)  iTunes Connect 用户名已经存在于您的
+      `Appfile` 的 `apple_id` 字段中，
+      你需要将你的 iTunes 密码设置到 `FASTLANE_PASSWORD` 这个环境变量里。
+      否则，上传到 iTunes/TestFlight时会提示你。
     
 1. Set up code signing.
    

@@ -222,7 +222,7 @@ Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the _hot reload_ feature. See
 [Using hot reload](hot-reload) for details.
 
-Flutter 提供一流的开发周期，通过 _hot reload_ 特性使你在几乎修改代码的同时就能看到变化。详情请看[使用热重载](hot-reload)。
+Flutter 提供一流的开发周期，通过 **hot reload** 特性使你在几乎修改代码的同时就能看到变化。详情请看[使用热重载](hot-reload)。
 
 ## Advanced debugging
 

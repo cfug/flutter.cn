@@ -197,7 +197,7 @@ Considere moving the info below to a new page.
   _Presen_ in the search field.
 
   通过安装 **Presentation Assistant** 插件来成为 Android Studio 的专业用户。
-  你可以打开 **Preferences** > **Plugins** > **Browsing repositories...** 并在搜索框中输入 _Presen_ 来找到并安装这个插件。
+  你可以打开 **Preferences** > **Plugins** > **Browsing repositories...** 并在搜索框中输入 **Presen** 来找到并安装这个插件。
 
   Once installed and AS is relaunched, this plugin helps you to become a
   pro user by:
@@ -249,14 +249,14 @@ Considere moving the info below to a new page.
 
   * Enter _attach_ to see the following:
 
-    输入 _attach_ 显示以下内容：
+    输入 **attach** 显示以下内容：
 
     {% asset 'testing/debugging/oem/presentation-assistant-search-results.png' alt='Find panel' %}
 
   * After an update, you might enter _Flutter_ or _Dart_ to see if new actions
     are available.
 
-    更新之后，你可以输入 _Flutter_ 或者 _Dart_ 来查看是否有新的可用的操作。
+    更新之后，你可以输入 **Flutter** 或者 **Dart** 来查看是否有新的可用的操作。
 
   Hide the Presentation Assistant's Find panel by using **Escape**.
 

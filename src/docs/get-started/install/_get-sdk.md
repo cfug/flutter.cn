@@ -53,7 +53,7 @@
     To permanently add Flutter to your path, see [Update your
     path](#update-your-path).
 
-    这个命令配置了 `PATH` 环境变量，且只会在你 _当前_ 命令行窗口中生效。
+    这个命令配置了 `PATH` 环境变量，且只会在你 **当前** 命令行窗口中生效。
     如果想让它永久生效，请查看 [更新 PATH 环境变量](#update-your-path)。
     
  4. Optionally, pre-download development binaries:

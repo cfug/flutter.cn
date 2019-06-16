@@ -1103,5 +1103,5 @@ The following resources may help when adding interactivity to your app.
    This video includes information about state and stateless widgets.
    Presented by Google engineer, Ian Hickson.
 
-  [Flutter的分层设计 (video)](https://www.youtube.com/watch?v=dkyY9WCGMi0)<br>
+  [Flutter的分层设计 (video)](https://www.bilibili.com/video/av55811674/)<br>
   此视频包含有关有状态和无状态 widget 的信息。由 Google 工程师 Ian Hickson 讲解。

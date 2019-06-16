@@ -34,7 +34,7 @@ Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下
 * [Using Firestore as a backend to your Flutter
    app](https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s) (video)
    
-  [在你的 Flutter 应用后端中使用 Firestore](https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s) (视频)
+  [在你的 Flutter 应用后端中使用 Firestore](https://www.bilibili.com/video/av55809997/) (视频)
 
 Also, the Flutter community has created docs that you might find useful:
 

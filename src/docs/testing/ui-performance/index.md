@@ -758,7 +758,7 @@ and debugging in Flutter:
 [Integration testing]: /docs/testing#integration-tests
 [Architecture notes]: {{site.github}}/flutter/engine/wiki#architecture-notes
 [Widget inspector]: /docs/development/tools/inspector
-[Flutter Inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
+[Flutter Inspector talk]: https://www.bilibili.com/video/av55813252/
 [bookshelf-like icon]: /docs/testing/ui-performance/images/performance-overlay-icon.png
 [line-chart icon]: /docs/testing/ui-performance/images/observatory-timeline-icon.png
 [stopwatch icon]: /docs/testing/ui-performance/images/observatory-icon.png

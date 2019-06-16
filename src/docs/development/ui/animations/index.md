@@ -65,19 +65,19 @@ We also have some videos that discuss aspects of Flutter animation.
 
 我们也提供一些探讨 Flutter 动画的视频。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yI-8QHpGIP4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55792572&cid=97526142&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 AnimatedContainer
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9hltevOHQBw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55810608&cid=97564816&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Opacity, including the implicit AnimatedOpacity widget
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pK738Pg9cxc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55793736&cid=97536134&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 FadeInImage
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794187&cid=97537277&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Hero
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9z_YNlRlWfA?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55831662&cid=97600653&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Transform
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N-RiyZlv8v8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

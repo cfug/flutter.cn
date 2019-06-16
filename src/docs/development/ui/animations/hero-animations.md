@@ -48,7 +48,7 @@ You might want to watch this one-minute video introducing the Hero widget:
 
 下面的一分钟视频介绍了 Hero widget：
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794187&cid=97537277&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -122,7 +122,7 @@ the original route.
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
-    src="https://www.youtube.com/embed/CEcFnqRDfgw?rel=0"
+    src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1"
     frameborder="0" allowfullscreen>
   </iframe>
 </div>
@@ -148,7 +148,7 @@ the original route, displayed with a circular shape.
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
-    src="https://www.youtube.com/embed/LWKENpwDKiM?rel=0"
+    src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1"
     frameborder="0" allowfullscreen>
   </iframe>
 </div>

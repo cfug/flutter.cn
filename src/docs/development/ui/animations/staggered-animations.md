@@ -536,7 +536,7 @@ Flutter 动画效果文档的合集页面，如果你刚接触，可以从
   documentation.
   
 [Flutter API 文档]({{site.api}})<br>
-: Flutter 库所有的参考文档。特别是 [animation
+  Flutter 库所有的参考文档。特别是 [animation
   library]({{site.api}}/flutter/animation/animation-library.html) 文档。
 
 [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>

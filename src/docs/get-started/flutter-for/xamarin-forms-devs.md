@@ -1785,28 +1785,17 @@ The observable lifecycle events are:
 
 <dl>
 <dt>`inactive`</dt>
-<dd>The application is in an inactive state and is not receiving
-    user input. This event is iOS only.</dd>
+<dd> <p>The application is in an inactive state and is not receiving
+    user input. This event is iOS only.</p><p>* `inactive` — 应用程序处于非活动状态，并且没有接收用户输入。此事件仅适用于iOS。</p></dd>
 <dt>`paused`</dt>
-<dd>The application is not currently visible to
+<dd><p>The application is not currently visible to
     the user, is not responding to user input,
-    but is running in the background.</dd>
+    but is running in the background.</p><p>应用程序当前对用户不可见，不响应用户输入，但是在后台运行。</p></dd>
 <dt>`resumed`</dt>
-<dd>The application is visible and responding to user input.</dd>
+<dd><p>The application is visible and responding to user input.</p><p>应用程序是可见的，并响应用户输入。</p></dd>
 <dt>`suspending`</dt>
-<dd>The application is suspended momentarily. This event is Android
-    only.</dd>
-</dl>
-
-<dl>
-<dt>`inactive`</dt>
-<dd>* `inactive` — 应用程序处于非活动状态，并且没有接收用户输入。此事件仅适用于iOS。</dd>
-<dt>`paused`</dt>
-<dd>应用程序当前对用户不可见，不响应用户输入，但是在后台运行。</dd>
-<dt>`resumed`</dt>
-<dd>应用程序是可见的，并响应用户输入。</dd>
-<dt>`suspending`</dt>
-<dd>应用程序暂时暂停。此事件仅限Android。</dd>
+<dd><p>The application is suspended momentarily. This event is Android
+    only.</p><p>应用程序暂时暂停。此事件仅限Android。</p></dd>
 </dl>
 
 For more details on the meaning of these states, see the

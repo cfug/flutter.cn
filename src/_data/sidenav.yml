@@ -99,7 +99,7 @@
               permalink: /docs/development/data-and-backend/state-mgmt/intro
             - title: 声明式的编程思维
               permalink: /docs/development/data-and-backend/state-mgmt/declarative
-            - title: 短时 (ephemeral) 和共享 (app) 状态
+            - title: 短时 (ephemeral) 和应用 (app) 状态
               permalink: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
             - title: 简单的共享 (app) 状态管理
               permalink: /docs/development/data-and-backend/state-mgmt/simple

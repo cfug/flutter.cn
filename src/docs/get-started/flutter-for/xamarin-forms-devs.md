@@ -2713,7 +2713,7 @@ You can find more information and the full code listing in
 [Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input),
 from the [Flutter cookbook](/docs/cookbook).
 
-你可以在[Flutter 指南](/docs/cookbook)中的[检索一个文本字段的值](/docs/cookbook/forms/retrieve-input)找到更多的信息和完整的代码清单。
+你可以在 [Flutter 实用教程](/docs/cookbook) 中的 [获取文本框的输入值](/docs/cookbook/forms/retrieve-input) 找到更多的信息和完整的代码清单。
 
 ### What is the equivalent of a "Placeholder" on an Entry?
 

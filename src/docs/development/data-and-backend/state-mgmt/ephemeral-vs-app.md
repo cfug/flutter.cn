@@ -171,7 +171,6 @@ between sessions, and so on. In that case, the `_index` variable is app state.
 也可以用另外一种方式。比如，在一个特定的 app 中，你可以指定底部导航栏中被选中的项目_不是_一个短时状态。
 你可能需要在底部导航栏类的外部来改变这个值，并在对话期间保留它。在种情况下 `_index` 就是一个应用状态。 
 
-
 There is no clear-cut, universal rule to distinguish whether a particular 
 variable is ephemeral or app state. Sometimes, you'll have to refactor one into 
 another. For example, you'll start with some clearly ephemeral state, but as 
@@ -197,6 +196,7 @@ Abramov, replied:
 
 > "The rule of thumb is: [Do whatever is less 
 > awkward]({{site.github}}/reduxjs/redux/issues/1287#issuecomment-175351978)."
+>
 > "经验原则是: [选择能够减少麻烦的方式]({{site.github}}/reduxjs/redux/issues/1287#issuecomment-175351978)."
 
 In summary, there are two conceptual types of state in any Flutter app. 

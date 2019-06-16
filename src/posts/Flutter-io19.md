@@ -2,8 +2,9 @@
 title: Flutter 1.5 发布
 ---
 
-# Flutter 1.5 发布: 适用于移动、Web、嵌入式和桌面平台的便携式界面框架
-# Flutter: a Portable UI Framework for Mobile, Web, Embedded, and Desktop
+## Flutter: a Portable UI Framework for Mobile, Web, Embedded, and Desktop
+
+## Flutter 1.5 发布: 适用于移动、Web、嵌入式和桌面平台的便携式界面框架
 
 **作者: Flutter 团队**
 

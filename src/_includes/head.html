@@ -5,14 +5,6 @@
   <title>{{page.title}} {% if page.homepage != true %} - {{ site.title }} {% endif %}</title>
   <link rel="shortcut icon" href="/images/favicon.png">
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
-  <!-- End Google Tag Manager -->
-
   {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
   {% assign desc = page.description | default: page.content | strip_html | replace:'"','' | strip_newlines | truncatewords: 50 | split: '{%' | first %}
   <meta name="description" content="{{desc}}">
@@ -52,6 +44,9 @@
     ga('create', 'UA-122680122-1', 'auto');
     ga('send', 'pageview');
   </script>
-
+  
+  <style>
+  @import url(//fonts.googleapis.com/earlyaccess/notosansscsliced.css);
+  </style>
   <!--<meta name="google-site-verification" content="HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4" />-->
 </head>

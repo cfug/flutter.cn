@@ -2,7 +2,7 @@
 title: Flutter 中文文档 - Flutter 社区中文资源
 # description: TBC
 email: flutter-dev@googlegroups.com
-url: https://flutter.dev
+url: https://flutter-io.cn
 port: 4002
 github_username: flutter
 repo:
@@ -26,7 +26,7 @@ dart-site: https://dart.dev
 news: https://news.dartlang.org
 api: https://api.flutter.dev
 pub: https://pub.flutter-io.cn
-pub-api: https://pub.dartlang.org/documentation
+pub-api: https://pub.lutter-io.cn/documentation
 pub-pkg: https://pub.flutter-io.cn/packages
 flutter-medium: https://medium.com/flutter
 medium: https://medium.com

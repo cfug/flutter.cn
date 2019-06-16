@@ -16,7 +16,7 @@ next:
 _This doc introduces app state, ephemeral state, and how you might manage each 
 in a Flutter app._
 
-_本文将介绍应用 (app)状态 ，短时 (ephemeral) 状态, 以及在一个 Flutter App中你可以如何应用这两种状态_
+**本文将介绍应用 (app)状态 ，短时 (ephemeral) 状态, 以及在一个 Flutter App中你可以如何应用这两种状态**
 
 In the broadest possible sense, the state of an app is everything that exists in 
 memory when the app is running. This includes the app's assets, all the 
@@ -34,7 +34,7 @@ _do_ manage yourself can be separated into two conceptual types: ephemeral state
 and app state. 
 
 首先，你不需要管理一些状态（例如纹理），框架本身会替你管理。所以对于状态的更有用的定义是“当任何时候你需要重建你的用户界面时你所需要的数据”。
-其次，你需要自己_管理_的状态可以分为两种概念类型：短时 (ephemeral) 状态和应用 (app)状态。
+其次，你需要自己**管理**的状态可以分为两种概念类型：短时 (ephemeral) 状态和应用 (app)状态。
 
 ## Ephemeral state
 
@@ -43,7 +43,7 @@ and app state.
 Ephemeral state (sometimes called _UI state_ or _local state_) is the state you 
 can neatly contain in a single widget.
 
-短时状态(有时也称 _用户界面状态_ 或者 _局部状态_)是你可以完全包含在一个独立 widget 中的状态。
+短时状态 (有时也称 **用户界面(UI)状态** 或者 **局部状态**) 是你可以完全包含在一个独立 widget 中的状态。
 
 This is, intentionally, a vague definition, so here are a few examples. 
 
@@ -193,11 +193,10 @@ Source drawing for the png above: : https://docs.google.com/drawings/d/1p5Bvuagi
 When asked about React's setState versus Redux's store, the author of Redux, Dan 
 Abramov, replied:
 
-当我们就 React 的 setState 和 Redux 的 Store哪个好这个问题问Redux的作者Dan Abramov 时, 他如此回答:
+当我们就 React 的 setState 和 Redux 的 Store 哪个好这个问题问 Redux 的作者 Dan Abramov 时, 他如此回答:
 
 > "The rule of thumb is: [Do whatever is less 
 > awkward]({{site.github}}/reduxjs/redux/issues/1287#issuecomment-175351978)."
-
 > "经验原则是: [选择能够减少麻烦的方式]({{site.github}}/reduxjs/redux/issues/1287#issuecomment-175351978)."
 
 In summary, there are two conceptual types of state in any Flutter app. 

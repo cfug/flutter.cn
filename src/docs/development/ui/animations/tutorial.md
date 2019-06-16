@@ -92,7 +92,6 @@ other widgets.
 Flutter 中的动画系统基于类型化的 [Animation] [] 对象。Widgets 既可以通过读取当前值和监听状态变化直接合并动画到 build 函数，也可以作为传递给其他 widgets 的更精细动画的基础。
 
 <a name="animation-class"></a>
-### Animation<wbr>\<double>
 
 ### Animation<wbr>\<double>
 
@@ -128,8 +127,6 @@ An `Animation` object knows nothing about rendering or `build()` functions.
 
 ### Curved&shy;Animation
 
-### Curved&shy;Animation
-
 A [CurvedAnimation][] defines the animation's progress as a non-linear curve.
 
 [CurvedAnimation][] 定义动画进程为非线性曲线。
@@ -162,8 +159,6 @@ The CurvedAnimation wraps the object it’s modifying&mdash;you
 don’t subclass `AnimationController` to implement a curve.
 
 `CurvedAnimation` 和 `AnimationController`（下面将会详细说明）都是 `Animation<double>` 类型，所以可以互换使用。`CurvedAnimation` 封装正在修改的对象 &mdash; 不需要将 `AnimationController` 分解成子类来实现曲线。
-
-### Animation&shy;Controller
 
 ### Animation&shy;Controller
 
@@ -213,6 +208,7 @@ To use your custom State object as the `vsync`, include the
 {% endcomment -%}
 
 {{site.alert.note}}
+
   In some cases, a position might exceed the `AnimationController`'s 0.0-1.0
   range. For example, the `fling()` function allows you to provide velocity,
   force, and position (via the Force object). The position can be anything and
@@ -228,8 +224,6 @@ To use your custom State object as the `vsync`, include the
   
   即使 `AnimationController` 在范围内，`CurvedAnimation` 也可能会出现超出 0.0-1.0 范围的情况。根据所选曲线的不同，`CurvedAnimation` 的输出范围可能会超过输入。举个例子，弹性曲线（比如Curves.elasticIn）会明显超出或低于默认范围。
 {{site.alert.end}}
-
-### Tween
 
 ### Tween
 
@@ -273,8 +267,6 @@ animation values are 0.0 and 1.0, respectively.
 
 #### Tween.animate
 
-#### Tween.animate
-
 To use a `Tween` object, call `animate()` on the `Tween`, passing in the
 controller object. For example, the following code generates the
 integer values from 0 to 255 over the course of 500 ms.
@@ -289,6 +281,7 @@ Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
 ```
 
 {{site.alert.note}}
+
   The `animate()` method returns an [Animation][], not an [Animatable][].
   
   `animate()` 方法会返回一个 [Animation][]，而不是 [Animatable][]。
@@ -490,6 +483,7 @@ With these few changes, you’ve created your first animation in Flutter!
 经过这些小改动，你成功创建了第一个 Flutter 动画。
 
 <aside class="alert alert-success" markdown="1">
+
   **Dart language tricks:**
   You might not be familiar with Dart's cascade notation&mdash;the two
   dots in `..addListener()`. This syntax means that the `addListener()`

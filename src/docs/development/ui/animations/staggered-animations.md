@@ -32,6 +32,7 @@ short-title: 交织动画
 {{site.alert.end}}
 
 <aside class="alert alert-info" markdown="1">
+
   **Terminology:**
   If the concept of tweens or tweening is new to you, see the
   [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
@@ -47,7 +48,8 @@ The animation might be purely sequential, with one change occuring after
 the next, or it might partially or completely overlap. It might also
 have gaps, where no changes occur.
 
-交织动画是一个简单的概念： 视觉变化是随着一系列的动作发生，而不是一次性动作。动画可能是纯粹顺序的，一个改变随着一个改变发生，
+交织动画是一个简单的概念：视觉变化是随着一系列的动作发生，而不是一次性的动作。
+动画可能是纯粹顺序的，一个改变随着一个改变发生，
 动画也可能是部分或者全部重叠的。动画也可能有间隙，没有变化发生。
 
 This guide shows how to build a staggered animation in Flutter.
@@ -55,6 +57,7 @@ This guide shows how to build a staggered animation in Flutter.
 本指南展示如何在Flutter中构建交织动画。
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">Examples</h4>
   
   <h4 class="no_toc">例子</h4>
@@ -64,17 +67,16 @@ This guide shows how to build a staggered animation in Flutter.
   
   本指南解释了 basic_staggered_animation 示例。你也可参考更复杂的例子，staggered_pic_selection。
 
-  [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
-  : Shows a series of sequential and overlapping animations of a single widget.
+  [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)<br>
+    Shows a series of sequential and overlapping animations of a single widget.
     Tapping the screen begins an animation that changes opacity, size,
     shape, color, and padding.
     
-  [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
-  : 展示一个单独的 widget 的一系列连续和重叠动画。轻击屏幕开始一个动画，改变不透明度，大小，形状、颜色和填充。
-    
-
-  [staggered_pic_selection]({{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection)
-  : Shows deleting an image from a list of images displayed in one of three sizes.
+  [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)<br>
+    展示一个单独的 widget 的一系列连续和重叠动画。轻击屏幕开始一个动画，改变不透明度，大小，形状、颜色和填充。
+  
+  [staggered_pic_selection]({{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection)<br>
+    Shows deleting an image from a list of images displayed in one of three sizes.
     This example uses two [animation
     controllers]({{site.api}}/flutter/animation/AnimationController-class.html):
     one for image selection/deselection, and one for image deletion.
@@ -86,8 +88,8 @@ This guide shows how to build a staggered animation in Flutter.
     has finished expanding, the small image shrinks to display its checkmark.
     This staggered behavior is similar to what you might see in Google Photos.
     
-  [staggered_pic_selection]({{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection)
-  : 展示从一个以三种大小显示的图像列表中删除一个图像。
+  [staggered_pic_selection]({{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection)<br>
+    展示从一个以三种大小显示的图像列表中删除一个图像。
     这个例子使用两个 [animation
     controllers]({{site.api}}/flutter/animation/AnimationController-class.html):
     一个用于控制图像的选择/取消选择, 一个用于控制删除图像.
@@ -110,7 +112,8 @@ In the video, you see the following animation of a single widget,
 which begins as a bordered blue square with slightly rounded corners.
 The square runs through changes in the following order:
 
-在这个视频中，你可以看到一个独立的 widget 的以下动画， 以一个带边框的略微有圆角的蓝色矩形开始，
+在这个视频中，你可以看到一个独立的 widget 的以下动画，
+以一个带边框的略微有圆角的蓝色矩形开始，
 这个矩形会按照以下顺序变化：
 
 1. Fades in
@@ -138,6 +141,7 @@ After running forward, the animation runs in reverse.
 向前运行之后， 动画将反向运行。
 
 <aside class="alert alert-info" markdown="1">
+
   **New to Flutter?**
   This page assumes you know how to create a layout using Flutter’s
   widgets.  For more information, see [Building Layouts in
@@ -509,31 +513,48 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
 {% endprettify %}
 
 ## Resources
+
 ## 资源
 
 The following resources might help when writing animations:
 
 以下资源可能会在编写动画时有所帮助：
 
-[Animations landing page](/docs/development/ui/animations)
-: Lists the available documentation for Flutter animations.
+[Animations landing page](/docs/development/ui/animations)<br>
+  Lists the available documentation for Flutter animations.
   If tweens are new to you, check out the
   [Animations tutorial](/docs/development/ui/animations/tutorial).
+  
+[动画效果介绍](/docs/development/ui/animations)<br>
+Flutter 动画效果文档的合集页面，如果你刚接触，可以从
+[这个教程](/docs/development/ui/animations/tutorial)开始。
 
-[Flutter API documentation]({{site.api}})
-: Reference documentation for all of the Flutter libraries.
+[Flutter API documentation]({{site.api}})<br>
+  Reference documentation for all of the Flutter libraries.
   In particular, see the [animation
   library]({{site.api}}/flutter/animation/animation-library.html)
   documentation.
+  
+[Flutter API 文档]({{site.api}})<br>
+: Flutter 库所有的参考文档。特别是 [animation
+  library]({{site.api}}/flutter/animation/animation-library.html) 文档。
 
-[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
-: Demo app showcasing many Material Components and other Flutter
+[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
+  Demo app showcasing many Material Components and other Flutter
   features.  The [Shrine
   demo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
   implements a hero animation.
 
-[Material motion spec]({{site.material}}/guidelines/motion/)
-: Describes motion for Material apps.
+[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
+  Demo 应用程序展示了许多 Material Design 组件和其他 Flutter 特性。[Shrine
+  demo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
+  执行了一个 hero 动画。
+
+[Material motion spec]({{site.material}}/guidelines/motion/)<br>
+  Describes motion for Material apps.
+
+[Material 动画效果指导文档]({{site.material}}/guidelines/motion/)<br>
+ Material 动效果文档。
 
 {% comment %}
 Package not yet vetted.

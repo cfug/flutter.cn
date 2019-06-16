@@ -17,17 +17,17 @@ Flutter supports three components for accessibility support:
 * **[Large fonts](#large-fonts)**: Render text widgets with user-specified font
   sizes
 
-    [大字体](#large-fonts)**: 使用用户指定的字体大小呈现文本 widget 
+  **[大字体](#large-fonts)**: 使用用户指定的字体大小呈现文本 widget
 
 * **[Screen readers](#screen-readers)**: Communicate spoken feedback about UI
   contents
 
-    [读屏器](#screen-readers)**: 通过语音反馈传达用户界面的内容
+  **[读屏器](#screen-readers)**: 通过语音反馈传达用户界面的内容
 
 * **[Sufficient contrast](#sufficient-contrast)**: Render widgets with colors
   that have sufficient contrast
 
-    [高对比度](#sufficient-contrast)**: 在渲染 widget 时，使用具有高对比度的颜色
+  **[高对比度](#sufficient-contrast)**: 在渲染 widget 时，使用具有高对比度的颜色
 
 ## Inspecting Accessibility support
 

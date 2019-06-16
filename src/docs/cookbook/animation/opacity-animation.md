@@ -140,7 +140,10 @@ Make this change using [`setState()`][],
 which is a method on the `State` class.
 This tells Flutter to rebuild the widget.
 
-为此你将使用一个按钮——当用户按下按钮时，数据将会在 true 和 false 之间进行切换。为了使改变生效，你需要使用 `State` 类中的 [`setState`][] 方法，这会使 Flutter 重建这个小部件。
+为此你将使用一个按钮——当用户按下按钮时，数据将会在 true 和 false 之间进行切换。
+为了使改变生效，你需要使用 `State` 类中的
+[`setState`][`setState()`] 方法，
+这会使 Flutter 重建这个 widget。
 
 For more information on working with user input, see the
 [Gestures](/docs/cookbook#gestures) section of the cookbook.

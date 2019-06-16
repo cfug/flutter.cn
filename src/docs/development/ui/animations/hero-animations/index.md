@@ -79,7 +79,7 @@ flies the flippers back to the original route.
   Use this instead of the default YouTube embed code so that the embed
   is reposnisve.
 -->
-<div class="embed-container"><iframe src="https://www.youtube.com/embed/CEcFnqRDfgw?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div class="embed-container"><iframe src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1" frameborder="0" allowfullscreen></iframe></div>
 
 **Radial hero animations**<br>
 
@@ -94,7 +94,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-<div class="embed-container"><iframe src="https://www.youtube.com/embed/LWKENpwDKiM?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div class="embed-container"><iframe src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1" frameborder="0" allowfullscreen></iframe></div>
 
 Before moving to the sections specific to
 [standard](#standard-hero-animations)

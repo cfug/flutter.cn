@@ -244,7 +244,7 @@ If you are wondering why 60fps leads to a smooth visual experience,
 see the video [Why 60fps?](https://www.youtube.com/watch?v=CaMTIgxCSqU)
 
 如果你想弄明白为什么 60fps 会带来平滑的视觉体验，
-请看视频 [Why 60fps?](https://www.youtube.com/watch?v=CaMTIgxCSqU)
+请看视频 [Why 60fps?](https://www.bilibili.com/video/av55811304/)
 
 ## Pitfalls
 

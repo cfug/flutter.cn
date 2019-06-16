@@ -26,7 +26,7 @@ by the Flutter community:
   a video from Google I/O 2018, and an
   [accompanying article]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
 
-  [使用 Flutter 构建响应式移动应用](https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be)，视频来自 Google I/O 2018，以及一篇 [随附文章]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
+  [使用 Flutter 构建响应式移动应用](https://www.bilibili.com/video/av55808989/)，视频来自 Google I/O 2018，以及一篇 [随附文章]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
 
 * [Flutter Architecture Samples](http://fluttersamples.com/), by Brian Egan
 

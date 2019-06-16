@@ -33,7 +33,7 @@ Five-to-ten minute tutorials (more or less) on using Flutter.
 
 5 - 10 分钟左右的 Flutter 教程视频。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Introducing Flutter in Focus<br>
 介绍 Flutter in Focus 视频列表<br>
@@ -48,7 +48,7 @@ Do you have 60 seconds? Each one-minute video highlights a Flutter widget.
 
 每周一分钟，为你种草一个 Flutter widget！
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b_sQ9bMltGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55795672&cid=97539385&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Introducing Widget of the Week<br>
 介绍每周 Flutter Widgets 视频列表<br>
@@ -62,7 +62,7 @@ Coding mistakes, solutions, and snazzy intro music included.
 
 这个系列的亮点是 live coding Flutter 应用，包括写 bug，解决方案和「时髦」的介绍音乐。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Introducing the Boring Flutter Show<br>
 介绍 The Boring Flutter Show<br>
@@ -73,7 +73,7 @@ Introducing the Boring Flutter Show<br>
 
 ### Google I/O 2019 大会上的 Flutter and Dart 视频列表
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YSULAJf6R6M?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815097&cid=97572523&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Flutter and Dart at Google I/O 2019 playlist][]
 
 ### Flutter Live '18
@@ -84,7 +84,7 @@ Catch the content from Flutter Live '18, where Flutter 1.0 was officially launch
 
 我们在 Flutter Live '18 大会上正式发布了 Flutter 1.0 版。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D-o4BqJxmJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55814646&cid=97571719&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Flutter Live Keynote Recap<br>
 Flutter Live 主题演讲回顾<br>
@@ -99,7 +99,7 @@ Each episode solves a different design challenge.
 
 每集都解决了不同设计上的挑战。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GFRfSM4yA9U?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55818703&cid=97578576&page=1" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 [Flutter Challenge playlist][]
 
 ### Flutter Weekly Widgets by MTechViral
@@ -110,7 +110,7 @@ Weekly episodes, released on Sunday, feature Flutter widgets.
 
 每周日播出的视频教程，为你带来一个特色的 Flutter widget。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aVZ5rsA4Yx8?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55813706&cid=97570085&page=1" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 Episode 1: Sized Box<br>
 第一集: Sized Box<br>
 
@@ -130,7 +130,7 @@ listed by newest first.
 
 以下是各种会议上最近的一些Flutter会谈。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p4yLzYwy_4g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55833267&cid=97603337&page=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 [Conference Talks playlist]()
 
 {% endcomment %}
@@ -146,7 +146,7 @@ millions of downloads.
 视频展示了艾比路工作室 (Abbey Road Studio)、汉密尔顿 (Hamilton) 和阿里巴巴 (Alibaba)
 等开发者 / 公司如何使用 Flutter 开发出百万级别下载量，引人注目的应用程序。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_ACWeGGBP4E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55812033&cid=97567456&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Flutter Developer Stories playlist][]
 
 ---

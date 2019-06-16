@@ -103,7 +103,7 @@ basic_staggered_animation:
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
-    src="https://www.youtube.com/embed/0fFvnZemmh8?rel=0"
+    src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1"
     frameborder="0" allowfullscreen>
   </iframe>
 </div>

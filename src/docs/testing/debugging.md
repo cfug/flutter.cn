@@ -9,6 +9,7 @@ applications.
 有很多工具和特性可以帮助调试 Flutter 应用程序。
 
 {{site.alert.note}}
+
   If your app's UI isn't running as smoothly as you expect,
   check out [Flutter Performance Profiling](ui-performance).
   
@@ -1105,5 +1106,3 @@ flutter/.travis.yml, or flutter/.cirrus.yml, respectively.
 
 如果您使用 Travis 或 Cirrus 进行测试，请通过在 flutter/.travis.yml 或 flutter/.cirrus.yml 中增加同样的命令来
 增加它们可以打开的句柄数量。
-
-

@@ -38,7 +38,7 @@ package repository in China. Instructions are below.
   Use mirror sites only if you _trust_ the provider.
   The Flutter team cannot verify their reliability or security.
   
-  使用任意镜像网站的时候，你必须确保你 _信任_ 你的镜像提供者。
+  使用任意镜像网站的时候，你必须确保你 **信任** 你的镜像提供者。
   Flutter 团队无法确保他们的安全性。
   
 {{site.alert.end}}
@@ -77,13 +77,13 @@ $ flutter doctor
 
 After these steps, you should be able to continue
 [setting up Flutter](/docs/get-started/editor) normally.
-From here on, packages fetched by `flutter packages get` are
+From here on, packages fetched by `flutter pub get` are
 downloaded from `flutter-io.cn` in any shell where `PUB_HOSTED_URL`
 and `FLUTTER_STORAGE_BASE_URL` are set.
 
 如上步骤设定之后，你可以继续进行 Flutter 安装的下一步：[编辑工具设定](/docs/get-started/editor)，
 在这两个环境变量（`PUB_HOSTED_URL` 和 `FLUTTER_STORAGE_BASE_URL`）设定过后，
-未来通过命令 `flutter packages get` 获取 packages 的时候，网络请求将会通过
+未来通过命令 `flutter pub get` 获取 packages 的时候，网络请求将会通过
 `flutter-io.cn` 提供的镜像进行。
 
 The `flutter-io.cn` server is a provisional mirror for Flutter

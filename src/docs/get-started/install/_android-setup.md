@@ -90,7 +90,7 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
  4. Select one or more system images for the Android versions you want to emulate,
     and select **Next**. An _x86_ or _x86\_64_ image is recommended.
 
-    选择一个或多个你想要模拟的 Android 版本的系统镜像，然后选择 **Next** 选项。推荐选择 _x86_ 或者 _x86\_64_ 镜像。
+    选择一个或多个你想要模拟的 Android 版本的系统镜像，然后选择 **Next** 选项。推荐选择 **x86** 或者 **x86\_64** 镜像。
 
  5. Under Emulated Performance, select **Hardware - GLES 2.0** to enable
     [hardware

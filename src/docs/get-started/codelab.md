@@ -288,8 +288,7 @@ where the Dart code lives.
   that describes how to display the widget in terms of other,
   lower level widgets.
 
-  一个 widget 的主要工作是提供一个 `build()` 方法来描述如何
-  根据其他较低级别的 widgets 来显示自己。
+  一个 widget 的主要工作是提供一个 `build()` 方法来描述如何根据其他较低级别的 widgets 来显示自己。
 
 
 * The body for this example consists of a `Center` widget containing
@@ -298,7 +297,7 @@ where the Dart code lives.
 
   本示例中的 body 的 widget 树中包含了一个 `Center` widget，
   Center widget 又包含一个 `Text` 子 widget，
-  Center widget 可以将其子 widget 树对其到屏幕中心。
+  Center widget 可以将其子 widget 树对齐到屏幕中心。
 
   
 ## Step 2: Use an external package
@@ -349,8 +348,8 @@ packages, on the [Pub site]({{site.pub}}/flutter).
     你可以在控制台中看到以下内容：
 
     ```terminal
-    $ flutter packages get
-    Running "flutter packages get" in startup_namer...
+    $ flutter pub get
+    Running "flutter pub get" in startup_namer...
     Process finished with exit code 0
     ```
 
@@ -479,7 +478,7 @@ In this step, you’ll add a stateful widget, `RandomWords`, which creates
 its `State` class, `RandomWordsState`. You'll then use `RandomWords` as
 a child inside the existing `MyApp` stateless widget.
 
-在这一步，你将添加一个 stateful widget（有状态的控件）—— `RandomWords`，
+在这一步，你将添加一个 stateful widget（有状态的 widget）—— `RandomWords`，
 它会创建自己的状态类 —— `RandomWordsState`，然后你需要将 `RandomWords`
 内嵌到已有的无状态的 `MyApp` widget。
 
@@ -508,7 +507,7 @@ a child inside the existing `MyApp` stateless widget.
     
     注意一下 `State<RandomWords>` 的声明。这表明我们在使用专门用于 `RandomWords` 的 
     [State]({{site.api}}/flutter/widgets/State-class.html) 泛型类。
-    应用的大部分逻辑和状态都在这里 —— 它会维护 RandomWords 控件的状态。
+    应用的大部分逻辑和状态都在这里 —— 它会维护 RandomWords widget 的状态。
     这个类会保存代码生成的单词对，这个单词对列表会随着用户滑动而无限增长，
     另外还会保存用户喜爱的单词对（第二部分），
     也即当用户点击爱心图标的时候会从喜爱的列表中添加或者移除当前单词对。
@@ -601,10 +600,10 @@ a child inside the existing `MyApp` stateless widget.
 
   **Reloading...<br>
   Some program elements were changed during reload but did not run when
-  the view was reassembled; you may need to restart the app (by pressing "R")
+  the view was reassembled; you might need to restart the app (by pressing "R")
   for the changes to have an effect.**
 
-  It may be a false positive, but restarting ensures that your changes
+  It might be a false positive, but restarting ensures that your changes
   are reflected in the app's UI.
   
   因为重启应用之后就可以生效，故这可能是误报。
@@ -678,7 +677,7 @@ lazily, on demand.
     factory builder and callback function specified as an anonymous function.
     Two parameters are passed to the function&mdash;the `BuildContext`,
     and the row iterator, `i`. The iterator begins at 0 and increments each
-    time the function is called. It increments twice for every suggested word pairing: 
+    time the function is called. It increments twice for every suggested word pairing:
     once for the ListTile, and once for the Divider. This model allows the suggested
     list to grow infinitely as the user scrolls.
     
@@ -714,7 +713,7 @@ lazily, on demand.
         and places each suggestion into a `ListTile` row. For even rows, the
         function adds a `ListTile` row for the word pairing. For odd rows, the
         function adds a `Divider` widget to visually separate the entries. Note
-        that the divider may be difficult to see on smaller devices.
+        that the divider might be difficult to see on smaller devices.
         
         对于每个建议的单词对都会调用一次 itemBuilder，然后将单词对添加到 ListTile 行中。
         在偶数行，该函数会为单词对添加一个 ListTile row，
@@ -772,7 +771,7 @@ lazily, on demand.
 
     更新 RandomWordsState 的 build 方法以使用 _buildSuggestions()，
     而不是直接调用单词生成库，代码更改后如下：
-    （使用 ([Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
+    （使用 [Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
     类实现基础的 Material Design 布局）
 
     <?code-excerpt "lib/main.dart (build)" title region="RWS-build" replace="/(\n  )(return.*|  .*|\);)/$1[!$2!]/g" indent-by="2"?>
@@ -841,6 +840,8 @@ to get back on track.
 如果你的应用没有正常运行，你可以使用一下链接中的代码对比更正。
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
+
+{% include run-profile.md %}
 
 ## Next steps
 {:.no_toc}

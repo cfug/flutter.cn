@@ -3,7 +3,7 @@ title: An introduction to unit testing
 title: 单元测试介绍
 short-title: Introduction
 prev:
-  title: Scrolling
+  title: Perform scrolling
   title: 列表滚动
   path: /docs/cookbook/testing/integration/scrolling
 next:
@@ -21,59 +21,63 @@ Unit tests are handy for verifying the behavior of a single function,
 method, or class. The [`test`]({{site.pub-pkg}}/test) package provides the
 core framework for writing unit tests, and the
 [`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
-package provides additional utilities for testing Widgets.
+package provides additional utilities for testing widgets.
+
+使用单元测试可轻松地验证单个函数、方法或类的行为。
+[`test`]({{site.pub-pkg}}/test) 这个 package 提供了写单测的核心框架，
+[`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
+包则提供了额外的功能来测试 widget。
+
+This recipe demonstrates the core features provided by the `test` package
+using the following steps:
+
+这个教程将会为大家演示 `test` package 的用法，内容大约有如下几项：
+
+  1. Add the `test` or `flutter_test` dependency.
+     
+     将 `test` 或者 `flutter_test`加入依赖；
+
+  2. Create a test file.
+     
+     创建测试文件；
+
+  3. Create a class to test.
+     
+     创建一个要测试的类；
+     
+  4. Write a `test` for our class.
+     
+     为创建的类写一个测试；
+
+  5. Combine multiple tests in a `group`.
+     
+     整合多个测试到一个 `group`；
+
+  6. Run the tests.
+     
+     执行测试。
+     
 
 使用单元测试可轻松地验证单个函数、方法或类的行为。[`test`]({{site.pub-pkg}}/test) 包提供了写单测的核心框架，
 [`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html) 包则提供了额外的功能来测试 Widget。
 
-This recipe demonstrates the core features provided by the `test` package.
 For more information about the test package, see the
 [test package
 documentation]({{site.github}}/dart-lang/test/blob/master/README.md).
 
-本篇文档只展示了 `test` 包所提供的核心特性。关于测试包的更多内容，
-可移步至 [测试包文档](https://github.com/dart-lang/test/blob/master/README.md).
+关于测试包的更多内容，可移步至 [测试包文档](https://github.com/dart-lang/test/blob/master/README.md).
 
+## 1. Add the `test` or `flutter_test` dependency
 
-## Directions
+## 1. 添加测试依赖 —— 将 `test` 或者 `flutter_test`加入依赖文件
 
-## 使用步骤
-
-  1. Add the `test` or `flutter_test` dependency
-     
-     添加 `test` 或 `flutter_test` 依赖
-
-  2. Create a test file
-
-     创建一个测试文件
-
-  3. Create a class to test
-
-     创建一个要测试的类     
-
-  4. Write a `test` for our class
-
-     为创建的类写一个 `test`
-
-  5. Combine multiple tests in a `group`
-
-     整合多个测试到一个 `group`
-
-  6. Run the tests
-
-     执行测试
-
-## 1. Add the test dependency
-## 1. 添加测试依赖
-
-If you're working on a Dart package that does not depend on Flutter, you
-can import the `test` package. The test package provides the core functionality
-for writing tests in Dart. This is the best approach when writing packages that
-will be consumed by web, server, and Flutter apps.
+If you're working on a Dart package that does not depend on Flutter,
+you can import the `test` package. The test package provides the core
+functionality for writing tests in Dart. This is the best approach when
+writing packages consumed by web, server, and Flutter apps.
 
 如果 Dart 包没有依赖 Flutter，可以导入 `test` 包。Test 包提供了编写测试所需要的核心功能。
 如果我们写的包可以被 web、服务端和 Flutter app 所使用，那这种方式是最佳的。
-
 
 ```yaml
 dev_dependencies:
@@ -84,14 +88,12 @@ dev_dependencies:
 
 ## 2. 创建测试文件
 
-In this example, we'll create two files: `counter.dart` and `counter_test.dart`.
+In this example, create two files: `counter.dart` and `counter_test.dart`.
 
 本例中，我们会创建两个文件：`counter.dart` 和 `couter_test.dart`。
 
-In this example, create two files: `counter.dart` and `counter_test.dart`.
-
-The `counter.dart` file will contain a class that you want to test and
-resides in the `lib` folder. The `counter_test.dart` file will contain
+The `counter.dart` file contains a class that you want to test and
+resides in the `lib` folder. The `counter_test.dart` file contains
 the tests themselves and lives inside the `test` folder.
 
 `counter.dart` 文件包含一个将要测试的类，并且位于 `lib` 文件夹。`counter_test.dart` 文件将包含测试本身，位于 `test` 文件夹。
@@ -117,9 +119,9 @@ counter_app/
 
 ## 3. 创建一个要测试的类
 
-Next, you need a "unit" to test. Remember: "unit" is a fancy name for a
-function, method, or class. In this example, create a `Counter` class
-inside the `lib/counter.dart` file. It will be responsible for incrementing
+Next, you need a "unit" to test. Remember: "unit" is another name for a
+function, method, or class. For this example, create a `Counter` class
+inside the `lib/counter.dart` file. It is responsible for incrementing
 and decrementing a `value` starting at `0`.
 
 下一步，我们需要一个“单元”来测试。记住：“单元”是一个抽象的名称，它表示一个函数、方法或者类。
@@ -230,8 +232,6 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。用这种方式执行
 
 
   * **IntelliJ**
-  
-  * **IntelliJ**
 
     1. Open the `counter_test.dart` file
 
@@ -249,8 +249,6 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。用这种方式执行
 
        *或者，也可以使用系统快捷键!*
 
-  * **VSCode**
-  
   * **VSCode**
 
     1. Open the `counter_test.dart` file

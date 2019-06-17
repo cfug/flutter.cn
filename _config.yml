@@ -2,7 +2,7 @@
 title: Flutter 中文文档 - Flutter 社区中文资源
 # description: TBC
 email: flutter-dev@googlegroups.com
-url: https://flutter.dev
+url: https://flutter-io.cn
 port: 4002
 github_username: flutter
 repo:
@@ -12,7 +12,7 @@ repo:
 branch: master
 
 dart:
-  api: https://api.dartlang.org
+  api: https://api.dart.dev
   sdk:
     channel: stable
 sdk: # Flutter SDK
@@ -22,13 +22,13 @@ social:
   twitter: https://twitter.com/flutterdev
   youtube: https://www.youtube.com/flutterdev
 
-dart-site: https://www.dartlang.org
+dart-site: https://dart.dev
 news: https://news.dartlang.org
 api: https://api.flutter.dev
 pub: https://pub.flutter-io.cn
-pub-api: https://pub.dartlang.org/documentation
+pub-api: https://pub.lutter-io.cn/documentation
 pub-pkg: https://pub.flutter-io.cn/packages
-flutter-medium: https://medium.com/flutter-io
+flutter-medium: https://medium.com/flutter
 medium: https://medium.com
 dartpad: https://dartpad.cn
 material: https://material-io.cn
@@ -99,21 +99,21 @@ os-list: [Windows, macOS, Linux]
 alert:
   important: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fas fa-exclamation-circle"></i> **重点提醒:**
+    <i class="fas fa-exclamation-circle"></i> **重点提醒**
   info: >-
     <aside class="alert alert-info" role="alert" markdown="1">
     <i class="fas fa-info-circle"></i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-info-circle"></i> **备忘：**
+    <i class="fas fa-info-circle"></i> **备忘**
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
-    <i class="far fa-lightbulb"></i> **小提示：**
+    <i class="far fa-lightbulb"></i> **小提示**
   warning: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fas fa-exclamation-triangle"></i> **请注意：:**
+    <i class="fas fa-exclamation-triangle"></i> **请注意**
   end: </aside>
 
   # callout_danger: '<div class="bs-callout bs-callout-danger">'

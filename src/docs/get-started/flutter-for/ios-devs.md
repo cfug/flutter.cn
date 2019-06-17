@@ -13,15 +13,14 @@ way to get started learning Flutter development.
 这篇文章是为那些想将已有的 iOS 开发经验运用到 Flutter 开发中的 iOS 开发者所作。
 如果你理解 iOS framework 的基本原理，那么你可以将这篇文章作为学习 Flutter 开发的起点。
 
-Before diving into this doc, you may want to watch a 15-minute video from
+Before diving into this doc, you might want to watch a 15-minute video from
 the [Flutter Youtube channel](https://www.youtube.com/flutterdev) about
 the Cupertino package.
 
 在开始本文档之前，建议先浏览一下这个 15 分钟的视频，
 了解一下 Cupertino package 是什么吧：
-[https://www.youtube.com/watch?v=3PdUaidHc-E](https://www.youtube.com/watch?v=3PdUaidHc-E)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55647852&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 Your iOS knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
@@ -47,12 +46,15 @@ that are most relevant to your needs.
 
 
 ## Views
+
 ## 视图
 
 ### What is the equivalent of a `UIView` in Flutter?
+
 ### `UIView` 相当于 Flutter 中的什么？
 
 {{site.alert.secondary}}
+
 How is react-style, or _declarative_, programming different than the
 traditional imperative style?
 For a comparison, see [Introduction to declarative
@@ -118,6 +120,7 @@ to produce an interface that looks like
 来构造类似于[Apple iOS 设计语言](https://developer.apple.com/design/resources/)的接口。
 
 ### How do I update `Widget`s?
+
 ### 我该如何更新 `Widget`？
 
 To update your views on iOS, you directly mutate them. In Flutter, widgets are
@@ -256,6 +259,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 {% endprettify %}
 
 ### How do I lay out my widgets? Where is my Storyboard?
+
 ### 如何对 widget 做布局？Storyboard 哪去了？
 
 In iOS, you might use a Storyboard file to organize your views and set
@@ -303,6 +307,7 @@ catalog](/docs/development/ui/widgets/layout).
 的所有 widget 布局方法。
 
 ### How do I add or remove a component from my layout?
+
 ### 如何增加或者移除一个组件？
 
 In iOS, you call `addSubview()` on the parent, or `removeFromSuperview()`
@@ -382,7 +387,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-### How do I animate a Widget?
+### How do I animate a widget?
+
 ### 如何添加动画？
 
 In iOS, you create an animation by calling the
@@ -503,6 +509,7 @@ and the [Animations overview](/docs/development/ui/animations).
 以及[Animations 概览](/docs/development/ui/animations)。
 
 ### How do I draw to the screen?
+
 ### 如何渲染到屏幕上？
 
 On iOS, you use `CoreGraphics` to draw lines and shapes to the
@@ -566,6 +573,7 @@ class SignatureState extends State<Signature> {
 {% endprettify %}
 
 ### Where is the widget's opacity?
+
 ### 如何设置视图 widget 的透明度？
 
 On iOS, everything has .opacity or .alpha. In Flutter, most of the time you need to
@@ -575,6 +583,7 @@ wrap a widget in an Opacity widget to accomplish this.
 一个 Opacity widget 中来实现这一功能。
 
 ### How do I build custom widgets?
+
 ### 如何构建自定义 widget？
 
 In iOS, you typically subclass `UIView`, or use a pre-existing view, to
@@ -620,9 +629,11 @@ Widget build(BuildContext context) {
 {% endprettify %}
 
 ## Navigation
+
 ## 导航
 
 ### How do I navigate between pages?
+
 ### 如何在两个页面之间切换？
 
 In iOS, to travel between view controllers, you can use a
@@ -647,20 +658,15 @@ Flutter 中也有类似的实现，使用 `Navigator` 和 `Routes`。一个 `Rou
 To navigate between pages, you have a couple options:
 想要在不同页面间跳转，你有两个选择：
 
-<<<<<<< HEAD
-* Specify a `Map` of route names. (MaterialApp)
+* Specify a `Map` of route names.
   
-  构建由 route 名称组成的 `Map`（MaterialApp）
+  构建由 route 名称组成的 `Map`；
   
-* Directly navigate to a route. (WidgetApp)
+* Directly navigate to a route.
   
-  直接跳转到一个 route（WidgetApp）
+  直接跳转到一个 route。
 
 The following example builds a `Map`.
-=======
-* Specify a `Map` of route names.
-* Directly navigate to a route.
->>>>>>> 63b2723157e3e26c37ac156ed74f5dca7fb9992d
 
 下面的示例构建了一个 `Map`：
 
@@ -711,6 +717,7 @@ Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 {% endprettify %}
 
 ### How do I navigate to another app?
+
 ### 如何跳转到其他应用？
 
 In iOS, to send the user to another application, you use a
@@ -726,10 +733,12 @@ create a native platform integration, or use an
 [`url_launcher`]({{site.pub-pkg}}/url_launcher)。
 
 ### How do I pop back to the iOS native viewcontroller?
+
 ### 如何退回到 iOS 原生的 viewcontroller？
 
 Calling `SystemNavigator.pop()` from your Dart code invokes the
 following iOS code:
+
 在 Dart 代码中调用 `SystemNavigator.pop()` 将会调用下面的 iOS 代码：
 
 ```
@@ -741,13 +750,16 @@ UIViewController* viewController = [UIApplication sharedApplication].keyWindow.r
 
 If that doesn't do what you want, you can create your own
 [platform channel](/docs/development/platform-integration/platform-channels) to invoke arbitrary iOS code.
+
 如果这不是你需要的功能，你可以创建你自己的[平台通道](/docs/development/platform-integration/platform-channels)来调用
 对应的 iOS 代码。
 
 ## Threading & asynchronicity
+
 ## 线程和异步
 
 ### How do I write asynchronous code?
+
 ### 如何编写异步代码？
 
 Dart has a single-threaded execution model, with support for `Isolate`s (a way
@@ -869,6 +881,7 @@ background, and how Flutter differs from iOS.
 更多关于在后台执行任务的信息，以及 Flutter 和 iOS 的区别，可以参考下一章节。
 
 ### How do you move work to a background thread?
+
 ### 如何让你的任务在后台线程执行？
 
 Since Flutter is single threaded and runs an event loop (like Node.js), you
@@ -1096,6 +1109,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 {% endprettify %}
 
 ### How do I make network requests?
+
 ### 如何发起网络请求？
 
 Making a network call in Flutter is easy when you use the popular
@@ -1136,6 +1150,7 @@ import 'package:http/http.dart' as http;
 {% endprettify %}
 
 ### How do I show the progress of a long-running task?
+
 ### 展示耗时任务的进度
 
 In iOS, you typically use a `UIProgressView` while executing a
@@ -1245,9 +1260,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 {% endprettify %}
 
 ## Project structure, localization, dependencies and assets
+
 ## 工程结构，本地化，依赖和资源
 
 ### How do I include image assets for Flutter? What about multiple resolutions?
+
 ### 如何在 Flutter 中引入图片资源？如何处理多分辨率？
 
 While iOS treats images and assets as distinct items, Flutter apps have only
@@ -1354,6 +1371,7 @@ For more details, see
 关于更多的细节，请参见 [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)。
 
 ### Where do I store strings? How do I handle localization?
+
 ### 字符串存储在哪里？如何处理本地化？
 
 Unlike iOS, which has the `Localizable.strings` file, Flutter doesn't
@@ -1471,6 +1489,7 @@ weren’t available to Flutter, as they lived in separate folders.
 也是不能在 Flutter 中使用，因为它们都被放在了独立的文件夹中。
 
 ### What is the equivalent of CocoaPods? How do I add dependencies?
+
 ### CocoaPods 相当于 Flutter 中的什么？如何添加依赖？
 
 In iOS, you add dependencies by adding to your `Podfile`. Flutter uses Dart’s
@@ -1495,6 +1514,7 @@ A good place to find great packages for Flutter is the
 ## ViewControllers
 
 ### What is the equivalent to `ViewController`s in Flutter?
+
 ### ViewControllers 相当于 Flutter 中的什么？
 
 In iOS, a `ViewController` represents a portion of user interface, most
@@ -1513,6 +1533,7 @@ Flutter 中的屏幕也是使用 Widgets 表示的，因为“万物皆 widget�
 `Route` 之间切换，而不同的路由则代表了不同的屏幕或页面，或是不同的状态，也可能是渲染相同的数据。
 
 ### How do I listen to iOS lifecycle events?
+
 ### 如何监听 iOS 中的生命周期？
 
 In iOS, you can override methods to the `ViewController` to capture lifecycle
@@ -1532,6 +1553,7 @@ The observable lifecycle events are:
 * `inactive` — The application is in an inactive state and is not receiving
 user input. This event only works on iOS, as there is no equivalent event on
 Android.
+  
   `inactive` - 应用当前处于不活跃状态，不接收用户输入事件。
   这个事件只在 iOS 上有效，Android 中没有类似的状态。
   
@@ -1557,9 +1579,11 @@ For more details on the meaning of these states, see
 [`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 
 ## Layouts
+
 ## 布局
 
 ### What is the equivalent of a `UITableView` or `UICollectionView` in Flutter?
+
 ### `UITableView` 和 `UICollectionView` 相当于 Flutter 中的什么？
 
 In iOS, you might show a list in either a `UITableView` or a
@@ -1629,10 +1653,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
 {% endprettify %}
 
 ### How do I know which list item is clicked?
+
 ### 如何确定列表中被点击的元素？
 
 In iOS, you implement the delegate method, `tableView:didSelectRowAtIndexPath:`.
 In Flutter, use the touch handling provided by the passed-in widgets.
+
 在 iOS 里，可以通过 `tableView:didSelectRowAtIndexPath:` 代理方法来实现。
 而在 Flutter 里，需要通过 widget 传递进来的 touch 响应处理来实现。
 
@@ -1694,6 +1720,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 {% endprettify %}
 
 ### How do I dynamically update a `ListView`s?
+
 ### 如何动态更新 `ListView`？
 
 In iOS, you update the data for the list view, and notify the table or
@@ -1884,6 +1911,7 @@ doesn't recreate the list anymore, but instead `.add`s to it.
 最后，也是最重要的，注意 `onTap()` 方法并没有重新创建列表，而是使用 `.add` 方法进行添加。
 
 ### What is the equivalent of a `ScrollView` in Flutter?
+
 ### `ScrollView` 相当于 Flutter 中的什么？
 
 In iOS, you wrap your views in a `ScrollView` that allows a user to scroll
@@ -1919,9 +1947,11 @@ see the [layout tutorial](/docs/development/ui/widgets/layout).
 关于 Flutter 中布局的更多细节，请参看[布局教程](/docs/development/ui/widgets/layout)。
 
 ## Gesture detection and touch event handling
+
 ## 手势检测与 touch 事件处理
 
 ### How do I add a click listener to a widget in Flutter?
+
 ### 如何给 Flutter 的 widget 添加点击事件？
 
 In iOS, you attach a `GestureRecognizer` to a view to handle
@@ -1978,6 +2008,7 @@ click events. In Flutter, there are two ways of adding touch listeners:
     ```
 
 ### How do I handle other gestures on widgets?
+
 ### 如何处理 widget 的其他手势？
 
 Using `GestureDetector` you can listen to a wide range of gestures such as:
@@ -2105,9 +2136,11 @@ class SampleApp extends StatelessWidget {
 {% endprettify %}
 
 ## Theming and text
+
 ## 主题和文字
 
 ### How do I theme an app?
+
 ### 如何设置应用主题？
 
 Out of the box, Flutter comes with a beautiful implementation of Material Design,
@@ -2168,6 +2201,7 @@ class SampleApp extends StatelessWidget {
 {% endprettify %}
 
 ### How do I set custom fonts on my `Text` widgets?
+
 ### 如何给 `Text` widget 设置自定义字体？
 
 In iOS, you import any `ttf` font files into your project and create a
@@ -2208,6 +2242,7 @@ Widget build(BuildContext context) {
 {% endprettify %}
 
 ### How do I style my `Text` widgets?
+
 ### 如何设置 `Text` widget 的样式？
 
 Along with fonts, you can customize other styling elements on a `Text` widget.
@@ -2233,9 +2268,11 @@ customize many parameters, such as:
 * `wordSpacing`
 
 ## Form input
+
 ## 表单输入
 
 ### How do forms work in Flutter? How do I retrieve user input?
+
 ### Flutter 中如何使用表单？如何获取到用户的输入？
 
 Given how Flutter uses immutable widgets with a separate state, you might be
@@ -2307,9 +2344,11 @@ You can find more information and the full code listing in
 [Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input),
 from the [Flutter Cookbook](/docs/cookbook).
 
-你在 [Flutter Cookbook](/docs/cookbook) 的 [Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input) 中可以找到更多的相关内容以及详细的代码列表。
+你在 [Flutter Cookbook](/docs/cookbook) 的 [获取文本框的输入值](/docs/cookbook/forms/retrieve-input) 
+教程中可以找到更多的相关内容以及详细的代码列表。
 
 ### What is the equivalent of a placeholder in a text field?
+
 ### TextField 中的 placeholder 相当于什么？
 
 In Flutter you can easily show a "hint" or a placeholder text for your field by
@@ -2328,6 +2367,7 @@ body: Center(
 {% endprettify %}
 
 ### How do I show validation errors?
+
 ### 如何展示验证错误信息？
 
 Just as you would with a "hint", pass an `InputDecoration` object
@@ -2406,9 +2446,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 {% endprettify %}
 
 ## Interacting with hardware, third party services and the platform
+
 ## 和硬件、第三方服务以及系统平台交互
 
 ### How do I interact with the platform, and with platform native code?
+
 ### 如何与系统平台以及平台原生代码进行交互？
 
 Flutter doesn't run code directly on the underlying platform; rather, the Dart code
@@ -2460,6 +2502,7 @@ and [publish it on Pub](/docs/development/packages-and-plugins/developing-packag
 并[发布到 Pub 上](/docs/development/packages-and-plugins/developing-packages#publish)。
 
 ### How do I access the GPS sensor?
+
 ### 如何访问 GPS 传感器？
 
 Use the [`geolocator`]({{site.pub-pkg}}/geolocator) community plugin.
@@ -2467,6 +2510,7 @@ Use the [`geolocator`]({{site.pub-pkg}}/geolocator) community plugin.
 使用 [`geolocator`]({{site.pub-pkg}}/geolocator) 插件，这一插件由社区提供。
 
 ### How do I access the camera?
+
 ### 如何访问相机？
 
 The [`image_picker`]({{site.pub-pkg}}/image_picker) plugin is popular
@@ -2475,6 +2519,7 @@ for accessing the camera.
 [`image_picker`]({{site.pub-pkg}}/image_picker) 是常用的访问相机的插件。
 
 ### How do I log in with Facebook?
+
 ### 如何使用 Facebook 登录？
 
 To log in with Facebook, use the
@@ -2483,6 +2528,7 @@ To log in with Facebook, use the
 登录 Facebook 可以使用 [`flutter_facebook_login`]({{site.pub-pkg}}/flutter_facebook_login) 插件。
 
 ### How do I use Firebase features?
+
 ### 如何集成 Firebase 的功能？
 
 Most Firebase functions are covered by
@@ -2531,6 +2577,7 @@ cover areas not directly covered by the first-party plugins.
 在 Pub 上你也可以找到一些第三方的 Firebase 插件，主要实现了官方插件没有直接实现的功能。
 
 ### How do I build my own custom native integrations?
+
 ### 如何构建自己的插件？
 
 If there is platform-specific functionality that Flutter or its community
@@ -2550,9 +2597,11 @@ Flutter 的插件结构，简单来说，更像是 Android 中的 Event bus：�
 结果给你。这种情况下，接受者就是在 iOS 或 Android 的原生代码。
 
 ## Databases and local storage
+
 ## 数据库和本地存储
 
 ### How do I access `UserDefaults` in Flutter?
+
 ### Flutter 中如何访问 `UserDefaults`？
 
 In iOS, you can store a collection of key-value pairs using a property list,
@@ -2568,6 +2617,7 @@ equivalent, `SharedPreferences`.
 来实现相同的功能。这个插件封装了 `UserDefaults` 以及 Android 里类似的 `SharedPreferences`。
 
 ### What is the equivalent to CoreData in Flutter?
+
 ### CoreData 相当于 Flutter 中的什么？
 
 In iOS, you can use CoreData to store structured data. This is simply a
@@ -2583,9 +2633,11 @@ In Flutter, access this functionality using the
 在 Flutter 里，可以使用 [SQFlite]({{site.pub-pkg}}/sqflite) 插件来实现这个功能。
 
 ## Notifications
+
 ## 通知
 
 ### How do I set up push notifications?
+
 ### 如何设置推送通知？
 
 In iOS, you need to register your app on the developer portal to allow

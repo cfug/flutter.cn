@@ -99,7 +99,7 @@
               permalink: /docs/development/data-and-backend/state-mgmt/intro
             - title: 声明式的编程思维
               permalink: /docs/development/data-and-backend/state-mgmt/declarative
-            - title: 短时 (ephemeral) 和共享 (app) 状态
+            - title: 短时 (ephemeral) 和应用 (app) 状态
               permalink: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
             - title: 简单的共享 (app) 状态管理
               permalink: /docs/development/data-and-backend/state-mgmt/simple
@@ -152,7 +152,7 @@
               permalink: /docs/development/tools/sdk/releases
         - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload
-        - title: 代码格式
+        - title: 代码格式化
           permalink: /docs/development/tools/formatting
         - title: Flutter Inspector
           permalink: https://flutter.github.io/devtools/inspector
@@ -184,8 +184,8 @@
       permalink: /docs/deployment/android
     - title: 打包和发布到 iOS 平台
       permalink: /docs/deployment/ios
-    - title: 使用 fastlane 持续交付
-      permalink: /docs/deployment/fastlane-cd
+    - title: 持续部署
+      permalink: /docs/deployment/cd
 
 - title: 资源列表
   children:

@@ -53,7 +53,7 @@
     To permanently add Flutter to your path, see [Update your
     path](#update-your-path).
 
-    这个命令配置了 `PATH` 环境变量，且只会在你 _当前_ 命令行窗口中生效。
+    这个命令配置了 `PATH` 环境变量，且只会在你 **当前** 命令行窗口中生效。
     如果想让它永久生效，请查看 [更新 PATH 环境变量](#update-your-path)。
     
  4. Optionally, pre-download development binaries:
@@ -70,7 +70,7 @@
     iOS 和 Android 的开发二进制文件：
 
 
-    ```
+    ```terminal
     $ flutter precache
     ```
 
@@ -108,8 +108,8 @@ $ flutter doctor
 
 This command checks your environment and displays a report to the terminal
 window. The Dart SDK is bundled with Flutter; it is not necessary to install
-Dart separately. Check the output carefully for other software you may need to
-install or further tasks to perform (shown in **bold** text).
+Dart separately. Check the output carefully for other software you might
+need to install or further tasks to perform (shown in **bold** text).
 
 这个命令会检查你当前的配置环境，并在命令行窗口中生成一份报告。
 安装 Flutter 会附带安装 Dart SDK，所以不需要再对 Dart 进行单独安装。

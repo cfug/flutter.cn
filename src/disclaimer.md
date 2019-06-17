@@ -11,7 +11,7 @@ title: Flutter 社区中文资源网站特别说明 (免责条款)
 
 Flutter 这几个文英文字母和 Flutter 图标 {% asset shared/flutter/logo/square.svg width="32px" alt="Flutter logo" class="align-baseline" %}
 及任何相关标志均为 Google LLC 公司的商标，商标的使用权并不包含在网站下方的 [CC 4.0 协议声明](https://creativecommons.org/licenses/by/4.0/) 里。
-我们根据 Flutter 官方的[品牌说明](https://flutter.dev/brand)，以社区的名义使用修改为红色为主色调的 Flutter Logo。
+我们根据 Flutter 官方的 [品牌说明](https://flutter.dev/brand)，以社区的名义使用修改为红色为主色调的 Flutter Logo。
 
 ### 适用范围
 
@@ -21,7 +21,7 @@ flutter-io.cn 和 flutter.cn 以及其分站均在本免责条款下运行。
 
 * 中文文档网站与英文网站内容同步时间间隔不会超过一个月（首次完全翻译发布之后）；
 * 针对开发者在 GitHub Issues 里提出的针对翻译内容的修复，通常在三个工作日之内处理；
-* 本网站承诺不收集任何用户敏感数据，如[个人可标识信息（PII）](https://support.google.com/analytics/answer/7686480)；
+* 本网站承诺不收集任何用户敏感数据，如 [个人可标识信息（PII）](https://support.google.com/analytics/answer/7686480)；
 * 本网站将不具备任何用户交互功能，不产生任何用户生产的内容（UGC）；
 * 因不可抗力因素产生的问题，本网站有权随时关停任何服务。
 

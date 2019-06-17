@@ -235,7 +235,7 @@ Flutter 提供一流的开发周期，通过 **hot reload** 特性使你在几�
 During a debug session, several additional debugging commands are added to the
 [Command Palette][], including:
 
-在调试会话期间，[命令面板][]会添加一些额外的调试命令，包括：
+在调试会话期间，[命令面板][Command Palette] 会添加一些额外的调试命令，包括：
 
 * **Toggle Baseline Painting**: Causes each RenderBox to paint a line at each of its
   baselines.
@@ -264,9 +264,6 @@ By default, debug an external library is disabled in Flutter extension. To enabl
 默认情况下，Flutter 扩展禁止调试外部库。启用步骤：
 
 1. **Settings > Extensions > Dart Configuration **
-  
-   **Settings > Extensions > Dart Configuration **
-   
 2. Check option `Debug External Libraries`
 
    勾选 `Debug External Libraries` 选项。
@@ -321,7 +318,7 @@ can assist in correcting it.
 
 **包装新 widget 辅助**
 
-: This can be used when you have a widget that you want to wrap in a surrounding widget,
+  This can be used when you have a widget that you want to wrap in a surrounding widget,
   for example if you want to wrap a widget in a `Row` or `Column`.
   
   当你有个 widget 想包装进一个容器 widget 时，例如你想把 widget 放入一个 `Row` 或者 `Column`。
@@ -330,7 +327,7 @@ can assist in correcting it.
 
 **使用新 widget 包装 widget 列表辅助**
 
-: Similar to the assist above, but for wrapping an existing list of widgets rather than an
+  Similar to the assist above, but for wrapping an existing list of widgets rather than an
 individual widget.
 
   和上面辅助类似，不过是包装已存在的 widgets 列表而不是一个单独的 widget。
@@ -449,7 +446,7 @@ All known bugs are tracked in the issue tracker:
 [Dart and Flutter extensions GitHub issue tracker][].
 
 所有已知 bug 在这个 issue 列表中记录：
-[Dart 和 Flutter 扩展 GitHub issue 追踪][].
+[Dart 和 Flutter 扩展 GitHub issue 追踪][Dart and Flutter extensions GitHub issue tracker].
 
 We very much welcome feedback, both on bugs/issues and feature requests.
 Prior to filing new issues:

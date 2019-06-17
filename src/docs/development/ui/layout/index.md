@@ -915,7 +915,7 @@ Components library.
 
 ### Container
 
-### 容器
+### Container
 
 Many layouts make liberal use of [Container][]s to separate widgets using
 padding, or to add borders or margins. You can change the device's background

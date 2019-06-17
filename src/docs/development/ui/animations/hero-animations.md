@@ -1,5 +1,6 @@
 ---
 title: Hero Animations
+title: 主动画 (Hero animations)
 short-title: Hero
 ---
 
@@ -11,7 +12,7 @@ short-title: Hero
 
   * The _hero_ refers to the widget that flies between screens.
   
-    _hero_ 指的是在屏幕间飞跃的 widget。
+    **Hero** 指的是在屏幕间飞跃的 widget。
     
   * Create a hero animation using Flutter's Hero widget.
   
@@ -91,7 +92,7 @@ during flight.
   A [_Route_](/docs/cookbook/navigation/navigation-basics) describes a page or screen
   in a Flutter app.
   
-  在 Flutter app 中，[_Route_](/docs/cookbook/navigation/navigation-basics) 用来描述一个页面。
+  在 Flutter app 中，[**Route**](/docs/cookbook/navigation/navigation-basics) 用来描述一个页面。
   
 </aside>
 
@@ -110,7 +111,7 @@ the routes. This guide shows how to create the following hero animations:
 A _standard hero animation_ flies the hero from one route to a new route,
 usually landing at a different location and with a different size.
 
-一个 _标准 hero 动画_ 使 hero 从一页飞至新页面，通常以不同大小到达不同的目的地。
+一个 **标准 hero 动画** 使 hero 从一页飞至新页面，通常以不同大小到达不同的目的地。
 
 The following video (recorded at slow speed) shows a typical example. Tapping
 the flippers in the center of the route flies them to the upper left corner of a
@@ -134,7 +135,7 @@ the original route.
 In _radial hero animation_, as the hero flies between routes
 its shape appears to change from circular to rectangular.
 
-在 _径向 hero 动画_ 中，随着 hero 在页面间飞翔，它的形状也会有圆形变成矩形。
+在 **径向 hero 动画** 中，随着 hero 在页面间飞翔，它的形状也会有圆形变成矩形。
 
 The following video (recorded at slow speed),
 shows an example of a radial hero animation. At the start, a
@@ -144,7 +145,9 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-下面的视频（慢放）演示了一个径向 hero 动画的示例。开始，一排三个圆形的图像在页面底部。点击任意圆形图像，其飞至新页面，并变成正方形。点击正方形图像，hero 返回至原页面，并变回圆形。
+下面的视频（慢放）演示了一个径向 hero 动画的示例。
+开始，一排三个圆形的图像在页面底部。点击任意圆形图像，其飞至新页面，并变成正方形。
+点击正方形图像，hero 返回至原页面，并变回圆形。
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"

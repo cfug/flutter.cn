@@ -73,7 +73,7 @@ Coming from another platform? Check out:
 
 看我们为各种已经有相关平台开发经验的开发者准备的文档：
 [给 Android 开发者的 Flutter 指南](/docs/get-started/flutter-for/android-devs)、
-[给 iOS 开发者的 Flutter 指南]](/docs/get-started/flutter-for/ios-devs)、
+[给 iOS 开发者的 Flutter 指南](/docs/get-started/flutter-for/ios-devs)、
 [给 React Native 开发者的 Flutter 指南](/docs/get-started/flutter-for/web-devs)、
 [给 Web 开发者的 Flutter 指南](/docs/get-started/flutter-for/react-native-devs)、
 [给 Xamarin.Forms 开发者的 Flutter 指南](/docs/get-started/flutter-for/xamarin-forms-devs)。

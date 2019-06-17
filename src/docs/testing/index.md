@@ -15,17 +15,17 @@ Automated testing falls into a few categories:
 
 - A [_unit test_](#unit-tests) tests a single function, method, or class. 
     
-  [_单元测试_](#unit-tests) 测试单一的函数，方法或类。
+  [**单元测试**](#unit-tests) 测试单一的函数，方法或类。
 
 - A [_widget test_](#widget-tests) (in other UI frameworks referred to as _component test_) tests
   a single widget. 
 
-  [_Widget 测试_](#widget-tests)（在其他 UI 框架中指 **组件测试**）测试单一的 widget 。
+  [**Widget 测试**](#widget-tests)（在其他 UI 框架中指 **组件测试**）测试单一的 widget 。
 
 - An [_integration test_](#integration-tests)
   tests a complete app or a large part of an app.
 
-  [_集成测试_](#integration-tests) 测试一个完整的应用或者一个应用的大部分功能。
+  [**集成测试**](#integration-tests) 测试一个完整的应用或者一个应用的大部分功能。
   
 Generally speaking, a well-tested app has many unit and widget tests, tracked by
 [code coverage](https://en.wikipedia.org/wiki/Code_coverage), plus enough
@@ -59,7 +59,7 @@ out](/cookbook/testing/mocking). Unit tests generally don't read from or write
 to disk, render to screen, or receive user actions from outside the process
 running the test.
 
-_单元测试_ 测试单一的函数，方法或类。
+**单元测试** 测试单一的函数，方法或类。
 单元测试的目标是验证逻辑单元在各种条件下的正确性。
 被测试单元的外部依赖通常需要 [模拟](/cookbook/testing/mocking)。
 单元测试通常不会读写磁盘，将数据渲染到屏幕，也不会从运行测试进程的外部去接收用户的操作。
@@ -105,7 +105,7 @@ of an integration test is to verify that all the widgets and services being
 tested work together as expected. Furthermore, you can use integration
 tests to verify your app's performance.
 
-_集成测试_ 测试一个完整的应用或者一个应用的大部分功能。集成测试的目标是验证正在测试的所有 widget 和服务是否按照预期的方式一起工作。此外，还可以使用集成测试来验证应用的性能。
+**集成测试** 测试一个完整的应用或者一个应用的大部分功能。集成测试的目标是验证正在测试的所有 widget 和服务是否按照预期的方式一起工作。此外，还可以使用集成测试来验证应用的性能。
 
 Generally, an _integration test_ runs on a real device or an OS emulator, such
 as iOS Simulator or Android Emulator. The app under test is typically isolated

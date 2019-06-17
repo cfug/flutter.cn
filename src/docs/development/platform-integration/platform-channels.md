@@ -40,6 +40,7 @@ Flutter 的平台相关 API 支持不依赖于代码生成，而是依赖于灵�
   API，并将响应发送回**客户端**（即应用程序中的 Flutter 部分）。
 
 {{site.alert.note}}
+
   This guide addresses using the platform channel mechanism if you need
   to use the platform's APIs or libraries in Java/Kotlin/Objective-C or Swift.
   But you can also write platform-specific Dart code in your Flutter app

@@ -19,6 +19,7 @@ toc: false
 {{site.alert.end}}
 
 {{site.alert.note}}
+
   This codelab is currently being developed and tested
   with Chrome. There might be (in the short term) features that
   work in some browsers and not others. If you encounter any, please

@@ -1108,7 +1108,7 @@ automatically scrolls.
   and 3 tiles wide in landscape mode. The titles are created by setting the
   `footer` property for each [GridTile][].
 
-  使用 `GridView.count` 创建一个网格，它在竖屏模式下有两行，在横屏模式下有三行。标题可以为每个 [GridTile][] 设置 `footer` 属性来创建。
+  使用 `GridView.count` 创建一个网格，它在竖屏模式下有两行，在横屏模式下有三行。可以通过为每个 [GridTile][] 设置 `footer` 属性来创建标题。
 
   **Dart code:** [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
   from the [Flutter Gallery][]

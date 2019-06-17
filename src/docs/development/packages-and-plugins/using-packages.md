@@ -48,7 +48,7 @@ The following section describes how to use existing published packages.
 
 Packages are published to the [*Pub site*]({{site.pub}}).
 
-Package 会被发布到 [*Pub site*]({{site.pub}})。
+Package 会被发布到 [**Pub site**]({{site.pub}})。
 
 The [Flutter landing page]({{site.pub}}/flutter) on
 the Pub site displays top packages that are compatible with Flutter
@@ -399,7 +399,7 @@ To use this package:
 1. Run `flutter pub get` in the terminal, or click **Packages get** in
    IntelliJ.
 
-   在命令行中运行 `flutter packages get`，或者点击 Intellij 中的 'Packages get'
+   在命令行中运行 `flutter packages get`，或者点击 Intellij 中的 **Packages get**
 
 1. Open `lib/main.dart` and replace its full contents with:
 
@@ -444,7 +444,8 @@ display a given URL, and is supported on both Android and iOS.
 The package demonstrates that packages can contain
 platform-specific code&mdash;these are often called _plugins_.
 
-[URL Launcher]({{site.pub-pkg}}/url_launcher) 插件允许你在移动平台上打开默认浏览器以显示给定的 URL。它演示了package 如何也可能包含特定于平台的代码（我们将这些 package 称为插件）。它同时支持 Android 和 iOS。
+[URL Launcher]({{site.pub-pkg}}/url_launcher) 插件允许你在移动平台上打开默认浏览器以显示给定的 URL。
+它演示了 package 如何也可能包含特定于平台的代码（我们将这些 package 称为**插件**）。它同时支持 Android 和 iOS。
 
 To use this plugin:
 

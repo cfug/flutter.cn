@@ -7,6 +7,7 @@ toc: false
 ---
 
 {{site.alert.note}}
+
   The embedded editors use an experimental version of DartPad.
   If you find a DartPad bug or have suggestions for DartPad,
   please [create a DartPad
@@ -327,7 +328,7 @@ is forced to take up all the extra space it's offered.
 Try wrapping the middle box in this row with a `Flexible`
 widget that has a `flex` factor of 1 and its `fit`
 property set to `FlexFit.loose`. Afterward,
-try changing the c to tight and see what happens.
+try changing the fit to tight and see what happens.
 
 试着将 row 中间的 box 包裹在一个 `flex` factor 为 1 并且 `fit` 为 `FlexFit.loose` 的 Flexible` widget中。
 然后试着将 `fit` 改为 `FlexFit.tight`，看看会发生什么。
@@ -534,9 +535,9 @@ style: Theme.of(context).textTheme.headline
 * Set the `Column`'s `mainAxisSize` to `MainAxisSize.min`,
   so the card won't expand to the full height of the window.
   
-  将 `Column` 的 `mainAxisSize` 设为 `MainAxisSize.min`，这样名片才不会扩展到整个 window 那么高。
+  将 `Column` 的 `mainAxisSize` 设为 `MainAxisSize.min`，这样 card 才不会扩展到整个 window 那么高。
 
-<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=684e599476eef2ec4b4508e6b2186c03&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=5e7e9352bca878f446d4347f324e2f63&fw=true&split=60" width="100%" height="800px"></iframe>
 
 Business cards often have an icon or logo in the top-left corner,
 so the next step is to add one to yours. Start by wrapping the
@@ -579,7 +580,7 @@ Now you can add the `Icon`:
     
       设置 `Icon` 的大小。
 
-<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=19ead6db4f42ce112fc0a7d2e0922466&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=684e599476eef2ec4b4508e6b2186c03&fw=true&split=60" width="100%" height="800px"></iframe>
 
 Your first `Row` is now complete! There are two more to go, though,
 and you need a `Column` to put them in.
@@ -638,7 +639,7 @@ Then, finish up your new `Column` with these steps:
   
     另一个空 `Row`
     
-<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=e6e07bbe96255b762163cf3e40906944&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=19ead6db4f42ce112fc0a7d2e0922466&fw=true&split=60" width="100%" height="800px"></iframe>
 
 There are just a few steps to go now. Next up is the second row.
 Add the following to its list of children:
@@ -664,7 +665,7 @@ the two `Text` widgets.
 如果你现在运行代码，你会看到这两个 `Text`widgets 是挨着的，而不是在 `Row` 的两端对齐，这是不对的。
 你可以将 `Row` 的 `mainAxisAlignment` 设为 `spaceBetween`，使得这两个 `Text` widge 中间有些间隔。
 
-<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=2234a5ccada200eb1e018b12fa95d57d&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="{{site.dartpad}}/experimental/embed-new.html?id=e6e07bbe96255b762163cf3e40906944&fw=true&split=60" width="100%" height="800px"></iframe>
 
 The last step is to get those icons in place at the bottom of the card:
 

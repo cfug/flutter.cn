@@ -919,13 +919,15 @@ to opaque.
 在这部分内容中，您会根据 [监控动画过程](#monitoring) ([animate3]({{examples}}/animation/animate3/lib/main.dart)) 创建示例，该示例将使用 `AnimatedWidget` 持续进行动画。可以用在需要对透明度进行从透明到不透明动画处理的情况。
 
 {{site.alert.note}}
+
   This example shows how to use multiple tweens on the same animation
   controller, where each tween manages a different effect in the animation. It
   is for illustrative purposes only. If you were tweening opacity and size in
   production code, you'd probably use [FadeTransition][] and [SizeTransition][]
   instead.
   
-  这个示例展示了如何在同一个动画控制器中使用复合补间动画，每个补间动画控制一个动画的不同效果。仅用于说明目的。如果您需要在代码中加入渐变不透明度和尺寸效果，可能需要用 [FadeTransition][] 和 [SizeTransition][] 来代替。
+  这个示例展示了如何在同一个动画控制器中使用复合补间动画，每个补间动画控制一个动画的不同效果。
+  仅用于说明目的。如果您需要在代码中加入渐变不透明度和尺寸效果，可能需要用 [FadeTransition][] 和 [SizeTransition][] 来代替。
 {{site.alert.end}}
 
 Each tween manages an aspect of the animation. For example:

@@ -37,14 +37,13 @@ dev_dependencies:
 ```
 
 {{site.alert.warning}}
+
 Don't use the `pub get` or `pub upgrade` commands to manage dependencies
 for Flutter apps.
 Instead, use `flutter pub get` or `flutter pub upgrade`.
 If you want to use pub manually, you can run it directly by setting the
 `FLUTTER_ROOT` environment variable.
-{{site.alert.end}}
 
-{{site.alert.warning}}
 不要使用 `pub get` 或 `pub upgrade` 命令来管理 Flutter apps 的依赖，
 而是使用 `flutter pub get` 或 `flutter pub upgrade`。
 如果你想手动使用 pub，你可以通过设置 `FLUTTER_ROOT` 环境变量来直接运行。
@@ -118,17 +117,17 @@ $ flutter upgrade
 ```
 
 {{site.alert.note}}
+
 If you need a specific version of the Flutter SDK,
 you can download it from the [Flutter SDK archive][].
-{{site.alert.end}}
 
-{{site.alert.note}}
 如果你需要一个指定的 Flutter SDK 版本,
 你可以从 [Flutter SDK archive][] 下载.
 {{site.alert.end}}
 
 ## Upgrading packages only
-## 仅更新packages
+
+## 仅更新 packages
 
 If you've modified your `pubspec.yaml` file or you want to update
 only the packages that your app depends upon (instead of both the packages and

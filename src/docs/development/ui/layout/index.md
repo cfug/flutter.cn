@@ -1577,70 +1577,54 @@ The following resources might help when writing layout code.
 
 当写布局代码时，下面的资源可能会帮助到你。
 
-* [Layout tutorial](/docs/development/ui/layout/tutorial)
+* [Layout tutorial](/docs/development/ui/layout/tutorial)<br>
+  Learn how to build a layout.
+  
+  [Layout 教程](/docs/development/ui/layout/tutorial)<br>
+  学习如何构建布局。
 
-  [Layout 教程](/docs/development/ui/layout/tutorial)
+* [Widget Overview](/docs/development/ui/widgets)<br>
+  Describes many of the widgets available in Flutter.
+  
+  [Widget 概述](/docs/development/ui/widgets)<br>
+  描述了 Flutter 中很多可用的 widget。
 
-: Learn how to build a layout.
-
-<br> 学习如何构建布局。
-
-* [Widget Overview](/docs/development/ui/widgets)
-
-  [Widget 概述](/docs/development/ui/widgets)
-
-: Describes many of the widgets available in Flutter.
-
-<br> 描述了 Flutter 中很多可用的 widget。
-
-* [HTML/CSS Analogs in Flutter](/docs/get-started/flutter-for/web-devs)
-
-  [Flutter 中类似 HTML/CSS 的部分](/docs/get-started/flutter-for/web-devs)
-
-: For those familiar with web programming, this page maps HTML/CSS functionality
+* [HTML/CSS Analogs in Flutter](/docs/get-started/flutter-for/web-devs)<br>
+  For those familiar with web programming, this page maps HTML/CSS functionality
   to Flutter features.
 
-<br> 对那些熟悉 web 开发的人来说，这页将 HTML/CSS 的功能映射到 Flutter 特性上。
+  [Flutter 中类似 HTML/CSS 的部分](/docs/get-started/flutter-for/web-devs)<br>
+  对那些熟悉 web 开发的人来说，这页将 HTML/CSS 的功能映射到 Flutter 特性上。
 
-* [Flutter Gallery][]
+* [Flutter Gallery][]<br>
+  Demo app showcasing many Material Design widgets and other Flutter features.
+  
+  [Flutter Gallery][]<br>
+  Demo app 展示了很多 Material Design widget 和其他的 Flutter 特性。
 
-  [Flutter Gallery][]
+* [Flutter API documentation]({{api}})<br>
+  Reference documentation for all of the Flutter libraries.
+  
+  [Flutter API 文档]({{api}})<br>
+  所有 Flutter 库的参考文档。
 
-: Demo app showcasing many Material Design widgets and other Flutter features.
+* [Dealing with Box Constraints in Flutter](/docs/development/ui/layout/box-constraints)<br>
+  Discusses how widgets are constrained by their render boxes.
+  
+  [Flutter 中 Box 的行为限制](/docs/development/ui/layout/box-constraints)<br>
+  讨论 widget 是如何受渲染框限制的。
 
-<br> Demo app 展示了很多 Material Design widget 和其他的 Flutter 特性。
+* [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images)<br>
+  Explains how to add images and other assets to your app's package.
 
-* [Flutter API documentation]({{api}})
+  [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)<br>
+  解释在你的 app 中如何添加图片和其他资源。
 
-  [Flutter API 文档]({{api}})
-
-: Reference documentation for all of the Flutter libraries.
-
-<br> 所有 Flutter 仓库的参考文档。
-
-* [Dealing with Box Constraints in Flutter](/docs/development/ui/layout/box-constraints)
-
-  [Flutter 中 Box 的行为限制](/docs/development/ui/layout/box-constraints)
-
-: Discusses how widgets are constrained by their render boxes.
-
-<br> 讨论 widget 是如何受渲染框限制的。
-
-* [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images)
-
-  [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)
-
-: Explains how to add images and other assets to your app's package.
-
-<br> 解释在你的 app 中如何添加图片和其他资源。
-
-* [Zero to One with Flutter]({{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354)
-
-  [Flutter 从 0 到 1]({{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354)
-
-: One person's experience writing his first Flutter app.
-
-<br> 一个人第一次写 Flutter app 的经验。
+* [Zero to One with Flutter]({{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354)<br>
+  One person's experience writing his first Flutter app.
+  
+  [Flutter 从 0 到 1]({{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354)<br>
+  一位开发者第一次写 Flutter app 的经验分享文章。
 
 [build()]: {{api}}/widgets/StatelessWidget/build.html
 [Card]: {{api}}/material/Card-class.html

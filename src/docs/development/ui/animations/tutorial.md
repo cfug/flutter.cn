@@ -137,6 +137,7 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 ```
 
 {{site.alert.note}}
+
   The [Curves][] class defines many commonly used curves, or you can create your
   own. For example:
 
@@ -901,7 +902,7 @@ above.
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  <h4 class="no_toc">What's the point?</h4>
+  <h4 class="no_toc">重点提醒</h4>
 
   * The [Curves][] class defines an array of commonly used curves that you can
     use with a [CurvedAnimation][].
@@ -927,7 +928,9 @@ to opaque.
   instead.
   
   这个示例展示了如何在同一个动画控制器中使用复合补间动画，每个补间动画控制一个动画的不同效果。
-  仅用于说明目的。如果您需要在代码中加入渐变不透明度和尺寸效果，可能需要用 [FadeTransition][] 和 [SizeTransition][] 来代替。
+  仅用于说明目的。如果您需要在代码中加入渐变不透明度和尺寸效果，
+  可能需要用 [FadeTransition][] 和 [SizeTransition][] 来代替。
+  
 {{site.alert.end}}
 
 Each tween manages an aspect of the animation. For example:

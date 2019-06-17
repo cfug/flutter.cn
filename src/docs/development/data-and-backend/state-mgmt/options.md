@@ -75,13 +75,7 @@ by the Flutter community:
 ## Provider &amp; Scoped Model
 
 * [Provider package]({{site.pub-pkg}}/provider)
-
-  [Provider package]({{site.pub-pkg}}/provider)
-
 * [Scoped Model package]({{site.pub-pkg}}/scoped_model)
-
-  [Scoped Model package]({{site.pub-pkg}}/scoped_model)
-
 * [Simple State Management]({{site.url}}/docs/development/data-and-backend/state-mgmt/simple),
   the previous page in this section
 

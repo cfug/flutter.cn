@@ -31,7 +31,7 @@ short-title: Hero
     commonly known as _shared element transitions_ or
     _shared element animations._
     
-    Flutter 中的 Hero widget 实现的动画类型也称为 _共享元素过渡_ 或 _共享元素动画_。
+    Flutter 中的 Hero widget 实现的动画类型也称为 **共享元素过渡** 或 **共享元素动画**。
     
 {{site.alert.end}}
 
@@ -43,7 +43,7 @@ motion is sometimes referred to as a _shared element transition_.
 
 你可能经常遇到 hero 动画。比如，页面上显示的代售商品列表。
 选择一件商品后，应用会跳转至包含更多细节以及“购买”按钮的新页面。
-在 Flutter 中，图像从当前页面转到另一个页面称为 _hero 动画_，相同的动作有时也被称为 _共享元素过渡_。
+在 Flutter 中，图像从当前页面转到另一个页面称为 **hero 动画**，相同的动作有时也被称为 **共享元素过渡**。
 
 You might want to watch this one-minute video introducing the Hero widget:
 
@@ -211,8 +211,8 @@ how Flutter performs a hero animation.
   If the concept of tweens or tweening is new to you, see the
   [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
   
-  如果您不了解 tween 或者 tweening 的概念，请参考
-  [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
+  如果您不了解 tween 或者 tweening 的概念，请参考教程
+  [在 Flutter 应用里实现动画效果](/docs/development/ui/animations/tutorial)
 
 </aside>
 
@@ -253,7 +253,7 @@ Hero 动画代码有如下结构：
    (typically an image), and an identifying tag, and is in
    the currently displayed widget tree as defined by the source route.
    
-   定义一个起始 Hero widget，被称为 _source hero_。
+   定义一个起始 Hero widget，被称为 **source hero**。
    该 hero 指定图形表示（通常是图像），以及识别标签，并且在由原页面定义的当前显示的 widget 树中。
    
 1. Define an ending Hero widget, referred to as the _destination hero_.
@@ -264,7 +264,7 @@ Hero 动画代码有如下结构：
    underlying data. For best results, the heroes should have
    virtually identical widget trees.
    
-   定义一个截至 Hero widget，被称为 _destination hero_。
+   定义一个截至 Hero widget，被称为 **destination hero**。
    该 hero 也指定图形表示，并与 source hero 使用同样的标签。
    **这是基本，两个 hero widgets 要创建相同的标签**，通常是代表基础数据的对象。
    为了获得最佳效果，heroes 应该有几乎完全相同的 widget 树。
@@ -520,7 +520,7 @@ spec.]({{site.material}}/guidelines/motion/movement.html) 中介绍的曲线路�
 update it using the files from the
 [GitHub directory.]({{site.github}}/flutter/website/tree/master/examples/_animation/hero_animation/)
 
-[创建一个新的 Flutter 示例](/docs/get-started/test-drive) 和使用来自 [GitHub directory.]({{site.github}}/flutter/website/tree/master/examples/_animation/hero_animation/) 的文件更新。
+[创建一个新的 Flutter 示例](/docs/get-started/test-drive) 和使用来自 [GitHub 仓库]({{site.github}}/flutter/website/tree/master/examples/_animation/hero_animation/) 的文件更新。
 
 To run the example:
 
@@ -718,12 +718,12 @@ Key information:
   * A _radial transformation_ animates a circular shape into a square
     shape.
     
-    _径向过渡_ 是由圆形变成正方形的过渡动画。
+    **径向过渡** 是由圆形变成正方形的过渡动画。
     
   * A radial _hero_ animation performs a radial transformation while
     flying the hero from the source route to the destination route.
     
-    径向 _hero_ 动画在 hero 从原页面飞至目标页面时，执行径向过渡。
+    径向 **hero** 动画在 hero 从原页面飞至目标页面时，执行径向过渡。
     
   * MaterialRectCenter&shy;Arc&shy;Tween defines the tween animation.
   

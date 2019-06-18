@@ -120,7 +120,7 @@ The first step is to break the layout down to its basic elements:
 
 * Notice areas that require alignment, padding, or borders.
 
-* 留意需要对齐、内间距、或者边界的区域。
+  留意需要对齐、内间距、或者边界的区域。
 
 First, identify the larger elements. In this example, four elements are
 arranged into a column: an image, two rows, and a block of text.

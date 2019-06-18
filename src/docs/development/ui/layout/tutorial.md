@@ -112,7 +112,7 @@ The first step is to break the layout down to its basic elements:
 
 * Are there overlapping elements?
 
-* 是否有重叠的元素？
+  是否有重叠的元素？
 
 * Does the UI need tabs?
 

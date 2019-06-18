@@ -216,7 +216,7 @@ Widget titleSection = Container(
     `CrossAxisAlignment.start` positions the column at the start of the row.
 
     将 Column 元素放到 Expanded widget 中可以拉伸该列，以利用该行中所有剩余的闲置空间。
-    设置 crossAxisAlignment 属性值为 CrossAxisAlignment.start，
+    设置 `crossAxisAlignment` 属性值为 `CrossAxisAlignment.start`，
     这会将该列放置在行的起始位置。
 
  2. Putting the first row of text inside a Container enables you to add padding.

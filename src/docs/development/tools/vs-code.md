@@ -219,7 +219,7 @@ Flutter 扩展会自动选择上次连接的设备。然而，如果你有多个
 ## 快速编辑和刷新开发周期
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
-of your changes almost instantly with the _hot reload_ feature. See
+of your changes almost instantly with the _Stateful Hot Reload_ feature. See
 [Using hot reload](hot-reload) for details.
 
 Flutter 提供一流的开发周期，通过 **hot reload** 特性使你在几乎修改代码的同时就能看到变化。详情请看[使用热重载](hot-reload)。

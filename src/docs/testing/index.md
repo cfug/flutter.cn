@@ -144,6 +144,10 @@ see the following:
 
   [使用 Travis 测试 Flutter 应用]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
 
+* [Test Flutter apps on Cirrus](https://cirrus-ci.org/examples/#flutter)
+  
+  [使用 Cirrus 测试 Flutter 应用](https://cirrus-ci.org/examples/#flutter)
+  
 * [GitLab Continuous Integration
   (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
   You'll need to create and configure a `.gitlab-ci.yml` file. You can 

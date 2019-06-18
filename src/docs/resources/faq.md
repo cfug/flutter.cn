@@ -326,7 +326,7 @@ work.
 
 Debug mode builds use a virtual machine (VM) to run Dart code
 (hence the "debug" banner they show to remind people that they're
-slightly slower) in order to enable stateful hot reload.
+slightly slower) in order to enable Stateful Hot Reload.
 
 调试模式时则使用虚拟机 (VM) 来运行 Dart 代码（因此这时会显示 "Debug" 字样，以提醒开发者速度会稍微变慢)，这样便可以启用有状态热重载 (Stateful Hot Reload)。
 
@@ -346,7 +346,7 @@ work.
 
 Debug mode builds use a virtual machine (VM) to run Dart code (hence the
 "debug" banner they show to remind people that they're slightly slower)
-in order to enable stateful hot reload.
+in order to enable Stateful Hot Reload.
 
 调试模式时则使用虚拟机 (VM) 来运行 Dart 代码 (因此这时会显示 "Debug" 字样，以提醒开发者速度会稍微变慢)，这样便可以启用有状态热重载 (Stateful Hot Reload)。
 

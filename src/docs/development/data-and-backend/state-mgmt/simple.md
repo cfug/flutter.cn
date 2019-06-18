@@ -427,24 +427,28 @@ in your model, all the builder methods of all the corresponding
 
 `Consumer`  widget 唯一必须的参数就是 builder。 当 `ChangeNotifier`  发生变化的时候会调用 builder 这个函数。（换言之，当你在模型中调用 `notifyListeners()` 时， 所有和 `Consumer` 相关的 builder 方法都会被调用。）
 
-The builder is called with three attributes. The first one is `context`,
+The builder is called with three arguments. The first one is `context`,
 which you also get in every build method.
 
-builder 在被调用的时候会用到三个属性。第一个是 `context`。你在每个 build 方法中都能找到这个属性。
+builder 在被调用的时候会用到三个参数。第一个是 `context`。
+在每个 build 方法中都能找到这个参数。
 
 The second argument of the builder function is the instance of 
 the `ChangeNotifier`. It's what we were asking for in the first place. You can
 use the data in the model to define what the UI should look like 
 at any given point.
 
-builder 函数的第二个参数是 `ChangeNotifier` 的实例。它是我们最开始就能得到的实例。你可以通过该实例定义 UI 的内容。
+builder 函数的第二个参数是 `ChangeNotifier` 的实例。
+它是我们最开始就能得到的实例。你可以通过该实例定义 UI 的内容。
 
-The third attribute is `child`, which is there for optimization.
+The third argument is `child`, which is there for optimization.
 If you have a large widget subtree under your `Consumer`
 that _doesn't_ change when the model changes, you can construct it
 once and get it through the builder.
 
-第三个参数是 `child`，用于优化目的。如果 `Consumer` 下面有一个庞大的子树，当模型发生改变的时候，该子树 _并不会_ 改变，那么你就可以仅仅创建它一次，然后通过 builder 获得该实例。
+第三个参数是 `child`，用于优化目的。如果 `Consumer` 下面有一个庞大的子树，
+当模型发生改变的时候，该子树 **并不会** 改变，
+那么你就可以仅仅创建它一次，然后通过 builder 获得该实例。
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)" replace="/\bchild\b/[!$&!]/g"?>
 ```dart
@@ -465,7 +469,8 @@ It is best practice to put your `Consumer` widgets as deep in the tree
 as possible. You don't want to rebuild large portions of the UI
 just because some detail somewhere changed.
 
-最好能把 `Consumer` 放在 widget 树尽量低的位置上。你总不希望 UI 上任何一点小变化就全盘重新构建 widget 吧。
+最好能把 `Consumer` 放在 widget 树尽量低的位置上。
+你总不希望 UI 上任何一点小变化就全盘重新构建 widget 吧。
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
@@ -545,8 +550,9 @@ covered in this article. If you want something simpler,
 you can see how the simple Counter app looks like when [built with
 `provider`](https://github.com/flutter/samples/tree/master/provider_counter).
 
-你可以在文章中 [看一下示例]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)。如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何基于 provider 实现的。[built with
-`provider`](https://github.com/flutter/samples/tree/master/provider_counter).
+你可以在文章中 [看一下示例]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)。
+如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何
+[基于 `provider` 实现的](https://github.com/flutter/samples/tree/master/provider_counter)。
 
 When you're ready to play around with `provider` yourself,
 don't forget to add the dependency on it to your `pubspec.yaml` first.

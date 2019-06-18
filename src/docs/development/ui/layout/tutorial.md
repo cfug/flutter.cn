@@ -22,15 +22,15 @@ diff2html: true
 
   * How Flutter's layout mechanism works.
 
-  * Flutter 的布局机制是如何工作的。
+    Flutter 的布局机制是如何工作的。
 
   * How to lay out widgets vertically and horizontally.
 
-  * 如何竖直或者水平地对 widgets 进行布局。
+    如何竖直或者水平地对 widgets 进行布局。
 
   * How to build a Flutter layout.
 
-  * 如何构建一个 Flutter 布局。
+    如何构建一个 Flutter 布局。
 
 {{site.alert.end}}
 
@@ -104,23 +104,23 @@ The first step is to break the layout down to its basic elements:
 
 * Identify the rows and columns.
 
-* 识别出它的行和列。
+  识别出它的行和列。
 
 * Does the layout include a grid?
 
-* 这个布局是否包含网格布局？
+  这个布局是否包含网格布局？
 
 * Are there overlapping elements?
 
-* 是否有重叠的元素？
+  是否有重叠的元素？
 
 * Does the UI need tabs?
 
-* 界面是否需要选项卡？
+  界面是否需要选项卡？
 
 * Notice areas that require alignment, padding, or borders.
 
-* 留意需要对齐、内间距、或者边界的区域。
+  留意需要对齐、内间距、或者边界的区域。
 
 First, identify the larger elements. In this example, four elements are
 arranged into a column: an image, two rows, and a block of text.
@@ -264,14 +264,14 @@ Add the title section to the app body like this:
     become skewed. You can fix this in your Flutter editor
     using the [automatic reformatting support](/docs/development/tools/formatting).
 
-  - 在粘贴代码到你的 app 中时，行首缩进可能会发生偏移。
+    在粘贴代码到你的 app 中时，行首缩进可能会发生偏移。
     你可以通过使用 [代码自动格式化支持](/docs/development/tools/formatting) 来修复这个问题。
 
   - For a faster development experience, try Flutter's [hot reload][] feature.
   - If you have problems, compare your code to [lib/main.dart][].
 
-  - 为了获得更便捷的开发体验，请尝试 Flutter 的 [热加载][] 功能。
-  - 如果你有任何问题，可以将你的代码与 [lib/main.dart][] 比对.
+    为了获得更便捷的开发体验，请尝试 Flutter 的 [热加载][] 功能。
+    如果你有任何问题，可以将你的代码与 [lib/main.dart][] 比对.
 
   [hot reload]: /docs/development/tools/hot-reload
 
@@ -454,11 +454,11 @@ Add the image file to the example:
 
 * Create an `images` directory at the top of the project.
 
-* 在工程的顶部创建一个 `images` 目录。
+  在工程的顶部创建一个 `images` 目录。
 
 * Add [`lake.jpg`]({{rawExFile}}/layout/lakes/step5/images/lake.jpg).
 
-* 添加 [`lake.jpg`]({{rawExFile}}/layout/lakes/step5/images/lake.jpg)。
+  添加 [`lake.jpg`]({{rawExFile}}/layout/lakes/step5/images/lake.jpg)。
 
   {{site.alert.info}}
     Note that `wget` doesn't work for saving this binary file. The original image
@@ -477,7 +477,7 @@ Add the image file to the example:
 * Update the `pubspec.yaml` file to include an `assets` tag. This makes the
   image available to your code.
 
-* 更新 `pubspec.yaml` 文件，添加一个 `assets` 标签。这使得在你的代码中可以访问到该图片。
+  更新 `pubspec.yaml` 文件，添加一个 `assets` 标签。这使得在你的代码中可以访问到该图片。
 
   <?code-excerpt "{step4,step5}/pubspec.yaml"?>
   ```diff

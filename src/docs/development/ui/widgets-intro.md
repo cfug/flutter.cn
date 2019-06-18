@@ -16,9 +16,7 @@ state changes, the widget rebuilds its description, which the framework diffs
 against the previous description in order to determine the minimal changes
 needed in the underlying render tree to transition from one state to the next.
 
-Flutter 从 [React](https://reactjs.org) 中吸取灵感，通过现代化框架创建出精美的组件。它的核心思想是用 widget 来构建你的 UI 界面。
-Widget 描述了在当前的配置和状态下，视图所应该呈现的样子。当 widget 的状态改变时，它会重新构建其描述（展示的 UI），
-框架则会对比前后变化的不同，以确定底层渲染树从一个状态转换到下一个状态所需的最小更改。
+Flutter 从 [React](https://reactjs.org) 中吸取灵感，通过现代化框架创建出精美的组件。它的核心思想是用 widget 来构建你的 UI 界面。Widget 描述了在当前的配置和状态下，视图所应该呈现的样子。当 widget 的状态改变时，它会重新构建其描述（展示的 UI），框架则会对比前后变化的不同，以确定底层渲染树从一个状态转换到下一个状态所需的最小更改。
 
 {{site.alert.note}}
   If you would like to become better acquainted with Flutter by diving
@@ -73,8 +71,7 @@ widgets in turn until the process bottoms out in widgets that represent the
 underlying [RenderObject]({{api}}/rendering/RenderObject-class.html), which
 computes and describes the geometry of the widget.
 
-在写应用的过程中，取决于是否需要管理状态，你通常会创建一个新的组件继承 [StatelessWidget]({{api}}/widgets/StatelessWidget-class.html) 或 [StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)。
-Widget 的主要工作是实现 [build]({{api}}/widgets/StatelessWidget/build.html) 方法，该方法根据其它较低级别的 widget 来描述这个 widget。框架会逐一构建这些 widget，直到最底层的描述 widget 几何形状的 [RenderObject]({{api}}/rendering/RenderObject-class.html)。
+在写应用的过程中，取决于是否需要管理状态，你通常会创建一个新的组件继承 [StatelessWidget]({{api}}/widgets/StatelessWidget-class.html) 或 [StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)。Widget 的主要工作是实现 [build]({{api}}/widgets/StatelessWidget/build.html) 方法，该方法根据其它较低级别的 widget 来描述这个 widget。框架会逐一构建这些 widget，直到最底层的描述 widget 几何形状的 [RenderObject]({{api}}/rendering/RenderObject-class.html)。
 
 ## Basic widgets
 
@@ -110,11 +107,7 @@ Flutter 自带了一套强大的基础 widgets，下面列出了一些常用的�
    top, right, bottom, or left edge of the stack. Stacks are based on the web's
    absolute positioning layout model.
 
-   [Stack]({{api}}/widgets/Stack-class.html)：[Stack]({{api}}/widgets/Stack-class.html) widget
-   不是线性（水平或垂直）定位的，而是按照绘制顺序将 widget 堆叠在一起。
-   你可以用 [Positioned]({{api}}/widgets/Positioned-class.html) widget 作为
-   [Stack]({{api}}/widgets/Stack-class.html) 的子 widget，以相对于 Stack 的上，右，下，左来定位它们。
-   Stack 是基于 Web 中的绝对位置布局模型设计的。
+   [Stack]({{api}}/widgets/Stack-class.html)：[Stack]({{api}}/widgets/Stack-class.html) widget 不是线性（水平或垂直）定位的，而是按照绘制顺序将 widget 堆叠在一起。你可以用 [Positioned]({{api}}/widgets/Positioned-class.html) widget 作为 [Stack]({{api}}/widgets/Stack-class.html) 的子 widget，以相对于 Stack 的上，右，下，左来定位它们。Stack 是基于 Web 中的绝对位置布局模型设计的。
 
  * [Container]({{api}}/widgets/Container-class.html): The
    [Container]({{api}}/widgets/Container-class.html) widget lets you create a
@@ -127,10 +120,7 @@ Flutter 自带了一套强大的基础 widgets，下面列出了一些常用的�
    three dimensional space using a matrix.
 
    [Container]({{api}}/widgets/Container-class.html)：
-   [Container]({{api}}/widgets/Container-class.html) widget 可以用来创建一个可见的矩形元素。
-   Container 可以使用 [BoxDecoration]({{api}}/painting/BoxDecoration-class.html)
-   来进行装饰，如背景，边框，或阴影等。[Container]({{api}}/widgets/Container-class.html) 
-   还可以设置外边距、内边距和尺寸的约束条件等。另外，[Container]({{api}}/widgets/Container-class.html) 可以使用矩阵在三维空间进行转换。
+   [Container]({{api}}/widgets/Container-class.html) widget 可以用来创建一个可见的矩形元素。Container 可以使用 [BoxDecoration]({{api}}/painting/BoxDecoration-class.html) 来进行装饰，如背景，边框，或阴影等。[Container]({{api}}/widgets/Container-class.html)  还可以设置外边距、内边距和尺寸的约束条件等。另外，[Container]({{api}}/widgets/Container-class.html) 可以使用矩阵在三维空间进行转换。
 
 Below are some simple widgets that combine these and other widgets:
 
@@ -226,8 +216,7 @@ Many Material Design widgets need to be inside of a
 in order to inherit theme data. Therefore, run the application with a
 [MaterialApp]({{api}}/material/MaterialApp-class.html).
 
-为了获得(`MaterialApp`)主题的数据，许多 Material Design 的 widget 需要在 [MaterialApp]({{api}}/material/MaterialApp-class.html) 中才能显现正常。
-因此，请使用 [MaterialApp]({{api}}/material/MaterialApp-class.html) 运行应用。
+为了获得(`MaterialApp`)主题的数据，许多 Material Design 的 widget 需要在 [MaterialApp]({{api}}/material/MaterialApp-class.html) 中才能显现正常。因此，请使用 [MaterialApp]({{api}}/material/MaterialApp-class.html) 运行应用。
 
 The `MyAppBar` widget creates a
 [Container]({{api}}/widgets/Container-class.html) with a height of 56
@@ -243,10 +232,7 @@ ratio in which they consume the available space using the
 [flex]({{api}}/widgets/Expanded-class.html#flex) argument to
 [Expanded]({{api}}/widgets/Expanded-class.html).
 
-`MyAppBar` widget 创建了一个高 56 独立像素，左右内边距 8 像素的 [Container]({{api}}/widgets/Container-class.html)。
-在容器内，`MyAppBar` 以 [Row]({{api}}/widgets/Row-class.html) 布局来组织它的子元素。
-中间的子 widget（`title` widget），被标记为 [Expanded]({{api}}/widgets/Expanded-class.html)，这意味着它会扩展以填充其它子 widget 未使用的可用空间。
-你可以定义多个 [Expanded]({{api}}/widgets/Expanded-class.html) 子 widget，并使用 [flex]({{api}}/widgets/Expanded-class.html#flex) 参数确定它们占用可用空间的比例。
+`MyAppBar` widget 创建了一个高 56 独立像素，左右内边距 8 像素的 [Container]({{api}}/widgets/Container-class.html)。在容器内，`MyAppBar` 以 [Row]({{api}}/widgets/Row-class.html) 布局来组织它的子元素。中间的子 widget（`title` widget），被标记为 [Expanded]({{api}}/widgets/Expanded-class.html)，这意味着它会扩展以填充其它子 widget 未使用的可用空间。你可以定义多个 [Expanded]({{api}}/widgets/Expanded-class.html) 子 widget，并使用 [flex]({{api}}/widgets/Expanded-class.html#flex) 参数确定它们占用可用空间的比例。
 
 The `MyScaffold` widget organizes its children in a vertical column.
 At the top of the column it places an instance of `MyAppBar`,
@@ -258,10 +244,7 @@ variety of ways. Finally, `MyScaffold` uses an
 [Expanded]({{api}}/widgets/Expanded-class.html) to fill
 the remaining space with its body, which consists of a centered message.
 
-`MyScaffold` widget 将其子 widget 组织在垂直列中。
-在列的顶部，它放置一个 `MyAppBar` 实例，并把 [Text]({{api}}/widgets/Text-class.html) widget 传给它来作为应用的标题。
-把 widget 作为参数传递给其他 widget 是一个很强大的技术，它可以让你以各种方式创建一些可重用的通用组件。
-最后，MyScaffold 使用 [Expanded]({{api}}/widgets/Expanded-class.html) 来填充剩余空间，其中包含一个居中的消息。
+`MyScaffold` widget 将其子 widget 组织在垂直列中。在列的顶部，它放置一个 `MyAppBar` 实例，并把 [Text]({{api}}/widgets/Text-class.html) widget 传给它来作为应用的标题。把 widget 作为参数传递给其他 widget 是一个很强大的技术，它可以让你以各种方式创建一些可重用的通用组件。最后，MyScaffold 使用 [Expanded]({{api}}/widgets/Expanded-class.html) 来填充剩余空间，其中包含一个居中的消息。
 
 For more information, see [Layouts](/docs/development/ui/widgets/layout).
 
@@ -282,12 +265,7 @@ between screens of your application. Using the
 [MaterialApp]({{api}}/material/MaterialApp-class.html) widget is entirely
 optional but a good practice.
 
-Flutter 提供了许多 widget，可帮助你构建遵循 Material Design 的应用。
-Material 应用以 [MaterialApp]({{api}}/material/MaterialApp-class.html) widget 开始，
-它在你的应用的底层下构建了许多有用的 widget。
-这其中包括 [Navigator]({{api}}/widgets/Navigator-class.html)，它管理由字符串标识的 widget 栈，也称为“routes”。
-[Navigator]({{api}}/widgets/Navigator-class.html)可以让你在应用的页面中平滑的切换。
-使用 [MaterialApp]({{api}}/material/MaterialApp-class.html) widget 不是必须的，但这是一个很好的做法。
+Flutter 提供了许多 widget，可帮助你构建遵循 Material Design 的应用。Material 应用以 [MaterialApp]({{api}}/material/MaterialApp-class.html) widget 开始，它在你的应用的底层下构建了许多有用的 widget。这其中包括 [Navigator]({{api}}/widgets/Navigator-class.html)，它管理由字符串标识的 widget 栈，也称为“routes”。[Navigator]({{api}}/widgets/Navigator-class.html)可以让你在应用的页面中平滑的切换。使用 [MaterialApp]({{api}}/material/MaterialApp-class.html) widget 不是必须的，但这是一个很好的做法。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -341,8 +319,7 @@ the app is starting to look at bit more Material.
 For example, the app bar has a shadow and the title text inherits the
 correct styling automatically. A floating action button is also added.
 
-现在我们已经从 `MyAppBar` 和 `MyScaffold` 切换到了 material.dart 中的 [AppBar]({{api}}/material/AppBar-class.html) 和 [Scaffold]({{api}}/material/Scaffold-class.html) widget，我们的应用更“Material”了一些。
-例如，标题栏有了阴影，标题文本会自动继承正确的样式，此外还添加了一个浮动操作按钮。
+现在我们已经从 `MyAppBar` 和 `MyScaffold` 切换到了 material.dart 中的 [AppBar]({{api}}/material/AppBar-class.html) 和 [Scaffold]({{api}}/material/Scaffold-class.html) widget，我们的应用更“Material”了一些。例如，标题栏有了阴影，标题文本会自动继承正确的样式，此外还添加了一个浮动操作按钮。
 
 Notice that widgets are passed as arguments to other widgets. The
 [Scaffold]({{api}}/material/Scaffold-class.html) widget takes a number of
@@ -355,9 +332,7 @@ for the [leading]({{api}}/material/AppBar-class.html#leading) and the
 This pattern recurs throughout the framework and is something you
 might consider when designing your own widgets.
 
-注意，widget 作为参数传递给了另外的 widget。[Scaffold]({{api}}/material/Scaffold-class.html) widget 将许多不同的 widget 作为命名参数，
-每个 widget 都放在了 Scofford 布局中的合适位置。同样的，[AppBar]({{api}}/material/AppBar-class.html) widget 允许我们给 [leading]({{api}}/material/AppBar-class.html#leading)、[title]({{api}}/material/AppBar-class.html#title) widget 的 [actions]({{api}}/material/AppBar-class.html#actions) 传递 widget。
-这种模式在整个框架会中重复出现，在设计自己的 widget 时可以考虑这种模式。
+注意，widget 作为参数传递给了另外的 widget。[Scaffold]({{api}}/material/Scaffold-class.html) widget 将许多不同的 widget 作为命名参数，每个 widget 都放在了 Scofford 布局中的合适位置。同样的，[AppBar]({{api}}/material/AppBar-class.html) widget 允许我们给 [leading]({{api}}/material/AppBar-class.html#leading)、[title]({{api}}/material/AppBar-class.html#title) widget 的 [actions]({{api}}/material/AppBar-class.html#actions) 传递 widget。这种模式在整个框架会中重复出现，在设计自己的 widget 时可以考虑这种模式。
 
 For more information, see
 [Material components](/docs/development/ui/widgets/material).
@@ -372,10 +347,7 @@ For more information, see
   [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html), and
   [CupertinoNavigationBar]({{api}}/cupertino/CupertinoNavigationBar-class.html).
 
-  Material 是 Flutter 中两个自带的设计之一，
-  如果想要以 iOS 为主的设计，可以参考 [Cupertino component](/docs/development/ui/widgets/cupertino)，
-  它有自己版本的 [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html) 和
-  [CupertinoNavigationBar]({{api}}/cupertino/CupertinoNavigationBar-class.html)。
+  Material 是 Flutter 中两个自带的设计之一，如果想要以 iOS 为主的设计，可以参考 [Cupertino component](/docs/development/ui/widgets/cupertino)，它有自己版本的 [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html) 和 [CupertinoNavigationBar]({{api}}/cupertino/CupertinoNavigationBar-class.html)。
 {{site.alert.end}}
 
 
@@ -424,11 +396,7 @@ case printing a message to the console. You can use
 [GestureDetector]({{api}}/widgets/GestureDetector-class.html) to detect a
 variety of input gestures, including taps, drags, and scales.
 
-[GestureDetector]({{api}}/widgets/GestureDetector-class.html) widget 没有可视化的展现，但它能识别用户的手势。
-当用户点击 [Container]({{api}}/widgets/Container-class.html) 时，
-[GestureDetector]({{api}}/widgets/GestureDetector-class.html) 会调用其 [onTap]({{api}}/widgets/GestureDetector-class.html#onTap) 回调，
-在这里会向控制台打印一条消息。 
-你可以使用 [GestureDetector]({{api}}/widgets/GestureDetector-class.html) 检测各种输入的手势，包括点击，拖动和缩放。
+[GestureDetector]({{api}}/widgets/GestureDetector-class.html) widget 没有可视化的展现，但它能识别用户的手势。当用户点击 [Container]({{api}}/widgets/Container-class.html) 时，[GestureDetector]({{api}}/widgets/GestureDetector-class.html) 会调用其 [onTap]({{api}}/widgets/GestureDetector-class.html#onTap) 回调，在这里会向控制台打印一条消息。你可以使用 [GestureDetector]({{api}}/widgets/GestureDetector-class.html) 检测各种输入的手势，包括点击，拖动和缩放。
 
 Many widgets use a
 [GestureDetector]({{api}}/widgets/GestureDetector-class.html) to provide
@@ -439,8 +407,7 @@ optional callbacks for other widgets. For example, the
 widgets have [onPressed()]({{api}}/material/RaisedButton-class.html#onPressed)
 callbacks that are triggered when the user taps the widget.
 
-许多小部件使用 [GestureDetector]({{api}}/widgets/GestureDetector-class.html) 为其他 widget 提供可选的回调。
-例如，[IconButton]({{api}}/material/IconButton-class.html)，[RaisedButton]({{api}}/material/RaisedButton-class.html) 和 [FloatingActionButton]({{api}}/material/FloatingActionButton-class.html) widget 都有 [onPressed()]({{api}}/material/RaisedButton-class.html#onPressed) 回调，当用户点击 widget 时就会触发这些回调。
+许多小部件使用 [GestureDetector]({{api}}/widgets/GestureDetector-class.html) 为其他 widget 提供可选的回调。例如，[IconButton]({{api}}/material/IconButton-class.html)，[RaisedButton]({{api}}/material/RaisedButton-class.html) 和 [FloatingActionButton]({{api}}/material/FloatingActionButton-class.html) widget 都有 [onPressed()]({{api}}/material/RaisedButton-class.html#onPressed) 回调，当用户点击 widget 时就会触发这些回调。
 
 For more information, see
 [Gestures in Flutter](/docs/development/ui/advanced/gestures).
@@ -459,8 +426,7 @@ member variables. When a widget is asked to
 [build]({{api}}/widgets/StatelessWidget/build.html), it uses these stored
 values to derive new arguments for the widgets it creates.
 
-到目前为止，这个页面仅使用了无状态的 widget。
-无状态 widget 接收的参数来自于它的父 widget，它们储存在 [final]({{site.dart-site}}/guides/language/language-tour#final-and-const) 成员变量中。当 widget 需要被 [build]({{api}}/widgets/StatelessWidget/build.html) 时，就是用这些存储的变量为创建的 widget 生成新的参数。
+到目前为止，这个页面仅使用了无状态的 widget。无状态 widget 接收的参数来自于它的父 widget，它们储存在 [final]({{site.dart-site}}/guides/language/language-tour#final-and-const) 成员变量中。当 widget 需要被 [build]({{api}}/widgets/StatelessWidget/build.html) 时，就是用这些存储的变量为创建的 widget 生成新的参数。
 
 In order to build more complex experiences&mdash;for example, to react in more
 interesting ways to user input&mdash;applications typically carry some state.
@@ -525,8 +491,7 @@ hand, are persistent between calls to
 [build()]({{api}}/widgets/State/build.html), allowing them to remember
 information.
 
-您可能想知道为什么 StatefulWidget 和 State 是独立的对象。在 Flutter 中，这两种类型的对象具有不同的生命周期。
-Widget 是临时对象，用于构造应用当前状态的展示。而 State 对象在调用 [build()]({{api}}/widgets/State/build.html) 之间是持久的，以此来存储信息。
+您可能想知道为什么 StatefulWidget 和 State 是独立的对象。在 Flutter 中，这两种类型的对象具有不同的生命周期。Widget 是临时对象，用于构造应用当前状态的展示。而 State 对象在调用 [build()]({{api}}/widgets/State/build.html) 之间是持久的，以此来存储信息。
 
 The example above accepts user input and directly uses the result in its
 build method.  In more complex applications, different parts of the widget
@@ -535,18 +500,14 @@ widget might present a complex user interface with the goal of gathering
 specific information, such as a date or location, while another widget might
 use that information to change the overall presentation.
 
-上面的示例接受用户输入并直接在其 build 方法中直接使用结果。
-在更复杂的应用中，widget 层次不同的部分可能负责不同的关注点；
-例如，一个 widget 可能呈现复杂的用户界面，来收集像日期或位置这样特定的信息，
-而另一个 widget 可能使用该信息来改变整体的展现。
+上面的示例接受用户输入并直接在其 build 方法中直接使用结果。在更复杂的应用中，widget 层次不同的部分可能负责不同的关注点；例如，一个 widget 可能呈现复杂的用户界面，来收集像日期或位置这样特定的信息，而另一个 widget 可能使用该信息来改变整体的展现。
 
 In Flutter, change notifications flow "up" the widget hierarchy by way of
 callbacks, while current state flows "down" to the stateless widgets that do
 presentation. The common parent that redirects this flow is the State.
 The following slightly more complex example shows how this works in practice:
 
-在 Flutter 中，widget 通过回调得到状态改变的通知，同时当前状态通知给其他 widget 用于显示。重定向这一流程的共同父级是 State。
-下面稍微复杂的示例显示了它在实践中的工作原理：
+在 Flutter 中，widget 通过回调得到状态改变的通知，同时当前状态通知给其他 widget 用于显示。重定向这一流程的共同父级是 State。下面稍微复杂的示例显示了它在实践中的工作原理：
 
 
 ```dart
@@ -606,9 +567,7 @@ Although the net result is the same as the previous example, the separation of
 responsibility allows greater complexity to be encapsulated in the individual
 widgets, while maintaining simplicity in the parent.
 
-注意创建两个新的无状态 widget 的方式，它清楚地分离了 _显示_ 计数器（CounterDisplay）和 _改变_
-计数器（CounterIncrementor）。
-尽管最终结果与前面的示例相同，但是责任的分离将更大的复杂性封装在各个 widget 中，保证了父级的简单性。
+注意创建两个新的无状态 widget 的方式，它清楚地分离了 _显示_ 计数器（CounterDisplay）和 _改变_ 计数器（CounterIncrementor）。尽管最终结果与前面的示例相同，但是责任的分离将更大的复杂性封装在各个 widget 中，保证了父级的简单性。
 
 For more information, see:
 
@@ -632,9 +591,7 @@ products offered for sale, and maintains a shopping cart for
 intended purchases. Start by defining the presentation class,
 `ShoppingListItem`:
 
-下面是一个更完整的示例，汇集了上面介绍的概念：
-假定一个购物应用显示各种出售的产品，并在购物车中维护想购买的物品。
-首先定义一个用于展示的类，`ShoppingListItem`：
+下面是一个更完整的示例，汇集了上面介绍的概念：假定一个购物应用显示各种出售的产品，并在购物车中维护想购买的物品。首先定义一个用于展示的类，`ShoppingListItem`：
 
 ```dart
 class Product {
@@ -694,9 +651,7 @@ member variables, which it then uses during its
 `inCart` boolean toggles between two visual appearances: one that uses the
 primary color from the current theme, and another that uses gray.
 
-`ShoppingListItem` widget 遵循无状态 widget 的通用模式。
-它将构造函数中接受到的值存储在 [final]({{site.dart-site}}/guides/language/language-tour#final-and-const) 成员变量中，然后在 [build]({{api}}/widgets/StatelessWidget/build.html) 函数中使用它们。
-例如，`inCart` 布尔值使两种样式进行切换：一个使用当前主题的主要颜色，另一个使用灰色。
+`ShoppingListItem` widget 遵循无状态 widget 的通用模式。它将构造函数中接受到的值存储在 [final]({{site.dart-site}}/guides/language/language-tour#final-and-const) 成员变量中，然后在 [build]({{api}}/widgets/StatelessWidget/build.html) 函数中使用它们。例如，`inCart` 布尔值使两种样式进行切换：一个使用当前主题的主要颜色，另一个使用灰色。
 
 When the user taps the list item, the widget doesn't modify its `inCart` value
 directly. Instead, the widget calls the `onCartChanged` function it received
@@ -706,9 +661,7 @@ extreme, the state stored on the widget passed to
 [runApp()][] persists for the lifetime of the
 application.
 
-当用户点击列表中的一项，widget 不会直接改变 `inCart` 的值，而是通过调用从父 widget 接收到的 `onCartChanged` 函数。
-这种方式可以在组件的生命周期中存储状态更长久，从而使状态持久化。
-甚至，widget 传给 [runApp()][] 的状态可以持久到整个应用的生命周期。
+当用户点击列表中的一项，widget 不会直接改变 `inCart` 的值，而是通过调用从父 widget 接收到的 `onCartChanged` 函数。这种方式可以在组件的生命周期中存储状态更长久，从而使状态持久化。甚至，widget 传给 [runApp()][] 的状态可以持久到整个应用的生命周期。
 
 When the parent receives the `onCartChanged` callback, the parent updates its
 internal state, which triggers the parent to rebuild and create a new instance
@@ -718,9 +671,7 @@ because the framework compares the newly built widgets with the previously
 built widgets and applies only the differences to the underlying
 [RenderObject]({{api}}/rendering/RenderObject-class.html).
 
-当父级接收到 `onCartChanged` 回调时，父级会更新其内部状态，
-从而触发父级重建并使用新的 `inCart` 值来创建新的 `ShoppingListItem` 实例。
-尽管父级在重建时会创建 `ShoppingListItem` 的新实例，但是由于框架会将新构建的 widget 与先前构建的 widget进行比较，仅将差异应用于底层的 [RenderObject]({{api}}/rendering/RenderObject-class.html)，这种代价是很小的。
+当父级接收到 `onCartChanged` 回调时，父级会更新其内部状态，从而触发父级重建并使用新的 `inCart` 值来创建新的 `ShoppingListItem` 实例。尽管父级在重建时会创建 `ShoppingListItem` 的新实例，但是由于框架会将新构建的 widget 与先前构建的 widget 进行比较，仅将差异应用于底层的 [RenderObject]({{api}}/rendering/RenderObject-class.html)，这种代价是很小的。
 
 Here's an example parent widget that stores mutable state:
 
@@ -818,8 +769,7 @@ of `ShoppingList`, but the framework reuses the `_ShoppingListState`
 instance that is already in the tree rather than calling
 [createState]({{api}}/widgets/StatefulWidget-class.html#createState) again.
 
-`ShoppingList` 类继承自 [StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)，这意味着这个 widget 存储着可变状态。
-当 `ShoppingList` 首次插入到 widget 树中时，框架调用 [createState()]({{api}}/widgets/StatefulWidget-class.html#createState) 函数来创建 `_ShoppingListState` 的新实例，以与树中的该位置相关联。（注意，[State]({{api}}/widgets/State-class.html) 的子类通常以下划线开头进行命名，表示它们的实现细节是私有的。）当该 widget 的父 widget 重建时，父 widget 首先会创建一个 `ShoppingList` 的实例，但是框架会复用之前创建的 `_ShoppingListState`，而不会重新调用 [createState]({{api}}/widgets/StatefulWidget-class.html#createState)。
+`ShoppingList` 类继承自 [StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)，这意味着这个 widget 存储着可变状态。当 `ShoppingList` 首次插入到 widget 树中时，框架调用 [createState()]({{api}}/widgets/StatefulWidget-class.html#createState) 函数来创建 `_ShoppingListState` 的新实例，以与树中的该位置相关联。（注意，[State]({{api}}/widgets/State-class.html) 的子类通常以下划线开头进行命名，表示它们的实现细节是私有的。）当该 widget 的父 widget 重建时，父 widget 首先会创建一个 `ShoppingList` 的实例，但是框架会复用之前创建的 `_ShoppingListState`，而不会重新调用 [createState]({{api}}/widgets/StatefulWidget-class.html#createState)。
 
 To access properties of the current `ShoppingList`, the `_ShoppingListState`
 can use its [widget]({{api}}/widgets/State-class.html#widget) property. If the
@@ -832,8 +782,7 @@ override the
 which is passed as `oldWidget` to let you compare the old widget with
 the current [widget]({{api}}/widgets/State-class.html#widget).
 
-为了访问当前 `ShoppingList` 的属性，`_ShoppingListState` 可以使用它的 [widget]({{api}}/widgets/State-class.html#widget) 属性。当父组件重建一个新的 `ShoppingList` 时，`_ShoppingListState` 会使用新的 [widget]({{api}}/widgets/State-class.html#widget) 值来创建。
-如果希望在 [widget]({{api}}/widgets/State-class.html#widget)  属性更改时收到通知，则可以重写 [didUpdateWidget()]({{api}}/widgets/State-class.html#didUpdateWidget) 函数，该函数将 `oldWidget` 作为参数传递，以便将旧的 widget 与当前 [widget]({{api}}/widgets/State-class.html#widget) 进行比较。
+为了访问当前 `ShoppingList` 的属性，`_ShoppingListState` 可以使用它的 [widget]({{api}}/widgets/State-class.html#widget) 属性。当父组件重建一个新的 `ShoppingList` 时，`_ShoppingListState` 会使用新的 [widget]({{api}}/widgets/State-class.html#widget) 值来创建。如果希望在 [widget]({{api}}/widgets/State-class.html#widget)  属性更改时收到通知，则可以重写 [didUpdateWidget()]({{api}}/widgets/State-class.html#didUpdateWidget) 函数，该函数将 `oldWidget` 作为参数传递，以便将旧的 widget 与当前 [widget]({{api}}/widgets/State-class.html#widget) 进行比较。
 
 When handling the `onCartChanged` callback, the `_ShoppingListState` mutates its
 internal state by either adding or removing a product from `_shoppingCart`. To
@@ -849,11 +798,7 @@ By managing state in this way, you don't need to write separate code for
 creating and updating child widgets. Instead, you simply implement the build
 function, which handles both situations.
 
-当处理 `onCartChanged` 回调时，`_ShoppingListState` 通过增加或删除 `_shoppingCart` 中的产品来改变其内部状态。
-为了通知框架它改变了它的内部状态，需要调用 [setState]({{api}}/widgets/State-class.html#setState)。
-调用 [setState]({{api}}/widgets/State-class.html#setState) 会将该 widget 标记为“dirty”（脏的），并且计划在下次应用需要更新屏幕时重新构建它。 
-如果在修改 widget 的内部状态后忘记调用 setState，框架将不知道这个 widget 是”dirty”(脏的)，并且可能不会调用 widget 的 [build()]({{api}}/widgets/StatelessWidget/build.html) 方法，这意味着用户界面可能不会更新以展示新的状态。
-通过以这种方式管理状态，你不需要编写用于创建和更新子 widget 的单独代码。相反，你只需实现 build 函数，它可以处理这两种情况。
+当处理 `onCartChanged` 回调时，`_ShoppingListState` 通过增加或删除 `_shoppingCart` 中的产品来改变其内部状态。为了通知框架它改变了它的内部状态，需要调用 [setState]({{api}}/widgets/State-class.html#setState)。调用 [setState]({{api}}/widgets/State-class.html#setState) 会将该 widget 标记为“dirty”（脏的），并且计划在下次应用需要更新屏幕时重新构建它。如果在修改 widget 的内部状态后忘记调用 setState，框架将不知道这个 widget 是“dirty”(脏的)，并且可能不会调用 widget 的 [build()]({{api}}/widgets/StatelessWidget/build.html) 方法，这意味着用户界面可能不会更新以展示新的状态。通过以这种方式管理状态，你不需要编写用于创建和更新子 widget 的单独代码。相反，你只需实现 build 函数，它可以处理这两种情况。
 
 ## Responding to widget lifecycle events
 
@@ -871,11 +816,7 @@ animations or to subscribe to platform services. Implementations of
 [initState]({{api}}/widgets/State-class.html#initState) are required to start
 by calling [super.initState]({{api}}/widgets/State-class.html#initState).
 
-在 StatefulWidget 上调用 [createState]({{api}}/widgets/StatefulWidget-class.html#createState) 之后，
-框架将新的状态对象插入到树中，然后在状态对象上调用 [initState]({{api}}/widgets/State-class.html#initState)。
-[State]({{api}}/widgets/State-class.html) 的子类可以重写 [initState]({{api}}/widgets/State-class.html#initState) 来完成只需要发生一次的工作。
-例如，重写 [initState]({{api}}/widgets/State-class.html#initState) 来配置动画或订阅平台服务。
-实现 [initState]({{api}}/widgets/State-class.html#initState) 需要调用父类的 [super.initState]({{api}}/widgets/State-class.html#initState) 方法来开始。
+在 StatefulWidget 上调用 [createState]({{api}}/widgets/StatefulWidget-class.html#createState) 之后，框架将新的状态对象插入到树中，然后在状态对象上调用 [initState]({{api}}/widgets/State-class.html#initState)。[State]({{api}}/widgets/State-class.html) 的子类可以重写 [initState]({{api}}/widgets/State-class.html#initState) 来完成只需要发生一次的工作。例如，重写 [initState]({{api}}/widgets/State-class.html#initState) 来配置动画或订阅平台服务。实现 [initState]({{api}}/widgets/State-class.html#initState) 需要调用父类的 [super.initState]({{api}}/widgets/State-class.html#initState) 方法来开始。
 
 When a state object is no longer needed, the framework calls
 [dispose]({{api}}/widgets/State-class.html#dispose) on the state object.
@@ -886,10 +827,7 @@ unsubscribe from platform services. Implementations of
 [dispose]({{api}}/widgets/State-class.html#dispose) typically end by calling
 [super.dispose]({{api}}/widgets/State-class.html#dispose).
 
-当不再需要状态对象时，框架会调用状态对象上的 [dispose]({{api}}/widgets/State-class.html#dispose) 方法。
-可以重写 [dispose]({{api}}/widgets/State-class.html#dispose) 方法来清理状态。
-例如，重写 [dispose]({{api}}/widgets/State-class.html#dispose) 以取消计时器或取消订阅平台服务。
-实现 [dispose]({{api}}/widgets/State-class.html#dispose) 时通常通过调用 [super.dispose]({{api}}/widgets/State-class.html#dispose) 来结束。
+当不再需要状态对象时，框架会调用状态对象上的 [dispose]({{api}}/widgets/State-class.html#dispose) 方法。可以重写 [dispose]({{api}}/widgets/State-class.html#dispose) 方法来清理状态。例如，重写 [dispose]({{api}}/widgets/State-class.html#dispose) 以取消计时器或取消订阅平台服务。实现 [dispose]({{api}}/widgets/State-class.html#dispose) 时通常通过调用 [super.dispose]({{api}}/widgets/State-class.html#dispose) 来结束。
 
 For more information, see [State]({{api}}/widgets/State-class.html).
 
@@ -905,22 +843,19 @@ which they appear. With keys, the framework requires that the two widgets have
 the same [key]({{api}}/widgets/Widget-class.html#key) as well as the same
 [runtimeType]({{api}}/widgets/Widget-class.html#runtimeType).
 
-使用 key 可以控制框架在 widget 重建时与哪些其他 widget 进行匹配。
-默认情况下，框架根据它们的 [runtimeType]({{api}}/widgets/Widget-class.html#runtimeType) 以及它们的显示顺序来匹配。使用 key 时，框架要求两个 widget 具有相同的 [key]({{api}}/widgets/Widget-class.html#key) 和 [runtimeType]({{api}}/widgets/Widget-class.html#runtimeType)。
+使用 key 可以控制框架在 widget 重建时与哪些其他 widget 进行匹配。默认情况下，框架根据它们的 [runtimeType]({{api}}/widgets/Widget-class.html#runtimeType) 以及它们的显示顺序来匹配。使用 key 时，框架要求两个 widget 具有相同的 [key]({{api}}/widgets/Widget-class.html#key) 和 [runtimeType]({{api}}/widgets/Widget-class.html#runtimeType)。
 
 Keys are most useful in widgets that build many instances of the same type of
 widget. For example, the `ShoppingList` widget, which builds just enough
 `ShoppingListItem` instances to fill its visible region:
 
-Key 在构建相同类型 widget 的多个实例时很有用。
-例如，`ShoppingList` widget，它只构建刚刚好足够的 `ShoppingListItem` 实例来填充其可见区域：
+Key 在构建相同类型 widget 的多个实例时很有用。例如，`ShoppingList` widget，它只构建刚刚好足够的 `ShoppingListItem` 实例来填充其可见区域：
 
  * Without keys, the first entry in the current build would always sync with the
    first entry in the previous build, even if, semantically, the first entry in
    the list just scrolled off screen and is no longer visible in the viewport.
 
-   如果没有 key，当前构建中的第一个条目将始终与前一个构建中的第一个条目同步，
-   在语义上，列表中的第一个条目如果滚动出屏幕，那么它应该不会再在窗口中可见。
+   如果没有 key，当前构建中的第一个条目将始终与前一个构建中的第一个条目同步，在语义上，列表中的第一个条目如果滚动出屏幕，那么它应该不会再在窗口中可见。
 
  * By assigning each entry in the list a "semantic" key, the infinite list can
    be more efficient because the framework syncs entries with matching
@@ -929,9 +864,7 @@ Key 在构建相同类型 widget 的多个实例时很有用。
    stateful child widgets remains attached to the same semantic entry rather
    than the entry in the same numerical position in the viewport.
 
-   通过给列表中的每个条目分配为“语义” key，无限列表可以更高效，
-   因为框架将通过相匹配的语义 key 来同步条目，并因此具有相似（或相同）的可视外观。
-   此外，语义上同步条目意味着在有状态子 widget 中，保留的状态将附加到相同的语义条目上，而不是附加到相同数字位置上的条目。
+   通过给列表中的每个条目分配为“语义” key，无限列表可以更高效，因为框架将通过相匹配的语义 key 来同步条目，并因此具有相似（或相同）的可视外观。此外，语义上同步条目意味着在有状态子 widget 中，保留的状态将附加到相同的语义条目上，而不是附加到相同数字位置上的条目。
 
 For more information, see [Key API]({{api}}/foundation/Key-class.html).
 

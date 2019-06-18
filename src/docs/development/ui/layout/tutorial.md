@@ -37,7 +37,7 @@ diff2html: true
 This is a guide to building layouts in Flutter.
 You'll build the layout for the following app:
 
-这是一份如何在 Flutter 中构建布局的指南。你将为如下 app 创建布局。
+这是一份如何在 Flutter 中构建布局的指南。你将为如下 app 创建布局：
 
 {% include app-figure.md img-class="site-mobile-screenshot border"
     image="ui/layout/lakes.jpg" caption="The finished app" %}

@@ -71,7 +71,7 @@ then do the following:
 
  2. Change the app bar title and the app title as follows:
 
-    按照如下方法修改　app 标题栏的标题以及 app 的标题：
+    按照如下方法修改 app 标题栏的标题以及 app 的标题：
 
     <?code-excerpt "{codelabs/startup_namer/step1_base,layout/base}/lib/main.dart"?>
     ```diff

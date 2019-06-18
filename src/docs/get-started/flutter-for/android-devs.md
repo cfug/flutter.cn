@@ -1462,8 +1462,9 @@ The equivalent to Android's density buckets are:
 
 和 Android 的密度分类的对照表如下：
  
-   <t>Android density qualifier</t><t>Android 密度修饰符</t> | <t>Flutter pixel ratio</t><t>Flutter 像素比例</t>
+Android density qualifier | Flutter pixel ratio
  --- | ---
+Android 密度修饰符 | 像素比例
  `ldpi` | `0.75x`
  `mdpi` | `1.0x`
  `hdpi` | `1.5x`

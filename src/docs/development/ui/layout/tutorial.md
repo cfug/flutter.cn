@@ -230,7 +230,7 @@ Widget titleSection = Container(
     along each edge by 32 pixels.
 
     标题行中的最后两项是一个红色星形图标，和文字"41"。
-    整行都在一个 Container 容器布局中，而且每条边都有32像素的内间距。
+    整行都在一个 Container 容器布局中，而且每条边都有 32 像素的内间距。
 
 Add the title section to the app body like this:
 

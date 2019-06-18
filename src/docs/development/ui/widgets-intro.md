@@ -374,7 +374,7 @@ For more information, see
 
   Material 是 Flutter 中两个自带的设计之一，
   如果想要以 iOS 为主的设计，可以参考 [Cupertino component](/docs/development/ui/widgets/cupertino)，
-  它有自己的 [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html) 和
+  它有自己版本的 [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html) 和
   [CupertinoNavigationBar]({{api}}/cupertino/CupertinoNavigationBar-class.html)。
 {{site.alert.end}}
 

@@ -16,3 +16,5 @@ nt mark '_site/**/*.html'
 cd tool/translator
 
 npx gulp
+
+cp robots.txt _site

@@ -59,7 +59,7 @@ on screen. The text direction needs to be specified in this instance; when the
 MaterialApp widget is used, this is taken care of for you, as demonstrated
 later.
 
-[runApp()][] 函数会持有 [Widget]({{api}}/widgets/Widget-class.html)，并且使它成为 widget 树中的根节点。在这个例子中，Widget 树有两个 widgets，[Center]({{api}}/widgets/Center-class.html) widget 及其子 widget ——[Text]({{api}}/widgets/Text-class.html) 。框架会强制让根 widget 铺满整个屏幕，也就是说“Hello World”会在屏幕上居中显示。在这个例子我们需要指定文字的方向，当使用 MaterialApp widget 时，你需要考虑这一点，之后我们会进一步的描述。
+[runApp()][] 函数会持有传入的 [Widget]({{api}}/widgets/Widget-class.html)，并且使它成为 widget 树中的根节点。在这个例子中，Widget 树有两个 widgets，[Center]({{api}}/widgets/Center-class.html) widget 及其子 widget ——[Text]({{api}}/widgets/Text-class.html) 。框架会强制让根 widget 铺满整个屏幕，也就是说“Hello World”会在屏幕上居中显示。在这个例子我们需要指定文字的方向，当使用 MaterialApp widget 时，你需要考虑这一点，之后我们会进一步的描述。
 
 When writing an app, you'll commonly author new widgets that are subclasses of
 either [StatelessWidget]({{api}}/widgets/StatelessWidget-class.html) or
@@ -407,7 +407,7 @@ optional callbacks for other widgets. For example, the
 widgets have [onPressed()]({{api}}/material/RaisedButton-class.html#onPressed)
 callbacks that are triggered when the user taps the widget.
 
-许多小部件使用 [GestureDetector]({{api}}/widgets/GestureDetector-class.html) 为其他 widget 提供可选的回调。例如，[IconButton]({{api}}/material/IconButton-class.html)，[RaisedButton]({{api}}/material/RaisedButton-class.html) 和 [FloatingActionButton]({{api}}/material/FloatingActionButton-class.html) widget 都有 [onPressed()]({{api}}/material/RaisedButton-class.html#onPressed) 回调，当用户点击 widget 时就会触发这些回调。
+许多 widget 使用 [GestureDetector]({{api}}/widgets/GestureDetector-class.html) 为其他 widget 提供可选的回调。例如，[IconButton]({{api}}/material/IconButton-class.html)，[RaisedButton]({{api}}/material/RaisedButton-class.html) 和 [FloatingActionButton]({{api}}/material/FloatingActionButton-class.html) widget 都有 [onPressed()]({{api}}/material/RaisedButton-class.html#onPressed) 回调，当用户点击 widget 时就会触发这些回调。
 
 For more information, see
 [Gestures in Flutter](/docs/development/ui/advanced/gestures).

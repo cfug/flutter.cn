@@ -116,7 +116,7 @@ The first step is to break the layout down to its basic elements:
 
 * Does the UI need tabs?
 
-* 界面是否需要选项卡？
+  界面是否需要选项卡？
 
 * Notice areas that require alignment, padding, or borders.
 

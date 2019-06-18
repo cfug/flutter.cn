@@ -265,7 +265,7 @@ Add the title section to the app body like this:
     using the [automatic reformatting support](/docs/development/tools/formatting).
 
     在粘贴代码到你的 app 中时，行首缩进可能会发生偏移。
-    你可以通过使用 [代码自动格式化支持](/docs/development/tools/formatting)来修复这个问题。
+    你可以通过使用 [代码自动格式化支持](/docs/development/tools/formatting) 来修复这个问题。
 
   - For a faster development experience, try Flutter's [hot reload][] feature.
   - If you have problems, compare your code to [lib/main.dart][].

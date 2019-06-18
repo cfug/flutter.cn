@@ -108,7 +108,7 @@ The first step is to break the layout down to its basic elements:
 
 * Does the layout include a grid?
 
-* 这个布局是否包含网格布局？
+  这个布局是否包含网格布局？
 
 * Are there overlapping elements?
 

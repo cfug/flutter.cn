@@ -614,8 +614,6 @@ Widget build(BuildContext context) {
 
 ## Intents
 
-## Intents
-
 ### What is the equivalent of an `Intent` in Flutter?
 
 ### `Intent` 在 Flutter 中的对应概念是什么？
@@ -627,7 +625,7 @@ through native integrations
 (using [a plugin]({{site.pub}}/packages/android_intent)).
 
 在 Android 中，`Intent` 主要有两个使用场景：在 Activity 之前进行导航，以及组件间通信。
-Flutter 却没有 intent 这样的概念，但是你依然可以通过原生集成 [插件]({{site.pub}}/packages/android_intent)) 来启动 intent。
+Flutter 却没有 intent 这样的概念，但是你依然可以通过原生集成 ([插件]({{site.pub}}/packages/android_intent)) 来启动 intent。
 
 Flutter doesn't really have a direct equivalent to activities and fragments;
 rather, in Flutter you navigate between screens, using a `Navigator` and
@@ -1463,8 +1461,8 @@ Flutter 遵循一个简单的类似 iOS 的密度相关的格式。文件可以�
 The equivalent to Android's density buckets are:
 
 和 Android 的密度分类的对照表如下：
-
- <t>Android density qualifier</t><t>Android 密度修饰符</t> | <t>Flutter pixel ratio</t><t>Flutter 像素比例</t>
+ 
+   <t>Android density qualifier</t><t>Android 密度修饰符</t> | <t>Flutter pixel ratio</t><t>Flutter 像素比例</t>
  --- | ---
  `ldpi` | `0.75x`
  `mdpi` | `1.0x`
@@ -1963,7 +1961,7 @@ Using the GestureDetector, you can listen to a wide range of Gestures such as:
     `onTapUp` - 一个产生了点击事件的指针停止触摸屏幕的特定位置。
 
   * `onTap` - A tap has occurred.
-  * 
+   
     `onTap` - 一个点击事件已经发生。
 
   * `onTapCancel` - The pointer that previously triggered the `onTapDown` won't

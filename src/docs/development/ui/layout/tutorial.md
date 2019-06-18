@@ -104,7 +104,7 @@ The first step is to break the layout down to its basic elements:
 
 * Identify the rows and columns.
 
-* 识别出它的行和列。
+  识别出它的行和列。
 
 * Does the layout include a grid?
 

@@ -67,7 +67,7 @@ then do the following:
 
  1. [Create a basic "Hello World" Flutter app][hello-world].
 
-    [创建一个基础的 "Hello World" Flutter app][hello-world].
+    [创建一个基础的 "Hello World" Flutter app][hello-world]。
 
  2. Change the app bar title and the app title as follows:
 

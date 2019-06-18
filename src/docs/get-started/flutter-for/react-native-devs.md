@@ -912,10 +912,10 @@ flutter:
     - assets/background.png
 ```
 
-The `assets` subsection specifies files that should be included with the app.
-Each asset is identified by an explicit path relative to the `pubspec.yaml`
+The `assets` subsection specifies files that should be included with the app.
+Each asset is identified by an explicit path relative to the `pubspec.yaml`
 file, where the asset file is located. The order in which the assets are
-declared does not matter. The actual directory used (`assets` in this case) does
+declared does not matter. The actual directory used (`assets` in this case) does
 not matter. However, while assets can be placed in any app directory, it's a
 best practice to place them in the `assets` directory.
 
@@ -923,7 +923,7 @@ best practice to place them in the `assets` directory.
 资源定义的顺序没有特殊要求。实际的文件夹（在这里指 `assets` ）也没影响。但是，
 由于资源可以放置于程序的任何目录，所以放在 `assets` 文件夹是比较好的。
 
-During a build, Flutter places assets into a special archive called the *asset
+During a build, Flutter places assets into a special archive called the *asset
 bundle*, which apps read from at runtime. When an asset’s path is specified in
 the assets section of `pubspec.yaml`, the build process looks for any files with
 the same name in adjacent subdirectories. These files are also included in the
@@ -1057,21 +1057,21 @@ should look like given their current configuration and state.
 在 Flutter 中，你可以基于 widget 打造你自己的 UI，通过 widget 当前的设置和状态会呈现相应的页面效果。
 
 Widgets are often composed of many small, single-purpose widgets that are nested
-to produce powerful effects. For example, the Container widget consists of
+to produce powerful effects. For example, the Container widget consists of
 several widgets responsible for layout, painting, positioning, and sizing.
-Specifically, the `Container` widget includes the `LimitedBox`,
-`ConstrainedBox`, `Align`, `Padding`, `DecoratedBox`, and `Transform` widgets.
+Specifically, the `Container` widget includes the `LimitedBox`,
+`ConstrainedBox`, `Align`, `Padding`, `DecoratedBox`, and `Transform` widgets.
 Rather than subclassing `Container` to produce a customized effect, you can
 compose these and other simple widgets in new and unique ways.
 
  widget 常常通过很多小的，单一功能的 widget 组成，通过这样的封装往往能够实现很棒的效果。
  比如， Container widget 包含多种 widget，分别负责布局、绘图、位置变化和尺寸变化。
  准确的说，`Container` widget 包括 `LimitedBox`,
-`ConstrainedBox`, `Align`, `Padding`, `DecoratedBox`，
+`ConstrainedBox`, `Align`, `Padding`, `DecoratedBox`，
 和 `Transform` widget。与其继承 `Container` 来实现自定义效果，
 不如直接修改这些 widget 来实现效果。
 
-The `Center` widget is another example of how you can control the layout. To
+The `Center` widget is another example of how you can control the layout. To
 center a widget, wrap it in a `Center` widget and then use layout
 widgets for alignment, row, columns, and grids. These layout widgets do not have
 a visual representation of their own. Instead, their sole purpose is to control
@@ -1482,8 +1482,8 @@ and [colors]({{site.api}}/flutter/material/Colors-class.html).
 Icon(Icons.lightbulb_outline, color: Colors.redAccent)
 ```
 
-When using the `Icons` class, make sure to set `uses-material-design: true` in
-the project's `pubspec.yaml` file. This ensures that
+When using the `Icons` class, make sure to set `uses-material-design: true` in
+the project's `pubspec.yaml` file. This ensures that
 the `MaterialIcons` font, which displays the icons, is included in your app.
 {% prettify dart %}
 name: my_awesome_application
@@ -1498,9 +1498,9 @@ flutter: [[highlight]]uses-material-design: true[[/highlight]]
 
 Flutter's [Cupertino (iOS-style)](/docs/development/ui/widgets/cupertino) package provides high
 fidelity widgets for the current iOS design language. To use the `CupertinoIcons`
-font, add a dependency for `cupertino_icons` in your project's  `pubspec.yaml` file.
+font, add a dependency for `cupertino_icons` in your project's  `pubspec.yaml` file.
 
-Flutter 的 [Cupertino (iOS-style)](/docs/development/ui/widgets/cupertino) 包为 iOS 设计语言提供高分辨率的 widget。要使用 `CupertinoIcons` 字体，在项目的 `pubspec.yaml` 文件中添加 `cupertino_icons` 的依赖即可。
+Flutter 的 [Cupertino (iOS-style)](/docs/development/ui/widgets/cupertino) 包为 iOS 设计语言提供高分辨率的 widget。要使用 `CupertinoIcons` 字体，在项目的 `pubspec.yaml` 文件中添加 `cupertino_icons` 的依赖即可。
 
 ```yaml
 name: my_awesome_application
@@ -1556,7 +1556,7 @@ class and passing it to the theme property in the
 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 widget.
 
-在 Flutter 中，为所有组件创建统一风格可以在 [`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html) 类中定义，并将它赋值给 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的主题属性。
+在 Flutter 中，为所有组件创建统一风格可以在 [`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html) 类中���义，并将它赋值给 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的主题属性。
 
 <!-- skip -->
 ```dart
@@ -2105,7 +2105,7 @@ screen.
 
 In Android, new screens are new Activities. In iOS, new screens are new
 ViewControllers. In Flutter, screens are just Widgets! And to navigate to new
-screens in Flutter, use the Navigator widget.
+screens in Flutter, use the Navigator widget.
 
 在 Android 中，新的页面是 Activity。 在 iOS 中，新的页面是 ViewController。在 Flutter 中，页面就是 widget ！如果在 Flutter 中要切换页面，使用 Navigator widget 即可。
 
@@ -2294,7 +2294,7 @@ A `TabController` is required to coordinate the tab selection between a `TabBar`
 and a `TabBarView`. The `TabController` constructor `length` argument is the total
 number of tabs. A `TickerProvider` is required to trigger the notification whenever
 a frame triggers a state change. The `TickerProvider` is `vsync`. Pass the
-`vsync: this` argument to the `TabController` constructor whenever you create
+`vsync: this` argument to the `TabController` constructor whenever you create
 a new `TabController`.
 
 要将 tab 选项与 `TabBar` 和 `TabBarView` 结合起来使用就需要 `TabController`。 `TabController` 的构造函数中的 `length` 参数定义了 tab 的总数。当状态变化时，需要使用 `TickerProvider` 来触发通知。`TickerProvider` 是 `vsync`。当你需要创建新的 `TabController` 时，将 `vsync: this` 作为构造函数的参数即可。
@@ -2456,7 +2456,7 @@ To listen for and respond to gestures, Flutter supports taps, drags, and
 scaling. The gesture system in Flutter has two separate layers. The first layer
 includes raw pointer events, which describe the location and movement of
 pointers, (such as touches, mice, and styli movements), across the screen. The
-second layer includes gestures, which describe semantic actions that consist of
+second layer includes gestures, which describe semantic actions that consist of
 one or more pointer movements.
 
 Flutter 支持点击、拖拽和缩放手势来监听和相应手势操作。Flutter 中的手势处理有两个独立的层。第一层是指针事件，指针事件定义了指针在屏幕上的位置和动作，比如触摸、鼠标和触摸笔。第二层指手势，主要是语义层面的动作，里面包含一种或者多种指针动作。
@@ -2571,7 +2571,7 @@ see the [GestureDetector class][].
 ## 发起 HTTP 网络请求
 
 Fetching data from the internet is common for most apps. And in Flutter,
-the `http` package provides the simplest way to fetch data from the internet.
+the `http` package provides the simplest way to fetch data from the internet.
 
 对于大多数应用程序来说都需要从互联网上获取数据。在 Flutter 中，`http` 包提供了从互联网获取数据的最简单的途径。
 
@@ -2650,7 +2650,7 @@ _getIPAddress() async {
 Text fields allow users to type text into your app so they can be used to build
 forms, messaging apps, search experiences, and more. Flutter provides two
 core text field widgets:
-[TextField]({{site.api}}/flutter/material/TextField-class.html) and
+[TextField]({{site.api}}/flutter/material/TextField-class.html) and
 [TextFormField]({{site.api}}/flutter/material/TextFormField-class.html).
 
 TextField 用于在应用程序中输入文本，这样就可以实现创建表单、短消息应用、搜索框等等功能。Flutter 提供两个核心文本输入 widget ：
@@ -2839,9 +2839,9 @@ if (Theme.of(context).platform == TargetPlatform.iOS) {
 
 ## 调试
 
-Before running your applications, verify your code with `flutter analyze`. The
-Flutter analyzer (which is a wrapper around the `dartanalyzer` tool) examines
-your code and helps identify possible issues. If you’re using a Flutter-enabled
+Before running your applications, verify your code with `flutter analyze`. The
+Flutter analyzer (which is a wrapper around the `dartanalyzer` tool) examines
+your code and helps identify possible issues. If you’re using a Flutter-enabled
 IDE, this occurs automatically.
 
 在运行应用程序之前，可以使用 `flutter analyze` 检验一下代码。Flutter analyzer （它封装了 `dartanalyzer` 工具）可以验证你的代码并且帮助你定位潜在的问题。如果你使用的是启用了 Flutter 的 IDE 的话，这个过程是全自动的。
@@ -2898,12 +2898,14 @@ in the terminal window, or type the following shortcuts:
 
 ### 如何进行热重载？
 
-Flutter’s hot reload feature helps you quickly and easily experiment, build UIs,
+Flutter’s Stateful Hot Reload feature helps you quickly and easily experiment, build UIs,
 add features, and fix bugs. Instead of recompiling your app every time you make
 a change, you can hot reload your app instantly. The app is updated to reflect
 your change, and the current state of the app is preserved.
 
-Flutter 的热重载特性可以帮助你快速便捷地实验、构建 UI 和各种特性以及修复 bug。每次修改代码以后，你只需直接热重载你的应用程序即可，而无需重新进行编译。应用程序会根据你的修改进行相应的更新，而程序原有的状态则会被保留。
+Flutter 的热重载特性可以帮助你快速便捷地实验、构建 UI 和各种特性以及修复 bug。
+每次修改代码以后，你只需直接热重载你的应用程序即可，而无需重新进行编译。
+应用程序会根据你的修改进行相应的更新，而程序原有的状态则会被保留。
 
 In React Native, the shortcut is ⌘R for the iOS Simulator and tapping R twice on
 Android emulators.
@@ -2916,7 +2918,10 @@ are running the app at the command line using `flutter run`, type `r` in the
 Terminal window. You can also perform a full restart by typing `R` in the
 Terminal window.
 
-在 Flutter 中，如果你使用的是 IntelliJ 或者 Android Studio，可以使用 Save All (⌘s/ctrl-s)，或者可以点击工具栏上的 Hot Reload 按钮。如果你是在命令行里使用 `flutter run` 命令运行的程序，在窗口里输入 `r` 即可。也可以输入 `R` 进行彻底的重启。
+在 Flutter 中，如果你使用的是 IntelliJ 或者 Android Studio，
+可以使用 Save All (⌘s/ctrl-s)，或者可以点击工具栏上的 Hot Reload 按钮。
+如果你是在命令行里使用 `flutter run` 命令运行的程序，在窗口里输入 `r` 即可。
+也可以输入 `R` 进行彻底的重启。
 
 ### What tools can I use to debug my app in Flutter?
 
@@ -2933,7 +2938,10 @@ profile and debug your Dart applications. If you started your application using
 `flutter run` in Terminal, you can open the web page at the Observatory URL
 printed to the terminal window, for example:  `http://127.0.0.1:8100/`.
 
-除了 Flutter analyzer，还可以使用 [`Dart Observatory`](https://dart-lang.github.io/observatory/)，它可用于调试 Dart 应用程序。如果你是通过命令行运行 `flutter run` 启动应用程序的，可以打开 Observatory URL 所显示的地址，比如：`http://127.0.0.1:8100/`。
+除了 Flutter analyzer，还可以使用 [`Dart Observatory`](https://dart-lang.github.io/observatory/)，
+它可用于调试 Dart 应用程序。
+如果你是通过命令行运行 `flutter run` 启动应用程序的，
+可以打开 Observatory URL 所显示的地址，比如：`http://127.0.0.1:8100/`。
 
 The Observatory includes support for profiling, examining the heap, observing
 executed lines of code, debugging memory leaks and memory fragmentation. For
@@ -2941,7 +2949,9 @@ more information, see the
 [Observatory documentation](https://dart-lang.github.io/observatory/).
 Observatory is included for free when you download and install the Dart SDK.
 
-Observatory 包括程序运行状态监控，堆栈测试，运行代码监视，内存泄漏和内存分段调试。如果想了解更多详细内容，请参考 [Observatory documentation](https://dart-lang.github.io/observatory/)。
+Observatory 包括程序运行状态监控，堆栈测试，运行代码监视，内存泄漏和内存分段调试。
+如果想了解更多详细内容，请参考
+[Observatory documentation](https://dart-lang.github.io/observatory/)。
 
 If you're using an IDE, you can debug your application using the IDE debugger.
 

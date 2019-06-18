@@ -246,7 +246,7 @@ specific buttons on the right-hand side of the toolbar.
 ## 快速编辑和查看效果
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
-of your changes almost instantly with the _hot reload_ feature. See
+of your changes almost instantly with the _Stateful Hot Reload_ feature. See
 [Using hot reload](hot-reload) for details.
 
 Flutter 有效加快开发周期。使用 _热重载_ 功能，你可以在修改源码后，几乎马上看到效果。详细信息请查阅 [使用热重载](hot-reload)。

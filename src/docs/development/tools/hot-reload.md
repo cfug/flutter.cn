@@ -107,13 +107,12 @@ Dart code to keep using hot reload.
 
 ## 先前的状态与新代码并存
 
-Flutter's hot reload feature, sometimes described as _stateful hot reload_,
-preserves the state of your app. This design enables you to view
-the effect of the most recent change only, without throwing away the
-current state. For example, if your app requires a user to log in, you can
-modify and hot reload a page several levels down in the navigation hierarchy,
-without re-entering your login credentials. State is kept, which is
-usually the desired behavior.
+Flutter's Stateful Hot Reload preserves the state of your app.
+This design enables you to view the effect of the most recent change only,
+without throwing away the current state. For example, if your app requires a
+user to log in, you can modify and hot reload a page several levels down in 
+the navigation hierarchy, without re-entering your login credentials. State is
+kept, which is usually the desired behavior.
 
 Flutter 的热重载功能（有时称为 有状态热重载 ）可保留您的应用程序的状态。
 这种设计允许您能查看最近更改的效果，并且不会丢弃当前状态。 

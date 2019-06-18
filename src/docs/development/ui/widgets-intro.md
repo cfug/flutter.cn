@@ -374,7 +374,7 @@ For more information, see
 
   Material 是 Flutter 中两个自带的设计之一，
   如果想要以 iOS 为主的设计，可以参考 [Cupertino component](/docs/development/ui/widgets/cupertino)，
-  它有自己的 [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html)，
+  它有自己的 [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html) 和
   [CupertinoNavigationBar]({{api}}/cupertino/CupertinoNavigationBar-class.html)。
 {{site.alert.end}}
 
@@ -460,7 +460,7 @@ member variables. When a widget is asked to
 values to derive new arguments for the widgets it creates.
 
 到目前为止，这个页面仅使用了无状态的 widget。
-无状态 widget 接收的参数来自于它的父 widget，它们储存在 [final]({{site.dart-site}}/guides/language/language-tour#final-and-const)  成员变量中。当 widget 需要被 [build]({{api}}/widgets/StatelessWidget/build.html) 时，就是用这些存储的变量为创建的 widget 生成新的参数。
+无状态 widget 接收的参数来自于它的父 widget，它们储存在 [final]({{site.dart-site}}/guides/language/language-tour#final-and-const) 成员变量中。当 widget 需要被 [build]({{api}}/widgets/StatelessWidget/build.html) 时，就是用这些存储的变量为创建的 widget 生成新的参数。
 
 In order to build more complex experiences&mdash;for example, to react in more
 interesting ways to user input&mdash;applications typically carry some state.

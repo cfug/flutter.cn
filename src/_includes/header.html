@@ -19,6 +19,10 @@
             <a class="nav-link
                 {%- if page_url_path == '/docs' or page_url_path contains '/docs/' %} active {%- endif -%}" href="/docs">开发文档</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link
+                {%- if page_url_path == '/about/docs-cn' or page_url_path contains '/about/docs-cn' %} active {%- endif -%}" href="/about/docs-cn">关于中文文档</a>
+          </li>
           <div class="site-sidebar site-sidebar--header d-md-none">
             {% include shared/sidenav-level-1.html nav=site.data.sidenav %}
           </div>

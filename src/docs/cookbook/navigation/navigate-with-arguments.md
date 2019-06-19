@@ -34,7 +34,7 @@ constructor.
 在 Flutter 中，你能通过提供额外的 `arguments` 给 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法方便地完成这个任务。通过使用 [`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html) 方法或 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 和 [`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html) 构造器中的 [`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html) 来获取参数。
 
 This recipe demonstrates how to pass arguments to a named route and read the
-arguments using `ModelRoute.of()` and `onGenerateRoute()` using the
+arguments using `ModalRoute.of()` and `onGenerateRoute()` using the
 following steps:
 
 这个章节讲解的是如何给特定路由传递参数并使用 `ModelRoute.of()` 和 `onGenerateRoute()` 来读取参数。

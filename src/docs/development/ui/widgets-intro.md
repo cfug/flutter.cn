@@ -19,6 +19,7 @@ needed in the underlying render tree to transition from one state to the next.
 Flutter 从 [React](https://reactjs.org) 中吸取灵感，通过现代化框架创建出精美的组件。它的核心思想是用 widget 来构建你的 UI 界面。Widget 描述了在当前的配置和状态下，视图所应该呈现的样子。当 widget 的状态改变时，它会重新构建其描述（展示的 UI），框架则会对比前后变化的不同，以确定底层渲染树从一个状态转换到下一个状态所需的最小更改。
 
 {{site.alert.note}}
+
   If you would like to become better acquainted with Flutter by diving
   into some code, check out [Basic layout
   codelab](/docs/codelabs/layout-basics), [Building Layouts in
@@ -340,6 +341,7 @@ For more information, see
 有关更多信息，请参阅 [Material 组件](/docs/development/ui/widgets/layout)。
 
 {{site.alert.note}}
+
   Material is one of the 2 bundled designs included with Flutter.
   For a more iOS-centric design, see the [Cupertino
   components](/docs/development/ui/widgets/cupertino) package,
@@ -567,7 +569,7 @@ Although the net result is the same as the previous example, the separation of
 responsibility allows greater complexity to be encapsulated in the individual
 widgets, while maintaining simplicity in the parent.
 
-注意创建两个新的无状态 widget 的方式，它清楚地分离了 _显示_ 计数器（CounterDisplay）和 _改变_ 计数器（CounterIncrementor）。尽管最终结果与前面的示例相同，但是责任的分离将更大的复杂性封装在各个 widget 中，保证了父级的简单性。
+注意创建两个新的无状态 widget 的方式，它清楚地分离了 **显示** 计数器（CounterDisplay）和 **改变** 计数器（CounterIncrementor）。尽管最终结果与前面的示例相同，但是责任的分离将更大的复杂性封装在各个 widget 中，保证了父级的简单性。
 
 For more information, see:
 
@@ -575,11 +577,11 @@ For more information, see:
 
 * [StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)
   
-  [StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)
+  [API 文档: StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)
 
 * [State.setState]({{api}}/widgets/State/setState.html)
 
-  [State.setState]({{api}}/widgets/State/setState.html)
+  [API 文档: State.setState]({{api}}/widgets/State/setState.html)
 
 ## Bringing it all together
 

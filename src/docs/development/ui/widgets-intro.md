@@ -19,6 +19,7 @@ needed in the underlying render tree to transition from one state to the next.
 Flutter 从 [React](https://reactjs.org) 中吸取灵感，通过现代化框架创建出精美的组件。它的核心思想是用 widget 来构建你的 UI 界面。Widget 描述了在当前的配置和状态下，视图所应该呈现的样子。当 widget 的状态改变时，它会重新构建其描述（展示的 UI），框架则会对比前后变化的不同，以确定底层渲染树从一个状态转换到下一个状态所需的最小更改。
 
 {{site.alert.note}}
+
   If you would like to become better acquainted with Flutter by diving
   into some code, check out [Basic layout
   codelab](/docs/codelabs/layout-basics), [Building Layouts in
@@ -26,6 +27,7 @@ Flutter 从 [React](https://reactjs.org) 中吸取灵感，通过现代化框架
   to Your Flutter App](/docs/development/ui/interactive).
 
   如果你想通过深入了解一些代码来更好地掌握 Flutter，请查阅 [Codelab: Flutter 布局基础教程](/docs/codelabs/layout-basics)、[Flutter 中的布局](/docs/development/ui/layout)和[为你的 Flutter 应用加入交互体验](/docs/development/ui/interactive)这三篇文章。
+ 
 {{site.alert.end}}
 
 ## Hello world

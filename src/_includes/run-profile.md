@@ -12,7 +12,7 @@
 
 The app you've run so far is in the debug mode which allows faster development (e.g., hot reload) at a big performance overhead. Therefore, janky animations are expected in such mode. To see how the app performs in release, try {{include.ide_profile}} the following terminal command.
 
-截止目前文档所示内容，你的应用应该运行在调试 (debug) 模式中，这个模式意味着在更大的性能开销下实现了更快速的开发效率，比如热重载功能的启用。因此，你可能要面临较差质量的动画效果。要查看应用在发布 (release) 模式下的性能，请尝试 {{include.ide_profile}} 执行下面的命令。
+截止目前文档所示内容，你的应用应该运行在调试 (debug) 模式中，这个模式意味着在更大的性能开销下实现了更快速的开发效率，比如热重载功能的启用。因此，你可能要面临较差质量的动画效果。要查看应用在发布 (release) 模式下的性能，请尝试 {{include.ide_profile_zhcn}} 执行下面的命令。
 
 ```terminal
 $ flutter run --profile

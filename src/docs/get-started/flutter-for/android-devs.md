@@ -1464,7 +1464,7 @@ The equivalent to Android's density buckets are:
  
 Android density qualifier | Flutter pixel ratio
  --- | ---
-Android 密度修饰符 | 像素比例
+Android 密度修饰符 | Flutter 像素比例
  `ldpi` | `0.75x`
  `mdpi` | `1.0x`
  `hdpi` | `1.5x`

@@ -48,9 +48,9 @@ Flutter 通过 **热重载** 提供快速开发周期，该功能支持应用程
       
     {{site.alert.end}}
 
- 1. Save your changes
+ 1. Save your changes {{include.save_changes}}
     
-    保存修改{{include.save_changes}}
+    保存修改 {{include.save_changes_zhcn}}
 
 You'll see the updated string in the running app almost immediately.
 

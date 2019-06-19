@@ -56,7 +56,7 @@ acquainted with how Flutter works you can think of them as
 "the way you declare and construct UI".
 
 Android 中的 `View` 是显示在屏幕上的一切的基础。按钮、工具栏、输入框以及一切内容都是 `View`。
-而 Flutter 中 `View` 的大致对应物是`Widget`。Widget 并非完全对应于 Android 中的 View，
+而 Flutter 中 `View` 的大致对应物是 `Widget`。Widget 并非完全对应于 Android 中的 View，
 但是在你熟悉 Flutter 的工作原理的过程中可以把它们看做“声明和构建 UI 的方式”。
 
 However, these have a few differences to a `View`. To start, widgets have a
@@ -75,7 +75,7 @@ Because they aren't views themselves, and aren't directly drawing anything,
 but rather are a description of the UI and its semantics that get "inflated"
 into actual view objects under the hood.
 
-Flutter 的 Widget 很轻量，部分原因在于它们的不可变性。因为它们本身既非视图，也不会直接绘制
+Flutter 的 widget 很轻量，部分原因在于它们的不可变性。因为它们本身既非视图，也不会直接绘制
 任何内容，而是 UI 及其底层创建真正视图对象的语义的描述。
 
 Flutter includes the [Material Components]({{site.material}}/develop/flutter)

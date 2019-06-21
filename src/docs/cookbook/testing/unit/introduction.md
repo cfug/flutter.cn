@@ -77,7 +77,7 @@ functionality for writing tests in Dart. This is the best approach when
 writing packages consumed by web, server, and Flutter apps.
 
 如果 Dart 包没有依赖 Flutter，可以导入 `test` 包。Test 包提供了编写测试所需要的核心功能。
-如果我们写的包可以被 web、服务端和 Flutter app 所使用，那这种方式是最佳的。
+当我们写的包需要被 web、服务端和 Flutter app 使用时，这是最佳的方式。
 
 ```yaml
 dev_dependencies:

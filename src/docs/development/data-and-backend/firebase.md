@@ -10,7 +10,6 @@ that provides hosted backend services such as a realtime database,
 cloud storage, authentication, crash reporting, machine learning,
 remote configuration, and hosting for your static files.
 
-<<<<<<< HEAD
 Firebase 是一个用于开发 BaaS 应用的开发平台，它提供了诸如实时数据库、云存储、鉴权、Crash 上报、机器学习、远程配置以及托管你的静态文件等后台托管服务。
 
 {{site.alert.note}}

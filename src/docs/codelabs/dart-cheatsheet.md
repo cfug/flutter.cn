@@ -47,7 +47,6 @@ restores the editor to its original state.
 并把编辑器恢复到初始状态。
 
 <aside class="alert alert-warning">
-
 The embedded editors use an experimental version of DartPad.
 If you find a DartPad bug or have suggestions for DartPad, please
 <a target="_BLANK" href="https://github.com/dart-lang/dart-pad/issues/new">create a DartPad issue.</a>
@@ -59,7 +58,6 @@ at the top right of this page.
 请 <a target="_BLANK" href="https://github.com/dart-lang/dart-pad/issues/new">创建一个 DartPad issue</a>。
 如果你对该 codelab 的语言描述或样例有任何建议，
 可以点击本页面右上角的 bug 图标提出 issue。
-
 </aside>
 
 ## String interpolation
@@ -80,8 +78,8 @@ Here are some examples of using string interpolation:
 |-----------------------------+-+ -------|
 | `'${3 + 2}'`                | | `'5'` |
 | `'${"word".toUpperCase()}'` | | `'WORD'` |
+| `'$myObject'`               | | The value of `myObject.toString()`|
 | `'$myObject'`               | | `myObject.toString()` 的值|
-
 
 ### Code example
 

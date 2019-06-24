@@ -876,7 +876,7 @@ The following widgets fall into two categories: standard widgets from the
 app can use the widgets library but only Material apps can use the Material
 Components library.
 
-下面的 widget 会分为两类：[widgets library][] 中的标准 widget 和 [Material library][] 中的 widget。任何 app 都可以使用 widget 库，但是 Material app 只能使用 Material 组件库。
+下面的 widget 会分为两类：[widgets library][] 中的标准 widget 和 [Material library][] 中的 widget。任何 app 都可以使用 widget 库，但是 Material app 才可以使用 Material 组件库。
 
 ### Standard widgets
 

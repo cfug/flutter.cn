@@ -53,3 +53,12 @@ Also, the Flutter community has created docs that you might find useful:
 * [Building chat app with Flutter and Firebase][chat app]
    
   [在 Flutter 中使用 Firebase 构建聊天应用][chat app]
+
+
+[Flutterfire plugins]: {{site.github}}/flutter/plugins/blob/master/FlutterFire.md
+[Firebase docs]: {{site.firebase}}/docs
+[codelab]: {{site.codelabs}}/codelabs/flutter-firebase
+[started]: {{site.firebase}}/docs/flutter/setup
+[video]: https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s
+[authenticating]: https://flutterdoc.com/mobileauthenticating-users-with-firebase-and-flutter-240c5557ac7f
+[chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e

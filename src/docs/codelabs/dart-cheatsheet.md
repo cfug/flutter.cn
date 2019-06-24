@@ -74,8 +74,8 @@ Here are some examples of using string interpolation:
 下面是一些使用字符串插值的例子：
 
 | String  | | Result |
-| 字符串  | | 结果 |
 |-----------------------------+-+ -------|
+| 字符串  | | 结果 |
 | `'${3 + 2}'`                | | `'5'` |
 | `'${"word".toUpperCase()}'` | | `'WORD'` |
 | `'$myObject'`               | | The value of `myObject.toString()`|

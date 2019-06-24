@@ -43,7 +43,7 @@ restores the editor to its original state.
 你可以在这些编辑器上将代码补充完整，然后点击 **Run (运行)** 按钮进行测试。
 如果你需要帮助，请点击 **Hint (提示)** 按钮。
 要运行代码格式化 ([dartfmt]({{site.dart-site}}/tools/dartfmt))，
-点击 **Format (格式化)** 按钮，**Reset (重置)**按钮将会清除你的操作，
+点击 **Format (格式化)** 按钮，**Reset (重置)** 按钮将会清除你的操作，
 并把编辑器恢复到初始状态。
 
 <aside class="alert alert-warning">

@@ -142,12 +142,9 @@ mirror of the Flutter codelabs](https://codelabs.flutter-io.cn/).
 里查看：[Flutter 分类](https://codelabs.developers.google.com/?cat=Flutter) 的内容，
 或者打开 [中文的 Flutter codelabs 网站](https://codelabs.flutter-io.cn/) 查阅更多。
 
-
-### Dart codelabs
-
 ### Dart 相关 codelabs
 
-### [为 Java 开发人员准备的 Dart 教程]({{site.codelabs}}/codelabs/from-java-to-dart-cn/index.html)
+#### [为 Java 开发人员准备的 Dart 教程]({{site.codelabs}}/codelabs/from-java-to-dart-cn/index.html)
 
 Use DartPad (no download required!) to explore how
 Dart makes writing modern apps easy and fun.
@@ -155,7 +152,7 @@ Dart makes writing modern apps easy and fun.
 只要一个浏览器就可以完成这个 codelab，体验使用线上的 DartPad 来学习 Dart 吧！
 
 
-### [Dart 速查表](/docs/codelabs/dart-cheatsheet)
+#### [Dart 速查表](/docs/codelabs/dart-cheatsheet)
 
 Use the latest, experimental version of DartPad to learn,
 remind yourself about, or test your knowledge of

@@ -1,6 +1,6 @@
 ---
 title: Dart cheatsheet codelab
-title: Codelab: Dart 速查表
+title: Dart 速查表 codelab
 description: Interactively learn (or relearn) some of Dart's unique features.
 description: 用交互的形式学习（或回顾）Dart 的独特之处。
 toc: false
@@ -79,7 +79,7 @@ Here are some examples of using string interpolation:
 |-----------------------------+-+ -------|
 | `'${3 + 2}'`                | | `'5'` |
 | `'${"word".toUpperCase()}'` | | `'WORD'` |
-| `'$myObject'`               | | <t>The value of `myObject.toString()`<t><t>`myObject.toString()` 的值</t>|
+| `'$myObject'`               | | `myObject.toString()` 的值|
 
 
 ### Code example

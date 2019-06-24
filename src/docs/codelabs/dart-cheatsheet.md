@@ -26,7 +26,7 @@ This codelab — which is based on a
 written by and for Google engineers —
 walks you through the most important of these language features.
 
-Dart 语言旨在让从其他编程语言转来的程序员能够轻松学习，但也有它的独特之处。
+Dart 语言旨在让从其他编程语言转来的开发者们能够轻松学习，但也有它的独特之处。
 本篇将基于谷歌工程师编写的
 [Dart 语言速查表]({{site.dart-site}}/guides/language/cheatsheet)
 为你介绍一些最重要的语言特性。

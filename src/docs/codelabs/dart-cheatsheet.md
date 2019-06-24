@@ -47,17 +47,17 @@ restores the editor to its original state.
 并把编辑器恢复到初始状态。
 
 <aside class="alert alert-warning">
-The embedded editors use an experimental version of DartPad.
+<p>The embedded editors use an experimental version of DartPad.
 If you find a DartPad bug or have suggestions for DartPad, please
 <a target="_BLANK" href="https://github.com/dart-lang/dart-pad/issues/new">create a DartPad issue.</a>
 If you have suggestions for the text or examples in this codelab,
 you can create a site issue by clicking the bug icon
-at the top right of this page.
+at the top right of this page.</p>
 
-这里的嵌入式编辑器使用了实验版 DartPad。如果你发现了 DartPad 中的 bug，
+<p>这里的嵌入式编辑器使用了实验版 DartPad。如果你发现了 DartPad 中的 bug，
 请 <a target="_BLANK" href="https://github.com/dart-lang/dart-pad/issues/new">创建一个 DartPad issue</a>。
 如果你对该 codelab 的语言描述或样例有任何建议，
-可以点击本页面右上角的 bug 图标提出 issue。
+可以点击本页面右上角的 bug 图标提出 issue。</p>
 </aside>
 
 ## String interpolation

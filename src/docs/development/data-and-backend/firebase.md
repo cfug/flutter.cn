@@ -62,3 +62,5 @@ Also, the Flutter community has created docs that you might find useful:
 [video]: https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s
 [authenticating]: https://flutterdoc.com/mobileauthenticating-users-with-firebase-and-flutter-240c5557ac7f
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
+[video-bilibili]: https://www.bilibili.com/video/av55809997/
+[codelab-cn]: {{site.codelabs}}/codelabs/flutter-firebase-cn/index.html

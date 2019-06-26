@@ -100,7 +100,7 @@ An `Animation` is an abstract class that understands its current value
 and its state (completed or dismissed). One of the more commonly used
 animation types is `Animation<double>`.
 
-在 Flutter 中，动画对象无法获取屏幕上显示的内容。`Animation` 是一个已知当前值和状态（已完成或已解除）的抽象类。另外一个更加常见的动画类型是 `Animation<double>`。
+在 Flutter 中，动画对象无法获取屏幕上显示的内容。`Animation` 是一个已知当前值和状态（已完成或已解除）的抽象类。一个比较常见的动画类型是 `Animation<double>`。
 
 An `Animation` object sequentially generates
 interpolated numbers between two values over a certain duration.
@@ -186,7 +186,7 @@ second. After each number is generated, each Animation object calls the
 attached Listener objects. To create a custom display list for each
 child, see [RepaintBoundary][].
 
-`AnimationController` 源自于 `Animation<double>`，所以可以用在任何需要 `Animation` 对象的地方。但是 `AnimationController` 还有其他方法控制动画。例如，使用 `.forward()` 方法启动动画。数字的生成与屏幕刷新关联，所以一般来说每分钟会生成 60 个数字。数字生成之后，每个动画对象都调用附加 Listener 对象。为每个 child 创建自定义显示列表，请参考 [RepaintBoundary][]。
+`AnimationController` 源自于 `Animation<double>`，所以可以用在任何需要 `Animation` 对象的地方。但是 `AnimationController` 还有其他方法控制动画。例如，使用 `.forward()` 方法启动动画。数字的生成与屏幕刷新关联，所以一般来说每秒钟会生成 60 个数字。数字生成之后，每个动画对象都调用附加 Listener 对象。为每个 child 创建自定义显示列表，请参考 [RepaintBoundary][]。
 
 When creating an `AnimationController`, you pass it a `vsync` argument. The
 presence of `vsync` prevents offscreen animations from consuming unnecessary

@@ -10,7 +10,6 @@ that provides hosted backend services such as a realtime database,
 cloud storage, authentication, crash reporting, machine learning,
 remote configuration, and hosting for your static files.
 
-<<<<<<< HEAD
 Firebase 是一个用于开发 BaaS 应用的开发平台，它提供了诸如实时数据库、云存储、鉴权、Crash 上报、机器学习、远程配置以及托管你的静态文件等后台托管服务。
 
 {{site.alert.note}}
@@ -54,3 +53,14 @@ Also, the Flutter community has created docs that you might find useful:
 * [Building chat app with Flutter and Firebase][chat app]
    
   [在 Flutter 中使用 Firebase 构建聊天应用][chat app]
+
+
+[Flutterfire plugins]: {{site.github}}/flutter/plugins/blob/master/FlutterFire.md
+[Firebase docs]: {{site.firebase}}/docs
+[codelab]: {{site.codelabs}}/codelabs/flutter-firebase
+[started]: {{site.firebase}}/docs/flutter/setup
+[video]: https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s
+[authenticating]: https://flutterdoc.com/mobileauthenticating-users-with-firebase-and-flutter-240c5557ac7f
+[chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
+[video-bilibili]: https://www.bilibili.com/video/av55809997/
+[codelab-cn]: {{site.codelabs}}/codelabs/flutter-firebase-cn/index.html

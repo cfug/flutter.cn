@@ -1,6 +1,6 @@
 ---
 title: Dart cheatsheet codelab
-title: Codelab: Dart 速查表
+title: Dart 速查表 codelab
 description: Interactively learn (or relearn) some of Dart's unique features.
 description: 用交互的形式学习（或回顾）Dart 的独特之处。
 toc: false
@@ -26,7 +26,7 @@ This codelab — which is based on a
 written by and for Google engineers —
 walks you through the most important of these language features.
 
-Dart 语言旨在让从其他编程语言转来的程序员能够轻松学习，但也有它的独特之处。
+Dart 语言旨在让从其他编程语言转来的开发者们能够轻松学习，但也有它的独特之处。
 本篇将基于谷歌工程师编写的
 [Dart 语言速查表]({{site.dart-site}}/guides/language/cheatsheet)
 为你介绍一些最重要的语言特性。
@@ -43,22 +43,21 @@ restores the editor to its original state.
 你可以在这些编辑器上将代码补充完整，然后点击 **Run (运行)** 按钮进行测试。
 如果你需要帮助，请点击 **Hint (提示)** 按钮。
 要运行代码格式化 ([dartfmt]({{site.dart-site}}/tools/dartfmt))，
-点击 **Format (格式化)** 按钮，**Reset (重置)**按钮将会清除你的操作，
+点击 **Format (格式化)** 按钮，**Reset (重置)** 按钮将会清除你的操作，
 并把编辑器恢复到初始状态。
 
 <aside class="alert alert-warning">
-
-The embedded editors use an experimental version of DartPad.
+<p>The embedded editors use an experimental version of DartPad.
 If you find a DartPad bug or have suggestions for DartPad, please
 <a target="_BLANK" href="https://github.com/dart-lang/dart-pad/issues/new">create a DartPad issue.</a>
 If you have suggestions for the text or examples in this codelab,
 you can create a site issue by clicking the bug icon
-at the top right of this page.
+at the top right of this page.</p>
 
-这里的嵌入式编辑器使用了实验版 DartPad。如果你发现了 DartPad 中的 bug，
+<p>这里的嵌入式编辑器使用了实验版 DartPad。如果你发现了 DartPad 中的 bug，
 请 <a target="_BLANK" href="https://github.com/dart-lang/dart-pad/issues/new">创建一个 DartPad issue</a>。
 如果你对该 codelab 的语言描述或样例有任何建议，
-可以点击本页面右上角的 bug 图标提出 issue。
+可以点击本页面右上角的 bug 图标提出 issue。</p>
 </aside>
 
 ## String interpolation
@@ -75,12 +74,12 @@ Here are some examples of using string interpolation:
 下面是一些使用字符串插值的例子：
 
 | String  | | Result |
-| 字符串  | | 结果 |
 |-----------------------------+-+ -------|
+| 字符串  | | 结果 |
 | `'${3 + 2}'`                | | `'5'` |
 | `'${"word".toUpperCase()}'` | | `'WORD'` |
-| `'$myObject'`               | | <t>The value of `myObject.toString()`<t><t>`myObject.toString()` 的值</t>|
-
+| `'$myObject'`               | | The value of `myObject.toString()`|
+| `'$myObject'`               | | `myObject.toString()` 的值|
 
 ### Code example
 

@@ -245,8 +245,8 @@ which is particularly useful while testing.
 
 With a widget in the test environment, search
 through the widget tree for the `title` and `message`
-Text widgets using a `Finder`. This allow verification that
-the widgets are displaying correctly.
+Text widgets using a `Finder`. This allows verification that
+the widgets are being displayed correctly.
 
 现在让我们在测试环境中建立 widget。我们需要用 `Finder` 通过 widget 树来查找
 `标题` 和 `信息` Text widgets，这样可以验证这些 Widgets 是否正确显示。

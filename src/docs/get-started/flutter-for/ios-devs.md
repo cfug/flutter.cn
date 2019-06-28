@@ -521,7 +521,7 @@ latter of which implements your algorithm to draw to the canvas.
 To learn how to implement a signature painter in Flutter, see Collin's answer on
 [StackOverflow][].
 
-想要学习在 Flutter 里如何实现一个画笔，可以查看 Collin 在 [StackOverflow] 里的回答。
+想要学习在 Flutter 里如何实现一个画笔，可以查看 Collin 在 [StackOverflow][] 里的回答。
 
 [StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
@@ -1366,7 +1366,7 @@ Widget build(BuildContext context) {
 For more details, see
 [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images).
 
-关于更多的细节，请参见 [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)。
+关于更多的细节，请参见文档 [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)。
 
 ### Where do I store strings? How do I handle localization?
 

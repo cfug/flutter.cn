@@ -187,6 +187,8 @@ foreground and background color selections.
 在 widget 上指定颜色时，请确保在前景色和背景色之间具备足够的对比度。
 
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
+[辅助扫描程序]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
+
 [Semantics widget]: {{site.api}}/flutter/widgets/Semantics-class.html
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html

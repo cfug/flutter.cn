@@ -446,7 +446,7 @@ All known bugs are tracked in the issue tracker:
 [Dart and Flutter extensions GitHub issue tracker][].
 
 所有已知 bug 在这个 issue 列表中记录：
-[Dart 和 Flutter 扩展 GitHub issue 追踪][Dart and Flutter extensions GitHub issue tracker].
+[Dart 和 Flutter 扩展 GitHub issue 追踪][]。
 
 We very much welcome feedback, both on bugs/issues and feature requests.
 Prior to filing new issues:

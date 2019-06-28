@@ -118,7 +118,7 @@ Use a [`TextStyle`][] to change the appearance of text.
 To use package fonts, declare which font you'd like to use and
 which package the font belongs to.
 
-你可以使用 [`TextStyle`]() 来更改文本的外观。
+你可以使用 [`TextStyle`][] 来更改文本的外观。
 在使用 package 中的字体时，你不仅需要声明该文字所要使用的字体，
 还需要声明字体所属的 `package`。
 

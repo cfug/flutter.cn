@@ -80,7 +80,7 @@ choose the slowest device that your users might use.
      
   * Profile your app in [profile mode][].
   
-    在分析模式中分析应用。
+    在 [分析模式][] 中分析应用。
   
   * Check performance on the slowest device your users might use.
   
@@ -332,7 +332,7 @@ Android Studio 和 IntelliJ IDEA：
  1. In the toolbar, select the icon that looks like a bookshelf
     (![bookshelf-like icon][]).
     
-    在工具栏中选择书架图标 (![bookshelf-like icon][])
+    在工具栏中选择书架图标 (![bookshelf-like icon][])。
 
     ![IntelliJ Flutter inspector window][]
 
@@ -751,6 +751,7 @@ and debugging in Flutter:
 [Flutter's build modes]: /docs/testing/build-modes
 [Flutter 的构建模式选择]: /docs/testing/build-modes
 [profile mode]: /docs/testing/build-modes#profile
+[分析模式]: /docs/testing/build-modes#profile
 [PerformanceOverlay]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
 [PerformanceOverlayLayer.checkerboardOffscreenLayers]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html

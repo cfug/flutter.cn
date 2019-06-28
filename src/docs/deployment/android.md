@@ -694,6 +694,7 @@ This doc need to assign to a new translator.
 [versions]: {{site.android-dev}}/studio/publish/versioning
 [launchericons]: {{site.material}}/design/iconography/
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[配置限定符]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle

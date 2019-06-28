@@ -954,7 +954,7 @@ image: AssetImage('assets/background.png'),
 For more information, see [Adding Assets and Images in
 Flutter](/docs/development/ui/assets-and-images).
 
-如果想了解更多相关信息，请参考 [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)。
+如果想了解更多相关信息，请参考文档 [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)。
 
 ### How do I load images over a network?
 

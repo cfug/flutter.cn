@@ -447,7 +447,7 @@ classes offer a variety of constants for controlling alignment.
   You don't need to do this if you're referencing online images using
   `Image.network`.
 
-  当你将图像添加到项目中时，你需要更新 pubspec 文件来访问它们 —— 本例使用 `Image.asset` 来显示图像。更多信息可以查看本例的 [pubspec.yaml 文件]({{examples}}/layout/row_column/pubspec.yaml)，或 [添加资源和图片](/docs/development/ui/assets-and-images)。如果你正在使用 `Image.network` 引用在线图像，则不需要这些操作。
+  当你将图像添加到项目中时，你需要更新 pubspec 文件来访问它们 —— 本例使用 `Image.asset` 来显示图像。更多信息可以查看本例的 [pubspec.yaml 文件]({{examples}}/layout/row_column/pubspec.yaml)，或查阅 [添加资源和图片](/docs/development/ui/assets-and-images) 这篇文档。如果你正在使用 `Image.network` 引用在线图像，则不需要这些操作。
 
 {{site.alert.end}}
 
@@ -1642,3 +1642,4 @@ The following resources might help when writing layout code.
 [布局构建教程]: /docs/development/ui/layout/tutorial
 [widgets library]: {{api}}/widgets/widgets-library.html
 [Widget catalog]: /docs/development/ui/widgets
+[Widget 目录]: /docs/development/ui/widgets

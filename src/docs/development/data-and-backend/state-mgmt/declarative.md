@@ -44,7 +44,7 @@ interface. There is no imperative changing of the UI itself (like
 Read more about the declarative approach to UI programming [in 
 the get started guide](/docs/get-started/flutter-for/declarative). 
 
-在入门指南中你可以阅读更多有关声明式编程思维的信息。
+在 [声明式 UI 介绍](/docs/get-started/flutter-for/declarative) 中你可以阅读更多有关声明式编程思维的信息。
 
 The declarative style of UI programming has many benefits. Remarkably, there is 
 only one code path for any state of the UI. You describe what the UI should look 

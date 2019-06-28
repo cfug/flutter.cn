@@ -85,7 +85,7 @@ together throughout this recipe, which uses the following steps:
   
      使用 `Finder` 查找 widget
      
-  6. Verify that the widget uses a `Matcher`.
+  6. Verify the widget using a `Matcher`.
   
      使用 `Matcher` 验证 widget 是否正常工作
 
@@ -283,7 +283,7 @@ void main() {
 }
 ```
 
-### 6. Verify that the widget uses a `Matcher`
+### 6. Verify the widget using a `Matcher`
 
 ### 六. 使用 `Matcher` 验证 widget 是否正常工作
 

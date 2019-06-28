@@ -23,7 +23,7 @@ description: 如何在 VS Code 里开发 Flutter 应用。
 Follow the [Set up an editor](/docs/get-started/editor?tab=vscode)
 instructions to install the Dart and Flutter extensions (also called plugins).
 
-根据 [配置编辑器](/docs/get-started/editor?tab=vscode) 的指引来安装 Dart 和 Flutter 扩展（也叫做插件）。
+根据 [编辑工具设定](/docs/get-started/editor?tab=vscode) 的指引来安装 Dart 和 Flutter 扩展（也叫做插件）。
 
 ### Updating the extension {#updating}
 
@@ -222,7 +222,7 @@ Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the _Stateful Hot Reload_ feature. See
 [Using hot reload](hot-reload) for details.
 
-Flutter 提供一流的开发周期，通过 **hot reload** 特性使你在几乎修改代码的同时就能看到变化。详情请看[使用热重载](hot-reload)。
+Flutter 提供一流的开发周期，通过 **hot reload** 特性使你在几乎修改代码的同时就能看到变化。详情请看 [使用热重载](hot-reload)。
 
 ## Advanced debugging
 
@@ -290,7 +290,7 @@ DevTools 仍处于开发阶段，但是已有可用预览。可在 [DevTools' �
 
 If you have additional tips we should share, [let us know][]!
 
-如果你有其他更好的建议，请[联系我们][]!
+如果你有其他更好的建议，请 [联系我们][]!
 
 ### Assists & Quick Fixes
 
@@ -378,7 +378,7 @@ Flutter 扩展包含以下片段：
 You can also define custom snippets by executing **Configure User Snippets** from
 the [Command Palette][].
 
-你也可以通过在[命令面板][]执行**Configure User Snippets**来自定义片段。
+你也可以通过在 [命令面板][] 执行**Configure User Snippets**来自定义片段。
 
 
 ### Keyboard Shortcuts
@@ -398,7 +398,7 @@ the [Command Palette][].
   Keyboard mappings can be changed by executing the **Open Keyboard Shortcuts**
   command from the [Command Palette][].
   
-  键盘映射可以在[命令面板][]执行**Open Keyboard Shortcuts**修改。
+  键盘映射可以在 [命令面板][] 执行**Open Keyboard Shortcuts**修改。
 
 
 **Hot Restart**
@@ -432,7 +432,7 @@ For these changes, fully restart your application without having to end your
 debugging session. To perform a hot restart, run the **Flutter: Hot Restart**
 command from the [Command Palette][], or press `Ctrl`+`F5`.
 
-对于这些更改，完全重启你的应用，而不必结束你的调试会话。要执行热重启，执行[命令面板][]的 **Flutter：热重启**命令，或者按 `Ctrl`+`F5`。
+对于这些更改，完全重启你的应用，而不必结束你的调试会话。要执行热重启，执行 [命令面板][] 的 **Flutter：热重启**命令，或者按 `Ctrl`+`F5`。
 
 ## Troubleshooting
 
@@ -446,7 +446,7 @@ All known bugs are tracked in the issue tracker:
 [Dart and Flutter extensions GitHub issue tracker][].
 
 所有已知 bug 在这个 issue 列表中记录：
-[Dart 和 Flutter 扩展 GitHub issue 追踪][Dart and Flutter extensions GitHub issue tracker].
+[Dart 和 Flutter 扩展 GitHub issue 追踪][]。
 
 We very much welcome feedback, both on bugs/issues and feature requests.
 Prior to filing new issues:
@@ -461,14 +461,18 @@ Prior to filing new issues:
 * Make sure you have [updated](#updating) to the most recent version of the
   plugin.
   
-  确保你已经[更新](#updating)最新版本插件。
+  确保你已经 [更新](#updating) 最新版本插件。
   
 When filing new issues, include [flutter doctor][] output.
 
 提交新 issue 时，请包含 [flutter doctor][] 输出。
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
+[命令面板]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [DevTools' docs]: https://flutter.github.io/devtools
+[DevTools' 文档]: https://flutter.github.io/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [let us know]: {{site.github}}/flutter/website/issues/new
+[联系我们]: {{site.github}}/flutter/website/issues/new
 [Dart and Flutter extensions GitHub issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
+[Dart 和 Flutter 扩展 GitHub issue 追踪]: {{site.github}}/Dart-Code/Dart-Code/issues

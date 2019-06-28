@@ -69,7 +69,7 @@ The second screenshot displays the visual layout, showing a row of
   [Visual debugging](/docs/testing/debugging#visual-debugging), a section in
   [Debugging Flutter apps](/docs/testing/debugging).
 
-  本教程中的大多数截图都是将 `debugPaintSizeEnabled` 设置为 true 以后的效果，因此你可以看到可视布局。更多信息可以查看 [Visual debugging](/docs/testing/debugging#visual-debugging)，是 [Debugging Flutter apps](/docs/testing/debugging) 中的一节。
+  本教程中的大多数截图都是将 `debugPaintSizeEnabled` 设置为 true 以后的效果，因此你可以看到可视布局。更多信息可以查看文档中的 [可视化调试](/docs/testing/debugging#visual-debugging)，它是 [调试 Flutter 应用](/docs/testing/debugging) 中的一节。
 
 {{site.alert.end}}
 
@@ -212,8 +212,6 @@ displays the widget.
 
 一个 Flutter app 本身就是一个 widget，大多数 widgets 都有一个 [build()][] 方法，
 在 app 的 `build()` 方法中实例化和返回一个 widget 会让它显示出来。
-
-#### Material apps
 
 For a `Material` app, you can use a [Scaffold][] widget; it provides a default
 banner, background color, and has API for adding drawers, snack bars, and bottom
@@ -823,7 +821,7 @@ added to the [pubspec file,]({{examples}}/layout/pavlova/pubspec.yaml)
 and accessed using `Images.asset()`. For more information, see
 [Adding assets and images](/docs/development/ui/assets-and-images).
 
-[蛋糕图片][] 来自 [Pixabay][]。你可以使用 `Image.network()` 从网络上引用图像，但是在本例图像将保存到项目中的一个图像目录中，添加到 [pubspec 文件]({{examples}}/layout/pavlova/pubspec.yaml)，并使用 `Images.asset()` 访问。更多信息可以查看 [Adding assets and images](/docs/development/ui/assets-and-images)。
+[蛋糕图片][] 来自 [Pixabay][]。你可以使用 `Image.network()` 从网络上引用图像，但是在本例图像将保存到项目中的一个图像目录中，添加到 [pubspec 文件]({{examples}}/layout/pavlova/pubspec.yaml)，并使用 `Images.asset()` 访问。更多信息可以查看文档中关于 [添加资源和图片](/docs/development/ui/assets-and-images)　这一章。
 
 <?code-excerpt "layout/pavlova/lib/main.dart (body)"?>
 ```dart
@@ -1030,7 +1028,7 @@ Widget _buildImageRow(int imageIndex) => Row(
 You can find more `Container` examples in the [tutorial][] and the [Flutter
 Gallery][].
 
-你可以在 [教程][] 和 [Flutter Gallery][] 中可以发现更多关于 `Container` 的例子。
+你可以在 [布局构建教程][] 和 [Flutter Gallery][] 中可以发现更多关于 `Container` 的例子。
 
 **App source:** [container]({{examples}}/layout/container)
 
@@ -1077,7 +1075,7 @@ automatically scrolls.
 {% comment %}
 * Use `MediaQuery.of(context).orientation` to create a grid that changes
   its layout depending on whether the device is in landscape or portrait mode.
-
+  
   使用 `MediaQuery.of(context).orientation` 创建一个网格，它会根据设备处于宽屏模式还是竖屏模式来改变布局。
 
 {% endcomment %}
@@ -1088,7 +1086,7 @@ automatically scrolls.
   it's the entry in the "calorie" column for the "avocado" row), use
   [Table]({{api}}/widgets/Table-class.html) or
   [DataTable]({{api}}/material/DataTable-class.html).
-
+  
   当展示二维列表中的单元格所在的行和列的位置很重要的（例如，它是 “calorie” 行和 “avocado” 列的条目）的时候，使用 [Table]({{api}}/widgets/Table-class.html) 或者 [DataTable]({{api}}/material/DataTable-class.html)。
 
 {{site.alert.end}}
@@ -1598,14 +1596,14 @@ The following resources might help when writing layout code.
 * [Widget Overview](/docs/development/ui/widgets)<br>
   Describes many of the widgets available in Flutter.
   
-  [Widget 概述](/docs/development/ui/widgets)<br>
+  [核心 Widget 目录](/docs/development/ui/widgets)<br>
   描述了 Flutter 中很多可用的 widget。
 
 * [HTML/CSS Analogs in Flutter](/docs/get-started/flutter-for/web-devs)<br>
   For those familiar with web programming, this page maps HTML/CSS functionality
   to Flutter features.
 
-  [Flutter 中类似 HTML/CSS 的部分](/docs/get-started/flutter-for/web-devs)<br>
+  [给 Web 开发者的 Flutter 指南](/docs/get-started/flutter-for/web-devs)<br>
   对那些熟悉 web 开发的人来说，这页将 HTML/CSS 的功能映射到 Flutter 特性上。
 
 * [Flutter Gallery][]<br>
@@ -1623,7 +1621,7 @@ The following resources might help when writing layout code.
 * [Dealing with Box Constraints in Flutter](/docs/development/ui/layout/box-constraints)<br>
   Discusses how widgets are constrained by their render boxes.
   
-  [Flutter 中 Box 的行为限制](/docs/development/ui/layout/box-constraints)<br>
+  [处理边界约束 (Box constraints) 的问题](/docs/development/ui/layout/box-constraints)<br>
   讨论 widget 是如何受渲染框限制的。
 
 * [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images)<br>
@@ -1662,5 +1660,7 @@ The following resources might help when writing layout code.
 [Stack]: {{api}}/widgets/Stack-class.html
 [Text]: {{api}}/widgets/Text-class.html
 [tutorial]: /docs/development/ui/layout/tutorial
+[布局构建教程]: /docs/development/ui/layout/tutorial
 [widgets library]: {{api}}/widgets/widgets-library.html
 [Widget catalog]: /docs/development/ui/widgets
+[Widget 目录]: /docs/development/ui/widgets

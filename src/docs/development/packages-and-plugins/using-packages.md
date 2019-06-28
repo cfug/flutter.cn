@@ -26,13 +26,13 @@ and using third-party platform SDKs like Firebase
 To develop a new package, see [developing
 packages](/docs/development/packages-and-plugins/developing-packages).
 
-如果你正打算开发新的 package，请参阅 [Flutter Packages 的开发和提交](/docs/development/packages-and-plugins/developing-packages)。
+如果你正打算开发新的 package，请参阅 [Flutter Packages 的开发和提交](/docs/development/packages-and-plugins/developing-packages) 这篇文档。
 
 To add assets, images or fonts,
 whether stored in files or packages
 see [Adding assets and images](/docs/development/ui/assets-and-images).
 
-如果你想添加资源、图片或字体，无论是存储在文件中还是 package 中，请参阅 [添加资源和图片](/docs/development/ui/assets-and-images)。
+如果你想添加资源、图片或字体，无论是存储在文件中还是 package 中，请参阅 [添加资源和图片](/docs/development/ui/assets-and-images) 这篇文档。
 
 ## Using packages
 

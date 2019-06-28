@@ -135,7 +135,7 @@ Some general rules when applying specific effects:
 
 Other widgets that might trigger `saveLayer()` and are potentially costly:
 
-其他会触发`saveLayer()` 的 widget，可能也会代价高昂。
+其他会触发 `saveLayer()` 的 widget，可能也会代价高昂。
 
 * [ShaderMask]({{site.api}}/flutter/widgets/ShaderMask-class.html)
 * [ColorFilter]({{site.api}}/flutter/dart-ui/ColorFilter-class.html)
@@ -168,7 +168,7 @@ Ways to avoid calls to `saveLayer()`:
   by many of the widget classes.
 
   要创建带圆角的矩形，而不是应用剪切矩形，
-  请考虑使用很多 widget 都提供的`borderRadius`属性。
+  请考虑使用很多 widget 都提供的 `borderRadius`属性。
 
 ### Render grids and lists lazily
 

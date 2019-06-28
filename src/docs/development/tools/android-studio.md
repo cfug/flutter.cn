@@ -21,7 +21,7 @@ description: 如何在 Android Studio 或者其他类 IntelliJ 产品里开发 F
 Follow the [Set up an editor](/docs/get-started/editor?tab=androidstudio)
 instructions to install the Dart and Flutter plugins.
 
-按照[编辑工具设定](/docs/get-started/editor?tab=androidstudio)，安装 Dart 和 Flutter 插件。
+按照 [编辑工具设定](/docs/get-started/editor?tab=androidstudio)，安装 Dart 和 Flutter 插件。
 
 ### Updating the plugins<a name="updating"/>
 
@@ -437,7 +437,7 @@ DevTools 仍在开发中，但可供预览。有关安装和入门说明，查�
 
 If you have additional tips we should share, [let us know][]!
 
-如果你有其他我们应该提供的代码提示建议，请[告诉我们][]!
+如果你有其他我们应该提供的代码提示建议，请 [告诉我们][]!
 
 ### Assists & Quick Fixes
 
@@ -714,7 +714,7 @@ All known bugs are tracked in the issue trackers:
 
 * Dart plugin: [JetBrains YouTrack][].
 
-  Dart 插件: [JetBrains 问题跟踪][].
+  Dart 插件: [JetBrains 问题跟踪][]
 
 We welcome feedback, both on bugs/issues and feature requests.
 Prior to filing new issues:
@@ -729,7 +729,7 @@ Prior to filing new issues:
 * Make sure you have [updated](#updating) to the most recent version of the
   plugin.
 
-  确保你已经[更新](#updating)最新版本的插件。
+  确保你已经 [更新](#updating) 最新版本的插件。
 
 When filing new issues, include the output of [`flutter doctor`][].
 

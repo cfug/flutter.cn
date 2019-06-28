@@ -140,7 +140,8 @@ when using reflection.
   [dartson]({{site.pub}}/packages/dartson) library uses runtime
   [reflection][], which makes it incompatible with Flutter.
 
-  **dartson 怎么样？**[dartson]({{site.pub}}/packages/dartson) 是一个使用运行时 [反射][] 的库，这让它不能兼容 Flutter。
+  **dartson 怎么样？**
+  [dartson]({{site.pub}}/packages/dartson) 是一个使用运行时 [反射][] 的库，这让它不能兼容 Flutter。
 {{site.alert.end}}
 
 Although you cannot use runtime reflection with Flutter, some libraries give
@@ -528,5 +529,6 @@ For more information, see the following resources:
 
 [dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
+[reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [反射]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking

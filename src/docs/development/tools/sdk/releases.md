@@ -15,11 +15,9 @@ toc: false
 }
 </style>
 
-The {{site.sdk.channel | capitalize }} channel contains the most stable Flutter builds. See [Flutter's
-channels][] for details.
+The {{site.sdk.channel | capitalize }} channel contains the most stable Flutter builds. See [Flutter's channels][] for details.
 
-Flutter 的 {{site.sdk.channel | capitalize }} channel 是相对稳定的发布版本， 查阅这个文档了解更多：[Flutter's
-channels][]。
+Flutter 的 {{site.sdk.channel | capitalize }} channel 是相对稳定的发布版本， 查阅这个文档了解更多：[Flutter's channels][]。
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">

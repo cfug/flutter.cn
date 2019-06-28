@@ -13,7 +13,7 @@ applications.
   If your app's UI isn't running as smoothly as you expect,
   check out [Flutter Performance Profiling](ui-performance).
   
-  如果你的应用程序的 UI 运行得不如你预期的那么流畅，看看 [Flutter Performance Profiling](ui-performance).
+  如果你的应用程序的 UI 运行得不如你预期的那么流畅，看看 [Flutter 性能分析](ui-performance).
 {{site.alert.end}}
 
 ## The Dart Analyzer
@@ -56,7 +56,7 @@ Observatory also supports profiling, examining the heap, etc. For more
 information on Observatory, see
 [Observatory's documentation](https://dart-lang.github.io/observatory/).
 
-Observatory 同时支持分析、检查堆等。有关 Observatory 的更多信息请参考 [Observatory's documentation](https://dart-lang.github.io/observatory/)。
+Observatory 同时支持分析、检查堆等。有关 Observatory 的更多信息请参考 [Observatory 文档](https://dart-lang.github.io/observatory/)。
 
 If you use Observatory for profiling, make sure to run your
 application in profile mode, by passing `--profile` to the `flutter
@@ -155,7 +155,7 @@ using `--profile` instead of `--release`.
 
 For more information, see [Flutter's modes](/docs/testing/build-modes).
 
-更多的信息，请参阅 [Flutter's modes](/docs/testing/build-modes)。
+更多的信息，请参阅 [Flutter 的构建模式选择](/docs/testing/build-modes)。
 
 ## Debugging application layers
 
@@ -906,7 +906,7 @@ are running, it's possible that the framework will observe time going
 backwards, which will probably result in asserts and generally
 interfere with your efforts.
 
-调试动画最简单的方法是减慢它们的速度。为此，请将 [`timeDilation`]({{site.api}}/flutter/scheduler/timeDilation.html)）变量 (from the `scheduler` library) 设置为大于 1.0 的数字，例如 50.0。 最好在应用程序启动时只设置一次。如果您在运行中更改它，尤其是在动画运行时将其值减小，则框架有可能观察到时间向后走，这可能会导致断言并且通常会干扰您的工作。
+调试动画最简单的方法是减慢它们的速度。为此，请将 [`timeDilation`]({{site.api}}/flutter/scheduler/timeDilation.html) 变量 (在 `调试` 库中) 设置为大于 1.0 的数字，例如 50.0。 最好在应用程序启动时只设置一次。如果您在运行中更改它，尤其是在动画运行时将其值减小，则框架有可能观察到时间向后走，这可能会导致断言并且通常会干扰您的工作。
 
 ## Debugging performance problems
 
@@ -1028,7 +1028,7 @@ created by calling
 要想获得一个你的应用程序的性能视图，将 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp/MaterialApp.html) 构造函数的
 `showPerformanceOverlay` 参数设为 true。
 [`WidgetsApp`]({{site.api}}/flutter/widgets/WidgetsApp-class.html) 构造函数也有类似的参数（如果你没有使用 `MaterialApp`
-或 `WidgetsApp`，你可以通过将你的应用程序包裹在一个通过 [`PerformanceOverlay.allEnabled()`]({{site.api}}/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html) 创建的 stack 里来获得同样的效果）。
+或 `WidgetsApp`，你可以通过将你的应用程序包裹在一个通过 [`PerformanceOverlay.allEnabled()`]({{site.api}}/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html) 创建的 stack 里来获得同样的效果。
 
 This shows two graphs. The top one is the time spent by the GPU
 thread, the bottom one is the time spent by the CPU thread. The white
@@ -1060,16 +1060,16 @@ constructor]({{site.api}}/flutter/material/MaterialApp/MaterialApp.html)
 has a `debugShowMaterialGrid` argument which, when set to `true` in debug
 mode, overlays such a grid.
 
-You can also overlay such a grid on non-Material applications by using
-the
-[`GridPaper`]({{site.api}}/flutter/widgets/GridPaper-class.html)
-widget directly.
-
-当开发实现了 [MaterialDesign]({{site.material}}/design/introduction) 的应用程序时，将 [Material Design baseline
+当开发实现了 [Material Design]({{site.material}}/design/introduction) 的应用程序时，将 [Material Design baseline
 grid]({{site.material}}/design/layout/spacing-methods.html#baseline) 覆盖在应用程序上可能有助于验证对齐。
 为此， [`MaterialApp`
 constructor]({{site.api}}/flutter/material/MaterialApp/MaterialApp.html) 有一个 `debugShowMaterialGrid` 参数，
 当在 debug 模式下设为 `true` 的时候，覆盖一个这样的网格。
+
+You can also overlay such a grid on non-Material applications by using
+the
+[`GridPaper`]({{site.api}}/flutter/widgets/GridPaper-class.html)
+widget directly.
 
 您也可以使用 [`GridPaper`]({{site.api}}/flutter/widgets/GridPaper-class.html) 为 非 Material 应用程序覆盖一个这样的网格。
 

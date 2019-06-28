@@ -134,9 +134,8 @@ You can create your own, or use a
 which is useful because it transitions to the
 new route using a platform-specific animation.
 
-使用 [`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)方法跳转到新的路由。
-`push()` 方法会添加一个 `Route` 对象到导航器的堆栈上。 那么这个 `Route` 对象是从哪里来的呢？
-你可以自己实现一个，或者直接使用 [`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html)类。
+使用 [`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)方法跳转到新的路由。`push()` 方法会添加一个 `Route` 对象到导航器的堆栈上。 那么这个 `Route` 对象是从哪里来的呢？
+你可以自己实现一个，或者直接使用 [`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html) 类。
 使用 `MaterialPageRoute` 是非常方便的，框架已经为我们实现了和平台原生类似的切换动画。 
 
 In the `build()` method of the `FirstRoute` widget,

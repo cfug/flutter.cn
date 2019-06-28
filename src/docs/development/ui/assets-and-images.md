@@ -328,8 +328,7 @@ or
 [`ImageCache`]({{site.api}}/flutter/painting/ImageCache-class.html),
 you'll also notice parameters related to scale.)
 
-使用默认的资源 bundle 加载资源时，系统会自动处理分辨率等。
-（如果你使用一些更低级别的类，如 [`ImageStream`]({{site.api}}/flutter/painting/ImageStream-class.html) 或  [`ImageCache`]({{site.api}}/flutter/painting/ImageCache-class.html) , 你需要注意 scale 相关的参数。)
+使用默认的资源 bundle 加载资源时，系统会自动处理分辨率等。（如果你使用一些更低级别的类，如 [`ImageStream`]({{site.api}}/flutter/painting/ImageStream-class.html) 或 [`ImageCache`]({{site.api}}/flutter/painting/ImageCache-class.html),你需要注意 scale 相关的参数。)
 
 ### Asset images in package dependencies {#from-packages}
 
@@ -484,7 +483,7 @@ NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 For a more complete example see the implementation of the Flutter
 [video_player plugin]({{site.pub}}/packages/video_player).
 
-这有一个更完整的实例可以理解 Flutter 的应用，[video_player plugin]({{site.pub}}/packages/video_player)。
+这有一个更完整的实例可以理解 Flutter 的应用：[video_player plugin]({{site.pub}}/packages/video_player)。
 
 ## Platform assets
 
@@ -538,7 +537,7 @@ If you rename the .png files, you must also match the new name in your
 In your Flutter project's root directory, navigate to `.../ios/Runner`. The directory `Assets.xcassets/AppIcon.appiconset` already contains placeholder images. Simply replace them with the appropriately sized images as indicated by their filename as dictated by the Apple [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon). Keep the original file names.
 
 在你的 Flutter 项目的根目录中，导航到 `.../ios/Runner` 路径。该目录中 `Assets.xcassets/AppIcon.appiconset`已经包含占位符图片，只需将它们替换为适当大小的图片，
-[iOS 开发指南](https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon)，保持文件名称不变。
+并且根据 [iOS 开发指南](https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon)，文件名称保持不变。
 
 ![iOS icon location](/images/assets-and-images/ios-icon-path.png)
 
@@ -566,7 +565,7 @@ in response to
 [`window.onDrawFrame`]({{site.api}}/flutter/dart-ui/Window/onDrawFrame.html)),
 the launch screen will persist forever.
 
-这意味着如果你不在应用程序的 `main()` 方法中调用 [runApp()]({{site.api}}/flutter/widgets/runApp.html) 函数 （或者更具体地说，如果你不调用 [`window.render()`]({{site.api}}/flutter/dart-ui/Window/render.html) 去响应 [`window.onDrawFrame`]({{site.api}}/flutter/dart-ui/Window/onDrawFrame.html)）的话， 启动页将永远持续显示。
+这意味着如果你不在应用程序的 `main()` 方法中调用 [runApp()]({{site.api}}/flutter/widgets/runApp.html) 函数（或者更具体地说，如果你不调用 [`window.render()`]({{site.api}}/flutter/dart-ui/Window/render.html) 去响应 [`window.onDrawFrame`]({{site.api}}/flutter/dart-ui/Window/onDrawFrame.html)）的话， 启动页将永远持续显示。
 
 {{site.alert.end}}
 

@@ -46,7 +46,7 @@ contains a simple demo app that uses [Material Components][].
     For details, see [Quickly switching between Flutter devices][].
   
     从 **Device Selector** 里选择一个设备。
-    更多详细内容，请参见[在 Flutter 设备中快速切换][]。
+    更多详细内容，请参见 [在 Flutter 设备中快速切换][]。
     
     - If no device is available and you want to use a device simulator,
       click **No Devices** and launch a simulator.

@@ -210,7 +210,7 @@ past and attempt to recognize specific gestures. The
 widget decides which gestures to attempt to recognize based on which of its
 callbacks are non-null.
 
-在屏幕的指定位置上，可能有多个手势捕捉器。所有的手势捕捉器监听了指针输入流事件并判断出特定手势。[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)　widget 能够基于手势的回调是否非空决定是否应该尝试去识别该手势。
+在屏幕的指定位置上，可能有多个手势捕捉器。所有的手势捕捉器监听了指针输入流事件并判断出特定手势。[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html) widget 能够基于手势的回调是否非空决定是否应该尝试去识别该手势。
 
 When there is more than one gesture recognizer for a given pointer on the
 screen, the framework disambiguates which gesture the user intends by having

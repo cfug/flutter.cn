@@ -39,11 +39,11 @@ If you've already built the layout in
 [Building Layouts in Flutter](/docs/development/ui/layout),
 skip to the next section.
 
-如果您已经根据[在 Flutter 中构建布局](/docs/development/ui/layout)构建好了布局,请跳到下一节。
+如果你已经根据 [在 Flutter 中构建布局](/docs/development/ui/layout) 构建好了布局,请跳到下一节。
 
 * Make sure you've [set up](/docs/get-started/install) your environment.
   
-  确保您已经 [设置](/docs/get-started/install) 好了您的环境.
+  确保您已经 [安装和配置](/docs/get-started/install) 好了您的环境.
 
 * [Create a basic Flutter app.](/docs/get-started/test-drive/#create-app)
   
@@ -71,11 +71,12 @@ simulator](/docs/get-started/install/macos#set-up-the-ios-simulator)
 (part of the Flutter install),
 you are good to go!
 
-如果你有一个连接并可用的设备，或者你已经启动了 [ iOS 模拟器](/docs/get-started/install/macos#set-up-the-ios-simulator)（Flutter 安装部分介绍过），你就可以开始了！
+如果你有一个连接并可用的设备，或者你已经启动了 [iOS 模拟器](/docs/get-started/install/macos#set-up-the-ios-simulator)（Flutter 安装部分介绍过），你就可以开始了！
 
 [Building Layouts for Flutter](/docs/development/ui/layout)
 showed how to create the layout for the following screenshot.
-[在 Flutter 中构建布局](/docs/development/ui/layout)中展示了如何构建下面截图所示的布局。
+
+[在 Flutter 中构建布局](/docs/development/ui/layout) 中展示了如何构建下面截图所示的布局。
 
 <img src="/docs/development/ui/interactive/images/lakes.jpg" style="border:1px solid black" alt="The starting Lakes app that we will modify">
 
@@ -102,10 +103,9 @@ You can get right to touching the code in
 If you want to try different ways of managing state, skip to
 [Managing state](#managing-state).
 
-您可以直接查看[第二步: 创建
-StatefulWidget 的子类](#step-2).
-如果您想尝试不同的管理状态方式，请跳至
-[状态管理](#managing-state).
+您可以直接查看 [第二步: 创建
+StatefulWidget 的子类](#step-2)。
+如果您想尝试不同的管理状态方式，请跳至 [状态管理](#managing-state)。
 
 <a name="stateful-stateless"></a>
 ## Stateful and stateless widgets
@@ -146,7 +146,7 @@ StatefulWidget 的子类](#step-2).
 
 A _stateless_ widget has no internal state to manage.
 
-一个 _stateless_ widget 没有内部状态.
+一个 _stateless_ widget 没有内部状态。
 
 [Icon]({{site.api}}/flutter/widgets/Icon-class.html),
 [IconButton]({{site.api}}/flutter/material/IconButton-class.html),
@@ -156,16 +156,16 @@ examples of stateless widgets, which subclass
 
 
 [Icon]({{site.api}}/flutter/widgets/Icon-class.html),
-[IconButton]({{site.api}}/flutter/material/IconButton-class.html),
-和 [Text]({{site.api}}/flutter/widgets/Text-class.html) 都是无状态 widget, 他们都是
-[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html)的子类。
+[IconButton]({{site.api}}/flutter/material/IconButton-class.html) 
+和 [Text]({{site.api}}/flutter/widgets/Text-class.html) 都是无状态 widget, 它们都是
+[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html) 的子类。
 
 A _stateful_ widget is dynamic. The user can interact with a stateful widget
 (by typing into a form, or moving a slider, for example),
 or it changes over time (perhaps a data feed causes the UI to update).
 
-一个 _stateful_ widget 是动态的. 用户可以和其交互
-(例如输入一个表单、 或者移动一个 slider 滑块),或者可以随时间改变 (也许是数据改变导致的 UI 更新).
+一个 _stateful_ widget 是动态的。用户可以和其交互
+(例如输入一个表单、 或者移动一个 slider 滑块)或者可以随时间改变 (也许是数据改变导致的 UI 更新).
 
 [Checkbox]({{site.api}}/flutter/material/Checkbox-class.html),
 [Radio]({{site.api}}/flutter/material/Radio-class.html),
@@ -176,8 +176,13 @@ or it changes over time (perhaps a data feed causes the UI to update).
 are examples of stateful widgets, which subclass
 [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
 
-都是 stateful widgets, 他们都是
-[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)的子类。
+
+[Checkbox]({{site.api}}/flutter/material/Checkbox-class.html),
+[Radio]({{site.api}}/flutter/material/Radio-class.html),
+[Slider]({{site.api}}/flutter/material/Slider-class.html),
+[InkWell]({{site.api}}/flutter/material/InkWell-class.html),
+[Form]({{site.api}}/flutter/widgets/Form-class.html) 和 [TextField]({{site.api}}/flutter/material/TextField-class.html) 都是 stateful widgets, 它们都是
+[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html) 的子类。
 
 <a name="creating-stateful-widget"></a>
 ## Creating a stateful widget
@@ -254,7 +259,7 @@ so the widget can handle its state internally.
 Learn more about the separation of widget and state,
 and how state might be managed, in [Managing state](#managing-state).
 
-在[状态管理](#managing-state)中了解更多关于 widget 和状态的分离以及如何管理状态的信息。
+在 [状态管理](#managing-state) 中了解更多关于 widget 和状态的分离以及如何管理状态的信息。
 
 <a name="step-2"></a>
 ### Step 2: Subclass StatefulWidget
@@ -416,6 +421,7 @@ build method. First, locate the code that creates the Icon and Text, and delete 
 {% endprettify %}
 
 In the same location, create the stateful widget:
+
 在相同的位置创建 stateful widget：
 
 <!-- code/layout/lakes-interactive/main.dart -->
@@ -457,20 +463,21 @@ If you can't get your code to run, look in your IDE for possible errors.
 If you still can't find the problem,
 check your code against the interactive Lakes example on GitHub.
 
-如果您的代码无法运行，请在 IDE 中查找可能的错误。[调试 Flutter 应用程序](/docs/testing/debugging)可能会有所帮助。如果仍然无法找到问题，请根据 GitHub 上的示例检查代码。
+如果您的代码无法运行，请在 IDE 中查找可能的错误。[调试 Flutter 应用程序](/docs/testing/debugging) 可能会有所帮助。如果仍然无法找到问题，请根据 GitHub 上的示例检查代码。
 
 * [lib/main.dart]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/main.dart)
+
 * [pubspec.yaml]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;no changes to this file 
   
   [pubspec.yaml]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;此文件没有变化
 
 * [lakes.jpg](https://github.com/flutter/website/tree/master/src/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
   
-  [lakes.jpg](https://github.com/flutter/website/tree/master/src/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file 此文件没有变化
+  [lakes.jpg](https://github.com/flutter/website/tree/master/src/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;此文件没有变化
 
 If you still have questions, refer to [Get support.](/community)
 
-如果您仍有问题, 请参考[获得支持](/community)
+如果您仍有问题, 请参考 [获得支持](/community)。
 
 ---
 
@@ -480,27 +487,30 @@ and lists other available interactive widgets.
 本页面的其余部分介绍了可以管理 widget 状态的几种方式，并列出了其他可用的可交互的 widget。
 
 <a name="managing-state"></a>
+
 ## Managing state
 
 ## 状态管理
 
 <div class="whats-the-point" markdown="1">
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
+<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link">
+
+</span></a>What's the point?</b>
 
 </span></a>重点是什么？</b>
 
 * There are different approaches for managing state.
 
-  有多种方法可以管理状态.
+  有多种方法可以管理状态。
   
 * You, as the widget designer, choose which approach to use.
 
-  您作为 widget 的设计者，需要选择使用何种管理方法
+  您作为 widget 的设计者，需要选择使用何种管理方法。
   
 * If in doubt, start by managing state in the parent widget.
   
-  如果不是很清楚时, 就在父 widget 中管理状态.
+  如果不是很清楚时, 就在父 widget 中管理状态。
 
 </div>
 
@@ -1022,16 +1032,15 @@ GestureDetector in [Managing state](#managing-state), and in the
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery).
 
 如果你愿意，你可以使用 [GestureDetector]({{site.api}}/flutter/widgets/GestureDetector-class.html) 来给任何自定义 widget 添加交互性。
-您可以在[管理状态](#managing-state)和[Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)中找到 GestureDetector 的示例。
+您可以在 [管理状态](#managing-state) 和 [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery) 中找到 GestureDetector 的示例。
 
 <aside class="alert alert-info" markdown="1">
 **Note:**
 Flutter also provides a set of iOS-style widgets called
 [Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html).
-</aside>
 
 **注意:**
-Futter还提供了一组名为 [Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html) 的 iOS 风格的小部件 。
+Futter 还提供了一组名为 [Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html) 的 iOS 风格的小部件。
 </aside>
 
 When you need interactivity,
@@ -1075,8 +1084,8 @@ The following resources may help when adding interactivity to your app.
   How to create a button and make it respond to input.
   
   [处理手势](/docs/development/ui/widgets-intro#handling-gestures),
-  [Flutter Widget 框架总览](/docs/development/ui/widgets-intro) 的一节<br>
-  如何创建一个按钮并使其响应用户动作.
+  [Widgets 介绍](/docs/development/ui/widgets-intro) 中的一节<br>
+  如何创建一个按钮并使其响应用户动作
 
 * [Gestures in Flutter](/docs/development/ui/advanced/gestures)<br>
   A description of Flutter's gesture mechanism.
@@ -1088,7 +1097,7 @@ The following resources may help when adding interactivity to your app.
   Reference documentation for all of the Flutter libraries.
   
   [Flutter API 文档]({{site.api}}/)<br>
-  所有 Flutter 库的参考文档.
+  所有 Flutter 库的参考文档
 
 * [Flutter
   Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
@@ -1104,4 +1113,4 @@ The following resources may help when adding interactivity to your app.
    Presented by Google engineer, Ian Hickson.
 
   [Flutter的分层设计 (video)](https://www.bilibili.com/video/av55811674/)<br>
-  此视频包含有关有状态和无状态 widget 的信息。由 Google 工程师 Ian Hickson 讲解。
+  此视频包含有关有状态和无状态 widget 的信息。由 Google 工程师 Ian Hickson 讲解

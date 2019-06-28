@@ -435,8 +435,8 @@ main() async {
 For more information, see the documentation for [`async` and
 `await`]({{site.dart-site}}/guides/language/language-tour#asynchrony-support).
 
-如果想了解更多相关信息，请参考 [`async` and
-`await`]({{site.dart-site}}/guides/language/language-tour#asynchrony-support) 的相关文档。
+如果想了解更多相关信息，请参考 [`async` 和
+`await` 的相关文档]({{site.dart-site}}/guides/language/language-tour#asynchrony-support)。
 
 ## The basics
 
@@ -477,7 +477,7 @@ walks you through creating a button-click counter app. Creating a Flutter
 project builds all the files that you need to run a sample app on both Android
 and iOS devices.
 
-如果想要了解更多内容，详见 [Getting Started](/docs/get-started)，在该页面会手把手教你创建一个点击按钮进行计数的应用。创建一个 Flutter 项目就可以构建 Android 和 iOS 设备上运行应用所需的所有文件。
+如果想要了解更多内容，详见 [开始使用 Flutter](/docs/get-started)，在该页面会手把手教你创建一个点击按钮进行计数的应用。创建一个 Flutter 项目就可以构建 Android 和 iOS 设备上运行应用所需的所有文件。
 
 ### How do I run my app?
 
@@ -506,7 +506,7 @@ In React Native, you would run `npm run` or `yarn run` from the project
 
 For more information, see the Flutter [Getting Started](/docs/get-started) documentation.
 
-如果想了解更多相关信息，可以参考 Flutter 的 [Getting Started](/docs/get-started) 相关文档。
+如果想了解更多相关信息，可以参考 Flutter 的相关文档：[开始使用 Flutter](/docs/get-started)。
 
 ### How do I import widgets?
 
@@ -540,7 +540,7 @@ Whichever widget package you import, Dart pulls in only the widgets that are
 
 For more information, see the [Flutter Widgets Catalog](/docs/development/ui/widgets).
 
-如果想了解更多相关信息，可以参考 [Flutter Widgets Catalog](/docs/development/ui/widgets)。
+如果想了解更多相关信息，可以参考 [核心 Widget 目录](/docs/development/ui/widgets)。
 
 
 ### What is the equivalent of the React Native "Hello world!" app in Flutter?
@@ -954,8 +954,7 @@ image: AssetImage('assets/background.png'),
 For more information, see [Adding Assets and Images in
 Flutter](/docs/development/ui/assets-and-images).
 
-如果想了解更多相关信息，请参考 [Adding Assets and Images in
-Flutter](/docs/development/ui/assets-and-images)。
+如果想了解更多相关信息，请参考文档 [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)。
 
 ### How do I load images over a network?
 
@@ -1037,10 +1036,8 @@ Packages](/docs/development/packages-and-plugins/using-packages) and
 [Developing Packages &
 Plugins](/docs/development/packages-and-plugins/developing-packages).
 
-如果想了解更多相关信息，请参考 [Using
-Packages](/docs/development/packages-and-plugins/using-packages) and
-[Developing Packages &
-Plugins](/docs/development/packages-and-plugins/developing-packages)。
+如果想了解更多相关信息，请参考 [在 Flutter 里使用 Packages](/docs/development/packages-and-plugins/using-packages) 和
+[Flutter Packages 的开发和提交](/docs/development/packages-and-plugins/developing-packages)。
 
 You can find many packages shared by Flutter developers in the [Flutter
 Packages]({{site.pub}}/flutter/) section of
@@ -1086,17 +1083,15 @@ certain way, it’s often helpful to inspect the neighboring widgets.
 For more information, see the [Flutter Technical
 Overview](/docs/resources/technical-overview).
 
-如果想了解更多相关信息，请参考 [Flutter Technical
-Overview](/docs/resources/technical-overview)。
+如果想了解更多相关信息，请参考 [技术概览](/docs/resources/technical-overview)。
 
 For more information about the core widgets from the Widgets package, see
 [Flutter Basic Widgets](/docs/development/ui/widgets/basics), the
 [Flutter Widget Catalog](/docs/development/ui/widgets), or the
 [Flutter Widget Index](/docs/reference/widgets).
 
-如果想了解更多关于 Widgets 包中的核心 widget，请参考 [Flutter Basic Widgets](/docs/development/ui/widgets/basics), the
-[Flutter Widget Catalog](/docs/development/ui/widgets), or the
-[Flutter Widget Index](/docs/reference/widgets)。
+如果想了解更多关于 Widgets 包中的核心 widget，请参考 [Flutter Basic Widgets](/docs/development/ui/widgets/basics)、
+[核心 Widget 目录](/docs/development/ui/widgets) 或是 [Flutter Widget 目录](/docs/reference/widgets)。
 
 ## Views
 
@@ -1117,14 +1112,13 @@ as  [Container]({{site.api}}/flutter/widgets/Container-class.html),
 [Row]({{site.api}}/flutter/widgets/Row-class.html),
 and [Center]({{site.api}}/flutter/widgets/Center-class.html).
 
-在 Flutter 中，你可以使用 Widgets 库中的核心布局 widget，比如 [Container]({{site.api}}/flutter/widgets/Container-class.html),
-[Column]({{site.api}}/flutter/widgets/Column-class.html)，
-[Row]({{site.api}}/flutter/widgets/Row-class.html)，
-和 [Center]({{site.api}}/flutter/widgets/Center-class.html)。
+在 Flutter 中，你可以使用 Widgets 库中的核心布局 widget，比如 [Container]({{site.api}}/flutter/widgets/Container-class.html)、
+[Column]({{site.api}}/flutter/widgets/Column-class.html)、
+[Row]({{site.api}}/flutter/widgets/Row-class.html) 和 [Center]({{site.api}}/flutter/widgets/Center-class.html)。
 
 For more information, see the [Layout Widgets](/docs/development/ui/widgets/layout) catalog.
 
-如果想了解更多相关信息，请参考 [Layout Widgets](/docs/development/ui/widgets/layout) catalog。
+如果想了解更多相关信息，请参考 [Layout Widgets](/docs/development/ui/widgets/layout) 目录。
 
 ### What is the equivalent of `FlatList` or `SectionList`?
 
@@ -1335,8 +1329,8 @@ For example, [`Padding`]({{site.api}}/flutter/widgets/Padding-class.html),
 [`Align`]({{site.api}}/flutter/widgets/Align-class.html),
 and [`Stack`]({{site.api}}/flutter/widgets/Stack-class.html).
 
-Flutter 在核心 widget 库中提供多种不同的布局 widget。比如[`Padding`]({{site.api}}/flutter/widgets/Padding-class.html)，
-[`Align`]({{site.api}}/flutter/widgets/Align-class.html)，
+Flutter 在核心 widget 库中提供多种不同的布局 widget。比如 [`Padding`]({{site.api}}/flutter/widgets/Padding-class.html)、
+[`Align`]({{site.api}}/flutter/widgets/Align-class.html) 
 和 [`Stack`]({{site.api}}/flutter/widgets/Stack-class.html)。
 
 For a complete list, see [Layout Widgets](/docs/development/ui/widgets/layout).
@@ -1556,7 +1550,7 @@ class and passing it to the theme property in the
 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 widget.
 
-在 Flutter 中，为所有组件创建统一风格可以在 [`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html) 类中���义，并将它赋值给 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的主题属性。
+在 Flutter 中，为所有组件创建统一风格可以在 [`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html) 类中定义，并将它赋值给 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的主题属性。
 
 <!-- skip -->
 ```dart
@@ -1716,13 +1710,13 @@ and [TextField]({{site.api}}/flutter/material/TextField-class.html)
 are examples of stateful widgets, that subclass
 [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
 
-[Checkbox]({{site.api}}/flutter/material/Checkbox-class.html),
-[Radio]({{site.api}}/flutter/material/Radio-class.html),
-[Slider]({{site.api}}/flutter/material/Slider-class.html),
-[InkWell]({{site.api}}/flutter/material/InkWell-class.html),
-[Form]({{site.api}}/flutter/widgets/Form-class.html),
+[Checkbox]({{site.api}}/flutter/material/Checkbox-class.html)、
+[Radio]({{site.api}}/flutter/material/Radio-class.html)、
+[Slider]({{site.api}}/flutter/material/Slider-class.html)、
+[InkWell]({{site.api}}/flutter/material/InkWell-class.html)、
+[Form]({{site.api}}/flutter/widgets/Form-class.html)、
 和 [TextField]({{site.api}}/flutter/material/TextField-class.html)
-都是有状态的 widget  [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
+都是有状态的 widget，是 [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html) 的子类。
 
 The following example declares a `StatefulWidget` which requires a `createState()`
 method. This method creates the state object that manages the widget's state,
@@ -2998,7 +2992,7 @@ hierarchy in IntelliJ and the individual properties for that widget.
 For more information, see
 [Debugging Flutter Apps](/docs/testing/debugging).
 
-更多详细内容，请查看 [Debugging Flutter Apps](/docs/testing/debugging)。
+更多详细内容，请查看 [调试 Flutter 应用](/docs/testing/debugging)。
 
 ## Animation
 

@@ -144,7 +144,7 @@ method.
 
 最后将设置新的属性触发 `AnimatedContainer` 重建并启动动画。那么如何触发重建呢？
 当我们提到 `StatefulWidgets` 时，
-[`setState`]({{site.api}}/flutter/widgets/State/setState.html) 就行了。
+[`setState()`]({{site.api}}/flutter/widgets/State/setState.html) 就行了。
 
 Add a button to the app. When the user taps the button, update
 the properties with a new width, height, background color and border radius 

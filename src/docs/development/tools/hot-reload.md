@@ -31,7 +31,7 @@ To hot reload a Flutter app:
     be hot reloaded; for a list of changes that require a hot restart, see
     [Limitations](#limitations).
     
-    修改项目中的一个Dart文件。大多数类型的代码更改可以热重载；一些需要重新启动应用程序的更改列表，请参阅[限制](#限制)。
+    修改项目中的一个Dart文件。大多数类型的代码更改可以热重载；一些需要重新启动应用程序的更改列表，请参阅 [限制](#限制)。
     
  1. If you're working in an IDE/editor that supports Flutter's IDE tools,
     select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload button on the
@@ -183,7 +183,7 @@ field is read, it is set to whatever value its initializer was evaluated to.
 Global variables and static fields are treated as state, and are therefore not
 reinitialized during hot reload.
 
-在 Dart 中，[静态字段会被惰性初始化]()。 这意味着第一次运行 Flutter 应用程序并读取静态字段时，
+在 Dart 中，[静态字段会被惰性初始化][]。 这意味着第一次运行 Flutter 应用程序并读取静态字段时，
 会将静态字段的值设为其初始表达式的结果。全局变量和静态字段都被视为状态，因此在热重载期间不会重新初始化。
 
 If you change initializers of global variables and static fields, a full
@@ -470,3 +470,4 @@ rebuild/re-layout/repaint of all existing widgets and render objects.
 然后，热重载机制使 Flutter 框架触发所有现有的 widgets 和渲染对象的重建/重新布局/重绘。
 
 [static fields are lazily initialized]: {{site.news}}/2012/02/static-variables-no-longer-have-to-be.html
+[静态字段会被惰性初始化]: {{site.news}}/2012/02/static-variables-no-longer-have-to-be.html

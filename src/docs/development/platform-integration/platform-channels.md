@@ -54,7 +54,7 @@ Flutter 的平台相关 API 支持不依赖于代码生成，而是依赖于灵�
   或库，本指南将使用平台通道机制。但你也可以通过检查 Flutter 应用程序中的
   [defaultTargetPlatform]({{site.api}}/flutter/foundation/defaultTargetPlatform.html)
   属性来编写相关平台的 Dart
-  代码。[不同平台操作体验的差异和适配](/docs/resources/platform-adaptations)中列出了
+  代码。[不同平台操作体验的差异和适配](/docs/resources/platform-adaptations) 中列出了
   Flutter 框架自动为你执行的一些相关平台适配。
 {{site.alert.end}}
 
@@ -460,7 +460,7 @@ only using Kotlin rather than Java.
 This step assumes that you created your project in [step 1.](#example-project)
 using the `-a kotlin` option.
 
-此步骤假设你在[第一步](#example-project)中使用 `-a kotlin` 选项创建了项目。
+此步骤假设你在 [第一步](#example-project) 中使用 `-a kotlin` 选项创建了项目。
 
 Start by opening the Android host portion of your Flutter app in Android Studio:
 
@@ -869,7 +869,7 @@ To share your platform-specific code with other developers in the Flutter
 ecosystem, see [publishing
 packages](/docs/development/packages-and-plugins/developing-packages#publish).
 
-与 Flutter 生态中的其他开发者共享你的平台相关代码，可查看[提交 package](/docs/development/packages-and-plugins/developing-packages#publish)。
+与 Flutter 生态中的其他开发者共享你的平台相关代码，可查看 [提交 package](/docs/development/packages-and-plugins/developing-packages#publish)。
 
 ## Custom channels and codecs
 

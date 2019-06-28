@@ -315,7 +315,7 @@ The next section has an example of the `addListener()` method,
 and [Monitoring the progress of the animation](#monitoring) shows an
 example of `addStatusListener()`.
 
-一个 [Animation][] 对象可以有不止一个 `Listener` 和 `StatusListener`，用 `addListener()` 和 `addStatusListener()` 来定义。当动画值改变时调用 `Listener`。`Listener` 最常用的操作是调用 `setState()` 进行重建。当一个动画开始，结束，前进或后退时，会调用 `StatusListener`，用 `AnimationStatus` 来定义。下一部分有关于 `addListener()` 方法的示例，在 [Monitoring the progress of the animation](#monitoring) 中也有 `addStatusListener()` 的示例。
+一个 [Animation][] 对象可以有不止一个 `Listener` 和 `StatusListener`，用 `addListener()` 和 `addStatusListener()` 来定义。当动画值改变时调用 `Listener`。`Listener` 最常用的操作是调用 `setState()` 进行重建。当一个动画开始，结束，前进或后退时，会调用 `StatusListener`，用 `AnimationStatus` 来定义。下一部分有关于 `addListener()` 方法的示例，在 [监控动画过程](#monitoring) 中也有 `addStatusListener()` 的示例。
 
 ---
 
@@ -517,7 +517,7 @@ With these few changes, you’ve created your first animation in Flutter!
   You can learn more about cascade notation in the
   [Dart Language Tour.]({{site.dart-site}}/guides/language/language-tour)
   
-  更多关于级联操作符的内容，请参考 [Dart Language Tour.]({{site.dart-site}}/guides/language/language-tour)
+  更多关于级联操作符的内容，请参考 [Dart Language Tour]({{site.dart-site}}/guides/language/language-tour)。
 </aside>
 
 ###  Simplifying with Animated&shy;Widget
@@ -1037,7 +1037,7 @@ physics simulations and `fling()` methods. See the [animations landing
 page](/docs/development/ui/animations) for the latest available documents and
 examples.
 
-本指南是在 Flutter 中应用 `Tweens` 创建动画的基础介绍，还有很多其他类可供探索。比如指定 `Tween` 类，Material Design 特有的动画，`ReverseAnimation`，共享元素过渡（也称为 Hero 动画），物理模拟和 `fling()` 方法。关于最新的文档和示例可参见 [动画登录页面](/docs/development/ui/animations)。
+本指南是在 Flutter 中应用 `Tweens` 创建动画的基础介绍，还有很多其他类可供探索。比如指定 `Tween` 类，Material Design 特有的动画，`ReverseAnimation`，共享元素过渡（也称为 Hero 动画），物理模拟和 `fling()` 方法。关于最新的文档和示例可参见 [动画效果介绍](/docs/development/ui/animations)。
 
 [AnimatedWidget]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
 [Animatable]: {{site.api}}/flutter/animation/Animatable-class.html

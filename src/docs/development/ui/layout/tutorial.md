@@ -62,12 +62,12 @@ start with [Flutter's approach to layout](/docs/development/ui/layout).
 Make sure you've [set up](/docs/get-started/install) your environment,
 then do the following:
 
-确保你已经 [设置](/docs/get-started/install) 好了你的环境，
+确保你已经 [安装和配置](/docs/get-started/install) 好了你的环境，
 然后做如下步骤：
 
  1. [Create a basic "Hello World" Flutter app][hello-world].
 
-    [创建一个基础的 "Hello World" Flutter app][hello-world]。
+    [创建一个简单的 Flutter app ——"Hello World"][hello-world]。
 
  2. Change the app bar title and the app title as follows:
 
@@ -265,12 +265,14 @@ Add the title section to the app body like this:
     using the [automatic reformatting support](/docs/development/tools/formatting).
 
     在粘贴代码到你的 app 中时，行首缩进可能会发生偏移。
-    你可以通过使用 [代码自动格式化支持](/docs/development/tools/formatting) 来修复这个问题。
+    你可以通过使用 [代码自动格式化](/docs/development/tools/formatting) 来修复这个问题。
 
   - For a faster development experience, try Flutter's [hot reload][] feature.
-  - If you have problems, compare your code to [lib/main.dart][].
 
     为了获得更便捷的开发体验，请尝试 Flutter 的 [热加载][] 功能。
+
+  - If you have problems, compare your code to [lib/main.dart][].
+
     如果你有任何问题，可以将你的代码与 [lib/main.dart][] 比对.
 
   [hot reload]: /docs/development/tools/hot-reload
@@ -563,4 +565,4 @@ the screenshot at the top of this page.
 You can add interactivity to this layout by following [Adding Interactivity to
 Your Flutter App](/docs/development/ui/interactive).
 
-你可以参考 [给你的 Flutter App 添加交互](/docs/development/ui/interactive) 来给这个布局增加交互。
+你可以参考文档 [为你的 Flutter 应用加入交互体验](/docs/development/ui/interactive) 来给这个布局增加交互。

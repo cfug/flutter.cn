@@ -28,7 +28,7 @@ Flutter 自带的 [Material 库]({{site.api}}/flutter/material/material-library.
   
   创建一个使用 tabs 布局、Cupertino 风格的 iOS 应用，
   请参见这个 codelab: 
-  [使用 Flutter 构建 iOS 风格的应用](https://codelabs.flutter.cn/codelabs/flutter-cupertino-cn/index.html)
+  [使用 Flutter 构建 iOS 风格的应用](https://codelabs.flutter.cn/codelabs/flutter-cupertino-cn/index.html)。
   
 {{site.alert.end}}
 

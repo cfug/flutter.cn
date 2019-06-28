@@ -116,12 +116,12 @@ version:
 * Pre API 28 uses a bottom-up animation that [slides up and fades
   in]({{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html).
 
-  API 28 版本之前的系统，提供了一种自下而上[滚动并淡出]({{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html)的动画效果。
+  API 28 版本之前的系统，提供了一种自下而上 [滚动并淡出]({{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html) 的动画效果。
 
 * On API 28 and later, the bottom-up animation [slides and clip-reveals
   up]({{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html).
 
-  API 28 和以后的系统，则提供了另外一种自下而上[滚动并反向翻转]({{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html)的动画效果。
+  API 28 和以后的系统，则提供了另外一种自下而上 [滚动并反向翻转]({{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html) 的动画效果。
 
 On **iOS** when the push style transition is used, Flutter's bundled
 [CupertinoNavigationBar]({{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html)
@@ -343,7 +343,7 @@ When using the Cupertino package, the [default
 theme](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart)
 always uses the San Francisco font.
 
-当使用 Cupertino 包的时候，[默认主题](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart)会一直使用 San Francisco 字体。
+当使用 Cupertino 包的时候，[默认主题](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart) 会一直使用 San Francisco 字体。
 
 The San Francisco font license limits its usage to software running on iOS,
 macOS, or tvOS only. Therefore a fallback font is used when running on Android

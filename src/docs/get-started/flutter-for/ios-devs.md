@@ -61,7 +61,7 @@ For a comparison, see [Introduction to declarative
 UI](/docs/get-started/flutter-for/declarative).
 
 这里有一份关于响应式编程，或者说_声明式编程_和传统的命令式编程有什么不同之处的文章，你可以
-浏览[声明式 UI 介绍](/docs/get-started/flutter-for/declarative)。
+浏览 [声明式 UI 介绍](/docs/get-started/flutter-for/declarative)。
 {{site.alert.end}}
 
 On iOS, most of what you create in the UI is done using view objects, which are
@@ -108,7 +108,7 @@ including iOS.
 
 Flutter 包含了 [Material Components]({{site.material}}/develop/flutter/) 库。内容都是
 一些遵循了 [Material Design 设计规范]({{site.material}}/design/) 的组件。Material Design 是
-一种灵活的[支持全平台]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines)
+一种灵活的 [支持全平台]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines)
 的设计体系，其中也包括了 iOS。
 
 But Flutter is flexible and expressive enough to implement any design language.
@@ -117,7 +117,7 @@ to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources).
 
 但是 Flutter 的灵活性和表现力使其能够适配任何的设计语言。在 iOS 中，你可以通过 [Cupertino widgets](/docs/development/ui/widgets/cupertino) 
-来构造类似于[Apple iOS 设计语言](https://developer.apple.com/design/resources/)的接口。
+来构造类似于 [Apple iOS 设计语言](https://developer.apple.com/design/resources/) 的接口。
 
 ### How do I update `Widget`s?
 
@@ -303,7 +303,7 @@ constraints in iOS.
 You can view the layouts that Flutter has to offer in the [widget
 catalog](/docs/development/ui/widgets/layout).
 
-你可以在[widget 目录](/docs/development/ui/widgets/layout)中查看 Flutter 提供
+你可以在 [widget 目录](/docs/development/ui/widgets/layout) 中查看 Flutter 提供
 的所有 widget 布局方法。
 
 ### How do I add or remove a component from my layout?
@@ -504,9 +504,7 @@ For more information, see
 the [Animations tutorial](/docs/development/ui/animations/tutorial),
 and the [Animations overview](/docs/development/ui/animations).
 
-关于更多的内容，可以查看[Animation 和 Motion widgets](/docs/development/ui/widgets/animation)，
-[Animations 教程](/docs/development/ui/animations/tutorial)，
-以及[Animations 概览](/docs/development/ui/animations)。
+关于更多的内容，可以查看 [Animation 和 Motion widgets](/docs/development/ui/widgets/animation)， [Animations 教程](/docs/development/ui/animations/tutorial)，以及 [Animations 概览](/docs/development/ui/animations)。
 
 ### How do I draw to the screen?
 
@@ -523,7 +521,7 @@ latter of which implements your algorithm to draw to the canvas.
 To learn how to implement a signature painter in Flutter, see Collin's answer on
 [StackOverflow][].
 
-想要学习在 Flutter 里如何实现一个画笔，可以查看 Collin 在 [StackOverflow] 里的回答。
+想要学习在 Flutter 里如何实现一个画笔，可以查看 Collin 在 [StackOverflow][] 里的回答。
 
 [StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
@@ -593,7 +591,7 @@ Flutter, build a custom widget by
 (instead of extending them).
 
 在 iOS 里，你可以直接继承 `UIView` 或者使用已经存在的视图，然后重写并实现对应的方法来达到想要的效果。
-在 Flutter 里，构建自定义 widget 需要通过[合成](/docs/resources/technical-overview#everythings-a-widget)一些小的 widget（而不是对它们进行扩展）来实现。
+在 Flutter 里，构建自定义 widget 需要通过 [组合](/docs/resources/technical-overview#everythings-a-widget) 一些小的 widget（而不是对它们进行扩展）来实现。
 
 For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a `RaisedButton` with a label,
@@ -729,7 +727,7 @@ create a native platform integration, or use an
 
 在 iOS 里，想要跳转到其他应用，可以使用特定的 URL scheme。对于系统级别的应用，scheme 都是
 取决于应用的。在 Flutter 里想要实现这个功能，需要创建原生平台的整合层，或者
-使用已经存在的[插件]({{site.pub-pkg}}/flutter/)，例如
+使用已经存在的 [插件]({{site.pub-pkg}}/flutter/)，例如
 [`url_launcher`]({{site.pub-pkg}}/url_launcher)。
 
 ### How do I pop back to the iOS native viewcontroller?
@@ -751,7 +749,7 @@ UIViewController* viewController = [UIApplication sharedApplication].keyWindow.r
 If that doesn't do what you want, you can create your own
 [platform channel](/docs/development/platform-integration/platform-channels) to invoke arbitrary iOS code.
 
-如果这不是你需要的功能，你可以创建你自己的[平台通道](/docs/development/platform-integration/platform-channels)来调用
+如果这不是你需要的功能，你可以创建你自己的 [平台通道](/docs/development/platform-integration/platform-channels) 来调用
 对应的 iOS 代码。
 
 ## Threading & asynchronicity
@@ -1117,7 +1115,7 @@ Making a network call in Flutter is easy when you use the popular
 away a lot of the networking that you might normally implement yourself,
 making it simple to make network calls.
 
-在 Flutter 里，想要构造网络请求十分简单，直接使用 [`http` 库]({{site.pub-pkg}}/http)即可。它把你可能要实现的网络操作进行了抽象封装，让处理网络请求变得十分简单。
+在 Flutter 里，想要构造网络请求十分简单，直接使用 [`http` 库]({{site.pub-pkg}}/http) 即可。它把你可能要实现的网络操作进行了抽象封装，让处理网络请求变得十分简单。
 
 To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
@@ -1368,7 +1366,7 @@ Widget build(BuildContext context) {
 For more details, see
 [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images).
 
-关于更多的细节，请参见 [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)。
+关于更多的细节，请参见文档 [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)。
 
 ### Where do I store strings? How do I handle localization?
 
@@ -1479,7 +1477,7 @@ For further details on internationalization and localization in Flutter, see the
 [internationalization guide](/docs/development/accessibility-and-localization/internationalization),
 which has sample code with and without the `intl` package.
 
-关于 Flutter 中国际化和本地化的细节内容，请参看 [internationalization guide](/docs/development/accessibility-and-localization/internationalization)，里面包含有使用和不使用 `intl` 库的示例代码。
+关于 Flutter 中国际化和本地化的细节内容，请参看 [Flutter 应用里的国际化](/docs/development/accessibility-and-localization/internationalization)，里面包含有使用和不使用 `intl` 库的示例代码。
 
 Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
 accessible from the native side, and vice versa, native assets and resources
@@ -1944,7 +1942,7 @@ Widget build(BuildContext context) {
 For more detailed docs on how to lay out widgets in Flutter,
 see the [layout tutorial](/docs/development/ui/widgets/layout).
 
-关于 Flutter 中布局的更多细节，请参看[布局教程](/docs/development/ui/widgets/layout)。
+关于 Flutter 中布局的更多细节，请参看 [布局教程](/docs/development/ui/widgets/layout)。
 
 ## Gesture detection and touch event handling
 
@@ -2498,8 +2496,8 @@ If you can't find a plugin on Pub that fits your needs, you can
 [write your own](/docs/development/packages-and-plugins/developing-packages)
 and [publish it on Pub](/docs/development/packages-and-plugins/developing-packages#publish).
 
-如果你在 Pub 找不到自己需要的包，你可以[自己写一个](/docs/development/packages-and-plugins/developing-packages)，
-并[发布到 Pub 上](/docs/development/packages-and-plugins/developing-packages#publish)。
+如果你在 Pub 找不到自己需要的包，你可以自己写一个，相关信息可以查阅 [Flutter Packages 的开发和提交](/docs/development/packages-and-plugins/developing-packages)，
+并且你可以将其 [发布到 Pub 上](/docs/development/packages-and-plugins/developing-packages#publish)。
 
 ### How do I access the GPS sensor?
 

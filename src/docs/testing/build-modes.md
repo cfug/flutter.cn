@@ -35,7 +35,7 @@ device, emulator, or simulator. Debug mode means that:
 * [Assertions]({{site.dart-site}}/guides/language/language-tour#assert)
    are enabled.
    
-  [断点]({{site.dart-site}}/guides/language/language-tour#assert)是开启的。
+  [断点]({{site.dart-site}}/guides/language/language-tour#assert) 是开启的。
 
 * [Observatory](https://dart-lang.github.io/observatory) is enabled,
    allowing you to use the dart debugger.
@@ -59,7 +59,7 @@ icon overlayed with a small triangle on the project page.
 The emulator and simulator execute _only_ in debug mode.
 
 默认情况下，运行 `flutter run` 会使用 Debug 模式。
-你的 IDE 也支持这些模式。例如，Android Studio 提供了 **Run > Debug...** 菜单选项，而且在项目面板中还有一个三角形的绿色运行按钮图标。（菜单选项中会显示相应图标的图片。）仿真器和模拟器 **仅**可以在 Debug 模式下执行。
+你的 IDE 也支持这些模式。例如，Android Studio 提供了 **Run > Debug...** 菜单选项，而且在项目面板中还有一个三角形的绿色运行按钮图标（菜单选项中会显示相应图标的图片）。仿真器和模拟器**仅**可以在 Debug 模式下执行。
 
 ## Release
 ## Release 模式

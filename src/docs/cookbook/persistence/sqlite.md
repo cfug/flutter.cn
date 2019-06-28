@@ -210,7 +210,7 @@ First, insert a `Dog` into the `dogs` table. This involves two steps:
   method to store the `Map` in the `dogs` table.
   
      使用
-    [`insert`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html)
+    [`insert()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html)
     方法把 `Map` 保存到 `dogs` 数据表中。
 
 <!-- skip -->
@@ -272,7 +272,7 @@ for a specific dog or a list of all dogs. This involves two steps:
 
   1. Run a `query` against the `dogs` table. This returns a `List<Map>`.
   
-     调用`dogs`表对像的`query`方法。这将返回一个`List <Map>`。
+     调用 `dogs` 表对像的 `query` 方法。这将返回一个`List <Map>`。
      
   2. Convert the `List<Map>` into a `List<Dog>`.
   
@@ -313,7 +313,7 @@ You can do this by using the
 method from the `sqflite` library.
 
 使用 `sqflite` package 中的
-[`update`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html) 方法，可以对已经插入到数据库中的数据进行修改（更新）。
+[`update()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html) 方法，可以对已经插入到数据库中的数据进行修改（更新）。
 
 This involves two steps:
 
@@ -379,7 +379,7 @@ method from the `sqflite` library.
 
 除了插入和修改狗狗们的数据，你还可以从数据库中删除狗狗的数据。
 删除数据用到了 `sqflite` package 中的
-[`delete`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html)
+[`delete()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html)
 方法
 
 In this section, create a function that takes an id and deletes the dog with

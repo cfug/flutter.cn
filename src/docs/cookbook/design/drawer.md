@@ -125,7 +125,7 @@ widgets. For more information on working with Lists, see the
 
 我们将使用 [`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html)
 和两个 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) widget 填充 `ListView`。
-有关使用 List 的更多信息，请参阅 [list recipes](/docs/cookbook#lists)。
+有关使用 List 的更多信息，请参阅实用教程中的 [list recipes](/docs/cookbook#lists)。
 
 <!-- skip -->
 ```dart

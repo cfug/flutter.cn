@@ -230,8 +230,7 @@ that the child depends on. The
 widget creates a Localizations widget and rebuilds it if the system's locale changes.
 
 [`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html) 
-widget 定义了它的子节点的语言环境和依赖的本地化的资源。
-[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html) 创建了一个本地化的 widget，如果系统的语言环境变化了，它会重建这个 widget。
+widget 定义了它的子节点的语言环境和依赖的本地化的资源。[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html) 创建了一个本地化的 widget，如果系统的语言环境变化了，它会重建这个 widget。
 
 You can always lookup an app's current locale with `Localizations.localeOf()`:
 
@@ -376,7 +375,7 @@ that produces an instance of GlobalMaterialLocalizations.
 As of April 2019, the global localization classes support [about 52
 languages.]({{site.github}}/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)
 
-截至 2019 年 4 月，这个全球本地化类一共支持[大约 52 种语言]({{site.github}}/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)。
+截至 2019 年 4 月，这个全球本地化类一共支持 [大约 52 种语言]({{site.github}}/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)。
 <a name="defining-class"></a>
 ## Defining a class for the app's localized resources
 
@@ -392,7 +391,7 @@ values. The example that follows is typical of such classes.
 code]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
 for this example app.
 
-此示例 app 的[完整的源码]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)。
+此示例 app 的 [完整的源码]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)。
 
 This example is based on the APIs and tools provided by the
 [intl]({{site.pub-pkg}}/intl) package. [An alternative class
@@ -401,7 +400,7 @@ example]({{site.github}}/flutter/website/tree/master/examples/internationalizati
 that doesn't depend on the intl package.
 
 这个示例是基于 [intl]({{site.pub-pkg}}/intl) package 提供的 API 和 工具开发的。
-[app 本地化资源的替代方法](#alternative-class)里面讲解了一个不依赖于 intl package 的[示例]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)。
+[app 本地化资源的替代方法](#alternative-class) 里面讲解了一个不依赖于 intl package 的 [示例]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)。
 
 The DemoLocalizations class contains the app's strings (just one for the
 example) translated into the locales that the app supports.
@@ -447,7 +446,7 @@ source code for classes that contain `Intl.message()` calls.
 In this case that would just be the DemoLocalizations class.
 
 基于 `intl` package 的类引入了一个生成好的信息目录，它提供了 `initializeMessage()` 方法和 `Intl.message()` 方法的每个语言环境的备份存储。
-[`intl` tool](#dart-tools) 通过分析包含 `Intl.message()` 调用类的源码生成这个信息目录。
+[`intl` 工具](#dart-tools) 通过分析包含 `Intl.message()` 调用类的源码生成这个信息目录。
 在当前情况下，就是 DemoLocalizations 的类（包含了 `Intl.message()` 调用）。
 
 <a name="specifying-supportedlocales"></a>
@@ -524,7 +523,7 @@ with a different i18n framework.
 code]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
 for this example app.
 
-这个示例 APP 的[完整代码]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)。
+这个示例 APP 的 [完整代码]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)。
 
 In this version of DemoApp the class that contains the app's
 localizations, DemoLocalizations, includes all of its translations

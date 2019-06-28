@@ -538,7 +538,7 @@ app]({{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74
 `flutter build apk`), bundled and compressed as a release APK, to be
 approximately 4.06&nbsp;MB.
 
-在 2018 年 12 月，我们实测了一个 [最简版本的 Flutter 应用]({{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world)(即不含 Material 组件，只包含一个使用 `flutter build apk` 构建的 `Center` widget) 的下载体积 ，这个经过打包和压缩处理的 APK 大约为 4.06&nbsp;MB。
+在 2018 年 12 月，我们实测了一个 [最简版本的 Flutter 应用]({{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world) (即不含 Material 组件，只包含一个使用 `flutter build apk` 构建的 `Center` widget) 的下载体积 ，这个经过打包和压缩处理的 APK 大约为 4.06&nbsp;MB。
 
 For this simple app,
 the core engine is approximately 2.7&nbsp;MB (compressed),
@@ -1204,7 +1204,7 @@ You might also use
 For discussions, join our mailing list at
 [{{site.email}}](mailto:{{site.email}}).
 
-如果您觉得遇到 bug 了，请提交至我们的[问题追踪入口]({{site.github}}/flutter/flutter/issues)。我们也鼓励您在 [Stack Overflow]({{site.so}}/tags/flutter) 中多多使用“如何 (how to) ...“来搜索解答。如果您希望直接与我们沟通，请使用我们的官方邮件地址 [{{flutter-dev@googlegroups.com}}](mailto:{{site.email}})。 
+如果您觉得遇到 bug 了，请提交至我们的 [问题追踪入口]({{site.github}}/flutter/flutter/issues)。我们也鼓励您在 [Stack Overflow]({{site.so}}/tags/flutter) 中多多使用“如何 (how to) ...“来搜索解答。如果您希望直接与我们沟通，请使用我们的官方邮件地址 [{{flutter-dev@googlegroups.com}}](mailto:{{site.email}})。 
 
 ### How do I get involved?
 

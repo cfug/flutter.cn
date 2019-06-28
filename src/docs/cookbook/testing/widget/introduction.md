@@ -21,7 +21,7 @@ widget classes, you need a few additional tools provided by the
 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
 package, which ships with the Flutter SDK.
 
-在[单元测试介绍](/docs/cookbook/testing/unit/introduction) 部分，
+在 [单元测试介绍](/docs/cookbook/testing/unit/introduction) 部分，
 我们学习了使用 `test` 这个 package 测试 Dart 类的方法。
 为了测试 widget 类，我们需要使用
 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html) package 提供的额外工具，
@@ -41,7 +41,7 @@ The `flutter_test` package provides the following tools for testing widgets:
     function, which automatically creates a new `WidgetTester` for
     each test case, and is used in place of the normal `test()` function.
   
-    [`testWidgets`]({{api}}/flutter_test/testWidgets.html) 函数，此函数会自动为每个测试创建一个 `WidgetTester`，用来代替普通的 `test` 函数。
+    [`testWidgets()`]({{api}}/flutter_test/testWidgets.html) 函数，此函数会自动为每个测试创建一个 `WidgetTester`，用来代替普通的 `test` 函数。
      
   * [`Finder`]({{api}}/flutter_test/Finder-class.html)
   classes. These allow us to search for Widgets in the test environment.
@@ -156,7 +156,7 @@ The `testWidgets` function allows you to define a widget test and creates a
 
 现在我们有了一个可以测试的 widget，可以开始编写第一个测试了！
 第一步，我们用 `flutter_test` 这个 package 提供的
-[`testWidgets`]({{api}}/flutter_test/testWidgets.html) 函数定义一个测试。
+[`testWidgets()`]({{api}}/flutter_test/testWidgets.html) 函数定义一个测试。
 `testWidgets` 函数可以定义一个 Widget 测试并创建一个可以使用的 `WidgetTester`。
 
 This test verifies that `MyWidget` displays a given title and message.
@@ -185,7 +185,7 @@ method provided by `WidgetTester`. The `pumpWidget` method builds and
 renders the provided widget.
 
 下一步，为了在测试环境中建立 `MyWidget`，我们可以使用 `WidgetTester` 提供的
-[`pumpWidget`]({{api}}/flutter_test/WidgetTester/pumpWidget.html) 方法。
+[`pumpWidget()`]({{api}}/flutter_test/WidgetTester/pumpWidget.html) 方法。
 `pumpWidget` 方法会建立并渲染我们提供的 widget。
 
 Create a `MyWidget` instance that displays "T" as the title
@@ -211,14 +211,14 @@ After the initial call to `pumpWidget()`, the `WidgetTester` provides
 additional ways to rebuild the same widget. This is useful if you're
 working with a `StatefulWidget` or animations.
 
-初次调用 `pumpWidget` 之后，`WidgetTester` 会提供其他方式来重建相同的 widget。
+初次调用 `pumpWidget()` 之后，`WidgetTester` 会提供其他方式来重建相同的 widget。
 这对使用 `StatefulWidget` 或者动画会非常有用。
 
 For example, tapping a button calls `setState()`, but Flutter won't
 automatically rebuild your widget in the test environment.
 Use one of the following methods to ask Flutter to rebuild the widget.
 
-例如，如果我们点击调用 `setState` 的按钮，在测试环境中，Flutter 
+例如，如果我们点击调用 `setState()` 的按钮，在测试环境中，Flutter 
 并不会自动重建你的 widget。我们需要用以下列举的方法来让 Flutter
 再一次建立我们的 widget。
 
@@ -259,15 +259,15 @@ Since you know you're looking for `Text` widgets, use the
 method.
 
 为了实现这个目的，我们使用 `flutter_test` 这个 package 提供的顶级
-[`find`]({{api}}/flutter_test/find-constant.html) 方法来创建我们的 `Finders`。
+[`find()`]({{api}}/flutter_test/find-constant.html) 方法来创建我们的 `Finders`。
 因为我们要查找的是 `Text` widgets，所以可以使用
-[`find.text`]({{api}}/flutter_test/CommonFinders-class.html) 方法。
+[`find.text()`]({{api}}/flutter_test/CommonFinders-class.html) 方法。
 
 For more information about `Finder` classes, see the
 [Finding widgets in a widget test](/docs/cookbook/testing/widget/finders)
 recipe.
 
-关于 `Finder`classes 的更多信息，请参阅
+关于 `Finder` classes 的更多信息，请参阅
 [定位到目标 Widgets](/docs/cookbook/testing/widget/finders) 章节。
 
 <!-- skip -->

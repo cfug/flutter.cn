@@ -40,7 +40,7 @@ on [Google Developers]({{site.codelabs}}).
 can also be found on [Google Developers]({{site.codelabs}}).
 
 完整的教程分为两部分，本页面是第一部分的内容，
-你可以在这里查看[第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0)的内容。
+你可以在这里查看 [第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0) 的内容。
 
 ## What you'll build in part 1
 {:.no_toc}
@@ -111,8 +111,7 @@ The animated GIF shows how the app works at the completion of part 1.
   This codelab assumes Android Studio, but you can use your preferred
   editor.
   
-  你需要安装两部分内容来完成本次实验：[Flutter SDK 安装](/docs/get-started/install) 和
-  [编辑器 (editor)](/docs/get-started/editor)设置。
+  你需要安装两部分内容来完成本次实验：[Flutter SDK 安装](/docs/get-started/install) 和 [编辑器 (editor)](/docs/get-started/editor) 设置。
   本 codelab 里，我们以 macOS 环境下的 Android Studio 以做演示，
   但你可以选用更顺手的配置。
 
@@ -226,7 +225,7 @@ where the Dart code lives.
  2. Run the app [in the way your IDE describes](/docs/get-started/test-drive).
     You should see either Android or iOS output, depending on your device.
 
-    [运行](/docs/get-started/test-drive#androidstudio)你的工程项目，
+    [运行](/docs/get-started/test-drive#androidstudio) 你的工程项目，
     根据不同的操作系统，你会看到如下运行结果界面：
 
     {% indent %}
@@ -343,7 +342,7 @@ packages, on the [Pub site]({{site.pub}}/flutter).
     click **Packages get**. This pulls the package into
     your project. You should see the following in the console:
 
-    在Android Studio 的编辑器视图中查看 pubspec 时，
+    在 Android Studio 的编辑器视图中查看 pubspec 时，
     单击右上角的 Packages get，这会将依赖包安装到你的项目。
     你可以在控制台中看到以下内容：
 
@@ -662,7 +661,7 @@ lazily, on demand.
       privacy]({{site.dart-site}}/guides/language/language-tour)
       in the Dart language.
       
-      在 Dart 语言中使用下划线前缀标识符，会[强制其变成私有]({{site.dart-site}}/guides/language/language-tour)。
+      在 Dart 语言中使用下划线前缀标识符，会 [强制其变成私有]({{site.dart-site}}/guides/language/language-tour)。
       
     {{site.alert.end}}
 

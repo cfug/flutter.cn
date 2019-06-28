@@ -260,8 +260,8 @@ but there are many benefits to this approach.
   For a comparison, see [Introduction to declarative
   UI](/docs/get-started/flutter-for/declarative).
 
-  类react的风格或者说是_声明式_编程风格与传统的命令式编程风格有何不同？
-  作为比较，可以参考[声明式 UI 介绍](/docs/get-started/flutter-for/declarative).
+  类 react 的风格，或者说是_声明式_编程风格，与传统的命令式编程风格有何不同？
+  作为比较，可以参考 [声明式 UI 介绍](/docs/get-started/flutter-for/declarative)。
 
 {{site.alert.end}}
 
@@ -290,9 +290,9 @@ flexible design system [optimized for all
 platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
 including iOS.
 
-Flutter 包含 [Material 组件](/docs/development/ui/widgets/material)库。
-这些都是实现了 [Material Design 指南]({{site.material}}/design)的 widget。
-Material Design 是一个灵活的[针对所有平台]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines)的设计系统，包括 iOS。
+Flutter 包含 [Material 组件](/docs/development/ui/widgets/material) 库。
+这些都是实现了 [Material Design 指南]({{site.material}}/design) 的 widget。
+Material Design 是一个灵活的 [针对所有平台]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines) 的设计系统，包括 iOS。
 
 But Flutter is flexible and expressive enough to implement any design language.
 For example, on iOS, you can use the [Cupertino
@@ -302,7 +302,7 @@ to produce an interface that looks like
 
 不过， Flutter 有足够灵活和自描述性（expressive）去实现任何设计语言。
 举个例子，在 iOS 上，你可以用 [Cupertino
- widget](/docs/development/ui/widgets/cupertino)来生成一个看起来像[苹果 iOS 设计语言](https://developer.apple.com/design/resources/)的接口。
+ widget](/docs/development/ui/widgets/cupertino) 来生成一个看起来像 [苹果 iOS 设计语言](https://developer.apple.com/design/resources/) 的接口。
 
 ### How do I update `Widget`s?
 
@@ -484,7 +484,7 @@ The following example shows how to display a simple widget with padding:
 You can view the layouts that Flutter has to offer in the [widget
 catalog](/docs/development/ui/widgets/layout).
 
-您可以查看 Flutter 在[widget 目录](/docs/development/ui/widgets/layout)中提供的布局。
+您可以查看 Flutter 在 [widget 目录](/docs/development/ui/widgets/layout) 中提供的布局。
 
 ### How do I add or remove an Element from my layout?
 
@@ -1337,7 +1337,7 @@ This abstracts away a lot of the networking that you might normally
 implement yourself, making it simple to make network calls.
 
 在 Xamarin.Forms 中，你可以使用 `HttpClient`。
-当您使用流行的[`http` package]({{site.pub}}/packages/http)包时，在 Flutter 中进行网络调用就很容易了。
+当您使用流行的 [`http` package]({{site.pub}}/packages/http) 包时，在 Flutter 中进行网络调用就很容易了。
 这将抽象出许多您通常可能自己实现的网络，从而使网络调用变简化。
 
 To use the `http` package, add it to your dependencies in `pubspec.yaml`:
@@ -2292,7 +2292,7 @@ used such as checking when `SelectedItem` or `EventToCommand`
 behaviors change.
 
 在 Xamarin.Forms 中，ListView 拥有一个`ItemTapped` 方法能找出哪个列表项被单击了。
-您可能还使用了许多其他技术，比如检查 `SelectedItem` 或`EventToCommand` 的行为何时会发生更改。
+您可能还使用了许多其他技术，比如检查 `SelectedItem` 或 `EventToCommand` 的行为何时会发生更改。
 
 In Flutter, use the touch handling provided by the passed-in widgets.
 
@@ -2559,8 +2559,8 @@ and [Write your first Flutter app,
 part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
 
 更多信息，请访问
-[编写您的第一个 Flutter 应用程序，第1部分]({{site.codelabs}}/codelabs/first-flutter-app-pt1-cn/index.html)
-和 [编写您的第一个 Flutter 应用程序，第2部分]({{site.codelabs}}/codelabs/first-flutter-app-pt2-cn/index.html)
+[编写你的第一个 Flutter 应用程序，第1部分]({{site.codelabs}}/codelabs/first-flutter-app-pt1-cn/index.html)
+和 [编写你的第一个 Flutter 应用程序，第2部分]({{site.codelabs}}/codelabs/first-flutter-app-pt2-cn/index.html)
 
 ## Working with text
 
@@ -2888,9 +2888,9 @@ Dart and Flutter's open source package repository.
 Some packages might support native integrations on iOS,
 or Android, or both.
 
-除了直接使用平台通道外，您还可以使用各种预制[插件](/docs/development/packages-and-plugins/using-packages)，它们封装了针对特定目标的原生代码和Dart代码。
+除了直接使用平台通道外，您还可以使用各种预制 [插件](/docs/development/packages-and-plugins/using-packages)，它们封装了针对特定目标的原生代码和Dart代码。
 例如，您可以使用插件直接从Flutter访问相机交卷和设备相机，而无需编写自己的集成。
-插件可以在[在 Pub]({{site.pub}})、Dart 和 Flutter 的开源包存储库中找到。
+插件可以在 [Pub]({{site.pub}})、Dart 和 Flutter 的开源包存储库中找到。
 有些包可能支持iOS上的本地集成，有些支持Android，还有两者都兼而有之的。
 
 
@@ -2902,7 +2902,7 @@ Pub](/docs/development/packages-and-plugins/developing-packages#publish).
 
 如果在Pub上找不到适合您需求的插件，您可以
 [编写自己的插件](/docs/development/packages-and-plugins/developing-packages)
-并[在Pub上发布](/docs/development/packages-and-plugins/developing-packages#publish)。
+并 [在Pub上发布](/docs/development/packages-and-plugins/developing-packages#publish)。
 
 ### How do I access the GPS sensor?
 
@@ -2939,7 +2939,7 @@ Most Firebase functions are covered by
 [first party plugins]({{site.pub}}/flutter/packages?q=firebase).
 These plugins are first-party integrations, maintained by the Flutter team:
 
-大多数 Firebase 功能被[第一方插件]({{site.pub}}/flutter/packages?q=firebase) 覆盖。
+大多数 Firebase 功能被 [第一方插件]({{site.pub}}/flutter/packages?q=firebase) 覆盖。
 
  * [`firebase_admob`]({{site.pub}}/packages/firebase_admob) for Firebase AdMob
  * [`firebase_analytics`]({{site.pub}}/packages/firebase_analytics) for Firebase Analytics
@@ -2964,7 +2964,7 @@ plugins are missing, you can build your own following the
 [developing packages and
 plugins](/docs/development/packages-and-plugins/developing-packages) page.
 
-如果有 Flutter 或它的社区插件没有的指定平台的功能，可以根据[开发包与插件](/docs/development/packages-and-plugins/developing-packages) 页面自己构建。
+如果有 Flutter 或它的社区插件没有的指定平台的功能，可以根据 [开发包与插件](/docs/development/packages-and-plugins/developing-packages) 页面自己构建。
 
 Flutter's plugin architecture, in a nutshell,
 is much like using an Event bus in Android:

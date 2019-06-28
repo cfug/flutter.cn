@@ -17,7 +17,7 @@ and the difference between [ephemeral and app
 state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app),
 you are ready to learn about simple app state management.
 
-现在大家已经了解了 [声明式的编程思维](/docs/development/data-and-backend/state-mgmt/declarative) 和 [局部与全局状态](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app) 之间的区别，现在可以学习如何管理简单的全局应用状态。
+现在大家已经了解了 [声明式的编程思维](/docs/development/data-and-backend/state-mgmt/declarative) 和 [短时 (ephemeral) 与应用 (app) 状态](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app) 之间的区别，现在可以学习如何管理简单的全局应用状态。
 
 On this page, we are going to be using the `provider` package.
 If you are new to Flutter and you don't have a strong reason to choose
@@ -32,7 +32,7 @@ That said, if you have strong background in state management from other
 reactive frameworks, you will find packages and tutorials listed on the
 [following page](/docs/development/data-and-backend/state-mgmt/options).
 
-即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，那么可以在下面这个页面中找到相关的 package 和教程。[这个页面](/docs/development/data-and-backend/state-mgmt/options)。
+即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，那么可以在 [状态 (State) 管理参考](/docs/development/data-and-backend/state-mgmt/options) 中找到相关的 package 和教程。
 
 ## Our example
 
@@ -319,7 +319,7 @@ any higher-level classes in Flutter. It's easily testable (you don't even need
 to use [widget testing](/docs/testing#widget-tests) for it). For example,
 here's a simple unit test of `CartModel`:
 
-`ChangeNotifier` 是 `flutter:foundation` 的一部分，而且不依赖 Flutter 中任何高级别类。测试起来非常简单（你都不需要使用 [widget testing](/docs/testing#widget-tests)）。比如，这里有一个针对 `CartModel` 简单的单元测试：
+`ChangeNotifier` 是 `flutter:foundation` 的一部分，而且不依赖 Flutter 中任何高级别类。测试起来非常简单（你都不需要使用 [widget 测试](/docs/testing#widget-tests)）。比如，这里有一个针对 `CartModel` 简单的单元测试：
 
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
 ```dart
@@ -550,7 +550,7 @@ covered in this article. If you want something simpler,
 you can see how the simple Counter app looks like when [built with
 `provider`](https://github.com/flutter/samples/tree/master/provider_counter).
 
-你可以在文章中 [看一下示例]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)。
+你可以在文章中 [查看这个示例]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)。
 如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何
 [基于 `provider` 实现的](https://github.com/flutter/samples/tree/master/provider_counter)。
 

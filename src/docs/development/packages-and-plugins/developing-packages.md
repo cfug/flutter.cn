@@ -135,7 +135,7 @@ channels](/docs/development/platform-integration/platform-channels).
 如果想要开发一个调用特定平台 API 的 package，你需要开发一个原生插件 packgae。原生插件 packgae
 是 Dart package 的特别版本，除了要实现 Dart package 要实现的内容，还需要按需使用
 Java 或 Kotlin、ObjC 或 Swift 分别在 Android 和/或 iOS 平台实现，你可以使用 [platform
-channel](/docs/development/platform-integration/platform-channels) API 来实现特定平台的调用。
+channel](/docs/development/platform-integration/platform-channels) 中的 API 来实现特定平台的调用。
 
 ### Step 1: Create the package
 

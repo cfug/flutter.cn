@@ -240,7 +240,7 @@ process bottoms out in [fully concrete
 widgets]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html),
 which the framework then stitches together into a tree.
 
-你可以通过完善 [build]({{site.api}}/flutter/widgets/StatelessWidget/build.html) 函数来定义一个 widget 拥有的特性，该函数返回一个 widget 树（或者层次结构）。该树通过更具体的方式来表示用户界面上的 widget 部分。例如，一个 toolbar widget 可能会有一个返回一些[水平布局]({{site.api}}/flutter/widgets/Row-class.html)[文本]({{site.api}}/flutter/widgets/Text-class.html)和[各种]({{site.api}}/flutter/material/IconButton-class.html)[按钮]({{site.api}}/flutter/material/PopupMenuButton-class.html)的构建函数。框架会递归地去构建这些 widget 直到达到最底层[完全具象的 widgets]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html)，然后将它们拼接成一棵树。
+你可以通过完善 [build]({{site.api}}/flutter/widgets/StatelessWidget/build.html) 函数来定义一个 widget 拥有的特性，该函数返回一个 widget 树（或者层次结构）。该树通过更具体的方式来表示用户界面上的 widget 部分。例如，一个 toolbar widget 可能会有一个返回一些 [水平布局]({{site.api}}/flutter/widgets/Row-class.html) [文本]({{site.api}}/flutter/widgets/Text-class.html) 和 [各种]({{site.api}}/flutter/material/IconButton-class.html) [按钮]({{site.api}}/flutter/material/PopupMenuButton-class.html) 的构建函数。框架会递归地去构建这些 widget 直到达到最底层 [完全具象的 widgets]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html)，然后将它们拼接成一棵树。
 
 A widget's build function should be free of side effects.  Whenever it is asked
 to build, the widget should return a new tree of widgets regardless of what the
@@ -319,12 +319,12 @@ Next steps:
 1.  Try [Building Layouts tutorial](/docs/development/ui/layout/tutorial) and
     [Adding Interactivity to Your Flutter App](/docs/development/ui/interactive).
     
-    尝试[布局构建教程](/docs/development/ui/layout)及[为你的 Flutter 应用添加交互](/docs/development/ui/interactive)；
+    尝试 [布局构建教程](/docs/development/ui/layout) 及 [为你的 Flutter 应用添加交互](/docs/development/ui/interactive)；
     
 1.  Follow a detailed example in [Tour of the Widget
     Framework](/docs/development/ui/widgets-intro).
     
-    跟着 [Widget 介绍](/docs/development/ui/widgets-intro)中的详细示例做一做。
+    跟着 [Widget 介绍](/docs/development/ui/widgets-intro) 中的详细示例做一做。
 
 ## Get support
 

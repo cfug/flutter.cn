@@ -23,8 +23,7 @@ core framework for writing unit tests, and the
 [`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
 package provides additional utilities for testing widgets.
 
-使用单元测试可轻松地验证单个函数、方法或类的行为。
-[`test`]({{site.pub-pkg}}/test) 这个 package 提供了写单测的核心框架，
+使用单元测试可轻松地验证单个函数、方法或类的行为。[`test`]({{site.pub-pkg}}/test) 这个 package 提供了写单测的核心框架，
 [`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
 包则提供了额外的功能来测试 widget。
 

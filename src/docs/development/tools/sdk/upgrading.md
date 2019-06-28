@@ -89,7 +89,7 @@ Flutter has [four release channels][Flutter release channel]:
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
-Flutter 有[4个发布渠道][Flutter release channel]：
+Flutter 有 [4个发布渠道][Flutter release channel]：
 **stable**, **beta**, **dev**, 和 **master**。
 我们推荐使用 **{{site.sdk.channel}}** 渠道
 除非你需要更加新的版本。
@@ -174,5 +174,6 @@ Plus, we'd love to hear from you!
 [mailing list]: {{site.groups}}/forum/#!forum/flutter-dev
 
 [Flutter SDK 档案]: /docs/development/tools/sdk/archive
+[Flutter SDK 归档列表]: /docs/development/tools/sdk/archive
 [Flutter 发布渠道]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 [邮件列表]: {{site.groups}}/forum/#!forum/flutter-dev

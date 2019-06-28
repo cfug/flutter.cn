@@ -26,11 +26,11 @@ by the Flutter community:
   a video from Google I/O 2018, and an
   [accompanying article]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
 
-  [使用 Flutter 构建响应式移动应用](https://www.bilibili.com/video/av55808989/)，视频来自 Google I/O 2018，以及一篇 [随附文章]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
+  [使用 Flutter 构建响应式移动应用](https://www.bilibili.com/video/av55808989/)，视频来自 Google I/O 2018，以及一篇 [随附文章：Build reactive mobile apps in Flutter — companion article]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
 
 * [Flutter Architecture Samples](http://fluttersamples.com/), by Brian Egan
 
-  由Brian Egan 提供的 [Flutter 架构示例](http://fluttersamples.com/)
+  由 Brian Egan 提供的 [Flutter 架构示例](http://fluttersamples.com/)
 
 ## setState
 
@@ -64,7 +64,7 @@ by the Flutter community:
   Effectively](https://ericwindmill.com/articles/inherited_widget/),
   by Eric Windmill
 
-  由 Eric Windmill 提供的 [有效的使用 Flutter Inherited Widgets](https://ericwindmill.com/posts/using-flutter-inherited-widgets-effectively/)
+  由 Eric Windmill 提供的 [有效的使用 Flutter Inherited Widgets](https://ericwindmill.com/articles/inherited_widget/)
 
 * [Widget - State - Context -
   InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/),
@@ -81,7 +81,7 @@ by the Flutter community:
 * [Simple State Management]({{site.url}}/docs/development/data-and-backend/state-mgmt/simple),
   the previous page in this section
 
-  本节的上一页，[简单的状态管理]({{site.url}}/docs/development/data-and-backend/state-mgmt/simple)
+  本节的上一页，[简单的应用状态管理]({{site.url}}/docs/development/data-and-backend/state-mgmt/simple)
 
 * [You might not need Redux: The Flutter edition](https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7), by Ryan Edge
 
@@ -108,7 +108,7 @@ by the Flutter community:
 
 * [Animation Management with Redux and Flutter](https://www.youtube.com/watch?v=9ZkLtr0Fbgk), a video from DartConf 2018 [Accompanying article on Medium]({{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa)
 
-  [使用 Redux 和 Flutter 进行动画管理](https://www.youtube.com/watch?v=9ZkLtr0Fbgk)，视频来自 DartConf 2018，[媒体文章]({{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa)
+  [使用 Redux 和 Flutter 进行动画管理](https://www.youtube.com/watch?v=9ZkLtr0Fbgk)，视频来自 DartConf 2018，以及 [Medium 中的一篇文章]({{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa)
 
 * [Flutter Redux package]({{site.pub-pkg}}/flutter_redux) on the [Pub site]({{site.pub}})
 

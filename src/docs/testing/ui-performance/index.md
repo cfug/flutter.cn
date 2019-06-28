@@ -50,7 +50,7 @@ help.
   - To perform tracing inside your Dart code, see [Tracing any Dart code
     performance][] in the [Debugging Flutter apps][] page.
     
-    分析 Dart 代码中的性能问题，可以参考  [Debugging Flutter apps][] 页下的 [Tracing any Dart code performance][]。
+    分析 Dart 代码中的性能问题，可以参考 [调试 Flutter 应用][] 页下的 [跟踪 Dart 代码性能][]。
     
 {{site.alert.end}}
 
@@ -184,7 +184,7 @@ Not yet available in VS Code.
 For more information on how the different modes work, see
 [Flutter's build modes][].
 
-关于不同模式的更多信息，请参考[Flutter's build modes][]
+关于不同模式的更多信息，请参考 [Flutter 的构建模式选择][]
 
 You'll begin by enabling the performance overlay, as discussed
 in the next section.
@@ -232,7 +232,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
    This thread is not shown in the performance overlay.
    
    平台线程<br>
-   该平台的主线程。插件代码在这里运行。更多信息请参阅：iOS 的[UIKit][] 文档，或者 Android 的[MainThread][] 文档。性能图层并不会展示该线程。
+   该平台的主线程。插件代码在这里运行。更多信息请参阅：iOS 的 [UIKit][] 文档，或者 Android 的 [MainThread][] 文档。性能图层并不会展示该线程。
 
 1. UI thread<br>
    The UI thread executes Dart code in the Dart VM.
@@ -604,7 +604,7 @@ You can view the widget rebuilt counts for the current screen and
 frame in the widget inspector. For details on how to do this, see
 [Show performance data][] in the [Android Studio / IntelliJ][] page.
 
-可以检视 widget inspector 中当前屏幕和帧下的 widget 重建数量。了解细节，可以参考 [Android Studio / IntelliJ][] 页的 [Show performance data][]。
+可以检视 widget inspector 中当前屏幕和帧下的 widget 重建数量。了解细节，可以参考 [在 Android Studio 或类 IntelliJ 里开发 Flutter 应用][] 中的 [显示性能数据][]。
 
 ## Debug flags
 
@@ -671,7 +671,7 @@ This dump takes a long time to generate and isn't particularly readable.
 
 You can learn about other debug flags in [Debugging Flutter apps][].
 
-可以在 [Debugging Flutter apps][] 中了解到其他的调试参数。
+可以在 [调试 Flutter 应用][] 中了解到其他的调试参数。
 
 ## Benchmarking
 
@@ -707,7 +707,7 @@ introduced that adversely affects performance.
 For more information, see [Integration testing][],
 a section in [Testing Flutter apps][].
 
-了解更多，请参考 [Testing Flutter apps][] 中的 [Integration testing][] 一节。
+了解更多，请参考 [测试 Flutter 应用][] 中的 [集成测试][] 一节。
 
 ## More information
 
@@ -718,7 +718,7 @@ and debugging in Flutter:
 
 以下链接提供了关于 Flutter 工具的使用和 Flutter 调试的更多信息：
 
-* Debugging Flutter apps][]
+* [Debugging Flutter apps][]
 
   [调试 Flutter 应用][Debugging Flutter apps]；
 
@@ -744,9 +744,12 @@ and debugging in Flutter:
 
 [RepaintBoundary]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 [Tracing any Dart code performance]: /docs/testing/debugging#tracing-any-dart-code-performance
+[跟踪 Dart 代码性能]: /docs/testing/debugging#tracing-any-dart-code-performance
 [Debugging Flutter apps]: /docs/testing/debugging
+[调试 Flutter 应用]: /docs/testing/debugging
 [examples]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
 [Flutter's build modes]: /docs/testing/build-modes
+[Flutter 的构建模式选择]: /docs/testing/build-modes
 [profile mode]: /docs/testing/build-modes#profile
 [PerformanceOverlay]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
@@ -756,6 +759,8 @@ and debugging in Flutter:
 [UIKit]: https://developer.apple.com/documentation/uikit
 [MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
 [Integration testing]: /docs/testing#integration-tests
+[集成测试]: /docs/testing#integration-tests
+
 [Architecture notes]: {{site.github}}/flutter/engine/wiki#architecture-notes
 [Widget inspector]: /docs/development/tools/inspector
 [Flutter Inspector talk]: https://www.bilibili.com/video/av55813252/
@@ -766,7 +771,9 @@ and debugging in Flutter:
 [`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 [timeDilation]: {{site.api}}/flutter/scheduler/timeDilation.html
 [Show performance data]: /docs/development/tools/android-studio#show-performance-data
+[显示性能数据]: /docs/development/tools/android-studio#show-performance-data
 [Android Studio / IntelliJ]: /docs/development/tools/android-studio
+[在 Android Studio 或类 IntelliJ 里开发 Flutter 应用]: /docs/development/tools/android-studio
 [rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
 [`debugDumpRenderTree()`]: {{site.api}}/flutter/rendering/debugDumpRenderTree.html
 [`debugPaintLayerBordersEnabled`]: {{site.api}}/flutter/rendering/debugPaintLayerBordersEnabled.html
@@ -774,6 +781,7 @@ and debugging in Flutter:
 [`debugPrintMarkNeedsLayoutStack`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html
 [`debugPrintMarkNeedsPaintStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html
 [Testing Flutter apps]: /docs/testing
+[测试 Flutter 应用]: /docs/testing
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
 [Dart DevTools]: https://flutter.github.io/devtools
 [DevTools' docs]: https://flutter.github.io/devtools

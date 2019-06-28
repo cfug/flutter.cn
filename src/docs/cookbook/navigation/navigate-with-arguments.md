@@ -31,7 +31,7 @@ or
 [`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html)
 constructor.
 
-在 Flutter 中，你能通过提供额外的 `arguments` 给 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法方便地完成这个任务。通过使用 [`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html) 方法或 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 和 [`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html) 构造器中的 [`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html) 来获取参数。
+在 Flutter 中，你能通过提供额外的 `arguments` 给 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法方便地完成这个任务。通过使用 [`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html) 方法或 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 和 [`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html) 构造器中的 [`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html) 来获取参数。
 
 This recipe demonstrates how to pass arguments to a named route and read the
 arguments using `ModalRoute.of()` and `onGenerateRoute()` using the
@@ -95,7 +95,7 @@ the `ScreenArguments`. To access the `ScreenArguments`, use the
 [`ModalRoute.of()`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
 method. This method returns the current route with the arguments.
 
-接着，创建组件，从 `ScreenArguments` 提取 `title` 和 `message` 参数并展示。为了访问 `ScreenArguments`，可以使用 [`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html) 方法。这个方法返回的是当前路由及其携带的参数。
+接着，创建组件，从 `ScreenArguments` 提取 `title` 和 `message` 参数并展示。为了访问 `ScreenArguments`，可以使用 [`ModalRoute.of()`]({{site.api}}/flutter/widgets/ModalRoute/of.html) 方法。这个方法返回的是当前路由及其携带的参数。
 
 <!-- skip -->
 ```dart
@@ -151,7 +151,7 @@ Provide the arguments to the route via the `arguments` property. The
 `ExtractArgumentsScreen` extracts the `title` and `message` from these
 arguments.
 
-最后，在用户点击按钮后导航到 `ExtractArgumentsScreen`。在 [`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法的 `arguments` 属性里提供需要传递的参数。随后，`ExtractArgumentsScreen` 就可以从参数中提取 `title` 和 `message`。
+最后，在用户点击按钮后导航到 `ExtractArgumentsScreen`。在 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法的 `arguments` 属性里提供需要传递的参数。随后，`ExtractArgumentsScreen` 就可以从参数中提取 `title` 和 `message`。
 
 <!-- skip -->
 ```dart
@@ -183,7 +183,7 @@ extract the arguments inside an
 [`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
 function and pass them to a widget.
 
-除了直接从组件里提取参数，你也可以通过 [`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html) 函数提取参数，然后把参数传递给组件。
+除了直接从组件里提取参数，你也可以通过 [`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html) 函数提取参数，然后把参数传递给组件。
 
 The `onGenerateRoute()` function creates the correct route based on the given
 `RouteSettings`.

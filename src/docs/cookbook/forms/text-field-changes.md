@@ -71,7 +71,7 @@ as the
 property of the `TextField` or a `TextFormField`.
 
 另外一种更强大但是更复杂的方法是绑定 [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html) 作为 `TextField` 和
- `TextFormField` 的 [`controller`]({{site.api}}/flutter/material/TextField/controller.html) 属性
+ `TextFormField` 的 [`controller`]({{site.api}}/flutter/material/TextField/controller.html) 属性。
 
 To be notified when the text changes, listen to the controller using the
 [`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)

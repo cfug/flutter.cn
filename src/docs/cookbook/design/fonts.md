@@ -187,7 +187,7 @@ MaterialApp(
 For more information on themes, see the [Using Themes to share colors
 and font styles](/docs/cookbook/design/themes) recipe.
 
-有关主题的更多信息，请参阅 ["Using Themes to share colors and font styles"](/docs/cookbook/design/themes) 文档。
+有关主题的更多信息，请参阅文档：[使用 Themes 统一颜色和字体风格](/docs/cookbook/design/themes) 。
 
 ## 4. Use the font in a specific widget
 
@@ -237,7 +237,7 @@ extrapolate outlines for the requested weight and style.
 The Raleway and RobotoMono fonts were downloaded from [Google
 Fonts](https://fonts.google.com).
 
-Raleway 和 RobotoMono 字体是从 [GoogleFonts](https://fonts.google.com) 下载的。
+Raleway 和 RobotoMono 字体是从 [Google Fonts](https://fonts.google.com) 下载的。
 
 ### `pubspec.yaml`
 

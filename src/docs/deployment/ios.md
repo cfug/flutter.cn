@@ -358,7 +358,7 @@ TestFlight.
 1. Navigate to the TestFlight tab of your app's application details page on
    [App Store Connect][appstoreconnect_login]. 
    
-   在[App Store Connect][appstoreconnect_login]中，你的应用的详情页面跳转到 TestFlight Tab。
+   在 [App Store Connect][appstoreconnect_login]中，你的应用的详情页面跳转到 TestFlight Tab。
    
 1. Select **Internal Testing** in the sidebar. 
 

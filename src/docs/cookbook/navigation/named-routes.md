@@ -17,7 +17,7 @@ you learned how to navigate to a new screen by creating a new route and
 pushing it to the
 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html).
 
-在[导航到一个新页面和返回](/docs/cookbook/navigation/navigation-basics/)一节中，
+在 [导航到一个新页面和返回](/docs/cookbook/navigation/navigation-basics/) 一节中，
 我们通过创建一个新的路由并将它推到 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 类中学习到了如何导航到新的一个界面 (screen)。
 
 However, if you need to navigate to the same screen in many parts
@@ -188,7 +188,7 @@ To navigate back to the first screen, use the
 [`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
 function.
 
-为了能够跳转回第一个页面，我们可以使用 [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html) 方法。
+为了能够跳转回第一个页面，我们可以使用 [`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html) 方法。
 
 <!-- skip -->
 ```dart

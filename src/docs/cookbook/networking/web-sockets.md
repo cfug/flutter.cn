@@ -21,7 +21,7 @@ In this example, connect to a [test server provided by
 websocket.org](http://www.websocket.org/echo.html). The server sends
 back the same message you send to it.
 
-在这里，你可以连接一个[由 websocket.org 提供的测试服务器](http://www.websocket.org/echo.html)。该服务器只会返回你发送的信息。
+在这里，你可以连接一个 [由 websocket.org 提供的测试服务器](http://www.websocket.org/echo.html)。该服务器只会返回你发送的信息。
 
 This recipe uses the following steps:
 
@@ -107,7 +107,7 @@ The `WebSocketChannel` provides a
 [`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html)
 of messages from the server.
 
-`WebSocketChannel` 提供了一个来自服务器的消息 [`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html)。
+`WebSocketChannel` 提供了一个来自服务器的 [`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html) 类消息。
 
 The `Stream` class is a fundamental part of the `dart:async` package. It
 provides a way to listen to async events from a data source. Unlike `Future`,

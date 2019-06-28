@@ -66,7 +66,7 @@ contains a simple demo app that uses [Material Components][].
 
     在 **目标选择器**， 选择一个 Android 设备来运行程序。
     如果列表里没有可用设备，选择 **工具 > Android > AVD Manager
-    然后在这个窗口中创建一个新的虚拟机。更多详细介绍，参见[管理 AVDs][]。
+    然后在这个窗口中创建一个新的虚拟机。更多详细介绍，参见 [管理 AVDs][]。
     
  1. Click the run icon in the toolbar, or invoke the menu item **Run > Run**.
 

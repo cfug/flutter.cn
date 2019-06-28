@@ -980,7 +980,7 @@ Widget。通过一些额外的机制，这些数据结构还能使开发者轻�
   it will be updated twice. This redundant build is limited to the
   widget itself and does not impact its descendants.
 
-<sup><a name="a4">4</a></sup>  该规则有一个例外。正如[按需构建 Widget](#building-widgets-on-demand)
+<sup><a name="a4">4</a></sup>  该规则有一个例外。正如 [按需构建 Widget](#building-widgets-on-demand)
   中所描述的，由于布局约束的变化，一些 Widget 可以被重建。如果 Widget
   在同一帧中因与此无关的原因被标记为脏，同时也由于它受布局约束的影响，该 Widget
   将会被构建两次。该次冗余构建仅限于 Widget 自身，并不会影响其后代节点。

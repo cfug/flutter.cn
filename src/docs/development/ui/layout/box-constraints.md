@@ -10,7 +10,7 @@ short-title: 边界约束 (Box constraints)
   You might be directed to this page if the framework detects a problem
   involving box constraints.
 
-  被引导到本页面，是因为 Flutter 框架检测到你可能遇到涉及边界约束的问题。 
+  如果你被引导至本页面，是因为 Flutter 框架检测到你可能遇到涉及边界约束的问题。 
 
 {{site.alert.end}}
 
@@ -142,7 +142,7 @@ when the flex box is inside
 another flex box or inside a scrollable. If you do, you'll get an
 exception message pointing you at this document.
 
-在无边界约束条件下，它们试图让其子 widget 自适应这个给定的方向。在这种情况下，不能将子 widget 的`flex`属性设置为0（默认值）以外的任何值。这意味着在 widget 库中，当一个 flex 框嵌套在另外一个 flex 框或者嵌套在可滚动区域内时，不能使用 [`Expanded`]({{site.api}}/flutter/widgets/Expanded-class.html) 。如果这样做了，就会收到异常，该异常信息会把你引导到本页面。
+在无边界约束条件下，它们试图让其子 widget 自适应这个给定的方向。在这种情况下，不能将子 widget 的`flex`属性设置为 0（默认值）以外的任何值。这意味着在 widget 库中，当一个 flex 框嵌套在另外一个 flex 框或者嵌套在可滚动区域内时，不能使用 [`Expanded`]({{site.api}}/flutter/widgets/Expanded-class.html) 。如果这样做了，就会收到异常，该异常信息会把你引导到本页面。
 
 In the _cross_ direction, i.e. in their width for
 [`Column`]({{site.api}}/flutter/widgets/Column-class.html)

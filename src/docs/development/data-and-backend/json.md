@@ -140,7 +140,8 @@ when using reflection.
   [dartson]({{site.pub}}/packages/dartson) library uses runtime
   [reflection][], which makes it incompatible with Flutter.
 
-  **dartson 怎么样？**[dartson]({{site.pub}}/packages/dartson) 是一个使用运行时 [反射][] 的库，这让它不能兼容 Flutter。
+  **dartson 怎么样？**
+  [dartson]({{site.pub}}/packages/dartson) 是一个使用运行时 [反射][] 的库，这让它不能兼容 Flutter。
 {{site.alert.end}}
 
 Although you cannot use runtime reflection with Flutter, some libraries give

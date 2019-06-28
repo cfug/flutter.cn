@@ -26,7 +26,7 @@ Flutter 从 [React](https://reactjs.org) 中吸取灵感，通过现代化框架
   Flutter](/docs/development/ui/layout), and [Adding Interactivity
   to Your Flutter App](/docs/development/ui/interactive).
 
-  如果你想通过深入了解一些代码来更好地掌握 Flutter，请查阅 [Codelab: Flutter 布局基础教程](/docs/codelabs/layout-basics)、[Flutter 中的布局](/docs/development/ui/layout)和[为你的 Flutter 应用加入交互体验](/docs/development/ui/interactive)这三篇文章。
+  如果你想通过深入了解一些代码来更好地掌握 Flutter，请查阅 [Codelab: Flutter 布局基础教程](/docs/codelabs/layout-basics)、[Flutter 中的布局](/docs/development/ui/layout) 和 [为你的 Flutter 应用加入交互体验](/docs/development/ui/interactive) 这三篇文章。
 {{site.alert.end}}
 
 ## Hello world
@@ -266,7 +266,7 @@ between screens of your application. Using the
 [MaterialApp]({{api}}/material/MaterialApp-class.html) widget is entirely
 optional but a good practice.
 
-Flutter 提供了许多 widget，可帮助你构建遵循 Material Design 的应用。Material 应用以 [MaterialApp]({{api}}/material/MaterialApp-class.html) widget 开始，它在你的应用的底层下构建了许多有用的 widget。这其中包括 [Navigator]({{api}}/widgets/Navigator-class.html)，它管理由字符串标识的 widget 栈，也称为“routes”。[Navigator]({{api}}/widgets/Navigator-class.html)可以让你在应用的页面中平滑的切换。使用 [MaterialApp]({{api}}/material/MaterialApp-class.html) widget 不是必须的，但这是一个很好的做法。
+Flutter 提供了许多 widget，可帮助你构建遵循 Material Design 的应用。Material 应用以 [MaterialApp]({{api}}/material/MaterialApp-class.html) widget 开始，它在你的应用的底层下构建了许多有用的 widget。这其中包括 [Navigator]({{api}}/widgets/Navigator-class.html)，它管理由字符串标识的 widget 栈，也称为“routes”。[Navigator]({{api}}/widgets/Navigator-class.html)　可以让你在应用的页面中平滑的切换。使用 [MaterialApp]({{api}}/material/MaterialApp-class.html) widget 不是必须的，但这是一个很好的做法。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -800,7 +800,7 @@ By managing state in this way, you don't need to write separate code for
 creating and updating child widgets. Instead, you simply implement the build
 function, which handles both situations.
 
-当处理 `onCartChanged` 回调时，`_ShoppingListState` 通过增加或删除 `_shoppingCart` 中的产品来改变其内部状态。为了通知框架它改变了它的内部状态，需要调用 [setState]({{api}}/widgets/State-class.html#setState)。调用 [setState]({{api}}/widgets/State-class.html#setState) 会将该 widget 标记为“dirty”（脏的），并且计划在下次应用需要更新屏幕时重新构建它。如果在修改 widget 的内部状态后忘记调用 setState，框架将不知道这个 widget 是“dirty”(脏的)，并且可能不会调用 widget 的 [build()]({{api}}/widgets/StatelessWidget/build.html) 方法，这意味着用户界面可能不会更新以展示新的状态。通过以这种方式管理状态，你不需要编写用于创建和更新子 widget 的单独代码。相反，你只需实现 build 函数，它可以处理这两种情况。
+当处理 `onCartChanged` 回调时，`_ShoppingListState` 通过增加或删除 `_shoppingCart` 中的产品来改变其内部状态。为了通知框架它改变了它的内部状态，需要调用 [setState()]({{api}}/widgets/State-class.html#setState)。调用 [setState()]({{api}}/widgets/State-class.html#setState) 会将该 widget 标记为“dirty”（脏的），并且计划在下次应用需要更新屏幕时重新构建它。如果在修改 widget 的内部状态后忘记调用 setState，框架将不知道这个 widget 是“dirty”(脏的)，并且可能不会调用 widget 的 [build()]({{api}}/widgets/StatelessWidget/build.html) 方法，这意味着用户界面可能不会更新以展示新的状态。通过以这种方式管理状态，你不需要编写用于创建和更新子 widget 的单独代码。相反，你只需实现 build 函数，它可以处理这两种情况。
 
 ## Responding to widget lifecycle events
 

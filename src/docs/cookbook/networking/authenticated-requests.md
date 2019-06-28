@@ -47,7 +47,7 @@ Future<http.Response> fetchPost() {
 This example builds upon the [Fetching data from the
 internet](/docs/cookbook/networking/fetch-data) recipe.
 
-下面的例子是基于 [获取网络数据](/docs/cookbook/networking/fetch-data/) 中的方法编写的。
+下面的例子是基于 [获取网络数据](/docs/cookbook/networking/fetch-data) 中的方法编写的。
 
 ```dart
 import 'dart:async';

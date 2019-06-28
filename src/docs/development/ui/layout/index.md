@@ -210,16 +210,17 @@ A Flutter app is itself a widget, and most widgets have a [build()][]
 method. Instantiating and returning a widget in the app's `build()` method
 displays the widget.
 
-一个 Flutter app 本身就是一个 widget，大多数 widgets 都有一个 [build()][] 方法。 在 app 的 `build()` 方法中实例化和返回一个 widget 会让它显示出来。
-
-#### Material apps
+一个 Flutter app 本身就是一个 widget，大多数 widgets 都有一个 [build()][] 方法，
+在 app 的 `build()` 方法中实例化和返回一个 widget 会让它显示出来。
 
 For a `Material` app, you can use a [Scaffold][] widget; it provides a default
 banner, background color, and has API for adding drawers, snack bars, and bottom
 sheets. Then you can add the `Center` widget directly to the `body` property for
 the home page.
 
-对于 `Material` app，你可以使用 [Scaffold][] widget，它提供默认的 banner、背景颜色，还有用于添加抽屉、提示条和底部列表弹窗的 API。你可以将 `Center` widget 直接添加到主页 `body` 的属性中。
+对于 `Material` app，你可以使用 [Scaffold][] widget，它提供默认的 banner、背景颜色，
+还有用于添加抽屉、提示条和底部列表弹窗的 API。
+你可以将 `Center` widget 直接添加到主页 `body` 的属性中。
 
 <?code-excerpt path-base="layout/base"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
@@ -251,8 +252,10 @@ class MyApp extends StatelessWidget {
   customize existing widgets, or you can build your own set of custom
   widgets.
 
-  [Material library][] 实现了一些遵循 [Material
-  Design][] 原则的 widgets。在设计 UI 时，你可以只使用标准 [widgets library][] 中的 widgets，也可以使用 Material library 中的 widgets。你可以混合来自两个库的 widgets，可以自定义现有 widgets，也可以构建自己的一组自定义 widgets。
+  [Material 库][Material library] 实现了一些遵循 [Material
+  Design][] 原则的 widgets。在设计 UI 时，你可以只使用标准 [widgets 库][widgets library] 中的 widgets，
+  也可以使用 Material library 中的 widgets。你可以混合来自两个库的 widgets，
+  可以自定义现有 widgets，也可以构建自己的一组自定义 widgets。
 
 {{site.alert.end}}
 
@@ -293,7 +296,9 @@ color. If you want these features in a non-Material app, you have to build them
 yourself. This app changes the background color to white and the text to dark
 grey to mimic a Material app.
 
-默认情况下，非 Material app 不包含 `AppBar`、标题和背景颜色。如果你希望在非 Material app 中使用这些功能，则必须自己构建它们。以上 app 将背景颜色更改为白色，将文本更改为深灰色来模拟一个 Material app。
+默认情况下，非 Material app 不包含 `AppBar`、标题和背景颜色。
+如果你希望在非 Material app 中使用这些功能，则必须自己构建它们。
+以上 app 将背景颜色更改为白色，将文本更改为深灰色来模拟一个 Material app。
 
 <div class="row">
 <div class="col-md-6" markdown="1">
@@ -407,7 +412,13 @@ You'll implement some of Pavlova's layout code in
   to fit the available space.  For more information,
   see [Common layout widgets](#common-layout-widgets).
 
-  Row 和 Column 是水平和垂直布局的基本原始 widgets —— 这些低级 widgets 允许最大程度的自定义。Flutter 还提供专门的、更高级别的 widgets，可能可以直接满足需求。例如，和 Row 相比你可能更喜欢 [ListTile]({{api}}/material/ListTile-class.html)，这是一个易于使用的 widget，有属性可以设置头尾图标，最多可以显示 3 行文本；和 Column 相比你也可能更喜欢 [ListView]({{api}}/widgets/ListView-class.html)，这是一种类似于列的布局，但如果其内容太长导致可用空间不够容纳时会自动滚动。更多信息可以查看 [通用布局 widgets](#common-layout-widgets)。
+  Row 和 Column 是水平和垂直布局的基本原始 widgets —— 这些低级 widgets 允许最大程度的自定义。
+  Flutter 还提供专门的、更高级别的 widgets，可能可以直接满足需求。
+  例如，和 Row 相比你可能更喜欢 [ListTile]({{api}}/material/ListTile-class.html)，
+  这是一个易于使用的 widget，有属性可以设置头尾图标，最多可以显示 3 行文本；
+  和 Column 相比你也可能更喜欢 [ListView]({{api}}/widgets/ListView-class.html)，
+  这是一种类似于列的布局，但如果其内容太长导致可用空间不够容纳时会自动滚动。
+  更多信息可以查看 [通用布局 widgets](#common-layout-widgets)。
 
 {{site.alert.end}}
 
@@ -421,7 +432,8 @@ For a row, the main axis runs horizontally and the cross axis runs
 vertically. For a column, the main axis runs vertically and the cross
 axis runs horizontally.
 
-你可以使用 `mainAxisAlignment` 和 `crossAxisAlignment` 属性控制行或列如何对齐其子项。对于一行来说，主轴水平延伸，交叉轴垂直延伸。对于一列来说，主轴垂直延伸，交叉轴水平延伸。
+你可以使用 `mainAxisAlignment` 和 `crossAxisAlignment` 属性控制行或列如何对齐其子项。
+对于一行来说，主轴水平延伸，交叉轴垂直延伸。对于一列来说，主轴垂直延伸，交叉轴水平延伸。
 
 <div class="mb-2 text-center">
   {% asset ui/layout/row-diagram.png class="mb-2 mw-100"
@@ -447,7 +459,10 @@ classes offer a variety of constants for controlling alignment.
   You don't need to do this if you're referencing online images using
   `Image.network`.
 
-  当你将图像添加到项目中时，你需要更新 pubspec 文件来访问它们 —— 本例使用 `Image.asset` 来显示图像。更多信息可以查看本例的 [pubspec.yaml 文件]({{examples}}/layout/row_column/pubspec.yaml)，或查阅 [添加资源和图片](/docs/development/ui/assets-and-images) 这篇文档。如果你正在使用 `Image.network` 引用在线图像，则不需要这些操作。
+  当你将图像添加到项目中时，你需要更新 pubspec 文件来访问它们 —— 本例使用 `Image.asset` 来显示图像。
+  更多信息可以查看本例的 [pubspec.yaml 文件]({{examples}}/layout/row_column/pubspec.yaml)，
+  或文档：[添加资源和图片](/docs/development/ui/assets-and-images)。
+  如果你正在使用 `Image.network` 引用在线图像，则不需要这些操作。
 
 {{site.alert.end}}
 
@@ -865,18 +880,24 @@ or use the Search box in the [API reference docs]({{api}}).
 Also, the widget pages in the API docs often make suggestions
 about similar widgets that might better suit your needs.
 
-Flutter 有一个丰富的布局 widget 仓库。里面有很多经常会用到的布局 widget。目的是为了让你更快的上手，而不是被一个完整的列表吓跑。关于其他有用的 widget 的信息，可以参考 [Widget 目录][]，或者使用 [API 参考文档]({{api}}) 中的搜索框。而且，API 文档中的 widget 页面中经常会给出一些关于相似的 widget 哪个会更适合你的建议。
+Flutter 有一个丰富的布局 widget 仓库，里面有很多经常会用到的布局 widget。
+目的是为了让你更快的上手，而不是被一个完整的列表吓跑。
+关于其他有用的 widget 的信息，可以参考 [Widget 目录][]，
+或者使用 [API 参考文档]({{api}}) 中的搜索框。
+而且，API 文档中的 widget 页面中经常会给出一些关于相似的 widget 哪个会更适合你的建议。
 
 The following widgets fall into two categories: standard widgets from the
 [widgets library][], and specialized widgets from the [Material library][]. Any
 app can use the widgets library but only Material apps can use the Material
 Components library.
 
-下面的 widget 会分为两类：[widgets library][] 中的标准 widget 和 [Material library][] 中的 widget。任何 app 都可以使用 widget 库，但是 Material app 只能使用 Material 组件库。
+下面的 widget 会分为两类：[widgets 库][widgets library] 中的标准 widgets 和
+[Material 库][Material library] 中的 widgets。
+任何 app 都可以使用 widget 库，但是 Material 库中的组件只能在 Material app 中使用。
 
 ### Standard widgets
 
-### 标准 widget
+### 标准 widgets
 
 * [Container](#container): Adds padding, margins, borders, background color, or
   other decorations to a widget.
@@ -897,8 +918,6 @@ Components library.
 
 ### Material widgets
 
-### Material widget
-
 * [Card](#card): Organizes related info into a box with rounded corners and a
   drop shadow.
 
@@ -911,14 +930,13 @@ Components library.
 
 ### Container
 
-### Container
-
 Many layouts make liberal use of [Container][]s to separate widgets using
 padding, or to add borders or margins. You can change the device's background
 by placing the entire layout into a `Container` and changing its background
 color or image.
 
-许多布局都可以随意的用 [Container][]，它可以将使用了 padding 或者增加了 borders/margins 的 widget 分开。你可以通过将整个布局放到一个 `Container` 中，并且改变它的背景色或者图片，来改变设备的背景。
+许多布局都可以随意的用 [Container][]，它可以将使用了 padding 或者增加了 borders/margins 的 widget 分开。
+你可以通过将整个布局放到一个 `Container` 中，并且改变它的背景色或者图片，来改变设备的背景。
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
@@ -948,9 +966,9 @@ color or image.
 </div>
 
 #### Examples (Container)
+{:.no_toc}
 
 #### 示例 (Container)
-
 {:.no_toc}
 
 This layout consists of a column with two rows, each containing 2 images. A
@@ -1028,9 +1046,9 @@ automatically scrolls.
 使用 [GridView][] 将 widget 作为二维列表展示。`GridView` 提供两个预制的列表，或者你可以自定义网格。当 `GridView` 检测到内容太长而无法适应渲染盒时，它就会自动支持滚动。
 
 #### Summary (GridView)
+{:.no_toc}
 
 #### 摘要 (GridView)
-
 {:.no_toc}
 
 * Lays widgets out in a grid
@@ -1074,9 +1092,9 @@ automatically scrolls.
 {{site.alert.end}}
 
 #### Examples (GridView)
+{:.no_toc}
 
 #### 示例 (GridView)
-
 {:.no_toc}
 
 <div class="row">
@@ -1139,9 +1157,9 @@ its content is too long for its render box.
 [ListView]({{api}}/widgets/ListView-class.html)，一个和列很相似的 widget，当内容长于自己的渲染盒时，就会自动支持滚动。
 
 #### Summary (ListView)
+{:.no_toc}
 
 #### 摘要 (ListView)
-
 {:.no_toc}
 
 * A specialized [Column][] for organizing a list of boxes
@@ -1161,9 +1179,9 @@ its content is too long for its render box.
   比 `Column` 的配置少，使用更容易，并且支持滚动
 
 #### Examples (ListView)
+{:.no_toc}
 
 #### 示例 (ListView)
-
 {:.no_toc}
 
 <div class="row">
@@ -1245,9 +1263,9 @@ The widgets can completely or partially overlap the base widget.
 可以使用 [Stack][] 在基础 widget（通常是图片） 上排列 widget。widget 可以完全或者部分覆盖基础 widget。
 
 #### Summary (Stack)
+{:.no_toc}
 
 #### 摘要 (Stack)
-
 {:.no_toc}
 
 * Use for widgets that overlap another widget
@@ -1268,9 +1286,9 @@ The widgets can completely or partially overlap the base widget.
   你可以编辑超出渲染框的子项
 
 #### Examples (Stack)
+{:.no_toc}
 
 #### 示例 (Stack)
-
 {:.no_toc}
 
 <div class="row">
@@ -1344,7 +1362,10 @@ list, grid, or other widget that supports multiple children. By default, a
 `Card` shrinks its size to 0 by 0 pixels. You can use [SizedBox][] to constrain
 the size of a card.
 
-[Material library][] 中的 [Card][] 包含相关有价值的信息，几乎可以由任何 widget 组成，但是通常和 [ListTile][] 一起使用。`Card` 只有一个子项，这个子项可以是列、行、列表、网格或者其他支持多个子项的 widget。默认情况下，`Card` 的大小是 0x0 像素。你可以使用 [SizedBox][] 控制 card 的大小。
+[Material 库][Material library] 中的 [Card][] 包含相关有价值的信息，
+几乎可以由任何 widget 组成，但是通常和 [ListTile][] 一起使用。
+`Card` 只有一个子项，这个子项可以是列、行、列表、网格或者其他支持多个子项的 widget。
+默认情况下，`Card` 的大小是 0x0 像素。你可以使用 [SizedBox][] 控制 card 的大小。
 
 In Flutter, a `Card` features slightly rounded corners and a drop shadow, giving
 it a 3D effect. Changing a `Card`'s `elevation` property allows you to control
@@ -1357,9 +1378,9 @@ the drop shadow entirely.
 在 Flutter 中，`Card` 有轻微的圆角和阴影来使它具有 3D 效果。改变 `Card` 的 `elevation` 属性可以控制阴影效果。例如，把 elevation 设置为 24，可以从视觉上更多的把 `Card` 抬离表面，使阴影变得更加分散。关于支持的 elevation 的值的列表，可以查看 [Material guidelines][Material Design] 中的 [Elevation][]。使用不支持的值则会使阴影无效。
 
 #### Summary (Card)
+{:.no_toc}
 
 #### 摘要 (Card)
-
 {:.no_toc}
 
 * Implements a [Material card][]
@@ -1385,12 +1406,12 @@ the drop shadow entirely.
 
 * From the [Material library][]
 
-  来自 [Material library][]
+  来自 [Material 库][Material library]
 
 #### Examples (Card)
+{:.no_toc}
 
 #### 示例 (Card)
-
 {:.no_toc}
 
 <div class="row">
@@ -1471,12 +1492,12 @@ easy way to create a row containing up to 3 lines of text and optional leading
 and trailing icons. `ListTile` is most commonly used in [Card][] or
 [ListView][], but can be used elsewhere.
 
-[ListTile][] 是 [Material library][] 中专用的行 widget，它可以很轻松的创建一个包含三行文本以及可选的行前和行尾图标的行。`ListTile` 在 [Card][] 或者 [ListView][] 中最常用，但是也可以在别处使用。
+[ListTile][] 是 [Material 库][Material library] 中专用的行 widget，它可以很轻松的创建一个包含三行文本以及可选的行前和行尾图标的行。`ListTile` 在 [Card][] 或者 [ListView][] 中最常用，但是也可以在别处使用。
 
 #### Summary (ListTile)
+{:.no_toc}
 
 #### 摘要 (ListTile)
-
 {:.no_toc}
 
 * A specialized row that contains up to 3 lines of text and optional icons
@@ -1489,12 +1510,12 @@ and trailing icons. `ListTile` is most commonly used in [Card][] or
 
 * From the [Material library][]
 
-  来自 [Material library][]
+  来自 [Material 库][Material library]
 
 #### Examples (ListTile)
+{:.no_toc}
 
 #### 示例 (ListTile)
-
 {:.no_toc}
 
 <div class="row">

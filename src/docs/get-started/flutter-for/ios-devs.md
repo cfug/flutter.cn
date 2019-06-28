@@ -141,7 +141,7 @@ state attached.
 describing does not depend on anything other than the initial configuration
 information in the widget.
 
-当某个 widget 不需要依赖任何别的初始配置来对这个 widget 进行描述时，`StatefulWidget` 会
+当某个 widget 不需要依赖任何别的初始配置来对这个 widget 进行描述时，`StatelessWidgets` 会
 是很有用的。
 
 For example, in iOS, this is similar to placing a `UIImageView` with

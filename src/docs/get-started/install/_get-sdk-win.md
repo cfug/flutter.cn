@@ -10,17 +10,17 @@
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds, see the [SDK
-    archive](/docs/development/tools/sdk/archive) page.
+    releases](/docs/development/tools/sdk/releases) page.
 
-    要查看其他发行通道和以往的版本，请参阅[SDK 归档](/docs/development/tools/sdk/archive)页面。
+    要查看其他发行通道和以往的版本，请参阅 [SDK 版本列表](/docs/development/tools/sdk/releases) 页面。
 
  1. Extract the zip file and place the contained `flutter` in the desired installation location for the Flutter SDK (eg. `C:\src\flutter`; do not install Flutter in a directory like `C:\Program Files\` that requires elevated privileges).
     
     将压缩包解压，然后把其中的 `flutter` 目录整个放在你预想的 Flutter SDK 安装目录中（比如 `C:\src\flutter`；请勿将该目录放在一些需要额外操作权限的目录，比如 `C:\Program Files\`）。
 
- 1. Locate the file `flutter_console.bat` inside the `flutter` directory. Start it by double-clicking.
+ 1. Locate the file *flutter_console.bat* inside the `flutter` directory. Start it by double-clicking.
 
-    找到 `flutter` 目录中的 `flutter_console.bat` 文件，双击执行该批处理脚本。
+    找到 `flutter` 目录中的 **flutter_console.bat** 文件，双击执行该批处理脚本。
 
 You are now ready to run Flutter commands in the Flutter Console!
 
@@ -28,7 +28,7 @@ You are now ready to run Flutter commands in the Flutter Console!
 
 To update an existing version of Flutter, see [Upgrading Flutter](/docs/development/tools/sdk/upgrading).
 
-要升级本地已安装的 Flutter，请参阅[升级 Flutter](/docs/development/tools/sdk/upgrading)。
+要升级本地已安装的 Flutter，请参阅 [升级 Flutter](/docs/development/tools/sdk/upgrading)。
 
 ### Update your path
 
@@ -41,11 +41,11 @@ If you wish to run Flutter commands in the regular Windows console, take these s
 * From the Start search bar, type 'env' and select **Edit environment
   variables for your account**
 
-  在开始菜单的搜索功能键入“env”，然后选择**编辑当前用户的环境变量**
+  在开始菜单的搜索功能键入“env”，然后选择 **编辑当前用户的环境变量**
   
 * Under **User variables** check if there is an entry called **Path**:
 
-  在 **User variables** 一栏中，检查是否有 **Path** 这个条目：
+  在 **用户变量** 一栏中，检查是否有 **Path** 这个条目：
   
   * If the entry does exist, append the full path to `flutter\bin` using `;` as a separator from existing values.
 

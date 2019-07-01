@@ -364,14 +364,16 @@ are correct, especially:
   `application`：编辑 [`application`][applicationtag]
   标签中的 `android:label` 来设置 app 的最终名字。
 
-* `uses-permission`: Remove the `android.permission.INTERNET`
-  [permission][permissiontag] if your application code does not need
-  Internet access. The standard template includes this tag to enable
-  communication between Flutter tools and a running app.
+* `uses-permission`: Add the `android.permission.INTERNET`
+  [permission][permissiontag] if your application code needs Internet
+  access. The standard template does not include this tag but allows
+  Internet access during development to enable communication between
+  Flutter tools and a running app.
   
-  `uses-permission`：如果 app 不需要访问 Internet，移除
-  `android.permission.INTERNET`[权限][permissiontag]。
-  标准模版里包含了这个权限，是为了允许 Flutter 工具和正在运行的 app 之间的通信。
+  `uses-permission`：如果你的代码需要互联网交互，请加入
+  `android.permission.INTERNET` [权限标签][permissiontag]。
+  标准开发模版里并未加入这个权限（但是 Flutter debug 模版加入了这个权限），
+  加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信，详情见 [Issue 22139]()。
 
 ## Reviewing the build configuration
 
@@ -707,3 +709,4 @@ This doc need to assign to a new translator.
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
+[Issue 22139]: {{site.github}}/flutter/flutter/issues/22139

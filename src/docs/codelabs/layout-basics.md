@@ -186,9 +186,10 @@ children 如何在垂直方向排列。默认值是 `CrossAxisAlignment.center`�
 * `CrossAxisAlignment.start`<br>
   Children are aligned at the start of the `Row`'s vertical space
   (by default, the top is considered to be the start,
-  though you can change that via the `verticalDirection` propert).
-  
-  将所有的 children 向 `Row` 竖直方向的 start 方向排列（如果是从上到下，你可以修改 `verticalDirection` 来改变）。
+  though you can change that via the `verticalDirection` property).
+
+  将所有的 children 向 `Row` 竖直方向的 start 方向排列
+  （如果是从上到下，你可以修改 `verticalDirection` 来改变）。
 
 * `CrossAxisAlignment.end`<br>
   Children are aligned at the end of the `Row`'s
@@ -301,7 +302,7 @@ their children:
    
    然后它把剩下的空间根据 children 的 flex 值分给它的可伸缩的 children，
    这些可伸缩的 children 可以使用他们提供的部分或者全部的空间。
-   
+
 1. At that point, the `Row` knows how big all of its
    children are, and can align them using the same axis
    size and alignment properties you've seen so far.
@@ -577,9 +578,9 @@ Now you can add the `Icon`:
       
       你可以使用任何 icon resource， `Icons.account_circle`看起来就不错。
       
-    * Set the `Icon`'s `size`.
+    * Set the `Icon`'s `size` to 50.
     
-      设置 `Icon` 的大小。
+      把 `Icon` 的大小设置为 50。
 
 <iframe src="{{site.dartpad}}/experimental/embed-new.html?id=684e599476eef2ec4b4508e6b2186c03&fw=true&split=60" width="100%" height="800px"></iframe>
 
@@ -603,7 +604,7 @@ Then, finish up your new `Column` with these steps:
 
 然后按照以下步骤完成你的新 `Column`：
 
-* Set the `Column`'s mainAxisSize to min
+* Set the `Column`'s `mainAxisSize` to min
 
   设置 `Column` 的 mainAxisSize 为最小
   

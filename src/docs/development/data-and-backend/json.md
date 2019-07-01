@@ -264,7 +264,7 @@ itself. With this new approach, you can decode a user easily.
 <!-- skip -->
 ```dart
 Map userMap = jsonDecode(jsonString);
-var user = new User.fromJson(userMap);
+var user = User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');

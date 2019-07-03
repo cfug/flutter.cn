@@ -35,6 +35,7 @@ Flutter 的魅力之一是其开源开放，Flutter 由 Google 主导，与全�
 - @chunlea
 - @DongXYZ
 - @Dosimz
+- @Dong09
 - @duxinfeng
 - @ElderJames
 - @EvilLee6

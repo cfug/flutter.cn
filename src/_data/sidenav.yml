@@ -27,7 +27,7 @@
         - title: 声明式 UI 介绍
           permalink: /docs/get-started/flutter-for/declarative
     - title: Dart 语言概览
-      permalink: https://www.dartlang.org/guides/language
+      permalink: https://www.dart.dev/guides/language
 
 - title: 教程和样例代码
   children:

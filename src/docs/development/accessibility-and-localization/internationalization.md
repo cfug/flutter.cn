@@ -82,10 +82,14 @@ support for other languages, an application must specify additional
 MaterialApp properties, and include a separate package called
 `flutter_localizations`.  As of April 2019, this package supports about
 52 languages.
+If you want your app to work smoothly on iOS then you have to add the 
+package `flutter_cupertino_localizations` as well.
 
 默认情况下，Flutter 只提供美式英语的本地化。如果想要添加其他语言，你的应用必须指定额外的 MaterialApp
 属性并且添加一个单独的 package，叫做 `flutter_localizations`。
 截至到 2019 年 4 月份，这个 package 已经支持大约 52 种语言。
+如果你希望在 iOS 上顺利运行，
+你需要额外加入 `flutter_cupertino_localizations` 这个 package。
 
 To use flutter_localizations, add the package as a dependency to your
 `pubspec.yaml` file:
@@ -98,6 +102,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_cupertino_localizations: ^1.0.1
 {% endprettify %}
 
 Next, import the flutter_localizations library and specify
@@ -107,12 +112,14 @@ Next, import the flutter_localizations library and specify
 
 {% prettify dart %}
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_cupertino_localizations/flutter_cupertino_localizations.dart';
 
 MaterialApp(
  localizationsDelegates: [
    // ... app-specific localization delegate[s] here
    GlobalMaterialLocalizations.delegate,
    GlobalWidgetsLocalizations.delegate,
+   GlobalCupertinoLocalizations.delegate,
  ],
  supportedLocales: [
     const Locale('en'), // English

@@ -100,8 +100,8 @@ Wondering how to access your favorite F-Key shortcuts on the Chrome OS keyboard?
 在 Chrome OS 的键盘上如何进入使用 F-Key 功能键？
 
 * Press the search key along with 1 through = to access F1–F12.
+ 
   按住搜索按钮和数字 1 到 = 按钮来对应 F1 到 F12。
-
 
 
 For the current versions of Chrome OS, only certain ports from Crostini are 
@@ -119,8 +119,6 @@ $ flutter run --observatory-port=8080
 Then, navigate to http://localhost:8000/?port=8080 in your Chrome browser.
 
 然后在浏览器中打开地址 http://localhost:8000/?port=8080
-
-#### Flutter Chrome OS Lint Analysis
 
 #### Flutter Chrome OS Lint Analysis
 

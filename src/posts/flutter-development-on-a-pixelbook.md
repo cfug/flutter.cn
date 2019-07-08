@@ -5,7 +5,7 @@ title: 在 Pixelbook 上开发 Flutter 应用
 
 文 / Tim Sneath，谷歌 Dart & Flutter 产品组产品经理
 
-译 / 王鑫磊, CFUG 社区译者，贡献者，博客 [xinlei.dev](https://xinlei.dev)
+译 / 王鑫磊，CFUG 社区译者，贡献者，博客 [xinlei.dev](https://xinlei.dev)
 
 原文：[ProAndroidDev Medium 专栏](https://proandroiddev.com/flutter-development-on-a-pixelbook-dde984a3fc1e)
 

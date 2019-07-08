@@ -153,7 +153,7 @@ Lastly, open Visual Studio Code and install the [Flutter extension](https://mark
 
 You’re mostly there! Running `flutter doctor -v` should now show that everything is set, except that there are no connected devices. We’ll fix that in the final step.
 
-你马上就要完成了！运行 `flutter doctor -v`,现在应该显示所有设置都已完成，除了 ` no connected devices` 这项。我们将会在最后解决这个问题。
+你马上就要完成了！运行 `flutter doctor -v`，现在应该显示所有设置都已完成，除了 ` no connected devices` 这项，我们将会在最后解决这个问题。
 
 ## Configuring the Pixelbook as a developer device
 

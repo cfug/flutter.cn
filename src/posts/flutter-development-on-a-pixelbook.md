@@ -17,7 +17,7 @@ title: 在 Pixelbook 上开发 Flutter 应用
 
 > 提示：本文已在 2019 年 1 月更新以匹配较新版本的 ChromeOS。然而，随着 Google 在持续不断对其优化，你可能会看到一些部分与本文描述内容有微小的差异。如果你在本文的最新版本中看到任何不清楚或错误的内容，请留下备注或评论，我会修正它。
 
-In a somewhat underrated talk at Google I/O 2018, [Emilie Roberts](https://medium.com/@emilieroberts) announced some cool new Chrome OS features that make [a Pixelbook to do Android development](https://developer.android.com/topic/arc/studio). With the new [Linux on Chromebooks](https://blog.google/products/chromebooks/linux-on-chromebooks/) feature, you can now [run Android Studio directly on a Pixelbook](https://developer.android.com/topic/arc/studio), [debug over a wi-fi connection to an Android device](https://developer.android.com/studio/command-line/adb#wireless) or even run the resultant Android app locally on the Pixelbook. This is all thanks to the [Crostini](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md) project, which provides a containerized Linux instance on the device.
+In a somewhat underrated talk at Google I/O 2018, [Emilie Roberts](https://medium.com/@emilieroberts) announced some cool new Chrome OS features that make [a Pixelbook to do Android development](https://developer.android.google.cn/topic/arc/studio). With the new [Linux on Chromebooks](https://blog.google/products/chromebooks/linux-on-chromebooks/) feature, you can now [run Android Studio directly on a Pixelbook](https://developer.android.google.cn/topic/arc/studio), [debug over a wi-fi connection to an Android device](https://developer.android.google.cn/studio/command-line/adb#wireless) or even run the resultant Android app locally on the Pixelbook. This is all thanks to the [Crostini](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md) project, which provides a containerized Linux instance on the device.
 
 在 Google I/O 2018 演讲中，[Emilie Roberts](https://medium.com/@emilieroberts) 介绍了 Chrome OS 中一些很酷的新特性，主题是[在 Pixelbook 上进行 Android 开发](https://developer.android.google.cn/topic/arc/studio) 。借助 [Linux on Chromebooks](https://blog.google/products/chromebooks/linux-on-chromebooks/) 这一新功能，你现在可以[直接在 Pixelbook 上运行 Android Studio](https://developer.android.google.cn/topic/arc/studio)，并[通过 Wi-Fi 连接调试 Android 设备](https://developer.android.google.cn/studio/command-line/adb#wireless)，甚至可以在 Pixelbook 上直接运行生成的 Android 应用程序。这一切都得感谢  [Crostini](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md) 计划，它为设备提供了一个 Linux 容器实例。
 
@@ -25,7 +25,7 @@ What is even more cool is that all this works just as well with Flutter, which m
 
 更酷的是这一切都能在 Flutter 上表现得同样出色。这意味着你可以直接在设备上进行所有开发，甚至不需要模拟器来测试你的应用程序。虽然这有一点实验性质，但它对于那些不需要加入苹果生态系统的 Flutter 开发者来说变得相当有吸引力。
 
-Here’s a screenshot of this working, taken directly from a Pixelbook running Visual Studio Code locally and connected through the [Android Device Bridge](https://developer.android.com/studio/command-line/adb) to a Flutter app also running locally. This is not an emulator — the Flutter app is being executed directly on the Pixelbook (check out the target platform in the bottom-right corner of the Visual Studio Code status bar).
+Here’s a screenshot of this working, taken directly from a Pixelbook running Visual Studio Code locally and connected through the [Android Device Bridge](https://developer.android.google.cn/studio/command-line/adb) to a Flutter app also running locally. This is not an emulator — the Flutter app is being executed directly on the Pixelbook (check out the target platform in the bottom-right corner of the Visual Studio Code status bar).
 
 下面的截图来自一台正在运行 Visual Studio Code 的 Pixelbook，而且通过 [Android Device Bridge](https://developer.android.google.cn/studio/command-line/adb) 连接的 Flutter 应用程序同样也运行在本地。这可不是什么模拟器——Flutter 应用能够在 Pixelbook 上直接运行（请看 Visual Studio代码状态栏右下角的目标平台）。
 
@@ -77,13 +77,13 @@ Let’s also install some other utilities and dependencies you’ll need at vari
 
 `$ sudo apt install libglu1-mesa lib32stdc++6`
 
-Because you’re running in a container, the easiest way to download into the container instance in current builds is to just use `wget`. (You can download them using Chrome and [then transfer them through an SSH tunnel](https://developer.android.com/topic/arc/studio#mount_linux_files), but that’s a little more laborious.) It’s easier to download and install Flutter with the following commands:
+Because you’re running in a container, the easiest way to download into the container instance in current builds is to just use `wget`. (You can download them using Chrome and [then transfer them through an SSH tunnel](https://developer.android.google.cn/topic/arc/studio#mount_linux_files), but that’s a little more laborious.) It’s easier to download and install Flutter with the following commands:
 
 由于你正在运行一个容器，在当前版本中下载到容器实例的最简单方法是使用 `wget`（你也可以使用 Chrome 下载它们并通过 SSH 隧道发送它们，但那会更加复杂）。你能够通过以下命令很轻松地下载并安装 Flutter。
 
 ```
-$ curl -O https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.0.0-stable.tar.xz 
-$ tar xf flutter_linux_v1.0.0-stable.tar.xz
+$ curl -O https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.5.4-hotfix.2-stable.tar.xz 
+$ tar xf flutter_linux_v1.5.4-hotfix.2-stable.tar.xz
 $ export PATH=`pwd`/flutter/bin:$PATH
 ```
 
@@ -99,9 +99,9 @@ Now it’s time to install an IDE or two. Both of the primary supported IDEs for
 
 现在，是时候安装一两个 IDE 了。Flutter 主要支持的两个 IDE （Android Studio 和 Visual Studio Code）都在 Chrome OS Linux 支持版上运行得相当完美。但是，无论你是否计划将Android Studio 作为 IDE，你都需要安装它以便拥有 Android 的构建工具。
 
-[Android Studio can be downloaded directly](https://developer.android.com/studio/) from the website, but because Linux runs in a separate container than the Chrome browser, you’ll have to manually move it before you can access it from your terminal. Hold down the Shift key while dragging to move it from the Downloads directory to the Linux files node (which represents the home `~` directory in the Linux container).
+[Android Studio can be downloaded directly](https://developer.android.google.cn/studio/) from the website, but because Linux runs in a separate container than the Chrome browser, you’ll have to manually move it before you can access it from your terminal. Hold down the Shift key while dragging to move it from the Downloads directory to the Linux files node (which represents the home `~` directory in the Linux container).
 
-你能够在官网上直接下载 [Android Studio](https://developer.android.com/studio/)，但是由于 Linux 运行在与 Chrome 浏览器不同的容器中，所以你必须手动移动它才能在终端进行访问。拖住时同时按住 Shift 健，将其从 Download 目录移动到 Linux 文件节点中（它在 Linux 容器中代表了 home `~` 目录）。
+你能够在官网上直接下载 [Android Studio](https://developer.android.google.cn/studio/)，但是由于 Linux 运行在与 Chrome 浏览器不同的容器中，所以你必须手动移动它才能在终端进行访问。拖住时同时按住 Shift 健，将其从 Download 目录移动到 Linux 文件节点中（它在 Linux 容器中代表了 home `~` 目录）。
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-development-on-a-pixelbook/download_android_sdk_to_linux_env.png){:width="85%"}
 
@@ -163,9 +163,9 @@ We need to take care of a few things so that the Pixelbook is itself recognized 
 
 我们需要处理一些事情，以便让 Pixelbook 被 Android 识别为开发设备。
 
-First up is to modify the Chrome OS firewall to [allow incoming ADB connections from the Linux side of the house](https://developer.android.com/topic/arc/#configure-the-firewall). From a Chrome window, press Control+Alt+T to start the Chrome OS terminal and then type `shell` to start a shell within the terminal. If `shell` doesn’t work, then chances are you forgot to set your device into developer mode as described earlier.
+First up is to modify the Chrome OS firewall to [allow incoming ADB connections from the Linux side of the house](https://developer.android.google.cn/topic/arc/#configure-the-firewall). From a Chrome window, press Control+Alt+T to start the Chrome OS terminal and then type `shell` to start a shell within the terminal. If `shell` doesn’t work, then chances are you forgot to set your device into developer mode as described earlier.
 
-首先是修改 Chrome OS 的防火墙，以允许来自 Linux 端传入 ADB 链接。在一个 Chrome 窗口中点击 Control+Alt+T 来开启 Chrome OS 的终端，然后输入 `shell` 来启动一个终端中的 shell。如果 `shell` 不起作用，那么你可能是忘记了将设备设为开发者模式，我们前面提到过这一点。
+首先是修改 Chrome OS 的防火墙，以[允许来自 Linux 端传入 ADB 链接](https://developer.android.google.cn/topic/arc/#configure-the-firewall)。在一个 Chrome 窗口中点击 Control+Alt+T 来开启 Chrome OS 的终端，然后输入 `shell` 来启动一个终端中的 shell。如果 `shell` 不起作用，那么你可能是忘记了将设备设为开发者模式，我们前面提到过这一点。
 
 Now run a few `sudo` commands:
 

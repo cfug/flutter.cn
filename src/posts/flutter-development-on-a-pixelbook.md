@@ -14,7 +14,7 @@ title: 在 Pixelbook 上开发 Flutter 应用
 ## Chrome OS 的新特性能够让您无需模拟器就能开发并测试 Flutter 应用程序。
 
 > Note: this article was updated in January 2019 to match newer ChromeOS builds. But as Google continues to work on making this easier, it’s possible that you’ll see minor changes from what is shown here. Please leave a note or a comment if you see anything that’s unclear or broken in the latest builds, and I’ll fix it.
-
+>
 > 提示：本文已在 2019 年 1 月更新以匹配较新版本的 ChromeOS。然而，随着 Google 在持续不断对其优化，你可能会看到一些部分与本文描述内容有微小的差异。如果你在本文的最新版本中看到任何不清楚或错误的内容，请留下备注或评论，我会修正它。
 
 In a somewhat underrated talk at Google I/O 2018, [Emilie Roberts](https://medium.com/@emilieroberts) announced some cool new Chrome OS features that make [a Pixelbook to do Android development](https://developer.android.google.cn/topic/arc/studio). With the new [Linux on Chromebooks](https://blog.google/products/chromebooks/linux-on-chromebooks/) feature, you can now [run Android Studio directly on a Pixelbook](https://developer.android.google.cn/topic/arc/studio), [debug over a wi-fi connection to an Android device](https://developer.android.google.cn/studio/command-line/adb#wireless) or even run the resultant Android app locally on the Pixelbook. This is all thanks to the [Crostini](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md) project, which provides a containerized Linux instance on the device.
@@ -82,7 +82,7 @@ Because you’re running in a container, the easiest way to download into the co
 由于你正在运行一个容器，在当前版本中下载到容器实例的最简单方法是使用 `wget`（你也可以使用 Chrome 下载它们并通过 SSH 隧道发送它们，但那会更加复杂）。你能够通过以下命令很轻松地下载并安装 Flutter。
 
 ```
-$ curl -O https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.5.4-hotfix.2-stable.tar.xz 
+$ curl -O https://storage.flutter-io.cn/flutter_infra/releases/stable/linux/flutter_linux_v1.5.4-hotfix.2-stable.tar.xz 
 $ tar xf flutter_linux_v1.5.4-hotfix.2-stable.tar.xz
 $ export PATH=`pwd`/flutter/bin:$PATH
 ```
@@ -245,6 +245,6 @@ You’ll probably want to adjust the screen DPI settings a little to get more re
 
 您可能希望稍微调整屏幕 DPI 设置以获得更多空间。有些应用程序在这方面上比其他应用程序响应更好;特别是我发现一些 Android Studio 对话框对于给定的 DPI 设置来说太小了。
 
-However, in general, this seems very useful, particularly if you’re willing to live on the edge as the various teams finish building out these features. And if you’ve got a Pixelbook and have been waiting for a way to learn Flutter or try building apps, it’s well worth giving this a go! Have fun and let us know how you get on: you’ll find the team on Twitter at [@flutterio](https://twitter.com/flutterio).
+However, in general, this seems very useful, particularly if you’re willing to live on the edge as the various teams finish building out these features. And if you’ve got a Pixelbook and have been waiting for a way to learn Flutter or try building apps, it’s well worth giving this a go! Have fun and let us know how you get on: you’ll find the team on Twitter at [@FlutterDev](https://twitter.com/flutterdev).
 
 然而总的来说，这似乎非常有用，特别是如果你愿意使用这些由各个团队完成的最新特性的话。如果你有 Pixelbook 并一直在等待一个学习 Flutter 或尝试构建应用的方法的话，它绝对值得你试一试！祝你玩得开心，欢迎告诉我们你的故事：你可以在 Twitter 上的 [@flutterio](https://twitter.com/flutterio) 中找到我们团队。

@@ -1,6 +1,8 @@
 ---
 title: Flutter Development on a Pixelbook
 title: 在 Pixelbook 上开发 Flutter 应用
+description: Newly added features in Chrome OS that let you develop and test a Flutter application without a simulator or emulator.
+description: Chrome OS 的新特性能够让您无需模拟器就能开发并测试 Flutter 应用程序。
 ---
 
 文 / Tim Sneath，谷歌 Dart & Flutter 产品组产品经理
@@ -8,10 +10,6 @@ title: 在 Pixelbook 上开发 Flutter 应用
 译 / 王鑫磊，CFUG 社区译者，贡献者，博客 [xinlei.dev](https://xinlei.dev)
 
 原文：[ProAndroidDev Medium 专栏](https://proandroiddev.com/flutter-development-on-a-pixelbook-dde984a3fc1e)
-
-## Newly added features in Chrome OS that let you develop and test a Flutter application without a simulator or emulator.
-
-## Chrome OS 的新特性能够让您无需模拟器就能开发并测试 Flutter 应用程序。
 
 > Note: this article was updated in January 2019 to match newer ChromeOS builds. But as Google continues to work on making this easier, it’s possible that you’ll see minor changes from what is shown here. Please leave a note or a comment if you see anything that’s unclear or broken in the latest builds, and I’ll fix it.
 >
@@ -35,9 +33,9 @@ In the rest of this article, I’m going to provide step-by-step instructions to
 
 接下来我将在这篇文章中分步说明如何在你自己的设备上运行它。Linux on Chromebook 支持现在已经进入 beta 阶段，但它需要[一台支持 Crostini 的设备](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md#Supported-Now)，包括 [Pixelbook](https://store.google.com/product/google_pixelbook)。 但也可能会出现一些失灵的情况，这都因人而异。当然，ChromeOS 设备的性能特征将与典型的 iPhone 或 Android 设备的性能特征相差较大。我们也不能保证每个 Flutter 场景都能在这个平台上正确运行。这算是一个足够的警告了吧 ；）
 
-## Getting the basics installed
+### Getting the basics installed
 
-## 基础的环境安装
+### 基础的环境安装
 
 For the full experience of debugging Flutter, you’ll currently need your device to be in [developer mode](http://www.chromium.org/chromium-os/chromiumos-design-docs/developer-mode), which removes some of the sandbox protections that would be available to a typical consumer and enables you to sideload untrusted applications that aren’t on the Play Store. On a Pixelbook, you can enter developer mode by holding down the `Esc` and `Refresh` keys while you press the power button. The system will reboot into the recovery screen (which prompts you to insert a USB stick). Ignore the text on the screen and hit Ctrl+D, which will initiate the process after a further warning.
 
@@ -63,9 +61,9 @@ On my machine, this took a couple of minutes to complete; when finished, there w
 
 我的机器花费了几分钟的时间来完成它。完成后，你会看到应用程序启动器上有一个闪亮的新终端应用程序图标，我立即把它固定到任务栏。
 
-## Installing Flutter
+### Installing Flutter
 
-## 安装 Flutter
+### 安装 Flutter
 
 Now for the fun bits. Launch the terminal, and use apt to make sure you have the very latest Linux bits by running `sudo apt update && sudo apt upgrade`.
 
@@ -91,9 +89,9 @@ Now you should be able to run `flutter doctor` and it should give you a clean bi
 
 现在你应该可以运行 `flutter doctor` 命令了，它会为 Flutter 提供一个干净的运行环境，即使它会在这个阶段抱怨缺乏必要的工具或设备。
 
-## Installing Visual Studio Code and Android Studio
+### Installing Visual Studio Code and Android Studio
 
-## 安装 Visual Studio Code 和 Android Studio
+### 安装 Visual Studio Code 和 Android Studio
 
 Now it’s time to install an IDE or two. Both of the primary supported IDEs for Flutter (Android Studio and Visual Studio Code) work perfectly well within the Chrome OS Linux support. Regardless of whether you plan to use Android Studio as your IDE, however, you’re going to want to install it so that you have the Android build tools.
 
@@ -155,9 +153,9 @@ You’re mostly there! Running `flutter doctor -v` should now show that everythi
 
 你马上就要完成了！运行 `flutter doctor -v`，现在应该显示所有设置都已完成，除了 ` no connected devices` 这项，我们将会在最后解决这个问题。
 
-## Configuring the Pixelbook as a developer device
+### Configuring the Pixelbook as a developer device
 
-## 将 Pixelbook 配置为开发者设备
+### 将 Pixelbook 配置为开发者设备
 
 We need to take care of a few things so that the Pixelbook is itself recognized by Android as a development device.
 
@@ -213,9 +211,9 @@ Run the following command to connect to the local Android instance:
 
 `$ adb connect 100.115.92.2:5555`
 
-## Putting all the pieces together
+### Putting all the pieces together
 
-## 汇总
+### 汇总
 
 With luck, `flutter doctor` should give you a clean bill of health. You can now create and run a Flutter app, for instance:
 
@@ -237,9 +235,9 @@ Like any other Android app running on a Pixelbook, you can restore the window fr
 
 与其他在 Pixelbook 上运行的 Android 应用程序一样，你可以从最大化的窗口恢复为正常大小，这时候应用程序将会看上去和手机上运行的外观非常相似：除了它是直接运行在你的 Pixelbook 上的！
 
-## Recommendations and Caveats
+### Recommendations and Caveats
 
-## 建议及注意事项
+### 建议及注意事项
 
 You’ll probably want to adjust the screen DPI settings a little to get more real estate. Some apps respond better than others to this; in particular, I found that a couple of the Android Studio dialogs were way too small for the given DPI setting.
 

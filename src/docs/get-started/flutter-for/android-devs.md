@@ -6,9 +6,9 @@ description: 学习如何把 Android 开发的经验应用到 Flutter 应用的�
 ---
 
 This document is meant for Android developers looking to apply their
-existing Android knowledge to build mobile apps with Flutter. If you understand
-the fundamentals of the Android framework then you can use this document as a
-jump start to Flutter development.
+existing Android knowledge to build mobile apps with Flutter.
+If you understand the fundamentals of the Android framework then you
+can use this document as a jump start to Flutter development.
 
 这篇文档旨在帮助 Android 开发者利用既有的 Android 知识来通过 Flutter 开发移动应用。
 如果你了解 Android 框架的基本知识，你就可以使用这篇文档作为 Flutter 开发的快速入门。
@@ -33,19 +33,19 @@ that are most relevant to your needs.
 
 ## 视图 (Views)
 
-### What is the equivalent of a `View` in Flutter?
+### What is the equivalent of a View in Flutter?
 
-### `视图` 在 Flutter 中的对应概念是什么？
+### 视图在 Flutter 中的对应概念是什么？
 
 {{site.alert.secondary}}
 
-How is react-style, or _declarative_, programming different than the
-traditional imperative style?
-For a comparison, see [Introduction to declarative
-UI](/docs/get-started/flutter-for/declarative).
+  How is react-style, or _declarative_, programming different than the
+  traditional imperative style?
+  For a comparison, see [Introduction to declarative UI][].
 
-响应式或者声明式的编程和传统的命令式风格有什么不同呢？
-作为对比，请查阅 [声明式 UI 介绍](/docs/get-started/flutter-for/declarative)。
+  响应式或者声明式的编程和传统的命令式风格有什么不同呢？
+  作为对比，请查阅 [声明式 UI 介绍][Introduction to declarative UI]。
+  
 {{site.alert.end}}
 
 In Android, the `View` is the foundation of everything that shows up on the
@@ -78,31 +78,29 @@ into actual view objects under the hood.
 Flutter 的 widget 很轻量，部分原因在于它们的不可变性。因为它们本身既非视图，也不会直接绘制
 任何内容，而是 UI 及其底层创建真正视图对象的语义的描述。
 
-Flutter includes the [Material Components]({{site.material}}/develop/flutter)
-library. These are widgets that implement the
-[Material Design guidelines]({{site.material}}/design). Material Design is a
-flexible design system [optimized for all
-platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+Flutter includes the [Material Components][] library.
+These are widgets that implement the
+[Material Design guidelines][]. Material Design is a
+flexible design system [optimized for all platforms][],
 including iOS.
 
-Flutter 支持 [Material Components]({{site.material}}/develop/flutter) 库。
-它提供实现了 [Material Design 设计规范]({{site.material}}/design) 的 widgets。
-Meterial Design 是一套 [为所有平台优化]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines)（包括 iOS）的灵活的设计系统。
+Flutter 支持 [Material Components][] 库。
+它提供实现了 [Material Design 设计规范][Material Design guidelines] 的 widgets。
+Meterial Design 是一套 [为所有平台优化][optimized for all platforms]
+（包括 iOS）的灵活的设计系统。
 
 
 But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino
-widgets](/docs/development/ui/widgets/cupertino)
-to produce an interface that looks like
-[Apple's iOS design language](https://developer.apple.com/design/resources/).
+For example, on iOS, you can use the [Cupertino widgets][]
+to produce an interface that looks like [Apple's iOS design language][].
 
 Flutter 非常灵活、有表达能力，它可以实现任何设计语言。例如，在 iOS 平台上，你可以使用 
 [Cupertino widgets](/docs/development/ui/widgets/cupertino) 创建 
 [Apple 的 iOS 设计语言](https://developer.apple.com/design/resources/) 风格的界面。
 
-### How do I update `Widget`s?
+### How do I update widgets?
 
-### 如何更新 `Widget`？
+### 如何更新 widgets？
 
 In Android, you update your views by directly mutating them. However,
 in Flutter, `Widget`s are immutable and are not updated directly, instead
@@ -125,16 +123,16 @@ information in the object.
 `StatelessWidget` 用于你描述的用户界面的一部分不依赖于除了对象中的配置信息以外的任何东西的场景。
 
 For example, in Android, this is similar to placing an `ImageView`
-with your logo. The logo is not going to change during runtime, so
-use a `StatelessWidget` in Flutter.
+with your logo. The logo is not going to change during runtime,
+so use a `StatelessWidget` in Flutter.
 
 例如在 Android 中，这就像显示一个展示图标的 `ImageView`。这个图标在运行过程中不会改变，
 所以在 Flutter 中就使用 `StatelessWidget`。
 
 If you want to dynamically change the UI based on data received
 after making an HTTP call or user interaction then you have to work
-with `StatefulWidget` and tell the Flutter framework that the widget’s `State`
-has been updated so it can update that widget.
+with `StatefulWidget` and tell the Flutter framework that the widget’s
+`State` has been updated so it can update that widget.
 
 如果你想要根据 HTTP 请求返回的数据或者用户的交互来动态地更新界面，那么你就必须使用 `StatefulWidget`，
 并告诉 Flutter 框架 Widget 的`状态` (`State`) 更新了，以便 Flutter 可以更新这个 Widget。
@@ -157,7 +155,7 @@ still be stateless if it doesn't itself react to change.
 
 The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
-the `Text` widget you'll find it subclasses `StatelessWidget`.
+the `Text` widget you'll find that it subclasses `StatelessWidget`.
 
 下面的例子展示了如何使用 `StatelessWidget`。`Text` Widget 是一个普通的 `StatelessWidget`。
 如果你查看 `Text` Widget 的实现，你会发现它继承自 `StatelessWidget`。
@@ -479,11 +477,13 @@ For more information, see
 the [Animations tutorial](/docs/development/ui/animations/tutorial),
 and the [Animations overview](/docs/development/ui/animations).
 
-获取更多内容，请查看 [动画 Widget](/docs/development/ui/widgets/animation)，[动画指南](/docs/development/ui/animations/tutorial) 以及 [动画概览](/docs/development/ui/animations)。
+获取更多内容，请查看 [动画 Widget](/docs/development/ui/widgets/animation)，
+[动画指南](/docs/development/ui/animations/tutorial) 以及
+[动画概览](/docs/development/ui/animations)。
 
-### How do I use a `Canvas` to draw/paint?
+### How do I use a Canvas to draw/paint?
 
-### 如何使用 `Canvas` 进行绘制？
+### 如何使用 Canvas 进行绘制？
 
 In Android, you would use the `Canvas` and `Drawable`s to draw images and shapes
 to the screen. Flutter has a similar `Canvas` API as well, since it is based
@@ -501,12 +501,10 @@ the canvas.
 Flutter 有两个帮助你用画布 (canvas) 进行绘制的类：`CustomPaint` 和 `CustomPainter`，后者
 可以实现自定义的绘制算法。
 
-To learn how to implement a signature painter in Flutter, see Collin's answer on
-[StackOverflow][].
+To learn how to implement a signature painter in Flutter,
+see Collin's answer on [StackOverflow][].
 
 如果想学习在 Flutter 中如何实现一个签名功能，可以查看 Collin 在 [StackOverflow][] 上的回答。
-
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 {% prettify dart %}
 import 'package:flutter/material.dart';
@@ -566,14 +564,14 @@ to override and implement methods that achieve the desired behavior.
 在 Android 中，一般通过继承 `View` 类，或者使用已有的视图类，再覆写或实现可以达到
 特定效果的方法。
 
-In Flutter, build a custom widget by
-[composing](/docs/resources/technical-overview#everythings-a-widget)
+In Flutter, build a custom widget by [composing][]
 smaller widgets (instead of extending them).
-It is somewhat similar to implementing a custom
-`ViewGroup` in Android, where all the building blocks are already existing, but
-you provide a different behavior&mdash;for example, custom layout logic.
+It is somewhat similar to implementing a custom `ViewGroup`
+in Android, where all the building blocks are already existing,
+but you provide a different behavior&mdash;for example,
+custom layout logic.
 
-在 Flutter 中，通过 [组合](/docs/resources/technical-overview#everythings-a-widget) 
+在 Flutter 中，通过 [组合][composing] 
 更小的 Widget 来创建自定义 Widget（而不是继承它们）。这和 Android 中实现一个自定义的 `ViewGroup` 
 有些类似，所有的构建 UI 的模块代码都在手边，不过由你提供不同的行为&mdash;例如，自定义布局 (layout) 逻辑。
 
@@ -612,13 +610,13 @@ Widget build(BuildContext context) {
 
 ## Intents
 
-### What is the equivalent of an `Intent` in Flutter?
+### What is the equivalent of an Intent in Flutter?
 
 ### `Intent` 在 Flutter 中的对应概念是什么？
 
 In Android, there are two main use cases for `Intent`s: navigating between
-Activities, and communicating with components. Flutter, on the other hand, does
-not have the concept of intents, although you can still start intents
+Activities, and communicating with components. Flutter, on the other hand,
+does not have the concept of intents, although you can still start intents
 through native integrations
 (using [a plugin]({{site.pub}}/packages/android_intent)).
 
@@ -692,8 +690,8 @@ integration (or use an [existing plugin]({{site.pub}}/flutter/)).
 `Intent` 的另一种常见的使用场景是调用外部的组件，例如相机或文件选择器。对于这种情况，你需要创建
 一个原生平台集成（或者使用 [已有的插件]({{site.pub}}/flutter/))。
 
-To learn how to build a native platform integration, see
-[Developing Packages and Plugins](/docs/development/packages-and-plugins/developing-packages).
+To learn how to build a native platform integration,
+see [Developing packages and plugins][].
 
 想要学习如何创建一个原生平台集成，请查看 
 [开发包和插件](/docs/development/packages-and-plugins/developing-packages)。
@@ -860,13 +858,13 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-### What is the equivalent of `startActivityForResult()`?
+### What is the equivalent of startActivityForResult()?
 
 ### `startActivityForResult()` 的对应方法是什么？
 
 The `Navigator` class handles routing in Flutter and is used to get
-a result back from a route that you have pushed on the stack. This is done
-by `await`ing on the `Future` returned by `push()`.
+a result back from a route that you have pushed on the stack.
+This is done by `await`ing on the `Future` returned by `push()`.
 
 `Navigator` 类负责 Flutter 的导航，并用来接收被压栈的 route 的返回值。这是通过
 在 `push()` 后返回的 `Future` 上 `await` 来实现的。
@@ -893,7 +891,7 @@ Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 
 ## 异步 UI
 
-### What is the equivalent of `runOnUiThread()` in Flutter?
+### What is the equivalent of runOnUiThread() in Flutter?
 
 ### `runOnUiThread()` 在 Flutter 中的对应方法是什么？
 
@@ -1088,9 +1086,10 @@ multiple CPU cores to do long-running or computationally intensive tasks.
 
 Isolates are separate execution threads that do not share any memory
 with the main execution memory heap. This means you can’t access variables from
-the main thread, or update your UI by calling `setState()`. Unlike Android threads,
-Isolates are true to their name, and cannot share memory (in the form of static fields,
-for example).
+the main thread, or update your UI by calling `setState()`.
+Unlike Android threads,
+Isolates are true to their name, and cannot share memory
+(in the form of static fields, for example).
 
 Isolate 是独立执行的线程，不会和主执行内存堆分享内存。这意味着你无法访问主线程的变量，或者调用 `setState()` 
 更新 UI。不同于 Android 中的线程，Isolate 如其名所示，它们无法分享内存（例如通过静态变量的形式）。
@@ -1105,7 +1104,7 @@ loadData() async {
   ReceivePort receivePort = ReceivePort();
   await Isolate.spawn(dataLoader, receivePort.sendPort);
 
-  // The 'echo' isolate sends its SendPort as the first message
+  // The 'echo' isolate sends its SendPort as the first message.
   SendPort sendPort = await receivePort.first;
 
   List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
@@ -1115,7 +1114,7 @@ loadData() async {
   });
 }
 
-// The entry point for the isolate
+// The entry point for the isolate.
 static dataLoader(SendPort sendPort) async {
   // Open the ReceivePort for incoming messages.
   ReceivePort port = ReceivePort();
@@ -1141,9 +1140,11 @@ Future sendReceive(SendPort port, msg) {
 }
 {% endprettify %}
 
-Here, `dataLoader()` is the `Isolate` that runs in its own separate execution thread.
-In the isolate you can perform more CPU intensive processing (parsing a big JSON, for
-example), or perform computationally intensive math, such as encryption or signal processing.
+Here, `dataLoader()` is the `Isolate` that runs in its own separate
+execution thread.  In the isolate you can perform more CPU intensive
+processing (parsing a big JSON, for example),
+or perform computationally intensive math,
+such as encryption or signal processing.
 
 这里的 `dataLoader()` 就是运行在自己独立执行线程内的 `Isolate`。在 Isolate 中你可以执行更多的 CPU 密集
 型操作（例如解析一个大的 JSON 数据），或者执行计算密集型的数学运算，例如加密或信号处理。
@@ -1436,9 +1437,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### 在哪里放置分辨率相关的图片文件？
 
-While Android treats resources and assets as distinct items, Flutter apps have
-only assets. All resources that would live in the `res/drawable-*`
-folders on Android, are placed in an assets folder for Flutter.
+While Android treats resources and assets as distinct items,
+Flutter apps have only assets. All resources that would live
+in the `res/drawable-*` folders on Android,
+are placed in an assets folder for Flutter.
 
 虽然 Android 区分对待资源文件 (resources) 和资产文件 (assets)，但是 Flutter 应用只有资产文件 (assets)。
 所有原本在 Android 中应该放在 `res/drawable-*` 文件夹中的资源文件，在 Flutter 中都放在一个 
@@ -1447,8 +1449,7 @@ assets 文件夹中。
 Flutter follows a simple density-based format like iOS. Assets might be `1.0x`,
 `2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
 are logical pixels, which are basically the same as device-independent pixels.
-The so-called
-[`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
+The so-called [devicePixelRatio][]
 expresses the ratio of physical pixels in a single logical pixel.
 
 Flutter 遵循一个简单的类似 iOS 的密度相关的格式。文件可以是一倍 (`1.0x`)、两倍 (`2.0x`)、三倍 (`3.0x`) 
@@ -1494,15 +1495,16 @@ and are accessed on the native side using Android's `AssetManager`:
 val flutterAssetStream = assetManager.open("flutter_assets/assets/my_flutter_asset.png")
 {% endprettify %}
 
-As of Flutter beta 2, Flutter still cannot access native resources, nor it can
-access native assets.
+As of Flutter beta 2, Flutter still cannot access native resources,
+nor it can access native assets.
 
 然而对于 Flutter beta 2，Flutter 依然无法访问原生资源文件(resources)，也无法访问原生资产文件(assets)。
 
-To add a new image asset called `my_icon.png` to our Flutter project, for example,
-and deciding that it should live in a folder we arbitrarily called `images`, you
-would put the base image (1.0x) in the `images` folder, and all the other
-variants in sub-folders called with the appropriate ratio multiplier:
+To add a new image asset called `my_icon.png` to our Flutter project,
+for example, and deciding that it should live in a folder we
+arbitrarily called `images`, you would put the base image (1.0x)
+in the `images` folder, and all the other variants in sub-folders
+called with the appropriate ratio multiplier:
 
 如果你要向 Flutter 项目中添加一个新的叫 `my_icon.png` 的图片资源，并且将其放入我们随便起名的叫做 
 `images` 的文件夹中，你需要将基础图片(1.0x)放在 `images` 文件夹中，并将其它倍数的图片放入以特定
@@ -1567,8 +1569,8 @@ Then in your code, you can access your strings as such:
 Text(Strings.welcomeMessage)
 {% endprettify %}
 
-Flutter has basic support for accessibility on Android, though this feature is
-a work in progress.
+Flutter has basic support for accessibility on Android,
+though this feature is a work in progress.
 
 Flutter 在 Android 上提供无障碍的基本支持，但是这个功能当下仍在开发。
 
@@ -1582,10 +1584,10 @@ localization.
 
 ### Gradle 文件的对应物是什么？我该如何添加依赖？
 
-In Android, you add dependencies by adding to your Gradle build script. Flutter
-uses Dart's own build system, and the Pub package manager.
-The tools delegate the building of the native Android and iOS wrapper apps to the
-respective build systems.
+In Android, you add dependencies by adding to your Gradle build script.
+Flutter uses Dart's own build system, and the Pub package manager.
+The tools delegate the building of the native Android and iOS
+wrapper apps to the respective build systems.
 
 在 Android 中，你在 Gradle 构建脚本中添加依赖。Flutter 使用 Dart 自己的构建系统以及 Pub 包管理器。
 构建工具会将原生 Android 和 iOS 壳应用的构建代理给对应的构建系统。
@@ -1593,7 +1595,8 @@ respective build systems.
 While there are Gradle files under the `android` folder in your Flutter project,
 only use these if you are adding native dependencies needed for
 per-platform integration. In general, use `pubspec.yaml` to declare
-external dependencies to use in Flutter. A good place to find Flutter packages is
+external dependencies to use in Flutter.
+A good place to find Flutter packages is
 [Pub]({{site.pub}}/flutter/packages/).
 
 虽然在你的 Flutter 项目的 `android` 文件夹下有 Gradle 文件，但是它们只用于给对应平台的集成添加原生依赖。
@@ -1608,18 +1611,18 @@ external dependencies to use in Flutter. A good place to find Flutter packages i
 
 ### Activity 和 Fragment 在 Flutter 中的对应概念是什么？
 
-In Android, an `Activity` represents a single focused thing the user can do. A
-`Fragment` represents a behavior or a portion of user interface. Fragments
-are a way to modularize your code, compose sophisticated user interfaces for
-larger screens, and help scale your application UI. In Flutter, both of these
-concepts fall under the umbrella of `Widget`s.
+In Android, an `Activity` represents a single focused thing the user can do.
+A `Fragment` represents a behavior or a portion of user interface.
+Fragments are a way to modularize your code, compose sophisticated
+user interfaces for larger screens, and help scale your application UI.
+In Flutter, both of these concepts fall under the umbrella of `Widget`s.
 
 在 Android 中，一个 `Activity` 代表用户可以完成的一件独立任务。一个 `Fragment` 代表一个
 行为或者用户界面的一部分。Fragment 用于模块化你的代码，为大屏组合复杂的用户界面，并适配应用的界面。
 在 Flutter 中，这两个概念都对应于 `Widget`。
 
-To learn more about the UI for building Activities and Fragements, see
-the community-contributed medium article,
+To learn more about the UI for building Activities and Fragements,
+see the community-contributed medium article,
 [Flutter For Android Developers : How to design an Activity UI in
 Flutter]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48).
 
@@ -1656,25 +1659,26 @@ The observable lifecycle events are:
 
 * `inactive` — The application is in an inactive state and is not receiving user
   input. This event only works on iOS, as there is no equivalent event to map to
-  on Android
+  on Android.
 
   `inactive` — 应用处于非活跃状态并且不接收用户输入。这个事件只适用于 iOS，Android 上没有对应
-  的事件
+  的事件；
 
-* `paused` — The application is not currently visible to the user, not responding
-  to user input, and running in the background. This is equivalent to `onPause()`
-  in Android
+* `paused` — The application is not currently visible to the user,
+  not responding to user input, and running in the background.
+  This is equivalent to `onPause()` in Android.
 
-  `paused` — 应用当前对用户不可见，无法响应用户输入，并运行在后台。这个事件对应于 Android 中的 `onPause()`
+  `paused` — 应用当前对用户不可见，无法响应用户输入，并运行在后台。这个事件对应于 Android 中的 `onPause()`；
 
-* `resumed` — The application is visible and responding to user input. This is
-  equivalent to `onPostResume()` in Android
+* `resumed` — The application is visible and responding to user input.
+  This is equivalent to `onPostResume()` in Android.
 
-  `resumed` — 应用对用户可见并且可以响应用户的输入。这个事件对应于 Android 中的 `onPostResume()`
+  `resumed` — 应用对用户可见并且可以响应用户的输入。这个事件对应于 Android 中的 `onPostResume()`；
 
-* `suspending` — The application is suspended momentarily. This is equivalent
-  to `onStop` in Android; it is not triggered on iOS as there is no equivalent
-  event to map to on iOS
+* `suspending` — The application is suspended momentarily.
+  This is equivalent to `onStop` in Android;
+  it is not triggered on iOS as there is no equivalent
+  event to map to on iOS.
 
   `suspending` — 应用暂时被挂起。这个事件对应于 Android 中的 `onStop`；iOS 上由于没有对应的事件，
   因此不会触发此事件
@@ -1682,26 +1686,26 @@ The observable lifecycle events are:
 For more details on the meaning of these states, see the
 [`AppLifecycleStatus` documentation][].
 
-想要了解这些状态含义的更多细节，请查看 [`AppLifecycleStatus` 文档][]
+想要了解这些状态含义的更多细节，请查看 [`AppLifecycleStatus` 文档][`AppLifecycleStatus` documentation]
 
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
-
-[`AppLifecycleStatus` 文档]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
-
-As you might have noticed, only a small minority of the Activity lifecycle events
-are available; while `FlutterActivity` does capture almost all the activity lifecycle
-events internally and send them over to the Flutter engine, they're mostly shielded
-away from you. Flutter takes care of starting and stopping the engine for you, and
-there is little reason for needing to observe the activity lifecycle on the Flutter
-side in most cases. If you need to observe the lifecycle to acquire or release any
-native resources, you should likely be doing it from the native side, at any rate.
+As you might have noticed, only a small minority of the Activity
+lifecycle events are available; while `FlutterActivity` does
+capture almost all the activity lifecycle events internally and
+send them over to the Flutter engine, they're mostly shielded
+away from you. Flutter takes care of starting and stopping the
+engine for you, and there is little reason for needing to
+observe the activity lifecycle on the Flutter side in most cases.
+If you need to observe the lifecycle to acquire or release any
+native resources, you should likely be doing it from the native side,
+at any rate.
 
 你可能已经注意到，只有一小部分的 Activity 生命周期事件是可用的；虽然 `FlutterActivity` 在内部
 捕获了几乎所有的 Activity 生命周期事件并将它们发送给 Flutter 引擎，但是它们大部分都向你屏蔽了。
 Flutter 为你管理引擎的启动和停止，在大部分情况下几乎没有理由要在 Flutter 一端监听 Activity 的生命周期。
 如果你需要通过监听生命周期来获取或释放原生的资源，你无论如何都应该在原生一端做这件事。
 
-Here's an example of how to observe the lifecycle status of the containing activity:
+Here's an example of how to observe the lifecycle status of the
+containing activity:
 
 下面的例子展示了如何监听容器 Activity 的生命周期状态：
 
@@ -1760,8 +1764,8 @@ void main() {
 
 In Android, a LinearLayout is used to lay your widgets out
 linearly&mdash;either horizontally or vertically.
-In Flutter, use the Row widget or Column
-widget to achieve the same result.
+In Flutter, use the Row or Column
+widgets to achieve the same result.
 
 在 Android 中，LinearLayout 用于线性布局 widget 的&mdash;水平或者垂直。
 在 Flutter 中，使用 Row 或者 Column Widget 来实现相同的效果。
@@ -1804,9 +1808,9 @@ children.
   }
 {% endprettify %}
 
-To learn more about building linear layouts, see the community contributed medium
-article [Flutter For Android Developers : How to design LinearLayout in
-Flutter?]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a).
+To learn more about building linear layouts,
+see the community contributed medium article
+[Flutter For Android Developers : How to design LinearLayout in Flutter?][].
 
 如果想学习更多的构建线性布局的内容，请阅读社区贡献的 Medium 文章 
 [给 Android 开发者的 Flutter 指南：如何在 Flutter 中设计线性布局？]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a)
@@ -1828,9 +1832,8 @@ constructors on how the children are laid out relative to the parent.
 你可以通过组合使用 Column、Row 和 Stack Widget 实现 RelativeLayout 的效果。
 你还可以在 Widget 构造器内声明孩子相对父亲的布局规则。
 
-For a good example of building a RelativeLayout in Flutter, see Collin's
-answer on
-[StackOverflow]({{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter).
+For a good example of building a RelativeLayout in Flutter,
+see Collin's answer on [StackOverflow][].
 
 Collin 在 [StackOverflow]({{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter) 
 上的回答是一个在 Flutter 中构建相对布局的好例子。
@@ -1844,8 +1847,9 @@ device has a smaller screen than your content, it scrolls.
 
 在 Android 中，使用 ScrollView 布局 widget&mdash;如果用户的设备屏幕比应用的内容区域小，用户可以滑动内容。
 
-In Flutter, the easiest way to do this is using the ListView widget. This might
-seem like overkill coming from Android, but in Flutter a ListView widget is
+In Flutter, the easiest way to do this is using the ListView widget.
+This might seem like overkill coming from Android,
+but in Flutter a ListView widget is
 both a ScrollView and an Android ListView.
 
 在 Flutter 中，实现这个功能的最简单的方法是使用 ListView Widget。从 Android 的角度看，这样做可能
@@ -1977,15 +1981,15 @@ Using the GestureDetector, you can listen to a wide range of Gestures such as:
 
 * Long press
 
-  * `onLongPress` - A pointer has remained in contact with the screen at the same
-    location for a long period of time.
+  * `onLongPress` - A pointer has remained in contact with the screen at
+    the same location for a long period of time.
 
     `onLongPress` - 指针在屏幕的同一位置保持了一段较长时间的触摸状态。
 
 * Vertical drag
 
-  * `onVerticalDragStart` - A pointer has contacted the screen and might begin to
-    move vertically.
+  * `onVerticalDragStart` - A pointer has contacted the screen and
+    might begin to move vertically.
 
     `onVerticalDragStart` - 指针已经触摸屏幕并可能开始垂直移动。
 
@@ -2014,11 +2018,12 @@ Using the GestureDetector, you can listen to a wide range of Gestures such as:
     `onHorizontalDragUpdate` - 触摸屏幕的指针在水平方向移动了更多的距离。
 
   * `onHorizontalDragEnd` - A pointer that was previously in contact with the
-    screen and moving horizontally is no longer in contact with the screen and was
-    moving at a specific velocity when it stopped contacting the screen.
+    screen and moving horizontally is no longer in contact with the
+    screen and was moving at a specific velocity when it stopped
+    contacting the screen.
     
-    `onHorizontalDragEnd` - 之前和屏幕接触并水平移动的指针不再继续和屏幕接触，并且在和屏幕停止
-    接触的时候以一定的速度移动。
+    `onHorizontalDragEnd` - 之前和屏幕接触并水平移动的指针不再继续和屏幕接触，
+    并且在和屏幕停止接触的时候以一定的速度移动。
 
 The following example shows a `GestureDetector` that rotates the Flutter logo
 on a double tap:
@@ -2080,8 +2085,8 @@ visual glitches and memory issues.
 adapter 返回的每一行内容。然后，你需要确保回收了每一行视图，否则，你会遇到各种奇怪的
 界面和内存问题。
 
-Due to Flutter's immutable widget pattern, you pass a List of
-Widgets to your ListView, and Flutter takes care of making sure
+Due to Flutter's immutable widget pattern, you pass a list of
+widgets to your ListView, and Flutter takes care of making sure
 that scrolling is fast and smooth.
 
 因为 Flutter Widget 不可变的特点，你需要向 ListView 传入一组 Widget，
@@ -2215,8 +2220,8 @@ In Flutter, if you were to update the list of widgets inside a `setState()`,
 you would quickly see that your data did not change visually.
 This is because when `setState()` is called, the Flutter rendering engine
 looks at the widget tree to see if anything has changed. When it gets to your
-`ListView`, it performs a `==` check, and determines that the two `ListView`s are the
-same. Nothing has changed, so no update is required.
+`ListView`, it performs a `==` check, and determines that the two
+`ListView`s are the same. Nothing has changed, so no update is required.
 
 在 Flutter 中，如果你准备在 `setState()` 里更新一组 Widget，你很快会发现你的数据并没有
 更新到界面上。这是因为当 `setState()` 被调用的时候，Flutter 渲染引擎会查看 Widget 树
@@ -2728,8 +2733,8 @@ Flutter 中是在顶层 Widget 上声明主题。
 To take full advantage of Material Components in your app, you can declare a top
 level widget `MaterialApp` as the entry point to your application. MaterialApp
 is a convenience widget that wraps a number of widgets that are commonly
-required for applications implementing Material Design. It builds upon a WidgetsApp by
-adding Material specific functionality.
+required for applications implementing Material Design.
+It builds upon a WidgetsApp by adding Material specific functionality.
 
 为了在应用中利用好 Material 组件，你可以在应用中声明一个顶层 Widget `MeterialApp` 作为入口。
 MaterialApp 是一个包装了一系列 Widget 的为你给予便利的 Widget，而这些 Widget 通常是实现 
@@ -2827,6 +2832,25 @@ In Flutter, access this functionality using the
 [SQFlite]({{site.pub}}/packages/sqflite) plugin.
 
 在 Flutter 中，使用 [SQFlite]({{site.pub}}/packages/sqflite) 插件实现此功能。
+## Debugging
+
+### What tools can I use to debug my app in Flutter?
+
+### 应该使用什么工具调试我的 Flutter 应用？
+
+Use the [DevTools][] suite for debugging Flutter or Dart apps.
+
+请使用 [开发者工具][DevTools] debug 你的 Flutter 和 Dart 应用。
+
+DevTools includes support for profiling, examining the heap,
+inspecting the widget tree, logging diagnostics, debugging,
+observing executed lines of code, debugging memory leaks and memory
+fragmentation. For more information, see the
+[DevTools][] documentation.
+
+开发者工具包含了 profiling 构建、检查堆栈、检视 widget 树、诊断信息记录、调试、
+执行代码行观察、调试内存泄漏和内存碎片等。
+有关更多信息，请参阅 [开发者工具][DevTools] 文档。
 
 ## Notifications
 
@@ -2852,3 +2876,23 @@ plugin documentation.
 [Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging) 
 插件实现此功能。想要获得更多关于使用 Firebase Cloud Messaging API 的信息，请查阅 
 [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) 插件文档。
+[Firebase Messaging][] plugin.
+For more information on using the Firebase Cloud Messaging API,
+see the [`firebase_messaging`][] plugin documentation.
+
+[DevTools]: /docs/development/tools/devtools
+[Firebase Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
+[firebase_messaging]: {{site.pub}}/packages/firebase_messaging
+[Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
+[Material Components]: {{site.material}}/develop/flutter
+[Material Design guidelines]: {{site.material}}/design
+[Cupertino widgets]: /docs/development/ui/widgets/cupertino
+[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[Apple's iOS design language]: https://developer.apple.com/design/resources/
+[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[composing]: /docs/resources/technical-overview#everythings-a-widget
+[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
+[devicePixelRatio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[Flutter For Android Developers : How to design LinearLayout in Flutter?]: {{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
+[StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter

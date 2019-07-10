@@ -60,8 +60,7 @@ when designing your app:
     of the child widget as the previous frame is re-encountered. This 
     technique is heavily used in inside the framework for optimizing 
     animations where the animation doesn't affect the child subtree. See
-    the [TransitionBuilder]({{site.api}}/flutter/widgets/TransitionBuilder.html)
-    pattern and the [SlideTransition](https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229)
+    the [`TransitionBuilder`][] pattern and the [`SlideTransition`][],
     which uses this principle to avoid rebuilding its descendents when 
     animating.
 
@@ -75,14 +74,9 @@ Also see:
 
 另见：
 
-* [Performance
-  considerations]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations),
-  part of the
-  [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
-  API doc
+* [Performance considerations][], part of the [`StatefulWidget`][] API doc
 
-  [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html) API 文档的 [Performance
-  considerations]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations) 部分。
+  [`StatefulWidget`][] API 文档的 [Performance considerations][] 部分。
 
 ### Apply effects only when needed
 
@@ -113,22 +107,23 @@ Some general rules when applying specific effects:
 
 一些在使用效果时的通用规则：
 
-* Use the [**Opacity**]({{site.api}}/flutter/widgets/Opacity-class.html)
-  widget only when necessary. See [Transparent
-  image]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image)
-  in the Opacity API page for an example of applying opacity directly
-  to an image, which is faster than using the Opacity widget.
+* Use the [`Opacity`][] widget only when necessary.
+  See the [Transparent image][] section in the Opacity
+  API page for an example of applying opacity directly
+  to an image, which is faster than using the Opacity
+  widget.
 
-  能不用 [**Opacity**]({{site.api}}/flutter/widgets/Opacity-class.html) Widget，
+  能不用 [`Opacity`][] Widget，
   就尽量不要用。有关将透明度直接应用于图像的示例，
-  请参见 [Transparent image]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image)，
+  请参见 [Transparent image][Transparent image]，
   这比使用 Opacity widget 更快。
 
-* **Clipping** doesn’t call `saveLayer()` (unless explicitly requested with
-  `Clip.antiAliasWithSaveLayer`) so these operations aren’t as expensive
-  as Opacity, but clipping is still costly, so use with caution. By default,
-  clipping is disabled (`Clip.none`), so you must explicitly enable it when
-  needed. 
+* **Clipping** doesn’t call `saveLayer()` (unless
+  explicitly requested with `Clip.antiAliasWithSaveLayer`)
+  so these operations aren’t as expensive as Opacity,
+  but clipping is still costly, so use with caution.
+  By default, clipping is disabled (`Clip.none`),
+  so you must explicitly enable it when needed. 
 
   **Clipping** 不会调用 `saveLayer()`（除非明确使用 `Clip.antiAliasWithSaveLayer`），
   因此这些操作没有 Opacity 那么耗时，但仍然很耗时，所以请谨慎使用。
@@ -137,18 +132,18 @@ Other widgets that might trigger `saveLayer()` and are potentially costly:
 
 其他会触发 `saveLayer()` 的 widget，可能也会代价高昂。
 
-* [ShaderMask]({{site.api}}/flutter/widgets/ShaderMask-class.html)
-* [ColorFilter]({{site.api}}/flutter/dart-ui/ColorFilter-class.html)
-* [Chip]({{site.api}}/flutter/material/Chip-class.html)&mdash;may
-  cause call to `saveLayer()` if `disabledColorAlpha != 0xff`
+* [`ShaderMask`][]
+* [`ColorFilter`][]
+* [`Chip`][]&mdash;might cause call to `saveLayer()` if
+  `disabledColorAlpha != 0xff`
   
-  [Chip]({{site.api}}/flutter/material/Chip-class.html)&mdash;
+  [Chip][]&mdash;
   当 `disabledColorAlpha != 0xff` 的时候，会调用 `saveLayer()`  
 
-* [Text]({{site.api}}/flutter/widgets/Text-class.html)&mdash;may
-  cause call to `saveLayer()` if there's an `overflowShader`
+*  [`Text`][]&mdash;might cause call to `saveLayer()`
+  if there's an `overflowShader`
   
-  [Text]({{site.api}}/flutter/widgets/Text-class.html)&mdash;
+  [Text][]&mdash;
   当有 `overflowShader` 时，会调用`saveLayer()`
 
 Ways to avoid calls to `saveLayer()`:
@@ -157,11 +152,10 @@ Ways to avoid calls to `saveLayer()`:
 
 * To implement fading in an image, consider using the FadeInImage widget,
   which applies a gradual opacity using the GPU’s fragment shader.
-  For more information, see
-  [Opacity]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image).
+   For more information, see the [`Opacity`][] docs.
 
   要在图像中实现淡入淡出，请考虑使用 FadeInImage 小部件，该小部件使用 GPU 的片段着色器应用渐变不透明度。
-  了解更多详情，请参见 [Opacity]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image)。
+  了解更多详情，请参见 [`Opacity`][] 文档。
 
 * To create a rectangle with rounded corners, instead of applying a
   clipping rectangle, consider using the `borderRadius` property offered
@@ -184,20 +178,17 @@ Also see:
 
 请参阅：
 
-* [Working with long lists](/cookbook/lists/long-lists) in the
-  [Cookbook](/cookbook)
+* [Working with long lists][] in the [Cookbook][]
 
-  [Cookbook](/cookbook) 里的 [Working with long lists](/cookbook/lists/long-lists) 部分
+  [实用教程][Cookbook]里的 [长列表的处理][Working with long lists] 文档
 
-* [Creating a ListView that loads one page at a
-  time]({{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3)
-  by AbdulRahman AlHamali
+* [Creating a ListView that loads one page at a time][]
+  a community article by AbdulRahman AlHamali
 
-  AbdulRahman AlHamali 撰写的
-  [Creating a ListView that loads one page at a
-  time]({{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3)
+  来自社区的 AbdulRahman AlHamali 撰写的
+  [Creating a ListView that loads one page at a time][]
 
-* [Listview.builder]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) API
+* [`Listview.builder`][] API
 
 ###  Build and display frames in 16ms
 
@@ -216,13 +207,13 @@ the build and render stages is OK.
 请注意，这意味着构建需要少于 8ms，渲染也需要少于 8ms，总计 16ms 或更短。
 如果需要考虑丢帧（jankyness），那么每个构建和渲染阶段的 16ms 都可以。
 
-If your frames are rendering in well under 16ms total in a [profile
-build](/docs/testing/build-modes#profile),
+If your frames are rendering in well under 16ms total in
+[profile mode][],
 you likely don’t have to worry about performance even if some
 performance pitfalls apply, but you should still aim to build and
 render a frame as fast as possible. Why?
 
-如果在 [profile build](/docs/testing/build-modes#profile) 状态下，
+如果在 [profile 构建][profile mode] 状态下，
 每一帧渲染时间低于 16ms，你可能不必担心性能问题以及一些性能陷阱，
 但仍然应该致力于尽可能快地渲染每一帧。为什么？
 
@@ -244,7 +235,7 @@ render a frame as fast as possible. Why?
   当 120fps 的设备普及之后，便需要在 8ms 之内完成每一帧的渲染来保证流畅平滑的体验。
 
 If you are wondering why 60fps leads to a smooth visual experience,
-see the video [Why 60fps?](https://www.youtube.com/watch?v=CaMTIgxCSqU)
+see the video [Why 60fps?][]
 
 如果你想弄明白为什么 60fps 会带来平滑的视觉体验，
 请看视频 [Why 60fps?](https://www.bilibili.com/video/av55811304/)
@@ -271,8 +262,8 @@ The following behaviors might negatively impact your app's performance.
 
 * Avoid using the `Opacity` widget, and particularly avoid it in an animation.
   Use `AnimatedOpacity` or `FadeInImage` instead.
-  For more information, see [Performance considerations for opacity
-  animation]({{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation).
+  For more information,
+  see [Performance considerations for opacity animation][].
 
   避免使用 `Opacity` widget，尤其是在动画中避免使用。
   请用 `AnimatedOpacity` 或 `FadeInImage` 进行代替。
@@ -284,8 +275,7 @@ The following behaviors might negatively impact your app's performance.
   function that builds widgets that don’t depend on the animation.
   This subtree is rebuilt for every tick of the animation.
   Instead, build that part of the subtree once and pass it as a child to
-  the AnimatedBuilder. For more information, see [Performance
-  optimizations]({{site.api}}//flutter/widgets/AnimatedBuilder-class.html#performance-optimizations).
+  the AnimatedBuilder. For more information, see [Performance optimizations][].
 
   使用 AnimatedBuilder 时，请避免在不依赖于动画的 widget 的构造方法中构建 widget 树。
   动画的每次变动都会重建这个 widget 树。而应该构建子树的那一部分，并将其作为 child 传递给 AnimatedBuilder。
@@ -308,36 +298,41 @@ For more performance info, see the following resources:
 
 要了解更多性能信息，请参见以下资源：
 
-* [Performance
-  optimizations]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations)
-  in the AnimatedBuilder API page
+* [Performance optimizations][] in the AnimatedBuilder API page
 
-  AnimatedBuilder API 页面的
-  [Performance optimizations]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations)
-  部分
+  AnimatedBuilder API 页面的 [Performance optimizations][] 部分；
 
-* [Performance considerations for opacity
-  animation]({{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation)
-  in the Opacity API page
+* [Performance considerations for opacity animation][] in the Opacity API page
 
-  Opacity API 页面的
-  [Performance considerations for opacity
-  animation]({{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation)
-  部分
+  Opacity API 页面的 [Performance considerations for opacity animation][] 部分；
 
-* [Child elements'
-  lifecycle]({{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle)
-  and how to load them efficiently, in the ListView API page
+* [Child elements' lifecycle][] and how to load them efficiently,
+  in the ListView API page
 
-  ListView API 页面中
-  [Child elements'
-  lifecycle]({{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle)，
-  以及如何高效加载元素。
+  ListView API 页面中 [Child elements' lifecycle][]，以及如何高效加载元素；
 
-* [Performance
-  considerations]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations)
-  of a StatefulWidget
+* [Performance considerations][] of a `StatefulWidget`
 
-  StatefulWidget 的
-  [Performance
-  considerations]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations)
+  StatefulWidget 的 [Performance considerations][] API 文档。
+  
+  
+[Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
+[Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
+[Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
+[Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
+[Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
+[Why 60fps?]: https://www.youtube.com/watch?v=CaMTIgxCSqU
+[Working with long lists]: /cookbook/lists/long-lists
+[Cookbook]: /cookbook
+[Creating a ListView that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
+[`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`TransitionBuilder`]: ({{site.api}}/flutter/widgets/TransitionBuilder.html)
+[`SlideTransition`]: https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229
+[`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
+[Transparent image]: {{site.api}}/flutter/widgets/Opacity-class.html#transparent-image
+[`ShaderMask`]: {{site.api}}/flutter/widgets/ShaderMask-class.html
+[`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
+[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+[profile mode]: /docs/testing/build-modes#profile

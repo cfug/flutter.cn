@@ -177,3 +177,4 @@ by the Flutter community:
 * [Getting Started with Provider](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/) by Paul Halliday
 
   由 Paul Halliday 提供的 [Provider 入门](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/)
+

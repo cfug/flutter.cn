@@ -27,9 +27,13 @@ Flutter 框架与你创建一个单独的界面时也是一样的，这在多个
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
+<<<<<<< HEAD
 本文档可用做可指导手册来翻查与你需求最为相关的问题。
 
 ## Project Setup
+=======
+## Project setup
+>>>>>>> 65b0efad802fb1d092fb5c6c0d883f9b9a40c077
 
 ## 项目设置
 
@@ -102,12 +106,9 @@ class MyApp extends StatelessWidget {
 
 ### 如何创建一个页面？
 
-Xamarin.Forms has many different types of pages; `ContentPage` is the most
-common.
-
-Xamarin.Forms 拥有一些不同类型的页面；`ContentPage` 是最为通用的。
-
-In Flutter, you specify an application widget that holds your root page.
+Xamarin.Forms has many different types of pages;
+`ContentPage` is the most common.  In Flutter,
+you specify an application widget that holds your root page.
 You can use a
 [MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
 widget, which supports [Material
@@ -119,6 +120,8 @@ or you can use the lower level
 [WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html),
 which you can customize in any way you want.
 
+Xamarin.Forms 拥有一些不同类型的页面；
+`ContentPage` 是最为通用的。
 在 Flutter 中，指定一个应用程序 widget 来控制你的根页面。
 你可以使用一个
 [MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html) widget，
@@ -256,9 +259,9 @@ but there are many benefits to this approach.
 
 ## 视图
 
-### What is the equivalent of a `Page` or `Element` in Flutter?
+### What is the equivalent of a Page or Element in Flutter?
 
-### 在 Flutter 中 `页面（Page）` 与 `元素（Element）`的相同点是什么？
+### 在 Flutter 中页面（Page）与元素（Element）的相同的是什么？
 
 {{site.alert.secondary}}
 
@@ -315,9 +318,9 @@ to produce an interface that looks like
 来生成一个看起来像 
 [苹果 iOS 设计语言](https://developer.apple.com/design/resources/) 的接口。
 
-### How do I update `Widget`s?
+### How do I update widgets?
 
-### 如何更新 `widget`？
+### 如何更新 widget？
 
 In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has
 properties and methods. You update your `Element` by updating a property,
@@ -981,9 +984,9 @@ many other packages on the [Pub site]({{site.pub}}/flutter).
 
 ## 异步 UI
 
-### What is the equivalent of `Device.BeginOnMainThread()` in Flutter?
+### What is the equivalent of Device.BeginOnMainThread() in Flutter?
 
-### 在 Flutter 中有什么是跟 `Device.BeginOnMainThread()` 相等的？
+### 在 Flutter 中有什么是跟 Device.BeginOnMainThread() 方法是相等的？
 
 Dart has a single-threaded execution model, with support for `Isolate`s
 (a way to run Dart code on another thread), an event loop, and
@@ -2706,9 +2709,9 @@ from the [Flutter cookbook](/docs/cookbook).
 
 你可以在 [Flutter 实用教程](/docs/cookbook) 中的 [获取文本框的输入值](/docs/cookbook/forms/retrieve-input) 找到更多的信息和完整的代码清单。
 
-### What is the equivalent of a "Placeholder" on an Entry?
+### What is the equivalent of a Placeholder on an Entry?
 
-### 在入口的“占位符”与什么等价？
+### 在入口的占位符 (Placeholder) 与什么等价？
 
 In Xamarin.Forms, some `Elements` support a `Placeholder` property
 that you can assign a value to. For example:
@@ -3066,6 +3069,28 @@ In Flutter, access this functionality using the
 [sqflite]({{site.pub}}/packages/sqflite) plugin.
 
 在 Flutter 中，使用 [SQFlite]({{site.pub}}/packages/sqflite) 插件来访问这个功能。
+
+## Debugging
+
+## 调试
+
+### What tools can I use to debug my app in Flutter?
+
+### 应该使用什么工具调试我的 Flutter 应用？
+
+Use the [DevTools][] suite for debugging Flutter or Dart apps.
+
+请使用 [开发者工具][DevTools] debug 你的 Flutter 和 Dart 应用。
+
+DevTools includes support for profiling, examining the heap,
+inspecting the widget tree, logging diagnostics, debugging,
+observing executed lines of code, debugging memory leaks and memory
+fragmentation. For more information, see the
+[DevTools][] documentation.
+
+开发者工具包含了 profiling 构建、检查堆栈、检视 widget 树、诊断信息记录、调试、
+执行代码行观察、调试内存泄漏和内存碎片等。
+有关更多信息，请参阅 [开发者工具][DevTools] 文档。
 
 ## Notifications
 

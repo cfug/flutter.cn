@@ -141,8 +141,27 @@
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
-        - title: Dart 调试工具
-          permalink: https://flutter.github.io/devtools/
+        - title: 开发者工具
+          permalink: /docs/development/tools/devtools
+          children:
+            - title: Overview
+              permalink: /docs/development/tools/devtools/overview
+            - title: Install from Android Studio / IntelliJ
+              permalink: /docs/development/tools/devtools/android-studio
+            - title: Install from VS Code
+              permalink: /docs/development/tools/devtools/vscode
+            - title: Install from command line
+              permalink: /docs/development/tools/devtools/cli
+            - title: Flutter inspector
+              permalink: /docs/development/tools/devtools/inspector
+            - title: Timeline view
+              permalink: /docs/development/tools/devtools/timeline
+            - title: Memory view
+              permalink: /docs/development/tools/devtools/memory
+            - title: Debugger
+              permalink: /docs/development/tools/devtools/debugger
+            - title: Logging view
+              permalink: /docs/development/tools/devtools/logging
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -154,14 +173,14 @@
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式化
           permalink: /docs/development/tools/formatting
-        - title: Flutter Inspector
-          permalink: https://flutter.github.io/devtools/inspector
 
 - title: 测试和调优
   permalink: /docs/testing
   children:
     - title: 调试 Flutter 应用
       permalink: /docs/testing/debugging
+    - title: Debugging apps programmatically
+      permalink: /docs/testing/code-debugging
     - title: 使用原生的调试器
       permalink: /docs/testing/oem-debuggers
     - title: 构建模式 (Debug/Release/Profile)

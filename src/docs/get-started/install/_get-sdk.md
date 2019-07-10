@@ -62,7 +62,8 @@
 
     The `flutter` tool downloads platform-specific development binaries as
     needed. For scenarios where pre-downloading these artifacts is preferable
-    (e.g., hermetic build environments, intermittent network availability), iOS
+    (for example, in hermetic build environments,
+    or with intermittent network availability), iOS
     and Android binaries can be downloaded ahead of time by running:
     
     `flutter` 命令行工具会下载不同平台的开发二进制文件，如果需要一个封闭式的构建环境，

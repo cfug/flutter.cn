@@ -46,15 +46,14 @@ The examples assume:
 
 {{site.alert.secondary}}
 
-How is react-style, or _declarative_, programming different than the
-traditional imperative style?
-
-react-style 或 **声明式** 编程与传统的命令式风格有何不同？
-
-For a comparison, see [Introduction to declarative
-UI](/docs/get-started/flutter-for/declarative).
-
-为了对比，请查阅 [声明式 UI 介绍](/docs/get-started/flutter-for/declarative)。
+ How is react-style, or _declarative_, programming different than the
+ traditional imperative style?
+ For a comparison, see [Introduction to declarative
+ UI](/docs/get-started/flutter-for/declarative).
+ 
+ React-style 或 **声明式** 编程与传统的命令式风格有何不同？
+ 为了对比，请查阅 [声明式 UI 介绍](/docs/get-started/flutter-for/declarative)。
+ 
 {{site.alert.end}}
 
 ## Performing basic layout operations
@@ -548,7 +547,7 @@ The gradient “angle” is based on the Alignment (x, y) values:
 
   如果开始和结束的 y 值相同，变换将是水平的（90° | 270°）。
 
-#### Vertical Gradient
+#### Vertical gradient
 
 #### 垂直变换
 

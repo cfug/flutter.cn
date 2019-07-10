@@ -441,10 +441,15 @@ packages, on the [Pub site]({{site.pub}}/flutter).
 ### 遇到问题?
 {:.no_toc}
 
-If your app is not running correctly, look for typos. If needed,
-use the code at the following links to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following links to get back on track.
 
-如果你的应用程序运行不正常，请查找是否有拼写错误。如果需要，使用下面链接中的代码来对比更正。
+如果你的应用程序运行不正常，请查找是否有拼写错误。
+如果需要通过 Flutter 的 debug 工具，可以查看 [开发者工具][DevTools] 页面
+来查看 debug 和 profile 的工具。
+如果需要，使用下面链接中的代码来对比更正。
 
 * [pubspec.yaml]({{code-url}}/startup_namer/step2_use_package/pubspec.yaml)
 * [lib/main.dart]({{code-url}}/startup_namer/step2_use_package/lib/main.dart)
@@ -616,10 +621,15 @@ a child inside the existing `MyApp` stateless widget.
 ### 遇到问题？
 {:.no_toc}
 
-If your app is not running correctly, you can use the code
-at the following link to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following link to get back on track.
 
-如果你的应用程序运行不正常，可以使用下面链接中的代码来对比更正。
+如果你的应用程序运行不正常，请查找是否有拼写错误。
+如果需要通过 Flutter 的 debug 工具，可以查看 [开发者工具][DevTools] 页面
+来查看 debug 和 profile 的工具。
+如果需要，使用下面链接中的代码来对比更正。
 
 * [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
 
@@ -833,10 +843,15 @@ lazily, on demand.
 ### 遇到问题？
 {:.no_toc}
 
-If your app is not running correctly, you can use the code at the following link
-to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following link to get back on track.
 
-如果你的应用没有正常运行，你可以使用一下链接中的代码对比更正。
+如果你的应用程序运行不正常，请查找是否有拼写错误。
+如果需要通过 Flutter 的 debug 工具，可以查看 [开发者工具][DevTools] 页面
+来查看 debug 和 profile 的工具。
+如果需要，使用下面链接中的代码来对比更正。
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
@@ -907,3 +922,5 @@ where you add the following functionality:
 * Modify the theme color, making an all-white app.
 
   修改应用的主题，变成一个白色系的应用。
+
+[DevTools]: /docs/development/tools/devtools

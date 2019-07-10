@@ -31,8 +31,7 @@ short-title: 交织动画
     
 {{site.alert.end}}
 
-<<<<<<< HEAD
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
 
   **Terminology:**
   If the concept of tweens or tweening is new to you, see the
@@ -41,14 +40,7 @@ short-title: 交织动画
   **术语:**
   如果 tweens 或 tweening 的概念对你来说比较新，请看
   [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
-</aside>
-=======
-{{site.alert.secondary}}
-  **Terminology:**
-  If the concept of tweens or tweening is new to you, see the
-  [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
 {{site.alert.end}}
->>>>>>> 65b0efad802fb1d092fb5c6c0d883f9b9a40c077
 
 Staggered animations are a straightforward concept: visual changes
 happen as a series of operations, rather than all at once.

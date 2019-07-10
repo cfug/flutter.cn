@@ -177,6 +177,10 @@ where the Dart code lives.
 
     <?code-excerpt "lib/main.dart" title?>
     ```dart
+    // Copyright 2018 The Flutter team. All rights reserved.
+    // Use of this source code is governed by a BSD-style license that can be
+    // found in the LICENSE file.
+
     import 'package:flutter/material.dart';
 
     void main() => runApp(MyApp());
@@ -387,7 +391,7 @@ packages, on the [Pub site]({{site.pub}}/flutter).
     ```diff
     --- step1_base/lib/main.dart
     +++ step2_use_package/lib/main.dart
-    @@ -5,6 +6,7 @@
+    @@ -9,6 +10,7 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -395,7 +399,7 @@ packages, on the [Pub site]({{site.pub}}/flutter).
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -12,7 +14,7 @@
+    @@ -16,7 +18,7 @@
                title: Text('Welcome to Flutter'),
              ),
              body: Center(
@@ -568,7 +572,7 @@ a child inside the existing `MyApp` stateless widget.
     ```diff
     --- step2_use_package/lib/main.dart
     +++ step3_stateful_widget/lib/main.dart
-    @@ -6,7 +6,6 @@
+    @@ -10,7 +10,6 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -576,7 +580,7 @@ a child inside the existing `MyApp` stateless widget.
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -14,8 +13,8 @@
+    @@ -18,8 +17,8 @@
                title: Text('Welcome to Flutter'),
              ),
              body: Center(
@@ -807,7 +811,7 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -6,15 +6,8 @@
+    @@ -10,15 +10,8 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {

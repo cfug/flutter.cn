@@ -6,15 +6,6 @@ description: How to prepare for and release an Android app to the Play store.
 description: 如何打包把 App 发布到 Play 商店。
 ---
 
-{{site.alert.warning}}
-
-  This page describes the Android release process as of the
-  1.7.4 release of the Flutter SDK.
-  
-  本页面描述的 Android 发布流程基于 1.7.4 版本之后的 Flutter SDK。
-  
-{{site.alert.end}}
-
 During a typical development cycle,
 you test an app using `flutter run` at the command line,
 or by using the **Run** and **Debug**

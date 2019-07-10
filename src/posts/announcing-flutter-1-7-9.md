@@ -12,7 +12,7 @@ Today we're pleased to announce the general availability of Flutter 1.7, a small
 
 If you already have Flutter on your system and you're on the default stable channel, you can upgrade to version 1.7 by running `flutter upgrade` from the command line. The updated release is also included in [a new installation](https://flutter.dev/docs/get-started/install) of Flutter.
 
-如果你已经安装，并使用默认稳定构建渠道 (stable channel) 的 Flutter，要升级到 1.7 版本，只需要运行 `flutter upgrade` 即可。同时，你可以在 [这个文档里](https://flutter.dev/docs/get-started/install) 查看如何新安装 Flutter。
+如果你已经安装，并使用默认稳定构建渠道 (stable channel) 的 Flutter，要升级到 1.7 版本，只需要运行 `flutter upgrade` 即可。同时，你可以在 [这个文档里](/docs/get-started/install) 查看如何新安装 Flutter。
 
 ## AndroidX Support for New Apps
 
@@ -22,12 +22,9 @@ If you already have Flutter on your system and you're on the default stable chan
 
 [AndroidX](https://developer.android.google.cn/jetpack/androidx)  是 Android 团队用于在 Jetpack 中开发、测试、打包和发布库以及对其进行版本控制的开源项目，帮助 Android 应用通过最新的组件保持更新而无需牺牲向后兼容性。目前 AndroidX 已经稳定，很多 Flutter packages 已经更新和支持它，Flutter 现在可以支持 [创建一个 AndroidX 项目 (new Flutter project with AndroidX)](https://github.com/flutter/flutter/pull/31028) 了，这也减少了与 Android 生态系统集成所你需要做的工作。
 
-
-
-
 When creating a Flutter project, you can add the `--androidx` flag to ensure the generated project targets the new support library. More information about migrating existing projects to AndroidX can be found [on flutter.dev](https://flutter.dev/docs/development/packages-and-plugins/androidx-compatibility#for-plugin-maintainers-migrating-a-flutter-plugin-to-androidx). We're actively working on bringing AndroidX / Jetifier support for apps with mixed AndroidX / Android Support libraries, such as in add-to-app cases, and will have more to share on this front in a forthcoming post.
 
-当创建 Flutter 项目的时候，你可以通过添加 `--androidx`  来确保生成的项目文件支持 AndroidX，更多关于将项目迁移到 AndroidX 的相关信息，请访问 [官方文档](https://flutter.dev/docs/development/packages-and-plugins/androidx-compatibility#for-plugin-maintainers-migrating-a-flutter-plugin-to-androidx) 上的说明。我们也在积极努力为使用了 AndroidX 和 Android 混合库的应用带去 AndroidX 或 Jetifier 的支持，也会将其作为 add-to-app 的中的一项来支持，接下来的文章中会为大家带来更多相关的内容。
+当创建 Flutter 项目的时候，你可以通过添加 `--androidx`  来确保生成的项目文件支持 AndroidX，更多关于将项目迁移到 AndroidX 的相关信息，请访问 [官方文档](/docs/development/packages-and-plugins/androidx-compatibility#for-plugin-maintainers-migrating-a-flutter-plugin-to-androidx) 上的说明。我们也在积极努力为使用了 AndroidX 和 Android 混合库的应用带去 AndroidX 或 Jetifier 的支持，也会将其作为 add-to-app 的中的一项来支持，接下来的文章中会为大家带来更多相关的内容。
 
 ## Support for Android app bundles and 64-bit Android apps
 
@@ -35,7 +32,7 @@ When creating a Flutter project, you can add the `--androidx` flag to ensure the
 
 From August 1st, 2019, Android apps that use native code and target Android 9 Pie will be [required to provide a 64-bit version](https://developer.android.google.cn/distribute/best-practices/develop/64-bit) in addition to the 32-bit version when publishing to the Google Play Store. While Flutter has long supported generating 64-bit Android apps, version 1.7 adds support for creating [Android App Bundles](https://developer.android.google.cn/guide/app-bundle) that target both 64-bit and 32-bit from a single submission. See the updated [documentation on publishing Flutter-based Android apps](https://flutter.dev/docs/deployment/android) to learn how to do this, as well as how to create separate APK files for both 32-bit and 64-bit devices.
 
-从 2019 年 8 月 1 日开始，为了 target 到 Android Pie 版本，开发者们在 Google Play 上发布的应用 [必须支持 64 位架构](https://developer.android.google.cn/distribute/best-practices/develop/64-bit)。Flutter 一直都支持生成 64 位的 Android 应用，在 1.7 版本里，我们加入了对 [Android App Bundles](https://developer.android.google.cn/guide/app-bundle) 的支持，开发者们可以在一次提交里同时 target 到 64 位和 32 位。可通过阅读 [这篇文档](https://flutter.dev/docs/deployment/android) 了解到如何分别生成 32 位和 64 位到应用等更多内容。
+从 2019 年 8 月 1 日开始，为了 target 到 Android Pie 版本，开发者们在 Google Play 上发布的应用 [必须支持 64 位架构](https://developer.android.google.cn/distribute/best-practices/develop/64-bit)。Flutter 一直都支持生成 64 位的 Android 应用，在 1.7 版本里，我们加入了对 [Android App Bundles](https://developer.android.google.cn/guide/app-bundle) 的支持，开发者们可以在一次提交里同时 target 到 64 位和 32 位。可通过阅读 [这篇文档](/docs/deployment/android) 了解到如何分别生成 32 位和 64 位到应用等更多内容。
 
 ## New widgets and framework enhancements
 
@@ -61,11 +58,11 @@ The [updated ](https://github.com/flutter/flutter/pull/31275)`[SnackBar](https:/
 
 For [Cupertino](https://flutter.dev/docs/development/ui/widgets/cupertino), the Flutter library for building pixel-perfect iOS applications, we've made a number of updates. In particular, we've improved the fidelity of the `[CupertinoPicker](https://github.com/flutter/flutter/pull/31464)`[ and ](https://github.com/flutter/flutter/pull/31464)`[CupertinoDateTimePicker](https://github.com/flutter/flutter/pull/31464)`[ widgets](https://github.com/flutter/flutter/pull/31464), and added support for localization to non-English languages.
 
-[Cupertino](https://flutter.dev/docs/development/ui/widgets/cupertino) 是用来构建精美的 iOS 体验的 widgets 库，我们对其进行了大量的更新。特别提出的是，我们提高了 [CupertinoPicker](https://github.com/flutter/flutter/pull/31464) 和  [CupertinoDateTimePicker](https://github.com/flutter/flutter/pull/31464) widget 的保真度，并增加了对非英语语言本地化的支持。
+[Cupertino](/docs/development/ui/widgets/cupertino) 是用来构建精美的 iOS 体验的 widgets 库，我们对其进行了大量的更新。特别提出的是，我们提高了 [CupertinoPicker](https://github.com/flutter/flutter/pull/31464) 和  [CupertinoDateTimePicker](https://github.com/flutter/flutter/pull/31464) widget 的保真度，并增加了对非英语语言本地化的支持。
 
 We also made major improvements to the [text selection and editing experience on iOS](https://flutter.dev/docs/resources/platform-adaptations#text-editing), regardless of whether you're using the Material or Cupertino design language. Also, a [new sample](https://github.com/flutter/samples/tree/master/platform_design) demonstrates how to make more significant platform adaptations across iOS and Android while retaining the same codebase.
 
-我们提升了 iOS 上的 [文本选择和编辑体验](https://flutter.dev/docs/resources/platform-adaptations#text-editing)。此外，我们新增了一个 [示例](https://github.com/flutter/samples/tree/master/platform_design)，关于如何使用同一份代码库，调整不同平台的操作体验和适配。
+我们提升了 iOS 上的 [文本选择和编辑体验](/docs/resources/platform-adaptations#text-editing)。此外，我们新增了一个 [示例](https://github.com/flutter/samples/tree/master/platform_design)，关于如何使用同一份代码库，调整不同平台的操作体验和适配。
 
 Text rendering gets a big upgrade with support for rich [typography features](https://api.flutter.dev/flutter/painting/TextStyle/fontFeatures.html), including tabular and old-style numbers, slashed zeros, and stylistic sets, as [this demo](https://github.com/timsneath/typography) shows:
 

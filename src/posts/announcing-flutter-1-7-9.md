@@ -1,5 +1,6 @@
 ---
 title: Flutter 1.7 版正式发布
+toc: true
 ---
 
 文 / Tim Sneath，谷歌 Dart & Flutter 产品组产品经理

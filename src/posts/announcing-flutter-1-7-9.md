@@ -12,7 +12,7 @@ Today we're pleased to announce the general availability of Flutter 1.7, a small
 
 If you already have Flutter on your system and you're on the default stable channel, you can upgrade to version 1.7 by running `flutter upgrade` from the command line. The updated release is also included in [a new installation](https://flutter.dev/docs/get-started/install) of Flutter.
 
-如果你已经安装，并使用默认稳定构建渠道 (stable channel) 的 Flutter，要升级到 1.7 版本，只需要运行 `flutter upgrade` 即可。同时，你可以在这个文档里查看如何新安装 Flutter。
+如果你已经安装，并使用默认稳定构建渠道 (stable channel) 的 Flutter，要升级到 1.7 版本，只需要运行 `flutter upgrade` 即可。同时，你可以在 [这个文档里](https://flutter.dev/docs/get-started/install) 查看如何新安装 Flutter。
 
 ## AndroidX Support for New Apps
 
@@ -21,6 +21,9 @@ If you already have Flutter on your system and you're on the default stable chan
 [AndroidX](https://developer.android.com/jetpack/androidx) is a new open source support library from the Jetpack team that helps Android apps stay updated with the latest components without sacrificing backward compatibility. Now that AndroidX is itself stable and many Flutter packages have been updated to support it, Flutter now supports [creating new Flutter projects with AndroidX](https://github.com/flutter/flutter/pull/31028), which reduces the work needed to integrate with other parts of the Android ecosystem.
 
 [AndroidX](https://developer.android.google.cn/jetpack/androidx)  是 Android 团队用于在 Jetpack 中开发、测试、打包和发布库以及对其进行版本控制的开源项目，帮助 Android 应用通过最新的组件保持更新而无需牺牲向后兼容性。目前 AndroidX 已经稳定，很多 Flutter packages 已经更新和支持它，Flutter 现在可以支持 [创建一个 AndroidX 项目 (new Flutter project with AndroidX)](https://github.com/flutter/flutter/pull/31028) 了，这也减少了与 Android 生态系统集成所你需要做的工作。
+
+
+
 
 When creating a Flutter project, you can add the `--androidx` flag to ensure the generated project targets the new support library. More information about migrating existing projects to AndroidX can be found [on flutter.dev](https://flutter.dev/docs/development/packages-and-plugins/androidx-compatibility#for-plugin-maintainers-migrating-a-flutter-plugin-to-androidx). We're actively working on bringing AndroidX / Jetifier support for apps with mixed AndroidX / Android Support libraries, such as in add-to-app cases, and will have more to share on this front in a forthcoming post.
 
@@ -32,7 +35,7 @@ When creating a Flutter project, you can add the `--androidx` flag to ensure the
 
 From August 1st, 2019, Android apps that use native code and target Android 9 Pie will be [required to provide a 64-bit version](https://developer.android.google.cn/distribute/best-practices/develop/64-bit) in addition to the 32-bit version when publishing to the Google Play Store. While Flutter has long supported generating 64-bit Android apps, version 1.7 adds support for creating [Android App Bundles](https://developer.android.google.cn/guide/app-bundle) that target both 64-bit and 32-bit from a single submission. See the updated [documentation on publishing Flutter-based Android apps](https://flutter.dev/docs/deployment/android) to learn how to do this, as well as how to create separate APK files for both 32-bit and 64-bit devices.
 
-从 2019 年 8 月 1 日开始，为了 target 到 Android Pie 版本，开发者们在 Google Play 上发布的应用必须支持 64 位架构。Flutter 一直都支持生成 64 位的 Android 应用，在 1.7 版本里，我们加入了对 Android App Bundles 的支持，开发者们可以在一次提交里同时 target 到 64 位和 32 位。可通过阅读 [这篇文档](https://flutter.dev/docs/deployment/android) 了解到如何分别生成 32 位和 64 位到应用等更多内容。
+从 2019 年 8 月 1 日开始，为了 target 到 Android Pie 版本，开发者们在 Google Play 上发布的应用 [必须支持 64 位架构](https://developer.android.google.cn/distribute/best-practices/develop/64-bit)。Flutter 一直都支持生成 64 位的 Android 应用，在 1.7 版本里，我们加入了对 [Android App Bundles](https://developer.android.google.cn/guide/app-bundle) 的支持，开发者们可以在一次提交里同时 target 到 64 位和 32 位。可通过阅读 [这篇文档](https://flutter.dev/docs/deployment/android) 了解到如何分别生成 32 位和 64 位到应用等更多内容。
 
 ## New widgets and framework enhancements
 
@@ -49,23 +52,24 @@ This release features a new `[RangeSlider](https://github.com/flutter/flutter/pu
 ![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/rangeslider-widget.gif){:width="95%"}
 
 The new, themeable RangeSlider widget supports continuous or discrete styles
+
 RangeSlider widget 支持连续或者分散的效果
 
 The [updated ](https://github.com/flutter/flutter/pull/31275)`[SnackBar](https://github.com/flutter/flutter/pull/31275)`[ widget](https://github.com/flutter/flutter/pull/31275) supports an updated look in the Material spec, and a [number](https://github.com/flutter/flutter/pull/31294) [of](https://github.com/flutter/flutter/pull/32177) [new](https://github.com/flutter/flutter/pull/31929) [samples](https://github.com/flutter/flutter/pull/32703) are added [to the](https://github.com/flutter/flutter/pull/34679) [documentation](https://github.com/flutter/flutter/pull/32530).
 
-更新之后的 SnackBar 支持了最新的 Material 规范，文档里增加了许多样例代码。
+[更新之后](https://github.com/flutter/flutter/pull/31275) 的 [SnackBar](https://github.com/flutter/flutter/pull/31275) 支持了最新的 Material 规范，文档里增加了许多 [样例代码](https://github.com/flutter/flutter/pull/34679) 。
 
 For [Cupertino](https://flutter.dev/docs/development/ui/widgets/cupertino), the Flutter library for building pixel-perfect iOS applications, we've made a number of updates. In particular, we've improved the fidelity of the `[CupertinoPicker](https://github.com/flutter/flutter/pull/31464)`[ and ](https://github.com/flutter/flutter/pull/31464)`[CupertinoDateTimePicker](https://github.com/flutter/flutter/pull/31464)`[ widgets](https://github.com/flutter/flutter/pull/31464), and added support for localization to non-English languages.
 
-Cupertino 是用来构建精美的 iOS 体验的 widgets 库，我们对其进行了大量的更新。特别提出的是，我们提高了 CupertinoPicker 和 CupertinoDateTimePicker widget 的保真度，并增加了对非英语语言本地化的支持。
+[Cupertino](https://flutter.dev/docs/development/ui/widgets/cupertino) 是用来构建精美的 iOS 体验的 widgets 库，我们对其进行了大量的更新。特别提出的是，我们提高了 [CupertinoPicker](https://github.com/flutter/flutter/pull/31464) 和  [CupertinoDateTimePicker](https://github.com/flutter/flutter/pull/31464) widget 的保真度，并增加了对非英语语言本地化的支持。
 
 We also made major improvements to the [text selection and editing experience on iOS](https://flutter.dev/docs/resources/platform-adaptations#text-editing), regardless of whether you're using the Material or Cupertino design language. Also, a [new sample](https://github.com/flutter/samples/tree/master/platform_design) demonstrates how to make more significant platform adaptations across iOS and Android while retaining the same codebase.
 
-我们提升了 iOS 上的文本选择和编辑体验。此外，我们新增了一个示例，关于如何使用同一份代码库，调整不同平台的操作体验和适配。
+我们提升了 iOS 上的 [文本选择和编辑体验](https://flutter.dev/docs/resources/platform-adaptations#text-editing)。此外，我们新增了一个 [示例](https://github.com/flutter/samples/tree/master/platform_design)，关于如何使用同一份代码库，调整不同平台的操作体验和适配。
 
 Text rendering gets a big upgrade with support for rich [typography features](https://api.flutter.dev/flutter/painting/TextStyle/fontFeatures.html), including tabular and old-style numbers, slashed zeros, and stylistic sets, as [this demo](https://github.com/timsneath/typography) shows:
 
-文本渲染有了很大的提升，支持了丰富的排版样式：包括数字表格式对齐、旧式风格数字 (tabular and old-style numbers)、斜线零 (slashed zeros)、样式集 (stylistic sets)，如这个示例应用截图所示：
+文本渲染有了很大的提升，支持了丰富的 [排版样式](https://api.flutter.dev/flutter/painting/TextStyle/fontFeatures.html)：包括数字表格式对齐、旧式风格数字 (tabular and old-style numbers)、斜线零 (slashed zeros)、样式集 (stylistic sets)，如这个示例应用截图所示：
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/openType-font.png){:width="95%"}
 
@@ -74,7 +78,7 @@ With Flutter, you can now add sophisticated typography with OpenType font featur
 
 Lastly, we've added support for [game controllers](https://github.com/flutter/flutter/pull/33868). Could this lead to some fun Flutter apps? You tell us!
 
-最后，我们加入了游戏控制器的支持，这会有更好玩的应用出现吗？
+最后，我们加入了对 [游戏控制器](https://github.com/flutter/flutter/pull/33868) 的支持，会有更好玩的应用出现吗？
 
 ## Focus on the Fundamentals
 
@@ -82,7 +86,7 @@ Lastly, we've added support for [game controllers](https://github.com/flutter/fl
 
 Flutter 1.7 represents a lot of hard work by the team to respond to customer-reported issues, with [over 1,250 issues closed in the two months](https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aclosed+closed%3A2019-04-22..2019-06-21+sort%3Areactions-%2B1-desc) since our last stable release.
 
-整个团队付出很多努力推出了 Flutter 1.7 正式版，我们解决了开发者们在 GitHub 上提出的 1250 多个问题。
+整个团队付出很多努力推出了 Flutter 1.7 正式版，我们解决了开发者们在 GitHub 上提出的 [1250 多个问题](https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aclosed+closed%3A2019-04-22..2019-06-21+sort%3Areactions-%2B1-desc) 。
 
 With the rapid growth in Flutter, we're seeing lots of new issues reported, and to be transparent, the bug process that worked well when our project was smaller is not working so well now. As a result, our open issue count has increased significantly over the last few months, despite our progress in closing triaged issues. We're working to increase staffing in this area, which will help with faster triaging of new bugs, closing and merging duplicate issues and redirecting support requests to [StackOverflow](https://stackoverflow.com/questions/tagged/flutter).
 
@@ -90,7 +94,7 @@ With the rapid growth in Flutter, we're seeing lots of new issues reported, and 
 
 In recent surveys, many of you said that you'd like to see us continue to invest in documentation and error messages. One key part of that work is to provide better structure for our errors which tools like VSCode and Android Studio can take advantage of in the future. You can see examples of this work [in issue 34684](https://github.com/flutter/flutter/pull/34684).
 
-在近期的开发者调查里，很多开发者希望我们在文档和错误信息方面有更持续的投入。一个关键部分是能够在 VSCode 和 Android Studio 里更结构化的输出错误信息，我们已经在着手这方面的工作。
+在近期的开发者调查里，很多开发者希望我们在文档和错误信息方面有更持续的投入。一个关键部分是能够在 VSCode 和 Android Studio 里更结构化的输出错误信息，我们已经在着手 [这方面的工作](https://github.com/flutter/flutter/pull/34684)。
 
 We also fixed the top crashing bug, which was an error when the Flutter tool is unable to write to the Flutter directory. Flutter now fails gracefully if the user doesn't have write permissions, with clearer indications on how to fix the problem.
 
@@ -100,7 +104,7 @@ In terms of documentation, we have an ever increasing list of samples that can b
 
 文档方面，我们会持续增加示例代码。与此同时，你也可以通过 Flutter create 命令直接创建示例文档，如下是命令：
 
-flutter create --sample=widgets.Form.1 mysample
+```flutter create --sample=widgets.Form.1 mysample```
 
 If a sample can be created in this way, you'll see a "Sample in the App" tab in the documentation, as in [this example for the Form widget](https://api.flutter.dev/flutter/widgets/Form-class.html):
 
@@ -114,15 +118,15 @@ We're also continuing to embed the popular [Widget of the Week](https://www.yout
 
 Behind the scenes, you'll see lots of underlying work to create infrastructure towards enabling Flutter on macOS and Windows, with further support for important concepts like right-click and unique platform infrastructure such as [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2019). Support for non-mobile platforms is not yet available in the stable channel, however.
 
-还有一些幕后的设施建设工作正在进行，以便 Flutter app 更好的在 macOS 和 Windows 平台运行。比如支持一些较为重要的平台操作，比如右键和一些特别的平台基建工作（比如 MSBuild等）。不过，这些非移动平台的支持目前还没有在稳定构建渠道 (stable channel) 发布。
+还有一些幕后的设施建设工作正在进行，以便 Flutter app 更好的在 macOS 和 Windows 平台运行。比如支持一些较为重要的平台操作，比如右键和一些特别的平台基建工作（比如 [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2019) 等）。不过，这些非移动平台的支持目前还没有在稳定构建渠道 (stable channel) 发布。
 
 Lastly, when you're building Flutter apps on the Mac, we now have support for [the new Xcode build system](https://github.com/flutter/flutter/pull/33684). This is on by default for new projects, and [easy to enable for existing projects](https://github.com/flutter/flutter/issues/20685#issuecomment-509731873).
 
-最后，当你在苹果电脑上开发 Flutter 应用的时候，我们支持了新的 Xcode 构建系统，这个对新的应用是默认开启的，也同时方便支持现有的应用。
+最后，当你在苹果电脑上开发 Flutter 应用的时候，我们支持了 [新的 Xcode 构建系统](https://github.com/flutter/flutter/pull/33684)，这个对新的应用是默认开启的，也同时方便 [支持现有的应用](https://github.com/flutter/flutter/issues/20685#issuecomment-509731873)。
 
 ## An ever-growing Flutter community
 
-## 不断壮大的 Flutter 社区
+##不断壮大的 Flutter 社区
 
 As ever, it's exciting to see Flutter continue to grow in popularity and usage, and we also celebrate the ways customers large and small are using Flutter. Since I/O, the team has been busy with various events around the world: from [GMTC](https://gmtc2019.geekbang.org/) in China to meetups and presentations in New York and Mexico; it's been great to meet with many of you and hear about some of the apps that you're building.
 
@@ -131,6 +135,8 @@ As ever, it's exciting to see Flutter continue to grow in popularity and usage, 
 We've talked about [Reflectly](https://www.forbes.com/sites/heatherfarmbrough/2018/05/01/reflectly-wants-to-be-an-adidas-of-the-mind/#572291294204) before: a small Danish company who built a beautiful mindfulness app for iOS and Android. Their app was just featured as Apple's App of the Day on their US iPhone app store, demonstrating how Flutter apps are more than capable of delivering reference-quality experiences:
 
 之前我们提到过[Reflectly](https://www.forbes.com/sites/heatherfarmbrough/2018/05/01/reflectly-wants-to-be-an-adidas-of-the-mind/#572291294204)，它是一个丹麦的公司，他们在 iOS 和 Android 平台开发了非常有吸引力的应用程序。他们的应用程序被美国 iPhone 应用商店评为当日最佳应用。这也证明了 Flutter 的真正潜力远远超过实现体验流畅的应用（同时可以帮助开发者获得成功）。
+
+<iframe src="//player.bilibili.com/player.html?aid=56686514&cid=99031924&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 And at the [WeAreDevelopers](https://events.wearedevelopers.com/) conference in Berlin, [BMW announced their new Flutter-based app](https://youtu.be/80pRyn7fZRk?t=1234), currently in development. Here's what Guy Duncan, CTO Connected Company at BMW, had to say:
 在柏林的  [WeAreDevelopers](https://events.wearedevelopers.com/) 大会中，[BMW 发布了他们基于 Flutter 的应用](https://youtu.be/80pRyn7fZRk?t=1234)，目前已经在开发中。下面这段描述来自 Guy Duncan，他是 BMW 集团互联公司的 CTO：
@@ -145,7 +151,7 @@ And at the [WeAreDevelopers](https://events.wearedevelopers.com/) conference in 
 
 Beyond apps, of course the open source community is what makes Flutter such a fun place to work, with so many [resources](https://flutterx.com/), [plugins](https://pub.dev/flutter), [events](https://flutterevents.com/) and [meetups](https://www.meetup.com/topics/flutter/). We continue to be amazed by how you're using Flutter and are honored to be able to share the fun with you all!
 
-除了应用程序，整个开源社区所涉及的众多  [资源](https://flutterx.com/)，[插件](https://pub.dev/flutter)， [活动](https://flutterevents.com/)和[聚会](https://www.meetup.com/topics/flutter/) 也使得 Flutter 变得格外生机勃勃。我们会持续关注大家基于 Flutter 所实现的各种有趣的应用，同时也非常荣幸和大家一起分享其中的乐趣。
+除了应用程序，整个开源社区所涉及的众多 [资源](https://flutterx.com/)，[插件](https://pub.dev/flutter)， [Flutter 社区活动](https://flutterevents.com/) 和 [Meetup](https://www.meetup.com/topics/flutter/) 也使得 Flutter 变得格外生机勃勃。我们会持续关注大家基于 Flutter 所实现的各种有趣的应用，同时也非常荣幸和大家一起分享其中的乐趣。
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/flutter-bag.jpeg){:width="95%"}
 

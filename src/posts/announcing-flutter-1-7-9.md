@@ -49,9 +49,9 @@ This release features a new [RangeSlider](https://github.com/flutter/flutter/pul
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/rangeslider-widget.gif){:width="95%"}
 
-<center>The new, themeable RangeSlider widget supports continuous or discrete styles</center>
+The new, themeable RangeSlider widget supports continuous or discrete styles
 
-<center>RangeSlider widget 支持连续或者分散的效果</center>
+RangeSlider widget 支持连续或者分散的效果
 
 The [updated ](https://github.com/flutter/flutter/pull/31275)`[SnackBar](https://github.com/flutter/flutter/pull/31275)`[ widget](https://github.com/flutter/flutter/pull/31275) supports an updated look in the Material spec, and a [number](https://github.com/flutter/flutter/pull/31294) [of](https://github.com/flutter/flutter/pull/32177) [new](https://github.com/flutter/flutter/pull/31929) [samples](https://github.com/flutter/flutter/pull/32703) are added [to the](https://github.com/flutter/flutter/pull/34679) [documentation](https://github.com/flutter/flutter/pull/32530).
 
@@ -71,9 +71,9 @@ Text rendering gets a big upgrade with support for rich [typography features](ht
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/openType-font.png){:width="95%"}
 
-<center>With Flutter, you can now add sophisticated typography with OpenType font feature support</center>
+With Flutter, you can now add sophisticated typography with OpenType font feature support
 
-<center>有了 OpenType 的字体支持，你可以用 Flutter 进行复杂的文字排版了</center>
+有了 OpenType 的字体支持，你可以用 Flutter 进行复杂的文字排版了
 
 Lastly, we've added support for [game controllers](https://github.com/flutter/flutter/pull/33868). Could this lead to some fun Flutter apps? You tell us!
 

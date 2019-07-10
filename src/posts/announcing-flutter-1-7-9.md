@@ -126,7 +126,7 @@ Lastly, when you're building Flutter apps on the Mac, we now have support for [t
 
 ## An ever-growing Flutter community
 
-##不断壮大的 Flutter 社区
+## 不断壮大的 Flutter 社区
 
 As ever, it's exciting to see Flutter continue to grow in popularity and usage, and we also celebrate the ways customers large and small are using Flutter. Since I/O, the team has been busy with various events around the world: from [GMTC](https://gmtc2019.geekbang.org/) in China to meetups and presentations in New York and Mexico; it's been great to meet with many of you and hear about some of the apps that you're building.
 
@@ -136,9 +136,10 @@ We've talked about [Reflectly](https://www.forbes.com/sites/heatherfarmbrough/20
 
 之前我们提到过[Reflectly](https://www.forbes.com/sites/heatherfarmbrough/2018/05/01/reflectly-wants-to-be-an-adidas-of-the-mind/#572291294204)，它是一个丹麦的公司，他们在 iOS 和 Android 平台开发了非常有吸引力的应用程序。他们的应用程序被美国 iPhone 应用商店评为当日最佳应用。这也证明了 Flutter 的真正潜力远远超过实现体验流畅的应用（同时可以帮助开发者获得成功）。
 
-<iframe src="//player.bilibili.com/player.html?aid=56686514&cid=99031924&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=56686514&cid=99031924&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315"> </iframe>
 
 And at the [WeAreDevelopers](https://events.wearedevelopers.com/) conference in Berlin, [BMW announced their new Flutter-based app](https://youtu.be/80pRyn7fZRk?t=1234), currently in development. Here's what Guy Duncan, CTO Connected Company at BMW, had to say:
+
 在柏林的  [WeAreDevelopers](https://events.wearedevelopers.com/) 大会中，[BMW 发布了他们基于 Flutter 的应用](https://youtu.be/80pRyn7fZRk?t=1234)，目前已经在开发中。下面这段描述来自 Guy Duncan，他是 BMW 集团互联公司的 CTO：
 
 > "By combining Dart and Flutter we have the first true cross-platform mobile toolkit; we feel it is a game changer to ensure feature parity for digital touchpoints and IoT.
@@ -151,7 +152,8 @@ And at the [WeAreDevelopers](https://events.wearedevelopers.com/) conference in 
 
 Beyond apps, of course the open source community is what makes Flutter such a fun place to work, with so many [resources](https://flutterx.com/), [plugins](https://pub.dev/flutter), [events](https://flutterevents.com/) and [meetups](https://www.meetup.com/topics/flutter/). We continue to be amazed by how you're using Flutter and are honored to be able to share the fun with you all!
 
-除了应用程序，整个开源社区所涉及的众多 [资源](https://flutterx.com/)，[插件](https://pub.dev/flutter)， [Flutter 社区活动](https://flutterevents.com/) 和 [Meetup](https://www.meetup.com/topics/flutter/) 也使得 Flutter 变得格外生机勃勃。我们会持续关注大家基于 Flutter 所实现的各种有趣的应用，同时也非常荣幸和大家一起分享其中的乐趣。
+除了应用程序，整个开源社区所涉及的众多 [资源](https://flutterx.com/)，[插件](https://pub.dev/flutter)， [Flutter 社区活动](https://flutterevents.com/) 和 [Meetup](https://www.meetup.com/topics/flutter/) 也使得 Flutter 变得格外生机勃勃。
+我们会持续关注大家基于 Flutter 所实现的各种有趣的应用，同时也非常荣幸和大家一起分享其中的乐趣。
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/flutter-bag.jpeg){:width="95%"}
 

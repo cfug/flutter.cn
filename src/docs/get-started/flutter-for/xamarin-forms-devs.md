@@ -27,13 +27,9 @@ Flutter 框架与你创建一个单独的界面时也是一样的，这在多个
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
-<<<<<<< HEAD
 本文档可用做可指导手册来翻查与你需求最为相关的问题。
 
-## Project Setup
-=======
 ## Project setup
->>>>>>> 65b0efad802fb1d092fb5c6c0d883f9b9a40c077
 
 ## 项目设置
 

@@ -43,15 +43,15 @@ We want your apps to look great and feel natural, regardless of what platform yo
 
 我们希望你的应用在任何平台上都可以看起来平滑自然，我们会持续在平台相关的 widgets 上投入。
 
-This release features a new `[RangeSlider](https://github.com/flutter/flutter/pull/31681)` control that lets you select a range of values on a single slider (for example a minimum and maximum temperature value):
+This release features a new [RangeSlider](https://github.com/flutter/flutter/pull/31681) control that lets you select a range of values on a single slider (for example a minimum and maximum temperature value):
 
-如下所示了一个名为 `[RangeSlider](https://github.com/flutter/flutter/pull/31681)` 的 widget，帮助你在单个滑块儿上选择一组值：
+如下所示了一个名为 [RangeSlider](https://github.com/flutter/flutter/pull/31681) 的 widget，帮助你在单个滑块儿上选择一组值：
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/rangeslider-widget.gif){:width="95%"}
 
-The new, themeable RangeSlider widget supports continuous or discrete styles
+<center>The new, themeable RangeSlider widget supports continuous or discrete styles</center>
 
-RangeSlider widget 支持连续或者分散的效果
+<center>RangeSlider widget 支持连续或者分散的效果</center>
 
 The [updated ](https://github.com/flutter/flutter/pull/31275)`[SnackBar](https://github.com/flutter/flutter/pull/31275)`[ widget](https://github.com/flutter/flutter/pull/31275) supports an updated look in the Material spec, and a [number](https://github.com/flutter/flutter/pull/31294) [of](https://github.com/flutter/flutter/pull/32177) [new](https://github.com/flutter/flutter/pull/31929) [samples](https://github.com/flutter/flutter/pull/32703) are added [to the](https://github.com/flutter/flutter/pull/34679) [documentation](https://github.com/flutter/flutter/pull/32530).
 
@@ -71,8 +71,9 @@ Text rendering gets a big upgrade with support for rich [typography features](ht
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/openType-font.png){:width="95%"}
 
-With Flutter, you can now add sophisticated typography with OpenType font feature support
-有了 OpenType 的字体支持，你可以用 Flutter 进行复杂的文字排版了
+<center>With Flutter, you can now add sophisticated typography with OpenType font feature support</center>
+
+<center>有了 OpenType 的字体支持，你可以用 Flutter 进行复杂的文字排版了</center>
 
 Lastly, we've added support for [game controllers](https://github.com/flutter/flutter/pull/33868). Could this lead to some fun Flutter apps? You tell us!
 

@@ -7,8 +7,31 @@ This archive contains current and previous announcements of what's new on the
 site.
 
 To stay on top of Flutter announcements, including breaking changes, join the
-[flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce)
-Google group.
+[flutter-announce][] Google group.
+
+**May 7, 2019, Google I/O Edition**
+
+**2019 年 5 月 7 日，Google I/O 版本**
+
+[Flutter 1.5](https://developers.googleblog.com/2019/05/Flutter-io19.html) is live!
+
+[Flutter 1.5 发布啦](/posts/Flutter-io19.html)。
+
+For more information on updates, see the [release
+notes](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
+or [download the release](/docs/development/tools/sdk/archive).
+
+更多关于此次发布的信息，可以在这里查看 [release
+notes](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
+或者 [下载最新版本](/docs/development/tools/sdk/archive)。
+
+We are updating DartPad to work with Flutter. Try our new
+[Basic Flutter layout codelab](/docs/codelabs/layout-basics)
+and tell us what you think!
+
+我们正在更新 DartPad 以支持 Flutter，可以通过这个新的 codelab
+[Flutter 布局基础教程](/docs/codelabs/layout-basics)
+来试试看吧。
 
 ## **February 26, 2019**
 
@@ -19,7 +42,7 @@ see the [release
 notes](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1)
 or [download the release](/docs/development/tools/sdk/archive).
 
-In addition, here are some recent new docs:
+In addition, here are some recent new and updated docs:
 
 * We've updated our [state management
   advice](/docs/development/data-and-backend/state-mgmt/intro).
@@ -38,12 +61,10 @@ In addition, here are some recent new docs:
 * A new page on [Performance best practices](/docs/testing/best-practices).
 * Also at MWC, we announced a preview version of the new Dart DevTools
   for profiling and debugging Dart and Flutter apps.
-  You can find the docs on the
-  [DevTools wiki](https://flutter.github.io/devtools/).
-  In particular, check out the DevTool's [Flutter widget
-  inspector](https://flutter.github.io/devtools/inspector) for debugging
-  your UI, or the [timeline
-  view](https://flutter.github.io/devtools/timeline) for profiling your Flutter
+  You can find the docs on the DevTools wiki (Note: since moved to
+  [this site](/docs/development/tools/devtools).)
+  In particular, check out the DevTool's [widget inspector][] for
+  debugging your UI, or the [timeline view][] for profiling your Flutter
   application. Try them out and let us know what you think!
 * An update to the [Performance profiling](/docs/testing/ui-performance)
   page that incorporates the new Dart DevTools UI.
@@ -54,6 +75,9 @@ In addition, here are some recent new docs:
 
 If you have questions or comments about any of these docs, [file an
 issue]({{site.repo.this}}/issues).
+
+[widget inspector]: /docs/development/tools/devtools/inspector
+[timeline view]: /docs/development/tools/devtools/timeline
 
 ## **November 5, 2018**
 
@@ -86,3 +110,6 @@ Some of the new content includes:
 
 If you have questions or comments about the revamped site, [file an
 issue]({{site.repo.this}}/issues).
+
+
+[flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce

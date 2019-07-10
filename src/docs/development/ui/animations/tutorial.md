@@ -483,7 +483,8 @@ With these few changes, you’ve created your first animation in Flutter!
 
 经过这些小改动，你成功创建了第一个 Flutter 动画。
 
-<aside class="alert alert-success" markdown="1">
+
+{{site.alert.secondary}}
 
   **Dart language tricks:**
   You might not be familiar with Dart's cascade notation&mdash;the two
@@ -518,7 +519,8 @@ With these few changes, you’ve created your first animation in Flutter!
   [Dart Language Tour.]({{site.dart-site}}/guides/language/language-tour)
   
   更多关于级联操作符的内容，请参考 [Dart Language Tour]({{site.dart-site}}/guides/language/language-tour)。
-</aside>
+
+{{site.alert.end}}
 
 ###  Simplifying with Animated&shy;Widget
 

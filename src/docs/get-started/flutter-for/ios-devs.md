@@ -49,7 +49,7 @@ that are most relevant to your needs.
 
 ## 视图
 
-### What is the equivalent of a `UIView` in Flutter?
+### What is the equivalent of a UIView in Flutter?
 
 ### `UIView` 相当于 Flutter 中的什么？
 
@@ -119,20 +119,20 @@ to produce an interface that looks like
 但是 Flutter 的灵活性和表现力使其能够适配任何的设计语言。在 iOS 中，你可以通过 [Cupertino widgets](/docs/development/ui/widgets/cupertino) 
 来构造类似于 [Apple iOS 设计语言](https://developer.apple.com/design/resources/) 的接口。
 
-### How do I update `Widget`s?
+### How do I update widgets?
 
-### 我该如何更新 `Widget`？
+### 我该如何更新 widget？
 
-To update your views on iOS, you directly mutate them. In Flutter, widgets are
-immutable and not updated directly. Instead, you have to manipulate the
-widget’s state.
+To update your views on iOS, you directly mutate them.
+In Flutter, widgets are immutable and not updated directly.
+Instead, you have to manipulate the widget’s state.
 
 在 iOS 可以直接对视图进行修改。但是在 Flutter 中，widget 都是不可变的，所以也不能够直接对其修改。
 所以，你必须通过修改 widget 的 state 来达到更新视图的目的。
 
 This is where the concept of Stateful vs Stateless widgets
-comes in. A `StatelessWidget` is just what it sounds like&mdash;a widget with no
-state attached.
+comes in. A `StatelessWidget` is just what it sounds
+like&mdash;a widget with no state attached.
 
 于是，就引入了 Stateful widget 和 Stateless widget 的概念。和字面意思相同，`StatelessWidget` 就是
 一个没有绑定状态的 widget。
@@ -196,8 +196,8 @@ constructors and nothing more.
 
 看了上面的代码，你会注意到 `Text` 没有携带任何状态。它只会渲染初始化时传进来的内容。
 
-But, what if you want to make "I Like Flutter" change dynamically, for example
-when clicking a `FloatingActionButton`?
+But, what if you want to make "I Like Flutter" change dynamically,
+for example when clicking a `FloatingActionButton`?
 
 然而，如果你想要动态地修改文本为 “I Like Flutter”，比如说在点击一个 `FloatingActionButton` 时该怎么做呢？
 
@@ -316,13 +316,14 @@ widgets are immutable there is no direct equivalent to `addSubview()`.
 Instead, you can pass a function to the parent that returns a widget, and
 control that child's creation with a boolean flag.
 
-在 iOS 中，你可以通过调用父视图的 `addSubview()` 方法或者 `removeFromSuperview()` 方法
-来动态的添加或移除视图。在 Flutter 中，因为 widget 是不可变的，所以没有提供直接同 `addSubview()`
-作用相同的方法。但是你可以通过向父视图传递一个返回值是 widget 的方法，并通过一个 boolean flag 来控制
-子视图的存在。
+在 iOS 中，你可以通过调用父视图的 `addSubview()` 方法或者
+`removeFromSuperview()` 方法来动态的添加或移除视图。在 Flutter 中，
+因为 widget 是不可变的，所以没有提供直接同 `addSubview()`
+作用相同的方法。但是你可以通过向父视图传递一个返回值是 widget 的方法，
+并通过一个 boolean flag 来控制子视图的存在。
 
-The following example shows how to toggle between two widgets when the user clicks
-the `FloatingActionButton`:
+The following example shows how to toggle between two widgets when the
+user clicks the `FloatingActionButton`:
 
 下面的例子中像你展示了如何让用户通过点击 `FloatingActionButton` 按钮来达到在两个 widget 中切换的目的。
 
@@ -425,8 +426,8 @@ controller to start the animation.
 当构建一个 widget 树时，可以将 `Animation` 赋值给 widget 用户表现动画能力的属性，
 比如 `FadeTransition` 的 opacity 属性，然后告诉控制器启动动画。
 
-The following example shows how to write a `FadeTransition` that fades the widget
-into a logo when you press the `FloatingActionButton`:
+The following example shows how to write a `FadeTransition` that
+fades the widget into a logo when you press the `FloatingActionButton`:
 
 下面的示例描述了当你点击 `FloatingActionButton` 时，
 如何实现一个视图渐淡出成 logo 的 `FadeTransition` 效果。
@@ -504,7 +505,10 @@ For more information, see
 the [Animations tutorial](/docs/development/ui/animations/tutorial),
 and the [Animations overview](/docs/development/ui/animations).
 
-关于更多的内容，可以查看 [Animation 和 Motion widgets](/docs/development/ui/widgets/animation)， [Animations 教程](/docs/development/ui/animations/tutorial)，以及 [Animations 概览](/docs/development/ui/animations)。
+关于更多的内容，可以查看
+[Animation 和 Motion widgets](/docs/development/ui/widgets/animation)，
+[Animations 教程](/docs/development/ui/animations/tutorial)，
+以及 [Animations 概览](/docs/development/ui/animations)。
 
 ### How do I draw to the screen?
 
@@ -515,15 +519,15 @@ screen. Flutter has a different API based on the `Canvas` class, with two
 other classes that help you draw: `CustomPaint` and `CustomPainter`, the
 latter of which implements your algorithm to draw to the canvas.
 
-在 iOS 里，可以使用 `CoreGraphics` 绘制线条和图形到屏幕上。Flutter 里有一套基于 `Cavans` 实现的 API，
-有两个类可以帮助你进行绘制：`CustomPaint` 和 `CustomPainter`，后者实现了绘制图形到 canvas 的算法。
+在 iOS 里，可以使用 `CoreGraphics` 绘制线条和图形到屏幕上。
+Flutter 里有一套基于 `Cavans` 实现的 API，有两个类可以帮助你进行绘制：
+`CustomPaint` 和 `CustomPainter`，后者实现了绘制图形到 canvas 的算法。
 
 To learn how to implement a signature painter in Flutter, see Collin's answer on
 [StackOverflow][].
 
-想要学习在 Flutter 里如何实现一个画笔，可以查看 Collin 在 [StackOverflow][] 里的回答。
-
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+想要学习在 Flutter 里如何实现一个画笔，
+可以查看 Collin 在 [StackOverflow][] 里的回答。
 
 {% prettify dart %}
 class SignaturePainter extends CustomPainter {
@@ -574,7 +578,8 @@ class SignatureState extends State<Signature> {
 
 ### 如何设置视图 widget 的透明度？
 
-On iOS, everything has .opacity or .alpha. In Flutter, most of the time you need to
+On iOS, everything has .opacity or .alpha.
+In Flutter, most of the time you need to
 wrap a widget in an Opacity widget to accomplish this.
 
 在 iOS 里，视图都有一个 opacity 或者 alpha 属性。而在 Flutter 里，大部分时候你都需要封装 widget 到
@@ -1115,7 +1120,9 @@ Making a network call in Flutter is easy when you use the popular
 away a lot of the networking that you might normally implement yourself,
 making it simple to make network calls.
 
-在 Flutter 里，想要构造网络请求十分简单，直接使用 [`http` 库]({{site.pub-pkg}}/http) 即可。它把你可能要实现的网络操作进行了抽象封装，让处理网络请求变得十分简单。
+在 Flutter 里，想要构造网络请求十分简单，直接使用
+[`http` 库]({{site.pub-pkg}}/http) 即可。
+它把你可能要实现的网络操作进行了抽象封装，让处理网络请求变得十分简单。
 
 To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
@@ -1161,17 +1168,20 @@ Show the progress programmatically by controlling when it's rendered
 through a boolean flag. Tell Flutter to update its state before your
 long-running task starts, and hide it after it ends.
 
-在 Flutter 里，应该使用 `ProgressIndicator`。它在渲染时通过一个 boolean flag 来控制是否显示
-进度。在耗时任务开始前，告诉 Flutter 去更新状态，并在任务结束后隐藏。
+在 Flutter 里，应该使用 `ProgressIndicator`。
+它在渲染时通过一个 boolean flag 来控制是否显示
+进度。在耗时任务开始前，告诉 Flutter 去更新状态，
+并在任务结束后隐藏。
 
 In the example below, the build function is separated into three different
 functions. If `showLoadingDialog()` is `true` (when `widgets.length == 0`),
 then render the `ProgressIndicator`. Otherwise, render the
 `ListView` with the data returned from a network call.
 
-在下面的例子中，`build` 函数被分为三个不同的函数。当 `showLoadingDialog()` 是 `true` 时
-（当 `widgets.length == 0`），渲染 `ProgressIndicator`。否则，使用网络请求返回的数据
-渲染 `ListView`。
+在下面的例子中，`build` 函数被分为三个不同的函数。
+当 `showLoadingDialog()` 是 `true` 时
+（当 `widgets.length == 0`），渲染 `ProgressIndicator`。
+否则，使用网络请求返回的数据渲染 `ListView`。
 
 {% prettify dart %}
 import 'dart:convert';
@@ -1271,8 +1281,10 @@ are placed in an assets folder for Flutter.
 As with iOS, assets are any type of file, not just images.
 For example, you might have a JSON file located in the `my-assets` folder:
 
-在 iOS 里，图片和其他资源会被视为不同的资源分别处理，而在 Flutter 中只有资源这一个概念。
-iOS 里被放置在 `Images.xcasset` 文件夹的资源在 Flutter 中都被放置到了 assets 文件夹中。
+在 iOS 里，图片和其他资源会被视为不同的资源分别处理，
+而在 Flutter 中只有资源这一个概念。
+iOS 里被放置在 `Images.xcasset` 文件夹的资源在
+Flutter 中都被放置到了 assets 文件夹中。
 和 iOS 一样，assets 中可以放置任意类型的文件，而不仅仅是图片。
 例如，你可以把一个 JSON 文件放置到 `my-assets` 文件夹中。
 
@@ -1310,24 +1322,27 @@ might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier. The so-called
 [`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
 expresses the ratio of physical pixels in a single logical pixel.
 
-对于图片，Flutter 和 iOS 一样遵循了一个简单的基于屏幕密度的格式。Image assets 可能是 `1.0x`，`2.0x`，
-`3.0x` 或者其他任意的倍数。而 [`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html) 则
-表达了物理分辨率到逻辑分辨率的对照比例。
+对于图片，Flutter 和 iOS 一样遵循了一个简单的基于屏幕密度的格式。
+Image assets 可能是 `1.0x`，`2.0x`，`3.0x` 或者其他任意的倍数。而
+[`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
+则表达了物理分辨率到逻辑分辨率的对照比例。
 
 Assets are located in any arbitrary folder&mdash;Flutter has no
 predefined folder structure. You declare the assets (with location) in
 the `pubspec.yaml` file, and Flutter picks them up.
 
-Assets 可以放在任何属性的文件夹中&mdash;Flutter 没有任何预置的文件结构。你需要在 `pubspec.yaml` 中
-声明 assets （包括路径），然后 Flutter 将会识别它们。
+Assets 可以放在任何属性的文件夹中&mdash;Flutter 没有任何预置的文件结构。
+你需要在 `pubspec.yaml` 中声明 assets （包括路径），然后 Flutter 将会识别它们。
 
 For example, to add an image called `my_icon.png` to your Flutter
 project, you might decide to store it in a folder arbitrarily called `images`.
 Place the base image (1.0x) in the `images` folder, and the
 other variants in sub-folders named after the appropriate ratio multiplier:
 
-例如，要添加一个名为 `my_icon.png` 的图片到你的 Flutter 工程中，你可以把它存储在 `images` 文件夹下。
-把基础的图片（一倍图）放到 `images` 文件夹下，然后把其他倍数的图片放置到对应的比例下的子文件夹中。
+例如，要添加一个名为 `my_icon.png` 的图片到你的 Flutter 工程中，
+你可以把它存储在 `images` 文件夹下。
+把基础的图片（一倍图）放到 `images` 文件夹下，
+然后把其他倍数的图片放置到对应的比例下的子文件夹中。
 
 ```
 images/my_icon.png       // Base: 1.0x image
@@ -1377,8 +1392,10 @@ currently have a dedicated system for handling strings. At the moment, the
 best practice is to declare your copy text in a class as static fields and
 access them from there. For example:
 
-iOS 里有 `Localizable.strings` 文件，而 Flutter 则不同，目前并没有关于字符串的处理系统。
-目前，最佳的方案就是在静态区声明你的文本，然后进行访问。例如：
+iOS 里有 `Localizable.strings` 文件，而 Flutter 则不同，
+目前并没有关于字符串的处理系统。
+目前，最佳的方案就是在静态区声明你的文本，
+然后进行访问。例如：
 
 {% prettify dart %}
 class Strings {
@@ -1399,9 +1416,10 @@ add support for other languages, include the `flutter_localizations`
 package. You might also need to add Dart's [`intl`]({{site.pub-pkg}}/intl)
 package to use i10n machinery, such as date/time formatting.
 
-默认情况下，Flutter 只支持美式英语的本地化字符串。如果你需要添加其他语言支持，请引入 `flutter_localizations` 库。
-同时你可能还需要添加 [`intl`]({{site.pub-pkg}}/intl) 库来使用 i10n 机制，比如
-日期/时间的格式化等。
+默认情况下，Flutter 只支持美式英语的本地化字符串。
+如果你需要添加其他语言支持，请引入 `flutter_localizations` 库。
+同时你可能还需要添加 [`intl`]({{site.pub-pkg}}/intl) 库来使用 i10n 机制，
+比如日期 / 时间的格式化等。
 
 {% prettify yaml %}
 dependencies:
@@ -1441,11 +1459,15 @@ need the latter. Note that these two delegates contain "default"
 values, but you'll need to provide one or more delegates for your own app's
 localizable copy, if you want those to be localized too.
 
-`supportedLocales` 指定了应用支持的语言，而这些 delegates 则包含了实际的本地化内容。上面的示例
-使用了一个 `MaterialApp`，所以它既使用了处理基础 widget 本地化的 `GlobalWidgetsLocalizations`，
-也使用了处理 Material widget 本地化的 `MaterialWidgetsLocalizations`。如果你在应用中使用的是
- `WidgetApp`，就不需要后者了。注意，这两个 delegates 虽然都包含了“默认”值，但是如果你想要实现
-本地化，就必须在本地提供一个或多个 delegates 的实现副本。
+`supportedLocales` 指定了应用支持的语言，
+而这些 delegates 则包含了实际的本地化内容。
+上面的示例使用了一个 `MaterialApp`，
+所以它既使用了处理基础 widget 本地化的 `GlobalWidgetsLocalizations`，
+也使用了处理 Material widget 本地化的 `MaterialWidgetsLocalizations`。
+如果你在应用中使用的是 `WidgetApp`，就不需要后者了。
+注意，这两个 delegates 虽然都包含了“默认”值，
+但是如果你想要实现本地化，
+就必须在本地提供一个或多个 delegates 的实现副本。
 
 
 When initialized, the `WidgetsApp` (or `MaterialApp`) creates a
@@ -1477,14 +1499,17 @@ For further details on internationalization and localization in Flutter, see the
 [internationalization guide](/docs/development/accessibility-and-localization/internationalization),
 which has sample code with and without the `intl` package.
 
-关于 Flutter 中国际化和本地化的细节内容，请参看 [Flutter 应用里的国际化](/docs/development/accessibility-and-localization/internationalization)，里面包含有使用和不使用 `intl` 库的示例代码。
+关于 Flutter 中国际化和本地化的细节内容，请参看
+[Flutter 应用里的国际化](/docs/development/accessibility-and-localization/internationalization)，
+里面包含有使用和不使用 `intl` 库的示例代码。
 
 Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
 accessible from the native side, and vice versa, native assets and resources
 weren’t available to Flutter, as they lived in separate folders.
 
-注意在 Flutter 1.0 beta 2 之前，在 Flutter 里定义的资源是不能被原生代码访问的，反之亦然，而原生的资源
-也是不能在 Flutter 中使用，因为它们都被放在了独立的文件夹中。
+注意在 Flutter 1.0 beta 2 之前，在 Flutter 里定义的资源是不能被原生代码访问的，
+反之亦然，而原生的资源也是不能在 Flutter 中使用，
+因为它们都被放在了独立的文件夹中。
 
 ### What is the equivalent of CocoaPods? How do I add dependencies?
 
@@ -1495,8 +1520,9 @@ build system and the Pub package manager to handle dependencies. The tools
 delegate the building of the native Android and iOS wrapper apps to the
 respective build systems.
 
-在 iOS 里，可以通过 `Podfile` 添加依赖。而 Flutter 使用 Dart 构建系统和 Pub 包管理器来处理
-依赖。这些工具将原生应用的打包任务分发给相应 Android 或 iOS 构建系统。
+在 iOS 里，可以通过 `Podfile` 添加依赖。
+而 Flutter 使用 Dart 构建系统和 Pub 包管理器来处理依赖。
+这些工具将原生应用的打包任务分发给相应 Android 或 iOS 构建系统。
 
 While there is a Podfile in the iOS folder in your
 Flutter project, only use this if you are adding native
@@ -1505,13 +1531,15 @@ dependencies needed for per-platform integration. In general, use
 A good place to find great packages for Flutter is the
 [Pub site]({{site.pub}}/flutter/packages).
 
-如果你的 Flutter 项目 iOS 文件夹中存在 Podfile，那么请仅在里面添加原生平台的依赖。总而言之，
-在 Flutter 中使用 `pubspec.yaml` 来声明外部依赖。你可以通过 [Pub]({{site.pub}}/flutter/packages) 来
-查找一些优秀的 Flutter 第三方包。
+如果你的 Flutter 项目 iOS 文件夹中存在 Podfile，
+那么请仅在里面添加原生平台的依赖。总而言之，
+在 Flutter 中使用 `pubspec.yaml` 来声明外部依赖。
+你可以通过 [Pub]({{site.pub}}/flutter/packages)
+来查找一些优秀的 Flutter 第三方包。
 
 ## ViewControllers
 
-### What is the equivalent to `ViewController`s in Flutter?
+### What is the equivalent to ViewController in Flutter?
 
 ### ViewControllers 相当于 Flutter 中的什么？
 
@@ -1580,7 +1608,7 @@ For more details on the meaning of these states, see
 
 ## 布局
 
-### What is the equivalent of a `UITableView` or `UICollectionView` in Flutter?
+### What is the equivalent of UITableView or UICollectionView in Flutter?
 
 ### `UITableView` 和 `UICollectionView` 相当于 Flutter 中的什么？
 
@@ -1717,7 +1745,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-### How do I dynamically update a `ListView`s?
+### How do I dynamically update a ListView?
 
 ### 如何动态更新 `ListView`？
 
@@ -1908,7 +1936,7 @@ doesn't recreate the list anymore, but instead `.add`s to it.
 
 最后，也是最重要的，注意 `onTap()` 方法并没有重新创建列表，而是使用 `.add` 方法进行添加。
 
-### What is the equivalent of a `ScrollView` in Flutter?
+### What is the equivalent of a ScrollView in Flutter?
 
 ### `ScrollView` 相当于 Flutter 中的什么？
 
@@ -2198,7 +2226,7 @@ class SampleApp extends StatelessWidget {
 }
 {% endprettify %}
 
-### How do I set custom fonts on my `Text` widgets?
+### How do I set custom fonts on my Text widgets?
 
 ### 如何给 `Text` widget 设置自定义字体？
 
@@ -2239,7 +2267,7 @@ Widget build(BuildContext context) {
 }
 {% endprettify %}
 
-### How do I style my `Text` widgets?
+### How do I style my Text widgets?
 
 ### 如何设置 `Text` widget 的样式？
 
@@ -2598,9 +2626,9 @@ Flutter 的插件结构，简单来说，更像是 Android 中的 Event bus：�
 
 ## 数据库和本地存储
 
-### How do I access `UserDefaults` in Flutter?
+### How do I access UserDefault in Flutter?
 
-### Flutter 中如何访问 `UserDefaults`？
+### Flutter 中如何访问 UserDefaults？
 
 In iOS, you can store a collection of key-value pairs using a property list,
 known as the `UserDefaults`.
@@ -2629,6 +2657,25 @@ In Flutter, access this functionality using the
 [SQFlite]({{site.pub-pkg}}/sqflite) plugin.
 
 在 Flutter 里，可以使用 [SQFlite]({{site.pub-pkg}}/sqflite) 插件来实现这个功能。
+## Debugging
+
+### What tools can I use to debug my app in Flutter?
+
+### 应该使用什么工具调试我的 Flutter 应用？
+
+Use the [DevTools][] suite for debugging Flutter or Dart apps.
+
+请使用 [开发者工具][DevTools] debug 你的 Flutter 和 Dart 应用。
+
+DevTools includes support for profiling, examining the heap,
+inspecting the widget tree, logging diagnostics, debugging,
+observing executed lines of code, debugging memory leaks and memory
+fragmentation. For more information, see the
+[DevTools][] documentation.
+
+开发者工具包含了 profiling 构建、检查堆栈、检视 widget 树、诊断信息记录、调试、
+执行代码行观察、调试内存泄漏和内存碎片等。
+有关更多信息，请参阅 [开发者工具][DevTools] 文档。
 
 ## Notifications
 
@@ -2654,3 +2701,5 @@ plugin documentation.
 
 关于 Firebase Cloud Messaging API 的更多信息，可以
 查看 [`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging) 插件文档。
+
+[DevTools]: /docs/development/tools/devtools

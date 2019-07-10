@@ -1,19 +1,11 @@
 ---
-title: Using OEM debuggers
+title: Using an OEM debugger
 title: 使用原生的调试器
 short-title: debuggers
 short-title: 调试器
-description: How to connect an OEM debugger, such as Xcode, to your running Flutter app.
-description: 如何连接各开发平台的调试器调试 Flutter 应用，比如 Xcode 等。
+description: How to connect an OEM debugger to your running Flutter app.
+description: 如何连接各开发平台的调试器调试 Flutter 应用。
 ---
-
-{{site.alert.tip}}
-
-  This doc is not yet complete. The iOS instructions are in process.
-
-  该文档暂未完成。iOS 的相关说明正在编写中。
-
-{{site.alert.end}}
 
 If you are exclusively writing Flutter apps with Dart code and not using
 platform-specific libraries, or otherwise accessing platform-specific
@@ -47,9 +39,9 @@ plugins installed and configured.
 
   Connect to a physical device when debugging, rather than an emulator or
   simulator, which don't support profile mode. For more information, see
-  [Flutter's modes]({{site.github}}/flutter/flutter/wiki/Flutter's-modes).
+  [Flutter's modes][].
 
-  推荐连接到真机进行调试，而不是使用不支持 profie 构建模式的仿真器或模拟器。更多信息参考 [Flutter 的构建模式]({{site.github}}/flutter/flutter/wiki/Flutter's-modes)。
+  推荐连接到真机进行调试，而不是使用不支持 profie 构建模式的仿真器或模拟器。更多信息参考 [Flutter 的构建模式][Flutter's modes]。
 
 {{site.alert.end}}
 
@@ -75,7 +67,7 @@ plugins installed and configured.
 
   首次运行应用是最慢的，你会发现窗口底部的调试面板看起来会像这样：
 
-  {% asset 'testing/debugging/oem/debug-pane.png' alt='Debug pane' %}
+  {% asset 'testing/debugging/oem/debug-pane.png' alt='Debug pane' %}{:width="100%"}
 
   You can configure where the debug pane appears, or even tear it off to its own
   window using the gear to the right in the Debug pane bar.
@@ -123,7 +115,7 @@ Not needed for breakpoints to work.
 
     `this` 变量展开并显示其值。
 
-  {% asset 'testing/debugging/oem/debug-pane-action.png' alt='App status when hitting the set breakpoint' %}
+  {% asset 'testing/debugging/oem/debug-pane-action.png' alt='App status when hitting the set breakpoint' %}{:width="100%"}
 
 You can step in, out, and over Dart statements, hot reload or resume the app,
 and use the debugger in the same way you'd use any debugger.
@@ -166,7 +158,7 @@ button to the right of the AS window.
 Flutter Outline 以可视形式显示构建方法。注意在构建方法上可能与 widget 树不同。
 你可以使用 Android Studio 窗口右侧的垂直按钮切换 outline 的显示。
 
-{% asset 'testing/debugging/oem/flutter-outline.png' alt='screenshot showing the Flutter inspector' %}
+{% asset 'testing/debugging/oem/flutter-outline.png' alt='screenshot showing the Flutter inspector' %}{:width="100%"}
 
 {% comment %}
 
@@ -235,17 +227,15 @@ Considere moving the info below to a new page.
     当焦点在编辑面板中时，输入 **command-Shift-A**（Mac）或者 **shift-control-A**（Windows 和 Linux）。
     该插件会同时显示「查找」面板并显示在所有三个平台上执行此操作的提示。
 
-    {% asset 'testing/debugging/oem/presentation-assistant-find-pane.png' alt='Find panel' %}
-    
-    Presentation assistant's Find panel
+    {% asset 'testing/debugging/oem/presentation-assistant-find-pane.png' alt='Find panel' %}{:width="100%"}
+    <center>Presentation assistant's Find panel</center>
 
-    Presentation assistant 的「查找」面板
+    <center>Presentation assistant 的「查找」面板</center>
 
-    {% asset 'testing/debugging/oem/presentation-assistant-teaches.png' alt='Find pane' %}
+    {% asset 'testing/debugging/oem/presentation-assistant-teaches.png' alt='Find pane' %}{:width="100%"}
+    <center>Presentation assistant's action hint for opening its Find panel on Mac, Windows and Linux</center>
 
-    Presentation assistant's action hint for opening its Find panel on Mac, Windows and Linux
-
-    Presentation assistant 的在 Mac、Windows 和 Linux 上打开「查找」面板的操作提示。
+    <center>Presentation assistant 的在 Mac、Windows 和 Linux 上打开「查找」面板的操作提示。</center>
 
   * Enter _attach_ to see the following:
 
@@ -452,7 +442,7 @@ dev_dependencies:
 
   选择你想附加到的进程。在这个例子中是 Motorola Moto G 的 `com.google.clickcount`（或 <strong>com.<em>company</em>.<em>app_name</em></strong>）进程。
   
-  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev' %}
+  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev' %}{:width="100%"}
 
 
 * In the debug pane, you should now see a tab for **Android Debugger**.
@@ -468,25 +458,23 @@ dev_dependencies:
 
 Both the Dart and OEM debuggers are interacting with the same process.
 User either, or both, to set breakpoints, examine stack, resume execution...
-In other words, DEBUG!
+In other words, debug!
 
 Dart 和原生调试器都在与同一个进程交互。使用其中一个或者同时使用两个来设置断点、检查堆栈、恢复运行……
 换句话说，调试！
 
-  {% asset 'testing/debugging/oem/dart-debugger.png' alt='screenshot of Android Studio in the Dart debug pane.' %}
-  
-  The Dart debug pane with two breakpoints set in `lib/main.dart`.
+  {% asset 'testing/debugging/oem/dart-debugger.png' alt='screenshot of Android Studio in the Dart debug pane.' %}{:width="100%"}
+  <br><center>The Dart debug pane with two breakpoints set in `lib/main.dart`</center>
 
-  Dart 调试面板和 `lib/main.dart` 中的两个断点。
+  <center>Dart 调试面板和 `lib/main.dart` 中的两个断点。</center>
 
-  {% asset 'testing/debugging/oem/android-debugger.png' alt='screenshot of Android Studio in the Android debug pane.' %}
-
-  The Android debug pane with one breakpoint set in
+  {% asset 'testing/debugging/oem/android-debugger.png' alt='screenshot of Android Studio in the Android debug pane.' %}{:width="100%"}
+  <br><center>The Android debug pane with one breakpoint set in
    `GeneratedPluginRegistrant.java`.
   Toggle between the debuggers by clicking the appropriate debugger in
-   the Debug pane's banner.
+   the Debug pane's banner.</center>
 
-  Android 调试面板和 `GeneratedPluginRegistrant.java` 中的一个断点。通过单击调试面板顶部的相应调试器，在调试器之间进行切换。
+  <center>Android 调试面板和 `GeneratedPluginRegistrant.java` 中的一个断点。通过单击调试面板顶部的相应调试器，在调试器之间进行切换。</center>
 
 ## Debugging with Xcode (iOS)
 
@@ -497,6 +485,8 @@ In this section, you'll learn how to connect two debuggers to your app: 1) the
 Dart debugger and, 2) the Xcode debugger.
 
 为了调试原生 iOS 代码，你需要一个包含原生 iOS 代码的应用。在本节中，你将学会如何连接两个调试器到你的应用：1）Dart 调试器，和 2）Xcode 调试器。
+
+[PENDING]
 
 ## Resources
 
@@ -509,7 +499,7 @@ iOS, and Android:
 
 ### Flutter
 
-* [Debugging Flutter Apps](/docs/testing/debugging)
+* [Debugging Flutter apps](/docs/testing/debugging)
 
   [调试 Flutter 应用](/docs/testing/debugging)
 
@@ -517,7 +507,16 @@ iOS, and Android:
   [Developing Flutter Apps in an IDE](/docs/development/tools/android-studio).
 
   [高级调试](/docs/development/tools/android-studio#advanced-debugging)，
-  [在 Android Studio 或类 IntelliJ 里开发 Flutter 应用](/docs/development/tools/android-studio) 中的一节。
+  [在 Android Studio 或类 IntelliJ 里开发 Flutter 应用](/docs/development/tools/android-studio) 中的一节
+
+* [Debugging Flutter apps](/docs/testing/debugging)
+ 
+  [调试 Flutter 应用](/docs/testing/debugging)
+
+* [Flutter inspector][], as well as the general
+  [DevTools][] docs.
+
+  [开发者工具][DevTools] 里的 [Flutter inspector][]
 
 * [Performance Profiling](/docs/testing/ui-performance)
 
@@ -526,24 +525,37 @@ iOS, and Android:
 ### Android
 
 You can find the following debugging resources on
-[developer.android.com]({{site.android-dev}}).
+[developer.android.com][].
 
 你可以在 [developer.android.com]({{site.android-dev}}) 找到下列的调试资源。
 
-* [Debug your app]({{site.android-dev}}/studio/debug)
+* [Debug your app][]
 
-  [调试你的应用]({{site.android-dev}}/studio/debug)
+  [调试你的应用][Debug your app]
 
-* [Android Debug Bridge (adb)]({{site.android-dev}}/studio/command-line/adb)
+* [Android Debug Bridge (adb)][]
 
-  [Android 调试桥（adb）]({{site.android-dev}}/studio/command-line/adb)
+  [Android 调试桥（adb）][Android Debug Bridge (adb)]
 
 ### iOS
 
 You can find the following debugging resources on
-[developer.apple.com](https://developer.apple.com).
+[developer.apple.com][].
 
 你可以在 [developer.apple.com](https://developer.apple.com) 找到下列的调试资源。
 
-* [Debugging](https://developer.apple.com/support/debugging/)
-* [Instruments Help](https://help.apple.com/instruments/mac/current/)
+* [Debugging][]
+ 
+  [调试](https://developer.apple.com/cn/support/debugging/)
+
+* [Instruments Help][]
+
+[Flutter's modes]: /docs/testing/build-modes
+[developer.android.com]: {{site.android-dev}}
+[Debug your app]: {{site.android-dev}}/studio/debug
+[Android Debug Bridge (adb)]: {{site.android-dev}}/studio/command-line/adb
+[developer.apple.com]: https://developer.apple.com
+[Debugging]: https://developer.apple.com/support/debugging/
+[Instruments Help]: https://help.apple.com/instruments/mac/current/
+[Flutter inspector]: /docs/development/tools/devtools/inspector
+[DevTools]: /docs/development/tools/devtools

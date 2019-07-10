@@ -57,7 +57,7 @@ during flight.
 
 这个指南演示了如何创建标准 hero 动画，以及 hero 动画如何在飞行过程中将图像形状由圆形变成正方形。
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
 
   **Examples**: This guide provides examples of each hero animation style at
   the following links.
@@ -65,11 +65,17 @@ during flight.
   **示例**: 这个指南在下面的链接中为每种类型的 hero 动画提供示例。
   
   * [Standard hero animation code](#standard-hero-animation-code)
-  * [Radial hero animation code](#radial-hero-animation-code)
+    
+    [标准 hero 动画](#standard-hero-animation-code)
   
-</aside>
+  * [Radial hero animation code](#radial-hero-animation-code)
+   
+    [径向 hero 动画](#radial-hero-animation-code)
+  
+{{site.alert.end}}
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
+
   **New to Flutter?**
   
   **刚接触 Flutter？**
@@ -81,10 +87,10 @@ during flight.
   这部分假定您已经了解如何使用 Flutter 的 widget 创建布局。更多信息请参见 [Building Layouts in
   Flutter](/docs/development/ui/layout)。  
   
-</aside>
+{{site.alert.end}}
 
+{{site.alert.secondary}}
 
-<aside class="alert alert-info" markdown="1">
   **Terminology:**
   
   **术语：**  
@@ -94,7 +100,7 @@ during flight.
   
   在 Flutter app 中，[**Route**](/docs/cookbook/navigation/navigation-basics) 用来描述一个页面。
   
-</aside>
+{{site.alert.end}}
 
 You can create this animation in Flutter with Hero widgets. As the hero animates
 from the source to the destination route, the destination route (minus the hero)
@@ -102,7 +108,11 @@ fades into view. Typically, heroes are small parts of the UI, like images, that
 both routes have in common. From the user's perspective the hero "flies" between
 the routes. This guide shows how to create the following hero animations:
 
-您可以在 Flutter 中使用 Hero widgets 创建这个动画。当 hero 动画从原页面到目标页面，目标页面（减去 hero）淡入视野。可以说，heroes 是 UI 的一小部分，就像图像，两个页面有共同之处。从用户的角度来说，hero 在页面间“飞翔”。本指南展示如何创建如下 hero 动画：
+您可以在 Flutter 中使用 Hero widgets 创建这个动画。
+当 hero 动画从原页面到目标页面，目标页面（减去 hero）淡入视野。
+可以说，heroes 是 UI 的一小部分，就像图像，两个页面有共同之处。
+从用户的角度来说，hero 在页面间“飞翔”。
+本指南展示如何创建如下 hero 动画：
 
 **Standard hero animations**<br>
 
@@ -119,7 +129,10 @@ new, blue route, at a smaller size. Tapping the flippers in the blue route (or
 using the device's back-to-previous-route gesture) flies the flippers back to
 the original route.
 
-下面的视频（慢放）演示了一个典型示例。点击页面中间的 flippers，它将飞至一个新的蓝色页面的左上角，并缩小。点击蓝色页面中的 flippers（或者使用设备的回到前页手势），它将返回原页面。
+下面的视频（慢放）演示了一个典型示例。点击页面中间的 flippers，
+它将飞至一个新的蓝色页面的左上角，并缩小。
+点击蓝色页面中的 flippers（或者使用设备的回到前页手势），
+它将返回原页面。
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
@@ -146,7 +159,8 @@ Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
 下面的视频（慢放）演示了一个径向 hero 动画的示例。
-开始，一排三个圆形的图像在页面底部。点击任意圆形图像，其飞至新页面，并变成正方形。
+开始，一排三个圆形的图像在页面底部。点击任意圆形图像，
+其飞至新页面，并变成正方形。
 点击正方形图像，hero 返回至原页面，并变回圆形。
 
 <div class="embedded-video-wrapper">
@@ -164,7 +178,10 @@ to learn how to structure hero animation code,
 and [behind the scenes](#behind-the-scenes) to understand
 how Flutter performs a hero animation.
 
-在学习 [标准](#standard-hero-animations) 或 [径向](#radial-hero-animations) hero 动画之前，请阅读 [hero 动画基本结构](#basic-structure) 来学习如何构建 hero 动画代码，以及 [幕后](#behind-the-scenes) 来了解 Flutter 如何显示一个 hero 动画。
+在学习 [标准](#standard-hero-animations) 或 
+[径向](#radial-hero-animations) hero 动画之前，
+请阅读 [hero 动画基本结构](#basic-structure) 来学习如何构建 hero 动画代码，
+以及 [幕后](#behind-the-scenes) 来了解 Flutter 如何显示一个 hero 动画。
 
 <a name="basic-structure"></a>
 ## Basic structure of a hero animation
@@ -174,7 +191,7 @@ how Flutter performs a hero animation.
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  <h4 class="no_toc">要点？</h4>
+  <h4 class="no_toc">要点列表</h4>
 
   * Use two hero widgets in different routes but with matching tags to
     implement the animation.
@@ -202,19 +219,18 @@ how Flutter performs a hero animation.
     
 {{site.alert.end}}
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
 
-  **Terminology:**  
+  **Terminology:**
   
   **术语：**
-  
   If the concept of tweens or tweening is new to you, see the
   [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
   
   如果您不了解 tween 或者 tweening 的概念，请参考教程
   [在 Flutter 应用里实现动画效果](/docs/development/ui/animations/tutorial)
-
-</aside>
+  
+{{site.alert.end}}
 
 Hero animations are implemented using two
 [Hero]({{site.api}}/flutter/widgets/Hero-class.html)
@@ -223,9 +239,13 @@ and another describing the widget in the destination route.
 From the user’s point of view, the hero appears to be shared, and
 only the programmer needs to understand this implementation detail.
 
-Hero 动画需要使用两个 [Hero]({{site.api}}/flutter/widgets/Hero-class.html) widgets 来实现：一个用来在原页面中描述 widget，另一个在目标页面中描述 widget。从用户角度来说，hero 似乎是分享的，只有程序员需要了解实施细节。
+Hero 动画需要使用两个 
+[Hero]({{site.api}}/flutter/widgets/Hero-class.html) widgets 来实现：
+一个用来在原页面中描述 widget，另一个在目标页面中描述 widget。
+从用户角度来说，hero 似乎是分享的，只有程序员需要了解实施细节。
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
+
   **Note about dialogs:**
   
   **注意对话框：**  
@@ -242,7 +262,7 @@ Hero 动画需要使用两个 [Hero]({{site.api}}/flutter/widgets/Hero-class.htm
   至少现在不是，您无法在对话框中使用 hero 动画。更多内容（和可能的替代方法），
   [请参考这里]({{site.github}}/flutter/flutter/issues/10667)
 
-</aside>
+{{site.alert.end}}
 
 Hero animation code has the following structure:
 
@@ -254,7 +274,8 @@ Hero 动画代码有如下结构：
    the currently displayed widget tree as defined by the source route.
    
    定义一个起始 Hero widget，被称为 **source hero**。
-   该 hero 指定图形表示（通常是图像），以及识别标签，并且在由原页面定义的当前显示的 widget 树中。
+   该 hero 指定图形表示（通常是图像），以及识别标签，
+   并且在由原页面定义的当前显示的 widget 树中。
    
 1. Define an ending Hero widget, referred to as the _destination hero_.
    This hero also specifies its graphical representation,
@@ -273,14 +294,17 @@ Hero 动画代码有如下结构：
    The destination route defines the widget tree that exists
    at the end of the animation.
    
-   创建一个含有 destination hero 的页面。目标页面定义了动画结束时应有的 widget 树。
+   创建一个含有 destination hero 的页面。
+   目标页面定义了动画结束时应有的 widget 树。
    
 1. Trigger the animation by pushing the destination route on the
    Navigator's stack. The Navigator push and pop operations trigger
    a hero animation for each pair of heroes with matching tags in
    the source and destination routes.
    
-   通过推送目标页面到 Navigator 堆栈来触发动画。Navigator 推送并弹出操作触发原页面和目标页面中含有配对标签 heroes 的 hero 动画。
+   通过推送目标页面到 Navigator 堆栈来触发动画。
+   Navigator 推送并弹出操作触发原页面和目标页面中含有
+   配对标签 heroes 的 hero 动画。
 
 Flutter calculates the tween that animates the Hero's bounds from
 the starting point to the endpoint (interpolating size and position),
@@ -473,7 +497,8 @@ Specifies a screen or page. Most apps, beyond the most basic,
 {{site.alert.end}}
 
 <a name="standard-hero-animation-code"></a>
-<aside class="alert alert-info" markdown="1">
+
+{{site.alert.secondary}}
 
   **Standard hero animation code**
 
@@ -501,7 +526,8 @@ Specifies a screen or page. Most apps, beyond the most basic,
   [basic_hero_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_hero_animation/)<br>
    直接使用 hero widget。
     这个基础示例仅供参考，本指南中无详细介绍。
-</aside>
+
+{{site.alert.end}}
 
 ### What's going on?
 
@@ -752,7 +778,7 @@ provided example to your needs.** The heavy lifting is done for you.
 这个动画看起来复杂，但是您可以**根据自身需要自定义范例**。艰巨的工作已为您完成。
 
 <a name="radial-hero-animation-code"></a>
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **Radial hero animation code**
 
   **径向 hero 动画代码**
@@ -785,9 +811,10 @@ provided example to your needs.** The heavy lifting is done for you.
     
   [radial_hero_animation_animate<wbr>_rectclip]({{site.github}}/flutter/website/tree/master/examples/_animation/radial_hero_animation_animate_rectclip)<br>
     通过动画矩形剪裁大小，扩展径向 hero 动画。这个高阶示例亦供参考，本指南不详述。
-</aside>
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.end}}
+
+{{site.alert.secondary}}
   **Pro tip:**
   
   **技巧：**
@@ -795,11 +822,13 @@ provided example to your needs.** The heavy lifting is done for you.
   The radial hero animation involves intersecting a round shape with
   a square shape. This can be hard to see, even when slowing
   the animation with `timeDilation`, so you might consider enabling
-  Flutter's [visual debugging mode](/docs/testing/debugging#visual-debugging)
-  during development.
+  the [`debugPaintSizedEnabled`][] flag during development.
   
-  径向 hero 动画设计圆形和正方形的交叉。这个很难看出来，即使使用 `timeDilation` 来减慢动画。所以在开发时，可以考虑启用 Flutter 的 [visual debugging mode](/docs/testing/debugging#visual-debugging)。
-</aside>
+  径向 hero 动画设计圆形和正方形的交叉。
+  这个很难看出来，即使使用 `timeDilation` 来减慢动画。
+  所以在开发时，可以考虑启用 Flutter 的 [`debugPaintSizedEnabled`][] 这个 flag。
+
+{{site.alert.end}}
 
 ### What's going on?
 
@@ -823,20 +852,27 @@ the ClipOval scales from `minRadius` to `maxRadius` while the
 [ClipRect]({{site.api}}/flutter/widgets/ClipRect-class.html)
 maintains a constant size.
 
-蓝色渐变（代表图像），表明剪裁形状交叉的位置。在过渡的开始，交叉的结果是圆形剪裁 ([ClipOval]({{site.api}}/flutter/widgets/ClipOval-class.html))。在过渡过程中，ClipOval 由 `minRadius` 缩放至 `maxRadius`，[ClipRect]({{site.api}}/flutter/widgets/ClipRect-class.html) 则保持原尺寸。
+蓝色渐变（代表图像），表明剪裁形状交叉的位置。
+在过渡的开始，交叉的结果是圆形剪裁
+([ClipOval]({{site.api}}/flutter/widgets/ClipOval-class.html))。
+在过渡过程中，ClipOval 由 `minRadius` 缩放至 `maxRadius`，
+[ClipRect]({{site.api}}/flutter/widgets/ClipRect-class.html) 则保持原尺寸。
 
 At the end of the transition the intersection of the circular and
 rectangular clips yield a rectangle that's the same size as the hero
 widget. In other words, at the end of the transition the image is no
 longer clipped.
 
-在过渡结束时，圆形和矩形剪裁的交集产生一个与 hero widget 相同大小的矩形。也就是说，在过渡结束时，图片已不再被剪裁。
+在过渡结束时，圆形和矩形剪裁的交集产生一个与 hero widget 相同大小的矩形。
+也就是说，在过渡结束时，图片已不再被剪裁。
 
 [Create a new Flutter example](/docs/get-started/test-drive) and
 update it using the files from the
 [GitHub directory.]({{site.github}}/flutter/website/tree/master/examples/_animation/radial_hero_animation)
 
-[创建一个新的 Flutter 示例](/docs/get-started/test-drive) 和使用来自 [GitHub directory.]({{site.github}}/flutter/website/tree/master/examples/_animation/radial_hero_animation) 的文件更新。
+[创建一个新的 Flutter 示例](/docs/get-started/test-drive) 和使用来自
+[GitHub directory.]({{site.github}}/flutter/website/tree/master/examples/_animation/radial_hero_animation)
+的文件更新。
 
 To run the example:
 
@@ -910,7 +946,8 @@ Key information:
   This ensures that the circle-to-square transition is easy to see,
   even for images with transparency.
   
-  Material widget 有轻微不透明色，所以图像的透明部分会被渲染上颜色。这确保了圆形到正方形过渡，即使是透明的图像依然清晰可见。
+  Material widget 有轻微不透明色，所以图像的透明部分会被渲染上颜色。
+  这确保了圆形到正方形过渡，即使是透明的图像依然清晰可见。
   
 * The Photo class does not include the Hero in its widget tree.
   For the animation to work, the hero
@@ -986,7 +1023,8 @@ Key information:
 - As the hero flies, its size changes and, because it constrains its child's
   size, the `RadialExpansion` widget changes size to match.
   
-  hero 飞翔时会改变大小，因为它限制了 child 的大小，所以 `RadialExpansion` widget 会改变大小以匹配。
+  hero 飞翔时会改变大小，因为它限制了 child 的大小，
+  所以 `RadialExpansion` widget 会改变大小以匹配。
   
 - The `RadialExpansion` animation is created by two overlapping clips.
 
@@ -999,7 +1037,11 @@ Key information:
   path uses `MaterialRectCenterArcTween` to interpolate the tweens using the
   center point of each hero.
 
-   这个示例用 [MaterialRectCenterArcTween][] 定义了补间插值。hero 动画的默认飞翔路径，利用 heroes 的角插值补间。这个方法会影响到径向过渡时 hero 的长宽比例，所以新的飞翔路径使用 `MaterialRectCenterArcTween` 方法，利用每个 hero 的中心点来插值补间。
+   这个示例用 [MaterialRectCenterArcTween][] 定义了补间插值。
+   hero 动画的默认飞翔路径，利用 heroes 的角插值补间。
+   这个方法会影响到径向过渡时 hero 的长宽比例，
+   所以新的飞翔路径使用 `MaterialRectCenterArcTween` 方法，
+   利用每个 hero 的中心点来插值补间。
 
   Here's the code:
 
@@ -1063,3 +1105,4 @@ The following resources might help when writing animations:
 
 [MaterialRectCenterArcTween]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
 [Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
+[`debugPaintSizeEnabled`]: /docs/testing/code-debugging#debug-flags-layout

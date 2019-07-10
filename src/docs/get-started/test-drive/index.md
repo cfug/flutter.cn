@@ -12,7 +12,8 @@ next:
 toc: false
 ---
 
-This page describes how to create a new Flutter app from templates, run it, and experience "hot reload" after you make changes to the app.
+This page describes how to create a new Flutter app from templates, run it,
+and experience "hot reload" after you make changes to the app.
 
 本页面讲解如何通过模板实现一个 Flutter 应用，执行并且在修改程序之后触发“热重载 (hot reload)”功能。
 

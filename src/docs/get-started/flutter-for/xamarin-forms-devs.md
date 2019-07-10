@@ -10,7 +10,9 @@ existing knowledge to build mobile apps with Flutter. If you understand
 the fundamentals of the Xamarin.Forms framework, then you can use this
 document as a jump start to Flutter development.
 
-本文档旨在帮助 Xamarin.Forms 开发者利用已有的知识去构建 Flutter 移动应用。如果你懂得 Xamarin.Forms 框架的基本原理，那么你就可以将本文档当作你开始 Flutter 开发的不错的起点。
+本文档旨在帮助 Xamarin.Forms 开发者利用已有的知识去构建 Flutter 移动应用。
+如果你懂得 Xamarin.Forms 框架的基本原理，
+那么你就可以将本文档当作你开始 Flutter 开发的不错的起点。
 
 Your Android and iOS knowledge and skill set are valuable when building with
 Flutter, because Flutter relies on the native operating system configurations,
@@ -18,14 +20,20 @@ similar to how you would configure your native Xamarin.Forms projects.
 The Flutter Frameworks is also similar to how you create a single UI,
 that is used on multiple platforms.
 
-你的 Android 和 iOS 知识以及技能组合在构建 Flutter 时都是有价值的，因为 Flutter 依赖的原生系统配置都与你配置 Xamarin.Forms 原生项目时一样。Flutter 框架与你创建一个单独的界面时也是一样的，这在多个平台中同样适用。
+你的 Android 和 iOS 知识以及技能组合在构建 Flutter 时都是有价值的，
+因为 Flutter 依赖的原生系统配置都与你配置 Xamarin.Forms 原生项目时一样。
+Flutter 框架与你创建一个单独的界面时也是一样的，这在多个平台中同样适用。
 
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
+<<<<<<< HEAD
 本文档可用做可指导手册来翻查与你需求最为相关的问题。
 
 ## Project Setup
+=======
+## Project setup
+>>>>>>> 65b0efad802fb1d092fb5c6c0d883f9b9a40c077
 
 ## 项目设置
 
@@ -36,7 +44,8 @@ that are most relevant to your needs.
 For each platform in Xamarin.Forms, you call the `LoadApplication` method,
 which creates a new application and starts your app.
 
-对于 Xamarin.Forms 里的每个平台，你可以调用 `LoadApplication` 方法，创建一个新应用并运行你的 app 。
+对于 Xamarin.Forms 里的每个平台，你可以调用 `LoadApplication` 方法，
+创建一个新应用并运行你的 app 。
 
 {% prettify csharp %}
 LoadApplication(new App());
@@ -97,12 +106,9 @@ class MyApp extends StatelessWidget {
 
 ### 如何创建一个页面？
 
-Xamarin.Forms has many different types of pages; `ContentPage` is the most
-common.
-
-Xamarin.Forms 拥有一些不同类型的页面；`ContentPage` 是最为通用的。
-
-In Flutter, you specify an application widget that holds your root page.
+Xamarin.Forms has many different types of pages;
+`ContentPage` is the most common.  In Flutter,
+you specify an application widget that holds your root page.
 You can use a
 [MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
 widget, which supports [Material
@@ -114,19 +120,24 @@ or you can use the lower level
 [WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html),
 which you can customize in any way you want.
 
+Xamarin.Forms 拥有一些不同类型的页面；
+`ContentPage` 是最为通用的。
 在 Flutter 中，指定一个应用程序 widget 来控制你的根页面。
 你可以使用一个
-[MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
-widget，他支持[Material Design]({{site.material}}/design)，或者你也可以使用等级较低的
-[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html)，可供你随心所欲地定制。
+[MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html) widget，
+它支持 [Material Design]({{site.material}}/design)，或者你也可以使用等级较低的
+[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html)，
+可供你随心所欲地定制。
 
 The following code defines the home page, a stateful widget. In Flutter,
 all widgets are immutable, but two types of widgets are supported:
 stateful and stateless. Examples of a stateless widget are titles,
 icons, or images.
 
-接下来的代码定义了一个主页，一个有状态的 widget。在 Flutter 中，除了以下两个类型的 widget 外，其它 widget 都是不可变的：
-有状态和无状态 widget。无状态 widget 的示例都是标题、图标或图片。
+接下来的代码定义了一个主页，一个有状态的 widget。
+在 Flutter 中，除了以下两个类型的 widget 外，其它 widget 都是不可变的：
+有状态和无状态 widget。
+无状态 widget 的示例都是标题、图标或图片。
 
 The following example uses MaterialApp, which holds its root page in the
 `home` property.
@@ -135,9 +146,7 @@ The following example uses MaterialApp, which holds its root page in the
 
 {% prettify dart %}
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  
-  // 这个 widget 是你的应用程序的根 widget。
+  // This widget is the root of your application(这个 widget 是你的应用程序的根 widget)。
 
   @override
   Widget build(BuildContext context) {
@@ -163,7 +172,8 @@ that holds the state of the object. The State object persists over
 the life of the widget.
 
 一个有状态 widget，例如下面的 MyHomePage，包含两个部分。
-第一部分，是它自身不变的，创建一个状态对象（State object）来管控对象的状态。状态对象持续存在于 widget 的整个生命周期中。
+第一部分，是它自身不变的，创建一个状态对象（State object）来管控对象的状态。
+状态对象持续存在于 widget 的整个生命周期中。
 
 {% prettify dart %}
 class MyHomePage extends StatefulWidget {
@@ -185,7 +195,7 @@ a build of that portion of the UI.  Make sure to call `setState()` only
 when necessary, and only on the part of the widget tree that has changed,
 or it can result in poor UI performance.
 
-当 widget 树的状态发生了改变，将会调用  `setState()`  触发 widget 当中该部分UI的构建。
+当 widget 树的状态发生了改变，将会调用 `setState()` 触发 widget 当中该部分UI的构建。
 确保只在需要时调用 `setState()` ，并且在只有部分 widget 树发生变化时调用，否则会造成糟糕的UI性能表现。
 
 {% prettify dart %}
@@ -249,9 +259,9 @@ but there are many benefits to this approach.
 
 ## 视图
 
-### What is the equivalent of a `Page` or `Element` in Flutter?
+### What is the equivalent of a Page or Element in Flutter?
 
-### 在 Flutter 中 `页面（Page）` 与 `元素（Element）`的相同点是什么？
+### 在 Flutter 中页面（Page）与元素（Element）的相同的是什么？
 
 {{site.alert.secondary}}
 
@@ -279,8 +289,9 @@ In Flutter, almost everything is a widget. A `Page`, called a `Route` in
 Flutter, is a widget.  Buttons, progress bars, and animation controllers
 are all widgets. When building a route, you create a widget tree.
 
-在 Flutter 中，几乎所有东西都是一个 widget 。一个`页面`在 Flutter 中被称作`路由（Route）`，也是一个 widget。
-按钮、进度条、动画控制器都是 widget 。当构建一个路由时，就会创建一棵 widget 树。
+在 Flutter 中，几乎所有东西都是 widget，
+一个`页面`在 Flutter 中被称作`路由（Route）`，也是一个 widget。
+按钮、进度条、动画控制器都是 widget。当构建一个路由时，就会创建一棵 widget 树。
 
 Flutter includes the [Material
 Components](/docs/development/ui/widgets/material)
@@ -292,7 +303,9 @@ including iOS.
 
 Flutter 包含 [Material 组件](/docs/development/ui/widgets/material) 库。
 这些都是实现了 [Material Design 指南]({{site.material}}/design) 的 widget。
-Material Design 是一个灵活的 [针对所有平台]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines) 的设计系统，包括 iOS。
+Material Design 是一个灵活的 
+[针对所有平台]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines) 
+的设计系统，包括 iOS。
 
 But Flutter is flexible and expressive enough to implement any design language.
 For example, on iOS, you can use the [Cupertino
@@ -301,12 +314,13 @@ to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
 不过， Flutter 有足够灵活和自描述性（expressive）去实现任何设计语言。
-举个例子，在 iOS 上，你可以用 [Cupertino
- widget](/docs/development/ui/widgets/cupertino) 来生成一个看起来像 [苹果 iOS 设计语言](https://developer.apple.com/design/resources/) 的接口。
+举个例子，在 iOS 上，你可以用 [Cupertino widget](/docs/development/ui/widgets/cupertino)
+来生成一个看起来像 
+[苹果 iOS 设计语言](https://developer.apple.com/design/resources/) 的接口。
 
-### How do I update `Widget`s?
+### How do I update widgets?
 
-### 如何更新 `widget`？
+### 如何更新 widget？
 
 In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has
 properties and methods. You update your `Element` by updating a property,
@@ -318,19 +332,22 @@ and this is propagated down to the native control.
 In Flutter, `Widget`s are immutable and you can't directly update them
 by changing a property, instead you have to work with the widget's state.
 
-在 Flutter 中，`Widget`是不可变的，你不可以直接地通过修改一个属性来更新它们，而是应该使用 widget 的状态。
+在 Flutter 中，`widget`是不可变的，你不可以直接地通过修改一个属性来更新它们，
+而是应该使用 widget 的状态。
 
 This is where the concept of Stateful vs Stateless widgets comes from. A
 `StatelessWidget` is just what it sounds like&mdash;a widget with no state
 information.
 
-有状态 widget 和无状态 widget 的概念就是出自这里。`无状态 widget（StatelessWidget）`顾名思义，就是一个没有状态信息的 widget。
+有状态 widget 和无状态 widget 的概念就是出自这里，
+`无状态 widget（StatelessWidget）`顾名思义，就是一个没有状态信息的 widget。
 
 `StatelessWidgets` are useful when the part of the user interface
 you are describing does not depend on anything other than the configuration
 information in the object.
 
-当你在描绘用户界面的一个不依赖除对象中的配置信息之外任何东西的部分时，`StatelessWidgets` 是有用的。
+当你在描绘用户界面的一个不依赖除对象中的配置信息之外任何东西的部分时，
+`StatelessWidgets` 是有用的。
 
 For example, in Xamarin.Forms, this is similar to placing an `Image`
 with your logo. The logo is not going to change during runtime, so
@@ -344,29 +361,36 @@ after making an HTTP call or user interaction then you have to work
 with `StatefulWidget` and tell the Flutter framework that the widget’s
 `State` has been updated so it can update that widget.
 
-如果你想动态地基于进行了HTTP调用或者用户交互后接收到的数据来修改UI，你需要使用`StatefulWidget`并告诉 Flutter 框架这个 widget 的`状态（State）`已经被更新了所以它可以更新那个 widget。
+如果你想动态地基于进行了 HTTP 调用或者用户交互后接收到的数据来修改 UI，
+你需要使用 `StatefulWidget` 并告诉 Flutter 框架这个 widget 的 `状态（State）`
+已经被更新了所以它可以更新那个 widget。
 
 The important thing to note here is at the core both stateless and stateful
 widgets behave the same. They rebuild every frame, the difference is the
 `StatefulWidget` has a `State` object that stores state data across frames
 and restores it.
 
-这里要记下的重要内容是有状态和无状态 widget 的核心行为都是一样的。他们重建每个结构，不同的是`StatefulWidget`拥有一个`状态（State）`对象来跨结构储存状态数据和恢复它。
+这里要记下的重要内容是有状态和无状态 widget 的核心行为都是一样的。
+他们重建每个结构，不同的是`StatefulWidget`拥有一个`状态（State）`
+对象来跨结构储存状态数据和恢复它。
 
 If you are in doubt, then always remember this rule: if a widget changes
 (because of user interactions, for example) it’s stateful.
 However, if a widget reacts to change, the containing parent widget can
 still be stateless if it doesn't itself react to change.
 
-如果你有疑惑，那么就记住这个规则：如果一个 widget 改变了（例如是因为用户交互），它就是有状态的。
-相反，如果一个 widget 对修改作出反应，包含它的父 widget 如果本身没有对修改作出反应，仍然可以是无状态的。
+如果你有疑惑，那么就记住这个规则：
+如果一个 widget 改变了（例如是因为用户交互），它就是有状态的。
+相反，如果一个 widget 对修改作出反应，
+包含它的父 widget 如果本身没有对修改作出反应，仍然可以是无状态的。
 
 The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
 the `Text` widget you'll find it subclasses `StatelessWidget`.
 
 接下来的示例展示了如何使用一个`StatelessWidget`。一个公共的
-`StatelessWidget`是`Text` widget。如果你查阅`文本`的实现，你会发现他是 `StatelessWidget` 的子类。
+`StatelessWidget`是`Text` widget。
+如果你查阅 `Text` widget 的实现，你会发现他是 `StatelessWidget` 的子类。
 
 {% prettify dart %}
 new Text(
@@ -960,9 +984,9 @@ many other packages on the [Pub site]({{site.pub}}/flutter).
 
 ## 异步 UI
 
-### What is the equivalent of `Device.BeginOnMainThread()` in Flutter?
+### What is the equivalent of Device.BeginOnMainThread() in Flutter?
 
-### 在 Flutter 中有什么是跟 `Device.BeginOnMainThread()` 相等的？
+### 在 Flutter 中有什么是跟 Device.BeginOnMainThread() 方法是相等的？
 
 Dart has a single-threaded execution model, with support for `Isolate`s
 (a way to run Dart code on another thread), an event loop, and
@@ -1101,7 +1125,8 @@ If you're doing I/O-bound work, such as disk access or a network call,
 then you can safely use `async`/`await` and you're all set.
 
 因为 Flutter 是单线程的，并且运行一个事件循环，所以您不必担心线程管理或产生后台线程。
-这一点与 Xamarin.Forms 非常相似。如果您正在做 I/O 密集型的工作，比如磁盘访问或网络调用，那么您可以安全地使用 `async`/`await`，这样就一切就绪了。
+这一点与 Xamarin.Forms 非常相似。如果您正在做 I/O 密集型的工作，比如磁盘访问或网络调用，
+那么您可以安全地使用 `async`/`await`，这样就一切就绪了。
 
 If, on the other hand, you need to do computationally intensive work
 that keeps the CPU busy, you want to move it to an `Isolate`
@@ -1109,7 +1134,8 @@ to avoid blocking the event loop, like you would keep _any_ sort of
 work out of the main thread. This is similar to when you
 move things to a different thread via `Task.Run()` in Xamarin.Forms.
 
-另一方面，如果您需要做计算密集型的工作，使CPU保持忙碌，那么您希望将它移动到“隔离”状态，以避免阻塞事件循环，就像您将任何类型的工作放在主线程之外一样。
+另一方面，如果您需要做计算密集型的工作，使CPU保持忙碌，那么您希望将它移动到“隔离”状态，
+以避免阻塞事件循环，就像您将任何类型的工作放在主线程之外一样。
 这类似于通过 Xamarin.Forms 中的 `Task.Run()` 将内容移动到另一个线程。
 
 For I/O-bound work, declare the function as an `async` function,
@@ -1546,7 +1572,8 @@ weren’t available to Flutter, as they lived in separate folders.
 As of Flutter beta 2, assets are stored in the native asset folder,
 and are accessed on the native side using Android's `AssetManager`:
 
-在 Flutter beta 2 版本中，资产都被存储在原生的资产文件夹中，并且可以通过 Android 的`资产管理器（AssetManager）` 从原生一侧被访问。
+在 Flutter beta 2 版本中，资产都被存储在原生的资产文件夹中，
+并且可以通过 Android 的`资产管理器（AssetManager）` 从原生一侧被访问。
 
 As of Flutter beta 2, Flutter still cannot access native resources,
 nor it can access native assets.
@@ -1735,7 +1762,6 @@ Xamarin.Forms 中有一个 `csproj` 文件。在 Flutter 中最接近的它的�
 ### What is the equivalent of Nuget? How do I add dependencies?
 
 ### Nuget 的等价物是什么？如何添加依赖项？
-
 
 In the .NET eco-system, native Xamarin projects and Xamarin.Forms
 projects had access to Nuget and the inbuilt package management system.
@@ -1986,7 +2012,8 @@ can attach to. Many elements also contain a `Command` that is
 tied to this event. Alternatively you would use the
 `TapGestureRecognizer`. In Flutter there are two very similar ways:
 
-在 Xamarin.Forms 中，`元素（Element）`可能包含一个可供附加（attach）的单击事件。许多元素还包含一个与此事件关联的 `命令 `。
+在 Xamarin.Forms 中，`元素（Element）`可能包含一个可供附加（attach）的单击事件。
+许多元素还包含一个与此事件关联的 `命令 `。
 或者你可以使用 `TapGestureRecognizer`。在 Flutter 中有两种非常相似的方式：
 
  1. If the widget supports event detection, pass a function to it and
@@ -2052,117 +2079,84 @@ range of Gestures such as:
 
 * Tap
 
-* 单击
+  单击
 
 <dl>
   <dt>`onTapDown`</dt>
-  <dd>A pointer that might cause a tap has contacted the screen at a
-      particular location.</dd>
+  <dd><p>A pointer that might cause a tap has contacted the screen at a
+      particular location.</p><p>当指尖在特定位置与屏幕接触产生点击事件。</p></dd>
   <dt>`onTapUp`</dt>
-  <dd>A pointer that triggers a tap has stopped contacting the
-      screen at a particular location.</dd>
+  <dd><p>A pointer that triggers a tap has stopped contacting the
+      screen at a particular location.</p><p>当指尖触发的点击事件已经停止在特定位置与屏幕接触。</p></dd>
   <dt>`onTap`</dt>
-  <dd>A tap has occurred.</dd>
+  <dd><p>A tap has occurred.</p><p>一个点击事件已经发生</p></dd>
   <dt>`onTapCancel`</dt>
-  <dd>The pointer that previously triggered the `onTapDown` won't
-      cause a tap.</dd>
-</dl>
-
-<dl>
-  <dt>`onTapDown`</dt>
-  <dd>当指尖在特定位置与屏幕接触产生点击事件。</dd>
-  <dt>`onTapUp`</dt>
-  <dd>当指尖触发的点击事件已经停止在特定位置与屏幕接触。</dd>
-  <dt>`onTap`</dt>
-  <dd>一个点击事件已经发生</dd>
-  <dt>`onTapCancel`</dt>
-  <dd>触发了 `onTapDown` 事件之后的指尖没有导致点击事件。</dd>
+  <dd><p>The pointer that previously triggered the `onTapDown` won't
+      cause a tap.</p><p>触发了 `onTapDown` 事件之后的指尖没有导致点击事件。</p></dd>
 </dl>
 
 * Double tap
 
-* 双击
+  双击
 
 <dl>
   <dt>`onDoubleTap`</dt>
-  <dd>The user tapped the screen at the same location twice in
-      quick succession.</dd>
+  <dd><p>The user tapped the screen at the same location twice in
+      quick succession.</p><p>用户在同一位置连续快速点击屏幕两次。</p></dd>
 </dl>
-
-<dl>
-  <dt>`onDoubleTap`</dt>
-  <dd>用户在同一位置连续快速点击屏幕两次。</dd>
-</dl>
-
 
 * Long press
 
-* 长按
+  长按
 
 <dl>
   <dt>`onLongPress`</dt>
-  <dd>A pointer has remained in contact with the screen at the same
-      location for a long period of time.</dd>
-</dl>
-
-<dl>
-  <dt>`onLongPress`</dt>
-  <dd>指尖长时间保持与屏幕在同一位置的接触。</dd>
+  <dd><p>A pointer has remained in contact with the screen at the same
+      location for a long period of time.</p><p>指尖长时间保持与屏幕在同一位置的接触。</p></dd>
 </dl>
 
 * Vertical drag
 
-* 垂直拖动
+  垂直拖动
 
 <dl>
   <dt>`onVerticalDragStart`</dt>
-  <dd>A pointer has contacted the screen and might begin to
-      move vertically.</dd>
+  <dd><p>A pointer has contacted the screen and might begin to
+      move vertically.</p><p>指尖与屏幕接触后，可能开始垂直移动。</p></dd>
   <dt>`onVerticalDragUpdate`</dt>
-  <dd>A pointer in contact with the screen
-      has moved further in the vertical direction.</dd>
+  <dd><p>A pointer in contact with the screen
+      has moved further in the vertical direction.</p><p>指尖与屏幕接触并在垂直方向上移动得更远。</p></dd>
   <dt>`onVerticalDragEnd`</dt>
-  <dd>A pointer that was previously in contact with the
+  <dd><p>A pointer that was previously in contact with the
       screen and moving vertically is no longer in contact
       with the screen and was moving at a specific velocity
-      when it stopped contacting the screen.</dd>
-</dl>
-
-<dl>
-  <dt>`onVerticalDragStart`</dt>
-  <dd>指尖与屏幕接触后，可能开始垂直移动。</dd>
-  <dt>`onVerticalDragUpdate`</dt>
-  <dd>指尖与屏幕接触并在垂直方向上移动得更远。</dd>
-  <dt>`onVerticalDragEnd`</dt>
-  <dd>指尖在之前与屏幕接触并垂直移动，当不再与屏幕接触时触发这个事件。当它停止与屏幕接触时，它会以特定的速度移动。</dd>
+      when it stopped contacting the screen.</p>
+      <p>指尖在之前与屏幕接触并垂直移动，
+      当不再与屏幕接触时触发这个事件。
+      当它停止与屏幕接触时，它会以特定的速度移动。</p></dd>
 </dl>
 
 
 * Horizontal drag
 
-* 水平拖动
+  水平拖动
 
 <dl>
   <dt>`onHorizontalDragStart`</dt>
-  <dd>A pointer has contacted the screen and might begin
-      to move horizontally.</dd>
+  <dd><p>A pointer has contacted the screen and might begin
+      to move horizontally.</p><p>指尖与屏幕接触，开始水平移动时触发。</p></dd>
   <dt>`onHorizontalDragUpdate`</dt>
-  <dd>A pointer in contact with the screen
-      has moved further in the horizontal direction.</dd>
+  <dd><p>A pointer in contact with the screen
+      has moved further in the horizontal direction.</p>
+      <p>指尖与屏幕接触并在水平方向上移动得更远。</p></dd>
   <dt>`onHorizontalDragEnd`</dt>
-  <dd>A pointer that was previously in contact with the
+  <dd><p>A pointer that was previously in contact with the
       screen and moving horizontally is no longer in contact
       with the screen and was moving at a specific velocity
-      when it stopped contacting the screen.</dd>
-</dl>
-
-<dl>
-  <dt>`onHorizontalDragStart`</dt>
-  <dd>指尖与屏幕接触，开始水平移动时触发。</dd>
-  <dt>`onHorizontalDragUpdate`</dt>
-  <dd>指尖与屏幕接触并在水平方向上移动得更远。</dd>
-  <dt>`onHorizontalDragEnd`</dt>
-  <dd>指尖在之前与屏幕接触并水平移动，当不再与屏幕接触时会触发这个事件。当它停止与屏幕接触时，它正在以特定的速度移动。</dd>
+      when it stopped contacting the screen.</p>
+      <p>指尖在之前与屏幕接触并水平移动，当不再与屏幕接触时会触发这个事件。
+      当它停止与屏幕接触时，
+      它正在以特定的速度移动。</p></dd>
 </dl>
 
 The following example shows a `GestureDetector` that rotates the
@@ -2715,9 +2709,9 @@ from the [Flutter cookbook](/docs/cookbook).
 
 你可以在 [Flutter 实用教程](/docs/cookbook) 中的 [获取文本框的输入值](/docs/cookbook/forms/retrieve-input) 找到更多的信息和完整的代码清单。
 
-### What is the equivalent of a "Placeholder" on an Entry?
+### What is the equivalent of a Placeholder on an Entry?
 
-### 在入口的“占位符”与什么等价？
+### 在入口的占位符 (Placeholder) 与什么等价？
 
 In Xamarin.Forms, some `Elements` support a `Placeholder` property
 that you can assign a value to. For example:
@@ -3075,6 +3069,28 @@ In Flutter, access this functionality using the
 [sqflite]({{site.pub}}/packages/sqflite) plugin.
 
 在 Flutter 中，使用 [SQFlite]({{site.pub}}/packages/sqflite) 插件来访问这个功能。
+
+## Debugging
+
+## 调试
+
+### What tools can I use to debug my app in Flutter?
+
+### 应该使用什么工具调试我的 Flutter 应用？
+
+Use the [DevTools][] suite for debugging Flutter or Dart apps.
+
+请使用 [开发者工具][DevTools] debug 你的 Flutter 和 Dart 应用。
+
+DevTools includes support for profiling, examining the heap,
+inspecting the widget tree, logging diagnostics, debugging,
+observing executed lines of code, debugging memory leaks and memory
+fragmentation. For more information, see the
+[DevTools][] documentation.
+
+开发者工具包含了 profiling 构建、检查堆栈、检视 widget 树、诊断信息记录、调试、
+执行代码行观察、调试内存泄漏和内存碎片等。
+有关更多信息，请参阅 [开发者工具][DevTools] 文档。
 
 ## Notifications
 

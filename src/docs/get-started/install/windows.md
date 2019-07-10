@@ -15,7 +15,8 @@ next:
 
 ## 系统配置要求
 
-To install and run Flutter, your development environment must meet these minimum requirements:
+To install and run Flutter,
+your development environment must meet these minimum requirements:
 
 要想安装和运行 Flutter，你的开发环境至少应该满足如下的需求：
 
@@ -35,11 +36,13 @@ To install and run Flutter, your development environment must meet these minimum
   
     [Windows PowerShell 5.0][] 或者更高的版本（Windows 10 中已经预装了）
     
-  - [Git for Windows][] 2.x, with the **Use Git from the Windows Command Prompt** option.
+  - [Git for Windows][] 2.x, with the
+    **Use Git from the Windows Command Prompt** option.
   
     [Git for Windows][] 2.x，并且勾选**从 Windows 命令提示符使用 Git** 选项。
 
-     If Git for Windows is already installed, make sure you can run `git` commands from the
+     If Git for Windows is already installed,
+     make sure you can run `git` commands from the
      command prompt or PowerShell.
      
      如果 Windows 版的 Git 已经安装过了，那么请确保能从命令提示符或者 PowerShell 中直接执行 git 命令。
@@ -52,9 +55,9 @@ To install and run Flutter, your development environment must meet these minimum
 
 ## 下一步
 
-[Next step: Configure Editor](/docs/get-started/editor)
+Set up your preferred editor.
 
-[下一步: 编辑工具设定](/docs/get-started/editor)
+编辑器设置。
 
 [Git for Windows]: https://git-scm.com/download/win
 [Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell

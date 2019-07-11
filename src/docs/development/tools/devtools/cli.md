@@ -1,6 +1,8 @@
 ---
 title: Install and run DevTools from the command line
+title: 通过命令行安装和运行开发者工具
 Description: Learn how to install and use DevTools from the command line.
+Description: 学习如何通过命令行工具安装和使用开发者工具。
 ---
 
 ## Install DevTools

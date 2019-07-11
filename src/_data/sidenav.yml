@@ -144,23 +144,23 @@
         - title: 开发者工具
           permalink: /docs/development/tools/devtools
           children:
-            - title: Overview
+            - title: 概览
               permalink: /docs/development/tools/devtools/overview
-            - title: Install from Android Studio / IntelliJ
+            - title: 在 Android Studio 或 IntelliJ 上使用
               permalink: /docs/development/tools/devtools/android-studio
-            - title: Install from VS Code
+            - title: 在 VS Code 上使用
               permalink: /docs/development/tools/devtools/vscode
-            - title: Install from command line
+            - title: 在命令行工具中使用
               permalink: /docs/development/tools/devtools/cli
-            - title: Flutter inspector
+            - title: Flutter inspector 工具
               permalink: /docs/development/tools/devtools/inspector
-            - title: Timeline view
+            - title: 时间线视图
               permalink: /docs/development/tools/devtools/timeline
-            - title: Memory view
+            - title: 内存视图
               permalink: /docs/development/tools/devtools/memory
-            - title: Debugger
+            - title: 调试器
               permalink: /docs/development/tools/devtools/debugger
-            - title: Logging view
+            - title: 日志视图
               permalink: /docs/development/tools/devtools/logging
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk

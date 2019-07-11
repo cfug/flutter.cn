@@ -1,6 +1,8 @@
 ---
 title: Using the Flutter inspector
+title: 使用 Flutter inspector 工具
 description: Learn how to use the Flutter inspector to explore a Flutter app's widget tree.
+description: 学习如何使用 Flutt  inspector 来检查 Flutter 应用的 widget 树。
 ---
 
 ## What is it?

@@ -1,7 +1,9 @@
 ---
 title: Animate a page route transition
+title: 为页面切换加入动画效果
 next:
   title: Animate the properties of a container
+  title: Container 里的动画渐变效果
   path: /docs/cookbook/animation/animated-container
 ---
 

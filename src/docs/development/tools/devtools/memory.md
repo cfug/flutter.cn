@@ -1,6 +1,8 @@
 ---
 title: Using the Memory view
+title: 使用内存视图 (Memory view)
 description: Learn how to use the DevTools memory view.
+description: 学习如何使用开发者工具的内容视图。
 ---
 
 ## What is it?

@@ -1,6 +1,8 @@
 ---
 title: Install and run DevTools from VS Code
+title: 在 VS Code 里安装和使用开发者工具
 description: Learn how to install and use DevTools from VS Code.
+description: 学习如何在 VS Code 里使用开发者工具。
 ---
 
 ## Install the VS Code extensions

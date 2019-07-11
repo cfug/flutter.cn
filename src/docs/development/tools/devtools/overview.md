@@ -1,6 +1,8 @@
 ---
 title: DevTools
+title: 开发者工具概览
 description: How to use the DevTools with Flutter.
+description: 学习如何在 Flutter 里使用开发者工具。
 ---
 
 ## What is DevTools?

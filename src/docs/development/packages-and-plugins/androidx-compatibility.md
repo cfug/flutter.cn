@@ -1,6 +1,8 @@
 ---
 title: AndroidX compatibility
+title: AndroidX 适配
 description: How to fix AndroidX incompatibilities that have been detected by the Flutter framework.
+description: 如何在适配 AndroidX。
 ---
 
 {{site.alert.note}}

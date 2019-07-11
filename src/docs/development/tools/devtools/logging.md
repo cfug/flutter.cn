@@ -1,6 +1,8 @@
 ---
 title: Using the Logging view
+title: 使用日志视图 (Logging view)
 description: Learn how to use the DevTools logging view.
+description: 学习如何使用开发者工具的日志视图。
 ---
 
 ## What is it?

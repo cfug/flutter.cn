@@ -2999,7 +2999,7 @@ in the terminal window, or type the following shortcuts:
 | Layers| `L`| debugDumpLayerTree()|
 | 层| `L`| debugDumpLayerTree()|
 | Accessibility | `S` (traversal order) or<br>`U` (inverse hit test order)|debugDumpSemantics()|
-| 可访问性 | `S` (遍历顺序) 或者<br>`U` (反转点击测试顺序)|debugDumpSemantics()|
+| 无障碍 | `S` (遍历顺序) 或者<br>`U` (反转点击测试顺序)|debugDumpSemantics()|
 | To toggle the widget inspector | `i` | WidgetsApp. showWidgetInspectorOverride|
 | 打开或者关闭 widget 窗口 | `i` | WidgetsApp. showWidgetInspectorOverride|
 | To toggle the display of construction lines| `p` | debugPaintSizeEnabled|

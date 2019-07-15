@@ -66,10 +66,13 @@ The second screenshot displays the visual layout, showing a row of
   Most of the screenshots in this tutorial are displayed with
   `debugPaintSizeEnabled` set to true so you can see the visual layout.
   For more information, see
-  [Visual debugging](/docs/testing/debugging#visual-debugging), a section in
-  [Debugging Flutter apps](/docs/testing/debugging).
-
-  本教程中的大多数截图都是将 `debugPaintSizeEnabled` 设置为 true 以后的效果，因此你可以看到可视布局。更多信息可以查看文档中的 [可视化调试](/docs/testing/debugging#visual-debugging)，它是 [调试 Flutter 应用](/docs/testing/debugging) 中的一节。
+  [Debugging layout issues visually][], a section in
+  [Using the Flutter inspector][].
+  
+  本教程中的大多数截图都是将 `debugPaintSizeEnabled` 设置为 true 以后的效果，
+  因此你可以看到可视布局。更多信息可以查看文档中的 
+  [可视化调试][Debugging layout issues visually]，
+  它是 [调试 Flutter 应用][Using the Flutter inspector] 中的一节。
 
 {{site.alert.end}}
 
@@ -81,10 +84,10 @@ Here's a diagram of the widget tree for this UI:
 {:.text-center}
 
 Most of this should look as you might expect, but you might be wondering
-about the containers (shown in pink). [Container][] is a widget class that allows
-you to customize its child widget. Use a `Container` when you want to
-add padding, margins, borders, or background color, to name some of its
-capabilities.
+about the containers (shown in pink). [Container][] is a widget class
+that allows you to customize its child widget. Use a `Container` when
+you want to add padding, margins, borders, or background color,
+to name some of its capabilities.
 
 图上大部分应该和你预想的一样，但你可能会疑惑 containers（图上粉色显示的）是什么。[Container][] 是一个 widget，允许你自定义其子 widget。举几个例子，如果要添加 padding、margin、边框或背景颜色，你就可以用上 `Container` 了。
 
@@ -1664,3 +1667,5 @@ The following resources might help when writing layout code.
 [widgets library]: {{api}}/widgets/widgets-library.html
 [Widget catalog]: /docs/development/ui/widgets
 [Widget 目录]: /docs/development/ui/widgets
+[Debugging layout issues visually]: /docs/development/tools/devtools/inspector#debugging-layout-issues-visually
+[Using the Flutter inspector]: /docs/development/tools/devtools/inspector

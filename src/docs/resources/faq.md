@@ -595,8 +595,16 @@ APK (`build/app/outputs/apk/release/app-release.apk`) into Android Studio
 To measure an iOS app, upload a release IPA to Apple's App Store Connect
 ([instructions][instructions-ios]) and obtain the size report from there.
 
-当然，您的实际情况可能跟我们所说的有所不同，我们建议您测量自己的应用的体积。想要测量 Android 应用体积，请运行 `flutter build apk`，并将 APK (`build/app/outputs/apk/release/app-release.apk`) 加载到 Android Studio 中，以便获取详细的体积报告。想要测量 iOS 应用，请将发布 IPA 加载到 App Store Connect 并获取体积报告。
-你可以查看 [使用 Android Studio 加载 APK]({{site.android-dev}}/studio/build/apk-analyzer) 的相关说明，以及 [使用 App Store Connect 加载 IPA](/docs/deployment/ios) 的相关说明。
+当然，您的实际情况可能跟我们所说的有所不同，我们建议您测量自己的应用的体积。
+想要测量 Android 应用体积，请运行 `flutter build apk`，
+（使用 1.7.8+hotfix.3 之后版本的 Flutter，请加入 `--split-per-abi` 参数）
+并将 APK (`build/app/outputs/apk/release/app-release.apk`) 
+加载到 Android Studio 中，以便获取详细的体积报告。
+想要测量 iOS 应用，请将发布 IPA 加载到 App Store Connect 并获取体积报告。
+你可以查看
+[使用 Android Studio 加载 APK]({{site.android-dev}}/studio/build/apk-analyzer)
+的相关说明，以及
+[使用 App Store Connect 加载 IPA](/docs/deployment/ios) 的相关说明。
 
 ## Capabilities
 

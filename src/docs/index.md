@@ -43,14 +43,14 @@ Flutter 1.7 正式发布！
 
 For more information, see [Announcing Futter
 1.7]({{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf)
-on the [Flutter Medium Publication]({{site.flutter-medium}}).
-
-请参见 [这个文档](/posts/announcing-flutter-1-7-9.html) 查看更多 1.7 的更新内容。
-
-{% comment %} Not ready yet
-and the [1.7 release notes]()
+on the [Flutter Medium Publication]({{site.flutter-medium}}),
+and the [1.7.8 release
+notes]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.7.8)
 on the [Flutter wiki]({{site.github}}//flutter/flutter/wiki).
-{% endcomment %}
+
+请参见 [这个文章](/posts/announcing-flutter-1-7-9.html) 了解更多 1.7 的更新内容，
+在 [Flutter wiki 页面]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.7.8) 
+查看 1.7.8 的具体更新。
 
 New and updated docs on the site include:
 
@@ -110,9 +110,9 @@ New and updated docs on the site include:
 The Flutter 1.7 release includes the new
 [RangeSlider]({{site.api}}/flutter/material/RangeSlider-class.html)
 component, which allows the user to select both the upper and lower
-endpoints in a range of values. Look for an article later this week
-on the [Flutter Medium Publication]({{site.flutter-medium}})
-about this new component and how to customize it.
+endpoints in a range of values. For information about this
+component and how to customize it, see [Material RangeSlider in
+Flutter]({{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d).
 
 Flutter 1.7 版本的更新同时加入了 
 [RangeSlider]({{site.api}}/flutter/material/RangeSlider-class.html)

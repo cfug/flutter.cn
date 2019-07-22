@@ -101,11 +101,54 @@ Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其
 ## Community-run mirror sites
 ## 社区运行的镜像站点
 
-* Flutter 社区
-  * `FLUTTER_STORAGE_BASE_URL`: https://storage.flutter-io.cn
-  * `PUB_HOSTED_URL`: https://pub.flutter-io.cn
+如下列表为目前在国内提供镜像的社区，
+由于镜像的实现方式不一，可能导致数据的滞后等问题请知晓。
+我们制作了一个 [镜像可用性监控页面](http://mirrors.flutter-io.cn/)，供参考。
 
-* 上海交大 Linux 用户组
-  * `FLUTTER_STORAGE_BASE_URL`: https://mirrors.sjtug.sjtu.edu.cn
-  * `PUB_HOSTED_URL`: https://dart-pub.mirrors.sjtug.sjtu.edu.cn
+### Flutter 社区
 
+```
+$ export PUB_HOSTED_URL=https://pub.flutter-io.cn
+$ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+```
+
+### 上海交大 Linux 用户组
+
+Pub API 返回值（archive_url）需要优化，可能造成无法访问的情况。
+
+```
+$ export PUB_HOSTED_URL=https://dart-pub.mirrors.sjtug.sjtu.edu.cn
+$ export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
+```
+
+### 清华大学 TUNA 协会
+
+（推荐）定时与 Flutter 社区镜像同步，数据有延迟。
+
+```
+$ export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub
+$ export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
+```
+
+### CNNIC（与清华大学 TUNA 服务一致）
+
+定时与 TUNA 协会镜像同步，数据有延迟。
+
+```
+$ export PUB_HOSTED_URL=http://mirrors.cnnic.cn/dart-pub
+$ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
+```
+
+### 腾讯云开源镜像站（同步清华大学 TUNA 镜像内容）
+
+定时与 TUNA 协会镜像同步，数据有延迟。
+
+```
+$ export PUB_HOSTED_URL=https://mirrors.cloud.tencent.com/dart-pub
+$ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
+```
+
+### 已知问题
+
+- 上海交大 Linux 用户组镜像的 Pub API 返回值（archive_url）需要优化，
+  可能造成 Packages 无法下载的情况。

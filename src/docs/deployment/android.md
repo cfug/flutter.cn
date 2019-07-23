@@ -23,7 +23,7 @@ you might want to put some finishing touches on your app.
 This page covers the following topics:
 
 当想要发布 app 时，比如 [发布到 Google Play Store][play]，
-可以按照以下步骤来准备 Android 平台的**发布**版本。
+可以按照以下步骤来准备 Android 平台的 **发布** 版本。
 本页面的内容包含如下主题：
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
@@ -123,8 +123,16 @@ If not, create one by running the following at the command line:
 如果我们已经有一个密钥库，可以跳到下一步。
 如果没有，在命令行中运行以下的命令来创建一个：
 
+On Mac/Linux, use the following command:
+
+在 macOS 或者 Linux 系统上，执行下面的代码
+
 ```
 keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
+```
+On Windows, use the following command:
+```
+keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
 {{site.alert.note}}
@@ -150,6 +158,13 @@ keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000
   运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，
   然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。
 
+  If your path includes space-separated names,
+  such as `Program Files`, place quotes around the space-separated
+  names. For example: `/"Program Files"/`
+  
+  如果文件路径包含空格，类似 `Program Files` 这样的，你需要在路径上加入转义符：
+  `/"Program Files"/`。
+  
 {{site.alert.end}}
 
 ### Reference the keystore from the app

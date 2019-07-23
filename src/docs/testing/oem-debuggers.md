@@ -500,16 +500,6 @@ iOS, and Android:
 ### Flutter
 
 * [Debugging Flutter apps](/docs/testing/debugging)
-
-  [调试 Flutter 应用](/docs/testing/debugging)
-
-* [Advanced debugging](/docs/development/tools/android-studio#advanced-debugging), a section in
-  [Developing Flutter Apps in an IDE](/docs/development/tools/android-studio).
-
-  [高级调试](/docs/development/tools/android-studio#advanced-debugging)，
-  [在 Android Studio 或类 IntelliJ 里开发 Flutter 应用](/docs/development/tools/android-studio) 中的一节
-
-* [Debugging Flutter apps](/docs/testing/debugging)
  
   [调试 Flutter 应用](/docs/testing/debugging)
 
@@ -535,7 +525,7 @@ You can find the following debugging resources on
 
 * [Android Debug Bridge (adb)][]
 
-  [Android 调试桥（adb）][Android Debug Bridge (adb)]
+  [Android 调试桥 (adb)][Android Debug Bridge (adb)]
 
 ### iOS
 

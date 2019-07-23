@@ -264,7 +264,7 @@ instructions in the [Introduction to unit
 testing](/docs/cookbook/testing/unit/introduction#run-tests-using-intellij-or-vscode)
 recipe.
 
-你也可以参考 [单元测试介绍](/docs/cookbook/testing/unit#run-tests-using-intellij-or-vscode) 章节用自己喜欢的编辑器来执行测试。
+你也可以参考 [单元测试介绍](/docs/cookbook/testing/unit/introduction#run-tests-using-intellij-or-vscode) 章节用自己喜欢的编辑器来执行测试。
 
 ### Summary
 

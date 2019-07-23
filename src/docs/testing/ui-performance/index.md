@@ -743,8 +743,8 @@ and debugging in Flutter:
 [IntelliJ Flutter inspector window]: {% asset tools/android-studio/visual-debugging.png @path %}
 
 [RepaintBoundary]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[Tracing any Dart code performance]: /docs/testing/debugging#tracing-any-dart-code-performance
-[跟踪 Dart 代码性能]: /docs/testing/debugging#tracing-any-dart-code-performance
+[Tracing any Dart code performance]: /docs/testing/debugging##tracing-dart-code
+[跟踪 Dart 代码性能]: /docs/testing/debugging##tracing-dart-code
 [Debugging Flutter apps]: /docs/testing/debugging
 [调试 Flutter 应用]: /docs/testing/debugging
 [examples]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery

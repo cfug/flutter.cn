@@ -545,12 +545,12 @@ rebuild when `notifyListeners` is called.
 ## 把代码集成在一起
 
 You can [check out the
-example]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)
+example]({{site.github}}/flutter/samples/tree/master/provider_shopper)
 covered in this article. If you want something simpler,
 you can see how the simple Counter app looks like when [built with
 `provider`](https://github.com/flutter/samples/tree/master/provider_counter).
 
-你可以在文章中 [查看这个示例]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)。
+你可以在文章中 [查看这个示例]({{site.github}}/flutter/samples/tree/master/provider_shopper)。
 如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何
 [基于 `provider` 实现的](https://github.com/flutter/samples/tree/master/provider_counter)。
 

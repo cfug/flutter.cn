@@ -551,49 +551,67 @@ Flutter 应该能够运行大多数没有引用 dart:mirrors 或 dart:html (不�
 
 ### Flutter 引擎有多大？
 
-In December 2018, we measured the download size of a
+In July 2019, we measured the download size of a
 [minimal Flutter app][] (no Material Components,
 just a single `Center` widget, built with
-`flutter build apk`), bundled and compressed as a
-release APK, to be approximately 4.06&nbsp;MB.
+`flutter build apk --split-per-abi`),
+bundled and compressed as a release APK,
+to be approximately 4.3 MB for ARM,
+and 4.6 MB for ARM 64.
 
-在 2018 年 12 月，我们实测了一个 [最简版本的 Flutter 应用]({{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world) (即不含 Material 组件，只包含一个使用 `flutter build apk` 构建的 `Center` widget) 的下载体积 ，这个经过打包和压缩处理的 APK 大约为 4.06&nbsp;MB。
+2019 年 7 月，我们实测了一个 
+[最简版本的 Flutter 应用][minimal Flutter app] 
+(即不含 Material 组件，只包含一个使用 `flutter build apk --split-per-abi` 构建的 `Center` widget 的 app) 
+压缩且 Bundle 一个 release 的 APK，
+ARM64 下是 4.6 MB，ARM 下是 4.3 MB。
 
-For this simple app,
-the core engine is approximately 2.7&nbsp;MB (compressed),
-the framework + app code is approximately 820.6&nbsp;KB (compressed),
-the LICENSE file is 53.5&nbsp;KB (compressed),
-necessary Java code (classes.dex) is 61.8&nbsp;KB (compressed),
-and there is approximately 450.4&nbsp;KB of (compressed) ICU data.
+In ARM, the core engine is approximately 3.2 MB (compressed),
+the framework + app code is approximately 920.6 KB (compressed),
+the LICENSE file is 54.3 KB (compressed), necessary Java code
+(classes.dex) is 113.6 KB (compressed).
 
-对于这个最简应用，核心引擎体积约为 2.7&nbsp;MB (压缩后)，框架 + 应用代码体积约为 820.6&nbsp;KB (压缩后)，LICENSE 文件体积为 53.5&nbsp;KB (压缩后)，必要的 Java 代码 (classes.dex) 体积为 61.8&nbsp;KB (压缩后)，并且有大约 450.4&nbsp;KB的 ICU 数据 (压缩后)。
+在 ARM 下，核心的引擎大约占 3.2 MB，框架和应用的代码大约是 920.6 KB，
+许可证文件大约是 54.3 KB，必要的 Java 代码（classes.dex）是 113.6KB。
+上述数据均为经过压缩处理之后的大小。
+
+In ARM64, the core engine is approximately 3.5 MB (compressed),
+the framework + app code is approximately 872 KB (compressed),
+the LICENSE file is 54.3 KB (compressed), necessary Java code
+(classes.dex) is 113.6 KB (compressed).
+
+在 ARM64 下，核心的引擎大约占 3.5 MB，框架和应用的代码大约是 872 KB，
+许可证文件大约是 54.3 KB，必要的 Java 代码（classes.dex）是 113.6KB。
+上述数据均为经过压缩处理之后的大小。
 
 These numbers were measured using [apkanalyzer][],
-which is also built into [Android Studio][].
+which is also [built into Android Studio][].
 
 这些数字是由 [AndroidStudio][] 内置的 [apkanalyzer][] 实测得出。
 
-On iOS, a release IPA of the same app has a download
-size of 10.8&nbsp;MB on an iPhone X, as reported by Apple's
-App Store Connect. The IPA is larger than the APK
-mainly because Apple encrypts binaries within the IPA,
-making the compression less efficient
+On iOS, a release IPA of the same app has a download size of
+10.9 MB on an iPhone X, as reported by Apple’s App Store Connect.
+The IPA is larger than the APK mainly because Apple encrypts
+binaries within the IPA, making the compression less efficient
 (see the [iOS App Store Specific Considerations][]
-section of Apple's [QA1795][]).
+section of Apple’s [QA1795][]).
+
 
 在 iOS 平台上，跟据 App Store Connect 的数据，
-同一应用的发布 IPA 在 iPhone X 上的下载文件体积为 10.8&nbsp;MB。
+同一应用的发布 IPA 在 iPhone X 上的下载文件体积为 10.9 MB。
 IPA 比 APK 大，主要是因为 Apple 加密了 IPA 中的二进制文件，
 使得压缩效率降低。
 （可以查看 [iOS App Store Specific Considerations][] 中 [QA1795][] 关于加密的部分）
 
 Of course, YMMV, and we recommend that you measure your own app.
 To measure an Android app, run `flutter build apk` (using the new
-`--split-per-abi` option in version 1.7.8+hotfix.3 and later) and load the
-APK (`build/app/outputs/apk/release/app-release.apk`) into Android Studio
-([instructions][instructions-android]) for a detailed size report.
+`--split-per-abi` option in version 1.7.8+hotfix.3 and later)
+and load the APK
+(build/app/outputs/apk/release/app-armeabi-v7a-release.apk
+or build/app/outputs/apk/release/app-arm64-v8a-release.apk)
+into Android Studio
+([Android Studio instructions][]) for a detailed size report.
 To measure an iOS app, upload a release IPA to Apple's App Store Connect
-([instructions][instructions-ios]) and obtain the size report from there.
+([iOS instructions][]) and obtain the size report from there.
 
 当然，您的实际情况可能跟我们所说的有所不同，我们建议您测量自己的应用的体积。
 想要测量 Android 应用体积，请运行 `flutter build apk`，
@@ -720,7 +738,7 @@ This enables fast iterations while keeping the core Flutter
 repo stable. You can repackage existing Flutter code to
 work on the web preview, but there are some caveats
 while we’re still in preview. Check out the
-[instructions][instructions-web] for more details.
+[web instructions][] for more details.
 
 Flutter web 目前处于 [技术预览状态][technical preview]。我们将它做为 Flutter 项目的一个分支进行开发，这种做法有利于在确保高速迭代的同时保持 Flutter 核心项目的稳定。您可以将现有的 Flutter 代码打包放在 web 预览版里使用，但由于我们还处于预览状态所以会有一些警告。你可以在 [Flutter web 的操作说明]({{site.github}}/flutter/flutter-web) 中查看更多详细信息。
 
@@ -1414,14 +1432,10 @@ deployed to Apple's App Store.
 [gesture system]: /docs/development/ui/advanced/gestures
 [minimal Flutter app]: {{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
 [apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
-[Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
 [iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
 [QA1795]: https://developer.apple.com/library/archive/qa/qa1795/_index.html
-[instructions-android]: {{site.android-dev}}/studio/build/apk-analyzer
-[instructions-ios]: /docs/deployment/ios
 [Hot reload]: /docs/development/tools/hot-reload
 [technical preview]: {{site.url}}/web
-[instructions-web]: {{site.github}}/flutter/flutter-web
 [issue #14821]: {{site.github}}/flutter/flutter/issues/14821
 [ready-made packages]: {{site.pub}}/flutter/
 [is easy]: /docs/development/packages-and-plugins/using-packages
@@ -1444,3 +1458,10 @@ deployed to Apple's App Store.
 [GitHub]: {{site.github}}/flutter/flutter
 [license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
 [only one license]: {{site.github}}/flutter/flutter/blob/master/LICENSE
+[apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
+[iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
+[QA1795]: https://developer.apple.com/library/archive/qa/qa1795/_index.html
+[built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
+[Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
+[iOS instructions]: /docs/deployment/ios
+[web instructions]: {{site.github}}/flutter/flutter-web

@@ -209,10 +209,10 @@ The General tab of your project settings should resemble the following:
 
 你项目的 General tab 应该看起来像是这样的：
 
-![Xcode Project Settings](/images/releaseguide/xcode_settings.png)
+![Xcode Project Settings](/images/releaseguide/xcode_settings.png){:width="100%"}
 
-For a detailed overview of app signing, see [Create, export, and delete signing
-certificates][appsigning].
+For a detailed overview of app signing, see [Create, export,
+and delete signing certificates][appsigning].
 
 更多关于 App 签名新的介绍，查看 [创建, 导出, 和删除签名证书][appsigning]
 

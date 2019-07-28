@@ -67,13 +67,13 @@ two file system locations:
 用于访问设备文件系统上的常用位置。该插件目前支持访问两个文件系统位置
 
   * *Temporary directory:* A temporary directory (cache) that the system can
-    clear at any time. On iOS, this corresponds to the value that
-    [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory) returns. On Android, this is the value that
+    clear at any time. On iOS, this corresponds to the
+    [`NSCachesDirectory`](https://developer.apple.com/documentation/foundation/nssearchpathdirectory/nscachesdirectory). On Android, this is the value that
     [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir())
     returns.
     
      *临时文件夹：* 这是一个系统可以随时清空的临时（缓存）文件夹。在 iOS 上 对应 
-     [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory) 的返回值；
+     [`NSCachesDirectory`](https://developer.apple.com/documentation/foundation/nssearchpathdirectory/nscachesdirectory) 的返回值；
      在 Android 上对应 [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir()) 的返回值。
     
   * *Documents directory:* A directory for the app to store files that only

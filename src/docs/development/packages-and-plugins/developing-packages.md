@@ -490,7 +490,7 @@ Finally, run the actual publish command:
 最后，运行以下提交命令：
 
 ```terminal
-$ flutter pub publish
+$ flutter pub pub publish
 ```
 
 For details on publishing, see the

@@ -34,8 +34,9 @@ To develop Flutter apps for iOS, you need a Mac with Xcode 9.0 or newer:
 
     当你安装了最新版本的 Xode，大部分情况下，上面的路径都是一样的。但如果你安装了不同版本的 Xcode，你可能要更改一下上述命令中的路径。
 
- 3. Make sure the Xcode license agreement is signed by either opening Xcode once and confirming or
-    running `sudo xcodebuild -license` from the command line.
+ 3. Make sure the Xcode license agreement is signed by either opening
+    Xcode once and confirming or running
+    `sudo xcodebuild -license` from the command line.
  
     运行一次 Xocde 或者通过输入命令 `sudo xcodebuild -license` 来确保已经同意 Xcode 的许可协议。
 

@@ -124,36 +124,36 @@ property to control how the `Row` aligns its children within that space.
 
 There are six different values available in the `MainAxisAlignment` enum:
 
-`MainAxisAlignment` 有六种不同的枚举值。
+`MainAxisAlignment` 有六种不同的枚举值：
 
-* `MainAxisAligment.start`<br>
+* `MainAxisAlignment.start`<br>
    Place all children as close to the start of the `Row` as possible
    (for left-to-right rows, this is the left side).
    
    将所有的 children 尽可能向 `Row` 的 start 方向排列（如果是从左到右，那就是靠左排列）。
 
-* `MainAxisAligment.end`<br>
+* `MainAxisAlignment.end`<br>
   Place all children as close to the end of the `Row` as possible.
   
   将所有的 children 尽可能向 `Row` 的 end 方向排列。
 
-* `MainAxisAligment.center`<br>
+* `MainAxisAlignment.center`<br>
   Group the children together in the center of the `Row`.
   
   将 children 聚在 `Row` 主轴的中间位置。
 
-* `MainAxisAligment.spaceBetween`<br>
+* `MainAxisAlignment.spaceBetween`<br>
   Any extra space is divided evenly and used to make gaps between the children.
   
   将主轴空白位置进行均分，用来在 children 之间制造间隔，首尾 children 距边缘没有间隙。
 
-* `MainAxisAligment.spaceEvenly`<br>
+* `MainAxisAlignment.spaceEvenly`<br>
   Just like `spaceBetween`, except the spots before the first child
   and after the last one also count as gaps.
   
   很像 `spaceBetween`，除了让首尾 children 距边缘也有相同的间隙。
 
-* `MainAxisAligment.spaceAround`<br>
+* `MainAxisAlignment.spaceAround`<br>
   Just like `spaceEvenly`, only the first and last gaps get 50% of the
   amount used between children.
   

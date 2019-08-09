@@ -313,7 +313,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 The `_toggleFavorite()` method, which is called when the `IconButton` is
 pressed, calls `setState()`. Calling `setState()` is critical, because this
 tells the framework that the widget’s state has changed and that the widget
-should be redraw. The function argument to `setState()` toggles the UI between
+should be redrawn. The function argument to `setState()` toggles the UI between
 these two states:
 
 按下 `IconButton` 时会调用 `_toggleFavorite()` 方法，然后它会调用 `setState()`。

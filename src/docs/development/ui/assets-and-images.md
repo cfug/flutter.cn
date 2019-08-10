@@ -571,7 +571,7 @@ the launch screen will persist forever.
 
 #### Android
 
-To add a "splash screen" to your Flutter application, navigate to `.../android/app/src/main`. In `res/drawable/launch_background.xml`, You can use this [layer list drawable]({{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList) XML to customize the look of your launch screen. The existing template provides an example for adding a image to to the middle of a white splash screen in commented code. You can uncomment it or use other [drawables]({{site.android-dev}}/guide/topics/resources/drawable-resource) to achieve the intended effect.
+To add a "splash screen" to your Flutter application, navigate to `.../android/app/src/main`. In `res/drawable/launch_background.xml`, You can use this [layer list drawable]({{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList) XML to customize the look of your launch screen. The existing template provides an example for adding an image to the middle of a white splash screen in commented code. You can uncomment it or use other [drawables]({{site.android-dev}}/guide/topics/resources/drawable-resource) to achieve the intended effect.
 
 将启动屏幕「splash screen」添加到你的 Flutter 应用程序， 请导航至 `.../android/app/src/main` 路径。
 在 `res/drawable/launch_background.xml` 文件中 ，通过使用

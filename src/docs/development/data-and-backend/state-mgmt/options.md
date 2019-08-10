@@ -165,16 +165,9 @@ by the Flutter community:
   [MobX.dart，为你的 Dart 和 Flutter 应用提供无忧的状态管理](https://github.com/mobxjs/mobx.dart)
 
 * [Getting started with MobX.dart](https://mobx.pub/getting-started)
-
+ 
   [MobX.dart 入门](https://mobx.pub/getting-started)
 
-* [Flutter: State Management with Mobx](https://developer.school/posts/flutter-state-management-with-mobx/) by Paul Halliday
+* [Flutter: State Management with Mobx](https://www.youtube.com/watch?v=p-MUBLOEkCs), a video by Paul Halliday
 
-  由 Paul Halliday 提供的 [Flutter：使用 Mobx 进行状态管理](https://developer.school/posts/flutter-state-management-with-mobx/)
-
-## Provider
-
-* [Getting Started with Provider](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/) by Paul Halliday
-
-  由 Paul Halliday 提供的 [Provider 入门](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/)
-
+  由社区成员 Paul Halliday 制作的视频 [Flutter：使用 Mobx 进行状态管理](https://www.youtube.com/watch?v=p-MUBLOEkCs)

@@ -3,7 +3,7 @@ title: Animate the properties of a container
 title: Container 里的动画渐变效果
 prev:
   title: Animate a page route transition
-  path: /docs/cookbook/animation/page-route-animation
+  path: /docs/cookbook/animation/physics-simulation
 next:
   title: Fade a Widget in and out
   title: Widget 的淡入淡出效果

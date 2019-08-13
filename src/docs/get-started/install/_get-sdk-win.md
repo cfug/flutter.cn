@@ -40,7 +40,7 @@ but for now use "git clone".
 ### 下载安装包
 
 {{site.alert.note}}
-请注意，类似 7-Zip 等解压工具默认情况下是不解压隐藏文件等，
+请注意，类似 7-Zip 等解压工具默认情况下是不解压隐藏文件的，
 这可能会导致你下载的 Flutter SDK 是不完整的，请参加下一小节的说明，
 通过命令行方式安装。
 {{site.alert.end}}
@@ -68,7 +68,7 @@ but for now use "git clone".
     安装目录中（比如 `C:\src\flutter`；
     请勿将该目录放在一些需要额外操作权限的目录，比如 `C:\Program Files\`）。
 
- 1. Locate the file `flutter_console.bat` inside the `flutter` directory.
+ 1. Locate the file **flutter_console.bat** inside the `flutter` directory.
     Start it by double-clicking.
 
     找到 `flutter` 目录中的 **flutter_console.bat** 文件，双击执行该批处理脚本。
@@ -102,7 +102,7 @@ git clone -b stable https://github.com/flutter/flutter.git
 
 {% endcomment %}
 
- 1. At the command line, 
+ -  At the command line, 
     go to the desired installation location
     for the Flutter SDK (for example, `C:\src\flutter`; 
     do not install Flutter in a directory like `C:\Program Files\`
@@ -112,7 +112,7 @@ git clone -b stable https://github.com/flutter/flutter.git
     （比如 `C:\src\flutter`，请勿将该目录放在一些需要额外操作权限的目录，
     比如 `C:\Program Files\`）。
 
- 1. Clone the repo using `git clone`.
+ -  Clone the repo using `git clone`.
     The following example clones the stable channel.
     (To see Flutter's other release channels,
     see [upgrading Flutter][].)
@@ -126,11 +126,11 @@ git clone -b stable https://github.com/flutter/flutter.git
 git clone -b stable https://github.com/flutter/flutter.git
 ```
 
- 1. In Windows Explorer, navigate to the `flutter`
-    directory and locate the `flutter_console.bat` file.
+ -  In Windows Explorer, navigate to the `flutter`
+    directory and locate the **flutter_console.bat** file.
     Double-click the file to start it.
 
-    定位并打开 `flutter` 的文件夹，双击运行 `flutter_console.bat` 开始安装。
+    定位并打开 `flutter` 的文件夹，双击运行 **flutter_console.bat** 开始安装。
 
 
 You are now ready to run Flutter commands in the Flutter Console!

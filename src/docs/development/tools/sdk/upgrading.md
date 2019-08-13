@@ -7,13 +7,15 @@ description: Upgrading Flutter
 description: 升级你的 Flutter 版本
 ---
 
-No matter which [Flutter release channel][release-channel]
+No matter which one of the Flutter [release channels][]
 you follow, you can use the `flutter` command to upgrade your
 Flutter SDK and the packages that your app depends on.
 
-无论你使用哪个 [Flutter 发布渠道][Flutter release channel] ，你都可以使用 `flutter` 命令来更新 Flutter SDK 和 app 所依赖的 packages。
+无论你使用哪个 [Flutter 发布渠道][release channels]，
+你都可以使用 `flutter` 命令来更新 Flutter SDK 和 app 所依赖的 packages。
 
 ## One-time setup
+
 ## 一次性设置
 
 For the `flutter` command to work correctly,
@@ -85,12 +87,12 @@ and then run `flutter upgrade`.
 
 ## 切换 Flutter 发布渠道
 
-Flutter has [four release channels][Flutter release channel]:
+Flutter has four [release channels][]:
 **stable**, **beta**, **dev**, and **master**.
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
-Flutter 有 [4个发布渠道][Flutter release channel]：
+Flutter 有 [4个发布渠道][release channels]，分别是 
 **stable**, **beta**, **dev**, 和 **master**。
 我们推荐使用 **{{site.sdk.channel}}** 渠道
 除非你需要更加新的版本。
@@ -167,6 +169,8 @@ You can also ask questions on the [Flutter dev mailing list][flutter-dev].
 Aside from subscribing to receive announcements,
 we'd love to hear from you!
 
+[Flutter SDK archive]: /docs/development/tools/sdk/archive
+[release channels]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 我们会将最新的 breaking change (重大改动) 通知到
 [Flutter 通知邮件群组][flutter-announce]，
 与此同时，你可以在 [Flutter 开发者邮件群组][flutter-dev]里向大家提问等。

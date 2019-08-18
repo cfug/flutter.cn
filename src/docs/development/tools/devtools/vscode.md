@@ -13,8 +13,8 @@ To use the DevTools from VS Code, you need the [Dart extension][].
 If you're debugging Flutter applications, you should also install
 the [Flutter extension][].
 
-如果你想在 VS Code 中使用开发工具，你就一定需要安装 [Dart 扩展][]。
-如果你还想要调试 Flutter 应用程序，那你还应该安装 [Flutter 扩展][]。
+如果你想在 VS Code 中使用开发工具，你就一定需要安装 [Dart 扩展][Dart extension]。
+如果你还想要调试 Flutter 应用程序，那你还应该安装 [Flutter 扩展][Flutter extension]。
 
 ## Start an application to debug
 
@@ -24,7 +24,7 @@ Start a debug session for your application by opening the root
 folder of your project (the one containing `pubspec.yaml`)
 in VS Code and clicking **Debug > Start Debugging** (`F5`).
 
-通过在 VS Code 中打开你的项目的根目录（包含 `pubspec.yaml`）并点击**Debug > Debugging** (`F5`)，来开启调试会话。
+通过在 VS Code 中打开你的项目的根目录（包含 `pubspec.yaml`）并点击 **Debug > Debugging** (`F5`)，来开启调试会话。
 
 ## Launch DevTools
 
@@ -34,7 +34,7 @@ Once the debug session is active and the application has started,
 the **Dart: Open DevTools** command becomes available in the
 VS Code command palette:
 
-一旦调试会话处于活跃且应用程序已开启，那么 VS Code 命令控制板中将会显示**Dart: Open DevTools**：
+一旦调试会话处于活跃且应用程序已开启，那么 VS Code 命令控制板中将会显示 **Dart: Open DevTools**：
 
 ![Screenshot showing Open DevTools command]({% asset tools/vs-code/vscode_command.png @path %}){:width="100%"}
 

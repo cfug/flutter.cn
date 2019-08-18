@@ -168,7 +168,7 @@ the state in your app. In fact, the Flutter team does this in many
 simple app samples (including the starter app that you get with every
 `flutter create`).
 
-需要说明的是，你_可以_使用 `State` 和 `setState()` 管理你的应用中的所有状态。实际上Flutter团队在很多简单的
+需要说明的是，你*可以*使用 `State` 和 `setState()` 管理你的应用中的所有状态。实际上Flutter团队在很多简单的
 示例程序（包括你每次使用 `flutter create` 命令创建的初始应用）中正是这么做的。
 
 It goes the other way, too. For example, you might decide that&mdash;in
@@ -177,7 +177,7 @@ navigation bar is _not_ ephemeral state. You might need to change it
 from outside the class, keep it between sessions, and so on.
 In that case, the `_index` variable is app state.
 
-也可以用另外一种方式。比如，在一个特定的应用中，你可以指定底部导航栏中被选中的项目_不是_一个短时状态。
+也可以用另外一种方式。比如，在一个特定的应用中，你可以指定底部导航栏中被选中的项目*不是*一个短时状态。
 你可能需要在底部导航栏类的外部来改变这个值，并在对话期间保留它。在种情况下 `_index` 就是一个应用状态。 
 
 There is no clear-cut, universal rule to distinguish whether a particular 

@@ -13,8 +13,8 @@ To use the DevTools from VS Code, you need the [Dart extension][].
 If you're debugging Flutter applications, you should also install
 the [Flutter extension][].
 
-如果您想在 VS Code 中使用开发工具，您就一定需要安装 [Dart 扩展][]。
-如果您还想要调试 Flutter 应用程序，那您还应该安装 [Flutter 扩展][]。
+如果你想在 VS Code 中使用开发工具，你就一定需要安装 [Dart 扩展][]。
+如果你还想要调试 Flutter 应用程序，那你还应该安装 [Flutter 扩展][]。
 
 ## Start an application to debug
 
@@ -24,7 +24,7 @@ Start a debug session for your application by opening the root
 folder of your project (the one containing `pubspec.yaml`)
 in VS Code and clicking **Debug > Start Debugging** (`F5`).
 
-通过在 VS Code 中打开您项目的根目录（包含 `pubspec.yaml`）并点击**Debug > Debugging** (`F5`)，来开启调试会话。
+通过在 VS Code 中打开你的项目的根目录（包含 `pubspec.yaml`）并点击**Debug > Debugging** (`F5`)，来开启调试会话。
 
 ## Launch DevTools
 
@@ -41,19 +41,19 @@ VS Code command palette:
 The first time you run this (and subsequently when the DevTools package
 is updated), you are prompted to activate or upgrade DevTools.
 
-当您第一次运行时（以及未来更新开发工具包时），系统会提醒您激活或升级开发工具。
+当你第一次运行时（以及未来更新开发工具包时），系统会提醒你激活或升级开发工具。
 
 ![Screenshot showing Active DevTools command]({% asset tools/vs-code/vscode_install_prompt.png @path %}){:width="100%"}
 
 <br><center>Clicking the <b>Activate/Upgrade</b> button uses
 <code>pub global activate</code> to activate the DevTools package for you</center>
 
-<br><center>点击 <b>激活/更新</b> 按钮来使用<code>全局激活</code>为您激活开发工具包</center>
+<br><center>点击 <b>激活/更新</b> 按钮来使用<code>全局激活</code>为你激活开发工具包</center>
 
 Next, DevTools launches in your browser and automatically connects
 to your debug session.
 
-接下来，开发工具将会在浏览器中启动，并自动连接至您的调试会话。
+接下来，开发工具将会在浏览器中启动，并自动连接至你的调试会话。
 
 ![Screenshot showing DevTools in a browser]({% asset tools/vs-code/vscode_show_in_browser.png @path %}){:width="100%"}
 
@@ -62,7 +62,7 @@ of VS Code. If you've closed the browser tab,
 you can click the status bar to re-launch your browser, so long
 as there's still a suitable Dart/Flutter debugging session available.
 
-当开发工具激活后，您将在 VS Code 的状态栏中看到它们。如果您已关闭浏览器选项卡，也可以通过单击状态栏来重新启动浏览器，只要还有可用的 Dart/Flutter 调试会话。
+当开发工具激活后，你将可以在 VS Code 的状态栏中看到它们。如果你已关闭浏览器选项卡，只要还有可用的 Dart/Flutter 调试会话，你也可以通过单击状态栏来重新启动浏览器。
 
 ![Screenshot showing DevTools in the VS Code status bar]({% asset tools/vs-code/vscode_status_bar.png @path %}){:width="100%"}
 

@@ -211,6 +211,8 @@ represent the current frame.
 
 ## Interpreting the graphs
 
+## 图表解释
+
 The top graph shows the time spent by the GPU thread,
 the bottom one graph shows the time spent by the
 UI (CPU) thread.
@@ -221,10 +223,14 @@ The horizontal axis represents frames. The graph is
 only updated when your application paints,
 so if it's idle the graph stops moving.
 
+最顶部的图形表示 GPU 线程所花费的时间，底部的图表显示了 UI 线程所花费的时间。横跨图表中的白线代表了 16ms 内沿竖轴的增量；如果这些线在图表中都没有超过它的话，说明你的运行帧率低于 60Hz。而横轴则表示帧。只有当你的应用绘制时这个图表才会更新，所以如果它空闲的话，图表就不会动。
+
 The overlay should always be viewed in [profile mode][],
 since [debug mode][] performance is intentionally sacrificed
 in exchange for expensive asserts that are intended to aid
 development, and thus the results are misleading.
+
+这个浮层只应在 [profile mode][] 中使用，因为 [debug mode][] 下有意牺牲了性能来换取昂贵的断言以帮助开发，所以这时候的结果会具有误导性。
 
 Each frame should be created and displayed within 1/60th of
 a second (approximately 16ms). A frame exceeding this limit

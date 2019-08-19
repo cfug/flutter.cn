@@ -180,9 +180,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ### 3. 通过点击按钮聚焦 `TextField`
 
 Finally, focus the text field when the user taps a floating
-action button. Use the
-[`requestFocus()`]({{site.api}}/flutter/widgets/FocusScopeNode/requestFocus.html)
-method to perform this task.
+action button. Use the [`requestFocus()`][] method to perform
+this task.
 
 最后，当用户点击 floating action button 时，我们将要聚焦文本框！
 为此我们将要使用
@@ -280,3 +279,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 ![Text Field Focus Demo](/images/cookbook/focus.gif){:.site-mobile-screenshot}
+
+
+
+[`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html

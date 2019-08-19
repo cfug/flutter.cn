@@ -31,7 +31,7 @@ short-title: 交织动画
     
 {{site.alert.end}}
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
 
   **Terminology:**
   If the concept of tweens or tweening is new to you, see the
@@ -40,7 +40,7 @@ short-title: 交织动画
   **术语:**
   如果 tweens 或 tweening 的概念对你来说比较新，请看
   [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
-</aside>
+{{site.alert.end}}
 
 Staggered animations are a straightforward concept: visual changes
 happen as a series of operations, rather than all at once.
@@ -140,7 +140,7 @@ After running forward, the animation runs in reverse.
 
 向前运行之后， 动画将反向运行。
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
 
   **New to Flutter?**
   This page assumes you know how to create a layout using Flutter’s
@@ -148,9 +148,10 @@ After running forward, the animation runs in reverse.
   Flutter](/docs/development/ui/layout).
   
   **刚接触Flutter？**
-  本文假定你已经知道如何使用 Flutter 的 widgets 创建一个布局。 更多信息请看 [Building Layouts in
-  Flutter](/docs/development/ui/layout).
-</aside>
+  本文假定你已经知道如何使用 Flutter 的 widgets 创建一个布局。
+  更多信息请看 [Flutter 中的布局](/docs/development/ui/layout).
+  
+{{site.alert.end}}
 
 ## Basic structure of a staggered animation
 

@@ -7,13 +7,15 @@ description: Upgrading Flutter
 description: 升级你的 Flutter 版本
 ---
 
-No matter which [Flutter release channel][] you follow,
-you can use the `flutter` command to upgrade your Flutter SDK
-and the packages that your app depends on.
+No matter which one of the Flutter [release channels][]
+you follow, you can use the `flutter` command to upgrade your
+Flutter SDK and the packages that your app depends on.
 
-无论你使用哪个 [Flutter 发布渠道][Flutter release channel] ，你都可以使用 `flutter` 命令来更新 Flutter SDK 和 app 所依赖的 packages。
+无论你使用哪个 [Flutter 发布渠道][release channels]，
+你都可以使用 `flutter` 命令来更新 Flutter SDK 和 app 所依赖的 packages。
 
 ## One-time setup
+
 ## 一次性设置
 
 For the `flutter` command to work correctly,
@@ -37,17 +39,17 @@ dev_dependencies:
 ```
 
 {{site.alert.warning}}
-Don't use the `pub get` or `pub upgrade` commands to manage dependencies
-for Flutter apps.
-Instead, use `flutter pub get` or `flutter pub upgrade`.
-If you want to use pub manually, you can run it directly by setting the
-`FLUTTER_ROOT` environment variable.
-{{site.alert.end}}
 
-{{site.alert.warning}}
-不要使用 `pub get` 或 `pub upgrade` 命令来管理 Flutter apps 的依赖，
-而是使用 `flutter pub get` 或 `flutter pub upgrade`。
-如果你想手动使用 pub，你可以通过设置 `FLUTTER_ROOT` 环境变量来直接运行。
+  Don't use the `pub get` or `pub upgrade` commands to manage
+  dependencies for Flutter apps.
+  Instead, use `flutter pub get` or `flutter pub upgrade`.
+  If you want to use pub manually, you can run it directly by
+  setting the `FLUTTER_ROOT` environment variable.
+  
+  不要使用 `pub get` 或 `pub upgrade` 命令来管理 Flutter apps 的依赖，
+  而是使用 `flutter pub get` 或 `flutter pub upgrade`。
+  如果你想手动使用 pub，你可以通过设置 `FLUTTER_ROOT` 环境变量来直接运行。
+  
 {{site.alert.end}}
 
 ## Upgrading the Flutter SDK and packages
@@ -85,12 +87,12 @@ and then run `flutter upgrade`.
 
 ## 切换 Flutter 发布渠道
 
-Flutter has [four release channels][Flutter release channel]:
+Flutter has four [release channels][]:
 **stable**, **beta**, **dev**, and **master**.
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
-Flutter 有[4个发布渠道][Flutter release channel]：
+Flutter 有 [4个发布渠道][release channels]，分别是 
 **stable**, **beta**, **dev**, 和 **master**。
 我们推荐使用 **{{site.sdk.channel}}** 渠道
 除非你需要更加新的版本。
@@ -118,21 +120,21 @@ $ flutter upgrade
 ```
 
 {{site.alert.note}}
-If you need a specific version of the Flutter SDK,
-you can download it from the [Flutter SDK archive][].
-{{site.alert.end}}
-
-{{site.alert.note}}
-如果你需要一个指定的 Flutter SDK 版本,
-你可以从 [Flutter SDK archive][] 下载.
+  If you need a specific version of the Flutter SDK,
+  you can download it from the [Flutter SDK archive][].
+  
+  如果你需要某个特定的 Flutter SDK 版本,
+  你可以从 [Flutter SDK archive][] 页面下载.
 {{site.alert.end}}
 
 ## Upgrading packages only
-## 仅更新packages
 
-If you've modified your `pubspec.yaml` file or you want to update
-only the packages that your app depends upon (instead of both the packages and
-Flutter itself), then use one of the `flutter pub` commands.
+## 仅更新 packages
+
+If you've modified your `pubspec.yaml` file, or you want to update
+only the packages that your app depends upon
+(instead of both the packages and Flutter itself),
+then use one of the `flutter pub` commands.
 
 如果你已经修改了 `pubspec.yaml` 文件，或者你想仅仅更新你 app 依赖的 packages
 （而不是同时更新 packages 和 Flutter SDK）
@@ -157,23 +159,31 @@ use the `upgrade` command:
 $ flutter pub upgrade
 ```
 
-
 ## Keeping informed
 
-## 保持知情
+## 获得最新通知
 
-We publish breaking change announcements to our [mailing list][].
-We strongly recommend that you subscribe to get announcements from us.
-Plus, we'd love to hear from you!
-
-我们发布重大更新的公告到 [邮件列表][]。
-我们强烈建议你订阅来获取我们的公告。
-同时，我们喜欢听到您的声音！
+We publish breaking change announcements to the
+[Flutter announcements mailing list][flutter-announce].
+You can also ask questions on the [Flutter dev mailing list][flutter-dev].
+Aside from subscribing to receive announcements,
+we'd love to hear from you!
 
 [Flutter SDK archive]: /docs/development/tools/sdk/archive
+[release channels]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
+我们会将最新的 breaking change (重大改动) 通知到
+[Flutter 通知邮件群组][flutter-announce]，
+与此同时，你可以在 [Flutter 开发者邮件群组][flutter-dev]里向大家提问等。
+我们希望得到你的反馈！
+
+[Flutter SDK archive]: /docs/development/tools/sdk/releases
 [Flutter release channel]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 [mailing list]: {{site.groups}}/forum/#!forum/flutter-dev
-
-[Flutter SDK 档案]: /docs/development/tools/sdk/archive
+[Flutter SDK 档案]: /docs/development/tools/sdk/releases
+[Flutter SDK 归档列表]: /docs/development/tools/sdk/releases
 [Flutter 发布渠道]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 [邮件列表]: {{site.groups}}/forum/#!forum/flutter-dev
+[release-channel]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
+[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[flutter-dev]: {{site.groups}}/forum/#!forum/flutter-dev
+

@@ -89,14 +89,14 @@ specialized content:
 
 * `lib/hello.dart`:
    - The Dart code for the package.
-     
+
      package 的 Dart 实现代码。
 
 * `test/hello_test.dart`:
    - The [unit tests](/docs/testing#unit-tests) for the package.
-     
+
      Package 的 [单元测试](/docs/testing#unit-tests)。
-     
+
 ### Step 2: Implement the package
 
 ### 第二步：实现 package
@@ -135,7 +135,7 @@ channels](/docs/development/platform-integration/platform-channels).
 如果想要开发一个调用特定平台 API 的 package，你需要开发一个原生插件 packgae。原生插件 packgae
 是 Dart package 的特别版本，除了要实现 Dart package 要实现的内容，还需要按需使用
 Java 或 Kotlin、ObjC 或 Swift 分别在 Android 和/或 iOS 平台实现，你可以使用 [platform
-channel](/docs/development/platform-integration/platform-channels) API 来实现特定平台的调用。
+channel](/docs/development/platform-integration/platform-channels) 中的 API 来实现特定平台的调用。
 
 ### Step 1: Create the package
 
@@ -162,22 +162,22 @@ specialized content:
 
 * `lib/hello.dart`:
    - The Dart API for the plugin.
-     
+
      Dart 插件 API 实现。
 
 * <code>android/src/main/java/com/example/&#8203;hello/HelloPlugin.java</code>:
    - The Android platform specific implementation of the plugin API.
-     
+
      Android 平台原生插件 API 实现。
 
 * `ios/Classes/HelloPlugin.m`:
    - The iOS platform specific implementation of the plugin API.
-     
-     iOS 平台原生插件 API 实现。     
+
+     iOS 平台原生插件 API 实现。
 
 * `example/`:
    - A Flutter app that depends on the plugin, and illustrates how to use it.
-   
+
      一个依赖于该插件并说明了如何使用它的 Flutter 应用。
 
 By default, the plugin project uses Objective-C for iOS code and
@@ -388,8 +388,12 @@ Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation)�
 
 ### Adding licenses to the LICENSE file
 
+### 将许可证添加到 LICENSE 文件中
+
 Individual licenses inside each LICENSE file should be separated by 80
 hyphens on their own on a line.
+
+每个 LICENSE 文件中的各个许可证应由 80 个短线字符组成的线段进行分割。
 
 If a LICENSE file contains more than one component license, then each
 component license must start with the names of the packages to which the
@@ -399,7 +403,14 @@ line. (The packages need not match the names of the pub package. For
 example, a package might itself contain code from multiple third-party
 sources, and might need to include a license for each one.)
 
+如果 LICENSE 文件中包含多个组件许可证，那么每个组件许可证必须以其所在 package
+的名称开始，每个 package 名称单独一行显示，并且 package
+名称列表与实际许可证内容由空行隔开。（package 名称无需与 pub package 相匹配。比如，一个
+package 可能包含多个第三方代码，并且可能需要为每个 package 添加许可证。）
+
 Good:
+
+正确：
 ```
 package_1
 
@@ -412,6 +423,8 @@ package_2
 ```
 
 Also good:
+
+正确：
 ```
 package_1
 
@@ -425,6 +438,8 @@ package_2
 ```
 
 Bad:
+
+不正确：
 ```
 <some license text>
 
@@ -433,6 +448,8 @@ Bad:
 ```
 
 Also bad:
+
+不正确：
 ```
 package_1
 
@@ -473,7 +490,7 @@ Finally, run the actual publish command:
 最后，运行以下提交命令：
 
 ```terminal
-$ flutter pub publish
+$ flutter pub pub publish
 ```
 
 For details on publishing, see the

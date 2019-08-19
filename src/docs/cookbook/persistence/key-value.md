@@ -72,7 +72,7 @@ To persist data, use the setter methods provided by the
 `SharedPreferences` class. Setter methods are available for various primitive
 types, such as `setInt`, `setBool`, and `setString`.
 
-要存储数据，请使用 `SharedPreferences` 类的 setter 方法。Setter方法可用于各种基本数据类型，例如  `setInt`，`setBool`， 和 `setString`。
+要存储数据，请使用 `SharedPreferences` 类的 setter 方法。Setter方法可用于各种基本数据类型，例如  `setInt`、`setBool` 和 `setString`。
 
 Setter methods do two things: First, synchronously update the key-value pair
 in-memory. Then, persist the data to disk.
@@ -96,7 +96,7 @@ To read data, use the appropriate getter method provided by the
 `SharedPreferences` class. For each setter there is a corresponding getter.
 For example, you can use the `getInt`, `getBool`, and `getString` methods.
 
-要读取数据，请使用 `SharedPreferences` 类相应的 getter 方法。对于每一个 setter 方法都有对应的 getter 方法。例如，你可以使用 `getInt`， `getBool`，和 `getString` 方法。
+要读取数据，请使用 `SharedPreferences` 类相应的 getter 方法。对于每一个 setter 方法都有对应的 getter 方法。例如，你可以使用 `getInt`、`getBool` 和 `getString` 方法。
 
 <!-- skip -->
 ```dart
@@ -133,7 +133,7 @@ it has limitations:
 * Only primitive types can be used: `int`, `double`, `bool`, `string`,
   and `stringList`.
   
-  只能用于基本数据类型： `int`，`double`，`bool`，`string` 和 `stringList`
+  只能用于基本数据类型： `int`、`double`、`bool`、`string` 和 `stringList`。
   
 * It's not designed to store a lot of data.
 

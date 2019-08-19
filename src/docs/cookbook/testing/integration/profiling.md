@@ -74,7 +74,7 @@ on the
 in integration tests.
 
 在这一章节，我们将记录当滚动列表条目时应用程序的性能。
-为了专注于性能分析，这一小节在 [Scrolling in integration tests（滚动集成测试）](/docs/cookbook/testing/integration/scrolling) 的基础上进行。
+为了专注于性能分析，这一小节在 [Scrolling in integration tests（列表滚动集成测试）](/docs/cookbook/testing/integration/scrolling) 的基础上进行。
 
 Follow the instructions in that recipe to create an app, instrument the
 app, and write a test to verify that everything works as expected.
@@ -92,7 +92,7 @@ method provided by the
 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
 class.
 
-然后，我们需要再应用程序的列表滚动的时候记录它的性能。使用 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 类中的 [`traceAction`]({{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html) 方法实现这项功能。
+然后，我们需要再应用程序的列表滚动的时候记录它的性能。使用 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 类中的 [`traceAction()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html) 方法实现这项功能。
 
 This method runs the provided function and records a
 [`Timeline`]({{site.api}}/flutter/flutter_driver/Timeline-class.html)

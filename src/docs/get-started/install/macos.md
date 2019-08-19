@@ -14,8 +14,8 @@ next:
 
 ## 系统配置要求
 
-
-To install and run Flutter, your development environment must meet these minimum requirements:
+To install and run Flutter,
+your development environment must meet these minimum requirements:
 
 想要安装并运行 Flutter，你的开发环境需要最低满足以下要求：
 
@@ -27,7 +27,8 @@ To install and run Flutter, your development environment must meet these minimum
 
   **磁盘空间**：700 MB（不包含 IDE 或其余工具所需要的磁盘空间） 
 
-- **Tools**: Flutter depends on these command-line tools being available in your environment.
+- **Tools**: Flutter depends on these command-line tools being available
+  in your environment.
 
   **命令工具**：Flutter 需要你的开发环境中已经配置了以下命令行工具。
 
@@ -63,7 +64,6 @@ macOS 可以允许开发 iOS 和 Android 两个平台的 Flutter 应用，你可
 
 ## 下一步
 
+Set up your preferred editor.
 
-[Next step: Configure Editor](/docs/get-started/editor)
-
-[下一步: 编辑工具设定](/docs/get-started/editor)
+编辑器设置。

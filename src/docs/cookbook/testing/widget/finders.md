@@ -29,13 +29,13 @@ to work with some of the `Finders` it provides. For a full list of
 available finders, see the
 [`CommonFinders` documentation]({{api}}/flutter_driver/CommonFinders-class.html).
 
-下面，我们来看看 `flutter_test` 包提供的 [`find`]({{api}}/flutter_test/find-constant.html) 常量并演示如何使用其所提供的 `Finders`。如需查看完整的 finders 的列表，请参阅 [`CommonFinders` documentation]({{api}}/flutter_driver/CommonFinders-class.html)。
+下面，我们来看看 `flutter_test` 包提供的 [`find`]({{api}}/flutter_test/find-constant.html) 常量并演示如何使用其所提供的 `Finders`。如需查看完整的 finders 的列表，请参阅 [`CommonFinders` 文档]({{api}}/flutter_driver/CommonFinders-class.html)。
 
 If you're unfamiliar with widget testing and the role of `Finder` classes,
 review the [Introduction to widget
 testing](/docs/cookbook/testing/widget/introduction) recipe.
 
-如果你还不熟悉 Widget 测试和 Finder 类使用方法，请参阅 [Introduction to Widget testing](/docs/cookbook/testing/integration)。
+如果你还不熟悉 Widget 测试和 Finder 类使用方法，请参阅 [在 Flutter 里做集成测试](/docs/cookbook/testing/integration)。
 
 This recipe uses the following steps:
 
@@ -62,7 +62,7 @@ In testing, you often need to find widgets that contain specific text.
 This is exactly what the `find.text()` method is for. It creates a
 `Finder` that searches for widgets that display a specific `String` of text.
 
-在测试中，我们经常需要查找含有特定文本的 Widget。这正是 `find.text` 的用途。它会创建一个 `Finder` 来寻找显示特定文本 `String` 的 Widget。
+在测试中，我们经常需要查找含有特定文本的 Widget。这正是 `find.text()` 的用途。它会创建一个 `Finder` 来寻找显示特定文本 `String` 的 Widget。
 
 <!-- skip -->
 ```dart
@@ -149,7 +149,7 @@ If the above examples do not work for a particular use-case, see the
 documentation]({{api}}/flutter_driver/CommonFinders-class.html)
 to review all available methods.
 
-如果上述示例不适用于一些特殊情况，请到 [`CommonFinders` documentation]({{api}}/flutter_driver/CommonFinders-class.html) 查看更多用法。
+如果上述示例不适用于一些特殊情况，请到 [`CommonFinders` 文档]({{api}}/flutter_driver/CommonFinders-class.html) 中查看更多用法。
 
 ### Complete example
 

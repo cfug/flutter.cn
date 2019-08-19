@@ -17,7 +17,7 @@ exception. To play videos, the Flutter team provides the
 use the `video_player` plugin to play videos stored on the file system,
 as an asset, or from the internet.
 
-在任何应用开发中，视频播放都是一项常见任务，Flutter 应用也不例外。为了支持视频播放，Flutter团队提供了 [`video_player`]({{site.pub-pkg}}/video_player) 插件。你可以使用 `video_player` 插件播放存储在本地文件系统中的视频或者网络视频。
+在任何应用开发中，视频播放都是一项常见任务，Flutter 应用也不例外。为了支持视频播放，Flutter 团队提供了 [`video_player`]({{site.pub-pkg}}/video_player) 插件。你可以使用 `video_player` 插件播放存储在本地文件系统中的视频或者网络视频。
 
 On iOS, the `video_player` plugin makes use of
 [`AVPlayer`](https://developer.apple.com/documentation/avfoundation/avplayer) to
@@ -165,7 +165,7 @@ To create and initialize the `VideoPlayerController` do the following:
   3. Add a variable to the `State` class to store the `Future` returned from
   `VideoPlayerController.initialize`
 
-     在 `State` 累中增加另外一个变量来存放 `VideoPlayerController.initialize` 返回的 `Future`
+     在 `State` 类中增加另外一个变量来存放 `VideoPlayerController.initialize` 返回的 `Future`
 
   4. Create and initialize the controller in the `initState` method
 
@@ -278,7 +278,7 @@ method provided by the `VideoPlayerController`. To pause playback, call the
 [`pause()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html)
 method.
 
-默认情况下，播放器启动时会处于暂停状态。开始播放，需要调用 `VideoPlayerController` 提供的 [`play`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html) 方法。停止播放，需要调用[`pause`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html) 方法。
+默认情况下，播放器启动时会处于暂停状态。开始播放，需要调用 `VideoPlayerController` 提供的 [`play()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html) 方法。停止播放，需要调用 [`pause()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html) 方法。
 
 For this example, add a `FloatingActionButton` to your app that displays a play
 or pause icon depending on the situation. When the user taps the button,
@@ -351,7 +351,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
     );
 
-    // Initielize the controller and store the Future for later use.
+    // Initialize the controller and store the Future for later use.
     _initializeVideoPlayerFuture = _controller.initialize();
 
     // Use the controller to loop the video.

@@ -36,6 +36,7 @@ Five-to-ten minute tutorials (more or less) on using Flutter.
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Introducing Flutter in Focus<br>
+
 介绍 Flutter in Focus 视频列表<br>
 
 [Flutter in Focus playlist][]
@@ -51,6 +52,7 @@ Do you have 60 seconds? Each one-minute video highlights a Flutter widget.
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55795672&cid=97539385&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Introducing Widget of the Week<br>
+
 介绍每周 Flutter Widgets 视频列表<br>
 
 [Flutter in Focus playlist][]
@@ -65,6 +67,7 @@ Coding mistakes, solutions, and snazzy intro music included.
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Introducing the Boring Flutter Show<br>
+
 介绍 The Boring Flutter Show<br>
 
 [The Boring Flutter Show playlist][]
@@ -87,6 +90,7 @@ Catch the content from Flutter Live '18, where Flutter 1.0 was officially launch
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55814646&cid=97571719&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Flutter Live Keynote Recap<br>
+
 Flutter Live 主题演讲回顾<br>
 
 [Flutter Live '18 playlist][]
@@ -115,6 +119,8 @@ Episode 1: Sized Box<br>
 第一集: Sized Box<br>
 
 [Flutter Weekly Widgets playlist][]
+
+[Flutter Weekly Widgets 播放列表][Flutter Weekly Widgets playlist]
 
 ---
 

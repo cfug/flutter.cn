@@ -7,7 +7,7 @@ description: How to perform animations in Flutter
 description: 如何使用 Flutter 实现动画效果
 ---
 
-Well-designed animations makes a UI feel more intuitive, contribute to
+Well-designed animations make a UI feel more intuitive, contribute to
 the slick look and feel of a polished app, and improve the user experience.
 Flutter's animation support makes it easy to implement a variety of
 animation types. Many widgets, especially [Material widgets][],
@@ -59,7 +59,7 @@ If you have a specific request,
   to the message list.
 
   [使用 Flutter 构建美观 UIs]({{site.codelabs}}/codelabs/flutter)<br>
-  Codelab 演示如何构建简单的聊天应用程序。[步骤 7 (应用动画化)]({{site.codelabs}}/codelabs/flutter/#6)
+  Codelab 演示如何构建简单的聊天应用程序。[步骤 7 (应用动画化)]({{site.codelabs}}/codelabs/flutter/#6) 展示了一个新消息动画，使其能从输入区域滑动至消息列表。
 
 We also have some videos that discuss aspects of Flutter animation.
 
@@ -80,7 +80,7 @@ Hero
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55831662&cid=97600653&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Transform
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N-RiyZlv8v8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55835996&cid=97607807&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 AnimatedBuilder
 
 ## Animation types
@@ -88,7 +88,7 @@ AnimatedBuilder
 ## 动画类型
 
 Animations fall into one of two categories: tween- or physics-based.
-The following sections explain what these terms mean, and points you to
+The following sections explain what these terms mean, and point you to
 resources where you can learn more. In some cases,
 the best documentation we currently have is example code in the
 Flutter gallery.
@@ -111,7 +111,7 @@ The documents listed above, such as the [animations
 tutorial](/docs/development/ui/animations/tutorial) are not about tweening,
 specifically, but they use tweens in their examples.
 
-上文列出的文档，比如 [动画指南](/docs/development/ui/animations/tutorial) 并不是特别针对补间动画的，但是其示例中使用了补间动画。
+上文列出的文档，比如 [教程 | 在 Flutter 应用里实现动画效果](/docs/development/ui/animations/tutorial) 并不是特别针对补间动画的，但是其示例中使用了补间动画。
 
 ### Physics-based animation
 
@@ -126,14 +126,14 @@ Similarly, dropping a ball attached to a spring falls
 在基于物理基础的动画中，动作是模拟真实世界的行为来进行建模的。举个例子，当您抛球时，球落地的时间和位置取决于抛出的速度和距离地面的高度。类似地，附在弹簧上的球和附在绳子上的球掉落（和反弹）方式是不一样的。
 
 * [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
+
 Under **Material Components**, the
 [Grid]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) example
 demonstrates a fling animation. Select one of the images from
 the grid and zoom in. You can pan the image with flinging or dragging
 gestures.
 
- [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-在 **Material 组件** 下，[网格]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) 示例演示了一个抛物动画。从网格中选取一个图像并放大。您可以通过使用投掷和拖动来平移图像。
+在 **Material 组件** 下，[Grid]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) 示例演示了一个抛物动画。从网格中选取一个图像并放大。您可以通过使用投掷和拖动来平移图像。
 
 * Also see the API documentation for
   [AnimationController<wbr>.animateWith][AnimationController.animateWith] and

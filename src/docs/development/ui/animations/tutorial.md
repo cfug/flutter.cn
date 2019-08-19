@@ -100,7 +100,7 @@ An `Animation` is an abstract class that understands its current value
 and its state (completed or dismissed). One of the more commonly used
 animation types is `Animation<double>`.
 
-在 Flutter 中，动画对象无法获取屏幕上显示的内容。`Animation` 是一个已知当前值和状态（已完成或已解除）的抽象类。另外一个更加常见的动画类型是 `Animation<double>`。
+在 Flutter 中，动画对象无法获取屏幕上显示的内容。`Animation` 是一个已知当前值和状态（已完成或已解除）的抽象类。一个比较常见的动画类型是 `Animation<double>`。
 
 An `Animation` object sequentially generates
 interpolated numbers between two values over a certain duration.
@@ -137,6 +137,7 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 ```
 
 {{site.alert.note}}
+
   The [Curves][] class defines many commonly used curves, or you can create your
   own. For example:
 
@@ -185,7 +186,7 @@ second. After each number is generated, each Animation object calls the
 attached Listener objects. To create a custom display list for each
 child, see [RepaintBoundary][].
 
-`AnimationController` 源自于 `Animation<double>`，所以可以用在任何需要 `Animation` 对象的地方。但是 `AnimationController` 还有其他方法控制动画。例如，使用 `.forward()` 方法启动动画。数字的生成与屏幕刷新关联，所以一般来说每分钟会生成 60 个数字。数字生成之后，每个动画对象都调用附加 Listener 对象。为每个 child 创建自定义显示列表，请参考 [RepaintBoundary][]。
+`AnimationController` 源自于 `Animation<double>`，所以可以用在任何需要 `Animation` 对象的地方。但是 `AnimationController` 还有其他方法控制动画。例如，使用 `.forward()` 方法启动动画。数字的生成与屏幕刷新关联，所以一般来说每秒钟会生成 60 个数字。数字生成之后，每个动画对象都调用附加 Listener 对象。为每个 child 创建自定义显示列表，请参考 [RepaintBoundary][]。
 
 When creating an `AnimationController`, you pass it a `vsync` argument. The
 presence of `vsync` prevents offscreen animations from consuming unnecessary
@@ -314,7 +315,7 @@ The next section has an example of the `addListener()` method,
 and [Monitoring the progress of the animation](#monitoring) shows an
 example of `addStatusListener()`.
 
-一个 [Animation][] 对象可以有不止一个 `Listener` 和 `StatusListener`，用 `addListener()` 和 `addStatusListener()` 来定义。当动画值改变时调用 `Listener`。`Listener` 最常用的操作是调用 `setState()` 进行重建。当一个动画开始，结束，前进或后退时，会调用 `StatusListener`，用 `AnimationStatus` 来定义。下一部分有关于 `addListener()` 方法的示例，在 [Monitoring the progress of the animation](#monitoring) 中也有 `addStatusListener()` 的示例。
+一个 [Animation][] 对象可以有不止一个 `Listener` 和 `StatusListener`，用 `addListener()` 和 `addStatusListener()` 来定义。当动画值改变时调用 `Listener`。`Listener` 最常用的操作是调用 `setState()` 进行重建。当一个动画开始，结束，前进或后退时，会调用 `StatusListener`，用 `AnimationStatus` 来定义。下一部分有关于 `addListener()` 方法的示例，在 [监控动画过程](#monitoring) 中也有 `addStatusListener()` 的示例。
 
 ---
 
@@ -482,7 +483,8 @@ With these few changes, you’ve created your first animation in Flutter!
 
 经过这些小改动，你成功创建了第一个 Flutter 动画。
 
-<aside class="alert alert-success" markdown="1">
+
+{{site.alert.secondary}}
 
   **Dart language tricks:**
   You might not be familiar with Dart's cascade notation&mdash;the two
@@ -516,8 +518,9 @@ With these few changes, you’ve created your first animation in Flutter!
   You can learn more about cascade notation in the
   [Dart Language Tour.]({{site.dart-site}}/guides/language/language-tour)
   
-  更多关于级联操作符的内容，请参考 [Dart Language Tour.]({{site.dart-site}}/guides/language/language-tour)
-</aside>
+  更多关于级联操作符的内容，请参考 [Dart Language Tour]({{site.dart-site}}/guides/language/language-tour)。
+
+{{site.alert.end}}
 
 ###  Simplifying with Animated&shy;Widget
 
@@ -901,7 +904,7 @@ above.
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  <h4 class="no_toc">What's the point?</h4>
+  <h4 class="no_toc">重点提醒</h4>
 
   * The [Curves][] class defines an array of commonly used curves that you can
     use with a [CurvedAnimation][].
@@ -919,13 +922,17 @@ to opaque.
 在这部分内容中，您会根据 [监控动画过程](#monitoring) ([animate3]({{examples}}/animation/animate3/lib/main.dart)) 创建示例，该示例将使用 `AnimatedWidget` 持续进行动画。可以用在需要对透明度进行从透明到不透明动画处理的情况。
 
 {{site.alert.note}}
+
   This example shows how to use multiple tweens on the same animation
   controller, where each tween manages a different effect in the animation. It
   is for illustrative purposes only. If you were tweening opacity and size in
   production code, you'd probably use [FadeTransition][] and [SizeTransition][]
   instead.
   
-  这个示例展示了如何在同一个动画控制器中使用复合补间动画，每个补间动画控制一个动画的不同效果。仅用于说明目的。如果您需要在代码中加入渐变不透明度和尺寸效果，可能需要用 [FadeTransition][] 和 [SizeTransition][] 来代替。
+  这个示例展示了如何在同一个动画控制器中使用复合补间动画，每个补间动画控制一个动画的不同效果。
+  仅用于说明目的。如果您需要在代码中加入渐变不透明度和尺寸效果，
+  可能需要用 [FadeTransition][] 和 [SizeTransition][] 来代替。
+  
 {{site.alert.end}}
 
 Each tween manages an aspect of the animation. For example:
@@ -1032,7 +1039,7 @@ physics simulations and `fling()` methods. See the [animations landing
 page](/docs/development/ui/animations) for the latest available documents and
 examples.
 
-本指南是在 Flutter 中应用 `Tweens` 创建动画的基础介绍，还有很多其他类可供探索。比如指定 `Tween` 类，Material Design 特有的动画，`ReverseAnimation`，共享元素过渡（也称为 Hero 动画），物理模拟和 `fling()` 方法。关于最新的文档和示例可参见 [动画登录页面](/docs/development/ui/animations)。
+本指南是在 Flutter 中应用 `Tweens` 创建动画的基础介绍，还有很多其他类可供探索。比如指定 `Tween` 类，Material Design 特有的动画，`ReverseAnimation`，共享元素过渡（也称为 Hero 动画），物理模拟和 `fling()` 方法。关于最新的文档和示例可参见 [动画效果介绍](/docs/development/ui/animations)。
 
 [AnimatedWidget]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
 [Animatable]: {{site.api}}/flutter/animation/Animatable-class.html

@@ -30,7 +30,11 @@ in case 1 on Android and iOS.
 
 For case 2, Flutter bundles the means to produce the appropriate effects of
 the platform conventions but does not adapt automatically when app design
-choices are needed. For a discussion, see [#8410](https://github.com/flutter/flutter/issues/8410#issuecomment-468034023).
+choices are needed. For a discussion, see [#8410](https://github.com/flutter/flutter/issues/8410#issuecomment-468034023)
+and http://bit.ly/flutter-adaptive-widget-problem.
+
+For an example of an app using different information architecture structures on
+Android and iOS but sharing the same content code, see https://github.com/flutter/samples/tree/master/platform_design.
 
 对于情形 2，Flutter 提供了一些工具可以生成符合平台习惯的体验，但是不会根据平台自动适配，需要根据 App 设计来手工选择。更多有关的讨论，请访问 [#8410](https://github.com/flutter/flutter/issues/8410#issuecomment-468034023)。
 
@@ -116,12 +120,12 @@ version:
 * Pre API 28 uses a bottom-up animation that [slides up and fades
   in]({{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html).
 
-  API 28 版本之前的系统，提供了一种自下而上[滚动并淡出]({{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html)的动画效果。
+  API 28 版本之前的系统，提供了一种自下而上 [滚动并淡出]({{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html) 的动画效果。
 
 * On API 28 and later, the bottom-up animation [slides and clip-reveals
   up]({{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html).
 
-  API 28 和以后的系统，则提供了另外一种自下而上[滚动并反向翻转]({{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html)的动画效果。
+  API 28 和以后的系统，则提供了另外一种自下而上 [滚动并反向翻转]({{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html) 的动画效果。
 
 On **iOS** when the push style transition is used, Flutter's bundled
 [CupertinoNavigationBar]({{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html)
@@ -343,7 +347,7 @@ When using the Cupertino package, the [default
 theme](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart)
 always uses the San Francisco font.
 
-当使用 Cupertino 包的时候，[默认主题](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart)会一直使用 San Francisco 字体。
+当使用 Cupertino 包的时候，[默认主题](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart) 会一直使用 San Francisco 字体。
 
 The San Francisco font license limits its usage to software running on iOS,
 macOS, or tvOS only. Therefore a fallback font is used when running on Android

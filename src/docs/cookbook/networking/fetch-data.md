@@ -192,7 +192,7 @@ To fetch the data and display it on screen, use the
 widget. The `FutureBuilder` widget comes with Flutter and makes it easy
 to work with async data sources.
 
-为了能够获取数据并在屏幕上展示它，你可以使用 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) 组件。这个由 Flutter 提供的 `FutureBuilder` 组件可以让处理异步数据源变的非常简单。
+为了能够获取数据并在屏幕上展示它，你可以使用 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) widget。这个由 Flutter 提供的 `FutureBuilder` 组件可以让处理异步数据源变的非常简单。
 
 You must provide two parameters:
 
@@ -277,7 +277,7 @@ If your widget is stateful, call the fetch method in either the
 methods.
 
 
-如果你的组件是有状态的，你可以在 [`initState`]({{site.api}}/flutter/widgets/State/initState.html) 或者 [`didChangeDependencies`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html) 方法中调用 fetch 方法。
+如果你的组件是有状态的，你可以在 [`initState()`]({{site.api}}/flutter/widgets/State/initState.html) 或者 [`didChangeDependencies()`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html) 方法中调用 fetch 方法。
 
 The `initState()` method is called exactly once and then never again.
 If you want to have the option of reloading the API in response to an
@@ -286,7 +286,7 @@ changing, put the call into the `didChangeDependencies()` method.  See
 [`State`]({{site.api}}/flutter/widgets/State-class.html) for more
 details.
 
-`initState()` 只会被调用一次而且再也不会被调用。如果你需要在 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html) 改变的时候可以重新载入的话，可以把数据调用放在 `didChangeDependencies` 方法中。想了解更多详细内容请查看 [`State`]({{site.api}}/flutter/widgets/State-class.html)。
+`initState()` 只会被调用一次而且再也不会被调用。如果你需要在 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html) 改变的时候可以重新载入的话，可以把数据调用放在 `didChangeDependencies()` 方法中。想了解更多详细内容请查看 [`State`]({{site.api}}/flutter/widgets/State-class.html)。
 
 <!-- skip -->
 ```dart

@@ -27,7 +27,7 @@
         - title: 声明式 UI 介绍
           permalink: /docs/get-started/flutter-for/declarative
     - title: Dart 语言概览
-      permalink: https://www.dartlang.org/guides/language
+      permalink: https://www.dart.dev/guides/language
 
 - title: 教程和样例代码
   children:
@@ -141,8 +141,29 @@
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
-        - title: Dart 调试工具
-          permalink: https://flutter.github.io/devtools/
+        - title: 开发者工具
+          permalink: /docs/development/tools/devtools
+          children:
+            - title: 概览
+              permalink: /docs/development/tools/devtools/overview
+            - title: 在 Android Studio 或 IntelliJ 上使用
+              permalink: /docs/development/tools/devtools/android-studio
+            - title: 在 VS Code 上使用
+              permalink: /docs/development/tools/devtools/vscode
+            - title: 在命令行工具中使用
+              permalink: /docs/development/tools/devtools/cli
+            - title: Flutter inspector 工具
+              permalink: /docs/development/tools/devtools/inspector
+            - title: 时间线视图
+              permalink: /docs/development/tools/devtools/timeline
+            - title: 内存视图
+              permalink: /docs/development/tools/devtools/memory
+            - title: 性能视图
+              permalink: /docs/development/tools/devtools/performance
+            - title: 调试器
+              permalink: /docs/development/tools/devtools/debugger
+            - title: 日志视图
+              permalink: /docs/development/tools/devtools/logging
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -154,14 +175,14 @@
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式化
           permalink: /docs/development/tools/formatting
-        - title: Flutter Inspector
-          permalink: https://flutter.github.io/devtools/inspector
 
 - title: 测试和调优
   permalink: /docs/testing
   children:
     - title: 调试 Flutter 应用
       permalink: /docs/testing/debugging
+    - title: Debugging apps programmatically
+      permalink: /docs/testing/code-debugging
     - title: 使用原生的调试器
       permalink: /docs/testing/oem-debuggers
     - title: 构建模式 (Debug/Release/Profile)

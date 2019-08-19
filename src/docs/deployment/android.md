@@ -6,15 +6,6 @@ description: How to prepare for and release an Android app to the Play store.
 description: 如何打包把 App 发布到 Play 商店。
 ---
 
-{{site.alert.warning}}
-
-  This page describes the Android release process as of the
-  1.7.4 release of the Flutter SDK.
-  
-  本页面描述的 Android 发布流程基于 1.7.4 版本之后的 Flutter SDK。
-  
-{{site.alert.end}}
-
 During a typical development cycle,
 you test an app using `flutter run` at the command line,
 or by using the **Run** and **Debug**
@@ -32,7 +23,7 @@ you might want to put some finishing touches on your app.
 This page covers the following topics:
 
 当想要发布 app 时，比如 [发布到 Google Play Store][play]，
-可以按照以下步骤来准备 Android 平台的**发布**版本。
+可以按照以下步骤来准备 Android 平台的 **发布** 版本。
 本页面的内容包含如下主题：
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
@@ -132,8 +123,16 @@ If not, create one by running the following at the command line:
 如果我们已经有一个密钥库，可以跳到下一步。
 如果没有，在命令行中运行以下的命令来创建一个：
 
+On Mac/Linux, use the following command:
+
+在 macOS 或者 Linux 系统上，执行下面的代码
+
 ```
 keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
+```
+On Windows, use the following command:
+```
+keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
 {{site.alert.note}}
@@ -159,6 +158,13 @@ keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000
   运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，
   然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。
 
+  If your path includes space-separated names,
+  such as `Program Files`, place quotes around the space-separated
+  names. For example: `/"Program Files"/`
+  
+  如果文件路径包含空格，类似 `Program Files` 这样的，你需要在路径上加入转义符：
+  `/"Program Files"/`。
+  
 {{site.alert.end}}
 
 ### Reference the keystore from the app
@@ -364,14 +370,16 @@ are correct, especially:
   `application`：编辑 [`application`][applicationtag]
   标签中的 `android:label` 来设置 app 的最终名字。
 
-* `uses-permission`: Remove the `android.permission.INTERNET`
-  [permission][permissiontag] if your application code does not need
-  Internet access. The standard template includes this tag to enable
-  communication between Flutter tools and a running app.
+* `uses-permission`: Add the `android.permission.INTERNET`
+  [permission][permissiontag] if your application code needs Internet
+  access. The standard template does not include this tag but allows
+  Internet access during development to enable communication between
+  Flutter tools and a running app.
   
-  `uses-permission`：如果 app 不需要访问 Internet，移除
-  `android.permission.INTERNET`[权限][permissiontag]。
-  标准模版里包含了这个权限，是为了允许 Flutter 工具和正在运行的 app 之间的通信。
+  `uses-permission`：如果你的代码需要互联网交互，请加入
+  `android.permission.INTERNET` [权限标签][permissiontag]。
+  标准开发模版里并未加入这个权限（但是 Flutter debug 模版加入了这个权限），
+  加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信，详情见 [Issue 22139]()。
 
 ## Reviewing the build configuration
 
@@ -694,6 +702,7 @@ This doc need to assign to a new translator.
 [versions]: {{site.android-dev}}/studio/publish/versioning
 [launchericons]: {{site.material}}/design/iconography/
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[配置限定符]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle
@@ -706,3 +715,4 @@ This doc need to assign to a new translator.
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
+[Issue 22139]: {{site.github}}/flutter/flutter/issues/22139

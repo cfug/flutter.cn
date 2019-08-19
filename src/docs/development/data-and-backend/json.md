@@ -140,7 +140,8 @@ when using reflection.
   [dartson]({{site.pub}}/packages/dartson) library uses runtime
   [reflection][], which makes it incompatible with Flutter.
 
-  **dartson 怎么样？**[dartson]({{site.pub}}/packages/dartson) 是一个使用运行时 [反射][] 的库，这让它不能兼容 Flutter。
+  **dartson 怎么样？**
+  [dartson]({{site.pub}}/packages/dartson) 是一个使用运行时 [反射][] 的库，这让它不能兼容 Flutter。
 {{site.alert.end}}
 
 Although you cannot use runtime reflection with Flutter, some libraries give
@@ -263,7 +264,7 @@ itself. With this new approach, you can decode a user easily.
 <!-- skip -->
 ```dart
 Map userMap = jsonDecode(jsonString);
-var user = new User.fromJson(userMap);
+var user = User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');
@@ -500,7 +501,139 @@ to write automated tests to ensure that the serialization works&mdash;it's
 now _the library's responsibility_ to make sure the serialization works
 appropriately.
 
-使用 `json_serializable`，在 `User` 类中你可以忘记手动序列化任意的 JSON 数据。源代码生成器会创建一个名为 `user.g.dart` 的文件，它包含了所有必须的序列化数据逻辑。你不必再编写自动化测试来确保序列化数据奏效。- 现在由 _库来负责_ 确保序列化数据能正确地奏效。
+使用 `json_serializable`，在 `User` 类中你可以忘记手动序列化任意的 JSON 数据。
+源代码生成器会创建一个名为 `user.g.dart` 的文件，
+它包含了所有必须的序列化数据逻辑。你不必再编写自动化测试来确保序列化数据奏效。
+现在由 _库来负责_ 确保序列化数据能正确地奏效。
+
+## Generating code for nested classes
+
+## 为嵌套类 (Nested Classes) 生成代码
+
+You might have code that has nested classes within a class.
+If that is the case, and you have tried to pass the class in JSON format
+as an argument to a service (such as Firebase, for example),
+you might have experienced an `Invalid argument` error.
+
+你可能类在代码中用了嵌套类，在你把类作为参数传递给一些服务（比如 Firebase）的时候，
+你可能会遇到`Invalid argument`错误。
+
+Consider the following `Address` class:
+
+比如下面的这个 `Address` 类：
+
+```dart
+import 'package:json_annotation/json_annotation.dart';
+part 'address.g.dart';
+
+@JsonSerializable()
+class Address {
+  String street;
+  String city;
+  
+  Address(this.street, this.city);
+  
+  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
+  Map<String, dynamic> toJson() => _$AddressToJson(this); 
+}
+```
+
+The Address class is nested inside the `User` class:
+
+一个 `Address` 类被嵌套在 `User` 类中使用：
+
+```dart
+import 'address.dart';
+import 'package:json_annotation/json_annotation.dart';
+part 'user.g.dart';
+
+@JsonSerializable()
+class User {
+  String firstName;  
+  Address address;
+  
+  User(this.firstName, this.address);
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  Map<String, dynamic> toJson() => _$UserToJson(this);
+}
+```
+
+Running `flutter pub run build_runner build` in the terminal creates
+the `*.g.dart` file, but the private `_$UserToJson()` function
+looks something like the following:
+
+在终端中运行 `flutter pub run build_runner build` 创建 `* .g.dart`文件，
+但私有函数如 `_ $ UserToJson（）` 会看起来像下面这样：
+
+```dart
+(
+Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{      
+  'firstName': instance.firstName,
+  'address': instance.address,      
+};
+```
+
+All looks fine right now, but if you do a print() on our user object:
+
+看起来没有什么问题，如果 `print` 用户对象时：
+
+```dart
+Address address = Address("My st.", "New York");
+User user = User("John", address);
+print(user.toJson());
+```
+
+The result is: 
+
+结果会是：
+
+
+```json
+{name: John, address: Instance of 'address'}
+```
+
+When what you probably want is output like the following:
+
+但实际上你希望的输出结果是这样的：
+
+```json
+{name: John, adress: {street: My st., city: New York}}
+```
+
+To make this work, pass `explicitToJson: true` in the `@JsonSerializable()`
+annotation over the class declaration. The `User` class now looks as follows:
+
+为了得到正常的输出，你需要在类声明之前
+为 `@JsonSerializable` 方法加入 `explicitToJson: true` 参数，
+`User`类现在看起来是这样的：
+
+``` dart
+import 'address.dart';
+import 'package:json_annotation/json_annotation.dart';
+part 'user.g.dart';
+
+@JsonSerializable(explicitToJson: true)
+class User {
+  String firstName;  
+  Address address;
+  
+  User(this.firstName, this.address);
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  Map<String, dynamic> toJson() => _$UserToJson(this);
+}
+```
+
+For more information, see [explicitToJson][] in the 
+[JsonSerializable][] class for the [json_annotation][] package.
+
+了解更多信息，请查阅 [json_annotation][] 这个 package 里的 
+[JsonSerializable][] 类的 [explicitToJson][] 参数等相关文档。
+
+[explicitToJson]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
+[JsonSerializable]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
+[json_annotation]: {{site.pub}}/packages/json_annotation
 
 ## Further references
 
@@ -528,5 +661,6 @@ For more information, see the following resources:
 
 [dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
+[reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [反射]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking

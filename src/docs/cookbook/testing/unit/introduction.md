@@ -23,15 +23,14 @@ core framework for writing unit tests, and the
 [`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
 package provides additional utilities for testing widgets.
 
-使用单元测试可轻松地验证单个函数、方法或类的行为。
-[`test`]({{site.pub-pkg}}/test) 这个 package 提供了写单测的核心框架，
+使用单元测试可轻松地验证单个函数、方法或类的行为。[`test`]({{site.pub-pkg}}/test) 这个 package 提供了写单测的核心框架，
 [`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
 包则提供了额外的功能来测试 widget。
 
 This recipe demonstrates the core features provided by the `test` package
 using the following steps:
 
-这个教程将会为大家演示 `test` package 的用法，内容大约有如下几项：
+本教程将会为大家演示 `test` package 的用法，内容如下：
 
   1. Add the `test` or `flutter_test` dependency.
      
@@ -77,7 +76,7 @@ functionality for writing tests in Dart. This is the best approach when
 writing packages consumed by web, server, and Flutter apps.
 
 如果 Dart 包没有依赖 Flutter，可以导入 `test` 包。Test 包提供了编写测试所需要的核心功能。
-如果我们写的包可以被 web、服务端和 Flutter app 所使用，那这种方式是最佳的。
+当我们写的包需要被 web、服务端和 Flutter app 使用时，这是最佳的方式。
 
 ```yaml
 dev_dependencies:
@@ -96,16 +95,16 @@ The `counter.dart` file contains a class that you want to test and
 resides in the `lib` folder. The `counter_test.dart` file contains
 the tests themselves and lives inside the `test` folder.
 
-`counter.dart` 文件包含一个将要测试的类，并且位于 `lib` 文件夹。`counter_test.dart` 文件将包含测试本身，位于 `test` 文件夹。
+`counter.dart` 文件包含一个位于 `lib` 文件夹的待测试类,而位于 `test` 文件夹的`counter_test.dart` 文件将包含测试本身，。
 
 In general, test files should reside inside a `test` folder located at the root
 of your Flutter application or package.
 
-通常，测试文件应位于 `test` 文件夹下，并且这个文件夹要放在 Flutter 应用或包的根目录下。
+通常测试文件应位于放置在 Flutter 应用或包的根目录下的 `test` 文件夹。
 
 When you're finished, the folder structure should look like this:
 
-创建完成之后，文件目录结构如下：
+创建完成后，文件目录结构如下：
 
 ```
 counter_app/
@@ -124,7 +123,7 @@ function, method, or class. For this example, create a `Counter` class
 inside the `lib/counter.dart` file. It is responsible for incrementing
 and decrementing a `value` starting at `0`.
 
-下一步，我们需要一个“单元”来测试。记住：“单元”是一个抽象的名称，它表示一个函数、方法或者类。
+下一步，我们需要一个“单元”来测试。记住：“单元”是一个抽象的名称，它可以表示一个函数、方法或者类。
 本例中，我们会在 `lib/counter.dart` 文件中创建一个 `Counter` 类。它负责增加或减少一个从 `0` 开始的 `value`。
 
 
@@ -154,7 +153,7 @@ defined using the top-level `test` function, and you can check if the results
 are correct by using the top-level `expect` function.
 Both of these functions come from the `test` package.
 
-我们将在 `counter_test.dart` 文件中写第一个测试。测试由顶级函数 `test` 来定义，检查结果是否正确可通过顶级函数 `expect` 来执行。这两个函数都来自 `test` 包。
+我们将在 `counter_test.dart` 文件中写第一个测试。使用顶级函数 `test` 来定义，可通过执行顶级函数 `expect` 来检查结果正确与否。这两个函数都来自 `test` 包。
 
 <!-- skip -->
 ```dart
@@ -180,7 +179,7 @@ void main() {
 If you have several tests that are related to one another, 
 combine them using the `group` function provided by the `test` package.
 
-如果多个测试之间互相关联，可以使用 `test` 包提供的 `group` 函数方便地将他们整合到一起。
+如果多个测试之间互相关联，可以使用 `test` 包提供的 `group` 函数将他们整合到一起。
 
 <!-- skip -->
 ```dart
@@ -274,7 +273,7 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。用这种方式执行
 You can also use a terminal to run the tests by executing the following
 command from the root of the project:
 
-我们也可以打开终端，进入工程根目录后输入如下命令来执行测试：
+我们也可以打开终端，在工程根目录输入以下命令来执行测试：
 
 ```
 flutter test test/counter_test.dart

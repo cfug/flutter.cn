@@ -19,9 +19,9 @@
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds, see the [SDK
-    archive](/docs/development/tools/sdk/archive) page.
+    releases](/docs/development/tools/sdk/releases) page.
 
-    想要获取到其他版本的安装包，可以查看 [SDK 归档](/docs/development/tools/sdk/archive) 页面。
+    想要获取到其他版本的安装包，请参阅 [SDK 版本列表](/docs/development/tools/sdk/releases) 页面。
 
  2. Extract the file in the desired location, for example:
 
@@ -62,7 +62,8 @@
 
     The `flutter` tool downloads platform-specific development binaries as
     needed. For scenarios where pre-downloading these artifacts is preferable
-    (e.g., hermetic build environments, intermittent network availability), iOS
+    (for example, in hermetic build environments,
+    or with intermittent network availability), iOS
     and Android binaries can be downloaded ahead of time by running:
     
     `flutter` 命令行工具会下载不同平台的开发二进制文件，如果需要一个封闭式的构建环境，
@@ -125,7 +126,7 @@ For example:
     • Android SDK at /Users/obiwan/Library/Android/sdk
     <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
     • Try re-installing or updating your Android SDK,
-      visit {{site.url}}/setup/#android-setup for detailed instructions.
+      visit https://flutter.dev/setup/#android-setup for detailed instructions.
 </pre>
 
 The following sections describe how to perform these tasks and finish the setup

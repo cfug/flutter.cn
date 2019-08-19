@@ -40,6 +40,7 @@ Flutter 的平台相关 API 支持不依赖于代码生成，而是依赖于灵�
   API，并将响应发送回**客户端**（即应用程序中的 Flutter 部分）。
 
 {{site.alert.note}}
+
   This guide addresses using the platform channel mechanism if you need
   to use the platform's APIs or libraries in Java/Kotlin/Objective-C or Swift.
   But you can also write platform-specific Dart code in your Flutter app
@@ -53,7 +54,7 @@ Flutter 的平台相关 API 支持不依赖于代码生成，而是依赖于灵�
   或库，本指南将使用平台通道机制。但你也可以通过检查 Flutter 应用程序中的
   [defaultTargetPlatform]({{site.api}}/flutter/foundation/defaultTargetPlatform.html)
   属性来编写相关平台的 Dart
-  代码。[不同平台操作体验的差异和适配](/docs/resources/platform-adaptations)中列出了
+  代码。[不同平台操作体验的差异和适配](/docs/resources/platform-adaptations) 中列出了
   Flutter 框架自动为你执行的一些相关平台适配。
 {{site.alert.end}}
 
@@ -72,6 +73,17 @@ Messages and responses are passed asynchronously,
 to ensure the user interface remains responsive.
 
 消息和响应以异步的形式进行传递，以确保用户界面能够保持响应。
+{{site.alert.note}} 
+  
+  Even though Flutter sends messages to and from Dart asynchronously,
+  whenever you invoke a channel method, you must invoke that method on the
+  platform's main thread. See the 
+  [section on threading](#channels-and-platform-threading) for more information.
+  
+  Flutter 是通过 Dart 异步发送消息的，即便如此，当你调用一个平台方法时，也需要在
+  主线程上做调用。在 [这里](#channels-and-platform-threading)查看更多。
+  
+{{site.alert.end}}
 
 On the client side, `MethodChannel` ([API][MethodChannel]) enables sending
 messages that correspond to method calls. On the platform side, `MethodChannel`
@@ -347,6 +359,7 @@ public class MainActivity extends FlutterActivity {
                 new MethodCallHandler() {
                     @Override
                     public void onMethodCall(MethodCall call, Result result) {
+                        // Note: this method is invoked on the main thread.
                         // TODO
                     }
                 });
@@ -426,6 +439,7 @@ And replace with the following:
 ```java
 @Override
 public void onMethodCall(MethodCall call, Result result) {
+    // Note: this method is invoked on the main thread.
     if (call.method.equals("getBatteryLevel")) {
         int batteryLevel = getBatteryLevel();
 
@@ -459,7 +473,7 @@ only using Kotlin rather than Java.
 This step assumes that you created your project in [step 1.](#example-project)
 using the `-a kotlin` option.
 
-此步骤假设你在[第一步](#example-project)中使用 `-a kotlin` 选项创建了项目。
+此步骤假设你在 [第一步](#example-project) 中使用 `-a kotlin` 选项创建了项目。
 
 Start by opening the Android host portion of your Flutter app in Android Studio:
 
@@ -505,6 +519,7 @@ class MainActivity() : FlutterActivity() {
 
     GeneratedPluginRegistrant.registerWith(this)
     MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+      // Note: this method is invoked on the main thread.
       // TODO
     }
   }
@@ -579,6 +594,7 @@ And replace with the following:
 
 ```kotlin
     MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+      // Note: this method is invoked on the main thread.
       if (call.method == "getBatteryLevel") {
         val batteryLevel = getBatteryLevel()
 
@@ -655,6 +671,7 @@ as was used on the Flutter client side.
                                           binaryMessenger:controller];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
+    // Note: this method is invoked on the UI thread.
     // TODO
   }];
 
@@ -700,6 +717,7 @@ the `result` argument. If an unknown method is called, report that instead.
 ```objectivec
 __weak typeof(self) weakSelf = self
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
+  // Note: this method is invoked on the UI thread.
   if ([@"getBatteryLevel" isEqualToString:call.method]) {
     int batteryLevel = [weakSelf getBatteryLevel];
 
@@ -786,6 +804,7 @@ a `FlutterMethodChannel` tied to the channel name
                                               binaryMessenger: controller)
     batteryChannel.setMethodCallHandler({
       (call: FlutterMethodCall, result: FlutterResult) -> Void in
+      // Note: this method is invoked on the UI thread.
       // Handle battery messages.
     })
 
@@ -832,6 +851,7 @@ is called, report that instead.
 ```swift
 batteryChannel.setMethodCallHandler({
   [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
+  // Note: this method is invoked on the UI thread.
   guard call.method == "getBatteryLevel" else {
     result(FlutterMethodNotImplemented)
     return
@@ -868,7 +888,7 @@ To share your platform-specific code with other developers in the Flutter
 ecosystem, see [publishing
 packages](/docs/development/packages-and-plugins/developing-packages#publish).
 
-与 Flutter 生态中的其他开发者共享你的平台相关代码，可查看[提交 package](/docs/development/packages-and-plugins/developing-packages#publish)。
+与 Flutter 生态中的其他开发者共享你的平台相关代码，可查看 [提交 package](/docs/development/packages-and-plugins/developing-packages#publish)。
 
 ## Custom channels and codecs
 
@@ -890,3 +910,67 @@ classes, or create your own codec.
 [BinaryCodec]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [StringCodec]: {{site.api}}/flutter/services/StringCodec-class.html
 [JSONMessageCodec]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
+
+## Channels and Platform Threading
+
+Invoke all channel methods on the platform's main thread when writing code on
+the platform side. On Android, this thread is sometimes called the "main
+thread", but it is technically defined as [the UI thread]. Annotate methods that
+need to be run on the UI thread with `@UiThread`. On iOS, this thread is
+officially referred to as [the main thread].
+
+[the UI thread]: https://developer.android.com/guide/components/processes-and-threads#Threads
+[the main thread]: https://developer.apple.com/documentation/uikit?language=objc
+
+### Jumping to the UI thread in Android
+
+To comply with channels' UI thread requirement, you may need to jump from a
+background thread to Android's UI thread to execute a channel method. In
+Android this is accomplished by `post()`ing a `Runnable` to Android's UI
+thread `Looper`, which will cause the `Runnable` to execute on the main thread
+at the next opportunity.
+
+In Java:
+
+```java
+new Handler(Looper.getMainLooper()).post(new Runnable() {
+  @Override
+  public void run() {
+    // Call the desired channel message here.
+  }
+});
+```
+
+In Kotlin:
+
+```kotlin
+Handler(Looper.getMainLooper()).post {
+  // Call the desired channel message here.
+}
+```
+
+### Jumping to the main thread in iOS
+
+To comply with channel's main thread requirement, you may need to jump from a
+background thread to iOS's main thread to execute a channel method. In iOS this
+is accomplished by executing a [block] on the main [dispatch queue]:
+
+In Objective-C:
+
+```objectivec
+dispatch_async(dispatch_get_main_queue(), ^{
+  // Call the desired channel message here.
+});
+```
+
+In Swift:
+
+```swift
+DispatchQueue.main.async {
+  // Call the desired channel message here.
+}
+```
+
+[block]: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
+
+[dispatch queue]: https://developer.apple.com/documentation/dispatch/dispatchqueue

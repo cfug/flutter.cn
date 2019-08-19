@@ -15,11 +15,11 @@ toc: false
 }
 </style>
 
-The {{site.sdk.channel | capitalize }} channel contains the most stable Flutter builds. See [Flutter's
-channels][] for details.
+The {{site.sdk.channel | capitalize }} channel contains the
+most stable Flutter builds. See [Flutter's channels][] for details.
 
-Flutter 的 {{site.sdk.channel | capitalize }} channel 是相对稳定的发布版本， 查阅这个文档了解更多：[Flutter's
-channels][]。
+Flutter 的 {{site.sdk.channel | capitalize }} channel 是相对稳定的发布版本，
+查阅这个文档了解更多：[Flutter's channels][]。
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -43,8 +43,9 @@ channels][]。
 
 ## Master channel
 
-Installation bundles are not available for master. However, you can get the SDK
-directly from [GitHub repo]({{site.repo.flutter}}) by cloning the master channel,
+Installation bundles are not available for master.
+However, you can get the SDK directly from
+[GitHub repo][] by cloning the master channel,
 and then triggering a download of the SDK dependencies:
 
 我们并没有对 master channel 的提供打包下载，不过，你可以通过 `git clone` 我们在 
@@ -55,10 +56,11 @@ $ git clone -b master https://github.com/flutter/flutter.git
 $ ./flutter/bin/flutter --version
 ```
 
-For additional details on how our installation bundles are structured, see
-[Installation bundles][].
+For additional details on how our installation bundles are structured,
+see [Installation bundles][].  
 
 关于安装包结构的更多信息，请查看这个页面：[Installation bundles][]。
 
 [Flutter's channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles
+[GitHub repo]: {{site.repo.flutter}}

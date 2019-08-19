@@ -23,7 +23,7 @@ Flutter makes this task easy by providing the
 [`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) widget.
 Learn how to implement swipe to dismiss with the following steps:
 
-Flutter 提供了[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html)Widget 来轻松地实现这个需求。
+Flutter 提供了[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) Widget 来轻松地实现这个需求。
 
 ## Directions
 
@@ -50,7 +50,7 @@ instructions on how to create a list, follow the [Working with long
 lists](/docs/cookbook/lists/long-lists) recipe.
 
 首先，我们创建一个列表，列表项是能够滑动清除的。至于如何创建列表的更多细节，
-请参考[长列表的处理](/docs/cookbook/lists/long-lists/)文档。
+请参考 [长列表的处理](/docs/cookbook/lists/long-lists/) 文档。
 
 ### Create a data source
 
@@ -74,7 +74,7 @@ final items = List<String>.generate(20, (i) => "Item ${i + 1}");
 Display each item in the list on screen. Users won't
 be able to swipe these items away just yet.
 
-首先，我们简单地在屏幕上展示列表中的每一项。用户现在还无法滑动清除它们！
+首先，我们简单地在屏幕上展示列表中的每一项。用户现在还无法滑动清除它们。
 
 <!-- skip -->
 ```dart
@@ -161,7 +161,7 @@ the indicator is a red background.
 To add the indicator,
 provide a `background` parameter to the `Dismissible`.
 
-出于这个目的，我们为`Dismissible`设置了一个`background`参数。
+出于这个目的，我们为 `Dismissible` 设置了一个 `background` 参数。
 
 <!-- skip -->
 ```dart

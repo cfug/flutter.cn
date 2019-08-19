@@ -13,6 +13,5 @@ document.addEventListener('click', function (event) {
       origin.setAttribute('translation-origin', 'off');
     }
     event.stopPropagation();
-    event.stopImmediatePropagation();
   }
 });

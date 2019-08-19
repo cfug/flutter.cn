@@ -33,8 +33,8 @@ to get automatic formatting of code in Android Studio and IntelliJ.
 
 在 Android Studio / IntelliJ 中安装 `Dart` 插件（见章节 [编辑工具设定](/docs/get-started/editor)）来进行代码的自动格式化。
 
-To automatically format the code in the current source code window, right-click
-in the code window and select `Reformat Code with dartfmt`.
+To automatically format the code in the current source code window,
+right-click in the code window and select `Reformat Code with dartfmt`.
 You can add a keyboard shortcut to this in Keymap section of IntelliJ
 Preferences.
 
@@ -49,9 +49,9 @@ to get automatic formatting of code in VS Code.
 
 在 VS Code 中安装 `Flutter` 扩展（见章节 [编辑工具设定](/docs/get-started/editor)）来进行代码的自动格式化。
 
-To automatically format the code in the current source code window, right-click
-in the code window and select `Format Document`. You can add a keyboard
-shortcut to this VS Code Preferences.
+To automatically format the code in the current source code window,
+right-click in the code window and select `Format Document`.
+You can add a keyboard shortcut to this VS Code Preferences.
 
 格式化当前窗口中代码的方法是先在代码窗口中单击右键，然后选择 `Format Document` 选项即可。也可以在 VS Code 的偏好设置里面增加快捷键，然后使用快捷键操作。
 
@@ -64,8 +64,8 @@ To automatically format code whenever you save a file, set the
 
 ## 使用 'flutter' 命令自动格式化代码
 
-You can also automatically format code in the command line interface (CLI) using
-the `flutter format` command:
+You can also automatically format code in the command line interface
+(CLI) using the `flutter format` command:
 
 我们也可以在命令行界面（CLI）中使用 `flutter format` 命令，进行代码的自动格式化。
 
@@ -78,11 +78,13 @@ $ flutter format path1 path2 ...
 ## 末尾处添加逗号
 
 Flutter code often involves building fairly deep tree-shaped data structures,
-for example in a `build` method. To get good automatic formatting, we recommend
-you adopt the optional *trailing commas*. The guideline for adding a trailing
-comma is simple: Always add a trailing comma at the end of a parameter list in
-functions, methods, and constructors where you care about keeping the formatting
-you crafted. This helps the automatic formatter to insert an appropriate
+for example in a `build` method. To get good automatic formatting,
+we recommend you adopt the optional *trailing commas*.
+The guideline for adding a trailing comma is simple: Always
+add a trailing comma at the end of a parameter list in
+functions, methods, and constructors where you care about
+keeping the formatting you crafted.
+This helps the automatic formatter to insert an appropriate
 amount of line breaks for Flutter-style code.
 
 Flutter 代码经常会构建一定深度的树形数据结构，如在 `build` 方法中。为了有更好的自动格式化效果，我们推荐在末尾处添加逗号，尽管也可以不这样做。规则也比较简单：总是在函数、普通方法、构造方法参数列表的末尾处添加逗号。这样做会使格式化工具自动插入一些换行符，使代码更具有 Flutter 风格。

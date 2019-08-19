@@ -404,6 +404,32 @@ composition, these optimizations have a substantial effect on performance.
 
 总的来说，这些优化对通过积极组合方式产生的大型树结构的性能产生了重大影响。
 
+### Separation of the Element and RenderObject trees
+
+The RenderObject and Element (Widget) trees in Flutter are isomorphic
+(strictly speaking, the RenderObject tree is a subset of the Element
+tree). An obvious simplification would be to combine these trees into
+one tree. However, in practice there are a number of benefits to having
+these trees be separate:
+
+* **Performance.** When the layout changes, only the relevant parts of
+  the layout tree need to be walked. Due to composition, the element
+  tree frequently has many additional nodes that would have to be skipped.
+  
+* **Clarity.** The clearer separation of concerns allows the widget
+  protocol and the render object protocol to each be specialized to 
+  their specific needs, simplifying the API surface and thus lowering 
+  the risk of bugs and the testing burden.
+  
+* **Type safety.** The render object tree can be more type safe since it 
+  can guarantee at runtime that children will be of the appropriate type
+  (each coordinate system, e.g. has its own type of render object).
+  Composition widgets can be agnostic about the coordinate system used
+  during layout (for example, the same widget exposing a part of the app
+  model could be used in both a box layout and a sliver layout), and thus
+  in the element tree, verifying the type of render objects would require
+  a tree walk.
+
 ## Infinite scrolling
 
 ## 无限滚动
@@ -980,7 +1006,7 @@ Widget。通过一些额外的机制，这些数据结构还能使开发者轻�
   it will be updated twice. This redundant build is limited to the
   widget itself and does not impact its descendants.
 
-<sup><a name="a4">4</a></sup>  该规则有一个例外。正如[按需构建 Widget](#building-widgets-on-demand)
+<sup><a name="a4">4</a></sup>  该规则有一个例外。正如 [按需构建 Widget](#building-widgets-on-demand)
   中所描述的，由于布局约束的变化，一些 Widget 可以被重建。如果 Widget
   在同一帧中因与此无关的原因被标记为脏，同时也由于它受布局约束的影响，该 Widget
   将会被构建两次。该次冗余构建仅限于 Widget 自身，并不会影响其后代节点。

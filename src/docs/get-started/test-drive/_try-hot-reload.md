@@ -10,8 +10,9 @@ After the app build completes, you'll see the starter app on your device.
 
 ## 尝试热重载 (hot reload)
 
-Flutter offers a fast development cycle with _hot reload_, the ability to reload
-the code of a live running app without restarting or losing app state.
+Flutter offers a fast development cycle with _Stateful Hot Reload_,
+the ability to reload the code of a live running app without
+restarting or losing app state.
 Make a change to app source, tell your IDE or command-line tool that you
 want to hot reload, and see the change in your simulator, emulator, or device.
 
@@ -48,9 +49,9 @@ Flutter 通过 **热重载** 提供快速开发周期，该功能支持应用程
       
     {{site.alert.end}}
 
- 1. Save your changes
+ 1. Save your changes {{include.save_changes}}
     
-    保存修改{{include.save_changes}}
+    保存修改 {{include.save_changes_zhcn}}
 
 You'll see the updated string in the running app almost immediately.
 

@@ -12,12 +12,14 @@ To develop Flutter apps for iOS, you need a Mac with Xcode 9.0 or newer:
 
 开发 iOS 平台上的 Flutter 应用，你需要一个安装了 Xcode 9.0 或者更高版本的 Mac 设备：
 
- 1. Install Xcode 9.0 or newer (via [web download](https://developer.apple.com/xcode/) or
+ 1. Install Xcode 9.0 or newer
+    (via [web download](https://developer.apple.com/xcode/) or
     the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835)).
 
     通过[直接下载](https://developer.apple.com/xcode/)或者[ Mac App Store ](https://itunes.apple.com/us/app/xcode/id497799835)来安装 Xcode 9.0 或者更高版本；
 
- 2. Configure the Xcode command-line tools to use the newly-installed version of Xcode by
+ 2. Configure the Xcode command-line tools to use the newly-installed
+    version of Xcode by
     running the following from the command line:
 
     通过在命令行中运行以下命令来配置 Xcode command-line tools:
@@ -26,17 +28,20 @@ To develop Flutter apps for iOS, you need a Mac with Xcode 9.0 or newer:
     $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
     ```
 
-    This is the correct path for most cases, when you want to use the latest version of Xcode.
+    This is the correct path for most cases, when you want to use
+    the latest version of Xcode.
     If you need to use a different version, specify that path instead.
 
     当你安装了最新版本的 Xode，大部分情况下，上面的路径都是一样的。但如果你安装了不同版本的 Xcode，你可能要更改一下上述命令中的路径。
 
- 3. Make sure the Xcode license agreement is signed by either opening Xcode once and confirming or
-    running `sudo xcodebuild -license` from the command line.
+ 3. Make sure the Xcode license agreement is signed by either opening
+    Xcode once and confirming or running
+    `sudo xcodebuild -license` from the command line.
  
     运行一次 Xocde 或者通过输入命令 `sudo xcodebuild -license` 来确保已经同意 Xcode 的许可协议。
 
-With Xcode, you’ll be able to run Flutter apps on an iOS device or on the simulator.
+With Xcode, you’ll be able to run Flutter apps on an iOS device
+or on the simulator.
 
 安装了 Xcode 之后，你就可以在 iOS 真机或者模拟器上运行 Flutter 应用了。
 
@@ -44,12 +49,13 @@ With Xcode, you’ll be able to run Flutter apps on an iOS device or on the simu
 
 ### 配置 iOS 模拟器
 
- 
-To prepare to run and test your Flutter app on the iOS simulator, follow these steps:
+To prepare to run and test your Flutter app on the iOS simulator,
+follow these steps:
 
 如果想要在 iOS 模拟器中运行和测试 Flutter 应用，按照以下步骤即可：
 
- 1. On your Mac, find the Simulator via Spotlight or by using the following command:
+ 1. On your Mac, find the Simulator via Spotlight or by using the
+    following command:
 
     在你的 Mac 中，通过 Spotlight 或者以下命令来运行模拟器：
 
@@ -86,7 +92,8 @@ To create your first Flutter app and test your setup, follow these steps:
     $ flutter create my_app
     ```
 
- 2. A `my_app` directory is created, containing Flutter's starter app. Enter this directory:
+ 2. A `my_app` directory is created, containing Flutter's starter app.
+    Enter this directory:
 
     上述命令创建了一个 `my_app` 的目录，包含了 Flutter 初始的应用模版，切换路径到这个目录内：
  
@@ -94,7 +101,8 @@ To create your first Flutter app and test your setup, follow these steps:
     $ cd my_app
     ```
  
- 3. To launch the app in the Simulator, ensure that the Simulator is running and enter:
+ 3. To launch the app in the Simulator,
+    ensure that the Simulator is running and enter:
 
     确保模拟器已经处于运行状态，输入以下命令来启动应用：
 
@@ -106,10 +114,13 @@ To create your first Flutter app and test your setup, follow these steps:
 
 ### 部署到 iOS 真机上
 
+To deploy your Flutter app to a physical iOS device,
+you’ll need some additional tools and an Apple account.
+You'll also need to set up physical device deployment in Xcode.
 
-To deploy your Flutter app to a physical iOS device, you’ll need some additional tools and an Apple account. You'll also need to set up physical device deployment in Xcode.
-
-如果你想把 Flutter 应用部署到 iOS 的真机上，你还需要一些别的工具和一个 Apple 开发者账号。另外，你还需要在 Xcode 上针对你的机器做一些设置。
+如果你想把 Flutter 应用部署到 iOS 的真机上，
+你还需要一些别的工具和一个 Apple 开发者账号。
+另外，你还需要在 Xcode 上针对你的机器做一些设置。
 
  1. Install [homebrew](https://brew.sh).
 
@@ -137,8 +148,9 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
     ```
 
     {{site.alert.note}}
-      The first two commands above are necessary as a temporary workaround until the next
-      release of libusbmuxd, as explained in [libusbmuxd issue #46][] and
+      The first two commands above are necessary as a temporary
+      workaround until the next release of libusbmuxd,
+      as explained in [libusbmuxd issue #46][] and
       [Flutter issue #22595][].
 
       [libusbmuxd issue #46]: {{site.github}}/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
@@ -173,12 +185,13 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
 
         在 `Runner` 项目的设置页面中，确保 **General > Signing > Team** 选项下的 Development Team 选中状态。当你选择一个 team 后，Xcode 会为其创建并下载相应的 Development Certificate，并将你的账号在设备上进行注册，然后根据实际需求进行 provisioning profile 的配置。
 
-        * To start your first iOS development project, you might need
-          to sign into
+        * To start your first iOS development project,
+          you might need to sign into
           Xcode with your Apple ID. ![Xcode account add][]{:.mw-100}
-          Development and testing is supported for any Apple ID. Enrolling in the
-          Apple Developer Program is required to distribute your app to the App
-          Store. For details about membership types, see
+          Development and testing is supported for any Apple ID.
+          Enrolling in the Apple Developer Program is required to
+          distribute your app to the App Store.
+          For details about membership types, see
           [Choosing a Membership][].
 
           在开始你的第一个 iOS 项目开发之前，你需要先在 Xcode 中登陆你的 Apple 开发者账号 ![Xcode account add][]{:.mw-100}

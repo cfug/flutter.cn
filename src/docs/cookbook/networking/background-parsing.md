@@ -101,7 +101,7 @@ internet](/docs/cookbook/networking/fetch-data)
 recipe, convert the `http.Response` into a list of Dart objects.
 This makes the data easier to work with in the future.
 
-接下来，根据[获取网络数据](/docs/cookbook/networking/fetch-data)的说明，为了让接下来的数据处理更简单，你需要将 `http.Response` 转换成一列 Dart 对象。
+接下来，根据 [获取网络数据](/docs/cookbook/networking/fetch-data) 的说明，为了让接下来的数据处理更简单，你需要将 `http.Response` 转换成一列 Dart 对象。
 
 ### Create a `Photo` class
 

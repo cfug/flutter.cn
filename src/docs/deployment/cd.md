@@ -55,7 +55,7 @@ delivery from a local machine.
     * ![iOS](/images/cd/ios.png) In your `[project]/ios` directory,
     run `fastlane init`.
        
-      ![iOS](/images/fastlane-cd/ios.png)：
+      ![iOS](/images/cd/ios.png)：
       在 `[project]/ios` 目录下，运行 `fastlane init` 命令。
     
 1. Edit the `Appfile`s to ensure they have adequate metadata for your app.
@@ -65,13 +65,13 @@ delivery from a local machine.
     * ![Android](/images/cd/android.png) Check that `package_name` in
     `[project]/android/Appfile` matches your package name in AndroidManifest.xml.
     
-      ![Android](/images/fastlane-cd/android.png) 检查在 `[project]/android/Appfile` 文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
+      ![Android](/images/cd/android.png) 检查在 `[project]/android/Appfile` 文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
     
     * ![iOS](/images/cd/ios.png) Check that `app_identifier` in
     `[project]/ios/Appfile` also matches Info.plist's bundle identifier. Fill in
     `apple_id`, `itc_team_id`, `team_id` with your respective account info.
     
-      ![iOS](/images/fastlane-cd/ios.png) 检查在 `[project]/ios/Appfile` 中的  `app_identifier` 是否匹配 Info.plist 文件中的 bundle identifier.
+      ![iOS](/images/cd/ios.png) 检查在 `[project]/ios/Appfile` 中的  `app_identifier` 是否匹配 Info.plist 文件中的 bundle identifier.
     
 1. Set up your local login credentials for the stores.
 
@@ -82,7 +82,7 @@ delivery from a local machine.
     Play Store console. _Treat the .json file like your password and do not check
     it into any public source control repositories._
     
-      ![Android](/images/fastlane-cd/android.png) 按照
+      ![Android](/images/cd/android.png) 按照
       [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply) 操作，并且确保 `fastlane supply init` 成功同步了你在 Google Play 商店控制台中的数据。
      *.json 文件与密码一样重要，切勿将其公开在任何公共源代码控制存储库。*
     
@@ -91,7 +91,7 @@ delivery from a local machine.
     environment variable with your iTunes Connect password. Otherwise, you'll be
     prompted when uploading to iTunes/TestFlight.
     
-      ![iOS](/images/fastlane-cd/ios.png)  iTunes Connect 用户名已经存在于您的
+      ![iOS](/images/cd/ios.png)  iTunes Connect 用户名已经存在于您的
       `Appfile` 的 `apple_id` 字段中，
       你需要将你的 iTunes 密码设置到 `FASTLANE_PASSWORD` 这个环境变量里。
       否则，上传到 iTunes/TestFlight时会提示你。
@@ -106,7 +106,7 @@ delivery from a local machine.
     uploaded by developers onto the Play Store and is re-signed with the
     deployment key once in the Play Store.
     
-      ![Android](/images/fastlane-cd/android.png) 在 Android 上有两种签名 key：
+      ![Android](/images/cd/android.png) 在 Android 上有两种签名 key：
       发布签名和上传签名。最终用户下载的 .apk 文件使用发布签名。
       上传签名提供给开发者上传到 Google Play 商店的认证。
       上传后，Google Play 商店会重新使用 发布签名对 .apk 文件签名。
@@ -135,7 +135,7 @@ delivery from a local machine.
     distribution certificate instead of a development certificate when you're
     ready to test and deploy using TestFlight or App Store.
     
-      ![iOS](/images/fastlane-cd/ios.png) 在iOS上，当您准备使用 TestFlight 或 App Store 进行测试和部署时，使用分发证书而不是开发证书进行创建和签名。
+      ![iOS](/images/cd/ios.png) 在iOS上，当您准备使用 TestFlight 或 App Store 进行测试和部署时，使用分发证书而不是开发证书进行创建和签名。
 
         * Create and download a distribution certificate in your [Apple Developer Account console](https://developer.apple.com/account/ios/certificate/).
         
@@ -156,7 +156,7 @@ delivery from a local machine.
     Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
     to use the apk `flutter build` already built.
     
-      ![Android](/images/fastlane-cd/android.png) 在 Android 上按照
+      ![Android](/images/cd/android.png) 在 Android 上按照
       [fastlane Android beta deployment guide](https://docs.fastlane.tools/getting-started/android/beta-deployment/) 指引操作。你可以简单的编辑一下文件，加一个名叫
       `upload_to_play_store` 的 `lane`。为了使用 `flutter build` 命令编译 apk，
       要把 `apk` 参数设置为 `../build/app/outputs/apk/release/app-release.apk`。
@@ -167,7 +167,7 @@ delivery from a local machine.
     build is required since `flutter build` builds an .app rather than archiving
     .ipas for release.
     
-       ![iOS](/images/fastlane-cd/ios.png) 在 iOS 上，按照 [fastlane iOS beta 部署指南](https://docs.fastlane.tools/getting-started/ios/beta-deployment/) 指引操作。
+       ![iOS](/images/cd/ios.png) 在 iOS 上，按照 [fastlane iOS beta 部署指南](https://docs.fastlane.tools/getting-started/ios/beta-deployment/) 指引操作。
       你可以简单编辑一下文件，加一个名叫 `build_ios_app` 的 `lane`，并且同时调用 `export_method: 'app-store'` 和 `upload_to_testflight`。
       在 iOS 上只有当要编译成 .app 的时候才会用到 `flutter build`，其他情况用不到。
 
@@ -238,7 +238,7 @@ secrets in pull requests that you accept and merge.
    
     * ![Android](/images/cd/android.png) On Android:
     
-      ![Android](/images/fastlane-cd/android.png) 在 Android 上：
+      ![Android](/images/cd/android.png) 在 Android 上：
       
         * Remove the `json_key_file` field from `Appfile` and store the string
         content of the JSON in your CI system's encrypted variable. Use the
@@ -260,7 +260,7 @@ secrets in pull requests that you accept and merge.
         ```
     * ![iOS](/images/cd/ios.png) On iOS:
     
-      ![iOS](/images/fastlane-cd/ios.png) 在 iOS 上:
+      ![iOS](/images/cd/ios.png) 在 iOS 上:
       
         * Move the local environment variable `FASTLANE_PASSWORD` to use
         encrypted environment variables on the CI system.
@@ -382,7 +382,8 @@ The following are some other options available to help automate the delivery of 
   in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
   
   [GitLab 的持续交付集成 (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
-  你需要创建一个 `.gitlab-ci.yml` 的配置文件，你可以在 [flutter_redux library]({{site.github}}/brianegan/flutter_redux) 这个 repo 找到[例子](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)。
+  你需要创建一个 `.gitlab-ci.yml` 的配置文件，你可以在 [flutter_redux library]({{site.github}}/brianegan/flutter_redux)
+  这个 repo 找到 [例子](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)。
   
 * [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
   

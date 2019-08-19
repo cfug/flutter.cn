@@ -40,7 +40,7 @@ on [Google Developers]({{site.codelabs}}).
 can also be found on [Google Developers]({{site.codelabs}}).
 
 完整的教程分为两部分，本页面是第一部分的内容，
-你可以在这里查看[第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0)的内容。
+你可以在这里查看 [第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0) 的内容。
 
 ## What you'll build in part 1
 {:.no_toc}
@@ -111,8 +111,7 @@ The animated GIF shows how the app works at the completion of part 1.
   This codelab assumes Android Studio, but you can use your preferred
   editor.
   
-  你需要安装两部分内容来完成本次实验：[Flutter SDK 安装](/docs/get-started/install) 和
-  [编辑器 (editor)](/docs/get-started/editor)设置。
+  你需要安装两部分内容来完成本次实验：[Flutter SDK 安装](/docs/get-started/install) 和 [编辑器 (editor)](/docs/get-started/editor) 设置。
   本 codelab 里，我们以 macOS 环境下的 Android Studio 以做演示，
   但你可以选用更顺手的配置。
 
@@ -178,6 +177,10 @@ where the Dart code lives.
 
     <?code-excerpt "lib/main.dart" title?>
     ```dart
+    // Copyright 2018 The Flutter team. All rights reserved.
+    // Use of this source code is governed by a BSD-style license that can be
+    // found in the LICENSE file.
+
     import 'package:flutter/material.dart';
 
     void main() => runApp(MyApp());
@@ -226,7 +229,7 @@ where the Dart code lives.
  2. Run the app [in the way your IDE describes](/docs/get-started/test-drive).
     You should see either Android or iOS output, depending on your device.
 
-    [运行](/docs/get-started/test-drive#androidstudio)你的工程项目，
+    [运行](/docs/get-started/test-drive#androidstudio) 你的工程项目，
     根据不同的操作系统，你会看到如下运行结果界面：
 
     {% indent %}
@@ -343,7 +346,7 @@ packages, on the [Pub site]({{site.pub}}/flutter).
     click **Packages get**. This pulls the package into
     your project. You should see the following in the console:
 
-    在Android Studio 的编辑器视图中查看 pubspec 时，
+    在 Android Studio 的编辑器视图中查看 pubspec 时，
     单击右上角的 Packages get，这会将依赖包安装到你的项目。
     你可以在控制台中看到以下内容：
 
@@ -388,7 +391,7 @@ packages, on the [Pub site]({{site.pub}}/flutter).
     ```diff
     --- step1_base/lib/main.dart
     +++ step2_use_package/lib/main.dart
-    @@ -5,6 +6,7 @@
+    @@ -9,6 +10,7 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -396,7 +399,7 @@ packages, on the [Pub site]({{site.pub}}/flutter).
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -12,7 +14,7 @@
+    @@ -16,7 +18,7 @@
                title: Text('Welcome to Flutter'),
              ),
              body: Center(
@@ -442,10 +445,15 @@ packages, on the [Pub site]({{site.pub}}/flutter).
 ### 遇到问题?
 {:.no_toc}
 
-If your app is not running correctly, look for typos. If needed,
-use the code at the following links to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following links to get back on track.
 
-如果你的应用程序运行不正常，请查找是否有拼写错误。如果需要，使用下面链接中的代码来对比更正。
+如果你的应用程序运行不正常，请查找是否有拼写错误。
+如果需要通过 Flutter 的 debug 工具，可以查看 [开发者工具][DevTools] 页面
+来查看 debug 和 profile 的工具。
+如果需要，使用下面链接中的代码来对比更正。
 
 * [pubspec.yaml]({{code-url}}/startup_namer/step2_use_package/pubspec.yaml)
 * [lib/main.dart]({{code-url}}/startup_namer/step2_use_package/lib/main.dart)
@@ -564,7 +572,7 @@ a child inside the existing `MyApp` stateless widget.
     ```diff
     --- step2_use_package/lib/main.dart
     +++ step3_stateful_widget/lib/main.dart
-    @@ -6,7 +6,6 @@
+    @@ -10,7 +10,6 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -572,7 +580,7 @@ a child inside the existing `MyApp` stateless widget.
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -14,8 +13,8 @@
+    @@ -18,8 +17,8 @@
                title: Text('Welcome to Flutter'),
              ),
              body: Center(
@@ -617,10 +625,15 @@ a child inside the existing `MyApp` stateless widget.
 ### 遇到问题？
 {:.no_toc}
 
-If your app is not running correctly, you can use the code
-at the following link to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following link to get back on track.
 
-如果你的应用程序运行不正常，可以使用下面链接中的代码来对比更正。
+如果你的应用程序运行不正常，请查找是否有拼写错误。
+如果需要通过 Flutter 的 debug 工具，可以查看 [开发者工具][DevTools] 页面
+来查看 debug 和 profile 的工具。
+如果需要，使用下面链接中的代码来对比更正。
 
 * [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
 
@@ -662,7 +675,7 @@ lazily, on demand.
       privacy]({{site.dart-site}}/guides/language/language-tour)
       in the Dart language.
       
-      在 Dart 语言中使用下划线前缀标识符，会[强制其变成私有]({{site.dart-site}}/guides/language/language-tour)。
+      在 Dart 语言中使用下划线前缀标识符，会 [强制其变成私有]({{site.dart-site}}/guides/language/language-tour)。
       
     {{site.alert.end}}
 
@@ -798,7 +811,7 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -6,15 +6,8 @@
+    @@ -10,15 +10,8 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -834,10 +847,15 @@ lazily, on demand.
 ### 遇到问题？
 {:.no_toc}
 
-If your app is not running correctly, you can use the code at the following link
-to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following link to get back on track.
 
-如果你的应用没有正常运行，你可以使用一下链接中的代码对比更正。
+如果你的应用程序运行不正常，请查找是否有拼写错误。
+如果需要通过 Flutter 的 debug 工具，可以查看 [开发者工具][DevTools] 页面
+来查看 debug 和 profile 的工具。
+如果需要，使用下面链接中的代码来对比更正。
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
@@ -908,3 +926,5 @@ where you add the following functionality:
 * Modify the theme color, making an all-white app.
 
   修改应用的主题，变成一个白色系的应用。
+
+[DevTools]: /docs/development/tools/devtools

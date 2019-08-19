@@ -271,7 +271,7 @@ This involves four steps:
 
   2. Connect to the app before our tests run in the `setUpAll()` function
 
-     在 `setUpAll` 函数中运行测试案例前，先与待测应用建立连接
+     在 `setUpAll()` 函数中运行测试案例前，先与待测应用建立连接
 
   3. Test the important scenarios
 
@@ -280,7 +280,7 @@ This involves four steps:
   4. Disconnect from the app in the `teardownAll()` function after the tests
      complete
 
-     完成测试后，在 `teardownAll` 函数中与待测应用断开连接
+     完成测试后，在 `teardownAll()` 函数中与待测应用断开连接
 
 ```dart
 // Imports the Flutter Driver API.

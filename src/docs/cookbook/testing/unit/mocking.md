@@ -115,7 +115,7 @@ In this example, unit test the `fetchPost` function from the
 internet](/docs/cookbook/networking/fetch-data) recipe.
 To test this function, make two changes:
 
-本例中，我们要对[获取网络数据](/docs/cookbook/networking/fetch-data/)章节的 `fetchPost` 函数进行单元测试。
+本例中，我们要对 [获取网络数据](/docs/cookbook/networking/fetch-data/) 章节的 `fetchPost` 函数进行单元测试。
 为了便于测试，我们需要做两个改动：
 
   1. Provide an `http.Client` to the function. This allows providing the
@@ -129,7 +129,7 @@ To test this function, make two changes:
   2. Use the provided `client` to fetch data from the internet,
      rather than the static `http.get()` method, which is difficult to mock.
 
-     使用上面提供的 `client` 来请求网络数据，不要用 `http.get` 这个静态方法，因为它比较难以模拟。
+     使用上面提供的 `client` 来请求网络数据，不要用 `http.get()` 这个静态方法，因为它比较难以模拟。
 
 
 The function should now look like this:
@@ -162,7 +162,7 @@ testing](/docs/cookbook/testing/unit/introduction) recipe,
 create a file called `fetch_post_test.dart` in the root `test` folder.
 
 接下来，创建测试文件，我们需要在文件中创建 `MockitoClient` 类。
-遵循[单元测试介绍](/docs/cookbook/testing/unit/)章节的建议，
+遵循 [单元测试介绍](/docs/cookbook/testing/unit/) 章节的建议，
 我们在根目录下的 `test` 文件夹中创建一个名字为 `fetch_post_test.dart` 的文件。
 
 The `MockClient` class implements the `http.Client` class. This allows
@@ -190,7 +190,7 @@ main() {
 
 The `fetchPost()` function does one of two things:
 
-回过头来看，`fetchPost` 函数会完成下面两件事中的一件：
+回过头来看，`fetchPost()` 函数会完成下面两件事中的一件：
 
   1. Returns a `Post` if the http call succeeds
       
@@ -211,7 +211,7 @@ for the success test, and an error response for the unsuccessful test.
 Test these conditions using the `when()` function provided by
 Mockito:
 
-我们使用 Mockito 的 `when` 函数来达到以上目的：
+我们使用 Mockito 的 `when()` 函数来达到以上目的：
 
 <!-- skip -->
 ```dart
@@ -253,7 +253,7 @@ main() {
 Now that you have a `fetchPost()` function with tests in place,
 run the tests.
 
-现在我们有了一个带测试的 `fetchPost` 函数，开始执行测试！
+现在我们有了一个带测试的 `fetchPost()` 函数，开始执行测试！
 
 ```terminal
 $ dart test/fetch_post_test.dart
@@ -264,7 +264,7 @@ instructions in the [Introduction to unit
 testing](/docs/cookbook/testing/unit/introduction#run-tests-using-intellij-or-vscode)
 recipe.
 
-你也可以参考[单元测试介绍](/docs/cookbook/testing/unit#run-tests-using-intellij-or-vscode)章节用自己喜欢的编辑器来执行测试。
+你也可以参考 [单元测试介绍](/docs/cookbook/testing/unit/introduction#run-tests-using-intellij-or-vscode) 章节用自己喜欢的编辑器来执行测试。
 
 ### Summary
 

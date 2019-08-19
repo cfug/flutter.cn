@@ -32,10 +32,13 @@
 
 {{site.alert.note}}
 
-  When creating a new Flutter app, some Flutter IDE plugins ask for a company domain name in reverse order,
-  something like `com.example`. The company domain name and project name are used together as the package name
-  for Android (the Bundle ID for iOS) when the app is released. If you think that the app might be released,
-  it’s better to specify the package name now. The package name can’t be changed once the app is released,
+  When creating a new Flutter app, some Flutter IDE plugins ask for a
+  company domain name in reverse order, something like `com.example`.
+  The company domain name and project name are used together as the
+  package name for Android (the Bundle ID for iOS) when the app is released.
+  If you think that the app might be released,
+  it’s better to specify the package name now.
+  The package name can’t be changed once the app is released,
   so make the name unique.
   
   每当创建一个新的 Flutter 应用时候，一些 Flutter IDE 插件会请你输入一个类似 `com.example`
@@ -66,14 +69,21 @@ contains a simple demo app that uses [Material Components][].
 
     在 **目标选择器**， 选择一个 Android 设备来运行程序。
     如果列表里没有可用设备，选择 **工具 > Android > AVD Manager
-    然后在这个窗口中创建一个新的虚拟机。更多详细介绍，参见[管理 AVDs][]。
+    然后在这个窗口中创建一个新的虚拟机。更多详细介绍，参见 [管理 AVDs][]。
     
  1. Click the run icon in the toolbar, or invoke the menu item **Run > Run**.
 
     点击工具栏中的 Run 图标，或者在菜单中选择 **Run > Run**。
 
 {% capture save_changes -%}
-  {% comment %}: invoke **Save All**, or click **Hot Reload** {% endcomment -%}
+ : invoke **Save All**, or click **Hot Reload**
+ <i class="material-icons align-bottom">offline_bolt</i>.
+  {% comment %} Or, as an alternative:
+    {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}.
+  {% endcomment -%}
+{% endcapture %}
+
+{% capture save_changes_zhcn -%}
   : 选择 **Save All**，或者点击**热重载** <i class="material-icons align-bottom">offline_bolt</i>.
   {% comment %} Or, as an alternative:
     {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}.

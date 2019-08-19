@@ -133,7 +133,7 @@ Flutter 应用程序，和使用 iOS 辅助功能设置中选择的最大字体�
 Screen readers ([TalkBack][], [VoiceOver][]) enable visually
 impaired users to get spoken feedback about the contents of the screen.
 
-读屏器 ([TalkBack](), [VoiceOver]()) 可以使视障用户通过语音获得相关的屏幕内容。
+读屏器 ([TalkBack][], [VoiceOver][]) 可以使视障用户通过语音获得相关的屏幕内容。
 
 ### Tips for developers
 
@@ -144,7 +144,7 @@ you run into any issues, use the [Semantics widget][] to customize the
 accessibility experience of your app.
 
 在您的设备上启用 VoiceOver 或 TalkBack 来浏览您的应用。
-如果遇到任何问题，可以使用[语义 widget][Semantics widget]来自定义您应用程序的无障碍体验。
+如果遇到任何问题，可以使用 [语义 widget][Semantics widget] 来自定义您应用程序的无障碍体验。
 
 ## Sufficient contrast
 
@@ -187,6 +187,8 @@ foreground and background color selections.
 在 widget 上指定颜色时，请确保在前景色和背景色之间具备足够的对比度。
 
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
+[辅助扫描程序]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
+
 [Semantics widget]: {{site.api}}/flutter/widgets/Semantics-class.html
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html

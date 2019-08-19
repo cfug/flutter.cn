@@ -17,7 +17,7 @@ and the difference between [ephemeral and app
 state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app),
 you are ready to learn about simple app state management.
 
-现在大家已经了解了 [声明式的编程思维](/docs/development/data-and-backend/state-mgmt/declarative) 和 [局部与全局状态](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app) 之间的区别，现在可以学习如何管理简单的全局应用状态。
+现在大家已经了解了 [声明式的编程思维](/docs/development/data-and-backend/state-mgmt/declarative) 和 [短时 (ephemeral) 与应用 (app) 状态](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app) 之间的区别，现在可以学习如何管理简单的全局应用状态。
 
 On this page, we are going to be using the `provider` package.
 If you are new to Flutter and you don't have a strong reason to choose
@@ -32,7 +32,7 @@ That said, if you have strong background in state management from other
 reactive frameworks, you will find packages and tutorials listed on the
 [following page](/docs/development/data-and-backend/state-mgmt/options).
 
-即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，那么可以在下面这个页面中找到相关的 package 和教程。[这个页面](/docs/development/data-and-backend/state-mgmt/options)。
+即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，那么可以在 [状态 (State) 管理参考](/docs/development/data-and-backend/state-mgmt/options) 中找到相关的 package 和教程。
 
 ## Our example
 
@@ -61,7 +61,7 @@ Here's the app visualized as a widget tree.
 
 这是应用程序对应的可视化的 widget 树。
 
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="A widget tree with MyApp at the top, and MyLoginScreen, MyCatalog and MyCart below it. MyLoginScreen and MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems." %}
+<!--{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="A widget tree with MyApp at the top, and MyLoginScreen, MyCatalog and MyCart below it. MyLoginScreen and MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems." %}-->
 
 {% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="MyApp 位于 widget 树的最顶部，然后下面是 MyLoginScreen， MyCatalog 和 MyCart。MyLoginScreen 和 MyCart 是 widget 树的叶子节点。MyCatalog 有两个子节点: MyAppBar 和 MyListItem 列表。" %}
 
@@ -319,7 +319,7 @@ any higher-level classes in Flutter. It's easily testable (you don't even need
 to use [widget testing](/docs/testing#widget-tests) for it). For example,
 here's a simple unit test of `CartModel`:
 
-`ChangeNotifier` 是 `flutter:foundation` 的一部分，而且不依赖 Flutter 中任何高级别类。测试起来非常简单（你都不需要使用 [widget testing](/docs/testing#widget-tests)）。比如，这里有一个针对 `CartModel` 简单的单元测试：
+`ChangeNotifier` 是 `flutter:foundation` 的一部分，而且不依赖 Flutter 中任何高级别类。测试起来非常简单（你都不需要使用 [widget 测试](/docs/testing#widget-tests)）。比如，这里有一个针对 `CartModel` 简单的单元测试：
 
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
 ```dart
@@ -427,24 +427,28 @@ in your model, all the builder methods of all the corresponding
 
 `Consumer`  widget 唯一必须的参数就是 builder。 当 `ChangeNotifier`  发生变化的时候会调用 builder 这个函数。（换言之，当你在模型中调用 `notifyListeners()` 时， 所有和 `Consumer` 相关的 builder 方法都会被调用。）
 
-The builder is called with three attributes. The first one is `context`,
+The builder is called with three arguments. The first one is `context`,
 which you also get in every build method.
 
-builder 在被调用的时候会用到三个属性。第一个是 `context`。你在每个 build 方法中都能找到这个属性。
+builder 在被调用的时候会用到三个参数。第一个是 `context`。
+在每个 build 方法中都能找到这个参数。
 
 The second argument of the builder function is the instance of 
 the `ChangeNotifier`. It's what we were asking for in the first place. You can
 use the data in the model to define what the UI should look like 
 at any given point.
 
-builder 函数的第二个参数是 `ChangeNotifier` 的实例。它是我们最开始就能得到的实例。你可以通过该实例定义 UI 的内容。
+builder 函数的第二个参数是 `ChangeNotifier` 的实例。
+它是我们最开始就能得到的实例。你可以通过该实例定义 UI 的内容。
 
-The third attribute is `child`, which is there for optimization.
+The third argument is `child`, which is there for optimization.
 If you have a large widget subtree under your `Consumer`
 that _doesn't_ change when the model changes, you can construct it
 once and get it through the builder.
 
-第三个参数是 `child`，用于优化目的。如果 `Consumer` 下面有一个庞大的子树，当模型发生改变的时候，该子树 _并不会_ 改变，那么你就可以仅仅创建它一次，然后通过 builder 获得该实例。
+第三个参数是 `child`，用于优化目的。如果 `Consumer` 下面有一个庞大的子树，
+当模型发生改变的时候，该子树 **并不会** 改变，
+那么你就可以仅仅创建它一次，然后通过 builder 获得该实例。
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)" replace="/\bchild\b/[!$&!]/g"?>
 ```dart
@@ -465,7 +469,8 @@ It is best practice to put your `Consumer` widgets as deep in the tree
 as possible. You don't want to rebuild large portions of the UI
 just because some detail somewhere changed.
 
-最好能把 `Consumer` 放在 widget 树尽量低的位置上。你总不希望 UI 上任何一点小变化就全盘重新构建 widget 吧。
+最好能把 `Consumer` 放在 widget 树尽量低的位置上。
+你总不希望 UI 上任何一点小变化就全盘重新构建 widget 吧。
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
@@ -540,13 +545,14 @@ rebuild when `notifyListeners` is called.
 ## 把代码集成在一起
 
 You can [check out the
-example]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)
+example]({{site.github}}/flutter/samples/tree/master/provider_shopper)
 covered in this article. If you want something simpler,
 you can see how the simple Counter app looks like when [built with
 `provider`](https://github.com/flutter/samples/tree/master/provider_counter).
 
-你可以在文章中 [看一下示例]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)。如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何基于 provider 实现的。[built with
-`provider`](https://github.com/flutter/samples/tree/master/provider_counter).
+你可以在文章中 [查看这个示例]({{site.github}}/flutter/samples/tree/master/provider_shopper)。
+如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何
+[基于 `provider` 实现的](https://github.com/flutter/samples/tree/master/provider_counter)。
 
 When you're ready to play around with `provider` yourself,
 don't forget to add the dependency on it to your `pubspec.yaml` first.
@@ -563,7 +569,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  provider: ^2.0.0
+  provider: ^3.0.0
 
 dev_dependencies:
   # ...

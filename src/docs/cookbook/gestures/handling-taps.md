@@ -65,7 +65,7 @@ GestureDetector(
      button, see the [Add Material touch
      ripples](/docs/cookbook/gestures/ripples) recipe.
       
-     如果你想添加点按涟漪效果 (Material Design) 请参考文章“[添加点按涟漪效果 (Material Design)](/docs/cookbook/gestures/ripples/)”。
+     如果你想添加点按涟漪效果 (Material Design) 请参考文章 [添加点按涟漪效果 (Material Design)](/docs/cookbook/gestures/ripples)。
 
   2. Although this example creates a custom button,
      Flutter includes a handful of button implementations, such as:
@@ -74,7 +74,7 @@ GestureDetector(
      [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html).
 
      这里为了说明原理，我们创建了自定义的按钮，其实 Flutter 已经为我们准备了很多现成的按钮供我们使用，类似：
-     [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html)、[FlatButton]({{site.api}}/flutter/material/FlatButton-class.html)，和 [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html) 等。
+     [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html)、[FlatButton]({{site.api}}/flutter/material/FlatButton-class.html) 和 [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html) 等。
 
 
 ## Complete example

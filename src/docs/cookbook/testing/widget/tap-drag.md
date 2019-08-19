@@ -42,7 +42,7 @@ interaction, call the
 methods provided by the `WidgetTester`.
 This recipe uses the following steps:
 
-在很多情况下，用户交互会更新应用状态。在测试环境中，Flutter 在状态发生改变的时候并不会自动重建 Widget。为了保证模拟用户交互实现后，Widget 树能重建，一定要调用 `WidgetTester` 提供的 [`pump`]({{api}}/flutter_test/WidgetTester/pump.html) 或者 [`pumpAndSettle`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)。
+在很多情况下，用户交互会更新应用状态。在测试环境中，Flutter 在状态发生改变的时候并不会自动重建 Widget。为了保证模拟用户交互实现后，Widget 树能重建，一定要调用 `WidgetTester` 提供的 [`pump()`]({{api}}/flutter_test/WidgetTester/pump.html) 或者 [`pumpAndSettle()`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)。
 
 ### Directions
 
@@ -185,7 +185,7 @@ Accomplish this task by:
      [`enterText()`]({{api}}/flutter_test/WidgetTester/enterText.html)
      method from the `WidgetTester`.
 
-     使用 `WidgetTester` 中的 [`enterText`]({{api}}/flutter_test/WidgetTester/enterText.html) 方法
+     使用 `WidgetTester` 中的 [`enterText()`]({{api}}/flutter_test/WidgetTester/enterText.html) 方法
 
 <!-- skip -->
 ```dart
@@ -213,7 +213,7 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
 
   * [Finding widgets in a widget test](finders)
   
-    [Widget 测试介绍](finders)
+    [定位到目标 Widgets](finders)
 
 {{site.alert.end}}
 
@@ -234,12 +234,12 @@ This involves three steps:
     [`tap()`]({{api}}/flutter_test/WidgetController/tap.html)
     method.
 
-    使用 [`tap`]({{api}}/flutter_test/WidgetController/tap.html) 方法模拟点击按钮
+    使用 [`tap()`]({{api}}/flutter_test/WidgetController/tap.html) 方法模拟点击按钮
 
  2. Rebuild the widget after the state has changed using the
     [`pump()`]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
 
-    使用 [`pump`]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html) 方法确保应用状态发生改变时可以重建 Widget
+    使用 [`pump()`]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html) 方法确保应用状态发生改变时可以重建 Widget
 
  3. Ensure that the list item appears on screen.
 
@@ -274,14 +274,14 @@ item removes it from the list. This involves three steps:
      [`drag()`]({{api}}/flutter_test/WidgetController/drag.html)
      method to perform a swipe-to-dismiss action.
 
-     使用 [`drag`]({{api}}/flutter_test/WidgetController/drag.html) 方法模拟滑动删除操作。
+     使用 [`drag()`]({{api}}/flutter_test/WidgetController/drag.html) 方法模拟滑动删除操作。
 
   2. Use the
      [`pumpAndSettle()`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
      method to continually rebuild the widget tree until the dismiss
      animation is complete.
 
-     使用 [`pumpAndSettle`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html) 方法使 Widget 树保持重建更新，直到消除的动画完成。
+     使用 [`pumpAndSettle()`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html) 方法使 Widget 树保持重建更新，直到消除的动画完成。
 
   3. Ensure that the item no longer appears on screen.
 

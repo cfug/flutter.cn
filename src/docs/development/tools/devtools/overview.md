@@ -30,27 +30,27 @@ Here are some of the things you can do with DevTools:
 
 * Inspect the UI layout and state of a Flutter app.
 
-* 检查 Flutter 应用程序的 UI 组件布局和状态
+  检查 Flutter 应用程序的 UI 组件布局和状态
 
 * Diagnose UI jank performance issues in a Flutter app.
 
-* 在 Flutter 应用程序中诊断 UI 性能过低的问题。
+  在 Flutter 应用程序中诊断 UI 性能过低的问题。
 
 * Source-level debugging of a Flutter or Dart
   command-line app.
 
-* 在 Flutter 或 Dart 的命令行应用程序中进行源码级的调试。
+  在 Flutter 或 Dart 的命令行应用程序中进行源码级的调试。
 
 * Debug memory issues in a Flutter or Dart
   command-line app.
 
-* 在 Flutter 或 Dart 命令行应用程序中测试内存问题。
+  在 Flutter 或 Dart 命令行应用程序中测试内存问题。
 
 * View general log and diagnostics information
   about a running Flutter or Dart
   command-line app.
 
-* 查看正在运行的 Flutter 或 Dart 的命令行应用程序相关的常规日志和诊断信息。
+  查看正在运行的 Flutter 或 Dart 的命令行应用程序相关的常规日志和诊断信息。
 
 We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
@@ -69,7 +69,7 @@ your existing IDE or command-line based development workflow.
 See the [Android Studio/IntelliJ][], [VS Code][], or
 [command line][] pages for installation instructions.
 
-详细安装教程，请查阅 [Android Studio/IntelliJ][]、[VS Code][]或[命令行][] 页面 for installation instructions.
+详细安装教程，请查阅 [Android Studio/IntelliJ][]、[VS Code][] 或 [命令行][] 页面。
 
 ## Providing feedback
 
@@ -78,7 +78,7 @@ See the [Android Studio/IntelliJ][], [VS Code][], or
 Please give DevTools a try, provide feedback, and file issues
 in the [DevTools issue tracker][]. Thanks!
 
-请在[开发工具 issue 跟踪器][]中尝试使用开发工具，并提交反馈和文件 issue
+请在 [开发工具 issue 追踪器][] 中尝试使用开发工具，并提交反馈和文件 issue。
 
 ## Other resources
 
@@ -88,7 +88,7 @@ For more information on debugging and profiling
 Flutter apps, see the [Debugging][] page and,
 in particular, its list of [other resources][].
 
-关于调试、分析 Flutter 应用程序的更多详细，请查阅[调试][]页面，尤其是[其他资源][]列表。
+关于调试、分析 Flutter 应用程序的更多详细，请查阅 [调试][] 页面，尤其是 [其他资源][] 列表。
 
 [Android Studio/IntelliJ]: /docs/development/tools/devtools/android-studio
 [VS Code]: /docs/development/tools/devtools/vscode

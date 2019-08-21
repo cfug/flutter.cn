@@ -16,7 +16,9 @@ To develop Flutter apps for iOS, you need a Mac with Xcode 9.0 or newer:
     (via [web download](https://developer.apple.com/xcode/) or
     the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835)).
 
-    通过[直接下载](https://developer.apple.com/xcode/)或者[ Mac App Store ](https://itunes.apple.com/us/app/xcode/id497799835)来安装 Xcode 9.0 或者更高版本；
+    通过 [直接下载](https://developer.apple.com/xcode/)
+    或者[Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835)
+    来安装 Xcode 9.0 或者更高版本；
 
  2. Configure the Xcode command-line tools to use the newly-installed
     version of Xcode by
@@ -32,13 +34,15 @@ To develop Flutter apps for iOS, you need a Mac with Xcode 9.0 or newer:
     the latest version of Xcode.
     If you need to use a different version, specify that path instead.
 
-    当你安装了最新版本的 Xode，大部分情况下，上面的路径都是一样的。但如果你安装了不同版本的 Xcode，你可能要更改一下上述命令中的路径。
+    当你安装了最新版本的 Xode，大部分情况下，上面的路径都是一样的。
+    但如果你安装了不同版本的 Xcode，你可能要更改一下上述命令中的路径。
 
  3. Make sure the Xcode license agreement is signed by either opening
     Xcode once and confirming or running
     `sudo xcodebuild -license` from the command line.
  
-    运行一次 Xocde 或者通过输入命令 `sudo xcodebuild -license` 来确保已经同意 Xcode 的许可协议。
+    运行一次 Xocde 或者通过输入命令 `sudo xcodebuild -license`
+    来确保已经同意 Xcode 的许可协议。
 
 With Xcode, you’ll be able to run Flutter apps on an iOS device
 or on the simulator.
@@ -66,14 +70,17 @@ follow these steps:
  2. Make sure your simulator is using a 64-bit device (iPhone 5s or later)
     by checking the settings in the simulator's **Hardware > Device** menu.
 
-    通过模拟器菜单中的 **Hardware > Device** 选项检查当前模拟器是否是 64 位机型（iPhone 5S 或之后的机型）。
+    通过模拟器菜单中的 **Hardware > Device** 选项检查当前模拟器是否是 64 位机型
+    （iPhone 5S 或之后的机型）。
 
  3. Depending on your development machine's screen size,
     simulated high-screen-density iOS devices
     might overflow your screen. Set the device scale under the
     **Window > Scale** menu in the simulator.
 
-    根据你当前开发机器的屏幕尺寸，模拟器模拟出来的高密度屏幕的设备可能会占满你的屏幕，你可以通过菜单中的 **Window > Scale** 选项来更改模拟器的缩放比例。
+    根据你当前开发机器的屏幕尺寸，
+    模拟器模拟出来的高密度屏幕的设备可能会占满你的屏幕，
+    你可以通过菜单中的 **Window > Scale** 选项来更改模拟器的缩放比例。
 
 ### Create and run a simple Flutter app
 
@@ -95,7 +102,8 @@ To create your first Flutter app and test your setup, follow these steps:
  2. A `my_app` directory is created, containing Flutter's starter app.
     Enter this directory:
 
-    上述命令创建了一个 `my_app` 的目录，包含了 Flutter 初始的应用模版，切换路径到这个目录内：
+    上述命令创建了一个 `my_app` 的目录，
+    包含了 Flutter 初始的应用模版，切换路径到这个目录内：
  
     ```terminal
     $ cd my_app
@@ -171,19 +179,35 @@ You'll also need to set up physical device deployment in Xcode.
         ios/Runner.xcworkspace` in a terminal window from your Flutter project
         directory.
 
-        通过在命令行中于你当前 Flutter 项目目录下运行 `open ios/Runner.xcworkspace` 命令来打开默认的 Xcode 工程。
+        通过在命令行中于你当前 Flutter 项目目录下运行
+        `open ios/Runner.xcworkspace` 命令来打开默认的 Xcode 工程。
 
-     2. In Xcode, select the `Runner` project in the left navigation panel.
+     1. Select the device you intend to deploy to in the device drop-down
+        menu next to the run button.
+        
+        在运行按钮的下拉列表里选择你想要部署到的设备；
 
-        在 Xcode 中左侧的导航面板中选择 `Runner` 项目；
+     1. Select the `Runner` project in the left navigation panel.
 
-     3. In the `Runner` target settings page, make sure your Development Team is
-        selected under **General > Signing > Team**. When you select a team,
-        Xcode creates and downloads a Development Certificate, registers your
-        device with your account, and creates and downloads a provisioning
-        profile (if needed).
+        在左侧的导航面板中选择 `Runner` 项目；
 
-        在 `Runner` 项目的设置页面中，确保 **General > Signing > Team** 选项下的 Development Team 选中状态。当你选择一个 team 后，Xcode 会为其创建并下载相应的 Development Certificate，并将你的账号在设备上进行注册，然后根据实际需求进行 provisioning profile 的配置。
+     1. In the `Runner` target settings page,
+        make sure your Development Team is selected.
+        The UI varies depending on your version of Xcode.
+        
+        在 `Runner` 项目的设置页面，请确保勾选你的开发团队。
+        在不同的 Xcode 版本里，这一部分的操作界面不同：       
+        
+        * For Xcode 9 & 10, look under **General > Signing > Team**.
+          
+          在 Xcode 9 和 10 版本，请在这里设置：**General > Signing > Team**
+          
+        * For Xcode 11 and newer, look under **Signing & Capabilities > Team**.
+          
+          在 Xcode 11 版本以后，请在这里设置 **Signing & Capabilities > Team**
+
+        在 `Runner` 项目的设置页面中，确保 **General > Signing > Team** 选项下的 
+        Development Team 选中状态。
 
         * To start your first iOS development project,
           you might need to sign into
@@ -191,19 +215,24 @@ You'll also need to set up physical device deployment in Xcode.
           Development and testing is supported for any Apple ID.
           Enrolling in the Apple Developer Program is required to
           distribute your app to the App Store.
-          For details about membership types, see
-          [Choosing a Membership][].
+          For details about membership types,
+          see [Choosing a Membership][].
 
-          在开始你的第一个 iOS 项目开发之前，你需要先在 Xcode 中登陆你的 Apple 开发者账号 ![Xcode account add][]{:.mw-100}
-          任何 Apple ID 都可以进行开发和测试。如果想将应用上架 App Store，你需要加入 Apple Developer Program，你可以在 [Choosing a Membership][] 页面中查看详细的说明。
+          在开始你的第一个 iOS 项目开发之前，
+          你需要先在 Xcode 中登陆你的 Apple 开发者账号
+          ![Xcode account add][]{:.mw-100}
+          任何 Apple ID 都可以进行开发和测试。
+          如果想将应用上架 App Store，你需要加入 Apple Developer Program，
+          你可以在 [Choosing a Membership][] 页面中查看详细的说明。
          
 
         * The first time you use an attached physical device for iOS
-          development, you will need to trust both your Mac and the Development
+          development, you need to trust both your Mac and the Development
           Certificate on that device. Select `Trust` in the dialog prompt when
           first connecting the iOS device to your Mac.
           
-          当你第一次将设备连接到开发机用于开发时，你需要分别在 Mac 和开发机上进行信任设备的操作。
+          当你第一次将设备连接到开发机用于开发时，
+          你需要分别在 Mac 和开发机上进行信任设备的操作。
           当你第一次连接时，会有个弹窗，点击 `Trust` 即可。
           
           ![Trust Mac][]{:.mw-100}
@@ -211,7 +240,8 @@ You'll also need to set up physical device deployment in Xcode.
           Then, go to the Settings app on the iOS device, select **General >
           Device Management** and trust your Certificate.
           
-          然后在 iOS 开发机上进入 Settings 应用，选择 **General > Device Management** 然后信任相应的证书。
+          然后在 iOS 开发机上进入 Settings 应用，
+          选择 **General > Device Management** 然后信任相应的证书。
 
 
         * If automatic signing fails in Xcode, verify that the project's

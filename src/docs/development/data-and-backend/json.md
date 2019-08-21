@@ -145,7 +145,7 @@ when using reflection.
 {{site.alert.end}}
 
 Although you cannot use runtime reflection with Flutter, some libraries give
-you similarly easy to use APIs but are based on code generation instead. This
+you similarly easy-to-use APIs but are based on code generation instead. This
 approach is covered in more detail in the [code generation
 libraries](#code-generation) section.
 
@@ -181,11 +181,11 @@ With `dart:convert`, you can encode this JSON model in two ways.
 
 ### 内联序列化 JSON 数据
 
-By looking at the [dart:convert][dart:convert] documentation,
-you'll see that you can decode the JSON by calling the `jsonDecode()` function,
-with the JSON string as the method argument.
+By looking at the [dart:convert][] documentation,
+you'll see that you can decode the JSON by calling the
+`jsonDecode()` function, with the JSON string as the method argument.
 
-通过查阅 [dart:convert][dart:convert] 文档，你会看到你可以将 JSON 字符串作为方法的参数来调用 `jsonDecode()` 方法来解码 JSON。
+通过查阅 [dart:convert][] 文档，你会看到你可以将 JSON 字符串作为方法的参数来调用 `jsonDecode()` 方法来解码 JSON。
 
 <!-- skip -->
 ```dart
@@ -328,14 +328,15 @@ dependency, and two _dev dependencies_. In short, _dev dependencies_
 are dependencies that are not included in our app source code&mdash;they
 are only used in the development environment.
 
-要在你的项目中包含 `json_serializable`，你需要一个常规依赖，以及两个 _dev 依赖_。简单来说，_dev 依赖_ 是不包括在我们的 App 源代码中的依赖 - 它们只会被用在开发环境中。
+要在你的项目中包含 `json_serializable`，你需要一个常规依赖，
+以及两个 **dev 依赖**。简单来说，**dev 依赖**
+是不包括在我们的 App 源代码中的依赖 - 它们只会被用在开发环境中。
 
-The latest versions of these required dependencies can be seen by following
-[the pubspec
-file](https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml)
-in the JSON serializable example.
+The latest versions of these required dependencies can be seen by
+following [the pubspec file][] in the JSON serializable example.
 
-在序列化 JSON 数据的例子中，这些必须的依赖的最新版本可以在下面 [pubspec 文件](https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml) 中查看。
+在序列化 JSON 数据的例子中，
+这些必须的依赖的最新版本可以在下面 [pubspec 文件][the pubspec file] 中查看。
 
 **pubspec.yaml**
 
@@ -354,7 +355,8 @@ Run `flutter pub get` inside your project root folder (or click
 **Packages Get** in your editor) to make these new dependencies available
 in your project.
 
-在你的项目根文件夹下运行 `flutter pub get`（或者在你的编辑器中点击 **Packages Get**）以确保在你的项目中可以使用这些新的依赖。
+在你的项目根文件夹下运行 `flutter pub get`
+（或者在你的编辑器中点击 **Packages Get**）以确保在你的项目中可以使用这些新的依赖。
 
 ### Creating model classes the json_serializable way
 
@@ -388,7 +390,7 @@ class User {
 
   /// A necessary factory constructor for creating a new User instance
   /// from a map. Pass the map to the generated `_$UserFromJson()` constructor.
-  /// The constructor is named after the source class, in this case User.
+  /// The constructor is named after the source class, in this case, User.
   factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
 
   /// `toJson` is the convention for a class to declare support for serialization
@@ -574,7 +576,7 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
 };
 ```
 
-All looks fine right now, but if you do a print() on our user object:
+All looks fine now, but if you do a print() on the user object:
 
 看起来没有什么问题，如果 `print` 用户对象时：
 
@@ -598,7 +600,7 @@ When what you probably want is output like the following:
 但实际上你希望的输出结果是这样的：
 
 ```json
-{name: John, adress: {street: My st., city: New York}}
+{name: John, address: {street: My st., city: New York}}
 ```
 
 To make this work, pass `explicitToJson: true` in the `@JsonSerializable()`
@@ -664,3 +666,4 @@ For more information, see the following resources:
 [reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [反射]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
+[the pubspec file]: https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml

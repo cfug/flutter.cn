@@ -470,7 +470,10 @@ easily use it.
 上，以便其他开发者可以轻松地使用它。
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
-`CHANGELOG.md` files to make sure their content is complete and correct.
+`CHANGELOG.md` files to make sure their content is complete and correct. Also, to improve the quality and usability of your package, consider including the items below. 
+* Diverse code usage examples
+* Screenshots, animated gifs, or videos
+* A link to the corresponding code repository
 
 提交之前，请确保 `pubspec.yaml`、`README.md` 以及
 `CHANGELOG.md` 文件已被审查，以保证其内容的完整性和正确性。
@@ -494,7 +497,7 @@ $ flutter pub pub publish
 ```
 
 For details on publishing, see the
-[publishing docs]({{site.dart-site}}/tools/pub/publishing).
+[publishing docs]({{site.dart-site}}/tools/pub/publishing)
 for the Pub site.
 
 有关提交的详细信息，请查阅关于 Pub 站点的 [提交文档]({{site.dart-site}}/tools/pub/publishing)。

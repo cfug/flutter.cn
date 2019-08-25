@@ -6,7 +6,7 @@ description: "使用 DartPad2 工具教你如何构建 Flutter 布局"
 toc: true
 --- 
 
-请注意，本文档正在翻译中，查看上个版本的文档请点击 [这里](layout-basics)。
+请注意，本文档正在翻译中，查看上个版本的文档请点击 [这里](layout-basics-old)。
 
 Welcome to the Flutter layout codelab, 
 where you learn how to build a Flutter UI without downloading and installing Flutter or Dart!

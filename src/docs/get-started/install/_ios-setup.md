@@ -2,9 +2,7 @@
 
 ## 设置 iOS 开发环境
 
-
 ### Install Xcode
-
 
 ### 安装 Xcode
 
@@ -34,7 +32,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode 9.0 or newer:
     the latest version of Xcode.
     If you need to use a different version, specify that path instead.
 
-    当你安装了最新版本的 Xode，大部分情况下，上面的路径都是一样的。
+    当你安装了最新版本的 Xcode，大部分情况下，上面的路径都是一样的。
     但如果你安装了不同版本的 Xcode，你可能要更改一下上述命令中的路径。
 
  3. Make sure the Xcode license agreement is signed by either opening
@@ -160,6 +158,9 @@ You'll also need to set up physical device deployment in Xcode.
       workaround until the next release of libusbmuxd,
       as explained in [libusbmuxd issue #46][] and
       [Flutter issue #22595][].
+      
+      上面所示的前两个命令是 libusbmuxd 的 [libusbmuxd issue #46][] 和 [Flutter issue #22595][]
+      的临时解决方案。
 
       [libusbmuxd issue #46]: {{site.github}}/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
       [Flutter issue #22595]: {{site.github}}/flutter/flutter/issues/22595

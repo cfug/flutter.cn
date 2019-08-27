@@ -36,7 +36,7 @@ how do you fix it? Where do you begin?
 This guide shows you where to start,
 steps to take, and tools that can help.
 
-有句话叫“_快_的应用固然很好，但_流畅_的应用则更好。”如果你的应用渲染并不流畅，该怎么处理呢？从哪里着手呢？本文展示了应该从哪里着手，步骤以及可以提供帮助的工具。
+有句话叫“ _ 快 _ 的应用固然很好，但 _ 流畅 _ 的应用则更好。”如果你的应用渲染并不流畅，该怎么处理呢？从哪里着手呢？本文展示了应该从哪里着手，步骤以及可以提供帮助的工具。
 
 {{site.alert.note}}
   * An app's performance is determined by more than one measure.
@@ -46,7 +46,7 @@ steps to take, and tools that can help.
     second type of performance (UI smoothness), but you can use most
     of the same tools to diagnose other performance problems.
     
-    应用的性能不只是由一次测量（measure）决定的。性能有时取决于原生速度，同时也取决于 UI 的流畅性，不卡顿。其他性能指标还包括 I/O 或者网速。本文主要聚焦于第二种性能（UI 流畅性），但其中的大多数工具也能被用来分析其他性能问题。
+    应用的性能不只是由一次测量(measure)决定的。性能有时取决于原生速度，同时也取决于 UI 的流畅性，不卡顿。其他性能指标还包括 I/O 或者网速。本文主要聚焦于第二种性能（UI 流畅性），但其中的大多数工具也能被用来分析其他性能问题。
     
   * To perform tracing inside your Dart code, see [Tracing Dart code][]
     in the [Debugging][] page.
@@ -65,7 +65,7 @@ Before you begin, you want to make sure that you're running in
 For best results, you might choose the slowest device that
 your users might use.
 
-分析应用的性能问题需要打开性能监控图层（performance overlay）来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式（profile mode）][] 下运行，而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
+分析应用的性能问题需要打开性能监控图层(performance overlay)来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式(profile mode)][] 下运行，而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
 
 ### Connect to a physical device
 
@@ -105,7 +105,7 @@ on the slowest device that your users might reasonably use._
   loaded onto the device. JIT can cause the app to pause for JIT
   compilation, which itself can cause jank.
   
-  调试模式和发布模式代码执行的方式也是不同的。调试编译采用的是“just in time”（JIT）模式运行应用，而分析和发布模式则是预编译到本地指令（“ahead of time”，或者叫 AOT）之后再加载到设备中。JIT本身的编译就可能导致应用暂停，从而导致卡顿。
+  调试模式和发布模式代码执行的方式也是不同的。调试编译采用的是“just in time”(JIT)模式运行应用，而分析和发布模式则是预编译到本地指令（“ahead of time”，或者叫 AOT）之后再加载到设备中。JIT本身的编译就可能导致应用暂停，从而导致卡顿。
 {{site.alert.end}}
 
 ### Run in profile mode
@@ -223,7 +223,7 @@ The horizontal axis represents frames. The graph is
 only updated when your application paints,
 so if it's idle the graph stops moving.
 
-最顶部的图形表示 GPU 线程所花费的时间，底部的图表显示了 UI 线程所花费的时间。横跨图表中的白线代表了 16ms 内沿竖轴的增量；如果这些线在图表中都没有超过它的话，说明你的运行帧率低于 60Hz。而横轴则表示帧。只有当你的应用绘制时这个图表才会更新，所以如果它空闲的话，图表就不会动。
+最顶部的图形表示 GPU 线程所花费的时间，底部的图表显示了 UI 线程所花费的时间。横跨图表中的白线代表了 16ms 内沿竖轴的增量；如果这些线在图表中都没有超过它的话，说明你的运行帧率低于 60 Hz。而横轴则表示帧。只有当你的应用绘制时这个图表才会更新，所以如果它空闲的话，图表就不会动。
 
 The overlay should always be viewed in [profile mode][],
 since [debug mode][] performance is intentionally sacrificed
@@ -240,7 +240,7 @@ If a red bar appears in the UI graph, the Dart code is too
 expensive  If a red vertical bar appears in the GPU graph,
 the scene is too complicated to render quickly.
 
-每一帧都应该在 1/60 秒（大约 16ms）内创建并显示。如果有一帧超时（任意图像）而无法显示，就导致了卡顿，图表之一就会展示出来一个红色竖条。
+每一帧都应该在 1/60 秒（大约 16 ms）内创建并显示。如果有一帧超时（任意图像）而无法显示，就导致了卡顿，图表之一就会展示出来一个红色竖条。
 如果是在 UI 图表出现了红色竖条，则表明 Dart 代码消耗了大量资源。
 而如果红色竖条是在 GPU 图表出现的，意味着场景太复杂导致无法快速渲染。
 
@@ -249,7 +249,7 @@ the scene is too complicated to render quickly.
 expensive to both render and paint.<br>When both graphs
 display red, start by diagnosing the UI thread (Dart VM).
 
-<br>红色竖条表明当前帧的渲染和绘制都很耗时。<br>当两张图表都是红色时，就要开始对 UI 线程（Dart VM）进行诊断了。
+<br>红色竖条表明当前帧的渲染和绘制都很耗时。<br>当两张图表都是红色时，就要开始对 UI 线程(Dart VM)进行诊断了。
 
 ## Flutter's threads
 
@@ -278,7 +278,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
 
 <dt markdown="1">**UI thread**</dt>
 
-<dt markdown="1">**UI 线程**</dt>
+<dt markdown="1">**UI 线程 **</dt>
 
 <dd markdown="1">The UI thread executes Dart code in the Dart VM.
     This thread includes code that you wrote, and code executed by
@@ -289,7 +289,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
     be rendered on the device. _Don't block this thread!_
     Shown in the bottom row of the performance overlay.
     
-<dd markdown="1">UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个_图层树（layer tree）_ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。 _不要阻塞这个线程！_ 在性能图层的最低栏展示该线程。
+<dd markdown="1">UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个_图层树(layer tree)_ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。 _不要阻塞这个线程！_ 在性能图层的最低栏展示该线程。
 
 <dt markdown="1">**GPU thread**</dt>
 
@@ -303,7 +303,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
     which is sometimes called the _rasterizer_ thread.
     Shown in the top row of the performance overlay.
     
-<dd markdown="1">GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做 _光栅器（rasterizer）线程_ 。在性能图层的最顶栏展示该线程。
+<dd markdown="1">GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做 _光栅器(rasterizer)线程_ 。在性能图层的最顶栏展示该线程。
 
 <dt markdown="1">**I/O** thread</dt>
 
@@ -313,7 +313,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
     otherwise block either the UI or GPU threads.
     This thread is not shown in the performance overlay.
 
-<dd markdown="1">可能阻塞 UI 或者 GPU 线程的耗时任务（大多数情况下是I/O)。该线程并不会在性能图层中展示。
+<dd markdown="1">可能阻塞 UI 或者 GPU 线程的耗时任务（大多数情况下是 I/O)。该线程并不会在性能图层中展示。
 
 For links to more information and videos,
 see [The Framework architecture][] on the
@@ -514,7 +514,7 @@ is fetched from persistent storage.
 The image is decompressed into host memory (GPU memory), and transferred
 to device memory (RAM).
 
-从资源的角度看，最重量级的操作之一是用图像文件来渲染纹理。首先，需要从持久存储中取出压缩图像，然后解压缩到宿主存储中（GPU 存储），再传输到设备存储器中（RAM）。
+从资源的角度看，最重量级的操作之一是用图像文件来渲染纹理。首先，需要从持久存储中取出压缩图像，然后解压缩到宿主存储中（GPU 存储），再传输到设备存储器中(RAM)。
 
 In other words, image I/O can be expensive.
 The cache provides snapshots of complex hierarchies so
@@ -525,7 +525,7 @@ cache images only where absolutely necessary._
 
 也就是说，图像的 I/O 操作是重量级的。
 缓存提供了复杂层次的快照，这样就可以方便地渲染到随后的帧中。
-_因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。_
+_因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。_ 
 
 You can see which images are being cached by enabling the
 [PerformanceOverlayLayer.checkerboardRasterCacheImages][] switch.

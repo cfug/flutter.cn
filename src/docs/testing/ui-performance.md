@@ -36,7 +36,7 @@ how do you fix it? Where do you begin?
 This guide shows you where to start,
 steps to take, and tools that can help.
 
-有句话叫“ _ 快 _ 的应用固然很好，但 _ 流畅 _ 的应用则更好。”如果你的应用渲染并不流畅，该怎么处理呢？从哪里着手呢？本文展示了应该从哪里着手，步骤以及可以提供帮助的工具。
+有句话叫“ _快_ 的应用固然很好，但 _流畅_ 的应用则更好。”如果你的应用渲染并不流畅，该怎么处理呢？从哪里着手呢？本文展示了应该从哪里着手，步骤以及可以提供帮助的工具。
 
 {{site.alert.note}}
   * An app's performance is determined by more than one measure.
@@ -65,7 +65,7 @@ Before you begin, you want to make sure that you're running in
 For best results, you might choose the slowest device that
 your users might use.
 
-分析应用的性能问题需要打开性能监控图层(performance overlay)来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式(profile mode)][] 下运行，而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
+分析应用的性能问题需要打开性能监控图层(performance overlay)来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式(profile mode)][profile mode] 下运行，而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
 
 ### Connect to a physical device
 
@@ -174,7 +174,7 @@ and a step-by-step debugger.
 DevTools' [Timeline view][] allows you to investigate the
 UI performance of your application on a frame-by-frame basis.
 
-Dart DevTool 提供诸如性能分析、堆测试以及显示代码覆盖率等功能。DevTool 的 _timeline_ 界面可以让开发者逐帧分析应用的 UI 性能。
+Dart DevTool 提供诸如性能分析、堆测试以及显示代码覆盖率等功能。DevTool 的 [Timeline][Timeline view] 界面可以让开发者逐帧分析应用的 UI 性能。
 
 Once your app is running in profile mode,
 [launch DevTools][].
@@ -200,9 +200,10 @@ and use it to diagnose the cause of jank in your application.
 The following screenshot shows the performance overlay running
 on the Flutter Gallery example:
 
-本节阐述如何打开 [性能图层][PerformanceOverlay] 并用其来分析应用中卡顿的原因。下面的截图展示了 Flutter Gallery 样例的性能图层：
+本节阐述如何打开性能图层并用其来分析应用中卡顿的原因。下面的截图展示了 Flutter Gallery 样例的性能图层：
 
 ![Screenshot of overlay showing zero jank]({% asset tools/devtools/performance-overlay-green.png @path %})
+
 <br>Performance overlay showing the GPU thread (top),
 and UI thread (bottom).<br>The vertical green bars
 represent the current frame.
@@ -223,14 +224,14 @@ The horizontal axis represents frames. The graph is
 only updated when your application paints,
 so if it's idle the graph stops moving.
 
-最顶部的图形表示 GPU 线程所花费的时间，底部的图表显示了 UI 线程所花费的时间。横跨图表中的白线代表了 16ms 内沿竖轴的增量；如果这些线在图表中都没有超过它的话，说明你的运行帧率低于 60 Hz。而横轴则表示帧。只有当你的应用绘制时这个图表才会更新，所以如果它空闲的话，图表就不会动。
+最顶部的图形表示 GPU 线程所花费的时间，底部的图表显示了 UI 线程所花费的时间。横跨图表中的白线代表了 16 ms 内沿竖轴的增量；如果这些线在图表中都没有超过它的话，说明你的运行帧率低于 60 Hz。而横轴则表示帧。只有当你的应用绘制时这个图表才会更新，所以如果它空闲的话，图表就不会动。
 
 The overlay should always be viewed in [profile mode][],
 since [debug mode][] performance is intentionally sacrificed
 in exchange for expensive asserts that are intended to aid
 development, and thus the results are misleading.
 
-这个浮层只应在 [profile mode][] 中使用，因为 [debug mode][] 下有意牺牲了性能来换取昂贵的断言以帮助开发，所以这时候的结果会具有误导性。
+这个浮层只应在 [profile mode][] 中使用，因为在 [debug mode][] 下有意牺牲了性能来换取昂贵的断言以帮助开发，所以这时候的结果会具有误导性。
 
 Each frame should be created and displayed within 1/60th of
 a second (approximately 16ms). A frame exceeding this limit
@@ -245,6 +246,7 @@ the scene is too complicated to render quickly.
 而如果红色竖条是在 GPU 图表出现的，意味着场景太复杂导致无法快速渲染。
 
 ![Screenshot of performance overlay showing jank with red bars]({% asset tools/devtools/performance-overlay-jank.png @path %})
+
 <br>The vertical red bars indicate that the current frame is
 expensive to both render and paint.<br>When both graphs
 display red, start by diagnosing the UI thread (Dart VM).
@@ -267,7 +269,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
 <dl markdown="1">
 <dt markdown="1">**Platform thread**</dt>
 
-<dt markdown="1">**平台线程*</dt>
+<dt markdown="1">**平台线程**</dt>
 
 <dd markdown="1">The platform's main thread. Plugin code runs here.
     For more information, see the [UIKit][] documentation for iOS,
@@ -278,7 +280,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
 
 <dt markdown="1">**UI thread**</dt>
 
-<dt markdown="1">**UI 线程 **</dt>
+<dt markdown="1">**UI 线程**</dt>
 
 <dd markdown="1">The UI thread executes Dart code in the Dart VM.
     This thread includes code that you wrote, and code executed by
@@ -289,7 +291,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
     be rendered on the device. _Don't block this thread!_
     Shown in the bottom row of the performance overlay.
     
-<dd markdown="1">UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个_图层树(layer tree)_ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。 _不要阻塞这个线程！_ 在性能图层的最低栏展示该线程。
+<dd markdown="1">UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 _图层树(layer tree)_ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。 _不要阻塞这个线程！_ 在性能图层的最低栏展示该线程。
 
 <dt markdown="1">**GPU thread**</dt>
 
@@ -371,7 +373,7 @@ To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
 
-要用代码实现性能图层，可以查看 [Debugging Flutter apps programmatically][] 中的[Performance overlay][]。
+要用代码实现性能图层，可以查看 [Debugging Flutter apps programmatically][] 中的 [Performance overlay][]。
 
 You are probably familiar with the Flutter Gallery example app.
 To use the performance overlay with Flutter Gallery,
@@ -384,6 +386,7 @@ cached images.
 可能读者已经对 Flutter Gallery 样例应用相当熟悉了。要在 Flutter Gallery 中使用性能图层，请使用与 Flutter 一起安装的 [examples][] 目录的副本在分析模式下运行应用。应用的代码中已经写好了通过应用菜单动态触发图层，同时允许对 `saveLayer` 的调用和当前已缓存的图片的检查。
 
 {{site.alert.note}}
+
   You can’t enable the performance overlay in the Flutter
   Gallery app downloaded from the App Store.
   That version of the app is compiled to release mode
@@ -391,11 +394,12 @@ cached images.
   a menu for enabling or disabling the overlay.
   
   从应用市场下载的 Flutter Gallery 应用是无法打开性能图层的。因为该版本是用发布模式编译的（而不是分析模式），并且没有提供图层开关的菜单。
+  
 {{site.alert.end}}
 
 ## Identifying problems in the UI graph
 
-### 定位 UI 图表中的问题
+## 定位 UI 图表中的问题
 
 If the performance overlay shows red in the UI graph,
 start by profiling the Dart VM, even if the GPU graph
@@ -410,7 +414,7 @@ can be said here?
 
 ## Identifying problems in the GPU graph
 
-### 定位 GPU 图表中的问题
+## 定位 GPU 图表中的问题
 
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the GPU thread. When this happens,
@@ -474,6 +478,7 @@ other potentially expensive operations, such as clipping or shadows.
 打开开关之后，运行应用并检查是否有图像的轮廓闪烁。如果有新的帧渲染的话，容器就会闪烁。举个例子，也许有一组对象的透明度要使用 `saveLayer` 来渲染。在这种情况下，相比通过 widget 树中高层次的父 widget 操作，单独对每个 widget 来应用透明度可能性能会更好。其他可能大量消耗资源的操作也同理，比如裁剪或者阴影。
 
 {{site.alert.note}}
+
   Opacity, clipping, and shadows are not, in themselves,
   a bad idea. However, applying them to the top of the
   widget tree might cause extra calls to `saveLayer`,
@@ -481,6 +486,7 @@ other potentially expensive operations, such as clipping or shadows.
   
   透明度、裁剪以及阴影它们本身并不是个糟糕的注意。
   然而对 widget 树顶层 widget 的操作可能导致额外对 `saveLayer` 的调用以及无用的处理。
+  
 {{site.alert.end}}
 
 When you encounter calls to `saveLayer`,
@@ -623,6 +629,7 @@ Flutter's tools and debugging in Flutter:
   [调试 Flutter 应用][Debugging]
   
 * [Flutter inspector][]
+
 * [Flutter inspector talk][], presented at DartConf 2018
   
   [Flutter Inspector talk][], 一个在 DartConf 2018 大会的演讲

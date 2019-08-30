@@ -46,7 +46,7 @@ steps to take, and tools that can help.
     second type of performance (UI smoothness), but you can use most
     of the same tools to diagnose other performance problems.
     
-    应用的性能不只是由一次测量(measure)决定的。性能有时取决于原生速度，同时也取决于 UI 的流畅性，不卡顿。其他性能指标还包括 I/O 或者网速。本文主要聚焦于第二种性能（UI 流畅性），但其中的大多数工具也能被用来分析其他性能问题。
+    应用的性能不只是由一次测量 (measure) 决定的。性能有时取决于原生速度，同时也取决于 UI 的流畅性，不卡顿。其他性能指标还包括 I/O 或者网速。本文主要聚焦于第二种性能（UI 流畅性），但其中的大多数工具也能被用来分析其他性能问题。
     
   * To perform tracing inside your Dart code, see [Tracing Dart code][]
     in the [Debugging][] page.
@@ -65,7 +65,7 @@ Before you begin, you want to make sure that you're running in
 For best results, you might choose the slowest device that
 your users might use.
 
-分析应用的性能问题需要打开性能监控图层(performance overlay)来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式(profile mode)][profile mode] 下运行，而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
+分析应用的性能问题需要打开性能监控图层 (performance overlay) 来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式 (profile mode) ] 下运行，而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
 
 ### Connect to a physical device
 
@@ -105,7 +105,7 @@ on the slowest device that your users might reasonably use._
   loaded onto the device. JIT can cause the app to pause for JIT
   compilation, which itself can cause jank.
   
-  调试模式和发布模式代码执行的方式也是不同的。调试编译采用的是“just in time”(JIT)模式运行应用，而分析和发布模式则是预编译到本地指令（“ahead of time”，或者叫 AOT）之后再加载到设备中。JIT本身的编译就可能导致应用暂停，从而导致卡顿。
+  调试模式和发布模式代码执行的方式也是不同的。调试编译采用的是“just in time” (JIT) 模式运行应用，而分析和发布模式则是预编译到本地指令（“ahead of time”，或者叫 AOT）之后再加载到设备中。JIT本身的编译就可能导致应用暂停，从而导致卡顿。
 {{site.alert.end}}
 
 ### Run in profile mode
@@ -171,10 +171,10 @@ the performance overlay, as discussed in the next section.
 DevTools provides features like profiling, examining the heap,
 displaying code coverage, enabling the performance overlay,
 and a step-by-step debugger.
-DevTools' [Timeline view][] allows you to investigate the
+DevTools' [Timeline] allows you to investigate the
 UI performance of your application on a frame-by-frame basis.
 
-Dart DevTool 提供诸如性能分析、堆测试以及显示代码覆盖率等功能。DevTool 的 [Timeline][Timeline view] 界面可以让开发者逐帧分析应用的 UI 性能。
+Dart DevTool 提供诸如性能分析、堆测试以及显示代码覆盖率等功能。DevTool 的 [Timeline] 界面可以让开发者逐帧分析应用的 UI 性能。
 
 Once your app is running in profile mode,
 [launch DevTools][].
@@ -251,7 +251,7 @@ the scene is too complicated to render quickly.
 expensive to both render and paint.<br>When both graphs
 display red, start by diagnosing the UI thread (Dart VM).
 
-<br>红色竖条表明当前帧的渲染和绘制都很耗时。<br>当两张图表都是红色时，就要开始对 UI 线程(Dart VM)进行诊断了。
+<br>红色竖条表明当前帧的渲染和绘制都很耗时。<br>当两张图表都是红色时，就要开始对 UI 线程 (Dart VM) 进行诊断了。
 
 ## Flutter's threads
 
@@ -291,7 +291,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
     be rendered on the device. _Don't block this thread!_
     Shown in the bottom row of the performance overlay.
     
-<dd markdown="1">UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 _图层树(layer tree)_ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。 _不要阻塞这个线程！_ 在性能图层的最低栏展示该线程。
+<dd markdown="1">UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 _图层树 (layer tree) _ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。 _不要阻塞这个线程！_ 在性能图层的最低栏展示该线程。
 
 <dt markdown="1">**GPU thread**</dt>
 
@@ -305,7 +305,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
     which is sometimes called the _rasterizer_ thread.
     Shown in the top row of the performance overlay.
     
-<dd markdown="1">GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做 _光栅器(rasterizer)线程_ 。在性能图层的最顶栏展示该线程。
+<dd markdown="1">GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做 _光栅器 (rasterizer) 线程_ 。在性能图层的最顶栏展示该线程。
 
 <dt markdown="1">**I/O** thread</dt>
 
@@ -315,7 +315,7 @@ Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代
     otherwise block either the UI or GPU threads.
     This thread is not shown in the performance overlay.
 
-<dd markdown="1">可能阻塞 UI 或者 GPU 线程的耗时任务（大多数情况下是 I/O)。该线程并不会在性能图层中展示。
+<dd markdown="1">可能阻塞 UI 或者 GPU 线程的耗时任务（大多数情况下是 I/O）。该线程并不会在性能图层中展示。
 
 For links to more information and videos,
 see [The Framework architecture][] on the
@@ -520,7 +520,7 @@ is fetched from persistent storage.
 The image is decompressed into host memory (GPU memory), and transferred
 to device memory (RAM).
 
-从资源的角度看，最重量级的操作之一是用图像文件来渲染纹理。首先，需要从持久存储中取出压缩图像，然后解压缩到宿主存储中（GPU 存储），再传输到设备存储器中(RAM)。
+从资源的角度看，最重量级的操作之一是用图像文件来渲染纹理。首先，需要从持久存储中取出压缩图像，然后解压缩到宿主存储中（GPU 存储），再传输到设备存储器中　(RAM) 。
 
 In other words, image I/O can be expensive.
 The cache provides snapshots of complex hierarchies so

@@ -36,7 +36,7 @@ how do you fix it? Where do you begin?
 This guide shows you where to start,
 steps to take, and tools that can help.
 
-有句话叫“ _快_ 的应用固然很好，但 _流畅_ 的应用则更好。”如果你的应用渲染并不流畅，该怎么处理呢？从哪里着手呢？本文展示了应该从哪里着手，步骤以及可以提供帮助的工具。
+有句话叫“**快**的应用固然很好，但**流畅**的应用则更好。”如果你的应用渲染并不流畅，该怎么处理呢？从哪里着手呢？本文展示了应该从哪里着手，步骤以及可以提供帮助的工具。
 
 {{site.alert.note}}
   * An app's performance is determined by more than one measure.

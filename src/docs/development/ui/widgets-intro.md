@@ -21,7 +21,7 @@ Flutter 从 [React](https://reactjs.org) 中吸取灵感，通过现代化框架
 {{site.alert.note}}
 
   If you would like to become better acquainted with Flutter by diving
-  into some code, check out [Basic layout
+  into some code, check out [Basic Flutter layout
   codelab](/docs/codelabs/layout-basics), [Building Layouts in
   Flutter](/docs/development/ui/layout), and [Adding Interactivity
   to Your Flutter App](/docs/development/ui/interactive).

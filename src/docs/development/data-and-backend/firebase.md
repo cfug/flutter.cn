@@ -55,7 +55,7 @@ Also, the Flutter community has created docs that you might find useful:
   [在 Flutter 中使用 Firebase 构建聊天应用][chat app]
 
 
-[Flutterfire plugins]: {{site.github}}/flutter/plugins/blob/master/FlutterFire.md
+[Flutterfire plugins]: {{site.github}}/FirebaseExtended/flutterfire
 [Firebase docs]: {{site.firebase}}/docs
 [codelab]: {{site.codelabs}}/codelabs/flutter-firebase
 [started]: {{site.firebase}}/docs/flutter/setup

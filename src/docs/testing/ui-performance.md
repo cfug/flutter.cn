@@ -65,7 +65,7 @@ Before you begin, you want to make sure that you're running in
 For best results, you might choose the slowest device that
 your users might use.
 
-分析应用的性能问题需要打开性能监控图层 (performance overlay) 来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式 (profile mode) ] 下运行，而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
+分析应用的性能问题需要打开性能监控图层 (performance overlay) 来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式][] 下运行，而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
 
 ### Connect to a physical device
 
@@ -530,7 +530,7 @@ cache images only where absolutely necessary._
 
 也就是说，图像的 I/O 操作是重量级的。
 缓存提供了复杂层次的快照，这样就可以方便地渲染到随后的帧中。
-_因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。_ 
+**因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。** 
 
 You can see which images are being cached by enabling the
 [PerformanceOverlayLayer.checkerboardRasterCacheImages][] switch.

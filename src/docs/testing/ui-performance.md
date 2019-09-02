@@ -56,7 +56,7 @@ steps to take, and tools that can help.
 
 ## Diagnosing performance problems
 
-## 分析性能问题
+ 分析性能问题
 
 To diagnose an app with performance problems, you'll enable
 the performance overlay to look at the UI and GPU threads.

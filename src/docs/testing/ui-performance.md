@@ -266,56 +266,55 @@ on other threads.
 
 Flutter 用了一些额外的线程来完成这项工作。开发者的 Dart 代码都在 UI 线程运行。尽管没有直接访问其他线程的权限，但 UI 线程的动作还是对其他线程的性能有影响的。
 
-<dl markdown="1">
-<dt markdown="1">**Platform thread**</dt>
+### **Platform thread**
 
-<dt markdown="1">**平台线程**</dt>
+### **平台线程**
 
-<dd markdown="1">The platform's main thread. Plugin code runs here.
-    For more information, see the [UIKit][] documentation for iOS,
-    or the [MainThread][] documentation for Android.
-    This thread is not shown in the performance overlay.
+The platform's main thread. Plugin code runs here.
+For more information, see the [UIKit][] documentation for iOS,
+or the [MainThread][] documentation for Android.
+This thread is not shown in the performance overlay.
     
-<dd markdown="1">该平台的主线程。插件代码在这里运行。更多信息请参阅：iOS 的 [UIKit][] 文档，或者 Android 的 [MainThread][] 文档。性能图层并不会展示该线程。
+该平台的主线程。插件代码在这里运行。更多信息请参阅：iOS 的 [UIKit][] 文档，或者 Android 的 [MainThread][] 文档。性能图层并不会展示该线程。
 
-<dt markdown="1">**UI thread**</dt>
+### **UI thread**
 
-<dt markdown="1">**UI 线程**</dt>
+### **UI 线程**
 
-<dd markdown="1">The UI thread executes Dart code in the Dart VM.
-    This thread includes code that you wrote, and code executed by
-    Flutter's framework on your app's behalf.
-    When your app creates and displays a scene, the UI thread creates
-    a _layer tree_, a lightweight object containing device-agnostic
-    painting commands, and sends the layer tree to the GPU thread to
-    be rendered on the device. _Don't block this thread!_
-    Shown in the bottom row of the performance overlay.
+The UI thread executes Dart code in the Dart VM.
+This thread includes code that you wrote, and code executed by
+Flutter's framework on your app's behalf.
+When your app creates and displays a scene, the UI thread creates
+a _layer tree_, a lightweight object containing device-agnostic
+painting commands, and sends the layer tree to the GPU thread to
+be rendered on the device. _Don't block this thread!_
+Shown in the bottom row of the performance overlay.
     
-<dd markdown="1">UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 _图层树 (layer tree) _ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。 _不要阻塞这个线程！_ 在性能图层的最低栏展示该线程。
+UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 _图层树 (layer tree) _ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。 _不要阻塞这个线程！_ 在性能图层的最低栏展示该线程。
 
-<dt markdown="1">**GPU thread**</dt>
+### **GPU thread**
 
-<dt markdown="1">**GPU 线程**</dt>
+### **GPU 线程**
 
-<dd markdown="1">The GPU thread takes the layer tree and displays
-    it by talking to the GPU (graphic processing unit).
-    You cannot directly access the GPU thread or its data but,
-    if this thread is slow, it's a result of something you've done
-    in the Dart code.  Skia, the graphics library, runs on this thread,
-    which is sometimes called the _rasterizer_ thread.
-    Shown in the top row of the performance overlay.
+The GPU thread takes the layer tree and displays
+it by talking to the GPU (graphic processing unit).
+You cannot directly access the GPU thread or its data but,
+if this thread is slow, it's a result of something you've done
+in the Dart code.  Skia, the graphics library, runs on this thread,
+which is sometimes called the _rasterizer_ thread.
+Shown in the top row of the performance overlay.
     
-<dd markdown="1">GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做 _光栅器 (rasterizer) 线程_ 。在性能图层的最顶栏展示该线程。
+GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做 _光栅器 (rasterizer) 线程_ 。在性能图层的最顶栏展示该线程。
 
-<dt markdown="1">**I/O** thread</dt>
+### **I/O** thread
 
-<dt markdown="1">**I/O** 线程</dt>
+### **I/O** 线程
 
-<dd markdown="1">Performs expensive tasks (mostly I/O) that would
-    otherwise block either the UI or GPU threads.
-    This thread is not shown in the performance overlay.
+Performs expensive tasks (mostly I/O) that would
+otherwise block either the UI or GPU threads.
+This thread is not shown in the performance overlay.
     
-<dd markdown="1">可能阻塞 UI 或者 GPU 线程的耗时任务（大多数情况下是 I/O）。该线程并不会在性能图层中展示。
+可能阻塞 UI 或者 GPU 线程的耗时任务（大多数情况下是 I/O）。该线程并不会在性能图层中展示。
 
 For links to more information and videos,
 see [The Framework architecture][] on the

@@ -290,7 +290,7 @@ painting commands, and sends the layer tree to the GPU thread to
 be rendered on the device. _Don't block this thread!_
 Shown in the bottom row of the performance overlay.
 
-UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 _图层树 (layer tree)_ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。**不要阻塞这个线程！**在性能图层的最低栏展示该线程。
+UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 **图层树(layer tree)** ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。**不要阻塞这个线程！**在性能图层的最低栏展示该线程。
 
 ### GPU thread 
 

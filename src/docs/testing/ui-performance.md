@@ -80,7 +80,7 @@ behavior of release mode builds.
 _You should consider checking performance
 on the slowest device that your users might reasonably use._
 
-几乎全部的 Flutter 应用性能调试都应该在真实的 Android 或者 iOS 设备上以 [分析模式][] 进行。通常来说，调试模式或者是模拟器上运行的应用的性能指标和发布模式的表现并不相同。 _应该考虑在用户使用的最慢的设备上检查性能。_
+几乎全部的 Flutter 应用性能调试都应该在真实的 Android 或者 iOS 设备上以 [分析模式][] 进行。通常来说，调试模式或者是模拟器上运行的应用的性能指标和发布模式的表现并不相同。**应该考虑在用户使用的最慢的设备上检查性能。**
 
 {{site.alert.secondary}}
   <h4 class="no_toc" markdown="1">**Why you should run on a real device:**</h4>
@@ -290,7 +290,7 @@ painting commands, and sends the layer tree to the GPU thread to
 be rendered on the device. _Don't block this thread!_
 Shown in the bottom row of the performance overlay.
 
-UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 _图层树 (layer tree)_ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。 _不要阻塞这个线程！_ 在性能图层的最低栏展示该线程。
+UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 _图层树 (layer tree)_ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。**不要阻塞这个线程！**在性能图层的最低栏展示该线程。
 
 ### GPU thread 
 
@@ -304,7 +304,7 @@ in the Dart code.  Skia, the graphics library, runs on this thread,
 which is sometimes called the _rasterizer_ thread.
 Shown in the top row of the performance overlay.
 
-GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做 _光栅器 (rasterizer) 线程_ 。在性能图层的最顶栏显示该线程。
+GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做**光栅器 (rasterizer) 线程**。在性能图层的最顶栏显示该线程。
 
 ### I/O thread
 
@@ -511,7 +511,7 @@ ask yourself these questions:
 
 Caching an image with [RepaintBoundary][] is good, _when it makes sense_.
 
-使用 [RepaintBoundary][] 来缓存图片是个好主意， _当需要的时候_ 。
+使用 [RepaintBoundary][] 来缓存图片是个好主意，**当需要的时候。**
 
 One of the most expensive operations, from a resource perspective,
 is rendering a texture using an image file. First, the compressed image

@@ -530,7 +530,7 @@ cache images only where absolutely necessary._
 
 也就是说，图像的 I/O 操作是重量级的。
 缓存提供了复杂层次的快照，这样就可以方便地渲染到随后的帧中。
-**因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。** 
+**因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。**
 
 You can see which images are being cached by enabling the
 [PerformanceOverlayLayer.checkerboardRasterCacheImages][] switch.

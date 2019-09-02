@@ -304,7 +304,7 @@ in the Dart code.  Skia, the graphics library, runs on this thread,
 which is sometimes called the _rasterizer_ thread.
 Shown in the top row of the performance overlay.
 
-GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做 _光栅器 (rasterizer) 线程_ 。在性能图层的最顶栏展示该线程。
+GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做 _光栅器 (rasterizer) 线程_ 。在性能图层的最顶栏显示该线程。
 
 ### I/O thread
 

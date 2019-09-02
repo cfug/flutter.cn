@@ -231,7 +231,7 @@ since [debug mode][] performance is intentionally sacrificed
 in exchange for expensive asserts that are intended to aid
 development, and thus the results are misleading.
 
-这个浮层只应在 [profile mode][] 中使用，因为在 [debug mode][] 下有意牺牲了性能来换取昂贵的断言以帮助开发，所以这时候的结果会具有误导性。
+这个浮层只应在 [profile mode][] 中使用，因为在 [debug mode][] 下有意牺牲了性能来换取昂贵的断言以帮助开发，所以这时候的结果会有误导性。
 
 Each frame should be created and displayed within 1/60th of
 a second (approximately 16ms). A frame exceeding this limit

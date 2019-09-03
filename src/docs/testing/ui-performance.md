@@ -511,7 +511,7 @@ ask yourself these questions:
 
 Caching an image with [RepaintBoundary][] is good, _when it makes sense_.
 
-使用 [RepaintBoundary][] 来缓存图片是个好主意，**当需要的时候。**
+使用重绘边界 ([RepaintBoundary][]) 来缓存图片是个好主意，**当需要的时候。**
 
 One of the most expensive operations, from a resource perspective,
 is rendering a texture using an image file. First, the compressed image
@@ -535,7 +535,7 @@ cache images only where absolutely necessary._
 You can see which images are being cached by enabling the
 [PerformanceOverlayLayer.checkerboardRasterCacheImages][] switch.
 
-打开 [PerformanceOverlayLayer.checkerboardRasterCacheImages][] 开关可以检查哪些图片被缓存了。
+打开覆盖层性能 棋盘格光栅缓存图像 ([PerformanceOverlayLayer.checkerboardRasterCacheImages][]) 开关可以检查哪些图片被缓存了。
 
 {% comment %}
 [TODO: Document how to do this, either via UI or programmatically.

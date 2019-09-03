@@ -353,7 +353,7 @@ from the Flutter inspector, which is available in the
 **Performance Overlay** button to toggle the overlay
 on your running app.
 
-打开 PerformanceOverlay widget 最简单的方法是 IDE 中 Flutter 插件提供的 Flutter inspector，你可以在 [开发者工具][] 的 [使用 Flutter inspector 工具][] 中找到。只需单击 **Performance Overlay** 按钮，即可在正在运行的应用程序上切换图层。
+打开 PerformanceOverlay widget 最简单的方法是 IDE 中 Flutter 插件提供的 Flutter inspector，你可以在 [开发者工具][DevTools] 的 [使用 Flutter inspector 工具][Inspector view] 中找到。只需单击 **Performance Overlay** 按钮，即可在正在运行的应用程序上切换图层。
 
 #### From the command line
 
@@ -372,7 +372,7 @@ To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
 
-要用代码实现性能图层，可以查看 [添加输出代码的方式调试 Flutter 应用][] 中的 [Performance overlay][]章节。
+要用代码实现性能图层，可以查看 [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programmatically] 中的 [Performance overlay][]章节。
 
 You are probably familiar with the Flutter Gallery example app.
 To use the performance overlay with Flutter Gallery,

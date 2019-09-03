@@ -231,7 +231,7 @@ since [debug mode][] performance is intentionally sacrificed
 in exchange for expensive asserts that are intended to aid
 development, and thus the results are misleading.
 
-这个浮层只应在 [分析模式][] 中使用，因为在 [调试模式][] 下有意牺牲了性能来换取昂贵的断言以帮助开发，所以这时候的结果会有误导性。
+这个浮层只应在 [分析模式][] 中使用，因为在 [调试模式][debug mode] 下有意牺牲了性能来换取昂贵的断言以帮助开发，所以这时候的结果会有误导性。
 
 Each frame should be created and displayed within 1/60th of
 a second (approximately 16ms). A frame exceeding this limit
@@ -372,7 +372,7 @@ To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
 
-要用代码实现性能图层，可以查看 [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programmatically] 中的 [Performance overlay][]章节。
+要用代码实现性能图层，可以查看 [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programmatically] 中的 [Performance overlay][] 章节。
 
 You are probably familiar with the Flutter Gallery example app.
 To use the performance overlay with Flutter Gallery,

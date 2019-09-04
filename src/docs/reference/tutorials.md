@@ -4,7 +4,7 @@ title: Flutter 实践教程
 toc: false
 ---
 
-The **Flutter Tutorials** teach you how to use the Flutter framework to
+The **Flutter tutorials** teach you how to use the Flutter framework to
 build mobile applications for iOS and Android.
 
 Flutter 实践教程，帮助你完成相对较为完整的 Flutter 小应用。

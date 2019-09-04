@@ -1,5 +1,5 @@
 ---
-title: Layout tutorial
+title: Building layouts
 title: 布局构建教程
 short-title: Tutorial
 short-title: 布局教程

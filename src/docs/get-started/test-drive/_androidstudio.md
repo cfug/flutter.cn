@@ -4,7 +4,9 @@
 
 ## 创建应用 {#create-app}
 
- 1. Open the IDE and select ***Start a new Flutter project***.
+{% include_relative _web-app.md  %}
+
+ 1. Open the IDE and select **Start a new Flutter project**.
 
     打开 IDE，选择 **新 Flutter 项目 (Start a new Flutter project)**.
     
@@ -12,7 +14,7 @@
 
     选择 **Flutter 应用程序** 作为项目类型， 然后点 **下一步**
 
- 1. Verify the Flutter SDK path specifies the SDK’s location 
+ 1. Verify the Flutter SDK path specifies the SDK’s location
     (select **Install SDK...** if the text field is blank).
 
     确认 **Flutter SDK 路径** 区域所示路径是正确的 SDK 路径。
@@ -29,6 +31,8 @@
  1. Wait for Android Studio to install the SDK and create the project.
     
     待 Android Studio 安装 SDK 后，创建项目。
+
+{% include_relative _package-name.md  %}
 
 {{site.alert.note}}
 

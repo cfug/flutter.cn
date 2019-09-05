@@ -5,6 +5,13 @@ description: Learn how to use the DevTools timeline view.
 description: 学习如何在开发者工具里使用时间轴视图。
 ---
 
+{{site.alert.note}}
+  The timeline view works with mobile apps only.
+  Use Chrome DevTools to [generate timeline
+  events](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference)
+  for a web app.
+{{site.alert.end}}
+
 ## What is it?
 
 The timeline view displays information about Flutter frames.

@@ -113,16 +113,17 @@ files:
 
 创建包含现有 Flutter 源码的新 Flutter 项目：
 
- 1. In the IDE, click **Create New Project** from the **Welcome** window or
-    **File > New > Project** from the main IDE window.
+ 1. In the IDE, click **Create New Project** from the
+    **Welcome** window or **File > New > Project**
+    from the main IDE window.
 
     在 IDE 中，点击 **Welcome** 窗口，或者主窗口
     **File > New > Project** 中的 **Create New Project**。
 
     {{site.alert.important}}
 
-      Do *not* use the **New > Project from existing sources** option for
-      Flutter projects.
+      Do *not* use the **New > Project from existing sources**
+      option for Flutter projects.
 
       对于 Flutter 项目，请*不要*使用 **New > Project from existing sources**。
 
@@ -132,7 +133,8 @@ files:
 
  	在菜单中选择 **Flutter**，点击 **Next**。
 
- 1. Under **Project location** enter, or browse to, the directory holding your
+ 1. Under **Project location** enter, or browse to,
+    the directory holding your
     existing Flutter source code files.
 
     在 **Project location** 下，输入或选择现有 Flutter 源码的文件目录。
@@ -213,8 +215,9 @@ Flutter-specific buttons on the right-hand side of the toolbar.
 {{site.alert.note}}
 
   If the Run and Debug buttons are disabled, and no targets are listed,
-  Flutter has not been able to discover any connected iOS or Android devices or
-  simulators.  You need to connect a device, or start a simulator, to proceed.
+  Flutter has not been able to discover any connected iOS or
+  Android devices or simulators.
+  You need to connect a device, or start a simulator, to proceed.
 
   如果 Run 和 Debug 按钮不可用，且未显示目标设备，、
   则 Flutter 未发现任何已连接的 iOS 、Android 设备或模拟器。
@@ -228,7 +231,15 @@ Flutter-specific buttons on the right-hand side of the toolbar.
     找到**选择目标**下拉按钮，点击它会显示出可用设备列表。
 
  2. Select the target you want your app to be started on.
-    When you connect devices, or start simulators, additional entries appear.
+    When you connect devices, or start simulators,
+    additional entries appear.
+
+{{site.alert.note}}
+  If you want to try running your app on the web,
+  but the **Chrome (web)** target doesn't appear in the
+  list of targets, make sure you've enabled web, as
+  described in [Building a web application][].
+{{site.alert.end}}
 
     选择你希望启动应用的设备。当连接设备或启动模拟器时，列表中将会加入新选项。
 
@@ -724,13 +735,16 @@ Prior to filing new issues:
 
 When filing new issues, include the output of [`flutter doctor`][]。
 
+当你在提交新的 issue 时，确保带上运行了 [`flutter doctor`][] 命令之后的返回内容。
+
+[Building a web application]: /docs/get-started/web
+[DevTools]: /docs/development/tools/devtools
 [DevTools' docs]: https://flutter.github.io/devtools
 [DevTools 文档]: https://flutter.github.io/devtools
 [GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
 [GitHub 问题跟踪]: {{site.repo.flutter}}-intellij/issues
 [JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
 [JetBrains 问题跟踪]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
-[`flutter doctor`]: /docs/resources/bug-reports#provide-some-flutter-diagnostics
 [`flutter doctor`]: /docs/resources/bug-reports#provide-some-flutter-diagnostics
 [Flutter IDE cheat sheet, MacOS version]: /docs/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf
 [Flutter IDE 速查表，MacOS 版]: /docs/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf

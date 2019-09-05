@@ -5,6 +5,13 @@ description: Learn how to use the DevTools performance view.
 description: 学习如何使用开发者工具的性能视图。
 ---
 
+{{site.alert.note}}
+  The performance view works with mobile apps only.
+  Use Chrome DevTools to [analyze
+  performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
+  of a web app.
+{{site.alert.end}}
+
 ## What is it?
 
 The performance view allows you to record and profile a session from your Dart application.

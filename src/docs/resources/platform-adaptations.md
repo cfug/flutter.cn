@@ -7,43 +7,54 @@ title: 不同平台操作体验的差异和适配
 
 ## 适配哲学
 
-There are generally 2 cases of platform adaptiveness:
+There are generally two cases of platform adaptiveness:
 
 平台适配通常有两种情形：
 
-1. Things that are behaviors of the OS environment (such as text editing and
-   scrolling) and that would be 'wrong' if a different behavior took place.
+1. Things that are behaviors of the OS environment
+   (such as text editing and scrolling) and that
+   would be 'wrong' if a different behavior took place.
 
    操作系统所特有的操作体验（例如文本编辑和滚动）。如果操作体验与操作系统不一致，则通常会被认为是“错误的”。
 
-2. Things that are conventionally implemented in apps using the OEM's SDKs
-   (such as using parallel tabs on iOS or showing an
-   [android.app.AlertDialog](https://developer.android.google.cn/reference/android/app/AlertDialog.html)
-   on Android).
+2. Things that are conventionally implemented in apps using
+   the OEM's SDKs (such as using parallel tabs on iOS or
+   showing an [android.app.AlertDialog][] on Android).
 
-   使用 OEM 提供的 SDK 实现的功能体验（例如 iOS 常使用的选项卡，Android 使用 [android.app.AlertDialog](https://developer.android.google.cn/reference/android/app/AlertDialog.html) 显示一个提示窗口）。
+   使用 OEM 提供的 SDK 实现的功能体验
+   （例如 iOS 常使用的选项卡，
+   Android 使用 [android.app.AlertDialog][] 显示一个提示窗口）。
 
-This article mainly covers the automatic adaptations provided by Flutter
-in case 1 on Android and iOS.
+This article mainly covers the automatic adaptations
+provided by Flutter in case 1 on Android and iOS.
 
 本文囊括了 Flutter 为解决情形 1 而提供的覆盖 Android 和 iOS 的自动适配。
 
-For case 2, Flutter bundles the means to produce the appropriate effects of
-the platform conventions but does not adapt automatically when app design
-choices are needed. For a discussion, see [#8410](https://github.com/flutter/flutter/issues/8410#issuecomment-468034023)
-and http://bit.ly/flutter-adaptive-widget-problem.
+For case 2, Flutter bundles the means to produce the
+appropriate effects of the platform conventions but doesn't
+adapt automatically when app design choices are needed.
+For a discussion, see [issue #8410][] and the
+[Material/Cupertino adaptive widget problem definition][].
 
-For an example of an app using different information architecture structures on
-Android and iOS but sharing the same content code, see https://github.com/flutter/samples/tree/master/platform_design.
+对于情形 2，Flutter 提供了一些工具可以生成符合平台习惯的体验，
+但是不会根据平台自动适配，需要根据 App 设计来手工选择。
+更多有关的讨论，请访问 [issue #8410][] 和这个文档
+[定义 Material/Cupertino widget 适配问题][Material/Cupertino adaptive widget problem definition]
 
-对于情形 2，Flutter 提供了一些工具可以生成符合平台习惯的体验，但是不会根据平台自动适配，需要根据 App 设计来手工选择。更多有关的讨论，请访问 [#8410](https://github.com/flutter/flutter/issues/8410#issuecomment-468034023)。
+For an example of an app using different information
+architecture structures on Android and iOS but sharing
+the same content code, see the [platform_design code samples][].
+
+如果一个应用需要在 Android 和 iOS 不同架构上使用相同的代码，
+请参阅 [platform_design 这份代码示例][platform_design code samples]。
 
 ## Page navigation
 
 ## 页面导航
 
-Flutter provides the navigation patterns seen on Android and iOS and also
-automatically adapts the navigation animation to the current platform.
+Flutter provides the navigation patterns seen on Android
+and iOS and also automatically adapts the navigation animation
+to the current platform.
 
 Flutter 分别为 Android 和 iOS 提供了各自平台的导航模式，并根据当前平台自动适配导航转场动画。
 
@@ -51,32 +62,38 @@ Flutter 分别为 Android 和 iOS 提供了各自平台的导航模式，并根�
 
 ### 导航转场动画
 
-On **Android**, the default
-[Navigator.push]({{site.api}}/flutter/widgets/Navigator/push.html)
-transition is modeled after
-[startActivity()](https://developer.android.google.cn/reference/android/app/Activity.html#startActivity(android.content.Intent)),
+On **Android**, the default [`Navigator.push()`][] transition
+is modeled after [`startActivity()`][]),
 which generally has one bottom-up animation variant.
 
-**Android** 平台，默认提供的 [Navigator.push]({{site.api}}/flutter/widgets/Navigator/push.html) 转场动画模仿了 [startActivity()](https://developer.android.google.cn/reference/android/app/Activity.html#startActivity(android.content.Intent)) 的动画，即一种自下而上的动画效果。
+**Android** 平台，默认提供的 [`Navigator.push()`][] 
+转场动画模仿了 [`startActivity()`][] 的动画，
+即一种自下而上的动画效果。
 
 On **iOS**:
 
 **iOS** 平台：
 
-* The default
-  [Navigator.push]({{site.api}}/flutter/widgets/Navigator/push.html)
-  API produces an iOS Show/Push style transition which animates from
-  end-to-start depending on the locale's RTL setting. The page behind the new
-  route also parallax-slides in the same direction as in iOS.
+* The default [`Navigator.push()`][] API produces an
+  iOS Show/Push style transition that animates from
+  end-to-start depending on the locale's RTL setting.
+  The page behind the new route also parallax-slides
+  in the same direction as in iOS.
 
-  iOS 的 [Navigator.push]({{site.api}}/flutter/widgets/Navigator/push.html) API 提供了 iOS 上的 Show 转场动画（也被成为 Push 转场动画），即根据语言的方向设置，执行一种从后到前的滚动动画效果。在显示新页面的时候，原来的页面也会沿着相同的方向进行视差滚动。
+  iOS 的 [`Navigator.push()`][] API 提供了 iOS 上的
+  Show 转场动画（也被成为 Push 转场动画），
+  即根据语言的方向设置，执行一种从后到前的滚动动画效果。
+  在显示新页面的时候，原来的页面也会沿着相同的方向进行视差滚动。
 
-* A separate bottom-up transition style exists when pushing a page route where
- [PageRoute.fullscreenDialog]({{site.api}}/flutter/widgets/PageRoute-class.html)
-  is true. This represents iOS's Present/Modal style transition and is
-  typically used on fullscreen modal pages.
+* A separate bottom-up transition style exists when
+  pushing a page route where [`PageRoute.fullscreenDialog`][]
+  is true. This represents iOS's Present/Modal style
+  transition and is typically used on fullscreen modal pages.
 
-  当显示一个页面，且 [PageRoute.fullscreenDialog]({{site.api}}/flutter/widgets/PageRoute-class.html) 是 true 的时候，iOS 提供了另外一种自下而上的动画效果。这个动画通常被用在展示全屏模态页，也被成为 iOS 上的 Present 转场动画或 Modal 转场动画。
+  当显示一个页面，且 [`PageRoute.fullscreenDialog`][] 是 true 的时候，
+  iOS 提供了另外一种自下而上的动画效果。
+  这个动画通常被用在展示全屏模态页，
+  也被成为 iOS 上的 Present 转场动画或 Modal 转场动画。
 
 
 <div class="container">
@@ -112,29 +129,36 @@ On **iOS**:
 
 ### 不同平台的转场动画细节
 
-On **Android**, 2 page transition animation styles exist depending on your OS
-version:
+On **Android**,
+two page transition animation styles exist depending
+on your OS version:
 
 **Android** 平台上，根据你的操作系统版本差异，有两种不通的转场动画：
 
-* Pre API 28 uses a bottom-up animation that [slides up and fades
-  in]({{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html).
+* Pre API 28 uses a bottom-up animation that
+  [slides up and fades in][].
 
-  API 28 版本之前的系统，提供了一种自下而上 [滚动并淡出]({{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html) 的动画效果。
+  API 28 版本之前的系统，提供了一种自下而上 
+  [滚动并淡出][slides up and fades in] 的动画效果。
 
-* On API 28 and later, the bottom-up animation [slides and clip-reveals
-  up]({{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html).
+* On API 28 and later, the bottom-up animation
+  [slides and clip-reveals up][].
 
-  API 28 和以后的系统，则提供了另外一种自下而上 [滚动并反向翻转]({{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html) 的动画效果。
+  API 28 和以后的系统，则提供了另外一种自下而上
+  [滚动并反向翻转][slides and clip-reveals up] 的动画效果。
 
-On **iOS** when the push style transition is used, Flutter's bundled
-[CupertinoNavigationBar]({{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html)
-and [CupertinoSliverNavigationBar]({{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html)
-nav bars automatically animate each subcomponent to its corresponding
-subcomponent on the next or previous page's CupertinoNavigationBar or
-CupertinoSliverNavigationBar.
+On **iOS** when the push style transition is used,
+Flutter's bundled [`CupertinoNavigationBar`][]
+and [`CupertinoSliverNavigationBar`][] nav bars
+automatically animate each subcomponent to its corresponding
+subcomponent on the next or previous page's
+`CupertinoNavigationBar` or `CupertinoSliverNavigationBar`.
 
-当在 **iOS** 平台上使用 Push 转场特效的时候，Flutter 内置的 [CupertinoNavigationBar]({{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html) 和 [CupertinoSliverNavigationBar]({{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html) 会自动的给当前页和下一页的子组件使用正确的动画效果。
+当在 **iOS** 平台上使用 Push 转场特效的时候，
+Flutter 内置的 [`CupertinoNavigationBar`][]
+和 [`CupertinoSliverNavigationBar`][]
+会自动的给当前页下一页的子组件使用正确的动画效果
+（`CupertinoNavigationBar` 或者 `CupertinoSliverNavigationBar`）。
 
 <div class="container">
   <div class="row">
@@ -169,14 +193,15 @@ CupertinoSliverNavigationBar.
 
 ### 返回导航
 
-On **Android**, the OS back button, by default, is sent to Flutter and pops the
-top route of the
-[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html)'s
-Navigator.
+On **Android**,
+the OS back button, by default, is sent to Flutter
+and pops the top route of the [`WidgetsApp`][]'s Navigator.
 
-**Android** 平台，通常操作系统的返回按钮触发的事件会发给 Flutter，并弹出 [WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html) 路由的最顶端。
+**Android** 平台，通常操作系统的返回按钮触发的事件会发给 Flutter，
+并弹出  [`WidgetsApp`][] 路由的最顶端。
 
-On **iOS**, an edge swipe gesture can be used to pop the top route.
+On **iOS**,
+an edge swipe gesture can be used to pop the top route.
 
 **iOS** 平台，从屏幕边缘的轻扫手势会弹出路由的最顶端。
 
@@ -205,8 +230,9 @@ On **iOS**, an edge swipe gesture can be used to pop the top route.
 
 ## 滚动
 
-Scrolling is an important part of the platform's look and feel, and Flutter
-automatically adjusts the scrolling behavior to match the current platform.
+Scrolling is an important part of the platform's
+look and feel, and Flutter automatically adjusts
+the scrolling behavior to match the current platform.
 
 滚动是不通平台提供独有体验非常重要的一环，Flutter 会根据当前的平台自动适配滚动体验。
 
@@ -214,11 +240,12 @@ automatically adjusts the scrolling behavior to match the current platform.
 
 ### 物理仿真
 
-Android and iOS both have complex scrolling physics simulations that are
-difficult to describe verbally. Generally, iOS's scrollable has more weight and
-dynamic friction but Android has more static friction. Therefore iOS gains high
-speed more gradually but stops less abruptly and is more slippery at
-slow speeds.
+Android and iOS both have complex scrolling physics
+simulations that are difficult to describe verbally.
+Generally, iOS's scrollable has more weight and
+dynamic friction but Android has more static friction.
+Therefore iOS gains high speed more gradually but stops
+less abruptly and is more slippery at slow speeds.
 
 Android 和 iOS 平台都提供了非常复杂的滚动物理仿真，因而很难用语言来描述。通常来说，iOS 的滚动通常提供更多的分量和动态的阻力；而 Android 则更多的使用静态的阻力。所以，iOS 随着滚动慢慢的达到高速，且不会突然的停止，而且在慢速的时候显得更顺滑。
 
@@ -255,17 +282,19 @@ Android 和 iOS 平台都提供了非常复杂的滚动物理仿真，因而很�
 
 ### 滚动边界行为
 
-On **Android**, scrolling past the edge of a scrollable shows an
-[overscroll glow indicator]({{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html)
-(based on the color of the current Material theme).
+On **Android**,
+scrolling past the edge of a scrollable shows an
+[overscroll glow indicator][] (based on the color
+of the current Material theme).
 
-**Android** 平台，滚动达到边界的时候，会显示 [滚动灰色指示]({{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html)（具体颜色根据 Material 主题而有所不同）。
+**Android** 平台，滚动达到边界的时候，会显示
+[滚动灰色指示][overscroll glow indicator]
+（具体颜色根据 Material 主题而有所不同）。
 
 On **iOS**, scrolling past the edge of a scrollable
-[overscrolls]({{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html)
-with increasing resistance and snaps back.
+[overscrolls][] with increasing resistance and snaps back.
 
-**iOS** 平台，滚动达到边界的时候，会显示一个 [滚动边界]({{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html) 的弹簧效果。
+**iOS** 平台，滚动达到边界的时候，会显示一个 [滚动边界][overscrolls] 的弹簧效果。
 
 <div class="container">
   <div class="row">
@@ -292,11 +321,13 @@ with increasing resistance and snaps back.
 
 ### 动量
 
-On **iOS**, repeated flings in the same direction stacks momentum and
-builds more speed with each successive fling. There is no equivalent
-behavior on *Android*.
+On **iOS**,
+repeated flings in the same direction stacks momentum
+and builds more speed with each successive fling.
+There is no equivalent behavior on *Android*.
 
-**iOS** 平台，不停的按相同方向滚动会产生动量叠加，从而连续滚动速度会越来越快。在 *Android* 平台上没有对应的行为。
+**iOS** 平台，不停的按相同方向滚动会产生动量叠加，
+从而连续滚动速度会越来越快。在 *Android* 平台上没有对应的行为。
 
 <div class="container">
   <div class="row">
@@ -315,8 +346,10 @@ behavior on *Android*.
 
 ### 返回顶部
 
-On **iOS**, tapping the OS status bar scrolls the primary scroll controller
-to the top position. There is no equivalent behavior on **Android**.
+On **iOS**,
+tapping the OS status bar scrolls the primary
+scroll controller to the top position.
+There is no equivalent behavior on **Android**.
 
 **iOS** 平台，点击操作系统的状态栏，主要的滚动条控制器会滚动到顶部。 **Android** 没有对应的行为。
 
@@ -337,22 +370,27 @@ to the top position. There is no equivalent behavior on **Android**.
 
 ## 排版
 
-When using the Material package, the typography automatically defaults to the
-font family appropriate for the platform. On Android, the Roboto font is used.
+When using the Material package,
+the typography automatically defaults to the
+font family appropriate for the platform.
+On Android, the Roboto font is used.
 On iOS, the OS's San Francisco font family is used.
 
-当使用 Material 包的时候，排版会根据平台自动使用对应的字体。Android 平台会使用 Roboto 字体，而 iOS 则会使用系统自带的 San Francisco 字体。
+当使用 Material package 的时候，排版会根据平台自动使用对应的字体。
+Android 平台会使用 Roboto 字体，
+而 iOS 则会使用系统自带的 San Francisco 字体。
 
-When using the Cupertino package, the [default
-theme](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart)
+When using the Cupertino package, the [default theme][]
 always uses the San Francisco font.
 
-当使用 Cupertino 包的时候，[默认主题](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart) 会一直使用 San Francisco 字体。
+当使用 Cupertino 包的时候，[默认主题][default theme] 
+会一直使用 San Francisco 字体。
 
-The San Francisco font license limits its usage to software running on iOS,
-macOS, or tvOS only. Therefore a fallback font is used when running on Android
-if the platform is debug-overridden to iOS or the default Cupertino theme is
-used.
+The San Francisco font license limits its usage to
+software running on iOS, macOS, or tvOS only.
+Therefore a fallback font is used when running on Android
+if the platform is debug-overridden to iOS or the
+default Cupertino theme is used.
 
 San Francisco 字体的授权限制了它只能被用在运行于 iOS、macOS 和 tvOS 平台上的软件。因此当运行在 Android 平台的时候，即使强制覆盖系统平台为 iOS 或者使用 Cupertino 默认主题，都会使用对应的替代字体。
 
@@ -381,12 +419,17 @@ San Francisco 字体的授权限制了它只能被用在运行于 iOS、macOS �
 
 ## 图标
 
-When using the Material package, certain icons automatically show different
-graphics depending on the platform. For instance, the overflow button's 3 dots
-are vertical on iOS and horizontal on Android. The back button is a simple
-chevron on iOS and has a stem/shaft on Android.
+When using the Material package,
+certain icons automatically show different
+graphics depending on the platform.
+For instance, the overflow button's three dots
+are vertical on iOS and horizontal on Android.
+The back button is a simple chevron on iOS and
+has a stem/shaft on Android.
 
-当使用 Material 包的时候，根据平台不通，图标的具体样式会有差别。举例来说，更多按钮的图标，Android 上是竖直的三个点而 iOS 是横着的三个点；退回按钮，iOS 是一个简单的 V 型标记，而 Android 平台，V 型标记有个短横线。
+当使用 Material 包的时候，根据平台不通，图标的具体样式会有差别。
+举例来说，更多按钮的图标，Android 上是竖直的三个点而 iOS 是横着的三个点；
+退回按钮，iOS 是一个简单的 V 型标记，而 Android 平台，V 型标记有个短横线。
 
 <div class="container">
   <div class="row">
@@ -413,18 +456,20 @@ chevron on iOS and has a stem/shaft on Android.
 
 ## 触摸反馈
 
-The Material and Cupertino packages automatically trigger the platform
-appropriate haptic feedback in certain scenarios.
+The Material and Cupertino packages automatically
+trigger the platform appropriate haptic feedback in
+certain scenarios.
 
 Material 和 Cupertino 包在特定场景下都会自动触发符合平台特点的触摸反馈。
 
-For instance, a word selection via text field long-press triggers a 'buzz'
+For instance,
+a word selection via text field long-press triggers a 'buzz'
 vibrate on Android and not on iOS.
 
 例如，在文本输入框控件里面长按选中单词会在 Android 设备上会触发震动，而 iOS 不会。
 
-Scrolling through picker items on iOS triggers a 'light impact' knock and
-no feedback on Android.
+Scrolling through picker items on iOS triggers a
+'light impact' knock and no feedback on Android.
 
 在 iOS 滚动选择器项目列表，会触发一个很轻的敲击音效，而 Android 则不会。
 
@@ -432,8 +477,8 @@ no feedback on Android.
 
 ## 文本编辑
 
-Flutter also makes the below adaptations while editing the content of text
-fields to match the current platform.
+Flutter also makes the below adaptations while editing
+the content of text fields to match the current platform.
 
 Flutter 会根据当前平台来适配正确的文本编辑体验。
 
@@ -441,16 +486,22 @@ Flutter 会根据当前平台来适配正确的文本编辑体验。
 
 ### 键盘手势导航
 
-On **Android**, horizontal swipes can be made on the soft keyboard's spacebar
+On **Android**,
+horizontal swipes can be made on the soft keyboard's spacebar
 to move the cursor in Material and Cupertino text fields.
 
-**Android** 平台，在虚拟键盘空格键上可以通过左右轻扫来移动光标，Material 和 Cupertino 的文本输入框控件都支持该特性。
+**Android** 平台，
+在虚拟键盘空格键上可以通过左右轻扫来移动光标，
+Material 和 Cupertino 的文本输入框控件都支持该特性。
 
-On **iOS** devices with 3D Touch capabilities, a force-press-drag gesture,
-could be made on the soft keyboard to move the cursor in 2D via a floating
-cursor. This works on both Material and Cupertino text fields.
+On **iOS** devices with 3D Touch capabilities,
+a force-press-drag gesture could be made on the soft
+keyboard to move the cursor in 2D via a floating cursor.
+This works on both Material and Cupertino text fields.
 
-**iOS** 设备提供了 3D Touch 兼容，通过在虚拟键盘上使用长按并拖拽手势可以任意方向移动光标。Material 和 Cupertino 都对这个功能提供了支持。
+**iOS** 设备提供了 3D Touch 兼容，
+通过在虚拟键盘上使用长按并拖拽手势可以任意方向移动光标。
+Material 和 Cupertino 都对这个功能提供了支持。
 
 <div class="container">
   <div class="row">
@@ -477,13 +528,15 @@ cursor. This works on both Material and Cupertino text fields.
 
 ### 文本选中工具栏
 
-With **Material on Android**, the Android style selection toolbar is shown when
+With **Material on Android**,
+the Android style selection toolbar is shown when
 a text selection is made in a text field.
 
 在 **Android** 平台上使用 **Material**，在文本输入框里面选中文本会显示一个 Android 风格的文本选中工具栏。
 
-With **Material on iOS** or when using **Cupertino**, the iOS style selection
-toolbar is shown when a text selection is made in a text field.
+With **Material on iOS** or when using **Cupertino**,
+the iOS style selection toolbar is shown when a text
+selection is made in a text field.
 
 在 **iOS** 平台上使用 **Material** 或者在两个平台上都使用 **Cupertino**，在文本输入框里面选中文本会展示一个 iOS 风格的文本选中工具栏。
 
@@ -512,18 +565,20 @@ toolbar is shown when a text selection is made in a text field.
 
 ### 点击手势
 
-With **Material on Android**, a single tap in a text field puts the cursor at
-the location of the tap.
+With **Material on Android**,
+a single tap in a text field puts the cursor at the
+location of the tap.
 
 在 **Android** 平台使用 **Material**，在文本控件中点击会移动光标到点击处。
 
-A collapsed text selection also shows a draggable handle to subsequently move
-the cursor.
+A collapsed text selection also shows a draggable
+handle to subsequently move the cursor.
 
 同时，光标会有一个可移动的把手，随后可以通过这个把手移动光标。
 
-With **Material on iOS** or when using **Cupertino**, a single tap in a text
-field puts the cursor at the nearest edge of the word tapped.
+With **Material on iOS** or when using **Cupertino**,
+a single tap in a text field puts the cursor at the
+nearest edge of the word tapped.
 
 在 **iOS** 平台使用 **Material** 或者在两个平台都使用 **Cupertino**，在文本空间中点击，会把光标移动到点击处最近的单词末尾。
 
@@ -556,14 +611,15 @@ Collapsed text selections don't have draggable handles on iOS.
 
 ### 长按手势
 
-With **Material on Android**, a long press selects the word under the long
-press. The selection toolbar is shown upon release.
+With **Material on Android**,
+a long press selects the word under the long press.
+The selection toolbar is shown upon release.
 
 在 **Android** 平台使用 **Material**，在单词上长按会选中单词，并在释放长按的时候显示文本选中工具栏。
 
-With **Material on iOS** or when using **Cupertino**, a long press places the
-cursor at the location of the long pres. The selection toolbar is shown upon
-release.
+With **Material on iOS** or when using **Cupertino**,
+a long press places the cursor at the location of the
+long press. The selection toolbar is shown upon release.
 
 在 **iOS** 平台使用 **Material** 或者在两个平台都使用 **Cupertino**，长按会把光标放置到长按的位置，并在释放长按的时候显示文本选中工具栏。
 
@@ -592,13 +648,13 @@ release.
 
 ### 长按并拖放手势
 
-With **Material on Android**, dragging while holding the long press expands
-the words selected.
+With **Material on Android**,
+dragging while holding the long press expands the words selected.
 
 在 **Android** 平台上使用 **Material**，长按并拖拽会选中更多单词。
 
-With **Material on iOS** or when using **Cupertino**, dragging while holding
-the long press moves the cursor.
+With **Material on iOS** or when using **Cupertino**,
+dragging while holding the long press moves the cursor.
 
 在 **iOS** 平台使用 **Material** 或者在两个平台都使用 **Cupertino**，长按并拖拽会移动光标。
 
@@ -627,10 +683,13 @@ the long press moves the cursor.
 
 ### 双击手势
 
-On both Android and iOS, a double tap selects the word receiving the
+On both Android and iOS,
+a double tap selects the word receiving the
 double tap and shows the selection toolbar.
 
-Android 和 iOS 平台上，双击选中一个单词都会收到双击手势事件，并显示文本选中工具栏。
+Android 和 iOS 平台上，
+双击选中一个单词都会收到双击手势事件，
+并显示文本选中工具栏。
 
 <div class="container">
   <div class="row">
@@ -652,3 +711,20 @@ Android 和 iOS 平台上，双击选中一个单词都会收到双击手势事�
     </div>
   </div>
 </div>
+
+
+[issue #8410]: {{site.github}}/flutter/flutter/issues/8410#issuecomment-468034023
+[android.app.AlertDialog]: {{site.android-dev}}/reference/android/app/AlertDialog.html
+[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
+[`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
+[default theme]: https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart
+[Material/Cupertino adaptive widget problem definition]: http://bit.ly/flutter-adaptive-widget-problem
+[`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
+[overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
+[overscrolls]: {{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html
+[`PageRoute.fullscreenDialog`]: {{site.api}}/flutter/widgets/PageRoute-class.html
+[platform_design code samples]: {{site.github}}/flutter/samples/tree/master/platform_design
+[slides and clip-reveals up]: {{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html
+[slides up and fades in]: {{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html
+[`startActivity()`]: {{site.android-dev}}/reference/android/app/Activity.html#startActivity(android.content.Intent
+[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html

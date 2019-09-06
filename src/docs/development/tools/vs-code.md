@@ -20,11 +20,12 @@ description: 如何在 VS Code 里开发 Flutter 应用。
 
 ## 安装和配置
 
-Follow the [Set up an editor](/docs/get-started/editor?tab=vscode)
-instructions to install the Dart and Flutter extensions
+Follow the [Set up an editor][] instructions to
+install the Dart and Flutter extensions
 (also called plugins).
 
-根据 [编辑工具设定](/docs/get-started/editor?tab=vscode) 的指引来安装 Dart 和 Flutter 扩展（也叫做插件）。
+根据 [编辑工具设定][Set up an editor]
+的指引来安装 Dart 和 Flutter 扩展（也叫做插件）。
 
 ### Updating the extension {#updating}
 
@@ -49,6 +50,10 @@ To install updates manually:
     
     如果 Flutter 扩展显示有可用更新，点击更新按钮，然后重载。
 
+ 1. Restart VS Code.
+
+    重启 VS Code。
+
 ## Creating projects
 
 ## 创建项目
@@ -57,7 +62,8 @@ To install updates manually:
 
 ### 新建项目
 
-To create a new Flutter project from the Flutter starter app template:
+To create a new Flutter project from the Flutter
+starter app template:
 
 通过 Flutter 入门应用模板新建 Flutter 项目：
 
@@ -91,7 +97,8 @@ To open an existing Flutter project:
  
     在 IDE 主窗口点击 **File > Open**。
  
- 1. Browse to the directory holding your existing Flutter source code files.
+ 1. Browse to the directory holding your existing
+    Flutter source code files.
  
     选择存放现有 Flutter 源代码文件的目录。
   
@@ -103,7 +110,8 @@ To open an existing Flutter project:
 
 ## 编写代码及查看问题
 
-The Flutter extension performs code analysis that enables the following:
+The Flutter extension performs code analysis that
+enables the following:
 
 Flutter 扩展执行代码分析，它提供：
 
@@ -115,10 +123,13 @@ Flutter 扩展执行代码分析，它提供：
 
   基于丰富输入分析的代码补全。
   
-* Navigating to type declarations (**Go to Definition** or `F12`),
-  and finding type usages (**Find All References** or `Shift`+`F12`)
+* Navigating to type declarations
+  (**Go to Definition** or `F12`),
+  and finding type usages
+  (**Find All References** or `Shift`+`F12`)
   
-  导航到类型声明（**Go to Definition** 或 `F12`）和查找类型引用（**Find All References** 或 `Shift`+`F12`）。
+  导航到类型声明（**Go to Definition** 或 `F12`）
+  和查找类型引用（**Find All References** 或 `Shift`+`F12`）。
   
 * Viewing all current source code problems
   (**View > Problems** or `Ctrl`+`Shift`+`M`
@@ -199,14 +210,24 @@ However, if you have multiple devices/simulators connected, click
 at the top of the screen. Select the device you want to use for
 running or debugging.
 
-Flutter 扩展会自动选择上次连接的设备。然而，如果你有多个设备/模拟器连接，点击状态栏的 **device** 查看屏幕顶部的选择列表。选择你要用来运行或调试的设备。
+Flutter 扩展会自动选择上次连接的设备。
+然而，如果你有多个设备/模拟器连接，
+点击状态栏的 **device** 查看屏幕顶部的选择列表。
+选择你要用来运行或调试的设备。
+
+{{site.alert.note}}
+  If you want to try running your app on the web,
+  but the **Chrome (web)** target doesn't appear in the
+  list of targets, make sure you've enabled web, as
+  described in [Building a web application][].
+{{site.alert.end}}
 
 ### Run app without breakpoints
 
 ### 无断点运行
 
- 1. Click **Debug > Start Without Debugging** in the main IDE window,
-    or press `Ctrl`+`F5`.
+ 1. Click **Debug > Start Without Debugging** in the
+    main IDE window, or press `Ctrl`+`F5`.
     The status bar turns orange to show you are in a debug session.<br>
 
     在 IDE 主窗口点击 **Debug > Start Without Debugging**，或者按 `Ctrl`+`F5`。
@@ -221,7 +242,8 @@ Flutter 扩展会自动选择上次连接的设备。然而，如果你有多个
     
     如果需要，在源代码中设置断点。
    
- 1. Click **Debug > Start Debugging** in the main IDE window, or press `F5`.
+ 1. Click **Debug > Start Debugging** in the main IDE window, 
+    or press `F5`.
     
     在 IDE 主窗口点击 **Debug > Start Debugging** 或按 `F5`。
  
@@ -244,11 +266,14 @@ Flutter 扩展会自动选择上次连接的设备。然而，如果你有多个
 
 ## 快速编辑和刷新开发周期
 
-Flutter offers a best-in-class developer cycle enabling you to see the effect
-of your changes almost instantly with the _Stateful Hot Reload_ feature. See
+Flutter offers a best-in-class developer cycle enabling you
+to see the effect of your changes almost instantly with the
+_Stateful Hot Reload_ feature. See
 [Using hot reload](hot-reload) for details.
 
-Flutter 提供一流的开发周期，通过 **hot reload** 特性使你在几乎修改代码的同时就能看到变化。详情请看 [使用热重载](hot-reload)。
+Flutter 提供一流的开发周期，通过 **Stateful Hot Reload** 
+特性使你在几乎修改代码的同时就能看到变化。
+详情请看 [使用热重载](hot-reload)。
 
 ## Advanced debugging
 
@@ -280,8 +305,8 @@ version of the label.
 
 ### 调试外部库
 
-By default, debug an external library is disabled in Flutter extension.
-To enable:
+By default, debugging an external library is disabled
+in the Flutter extension. To enable:
 
 默认情况下，Flutter 扩展禁止调试外部库。启用步骤：
 
@@ -360,8 +385,8 @@ can assist in correcting it.
 ### 代码片段
 
 Snippets can be used to speed up entering typical code structures.
-They are invoked by typing their prefix, 
-and then selecting from the code completion window: 
+They are invoked by typing their prefix,
+and then selecting from the code completion window:
 
 代码片段可以用来加速输入通用类型代码段。
 通过输入前缀来调用，然后从代码完成窗口中选择：
@@ -404,7 +429,8 @@ You can also define custom snippets by executing
   **Debug Toolbar**, or pressing `Ctrl`+`Shift`+`F5`
   (`Cmd`+`Shift`+`F5` on macOS) performs a hot reload.
   
-  调试期间，在**调试工具栏**点击**重启**按钮，或者按 `Ctrl`+`Shift`+`F5` (macOS 用 `Cmd`+`Shift`+`F5`)执行热重载。
+  调试期间，在**调试工具栏**点击**重启**按钮，
+  或者按 `Ctrl`+`Shift`+`F5` (macOS 用 `Cmd`+`Shift`+`F5`)执行热重载。
   
   Keyboard mappings can be changed by executing the **Open Keyboard Shortcuts**
   command from the [Command Palette][].
@@ -441,9 +467,10 @@ A few types of code changes cannot be hot reloaded though:
 
   应用的 `main()` 方法
 
-For these changes, fully restart your application without having to end your
-debugging session. To perform a hot restart, run the **Flutter: Hot Restart**
-command from the [Command Palette][], or press `Ctrl`+`F5`.
+For these changes, fully restart your application without
+having to end your debugging session. To perform a hot restart,
+run the **Flutter: Hot Restart** command from the
+[Command Palette][], or press `Ctrl`+`F5`.
 
 对于这些更改，你无需结束调试过程而直接热重启 (hot restart) 你的应用。
 要执行热重启，执行 [命令面板][] 的 **Flutter：热重启**命令，或者按 `Ctrl`+`F5`。
@@ -462,14 +489,14 @@ All known bugs are tracked in the issue tracker:
 所有已知 bug 在这个 issue 列表中记录：
 [Dart 和 Flutter 扩展 GitHub issue 追踪][]。
 
-We very much welcome feedback,
+We welcome feedback,
 both on bugs/issues and feature requests.
 Prior to filing new issues:
 
 我们非常欢迎 bugs/issues 和特性请求的反馈。在提交新 issue 之前：
 
-* Do a quick search in the issue trackers to see if the issue is already
-  tracked.
+* Do a quick search in the issue trackers to see if the
+  issue is already tracked.
   
   在 issue 列表中查找看该问题是否已被记录。
   
@@ -481,7 +508,8 @@ Prior to filing new issues:
 When filing new issues, include [flutter doctor][] output.
 
 提交新 issue 时，请包含 [flutter doctor][] 输出。
-
+ 
+[Building a web application]: /docs/get-started/web
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [命令面板]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [DevTools' docs]: https://flutter.github.io/devtools
@@ -493,7 +521,8 @@ When filing new issues, include [flutter doctor][] output.
 [Dart 和 Flutter 扩展 GitHub issue 追踪]: {{site.github}}/Dart-Code/Dart-Code/issues
 [DevTools]: /docs/development/tools/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
+[Flutter inspector]: /docs/development/tools/devtools/inspector
 [let us know]: {{site.github}}/flutter/website/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
-[Flutter inspector]: /docs/development/tools/devtools/inspector
+[Set up an editor](/docs/get-started/editor?tab=vscode)

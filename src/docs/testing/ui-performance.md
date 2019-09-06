@@ -65,7 +65,7 @@ Before you begin, you want to make sure that you're running in
 For best results, you might choose the slowest device that
 your users might use.
 
-分析应用的性能问题需要打开性能监控图层 (performance overlay) 来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式 (profile mode) ] 下运行，而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
+分析应用的性能问题需要打开性能监控图层 (performance overlay) 来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式][] 下运行，而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
 
 ### Connect to a physical device
 
@@ -80,7 +80,7 @@ behavior of release mode builds.
 _You should consider checking performance
 on the slowest device that your users might reasonably use._
 
-几乎全部的 Flutter 应用性能调试都应该在真实的 Android 或者 iOS 设备上以 [分析模式][] 进行。通常来说，调试模式或者是模拟器上运行的应用的性能指标和发布模式的表现并不相同。 _应该考虑在用户使用的最慢的设备上检查性能。_
+几乎全部的 Flutter 应用性能调试都应该在真实的 Android 或者 iOS 设备上以 [分析模式][] 进行。通常来说，调试模式或者是模拟器上运行的应用的性能指标和发布模式的表现并不相同。**应该考虑在用户使用的最慢的设备上检查性能。**
 
 {{site.alert.secondary}}
   <h4 class="no_toc" markdown="1">**Why you should run on a real device:**</h4>
@@ -231,7 +231,7 @@ since [debug mode][] performance is intentionally sacrificed
 in exchange for expensive asserts that are intended to aid
 development, and thus the results are misleading.
 
-这个浮层只应在 [profile mode][] 中使用，因为在 [debug mode][] 下有意牺牲了性能来换取昂贵的断言以帮助开发，所以这时候的结果会具有误导性。
+这个浮层只应在 [分析模式][] 中使用，因为在 [调试模式][debug mode] 下有意牺牲了性能来换取昂贵的断言以帮助开发，所以这时候的结果会有误导性。
 
 Each frame should be created and displayed within 1/60th of
 a second (approximately 16ms). A frame exceeding this limit
@@ -275,7 +275,7 @@ For more information, see the [UIKit][] documentation for iOS,
 or the [MainThread][] documentation for Android.
 This thread is not shown in the performance overlay.
     
-该平台的主线程。插件代码在这里运行。更多信息请参阅：iOS 的 [UIKit][] 文档，或者 Android 的 [MainThread][] 文档。性能图层并不会展示该线程。
+该平台的主线程。插件代码在这里运行。更多信息请参阅：iOS 的程序 ([UIKit][]) 文档，或者 Android 的主线程 ([MainThread][]) 文档。性能图层并不会展示该线程。
 
 ### UI thread
 
@@ -290,7 +290,7 @@ painting commands, and sends the layer tree to the GPU thread to
 be rendered on the device. _Don't block this thread!_
 Shown in the bottom row of the performance overlay.
 
-UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 _图层树 (layer tree) _ ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。 _不要阻塞这个线程！_ 在性能图层的最低栏展示该线程。
+UI 线程在 Dart VM 执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。当应用创建和展示场景的时候，UI 线程首先建立一个 **图层树(layer tree)** ，一个包含设备无关的渲染命令的轻量对象，并将图层树发送到 GPU 线程来渲染到设备上。**不要阻塞这个线程！**在性能图层的最低栏展示该线程。
 
 ### GPU thread 
 
@@ -304,7 +304,7 @@ in the Dart code.  Skia, the graphics library, runs on this thread,
 which is sometimes called the _rasterizer_ thread.
 Shown in the top row of the performance overlay.
 
-GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做 _光栅器 (rasterizer) 线程_ 。在性能图层的最顶栏展示该线程。
+GPU 线程取回图层树并通知 GPU 渲染。尽管无法直接与 GPU 线程或其数据通信，但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。图形库 Skia 在该线程运行，有时也被叫做**光栅器 (rasterizer) 线程**。在性能图层的最顶栏显示该线程。
 
 ### I/O thread
 
@@ -321,7 +321,7 @@ see [The Framework architecture][] on the
 [GitHub wiki][], and the community article,
 [The Layer Cake][].
 
-你可以在 [GitHub wiki][] 上的 [The Framework architecture][] 了解更多信息和一些视频内容，另外你可以在我们的社区中查看文章 [The Layer Cake][]。
+你可以在 [GitHub wiki][] 上的 框架结构 ([The Framework architecture][]) 一文中，了解更多信息和一些视频内容，另外你可以在我们的社区中查看文章 [The Layer Cake][]。
 
 ### Displaying the performance overlay
 
@@ -353,7 +353,7 @@ from the Flutter inspector, which is available in the
 **Performance Overlay** button to toggle the overlay
 on your running app.
 
-打开 PerformanceOverlay widget 最简单的方法是 IDE 中 Flutter 插件提供的 Flutter inspector，你可以在 [DevTools][] 的 [Inspector view][] 中找到。只需单击 **Performance Overlay** 按钮，即可在正在运行的应用程序上切换图层。
+打开 PerformanceOverlay widget 最简单的方法是 IDE 中 Flutter 插件提供的 Flutter inspector，你可以在 [开发者工具][DevTools] 的 [使用 Flutter inspector 工具][Inspector view] 中找到。只需单击 **Performance Overlay** 按钮，即可在正在运行的应用程序上切换图层。
 
 #### From the command line
 
@@ -372,7 +372,7 @@ To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
 
-要用代码实现性能图层，可以查看 [Debugging Flutter apps programmatically][] 中的 [Performance overlay][]。
+要用代码实现性能图层，可以查看 [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programmatically] 中的 [Performance overlay][] 章节。
 
 You are probably familiar with the Flutter Gallery example app.
 To use the performance overlay with Flutter Gallery,
@@ -443,7 +443,7 @@ instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise
 manipulated, a [RepaintBoundary][] might help.
 
-卡顿是第一帧发生的还是贯穿整个动画过程呢？如果是整个动画过程的话，会是裁剪导致的么？也许有可以替代裁剪的方法来绘制场景。比如说，不透明图层的长方形中用尖角来取代圆角裁剪。如果是一个静态场景的淡入、旋转或者其他操作，可以尝试使用 [RepaintBoundary][]。
+卡顿是第一帧发生的还是贯穿整个动画过程呢？如果是整个动画过程的话，会是裁剪导致的吗？也许有可以替代裁剪的方法来绘制场景。比如说，不透明图层的长方形中用尖角来取代圆角裁剪。如果是一个静态场景的淡入、旋转或者其他操作，可以尝试使用重绘边界 ([RepaintBoundary][])。
 
 #### Checking for offscreen layers
 
@@ -457,8 +457,8 @@ implicit calls might happen on your behalf. You can check whether
 your scene is using `saveLayer` with the
 [PerformanceOverlayLayer.checkerboardOffscreenLayers][] switch.
 
-[`saveLayer`][] 方法是 Flutter 框架中最重量的操作之一。更新屏幕时这个方法很有用，但它可能使应用变慢，如果不是必须的话，应该避免使用这个方法。
-即便没有显式地调用 `saveLayer`，也可能在其他操作中间接调用了该方法。可以使用 [PerformanceOverlayLayer.checkerboardOffscreenLayers][] 开关来检查场景是否使用了 `saveLayer`。
+保存图层 ([`saveLayer`][]) 方法是 Flutter 框架中最重量的操作之一。更新屏幕时这个方法很有用，但它可能使应用变慢，如果不是必须的话，应该避免使用这个方法。
+即便没有显式地调用 `saveLayer`，也可能在其他操作中间接调用了该方法。可以使用棋盘画面以外的层 ([PerformanceOverlayLayer.checkerboardOffscreenLayers][]) 开关来检查场景是否使用了 `saveLayer`。
 
 {% comment %}
 [TODO: Document disabling the graphs and checkerboardRasterCacheImages.
@@ -511,7 +511,7 @@ ask yourself these questions:
 
 Caching an image with [RepaintBoundary][] is good, _when it makes sense_.
 
-使用 [RepaintBoundary][] 来缓存图片是个好主意， _当需要的时候_ 。
+使用重绘边界 ([RepaintBoundary][]) 来缓存图片是个好主意，**当需要的时候。**
 
 One of the most expensive operations, from a resource perspective,
 is rendering a texture using an image file. First, the compressed image
@@ -530,12 +530,12 @@ cache images only where absolutely necessary._
 
 也就是说，图像的 I/O 操作是重量级的。
 缓存提供了复杂层次的快照，这样就可以方便地渲染到随后的帧中。
-_因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。_ 
+**因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。**
 
 You can see which images are being cached by enabling the
 [PerformanceOverlayLayer.checkerboardRasterCacheImages][] switch.
 
-打开 [PerformanceOverlayLayer.checkerboardRasterCacheImages][] 开关可以检查哪些图片被缓存了。
+打开覆盖层性能 棋盘格光栅缓存图像 ([PerformanceOverlayLayer.checkerboardRasterCacheImages][]) 开关可以检查哪些图片被缓存了。
 
 {% comment %}
 [TODO: Document how to do this, either via UI or programmatically.
@@ -556,7 +556,7 @@ you can cache it by placing it into a [RepaintBoundary][]
 widget. Though the engine might still ignore a repaint
 boundary if it thinks the image isn't complex enough.
 
-大多数情况下，开发者都希望在网格里看到的是静态图片，而不是非静态图片。如果静态图片没有被缓存，可以将其放到 [RepaintBoundary][] widget 中来缓存。虽然引擎也可能忽略 repaint boundary，如果它认为图像还不够复杂的话。
+大多数情况下，开发者都希望在网格里看到的是静态图片，而不是非静态图片。如果静态图片没有被缓存，可以将其放到重绘边界 ([RepaintBoundary][]) widget 中来缓存。虽然引擎也可能忽略 repaint boundary，如果它认为图像还不够复杂的话。
 
 ### Viewing the widget rebuild profiler
 

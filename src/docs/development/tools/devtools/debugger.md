@@ -5,6 +5,10 @@ description: How to use DevTools' source-level debugger.
 description: 学习如何使用开发者工具里的调试器。
 ---
 
+{{site.alert.note}}
+  The debugger works with Flutter mobile and web applications.
+{{site.alert.end}}
+
 ## Getting started
 
 DevTools includes a full source-level debugger, supporting

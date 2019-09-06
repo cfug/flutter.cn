@@ -8,13 +8,13 @@ description: 使用热重载提高你的开发速度和体验。
 Flutter's hot reload feature helps you quickly and easily experiment,
 build UIs, add features, and fix bugs.
 Hot reload works by injecting updated source code files into
-the running Dart Virtual Machine (VM). After the VM updates
-classes with the new versions of fields and functions,
+the running [Dart Virtual Machine (VM)](https://dart.cn/platforms).
+After the VM updates classes with the new versions of fields and functions,
 the Flutter framework automatically rebuilds the widget tree,
 allowing you to quickly view the effects of your changes.
 
 Flutter 的热重载功能可帮助您在无需重新启动应用程序的情况下快速、轻松地测试、构建用户界面、添加功能以及修复错误。
-通过将更新的源代码文件注入到正在运行的 Dart 虚拟机（VM）来实现热重载。在虚拟机使用新的字段和函数更新类之后，
+通过将更新的源代码文件注入到正在运行的 [Dart 虚拟机（VM）](https://dart.cn/platforms)来实现热重载。在虚拟机使用新的字段和函数更新类之后，
 Flutter 框架会自动重新构建 widget 树，以便您可以快速查看更改的效果。
 
 To hot reload a Flutter app:

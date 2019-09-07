@@ -26,6 +26,7 @@ performance issues, so it
 {{site.alert.end}}
 
 For more information, see the [web FAQ][].
+
 如果想要了解更多信息，请看 [web FAQ][]
 
 ## Summary
@@ -101,7 +102,7 @@ Chrome • chrome • web-javascript • Google Chrome 76.0.3809.100
 **After enabling web support, restart the IDE.**
 You should now see **Chrome (web)** in the device pulldown.
 
-**在开启了web支持后，需要重启IDE。**你现在可以在设备下拉列表中看到 **Chrome (web)**。
+**在开启了web支持后，需要重启IDE**。你现在可以在设备下拉列表中看到 **Chrome (web)**。
 
 The `flutter run` command launches the application using the
 [development compiler][] in a Chrome browser.

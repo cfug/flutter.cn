@@ -7,6 +7,7 @@ description: Instructions for creating a Flutter app for the web.
   TODO: Once published, remove this page on the GitHub wiki:
   (https://github.com/flutter/flutter/wiki/Building-a-web-application-with-Flutter)
   and forward to this page.
+  
   TODO: 一经发布，替换GitHub wiki (https://github.com/flutter/flutter/wiki/Building-a-web-application-with-Flutter)页面为本页面。
 {% endcomment %}
 
@@ -20,6 +21,7 @@ performance issues, so it
 {{site.alert.note}}
   Currently, web support requires the Chrome browser.
   If you haven't already, [install Chrome][].
+  
   目前，web支持需要Chrome浏览器。如果你还未安装，[安装Chrome][]。
 {{site.alert.end}}
 
@@ -45,6 +47,7 @@ flutter run -d chrome
 ```
 
 To generate a release build:
+
 生成release产物：
 
 ```terminal
@@ -53,6 +56,7 @@ flutter build web
 
 The rest of this page breaks this process down
 into individual steps.
+
 文章的剩余部分会将上述过程分解为若干步骤。
 
 ## Download the Flutter SDK
@@ -60,6 +64,7 @@ into individual steps.
 
 Currently, you need the master channel of the Flutter SDK
 for web support:
+
 当前，你需要`master channel`的Flutter SDK来获取web支持：
 
 ```terminal
@@ -71,6 +76,7 @@ flutter upgrade
 ## 开启web支持
 
 Use the config command to enable web support:
+
 使用`config`命令来开启web支持：
 
 ```terminal
@@ -82,6 +88,7 @@ You need only run this once.
 这个命令只需要运行一次即可。
 Once this is enabled,
 `flutter devices` outputs a device named `Chrome`.
+
 一旦开启了web支持，运行`flutter devices`命令会输出一个名为 `Chrome`的设备信息。
 
 ```terminal
@@ -110,6 +117,7 @@ if there are no other devices attached.
 To add web support to an existing project,
 run the following command in a terminal
 from the top of the project package:
+
 对一个已有的工程添加web支持，需要在工程根目录下输入下面的命令：
 
 ```terminal
@@ -122,6 +130,7 @@ flutter create .
 To create a new app that includes web support
 (in addition to mobile support), run the following,
 substituting `myapp` with the name of your project:
+
 为了创建一个既支持移动端又支持web的新app，将`myapp` 替换成自己工程的名字，运行下面的命令：
 
 ```terminal
@@ -133,6 +142,7 @@ flutter create myapp
 
 To run the app on the web, enter the following
 from the top of the package:
+
 要在web上运行app，需要在工程根目录运行下面的命令：
 
 ```terminal
@@ -141,12 +151,14 @@ flutter run -d chrome
 
 If there aren't any other connected devices,
 the `-d chrome` is optional.
+
 如果没有连接任何设备，`-d chrome`可以省略。
 
 ## Generate a release build
 ## 生成release产物
 
 Run the following, from the top of the project:
+
 在工程根目录运行下面命令：
 
 ```terminal

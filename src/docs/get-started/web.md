@@ -8,7 +8,7 @@ description: Instructions for creating a Flutter app for the web.
   (https://github.com/flutter/flutter/wiki/Building-a-web-application-with-Flutter)
   and forward to this page.
   
-  TODO: 一经发布，替换GitHub wiki (https://github.com/flutter/flutter/wiki/Building-a-web-application-with-Flutter)页面为本页面。
+  TODO: 一经发布，替换GitHub wiki (https://github.com/flutter/flutter/wiki/Building-a-web-application-with-Flutter) 页面为本页面。
 {% endcomment %}
 
 As of 1.9, Flutter has early support for running web

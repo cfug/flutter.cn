@@ -1,6 +1,6 @@
 ---
 title: Building a web application with Flutter
-title: 使用 Flutter 构建一个 Web 应用
+title: 使用 Flutter 构建 Web 应用
 description: Instructions for creating a Flutter app on the web.
 description: 创建在 Web 平台上运行的 Flutter 应用。
 ---

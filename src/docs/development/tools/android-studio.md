@@ -234,14 +234,15 @@ Flutter-specific buttons on the right-hand side of the toolbar.
     When you connect devices, or start simulators,
     additional entries appear.
 
+    选择你希望启动应用的设备。当连接设备或启动模拟器时，
+    列表中将会加入新选项。
+
 {{site.alert.note}}
   If you want to try running your app on the web,
   but the **Chrome (web)** target doesn't appear in the
   list of targets, make sure you've enabled web, as
   described in [Building a web application][].
 {{site.alert.end}}
-
-    选择你希望启动应用的设备。当连接设备或启动模拟器时，列表中将会加入新选项。
 
 ### Run app without breakpoints
 

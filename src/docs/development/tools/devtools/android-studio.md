@@ -14,7 +14,7 @@ This can be done using the normal **Plugins** page in the IntelliJ
 and Android Studio settings. Once that page is open,
 you can search the marketplace for the Flutter plugin.
 
-请在第一次使用前安装 Flutter 插件，它可以在 Intellij 的 **插件/Plugins** 或 Android Studio 的设置中开启，页面打开后便可以在市场中查找到 Flutter 插件。
+请在第一次使用前安装 Flutter 插件，它可以在 Intellij 的 **插件/Plugins** 或 Android Studio 的设置中开启，页面打开后便可以在 市场/MarketPlace 中找到 Flutter 插件。
 
 ## Start an app to debug
 

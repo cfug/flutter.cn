@@ -44,6 +44,7 @@ Learn more about the Flutter framework from the following pages:
 * [Udacity 线上课程](https://cn.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 
 Reach out to us at our [mailing list][]. We'd love to hear from you!
+
 你还可以通过 [邮件列表][] 与我们取得联系，我们非常乐意听到你的反馈！
 
 Happy Fluttering!

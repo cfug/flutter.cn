@@ -17,7 +17,8 @@ but is missing features and has known performance issues.
 
 截至 1.9 版本，Web 版本 Flutter 可以
 在 master channel（dev 可能会是 9 月）上作为技术预览版本。
-Web 支持已经被添加到 Flutter 的主仓库中，但还缺少一些特性，且存在已知的性能问题。
+Web 支持已经被添加到 Flutter 的主仓库中，
+但还缺少一些特性，且存在已知的性能问题。
 **我们不建议将 Web 应用部署到生产环境中**
 
 ### How do I create an app that also runs on the web?
@@ -53,7 +54,8 @@ You can [file an issue](https://goo.gle/flutter_web_issue)
 on the main Flutter repo. Make sure that "web" is
 included in the title.
 
-你可以在 Flutter 主仓库中[提交一个 issue](https://goo.gle/flutter_web_issue)。
+你可以在 Flutter 主仓库中
+[提交一个 issue](https://goo.gle/flutter_web_issue)。
 确保标题中包含 “Web” 字样。
 
 ### How do I refresh the app running in the browser?
@@ -64,11 +66,8 @@ Using the browser's refresh button doesn't work,
 but you can enter "R" in the console where
 "flutter run -d chrome" is running.
 
-使用浏览器的刷新按钮不会起作用，但你可以在执行 “flutter run -d chrome” 的控制台中输入“R” 进行刷新。
-
-(Still true?)
-
-（仍然如此吗？）
+使用浏览器的刷新按钮不会起作用，
+但你可以在执行 “flutter run -d chrome” 的控制台中输入“R” 进行刷新。
 
 ### Can I build, run, and deploy web apps in any of the IDEs?
 
@@ -79,7 +78,8 @@ Android Studio/IntelliJ and VS Code if you are using the
 master channel of Flutter and have enabled web support.
 To enable support, run the following in the terminal:
 
-如果你正在使用 master channel 的 Flutter，并已启用 web 支持，你可以在 Android Studio、IntelliJ 和 VS Code 中选择 **Chrome** 作为目标设备。
+如果你正在使用 master channel 的 Flutter，并已启用 web 支持，
+你可以在 Android Studio、IntelliJ 和 VS Code 中选择 **Chrome** 作为目标设备。
 要启用 web 支持，请在终端中执行以下命令：
 
 ```terminal
@@ -108,10 +108,10 @@ apps](/docs/development/ui/layout/responsive).
 
 ## Can I use the `dart:io` package with a web app?
 
-## 我该如何在 web 应用中使用 `dart:io` 包？
+## 我该如何在 web 应用中使用 `dart:io` 这个 package？
 
 不行。文件系统在浏览器中是无法访问的。
-对于网络功能来说，请使用 [`http`][] 包。
+对于网络功能来说，请使用 [`http`][] package。
 请注意，安全方面的工作有所不同，因为浏览器（而不是应用程序）控制 HTTP 请求上的标头。
 
 ## How are forward and backward buttons presented in the web UI?
@@ -133,7 +133,8 @@ Web 应用支持浏览器的后退按钮。
 Copy/paste works on mobile. If you encounter problems,
 please [file an issue][].
 
-在移动设备上复制和粘贴可以使用。如果你遇到了什么问题，请 [提一个 issue][]。
+在移动设备上复制和粘贴可以使用。
+如果你遇到了什么问题，请 [提一个 issue][]。
 
 ## How do I embed a web app in a web page?
 
@@ -141,7 +142,7 @@ please [file an issue][].
 
 IDK.
 
-我不知道。
+尚未有明确的解决方案。
 
 ## Implementing CORS
 
@@ -156,7 +157,8 @@ hosting your Flutter app.
 
 HTTP 请求适用于移动设备，但不适用于网络。
 Web 应用程序有特殊的安全限制。
-如果你遇到问题，请检查正在访问的 Web 服务器是否设置了接受来自托管 Flutter 应用程序的域的请求的 CORS 标头。
+如果你遇到问题，请检查正在访问的 Web
+服务器是否设置了接受来自托管 Flutter 应用程序的域的请求的 CORS 标头。
 
 ## How do I avoid JS lockout with CORS?
 
@@ -164,7 +166,7 @@ Web 应用程序有特殊的安全限制。
 
 IDK
 
-我不知道
+尚未有明确的解决方案。
 
 ### How do I debug a web app?
 
@@ -175,10 +177,15 @@ Use [Flutter DevTools][] for the following tasks:
 使用 [Flutter DevTools][] 来尝试如下工作：
 
 * [Debugging][]
+
   [调试][]
+  
 * [Logging][]
+
   [查看日志][]
+  
 * [Running Flutter inspector][]
+
   [运行 Flutter inspector][]
 
 Use [Chrome DevTools][] for the following tasks:
@@ -186,9 +193,12 @@ Use [Chrome DevTools][] for the following tasks:
 使用 [Chrome DevTools][] 来尝试如下工作：
 
 * [Generating event timeline][]
+
   [生成事件的时间线][]
+  
 * [Analyzing performance][]&mdash;make sure to use a
   profile build
+  
   [分析性能][]&mdash;请确保应用使用的是 profile 构建
 
 ### How do I test a web app?

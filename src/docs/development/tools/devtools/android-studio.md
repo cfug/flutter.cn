@@ -37,14 +37,18 @@ you can start DevTools using one of the following:
 应用启动后，你可以通过以下几种方式运行调试工具：
 
 * Select the **Open DevTools** toolbar action in the Run view.
+
+  运行界面下，在工具栏选择 **启动调试工具/Open DevTools**。
+  
 * Select the **Open DevTools** toolbar action in the Debug view.
   (if debugging)
-* Select the **Open DevTools** action from the **More Actions** menu in the Flutter Inspector view.
   
-* 运行界面下，在工具栏选择 **启动调试工具/Open DevTools**。
-* 调试界面下，在工具栏选择 **启动调试工具/Open DevTools**。  
-* Flutter 检查界面中，在 **更多事件/More Actions** 的菜单中选择 **启动调试工具/Open DevTools**。  
+  调试界面下，在工具栏选择 **启动调试工具/Open DevTools**。
+  
+* Select the **Open DevTools** action from the **More Actions** menu in the Flutter Inspector view.
 
+  Flutter Inspector 里，在 **更多事件/More Actions** 的菜单中选择 **启动调试工具/Open DevTools**。
+  
 ![screenshot of Open DevTools button]({% asset tools/devtools/android_studio_open_devtools.png @path %})
 
 ## Launch DevTools from an action

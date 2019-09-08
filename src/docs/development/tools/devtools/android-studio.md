@@ -45,7 +45,8 @@ you can start DevTools using one of the following:
   
   调试界面下，在工具栏选择 **启动调试工具/Open DevTools**。
   
-* Select the **Open DevTools** action from the **More Actions** menu in the Flutter Inspector view.
+* Select the **Open DevTools** action from the **More Actions** 
+  menu in the Flutter Inspector view.
 
   Flutter Inspector 里，在 **更多事件/More Actions** 的菜单中选择 **启动调试工具/Open DevTools**。
   

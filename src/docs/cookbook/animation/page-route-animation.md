@@ -150,7 +150,8 @@ The `transitionsBuilder` callback has an `animation` parameter. It's an
 `Animation<double>` that produces values between 0 and 1. Convert the
 Animation<double> into an Animation<Offset> using a Tween:
   
-`transitionsBuilder` 的回调有一个 `animation` 参数。它其实是一个 `Animation<double>`，提供 0 到 1 的值。
+`transitionsBuilder` 的回调有一个 `animation` 参数。
+它其实是一个 `Animation<double>`，提供 0 到 1 的值。
 使用 Tween 来将 Animation<double> 转为 Animation<Offset>。
 
 ```dart
@@ -174,14 +175,17 @@ SlideTransition takes an `Animation<Offset>` and translates its child (using a
 FractionalTranslation widget) whenever the value of the animation changes.
 
 Flutter 有一堆继承至 [AnimatedWidget]({{site.api}}/flutter/widgets/AnimatedWidget-class.html)
- 的 widget，它们能够在动画的值发生改变时自动重建自己。举个例子，SlideTransition 拿到一个 `Animation<Offset>`
+ 的 widget，它们能够在动画的值发生改变时自动重建自己。
+ 举个例子，SlideTransition 拿到一个 `Animation<Offset>`
  并在动画改变时使用 FractionalTranslation widget 转换其子级。
 
 AnimatedWidget Return a
 [SlideTransition]({{site.api}}/flutter/widgets/SlideTransition-class.html)
 with the `Animation<Offset>` and the child widget:
 
-AnimatedWidget 返回了一个 带有 `Animation<Offset>` 的 [SlideTransition]({{site.api}}/flutter/widgets/SlideTransition-class.html)，以及 child widget：
+AnimatedWidget 返回了一个 带有 `Animation<Offset>` 
+的 [SlideTransition]({{site.api}}/flutter/widgets/SlideTransition-class.html)，
+以及 child widget：
 
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -207,8 +211,10 @@ animation over time. The
 provides a predefined set of commonly used curves. For example, `Curves.easeOut`
 will make the animation start quickly and end slowly.
 
-Flutter 提供了一系列缓和曲线，可以调整一段时间内的动画速率。[Curves]({{site.api}}/flutter/animation/Curves-class.html)
- 类提供了一个提前定义的用法相似的 curves。例如，`Curves.easeOut` 将会让动画开始很快结束很慢。
+Flutter 提供了一系列缓和曲线，可以调整一段时间内的动画速率。
+[Curves]({{site.api}}/flutter/animation/Curves-class.html)
+类提供了一个提前定义的用法相似的 curves。
+例如，`Curves.easeOut` 将会让动画开始很快结束很慢。
 
 To use a Curve, create a new
 [CurveTween]({{site.api}}/flutter/animation/CurveTween-class.html)
@@ -247,8 +253,8 @@ var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 Then use this tween by passing it to `animation.drive()`. This creates a new
 `Animation<Offset>` that can be given to the `SlideTransition` widget:
 
-它们通过把这个 tween 传递给 `animation.drive() 来创建一个新的 `Animation<Offset>`，
-  然后你就能把它传给 `SlideTransition` widget：
+它们通过把这个 tween 传递给 `animation.drive()` 来创建一个新的 `Animation<Offset>`，
+然后你就能把它传给 `SlideTransition` widget：
 
 ```dart
 return SlideTransition(
@@ -304,7 +310,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
 ## Complete Example
 
-## 一个完整的例子
+## 完整样例
 
 ```dart
 import 'package:flutter/material.dart';

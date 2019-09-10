@@ -27,11 +27,12 @@ This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
-previous experience with Dart or mobile programming.
+previous experience with Dart, mobile, or web programming.
 
 这是一个指引你完成第一个 Flutter 应用的手把手操作教程（我们也称之为是 codelab）。
-我们将会着手创建一个简单的 Flutter 应用，无需 Dart 语言和移动开发语言经验，
-只需你具备面向对象语言开发基础（如变量，循环和条件语句）即可。
+我们将会着手创建一个简单的 Flutter 应用，无需 Dart 语言、
+移动开发语言或 Web 开发经验，
+只需你具备面向对象语言开发基础即可（如变量，循环和条件语句）。
 
 This guide is part 1 of a two-part codelab. You can find
 [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
@@ -48,14 +49,15 @@ can also be found on [Google Developers]({{site.codelabs}}).
 ## 第一部分的内容概览
 {:.no_toc}
 
-You’ll implement a simple mobile app that generates proposed names for a
-startup company. The user can select and unselect names,
+You’ll implement a simple mobile app that generates proposed
+names for a startup company. The user can select and unselect names,
 saving the best ones. The code lazily generates names.
 As the user scrolls, more names are generated.
 There is no limit to how far a user can scroll.
 
 你将完成一个简单的移动应用程序，功能是：为一个创业公司生成建议的公司名称。
-用户可以选择和取消选择的名称、保存喜欢的名称。该代码一次生成十个名称，当用户滚动时，会生成一新批名称。
+用户可以选择和取消选择的名称、保存喜欢的名称。
+该代码一次生成十个名称，当用户滚动时，会生成一新批名称。
 
 The animated GIF shows how the app works at the completion of part 1.
 
@@ -67,9 +69,10 @@ The animated GIF shows how the app works at the completion of part 1.
 
   <h4 class="no_toc">第一部分，我们将共同构建：</h4>
 
-  * How to write a Flutter app that looks natural on both iOS and Android.
+  * How to write a Flutter app that looks natural on iOS, Android,
+    and the web.
   
-    Flutter 如何在 Android 和 iOS 系统里自动适应不同的 UI 体系
+    Flutter 如何在 Android、iOS 和 Web 里自动适应不同的 UI 体系
 
   * Basic structure of a Flutter app.
 
@@ -92,11 +95,14 @@ The animated GIF shows how the app works at the completion of part 1.
     如何创建一个无限的、延迟加载的列表
 
   In [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-  of this codelab, you'll add interactivity, modify the app's theme, and
-  add the ability to navigate to a new screen (called a _route_ in Flutter).
+  of this codelab, you'll add interactivity, modify the app's theme,
+  and add the ability to navigate to a new screen
+  (called a _route_ in Flutter).
   
   在本 codelab 的 [第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0)，
-  你还将学到添加交互，修改应用的主题，以及为应用添加一个新的页面（在 Flutter，我们称之为 route）
+  你还将学到添加交互，
+  修改应用的主题，
+  以及为应用添加一个新的页面（在 Flutter，我们称之为 route）。
   
 {{site.alert.end}}
 
@@ -133,6 +139,10 @@ The animated GIF shows how the app works at the completion of part 1.
     
     [Android 模拟器](install/macos#set-up-the-android-emulator)。
  
+  * A browser (currently Chrome is preferred).
+
+    浏览器（目前最好可以是 Chrome 浏览器）
+    
 {{site.alert.end}}
 
 ## Step 1: Create the starter Flutter app

@@ -28,7 +28,10 @@ description: Flutter 开发文档页面。
 
 ## 网站更新
 
-To stay on top of Flutter announcements, including breaking changes, join the
+## 网站更新
+
+To stay on top of Flutter announcements,
+including breaking changes, join the
 [flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce)
 Google group.
 
@@ -37,95 +40,86 @@ Google group.
 
 **July 9, 2019**
 
-Flutter 1.7 is live!
+Flutter 1.9 is live!
 
-Flutter 1.7 正式发布！
+Flutter 1.9 正式发布！
 
-For more information, see [Announcing Futter
-1.7]({{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf)
-on the [Flutter Medium Publication]({{site.flutter-medium}}),
-and the [1.7.8 release
-notes]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.7.8)
-on the [Flutter wiki]({{site.github}}//flutter/flutter/wiki).
+For the 1.9 release, Flutter's web support has been
+merged ("unforked") into the main repo.
+**Web support hasn't reached beta, and is not ready
+to be used in production.**
+Web and desktop support (which is also coming), will
+impact the website, which was originally written
+exclusively for developing Flutter mobile apps.
+Some website updates are available now (and listed below),
+but more will be coming.
 
-请参见 [这个文章](/posts/announcing-flutter-1-7-9.html) 了解更多 1.7 的更新内容，
-在 [Flutter wiki 页面]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.7.8) 
-查看 1.7.8 的具体更新。
+随着 1.9 版本的发布，在 Web 平台运行
+Flutter 的代码正式被合并到主 repo，但是
+**在 Web 平台的支持尚未达到 Beta 阶段，请不要用在生产环节**。
+Web 和即将到来的桌面端支持将会影响本站的内容，
+如下列出了一些更新，更多的更新将会在稍后时间发布：
 
 New and updated docs on the site include:
 
-文档站的更新内容包括：
+新的文档和更新包括：
 
-* The [Preparing an Android app for release](/docs/deployment/android)
-  page is updated to discuss how to build an Android release
-  using an app bundle, as well as how to create separate APK
-  files for both 32-bit and 64-bit devices.
+* The Flutter layout codelab has been rewritten and
+  uses the updated DartPad, the browser-based tool for running
+  Dart code. DartPad now supports Flutter!
+  [Try it out](/docs/codelabs/layout-basics)
+  and let us know what you think.
 
-  [打包和发布到 Android 平台](/docs/deployment/android) 有更新，
-  包括使用 app bundle 和为 32 位 / 64 位单独打包。
-
-* The [DevTools](/docs/development/tools/devtools) docs are migrated
-  to flutter.dev. If you haven't tried this browser-based suite
-  of debugging, performance, memory, and inspection tools that
-  work with both Flutter and Dart apps and can be launched from
-  Android Studio/IntelliJ _and_ VS Code, please check it out!
-
-  新增 [开发者工具文档](/docs/development/tools/devtools) 系列内容，
-  这是个基于浏览器的开发者工具套件，可以帮助你对 Flutter 和 Dart 应用
-  做调试、性能监控、内存检测和检查器等，同时可以直接从 Android Studio 
-  或 IntelliJ 以及 VSCode 运行，如果你还没有试试看，推荐你看一下。
-
-* The [Simple app state
-  management](/docs/development/data-and-backend/state-mgmt/simple)
-  page is updated. The example code in the page now uses the 3.0
-  release of the Provider package.
-
-  [简单的应用
-  状态管理](/docs/development/data-and-backend/state-mgmt/simple)
-  页面有所更新，新的文档是基于 Provider 3.0 正式版的。
-
+  我们重写了 Flutter 布局的 codelab，
+  使用了最新的、支持了 Flutter 的 DartPad，
+  可以在 [这里](/docs/codelabs/layout-basics) 
+  查看并告诉我们你的想法。
   
-* A new animation recipe, [Animate a page route
-  transition](/docs/cookbook/animation/page-route-animation)
-  has been added to the [Cookbook](/docs/cookbook).
+* The Performance view tool, which allows you to record
+  and profile a session from your Dart/Flutter application,
+  has been enabled in DevTools. For more information,
+  see the [Performance
+  view](/docs/development/tools/devtools/performance)
+  page.
 
-  [实用教程](/docs/cookbook) 里添加了一篇新的文章：
-  [为页面切换加入动画效果](/docs/cookbook/animation/page-route-animation)。
+  开发者工具（DevTools）里的性能视图工具（Performance view tool），
+  可以让你录制并检查 Dart 或 Flutter 应用的某个运行时 session，
+  可以在这里查看更多：
+  [使用性能视图 (Performance view)](/docs/development/tools/devtools/performance)
+  
+* A new page on
+  [building a web application](/docs/get-started/web).
 
-* The [Debugging](/docs/testing/debugging), 
-  [Flutter's build modes](/docs/testing/build-modes),
-  [Performance best practices](/docs/testing/best-practices), and
-  [Performance profiling](/docs/testing/ui-performance)
-  pages are updated to reflect DevTools. A
-  [Debugging apps programmatically](/docs/testing/code-debugging)
-  page has also been added.
+  新增一个页面，关于 [如何构建一个 Web 应用](/docs/get-started/web)。
+  
+* A new page on [creating responsive
+  apps](/docs/development/ui/layout/responsive)
+  in Flutter.
+  
+  新增一个页面，关于在 Flutter 里
+  [如何创建响应式应用](/docs/development/ui/layout/responsive)
 
-  [调试 Flutter 应用](/docs/testing/debugging)、
-  [Flutter 的构建模式选择](/docs/testing/build-modes)、
-  [Flutter 应用性能优化最佳实践](/docs/testing/best-practices) 和
-  [Flutter 性能分析](/docs/testing/ui-performance) 
-  页面中加入了开发者工具的使用说明。与此同时，还加入了这个文档页面：
-  [添加代码的方式来调试](/docs/testing/code-debugging)。
+* A new page on
+  [preparing a web app for release](/docs/deployment/web).
 
-The Flutter 1.7 release includes the new
-[RangeSlider]({{site.api}}/flutter/material/RangeSlider-class.html)
-component, which allows the user to select both the upper and lower
-endpoints in a range of values. For information about this
-component and how to customize it, see [Material RangeSlider in
-Flutter]({{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d).
+  新增一个页面，关于如何 [打包并发布到 Web 平台](/docs/deployment/web)。
 
-Flutter 1.7 版本的更新同时加入了 
-[RangeSlider]({{site.api}}/flutter/material/RangeSlider-class.html)
-这个 widget，可以让用户选择在最大值和最小值之间选择一个数字，本周稍晚些时候，
-在 Flutter 官方博客里可以看到关于这篇文章的介绍和以及如何自定义它，请关注：
-[这里]({{site.flutter-medium}})。
-
+* A new [web FAQ](/docs/development/platform-integration/web).
+ 
+  关于在 Web 平台运行 Flutter 应用，我们新增了一个 
+  [Web 常见问题页面](/docs/development/platform-integration/web)。
+  
+* The [Flutter for web](/web) page is updated.
+  
+  关于 [在 Web 平台运行 Flutter](/web) 的页面已经更新。
+  
 Happy Fluttering!
+
+祝你在 Flutter 应用的开发中有一个愉快的经历和体验！
 
 [What's new archive](/docs/whats-new-archive)
 
 [最近更新归档页面](/docs/whats-new-archive)。
-
 
 ## New to Flutter?
 

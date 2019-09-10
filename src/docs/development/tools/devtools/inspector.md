@@ -5,6 +5,10 @@ description: Learn how to use the Flutter inspector to explore a Flutter app's w
 description: 学习如何使用 Flutt  inspector 来检查 Flutter 应用的 widget 树。
 ---
 
+{{site.alert.note}}
+  The inspector works with Flutter mobile and web applications.
+{{site.alert.end}}
+
 ## What is it?
 
 The Flutter widget inspector is a powerful tool for visualizing and

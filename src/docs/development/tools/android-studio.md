@@ -62,27 +62,27 @@ To create a new Flutter project from the Flutter starter app template:
 
 使用 Futter 应用模板创建新的 Flutter 项目：
 
- 1. In the IDE, click **Create New Project** from the **Welcome**
+1. In the IDE, click **Create New Project** from the **Welcome**
     window or **File > New > Project** from the main IDE window.
 
-    在 IDE 中，点击 **Welcome** 窗口，或者主窗口
-    **File > New > Project** 中的 **Create New Project**。
+   在 IDE 中，点击 **Welcome** 窗口，或者主窗口
+   **File > New > Project** 中的 **Create New Project**。
 
- 1. Select **Flutter** in the menu, and click **Next**.
+1. Select **Flutter** in the menu, and click **Next**.
 
- 	在菜单中选择 **Flutter**，点击 **Next**。
+   在菜单中选择 **Flutter**，点击 **Next**。
 
- 1. Enter your desired **Project name** and **Project location**.
+1. Enter your desired **Project name** and **Project location**.
 
- 	输入你的 **Project name** 和 **Project location**。
+   输入你的 **Project name** 和 **Project location**。
 
- 1. If you might publish this app, [set the company domain](#note).
+1. If you might publish this app, [set the company domain](#note).
 
- 	如果打算发布此应用，需要 [设置公司域名](#note)。
+   如果打算发布此应用，需要 [设置公司域名](#note)。
 
- 1. Click **Finish**.
+1. Click **Finish**.
 
- 	点击 **Finish**。
+   点击 **Finish**。
 
 {{site.alert.secondary}}
 
@@ -113,33 +113,35 @@ files:
 
 创建包含现有 Flutter 源码的新 Flutter 项目：
 
- 1. In the IDE, click **Create New Project** from the **Welcome** window or
-    **File > New > Project** from the main IDE window.
+1. In the IDE, click **Create New Project** from the
+    **Welcome** window or **File > New > Project**
+    from the main IDE window.
 
-    在 IDE 中，点击 **Welcome** 窗口，或者主窗口
-    **File > New > Project** 中的 **Create New Project**。
+   在 IDE 中，点击 **Welcome** 窗口，或者主窗口
+   **File > New > Project** 中的 **Create New Project**。
 
-    {{site.alert.important}}
+   {{site.alert.important}}
 
-      Do *not* use the **New > Project from existing sources** option for
-      Flutter projects.
+      Do *not* use the **New > Project from existing sources**
+      option for Flutter projects.
 
-      对于 Flutter 项目，请*不要*使用 **New > Project from existing sources**。
+      对于 Flutter 项目，请 **不要** 使用 **New > Project from existing sources**。
 
     {{site.alert.end}}
 
- 1. Select **Flutter** in the menu, and click **Next**.
+1. Select **Flutter** in the menu, and click **Next**.
 
- 	在菜单中选择 **Flutter**，点击 **Next**。
+   在菜单中选择 **Flutter**，点击 **Next**。
 
- 1. Under **Project location** enter, or browse to, the directory holding your
-    existing Flutter source code files.
+1. Under **Project location** enter, or browse to,
+   the directory holding your
+   existing Flutter source code files.
 
-    在 **Project location** 下，输入或选择现有 Flutter 源码的文件目录。
+   在 **Project location** 下，输入或选择现有 Flutter 源码的文件目录。
 
- 1. Click **Finish**.
+1. Click **Finish**.
 
- 	点击 **Finish**。
+   点击 **Finish**。
 
 ## Editing code and viewing issues
 
@@ -177,22 +179,40 @@ Dart 插件的代码分析，可以做到：
 ## 运行和调试
 
 {{site.alert.note}}
+
   You can debug your app in a few ways.
+  
+  你可以通过如下方式调试你的应用：
 
   * Using [DevTools][], a suite of debugging and profiling
     tools that run in a browser
     _and include the Flutter inspector_.
     DevTools replaces the previous browser-based profiling
     tool, Observatory.
+
+    使用 [开发者工具 (DevTools)][DevTools], 运行在浏览器里的一系列调试和分析工具，
+    **也包括 Flutter inspector**，开发者工具替代了之前的
+    Observatory 分析工具。
+    
   * Using Android Studio's (or IntelliJ's) built-in debugging
     features, such as the ability to set breakpoints.
+
+    使用 Android Studio（或者 IntelliJ）内置的调试功能，
+    比如设置断点等。
+    
   * Using the Flutter inspector, directly available in
     Android Studio and IntelliJ.
+
+    使用 Flutter inspector, 在 Android Studio 和 IntelliJ 内置。
 
   The instructions below describe features available in Android
   Studio and IntelliJ. For information on launching DevTools,
   see [Running DevTools from Android Studio][] in the
   [DevTools][] docs.
+  
+  下面的介绍文章适用于 Android Studio 和 IntelliJ，更多关于开发者工具的信息，
+  请参看文档：[在 Android Studio 上安装和运行开发者工具][Running DevTools from Android Studio]。
+  
 {{site.alert.end}}
 
 Running and debugging are controlled from the main toolbar:
@@ -213,8 +233,9 @@ Flutter-specific buttons on the right-hand side of the toolbar.
 {{site.alert.note}}
 
   If the Run and Debug buttons are disabled, and no targets are listed,
-  Flutter has not been able to discover any connected iOS or Android devices or
-  simulators.  You need to connect a device, or start a simulator, to proceed.
+  Flutter has not been able to discover any connected iOS or
+  Android devices or simulators.
+  You need to connect a device, or start a simulator, to proceed.
 
   如果 Run 和 Debug 按钮不可用，且未显示目标设备，、
   则 Flutter 未发现任何已连接的 iOS 、Android 设备或模拟器。
@@ -222,37 +243,53 @@ Flutter-specific buttons on the right-hand side of the toolbar.
 
 {{site.alert.end}}
 
- 1. Locate the **Flutter Target Selector** drop-down button.
+1. Locate the **Flutter Target Selector** drop-down button.
     This shows a list of available targets.
 
-    找到**选择目标**下拉按钮，点击它会显示出可用设备列表。
+   找到**选择目标**下拉按钮，点击它会显示出可用设备列表。
 
- 2. Select the target you want your app to be started on.
-    When you connect devices, or start simulators, additional entries appear.
+2. Select the target you want your app to be started on.
+   When you connect devices, or start simulators,
+   additional entries appear.
 
-    选择你希望启动应用的设备。当连接设备或启动模拟器时，列表中将会加入新选项。
+   选择你希望启动应用的设备。当连接设备或启动模拟器时，
+   列表中将会加入新选项。
+
+{{site.alert.note}}
+
+  If you want to try running your app on the web,
+  but the **Chrome (web)** target doesn't appear in the
+  list of targets, make sure you've enabled web, as
+  described in [Building a web application][].
+  
+  如果将你的 Flutter 应用运行在 Web 平台，但是你没法找到
+  **Chrome (web)** 这个设备的话，请先确保你已经开启了 Web 支持，
+  请在这个文档里查看更多：
+  [使用 Flutter 构建 Web 应用][Building a web application]。
+  
+{{site.alert.end}}
 
 ### Run app without breakpoints
 
 ### 不使用断点运行应用
 
- 1. Click the **Play icon** in the toolbar, or invoke **Run > Run**.
+1. Click the **Play icon** in the toolbar, or invoke **Run > Run**.
     The bottom **Run** pane shows logs output.
 
-    点击工具栏中的 **Play** 按钮，或选择 **Run > Run**。
-    底部的 **Run** 窗口会有日志输出：<br>
+   点击工具栏中的 **Play** 按钮，或选择 **Run > Run**。
+   底部的 **Run** 窗口会有日志输出：<br>
 
 ### Run app with breakpoints
 
 ### 使用断点运行应用
 
- 1. If desired, set breakpoints in your source code.
+1. If desired, set breakpoints in your source code.
 
-    如果需要，在源代码中设置断点。
+   如果需要，在源代码中设置断点。
 
- 1. Click the **Debug icon** in the toolbar, or invoke **Run > Debug**.
+1. Click the **Debug icon** in the toolbar, or invoke **Run > Debug**.
 
- 	点击工具栏中的 **Debug** 按钮，或选择 **Run > Debug**。
+   点击工具栏中的 **Debug** 按钮，或选择 **Run > Debug**。
 
     * The bottom **Debugger** pane shows Stack Frames and Variables.
 
@@ -260,7 +297,7 @@ Flutter-specific buttons on the right-hand side of the toolbar.
 
     * The bottom **Console** pane shows detailed logs output.
 
-       底部的 **Console** 窗口会显示详细的日志输出。
+      底部的 **Console** 窗口会显示详细的日志输出。
 
     * Debugging is based on a default launch configuration.
       To customize this, click the drop-down button to the right
@@ -289,6 +326,8 @@ Flutter 有效加快开发周期。使用 **热重载** 功能，你可以在修
   To examine performance issues in Flutter, see the
   [Timeline view][].
 
+  检查 Flutter 里的性能问题，请查看
+  [时间线视图文档][Timeline view]。
 
 {{site.alert.end}}
 
@@ -724,13 +763,16 @@ Prior to filing new issues:
 
 When filing new issues, include the output of [`flutter doctor`][]。
 
+当你在提交新的 issue 时，确保带上运行了 [`flutter doctor`][] 命令之后的返回内容。
+
+[Building a web application]: /docs/get-started/web
+[DevTools]: /docs/development/tools/devtools
 [DevTools' docs]: https://flutter.github.io/devtools
 [DevTools 文档]: https://flutter.github.io/devtools
 [GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
 [GitHub 问题跟踪]: {{site.repo.flutter}}-intellij/issues
 [JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
 [JetBrains 问题跟踪]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
-[`flutter doctor`]: /docs/resources/bug-reports#provide-some-flutter-diagnostics
 [`flutter doctor`]: /docs/resources/bug-reports#provide-some-flutter-diagnostics
 [Flutter IDE cheat sheet, MacOS version]: /docs/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf
 [Flutter IDE 速查表，MacOS 版]: /docs/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf

@@ -51,6 +51,8 @@ your development environment must meet these minimum requirements:
 
 {% include_relative _android-setup.md %}
 
+{% include_relative _web-setup.md %}
+
 ## Next step
 
 ## 下一步

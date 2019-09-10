@@ -9,7 +9,7 @@ title: 技术概览
 
 Flutter is an app SDK for building high-performance,
 high-fidelity apps for iOS, Android, and web
-([early access][]) from a single codebase.
+([tech preview][]) from a single codebase.
 
 Flutter 是 Google 开源的 UI 工具包，帮助开发者通过一套代码库高效构建多平台精美应用，
 支持移动、Web ([early access][])、桌面和嵌入式平台。
@@ -469,7 +469,7 @@ Flutter 是开源的，而且我们鼓励公开对话，但需要阅读我们的
 [Dart]: {{site.dart-site}}
 [`DecoratedBox`]: {{site.api}}/flutter/widgets/DecoratedBox-class.html
 [Discord]: https://discord.gg/N7Yshp4
-[early access]: /web
+[tech preview]: /web
 [examples]: {{site.github}}/flutter/samples/blob/master/INDEX.md
 [@flutterdev]: https://twitter.com/flutterdev
 [fully concrete widgets]: {{site.api}}/flutter/widgets/RenderObjectWidget-class.html

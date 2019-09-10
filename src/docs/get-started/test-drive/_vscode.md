@@ -1,6 +1,8 @@
 <div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
-## Create the app
+## Create the app {#create-app}
+
+{% include_relative _web-app.md  %}
 
 ## 创建应用
 
@@ -30,6 +32,8 @@ contains a simple demo app that uses [Material Components][].
 
 上面的操作会创建一个叫做 `myapp` 的 Flutter 项目目录
 该目录中包含一个用到 [Material Components][]简单的示例程序。
+
+{% include_relative _package-name.md  %}
 
 {% include_relative _main-code-note.md  %}
 

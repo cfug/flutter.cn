@@ -100,7 +100,7 @@ and `Column` lays out its widgets vertically.
 
 ## Axis size and alignment
 
-## 轴大小和对其方式
+## 轴大小和对齐方式
 
 So far, the `BlueBox` widgets have been squished together 
 (either to the left or at the top of the UI Output).

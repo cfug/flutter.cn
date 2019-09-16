@@ -11,7 +11,7 @@ Description: 学习如何通过命令行工具安装和使用开发者工具。
 
 If you have `pub` on your path, you can run:
 
-如果在你的路径中有 `pub`, 可以运行：
+如果在你的环境变量 `PATH` 中有 `pub`, 可以运行：
 
 ```
 pub global activate devtools
@@ -19,7 +19,7 @@ pub global activate devtools
 
 If you have `flutter` on your path, you can run:
 
-如果路径中有 `flutter` , 可以运行：
+如果环境变量 `PATH` 中有 `flutter` , 可以运行：
 
 ```
 flutter pub global activate devtools

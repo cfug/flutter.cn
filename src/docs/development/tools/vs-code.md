@@ -35,7 +35,8 @@ Updates to the extensions are shipped on a regular basis.
 By default, VS Code automatically updates extensions when
 updates are available.
 
-扩展的更新会定期发布。默认情况下，当有可用的更新时 VS Code 会自动更新扩展。
+扩展的更新会定期发布。
+默认情况下，当有可用的更新时 VS Code 会自动更新扩展。
 
 To install updates manually:
 
@@ -260,7 +261,9 @@ Flutter 扩展会自动选择上次连接的设备。
       **Debug Sidebar** to create a `launch.json` file.
       You can then modify the values.
       
-      调试基于默认的配置。也可以通过点击**调试侧边栏**顶部的齿轮创建 `launch.json` 文件自定义调试。你可以修改里面的值。
+      调试基于默认的配置。
+      也可以通过点击**调试侧边栏**顶部的齿轮创建 `launch.json` 文件自定义调试。
+      你可以修改里面的值。
 
 ## Fast edit and refresh development cycle
 

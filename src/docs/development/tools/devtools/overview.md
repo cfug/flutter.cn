@@ -16,9 +16,7 @@ but is under active development.
 开发工具是一套 Dart 和 Flutter 的性能调试工具。现在它还是预览版，但它正在持续开发中。
 
 ![Screenshot of timeline dark mode]({% asset tools/devtools/timeline-dark-mode.png @path %}){:width="100%"}
-<br><center>DevTools Timeline view in dark mode</center>
-
-<br><center>黑暗模式下的开发工具时间轴截图</center>
+<br><center><span>DevTools Timeline view in dark mode</span><span>黑暗模式下的开发工具时间轴截图</span></center>
 
 ## What can I do with DevTools?
 
@@ -58,9 +56,7 @@ your existing IDE or command-line based development workflow.
 我们希望您将开发工具与现有的 IDE 或基于命令行的开发流程结合起来使用。
 
 ![GIF showing DevTools features]({% asset tools/devtools/inspector.gif @path %}){:width="100%"}
-<br><center>DevTools in action</center>
-
-<br><center>运行中的开发工具</center>
+<br><center><span>DevTools in action</span><span>运行中的开发工具</span></center>
 
 ## How do I install DevTools?
 
@@ -78,7 +74,7 @@ See the [Android Studio/IntelliJ][], [VS Code][], or
 Please give DevTools a try, provide feedback, and file issues
 in the [DevTools issue tracker][]. Thanks!
 
-请在 [开发工具 issue 追踪器][] 中尝试使用开发工具，并提交反馈和文件 issue。
+请在 [开发者工具 issue 追踪器][] 中尝试使用开发工具，并提交反馈和文件 issue。
 
 ## Other resources
 
@@ -88,7 +84,8 @@ For more information on debugging and profiling
 Flutter apps, see the [Debugging][] page and,
 in particular, its list of [other resources][].
 
-关于调试、分析 Flutter 应用程序的更多详细，请查阅 [调试][] 页面，尤其是 [其他资源][] 列表。
+关于调试、分析 Flutter 应用程序的更多详细，
+请查阅 [调试][] 页面，尤其是 [其他资源][] 列表。
 
 [Android Studio/IntelliJ]: /docs/development/tools/devtools/android-studio
 [VS Code]: /docs/development/tools/devtools/vscode

@@ -44,14 +44,6 @@ Flutter 1.9 is live!
 
 Flutter 1.9 正式发布！
 
-For more information, see [Announcing Futter
-1.7]({{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf)
-on the [Flutter Medium Publication]({{site.flutter-medium}}),
-and the [1.9.x release
-notes]({{site.github}}/flutter/flutter/wiki/xxx)
-on the [Flutter wiki]({{site.github}}//flutter/flutter/wiki).
-{% endcomment %}
-
 For the 1.9 release, Flutter's web support has been
 merged ("unforked") into the main repo.
 **Web support hasn't reached beta, and is not ready
@@ -62,30 +54,68 @@ exclusively for developing Flutter mobile apps.
 Some website updates are available now (and listed below),
 but more will be coming.
 
+随着 1.9 版本的发布，在 Web 平台运行
+Flutter 的代码正式被合并到主 repo，但是
+**在 Web 平台的支持尚未达到 Beta 阶段，请不要用在生产环节**。
+Web 和即将到来的桌面端支持将会影响本站的内容，
+如下列出了一些更新，更多的更新将会在稍后时间发布：
+
 New and updated docs on the site include:
+
+新的文档和更新包括：
 
 * The Flutter layout codelab has been rewritten and
   uses the updated DartPad, the browser-based tool for running
   Dart code. DartPad now supports Flutter!
   [Try it out](/docs/codelabs/layout-basics)
   and let us know what you think.
+
+  我们重写了 Flutter 布局的 codelab，
+  使用了最新的、支持了 Flutter 的 DartPad，
+  可以在 [这里](/docs/codelabs/layout-basics) 
+  查看并告诉我们你的想法。
+  
 * The Performance view tool, which allows you to record
   and profile a session from your Dart/Flutter application,
   has been enabled in DevTools. For more information,
   see the [Performance
   view](/docs/development/tools/devtools/performance)
   page.
+
+  开发者工具（DevTools）里的性能视图工具（Performance view tool），
+  可以让你录制并检查 Dart 或 Flutter 应用的某个运行时 session，
+  可以在这里查看更多：
+  [使用性能视图 (Performance view)](/docs/development/tools/devtools/performance)
+  
 * A new page on
   [building a web application](/docs/get-started/web).
+
+  新增一个页面，关于 [如何构建一个 Web 应用](/docs/get-started/web)。
+  
 * A new page on [creating responsive
   apps](/docs/development/ui/layout/responsive)
   in Flutter.
+  
+  新增一个页面，关于在 Flutter 里
+  [如何创建响应式应用](/docs/development/ui/layout/responsive)
+
 * A new page on
   [preparing a web app for release](/docs/deployment/web).
-* A new [web FAQ](/docs/development/platform-integration/web).
-* The [Flutter for web](/web) page is updated.
 
+  新增一个页面，关于如何 [打包并发布到 Web 平台](/docs/deployment/web)。
+
+* A new [web FAQ](/docs/development/platform-integration/web).
+ 
+  关于在 Web 平台运行 Flutter 应用，我们新增了一个 
+  [Web 常见问题页面](/docs/development/platform-integration/web)。
+  
+* The [Flutter for web](/web) page is updated.
+  
+  关于 [在 Web 平台运行 Flutter](/web) 的页面已经更新。
+  
 Happy Fluttering!
+
+祝你在 Flutter 应用的开发中有一个愉快的经历和体验！
 
 [What's new archive](/docs/whats-new-archive)
 

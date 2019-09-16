@@ -30,8 +30,9 @@ you can complete this tutorial. You don’t need
 previous experience with Dart, mobile, or web programming.
 
 这是一个指引你完成第一个 Flutter 应用的手把手操作教程（我们也称之为是 codelab）。
-我们将会着手创建一个简单的 Flutter 应用，无需 Dart 语言和移动开发语言经验，
-只需你具备面向对象语言开发基础（如变量，循环和条件语句）即可。
+我们将会着手创建一个简单的 Flutter 应用，无需 Dart 语言、
+移动开发语言或 Web 开发经验，
+只需你具备面向对象语言开发基础即可（如变量，循环和条件语句）。
 
 This guide is part 1 of a two-part codelab. You can find
 [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
@@ -45,22 +46,18 @@ can also be found on [Google Developers]({{site.codelabs}}).
 ## What you'll build in part 1
 {:.no_toc}
 
-<<<<<<< HEAD
 ## 第一部分的内容概览
 {:.no_toc}
 
 You’ll implement a simple mobile app that generates proposed
 names for a startup company. The user can select and unselect names,
-=======
-You’ll implement a simple mobile app that generates proposed
-names for a startup company. The user can select and unselect names,
->>>>>>> e0366cc3b1cb6e8613a20675ec36ed6a891cb7f2
 saving the best ones. The code lazily generates names.
 As the user scrolls, more names are generated.
 There is no limit to how far a user can scroll.
 
 你将完成一个简单的移动应用程序，功能是：为一个创业公司生成建议的公司名称。
-用户可以选择和取消选择的名称、保存喜欢的名称。该代码一次生成十个名称，当用户滚动时，会生成一新批名称。
+用户可以选择和取消选择的名称、保存喜欢的名称。
+该代码一次生成十个名称，当用户滚动时，会生成一新批名称。
 
 The animated GIF shows how the app works at the completion of part 1.
 

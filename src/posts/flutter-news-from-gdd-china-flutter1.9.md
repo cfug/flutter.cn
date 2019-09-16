@@ -46,9 +46,9 @@ In this release, we provide several new widgets including `ToggleButtons` (left)
 
 在 Flutter 1.9 中，我们新添加了若干 widget, 其中包括 ToggleButtons 和 ColorFiltered。
 
-![Flutter ToggleButtons Demo](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/image1phone.gif){:width="95%"}
+![Flutter ToggleButtons Demo](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/image1phone.gif){:width="45%"}
 
-![Flutter ColorFilter Demo](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/image2phone.gif){:width="95%"}
+![Flutter ColorFilter Demo](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/image2phone.gif){:width="45%"}
 
 The `ToggleButtons` widget bundles a row of `ToggleButton` widgets together, often composed of a set of `Icon` and `Text` widgets, to form a set of buttons with fully customizable look and behavior. Do you want single selection or multi-select? Do you want to require at least one selection or allow none? Do you want square or rounded edges, thick or thin borders, icons or text, etc? You can see some of these options above on the left and see how they’re implemented in [the ToggleButtons sample](https://github.com/csells/flutter_toggle_buttons).
 
@@ -124,9 +124,9 @@ Some community experiments have already showcased Flutter’s web output:
 
 我们的开发者已经构建了许多实用的 web 工具，下面就简单介绍一下 Flutter Widget Livebook 和 Panache。
 
-![Flutter Widget Livebook](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/communityexperiment1.png)
+![Flutter Widget Livebook](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/communityexperiment1.png){:width="45%"}
 
-![Panache](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/communityexperiment2.png)
+![Panache](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/communityexperiment2.png){:width="45%"}
 
 [Flutter Widget Livebook](https://flutter-widget-livebook.blankapp.org/) (left) is built with Flutter for web and shows Flutter widgets running live in your browser. [Panache](https://rxlabz.github.io/panache_web/) (right) is a tool for creating themes for Flutter which you can then download and drop directly into your code.
 
@@ -143,7 +143,6 @@ Please give this updated experimental support for Flutter on the web a try and [
 We’re thrilled to see continuing fast growth and adoption of for Flutter. Here at Google, hundreds of developers are working on more than twenty projects using Flutter, including some that are released and many that are still in development. At GDD China this week, we highlighted how Tencent, one of the largest internet brands, is using Flutter pervasively for a wide variety of projects:
 
 Flutter 惊人的成长速度和采用率让我们倍感欣慰。在 Google 内部，有超过 20 个项目正在稳步推进中，凝集着数千位工程师的辛勤付出，其中有部分项目已成功落地，其余的则尚在开发阶段。在本周的 Google 开发者大会上，我们已经与大家分享了全球互联网巨头腾讯的成功经验，介绍了腾讯是如何把 Flutter 灵活地运用到越来越多的产品中，欢迎收看下方视频，了解更多。
-
 Bilibili 视频链接 https://www.bilibili.com/video/av67230699/
 
 <iframe src="//player.bilibili.com/player.html?aid=67230699&cid=116573649&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -152,7 +151,7 @@ Switching gears to something just for fun, if you have Google Assistant on your 
 
 现在，让我们插个轻松的话题，邀请您参加一个有趣的小游戏。请找到您手边的 Google Assistant 设备，然后对它说 “OK Google. Talk to Flutter Widget Quiz.” (OK Google, [为我接通 Flutter Widget 问答挑战赛](https://assistant.google.com/services/a/uid/000000f3a4034e91))。十分感谢 Flutter 社区对这份小测试的倾情贡献，期待各位小伙伴的精彩表现:
 
-![Flutter Widget Quiz](https://4.bp.blogspot.com/-WnoX_nu_xLQ/XXZ7zNXYH8I/AAAAAAAAH1A/jB4iodXkUnQsHUbbOg1J97yVIoa3XLEoACLcBGAs/s1600/flutterwidgetquiz.png)
+![Flutter Widget Quiz](https://4.bp.blogspot.com/-WnoX_nu_xLQ/XXZ7zNXYH8I/AAAAAAAAH1A/jB4iodXkUnQsHUbbOg1J97yVIoa3XLEoACLcBGAs/s1600/flutterwidgetquiz.png){:width="80%"}
 
 ## Conclusion
 

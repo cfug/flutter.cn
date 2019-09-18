@@ -296,7 +296,7 @@ Not at this time. Share your ideas at
 [{{site.email}}](mailto:{{site.email}}).
 
 现在还没有。如果您有这方面的建议，请通过
-[{{flutter-dev@googlegroups.com}}](mailto:{{site.email}}) 邮箱与我们联系。
+[{{site.email}}](mailto:{{site.email}}) 邮箱与我们联系。
 
 ## Technology
 
@@ -892,7 +892,7 @@ and binary size is always a concern with mobile apps, we disabled
 dart:mirrors. We are curious what you might need reflection/mirrors
 for&mdash;let us know at [{{site.email}}](mailto:{{site.email}}).
 
-现在暂时还不行。由于 Flutter 应用已经针对最终产物进行了预编译，并且控制二进制内容体积始终是现代移动应用需要面对的一个问题，所以我们禁用了 dart:mirrors。我们很想知道您需要反射 / 镜像系统的目的&mdash;请通过如下地址反馈给我们您的想法：[{{flutter-dev@googlegroups.com}}](mailto:{{site.email}})。
+现在暂时还不行。由于 Flutter 应用已经针对最终产物进行了预编译，并且控制二进制内容体积始终是现代移动应用需要面对的一个问题，所以我们禁用了 dart:mirrors。我们很想知道您需要反射 / 镜像系统的目的&mdash;请通过如下地址反馈给我们您的想法：[{{site.email}}](mailto:{{site.email}})。
 
 ### How do I do international&shy;ization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
@@ -1127,7 +1127,7 @@ smaller scale, Dart's
 which makes heavy use of the functional style (map, reduce, where, etc), is
 frequently used to process lists of values in the framework.
 
-  函数式编程 (functional programming)：整个应用都可以只用 [StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html) 来构建，它本质上就是一些方法，用来描述如何将参数传送给其他方法，以及在布局区域内计算布局以及绘制图像。当然这样的应用一般也不会包含状态，所以通常也无法进行交互。比如，[Icon]({{site.api}}/flutter/widgets/Icon-class.html) widget 就只是一个将其元素 ([颜色]({{site.api}}/flutter/widgets/Icon/color.html)、[图标]({{site.api}}/flutter/widgets/Icon/icon.html)、[尺寸]({{site.api}}/flutter/widgets/Icon/size.html))) 罗列在布局区域内的方法。另外，当这个范式被重度使用时，则会使用不可变的数据结构，如整个 [Widget]({{site.api}}/flutter/widgets/Widget-class.html) 类及其派生，以及一些辅助类，如 [Rect]({{site.api}}/flutter/dart-ui/Rect-class.html) 和 [TextStyle]({{site.api}}/flutter/painting/TextStyle-class.html)。另外，从一个较小的尺度来看的话，Dart 的 [Iterable]({{site.api}}/flutter/dart-core/Iterable-class.html) API 也重度使用了这个范式 (如 map, reduce, where 等方法)，它在框架中经常被用来处理一系列的值。
+  函数式编程 (functional programming)：整个应用都可以只用 [StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html) 来构建，它本质上就是一些方法，用来描述如何将参数传送给其他方法，以及在布局区域内计算布局以及绘制图像。当然这样的应用一般也不会包含状态，所以通常也无法进行交互。比如，[Icon]({{site.api}}/flutter/widgets/Icon-class.html) widget 就只是一个将其元素 ([颜色]({{site.api}}/flutter/widgets/Icon/color.html)、[图标]({{site.api}}/flutter/widgets/Icon/icon.html)、[尺寸]({{site.api}}/flutter/widgets/Icon/size.html))) 罗列在布局区域内的方法。另外，当这个范式被重度使用时，则会使用不可变的数据结构，如整个 [Widget]({{site.api}}/flutter/widgets/Widget-class.html) 类及其���生，以及一些辅助类，如 [Rect]({{site.api}}/flutter/dart-ui/Rect-class.html) 和 [TextStyle]({{site.api}}/flutter/painting/TextStyle-class.html)。另外，从一个较小的尺度来看的话，Dart 的 [Iterable]({{site.api}}/flutter/dart-core/Iterable-class.html) API 也重度使用了这个范式 (如 map, reduce, where 等方法)，它在框架中经常被用来处理一系列的值。
 
 
 * Event-driven programming: User interactions are represented by event objects
@@ -1253,7 +1253,12 @@ If you think you've encountered a bug, file it in our
 For discussions, join our mailing list at
 [{{site.email}}](mailto:{{site.email}}).
 
-如果您觉得遇到 bug 了，请提交至我们的 [问题追踪入口]({{site.github}}/flutter/flutter/issues)。我们也鼓励您在 [Stack Overflow]({{site.so}}/tags/flutter) 中多多使用“如何 (how to) ...“来搜索解答。如果您希望直接与我们沟通，请使用我们的官方邮件地址 [{{flutter-dev@googlegroups.com}}](mailto:{{site.email}})。 
+如果您觉得遇到 bug 了，请提交至我们的
+[问题追踪入口]({{site.github}}/flutter/flutter/issues)。
+我们也鼓励您在 [Stack Overflow]({{site.so}}/tags/flutter) 中多多使用
+“如何 (how to) ...“来搜索解答。
+如果您希望直接与我们沟通，
+请使用我们的官方邮件地址 [{{site.email}}](mailto:{{site.email}})。 
 
 ### How do I get involved?
 
@@ -1269,7 +1274,7 @@ We recommend that you join our mailing list at
 [{{site.email}}](mailto:{{site.email}}) and let us
 know how you're using Flutter and what you'd like to do with it.
 
-我们也希望您加入我们的邮件讨论 ([{{flutter-dev@googlegroups.com}}](mailto:{{site.email}}))，告诉我们您是如何使用 Flutter 的，以及打算用 Flutter 开发什么。
+我们也希望您加入我们的邮件讨论 ([{{site.email}}](mailto:{{site.email}}))，告诉我们您是如何使用 Flutter 的，以及打算用 Flutter 开发什么。
 
 If you're interested in contributing code, you can start
 by reading our [Contributing Guide][] and check out our

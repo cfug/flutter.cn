@@ -179,9 +179,9 @@ for these changes to take effect.
 
 ### 运行 `flutter doctor`
 
-From a console window that has the Flutter directory in the path (see above),
-run the following command to see if there are any platform dependencies you
-need to complete the setup:
+From a console window that has the Flutter directory in the
+path (see above), run the following command to see if there
+are any platform dependencies you need to complete the setup:
 
 在将 `Path` 变量更新后，打开一个新的控制台窗口，然后将下面的命令输入进去执行。
 如果它提示有任何的平台相关依赖，那么你就需要按照指示完成这些配置：

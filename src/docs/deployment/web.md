@@ -4,7 +4,6 @@ title: 打包并发布到 Web 平台
 description: How to prepare for and release a web app.
 description: 如何打包并发布到 Web 平台。
 short-title: Web
-short-title: Web
 ---
 
 During a typical development cycle,
@@ -22,8 +21,6 @@ of your app.
 本页面会帮助你构建 **release** 版本的应用。
 
 This page covers the following topics:
-
-本页面包含以下主题：
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
 
@@ -53,7 +50,7 @@ TBD
 
 ## 混淆并压缩代码
 
-Obfuscation and minification  is handled for you when you
+Obfuscation and minification is handled for you when you
 create a release build.
 
 当你创建了一个 release 版本时，便混淆并压缩了代码。
@@ -86,24 +83,8 @@ directory of the project.
 使用 `flutter build web` 命令构建应用程序以进行部署。
 这将生成包括资源的应用程序，并将文件放入项目的 `/build/web` 目录中。
 
-Launch a web server (for example,
-`python -m SimpleHTTPServer 8000`,
-or by using the [dhttpd][] package),
-and open the /build/web directory. Navigate to
-`localhost:8000` in your browser
-(given the python example)
-to view the release version of your app.
-
-启动 Web 服务器（例如，`python -m SimpleHTTPServer 8000`，或使用
-[dhttpd][] package），然后打开 /build/web 目录。
-在浏览器中访问 `localhost:8000`（前文用 Python 启动的服务器）
-以查看应用程序的 release 版本。
-
-## Deploying to the web
-
-## 发布到 Web
-
-The release build of a simple app has the following structure:
+The release build of a simple app has the
+following structure:
 
 一般的应用程序的 release 版本具有以下结构：
 
@@ -122,11 +103,52 @@ The release build of a simple app has the following structure:
   main.dart.js.map
 ```
 
+Launch a web server (for example,
+`python -m SimpleHTTPServer 8000`,
+or by using the [dhttpd][] package),
+and open the /build/web directory. Navigate to
+`localhost:8000` in your browser
+(given the python SimpleHTTPServer example)
+to view the release version of your app.
+
+启动 Web 服务器（例如，`python -m SimpleHTTPServer 8000`，或使用
+[dhttpd][] package），然后打开 /build/web 目录。
+在浏览器中访问 `localhost:8000`（前文用 Python 启动的服务器）
+以查看应用程序的 release 版本。
+
+## Embedding a Flutter app into an HTML page
+
+## 将 Flutter 应用内嵌到一个 HTML 页面里
+
+You can embed a Flutter web app,
+as you would embed other content,
+in an [`iframe`][] tag of an HTML file.
+In the following example, replace "URL"
+with the location of your HTML page:
+
+你可以使用 [`iframe`][] 标签将 Flutter web 应用
+内嵌到一个网页里。
+请参照下面的例子，将 URL 替换成实际的地址：
+
+```html
+<iframe src="URL"></iframe>
+```
+
+## Deploying to the web
+
+## 部署到 Web 端
+
 When you are ready to deploy your app,
 upload the release bundle
 to Firebase, the cloud, or a similar service.
+Here are a few possibilities, but there are
+many others:
 
-等你准备好部署应用时，将 release 包上传到 Firebase、云或者是类似服务上
+等你准备好部署应用时，将 release 包上传到 Firebase、云或者是类似服务上：
+
+* [Firebase Hosting][]
+* [Github Pages][]
+* [Google Cloud Hosting][]
 
 In future, we plan to generate PWA configuration files
 to support Progressive Web Apps.
@@ -134,3 +156,7 @@ to support Progressive Web Apps.
 在未来，我们计划生成 PWA 配置文件来支持渐进式 Web 应用。
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
+[Firebase Hosting]: https://firebase.google.com/docs/hosting
+[GitHub Pages]: https://pages.github.com/
+[Google Cloud Hosting]: https://cloud.google.com/solutions/smb/web-hosting/
+[`iframe`]: https://html.com/tags/iframe/

@@ -390,7 +390,7 @@ class Example {
     const response = await fetch(url);
     const json = await response.json();
     const data = await json.origin;
-    console.log(data);
+    return data;
   }
 }
 

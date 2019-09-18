@@ -97,10 +97,10 @@ are a min and max width and a min and max height. During layout,
 the child determines its geometry by choosing a size within these bounds.
 After the child returns from layout, the parent decides the child's
 position in the parent's coordinate system<sup><a href="#a3">3</a></sup>.
-Notice that the child's layout cannot depend on the child's position
-because the child's position is not determined until after the child
-returns from layout. As a result, the parent is free to reposition
-the child without needing to recompute the child's layout.
+Note that the child's layout cannot depend on its position,
+as the position is not determined until after the child
+returns from the layout. As a result, the parent is free to reposition
+the child without needing to recompute its layout.
 
 针对这个通用协议，Flutter 拥有多种实现。最常用的是 `RenderBox`，它以二维的笛卡尔坐标进行运算。
 在盒子布局中，约束是最小及最大宽高。在布局过程中，子节点通过选择这些边界内的大小来确定其几何信息。

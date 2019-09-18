@@ -33,19 +33,19 @@ Flutter 中国社区的活跃壮大离不开每一位为社区贡献的人，在
 #### CFUG 团队
 1. 感谢 Adam Yi, Zhongdong Yang, Xiaoyu Li, Shena Bian, Bing Gao, Steven Tian 以及 Study Jams 学员和谷创字幕组译者在 18 年 5 月份加班加点完成初版 Flutter Codelabs 和 Flutter 中文社区资源网站的设计；
 1. Shena Bian, Yihui Miao 对 Flutter 中文社区资源网址的设计；
-1. 感谢 Zhongdong Yang 对 Flutter 社区中文资源网站 flutter.cn, codelabs.flutter-io.cn 的前端技术实现。
+1. 感谢 Zhongdong Yang 对 Flutter 社区中文资源网站 flutter.cn, codelabs.flutter-io.cn 的前端技术实现；
 1. 感谢雪狼帮助适配、调试和制作双语对照的翻译工具以及 debug server 的 CI 调试部署，感谢 @Zheaoli 帮忙搭建和调试 CI 以及文档部署方案；
-1. 感谢 @eatmiya 维护 Flutter 社区微信公众号
+1. 感谢 @eatmiya 维护 Flutter 社区微信公众号。
 
 #### Google 公司和合作伙伴团队
 1. 特别感谢 Google Flutter 团队里一直对中国社区支持并作出卓越贡献的 Tao Dong, Xiao Yu 和 Yuqian Li，感谢前 DevRel 团队 Lynn Wang 在 Flutter 社区里的活跃和积极贡献，感谢谷歌开发者运营团队的 Anna；
 1. 感谢 360 前端委员会的 Shuo He 和 360 大学的 Weiyang Zhang 举办的 360 互联网技术训练营 Flutter 专场，感谢声网的 Xingxing Qin 和 Olivia，感谢 RTC 开发者社区和 GDG 社区积极举办多次与 Flutter 相关的活动（2019 年）；
 1. 感谢各大公司 / 团队的社区联系人帮助在内部分享 Flutter 和推动 Flutter 的落地，及时有效的安排 Googler 的拜访，内部的技术问题的收集和优先级排序，以及在各种大会上出席做演讲认可和推广 Flutter；
 1. 感谢阿里巴巴闲鱼的宗心、KyleWong 和树彬，感谢一直对 Flutter 的代码、文章等资源贡献，感谢开源 Fish Redux 和 FlutterBoost，感谢在阿里内部推动 Flutter；
-1. 感谢阿里拍卖前端团队开源的 flutter-go。
+1. 感谢阿里拍卖前端团队开源的 flutter-go；
 1. 感谢快手的 Kai Sun 引荐公司团队与 Flutter 团队积极沟通，并多次参与社区演讲。
 
-#### 谷歌活动/社区活动志愿者
+#### 谷歌活动 / 社区活动志愿者
 1. 感谢 GMTC 的活动组织者和主办方给予 Flutter 如此大量的曝光和内容展示，以及在 InfoQ 旗下众多开发者公众号里大力宣传 Flutter (2018 - 2019)；
 1. 感谢 Xinlei Wang 组织了 Flutter 成都高校系列活动（2018 年 12 月）；
 1. 感谢 Xinlei Wang, Congli Ma, Yanbo Liu (Flutter GDE), Bill Fu (TikTok 团队) 在 GDD 大会现场的 Flutter 展位站台并回答大家的问题（2019/9/11）。

@@ -120,60 +120,27 @@ To create your first Flutter app and test your setup, follow these steps:
 
 ### 部署到 iOS 真机上
 
-To deploy your Flutter app to a physical iOS device,
-you’ll need some additional tools and an Apple account.
-You'll also need to set up physical device deployment in Xcode.
+To deploy your Flutter app to a physical iOS device you need the third-party
+CocoaPods dependency manager and an Apple Developer account. You'll also need
+to set up physical device deployment in Xcode.
 
 如果你想把 Flutter 应用部署到 iOS 的真机上，
 你还需要一些别的工具和一个 Apple 开发者账号。
 另外，你还需要在 Xcode 上针对你的机器做一些设置。
 
- 1. Install [homebrew](https://brew.sh).
-
-    安装 [homebrew](https://brew.sh)
-
- 2. Ensure that homebrew is up to date:
-
-    确保 homebrew 已经是最新版以及确保所有 formula 都已经更新：
+ 1. Install and set up CocoaPods by running the following commands:
+    
+    通过下面的代码安装和设置 CocoaPods:
+ 
 
     ```terminal
-    $ brew update
-    ```
-
- 3. Install the tools for deploying Flutter apps to iOS devices by running the
-    following commands:
-
-    通过运行以下命令来安装将 Flutter 应用分发到 iOS 真机的工具：
-
-    ```terminal
-    $ brew install --HEAD usbmuxd
-    $ brew link usbmuxd
-    $ brew install --HEAD libimobiledevice
-    $ brew install ideviceinstaller ios-deploy cocoapods
+    $ sudo gem install cocoapods
     $ pod setup
     ```
 
-    {{site.alert.note}}
-      The first two commands above are necessary as a temporary
-      workaround until the next release of libusbmuxd,
-      as explained in [libusbmuxd issue #46][] and
-      [Flutter issue #22595][].
-      
-      上面所示的前两个命令是 libusbmuxd 的 [libusbmuxd issue #46][] 和 [Flutter issue #22595][]
-      的临时解决方案。
+ 1. Follow the Xcode signing flow to provision your project:
 
-      [libusbmuxd issue #46]: {{site.github}}/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
-      [Flutter issue #22595]: {{site.github}}/flutter/flutter/issues/22595
-    {{site.alert.end}}
-
-    If any of these commands fail, run `brew doctor` and follow the instructions
-    to resolve any issues.
-
-    如果运行上述命令报错了，运行以下 `brew doctor` 命令，并通过命令给出的报告来解决相应的问题。
-
- 4. Follow the Xcode signing flow to provision your project:
-
-    按照 Xcode 签名流程来配置你的项目：
+    按照下面 Xcode 签名流程来配置你的项目:
 
      {: type="a"}
      1. Open the default Xcode workspace in your project by running `open

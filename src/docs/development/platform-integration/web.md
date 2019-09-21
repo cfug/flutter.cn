@@ -230,14 +230,35 @@ release](/docs/deployment/web).
 
 请参阅 [打包并发布到 Web 平台](/docs/deployment/web)
 
+### Does `Platform.is` work on the web?
+
+### `Platform.is` API 现在可用吗？
+
+Not currently. 
+
+目前还不行。
+
+### How can I compare notes others who are playing with this feature?
+
+### 如何跟其他使用者交流？
+
+Check out the **#web** discussion board on [Discord][].
+Flutter engineers routinely read and respond on Discord.
+
+请在 [Discord][] 平台的 **#web** 这个讨论板跟大家讨论，
+Flutter 团队的工程师会经常阅读和互动。
+
 [Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
 [Chrome DevTools]: https://developers.google.com/web/tools/chrome-devtools
 [Debugging]: /docs/development/tools/devtools/debugger
+[Discord]: https://discord.gg/N7Yshp4
 [file an issue]: https://goo.gle/flutter_web_issue
 [Flutter DevTools]: /docs/development/tools/devtools/overview
 [Generating event timeline]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: https://pub.dev/packages/http
+[`iframe`]: https://html.com/tags/iframe/
 [Issue 32248]: {{site.github}}/flutter/flutter/issues/32248
 [Logging]: /docs/development/tools/devtools/logging
 [Running Flutter inspector]: /docs/development/tools/devtools/inspector
+[Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /docs/testing#widget-tests

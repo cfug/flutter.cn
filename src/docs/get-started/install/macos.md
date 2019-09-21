@@ -23,9 +23,9 @@ your development environment must meet these minimum requirements:
 
   **操作系统**：macOS（64 位）
 
-- **Disk Space**: 700 MB (does not include disk space for IDE/tools).
+- **Disk Space**: 2.8 GB (does not include disk space for IDE/tools).
 
-  **磁盘空间**：700 MB（不包含 IDE 或其余工具所需要的磁盘空间） 
+  **磁盘空间**：2.8 GB（不包含 IDE 或其余工具所需要的磁盘空间） 
 
 - **Tools**: Flutter depends on these command-line tools being available
   in your environment.
@@ -42,7 +42,7 @@ your development environment must meet these minimum requirements:
 
 {% include_relative _get-sdk.md %}
 
-{% include_relative _path-mac-linux.md %}
+{% include_relative _path-mac.md %}
 
 ## Platform setup
 

@@ -23,13 +23,14 @@ whenever you open a new window. For example:
  1. Determine the directory where you placed the Flutter SDK.
     You will need this in Step 3.
 
-    首先决定你想要将 Flutter SDK 放置在哪一个目录内，获取并记录这个目录的路径，你将要在第 3 步中用到它。
+    首先决定你想要将 Flutter SDK 放置在哪一个目录内，
+    获取并记录这个目录的路径，你将要在第 3 步中用到它。
 
  2. Open (or create) the `rc` file for your shell.
-    For example, Linux and Mac OS Mojave (and earlier)
-    use the Bash shell by default,
+    For example, macOS Mojave (and earlier)
+    uses the Bash shell by default,
     so edit `$HOME/.bashrc`.
-    Mac OS Catalina uses the Z shell by default,
+    macOS Catalina uses the Z shell by default,
     so edit `$HOME/.zshrc`.
     If you are using a different shell, the file path
     and filename will be different on your machine.

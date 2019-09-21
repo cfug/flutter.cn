@@ -22,8 +22,9 @@ performance issues, so it
 
 {{site.alert.note}}
 
-  Currently, web support requires the Chrome browser.
-  If you haven't already, [install Chrome][].
+  Currently, debugging a web app requires the
+  Chrome browser. If you haven't already,
+  [install Chrome][].
   
   目前如果要在 Web 平台运行 Flutter 应用，
   你必须 [安装 Chrome 浏览器][]。
@@ -34,24 +35,39 @@ For more information, see the [web FAQ][].
 
 如果想要了解更多信息，请看 [Web 常见问题][web FAQ] 文档。
 
+{{site.alert.warning}}
+
+  If you don't yet have the `flutter` tool installed,
+  do a [regular install for your platform][], and then 
+  return to these instructions.
+  
+  如果你尚未安装 Flutter 命令行工具，请在这里查看
+  [安装教程][regular install for your platform]，
+  然后再返回本文继续。
+  
+{{site.alert.end}}
+
 ## Summary
 
 ## 概览
 
 Here are the short and sweet instructions to get started.
-To add support to an existing project,
+To **add support to an existing project** and
+**assuming that you have the `flutter` tool installed**,
 run the following commands in a terminal from the
 top of the project package:
 
-这里是一个简洁的使用说明。
+这里是一个简洁的使用说明，假设你 **需要添加 Web 支持到现有到项目**，
+并且也 **已经安装了 Flutter 命令行工具**。
 对一个已有的工程添加 Web 支持，需要在工程根目录下输入下面的命令：
 
 ```terminal
-flutter channel master
-flutter upgrade
-flutter config --enable-web
-flutter create .
-flutter run -d chrome
+$ flutter channel master
+$ flutter upgrade
+$ flutter config --enable-web
+$ cd <into project directory>
+$ flutter create .
+$ flutter run -d chrome
 ```
 
 To generate a release build:
@@ -72,13 +88,31 @@ into individual steps.
 ## 下载 Flutter SDK
 
 Currently, you need the master channel of the Flutter SDK
-for web support:
+for web support. Assuming that you already have the
+`flutter` tool installed, run the following commands
+to install the latest version from master:
 
 当前，你需要 master 渠道的的 Flutter SDK 来获取 Web 支持：
+这里我们假定你已经安装了 Flutter 命令行工具，运行下面的
+命令需要安装 master 渠道最新的 SDK 噢：
 
 ```terminal
-flutter channel master
-flutter upgrade
+$ flutter channel master
+$ flutter upgrade
+```
+
+The `flutter upgrade` command silently fails
+when "origin" points to a personal fork.
+To validate that "origin" points to the
+"flutter/flutter" repo, enter the following:
+
+这里的 `flutter upgrade` 命令会在个人 fork 情况下失效，
+验证 origin 是否指向 "flutter/flutter" 仓库，可以通过下面命令：
+
+```terminal
+$ cd <inside local copy of the flutter/flutter repo>
+$ git remote get-url origin
+ssh://git@github.com/flutter/flutter.git
 ```
 
 ## Enable web support
@@ -87,17 +121,27 @@ flutter upgrade
 
 Use the config command to enable web support:
 
-使用`config`命令来开启 Web 支持：
+使用如下命令来开启 Web 支持：
 
 ```terminal
-flutter config --enable-web
+$ flutter config --enable-web
 ```
 
 You need only run this once.
+This command modifies (or creates) the
+`~/.flutter_settings` file (on Mac/Linux)
+with the following:
 
-这个命令只需要运行一次即可。
+这个命令只需要运行一次即可，它会创建一个 `~/.flutter_settings`
+的配置文件：
 
-Once this is enabled,
+```shell
+{
+  "enable-web": true
+}
+```
+
+Once web is enabled,
 `flutter devices` outputs a device named `Chrome`.
 
 一旦开启了 Web 支持，运行 `flutter devices`
@@ -204,3 +248,4 @@ Release 构建产物使用 [dart2js][]（不是 dartdevc）生成了一个单独
 [development compiler]: https://dart.dev/tools/dartdevc
 [web FAQ]: /docs/development/platform-integration/web
 [install Chrome]: https://www.google.com/chrome/
+[regular install for your platform]: /docs/get-started/install

@@ -58,6 +58,9 @@ dependencies:
   http: <latest_version>
 ```
 
+Import the http package.
+```import 'package:http/http.dart' as http;```
+
 ## 2. Make a network request
 
 ## 2. 进行网络请求

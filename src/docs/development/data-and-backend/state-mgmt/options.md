@@ -140,6 +140,8 @@ by the Flutter community:
 
 * [Fish-Redux - An assembled flutter application framework based on Redux](https://github.com/alibaba/fish-redux/),
   by Alibaba
+* [Async Redux - Redux without boilerplate. Allows for both sync and async reducers](https://pub.dev/packages/async_redux/),
+  by Marcelo Glasberg
 
   由阿里巴巴提供的 [Fish-Redux - 基于 Redux 的集成 Flutter 应用框架](https://github.com/alibaba/fish-redux/)
 

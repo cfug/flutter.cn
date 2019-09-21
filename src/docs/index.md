@@ -24,7 +24,8 @@ description: Flutter 开发文档页面。
   {% endif %}
 {% endfor -%}
 
-## What's new on the site
+<a name="latest-release"></a>
+## What's new on this site
 
 ## 网站更新
 
@@ -214,6 +215,15 @@ and learn about other series on our [videos][] page.
 
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+First up, why use Flutter? What makes it different than other
+app frameworks?
+
+首先你需要知道，为何我们要使用 Flutter？ 是什么让它与众不同？
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l-YO9CmaSUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+How is Flutter different for app development?
+
+<iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
 [Flutter in Focus playlist][]
 

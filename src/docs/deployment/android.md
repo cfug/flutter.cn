@@ -65,8 +65,7 @@ This page covers the following topics:
 
 When a new Flutter app is created, it has a default launcher icon.
 To customize this icon, you might want to check out the
-[flutter_launcher_icons]({{site.pub}}/packages/flutter_launcher_icons)
-package.
+[flutter_launcher_icons][] package.
 
 当我们创建一个新的 Flutter app 的时候，它会有一个默认的启动图标。
 要自定义这个图标，可以参考
@@ -128,11 +127,14 @@ On Mac/Linux, use the following command:
 在 macOS 或者 Linux 系统上，执行下面的代码
 
 ```
+```terminal
 keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
+
 On Windows, use the following command:
-```
-keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
+
+```terminal
+keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
 {{site.alert.note}}
@@ -696,8 +698,9 @@ This doc need to assign to a new translator.
 
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
+[apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 [appid]: {{site.android-dev}}/studio/build/application-id
-[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [versions]: {{site.android-dev}}/studio/publish/versioning
@@ -705,15 +708,25 @@ This doc need to assign to a new translator.
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [配置限定符]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [play]: {{site.android-dev}}/distribute/googleplay/start
+[arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
+[armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle
-[upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
-[GitHub repository]: {{site.github}}/google/bundletool/releases/latest
-[apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
-[apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
-[armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
-[arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
+[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
+[Flutter wiki]: {{site.github}}/flutter/flutter/wiki
+[flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
+[GitHub repository]: {{site.github}}/google/bundletool/releases/latest
+[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
 [Issue 22139]: {{site.github}}/flutter/flutter/issues/22139
+[launchericons]: {{site.material}}/design/iconography/
+[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
+[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
+[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
+[play]: {{site.android-dev}}/distribute/googleplay/start
+[upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
+[versions]: {{site.android-dev}}/studio/publish/versioning
+

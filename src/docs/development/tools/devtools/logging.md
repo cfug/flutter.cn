@@ -6,11 +6,11 @@ description: 学习如何使用开发者工具的日志视图。
 ---
 
 {{site.alert.note}}
-  The logging view works with Flutter mobile and web applications.
-{{site.alert.end}}
 
-{{site.alert.note}}
+  The logging view works with Flutter mobile and web applications.
+
   日志视图可用于 Flutter 移动和 web 应用。
+  
 {{site.alert.end}}
 
 ## What is it?

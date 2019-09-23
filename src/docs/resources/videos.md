@@ -81,7 +81,7 @@ Introducing the Boring Flutter Show<br>
 
 ### What's new in Flutter 1.9
 
-### Flutter Live 2018 大会
+### Flutter 1.9 更新
 
 Catch the content from Flutter Live '18, where Flutter 1.0 was officially launched.
 

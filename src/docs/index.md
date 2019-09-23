@@ -29,8 +29,6 @@ description: Flutter 开发文档页面。
 
 ## 网站更新
 
-## 网站更新
-
 To stay on top of Flutter announcements,
 including breaking changes, join the
 [flutter-announce][] Google group.
@@ -38,7 +36,9 @@ including breaking changes, join the
 加入官方的 [flutter-announce][]
 邮件群组，以关注 Flutter 的相关通知，包括 breaking changes 等。
 
-**July 9, 2019**
+**Sept 10, 2019**
+
+**2019 年 9 月 10 日**
 
 Flutter 1.9 is live!
 
@@ -51,7 +51,6 @@ notes]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1).
 
 更多信息，请查看 [本文](/posts/flutter-news-from-gdd-china-flutter1.9.html)，和 1.9.1 的
 [发行注记]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1)
-
 
 For the 1.9 release, Flutter's web support has been
 merged ("unforked") into the main repo.

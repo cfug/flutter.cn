@@ -43,25 +43,25 @@ This recipe uses the following steps:
 
 步骤：
 
-  1. Write a test that scrolls through a list of items.
+1. Write a test that scrolls through a list of items.
   
-  	 编写一个滚动列表的测试项目；
-  	 		
-  2. Record the performance of the app.
+ 	 编写一个滚动列表的测试项目；
+ 	 		
+1. Record the performance of the app.
   
-  	 记录应用程序的性能；
-  
-  3. Save the results to disk.
-  	 
-  	 将结果保存到磁盘；
+ 	 记录应用程序的性能；
+ 
+1. Save the results to disk.
+	 
+ 	 将结果保存到磁盘；
   	
-  4. Run the test.
-  	 
-  	 运行测试；
-  	 
-  5. Review the results.
+1. Run the test.
   
-  	 检查结果。
+   运行测试；
+  	 
+1. Review the results.
+  
+ 	 检查结果。
 
 ### 1. Write a test that scrolls through a list of items
 
@@ -74,12 +74,15 @@ on the
 in integration tests.
 
 在这一章节，我们将记录当滚动列表条目时应用程序的性能。
-为了专注于性能分析，这一小节在 [Scrolling in integration tests（列表滚动集成测试）](/docs/cookbook/testing/integration/scrolling) 的基础上进行。
+为了专注于性能分析，这一小节在
+[Scrolling in integration tests（列表滚动集成测试）](/docs/cookbook/testing/integration/scrolling)
+的基础上进行。
 
 Follow the instructions in that recipe to create an app, instrument the
 app, and write a test to verify that everything works as expected.
 
-请按照基础章节的指南新建一个应用程序，配置应用程序，然后，编写一个测试程序。最终，确保应用程序按预期运行。
+请按照基础章节的指南新建一个应用程序，配置应用程序，
+然后，编写一个测试程序。最终，确保应用程序按预期运行。
 
 ### 2. Record the performance of the app
 

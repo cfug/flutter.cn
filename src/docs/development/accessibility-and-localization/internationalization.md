@@ -343,7 +343,7 @@ Flutter package 包括的 MaterialLocalizations 和 WidgetsLocalizations 的接�
 The flutter_localizations package includes multi-language
 implementations of the localizations interfaces called
 [GlobalMaterialLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html)
-and 
+and
 [GlobalWidgetsLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html).
 International apps must specify localization delegates for
 these classes as described in [Setting up an internationalized
@@ -422,12 +422,13 @@ DemoLocalizations 类包含了 app 语言环境内支持的已经翻译成了本
 
 {% prettify dart %}
 class DemoLocalizations {
+  DemoLocalizations(this.localeName);
+
   static Future<DemoLocalizations> load(Locale locale) {
     final String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
-      Intl.defaultLocale = localeName;
-      return DemoLocalizations();
+      return DemoLocalizations(localeName);
     });
   }
 
@@ -435,11 +436,14 @@ class DemoLocalizations {
     return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
   }
 
+  final String localeName;
+
   String get title {
     return Intl.message(
       'Hello World',
       name: 'title',
       desc: 'Title for the Demo application',
+      locale: localeName,
     );
   }
 }
@@ -611,7 +615,7 @@ language.
 A new GlobalMaterialLocalizations subclass defines the
 localizations that the Material library depends on.
 A new LocalizationsDelegate subclass, which serves
-as factory for the GlobalMaterialLocalizations subclass, 
+as factory for the GlobalMaterialLocalizations subclass,
 must also be defined.
 
 我们需要定义一个新的 GlobalMaterialLocalizations 子类，它定义了 Material 库依赖的 localizations。
@@ -678,7 +682,7 @@ String aboutListTileTitle(String applicationName) {
 }
 {% endprettify %}
 
-For more information about localization strings, see the 
+For more information about localization strings, see the
 [flutter_localizations README](
 {{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md).
 

@@ -106,9 +106,9 @@ apps](/docs/development/ui/layout/responsive).
 
 请参阅[创建响应式应用](/docs/development/ui/layout/responsive)。
 
-## Can I use the `dart:io` package with a web app?
+### Can I use `dart:io` with a web app?
 
-## 我该如何在 web 应用中使用 `dart:io` 这个 package？
+### 我能在 web 应用中使用 `dart:io` 这个 package 吗？
 
 不行。文件系统在浏览器中是无法访问的。
 对于网络功能来说，请使用 [`http`][] package。

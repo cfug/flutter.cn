@@ -24,9 +24,8 @@ description: Flutter 开发文档页面。
   {% endif %}
 {% endfor -%}
 
-## What's new on the site
-
-## 网站更新
+<a name="latest-release"></a>
+## What's new on this site
 
 ## 网站更新
 
@@ -37,7 +36,9 @@ including breaking changes, join the
 加入官方的 [flutter-announce][]
 邮件群组，以关注 Flutter 的相关通知，包括 breaking changes 等。
 
-**July 9, 2019**
+**Sept 10, 2019**
+
+**2019 年 9 月 10 日**
 
 Flutter 1.9 is live!
 
@@ -50,7 +51,6 @@ notes]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1).
 
 更多信息，请查看 [本文](/posts/flutter-news-from-gdd-china-flutter1.9.html)，和 1.9.1 的
 [发行注记]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1)
-
 
 For the 1.9 release, Flutter's web support has been
 merged ("unforked") into the main repo.
@@ -214,6 +214,15 @@ and learn about other series on our [videos][] page.
 
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+First up, why use Flutter? What makes it different than other
+app frameworks?
+
+首先你需要知道，为何我们要使用 Flutter？ 是什么让它与众不同？
+
+<iframe src="//player.bilibili.com/player.html?aid=68736077&cid=119126400&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><br>
+<p>How is Flutter different for app development?</p><p>使用 Flutter 开发应用与其他有何不同呢</p>
+
+<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
 [Flutter in Focus playlist][]
 

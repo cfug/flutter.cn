@@ -1,7 +1,7 @@
 ---
-title: Adding web support to a Flutter app
-title: 在 Web 平台使用 Flutter
-description: "Announcing the preview release of Flutter for web."
+title: Web support for Flutter
+title: Flutter 正式支持 Web 平台
+description: "Announcing the tech preview release of Flutter for web."
 description: "宣布在 Web 端使用 Flutter 的发布预览版"
 ---
 
@@ -94,6 +94,7 @@ being valuable in many scenarios. For example:
   其可以动态地加载和显示信息。Flutter 支持现在提供统一的 Web 和移动内容环境，
   使您可以在线部署内容或嵌入应用程序中，而无需重写。
 
+<a name="web"></a>
 ## Notes on web support in 1.9
 
 ## 关于 1.9 版本中的 Web 支持的说明

@@ -203,6 +203,8 @@ Get the answers to frequently asked questions.
 
 ### 视频
 
+### Videos
+
 We also have some helpful videos on our
 [Flutter Youtube channel][]! In particular, check
 out the Flutter in Focus series,
@@ -212,22 +214,23 @@ and learn about other series on our [videos][] page.
 更多视频和播放列表介绍，以及社区制作的视频教程，
 可以查看我们的 [Flutter 技术视频资源][videos] 页面。
 
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 First up, why use Flutter? What makes it different than other
 app frameworks?
 
 首先你需要知道，为何我们要使用 Flutter？ 是什么让它与众不同？
 
 <iframe src="//player.bilibili.com/player.html?aid=68736077&cid=119126400&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><br>
-<p>How is Flutter different for app development?</p><p>使用 Flutter 开发应用与其他有何不同呢</p>
+
+<p>How is Flutter different for app development?</p>
+<p>视频名称：使用 Flutter 开发应用与其他有何不同</p>
 
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+
 Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
 [Flutter in Focus playlist][]
 
 FiF 系列视频：十分钟以内学会一个 Flutter 特性<br>
-[Flutter in Focus playlist][]
+[Flutter in Focus 播放列表][Flutter in Focus playlist]
 
 In Flutter, "everything is a widget"! If you want to better
 understand the two kinds of widgets, Stateless and Stateful,
@@ -257,6 +260,8 @@ check out the [Boring Flutter Show][] video series:
 [Boring Flutter Show 系列视频][Boring Flutter Show]
 
 You might also find these docs useful:
+
+下列文档可能也会对你有所帮助：
 
 * [Using packages][]
   

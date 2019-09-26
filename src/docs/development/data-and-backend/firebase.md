@@ -42,7 +42,12 @@ Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下
    
   [在你的 Flutter 应用后端中使用 Firestore][video-bilibili] (视频)
 
-Also, the Flutter community has created docs that you might find useful:
+* [FlutterFire plugins][]
+
+  [FlutterFire 插件][FlutterFire plugins]
+
+Also, the Flutter community has created docs and
+videos that you might find useful:
 
 当然，Flutter 社区也创建了一些可能会对你有用的文档：
 
@@ -54,13 +59,30 @@ Also, the Flutter community has created docs that you might find useful:
    
   [在 Flutter 中使用 Firebase 构建聊天应用][chat app]
 
+* [Using Firestore as a backend to your Flutter app][video] (video)
+
+  [在你的 Flutter 应用中使用 Firestore 作为后端][video] (video)
+
+* [Live Coding Firebase Authentication with Flutter][video2] (video)
+
+  [在 Flutter 中使用 Firebase 进行验证的代码演示][video2] (video)
+
+* [Flutter & Firebase Auth 01][video3] (video)
+
+  [使用 Flutter & Firebase 进行验证 01][video3] (video)
+
+* [Flutter: Firebase Tutorial Part 1 | Auth and Sign in][video4] (video)
+
+  [Flutter: Firebase 教程第一部分|验证与登陆][video4] (video)
 
 [Flutterfire plugins]: {{site.github}}/FirebaseExtended/flutterfire
 [Firebase docs]: {{site.firebase}}/docs
 [codelab]: {{site.codelabs}}/codelabs/flutter-firebase
 [started]: {{site.firebase}}/docs/flutter/setup
 [video]: https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s
-[authenticating]: https://flutterdoc.com/mobileauthenticating-users-with-firebase-and-flutter-240c5557ac7f
+[video2]: https://www.youtube.com/watch?v=OlcYP6UXlm8
+[video3]: https://www.youtube.com/watch?v=u_Lyx8KJWpg
+[video4]: https://www.youtube.com/watch?v=13-jNF984C0
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
 [video-bilibili]: https://www.bilibili.com/video/av55809997/
 [codelab-cn]: {{site.codelabs}}/codelabs/flutter-firebase-cn/index.html

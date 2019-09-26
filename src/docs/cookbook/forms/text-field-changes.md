@@ -24,25 +24,24 @@ With Flutter, you have two options:
 
 那么如何每次在文本内容改变时调用回调函数呢？在Flutter中，我们提供了两种选择：
 
-  1. Supply an `onChanged()` callback to a `TextField`.
+  1. Supply an `onChanged()` callback to a `TextField` or a `TextFormField`.
 
-     给 `TextField` 绑定 `onChanged()` 回调
+     给 `TextField` 或 `TextFormField` 绑定 `onChanged()` 回调
 
   2. Use a `TextEditingController`.
 
      使用 `TextEditingController`
 
 
-## 1. Supply an `onChanged()` callback to a `TextField`
+## 1. Supply an `onChanged()` callback to a `TextField` or a `TextFormField`
 
-## 1. 给 `TextField` 绑定  `onChanged`  回调
+## 1. 给 `TextField` 或 `TextFormField` 绑定 `onChanged()` 回调
 
 The simplest approach is to supply an
 [`onChanged()`]({{site.api}}/flutter/material/TextField/onChanged.html)
 callback to a
-[`TextField`]({{site.api}}/flutter/material/TextField-class.html).
-Whenever the text changes, the callback is invoked. One downside to this
-approach is that it doesn't work with `TextFormField` widgets.
+[`TextField`]({{site.api}}/flutter/material/TextField-class.html) or a [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
+Whenever the text changes, the callback is invoked.
 
 最简单的方法是给 [`TextField`]({{site.api}}/flutter/material/TextField-class.html) 绑定 `onChanged` 回调。每当文本内容改变时，回调函数会被触发。但这种方法有一个缺点，它不适用于 `TextFormField` 组件。
 

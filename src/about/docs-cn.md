@@ -52,11 +52,11 @@ Flutter 中国社区的活跃壮大离不开每一位为社区贡献的人，在
 
 #### 社区贡献者（暂未分类）
 1. 感谢 Qinglian Zhang 和 Wen Du 在最初 Flutter 社区和资源匮乏的情况下，建立了 Flutter 交流论坛、翻译了 Flutter 中文文档（2018 年初）；
-1. 感谢掘金社区的创始人 Glow Chiang 对 Flutter 社区的无限大力支持，包括 2018 年 8 月份的 Flutter 征文大赛，Flutter 相关的掘金小册，以及掘金翻译计划负责人 Xuewen Ding；
+1. 感谢掘金社区的创始人 Glow Chiang 对 Flutter 社区的无限大力支持，包括 2018 年 8 月份的 Flutter 征文大赛，Flutter 相关的掘金小册。感谢掘金翻译计划负责人 Xuewen Ding 给予的帮助和支持；
 1. 感谢宁皓网创始人宁皓和技术胖在国内推出 Flutter 课程教学并参与 Flutter 1.0 谷歌北京发布活动（2018/12/4）；
 1. 感谢 Sijie Cheng 引荐全国各大院校的开源协会 (2019 年 1 月)，建立领导 Flutter x 高校团队，为 Flutter 在清华、北大、中科大、上海大学、重庆大学等建立镜像提供了可能，感谢清华大学 TUNA 协会的 Yuxiang Zhang, Yiqun Hui 帮助在清华大学开源镜像站加入 Flutter 镜像 & 实现 Flutter Pub site API 的同步策略；
-1. 感谢思否社区的创始人 Sunny Gao 帮助我们建立了一个「直达」Flutter 专题页面的可爱的短链接: sifou.com/flutter（2019 年 9 月）；
-1. 感谢前 GDG 组织者，现郑州玩码科技负责人 @inferjay 帮助维护 flutter-io.cn 域名和基建资源，感谢为谷歌活动构建 AI 体验馆报名系统的千跃优意 (Cheerue) 创始人大树，帮助维护 flutter.cn / dart.cn / material-io.cn 等域名和基建资源；
+1. 感谢思否社区的创始人 Sunny Gao 帮助我们建立了一个「直达」Flutter 专题页面的可爱的短链接: sifou.com/flutter （2019 年 9 月）；
+1. 感谢前 GDG 组织者，现郑州玩码科技负责人 @inferjay 帮助维护 flutter-io.cn / dartpad.cn 等域名和基建资源，感谢为谷歌活动构建 AI 体验馆报名系统的千跃优意 (Cheerue) 创始人大树，帮助维护 flutter.cn / dart.cn / material-io.cn 等域名和基建资源；
 1. 感谢 OpenWrite 团队开发出多平台文章同步系统。
 
 #### 特别感谢的社区名单

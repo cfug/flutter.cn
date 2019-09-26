@@ -12,7 +12,7 @@ The Flutter community has made a Simplified Chinese version of the
 Flutter site website available at
 [https://flutter-io.cn](https://flutter-io.cn).
 
-欢迎你来到由中国 Flutter 社区维护的中文 Flutter 资源网站：[https://flutter-io.cn](https://flutter-io.cn)
+欢迎你来到由中国 Flutter 社区维护的中文 Flutter 资源网站：[https://flutter.cn](https://flutter.cn)
 
 If you’d like to install Flutter using an [installation
 bundle](/docs/development/tools/sdk/archive),
@@ -96,7 +96,6 @@ for assistance.
 
 `flutter-io.cn` 所提供的镜像由中国的 Flutter 开发者社区提供和维护，
 Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其他可信的机构提供的镜像服务。
-如果你想在中国设定自己的镜像，请与通过邮件群组获得帮助：[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)。
 
 ## Community-run mirror sites
 
@@ -104,11 +103,11 @@ Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其
 
 如下列表为目前在国内提供镜像的社区，
 由于镜像的实现方式有所不同，可能回导致数据的滞后等问题。
-我们制作了一个 [镜像可用性监控页面](http://mirrors.flutter-io.cn/)，供参考。
+我们制作了一个 [镜像可用性监控页面](https://stats.uptimerobot.com/JZK3ZTql79) 供参考。
 
 ### Flutter 社区
 
-社区主镜像，采用多种方式同步 Flutter 开发者资源。
+社区主镜像，采用多种方式同步 Flutter 开发者资源（推荐）。
 
 ```terminal
 $ export PUB_HOSTED_URL=https://pub.flutter-io.cn
@@ -117,7 +116,8 @@ $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 ### 上海交大 Linux 用户组
 
-Pub API 返回值（archive_url）需要优化，可能造成无法访问的情况。
+使用反向代理方式建立的 Flutter 镜像，数据与站源实时同步。
+Pub API 返回值未做处理，可能造成无法访问的情况。
 
 ```terminal
 $ export PUB_HOSTED_URL=https://dart-pub.mirrors.sjtug.sjtu.edu.cn
@@ -126,8 +126,11 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
 
 ### 清华大学 TUNA 协会
 
-（推荐）定时与 Flutter 社区 Storage 镜像同步，Pub API 采取定时主动抓取策略，数据可能有延迟，已知的延迟见页面最下方。
-目前正在尝试进行 404 数据（延迟数据）回源（Flutter 社区镜像站）策略。
+定时与 Flutter 社区 Storage 镜像同步，Pub API 采取定时主动抓取策略，
+镜像配置了完善的失败回源策略（推荐）。
+查看帮助文档：
+[Flutter 镜像安装帮助](https://mirrors.tuna.tsinghua.edu.cn/help/flutter/)，
+[Pub 镜像安装帮助](https://mirrors.tuna.tsinghua.edu.cn/help/dart-pub/)。
 
 ```terminal
 $ export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub
@@ -154,10 +157,15 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 
 ### 已知问题
 
-- 上海交大 Linux 用户组镜像的 Pub API 返回值（archive_url）需要优化，
-  可能造成 Packages 无法下载的情况。
-  
-- TUNA 协会镜像有一台负载均衡的服务器数据同步延迟（最新数据是 5/22），已经在解决。
+- 上海交大 Linux 用户组镜像的 Pub API 返回值未做处理，会导致用户获取 package 下载地址时从 Google 服务器获取资源，可能造成 Packages 无法下载的情况。（暂未修复）
 
-- 上海大学的镜像暂时只允许校内访问。
+- 上海大学的镜像暂时只允许校内访问，故暂未展示。
 
+## 致谢
+
+本页面列出的镜像由提供者分别维护，我们确保上述列出的镜像提供方不会对数据进行恶意修改，
+因为国内网络情况的复杂性和特殊性，我们无法保证镜像长期稳定性和访问速度，请谅解。
+
+如果在镜像使用中有任何问题，欢迎通过邮件与我们联系：cfug-dev@googlegroups.com。
+非常感谢所有帮助 Flutter 在国内维护社区基础设施建设资源的社区和公司，查看
+[详细致谢名单](/about/docs-cn)。

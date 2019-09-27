@@ -158,8 +158,8 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 ### 已知问题
 
 - 上海交大 Linux 用户组镜像的 Pub API 返回值未做处理，会导致用户获取 package 下载地址时从 Google 服务器获取资源，可能造成 Packages 无法下载的情况。（暂未修复）
-
 - 上海大学的镜像暂时只允许校内访问，故暂未展示。
+- 已知的 Flutter 中国镜像目前均不支持上传 packages / plugins 到 Pub site。这个过程通常需要登陆谷歌账号，而这将是一个无法绕开且复杂的挑战，故暂无修复计划。
 
 ## 致谢
 

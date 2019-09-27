@@ -102,7 +102,10 @@ the widget.
 
 ## Creating a stateful widget
 
+## 创建一个有状态的 widget
+
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What's the point?</h4>
   
   <h4 class="no_toc">重点是什么？</h4>
@@ -424,6 +427,7 @@ lists other available interactive widgets.
 ## 状态管理
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What's the point?</h4>
   
   <h4 class="no_toc">重点是什么？</h4>

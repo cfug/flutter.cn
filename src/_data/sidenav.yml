@@ -124,7 +124,7 @@
     - title: 平台集成
       permalink: /docs/development/platform-integration
       children:
-        - title: 与 C 和 C++ 交互
+        - title: 与 C 和 C++ 互调
           permalink: /docs/development/platform-integration/c-interop
         - title: Web 平台常见问题
           permalink: /docs/development/platform-integration/web

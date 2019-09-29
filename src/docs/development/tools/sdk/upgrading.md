@@ -127,6 +127,7 @@ $ flutter upgrade
   你可以从 [Flutter SDK archive][] 页面下载.
 {{site.alert.end}}
 
+
 ## Upgrading packages only
 
 ## 仅更新 packages
@@ -169,6 +170,21 @@ You can also ask questions on the [Flutter dev mailing list][flutter-dev].
 Aside from subscribing to receive announcements,
 we'd love to hear from you!
 
+
+## Selecting a specific version
+
+If you have a specific version of Flutter that you'd like to switch to,
+you can use the `flutter version` command:
+
+```terminal
+$ flutter version v1.9.1+hotfix.3
+```
+
+To pin packages to specific versions, specify their versions explicitly in the
+`pubspec.yaml` file. For more details on the format of this file, see the
+[pubspec.yaml] documentation on dart.dev.
+
+
 [Flutter SDK archive]: /docs/development/tools/sdk/archive
 [release channels]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 我们会将最新的 breaking change (重大改动) 通知到
@@ -186,4 +202,4 @@ we'd love to hear from you!
 [release-channel]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [flutter-dev]: {{site.groups}}/forum/#!forum/flutter-dev
-
+[pubspec.yaml]: https://dart.dev/tools/pub/pubspec

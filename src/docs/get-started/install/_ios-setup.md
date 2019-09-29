@@ -10,13 +10,12 @@ To develop Flutter apps for iOS, you need a Mac with Xcode 9.0 or newer:
 
 开发 iOS 平台上的 Flutter 应用，你需要一个安装了 Xcode 9.0 或者更高版本的 Mac 设备：
 
- 1. Install Xcode 9.0 or newer
-    (via [web download](https://developer.apple.com/xcode/) or
-    the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835)).
+ 1. Install the latest stable version of Xcode
+    (using [web download][] or the [Mac App Store][]).
 
     通过 [直接下载](https://developer.apple.com/xcode/)
     或者[Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835)
-    来安装 Xcode 9.0 或者更高版本；
+    来安装最新稳定版 Xcode；
 
  2. Configure the Xcode command-line tools to use the newly-installed
     version of Xcode by
@@ -28,9 +27,10 @@ To develop Flutter apps for iOS, you need a Mac with Xcode 9.0 or newer:
     $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
     ```
 
-    This is the correct path for most cases, when you want to use
-    the latest version of Xcode.
-    If you need to use a different version, specify that path instead.
+    This is the correct path for most cases,
+    when you want to use the latest version of Xcode.
+    If you need to use a different version,
+    specify that path instead.
 
     当你安装了最新版本的 Xcode，大部分情况下，上面的路径都是一样的。
     但如果你安装了不同版本的 Xcode，你可能要更改一下上述命令中的路径。
@@ -42,8 +42,15 @@ To develop Flutter apps for iOS, you need a Mac with Xcode 9.0 or newer:
     运行一次 Xocde 或者通过输入命令 `sudo xcodebuild -license`
     来确保已经同意 Xcode 的许可协议。
 
-With Xcode, you’ll be able to run Flutter apps on an iOS device
-or on the simulator.
+Versions older than the latest stable version may still work,
+but are not recommended for Flutter development.
+Using old versions of Xcode to target bitcode is not
+supported, and is likely not to work.
+
+旧版本可能也能够正常工作，但是不建议在 Flutter 开发环境中使用。旧版本的 Xcode 不支持定位代码，还可能无法正常工作。
+
+With Xcode, you’ll be able to run Flutter apps on
+an iOS device or on the simulator.
 
 安装了 Xcode 之后，你就可以在 iOS 真机或者模拟器上运行 Flutter 应用了。
 
@@ -65,8 +72,9 @@ follow these steps:
     $ open -a Simulator
     ```
 
- 2. Make sure your simulator is using a 64-bit device (iPhone 5s or later)
-    by checking the settings in the simulator's **Hardware > Device** menu.
+ 2. Make sure your simulator is using a 64-bit device 
+   (iPhone 5s or later) by checking the settings in 
+   the simulator's **Hardware > Device** menu.
 
     通过模拟器菜单中的 **Hardware > Device** 选项检查当前模拟器是否是 64 位机型
     （iPhone 5S 或之后的机型）。
@@ -134,9 +142,13 @@ to set up physical device deployment in Xcode.
  
 
     ```terminal
-    $ sudo gem install cocoapods
+    $ sudo gem install cocoapods -v 1.7.5
     $ pod setup
     ```
+    {{site.alert.note}}
+      The `pod setup` command fails for versions of CocoaPods greater
+      than 1.7.5.   For more information, see [issue 41253][].
+    {{site.alert.end}}
 
  1. Follow the Xcode signing flow to provision your project:
 
@@ -195,8 +207,9 @@ to set up physical device deployment in Xcode.
          
 
         * The first time you use an attached physical device for iOS
-          development, you need to trust both your Mac and the Development
-          Certificate on that device. Select `Trust` in the dialog prompt when
+          development, you need to trust both your Mac and the
+          Development Certificate on that device.
+          Select `Trust` in the dialog prompt when
           first connecting the iOS device to your Mac.
           
           当你第一次将设备连接到开发机用于开发时，
@@ -226,5 +239,8 @@ to set up physical device deployment in Xcode.
 
 [Check the app's Bundle ID]: /images/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: https://developer.apple.com/support/compare-memberships
+[issue 41253]: {{site.github}}/flutter/flutter/issues/41253
+[Mac App Store]: https://itunes.apple.com/us/app/xcode/id497799835
 [Trust Mac]: /images/setup/trust-computer.png
+[web download]: https://developer.apple.com/xcode/
 [Xcode account add]: /images/setup/xcode-account.png

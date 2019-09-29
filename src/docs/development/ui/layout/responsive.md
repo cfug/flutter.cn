@@ -5,12 +5,6 @@ short-title: Responsive
 short-title: 响应式
 ---
 
-{% comment %}
-  TODO: Once published, remove this page on the GitHub wiki:
-  (https://github.com/flutter/flutter/wiki/Creating-Responsive-Apps)
-  and forward to this page.
-{% endcomment %}
-
 A responsive app lays out its UI according to the
 size and shape of the screen or window.
 This is especially necessary when the same app
@@ -81,6 +75,7 @@ Other useful widgets for creating a responsive UI:
 * [`CustomSingleChildLayout`][]
 * [`CustomMultiChildLayout`][]
 * [`FittedBox`][]
+* [`FractionallySizedBox`][]
 * [`LayoutBuilder`][]
 * [`MediaQuery`][]
 * [`MediaQueryData`][]
@@ -114,16 +109,18 @@ including contributions from the Flutter community:
   Priyanka Tyagi 的文章：[开发跨平台的响应式应用]({{site.medium}}/flutter-community/making-cross-platform-flutter-landing-page-responsive-7fffe0655970)
   
 * [How to make flutter app responsive according to different screen
-  size?](https://stackoverflow.com/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size),
+  size?][],
   a question on StackOverflow
 
-  来自 StackOverflow 的问答 [如何根据不同屏幕大小构建 Flutter 应用？](https://stackoverflow.com/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size)
+  来自 StackOverflow 的问答 [如何根据不同屏幕大小构建 Flutter 应用？][How to make flutter app responsive according to different screen size?]
 
 [`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html
 [`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
 [`CustomMultiChildLayout`]: {{site.api}}/flutter/widgets/CustomMultiChildLayout-class.html
 [`CustomSingleChildLayout`]: {{site.api}}/flutter/widgets/CustomSingleChildLayout-class.html
 [`FittedBox`]: {{site.api}}/flutter/widgets/FittedBox-class.html
+[`FractionallySizedBox`]: {{site.api}}/flutter/widgets/FractionallySizedBox-class.html
+[How to make flutter app responsive according to different screen size?]: https://stackoverflow.com/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
 [`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
 [`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery/of.html

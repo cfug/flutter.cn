@@ -5,12 +5,6 @@ description: Instructions for creating a Flutter app on the web.
 description: 创建在 Web 平台上运行的 Flutter 应用。
 ---
 
-{% comment %}
-  TODO: Once published, remove this page on the GitHub wiki:
-  (https://github.com/flutter/flutter/wiki/Building-a-web-application-with-Flutter)
-  and forward to this page.
-{% endcomment %}
-
 As of 1.9, Flutter has early support for running web
 applications. There are still missing features and known
 performance issues, so it

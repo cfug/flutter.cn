@@ -73,8 +73,8 @@ New and updated docs on the site include:
 新的文档和更新包括：
 
 * The Flutter layout codelab has been rewritten and
-  uses the updated DartPad, the browser-based tool for running
-  Dart code. DartPad now supports Flutter!
+  uses the updated DartPad, the browser-based tool for
+  running Dart code. DartPad now supports Flutter!
   [Try it out](/docs/codelabs/layout-basics)
   and let us know what you think.
 
@@ -83,6 +83,14 @@ New and updated docs on the site include:
   可以在 [这里](/docs/codelabs/layout-basics) 
   查看并告诉我们你的想法。
   
+* A new page on [using the dart:ffi
+  library](/docs/development/platform-integration/c-interop)
+  to bind your app to native code (a feature currently under
+  development).
+  
+  更新了一篇 [使用 dart:ffi 库的文档](/docs/development/platform-integration/c-interop)，
+  帮助你与原生代码进行互调操作（目前还在开发中）。
+
 * The Performance view tool, which allows you to record
   and profile a session from your Dart/Flutter application,
   has been enabled in DevTools. For more information,
@@ -140,6 +148,24 @@ Other relevant docs:
   
   如果你先前已经通过 flutter_web 这个 package 使用了 Flutter Web，
   请根据 [这个文档](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK) 来迁移。
+
+* A new [ToggleButtons]({{site.api}}/flutter/material/ToggleButtons-class.html)
+  widget, described in the API docs.
+  [ToggleButtons demo]({{site.github}}/csells/flutter_toggle_buttons)
+
+  新增 [ToggleButtons]({{site.api}}/flutter/material/ToggleButtons-class.html) widget，以及 API 文档。
+
+* A new [ColorFiltered]({{site.api}}/flutter/widgets/ColorFiltered-class.html)
+  widget, also described in the API docs.
+  [ColorFiltered demo]({{site.github}}/csells/flutter_color_filter)
+
+  新增 [ColorFiltered]({{site.api}}/flutter/widgets/ColorFiltered-class.html) widget，以及 API 文档。
+
+* New behavior for the
+  [SelectableText]({{site.api}}/flutter/material/SelectableText-class.html)
+  widget.
+
+  [SelectableText]({{site.api}}/flutter/material/SelectableText-class.html) widget 的新特性。
 
 Happy Fluttering!
 
@@ -202,8 +228,6 @@ Get the answers to frequently asked questions.
 ### Videos
 
 ### 视频
-
-### Videos
 
 We also have some helpful videos on our
 [Flutter Youtube channel][]! In particular, check

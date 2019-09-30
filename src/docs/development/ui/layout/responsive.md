@@ -5,12 +5,6 @@ short-title: Responsive
 short-title: 响应式
 ---
 
-{% comment %}
-  TODO: Once published, remove this page on the GitHub wiki:
-  (https://github.com/flutter/flutter/wiki/Creating-Responsive-Apps)
-  and forward to this page.
-{% endcomment %}
-
 A responsive app lays out its UI according to the
 size and shape of the screen or window.
 This is especially necessary when the same app
@@ -81,6 +75,7 @@ Other useful widgets for creating a responsive UI:
 * [`CustomSingleChildLayout`][]
 * [`CustomMultiChildLayout`][]
 * [`FittedBox`][]
+* [`FractionallySizedBox`][]
 * [`LayoutBuilder`][]
 * [`MediaQuery`][]
 * [`MediaQueryData`][]
@@ -96,34 +91,39 @@ including contributions from the Flutter community:
   每周 Flutter Widget 系列视频之 [MediaQuery](https://www.youtube.com/watch?v=A3WrA4zAaPw)
   
 * [Developing for Multiple Screen Sizes and Orientations in
-  Flutter]({{site.medium}}/flutter-community/developing-for-multiple-screen-sizes-and-orientations-in-flutter-fragments-in-flutter-a4c51b849434)
+  Flutter][]
   by Deven Joshi
   
-  Deven Joshi 写的文章：[Flutter 应用开发：为多屏幕尺寸和不同屏幕方向]({{site.medium}}/flutter-community/developing-for-multiple-screen-sizes-and-orientations-in-flutter-fragments-in-flutter-a4c51b849434)
+  Deven Joshi 写的文章：[Flutter 应用开发：为多屏幕尺寸和不同屏幕方向][]
   
 * [Build Responsive UIs in
-  Flutter]({{site.medium}}/flutter-community/build-responsive-uis-in-flutter-fd450bd59158)
+  Flutter][]
   by Raouf Rahiche
 
-  Raouf Rahiche 的文章 [在 Flutter 里构建响应式应用]({{site.medium}}/flutter-community/build-responsive-uis-in-flutter-fd450bd59158)
+  Raouf Rahiche 的文章 [在 Flutter 里构建响应式应用][Build Responsive UIs in
+  Flutter]
   
 * [Making Cross-platform Flutter Landing Page
-  Responsive]({{site.medium}}/flutter-community/making-cross-platform-flutter-landing-page-responsive-7fffe0655970)
+  Responsive][]
   by Priyanka Tyagi
 
-  Priyanka Tyagi 的文章：[开发跨平台的响应式应用]({{site.medium}}/flutter-community/making-cross-platform-flutter-landing-page-responsive-7fffe0655970)
+  Priyanka Tyagi 的文章：[开发跨平台的响应式应用][Making Cross-platform Flutter Landing Page Responsive]
   
 * [How to make flutter app responsive according to different screen
-  size?](https://stackoverflow.com/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size),
+  size?][],
   a question on StackOverflow
 
-  来自 StackOverflow 的问答 [如何根据不同屏幕大小构建 Flutter 应用？](https://stackoverflow.com/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size)
+  来自 StackOverflow 的问答 [如何根据不同屏幕大小构建 Flutter 应用？][How to make flutter app responsive according to different screen size?]
 
 [`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html
 [`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
+[Build Responsive UIs in Flutter]: {{site.medium}}/flutter-community/build-responsive-uis-in-flutter-fd450bd59158
 [`CustomMultiChildLayout`]: {{site.api}}/flutter/widgets/CustomMultiChildLayout-class.html
 [`CustomSingleChildLayout`]: {{site.api}}/flutter/widgets/CustomSingleChildLayout-class.html
+[Developing for Multiple Screen Sizes and Orientations in Flutter]: {{site.medium}}/flutter-community/developing-for-multiple-screen-sizes-and-orientations-in-flutter-fragments-in-flutter-a4c51b849434
 [`FittedBox`]: {{site.api}}/flutter/widgets/FittedBox-class.html
+[`FractionallySizedBox`]: {{site.api}}/flutter/widgets/FractionallySizedBox-class.html
+[How to make flutter app responsive according to different screen size?]: https://stackoverflow.com/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
 [`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
 [`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery/of.html
@@ -131,4 +131,5 @@ including contributions from the Flutter community:
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`builder`]: {{site.api}}/flutter/widgets/LayoutBuilder/builder.html
+[Making Cross-platform Flutter Landing Page Responsive]: {{site.medium}}/flutter-community/making-cross-platform-flutter-landing-page-responsive-7fffe0655970
 [`maxWidth`]: {{site.api}}/flutter/rendering/BoxConstraints/maxWidth.html

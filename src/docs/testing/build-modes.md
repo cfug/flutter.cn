@@ -170,7 +170,7 @@ Release mode for a web app means that:
   这个 Web 应用通过 [dart2js][] 编译器构建，以确保更优秀的性能。
 
 The command `flutter run --release` compiles to release mode.
-Your IDE supports this mode.  Android Studio, for example,
+Your IDE supports this mode. Android Studio, for example,
 provides a **Run > Run...** menu option, as well as a triangular 
 green run button icon on the project page.
 (The menu item shows a pic of the corresponding icon.)
@@ -180,6 +180,12 @@ green run button icon on the project page.
 例如，Android Studio 提供了 **Run > Run...** 菜单选项，
 而且在项目面板中还有一个被小三角覆盖的绿色虫子图标。
 （菜单选项中会显示相应图标的图片）
+
+You can compile to release mode for a specific target
+with `flutter build <target>`. For a list of supported targets,
+use `flutter help build`.
+
+你可以使用 `flutter build <target>` 针对特定目标编译 release 模式。请使用 `flutter help build` 查看支持的目标列表。
 
 You can also compile to release mode with `flutter build --release`.
 

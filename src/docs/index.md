@@ -87,8 +87,9 @@ New and updated docs on the site include:
   library](/docs/development/platform-integration/c-interop)
   to bind your app to native code (a feature currently under
   development).
-
   
+  更新了一篇 [使用 dart:ffi 库的文档](/docs/development/platform-integration/c-interop)，
+  帮助你与原生代码进行互调操作（目前还在开发中）。
 
 * The Performance view tool, which allows you to record
   and profile a session from your Dart/Flutter application,
@@ -227,8 +228,6 @@ Get the answers to frequently asked questions.
 ### Videos
 
 ### 视频
-
-### Videos
 
 We also have some helpful videos on our
 [Flutter Youtube channel][]! In particular, check

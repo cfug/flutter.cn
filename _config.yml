@@ -119,14 +119,14 @@ alert:
 
 custom:
   dartpad:
-    embed-dart-prefix: https://dartpad.dev/embed-dart.html
-    embed-html-prefix: https://dartpad.dev/embed-html.html
-    embed-inline-prefix: https://dartpad.dev/embed-inline.html
+    embed-dart-prefix: https://dartpad.cn/embed-dart.html
+    embed-html-prefix: https://dartpad.cn/embed-html.html
+    embed-inline-prefix: https://dartpad.cn/embed-inline.html
   dartpadx:
-    embed-dart-prefix: https://dartpad.dev/experimental/embed-new-dart.html
-    embed-flutter-prefix: https://dartpad.dev/experimental/embed-new-flutter.html
-    embed-html-prefix: https://dartpad.dev/experimental/embed-new-html.html
-    embed-inline-prefix: https://dartpad.dev/experimental/embed-new-inline.html
+    embed-dart-prefix: https://dartpad.cn/experimental/embed-new-dart.html
+    embed-flutter-prefix: https://dartpad.cn/experimental/embed-new-flutter.html
+    embed-html-prefix: https://dartpad.cn/experimental/embed-new-html.html
+    embed-inline-prefix: https://dartpad.cn/experimental/embed-new-inline.html
 
   # callout_danger: '<div class="bs-callout bs-callout-danger">'
   # callout_default: '<div class="bs-callout bs-callout-default">'

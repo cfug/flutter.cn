@@ -170,6 +170,7 @@ You can also ask questions on the [Flutter dev mailing list][flutter-dev].
 Aside from subscribing to receive announcements,
 we'd love to hear from you!
 
+我们将在 [Flutter announcements mailing list][flutter-announce] 上发布重大更改的公告。你也可以在 [Flutter dev mailing list][flutter-dev] 上提问！除了订阅接收公告外我们很乐意听取您的意见！
 
 ## Selecting a specific version
 

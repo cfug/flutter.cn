@@ -6,9 +6,9 @@ prev:
   title: 响应文本框内容的更改
   path: /docs/cookbook/forms/text-field-changes
 next:
-  title: Add Material touch ripples
-  title: 添加点按涟漪效果 (Material Design)
-  path: /docs/cookbook/gestures/ripples
+  title: Focus and text fields
+  title: Text Field 上的焦点
+  path: /docs/cookbook/forms/focus
 ---
 
 In this recipe,

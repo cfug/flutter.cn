@@ -225,7 +225,9 @@ with each layer building upon the previous layer.
 
 Flutter 框架由一系列层结构组成，每一层都建立在前一层之上。
 
-<object type="image/svg+xml" data="/images/whatisflutter/diagram-layercake.svg" style="width: 85%; height: 85%"></object>
+{% asset resources/diagram-layercake.png
+   alt="Flutter framework layer cake"
+   class="mw-100" %}
 
 The upper layers of the framework are used more frequently
 than the lower layers. For the complete set of libraries that make up

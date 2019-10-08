@@ -2,13 +2,13 @@
 title: Focus and text fields
 title: 焦点和文本框
 prev:
-  title: Create and style a text field
-  title: 文本框的创建和设定
-  path: /docs/cookbook/forms/text-input
+  title: Retrieve the value of a text field
+  title: 获取文本框的输入值
+  path: /docs/cookbook/forms/retrieve-input
 next:
-  title: Handle changes to a text field
-  title: 响应文本框内容的更改
-  path: /docs/cookbook/forms/text-field-changes
+  title: Add Material touch ripples
+  title: 添加点按涟漪效果 (Material Design)
+  path: /docs/cookbook/gestures/ripples
 ---
 
 When a text field is selected and accepting input,

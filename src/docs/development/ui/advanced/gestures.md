@@ -180,6 +180,10 @@ Gesture 代表的是语义操作（比如点击、拖动、缩放）。通常由
 
     `onPanEnd` 指针先前和屏幕产生了接触，并且以特定速度移动，此后不再在屏幕接触上发生移动。如果设置了 `onHorizontalDragEnd` 或者 `onVerticalDragEnd`，该回调方法会引发崩溃。
 
+### Adding gesture detection to widgets
+
+### 为 widgets 添加手势检测
+
 To listen to gestures from the widgets layer, use a
 [`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html).
 

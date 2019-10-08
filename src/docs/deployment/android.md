@@ -456,6 +456,24 @@ the app bundle will be signed.
 这个部分描述了如何构建一个发布的 app bundle。
 如果在前面的部分已经完成了签名步骤，发布的 bundle 会被签名。
 
+{{site.alert.warning}}
+  Recently, the Flutter team has received several reports
+  from developers indicating they are experiencing app
+  crashes on certain devices on Android 6.0 when building
+  an app bundle.
+
+  最近 Flutter team 收到的几份开发者反馈显示，
+  他们在尝试构建 app bundle 的时候，会在某些 Android 6.0 某些设备上崩溃。
+
+  While the Android team is working to identify a feasible
+  solution, you might try splitting the APK as a temporary
+  workaround. For more information, see
+  [Issue 36822]({{site.github}}/flutter/flutter/issues/36822).
+
+  在 Android team 努力寻找可行的解决方案时，你可以先尝试将 APK 拆分作为临时解决方案。
+  更多有关信息请查看 [Issue 36822]({{site.github}}/flutter/flutter/issues/36822)。
+{{site.alert.end}}
+
 From the command line:
 
 使用如下命令：

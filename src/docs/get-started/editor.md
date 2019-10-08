@@ -86,10 +86,10 @@ To install these:
     打开插件设置（macOS 系统打开 **Preferences > Plugins**，
     Windows 和 Linux 系统打开 **File > Settings > Plugins**）。
 
- 1. Select **Browse repositories**,  select the Flutter plugin and click
+ 1. Select **Marketplace**,  select the Flutter plugin and click
     **Install**.
 
-    选择 **Browse repositories**，然后选择 Flutter 插件并点击 **安装**。
+    选择 **Marketplace**，然后选择 Flutter 插件并点击 **安装**。
 
  1. Click **Yes** when prompted to install the Dart plugin.
 

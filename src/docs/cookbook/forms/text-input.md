@@ -6,9 +6,9 @@ prev:
   title: 构建一个有验证判断的表单
   path: /docs/cookbook/forms/validation
 next:
-  title: Focus and text fields
-  title: Text Field 上的焦点
-  path: /docs/cookbook/forms/focus
+  title: Handle changes to a text field
+  title: 响应文本框内容的更改
+  path: /docs/cookbook/forms/text-field-changes
 ---
 
 Text fields allow users to type text into an app.
@@ -51,6 +51,11 @@ TextField(
   ),
 );
 ```
+
+To retrieve the value when it changes, see the [Handle changes to a text
+field](/docs/cookbook/forms/text-field-changes/) recipe.
+
+要在内容发生变化时收到此内容，请参见 [响应文本框内容的更改](/docs/cookbook/forms/text-field-changes/)。
 
 ## `TextFormField`
 

@@ -2,9 +2,9 @@
 title: Handle changes to a text field
 title: 响应文本框内容的更改
 prev:
-  title: Focus and text fields
-  title: Text Field 上的焦点
-  path: /docs/cookbook/forms/focus
+  title: Create and style a text field
+  title: 文本框的创建和设定
+  path: /docs/cookbook/forms/text-input
 next:
   title: Retrieve the value of a text field
   title: 获取文本框的输入值

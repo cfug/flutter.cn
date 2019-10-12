@@ -30,7 +30,6 @@ minimal package consists of:
 
   For a list of dos and don'ts when writing an effective plugin,
   see [Writing a good
-  plugin]({{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c)
   plugin][]
   on Medium.
 

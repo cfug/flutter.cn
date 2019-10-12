@@ -1057,20 +1057,16 @@ dependencies:
 import 'package:flutter/cupertino.dart';
 ```
 
-For more information, see [Using
-Packages](/docs/development/packages-and-plugins/using-packages) and
-[Developing Packages &
-Plugins](/docs/development/packages-and-plugins/developing-packages).
+For more information, see [Using Packages][] and
+[Developing Packages & Plugins][].
 
-如果想了解更多相关信息，请参考 [在 Flutter 里使用 Packages](/docs/development/packages-and-plugins/using-packages) 和
-[Flutter Packages 的开发和提交](/docs/development/packages-and-plugins/developing-packages)。
+如果想了解更多相关信息，请参考 [在 Flutter 里使用 Packages][Using Packages] 和
+[Flutter Packages 的开发和提交][Developing Packages & Plugins]。
 
-You can find many packages shared by Flutter developers in the [Flutter
-Packages]({{site.pub}}/flutter/) section of
-the [Pub site]({{site.pub}}).
+You can find many packages shared by Flutter developers in the [Flutter packages][] section of
+the [pub.dev][].
 
-你可以找到很多 Flutter 开发者分享的代码包，就在 [Flutter
-Packages]({{site.pub}}/flutter/) 的 [Pub site]({{site.pub}}).
+你可以找到很多 Flutter 开发者分享的代码包，就在 [[Flutter packages][] 的 [pub.dev][].
 
 ## Flutter widgets
 
@@ -3285,7 +3281,10 @@ corresponding Flutter widget and common widget properties.
 </div>
 
 
-[DevTools]: /docs/development/tools/devtools
-[State management]: /docs/development/data-and-backend/state-mgmt
 [async and await]: {{site.dart-site}}/guides/language/language-tour#asynchrony-support
-
+[Developing Packages & Plugins]: /docs/development/packages-and-plugins/developing-packages
+[DevTools]: /docs/development/tools/devtools
+[Flutter packages]: {{site.pub}}/flutter/
+[pub.dev]: {{site.pub}}
+[State management]: /docs/development/data-and-backend/state-mgmt
+[Using Packages]: /docs/development/packages-and-plugins/using-packages

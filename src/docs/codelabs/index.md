@@ -70,11 +70,11 @@ to share photos.
 Build a version of the Shrine shopping app (used in the Material Design
 codelabs) using the Cupertino package to create an iOS style look and feel.
 Create multiple tabs and navigate between them.
-Use the [provider](https://pub.dev/packages/provider) package to manage
+Use the [provider]({{site.pub}}/packages/provider) package to manage
 state between screens.
 
 构建 iOS 风格和体验的购物应用 Shrine，创建多个选项卡，
-使用 [provider](https://pub.flutter-io.cn/packages/provider) 来管理不同的页面。
+使用 [provider]({{site.pub}}/packages/provider) 来管理不同的页面。
 
 
 #### [在 Flutter 里使用 Firebase]({{site.codelabs}}/codelabs/flutter-firebase-cn/index.html)

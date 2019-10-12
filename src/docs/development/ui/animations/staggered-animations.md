@@ -35,11 +35,11 @@ short-title: 交织动画
 
   **Terminology:**
   If the concept of tweens or tweening is new to you, see the
-  [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
+  [Animations in Flutter tutorial][].
   
   **术语:**
   如果 tweens 或 tweening 的概念对你来说比较新，请看
-  [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
+  [Flutter 指南中的 Animation][Animations in Flutter tutorial]。
 {{site.alert.end}}
 
 Staggered animations are a straightforward concept: visual changes
@@ -67,18 +67,20 @@ This guide shows how to build a staggered animation in Flutter.
   
   本指南解释了 basic_staggered_animation 示例。你也可参考更复杂的例子，staggered_pic_selection。
 
-  [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)<br>
+  [basic_staggered_animation][]
+  <br>
     Shows a series of sequential and overlapping animations of a single widget.
     Tapping the screen begins an animation that changes opacity, size,
     shape, color, and padding.
     
-  [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)<br>
+  [basic_staggered_animation][]
+  <br>
     展示一个单独的 widget 的一系列连续和重叠动画。轻击屏幕开始一个动画，改变不透明度，大小，形状、颜色和填充。
   
-  [staggered_pic_selection]({{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection)<br>
+  [staggered_pic_selection][]
+  <br>
     Shows deleting an image from a list of images displayed in one of three sizes.
-    This example uses two [animation
-    controllers]({{site.api}}/flutter/animation/AnimationController-class.html):
+    This example uses two [animation controllers][]:
     one for image selection/deselection, and one for image deletion.
     The selection/deselection animation is staggered. (To see this effect,
     you might need to increase the `timeDilation` value.)
@@ -88,10 +90,10 @@ This guide shows how to build a staggered animation in Flutter.
     has finished expanding, the small image shrinks to display its checkmark.
     This staggered behavior is similar to what you might see in Google Photos.
     
-  [staggered_pic_selection]({{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection)<br>
+  [staggered_pic_selection][]
+  <br>
     展示从一个以三种大小显示的图像列表中删除一个图像。
-    这个例子使用两个 [animation
-    controllers]({{site.api}}/flutter/animation/AnimationController-class.html):
+    这个例子使用两个 [animation controllers][]:
     一个用于控制图像的选择/取消选择, 一个用于控制删除图像.
     选择/取消选择的动画是交织动画. (想看到这种效果，你可能需要增加 `timeDilation` 的数值。)
     选择最大的一个图像，它会收缩同时在一个在蓝色圆圈里显示一个对勾，然后，选择一个最小的图像，最大的图像会展开同时对勾消失。
@@ -144,12 +146,11 @@ After running forward, the animation runs in reverse.
 
   **New to Flutter?**
   This page assumes you know how to create a layout using Flutter’s
-  widgets.  For more information, see [Building Layouts in
-  Flutter](/docs/development/ui/layout).
+  widgets.  For more information, see [Building Layouts in Flutter][].
   
   **刚接触Flutter？**
   本文假定你已经知道如何使用 Flutter 的 widgets 创建一个布局。
-  更多信息请看 [Flutter 中的布局](/docs/development/ui/layout).
+  更多信息请看 [Flutter 中的布局][Building Layouts in Flutter].
   
 {{site.alert.end}}
 
@@ -163,9 +164,9 @@ After running forward, the animation runs in reverse.
   <h4 class="no_toc">重点是什么？</h4>
 
   * All of the animations are driven by the same
-    [AnimationController]({{site.api}}/flutter/animation/AnimationController-class.html).
+    [AnimationController][].
     
-    所有的动画都是由相同同样的 [AnimationController]({{site.api}}/flutter/animation/AnimationController-class.html) 驱动。
+    所有的动画都是由相同同样的 [AnimationController][] 驱动。
     
   * Regardless of how long the animation lasts in real time,
     the controller's values must be between 0.0 and 1.0, inclusive.
@@ -173,24 +174,24 @@ After running forward, the animation runs in reverse.
     无论动画在真实时间中播放多长时间，控制器的值必须在 0.0　和 1.0 之间， 包括 0.0　和 1.0。
     
   * Each animation has an
-    [Interval]({{site.api}}/flutter/animation/Interval-class.html)
+    [Interval][]
     between 0.0 and 1.0, inclusive.
     
-    每个动画都有一个 [Interval]({{site.api}}/flutter/animation/Interval-class.html)，
+    每个动画都有一个 [Interval][]，
     值必须在 0.0　和 1.0 之间， 包括 0.0　和 1.0。
     
   * For each property that animates in an interval, create a
-    [Tween.]({{site.api}}/flutter/animation/Tween-class.html)
+    [Tween][].
     The `Tween` specifies the start and end values for that property.
     
-    对于每一个间隔内产生动画的属性，创建一个 [Tween.]({{site.api}}/flutter/animation/Tween-class.html)。
+    对于每一个间隔内产生动画的属性，创建一个 [Tween][]。
     `Tween` 指定此属性的开始值和结束值。 
     
   * The `Tween` produces an
-    [Animation]({{site.api}}/flutter/animation/Animation-class.html)
+    [Animation][]
     object that is managed by the controller.
     
-    `Tween` 产生一个由控制器管理的 [Animation]({{site.api}}/flutter/animation/Animation-class.html) 对象。
+    `Tween` 产生一个由控制器管理的 [Animation][] 对象。
     
 {{site.alert.end}}
 
@@ -202,8 +203,8 @@ in and out.
 {% endcomment %}
 
 The following diagram shows the Intervals used in the
-[basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
-example. You might notice the following characteristics:
+[basic_staggered_animation][] example.
+You might notice the following characteristics:
 
 下图展示了在 [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation) 使用间隔的例子。
 你会注意到有以下特点：
@@ -273,13 +274,12 @@ The following code creates a tween for the `width` property.
 下面的代码为 `width` 属性创建了一个 tween。
 
 It builds a
-[CurvedAnimation]({{site.api}}/flutter/animation/CurvedAnimation-class.html),
+[CurvedAnimation][],
 specifying an eased curve.
-See [Curves]({{site.api}}/flutter/animation/Curves-class.html)
-for other available pre-defined animation curves.
+See [Curves][] for other available pre-defined animation curves.
 
-它创建了一个 [CurvedAnimation]({{site.api}}/flutter/animation/CurvedAnimation-class.html), 指定一个 eased curve。
-其他更多的预定的动画曲线请看 [CurvedAnimation]({{site.api}}/flutter/animation/CurvedAnimation-class.html)。
+它创建了一个 [CurvedAnimation][], 指定一个 eased curve。
+其他更多的预定的动画曲线请看 [CurvedAnimation][]。
 
 <!-- skip -->
 {% prettify dart %}
@@ -345,15 +345,15 @@ The animation begins when a tap is detected anywhere in the screen.
 有状态 widget 创建控制器，播放动画， 同时构建 widget 树的非动画部分。
 当在屏幕上检测到一个点击时，动画开始。
 
-[Full code for basic_staggered_animation's main.dart]({{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart)
+[Full code for basic_staggered_animation's main.dart][]
 
 ### Stateless widget: StaggerAnimation
 
 ### 无状态的 widget: StaggerAnimation
 
 In the stateless widget, StaggerAnimation, the `build()` function instantiates an
-[AnimatedBuilder]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html)&mdash;a
-general purpose widget for building animations. The AnimatedBuilder
+[AnimatedBuilder][]&mdash;a general purpose widget for building
+animations. The AnimatedBuilder
 builds a widget and configures it using the Tweens' current values.
 The example creates a function named `_buildAnimation()` (which performs
 the actual UI updates), and assigns it to its `builder` property.
@@ -521,40 +521,38 @@ The following resources might help when writing animations:
 
 以下资源可能会在编写动画时有所帮助：
 
-[Animations landing page](/docs/development/ui/animations)<br>
+[Animations landing page][]<br>
   Lists the available documentation for Flutter animations.
   If tweens are new to you, check out the
   [Animations tutorial](/docs/development/ui/animations/tutorial).
   
-[动画效果介绍](/docs/development/ui/animations)<br>
+[动画效果介绍][Animations landing page]<br>
 Flutter 动画效果文档的合集页面，如果你刚接触，可以从
 [这个教程](/docs/development/ui/animations/tutorial)开始。
 
-[Flutter API documentation]({{site.api}})<br>
+[Flutter API documentation][]<br>
   Reference documentation for all of the Flutter libraries.
-  In particular, see the [animation
-  library]({{site.api}}/flutter/animation/animation-library.html)
+  In particular, see the [animation library][]
   documentation.
   
-[Flutter API 文档]({{site.api}})<br>
-  Flutter 库所有的参考文档。特别是 [animation
-  library]({{site.api}}/flutter/animation/animation-library.html) 文档。
+[Flutter API 文档][Flutter API documentation]<br>
+  Flutter 库所有的参考文档。特别是 [animation library][] 
+  文档。
 
-[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
+[Flutter Gallery][]<br>
   Demo app showcasing many Material Components and other Flutter
-  features.  The [Shrine
-  demo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
+  features.  The [Shrine demo][]
   implements a hero animation.
 
-[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-  Demo 应用程序展示了许多 Material Design 组件和其他 Flutter 特性。[Shrine
-  demo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
+[Flutter Gallery][]<br>
+  Demo 应用程序展示了许多 Material Design 组件和其他 Flutter 特性。[Shrine demo][]
   执行了一个 hero 动画。
 
-[Material motion spec]({{site.material}}/guidelines/motion/)<br>
+[Material motion spec][]
+<br>
   Describes motion for Material apps.
 
-[Material 动画效果指导文档]({{site.material}}/guidelines/motion/)<br>
+[Material 动画效果指导文档][Material motion spec]<br>
  Material 动效果文档。
 
 {% comment %}
@@ -562,7 +560,30 @@ Package not yet vetted.
 
 ## Other resources
 
-* For an alternate approach to sequence animation, see the
-[flutter_sequence_animation]({{site.pub}}/packages/flutter_sequence_animation)
-package on the [Pub site]({{site.pub}}/packages).
+* For an alternate approach to sequence animation,
+  see the [flutter_sequence_animation][]
+  package on [pub.dev][].
 {% endcomment %}
+
+
+[Animation]: {{site.api}}/flutter/animation/Animation-class.html
+[animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html
+[animation library]: {{site.api}}/flutter/animation/animation-library.html
+[Animations landing page]: /docs/development/ui/animations
+[AnimationController]: {{site.api}}/flutter/animation/AnimationController-class.html
+[AnimatedBuilder]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
+[Animations in Flutter tutorial]: /docs/development/ui/animations/tutorial
+[basic_staggered_animation]: {{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation
+[Building Layouts in Flutter]: /docs/development/ui/layout
+[staggered_pic_selection]: {{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection
+[CurvedAnimation]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
+[Curves]: {{site.api}}/flutter/animation/Curves-class.html
+[Flutter API documentation]: {{site.api}}
+[Flutter Gallery]: ({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
+[flutter_sequence_animation]: {{site.pub}}/packages/flutter_sequence_animation
+[Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart
+[Interval]: {{site.api}}/flutter/animation/Interval-class.html
+[Material motion spec]: {{site.material}}/guidelines/motion/
+[pub.dev]: {{site.pub}}/packages
+[Shrine demo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine
+[Tween]: {{site.api}}/flutter/animation/Tween-class.html

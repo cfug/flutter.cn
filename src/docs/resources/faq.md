@@ -748,9 +748,9 @@ Flutter web 目前处于 [技术预览状态][technical preview]。我们将它�
 
 Yes, but right now it's not very well supported.
 We're working on making this a first class experience.
-Our current progress is documented [on our wiki][].
+The current progress is documented [on the Flutter wiki][].
 
-可以，但目前支持得并不完美。我们正在致力于为桌面应用打造最佳体验。这方面的进展在 [我们的 wiki](https://github.com/flutter/flutter/wiki/Desktop-shells) 上可以了解到。
+可以，但目前支持得并不完美。我们正在致力于为桌面应用打造最佳体验。这方面的进展在 [我们的 wiki][on the Flutter wiki] 上可以了解到。
 
 ### Can I use Flutter inside of my existing native app?
 
@@ -941,7 +941,7 @@ For more information, see the Medium article
 ### 我在 Flutter 里能使用 JSON/XML/protobuffers 等内容吗？
 
 Absolutely. There are libraries on the
-[Pub site]({{site.pub}}) for JSON, XML,
+[pub.dev]({{site.pub}}) for JSON, XML,
 protobufs, and many other utilities and formats.
 
 当然可以。[Pub 站点]({{site.pub}}) 提供了很多这样的代码库，包括 JSON, XML, protobufs 以及很多其他内容格式。
@@ -1419,54 +1419,53 @@ deployed to Apple's App Store.
 
 当然，Apple 是其生态的最终管理者，但我们会尽我们所能来确保使用 Flutter 开发的应用不会被 Apple 拒绝。
 
-[Hamilton for Android]: https://play.google.com/store/apps/details?id=com.hamilton.app
-[Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
-[on our wiki]: {{site.github}}/flutter/flutter/wiki/Desktop-shells
 [Add Flutter to existing apps]: {{site.github}}/flutter/flutter/wiki/Add-Flutter-to-existing-apps
-[platform_view]: {{site.github}}/flutter/flutter/tree/master/examples/platform_view
-[flutter_view]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_view
-[Flutter 1.0: Google's Portable UI Toolkit]: https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html
-[editing Dart]: {{site.dart-site}}/tools
-[Android Studio/IntelliJ]: /docs/development/tools/android-studio
-[VS Code]: /docs/development/tools/vs-code
-[widgets]: /docs/development/ui/widgets
-[MDC-103 Flutter: Material Theming]: {{site.codelabs}}/codelabs/mdc-103-flutter
-[test coverage]: https://coveralls.io/github/flutter/flutter?branch=master
-[architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
-[catalog of Flutter's widgets]: /docs/development/ui/widgets
-[gesture system]: /docs/development/ui/advanced/gestures
-[minimal Flutter app]: {{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
-[apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
-[iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
-[QA1795]: https://developer.apple.com/library/archive/qa/qa1795/_index.html
-[Hot reload]: /docs/development/tools/hot-reload
-[technical preview]: {{site.url}}/web
-[issue #14821]: {{site.github}}/flutter/flutter/issues/14821
-[ready-made packages]: {{site.pub}}/flutter/
-[is easy]: /docs/development/packages-and-plugins/using-packages
-[platform and third-party APIs]: /docs/development/platform-integration/platform-channels
-[platform channels]: /docs/development/platform-integration/platform-channels
-[`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
-[example project]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
-[internationalization tutorial]: /docs/development/accessibility-and-localization/internationalization
 [accessibility documentation]: /docs/development/accessibility-and-localization/accessibility
-[example of using isolates with Flutter]: {{site.github}}/flutter/flutter/blob/master/examples/layers/services/isolate.dart
-[Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[the JSON tutorial]: /docs/development/data-and-backend/json
-[release build of your Android app]: /docs/deployment/android
-[release build of your iOS app]: /docs/deployment/ios
-[issues related to running Flutter on Chromebooks]: {{site.github}}/flutter/flutter/labels/platform-arc
-[issue tracker]: {{site.github}}/flutter/flutter/issues
-[Stack Overflow]: {{site.so}}/tags/flutter
+[Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
+[Android Studio/IntelliJ]: /docs/development/tools/android-studio
+[apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
+[architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
+[`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
+[built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
+[catalog of Flutter's widgets]: /docs/development/ui/widgets
 [Contributing Guide]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
 [easy starter issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
+[editing Dart]: {{site.dart-site}}/tools
+[example of using isolates with Flutter]: {{site.github}}/flutter/flutter/blob/master/examples/layers/services/isolate.dart
+[example project]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
+[Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+[Flutter 1.0: Google's Portable UI Toolkit]: https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html
+[flutter_view]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_view
+[gesture system]: /docs/development/ui/advanced/gestures
 [GitHub]: {{site.github}}/flutter/flutter
-[license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
-[only one license]: {{site.github}}/flutter/flutter/blob/master/LICENSE
-[apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
+[Hamilton for Android]: https://play.google.com/store/apps/details?id=com.hamilton.app
+[Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
+[Hot reload]: /docs/development/tools/hot-reload
 [iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
-[QA1795]: https://developer.apple.com/library/archive/qa/qa1795/_index.html
-[built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
-[Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
 [iOS instructions]: /docs/deployment/ios
+[internationalization tutorial]: /docs/development/accessibility-and-localization/internationalization
+[is easy]: /docs/development/packages-and-plugins/using-packages
+[issue #14821]: {{site.github}}/flutter/flutter/issues/14821
+[issue tracker]: {{site.github}}/flutter/flutter/issues
+[issues related to running Flutter on Chromebooks]: {{site.github}}/flutter/flutter/labels/platform-arc
+[license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
+[MDC-103 Flutter: Material Theming]: {{site.codelabs}}/codelabs/mdc-103-flutter
+[minimal Flutter app]: {{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
+[on the Flutter wiki]: {{site.github}}/flutter/flutter/wiki/Desktop-shells
+[only one license]: {{site.github}}/flutter/flutter/blob/master/LICENSE
+[platform and third-party APIs]: /docs/development/platform-integration/platform-channels
+[platform channels]: /docs/development/platform-integration/platform-channels
+[platform_view]: {{site.github}}/flutter/flutter/tree/master/examples/platform_view
+[pub.dev]: {{site.pub}}
+[QA1795]: https://developer.apple.com/library/archive/qa/qa1795/_index.html
+[ready-made packages]: {{site.pub}}/flutter/
+[release build of your Android app]: /docs/deployment/android
+[release build of your iOS app]: /docs/deployment/ios
+[Stack Overflow]: {{site.so}}/tags/flutter
+[technical preview]: {{site.url}}/web
+[test coverage]: https://coveralls.io/github/flutter/flutter?branch=master
+[the JSON tutorial]: /docs/development/data-and-backend/json
+[VS Code]: /docs/development/tools/vs-code
 [web instructions]: {{site.github}}/flutter/flutter_web
+[widgets]: /docs/development/ui/widgets
+

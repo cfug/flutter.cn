@@ -143,7 +143,7 @@ by the Flutter community:
 
   由阿里巴巴提供的 [Fish-Redux - 一个基于 Redux 的集成 flutter 应用框架](https://github.com/alibaba/fish-redux/),
 
-* [Async Redux - Redux without boilerplate. Allows for both sync and async reducers](https://pub.dev/packages/async_redux/),
+* [Async Redux - Redux without boilerplate. Allows for both sync and async reducers]({{site.pub}}/packages/async_redux/),
   by Marcelo Glasberg
 
   由 Marcelo Glasberg 提供的 [Async Redux - 无需模版文件的 Redux，支持同步/异步 Reducer](https://pub.dev/packages/async_redux/),

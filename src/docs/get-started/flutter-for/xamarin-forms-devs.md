@@ -105,24 +105,20 @@ class MyApp extends StatelessWidget {
 Xamarin.Forms has many different types of pages;
 `ContentPage` is the most common.  In Flutter,
 you specify an application widget that holds your root page.
-You can use a
-[MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
-widget, which supports [Material
-Design]({{site.material}}/design),
-or you can use a
-[CupertinoApp]({{site.api}}/flutter/cupertino/CupertinoApp-class.html)
-widget, which supports an iOS-style app,
-or you can use the lower level
-[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html),
+You can use a [MaterialApp][] widget,
+which supports [Material Design][], or you can use a
+[CupertinoApp][] widget, which supports an iOS-style app,
+or you can use the lower level [WidgetsApp][],
 which you can customize in any way you want.
 
 Xamarin.Forms 拥有一些不同类型的页面；
 `ContentPage` 是最为通用的。
 在 Flutter 中，指定一个应用程序 widget 来控制你的根页面。
 你可以使用一个
-[MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html) widget，
-它支持 [Material Design]({{site.material}}/design)，或者你也可以使用等级较低的
-[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html)，
+[MaterialApp][] widget，
+它支持 [Material Design][]，或者你也可以使用 
+[CupertinoApp][] widget，它能用来创建 ios 风格的应用，或者你也可以使用等级较低的
+[WidgetsApp][]，
 可供你随心所欲地定制。
 
 The following code defines the home page, a stateful widget. In Flutter,
@@ -969,12 +965,12 @@ specific URI scheme, using `Device.OpenUrl("mailto://")`
 
 To implement this functionality in Flutter,
 create a native platform integration,
-or use an [existing plugin]({{site.pub}}/flutter/), such as
-[`url_launcher`]({{site.pub}}/packages/url_launcher), available with
-many other packages on the [Pub site]({{site.pub}}/flutter).
+or use an [existing plugin][], such as
+[`url_launcher`][], available with
+many other packages on [pub.dev][].
 
-为了在 Flutter 中实现这个功能，需要创建一个原生平台集成，或者使用 [已有的插件]({{site.pub}}/flutter/)，
-比如 [`url_launcher`]({{site.pub}}/packages/url_launcher)，可与在 [Pub site]({{site.pub}}/flutter) 上的许多其他包一起使用。
+为了在 Flutter 中实现这个功能，需要创建一个原生平台集成，或者使用 [已有的插件][existing plugin]，
+比如 [`url_launcher`][]，可与在 [[pub.dev][] 上的许多其他包一起使用。
 
 ## Async UI
 
@@ -2873,7 +2869,7 @@ that encapsulate the native and Dart code for a specific goal.
 For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter,
 without having to write your own integration.
-Plugins are found on the [Pub site]({{site.pub}}),
+Plugins are found on [pub.dev][],
 Dart and Flutter's open source package repository.
 Some packages might support native integrations on iOS,
 or Android, or both.
@@ -3102,12 +3098,22 @@ notifications for your app.
 在 Android 中，你可以利用 Firebase Cloud Messaging 来给应用程序设置通知推送。
 
 In Flutter, access this functionality using the
-[Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging)
-plugin.
+[Firebase_Messaging][] plugin.
 For more information on using the Firebase Cloud Messaging API, see the
-[`firebase_messaging`]({{site.pub}}/packages/firebase_messaging)
+[`firebase_messaging`][]
 plugin documentation.
 
-在 Flutter 中，通过 [Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging) 插件
+在 Flutter 中，通过 [Firebase_Messaging][] 插件
 来访问这个功能。
-更多关于使用 Firebase Cloud Messaging API 的信息，可以参考 [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) 插件文档。
+更多关于使用 Firebase Cloud Messaging API 的信息，可以参考 [`firebase_messaging`][] 插件文档。
+
+[CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[DevTools]: /docs/development/tools/devtools/overview
+[`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
+[Firebase_Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
+[existing plugin]: {{site.pub}}/flutter
+[Material Design]: {{site.material}}/design
+[MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
+[pub.dev]: {{site.pub}}
+[`url_launcher`]: {{site.pub}}/packages/url_launcher
+[WidgetsApp]: {{site.api}}/flutter/widgets/WidgetsApp-class.html

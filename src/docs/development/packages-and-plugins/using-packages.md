@@ -12,25 +12,23 @@ an app without having to develop everything from scratch.
 Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共享 package，这意味着你可以快速构建应用而不是一切从零开始。
 
 Existing packages enable many use cases for example, making network requests
-([`http`](/docs/cookbook/networking/fetch-data)),
-custom navigation/route handling ([`fluro`]({{site.pub-pkg}}/fluro)),
+([`http`][]),
+custom navigation/route handling ([`fluro`][]),
 integration with device APIs
-([`url_launcher`]({{site.pub-pkg}}/url_launcher) and
-[`battery`]({{site.pub-pkg}}/battery)),
+([`url_launcher`][] and [`battery`][]),
 and using third-party platform SDKs like Firebase
-([FlutterFire]({{site.github}}/flutter/plugins/blob/master/FlutterFire.md)).
+([FlutterFire][]).
 
-现有的 package 支持许多使用场景，例如，网络请求（[`http`](/docs/cookbook/networking/fetch-data)），自定义导航/路由处理（[`fluro`]({{site.pub-pkg}}/fluro)），集成设备 API（如 [`url_launcher`]({{site.pub-pkg}}/url_launcher) 和
-[`battery`]({{site.pub-pkg}}/battery)），以及使用第三方平台的 SDK（如 [Firebase]({{site.github}}/flutter/plugins/blob/master/FlutterFire.md)）。
+现有的 package 支持许多使用场景，例如，网络请求 ([`http`][])，自定义导航/路由处理 ([`fluro`][])，集成设备 API（如 ([`url_launcher`][] 和
+[`battery`][]，以及使用第三方平台的 SDK（如 Firebase 的 ([FlutterFire][])。
 
-To develop a new package, see [developing
-packages](/docs/development/packages-and-plugins/developing-packages).
+To develop a new package, see [developing packages][].
 
-如果你正打算开发新的 package，请参阅 [Flutter Packages 的开发和提交](/docs/development/packages-and-plugins/developing-packages) 这篇文档。
+如果你正打算开发新的 package，请参阅 [Flutter Packages 的开发和提交][developing packages]。
 
 To add assets, images or fonts,
 whether stored in files or packages
-see [Adding assets and images](/docs/development/ui/assets-and-images).
+see [Adding assets and images][].
 
 如果你想添加资源、图片或字体，无论是存储在文件中还是 package 中，请参阅 [添加资源和图片](/docs/development/ui/assets-and-images) 这篇文档。
 
@@ -46,16 +44,16 @@ The following section describes how to use existing published packages.
 
 ### 搜索 package
 
-Packages are published to the [*Pub site*]({{site.pub}}).
+Packages are published to the [pub.dev][].
 
-Package 会被发布到 [**Pub site**]({{site.pub}})。
+Package 会被发布到 [pub.dev][]。
 
-The [Flutter landing page]({{site.pub}}/flutter) on
+The [Flutter landing page][] on
 the Pub site displays top packages that are compatible with Flutter
 (those that declare dependencies generally compatible with Flutter),
 and supports searching among all published packages.
 
-Pub 网站上的 [Flutter 页面]({{site.pub}}/flutter) 展示了与 Flutter 兼容的 package（即声明的依赖通常与 Flutter 兼容），并且所有已发布的 package 都支持搜索。
+Pub 网站上的 [Flutter 登陆页面][Flutter landing page] 展示了与 Flutter 兼容的 package（即声明的依赖通常与 Flutter 兼容），并且所有已发布的 package 都支持搜索。
 
 ### Adding a package dependency to an app
 
@@ -115,15 +113,15 @@ To add the package, `css_colors`, to an app:
      如果 package 内有特定平台的代码（Android 的 Java/Kotlin,
      iOS 的 Swift/Objective-C），代码必须内置到你的应用内。热重载和热重启只对 package 的 Dart 代码执行此操作，所以你需要完全重启应用以避免使用 package 时出现 `MissingPluginException` 错误。
 
-The [Installing]({{site.pub-pkg}}/css_colors#-installing-tab-)
+The [Installing tab][]
 tab available on any package page on Pub is a handy reference for these
 steps.
 
-对于这些步骤，Pub 上任何 package 页面的 ['Installing']({{site.pub-pkg}}/css_colors#-installing-tab-) 选项卡都是一个很方便的参考。
+对于这些步骤，Pub 上任何 package 页面的 [Installing tab][] 选项卡都是一个很方便的参考。
 
-For a complete example, see the [css_colors example](#css-example) below.
+For a complete example, see the [css_colors example][] below.
 
-完整示例，参阅下面的 [CSS Colors example](#css-example) 。
+完整示例，参阅下面的 [CSS Colors example][css_colors example] 。
 
 ### Conflict resolution
 
@@ -133,8 +131,8 @@ For a complete example, see the [css_colors example](#css-example) below.
 Suppose you want to use `some_package` and `another_package` in an app,
 and both of these depend on `url_launcher`, but in different versions.
 That causes a potential conflict.
-The best way to avoid this is for package authors to use [version
-ranges]({{site.dart-site}}/tools/pub/dependencies#version-constraints)
+The best way to avoid this is for package authors to use
+[version ranges][]
 rather than specific versions when specifying dependencies.
 
 假设你想在应用中使用 `some_package` 和
@@ -212,10 +210,9 @@ CocoaPods 目前尚不提供依赖项覆盖功能。
 ## 开发新的 package
 
 If no package exists for your specific use case, you can
-[develop new custom
-packages](/docs/development/packages-and-plugins/developing-packages).
+[develop new custom packages][].
 
-如果某个 package 不适用于你的特定需求，你可以 [开发新的自定义 package](/docs/development/packages-and-plugins/developing-packages)。
+如果某个 package 不适用于你的特定需求，你可以 [开发新的自定义 package][develop new custom packages]。
 
 ## Managing package dependencies and versions
 
@@ -233,9 +230,8 @@ specify a version range in the pubspec file.
 All packages have a version number, specified in the
 package's `pubspec.yaml` file. The current version of a package
 is displayed next to its name (for example,
-see the [url_launcher]({{site.pub-pkg}}/url_launcher) package), as
-well as a list of all prior versions ([url_launcher
-versions]({{site.pub-pkg}}/url_launcher#-versions-tab-)).
+see the [`url_launcher`][] package), as
+well as a list of all prior versions ([url_launcher versions][]).
 
 所有 package 都有一个版本号，在它们的 `pubspec.yaml` 文件中指定。当前的 package 版本会在其名称旁边显示当前版本号（例如，参阅 [url_launcher]({{site.pub-pkg}}/url_launcher) package）以及所有先前版本的列表（[url_launcher
 versions]({{site.pub-pkg}}/url_launcher#-versions-tab-)）。
@@ -256,8 +252,7 @@ specify a version range using one of the following formats:
     url_launcher: '>=0.1.2 <0.2.0'
   ```
 
-* Range constraints with [*caret
-  syntax*]({{site.dart-site}}/tools/pub/dependencies#caret-syntax)
+* Range constraints with [*caret syntax*][]
   are similar to regular range constraints:
 
   使用 [*caret
@@ -267,8 +262,7 @@ specify a version range using one of the following formats:
     collection: '^0.1.2'
   ```
 
-For additional details, see the [package versioning
-guide]({{site.dart-site}}/tools/pub/versioning).
+For additional details, see the [package versioning guide][].
 
 了解更详细的信息，参阅 [Pub 版本管理指南]({{site.dart-site}}/tools/pub/versioning)。
 
@@ -279,9 +273,8 @@ guide]({{site.dart-site}}/tools/pub/versioning).
 When running `flutter pub get` (**Packages get** in IntelliJ)
 for the first time after adding a package,
 Flutter saves the concrete package version found in the `pubspec.lock`
-[lockfile]({{site.dart-site}}/tools/pub/glossary#lockfile).
-This ensures that you get the same version again if you, or another
-developer on your team, run `flutter pub get`.
+[lockfile][]. This ensures that you get the same version again
+if you, or another developer on your team, run `flutter pub get`.
 
 当你添加一个 package 后首次运行 `flutter pub get`（IntelliJ 中的 'Packages Get'），Flutter 将会保存在 `pubspec.lock`
 [lockfile]({{site.dart-site}}/tools/pub/glossary#lockfile) 中找到的具体 package 版本。这将确保当你或者团队中其他开发者运行 `flutter pub get` 后能得到相同版本的 package。
@@ -299,7 +292,7 @@ that is allowed by the version constraint specified in
 
 ### 依赖未发布的 package
 
-Packages can be used even when not published on the Pub site.
+Packages can be used even when not published on pub.dev.
 For private plugins, or for packages not ready for publishing,
 additional dependency options are available:
 
@@ -345,7 +338,7 @@ additional dependency options are available:
 
   Finally, use the `ref` argument to pin the dependency to a
   specific git commit, branch, or tag. For more details, see
-  [Package dependencies]({{site.dart-site}}/tools/pub/dependencies).
+  [Package dependencies][].
 
   最后，你可以使用 `ref` 参数将依赖固定到 git 特定的 commit、branch 或者 tag。更多详细信息，请参阅 [Pub Dependencies]({{site.dart-site}}/tools/pub/dependencies)。
 
@@ -362,7 +355,7 @@ using packages.
 
 ### 例子：使用 CSS Colors package {#css-example}
 
-The [`css_colors`]({{site.pub-pkg}}/css_colors) package
+The [`css_colors`][] package
 defines color constants for CSS colors, so use the constants
 wherever the Flutter framework expects the `Color` type.
 
@@ -438,13 +431,13 @@ To use this package:
 
 ### 例子：使用 url_launcher package 来打开浏览器 {#url-example}
 
-The [url_launcher]({{site.pub-pkg}}/url_launcher) plugin
+The [`url_launcher`][] plugin
 package enables opening the default browser on the mobile platform to
 display a given URL, and is supported on both Android and iOS.
 The package demonstrates that packages can contain
 platform-specific code&mdash;these are often called _plugins_.
 
-[URL Launcher]({{site.pub-pkg}}/url_launcher) 插件允许你在移动平台上打开默认浏览器以显示给定的 URL。
+[`url_launcher`][] 插件允许你在移动平台上打开默认浏览器以显示给定的 URL。
 它演示了 package 如何也可能包含特定于平台的代码（我们将这些 package 称为**插件**）。它同时支持 Android 和 iOS。
 
 To use this plugin:
@@ -529,3 +522,25 @@ To use this plugin:
    当你点击 **Show Flutter homepage** 时，
    你将看到手机默认浏览器打开并出现 Flutter 主页。
    
+
+[Adding assets and images]: /docs/development/ui/assets-and-images
+[`battery`]: {{site.pub-pkg}}/battery
+[*caret syntax*]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
+[CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
+[`css_colors`]: {{site.pub-pkg}}/css_colors
+[css_colors example]: #css-example
+[develop new custom packages]: /docs/development/packages-and-plugins/developing-packages
+[developing packages]: /docs/development/packages-and-plugins/developing-packages
+[`fluro`]: {{site.pub-pkg}}/fluro
+[Flutter landing page]: {{site.pub}}/flutter
+[FlutterFire]: {{site.github}}/flutter/plugins/blob/master/FlutterFire.md
+[Gradle modules]: https://docs.gradle.org/current/userguide/introduction_dependency_management.html
+[`http`]: /docs/cookbook/networking/fetch-data
+[Installing tab]: {{site.pub-pkg}}/css_colors#-installing-tab-
+[lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
+[Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
+[package versioning guide]: {{site.dart-site}}/tools/pub/versioning
+[pub.dev]: {{site.pub}}
+[`url_launcher`]: {{site.pub-pkg}}/url_launcher
+[url_launcher versions]: {{site.pub-pkg}}/url_launcher#-versions-tab-
+[version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints

@@ -53,7 +53,7 @@ you to learn, too.
 <br> Learn how to use Futures, which are used extensively in the Dart core
   libraries.  Futures can be used instead of one-time callbacks.
 
-[异步编程: Futures 指南]({{site.dart-site}}/tutorials/language/futures)
+[异步编程: futures, async, await 指南][Asynchronous programming: futures, async, await]
 <br> 这能够帮助你在 Dart 核心库中熟练使用 Futures。Futures 可以用来替代一次性回调。
 
 [Asynchronous programming: streams][]
@@ -71,7 +71,7 @@ Want to learn more and perhaps contribute? Check out the
 
 如果你想了解更多信息或是想要参与贡献，欢迎查看我们的 [Dart 社区]({{site.dart-site}}/community)。
 
-[Asynchronous programming]: {{site.dart-site}}/codelabs/async-await
+[Asynchronous programming: futures, async, await]: {{site.dart-site}}/codelabs/async-await
 [Asynchronous programming: streams]: {{site.dart-site}}/docs/tutorials/streams
 [Dart]: {{site.dart-site}}
 [Dart community]: {{site.dart-site}}/community

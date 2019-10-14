@@ -87,13 +87,13 @@ specialized content:
 
 这将在 `hello/` 目录下创建一个 package 项目，其中包含以下内容：
 
-* `lib/hello.dart`:
-: The Dart code for the package.
+* `lib/hello.dart`<br>
+  The Dart code for the package.
 
   package 的 Dart 实现代码。
 
-* `test/hello_test.dart`:
-: The [unit tests][] for the package.
+* `test/hello_test.dart`<br>
+  The [unit tests][] for the package.
 
   Package 的 [单元测试](/docs/testing#unit-tests)。
 

@@ -207,7 +207,7 @@ The API of the plugin package is defined in Dart code. Open the main `hello/`
 folder in your favorite [Flutter editor][]. Locate the file
 `lib/hello.dart`.
 
-原生插件类型 package 的 API 在 Dart 代码中要首先定义好，使用你钟爱的 [Flutter 编辑器](/docs/get-started/editor)，
+原生插件类型 package 的 API 在 Dart 代码中要首先定义好，使用你钟爱的 [Flutter 编辑器][Flutter editor]，
 打开 `hello/` 主目录，并找到 `lib/hello.dart` 文件。
 
 #### Step 2b: Add Android platform code (.java/.kt)

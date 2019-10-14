@@ -182,6 +182,8 @@
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式化
           permalink: /docs/development/tools/formatting
+    - title: 迁移到 AndroidX
+      permalink: /docs/development/androidx-migration
 
 - title: 测试和调优
   permalink: /docs/testing

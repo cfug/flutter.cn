@@ -30,11 +30,11 @@ minimal package consists of:
 
   For a list of dos and don'ts when writing an effective plugin,
   see [Writing a good
-  plugin]({{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c)
+  plugin][]
   on Medium.
 
   有关编写高效插件的注意事项列表，请参考 Medium 上的文章：[Writing a good
-  plugin]({{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c)。
+  plugin][]。
 
 {{site.alert.end}}
 
@@ -47,10 +47,10 @@ Packages can contain several kinds of content:
 Package 包含以下两种类别：
 
 * *Dart packages*: General packages written in Dart, for example the
-  [`path`]({{site.pub}}/packages/path) package. Some of these might
+  [`path`][] package. Some of these might
   contain Flutter specific functionality and thus have a dependency on the
-  Flutter framework, restricting their use to Flutter only, for example the
-  [`fluro`]({{site.pub}}/packages/fluro) package.
+  Flutter framework, restricting their use to Flutter only,
+  for example the [`fluro`][] package.
 
   纯 Dart 库：用 Dart 编写的传统 package，比如
   [`path`]({{site.pub}}/packages/path)。其中一些可能包含 Flutter
@@ -60,7 +60,7 @@ Package 包含以下两种类别：
 * *Plugin packages*: A specialized Dart package which contain an API written in
   Dart code combined with a platform-specific implementation for Android (using
   Java or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
-  the [`battery`]({{site.pub}}/packages/battery) plugin package.
+  the [`battery`][] plugin package.
 
   原生插件：使用 Dart 编写的，按需使用
   Java 或 Kotlin、ObjC 或 Swift 分别在 Android 和/或 iOS 平台实现的 package。
@@ -87,15 +87,15 @@ specialized content:
 
 这将在 `hello/` 目录下创建一个 package 项目，其中包含以下内容：
 
-* `lib/hello.dart`:
-   - The Dart code for the package.
+* `lib/hello.dart`
+<br> The Dart code for the package.
 
-     package 的 Dart 实现代码。
+<br> package 的 Dart 实现代码。
 
-* `test/hello_test.dart`:
-   - The [unit tests](/docs/testing#unit-tests) for the package.
+* `test/hello_test.dart`
+<br> The [unit tests][] for the package.
 
-     Package 的 [单元测试](/docs/testing#unit-tests)。
+<br> Package 的 [单元测试](/docs/testing#unit-tests)。
 
 ### Step 2: Implement the package
 
@@ -107,15 +107,13 @@ For pure Dart packages, simply add the functionality inside the main
 对于纯 Dart 库的 package，只要在 `lib/<package name>.dart` 文件中添加功能实现，或在 `lib`
 目录中的多个文件中添加功能实现。
 
-To test the package, add [unit tests](/docs/testing#unit-tests)
+To test the package, add [unit tests][]
 in a `test` directory.
 
-如果要对 package 进行测试，在 `test` 目录下添加 [单元测试](/docs/testing#unit-tests)。
+如果要对 package 进行测试，在 `test` 目录下添加 [单元测试][unit tests]。
 
 For additional details on how to organize the package contents, see the
-[Dart library
-package]({{site.dart-site}}/guides/libraries/create-library-packages)
-documentation.
+[Dart library package][] documentation.
 
 关于如何组织 package 内容的更多详细信息，请参考 [Dart library
 package]({{site.dart-site}}/guides/libraries/create-library-packages) 文档。
@@ -129,8 +127,7 @@ need to develop a plugin package. A plugin package is a specialized version of a
 Dart package, that in addition to the content described above also contains
 platform-specific implementations written for Android (Java or Kotlin code), for
 iOS (Objective-C or Swift code), or for both. The API is connected to the
-platform-specific implementation(s) using [platform
-channels](/docs/development/platform-integration/platform-channels).
+platform-specific implementation(s) using [platform channels][].
 
 如果想要开发一个调用特定平台 API 的 package，你需要开发一个原生插件 packgae。原生插件 packgae
 是 Dart package 的特别版本，除了要实现 Dart package 要实现的内容，还需要按需使用
@@ -207,10 +204,10 @@ experience.
 #### 步骤 2a：定义 package API（.dart）
 
 The API of the plugin package is defined in Dart code. Open the main `hello/`
-folder in your favorite [Flutter editor](/docs/get-started/editor). Locate the file
+folder in your favorite [Flutter editor][]. Locate the file
 `lib/hello.dart`.
 
-原生插件类型 package 的 API 在 Dart 代码中要首先定义好，使用你钟爱的 [Flutter 编辑器](/docs/get-started/editor)，
+原生插件类型 package 的 API 在 Dart 代码中要首先定义好，使用你钟爱的 [Flutter 编辑器][Flutter editor]，
 打开 `hello/` 主目录，并找到 `lib/hello.dart` 文件。
 
 #### Step 2b: Add Android platform code (.java/.kt)
@@ -222,10 +219,12 @@ We recommend you edit the Android code using Android Studio.
 我们建议你使用 Android Studio 来编辑 Android 代码。
 
 Before editing the Android platform code in Android Studio, first make sure that
-the code has been built at least once (i.e., run the example app from your IDE/editor,
+the code has been built at least once (in other words,
+run the example app from your IDE/editor,
 or in a terminal execute `cd hello/example; flutter build apk`).
 
-使用 Android Studio 编辑 Android 平台代码之前，首先确保代码至少被构建过一次（即从
+使用 Android Studio 编辑 Android 平台代码之前，首先确保代码至少被构建过一次
+（换句话说，即从
 IDE/编辑器执行示例程序，或在终端中执行以下命令：`cd hello/example; flutter build apk`）。
 
 Next,
@@ -305,11 +304,10 @@ You can run the example app by pressing the &#9654; button.
 #### 步骤 2d：关联 API 和平台代码
 
 Finally, you need to connect the API written in Dart code with the platform-specific
-implementations. This is done using [platform
-channels](/docs/development/platform-integration/platform-channels).
+implementations. This is done using [platform channels][].
 
-最后，你需要将 Dart 编写的 API 代码与特定平台的实现相互关联。这是通过 [platform
-channel](/docs/development/platform-integration/platform-channels) 完成的。
+最后，你需要将 Dart 编写的 API 代码与特定平台的实现相互关联。这是通过 [platform channels][] 
+完成的。
 
 ## Adding documentation
 
@@ -327,9 +325,9 @@ It is recommended practice to add the following documentation to all packages:
 
    `CHANGELOG.md` 文件用来记录每个版本的更改
 
-1. A [`LICENSE`](#adding-licenses-to-the-license-file) file containing the terms under which the package is licensed
+1. A [`LICENSE`][] file containing the terms under which the package is licensed
 
-   `LICENSE` 文件用来阐述 package 的许可条款
+   [`LICENSE`][] 文件用来阐述 package 的许可条款
 
 1. API documentation for all public APIs (see below for details)
 
@@ -340,8 +338,7 @@ It is recommended practice to add the following documentation to all packages:
 ### API 文档
 
 When you publish a package, API documentation is automatically generated and
-published to dartdocs.org, see for example the [device_info
-docs]({{site.pub-api}}/device_info/latest)
+published to dartdocs.org, see for example the [device_info docs][].
 
 当你提交一个 package 时，会自动生成 API 文档并将其提交到 dartdocs.org，示例请参见
 [device_info docs]({{site.pub-api}}/device_info/latest)
@@ -380,11 +377,11 @@ If you wish to generate API documentation locally on your developement machine, 
 
    `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc`（适用于 Windows 操作系统）
 
-For tips on how to write API documentation, see [Effective Dart:
-Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation).
+For tips on how to write API documentation, see 
+[Effective Dart: Documentation][].
 
-关于如何编写 API 文档的建议，请参阅 [Effective Dart:
-Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation)。
+关于如何编写 API 文档的建议，请参阅 
+[高效 Dart 指南][Effective Dart: Documentation]。
 
 ### Adding licenses to the LICENSE file
 
@@ -463,10 +460,10 @@ package_1
 ## 提交 package {#publish}
 
 Once you have implemented a package, you can publish it on the
-[Pub site]({{site.pub}}), so that other developers can
+[pub.dev][], so that other developers can
 easily use it.
 
-一旦完成了 package 的实现，你便可以将其提交到 [Pub site]({{site.pub}})
+一旦完成了 package 的实现，你便可以将其提交到 [pub.dev][]
 上，以便其他开发者可以轻松地使用它。
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
@@ -483,22 +480,19 @@ Next, run the dry-run command to see if everything passes analysis:
 接下来，运行 dry-run 命令以检验是否所有内容都通过了分析：
 
 ```terminal
-$ flutter pub pub publish --dry-run
+$ flutter pub publish --dry-run
 ```
-
-(Note the redundant `pub pub`, which is needed until [issue #33302](https://github.com/flutter/flutter/issues/33302) is resolved).
 
 Finally, run the actual publish command:
 
 最后，运行以下提交命令：
 
 ```terminal
-$ flutter pub pub publish
+$ flutter pub publish
 ```
 
 For details on publishing, see the
-[publishing docs]({{site.dart-site}}/tools/pub/publishing)
-for the Pub site.
+[publishing docs][] for pub.dev.
 
 有关提交的详细信息，请查阅关于 Pub 站点的 [提交文档]({{site.dart-site}}/tools/pub/publishing)。
 
@@ -576,3 +570,18 @@ You can now `#import "UrlLauncherPlugin.h"` and access the `UrlLauncherPlugin` c
 at `hello/ios/Classes`.
 
 现在你可以在 `hello/ios/Classes` 目录下的源代码文件中使用 `#import "UrlLauncherPlugin.h"` 并访问 `UrlLauncherPlugin` 这个类了。
+
+[`battery`]: {{site.pub}}/packages/battery
+[Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
+[device_info docs]: {{site.pub-api}}/device_info/latest
+[Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
+[`fluro`]: {{site.pub}}/packages/fluro
+[Flutter editor]: /docs/get-started/editor
+[issue #33302]: https://github.com/flutter/flutter/issues/33302
+[`LICENSE`]: #adding-licenses-to-the-license-file
+[`path`]: {{site.pub}}/packages/path
+[platform channels]: /docs/development/platform-integration/platform-channels
+[pub.dev]: {{site.pub}}
+[publishing docs]: {{site.dart-site}}/tools/pub/publishing
+[Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c
+[unit tests]: /docs/testing#unit-tests

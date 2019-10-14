@@ -318,17 +318,16 @@ where the Dart code lives.
 ## 第二步：使用外部 package
 
 In this step, you’ll start using an open-source package named
-[english_words]({{site.pub}}/packages/english_words),
-which contains a few thousand of the most used
+[english_words][], which contains a few thousand of the most used
 English words plus some utility functions.
 
-在这一步中，你将开始使用一个名为 [english_words]({{site.pub}}/packages/english_words)
+在这一步中，你将开始使用一个名为 [english_words][]
 的开源软件包，其中包含数千个最常用的英文单词以及一些实用功能。
 
 You can find the `english_words` package, as well as many other open source
-packages, on the [Pub site]({{site.pub}}/flutter).
+packages, on [pub.dev][].
 
-你可以在 [Pub site]({{site.pub}}/flutter) 上找到
+你可以在 [pub.dev][] 上找到
 `english_words` 软件包以及其他许多开源软件包。
 
  1. The pubspec file manages the assets and dependencies for a Flutter app. In
@@ -938,3 +937,5 @@ where you add the following functionality:
   修改应用的主题，变成一个白色系的应用。
 
 [DevTools]: /docs/development/tools/devtools
+[english_words]: {{site.pub}}/packages/english_words
+[pub.dev]: {{site.pub}}

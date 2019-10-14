@@ -1528,13 +1528,13 @@ While there is a Podfile in the iOS folder in your
 Flutter project, only use this if you are adding native
 dependencies needed for per-platform integration. In general, use
 `pubspec.yaml` to declare external dependencies in Flutter.
-A good place to find great packages for Flutter is the
-[Pub site]({{site.pub}}/flutter/packages).
+A good place to find great packages for Flutter is on the
+[pub.dev]({{site.pub}}/flutter/packages) site.
 
 如果你的 Flutter 项目 iOS 文件夹中存在 Podfile，
 那么请仅在里面添加原生平台的依赖。总而言之，
 在 Flutter 中使用 `pubspec.yaml` 来声明外部依赖。
-你可以通过 [Pub]({{site.pub}}/flutter/packages)
+你可以通过 [pub.dev]({{site.pub}}/flutter/packages)
 来查找一些优秀的 Flutter 第三方包。
 
 ## ViewControllers
@@ -2511,13 +2511,14 @@ In addition to directly using platform channels, you can use a variety of pre-ma
 the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
-write your own integration. Plugins are found [on the Pub site]({{site.pub}}),
+write your own integration. Plugins are found on the
+[pub.dev]({{site.pub}}) site,
 Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 
 除了直接使用 platform channels 之外，也可以使用一系列包含了原生代码和 Dart代码，实现了特定功能的
 现有[插件](/docs/development/packages-and-plugins/using-packages)。例如，你在 Flutter 中
-可以直接使用插件来访问相册或是设备摄像头，而不需要自己重新集成。[Pub]({{site.pub-pkg}}) 是一个
+可以直接使用插件来访问相册或是设备摄像头，而不需要自己重新集成。[pub.dev]({{site.pub}}) 是一个
 Dart 和 Flutter 的开源包仓库，你可以在这里找到需要的插件。有些包可能支持集成 iOS 或 Android，或两者皆有。
 
 If you can't find a plugin on Pub that fits your needs, you can
@@ -2597,10 +2598,10 @@ These plugins are first-party integrations, maintained by the Flutter team:
    搭配 [`cloud_firestore`]({{site.pub-pkg}}/cloud_firestore) 插件来使用 Firebase Cloud Firestore
 
 
-You can also find some third-party Firebase plugins on the Pub site that
+You can also find some third-party Firebase plugins on pub.dev that
 cover areas not directly covered by the first-party plugins.
 
-在 Pub 上你也可以找到一些第三方的 Firebase 插件，主要实现了官方插件没有直接实现的功能。
+在 pub.dev 上你也可以找到一些第三方的 Firebase 插件，主要实现了官方插件没有直接实现的功能。
 
 ### How do I build my own custom native integrations?
 

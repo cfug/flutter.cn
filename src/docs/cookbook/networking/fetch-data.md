@@ -49,9 +49,9 @@ simplest way to fetch data from the internet.
 To install the `http` package, add it to the dependencies section
 of the `pubspec.yaml`. You can find the latest version of the
 [http package]({{site.pub}}/packages/http#-installing-tab-)
-on the Pub site.
+the pub.dev.
 
-安装 `http` 包之前，你必须先把它添加到 `pubspec.yaml` 的依赖区域。你可以在 [Pub site 找到 http 包的最新版本]({{site.pub}}/packages/http#-installing-tab-)。
+安装 `http` 包之前，你必须先把它添加到 `pubspec.yaml` 的依赖区域。你可以在 [pub.dev 找到 http 包的最新版本]({{site.pub}}/packages/http#-installing-tab-)。
 
 ```yaml
 dependencies:

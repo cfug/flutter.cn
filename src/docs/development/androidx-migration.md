@@ -1,6 +1,8 @@
 ---
 title: AndroidX Migration 
+title: 迁移到 AndroidX 
 description: How to migrate existing Flutter projects to AndroidX.
+description: 如何将现有的 Flutter 项目迁移到 AndroidX。
 ---
 
 {{site.alert.note}}
@@ -21,7 +23,7 @@ than the Android platform.
 
 _You will need Android Studio 3.2 or higher. If you don’t have it installed, 
 you can download the latest version from 
-[developer.android.com/studio](https://developer.android.com/studio)_.
+[developer.android.google.cn/studio](https://developer.android.google.cn/studio)_.
 
 1. Open Android Studio.
 2. Select **Open an existing Android Studio Project**.
@@ -32,7 +34,7 @@ you can download the latest version from
 5. Select **Migrate to AndroidX** from the Refactor menu. 
 6. If you are asked to backup the project before proceeding, 
    check **Backup project as Zip file**, then click **Migrate**. Lastly, save 
-   the zip file in your location of preference.
+   the zip file in your location of preference. <br/>
   <img
       width="500"
       style="border-radius: 12px;"

@@ -10,7 +10,7 @@ description: 如何将现有的 Flutter 项目迁移到 AndroidX。
   doesn't use AndroidX.
 {{site.alert.end}}
 
-[AndroidX](https://developer.android.com/jetpack/androidx) is a major improvement 
+[AndroidX](https://developer.android.google.cn/jetpack/androidx) is a major improvement 
 to the original Android Support Library.
 
 It provides the `androidx.*` package libraries, unbundled from the platform API. 

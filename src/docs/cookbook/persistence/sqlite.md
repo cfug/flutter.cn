@@ -418,9 +418,9 @@ To run the example:
    
    创建一个新的 Flutter 工程；
   	 
-2. Add the `sqfite` and `path` packages to your `pubspec.yaml`.
+2. Add the `sqflite` and `path` packages to your `pubspec.yaml`.
    
-   将 `sqfite` 和 `path` 包添加到 `pubspec.yaml` 文件里；
+   将 `sqflite` 和 `path` 包添加到 `pubspec.yaml` 文件里；
   
 3. Paste the following code into a new file called `lib/db_test.dart`.
   

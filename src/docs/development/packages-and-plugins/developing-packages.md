@@ -162,7 +162,7 @@ specialized content:
 
      Dart 插件 API 实现。
 
-* <code>android/src/main/java/com/example/&#8203;hello/HelloPlugin.java</code>:
+* <code>android/src/main/java/com/example/&#8203;hello/HelloPlugin.kt</code>:
    - The Android platform specific implementation of the plugin API.
 
      Android 平台原生插件 API 实现。
@@ -177,16 +177,17 @@ specialized content:
 
      一个依赖于该插件并说明了如何使用它的 Flutter 应用。
 
-By default, the plugin project uses Objective-C for iOS code and
-Java for Android code. If you prefer Swift or Kotlin, you can specify the
+By default, the plugin project uses Swift for iOS code and
+Kotlin for Android code. If you prefer Objective-C or Java, you can specify the
 iOS language using `-i` and/or the Android language using `-a`. For example:
 
-默认情况下，插件项目中 iOS 代码使用 Objective-C 编写，Android 代码使用
-Java 编写。如果你更喜欢 Swift 或 Kotlin，你可以通过 `-i` 指定 iOS 所使用的语言和/或使用
-`-a` 指定 Android 所使用的语言。比如：
+默认情况下，插件项目中 iOS 代码使用 Swift 编写，Android 代码使用 Kotlin 编写。
+如果你更喜欢 Objective-C 或 Java，
+你可以通过 `-i` 指定 iOS 所使用的语言和/或
+使用`-a` 指定 Android 所使用的语言。比如：
 
 ```terminal
-$ flutter create --template=plugin -i swift -a kotlin hello
+$ flutter create --template=plugin -i objc -a java hello
 ```
 
 ### Step 2: Implement the package {#edit-plugin-package}

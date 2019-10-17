@@ -124,7 +124,7 @@ custom:
     embed-inline-prefix: https://dartpad.cn/embed-inline.html
   dartpadx:
     embed-dart-prefix: https://dartpad.cn/experimental/embed-new-dart.html
-    embed-flutter-prefix: https://dartpad.cn/experimental/embed-new-flutter.html
+    embed-flutter-prefix: https://dartpad.cn/embed-flutter.html
     embed-html-prefix: https://dartpad.cn/experimental/embed-new-html.html
     embed-inline-prefix: https://dartpad.cn/experimental/embed-new-inline.html
 

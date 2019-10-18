@@ -63,7 +63,7 @@ being valuable in many scenarios. For example:
   to be packaged as a PWA for reach to a broader variety of devices,
   or to provide a companion web experience to an existing app.
 
-**使用 Flutter 构建的 [渐进式 Web 应用程序][]**
+**使用 Flutter 构建的 [渐进式 Web 应用程序][Progressive Web Application]**
 <br> 对 Flutter 的 Web 支持使现有的基于移动设备的
   Flutter 应用可以打包为 PWA，以覆盖更广泛的设备，
   或为现有应用提供配套的 Web 体验。

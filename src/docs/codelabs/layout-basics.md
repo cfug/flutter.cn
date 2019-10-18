@@ -86,7 +86,7 @@ and `Column` lays out its widgets vertically.
 
 1. Click the **Run** button.
 
-   点击**运行**按钮。
+   点击 **运行** 按钮。
 
 2. In the code, change the `Row` to a `Column`, and run again.
 
@@ -567,25 +567,24 @@ wrap a widget and force the widget to fill extra space.
   `Expanded` widget forces its child widget to
   fill extra space.
 
-  **1.** Click the **Run** button.
+**1.** Click the **Run** button.
 
-         点击**运行**按钮 
+       点击**运行**按钮 
 
-  **2.** Wrap the second `BlueBox` widget in an `Expanded` widget. 
+**2.** Wrap the second `BlueBox` widget in an `Expanded` widget. 
 
-         在第二个 `BlueBox` widget 外包裹一个 `Expanded` widget。
+       在第二个 `BlueBox` widget 外包裹一个 `Expanded` widget。
 
-  For example: 
+For example: 
 
-  例如：
+例如：
 
-  ```dart
-  Expanded(child: BlueBox(),),
-  ```
-  **3.** Select the **Format** button to properly format the code,
-         and run again. 
+```dart
+Expanded(child: BlueBox(),),
+```
+**3.** Select the **Format** button to properly format the code, and run again. 
         
-         点击 **Format (格式化)** 按钮格式化你的代码，再重新运行一次。
+       点击 **Format (格式化)** 按钮格式化你的代码，再重新运行一次。
          
 {{site.alert.end}}
 {% comment %}

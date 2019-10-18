@@ -1,4 +1,5 @@
 {{site.alert.note}}
+
   When creating a new Flutter app, some Flutter IDE plugins ask for a
   company domain name in reverse order, something like `com.example`.
   The company domain name and project name are used together as the
@@ -13,4 +14,5 @@
   包名（在 iOS 里叫套装 ID）一般都是把公司域名的反着写了。
   如果你的应用打算上架商店，建议一开始的时候把这个全网唯一的包名设置好，
   因为应用上架之后就不能再修改了。
+
 {{site.alert.end}}

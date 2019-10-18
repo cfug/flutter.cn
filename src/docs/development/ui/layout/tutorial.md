@@ -447,7 +447,7 @@ Add the text section to the body:
 
 ## Step 5: Implement the image section
 
-## 步骤 5: 实现图片区域
+## 第五步: 实现图片区域
 
 Three of the four column elements are now complete, leaving only the image.
 Add the image file to the example:

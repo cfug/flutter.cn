@@ -1,8 +1,8 @@
 <div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
-## Create the app {#create-app}
-
 {% include_relative _web-app.md  %}
+
+## Create the app {#create-app}
 
 ## 创建应用
 
@@ -76,7 +76,7 @@ contains a simple demo app that uses [Material Components][].
   : invoke **Save All**, or click **Hot Reload**
   <i class="material-icons align-bottom">offline_bolt</i>.
   
-  : 打开 **File > Save All**,
+    打开 **File > Save All**,
   或者点击 **Hot Reload** <i class="material-icons align-bottom">offline_bolt</i> (绿色的带有圆形箭头的按钮)。
 
   {% comment %} Or, as an alternative:

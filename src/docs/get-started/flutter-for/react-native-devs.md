@@ -1691,7 +1691,7 @@ class to pass the `text`, which is marked as `final`. This class extends
  `StatelessWidget`&mdash;it contains immutable data.
 
 在上面的例子中，你用到了 `MyStatelessWidget` 类的构造函数来传递 `text`。
-并且它被标记为 `final`。该类继承了 `StatelessWidget`，它包含不可数的数据。
+并且它被标记为 `final`。该类继承了 `StatelessWidget`，它包含不可变的数据。
 
 The `build` method of a stateless widget is typically called in only three
  situations:

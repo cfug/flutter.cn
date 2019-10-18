@@ -84,13 +84,13 @@ and `Column` lays out its widgets vertically.
 
   下面的样例将会显示 `Row` 和 `Column` 的区别。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮。
+   点击**运行**按钮。
 
-**2.** In the code, change the `Row` to a `Column`, and run again.
+2. In the code, change the `Row` to a `Column`, and run again.
 
-       在这段代码中，将 `Row` 改为 `Column` 并再次运行。
+   在这段代码中，将 `Row` 改为 `Column` 并再次运行。
 
 {{site.alert.end}}
 {% comment %}

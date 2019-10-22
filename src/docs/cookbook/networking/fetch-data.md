@@ -268,7 +268,7 @@ FutureBuilder<Post>(
 
 ## Why is fetchPost() called in initState()?
 
-## 5. 将数据请求移出 `build()` 方法
+## 为何要在 initState() 中调用 fetchPost()？
 
 Although it's convenient, it's not recommended to put an API call in a
 `build()` method.

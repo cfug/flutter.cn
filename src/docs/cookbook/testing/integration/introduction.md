@@ -267,7 +267,7 @@ This involves four steps:
   [`SerializableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html)
      to locate specific widgets
  
-     创建 [`SeralizableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html) 定位指定组件
+     创建 [`SerializableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html) 定位指定组件
 
   2. Connect to the app before our tests run in the `setUpAll()` function
 

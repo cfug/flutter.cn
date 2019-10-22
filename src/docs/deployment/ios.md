@@ -423,31 +423,31 @@ For more details, see [Distribute an app through the App Store]
 
 Now that you’ve created your app, attract more users with Google Ads. App campaigns use machine learning to drive more installs and make the most of your budget. 
 
-现在你已经创建好了你的应用，通过 Google Ads 吸引更多的用户吧。应用广告使用机器学习以增加更多的安装量，并充分利用你的预算。
+当你创建了应用之后，你可以通过 Google Ads 吸引更多用户，Google Ads 平台可以通过机器学习帮助你以非常高的性价比吸引到更多用户。
 
 Get your campaign running in a few steps
 
-仅需几步即可完成广告系列的投放
+通过以下几步创建一个广告宣传：
 
 1. Create your ad - we’ll help create your ad from your app information
 
-   创建你的广告 - 我们将帮助你根据你的应用信息创建广告
+   创建广告 —— 我们会根据您的应用信息帮您制作广告。另外，您还可以添加图片和视频。
 
 2. Choose your budget - set your target cost-per-install (tCPI) and daily budget cap 
 
-   选择你的预算 - 设置你的每次安装费用（tCPI）以及每日预算上限
+   决定推广预算 —— 对于以提高应用安装量为主要目标的广告系列，您需要为其设置应用安装出价，也就是“目标每次安装费用”，同时设置每日推广支出预算。
 
 3. Select your location - let us know where you’d like your ads to run
 
-   选择你的地址 - 让我们了解你想吧广告投放到哪
+   选择目标地区 —— 让我们知道你希望触达哪些区域的用户。
 
 4. Decide what action you want users to take - choose installs, in-app actions, or target return on ad spend (ROAS)
 
-   确定你要用户采取的操作 - 选择安装，应用内操作或定位广告支出回报率（ROAS）
+   设定用户行动 —— 决定你希望用户要做什么，比如安装，应用内操作或者目标广告支出回报率 (ROAS)。
 
 <a href = "https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none">Get $75 app advertising credit when you spend $25</a>
 
-<a href = "https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none">消费满25美元即可获得75美元的应用广告赠金</a>
+<a href = "https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none">获取 75 美元的赠金（当你消费 25 美金后）</a>
 
 ## Troubleshooting
 

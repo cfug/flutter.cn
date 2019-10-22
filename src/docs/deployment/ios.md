@@ -447,7 +447,7 @@ Get your campaign running in a few steps
 
 <a href = "https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none">Get $75 app advertising credit when you spend $25</a>
 
-<a href = "https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none">获取 75 美元的赠金（当你消费 25 美金后）</a>
+<a href = "https://ads.google.cn/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none">获取 75 美元的赠金（当你消费 25 美金后）</a>
 
 ## Troubleshooting
 

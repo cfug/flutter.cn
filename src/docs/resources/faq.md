@@ -691,6 +691,31 @@ You can compile and deploy your Flutter app to iOS and Android.
 
 您可以将 Flutter 应用编译并部署到 iOS 和 Android 平台上。
 
+### How can I find the more users for my app?  
+
+### 我该如何为我的应用找到更多用户？
+
+App Campaigns connect you with the right user, at the right time.
+
+应用广告活动将为您在正确的时间找到正确的用户。
+
+* Reach more users by promoting your app across Google Search, Play, YouTube, Gmail, and Google Display Network.
+
+  在谷歌搜索、商店、YouTube、Gmail 以及谷歌展示网络中推广你的应用以吸引更多用户。
+
+* Optimize your budget by allocating more budget to the highest-performing ads. Simply set a target cost-per-install (CPI) and daily budget, and let Google handle the rest.
+
+  通过为效果最好的广告分配更多预算优化你的预算。简单设置目标每次安装费用（CPI）和日常费用，剩下的只需交给 Google 处理即可。
+
+* Get set up in 10 minutes with an instant ad preview pulled from your app store listing. Then, customize the text and locations.
+
+  从应用商店列表中提取即时广告预览，只需10分钟即可完成设置。接下来自定义文本和位置。
+
+<a href = "https://ads.google.com/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3">Get $75 app advertising credit when you spend $25</a>
+
+<a href = "https://ads.google.com/lp/appcampaigns/#?modal_active=none&
+subid=ww-ww-et-aw-a-flutter1!o3">消费满25美元即可获得75美元的应用广告赠金</a>
+
 ### What devices and OS versions does Flutter run on?
 
 ### Flutter 可以运行在哪些设备，哪些操作系统版本上？

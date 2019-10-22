@@ -186,11 +186,49 @@ internet.
 
 太棒了！现在你就拥有了一个可以获取网络数据的完整函数啦。
 
-## 4. Fetch and display the data
+## 4. Fetch the data
 
-## 4. 获取并展示数据
+## 4. 获取数据
 
-To fetch the data and display it on screen, use the
+Call the fetch method in either the
+[`initState()`]({{site.api}}/flutter/widgets/State/initState.html) or
+[`didChangeDependencies()`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
+methods.
+
+在 [`initState()`]({{site.api}}/flutter/widgets/State/initState.html) 或 [`didChangeDependencies()`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
+方法中调用获取数据的方法。
+
+The `initState()` method is called exactly once and then never again.
+If you want to have the option of reloading the API in response to an
+[`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
+changing, put the call into the `didChangeDependencies()` method.  See
+[`State`]({{site.api}}/flutter/widgets/State-class.html) for more
+details.
+
+`initState()` 方法仅会被调用一次。如果你想要响应 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html) 改变
+以重新加载 API 的话，请在 `didChangeDependencies()` 方法中进行调用。
+
+<!-- skip -->
+```dart
+class _MyAppState extends State<MyApp> {
+  Future<Post> post;
+
+  @override
+  void initState() {
+    super.initState();
+    post = fetchPost();
+  }
+```
+
+This Future will be used in the next step.
+
+我们将会在下一步中使用这个 Future。
+
+## 5. Display the data
+
+## 5. 显示数据
+
+To to display the data on screen, use the
 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
 widget. The `FutureBuilder` widget comes with Flutter and makes it easy
 to work with async data sources.
@@ -201,20 +239,20 @@ You must provide two parameters:
 
 此时，你必须要提供两个参数：
 
-  1. The `Future` you want to work with. In this case, call the
-     `fetchPost()` function.
+  1. The `Future` you want to work with. In this case, the future returned from
+  the `fetchPost()` function.
 
-     你想要处理的 `Future`。在这里就是调用 `fetchPost()` 函数。
+     你想要处理的 `Future`。在这个例子中就是 `fetchPost()` 返回的 future。
 
   2. A `builder` function that tells Flutter what to render, depending on the
-     state of the `Future`: loading, success, or error.
+  state of the `Future`: loading, success, or error.
 
      一个告诉 Flutter 渲染哪些内容的 `builder` 函数，同时这也依赖于 `Future` 的状态：loading、success 或者是 error。
 
 <!-- skip -->
 ```dart
 FutureBuilder<Post>(
-  future: fetchPost(),
+  future: post,
   builder: (context, snapshot) {
     if (snapshot.hasData) {
       return Text(snapshot.data.title);
@@ -228,11 +266,11 @@ FutureBuilder<Post>(
 );
 ```
 
-## 5. Moving the fetch call out of the `build()` method
+## Why is fetchPost() called in initState()?
 
 ## 5. 将数据请求移出 `build()` 方法
 
-Although it's convenient, it's not recommended to put a call to an API in a
+Although it's convenient, it's not recommended to put an API call in a
 `build()` method.
 
 虽然这样会比较方便，但是我们仍然不推荐将 API 调用置于 `build()` 方法内部。
@@ -363,12 +401,23 @@ class Post {
   }
 }
 
-void main() => runApp(MyApp(post: fetchPost()));
+void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  final Future<Post> post;
+class MyApp extends StatefulWidget {
+  MyApp({Key key}) : super(key: key);
 
-  MyApp({Key key, this.post}) : super(key: key);
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+Future<Post> post;
+
+  @override
+  void initState() {
+    super.initState();
+    post = fetchPost();
+  }
 
   @override
   Widget build(BuildContext context) {

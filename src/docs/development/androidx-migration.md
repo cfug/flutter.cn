@@ -1,5 +1,6 @@
 ---
-title: AndroidX Migration
+title: AndroidX Migration 
+title: 迁移到 AndroidX 
 description: How to migrate existing Flutter projects to AndroidX.
 description: 如何将现有的 Flutter 项目迁移到 AndroidX。
 ---
@@ -33,7 +34,7 @@ you can download the latest version from
 5. Select **Migrate to AndroidX** from the Refactor menu.
 6. If you are asked to backup the project before proceeding,
    check **Backup project as Zip file**, then click **Migrate**. Lastly, save
-   the zip file in your location of preference.
+   the zip file in your location of preference. <br/>
   <img
       width="500"
       style="border-radius: 12px;"

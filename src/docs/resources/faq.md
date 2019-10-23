@@ -711,10 +711,10 @@ App Campaigns connect you with the right user, at the right time.
 
   从应用商店列表中获得即时广告预览，仅需10分钟即可完成设置。下面你可以设置自定义文本内容与投放区域。
 
-<a href = "https://ads.google.com/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3">Get $75 app advertising credit when you spend $25</a>
+<a href = "https://ads.google.cn/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3">Get $75 app advertising credit when you spend $25</a>
 
-<a href = "https://ads.google.com/lp/appcampaigns/#?modal_active=none&
-subid=ww-ww-et-aw-a-flutter1!o3">消费满25美元即可获得75美元的应用广告赠金</a>
+<a href = "https://ads.google.cn/lp/appcampaigns/#?modal_active=none&
+subid=ww-ww-et-aw-a-flutter1!o3">获取 75 美元的赠金（当你消费 25 美金后）</a>
 
 ### What devices and OS versions does Flutter run on?
 

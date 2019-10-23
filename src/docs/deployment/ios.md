@@ -445,7 +445,7 @@ Get your campaign running in a few steps
 
    设定用户行动 —— 决定你希望用户要做什么，比如安装，应用内操作或者目标广告支出回报率 (ROAS)。
 
-<a href = "https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none">Get $75 app advertising credit when you spend $25</a>
+<a href = "https://ads.google.cn/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none">Get $75 app advertising credit when you spend $25</a>
 
 <a href = "https://ads.google.cn/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none">获取 75 美元的赠金（当你消费 25 美金后）</a>
 

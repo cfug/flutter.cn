@@ -320,17 +320,7 @@ declarations above:
 
 ```dart
 Widget build(BuildContext context) {
-  // ...
-  return DecoratedBox(
-    decoration: BoxDecoration(
-      image: DecorationImage(
-        image: AssetImage('graphics/background.png'),
-        // ...
-      ),
-      // ...
-    ),
-  );
-  // ...
+  return Image(image: AssetImage('graphics/background.png'));
 }
 ```
 

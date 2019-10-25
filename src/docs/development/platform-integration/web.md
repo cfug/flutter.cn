@@ -134,7 +134,7 @@ Copy/paste works on mobile. If you encounter problems,
 please [file an issue][].
 
 在移动设备上复制和粘贴可以使用。
-如果你遇到了什么问题，请 [提一个 issue][]。
+如果你遇到了什么问题，请 [提一个 issue][file an issue]。
 
 ### How do I embed a web app in a web page?
 
@@ -178,15 +178,15 @@ Use [Flutter DevTools][] for the following tasks:
 
 * [Debugging][]
 
-  [调试][]
+  [调试][Debugging]
   
 * [Logging][]
 
-  [查看日志][]
+  [查看日志][Logging]
   
 * [Running Flutter inspector][]
 
-  [运行 Flutter inspector][]
+  [运行 Flutter inspector][Running Flutter inspector]
 
 Use [Chrome DevTools][] for the following tasks:
 
@@ -194,12 +194,12 @@ Use [Chrome DevTools][] for the following tasks:
 
 * [Generating event timeline][]
 
-  [生成事件的时间线][]
+  [生成事件的时间线][Generating event timeline]
   
 * [Analyzing performance][]&mdash;make sure to use a
   profile build
   
-  [分析性能][]&mdash;请确保应用使用的是 profile 构建
+  [分析性能][Analyzing performance]&mdash;请确保应用使用的是 profile 构建
 
 ### How do I test a web app?
 

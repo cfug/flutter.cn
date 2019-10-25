@@ -114,9 +114,9 @@ apps](/docs/development/ui/layout/responsive).
 对于网络功能来说，请使用 [`http`][] package。
 请注意，安全方面的工作有所不同，因为浏览器（而不是应用程序）控制 HTTP 请求上的标头。
 
-## How are forward and backward buttons presented in the web UI?
+### How are forward and backward buttons presented in the web UI?
 
-## 如何在 Web 用户界面中显示前进和后退按钮？
+### 如何在 Web 用户界面中显示前进和后退按钮？
 
 The browser's back button is supported for web apps.
 The forward button is not yet enabled.
@@ -126,9 +126,9 @@ Web 应用支持浏览器的后退按钮。
 前进按钮尚未支持。
 有关更多信息，请参阅 [Issue 32248][]。
 
-## How do copy/paste work?
+### How do copy/paste work?
 
-## 复制和粘贴功能状况如何？
+### 复制和粘贴功能状况如何？
 
 Copy/paste works on mobile. If you encounter problems,
 please [file an issue][].
@@ -136,17 +136,17 @@ please [file an issue][].
 在移动设备上复制和粘贴可以使用。
 如果你遇到了什么问题，请 [提一个 issue][]。
 
-## How do I embed a web app in a web page?
+### How do I embed a web app in a web page?
 
-## 我该如何把一个 web 应用嵌入到一个网页中？
+### 我该如何把一个 web 应用嵌入到一个网页中？
 
 IDK.
 
 尚未有明确的解决方案。
 
-## Implementing CORS
+### Implementing CORS
 
-## 实现跨域资源共享
+### 实现跨域资源共享
 
 HTTP requests work on mobile, but not on the web.
 Web applications have special security restrictions.
@@ -160,9 +160,9 @@ Web 应用程序有特殊的安全限制。
 如果你遇到问题，请检查正在访问的 Web
 服务器是否设置了接受来自托管 Flutter 应用程序的域的请求的 CORS 标头。
 
-## How do I avoid JS lockout with CORS?
+### How do I avoid JS lockout with CORS?
 
-## 我该如何使用 CORS 避免 JS 锁定？
+### 我该如何使用 CORS 避免 JS 锁定？
 
 IDK
 
@@ -221,9 +221,9 @@ TBD
 
 暂未完成
 
-## How do I deploy a web app?
+### How do I deploy a web app?
 
-## 我该如何部署 Web 应用？
+### 我该如何部署 Web 应用？
 
 See [Preparing a web app for
 release](/docs/deployment/web).
@@ -248,13 +248,13 @@ Flutter engineers routinely read and respond on Discord.
 请在 [Discord][] 平台的 **#web** 这个讨论板跟大家讨论，
 Flutter 团队的工程师会经常阅读和互动。
 
-[Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
-[Chrome DevTools]: https://developers.google.com/web/tools/chrome-devtools
+[Analyzing performance]: https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance
+[Chrome DevTools]: https://developers.google.cn/web/tools/chrome-devtools
 [Debugging]: /docs/development/tools/devtools/debugger
 [Discord]: https://discord.gg/N7Yshp4
 [file an issue]: https://goo.gle/flutter_web_issue
 [Flutter DevTools]: /docs/development/tools/devtools/overview
-[Generating event timeline]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference
+[Generating event timeline]: https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
 [Issue 32248]: {{site.github}}/flutter/flutter/issues/32248

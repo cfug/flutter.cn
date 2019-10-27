@@ -6,13 +6,15 @@ description: 学习如何使用开发者工具的性能视图。
 ---
 
 {{site.alert.note}}
+
   The performance view works with mobile apps only.
   Use Chrome DevTools to [analyze
   performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
   of a web app.
 
   性能视图仅可以运行在手机应用程序中。
-  对于web应用程序，请使用Chrome自带的开发者工具进行[性能分析](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
+  对于 web 应用程序，请使用 Chrome 自带的开发者工具进行[性能分析](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
+
 {{site.alert.end}}
 
 ## What is it?
@@ -21,15 +23,17 @@ description: 学习如何使用开发者工具的性能视图。
 
 The performance view allows you to record and profile a session from your Dart application.
 
-性能视图可以记录并分析Dart应用程序的性能，以帮助我们找到应用程序的性能瓶颈。如果你之前使用过DevTools,那么你应该很快熟悉使用它。
+性能视图可以记录并分析 Dart 应用程序的性能，以帮助我们找到应用程序的性能瓶颈。
 
 {{site.alert.note}}
+
   **If you are running a Flutter application, use a profile build to analyze performance.**
   Cpu profiles are not indicative of release performance unless your Flutter application is
   run in profile mode.
 
    **对于Flutter应用程序，需要使用profile 构建模式才能使用性能分析**
-   如果你希望你的Flutter应用程序性能与Release模式下相同且希望使用性能分析工具，请使用 Profile 模式。
+   如果你希望你的 Flutter 应用程序性能与 Release 模式下相同且希望使用性能分析工具，请使用 Profile 模式。
+
 {{site.alert.end}}
 
 ## CPU Profiler
@@ -39,6 +43,7 @@ The performance view allows you to record and profile a session from your Dart a
 Start recording a CPU profile by clicking Record. When you are done recording, click Stop. At this
 point, CPU profiling data is pulled from the VM and displayed in the profiler views (Call Tree,
 Bottom Up, and Flame Chart).
+
 单击`Record`开始进行记录，完成后点击`Stop`停止记录，分析器会把收集的信息推送到VM并分别在不同的信息窗口进行展示调用树(Call Tree,
 Bottom Up, and Flame Chart).
 
@@ -52,9 +57,9 @@ This rate can be modified via the selector at the top of the page. The sampling 
 for low, medium, and high granularity are 1 / 50 μs, 1 / 250 μs, and 1 / 1000 μs,
 respectively. It is important to know the trade-offs of modifying this setting.
 
-VM收集cpu样本的默认速率为1/250μs(即每250微秒收集一次数据)。
+VM 收集 CPU 样本的默认速率为1/250μs(即每250微秒收集一次数据)。
 一般情况下，`Profile granularity`的默认值为:“medium”。
-可以通过页面顶部下拉列表进行修改。抽样率低、中、高粒度分别顺序对应1/50μs、1/250μs和1/1000μs。
+可以通过页面顶部下拉列表进行修改。抽样率低、中、高粒度分别顺序对应 1/50μs、1/250μs 和 1/1000μs。
 正确设定此值对性能分析非常重要。
 
 A **higher granularity** profile has a higher sampling rate, and therefore yields
@@ -66,11 +71,10 @@ rate, the space fills up and begins to overflow sooner than it would have if a
 lower sampling rate was used. This means that you may not have access to CPU samples
 from the beginning of the recorded profile.
 
-**高粒度**的配置会具有更高效的采样率，因此单元时间内采集的CPU信息会更加详细且采集样例更多。
-因些VM会被经常中断以收集样本数据，所以这有可能会影响你的应用程序的运行或导致性能下降。
-VM中CPU样例数据信息的存储空间是受限制的，所以也会导致VM的CPU示例缓冲区很快地填充满且会产生溢出。
-相对低采样率，高采样率存储空间会被迅速填满并会出现溢出。一旦空间溢出，就有可能导致
-采样数据丢失。
+**高粒度**的配置会具有更高效的采样率，因此单元时间内采集的 CPU 信息会更加详细且采集样例更多。
+因些 VM 会被经常中断以收集样本数据，所以这有可能会影响你的应用程序的运行或导致性能下降。
+VM 中 CPU 样例数据信息的存储空间是受限制的，所以也会导致 VM 的 CPU 示例缓冲区很快地填充满且会产生溢出。
+相对低采样率，高采样率存储空间会被迅速填满并会出现溢出。一旦空间溢出，就有可能导致采样数据丢失。
 
 A **lower granularity** profile has a lower sampling rate, and therefore
 yields a coarse-grained CPU profile with fewer samples. However, this impacts your
@@ -78,9 +82,8 @@ app's performance less. The VM's sample buffer also fills more slowly, so you ca
 CPU samples for a longer period of app run time. This means that you have a better
 chance of viewing CPU samples from the beginning of the recorded profile.
 
-**低粒度**的配置具有较低的采样率，因此单元时间内采集的CPU信息会比较粗略且采集样例较少。
-当然，这样也会对你的应用程序性能影响更小。VM示例缓冲区填充速度也会较慢，因此你可以
-采集到相当长一段时间内应用程序的CPU样例数据。这也意味着你有更好的机会去查看CPU样例数据。
+**低粒度**的配置具有较低的采样率，因此单元时间内采集的 CPU 信息会比较粗略且采集样例较少。
+当然，这样也会对你的应用程序性能影响更小。VM 示例缓冲区填充速度也会较慢，因此你可以采集到相当长一段时间内应用程序的 CPU 样例数据。这也意味着你有更好的机会去查看 CPU 样例数据。
 
 ### Flame chart
 
@@ -93,10 +96,9 @@ frame represents the amount of time it consumed the CPU. Stack frames
 that consume a lot of CPU time may be a good place to look for possible
 performance improvements.
 
-火焰图选项卡主要用于显示一段持续时间内CPU的样本信息。
+火焰图选项卡主要用于显示一段持续时间内 CPU 的样本信息。
 图表展示的是自上而下的调用堆栈信息，即上面的堆栈帧调用下面的堆栈帧。
-每一个堆栈帧的宽度代表CPU执行的时长。栈帧消耗CPU的时间越长，就越洽有可能是我们进行
-性能改进的好地方。
+每一个堆栈帧的宽度代表 CPU 执行的时长。栈帧消耗 CPU 的时间越长，就越洽有可能是我们进行性能改进的好地方。
 
 ![Screenshot of a flame chart]({% asset tools/devtools/cpu_profiler_flame_chart.png @path %}){:width="100%"}
 
@@ -108,7 +110,7 @@ The call tree view shows the method trace for the CPU profile.
 This table is a top-down representation of the profile,
 meaning that a method can be expanded to show its _callees_.
 
-调用树视图是一种自上而下展示CPU中的调用堆栈信息方法。
+调用树视图是一种自上而下展示 CPU 中的调用堆栈信息方法。
 在下图中的表格中可以看出，展开其中的一个方法可以查看它所有的调用者。
 
 <dl markdown="1">
@@ -144,11 +146,11 @@ last method in the call stack for a given CPU sample (in other words,
 it's the leaf node for the sample).
 
 **Bottom up**视图也是用于显示方法调用堆栈，但顾名思义，它是一个自下而上的表示方式。
-这意味着表格中的每个最上方的方法实际上是给定CPU样本的调用堆栈中的最后一个方法(换句话说，这是样本的叶节点)。
+这意味着表格中的每个最上方的方法实际上是给定 CPU 样本的调用堆栈中的最后一个方法(换句话说，这是样本的叶节点)。
 
 In this table, a method can be expanded to show its _callers_.
 
-在这张表中，可以展开一个方法查看他的所有调用过程。
+在这张表中，可以展开一个方法查看它的所有调用过程。
 
 <dl markdown="1">
 <dt markdown="1">**Total time**</dt>

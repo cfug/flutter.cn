@@ -76,7 +76,7 @@ widget ——[`Text`][`Text`] 。
 也就是说“Hello World”会在屏幕上居中显示。
 在这个例子我们需要指定文字的方向
 ，当使用 `MaterialApp` widget 时，
-你需要考虑这一点，之后我们会进一步的描述。
+你就无需考虑这一点，之后我们会进一步的描述。
 
 When writing an app, you'll commonly author new widgets that
 are subclasses of either [`StatelessWidget`][] or [`StatefulWidget`][],

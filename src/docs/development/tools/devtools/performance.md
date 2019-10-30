@@ -57,7 +57,7 @@ This rate can be modified via the selector at the top of the page. The sampling 
 for low, medium, and high granularity are 1 / 50 μs, 1 / 250 μs, and 1 / 1000 μs,
 respectively. It is important to know the trade-offs of modifying this setting.
 
-VM 收集 CPU 样本的默认速率为1/250μs(即每250微秒收集一次数据)。
+VM 收集 CPU 样本的默认速率为 1/250μs (即每250微秒收集一次数据)。
 一般情况下，`Profile granularity`的默认值为:“medium”。
 可以通过页面顶部下拉列表进行修改。抽样率低、中、高粒度分别顺序对应 1/50μs、1/250μs 和 1/1000μs。
 正确设定此值对性能分析非常重要。
@@ -113,24 +113,17 @@ meaning that a method can be expanded to show its _callees_.
 调用树视图是一种自上而下展示 CPU 中的调用堆栈信息方法。
 在下图中的表格中可以看出，展开其中的一个方法可以查看它所有的调用者。
 
-<dl markdown="1">
-<dt markdown="1">**Total time**</dt>
-**总时间**
-<dd>Time the method spent executing its own code as well as
-    the code for its callees.</dd>
-此方法运行的总时间，包括了调用者的执行时间(即调用此方法整个的生命周期时长)。
-<dt markdown="1">**Self time**</dt>
-**自执行时间**
-<dd>Time the method spent executing only its own code.</dd>
-仅表示执行当前方法把花费的时长
-<dt markdown="1">**Method**</dt>
-**方法**
-<dd>Name of the called method.</dd>
-调用的方法名称
-<dt markdown="1">**Source**</dt>
-**源码**
-<dd>File path for the method call site.</dd>
-方法所在的文件路径
+<dt markdown="1"><t><b>Total time</b><t><t>总时间</t></dt>
+<dd><p>Time the method spent executing its own code as well as
+    the code for its callees.</p>
+
+<p>此方法运行的总时间，包括了调用者的执行时间(即调用此方法整个的生命周期时长)。</p></dd>
+<dt markdown="1"><t><b>Self time</b><t><t>自执行时间</t></dt>
+<dd><t>Time the method spent executing only its own code.</t><t>仅表示执行当前方法把花费的时长。</t></dd>
+<dt markdown="1"><t><b>Method</b><t><t>方法</t></dt>
+<dd><t>Name of the called method.</t><t>调用的方法名称。</t></dd>
+<dt markdown="1"><t><b>Source</b><t><t>源码</t></dt>
+<dd><t>File path for the method call site.</t><t>方法所在的文件路径。</t></dd>
 </dl>
 
 ![Screenshot of a call tree table]({% asset tools/devtools/cpu_profiler_call_tree.png @path %}){:width="100%"}
@@ -152,16 +145,15 @@ In this table, a method can be expanded to show its _callers_.
 
 在这张表中，可以展开一个方法查看它的所有调用过程。
 
-<dl markdown="1">
-<dt markdown="1">**Total time**</dt>
-**总时间**
-<dd markdown="1">Time the method spent executing its own code
-    as well as the code for its callee.
-此方法运行的总时间，包括了调用者的执行时间(即调用此方法整个的生命周期时长)。
+<dt markdown="1"><t><b>Total time</b><t><t>总时间</t></dt>
+<dd markdown="1"><p>Time the method spent executing its own code
+    as well as the code for its callee.</p>
 
-<dt markdown="1">**Self time**</dt>
-**自执行时间**
-<dd markdown="1">For top-level methods in the bottom-up tree
+<p>此方法运行的总时间，包括了调用者的执行时间(即调用此方法整个的生命周期时长)。</p>
+</dd>
+
+<dt markdown="1"><t><b>Self time</b><t><t>自执行时间</t></dt>
+<dd markdown="1"><p>For top-level methods in the bottom-up tree
     (leaf stack frames in the profile), this is the time the
     method spent executing only its own code. For sub nodes
     (the callers in the CPU profile), this is the self time
@@ -169,19 +161,21 @@ In this table, a method can be expanded to show its _callers_.
     In the following example, the self time of the caller
     `Element.updateSlotForChild.visit()` is equal to the self time of
     the callee `[Stub] OneArgCheckInLineCache` when being called by
-    the caller.
-在**Bottom up**调用树中对于最顶层的方法(叶堆栈帧)，它表示执行自己的代码所需要的时间。
-对于子节点(调用者)，它表示调用者运行被调用者的时间。
-在下面的这个例子中，调用者`Element.updateSlotForChild.visit()`的执行时间等于被调用者`[Stub] OneArgCheckInLineCache`的执行时间。
+    the caller.</p>
 
-<dt markdown="1">**Method**</dt>
-**方法**
-<dd markdown="1">Name of the called method.
-调用方法的名称。
-<dt markdown="1">**Source**</dt>
-**源码**
-<dd markdown="1">File path for the method call site.
-方法所在的文件路径。
+<p>在 Bottom up 调用树中对于最顶层的方法(叶堆栈帧)，它表示执行自己的代码所需要的时间。
+对于子节点(调用者)，它表示调用者运行被调用者的时间。
+在下面的这个例子中，调用者 `Element.updateSlotForChild.visit()` 的执行时间等于被调用者 `[Stub] OneArgCheckInLineCache` 的执行时间。
+</p>
+
+</dd>
+
+<dt markdown="1"><t><b>Method</b><t><t>方法</t></dt>
+<dd markdown="1"><t>Name of the called method.</t><t>调用方法的名称。</t></dd>
+
+<dt markdown="1"><t><b>Source</b><t><t>源码</t></dt>
+<dd markdown="1"><t>File path for the method call site.</t><t>方法所在的文件路径。</t></dd>
+</dl>
 
 ![Screenshot of a bottom up table]({% asset tools/devtools/cpu_profiler_bottom_up.png @path %}){:width="100%"}
 

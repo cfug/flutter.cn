@@ -284,6 +284,8 @@ Flutter 提供一流的开发周期，通过 **Stateful Hot Reload**
 
 ### Debugging visual layout issues
 
+### 可视化布局问题调试
+
 During a debug session,
 several additional debugging commands are added to the
 [Command Palette][] and to the [Flutter inspector][].
@@ -294,13 +296,19 @@ version of the label.
 会添加一些额外的调试命令，包括：
 
 <dl markdown="1">
-<dt markdown="1"><p>**Toggle Baseline Painting**</p><p>**切换 Baseline 绘制** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</p></dt>
+<dt markdown="1"><t><b>Toggle Baseline Painting</b></t><t><b>切换 Baseline 绘制</b></t>![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</dt>
 <dd><p>Causes each RenderBox to paint a line at each of its baselines.</p><p>每个 RenderBox 在底部绘制一条线。</p></dd>
-<dt markdown="1"><p>**Toggle Repaint Rainbow**</p><p>**切换重绘 Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</p></dt>
+<dt markdown="1"><span>**Toggle Repaint Rainbow**</span><span>**切换重绘 Rainbow**</span>![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</dt>
 <dd><p>Shows rotating colors on layers when repainting.</p><p>重新绘制时在图层上改变颜色。</p></dd>
-<dt markdown="1"><p>**Toggle Slow Animations**</p><p>**切换慢模式横幅** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</p></dt>
-<dd><p>Slows down animations to enable visual inspection.</p> <p>减慢动画以启用视觉检查。</p></dd>
-<dt markdown="1"><p>**Toggle Debug Mode Banner**</p> <p>**切换 debug 模式横幅显示** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</p></dt>
+<dt markdown="1">
+<p>**Toggle Slow Animations**</p>
+<p>**切换慢模式横幅**</p>
+![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</dt>
+<dd>
+  Slows down animations to enable visual inspection.
+  减慢动画以启用视觉检查。
+</dd>
+<dt markdown="1"><p><b>Toggle Debug Mode Banner</b></p> <p><b>切换 debug 模式横幅显示</b></p>![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</dt>
 <dd><p>Hides the debug mode banner even when running a debug build.</p><p>在运行调试构建时隐藏 debug 模式的横幅 (banner)。</p></dd>
 </dl>
 
@@ -355,7 +363,7 @@ can assist in correcting it.
 
 **Wrap with new widget assist**
 
-** Widget 嵌套辅助 **
+**Widget 嵌套辅助**
 
   This can be used when you have a widget that you want to wrap
   in a surrounding widget, for example if you want to wrap a

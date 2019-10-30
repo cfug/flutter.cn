@@ -31,7 +31,7 @@ The performance view allows you to record and profile a session from your Dart a
   Cpu profiles are not indicative of release performance unless your Flutter application is
   run in profile mode.
 
-   **对于Flutter应用程序，需要使用profile 构建模式才能使用性能分析**
+   **对于 Flutter 应用程序，需要使用 profile 构建模式才能使用性能分析**
    如果你希望你的 Flutter 应用程序性能与 Release 模式下相同且希望使用性能分析工具，请使用 Profile 模式。
 
 {{site.alert.end}}

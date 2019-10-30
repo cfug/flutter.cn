@@ -294,22 +294,14 @@ version of the label.
 会添加一些额外的调试命令，包括：
 
 <dl markdown="1">
-<dt markdown="1"><t
->**Toggle Baseline Painting**</t><t>**切换 Baseline 绘制** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</t></dt>
-<dd><t
->Causes each RenderBox to paint a line at each of its baselines.</t><t>每个 RenderBox 在底部绘制一条线。</t></dd>
-<dt markdown="1"><t
->**Toggle Repaint Rainbow**</t><t>**切换重绘 Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</t></dt>
-<dd><t
->Shows rotating colors on layers when repainting.</t><t>重新绘制时在图层上改变颜色。</t></dd>
-<dt markdown="1"><t
->**Toggle Slow Animations**</t><t>**切换慢模式横幅** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</t></dt>
-<dd><t
->Slows down animations to enable visual inspection.</t> <t>减慢动画以启用视觉检查。</t></dd>
-<dt markdown="1"><t
->**Toggle Debug Mode Banner**</t> <t>**切换 debug 模式横幅显示** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</t></dt>
-<dd><t
->Hides the debug mode banner even when running a debug build.</t><t>在运行调试构建时隐藏 debug 模式的横幅 (banner)。</t></dd>
+<dt markdown="1"><t>**Toggle Baseline Painting**</t><t>**切换 Baseline 绘制** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</t></dt>
+<dd><t>Causes each RenderBox to paint a line at each of its baselines.</t><t>每个 RenderBox 在底部绘制一条线。</t></dd>
+<dt markdown="1"><t>**Toggle Repaint Rainbow**</t><t>**切换重绘 Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</t></dt>
+<dd><t>Shows rotating colors on layers when repainting.</t><t>重新绘制时在图层上改变颜色。</t></dd>
+<dt markdown="1"><t>**Toggle Slow Animations**</t><t>**切换慢模式横幅** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</t></dt>
+<dd><t>Slows down animations to enable visual inspection.</t> <t>减慢动画以启用视觉检查。</t></dd>
+<dt markdown="1"><t>**Toggle Debug Mode Banner**</t> <t>**切换 debug 模式横幅显示** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</t></dt>
+<dd><t>Hides the debug mode banner even when running a debug build.</t><t>在运行调试构建时隐藏 debug 模式的横幅 (banner)。</t></dd>
 </dl>
 
 ### Debugging external libraries

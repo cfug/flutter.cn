@@ -185,7 +185,7 @@
     - title: 迁移到 AndroidX
       permalink: /docs/development/androidx-migration
 
-- title: 测试和调优
+- title: 测试和调试
   permalink: /docs/testing
   children:
     - title: 调试 Flutter 应用
@@ -199,12 +199,28 @@
     - title: 测试 Flutter 应用
       permalink: /docs/testing
       match-page-url-exactly: true
-    - title: 性能优化最佳实践
-      permalink: /docs/testing/best-practices
-    - title: Flutter 性能分析
-      permalink: /docs/testing/ui-performance
-    # We don't have this page yet.
-    # - title: Making your compiled app smaller
+
+- title: 性能优化
+  permalink: /docs/perf
+  children:
+    - title: 概览
+      permalink: /docs/perf
+    - title: 应用大小
+      permalink: /docs/perf/app-size
+#    - title: Memory
+#      permalink: /docs/perf/memory
+#    - title: Power usage
+#      permalink: /docs/perf/power
+    - title: 渲染性能
+      permalink: /docs/perf/rendering
+      children:
+      - title: 概览
+        permalink: /docs/perf/rendering
+        match-page-url-exactly: true
+      - title: 性能最佳实践
+        permalink: /docs/perf/rendering/best-practices
+      - title: 性能分析
+        permalink: /docs/perf/rendering/ui-performance
 
 - title: 打包部署
   children:
@@ -232,6 +248,8 @@
     # - title: Flutter best practices # TODO
     - title: Flutter 技术视频资源
       permalink: /docs/resources/videos
+    - title: Books
+      permalink: /docs/resources/books
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
     - title: 常见问题解答

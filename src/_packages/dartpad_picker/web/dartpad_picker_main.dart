@@ -138,7 +138,7 @@ class _MyAppState extends State<MyApp>
     );
     animation = Tween(begin: 0.0, end: 4 * pi)
       .animate(CurvedAnimation(
-        curve: Curves.easeInOut,
+        curve: Curves.easeInOutCubic,
         parent: controller,
     ));
   }
@@ -206,9 +206,9 @@ void main() async {
 }
 
 class FibonacciNumbers {
-  final cache = {0: 1, 1: 1};
+  final cache = {0: BigInt.from(1), 1: BigInt.from(1)};
 
-  int get(int i) {
+  BigInt get(int i) {
     if (!cache.containsKey(i)) {
       cache[i] = get(i - 1) + get(i - 2);
     }
@@ -224,7 +224,6 @@ class FibonacciListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 80,
       itemBuilder: (context, i) {
         return ListTile(
           title: Text('${numbers.get(i)}'),

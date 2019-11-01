@@ -25,6 +25,7 @@ social:
 dart-site: https://dart.cn
 news: https://news.dartlang.org
 api: https://api.flutter-io.cn
+master-api: https://master-api.flutter-io.cn
 pub: https://pub.flutter-io.cn
 pub-api: https://pub.flutter-io.cn/documentation
 pub-pkg: https://pub.flutter-io.cn/packages
@@ -34,6 +35,7 @@ dartpad: https://dartpad.cn
 material: https://material-io.cn
 so: https://stackoverflow.com
 github: https://github.com
+flutter-assets: https://flutter.github.io/assets-for-api-docs/assets
 android-dev: https://developer.android.google.cn
 codelabs: https://codelabs.flutter-io.cn
 groups: https://groups.google.com

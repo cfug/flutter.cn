@@ -77,8 +77,8 @@ DevTools doesn't work well with an app compiled to
 [release mode][], as the debugging and profiling
 information has been stripped away.
 
-如果你在 [debug 模式][] 或 [profile 模式][] 运行，那么可以在浏览器打开开发者工具连接到你的应用。
-开发者工具不能用在以 [release 模式][] 编译的应用，因为调试和分析信息都被删除了。
+如果你在 [debug 模式][debug mode] 或 [profile 模式][profile mode] 运行，那么可以在浏览器打开开发者工具连接到你的应用。
+开发者工具不能用在以 [release 模式][release mode] 编译的应用，因为调试和分析信息都被删除了。
 
 If you use DevTools for profiling, make sure to
 run your application in [profile mode][]. Otherwise,
@@ -96,7 +96,7 @@ debug asserts verifying the framework's various invariants
 For more information, see the
 [DevTools][] documentation.
 
-想获取更多信息，请查看 [开发者工具][] 文档。
+想获取更多信息，请查看 [开发者工具][DevTools] 文档。
 
 ## Setting breakpoints
 
@@ -107,7 +107,7 @@ You can set breakpoints directly in your IDE/editor
 in the [DevTools debugger][],
 or [programmatically][breakpoints].
 
-要设置断点，可以直接在 IDE 或编辑器（比如 [Android Studio/IntelliJ][] 和 [VS Code][]）、[开发者工具调试器][] 设置，或者 [通过编码的方式设置][breakpoints]。
+要设置断点，可以直接在 IDE 或编辑器（比如 [Android Studio/IntelliJ][] 和 [VS Code][]）、[开发者工具调试器][DevTools debugger] 设置，或者 [通过编码的方式设置][breakpoints]。
 
 ## The Dart analyzer
 
@@ -117,7 +117,7 @@ If you're using a [Flutter enabled IDE/editor][],
 the Dart analyzer is already checking your code
 and looking for possible mistakes.
 
-如果你使用的是 [Flutter 推荐的 IDE 或编辑器][]，则自带的 Dart 分析器默认会检查代码，并发现可能的错误。
+如果你使用的是 [Flutter 推荐的 IDE 或编辑器][Flutter enabled IDE/editor]，则自带的 Dart 分析器默认会检查代码，并发现可能的错误。
 
 If you run from the command line,
 test your code with `flutter analyze`.
@@ -136,7 +136,7 @@ Dart 分析器非常依赖你在代码中添加的类型注解，以帮助跟踪
 
 For more information, see [Using the Dart analyzer][].
 
-想获取更多信息，请查看 [使用 Dart 分析器][]。
+想获取更多信息，请查看 [使用 Dart 分析器][Using the Dart analyzer]。
 
 ## Logging
 
@@ -148,7 +148,7 @@ then view the output in the DevTools
 [logging view][], or in the console.
 
 另一个有用的调试工具是日志。
-通过 [编码][logging] 配置日志，然后在开发者工具中的 [日志视图][] 或控制台查看输出。
+通过 [编码][logging] 配置日志，然后在开发者工具中的 [日志视图][logging view] 或控制台查看输出。
 
 ## Debugging application layers
 
@@ -169,7 +169,7 @@ layer, or render trees, see
 [Debug flags: application layers][]
 in the [Debugging Flutter apps programatically][] page.
 
-Flutter widget 检查器提供了 widget 树的视觉展现，如果你想要更多细节，或关于 wiget、层级或渲染树的详尽文本转储，请查看 [添加输出代码的方式调试 Flutter 应用][] 页面的 [调试标志：应用层][] 部分。
+Flutter widget 检查器提供了 widget 树的视觉展现，如果你想要更多细节，或关于 wiget、层级或渲染树的详尽文本转储，请查看 [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programatically] 页面的 [调试标志：应用层][Debug flags: application layers] 部分。
 
 ## Debug mode assertions
 
@@ -181,7 +181,7 @@ Android Studio, or `flutter run` at the command line.
 Some tools support assert statements through the
 command-line flag `--enable-asserts`.
 
-在开发过程中，强烈建议您使用 Flutter 的 [debug 模式][]。
+在开发过程中，强烈建议您使用 Flutter 的 [debug 模式][debug mode]。
 如果你是用 Android Studio 的 bug 图标运行，或者在命令行执行 `flutter run`，则默认会使用 debug 模式。
 有些工具通过 `--enable-assets` 命令行标志可以支持断言语句。
 
@@ -205,7 +205,7 @@ down the source of the problem.
 For more information, see [Assert][] in the
 [Dart language tour][].
 
-想获取更多信息，请查看 [探索 Dart 语言][] 中的 [断言][] 部分。
+想获取更多信息，请查看 [探索 Dart 语言][Dart language tour] 中的 [断言][Assert] 部分。
 
 ## Debugging animations
 
@@ -216,12 +216,12 @@ The [Flutter inspector][] provides a **Slow Animations** button,
 or you can [slow the animations programmatically][].
 
 调试动画最简单的方法是让它们变慢。
-[Flutter inspector][] 提供一个 **放慢动画**(Slow Animations) 的按钮，你也可以 [在代码中放慢动画][]。
+[Flutter inspector][] 提供一个 **放慢动画**(Slow Animations) 的按钮，你也可以 [在代码中放慢动画][slow the animations programmatically]。
 
 For more information on debugging janky (non-smooth)
 applications, see [Flutter performance profiling][].
 
-想获取更多关于调试动画卡顿的信息，请查看 [Flutter 性能分析][]。
+想获取更多关于调试动画卡顿的信息，请查看 [Flutter 性能分析][Flutter performance profiling]。
 
 ## Measuring app startup time
 
@@ -284,9 +284,9 @@ The Timeline view also supports importing
 and exporting trace files. For more
 information, see the [Timeline view][] docs.
 
-要进行性能跟踪，你可以使用开发者工具的 [时间线视图][]。
+要进行性能跟踪，你可以使用开发者工具的 [时间线视图][Timeline view]。
 时间线视图还支持导入和导出跟踪文件。
-想要获取更多信息，请查看 [时间线视图][]。
+想要获取更多信息，请查看 [时间线视图][Timeline view]。
 
 You can also
 [perform traces programmatically][],
@@ -321,7 +321,7 @@ For information on how to interpret the graphs in the overlay,
 see [The performance overlay][] in
 the [Flutter performance profiling][] guide.
 
-关于如何解析图层中的图形，请查看 [Flutter 性能分析][] 中的 [性能图层][] 部分。
+关于如何解析图层中的图形，请查看 [Flutter 性能分析][Flutter performance profiling] 中的 [性能图层][The performance overlay] 部分。
 
 ## Debug flags
 
@@ -334,8 +334,8 @@ prefer to use the debug flags directly, see
 [Debug flags: performance][] in the
 [Debugging Flutter apps programmatically][] page.
 
-大部分情况，你不需要直接使用调试标志，因为可以在 [开发者工具][] 找到最有用的调试功能。
-但是如果你偏好直接使用调试标志，请查看 [添加输出代码的方式调试 Flutter 应用][] 中的 [调试标志：性能][] 部分。
+大部分情况，你不需要直接使用调试标志，因为可以在 [开发者工具][DevTools] 找到最有用的调试功能。
+但是如果你偏好直接使用调试标志，请查看 [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programmatically] 中的 [调试标志：性能][Debug flags: performance] 部分。
 
 ## Common problems
 
@@ -379,29 +379,30 @@ You might find the following docs useful:
 
 * [Performance best practices][]
 
-  [性能优化最佳实践][]
+  [性能优化最佳实践][Performance best practices]
 
 * [Flutter performance profiling][]
 
-  [Flutter 性能分析][]
+  [Flutter 性能分析][Flutter performance profiling]
 
 * [Using an OEM debugger][]
 
-  [使用原生的调试器][]
+  [使用原生的调试器][Using an OEM debugger]
 
 * [Flutter's modes][]
 
-  [Flutter 构建模式][]
+  [Flutter 构建模式][Flutter's modes]
 
 * [Debugging Flutter apps programatically][]
 
-  [添加输出代码的方式调试 Flutter 应用][]
+  [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programatically]
 
 * [DevTools][]
 
-  [开发者工具][]
+  [开发者工具][DevTools]
 
 * [Android Studio/IntelliJ][]
+
 * [VS Code][]
 
 

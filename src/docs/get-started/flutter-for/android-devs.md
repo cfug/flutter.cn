@@ -502,9 +502,9 @@ Flutter 有两个帮助你用画布 (canvas) 进行绘制的类：`CustomPaint` 
 可以实现自定义的绘制算法。
 
 To learn how to implement a signature painter in Flutter,
-see Collin's answer on [StackOverflow][].
+see Collin's answer on [Custom Paint][].
 
-如果想学习在 Flutter 中如何实现一个签名功能，可以查看 Collin 在 [StackOverflow][] 上的回答。
+如果想学习在 Flutter 中如何实现一个签名功能，可以查看 Collin 在 [Custom Paint][] 上的回答。
 
 {% prettify dart %}
 import 'package:flutter/material.dart';
@@ -2889,7 +2889,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino
 [optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [Apple's iOS design language]: https://developer.apple.com/design/resources/
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 [composing]: /docs/resources/technical-overview#everythings-a-widget
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [devicePixelRatio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html

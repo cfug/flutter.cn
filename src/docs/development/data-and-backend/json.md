@@ -244,7 +244,7 @@ class User {
 
   User(this.name, this.email);
 
-  User.fromJson(Map<String, dynamic> json)
+  User.fromMappedJson(Map<String, dynamic> json)
       : name = json['name'],
         email = json['email'];
 
@@ -264,7 +264,7 @@ itself. With this new approach, you can decode a user easily.
 <!-- skip -->
 ```dart
 Map userMap = jsonDecode(jsonString);
-var user = User.fromJson(userMap);
+var user = User.fromMappedJson(userMap);
 
 print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');
@@ -284,7 +284,7 @@ String json = jsonEncode(user);
 With this approach, the calling code doesn't have to worry about JSON
 serialization at all. However, the model class still definitely has to.
 In a production app, you would want to ensure that the serialization
-works properly. In practice, the `User.fromJson()` and `User.toJson()`
+works properly. In practice, the `User.fromMappedJson()` and `User.toJson()`
 methods both need to have unit tests in place to verify correct behavior.
 
 通过这种方法，被调用的代码根本不需要担心序列化 JSON 数据的问题。然而，模型类仍然是必须的。在一个生产环境下的 App，你可能希望确保序列化数据能正确奏效。在实践中，`User.fromJson()` 和 `User.toJson()` 方法都需要单元测试以便验证正确的行为。
@@ -389,9 +389,9 @@ class User {
   String email;
 
   /// A necessary factory constructor for creating a new User instance
-  /// from a map. Pass the map to the generated `_$UserFromJson()` constructor.
+  /// from a map. Pass the map to the generated `_$UserFromMappedJson()` constructor.
   /// The constructor is named after the source class, in this case, User.
-  factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
+  factory User.fromMappedJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromMappedJson(json);
 
   /// `toJson` is the convention for a class to declare support for serialization
   /// to JSON. The implementation simply calls the private, generated
@@ -485,7 +485,7 @@ you do not have actually to make any changes to our previous code.
 <!-- skip -->
 ```dart
 Map userMap = jsonDecode(jsonString);
-var user = User.fromJson(userMap);
+var user = User.fromMappedJson(userMap);
 ```
 The same goes for encoding. The calling API is the same as before.
 
@@ -535,7 +535,7 @@ class Address {
   
   Address(this.street, this.city);
   
-  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
+  factory Address.fromMappedJson(Map<String, dynamic> json) => _$AddressFromMappedJson(json);
   Map<String, dynamic> toJson() => _$AddressToJson(this); 
 }
 ```
@@ -556,7 +556,7 @@ class User {
   
   User(this.firstName, this.address);
 
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  factory User.fromMappedJson(Map<String, dynamic> json) => _$UserFromMappedJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 ```
@@ -622,7 +622,7 @@ class User {
   
   User(this.firstName, this.address);
 
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  factory User.fromMappedJson(Map<String, dynamic> json) => _$UserFromMappedJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 ```

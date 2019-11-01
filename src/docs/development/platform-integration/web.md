@@ -19,7 +19,7 @@ but is missing features and has known performance issues.
 在 master channel（dev 可能会是 9 月）上作为技术预览版本。
 Web 支持已经被添加到 Flutter 的主仓库中，
 但还缺少一些特性，且存在已知的性能问题。
-**我们不建议将 Web 应用部署到生产环境中。**
+**我们不建议将 Web 应用部署到生产环境中**
 
 ### How do I create an app that also runs on the web?
 

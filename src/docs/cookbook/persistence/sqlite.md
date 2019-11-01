@@ -76,6 +76,18 @@ dependencies:
   path:
 ```
 
+Make sure to import the packages in the file you'll be working in.
+
+确保你已将 packages 导入要使用的文件中。
+
+<!-- skip -->
+```dart
+import 'dart:async';
+
+import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
+```
+
 ## 2. Define the Dog data model
 
 ## 2. 定义狗狗的数据模型

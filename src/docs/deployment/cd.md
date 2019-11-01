@@ -14,7 +14,7 @@ without resorting to manual workflows.
 
 ## fastlane
 
-This guide shows how to integrate [fastlane](https://docs.fastlane.tools), an
+This guide shows how to integrate [fastlane][], an
 open-source tool suite, with your existing testing and continuous integration
 (CI) workflows (for example, Travis or Cirrus).
 
@@ -77,7 +77,7 @@ delivery from a local machine.
 
    设置应用商店的本地登录凭据。
    
-    * ![Android](/images/cd/android.png) Follow the [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply)
+    * ![Android](/images/cd/android.png) Follow the [Supply setup steps][]
     and ensure that `fastlane supply init` successfully syncs data from your
     Play Store console. _Treat the .json file like your password and do not check
     it into any public source control repositories._
@@ -112,10 +112,10 @@ delivery from a local machine.
       上传后，Google Play 商店会重新使用 发布签名对 .apk 文件签名。
 
         * It's highly recommended to use the automatic cloud managed signing for
-        the deployment key. For more information, see the [official Play Store documentation](https://support.google.com/googleplay/android-developer/answer/7384423?hl=en).
+        the deployment key. For more information, see the [official Play Store documentation][].
         
           强烈建议使用自动化的云端管理发布签名。更多信息请查看
-          [Google Play 官方说明](https://support.google.com/googleplay/android-developer/answer/7384423?hl=zh-CN)。
+          [Google Play 官方说明][official Play Store documentation。
         
         * Follow the [key generation 
         steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk)
@@ -137,9 +137,9 @@ delivery from a local machine.
     
       ![iOS](/images/cd/ios.png) 在iOS上，当您准备使用 TestFlight 或 App Store 进行测试和部署时，使用分发证书而不是开发证书进行创建和签名。
 
-        * Create and download a distribution certificate in your [Apple Developer Account console](https://developer.apple.com/account/ios/certificate/).
+        * Create and download a distribution certificate in your [Apple Developer Account console][].
         
-          在 [Apple Developer Account console](https://developer.apple.com/account/ios/certificate/) 创建并下载一个分发证书。
+          在 [Apple Developer Account console][] 创建并下载一个分发证书。
         
         * `open [project]/ios/Runner.xcworkspace/` and select the distribution
         certificate in your target's settings pane.
@@ -151,23 +151,23 @@ delivery from a local machine.
    给每个不同的平台创建一个 `Fastfile` 脚本。
    
     * ![Android](/images/cd/android.png) On Android, follow the
-    [fastlane Android beta deployment guide](https://docs.fastlane.tools/getting-started/android/beta-deployment/).
+    [fastlane Android beta deployment guide][].
     Your edit could be as simple as adding a `lane` that calls `upload_to_play_store`.
     Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
     to use the apk `flutter build` already built.
     
       ![Android](/images/cd/android.png) 在 Android 上按照
-      [fastlane Android beta deployment guide](https://docs.fastlane.tools/getting-started/android/beta-deployment/) 指引操作。你可以简单的编辑一下文件，加一个名叫
+      [fastlane Android beta deployment guide][] 指引操作。你可以简单的编辑一下文件，加一个名叫
       `upload_to_play_store` 的 `lane`。为了使用 `flutter build` 命令编译 apk，
       要把 `apk` 参数设置为 `../build/app/outputs/apk/release/app-release.apk`。
     
-    * ![iOS](/images/cd/ios.png) On iOS, follow the [fastlane iOS beta deployment guide](https://docs.fastlane.tools/getting-started/ios/beta-deployment/).
+    * ![iOS](/images/cd/ios.png) On iOS, follow the [fastlane iOS beta deployment guide][].
     Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
     `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
     build is required since `flutter build` builds an .app rather than archiving
     .ipas for release.
     
-       ![iOS](/images/cd/ios.png) 在 iOS 上，按照 [fastlane iOS beta 部署指南](https://docs.fastlane.tools/getting-started/ios/beta-deployment/) 指引操作。
+       ![iOS](/images/cd/ios.png) 在 iOS 上，按照 [fastlane iOS beta 部署指南][fastlane iOS beta deployment guide] 指引操作。
       你可以简单编辑一下文件，加一个名叫 `build_ios_app` 的 `lane`，并且同时调用 `export_method: 'app-store'` 和 `upload_to_testflight`。
       在 iOS 上只有当要编译成 .app 的时候才会用到 `flutter build`，其他情况用不到。
 
@@ -216,10 +216,10 @@ account JSON or your iTunes distribution certificate on the server.
 需要考虑的主要事项是，由于云实例是短暂且不可信的，因此你不能在服务器上保留你的凭据，如 Play Store 服务帐户 JSON 或 iTunes 分发证书。
 
 Continuous Integration (CI) systems, such as
-[Cirrus](https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables)
+[Cirrus][]
 generally support encrypted environment variables to store private data.
 
-诸如 [Cirrus](https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables) 
+诸如 [Cirrus][] 
 之类的持续集成（CI）系统通常支持加密的环境变量来存储私有数据。
 
 **Take precaution not to re-echo those variable values back onto the console in
@@ -268,10 +268,10 @@ secrets in pull requests that you accept and merge.
           将本地环境变量 `FASTLANE_PASSWORD` 转而使用 CI 系统的加密的环境变量。
         
         * The CI system needs access to your distribution certificate. fastlane's
-        [Match](https://docs.fastlane.tools/actions/match/) system is
+        [Match][] system is
         recommended to synchronize your certificates across machines.
         
-          CI 系统需要有权限拿到你的分发证书。建议使用fastlane 的 [Match](https://docs.fastlane.tools/actions/match/) 系统在不同的机器上同步你的证书。
+          CI 系统需要有权限拿到你的分发证书。建议使用fastlane 的 [Match][] 系统在不同的机器上同步你的证书。
 
 2. It's recommended to use a Gemfile instead of using an indeterministic
 `gem install fastlane` on the CI system each time to ensure the fastlane
@@ -287,8 +287,8 @@ dependencies are stable and reproducible between local and cloud machines. Howev
       ```
       source "https://rubygems.org"
 
-      gem "fastlane"
-      ```
+        gem "fastlane"
+        ```
     * In both directories, run `bundle update` and check both `Gemfile` and
     `Gemfile.lock` into source control.
     
@@ -355,13 +355,13 @@ repository root.
 ### 参考
 
 The [Flutter Gallery in the Flutter
-repo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
+repo][]
 uses fastlane for continuous deployment. See the source for a working example
 of fastlane in action. Also see the Flutter framework repository's
-[Cirrus script]({{site.github}}/flutter/flutter/blob/master/.cirrus.yml).
+[Cirrus script][].
 
-[Flutter repo 里的示例应用 Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery) 使用 fastlane 连续部署。
-有关 fastlane 实际运行示例，请参阅源代码。另请参阅 Flutter 框架仓库库的 [Cirrus 脚本]({{site.github}}/flutter/flutter/blob/master/.cirrus.yml)。
+[Flutter repo 里的示例应用 Flutter Gallery][Flutter Gallery in the Flutter repo] 使用 fastlane 连续部署。
+有关 fastlane 实际运行示例，请参阅源代码。另请参阅 Flutter 框架仓库库的 [Cirrus 脚本][]。
 
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 
@@ -376,25 +376,45 @@ The following are some other options available to help automate the delivery of 
 其他关于如何进行持续交付的服务：
 
 * [GitLab Continuous Integration
-  (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
+  (GitLab CI/CD)][].
   You'll need to create and configure a `.gitlab-ci.yml` file. You can 
-  [find an example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
-  in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
+  [find an example][]
+  in the [flutter_redux library][].
   
-  [GitLab 的持续交付集成 (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
-  你需要创建一个 `.gitlab-ci.yml` 的配置文件，你可以在 [flutter_redux library]({{site.github}}/brianegan/flutter_redux)
-  这个 repo 找到 [例子](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)。
+  [GitLab 的持续交付集成 (GitLab CI/CD)][GitLab Continuous Integration
+  (GitLab CI/CD)].
+  你需要创建一个 `.gitlab-ci.yml` 的配置文件，你可以在 [flutter_redux library][]
+  这个 repo 找到 [例子][find an example]。
   
-* [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
+* [Codemagic CI/CD for Flutter][]
   
-  [使用 Codemagic 为 Flutter 应用加入持续交付](https://blog.codemagic.io/getting-started-with-codemagic/)
+  [使用 Codemagic 为 Flutter 应用加入持续交付][Codemagic CI/CD for Flutter]
   
-* [Flutter CI/CD with Bitrise](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
+* [Flutter CI/CD with Bitrise][]
    
-  [使用 Bitrise 为 Flutter 应用加入持续交付](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
+  [使用 Bitrise 为 Flutter 应用加入持续交付][Flutter CI/CD with Bitrise]
 
-* [Github Actions- CI/CD on Github] (https://github.com/features/actions) Get
-  [Example Project](https://github.com/nabilnalakath/flutter-githubaction)
+* [Github Actions- CI/CD on Github][] Get
+  [Example Project][]
 
-  [使用 GitHub Actions 进行持续交付](https://github.com/features/actions)，
-  查看这个 [样例项目](https://github.com/nabilnalakath/flutter-githubaction)
+  [使用 GitHub Actions 进行持续交付][Github Actions- CI/CD on Github]，
+  查看这个 [样例项目][Example Project]
+
+[Apple Developer Account console]: https://developer.apple.com/account/ios/certificate/
+[Cirrus]: https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables
+[Cirrus script]: {{site.github}}/flutter/flutter/blob/master/.cirrus.yml
+[Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
+[Example Project]: {{site.github}}/nabilnalakath/flutter-githubaction
+[fastlane]: https://docs.fastlane.tools
+[fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
+[fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
+[fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
+[find an example]: https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml
+[Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
+[Flutter Gallery in the Flutter repo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
+[flutter_redux library]: {{site.github}}/brianegan/flutter_redux
+[GitHub Actions- CI/CD on GitHub]: https://github.com/features/actions
+[GitLab Continuous Integration (GitLab CI/CD)]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
+[Match]: https://docs.fastlane.tools/actions/match/
+[official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
+[Supply setup steps]: https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply

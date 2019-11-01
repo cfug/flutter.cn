@@ -15,12 +15,15 @@ These articles address flavors for both iOS and Android.
 如何使用 flavors 配置多渠道构建？社区已经提供许多有用的文章。这些文章直接讲述如何在 iOS 和 Android 上配置 flavor。
 
 See [Creating flavors of a Flutter
-app](https://cogitas.net/creating-flavors-of-a-flutter-app/), [Flavoring
-Flutter]({{site.medium}}/@salvatoregiordanoo/flavoring-flutter-392aaa875f36)
+app][], [Flavoring
+Flutter][]
 and [Flutter Ready to
-Go]({{site.medium}}/flutter-community/flutter-ready-to-go-e59873f9d7de).
+Go][].
 
 请查看
-[Creating flavors of a Flutter app](https://cogitas.net/creating-flavors-of-a-flutter-app/)，
-[Flavoring Flutter]({{site.medium}}/@salvatoregiordanoo/flavoring-flutter-392aaa875f36) 和 [Flutter Ready to Go]({{site.medium}}/flutter-community/flutter-ready-to-go-e59873f9d7de)。
+[Creating flavors of a Flutter app][]，
+[Flavoring Flutter][] 和 [Flutter Ready to Go][]。
 
+[Creating flavors of a Flutter app]: https://cogitas.net/creating-flavors-of-a-flutter-app/
+[Flavoring Flutter]: {{site.medium}}/@salvatoregiordanoo/flavoring-flutter-392aaa875f36
+[Flutter Ready to Go]: {{site.medium}}/flutter-community/flutter-ready-to-go-e59873f9d7de

@@ -45,6 +45,7 @@ script: $TASK
 after_script:
 
   - if [[ $TASK == *build* ]]; then ./tool/shared/check-links.sh || travis_terminate 1; fi
+  - if [[ $TASK == *build* ]]; then ./tool/shared/check-links.sh --external; fi
 
 deploy:
   - provider: script
@@ -53,7 +54,7 @@ deploy:
     on:
       repo: cfug/flutter.cn
       branch: master
-      condition: $TASK == *build* && $TRAVIS_EVENT_TYPE == push
+      condition: $TASK == *build*
 
 # Only run Travis jobs for named branches (to avoid double builds for each PR)
 branches:

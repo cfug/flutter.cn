@@ -12,7 +12,7 @@ description: 学习如何使用开发者工具的性能视图。
   performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
   of a web app.
 
-  性能视图仅可以运行在手机应用程序中。
+  性能视图仅适用于移动应用。
   对于 web 应用程序，请使用 Chrome 自带的开发者工具进行[性能分析](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
 
 {{site.alert.end}}
@@ -44,7 +44,7 @@ Start recording a CPU profile by clicking Record. When you are done recording, c
 point, CPU profiling data is pulled from the VM and displayed in the profiler views (Call Tree,
 Bottom Up, and Flame Chart).
 
-单击`Record`开始进行记录，完成后点击`Stop`停止记录，分析器会把收集的信息推送到VM并分别在不同的信息窗口进行展示调用树(Call Tree,
+单击`Record`开始进行记录 CPU 信息，完成后点击`Stop`停止记录，CPU 分析器会把收集的信息推送到VM并分别在不同的信息窗口进行展示调用树(Call Tree,
 Bottom Up, and Flame Chart).
 
 ### Profile granularity
@@ -57,7 +57,7 @@ This rate can be modified via the selector at the top of the page. The sampling 
 for low, medium, and high granularity are 1 / 50 μs, 1 / 250 μs, and 1 / 1000 μs,
 respectively. It is important to know the trade-offs of modifying this setting.
 
-VM 收集 CPU 样本的默认速率为 1/250μs (即每250微秒收集一次数据)。
+VM 收集 CPU 样本的默认速率为 1/250μs (即每 250 微秒收集一次数据)。
 一般情况下，`Profile granularity`的默认值为:“medium”。
 可以通过页面顶部下拉列表进行修改。抽样率低、中、高粒度分别顺序对应 1/50μs、1/250μs 和 1/1000μs。
 正确设定此值对性能分析非常重要。
@@ -138,7 +138,7 @@ This means that each top-level method in the table is actually the
 last method in the call stack for a given CPU sample (in other words,
 it's the leaf node for the sample).
 
-**Bottom up**视图也是用于显示方法调用堆栈，但顾名思义，它是一个自下而上的表示方式。
+** Bottom up **视图也是用于显示方法调用堆栈，但顾名思义，它是一个自下而上的表示方式。
 这意味着表格中的每个最上方的方法实际上是给定 CPU 样本的调用堆栈中的最后一个方法(换句话说，这是样本的叶节点)。
 
 In this table, a method can be expanded to show its _callers_.

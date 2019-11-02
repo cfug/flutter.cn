@@ -288,17 +288,17 @@ In our shopping app example, we want to manage the state of the cart in a
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
 ```dart
 class CartModel extends [!ChangeNotifier!] {
-  /// Internal, private state of the cart. 内部的，购物车的私有状态
+  /// Internal, private state of the cart.
   final List<Item> _items = [];
 
-  /// An unmodifiable view of the items in the cart. 购物车里的商品视图无法改变
+  /// An unmodifiable view of the items in the cart.
 
   UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
 
-  /// The current total price of all items (assuming all items cost $42). 现在全部商品的总价格（假设他们加起来 $42）
+  /// The current total price of all items (assuming all items cost $42).
   int get totalPrice => _items.length * 42;
 
-  /// Adds [item] to cart. This is the only way to modify the cart from outside. 将 [item] 添加到购物车。这是唯一一种能从外部改变购物车的方法。
+  /// Adds [item] to cart. This is the only way to modify the cart from outside. 
   void add(Item item) {
     _items.add(item);
     // This call tells the widgets that are listening to this model to rebuild.
@@ -474,7 +474,7 @@ just because some detail somewhere changed.
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
-// DON'T DO THIS 别这么写
+// DON'T DO THIS
 return Consumer<CartModel>(
   builder: (context, cart, child) {
     return HumongousWidget(
@@ -494,7 +494,7 @@ Instead:
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (leafDescendant)"?>
 ```dart
-// 这么写
+// DO THIS
 return HumongousWidget(
   // ...
   child: AnotherMonstrousWidget(

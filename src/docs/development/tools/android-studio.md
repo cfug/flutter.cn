@@ -1,6 +1,6 @@
 ---
 title: Android Studio / IntelliJ
-title: 在 Android Studio 或类 IntelliJ 里开发 Flutter 应用
+title: 在 Android Studio 里开发 Flutter 应用
 description: How to develop Flutter apps in Android Studio or other IntelliJ products.
 description: 如何在 Android Studio 或者其他类 IntelliJ 产品里开发 Flutter 应用。
 ---
@@ -237,8 +237,8 @@ Flutter-specific buttons on the right-hand side of the toolbar.
   Android devices or simulators.
   You need to connect a device, or start a simulator, to proceed.
 
-  如果 Run 和 Debug 按钮不可用，且未显示目标设备，、
-  则 Flutter 未发现任何已连接的 iOS 、Android 设备或模拟器。
+  如果 Run 和 Debug 按钮不可用，且未显示目标设备，则意味着
+  Flutter 未发现任何已连接的 iOS 、Android 设备或模拟器。
   你需要连接设备或启动模拟器才能继续。
 
 {{site.alert.end}}
@@ -548,13 +548,13 @@ You can also define custom templates in **Settings > Editor > Live Templates**.
 On Linux (keymap _Default for XWin_) and Windows the keyboard shortcuts
 are `Controle`+`Alt`+`;` and `Control`+`Backslash`.
 
-在 Linux（映射方案默认为 _XWin_）和 Windows 上，
+在 Linux（映射方案默认为 **XWin**）和 Windows 上，
 快捷键是 `Controle`+`Alt`+`;` 和 `Control`+`Backslash`。
 
 On macOS (keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are
 `Command`+`Option` and `Command`+`Backslash`.
 
-在 macOS 上（映射方案 _Mac OS X 10.5+_）上，
+在 macOS 上（映射方案 **Mac OS X 10.5+**）上，
 快捷键是 `Command`+`Option` 和 `Command`+`Backslash`。
 
 Keyboard mappings can be changed in the IDE Preferences/Settings: Select

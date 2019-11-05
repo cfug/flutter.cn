@@ -138,7 +138,7 @@ This means that each top-level method in the table is actually the
 last method in the call stack for a given CPU sample (in other words,
 it's the leaf node for the sample).
 
-** Bottom up **视图也是用于显示方法调用堆栈，但顾名思义，它是一个自下而上的表示方式。
+**Bottom up** 视图也是用于显示方法调用堆栈，但顾名思义，它是一个自下而上的表示方式。
 这意味着表格中的每个最上方的方法实际上是给定 CPU 样本的调用堆栈中的最后一个方法(换句话说，这是样本的叶节点)。
 
 In this table, a method can be expanded to show its _callers_.

@@ -44,7 +44,7 @@ Start recording a CPU profile by clicking Record. When you are done recording, c
 point, CPU profiling data is pulled from the VM and displayed in the profiler views (Call Tree,
 Bottom Up, and Flame Chart).
 
-单击`Record`开始进行记录 CPU 信息，完成后点击`Stop`停止记录，CPU 分析器会把收集的信息推送到VM并分别在不同的信息窗口进行展示调用树(Call Tree,
+单击 `Record` 开始进行记录 CPU 信息，完成后点击 `Stop` 停止记录，CPU 分析器会把收集的信息推送到VM并分别在不同的信息窗口进行展示调用树 (Call Tree,
 Bottom Up, and Flame Chart).
 
 ### Profile granularity

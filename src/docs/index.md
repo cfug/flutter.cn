@@ -46,11 +46,11 @@ Flutter 1.9 正式发布！
 
 For more information, see [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter
 1.9][]
-and the [1.9.1 release
-notes][].
+and the [1.9.1 release notes][].
 
-更多信息，请查看 [本文][]，和 1.9.1 的
-[发行注记][]。
+更多信息，请查看 [本文][Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter
+1.9]，和 1.9.1 的
+[发行注记][1.9.1 release notes]。
 
 For the 1.9 release, Flutter's web support has been
 merged ("unforked") into the main repo.
@@ -74,18 +74,23 @@ New and updated docs on the site include:
 
 * We've revamped the [Showcase][] page.
 
+  我们更新了 [Showcase][] 页面。
+
 * The Flutter layout codelab has been rewritten and
   uses the updated DartPad, the browser-based tool for
   running Dart code. DartPad now supports Flutter!
   [Try it out][] and let us know what you think.
+
+  重写了 Flutter 布局的 codelab，并使用了新版 DartPad，
+  它是一个基于浏览器，用来运行 Dart 代码的工具。
+  目前 DartPad 已经支持 Flutter！赶紧[尝试][Try it out]，
+  并告诉我们你的感受。
  
-* A new page on [using the dart:ffi
-  library][]
+* A new page on [using the dart:ffi library][]
   to bind your app to native code (a feature currently under
   development).
   
-  更新了一篇 [使用 dart:ffi 库的文档][using the dart:ffi
-  library]，
+  更新了一篇 [使用 dart:ffi 库的文档][using the dart:ffi library]，
   帮助你与原生代码进行互调操作（目前还在开发中）。
 
 * The Performance view tool, which allows you to record
@@ -103,18 +108,17 @@ New and updated docs on the site include:
 
   新增一个页面，关于 [如何构建一个 Web 应用][building a web application]。
   
-* A new page on [creating responsive
-  apps][]
+* A new page on [creating responsive apps][]
   in Flutter.
   
   新增一个页面，关于在 Flutter 里
-  [如何创建响应式应用][creating responsive
-  apps]
+  [如何创建响应式应用][creating responsive apps]
 
 * A new page on
   [preparing a web app for release][].
 
-  新增一个页面，关于如何 [打包并发布到 Web 平台][preparing a web app for release]。
+  新增一个页面，关于如何 
+  [打包并发布到 Web 平台][preparing a web app for release]。
 
 * A new [web FAQ][].
  
@@ -130,8 +134,8 @@ Other relevant docs:
 其他相关文档：
 
 * Error messages have been improved in SDK 1.9.
-  For more information, read [Improving Flutter's
-  Error Messages][]
+  For more information, read 
+  [Improving Flutter's Error Messages][]
   on the [Flutter Medium publication][].
 
   Flutter 1.9 版本里我们更新了对开发者更友好的 [错误信息提示][Improving Flutter's Error Messages]。更多详细信息请参阅
@@ -146,8 +150,7 @@ Other relevant docs:
   SDK][].
   
   如果你先前已经通过 flutter_web 这个 package 使用了 Flutter Web，
-  请根据 [这个文档][Upgrading from package:flutter_web to the Flutter
-  SDK] 来迁移。
+  请根据 [这个文档][Upgrading from package:flutter_web to the Flutter SDK] 来迁移。
 
 * A new [ToggleButtons][]
   widget, described in the API docs.

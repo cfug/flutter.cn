@@ -13,7 +13,7 @@ description: 学习如何使用开发者工具的性能视图。
   of a web app.
 
   性能视图仅适用于移动应用。
-  对于 web 应用程序，请使用 Chrome 自带的开发者工具进行[性能分析](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
+  对于 web 应用程序，请使用 Chrome 自带的开发者工具进行 [性能分析](https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance/)
 
 {{site.alert.end}}
 

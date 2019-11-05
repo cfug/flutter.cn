@@ -150,17 +150,28 @@ Flutter 扩展执行代码分析，它提供：
 
   You can debug your app in a couple of ways.
 
+  有多种方式能够调试你的应用
+
   * Using [DevTools][], a suite of debugging and profiling
     tools that run in a browser. DevTools replaces the previous
     browser-based profiling tool, Observatory, and includes
     functionality previously only available to Android Studio
     and IntelliJ, such as the Flutter inspector.
+
+    使用 [DevTools][]，它是一个运行在浏览器中的
+    调试以及性能测试工具集。DevTools 取代了前一代基于浏览器的性能测试工具 Observatory，
+    它包含了以前仅适用于 Android Studio 和 IntelliJ 的功能，例如 Flutter inspector。
+
   * Using VS Code's built-in debugging features,
     such as setting breakpoints.
+
+    使用 VS Code 的内置调试功能，例如设置断点。
 
   The instructions below describe features available in VS Code.
   For information on using launching DevTools, see
   [Running DevTools from VS Code][] in the [DevTools][] docs.
+
+  以下说明描述了 VS Code 可用的功能。更多使用 DevTools 的详细信息请参考 [DevTools][] 中的 [Running DevTools from VS Code][] 文档。
   
 {{site.alert.end}}
 
@@ -217,10 +228,15 @@ Flutter 扩展会自动选择上次连接的设备。
 选择你要用来运行或调试的设备。
 
 {{site.alert.note}}
+
   If you want to try running your app on the web,
   but the **Chrome (web)** target doesn't appear in the
   list of targets, make sure you've enabled web, as
   described in [Building a web application][].
+
+  如果你尝试运行 web 应用，但是 **Chrome (web)** 并不在目标列表中，
+  请检查是否启用了 web，在 [Building a web application][] 中进行了介绍。
+
 {{site.alert.end}}
 
 ### Run app without breakpoints
@@ -443,9 +459,6 @@ You can also define custom snippets by executing
   
   键盘映射可以在 [命令面板][] 执行**Open Keyboard Shortcuts**修改。
 
-
-  Keyboard mappings can be changed by executing the
-  **Open Keyboard Shortcuts** command from the [Command Palette][].
 
 ### Hot reload vs. hot restart
 

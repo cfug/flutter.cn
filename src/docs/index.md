@@ -173,25 +173,6 @@ Other relevant docs:
 Happy Fluttering!
 
 祝你在 Flutter 应用的开发中有一个愉快的经历和体验！
-[1.9.1 release notes]: {{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1
-[building a web application]: /docs/get-started/web
-[ColorFiltered]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
-[ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
-[creating responsive apps]: /docs/development/ui/layout/responsive
-[Flutter Medium publication]: https://medium.com/flutter
-[Flutter for web]: /web
-[Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
-[Improving Flutter's Error Messages]: https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9
-[Performance view]: /docs/development/tools/devtools/performance
-[preparing a web app for release]: /docs/deployment/web
-[SelectableText]: {{site.api}}/flutter/material/SelectableText-class.html
-[Showcase]: /showcase
-[ToggleButtons]: {{site.api}}/flutter/material/ToggleButtons-class.html
-[ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
-[Try it out]: /docs/codelabs/layout-basics
-[Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
-[using the dart:ffi library]: /docs/development/platform-integration/c-interop
-[web FAQ]: /docs/development/platform-integration/web
 
 [What's new archive][]
 
@@ -354,4 +335,22 @@ You might also find these docs useful:
 [What's new archive]: /docs/whats-new-archive
 [Write Your First Flutter App,]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
-
+[1.9.1 release notes]: {{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1
+[building a web application]: /docs/get-started/web
+[ColorFiltered]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
+[ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
+[creating responsive apps]: /docs/development/ui/layout/responsive
+[Flutter Medium publication]: https://medium.com/flutter
+[Flutter for web]: /web
+[Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
+[Improving Flutter's Error Messages]: https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9
+[Performance view]: /docs/development/tools/devtools/performance
+[preparing a web app for release]: /docs/deployment/web
+[SelectableText]: {{site.api}}/flutter/material/SelectableText-class.html
+[Showcase]: /showcase
+[ToggleButtons]: {{site.api}}/flutter/material/ToggleButtons-class.html
+[ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
+[Try it out]: /docs/codelabs/layout-basics
+[Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
+[using the dart:ffi library]: /docs/development/platform-integration/c-interop
+[web FAQ]: /docs/development/platform-integration/web

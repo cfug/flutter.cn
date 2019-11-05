@@ -58,7 +58,7 @@ for low, medium, and high granularity are 1 / 50 μs, 1 / 250 μs, and 1 / 1000 
 respectively. It is important to know the trade-offs of modifying this setting.
 
 VM 收集 CPU 样本的默认速率为 1/250μs (即每 250 微秒收集一次数据)。
-一般情况下，`Profile granularity`的默认值为:“medium”。
+一般情况下，`Profile granularity` 的默认值为 “medium”。
 可以通过页面顶部下拉列表进行修改。抽样率低、中、高粒度分别顺序对应 1/50μs、1/250μs 和 1/1000μs。
 正确设定此值对性能分析非常重要。
 

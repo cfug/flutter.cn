@@ -73,11 +73,12 @@ Messages and responses are passed asynchronously,
 to ensure the user interface remains responsive.
 
 消息和响应以异步的形式进行传递，以确保用户界面能够保持响应。
+
 {{site.alert.note}} 
   
   Even though Flutter sends messages to and from Dart asynchronously,
   whenever you invoke a channel method, you must invoke that method on the
-  platform's main thread. See the 
+  platform's main thread. See the
   [section on threading](#channels-and-platform-threading) for more information.
   
   Flutter 是通过 Dart 异步发送消息的，即便如此，当你调用一个平台方法时，也需要在
@@ -715,7 +716,7 @@ the `result` argument. If an unknown method is called, report that instead.
 参数来返回成功和错误情况下的响应。如果调用了未知方法，则报告该方法。
 
 ```objectivec
-__weak typeof(self) weakSelf = self
+__weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
   // Note: this method is invoked on the UI thread.
   if ([@"getBatteryLevel" isEqualToString:call.method]) {

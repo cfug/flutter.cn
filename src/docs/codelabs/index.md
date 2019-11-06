@@ -49,6 +49,14 @@ the UI for iOS and Android.
 并为 iOS 和 Android 制定 UI 界面。
 
 
+#### [渐变动画](/docs/codelabs/implicit-animations)
+
+Use DartPad to learn how to use implicit animations to add motion and create
+visual effects for the widgets in your UI.
+
+使用 DartPad 学习如果创建渐变动画。
+
+
 #### [在 Flutter 应用中添加谷歌地图]({{site.codelabs}}/codelabs/google-maps-in-flutter-cn/index.html)
 
 Display a Google map in an app, retrieve data from a web service,

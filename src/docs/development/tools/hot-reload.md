@@ -43,7 +43,8 @@ To hot reload a Flutter app:
     select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload
     button on the toolbar: 
     
-    如果您在支持 Flutter IDE 工具的 IDE /编辑器中工作，请选择 **Save All** (`cmd-s`/`ctrl-s`)，或单击工具栏上的 Hot Reload 按钮。
+    如果您在支持 Flutter IDE 工具的 IDE /编辑器中工作，
+    请选择 **Save All** (`cmd-s`/`ctrl-s`)，或单击工具栏上的 Hot Reload 按钮。
 
     ![Hot reload]({% asset tools/android-studio/hot-reload.gif @path %}){:width="735px"}
 
@@ -90,7 +91,7 @@ reload for your app.
 ## 编译错误
 
 When a code change introduces a compilation error,
-hot reload always generates an error message similar to: 
+hot reload always generates an error message similar to:
 
 当代码更改导致编译错误时，热重载会生成类似于以下内容的错误消息：
 
@@ -116,9 +117,9 @@ Dart code to keep using hot reload.
 Flutter's Stateful Hot Reload preserves the state of your app.
 This design enables you to view the effect of the most recent change only,
 without throwing away the current state. For example, if your app requires a
-user to log in, you can modify and hot reload a page several levels down in 
+user to log in, you can modify and hot reload a page several levels down in
 the navigation hierarchy, without re-entering your login credentials.
-State is kept, which is usually the desired behavior.  
+State is kept, which is usually the desired behavior.
 
 Flutter 的热重载功能（有时称为 有状态热重载 ）可保留您的应用程序的状态。
 这种设计允许您能查看最近更改的效果，并且不会丢弃当前状态。 
@@ -446,7 +447,7 @@ committing any changes.
 ## 如何实现
 
 When hot reload is invoked, the host machine looks at the edited
-code since the last compilation. The following libraries are recompiled: 
+code since the last compilation. The following libraries are recompiled:
 
 调用热重载时，主机会查看自上次编译以来编辑的代码。重新编译以下文件：
 

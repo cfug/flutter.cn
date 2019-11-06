@@ -53,7 +53,7 @@ any web server.
 同你的应用程序一起编译成一个可以部署到任何 Web 服务器的简化源文件。
 
 In this early stage of development,
-we envision the web version of Flutter 
+we envision the web version of Flutter
 being valuable in many scenarios. For example:
 
 在开发的早期阶段，我们设想 Flutter 的 Web 版本在许多场景中都很有应用价值。比方说：
@@ -123,7 +123,7 @@ The following resources can help you get started:
 以下资源可以帮助你入门：
 
 * To add web support to an existing app, or to create a
-  new app that includes web support, see 
+  new app that includes web support, see
   [Building a web application with Flutter][].
   
   要向现有应用添加Web支持，或创建一个包含 Web 支持的新应用，

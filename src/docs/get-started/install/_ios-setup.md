@@ -48,7 +48,8 @@ but are not recommended for Flutter development.
 Using old versions of Xcode to target bitcode is not
 supported, and is likely not to work.
 
-旧版本可能也能够正常工作，但是不建议在 Flutter 开发环境中使用。旧版本的 Xcode 不支持定位代码，还可能无法正常工作。
+旧版本可能也能够正常工作，但是不建议在 Flutter 开发环境中使用。
+旧版本的 Xcode 不支持定位代码，还可能无法正常工作。
 
 With Xcode, you’ll be able to run Flutter apps on
 an iOS device or on the simulator.
@@ -98,7 +99,8 @@ To create your first Flutter app and test your setup, follow these steps:
 
 通过以下步骤来创建你的第一个 Flutter 应用并进行测试：
 
- 1. Create a new Flutter app by running the following from the command line:
+ 1. Create a new Flutter app by running the following from the
+    command line:
 
     通过运行以下命令来创建一个新的 Flutter 应用：
  
@@ -115,7 +117,7 @@ To create your first Flutter app and test your setup, follow these steps:
     ```terminal
     $ cd my_app
     ```
- 
+
  3. To launch the app in the Simulator,
     ensure that the Simulator is running and enter:
 

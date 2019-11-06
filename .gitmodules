@@ -4,7 +4,7 @@
   	branch = master
 [submodule "flutter"]
 	path = flutter
-	url = https://github.com/flutter/flutter
+	url = https://github.com/flutter/flutter.git
 	branch = stable
 [submodule "examples/codelabs"]
 	path = examples/codelabs

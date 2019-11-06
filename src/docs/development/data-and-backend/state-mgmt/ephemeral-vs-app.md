@@ -34,7 +34,7 @@ First, you don't even manage some state (like textures).
 The framework handles those for you. So a more useful definition of
 state is "whatever data you need in order to rebuild your UI at any
 moment in time". Second, the state that you _do_ manage yourself can
-be separated into two conceptual types: ephemeral state and app state. 
+be separated into two conceptual types: ephemeral state and app state.
 
 首先，你不需要管理一些状态（例如纹理），框架本身会替你管理。
 所以对于状态的更有用的定义是“当任何时候你需要重建你的用户界面时你所需要的数据”。
@@ -44,7 +44,7 @@ be separated into two conceptual types: ephemeral state and app state.
 
 ## 短时状态
 
-Ephemeral state (sometimes called _UI state_ or _local state_) is the state you 
+Ephemeral state (sometimes called _UI state_ or _local state_) is the state you
 can neatly contain in a single widget.
 
 短时状态 (有时也称 **用户界面(UI)状态** 或者 **局部状态**) 是你可以完全包含在一个独立 widget 中的状态。
@@ -76,11 +76,12 @@ In other words, there is no need to use state management techniques
 
 换句话说，不需要使用状态管理架构（例如 ScopedModel, Redux）去管理这种状态。你需要用的只是一个 `StatefulWidget`。
 
-Below, you see how the currently selected item in a bottom navigation bar is 
-held in the `_index` field of the `_MyHomepageState` class. In this example, 
+Below, you see how the currently selected item in a bottom navigation bar is
+held in the `_index` field of the `_MyHomepageState` class. In this example,
 `_index` is ephemeral state.
 
-在下方你可以看到一个底部导航栏中当前被选中的项目是如何被被保存在 `_MyHomepageState` 类 的 `_index` 变量中。在这个例子中， 
+在下方你可以看到一个底部导航栏中当前被选中的项目是
+如何被被保存在 `_MyHomepageState` 类 的 `_index` 变量中。在这个例子中， 
 `_index` 是一个短时状态。
 
 <?code-excerpt "state_mgmt/simple/lib/src/set_state.dart (Ephemeral)" plaster="// ... items ..."?>
@@ -177,15 +178,18 @@ navigation bar is _not_ ephemeral state. You might need to change it
 from outside the class, keep it between sessions, and so on.
 In that case, the `_index` variable is app state.
 
-也可以用另外一种方式。比如，在一个特定的应用中，你可以指定底部导航栏中被选中的项目*不是*一个短时状态。
-你可能需要在底部导航栏类的外部来改变这个值，并在对话期间保留它。在种情况下 `_index` 就是一个应用状态。 
+也可以用另外一种方式。比如，在一个特定的应用中，
+你可以指定底部导航栏中被选中的项目*不是*一个短时状态。
+你可能需要在底部导航栏类的外部来改变这个值，并在对话期间保留它。
+在种情况下 `_index` 就是一个应用状态。 
 
 There is no clear-cut, universal rule to distinguish whether a particular 
 variable is ephemeral or app state. Sometimes, you'll have to refactor one into 
 another. For example, you'll start with some clearly ephemeral state, but as 
 your application grows in features, it will need to be moved to app state.
 
-没有一个明确、普遍的规则来区分一个变量属于短时状态还是应用状态，有时你不得不在此之间重构。比如，刚开始你认为一些状态是短时状态，
+没有一个明确、普遍的规则来区分一个变量属于短时状态还是应用状态，
+有时你不得不在此之间重构。比如，刚开始你认为一些状态是短时状态，
 但随着应用不断增加功能，有些状态需要被改变为应用状态。
 
 For that reason, take the following diagram with a large grain of salt:
@@ -207,7 +211,7 @@ Dan Abramov, replied:
 >
 > "经验原则是: [选择能够减少麻烦的方式][Do whatever is less awkward]"
 
-In summary, there are two conceptual types of state in any Flutter app. 
+In summary, there are two conceptual types of state in any Flutter app.
 Ephemeral state can be implemented using `State` and `setState()`,
 and is often local to a single widget. The rest is your app state.
 Both types have their place in any Flutter app, and the split between

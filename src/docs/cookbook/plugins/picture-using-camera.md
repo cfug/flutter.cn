@@ -17,7 +17,9 @@ for this purpose. The `camera` plugin provides tools to get a list of the
 available cameras, display a preview coming from a specific camera, and take
 photos or videos.
 
-很多应用都需要使用到设备的相机模块拍摄图片和视频。因此，Flutter 提供了 [`camera`]({{site.pub-pkg}}/camera) 插件。`camera` 插件提供了一系列可用的相机，并使用特定的相机展示相机预览、拍照、录视频。
+很多应用都需要使用到设备的相机模块拍摄图片和视频。
+因此，Flutter 提供了 [`camera`]({{site.pub-pkg}}/camera) 插件。
+`camera` 插件提供了一系列可用的相机，并使用特定的相机展示相机预览、拍照、录视频。
 
 This recipe demonstrates how to use the `camera` plugin to display a preview, 
 take a photo, and display it using the following steps:
@@ -95,7 +97,7 @@ Next, get a list of available cameras using the `camera` plugin.
 final cameras = await availableCameras();
 
 // Get a specific camera from the list of available cameras.
-final firstCamera = cameras.first; 
+final firstCamera = cameras.first;
 ```
 
 ## 3. Create and initialize the `CameraController`
@@ -108,7 +110,8 @@ This process establishes a connection to
 the device's camera that allows you to control the camera
 and display a preview of the camera's feed.
 
-在选择了一个相机后，你需要创建并初始化 `CameraController`。在这个过程中，与设备相机建立了连接并允许你控制相机并展示相机的预览帧流。
+在选择了一个相机后，你需要创建并初始化 `CameraController`。
+在这个过程中，与设备相机建立了连接并允许你控制相机并展示相机的预览帧流。
 
 To achieve this, please:
 
@@ -251,7 +254,11 @@ You can use the `CameraController` to take pictures using the
 method. In this example, create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
 
-你可以使用 `CameraController` 的 [`takePicture`]({{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html) 方法拍照。在这个示例中，创建了一个浮动按钮 `FloatingActionButton`，用户点击这个按钮，就能通过 `CameraController` 来拍摄图片。
+你可以使用 `CameraController` 的
+[`takePicture`]({{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html) 
+方法拍照。在这个示例中，
+创建了一个浮动按钮 `FloatingActionButton`，
+用户点击这个按钮，就能通过 `CameraController` 来拍摄图片。
 
 Saving a picture requires 3 steps:
 
@@ -312,13 +319,15 @@ If you take the picture successfully, you can then display the saved picture
 using an `Image` widget. In this case, the picture is stored as a file on
 the device.
 
-如果你能成功拍摄图片，你就可以使用 `Image` 组件展示被保存的图片。在这个示例中，这张图片是以文件的形式存储在设备中。
+如果你能成功拍摄图片，你就可以使用 `Image` 组件展示被保存的图片。
+在这个示例中，这张图片是以文件的形式存储在设备中。
 
 Therefore, you must provide a `File` to the `Image.file` constructor.
 You can create an instance of the `File` class by passing the path created in
 the previous step.
 
-因此，你需要提供一个 `File` 给 `Image.file` 构造函数。你能够通过传递你在上一步中创建的路径来创建一个 `File` 类的实例。
+因此，你需要提供一个 `File` 给 `Image.file` 构造函数。
+你能够通过传递你在上一步中创建的路径来创建一个 `File` 类的实例。
 
 <!-- skip -->
 ```dart
@@ -425,7 +434,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             // Ensure that the camera is initialized.
             await _initializeControllerFuture;
 
-            // Construct the path where the image should be saved using the 
+            // Construct the path where the image should be saved using the
             // pattern package.
             final path = join(
               // Store the picture in the temp directory.

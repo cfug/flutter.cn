@@ -169,7 +169,10 @@ layer, or render trees, see
 [Debug flags: application layers][]
 in the [Debugging Flutter apps programatically][] page.
 
-Flutter widget 检查器提供了 widget 树的视觉展现，如果你想要更多细节，或关于 wiget、层级或渲染树的详尽文本转储，请查看 [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programatically] 页面的 [调试标志：应用层][Debug flags: application layers] 部分。
+Flutter widget 检查器提供了 widget 树的视觉展现，如果你想要更多细节，
+或关于 wiget、层级或渲染树的详尽文本转储，请查看 
+[添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programatically] 
+页面的 [调试标志：应用层][Debug flags: application layers] 部分。
 
 ## Debug mode assertions
 

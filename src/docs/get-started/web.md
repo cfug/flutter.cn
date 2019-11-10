@@ -56,7 +56,7 @@ top of the project package:
 对一个已有的工程添加 Web 支持，需要在工程根目录下输入下面的命令：
 
 ```terminal
-$ flutter channel master
+$ flutter channel dev
 $ flutter upgrade
 $ flutter config --enable-web
 $ cd <into project directory>
@@ -81,17 +81,17 @@ into individual steps.
 
 ## 下载 Flutter SDK
 
-Currently, you need the master channel of the Flutter SDK
+Currently, you need either the master or dev channel of the Flutter SDK
 for web support. Assuming that you already have the
 `flutter` tool installed, run the following commands
-to install the latest version from master:
+to install the latest version from dev:
 
-当前，你需要 master 渠道的的 Flutter SDK 来获取 Web 支持：
+当前，你需要 master 或者 dev 渠道的的 Flutter SDK 来获取 Web 支持：
 这里我们假定你已经安装了 Flutter 命令行工具，运行下面的
 命令需要安装 master 渠道最新的 SDK 噢：
 
 ```terminal
-$ flutter channel master
+$ flutter channel dev
 $ flutter upgrade
 ```
 

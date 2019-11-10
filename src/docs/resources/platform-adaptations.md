@@ -3,6 +3,10 @@ title: Platform specific behaviors and adaptations
 title: 不同平台操作体验的差异和适配
 ---
 
+ {{site.alert.note}}
+  Do you build Flutter apps with platform-specific look & feel for both iOS and Android? We'd like to talk to you! **Participate in our user study and receive a gift code.** More info: <a href="https://forms.gle/i7uWQohBdGh2nanWA" target="_blank">https://forms.gle/i7uWQohBdGh2nanWA</a>
+{{site.alert.end}}
+
 ## Adaptation philosophy
 
 ## 适配哲学

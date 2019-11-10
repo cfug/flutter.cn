@@ -28,13 +28,17 @@ Moving the app bar from a `Scaffold` widget into a
 allows you to create an app bar that scrolls offscreen as you scroll through a
 list of items contained inside the `CustomScrollView`.
 
-把 app bar 从 `Scaffold` 组件挪到一个 [`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html) 里，可以让你创建一个随着你滑动 `CustomScrollView` 里列表的同时在屏幕外自动随之滚动的 app bar。
+把 app bar 从 `Scaffold` 组件挪到一个 
+[`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html) 里，
+可以让你创建一个随着你滑动 `CustomScrollView` 
+里列表的同时在屏幕外自动随之滚动的 app bar。
 
 This recipe demonstrates how to use a `CustomScrollView` to display a list of 
 items with an app bar on top that scrolls offscreen as the user scrolls
 down the list using the following steps:
 
-下面这篇教程将介绍如何通过 `CustomScrollView` 来生成一个带有随着用户滑动列表同时会在屏幕外随之滚动的 app bar 的列表。
+下面这篇教程将介绍如何通过 `CustomScrollView` 
+来生成一个带有随着用户滑动列表同时会在屏幕外随之滚动的 app bar 的列表。
 
 ### Directions
 
@@ -71,13 +75,17 @@ of slivers, such as `SliverList`, `SliverGridList`, and `SliverAppBar`.
 In fact, the `ListView` and `GridView` widgets use the `SliverList` and
 `SliverGrid` widgets to implement scrolling.
 
-可以放在 `CustomScrollView` 里的可滚动列表和组件我们称之为 **slivers**。有几种类型的 slivers，比如 `SliverList`、`SliverGridList` 和 `SliverAppBar`！实际上，`ListView` 和 `GridView` 组件底层使用的就是 `SliverList` 和 `SliverGrid`！
+可以放在 `CustomScrollView` 里的可滚动列表和组件我们称之为 **slivers**。
+有几种类型的 slivers，比如 `SliverList`、`SliverGridList` 和 `SliverAppBar`！
+实际上，`ListView` 和 `GridView` 组件底层使用的就是 `SliverList` 和 `SliverGrid`！
 
 For this example, create a `CustomScrollView` that contains a 
 `SliverAppBar` and a `SliverList`. In addition, remove any app bars
 that you provide to the `Scaffold` widget.
 
-以下例子演示了创建一个包含 `SliverAppBar` 和 `SliverList` 的 `CustomScrollView`。另外你需要删除你之前可能设置在 `Scaffold` 组件上的 app bar！
+以下例子演示了创建一个包含 `SliverAppBar` 和 `SliverList`
+的 `CustomScrollView`。
+另外你需要删除你之前可能设置在 `Scaffold` 组件上的 app bar！
 
 <!-- skip -->
 ```dart
@@ -101,14 +109,21 @@ Flutter provides the
 widget which, much like the normal `AppBar` widget, uses the
 `SliverAppBar` to display a title, tabs, images and more.
 
-接下来为 [`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html) 添加一个 app bar。Flutter 提供开箱即用的 [`SliverAppBar`]({{site.api}}/flutter/material/SliverAppBar-class.html) 组件，与普通的 `AppBar` 组件非常相似，你可以使用 `SliverAppBar` 来显示标题、标签、图像等内容。
+接下来为 
+[`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html) 
+添加一个 app bar。Flutter 提供开箱即用的
+[`SliverAppBar`]({{site.api}}/flutter/material/SliverAppBar-class.html) 组件，
+与普通的 `AppBar` 组件非常相似，
+你可以使用 `SliverAppBar` 来显示标题、标签、图像等内容。
 
 However, the `SliverAppBar` also gives you the ability to create a "floating"
 app bar that scrolls offscreen as the user scrolls down the list.
 Furthermore, you can configure the `SliverAppBar` to shrink and
 expand as the user scrolls.
 
-同时，`SliverAppBar` 组件也提供一种创建 “浮动” app bar 的能力，当用户向下滚动列表时，app bar 会随之在屏幕外滚动。此外，你可以配置 `SliverAppBar` 在用户滚动时缩小或展开。
+同时，`SliverAppBar` 组件也提供一种创建 “浮动” app bar 的能力，
+当用户向下滚动列表时，app bar 会随之在屏幕外滚动。
+此外，你可以配置 `SliverAppBar` 在用户滚动时缩小或展开。
 
 To create this effect:
 
@@ -173,7 +188,12 @@ If you need to display a list of items one after the other,
 use the `SliverList` widget. If you need to display a grid list,
 use the `SliverGrid` widget.
 
-现在你已经创建好一个 app bar，接下来应该给 `CustomScrollView` 添加一个列表。你有两种选择：用 [`SliverList`]({{site.api}}/flutter/widgets/SliverList-class.html) 或用 [`SliverGrid`]({{site.api}}/flutter/widgets/SliverGrid-class.html)。如果你需要一个一个往下排地显示列表中的内容，应该用 `SliverList` 组件。如果需要网格状地显示列表中的内容，应该用 `SliverGrid` 组件。
+现在你已经创建好一个 app bar，接下来应该给 `CustomScrollView` 添加一个列表。
+你有两种选择：用
+[`SliverList`]({{site.api}}/flutter/widgets/SliverList-class.html) 或用
+[`SliverGrid`]({{site.api}}/flutter/widgets/SliverGrid-class.html)。
+如果你需要一个一个往下排地显示列表中的内容，应该用 `SliverList` 组件。
+如果需要网格状地显示列表中的内容，应该用 `SliverGrid` 组件。
 
 The `SliverList` and `SliverGrid` widgets take one required parameter: a
 [`SliverChildDelegate`]({{site.api}}/flutter/widgets/SliverChildDelegate-class.html),
@@ -183,13 +203,17 @@ For example, the
 allows you to create a list of items that are built lazily as you scroll,
 just like the `ListView.builder` widget.
 
-`SliverList` 和 `SliverGrid` 组件都需要一个必要参数：[`SliverChildDelegate`]({{site.api}}/flutter/widgets/SliverChildDelegate-class.html)。虽然听起来很花哨，但它只是用来给列表组件 `SliverList` 或 `SliverGrid` 提供一个代理。例如，[`SliverChildBuilderDelegate`]({{site.api}}/flutter/widgets/SliverChildBuilderDelegate-class.html) 允许你创建一组可以在滚动时懒加载的列表项，就和 `ListView.builder` 组件差不多。
+`SliverList` 和 `SliverGrid` 组件都需要一个必要参数：
+[`SliverChildDelegate`]({{site.api}}/flutter/widgets/SliverChildDelegate-class.html)。
+虽然听起来很花哨，但它只是用来给列表组件 `SliverList` 或 `SliverGrid` 提供一个代理。
+例如，[`SliverChildBuilderDelegate`]({{site.api}}/flutter/widgets/SliverChildBuilderDelegate-class.html) 
+允许你创建一组可以在滚动时懒加载的列表项，就和 `ListView.builder` 组件差不多。
 
 <!-- skip -->
 ```dart
 // Create a SliverList.
 SliverList(
-  // Use a delegate to build items as they're scrolled on screen. 
+  // Use a delegate to build items as they're scrolled on screen.
   delegate: SliverChildBuilderDelegate(
     // The builder function returns a ListTile with a title that
     // displays the index of the current item.

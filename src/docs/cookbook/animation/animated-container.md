@@ -114,7 +114,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 
 Next, build the `AnimatedContainer` using the properties defined in the
 previous step. Furthermore, provide a `duration` that defines how long
-the animation should run. 
+the animation should run.
 
 接下来，你就可以使用上一步中定义的属性来构建 `AnimatedContainer`。
 此外，你还必须提供一个 `duration` 它将定义这个动画应该运行多长时间。
@@ -122,7 +122,7 @@ the animation should run.
 <!-- skip -->
 ```dart
 AnimatedContainer(
-  // Use the properties stored in the State class. 
+  // Use the properties stored in the State class.
   width: _width,
   height: _height,
   decoration: BoxDecoration(
@@ -131,7 +131,7 @@ AnimatedContainer(
   ),
   // Define how long the animation should take.
   duration: Duration(seconds: 1),
-  // Provide an optional curve to make the animation feel smoother. 
+  // Provide an optional curve to make the animation feel smoother.
   curve: Curves.fastOutSlowIn,
 );
 ```
@@ -143,14 +143,14 @@ AnimatedContainer(
 Finally, start the animation by rebuilding the `AnimatedContainer` with
 the new properties. How to trigger a rebuild? Use the
 [`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
-method. 
+method.
 
 最后将设置新的属性触发 `AnimatedContainer` 重建并启动动画。那么如何触发重建呢？
 当我们提到 `StatefulWidgets` 时，
 [`setState()`]({{site.api}}/flutter/widgets/State/setState.html) 就行了。
 
 Add a button to the app. When the user taps the button, update
-the properties with a new width, height, background color and border radius 
+the properties with a new width, height, background color and border radius
 inside a call to `setState()`.
 
 在这个例子中，我们给应用添加了一个按钮。

@@ -78,7 +78,7 @@ Set up your preferred editor.
 
 Wondering how to run your app? On Chrome OS,
 you can either connect your phone
-or push directly to the Android container on device. 
+or push directly to the Android container on device.
 To do that you must enable Developer mode on your machine,
 and then connect to the local container with ADB:
 
@@ -116,7 +116,7 @@ on the Chrome OS keyboard?
 
 For the current versions of Chrome OS, only certain ports from
 Crostini are exposed to the rest of the environments.
-Here’s an example of how to launch 
+Here’s an example of how to launch
 Flutter DevTools for an Android app with ports
 that will work:
 
@@ -143,7 +143,7 @@ to work well on Chrome OS. It looks for things
 like required hardware in your Android Manifest
 that aren’t available on Chrome OS devices,
 permissions that imply requests for unsupported
-hardware, as well as other properties or code 
+hardware, as well as other properties or code
 that would bring a lesser experience on these devices.
 
 Flutter 团队在 Chrome OS 中添加了 Lint Analysis 检查，
@@ -181,8 +181,8 @@ Sample output for this command might look like:
 运行后的输出如下：
 
 ```terminal
-Analyzing ...                                                      
-warning • This hardware feature is not supported on Chrome OS • 
+Analyzing ...
+warning • This hardware feature is not supported on Chrome OS •
 android/app/src/main/AndroidManifest.xml:4:33 • unsupported_chrome_os_hardware
 ```
 

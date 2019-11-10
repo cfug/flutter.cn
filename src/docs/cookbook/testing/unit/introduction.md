@@ -123,8 +123,10 @@ function, method, or class. For this example, create a `Counter` class
 inside the `lib/counter.dart` file. It is responsible for incrementing
 and decrementing a `value` starting at `0`.
 
-下一步，我们需要一个“单元”来测试。记住：“单元”是一个抽象的名称，它可以表示一个函数、方法或者类。
-本例中，我们会在 `lib/counter.dart` 文件中创建一个 `Counter` 类。它负责增加或减少一个从 `0` 开始的 `value`。
+下一步，我们需要一个“单元”来测试。记住：“单元”是一个抽象的名称，
+它可以表示一个函数、方法或者类。
+本例中，我们会在 `lib/counter.dart` 文件中创建一个 `Counter` 类。
+它负责增加或减少一个从 `0` 开始的 `value`。
 
 
 <!-- skip -->
@@ -142,7 +144,8 @@ class Counter {
 Development" approach. If you're more comfortable with that style of
 development, you can always go that route.
 
-**注意：** 为了简化内容，本教程没有遵守“测试驱动开发”的写法。如果你擅长那种开发模式，当然可以选择用那种方式来写。
+**注意：** 为了简化内容，本教程没有遵守“测试驱动开发”的写法。
+如果你擅长那种开发模式，当然可以选择用那种方式来写。
 
 ## 4. Write a test for our class
 
@@ -153,7 +156,10 @@ defined using the top-level `test` function, and you can check if the results
 are correct by using the top-level `expect` function.
 Both of these functions come from the `test` package.
 
-我们将在 `counter_test.dart` 文件中写第一个测试。使用顶级函数 `test` 来定义，可通过执行顶级函数 `expect` 来检查结果正确与否。这两个函数都来自 `test` 包。
+我们将在 `counter_test.dart` 文件中写第一个测试。
+使用顶级函数 `test` 来定义，
+可通过执行顶级函数 `expect` 来检查结果正确与否。
+这两个函数都来自 `test` 这个 package。
 
 <!-- skip -->
 ```dart
@@ -179,7 +185,8 @@ void main() {
 If you have several tests that are related to one another, 
 combine them using the `group` function provided by the `test` package.
 
-如果多个测试之间互相关联，可以使用 `test` 包提供的 `group` 函数将他们整合到一起。
+如果多个测试之间互相关联，
+可以使用 `test` 这个 package 提供的 `group` 函数将他们整合到一起。
 
 <!-- skip -->
 ```dart
@@ -227,7 +234,8 @@ The Flutter plugins for IntelliJ and VSCode support running tests.
 This is often the best option while writing tests because it provides the
 fastest feedback loop as well as the ability to set breakpoints.
 
-IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。用这种方式执行测试是最好的，因为它可以提供最快的反馈闭环，而且还支持断点调试。
+IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
+用这种方式执行测试是最好的，因为它可以提供最快的反馈闭环，而且还支持断点调试。
 
 
   * **IntelliJ**

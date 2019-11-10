@@ -17,8 +17,8 @@ Automated testing falls into a few categories:
     
   [**单元测试**](#unit-tests) 测试单一的函数，方法或类。
 
-- A [_widget test_](#widget-tests) (in other UI frameworks referred to as _component test_) tests
-  a single widget. 
+- A [_widget test_](#widget-tests) (in other UI frameworks referred to
+  as _component test_) tests a single widget.
 
   [**Widget 测试**](#widget-tests)（在其他 UI 框架中指 **组件测试**）测试单一的 widget 。
 
@@ -43,8 +43,8 @@ below.
 | **维护成本**           | 低    | 较高 | 最高     |
 | **Dependencies**     | Few    | More   | Most        |
 | **依赖程度**              | 少    | 较多   | 最多        |
-| **Execution speed**  | Quick  | Slower | Slowest     |
-| **执行速度**           | 快  | 较慢 | 最慢     |
+| **Execution speed**  | Quick  | Slower | Slow     |
+| **执行速度**           | 快  | 较慢 | 慢     |
 {:.table.table-striped} 
 
 
@@ -80,10 +80,12 @@ widget's UI looks and interacts as expected. Testing a widget involves
 multiple classes and requires a test environment that provides the
 appropriate widget lifecycle context.
 
-**Widget 测试**（在其他 UI 框架中指 **组件测试**）是用来测试单一的 widget，widget 测试的目标是验证 widget 的 UI 表现和交互行为是否符合预期。测试一个 widget 涉及多个类，并且测试环境需要提供具有 widget 生命周期的上下文。
+**Widget 测试**（在其他 UI 框架中指 **组件测试**）是用来测试单一的 widget，
+widget 测试的目标是验证 widget 的 UI 表现和交互行为是否符合预期。
+测试一个 widget 涉及多个类，并且测试环境需要提供具有 widget 生命周期的上下文。
 
-For example, the Widget being tested should be able to receive and 
-respond to user actions and events, perform layout, and instantiate child 
+For example, the Widget being tested should be able to receive and
+respond to user actions and events, perform layout, and instantiate child
 widgets. A widget test is therefore more comprehensive than a unit test.
 However, like a unit test, a widget test's environment is replaced with
 an implementation much simpler than a full-blown UI system.
@@ -118,7 +120,7 @@ from the test driver code to avoid skewing the results.
 ### 更多信息
 
 {% include testing_toc.md type='integration' %}
-  
+
 ## Continuous integration services
 
 ## 持续集成服务
@@ -130,7 +132,7 @@ changes work as expected and do not introduce bugs.
 持续集成 (CI) 服务允许我们在推送新代码（代码变更）时自动运行测试。当代码变更后，会立即收到关于代码是否仍按预期工作、是否引入新问题的反馈。
 
 For information on running tests on various continuous integration services,
-see the following: 
+see the following:
 
 有关各种持续集成服务的信息，参考如下：
 
@@ -150,7 +152,7 @@ see the following:
   
 * [GitLab Continuous Integration
   (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
-  You'll need to create and configure a `.gitlab-ci.yml` file. You can 
+  You'll need to create and configure a `.gitlab-ci.yml` file. You can
   [find an example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
   in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
 

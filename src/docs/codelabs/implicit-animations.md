@@ -1,9 +1,8 @@
 ---
 title: "Implicit animations"
-title: 隐式动画
+title: 渐变动画
 description: "A codelab that uses interactive examples and exercises to teach  how to use Flutter's implicitly animated widgets."
-description: "通过交互式示例和练习学习如何在 Flutter
-中使用隐式动画 widgets 的 codelab"
+description: "通过交互式示例和练习学习如何在 Flutter 中使用渐变动画的 widgets。"
 toc: true
 diff2html: true
 js:
@@ -461,4 +460,4 @@ here are some suggestions for where to go next:
 [curve]: {{site.api}}/flutter/animation/Curve-class.html
 [DartPad]: {{site.dartpad}}
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="640" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://flutter.forms.cn/forms/d/e/codelabfeedback/viewform?embedded=true" width="100%" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>

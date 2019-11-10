@@ -110,7 +110,7 @@ class Dog {
 
   Dog({this.id, this.name, this.age});
 }
-``` 
+```
 
 ## 3. Open the database
 
@@ -185,7 +185,7 @@ documentation](https://www.sqlite.org/datatype3.html).
 <!-- skip -->
 ```dart
 final Future<Database> database = openDatabase(
-  // Set the path to the database. 
+  // Set the path to the database.
   join(await getDatabasesPath(), 'doggie_database.db'),
   // When the database is first created, create a table to store dogs.
   onCreate: (db, version) {
@@ -198,7 +198,7 @@ final Future<Database> database = openDatabase(
   // path to perform database upgrades and downgrades.
   version: 1,
 );
-``` 
+```
 
 ## 5. Insert a Dog into the database
 
@@ -235,7 +235,7 @@ class Dog {
 
   Dog({this.id, this.name, this.age});
 
-  // Convert a Dog into a Map. The keys must correspond to the names of the 
+  // Convert a Dog into a Map. The keys must correspond to the names of the
   // columns in the database.
   Map<String, dynamic> toMap() {
     return {
@@ -251,9 +251,9 @@ Future<void> insertDog(Dog dog) async {
   // Get a reference to the database.
   final Database db = await database;
 
-  // Insert the Dog into the correct table. You might also specify the 
-  // `conflictAlgorithm` to use in case the same dog is inserted twice. 
-  // 
+  // Insert the Dog into the correct table. You might also specify the
+  // `conflictAlgorithm` to use in case the same dog is inserted twice.
+  //
   // In this case, replace any previous data.
   await db.insert(
     'dogs',
@@ -264,8 +264,8 @@ Future<void> insertDog(Dog dog) async {
 
 // Create a Dog and add it to the dogs table.
 final fido = Dog(
-  id: 0, 
-  name: 'Fido', 
+  id: 0,
+  name: 'Fido',
   age: 35,
 );
 
@@ -358,8 +358,8 @@ Future<void> updateDog(Dog dog) async {
 
 // Update Fido's age.
 await updateDog(Dog(
-  id: 0, 
-  name: 'Fido', 
+  id: 0,
+  name: 'Fido',
   age: 42,
 ));
 
@@ -370,7 +370,7 @@ print(await dogs()); // Prints Fido with age 42.
 {{site.alert.warning}}
 
   Always use `whereArgs` to pass arguments to a `where` statement.
-  This helps safeguard against SQL injection attacks. 
+  This helps safeguard against SQL injection attacks.
 
   使用 `whereArgs` 将参数传递给 `where` 语句。有助于防止 SQL 注入攻击。
 
@@ -387,7 +387,7 @@ print(await dogs()); // Prints Fido with age 42.
 In addition to inserting and updating information about Dogs,
 you can also remove dogs from the database. To delete data, use the
 [`delete()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html)
-method from the `sqflite` library. 
+method from the `sqflite` library.
 
 除了插入和修改狗狗们的数据，你还可以从数据库中删除狗狗的数据。
 删除数据用到了 `sqflite` package 中的

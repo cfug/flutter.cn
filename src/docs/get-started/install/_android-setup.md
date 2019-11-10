@@ -27,8 +27,10 @@
     installs the latest Android SDK, Android SDK Platform-Tools, and Android SDK
     Build-Tools, which are required by Flutter when developing for Android.
 
-    运行 Android Studio，并进入 'Android Studio Setup Wizard'，这会安装最新的 Android SDK，
-    Android SDK Platform-Tools 以及 Android SDK Build-Tools，这些都是在开发 Android Flutter 应用时所需要的。
+    运行 Android Studio，并进入 'Android Studio Setup Wizard'，
+    这会安装最新的 Android SDK，
+    Android SDK Platform-Tools 以及 Android SDK Build-Tools，
+    这些都是在开发 Android Flutter 应用时所需要的。
 
 ### Set up your Android device
 
@@ -37,13 +39,15 @@
 To prepare to run and test your Flutter app on an Android device,
 you'll need an Android device running Android 4.1 (API level 16) or higher.
 
-在 Android 设备上运行或测试 Flutter 应用之前，你需要一个运行 Android 4.1（API 版本 16）或者更高的设备。
+在 Android 设备上运行或测试 Flutter 应用之前，
+你需要一个运行 Android 4.1（API 版本 16）或者更高的设备。
 
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the
     [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
 
-    在设备上打开 **Developer options** 和 **USB debugging** 选项，你可以在 [Android documentation]({{site.android-dev}}/studio/debug/dev-options) 上查看更详细的方法介绍。
+    在设备上打开 **Developer options** 和 **USB debugging** 选项，
+    你可以在 [Android documentation]({{site.android-dev}}/studio/debug/dev-options) 上查看更详细的方法介绍。
  
  1. Windows-only: Install the [Google USB
     Driver]({{site.android-dev}}/studio/run/win-usb).
@@ -53,22 +57,26 @@ you'll need an Android device running Android 4.1 (API level 16) or higher.
  1. Using a USB cable, plug your phone into your computer. If prompted on your
     device, authorize your computer to access your device.
  
-    通过 USB 接口连接手机和电脑，如果在设备上弹出需要授权弹窗，允许授权以便让电脑能够访问你的开发设备。
+    通过 USB 接口连接手机和电脑，如果在设备上弹出需要授权弹窗，
+    允许授权以便让电脑能够访问你的开发设备。
  
  1. In the terminal, run the `flutter devices` command to verify that
     Flutter recognizes your connected Android device.  By default,
     Flutter uses the version of the Android SDK where your `adb`
     tool is based. If you want Flutter to use a different installation
     of the Android SDK, you must set the `ANDROID_HOME` environment
-    variable to that installation directory. 
+    variable to that installation directory.
 
-    在命令行中，使用 `flutter devices` 命令来确保 Flutter 能够识别出你所连接的 Android 设备。
+    在命令行中，使用 `flutter devices` 
+    命令来确保 Flutter 能够识别出你所连接的 Android 设备。
 
 By default, Flutter uses the version of the Android SDK where your `adb` tool is based. If
 you want Flutter to use a different installation of the Android SDK, you must set the
 `ANDROID_HOME` environment variable to that installation directory.
 
-默认情况下，Flutter 会使用当前版本 `adb` 工具所依赖的 Android SDK 版本，如果你想让 Flutter 使用别的 Android SDK，你可以通过设置 `ANDROID_HOME` 环境变量来达到目的。
+默认情况下，Flutter 会使用当前版本 `adb` 工具所依赖的 Android SDK 版本，
+如果你想让 Flutter 使用别的 Android SDK，
+你可以通过设置 `ANDROID_HOME` 环境变量来达到这个目的。
 
 ### Set up the Android emulator
 
@@ -89,7 +97,9 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
     **Create Virtual Device**. (The **Android** submenu is only present
     when inside an Android project.)
 
-    启动 **Android Studio > Tools > Android > AVD Manager**，然后选择 **Create Virtual Device** 选项。（只有在 Android 项目中才会显示 **Android** 子选项。）
+    启动 **Android Studio > Tools > Android > AVD Manager**，
+    然后选择 **Create Virtual Device** 选项。
+    （只有在 Android 项目中才会显示 **Android** 子选项。）
 
  1. Choose a device definition and select **Next**.
 
@@ -99,7 +109,8 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
     to emulate, and select **Next**.
     An _x86_ or _x86\_64_ image is recommended.
 
-    选择一个或多个你想要模拟的 Android 版本的系统镜像，然后选择 **Next** 选项。推荐选择 **x86** 或者 **x86\_64** 镜像。
+    选择一个或多个你想要模拟的 Android 版本的系统镜像，
+    然后选择 **Next** 选项。推荐选择 **x86** 或者 **x86\_64** 镜像。
 
  1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable
     [hardware
@@ -115,7 +126,8 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
     For details on the above steps, see [Managing
     AVDs]({{site.android-dev}}/studio/run/managing-avds).
 
-    想要查看上述步骤的更多详细信息，请查看 [Managing AVDs]({{site.android-dev}}/studio/run/managing-avds) 页面。
+    想要查看上述步骤的更多详细信息，
+    请查看 [Managing AVDs]({{site.android-dev}}/studio/run/managing-avds) 页面。
 
  1. In Android Virtual Device Manager, click **Run** in the toolbar.
     The emulator starts up and displays the default canvas for your

@@ -114,7 +114,7 @@ convert the `http.Response` into a Dart object.
 ### 创建一个 `Post` 类
 
 First, create a `Post` class that contains the data from the
-network request. It includes a factory constructor that 
+network request. It includes a factory constructor that
 creates a `Post` from JSON.
 
 首先，创建一个包含网络请求返回数据的 `Post` 类。而且这个类还需要一个可以利用 json 创建 `Post` 的工厂构造器。

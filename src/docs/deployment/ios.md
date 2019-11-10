@@ -447,40 +447,43 @@ Apple will notify you when their app review process is complete.
 Your app will be released according to the instructions you
 specified in the **Version Release** section.
 
-For more details, see
-[Distribute an app through the App Store][distributionguide_submit].
-
 Apple 将会在他们的审核过程结束后提醒你。
 你的 app 将会根据 **Version Release** 部分的介绍进行发布。
 
-For more details, see [Distribute an app through the App Store]
-[distributionguide_submit].
+For more details, see
+[Distribute an app through the App Store][distributionguide_submit].
 
 关于更多细节，查看 [通过 App Store 分发一个 App][distributionguide_submit].
 
-Now that you’ve created your app, attract more users with Google Ads. App campaigns use machine learning to drive more installs and make the most of your budget. 
+Now that you’ve created your app, attract more users with Google Ads.
+App campaigns use machine learning to drive more installs and make
+the most of your budget.
 
-当你创建了应用之后，你可以通过 Google Ads 吸引更多用户，Google Ads 平台可以通过机器学习帮助你以非常高的性价比吸引到更多用户。
+当你创建了应用之后，你可以通过 Google Ads 吸引更多用户，
+Google Ads 平台可以通过机器学习帮助你以非常高的性价比吸引到更多用户。
 
-Get your campaign running in a few steps
+1. Create your ad&mdash;we’ll help create your ad from your app
+   information
 
-通过以下几步创建一个广告宣传：
+   创建广告&mdash;我们会根据您的应用信息帮您制作广告。
+   另外，您还可以添加图片和视频。
 
-1. Create your ad&mdash;we’ll help create your ad from your app information
+1. Choose your budget&mdash;set your target cost-per-install
+   (tCPI) and daily budget cap
 
-   创建广告&mdash;我们会根据您的应用信息帮您制作广告。另外，您还可以添加图片和视频。
+   决定推广预算&mdash;对于以提高应用安装量为主要目标的广告系列，
+   您需要为其设置应用安装出价，也就是“目标每次安装费用”，同时设置每日推广支出预算。
 
-2. Choose your budget&mdash;set your target cost-per-install (tCPI) and daily budget cap 
-
-   决定推广预算&mdash;对于以提高应用安装量为主要目标的广告系列，您需要为其设置应用安装出价，也就是“目标每次安装费用”，同时设置每日推广支出预算。
-
-3. Select your location&mdash;let us know where you’d like your ads to run
+1. Select your location&mdash;let us know where you’d like your ads
+   to run
 
    选择目标地区&mdash;让我们知道你希望触达哪些区域的用户。
 
-4. Decide what action you want users to take&mdash;choose installs, in-app actions, or target return on ad spend (ROAS)
+1. Decide what action you want users to take&mdash;choose installs,
+   in-app actions, or target return on ad spend (ROAS)
 
-   设定用户行动&mdash;决定你希望用户要做什么，比如安装，应用内操作或者目标广告支出回报率 (ROAS)。
+   设定用户行动&mdash;决定你希望用户要做什么，
+   比如安装，应用内操作或者目标广告支出回报率 (ROAS)。
 
 [Get $75 app advertising credit when you spend $25.][]
 

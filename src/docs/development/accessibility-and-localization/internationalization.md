@@ -42,7 +42,8 @@ MaterialApp class, since most applications are written that way.
 Applications written in terms of the lower level WidgetsApp class
 can also be internationalized using the same classes and logic.
 
-和大多数应用一样，下面的教程主要都是使用 Flutter MaterialApp 类编写。那些使用更底层的 WidgetsApp 类编写的应用也能通过使用相同的类和逻辑来进行国际化。
+和大多数应用一样，下面的教程主要都是使用 Flutter MaterialApp 类编写。
+那些使用更底层的 WidgetsApp 类编写的应用也能通过使用相同的类和逻辑来进行国际化。
 
 {{site.alert.secondary}}
 
@@ -202,11 +203,13 @@ localized content for commonly used languages. See
 how the supported locales and the preferred locales are resolved.
 
 这种明确完整的定义可以确保你的 app 能够区分以及提供完全地道的本地内容给这些国家/地区代码的所有组合的用户。
-如果用户没有指定首选的语言环境，那么我们就会使用最近的匹配，这很可能与用户的期望会有差异。Flutter 只会解析定义在 `supportedLocales`
-里面的语言环境。对于那些常用语言，Flutter 为本地化内容提供了文字代码级别的区分。查看 [`Localizations`]({{site.api}}/flutter/widgets/WidgetsApp/supportedLocales.html)
+如果用户没有指定首选的语言环境，那么我们就会使用最近的匹配，这很可能与用户的期望会有差异。
+Flutter 只会解析定义在 `supportedLocales`
+里面的语言环境。对于那些常用语言，Flutter 为本地化内容提供了文字代码级别的区分。查看 
+[`Localizations`]({{site.api}}/flutter/widgets/WidgetsApp/supportedLocales.html)
 了解 Flutter 是如何解析支持的语言环境和首选的语言环境的。
 
-Although Chinese is a primary example, other languages like French (FR_fr, FR_ca, etc)
+Although Chinese is a primary example, other languages like French (fr_FR, fr_CA, etc)
 should also be fully differentiated for more nuanced localization.
 
 虽然中文是最主要的一个示例，但是其他语言如法语（FR_fr，FR_ca 等等）也应该为了更细致的本地化而做完全的区分。

@@ -17,7 +17,10 @@ and the difference between [ephemeral and app
 state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app),
 you are ready to learn about simple app state management.
 
-现在大家已经了解了 [声明式的编程思维](/docs/development/data-and-backend/state-mgmt/declarative) 和 [短时 (ephemeral) 与应用 (app) 状态](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app) 之间的区别，现在可以学习如何管理简单的全局应用状态。
+现在大家已经了解了
+[声明式的编程思维](/docs/development/data-and-backend/state-mgmt/declarative) 和
+[短时 (ephemeral) 与应用 (app) 状态](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app) 
+之间的区别，现在可以学习如何管理简单的全局应用状态。
 
 On this page, we are going to be using the `provider` package.
 If you are new to Flutter and you don't have a strong reason to choose
@@ -26,13 +29,19 @@ you should start with. `provider` is easy to understand and it doesn't
 use much code. It also uses concepts that are applicable in every other
 approach.
 
-在这里，我们打算使用 `provider` package。如果你是 Flutter 的初学者，而且也没有很重要的理由必须选择别的方式来实现（Redux、Rx、hooks 等等），那么这就是你应该入门使用的。`provider` 非常好理解而且不需要写很多代码。它也会用到一些在其它实现方式中用到的通用概念。
+在这里，我们打算使用 `provider` package。如果你是 Flutter 的初学者，
+而且也没有很重要的理由必须选择别的方式来实现（Redux、Rx、hooks 等等），
+那么这就是你应该入门使用的。`provider` 非常好理解而且不需要写很多代码。
+它也会用到一些在其它实现方式中用到的通用概念。
 
 That said, if you have strong background in state management from other
 reactive frameworks, you will find packages and tutorials listed on the
 [following page](/docs/development/data-and-backend/state-mgmt/options).
 
-即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，那么可以在 [状态 (State) 管理参考](/docs/development/data-and-backend/state-mgmt/options) 中找到相关的 package 和教程。
+即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，
+那么可以在 
+[状态 (State) 管理参考](/docs/development/data-and-backend/state-mgmt/options) 
+中找到相关的 package 和教程。
 
 ## Our example
 
@@ -50,12 +59,16 @@ and `MyCart` widgets, respectively). It could be a shopping app,
 but you can imagine the same structure in a simple social networking
 app (replace catalog for "wall" and cart for "favorites").
 
-程序有三个独立的页面：一个登陆提示，一个类别页面，一个购物车页面（分别用 `MyLoginScreen`, `MyCatalog`，`MyCart` widget 来展示）。虽然看上去是一个购物应用程序，但是你也可以和社交网络应用类比（把类别页面替换成朋友圈，把购物车替换成关注的人）。
+程序有三个独立的页面：一个登陆提示，一个类别页面，
+一个购物车页面（分别用 `MyLoginScreen`, `MyCatalog`，`MyCart` widget 来展示）。
+虽然看上去是一个购物应用程序，
+但是你也可以和社交网络应用类比（把类别页面替换成朋友圈，把购物车替换成关注的人）。
 
 The catalog screen includes a custom app bar (`MyAppBar`)
 and a scrolling view of many list items (`MyListItems`).
 
-类别页面包含一个自定义的 app bar (`MyAppBar`) 以及一个包含元素列表的可滑动的视图 (`MyListItems`)。
+类别页面包含一个自定义的 app bar (`MyAppBar`) 
+以及一个包含元素列表的可滑动的视图 (`MyListItems`)。
 
 Here's the app visualized as a widget tree.
 
@@ -78,10 +91,12 @@ access to state that "belongs" elsewhere. For example, each
 `MyListItem` will want to be able to add to cart. It might also want
 to see if the item that it's displaying is already in the cart.
 
-所以我们有至少 6 个 `Widget` 的子类。他们中有很多需要访问一些全局的状态。比如，`MyListItem` 会被添加到购物车中。但是它可能需要检查和自己相同的元素是否已经被添加到购物车中。
+所以我们有至少 6 个 `Widget` 的子类。他们中有很多需要访问一些全局的状态。
+比如，`MyListItem` 会被添加到购物车中。
+但是它可能需要检查和自己相同的元素是否已经被添加到购物车中。
 
 This takes us to our first question: where should we put the current
-state of the cart? 
+state of the cart?
 
 这里我们出现了第一个问题：我们把当前购物车的状态放在哪合适呢？
 
@@ -101,7 +116,10 @@ imperatively change a widget from outside, by calling a method on it.
 And even if you could make this work, you would be fighting the
 framework instead of letting it help you.
 
-为什么呢？在类似 Flutter 的声明式框架中，如果你想要修改 UI，那么你需要重构它。并没有类似 `MyCart.updateWith(somethingNew)` 的简单调用方法。换言之，你很难通过外部调用方法修改一个 widget。即便你自己实现了这样的模式，那也是和整个框架不相兼容。
+为什么呢？在类似 Flutter 的声明式框架中，如果你想要修改 UI，那么你需要重构它。
+并没有类似 `MyCart.updateWith(somethingNew)` 的简单调用方法。
+换言之，你很难通过外部调用方法修改一个 widget。
+即便你自己实现了这样的模式，那也是和整个框架不相兼容。
 <!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
@@ -142,7 +160,11 @@ construct new widgets in the build methods of their parents,
 if you want to change `contents`, it needs to live in `MyCart`'s
 parent or above.
 
-在 Flutter 中，每次当 widget 内容发生改变的时候，你就需要构造一个新的。你会调用 `MyCart(contents)`（构造函数），而不是 `MyCart.updateWith(somethingNew)`（调用方法）。因为你只能通过父类的 build 方法来构建新 widget，如果你想修改 `contents`，就需要调用 `MyCart` 的父类甚至更高一级的类。
+在 Flutter 中，每次当 widget 内容发生改变的时候，你就需要构造一个新的。
+你会调用 `MyCart(contents)`（构造函数），
+而不是 `MyCart.updateWith(somethingNew)`（调用方法）。
+因为你只能通过父类的 build 方法来构建新 widget，
+如果你想修改 `contents`，就需要调用 `MyCart` 的父类甚至更高一级的类。
 
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (myTapHandler)"?>
 ```dart
@@ -175,9 +197,14 @@ it rebuilds `MyCart` from above (more on that later). Because of this,
 what to show for any given `contents`. When that changes, the old
 `MyCart` widget disappears and is completely replaced by the new one.
 
-在我们的例子中，`contents`会存在于 `MyApp` 的生命周期中。当它发生改变的时候，它会从上层重构 `MyCart` 。因为这个机制，所以 `MyCart` 无需考虑生命周期的问题&mdash;它只需要针对 `contents` 声明所需显示内容即可。当内容发生改变的时候，旧的 `MyCart`  widget 就会消失，完全被新的 widget 替代。
+在我们的例子中，`contents`会存在于 `MyApp` 的生命周期中。
+当它发生改变的时候，它会从上层重构 `MyCart` 。因为这个机制，
+所以 `MyCart` 无需考虑生命周期的问题&mdash;它只需要针对
+`contents` 声明所需显示内容即可。
+当内容发生改变的时候，旧的 `MyCart` widget 就会消失，
+完全被新的 widget 替代。
 
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree-with-cart alt="Same widget tree as above, but now we show a small 'cart' badge next to MyApp, and there are two arrows here. One comes from one of the MyListItems to the 'cart', and another one goes from the 'cart' to the MyCart widget." %}
+<!--{% asset development/data-and-backend/state-mgmt/simple-widget-tree-with-cart alt="Same widget tree as above, but now we show a small 'cart' badge next to MyApp, and there are two arrows here. One comes from one of the MyListItems to the 'cart', and another one goes from the 'cart' to the MyCart widget." %}-->
 
 {% asset development/data-and-backend/state-mgmt/simple-widget-tree-with-cart alt="和上面的空间树一样，不过我们在 MyApp 的旁边显示一个 'cart' 标记。这里有两个箭头。一个从 MyListItems 指向 'cart'，另一个从 'cart' 指向 MyCart " %}
 
@@ -207,14 +234,17 @@ When user clicks on one of the items in the catalog,
 it’s added to the cart. But since the cart lives above `MyListItem`,
 how do we do that?
 
-当用户点击类别页面中的一个元素，它会被添加到购物车里。然而当购物车在 widget 树中，处于 MyListItem 的层级之上时，又该如何访问状态呢？
+当用户点击类别页面中的一个元素，它会被添加到购物车里。
+然而当购物车在 widget 树中，处于 MyListItem 的层级之上时，又该如何访问状态呢？
 
 A simple option is to provide a callback that `MyListItem` can call
 when it is clicked. Dart's functions are first class objects,
 so you can pass them around any way you want. So, inside
 `MyCatalog` you can have the following:
 
-一个简单的实现方法是提供一个回调函数，当 `MyListItem` 被点击的时候可以调用。Dart 的函数都是 first class 对象，所以你可以以任意方式传递它们。所以在 `MyCatalog` 里你可以使用下面的代码：
+一个简单的实现方法是提供一个回调函数，当 `MyListItem` 被点击的时候可以调用。
+Dart 的函数都是 first class 对象，所以你可以以任意方式传递它们。
+所以在 `MyCatalog` 里你可以使用下面的代码：
 
 <?code-excerpt "state_mgmt/simple/lib/src/passing_callbacks.dart (methods)"?>
 ```dart
@@ -235,7 +265,8 @@ This works okay, but for an app state that you need to modify from
 many different places, you'd have to pass around a lot of
 callbacks&mdash;which gets old pretty quickly.
 
-这段代码是没问题的，但是对于全局应用状态来说你需要在不同的地方进行修改，可能需要大量传递回调函数&mdash;。
+这段代码是没问题的，但是对于全局应用状态来说你需要在不同的地方进行修改，
+可能需要大量传递回调函数&mdash;。
 
 Fortunately, Flutter has mechanisms for widgets to provide data and
 services to their descendants (in other words, not just their children,
@@ -245,7 +276,10 @@ kinds of widgets&mdash;`InheritedWidget`, `InheritedNotifier`,
 `InheritedModel`, and more. We won't be covering those here,
 because they are a bit low-level for what we're trying to do.
 
-幸运的是 Flutter 在 widget 中存在一种机制，能够为其子孙节点提供数据和服务。（换言之，不仅仅是它的子节点，所有在它下层的 widget 都可以）。就像你所了解的， Flutter 中的 _Everything is a Widget™_。这里的机制也是一种 widget &mdash;`InheritedWidget`, `InheritedNotifier`,
+幸运的是 Flutter 在 widget 中存在一种机制，能够为其子孙节点提供数据和服务。
+（换言之，不仅仅是它的子节点，所有在它下层的 widget 都可以）。就像你所了解的，
+Flutter 中的 _Everything is a Widget™_。
+这里的机制也是一种 widget &mdash;`InheritedWidget`, `InheritedNotifier`,
 `InheritedModel`等等。我们这里不会详细解释他们，因为这些 widget 都太底层。
 
 Instead, we are going to use a package that works with the low-level
@@ -256,7 +290,8 @@ widgets but is simple to use. It's called `provider`.
 With `provider`, you don't need to worry about callbacks or
 `InheritedWidgets`. But you do need to understand 3 concepts:
 
-`provider` package 中，你无须关心回调或者 `InheritedWidgets`。但是你需要理解三个概念：
+`provider` package 中，你无须关心回调或者 `InheritedWidgets`。
+但是你需要理解三个概念：
 
 * ChangeNotifier
 * ChangeNotifierProvider
@@ -266,24 +301,31 @@ With `provider`, you don't need to worry about callbacks or
 ## ChangeNotifier
 
 `ChangeNotifier` is a simple class included in the Flutter SDK which provides
-change notification to its listeners. In other words, if something is 
-a `ChangeNotifier`, you can subscribe to its changes. (It is a form of 
+change notification to its listeners. In other words, if something is
+a `ChangeNotifier`, you can subscribe to its changes. (It is a form of
 Observable, for those familiar with the term.)
 
-`ChangeNotifier` 是 Flutter SDK 中的一个简单的类。它用于向监听器发送通知。换言之，如果被定义为 `ChangeNotifier`，你可以订阅它的状态变化。（这和大家所熟悉的观察者模式相类似）。
+`ChangeNotifier` 是 Flutter SDK 中的一个简单的类。它用于向监听器发送通知。
+换言之，如果被定义为 `ChangeNotifier`，你可以订阅它的状态变化。
+（这和大家所熟悉的观察者模式相类似）。
 
-In `provider`, `ChangeNotifier` is one way to encapsulate your application 
-state. For very simple apps, you get by with a single `ChangeNotifier`. 
-In complex ones, you'll have several models, and therefore several 
+In `provider`, `ChangeNotifier` is one way to encapsulate your application
+state. For very simple apps, you get by with a single `ChangeNotifier`.
+In complex ones, you'll have several models, and therefore several
 `ChangeNotifiers`. (You don't need to use `ChangeNotifier` with `provider`
 at all, but it's an easy class to work with.)
 
-在 `provider` 中，`ChangeNotifier` 是一种能够封装应用程序状态的方法。对于特别简单的程序，你可以通过一个 `ChangeNotifier` 来满足全部需求。在相对复杂的应用中，由于会有多个模型，所以可能会有多个 `ChangeNotifier`。(不是必须得把 `ChangeNotifier` 和 `provider` 结合起来用，不过它确实是一个特别简单的类)。
+在 `provider` 中，`ChangeNotifier` 是一种能够封装应用程序状态的方法。
+对于特别简单的程序，你可以通过一个 `ChangeNotifier` 来满足全部需求。
+在相对复杂的应用中，由于会有多个模型，所以可能会有多个 `ChangeNotifier`。
+(不是必须得把 `ChangeNotifier` 和 `provider` 结合起来用，
+不过它确实是一个特别简单的类)。
 
 In our shopping app example, we want to manage the state of the cart in a
 `ChangeNotifier`. We create a new class that extends it, like so:
 
-在我们的购物应用示例中，我们打算用 `ChangeNotifier` 来管理购物车的状态。我们创建一个新类，继承它，像下面这样：
+在我们的购物应用示例中，我们打算用 `ChangeNotifier` 来管理购物车的状态。
+我们创建一个新类，继承它，像下面这样：
 
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
 ```dart
@@ -307,19 +349,24 @@ class CartModel extends [!ChangeNotifier!] {
 }
 ```
 
-The only code that is specific to `ChangeNotifier` is the call 
-to `notifyListeners()`. Call this method any time the model changes in a way 
-that might change your app's UI. Everything else in `CartModel` is the 
+The only code that is specific to `ChangeNotifier` is the call
+to `notifyListeners()`. Call this method any time the model changes in a way
+that might change your app's UI. Everything else in `CartModel` is the
 model itself and its business logic.
 
-唯一一行和 `ChangeNotifier` 相关的代码就是调用 `notifyListeners()`。当模型发生改变并且需要更新 UI 的时候可以调用该方法。而剩下的代码就是 `CartModel` 和它本身的业务逻辑。
+唯一一行和 `ChangeNotifier` 相关的代码就是调用 `notifyListeners()`。
+当模型发生改变并且需要更新 UI 的时候可以调用该方法。
+而剩下的代码就是 `CartModel` 和它本身的业务逻辑。
 
 `ChangeNotifier` is part of `flutter:foundation` and doesn't depend on 
 any higher-level classes in Flutter. It's easily testable (you don't even need
 to use [widget testing](/docs/testing#widget-tests) for it). For example,
 here's a simple unit test of `CartModel`:
 
-`ChangeNotifier` 是 `flutter:foundation` 的一部分，而且不依赖 Flutter 中任何高级别类。测试起来非常简单（你都不需要使用 [widget 测试](/docs/testing#widget-tests)）。比如，这里有一个针对 `CartModel` 简单的单元测试：
+`ChangeNotifier` 是 `flutter:foundation` 的一部分，
+而且不依赖 Flutter 中任何高级别类。测试起来非常简单
+（你都不需要使用 [widget 测试](/docs/testing#widget-tests)）。
+比如，这里有一个针对 `CartModel` 简单的单元测试：
 
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
 ```dart
@@ -336,22 +383,27 @@ test('adding item increases total cost', () {
 
 ## ChangeNotifierProvider
 
-`ChangeNotifierProvider` is the widget that provides an instance of 
+`ChangeNotifierProvider` is the widget that provides an instance of
 a `ChangeNotifier` to its descendants. It comes from the `provider` package.
 
-`ChangeNotifierProvider` widget 可以向其子孙节点暴露一个 `ChangeNotifier` 实例。它属于 `provider` package。
+`ChangeNotifierProvider` widget 可以向其子孙节点暴露一个 `ChangeNotifier` 实例。
+它属于 `provider` package。
 
 We already know where to put `ChangeNotifierProvider`: above the widgets that
-will need to access it. In the case of `CartModel`, that means somewhere 
+will need to access it. In the case of `CartModel`, that means somewhere
 above both `MyCart` and `MyCatalog`.
 
-我们已经知道了该把 `ChangeNotifierProvider` 放在什么位置：在需要访问它的 widget 之上。在 `CartModel` 里，也就意味着将它置于 `MyCart` 和 `MyCatalog` 之上。
+我们已经知道了该把 `ChangeNotifierProvider` 放在什么位置：
+在需要访问它的 widget 之上。在 `CartModel` 里，
+也就意味着将它置于 `MyCart` 和 `MyCatalog` 之上。
 
 You don't want to place `ChangeNotifierProvider` higher than necessary
 (because you don't want to pollute the scope). But in our case,
 the only widget that is on top of both `MyCart` and `MyCatalog` is `MyApp`.
 
-你肯定不愿意把 `ChangeNotifierProvider` 放的级别太高（因为你不希望破坏整个结构）。但是在我们这里的例子中，`MyCart` 和 `MyCatalog` 之上只有 `MyApp`。
+你肯定不愿意把 `ChangeNotifierProvider` 
+放的级别太高（因为你不希望破坏整个结构）。
+但是在我们这里的例子中，`MyCart` 和 `MyCatalog` 之上只有 `MyApp`。
 
 <?code-excerpt "state_mgmt/simple/lib/main.dart (main)" replace="/ChangeNotifierProvider/[!$&!]/g"?>
 ```dart
@@ -368,9 +420,12 @@ void main() {
 Note that we're defining a builder which will create a new instance
 of `CartModel`. `ChangeNotifierProvider` is smart enough _not_ to rebuild
 `CartModel` unless absolutely necessary. It will also automatically call
-`dispose()` on `CartModel` when the instance is no longer needed.  
+`dispose()` on `CartModel` when the instance is no longer needed.
 
-请注意我们定义了一个 builder 来创建一个 `CartModel` 的实例。`ChangeNotifierProvider` 非常聪明，它 _不会_ 重复实例化 `CartModel`，除非在个别场景下。如果该实例已经不会再被调用，`ChangeNotifierProvider` 也会自动调用 `CartModel` 的 `dispose()` 方法。
+请注意我们定义了一个 builder 来创建一个 `CartModel` 的实例。
+`ChangeNotifierProvider` 非常聪明，它 **不会** 重复实例化 `CartModel`，
+除非在个别场景下。如果该实例已经不会再被调用，
+`ChangeNotifierProvider` 也会自动调用 `CartModel` 的 `dispose()` 方法。
 
 If you want to provide more than one class, you can use `MultiProvider`:
 
@@ -396,7 +451,8 @@ void main() {
 Now that `CartModel` is provided to widgets in our app through the
 `ChangeNotifierProvider` declaration at the top, we can start using it.
 
-现在 `CartModel` 已经通过 `ChangeNotifierProvider` 在应用中与 widget 相关联。我们可以开始调用它了。
+现在 `CartModel` 已经通过 `ChangeNotifierProvider` 在应用中与 widget 相关联。
+我们可以开始调用它了。
 
 This is done through the `Consumer` widget.
 
@@ -425,7 +481,10 @@ is the builder. Builder is a function that is called whenever the
 in your model, all the builder methods of all the corresponding
 `Consumer` widgets are called.)
 
-`Consumer`  widget 唯一必须的参数就是 builder。 当 `ChangeNotifier`  发生变化的时候会调用 builder 这个函数。（换言之，当你在模型中调用 `notifyListeners()` 时， 所有和 `Consumer` 相关的 builder 方法都会被调用。）
+`Consumer`  widget 唯一必须的参数就是 builder。 当 `ChangeNotifier`
+发生变化的时候会调用 builder 这个函数。
+（换言之，当你在模型中调用 `notifyListeners()` 时，
+所有和 `Consumer` 相关的 builder 方法都会被调用。）
 
 The builder is called with three arguments. The first one is `context`,
 which you also get in every build method.
@@ -435,7 +494,7 @@ builder 在被调用的时候会用到三个参数。第一个是 `context`。
 
 The second argument of the builder function is the instance of 
 the `ChangeNotifier`. It's what we were asking for in the first place. You can
-use the data in the model to define what the UI should look like 
+use the data in the model to define what the UI should look like
 at any given point.
 
 builder 函数的第二个参数是 `ChangeNotifier` 的实例。
@@ -516,18 +575,22 @@ button wants to allow the user to remove everything from the cart.
 It doesn't need to display the contents of the cart,
 it just needs to call the `clear()` method.
 
-有的时候你不需要模型中的 _数据_ 来改变 UI，但是你可能还是需要访问该数据。比如，`ClearCart` 按钮能够清空购物车的所有商品。它不需要显示购物车里的内容，只需要调用 `clear()` 方法。
+有的时候你不需要模型中的 **数据** 来改变 UI，但是你可能还是需要访问该数据。
+比如，`ClearCart` 按钮能够清空购物车的所有商品。
+它不需要显示购物车里的内容，只需要调用 `clear()` 方法。
 
 We could use `Consumer<CartModel>` for this,
 but that would be wasteful. We'd be asking the framework to
 rebuild a widget that doesn't need to be rebuilt.
 
-我们可以使用 `Consumer<CartModel>` 来实现这个效果，不过这么实现有点浪费。因为我们让整体框架重构了一个无需重构的 widget。
+我们可以使用 `Consumer<CartModel>` 来实现这个效果，
+不过这么实现有点浪费。因为我们让整体框架重构了一个无需重构的 widget。
 
 For this use case, we can use `Provider.of`, with the `listen` parameter
-set to `false`. 
+set to `false`.
 
-所以这里我们可以使用 `Provider.of`，并且将 `listen` 设置为 `false`。
+所以这里我们可以使用 `Provider.of`，
+并且将 `listen` 设置为 `false`。
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
@@ -537,7 +600,8 @@ Provider.of<CartModel>(context, [!listen: false!]).add(item);
 Using the above line in a build method will not cause this widget to
 rebuild when `notifyListeners` is called.
 
-在 build 方法中使用上面的代码，当 `notifyListeners` 被调用的时候，并不会使 widget 被重构。
+在 build 方法中使用上面的代码，当 `notifyListeners` 被调用的时候，
+并不会使 widget 被重构。
 
 
 ## Putting it all together
@@ -557,7 +621,8 @@ you can see how the simple Counter app looks like when [built with
 When you're ready to play around with `provider` yourself,
 don't forget to add the dependency on it to your `pubspec.yaml` first.
 
-如果你已经学会了并且准备使用 `provider` 的时候，别忘了先在 `pubspec.yaml` 中添加相应的依赖。
+如果你已经学会了并且准备使用 `provider` 的时候，
+别忘了先在 `pubspec.yaml` 中添加相应的依赖。
 
 ```yaml
 name: my_name

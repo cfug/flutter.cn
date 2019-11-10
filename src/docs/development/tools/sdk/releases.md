@@ -57,7 +57,7 @@ $ ./flutter/bin/flutter --version
 ```
 
 For additional details on how our installation bundles are structured,
-see [Installation bundles][].  
+see [Installation bundles][].
 
 关于安装包结构的更多信息，请查看这个页面：[Installation bundles][]。
 

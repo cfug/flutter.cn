@@ -83,7 +83,11 @@ dependencies:
   path:
 ```
 {{site.alert.tip}}
+
   - For android, You must have to update `minSdkVersion` to 21 (or higher).
+
+    针对 Android 来说，工程的 `minSdkVersion` 需要设置为 21 或者更高。
+    
 {{site.alert.end}}
 
 ## 2. Get a list of the available cameras

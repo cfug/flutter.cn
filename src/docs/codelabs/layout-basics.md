@@ -4,14 +4,9 @@ title: "Flutter 布局基础教程"
 description: "A codelab that teaches basic Flutter layout concepts through DartPad examples and exercises."
 description: "使用 DartPad2 工具教你如何构建 Flutter 布局"
 toc: true
-<<<<<<< HEAD
 --- 
 
 Welcome to the Flutter layout codelab, 
-=======
----
-Welcome to the Flutter layout codelab,
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 where you learn how to build a Flutter UI without
 downloading and installing Flutter or Dart!
 
@@ -62,22 +57,14 @@ Widget 是一个不会改变的对象，它是 UI 中一个特定部分的描述
 **本 codelab 的预期完成时间约为 45 - 60 分钟**
 
 ## Row and Column classes
-<<<<<<< HEAD
 
 ## Row 和 Column 类
 
-`Row` and `Column` are classes that contain and lay out widgets. 
-Widgets inside of a `Row` or `Column` are called *children*, 
-and `Row` and `Column` are referred to as *parents*. 
-`Row` lays out its widgets horizontally, 
-and `Column` lays out its widgets vertically. 
-=======
 `Row` and `Column` are classes that contain and lay out widgets.
 Widgets inside of a `Row` or `Column` are called *children*,
 and `Row` and `Column` are referred to as *parents*.
 `Row` lays out its widgets horizontally,
 and `Column` lays out its widgets vertically.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 
 `Row` 和 `Column` 是两个用来容纳和布局 Widgets 的类。
 在它们内部的 Widgets 我们称为 *children*，
@@ -91,11 +78,7 @@ and `Column` lays out its widgets vertically.
 {:.no_toc}
 
 {{site.alert.secondary}}
-<<<<<<< HEAD
 
-=======
-{:.no_toc}
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
   The following example displays the differences between
   a `Row` and `Column`.
 
@@ -117,13 +100,9 @@ and `Column` lays out its widgets vertically.
 
 ## Axis size and alignment
 
-<<<<<<< HEAD
 ## 轴大小和对齐方式
 
 So far, the `BlueBox` widgets have been squished together 
-=======
-So far, the `BlueBox` widgets have been squished together
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 (either to the left or at the top of the UI Output).
 You can change how the `BlueBox` widgets are spaced
 out using the axis size and alignment properties.
@@ -133,17 +112,11 @@ out using the axis size and alignment properties.
 
 ### mainAxisSize property
 
-<<<<<<< HEAD
 ### mainAxisSize 属性
 
-`Row` and `Column` occupy different main axes. 
-A `Row`'s main axis is horizontal, 
-and a `Column`'s main axis is vertical. 
-=======
 `Row` and `Column` occupy different main axes.
 A `Row`'s main axis is horizontal,
 and a `Column`'s main axis is vertical.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 The `mainAxisSize` property determines how much
 space a `Row` and `Column` can occupy on their main axes.
 The `mainAxisSize` property has two possible values:
@@ -153,15 +126,9 @@ The `mainAxisSize` property has two possible values:
 `mainAxisSize` 有两个可选属性：
 
 `MainAxisSize.max`
-<<<<<<< HEAD
 <br> `Row` and `Column` occupy all of the space on their main axes.
-  If the combined width of their children is 
-  less than the total space on their main axes, 
-=======
-: `Row` and `Column` occupy all of the space on their main axes.
   If the combined width of their children is
   less than the total space on their main axes,
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
   their children are laid out with extra space.
 
 `MainAxisSize.max`
@@ -178,22 +145,15 @@ The `mainAxisSize` property has two possible values:
   它的 children 在主轴之间将没有额外空间。
 
 {{site.alert.tip}}
-<<<<<<< HEAD
 
-  `MainAxisSize.max` is the `mainAxisSize` property's default value. 
-  If you don't specify another value, 
-  the default value is used, 
-  as shown in the previous example. 
-
-  `mainAxisSize` 默认为 `MainAxisSize.max`。
-  如果你不特别指定其他的值，就会使用默认值，就像我们前一个样例中展示的那样。
-
-=======
   `MainAxisSize.max` is the `mainAxisSize` property's default value.
   If you don't specify another value,
   the default value is used,
   as shown in the previous example.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
+
+  `mainAxisSize` 默认为 `MainAxisSize.max`。
+  如果你不特别指定其他的值，就会使用默认值，就像我们前一个样例中展示的那样。
+
 {{site.alert.end}}
 
 #### Example: Modifying axis size
@@ -207,7 +167,6 @@ The `mainAxisSize` property has two possible values:
   The following example explicitly sets `mainAxisSize`
   to its default value, `MainAxisSize.max`.
 
-<<<<<<< HEAD
   下面的样例将会特别指定 `mainAxisSize` 为其默认值 `MainAxisSize.max`。
 
 **1.** Click the **Run** button. 
@@ -215,16 +174,10 @@ The `mainAxisSize` property has two possible values:
        点击**运行**按钮。
 
 **2.** Change `MainAxisSize.max` to `MainAxisSize.min`,
-         and run again.
+       and run again.
 
        将 `MainAxisSize.max` 改为 `MainAxisSize.min`，并再次运行。 
 
-=======
-  **1.** Click the **Run** button.
-
-  **2.** Change `MainAxisSize.max` to `MainAxisSize.min`,
-         and run again.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/d852e4f07d6c87600fe8e0f186c7a31b
@@ -233,21 +186,13 @@ The `mainAxisSize` property has two possible values:
 
 ### mainAxisAlignment property
 
-<<<<<<< HEAD
 ### mainAxisAlignment 属性 
 
-When `mainAxisSize` is set to `MainAxisSize.max`, 
-`Row` and `Column` might lay out their children with extra space. 
-The `mainAxisAlignment` property determines how `Row` and `Column` 
-can position their children in that extra space. 
-`mainAxisAlignment` has six possible values: 
-=======
 When `mainAxisSize` is set to `MainAxisSize.max`,
 `Row` and `Column` might lay out their children with extra space.
 The `mainAxisAlignment` property determines how `Row` and `Column`
 can position their children in that extra space.
 `mainAxisAlignment` has six possible values:
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 
 当 `mainAxisSize` 被设为 `MainAxisSize.max`,
 `Row` 和 `Column` 将会使用额外空间来对齐它的 children。
@@ -255,22 +200,14 @@ can position their children in that extra space.
 `mainAxisAlignment` 有以下六个可选属性：
 
 `MainAxisAlignment.start`
-<<<<<<< HEAD
 <br> Positions children near the beginning of the main axis. 
-=======
-: Positions children near the beginning of the main axis.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
   (Left for `Row`, top for `Column`)
 
 `MainAxisAlignment.start`
 <br> 将其 children 从主轴起点处开始对齐。（`Row` 的起点在左边，`Column` 的起点在顶部）
 
 `MainAxisAlignment.end`
-<<<<<<< HEAD
 <br> Positions children near the end of the main axis. 
-=======
-: Positions children near the end of the main axis.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
   (Right for `Row`, bottom for `Column`)
 
 `MainAxisAlignment.end`
@@ -347,51 +284,40 @@ can position their children in that extra space.
 
 ### crossAxisAlignment property
 
-<<<<<<< HEAD
 ### crossAxisAlignment 属性
 
 The `crossAxisAlignment` property determines 
-=======
-The `crossAxisAlignment` property determines
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 how `Row` and `Column` can position their children
 on their cross axes.
 A `Row`'s cross axis is vertical,
 and a `Column`'s cross axis is horizontal.
-Most of the `crossAxisAlignment` property's values
-only work with the `Row` class.
 The `crossAxisAlignment` property has five possible values:
 
 `crossAxisAlignment` 属性决定了 `Row` 和 `Column`
 能够如何在其横轴上定位 children。
-`Row` 的横轴是竖直的，而 `Column` 则是水平的。
-绝大多数 `crossAxisAlignment` 属性仅在 `Row` 中生效。
+`Row` 的横轴是竖直的，而 `Column` 则是水平的，
 `crossAxisAlignment` 属性有五个可选属性：
 
 `CrossAxisAlignment.start`
-<br> Positions children near the top of the cross axis. (`Row` only)
+<br> Positions children near the start of the cross axis. (Top for `Row`, Left for `Column`)
 
 `CrossAxisAlignment.start`
-<br> 将其 children 横轴顶部对齐。（只在 `Row` 中生效）
+<br> 将其 children 横轴顶部对齐。（顶部是 `Row`，左侧是 `Column`）
 
 `CrossAxisAlignment.end`
-<br> Positions children near the bottom of the cross axis. (`Row` only)
+<br> Positions children near the end of the cross axis. (Bottom for `Row`, Right for `Column`)
 
 `CrossAxisAlignment.end`
-<br> 将其 children 横轴底部对齐。（只在 `Row` 中生效）
+<br> 将其 children 横轴底部对齐。（底部是 `Row`，右侧是 `Column`）
 
 `CrossAxisAlignment.center`
-<br> Positions children at the middle of the cross axis. (`Row` only)
+<br> Positions children at the middle of the cross axis. (Middle for `Row`, Center for `Column`)
 
 `CrossAxisAlignment.center`
-<br> 将其 children 横轴中心对齐。（只在 `Row` 中生效）
+<br> 将其 children 横轴中心对齐。（中间是 `Row`，中心是 `Column`）
 
 `CrossAxisAlignment.stretch`
-<<<<<<< HEAD
 <br> Stretches children across the cross axis. 
-=======
-: Stretches children across the cross axis.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
   (Top-to-bottom for `Row`, left-to-right for `Column`)
 
 `CrossAxisAlignment.stretch`
@@ -439,15 +365,11 @@ The `crossAxisAlignment` property has five possible values:
        点击**运行**按钮
 
 **2.** Change `CrossAxisAlignment.center` to
-         `CrossAxisAlignment.start`, and run again.
+       `CrossAxisAlignment.start`, and run again.
 
-       将 `CrossAxisAlignment.center` 改为 `CrossAxisAlignment.start`，并再次运行。
+       将 `CrossAxisAlignment.center` 改为 
+       `CrossAxisAlignment.start`，并再次运行。
 
-<<<<<<< HEAD
-=======
-  **2.** Change `CrossAxisAlignment.center` to
-         `CrossAxisAlignment.start`, and run again.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/70a6eb88f13019eec349a57bc4fd5fe0
@@ -456,14 +378,10 @@ The `crossAxisAlignment` property has five possible values:
 {{site.alert.tip}}
 
   Before moving to the next section,
-<<<<<<< HEAD
   change `CrossAxisAlignment.start` to another value. 
 
   在阅读下一个小节之前，将 `CrossAxisAlignment.start` 改为其他值试试。
 
-=======
-  change `CrossAxisAlignment.start` to another value.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 {{site.alert.end}}
 
 ## Flexible widget
@@ -500,16 +418,11 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   properties before determining what fraction of the
   total remaining space each `Flexible` widget receives.
 
-<<<<<<< HEAD
 `flex`
 <br> 将自身的 `flex` 因子与其他的比较，以决定自身占剩余空间的比例。
 
 `fit` 
 <br> Determines whether a `Flexible` widget
-=======
-`fit`
-: Determines whether a `Flexible` widget
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
   fills all of its extra space.
 
 `fit`
@@ -517,13 +430,10 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 
 #### Example: Changing fit properties
 {:.no_toc}
-<<<<<<< HEAD
 
 #### 样例：改变 fit 属性
 {:.no_toc}
 
-=======
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 {{site.alert.secondary}}
 
   The following example demonstrates the `fit` property,
@@ -538,37 +448,26 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   <br> 使用 Widget 的自身作为首选大小。（默认情况下）
 
   `FlexFit.tight`
-  <br> Forces the widget to fill all of its extra space. 
+  <br> Forces the widget to fill all of its extra space.
   
   `FlexFit.tight`
-<<<<<<< HEAD
-  <br> 强制 Widget 充满所有剩余空间。
-=======
-  : Forces the widget to fill all of its extra space.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
+  <br> 强制 widget 充满所有剩余空间。
 
   In this example, change the `fit` properties to
   make the `Flexible` widgets fill the extra space.
 
-<<<<<<< HEAD
   在这个样例中，改变 `fit` 属性使 `Flexible` widgets
   能够填充剩余空间。
 
-**1.** Click the **Run** button. 
+**1.** Click the **Run** button.
 
        点击**运行**按钮
 
 **2.** Change both `fit` values to `FlexFit.tight`, 
-         and run again.
+       and run again.
 
        将所有 `fit` 的值设为 `FlexFit.tight`，并再次运行。
 
-=======
-  **1.** Click the **Run** button.
-
-  **2.** Change both `fit` values to `FlexFit.tight`,
-         and run again.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/ba0f40356d1023066d960f6de2be1a4b
@@ -590,17 +489,12 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   contain `flex` properties with `flex`
   values set to 1 (the default value).
 
-<<<<<<< HEAD
   在下面这个例子中，`Row` 包含了一个 `BlueBox` widget 和
   两个 `Flexible` widgets 包裹的 `BlueBox` Widget。
   `Flexible` widgets 包含了 `flex` 属性，并将其值设为 1。（默认值）
 
   When `flex` properties are compared against one another, 
   the ratio between their `flex` values determines 
-=======
-  When `flex` properties are compared against one another,
-  the ratio between their `flex` values determines
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
   what fraction of the total remaining space each
   `Flexible` widget receives.
 
@@ -651,7 +545,6 @@ wrap a widget and force the widget to fill extra space.
   while keeping its size in relation to its parent widget.
   `Expanded` changes the constraints of a child widget,
   so it fills any empty space.
-<<<<<<< HEAD
 
   **Flexible 和 Expanded 有何不同呢？**
   使用 `Flexible` 在  `Row` 或 `Column` 中重新调整 widgets 的大小。
@@ -659,9 +552,6 @@ wrap a widget and force the widget to fill extra space.
   `Expanded`改变子窗口小部件的约束， 所以它会填补全部空白空间。
 
 {{site.alert.end}} 
-=======
-{{site.alert.end}}
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 
 #### Example: Filling extra space
 {:.no_toc}
@@ -675,7 +565,6 @@ wrap a widget and force the widget to fill extra space.
   `Expanded` widget forces its child widget to
   fill extra space.
 
-<<<<<<< HEAD
 **1.** Click the **Run** button.
 
        点击**运行**按钮 
@@ -691,23 +580,11 @@ For example:
 ```dart
 Expanded(child: BlueBox(),),
 ```
-**3.** Select the **Format** button to properly format the code, and run again. 
+**3.** Select the **Format** button to properly format the code,
+       and run again. 
         
        点击 **Format (格式化)** 按钮格式化你的代码，再重新运行一次。
          
-=======
-  **1.** Click the **Run** button.
-
-  **2.** Wrap the second `BlueBox` widget in an `Expanded` widget.
-
-  For example:
-
-  ```dart
-  Expanded(child: BlueBox(),),
-  ```
-  **3.** Select the **Format** button to properly format the code,
-         and run again.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/77021d2ed15f9ece850de15e73c47526
@@ -724,7 +601,6 @@ When it doesn't wrap a widget,
 it uses the `height` and `width` properties to
 create empty space.
 
-<<<<<<< HEAD
 `SizedBox` widget 的两种用途之一就是创建精确的尺寸。
 当 `SizedBox` 包裹了一个 Widget 时，
 它会使用 `height` 和 `width` 调整其大小。
@@ -732,9 +608,6 @@ create empty space.
 它可以使用`height`和`width`属性创造空的空间。
 
 #### Example: Resizing a widget 
-=======
-#### Example: Resizing a widget
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 {:.no_toc}
 
 #### 样例：调整一个 Widget
@@ -756,25 +629,16 @@ create empty space.
 
        将 `SizedBox` widget 中的 `height` 设为 100 逻辑像素，并重新运行。
 
-<<<<<<< HEAD
-=======
-  **2.** Add a `height` property equal to 100 logical pixels
-         inside the `SizedBox` widget, and run again.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/6582851e85b57180ff5321f814fabb81
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=6582851e85b57180ff5321f814fabb81&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
-<<<<<<< HEAD
 #### Example: Creating space 
 
 #### 样例：创建空间
 
-=======
-#### Example: Creating space
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 {:.no_toc}
 {{site.alert.secondary}}
 
@@ -791,13 +655,8 @@ create empty space.
 
        点击**运行**按钮
 
-<<<<<<< HEAD
 **2.** Create more space by adding another
          `SizedBox` widget (25 logical pixels wide) 
-=======
-  **2.** Create more space by adding another
-         `SizedBox` widget (25 logical pixels wide)
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
          between the second and third `BlueBox` widgets,
          and run again.
 
@@ -823,16 +682,12 @@ can create space between widgets.
   Use `Spacer` when you want to create space using a `flex` property.
   Use `SizedBox` when you want to create space
   using a specific number of logical pixels.
-<<<<<<< HEAD
 
   **SizedBox 和 Spacer 有何不同？**
   如果你想用 `flex` 属性创建一段空间，请使用 `Spacer`。
   如果你想创建一个拥有特定逻辑像素值的空间，请使用 `SizedBox`。
 
 {{site.alert.end}} 
-=======
-{{site.alert.end}}
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
 
 #### Example: Creating more space
 {:.no_toc}
@@ -854,15 +709,11 @@ can create space between widgets.
        点击**运行**按钮
 
 **2.** Add another `Spacer` widget (also with a `flex` value of 1)
-         between the second and third `BlueBox` widgets.
+       between the second and third `BlueBox` widgets.
 
        在第二个和第三个 `BlueBox` widget 之间添加另一个 `Spacer` widget。（flex 值仍然为 1）
 
-<<<<<<< HEAD
-=======
-  **2.** Add another `Spacer` widget (also with a `flex` value of 1)
-         between the second and third `BlueBox` widgets.
->>>>>>> 5e57b0a83f6610408035e1689be6493976052621
+
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/datafoya/bfc367aefde35e02ea5283efdbf58e60
@@ -883,6 +734,7 @@ for different fonts, sizes, and colors.
 {:.no_toc}
 
 {{site.alert.secondary}}
+  
   The following example displays "Hey!" three times,
   but at different font sizes and in different colors.
   `Row` specifies the `crossAxisAlignment`
@@ -896,7 +748,7 @@ for different fonts, sizes, and colors.
        点击**运行**按钮
 
 **2.** Change `CrossAxisAlignment.center` to
-         `CrossAxisAlignment.baseline`, and run again.
+       `CrossAxisAlignment.baseline`, and run again.
 
        将 `CrossAxisAlignment.center` 改为 `CrossAxisAlignment.baseline`，然后再次运行。
        

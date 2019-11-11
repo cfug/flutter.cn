@@ -114,16 +114,16 @@ meaning that a method can be expanded to show its _callees_.
 在下图中的表格中可以看出，展开其中的一个方法可以查看它所有的调用者。
 
 <dl>
-<dt markdown="1"><t><b>Total time</b><t><t>总时间</t></dt>
+<dt markdown="1"><t><b>Total time</b><t><t> 总时间</t></dt>
 <dd><p>Time the method spent executing its own code as well as
     the code for its callees.</p>
 
 <p>此方法运行的总时间，包括了调用者的执行时间(即调用此方法整个的生命周期时长)。</p></dd>
-<dt markdown="1"><t><b>Self time</b><t><t>自执行时间</t></dt>
+<dt markdown="1"><t><b>Self time</b><t><t> 自执行时间</t></dt>
 <dd><t>Time the method spent executing only its own code.</t><t>仅表示执行当前方法把花费的时长。</t></dd>
-<dt markdown="1"><t><b>Method</b><t><t>方法</t></dt>
+<dt markdown="1"><t><b>Method</b><t><t> 方法</t></dt>
 <dd><t>Name of the called method.</t><t>调用的方法名称。</t></dd>
-<dt markdown="1"><t><b>Source</b><t><t>源码</t></dt>
+<dt markdown="1"><t><b>Source</b><t><t> 源码</t></dt>
 <dd><t>File path for the method call site.</t><t>方法所在的文件路径。</t></dd>
 </dl>
 
@@ -147,14 +147,14 @@ In this table, a method can be expanded to show its _callers_.
 在这张表中，可以展开一个方法查看它的所有调用过程。
 
 </dl>
-<dt markdown="1"><t><b>Total time</b><t><t>总时间</t></dt>
+<dt markdown="1"><t><b>Total time</b><t><t> 总时间</t></dt>
 <dd markdown="1"><p>Time the method spent executing its own code
     as well as the code for its callee.</p>
 
 <p>此方法运行的总时间，包括了调用者的执行时间(即调用此方法整个的生命周期时长)。</p>
 </dd>
 
-<dt markdown="1"><t><b>Self time</b><t><t>自执行时间</t></dt>
+<dt markdown="1"><t><b>Self time</b><t><t> 自执行时间</t></dt>
 <dd markdown="1"><p>For top-level methods in the bottom-up tree
     (leaf stack frames in the profile), this is the time the
     method spent executing only its own code. For sub nodes
@@ -172,10 +172,10 @@ In this table, a method can be expanded to show its _callers_.
 
 </dd>
 
-<dt markdown="1"><t><b>Method</b><t><t>方法</t></dt>
+<dt markdown="1"><t><b>Method</b><t><t> 方法</t></dt>
 <dd markdown="1"><t>Name of the called method.</t><t>调用方法的名称。</t></dd>
 
-<dt markdown="1"><t><b>Source</b><t><t>源码</t></dt>
+<dt markdown="1"><t><b>Source</b><t><t> 源码</t></dt>
 <dd markdown="1"><t>File path for the method call site.</t><t>方法所在的文件路径。</t></dd>
 </dl>
 

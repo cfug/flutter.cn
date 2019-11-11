@@ -113,6 +113,7 @@ meaning that a method can be expanded to show its _callees_.
 调用树视图是一种自上而下展示 CPU 中的调用堆栈信息方法。
 在下图中的表格中可以看出，展开其中的一个方法可以查看它所有的调用者。
 
+<dl>
 <dt markdown="1"><t><b>Total time</b><t><t>总时间</t></dt>
 <dd><p>Time the method spent executing its own code as well as
     the code for its callees.</p>
@@ -145,6 +146,7 @@ In this table, a method can be expanded to show its _callers_.
 
 在这张表中，可以展开一个方法查看它的所有调用过程。
 
+</dl>
 <dt markdown="1"><t><b>Total time</b><t><t>总时间</t></dt>
 <dd markdown="1"><p>Time the method spent executing its own code
     as well as the code for its callee.</p>

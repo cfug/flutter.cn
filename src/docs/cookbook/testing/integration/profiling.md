@@ -23,7 +23,7 @@ There are two options: first, manually test the app on different devices.
 While that approach might work for a smaller app, it becomes more
 cumbersome as an app grows in size. Alternatively, run an integration
 test that performs a specific task and records a performance timeline.
-Then, examine the results to determine whether a specific section of 
+Then, examine the results to determine whether a specific section of
 the app needs to be improved.
 
 

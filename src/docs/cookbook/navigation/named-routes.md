@@ -30,7 +30,7 @@ and use the named route for navigation.
 To work with named routes, use the
 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
 function. This example replicates the functionality from the original
-recipe, demonstrating how to use named routes using the following steps: 
+recipe, demonstrating how to use named routes using the following steps:
 
 要使用命名路由，我们可以使用 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法。下面的例子展示如何使用“命名路由”来实现前一节中的功能。
 

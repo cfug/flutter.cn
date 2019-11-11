@@ -11,9 +11,9 @@ the [App Store][appstore] and [TestFlight][testflight].
 这个教程将为你提供关于如何将 Flutter App 发布到 [App Store][appstore_cn] 和 [TestFlight][testflight_cn] 的说明。
 
 For information on obfuscating Dart code, see [Obfuscating Dart
-Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code).
+Code][].
 
-关于混淆 Dart 代码的更多信息，你可以看 [混淆 Dart 代码]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)
+关于混淆 Dart 代码的更多信息，你可以看 [混淆 Dart 代码][Obfuscating Dart Code]
 
 ## Preliminaries
 
@@ -26,8 +26,8 @@ Apple's [App Review Guidelines][appreview].
 
 In order to publish your app to the App Store, you'll need to enroll in the
 [Apple Developer Program][devprogram]. You can read more about the various
-membership options in Apple's [Choosing a Membership][devprogram_membership]
-guide.
+membership options in Apple's
+[Choosing a Membership][devprogram_membership] guide.
 
 想要发布你的 app 到 App Store，你需要注册 [Apple Developer Program][devprogram_cn]。你可以在苹果的 [选择会员资格(开发者类型)][devprogram_membership_cn] 中查看到关于多种不同会员类型的选择。
 
@@ -123,7 +123,8 @@ Next, you'll register your app on App Store Connect:
    
    在基础信息部分，选择你在前一步注册的套装 ID。
 
-For a detailed overview, see [Add an app to your account][appstoreconnect_guide_register].
+For a detailed overview,
+see [Add an app to your account][appstoreconnect_guide_register].
 
 想要获取更多信息，可以看这个帮助页面 [添加 App 至您的帐户][appstoreconnect_guide_register_cn]。
 
@@ -156,65 +157,98 @@ Navigate to your target's settings in Xcode:
    
    选择 **General** tab
 
-Next, you'll verify the most important settings:
+Next, you'll verify the most important settings.
 
 接下来，你需要验证最重要的配置：
 
-In the Identity section:
+In the **Identity** section:
 
-在 Identity 部分：
+在 **Identity** 部分：
 
-  * `Display Name:` the name of the app to be displayed on the home screen and
-    elsewhere.
+`Display Name` 
+:the name of the app to be displayed on the home screen and elsewhere.
     
-    这个 App 将会在主屏幕以及其他地方展示的名字。
+ 这个 App 将会在主屏幕以及其他地方展示的名字。
     
-  * `Bundle Identifier:` the App ID you registered on App Store Connect.
+`Bundle Identifier:` the App ID you registered on App Store Connect.
     
-     你在 App Store Connect 注册的 App ID。
+ 你在 App Store Connect 注册的 App ID。
 
-In the Signing section:
+In the **Signing** section:
 
 在 Signing 部分：
 
-  * `Automatically manage signing:` whether Xcode should automatically manage
-    app signing and provisioning. This is set `true` by default, which should
-    be sufficient for most apps. For more complex scenarios, see the [Code
-    Signing Guide][codesigning_guide].
-    
-    `Automatically manage signing` 是否需要 Xcode 自动管理 app 签名和设置。
-    这个默认被设置为 `true` ，对于绝大多数 App 来说都是适用的。
-    对于更复杂的场景，查看 [代码签名指南][codesigning_guide]。
-    
-  * `Team:` select the team associated with your registered Apple Developer
-    account. If required, select **Add Account...**, then update this setting.
-    
-    `Team`：选择关联到你注册的 Apple 开发者账户的团队。
-    如果需要，选择 **Add Account...**, 然后更新选项。
+`Automatically manage signing` 
+: whether Xcode should automatically manage 
+app signing and provisioning. This is set `true` by default, which should be sufficient for most apps. For more complex scenarios, see the [Code Signing Guide][codesigning_guide].
 
-In the Deployment Info section:
+`Automatically manage signing` 是否需要 Xcode 自动管理 app 签名和设置。
+这个默认被设置为 `true` ，对于绝大多数 App 来说都是适用的。对于更复杂的场景，查看 [代码签名指南][codesigning_guide]。
+    
+`Team:` select the team associated with your registered Apple Developer account. If required, select **Add Account...**, then update this setting.
+    
+`Team`：选择关联到你注册的 Apple 开发者账户的团队。如果需要，选择 **Add Account...**, 然后更新选项。
+
+In the **Deployment Info** section:
 
 在 Development 部分：
 
-  * `Deployment Target:` the minimum iOS version your app will support.
-    Flutter supports iOS 8.0 and later. If your app includes Objective-C or
-    Swift code that makes use of APIs that were unavailable in iOS 8, update
-    this setting appropriately.
-    
-    `Deployment Target:` 你的 App 将会支持的最低版本的 iOS。
+`Deployment Target:`
+: The minimum iOS version that your app will support.
+  Flutter supports iOS 8.0 and later. If your app includes
+  Objective-C or Swift code that makes use of APIs that
+  were unavailable in iOS 8, update this setting appropriately.
+
+`Deployment Target:` 你的 App 将会支持的最低版本的 iOS。
     Flutter 支持 iOS 8.0 及以后的版本。
     如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，请设置到合适的版本。
 
-The General tab of your project settings should resemble the following:
+The **General** tab of your project settings should resemble
+the following:
 
 你项目的 General tab 应该看起来像是这样的：
 
 ![Xcode Project Settings](/images/releaseguide/xcode_settings.png){:width="100%"}
 
-For a detailed overview of app signing, see [Create, export,
-and delete signing certificates][appsigning].
+For a detailed overview of app signing, see
+[Create, export, and delete signing certificates][appsigning].
 
 更多关于 App 签名新的介绍，查看 [创建, 导出, 和删除签名证书][appsigning]
+
+## Updating the app's version number
+
+## 更新应用版本号
+
+The default version number of the app is `1.0.0`. 
+To update it, navigate to the `pubspec.yaml` file
+and update the following line:
+
+每个应用默认的初始版本号是 `1.0.0`。若要更新它，
+请转到 `pubspec.yaml` 文件并更新以下内容：
+
+`version: 1.0.0+1`
+
+The version number is three numbers separated by dots,
+such as `1.0.0` in the example above, followed by an optional
+build number such as `1` in the example above, separated by a `+`.
+
+版本号由三个点分隔的数字组成，例如上面样例中的 `1.0.0`。然后是可选的
+构建号，例如上面样例中的 `1`，以 `+` 分隔。
+
+Both the version and the build number may be overridden in Flutter's
+build by specifying `--build-name` and `--build-number`,
+respectively.
+
+版本号与构建号都可以在 Flutter 打包时分别使用 `--build-name` 和 `--build-number` 重新指定。
+
+In iOS, `build-name` uses `CFBundleShortVersionString`
+while `build-number` uses `CFBundleVersion`.
+Read more about iOS versioning at [Core Foundation Keys][]
+on the Apple Developer's site.
+
+在 iOS 中，当 `build-number` 用作 `CFBundleVersion` 的时候，
+`build-name` 用作 `CFBundleShortVersionString`。
+阅读关于 iOS 版本控制的更多信息请参考 Apple 开发者网站提供的 [Core Foundation Keys][]。
 
 ## Add an App Icon
 
@@ -369,10 +403,10 @@ TestFlight.
    选择要发布给测试人员的构建，然后点击 **保存**。
    
 1. Add the email addresses of any internal testers. You can add additional
-   internal users in the Users and Roles page of App Store Connect, available from
+   internal users in the **Users and Roles** page of App Store Connect, available from
    the dropdown menu at the top of the page. 
    
-   为每一个内部测试人员添加邮件。你可以在 App Store Connect 的用户与角色页面添加额外的内部用户，
+   为每一个内部测试人员添加邮件。你可以在 App Store Connect 的**用户与角色**页面添加额外的内部用户，
    他们将会出现在页面顶部的下拉菜单中。
 
 For more details, see [Distribute an app using TestFlight]
@@ -409,17 +443,51 @@ submit your app for review and release to the App Store:
 
    点击 **提交审核**
 
-Apple will notify you when their app review process is complete. Your app will
-be released according to the instructions you specified in the **Version
-Release** section.
+Apple will notify you when their app review process is complete.
+Your app will be released according to the instructions you
+specified in the **Version Release** section.
 
 Apple 将会在他们的审核过程结束后提醒你。
 你的 app 将会根据 **Version Release** 部分的介绍进行发布。
 
-For more details, see [Distribute an app through the App Store]
-[distributionguide_submit].
+For more details, see
+[Distribute an app through the App Store][distributionguide_submit].
 
 关于更多细节，查看 [通过 App Store 分发一个 App][distributionguide_submit].
+
+Now that you’ve created your app, attract more users with Google Ads.
+App campaigns use machine learning to drive more installs and make
+the most of your budget.
+
+当你创建了应用之后，你可以通过 Google Ads 吸引更多用户，
+Google Ads 平台可以通过机器学习帮助你以非常高的性价比吸引到更多用户。
+
+1. Create your ad&mdash;we’ll help create your ad from your app
+   information
+
+   创建广告&mdash;我们会根据您的应用信息帮您制作广告。
+   另外，您还可以添加图片和视频。
+
+1. Choose your budget&mdash;set your target cost-per-install
+   (tCPI) and daily budget cap
+
+   决定推广预算&mdash;对于以提高应用安装量为主要目标的广告系列，
+   您需要为其设置应用安装出价，也就是“目标每次安装费用”，同时设置每日推广支出预算。
+
+1. Select your location&mdash;let us know where you’d like your ads
+   to run
+
+   选择目标地区&mdash;让我们知道你希望触达哪些区域的用户。
+
+1. Decide what action you want users to take&mdash;choose installs,
+   in-app actions, or target return on ad spend (ROAS)
+
+   设定用户行动&mdash;决定你希望用户要做什么，
+   比如安装，应用内操作或者目标广告支出回报率 (ROAS)。
+
+[Get $75 app advertising credit when you spend $25.][]
+
+[获取 75 美元的赠金（当你消费 25 美金后）][Get $75 app advertising credit when you spend $25.]
 
 ## Troubleshooting
 
@@ -434,7 +502,12 @@ the process of releasing an app to the App Store.
 [appreview]: https://developer.apple.com/app-store/review/
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: https://developer.apple.com/app-store/submissions/
+[appstoreconnect]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
+[appstoreconnect_login]: https://appstoreconnect.apple.com/
+[appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
 [codesigning_guide]: https://developer.apple.com/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
+[Core Foundation Keys]: https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 [devportal_appids]: https://developer.apple.com/account/ios/identifier/bundle
 [devprogram]: https://developer.apple.com/programs/
 [devprogram_membership]: https://developer.apple.com/support/compare-memberships/
@@ -443,10 +516,8 @@ the process of releasing an app to the App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[appstoreconnect]: https://developer.apple.com/support/app-store-connect/
-[appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
-[appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
-[appstoreconnect_login]: https://appstoreconnect.apple.com/
+[Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none
+[Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
 [testflight]: https://developer.apple.com/testflight/
 
 [appreview_cn]: https://developer.apple.com/cn/app-store/review/

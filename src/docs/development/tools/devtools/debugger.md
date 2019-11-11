@@ -48,14 +48,16 @@ in the source area. Clicking once sets a breakpoint, which should
 also show up in the **Breakpoints** area on the left. Clicking
 again removes the breakpoint.
 
-可以点击源码区左边空白（行数展示栏内）来设置断点。单击一次就设置了一个断点，并且也会在 **Breakpoints** 区域展示出来。再次单击则取消断点。
+可以点击源码区左边空白（行数展示栏内）来设置断点。
+单击一次就设置了一个断点，并且也会在 **Breakpoints** 区域展示出来。
+再次单击则取消断点。
 
 ## The call stack and variable areas
 
 ## 调用栈和变量区
 
 When your application encounters a breakpoint, it pauses there,
-and the DevTools debugger shows the paused execution location 
+and the DevTools debugger shows the paused execution location
 in the source area. In addition, the `Call stack` and `Variables`
 areas populate with the current call stack for the paused isolate,
 and the local variables for the selected frame. Selecting other
@@ -125,7 +127,7 @@ checkboxes in the upper right of the debugger view.
 
 Breaking on unhandled excepts only pauses execution if the
 breakpoint is considered uncaught by the application code.
-Breaking on all exceptions causes the debugger to pause 
+Breaking on all exceptions causes the debugger to pause
 whether or not the breakpoint was caught by application code.
 
 Break on unhandled exceptions：只在断点被认为应用内代码无法捕获时暂停执行。

@@ -264,10 +264,10 @@ This involves four steps:
 现在我们有了待测应用，我们可以为它编写测试文件了。这包含了四个步骤：
 
   1. Create
-  [`SeralizableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html)
+  [`SerializableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html)
      to locate specific widgets
  
-     创建 [`SeralizableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html) 定位指定组件
+     创建 [`SerializableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html) 定位指定组件
 
   2. Connect to the app before our tests run in the `setUpAll()` function
 

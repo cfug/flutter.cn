@@ -45,12 +45,12 @@ Flutter 1.9 is live!
 Flutter 1.9 正式发布！
 
 For more information, see [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter
-1.9](https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1)
-and the [1.9.1 release
-notes]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1).
+1.9][]
+and the [1.9.1 release notes][].
 
-更多信息，请查看 [本文](/posts/flutter-news-from-gdd-china-flutter1.9.html)，和 1.9.1 的
-[发行注记]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1)
+更多信息，请查看 [本文][Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter
+1.9]，和 1.9.1 的
+[发行注记][1.9.1 release notes]。
 
 For the 1.9 release, Flutter's web support has been
 merged ("unforked") into the main repo.
@@ -72,100 +72,103 @@ New and updated docs on the site include:
 
 新的文档和更新包括：
 
+* We've revamped the [Showcase][] page.
+
+  我们更新了 [Showcase][] 页面。
+
 * The Flutter layout codelab has been rewritten and
   uses the updated DartPad, the browser-based tool for
   running Dart code. DartPad now supports Flutter!
-  [Try it out](/docs/codelabs/layout-basics)
-  and let us know what you think.
+  [Try it out][] and let us know what you think.
 
-  我们重写了 Flutter 布局的 codelab，
-  使用了最新的、支持了 Flutter 的 DartPad，
-  可以在 [这里](/docs/codelabs/layout-basics) 
-  查看并告诉我们你的想法。
-  
-* A new page on [using the dart:ffi
-  library](/docs/development/platform-integration/c-interop)
+  重写了 Flutter 布局的 codelab，并使用了新版 DartPad，
+  它是一个基于浏览器，用来运行 Dart 代码的工具。
+  目前 DartPad 已经支持 Flutter！赶紧[尝试][Try it out]，
+  并告诉我们你的感受。
+ 
+* A new page on [using the dart:ffi library][]
   to bind your app to native code (a feature currently under
   development).
   
-  更新了一篇 [使用 dart:ffi 库的文档](/docs/development/platform-integration/c-interop)，
+  更新了一篇 [使用 dart:ffi 库的文档][using the dart:ffi library]，
   帮助你与原生代码进行互调操作（目前还在开发中）。
 
 * The Performance view tool, which allows you to record
   and profile a session from your Dart/Flutter application,
   has been enabled in DevTools. For more information,
-  see the [Performance
-  view](/docs/development/tools/devtools/performance)
-  page.
+  see the [Performance view][] page.
 
   开发者工具（DevTools）里的性能视图工具（Performance view tool），
   可以让你录制并检查 Dart 或 Flutter 应用的某个运行时 session，
   可以在这里查看更多：
-  [使用性能视图 (Performance view)](/docs/development/tools/devtools/performance)
+  [使用性能视图 (Performance view)][Performance view]
   
 * A new page on
-  [building a web application](/docs/get-started/web).
+  [building a web application][].
 
-  新增一个页面，关于 [如何构建一个 Web 应用](/docs/get-started/web)。
+  新增一个页面，关于 [如何构建一个 Web 应用][building a web application]。
   
-* A new page on [creating responsive
-  apps](/docs/development/ui/layout/responsive)
+* A new page on [creating responsive apps][]
   in Flutter.
   
   新增一个页面，关于在 Flutter 里
-  [如何创建响应式应用](/docs/development/ui/layout/responsive)
+  [如何创建响应式应用][creating responsive apps]
 
 * A new page on
-  [preparing a web app for release](/docs/deployment/web).
+  [preparing a web app for release][].
 
-  新增一个页面，关于如何 [打包并发布到 Web 平台](/docs/deployment/web)。
+  新增一个页面，关于如何 
+  [打包并发布到 Web 平台][preparing a web app for release]。
 
-* A new [web FAQ](/docs/development/platform-integration/web).
+* A new [web FAQ][].
  
   关于在 Web 平台运行 Flutter 应用，我们新增了一个 
-  [Web 常见问题页面](/docs/development/platform-integration/web)。
+  [Web 常见问题页面][web FAQ]。
   
-* The [Flutter for web](/web) page is updated.
+* The [Flutter for web][] page is updated.
   
-  关于 [在 Web 平台运行 Flutter](/web) 的页面已经更新。
+  关于 [在 Web 平台运行 Flutter][Flutter for web] 的页面已经更新。
 
 Other relevant docs:
 
 其他相关文档：
 
 * Error messages have been improved in SDK 1.9.
-  For more information, read [Improving Flutter's
-  Error Messages](https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9)
-  on the [Flutter Medium publication](https://medium.com/flutter).
+  For more information, read 
+  [Improving Flutter's Error Messages][]
+  on the [Flutter Medium publication][].
 
-  Flutter 1.9 版本里我们更新了对开发者更友好的 [错误信息提示](https://mp.weixin.qq.com/s/PlBJBo-LTZe0XBkPOeEFbA)。
+  Flutter 1.9 版本里我们更新了对开发者更友好的 [错误信息提示][Improving Flutter's Error Messages]。更多详细信息请参阅
+  [Flutter Medium 刊物][Flutter Medium publication] 上发布的
+  [提高 Flutter 错误提示][Improving Flutter's
+  Error Messages]。
   
 * If you already have a web app that depends on the
   flutter_web package, the following instructions tell
   you how to migrate to the flutter package:
   [Upgrading from package:flutter_web to the Flutter
-  SDK](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK).
+  SDK][].
   
   如果你先前已经通过 flutter_web 这个 package 使用了 Flutter Web，
-  请根据 [这个文档](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK) 来迁移。
+  请根据 [这个文档][Upgrading from package:flutter_web to the Flutter SDK] 来迁移。
 
-* A new [ToggleButtons]({{site.api}}/flutter/material/ToggleButtons-class.html)
+* A new [ToggleButtons][]
   widget, described in the API docs.
-  [ToggleButtons demo]({{site.github}}/csells/flutter_toggle_buttons)
+  [ToggleButtons demo][]
 
-  新增 [ToggleButtons]({{site.api}}/flutter/material/ToggleButtons-class.html) widget，以及 API 文档。
+  新增 [ToggleButtons][] widget，以及 API 文档。
 
-* A new [ColorFiltered]({{site.api}}/flutter/widgets/ColorFiltered-class.html)
+* A new [ColorFiltered][]
   widget, also described in the API docs.
-  [ColorFiltered demo]({{site.github}}/csells/flutter_color_filter)
+  [ColorFiltered demo][]
 
-  新增 [ColorFiltered]({{site.api}}/flutter/widgets/ColorFiltered-class.html) widget，以及 API 文档。
+  新增 [ColorFiltered][] widget，以及 API 文档。
 
 * New behavior for the
-  [SelectableText]({{site.api}}/flutter/material/SelectableText-class.html)
+  [SelectableText][]
   widget.
 
-  [SelectableText]({{site.api}}/flutter/material/SelectableText-class.html) widget 的新特性。
+  [SelectableText][] widget 的新特性。
 
 Happy Fluttering!
 
@@ -332,4 +335,22 @@ You might also find these docs useful:
 [What's new archive]: /docs/whats-new-archive
 [Write Your First Flutter App,]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
-
+[1.9.1 release notes]: {{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1
+[building a web application]: /docs/get-started/web
+[ColorFiltered]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
+[ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
+[creating responsive apps]: /docs/development/ui/layout/responsive
+[Flutter Medium publication]: https://medium.com/flutter
+[Flutter for web]: /web
+[Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
+[Improving Flutter's Error Messages]: https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9
+[Performance view]: /docs/development/tools/devtools/performance
+[preparing a web app for release]: /docs/deployment/web
+[SelectableText]: {{site.api}}/flutter/material/SelectableText-class.html
+[Showcase]: /showcase
+[ToggleButtons]: {{site.api}}/flutter/material/ToggleButtons-class.html
+[ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
+[Try it out]: /docs/codelabs/layout-basics
+[Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
+[using the dart:ffi library]: /docs/development/platform-integration/c-interop
+[web FAQ]: /docs/development/platform-integration/web

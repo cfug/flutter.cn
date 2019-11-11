@@ -54,6 +54,10 @@ This page covers the following topics:
 
   [发布到 Google Play Store](#publishing-to-the-google-play-store)
 
+* [Updating the app's version number](#updating-the-apps-version-number)
+
+  [更新应用版本号](#updating-the-apps-version-number)
+
 * [Android release FAQ](#android-release-faq)
 
   [安卓发布常见问题](#android-release-faq)
@@ -148,25 +152,30 @@ keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg R
 
 {{site.alert.note}}
 
-  The `keytool` command might not be in your path&mdash;it's
-  part of the Java JDK, which is installed as part of Android Studio.
-  For the concrete path,
+* The `keytool` command might not be in your path&mdash;it's
+  part of Java, which is installed as part of
+  Android Studio.  For the concrete path,
   run `flutter doctor -v` and locate the path printed after
   'Java binary at:'. Then use that fully qualified path
   replacing `java` (at the end) with `keytool`.
+  If your path includes space-separated names,
+  such as `Program Files`, place quotes around the
+  space-separated names. For example: `/"Program Files"/`
   
   `keytool` 可能不在我们的系统路径中。
-  它是 Java JDK 的一部分，在安装 Android Studio 的时候会被一起安装。
+  它是 Java 的一部分，在安装 Android Studio 的时候会被一起安装。
   运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，
-  然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。
-
-  If your path includes space-separated names,
-  such as `Program Files`, place quotes around the space-separated
-  names. For example: `/"Program Files"/`
-  
+  然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。  
   如果文件路径包含空格，类似 `Program Files` 这样的，你需要在路径上加入转义符：
   `/"Program Files"/`。
   
+* The `-storetype JKS` tag is only required for Java 9
+  or newer. As of the Java 9 release,
+  the keystore type defaults to PKS12.
+
+  只有 Java 9 或更高版本才需要 `-storetype JKS` 标签。
+  从 Java 9 版本开始，keystore 类型默认为 PKS12。
+
 {{site.alert.end}}
 
 ### Reference the keystore from the app
@@ -363,17 +372,20 @@ android {
 
 Review the default [App Manifest][manifest] file, `AndroidManifest.xml`,
 located in `<app dir>/android/app/src/main` and verify that the values
-are correct, especially:
+are correct, especially the following:
 
 检查位于 `<app dir>/android/app/src/main` 的默认 [App Manifest][manifest] 文件 `AndroidManifest.xml`，并确认各个值都设置正确，特别是：
 
-* `application`: Edit the `android:label` in the
-  [`application`][applicationtag] tag to reflect the final name of the app.
+`application`
+: Edit the `android:label` in the
+  [`application`][applicationtag] tag to reflect 
+  the final name of the app.
   
   `application`：编辑 [`application`][applicationtag]
   标签中的 `android:label` 来设置 app 的最终名字。
 
-* `uses-permission`: Add the `android.permission.INTERNET`
+`uses-permission`
+: Add the `android.permission.INTERNET`
   [permission][permissiontag] if your application code needs Internet
   access. The standard template does not include this tag but allows
   Internet access during development to enable communication between
@@ -388,35 +400,38 @@ are correct, especially:
 
 ## 检查构建配置
 
-Review the default [Gradle build file][gradlebuild] file, `build.gradle`,
-located in `<app dir>/android/app` and verify the values are correct,
-especially:
+Review the default [Gradle build file][gradlebuild] file, `build.gradle`,located in `<app dir>/android/app` and 
+verify the values are correct,especially the following
+values in the `defaultConfig` block:
 
 检查位于 `<app dir>/android/app` 的默认 [Gradle build file][gradlebuild]，
-并确认各个值都设置正确，特别是：
+并确认各个值都设置正确，特别是下面 `defaultConfig` 块中的值：
 
-* `defaultConfig`:
+`applicationId`
+: Specify the final, unique (Application Id)[appid]
 
-  * `applicationId`: Specify the final, unique (Application Id)[appid]
-  
-  	 `applicationId`：指定最终的，唯一的（Application Id）[appid]。
+`applicationId`
+：指定最终的，唯一的（Application Id）[appid]。
 
-  * `versionCode` & `versionName`: Specify the internal app version number,
-     and the version number display string. You can do this by setting
-     the `version` property in the pubspec.yaml file. Consult the version
-     information guidance in the [versions documentation][versions].
+`versionCode` & `versionName`
+: Specify the internal app version number,
+  and the version number display string. You can do this by setting
+  the `version` property in the pubspec.yaml file. Consult the version
+  information guidance in the [versions documentation][versions].
 
-    `versionCode` & `versionName`：指定 app 的内部版本号，以及用于显示的版本号，
-    这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。
-    具体可以参考 [版本文档][versions] 中的版本信息指南。
+`versionCode` & `versionName`
+：指定 app 的内部版本号，以及用于显示的版本号，这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。
+具体可以参考 [版本文档][versions] 中的版本信息指南。
 
-  * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level,
-     and the API level on which the app is designed to run.
-     Consult the API level section in the [versions documentation][versions]
-     for details.
+`minSdkVersion` & `targetSdkVersion`
+: Specify the minimum API level,
+  and the API level on which the app is designed to run.
+  Consult the API level section in the [versions documentation][versions]
+  for details.
 
-    `minSdkVersion` & `targetSdkVersion`：指定支持的最低 API 版本，以及我们 app 的目标 API 版本。
-    具体可以参考 [版本文档][versions] 中的 API 版本部分。
+`minSdkVersion` & `targetSdkVersion`
+：指定支持的最低 API 版本，以及我们 app 的目标 API 版本。
+具体可以参考 [版本文档][versions] 中的 API 版本部分。
 
 ## Building the app for release
 
@@ -467,11 +482,11 @@ the app bundle will be signed.
 
   While the Android team is working to identify a feasible
   solution, you might try splitting the APK as a temporary
-  workaround. For more information, see
-  [Issue 36822]({{site.github}}/flutter/flutter/issues/36822).
+  workaround. For more information, see [Issue 36822][].
 
   在 Android team 努力寻找可行的解决方案时，你可以先尝试将 APK 拆分作为临时解决方案。
-  更多有关信息请查看 [Issue 36822]({{site.github}}/flutter/flutter/issues/36822)。
+  更多有关信息请查看 [Issue 36822][]。
+  
 {{site.alert.end}}
 
 From the command line:
@@ -621,33 +636,73 @@ see the [Google Play launch][play] documentation.
 要了解如何发布一个 app 到 Google Play Store，
 可以参考 [Google Play publishing documentation][play]。
 
-Now that you’ve created your app, attract more users with Google Ads. App campaigns use machine learning to drive more installs and make the most of your budget. 
+Now that you’ve created your app, attract more users with Google Ads.
+App campaigns use machine learning to drive more installs and
+make the most of your budget. 
 
-当你创建了应用之后，你可以通过 Google Ads 吸引更多用户，Google Ads 平台可以通过机器学习帮助你以非常高的性价比吸引到更多用户。
+当你创建了应用之后，你可以通过 Google Ads 吸引更多用户，
+Google Ads 平台可以通过机器学习帮助你以非常高的性价比吸引到更多用户。
 
 Get your campaign running in a few steps
 
 通过以下几步创建一个广告宣传：
 
-1. Create your ad - we’ll help create your ad from your app information
+1. Create your ad&mdash;we’ll help create your ad from your app
+   information
 
-   创建广告 —— 我们会根据您的应用信息帮您制作广告。另外，您还可以添加图片和视频。
+   创建广告&mdash;我们会根据您的应用信息帮您制作广告。另外，您还可以添加图片和视频。
 
-2. Choose your budget - set your target cost-per-install (tCPI) and daily budget cap 
+1. Choose your budget&mdash;set your target cost-per-install (tCPI)
+   and daily budget cap
 
-   决定推广预算 —— 对于以提高应用安装量为主要目标的广告系列，您需要为其设置应用安装出价，也就是“目标每次安装费用”，同时设置每日推广支出预算。
+   决定推广预算&mdash;对于以提高应用安装量为主要目标的广告系列，
+   您需要为其设置应用安装出价，也就是“目标每次安装费用”，同时设置每日推广支出预算。
 
-3. Select your location - let us know where you’d like your ads to run
+1. Select your location&mdash;let us know where you’d like your ads to run
 
-   选择目标地区 —— 让我们知道你希望触达哪些区域的用户。
+   选择目标地区&mdash;让我们知道你希望触达哪些区域的用户。
 
-4. Decide what action you want users to take - choose installs, in-app actions, or target return on ad spend (ROAS) 
+1. Decide what action you want users to take&mdash;choose installs,
+   in-app actions, or target return on ad spend (ROAS) 
 
-   设定用户行动 —— 决定你希望用户要做什么，比如安装，应用内操作或者目标广告支出回报率 (ROAS)。
+   设定用户行动&mdash;决定你希望用户要做什么，
+   比如安装，应用内操作或者目标广告支出回报率 (ROAS)。
 
-<a href = "https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none"> Get $75 app advertising credit when you spend $25 </a>
+[Get $75 app advertising credit when you spend $25.][]
 
-<a href = "https://ads.google.cn/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none"> 获取 75 美元的赠金（当你消费 25 美金后） </a>
+[获取 75 美元的赠金（当你消费 25 美金后）][Get $75 app advertising credit when you spend $25.]
+
+## Updating the app's version number
+
+## 更新应用版本号
+
+The default version number of the app is `1.0.0`.
+To update it, navigate to the `pubspec.yaml` file
+and update the following line:
+
+每个应用默认的初始版本号是 `1.0.0`。若要更新它，
+请转到 `pubspec.yaml` 文件并更新以下内容：
+
+`version: 1.0.0+1`
+
+The version number is three numbers separated by dots,
+such as `1.0.0` in the example above, followed by an optional
+build number such as `1` in the example above, separated by a `+`.
+
+版本号由三个点分隔的数字组成，例如上面样例中的 `1.0.0`。然后是可选的
+构建号，例如上面样例中的 `1`，以 `+` 分隔。
+
+Both the version and the build number may be overridden in Flutter's
+build by specifying `--build-name` and `--build-number`, respectively.
+
+版本号与构建号都可以在 Flutter 打包时分别使用 `--build-name` 和 `--build-number` 重新指定。
+
+In Android, `build-name` is used as `versionName` while
+`build-number` used as `versionCode`. For more information,
+see [Version your app][] in the Android documentation.
+
+在 Android 中，当 `build-number` 被用作 `versionCode` 时 `build-name` 作为 `versionName` 使用。更多信息请参考 Android 文档中的
+[为你的应用添加版本][Version your app]。
 
 ## Android release FAQ
 
@@ -762,11 +817,13 @@ This doc need to assign to a new translator.
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Flutter wiki]: {{site.github}}/flutter/flutter/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
+[Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
 [Issue 22139]: {{site.github}}/flutter/flutter/issues/22139
+[Issue 36822]: {{site.github}}/flutter/flutter/issues/36822
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
@@ -774,5 +831,5 @@ This doc need to assign to a new translator.
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
+[Version your app]: {{site.android-dev}}/studio/publish/versioning
 [versions]: {{site.android-dev}}/studio/publish/versioning
-

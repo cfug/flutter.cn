@@ -57,7 +57,7 @@ Package 包含以下两种类别：
   的特定功能，因此依赖于 Flutter 框架，其使用范围仅限于 Flutter，比如
   [`fluro`]({{site.pub}}/packages/fluro)。
 
-* *Plugin packages*: A specialized Dart package which contain an API written in
+* *Plugin packages*: A specialized Dart package which contains an API written in
   Dart code combined with a platform-specific implementation for Android (using
   Java or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
   the [`battery`][] plugin package.
@@ -344,7 +344,8 @@ published to dartdocs.org, see for example the [device_info docs][].
 当你提交一个 package 时，会自动生成 API 文档并将其提交到 dartdocs.org，示例请参见
 [device_info docs]({{site.pub-api}}/device_info/latest)
 
-If you wish to generate API documentation locally on your developement machine, use the following commands:
+If you wish to generate API documentation locally on your development machine, 
+use the following commands:
 
 如果你希望在本地开发环境中生成 API 文档，可以使用以下命令：
 
@@ -468,10 +469,25 @@ easily use it.
 上，以便其他开发者可以轻松地使用它。
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
-`CHANGELOG.md` files to make sure their content is complete and correct. Also, to improve the quality and usability of your package, consider including the items below. 
+`CHANGELOG.md` files to make sure their content is complete and correct. 
+Also, to improve the quality and usability of your package, 
+consider including the items below.
+
+发布你的 package 之前，确保检查了这几个文件：`pubspec.yaml`、`README.md` 和
+`CHANGELOG.md`，确保它们完整且争取，另外，为了提高 package 的可用性，
+可以考虑加入如下的内容：
+
 * Diverse code usage examples
+ 
+  代码的示例用法
+
 * Screenshots, animated gifs, or videos
+
+  屏幕截图，GIF 动画或者视频
+
 * A link to the corresponding code repository
+
+  代码库的正确指向链接
 
 提交之前，请确保 `pubspec.yaml`、`README.md` 以及
 `CHANGELOG.md` 文件已被审查，以保证其内容的完整性和正确性。
@@ -570,7 +586,8 @@ Pod::Spec.new do |s|
 You can now `#import "UrlLauncherPlugin.h"` and access the `UrlLauncherPlugin` class in the source code
 at `hello/ios/Classes`.
 
-现在你可以在 `hello/ios/Classes` 目录下的源代码文件中使用 `#import "UrlLauncherPlugin.h"` 并访问 `UrlLauncherPlugin` 这个类了。
+现在你可以在 `hello/ios/Classes` 目录下的源代码文件中使用 `#import "UrlLauncherPlugin.h"` 
+并访问 `UrlLauncherPlugin` 这个类了。
 
 [`battery`]: {{site.pub}}/packages/battery
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages

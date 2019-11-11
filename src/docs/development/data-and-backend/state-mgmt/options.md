@@ -20,7 +20,12 @@ by the Flutter community:
 
 ## General overview
 
-## 概览
+## 总体概览
+
+* [This very section](/docs/development/data-and-backend/state-mgmt/intro), for those of you who arrived
+  directly to this _Options_ page and missed the previous pages
+
+  [这部分](/docs/development/data-and-backend/state-mgmt/intro) 专为那些跳过了之前的页面直接阅读当前 _Options_ 页面的人所提供的。
 
 * [Build reactive mobile apps with Flutter](https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be),
   a video from Google I/O 2018, and an

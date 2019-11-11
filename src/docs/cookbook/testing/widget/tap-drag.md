@@ -88,7 +88,7 @@ create a basic todo app that tests three features:
 To keep the focus on testing,
 this recipe won't provide a detailed guide on how to build the todo app.
 To learn more about how this app is built,
-see the relevant recipes: 
+see the relevant recipes:
 
 为了聚焦在测试上，本章节并不会提供如何构建一个待办清单应用的具体教程。如果想要知道这个应用是如何构建的，请参考以下章节：
 

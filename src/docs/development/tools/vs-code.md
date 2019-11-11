@@ -150,17 +150,28 @@ Flutter 扩展执行代码分析，它提供：
 
   You can debug your app in a couple of ways.
 
+  有多种方式能够调试你的应用
+
   * Using [DevTools][], a suite of debugging and profiling
     tools that run in a browser. DevTools replaces the previous
     browser-based profiling tool, Observatory, and includes
     functionality previously only available to Android Studio
     and IntelliJ, such as the Flutter inspector.
+
+    使用 [DevTools][]，它是一个运行在浏览器中的
+    调试以及性能测试工具集。DevTools 取代了前一代基于浏览器的性能测试工具 Observatory，
+    它包含了以前仅适用于 Android Studio 和 IntelliJ 的功能，例如 Flutter inspector。
+
   * Using VS Code's built-in debugging features,
     such as setting breakpoints.
+
+    使用 VS Code 的内置调试功能，例如设置断点。
 
   The instructions below describe features available in VS Code.
   For information on using launching DevTools, see
   [Running DevTools from VS Code][] in the [DevTools][] docs.
+
+  以下说明描述了 VS Code 可用的功能。更多使用 DevTools 的详细信息请参考 [DevTools][] 中的 [Running DevTools from VS Code][] 文档。
   
 {{site.alert.end}}
 
@@ -217,10 +228,15 @@ Flutter 扩展会自动选择上次连接的设备。
 选择你要用来运行或调试的设备。
 
 {{site.alert.note}}
+
   If you want to try running your app on the web,
   but the **Chrome (web)** target doesn't appear in the
   list of targets, make sure you've enabled web, as
   described in [Building a web application][].
+
+  如果你尝试运行 web 应用，但是 **Chrome (web)** 并不在目标列表中，
+  请检查是否启用了 web，在 [Building a web application][] 中进行了介绍。
+
 {{site.alert.end}}
 
 ### Run app without breakpoints
@@ -284,6 +300,8 @@ Flutter 提供一流的开发周期，通过 **Stateful Hot Reload**
 
 ### Debugging visual layout issues
 
+### 可视化布局问题调试
+
 During a debug session,
 several additional debugging commands are added to the
 [Command Palette][] and to the [Flutter inspector][].
@@ -294,13 +312,14 @@ version of the label.
 会添加一些额外的调试命令，包括：
 
 <dl markdown="1">
-<dt markdown="1"><p>**Toggle Baseline Painting**</p><p>**切换 Baseline 绘制** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</p></dt>
+<dt markdown="1"><t><b>Toggle Baseline Painting</b></t><t><b>切换 Baseline 绘制</b></t> ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</dt>
 <dd><p>Causes each RenderBox to paint a line at each of its baselines.</p><p>每个 RenderBox 在底部绘制一条线。</p></dd>
-<dt markdown="1"><p>**Toggle Repaint Rainbow**</p><p>**切换重绘 Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</p></dt>
+<dt markdown="1"><t><b>Toggle Repaint Rainbow</b></t><t><b>切换重绘 Rainbow</b></t> ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</dt>
 <dd><p>Shows rotating colors on layers when repainting.</p><p>重新绘制时在图层上改变颜色。</p></dd>
-<dt markdown="1"><p>**Toggle Slow Animations**</p><p>**切换慢模式横幅** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</p></dt>
-<dd><p>Slows down animations to enable visual inspection.</p> <p>减慢动画以启用视觉检查。</p></dd>
-<dt markdown="1"><p>**Toggle Debug Mode Banner**</p> <p>**切换 debug 模式横幅显示** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</p></dt>
+<dt markdown="1"><t><b>Toggle Slow Animations</b></t><t><b>切换慢模式横幅</b></t> ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</dt>
+<dd><t>Slows down animations to enable visual inspection.</t><t>减慢动画以启用视觉检查。</t>
+</dd>
+<dt markdown="1"><t><b>Toggle Debug Mode Banner</b></t> <t><b>切换 debug 模式横幅显示</b></t> ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</dt>
 <dd><p>Hides the debug mode banner even when running a debug build.</p><p>在运行调试构建时隐藏 debug 模式的横幅 (banner)。</p></dd>
 </dl>
 
@@ -355,7 +374,7 @@ can assist in correcting it.
 
 **Wrap with new widget assist**
 
-** Widget 嵌套辅助 **
+**Widget 嵌套辅助**
 
   This can be used when you have a widget that you want to wrap
   in a surrounding widget, for example if you want to wrap a
@@ -440,9 +459,6 @@ You can also define custom snippets by executing
   
   键盘映射可以在 [命令面板][] 执行**Open Keyboard Shortcuts**修改。
 
-
-  Keyboard mappings can be changed by executing the
-  **Open Keyboard Shortcuts** command from the [Command Palette][].
 
 ### Hot reload vs. hot restart
 

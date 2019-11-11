@@ -63,6 +63,17 @@ contains a simple demo app that uses [Material Components][].
       如果要设置一台实际硬件设备，请根据操作系统在 [安装][] 页面
       按照相关设备配置步骤进行操作
       
+ 1. Press the **Settings button** - a cog icon 
+    <i class="material-icons align-bottom">gear</i> on the top right 
+    (now marked with a red or orange indicator) next to the DEBUG text box that
+    reads No Configuration. Select flutter. 
+    And choose the debug configuration: 
+    To create your emulator if it is closed or to run the emulator or device that is now connected.
+    
+    点击右上角一个齿轮状的设置按钮 <i class="material-icons align-bottom">gear</i>，
+    有一个红色或者橘色的点，它在 DEBUG 文本框旁边，选择 Flutter。
+    选择调试配置：选择现在连接的设备，或者模拟器（如果没有，请创建）。
+
  1. Invoke **Debug > Start Debugging** or press <kbd>F5</kbd>.
     
     选择 **Debug > 开始 Debugging** 或者按<kbd>F5</kbd>。

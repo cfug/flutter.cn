@@ -20,7 +20,7 @@ You can either define app-wide themes, or use `Theme` widgets
 that define the colors and font styles for a particular part
 of the application. In fact,
 app-wide themes are just `Theme` widgets created at
-the root of an apps by the `MaterialApp`.
+the root of an app by the `MaterialApp`.
 
 通过定义 `Theme`，我们可以更好地复用颜色和字体样式，
 从而让整个 app 的设计看起来更一致。
@@ -61,10 +61,10 @@ MaterialApp(
     brightness: Brightness.dark,
     primaryColor: Colors.lightBlue[800],
     accentColor: Colors.cyan[600],
-    
+
     // Define the default font family.
     fontFamily: 'Montserrat',
-    
+
     // Define the default TextTheme. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
     textTheme: TextTheme(

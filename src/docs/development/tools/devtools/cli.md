@@ -37,7 +37,8 @@ Next, run the local web server, which serves the DevTools
 application itself. To do that, run one of the following
 two commands:
 
-下一步，启动本地 web server 服务，来运行开发者工具。运行下面两个命令中的一个。
+下一步，启动本地 web server 服务来运行开发者工具。
+运行下面两个命令中的一个。
 
 ```
 pub global run devtools   # If you have `pub` on your path.
@@ -64,7 +65,8 @@ Serving DevTools at http://127.0.0.1.9100
 Next, start an app to connect to. This can be either a Flutter application
 or a Dart command-line application. The command below uses a Flutter app:
 
-下一步，启动并连接一个 app 。可以是 Flutter app 或者一个 Dart 命令行应用。下面这个命令是启动一个 Flutter app:
+下一步，启动并连接一个 app。可以是 Flutter app 或者一个 Dart 命令行应用。
+下面这个命令是启动一个 Flutter app:
 
 ```
 cd path/to/flutter/app
@@ -75,7 +77,8 @@ You need to have a device connected, or a simulator open, for
 `flutter run` to work. Once the app starts, you'll see a
 message in your terminal that looks like:
 
-运行 `flutter run` 时，你需要连接一个设备或者模拟器。当 app 启动后，你会在命令行中看到：
+运行 `flutter run` 时，你需要连接一个设备或者模拟器。
+当 app 启动后，你会在命令行中看到：
 
 
 ```
@@ -95,7 +98,8 @@ DevTools.
 Once it's set up, using DevTools is as simple as opening a 
 Chrome browser window and navigating to `http://localhost:9100`.
 
-上述完成后，使用开发者工具就会很简单，只需打开 chrome 并访问 `http://localhost:9100` 。
+上述完成后，使用开发者工具就会很简单，
+只需打开 chrome 并访问 `http://localhost:9100` 。
 
 Once DevTools opens, you should see a connect dialog:
 
@@ -107,12 +111,15 @@ Paste the URL you got from running your app (in this example,
 `http://127.0.0.1:50976/Swm0bjIe0ks=/`) into the connect dialog
 to connect your app to DevTools.
 
-将从启动 app 时获得的 URL 链接（在这个例子里是 `http://127.0.0.1:50976/Swm0bjIe0ks=/` ）复制到这个链接对话框中来把你的 app 和开发者工具链接起来。
+将从启动 app 时获得的 URL 链接
+（在这个例子里是 `http://127.0.0.1:50976/Swm0bjIe0ks=/` ）
+复制到这个链接对话框中来把你的 app 和开发者工具链接起来。
 
 This URL contains a security token, so it will be different
 for each run of your app. This means that if you stop your
 application and re-run it, you need to connect to DevTools
 with the new URL.
 
-这个链接包含一个秘钥 token ，所以每次启动你的 app 时，链接都会改变。这意味着如果重启 app 后，你需要用新的 URL 链接来连接开发者工具。
+这个链接包含一个秘钥 token ，所以每次启动你的 app 时，链接都会改变。
+这意味着如果重启 app 后，你需要用新的 URL 链接来连接开发者工具。
 

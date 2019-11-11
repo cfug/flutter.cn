@@ -171,7 +171,7 @@ Release mode for a web app means that:
 
 The command `flutter run --release` compiles to release mode.
 Your IDE supports this mode. Android Studio, for example,
-provides a **Run > Run...** menu option, as well as a triangular 
+provides a **Run > Run...** menu option, as well as a triangular
 green run button icon on the project page.
 (The menu item shows a pic of the corresponding icon.)
 

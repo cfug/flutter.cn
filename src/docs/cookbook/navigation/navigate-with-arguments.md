@@ -10,7 +10,7 @@ next:
   title: 从一个页面回传数据
   path: /docs/cookbook/navigation/returning-data
 ---
- 
+
 The [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html)
 provides the ability to navigate to a named route from any part of an app using
 a common identifier. In some cases, you might also need to pass arguments to a
@@ -119,14 +119,14 @@ class ExtractArgumentsScreen extends StatelessWidget {
     );
   }
 }
-``` 
+```
 
 ## 3. Register the widget in the `routes` table
 
 ## 3. 把组件注册到路由表中
 
 Next, add an entry to the `routes` provided to the `MaterialApp` widget. The
-`routes` define which widget should be created based on the name of the route.  
+`routes` define which widget should be created based on the name of the route.
 
 然后，在 `MaterialApp` 的路由表 `routes` 中增加一个入口。路由表 `routes` 会根据路由的名称来决定需要创建哪个路由。 
 
@@ -135,7 +135,7 @@ Next, add an entry to the `routes` provided to the `MaterialApp` widget. The
 MaterialApp(
   routes: {
     ExtractArgumentsScreen.routeName: (context) => ExtractArgumentsScreen(),
-  },     
+  },
 );
 ```
 
@@ -162,17 +162,24 @@ RaisedButton(
   onPressed: () {
     // When the user taps the button, navigate to the specific route
     // and provide the arguments as part of the RouteSettings.
-    Navigator.pushNamed(
+    Navigator.push(
       context,
-      ExtractArgumentsScreen.routeName,
-      arguments: ScreenArguments(
-        'Extract Arguments Screen',
-        'This message is extracted in the build method.',
+      MaterialPageRoute(
+        builder: (context) => ExtractArgumentsScreen(),
+        // Pass the arguments as part of the RouteSettings. The
+        // ExtractArgumentScreen reads the arguments from these
+        // settings.
+        settings: RouteSettings(
+          arguments: ScreenArguments(
+            'Extract Arguments Screen',
+            'This message is extracted in the build method.',
+          ),
+        ),
       ),
     );
   },
-);
-```  
+),
+```
 
 ## Alternatively, extract the arguments using `onGenerateRoute`
 

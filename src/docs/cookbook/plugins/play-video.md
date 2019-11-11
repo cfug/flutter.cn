@@ -17,20 +17,27 @@ exception. To play videos, the Flutter team provides the
 use the `video_player` plugin to play videos stored on the file system,
 as an asset, or from the internet.
 
-在任何应用开发中，视频播放都是一项常见任务，Flutter 应用也不例外。为了支持视频播放，Flutter 团队提供了 [`video_player`]({{site.pub-pkg}}/video_player) 插件。你可以使用 `video_player` 插件播放存储在本地文件系统中的视频或者网络视频。
+在任何应用开发中，视频播放都是一项常见任务，Flutter 应用也不例外。
+为了支持视频播放，Flutter 团队提供了
+[`video_player`]({{site.pub-pkg}}/video_player) 插件。
+你可以使用 `video_player` 插件播放存储在本地文件系统中的视频或者网络视频。
 
 On iOS, the `video_player` plugin makes use of
 [`AVPlayer`](https://developer.apple.com/documentation/avfoundation/avplayer) to
 handle playback. On Android, it uses
 [`ExoPlayer`](https://google.github.io/ExoPlayer/).
 
-在 iOS 上，`video_player` 使用 [`AVPlayer`](https://developer.apple.com/documentation/avfoundation/avplayer) 进行播放控制。在 Android 上，使用的是 [`ExoPlayer`](https://google.github.io/ExoPlayer/)。
+在 iOS 上，`video_player` 使用
+[`AVPlayer`](https://developer.apple.com/documentation/avfoundation/avplayer) 
+进行播放控制。
+在 Android 上，使用的是 [`ExoPlayer`](https://google.github.io/ExoPlayer/)。
 
 This recipe demonstrates how to use the `video_player` package to stream a
 video from the internet with basic play and pause controls using
 the following steps:
 
-这个章节讲解的是如何借助 `video_player` 包接收网络视频流，并加入基本的播放、暂停操作。
+这个章节讲解的是如何借助 `video_player` 包接收网络视频流，
+并加入基本的播放、暂停操作。
 
 ## Directions
 
@@ -63,7 +70,8 @@ the following steps:
 This recipe depends on one Flutter plugin: `video_player`. First, add this
 dependency to your `pubspec.yaml`.
 
-这个章节基于一个 Flutter 插件： `video_player`。首先，添加依赖到 `pubspec.yaml` 中。
+这个章节基于一个 Flutter 插件： `video_player`。
+首先，添加依赖到 `pubspec.yaml` 中：
 
 ```yaml
 dependencies:
@@ -80,7 +88,8 @@ Next, update your `android` and `ios` configurations to ensure
 that your app has the correct permissions to stream videos
 from the internet.
 
-然后，你需要确保你的应用拥有从网络中获取视频流的权限。因此，你需要更新你的 `android` 和 `ios` 配置。
+然后，你需要确保你的应用拥有从网络中获取视频流的权限。
+因此，你需要更新你的 `android` 和 `ios` 配置。
 
 ### Android
 
@@ -90,14 +99,15 @@ Add the following permission to the `AndroidManifest.xml` file just after the
 `<application>` definition. The `AndroidManifest.xml` file is found at
 `<project root>/android/app/src/main/AndroidManifest.xml`.
 
-在 `AndroidManifest.xml` 文件中的 `<application>` 配置项下加入如下权限。`AndroidManifest.xml` 文件的路径是 `<project
-root>/android/app/src/main/AndroidManifest.xml`
+在 `AndroidManifest.xml` 文件中的 `<application>` 配置项下加入如下权限。
+`AndroidManifest.xml` 文件的路径是
+`<project root>/android/app/src/main/AndroidManifest.xml`
 
 <!-- skip -->
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application ...>
-        
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -111,7 +121,8 @@ root>/android/app/src/main/AndroidManifest.xml`
 For iOS, add the following to the `Info.plist` file found at 
 `<project root>/ios/Runner/Info.plist`. 
 
-针对 iOS，你需要在 `<project root>/ios/Runner/Info.plist` 路径下的 `Info.plist` 文件中加入如下配置。
+针对 iOS，你需要在 `<project root>/ios/Runner/Info.plist`
+路径下的 `Info.plist` 文件中加入如下配置。
 
 <!-- skip -->
 ```xml
@@ -228,20 +239,28 @@ By default, the `VideoPlayer` widget takes up as much space as possible.
 This often isn't ideal for videos because they are meant to be displayed in a
 specific aspect ratio, such as 16x9 or 4x3.
 
-现在到了展示播放器的时候。`video_player` 插件提供了 [`VideoPlayer`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html) 组件来展示已经被 `VideoPlayerController` 初始化完成的视频。默认情况下，`VideoPlayer` 组件会尽可能撑满整个空间。但是这通常不会太理想，因为很多时候视频需要在特定的宽高比下展示，比如 16x9 或者 4x3。
+现在到了展示播放器的时候。`video_player` 插件提供了
+[`VideoPlayer`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html) 
+组件来展示已经被 `VideoPlayerController` 初始化完成的视频。
+默认情况下，`VideoPlayer` 组件会尽可能撑满整个空间。
+但是这通常不会太理想，因为很多时候视频需要在特定的宽高比下展示，比如 16x9 或者 4x3。
 
 Therefore, wrap the `VideoPlayer` widget in an
 [`AspectRatio`]({{site.api}}/flutter/widgets/AspectRatio-class.html)
 widget to ensure that the video has the correct proportions.
 
-因此，你可以把 `VideoPlayer` 组件嵌进一个 [`AspectRatio`]({{site.api}}/flutter/widgets/AspectRatio-class.html) 组件中，保证视频播放保持正确的比例。
+因此，你可以把 `VideoPlayer` 组件嵌进一个
+[`AspectRatio`]({{site.api}}/flutter/widgets/AspectRatio-class.html) 
+组件中，保证视频播放保持正确的比例。
 
 Furthermore, you must display the `VideoPlayer` widget after the
 `_initializeVideoPlayerFuture()` completes. Use `FutureBuilder` to
 display a loading spinner until the controller finishes initializing.
 Note: initializing the controller does not begin playback.
 
-此外，你必须在 `_initializeVideoPlayerFuture` 完成后才展示 `VideoPlayer` 组件。你可以使用 `FutureBuilder` 来展示一个旋转的加载图标直到初始化完成。请注意：控制器初始化完成并不会立即开始播放。
+此外，你必须在 `_initializeVideoPlayerFuture` 完成后才展示 `VideoPlayer` 组件。
+你可以使用 `FutureBuilder` 来展示一个旋转的加载图标直到初始化完成。
+请注意：控制器初始化完成并不会立即开始播放。
 
 <!-- skip -->
 ```dart
@@ -278,13 +297,19 @@ method provided by the `VideoPlayerController`. To pause playback, call the
 [`pause()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html)
 method.
 
-默认情况下，播放器启动时会处于暂停状态。开始播放，需要调用 `VideoPlayerController` 提供的 [`play()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html) 方法。停止播放，需要调用 [`pause()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html) 方法。
+默认情况下，播放器启动时会处于暂停状态。开始播放，需要调用 `VideoPlayerController` 提供的
+[`play()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html) 方法。
+停止播放，需要调用
+[`pause()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html) 方法。
 
 For this example, add a `FloatingActionButton` to your app that displays a play
 or pause icon depending on the situation. When the user taps the button,
 play the video if it's currently paused, or pause the video if it's playing.
 
-在这个示例中，向应用加入了一个 `FloatingActionButton`，这个按钮会根据播放状态展示播放或者暂停的图标。当用户点击按钮，会切换播放状态。如果当前是暂停状态，就开始播放。如果当前是播放状态，就暂停播放。
+在这个示例中，向应用加入了一个 `FloatingActionButton`，
+这个按钮会根据播放状态展示播放或者暂停的图标。
+当用户点击按钮，会切换播放状态。
+如果当前是暂停状态，就开始播放。如果当前是播放状态，就暂停播放。
 
 <!-- skip -->
 ```dart
@@ -307,8 +332,8 @@ FloatingActionButton(
     _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
   ),
 )
-``` 
- 
+```
+
 ## Complete example
 
 ## 完整样例

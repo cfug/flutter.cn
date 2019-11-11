@@ -662,8 +662,8 @@ uses this property to pack the star icons together.
 ### 嵌套行和列
 
 The layout framework allows you to nest rows and columns inside of rows
-and columns as deeply as you need. Let's look the code for the outlined section
-of the following layout:
+and columns as deeply as you need. Let's look at the code for the outlined
+section of the following layout:
 
 布局框架允许你根据需要在行和列内嵌套行和列。让我们看看以下布局的概述部分的代码：
 

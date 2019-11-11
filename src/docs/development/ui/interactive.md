@@ -358,7 +358,7 @@ it. In the same location, create the stateful widget:
 将您自定义 stateful widget 在 `build()` 方法中添加到 widget 树中。首先，找到创建`图标`和`文本`的代码，并删除它，在相同的位置创建 stateful widget：
 
 <?code-excerpt path-base=""?>
-<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="/^ }/"?>
+<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="}"?>
 ```diff
 --- layout/lakes/step6/lib/main.dart
 +++ layout/lakes/interactive/lib/main.dart
@@ -378,10 +378,9 @@ it. In the same location, create the stateful widget:
          ],
        ),
      );
-@@ -117,3 +108,3 @@
+@@ -117,2 +108,2 @@
      );
    }
- }
 ```
 
 That's it! When you hot reload the app, the star icon should now respond to taps.

@@ -17,8 +17,8 @@ downloading and installing Flutter or Dart!
 {{site.alert.important}}
 
   This codelab covers basic Flutter layout concepts using an
-  experimental code editor called DartPad. 
-  DartPad hasn't been fully tested on all browsers. 
+  experimental code editor called DartPad.
+  DartPad hasn't been fully tested on all browsers.
   If you experience any difficulties while using DartPad
   on a specific browser, please create a [DartPad issue][]
   and specify which browser you're using in the issue title.
@@ -40,7 +40,7 @@ A widget is an immutable object that describes a specific part of a UI.
 You'll also learn that Flutter widgets are composable, meaning,
 that you can combine existing widgets to make more sophisticated widgets.
 At the end of this codelab,
-you'll get to apply what you've learned 
+you'll get to apply what you've learned
 into building a Flutter UI that displays a business card.
 
 Flutter 与其他框架有着明显的差异，
@@ -60,11 +60,11 @@ Widget 是一个不会改变的对象，它是 UI 中一个特定部分的描述
 
 ## Row 和 Column 类
 
-`Row` and `Column` are classes that contain and lay out widgets. 
-Widgets inside of a `Row` or `Column` are called *children*, 
-and `Row` and `Column` are referred to as *parents*. 
-`Row` lays out its widgets horizontally, 
-and `Column` lays out its widgets vertically. 
+`Row` and `Column` are classes that contain and lay out widgets.
+Widgets inside of a `Row` or `Column` are called *children*,
+and `Row` and `Column` are referred to as *parents*.
+`Row` lays out its widgets horizontally,
+and `Column` lays out its widgets vertically.
 
 `Row` 和 `Column` 是两个用来容纳和布局 Widgets 的类。
 在它们内部的 Widgets 我们称为 *children*，
@@ -80,7 +80,7 @@ and `Column` lays out its widgets vertically.
 {{site.alert.secondary}}
 
   The following example displays the differences between
-  a `Row` and `Column`. 
+  a `Row` and `Column`.
 
   下面的样例将会显示 `Row` 和 `Column` 的区别。
 
@@ -96,7 +96,7 @@ and `Column` lays out its widgets vertically.
 {% comment %}
   Gist: https://gist.github.com/4e11c4a7ec824685f963f25d7c30ba0b
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=4e11c4a7ec824685f963f25d7c30ba0b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> 
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=4e11c4a7ec824685f963f25d7c30ba0b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Axis size and alignment
 
@@ -114,12 +114,12 @@ out using the axis size and alignment properties.
 
 ### mainAxisSize 属性
 
-`Row` and `Column` occupy different main axes. 
-A `Row`'s main axis is horizontal, 
-and a `Column`'s main axis is vertical. 
+`Row` and `Column` occupy different main axes.
+A `Row`'s main axis is horizontal,
+and a `Column`'s main axis is vertical.
 The `mainAxisSize` property determines how much
 space a `Row` and `Column` can occupy on their main axes.
-The `mainAxisSize` property has two possible values: 
+The `mainAxisSize` property has two possible values:
 
 `Row` 和 `Column`分别占据了不同的主轴。`Row` 的主轴是水平的。
  `mainAxisSize` 决定了 `Row` 和 `Column` 能够在主轴上占据多大空间。
@@ -127,8 +127,8 @@ The `mainAxisSize` property has two possible values:
 
 `MainAxisSize.max`
 <br> `Row` and `Column` occupy all of the space on their main axes.
-  If the combined width of their children is 
-  less than the total space on their main axes, 
+  If the combined width of their children is
+  less than the total space on their main axes,
   their children are laid out with extra space.
 
 `MainAxisSize.max`
@@ -138,7 +138,7 @@ The `mainAxisSize` property has two possible values:
 `MainAxisSize.min`
 <br> `Row` and `Column` only occupy enough space on their main axes
   for their children. Their children are laid out without extra space
-  and at the middle of their main axes. 
+  and at the middle of their main axes.
 
 `MainAxisSize.min`
 <br>  `Row` 和 `Column` 仅占据它的 children 在主轴上所需的空间，
@@ -146,10 +146,10 @@ The `mainAxisSize` property has two possible values:
 
 {{site.alert.tip}}
 
-  `MainAxisSize.max` is the `mainAxisSize` property's default value. 
-  If you don't specify another value, 
-  the default value is used, 
-  as shown in the previous example. 
+  `MainAxisSize.max` is the `mainAxisSize` property's default value.
+  If you don't specify another value,
+  the default value is used,
+  as shown in the previous example.
 
   `mainAxisSize` 默认为 `MainAxisSize.max`。
   如果你不特别指定其他的值，就会使用默认值，就像我们前一个样例中展示的那样。
@@ -174,7 +174,7 @@ The `mainAxisSize` property has two possible values:
        点击**运行**按钮。
 
 **2.** Change `MainAxisSize.max` to `MainAxisSize.min`,
-         and run again.
+       and run again.
 
        将 `MainAxisSize.max` 改为 `MainAxisSize.min`，并再次运行。 
 
@@ -188,11 +188,11 @@ The `mainAxisSize` property has two possible values:
 
 ### mainAxisAlignment 属性 
 
-When `mainAxisSize` is set to `MainAxisSize.max`, 
-`Row` and `Column` might lay out their children with extra space. 
-The `mainAxisAlignment` property determines how `Row` and `Column` 
-can position their children in that extra space. 
-`mainAxisAlignment` has six possible values: 
+When `mainAxisSize` is set to `MainAxisSize.max`,
+`Row` and `Column` might lay out their children with extra space.
+The `mainAxisAlignment` property determines how `Row` and `Column`
+can position their children in that extra space.
+`mainAxisAlignment` has six possible values:
 
 当 `mainAxisSize` 被设为 `MainAxisSize.max`,
 `Row` 和 `Column` 将会使用额外空间来对齐它的 children。
@@ -235,8 +235,8 @@ can position their children in that extra space.
 `MainAxisAlignment.spaceAround`
 <br> Similar to `MainAxisAlignment.spaceEvenly`,
   but reduces half of the space before the first
-  child and after the last child 
-  to half of the width between the children. 
+  child and after the last child
+  to half of the width between the children.
 
 `MainAxisAlignment.spaceAround`
 <br> 与 `MainAxisAlignment.spaceEvenly` 相似，
@@ -252,7 +252,7 @@ can position their children in that extra space.
 {{site.alert.secondary}}
 
   The following example explicitly sets
-  `mainAxisAlignment` to its default value, 
+  `mainAxisAlignment` to its default value,
   `MainAxisAlignment.start`.
 
   下面的样例将特别指定 `mainAxisAlignment` 为其默认值，
@@ -288,36 +288,33 @@ can position their children in that extra space.
 
 The `crossAxisAlignment` property determines 
 how `Row` and `Column` can position their children
-on their cross axes. 
+on their cross axes.
 A `Row`'s cross axis is vertical,
-and a `Column`'s cross axis is horizontal. 
-Most of the `crossAxisAlignment` property's values
-only work with the `Row` class. 
+and a `Column`'s cross axis is horizontal.
 The `crossAxisAlignment` property has five possible values:
 
 `crossAxisAlignment` 属性决定了 `Row` 和 `Column`
 能够如何在其横轴上定位 children。
-`Row` 的横轴是竖直的，而 `Column` 则是水平的。
-绝大多数 `crossAxisAlignment` 属性仅在 `Row` 中生效。
+`Row` 的横轴是竖直的，而 `Column` 则是水平的，
 `crossAxisAlignment` 属性有五个可选属性：
 
 `CrossAxisAlignment.start`
-<br> Positions children near the top of the cross axis. (`Row` only)
+<br> Positions children near the start of the cross axis. (Top for `Row`, Left for `Column`)
 
 `CrossAxisAlignment.start`
-<br> 将其 children 横轴顶部对齐。（只在 `Row` 中生效）
+<br> 将其 children 横轴顶部对齐。（顶部是 `Row`，左侧是 `Column`）
 
 `CrossAxisAlignment.end`
-<br> Positions children near the bottom of the cross axis. (`Row` only)
+<br> Positions children near the end of the cross axis. (Bottom for `Row`, Right for `Column`)
 
 `CrossAxisAlignment.end`
-<br> 将其 children 横轴底部对齐。（只在 `Row` 中生效）
+<br> 将其 children 横轴底部对齐。（底部是 `Row`，右侧是 `Column`）
 
 `CrossAxisAlignment.center`
-<br> Positions children at the middle of the cross axis. (`Row` only)
+<br> Positions children at the middle of the cross axis. (Middle for `Row`, Center for `Column`)
 
 `CrossAxisAlignment.center`
-<br> 将其 children 横轴中心对齐。（只在 `Row` 中生效）
+<br> 将其 children 横轴中心对齐。（中间是 `Row`，中心是 `Column`）
 
 `CrossAxisAlignment.stretch`
 <br> Stretches children across the cross axis. 
@@ -348,7 +345,7 @@ The `crossAxisAlignment` property has five possible values:
 {{site.alert.secondary}}
 
   The following example explicitly sets `crossAxisAlignment`
-  to its default value, `CrossAxisAlignment.center`. 
+  to its default value, `CrossAxisAlignment.center`.
 
   下面的样例将特别指定 `crossAxisAlignment` 为其默认值，
    `CrossAxisAlignment.center`。
@@ -357,7 +354,7 @@ The `crossAxisAlignment` property has five possible values:
   `mainAxisAlignment` is set to
  `MainAxisAlignment.spaceAround`,
   and `Row` now contains a `BiggerBlueBox` widget
-  that is taller than the `BlueBox` widgets. 
+  that is taller than the `BlueBox` widgets.
 
   为了演示横轴对齐方式，`mainAxisAlignment` 被设为
   `MainAxisAlignment.spaceAround`，`Row` 现在包含一个比
@@ -368,9 +365,10 @@ The `crossAxisAlignment` property has five possible values:
        点击**运行**按钮
 
 **2.** Change `CrossAxisAlignment.center` to
-         `CrossAxisAlignment.start`, and run again.
+       `CrossAxisAlignment.start`, and run again.
 
-       将 `CrossAxisAlignment.center` 改为 `CrossAxisAlignment.start`，并再次运行。
+       将 `CrossAxisAlignment.center` 改为 
+       `CrossAxisAlignment.start`，并再次运行。
 
 {{site.alert.end}}
 {% comment %}
@@ -389,8 +387,8 @@ The `crossAxisAlignment` property has five possible values:
 ## Flexible widget
 
 As you've seen, the `mainAxisAlignment` and
-`crossAxisAlignment` properties determine 
-how `Row` and `Column` position widgets along both axes. 
+`crossAxisAlignment` properties determine
+how `Row` and `Column` position widgets along both axes.
 `Row` and `Column` first lay out widgets of a fixed size.
 Fixed size widgets are considered *inflexible* because
 they can't resize themselves after they've been laid out.
@@ -401,10 +399,10 @@ they can't resize themselves after they've been laid out.
 固定大小的小部件被认为是 **不灵活的** 因为它们布局后无法自我调整大小。
 
 The `Flexible` widget wraps a widget,
-so the widget becomes resizable. 
+so the widget becomes resizable.
 When the `Flexible` widget wraps a widget,
-the widget becomes the `Flexible` widget's child 
-and is considered *flexible*. 
+the widget becomes the `Flexible` widget's child
+and is considered *flexible*.
 After inflexible widgets are laid out,
 the widgets are resized according to their
 `flex` and `fit` properties.:
@@ -450,10 +448,10 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   <br> 使用 Widget 的自身作为首选大小。（默认情况下）
 
   `FlexFit.tight`
-  <br> Forces the widget to fill all of its extra space. 
+  <br> Forces the widget to fill all of its extra space.
   
   `FlexFit.tight`
-  <br> 强制 Widget 充满所有剩余空间。
+  <br> 强制 widget 充满所有剩余空间。
 
   In this example, change the `fit` properties to
   make the `Flexible` widgets fill the extra space.
@@ -461,12 +459,12 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   在这个样例中，改变 `fit` 属性使 `Flexible` widgets
   能够填充剩余空间。
 
-**1.** Click the **Run** button. 
+**1.** Click the **Run** button.
 
        点击**运行**按钮
 
 **2.** Change both `fit` values to `FlexFit.tight`, 
-         and run again.
+       and run again.
 
        将所有 `fit` 的值设为 `FlexFit.tight`，并再次运行。
 
@@ -485,7 +483,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 {{site.alert.secondary}}
 
   In the following example,
-  `Row` contains one `BlueBox` widget 
+  `Row` contains one `BlueBox` widget
   and two `Flexible` widgets that wrap two
   `BlueBox` widgets.  The `Flexible` widgets
   contain `flex` properties with `flex`
@@ -509,7 +507,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 
   In this example, the sum of the `flex` values (2),
   determines that both `Flexible` widgets receive
-  half of the total remaining space. 
+  half of the total remaining space.
   The `BlueBox` widget (or fixed-size widget)
   remains the same size.
 
@@ -524,7 +522,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 {{site.alert.tip}}
 
   Before moving to the next example,
-  try changing the `flex` properties to other values, 
+  try changing the `flex` properties to other values,
   such as 2 and 1.
 
   在阅读下个样例之前，尝试将 `flex` 属性转换为其他值，例如 2 和 1。
@@ -534,7 +532,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 ## Expanded widget
 
 Similar to `Flexible`, the `Expanded` widget can
-wrap a widget and force the widget to fill extra space. 
+wrap a widget and force the widget to fill extra space.
 
 `Expanded` widget 能够包裹一个 Widget 并强制其填满剩余空间，
 与 `Flexible` 非常相似。
@@ -542,7 +540,7 @@ wrap a widget and force the widget to fill extra space.
 {{site.alert.tip}}
   
   **What's the difference between Flexible and Expanded?**
-  Use `Flexible` to resize widgets in a `Row` or `Column`. 
+  Use `Flexible` to resize widgets in a `Row` or `Column`.
   That way, you can adjust a child widget's spacing
   while keeping its size in relation to its parent widget.
   `Expanded` changes the constraints of a child widget,
@@ -582,7 +580,8 @@ For example:
 ```dart
 Expanded(child: BlueBox(),),
 ```
-**3.** Select the **Format** button to properly format the code, and run again. 
+**3.** Select the **Format** button to properly format the code,
+       and run again. 
         
        点击 **Format (格式化)** 按钮格式化你的代码，再重新运行一次。
          
@@ -598,7 +597,7 @@ The `SizedBox` widget can be used in one of two ways when
 creating exact dimensions.
 When `SizedBox` wraps a widget, it resizes the widget
 using the `height` and `width` properties.
-When it doesn't wrap a widget, 
+When it doesn't wrap a widget,
 it uses the `height` and `width` properties to
 create empty space.
 
@@ -646,7 +645,7 @@ create empty space.
   The following example contains three `BlueBox` widgets
   and one `SizedBox` widget that separates the first
   and second `BlueBox` widgets. The `SizedBox` widget
-  contains a `width` property equal to 50 logical pixels. 
+  contains a `width` property equal to 50 logical pixels.
 
   下面的样例将会包含三个 `BlueBox` widget，
   其中 第一个和第二个 `BlueBox` widget 包裹 `SizedBox`。
@@ -681,7 +680,7 @@ can create space between widgets.
 
   **What's the difference between SizedBox and Spacer?**
   Use `Spacer` when you want to create space using a `flex` property.
-  Use `SizedBox` when you want to create space 
+  Use `SizedBox` when you want to create space
   using a specific number of logical pixels.
 
   **SizedBox 和 Spacer 有何不同？**
@@ -710,9 +709,10 @@ can create space between widgets.
        点击**运行**按钮
 
 **2.** Add another `Spacer` widget (also with a `flex` value of 1)
-         between the second and third `BlueBox` widgets.
+       between the second and third `BlueBox` widgets.
 
        在第二个和第三个 `BlueBox` widget 之间添加另一个 `Spacer` widget。（flex 值仍然为 1）
+
 
 {{site.alert.end}}
 {% comment %}
@@ -723,7 +723,7 @@ can create space between widgets.
 ## Text widget
 
 The `Text` widget displays text and can be configured
-for different fonts, sizes, and colors. 
+for different fonts, sizes, and colors.
 
 `Text` widget 不仅能够显示文字，并能够配置不同的字体，大小和颜色。
 
@@ -734,10 +734,11 @@ for different fonts, sizes, and colors.
 {:.no_toc}
 
 {{site.alert.secondary}}
+  
   The following example displays "Hey!" three times,
   but at different font sizes and in different colors.
   `Row` specifies the `crossAxisAlignment`
-  and `textBaseline` properties. 
+  and `textBaseline` properties.
 
   下面的样例将会显示三次"Hey!"，但是使用不同的字体和不同颜色。
   特别指定 `Row` 的 `crossAxisAlignment` 和 `textBaseline` 属性。
@@ -747,7 +748,7 @@ for different fonts, sizes, and colors.
        点击**运行**按钮
 
 **2.** Change `CrossAxisAlignment.center` to
-         `CrossAxisAlignment.baseline`, and run again.
+       `CrossAxisAlignment.baseline`, and run again.
 
        将 `CrossAxisAlignment.center` 改为 `CrossAxisAlignment.baseline`，然后再次运行。
        
@@ -759,9 +760,9 @@ for different fonts, sizes, and colors.
 
 ## Icon widget
 
-The `Icon` widget displays a graphical symbol 
-that represents an aspect of the UI. 
-Flutter is preloaded with icon packages for 
+The `Icon` widget displays a graphical symbol
+that represents an aspect of the UI.
+Flutter is preloaded with icon packages for
 [Material][] and [Cupertino][] applications.
 
 `Icon` Widget 能够显示图形符号，这代表了 UI 的一个方面。
@@ -786,7 +787,7 @@ Flutter 将会为 [Material][] 和 [Cupertino][]
 
 **2.** Add another `Icon` from the 
          [Material Icon library][]
-         with a size of 50. 
+         with a size of 50.
 
        添加另一个来自 [Material Icon library][] 的 `Icon` 并将其大小设为 50。
 
@@ -801,7 +802,7 @@ Flutter 将会为 [Material][] 和 [Cupertino][]
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=01688fca8c13f85d93078054af2e858b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
-## Image widget 
+## Image widget
 
 The `Image` widget displays an image.
 You either can reference images using a URL,
@@ -822,7 +823,7 @@ the following example uses an image from the network.
 {{site.alert.secondary}}
 
   The following example displays an image that's
-  stored remotely on [GitHub][]. 
+  stored remotely on [GitHub][].
   The `Image.network` method takes a string
   parameter that contains an image's URL.
 
@@ -854,7 +855,7 @@ the following example uses an image from the network.
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=b6f3084800bd139cdb522b8858bb58b7&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
-## Putting it all together 
+## Putting it all together
 
 ## 综合练习
 
@@ -868,32 +869,32 @@ displays a business card!
 为何不讲这些结合起来，构建一个显示名片的 Flutter UI 呢！
 
  ![Completed business card]({% asset codelab/layout/businesscarddisplay1.png
- @path%}){:width="400px"}{:.text-center} 
+ @path%}){:width="400px"}{:.text-center}
 
 You'll break down Flutter's layout into parts,
 which is how you'd create a Flutter UI in the real world.
 
 你将会把 Flutter 的布局分解成几个部分，这就是如何在实际开发中构建 Flutter UI 方式！
 
-In [Part 1](#part-1), 
-you'll implement a `Column` that contains the name and title. 
-Then you'll wrap the `Column` in a `Row` that contains the icon, 
-which is positioned to the left of the name and title. 
+In [Part 1](#part-1),
+you'll implement a `Column` that contains the name and title.
+Then you'll wrap the `Column` in a `Row` that contains the icon,
+which is positioned to the left of the name and title.
 
 在[第一部分](#part-1), 你将会实现包含姓名和标题的 `Column`。
 然后你将会在 `Column` 包裹一个含有 icon 的 `Row`，
 它将会被放在姓名和标题的左边。
 
  ![Completed business card]({% asset codelab/layout/businesscarddisplay2.png
- @path%}){:width="400px"}{:.text-center} 
+ @path%}){:width="400px"}{:.text-center}
 
 In [Part 2](#part-2), you'll wrap the `Row` in a `Column`,
 so the code contains a `Column` within a `Row` within a `Column`.
 Then you'll tweak the outermost `Column`'s layout,
 so it looks nice.
-Finally, you'll add the contact information 
-to the outermost `Column`'s list of children, 
-so it's displayed below the name, title, and icon. 
+Finally, you'll add the contact information
+to the outermost `Column`'s list of children,
+so it's displayed below the name, title, and icon.
 
 在[第二部分](#part-2)中，你将会在 `Row` 外包裹一个 `Column`，
 所以你的代码中就包含了
@@ -902,11 +903,11 @@ so it's displayed below the name, title, and icon.
 所以它将显示在名称，标题和图标下方。
 
  ![Completed business card]({% asset codelab/layout/businesscarddisplay3.png
- @path%}){:width="400px"}{:.text-center} 
+ @path%}){:width="400px"}{:.text-center}
 
 In [Part 3](#part-3), you'll finish building
-the business card display by adding four more icons, 
-which are positioned below the contact information.  
+the business card display by adding four more icons,
+which are positioned below the contact information.
 
 在[第三部分](#part-3)，你将会完成添加了更多图标的名片，
 它们会被放在联系信息的下方。
@@ -929,7 +930,7 @@ which are positioned below the contact information.
 
 {{site.alert.secondary}}
 
-  Implement a `Column` that contains two text widgets: 
+  Implement a `Column` that contains two text widgets:
 
   实现含有两个 Text Widget 的 `Column`：
 
@@ -995,7 +996,7 @@ which are positioned below the contact information.
 </ul>
 
   ```dart
-     Row( 
+     Row(
        children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -1003,7 +1004,7 @@ which are positioned below the contact information.
         ),
         Column( ... ), // <--- The Column you first implemented
       ],
-     );   
+     );
   ```
 {{site.alert.end}}
 {% comment %}
@@ -1024,10 +1025,10 @@ which are positioned below the contact information.
 {:.no_toc}
 
 {{site.alert.secondary}}
-  
+
   Wrap the `Row` in a `Column` that has a `mainAxisSize`
   property set to `MainAxisSize.min` and a
-  `crossAxisAlignment` property set to `CrossAxisAlignment.stretch`. 
+  `crossAxisAlignment` property set to `CrossAxisAlignment.stretch`.
   The `Column` contains the following widgets:
 
   将 `Column` 包裹在 `Row` 外面，并将其 `mainAxisSize` 属性设为 `MainAxisSize.min`，
@@ -1039,7 +1040,7 @@ which are positioned below the contact information.
     一个高度为 8 的 `SizedBox` widget。
 
   * An empty `Row` where you'll add the contact information in
-    a later step. 
+    a later step.
 
     一个空的 `Row`，你等会将用它来添加联系方式。
 
@@ -1054,7 +1055,7 @@ which are positioned below the contact information.
 
   The `Column`'s list of widgets should be formatted as follows, 
   so the contact information and icons are displayed below the
-  name and title: 
+  name and title:
 
   `Column` Widget 的列表格式应该如下一样，
   联系信息和图标显示在名称和头衔下方：
@@ -1067,7 +1068,7 @@ which are positioned below the contact information.
     Row(), // First empty Row
     SizedBox(),
     Row(), // Second empty Row
-   ], 
+   ],
   ); // <--- Closing parenthesis for the Column that wraps the Row
 
   ```
@@ -1078,7 +1079,7 @@ which are positioned below the contact information.
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=c3ac34ed8952724a0ecb0af1445c2af8&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
-#### Exercise: Enter contact information 
+#### Exercise: Enter contact information
 {:.no_toc}
 
 #### 练习：输入联系信息
@@ -1099,7 +1100,7 @@ which are positioned below the contact information.
   </li>
 </ul>
 
-  For the first empty `Row`, 
+  For the first empty `Row`,
   set the `mainAxisAlignment` property to
   `MainAxisAlignment.spaceBetween`.
 
@@ -1134,7 +1135,7 @@ which are positioned below the contact information.
   * `Icons.phone_android`
   * `Icons.phone_iphone`
 
-  For the second empty `Row`, 
+  For the second empty `Row`,
   set the `mainAxisAlignment` property to
   `MainAxisAlignment.spaceAround`.
 
@@ -1147,13 +1148,13 @@ which are positioned below the contact information.
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=dae36611fc9af04c4b9d0fbc3429275e&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
-## What's next? 
+## What's next?
 
 ## 下一步是什么？
 
 Congratulations, you've finished this codelab!
 If you'd like to know more about Flutter,
-here are a few suggestions for resources worth exploring: 
+here are a few suggestions for resources worth exploring:
 
 恭喜你，已经完成了这个 codelab！
 如果你想要了解关于 Flutter 的更多信息，这里有些值得探索的资源要推荐给你：
@@ -1169,7 +1170,7 @@ here are a few suggestions for resources worth exploring:
 
 * Visit [Flutter's YouTube channel][], 
   where you can watch a variety videos from
-  videos that focus on individual widgets 
+  videos that focus on individual widgets
   to videos of developers building apps.
 
   访问 [Flutter's YouTube channel][]，你将能够观看大量
@@ -1181,11 +1182,11 @@ You can download Flutter from the [install][] page.
 
 [Building layouts]: /docs/development/ui/layout
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new 
-[Flutter's YouTube channel]: https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw 
-[GitHub]: {{site.github}}/flutter/website/tree/master/examples/layout/sizing/images 
-[install]: /docs/get-started/install 
+[DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new
+[Flutter's YouTube channel]: https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw
+[GitHub]: {{site.github}}/flutter/website/tree/master/examples/layout/sizing/images
+[install]: /docs/get-started/install
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html
-[Material Color palette]: {{site.api}}/flutter/material/Colors-class.html 
+[Material Color palette]: {{site.api}}/flutter/material/Colors-class.html
 [Material Icon library]: {{site.api}}/flutter/material/Icons-class.html
-[sample apps]: {{site.github}}/flutter/samples/blob/master/INDEX.md 
+[sample apps]: {{site.github}}/flutter/samples/blob/master/INDEX.md

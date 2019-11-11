@@ -147,7 +147,7 @@ many others:
 等你准备好部署应用时，将 release 包上传到 Firebase、云或者是类似服务上：
 
 * [Firebase Hosting][]
-* [Github Pages][]
+* [GitHub Pages][]
 * [Google Cloud Hosting][]
 
 In future, we plan to generate PWA configuration files

@@ -1,8 +1,8 @@
 ---
 title: "Binding to native code using dart:ffi"
-title: 使用 dart:ffi 调用原生代码（预览版）
-description: "To use C code in your Flutter program, use the dart:ffi library (currently in preview)."
-description: "在你的 Flutter 工程里使用 C 语言代码，可以通过 dart:ffi 库来实现（预览版）"
+title: 使用 dart:ffi 调用原生代码
+description: "To use C code in your Flutter program, use the dart:ffi library (currently in beta)."
+description: "在你的 Flutter 工程里使用 C 语言代码，可以通过 dart:ffi 库来实现（Beta 测试版）"
 ---
 
 Flutter mobile can use the [dart:ffi][] library
@@ -25,9 +25,8 @@ that implements 32-bit addition and then
 exposes it through a Dart plugin named "native_add".
 
 {{ site.alert.note }}
-  The dart:ffi library is [in active development][ffi issue]
-  and isn't complete yet. Note that the API is likely to have
-  breaking changes between now and its completion.
+  The dart:ffi library is [in beta][ffi issue],
+  and breaking API changes might still happen.
 
   Using the feature requires a Flutter 1.10.x
   dev channel build. To switch to the dev channel and

@@ -87,6 +87,12 @@ in particular, its list of [other resources][].
 关于调试、分析 Flutter 应用程序的更多详细，
 请查阅 [调试][] 页面，尤其是 [其他资源][] 列表。
 
+For more information on using DevTools with Dart command-line apps, see the 
+[DevTools documentation on dart.dev]({{site.dart-site}}/tools/dart-devtools).
+
+如果你希望知道更多如何在命令行下使用开发者工具 (DevTools) 的话，
+请参考这个页面 [Dart 开发者工具]({{site.dart-site}}/tools/dart-devtools).
+
 [Android Studio/IntelliJ]: /docs/development/tools/devtools/android-studio
 [VS Code]: /docs/development/tools/devtools/vscode
 [command line]: /docs/development/tools/devtools/cli

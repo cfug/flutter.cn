@@ -106,6 +106,7 @@ by the Flutter community:
 
 * [Flutter state management&mdash;scoped
   model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
+* [Making sense all of those Flutter Providers](https://medium.com/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd)
 
   [Flutter 的状态管理&mdash;Scoped Model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
 

@@ -8,7 +8,7 @@ toc: false
 
 Create beautiful apps faster with Flutter's collection of visual, structural,
 platform, and interactive widgets. In addition to browsing widgets by category,
-you can also see all the widgets in the [widget index](/docs/reference/widgets).
+you can also see all the widgets in the [widget index][].
 
 借助 Flutter 上关于视觉、结构、平台和交互的 widgets，我们可以快速创建出色的应用程序。
 除了能够按照如下类别浏览 widgets，你还可以在 [Flutter Widget 目录](/docs/reference/widgets) 中查看所有的 widgets。
@@ -27,3 +27,6 @@ you can also see all the widgets in the [widget index](/docs/reference/widgets).
     </div>
 {% endfor %}
 </div>
+
+
+[widget index]: /docs/reference/widgets

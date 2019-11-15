@@ -42,6 +42,10 @@ Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下
    
   [在你的 Flutter 应用后端中使用 Firestore][video-bilibili] (视频)
 
+* [Use Firebase to host your Flutter app on the web][article]
+
+  [使用 Firebase 来部署你的 Flutter Web 应用][article]
+
 * [FlutterFire plugins][]
 
   [FlutterFire 插件][FlutterFire plugins]
@@ -71,18 +75,19 @@ videos that you might find useful:
 
   [使用 Flutter & Firebase 进行验证 01][video3] (video)
 
-* [Flutter: Firebase Tutorial Part 1 | Auth and Sign in][video4] (video)
+* [Flutter: Firebase Tutorial Part 1 - Auth and Sign in][video4] (video)
 
   [Flutter: Firebase 教程第一部分|验证与登陆][video4] (video)
 
+[article]: {{site.medium}}/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
+[chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
+[codelab]: {{site.codelabs}}/codelabs/flutter-firebase
 [Flutterfire plugins]: {{site.github}}/FirebaseExtended/flutterfire
 [Firebase docs]: {{site.firebase}}/docs
-[codelab]: {{site.codelabs}}/codelabs/flutter-firebase
 [started]: {{site.firebase}}/docs/flutter/setup
 [video]: https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s
 [video2]: https://www.youtube.com/watch?v=OlcYP6UXlm8
 [video3]: https://www.youtube.com/watch?v=u_Lyx8KJWpg
 [video4]: https://www.youtube.com/watch?v=13-jNF984C0
-[chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
 [video-bilibili]: https://www.bilibili.com/video/av55809997/
 [codelab-cn]: {{site.codelabs}}/codelabs/flutter-firebase-cn/index.html

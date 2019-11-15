@@ -53,16 +53,17 @@ For illustration, consider the following simple app.
 
 为了演示效果，我们实现下面这个简单应用。
 
-The app has three separate screens: a login prompt, a catalog,
-and a cart (represented by the `MyLoginScreen`, `MyCatalog`,
+The app has two separate screens: a catalog,
+and a cart (represented by the `MyCatalog`,
 and `MyCart` widgets, respectively). It could be a shopping app,
 but you can imagine the same structure in a simple social networking
 app (replace catalog for "wall" and cart for "favorites").
 
-程序有三个独立的页面：一个登陆提示，一个类别页面，
-一个购物车页面（分别用 `MyLoginScreen`, `MyCatalog`，`MyCart` widget 来展示）。
+这个应用有两个独立的页面：一个类别页面和一个购物车页面
+（分别用 `MyCatalog`，`MyCart` widget 来展示）。
 虽然看上去是一个购物应用程序，
-但是你也可以和社交网络应用类比（把类别页面替换成朋友圈，把购物车替换成关注的人）。
+但是你也可以和社交网络应用类比
+（把类别页面替换成朋友圈，把购物车替换成关注的人）。
 
 The catalog screen includes a custom app bar (`MyAppBar`)
 and a scrolling view of many list items (`MyListItems`).
@@ -76,7 +77,7 @@ Here's the app visualized as a widget tree.
 
 <!--{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="A widget tree with MyApp at the top, and MyLoginScreen, MyCatalog and MyCart below it. MyLoginScreen and MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems." %}-->
 
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="MyApp 位于 widget 树的最顶部，然后下面是 MyLoginScreen， MyCatalog 和 MyCart。MyLoginScreen 和 MyCart 是 widget 树的叶子节点。MyCatalog 有两个子节点: MyAppBar 和 MyListItem 列表。" %}
+{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="MyApp 位于 widget 树的最顶部，然后下面是 MyCatalog 和 MyCart。MyCart 是 widget 树的叶子节点。MyCatalog 有两个子节点: MyAppBar 和 MyListItem 列表。" %}
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx

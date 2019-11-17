@@ -81,7 +81,7 @@ create a basic todo app that tests three features:
 
      点击 `FloatingActionButton`，把文本加入到待办清单列表
 
-  3. Swiping-to-dismiss toe remove the item from the list.
+  3. Swiping-to-dismiss to remove the item from the list.
 
      滑动移除列表中的待办清单项
 

@@ -188,7 +188,7 @@
 - title: 测试和调试
   permalink: /docs/testing
   children:
-    - title: 调试 Flutter 应用
+    - title: 调试工具
       permalink: /docs/testing/debugging
     - title: Debugging apps programmatically
       permalink: /docs/testing/code-debugging
@@ -196,6 +196,8 @@
       permalink: /docs/testing/oem-debuggers
     - title: 构建模式 (Debug/Release/Profile)
       permalink: /docs/testing/build-modes
+    - title: 处理错误
+      permalink: /docs/testing/errors
     - title: 测试 Flutter 应用
       permalink: /docs/testing
       match-page-url-exactly: true

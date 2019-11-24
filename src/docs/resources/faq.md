@@ -215,11 +215,11 @@ Toolkit](https://developers.googleblog.com/2018/12/flutter-10-googles-portable-u
 
 ### 用 Flutter 开发时可以使用哪些编辑器或 IDE？
 
-We support plugins for [AndroidStudio][],
-[IntelliJ IDEA][],
-and [VS Code][].
+We support plugins for [Android Studio][],
+[IntelliJ IDEA][], and [VS Code][].
 
-可以通过插件的方式使用 [AndroidStudio][]、[IntelliJ IDEA][] 和 [VS Code][] 进行 Flutter 开发。
+可以通过插件的方式使用
+[Android Studio][]、[IntelliJ IDEA][] 和 [VS Code][] 开发 Flutter 应用。
 
 See [editor configuration][] for setup details,
 and [Android Studio/IntelliJ][] and [VS Code][]
@@ -1150,7 +1150,7 @@ which makes heavy use of the functional style (map, reduce, where, etc), is
 frequently used to process lists of values in the framework.
 
 **函数式编程 (functional programming)** 
-：整个应用都可以只用 [StatelessWidget][] 来构建���它本质上就是一些方法，用来描述如何将参数传送给其他方法，以及在布局区域内计算布局以及绘制图像。当然这样的应用一般也不会包含状态，所以通常也无法进行交互。比如，[Icon][] widget 就只是一个将其元素 ([颜色][color]、[图标][icon]、[尺寸][size]) 罗列在布局区域内的方法。另外，当这个范式被重度使用时，则会使用不可变的数据结构，如整个 [Widget][] 类及其���生，以及一些辅助类，如 [Rect][] 和 [TextStyle][]。另外，从一个较小的尺度来看的话，Dart 的 [Iterable][] API 也重度使用了这个范式 (如 map, reduce, where 等方法)，它在框架中经常被用来处理一系列的值。
+：整个应用都可以只用 [StatelessWidget][] 来构建���它本质上就是一些方法，用来描述如何将参数传送给其他方法，以及在布局区域内计算布局以及绘制图像。当然这样的应用一般也不会包含状态，所以通常也无法���行交互。比如，[Icon][] widget 就只是一个将其元素 ([颜色][color]、[图标][icon]、[尺寸][size]) 罗列在布局区域内的方法。另外，当这个范式被重度使用时，则会使用不可变的数据结构，如整个 [Widget][] 类及其���生，以及一些辅助类，如 [Rect][] 和 [TextStyle][]。另外，从一个较小的尺度来看的话，Dart 的 [Iterable][] API 也重度使用了这个范式 (如 map, reduce, where 等方法)，它在框架中经常被用来处理一系列的值。
 
 **Event-driven programming** 
 : User interactions are represented by event objects

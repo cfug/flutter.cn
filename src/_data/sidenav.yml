@@ -243,13 +243,9 @@
   children:
     - title: Dart 资源列表
       permalink: /docs/resources/bootstrap-into-dart
-<<<<<<< HEAD
-    - title: Flutter 工作原理
-=======
-    - title: Compatibility policy
+    - title: Flutter 兼容性策略
       permalink: /docs/resources/compatibility
-    - title: Inside Flutter
->>>>>>> 050564a74b41a5aa17483faa75e991e35a45b326
+    - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations

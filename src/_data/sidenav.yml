@@ -177,7 +177,9 @@
             - title: 版本升级
               permalink: /docs/development/tools/sdk/upgrading
             - title: 版本列表
-              permalink: /docs/development/tools/sdk/releases
+              permalink: /docs/development/tools/sdk/archive
+            - title: 重要改动 (Breaking changes)
+              permalink: /docs/release/breaking-changes
         - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式化
@@ -241,6 +243,8 @@
   children:
     - title: Dart 资源列表
       permalink: /docs/resources/bootstrap-into-dart
+    - title: Flutter 兼容性策略
+      permalink: /docs/resources/compatibility
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
     - title: 平台行为差异和适配

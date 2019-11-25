@@ -62,4 +62,4 @@ Set up your preferred editor.
 编辑器设置。
 
 [Git for Windows]: https://git-scm.com/download/win
-[Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell
+[Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/install/installing-windows-powershell

@@ -280,12 +280,12 @@ which consists of a centered message.
 并把 [`Text`][] widget 传给它来作为应用的标题。
 把 widget 作为参数传递给其他 widget 是一个很强大的技术，
 它可以让你以各种方式创建一些可重用的通用组件。
-最后，MyScaffold 使用 [`Expanded`][]  来填充剩余空间，其中包含一个居中的消息。
+最后，MyScaffold 使用 [`Expanded`][]
+来填充剩余空间，其中包含一个居中的消息。
 
-For more information,
-see [Layouts](/docs/development/ui/widgets/layout).
+For more information, see [Layouts][].
 
-有关更多信息，请参阅 [布局](/docs/development/ui/widgets/layout)。
+有关更多信息，请参阅 [布局][Layouts]。
 
 ## Using Material Components
 
@@ -998,10 +998,9 @@ can be used to retrieve the state associated with a widget.
 而不像本地 key 只需要在兄弟 widget 中唯一。
 由于它们是全局唯一的，因此可以使用全局 key 来检索与 widget 关联的状态。
 
-For more information, see the
-[`GlobalKey`]({{api}}/widgets/GlobalKey-class.html) API.
+For more information, see the [`GlobalKey`][] API.
 
-有关更多信息，请参阅 [`GlobalKey`]({{api}}/widgets/GlobalKey-class.html) API。
+有关更多信息，请参阅 [`GlobalKey`][] API。
 
 [runApp()]: {{api}}/widgets/runApp.html
 [`actions`]: {{api}}/material/AppBar-class.html#actions

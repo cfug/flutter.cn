@@ -1,6 +1,8 @@
 ---
 title: JSON and serialization
 title: JSON 和序列化数据
+description: How to use JSON with Flutter.
+description: 如何在 Flutter 里使用 JSON。
 ---
 
 It is hard to think of a mobile app that doesn't need to communicate with a
@@ -17,8 +19,9 @@ JSON solution to use in different scenarios, and why.
 
 {{site.alert.info}}
 
-  **Terminology:** _Encoding_ and _serialization_ are the same thing&mdash;turning
-  a data structure into a string. _Decoding_ and _deserialization_ are the
+  **Terminology:** _Encoding_ and _serialization_ are the same
+  thing&mdash;turning a data structure into a string.
+  _Decoding_ and _deserialization_ are the
   opposite process&mdash;turning a string into a data structure.
   However, _serialization_ also commonly refers to the entire process of
   translating data structures to and from a more easily readable format.
@@ -102,10 +105,8 @@ For an example of manual encoding, see
 JSON serialization with code generation means having an external library
 generate the encoding boilerplate for you. After some initial setup,
 you run a file watcher that generates the code from your model classes.
-For example,
-[json_serializable]({{site.pub}}/packages/json_serializable) and
-[built_value]({{site.pub}}/packages/built_value)
-are these kinds of libraries.
+For example, [json_serializable][] and [built_value][] are these
+kinds of libraries.
 
 利用代码生成的 JSON 序列化数据意味着有外部的库为你生成编码模板。
 在一些初始化设置后，你可以运行文件监听程序来从你的模型类生成代码。
@@ -161,13 +162,12 @@ when using reflection.
 
 {{site.alert.info}}
 
-  **What about dartson?** The
-  [dartson]({{site.pub}}/packages/dartson) library uses runtime
+  **What about dartson?** The [dartson][] library uses runtime
   [reflection][], which makes it incompatible with Flutter.
 
   **dartson 怎么样？**
-  [dartson]({{site.pub}}/packages/dartson) 是一个使用运行时
-  [反射][] 的库，这让它不能兼容 Flutter。
+  [dartson][dartson] 是一个使用运行时
+  [反射][reflection] 的库，这让它不能兼容 Flutter。
 {{site.alert.end}}
 
 Although you cannot use runtime reflection with Flutter, some libraries give
@@ -283,7 +283,7 @@ class User {
 
   User(this.name, this.email);
 
-  User.fromMappedJson(Map<String, dynamic> json)
+  User.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         email = json['email'];
 
@@ -304,7 +304,7 @@ itself. With this new approach, you can decode a user easily.
 <!-- skip -->
 ```dart
 Map userMap = jsonDecode(jsonString);
-var user = User.fromMappedJson(userMap);
+var user = User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');
@@ -325,7 +325,7 @@ String json = jsonEncode(user);
 With this approach, the calling code doesn't have to worry about JSON
 serialization at all. However, the model class still definitely has to.
 In a production app, you would want to ensure that the serialization
-works properly. In practice, the `User.fromMappedJson()` and `User.toJson()`
+works properly. In practice, the `User.fromJson()` and `User.toJson()`
 methods both need to have unit tests in place to verify correct behavior.
 
 通过这种方法，被调用的代码根本不需要担心序列化 JSON 数据的问题。
@@ -354,10 +354,8 @@ and decoding for you.  Luckily, there is!
 ## 使用代码生成库序列化 JSON 数据
 
 Although there are other libraries available, this guide uses the
-[json_serializable
-package]({{site.pub}}/packages/json_serializable),
-an automated source code generator that generates the JSON serialization
-boilerplate for you.
+[json_serializable][], an automated source code generator that
+generates the JSON serialization boilerplate for you.
 
 尽管有其它库可以使用，本指南使用了
 [json_serializable package]({{site.pub}}/packages/json_serializable)，
@@ -384,7 +382,7 @@ are only used in the development environment.
 是不包括在我们的 App 源代码中的依赖 - 它们只会被用在开发环境中。
 
 The latest versions of these required dependencies can be seen by
-following [the pubspec file][] in the JSON serializable example.
+following the [pubspec file][] in the JSON serializable example.
 
 在序列化 JSON 数据的例子中，
 这些必须的依赖的最新版本可以在下面 [pubspec 文件][the pubspec file] 中查看。
@@ -442,9 +440,9 @@ class User {
   String email;
 
   /// A necessary factory constructor for creating a new User instance
-  /// from a map. Pass the map to the generated `_$UserFromMappedJson()` constructor.
+  /// from a map. Pass the map to the generated `_$UserFromJson()` constructor.
   /// The constructor is named after the source class, in this case, User.
-  factory User.fromMappedJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromMappedJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
 
   /// `toJson` is the convention for a class to declare support for serialization
   /// to JSON. The implementation simply calls the private, generated
@@ -547,7 +545,7 @@ you do not have actually to make any changes to our previous code.
 <!-- skip -->
 ```dart
 Map userMap = jsonDecode(jsonString);
-var user = User.fromMappedJson(userMap);
+var user = User.fromJson(userMap);
 ```
 The same goes for encoding. The calling API is the same as before.
 
@@ -597,7 +595,7 @@ class Address {
 
   Address(this.street, this.city);
 
-  factory Address.fromMappedJson(Map<String, dynamic> json) => _$AddressFromMappedJson(json);
+  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
   Map<String, dynamic> toJson() => _$AddressToJson(this);
 }
 ```
@@ -618,7 +616,7 @@ class User {
 
   User(this.firstName, this.address);
 
-  factory User.fromMappedJson(Map<String, dynamic> json) => _$UserFromMappedJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 ```
@@ -684,7 +682,7 @@ class User {
 
   User(this.firstName, this.address);
 
-  factory User.fromMappedJson(Map<String, dynamic> json) => _$UserFromMappedJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 ```
@@ -707,28 +705,30 @@ For more information, see the following resources:
 
 更多信息，请查看以下资源：
 
-* [dart:convert][] and [JsonCodec][] documentation
+* The [dart:convert][] and [JsonCodec][] documentation
 
   [dart:convert][] 和 [JsonCodec][] 文档
   
-* [The
-  json_serializable package in Pub]({{site.pub}}/packages/json_serializable)
+* The [json_serializable][] package on pub.dev
 
-  [Pub 中的 json_serializable package]({{site.pub}}/packages/json_serializable)  
+  [Pub 中的 json_serializable package][json_serializable]
   
-* [json_serializable
-  examples in GitHub]({{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart)
+* The [json_serializable examples][] on GitHub
 
-  [GitHub 中的 json_serializable 例子]({{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart)
+  [GitHub 中的 json_serializable 例子][json_serializable examples]
   
-* [Discussion
-  about dart:mirrors in Flutter]({{site.github}}/flutter/flutter/issues/1150)
+* The [discussion about dart:mirrors in Flutter][]
 
-  [Flutter 中有关 dart:mirrors 的讨论]({{site.github}}/flutter/flutter/issues/1150)
+  [Flutter 中有关 dart:mirrors 的讨论][discussion about dart:mirrors in Flutter]
 
+[built_value]: {{site.pub}}/packages/built_value
 [dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
+[dartson]: {{site.pub}}/packages/dartson
+[Discussion about dart:mirrors in Flutter]: {{site.github}}/flutter/flutter/issues/1150
 [JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
+[json_serializable]: {{site.pub}}/packages/json_serializable
+[json_serializable examples]: {{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart
+[pubspec file]: https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml
 [reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [反射]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
-[the pubspec file]: https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml

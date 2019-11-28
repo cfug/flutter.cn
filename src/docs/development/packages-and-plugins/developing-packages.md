@@ -122,6 +122,10 @@ package]({{site.dart-site}}/guides/libraries/create-library-packages) 文档。
 
 ## 开发原生插件类型的 packages {#plugin}
 
+*For information about the `flutter.plugin.platforms` key see: [Specifying a plugin's supported platforms](#plugin-platforms).*
+
+**如果你想了解更多 `flutter.plugin.platforms` 的内容，请在 [这里查看更多](#plugin-platforms)**
+
 If you want to develop a package that calls into platform-specific APIs, you
 need to develop a plugin package. A plugin package is a specialized version of a
 Dart package, that in addition to the content described above also contains
@@ -129,10 +133,11 @@ platform-specific implementations written for Android (Java or Kotlin code), for
 iOS (Objective-C or Swift code), or for both. The API is connected to the
 platform-specific implementation(s) using [platform channels][].
 
-如果想要开发一个调用特定平台 API 的 package，你需要开发一个原生插件 packgae。原生插件 packgae
-是 Dart package 的特别版本，除了要实现 Dart package 要实现的内容，还需要按需使用
-Java 或 Kotlin、ObjC 或 Swift 分别在 Android 和/或 iOS 平台实现，你可以使用 [platform
-channel](/docs/development/platform-integration/platform-channels) 中的 API 来实现特定平台的调用。
+如果想要开发一个调用特定平台 API 的 package，你需要开发一个原生插件 packgae。
+原生插件 packgae 是 Dart package 的特别版本，
+除了要实现 Dart package 要实现的内容，还需要按需使用 Java 或 Kotlin、ObjC 
+或 Swift 分别在 Android 和/或 iOS 平台实现，
+你可以使用 [platform channels][] 中的 API 来实现特定平台的调用。
 
 ### Step 1: Create the package
 
@@ -309,6 +314,52 @@ implementations. This is done using [platform channels][].
 
 最后，你需要将 Dart 编写的 API 代码与特定平台的实现相互关联。这是通过 [platform channels][] 
 完成的。
+
+### Specifying a plugin's supported platforms {#plugin-platforms}
+
+Starting Flutter version 1.10 plugins specify their supported platforms by adding keys to the
+`platforms` map in the `pubspec.yaml` file. For example the following showd the `flutter:` map for the "hello" plugin:
+
+```
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.hello
+        pluginClass: HelloPlugin
+      ios:
+        pluginClass: HelloPlugin
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+  # Flutter versions prior to 1.10 did not support the flutter.plugin.platforms map.
+  flutter: ">=1.10.0 <2.0.0"
+```
+
+When adding plugin implementations for more platforms, the platforms map should be updated accordignly, e.g
+this is what the map looks like for the hello plugin that supports Android, iOS, macOS, and Flutter Web:
+
+
+```
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.hello
+        pluginClass: HelloPlugin
+      ios:
+        pluginClass: HelloPlugin
+      macos:
+        pluginClass: HelloPlugin
+      web:
+        pluginClass: HelloPlugin
+        fileName: hello_web.dart
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+  # Flutter versions prior to 1.10 did not support the flutter.plugin.platforms map.
+  flutter: ">=1.10.0 <2.0.0"
+```
 
 ## Adding documentation
 

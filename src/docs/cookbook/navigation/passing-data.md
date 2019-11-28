@@ -18,7 +18,7 @@ the item that's been tapped.
 
 在开发的过程中，我们经常需要在跳转到新页面的时候，能同时传递一些数据。比如，传递用户点击的元素信息。
 
-Remember: Screens are Just Widgets.
+Remember: Screens are Just widgets.
 In this example, create a list of todos.
 When a todo is tapped, navigate to a new screen (widget) that
 displays information about the todo.

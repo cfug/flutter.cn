@@ -14,11 +14,20 @@ For information on implementing slivers in Flutter, including
 [SliverAppBar]({{site.api}}/flutter/material/SliverAppBar-class.html),
 see [Slivers,
 DeMystified]({{site.flutter-medium}}/slivers-demystified-6ff68ab0296f),
-an article on Medium's [Flutter Publication]({{site.flutter-medium}}).
+an article on Medium's [Flutter Publication]({{site.flutter-medium}}), or
+watch the [Slivers episode](https://www.youtube.com/watch?v=Mz3kHQxBjGg) of the
+[Boring Show](https://www.youtube.com/results?search_query=%23BoringShow):
 
 如果你想了解 Flutter 中更多的有关滑动效果的实现，比如 
 [SliverList]({{site.api}}/flutter/widgets/SliverList-class.html)、
 [SliverGrid]({{site.api}}/flutter/widgets/SliverGrid-class.html) 和
 [SliverAppBar]({{site.api}}/flutter/material/SliverAppBar-class.html)，
 请参阅这篇文章 [Slivers,DeMystified]({{site.flutter-medium}}/slivers-demystified-6ff68ab0296f)，
-以及关注我们在 Medium 上的 [Flutter 专栏]({{site.flutter-medium}})。
+以及关注我们在 Medium 上的 [Flutter 专栏]({{site.flutter-medium}})，或者查看
+[Boring Show](https://www.youtube.com/results?search_query=%23BoringShow)
+视频列表的视频：[Slivers episode](https://www.youtube.com/watch?v=Mz3kHQxBjGg)。
+
+在哔哩哔哩上查看这个视频：[[Boring Show] Slivers Explained - 动态布局](https://www.bilibili.com/video/av77325252/)
+
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/Mz3kHQxBjGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+

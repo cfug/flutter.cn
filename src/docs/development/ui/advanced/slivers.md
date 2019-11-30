@@ -27,7 +27,4 @@ watch the [Slivers episode](https://www.youtube.com/watch?v=Mz3kHQxBjGg) of the
 [Boring Show](https://www.youtube.com/results?search_query=%23BoringShow)
 视频列表的视频：[Slivers episode](https://www.youtube.com/watch?v=Mz3kHQxBjGg)。
 
-在哔哩哔哩上查看这个视频：[[Boring Show] Slivers Explained - 动态布局](https://www.bilibili.com/video/av77325252/)
-
-<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/Mz3kHQxBjGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=77325252&cid=132272803&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

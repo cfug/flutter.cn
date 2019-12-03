@@ -32,15 +32,15 @@ It consists of three parts, each increasing in granularity.
 
 * Frame rendering chart
 
-* 帧渲染图表
+  帧渲染图表
 
 * Frame events chart
 
-* 帧事件图表
+  帧事件图表
 
 * CPU profiler
 
-* CPU 分析器
+  CPU 分析器
 
 
 {{site.alert.note}}
@@ -88,7 +88,7 @@ a layer tree, a lightweight object containing device-agnostic
 painting commands, and sends the layer tree to the GPU thread
 to be rendered on the device. Do **not** block this thread.
 
-UI 线程执行 VM 中的 Dart 代码。它包括你的应用程序和 Flutter 框架的所有代码。
+UI 线程执行 Dart VM 中的 Dart 代码。它包括你的应用程序和 Flutter 框架的所有代码。
 当你创建或打开一个页面，UI 线程会创建一个图层树和一个轻量级的与设备无关的绘制指令集，并把图层树交给设备的 GPU 线程进行渲染。**不要**阻塞这个线程。
 
 ### GPU
@@ -117,7 +117,7 @@ and clips or shadows in specific situations.
 For more information on profiling, see
 [Identifying problems in the GPU graph][GPU thread].
 
-更多有信息，请查看[Identifying problems in the GPU graph][GPU thread]。
+更多详细信息，请查看 [Identifying problems in the GPU graph][GPU thread]。
 
 ### Jank
 
@@ -313,7 +313,7 @@ state. To import a timeline snapshot, you can drag and drop the
 snapshot into DevTools from any page. **Note the DevTools only
 supports importing files that were originally exported from DevTools.**
 
-DevTools支持导入和导出时间线快照。
+DevTools 支持导入和导出时间线快照。
 单击export按钮(帧渲染图表右上角)下载当前时间线的快照。要导入时间线快照，可以从任何页面拖放快照到DevTools。
 **提示 : DevTools 仅支持导入 DevTools 导出的源文件。**
 

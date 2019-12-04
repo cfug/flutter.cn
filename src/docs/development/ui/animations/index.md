@@ -34,6 +34,13 @@ If you have a specific request,
   还有更多关于如何实现通用设计模式的文档正在整理中，比如共享内容转换和基于物理基础的动画。如果您有其他需求，请 [在这里]({{site.github}}/flutter/website/issues) 提出。
 {% endcomment -%}
 
+* [Implicit animations codelab](/docs/codelabs/implicit-animations)<br>
+  Covers how to use implicit animations
+  using step-by-step instructions and interactive examples.
+
+  [隐式动画 codelab](/docs/codelabs/implicit-animations)<br>
+  涵盖了如何使用隐式动画的分步说明及交互示例。
+
 * [Animations tutorial](/docs/development/ui/animations/tutorial)<br>
   Explains the fundamental classes in the Flutter animation package
   (controllers, Animatable, curves, listeners, builders),

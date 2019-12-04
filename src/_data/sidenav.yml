@@ -78,6 +78,8 @@
               permalink: /docs/development/ui/animations/overview
             - title: 教程
               permalink: /docs/development/ui/animations/tutorial
+            - title: 隐式动画
+              permalink: /docs/development/ui/animations/implicit-animations
             - title: 主动画 (Hero animations)
               permalink: /docs/development/ui/animations/hero-animations
             - title: 交织动画 (Staggered animations)

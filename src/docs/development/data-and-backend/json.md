@@ -334,13 +334,28 @@ methods both need to have unit tests in place to verify correct behavior.
 在实践中，`User.fromJson()` 和
 `User.toJson()` 方法都需要单元测试以便验证正确的行为。
 
-However, real-world scenarios are not usually that simple.
-It's unlikely that you would use such small JSON responses.
-Nested JSON objects are also commonly used.
+{{site.alert.info}}
 
-然而，现实场景通常不是那么简单的，
-你不太可能使用如此小的 JSON 响应，
-嵌套的 JSON 对象也会被经常使用。
+  The cookbook contains [a more comprehensive worked example of using
+  JSON model classes][json background parsing], using an isolate to parse
+  the JSON file on a background thread. This approach is ideal if you
+  need your app to remain responsive while the JSON file is being
+  decoded.
+
+  这篇 cookbook 包含了[更加全面的使用 JSON model 类的实用样例][json background parsing]，
+  它将使用 isolate 在后台线程解析 JSON 文件。若你在解析 JSON 文件的同时需要应用保持响应，这是理想的解决方案。
+
+{{site.alert.end}}
+
+However, real-world scenarios are not usually that simple.
+Sometimes JSON API responses are more complex, for example since they 
+contain nested JSON objects that must be parsed through their own model
+class.
+
+然而，现实场景通常不是那么简单，
+有时候响应的 JSON API 会更加复杂，
+例如它可能会包含一些相邻的 JSON 对象，
+而这些对象同样需要使用它的 model 类进行解析。
 
 It would be nice if there were something that handled the JSON encoding
 and decoding for you.  Luckily, there is!
@@ -353,7 +368,7 @@ and decoding for you.  Luckily, there is!
 
 ## 使用代码生成库序列化 JSON 数据
 
-Although there are other libraries available, this guide uses the
+Although there are other libraries available, this guide uses
 [json_serializable][], an automated source code generator that
 generates the JSON serialization boilerplate for you.
 
@@ -723,11 +738,10 @@ For more information, see the following resources:
 
 [built_value]: {{site.pub}}/packages/built_value
 [dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
-[dartson]: {{site.pub}}/packages/dartson
-[Discussion about dart:mirrors in Flutter]: {{site.github}}/flutter/flutter/issues/1150
 [JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
 [json_serializable]: {{site.pub}}/packages/json_serializable
 [json_serializable examples]: {{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart
+[json background parsing]: https://flutter.dev/docs/cookbook/networking/background-parsing
 [pubspec file]: https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml
 [reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [反射]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)

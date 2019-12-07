@@ -599,7 +599,21 @@ IPA 比 APK 大，主要是因为 Apple 加密了 IPA 中的二进制文件，
 使得压缩效率降低。
 （可以查看 [iOS App Store Specific Considerations][] 中 [QA1795][] 关于加密的部分）
 
-Of course, YMMV, and we recommend that you measure your own app.
+As of Flutter SDK 1.12, the release engine binary now includes LLVM IR
+(bitcode). Xcode uses this bitcode to produce a final binary for the App Store
+containing the latest compiler optimizations and features.
+The profile and debug frameworks contain only a _bitcode marker_,
+and are more representative of the engine's actual binary size.
+Whether you ship with bitcode or not, the increased size of the release
+framework is stripped out during the final steps of the build.
+These steps happen after archiving your app and shipping it to the store.
+
+从 Flutter SDK 1.12 开始，release 模式下引擎二进制产物将包含 LLVM 的中间语言表示（bitcode）。
+Xcode 将使用 bitcode 为 App Store 生成最终包含了最新的编译器优化和功能的二进制文件。
+Profile 和 Debug 模式下的 Framework 中，bitcode 部分仅包含 _bitcode marker_，因此更能代表引擎的真实大小。
+无论你是否使用 bitcode，release 模式下增加的包大小都会在应用归档后并发布到应用商店后，在构建的最终步骤里被移除。
+
+Of course, we recommend that you measure your own app.
 To measure an Android app, run `flutter build apk` (using the new
 `--split-per-abi` option in version 1.7.8+hotfix.3 and later)
 and load the APK

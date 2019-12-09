@@ -317,8 +317,13 @@ implementations. This is done using [platform channels][].
 
 ### Specifying a plugin's supported platforms {#plugin-platforms}
 
+### 指定一个插件支持的平台 {#plugin-platforms}
+
 Starting Flutter version 1.10 plugins specify their supported platforms by adding keys to the
-`platforms` map in the `pubspec.yaml` file. For example the following showd the `flutter:` map for the "hello" plugin:
+`platforms` map in the `pubspec.yaml` file. For example the following is the `flutter:` map for the "hello" plugin:
+
+从 Flutter 1.10 版开始，插件会通过向 `pubspec.yaml` 中的 `platforms` map 添加 keys 来指定其支持的平台。
+例如，以下是 “hello” 插件的 `flutter:` map：
 
 ```
 flutter:
@@ -338,6 +343,9 @@ environment:
 
 When adding plugin implementations for more platforms, the platforms map should be updated accordignly, e.g
 this is what the map looks like for the hello plugin that supports Android, iOS, macOS, and Flutter Web:
+
+当为更多平台添加插件实现时，应相应地更新 platforms map，
+例如这是支持 Android，iOS，macOS 和 Flutter Web 的 hello 插件的 map：
 
 
 ```

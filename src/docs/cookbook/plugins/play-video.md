@@ -11,11 +11,11 @@ next:
   path: /docs/cookbook/plugins/picture-using-camera
 ---
 
-Playing videos is a common task in app development, and Flutter apps are no
-exception. To play videos, the Flutter team provides the
-[`video_player`]({{site.pub-pkg}}/video_player) plugin. You can
-use the `video_player` plugin to play videos stored on the file system,
-as an asset, or from the internet.
+Playing videos is a common task in app development,
+and Flutter apps are no exception. To play videos,
+the Flutter team provides the [`video_player`][] plugin.
+You can use the `video_player` plugin to play videos
+stored on the file system, as an asset, or from the internet.
 
 在任何应用开发中，视频播放都是一项常见任务，Flutter 应用也不例外。
 为了支持视频播放，Flutter 团队提供了
@@ -23,9 +23,8 @@ as an asset, or from the internet.
 你可以使用 `video_player` 插件播放存储在本地文件系统中的视频或者网络视频。
 
 On iOS, the `video_player` plugin makes use of
-[`AVPlayer`](https://developer.apple.com/documentation/avfoundation/avplayer) to
-handle playback. On Android, it uses
-[`ExoPlayer`](https://google.github.io/ExoPlayer/).
+[`AVPlayer`][] to handle playback. On Android,
+it uses [`ExoPlayer`][].
 
 在 iOS 上，`video_player` 使用
 [`AVPlayer`](https://developer.apple.com/documentation/avfoundation/avplayer) 
@@ -233,20 +232,19 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 ## 4. 展示视频播放器
 
 Now, display the video. The `video_player` plugin provides the
-[`VideoPlayer`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html)
-widget to display the video initialized by the `VideoPlayerController`.
+[`VideoPlayer`][] widget to display the video initialized by
+the `VideoPlayerController`.
 By default, the `VideoPlayer` widget takes up as much space as possible.
-This often isn't ideal for videos because they are meant to be displayed in a
-specific aspect ratio, such as 16x9 or 4x3.
+This often isn't ideal for videos because they are meant
+to be displayed in a specific aspect ratio, such as 16x9 or 4x3.
 
-现在到了展示播放器的时候。`video_player` 插件提供了
-[`VideoPlayer`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html) 
-组件来展示已经被 `VideoPlayerController` 初始化完成的视频。
+现在到了展示播放器的时候。`video_player` 插件提供了 [`VideoPlayer`][]组件
+来展示已经被 `VideoPlayerController` 初始化完成的视频。
 默认情况下，`VideoPlayer` 组件会尽可能撑满整个空间。
-但是这通常不会太理想，因为很多时候视频需要在特定的宽高比下展示，比如 16x9 或者 4x3。
+但是这通常不会太理想，因为很多时候视频需要在特定的宽高比下展示，
+比如 16x9 或者 4x3。
 
-Therefore, wrap the `VideoPlayer` widget in an
-[`AspectRatio`]({{site.api}}/flutter/widgets/AspectRatio-class.html)
+Therefore, wrap the `VideoPlayer` widget in an [`AspectRatio`][]
 widget to ensure that the video has the correct proportions.
 
 因此，你可以把 `VideoPlayer` 组件嵌进一个
@@ -291,20 +289,19 @@ FutureBuilder(
 ## 5. 播放视频和暂停视频
 
 By default, the video starts in a paused state. To begin playback,
-call the
-[`play()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html)
-method provided by the `VideoPlayerController`. To pause playback, call the
-[`pause()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html)
-method.
+call the [`play()`][] method provided by the `VideoPlayerController`.
+To pause playback, call the [`pause()`][] method.
 
-默认情况下，播放器启动时会处于暂停状态。开始播放，需要调用 `VideoPlayerController` 提供的
-[`play()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html) 方法。
-停止播放，需要调用
-[`pause()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html) 方法。
+默认情况下，播放器启动时会处于暂停状态。开始播放，
+需要调用 `VideoPlayerController` 提供的[`play()`][] 方法。
+停止播放，需要调用 [`pause()`][] 方法。
 
-For this example, add a `FloatingActionButton` to your app that displays a play
-or pause icon depending on the situation. When the user taps the button,
-play the video if it's currently paused, or pause the video if it's playing.
+For this example,
+add a `FloatingActionButton` to your app that displays a play
+or pause icon depending on the situation.
+When the user taps the button,
+play the video if it's currently paused,
+or pause the video if it's playing.
 
 在这个示例中，向应用加入了一个 `FloatingActionButton`，
 这个按钮会根据播放状态展示播放或者暂停的图标。
@@ -442,3 +439,12 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   }
 }
 ```
+
+
+[`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html
+[`AVPlayer`]: https://developer.apple.com/documentation/avfoundation/avplayer
+[`ExoPlayer`]: https://google.github.io/ExoPlayer/
+[`pause()`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html
+[`play()`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html
+[`video_player`]: {{site.pub-pkg}}/video_player
+[`VideoPlayer`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html

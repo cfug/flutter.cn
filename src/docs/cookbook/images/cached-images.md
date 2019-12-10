@@ -12,8 +12,8 @@ next:
 ---
 
 In some cases, it's handy to cache images as they're downloaded from the
-web, so they can be used offline. For this purpose, use the
-[`cached_network_image`]({{site.pub-pkg}}/cached_network_image) package.
+web, so they can be used offline. For this purpose,
+use the [`cached_network_image`][] package.
 
 在一些情况下，缓存从网络下载的图片用于离线显示是十分方便的。你需要引入 [`cached_network_image`]({{site.pub-pkg}}/cached_network_image) 包来实现这项功能。
 
@@ -82,3 +82,6 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+
+[`cached_network_image`]: {{site.pub-pkg}}/cached_network_image

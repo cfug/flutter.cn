@@ -72,8 +72,8 @@ class Todo {
 
 Second, display a list of todos. In this example, generate
 20 todos and show them using a ListView.
-For more information on working with lists, see the
-[Use lists](/docs/cookbook/lists/basic-list) recipe.
+For more information on working with lists,
+see the [Use lists][] recipe.
 
 第二步，我们需要显示一个待办事项列表，生成 20 条待办事项并用 `ListView` 显示。如果你想了解更多关于列表显示的内容，请阅读文档 [`基础列表`](/docs/cookbook/lists/basic-list)。
 
@@ -168,12 +168,9 @@ taps a todo in the list. Pass the todo to the `DetailScreen`.
 
 上面写完了 `DetailScreen` ，现在该执行界面跳转啦！我们想让用户在点击列表中的某个待办事项时跳转到 `DetailScreen` 界面，同时能传递点击的这条代办事项对象（`Todo` 对象） 。
 
-To capture the user's tap, write an
-[`onTap()`]({{site.api}}/flutter/material/ListTile/onTap.html)
+To capture the user's tap, write an [`onTap()`][]
 callback for the `ListTile` widget. Within the `onTap()` callback,
-use the
-[`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
-method.
+use the [`Navigator.push()`][] method.
 
 想要实现这些，我们来编写 `ListTile` widget 的 `onTap()` 回调函数，继续使用 [`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html) 方法。
 
@@ -362,8 +359,11 @@ ListView.builder(
 
 ### Complete example
 
+<<<<<<< HEAD
 ### 完整样例
 
+=======
+>>>>>>> fe12b7387146234690387c0cb02b464fcc36a54d
 ```
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -449,3 +449,8 @@ class DetailScreen extends StatelessWidget {
 ```
 
 ![Passing Data Demo](/images/cookbook/passing-data.gif){:.site-mobile-screenshot}
+
+
+[`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
+[`onTap()`]: {{site.api}}/flutter/material/ListTile/onTap.html
+[Use lists]: /docs/cookbook/lists/basic-list

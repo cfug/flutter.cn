@@ -24,8 +24,8 @@ the `body` of the `Scaffold`.
 一般情况下，你可以通过给 `Scaffold` 组件设置一个 `appBar` 属性来创建一个 app bar。这个 app bar 会始终固定在 `Scaffold` 组件的 `body` 上方。
 
 Moving the app bar from a `Scaffold` widget into a
-[`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html)
-allows you to create an app bar that scrolls offscreen as you scroll through a
+[`CustomScrollView`][] allows you to create an app bar
+that scrolls offscreen as you scroll through a
 list of items contained inside the `CustomScrollView`.
 
 把 app bar 从 `Scaffold` 组件挪到一个 
@@ -102,12 +102,11 @@ Scaffold(
 
 ### 2. 使用 `SliverAppBar` 来添加一个浮动的 app bar
 
-Next, add an app bar to the
-[`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html).
-Flutter provides the
-[`SliverAppBar`]({{site.api}}/flutter/material/SliverAppBar-class.html)
-widget which, much like the normal `AppBar` widget, uses the
-`SliverAppBar` to display a title, tabs, images and more.
+Next, add an app bar to the [`CustomScrollView`][].
+Flutter provides the [`SliverAppBar`][] widget which,
+much like the normal `AppBar` widget,
+uses the `SliverAppBar` to display a title,
+tabs, images and more.
 
 接下来为 
 [`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html) 
@@ -164,8 +163,8 @@ CustomScrollView(
 
 {{site.alert.tip}}
 
-  Play around with the [various properties you can pass to the `SliverAppBar`
-  widget]({{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html),
+  Play around with the
+  [various properties you can pass to the `SliverAppBar` widget][],
   and use hot reload to see the results. For example, use an `Image`
   widget for the `flexibleSpace` property to create a background image that
   shrinks in size as it's scrolled offscreen.
@@ -181,12 +180,10 @@ CustomScrollView(
 ### 3. 使用 `SliverList` 来添加一个列表
 
 Now that you have the app bar in place, add a list of items to the
-`CustomScrollView`. You have two options: a
-[`SliverList`]({{site.api}}/flutter/widgets/SliverList-class.html) or
-a [`SliverGrid`]({{site.api}}/flutter/widgets/SliverGrid-class.html).
-If you need to display a list of items one after the other,
-use the `SliverList` widget. If you need to display a grid list,
-use the `SliverGrid` widget.
+`CustomScrollView`. You have two options: a [`SliverList`][]
+or a [`SliverGrid`][].  If you need to display a list of items one after the other,
+use the `SliverList` widget.
+If you need to display a grid list, use the `SliverGrid` widget.
 
 现在你已经创建好一个 app bar，接下来应该给 `CustomScrollView` 添加一个列表。
 你有两种选择：用
@@ -196,10 +193,9 @@ use the `SliverGrid` widget.
 如果需要网格状地显示列表中的内容，应该用 `SliverGrid` 组件。
 
 The `SliverList` and `SliverGrid` widgets take one required parameter: a
-[`SliverChildDelegate`]({{site.api}}/flutter/widgets/SliverChildDelegate-class.html),
-which provides a list of widgets to `SliverList` or `SliverGrid`.
-For example, the
-[`SliverChildBuilderDelegate`]({{site.api}}/flutter/widgets/SliverChildBuilderDelegate-class.html)
+[`SliverChildDelegate`][], which provides a list
+of widgets to `SliverList` or `SliverGrid`.
+For example, the [`SliverChildBuilderDelegate`][]
 allows you to create a list of items that are built lazily as you scroll,
 just like the `ListView.builder` widget.
 
@@ -280,3 +276,12 @@ class MyApp extends StatelessWidget {
 ```
 
 ![Use list demo](/images/cookbook/floating-app-bar.gif){:.site-mobile-screenshot}
+
+
+[`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
+[`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
+[`SliverChildBuilderDelegate`]: {{site.api}}/flutter/widgets/SliverChildBuilderDelegate-class.html
+[`SliverChildDelegate`]: {{site.api}}/flutter/widgets/SliverChildDelegate-class.html
+[`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
+[`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
+[various properties you can pass to the `SliverAppBar` widget]: {{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html

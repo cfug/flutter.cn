@@ -25,13 +25,11 @@ You might even want to give them an option to undo the action.
 我们或许想提醒用户消息已经被删除了，或者除了提醒之外，
 我们还可以提供一个撤销的操作。
 
-In Material Design, this is the job of a
-[SnackBar]({{site.api}}/flutter/material/SnackBar-class.html).
+In Material Design, this is the job of a [`SnackBar`][].
 This recipe implements a snackbar using the following steps:
 
-在 Material Design 中，用一个
-[SnackBar]({{site.api}}/flutter/material/SnackBar-class.html)
-就可以实现这个需求。请参见以下步骤：
+在 Material Design 中，用一个 [`SnackBar`][] 就可以实现这个需求。
+请参见以下步骤：
 
 ## Directions
 
@@ -65,15 +63,13 @@ widgets, such as the `FloatingActionButton`.
 当我们在屏幕的底部显示一个 `SnackBar` 时，
 不能覆盖其他重要的 widgets，比如 `FloatingActionButton`。
 
-The [Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
-widget, from the
-[material library]({{site.api}}/flutter/material/material-library.html),
+The [`Scaffold`][] widget, from the [material library][],
 creates this visual structure and ensures that important
 widgets don't overlap.
 
-用 [material library]({{site.api}}/flutter/material/material-library.html)
-中的 [Scaffold]({{site.api}}/flutter/material/Scaffold-class.html) widget
-就可以创建一个一致的视觉层次结构，并且可以确保其他重要的 widgets 不会被覆盖。
+用 [material library][] 中的 [`Scaffold`][] widget
+就可以创建一个一致的视觉层次结构，
+并且可以确保其他重要的 widgets 不会被覆盖。
 
 <!-- skip -->
 ```dart
@@ -141,12 +137,12 @@ final snackBar = SnackBar(
 {{site.alert.note}}
 
   In this example, the SnackBar displays when a user taps a button.
-  For more information on working with user input, see the
-  [Gestures](/docs/cookbook#gestures) section of the cookbook.
+  For more information on working with user input,
+  see the [Gestures][] section of the cookbook.
   
   注意: 这个例子是当用户点击一个按钮的时候显示一个 SnackBar。
   更多有关处理用户输入的信息，请查阅实用教程 (Cookbook) 的
-  [Gestures](/docs/cookbook#gestures) 部分。
+  [Gestures][] 部分。
   
 {{site.alert.end}}
 
@@ -198,3 +194,9 @@ class SnackBarPage extends StatelessWidget {
 ```
 
 ![SnackBar Demo](/images/cookbook/snackbar.gif){:.site-mobile-screenshot}
+
+
+[Gestures]: /docs/cookbook#gestures
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
+[material library]: {{site.api}}/flutter/material/material-library.html

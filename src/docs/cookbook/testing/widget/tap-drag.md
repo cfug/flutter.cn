@@ -11,34 +11,29 @@ prev:
 
 Many widgets not only display information, but also respond
 to user interaction. This includes buttons that can be tapped,
-and [`TextField`]({{api}}/material/TextField-class.html)
-for entering text.
+and [`TextField`][] for entering text.
 
 我们构建的大部分 Widget 不仅仅需要展示信息，还需要响应用户交互。常见的交互有用户点击按钮、在屏幕上拖动组件和在 [`TextField`]({{api}}/material/TextField-class.html) 中输入文本。
 
 To test these interactions, you need a way to simulate them
 in the test environment. For this purpose, use the
-[`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html)
-class provided by the
-[`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
-library.
+[`WidgetTester`][] library.
 
 为了测试这些交互，我们需要在测试环境中模拟上述场景，可以借助 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html) 库中的 [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html) 类来实现。
 
-The `WidgetTester` provides methods for entering text, tapping, and dragging.
+The `WidgetTester` provides methods for entering text,
+tapping, and dragging.
 
 `WidgetTester` 提供了文本输入、点击、拖动的相关方法：
 
-  * [`enterText`]({{api}}/flutter_test/WidgetTester/enterText.html)
-  * [`tap`]({{api}}/flutter_test/WidgetController/tap.html)
-  * [`drag`]({{api}}/flutter_test/WidgetController/drag.html)
+* [`enterText()`][]
+* [`tap()`][]
+* [`drag()`][]
 
 In many cases, user interactions update the state of the app. In the test
 environment, Flutter doesn't automatically rebuild widgets when the state
 changes. To ensure that the widget tree is rebuilt after simulating a user
-interaction, call the
-[`pump()`]({{api}}/flutter_test/WidgetTester/pump.html) or
-[`pumpAndSettle()`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
+interaction, call the [`pump()`][] or [`pumpAndSettle()`][]
 methods provided by the `WidgetTester`.
 This recipe uses the following steps:
 
@@ -92,21 +87,21 @@ see the relevant recipes:
 
 为了聚焦在测试上，本章节并不会提供如何构建一个待办清单应用的具体教程。如果想要知道这个应用是如何构建的，请参考以下章节：
 
-  * [Create and style a text field](/docs/cookbook/forms/text-input)
+* [Create and style a text field][]
 
-    [文本框的创建和设定](/docs/cookbook/forms/text-input)
+  [文本框的创建和设定](/docs/cookbook/forms/text-input)
 
-  * [Handle taps](/docs/cookbook/gestures/handling-taps)
+* [Handle taps][]
 
-    [捕获和处理点击动作](/docs/cookbook/gestures/handling-taps)
+  [捕获和处理点击动作](/docs/cookbook/gestures/handling-taps)
 
-  * [Create a basic list](/docs/cookbook/lists/basic-list)
+* [Create a basic list][]
 
-    [基础列表](/docs/cookbook/lists/basic-list)
+  [基础列表](/docs/cookbook/lists/basic-list)
 
-  * [Implement swipe to dismiss](/docs/cookbook/gestures/dismissible)
+* [Implement swipe to dismiss][]
 
-    [实现「滑动清除」效果](/docs/cookbook/gestures/dismissible)
+  [实现「滑动清除」效果](/docs/cookbook/gestures/dismissible)
 
 ```dart
 class TodoList extends StatefulWidget {
@@ -181,8 +176,7 @@ Accomplish this task by:
 
      在测试环境创建 Widget
 
-  2. Using the
-     [`enterText()`]({{api}}/flutter_test/WidgetTester/enterText.html)
+  2. Using the [`enterText()`][]
      method from the `WidgetTester`.
 
      使用 `WidgetTester` 中的 [`enterText()`]({{api}}/flutter_test/WidgetTester/enterText.html) 方法
@@ -207,13 +201,13 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
   这个章节的内容建立在前面的 widget 测试的相关章节上，
   请参考如下章节，获取关于 Widget 测试的更多内容：
 
-  * [Introduction to widget testing](/docs/cookbook/testing/widget)
+* [Introduction to widget testing][]
 
-    [Widget 测试介绍](/docs/cookbook/testing/widget)
+  [Widget 测试介绍](/docs/cookbook/testing/widget)
 
-  * [Finding widgets in a widget test](finders)
+* [Finding widgets in a widget test][]
   
-    [定位到目标 Widgets](finders)
+  [定位到目标 Widgets](finders)
 
 {{site.alert.end}}
 
@@ -230,14 +224,12 @@ This involves three steps:
 
 这包含了三个步骤：
 
- 1. Tap the add button using the
-    [`tap()`]({{api}}/flutter_test/WidgetController/tap.html)
-    method.
+ 1. Tap the add button using the [`tap()`][] method.
 
     使用 [`tap()`]({{api}}/flutter_test/WidgetController/tap.html) 方法模拟点击按钮
 
  2. Rebuild the widget after the state has changed using the
-    [`pump()`]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
+    [`pump()`][] method.
 
     使用 [`pump()`]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html) 方法确保应用状态发生改变时可以重建 Widget
 
@@ -270,14 +262,12 @@ item removes it from the list. This involves three steps:
 
 最后，我们需要确保滑动删除的操作能够正常地从列表中移除清单项。这包含了三个步骤：
 
-  1. Use the
-     [`drag()`]({{api}}/flutter_test/WidgetController/drag.html)
+  1. Use the [`drag()`][]
      method to perform a swipe-to-dismiss action.
 
      使用 [`drag()`]({{api}}/flutter_test/WidgetController/drag.html) 方法模拟滑动删除操作。
 
-  2. Use the
-     [`pumpAndSettle()`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
+  2. Use the [`pumpAndSettle()`][]
      method to continually rebuild the widget tree until the dismiss
      animation is complete.
 
@@ -393,3 +383,18 @@ class _TodoListState extends State<TodoList> {
   }
 }
 ```
+
+[Create a basic list]: /docs/cookbook/lists/basic-list
+[Create and style a text field]: /docs/cookbook/forms/text-input
+[`drag()`]: {{api}}/flutter_test/WidgetController/drag.html
+[`enterText()`]: {{api}}/flutter_test/WidgetTester/enterText.html
+[Finding widgets in a widget test]: /docs/cookbook/testing/widget/finders
+[Handle taps]: /docs/cookbook/gestures/handling-taps
+[Implement swipe to dismiss]: /docs/cookbook/gestures/dismissible
+[Introduction to widget testing]: /docs/cookbook/testing/widget/introduction
+[`pump()`]: {{api}}/flutter_test/WidgetTester/pump.html
+[`pumpAndSettle()`]: {{api}}/flutter_test/WidgetTester/pumpAndSettle.html
+[`tap()`]: {{api}}/flutter_test/WidgetController/tap.html
+[`TextField`]: {{api}}/material/TextField-class.html
+[`WidgetTester`]: {{api}}/flutter_test/WidgetTester-class.html
+

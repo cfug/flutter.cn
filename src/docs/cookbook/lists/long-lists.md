@@ -11,11 +11,10 @@ next:
   path: /docs/cookbook/maintenance/error-reporting
 ---
 
-The standard [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
-constructor works well for small lists. To work with lists that contain
+The standard [`ListView`][] constructor works well
+for small lists. To work with lists that contain
 a large number of items, it's best to use the
-[`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)
-constructor.
+[`ListView.builder`][] constructor.
 
 标准的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 构造函数适用于短列表，对于具有大量列表项的长列表，需要用 [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) 构造函数来创建。
 
@@ -36,8 +35,7 @@ Most of the time, this data comes from the internet or a database.
 首先，需要获取列表的数据源。例如，数据源可以是消息集、搜索结果集或者商店商品集。大部分情况下，这些数据来自于网络请求或者数据库获取。
 
 For this example, generate a list of 10,000 Strings using the
-[`List.generate`]({{site.api}}/flutter/dart-core/List/List.generate.html)
-constructor.
+[`List.generate`][] constructor.
 
 在下面的例子，使用 [`List.generate`]({{site.api}}/flutter/dart-core/List/List.generate.html) 构造函数生成包含 10,000 个字符串的集合。
 
@@ -115,3 +113,8 @@ class MyApp extends StatelessWidget {
 ```
 
 ![Long Lists Demo](/images/cookbook/long-lists.gif){:.site-mobile-screenshot}
+
+
+[`List.generate`]: lh({{site.api}}/flutter/dart-core/List/List.generate.html)
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html

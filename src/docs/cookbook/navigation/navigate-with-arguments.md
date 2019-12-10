@@ -11,31 +11,26 @@ next:
   path: /docs/cookbook/navigation/returning-data
 ---
 
-The [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html)
-provides the ability to navigate to a named route from any part of an app using
-a common identifier. In some cases, you might also need to pass arguments to a
+The [`Navigator`][] provides the ability to navigate
+to a named route from any part of an app using
+a common identifier.
+In some cases, you might also need to pass arguments to a
 named route. For example, you might wish to navigate to the `/user` route and
 pass information about the user to that route.
 
 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 组件支持通过使用通用标识符从应用程序的任何地方导航到特定路由。在某些情况下，你可能还希望能够传递参数给特定路由。例如，你希望导航到 `/user` 路由并携带上用户信息。
 
 You can accomplish this task using the `arguments` parameter of the
-[`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
-method. Extract the arguments using the
-[`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
-method or inside an
-[`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
-function provided to the
-[`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
-or
-[`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html)
+[`Navigator.pushNamed()`][] method. Extract the arguments using the
+[`ModalRoute.of()`][] method or inside an [`onGenerateRoute()`][]
+function provided to the [`MaterialApp`][] or [`CupertinoApp`][]
 constructor.
 
 在 Flutter 中，你能通过提供额外的 `arguments` 给 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法方便地完成这个任务。通过使用 [`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html) 方法或 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 和 [`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html) 构造器中的 [`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html) 来获取参数。
 
-This recipe demonstrates how to pass arguments to a named route and read the
-arguments using `ModalRoute.of()` and `onGenerateRoute()` using the
-following steps:
+This recipe demonstrates how to pass arguments to a named
+route and read the arguments using `ModalRoute.of()`
+and `onGenerateRoute()` using the following steps:
 
 这个章节讲解的是如何给特定路由传递参数并使用 `ModelRoute.of()` 和 `onGenerateRoute()` 来读取参数。
 
@@ -90,10 +85,11 @@ class ScreenArguments {
 
 ## 2. 创建组件来获取参数
 
-Next, create a widget that extracts and displays the `title` and `message` from
-the `ScreenArguments`. To access the `ScreenArguments`, use the
-[`ModalRoute.of()`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
-method. This method returns the current route with the arguments.
+Next, create a widget that extracts and displays the
+`title` and `message` from the `ScreenArguments`.
+To access the `ScreenArguments`,
+use the [`ModalRoute.of()`][] method.
+This method returns the current route with the arguments.
 
 接着，创建组件，从 `ScreenArguments` 提取 `title` 和 `message` 参数并展示。为了访问 `ScreenArguments`，可以使用 [`ModalRoute.of()`]({{site.api}}/flutter/widgets/ModalRoute/of.html) 方法。这个方法返回的是当前路由及其携带的参数。
 
@@ -144,9 +140,8 @@ MaterialApp(
 
 ## 4. 导航到组件
 
-Finally, navigate to the `ExtractArgumentsScreen` when a user taps a button
-using
-[`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html).
+Finally, navigate to the `ExtractArgumentsScreen`
+when a user taps a button using [`Navigator.pushNamed()`][].
 Provide the arguments to the route via the `arguments` property. The
 `ExtractArgumentsScreen` extracts the `title` and `message` from these
 arguments.
@@ -179,8 +174,7 @@ RaisedButton(
 ## 此外，还可以使用 `onGenerateRoute` 提取参数
 
 Instead of extracting the arguments directly inside the widget, you can also
-extract the arguments inside an
-[`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
+extract the arguments inside an [`onGenerateRoute()`][]
 function and pass them to a widget.
 
 除了直接从组件里提取参数，你也可以通过 [`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html) 函数提取参数，然后把参数传递给组件。
@@ -376,3 +370,11 @@ class ScreenArguments {
 ```
 
 ![Demonstrates navigating to different routes with arguments](/images/cookbook/navigate-with-arguments.gif){:.site-mobile-screenshot}
+
+
+[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`ModalRoute.of()`]: {{site.api}}/flutter/widgets/ModalRoute/of.html
+[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`Navigator.pushNamed()`]: {{site.api}}/flutter/widgets/Navigator/pushNamed.html
+[`onGenerateRoute()`]: {{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html

@@ -17,9 +17,9 @@ without polling.
 
 除了普通的 HTTP 请求，你还可以通过 WebSockets 来连接服务器。WebSockets 可以以非轮询的方式与服务器进行双向通信。
 
-In this example, connect to a [test server provided by
-websocket.org](http://www.websocket.org/echo.html). The server sends
-back the same message you send to it.
+In this example, connect to a
+[test server provided by websocket.org][].
+The server sends back the same message you send to it.
 
 在这里，你可以连接一个 [由 websocket.org 提供的测试服务器](http://www.websocket.org/echo.html)。该服务器只会返回你发送的信息。
 
@@ -47,8 +47,8 @@ This recipe uses the following steps:
 
 ## 1. 连接 WebSocket 服务器
 
-The [web_socket_channel]({{site.pub-pkg}}/web_socket_channel)
-package provides the tools you need to connect to a WebSocket server.
+The [web_socket_channel][] package provides the
+tools you need to connect to a WebSocket server.
 
 [web_socket_channel]({{site.pub-pkg}}/web_socket_channel) 包提供了连接 WebSocket 服务器所需的一些工具。
 
@@ -80,11 +80,9 @@ After sending a message to the test server, it sends the same message back.
 
 当你向测试服务器发送一条消息之后，它会将同样的消息发送回来。
 
-In this example, use
-a [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)
+In this example, use a [`StreamBuilder`][]
 widget to listen for new messages, and a
-[`Text`]({{site.api}}/flutter/widgets/Text-class.html)
-widget to display them.
+[`Text`][] widget to display them.
 
 在这个例子中，我们用 [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html) 组件
 来监听新消息，用 [`Text`]({{site.api}}/flutter/widgets/Text-class.html) 组件来展示它们。
@@ -104,8 +102,7 @@ StreamBuilder(
 ### 这样为什么可行？
 
 The `WebSocketChannel` provides a
-[`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html)
-of messages from the server.
+[`Stream`][] of messages from the server.
 
 `WebSocketChannel` 提供了一个来自服务器的 [`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html) 类消息。
 
@@ -117,8 +114,8 @@ events over time.
 这个 `Stream` 类是 `dart:async` 包的基本组成部分。它提供了一个从数据源监听异步事件的方法。和 `Future` 不一样的是，`Future` 只能返回一个单独的异步
 响应，而 `Stream` 类可以随着时间的推移传递很多事件。
 
-The [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)
-widget connects to a `Stream` and asks Flutter to rebuild every time it
+The [`StreamBuilder`][] widget connects to a `Stream`
+and asks Flutter to rebuild every time it
 receives an event using the given `builder()` function.
 
 [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html) 组件会和 `Stream` 建立起连接，并且每当它接收到一个使用给定 `builder` 函数
@@ -143,8 +140,7 @@ channel.sink.add('Hello!');
 ### 这又是如何工作的呢
 
 The `WebSocketChannel` provides a
-[`StreamSink`]({{site.api}}/flutter/dart-async/StreamSink-class.html)
-to push messages to the server.
+[`StreamSink`][] to push messages to the server.
 
 `WebSocketChannel` 提供了一个 [`StreamSink`]({{site.api}}/flutter/dart-async/StreamSink-class.html) 来向服务器推送消息。
 
@@ -257,5 +253,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-
 ![Web sockets demo](/images/cookbook/web-sockets.gif){:.site-mobile-screenshot}
+
+
+[`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html
+[`StreamBuilder`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
+[`StreamSink`]: {{site.api}}/flutter/dart-async/StreamSink-class.html
+[test server provided by websocket.org]: http://www.websocket.org/echo.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+[web_socket_channel]: {{site.pub-pkg}}/web_socket_channel

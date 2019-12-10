@@ -25,8 +25,7 @@ your users experience jank.
 
 To avoid jank, you need to perform expensive computations like this in the
 background. On Android, this means scheduling work on a different thread.
-In Flutter, you can use a separate
-[Isolate]({{site.api}}/flutter/dart-isolate/Isolate-class.html).
+In Flutter, you can use a separate [Isolate][].
 This recipe uses the following steps:
 
 为了避免这种不靠谱的情况，像上面那样消耗性能的计算就应该放在后台处理。在 Android 平台上，这意味着在一个不同的线程中调度工作。而在 Flutter 中，你可以使用一个单独的 [Isolate]({{site.api}}/flutter/dart-isolate/Isolate-class.html)。
@@ -55,7 +54,7 @@ This recipe uses the following steps:
 
 ## 1. 添加 `http` 包
 
-First, add the [`http`]({{site.pub-pkg}}/http) package to your project.
+First, add the [`http`][] package to your project.
 The `http` package makes it easier to perform network
 requests, such as fetching data from a JSON endpoint.
 
@@ -71,9 +70,8 @@ dependencies:
 ## 2. 发起一个网络请求
 
 In this example, fetch a JSON large document that contains a list of
-5000 photo objects from the [JSONPlaceholder REST
-API](https://jsonplaceholder.typicode.com),
-using the [http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
+5000 photo objects from the [JSONPlaceholder REST API][],
+using the [http.get()][] method.
 
 在这个例子中，你将会使用 [http.get()]({{site.pub-api}}/http/latest/http/get.html) 方法通过 [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com) 获取到一个包含 5000 张图片对象的超大 JSON 文档。
 
@@ -96,9 +94,9 @@ Future<http.Response> fetchPhotos(http.Client client) async {
 
 ## 3. 解析并将 json 转换成一列图片
 
-Next, following the guidance from the [Fetch data from the
-internet](/docs/cookbook/networking/fetch-data)
-recipe, convert the `http.Response` into a list of Dart objects.
+Next, following the guidance from the
+[Fetch data from the internet][] recipe,
+convert the `http.Response` into a list of Dart objects.
 This makes the data easier to work with in the future.
 
 接下来，根据 [获取网络数据](/docs/cookbook/networking/fetch-data) 的说明，为了让接下来的数据处理更简单，你需要将 `http.Response` 转换成一列 Dart 对象。
@@ -178,8 +176,8 @@ converts the JSON. This is jank, and you want to be rid of it.
 
 如果你在一台很慢的手机上运行 `fetchPhotos()` 函数，你或许会注意到应用会有点卡顿，因为它需要解析并转换 json。显然这并不好，所以你要避免它。
 
-You can remove the jank by moving the parsing and conversion to a background
-isolate using the [`compute()`]({{site.api}}/flutter/foundation/compute.html)
+You can remove the jank by moving the parsing and conversion
+to a background isolate using the [`compute()`][]
 function provided by Flutter. The `compute()` function runs expensive
 functions in a background isolate and returns the result. In this case,
 run the `parsePhotos()` function in the background.
@@ -320,3 +318,10 @@ class PhotosList extends StatelessWidget {
 ```
 
 ![Isolate demo](/images/cookbook/isolate.gif){:.site-mobile-screenshot}
+
+[`compute()`]: {{site.api}}/flutter/foundation/compute.html
+[Fetch data from the internet]: /docs/cookbook/networking/fetch-data
+[`http`]: {{site.pub-pkg}}/http
+[http.get()]: {{site.pub-api}}/http/latest/http/get.html
+[Isolate]: {{site.api}}/flutter/dart-isolate/Isolate-class.html
+[JSONPlaceholder REST API]: https://jsonplaceholder.typicode.com

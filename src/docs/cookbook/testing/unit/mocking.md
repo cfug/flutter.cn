@@ -43,8 +43,7 @@ on the situation.
 
 Generally speaking, you can mock dependencies by creating an alternative
 implementation of a class. Write these alternative implementations by
-hand or make use of the
-[Mockito package]({{site.pub-pkg}}/mockito) as a shortcut.
+hand or make use of the [Mockito package][] as a shortcut.
 
 通常来说，可以通过创建类的另一种实现来模拟（mock）这种依赖。
 类的另一种实现可以手写，也可以借助 [Mockito 包]({{site.pub-pkg}}/mockito)，后者简单一些。
@@ -78,8 +77,7 @@ Mockito package using the following steps:
 
      执行这些测试
 
-For more information, see the
-[Mockito]({{site.pub-pkg}}/mockito) package documentation.
+For more information, see the [Mockito package][] documentation.
 
 更多信息可以查阅 [Mockito]({{site.pub-pkg}}/mockito) package 的官方文档。
 
@@ -111,8 +109,7 @@ dev_dependencies:
 ## 2. 创建一个要测试的函数
 
 In this example, unit test the `fetchPost` function from the
-[Fetch data from the
-internet](/docs/cookbook/networking/fetch-data) recipe.
+[Fetch data from the internet][] recipe.
 To test this function, make two changes:
 
 本例中，我们要对 [获取网络数据](/docs/cookbook/networking/fetch-data/) 章节的 `fetchPost` 函数进行单元测试。
@@ -162,8 +159,7 @@ Future<Post> fetchPost(http.Client client) async {
 ## 3. 创建一个模拟了 http.Client 的测试文件
 
 Next, create a test file along with a `MockClient` class.
-Following the advice in the [Introduction to unit
-testing](/docs/cookbook/testing/unit/introduction) recipe,
+Following the advice in the [Introduction to unit testing][] recipe,
 create a file called `fetch_post_test.dart` in the root `test` folder.
 
 接下来，创建测试文件，我们需要在文件中创建 `MockitoClient` 类。
@@ -265,9 +261,7 @@ $ dart test/fetch_post_test.dart
 ```
 
 You can also run tests inside your favorite editor by following the
-instructions in the [Introduction to unit
-testing](/docs/cookbook/testing/unit/introduction#run-tests-using-intellij-or-vscode)
-recipe.
+instructions in the [Introduction to unit testing][] recipe.
 
 你也可以参考 [单元测试介绍](/docs/cookbook/testing/unit/introduction#run-tests-using-intellij-or-vscode) 章节用自己喜欢的编辑器来执行测试。
 
@@ -278,9 +272,12 @@ recipe.
 In this example, you've learned how to use Mockito to test functions or classes
 that depend on web services or databases. This is only a short introduction to
 the Mockito library and the concept of mocking. For more information,
-see the documentation provided by the
-[Mockito package]({{site.pub-pkg}}/mockito).
+see the documentation provided by the [Mockito package][].
 
 通过本例，我们已经学会了如何用 Mockito 来测试对 web 服务或数据库有依赖的函数或类。
 这里只是简短地介绍了 Mockito 库以及模拟（mocking）的概念。
-更多内容请移步至 [Mockito package]({{site.pub-pkg}}/mockito)。
+更多内容请移步至 [Mockito package][]。
+
+[Fetch data from the internet]: /docs/cookbook/networking/fetch-data
+[Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
+[Mockito package]: {{site.pub-pkg}}/mockito

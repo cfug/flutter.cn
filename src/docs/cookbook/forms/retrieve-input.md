@@ -37,16 +37,18 @@ using the following steps:
 
 ## 1. 创建 `TextEditingController`
 
-To retrieve the text a user has entered into a text field, create a
-[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
+To retrieve the text a user has entered into a text field,
+create a [`TextEditingController`][]
 and supply it to a `TextField` or `TextFormField`.
 
-为了获取文本框输入值，需要创建一个 [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)。在后续步骤中，这个 `TextEditingController` 将会被应用到 `TextField` 上。
+为了获取文本框输入值，需要创建一个 [`TextEditingController`][]。
+在后续步骤中，这个 `TextEditingController` 将会被应用到 `TextField` 上。
 
 Once a `TextEditingController` is supplied to a `TextField` or `TextFormField`,
 we can use it to retrieve the text a user has typed into that text field.
 
-`TextEditingController` 被应用于 `TextField` 或者 `TextFormField` 后，就可以使用它来获取文本框输入值。
+`TextEditingController` 被应用于 `TextField` 或者 `TextFormField` 后，
+就可以使用它来获取文本框输入值。
 
 {{site.alert.secondary}}
 
@@ -54,7 +56,8 @@ we can use it to retrieve the text a user has typed into that text field.
   you've finished using it. This ensures that you discard any resources
   used by the object.
   
-  **记住:**当不再使用 `TextEditingController` 时，请销毁它以确保相关的资源得到释放。
+  **记住:**当不再使用 `TextEditingController` 时，
+  请销毁它以确保相关的资源得到释放。
   
 {{site.alert.end}}
 
@@ -109,17 +112,19 @@ TextField(
 ## 3. 展示文本框当前值
 
 After supplying the `TextEditingController` to the text field,
-begin reading values. Use the
-[`text()`]({{site.api}}/flutter/widgets/TextEditingController/text.html)
+begin reading values. Use the [`text()`][]
 method provided by the `TextEditingController` to retrieve the
 String that the user has entered into the text field.
 
-在 `TextEditingController` 作用于文本框后，就可以开始取值了。通过 `TextEditingController` 提供的 [`text()`]({{site.api}}/flutter/widgets/TextEditingController/text.html) 方法，就能够获取到文本框输入值了。
+在 `TextEditingController` 作用于文本框后，就可以开始取值了。
+通过 `TextEditingController` 提供的 [`text()`][] 方法，
+就能够获取到文本框输入值了。
 
 The following code displays an alert dialog with the current
 value of the text field when the user taps a floating action button.
 
-在下面的示例中，用户点击浮层按钮，将会触发弹出一个对话框，对话框获取并显示文本框的当前值。
+在下面的示例中，用户点击浮层按钮，
+将会触发弹出一个对话框，对话框获取并显示文本框的当前值。
 
 <!-- skip -->
 ```dart
@@ -217,6 +222,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-![Retrieve Text Input Demo](/images/cookbook/retrieve-input.gif){:.site-mobile-screenshot}
+![Retrieve Text Input Demo/ 获取文本输入示例](/images/cookbook/retrieve-input.gif){:.site-mobile-screenshot}
 
-![获取文本输入示例](/images/cookbook/retrieve-input.gif){:.site-mobile-screenshot}
+[`text()`]: {{site.api}}/flutter/widgets/TextEditingController/text.html
+[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html

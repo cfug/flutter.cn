@@ -69,9 +69,7 @@ This recipe uses the following steps:
 
 In this recipe, record the performance of an app as it scrolls through a
 list of items. To focus on performance profiling, this recipe builds
-on the
-[Scrolling](/docs/cookbook/testing/integration/scrolling) recipe
-in integration tests.
+on the [Scrolling][] recipe in integration tests.
 
 在这一章节，我们将记录当滚动列表条目时应用程序的性能。
 为了专注于性能分析，这一小节在
@@ -89,16 +87,12 @@ app, and write a test to verify that everything works as expected.
 ### 2. 记录应用程序的性能
 
 Next, record the performance of the app as it scrolls through the
-list. Perform this task using the
-[`traceAction()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html)
-method provided by the
-[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
-class.
+list. Perform this task using the [`traceAction()`][]
+method provided by the [`FlutterDriver`][] class.
 
 然后，我们需要再应用程序的列表滚动的时候记录它的性能。使用 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 类中的 [`traceAction()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html) 方法实现这项功能。
 
-This method runs the provided function and records a
-[`Timeline`]({{site.api}}/flutter/flutter_driver/Timeline-class.html)
+This method runs the provided function and records a [`Timeline`][]
 with detailed information about the performance of the app. This example
 provides a function that scrolls through the list of items,
 ensuring that a specific item is displayed. When the function completes,
@@ -133,10 +127,9 @@ that took place, but it doesn't provide a convenient way to review the results.
 我们已经获取了一个性能时间轴，我们需要一种方式来对它进行检验，
 `Timeline` 对象提供所有已发生事件的相关详细信息，但它不提供快捷方式查看结果。
 
-Therefore, convert the `Timeline` into a
-[`TimelineSummary`]({{site.api}}/flutter/flutter_driver/TimelineSummary-class.html).
-The `TimelineSummary` can perform two tasks that make it easier to review the
-results:
+Therefore, convert the `Timeline` into a [`TimelineSummary`][].
+The `TimelineSummary` can perform two tasks that make it easier
+to review the results:
 
 因此，我们可以将 `Timeline` 转换成 [`TimelineSummary`]({{site.api}}/flutter/flutter_driver/TimelineSummary-class.html)，
 `TimelineSummary` 通过执行两个任务可以使我们更容易的检查结果：
@@ -148,9 +141,9 @@ results:
      将一个 json 文件写入磁盘，它包含了 `Timeline` 中包含的数据的摘要。 
      此摘要包括掉帧数量，最慢构建时间等的信息。
      
-  2. Saving the complete `Timeline` as a json file on disk. This file can
-     be opened with the Chrome browser's tracing tools found at
-     [chrome://tracing](chrome://tracing).
+  2. Saving the complete `Timeline` as a json file on disk.
+     This file can be opened with the Chrome browser's
+     tracing tools found at [chrome://tracing][].
      
      它可以将完整的 `Timeline` 以 json 文件的形式存储在磁盘上，
      可以使用 Chrome 浏览器的追踪工具打开此文件。
@@ -205,7 +198,7 @@ the project contains two files:
      
   2. `scrolling_timeline.timeline.json` contains the complete timeline data.
      Open the file using the Chrome browser's tracing tools found at
-     [chrome://tracing](chrome://tracing). The tracing tools provide a
+     [chrome://tracing][]. The tracing tools provide a
      convenient interface for inspecting the timeline data to discover
      the source of a performance issue.
      
@@ -293,3 +286,11 @@ void main() {
   });
 }
 ```
+
+
+[chrome://tracing]: chrome://tracing
+[`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
+[Scrolling]: /docs/cookbook/testing/integration/scrolling
+[`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
+[`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
+[`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html

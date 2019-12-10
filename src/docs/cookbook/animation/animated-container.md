@@ -10,8 +10,8 @@ next:
   path: /docs/cookbook/animation/opacity-animation
 ---
 
-The [`Container`]({{site.api}}/flutter/widgets/Container-class.html)
-class provides a convenient way to create a widget with specific properties:
+The [`Container`][] class provides a convenient way
+to create a widget with specific properties:
 width, height, background color, padding, borders, and more.
 
 [`Container`]({{site.api}}/flutter/widgets/Container-class.html)
@@ -26,18 +26,19 @@ indicate that an item has been selected by the user.
 简单的动画通常会在一段时间内改变这些属性。
 例如你可能想将灰色背景逐渐变为绿色背景来告诉用户已经选择了某个项目。
 
-To animate these properties, Flutter provides the
-[`AnimatedContainer`]({{site.api}}/flutter/widgets/AnimatedContainer-class.html)
-widget. Like the `Container` widget, `AnimatedContainer` allows you to define
+To animate these properties,
+Flutter provides the [`AnimatedContainer`][] widget.
+Like the `Container` widget, `AnimatedContainer` allows you to define
 the width, height, background colors, and more. However, when the
 `AnimatedContainer` is rebuilt with new properties, it automatically
 animates between the old and new values. In Flutter, these types of
 animations are known as "implicit animations."
 
 为了制作这样的简单动画效果，Flutter 提供了
-[`AnimatedContainer`]({{site.api}}/flutter/widgets/AnimatedContainer-class.html)
-widget。与 `Container` 一样，`AnimatedContainer` 也可以设置它的宽度、高度以及背景颜色等等。
-但是 `AnimatedContainer` 在使用新属性进行重建时，将会自动在旧值和新值之间生成动画。
+[`AnimatedContainer`][] widget。与 `Container` 一样，
+`AnimatedContainer` 也可以设置它的宽度、高度以及背景颜色等等。
+但是 `AnimatedContainer` 在使用新属性进行重建时，
+将会自动在旧值和新值之间生成动画。
 这种动画在 Flutter 中被称为“隐式动画”。
 
 This recipe describes how to use an `AnimatedContainer` to animate the size,
@@ -67,16 +68,13 @@ using the following steps:
 
 ## 1. 创建一个拥有默认属性的 StatefulWidget
 
-To start, create
-[`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
-and [`State`]({{site.api}}/flutter/widgets/State-class.html) classes.
+To start, create [`StatefulWidget`][] and [`State`][] classes.
 Use the custom State class to define the properties that change over
 time. In this example, that includes the width, height, color, and border
 radius. You can also define the default value of each property.
 
 首先你需要创建一个
-[`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
-类和 [`State`]({{site.api}}/flutter/widgets/State-class.html) 类。
+[`StatefulWidget`][] 类和 [`State`][] 类。
 然后在 State 类中定义需要随时间更改的属性。
 在这个示例中，我们将会改变其宽度、高度、颜色和边框半径。
 此外，你还可以定义其他默认属性。
@@ -140,14 +138,13 @@ AnimatedContainer(
 
 ## 3. 通过设置新的属性触发重建并启动动画
 
-Finally, start the animation by rebuilding the `AnimatedContainer` with
-the new properties. How to trigger a rebuild? Use the
-[`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
-method.
+Finally, start the animation by rebuilding the
+`AnimatedContainer` with the new properties.
+How to trigger a rebuild?
+Use the [`setState()`][] method.
 
 最后将设置新的属性触发 `AnimatedContainer` 重建并启动动画。那么如何触发重建呢？
-当我们提到 `StatefulWidgets` 时，
-[`setState()`]({{site.api}}/flutter/widgets/State/setState.html) 就行了。
+当我们提到 `StatefulWidgets` 时，[`setState()`][] 就行了。
 
 Add a button to the app. When the user taps the button, update
 the properties with a new width, height, background color and border radius
@@ -274,6 +271,10 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 }
 ```
 
-![AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius](/images/cookbook/animated-container.gif){:.site-mobile-screenshot}
+![AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius(这个 AnimatedContainer demo 展示了一个通过动画改变颜色、边框半径、放大和缩小的盒子)](/images/cookbook/animated-container.gif){:.site-mobile-screenshot}
 
-![这个 AnimatedContainer demo 展示了一个通过动画改变颜色、边框半径、放大和缩小的盒子](/images/cookbook/animated-container.gif){:.site-mobile-screenshot}
+[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
+[`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
+[`State`]: {{site.api}}/flutter/widgets/State-class.html
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html

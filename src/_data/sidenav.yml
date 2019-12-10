@@ -139,6 +139,8 @@
           permalink: /docs/development/packages-and-plugins/using-packages
         - title: Package 的开发和提交
           permalink: /docs/development/packages-and-plugins/developing-packages
+        - title: Flutter Favorites 项目
+          permalink: /docs/development/packages-and-plugins/favorites
         - title: 后台进程
           permalink: /docs/development/packages-and-plugins/background-processes
         # - title: Plugin migration
@@ -210,6 +212,17 @@
               permalink: /docs/development/tools/sdk/archive
             - title: 重要改动 (Breaking changes)
               permalink: /docs/release/breaking-changes
+            - title: 版本说明
+              permalink: /docs/development/tools/sdk/release-notes
+              children:
+                - title: 1.9.1
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.9.1.md
+                - title: 1.7.8
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.7.8.md
+                - title: 1.5.4
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4.md
+                - title: 1.2.1
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1.md
         - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式化

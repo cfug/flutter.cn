@@ -76,16 +76,12 @@ your app with the Sentry.io service.
 
 To get a DSN, use the following steps:
 
-<<<<<<< HEAD
 根据以下步骤，获取 DSN：
 
-  1. [Create an account with Sentry](https://sentry.io/signup/).
-
-     [创建 Sentry 账户](https://sentry.io/signup/)
-
-=======
   1. [Create an account with Sentry][].
->>>>>>> fe12b7387146234690387c0cb02b464fcc36a54d
+
+     [创建 Sentry 账户][Create an account with Sentry]
+
   2. Log in to the account.
 
      登录账户

@@ -359,11 +359,8 @@ ListView.builder(
 
 ### Complete example
 
-<<<<<<< HEAD
 ### 完整样例
 
-=======
->>>>>>> fe12b7387146234690387c0cb02b464fcc36a54d
 ```
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

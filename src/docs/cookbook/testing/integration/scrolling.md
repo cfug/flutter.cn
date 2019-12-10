@@ -146,34 +146,6 @@ void main() {
 ### 3. 编写列表滚动的测试用例
 
 Now, you can write a test. In this example, scroll through the list
-<<<<<<< HEAD
-of items and verify that a particular item exists in the list.
-The [`FlutterDriver`][] class provides three methods for
-scrolling through lists:
-
-现在，我们可以编写我们的测试用例了！在这个例子中，我们需要滚动列表并校验特定的列表项是否存在于列表中。[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 类为我们的滚动列表提供了三个方法：
-
-  - The
-  [`scroll()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scroll.html)
-  method scrolls through a specific list by a given amount.
-
-    [`scroll()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scroll.html) 方法允许我们按给定的数量滚动特定的列表。
-  
-  - The
-  [`scrollIntoView()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollIntoView.html)
-  method finds a specific widget that's already been rendered, and scrolls
-  it completely into view. Some widgets, such as
-  [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html),
-  render items on-demand.
-  
-    [`scrollIntoView()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollIntoView.html) 方法找到已经被渲染的特定的 Widget，并将它完全滚动到视图中。某些 Widget，比如 [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)，只有在将要显示的时候才会去渲染列表项。
-  
-  - The
-  [`scrollUntilVisible()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html)
-  method scrolls through a list until a specific widget is visible.
-  
-    [`scrollUntilVisible()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html) 方法会滚动列表直到特定的 Widget 显示出来。
-=======
 of items and verify that a particular item exists in the list.
 The [`FlutterDriver`][] class provides three methods for
 scrolling through lists:
@@ -201,7 +173,6 @@ scrolling through lists:
   through a list until a specific widget is visible.
 
   [`scrollUntilVisible()`][] 方法会滚动列表直到特定的 widget 显示出来。
->>>>>>> fe12b7387146234690387c0cb02b464fcc36a54d
 
 While all three methods work for specific use-cases,
 `scrollUntilVisible` is oftentimes the most robust option. Why?

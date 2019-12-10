@@ -28,7 +28,7 @@ The timeline view displays information about Flutter frames.
 
 It consists of three parts, each increasing in granularity.
 
-它有三部分组成，每个部分的粒度都在增加。
+它由三部分组成，每个部分的粒度都在增加。
 
 * Frame rendering chart
 
@@ -112,7 +112,7 @@ difficult for the GPU. They might involve unnecessary calls to
 `saveLayer()`, intersecting opacities with multiple objects,
 and clips or shadows in specific situations.
 
-有时候一个页面的图形层树比较容易构建但 GPU 线程的渲染却比较昂贵。在这种情形下，你需要找出导致渲染变慢的代码。对于 GPU ，指定更多特定类型的工作负载是相当困难的。在一些特定的情形下，多个对象的透明度重叠、剪切或阴影，有可能会导致不必要的 `saveLayer()` 的调用。
+有时候一个页面的图形层树比较容易构建但 GPU 线程的渲染却比较昂贵。在这种情形下，你需要找出导致渲染变慢的代码。为 GPU 设定特定多种类型的 workload 是相当困难的。在一些特定的情形下，多个对象的透明度重叠、剪切或阴影，有可能会导致不必要的 `saveLayer()` 的调用。
 
 For more information on profiling, see
 [Identifying problems in the GPU graph][GPU thread].

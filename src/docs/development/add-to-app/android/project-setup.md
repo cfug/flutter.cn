@@ -160,12 +160,12 @@ build/host/outputs/repo
         └── my_flutter
             ├── flutter_release
             │   ├── 1.0
-            │   │   ├── flutter_release-1.0.aar
-            │   │   ├── flutter_release-1.0.aar.md5
-            │   │   ├── flutter_release-1.0.aar.sha1
-            │   │   ├── flutter_release-1.0.pom
-            │   │   ├── flutter_release-1.0.pom.md5
-            │   │   └── flutter_release-1.0.pom.sha1
+            │   │   ├── flutter_release-1.0.aar
+            │   │   ├── flutter_release-1.0.aar.md5
+            │   │   ├── flutter_release-1.0.aar.sha1
+            │   │   ├── flutter_release-1.0.pom
+            │   │   ├── flutter_release-1.0.pom.md5
+            │   │   └── flutter_release-1.0.pom.sha1
             │   ├── maven-metadata.xml
             │   ├── maven-metadata.xml.md5
             │   └── maven-metadata.xml.sha1

@@ -14,12 +14,10 @@ next:
 
 {% assign api = site.api | append: '/flutter' -%}
 
-In the [introduction to unit
-testing](/docs/cookbook/testing/unit/introduction) recipe, you
-learned how to test Dart classes using the `test` package. To test
-widget classes, you need a few additional tools provided by the
-[`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
-package, which ships with the Flutter SDK.
+In the [introduction to unit testing][] recipe,
+you learned how to test Dart classes using the `test` package.
+To test widget classes, you need a few additional tools provided by the
+[`flutter_test`][] package, which ships with the Flutter SDK.
 
 在 [单元测试介绍](/docs/cookbook/testing/unit/introduction) 部分，
 我们学习了使用 `test` 这个 package 测试 Dart 类的方法。
@@ -27,30 +25,29 @@ package, which ships with the Flutter SDK.
 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html) package 提供的额外工具，
 这些工具是跟 Flutter SDK 一起发布的。
 
-The `flutter_test` package provides the following tools for testing widgets:
+The `flutter_test` package provides the following tools for
+testing widgets:
 
 `flutter_test` package 提供了以下工具用于 widget 的测试：
 
-  * The [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html),
-    which allows building and interacting with widgets in a test
-    environment.
+  * The [`WidgetTester`][] allows building and interacting
+    with widgets in a test environment.
   
     [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html)，使用该工具可在测试环境下建立 widget 并与其交互。
   
-  * The [`testWidgets()`]({{api}}/flutter_test/testWidgets.html)
-    function, which automatically creates a new `WidgetTester` for
-    each test case, and is used in place of the normal `test()` function.
+  * The [`testWidgets()`][] function automatically
+    creates a new `WidgetTester` for each test case,
+    and is used in place of the normal `test()` function.
   
     [`testWidgets()`]({{api}}/flutter_test/testWidgets.html) 函数，此函数会自动为每个测试创建一个 `WidgetTester`，用来代替普通的 `test` 函数。
      
-  * [`Finder`]({{api}}/flutter_test/Finder-class.html)
-  classes. These allow us to search for Widgets in the test environment.
+  * The [`Finder`][] classes allow searching for widgets
+    in the test environment.
   
     [`Finder`]({{api}}/flutter_test/Finder-class.html) 类，允许我们在测试环境下查找 widgets。
     
-  * Widget-specific
-    [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html)
-    constants, which help verify whether a `Finder` locates a widget or
+  * Widget-specific [`Matcher`][] constants help verify
+   whether a `Finder` locates a widget or
     multiple widgets in the test environment.
   
     Widget-specific [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html) 常量，
@@ -148,11 +145,10 @@ class MyWidget extends StatelessWidget {
 ### 三. 创建一个 `testWidgets` 测试方法
 
 With a widget to test, begin by writing your first test.
-Use the
-[`testWidgets()`]({{api}}/flutter_test/testWidgets.html)
-function provided by the `flutter_test` package to define a test.
-The `testWidgets` function allows you to define a widget test and creates a
-`WidgetTester` to work with.
+Use the [`testWidgets()`][] function provided by the
+`flutter_test` package to define a test.
+The `testWidgets` function allows you to define a
+widget test and creates a `WidgetTester` to work with.
 
 现在我们有了一个可以测试的 widget，可以开始编写第一个测试了！
 第一步，我们用 `flutter_test` 这个 package 提供的
@@ -180,9 +176,8 @@ void main() {
 ### 四. 使用 `WidgetTester` 建立 Widget
 
 Next, build `MyWidget` inside the test environment by using the
-[`pumpWidget()`]({{api}}/flutter_test/WidgetTester/pumpWidget.html)
-method provided by `WidgetTester`. The `pumpWidget` method builds and
-renders the provided widget.
+[`pumpWidget()`][] method provided by `WidgetTester`.
+The `pumpWidget` method builds and renders the provided widget.
 
 下一步，为了在测试环境中建立 `MyWidget`，我们可以使用 `WidgetTester` 提供的
 [`pumpWidget()`]({{api}}/flutter_test/WidgetTester/pumpWidget.html) 方法。
@@ -222,17 +217,19 @@ Use one of the following methods to ask Flutter to rebuild the widget.
 并不会自动重建你的 widget。我们需要用以下列举的方法来让 Flutter
 再一次建立我们的 widget。
 
-  - [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)<br>
-  Triggers a rebuild of the widget after a given duration.
+[`tester.pump()`][]
+<br> Triggers a rebuild of the widget after a given duration.
+
+[`tester.pump()`][]
+<br> 在一段给定时间后重建 widget。
+
+[`tester.pumpAndSettle()`][]
+<br> Repeatedly calls pump with the given duration until
+  there are no longer any frames scheduled.
+  This essentially waits for all animations to complete.
   
-    [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)<br>
-    在一段给定时间后重建 widget。
-    
-  - [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)<br>
-  Repeatedly calls pump with the given duration until there are no longer any frames scheduled. This essentially waits for all animations to complete.
-  
-    [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)<br>
-    在给定期间内不断重复调用 pump 直到完成所有绘制帧。一般需要等到所有动画全部完成。
+[`tester.pumpAndSettle()`][]
+<br> 在给定期间内不断重复调用 pump 直到完成所有绘制帧。一般需要等到所有动画全部完成。
 
 These methods provide fine-grained control over the build lifecycle,
 which is particularly useful while testing.
@@ -251,12 +248,10 @@ the widgets are being displayed correctly.
 现在让我们在测试环境中建立 widget。我们需要用 `Finder` 通过 widget 树来查找
 `标题` 和 `信息` Text widgets，这样可以验证这些 Widgets 是否正确显示。
 
-For this purpose, use the top-level
-[`find()`]({{api}}/flutter_test/find-constant.html)
+For this purpose, use the top-level [`find()`][]
 method provided by the `flutter_test` package to create the `Finders`.
 Since you know you're looking for `Text` widgets, use the
-[`find.text()`]({{api}}/flutter_test/CommonFinders-class.html)
-method.
+[`find.text()`][] method.
 
 为了实现这个目的，我们使用 `flutter_test` 这个 package 提供的顶级
 [`find()`]({{api}}/flutter_test/find-constant.html) 方法来创建我们的 `Finders`。
@@ -264,8 +259,7 @@ method.
 [`find.text()`]({{api}}/flutter_test/CommonFinders-class.html) 方法。
 
 For more information about `Finder` classes, see the
-[Finding widgets in a widget test](/docs/cookbook/testing/widget/finders)
-recipe.
+[Finding widgets in a widget test][] recipe.
 
 关于 `Finder` classes 的更多信息，请参阅
 [定位到目标 Widgets](/docs/cookbook/testing/widget/finders) 章节。
@@ -298,9 +292,7 @@ value meets expectations.
 它提供一种通用方法来验证给定值是否符合我们的预期。
 
 Ensure that the widgets appear on screen exactly one time.
-For this purpose, use the
-[`findsOneWidget`]({{api}}/flutter_test/findsOneWidget-constant.html)
-`Matcher`.
+For this purpose, use the [`findsOneWidget`][] `Matcher`.
 
 在这个示例中，我们要确保 Widget 只在屏幕中出现一次。因此，可以使用
 [`findsOneWidget`]({{api}}/flutter_test/findsOneWidget-constant.html) `Matcher`。
@@ -330,23 +322,23 @@ matchers for common cases.
 
 除了 `findsOneWidget`，`flutter_test` 还为常见情况提供了其他的 matchers。
 
-  * [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)<br>
-    verifies that no widgets are found
+[`findsNothing`][]
+<br> Verifies that no widgets are found.
 
-    [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)<br>
-    验证没有可被查找的 widgets。
-    
-  * [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)<br>
-    verifies that one or more widgets are found
-  
-    [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)<br>
-    验证一个或多个 widgets 被找到。
-    
-  * [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)<br>
-   verifies that a specific number of widgets are found
-  
-    [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)<br>
-    验证特定数量的 widgets 被找到。
+[`findsNothing`][]
+<br> 验证没有可被查找的 widgets。
+
+[`findsWidgets`][]
+<br> Verifies that one or more widgets are found.
+
+[`findsWidgets`][]
+<br>验证一个或多个 widgets 被找到。
+
+[`findsNWidgets`][]
+<br> Verifies that a specific number of widgets are found.
+
+[`findsNWidgets`][]
+<br>验证特定数量的 widgets 被找到。
 
 ### Complete example
 
@@ -401,4 +393,21 @@ class MyWidget extends StatelessWidget {
   }
 }
 ```
- 
+
+
+[`find()`]: {{api}}/flutter_test/find-constant.html
+[`find.text()`]: {{api}}/flutter_test/CommonFinders-class.html
+[`findsNothing`]: {{api}}/flutter_test/findsNothing-constant.html
+[`findsOneWidget`]: {{api}}/flutter_test/findsOneWidget-constant.html
+[`findsNWidgets`]: {{api}}/flutter_test/findsNWidgets.html
+[`findsWidgets`]: {{api}}/flutter_test/findsWidgets-constant.html
+[`Finder`]: {{api}}/flutter_test/Finder-class.html
+[Finding widgets in a widget test]: /docs/cookbook/testing/widget/finders
+[`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
+[introduction to unit testing]: /docs/cookbook/testing/unit/introduction
+[`Matcher`]: {{api}}/package-matcher_matcher/Matcher-class.html
+[`pumpWidget()`]: {{api}}/flutter_test/WidgetTester/pumpWidget.html
+[`tester.pump()`]: {{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html
+[`tester.pumpAndSettle()`]: {{api}}/flutter_test/WidgetTester/pumpAndSettle.html
+[`testWidgets()`]: {{api}}/flutter_test/testWidgets.html
+[`WidgetTester`]: {{api}}/flutter_test/WidgetTester-class.html

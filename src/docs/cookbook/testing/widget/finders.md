@@ -16,24 +16,21 @@ next:
 To locate widgets in a test environment, use the `Finder`
 classes. While it's possible to write your own `Finder` classes,
 it's generally more convenient to locate widgets using the tools
-provided by the
-[`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
-package.
+provided by the [`flutter_test`][] package.
 
 在测试环境下，为了定位 Widgets，我们需要用到 `Finder` 类。我们可以编写自己的 `finder`classes，不过通常使用 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html) 包提供的工具来定位 Widgets 更加方便。
 
-This recipe looks at the
-[`find`]({{api}}/flutter_test/find-constant.html)
-constant provided by the `flutter_test` package, and demonstrates how
-to work with some of the `Finders` it provides. For a full list of
-available finders, see the
-[`CommonFinders` documentation]({{api}}/flutter_driver/CommonFinders-class.html).
+This recipe looks at the [`find`][] constant provided by
+the `flutter_test` package, and demonstrates how
+to work with some of the `Finders` it provides.
+For a full list of available finders,
+see the [`CommonFinders` documentation][].
 
 下面，我们来看看 `flutter_test` 包提供的 [`find`]({{api}}/flutter_test/find-constant.html) 常量并演示如何使用其所提供的 `Finders`。如需查看完整的 finders 的列表，请参阅 [`CommonFinders` 文档]({{api}}/flutter_driver/CommonFinders-class.html)。
 
-If you're unfamiliar with widget testing and the role of `Finder` classes,
-review the [Introduction to widget
-testing](/docs/cookbook/testing/widget/introduction) recipe.
+If you're unfamiliar with widget testing and the role of
+`Finder` classes,
+review the [Introduction to widget testing][] recipe.
 
 如果你还不熟悉 Widget 测试和 Finder 类使用方法，请参阅 [在 Flutter 里做集成测试](/docs/cookbook/testing/integration)。
 
@@ -144,9 +141,8 @@ for different purposes.
 
 在测试环境下，`flutter_test` 包提供的 `find` 常量给了我们多种查找 Widget 的方法。本篇列举了三种方法，另外还有一些其他用途的方法。
 
-If the above examples do not work for a particular use-case, see the
-[`CommonFinders`
-documentation]({{api}}/flutter_driver/CommonFinders-class.html)
+If the above examples do not work for a particular use-case,
+see the [`CommonFinders` documentation][]
 to review all available methods.
 
 如果上述示例不适用于一些特殊情况，请到 [`CommonFinders` 文档]({{api}}/flutter_driver/CommonFinders-class.html) 中查看更多用法。
@@ -194,3 +190,9 @@ void main() {
   });
 }
 ```
+
+
+[`CommonFinders` documentation]: {{api}}/flutter_driver/CommonFinders-class.html
+[`find`]: {{api}}/flutter_test/find-constant.html
+[`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
+[Introduction to widget testing]: /docs/cookbook/testing/widget/introduction

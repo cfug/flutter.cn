@@ -21,16 +21,16 @@ and queries, compared to other local persistence solutions.
 总的来说，相比于其他本地持久化方案来说，数据库能够提供更为迅速的插入、更新、查询功能。
 
 Flutter apps can make use of the SQLite databases via the
-[`sqflite`]({{site.pub-pkg}}/sqflite) plugin available on pub.
-This recipe demonstrates the basics of using `sqflite` to insert, read, update,
-and remove data about various Dogs.
+[`sqflite`][] plugin available on pub.
+This recipe demonstrates the basics of using `sqflite`
+to insert, read, update, and remove data about various Dogs.
 
-Flutter应用程序中可以通过 [`sqflite`]({{site.pub-pkg}}/sqflite) package
+Flutter应用程序中可以通过 [`sqflite`][] package
 来使用 SQLite 数据库。
 本文将通过使用 `sqflite` 来演示插入，读取，更新，删除各种狗狗的数据。
 
-If you are new to SQLite and SQL statements, review the [SQLite
-Tutorial](http://www.sqlitetutorial.net/) to learn the basics before
+If you are new to SQLite and SQL statements, review the
+[SQLite Tutorial][] to learn the basics before
 completing this recipe.
 
 如果你对于 SQLite 和 SQL 的各种语句还不熟悉，请查看 SQLite 官方的教程
@@ -176,8 +176,7 @@ Therefore, these are represented as three columns in the `dogs` table.
      `age` 也是Dart的 `int` 类型，在数据表中是SQLite的 `INTEGER` 数据类型。
 
 For more information about the available Datatypes that can be stored in a
-SQLite database, see [the official SQLite Datatypes
-documentation](https://www.sqlite.org/datatype3.html).
+SQLite database, see the [official SQLite Datatypes documentation][].
 
 关于 SQLite 数据库能够存储的更多的数据类型信息请查阅官方的
 [SQLite Datatypes 文档](https://www.sqlite.org/datatype3.html)。
@@ -213,17 +212,14 @@ First, insert a `Dog` into the `dogs` table. This involves two steps:
 
 首先，在 `dogs` 数据表中插入一条 `Dog` 数据。分以下两步：
 
-  1. Convert the `Dog` into a `Map`
+1. Convert the `Dog` into a `Map`
   
-     把 `Dog` 转换成一个 `Map` 数据类型；
+   把 `Dog` 转换成一个 `Map` 数据类型；
      
-  2. Use the
-  [`insert()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html)
-  method to store the `Map` in the `dogs` table.
+2. Use the [`insert()`][] method to store the
+   `Map` in the `dogs` table.
   
-     使用
-    [`insert()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html)
-    方法把 `Map` 保存到 `dogs` 数据表中。
+   使用 [`insert()`][] 方法把 `Map` 保存到 `dogs` 数据表中。
 
 <!-- skip -->
 ```dart
@@ -320,8 +316,7 @@ print(await dogs()); // Prints a list that include Fido.
 
 After inserting information into the database,
 you might want to update that information at a later time.
-You can do this by using the
-[`update()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html)
+You can do this by using the [`update()`][]
 method from the `sqflite` library.
 
 使用 `sqflite` package 中的
@@ -385,9 +380,8 @@ print(await dogs()); // Prints Fido with age 42.
 ## 8. 删除一条 `Dog` 的数据
 
 In addition to inserting and updating information about Dogs,
-you can also remove dogs from the database. To delete data, use the
-[`delete()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html)
-method from the `sqflite` library.
+you can also remove dogs from the database. To delete data,
+use the [`delete()`][] method from the `sqflite` library.
 
 除了插入和修改狗狗们的数据，你还可以从数据库中删除狗狗的数据。
 删除数据用到了 `sqflite` package 中的
@@ -585,3 +579,11 @@ class Dog {
   }
 }
 ```
+
+
+[`delete()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html'
+[`insert()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html
+[`sqflite`]: {{site.pub-pkg}}/sqflite
+[SQLite Tutorial]: http://www.sqlitetutorial.net/
+[official SQLite Datatypes documentation]: https://www.sqlite.org/datatype3.html
+[`update()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html

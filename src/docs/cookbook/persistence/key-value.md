@@ -12,17 +12,16 @@ next:
 ---
 
 If you have a relatively small collection of key-values
-to save, you can use the
-[shared_preferences]({{site.pub}}/packages/shared_preferences) plugin.
+to save, you can use the [shared_preferences][] plugin.
 
 如果你要存储的键值集合相对较少，则可以用 [shared_preferences]({{site.pub}}/packages/shared_preferences) 插件。
 
 Normally,
 you would have to write native platform integrations for storing
-data on both iOS and Android. Fortunately, the
-[shared_preferences]({{site.pub-pkg}}/shared_preferences)
-plugin can be used to persist key-value data on disk. The shared preferences
-plugin wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
+data on both iOS and Android. Fortunately,
+the [shared_preferences][] plugin can be used to persist
+key-value data on disk. The shared preferences plugin
+wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
 
 通常你需要在两个平台用原生的方式存储数据。幸运的是 [shared_preferences]({{site.pub-pkg}}/shared_preferences) 插件可以把 key-value 保存到磁盘中。它通过封装 iOS 上的 `NSUserDefaults` 和 Android 上的 `SharedPreferences` 为简单数据提供持久化存储。
@@ -51,8 +50,7 @@ This recipe uses the following steps:
 
 ## 1. 添加依赖
 
-Before starting, add the
-[shared_preferences]({{site.pub-pkg}}/shared_preferences)
+Before starting, add the [shared_preferences][]
 plugin to the `pubspec.yaml` file:
 
 在开始之前，你需要在 `pubspec.yaml` 文件中添加 [shared_preferences]({{site.pub-pkg}}/shared_preferences) 插件：
@@ -139,9 +137,8 @@ it has limitations:
 
   不适用于大量数据的存储。
 
-For more information about shared preferences on Android, see the
-[shared preferences
-documentation]({{site.android-dev}}/guide/topics/data/data-storage#pref)
+For more information about shared preferences on Android,
+see the [shared preferences documentation][]
 on the Android developers website.
 
 关于 Android 平台上 Shared Preferences 的更多信息，请前往 Android 开发者网站上查看 [Shared preferences 文档]({{site.android-dev}}/guide/topics/data/data-storage#pref) 。
@@ -262,3 +259,6 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
+
+[shared_preferences]: {{site.pub}}/packages/shared_preferences
+[shared preferences documentation]: {{site.android-dev}}/guide/topics/data/data-storage#pref

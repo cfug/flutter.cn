@@ -12,15 +12,14 @@ next:
 ---
 
 In some cases, you might want to display your items as a grid rather than
-a normal list of items that come one after the next. For this task, use
-the [`GridView`]({{site.api}}/flutter/widgets/GridView-class.html) widget.
+a normal list of items that come one after the next.
+For this task, use the [`GridView`][] widget.
 
 有时候，你可能希望用网格来展示内容，而不是一条接着一条的普通列表来展示。在本文当中，
 我们将采用 [`GridView`]({{site.api}}/flutter/widgets/GridView-class.html) Widget。
 
 The simplest way to get started using grids is by using the
-[`GridView.count()`]({{site.api}}/flutter/widgets/GridView/GridView.count.html)
-constructor,
+[`GridView.count()`][] constructor,
 because it allows you to specify how many rows or columns you'd like.
 
 用网格展示数据最简单的方式，
@@ -92,3 +91,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 ![Grid List Demo](/images/cookbook/grid-list.gif){:.site-mobile-screenshot}
+
+
+[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
+[`GridView.count()`]: {{site.api}}/flutter/widgets/GridView/GridView.count.html

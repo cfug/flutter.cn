@@ -142,7 +142,7 @@ Text(
 ### 字体
 
 The Raleway and RobotoMono fonts were downloaded from
-[Google Fonts](https://fonts.google.com).
+[Google Fonts][].
 
 这里所使用的 Raleway 和 RobotoMono 字体都是从 [Google Fonts](https://fonts.google.com/) 下载的 。
 
@@ -211,5 +211,6 @@ class MyHomePage extends StatelessWidget {
 
 ![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
+[Google Fonts]: https://fonts.google.com
 [pub.dev]: {{site.pub}}
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html

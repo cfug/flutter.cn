@@ -11,11 +11,11 @@ next:
   path: /docs/cookbook/testing/integration/introduction
 ---
 
-Many apps require working with the device's cameras to take photos and videos.
-Flutter provides the [`camera`]({{site.pub-pkg}}/camera) plugin
+Many apps require working with the device's cameras to
+take photos and videos.  Flutter provides the [`camera`][] plugin
 for this purpose. The `camera` plugin provides tools to get a list of the
-available cameras, display a preview coming from a specific camera, and take
-photos or videos.
+available cameras, display a preview coming from a specific camera,
+and take photos or videos.
 
 很多应用都需要使用到设备的相机模块拍摄图片和视频。
 因此，Flutter 提供了 [`camera`]({{site.pub-pkg}}/camera) 插件。
@@ -62,15 +62,23 @@ To complete this recipe, you need to add three dependencies to your app:
 
 为了完成这个章节，你需要向你的应用添加三个依赖：
 
-  - [`camera`]({{site.pub-pkg}}/camera) - Provides tools to work with the cameras on device
+[`camera`][]
+<br> Provides tools to work with the cameras on the device.
 
-    [`camera`]({{site.pub-pkg}}/camera) - 提供使用设备相机模块的工具
+[`camera`][]
+<br> 提供使用设备相机模块的工具
 
-  - [`path_provider`]({{site.pub-pkg}}/path_provider) - Finds the correct paths to store images
+[`path_provider`][]
+<br> Finds the correct paths to store images.
 
-    [`path_provider`]({{site.pub-pkg}}/path_provider) - 寻找存储图片的正确路径
+[`path_provider`][]
+<br>寻找存储图片的正确路径
 
-  - [`path`]({{site.pub-pkg}}/path) - Creates paths that work on any platform
+[`path`][]
+<br> Creates paths that work on any platform.
+
+[`path`][]
+<br> 创建适配任何平台的路径
 
     [`path`]({{site.pub-pkg}}/path) - 创建适配任何平台的路径
 
@@ -227,9 +235,7 @@ display a preview of the camera's feed.
   
 {{site.alert.end}}
 
-Use a
-[`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
-for exactly this purpose.
+Use a [`FutureBuilder`][] for exactly this purpose.
 
 你可以使用 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) 完成这个任务。
 
@@ -257,8 +263,8 @@ FutureBuilder<void>(
 ## 5. 使用 `CameraController` 拍照
 
 You can use the `CameraController` to take pictures using the
-[`takePicture()`]({{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html)
-method. In this example, create a `FloatingActionButton` that takes a picture
+[`takePicture()`][] method. In this example,
+create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
 
 你可以使用 `CameraController` 的
@@ -487,3 +493,10 @@ class DisplayPictureScreen extends StatelessWidget {
   }
 }
 ```
+
+
+[`camera`]: {{site.pub-pkg}}/camera
+[`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
+[`path`]: {{site.pub-pkg}}/path
+[`path_provider`]: {{site.pub-pkg}}/path_provider
+[`takePicture()`]: {{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html

@@ -56,7 +56,7 @@ TextField(
 ```
 
 For more information on handling input and creating text fields,
-see the [Forms](/docs/cookbook#forms) section of the cookbook.
+see the [Forms][] section of the cookbook.
 
 有关处理输入和创建文本框的更多信息，请参阅
 [实用教程的 Forms 部分](/docs/cookbook#forms)。
@@ -96,13 +96,12 @@ presses a button using the following steps:
 
 ### 1. 创建一个 `FocusNode`
 
-First, create a
-[`FocusNode`]({{site.api}}/flutter/widgets/FocusNode-class.html).
+First, create a [`FocusNode`][].
 Use the `FocusNode` to identify a specific `TextField` in Flutter's
 "focus tree." This allows you to give focus to the `TextField`
 in the next steps.
 
-首先，我们需要创建一个 [`FocusNode`]({{site.api}}/flutter/widgets/FocusNode-class.html)。
+首先，我们需要创建一个 [`FocusNode`][]。
 我们将使用 `FocusNode` 来识别 Flutter 的“focus tree”中的特定的 `TextField`。
 这将允许我们能够在接下来的步骤中聚焦 `TextField`。
 
@@ -184,9 +183,7 @@ action button. Use the [`requestFocus()`][] method to perform
 this task.
 
 最后，当用户点击 floating action button 时，我们将要聚焦文本框！
-为此我们将要使用
-[`requestFocus`]({{site.api}}/flutter/widgets/FocusScopeNode/requestFocus.html)
-方法来完成此操作。
+为此我们将要使用 [`requestFocus()`][] 方法来完成此操作。
 
 <!-- skip -->
 ```dart
@@ -282,4 +279,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
 
 
+[`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
+[Forms]: /docs/cookbook#forms
 [`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html

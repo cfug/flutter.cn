@@ -46,15 +46,13 @@ a single text field using the following steps:
 
 ## 1. 创建表单 `Form`，并以 `GlobalKey` 作为唯一性标识
 
-First, create a
-[`Form`]({{site.api}}/flutter/widgets/Form-class.html).
+First, create a [`Form`][].
 The `Form` widget acts as a container for grouping
 and validating multiple form fields.
 
 首先，我们需要创建一个表单组件 [`Form`]({{site.api}}/flutter/widgets/Form-class.html) 作为容器承载和验证多个表单域。
 
-When creating the form, provide a
-[`GlobalKey`]({{site.api}}/flutter/widgets/GlobalKey-class.html).
+When creating the form, provide a [`GlobalKey`][].
 This uniquely identifies the `Form`,
 and allows validation of the form in a later step.
 
@@ -94,8 +92,8 @@ class MyCustomFormState extends State<MyCustomForm> {
 {{site.alert.tip}}
 
   Using a `GlobalKey` is the recommended way to access a form.
-  However, if you have a more complex widget tree, you can use the
-  [`Form.of()`]({{site.api}}/flutter/widgets/Form/of.html) method to
+  However, if you have a more complex widget tree,
+  you can use the [`Form.of()`][] method to
   access the form within nested widgets.
   
   一般情况下，推荐使用 `GlobalKey` 来访问一个表单。
@@ -109,8 +107,7 @@ class MyCustomFormState extends State<MyCustomForm> {
 
 Although the `Form` is in place,
 it doesn't have a way for users to enter text.
-That's the job of a
-[`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
+That's the job of a [`TextFormField`][].
 The `TextFormField` widget renders a material design text field
 and can display validation errors when they occur.
 
@@ -182,8 +179,8 @@ RaisedButton(
 ### 实现原理
 
 To validate the form, use the `_formKey` created in
-step 1. You can use the `_formKey.currentState()` method to access the
-[`FormState`]({{site.api}}/flutter/widgets/FormState-class.html),
+step 1. You can use the `_formKey.currentState()`
+method to access the [`FormState`][],
 which is automatically created by Flutter when building a `Form`.
 
 为了验证表单，我们需要使用到步骤 1 中的 `_formKey`。使用 `_formKey.currentState()` 方法去访问 [`FormState`]({{site.api}}/flutter/widgets/FormState-class.html)，而 `FormState` 是在创建表单 `Form` 时 Flutter 自动生成的。
@@ -279,6 +276,10 @@ class MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-![Form Validation Demo](/images/cookbook/form-validation.gif){:.site-mobile-screenshot}
+![Form Validation Demo/ 表单验证示例](/images/cookbook/form-validation.gif){:.site-mobile-screenshot}
 
-![表单验证示例](/images/cookbook/form-validation.gif){:.site-mobile-screenshot}
+[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
+[`Form.of()`]: {{site.api}}/flutter/widgets/Form/of.html
+[`FormState`]: {{site.api}}/flutter/widgets/FormState-class.html
+[`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
+[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html

@@ -11,10 +11,9 @@ next:
   path: /docs/cookbook/lists/grid-lists
 ---
 
-You might want to create a list that scrolls horizontally rather than
-vertically. The
-[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
-widget supports horizontal lists.
+You might want to create a list that scrolls
+horizontally rather than vertically.
+The [`ListView`][] widget supports horizontal lists.
 
 有时，你可能想要创建一个水平滑动（而不是竖直滑动）的列表。[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) Widget 本身就支持水平列表的创建。
 
@@ -111,3 +110,4 @@ class MyApp extends StatelessWidget {
 ![Horizontal List Demo](/images/cookbook/horizontal-list.gif){:.site-mobile-screenshot}
 
 
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html

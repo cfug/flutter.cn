@@ -19,19 +19,15 @@ tests, you need a way to scroll through lists to search for particular items.
 不论是 Email 客户端还是音乐应用，绝大多数 app 都使用到列表来展示内容。我们期望使用集成测试来验证列表中的内容，并需要一种方法去滚动列表来查找特定的项。
 
 To scroll through lists via integration tests, use the methods
-provided by the
-[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
-class, which is included in the
-[`flutter_driver`]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html)
-package:
+provided by the [`FlutterDriver`][] class,
+which is included in the [`flutter_driver`][] package:
 
 为了在集成测试中检验滚动列表，我们可以使用 [`flutter_driver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 这个 package 中的 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html) 类：
 
 In this recipe, learn how to scroll through a list of items to
 verify a specific widget is being displayed, and discuss the pros on cons of
 different approaches. If you're just getting started with integration testing,
-read through the [Introduction to integration
-testing](/docs/cookbook/testing/integration) recipe.
+read through the [Introduction to integration testing][] recipe.
 
 在本章节，我们将学习如何在滚动列表中验证是否正在显示特定的 Widget，并讨论不同方法的优缺点。如果您刚刚开始进行集成测试，请阅读 [集成测试介绍](/docs/cookbook/testing/integration) 获取更多信息。
 
@@ -61,15 +57,15 @@ This recipe uses the following steps:
 
 This recipe builds an app that shows a long list of items.
 To keep this recipe focused on testing, use the app created in the
-[Work with long lists](/docs/cookbook/lists/long-lists) recipe.
+[Work with long lists][] recipe.
 If you're unsure of how to work with long lists,
 see that recipe for an introduction.
 
 在本章节，我们创建一个带有长列表的 app。为了能够在本章节中专注于测试，我们将使用在 [使用长列表](/docs/cookbook/lists/long-lists) 章节中创建的 app。如果你不确定如何处理内容列表，请自行查看相关章节的介绍。
 
-As you did in the [Introduction to integration
-testing](/docs/cookbook/testing/integration) recipe, add keys to the
-widgets you want to interact with inside the integration tests.
+As you did in the [Introduction to integration testing][] recipe,
+add keys to the widgets you want to interact with
+inside the integration tests.
 
 正如我们在 [集成测试简介](/docs/cookbook/testing/integration) 章节中做的那样，我们还将向集成测试内我们需要互动的 Widget 添加 key。
 
@@ -150,32 +146,33 @@ void main() {
 ### 3. 编写列表滚动的测试用例
 
 Now, you can write a test. In this example, scroll through the list
-of items and verify that a particular item exists in the list. The
-[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
-class provides three methods for scrolling through lists:
+of items and verify that a particular item exists in the list.
+The [`FlutterDriver`][] class provides three methods for
+scrolling through lists:
 
-现在，我们可以编写我们的测试用例了！在这个例子中，我们需要滚动列表并校验特定的列表项是否存在于列表中。[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 类为我们的滚动列表提供了三个方法：
+现在，我们可以编写我们的测试用例了！
+在这个例子中，我们需要滚动列表并校验特定的列表项是否存在于列表中。
+[`FlutterDriver`][] 类为我们的滚动列表提供了三个方法：
 
-  - The
-  [`scroll()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scroll.html)
-  method scrolls through a specific list by a given amount.
+* The [`scroll()`][] method scrolls through
+  a specific list by a given amount.
 
-    [`scroll()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scroll.html) 方法允许我们按给定的数量滚动特定的列表。
+  [`scroll()`][] 方法允许我们按给定的数量滚动特定的列表。
   
-  - The
-  [`scrollIntoView()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollIntoView.html)
-  method finds a specific widget that's already been rendered, and scrolls
-  it completely into view. Some widgets, such as
-  [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html),
+* The [`scrollIntoView()`][] method finds a
+  specific widget that's already been rendered,
+  and scrolls it completely into view.
+  Some widgets, such as [`ListView.builder`][],
   render items on-demand.
+
+  方法找到已经被渲染的特定的 Widget，
+  并将它完全滚动到视图中，某些 widget 
+  比如 [`ListView.builder`][]，只有在将要显示的时候才会去渲染列表项。
   
-    [`scrollIntoView()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollIntoView.html) 方法找到已经被渲染的特定的 Widget，并将它完全滚动到视图中。某些 Widget，比如 [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)，只有在将要显示的时候才会去渲染列表项。
-  
-  - The
-  [`scrollUntilVisible()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html)
-  method scrolls through a list until a specific widget is visible.
-  
-    [`scrollUntilVisible()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html) 方法会滚动列表直到特定的 Widget 显示出来。
+* The [`scrollUntilVisible()`][] method scrolls
+  through a list until a specific widget is visible.
+
+  [`scrollUntilVisible()`][] 方法会滚动列表直到特定的 widget 显示出来。
 
 While all three methods work for specific use-cases,
 `scrollUntilVisible` is oftentimes the most robust option. Why?
@@ -273,3 +270,13 @@ Run the test using the following command from the root of the project:
 ```
 flutter drive --target=test_driver/app.dart
 ```
+
+
+[`flutter_driver`]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
+[`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
+[Introduction to integration testing]: /docs/cookbook/testing/integration
+[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[`scroll()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/scroll.html
+[`scrollIntoView()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/scrollIntoView.html
+[`scrollUntilVisible()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html
+[Work with long lists]: /docs/cookbook/lists/long-lists

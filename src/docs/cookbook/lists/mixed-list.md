@@ -102,9 +102,8 @@ final items = List<ListItem>.generate(
 
 ## 2. 把数据源转换成 Widget 的 List
 
-To convert each item into a widget, use the
-[`ListView.builder()`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)
-constructor.
+To convert each item into a widget,
+use the [`ListView.builder()`][] constructor.
 
 为了把每一个项目转换成 Widget，
 我们将采用 [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) 构造方法。
@@ -236,3 +235,6 @@ class MessageItem implements ListItem {
 ```
 
 ![Mixed list demo](/images/cookbook/mixed-list.png){:.site-mobile-screenshot}
+ 
+
+[`ListView.builder()`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html

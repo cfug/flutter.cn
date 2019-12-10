@@ -18,8 +18,7 @@ the two screens.
 
 在页面跳转过程中给用户加以引导是非常有用的。实现引导的一种通用做法是在页面切换时为某个组件加上转场动画，从而在两个页面间建立视觉上的锚定关联。
 
-Use the
-[`Hero`]({{site.api}}/flutter/widgets/Hero-class.html) widget
+Use the [`Hero`][] widget
 to animate a widget from one screen to the next.
 
 在 Flutter 中，可以通过 [`Hero`]({{site.api}}/flutter/widgets/Hero-class.html) 组件实现页面切换时组件的转场动画。
@@ -53,9 +52,8 @@ handle animations in the next steps.
 {{site.alert.note}}
 
   This example builds upon the
-  [Navigate to a new screen and
-  back](/docs/cookbook/navigation/navigation-basics)
-  and [Handle taps](/docs/cookbook/gestures/handling-taps) recipes.
+  [Navigate to a new screen and back][]
+  and [Handle taps][] recipes.
   
   这个示例建立在 [导航到一个新页面和返回](/docs/cookbook/navigation/navigation-basics) 和 [处理点击事件](/docs/cookbook/gestures/handling-taps) 这两个章节的基础上。
   
@@ -238,3 +236,8 @@ class DetailScreen extends StatelessWidget {
 ```
 
 ![Hero demo](/images/cookbook/hero.gif){:.site-mobile-screenshot}
+
+
+[Handle taps]: /docs/cookbook/gestures/handling-taps
+[`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
+[Navigate to a new screen and back]: /docs/cookbook/navigation/navigation-basics

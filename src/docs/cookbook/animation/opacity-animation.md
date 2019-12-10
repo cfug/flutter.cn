@@ -128,11 +128,13 @@ class _MyHomePageState extends State<MyHomePage> {
 ## 3. 显示一个用于切换可见状态的按钮
 
 Now that you have some data to determine whether the green box
-should be visible, you need a way update that data.
+should be visible, you need a way to update that data.
 In this example, if the box is visible, hide it.
 If the box is hidden, show it.
 
-现在你已经有了一些数据能够决定这个绿色方框是否可见，但是还需要一个方法来改变这些数据。在这个例子中，我们想让方框在显示与隐藏之间切换。
+现在你已经有了一些数据能够决定这个绿色方框是否可见，
+但是还需要一个方法来改变这些数据。
+在这个例子中，我们想让方框在显示与隐藏之间切换。
 
 To handle this, display a button. When a user presses the button,
 flip the boolean from true to false, or false to true.
@@ -140,15 +142,16 @@ Make this change using [`setState()`][],
 which is a method on the `State` class.
 This tells Flutter to rebuild the widget.
 
-为此你将使用一个按钮——当用户按下按钮时，数据将会在 true 和 false 之间进行切换。
-为了使改变生效，你需要使用 `State` 类中的
-[`setState`][`setState()`] 方法，
+为此你将使用一个按钮——当用户按下按钮时，
+数据将会在 true 和 false 之间进行切换。
+为了使改变生效，你需要使用 `State` 类中的 [`setState()`][] 方法，
 这会使 Flutter 重建这个 widget。
 
-For more information on working with user input, see the
-[Gestures](/docs/cookbook#gestures) section of the cookbook.
+For more information on working with user input,
+see the [Gestures][] section of the cookbook.
 
-注意：如果你想要了解更多与用户输入相关的资料，请参阅 Cookbook 的 [Gestures](/docs/cookbook#gestures) 部分。
+注意：如果你想要了解更多与用户输入相关的资料，
+请参阅 Cookbook 的 [Gestures][] 部分。
 
 <!-- skip -->
 ```dart
@@ -173,7 +176,9 @@ You have a green box on screen and a button to toggle the visibility
 to `true` or `false`. How to fade the box in and out? With an
 [`AnimatedOpacity`][] widget.
 
-现在你的屏幕上已经有一个绿色的方框，以及一个可以通过改变 `true` 或 `false` 来切换方框可见性的按钮。那么该如何让方框淡入淡出呢？答案是使用 [`AnimatedOpacity`][] Widget。
+现在你的屏幕上已经有一个绿色的方框，
+以及一个可以通过改变 `true` 或 `false` 来切换方框可见性的按钮。
+那么该如何让方框淡入淡出呢？答案是使用 [`AnimatedOpacity`][] widget。
 
 The `AnimatedOpacity` widget requires three arguments:
 
@@ -280,10 +285,9 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-![Fade In and Out Demo](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}
-
-![一个淡入淡出的例子](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}
+![Fade In and Out Demo (一个淡入淡出的例子)](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
+[Gestures]: /docs/cookbook#gestures
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html

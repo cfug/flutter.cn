@@ -18,10 +18,8 @@ or download data from the internet and save it for later offline use.
 磁盘文件的读写操作可能会相对方便地实现某些业务场景。
 它常见于应用启动期间产生的持久化数据，或者从网络下载数据供离线使用。
 
-To save files to disk, combine the
-[`path_provider`]({{site.pub-pkg}}/path_provider) plugin with
-the [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html)
-library.
+To save files to disk, combine the [`path_provider`][]
+plugin with the [`dart:io`][] library.
 
 为了将文件保存到磁盘，你需要结合使用 [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html) 
 库中的 [`path_provider`]({{site.pub-pkg}}/path_provider) 这个 package。
@@ -58,35 +56,35 @@ Where should you store this data?
 这个例子里，我们将会显示一个计数器，当计数器发生变化时，你将在磁盘中写入数据，
 以便在应用加载时重新读取这些数据。因此，你一定想知道：我应该将这些数据存储在哪里？
 
-The [`path_provider`]({{site.pub-pkg}}/path_provider) plugin
+The [`path_provider`][] plugin
 provides a platform-agnostic way to access commonly used locations on the
 device's file system. The plugin currently supports access to
 two file system locations:
 
-[`path_provider`]({{site.pub-pkg}}/path_provider) 这个 package 提供了一种与平台无关的方法，
-用于访问设备文件系统上的常用位置。该插件目前支持访问两个文件系统位置
+*Temporary directory*
+<br> A temporary directory (cache) that the system can
+  clear at any time. On iOS, this corresponds to the
+  [`NSCachesDirectory`][]. On Android, this is the value that
+  [`getCacheDir()`][]) returns.
 
-  * *Temporary directory:* A temporary directory (cache) that the system can
-    clear at any time. On iOS, this corresponds to the
-    [`NSCachesDirectory`](https://developer.apple.com/documentation/foundation/nssearchpathdirectory/nscachesdirectory). On Android, this is the value that
-    [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir())
-    returns.
-    
-     *临时文件夹：* 这是一个系统可以随时清空的临时（缓存）文件夹。在 iOS 上 对应 
-     [`NSCachesDirectory`](https://developer.apple.com/documentation/foundation/nssearchpathdirectory/nscachesdirectory) 的返回值；
-     在 Android 上对应 [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir()) 的返回值。
-    
-  * *Documents directory:* A directory for the app to store files that only
-    it can access. The system clears the directory only when the app
-    is deleted.
-    On iOS, this corresponds to the `NSDocumentDirectory`.
-    On Android, this is the `AppData` directory.
-    
-    *Documents 目录：* 供应用使用，用于存储只能由该应用访问的文件。
-    只有在删除应用时，系统才会清除这个目录。
-    在 iOS 上，这个目录对应于 `NSDocumentDirectory`。
-    在 Android 上，则是 `AppData` 目录。    
-    
+*临时文件夹：* 
+<br> 这是一个系统可以随时清空的临时（缓存）文件夹。
+  在 iOS 上 对应 [`NSCachesDirectory`][] 的返回值；
+  在 Android 上对应 [`getCacheDir()`][]) 的返回值。
+
+*Documents directory*
+<br> A directory for the app to store files that only
+  it can access. The system clears the directory only when the app
+  is deleted.
+  On iOS, this corresponds to the `NSDocumentDirectory`.
+  On Android, this is the `AppData` directory.
+  
+*Documents 目录：*
+<br> 供应用使用，用于存储只能由该应用访问的文件。
+  只有在删除应用时，系统才会清除这个目录。
+  在 iOS 上，这个目录对应于 `NSDocumentDirectory`。
+  在 Android 上，则是 `AppData` 目录。 
+
 This example stores information in the documents directory.
 You can find the path to the documents directory as follows:
 
@@ -107,10 +105,8 @@ Future<String> get _localPath async {
 ## 2. 创建一个指向文件位置的引用
 
 Once you know where to store the file, create a reference to the
-file's full location. You can use the
-[`File`]({{site.api}}/flutter/dart-io/File-class.html)
-class from the [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
-library to achieve this.
+file's full location. You can use the [`File`][]
+class from the [`dart:io`][] library to achieve this.
 
 确定文件的存储位置后，需要创建对文件完整位置的引用。
 为此，你可以使用 [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
@@ -128,7 +124,7 @@ Future<File> get _localFile async {
 
 ## 3. 将数据写入文件
 
-Now that you have a File to work with,
+Now that you have a `File` to work with,
 use it to read and write data.
 First, write some data to the file.
 The counter is an integer, but is written to the
@@ -320,3 +316,8 @@ class _FlutterDemoState extends State<FlutterDemo> {
 }
 ```
 
+[`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
+[`File`]: {{site.api}}/flutter/dart-io/File-class.html
+[`getCacheDir()`]: {{site.android-dev}}/reference/android/content/Context#getCacheDir()
+[`NSCachesDirectory`]: https://developer.apple.com/documentation/foundation/nssearchpathdirectory/nscachesdirectory
+[`path_provider`]: {{site.pub-pkg}}/path_provider

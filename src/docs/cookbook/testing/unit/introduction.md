@@ -18,9 +18,8 @@ change existing functionality? By writing tests.
 我们如何保证 app 在增加了新特性或者改变了现有功能之后还能正常工作呢？答案是写测试！
 
 Unit tests are handy for verifying the behavior of a single function,
-method, or class. The [`test`]({{site.pub-pkg}}/test) package provides the
-core framework for writing unit tests, and the
-[`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
+method, or class. The [`test`][] package provides the
+core framework for writing unit tests, and the [`flutter_test`][]
 package provides additional utilities for testing widgets.
 
 使用单元测试可轻松地验证单个函数、方法或类的行为。[`test`]({{site.pub-pkg}}/test) 这个 package 提供了写单测的核心框架，
@@ -60,9 +59,8 @@ using the following steps:
 使用单元测试可轻松地验证单个函数、方法或类的行为。[`test`]({{site.pub-pkg}}/test) 包提供了写单测的核心框架，
 [`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html) 包则提供了额外的功能来测试 Widget。
 
-For more information about the test package, see the
-[test package
-documentation]({{site.github}}/dart-lang/test/blob/master/README.md).
+For more information about the test package,
+see the [test package documentation][].
 
 关于测试包的更多内容，可移步至 [测试包文档](https://github.com/dart-lang/test/blob/master/README.md).
 
@@ -286,3 +284,8 @@ command from the root of the project:
 ```
 flutter test test/counter_test.dart
 ```
+
+
+[`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
+[`test`]: {{site.pub-pkg}}/test
+[test package documentation]: {{site.github}}/dart-lang/test/blob/master/README.md

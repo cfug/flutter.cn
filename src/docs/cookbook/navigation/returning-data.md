@@ -18,8 +18,7 @@ of the user's selection so that it can act on that information.
 
 在某些场景下，我们需要在回退到上一屏时同时返回一些数据。比如，我们跳转到新的一屏，有两个选项让用户选择，当用户点击某个选项后会返回到第一屏，同时在第一屏可以知道用户选择的信息。
 
-You can do this with the
-[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
+You can do this with the [`Navigator.pop()`][]
 method using the following steps:
 
 你可以使用 [`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html) 来进行以下步骤：
@@ -175,9 +174,9 @@ class SelectionScreen extends StatelessWidget {
 ## 4. 当任意一个按钮被点击，关闭选择界面回退到主屏界面
 
 Now, update the `onPressed()` callback for both of the buttons.
-To return data to the first screen, use the
-[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
-method, which accepts an optional second argument called `result`.
+To return data to the first screen,
+use the [`Navigator.pop()`][] method,
+which accepts an optional second argument called `result`.
 Any result is returned to the `Future` in the SelectionButton.
 
 接下来我们来更新两个按钮的 `onPressed()` 回调函数，使用 [`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html) 回退界面并返回数据给主屏界面。
@@ -339,3 +338,6 @@ class SelectionScreen extends StatelessWidget {
 ```
 
 ![Returning data demo](/images/cookbook/returning-data.gif){:.site-mobile-screenshot}
+
+
+[`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html

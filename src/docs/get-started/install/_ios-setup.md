@@ -177,11 +177,12 @@ to set up physical device deployment in Xcode.
         在 `Runner` 项目的设置页面，请确保勾选你的开发团队。
         在不同的 Xcode 版本里，这一部分的操作界面不同：       
         
-        * For Xcode 9 & 10, look under **General > Signing > Team**.
+        * For Xcode 10, look under **General > Signing > Team**.
           
-          在 Xcode 9 和 10 版本，请在这里设置：**General > Signing > Team**
+          在 Xcode 10 版本中，请在这里设置：**General > Signing > Team**
           
-        * For Xcode 11 and newer, look under **Signing & Capabilities > Team**.
+        * For Xcode 11 and newer, look under
+        **Signing & Capabilities > Team**.
           
           在 Xcode 11 版本以后，请在这里设置 **Signing & Capabilities > Team**
 

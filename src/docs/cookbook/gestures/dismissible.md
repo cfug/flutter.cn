@@ -20,7 +20,7 @@ email messages to delete them from a list.
 用户操作时，我们可能需要把这封邮件从收件箱移动到垃圾箱。
 
 Flutter makes this task easy by providing the
-[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) widget.
+[`Dismissible`][] widget.
 Learn how to implement swipe to dismiss with the following steps:
 
 Flutter 提供了[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) Widget 来轻松地实现这个需求。
@@ -46,8 +46,8 @@ Flutter 提供了[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.
 ## 1. 创建项目列表
 
 First, create a list of items. For detailed
-instructions on how to create a list, follow the [Working with long
-lists](/docs/cookbook/lists/long-lists) recipe.
+instructions on how to create a list,
+follow the [Working with long lists][] recipe.
 
 首先，我们创建一个列表，列表项是能够滑动清除的。至于如何创建列表的更多细节，
 请参考 [长列表的处理](/docs/cookbook/lists/long-lists/) 文档。
@@ -92,8 +92,7 @@ ListView.builder(
 
 In this step,
 give users the ability to swipe an item off the list by using the
-[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html)
-widget.
+[`Dismissible`][] widget.
 
 在这个步骤中，用户可以通过使用 [`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) 来删除列表中的某项。
 
@@ -264,3 +263,7 @@ class MyAppState extends State<MyApp> {
 ```
 
 ![Dismissible Demo](/images/cookbook/dismissible.gif){:.site-mobile-screenshot}
+
+
+[`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
+[Working with long lists]: /docs/cookbook/lists/long-lists

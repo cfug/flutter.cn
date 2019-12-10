@@ -16,19 +16,15 @@ there are two primary options for navigation: tabs and drawers.
 When there is insufficient space to support tabs,
 drawers provide a handy alternative.
 
-在 Material Design 设计准则里，主要提供了两种导航方式：Tab 和 Drawer。 当没有足够的空间来支持 tab 导航时，drawer 提供了另一个方便的选择。
+在 Material Design 设计准则里，主要提供了两种导航方式：Tab 和 Drawer。
+当没有足够的空间来支持 tab 导航时，drawer 提供了另一个方便的选择。
 
-In Flutter, use the
-[`Drawer`]({{site.api}}/flutter/material/Drawer-class.html)
-widget in combination with a
-[`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html)
-to create a layout with a Material Design drawer.
+In Flutter, use the [`Drawer`][] widget in combination with a
+[`Scaffold`][] to create a layout with a Material Design drawer.
 This recipe uses the following steps:
 
-在 Flutter中，我们可以将
-[`Drawer`]({{site.api}}/flutter/material/Drawer-class.html) widget
-与 [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html)
-结合使用来创建一个具有 Material Design 风格的 Drawer 布局。
+在 Flutter中，我们可以将 [`Drawer`][] widget 与 [`Scaffold`][] 结合使用
+来创建一个具有 Material Design 风格的 Drawer 布局。
 请参见如下的步骤：
 
 ## Directions
@@ -55,15 +51,13 @@ This recipe uses the following steps:
 
 ## 1. 创建一个 `Scaffold`
 
-To add a drawer to the app, wrap it in a
-[Scaffold]({{site.api}}/flutter/material/Scaffold-class.html) widget.
-The Scaffold widget provides a consistent visual structure to apps that
+To add a drawer to the app, wrap it in a [`Scaffold`][] widget.
+The `Scaffold` widget provides a consistent visual structure to apps that
 follow the Material Design Guidelines.
 It also supports special Material Design
 components, such as Drawers, AppBars, and SnackBars.
 
-为了向应用中添加一个 Drawer，我们需要将其放在
-[Scaffold]({{site.api}}/flutter/material/Scaffold-class.html) widget 中。
+为了向应用中添加一个 Drawer，我们需要将其放在 [`Scaffold`][] widget 中。
 Scaffold Widget 为遵循 Material 设计守则的应用程序提供了一套统一的可视化结构。
 它同样支持一些特殊的 Material Design 组件，例如 Drawer，AppBar 和 SnackBar 等。
 
@@ -84,7 +78,7 @@ Scaffold(
 
 Now add a drawer to the `Scaffold`. A drawer can be any widget,
 but it's often best to use the `Drawer` widget from the
-[material library]({{site.api}}/flutter/material/material-library.html),
+[material library][],
 which adheres to the Material Design spec.
 
 我们现在可以在 `Scaffold` 上添加一个 drawer。虽然 drawer 可以是任何 widget，
@@ -105,27 +99,24 @@ Scaffold(
 ## 3. 向 drawer 中添加内容
 
 Now that you have a `Drawer` in place, add content to it.
-For this example,
-use a [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html).
-While you could use a `Column` widget, `ListView` is handy
-because it allows users to scroll through the drawer if the
+For this example, use a [`ListView`][].
+While you could use a `Column` widget,
+`ListView` is handy because it allows users to scroll
+through the drawer if the
 content takes more space than the screen supports.
 
 既然已经有了一个 `Drawer`，我们现在就可以向其中添加内容。
-在这个例子中，我们将使用
-[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)。
+在这个例子中，我们将使用 [`ListView`][]。
 虽然你也可以使用 `Column` widget，但是 `ListView` 在这种情况下将是更好的选择，
 因为如果内容所占用的空间超出了屏幕的话，它将能够允许用户进行滚动。
 
-Populate the `ListView` with a
-[`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html)
-and two [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
-widgets. For more information on working with Lists, see the
-[list recipes](/docs/cookbook#lists).
+Populate the `ListView` with a [`DrawerHeader`][]
+and two [`ListTile`][] widgets.
+For more information on working with Lists,
+see the [list recipes][].
 
-我们将使用 [`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html)
-和两个 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) widget 填充 `ListView`。
-有关使用 List 的更多信息，请参阅实用教程中的 [list recipes](/docs/cookbook#lists)。
+我们将使用 [`DrawerHeader`][] 和两个 [`ListTile`][] widget 填充 `ListView`。
+有关使用 List 的更多信息，请参阅实用教程中的 [list recipes][]。
 
 <!-- skip -->
 ```dart
@@ -167,8 +158,7 @@ Drawer(
 ## 4. 通过编程关闭 drawer
 
 After a user taps an item, you might want to close the drawer.
-You can do this by using the
-[Navigator]({{site.api}}/flutter/widgets/Navigator-class.html).
+You can do this by using the [`Navigator`][].
 
 我们经常需要在用户点击某个项目后就将 Drawer 关掉。
 那么怎样才能做到这一点呢？请试试看 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)。
@@ -264,3 +254,13 @@ class MyHomePage extends StatelessWidget {
 ```
 
 ![Drawer Demo](/images/cookbook/drawer.png){:.site-mobile-screenshot}
+
+
+[`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
+[`DrawerHeader`]: {{site.api}}/flutter/material/DrawerHeader-class.html
+[list recipes]: /docs/cookbook#lists
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[material library]: {{site.api}}/flutter/material/material-library.html
+[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html

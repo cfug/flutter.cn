@@ -11,18 +11,21 @@ next:
   path: /docs/cookbook/navigation/hero-animations
 ---
 
-While one always tries to create apps that are free of bugs, they're sure
-to crop up from time to time. Since buggy apps lead to unhappy
-users and customers, it's important to understand how often your users
-experience bugs and where those bugs occur. That way,
-you can prioritize the bugs with the highest impact and work to fix them.
+While one always tries to create apps that are free of bugs,
+they're sure to crop up from time to time.
+Since buggy apps lead to unhappy users and customers,
+it's important to understand how often your users
+experience bugs and where those bugs occur.
+That way, you can prioritize the bugs with the
+highest impact and work to fix them.
 
 开发者总是试图创造没有 bug 的应用，但是 bug 还是会时不时地出现。这些 bug 会给用户带来糟糕的体验，所以获知 bug 发生的位置以及出现的频率就显得极为关键了。这样，你就可以根据 bug 的影响程度优先修复它们。
 
-How can you determine how often your users experiences bugs? Whenever an error
-occurs, create a report containing the error that occurred and the
-associated stacktrace. You can then send the report to an error tracking
-service, such as Sentry, Fabric, or [Rollbar](https://rollbar.com/).
+How can you determine how often your users experiences bugs?
+Whenever an error occurs, create a report containing the
+error that occurred and the associated stacktrace.
+You can then send the report to an error tracking
+service, such as Sentry, Fabric, or [Rollbar][].
 
 如何确定用户遇到 bug 的频率呢？解决方案是：当异常发生时，生成一份日志，日志中包含发生的异常及相关的堆栈信息。随后，可以将日志发送到异常监控报警平台，比如 Sentry、Fabric 或者 Rollbar。
 
@@ -33,7 +36,7 @@ app fails and where the users run into trouble.
 异常监控报警平台会将上报的崩溃日志异常信息聚合并分组归类，这样就可以知道应用程序出现异常的频率并定位异常发生位置。
 
 In this recipe, learn how to report errors to the
-[Sentry](https://sentry.io/welcome/) crash reporting service using
+[Sentry][] crash reporting service using
 the following steps:
 
 这个章节中，你可以通过以下步骤学习如何把异常信息上报给异常监控报警平台 [Sentry](https://sentry.io/welcome/)：
@@ -75,9 +78,9 @@ To get a DSN, use the following steps:
 
 根据以下步骤，获取 DSN：
 
-  1. [Create an account with Sentry](https://sentry.io/signup/).
+  1. [Create an account with Sentry][].
 
-     [创建 Sentry 账户](https://sentry.io/signup/)
+     [创建 Sentry 账户][Create an account with Sentry]
 
   2. Log in to the account.
 
@@ -95,10 +98,9 @@ To get a DSN, use the following steps:
 
 ## 2. 导入 Sentry 包
 
-Import the
-[`sentry`]({{site.pub-pkg}}/sentry) package into the app. The
-sentry package makes it easier to send error reports to the Sentry
-error tracking service.
+Import the [`sentry`][] package into the app.
+The sentry package makes it easier to send
+error reports to the Sentry error tracking service.
 
 导入 [`sentry`]({{site.pub-pkg}}/sentry) 包到应用中，sentry 包会让异常上报更为方便。
 
@@ -179,10 +181,10 @@ you need a way to capture Dart errors.
 
 现在已经有了一个能够根据环境上报异常的函数了，接着还需要知道如何去捕获 Dart 异常。 
 
-For this task, run your app inside a custom
-[`Zone`]({{site.api}}/flutter/dart-async/Zone-class.html). Zones
-establish an execution context for the code. This provides a convenient way to
-capture all errors that occur within that context by providing an `onError()`
+For this task, run your app inside a custom [`Zone`][].
+Zones establish an execution context for the code.
+This provides a convenient way to capture all errors
+that occur within that context by providing an `onError()`
 function.
 
 为了实现这一目的，可以把应用运行在一个自定义的 [`Zone`]({{site.api}}/flutter/dart-async/Zone-class.html) 里面。Zones 为代码建立执行上下文环境。在这个上下文环境中，所有发生的异常在抛出 `onError` 时都能够很容易地被捕获到。
@@ -213,11 +215,12 @@ capture and report these types of errors as well.
 
 除了 Dart 异常，Flutter 也能抛出其他的异常，比如调用原生代码发生的平台异常。这种类型的异常也同样是需要上报的。
 
-To capture Flutter errors, override the
-[`FlutterError.onError`]({{site.api}}/flutter/foundation/FlutterError/onError.html)
-property. If you're in debug mode, use a convenience function
-from Flutter to properly format the error. If you're in production mode,
-send the error to the `onError` callback defined in the previous step.
+To capture Flutter errors,
+override the [`FlutterError.onError`][] property.
+If you're in debug mode, use a convenience function
+from Flutter to properly format the error.
+If you're in production mode, send the error to the
+`onError` callback defined in the previous step.
 
 为了捕获 Flutter 异常，需要重写 [`FlutterError.onError`]({{site.api}}/flutter/foundation/FlutterError/onError.html) 属性。在开发环境下，可以将异常格式化输出到控制台。在生产环境下，可以把异常传递给上个步骤中的 `onError` 回调。
 
@@ -240,7 +243,16 @@ FlutterError.onError = (FlutterErrorDetails details) {
 
 ## 完整样例
 
-To view a working example, see the
-[Crashy]({{site.github}}/flutter/crashy) example app.
+To view a working example,
+see the [Crashy][] example app.
 
 查看 [Crashy]({{site.github}}/flutter/crashy) 示例应用，体验完整流程。
+
+
+[Crashy]: {{site.github}}/flutter/crashy
+[Create an account with Sentry]: https://sentry.io/signup/
+[`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
+[Rollbar]: https://rollbar.com/
+[Sentry]: https://sentry.io/welcome/
+[`sentry`]: {{site.pub-pkg}}/sentry
+[`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html

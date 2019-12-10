@@ -41,15 +41,14 @@ This recipe uses the following steps:
 
 ## 1. 添加 `http` 包
 
-The [`http`]({{site.pub-pkg}}/http) package provides the
+The [`http`][] package provides the
 simplest way to fetch data from the internet.
 
 [`http`]({{site.pub-pkg}}/http) 包为我们提供了获取网络数据最简单的方法。
 
 To install the `http` package, add it to the dependencies section
 of the `pubspec.yaml`. You can find the latest version of the
-[http package]({{site.pub}}/packages/http#-installing-tab-)
-the pub.dev.
+[http package][] the pub.dev.
 
 安装 `http` 包之前，你必须先把它添加到 `pubspec.yaml` 的依赖区域。你可以在 [pub.dev 找到 http 包的最新版本]({{site.pub}}/packages/http#-installing-tab-)。
 
@@ -70,8 +69,7 @@ import 'package:http/http.dart' as http;
 ## 2. 进行网络请求
 
 In this example, fetch a sample post from the
-[JSONPlaceholder](https://jsonplaceholder.typicode.com/) using the
-[http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
+[JSONPlaceholder][] using the [http.get()][] method.
 
 在这里，你可以使用 [http.get()]({{site.pub-api}}/http/latest/http/get.html) 方法从 [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) 上获取到一个样本数据。
 
@@ -86,17 +84,16 @@ The `http.get()` method returns a `Future` that contains a `Response`.
 
 这个 `http.get()` 方法会返回一个包含 `Response` 的 `Future`。
 
-  * [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) is
-    a core Dart class for working with async operations.
-    A Future object represents a potential value or error that will be
-    available at some time in the future.
+* [`Future`][] is a core Dart class for working with
+  async operations. A Future object represents a potential
+  value or error that will be available at some time in the future.
     
-    [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) 是 Dart 用来处理异步操作的一个核心类。它通常代表一个可能的值或者将来或许会用到的错误。
+  [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) 是 Dart 用来处理异步操作的一个核心类。它通常代表一个可能的值或者将来或许会用到的错误。
     
-  * The `http.Response` class contains the data received from a successful
-    http call.
+* The `http.Response` class contains the data received from a successful
+  http call.
     
-    `http.Response` 类包含成功的 http 请求接收到的数据。
+  `http.Response` 类包含成功的 http 请求接收到的数据。
     
 
 ## 3. Convert the response into a custom Dart object
@@ -119,9 +116,9 @@ creates a `Post` from JSON.
 
 首先，创建一个包含网络请求返回数据的 `Post` 类。而且这个类还需要一个可以利用 json 创建 `Post` 的工厂构造器。
 
-Converting JSON by hand is only one option. For more information,
-see the full article on [JSON and
-serialization](/docs/development/data-and-backend/json).
+Converting JSON by hand is only one option.
+For more information, see the full article on
+[JSON and serialization][].
 
 手动转换 JSON 是我们目前唯一的选项。想了解更多，请查看完整的文章 [JSON 和序列化数据](/docs/development/data-and-backend/json)。
 
@@ -195,8 +192,7 @@ internet.
 ## 4. 获取数据
 
 Call the fetch method in either the
-[`initState()`]({{site.api}}/flutter/widgets/State/initState.html) or
-[`didChangeDependencies()`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
+[`initState()`][] or [`didChangeDependencies()`][]
 methods.
 
 在 [`initState()`]({{site.api}}/flutter/widgets/State/initState.html) 或 [`didChangeDependencies()`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
@@ -204,10 +200,8 @@ methods.
 
 The `initState()` method is called exactly once and then never again.
 If you want to have the option of reloading the API in response to an
-[`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
-changing, put the call into the `didChangeDependencies()` method.  See
-[`State`]({{site.api}}/flutter/widgets/State-class.html) for more
-details.
+[`InheritedWidget`][] changing, put the call into the
+`didChangeDependencies()` method. See [`State`][] for more details.  
 
 `initState()` 方法仅会被调用一次。如果你想要响应 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html) 改变
 以重新加载 API 的话，请在 `didChangeDependencies()` 方法中进行调用。
@@ -233,9 +227,9 @@ This Future will be used in the next step.
 ## 5. 显示数据
 
 To to display the data on screen, use the
-[`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
-widget. The `FutureBuilder` widget comes with Flutter and makes it easy
-to work with async data sources.
+[`FutureBuilder`][] widget.
+The `FutureBuilder` widget comes with Flutter and
+makes it easy to work with async data sources.
 
 为了能够获取数据并在屏幕上展示它，你可以使用 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) widget。这个由 Flutter 提供的 `FutureBuilder` 组件可以让处理异步数据源变的非常简单。
 
@@ -354,13 +348,13 @@ see the following recipes:
 
 关于如何测试这个功能，请查看下面的说明：
 
-  * [Introduction to unit testing](/docs/cookbook/testing/unit/introduction)
+  * [Introduction to unit testing][]
   
-    [单元测试介绍](/docs/cookbook/testing/unit/introduction)
+    [单元测试介绍][Introduction to unit testing]
     
-  * [Mock dependencies using Mockito](/docs/cookbook/testing/unit/mocking)
+  * [Mock dependencies using Mockito][]
  
-    [使用 Mockito 模拟依赖](/docs/cookbook/testing/unit/mocking)
+    [使用 Mockito 模拟依赖][Mock dependencies using Mockito]
 
 
 ## Complete example
@@ -454,3 +448,19 @@ Future<Post> post;
   }
 }
 ```
+
+
+[`didChangeDependencies()`]: {{site.api}}/flutter/widgets/State/didChangeDependencies.html
+[`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
+[`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
+[JSONPlaceholder]: https://jsonplaceholder.typicode.com/
+[`http`]: {{site.pub-pkg}}/http
+[http.get()]: {{site.pub-api}}/http/latest/http/get.html
+[http package]: {{site.pub}}/packages/http#-installing-tab-
+[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
+[Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
+[`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
+[Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
+[JSON and serialization]: /docs/development/data-and-backend/json
+[`State`]: {{site.api}}/flutter/widgets/State-class.html
+

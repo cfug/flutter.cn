@@ -61,6 +61,7 @@ see [Installation bundles][].
 
 关于安装包结构的更多信息，请查看这个页面：[Installation bundles][]。
 
-[Flutter's channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
+[Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles
 [GitHub repo]: {{site.repo.flutter}}
+[Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles

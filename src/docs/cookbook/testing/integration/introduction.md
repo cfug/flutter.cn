@@ -26,9 +26,8 @@ the way.
 
 Integration tests 是成对出现的：首先，发布一个可测试应用程序到真是设备或者模拟器，然后，利用独立的测试套件去驱动应用程序，检查一切是否完好可用。
 
-To create this test pair, use the
-[flutter_driver]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html)
-package. It provides tools to create instrumented apps and drive those apps
+To create this test pair, use the [flutter_driver][] package.
+It provides tools to create instrumented apps and drive those apps
 from a test suite.
 
 为了创建这个测试对，可以使用 [flutter_driver]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html) 包。这个包提供了创建可测试应用的工具并支持从测试套件驱动应用程序。
@@ -77,10 +76,10 @@ a user to tap on a button to increase a counter.
 
 首先，我们需要创建一个应用程序用于测试。在这个示例中，我们将会测试一个由 `flutter create` 命令创建的计数器应用。这个应用程序允许用户点击按钮增加计数。
 
-Furthermore, provide a
-[`ValueKey`]({{site.api}}/flutter/foundation/ValueKey-class.html) to
-the `Text` and `FloatingActionButton` widgets. This allows identifying
-and interacting with these specific widgets inside the test suite.
+Furthermore, provide a [`ValueKey`][] to
+the `Text` and `FloatingActionButton` widgets.
+This allows identifying and interacting with these
+specific widgets inside the test suite.
 
 此外，我们将会给 `Text` 组件和 `FloatingActionButton` 组件增加 [`ValueKey`]({{site.api}}/flutter/foundation/ValueKey-class.html) 属性。这将允许我们在测试套件中标识特定组件并进行交互。
 
@@ -263,11 +262,10 @@ This involves four steps:
 
 现在我们有了待测应用，我们可以为它编写测试文件了。这包含了四个步骤：
 
-  1. Create
-  [`SerializableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html)
+  1. Create [`SerializableFinders`][]
      to locate specific widgets
  
-     创建 [`SerializableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html) 定位指定组件
+     创建 [`SerializableFinders`][] 定位指定组件
 
   2. Connect to the app before our tests run in the `setUpAll()` function
 
@@ -358,3 +356,7 @@ This command:
   3. Runs the `app_test.dart` test suite located in `test_driver/` folder.
 
      运行位于 `test_driver/` 文件夹下的 `app_test.dart` 测试套件
+
+[flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
+[`SerializableFinders`]: {{site.api}}/flutter/flutter_driver/CommonFinders-class.html
+[`ValueKey`]: {{site.api}}/flutter/foundation/ValueKey-class.html

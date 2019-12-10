@@ -10,14 +10,12 @@ next:
 A design language, such as Material, defines standard behaviors when
 transitioning between routes (or screens). Sometimes, though, a custom
 transition between screens can make an app more unique. To help,
-[PageRouteBuilder]({{site.api}}/flutter/widgets/PageRouteBuilder-class.html)
-provides an
-[Animation]({{site.api}}/flutter/animation/Animation-class.html)
-object. This `Animation` can be used with
-[Tween]({{site.api}}/flutter/animation/Tween-class.html) and
-[Curve]({{site.api}}/flutter/animation/Curve-class.html) objects to
-customize the transition animation. This recipe shows how to transition between
-routes by animating the new route into view from the bottom of the screen.
+[`PageRouteBuilder`][] provides an [`Animation`] object.
+This `Animation` can be used with [`Tween`][] and
+[`Curve`][] objects to customize the transition animation.
+This recipe shows how to transition between
+routes by animating the new route into view from
+the bottom of the screen.
 
 在不同路由（或界面）之间进行切换的时候，许多设计语言，例如 Material 设计，都定义了一些标准行为。
 但有时自定义路由会让 app 看上去更加的独特。为了更好的完成这一点，
@@ -55,15 +53,11 @@ To create a custom page route transition, this recipe uses the following steps:
 
 ## 1. 搭建一个 PageRouteBuilder
 
-To start, use a
-[PageRouteBuilder]({{site.api}}/flutter/widgets/PageRouteBuilder-class.html)
-to create a [Route]({{site.api}}/flutter/widgets/Route-class.html).
+To start, use a [`PageRouteBuilder`][] to create a [`Route`][].
 `PageRouteBuilder` has two callbacks, one to build the content of the route
 (`pageBuilder`), and one to build the route's transition (`transitionsBuilder`).
 
-我们从使用一个 
-[PageRouteBuilder]({{site.api}}/flutter/widgets/PageRouteBuilder-class.html)
-来创建一个 [Route]({{site.api}}/flutter/widgets/Route-class.html) 开始。
+我们从使用一个 [`PageRouteBuilder`][] 来创建一个 [`Route`][]。
 `PageRouteBuilder` 有两个回调，第一个是创建这个路由的内容（`pageBuilder`），
 另一个则是创建一个路由的转换器（`transitionsBuilder`）。
 
@@ -138,8 +132,8 @@ class Page2 extends StatelessWidget {
 To make the new page animate in from the bottom, it should animate from
 `Offset(0,1)` to `Offset(0, 0)` (usually defined using the `Offset.zero`
 constructor). In this case, the Offset is a 2D vector for the
-[FractionalTranslation]({{site.api}}/flutter/widgets/FractionalTranslation-class.html)
-widget. Setting the `dy` argument to 1 represents a vertical translation one
+['FractionalTranslation'][] widget.
+Setting the `dy` argument to 1 represents a vertical translation one
 full height of the page.
 
 为了使新页面从底部动画出来，它应该从 `Offset(0,1)` 到 `Offset(0, 0)` 进行动画。（通常我们会使用 `Offset.zero` 构造器。）
@@ -168,24 +162,21 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
 ## 3. 使用 AnimatedWidget
 
-Flutter has a set of widgets extending
-[AnimatedWidget]({{site.api}}/flutter/widgets/AnimatedWidget-class.html)
+Flutter has a set of widgets extending [`AnimatedWidget`][]
 that rebuild themselves when the value of the animation changes. For instance,
 SlideTransition takes an `Animation<Offset>` and translates its child (using a
 FractionalTranslation widget) whenever the value of the animation changes.
 
-Flutter 有一堆继承至 [AnimatedWidget]({{site.api}}/flutter/widgets/AnimatedWidget-class.html)
- 的 widget，它们能够在动画的值发生改变时自动重建自己。
- 举个例子，SlideTransition 拿到一个 `Animation<Offset>`
- 并在动画改变时使用 FractionalTranslation widget 转换其子级。
+Flutter 有一堆继承自 [`AnimatedWidget`][] 的 widget，
+它们能够在动画的值发生改变时自动重建自己。
+举个例子，SlideTransition 拿到一个 `Animation<Offset>`
+并在动画改变时使用 FractionalTranslation widget 转换其子级。
 
-AnimatedWidget Return a
-[SlideTransition]({{site.api}}/flutter/widgets/SlideTransition-class.html)
+AnimatedWidget Return a [`SlideTransition`][]
 with the `Animation<Offset>` and the child widget:
 
 AnimatedWidget 返回了一个 带有 `Animation<Offset>` 
-的 [SlideTransition]({{site.api}}/flutter/widgets/SlideTransition-class.html)，
-以及 child widget：
+的 [`SlideTransition`][]，以及 child widget：
 
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -205,23 +196,21 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
 ## 4. 使用 CurveTween
 
-Flutter provides a selection of easing curves that adjust the rate of the
-animation over time. The
-[Curves]({{site.api}}/flutter/animation/Curves-class.html) class
-provides a predefined set of commonly used curves. For example, `Curves.easeOut`
-will make the animation start quickly and end slowly.
+Flutter provides a selection of easing curves that
+adjust the rate of the animation over time.
+The [`Curves`][] class
+provides a predefined set of commonly used curves.
+For example, `Curves.easeOut`
+makes the animation start quickly and end slowly.
 
 Flutter 提供了一系列缓和曲线，可以调整一段时间内的动画速率。
-[Curves]({{site.api}}/flutter/animation/Curves-class.html)
-类提供了一个提前定义的用法相似的 curves。
+[`Curves`][] 类提供了一个提前定义的用法相似的 curves。
 例如，`Curves.easeOut` 将会让动画开始很快结束很慢。
 
-To use a Curve, create a new
-[CurveTween]({{site.api}}/flutter/animation/CurveTween-class.html)
+To use a Curve, create a new [`CurveTween`][]
 and pass it a Curve:
 
-要使用 Curve，创建一个 [CurveTween]({{site.api}}/flutter/animation/CurveTween-class.html) 
-并传一个 Curve：
+要使用 Curve，创建一个 [`CurveTween`][] 并传一个 Curve：
 
 ```dart
 var curve = Curves.ease;
@@ -237,10 +226,10 @@ combined the `Tween<Offset>` from step 2.
 
 ## 5. 结合两个 Tween
 
-To combine the tweens, use
-[chain()]({{site.api}}/flutter/animation/Animatable/chain.html):
+To combine the tweens,
+use [`chain()`][]:
 
-为了结合两个 tween，请使用 [chain()]({{site.api}}/flutter/animation/Animatable/chain.html):
+为了结合两个 tween，请使用 [`chain()`][]:
 
 ```dart
 var begin = Offset(0.0, 1.0);
@@ -368,3 +357,16 @@ class Page2 extends StatelessWidget {
 ```
 
 ![Demo showing a custom page route transition animating up from the bottom of the screen](/images/cookbook/page-route-animation.gif){:.site-mobile-screenshot}
+
+
+[`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
+[`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
+[`chain()`]: {{site.api}}/flutter/animation/Animatable/chain.html
+[`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
+[`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
+[`CurveTween`]: {{site.api}}/flutter/animation/CurveTween-class.html
+['FractionalTranslation']: {{site.api}}/flutter/widgets/FractionalTranslation-class.html
+[`PageRouteBuilder`]: {{site.api}}/flutter/widgets/PageRouteBuilder-class.html
+[`Route`]: {{site.api}}/flutter/widgets/Route-class.html
+[`SlideTransition`]: {{site.api}}/flutter/widgets/SlideTransition-class.html
+[`Tween`]: {{site.api}}/flutter/animation/Tween-class.html

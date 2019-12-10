@@ -21,10 +21,9 @@ uses the `Authorization` HTTP header.
 
 ## 添加 Authorization Headers
 
-The [`http`]({{site.pub-pkg}}/http) package provides a
+The [`http`][] package provides a
 convenient way to add headers to your requests.
-Alternatively, use the
-[HttpHeaders]({{site.dart.api}}/stable/dart-io/HttpHeaders-class.html)
+Alternatively, use the [HttpHeaders][]
 class from the `dart:io` library.
 
 [`http`]({{site.pub-pkg}}/http) 这个 package 提供了相当实用的方法来向请求中添加 headers，你也可以使用 `dart:io` 来使用一些常见的 `HttpHeaders`。
@@ -44,8 +43,8 @@ Future<http.Response> fetchPost() {
 
 ## 完整样例
 
-This example builds upon the [Fetching data from the
-internet](/docs/cookbook/networking/fetch-data) recipe.
+This example builds upon the
+[Fetching data from the internet][] recipe.
 
 下面的例子是基于 [获取网络数据](/docs/cookbook/networking/fetch-data) 中的方法编写的。
 
@@ -84,3 +83,8 @@ class Post {
   }
 }
 ```
+
+
+[Fetching data from the internet]: /docs/cookbook/networking/fetch-data
+[`http`]: {{site.pub-pkg}}/http
+[HttpHeaders]: {{site.dart.api}}/stable/dart-io/HttpHeaders-class.html

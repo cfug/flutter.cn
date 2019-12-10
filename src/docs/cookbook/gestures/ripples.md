@@ -17,10 +17,9 @@ a ripple animation when tapped.
 当我们在开发遵循 Material Design 规范应用的时候，
 我们可能会需要为某个 widgets 的点击加入涟漪效果。
 
-Flutter provides the
-[`InkWell`]({{site.api}}/flutter/material/InkWell-class.html)
-widget to perform this effect. Create a ripple effect using
-the following steps:
+Flutter provides the [`InkWell`][]
+widget to perform this effect.
+Create a ripple effect using the following steps:
 
 Flutter 提供了 [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html) 
 widget 来实现这个功能。
@@ -110,3 +109,6 @@ class MyButton extends StatelessWidget {
 ```
 
 ![Ripples Demo](/images/cookbook/ripples.gif){:.site-mobile-screenshot}
+
+
+[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html

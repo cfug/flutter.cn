@@ -12,15 +12,13 @@ next:
 ---
 
 Displaying images is fundamental for most mobile apps.
-Flutter provides the
-[`Image`]({{site.api}}/flutter/widgets/Image-class.html) widget to
+Flutter provides the [`Image`][] widget to
 display different types of images.
 
 对大多数移动应用来说，图片显示是一项基础功能。Flutter 提供了 [`Image`]({{site.api}}/flutter/widgets/Image-class.html) 来显示不同类型的图片。
 
 To work with images from a URL, use the
-[`Image.network()`]({{site.api}}/flutter/widgets/Image/Image.network.html)
-constructor.
+[`Image.network()`][] constructor.
 
 使用 [`Image.network`]({{site.api}}/flutter/widgets/Image/Image.network.html) 构造函数来处理来自 URL 的图片。
 
@@ -58,14 +56,13 @@ the following recipes:
 
 默认的 `Image.network` 构造函数并没有提供诸如加载后的图片淡入或下载之后将图片缓存到设备等更进一步的功能。请参阅以下链接来实现这些功能
 
-  * [Fade in images with a
-    placeholder](/docs/cookbook/images/fading-in-images)
+  * [Fade in images with a placeholder][]
   
-    [占位符和网络图片淡入](/docs/cookbook/images/fading-in-images/)
+    [占位符和网络图片淡入][Fade in images with a placeholder]
   
-  * [Working with cached images](/docs/cookbook/images/cached-images)
+  * [Working with cached images][]
   
-    [使用缓存图片](/docs/cookbook/images/cached-images/)
+    [使用缓存图片][Working with cached images]
 
 ## Complete example
 
@@ -97,3 +94,9 @@ class MyApp extends StatelessWidget {
 ```
 
 ![Network image demo](/images/cookbook/network-image.png){:.site-mobile-screenshot}
+
+
+[Fade in images with a placeholder]: /docs/cookbook/images/fading-in-images
+[`Image`]: {{site.api}}/flutter/widgets/Image-class.html
+[`Image.network()`]: {{site.api}}/flutter/widgets/Image/Image.network.html
+[Working with cached images]: /docs/cookbook/images/cached-images

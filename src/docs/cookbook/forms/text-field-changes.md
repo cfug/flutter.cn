@@ -37,13 +37,13 @@ With Flutter, you have two options:
 
 ## 1. 给 `TextField` 或 `TextFormField` 绑定 `onChanged()` 回调
 
-The simplest approach is to supply an
-[`onChanged()`]({{site.api}}/flutter/material/TextField/onChanged.html)
-callback to a
-[`TextField`]({{site.api}}/flutter/material/TextField-class.html) or a [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
+The simplest approach is to supply an [`onChanged()`][] callback to a
+[`TextField`][] or a [`TextFormField`][].
 Whenever the text changes, the callback is invoked.
 
-最简单的方法是给 [`TextField`]({{site.api}}/flutter/material/TextField-class.html) 绑定 `onChanged` 回调。每当文本内容改变时，回调函数会被触发。但这种方法有一个缺点，它不适用于 `TextFormField` 组件。
+最简单的方法是给 [`TextField`][] 绑定 [`onChanged()`][] 回调。
+每当文本内容改变时，回调函数会被触发。
+但这种方法有一个缺点，它不适用于 [`TextFormField`][] 组件。
 
 In this example, print the current value of the text field to the
 console every time the text changes.
@@ -64,20 +64,17 @@ TextField(
 ## 2. 使用 `TextEditingController`
 
 A more powerful, but more elaborate approach, is to supply a
-[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
-as the
-[`controller`]({{site.api}}/flutter/material/TextField/controller.html)
+[`TextEditingController`][] as the [`controller`][]
 property of the `TextField` or a `TextFormField`.
 
-另外一种更强大但是更复杂的方法是绑定 [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html) 作为 `TextField` 和
- `TextFormField` 的 [`controller`]({{site.api}}/flutter/material/TextField/controller.html) 属性。
+另外一种更强大但是更复杂的方法是绑定 [`TextEditingController`][] 作为 `TextField` 和
+ `TextFormField` 的 [`controller`][] 属性。
 
-To be notified when the text changes, listen to the controller using the
-[`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)
-method using the following steps:
+To be notified when the text changes, listen to the controller
+using the [`addListener()`][] method using the following steps:
 
-你可以通过如下步骤，使用 [`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html) 方法来监听控制，实现在文本更改时收到通知：
-
+你可以通过如下步骤，使用 [`addListener()`][] 方法来监听控制，
+实现在文本更改时收到通知：
 
   1. Create a `TextEditingController`.
 
@@ -173,7 +170,9 @@ You need a function to run every time the text changes.
 Create a method in the `_MyCustomFormState` class that prints
 out the current value of the text field.
 
-现在，我们需要一个每当表单项变化都会运行的函数。在下面的示例中，我们会在 `_MyCustomFormState` 类中创建一个方法，实现打印出文本框当前值。
+现在，我们需要一个每当表单项变化都会运行的函数。
+在下面的示例中，我们会在 `_MyCustomFormState` 类中创建一个方法，
+实现打印出文本框当前值。
 
 
 <!-- skip -->
@@ -189,10 +188,11 @@ _printLatestValue() {
 
 Finally, listen to the `TextEditingController` and call the
 `_printLatestValue()` method when the text changes. Use the
-[`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)
-method for this purpose.
+[`addListener()`][] method for this purpose.
 
-最后，需要监听 `TextEditingController` 并且在 text 值变化时运行 `_printLatestValue()` 方法。我们需要使用 [`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html) 方法来实现这个功能。
+最后，需要监听 `TextEditingController` 并且在 text 值变化时运行
+`_printLatestValue()` 方法。
+我们需要使用 [`addListener()`][] 方法来实现这个功能。
 
 Begin listening for changes when the
 `_MyCustomFormState` class is initialized,
@@ -289,3 +289,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
   }
 }
 ```
+
+
+[`addListener()`]: {{site.api}}/flutter/foundation/ChangeNotifier/addListener.html
+[`controller`]: {{site.api}}/flutter/material/TextField/controller.html
+[`onChanged()`]: {{site.api}}/flutter/material/TextField/onChanged.html
+[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
+[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html

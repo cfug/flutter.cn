@@ -41,8 +41,7 @@ colors and font styles for AppBars, Buttons, Checkboxes, and more.
 ## 定义一个全局 theme
 
 To share a Theme across an entire app, provide a
-[`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html)
-to the `MaterialApp` constructor.
+[`ThemeData`][] to the `MaterialApp` constructor.
 
 全局 Theme 会影响整个 app 的颜色和字体样式。
 只需要向 `MaterialApp` 构造器传入
@@ -76,8 +75,8 @@ MaterialApp(
 );
 ```
 
-See the [ThemeData]({{site.api}}/flutter/material/ThemeData-class.html)
-documentation to see all of the colors and fonts you can define.
+See the [`ThemeData`][] documentation to see all of
+the colors and fonts you can define.
 
 在 [ThemeData]({{site.api}}/flutter/material/ThemeData-class.html) 查看所有可自定义的颜色和字体样式。
 
@@ -125,9 +124,7 @@ Theme(
 ### 从父级 Theme 扩展
 
 Rather than overriding everything, it often makes sense to extend the parent
-theme. You can handle this by using the
-[`copyWith()`]({{site.api}}/flutter/material/ThemeData/copyWith.html)
-method.
+theme. You can handle this by using the [`copyWith()`][] method.
 
 相比从头开始定义一套样式，从父级 Theme 扩展可能更常规一些，使用 [`copyWith`]({{site.api}}/flutter/material/ThemeData/copyWith.html) 方法即可。
 
@@ -259,3 +256,7 @@ class MyHomePage extends StatelessWidget {
 ```
 
 ![Themes Demo](/images/cookbook/themes.png){:.site-mobile-screenshot}
+
+
+[`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
+[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html

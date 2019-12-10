@@ -11,11 +11,9 @@ next:
   path: /docs/cookbook/navigation/navigate-with-arguments
 ---
 
-In the [Navigate to a new screen and
-back](/docs/cookbook/navigation/navigation-basics) recipe,
+In the [Navigate to a new screen and back][] recipe,
 you learned how to navigate to a new screen by creating a new route and
-pushing it to the
-[`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html).
+pushing it to the [`Navigator`][].
 
 在 [导航到一个新页面和返回](/docs/cookbook/navigation/navigation-basics/) 一节中，
 我们通过创建一个新的路由并将它推到 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 类中学习到了如何导航到新的一个界面 (screen)。
@@ -27,10 +25,10 @@ and use the named route for navigation.
 
 然而，如果我们需要在应用的很多地方导航到同一界面，这样做就会导致代码重复。在这种情况下，定义**命名路由(named route)**并使用它进行导航就会非常方便。
 
-To work with named routes, use the
-[`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
-function. This example replicates the functionality from the original
-recipe, demonstrating how to use named routes using the following steps:
+To work with named routes,
+use the [`Navigator.pushNamed()`][] function.
+This example replicates the functionality from the original recipe,
+demonstrating how to use named routes using the following steps:
 
 要使用命名路由，我们可以使用 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法。下面的例子展示如何使用“命名路由”来实现前一节中的功能。
 
@@ -111,9 +109,9 @@ class SecondScreen extends StatelessWidget {
 
 ## 2. 定义路由
 
-Next, define the routes by providing additional properties to the
-[`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
-constructor: the `initialRoute` and the `routes` themselves.
+Next, define the routes by providing additional properties
+to the [`MaterialApp`][] constructor: the `initialRoute`
+and the `routes` themselves.
 
 接下来，我们需要通过为 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的构造函数额外的属性：`initialRoute` 和 `routes` 自身，来定义我们的路由。
 
@@ -158,8 +156,8 @@ MaterialApp(
 ## 3. 跳转到第二个界面
 
 With the widgets and routes in place, trigger navigation by using the
-[`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
-method. This tells Flutter to build the widget defined in the
+[`Navigator.pushNamed()`][] method.
+This tells Flutter to build the widget defined in the
 `routes` table and launch the screen.
 
 准备好了 Widgets 和路由，我们就可以开始进行页面跳转！在这里，我们将使用 `Navigator.pushNamed()` 函数。它会告诉 Flutter 去构建我们在 `routes` 表中定义的 Widget 并启动该界面。
@@ -185,8 +183,7 @@ onPressed: () {
 ## 4. 返回到第一个界面
 
 To navigate back to the first screen, use the
-[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
-function.
+[`Navigator.pop()`][] function.
 
 为了能够跳转回第一个页面，我们可以使用 [`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html) 方法。
 
@@ -279,3 +276,10 @@ class SecondScreen extends StatelessWidget {
 ```
 
 ![Navigation Basics Demo](/images/cookbook/navigation-basics.gif){:.site-mobile-screenshot}
+
+
+[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[Navigate to a new screen and back]: /docs/cookbook/navigation/navigation-basics
+[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html
+[`Navigator.pushNamed()`]: {{site.api}}/flutter/widgets/Navigator/pushNamed.html

@@ -19,8 +19,7 @@ to your users.
 
 Instead, wouldn't it be nice to display a placeholder at first,
 and images would fade in as they're loaded? Use the
-[`FadeInImage`]({{site.api}}/flutter/widgets/FadeInImage-class.html)
-widget for exactly this purpose.
+[`FadeInImage`][] widget for exactly this purpose.
 
 此外，如果可以先展示占位符，待图片加载完成后淡入显示图片不是很酷么？可以使用 Flutter 自带的 [`FadeInImage`]({{site.api}}/flutter/widgets/FadeInImage-class.html) Widget 来实现这个功能。
 
@@ -33,8 +32,7 @@ or images from the internet.
 
 ## 从内存加载占位符
 
-In this example, use the
-[transparent_image]({{site.pub-pkg}}/transparent_image)
+In this example, use the [transparent_image][]
 package for a simple transparent placeholder.
 
 本例将使用 [transparent_image]({{site.pub-pkg}}/transparent_image) 包来实现一个简单的透明占位符。
@@ -95,8 +93,7 @@ class MyApp extends StatelessWidget {
 
 You can also consider using local assets for placeholders.
 First, add the asset to the project’s `pubspec.yaml` file
-(for more details, see
-[Adding assets and images](/docs/development/ui/assets-and-images)):
+(for more details, see [Adding assets and images][]):
 
 也可以考虑使用本地资源作为占位符。首先将资源添加到项目的 `pubspec.yaml` 文件中（更多细节请参阅 [Assets and images](/docs/development/ui/assets-and-images)）：
 
@@ -107,9 +104,7 @@ First, add the asset to the project’s `pubspec.yaml` file
 +    - assets/loading.gif
 ```
 
-Then, use the
-[FadeInImage.assetNetwork()]({{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html)
-constructor:
+Then, use the [`FadeInImage.assetNetwork()`][] constructor:
 
 然后使用 [FadeInImage.assetNetwork()]({{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html) 构造函数：
 
@@ -156,3 +151,9 @@ class MyApp extends StatelessWidget {
 ```
 
 ![Asset fade-in](/images/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
+
+
+[Adding assets and images]: /docs/development/ui/assets-and-images
+[`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
+[`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
+[transparent_image]: {{site.pub-pkg}}/transparent_image

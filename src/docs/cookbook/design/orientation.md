@@ -20,16 +20,15 @@ yet put those same items side-by-side in landscape mode.
 一般情况下，一旦一个应用的屏幕方向发生了改变，比如从横屏变成竖屏，其设计也将跟着更新。
 例如，在纵向模式下，我们可能想要依次显示各个项目，但在横向模式下，我们会把这些相同的项目并排放置。
 
-In Flutter, you can build different layouts depending on a given
-[`Orientation`]({{site.api}}/flutter/widgets/Orientation-class.html).
+In Flutter, you can build different layouts depending
+on a given [`Orientation`][].
 In this example, build a list that displays two columns in
 portrait mode and three columns in landscape mode using the
 following steps:
 
-在 Flutter 中，我们可以根据给定的
-[`Orientation`]({{site.api}}/flutter/widgets/Orientation-class.html)
-构建不同的布局。本示例中，我们将构建一个列表，在
-纵向模式下显示两列，在横向模式下显示三列。
+在 Flutter 中，我们可以根据给定的 [`Orientation`][]
+构建不同的布局。本示例中，我们将构建一个列表，
+在纵向模式下显示两列，在横向模式下显示三列。
 
   1. Build a `GridView` with two columns.
      
@@ -61,8 +60,8 @@ GridView.count(
 );
 ```
 
-To learn more about working with `GridViews`, see the
-[Creating a grid list](/docs/cookbook/lists/grid-lists) recipe.
+To learn more about working with `GridViews`,
+see the [Creating a grid list][] recipe.
 
 要了解有关使用 `GridViews` 的更多信息，
 请参阅这个教程文档：[创建一个网格列表](/docs/cookbook/lists/grid-lists)。
@@ -72,14 +71,14 @@ To learn more about working with `GridViews`, see the
 ## 2. 使用 `OrientationBuilder` 更改列数。
 
 To determine the app's current `Orientation`, use the
-[`OrientationBuilder`]({{site.api}}/flutter/widgets/OrientationBuilder-class.html)
-widget. The `OrientationBuilder` calculates the current `Orientation` by
+[`OrientationBuilder`][] widget.
+The `OrientationBuilder` calculates the current `Orientation` by
 comparing the width and height available to the parent widget,
 and rebuilds when the size of the parent changes.
 
 为了确定当前的屏幕方向 `Orientation`，我们可以使用 `OrientationBuilder` widget。
-[`OrientationBuilder`]({{site.api}}/flutter/widgets/OrientationBuilder-class.html)
-通过比较父 widget 的可用宽度和高度来计算当前的 `Orientation`，
+[`OrientationBuilder`][] 通过比较父 widget 的可用宽度和高度
+来计算当前的 `Orientation`，
 并在父窗口大小更改时重建。
 
 Using the `Orientation`, build a list that displays two columns in portrait
@@ -171,3 +170,8 @@ class OrientationList extends StatelessWidget {
 ```
 
 ![Orientation Demo](/images/cookbook/orientation.gif){:.site-mobile-screenshot}
+
+
+[Creating a grid list]: /docs/cookbook/lists/grid-lists
+[`Orientation`]: {{site.api}}/flutter/widgets/Orientation-class.html
+[`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html

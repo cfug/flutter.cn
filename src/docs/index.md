@@ -33,148 +33,103 @@ To stay on top of Flutter announcements,
 including breaking changes, join the
 [flutter-announce][] Google group.
 
-加入官方的 [flutter-announce][]
-邮件群组，以关注 Flutter 的相关通知，包括 breaking changes 等。
+**Dec 11, 2019, Flutter Interact Edition**
 
-**Sept 10, 2019**
+**2019 年 12 月 11 日, Flutter Interact Edition**
 
-**2019 年 9 月 10 日**
+Flutter 1.12 is live!
 
-Flutter 1.9 is live!
+Flutter 1.12 正式发布!
 
-Flutter 1.9 正式发布！
+For more information, see
+[Flutter: the first UI platform designed for ambient computing][],
+[Announcing Flutter 1.12: What a year!][] and
+the [Flutter 1.12.13][] release notes.
 
-For more information, see [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter
-1.9][]
-and the [1.9.1 release notes][].
+更多详细信息请参阅 [Flutter：第一个为环境计算设计的UI平台][Flutter: the first UI platform designed for ambient computing]，
+[宣布 Flutter 1.12 正式发布：太棒的一年!][Announcing Flutter 1.12: What a year!] 以及 [Flutter 1.12.13][] 发行说明。
 
-更多信息，请查看 [本文][Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter
-1.9]，和 1.9.1 的
-[发行注记][1.9.1 release notes]。
+Docs added and updated since the last announcement include:
 
-For the 1.9 release, Flutter's web support has been
-merged ("unforked") into the main repo.
-**Web support hasn't reached beta, and is not ready
-to be used in production.**
-Web and desktop support (which is also coming), will
-impact the website, which was originally written
-exclusively for developing Flutter mobile apps.
-Some website updates are available now (and listed below),
-but more will be coming.
+自上次发布以来添加和更新的文档包括：
 
-随着 1.9 版本的发布，在 Web 平台运行
-Flutter 的代码正式被合并到主 repo，但是
-**在 Web 平台的支持尚未达到 Beta 阶段，请不要用在生产环节**。
-Web 和即将到来的桌面端支持将会影响本站的内容，
-如下列出了一些更新，更多的更新将会在稍后时间发布：
+* To accompany an updated implementation of add-to-app,
+  we have added documentation on how to
+  [add Flutter to an existing app][] for both iOS and Android.
 
-New and updated docs on the site include:
+  为配合最新版“添加到现有应用”的实现，
+  我们添加了有关如何[将 Flutter 添加到现有应用中][add Flutter to an existing app] 的文章，
+  同时适用于 iOS 和 Android。
 
-新的文档和更新包括：
+* If you own plugin code, we encourage you to update to the
+  new plugin APIs for Android. For more information, see
+  [Migrating your plugin to the new Android APIs][].
 
-* We've revamped the [Showcase][] page.
+  如果您拥有插件代码，我们建议您更新到
+  适用于 Android 插件的新的 API。有关更多信息，请参阅
+  [将您的插件迁移到新的 Android API][Migrating your plugin to the new Android APIs]。
 
-  我们更新了 [Showcase][] 页面。
+* Web support has moved to the beta channel. For more information,
+  see [Web support for Flutter][] and
+  [Web support for Flutter goes beta][] on the Medium publication.
+  Also, the [building a web app with Flutter][] page is updated.
 
-* The Flutter layout codelab has been rewritten and
-  uses the updated DartPad, the browser-based tool for
-  running Dart code. DartPad now supports Flutter!
-  [Try it out][] and let us know what you think.
+  Web 支持已移至 Beta 频道。想要查询更多的信息，
+  请参阅 [Flutter 的 Web 支持][Web support for Flutter] 和
+  [Flutter 的 Web 支持变为 beta][Web support for Flutter goes beta]。
+  此外，[使用 Flutter 构建 Web 应用程序][building a web app with Flutter]页面也已更新。
 
-  重写了 Flutter 布局的 codelab，并使用了新版 DartPad，
-  它是一个基于浏览器，用来运行 Dart 代码的工具。
-  目前 DartPad 已经支持 Flutter！赶紧[尝试][Try it out]，
-  并告诉我们你的感受。
- 
-* A new page on [using the dart:ffi library][]
-  to bind your app to native code (a feature currently under
-  development).
-  
-  更新了一篇 [使用 dart:ffi 库的文档][using the dart:ffi library]，
-  帮助你与原生代码进行互调操作（目前还在开发中）。
+* A new [write your first Flutter app on the web][] codelab
+  is added to the [Get started][] docs, and includes
+  instructions on setting breakpoints in DevTools!
 
-* The Performance view tool, which allows you to record
-  and profile a session from your Dart/Flutter application,
-  has been enabled in DevTools. For more information,
-  see the [Performance view][] page.
+  全新[编写你的第一个 Flutter Web 应用][] codelab
+  已添加到[使用入门][Get started]文档中，其中包括
+  在 DevTools 中设置断点的说明！
 
-  开发者工具（DevTools）里的性能视图工具（Performance view tool），
-  可以让你录制并检查 Dart 或 Flutter 应用的某个运行时 session，
-  可以在这里查看更多：
-  [使用性能视图 (Performance view)][Performance view]
-  
-* A new page on
-  [building a web application][].
+* A new [implicit animations][] codelab is available
+  featuring DartPad.
+  (To run it, you don't need to download any software!)
 
-  新增一个页面，关于 [如何构建一个 Web 应用][building a web application]。
-  
-* A new page on [creating responsive apps][]
-  in Flutter.
-  
-  新增一个页面，关于在 Flutter 里
-  [如何创建响应式应用][creating responsive apps]
+  新的[隐式动画][implicit animations] codelab 出来啦，
+  它还带有 DartPad。（直接运行它，你无需下载任何软件！）
 
-* A new page on
-  [preparing a web app for release][].
+* Alpha support for MacOS (desktop) is now available in
+  release 1.13 on the master and dev channels.
+  For more information, see [Desktop support for Flutter][].
 
-  新增一个页面，关于如何 
-  [打包并发布到 Web 平台][preparing a web app for release]。
+  现在可以在主频道和开发者频道上发布的 1.13 版获得对 MacOS（桌面）的 Alpha 支持。
+  有关更多信息，请参见 [Flutter 的桌面支持][Desktop support for Flutter]。
 
-* A new [web FAQ][].
- 
-  关于在 Web 平台运行 Flutter 应用，我们新增了一个 
-  [Web 常见问题页面][web FAQ]。
-  
-* The [Flutter for web][] page is updated.
-  
-  关于 [在 Web 平台运行 Flutter][Flutter for web] 的页面已经更新。
+* The iOS section of the [app size][] page is updated to reflect
+  the inclusion of bitcode.
 
-Other relevant docs:
+  iOS 页面的 [app size][] 部分已更新，包含 bitcode。
 
-其他相关文档：
+* An alpha release of Flutter Layout Explorer, a new feature
+  (and part of the Flutter inspector) that allows you to
+  explore a visual representation of your layout is available.
+  For more information, see the [Flutter Layout Explorer][] docs.
 
-* Error messages have been improved in SDK 1.9.
-  For more information, read 
-  [Improving Flutter's Error Messages][]
-  on the [Flutter Medium publication][].
+  Flutter Layout Explorer 的 Alpha 版本，一项新功能
+  （以及 Flutter inspector 的一部分），你可以
+  探索您的布局的可视化表示形式。
+  有关更多信息，请参见[探索 Flutter 中的布局][Flutter Layout Explorer]文档。
 
-  Flutter 1.9 版本里我们更新了对开发者更友好的 [错误信息提示][Improving Flutter's Error Messages]。更多详细信息请参阅
-  [Flutter Medium 刊物][Flutter Medium publication] 上发布的
-  [提高 Flutter 错误提示][Improving Flutter's
-  Error Messages]。
-  
-* If you already have a web app that depends on the
-  flutter_web package, the following instructions tell
-  you how to migrate to the flutter package:
-  [Upgrading from package:flutter_web to the Flutter
-  SDK][].
-  
-  如果你先前已经通过 flutter_web 这个 package 使用了 Flutter Web，
-  请根据 [这个文档][Upgrading from package:flutter_web to the Flutter SDK] 来迁移。
+Other newness:
 
-* A new [ToggleButtons][]
-  widget, described in the API docs.
-  [ToggleButtons demo][]
+其他新颖之处：
 
-  新增 [ToggleButtons][] widget，以及 API 文档。
+* A brand new version of [Flutter Gallery][]. There's a 
+  link to the runnable sample in the side nav under
+  **Samples & Tutorials**.
 
-* A new [ColorFiltered][]
-  widget, also described in the API docs.
-  [ColorFiltered demo][]
-
-  新增 [ColorFiltered][] widget，以及 API 文档。
-
-* New behavior for the
-  [SelectableText][]
-  widget.
-
-  [SelectableText][] widget 的新特性。
+  全新版本的 [Flutter Gallery][]。
+  侧面导航**样本和教程**下有个可运行示例的链接。
 
 Happy Fluttering!
 
 祝你在 Flutter 应用的开发中有一个愉快的经历和体验！
-
-[What's new archive][]
 
 [最近更新归档页面][What's new archive]。
 
@@ -354,3 +309,19 @@ You might also find these docs useful:
 [Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [using the dart:ffi library]: /docs/development/platform-integration/c-interop
 [web FAQ]: /docs/development/platform-integration/web
+[add Flutter to an existing app]: /docs/development/add-to-app
+[Announcing Flutter 1.12: What a year!]: https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d
+[app size]: /docs/perf/app-size#ios
+[building a web app with Flutter]: /docs/get-started/web
+[Desktop support for Flutter]: /desktop
+[Flutter: the first UI platform designed for ambient computing]: https://developers.googleblog.com/2019/12/flutter-ui-ambient-computing.html?m=1
+[Flutter 1.12.13]: /docs/development/tools/sdk/release-notes/release-notes-1.12.13
+[Flutter Gallery]: https://flutter.github.io/samples/#/
+[Flutter Layout Explorer]: https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer
+[Flutter Medium publication]: https://medium.com/flutter
+[Migrating your plugin to the new Android APIs]: /docs/development/packages-and-plugins/plugin-api-migration
+[implicit animations]: /docs/codelabs/implicit-animation
+[Web support for Flutter]: /web
+[Web support for Flutter goes beta]: https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0
+[write your first Flutter app on the web]: /docs/get-started/codelab-web
+[Get started]: /docs/get-started/install

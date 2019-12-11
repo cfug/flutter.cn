@@ -5,100 +5,69 @@ description: Instructions for creating a Flutter app on the web.
 description: 创建在 Web 平台上运行的 Flutter 应用。
 ---
 
-As of 1.9, Flutter has early support for running web
-applications. There are still missing features and known
-performance issues, so it
-**isn't recommended for production use.**
+This page covers the following steps for getting started with web support:
+- Configure the `flutter` tool for web support.
+- Create a new project with web support.
+- Run a new project with web support.
+- Build an app with web support.
+- Add web support to an existing project.
 
-从 1.9 版本开始，Flutter 支持在 Web 上运行，
-目前仍存在某些功能缺失和已知的性能问题，
-所以我们 **不建议在生产环境中使用**。
+## Requirements
 
-{{site.alert.note}}
+## 要求
 
-  Currently, debugging a web app requires the
-  Chrome browser. If you haven't already,
-  [install Chrome][].
-  
-  目前如果要在 Web 平台运行 Flutter 应用，
-  你必须 [安装 Chrome 浏览器][]。
-  
-{{site.alert.end}}
+- [Install the Flutter SDK on your platform][Install Flutter].
+
+  [在你的平台上安装 Flutter SDK][Install Flutter]。
+
+- [Install Chrome][]. Currently, debugging a web app requires the Chrome browser.
+
+  [安装 Chrome][Install Chrome]。当前，调试 web 应用需要 Chrome 浏览器。
 
 For more information, see the [web FAQ][].
 
-如果想要了解更多信息，请看 [Web 常见问题][web FAQ] 文档。
+更多详细信息请参阅 [web 常见问题解答][web FAQ]。
 
-{{site.alert.warning}}
+{{ site.alert.warning }}
+As of 1.12, Flutter has early support for running web applications.
+There are still missing features and known performance issues,
+so it **isn't recommended for production use.**
+{{ site.alert.end }}
 
-  If you don't yet have the `flutter` tool installed,
-  do a [regular install for your platform][], and then
-  return to these instructions.
-  
-  如果你尚未安装 Flutter 命令行工具，请在这里查看
-  [安装教程][regular install for your platform]，
-  然后再返回本文继续。
-  
-{{site.alert.end}}
+## Create a new project with web support
 
-## Summary
-
-## 概览
-
-Here are the short and sweet instructions to get started.
-To **add support to an existing project** and
-**assuming that you have the `flutter` tool installed**,
-run the following commands in a terminal from the
-top of the project package:
-
-这里是一个简洁的使用说明，假设你 **需要添加 Web 支持到现有到项目**，
-并且也 **已经安装了 Flutter 命令行工具**。
-对一个已有的工程添加 Web 支持，需要在工程根目录下输入下面的命令：
-
-```terminal
-$ flutter channel dev
-$ flutter upgrade
-$ flutter config --enable-web
-$ cd <into project directory>
-$ flutter create .
-$ flutter run -d chrome
-```
-
-To generate a release build:
-
-生成 release 产物：
-
-```terminal
-flutter build web
-```
-
-The rest of this page breaks this process down
-into individual steps.
-
-文章的剩余部分会将上述过程分解为若干步骤。
-
-## Download the Flutter SDK
-
-## 下载 Flutter SDK
-
-Currently, you need either the master or dev channel of the Flutter SDK
-for web support. Assuming that you already have the
-`flutter` tool installed, run the following commands
-to install the latest version from dev:
+## 创建一个支持 web 的新项目
 
 当前，你需要 master 或者 dev 渠道的的 Flutter SDK 来获取 Web 支持：
 这里我们假定你已经安装了 Flutter 命令行工具，运行下面的
 命令需要安装 master 渠道最新的 SDK 噢：
 
+You can use the following steps
+to create a new project with web support.
+
+你可以通过以下步骤创建一个支持 web 的新项目。
+
+### Set up
+
+### 初始化
+
+Run the following commands to use the latest version of the Flutter SDK
+from the beta channel and enable web support:
+
+运行以下命令，使用最新的 beta 频道的 Flutter SDK，并开启 web 支持：
+
 ```terminal
-$ flutter channel dev
+$ flutter channel beta
 $ flutter upgrade
+$ flutter config --enable-web
 ```
 
+{{site.alert.note}}
 The `flutter upgrade` command silently fails
-when "origin" points to a personal fork.
-To validate that "origin" points to the
-"flutter/flutter" repo, enter the following:
+when `origin` points to a personal fork.
+To validate that `origin` points to `{{site.repo.flutter}}.git`,
+run the following commands in the root directory
+of your local copy of the `{{site.repo.flutter}}` repository:
 
 这里的 `flutter upgrade` 命令会在个人 fork 情况下失效，
 验证 origin 是否指向 "flutter/flutter" 仓库，可以通过下面命令：
@@ -106,7 +75,7 @@ To validate that "origin" points to the
 ```terminal
 $ cd <inside local copy of the flutter/flutter repo>
 $ git remote get-url origin
-ssh://git@github.com/flutter/flutter.git
+https://github.com/flutter/flutter.git
 ```
 
 ## Enable web support
@@ -134,21 +103,24 @@ with the following:
   "enable-web": true
 }
 ```
-
+{{site.alert.end}}
 Once web is enabled,
-`flutter devices` outputs a device named `Chrome`.
+the `flutter devices` command outputs a `Chrome` device that opens the
+Chrome browser with your app running, and a `Web Server` that provides the URL
+serving the app.
 
 一旦开启了 Web 支持，运行 `flutter devices`
 命令会输出一个名为 `Chrome` 的设备信息。
 
 ```terminal
 $ flutter devices
-1 connected device:
+2 connected device:
 
-Chrome • chrome • web-javascript • Google Chrome 76.0.3809.100
+Chrome     • chrome     • web-javascript • Google Chrome 78.0.3904.108
+Web Server • web-server • web-javascript • Flutter Tools
 ```
 
-**After enabling web support, restart the IDE.**
+**After enabling web support, restart your IDE.**
 You should now see **Chrome (web)** in the device pulldown.
 
 **在开启了 Web 支持后，需要重启 IDE**。
@@ -179,67 +151,97 @@ from the top of the project package:
 ```terminal
 flutter create .
 ```
+{{site.alert.note}}
+You should only need to execute these configure steps once. You can always
+check the status of your configuration using the `flutter config` command.
+{{site.alert.end}}
 
-## Create a new app with web support
+### Create and run
 
 ## 创建一个有支持 Web 运行的新应用
 
-To create a new app that includes web support
-(in addition to mobile support), run the following,
+To create a new app for use with web support
+(in addition to mobile support), run the following commands,
 substituting `myapp` with the name of your project:
 
 为了创建一个既支持移动端又支持 Web 的新应用，
 将 `myapp` 替换成自己工程的名字，运行下面的命令：
 
 ```terminal
-flutter create myapp
+$ flutter create myapp
+$ cd myapp
 ```
 
-## Run the web app
+To serve your app from `localhost` in Chrome,
+enter the following from the top of the package:
 
-## 在 Web 平台运行应用
-
-To run the app on the web, enter the following
-from the top of the package:
-
-要在 Web 上运行应用，需要在工程根目录运行下面的命令：
+要在 Chrome 的 `localhost` 中部署你的应用，
+从软件包根目录输入以下内容：
 
 ```terminal
 flutter run -d chrome
 ```
+{{site.alert.note}}
 
 If there aren't any other connected devices,
 the `-d chrome` is optional.
 
+如果没有其他连接的设备，那么 `-d chrome` 是可选的。
+
+{{site.alert.end}}
+
+The `flutter run` command launches the application using the
+[development compiler][] in a Chrome browser.
+
 如果没有连接任何其他设备，`-d chrome` 可以省略。
 
-## Generate a release build
+### Build
 
-## 生成 release 产物
+Run the following command to generate a release build:
 
-Run the following, from the top of the project:
-
-在工程根目录运行下面命令：
+运行下面命令以生成发行构建：
 
 ```terminal
 flutter build web
 ```
 
-A release build uses [dart2js][]
-(instead of the development compiler) to produce a single
-JavaScript file.  This can be run with the release flag
-or built using `flutter build web`. This outputs files at
-`build/web`, including the assets, which need to be served together.
-There is no support for building a debug build,
-since they consist of potentially thousands of small files.
+A release build uses [dart2js][] (instead of the [development compiler][])
+to produce a single JavaScript file `main.dart.js`.
+You can create a release build using release mode (`flutter run --release`)
+or by using `flutter build web`. This populates a `build/web` directory
+with built files, including an `assets` directory,
+which need to be served together.
 
-Release 构建产物使用 [dart2js][]（不是 dartdevc）生成了一个单独的 JavaScript 文件。
-可以通过带有 `release` 标志的运行命令或是 `flutter build web` 来构建。
+Release 构建产物使用 [dart2js][]（不是 dartdevc）生成了一个单独的 JavaScript `main.dart.js` 文件。
+你可以通过 release 模式 (`flutter run --release`) 或者 `flutter build web` 创建一个发行构建。
 输出文件在 `build/web` 目录下，包括需要一起提供的 `assets` 资源文件。
 因为 debug 构建可能包含数千个小文件，所以这里不支持 debug 构建。
+
+{%comment%} add link to deploy / build doc {%endcomment%}
+
+### Add web support to an existing app
+
+### 向现有应用添加 Web 支持
+
+To add web support to an existing project,
+run the following command in a
+terminal from the root project directory:
+
+为了向现有应用添加 Web 支持，
+请在项目根目录下，在终端运行以下命令：
+
+```terminal
+$ flutter create .
+```
+To serve your app from `localhost` in Chrome,
+enter the following from the top of the package:
+
+```terminal
+$ flutter run -d chrome
+```
 
 [dart2js]: https://dart.dev/tools/dart2js
 [development compiler]: https://dart.dev/tools/dartdevc
 [web FAQ]: /docs/development/platform-integration/web
 [install Chrome]: https://www.google.com/chrome/
-[regular install for your platform]: /docs/get-started/install
+[Install Flutter]: https://flutter.cn/docs/get-started/install

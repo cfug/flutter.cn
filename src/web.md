@@ -19,14 +19,11 @@ Web 支持是 Flutter 的代码兼容实现，使用基于标准的 Web 技术�
 
 {{site.alert.warning}}
 
-  **As of 1.9, web support is available as a tech preview.**
-  As web support hasn't yet reached alpha,
-  you can expect to experience crashes and missing features.
+  **As of 1.12, web support is available on the beta channel.**
   If you experience a problem that hasn't yet been reported, please
   [file an issue][] and make sure that "web" appears in the title.
   
-  **在 1.9 版本，Web 支持已可用于技术预览。**
-  由于Web支持尚未达到alpha，你可能会遇到崩溃和功能缺失。
+  **在 1.12 版本，Web 支持已支持 beta 频道。**
   如果你遇到了尚未被报告的问题，请 [提交一个 issue][file an issue]，并确保标题中标注了 “web” 字样。
   
 {{site.alert.end}}
@@ -95,28 +92,10 @@ being valuable in many scenarios. For example:
   使您可以在线部署内容或嵌入应用程序中，而无需重写。
 
 <a name="web"></a>
-## Notes on web support in 1.9
 
-## 关于 1.9 版本中的 Web 支持的说明
+## Notes on web support
 
-This preview version of web support is your opportunity to
-try it out. Before you get started, here are a few notes:
-
-此预览版的 Web 支持是你开始试用它绝佳时机。在你开始之前，有一些注意事项：
-
-* This release is missing features and has known performance
-  issues, so we don't recommend it for production.
-  
-  此版本缺少一些功能，并存在已知性能问题，因此我们不建议将其用于生产环境。
-
-* You can update existing Flutter code to work on the web,
-  but there are some caveats as web support hasn't
-  yet reached beta. For more information, see the
-  [web FAQ][].
-  
-  你可以更新现有的 Flutter 代码以在 Web 上运行，
-  但会有一些警告，因为 Web 支持还未达到 beta 测试状态。
-  有关更多信息，请参阅 [Web 常见问题][web FAQ]。
+## 关于 web 支持的说明
 
 The following resources can help you get started:
 

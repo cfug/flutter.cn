@@ -37,6 +37,15 @@ This recipe uses the following steps:
   
      使用字体
 
+{{site.alert.note}}
+
+  Check out the [google_fonts][] package for direct access
+  to almost 1000 open-sourced font families.
+
+  查看 [google_fonts][] 库，你将可以直接访问近 1000 个开源字体族。
+  
+{{site.alert.end}}
+
 ## 1. Add a font to a package
 
 ## 1. 将字体添加到 package
@@ -212,5 +221,6 @@ class MyHomePage extends StatelessWidget {
 ![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
 [Google Fonts]: https://fonts.google.com
+[google_fonts]: {{site.pub}}/packages/google_fonts
 [pub.dev]: {{site.pub}}
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html

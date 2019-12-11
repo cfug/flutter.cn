@@ -67,6 +67,19 @@ See the [Android Studio/IntelliJ][], [VS Code][], or
 
 详细安装教程，请查阅 [Android Studio/IntelliJ][]、[VS Code][] 或 [命令行][] 页面。
 
+## How do I try DevTools written in Flutter?
+
+## 我该如何尝试使用 Flutter 编写的 DevTools？
+
+To test the alpha version of DevTools written in Flutter, click the “beaker” icon in the upper-right corner of DevTools.
+This will launch DevTools running on Flutter web. This version is in early preview with only the inspector tab feature
+complete. It is under active development.
+
+要测试使用 Flutter 编写的 DevTools 的 Alpha 版本，请单击 DevTools 右上角的“烧杯”图标。
+这将启动在 Flutter 网站上运行的 DevTools。此版本处于早期预览状态，仅具有检查器选项卡功能。它正在积极演进中。
+
+![DevTools alpha 入口点的屏幕截图]({% asset tools/devtools/devtools_alpha_entrypoint.png @path %}){:width="100%"}
+
 ## Providing feedback
 
 ## 提交反馈

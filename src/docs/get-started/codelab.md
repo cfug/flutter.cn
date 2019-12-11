@@ -14,6 +14,20 @@ next:
 diff2html: true
 ---
 
+{{site.alert.tip}}
+
+  This codelab walks you through writing your first Flutter
+  app on mobile. You might prefer to try
+  [writing your first Flutter app on the web][].
+  **Note that if you have [enabled web][],
+  the completed app just works on all of these devices!**
+
+  这篇 codelab 将带你初体验移动端 Flutter 应用开发。
+  你也许更想尝试[编写你的第一个 Flutter 网页应用][writing your first Flutter app on the web]。
+  **请注意，如果你[开启 web][enabled web]，完整的应用程序仅可在这些设备上使用！**
+
+{{site.alert.end}}
+
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
 
 {% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='site-image-right' %}
@@ -36,7 +50,7 @@ previous experience with Dart, mobile, or web programming.
 
 This guide is part 1 of a two-part codelab. You can find
 [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-on [Google Developers]({{site.codelabs}}).
+on the [Google Developers]({{site.codelabs}}) site.
 [Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
 can also be found on [Google Developers]({{site.codelabs}}).
 
@@ -938,5 +952,7 @@ where you add the following functionality:
   修改应用的主题，变成一个白色系的应用。
 
 [DevTools]: /docs/development/tools/devtools
+[enabled web]: /docs/get-started/web
 [english_words]: {{site.pub}}/packages/english_words
 [pub.dev]: {{site.pub}}
+[writing your first Flutter app on the web]: /docs/get-started/codelab-web

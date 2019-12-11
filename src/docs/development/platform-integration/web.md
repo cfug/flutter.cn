@@ -9,16 +9,13 @@ description: 在 Flutter 中编写或运行 Web 应用程序时遇到的一些�
 
 ### Web 版本的 Flutter 是否已经准备好投入生产环境中了呢？
 
-As of the 1.9 release, the web version of Flutter is available as
-a technical preview on the master/(dev by Sept?) channel.
-Web support has been added to the main Flutter repo,
-but is missing features and has known performance issues.
+As of the 1.12 release, web support for Flutter
+is available on the beta channel.
+
+从 1.12 版本开始，Flutter 的 Beta 频道已支持 Web 。
+
 **We don't recommend deploying a web app to production.**
 
-截至 1.9 版本，Web 版本 Flutter 可以
-在 master channel（dev 可能会是 9 月）上作为技术预览版本。
-Web 支持已经被添加到 Flutter 的主仓库中，
-但还缺少一些特性，且存在已知的性能问题。
 **我们不建议将 Web 应用部署到生产环境中**
 
 ### How do I create an app that also runs on the web?
@@ -75,10 +72,10 @@ but you can enter "R" in the console where
 
 You can select **Chrome** as the target device in
 Android Studio/IntelliJ and VS Code if you are using the
-master channel of Flutter and have enabled web support.
+latest beta channel of Flutter and have enabled web support.
 To enable support, run the following in the terminal:
 
-如果你正在使用 master channel 的 Flutter，并已启用 web 支持，
+Flutter 最新的 beta 频道已开启 web 支持，
 你可以在 Android Studio、IntelliJ 和 VS Code 中选择 **Chrome** 作为目标设备。
 要启用 web 支持，请在终端中执行以下命令：
 

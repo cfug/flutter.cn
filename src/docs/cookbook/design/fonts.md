@@ -25,6 +25,15 @@ or perhaps you downloaded a font from [Google Fonts][].
 例如，你可能需要使用设计师提供的自定义字体，或者从
 [Google Fonts][] 下载的字体。
 
+{{site.alert.note}}
+
+  Check out the [google_fonts][] package for direct access
+  to almost 1000 open-sourced font families.
+
+  查看 [google_fonts][] 库，你将可以直接访问近 1000 个开源字体族。
+
+{{site.alert.end}}
+
 Flutter works with custom fonts and you can apply a custom
 font across an entire app or to individual widgets.
 This recipe creates an app that uses custom fonts with
@@ -304,5 +313,6 @@ class MyHomePage extends StatelessWidget {
 [`fontWeight`]: {{site.api}}/flutter/painting/TextStyle/fontWeight.html
 [`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
 [Google Fonts]: https://fonts.google.com
+[google_fonts]: {{site.pub}}/packages/google_fonts
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [Using Themes to share colors and font styles]: /docs/cookbook/design/themes

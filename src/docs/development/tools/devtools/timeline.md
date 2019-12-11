@@ -156,7 +156,7 @@ click and drag the chart or scroll horizontally. You can click
 an event to view CPU profiling information in the CPU profiler,
 described in the next section.
 
-火焰图表支持缩放和平移。上下滚动分别进行放大和缩小。你可以通过单击和拖拽图表或水平滚动的方式来移动它。在下一节的描述中，你会了解在 CPU 分析器中单击一个事件来查看 CPU 信息
+火焰图表支持缩放和平移。上下滚动分别进行放大和缩小。你可以通过单击和拖拽图表或水平滚动的方式来移动它。在下一节的描述中，你会了解在 CPU 分析器中单击一个事件来查看 CPU 信息。
 
 ## CPU profiler
 

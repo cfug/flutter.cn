@@ -33,6 +33,8 @@
 
 - title: 教程和样例代码
   children:
+    - title: Flutter Gallery [新增]
+      permalink: https://flutter.github.io/samples/#/
     - title: GitHub 上样例应用
       permalink: https://github.com/flutter/samples/blob/master/INDEX.md
     - title: 实用教程 (Cookbook)
@@ -143,36 +145,38 @@
           permalink: /docs/development/packages-and-plugins/favorites
         - title: 后台进程
           permalink: /docs/development/packages-and-plugins/background-processes
-        # - title: Plugin migration
-        #   permalink: /docs/development/packages-and-plugins/plugin-api-migration
-        - title: Package 网站
-          permalink: https://pub.flutter-io.cn/flutter
-    # - title: Add Flutter to existing app
-    #   permalink: /docs/development/add-to-app
-    #   children:
-    #   - title: Introduction
-    #     permalink: /docs/development/add-to-app
-    #     match-page-url-exactly: true
-    #   - title: Adding to an Android app
-    #     permalink: /docs/development/add-to-app/android
-    #     children:
-    #       - title: Project setup
-    #         permalink: /docs/development/add-to-app/android/project-setup
-    #       - title: Add a single Flutter screen
-    #         permalink: /docs/development/add-to-app/android/add-flutter-screen
-    #       - title: Add a Flutter Fragment
-    #         permalink: /docs/development/add-to-app/android/add-flutter-fragment
-    #       - title: Add a Splash Screen
-    #         permalink: /docs/development/add-to-app/android/add-splash-screen
-    #   - title: Adding to an iOS app
-    #     permalink: /docs/development/add-to-app/ios
-    #     children:
-    #       - title: Project setup
-    #         permalink: /docs/development/add-to-app/ios/project-setup
-    #       - title: Add a single Flutter screen
-    #         permalink: /docs/development/add-to-app/ios/add-flutter-screen
-    #   - title: Loading sequence and performance
-    #     permalink: /docs/development/add-to-app/performance
+        - title: 迁移插件
+          permalink: /docs/development/packages-and-plugins/plugin-api-migration
+        - title: 插件网站
+          permalink: https://pub.dev/flutter
+    - title: 将 Flutter 添加到现有应用
+      permalink: /docs/development/add-to-app
+      children:
+      - title: 介绍
+        permalink: /docs/development/add-to-app
+        match-page-url-exactly: true
+      - title: 将 Flutter 添加到现有 Android 应用
+        permalink: /docs/development/add-to-app/android
+        children:
+          - title: 设置项目
+            permalink: /docs/development/add-to-app/android/project-setup
+          - title: 添加单个 Flutter 页面
+            permalink: /docs/development/add-to-app/android/add-flutter-screen
+          - title: 添加一个 Flutter Fragment
+            permalink: /docs/development/add-to-app/android/add-flutter-fragment
+          - title: 添加一个闪屏页
+            permalink: /docs/development/add-to-app/android/add-splash-screen
+      - title: 将 Flutter 添加到现有 Android 应用
+        permalink: /docs/development/add-to-app/ios
+        children:
+          - title: 设置项目
+            permalink: /docs/development/add-to-app/ios/project-setup
+          - title: 添加单个 Flutter 页面
+            permalink: /docs/development/add-to-app/ios/add-flutter-screen
+      - title: 运行，调试以及热重载
+        permalink: /docs/development/add-to-app/debugging
+      - title: 加载顺序和性能
+        permalink: /docs/development/add-to-app/performance
     - title: 开发工具和技术细节
       permalink: /docs/development/tools
       children:
@@ -290,6 +294,8 @@
       permalink: /docs/resources/compatibility
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
+    - title: Google 文字库
+      permalink: https://pub.dev/packages/google_fonts
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
     - title: 技术概览

@@ -46,8 +46,10 @@ For more information, see
 [Announcing Flutter 1.12: What a year!][] and
 the [Flutter 1.12.13][] release notes.
 
-更多详细信息请参阅 [Flutter：第一个为环境计算设计的UI平台][Flutter: the first UI platform designed for ambient computing]，
-[宣布 Flutter 1.12 正式发布：太棒的一年!][Announcing Flutter 1.12: What a year!] 以及 [Flutter 1.12.13][] 发行说明。
+更多详细信息请参阅 
+[Flutter：第一个为环境计算设计的UI平台][Flutter: the first UI platform designed for ambient computing]，
+[宣布 Flutter 1.12 正式发布：太棒的一年!][Announcing Flutter 1.12: What a year!] 
+以及 [Flutter 1.12.13][] 发行注记。
 
 Docs added and updated since the last announcement include:
 
@@ -57,41 +59,42 @@ Docs added and updated since the last announcement include:
   we have added documentation on how to
   [add Flutter to an existing app][] for both iOS and Android.
 
-  为配合最新版“添加到现有应用”的实现，
-  我们添加了有关如何[将 Flutter 添加到现有应用中][add Flutter to an existing app] 的文章，
+  为配合最新版「添加到现有应用」的实现，我们添加了有关如何
+  [将 Flutter 添加到现有应用中][add Flutter to an existing app] 的文章，
   同时适用于 iOS 和 Android。
 
 * If you own plugin code, we encourage you to update to the
   new plugin APIs for Android. For more information, see
   [Migrating your plugin to the new Android APIs][].
 
-  如果您拥有插件代码，我们建议您更新到
-  适用于 Android 插件的新的 API。有关更多信息，请参阅
-  [将您的插件迁移到新的 Android API][Migrating your plugin to the new Android APIs]。
+  如果您拥有插件代码，我们建议您更新到适用于 Android 插件的新的 API。
+  有关更多信息，请参阅
+  [将您的插件迁移到新的 Android API][Migrating your plugin to the new Android APIs]。
 
 * Web support has moved to the beta channel. For more information,
   see [Web support for Flutter][] and
   [Web support for Flutter goes beta][] on the Medium publication.
   Also, the [building a web app with Flutter][] page is updated.
 
-  Web 支持已移至 Beta 频道。想要查询更多的信息，
+  Web 支持已进入 Beta 频道，想要查看更多的信息，
   请参阅 [Flutter 的 Web 支持][Web support for Flutter] 和
   [Flutter 的 Web 支持变为 beta][Web support for Flutter goes beta]。
-  此外，[使用 Flutter 构建 Web 应用程序][building a web app with Flutter]页面也已更新。
+  此外，
+  [使用 Flutter 构建 Web 应用程序][building a web app with Flutter] 页面也已更新。
 
 * A new [write your first Flutter app on the web][] codelab
   is added to the [Get started][] docs, and includes
   instructions on setting breakpoints in DevTools!
 
-  全新[编写你的第一个 Flutter Web 应用][] codelab
-  已添加到[使用入门][Get started]文档中，其中包括
-  在 DevTools 中设置断点的说明！
+  全新 
+  [编写你的第一个 Flutter Web 应用][write your first Flutter app on the web] codelab
+  已添加到 [使用入门][Get started] 文档中，其中包括在 DevTools 中设置断点的说明。
 
 * A new [implicit animations][] codelab is available
   featuring DartPad.
   (To run it, you don't need to download any software!)
 
-  新的[隐式动画][implicit animations] codelab 出来啦，
+  新的 [隐式动画][implicit animations] codelab 发布啦，
   它还带有 DartPad。（直接运行它，你无需下载任何软件！）
 
 * Alpha support for MacOS (desktop) is now available in
@@ -112,9 +115,8 @@ Docs added and updated since the last announcement include:
   For more information, see the [Flutter Layout Explorer][] docs.
 
   Flutter Layout Explorer 的 Alpha 版本，一项新功能
-  （以及 Flutter inspector 的一部分），你可以
-  探索您的布局的可视化表示形式。
-  有关更多信息，请参见[探索 Flutter 中的布局][Flutter Layout Explorer]文档。
+  （以及 Flutter inspector 的一部分），你可以探索您的布局的可视化表示形式。
+  有关更多信息，请参看 [探索 Flutter 中的布局][Flutter Layout Explorer] 文档。
 
 Other newness:
 
@@ -125,13 +127,30 @@ Other newness:
   **Samples & Tutorials**.
 
   全新版本的 [Flutter Gallery][]。
-  侧面导航**样本和教程**下有个可运行示例的链接。
+  侧面导航 **示例和教程** 下有个可运行示例的链接。
 
 Happy Fluttering!
 
 祝你在 Flutter 应用的开发中有一个愉快的经历和体验！
 
 [最近更新归档页面][What's new archive]。
+
+[add Flutter to an existing app]: /docs/development/add-to-app
+[Announcing Flutter 1.12: What a year!]: https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d
+[app size]: /docs/perf/app-size#ios
+[building a web app with Flutter]: /docs/get-started/web
+[Desktop support for Flutter]: /desktop
+[Flutter: the first UI platform designed for ambient computing]: https://developers.googleblog.com/2019/12/flutter-ui-ambient-computing.html?m=1
+[Flutter 1.12.13]: /docs/development/tools/sdk/release-notes/release-notes-1.12.13
+[Flutter Gallery]: https://flutter.github.io/samples/#/
+[Flutter Layout Explorer]: https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer
+[Flutter Medium publication]: https://medium.com/flutter
+[Migrating your plugin to the new Android APIs]: /docs/development/packages-and-plugins/plugin-api-migration
+[implicit animations]: /docs/codelabs/implicit-animations
+[Web support for Flutter]: /web
+[Web support for Flutter goes beta]: https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0
+[write your first Flutter app on the web]: /docs/get-started/codelab-web
+[Get started]: /docs/get-started/install
 
 ## New to Flutter?
 
@@ -201,7 +220,7 @@ app frameworks?
 
 首先你需要知道，为何我们要使用 Flutter？ 是什么让它与众不同？
 
-<iframe src="//player.bilibili.com/player.html?aid=68736077&cid=119126400&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><br>
+<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=68736077&cid=119126400&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><br>
 
 <p>How is Flutter different for app development?</p>
 <p>视频名称：使用 Flutter 开发应用与其他有何不同</p>
@@ -225,7 +244,7 @@ Flutter 里 “所有的事物都是 widget”，
 
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55832147&cid=97601562&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55832147&cid=97601562&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Want to skill up?
 
@@ -325,3 +344,4 @@ You might also find these docs useful:
 [Web support for Flutter goes beta]: https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0
 [write your first Flutter app on the web]: /docs/get-started/codelab-web
 [Get started]: /docs/get-started/install
+

@@ -28,10 +28,15 @@ For more information, see the [web FAQ][].
 
 更多详细信息请参阅 [web 常见问题解答][web FAQ]。
 
-{{ site.alert.warning }}
-As of 1.12, Flutter has early support for running web applications.
-There are still missing features and known performance issues,
-so it **isn't recommended for production use.**
+{{ site.alert.note }}
+
+  As of 1.12, Flutter has early support for running web applications.
+  If you experience a problem that hasn’t yet been reported,
+  please [file an issue][] and make sure that “web” appears in the title.
+  
+  在 1.12 版本之后，Flutter 已经有了对 Web 应用的早期支持，
+  如果在使用中发现问题，请 [发一个 Issue][file an issue] 给我们，
+  并确保标题上有「web」字样。
 {{ site.alert.end }}
 
 ## Create a new project with web support
@@ -240,8 +245,9 @@ enter the following from the top of the package:
 $ flutter run -d chrome
 ```
 
-[dart2js]: https://dart.dev/tools/dart2js
-[development compiler]: https://dart.dev/tools/dartdevc
+[dart2js]: https://dart.cn/tools/dart2js
+[development compiler]: https://dart.cn/tools/dartdevc
+[file an issue]: https://github.com/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [web FAQ]: /docs/development/platform-integration/web
-[install Chrome]: https://www.google.com/chrome/
-[Install Flutter]: https://flutter.cn/docs/get-started/install
+[install Chrome]: https://www.google.cn/chrome/
+[Install Flutter]: /docs/get-started/install

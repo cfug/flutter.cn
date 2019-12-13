@@ -166,7 +166,7 @@
             permalink: /docs/development/add-to-app/android/add-flutter-fragment
           - title: 添加一个闪屏页
             permalink: /docs/development/add-to-app/android/add-splash-screen
-      - title: 将 Flutter 添加到现有 Android 应用
+      - title: 将 Flutter 添加到现有 iOS 应用
         permalink: /docs/development/add-to-app/ios
         children:
           - title: 设置项目

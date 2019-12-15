@@ -13,6 +13,10 @@ next:
   title: Use custom fonts
   title: 使用自定义字体
   path: /docs/cookbook/design/fonts
+next:
+  title: Work with tabs
+  title: 使用 tabs
+  path: /docs/cookbook/design/tabs
 ---
 
 To share colors and font styles throughout an app, use themes.

@@ -454,7 +454,7 @@ classes offer a variety of constants for controlling alignment.
 {{site.alert.note}}
 
   When you add images to your project,
-  you need to update the pubspec file to access them&mdash;this
+  you need to update the `pubspec.yaml` file to access them&mdash;this
   example uses `Image.asset` to display the images.  For more information,
   see this example's [pubspec.yaml
   file]({{examples}}/layout/row_column/pubspec.yaml),
@@ -462,7 +462,7 @@ classes offer a variety of constants for controlling alignment.
   You don't need to do this if you're referencing online images using
   `Image.network`.
 
-  当你将图像添加到项目中时，你需要更新 pubspec 文件来访问它们 —— 本例使用 `Image.asset` 来显示图像。
+  当你将图像添加到项目中时，你需要更新 `pubspec.yaml` 文件来访问它们 —— 本例使用 `Image.asset` 来显示图像。
   更多信息可以查看本例的 [pubspec.yaml 文件]({{examples}}/layout/row_column/pubspec.yaml)，
   或文档：[添加资源和图片](/docs/development/ui/assets-and-images)。
   如果你正在使用 `Image.network` 引用在线图像，则不需要这些操作。

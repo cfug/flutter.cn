@@ -219,9 +219,9 @@ If no package exists for your specific use case, you can
 ## 管理 package 的依赖和版本
 
 To minimize the risk of version collisions,
-specify a version range in the pubspec file.
+specify a version range in the `pubspec.yaml` file.
 
-为了使版本冲突的风险最小化，请在 pubspec 文件中指定一个版本范围。
+为了使版本冲突的风险最小化，请在 `pubspec.yaml` 文件中指定一个版本范围。
 
 ### Package versions
 

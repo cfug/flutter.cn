@@ -2,9 +2,9 @@
 title: Work with tabs
 title: 使用 tabs
 prev:
-  title: Use custom fonts
-  title: 使用自定义字体
-  path: /docs/cookbook/design/fonts
+  title: Use themes to share colors and font styles
+  title: 使用 Themes 统一颜色和字体风格
+  path: /docs/cookbook/design/themes
 next:
   title: Build a form with validation
   title: 构建一个有验证判断的表单

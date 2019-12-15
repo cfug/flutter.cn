@@ -344,11 +344,11 @@ packages, on [pub.dev][].
 你可以在 [pub.dev][] 上找到
 `english_words` 软件包以及其他许多开源软件包。
 
- 1. The pubspec file manages the assets and dependencies for a Flutter app. In
+ 1. The `pubspec.yaml` file manages the assets and dependencies for a Flutter app. In
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
     list:
     
-    pubspec 文件管理 Flutter 应用程序的 assets（资源，如图片、package等）。
+    `pubspec.yaml` 文件管理 Flutter 应用程序的 assets（资源，如图片、package等）。
     在pubspec.yaml 中，将 english_words（3.1.0或更高版本）添加到依赖项列表，
     如下面高亮显示的行：
 
@@ -365,11 +365,11 @@ packages, on [pub.dev][].
     +  english_words: ^3.1.0
     ```
 
- 2. While viewing the pubspec in Android Studio's editor view,
+ 2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
     click **Packages get**. This pulls the package into
     your project. You should see the following in the console:
 
-    在 Android Studio 的编辑器视图中查看 pubspec 时，
+    在 Android Studio 的编辑器视图中查看 `pubspec.yaml` 文件时，
     单击右上角的 Packages get，这会将依赖包安装到你的项目。
     你可以在控制台中看到以下内容：
 

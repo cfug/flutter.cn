@@ -6,13 +6,13 @@ short-title: 自定义字体
 description: How to use custom fonts.
 description: 学习如何在 Flutter 里使用自定义字体
 prev:
-  title: Using Themes to share colors and font styles
+  title: Update the UI based on orientation
+  title: 根据屏幕方向更新界面
+  path: /docs/cookbook/design/orientation
+next:
+  title: Use themes to share colors and font styles
   title: 使用 Themes 统一颜色和字体风格
   path: /docs/cookbook/design/themes
-next:
-  title: Work with Tabs
-  title: 使用 Tabs
-  path: /docs/cookbook/design/tabs
 ---
 
 Although Android and iOS offer high quality system fonts,
@@ -217,7 +217,7 @@ Text(
 ### 字体样式
 
 If a [`TextStyle`][] object specifies a weight
-or style for which is there is no exact font file,
+or style for which there is no exact font file,
 the engine uses one of the more generic files for the font and attempts to
 extrapolate outlines for the requested weight and style.
 

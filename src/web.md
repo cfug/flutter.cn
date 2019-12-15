@@ -137,13 +137,12 @@ The following resources can help you get started:
   
   你可以在 [Discord group][] 聊聊或询问 Web 相关的问题。
 
-[Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
-[main Flutter repo]: {{site.github}}/flutter/flutter
-[web FAQ]: /docs/development/platform-integration/web
 [Building a web application with Flutter]: /docs/get-started/web
 [Creating responsive apps]: /docs/development/ui/layout/responsive
-[web samples for Flutter]: https://flutter.github.io/samples/
-[Preparing an app for web release]: /docs/deployment/web
-[File an issue]: https://goo.gle/flutter_web_issue
 [Discord group]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
+[main Flutter repo]: {{site.github}}/flutter/flutter
+[Preparing an app for web release]: /docs/deployment/web
+[Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
+[web FAQ]: /docs/development/platform-integration/web
+[web samples for Flutter]: https://flutter.github.io/samples/

@@ -789,18 +789,28 @@ The resulting app bundle or APK files are located in
 生成的 app bundle 或 APK 文件会在你的 app 所在文件夹下的 `build/app/outputs` 文件夹下。
 
 {% comment %}
+
 ### Are there any special considerations with add-to-app?
+
+### 在混合应用中是否有特殊考虑之处？
+
 {% endcomment %}
 
 {% comment %}
-### TODO 
+
+### TODO
+
 This doc need to assign to a new translator.
+
+该文档需要分配给新的译者。
+
 {% endcomment %}
 
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
+[apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [appid]: {{site.android-dev}}/studio/build/application-id
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level

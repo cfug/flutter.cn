@@ -6,9 +6,9 @@ prev:
   title: 以 package 的方式使用字体
   path: /docs/cookbook/design/package-fonts
 next:
-  title: Using Themes to share colors and font styles
-  title: 使用 Themes 统一颜色和字体风格
-  path: /docs/cookbook/design/themes
+  title: Use custom fonts
+  title: 使用自定义字体
+  path: /docs/cookbook/design/fonts
 ---
 
 In some situations,

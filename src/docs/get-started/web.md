@@ -198,7 +198,8 @@ the `-d chrome` is optional.
 The `flutter run` command launches the application using the
 [development compiler][] in a Chrome browser.
 
-如果没有连接任何其他设备，`-d chrome` 可以省略。
+运行 `flutter run` 命令将使用 Chrome 浏览器的
+[development compiler][] 来启动应用程序。
 
 ### Build
 

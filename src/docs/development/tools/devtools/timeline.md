@@ -193,7 +193,7 @@ for frames in the beginning of the timeline.
 
 **高粒度** 的配置会具有更高效的采样率，因此单元时间内采集的 CPU 信息会更加详细且采集样例更多。
 因此 VM 会被经常中断以收集样本数据，所以这有可能会影响你的应用程序的运行或导致性能下降。
-VM 中 CPU 样例数据信息的存储空间是受限制的。相对低采样率，高采样率存储空间会被迅速填满并会出现溢出。这意味着，你可能在时间线开始的帧中就无法访问 CPU 采样。
+VM 中 CPU 样例数据信息的存储空间是受限制的。相对低采样率，高采样率存储空间会被迅速填满并会出现溢出。这意味着，你可能无法获取时间线初始阶段几帧的 CPU 采样数据。
 
 A **lower granularity** profile has a lower sampling rate, and therefore
 yields a coarse-grained CPU profile with fewer samples. However, this impacts your

@@ -145,7 +145,7 @@
           permalink: /docs/development/packages-and-plugins/favorites
         - title: 后台进程
           permalink: /docs/development/packages-and-plugins/background-processes
-        - title: 迁移插件
+        - title: 升级 Android 插件
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
         - title: 插件网站
           permalink: https://pub.dev/flutter

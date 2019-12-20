@@ -145,7 +145,7 @@ version of your Flutter module without running additional commands outside of Xc
 The following example assumes that your existing application and the Flutter module are in sibling directories.
 If you have a different directory structure, you may need to adjust the relative paths.
 
-下面的示例假设你的既有应用和 Flutter module在相邻目录。如果你有不同的目录结构，需要适配到对应的路径。
+下面的示例假设你的既有应用和 Flutter module 在相邻目录。如果你有不同的目录结构，需要适配到对应的路径。
 
 ```text
 some/path/

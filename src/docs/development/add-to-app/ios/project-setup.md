@@ -84,7 +84,7 @@ Add Flutter dependencies to `my_flutter/pubspec.yaml`, including Flutter package
 and plugins.
 
 添加 Flutter 依赖到 `my_flutter/pubspec.yaml`，
-包括 Flutter packages 和 plugins 
+包括 Flutter packages 和 plugins。
 
 The `.ios/` hidden subfolder contains an Xcode workspace where you can
 run a standalone version of your module. It is a wrapper project to bootstrap your Flutter code,
@@ -128,7 +128,6 @@ There are two ways to embed Flutter in your existing application.
    
    把 Flutter engine 、你的 dart 代码和所有 Flutter plugin 编译成 framework 。
    用 Xcode 手动集成到你的应用中，并更新编译设置。
-
 
 {{site.alert.note}}
 
@@ -179,7 +178,7 @@ some/path/
 If your existing application (`MyApp`) doesn't already have a Podfile, follow the
 [CocoaPods getting started guide][] to add a `Podfile` to your project.
 
-如果你的应用（`MyApp`）还没有 Podfile，根据 [CocoaPods getting started guide][] 来在项目中添加 `Podfile`
+如果你的应用（`MyApp`）还没有 Podfile，根据 [CocoaPods getting started guide][] 来在项目中添加 `Podfile`。
 
 1. Add the following lines to your `Podfile`:
 
@@ -195,7 +194,7 @@ If your existing application (`MyApp`) doesn't already have a Podfile, follow th
 embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
 
    每个需要集成 Flutter 的 [Podfile target][]，
-   执行 `install_all_flutter_pods(flutter_application_path)`
+   执行 `install_all_flutter_pods(flutter_application_path)`：
 
     <?code-excerpt "MyApp/Podfile" title?>
     ```ruby
@@ -248,7 +247,7 @@ the compiled Dart code for this project.
 
 Open `MyApp.xcworkspace` in Xcode. You can now build the project using `⌘B`.
 
-在 Xcode 中打开 `MyApp.xcworkspace` ，你现在可以使用 `⌘B` 编译项目了.
+在 Xcode 中打开 `MyApp.xcworkspace` ，你现在可以使用 `⌘B` 编译项目了。
 
 ### Option B - Embed frameworks in Xcode
 
@@ -275,7 +274,7 @@ method, you can skip these instructions.
 
 The following example assumes that you want to generate the frameworks to `some/path/MyApp/Flutter/`.
 
-下面的示例假设你想在 `some/path/MyApp/Flutter/` 目录下创建 frameworks
+下面的示例假设你想在 `some/path/MyApp/Flutter/` 目录下创建 frameworks：
 
 ```sh
 flutter build ios-framework --output=some/path/MyApp/Flutter/
@@ -318,8 +317,8 @@ into your targets's build settings > General > Frameworks, Libraries, and Embedd
 在 Xcode 中将生成的 frameworks 集成到你的既有应用中。
 例如，你可以在 `some/path/MyApp/Flutter/Release/` 
 目录拖拽 frameworks 到 你的应用 target 编译设置的 
-General > Frameworks, Libraries, and Embedded Content 下。
-然后在 Embed 下拉列表中选择 "Embed & Sign"
+General > Frameworks, Libraries, and Embedded Content 下，
+然后在 Embed 下拉列表中选择 "Embed & Sign"。
 
 {% include app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
 

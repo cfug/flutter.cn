@@ -9,6 +9,9 @@ next:
   title: Displaying SnackBars
   title: 显示 SnackBars
   path: /docs/cookbook/design/snackbars
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 In apps that use Material Design,
@@ -182,11 +185,11 @@ ListTile(
 ),
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -253,7 +256,9 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Drawer Demo](/images/cookbook/drawer.png){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/drawer.png" alt="Drawer Demo（抽屉样例）" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html

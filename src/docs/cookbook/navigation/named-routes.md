@@ -9,6 +9,9 @@ next:
   title: Pass arguments to a named route
   title: 给特定的 route 传参
   path: /docs/cookbook/navigation/navigate-with-arguments
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 In the [Navigate to a new screen and back][] recipe,
@@ -201,11 +204,11 @@ onPressed: () {
 }
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() {
@@ -275,7 +278,9 @@ class SecondScreen extends StatelessWidget {
 }
 ```
 
-![Navigation Basics Demo](/images/cookbook/navigation-basics.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/navigation-basics.gif" alt="Navigation Basics Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html

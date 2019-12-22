@@ -1,6 +1,6 @@
 ---
-title: Preparing an Android app for release
-title: 打包和发布到 Android 平台
+title: Build and release an Android app
+title: 打包并发布 Android 应用
 short-title: Android
 description: How to prepare for and release an Android app to the Play store.
 description: 如何打包把 App 发布到 Play 商店。

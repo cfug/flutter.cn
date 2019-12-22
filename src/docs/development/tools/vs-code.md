@@ -9,7 +9,7 @@ description: 如何在 VS Code 里开发 Flutter 应用。
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
   <li class="nav-item">
-    <a class="nav-link" href="/docs/development/tools/android-studio" role="tab" aria-selected="false">Android Studio / IntelliJ</a>
+    <a class="nav-link" href="/docs/development/tools/android-studio" role="tab" aria-selected="false">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link active" role="tab" aria-selected="true">Visual Studio Code</a>

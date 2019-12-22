@@ -235,10 +235,10 @@ where the Dart code lives.
       在向你的工程项目中粘贴代码的时候，缩进可能会变形。
       你可以使用 Flutter 工具自动修复此问题：
 
-      * Android Studio / IntelliJ IDEA: Right-click the code and
+      * Android Studio and IntelliJ IDEA: Right-click the code and
         select **Reformat Code with dartfmt**.
         
-        Android Studio / IntelliJ IDEA: 右键单击Dart代码，然后选择 **Reformat Code with dartfmt**
+        Android Studio 和 IntelliJ IDEA: 右键单击Dart代码，然后选择 **Reformat Code with dartfmt**
         
       * VS Code: Right-click and select **Format Document**.
       

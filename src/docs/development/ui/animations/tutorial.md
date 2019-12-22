@@ -480,10 +480,10 @@ The `addListener()` function calls `setState()`, so every time the `Animation`
 generates a new number, the current frame is marked dirty, which forces
 `build()` to be called again. In `build()`, the container changes size because
 its height and width now use `animation.value` instead of a hardcoded value.
-Dispose of the controller when the animation is finished to prevent memory
+Dispose of the controller when the `State` object is discarded to prevent memory
 leaks.
 
-因为`addListener()` 函数调用 `setState()`，所以每次 `Animation` 生成一个新的数字，当前帧就被标记为 dirty，使得 `build()` 再次被调用。在 `build()` 函数中，container 会改变大小，因为它的高和宽都读取 `animation.value`，而不是固定编码值。当动画结束时要清除控制器以防止内存溢出。
+因为`addListener()` 函数调用 `setState()`，所以每次 `Animation` 生成一个新的数字，当前帧就被标记为 dirty，使得 `build()` 再次被调用。在 `build()` 函数中，container 会改变大小，因为它的高和宽都读取 `animation.value`，而不是固定编码值。当 `State` 对象销毁时要清除控制器以防止内存溢出。
 
 With these few changes, you’ve created your first animation in Flutter!
 

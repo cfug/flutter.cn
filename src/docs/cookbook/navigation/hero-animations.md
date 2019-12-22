@@ -9,6 +9,9 @@ next:
   title: Navigate to a new screen and back
   title: 导航到一个新页面和返回
   path: /docs/cookbook/navigation/navigation-basics
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 It's often helpful to guide users through an app as they navigate from screen
@@ -170,11 +173,11 @@ Hero(
   
 {{site.alert.end}}
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(HeroApp());
@@ -235,7 +238,9 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-![Hero demo](/images/cookbook/hero.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/hero.gif" alt="Hero demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Handle taps]: /docs/cookbook/gestures/handling-taps

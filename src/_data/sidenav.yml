@@ -180,7 +180,7 @@
     - title: 开发工具和技术细节
       permalink: /docs/development/tools
       children:
-        - title: Android Studio 或类 IntelliJ 系列
+        - title: Android Studio 或 IntelliJ 系列
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code

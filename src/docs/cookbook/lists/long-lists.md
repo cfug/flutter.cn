@@ -9,6 +9,9 @@ next:
   title: Report errors to a service
   title: 把报错信息通过服务上传
   path: /docs/cookbook/maintenance/error-reporting
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 The standard [`ListView`][] constructor works well
@@ -69,11 +72,11 @@ ListView.builder(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -112,7 +115,10 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Long Lists Demo](/images/cookbook/long-lists.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/long-lists.gif" alt="Long Lists Demo" class="site-mobile-screenshot" />
+</noscript>
+
 
 
 [`List.generate`]: lh({{site.api}}/flutter/dart-core/List/List.generate.html)

@@ -10,7 +10,11 @@ on occasion we publish guides for migrating code
 across a breaking change. The following guides are
 currently available:
 
-* [TestTextInput](/docs/release/breaking-changes/test-text-input)
-* [Scrollable AlertDialog](/docs/release/breaking-changes/scrollable_alert_dialog)
+* [TextInputClient currentTextEditingValue]
+* [TestTextInput]
+* [Scrollable AlertDialog]
 
 [breaking change policy]: /docs/resources/compatibility
+[Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable_alert_dialog
+[TestTextInput]: /docs/release/breaking-changes/test-text-input
+[TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value

@@ -17,6 +17,9 @@ next:
   title: Work with tabs
   title: 使用 tabs
   path: /docs/cookbook/design/tabs
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 To share colors and font styles throughout an app, use themes.
@@ -66,7 +69,7 @@ MaterialApp(
     accentColor: Colors.cyan[600],
 
     // Define the default font family.
-    fontFamily: 'Montserrat',
+    fontFamily: 'Georgia',
 
     // Define the default TextTheme. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
@@ -181,11 +184,11 @@ Container(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -207,7 +210,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.cyan[600],
 
         // Define the default font family.
-        fontFamily: 'Montserrat',
+        fontFamily: 'Georgia',
 
         // Define the default TextTheme. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
@@ -259,7 +262,9 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Themes Demo](/images/cookbook/themes.png){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/themes.png" alt="Themes Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html

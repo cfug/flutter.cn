@@ -158,7 +158,6 @@ see the following:
 
   [GitLab 持续集成（GitLab CI/CD）](https://docs.gitlab.com/ee/ci/README.html#doc-nav)。需要创建，并且配置 `.gitlab-ci.yml` 文件。可以在 [flutter_redux 库]({{site.github}}/brianegan/flutter_redux)中 [找到例子](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)。
 
-
 * [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
   
   [Flutter 中的 Codemagic 持续集成/持续交付](https://blog.codemagic.io/getting-started-with-codemagic/)

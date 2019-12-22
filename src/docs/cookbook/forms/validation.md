@@ -7,6 +7,9 @@ prev:
 next:
   title: Create and style a text field
   path: /docs/cookbook/forms/text-input
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 Apps often require users to enter information into a text field.
@@ -194,11 +197,11 @@ rebuilds the form to display any error messages and returns `false`.
 
 `FormState` 类包含了 `validate()` 方法。当 `validate()` 方法被调用的时候，会遍历运行表单中所有文本框的 `validator()` 函数。如果所有 `validator()` 函数验证都通过，`validate()` 方法返回 `true`。如果有某个文本框验证不通过，就会在那个文本框区域显示错误提示，同时 `validate()` 方法返回 `false`。
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -276,7 +279,10 @@ class MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-![Form Validation Demo/ 表单验证示例](/images/cookbook/form-validation.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/form-validation.gif" alt="Form Validation Demo（表单验证示例）" class="site-mobile-screenshot" />
+</noscript>
+
 
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`Form.of()`]: {{site.api}}/flutter/widgets/Form/of.html

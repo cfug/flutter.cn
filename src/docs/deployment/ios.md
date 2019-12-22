@@ -1,6 +1,6 @@
 ---
-title: Preparing an iOS App for Release
-title: 打包和发布到 iOS 平台
+title: Build and release an iOS app
+title: 打包并发布 iOS 应用
 short-title: iOS
 short-title: iOS
 ---

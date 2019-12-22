@@ -2,7 +2,6 @@
 title: Linux install
 title: 在 Linux 操作系统上安装和配置 Flutter 开发环境
 short-title: Linux
-# js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Set up an editor
   title: 编辑工具设定

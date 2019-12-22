@@ -9,6 +9,9 @@ next:
   title: Return data from a screen
   title: 从一个页面回传数据
   path: /docs/cookbook/navigation/returning-data
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 The [`Navigator`][] provides the ability to navigate
@@ -211,11 +214,11 @@ MaterialApp(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -369,7 +372,9 @@ class ScreenArguments {
 }
 ```
 
-![Demonstrates navigating to different routes with arguments](/images/cookbook/navigate-with-arguments.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/navigate-with-arguments.gif" alt="Demonstrates navigating to different routes with arguments" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html

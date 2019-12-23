@@ -9,6 +9,9 @@ next:
   title: Fetch data from the internet
   title: 获取网络数据
   path: /docs/cookbook/networking/fetch-data
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 Often, you not only want to navigate to a new screen,
@@ -197,11 +200,11 @@ ListView.builder(
 );
 ```
 
-### Complete example
+### Interactive example
 
-### 完整样例
+### 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -301,7 +304,7 @@ Next, create a detail screen that extracts and displays the title and descriptio
 接下来，创建一个详情页用于提取并显示来自 `Todo` 页面的标题和描述信息。为了访问 `Todo` 页面，请使用 `ModalRoute.of()` 方法。
 它将会返回带有参数的当前路由。
 
-```
+```dart
 class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -330,7 +333,7 @@ Finally, navigate to the `DetailScreen` when a user taps a `ListTile` widget usi
 最后，当用户点击 `ListTile` widget 时，使用 `Navigator.push()` 导航到 `DetailScreen`。
 将参数作为 `RouteSettings` 的一部分进行传递。`DetailScreen` 将会提取这些参数。
 
-```
+```dart
 ListView.builder(                                                    
   itemCount: todos.length,                                           
   itemBuilder: (context, index) {                                    
@@ -361,7 +364,7 @@ ListView.builder(
 
 ### 完整样例
 
-```
+```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -445,7 +448,9 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-![Passing Data Demo](/images/cookbook/passing-data.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/passing-data.gif" alt="Passing Data Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html

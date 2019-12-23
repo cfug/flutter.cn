@@ -8,6 +8,9 @@ prev:
 next:
   title: Place a floating app bar above a list
   path: /docs/cookbook/lists/floating-app-bar
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 You might need to create lists that display different types of content.
@@ -151,11 +154,11 @@ ListView.builder(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -234,7 +237,9 @@ class MessageItem implements ListItem {
 }
 ```
 
-![Mixed list demo](/images/cookbook/mixed-list.png){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/mixed-list.png" alt="Mixed list demo" class="site-mobile-screenshot" />
+</noscript>
  
 
 [`ListView.builder()`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html

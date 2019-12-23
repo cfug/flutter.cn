@@ -9,6 +9,9 @@ next:
   title: Fade in images with a placeholder
   title: 占位符和网络图片淡入
   path: /docs/cookbook/images/fading-in-images
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 Displaying images is fundamental for most mobile apps.
@@ -64,11 +67,11 @@ the following recipes:
   
     [使用缓存图片][Working with cached images]
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -93,7 +96,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Network image demo](/images/cookbook/network-image.png){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/network-image.png" alt="Network image demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Fade in images with a placeholder]: /docs/cookbook/images/fading-in-images

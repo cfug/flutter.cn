@@ -9,6 +9,9 @@ next:
   title: Work with long lists
   title: 长列表的处理
   path: /docs/cookbook/lists/long-lists
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 To make it easier for users to view a list of items, you might want to hide the
@@ -220,11 +223,11 @@ SliverList(
 )
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -275,7 +278,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Use list demo](/images/cookbook/floating-app-bar.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/floating-app-bar.gif" alt="Use list demo" class="site-mobile-screenshot"/> 
+</noscript>
 
 
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html

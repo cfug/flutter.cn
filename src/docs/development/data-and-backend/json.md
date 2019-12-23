@@ -12,8 +12,8 @@ JSON, sooner or later.
 
 很难想象一个移动应用会不需要与 web 服务器通信或者在某些时候轻松地存储结构化数据。当创造需要网络连接的应用时，它可能迟早会处理一些旧的 JSON。
 
-This guide looks into ways of using JSON with Flutter. It covers which
-JSON solution to use in different scenarios, and why.
+This guide looks into ways of using JSON with Flutter. 
+It covers which JSON solution to use in different scenarios, and why.
 
 本指南介绍了如何在 Flutter 中使用 JSON。包括了如何在不同场景中使用相应的 JSON 解决方案以及为什么要这么做。
 
@@ -54,11 +54,12 @@ This article covers two general strategies for working with JSON:
 
   利用代码生成进行自动序列化数据
 
-Different projects come with different complexities and use cases. For smaller
-proof-of-concept projects or quick prototypes, using code generators might be
-overkill. For apps with several JSON models with more complexity, encoding
-by hand can quickly become tedious, repetitive, and lend itself to many
-small errors.
+Different projects come with different complexities and use cases. 
+For smaller proof-of-concept projects or quick prototypes, 
+using code generators might be overkill. 
+For apps with several JSON models with more complexity, 
+encoding by hand can quickly become tedious, repetitive, 
+and lend itself to many small errors.
 
 不同的项目复杂度不同，用例也不一样。对于较小的概念验证项目或者快速原型，
 使用代码生成器可能是过度的。对于具有很多更加复杂的 JSON 模型的 App，
@@ -71,7 +72,8 @@ small errors.
 Manual JSON decoding refers to using the built-in JSON decoder in
 `dart:convert`. It involves passing the raw JSON string to the `jsonDecode()`
 function, and then looking up the values you need in the resulting
-`Map<String, dynamic>`. It has no external dependencies or particular setup process,
+`Map<String, dynamic>`.
+It has no external dependencies or particular setup process,
 and it's good for a quick proof of concept.
 
 手动 JSON 解码是指在 `dart:convert` 中使用内置的 JSON 解码器。
@@ -92,7 +94,7 @@ field, your code throws an error during runtime.
 If you do not have many JSON models in your project and are looking to test a
 concept quickly, manual serialization might be the way you want to start.
 For an example of manual encoding, see
-[Serializing JSON manually using dart:convert](#manual-encoding).
+[Serializing JSON manually using dart:convert][].
 
 如果你的项目没有很多的 JSON 模型并且你正在寻找一个快速测试概念的方法，
 手动序列化数据可能是你要的开始的方式。关于手动编码的示例，
@@ -105,7 +107,7 @@ For an example of manual encoding, see
 JSON serialization with code generation means having an external library
 generate the encoding boilerplate for you. After some initial setup,
 you run a file watcher that generates the code from your model classes.
-For example, [json_serializable][] and [built_value][] are these
+For example, [`json_serializable`][] and [`built_value`][] are these
 kinds of libraries.
 
 利用代码生成的 JSON 序列化数据意味着有外部的库为你生成编码模板。
@@ -126,8 +128,7 @@ in your project navigator.
 
 You might want to use generated code for JSON serialization when you have a
 medium or a larger project. To see an example of code generation based JSON
-encoding, see
-[Serializing JSON using code generation libraries](#code-generation).
+encoding, see [Serializing JSON using code generation libraries][].
 
 当你有一个中大型项目时，你可能想要使用生成的代码来进行 JSON 序列化。
 要看基于代码生成的 JSON 编码，见
@@ -190,9 +191,9 @@ decoder.
 Flutter 有一个内置的 `dart:convert` 的库，
 这个库包含了一个简单的 JSON 编码器和解码器。
 
-Here is an example JSON for a simple user model.
+The following sample JSON implements a simple user model.
 
-这是一个简单的用户模型的示例 JSON。
+下面的样例实现了一个简单用户模型。
 
 ```json
 {
@@ -201,7 +202,8 @@ Here is an example JSON for a simple user model.
 }
 ```
 
-With `dart:convert`, you can serialize this JSON model in two ways.
+With `dart:convert`,
+you can serialize this JSON model in two ways.
 
 通过 `dart:convert`，你可以用两种方法编码这个 JSON 模型。 
 
@@ -209,7 +211,7 @@ With `dart:convert`, you can serialize this JSON model in two ways.
 
 ### 内联序列化 JSON 数据
 
-By looking at the [dart:convert][] documentation,
+By looking at the [`dart:convert`][] documentation,
 you'll see that you can decode the JSON by calling the
 `jsonDecode()` function, with the JSON string as the method argument.
 
@@ -369,12 +371,34 @@ and decoding for you.  Luckily, there is!
 ## 使用代码生成库序列化 JSON 数据
 
 Although there are other libraries available, this guide uses
-[json_serializable][], an automated source code generator that
+[`json_serializable`][], an automated source code generator that
 generates the JSON serialization boilerplate for you.
 
 尽管有其它库可以使用，本指南使用了
 [json_serializable package]({{site.pub}}/packages/json_serializable)，
 一个自动化源代码生成器来为你生成 JSON 序列化数据模板。
+
+{{site.alert.info}}
+
+  **Choosing a library:**
+  You might have noticed two [Flutter Favorite][] packages
+  on pub.dev that generate JSON serialization code,
+  [`json_serializable`][] and [`built_value`][].
+  How do you choose between these packages?
+  The `json_serializable` package allows you to make regular
+  classes serializable by using annotations, 
+  whereas the `built_value` package provides a higher-level way
+  of defining immutable value classes that can also be
+  serialized to JSON.
+
+  **选择一个 library**
+  你也许已经发现了，在 pub.dev 上有两个用于生成 JSON 序列化代码的 package，
+  [Flutter Favorite][] 以及 [`json_serializable`][] & [`built_value`][]。
+  那么你该如何在这些 packages 之间进行选择呢？
+  `json_serializable` package 能够通过注解让你的普通类序列化，
+  而 `built_value` package 则提供了更高层次的方法，让定义为无变化的类也能够被序列化为 JSON。
+  
+{{site.alert.end}}
 
 Since the serialization code is not handwritten or maintained manually
 anymore, you minimize the risk of having JSON serialization exceptions at
@@ -415,9 +439,9 @@ dev_dependencies:
   json_serializable: <latest_version>
 ```
 
-Run `flutter pub get` inside your project root folder (or click
-**Packages Get** in your editor) to make these new dependencies available
-in your project.
+Run `flutter pub get` inside your project root folder
+(or click **Packages get** in your editor)
+to make these new dependencies available in your project.
 
 在你的项目根文件夹下运行 `flutter pub get`
 （或者在你的编辑器中点击 **Packages Get**）
@@ -427,8 +451,9 @@ in your project.
 
 ### 以 json_serializable 的方式创建模型类
 
-The following shows how to convert the `User` class to a `json_serializable`
-one. For the sake of simplicity, this code uses the simplified JSON model
+The following shows how to convert the `User` class to a 
+`json_serializable` class. For the sake of simplicity, 
+this code uses the simplified JSON model
 from the previous samples.
 
 下面显示了怎样将 `User` 类转换为 `json_serializable` 后的类。
@@ -471,9 +496,9 @@ and decoding the `name` and `email` fields from JSON.
 
 通过这个设置，源代码生成器将生成用于 JSON 编码及解码 `name` 以及 `email` 字段的代码。
 
-If needed, it is also easy to customize the naming strategy. For example, if the
-API returns objects with _snake\_case_, and you want to use
-_lowerCamelCase_ in your models,
+If needed, it is also easy to customize the naming strategy. 
+For example, if the API returns objects with _snake\_case_, 
+and you want to use _lowerCamelCase_ in your models,
 you can use the `@JsonKey` annotation with a name parameter:
 
 如果需要，你可以很容易自定义命名策略。
@@ -493,8 +518,8 @@ final int registrationDateMillis;
 
 ### 运行代码生成工具
 
-When creating `json_serializable` classes the first time, you'll get errors
-similar to what is shown in the image below.
+When creating `json_serializable` classes the first time, 
+you'll get errors similar to what is shown in the image below.
 
 当你首次创建 `json_serializable` 类时，你会得到类似下图的错误。
 
@@ -571,11 +596,13 @@ The same goes for encoding. The calling API is the same as before.
 String json = jsonEncode(user);
 ```
 
-With `json_serializable`, you can forget any manual JSON serialization in the
-`User` class. The source code generator creates a file called `user.g.dart`,
-that has all the necessary serialization logic. You no longer have
-to write automated tests to ensure that the serialization works&mdash;it's
-now _the library's responsibility_ to make sure the serialization works
+With `json_serializable`,
+you can forget any manual JSON serialization in the `User` class.
+The source code generator creates a file called `user.g.dart`,
+that has all the necessary serialization logic.
+You no longer have to write automated tests to ensure
+that the serialization works&mdash;it's now
+_the library's responsibility_ to make sure the serialization works
 appropriately.
 
 使用 `json_serializable`，在 `User` 类中你可以忘记手动序列化任意的 JSON 数据。
@@ -615,7 +642,7 @@ class Address {
 }
 ```
 
-The Address class is nested inside the `User` class:
+The `Address` class is nested inside the `User` class:
 
 一个 `Address` 类被嵌套在 `User` 类中使用：
 
@@ -702,15 +729,11 @@ class User {
 }
 ```
 
-For more information, see [explicitToJson][] in the
-[JsonSerializable][] class for the [json_annotation][] package.
+For more information, see [`explicitToJson`][] in the
+[`JsonSerializable`][] class for the [`json_annotation`][] package.
 
-了解更多信息，请查阅 [json_annotation][] 这个 package 里的 
-[JsonSerializable][] 类的 [explicitToJson][] 参数等相关文档。
-
-[explicitToJson]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
-[JsonSerializable]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
-[json_annotation]: {{site.pub}}/packages/json_annotation
+了解更多信息，请查阅 [`json_annotation`][] 这个 package 里的 
+[`JsonSerializable`][] 类的 [`explicitToJson`][] 参数等相关文档。
 
 ## Further references
 
@@ -720,29 +743,35 @@ For more information, see the following resources:
 
 更多信息，请查看以下资源：
 
-* The [dart:convert][] and [JsonCodec][] documentation
+* The [`dart:convert`][] and [`JsonCodec`][] documentation
 
-  [dart:convert][] 和 [JsonCodec][] 文档
+  [`dart:convert`][] 和 [`JsonCodec`][] 文档
   
-* The [json_serializable][] package on pub.dev
+* The [`json_serializable`][] package on pub.dev
 
-  [Pub 中的 json_serializable package][json_serializable]
+  [Pub 中的 json_serializable package][`json_serializable`]
   
-* The [json_serializable examples][] on GitHub
+* The [`json_serializable` examples][] on GitHub
 
-  [GitHub 中的 json_serializable 例子][json_serializable examples]
+  [GitHub 中的 json_serializable 例子][`json_serializable` examples]
   
 * The [discussion about dart:mirrors in Flutter][]
 
   [Flutter 中有关 dart:mirrors 的讨论][discussion about dart:mirrors in Flutter]
 
-[built_value]: {{site.pub}}/packages/built_value
-[dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
-[JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
-[json_serializable]: {{site.pub}}/packages/json_serializable
-[json_serializable examples]: {{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart
+[`built_value`]: {{site.pub}}/packages/built_value
+[`dart:convert`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
+[`explicitToJson`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
+[Flutter Favorite]: /docs/development/packages-and-plugins/favorites
 [json background parsing]: https://flutter.dev/docs/cookbook/networking/background-parsing
+[`JsonCodec`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
+[`JsonSerializable`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
+[`json_annotation`]: {{site.pub}}/packages/json_annotation
+[`json_serializable`]: {{site.pub}}/packages/json_serializable
+[`json_serializable` examples]: {{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart
 [pubspec file]: https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml
 [reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [反射]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
+[Serializing JSON manually using dart:convert]: #manual-encoding
+[Serializing JSON using code generation libraries]: #code-generation
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking

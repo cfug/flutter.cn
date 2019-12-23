@@ -9,6 +9,9 @@ next:
   title: Add Material touch ripples
   title: 添加点按涟漪效果 (Material Design)
   path: /docs/cookbook/gestures/ripples
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 When a text field is selected and accepting input,
@@ -194,11 +197,11 @@ FloatingActionButton(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -275,9 +278,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-![Text Field Focus Demo](/images/cookbook/focus.gif){:.site-mobile-screenshot}
-
-
+<noscript>
+  <img src="/images/cookbook/focus.gif" alt="Text Field Focus Demo" class="site-mobile-screenshot" />
+</noscript>
 
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
 [Forms]: /docs/cookbook#forms

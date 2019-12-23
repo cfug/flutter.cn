@@ -1,6 +1,6 @@
 ---
-title: Preparing a web app for release
-title: 打包并发布到 Web 平台
+title: Build and release a web app
+title: 打包并发布 Web 应用
 description: How to prepare for and release a web app.
 description: 如何打包并发布到 Web 平台。
 short-title: Web

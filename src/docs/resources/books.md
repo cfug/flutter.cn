@@ -5,9 +5,11 @@ description: Extra, extra! Here's a collection of books about Flutter.
 description: 号外，号外！Flutter 的书籍收藏清单都在这里啦。
 ---
 
-Here's a collection of books about Flutter.
+Here's a collection of books about Flutter, in alphabetical order.
 If you find another one that we should add,
-[let us know.](https://github.com/flutter/website/issues){:.help-instruction}
+[let us know][]{:.help-instruction}.
+
+[let us know]: {{site.github}}/flutter/website/issues
 
 {% for book in site.data.books %}
 <div class="book-img-with-details row">
@@ -25,3 +27,4 @@ by {{book.authors | array_to_sentence_string}}
 </div>
 </div>
 {% endfor %}
+

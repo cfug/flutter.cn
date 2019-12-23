@@ -9,6 +9,9 @@ next:
   title: Add a Drawer to a screen
   title: 在屏幕上添加一个 Drawer
   path: /docs/cookbook/design/drawer
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 UI developers often need to show and hide elements on screen.
@@ -212,11 +215,11 @@ AnimatedOpacity(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -285,7 +288,9 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-![Fade In and Out Demo (一个淡入淡出的例子)](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/fade-in-out.gif" alt="Fade In and Out Demo (一个淡入淡出的例子)" class="site-mobile-screenshot" />
+</noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [Gestures]: /docs/cookbook#gestures

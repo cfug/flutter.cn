@@ -9,6 +9,9 @@ next:
   title: Implement swipe to dismiss
   title: 实现「滑动清除」效果
   path: /docs/cookbook/gestures/dismissible
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 You not only want to display information to users,
@@ -75,11 +78,11 @@ GestureDetector(
      [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html)、[FlatButton]({{site.api}}/flutter/material/FlatButton-class.html) 和 [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html) 等。
 
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -137,7 +140,9 @@ class MyButton extends StatelessWidget {
 }
 ```
 
-![Handle taps demo](/images/cookbook/handling-taps.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/handling-taps.gif" alt="Handle taps demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Add Material touch ripples]: /docs/cookbook/gestures/ripples

@@ -5,6 +5,9 @@ next:
   title: Animate a widget using a physics simulation
   title: 在物理模拟器上构建动画
   path: /docs/cookbook/animation/physics-simulation
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 A design language, such as Material, defines standard behaviors when
@@ -297,11 +300,11 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 }
 ```
 
-## Complete Example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 main() {
@@ -355,8 +358,9 @@ class Page2 extends StatelessWidget {
   }
 }
 ```
-
-![Demo showing a custom page route transition animating up from the bottom of the screen](/images/cookbook/page-route-animation.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/page-route-animation.gif" alt="Demo showing a custom page route transition animating up from the bottom of the screen（样例展示了一个自底向上的路由转换动画）" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html

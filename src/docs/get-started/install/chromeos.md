@@ -2,7 +2,6 @@
 title: Chrome OS install
 title: 在 Chrome OS 上安装和配置 Flutter 开发环境
 short-title: Chrome OS
-# js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Set up an editor
   titie: 编辑工具设定

@@ -193,11 +193,11 @@ Start by creating a new app:
 
   在终端中运行：`flutter create batterylevel`
 
-By default our template supports writing Android code using Java, or iOS code
-using Objective-C. To use Kotlin or Swift, use the `-i` and/or `-a` flags:
+By default our template supports writing Android code using Kotlin, or iOS code
+using Swift. To use Java or Objective-C, use the `-i` and/or `-a` flags:
 
-默认情况下，我们的模板使用 Java 编写 Android 或使用 Objective-C 编写 iOS 代码。要使用
-Kotlin 或 Swift，请使用 `-i` 和/或 `-a` 标志：
+默认情况下，我们的模板使用 Kotlin 编写 Android 或使用 Swift 编写 iOS 代码。要使用
+Java 或 Objective-C，请使用 `-i` 和/或 `-a` 标志：
 
 * In a terminal run: `flutter create -i swift -a kotlin batterylevel`
 
@@ -226,6 +226,7 @@ prefix', for example: `samples.flutter.dev/battery`.
 使用唯一的**域前缀**为通道名称添加前缀，比如：`samples.flutter.dev/battery`。
 
 <!-- skip -->
+<?code-excerpt "main.dart" title?>
 ```dart
 import 'dart:async';
 
@@ -255,6 +256,7 @@ inside `setState`.
 在 `setState` 中使用返回结果来更新 `_batteryLevel` 内的用户界面状态。
 
 <!-- skip -->
+<?code-excerpt "main.dart" title?>
 ```dart
   // Get battery level.
   String _batteryLevel = 'Unknown battery level.';
@@ -281,26 +283,28 @@ and a button for refreshing the value.
 最后，将模板中的 `build` 方法替换为包含以字符串形式显示电池状态、并包含一个用于刷新该值的按钮的小型用户界面。
 
 <!-- skip -->
+<?code-excerpt "main.dart" title?>
 ```dart
-@override
-Widget build(BuildContext context) {
-  return Material(
-    child: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          RaisedButton(
-            child: Text('Get Battery Level'),
-            onPressed: _getBatteryLevel,
-          ),
-          Text(_batteryLevel),
-        ],
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            RaisedButton(
+              child: Text('Get Battery Level'),
+              onPressed: _getBatteryLevel,
+            ),
+            Text(_batteryLevel),
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 ```
 
+### Step 3: Add an Android platform-specific implementation
 
 ### Step 3a: Add an Android platform-specific implementation using Java {#example-java}
 
@@ -310,6 +314,10 @@ Widget build(BuildContext context) {
 3b.
 
 **注意**：以下步骤使用 Java。如果你更喜欢 Kotlin，请跳至步骤 3b。
+
+{% samplecode android-channel %}
+
+{% sample Java %}
 
 Start by opening the Android host portion of your Flutter app in Android Studio:
 
@@ -340,31 +348,28 @@ Flutter client side.
 接下来，在 `onCreate()` 方法中创建一个 `MethodChannel` 并设置一个
 `MethodCallHandler`。确保使用的通道名称与 Flutter 客户端使用的一致。
 
+<?code-excerpt "MainActivity.java" title?>
 ```java
-import io.flutter.app.FlutterActivity;
-import io.flutter.plugin.common.MethodCall;
+import androidx.annotation.NonNull;
+import io.flutter.embedding.android.FlutterActivity;
+import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
-import io.flutter.plugin.common.MethodChannel.Result;
+import io.flutter.plugins.GeneratedPluginRegistrant;
 
 public class MainActivity extends FlutterActivity {
-    private static final String CHANNEL = "samples.flutter.dev/battery";
+  private static final String CHANNEL = "samples.flutter.dev/battery";
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        GeneratedPluginRegistrant.registerWith(this);
-
-        new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
-                new MethodCallHandler() {
-                    @Override
-                    public void onMethodCall(MethodCall call, Result result) {
-                        // Note: this method is invoked on the main thread.
-                        // TODO
-                    }
-                });
-    }
+  @Override
+  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
+    GeneratedPluginRegistrant.registerWith(flutterEngine);
+    new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
+        .setMethodCallHandler(
+          (call, result) -> {
+            // Note: this method is invoked on the main thread.
+            // TODO
+          }
+        );
+  }
 }
 ```
 
@@ -379,6 +384,7 @@ First, add the needed imports at the top of the file:
 
 首先在文件头部添加所需的依赖：
 
+<?code-excerpt "MainActivity.java" title?>
 ```java
 import android.content.ContextWrapper;
 import android.content.Intent;
@@ -390,28 +396,29 @@ import android.os.Bundle;
 ```
 
 Then add the following as a new method in the activity class,
-below the `onCreate()` method:
+below the `configureFlutterEngine()` method:
 
 然后在 Activity 类中的 `onCreate()` 方法下方添加以下新方法：
 
+<?code-excerpt "MainActivity.java" title?>
 ```java
-private int getBatteryLevel() {
-  int batteryLevel = -1;
-  if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-    BatteryManager batteryManager = (BatteryManager) getSystemService(BATTERY_SERVICE);
-    batteryLevel = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
-  } else {
-    Intent intent = new ContextWrapper(getApplicationContext()).
-        registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-    batteryLevel = (intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) * 100) /
-        intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-  }
+  private int getBatteryLevel() {
+    int batteryLevel = -1;
+    if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+      BatteryManager batteryManager = (BatteryManager) getSystemService(BATTERY_SERVICE);
+      batteryLevel = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
+    } else {
+      Intent intent = new ContextWrapper(getApplicationContext()).
+          registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+      batteryLevel = (intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) * 100) /
+          intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+    }
 
-  return batteryLevel;
-}
+    return batteryLevel;
+  }
 ```
 
-Finally, complete the `onMethodCall()` method added earlier.
+Finally, complete the `setMethodCallHandler()` method added earlier.
 You need to handle a single platform method, `getBatteryLevel()`,
 so test for that in the `call` argument. The implementation of
 this platform method calls the Android code written
@@ -427,32 +434,34 @@ Remove the following code:
 
 移除以下代码：
 
+<?code-excerpt "MainActivity.java" title?>
 ```java
-public void onMethodCall(MethodCall call, Result result) {
-    // TODO
-}
+          (call, result) -> {
+            // Note: this method is invoked on the main thread.
+            // TODO
+          }
 ```
 
 And replace with the following:
 
 并替换成以下内容：
 
+<?code-excerpt "MainActivity.java" title?>
 ```java
-@Override
-public void onMethodCall(MethodCall call, Result result) {
-    // Note: this method is invoked on the main thread.
-    if (call.method.equals("getBatteryLevel")) {
-        int batteryLevel = getBatteryLevel();
+          (call, result) -> {
+            // Note: this method is invoked on the main thread.
+            if (call.method.equals("getBatteryLevel")) {
+              int batteryLevel = getBatteryLevel();
 
-        if (batteryLevel != -1) {
-            result.success(batteryLevel);
-        } else {
-            result.error("UNAVAILABLE", "Battery level not available.", null);
-        }
-    } else {
-        result.notImplemented();
-    }
-}
+              if (batteryLevel != -1) {
+                result.success(batteryLevel);
+              } else {
+                result.error("UNAVAILABLE", "Battery level not available.", null);
+              }
+            } else {
+              result.notImplemented();
+            }
+          }
 ```
 
 You should now be able to run the app on Android. If using the Android
@@ -475,6 +484,8 @@ This step assumes that you created your project in [step 1.](#example-project)
 using the `-a kotlin` option.
 
 此步骤假设你在 [第一步](#example-project) 中使用 `-a kotlin` 选项创建了项目。
+
+{% sample Kotlin %}
 
 Start by opening the Android host portion of your Flutter app in Android Studio:
 
@@ -507,19 +518,21 @@ was used on the Flutter client side.
 在 `onCreate()` 方法中创建一个 `MethodChannel` 并调用
 `setMethodCallHandler()`。确保使用的通道名称与 Flutter 客户端使用的一致。
 
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
-import android.os.Bundle
-import io.flutter.app.FlutterActivity
+import androidx.annotation.NonNull
+import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
+import io.flutter.plugins.GeneratedPluginRegistrant
 
-class MainActivity() : FlutterActivity() {
+class MainActivity: FlutterActivity() {
   private val CHANNEL = "samples.flutter.dev/battery"
 
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-
-    GeneratedPluginRegistrant.registerWith(this)
-    MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+  override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+    GeneratedPluginRegistrant.registerWith(flutterEngine)
+    MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
+      call, result ->
       // Note: this method is invoked on the main thread.
       // TODO
     }
@@ -538,6 +551,7 @@ First, add the needed imports at the top of the file:
 
 首先在文件头部添加所需的依赖：
 
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 import android.content.Context
 import android.content.ContextWrapper
@@ -549,10 +563,11 @@ import android.os.Build.VERSION_CODES
 ```
 
 Next, add the following method in the `MainActivity` class,
-below the `onCreate()` method:
+below the `configureFlutterEngine()` method:
 
 然后在 `MainActivity` 类中的 `onCreate()` 方法下方添加以下新方法：
 
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
   private fun getBatteryLevel(): Int {
     val batteryLevel: Int
@@ -568,7 +583,7 @@ below the `onCreate()` method:
   }
 ```
 
-Finally, complete the `onMethodCall()` method added earlier. You need to
+Finally, complete the `setMethodCallHandler()` method added earlier. You need to
 handle a single platform method, `getBatteryLevel()`, so test for that in the
 `call` argument. The implementation of this platform method calls the
 Android code written in the previous step, and returns a response for both
@@ -583,8 +598,11 @@ Remove the following code:
 
 删除以下代码：
 
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
-    MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+    MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
+      call, result ->
+      // Note: this method is invoked on the main thread.
       // TODO
     }
 ```
@@ -593,9 +611,11 @@ And replace with the following:
 
 并替换成以下内容：
 
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
-    MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+    MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       // Note: this method is invoked on the main thread.
+      call, result ->
       if (call.method == "getBatteryLevel") {
         val batteryLevel = getBatteryLevel()
 
@@ -609,22 +629,21 @@ And replace with the following:
       }
     }
 ```
+{% endsamplecode %}
 
 You should now be able to run the app on Android. If using the Android
-Emulator, set the battery level in the **Extended Controls** panel
+Emulator, set the battery level in the Extended Controls panel
 accessible from the **...** button in the toolbar.
 
 现在你应该可以在 Android 中运行该应用。如果使用了 Android
 模拟器，请在**扩展控件**面板中设置电池电量，可从工具栏中的 **...** 按钮访问。
 
-### Step 4a: Add an iOS platform-specific implementation using Objective-C {#example-objc}
+### Step 4a: Add an iOS platform-specific implementation
 
-### 步骤 4a：使用 Objective-C 添加 iOS 平台的实现 {#example-objc}
+### 步骤 4a：添加 iOS 平台的实现
 
-*Note*: The following steps use Objective-C.
-If you prefer Swift, skip to step 4b.
-
-**注意**：以下步骤使用 Objective-C，如果你更喜欢 Swift，请跳至步骤 4b。
+{% samplecode ios-channel %}
+{% sample Objective-C %}
 
 Start by opening the iOS host portion of the Flutter app in Xcode:
 
@@ -659,6 +678,7 @@ as was used on the Flutter client side.
 在 `application didFinishLaunchingWithOptions:` 方法中创建一个 `FlutterMethodChannel`
 并添加一个处理程序。确保使用的通道名称与 Flutter 客户端使用的一致。
 
+<?code-excerpt "AppDelegate.m" title?>
 ```objectivec
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
@@ -692,6 +712,7 @@ Add the following method in the `AppDelegate` class, just before `@end`:
 
 在 `AppDelegate` 类中的 `@end` 之前添加以下方法：
 
+<?code-excerpt "AppDelegate.m" title?>
 ```objectivec
 - (int)getBatteryLevel {
   UIDevice* device = UIDevice.currentDevice;
@@ -715,6 +736,7 @@ the `result` argument. If an unknown method is called, report that instead.
 `call` 中对其进行验证。该平台方法的实现是调用上一步编写的 iOS 代码，并使用 `result`
 参数来返回成功和错误情况下的响应。如果调用了未知方法，则报告该方法。
 
+<?code-excerpt "AppDelegate.m" title?>
 ```objectivec
 __weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
@@ -756,6 +778,7 @@ using the `-i swift` option.
 
 此步骤假设你在第一步中使用 `-i swift` 选项创建了项目。
 
+{% sample Swift %}
 Start by opening the iOS host portion of your Flutter app in Xcode:
 
 首先在 Xcode 中打开 Flutter 应用的 iOS 宿主部分：
@@ -793,6 +816,7 @@ a `FlutterMethodChannel` tied to the channel name
 重写 `application:didFinishLaunchingWithOptions:` 方法并创建一个绑定了通道名称
 `samples.flutter.dev/battery` 的 `FlutterMethodChannel`：
 
+<?code-excerpt "AppDelegate.swift" title?>
 ```swift
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -826,6 +850,7 @@ Add the following as a new method at the bottom of `AppDelegate.swift`:
 
 在 `AppDelegate.swift` 末尾添加以下新方法：
 
+<?code-excerpt "AppDelegate.swift" title?>
 ```swift
 private func receiveBatteryLevel(result: FlutterResult) {
   let device = UIDevice.current
@@ -849,6 +874,7 @@ is called, report that instead.
 最后，完成前面添加的 `setMethodCallHandler()` 方法。你需要处理单个平台方法 `getBatteryLevel()`，所以在参数
 `call` 中对其进行验证。该平台方法的实现是调用上一步编写的 iOS 代码。如果调用了未知方法，则报告该方法。
 
+<?code-excerpt "AppDelegate.swift" title?>
 ```swift
 batteryChannel.setMethodCallHandler({
   [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
@@ -860,10 +886,11 @@ batteryChannel.setMethodCallHandler({
   self?.receiveBatteryLevel(result: result)
 })
 ```
+{% endsamplecode %}
 
 You should now be able to run the app on iOS. If using the iOS Simulator,
 note that it does not support battery APIs,
-and the app displays 'Battery info unavailable.'.
+and the app displays 'battery info unavailable'.
 
 现在你应该可以在 iOS 中运行该应用。如果使用了 iOS 模拟器，注意它并不支持
 battery API，并且应用会显示 'battery info unavailable'。

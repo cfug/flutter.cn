@@ -9,6 +9,9 @@ next:
   title: Create a horizontal list
   title: 创建一个水平滑动的列表
   path: /docs/cookbook/lists/horizontal-list
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 Displaying lists of data is a fundamental pattern for mobile apps.
@@ -48,11 +51,11 @@ ListView(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -90,7 +93,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Basic List Demo](/images/cookbook/basic-list.png){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/basic-list.png" alt="Basic List Demo" class="site-mobile-screenshot" /> 
+</noscript>
 
 
 [`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html

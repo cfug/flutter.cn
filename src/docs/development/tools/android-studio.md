@@ -1,13 +1,13 @@
 ---
-title: Android Studio / IntelliJ
-title: 在 Android Studio 里开发 Flutter 应用
+title: Android Studio and IntelliJ
+title: 在 Android Studio 或 IntelliJ 里开发 Flutter 应用
 description: How to develop Flutter apps in Android Studio or other IntelliJ products.
 description: 如何在 Android Studio 或者其他类 IntelliJ 产品里开发 Flutter 应用。
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" role="tab" aria-selected="true">Android Studio / IntelliJ</a>
+    <a class="nav-link active" role="tab" aria-selected="true">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="/docs/development/tools/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>

@@ -9,6 +9,9 @@ next:
   title: Create lists with different types of items
   title: 创建拥有不同列表项的列表
   path: /docs/cookbook/lists/mixed-list
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 In some cases, you might want to display your items as a grid rather than
@@ -49,11 +52,11 @@ GridView.count(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() {
@@ -90,8 +93,10 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-![Grid List Demo](/images/cookbook/grid-list.gif){:.site-mobile-screenshot}
 
+<noscript>
+  <img src="/images/cookbook/grid-list.gif" alt="Grid List Demo" class="site-mobile-screenshot" />
+</noscript>
 
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
 [`GridView.count()`]: {{site.api}}/flutter/widgets/GridView/GridView.count.html

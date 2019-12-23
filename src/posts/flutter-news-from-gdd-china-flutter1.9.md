@@ -30,9 +30,9 @@ With iOS 13 on the way, we’ve also been working to ensure your Flutter apps lo
 
 此外，随着 iOS 13 即将面世，团队也在积极推进相关的支持工作，以确保您的 Flutter 应用在新款 iPhone 设备上保持美观的界面。Flutter 1.9 实现了 [iOS 13 的拖曳式工具栏功能](https://github.com/flutter/flutter/pull/35829)，允许长按与从右往左拖动两项操作，并且为 [触感反馈](https://github.com/flutter/flutter/pull/37724) 提供了支持。不少开发者已经提交了 [pull request](https://github.com/flutter/flutter/issues/35541)，希望 Flutter 支持 iOS 夜间模式，团队目前已开始着手解决这方面的需求，争取尽早推出解决方案。 
 
-Finally, in the latest development builds, you can now turn on [experimental support for Bitcode](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app-(experimental)), which is Apple’s platform-independent intermediate representation of a compiled program. Submitting your app as Bitcode allows Apple to optimize your binary in the future without resubmission, and opens the door to Flutter potentially supporting platforms like watchOS and tvOS that require Bitcode for app submission.
+Finally, in the latest development builds, you can now turn on [experimental support for Bitcode](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app), which is Apple’s platform-independent intermediate representation of a compiled program. Submitting your app as Bitcode allows Apple to optimize your binary in the future without resubmission, and opens the door to Flutter potentially supporting platforms like watchOS and tvOS that require Bitcode for app submission.
 
-最后，最新版本的开发构建允许您启用 [Bitcode 实验性支持](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app-(experimental))。Bitcode 是苹果新添加的一个编译特性，开启 Bitcode 功能后，开发者只需在编译环节上传与平台无关的 Intermediate Representation (中间文件) 即可。以 Bitcode 的形式上传应用后，苹果可以在后期直接对二进制文件进行优化，免除了开发者二次上传的麻烦，与此同时，这也为 Flutter 开启了更多的使用场景，比如说为 watchOS 和 tvOS 等要求上传 Bitcode 文件的平台提供支持。
+最后，最新版本的开发构建允许您启用 [Bitcode 实验性支持](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app)。Bitcode 是苹果新添加的一个编译特性，开启 Bitcode 功能后，开发者只需在编译环节上传与平台无关的 Intermediate Representation (中间文件) 即可。以 Bitcode 的形式上传应用后，苹果可以在后期直接对二进制文件进行优化，免除了开发者二次上传的麻烦，与此同时，这也为 Flutter 开启了更多的使用场景，比如说为 watchOS 和 tvOS 等要求上传 Bitcode 文件的平台提供支持。
 
 ## New Material widgets
 

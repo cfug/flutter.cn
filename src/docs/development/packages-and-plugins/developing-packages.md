@@ -151,7 +151,7 @@ Use the `--org` option to specify your organization, using reverse domain name
 notation. This value is used in various package and bundle identifiers in the
 generated Android and iOS code.
 
-使用 `--org` 选项，以反向域名表示法来指定你的组织。该值用于生成的 Android 及
+使用 `--org` 选项，以反向域名表示法来指定你的组织。该值用于生成的 Android 及 iOS 代码。
 
 ```terminal
 $ flutter create --org com.example --template=plugin hello

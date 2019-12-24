@@ -216,7 +216,7 @@ default Dart library would run when calling `run` on the
 {{site.alert.end}}
 
 {{site.alert.note}}
-在上一个例子中，你的默认 Dart 库的默认 `main()` 入口函数，将会在 `AppDelegate` 创建 `FlutterEngine` 并调用 `run` 方法时调用。
+在上一个例子中，你的默认 Dart 库的默认入口函数 `main()`，将会在 `AppDelegate` 创建 `FlutterEngine` 并调用 `run` 方法时调用。
 {{site.alert.end}}
 
 ### _Alternatively_ - Create a FlutterViewController with an implicit FlutterEngine
@@ -236,7 +236,7 @@ useful if the Flutter screen is rarely shown, when there are no good
 heuristics to determine when the Dart VM should be started, and when Flutter
 doesn't need to persist state between view controllers.
 
-不过不建议这样做，因为按需创建`FlutterEngine` 的话，在 `FlutterViewController` 被 present 出来之后，第一帧图像渲染完之前，将会引入明显的延迟。但是当 Flutter 页面很少被展示时，当对决定何时启动 Dart VM 的没有好的启发时，当 Flutter 无需在页面（view controller）之间保持状态时，此方式可能会有用。
+不过不建议这样做，因为按需创建`FlutterEngine` 的话，在 `FlutterViewController` 被 present 出来之后，第一帧图像渲染完之前，将会引入明显的延迟。但是当 Flutter 页面很少被展示时，当对决定何时启动 Dart VM 没有好的启发时，当 Flutter 无需在页面（view controller）之间保持状态时，此方式可能会有用。
 
 To let the `FlutterViewController` present without an existing `FlutterEngine`,
 omit the `FlutterEngine` construction, and create the
@@ -319,7 +319,8 @@ For instance:
 ```
 
 The implementation should delegate mostly to a `FlutterPluginAppLifeCycleDelegate`:
-app delegate 的实现中，应该最大化地代理给 `FlutterPluginAppLifeCycleDelegate`
+
+app delegate 的实现中，应该最大化地委托给 `FlutterPluginAppLifeCycleDelegate`：
 
 <?code-excerpt "AppDelegate.m" title?>
 ```objectivec
@@ -436,7 +437,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
 The examples demonstrate running Flutter using the default launch settings.
 
-例子中展示了使用默认启动选项运行 Flutter
+例子中展示了使用默认启动选项运行 Flutter。
 
 In order to customize your Flutter runtime, you can also specify the Dart entrypoint, library, and route.
 
@@ -454,7 +455,7 @@ of your `lib/main.dart` file.
 You can also run a different entrypoint function by using [`runWithEntrypoint`]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:)
 with an `NSString` specifying a different Dart function.
 
-你也可以使用另一个入口方法 [`runWithEntrypoint`]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:)，并使用 `NSString` 字符串制定一个不同的 Dart 入口。
+你也可以使用另一个入口方法 [`runWithEntrypoint`]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:)，并使用 `NSString` 字符串指定一个不同的 Dart 入口。
 
 {{site.alert.note}}
 Dart entrypoint functions other than `main()` must be annotated with the following in order to not be [tree-shaken](https://en.wikipedia.org/wiki/Tree_shaking) away when compiling:
@@ -557,7 +558,7 @@ Setting the initial route after running the engine doesn't have an effect.
 {{site.alert.warning}}
 `navigationChannel` 上的 `"setInitialRoute"` 必须在启动 `FlutterEngine` 前调用，才能在 Flutter 的第一帧中显示期望的路由。
 
-特别是，它必须在运行 Dart 入口函数前被调用。 入口函数可能会导致一系列的事件，因为 [`runApp`]({{site.api}}/flutter/widgets/runApp.html) 搭建了一个 Material/Cupertino/WidgetsApp，进而隐式创建了一个 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)， Navigator 又可能在第一次初始化 [`NavigatorState`]({{site.api}}/flutter/widgets/NavigatorState-class.html) 时读取 `window.defaultRouteName`。
+特别是，它必须在运行 Dart 入口函数前被调用。 入口函数可能会引起一系列的事件，因为 [`runApp`]({{site.api}}/flutter/widgets/runApp.html) 搭建了一个 Material/Cupertino/WidgetsApp，进而隐式创建了一个 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)， Navigator 又可能在第一次初始化 [`NavigatorState`]({{site.api}}/flutter/widgets/NavigatorState-class.html) 时读取 `window.defaultRouteName`。
 
 运行 engine 后设置初始化路由，将不会有作用.
 {{site.alert.end}}
@@ -572,7 +573,7 @@ To pop the iOS route from the Flutter side, call [`SystemNavigator.pop()`]({{sit
 {{site.alert.end}}
 
 {{site.alert.tip}}
-如果在 `FlutterEngine` 启动后，迫切的需要在平台侧改变你当前的 Flutter 路由，可以使用 `FlutterViewController` 里的 [pushRoute]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)pushRoute:)
+如果在 `FlutterEngine` 启动后，迫切得需要在平台侧改变你当前的 Flutter 路由，可以使用 `FlutterViewController` 里的 [pushRoute]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)pushRoute:)
  或者 [popRoute]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)popRoute)。
 
 在 Flutter 侧推出 iOS 路由，调用 [`SystemNavigator.pop()`]({{site.api}}/flutter/services/SystemNavigator/pop.html)。
@@ -591,4 +592,4 @@ instance is initiated. Using [platform channels](/docs/development/platform-inte
 you're free to push data or prepare your Flutter environment in any way you'd
 like, before presenting the Flutter UI via a `FlutterViewController`.
 
-之前的例子仅仅展示了怎样定制 Flutter 实例初始化的几种方式，使用 [撰写双端平台代码](/docs/development/platform-integration/platform-channels)，你可以在通过 `FlutterViewController` 展示 Flutter UI 之前，自由的选择你喜欢的，推入数据和准备 Flutter 环境的方式。
+之前的例子仅仅展示了怎样定制 Flutter 实例初始化的几种方式，通过 [撰写双端平台代码](/docs/development/platform-integration/platform-channels)，你可以在 `FlutterViewController` 展示 Flutter UI 之前，自由地选择你喜欢的，推入数据和准备 Flutter 环境的方式。

@@ -42,7 +42,10 @@ This happens when you construct a FlutterEngine for the first time on both
 **[Android]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html)**
 and **[iOS]({{site.api}}/objcdoc/Classes/FlutterEngine.html)** APIs.
 
-当您首次在 **[Android]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html)** 和 **[iOS]({{site.api}}/objcdoc/Classes/FlutterEngine.html)** 上 调用 API 构建 FlutterEngine 时，就会发生这种情况。
+当您首次在 
+**[Android]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html)** 
+和 **[iOS]({{site.api}}/objcdoc/Classes/FlutterEngine.html)**
+上调用 API 构建 FlutterEngine 时，就会发生这种情况。
 
 ### Loading the Flutter library
 
@@ -57,10 +60,13 @@ is constructed because the JNI connectors need to reference the Flutter C++
 library. On **iOS**, this happens when the [`FlutterEngine`]({{site.api}}/objcdoc/Classes/FlutterEngine.html)
 is first run, such as by running [`runWithEntrypoint:`]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:).
 
-在 **Android** 上，当构建 [`FlutterEngine`]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html) 时也会发生这种情况，
-因为 JNI 连接器需要引用 Flutter C++ 库。
-在 **iOS** 上，这是在首次运行 [`FlutterEngine`]({{site.api}}/objcdoc/Classes/FlutterEngine.html) 时发生的，
-例如通过运行 [`runWithEntrypoint:`]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:)。
+在 **Android** 上，当构建 
+[`FlutterEngine`]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html) 
+时也会发生这种情况，因为 JNI 连接器需要引用 Flutter C++ 库。
+在 **iOS** 上，这是在首次运行 
+[`FlutterEngine`]({{site.api}}/objcdoc/Classes/FlutterEngine.html) 时发生的，
+例如运行 
+[`runWithEntrypoint:`]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:)。
 
 ### Starting the Dart VM
 
@@ -81,9 +87,11 @@ A one-time Dart VM start is done when constructing the [`FlutterEngine`]({{site.
 for the first time on **Android** and when [running a Dart entrypoint]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:)
 for the first time on **iOS**.
 
-在 **Android** 上首次构建 [`FlutterEngine`]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html)，
-以及在 **iOS** 上首次[运行 Dart 入口]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:)时，
-将完成一次 Dart VM 启动。
+在 **Android** 上首次构建 
+[`FlutterEngine`]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html)，
+以及在 **iOS** 上首次
+[运行 Dart 入口]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:)
+时，将完成一次 Dart VM 启动。
 
 At this point, your Dart code's [snapshot](https://github.com/dart-lang/sdk/wiki/Snapshots)
 is also loaded into memory from your application's files.
@@ -115,9 +123,11 @@ number of [auxiliary threads](https://github.com/flutter/flutter/wiki/The-Engine
 on the host platform are also created at this point to support the isolate, such
 as a thread for offloading GPU handling and another for image decoding.
 
-这是通过在 Dart 运行时中启动 [Dart Isolate](https://api.dartlang.org/stable/dart-isolate/Isolate-class.html) 来完成的。
+这是通过在 Dart 运行时中启动 
+[Dart Isolate](https://api.dartlang.org/stable/dart-isolate/Isolate-class.html) 来完成的。
 isolate 是 Dart 的内存和线程容器。 
-此时在宿主平台上还创建了许多[辅助线程](https://github.com/flutter/flutter/wiki/The-Engine-architecture#threading)来支持 isolate，
+此时在宿主平台上还创建了许多
+[辅助线程](https://github.com/flutter/flutter/wiki/The-Engine-architecture#threading) 来支持 isolate，
 例如用于解除 GPU 处理的线程和用于图像解码的线程。
 
 One isolate exists per `FlutterEngine` instance, and multiple isolates
@@ -163,8 +173,8 @@ on **iOS**.
 
 在 add-to-app 的场景中，
 例如通过在 **Android** 上使用 [`FlutterActivity.withCachedEngine()`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#withCachedEngine-java.lang.String-) 
-方法构建的 [`Intent`](https://developer.android.com/reference/android/content/Intent.html)，
-调用 [`startActivity()`](https://developer.android.com/reference/android/content/Context.html#startActivity(android.content.Intent)) 时，
+方法构建的 [`Intent`](https://developer.android.google.cn/reference/android/content/Intent.html)，
+调用 [`startActivity()`](https://developer.android.google.cn/reference/android/content/Context.html#startActivity(android.content.Intent)) 时，
 或者，在 **iOS** 上调用 [`initWithEngine: nibName: bundle:`]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithEngine:nibName:bundle:) ，展示实例化的 [`FlutterViewController`]({{site.api}}/objcdoc/Classes/FlutterViewController.html)，都会将 `FlutterEngine` 挂载到 UI 组件。
 
 This is also the case if a Flutter UI component was launched without
@@ -183,15 +193,19 @@ on **Android** or a [CAEAGLLayer](https://developer.apple.com/documentation/quar
 or [CAMetalLayer](https://developer.apple.com/documentation/quartzcore/cametallayer)
 on **iOS**.
 
-在后台，这两个平台的UI组件都为 `FlutterEngine` 提供了渲染层，例如 **Android** 上的 [Surface](https://developer.android.com/reference/android/view/Surface) 或 **iOS** 上的 [CAEAGLLayer](https://developer.apple.com/documentation/quartzcore/caeagllayer) 或 [CAMetalLayer](https://developer.apple.com/documentation/quartzcore/cametallayer)。
+在后台，这两个平台的UI组件都为 `FlutterEngine` 提供了渲染层，例如 **Android** 上的 [Surface](https://developer.android.google.cn/reference/android/view/Surface) 或 **iOS** 上的 [CAEAGLLayer](https://developer.apple.com/documentation/quartzcore/caeagllayer) 或 [CAMetalLayer](https://developer.apple.com/documentation/quartzcore/cametallayer)。
 
 At this point, the [Layer]({{site.api}}/flutter/rendering/Layer-class.html)
 tree generated by your Flutter program, per frame, is converted into
 OpenGL (or Vulkan or Metal) GPU instructions.
 
-此时，您的 Flutter 程序生成的 [Layer]({{site.api}}/flutter/rendering/Layer-class.html) 树将转换为 OpenGL（或 Vulkan 或 Metal）GPU 指令。
+此时，您的 Flutter 程序生成的
+[Layer]({{site.api}}/flutter/rendering/Layer-class.html) 
+树将转换为 OpenGL（或 Vulkan 或 Metal）GPU 指令。
 
 ## Memory and latency
+
+## 内存和延迟
 
 Showing a Flutter UI has a non-trivial latency cost. This cost can be lessened 
 by starting the Flutter engine ahead of time.
@@ -206,9 +220,11 @@ rendering a first Flutter frame when the UI component is subsequently attached
 to that `FlutterEngine`.
 
 对于 add-to-app 的场景，预热相应的选择是，
-让您决定什么时候预加载 `FlutterEngine`（即加载 Flutter 库，启动 Dart VM 并在 isolate 中运行入口点），
+让您决定什么时候预加载 `FlutterEngine`
+（即加载 Flutter 库，启动 Dart VM 并在 isolate 中运行入口点），
 以及确定内存的占用与时间开销。
-您还需要知道，在将 UI 组件随后挂载到该 `FlutterEngine` 时，预热会如何影响 Flutter 渲染首帧的内存和时间开销。
+您还需要知道，在将 UI 组件随后挂载到该 `FlutterEngine` 时，
+预热会如何影响 Flutter 渲染首帧的内存和时间开销。
 
 As of Flutter v1.10.3, and testing on a low-end 2015 class device in release-AOT
 mode, pre-warming the `FlutterEngine` costs:
@@ -217,9 +233,12 @@ mode, pre-warming the `FlutterEngine` costs:
 
 - 42 MB and 1530 ms to prewarm on **Android**. 330 ms of it is a blocking call on
 the main thread.
-  **Android** 平台需要 42 MB 内存，耗费 1530 毫秒。主线程阻塞了 330 毫秒。
+
+  **Android** 平台需要 42 MB 内存，耗费 1530 毫秒。主线程阻塞了 330 毫秒；
+  
 - 22 MB and 860 ms to prewarm on **iOS**. 260 ms of it is a blocking call on the
 main thread.
+
   **iOS** 平台需要 22 MB 内存，耗费 860 毫秒。主线程阻塞了 260 毫秒。
 
 A Flutter UI can be attached during the pre-warm. The remaining time is 
@@ -232,12 +251,19 @@ Memory-wise, a cost sample (variable, depending on the use case) could be:
 在内存方面的开销（具体根据使用情况而定）可能是：
 
 - ~4 MB OS's memory usage for creating pthreads.
-  约 4 MB 系统内存用于创建 pthread。
+  
+  约 4 MB 系统内存用于创建 pthread；
+  
 - ~10 MB GPU driver memory.
-  约 10 MB 是 GPU 驱动内存。
+  
+  约 10 MB 是 GPU 驱动内存；
+  
 - ~1 MB for Dart runtime-managed memory.
-  约 1 MB 是用于 Dart 运行时管理的内存。
+  
+  约 1 MB 是用于 Dart 运行时管理的内存；
+  
 - ~5 MB for Dart-loaded font maps.
+  
   约 5 MB 用于 Dart 加载的字体映射。
 
 Latency-wise, a cost sample (variable, depending on the use case) could be:
@@ -245,15 +271,24 @@ Latency-wise, a cost sample (variable, depending on the use case) could be:
 在时间方面的开销（具体根据使用情况而定）可能是：
 
 - ~20 ms to collect the Flutter assets from the application package.
-  约 20 毫秒用于从应用包中收集 Flutter 资源。
+  
+  约 20 毫秒用于从应用包中收集 Flutter 资源；
+
 - ~15 ms to dlopen the Flutter engine library.
-  约 15 毫秒用于 dlopen 加载 Flutter 引擎的库。
+  
+  约 15 毫秒用于 dlopen 加载 Flutter 引擎的库；
+  
 - ~200 ms to create the Dart VM and load the AOT snapshot.
-  约 200 毫秒用于创建 Dart VM 并加载 AOT snapshot。
+  
+  约 200 毫秒用于创建 Dart VM 并加载 AOT snapshot；
+  
 - ~200 ms to load Flutter-dependent fonts and assets.
-  约 200 毫秒用于加载 Flutter 依赖的字体和资源。
+  
+  约 200 毫秒用于加载 Flutter 依赖的字体和资源；
+  
 - ~400 ms to run the entrypoint, create the first widget tree, and  compile the needed
 GPU shader programs.
+  
   约 400 毫秒来运行应用入口，创建第一个 widget 树，并编译所需的 GPU 着色器程序。
 
 The `FlutterEngine` should be pre-warmed late enough to delay the
@@ -275,9 +310,12 @@ Given an engine pre-warm, the first frame cost on UI attach is:
 
 - 320 ms on **Android** and an additional 12 MB (highly dependent on the screen's
 physical pixel size).
-  在 **Android** 上为 320 毫秒，另外需要 12 MB 的内存（在很大程度上取决于屏幕的物理像素大小）。
+  
+  在 **Android** 上为 320 毫秒，另外需要 12 MB 的内存（在很大程度上取决于屏幕的物理像素大小）；
+  
 - 200 ms on **iOS** and an additional 16 MB (highly dependent on the screen's physical
 pixel size).
+
   在 **iOS** 上为 200 毫秒，另外需要 16 MB 的内存（在很大程度上取决于屏幕的物理像素大小）。
 
 Memory-wise, the cost is primarily the graphical memory buffer used for

@@ -60,7 +60,7 @@
               match-page-url-exactly: true
             - title: 布局构建教程
               permalink: /docs/development/ui/layout/tutorial
-            - title: Creating responsive apps
+            - title: 创建响应式应用
               permalink: /docs/development/ui/layout/responsive
             - title: 边界约束 (Box constraints)
               permalink: /docs/development/ui/layout/box-constraints
@@ -89,12 +89,12 @@
         - title: 用户界面 (UI) 进阶
           permalink: /docs/development/ui/advanced
           children:
-            - title: Focus handling system # Where did this go?
+            - title: 焦点处理系统 # Where did this go?
             - title: 滑动效果 (Slivers)
               permalink: /docs/development/ui/advanced/slivers
             - title: 手势
               permalink: /docs/development/ui/advanced/gestures
-        - title: Platform-specific theming
+        - title: 平台特定主题
         - title: 核心 Widget 目录
           permalink: /docs/development/ui/widgets
     - title: 数据调用和后端
@@ -239,7 +239,7 @@
   children:
     - title: 调试工具
       permalink: /docs/testing/debugging
-    - title: Debugging apps programmatically
+    - title: 以编程方式调试应用
       permalink: /docs/testing/code-debugging
     - title: 使用原生的调试器
       permalink: /docs/testing/oem-debuggers
@@ -295,15 +295,14 @@
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
     - title: Google 文字库
-      permalink: https://pub.dev/packages/google_fonts
+      permalink: https://pub.flutter-io.cn/packages/google_fonts
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
     - title: 技术概览
       permalink: /docs/resources/technical-overview
-    # - title: Flutter best practices # TODO
     - title: Flutter 技术视频资源
       permalink: /docs/resources/videos
-    - title: Books
+    - title: 书籍
       permalink: /docs/resources/books
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO

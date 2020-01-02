@@ -38,15 +38,36 @@ you can download the latest version from
 你需要 Android Studio 3.2 或其更高的版本。若尚未安装，可从 [developer.android.com/studio]({{site.android-dev}}/studio) 下载最新的版本。
 
 1. Open Android Studio.
+
+   打开 Android Studio。
+
 2. Select **Open an existing Android Studio Project**.
+
+   选中 **Open an existing Android Studio Project** 。
+
 3. Open the `android` directory within your app.
+
+   在你的应用路径中打开 `android` 目录。
+
 4. Wait until the project has been synced successfully.
+
+   等待项目直到其同步成功。
+
   (This happens automatically once you open the project, but if it doesn’t,
    select **Sync Project with Gradle Files** from the **File** menu).
+
+  （一旦打开项目，同步就会自动构建，若没有自动构建，请从 **File** 菜单中选中 **Sync Project with Gradle Files**）。
+
 5. Select **Migrate to AndroidX** from the Refactor menu.
+
+   从 **Refactor** 菜单中选择 **Migrate to AndroidX** 。
+
 6. If you are asked to backup the project before proceeding,
    check **Backup project as Zip file**, then click **Migrate**. Lastly, save
    the zip file in your location of preference. <br/>
+
+   在继续之前，若被要求对项目进行备份，选中 **Backup project as Zip file** ，然后单击 **Migrate** ，最终将 zip 文件保存在你喜欢的路径下。<br/>
+
   <img
       width="500"
       style="border-radius: 12px;"
@@ -54,6 +75,9 @@ you can download the latest version from
       class="figure-img img-fluid"
       alt="Select backup project as zip file" />
 7. The refactoring preview shows the list of changes. Finally, click **Do Refactor**:
+
+   重构预览展示了变动的列表，最后，单击 **Do Refactor** ：
+
   <img
       width="600"
       style="border-radius: 12px;"
@@ -62,27 +86,7 @@ you can download the latest version from
       alt="An animation of the bottom-up page transition on Android" />
 8. That is it! You successfully migrated your project to AndroidX.
 
-1. 打开 Android Studio。
-2. 选中 **Open an existing Android Studio Project** 。
-3. 在你的应用路径中打开 `android` 目录。
-4. 等待项目直到其同步成功。
-  （一旦打开项目，同步就会自动构建，若没有自动构建，请从 **File** 菜单中选中 **Sync Project with Gradle Files**）。
-5. 从 **Refactor** 菜单中选择 **Migrate to AndroidX** 。
-6. 在继续之前，若被要求对项目进行备份，选中 **Backup project as Zip file** ，然后单击 **Migrate** ，最终将 zip 文件保存在你喜欢的路径下。<br/>
-  <img
-      width="500"
-      style="border-radius: 12px;"
-      src="/images/androidx/migrate_prompt.png"
-      class="figure-img img-fluid"
-      alt="Select backup project as zip file" />
-7. 重构预览展示了变动的列表，最后，单击 **Do Refactor** :
-  <img
-      width="600"
-      style="border-radius: 12px;"
-      src="/images/androidx/do_androidx_refactor.png"
-      class="figure-img img-fluid"
-      alt="An animation of the bottom-up page transition on Android" />
-8. 大功告成！你已成功将项目迁移到 AndroidX 。      
+   大功告成！你已成功将项目迁移到 AndroidX。
 
 Finally, if you migrated a plugin, publish the new AndroidX version to pub and update
 your `CHANGELOG.md` to indicate that this new version is compatible with AndroidX.

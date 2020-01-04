@@ -6,6 +6,7 @@ description: 如何将现有的 Flutter 项目迁移到 AndroidX。
 ---
 
 {{site.alert.note}}
+
   You might be directed to this page if the tool detects that your project
   doesn't use AndroidX.
 
@@ -21,7 +22,8 @@ It provides the `androidx.*` package libraries, unbundled from the platform API.
 This means that it offers backward compatibility and is updated more frequently
 than the Android platform.
 
-其提供了包名为 `androidx.*` ，且并未与平台 API 关联的类库，这意味着它提供了向后的兼容性，以及比 Android 平台更频繁的更新。
+其提供了包名为 `androidx.*` ，且并未与平台 API 关联的类库，
+这意味着它提供了向后的兼容性，以及比 Android 平台更频繁的更新。
 
 ## Common Questions
 
@@ -35,7 +37,9 @@ _You will need Android Studio 3.2 or higher. If you don’t have it installed,
 you can download the latest version from
 [developer.android.com/studio]({{site.android-dev}}/studio)_.
 
-你需要 Android Studio 3.2 或其更高的版本。若尚未安装，可从 [developer.android.com/studio]({{site.android-dev}}/studio) 下载最新的版本。
+**你需要 Android Studio 3.2 或其更高的版本。
+若尚未安装，可从 [developer.android.com/studio]({{site.android-dev}}/studio) 
+下载最新的版本。**
 
 1. Open Android Studio.
 

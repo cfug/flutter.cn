@@ -42,7 +42,7 @@ exposes it through a Dart plugin named "native_add".
   The dart:ffi library is [in beta][ffi issue],
   and breaking API changes might still happen.
   
-  dart：ffi 库处于 [测试中][ffi issue]，可能仍会发生 API 的重大更改
+  dart：ffi 库处于 [测试中][ffi issue]，可能仍会发生 API 的重大更改。
 
   Using the feature requires a Flutter 1.10.x
   dev channel build. To switch to the dev channel and
@@ -148,7 +148,7 @@ appropriately.
 但是 Gradle 允许你指向 `ios` 的文件夹。
 iOS 和 Android 系统无需使用相同的源；
 完全可以添加 Android 系统专用的源到 `android` 的文件夹，
-并适当地修改 `CMakeLists.txt` 。
+并适当地修改 `CMakeLists.txt`。
 
 The FFI library can only bind against C symbols,
 so in C++ these symbols must be marked `extern C`.
@@ -190,12 +190,12 @@ On iOS, you need to tell xcode to statically link the file:
 
  1. In Xcode, open `Runner.xcworkspace`.
  
- 1. 在 Xcode 中，打开 `Runner.xcworkspace`。
+    在 Xcode 中，打开 `Runner.xcworkspace`。
  
- 2. Add the C/C++/Objective-C/Swift
+ 1. Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
     
- 2. 将 C/C++/Objective-C/Swift 源文件添加到 Xcode 项目中。
+    将 C/C++/Objective-C/Swift 源文件添加到 Xcode 项目中。
 
 On Android, you need to create a `CMakeLists.txt` file
 to define how the sources should be compiled and point
@@ -344,20 +344,20 @@ use the following instructions:
 
 1. In Xcode, open `Runner.xcworkspace`.
 
-1.在 Xcode 中，打开 `Runner.xcworkspace`。
+   在 Xcode 中，打开 `Runner.xcworkspace`。
 
 2. Select the target platform.
 
-2.选择目标平台。
+   选择目标平台。
 
 3. Click **+** in the **Linked Frameworks and Libraries**
    section.
    
-3.单击**链接的框架和库**部分中的 **+**。
+   单击**链接的框架和库**部分中的 **+**。
 
 4. Select the system library to link against.
 
-4.选择要链接的系统库。
+   选择要链接的系统库。
 
 #### First-party library
 
@@ -383,19 +383,18 @@ use the following instructions:
 
  1. In Xcode, open `Runner.xcworkspace`.
  
- 1. 在 Xcode 中，打开 `Runner.xcworkspace`。
+    在 Xcode 中，打开 `Runner.xcworkspace`。
  
  2. Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
     
- 2. 将 C/C++/Objective-C/Swift 
- 源文件添加到 Xcode 项目。
+    将 C/C++/Objective-C/Swift 源文件添加到 Xcode 项目。
  
  3. Add the following prefix to the
     exported symbol declarations to ensure they
     are visible to Dart:
     
- 3. 在导出的符号声明中添加以下前缀，以确保其对 Dart 可见：
+    在导出的符号声明中添加以下前缀，以确保其对 Dart 可见：
 
     **C/C++/Objective-C**
 
@@ -421,17 +420,17 @@ use the following instructions:
 1. If a properly signed `Framework` file is present,
    open `Runner.xcworkspace`.
    
-1. 若存在正确签名的 `Framework` 文件，则打开 `Runner.xcworkspace`。
+   若存在正确签名的 `Framework` 文件，则打开 `Runner.xcworkspace`。
 
 2. Add the framework file to the **Embedded Binaries**
    section.
 
-2.将框架文件添加至**嵌入式二进制**分区。
+   将框架文件添加至**嵌入式二进制**分区。
    
 3. Also add it to the **Linked Frameworks & Libraries**
    section of the target in Xcode.
    
-3. 并将其添加到 Xcode 中目标的**链接框架和库**分区。
+   并将其添加到 Xcode 中目标的**链接框架和库**分区。
 
 #### Open-source third-party library
 
@@ -447,13 +446,12 @@ use the following instructions:
 1. In your plugin project,
    open `ios/<myproject>.podspec`.
    
-1.在您的插件项目中打开
-`ios / <myproject> .podspec`。
+   在您的插件项目中打开 `ios / <myproject> .podspec`。
 
 2. Add the native code to the `source_files`
    field.
    
-2.将原生代码添加到 `source_files` 字段。
+   将原生代码添加到 `source_files` 字段。
 
 The native code is then statically linked into
 the application binary of any app that uses
@@ -477,14 +475,12 @@ in binary form, use the following instructions:
 1. In your plugin project,
    open `ios/<myproject>.podspec`.
    
-1. 在您的插件项目中，
-打开 `ios / <myproject> .podspec`。
+   在您的插件项目中，打开 `ios / <myproject> .podspec`。
 
 2. Add a `vendored_frameworks` field.
    See the [CocoaPods example][].
 
-2. 添加一个`vendored_frameworks`字段。
-请参见 [CocoaPods 示例][]。
+   添加一个`vendored_frameworks`字段。请参见 [CocoaPods 示例][]。
 
 
 **Do not** upload this plugin
@@ -512,12 +508,11 @@ use the following instructions:
  1. Find the desired library in the [Android NDK Native APIs][]
     list in the Android docs. This lists stable native APIs.
   
- 1. 在 Android 文档内的 [Android NDK Native APIs][] 的列表
- 里找到所需的库，该列表列出了稳定的原生 API。
+    在 Android 文档内的 [Android NDK Native APIs][] 的列表里找到所需的库，该列表列出了稳定的原生 API。
  
  2. Load the library using [`DynamicLibrary.open`][].
  
- 2.使用 [`DynamicLibrary.open`][] 加载库。例如加载 OpenGL ES (v3)：
+    使用 [`DynamicLibrary.open`][] 加载库。例如加载 OpenGL ES (v3)：
  
     For example, to load OpenGL ES (v3):
     <!-- skip -->
@@ -568,7 +563,7 @@ in binary form, use the following instructions:
 1. Open the `android/build.gradle` file for your
    project.
    
-1. 打开项目的 `android/build.gradle` 文件。
+   打开项目的 `android/build.gradle` 文件。
 
 2. Add the AAR artifact as a dependency.
    **Don't** include the artifact in your
@@ -576,9 +571,7 @@ in binary form, use the following instructions:
    downloaded from a repository, such as
    JCenter.
    
-2. 将 AAR 工件添加为依赖项。
-  **不要**在 Flutter 软件包中包含工件。
-  而应从诸如 JCenter 之类的存储库中下载工件。
+  将 AAR 工件添加为依赖项。**不要**在 Flutter 软件包中包含工件。而应从诸如 JCenter 之类的存储库中下载工件。
 
 ### Web
 ### 网页

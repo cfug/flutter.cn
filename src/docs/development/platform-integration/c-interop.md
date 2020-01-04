@@ -546,8 +546,8 @@ instructions in the Android docs to
 add native code and support for the native
 code toolchain (either CMake or `ndk-build`).
 
-按照  [Add C and C++ code to your project][] Android 文档中的说明，
-添加本机代码并支持本机代码工具链（CMake 或 `ndk-build`）
+按照 Android  文档中 [Add C and C++ code to your project][] 的说明，
+去添加本机代码并支持本机代码工具链（CMake 或 `ndk-build`）
 
 #### Closed-source third-party library
 
@@ -583,46 +583,13 @@ Plugins are not yet supported for web apps.
 
 
 [Add C and C++ code to your project]: {{site.android-dev}}/studio/projects/add-native-code
-
-[项目中添加 C and C++ 代码]: {{site.android-dev}}/studio/projects/add-native-code
-
 [Android NDK Native APIs]: {{site.android-dev}}/ndk/guides/stable_apis
-
-[Android NDK的原生API]: {{site.android-dev}}/ndk/guides/stable_apis
-
 [CocoaPods example]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
-
-[CocoaPods例子]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
-
 [Dart API reference documentation]: {{site.dart.api}}/dev/
-
-[Dart API参考文件]: {{site.dart.api}}/dev/
-
 [dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
-
-[dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
-
 [`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
-
-[`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
-
 [`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
-
-[`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
-
 [`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
-
-[`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
-
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
-
-[FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
-
 [ffi issue]: {{site.github}}/dart-lang/sdk/issues/34452
-
-[ffi issue]: {{site.github}}/dart-lang/sdk/issues/34452
-
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading
-
-
-[Flutter 更新]: /docs/development/tools/sdk/upgrading

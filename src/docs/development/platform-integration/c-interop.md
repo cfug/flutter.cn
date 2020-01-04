@@ -571,7 +571,7 @@ in binary form, use the following instructions:
    downloaded from a repository, such as
    JCenter.
    
-  将 AAR 工件添加为依赖项。**不要**在 Flutter 软件包中包含工件。而应从诸如 JCenter 之类的存储库中下载工件。
+   将 AAR 工件添加为依赖项。**不要**在 Flutter 软件包中包含工件。而应从诸如 JCenter 之类的存储库中下载工件。
 
 ### Web
 ### 网页

@@ -22,7 +22,7 @@ This page focuses on compiling, packaging,
 and loading native code within a Flutter plugin or app.
 
 在你的库或程序可以使用FFI库绑定到原生代码之前，
-必须确保已加载原生代码已，并且 Dart 可以看到其符号。
+必须确保已加载原生代码，并且 Dart 可以看到其符号。
 此页面着重于在 Flutter 插件或 app 内编译，打包以及加载原生代码。 
 
 This tutorial demonstrates how to bundle C/C++

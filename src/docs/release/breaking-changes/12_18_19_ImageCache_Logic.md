@@ -1,6 +1,8 @@
 ---
 title: Revert ImageCache algorithm for large image
-description: Stop increasing the ImageCache maxByteSize to accomodate large images.
+title: 在大图情况下取消图片缓存算法
+description: Stop increasing the ImageCache maxByteSize to accommodate large images.
+description: 停止增加 ImageCache maxByteSize 以容纳较大的图片。
 ---
 
 # Revert ImageCache algorithm for large image

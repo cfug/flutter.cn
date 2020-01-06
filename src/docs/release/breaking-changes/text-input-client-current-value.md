@@ -1,7 +1,8 @@
 ---
 title: New field on TextInputClient - currentTextEditingValue
-description: Add a new field to the TextInputClient interface to get the current
-TextEditingValue from a client.
+title: TextInputClient 新增字段 - currentTextEditingValue
+description: Add a new field to the TextInputClient interface to get the current TextEditingValue from a client.
+description: 向 TextInputClient 接口添加了一个新字段，以从客户端获取当前的 TextEditingValue。
 ---
 
 # Add `currentTextEditingValue` to `TextInputClient`

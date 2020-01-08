@@ -409,10 +409,8 @@ The following are some other options available to help automate the delivery of 
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[find an example]: https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
 [Flutter Gallery in the Flutter repo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
-[flutter_redux library]: {{site.github}}/brianegan/flutter_redux
 [GitHub Actions- CI/CD on GitHub]: https://github.com/features/actions
 [GitLab Continuous Integration (GitLab CI/CD)]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [Match]: https://docs.fastlane.tools/actions/match/

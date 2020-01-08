@@ -166,13 +166,14 @@ In the **Identity** section:
 在 **Identity** 部分：
 
 `Display Name` 
-:the name of the app to be displayed on the home screen and elsewhere.
+: The name of the app to be displayed on the home screen and elsewhere.
     
- 这个 App 将会在主屏幕以及其他地方展示的名字。
+  这个 App 将会在主屏幕以及其他地方展示的名字。
     
-`Bundle Identifier:` the App ID you registered on App Store Connect.
+`Bundle Identifier` 
+: the App ID you registered on App Store Connect.
     
- 你在 App Store Connect 注册的 App ID。
+  你在 App Store Connect 注册的 App ID。
 
 In the **Signing** section:
 

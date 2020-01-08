@@ -37,11 +37,13 @@ No.
 
 ### Can I use Flutter plugins?
 
-### 我可以使用 Flutter plugin 吗？
+Yes, several plugins have web support. 
+Find an updated list of plugins on [pub.dev][] using the web filter.
+You can also add web support to existing plugins or [write your own plugins][] for the web.
 
-Not yet.
-
-还不能。
+可以使用了，许多 plugin 已经支持 web。
+使用 web 过滤器在 [pub.dev][] 上寻找 plugin 更新列表。
+你也可以向已有 plugin 添加 web 支持，或者编写[你的 web plugin](write your own plugins)。
 
 ### How do I file an issue about web support?
 
@@ -259,3 +261,5 @@ Flutter 团队的工程师会经常阅读和互动。
 [Running Flutter inspector]: /docs/development/tools/devtools/inspector
 [Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /docs/testing#widget-tests
+[pub.dev]: https://pub.dev/flutter/packages?platform=web
+[write your own plugins]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1

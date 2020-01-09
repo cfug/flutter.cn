@@ -38,6 +38,10 @@ This page covers the following topics:
 
   [启用混淆器](#enabling-proguard)
 
+* [R8](#r8)
+
+  [R8](#r8)
+
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
 
   [检查 app manifest 文件](#reviewing-the-app-manifest)
@@ -357,6 +361,15 @@ android {
 }
 ```
 
+## R8
+
+[R8][] is the new code shrinker from Google, and it's enabled by default
+when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
+flag to `flutter build apk` or `flutter build appbundle`.
+
+[R8][] 是谷歌推出的最新代码压缩器，当你打包 release 版本的 APK 或者 AAB 时会默认开启。
+要关闭 R8，请向 `flutter build apk` 或 `flutter build appbundle` 传 `--no-shrink` 标志。
+
 {{site.alert.note}}
 
   Obfuscation and minification can considerably extend compile time
@@ -481,10 +494,10 @@ the app bundle will be signed.
   他们在尝试构建 app bundle 的时候，会在某些 Android 6.0 某些设备上崩溃。
 
   While the Android team is working to identify a feasible
-  solution, you might try splitting the APK as a temporary
-  workaround. For more information, see [Issue 36822][].
+  solution, you might try [splitting the APK as](#what-is-a-fat-apk)
+  a temporary workaround. For more information, see [Issue 36822][].
 
-  在 Android team 努力寻找可行的解决方案时，你可以先尝试将 APK 拆分作为临时解决方案。
+  在 Android team 努力寻找可行的解决方案时，你可以先尝试[将 APK 拆分](#what-is-a-fat-apk)作为临时解决方案。
   更多有关信息请查看 [Issue 36822][]。
   
 {{site.alert.end}}
@@ -511,9 +524,10 @@ The release bundle for your app is created at
 `<app dir>/build/app/outputs/bundle/release/app.aab`.
 
 By default, the app bundle contains your Dart code and the Flutter
-runtime compiled for [armeabi-v7a][] (32-bit) and [arm64-v8a][] (64-bit).
+runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
+(ARM 64-bit), and [x86-64][] (x86 64-bit).
 
-此 app bundle 会默认地包含为 [armeabi-v7a][] (32-bit) 和 [arm64-v8a][] (64-bit) 编译的 Dart 和 Fluter 运行时代码。
+此 app bundle 会默认地包含为 [armeabi-v7a][] (ARM 32-bit)、[arm64-v8a][] (ARM 64-bit) 以及 [x86-64][] (x86 64-bit) 编译的 Dart 和 Fluter 运行时代码。
 
 ### Test the app bundle
 
@@ -587,12 +601,13 @@ From the command line:
    
    运行 `flutter build apk` （`flutter build` 默认带有 `--release` 参数）。
 
-This command results in two APK files:
+This command results in three APK files:
 
-这个命令会生成两个 APK 文件：
+这个命令会生成三个 APK 文件：
 
 * `<app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
 * `<app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
+* `<app dir>/build/app/outputs/apk/release/app-x86_64-release.apk`
 
 Removing the `--split-per-abi` flag results in a fat APK that contains
 your code compiled for _all_ the target ABIs. Such APKs are larger in
@@ -749,12 +764,14 @@ app bundles 时强烈建议分开构建 APKs，如 [build an APK](#build-an-apk)
 ### 哪些目标架构是被支持的?
 
 When building your application in release mode,
-Flutter apps can be compiled for [armeabi-v7a][] (32-bit)
-and [arm64-v8a][] (64-bit). Flutter does not currently support
-building for x86 Android (See [Issue 9253][]).
+Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
+[arm64-v8a][] (ARM 64-bit), and [x86-64][] (x86 64-bit).
+Flutter does not currently support building for x86 Android
+(See [Issue 9253][]).
 
-当使用 release 模式构建你的应用程序时, Flutter app 可以基于 [armeabi-v7a][] (32-bit)
-和 [arm64-v8a][] (64-bit)被编译。Flutter 目前不支持 x86 Android (参考 [Issue 9253][]).
+当使用 release 模式构建你的应用程序时, Flutter app 可以基于 [armeabi-v7a][] (ARM 32-bit)、
+[arm64-v8a][] (ARM 64-bit) 以及 [x86-64][] (x86 64-bit) 被编译。
+Flutter 目前不支持 x86 Android (参考 [Issue 9253][]).
 
 ### How do I sign the app bundle created by `flutter build appbundle`?
 
@@ -821,6 +838,7 @@ This doc need to assign to a new translator.
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
+[x86_64]: {{site.android-dev}}/ndk/guides/abis#86-64
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
@@ -840,6 +858,7 @@ This doc need to assign to a new translator.
 [Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [play]: {{site.android-dev}}/distribute/googleplay/start
+[R8]: {{site.android-dev}}/studio/build/shrink-code
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 [versions]: {{site.android-dev}}/studio/publish/versioning

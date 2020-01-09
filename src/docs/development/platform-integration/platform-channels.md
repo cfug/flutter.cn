@@ -131,20 +131,20 @@ The following table shows how Dart values are received on the platform side and 
 
 下表展示了如何在平台端接收 Dart 值，反之亦然：
 
-| Dart        | Android             | iOS
-|-------------|---------------------|----
-| null        | null                | nil (NSNull when nested)
-| bool        | java.lang.Boolean   | NSNumber numberWithBool:
-| int         | java.lang.Integer   | NSNumber numberWithInt:
-| int, if 32 bits not enough | java.lang.Long | NSNumber numberWithLong:
-| double      | java.lang.Double    | NSNumber numberWithDouble:
-| String      | java.lang.String    | NSString
-| Uint8List   | byte[]   | FlutterStandardTypedData typedDataWithBytes:
-| Int32List   | int[]    | FlutterStandardTypedData typedDataWithInt32:
-| Int64List   | long[]   | FlutterStandardTypedData typedDataWithInt64:
-| Float64List | double[] | FlutterStandardTypedData typedDataWithFloat64:
-| List        | java.util.ArrayList | NSArray
-| Map         | java.util.HashMap   | NSDictionary
+| Dart                       | Java                | Kotlin      | OC                                             | Swift                                   |
+| -------------------------- | ------------------- | ----------- | ---------------------------------------------- | --------------------------------------- |
+| null                       | null                | null        | nil (NSNull when nested)                       | nil                                     |
+| bool                       | java.lang.Boolean   | Boolean     | NSNumber numberWithBool:                       | NSNumber(value: Bool)                   |
+| int                        | java.lang.Integer   | Int         | NSNumber numberWithInt:                        | NSNumber(value: Int32)                  |
+| int, if 32 bits not enough | java.lang.Long      | Long        | NSNumber numberWithLong:                       | NSNumber(value: Int)                    |
+| double                     | java.lang.Double    | Double      | NSNumber numberWithDouble:                     | NSNumber(value: Double)                 |
+| String                     | java.lang.String    | String      | NSString                                       | String                                  |
+| Uint8List                  | byte[]              | ByteArray   | FlutterStandardTypedData typedDataWithBytes:   | FlutterStandardTypedData(bytes: Data)   |
+| Int32List                  | int[]               | IntArray    | FlutterStandardTypedData typedDataWithInt32:   | FlutterStandardTypedData(int32: Data)   |
+| Int64List                  | long[]              | LongArray   | FlutterStandardTypedData typedDataWithInt64:   | FlutterStandardTypedData(int64: Data)   |
+| Float64List                | double[]            | DoubleArray | FlutterStandardTypedData typedDataWithFloat64: | FlutterStandardTypedData(float64: Data) |
+| List                       | java.util.ArrayList | List        | NSArray                                        | Array                                   |
+| Map                        | java.util.HashMap   | HashMap     | NSDictionary                                   | Dictionary                              |
 
 <br>
 ## Example: Calling platform-specific iOS and Android code using platform channels {#example}
@@ -342,10 +342,10 @@ Start by opening the Android host portion of your Flutter app in Android Studio:
    在项目视图中打开 **java** 文件夹下的 `MainActivity.java` 文件。
 
 Next, create a `MethodChannel` and set a `MethodCallHandler` inside the
-`onCreate()` method. Make sure to use the same channel name as was used on the
+`configureFlutterEngine()` method. Make sure to use the same channel name as was used on the
 Flutter client side.
 
-接下来，在 `onCreate()` 方法中创建一个 `MethodChannel` 并设置一个
+接下来，在 `configureFlutterEngine()` 方法中创建一个 `MethodChannel` 并设置一个
 `MethodCallHandler`。确保使用的通道名称与 Flutter 客户端使用的一致。
 
 <?code-excerpt "MainActivity.java" title?>

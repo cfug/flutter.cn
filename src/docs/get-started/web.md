@@ -29,12 +29,13 @@ For more information, see the [web FAQ][].
 更多详细信息请参阅 [web 常见问题解答][web FAQ]。
 
 {{ site.alert.note }}
-
-  As of 1.12, Flutter has early support for running web applications.
+  As of 1.12, Flutter has early support for running web applications, but
+  you need to be running the `beta` channel of Flutter at present.
   If you experience a problem that hasn’t yet been reported,
   please [file an issue][] and make sure that “web” appears in the title.
   
   在 1.12 版本之后，Flutter 已经有了对 Web 应用的早期支持，
+  但你目前需要运行 Flutter 的 `beta` 频道。
   如果在使用中发现问题，请 [发一个 Issue][file an issue] 给我们，
   并确保标题上有「web」字样。
 {{ site.alert.end }}

@@ -46,7 +46,6 @@ Whenever the text changes, the callback is invoked.
 
 最简单的方法是给 [`TextField`][] 绑定 [`onChanged()`][] 回调。
 每当文本内容改变时，回调函数会被触发。
-但这种方法有一个缺点，它不适用于 [`TextFormField`][] 组件。
 
 In this example, print the current value of the text field to the
 console every time the text changes.

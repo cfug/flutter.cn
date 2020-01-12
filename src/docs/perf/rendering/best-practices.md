@@ -139,13 +139,13 @@ Other widgets that might trigger `saveLayer()` and are potentially costly:
 * [`Chip`][]&mdash;might cause call to `saveLayer()` if
   `disabledColorAlpha != 0xff`
   
-  [Chip][]&mdash;
+  [`Chip`][]&mdash;
   当 `disabledColorAlpha != 0xff` 的时候，会调用 `saveLayer()`  
 
 *  [`Text`][]&mdash;might cause call to `saveLayer()`
   if there's an `overflowShader`
   
-  [Text][]&mdash;
+  [`Text`][]&mdash;
   当有 `overflowShader` 时，会调用`saveLayer()`
 
 Ways to avoid calls to `saveLayer()`:

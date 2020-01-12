@@ -267,11 +267,11 @@
       children:
         - title: 概览
           permalink: /docs/perf/rendering
-          match-page-url-exactly: true
         - title: 性能最佳实践
           permalink: /docs/perf/rendering/best-practices
         - title: 性能分析
           permalink: /docs/perf/rendering/ui-performance
+          match-page-url-exactly: true
 
 - title: 打包部署
   children:

@@ -56,9 +56,11 @@ For information on headless testing, see the [Flutter wiki][].
 In _debug mode_, the app is set up for debugging on the physical
 device, emulator, or simulator.
 
+在 **Debug 模式**下，app 可以被安装在物理设备、仿真器或者模拟器上进行调试。
+
 Debug mode for mobile apps mean that:
 
-在 **Debug 模式**下，app 可以被安装在物理设备、仿真器或者模拟器上进行调试。Debug 模式意味着：
+Debug 模式意味着：
 
 * [Assertions][] are enabled.
    

@@ -262,7 +262,7 @@ Configure signing for your app by editing the
        release {
            keyAlias keystoreProperties['keyAlias']
            keyPassword keystoreProperties['keyPassword']
-           storeFile file(keystoreProperties['storeFile'])
+           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
            storePassword keystoreProperties['storePassword']
        }
    }
@@ -360,6 +360,16 @@ android {
     }
 }
 ```
+
+{{site.alert.note}}
+
+  You may need to run `flutter clean` after changing the gradle file.
+  This will prevent cached builds affecting the signing process.
+
+  当你更改 gradle 文件后也许需要运行一下 `flutter clean`。
+  这将防止缓存的版本影响签名过程。
+
+{{site.alert.end}}
 
 ## R8
 

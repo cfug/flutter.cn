@@ -511,11 +511,11 @@ Start by opening the Android host portion of your Flutter app in Android Studio:
    在项目视图中打开 **kotlin** 文件夹下的 `MainActivity.kt` 文件（注意：如果使用
    Android Studio 2.3 进行编辑，请注意 **kotlin** 目录的显示名称为 **java**）。
 
-Inside the `onCreate()` method, create a `MethodChannel` and call
+Inside the `configureFlutterEngine()` method, create a `MethodChannel` and call
 `setMethodCallHandler()`. Make sure to use the same channel name as
 was used on the Flutter client side.
 
-在 `onCreate()` 方法中创建一个 `MethodChannel` 并调用
+在 `configureFlutterEngine()` 方法中创建一个 `MethodChannel` 并调用
 `setMethodCallHandler()`。确保使用的通道名称与 Flutter 客户端使用的一致。
 
 <?code-excerpt "MyActivity.kt" title?>
@@ -587,7 +587,7 @@ Finally, complete the `setMethodCallHandler()` method added earlier. You need to
 handle a single platform method, `getBatteryLevel()`, so test for that in the
 `call` argument. The implementation of this platform method calls the
 Android code written in the previous step, and returns a response for both
-the success and error cases using the `response` argument.
+the success and error cases using the `result` argument.
 If an unknown method is called, report that instead.
 
 最后，完成前面添加的 `onMethodCall()` 方法。你需要处理单个平台方法 `getBatteryLevel()`，所以在参数

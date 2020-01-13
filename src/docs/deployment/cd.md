@@ -33,8 +33,10 @@ delivery from a local machine.
 您还可以使用本地机器执行连续交付。
 
 1. Install fastlane `gem install fastlane` or `brew cask install fastlane`.
+Visit the [fastlane docs][fastlane] for more info.
 
    安装 fastlane `gem install fastlane` 或 `brew cask install fastlane`。
+访问 [fastlane docs][fastlane] 以获得更多信息。
 
 1. Create your Flutter project, and when ready, make sure that your project builds via
    

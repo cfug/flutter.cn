@@ -271,7 +271,6 @@
           permalink: /docs/perf/rendering/best-practices
         - title: 性能分析
           permalink: /docs/perf/rendering/ui-performance
-          match-page-url-exactly: true
 
 - title: 打包部署
   children:

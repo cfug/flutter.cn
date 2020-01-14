@@ -25,25 +25,27 @@ Flutter 支持在 Android 应用初始化的时候展示启动页，
 本指南展示如何在 Flutter 编写的 Android 应用中使用启动页和闪屏页。
 
 {{site.alert.note}}
+
   Strategies are available to minimize wait time related to Flutter
   initialization. Consider [pre-warming a FlutterEngine]() and
   [re-using a FlutterEngine throughout your app]() to avoid most wait time.
 
   使用一些策略来最小化 Flutter 初始化相关过程中的等待时间。
-  考虑 [预热 FlutterEngine]() 以及 [在整个应用中复用 FlutterEngine]() ，
+  考虑 [预热 FlutterEngine][pre-warming a FlutterEngine] 以及 [在整个应用中复用 FlutterEngine][re-using a FlutterEngine throughout your app] ，
   以避免大多数的等待时间。
+
 {{site.alert.end}}
 
 ## Android launch screen
 
-## Android启动页
+## Android 启动页
 
 Every Android app requires initialization time while the operating system sets
 up the app's process. Android provides the concept of a [launch screen] to
 display a `Drawable` while the app is initializing.
 
 当操作系统建立应用程序进程的同时，每个 Android 应用都需要初始化的时间。
-Android 提供了[启动页]的概念，
+Android 提供了 [启动页][launch screen] 的概念，
 用于在应用初始化的过程中展示一个 `Drawable`。
 
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
@@ -71,10 +73,12 @@ In `styles.xml`, define a theme whose `windowBackground` is set to the
 ```
 
 {{site.alert.note}}
+
   The default Flutter project template includes a definition of a launch theme
   and a launch background.
 
   默认的 Flutter 项目模版包括了对启动主题和启动背景的声明。
+
 {{site.alert.end}}
 
 ### Define a normal theme
@@ -100,7 +104,7 @@ of the Flutter UI.
 
 ### Setup FlutterActivity in AndroidManifest.xml
 
-### 在AndroidManifest.xml中配置FlutterActivity
+### 在 AndroidManifest.xml 中配置 FlutterActivity
 
 In `AndroidManifest.xml`, set the `theme` of `FlutterActivity` to the launch
 theme. Then, add a metadata element to the desired `FlutterActivity` to instruct

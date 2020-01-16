@@ -32,10 +32,10 @@ delivery from a local machine.
 建议在迁移到基于云计算的系统之前，先在本地测试其构建和部署流程。
 您还可以使用本地机器执行连续交付。
 
-1. Install fastlane `gem install fastlane` or `brew cask install fastlane`.
+1. Install fastlane `gem install fastlane` or `brew install fastlane`.
 Visit the [fastlane docs][fastlane] for more info.
 
-   安装 fastlane `gem install fastlane` 或 `brew cask install fastlane`。
+   安装 fastlane `gem install fastlane` 或 `brew install fastlane`。
 访问 [fastlane docs][fastlane] 以获得更多信息。
 
 1. Create your Flutter project, and when ready, make sure that your project builds via

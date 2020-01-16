@@ -86,8 +86,8 @@ and plugins.
 添加 Flutter 依赖到 `my_flutter/pubspec.yaml`，
 包括 Flutter packages 和 plugins。
 
-The `.ios/` hidden subfolder contains an Xcode workspace where you can run a 
-standalone version of your module. It is a wrapper project to bootstrap your 
+The `.ios/` hidden subfolder contains an Xcode workspace where you can run a
+standalone version of your module. It is a wrapper project to bootstrap your
 Flutter code, and contains helper scripts to facilitate building frameworks or
 embedding the module into your existing application with [CocoaPods][].
 
@@ -97,8 +97,8 @@ embedding the module into your existing application with [CocoaPods][].
 
 {{site.alert.note}}
 
-Add custom iOS code to your own existing application's project or to a plugin, 
-not to the module in `.ios/` directory. Changes made in your module's `.ios/` 
+Add custom iOS code to your own existing application's project or to a plugin,
+not to the module's `.ios/` directory. Changes made in your module's `.ios/`
 directory will not appear in your existing iOS project using the module.
 
 iOS 代码要添加到你的既有应用或者 Flutter plugin中，

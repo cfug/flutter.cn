@@ -32,6 +32,10 @@ various types of routes, see the
 
   [传递数据到新页面][Send data to a new screen]
   
+* [Pass arguments to a named route][]
+
+  [在命名路由中传递参数][Pass arguments to a named route]
+
 * [Return data from a screen][]
 
   [从一个页面回传数据][Return data from a screen]
@@ -44,6 +48,7 @@ various types of routes, see the
 [cookbook]: /docs/cookbook#navigation
 [Navigate to a new screen and back]: /docs/cookbook/navigation/navigation-basics
 [Navigate with named routes]: /docs/cookbook/navigation/named-routes
+[Pass arguments to a named route]: /docs/cookbook/navigation/navigate-with-arguments
 [Send data to a new screen]: /docs/cookbook/navigation/passing-data
 [Return data from a screen]: /docs/cookbook/navigation/returning-data
 [Animating a widget across screens]: /docs/cookbook/navigation/hero-animations

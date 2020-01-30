@@ -10,9 +10,9 @@ need to keep evolving APIs to fix bugs, improve API ergonomics,
 and provide new features in a coherent manner.
 
 To this end, we have created a test registry where you can provide
-unit tests for your own applications or libraries that we will run
+unit tests for your own applications or libraries that we run
 on every change to help us track changes that would break
-existing applications. Our commitment is that we will not make any
+existing applications. Our commitment is that we won't make any
 changes that break these tests without working with the developers of
 those tests to (a) determine if the change is sufficiently valuable,
 and (b) provide fixes for the code so that the tests continue to pass.
@@ -56,6 +56,6 @@ migration guide.
 
 
 [documented on the Dart wiki]: {{site.github}}/dart-lang/sdk/blob/master/docs/process/breaking-changes.md
-[flutter/tests repository]: {{site.github}}flutter/tests
+[flutter/tests repository]: {{site.github}}/flutter/tests
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 [guides for migrating code]: /docs/release/breaking-changes

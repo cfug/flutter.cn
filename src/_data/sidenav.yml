@@ -64,7 +64,12 @@
               permalink: /docs/development/ui/layout/responsive
             - title: 边界约束 (Box constraints)
               permalink: /docs/development/ui/layout/box-constraints
-        - title: 交互添加
+        - title: 闪屏页
+          permalink: /docs/development/ui/splash-screen
+          children:
+            - title: Android 闪屏页
+              permalink: /docs/development/ui/splash-screen/android-splash-screen
+        - title: 添加互动
           permalink: /docs/development/ui/interactive
         - title: 资源和图片
           permalink: /docs/development/ui/assets-and-images
@@ -113,6 +118,8 @@
               permalink: /docs/development/data-and-backend/state-mgmt/simple
             - title: 状态管理参考
               permalink: /docs/development/data-and-backend/state-mgmt/options
+        - title: 网络与 http
+          permalink: /docs/development/data-and-backend/networking
         - title: JSON 和序列化数据
           permalink: /docs/development/data-and-backend/json
         - title: 后端服务

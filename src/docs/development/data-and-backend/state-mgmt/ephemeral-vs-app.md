@@ -44,8 +44,8 @@ be separated into two conceptual types: ephemeral state and app state.
 
 ## 短时状态
 
-Ephemeral state (sometimes called _UI state_ or _local state_) is the state you
-can neatly contain in a single widget.
+Ephemeral state (sometimes called _UI state_ or _local state_) 
+is the state you can neatly contain in a single widget.
 
 短时状态 (有时也称 **用户界面(UI)状态** 或者 **局部状态**) 是你可以完全包含在一个独立 widget 中的状态。
 
@@ -71,14 +71,14 @@ There is no need to serialize it, and it doesn't change in complex ways.
 widget 树中其他部分不需要访问这种状态。不需要去序列化这种状态，这种状态也不会以复杂的方式改变。
 
 In other words, there is no need to use state management techniques 
-(ScopedModel, Redux, etc.) on this kind of state. All you need is a 
-`StatefulWidget`.
+(ScopedModel, Redux, etc.) on this kind of state. 
+All you need is a `StatefulWidget`.
 
 换句话说，不需要使用状态管理架构（例如 ScopedModel, Redux）去管理这种状态。你需要用的只是一个 `StatefulWidget`。
 
 Below, you see how the currently selected item in a bottom navigation bar is
-held in the `_index` field of the `_MyHomepageState` class. In this example,
-`_index` is ephemeral state.
+held in the `_index` field of the `_MyHomepageState` class.
+In this example, `_index` is ephemeral state.
 
 在下方你可以看到一个底部导航栏中当前被选中的项目是
 如何被被保存在 `_MyHomepageState` 类 的 `_index` 变量中。在这个例子中， 
@@ -112,8 +112,8 @@ class _MyHomepageState extends State<MyHomepage> {
 Here, using `setState()` and a field inside the StatefulWidget's State
 class is completely natural. No other part of your app needs to access
 `_index`. The variable only changes inside the `MyHomepage` widget.
-And, if the user closes and restarts the app, you don't mind that
-`_index` resets to zero.
+And, if the user closes and restarts the app,
+you don't mind that `_index` resets to zero.
 
 在这里，使用 `setState()` 和一个在有状态 Widget 的 State 类中的变量是很自然的。你的 app 中的其他部分不需要访问 `_index`。
 这个变量只会在 `MyHomepage` widget 中改变。而且， 如果用户关闭并重启这个 app，你不会介意 `_index` 重置回0.
@@ -122,9 +122,11 @@ And, if the user closes and restarts the app, you don't mind that
 
 ## 应用状态
 
-State that is not ephemeral, that you want to share across many parts of your 
-app, and that you want to keep between user sessions, is what we call 
-application state (sometimes also called shared state).
+State that is not ephemeral, 
+that you want to share across many parts of your app, 
+and that you want to keep between user sessions, 
+is what we call application state 
+(sometimes also called shared state).
 
 如果你想在你的应用中的多个部分之间共享一个非短时的状态，并且在用户会话期间保留这个状态，
 我们称之为应用状态（有时也称共享状态）。
@@ -153,9 +155,9 @@ Examples of application state:
 
   一个新闻应用中的文章已读/未读状态
 
-For managing app state, you'll want to research your options. Your choice 
-depends on the complexity and nature of your app, your team's previous 
-experience, and many other aspects. Read on.
+For managing app state, you'll want to research your options. 
+Your choice depends on the complexity and nature of your app, 
+your team's previous experience, and many other aspects. Read on.
 
 为了管理应用状态，你需要研究你的选项。你的选择取决于你的应用的复杂度和限制，
 你的团队之前的经验以及其他方面。请继续阅读。
@@ -183,10 +185,12 @@ In that case, the `_index` variable is app state.
 你可能需要在底部导航栏类的外部来改变这个值，并在对话期间保留它。
 在种情况下 `_index` 就是一个应用状态。 
 
-There is no clear-cut, universal rule to distinguish whether a particular 
-variable is ephemeral or app state. Sometimes, you'll have to refactor one into 
-another. For example, you'll start with some clearly ephemeral state, but as 
-your application grows in features, it will need to be moved to app state.
+There is no clear-cut, universal rule to distinguish 
+whether a particular variable is ephemeral or app state. 
+Sometimes, you'll have to refactor one into another. 
+For example, you'll start with some clearly ephemeral state, 
+but as your application grows in features, 
+it will need to be moved to app state.
 
 没有一个明确、普遍的规则来区分一个变量属于短时状态还是应用状态，
 有时你不得不在此之间重构。比如，刚开始你认为一些状态是短时状态，
@@ -207,7 +211,7 @@ Dan Abramov, replied:
 
 当我们就 React 的 setState 和 Redux 的 Store 哪个好这个问题问 Redux 的作者 Dan Abramov 时, 他如此回答:
 
-> "The rule of thumb is: [Do whatever is less awkward][]."
+> "The rule of thumb is: [Do whatever is less awkward]."
 >
 > "经验原则是: [选择能够减少麻烦的方式][Do whatever is less awkward]"
 

@@ -10,8 +10,9 @@ Flutter community, might help if you are a visual learner.
 如果你是一个视觉型学习者 (visual learner)，
 那么这些由 Google 或者社区（非 Google 官方）制作的 Flutter 的视频可能会对你有所帮助。
 
-Note that many people make Flutter videos. This page shows some that
-we like, but there are many others.
+Note that many people make Flutter videos. 
+This page shows some that we like, 
+but there are many others.
 
 这个页面仅列举部分 Flutter 视频，其他 Flutter 相关的视频可能会有很多。
 
@@ -26,8 +27,31 @@ with a link to the complete playlist.
 
 如下是一些系列视频，包括他们的介绍和播放列表：
 
+### Flutter Interact 2019
+
+Flutter Interact was a day-long event that showcased
+the latest from Flutter, and focused on creating beautiful
+experiences across devices.
+
+Flutter Interact 是一个展示 Flutter 的长期活动，它专注于在不同设备上创造美丽的体验。
+
+Check out the Flutter Interact 2019 Highlights Reel:
+
+查看 Flutter Interact 2019 亮点：
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EgBMGDtHZhE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Watch recordings of the sessions on the Flutter Youtube channel.
+
+在 Flutter Youtube 上观看演讲录像。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Vision Keynote<br>
+[Flutter Interact 2019 playlist][]
+
 ### Flutter in Focus
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NfNdXgJZfFo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Five-to-ten minute tutorials (more or less) on using Flutter.
 
 5 - 10 分钟左右的 Flutter 教程视频。
@@ -104,22 +128,21 @@ Episode 1: Sized Box<br>
 
 ---
 
-{% comment %}
 Comment this out until we have a working Conference playlist link.
 
 ## Conference talks
 
 ## 会议讲座
 
-Here are a few recent Flutter talks given at various conferences,
-listed by newest first.
+Here are a few recent Flutter talks given at various conferences.
 
 以下是各种会议上最近的一些Flutter会谈。
 
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55833267&cid=97603337&page=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 [Conference Talks playlist]()
 
-{% endcomment %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/d_m5csmrf7I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Conference Talks playlist][]
 
 ## Flutter Developer Stories
 
@@ -150,6 +173,10 @@ Learn how to build Flutter apps with these free video courses:
 
 * [Build Native Mobile Apps with Flutter](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 
+* [The Complete Flutter Development Bootcamp Using Dart][] by App Brewery
+
+* [Flutter Crash Course][] by Nick Manning
+
   [使用 Flutter 构建精美的应用（中文字幕）](https://cn.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)；
   
 * [Flutter Crash Course](https://fluttercrashcourse.com/), by Nick Manning
@@ -158,10 +185,13 @@ Learn how to build Flutter apps with these free video courses:
   
 
 [The Boring Flutter Show playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl
+[The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
+[Flutter Crash Course]: https://fluttercrashcourse.com/
+[Conference Talks playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU1UJ0OEpANodVMVm1GeE7Ti
 [Flutter Widget of the Week playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
-[Flutter Challenge playlist]: https://www.youtube.com/playlist?list=PLkXouNW6n0A8ANZ16Fk49qsxpBbzxHGCn
 [Flutter Weekly Widgets playlist]: https://www.youtube.com/playlist?list=PLR2qQy0Zxs_Wot7YfLeeKdMlJ9838C_w0
 [Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter Interact 2019 playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
 [Flutter Live '18 playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU38by1vmaw_BHHsy7emEXl-
 [Flutter Developer Stories playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759
 [Flutter and Dart at Google I/O 2019 playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2no7yROrcQSVtwbYyxAGZV

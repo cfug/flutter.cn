@@ -665,7 +665,7 @@ screen in commented code. You can uncomment it or use other
 现有模板提供了一个示例，用于将图片添加到白色启动页的中间（注释代码中）。
 你也可以取消注释使用 [可绘制对象资源][drawables] 来实现预期效果。
 
-For more details, see [Adding a splash screen and launch screen to an Android app](/docs/development/add-to-app/android/add-splash-screen).
+For more details, see [Adding a splash screen and launch screen to an Android app])(/docs/development/ui/splash-screen/android-splash-screen).
 
 更多详细信息，请查看[在 Android 应用中添加闪屏页与启动页](/docs/development/add-to-app/android/add-splash-screen)。
 

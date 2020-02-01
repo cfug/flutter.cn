@@ -8,13 +8,13 @@ title: 不同平台操作体验的差异和适配
   Do you build Flutter apps with platform-specific look & feel for 
   both iOS and Android? We'd like to talk to you! 
   **Participate in our user study and receive a gift code.
-  ** More info: <a href="https://forms.gle/i7uWQohBdGh2nanWA"
-  target="_blank">https://forms.gle/i7uWQohBdGh2nanWA</a>
+  ** More info: <a href="https://g.forms.cn/i7uWQohBdGh2nanWA"
+  target="_blank">https://g.forms.cn/i7uWQohBdGh2nanWA</a>
 
   你的 app 是否在 Android 和 iOS 上有不同的展现和交互？
   **请参加我们的用户调研，并有机会赢取小礼物
-  ** 更多请参考：<a href="https://forms.gle/i7uWQohBdGh2nanWA"
-  target="_blank">https://forms.gle/i7uWQohBdGh2nanWA</a>
+  ** 更多请参考：<a href="https://g.forms.cn/i7uWQohBdGh2nanWA"
+  target="_blank">https://g.forms.cn/i7uWQohBdGh2nanWA</a>
 
 {{site.alert.end}}
 

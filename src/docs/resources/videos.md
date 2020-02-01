@@ -33,7 +33,8 @@ Flutter Interact was a day-long event that showcased
 the latest from Flutter, and focused on creating beautiful
 experiences across devices.
 
-Flutter Interact 是一个展示 Flutter 的长期活动，它专注于在不同设备上创造美丽的体验。
+Flutter Interact 是为期一天的活动，展示了 
+Flutter 的最新作品，专注于创造精美的跨设备体验。
 
 Check out the Flutter Interact 2019 Highlights Reel:
 

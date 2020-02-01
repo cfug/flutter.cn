@@ -69,7 +69,7 @@ when designing your app:
 
     当重新遇到与前一帧相同的子 widget 实例时，将停止遍历。
     这种技术在框架内部大量使用，用于优化动画不影响子树的动画。
-    请参阅 [TransitionBuilder][] 模式和使用此原则的 [SlideTransition][]，
+    请参阅 [TransitionBuilder] 模式和使用此原则的 [SlideTransition]，
     以避免在动画过程中重建其后代 widget。
 
 Also see:
@@ -115,9 +115,9 @@ Some general rules when applying specific effects:
   to an image, which is faster than using the Opacity
   widget.
 
-  能不用 [`Opacity`][] widget，
+  能不用 [`Opacity`] widget，
   就尽量不要用。有关将透明度直接应用于图像的示例，
-  请参见 [Transparent image][Transparent image]，
+  请参见 [Transparent image]，
   这比使用 Opacity widget 更快。
 
 * **Clipping** doesn’t call `saveLayer()` (unless
@@ -145,7 +145,7 @@ Other widgets that might trigger `saveLayer()` and are potentially costly:
 *  [`Text`]&mdash;might cause call to `saveLayer()`
   if there's an `overflowShader`
   
-  [`Text`][]&mdash;
+  [`Text`]&mdash;
   当有 `overflowShader` 时，会调用`saveLayer()`
 
 Ways to avoid calls to `saveLayer()`:

@@ -16,8 +16,8 @@ and the difference between [ephemeral and app state],
 you are ready to learn about simple app state management.
 
 现在大家已经了解了
-[声明式的编程思维](/docs/development/data-and-backend/state-mgmt/declarative) 和
-[短时 (ephemeral) 与应用 (app) 状态](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app) 
+[声明式的编程思维][declarative UI programming] 和
+[短时 (ephemeral) 与应用 (app) 状态][ephemeral and app state] 
 之间的区别，现在可以学习如何管理简单的全局应用状态。
 
 On this page, we are going to be using the `provider` package.
@@ -367,7 +367,7 @@ here's a simple unit test of `CartModel`:
 
 `ChangeNotifier` 是 `flutter:foundation` 的一部分，
 而且不依赖 Flutter 中任何高级别类。测试起来非常简单
-（你都不需要使用 [widget 测试](/docs/testing#widget-tests)）。
+（你都不需要使用 [widget 测试][widget testing]）。
 比如，这里有一个针对 `CartModel` 简单的单元测试：
 
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>

@@ -13,8 +13,8 @@ title: 不同平台操作体验的差异和适配
 
   你的 app 是否在 Android 和 iOS 上有不同的展现和交互？
   **请参加我们的用户调研，并有机会赢取小礼物
-  ** 更多请参考：<a href="https://g.forms.cn/i7uWQohBdGh2nanWA"
-  target="_blank">https://g.forms.cn/i7uWQohBdGh2nanWA</a>
+  ** 更多请参考：<a href="https://g.forms.cn/forms/d/e/1FAIpQLSc6eu0FOo2yZB45bqTOZxQj1fR7L81wRyBPsmXk6pyWL5F6NQ/viewform"
+  target="_blank">本用户调研表格</a>
 
 {{site.alert.end}}
 

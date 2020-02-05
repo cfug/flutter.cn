@@ -1,3 +1,8 @@
+---
+title: Flutter 1.12 发布
+description: Flutter 1.12 正式发布，包括多项性能改进等。
+---
+
 # Announcing Flutter 1.12: What a year!
 
 Posted by Chris Sells, Product Manager, Flutter developer experience*
@@ -16,13 +21,13 @@ iOS 13 dark mode completed
 
 More big news in Flutter 1.12 is the completion of our work to support the iOS 13 look and feel. This includes complete dark mode support in the Cupertino widgets.
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/ios-13-dark-mode.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/ios-13-dark-mode.png)
 
 If you'll notice in the screen shots above, dark mode support is much more than just swapping out the background color, but also adapting the rest of the colors to be a good match. Such deep attention to dark mode was a huge amount of work, but worth it to get pixel-perfect iOS design support across both dark and light mode.
 
 Also, in our continuing goal for pixel-perfection for iOS 13, we've added two new widgets.
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/cupertino-context-menu-and-cupertino-sliding-segmented-control.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/cupertino-context-menu-and-cupertino-sliding-segmented-control.png)
 
 [CupertinoContextMenu](https://api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html) and [CupertinoSlidingSegmentedControl](https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html)
 
@@ -33,11 +38,11 @@ Add-to-App updated
 
 Another improvement in our mobile support is an update to Add-to-App, which is the ability to integrate Flutter into an existing Android or iOS app. Here, we've been working on simplifying the integration flow to make adding a Flutter library to your app a better experience, including the addition of a new Flutter Module wizard in Android Studio.
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-module.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-module.png)
 
 With Flutter 1.12, Add-to-App is now officially supported for adding one fullscreen Flutter instance to your app. In supporting this functionality, we've also:
 
--   Stabilized the APIs for platform integration in Java, Kotlin, Objective-C and Swift, including a new set of APIs for Android. See [the Android project migration docs](http://flutter.dev/go/android-project-migration) for details on changes.
+-   Stabilized the APIs for platform integration in Java, Kotlin, Objective-C and Swift, including a new set of APIs for Android. See [the Android project migration docs](https://flutter.dev/go/android-project-migration) for details on changes.
 -   Added support for using plugins in embedded Flutter modules.
 -   Provided additional integration mechanisms via [Android AARs](https://flutter.dev/docs/development/add-to-app/android/project-setup#option-a---depend-on-the-android-archive-aar) and [iOS Frameworks](https://flutter.dev/docs/development/add-to-app/ios/project-setup#option-b---embed-frameworks-in-xcode) for better compatibility with existing build systems.
 -   Reworked the 'flutter attach' mechanism on the command-line tools, VSCode and IntelliJ plugins to easily attach onto a running Flutter module for debugging, DevTools and hot reload.
@@ -59,7 +64,7 @@ Web support available in beta
 
 The Flutter 1.12 master, dev and beta channels all provide improved support for web.
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/support-for-web.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/support-for-web.png)
 
 One happy customer of Flutter on the web is [Rivet](https://rivet.area120.com/link/flutter), pictured above. Rivet is an education project that currently has a mobile app in production. They're using Flutter and Firebase to build a web version of their app that they plan to launch in early 2020.
 
@@ -70,7 +75,7 @@ macOS moving to alpha
 
 macOS desktop support isn't far behind, moving from tech preview to alpha, available now in both master and dev channels (in Flutter SDK 1.13).
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/macos-desktop-support.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/macos-desktop-support.png)
 
 Pictured here at desktop size is [a new version of the Flutter Gallery](https://flutter.github.io/samples/#/) that's been completely updated to support macOS in addition to Android, iOS, and web.
 
@@ -80,13 +85,13 @@ The macOS alpha represents a big step forward for Flutter's desktop support, inc
 
 Creating a Flutter project that runs on macOS is now just like creating any other new Flutter project with 'flutter create'.
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-create.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-create.png)
 
 Notice the new macos directory created by default
 
 In addition to the tooling support, we've also been working on the density that's appropriate for desktop-sized apps. Mobile apps need relatively large controls to accommodate touch interactions whereas on desktop-sized devices, a user is more likely to be using a mouse. In bringing Flutter to the desktop, we've worked on allowing you to choose the density of your widgets to better accommodate the needs of your desktop users:
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/sample-demonstrating-flutters-implementation-of-the-material-density-guidelines.gif)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/sample-demonstrating-flutters-implementation-of-the-material-density-guidelines.gif)
 
 [Sample](https://github.com/gspencergoog/density_sample) demonstrating Flutter's implementation of [the Material Density guidelines](https://material.io/design/layout/applying-density.html)
 
@@ -107,7 +112,7 @@ And finally, to improve the experience of Flutter desktop apps, we've done a lot
 
 In addition to the Flutter sample, we also recommend [the new Photos Search sample](https://github.com/flutter/samples/tree/master/experimental/desktop_photo_search), which shows off a lot of desktop goodness, including keyboard handling, the new widget density, the new plugins, and the new widgets.
 
-For those of you curious about progress on Windows and Linux, they're still in technical preview, but both benefit from a lot of the work to get macOS to alpha. We'll share the updates to those platforms soon. For more details of where we are with desktop support in Flutter for macOS, Windows and Linux, please see [flutter.dev/desktop](http://flutter.dev/desktop).
+For those of you curious about progress on Windows and Linux, they're still in technical preview, but both benefit from a lot of the work to get macOS to alpha. We'll share the updates to those platforms soon. For more details of where we are with desktop support in Flutter for macOS, Windows and Linux, please see [flutter.dev/desktop](https://flutter.dev/desktop).
 
 Flutter tooling
 ===============
@@ -119,7 +124,7 @@ DartPad loves Flutter
 
 If you aren't already using [DartPad](https://dartpad.dev/), you should try it out! It's a great way to try Dart features without installing anything. Furthermore, with the new release of DartPad, now you get Flutter, too!
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/dartpad.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/dartpad.png)
 
 The new DartPad leverages Flutter's web support so that when you're writing Flutter code on the left, you're running a real, live Flutter (web) program on the right. The chief difference is that using DartPad, you can get started with Flutter without installing a thing.
 
@@ -137,7 +142,7 @@ Debug layout issues with the Layout Explorer
 
 Whether you write the code by hand or let Hot UI write it for you, you've still got code and sometimes code has issues. Helping you track down and fix your issues is exactly why Dart DevTools was invented. In this new version of DevTools, we've added a feature called the "Layout Explorer" to augment the Inspector with a visual representation of your layout.
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/layout-explorer.gif)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/layout-explorer.gif)
 
 Not only does the Layout Explorer help you to visualize the layout of the widgets in your running app, but if you'd like to experiment with changing the layout options, it allows you to do so interactively. We're hoping the preview of this feature helps make it easier to understand and fix your layout issues. To enable this feature, see [the Layout Explorer docs](https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer).
 
@@ -146,7 +151,7 @@ Multi-device debugging
 
 When you've built and debugged your Flutter UI, you have most likely done it on a single device. Wouldn't it be nice to be able to debug your app across multiple devices (physical or virtual) at the same time? With Flutter's support for multi-session debugging in Visual Code, that's just what you can do.
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/multi-device-debugging.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/multi-device-debugging.png)
 
 Here we've got the same Flutter app running simultaneously on three separate debugging sessions. If we make a change in the code, Hot Reload makes sure that it's reflected in all three apps. If we set a breakpoint, whichever app triggers that code gets stopped. If you'd like to stop debugging one, you can do so without stopping them all. You can learn how to configure this feature for [multiple device debugging on the wiki](https://github.com/flutter/flutter/wiki/Multi-device-debugging-in-VS-Code).
 
@@ -164,7 +169,7 @@ Golden image testing
 
 The term "golden image" refers to a master image file that is considered the true rendering of a given widget, state, application, or other visual representation you have chosen to capture. In Flutter 1.12, we have implementations of the [GoldenFileComparator](https://api.flutter.dev/flutter/flutter_test/GoldenFileComparator-class.html) and [LocalFileComparator](https://api.flutter.dev/flutter/flutter_test/LocalFileComparator-class.html) classes that compare by pixels instead of bits, [eliminating false positives](https://github.com/flutter/flutter/issues/30036). These new implementations highlight visual differences to make it clear when there are differences between your golden image and the updates under testing.
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/golden-image-testing.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/golden-image-testing.png)
 
 In this case, it's clear that the differences between the master and the test image are all in the border, making it much easier to track down the discrepancy.
 
@@ -180,11 +185,11 @@ We're so lucky to have such a great set of developers in the Flutter community. 
 Flutter Favorite packages
 =========================
 
-When we released Flutter 1.0 in December, 2018, there were about 1000 packages on pub.dev that supported Flutter and we thought that was a huge number. As of this writing, that number has increased by more than 6x. With that many options, it's sometimes hard to know which packages to choose. The overall score on pub.dev helps as well as the new [Verified Publishers](https://medium.com/dartlang/verified-publishers-98f05466558a) feature. Now, pub.dev is getting [a rating system](http://go/dart-2.7-annoucement), which should help even more.
+When we released Flutter 1.0 in December, 2018, there were about 1000 packages on pub.dev that supported Flutter and we thought that was a huge number. As of this writing, that number has increased by more than 6x. With that many options, it's sometimes hard to know which packages to choose. The overall score on pub.dev helps as well as the new [Verified Publishers](https://medium.com/dartlang/verified-publishers-98f05466558a) feature. Now, pub.dev is getting [a rating system](https://medium.com/dartlang/dart-2-7-a3710ec54e97), which should help even more.
 
 Still, our users have asked again and again for a set of "recommended" packages and plugins. With that in mind, we're pleased to announce [the Flutter Favorite program](https://flutter.dev/docs/development/packages-and-plugins/favorites).
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/the-flutter-favorite-program.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/the-flutter-favorite-program.png)
 
 A Flutter Favorite package (or plugin) is one that we think that you should consider first when building your app. The "we" in that sentence is the Flutter Ecosystem Committee, a group of regionally-diverse individuals picked from the Flutter team at Google and from the Flutter community at large to address issues across the Flutter ecosystem. Their first job was to establish a high quality bar and to identify an initial set of packages that met that quality bar. The authors of those packages are able to use the Flutter Favorite logo in their package documentation. Furthermore, pub.dev has been updated to show the logo in search results and other places.
 
@@ -195,15 +200,15 @@ Community tools
 
 And speaking of contributions to be proud of, the Flutter community at large has been building a number of excellent tools as well; here's just a selection.
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-device-preview.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-device-preview.png)
 
 [Flutter Device Preview](https://github.com/aloisdeniel/flutter_device_preview)
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/widget-maker.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/widget-maker.png)
 
 [Widget Maker](https://www.widgetmaker.dev/)
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/panache.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/panache.png)
 
 [Panache](https://rxlabz.github.io/panache/#/)
 
@@ -212,7 +217,7 @@ Featured tooling partner: Nevercode
 
 In addition to a great set of community tools, the Flutter ecosystem has a great set of tooling partners as well. One notable partner has always been Nevercode, who have a whole new set of features in their latest release, including [a Visual Studio Code plugin called Remote Mac](https://marketplace.visualstudio.com/items?itemName=codemagic.remote-mac).
 
-![](http://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/remote-mac.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/remote-mac.png)
 
 The Remote Mac extension lets you connect directly to a Mac that they've hosted in the cloud for purposes of testing your iOS and macOS Flutter code. For more details about Nevercode's latest release, including new support for Flutter on the web and on macOS, new enterprise features and more, check out [their newest blog post](https://blog.codemagic.io/more-professional-capable-accessible/).
 

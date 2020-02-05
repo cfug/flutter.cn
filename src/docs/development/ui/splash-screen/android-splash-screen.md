@@ -8,7 +8,7 @@ description: 了解如何向你的 Android 应用添加一个闪屏页和启动�
 ---
 
 {% asset
-development/add-to-app/android/add-splash-screen/splash-screens_header.png
+development/ui/splash-screen/android-splash-screen/splash-screens_header.png
 class="mw-100" alt="Add Splash Screen Header" %}
 
 The beginning of a Flutter experience requires a brief wait while Dart

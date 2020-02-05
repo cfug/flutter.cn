@@ -42,7 +42,7 @@ Visit the [fastlane docs][fastlane] for more info.
    
    创建您的 Flutter 项目，准备就绪后，确保通过如下途径构建项目：
 
-    * ![Android](/images/cd/android.png) `flutter build apk --release`;
+    * ![Android](/images/cd/android.png) `flutter build appbundle`;
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
 1. Initialize the fastlane projects for each platform.
 
@@ -103,13 +103,13 @@ Visit the [fastlane docs][fastlane] for more info.
    设置代码签名。
    
     * ![Android](/images/cd/android.png) On Android, there are two
-    signing keys: deployment and upload. The end-users download the .apk signed
-    with the 'deployment key'. An 'upload key' is used to authenticate the .apk
-    uploaded by developers onto the Play Store and is re-signed with the
-    deployment key once in the Play Store.
+      signing keys: deployment and upload. The end-users download the .apk signed
+      with the 'deployment key'. An 'upload key' is used to authenticate the .aab / .apk
+      uploaded by developers onto the Play Store and is re-signed with the
+      deployment key once in the Play Store.
     
       ![Android](/images/cd/android.png) 在 Android 上有两种签名 key：
-      发布签名和上传签名。最终用户下载的 .apk 文件使用发布签名。
+      发布签名和上传签名。最终用户下载的 .aab / .apk 文件使用发布签名。
       上传签名提供给开发者上传到 Google Play 商店的认证。
       上传后，Google Play 商店会重新使用 发布签名对 .apk 文件签名。
 
@@ -153,15 +153,15 @@ Visit the [fastlane docs][fastlane] for more info.
    给每个不同的平台创建一个 `Fastfile` 脚本。
    
     * ![Android](/images/cd/android.png) On Android, follow the
-    [fastlane Android beta deployment guide][].
-    Your edit could be as simple as adding a `lane` that calls `upload_to_play_store`.
-    Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
-    to use the apk `flutter build` already built.
+      [fastlane Android beta deployment guide][].
+      Your edit could be as simple as adding a `lane` that calls `upload_to_play_store`.
+      Set the `aab` argument to `../build/app/outputs/bundle/release/app-release.aab`
+      to use the apk `flutter build` already built.
     
       ![Android](/images/cd/android.png) 在 Android 上按照
       [fastlane Android beta deployment guide][] 指引操作。你可以简单的编辑一下文件，加一个名叫
-      `upload_to_play_store` 的 `lane`。为了使用 `flutter build` 命令编译 apk，
-      要把 `apk` 参数设置为 `../build/app/outputs/apk/release/app-release.apk`。
+      `upload_to_play_store` 的 `lane`。为了使用 `flutter build` 命令编译 `aab`，
+      要把 `apk` 参数设置为 `../build/app/outputs/bundle/release/app-release.aab`。
     
     * ![iOS](/images/cd/ios.png) On iOS, follow the [fastlane iOS beta deployment guide][].
     Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
@@ -186,7 +186,7 @@ process to a continuous integration (CI) system.
 
    构建发布模式应用程序。
    
-    * ![Android](/images/cd/android.png) `flutter build apk --release`.
+    * ![Android](/images/cd/android.png) `flutter build appbundle`.
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
     
     No need to sign now since fastlane will sign when archiving.
@@ -340,9 +340,12 @@ repository root.
     
            确保 Flutter SDK 已经正确了设置在了 `PATH` 环境变量中
          
-         * Run `flutter build apk --release` or `flutter build ios --release --no-codesign` depending on the platform.
+         * Run `flutter build appbundle` or
+           `flutter build ios --release --no-codesign`,
+           depending on the platform.
          
-           根据平台的不同可以运行 `flutter build apk --release` 或 `flutter build ios --release --no-codesign`
+           根据平台的不同可以运行 `flutter build appbundle` 或者
+           `flutter build ios --release --no-codesign`。
    
          * `cd android` or `cd ios`.
          

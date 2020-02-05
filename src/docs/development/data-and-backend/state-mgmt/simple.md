@@ -11,23 +11,21 @@ next:
   path: /docs/development/data-and-backend/state-mgmt/options
 ---
 
-Now that you know about [declarative UI
-programming](/docs/development/data-and-backend/state-mgmt/declarative)
-and the difference between [ephemeral and app
-state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app),
+Now that you know about [declarative UI programming]
+and the difference between [ephemeral and app state],
 you are ready to learn about simple app state management.
 
 现在大家已经了解了
-[声明式的编程思维](/docs/development/data-and-backend/state-mgmt/declarative) 和
-[短时 (ephemeral) 与应用 (app) 状态](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app) 
+[声明式的编程思维][declarative UI programming] 和
+[短时 (ephemeral) 与应用 (app) 状态][ephemeral and app state] 
 之间的区别，现在可以学习如何管理简单的全局应用状态。
 
 On this page, we are going to be using the `provider` package.
 If you are new to Flutter and you don't have a strong reason to choose
 another approach (Redux, Rx, hooks, etc.), this is probably the approach
-you should start with. `provider` is easy to understand and it doesn't
-use much code. It also uses concepts that are applicable in every other
-approach.
+you should start with. The `provider` package is easy to understand
+and it doesn't use much code.
+It also uses concepts that are applicable in every other approach.
 
 在这里，我们打算使用 `provider` package。如果你是 Flutter 的初学者，
 而且也没有很重要的理由必须选择别的方式来实现（Redux、Rx、hooks 等等），
@@ -36,11 +34,11 @@ approach.
 
 That said, if you have strong background in state management from other
 reactive frameworks, you will find packages and tutorials listed on the
-[following page](/docs/development/data-and-backend/state-mgmt/options).
+[following page].
 
 即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，
 那么可以在 
-[状态 (State) 管理参考](/docs/development/data-and-backend/state-mgmt/options) 
+[状态 (State) 管理参考][following page]
 中找到相关的 package 和教程。
 
 ## Our example
@@ -87,10 +85,11 @@ Here's the app visualized as a widget tree.
   上面 widget 树的图片可以在这个地址找到: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
 {% endcomment %}
 
-So we have at least 6 subclasses of `Widget`. Many of them will need
+So we have at least 6 subclasses of `Widget`. Many of them need
 access to state that "belongs" elsewhere. For example, each
-`MyListItem` will want to be able to add to cart. It might also want
-to see if the item that it's displaying is already in the cart.
+`MyListItem` needs to be able to add itself to the cart.
+It might also want to see whether the currently displayed item
+is already in the cart.
 
 所以我们有至少 6 个 `Widget` 的子类。他们中有很多需要访问一些全局的状态。
 比如，`MyListItem` 会被添加到购物车中。
@@ -106,7 +105,8 @@ state of the cart?
 
 ## 提高状态的层级
 
-In Flutter, it makes sense to keep the state above the widgets that use it.
+In Flutter, 
+it makes sense to keep the state above the widgets that use it.
 
 在 Flutter 中，有必要将存储状态的对象置于 widget 树中对应 widget 的上层。
 
@@ -130,7 +130,8 @@ void myTapHandler() {
 }
 ```
 
-Even if you get the above code to work, you will then have to deal
+Even if you get the above code to work,
+you would then have to deal
 with the following in the `MyCart` widget:
 
 即使你实现了上面的代码，也得处理 `MyCart` widget 中的代码：
@@ -231,7 +232,7 @@ to access it.
 
 ## 读取状态
 
-When user clicks on one of the items in the catalog,
+When a user clicks on one of the items in the catalog,
 it’s added to the cart. But since the cart lives above `MyListItem`,
 how do we do that?
 
@@ -241,7 +242,7 @@ how do we do that?
 A simple option is to provide a callback that `MyListItem` can call
 when it is clicked. Dart's functions are first class objects,
 so you can pass them around any way you want. So, inside
-`MyCatalog` you can have the following:
+`MyCatalog` you can define the following:
 
 一个简单的实现方法是提供一个回调函数，当 `MyListItem` 被点击的时候可以调用。
 Dart 的函数都是 first class 对象，所以你可以以任意方式传递它们。
@@ -361,12 +362,12 @@ model itself and its business logic.
 
 `ChangeNotifier` is part of `flutter:foundation` and doesn't depend on 
 any higher-level classes in Flutter. It's easily testable (you don't even need
-to use [widget testing](/docs/testing#widget-tests) for it). For example,
+to use [widget testing] for it). For example,
 here's a simple unit test of `CartModel`:
 
 `ChangeNotifier` 是 `flutter:foundation` 的一部分，
 而且不依赖 Flutter 中任何高级别类。测试起来非常简单
-（你都不需要使用 [widget 测试](/docs/testing#widget-tests)）。
+（你都不需要使用 [widget 测试][widget testing]）。
 比如，这里有一个针对 `CartModel` 简单的单元测试：
 
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
@@ -391,7 +392,7 @@ a `ChangeNotifier` to its descendants. It comes from the `provider` package.
 它属于 `provider` package。
 
 We already know where to put `ChangeNotifierProvider`: above the widgets that
-will need to access it. In the case of `CartModel`, that means somewhere
+need to access it. In the case of `CartModel`, that means somewhere
 above both `MyCart` and `MyCatalog`.
 
 我们已经知道了该把 `ChangeNotifierProvider` 放在什么位置：
@@ -418,9 +419,9 @@ void main() {
 }
 ```
 
-Note that we're defining a builder which will create a new instance
+Note that we're defining a builder that creates a new instance
 of `CartModel`. `ChangeNotifierProvider` is smart enough _not_ to rebuild
-`CartModel` unless absolutely necessary. It will also automatically call
+`CartModel` unless absolutely necessary. It also automatically calls
 `dispose()` on `CartModel` when the instance is no longer needed.
 
 请注意我们定义了一个 builder 来创建一个 `CartModel` 的实例。
@@ -438,8 +439,8 @@ void main() {
   runApp(
     [!MultiProvider!](
       providers: [
-        ChangeNotifierProvider(builder: (context) => CartModel()),
-        Provider(builder: (context) => SomeOtherClass()),
+        ChangeNotifierProvider(create: (context) => CartModel()),
+        Provider(create: (context) => SomeOtherClass()),
       ],
       child: MyApp(),
     ),
@@ -494,8 +495,8 @@ builder 在被调用的时候会用到三个参数。第一个是 `context`。
 在每个 build 方法中都能找到这个参数。
 
 The second argument of the builder function is the instance of 
-the `ChangeNotifier`. It's what we were asking for in the first place. You can
-use the data in the model to define what the UI should look like
+the `ChangeNotifier`. It's what we were asking for in the first place. 
+You can use the data in the model to define what the UI should look like
 at any given point.
 
 builder 函数的第二个参数是 `ChangeNotifier` 的实例。
@@ -587,18 +588,18 @@ rebuild a widget that doesn't need to be rebuilt.
 我们可以使用 `Consumer<CartModel>` 来实现这个效果，
 不过这么实现有点浪费。因为我们让整体框架重构了一个无需重构的 widget。
 
-For this use case, we can use `Provider.of`, with the `listen` parameter
-set to `false`.
+For this use case, we can use `Provider.of`, 
+with the `listen` parameter set to `false`.
 
 所以这里我们可以使用 `Provider.of`，
 并且将 `listen` 设置为 `false`。
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
-Provider.of<CartModel>(context, [!listen: false!]).add(item);
+Provider.of<CartModel>(context, [!listen: false!]).removeAll();
 ```
 
-Using the above line in a build method will not cause this widget to
+Using the above line in a build method won't cause this widget to
 rebuild when `notifyListeners` is called.
 
 在 build 方法中使用上面的代码，当 `notifyListeners` 被调用的时候，
@@ -609,15 +610,14 @@ rebuild when `notifyListeners` is called.
 
 ## 把代码集成在一起
 
-You can [check out the
-example]({{site.github}}/flutter/samples/tree/master/provider_shopper)
+You can [check out the example]
 covered in this article. If you want something simpler,
-you can see how the simple Counter app looks like when [built with
-`provider`](https://github.com/flutter/samples/tree/master/provider_counter).
+you can see how the simple Counter app looks like when 
+[built with `provider`].
 
-你可以在文章中 [查看这个示例]({{site.github}}/flutter/samples/tree/master/provider_shopper)。
+你可以在文章中 [查看这个示例][check out the example]。
 如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何
-[基于 `provider` 实现的](https://github.com/flutter/samples/tree/master/provider_counter)。
+[基于 `provider` 实现的][built with `provider`]。
 
 When you're ready to play around with `provider` yourself,
 don't forget to add the dependency on it to your `pubspec.yaml` first.
@@ -645,3 +645,28 @@ Now you can `import 'package:provider/provider.dart';`
 and start building.
 
 现在你可以 `import 'package:provider/provider.dart';`，开始写代码吧。
+
+## Our example {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
+
+## 我们的样例{% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
+
+For illustration, consider the following simple app.
+
+为了解释它，请参考下面的简单应用。
+
+The app has two separate screens: a catalog,
+and a cart (represented by the `MyCatalog`,
+and `MyCart` widgets, respectively). It could be a shopping app,
+but you can imagine the same structure in a simple social networking
+app (replace catalog for "wall" and cart for "favorites").
+
+这个应用有两个不用的页面，一个目录页面和一个购物车页面（分别代表了 `MyCatalog`，
+和 `MyCart` widgets）。这是一个购物应用，但是你可以想像成
+一个简单的社交网络中的相同结构的应用（将目录页面替换 “墙”，购物车替换成“收藏夹”）。
+
+[built with `provider`]: {{site.github}}/flutter/samples/tree/master/provider_counter
+[check out the example]: {{site.github}}/flutter/samples/tree/master/provider_shopper
+[declarative UI programming]: /docs/development/data-and-backend/state-mgmt/declarative
+[ephemeral and app state]: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
+[options page]: /docs/development/data-and-backend/state-mgmt/options
+[widget testing]: /docs/testing#widget-tests

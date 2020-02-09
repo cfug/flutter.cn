@@ -18,12 +18,16 @@ is available on the beta channel.
 
 **我们不建议将 Web 应用部署到生产环境中**
 
+See [Upgrading from package:flutter_web to the Flutter SDK].
+
+点击查看 [将使用 flutter_web package 升级使用到 Flutter SDK][Upgrading from package:flutter_web to the Flutter SDK]
+以获得 Flutter Web 体验。
+
 ### How do I create an app that also runs on the web?
 
 ### 如何创建同时在 Web 上运行的应用？
 
-See [building a web app with
-Flutter](/docs/get-started/web).
+See [building a web app with Flutter](/docs/get-started/web).
 
 请参见 [使用 Flutter 构建 Web 应用](/docs/get-started/web)。
 
@@ -38,8 +42,9 @@ No.
 ### Can I use Flutter plugins?
 
 Yes, several plugins have web support. 
-Find an updated list of plugins on [pub.dev][] using the web filter.
-You can also add web support to existing plugins or [write your own plugins][] for the web.
+Find an updated list of plugins on [pub.dev] using the web filter.
+You can also add web support to existing plugins or
+[write your own plugins] for the web.
 
 可以使用了，许多 plugin 已经支持 web。
 使用 web 过滤器在 [pub.dev][] 上寻找 plugin 更新列表。
@@ -100,8 +105,7 @@ option.
 
 ### 我该如何构建响应式 web 应用？
 
-See [Creating responsive
-apps](/docs/development/ui/layout/responsive).
+See [Creating responsive apps](/docs/development/ui/layout/responsive).
 
 请参阅[创建响应式应用](/docs/development/ui/layout/responsive)。
 
@@ -109,9 +113,16 @@ apps](/docs/development/ui/layout/responsive).
 
 ### 我能在 web 应用中使用 `dart:io` 这个 package 吗？
 
+No. The file system is not accessible from the browser.
+For network functionality, use the [`http`]
+package. Note that security works somewhat
+differently because the browser (and not the app)
+controls the headers on an HTTP request.
+
 不行。文件系统在浏览器中是无法访问的。
 对于网络功能来说，请使用 [`http`][] package。
-请注意，安全方面的工作有所不同，因为浏览器（而不是应用程序）控制 HTTP 请求上的标头。
+请注意，安全方面的工作有所不同，
+因为浏览器（而不是应用程序）控制 HTTP 请求上的标头。
 
 ### How are forward and backward buttons presented in the web UI?
 
@@ -119,7 +130,7 @@ apps](/docs/development/ui/layout/responsive).
 
 The browser's back button is supported for web apps.
 The forward button is not yet enabled.
-For more information, see [Issue 32248][].
+For more information, see [Issue 32248].
 
 Web 应用支持浏览器的后退按钮。
 前进按钮尚未支持。
@@ -130,7 +141,7 @@ Web 应用支持浏览器的后退按钮。
 ### 复制和粘贴功能状况如何？
 
 Copy/paste works on mobile. If you encounter problems,
-please [file an issue][].
+please [file an issue].
 
 在移动设备上复制和粘贴可以使用。
 如果你遇到了什么问题，请 [提一个 issue][file an issue]。
@@ -139,9 +150,17 @@ please [file an issue][].
 
 ### 我该如何把一个 web 应用嵌入到一个网页中？
 
-IDK.
+You can embed a Flutter web app,
+as you would embed other content,
+in an [`iframe`] tag of an HTML file.
+In the following example, replace "URL"
+with the location of your hosted HTML page:
 
-尚未有明确的解决方案。
+你可以通过下面这个例子，以 [`iframe`] 来内嵌，把 URL 替换成托管 Flutter Web 的页面 URL：
+
+```html
+<iframe src="URL"></iframe>
+```
 
 ### Implementing CORS
 
@@ -171,31 +190,31 @@ IDK
 
 ### 我该如何调试一个 web 应用？
 
-Use [Flutter DevTools][] for the following tasks:
+Use [Flutter DevTools] for the following tasks:
 
-使用 [Flutter DevTools][] 来尝试如下工作：
+使用 [Flutter DevTools] 来尝试如下工作：
 
-* [Debugging][]
+* [Debugging]
 
   [调试][Debugging]
   
-* [Logging][]
+* [Logging]
 
   [查看日志][Logging]
   
-* [Running Flutter inspector][]
+* [Running Flutter inspector]
 
   [运行 Flutter inspector][Running Flutter inspector]
 
-Use [Chrome DevTools][] for the following tasks:
+Use [Chrome DevTools] for the following tasks:
 
-使用 [Chrome DevTools][] 来尝试如下工作：
+使用 [Chrome DevTools] 来尝试如下工作：
 
-* [Generating event timeline][]
+* [Generating event timeline]
 
   [生成事件的时间线][Generating event timeline]
   
-* [Analyzing performance][]&mdash;make sure to use a
+* [Analyzing performance]&mdash;make sure to use a
   profile build
   
   [分析性能][Analyzing performance]&mdash;请确保应用使用的是 profile 构建
@@ -204,7 +223,7 @@ Use [Chrome DevTools][] for the following tasks:
 
 ### 我该如何测试 Web 应用？
 
-Use the normal [widget tests][].
+Use the normal [widget tests].
 
 跟常规的 [widget tests][] 通用。
 
@@ -241,7 +260,7 @@ Not currently.
 
 ### 如何跟其他使用者交流？
 
-Check out the **#web** discussion board on [Discord][].
+Check out the **#web** discussion board on [Discord].
 Flutter engineers routinely read and respond on Discord.
 
 请在 [Discord][] 平台的 **#web** 这个讨论板跟大家讨论，

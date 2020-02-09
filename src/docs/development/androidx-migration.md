@@ -60,7 +60,8 @@ you can download the latest version from
   (This happens automatically once you open the project, but if it doesn’t,
    select **Sync Project with Gradle Files** from the **File** menu).
 
-  （一旦打开项目，同步就会自动构建，若没有自动构建，请从 **File** 菜单中选中 **Sync Project with Gradle Files**）。
+  （一旦打开项目，同步就会自动构建，若没有自动构建，
+  请从 **File** 菜单中选中 **Sync Project with Gradle Files**）。
 
 5. Select **Migrate to AndroidX** from the Refactor menu.
 
@@ -70,7 +71,8 @@ you can download the latest version from
    check **Backup project as Zip file**, then click **Migrate**. Lastly, save
    the zip file in your location of preference. <br/>
 
-   在继续之前，若被要求对项目进行备份，选中 **Backup project as Zip file** ，然后单击 **Migrate** ，最终将 zip 文件保存在你喜欢的路径下。<br/>
+   在继续之前，若被要求对项目进行备份，选中 **Backup project as Zip file** ，
+   然后单击 **Migrate** ，最终将 zip 文件保存在你喜欢的路径下。<br/>
 
   <img
       width="500"
@@ -88,6 +90,7 @@ you can download the latest version from
       src="/images/androidx/do_androidx_refactor.png"
       class="figure-img img-fluid"
       alt="An animation of the bottom-up page transition on Android" />
+      
 8. That is it! You successfully migrated your project to AndroidX.
 
    大功告成！你已成功将项目迁移到 AndroidX。
@@ -95,7 +98,8 @@ you can download the latest version from
 Finally, if you migrated a plugin, publish the new AndroidX version to pub and update
 your `CHANGELOG.md` to indicate that this new version is compatible with AndroidX.
 
-最后，如果你对插件进行了迁移，请发布新的 AndroidX 版本到 pub 并更新的 `CHANGELOG.md` ，以指明该版本与 AndroidX 兼容。
+最后，如果你对插件进行了迁移，
+请发布新的 AndroidX 版本到 pub 并更新的 `CHANGELOG.md` ，以指明该版本与 AndroidX 兼容。
 
 ### What about if I can't use Android Studio?
 
@@ -104,7 +108,8 @@ your `CHANGELOG.md` to indicate that this new version is compatible with Android
 You can create a new project using the Flutter tool and then move the Dart code and
 assets to the new project.
 
-你可以使用 Flutter 工具创建一个新项目，然后将 Dart 代码和资源文件移动到新的项目中。
+你可以使用 Flutter 工具创建一个新项目，
+然后将 Dart 代码和资源文件移动到新的项目中。
 
 To create a new project run:
 
@@ -121,7 +126,8 @@ flutter create --androidx -t <project-type> <new-project-path>
 If your Flutter project is a module type for adding to an existing Android app, and
 contains a `.android` directory, add the following line to `pubspec.yaml`:
 
-若的 Flutter 项目类型是用于添加至现有 Android 应用的模块，并且包含 `.android` 目录，则将下述代码添加至 `pubspec.yaml` 中。
+若的 Flutter 项目类型是用于添加至现有 Android 应用的模块，
+并且包含 `.android` 目录，则将下述代码添加至 `pubspec.yaml` 中。
 
 ```yaml
  module:
@@ -142,28 +148,27 @@ steps in previous section.
 
 ### 如何判断我的项目中是否使用了 AndroidX？
 
-* **Apps and Modules**
+Starting from Flutter v1.12.13, new projects created with `flutter create -t <project-type>`
+use AndroidX by default.
 
-* **应用程序和模块**
+自 Flutter 1.12.13 版本之后，使用 `flutter create -t <project-type>`
+命令行创建的 Flutter 项目将会默认使用 AndroidX。
 
-  Your project uses AndroidX if the file `android/gradle.properties` or
-  `.android/gradle.properties` contains:
+Projects created prior to this Flutter version must not depend on any
+[old build artifact][] or [old Support Library class][].
 
-  若 `android/gradle.properties` 或 `.android/gradle.properties` 文件中包含了下述代码，则你的项目中已经使用了 AndroidX:
+在此 Flutter 版本（1.12.13）之前创建的项目不能依赖任何
+[工件映射][old build artifact] 和 [类映射][old Support Library class]。
 
-  ```
-  android.useAndroidX=true
-  android.enableJetifier=true
-  ```
+In an app or module project, the file `android/gradle.properties` or `.android/gradle.properties`
+must contain:
 
-* **Plugins**
+`android/gradle.properties` 或 `.android/gradle.properties` 文件中需要包含下述代码：
 
-* **插件**
-
-  If a file under the android directory references any old support library package
-  or old support support artifacts, then the plugin isn’t using AndroidX.
-
-  若 android 目录下的任意文件引用了任何旧的 Support 库程序包或者对旧 Support 组件的支持，那么该插件并未使用 AndroidX 。
+```
+android.useAndroidX=true
+android.enableJetifier=true
+```
 
 ### What if I don’t migrate my app or module to AndroidX?
 
@@ -174,7 +179,9 @@ is generally not recommended because it can result in dependency conflicts or
 other kind of Gradle failures. As a result, as more plugins migrate to AndroidX,
 plugins depending on Android core libraries are likely to cause build failures.
 
-你的应用程序也许能继续运行。然而，通常不建议将 AndroidX 和 Support 组件结合起来使用，因为这会导致依赖关系冲突或者 Gradle 的其它类型失败。
+你的应用程序也许能继续运行。
+然而，通常不建议将 AndroidX 和 Support 组件结合起来使用，
+因为这会导致依赖关系冲突或者 Gradle 的其它类型失败。
 
 ### What if my app is migrated to AndroidX, but not all of the plugins I use?
 
@@ -184,13 +191,19 @@ The Flutter tool uses Jetifier to automatically migrate Flutter plugins using
 the Support Library to AndroidX, so you can use the same plugins even if they
 haven’t been migrated to AndroidX yet.
 
-Flutter 工具使用 Jetifier 将支持库中的 Flutter 插件自动迁移到 AndroidX ，因此，即使你尚未将其迁移到 AndroidX ，你也可以使用相同的插件。
+Flutter 工具使用 Jetifier 将支持库中的 Flutter 插件自动迁移到 AndroidX，
+因此，即使你尚未将其迁移到 AndroidX ，你也可以使用相同的插件。
 
 ### I'm having issues migrating to AndroidX
 
 ### 在迁移至 AndroidX 的过程中遇到了问题
 
-[Open an issue on GitHub](https://github.com/flutter/flutter/issues/new/choose)
-and add `[androidx-migration]` to the title of the issue.
+[Open an issue on GitHub][] and add `[androidx-migration]` to the title of the issue.
 
-[在 GitHub 上创建一个问题](https://github.com/flutter/flutter/issues/new/choose) 并为其添加一个 `[androidx-migration]` 标题。
+[在 GitHub 上创建一个问题][Open an issue on GitHub]
+并为其添加一个 `[androidx-migration]` 标题。
+
+
+[old build artifact]: https://developer.android.com/jetpack/androidx/migrate/artifact-mappings
+[old Support Library class]: https://developer.android.com/jetpack/androidx/migrate/class-mappings
+[Open an issue on GitHub]: https://github.com/flutter/flutter/issues/new/choose

@@ -43,7 +43,7 @@ Learn more about the Flutter framework from the following pages:
 * [Udemy 线上课程 (英文): The Complete Flutter Developer Bootcamp Using Dart](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart)
 * [Udacity 线上课程](https://cn.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 
-Reach out to us at our [mailing list][]. We'd love to hear from you!
+Reach out to us at our [mailing list]. We'd love to hear from you!
 
 你还可以通过 [邮件列表][] 与我们取得联系，我们非常乐意听到你的反馈！
 

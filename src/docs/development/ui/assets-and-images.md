@@ -667,7 +667,7 @@ screen in commented code. You can uncomment it or use other
 
 For more details, see [Adding a splash screen and launch screen to an Android app](/docs/development/ui/splash-screen/android-splash-screen).
 
-更多详细信息，请查看[在 Android 应用中添加闪屏页与启动页](/docs/development/ui/splash-screen/android-splash-screen)。
+更多详细信息，请查看 [在 Android 应用中添加闪屏页与启动页](/docs/development/ui/splash-screen/android-splash-screen)。
 
 #### iOS
 

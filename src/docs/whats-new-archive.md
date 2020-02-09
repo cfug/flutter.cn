@@ -1,13 +1,13 @@
 ---
-title: 最新档案
-description: 本网站的最新内容。
+title: 文档网站更新内容归档
+description: 文档网站更新的最新内容。
 ---
 
-This archive contains current and previous announcements of what's new on the
-site.
+This archive contains current and previous announcements of
+what's new on the site.
 
-To stay on top of Flutter announcements, including breaking changes, join the
-[flutter-announce][] Google group.
+To stay on top of Flutter announcements, including breaking changes,
+join the [flutter-announce][] Google group.
 
 [flutter-announce][]
 
@@ -17,7 +17,7 @@ Flutter 1.9 is live!
 
 For more information, see [Flutter news from GDD China:
 uniting Flutter on web and mobile, and introducing Flutter 1.9][]
-and the [1.9.1 release notes][].
+and the [1.9.1 release notes].[]
 
 For the 1.9 release, Flutter's web support has been
 merged ("unforked") into the main repo.
@@ -35,7 +35,7 @@ New and updated docs on the site include:
 * The Flutter layout codelab has been rewritten and
   uses the updated DartPad, the browser-based tool for
   running Dart code. DartPad now supports Flutter!
-  [Try it out][] and let us know what you think.
+  [Try it out] and let us know what you think.
 * A new page on [using the dart:ffi library][]
   to bind your app to native code (a feature currently under
   development).
@@ -60,17 +60,17 @@ Other relevant docs:
   flutter_web package, the following instructions tell
   you how to migrate to the flutter package:
   [Upgrading from package:flutter_web to the Flutter SDK][].
-* A new [ToggleButtons][] widget, described in the API docs.
+* A new [`ToggleButtons`][] widget, described in the API docs.
   [ToggleButtons demo][]
-* A new [ColorFiltered][] widget, also described in the API docs.
+* A new [`ColorFiltered`][] widget, also described in the API docs.
   [ColorFiltered demo][]
-* New behavior for the [SelectableText][] widget.
+* New behavior for the [`SelectableText`][] widget.
 
 Happy Fluttering!
 
 [1.9.1 release notes]: {{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1
 [building a web application]: /docs/get-started/web
-[ColorFiltered]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
+[`ColorFiltered`]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
 [creating responsive apps]: /docs/development/ui/layout/responsive
 [Flutter Medium publication]: https://medium.com/flutter
@@ -79,9 +79,9 @@ Happy Fluttering!
 [Improving Flutter's Error Messages]: https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9
 [Performance view]: /docs/development/tools/devtools/performance
 [preparing a web app for release]: /docs/deployment/web
-[SelectableText]: {{site.api}}/flutter/material/SelectableText-class.html
+[`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
 [Showcase]: /showcase
-[ToggleButtons]: {{site.api}}/flutter/material/ToggleButtons-class.html
+[`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
 [ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
 [Try it out]: /docs/codelabs/layout-basics
 [Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
@@ -160,12 +160,17 @@ on the [Flutter wiki][].
   页面中加入了开发者工具的使用说明。与此同时，还加入了这个文档页面：
   [添加代码的方式来调试][Debugging apps programmatically]。
 
-The Flutter 1.7 release includes the new
-[RangeSlider][]
+The Flutter 1.7 release includes the new [`RangeSlider`][]
 component, which allows the user to select both the upper and lower
 endpoints in a range of values. For information about this
 component and how to customize it, see
-[Material RangeSlider in Flutter][].
+[Material RangeSlider in Flutter].
+
+Flutter 1.7 版本的更新同时加入了 [`RangeSlider`][] 这个 widget，
+可以让用户选择在最大值和最小值之间选择一个数字，本周稍晚些时候，
+在 Flutter 官方博客里可以看到关于这篇文章的介绍和以及如何自定义它，
+请关注：[这里][Material RangeSlider in Flutter]。
+
 
 [1.7.8 release notes]: {{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.7.8
 [Animate a page route transition]: /docs/cookbook/animation/page-route-animation
@@ -181,14 +186,9 @@ component and how to customize it, see
 [Performance best practices]: /docs/perf/rendering/best-practices
 [Performance profiling]: /docs/perf/rendering/ui-performance
 [Preparing an Android app for release]: /docs/deployment/android
-[RangeSlider]: {{site.api}}/flutter/material/RangeSlider-class.html
+[`RangeSlider`]: {{site.api}}/flutter/material/RangeSlider-class.html
 [Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
 
-Flutter 1.7 版本的更新同时加入了 
-[RangeSlider][]
-这个 widget，可以让用户选择在最大值和最小值之间选择一个数字，本周稍晚些时候，
-在 Flutter 官方博客里可以看到关于这篇文章的介绍和以及如何自定义它，请关注：
-[这里][Material RangeSlider in Flutter]。
 
 ## **May 7, 2019, Google I/O Edition**
 
@@ -230,7 +230,7 @@ In addition, here are some recent new and updated docs:
   New pages include an [introduction][],
   [thinking declaratively][], [ephemeral vs app state][],
   [simple app state management][], and
-  [different state management options][].
+  [different state management options].
   Documenting state management is a tricky thing, as there is no
   one-size-fits-all approach. We'd love your feedback on these new docs!
 * A new page on [Performance best practices][].
@@ -292,7 +292,7 @@ Some of the new content includes:
 * [Flutter's build modes][]
 {% comment %}
 * How to connect
-  [a native debugger _and_ a Dart debugger to your app][]
+  [a native debugger _and_ a Dart debugger to your app]
   (not yet complete)
 {% endcomment %}
 

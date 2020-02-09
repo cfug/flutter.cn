@@ -10,8 +10,8 @@ Flutter community, might help if you are a visual learner.
 如果你是一个视觉型学习者 (visual learner)，
 那么这些由 Google 或者社区（非 Google 官方）制作的 Flutter 的视频可能会对你有所帮助。
 
-Note that many people make Flutter videos. 
-This page shows some that we like, 
+Note that many people make Flutter videos.
+This page shows some that we like,
 but there are many others.
 
 这个页面仅列举部分 Flutter 视频，其他 Flutter 相关的视频可能会有很多。
@@ -135,7 +135,7 @@ Comment this out until we have a working Conference playlist link.
 
 ## 会议讲座
 
-Here are a few recent Flutter talks given at various conferences.
+Here are a some recent Flutter talks given at various conferences.
 
 以下是各种会议上最近的一些Flutter会谈。
 
@@ -168,7 +168,7 @@ millions of downloads.
 
 ## 线上课程
 
-Learn how to build Flutter apps with these free video courses:
+Learn how to build Flutter apps with these video courses:Learn how to build Flutter apps with these free video courses:
 
 通过这些免费的课程学习如何构建 Flutter 应用：
 

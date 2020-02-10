@@ -381,18 +381,14 @@ It is recommended practice to add the following documentation to all packages:
    `README.md` 文件用来对 package 进行介绍
 
 1. A `CHANGELOG.md` file that documents changes in each version
-<<<<<<< HEAD
 
    `CHANGELOG.md` 文件用来记录每个版本的更改
 
-1. A [`LICENSE`][] file containing the terms under which the package is licensed
-
-   [`LICENSE`][] 文件用来阐�� package 的许可条款
-
-=======
 1. A [`LICENSE`] file containing the terms under which the package
    is licensed
->>>>>>> 7f3167ba23813ac5db23dee5fa93c5c272afae18
+
+   [`LICENSE`][] 文件用来阐述 package 的许可条款
+
 1. API documentation for all public APIs (see below for details)
 
    API 文档包含所有的公共 API（详情参见下文）
@@ -440,15 +436,10 @@ use the following commands:
 
    `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc` (on Windows)
 
-<<<<<<< HEAD
    `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc`（适用于 Windows 操作系统）
 
-For tips on how to write API documentation, see 
-[Effective Dart: Documentation][].
-=======
 For tips on how to write API documentation, see
 [Effective Dart: Documentation].
->>>>>>> 7f3167ba23813ac5db23dee5fa93c5c272afae18
 
 关于如何编写 API 文档的建议，请参阅 
 [高效 Dart 指南][Effective Dart: Documentation]。
@@ -527,19 +518,13 @@ package_1
 
 ## Publishing packages {#publish}
 
-<<<<<<< HEAD
 ## 提交 package {#publish}
 
-Once you have implemented a package, you can publish it on the
-[pub.dev][], so that other developers can
-easily use it.
+Once you have implemented a package, you can publish it on
+[pub.dev], so that other developers can easily use it.
 
 一旦完成了 package 的实现，你便可以将其提交到 [pub.dev][]
 上，以便其他开发者可以轻松地使用它。
-=======
-Once you have implemented a package, you can publish it on
-[pub.dev], so that other developers can easily use it.
->>>>>>> 7f3167ba23813ac5db23dee5fa93c5c272afae18
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
 `CHANGELOG.md` files to make sure their content is complete and correct. 

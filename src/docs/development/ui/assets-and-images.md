@@ -696,8 +696,7 @@ customization using the Interface Builder in
 在 Project Navigator 中导航到 `Runner/Runner` ，然后打开 `Assets.xcassets` 拖入图片，或者
 在 `LaunchScreen.storyboard` 中使用 Interface Builder 进行自定义。
 
-![Adding launch icons in Xcode](/images/assets-and-images/ios-launchscreen-xcode.png)
-![Xcode 中添加启动图](/images/assets-and-images/ios-launchscreen-xcode.png)
+![Xcode 中添加启动图](/images/assets-and-images/ios-launchscreen-xcode.png){:width="95%"}
 
 
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html

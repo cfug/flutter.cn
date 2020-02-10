@@ -33,9 +33,11 @@ To stay on top of Flutter announcements,
 including breaking changes, join the
 [flutter-announce][] Google group.
 
+加入我们的 [flutter-announce][] 邮件群组追踪最新的发布、Breaking changes 等。
+
 **Dec 11, 2019, Flutter Interact Edition**
 
-**2019 年 12 月 11 日, Flutter Interact Edition**
+**2019 年 12 月 11 日, Flutter Interact 版本**
 
 Flutter 1.12 is live!
 

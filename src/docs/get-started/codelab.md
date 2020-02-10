@@ -19,7 +19,7 @@ diff2html: true
   This codelab walks you through writing your first Flutter
   app on mobile. You might prefer to try
   [writing your first Flutter app on the web][].
-  **Note that if you have [enabled web][],
+  **Note that if you have [enabled web],
   the completed app just works on all of these devices!**
 
   这篇 codelab 将带你初体验移动端 Flutter 应用开发。
@@ -48,14 +48,13 @@ previous experience with Dart, mobile, or web programming.
 移动开发语言或 Web 开发经验，
 只需你具备面向对象语言开发基础即可（如变量，循环和条件语句）。
 
-This guide is part 1 of a two-part codelab. You can find
-[part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-on the [Google Developers]({{site.codelabs}}) site.
-[Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
-can also be found on [Google Developers]({{site.codelabs}}).
+This guide is part 1 of a two-part codelab.
+You can find [part 2][] on the [Google Developers Codelabs][],
+as well as [part 1][].
 
 完整的教程分为两部分，本页面是第一部分的内容，
-你可以在这里查看 [第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0) 的内容。
+你可以在这里查看 
+[第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0) 的内容。
 
 ## What you'll build in part 1
 {:.no_toc}
@@ -108,12 +107,12 @@ The animated GIF shows how the app works at the completion of part 1.
 
     如何创建一个无限的、延迟加载的列表
 
-  In [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-  of this codelab, you'll add interactivity, modify the app's theme,
-  and add the ability to navigate to a new screen
-  (called a _route_ in Flutter).
+  In [part 2][] of this codelab, you'll add interactivity,
+  modify the app's theme, and add the ability to navigate
+  to a new screen (called a _route_ in Flutter).
   
-  在本 codelab 的 [第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0)，
+  在本 codelab 的 
+  [第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0)，
   你还将学到添加交互，
   修改应用的主题，
   以及为应用添加一个新的页面（在 Flutter，我们称之为 route）。
@@ -127,11 +126,13 @@ The animated GIF shows how the app works at the completion of part 1.
   <h4 class="no_toc">所需工具</h4>
   
   You need two pieces of software to complete this lab: the
-  [Flutter SDK](/docs/get-started/install) and [an editor](/docs/get-started/editor).
-  This codelab assumes Android Studio, but you can use your preferred
-  editor.
+  [Flutter SDK][] and [an editor][].
+  This codelab assumes Android Studio,
+  but you can use your preferred editor.
   
-  你需要安装两部分内容来完成本次实验：[Flutter SDK 安装](/docs/get-started/install) 和 [编辑器 (editor)](/docs/get-started/editor) 设置。
+  你需要安装两部分内容来完成本次实验：
+  [Flutter SDK 安装](/docs/get-started/install) 和 
+  [编辑器 (editor)](/docs/get-started/editor) 设置。
   本 codelab 里，我们以 macOS 环境下的 Android Studio 以做演示，
   但你可以选用更顺手的配置。
 
@@ -139,23 +140,22 @@ The animated GIF shows how the app works at the completion of part 1.
   
   你可以通过如下任何设备完成本 codelab：
 
-  * A physical device ([Android](install/macos#set-up-your-android-device)
-    or [iOS](install/macos#deploy-to-ios-devices)) connected to your
-    computer and set to developer mode.
+  * A physical device ([Android][] or [iOS][]) connected to your
+    computer and set to developer mode
     
     开启开发者模式 (developer mode) 的 [Android](install/macos#set-up-your-android-device) 和 / 或 [iOS](install/macos#deploy-to-ios-devices) 真机；
 
-  * The [iOS simulator](install/macos#set-up-the-ios-simulator).
+  * The [iOS simulator][]
     
     [iOS 模拟器](install/macos#set-up-the-ios-simulator)；
   
-  * The [Android emulator](install/macos#set-up-the-android-emulator).
+  * The [Android emulator][]
     
     [Android 模拟器](install/macos#set-up-the-android-emulator)。
  
-  * A browser (currently Chrome is preferred).
-
-    浏览器（目前最好可以是 Chrome 浏览器）
+  * A browser (Chrome is required for debugging)
+   
+    浏览器（如果需要 debug，则需要用 Chrome 浏览器）
     
 {{site.alert.end}}
 
@@ -166,8 +166,7 @@ The animated GIF shows how the app works at the completion of part 1.
 <?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
 
 Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter
-app.](/docs/get-started/test-drive#create-app)
+[Getting Started with your first Flutter app].
 Name the project **startup_namer** (instead of _myapp_).
 
 按照 [这个指南](/docs/get-started/test-drive#create-app) 中所描述的步骤，
@@ -177,11 +176,10 @@ Name the project **startup_namer** (instead of _myapp_).
 {{site.alert.tip}}
 
   If you don't see "New Flutter Project" as an option in your IDE, make
-  sure you have the [plugins installed for Flutter and
-  Dart](/docs/get-started/editor).
+  sure you have the [plugins installed for Flutter and Dart][].
   
   如果你没有在你的集成开发环境（IDE）里看到"New Flutter Project"（新建一个 Flutter 工程），
-  请按照本文档完成 [Dart 和 Flutter 插件的安装](/docs/get-started/editor)。
+  请按照本文档完成 [Dart 和 Flutter 插件的安装][plugins installed for Flutter and Dart]。
   
 {{site.alert.end}}
 
@@ -192,8 +190,8 @@ where the Dart code lives.
 
  1. Replace the contents of `lib/main.dart`.<br>
     Delete all of the code from **lib/main.dart**.
-    Replace with the following code, which displays "Hello World" in the center
-    of the screen.
+    Replace with the following code, which displays
+    "Hello World" in the center of the screen.
     
     替换 lib/main.dart <br>
     删除 lib/main.dart 中的所有代码，然后替换为下面的代码，它将在屏幕的中心显示"Hello World"。
@@ -250,8 +248,9 @@ where the Dart code lives.
 
     {{site.alert.end}}
 
- 2. Run the app [in the way your IDE describes](/docs/get-started/test-drive).
-    You should see either Android or iOS output, depending on your device.
+ 2. Run the app [in the way your IDE describes][].
+    You should see either Android, iOS, or web output,
+    depending on your device.
 
     [运行](/docs/get-started/test-drive#androidstudio) 你的工程项目，
     根据不同的操作系统，你会看到如下运行结果界面：
@@ -262,9 +261,10 @@ where the Dart code lives.
 
     {{site.alert.tip}}
     
-      The first time you run on a physical device, it can take awhile to load.
-      After this, you can use hot reload for quick updates. **Save** also
-      performs a hot reload if the app is running.
+      The first time you run on a physical device,
+      it can take awhile to load.
+      After this, you can use hot reload for quick updates.
+      **Save** also performs a hot reload if the app is running.
       
       第一次真机运行的时候可能会需要更多的等待时间，但是这是值得的，
       因为接下来你就可以使用热重载（hot reload）功能，真正的为下次运行时更新的预览**节省**更多时间。
@@ -278,19 +278,18 @@ where the Dart code lives.
 {:.no_toc}
 
 * This example creates a Material app.
-  [Material]({{site.material}}/guidelines) is a visual design language
-  that is standard on mobile and the web. Flutter offers a rich set
-  of Material widgets.
+  [Material][] is a visual design language
+  that is standard on mobile and the web.
+  Flutter offers a rich set of Material widgets.
 
   本示例创建了一个具有 Material Design 风格的应用，
-  [Material]({{site.material}}/guidelines) 是一种移动端和网页端通用的视觉设计语言，
+  [Material][] 是一种移动端和网页端通用的视觉设计语言，
   Flutter 提供了丰富的 Material 风格的 widgets。
   
 * The `main()` method uses arrow (`=>`) notation.
   Use arrow notation for one-line functions or methods.
 
   主函数（main）使用了 (`=>`) 符号，这是 Dart 中单行函数或方法的简写。
-
 
 * The app extends `StatelessWidget` which makes the app itself a
   widget. In Flutter, almost everything is a widget, including
@@ -299,7 +298,6 @@ where the Dart code lives.
   该应用程序继承了 `StatelessWidget`，这将会使应用本身也成为一个 widget。
   在 Flutter 中，几乎所有都是 widget，
   包括对齐 (alignment)、填充 (padding) 和布局 (layout)。
-
 
 * The `Scaffold` widget, from the Material library,
   provides a default app bar, title, and a body property that
@@ -310,13 +308,11 @@ where the Dart code lives.
   它提供了默认的导航栏、标题和包含主屏幕 widget 树的 body 属性。
   widget 树可以很复杂。
 
-
 * A widget’s main job is to provide a `build()` method
   that describes how to display the widget in terms of other,
   lower level widgets.
 
   一个 widget 的主要工作是提供一个 `build()` 方法来描述如何根据其他较低级别的 widgets 来显示自己。
-
 
 * The body for this example consists of a `Center` widget containing
   a `Text` child widget. The Center widget aligns its widget subtree
@@ -338,18 +334,18 @@ English words plus some utility functions.
 在这一步中，你将开始使用一个名为 [english_words][]
 的开源软件包，其中包含数千个最常用的英文单词以及一些实用功能。
 
-You can find the `english_words` package, as well as many other open source
-packages, on [pub.dev][].
+You can find the `english_words` package,
+as well as many other open source packages, on [pub.dev][].
 
 你可以在 [pub.dev][] 上找到
 `english_words` 软件包以及其他许多开源软件包。
 
- 1. The `pubspec.yaml` file manages the assets and dependencies for a Flutter app. In
-    `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
-    list:
+ 1. The `pubspec.yaml` file manages the assets and dependencies
+    for a Flutter app. In `pubspec.yaml`, add `english_words`
+    (3.1.5 or higher) to the dependencies list:
     
     `pubspec.yaml` 文件管理 Flutter 应用程序的 assets（资源，如图片、package等）。
-    在pubspec.yaml 中，将 english_words（3.1.0或更高版本）添加到依赖项列表，
+    在pubspec.yaml 中，将 english_words（3.1.5 或更高版本）添加到依赖项列表，
     如下面高亮显示的行：
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
@@ -362,7 +358,7 @@ packages, on [pub.dev][].
        flutter:
          sdk: flutter
        cupertino_icons: ^0.1.2
-    +  english_words: ^3.1.0
+    +  english_words: ^3.1.5
     ```
 
  2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
@@ -446,12 +442,12 @@ packages, on [pub.dev][].
       
     {{site.alert.end}}
 
- 5. If the app is running, [hot reload](/docs/get-started/test-drive)
+ 5. If the app is running, [hot reload][]
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
     chosen at random, in the running app.
     This is because the word pairing is generated inside the build
-    method, which is run each time the MaterialApp requires rendering,
+    method, which is run each time the `MaterialApp` requires rendering,
     or when toggling the Platform in Flutter Inspector.
 
     如果应用程序正在运行，请使用热重载按钮 <i class="material-icons align-bottom">offline_bolt</i>
@@ -495,9 +491,9 @@ State<em>less</em> widgets 是不可变的，这意味着它们的属性不能�
 
 State<em>ful</em> widgets maintain state that might change
 during the lifetime of the widget. Implementing a stateful
-widget requires at least two classes: 1) a StatefulWidget class
-that creates an instance of 2) a State class. The StatefulWidget
-class is, itself, immutable, but the State class persists over the
+widget requires at least two classes: 1) a `StatefulWidget` class
+that creates an instance of 2) a `State` class. The `StatefulWidget`
+class is, itself, immutable, but the `State` class persists over the
 lifetime of the widget.
 
 State<em>ful</em> widgets 持有的状态可能在 widget 生命周期中发生变化，
@@ -526,14 +522,12 @@ a child inside the existing `MyApp` stateless widget.
       }
     ```
 
-    Notice the declaration `State<RandomWords>`. This indicates that we're
-    using the generic
-    [State]({{site.api}}/flutter/widgets/State-class.html)
+    Notice the declaration `State<RandomWords>`.
+    This indicates that we're using the generic [State][]
     class specialized for use with `RandomWords`. Most of the app's logic
     and state resides here&mdash;it maintains the state for the `RandomWords`
     widget. This class saves the generated word pairs, which grows infinitely
-    as the user scrolls, and favorite word pairs (in
-    [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)),
+    as the user scrolls, and favorite word pairs (in [part 2][]),
     as the user adds or removes them from the list by toggling the heart icon.
     
     注意一下 `State<RandomWords>` 的声明。这表明我们在使用专门用于 `RandomWords` 的 
@@ -543,12 +537,14 @@ a child inside the existing `MyApp` stateless widget.
     另外还会保存用户喜爱的单词对（第二部分），
     也即当用户点击爱心图标的时候会从喜爱的列表中添加或者移除当前单词对。
 
-    `RandomWordsState` depends on the `RandomWords` class. You'll add that next.
+    `RandomWordsState` depends on the `RandomWords` class.
+    You'll add that next.
     
     `RandomWordsState` 依赖 `RandomWords`，我们接下来会创建这个类。
 
  2. Add the stateful `RandomWords` widget to `main.dart`.
-    The `RandomWords` widget does little else beside creating its State class:
+    The `RandomWords` widget does little else beside creating its
+    `State` class:
 
     添加有状态的 `RandomWords` widget 到 `main.dart`，`RandomWords` widget
     除了创建 State 类之外几乎没有其他任何东西：
@@ -585,8 +581,8 @@ a child inside the existing `MyApp` stateless widget.
       }
     ```
 
- 4. Remove the word generation code from `MyApp` by making the changes shown in
-    the following diff:
+ 4. Remove the word generation code from `MyApp`
+    by making the changes shown in the following diff:
     
     如下所示，删除 `MyApp` 里生成文字的代码：
 
@@ -694,11 +690,10 @@ lazily, on demand.
 
     {{site.alert.note}}
     
-      Prefixing an identifier with an underscore [enforces
-      privacy]({{site.dart-site}}/guides/language/language-tour)
+      Prefixing an identifier with an underscore [enforces privacy]
       in the Dart language.
       
-      在 Dart 语言中使用下划线前缀标识符，会 [强制其变成私有]({{site.dart-site}}/guides/language/language-tour)。
+      在 Dart 语言中使用下划线前缀标识符，会 [强制其变成私有][enforces privacy]。
       
     {{site.alert.end}}
 
@@ -713,8 +708,9 @@ lazily, on demand.
     factory builder and callback function specified as an anonymous function.
     Two parameters are passed to the function&mdash;the `BuildContext`,
     and the row iterator, `i`. The iterator begins at 0 and increments each
-    time the function is called. It increments twice for every suggested word pairing:
-    once for the ListTile, and once for the Divider. This model allows the suggested
+    time the function is called. It increments twice for every suggested
+    word pairing: once for the ListTile, and once for the Divider.
+    This model allows the suggested
     list to grow infinitely as the user scrolls.
     
     `ListView` 类提供了一个名为 `itemBuilder` 的 builder 属性，这是一个工厂匿名回调函数，
@@ -751,8 +747,8 @@ lazily, on demand.
         function adds a `Divider` widget to visually separate the entries. Note
         that the divider might be difficult to see on smaller devices.
         
-        对于每个建议的单词对都会调用一次 itemBuilder，然后将单词对添加到 ListTile 行中。
-        在偶数行，该函数会为单词对添加一个 ListTile row，
+        对于每个建议的单词对都会调用一次 `itemBuilder`，然后将单词对添加到 `ListTile` 行中。
+        在偶数行，该函数会为单词对添加一个 `ListTile` row，
         在奇数行，该函数会添加一个分割线的 widget，来分隔相邻的词对。
         注意，在小屏幕上，分割线看起来可能比较吃力。
         
@@ -765,12 +761,12 @@ lazily, on demand.
         actual number of word pairings in the `ListView`, minus the divider
         widgets.
         
-        语法 "i ~/ 2" 表示i除以2，但返回值是整形（向下取整），
+        语法 `i ~/ 2` 表示 `i` 除以 2，但返回值是整形（向下取整），
         比如 i 为：1, 2, 3, 4, 5 时，结果为 0, 1, 1, 2, 2，
-        这个可以计算出 ListView 中减去分隔线后的实际单词对数量。
+        这个可以计算出 `ListView` 中减去分隔线后的实际单词对数量。
         
-     4. If you've reached the end of the available word pairings, then generate
-        10 more and add them to the suggestions list.
+     4. If you've reached the end of the available word pairings,
+        then generate 10 more and add them to the suggestions list.
         
         如果是建议列表中最后一个单词对，接着再生成10个单词对，然后添加到建议列表。
 
@@ -800,8 +796,7 @@ lazily, on demand.
 
  4. In the `RandomWordsState` class, update the `build()` method to use
     `_buildSuggestions()`, rather than directly calling the word
-    generation library.
-    ([Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
+    generation library.  ([`Scaffold`][]
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 
@@ -823,8 +818,8 @@ lazily, on demand.
       }
     ```
 
- 5. In the `MyApp` class, update the `build()` method by changing the title, and
-    changing the home to be a `RandomWords` widget:
+ 5. In the `MyApp` class, update the `build()` method by changing the title,
+    and changing the home to be a `RandomWords` widget:
 
     更新 `MyApp` 的 `build()` 方法，修改 `title` 的值来改变标题，
     修改 `home` 的值为 `RandomWords` widget。
@@ -928,12 +923,12 @@ In this codelab, you've:
   创建了一个懒加载的，无限滚动的列表。
 
 If you would like to extend this app, proceed to
-[part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2/index.html)
-on the
-[Google Developers Codelabs]({{site.codelabs}}) site,
+[part 2][] on the
+[Google Developers Codelabs][] site,
 where you add the following functionality:
 
-如果你想继续扩展你的应用，在这里进行 [第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html)，
+如果你想继续扩展你的应用，在这里进行 
+[第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html)，
 你将会从以下方面修改你的应用：
 
 * Implement interactivity by adding a clickable heart icon to save
@@ -950,8 +945,25 @@ where you add the following functionality:
 
   修改应用的主题，变成一个白色系的应用。
 
+[an editor]: /docs/get-started/editor
+[Android]: install/macos#set-up-your-android-device
+[Android emulator]: install/macos#set-up-the-android-emulator
 [DevTools]: /docs/development/tools/devtools
 [enabled web]: /docs/get-started/web
+[enforces privacy]: {{site.dart-site}}/guides/language/language-tour
 [english_words]: {{site.pub}}/packages/english_words
+[Flutter SDK]: /docs/get-started/install
+[Getting Started with your first Flutter app]: /docs/get-started/test-drive#create-app
+[Google Developers Codelabs]: {{site.codelabs}}
+[hot reload]: /docs/get-started/test-drive
+[in the way your IDE describes]: /docs/get-started/test-drive
+[iOS]: install/macos#deploy-to-ios-devices
+[iOS simulator]: install/macos#set-up-the-ios-simulator
+[Material]: {{site.material}}/guidelines
+[Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[plugins installed for Flutter and Dart]: /docs/get-started/editor
 [pub.dev]: {{site.pub}}
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`State`]: {{site.api}}/flutter/widgets/State-class.html
 [writing your first Flutter app on the web]: /docs/get-started/codelab-web

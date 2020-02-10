@@ -13,36 +13,36 @@ description: 如何升级旧 API 的插件以支持新的 API。
 _If you don't write or maintain an Android Flutter plugin, you can skip this page._
 
 As of the 1.12 release, new plugin APIs are available for the Android platform.
-The old APIs based on [`PluginRegistry.Registrar`][] won't be immediately
+The old APIs based on [`PluginRegistry.Registrar`] won't be immediately
 deprecated, but we encourage you to migrate to the new APIs based on
-[`FlutterPlugin`][].
+[`FlutterPlugin`].
 
 The new API has the advantage of providing a cleaner set of accessors for
 lifecycle dependent components compared to the old APIs. For instance
-[`PluginRegistry.Registrar.activity()`][] could return null if Flutter isn't
+[`PluginRegistry.Registrar.activity()`] could return null if Flutter isn't
 attached to any activities.
 
 In other words, plugins using the old API may produce undefined behaviors when
 embedding Flutter into an Android app.
-Most of the Flutter plugins provided by [flutter.dev][] have
+Most of the Flutter plugins provided by [flutter.dev] have
 been migrated already. (Learn how to become a
-[verified publisher][] on pub.dev!) For an example of
+[verified publisher] on pub.dev!) For an example of
 a plugin that uses the new APIs, see the
-[battery package][].
+[battery package].
 
 ## Upgrade steps
 
 The following instructions outline the steps for supporting the new API:
 
 1. Update the main plugin class (`*Plugin.java`) to implement the
-   [`FlutterPlugin`][] interface. For more complex plugins, you can separate the
+   [`FlutterPlugin`] interface. For more complex plugins, you can separate the
    `FlutterPlugin` and `MethodCallHandler` into two classes. See the next
-   section, [Basic plugin][], for more details on accessing app resources with
+   section, [Basic plugin], for more details on accessing app resources with
    the latest version (v2) of embedding.
    <br><br>
    Also, note that the plugin should still contain the static `registerWith()`
    method to remain compatible with apps that don't use the v2 Android embedding.
-   (See [flutter.dev/go/android-project-migration][] for details.) The
+   (See [flutter.dev/go/android-project-migration] for details.) The
    easiest thing to do (if possible) is move the logic from `registerWith()`
    into a private method that both `registerWith()` and `onAttachedToEngine()`
    can call. Either `registerWith()` or `onAttachToEngine()` will be called, not
@@ -53,13 +53,13 @@ The following instructions outline the steps for supporting the new API:
    developer and require documentation.
 
 1. (Optional) If your plugin needs an `Activity` reference, also implement
-   the [`ActivityAware`][] interface.
+   the [`ActivityAware`] interface.
 
 1. (Optional) If your plugin is expected to be held in a background Service at
-   any point in time, implement the [`ServiceAware`][] interface.
+   any point in time, implement the [`ServiceAware`] interface.
 
 1. Update the example app's `MainActivity.java` to use the
-   v2 embedding FlutterActivity. See [flutter.dev/go/android-project-migration][]
+   v2 embedding FlutterActivity. See [flutter.dev/go/android-project-migration]
    for details. You may have to make a public constructor for you plugin class
    if one didn't exist already. For example:
 
@@ -76,27 +76,53 @@ The following instructions outline the steps for supporting the new API:
       // now automatically registers plugins.
     }
     ```
+    
+1. (Optional) If you removed `MainActivity.java`, update the `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` to use `io.flutter.embedding.android.FlutterActivity`. For example:
+
+    <?code-excerpt "AndroidManifest.xml" title?>
+    ```xml
+     <activity android:name="io.flutter.embedding.android.FlutterActivity"
+            android:theme="@style/LaunchTheme"
+   android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+                android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    ```
 
 1. (Optional) Create an `EmbeddingV1Activity.java` file that uses the v1
    embedding for the example project in the same folder as `MainActivity` to
-   keep testing the v1 embedding's compatibility with your plugin. For example:
+   keep testing the v1 embedding's compatibility with your plugin. Note that
+   you have to manually register all the plugins instead of using `GeneratedPluginRegistrant`.
+   For example:
 
     <?code-excerpt "EmbeddingV1Activity.java" title?>
     ```java
-    package io.flutter.plugins.firebasecoreexample;
+    package io.flutter.plugins.batteryexample;
 
     import android.os.Bundle;
+    import dev.flutter.plugins.e2e.E2EPlugin;
     import io.flutter.app.FlutterActivity;
-    import io.flutter.plugins.GeneratedPluginRegistrant;
+    import io.flutter.plugins.battery.BatteryPlugin;
 
     public class EmbeddingV1Activity extends FlutterActivity {
       @Override
       protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        GeneratedPluginRegistrant.registerWith(this);
+        BatteryPlugin.registerWith(registrarFor("io.flutter.plugins.battery.BatteryPlugin"));
+        E2EPlugin.registerWith(registrarFor("dev.flutter.plugins.e2e.E2EPlugin"));
       }
     }
     ```
+    
+1.  Add `<meta-data android:name="flutterEmbedding" android:value="2"/>` to the      `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`. This sets the example app
+  to use the v2 embedding.
 
 1. (Optional) If you created an `EmbeddingV1Activity` in the step above, add the
    `EmbeddingV1Activity` to the `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`.
@@ -158,6 +184,7 @@ but aren't required.
 
     @RunWith(FlutterRunner.class)
     public class MainActivityTest {
+      // Replace `MainActivity` with `io.flutter.embedding.android.FlutterActivity` if you removed `MainActivity`.
       @Rule public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
     }
     ```

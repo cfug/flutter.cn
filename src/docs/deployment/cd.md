@@ -39,11 +39,12 @@ Visit the [fastlane docs][fastlane] for more info.
 访问 [fastlane docs][fastlane] 以获得更多信息。
 
 1. Create your Flutter project, and when ready, make sure that your project builds via
-   
+ 
    创建您的 Flutter 项目，准备就绪后，确保通过如下途径构建项目：
 
-    * ![Android](/images/cd/android.png) `flutter build appbundle`;
+    * ![Android](/images/cd/android.png) `flutter build appbundle`; 以及
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
+    
 1. Initialize the fastlane projects for each platform.
 
    初始化各平台的 fastlane 项目：
@@ -67,13 +68,15 @@ Visit the [fastlane docs][fastlane] for more info.
     * ![Android](/images/cd/android.png) Check that `package_name` in
     `[project]/android/Appfile` matches your package name in AndroidManifest.xml.
     
-      ![Android](/images/cd/android.png) 检查在 `[project]/android/Appfile` 文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
+      ![Android](/images/cd/android.png) 检查在 `[project]/android/Appfile` 
+      文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
     
     * ![iOS](/images/cd/ios.png) Check that `app_identifier` in
     `[project]/ios/Appfile` also matches Info.plist's bundle identifier. Fill in
     `apple_id`, `itc_team_id`, `team_id` with your respective account info.
     
-      ![iOS](/images/cd/ios.png) 检查在 `[project]/ios/Appfile` 中的  `app_identifier` 是否匹配 Info.plist 文件中的 bundle identifier.
+      ![iOS](/images/cd/ios.png) 检查在 `[project]/ios/Appfile` 中的
+      `app_identifier` 是否匹配 Info.plist 文件中的 bundle identifier.
     
 1. Set up your local login credentials for the stores.
 
@@ -85,8 +88,9 @@ Visit the [fastlane docs][fastlane] for more info.
     it into any public source control repositories._
     
       ![Android](/images/cd/android.png) 按照
-      [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply) 操作，并且确保 `fastlane supply init` 成功同步了你在 Google Play 商店控制台中的数据。
-     *.json 文件与密码一样重要，切勿将其公开在任何公共源代码控制存储库。*
+      [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply) 
+      操作，并且确保 `fastlane supply init` 成功同步了你在 Google Play 商店控制台中的数据。
+      **.json 文件与密码一样重要，切勿将其公开在任何公共源代码控制存储库。**
     
     * ![iOS](/images/cd/ios.png) Your iTunes Connect username is already
     in your `Appfile`'s `apple_id` field. Set the `FASTLANE_PASSWORD` shell
@@ -154,24 +158,29 @@ Visit the [fastlane docs][fastlane] for more info.
    
     * ![Android](/images/cd/android.png) On Android, follow the
       [fastlane Android beta deployment guide][].
-      Your edit could be as simple as adding a `lane` that calls `upload_to_play_store`.
+      Your edit could be as simple as adding a `lane` that calls
+      `upload_to_play_store`.
       Set the `aab` argument to `../build/app/outputs/bundle/release/app-release.aab`
-      to use the apk `flutter build` already built.
+      to use the app bundle `flutter build` already built.
     
       ![Android](/images/cd/android.png) 在 Android 上按照
-      [fastlane Android beta deployment guide][] 指引操作。你可以简单的编辑一下文件，加一个名叫
-      `upload_to_play_store` 的 `lane`。为了使用 `flutter build` 命令编译 `aab`，
+      [fastlane Android beta deployment guide][] 指引操作。
+      你可以简单的编辑一下文件，加一个名叫 `upload_to_play_store` 的 `lane`。
+      为了使用 `flutter build` 命令编译 `aab`，
       要把 `apk` 参数设置为 `../build/app/outputs/bundle/release/app-release.aab`。
     
-    * ![iOS](/images/cd/ios.png) On iOS, follow the [fastlane iOS beta deployment guide][].
-    Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
-    `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
-    build is required since `flutter build` builds an .app rather than archiving
-    .ipas for release.
+    * ![iOS](/images/cd/ios.png) On iOS, follow the
+      [fastlane iOS beta deployment guide][].
+      Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
+      `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
+      build is required since `flutter build` builds an .app rather than archiving
+      .ipas for release.
     
-       ![iOS](/images/cd/ios.png) 在 iOS 上，按照 [fastlane iOS beta 部署指南][fastlane iOS beta deployment guide] 指引操作。
-      你可以简单编辑一下文件，加一个名叫 `build_ios_app` 的 `lane`，并且同时调用 `export_method: 'app-store'` 和 `upload_to_testflight`。
-      在 iOS 上只有当要编译成 .app 的时候才会用到 `flutter build`，其他情况用不到。
+       ![iOS](/images/cd/ios.png) 在 iOS 上，按照
+       [fastlane iOS beta 部署指南][fastlane iOS beta deployment guide] 指引操作。
+       你可以简单编辑一下文件，加一个名叫 `build_ios_app` 的 `lane`，并且同时调用
+       `export_method: 'app-store'` 和 `upload_to_testflight`。
+       在 iOS 上只有当要编译成 .app 的时候才会用到 `flutter build`，其他情况用不到。
 
 You're now ready to perform deployments locally or migrate the deployment
 process to a continuous integration (CI) system.
@@ -183,9 +192,9 @@ process to a continuous integration (CI) system.
 ## 在本地运行部署
 
 1. Build the release mode app.
-
-   构建发布模式应用程序。
    
+   构建发布模式的应用：
+
     * ![Android](/images/cd/android.png) `flutter build appbundle`.
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
     
@@ -336,10 +345,13 @@ repository root.
            在 `[project]/android` 或 `[project]/ios` 目录下分别运行 `bundle install`命令。
          
          * Make sure the Flutter SDK is available and set in `PATH`.
+         
+           确保 Flutter SDK 已经正确了设置在了 `PATH` 环境变量中
+           
     * In the script phase of the CI task:
     
-           确保 Flutter SDK 已经正确了设置在了 `PATH` 环境变量中
-         
+      在 CI 任务的脚本阶段：
+
          * Run `flutter build appbundle` or
            `flutter build ios --release --no-codesign`,
            depending on the platform.

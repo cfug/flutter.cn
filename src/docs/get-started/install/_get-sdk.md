@@ -41,17 +41,17 @@
     $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
     ```
 
-    If you don't want to install a fixed version of the installation bundle,
-    you can skip steps 1 and 2. 
-    Instead, get the source code from the [Flutter repo](https://github.com/flutter/flutter) on GitHub,
-     and change branches or tags as needed.
+     If you don't want to install a fixed version of the installation bundle, 
+     you can skip steps 1 and 2. 
+     Instead, get the source code from the [Flutter repo](https://github.com/flutter/flutter) on GitHub,
+     and change branches or tags as needed. For example:
 
-    如果你不想安装固定版本的安装包，你可以跳过步骤 1 和 2。
-    或者是从 GitHub 上的 [Flutter repo](https://github.com/flutter/flutter) 获取源代码，
-    并根据需要更改分支或标签。
+     如果你不想安装固定版本的安装包，你可以跳过步骤 1 和 2。
+     或者是从 GitHub 上的 [Flutter repo](https://github.com/flutter/flutter) 获取源代码，
+     并根据需要更改分支或标签。
 
     ```terminal
-    $ git clone https://github.com/flutter/flutter.git
+    $ git clone https://github.com/flutter/flutter.git -b stable
     ```
 
  3. Add the `flutter` tool to your path:

@@ -343,38 +343,41 @@ Finally, create a build archive and upload it to App Store Connect:
 
 最后，创建一个构建归档并将其上传到 App Store Connect：
 
-1. Select **Product > Archive** to produce a build archive. 
+1. Select **Product > Archive** to produce a build archive.
 
    选择 **Product > Archive** 来生成一个构建归档 
    
-1. In the sidebar of the Xcode Organizer window, select your iOS app, then
-   select the build archive you just produced. 
+1. In the sidebar of the Xcode Organizer window, select your iOS app,
+   then select the build archive you just produced. 
    
    在 Xcode 组织界面的侧边栏中，选择你的 iOS app，然后选择你刚刚的生成的构建归档。
    
-1. Click the **Validate...** button. If any issues are reported, address them
-   and produce another build. You can reuse the same build ID until you upload
-   an archive. 
+1. Click the **Validate App** button. If any issues are reported,
+   address them and produce another build. You can reuse the same
+   build ID until you upload an archive. 
    
    点击 **Validate...** 按钮。如果报告了任何问题，记录下他们并重新开始一个新的构建。
    你可以使用同一个 Build ID 直到你上传了一个归档。
    
-1. After the archive has been successfully validated, click **Upload to App
-   Store...**. You can follow the status of your build in the Activities
-   tab of your app's details page on [App Store Connect][appstoreconnect_login].  
+1. After the archive has been successfully validated, click
+   **Distribute App**. You can follow the status of your build in the
+   Activities tab of your app's details page on
+   [App Store Connect][appstoreconnect_login].  
    
    当这个归档校验成功以后，点击 **Upload to App Store...**。你可以在
    [App Store Connect][appstoreconnect_login] 中应用详情页面的 Activities 标签页查看你的构建状态。
 
-You should receive an email within 30 minutes notifying you that your build has
-been validated and is available to release to testers on TestFlight. At this
-point you can choose whether to release on TestFlight, or go ahead and release
-your app to the App Store.
+You should receive an email within 30 minutes notifying you that
+your build has been validated and is available to release to testers
+on TestFlight. At this point you can choose whether to release
+on TestFlight, or go ahead and release your app to the App Store.
 
-当你的构建已经通过了校验，可以将你的构建通过 Testfligh
-发布给你的测试人员或直接将其发布到 App Store 的时候，你会在 30 分钟内收到一封信来提醒你。
+当你的构建已经通过了校验，可以将你的构建通过 TestFlight
+发布给你的测试人员或直接将其发布到 App Store 的时候，
+你会在 30 分钟内收到一封信来提醒你。
 
-For more details, see [Upload an app to App Store Connect][distributionguide_upload].
+For more details, see
+[Upload an app to App Store Connect][distributionguide_upload].
 
 更多信息可以查看
 [上传一个 App 到 App Store Connect (Upload an app to App Store Connect)][distributionguide_upload]

@@ -20,11 +20,11 @@ This page covers the following steps for getting started with web support:
 
   [在你的平台上安装 Flutter SDK][Install Flutter]。
 
-- [Install Chrome][]. Currently, debugging a web app requires the Chrome browser.
+- [Install Chrome]. Debugging a web app requires the Chrome browser.
 
-  [安装 Chrome][Install Chrome]。当前，调试 web 应用需要 Chrome 浏览器。
+  [安装 Chrome][Install Chrome]，当前情况下，调试 web 应用需要 Chrome 浏览器。
 
-For more information, see the [web FAQ][].
+For more information, see the [web FAQ].
 
 更多详细信息请参阅 [web 常见问题解答][web FAQ]。
 
@@ -37,7 +37,7 @@ For more information, see the [web FAQ][].
   在 1.12 版本之后，Flutter 已经有了对 Web 应用的早期支持，
   但你目前需要运行 Flutter 的 `beta` 频道。
   如果在使用中发现问题，请 [发一个 Issue][file an issue] 给我们，
-  并确保标题上有「web」字样。
+  并确保标题上有 `[web]` 字样。
 {{ site.alert.end }}
 
 ## Create a new project with web support
@@ -197,7 +197,7 @@ the `-d chrome` is optional.
 {{site.alert.end}}
 
 The `flutter run` command launches the application using the
-[development compiler][] in a Chrome browser.
+[development compiler] in a Chrome browser.
 
 运行 `flutter run` 命令将使用 Chrome 浏览器的
 [development compiler][] 来启动应用程序。
@@ -212,7 +212,7 @@ Run the following command to generate a release build:
 flutter build web
 ```
 
-A release build uses [dart2js][] (instead of the [development compiler][])
+A release build uses [dart2js] (instead of the [development compiler])
 to produce a single JavaScript file `main.dart.js`.
 You can create a release build using release mode (`flutter run --release`)
 or by using `flutter build web`. This populates a `build/web` directory

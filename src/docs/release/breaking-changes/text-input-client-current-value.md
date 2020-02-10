@@ -8,7 +8,7 @@ description: 向 TextInputClient 接口添加了一个新属性，以从客户�
 ## Summary
 
 Add a field, `currentTextEditingValue`, to the `TextInputClient`
-interface to get the current value of an editable text field]
+interface to get the current value of an editable text field
 from a platform client.
 
 ## Context
@@ -141,16 +141,17 @@ TBD: Add a version number for the release # where it landed.
 ## References
 
 API documentation:
-* [`TextInput`]
-* [`TextInputClient`]
-* [`EditableText`]
-* [`SystemChannels.textInput`]
+* [`TextInput`][]
+* [`TextInputClient`][]
+* [`EditableText`][]
+* [`SystemChannels.textInput`][]
 
 Relevant issue:
-* [Issue 47137]
+* [Issue 47137][]
 
 Relevant PR:
-* [Fix requestExistingInputState response]
+* [Fix requestExistingInputState response][]
+
 
 
 [`EditableText`]: {{site.api}}/flutter/widgets/EditableText-class.html

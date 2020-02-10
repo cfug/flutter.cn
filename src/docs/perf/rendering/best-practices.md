@@ -61,9 +61,10 @@ when designing your app:
 
   * The traversal to rebuild all descendents stops when the same instance
     of the child widget as the previous frame is re-encountered. This
-    technique is heavily used in inside the framework for optimizing
-    animations where the animation doesn't affect the child subtree. See
-    the [`TransitionBuilder`] pattern and the [`SlideTransition`],
+    technique is heavily used inside the framework for optimizing
+    animations where the animation doesn't affect the child subtree.
+    See the [`TransitionBuilder`][] pattern and
+    the [source code for `SlideTransition`][],
     which uses this principle to avoid rebuilding its descendents when
     animating.
 
@@ -76,7 +77,7 @@ Also see:
 
 另见：
 
-* [Performance considerations], part of the [`Statefulwidget`] API doc
+* [Performance considerations], part of the [`StatefulWidget`] API doc
 
   [`Statefulwidget`] API 文档的 [Performance considerations] 部分。
 
@@ -142,7 +143,7 @@ Other widgets that might trigger `saveLayer()` and are potentially costly:
   [`Chip`]&mdash;
   当 `disabledColorAlpha != 0xff` 的时候，会调用 `saveLayer()`  
 
-*  [`Text`]&mdash;might cause call to `saveLayer()`
+* [`Text`]&mdash;might cause call to `saveLayer()`
   if there's an `overflowShader`
   
   [`Text`]&mdash;
@@ -300,6 +301,8 @@ The following behaviors might negatively impact your app's performance.
 
 ## Resources
 
+## 参考资料
+
 For more performance info, see the following resources:
 
 要了解更多性能信息，请参见以下资源：
@@ -316,38 +319,28 @@ For more performance info, see the following resources:
   in the ListView API page
 
   ListView API 页面中 [Child elements' lifecycle][]，以及如何高效加载元素；
-
-* [Performance considerations][] of a `Statefulwidget`
-
+  
+* [Performance considerations] of a `StatefulWidget`
+ 
   Statefulwidget 的 [Performance considerations][] API 文档。
   
   
-[Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
-[Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
-[Performance considerations]: {{site.api}}/flutter/widgets/Statefulwidget-class.html#performance-considerations
-
 [Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
-[Performance considerations]: {{site.api}}/flutter/widgets/Statefulwidget-class.html#performance-considerations
-[Why 60fps?]: https://www.youtube.com/watch?v=CaMTIgxCSqU
-[Working with long lists]: /cookbook/lists/long-lists
+[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
+[`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
 [Cookbook]: /cookbook
 [Creating a ListView that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
 [`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[`Statefulwidget`]: {{site.api}}/flutter/widgets/Statefulwidget-class.html
-[`TransitionBuilder`]: ({{site.api}}/flutter/widgets/TransitionBuilder.html)
-[`SlideTransition`]: https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229
-[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
-[`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
 [`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [profile mode]: /docs/testing/build-modes#profile
 [`ShaderMask`]: {{site.api}}/flutter/widgets/ShaderMask-class.html
-[`SlideTransition`]: https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229
+[source code for `SlideTransition`]: https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/transitions.dart
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`TransitionBuilder`]: ({{site.api}}/flutter/widgets/TransitionBuilder.html)
+[`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
 [Transparent image]: {{site.api}}/flutter/widgets/Opacity-class.html#transparent-image
 [Why 60fps?]: https://www.youtube.com/watch?v=CaMTIgxCSqU
 [Working with long lists]: /cookbook/lists/long-lists

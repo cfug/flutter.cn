@@ -32,13 +32,13 @@ It also uses concepts that are applicable in every other approach.
 那么这就是你应该入门使用的。`provider` 非常好理解而且不需要写很多代码。
 它也会用到一些在其它实现方式中用到的通用概念。
 
-That said, if you have strong background in state management from other
-reactive frameworks, you will find packages and tutorials listed on the
-[following page].
+That said, if you have a strong background in
+state management from other reactive frameworks,
+you can find packages and tutorials listed on the [options page].
 
 即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，
 那么可以在 
-[状态 (State) 管理参考][following page]
+[状态 (State) 管理参考][options page]
 中找到相关的 package 和教程。
 
 ## Our example
@@ -79,9 +79,6 @@ Here's the app visualized as a widget tree.
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
-{% endcomment %}
-
-{% comment %}
   上面 widget 树的图片可以在这个地址找到: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
 {% endcomment %}
 
@@ -100,12 +97,11 @@ state of the cart?
 
 这里我们出现了第一个问题：我们把当前购物车的状态放在哪合适呢？
 
-
 ## Lifting state up
 
 ## 提高状态的层级
 
-In Flutter, 
+In Flutter,
 it makes sense to keep the state above the widgets that use it.
 
 在 Flutter 中，有必要将存储状态的对象置于 widget 树中对应 widget 的上层。
@@ -494,8 +490,8 @@ which you also get in every build method.
 builder 在被调用的时候会用到三个参数。第一个是 `context`。
 在每个 build 方法中都能找到这个参数。
 
-The second argument of the builder function is the instance of 
-the `ChangeNotifier`. It's what we were asking for in the first place. 
+The second argument of the builder function is the instance of
+the `ChangeNotifier`. It's what we were asking for in the first place.
 You can use the data in the model to define what the UI should look like
 at any given point.
 
@@ -588,7 +584,7 @@ rebuild a widget that doesn't need to be rebuilt.
 我们可以使用 `Consumer<CartModel>` 来实现这个效果，
 不过这么实现有点浪费。因为我们让整体框架重构了一个无需重构的 widget。
 
-For this use case, we can use `Provider.of`, 
+For this use case, we can use `Provider.of`,
 with the `listen` parameter set to `false`.
 
 所以这里我们可以使用 `Provider.of`，
@@ -610,9 +606,9 @@ rebuild when `notifyListeners` is called.
 
 ## 把代码集成在一起
 
-You can [check out the example]
-covered in this article. If you want something simpler,
-you can see how the simple Counter app looks like when 
+You can [check out the example] covered in this article.
+If you want something simpler,
+see what the simple Counter app looks like when
 [built with `provider`].
 
 你可以在文章中 [查看这个示例][check out the example]。
@@ -646,9 +642,7 @@ and start building.
 
 现在你可以 `import 'package:provider/provider.dart';`，开始写代码吧。
 
-## Our example {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
-
-## 我们的样例{% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
+## 我们的样例 {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
 
 For illustration, consider the following simple app.
 

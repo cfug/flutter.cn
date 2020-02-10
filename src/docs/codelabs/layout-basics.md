@@ -78,8 +78,7 @@ and `Column` lays out its widgets vertically.
 
 {{site.alert.secondary}}
 
-  The following example displays the differences between
-  a `Row` and `Column`.
+  The following example displays the differences between a `Row` and `Column`.
 
   下面的样例将会显示 `Row` 和 `Column` 的区别。
 

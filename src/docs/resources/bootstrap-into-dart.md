@@ -26,7 +26,7 @@ you to learn, too.
   
 [Dart 语言学习之旅][Language tour]
 <br> 这是对 Dart 语言最好的介绍。能够帮助你学习 Dart 的特性，比
-如 **强类型**、**闭包**、**库**、**词法作用域**、**顶级函数**、**命名参数**、**async / await**　等等。
+如 **强类型**、**闭包**、**库**、**词法作用域**、**顶级函数**、**命名参数**、**async / await** 等等。
 
 [Library tour][]
 <br> A good overview of Dart's powerful core libraries. Learn about

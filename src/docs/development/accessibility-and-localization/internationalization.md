@@ -100,7 +100,7 @@ add the package as a dependency to your `pubspec.yaml` file:
 
 想要使用 flutter_localizations 的话，你需要在 `pubspec.yaml` 文件中添加它作为依赖：
 
-{% prettify yaml %}
+```yaml
 dependencies:
   flutter:
     sdk: flutter
@@ -112,9 +112,10 @@ dependencies:
 Next, import the flutter_localizations library and specify
 `localizationsDelegates` and `supportedLocales` for `MaterialApp`:
 
-下一步，引入 flutter_localizations 库，然后为 MaterialApp 指定 `localizationsDelegates` 和 `supportedLocales`：
+下一步，引入 flutter_localizations 库，
+然后为 MaterialApp 指定 `localizationsDelegates` 和 `supportedLocales`：
 
-{% prettify dart %}
+```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_cupertino_localizations/flutter_cupertino_localizations.dart';
 
@@ -191,7 +192,7 @@ locales should include:
 三个不同的国家/地区代码能够完整地表达每个变种的中文，
 你应该包括以下支持的语言环境:
 
-{% prettify dart %}
+```dart
 // Full Chinese support for CN, TW, and HK
 supportedLocales: [
   const Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
@@ -201,7 +202,7 @@ supportedLocales: [
   const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'), // 'zh_Hant_TW'
   const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'HK'), // 'zh_Hant_HK'
 ],
-{% endprettify %}
+```
 
 This explicit full definition ensures that your app can
 distinguish between and provide the fully nuanced localized
@@ -215,18 +216,21 @@ localized content for commonly used languages.
 See [`Localizations`][] for information on how the supported
 locales and the preferred locales are resolved.
 
-这种明确完整的定义可以确保你的 app 能够区分以及提供完全地道的本地内容给这些国家/地区代码的所有组合的用户。
-如果用户没有指定首选的语言环境，那么我们就会使用最近的匹配，这很可能与用户的期望会有差异。
-Flutter 只会解析定义在 `supportedLocales`
-里面的语言环境。对于那些常用语言，Flutter 为本地化内容提供了文字代码级别的区分。查看 
-[`Localizations`][]
-了解 Flutter 是如何解析支持的语言环境和首选的语言环境的。
+这种明确完整的定义可以确保你的 app 能够区分
+以及提供完全地道的本地内容给这些国家/地区代码的所有组合的用户。
+如果用户没有指定首选的语言环境，那么我们就会使用最近的匹配，
+这很可能与用户的期望会有差异。
+Flutter 只会解析定义在 `supportedLocales` 里面的语言环境。
+对于那些常用语言，Flutter 为本地化内容提供了文字代码级别的区分。
+查看 [`Localizations`][] 了解 Flutter 是如何
+解析支持的语言环境和首选的语言环境的。
 
 Although Chinese is a primary example,
 other languages like French (fr_FR, fr_CA)
 should also be fully differentiated for more nuanced localization.
 
-虽然中文是最主要的一个示例，但是其他语言如法语（FR_fr，FR_ca 等等）也应该为了更细致的本地化而做完全的区分。
+虽然中文是最主要的一个示例，
+但是其他语言如法语（FR_fr，FR_ca 等等）也应该为了更细致的本地化而做完全的区分。
 
 <a name="tracking-locale"></a>
 
@@ -244,7 +248,8 @@ displayed "Hello World" would be rebuilt with "Bonjour le monde".
 
 [`Locale`][] 类用来识别用户的语言。
 移动设备支持为所有的应用设置语言环境，经常是通过系统设置菜单来进行操作。
-设置完之后，国际化的 app 就会展示成对应特定语言环境的值。例如，如果用户把设备的语言环境从英语切换到法语，
+设置完之后，国际化的 app 就会展示成对应特定语言环境的值。
+例如，如果用户把设备的语言环境从英语切换到法语，
 显示 "Hello World" 的文本 widget 会使用 "Bonjour le monde" 进行重建。
 
 The [`Localizations`][widgets-global] widget defines the locale
@@ -262,13 +267,11 @@ You can always lookup an app's current locale with
 
 你可以通过调用 `Localizations.localeOf()` 方法来查看 app 当前的语言环境。 
 
-{% prettify dart %}
-```
+```dart
 Locale myLocale = Localizations.localeOf(context);
 ```
 
 <a name="loading-and-retrieving"></a>
-
 ## Loading and retrieving localized values
 
 ## 加载和获取本地化值
@@ -303,8 +306,9 @@ method that produces an object that encapsulates a
 collection of localized values.
 Typically these objects define one method per localized value.
 
-本地化的值是通过使用 Localizations widget 的 [LocalizationsDelegate]({{site.api}}/flutter/widgets/LocalizationsDelegate-class.html) 加载的。
-每一个 delegate 必须定义一个异步的 [`load()`]({{site.api}}/flutter/widgets/LocalizationsDelegate/load.html) 方法。这个方法生成了一个封装本地化值的对象。
+本地化的值是通过使用 Localizations widget 的 [`LocalizationsDelegate`] 加载的。
+每一个 delegate 必须定义一个异步的 [`load()`][] 方法。
+这个方法生成了一个封装本地化值的对象，
 通常这些对象为每个本地化的值定义了一个方法。
 
 In a large app, different modules or packages might be bundled with
@@ -313,8 +317,12 @@ manages a table of objects, one per `LocalizationsDelegate`.
 To retrieve the object produced by one of the `LocalizationsDelegate`'s
 `load` methods, you specify a `BuildContext` and the object's type.
 
-在一个大型的 app 中，不同的模块或者 package 需要和它们对应的本地化资源打包在一起。这就是为什么 Localizations widget 管理着对象的一个对应表，
-每个 LocationsDelegate 对应一个对象。为了获得由 LocationsDelegate 的 `load` 方法生成的对象，你需要指定一个构建上下文和对象的类型。
+在一个大型的 app 中，
+不同的模块或者 package 需要和它们对应的本地化资源打包在一起。
+这就是为什么 `Localizations` widget 管理着对象的一个对应表，
+每个 `LocalizationsDelegate` 对应一个对象。
+为了获得由 `LocalizationsDelegate` 的 `load` 方法生成的对象，
+你需要指定一个构建上下文 (`BuildContext`) 和对象的类型。
 
 For example,
 the localized strings for the Material Components widgets
@@ -325,9 +333,9 @@ They can be retrieved with `Localizations.of()`:
 
 例如，Material 组件 widget 的本地化字符串是由 [`MaterialLocalizations`][]
 类定义的。这个类的实例是由 [[`MaterialApp`][] 
-类提供的一个 `LocalizationDelegate` 方法创建的，它们可以通过 `Localizations.of` 方法获得。
+类提供的一个 `LocalizationDelegate` 方法创建的，
+它们可以通过 `Localizations.of` 方法获得。
 
-{% prettify dart %}
 ```dart
 Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 ```
@@ -335,7 +343,8 @@ Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 This particular `Localizations.of()` expression is used frequently,
 so the `MaterialLocalizations` class provides a convenient shorthand:
 
-因为这个特定的 `Localizations.of()` 表达式经常使用，所以 MaterialLocalizations 类提供了一个快捷访问：
+因为这个特定的 `Localizations.of()` 表达式经常使用，
+所以 `MaterialLocalizations` 类提供了一个快捷访问：
 
 ```dart
 static MaterialLocalizations of(BuildContext context) {
@@ -425,11 +434,12 @@ Putting all of this together for an internationalized app usually
 starts with the class that encapsulates the app's localized values.
 The example that follows is typical of such classes.
 
-综合所有这些在一起，一个需要国际化的 app 经常以一个封装 app 本地化值的类开始的。下面是使用这种类的典型示例。
+综合所有这些在一起，一个需要国际化的 app 经常以一个封装 app 本地化值的类开始的。
+下面是使用这种类的典型示例。
 
 Complete source code for the [`intl_example`][] for this app.
 
-此示例 app 的 [完整的源码]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)。
+此示例 app 的 [完整的源码][`intl_example`]。
 
 This example is based on the APIs and tools provided by the
 [`intl`][] package.
@@ -491,8 +501,11 @@ that analyzes the source code for classes that contain
 `Intl.message()` calls.  In this case that would just be the
 `DemoLocalizations` class.
 
-基于 `intl` package 的类引入了一个生成好的信息目录，它提供了 `initializeMessage()` 方法和 `Intl.message()` 方法的每个语言环境的备份存储。
-[`intl` 工具](#dart-tools) 通过分析包含 `Intl.message()` 调用类的源码生成这个信息目录。
+基于 `intl` package 的类引入了一个生成好的信息目录，
+它提供了 `initializeMessage()` 方法和 
+`Intl.message()` 方法的每个语言环境的备份存储。
+[`intl` 工具](#dart-tools) 通过分析包含 `Intl.message()` 
+调用类的源码生成这个信息目录。
 在当前情况下，就是 DemoLocalizations 的类（包含了 `Intl.message()` 调用）。
 
 <a name="specifying-supportedlocales"></a>
@@ -541,7 +554,8 @@ method can provide a [`localeResolutionCallback`][].
 For example, to have your app unconditionally accept
 whatever locale the user selects:
 
-如果一个 app 想要使用不同的语言环境解析方案，它可以提供一个 [`localeResolutionCallback`][]，
+如果一个 app 想要使用不同的语言环境解析方案，它可以提供一个 
+[`localeResolutionCallback`][]，
 例如，让你的 app 无条件的接受用户选择的任何语言环境：
 
 ```dart
@@ -574,13 +588,15 @@ with a different i18n framework.
 
 Complete source code for the [`minimal`][] app.
 
-这个示例 APP 的 [完整代码]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)。
+这个示例 APP 的 [完整代码][`minimal`]。
 
 In this version of DemoApp the class that contains the app's
 localizations, DemoLocalizations, includes all of its translations
 directly in per language Maps.
 
-在这个版本的 DemoApp 中，这个类包含了 app 的 localizations 和 DemoLocalizations，并且直接将它所有的翻译放在每个语言的映射当中。
+在这个版本的 DemoApp 中，这个类包含了 app 的
+localizations 和 DemoLocalizations，
+并且直接将它所有的翻译放在每个语言的映射当中。
 
 ```dart
 class DemoLocalizations {
@@ -611,9 +627,8 @@ In the minimal app the `DemoLocalizationsDelegate` is slightly
 different. Its `load` method returns a [`SynchronousFuture`][]
 because no asynchronous loading needs to take place.
 
-在这个最小实现的 app 当中，DemoLocalizationDelegate 有一点不一样。它的 `load` 方法返回了一个
-[SynchronousFuture]({{site.api}}/flutter/foundation/SynchronousFuture-class.html)，
-因为不需要进行异步的加载。
+在这个最小实现的 app 当中，DemoLocalizationDelegate 有一点不一样。
+它的 `load` 方法返回了一个 [`SynchronousFuture`][]，因为不需要进行异步的加载。
 
 ```dart
 class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations> {
@@ -656,8 +671,10 @@ A new `LocalizationsDelegate` subclass, which serves
 as factory for the `GlobalMaterialLocalizations` subclass,
 must also be defined.
 
-我们需要定义一个新的 GlobalMaterialLocalizations 子类，它定义了 Material 库依赖的 localizations。
-同时，我们也必须定义一个新的 LocalizationsDelegate 子类，它是给 GlobalMaterialLocalizations 子类作为一个工厂使用的。
+我们需要定义一个新的 `GlobalMaterialLocalizations` 子类，
+它定义了 Material 库依赖的本地化资源。
+同时，我们也必须定义一个新的 `LocalizationsDelegate` 子类，
+它是给 `GlobalMaterialLocalizations` 子类作为一个工厂使用的。
 
 Here's the source code for the complete [`add_language`][] example,
 minus the actual Belarusan translations.
@@ -673,8 +690,11 @@ The value of `BeMaterialLocalizations.delegate`
 is an instance of the delegate, and is all
 that's needed by an app that uses these localizations.
 
-这个特定语言环境的 GlobalMaterialLocalizations 子类被称为 `BeMaterialLocalizations`，LocalizationsDelegate 子类被称为
-`_BeMaterialLocalizationsDelegate`。`BeMaterialLocalizations.delegate` 是 delegate 的一个实例，这就是 app 使用这些本地化所需要的全部。
+这个特定语言环境的 `GlobalMaterialLocalizations`
+子类被称为 `BeMaterialLocalizations`，
+`LocalizationsDelegate` 子类被称为 `_BeMaterialLocalizationsDelegate`。
+`BeMaterialLocalizations.delegate` 是 delegate 的一个实例，
+这就是 app 使用这些本地化所需要的全部。
 
 The delegate class includes basic date and number format
 localizations. All of the other localizations are defined by `String`
@@ -706,7 +726,8 @@ These are the English translations of course. To complete the job you
 need to change the return value of each getter to an appropriate 
 Belarusian string.
 
-当然，这些都是英语翻译。为了完成本地化操作，你需要把每一个 getter 的返回值翻译成合适的白俄罗斯语字符。
+当然，这些都是英语翻译。为了完成本地化操作，
+你需要把每一个 getter 的返回值翻译成合适的白俄罗斯语字符。
 
 The getters return "raw" Dart strings that have an r prefix,
 like `r'About $applicationName'`,
@@ -800,16 +821,19 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     `intl_en.arb` and `intl_es.arb`.
     These translations are created by you, the developer.
     
-    `intl_messages.arb` 是一个 JSON 格式的文件，每一个入口代表定义在 `main.dart` 里面的 `Intl.message()` 方法。
-    `intl_en.arb` 和 `intl_es.arb` 分别作为英语和西班牙语翻译的模板。这些翻译是由你（开发者）来创建的。
+    `intl_messages.arb` 是一个 JSON 格式的文件，
+    每一个入口代表定义在 `main.dart` 里面的 `Intl.message()` 方法。
+    `intl_en.arb` 和 `intl_es.arb` 分别作为英语和西班牙语翻译的模板。
+    这些翻译是由你（开发者）来创建的。
     
 
  2. With the app's root directory as the current directory, generate
     `intl_messages_<locale>.dart` for each `intl_<locale>.arb` file and
     `intl_messages_all.dart`, which imports all of the messages files:
     
-    在 app 的根目录，生成每个 `intl_<locale>.arb` 文件对应的 `intl_messages_<locale>.dart` 文件，
- 以及 `intl_messages_all.dart` 文件，它引入了所有的信息文件。
+    在 app 的根目录，生成每个 `intl_<locale>.arb` 
+    文件对应的 `intl_messages_<locale>.dart` 文件，
+    以及 `intl_messages_all.dart` 文件，它引入了所有的信息文件。
 
     ```terminal
     $ flutter pub run intl_translation:generate_from_arb \
@@ -821,7 +845,8 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     function (defined in `intl_messages_all.dart`)
     to load the localized messages and `Intl.message()` to look them up.
     
-    DemoLocalizations 类使用生成的 `initializeMessages()` 方法（该方法定义在 `intl_messages_all.dart` 文件）
+    DemoLocalizations 类使用生成的 `initializeMessages()` 方法
+    （该方法定义在 `intl_messages_all.dart` 文件）
     来加载本地化的信息，然后使用 `Intl.message()` 来查阅这些本地化的信息。
 
 <a name="ios-specifics"></a>

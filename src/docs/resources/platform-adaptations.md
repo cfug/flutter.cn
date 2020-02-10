@@ -15,7 +15,8 @@ There are generally two cases of platform adaptiveness:
    (such as text editing and scrolling) and that
    would be 'wrong' if a different behavior took place.
 
-   操作系统所特有的操作体验（例如文本编辑和滚动）。如果操作体验与操作系统不一致，则通常会被认为是“错误的”。
+   操作系统所特有的操作体验（例如文本编辑和滚动）。
+   如果操作体验与操作系统不一致，则通常会被认为是“错误的”。
 
 2. Things that are conventionally implemented in apps using
    the OEM's SDKs (such as using parallel tabs on iOS or
@@ -56,7 +57,8 @@ Flutter provides the navigation patterns seen on Android
 and iOS and also automatically adapts the navigation animation
 to the current platform.
 
-Flutter 分别为 Android 和 iOS 提供了各自平台的导航模式，并根据当前平台自动适配导航转场动画。
+Flutter 分别为 Android 和 iOS 提供了各自平台的导航模式，
+并根据当前平台自动适配导航转场动画。
 
 ### Navigation transitions
 
@@ -102,7 +104,7 @@ On **iOS**:
       <figure class="figure">
         <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the bottom-up page transition on Android" />
         <figcaption class="figure-caption">
-          <span>Android page transition</span><span>Android 转场动画</span>
+          <span><t>Android page transition</t><t>Android 转场动画</t></span>
         </figcaption>
       </figure>
     </div>
@@ -110,7 +112,7 @@ On **iOS**:
       <figure class="figure">
         <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios.gif" class="figure-img img-fluid" alt="An animation of the end-start style push page transition on iOS" />
         <figcaption class="figure-caption">
-          <span>iOS push transition</span><span>iOS Push 转场动画</span>
+          <span><t>iOS push transition</t><t>iOS Push 转场动画</t></span>
         </figcaption>
       </figure>
     </div>
@@ -118,7 +120,7 @@ On **iOS**:
       <figure class="figure">
         <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios-modal.gif" class="figure-img img-fluid" alt="An animation of the bottom-up style present page transition on iOS" />
         <figcaption class="figure-caption">
-          <span>iOS present transition</span><span>iOS Present 转场动画</span>
+          <span><t>iOS present transition</t><t>iOS Present 转场动画</t></span>
         </figcaption>
       </figure>
     </div>
@@ -166,7 +168,7 @@ Flutter 内置的 [`CupertinoNavigationBar`][]
       <figure class="figure">
         <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android pre-Android P" />
         <figcaption class="figure-caption">
-          <span>Android Pre-P</span><span>Android P 以前</span>
+          <span><t>Android Pre-9</t><t>Android 9 以前</t></span>
         </figcaption>
       </figure>
     </div>
@@ -174,7 +176,7 @@ Flutter 内置的 [`CupertinoNavigationBar`][]
       <figure class="figure text-center">
         <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android-p.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android on Android P" />
         <figcaption class="figure-caption">
-          <span>Android Post-P</span><span>Android P 以后</span>
+          <span><t>Android Post-9</t><t>Android 9 以后</t></span>
         </figcaption>
       </figure>
     </div>
@@ -182,7 +184,7 @@ Flutter 内置的 [`CupertinoNavigationBar`][]
       <figure class="figure text-center">
         <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios-nav-bar.gif" class="figure-img img-fluid" alt="An animation of the nav bar transitions during a page transition on iOS" />
         <figcaption class="figure-caption">
-          <span>iOS Nav Bar</span><span>iOS 导航栏</span>
+          <span><t>iOS Nav Bar</t><t>iOS 导航栏</t></span>
         </figcaption>
       </figure>
     </div>
@@ -211,7 +213,7 @@ an edge swipe gesture can be used to pop the top route.
       <figure class="figure">
         <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android-back.gif" class="figure-img img-fluid" alt="A page transition triggered by the Android back button" />
         <figcaption class="figure-caption">
-          <span>Android back button</span><span>Android 返回按钮</span>
+          <span><t>Android back button</t><t>Android 返回按钮</t></span>
         </figcaption>
       </figure>
     </div>
@@ -219,7 +221,7 @@ an edge swipe gesture can be used to pop the top route.
       <figure class="figure text-center">
         <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios-back.gif" class="figure-img img-fluid" alt="A page transition triggered by an iOS back swipe gesture" />
         <figcaption class="figure-caption">
-          <span>iOS back swipe gesture</span><span>iOS 轻扫返回手势</span>
+          <span><t>iOS back swipe gesture</t><t>iOS 轻扫返回手势</t></span>
         </figcaption>
       </figure>
     </div>
@@ -234,7 +236,8 @@ Scrolling is an important part of the platform's
 look and feel, and Flutter automatically adjusts
 the scrolling behavior to match the current platform.
 
-滚动是不通平台提供独有体验非常重要的一环，Flutter 会根据当前的平台自动适配滚动体验。
+滚动是不通平台提供独有体验非常重要的一环，
+Flutter 会根据当前的平台自动适配滚动体验。
 
 ### Physics simulation
 
@@ -247,7 +250,12 @@ dynamic friction but Android has more static friction.
 Therefore iOS gains high speed more gradually but stops
 less abruptly and is more slippery at slow speeds.
 
-Android 和 iOS 平台都提供了非常复杂的滚动物理仿真，因而很难用语言来描述。通常来说，iOS 的滚动通常提供更多的分量和动态的阻力；而 Android 则更多的使用静态的阻力。所以，iOS 随着滚动慢慢的达到高速，且不会突然的停止，而且在慢速的时候显得更顺滑。
+Android 和 iOS 平台都提供了非常复杂的滚动物理仿真，
+因而很难用语言来描述。通常来说，
+iOS 的滚动通常提供更多的分量和动态的阻力；
+而 Android 则更多的使用静态的阻力。
+所以，iOS 随着滚动慢慢的达到高速，且不会突然的停止，
+而且在慢速的时候显得更顺滑。
 
 <div class="container">
   <div class="row">
@@ -255,7 +263,7 @@ Android 和 iOS 平台都提供了非常复杂的滚动物理仿真，因而很�
       <figure class="figure">
         <img src="../../images/platform-adaptations/scroll-soft.gif" class="figure-img img-fluid rounded" alt="A soft fling where the iOS scrollable slid longer at lower speed than Android" />
         <figcaption class="figure-caption">
-          <span>Soft fling comparison</span><span>突然慢慢滚动的效果比较</span>
+          <span><t>Soft fling comparison</t><t>突然慢慢滚动的效果比较</t></span>
         </figcaption>
       </figure>
     </div>
@@ -263,7 +271,7 @@ Android 和 iOS 平台都提供了非常复杂的滚动物理仿真，因而很�
       <figure class="figure text-center">
         <img src="../../images/platform-adaptations/scroll-medium.gif" class="figure-img img-fluid rounded" alt="A medium force fling where the Android scrollable reached speed faster and stopped more abruptly after reaching a longer distance" />
         <figcaption class="figure-caption">
-          <span>Medium fling comparison</span>突然较快的滚动效果比较<span></span>
+          <span><t>Medium fling comparison</t><t>突然较快的滚动效果比较</t></span>
         </figcaption>
       </figure>
     </div>
@@ -271,7 +279,7 @@ Android 和 iOS 平台都提供了非常复杂的滚动物理仿真，因而很�
       <figure class="figure text-center">
         <img src="../../images/platform-adaptations/scroll-strong.gif" class="figure-img img-fluid rounded" alt="A strong fling where the Android scrollable reach speed faster and reached significantly more distance" />
         <figcaption class="figure-caption">
-          <span>Strong fling comparison</span><span>突然强烈的滚动效果比较</span>
+          <span><t>Strong fling comparison</t><t>突然强烈的滚动效果比较</t></span>
         </figcaption>
       </figure>
     </div>
@@ -302,7 +310,7 @@ On **iOS**, scrolling past the edge of a scrollable
       <figure class="figure">
         <img src="../../images/platform-adaptations/scroll-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" />
         <figcaption class="figure-caption">
-          <span>Dynamic overscroll comparison</span><span>动态滚动边界效果比较</span>
+          <span><t>Dynamic overscroll comparison</t><t>动态滚动边界效果比较</t></span>
         </figcaption>
       </figure>
     </div>
@@ -310,7 +318,7 @@ On **iOS**, scrolling past the edge of a scrollable
       <figure class="figure">
         <img src="../../images/platform-adaptations/scroll-static-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" />
         <figcaption class="figure-caption">
-          <span>Static overscroll comparison</span><span>静态滚动边界效果比较</span>
+          <span><t>Static overscroll comparison</t><t>静态滚动边界效果比较</t></span>
         </figcaption>
       </figure>
     </div>
@@ -335,7 +343,7 @@ There is no equivalent behavior on *Android*.
       <figure class="figure">
         <img src="../../images/platform-adaptations/scroll-momentum-ios.gif" class="figure-img img-fluid rounded" alt="Repeated scroll flings building momentum on iOS" />
         <figcaption class="figure-caption">
-          <span>iOS scroll momentum</span><span>iOS 滚动动量</span>
+          <span><t>iOS scroll momentum</t><t>iOS 滚动动量</t></span>
         </figcaption>
       </figure>
     </div>
@@ -359,7 +367,7 @@ There is no equivalent behavior on **Android**.
       <figure class="figure">
         <img style="border-radius: 22px;" src="../../images/platform-adaptations/scroll-tap-to-top-ios.gif" class="figure-img img-fluid" alt="Tapping the status bar scrolls the primary scrollable back to the top" />
         <figcaption class="figure-caption">
-          <span>iOS status bar tap to top</span><span>iOS 点击状态栏返回顶部</span>
+          <span><t>iOS status bar tap to top</t><t>iOS 点击状态栏返回顶部</t></span>
         </figcaption>
       </figure>
     </div>
@@ -392,7 +400,11 @@ Therefore a fallback font is used when running on Android
 if the platform is debug-overridden to iOS or the
 default Cupertino theme is used.
 
-San Francisco 字体的授权限制了它只能被用在运行于 iOS、macOS 和 tvOS 平台上的软件。因此当运行在 Android 平台的时候，即使强制覆盖系统平台为 iOS 或者使用 Cupertino 默认主题，都会使用对应的替代字体。
+San Francisco 字体的授权限制了它只能被用在运行于
+iOS、macOS 和 tvOS 平台上的软件。
+因此当运行在 Android 平台的时候，
+即使强制覆盖系统平台为 iOS 或者使用 Cupertino 默认主题，
+都会使用对应的替代字体。
 
 <div class="container">
   <div class="row">
@@ -400,7 +412,7 @@ San Francisco 字体的授权限制了它只能被用在运行于 iOS、macOS �
       <figure class="figure">
         <img src="../../images/platform-adaptations/typography-android.png" class="figure-img img-fluid rounded" alt="Roboto font on Android" />
         <figcaption class="figure-caption">
-          <span>Roboto on Android</span><span>Android 平台 Robot 字体</span>
+          <span><t>Roboto on Android</t><t>Android 平台 Robot 字体</t></span>
         </figcaption>
       </figure>
     </div>
@@ -408,7 +420,7 @@ San Francisco 字体的授权限制了它只能被用在运行于 iOS、macOS �
       <figure class="figure text-center">
         <img src="../../images/platform-adaptations/typography-ios.png" class="figure-img img-fluid rounded" alt="San Francisco font on iOS" />
         <figcaption class="figure-caption">
-          <span>San Francisco on iOS</span><span>iOS 平台 San Francisco 字体</span>
+          <span><t>San Francisco on iOS</t><t>iOS 平台 San Francisco 字体</t></span>
         </figcaption>
       </figure>
     </div>
@@ -437,7 +449,7 @@ has a stem/shaft on Android.
       <figure class="figure">
         <img src="../../images/platform-adaptations/iconography-android.png" class="figure-img img-fluid rounded" alt="Android appropriate icons" />
         <figcaption class="figure-caption">
-          <span>Icons on Android</span><span>Android 平台图标</span>
+          <span><t>Icons on Android</t><t>Android 平台图标</t></span>
         </figcaption>
       </figure>
     </div>
@@ -445,7 +457,7 @@ has a stem/shaft on Android.
       <figure class="figure text-center">
         <img src="../../images/platform-adaptations/iconography-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate icons" />
         <figcaption class="figure-caption">
-          <span>Icons on iOS</span><span>iOS 平台图标</span>
+          <span><t>Icons on iOS</t><t>iOS 平台图标</t></span>
         </figcaption>
       </figure>
     </div>
@@ -509,7 +521,7 @@ Material 和 Cupertino 都对这个功能提供了支持。
       <figure class="figure">
         <img src="../../images/platform-adaptations/text-keyboard-move-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via the space key on Android" />
         <figcaption class="figure-caption">
-          <span>Android space key cursor move</span><span>Android 通过空格键移动光标</span>
+          <span><t>Android space key cursor move</t><t>Android 通过空格键移动光标</t></span>
         </figcaption>
       </figure>
     </div>
@@ -517,7 +529,7 @@ Material 和 Cupertino 都对这个功能提供了支持。
       <figure class="figure text-center">
         <img src="../../images/platform-adaptations/text-keyboard-move-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via 3D Touch drag on the keyboard on iOS" />
         <figcaption class="figure-caption">
-          <span>iOS 3D Touch drag cursor move</span><span>iOS 通过 3D Touch 拖拽移动光标</span>
+          <span><t>iOS 3D Touch drag cursor move</t><t>iOS 通过 3D Touch 拖拽移动光标</t></span>
         </figcaption>
       </figure>
     </div>
@@ -546,7 +558,7 @@ selection is made in a text field.
       <figure class="figure">
         <img src="../../images/platform-adaptations/text-toolbar-android.png" class="figure-img img-fluid rounded" alt="Android appropriate text toolbar" />
         <figcaption class="figure-caption">
-          <span>Android text selection toolbar</span><span>Android 文本选中工具栏</span>
+          <span><t>Android text selection toolbar</t><t>Android 文本选中工具栏</t></span>
         </figcaption>
       </figure>
     </div>
@@ -554,7 +566,7 @@ selection is made in a text field.
       <figure class="figure text-center">
         <img src="../../images/platform-adaptations/text-toolbar-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate text toolbar" />
         <figcaption class="figure-caption">
-          <span>iOS text selection toolbar</span><span>iOS 文本选中工具栏</span>
+          <span><t>iOS text selection toolbar</t><t>iOS 文本选中工具栏</t></span>
         </figcaption>
       </figure>
     </div>
@@ -592,7 +604,7 @@ Collapsed text selections don't have draggable handles on iOS.
       <figure class="figure">
         <img src="../../images/platform-adaptations/text-single-tap-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the tapped position on Android" />
         <figcaption class="figure-caption">
-          <span>Android tap</span><span>Android 点击</span>
+          <span><t>Android tap</t><t>Android 点击</t></span>
         </figcaption>
       </figure>
     </div>
@@ -600,7 +612,7 @@ Collapsed text selections don't have draggable handles on iOS.
       <figure class="figure text-center">
         <img src="../../images/platform-adaptations/text-single-tap-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the nearest edge of the tapped word on iOS" />
         <figcaption class="figure-caption">
-          <span>iOS tap</span><span>iOS 点击</span>
+          <span><t>iOS tap</t><t>iOS 点击</t></span>
         </figcaption>
       </figure>
     </div>
@@ -629,7 +641,7 @@ long press. The selection toolbar is shown upon release.
       <figure class="figure">
         <img src="../../images/platform-adaptations/text-long-press-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via long press on Android" />
         <figcaption class="figure-caption">
-          <span>Android long press</span><span>Android 长按</span>
+          <span><t>Android long press</t><t>Android 长按</t></span>
         </figcaption>
       </figure>
     </div>
@@ -637,7 +649,7 @@ long press. The selection toolbar is shown upon release.
       <figure class="figure text-center">
         <img src="../../images/platform-adaptations/text-long-press-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a position via long press on iOS" />
         <figcaption class="figure-caption">
-          <span>iOS long press</span><span>iOS 长按</span>
+          <span><t>iOS long press</t><t>iOS 长按</t></span>
         </figcaption>
       </figure>
     </div>
@@ -664,7 +676,7 @@ dragging while holding the long press moves the cursor.
       <figure class="figure">
         <img src="../../images/platform-adaptations/text-long-press-drag-android.gif" class="figure-img img-fluid rounded" alt="Expanding word selection via long press drag on Android" />
         <figcaption class="figure-caption">
-          <span>Android long press drag</span><span>Android 长按并拖放</span>
+          <span><t>Android long press drag</t><t>Android 长按并拖放</t></span>
         </figcaption>
       </figure>
     </div>
@@ -672,7 +684,7 @@ dragging while holding the long press moves the cursor.
       <figure class="figure text-center">
         <img src="../../images/platform-adaptations/text-long-press-drag-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via long press drag on iOS" />
         <figcaption class="figure-caption">
-          <span>iOS long press drag</span><span>iOS 长按并拖放</span>
+          <span><t>iOS long press drag</t><t>iOS 长按并拖放</t></span>
         </figcaption>
       </figure>
     </div>
@@ -697,7 +709,7 @@ Android 和 iOS 平台上，
       <figure class="figure">
         <img src="../../images/platform-adaptations/text-double-tap-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on Android" />
         <figcaption class="figure-caption">
-          <span>Android double tap</span><span>Android 双击</span>
+          <span><t>Android double tap</t><t>Android 双击</t></span>
         </figcaption>
       </figure>
     </div>
@@ -705,7 +717,7 @@ Android 和 iOS 平台上，
       <figure class="figure text-center">
         <img src="../../images/platform-adaptations/text-double-tap-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on iOS" />
         <figcaption class="figure-caption">
-          <span>iOS double tap</span><span>iOS 双击</span>
+          <span><t>iOS double tap</t><t>iOS 双击</t></span>
         </figcaption>
       </figure>
     </div>

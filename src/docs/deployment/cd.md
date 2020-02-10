@@ -48,7 +48,7 @@ Visit the [fastlane docs][fastlane] for more info.
 1. Initialize the fastlane projects for each platform.
 
    初始化各平台的 fastlane 项目：
-
+   
     * ![Android](/images/cd/android.png) In your `[project]/android`
     directory, run `fastlane init`.
       
@@ -72,8 +72,8 @@ Visit the [fastlane docs][fastlane] for more info.
       文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
     
     * ![iOS](/images/cd/ios.png) Check that `app_identifier` in
-    `[project]/ios/Appfile` also matches Info.plist's bundle identifier. Fill in
-    `apple_id`, `itc_team_id`, `team_id` with your respective account info.
+    `[project]/ios/Appfile` also matches Info.plist's bundle identifier. 
+    Fill in `apple_id`, `itc_team_id`, `team_id` with your respective account info.
     
       ![iOS](/images/cd/ios.png) 检查在 `[project]/ios/Appfile` 中的
       `app_identifier` 是否匹配 Info.plist 文件中的 bundle identifier.
@@ -142,7 +142,7 @@ Visit the [fastlane docs][fastlane] for more info.
     ready to test and deploy using TestFlight or App Store.
     
       ![iOS](/images/cd/ios.png) 在iOS上，当您准备使用 TestFlight 或 App Store 进行测试和部署时，使用分发证书而不是开发证书进行创建和签名。
-
+      
         * Create and download a distribution certificate in your [Apple Developer Account console][].
         
           在 [Apple Developer Account console][] 创建并下载一个分发证书。
@@ -205,7 +205,7 @@ process to a continuous integration (CI) system.
 1. Run the Fastfile script on each platform.
 
    在每个平台上运行 Fastfile 脚本。
-
+   
     * ![Android](/images/cd/android.png) `cd android` then
     `fastlane [name of the lane you created]`.
     * ![iOS](/images/cd/ios.png) `cd ios` then
@@ -297,9 +297,8 @@ dependencies are stable and reproducible between local and cloud machines. Howev
       
       ```
       source "https://rubygems.org"
-
-        gem "fastlane"
-        ```
+      gem "fastlane"
+      ```
     * In both directories, run `bundle update` and check both `Gemfile` and
     `Gemfile.lock` into source control.
     
@@ -326,7 +325,7 @@ repository root.
     * See [fastlane CI documentation][] for CI specific setup.
     
       有关特定于 CI 的设置，请参见 [fastlane CI 文档][]。
-
+    
     * During the setup phase, depending on the platform, make sure that:
     
       在设置阶段，根据平台，确保以下几点：
@@ -338,7 +337,7 @@ repository root.
          * For Android, make sure the Android SDK is available and the `ANDROID_HOME`
          path is set.
            
-           对于 Android 平台， 请确保已经设置正确的 `ANDROID_HOME` 环境变量。
+           对于 Android 平台，请确保已经设置正确的 `ANDROID_HOME` 环境变量。
          
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
            
@@ -351,7 +350,7 @@ repository root.
     * In the script phase of the CI task:
     
       在 CI 任务的脚本阶段：
-
+      
          * Run `flutter build appbundle` or
            `flutter build ios --release --no-codesign`,
            depending on the platform.
@@ -371,17 +370,16 @@ repository root.
 
 ### 参考
 
-The [Flutter Gallery in the Flutter
-repo][]
+The [Flutter Gallery in the Flutter repo][]
 uses fastlane for continuous deployment. See the source for a working example
 of fastlane in action. Also see the Flutter framework repository's
 [Cirrus script][].
 
-[Flutter repo 里的示例应用 Flutter Gallery][Flutter Gallery in the Flutter repo] 使用 fastlane 连续部署。
-有关 fastlane 实际运行示例，请参阅源代码。另请参阅 Flutter 框架仓库库的 [Cirrus 脚本][]。
+[Flutter repo 里的示例应用 Flutter Gallery][Flutter Gallery in the Flutter repo] 
+使用 fastlane 连续部署。有关 fastlane 实际运行示例，请参阅源代码。
+另请参阅 Flutter 框架仓库库的 [Cirrus 脚本][Cirrus script]。
 
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
-
 [fastlane CI 文档]: https://docs.fastlane.tools/best-practices/continuous-integration
 
 ## Other services
@@ -391,17 +389,6 @@ of fastlane in action. Also see the Flutter framework repository's
 The following are some other options available to help automate the delivery of your application.
 
 其他关于如何进行持续交付的服务：
-
-* [GitLab Continuous Integration
-  (GitLab CI/CD)][].
-  You'll need to create and configure a `.gitlab-ci.yml` file. You can 
-  [find an example][]
-  in the [flutter_redux library][].
-  
-  [GitLab 的持续交付集成 (GitLab CI/CD)][GitLab Continuous Integration
-  (GitLab CI/CD)].
-  你需要创建一个 `.gitlab-ci.yml` 的配置文件，你可以在 [flutter_redux library][]
-  这个 repo 找到 [例子][find an example]。
   
 * [Codemagic CI/CD for Flutter][]
   

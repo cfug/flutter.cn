@@ -70,7 +70,8 @@ when designing your app:
 
     当重新遇到与前一帧相同的子 widget 实例时，将停止遍历。
     这种技术在框架内部大量使用，用于优化动画不影响子树的动画。
-    请参阅 [TransitionBuilder] 模式和使用此原则的 [SlideTransition]，
+    请参阅 [`TransitionBuilder`] 模式和遵循此原则的 
+    [SlideTransition 代码][source code for `SlideTransition`]，
     以避免在动画过程中重建其后代 widget。
 
 Also see:

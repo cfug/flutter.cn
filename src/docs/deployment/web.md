@@ -22,6 +22,8 @@ of your app.
 
 This page covers the following topics:
 
+本页面内容囊括了如下主题：
+
 * [Adding a launcher icon](#adding-a-launcher-icon)
 
   [添加一个桌面图标](#adding-a-launcher-icon)

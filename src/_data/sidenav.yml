@@ -218,7 +218,7 @@
             - title: 版本升级
               permalink: /docs/development/tools/sdk/upgrading
             - title: 版本列表
-              permalink: /docs/development/tools/sdk/archive
+              permalink: /docs/development/tools/sdk/releases
             - title: 重要改动 (Breaking changes)
               permalink: /docs/release/breaking-changes
             - title: 版本说明

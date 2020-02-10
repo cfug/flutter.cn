@@ -1,5 +1,5 @@
 ---
-title: 运行，调试以及热重载
+title: 运行、调试和热重载
 short-title: 调试
 description: 如何在使用 Flutter module 的混合应用运行调试以及热重载
 ---

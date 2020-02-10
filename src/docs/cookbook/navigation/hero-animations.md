@@ -24,9 +24,10 @@ the two screens.
 Use the [`Hero`][] widget
 to animate a widget from one screen to the next.
 
-在 Flutter 中，可以通过 [`Hero`]({{site.api}}/flutter/widgets/Hero-class.html) 组件实现页面切换时组件的转场动画。
+在 Flutter 中，可以通过 [`Hero`][] widget 实现页面切换时组件的转场动画。
 
 This recipe uses the following steps:
+
 这个教程将包含以下步骤：
 
   1. Create two screens showing the same image.

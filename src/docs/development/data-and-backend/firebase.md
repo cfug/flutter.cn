@@ -26,7 +26,7 @@ Firebase supports Flutter. For more information, see:
 Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下面这些链接：
 
 * [Getting started with Firebase and Flutter][started]
-   in the [Firebase docs][]
+  in the [Firebase docs][]
   
   [Firebase 文档][Firebase docs] 中的 [将 Firebase 添加到您的 Flutter 应用][started]
 
@@ -54,30 +54,26 @@ Also, the Flutter community has created docs and
 videos that you might find useful:
 
 当然，Flutter 社区也创建了一些可能会对你有用的文档：
-
-* [Authenticating users with Firebase and Flutter][authenticating]
-   
-  [在 Flutter 中使用 Firebase 实现用户鉴权][authenticating]
    
 * [Building chat app with Flutter and Firebase][chat app]
    
-  [在 Flutter 中使用 Firebase 构建聊天应用][chat app]
+  [在 Flutter 中使用 Firebase 构建聊天应用][chat app]（文章）
 
 * [Using Firestore as a backend to your Flutter app][video] (video)
 
-  [在你的 Flutter 应用中使用 Firestore 作为后端][video] (video)
+  [在你的 Flutter 应用中使用 Firestore 作为后端][video] (视频)
 
 * [Live Coding Firebase Authentication with Flutter][video2] (video)
 
-  [在 Flutter 中使用 Firebase 进行验证的代码演示][video2] (video)
+  [在 Flutter 中使用 Firebase 进行验证的代码演示][video2] (视频)
 
 * [Flutter & Firebase Auth 01][video3] (video)
 
-  [使用 Flutter & Firebase 进行验证 01][video3] (video)
+  [使用 Flutter & Firebase 进行验证 01][video3] (视频)
 
 * [Flutter: Firebase Tutorial Part 1 - Auth and Sign in][video4] (video)
 
-  [Flutter: Firebase 教程第一部分|验证与登陆][video4] (video)
+  [Flutter: Firebase 教程第一部分|验证与登陆][video4] (视频)
 
 [article]: {{site.medium}}/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e

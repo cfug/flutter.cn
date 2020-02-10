@@ -106,7 +106,7 @@ So far, the `BlueBox` widgets have been squished together
 You can change how the `BlueBox` widgets are spaced
 out using the axis size and alignment properties.
 
-至此，`BlueBox` widget 已经在一起被压扁了（在界面的左边或者上面）。
+至此，`BlueBox` widget 已经在一起被压扁了 (在界面的左边或者上面 )。
 你可以通过轴大小和对齐属性来改变 `BlueBox` Widget 的间距。
 
 ### mainAxisSize property
@@ -168,14 +168,14 @@ The `mainAxisSize` property has two possible values:
 
   下面的样例将会特别指定 `mainAxisSize` 为其默认值 `MainAxisSize.max`。
 
-**1.** Click the **Run** button. 
+1. Click the **Run** button. 
 
-       点击**运行**按钮。
+   点击 **运行** 按钮。
 
-**2.** Change `MainAxisSize.max` to `MainAxisSize.min`,
-       and run again.
+1. Change `MainAxisSize.max` to `MainAxisSize.min`,
+   and run again.
 
-       将 `MainAxisSize.max` 改为 `MainAxisSize.min`，并再次运行。 
+   将 `MainAxisSize.max` 改为 `MainAxisSize.min`，并再次运行。 
 
 {{site.alert.end}}
 {% comment %}
@@ -203,14 +203,14 @@ can position their children in that extra space.
   (Left for `Row`, top for `Column`)
 
 `MainAxisAlignment.start`
-<br> 将其 children 从主轴起点处开始对齐。（`Row` 的起点在左边，`Column` 的起点在顶部）
+<br> 将其 children 从主轴起点处开始对齐。 (`Row` 的起点在左边，`Column` 的起点在顶部 )
 
 `MainAxisAlignment.end`
 <br> Positions children near the end of the main axis. 
   (Right for `Row`, bottom for `Column`)
 
 `MainAxisAlignment.end`
-<br> 将其 children 从主轴终点处开始对齐。（`Row` 的终点在右边，`Column` 的终点在底部）
+<br> 将其 children 从主轴终点处开始对齐。 (`Row` 的终点在右边，`Column` 的终点在底部 )
 
 `MainAxisAlignment.center`
 <br> Positions children at the middle of the main axis.
@@ -257,15 +257,15 @@ can position their children in that extra space.
   下面的样例将特别指定 `mainAxisAlignment` 为其默认值，
   `MainAxisAlignment.start`。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮。
+   点击**运行**按钮。
 
-**2.** Change `MainAxisAlignment.start` to
-         `MainAxisAlignment.end`, and run again.
+1. Change `MainAxisAlignment.start` to
+   `MainAxisAlignment.end`, and run again.
 
-       将 `MainAxisAlignment.start` 改为 `MainAxisAlignment.end`，
-       然后再次运行。
+   将 `MainAxisAlignment.start` 改为 `MainAxisAlignment.end`，
+   然后再次运行。
 
 {{site.alert.end}}
 {% comment %}
@@ -301,26 +301,26 @@ The `crossAxisAlignment` property has five possible values:
 <br> Positions children near the start of the cross axis. (Top for `Row`, Left for `Column`)
 
 `CrossAxisAlignment.start`
-<br> 将其 children 横轴顶部对齐。（顶部是 `Row`，左侧是 `Column`）
+<br> 将其 children 横轴顶部对齐。 (顶部是 `Row`，左侧是 `Column` )
 
 `CrossAxisAlignment.end`
 <br> Positions children near the end of the cross axis. (Bottom for `Row`, Right for `Column`)
 
 `CrossAxisAlignment.end`
-<br> 将其 children 横轴底部对齐。（底部是 `Row`，右侧是 `Column`）
+<br> 将其 children 横轴底部对齐。 (底部是 `Row`，右侧是 `Column` )
 
 `CrossAxisAlignment.center`
 <br> Positions children at the middle of the cross axis. (Middle for `Row`, Center for `Column`)
 
 `CrossAxisAlignment.center`
-<br> 将其 children 横轴中心对齐。（中间是 `Row`，中心是 `Column`）
+<br> 将其 children 横轴中心对齐。 (中间是 `Row`，中心是 `Column` )
 
 `CrossAxisAlignment.stretch`
 <br> Stretches children across the cross axis. 
   (Top-to-bottom for `Row`, left-to-right for `Column`)
 
 `CrossAxisAlignment.stretch`
-<br>沿横轴延伸 children。（在 `Row` 中是从顶至底，`Column` 则是从左至右）
+<br>沿横轴延伸 children。 (在 `Row` 中是从顶至底，`Column` 则是从左至右 )
 
 `CrossAxisAlignment.baseline`
 <br> Aligns children by their character baselines.
@@ -331,7 +331,7 @@ The `crossAxisAlignment` property has five possible values:
 
 `CrossAxisAlignment.baseline`
 <br> 根据 children 的基线对子节点。
-  （仅限`Text`类，并要求 `textBaseline` 属性设置为
+   (仅限`Text`类，并要求 `textBaseline` 属性设置为
   `TextBaseline.alphabetic`。
   在 [Text class](#text-class) 小节中查看样例。
 
@@ -359,15 +359,15 @@ The `crossAxisAlignment` property has five possible values:
   `MainAxisAlignment.spaceAround`，`Row` 现在包含一个比
   “BlueBox” Widget 更高的 `BiggerBlueBox` Widget。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Change `CrossAxisAlignment.center` to
-       `CrossAxisAlignment.start`, and run again.
+1. Change `CrossAxisAlignment.center` to
+   `CrossAxisAlignment.start`, and run again.
 
-       将 `CrossAxisAlignment.center` 改为 
-       `CrossAxisAlignment.start`，并再次运行。
+   将 `CrossAxisAlignment.center` 改为 
+   `CrossAxisAlignment.start`，并再次运行。
 
 {{site.alert.end}}
 {% comment %}
@@ -444,7 +444,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   <br> The widget's preferred size is used. (Default)
 
   `FlexFit.loose`
-  <br> 使用 Widget 的自身作为首选大小。（默认情况下）
+  <br> 使用 Widget 的自身作为首选大小。 (默认情况下 )
 
   `FlexFit.tight`
   <br> Forces the widget to fill all of its extra space.
@@ -458,14 +458,14 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   在这个样例中，改变 `fit` 属性使 `Flexible` widgets
   能够填充剩余空间。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Change both `fit` values to `FlexFit.tight`, 
-       and run again.
+1. Change both `fit` values to `FlexFit.tight`, 
+   and run again.
 
-       将所有 `fit` 的值设为 `FlexFit.tight`，并再次运行。
+   将所有 `fit` 的值设为 `FlexFit.tight`，并再次运行。
 
 {{site.alert.end}}
 {% comment %}
@@ -490,7 +490,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 
   在下面这个例子中，`Row` 包含了一个 `BlueBox` widget 和
   两个 `Flexible` widgets 包裹的 `BlueBox` Widget。
-  `Flexible` widgets 包含了 `flex` 属性，并将其值设为 1。（默认值）
+  `Flexible` widgets 包含了 `flex` 属性，并将其值设为 1。 (默认值 )
 
   When `flex` properties are compared against one another, 
   the ratio between their `flex` values determines 
@@ -510,8 +510,8 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   The `BlueBox` widget (or fixed-size widget)
   remains the same size.
 
-  在这个例子中，`flex` 值的总和为（2），这决定了每个 `Flexible` widgets 
-  都能分到总剩余空间的一半空间。`BlueBox` widget（或是 fixed-size widget）得到了相同的大小。
+  在这个例子中，`flex` 值的总和为 (2 )，这决定了每个 `Flexible` widgets 
+  都能分到总剩余空间的一半空间。`BlueBox` widget (或是 fixed-size widget )得到了相同的大小。
 
 {{site.alert.end}}
 {% comment %}
@@ -564,13 +564,13 @@ wrap a widget and force the widget to fill extra space.
   `Expanded` widget forces its child widget to
   fill extra space.
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮 
+   点击**运行**按钮 
 
-**2.** Wrap the second `BlueBox` widget in an `Expanded` widget. 
+1. Wrap the second `BlueBox` widget in an `Expanded` widget. 
 
-       在第二个 `BlueBox` widget 外包裹一个 `Expanded` widget。
+   在第二个 `BlueBox` widget 外包裹一个 `Expanded` widget。
 
 For example: 
 
@@ -579,10 +579,10 @@ For example:
 ```dart
 Expanded(child: BlueBox(),),
 ```
-**3.** Select the **Format** button to properly format the code,
-       and run again. 
+1. Select the **Format** button to properly format the code,
+   and run again. 
         
-       点击 **Format (格式化)** 按钮格式化你的代码，再重新运行一次。
+   点击 **Format (格式化)** 按钮格式化你的代码，再重新运行一次。
          
 {{site.alert.end}}
 {% comment %}
@@ -619,14 +619,14 @@ create empty space.
   下面的样例使用 `SizedBox` widget 包裹了中间的 `BlueBox` widget，
   并将 `BlueBox` 的宽度设为 100 逻辑像素。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Add a `height` property equal to 100 logical pixels
-         inside the `SizedBox` widget, and run again. 
+1. Add a `height` property equal to 100 logical pixels
+   inside the `SizedBox` widget, and run again. 
 
-       将 `SizedBox` widget 中的 `height` 设为 100 逻辑像素，并重新运行。
+   将 `SizedBox` widget 中的 `height` 设为 100 逻辑像素，并重新运行。
 
 {{site.alert.end}}
 {% comment %}
@@ -650,17 +650,17 @@ create empty space.
   其中 第一个和第二个 `BlueBox` widget 包裹 `SizedBox`。
   `SizedBox` widget 的 `width` 设为 50 逻辑像素。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Create more space by adding another
-         `SizedBox` widget (25 logical pixels wide) 
-         between the second and third `BlueBox` widgets,
-         and run again.
+1. Create more space by adding another
+   `SizedBox` widget (25 logical pixels wide) 
+   between the second and third `BlueBox` widgets,
+   and run again.
 
-       通过在第二个和第三个 `BlueBox` widget 之间
-       添加另一个 `SizedBox` widget (宽 25 逻辑像素)以创建更多空间。 
+   通过在第二个和第三个 `BlueBox` widget 之间
+   添加另一个 `SizedBox` widget (宽 25 逻辑像素)以创建更多空间。 
 
 {{site.alert.end}}
 {% comment %}
@@ -703,14 +703,14 @@ can create space between widgets.
   下面的样例使用 `flex` 值为 1 的 `Spacer` widget，
   分隔最初的两个 `BlueBox` widget。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Add another `Spacer` widget (also with a `flex` value of 1)
-       between the second and third `BlueBox` widgets.
+1. Add another `Spacer` widget (also with a `flex` value of 1)
+   between the second and third `BlueBox` widgets.
 
-       在第二个和第三个 `BlueBox` widget 之间添加另一个 `Spacer` widget。（flex 值仍然为 1）
+   在第二个和第三个 `BlueBox` widget 之间添加另一个 `Spacer` widget。 (flex 值仍然为 1 )
 
 
 {{site.alert.end}}
@@ -742,14 +742,15 @@ for different fonts, sizes, and colors.
   下面的样例将会显示三次"Hey!"，但是使用不同的字体和不同颜色。
   特别指定 `Row` 的 `crossAxisAlignment` 和 `textBaseline` 属性。
 
-**1.** Click the **Run** button. 
+1. Click the **Run** button. 
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Change `CrossAxisAlignment.center` to
-       `CrossAxisAlignment.baseline`, and run again.
+1. Change `CrossAxisAlignment.center` to
+   `CrossAxisAlignment.baseline`, and run again.
 
-       将 `CrossAxisAlignment.center` 改为 `CrossAxisAlignment.baseline`，然后再次运行。
+   将 `CrossAxisAlignment.center` 改为 `CrossAxisAlignment.baseline`，
+   然后再次运行。
        
 {{site.alert.end}}
 {% comment %}
@@ -780,20 +781,21 @@ Flutter 将会为 [Material][] 和 [Cupertino][]
 
   下面的样例显示了来自 [Material Icon library][] 的红蓝 `Icons.widget` Widget。
 
-**1.** Click the **Run** button. 
+1. Click the **Run** button. 
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Add another `Icon` from the 
-         [Material Icon library][]
-         with a size of 50.
+1. Add another `Icon` from the 
+   [Material Icon library][]
+   with a size of 50.
 
-       添加另一个来自 [Material Icon library][] 的 `Icon` 并将其大小设为 50。
+   添加另一个来自 [Material Icon library][] 的 `Icon` 并将其大小设为 50。
 
-**3.** Give the `Icon` a color of `Colors.amber` from the 
-         [Material Color palette][], and run again.  
+1. Give the `Icon` a color of `Colors.amber` from the 
+   [Material Color palette][], and run again.  
 
-       给 `Icon` 设置一个来自 [Material Color palette][] 的 `Colors.amber` 色，然后再次运行。
+   给 `Icon` 设置一个来自 [Material Color palette][] 的
+   `Colors.amber` 色，然后再次运行。
 
 {{site.alert.end}}
 {% comment %}
@@ -833,20 +835,20 @@ the following example uses an image from the network.
 
   在这个样例中，`Image.network` 包含了一个短小的 URL。
 
-**1.** Click the **Run** button. 
+1. Click the **Run** button. 
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Change the short URL to the actual URL: 
+1. Change the short URL to the actual URL: 
 
-       将短 URL 替换为实际 URL：
+   将短 URL 替换为实际 URL：
 
   `https://github.com/flutter/website/blob/master/examples/layout/sizing/images/pic3.jpg?raw=true`
 
-**3.** Then change `pic3.jpg` to `pic1.jpg` or `pic2.jpg`, 
-         and run again. 
+1. Then change `pic3.jpg` to `pic1.jpg` or `pic2.jpg`, 
+   and run again. 
 
-       然后将 `pic3.jpg` 改为 `pic1.jpg` 或 `pic2.jpg`，然后重新运行。
+   然后将 `pic3.jpg` 改为 `pic1.jpg` 或 `pic2.jpg`，然后重新运行。
 
 {{site.alert.end}}
 {% comment %}
@@ -897,7 +899,7 @@ so it's displayed below the name, title, and icon.
 
 在[第二部分](#part-2)中，你将会在 `Row` 外包裹一个 `Column`，
 所以你的代码中就包含了
-一个 Column（Row（Column））。然后你将调整最外面的`Column`的布局，
+一个 Column (Row (Column) )。然后你将调整最外面的`Column`的布局，
 所以它看起来不错。最后，您将添加联系信息到最外面的`Column`的 children 中，
 所以它将显示在名称，标题和图标下方。
 
@@ -1050,7 +1052,7 @@ which are positioned below the contact information.
   * A second empty `Row` where you'll add
     four icons (Part 3).
 
-    第二个空的 `Row`，你将会添加四个图标。（第三部分）
+    第二个空的 `Row`，你将会添加四个图标。 (第三部分 )
 
   The `Column`'s list of widgets should be formatted as follows, 
   so the contact information and icons are displayed below the

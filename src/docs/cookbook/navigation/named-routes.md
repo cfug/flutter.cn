@@ -18,22 +18,26 @@ In the [Navigate to a new screen and back][] recipe,
 you learned how to navigate to a new screen by creating a new route and
 pushing it to the [`Navigator`][].
 
-在 [导航到一个新页面和返回](/docs/cookbook/navigation/navigation-basics/) 一节中，
-我们通过创建一个新的路由并将它推到 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 类中学习到了如何导航到新的一个界面 (screen)。
+在 [导航到一个新页面和返回][Navigate to a new screen and back] 一节中，
+我们通过创建一个新的路由并将它推到 [`Navigator`][] 
+类中学习到了如何导航到新的一个界面 (screen)。
 
 However, if you need to navigate to the same screen in many parts
 of your app, this approach can result in code duplication.
 The solution is to define a _named route_,
 and use the named route for navigation.
 
-然而，如果我们需要在应用的很多地方导航到同一界面，这样做就会导致代码重复。在这种情况下，定义**命名路由(named route)**并使用它进行导航就会非常方便。
+然而，如果我们需要在应用的很多地方导航到同一界面，
+这样做就会导致代码重复。
+在这种情况下，定义 **命名路由 (named route)** 并使用它进行导航就会非常方便。
 
 To work with named routes,
 use the [`Navigator.pushNamed()`][] function.
 This example replicates the functionality from the original recipe,
 demonstrating how to use named routes using the following steps:
 
-要使用命名路由，我们可以使用 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 方法。下面的例子展示如何使用“命名路由”来实现前一节中的功能。
+要使用命名路由，我们可以使用 [`Navigator.pushNamed()`][] 方法。
+下面的例子展示如何使用“命名路由”来实现前一节中的功能。
 
 ## Directions
 

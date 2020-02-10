@@ -1,6 +1,8 @@
 ---
 title: Handling errors in Flutter
+title: 在 Flutter 里处理错误
 description: How to control error messages and logging of errors
+description: 如何在 Flutter 里处理和打印错误信息
 ---
 
 The Flutter framework catches errors that occur during callbacks

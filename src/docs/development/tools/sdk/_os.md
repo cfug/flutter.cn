@@ -1,12 +1,12 @@
 {% assign id =  include.os | downcase -%}
-{% assign channels =  '稳定版(stable) 测试版(beta) 开发版(dev)' | split: ' ' -%}
+{% assign channels =  'stable beta dev' | split: ' ' -%}
 
 <div id="{{id}}" class="tab-pane
   {%- if id == 'windows' %} active {% endif %}"
   role="tabpanel" aria-labelledby="{{id}}-tab" markdown="1">
 
 {% for channel in channels -%}
-## {{channel | capitalize }} 发布渠道 (channel) ({{include.os}})
+## {{channel | capitalize }} channel ({{include.os}})
 
 Select from the following scrollable list:
 

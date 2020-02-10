@@ -568,7 +568,7 @@ a child inside the existing `MyApp` stateless widget.
 
  3. Add the `build()` method to `RandomWordsState`:
  
-    将 `build()` 方法添加到 `RandomWordState` 中，如下所示：
+    将 `build()` 方法添加到 `RandomWordsState` 中，如下所示：
 
     <?code-excerpt "lib/main.dart (RandomWordsState)" title indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
     ```dart

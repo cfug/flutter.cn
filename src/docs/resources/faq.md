@@ -166,13 +166,13 @@ Flutter 1.0 was launched on Dec 4th, 2018. Thousands of apps
 have shipped with Flutter to hundreds of millions of devices.
 See some sample apps in the [showcase][].
 
-Flutter 1.0 已于 2018 年 12 月推出。成千上万使用了 Flutter 的应用已经被安装到了数亿台设备中。请通过成功 [案例页面][showcase] 了解知名开发者们的成果。
+Flutter 1.0 已于 2018 年 12 月推出。成千上万使用了 Flutter 的应用已经被安装到了数亿台设备中。
+请通过成功 [案例页面][showcase] 了解知名开发者们的成果。
 
 For more information on the launch and subsequent releases,
 see [Flutter 1.0: Google's Portable UI Toolkit][].
 
-更多有关启动和后续版本的信息，你可以查看 [Flutter 1.0: Google's Portable UI
-Toolkit](https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html)。
+更多有关启动和后续版本的信息，你可以查看 [Flutter 1.0: Google's Portable UI Toolkit][]。
 
 ## What does Flutter provide?
 
@@ -509,7 +509,7 @@ Dart scores highly for us on the following primary criteria:
   we need to stay productive at 100k's lines of code, without sacrificing
   approachability or readability of the framework and widgets for our developers.
   
-  _开发人员生产力_。Flutter 的主要价值之一是通过让开发人员用同一套代码创建适用于 iOS 和 Android 的应用而节省开发资源。使用高生产力的语言加速开发，并提升 Flutter 的吸引力。
+  **开发人员生产力**：Flutter 的主要价值之一是通过让开发人员用同一套代码创建适用于 iOS 和 Android 的应用而节省开发资源。使用高生产力的语言加速开发，并提升 Flutter 的吸引力。
   这对于我们的框架团队和开发人员都很重要。
   Flutter 本身的大部分内容所用的语言都和我们提供给用户的一样，所以我们要让十万行代码保持生产力，而不会牺牲框架和部件对我们开发人员的可达性和可读性。
 
@@ -521,7 +521,7 @@ Dart scores highly for us on the following primary criteria:
   Plus, the vast majority of developers have experience with object-oriented
   development, making it easier to learn how to develop with Flutter.
 
-  _面向对象_。对于 Flutter 而言，我们需要一种适合其问题域——创建可视化用户体验——的语言。这个领域中沉淀了数十年的面向对象构建 UI 框架的经验。虽然我们可以使用非面向对象语言，但这意味着，为了解决几个难题，我们要 "重新发明轮子"。此外，绝大多数开发者都拥有面向对象开发的经验，因此可以更轻松地学习如何使用 Flutter 进行开发。
+  **面向对象**：对于 Flutter 而言，我们需要一种适合其问题域——创建可视化用户体验——的语言。这个领域中沉淀了数十年的面向对象构建 UI 框架的经验。虽然我们可以使用非面向对象语言，但这意味着，为了解决几个难题，我们要 "重新发明轮子"。此外，绝大多数开发者都拥有面向对象开发的经验，因此可以更轻松地学习如何使用 Flutter 进行开发。
 
 * _Predictable, high performance_. With Flutter, we want to empower developers
   to create fast, fluid user experiences. In order to achieve that, we need to
@@ -530,7 +530,7 @@ Dart scores highly for us on the following primary criteria:
   performance and delivers predictable performance, without periodic
   pauses that would cause dropped frames.
 
-  _稳定可期的高性能表现_。我们希望开发者能够通过 Flutter 创建快速而流畅的用户体验。为了实现这一点，我们需要能够在每个动画帧期间运行大量的最终开发者代码。这意味着我们需要的语言一方面既要拥有高性能，另一方面又需要避免因周期性的中断而影响帧率，即 "可期性"。
+  **稳定可期的高性能表现**：我们希望开发者能够通过 Flutter 创建快速而流畅的用户体验。为了实现这一点，我们需要能够在每个动画帧期间运行大量的最终开发者代码。这意味着我们需要的语言一方面既要拥有高性能，另一方面又需要避免因周期性的中断而影响帧率，即 "可期性"。
 
 * _Fast allocation_. The Flutter framework uses a functional-style
   flow that depends heavily on the underlying memory
@@ -538,7 +538,7 @@ Dart scores highly for us on the following primary criteria:
   This style was developed in languages with this property and does
   not work efficiently in languages that lack this facility.
 
-  _快速内存分配_。Flutter 框架使用的函数式流程，很大程度上依赖于下层的内存分配器高效地对小型的、短生命周期的内容进行内存分配。这个流程是使用支持这种分配机制的语言进行开发的，在缺少这个机制的语言中无法有效运作。
+  **快速内存分配**：Flutter 框架使用的函数式流程，很大程度上依赖于下层的内存分配器高效地对小型的、短生命周期的内容进行内存分配。这个流程是使用支持这种分配机制的语言进行开发的，在缺少这个机制的语言中无法有效运作。
 
 
 ### Can Flutter run any Dart code?
@@ -589,7 +589,7 @@ the LICENSE file is 54.3 KB (compressed), necessary Java code
 These numbers were measured using [apkanalyzer][],
 which is also [built into Android Studio][].
 
-这些数字是由 [AndroidStudio][] 内置的 [apkanalyzer][] 实测得出。
+这些数字是由 [AndroidStudio][built into Android Studio] 内置的 [apkanalyzer][] 实测得出。
 
 On iOS, a release IPA of the same app has a download size of
 10.9 MB on an iPhone X, as reported by Apple’s App Store Connect.
@@ -615,7 +615,7 @@ These steps happen after archiving your app and shipping it to the store.
 
 从 Flutter SDK 1.12 开始，release 模式下引擎二进制产物将包含 LLVM 的中间语言表示（bitcode）。
 Xcode 将使用 bitcode 为 App Store 生成最终包含了最新的编译器优化和功能的二进制文件。
-Profile 和 Debug 模式下的 Framework 中，bitcode 部分仅包含 _bitcode marker_，因此更能代表引擎的真实大小。
+Profile 和 Debug 模式下的 Framework 中，bitcode 部分仅包含 **bitcode marker**，因此更能代表引擎的真实大小。
 无论你是否使用 bitcode，release 模式下增加的包大小都会在应用归档后并发布到应用商店后，在构建的最终步骤里被移除。
 
 Of course, we recommend that you measure your own app.
@@ -653,7 +653,9 @@ designed to help developers easily achieve a constant 60fps.
 Flutter apps run via natively compiled code&mdash;no
 interpreters are involved. This means Flutter apps start quickly.
 
-Flutter 应用会有很出色的性能。Flutter 设计的目标就是帮助开发者轻松实现 60fps 的稳定帧率。Flutter 应用通过本地编译的代码运行&mdash;不涉及解释过程。这也意味着 Flutter 应用启动会非常快捷。
+Flutter 应用会有很出色的性能。Flutter 设计的目标就是帮助开发者轻松实现 60fps 的稳定帧率。
+Flutter 应用通过本地编译的代码运行&mdash;不涉及解释过程。
+这也意味着 Flutter 应用启动会非常快捷。
 
 ### What kind of developer cycles can I expect? How long between edit and refresh? {#hot-reload}
 
@@ -669,11 +671,13 @@ is retained after a reload. This means you can quickly iterate
 on a screen deeply nested in your app, without starting
 from the home screen after every reload.
 
-另外，Flutter 的热重载是有状态的 (stateful)，这意味着重新加载后 app 的状态会被保留。这样即使您修改的界面在应用很深的位置，重载后您也能直接看到修改后的该界面，而无需从应用首页开始重新操作。
+另外，Flutter 的热重载是有状态的 (stateful)，这意味着重新加载后 app 的状态会被保留。
+这样即使您修改的界面在应用很深的位置，重载后您也能直接看到修改后的该界面，
+而无需从应用首页开始重新操作。
 
 ### How is _hot reload_ different from _hot restart_?
 
-### 热重载 _hot reload_ 相比较热重启 _hot restart_ 的区别在哪里？
+### 热重载 **hot reload** 相比较热重启 **hot restart** 的区别在哪里？
 
 Hot reload works by injecting updated source code files
 into the running Dart VM (Virtual Machine). This includes
@@ -681,7 +685,9 @@ not only adding new classes, but also adding methods and
 fields to existing classes, and changing existing functions.
 A few types of code changes cannot be hot reloaded though:
 
-热重载是通过将更改过的源代码文件注入到正在运行的 Dart VM 中来实现的。这不仅包括添加新的类，还包括在既存的类里添加方法和字段，以及修改既有的方法。不过有少数代码修改是无法被热重载的：
+热重载是通过将更改过的源代码文件注入到正在运行的 Dart VM 中来实现的。
+这不仅包括添加新的类，还包括在既存的类里添加方法和字段，
+以及修改既有的方法。不过有少数代码修改是无法被热重载的：
 
 * Global variable initializers.
 
@@ -765,7 +771,9 @@ We believe Flutter works well on tablets. We do not currently implement
 all of the tablet-specific adaptations recommended by Material Design,
 though we are planning further investment in this area.
 
-我们认为，Flutter 会在平板电脑上运行良好。我们目前没有覆盖到全部的 Material Design 平板电脑适配规则，但我们正计划在这个领域进一步加大投入。
+我们认为，Flutter 会在平板电脑上运行良好，
+我们目前没有覆盖到全部的 Material Design 平板电脑适配规则，
+但我们正计划在这个领域进一步加大投入。
 
 ### Does Flutter run on the web?
 
@@ -777,7 +785,9 @@ work on the web preview, but there are some caveats
 while we’re still in preview. Check out the
 [web instructions][] for more details.
 
-Flutter web 目前处于 [技术预览状态][technical preview]。你可以打包现有 Flutter 代码运行在预览版 web 上，但由于我们仍旧是预览版，所以会有一些警告。你可以在 [web instructions][] 查看更多详细信息。
+Flutter web 目前处于 [技术预览状态][technical preview]。
+你可以打包现有 Flutter 代码运行在预览版 web 上，但由于我们仍旧是预览版，
+所以会有一些警告。你可以在 [web instructions][] 查看更多详细信息。
 
 ### Can I use Flutter to build desktop apps?
 
@@ -787,7 +797,8 @@ Yes, but right now it's not very well supported.
 We're working on making this a first class experience.
 The current progress is documented [on the Flutter wiki][].
 
-可以，但目前支持得并不完美。我们正在致力于为桌面应用打造最佳体验。这方面的进展在 [我们的 wiki][on the Flutter wiki] 上可以了解到。
+可以，但目前支持得并不完美。我们正在致力于为桌面应用打造最佳体验，
+这方面的进展在 [我们的 wiki][on the Flutter wiki] 上可以了解到。
 
 ### Can I use Flutter inside of my existing native app?
 
@@ -802,7 +813,8 @@ See our integration documentation in the [add-to-app section][] of our website.
 
 请参考 [这个文档][add-to-app section]，查看如何将 Flutter 加入现有的项目。
 
-目前的两个演示项目是 [platform_view][] 和 [flutter_view][]。我们的 wiki 页面中也提供了一些初始文档：[将 Flutter 添加至现有应用][Add Flutter to existing apps]。
+目前的两个演示项目是 [platform_view][] 和 [flutter_view][]，
+我们的 wiki 页面中也提供了一些初始文档：[将 Flutter 添加至现有应用][add-to-app section]。
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -814,13 +826,16 @@ However, we want to avoid the "lowest common denominator" problem
 with most cross-platform APIs, so we do not intend to build
 cross-platform APIs for all native services and APIs.
 
-可以。Flutter 默认即为开发者提供了操作系统中**某些**平台专属服务和 API 的操作入口。但是，我们希望避免大多数跨平台 API 的“最小公约数”问题，因此我们不打算为所有本地服务和 API 构建跨平台的操作 API。
+可以。Flutter 默认即为开发者提供了操作系统中 **一些** 平台专属服务和 API 的操作入口。
+但是，我们希望避免大多数跨平台 API 的“最小公约数”问题，
+因此我们不打算为所有本地服务和 API 构建跨平台的操作 API。
 
 A number of platform services and APIs have
 [ready-made packages][] available on pub.dev.
 Using an existing package [is easy][].
 
-很多平台服务和 API 都在 Pub 站点中提供了 [现成的代码包][ready-made packages]，我们可以根据 [说明][is easy] 使用它们，非常方便。
+很多平台服务和 API 都在 Pub 站点中提供了 [现成的代码包][ready-made packages]，
+我们可以根据 [说明][is easy] 使用它们，非常方便。
 
 Finally, we encourage developers to use Flutter's
 asynchronous message passing system to create your
@@ -1191,7 +1206,7 @@ Dart 的 [`Iterable`][] API 也重度使用了这个范式 (如 map, reduce, whe
 就采用了包含多个事件监听者的订阅模型。
 
 **Class-based object-oriented programming**
-: Most of the APIs of the framework are built using classes
+<br> Most of the APIs of the framework are built using classes
   with inheritance. We use an approach whereby we define
   very high-level APIs in our base classes, then specialize
   them iteratively in subclasses. For example,
@@ -1256,7 +1271,7 @@ Dart 的 [`Iterable`][] API 也重度使用了这个范式 (如 map, reduce, whe
   [`Chip`][] class).
 
 **响应式编程 (reactive programming)** 
-<br>：Widget 和元素树有时候被描述为响应式的，
+<br> Widget 和元素树有时候被描述为响应式的，
 因为随 widget 构造方法引入的新输入会随着其 build 方法
 传播给更低等级的 widget；
 而底层 widget 中出现的修改 (如响应用户的输入) 也会
@@ -1312,7 +1327,7 @@ Widget 的 build 方法如果只是包含其针对变化如何响应的表达式
 如此一来 Dart 分析器就能捕获到 state 和 widget 不匹配的情况。
 类似的，[`GlobalKey`][] 类就接受一个类型参数，
 从而类型安全地访问一个 widget 的 state (会使用运行时检查)。
-[`Route`][] 接口也在被 [`pop`][] 时接受类型参数，
+[`Route`][] 接口也在被 [popped][] 时接受类型参数，
 另外 [`List`][], [`Map`][], [`Set`][] 这些集合也都如此，
 这样就可以在分析或者运行时尽早发现类型不匹配的错误。
 

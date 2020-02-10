@@ -19,7 +19,7 @@ The {{site.sdk.channel | capitalize }} channel contains the
 most stable Flutter builds. See [Flutter’s channels][] for details.
 
 Flutter 的 {{site.sdk.channel | capitalize }} channel 是相对稳定的发布版本，
-查阅这个文档了解更多：[Flutter’s channels][]。
+查阅这个文档了解更多：[Flutter 的构建（发布）渠道 channels][Flutter’s channels]。
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -48,7 +48,8 @@ However, you can get the SDK directly from
 [GitHub repo][] by cloning the master channel,
 and then triggering a download of the SDK dependencies:
 
-我们并没有对 master channel 的提供打包下载，不过，你可以通过 `git clone` 我们在 
+我们并没有对 master channel 的提供打包下载，
+不过，你可以通过 `git clone` 我们在 
 [Github 上 repo]({{site.repo.flutter}}) 的 master 分支来使用。
 
 ```terminal
@@ -59,7 +60,7 @@ $ ./flutter/bin/flutter --version
 For additional details on how our installation bundles are structured,
 see [Installation bundles][].
 
-关于安装包结构的更多信息，请查看这个页面：[Installation bundles][]。
+关于安装包结构的更多信息，请查看这个页面：[Flutter 安装包结构][Installation bundles]。
 
 [Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles

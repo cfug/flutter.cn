@@ -7,6 +7,7 @@ prev:
   path: /docs/cookbook/lists/grid-lists
 next:
   title: Place a floating app bar above a list
+  title: 在列表顶部放置一个浮动的 app bar
   path: /docs/cookbook/lists/floating-app-bar
 js:
   - defer: true

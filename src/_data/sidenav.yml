@@ -313,7 +313,7 @@
     # - title: Flutter learning resources # TODO
     - title: 常见问题解答
       permalink: /docs/resources/faq
-    - title: Design Documents
+    - title: 规划文档
       permalink: /docs/resources/design-docs
 
 - title: 参考资料

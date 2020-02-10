@@ -25,7 +25,7 @@ If you already have Flutter on your system and you're on the default stable chan
 
 When creating a Flutter project, you can add the `--androidx` flag to ensure the generated project targets the new support library. More information about migrating existing projects to AndroidX can be found [on flutter.dev](https://flutter.dev/docs/development/packages-and-plugins/androidx-compatibility#for-plugin-maintainers-migrating-a-flutter-plugin-to-androidx). We're actively working on bringing AndroidX / Jetifier support for apps with mixed AndroidX / Android Support libraries, such as in add-to-app cases, and will have more to share on this front in a forthcoming post.
 
-当创建 Flutter 项目的时候，你可以通过添加 `--androidx`  来确保生成的项目文件支持 AndroidX，更多关于将项目迁移到 AndroidX 的相关信息，请访问 [官方文档](/docs/development/packages-and-plugins/androidx-compatibility#for-plugin-maintainers-migrating-a-flutter-plugin-to-androidx) 上的说明。我们也在积极努力为使用了 AndroidX 和 Android 混合库的应用带去 AndroidX 或 Jetifier 的支持，也会将其作为 add-to-app 的中的一项来支持，接下来的文章中会为大家带来更多相关的内容。
+当创建 Flutter 项目的时候，你可以通过添加 `--androidx`  来确保生成的项目文件支持 AndroidX，更多关于将项目迁移到 AndroidX 的相关信息，请访问 [官方文档](/docs/development/androidx-migration#for-plugin-maintainers-migrating-a-flutter-plugin-to-androidx) 上的说明。我们也在积极努力为使用了 AndroidX 和 Android 混合库的应用带去 AndroidX 或 Jetifier 的支持，也会将其作为 add-to-app 的中的一项来支持，接下来的文章中会为大家带来更多相关的内容。
 
 ## Support for Android app bundles and 64-bit Android apps
 

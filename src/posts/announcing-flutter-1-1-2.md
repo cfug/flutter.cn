@@ -90,8 +90,6 @@ To try Add-to-App, see the [website documentation](https://flutter.cn/docs/devel
 
 **Dart 2.7**
 
-**Dart 2.7**
-
 Of course, everything we do in Flutter is based on Dart, so if you haven't already read about extension methods and safe string handling (including emojis), or want an update on null safety using non-nullable types, you can find that information in the [Dart 2.7 announcement](https://medium.com/dartlang/dart-2-7-a3710ec54e97).
 
 当然，我们在 Flutter 中所做的一切都是构建在 Dart 的基础上的，所以，如果您还没有听过扩展方法和字符串安全处理 (包含表情符)，或是想要了解非空类型在空安全方面的最新知识，不妨阅读[《Dart 2.7 现已发布》](https://medium.com/dartlang/dart-2-7-a3710ec54e97)进一步了解相关信息。

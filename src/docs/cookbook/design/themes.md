@@ -51,8 +51,7 @@ To share a Theme across an entire app, provide a
 [`ThemeData`][] to the `MaterialApp` constructor.
 
 全局 Theme 会影响整个 app 的颜色和字体样式。
-只需要向 `MaterialApp` 构造器传入
-[`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html) 即可。
+只需要向 `MaterialApp` 构造器传入 [`ThemeData`][] 即可。
 
 If no `theme` is provided, Flutter creates a default theme for you.
 
@@ -133,7 +132,8 @@ Theme(
 Rather than overriding everything, it often makes sense to extend the parent
 theme. You can handle this by using the [`copyWith()`][] method.
 
-相比从头开始定义一套样式，从父级 Theme 扩展可能更常规一些，使用 [`copyWith`]({{site.api}}/flutter/material/ThemeData/copyWith.html) 方法即可。
+相比从头开始定义一套样式，从父级 Theme 扩展可能更常规一些，使用 
+[`copyWith()`][] 方法即可。
 
 <!-- skip -->
 ```dart
@@ -215,9 +215,9 @@ class MyApp extends StatelessWidget {
         // Define the default TextTheme. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: TextTheme(
-          headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          title: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-          body1: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+          headline5: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+          bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
         ),
       ),
       home: MyHomePage(
@@ -243,7 +243,7 @@ class MyHomePage extends StatelessWidget {
           color: Theme.of(context).accentColor,
           child: Text(
             'Text with a background color',
-            style: Theme.of(context).textTheme.title,
+            style: Theme.of(context).textTheme.headline6,
           ),
         ),
       ),

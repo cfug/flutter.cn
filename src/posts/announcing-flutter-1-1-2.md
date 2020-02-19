@@ -36,7 +36,7 @@ More big news in Flutter 1.12 is the completion of our work to support the iOS 1
 
 Flutter 1.12 带来的一个重磅消息是，我们现已支持 iOS 13 风格的界面和操作。这包括在 Cupertino widget 中对深色模式的全面支持。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/ios-13-dark-mode.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/ios-13-dark-mode.png){:width="95%"}
 
 If you'll notice in the screen shots above, dark mode support is much more than just swapping out the background color, but also adapting the rest of the colors to be a good match. Such deep attention to dark mode was a huge amount of work, but worth it to get pixel-perfect iOS design support across both dark and light mode.
 
@@ -46,7 +46,7 @@ Also, in our continuing goal for pixel-perfection for iOS 13, we've added two ne
 
 在 iOS 13 上实现像素级完美是我们一直在努力的目标，为此，我们在 Flutter 1.12 中新增了 2 个 widget。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/cupertino-context-menu-and-cupertino-sliding-segmented-control.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/cupertino-context-menu-and-cupertino-sliding-segmented-control.png){:width="95%"}
 
 [CupertinoContextMenu](https://api.flutter.cn/flutter/cupertino/CupertinoContextMenu-class.html) and [CupertinoSlidingSegmentedControl](https://api.flutter.cn/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html)
 
@@ -62,7 +62,7 @@ Another improvement in our mobile support is an update to Add-to-App, which is t
 
 Add-to-App 功能更新是我们在移动支持方面所做的另一项改进。通过 Add-to-App，开发者可以将 Flutter 集成到现有的 Android 或 iOS 应用中。我们一直在努力简化集成流程，让您可以更轻松地把 Flutter 代码库添加到应用中，比如说，我们在 Android Studio 中添加了一个全新的 Flutter 模块向导。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-module.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-module.png){:width="95%"}
 
 With Flutter 1.12, Add-to-App is now officially supported for adding one fullscreen Flutter instance to your app. In supporting this functionality, we've also:
 
@@ -112,7 +112,7 @@ The Flutter 1.12 master, dev and beta channels all provide improved support for 
 
 Flutter 1.12 master、dev 和 beta 三个渠道所提供的 web 支持均有明显提升。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/support-for-web.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/support-for-web.png){:width="95%"}
 
 One happy customer of Flutter on the web is [Rivet](https://rivet.area120.com/link/flutter), pictured above. Rivet is an education project that currently has a mobile app in production. They're using Flutter and Firebase to build a web version of their app that they plan to launch in early 2020.
 
@@ -130,7 +130,7 @@ macOS desktop support isn't far behind, moving from tech preview to alpha, avail
 
 macOS 桌面支持的进展也很顺利，现在已经从技术预览版迭代至 alpha 版，并通过 master 和 dev 两个渠道开放下载。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/macos-desktop-support.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/macos-desktop-support.png){:width="95%"}
 
 Pictured here at desktop size is [a new version of the Flutter Gallery](https://flutter.github.io/samples/#/) that's been completely updated to support macOS in addition to Android, iOS, and web.
 
@@ -146,7 +146,7 @@ Creating a Flutter project that runs on macOS is now just like creating any othe
 
 现在，您只需通过 "flutter create" 命令就能创建一个可在 macOS 平台上运行的 Flutter 项目，操作步骤和新建一个普通的 Flutter 项目一样简单。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-create.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-create.png){:width="95%"}
 
 Notice the new macos directory created by default
 
@@ -156,7 +156,7 @@ In addition to the tooling support, we've also been working on the density that'
 
 除了工具支持之外，我们也在一直探索适合桌面级应用的 widget 密度。移动应用需要较大的控制区域才能正常进行触控操作，但在桌面应用中，用户更可能会使用鼠标。为了把 Flutter 带到桌面，我们现在允许您选择 widget 密度，以便更好地满足桌面用户的需求。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/sample-demonstrating-flutters-implementation-of-the-material-density-guidelines.gif)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/sample-demonstrating-flutters-implementation-of-the-material-density-guidelines.gif){:width="95%"}
 
 [Sample](https://github.com/gspencergoog/density_sample) demonstrating Flutter's implementation of [the Material Density guidelines](https://material.io/design/layout/applying-density.html)
 
@@ -238,7 +238,7 @@ If you aren't already using [DartPad](https://dartpad.dev/), you should try it o
 
 如果您还没用过 [DartPad](https://dartpad.dev/) 的话，不妨现在就上手试试！有了它，您不用安装任何工具就能体验 Dart 的功能。此外，最新的 DartPad 还支持 Flutter！
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/dartpad.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/dartpad.png){:width="95%"}
 
 The new DartPad leverages Flutter's web support so that when you're writing Flutter code on the left, you're running a real, live Flutter (web) program on the right. The chief difference is that using DartPad, you can get started with Flutter without installing a thing.
 
@@ -268,7 +268,7 @@ Whether you write the code by hand or let Hot UI write it for you, you've still 
 
 无论您是选择自己手写代码，还是让 Hot UI 替写，代码中出现问题总是难免的。我们推出 Dart DevTools 工具的目的就是，帮助您找到并修复这些问题。在新版 DevTools 中，我们添加了一个名为 Layout Explorer 的功能，它能够以可视化的方式呈现应用的布局信息，从而让检查器可以更好地发挥功能。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/layout-explorer.gif)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/layout-explorer.gif){:width="95%"}
 
 Not only does the Layout Explorer help you to visualize the layout of the widgets in your running app, but if you'd like to experiment with changing the layout options, it allows you to do so interactively. We're hoping the preview of this feature helps make it easier to understand and fix your layout issues. To enable this feature, see [the Layout Explorer docs](https://flutter.cn/docs/development/tools/devtools/inspector#flutter-layout-explorer).
 
@@ -282,7 +282,7 @@ When you've built and debugged your Flutter UI, you have most likely done it on 
 
 构建并调试 Flutter UI 的工作往往是在同一台设备上完成的。如果能同时在多台实体或虚拟的设备上调试您的应用，是不是会更好呢？Flutter 在 Visual Code 上提供的多会话调试支持就能帮您做到这一点。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/multi-device-debugging.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/multi-device-debugging.png){:width="95%"}
 
 Here we've got the same Flutter app running simultaneously on three separate debugging sessions. If we make a change in the code, Hot Reload makes sure that it's reflected in all three apps. If we set a breakpoint, whichever app triggers that code gets stopped. If you'd like to stop debugging one, you can do so without stopping them all. You can learn how to configure this feature for [multiple device debugging on the wiki](https://github.com/flutter/flutter/wiki/Multi-device-debugging-in-VS-Code).
 
@@ -298,7 +298,7 @@ And finally, to continue to improve Android, we addressed some build problems in
 
 Another issue we addressed was deprecating Proguard in favor of [R8](https://developer.android.com/studio/build/shrink-code), the new code optimizer from Google. Before this release, the app author had to configure ProGuard rules manually using guidance provided by the plugin author. In this release, plugins can define their rules in the source code and R8 consumes these rules automatically, saving the app developer that headache.
 
-我们解决的另一个问题使用 Google 旗下的最新代码优化器 [R8](https://developer.android.com/studio/build/shrink-code) 来替代 ProGuard。在此版本之前，应用开发者必须按照插件作者提供的指南手动配置 ProGuard 规则。在从新版本开始，插件可在源代码中定义规则，R8 会自动根据这些规则进行代码优化，从而为开发者解决了手动配置的难题。
+我们解决的另一个问题使用 Google 旗下的最新代码优化器 [R8](https://developer.android.google.cn/studio/build/shrink-code) 来替代 ProGuard。在此版本之前，应用开发者必须按照插件作者提供的指南手动配置 ProGuard 规则。在从新版本开始，插件可在源代码中定义规则，R8 会自动根据这些规则进行代码优化，从而为开发者解决了手动配置的难题。
 
 Furthermore, in our attempt to continue to make Flutter as slim as possible, we reduced the Hello, World app size for Android by 2.6% (reducing it from 3.8MB to 3.7MB). Every little bit helps!
 
@@ -312,7 +312,7 @@ The term "golden image" refers to a master image file that is considered the tru
 
 Golden 图像指的是一个主图像文件，它是 widget、state、应用或其它您选择捕捉的视觉内容的正确渲染结果。在 Flutter 1.12 中，我们实现了 [GoldenFileComparator](https://api.flutter.cn/flutter/flutter_test/GoldenFileComparator-class.html) 和 [LocalFileComparator](https://api.flutter.cn/flutter/flutter_test/LocalFileComparator-class.html) 类，它们依照像素而不是比特来进行比较，因此可以彻底消除错误的比较结果。这些新的实现强调呈现视觉差异，从而更清楚地展现出 Golden 图像和正在测试中的更新文件之间的差异。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/golden-image-testing.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/golden-image-testing.png){:width="95%"}
 
 In this case, it's clear that the differences between the master and the test image are all in the border, making it much easier to track down the discrepancy.
 
@@ -362,15 +362,15 @@ And speaking of contributions to be proud of, the Flutter community at large has
 
 谈到值得骄傲的贡献，就不得不说 Flutter 社区打造的众多出色工具。我们在下面列举部分成果。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-device-preview.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-device-preview.png){:width="95%"}
 
 [Flutter Device Preview](https://github.com/aloisdeniel/flutter_device_preview)
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/widget-maker.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/widget-maker.png){:width="95%"}
 
 [Widget Maker](https://www.widgetmaker.dev/)
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/panache.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/panache.png){:width="95%"}
 
 [Panache](https://rxlabz.github.io/panache/#/)
 
@@ -382,7 +382,7 @@ In addition to a great set of community tools, the Flutter ecosystem has a great
 
 Flutter 生态圈不仅包括由社区开发的丰富工具，还有一批很棒的工作开发伙伴。Nevercode 一直以来都是我们的重要合作伙伴之一，他们最新发布的工具提供了许多新功能，其中一项就是名为 [Remote Mac 的 Visual Studio Code 插件](https://marketplace.visualstudio.com/items?itemName=codemagic.remote-mac)。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/remote-mac.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/remote-mac.png){:width="95%"}
 
 The Remote Mac extension lets you connect directly to a Mac that they've hosted in the cloud for purposes of testing your iOS and macOS Flutter code. For more details about Nevercode's latest release, including new support for Flutter on the web and on macOS, new enterprise features and more, check out [their newest blog post](https://blog.codemagic.io/more-professional-capable-accessible/).
 
@@ -404,4 +404,4 @@ We hope you agree that Flutter is moving in the right direction and picking up s
 
 我们认为 Flutter 正朝着正确的方向快步前进，希望您也同意我们的看法。拥有这么多的新功能和新工具之后，您会构建什么呢？我们拭目以待。
 
-**Flutter 开发者社区中文资源: **https://flutter.cn
+文/ (Flutter Blog](https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d)，译/ [谷歌开发者](https://mp.weixin.qq.com/s/sETtUi-J4cxCCbKP_FQkpA)

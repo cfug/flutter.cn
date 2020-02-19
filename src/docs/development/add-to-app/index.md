@@ -49,6 +49,19 @@ It currently has the _**following limitations**_:
   
   将 Flutter 库打包进另一个可共享的库或将多个 Flutter 库打包到同一个应用中，都未被支持。
 
+* Plugins used in add-to-app on Android should undergo [flutter.dev/go/android-plugin-migration](https://flutter.dev/go/android-plugin-migration)
+  and use the [FlutterPlugin](https://api.flutter.dev/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html)-based
+  APIs. Plugins that don't support FlutterPlugin may have unexpected behaviors
+  if they make assumptions that are untenable in add-to-app (such as assuming
+  that a Flutter Activity is always present).
+
+  添加到现有应用 (add-to-app) 在 Android 平台的实现使用了基于 
+  [FlutterPlugin](https://api.flutter.cn/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html)
+  的 API，请参考这个文档 [go/android-plugin-migration](https://flutter.cn/go/android-plugin-migration)。
+  一些不支持 `FlutterPlugin` 的插件可能会有不可预知的行为，比如进行了错误的预判，
+  认为 Flutter Activity 一直处于活跃状态。
+  
+
 ## Supported features
 
 ## 已支持的特性
@@ -74,10 +87,10 @@ It currently has the _**following limitations**_:
   
 * [`FlutterEngine`][java-engine] API for starting and persisting
   your Flutter environment independently of attaching a
-  [`FlutterActivity`][]/[FlutterFragment][] etc.
+  [`FlutterActivity`][]/[`FlutterFragment`][] etc.
   
   [`FlutterEngine`][java-engine] API 用于启动并持续地为挂载 
-  [`FlutterActivity`][] 或 [FlutterFragment][] 提供独立的 Flutter 环境；
+  [`FlutterActivity`][] 或 [`FlutterFragment`][] 提供独立的 Flutter 环境；
   
 * Android Studio Android/Flutter co-editing and module
   creation/import wizard.
@@ -209,11 +222,11 @@ see our API usage guides for
 </div>
 
 
-[add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/experimental/add_to_app
+[add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/add_to_app
 [Android Archive (AAR)]: https://developer.android.com/studio/projects/android-library
 [Flutter plugins]: {{site.pub}}/flutter
 [Flutter plugins]: {{site.pub}}/pub.dev/flutter
-[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html)
+[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
 [FlutterFire]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages

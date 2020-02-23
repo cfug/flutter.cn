@@ -15,22 +15,22 @@ Flutter supports three components for accessibility support:
 为实现无障碍支持，Flutter 提供了三种组件：
 
 [**Large fonts**][]
-: Render text widgets with user-specified font sizes
+<br> Render text widgets with user-specified font sizes
 
-[**大字体**][]
-： 使用用户指定的字体大小呈现文本 widget
+[**大字体**][**Large fonts**]
+<br> 使用用户指定的字体大小呈现文本 widget
 
 [**Screen readers**][]
-: Communicate spoken feedback about UI contents
+<br> Communicate spoken feedback about UI contents
 
-[**读屏器**][]
-： 通过语音反馈传达用户界面的内容
+[**读屏器**][**Screen readers**]
+<br> 通过语音反馈传达用户界面的内容
 
 [**Sufficient contrast**][]
-: Render widgets with colors that have sufficient contrast
+<br> Render widgets with colors that have sufficient contrast
 
-[**高对比度**][]
-： 在渲染 widget 时，使用具有高对比度的颜色
+[**高对比度**][**Sufficient contrast**]
+<br> 在渲染 widget 时，使用具有高对比度的颜色
 
 ## Inspecting accessibility support
 
@@ -48,7 +48,7 @@ we recommend using automated accessibility scanners:
 
     1. Install the [Accessibility Scanner][] for Android
 
-       在 Android 上安装 [辅助扫描程序][]
+       在 Android 上安装 [辅助扫描程序][Accessibility Scanner]
 
     1. Enable the Accessibility Scanner from
        **Android Settings > Accessibility >
@@ -83,13 +83,15 @@ we recommend using automated accessibility scanners:
        and then select the various user interface elements in running
        Flutter app to inspect their accessibility attributes
 
-       在辅助检查器中，选择 **检查> 启用点检查**，然后运行 Flutter 应用程序，选择各种用户界面元素来检查其辅助功能
+       在辅助检查器中，选择 **检查> 启用点检查**，然后运行 Flutter 应用程序，
+       选择各种用户界面元素来检查其辅助功能
 
     1. In the Accessibility Inspector,
        select **Audit** in the toolbar, and then
        select **Run Audio** to get a report of potential issues
 
-       在辅助检查器中，选择工具栏中的**审核**，然后选择**运行音频”**来获取潜在问题的报告
+       在辅助检查器中，选择工具栏中的**审核**，
+       然后选择**运行音频”**来获取潜在问题的报告
 
 ## Large fonts
 
@@ -152,7 +154,7 @@ you run into any issues, use the [`Semantics` widget][] to customize the
 accessibility experience of your app.
 
 在您的设备上启用 VoiceOver 或 TalkBack 来浏览您的应用。
-如果遇到任何问题，可以使用 [语义 widget][Semantics widget] 来自定义您应用程序的无障碍体验。
+如果遇到任何问题，可以使用 [语义 widget][`Semantics` widget] 来自定义您应用程序的无障碍体验。
 
 ## Sufficient contrast
 
@@ -166,7 +168,8 @@ such as when exposed to direct sunlight or on a display with low
 brightness.
 
 高对比度能够使文本和图像更易于阅读。除了使具有各种视觉障碍的用户受益外，
-高对比度也能够帮助所有用户在极端光照条件下 (例如在直射阳光下或在低亮度显示器上) 观看设备上的界面。
+高对比度也能够帮助所有用户在极端光照条件下
+(例如在直射阳光下或在低亮度显示器上) 观看设备上的界面。
 
 The [W3C recommends][]: 
 
@@ -203,15 +206,14 @@ For more information, particularly about how to configure
 the semantics tree,
 see the following articles written by community members:
 
-如果你希望了解更多，尤其是如何配置 semantics tree，请查看如下社区成员贡献的文章：
+如果你希望了解更多，尤其是如何配置 semantics tree，
+请查看如下社区成员贡献的文章：
 
 * [A deep dive into Flutter's accessibility widgets][]
 * [Semantics in Flutter][]
 
 
 [辅助扫描程序]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
-[Semantics widget]: {{site.api}}/flutter/widgets/Semantics-class.html
-
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
 [**Large fonts**]: #large-fonts

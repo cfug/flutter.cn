@@ -82,13 +82,13 @@ Here's the app visualized as a widget tree.
   上面 widget 树的图片可以在这个地址找到: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
 {% endcomment %}
 
-So we have at least 6 subclasses of `Widget`. Many of them need
+So we have at least 5 subclasses of `Widget`. Many of them need
 access to state that "belongs" elsewhere. For example, each
 `MyListItem` needs to be able to add itself to the cart.
 It might also want to see whether the currently displayed item
 is already in the cart.
 
-所以我们有至少 6 个 `Widget` 的子类。他们中有很多需要访问一些全局的状态。
+所以我们有至少 5 个 `Widget` 的子类。他们中有很多需要访问一些全局的状态。
 比如，`MyListItem` 会被添加到购物车中。
 但是它可能需要检查和自己相同的元素是否已经被添加到购物车中。
 

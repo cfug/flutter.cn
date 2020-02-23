@@ -14,23 +14,23 @@ Flutter supports three components for accessibility support:
 
 为实现无障碍支持，Flutter 提供了三种组件：
 
-**[Large fonts](#large-fonts)**
-<br> Render text widgets with user-specified font sizes
+[**Large fonts**][]
+: Render text widgets with user-specified font sizes
 
-**[大字体](#large-fonts)**
-<br> 使用用户指定的字体大小呈现文本 widget
+[**大字体**][]
+： 使用用户指定的字体大小呈现文本 widget
 
-**[Screen readers](#screen-readers)**
-<br> Communicate spoken feedback about UI contents
+[**Screen readers**][]
+: Communicate spoken feedback about UI contents
 
-**[读屏器](#screen-readers)**
-<br> 通过语音反馈传达用户界面的内容
+[**读屏器**][]
+： 通过语音反馈传达用户界面的内容
 
-**[Sufficient contrast](#sufficient-contrast)**
-<br> Render widgets with colors that have sufficient contrast
+[**Sufficient contrast**][]
+: Render widgets with colors that have sufficient contrast
 
-**[高对比度](#sufficient-contrast)**
-<br> 在渲染 widget 时，使用具有高对比度的颜色
+[**高对比度**][]
+： 在渲染 widget 时，使用具有高对比度的颜色
 
 ## Inspecting accessibility support
 
@@ -205,7 +205,7 @@ see the following articles written by community members:
 
 如果你希望了解更多，尤其是如何配置 semantics tree，请查看如下社区成员贡献的文章：
 
-* [A deep dive into Flutter’s accessibility widgets][]
+* [A deep dive into Flutter's accessibility widgets][]
 * [Semantics in Flutter][]
 
 
@@ -214,8 +214,11 @@ see the following articles written by community members:
 
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
+[**Large fonts**]: #large-fonts
+[**Screen readers**]: #screen-readers
 [Semantics in Flutter]: https://www.didierboelens.com/2018/07/semantics/
 [`Semantics` widget]: {{site.api}}/flutter/widgets/Semantics-class.html
+[**Sufficient contrast**]: #sufficient-contrast
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/

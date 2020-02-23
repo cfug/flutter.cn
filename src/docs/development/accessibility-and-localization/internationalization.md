@@ -1,5 +1,5 @@
 ---
-title: Internationalizing Flutter Apps
+title: Internationalizing Flutter apps
 title: Flutter 应用里的国际化
 short-title: i18n
 description: How to internationalize your Flutter app.
@@ -82,8 +82,8 @@ By default, Flutter only provides US English localizations.
 To add support for other languages,
 an application must specify additional `MaterialApp` properties,
 and include a separate package called
-`flutter_localizations`.  As of April 2019,
-this package supports about 52 languages.
+`flutter_localizations`.  As of February 2020,
+this package supports 77 languages.
 If you want your app to work smoothly on iOS,
 then you have to add the package
 `flutter_cupertino_localizations` as well.
@@ -91,7 +91,7 @@ then you have to add the package
 默认情况下，Flutter 只提供美式英语的本地化。
 如果想要添加其他语言，你的应用必须指定额外的 MaterialApp
 属性并且添加一个单独的 package，叫做 `flutter_localizations`。
-截至到 2019 年 4 月份，这个 package 已经支持大约 52 种语言。
+截至到 2020 年 2 月份，这个 package 已经支持大约 77 种语言。
 如果你希望在 iOS 上顺利运行，
 你需要额外加入 `flutter_cupertino_localizations` 这个 package。
 
@@ -421,10 +421,10 @@ that produces an instance of `GlobalMaterialLocalizations`.
 例如，`GlobalMaterialLocalizations.delegate` 就是一个本地化 delegate，
 它用来产生一个 GlobalMaterialLocalizations 的实例。
 
-As of April 2019, the global localization classes support
-[about 52 languages][].
+As of February 2020, the global localization classes support
+[77 languages][].
 
-截至 2019 年 4 月，这个全球本地化类一共支持 [大约 52 种语言][about 52 languages]。
+截至 2020 年 2 月，这个全球本地化类一共支持 [大约 77 种语言][77 languages]。
 <a name="defining-class"></a>
 ## Defining a class for the app's localized resources
 
@@ -514,7 +514,7 @@ that analyzes the source code for classes that contain
 ## 具体说明 app 支持的语言环境参数
 
 Although Flutter's flutter_localizations library includes support
-for about 52 languages, only English language translations are available
+for 77 languages, only English language translations are available
 by default. It's up to the developer to decide exactly which languages
 to support, since it wouldn't make sense for the toolkit
 libraries to support a different set of locales than the app does.
@@ -563,7 +563,7 @@ class DemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       localeResolutionCallback(Locale locale, Iterable<Locale> supportedLocales) {
+       localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocales) {
          return locale;
        }
        // ...
@@ -850,9 +850,10 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     来加载本地化的信息，然后使用 `Intl.message()` 来查阅这些本地化的信息。
 
 <a name="ios-specifics"></a>
-### Appendix: Updating the iOS app bundle
 
-### 附录：更新 iOS app 包
+## Appendix: Updating the iOS app bundle
+
+## 附录：更新 iOS app 包
 
 iOS applications define key application metadata,
 including supported locales, in an `Info.plist` file
@@ -874,7 +875,7 @@ project's `Runner` folder.
 
 Next, select the **Information Property List** item,
 select **Add Item** from the **Editor** menu,
-then select *eLocalizations** from the pop-up menu.
+then select **eLocalizations** from the pop-up menu.
 
 下一步，选择 `Information Property List` 项，
 从 *Editor* 菜单中选择 *Add Item*，然后从弹出菜单中选择 `Localizations`。
@@ -884,22 +885,22 @@ for each locale your application supports,
 add a new item and select the locale you wish to add
 from the pop-up menu in the **Value** field.
 This list should be consistent with the languages listed
-in the [supportedLocales](#specifying-supportedlocales) parameter.
+in the [supportedLocales][] parameter.
 
 选择和展开新创建的 `Localizations` 项，对于应用需要支持的每个语言环境，
 你需要添加一个新的项。然后点击 *Value* 域，从弹出菜单当中选择你想要的语言环境。
-这个列表应该和 [supportedLocales](#specifying-supportedlocales) 
+这个列表应该和 [supportedLocales][]
 参数当中的语言列表保持一致。
 
 Once all supported locales have been added, save the file.
 
 添加完所有支持的语言环境后，保存这个文件。
 
-[about 52 languages]: {{site.github}}/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n
+[77 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`add_language`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart
 [An alternative class for the app's localized resources]: #alternative-class
 [an example]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
-[`intl_example`]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
+[`intl_example`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example
 [flutter_localizations README]: {{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
@@ -917,11 +918,12 @@ Once all supported locales have been added, save the file.
 [material-global]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
-[`minimal`]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
+[`minimal`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Minimal internationalization]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Setting up an internationalized app]: #setting-up
 [`SynchronousFuture`]: {{site.api}}/flutter/foundation/SynchronousFuture-class.html
 [`supportedLocales`]: {{site.api}}/flutter/material/MaterialApp/supportedLocales.html
+[supportedLocales]: #specifying-supportedlocales
 [Using the Dart intl tools]: #dart-tools
 [widgets-local]: {{site.api}}/flutter/widgets/Localizations-class.html
 [widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html

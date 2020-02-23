@@ -864,12 +864,12 @@ Widget build(BuildContext context) {
 
 ### 如何在页面之间导航？
 
-In Xamarin.Forms, you navigate between pages normally through a
-CarouselPage. In Flutter, you can use a `NavigationPage`
-that manages the stack of pages to display.
+In Xamarin.Forms, the `NavigationPage` class provides a hierarchical 
+navigation experience where the user is able to navigate through pages, 
+forwards and backwards.
 
-在 Xamarin.Forms 中，在页面之间导航通常会通过一个 CarouselPage。
-在 Flutter 中，你可以使用一个 `NavigationPage` 来管理页面栈去显示。
+在 Xamarin.Forms 中，`NavigationPage` 类提供了一个
+阶级式的导航方式，让用户可以在页面之间来回进行跳转。
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a `Page` of an app, and

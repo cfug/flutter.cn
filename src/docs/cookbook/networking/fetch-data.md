@@ -6,9 +6,9 @@ prev:
   title: 传递数据到新页面
   path: /docs/cookbook/navigation/passing-data
 next:
-  title: Make authenticated requests
-  title: 发起 HTTP 认证授权请求
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Send data to the internet
+  title: 发送网络数据
+  path: /docs/cookbook/networking/send-data
 ---
 
 Fetching data from the internet is necessary for most apps.

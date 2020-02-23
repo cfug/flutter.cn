@@ -220,9 +220,13 @@ Configure signing for your app by editing the
 
 <ol markdown="1">
 
-<li markdown="1">将如下内容：
+<li markdown="1"> Add code before `android` block:
+
+<li markdown="1"> 在 `android` 代码块之前添加：
 ```
    android {
+      ...
+   }
 ```
 
    With the keystore information from your properties file:
@@ -237,10 +241,19 @@ Configure signing for your app by editing the
    }
 
    android {
+         ...
+   }
 ```
+   
+   Load the `keystore.properties` file into the `keystoreProperties` object.
+
+   将 `keystore.properties` 文件加载到 `keystoreProperties` 对象中。
+
 </li>
 
-<li markdown="1"> 将如下内容：
+<li markdown="1"> Add code before `buildTypes` block:
+
+<li markdown="1"> 在 `buildTypes` 代码块之前添加：
 
 ```
    buildTypes {
@@ -272,6 +285,12 @@ Configure signing for your app by editing the
        }
    }
 ```
+
+   Configure the `signingConfigs` block in your module's `build.gradle` file.
+
+   在你的 module 的 `build.gradle` 文件中配置 
+   `signingConfigs` 部分。
+
 </li>
 </ol>
 

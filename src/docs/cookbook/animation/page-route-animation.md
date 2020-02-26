@@ -20,12 +20,12 @@ This recipe shows how to transition between
 routes by animating the new route into view from
 the bottom of the screen.
 
-在不同路由（或界面）之间进行切换的时候，许多设计语言，例如 Material 设计，都定义了一些标准行为。
-但有时自定义路由会让 app 看上去更加的独特。为了更好的完成这一点，
-[PageRouteBuilder]({{site.api}}/flutter/widgets/PageRouteBuilder-class.html)
-提供了一个 [Animation]({{site.api}}/flutter/animation/Animation-class.html) 对象。
-这个 `Animation` 能够通过结合 [Tween]({{site.api}}/flutter/animation/Tween-class.html) 以及
-[Curve]({{site.api}}/flutter/animation/Curve-class.html) 对象来自定义路由转换动画。
+在不同路由（或界面）之间进行切换的时候，许多设计语言，
+例如 Material 设计，都定义了一些标准行为。
+但有时自定义路由会让 app 看上去更加的独特。
+为了更好的完成这一点，[`PageRouteBuilder`][] 提供了一个 [`Animation`][] 对象。
+这个 `Animation` 能够通过结合
+[`Tween`][] 以及 [`Curve`][] 对象来自定义路由转换动画。
 这篇指南将会展示如何在两个路由之间切换时使用从屏幕底部动画出来的路由。
 
 To create a custom page route transition, this recipe uses the following steps:
@@ -71,16 +71,18 @@ To start, use a [`PageRouteBuilder`][] to create a [`Route`][].
   route is built. The framework can avoid extra work because `child` stays the
   same throughout the transition.
   
-  transitionsBuilder 的 `child` 参数是通过 pageBuilder 方法来返回一个 transitionsBuilder widget。
-  这个 `pageBuilder` 方法仅会在第一次构建路由的时候被调用。框架能够自动避免做额外的工作，
-  因为整个过渡期间 `child` 保存了同一个实例。
+  transitionsBuilder 的 `child` 参数是通过 `pageBuilder` 方法
+  来返回一个 transitionsBuilder widget，这个 `pageBuilder` 方法仅会在
+  第一次构建路由的时候被调用。框架能够自动避免做额外的工作，因为
+  整个过渡期间 `child` 保存了同一个实例。
   
 {{site.alert.end}}
 
 The following example creates two routes: a home route with a "Go!" button, and
 a second route titled "Page 2".
 
-下面的样例将会创建两个路由：一个主页路由，包含了 "Go!" 按钮，还有第二个路由，包含了一个显示 "Page 2 的标题。
+下面的样例将会创建两个路由：一个主页路由，
+包含了 "Go!" 按钮，还有第二个路由，包含了一个显示 "Page 2 的标题。
 
 ```dart
 import 'package:flutter/material.dart';

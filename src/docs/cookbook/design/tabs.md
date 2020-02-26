@@ -19,7 +19,7 @@ guidelines. Flutter includes a convenient way to create tab layouts as part of
 the [material library][].
 
 在 Material Design 设计准则里，tabs 是一种常用的布局模型。
-Flutter 自带的 [Material 库]({{site.api}}/flutter/material/material-library.html) 
+Flutter 自带的 [Material 库][material library] 
 可以帮助开发者们非常便捷的创建 tab 布局。
 
 {{site.alert.note}}

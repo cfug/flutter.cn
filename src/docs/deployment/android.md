@@ -416,27 +416,30 @@ Review the default [App Manifest][manifest] file, `AndroidManifest.xml`,
 located in `<app dir>/android/app/src/main` and verify that the values
 are correct, especially the following:
 
-检查位于 `<app dir>/android/app/src/main` 的默认 [App Manifest][manifest] 文件 `AndroidManifest.xml`，并确认各个值都设置正确，特别是：
+检查位于 `<app dir>/android/app/src/main` 的默认 [App Manifest][manifest] 
+文件 `AndroidManifest.xml`，并确认各个值都设置正确，特别是：
 
 `application`
-: Edit the `android:label` in the
+<br> Edit the `android:label` in the
   [`application`][applicationtag] tag to reflect 
   the final name of the app.
   
-  `application`：编辑 [`application`][applicationtag]
+`application`
+<br>编辑 [`application`][applicationtag]
   标签中的 `android:label` 来设置 app 的最终名字。
 
 `uses-permission`
-: Add the `android.permission.INTERNET`
+<br> Add the `android.permission.INTERNET`
   [permission][permissiontag] if your application code needs Internet
   access. The standard template does not include this tag but allows
   Internet access during development to enable communication between
   Flutter tools and a running app.
   
-  `uses-permission`：如果你的代码需要互联网交互，请加入
-  `android.permission.INTERNET` [权限标签][permissiontag]。
+`uses-permission`：
+<br>如果你的代码需要互联网交互，请加入 `android.permission.INTERNET` 
+  [权限标签][permissiontag]。
   标准开发模版里并未加入这个权限（但是 Flutter debug 模版加入了这个权限），
-  加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信，详情见 [Issue 22139]()。
+  加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信。
 
 ## Reviewing the build configuration
 
@@ -450,29 +453,30 @@ values in the `defaultConfig` block:
 并确认各个值都设置正确，特别是下面 `defaultConfig` 块中的值：
 
 `applicationId`
-: Specify the final, unique (Application Id)[appid]
+<br> Specify the final, unique (Application Id)[appid]
 
 `applicationId`
-：指定最终的，唯一的（Application Id）[appid]。
+<br>：指定最终的，唯一的（Application Id）[appid]。
 
 `versionCode` & `versionName`
-: Specify the internal app version number,
+<br> Specify the internal app version number,
   and the version number display string. You can do this by setting
   the `version` property in the pubspec.yaml file. Consult the version
   information guidance in the [versions documentation][versions].
 
 `versionCode` & `versionName`
-：指定 app 的内部版本号，以及用于显示的版本号，这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。
+<br> 指定 app 的内部版本号，以及用于显示的版本号，
+这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。
 具体可以参考 [版本文档][versions] 中的版本信息指南。
 
 `minSdkVersion` & `targetSdkVersion`
-: Specify the minimum API level,
+<br> Specify the minimum API level,
   and the API level on which the app is designed to run.
   Consult the API level section in the [versions documentation][versions]
   for details.
 
 `minSdkVersion` & `targetSdkVersion`
-：指定支持的最低 API 版本，以及我们 app 的目标 API 版本。
+<br> 指定支持的最低 API 版本，以及我们 app 的目标 API 版本。
 具体可以参考 [版本文档][versions] 中的 API 版本部分。
 
 ## Building the app for release
@@ -514,6 +518,7 @@ the app bundle will be signed.
 如果在前面的部分已经完成了签名步骤，发布的 bundle 会被签名。
 
 {{site.alert.warning}}
+
   Recently, the Flutter team has received several reports
   from developers indicating they are experiencing app
   crashes on certain devices on Android 6.0 when building
@@ -556,7 +561,9 @@ By default, the app bundle contains your Dart code and the Flutter
 runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
 (ARM 64-bit), and [x86-64][] (x86 64-bit).
 
-此 app bundle 会默认地包含为 [armeabi-v7a][] (ARM 32-bit)、[arm64-v8a][] (ARM 64-bit) 以及 [x86-64][] (x86 64-bit) 编译的 Dart 和 Fluter 运行时代码。
+此 app bundle 会默认地包含为
+[armeabi-v7a][] (ARM 32-bit)、[arm64-v8a][] (ARM 64-bit) 
+以及 [x86-64][] (x86 64-bit) 编译的 Dart 和 Fluter 运行时代码。
 
 ### Test the app bundle
 
@@ -608,8 +615,10 @@ Although app bundles are preferred over APKs, there are stores
 that don't yet support app bundles. In this case, build a release
 APK for each target ABI (Application Binary Interface).
 
-虽然 app bundle 比 APKs 更被推荐使用， 但是有一些 Store 目前还不支持 app bundle方式。
-这种情况下，要为各种目标 ABI (Application Binary Interface) 分别构建发布的 APK 文件。
+虽然 app bundle 比 APKs 更被推荐使用，
+但是有一些 Store 目前还不支持 app bundle方式。
+这种情况下，要为各种目标
+ABI (Application Binary Interface) 分别构建发布的 APK 文件。
 
 If you completed the signing steps,
 the APK will be signed.
@@ -643,8 +652,9 @@ your code compiled for _all_ the target ABIs. Such APKs are larger in
 size than their split counterparts, causing the user to download
 native binaries that are not applicable to their device's architecture.
 
-如果移除 `--split-per-abi` 将会生成一个包含_所有_目标 ABI 的 fat APK 文件。这种 APK 文件将会在
-比单独构建的 APK 文件尺寸要大，会导致用户下载一些不适用于其设备架构的二进制文件。
+如果移除 `--split-per-abi` 将会生成一个包含 **所有** 目标 ABI 的 fat APK 文件。
+这种 APK 文件将会在比单独构建的 APK 文件尺寸要大，
+会导致用户下载一些不适用于其设备架构的二进制文件。
 
 ### Install an APK on a device
 
@@ -739,13 +749,16 @@ build number such as `1` in the example above, separated by a `+`.
 Both the version and the build number may be overridden in Flutter's
 build by specifying `--build-name` and `--build-number`, respectively.
 
-版本号与构建号都可以在 Flutter 打包时分别使用 `--build-name` 和 `--build-number` 重新指定。
+版本号与构建号都可以在 Flutter 打包时分别使用
+`--build-name` 和 `--build-number` 重新指定。
 
 In Android, `build-name` is used as `versionName` while
 `build-number` used as `versionCode`. For more information,
 see [Version your app][] in the Android documentation.
 
-在 Android 中，当 `build-number` 被用作 `versionCode` 时 `build-name` 作为 `versionName` 使用。更多信息请参考 Android 文档中的
+在 Android 中，当 `build-number` 被用作 `versionCode` 时
+`build-name` 作为 `versionName` 使用。
+更多信息请参考 Android 文档中的
 [为你的应用添加版本][Version your app]。
 
 ## Android release FAQ
@@ -767,8 +780,9 @@ application to your users. However, if you’re distributing
 your application by means other than the Play Store,
 an APK may be your only option.
 
-Google Play Store 相对于 APKs 更建议你发布 app bundles， 因为那样应用程序会更有效率地
-交付给你的用户。但是，如果你想将应用程序发布到其他的应用商店， APK可能是唯一选项。
+Google Play Store 相对于 APKs 更建议你发布 app bundles，
+因为那样应用程序会更有效率地交付给你的用户。
+但是，如果你想将应用程序发布到其他的应用商店，APK可能是唯一选项。
 
 ### What is a fat APK?
 
@@ -784,9 +798,13 @@ it is strongly recommended to build split APKs,
 as described in [build an APK](#build-an-apk) using the
 `--split-per-abi` .
 
-一个 [fat APK][] 是一个包含了支持多个 ABI 架构的 APK 文件。这样做的好处是单个 APK 可以运行在多个架构上，因此
-具有更广泛的兼容性。但同时缺点就是文件体积会比较大，导致用户在安装你的应用程序时会下载和储存更多的字节。当构建 APKs 而不是
-app bundles 时强烈建议分开构建 APKs，如 [build an APK](#build-an-apk) 所描述的那样，使用 `--split-per-abi` 指令。
+一个 [fat APK][] 是一个包含了支持多个 ABI 架构的 APK 文件。
+这样做的好处是单个 APK 可以运行在多个架构上，因此
+具有更广泛的兼容性。但同时缺点就是文件体积会比较大，
+导致用户在安装你的应用程序时会下载和储存更多的字节。
+当构建 APK 而不是 app bundles 时强烈建议分开构建 APK，
+如 [build an APK](#build-an-apk) 所描述的那样，
+使用 `--split-per-abi` 指令。
 
 ### What are the supported target architectures?
 
@@ -798,7 +816,8 @@ Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
 Flutter does not currently support building for x86 Android
 (See [Issue 9253][]).
 
-当使用 release 模式构建你的应用程序时, Flutter app 可以基于 [armeabi-v7a][] (ARM 32-bit)、
+当使用 release 模式构建你的应用程序时, 
+Flutter app 可以基于 [armeabi-v7a][] (ARM 32-bit)、
 [arm64-v8a][] (ARM 64-bit) 以及 [x86-64][] (x86 64-bit) 被编译。
 Flutter 目前不支持 x86 Android (参考 [Issue 9253][]).
 

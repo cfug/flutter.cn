@@ -55,13 +55,15 @@ First, create a [`Form`][].
 The `Form` widget acts as a container for grouping
 and validating multiple form fields.
 
-首先，我们需要创建一个表单组件 [`Form`]({{site.api}}/flutter/widgets/Form-class.html) 作为容器承载和验证多个表单域。
+首先，我们需要创建一个表单组件 [`Form`][] 作为容器承载和验证多个表单域。
 
 When creating the form, provide a [`GlobalKey`][].
 This uniquely identifies the `Form`,
 and allows validation of the form in a later step.
 
-当我们创建表单 `Form` 的时候，需要提供一个 [`GlobalKey`]({{site.api}}/flutter/widgets/GlobalKey-class.html)。`GlobalKey` 唯一标识了这个表单 `Form`，在后续的表单验证步骤中，也起到了关键的作用。
+当我们创建表单 `Form` 的时候，需要提供一个 [`GlobalKey`][]。
+`GlobalKey` 唯一标识了这个表单 `Form`，
+在后续的表单验证步骤中，也起到了关键的作用。
 
 <!-- skip -->
 ```dart
@@ -106,7 +108,8 @@ class MyCustomFormState extends State<MyCustomForm> {
   access the form within nested widgets.
   
   一般情况下，推荐使用 `GlobalKey` 来访问一个表单。
-  嵌套组件且组件树比较复杂的情况下，可以使用 [`Form.of()`]({{site.api}}/flutter/widgets/Form/of.html) 方法访问表单。
+  嵌套组件且组件树比较复杂的情况下，
+  可以使用 [`Form.of()`][] 方法访问表单。
 
 {{site.alert.end}}
 
@@ -120,7 +123,10 @@ That's the job of a [`TextFormField`][].
 The `TextFormField` widget renders a material design text field
 and can display validation errors when they occur.
 
-尽管在前面步骤中，已经创建出表单 `Form` 了，但我们此时还需要提供一个 [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html) 让用户输入文本信息。`TextFormField` 是遵循 material 设计风格的文本输入框，并且能够在输入验证不通过时显示错误提醒。
+尽管在前面步骤中，已经创建出表单 `Form` 了，
+但我们此时还需要提供一个 [`TextFormField`][] 让用户输入文本信息。
+`TextFormField` 是遵循 material 设计风格的文本输入框，
+并且能够在输入验证不通过时显示错误提醒。
 
 Validate the input by providing a `validator()` function to the
 `TextFormField`. If the user's input isn't valid,
@@ -128,14 +134,18 @@ the `validator` function returns a `String` containing
 an error message.
 If there are no errors, the validator must return null.
 
-通过给 `TextFormField` 加入 `validator()` 函数可以验证输入是否正确。`validator` 函数会校验用户输入的信息，如果信息有误，会返回包含出错原因的字符串 `String`。
+通过给 `TextFormField` 加入 `validator()` 函数可以验证输入是否正确。
+`validator` 函数会校验用户输入的信息，
+如果信息有误，会返回包含出错原因的字符串 `String`。
 如果信息无误，则不返回。
 
 For this example, create a `validator` that ensures the
 `TextFormField` isn't empty. If it is empty,
 return a friendly error message.
 
-在下面的实例中，我们会在 `TextFormField` 中加入一个 `validator` 验证函数，它的功能是判断用户输入的文本是否为空，如果为空，就返回「请输入文本」的友情提示。
+在下面的实例中，我们会在 `TextFormField` 中加入一个 `validator` 验证函数，
+它的功能是判断用户输入的文本是否为空，
+如果为空，就返回「请输入文本」的友情提示。
 
 <!-- skip -->
 ```dart
@@ -163,7 +173,9 @@ When the user attempts to submit the form, check if the form is valid.
 If it is, display a success message.
 If it isn't (the text field has no content) display the error message.
 
-当用户提交表单后，我们会预先检查表单信息是否有效。如果文本框有内容，表单有效，则会显示正确信息。如果文本框没有输入任何内容，表单无效，会在文本框区域展示错误提示。
+当用户提交表单后，我们会预先检查表单信息是否有效。
+如果文本框有内容，表单有效，则会显示正确信息。
+如果文本框没有输入任何内容，表单无效，会在文本框区域展示错误提示。
 
 <!-- skip -->
 ```dart
@@ -192,7 +204,9 @@ step 1. You can use the `_formKey.currentState()`
 method to access the [`FormState`][],
 which is automatically created by Flutter when building a `Form`.
 
-为了验证表单，我们需要使用到步骤 1 中的 `_formKey`。使用 `_formKey.currentState()` 方法去访问 [`FormState`]({{site.api}}/flutter/widgets/FormState-class.html)，而 `FormState` 是在创建表单 `Form` 时 Flutter 自动生成的。
+为了验证表单，我们需要使用到步骤 1 中的 `_formKey`。
+使用 `_formKey.currentState()` 方法去访问 [`FormState`][]，
+而 `FormState` 是在创建表单 `Form` 时 Flutter 自动生成的。
 
 The `FormState` class contains the `validate()` method.
 When the `validate()` method is called, it runs the `validator()`
@@ -201,7 +215,11 @@ If everything looks good, the `validate()` method returns `true`.
 If any text field contains errors, the `validate()` method
 rebuilds the form to display any error messages and returns `false`.
 
-`FormState` 类包含了 `validate()` 方法。当 `validate()` 方法被调用的时候，会遍历运行表单中所有文本框的 `validator()` 函数。如果所有 `validator()` 函数验证都通过，`validate()` 方法返回 `true`。如果有某个文本框验证不通过，就会在那个文本框区域显示错误提示，同时 `validate()` 方法返回 `false`。
+`FormState` 类包含了 `validate()` 方法。当 `validate()` 方法被调用的时候，
+会遍历运行表单中所有文本框的 `validator()` 函数。
+如果所有 `validator()` 函数验证都通过，`validate()` 方法返回 `true`。
+如果有某个文本框验证不通过，就会在那个文本框区域显示错误提示，
+同时 `validate()` 方法返回 `false`。
 
 ## Interactive example
 

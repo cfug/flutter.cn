@@ -19,7 +19,9 @@ to screen. A common technique to lead users through an app is to animate a
 widget from one screen to the next. This creates a visual anchor connecting
 the two screens.
 
-在页面跳转过程中给用户加以引导是非常有用的。实现引导的一种通用做法是在页面切换时为某个组件加上转场动画，从而在两个页面间建立视觉上的锚定关联。
+在页面跳转过程中给用户加以引导是非常有用的。
+实现引导的一种通用做法是在页面切换时为某个组件加上转场动画，
+从而在两个页面间建立视觉上的锚定关联。
 
 Use the [`Hero`][] widget
 to animate a widget from one screen to the next.
@@ -51,7 +53,9 @@ Animate the image from the first screen to the second screen when
 the user taps the image. For now, create the visual structure;
 handle animations in the next steps.
 
-在这个示例中，将在两个页面中展示相同的图片。当用户在第一个页面点击图片，会通过一个转场动画切换到第二个页面。现在，我们将会创建页面的视觉结构，并在后续步骤中处理动画。
+在这个示例中，将在两个页面中展示相同的图片。
+当用户在第一个页面点击图片，会通过一个转场动画切换到第二个页面。
+现在，我们将会创建页面的视觉结构，并在后续步骤中处理动画。
 
 {{site.alert.note}}
 
@@ -59,7 +63,8 @@ handle animations in the next steps.
   [Navigate to a new screen and back][]
   and [Handle taps][] recipes.
   
-  这个示例建立在 [导航到一个新页面和返回](/docs/cookbook/navigation/navigation-basics) 和 [处理点击事件](/docs/cookbook/gestures/handling-taps) 这两个章节的基础上。
+  这个示例建立在 [导航到一个新页面和返回][Navigate to a new screen and back] 和 
+  [处理点击事件][Handle taps] 这两个章节的基础上。
   
 {{site.alert.end}}
 
@@ -113,7 +118,9 @@ To connect the two screens together with an animation, wrap
 the `Image` widget on both screens in a `Hero` widget.
 The `Hero` widget requires two arguments:
 
-为了通过动画在两个页面间建立联系，需要把每个页面的 `Image` 组件都包裹进 `Hero` 组件里面。`Hero` 组件有两个参数：
+为了通过动画在两个页面间建立联系，
+需要把每个页面的 `Image` 组件都包裹进 `Hero` 组件里面。
+`Hero` 组件有两个参数：
 
 <dl>
   <dt>`tag`</dt>
@@ -144,7 +151,9 @@ To complete the connection with the first screen,
 wrap the `Image` on the second screen with a `Hero`
 widget that has the same `tag` as the `Hero` in the first screen.
 
-为了完善与第一个页面的关联，同样需要把第二个页面中的 `Image` 组件包裹进 `Hero` 组件里面。它的 `tag` 也必须和第一个页面相同。
+为了完善与第一个页面的关联，
+同样需要把第二个页面中的 `Image` 组件包裹进 `Hero` 组件里面。
+它的 `tag` 也必须和第一个页面相同。
 
 After applying the `Hero` widget to the second screen,
 the animation between screens just works.

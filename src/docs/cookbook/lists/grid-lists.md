@@ -18,21 +18,23 @@ In some cases, you might want to display your items as a grid rather than
 a normal list of items that come one after the next.
 For this task, use the [`GridView`][] widget.
 
-有时候，你可能希望用网格来展示内容，而不是一条接着一条的普通列表来展示。在本文当中，
-我们将采用 [`GridView`]({{site.api}}/flutter/widgets/GridView-class.html) Widget。
+有时候，你可能希望用网格来展示内容，而不是一条接着一条的普通列表来展示。
+在本文当中，我们将采用 [`GridView`][] widget。
 
 The simplest way to get started using grids is by using the
 [`GridView.count()`][] constructor,
 because it allows you to specify how many rows or columns you'd like.
 
 用网格展示数据最简单的方式，
-就是通过使用 [`GridView.count`]({{site.api}}/flutter/widgets/GridView/GridView.count.html) 构造方法，
+就是通过使用 [`GridView.count()`][] 构造方法，
 因为它允许我们指定有多少行多少列。
 
 To visualize how `GridView` works, 
 generate a list of 100 widgets that display their index in the list.
 
-为了帮助我们想象 `GridView` 是如何工作的，在这个例子中，我们将创建一个包含有 100 个 Widget 的 List，每个 Widget 将展示它在 List 中的索引。
+为了帮助我们想象 `GridView` 是如何工作的，
+在这个例子中，我们将创建一个包含有 100 个 widget 的 List，
+每个 Widget 将展示它在 List 中的索引。
 
 <!-- skip -->
 ```dart

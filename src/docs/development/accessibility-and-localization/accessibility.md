@@ -8,7 +8,8 @@ Flutter is committed to supporting developers who want to make
 their apps more accessible: usable by as many people as possible,
 including those with disabilities such as blindness or motor impairment.
 
-Flutter 始终致力于支持那些希望开发出能让包括失明、运动障碍等残障人士在内的，尽可能多的用户无障碍访问自己的应用的开发人员。
+Flutter 始终致力于支持那些希望开发出能让包括失明、运动障碍等残障人士在内的，
+尽可能多的用户无障碍访问自己的应用的开发人员。
 
 Flutter supports three components for accessibility support:
 
@@ -125,7 +126,8 @@ template rendered with the default iOS font setting,
 and with the largest font setting selected in iOS accessibility settings.
 
 以下两个屏幕截图分别显示了使用默认 iOS 字体设置呈现的标准
-Flutter 应用程序，和使用 iOS 辅助功能设置中选择的最大字体设置呈现的 Flutter 应用程序。
+Flutter 应用程序，和使用 iOS 辅助功能设置中选择的最大字体
+设置呈现的 Flutter 应用程序。
 
 <div class="row">
   <div class="col-md-6">
@@ -154,7 +156,8 @@ you run into any issues, use the [`Semantics` widget][] to customize the
 accessibility experience of your app.
 
 在您的设备上启用 VoiceOver 或 TalkBack 来浏览您的应用。
-如果遇到任何问题，可以使用 [语义 widget][`Semantics` widget] 来自定义您应用程序的无障碍体验。
+如果遇到任何问题，可以使用
+[语义 widget][`Semantics` widget] 来自定义您应用程序的无障碍体验。
 
 ## Sufficient contrast
 

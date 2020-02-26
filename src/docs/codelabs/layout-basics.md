@@ -634,10 +634,11 @@ create empty space.
 <iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=716612f4ae2d979cc5a2868e06c14e58&amp;theme=dark&amp;split=60&amp;ga_id=resizing_widget" width="100%" height="400px"></iframe>
 
 #### Example: Creating space 
+{:.no_toc}
 
 #### 样例：创建空间
-
 {:.no_toc}
+
 {{site.alert.secondary}}
 
   The following example contains three `BlueBox` widgets

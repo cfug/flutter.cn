@@ -868,6 +868,10 @@ In Xamarin.Forms, the `NavigationPage` class provides a hierarchical
 navigation experience where the user is able to navigate through pages, 
 forwards and backwards.
 
+In Xamarin.Forms, the `NavigationPage` class provides a hierarchical 
+navigation experience where the user is able to navigate through pages, 
+forwards and backwards.
+
 在 Xamarin.Forms 中，`NavigationPage` 类提供了一个
 阶级式的导航方式，让用户可以在页面之间来回进行跳转。
 

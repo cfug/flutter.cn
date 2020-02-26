@@ -19,13 +19,13 @@ For example, you might be working on a list that shows a heading
 followed by a few items related to the heading, followed by another heading,
 and so on.
 
-我们经常需要创建展示不同类型内容的列表。比方说，我们可能在开发一个列表，它显示一个标题，
+我们经常需要创建展示不同类型内容的列表。
+比方说，我们可能在开发一个列表，它显示一个标题，
 后跟一些与标题相关的项目，然后是另一个标题，依此类推。
 
 Here's how you can create such a structure with Flutter:
 
 你可以通过以下步骤，用 Flutter 创建这样的结构：
-
 
   1. Create a data source with different types of items.
 
@@ -90,7 +90,9 @@ contains a header followed by five messages. Each message has one
 of 3 types: `ListItem`, `HeadingItem`, or `MessageItem`.
 
 对于这个例子来说，我们将生成一个要使用的项目列表。
-这个列表将包含一个标题，后跟五条消息。每条消息都属于以下三种类型中的一种： `ListItem`、`HeadingItem` 或者是 `MessageItem`。
+这个列表将包含一个标题，后跟五条消息。
+每条消息都属于以下三种类型中的一种： `ListItem`、`HeadingItem` 
+或者是 `MessageItem`。
 
 <!-- skip -->
 ```dart
@@ -110,7 +112,7 @@ To convert each item into a widget,
 use the [`ListView.builder()`][] constructor.
 
 为了把每一个项目转换成 Widget，
-我们将采用 [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) 构造方法。
+我们将采用 [`ListView.builder()`][] 构造方法。
 
 In general, provide a builder function that checks for what type
 of item you're dealing with, and returns the appropriate widget

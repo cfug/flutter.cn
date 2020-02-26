@@ -41,7 +41,8 @@ Material widgets also use your Theme to set the background
 colors and font styles for AppBars, Buttons, Checkboxes, and more.
 
 在定义一个 `Theme` 之后，我们可以让它在指定的 widgets
-（包括 Flutter 自带的 Material widgets，例如 AppBars、Buttons、Checkboxes 等等）中生效。
+（包括 Flutter 自带的 Material widgets，
+例如 AppBars、Buttons、Checkboxes 等等）中生效。
 
 ## Creating an app theme
 

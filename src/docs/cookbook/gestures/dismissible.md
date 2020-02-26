@@ -26,7 +26,8 @@ Flutter makes this task easy by providing the
 [`Dismissible`][] widget.
 Learn how to implement swipe to dismiss with the following steps:
 
-Flutter 提供了[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) Widget 来轻松地实现这个需求。
+Flutter 提供了 [`Dismissible`][] Widget 来轻松地实现这个需求。
+我们一起看一下如下的步骤：
 
 ## Directions
 
@@ -52,8 +53,9 @@ First, create a list of items. For detailed
 instructions on how to create a list,
 follow the [Working with long lists][] recipe.
 
-首先，我们创建一个列表，列表项是能够滑动清除的。至于如何创建列表的更多细节，
-请参考 [长列表的处理](/docs/cookbook/lists/long-lists/) 文档。
+首先，我们创建一个列表，列表项是能够滑动清除的。
+至于如何创建列表的更多细节，请参考
+[长列表的处理][Working with long lists] 文档。
 
 ### Create a data source
 
@@ -63,7 +65,8 @@ In this example,
 you want 20 sample items to work with.
 To keep it simple, generate a list of strings.
 
-在我们的例子中，我们需要 20 个样本项来实现列表。为简单起见，我们会生成一个字符串列表。
+在我们的例子中，我们需要 20 个样本项来实现列表。
+为简单起见，我们会生成一个字符串列表。
 
 <!-- skip -->
 ```dart
@@ -77,7 +80,8 @@ final items = List<String>.generate(20, (i) => "Item ${i + 1}");
 Display each item in the list on screen. Users won't
 be able to swipe these items away just yet.
 
-首先，我们简单地在屏幕上展示列表中的每一项。用户现在还无法滑动清除它们。
+首先，我们简单地在屏幕上展示列表中的每一项，
+用户现在还无法滑动清除它们。
 
 <!-- skip -->
 ```dart
@@ -97,7 +101,7 @@ In this step,
 give users the ability to swipe an item off the list by using the
 [`Dismissible`][] widget.
 
-在这个步骤中，用户可以通过使用 [`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) 来删除列表中的某项。
+在这个步骤中，用户可以通过使用 [`Dismissible`][] 来删除列表中的某项。
 
 After the user has swiped away the item,
 remove the item from the list and display a snackbar.
@@ -156,9 +160,10 @@ display a "leave behind" indicator as they
 swipe the item off the screen. In this case,
 the indicator is a red background.
 
-顾名思义，我们的应用允许用户将列表项滑出列表，但是应用可能没有向用户给出视觉提示，
-告诉他们操作时发生了什么。要给出提示，表明我们正在删除列表项，就需要在他们将列表项
-滑出屏幕的时候，展示一个“滞留”提示。这个例子中，我们使用了一个红色背景！
+顾名思义，我们的应用允许用户将列表项滑出列表，
+但是应用可能没有向用户给出视觉提示，告诉他们操作时发生了什么。
+要给出提示，表明我们正在删除列表项，就需要在他们将列表项
+滑出屏幕的时候，展示一个“滞留”提示。这个例子中，我们使用了一个红色背景。
 
 To add the indicator,
 provide a `background` parameter to the `Dismissible`.

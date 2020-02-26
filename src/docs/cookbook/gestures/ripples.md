@@ -24,8 +24,7 @@ Flutter provides the [`InkWell`][]
 widget to perform this effect.
 Create a ripple effect using the following steps:
 
-Flutter 提供了 [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html) 
-widget 来实现这个功能。
+Flutter 提供了 [`InkWell`][] widget 来实现这个功能。
 你可以通过以下步骤实现涟漪效果：
 
   1. Create a widget that supports tap.

@@ -878,7 +878,8 @@ a `Navigator` is a
 that manages routes.
 
 Flutter 也有类似的实现，使用了一个`导航器（Navigator）`和`路由（Routes）`。
-一个`路由`是一个应用程序里一个`页面`的抽象，而一个`导航器`是一个管理路由的 [widget](/docs/resources/technical-overview#everythings-a-widget)。
+一个`路由`是一个应用程序里一个`页面`的抽象，
+而一个`导航器`是一个管理路由的 [widget](/docs/resources/technical-overview#everythings-a-widget)。
 
 A route dd maps to a `Page`. The navigator works in a similar way to the
 Xamarin.Forms `NavigationPage`, in that it can `push()` and `pop()` routes

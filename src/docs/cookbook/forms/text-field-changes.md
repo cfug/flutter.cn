@@ -20,7 +20,8 @@ screen with autocomplete functionality where you want to update the
 results as the user types.
 
 在某些情境中，我们可能需要在每次文本框的文本内容变化时都调用回调函数。
-例如，当构建一个有自动填充功能的搜索页面时，我们希望根据用户输入的内容来更新返回的结果。
+例如，当构建一个有自动填充功能的搜索页面时，
+我们希望根据用户输入的内容来更新返回的结果。
 
 How do you run a callback function every time the text changes?
 With Flutter, you have two options:

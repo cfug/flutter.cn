@@ -164,7 +164,7 @@ After a user taps an item, you might want to close the drawer.
 You can do this by using the [`Navigator`][].
 
 我们经常需要在用户点击某个项目后就将 Drawer 关掉。
-那么怎样才能做到这一点呢？请试试看 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)。
+那么怎样才能做到这一点呢？请试试看 [`Navigator`][]。
 
 When a user opens the drawer, Flutter adds the drawer to the navigation
 stack. Therefore, to close the drawer, call `Navigator.pop(context)`.

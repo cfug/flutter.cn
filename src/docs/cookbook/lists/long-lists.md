@@ -19,13 +19,15 @@ for small lists. To work with lists that contain
 a large number of items, it's best to use the
 [`ListView.builder`][] constructor.
 
-标准的 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 构造函数适用于短列表，对于具有大量列表项的长列表，需要用 [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) 构造函数来创建。
+标准的 [`ListView`][] 构造函数适用于短列表，对于具有大量列表项的长列表，
+需要用 [`ListView.builder`][] 构造函数来创建。
 
 In contrast to the default `ListView` constructor, which requires
 creating all items at once, the `ListView.builder()` constructor
 creates items as they're scrolled onto the screen.
 
-与标准的 `ListView` 构造函数需要一次性创建所有列表项不同的是，`ListView.builder` 构造函数只在列表项从屏幕外滑入屏幕时才去创建列表项。
+与标准的 `ListView` 构造函数需要一次性创建所有列表项不同的是，
+`ListView.builder` 构造函数只在列表项从屏幕外滑入屏幕时才去创建列表项。
 
 ## 1. Create a data source
 
@@ -35,12 +37,14 @@ First, you need a data source. For example, your data source
 might be a list of messages, search results, or products in a store.
 Most of the time, this data comes from the internet or a database.
 
-首先，需要获取列表的数据源。例如，数据源可以是消息集、搜索结果集或者商店商品集。大部分情况下，这些数据来自于网络请求或者数据库获取。
+首先，需要获取列表的数据源。
+例如，数据源可以是消息集、搜索结果集或者商店商品集。
+大部分情况下，这些数据来自于网络请求或者数据库获取。
 
 For this example, generate a list of 10,000 Strings using the
 [`List.generate`][] constructor.
 
-在下面的例子，使用 [`List.generate`]({{site.api}}/flutter/dart-core/List/List.generate.html) 构造函数生成包含 10,000 个字符串的集合。
+在下面的例子，使用 [`List.generate`][] 构造函数生成包含 10,000 个字符串的集合。
 
 <!-- skip -->
 ```dart
@@ -58,7 +62,8 @@ using `ListView.builder()`.
 
 In this example, display each String on its own line.
 
-这个渲染过程正是 `ListView.builder` 的作用所在。在下面的例子中，将会把每个字符串用单行列表项显示在列表中。
+这个渲染过程正是 `ListView.builder` 的作用所在。
+在下面的例子中，将会把每个字符串用单行列表项显示在列表中。
 
 <!-- skip -->
 ```dart

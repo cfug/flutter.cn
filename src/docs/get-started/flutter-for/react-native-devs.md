@@ -91,9 +91,9 @@ main() {
 }
 ```
 
-Try it out in [DartPad]({{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1).
+Try it out in [DartPad][DartPadA].
 
-可以在这里查看效果 [DartPad]({{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1)。
+可以在这里查看效果 [DartPad][DartPadA]。
 
 ### Printing to the console
 
@@ -114,10 +114,9 @@ console.log('Hello world!');
 print('Hello world!');
 ```
 
-Try it out in
-[DartPad]({{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5).
+Try it out in [DartPad][DartPadB].
 
-可以在这里查看效果 [DartPad]({{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5)。
+可以在这里查看效果 [DartPad][DartPadB]。
 
 ### Variables
 
@@ -141,10 +140,10 @@ In JavaScript, variables cannot be typed.
 
 在 JavaScript 中，变量是无法指定类型的。
 
-In [Dart]({{site.dart-site}}/dart-2), variables must either be explicitly
+In [Dart][], variables must either be explicitly
 typed or the type system must infer the proper type automatically.
 
-在 [Dart]({{site.dart-site}}/dart-2) 中，变量要么被显式定义类型，要么系统会自动判断变量的类型。
+在 [Dart][] 中，变量要么被显式定义类型，要么系统会自动判断变量的类型。
 
 ```js
 // JavaScript
@@ -167,16 +166,15 @@ var otherName = 'Dart'; // 推断为字符串。
 // 两种定义方式在 Dart 中都可以。
 ```
 
-Try it out in
-[DartPad]({{site.dartpad}}/3f4625c16e05eec396d6046883739612).
+Try it out in [DartPad][DartPadC].
 
-可以在这里查看效果 [DartPad]({{site.dartpad}}/3f4625c16e05eec396d6046883739612)。
+可以在这里查看效果 [DartPad][DartPadC]。
 
 For more information, see [Dart's Type
-System]({{site.dart-site}}/guides/language/sound-dart).
+System][].
 
 如果想了解更多相关信息，请转向该页面 [Dart's Type
-System]({{site.dart-site}}/guides/language/sound-dart)。
+System][]。
 
 #### Default value
 
@@ -204,16 +202,15 @@ var name; // == null
 int x; // == null
 ```
 
-Try it out in
-[DartPad]({{site.dartpad}}/57ec21faa8b6fe2326ffd74e9781a2c7).
+Try it out in [DartPad][DartPadD].
 
-可以在这里查看效果 [DartPad]({{site.dartpad}}/57ec21faa8b6fe2326ffd74e9781a2c7)。
+可以在这里查看效果 [DartPad][DartPadD]。
 
 
 For more information, see the documentation on
-[variables]({{site.dart-site}}/guides/language/language-tour#variables).
+[variables][].
 
-如果想了解更多详细内容，请查看这个文档 [variables]({{site.dart-site}}/guides/language/language-tour#variables)。
+如果想了解更多详细内容，请查看这个文档 [variables][]。
 
 ### Checking for null or zero
 
@@ -251,10 +248,9 @@ if (zero == 0) {
 }
 ```
 
-Try it out in
-[DartPad]({{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6).
+Try it out in [DartPad][DartPadE].
 
-可以在这里查看效果 [DartPad]({{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6)。
+可以在这里查看效果 [DartPad][DartPadE]。
 
 ### Functions
 
@@ -284,16 +280,15 @@ bool fn() {
 }
 ```
 
-Try it out in
-[DartPad]({{site.dartpad}}/5454e8bfadf3000179d19b9bc6be9918).
+Try it out in [DartPad][DartPadF].
 
-可以在这里查看效果 [DartPad]({{site.dartpad}}/5454e8bfadf3000179d19b9bc6be9918)。
+可以在这里查看效果 [DartPad][DartPadF]。
 
 For more information, see the documentation on
-[functions]({{site.dart-site}}/guides/language/language-tour#functions).
+[functions][].
 
 如果想了解更多相关信息，请转向该页面
-[functions]({{site.dart-site}}/guides/language/language-tour#functions)。
+[functions][]。
 
 ### Asynchronous programming
 
@@ -307,10 +302,10 @@ of an asynchronous operation and its resulting value.
 
 和 JavaScript 类似，Dart 支持单线程。在 JavaScript 中， Promise 对象代表异步操作的完成或者失败。
 
-Dart uses [`Future`]({{site.dart-site}}/tutorials/language/futures)
+Dart uses [`Future`][]
 objects to handle this.
 
-Dart 使用 [`Future`]({{site.dart-site}}/tutorials/language/futures) 对象来实现该机制。
+Dart 使用 [`Future`][] 对象来实现该机制。
 
 ```js
 // JavaScript
@@ -361,13 +356,14 @@ main() {
       .catchError((error) => print(error));
 }
 ```
+Try it out in [DartPad][DartPadG].
 
-可以在这里查看效果 [DartPad]({{site.dartpad}}/5a0017d09b6823d0248d965b93133e2e)。
+可以在这里查看效果 [DartPad][DartPadG]。
 
 For more information, see the documentation on
-[Futures]({{site.dart-site}}/tutorials/language/futures).
+[`Future`][] objects.
 
-如果想了解更多相关信息，请参考 [Futures]({{site.dart-site}}/tutorials/language/futures) 的相关文档。
+如果想了解更多相关信息，请参考 [Futures][] 的相关文档。
 
 #### `async` and `await`
 
@@ -439,12 +435,14 @@ main() async {
 }
 ```
 
-可以在这里查看效果 [DartPad]({{site.dartpad}}/04bb4334985107cddcd021322398c918)。
+Try it out in [DartPad][DartPadE].
+
+可以在这里查看效果 [DartPad][DartPadE]。
 
 For more information, see the documentation for [async and await][].
 
 如果想了解更多相关信息，请参考 [`async` 和
-`await` 的相关文档]({{site.dart-site}}/guides/language/language-tour#asynchrony-support)。
+`await` 的相关文档][async and await]。
 
 ## The basics
 
@@ -459,9 +457,9 @@ you would run `create-react-native-app` from the command line.
 
 如果要使用 React Native 创建应用，你需要在命令行里运行 `create-react-native-app`。
 
-{% prettify %}
+```terminal
 $ create-react-native-app <projectname>
-{% endprettify%}
+```
 
 To create an app in Flutter, do one of the following:
 
@@ -476,14 +474,14 @@ To create an app in Flutter, do one of the following:
 
   在命令行中运行命令 `flutter create`。不过要提前确认 Flutter SDK 已经在系统环境变量 PATH 中定义。
 
-{% prettify %}
+```terminal
 $ flutter create <projectname>
-{% endprettify%}
+```
 
-For more information, see [Getting Started](/docs/get-started), which
-walks you through creating a button-click counter app. Creating a Flutter
-project builds all the files that you need to run a sample app on both Android
-and iOS devices.
+For more information, see [Getting started][], which
+walks you through creating a button-click counter app.
+Creating a Flutter project builds all the files that you
+need to run a sample app on both Android and iOS devices.
 
 如果想要了解更多内容，详见 [开始使用 Flutter](/docs/get-started)，
 在该页面会手把手教你创建一个点击按钮进行计数的应用。
@@ -515,7 +513,7 @@ or the Android emulator.
 
  你的应用程序会在已连接的设备、iOS 模拟器或者 Android 模拟器上运行。
 
-For more information, see the Flutter [Getting Started](/docs/get-started)
+For more information, see the Flutter [Getting Started][]
 documentation.
 
 如果想了解更多相关信息，可以参考 Flutter 的相关文档：[开始使用 Flutter](/docs/get-started)。
@@ -554,7 +552,7 @@ Whichever widget package you import, Dart pulls in only the widgets that are
 
 无论你导入哪个库，Dart 仅仅引用你应用中用到的 widget。
 
-For more information, see the [Flutter Widgets Catalog](/docs/development/ui/widgets).
+For more information, see the [Flutter Widgets Catalog][].
 
 如果想了解更多相关信息，可以参考 [核心 Widget 目录](/docs/development/ui/widgets)。
 
@@ -709,8 +707,8 @@ When writing an app, you'll use two types of widgets:
 
 当编写应用代码的时候，你将用到下述两种 widget ：
 
-[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html) or
- [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
+[StatelessWidget][] or
+ [StatefulWidget][].
 A StatelessWidget is just what it sounds like&mdash;a
  widget with no state. A StatelessWidget is created once, and never changes its
   appearance. A StatefulWidget dynamically changes state based on data
@@ -775,12 +773,12 @@ as shown in the `build` function in the following example.
 
 在 Flutter 中，定义一个类来创建一个自定义 widget 然后复用这个 widget。你可以定义并且调用函数来返回一个可复用的 widget，正如下面示例中 `build` 函数所示的那样。
 
-{% prettify dart %}
 
+```dart
 // Flutter
 class CustomCard extends StatelessWidget {
-  [[highlight]]CustomCard({@required this.index, @required [[/highlight]]
-     [[highlight]]this.onPress});[[/highlight]]
+  CustomCard({@required this.index, @required 
+     this.onPress});
 
   final index;
   final Function onPress;
@@ -803,27 +801,27 @@ class CustomCard extends StatelessWidget {
     ...
 // Usage
 CustomCard(
-  [[highlight]]index: index,[[/highlight]]
-  [[highlight]]onPress: () { [[/highlight]]
+  index: index,
+  onPress: () {
     print('Card $index');
   },
 )
     ...
-
-{% endprettify %}
+```
 
 In the previous example, the constructor for the `CustomCard` class uses Dart's curly brace syntax `{ }` to indicate named [optional
-parameters]({{site.dart-site}}/guides/language/language-tour#optional-parameters).
+parameters][].
 
 在之前的示例，`CustomCard` 类的构造函数使用 Dart 的曲括号 `{ }` 来表示可选参数 [optional
-parameters]({{site.dart-site}}/guides/language/language-tour#optional-parameters)。
+parameters][]。
 
 To require these fields, either remove the curly braces from the constructor, or
 add `@required` to the constructor.
 
 如果将这些参数设定为必填参数，要么从构造函数中删掉曲括号，或者在构造函数中加上 `@required`。
 
-The following screenshots show an example of the reusable CustomCard class.
+The following screenshots show an example of the reusable
+`CustomCard` class.
 
 下面的截图展示了可复用的 CustomCard 类的示例。
 
@@ -838,7 +836,7 @@ The following screenshots show an example of the reusable CustomCard class.
 
 ### 该从哪开始写代码呢？
 
-Start with the `main.dart` file. It's autogenerated when you create a
+Start with the `lib/main.dart` file. It's autogenerated when you create a
 Flutter app.
 
 从 `main.dart` 文件开始。当你创建 Flutter 应用的时候会自动生成这个文件。
@@ -851,7 +849,8 @@ void main(){
 }
 ```
 
-In Flutter, the entry point file is `’projectname’/lib/main.dart` and execution
+In Flutter, the entry point file is
+`’projectname’/lib/main.dart` and execution
 starts from the `main` function.
 
 在 Flutter 中，入口文件是 `’projectname’/lib/main.dart` 而程序执行是从 `main` 函数开始的。
@@ -977,8 +976,7 @@ widget’s build method.
 image: AssetImage('assets/background.png'),
 ```
 
-For more information, see [Adding Assets and Images in
-Flutter](/docs/development/ui/assets-and-images).
+For more information, see [Adding Assets and Images in Flutter][].
 
 如果想了解更多相关信息，请参考文档 [在 Flutter 中添加资源和图片](/docs/development/ui/assets-and-images)。
 
@@ -1014,8 +1012,8 @@ platform-specific code are known as package plugins.
 Flutter 支持使用开发者向 Flutter 和 Dart 生态系统贡献的代码包。
 这样可以使大量开发者快速构建应用程序而无需重复造车轮。而平台相关的代码包就被称为包插件。
 
-In React Native, you would use `yarn add {package-name}` or `npm install --save
-{package-name}` to install packages from the command line.
+In React Native, you would use `yarn add {package-name}` or 
+`npm install --save {package-name}` to install packages from the command line.
 
 在 React Native 中，你可以在命令行中运行 `yarn add {package-name}` 或者 `npm install --save
 {package-name}` 来安装代码包。
@@ -1076,7 +1074,8 @@ should look like given their current configuration and state.
 在 Flutter 中，你可以基于 widget 打造你自己的 UI，通过 widget 当前的设置和状态会呈现相应的页面效果。
 
 Widgets are often composed of many small, single-purpose widgets that are nested
-to produce powerful effects. For example, the Container widget consists of
+to produce powerful effects. 
+For example, the `Container` widget consists of
 several widgets responsible for layout, painting, positioning, and sizing.
 Specifically, the `Container` widget includes the `LimitedBox`,
 `ConstrainedBox`, `Align`, `Padding`, `DecoratedBox`, and `Transform` widgets.
@@ -1103,14 +1102,14 @@ certain way, it’s often helpful to inspect the neighboring widgets.
 如果想搞清楚为什么一个 widget 会有这样的效果，有效的方法是研究它临近的 widget。
 
 For more information, see the [Flutter Technical
-Overview](/docs/resources/technical-overview).
+Overview][].
 
-如果想了解更多相关信息，请参考 [技术概览](/docs/resources/technical-overview)。
+如果想了解更多相关信息，请参考 [技术概览][Flutter Technical Overview]。
 
 For more information about the core widgets from the Widgets package, see
-[Flutter Basic Widgets](/docs/development/ui/widgets/basics), the
-[Flutter Widget Catalog](/docs/development/ui/widgets), or the
-[Flutter Widget Index](/docs/reference/widgets).
+[Flutter Basic Widgets][], the
+[Flutter Widget Catalog][], or the
+[Flutter Widget Index][].
 
 如果想了解更多关于 Widgets 包中的核心 widget，请参考 [Flutter Basic Widgets](/docs/development/ui/widgets/basics)、
 [核心 Widget 目录](/docs/development/ui/widgets) 或是 [Flutter Widget 目录](/docs/reference/widgets)。
@@ -1129,16 +1128,16 @@ style, touch handling, and accessibility controls.
 在 React Native 中， `View` 是支持 `Flexbox` 布局、风格化、触摸事件处理和访问性控制的容器。
 
 In Flutter, you can use the core layout widgets in the Widgets library, such
-as  [Container]({{site.api}}/flutter/widgets/Container-class.html),
-[Column]({{site.api}}/flutter/widgets/Column-class.html),
-[Row]({{site.api}}/flutter/widgets/Row-class.html),
-and [Center]({{site.api}}/flutter/widgets/Center-class.html).
+as  [Container][],
+[Column][],
+[Row][],
+and [Center][].
 
-在 Flutter 中，你可以使用 Widgets 库中的核心布局 widget，比如 [Container]({{site.api}}/flutter/widgets/Container-class.html)、
-[Column]({{site.api}}/flutter/widgets/Column-class.html)、
-[Row]({{site.api}}/flutter/widgets/Row-class.html) 和 [Center]({{site.api}}/flutter/widgets/Center-class.html)。
+在 Flutter 中，你可以使用 Widgets 库中的核心布局 widget，比如 [Container][]、
+[Column][]、
+[Row][] 和 [Center][]。
 
-For more information, see the [Layout Widgets](/docs/development/ui/widgets/layout) catalog.
+For more information, see the [Layout Widgets][] catalog.
 
 如果想了解更多相关信息，请参考 [Layout Widgets](/docs/development/ui/widgets/layout) 目录。
 
@@ -1163,12 +1162,11 @@ sectioned lists.
 />
 ```
 
-[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
-is Flutter's most commonly used scrolling widget. The default constructor
-takes an explicit list of children.
-[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
-is most appropriate for a small number of widgets. For a large or infinite list,
-use `ListView.builder`, which builds its children on demand and only builds
+[`ListView`][] is Flutter's most commonly used scrolling widget.
+The default constructor takes an explicit list of children.
+[`ListView`][] is most appropriate for a small number of widgets.
+For a large or infinite list, use `ListView.builder`,
+which builds its children on demand and only builds
 those children that are visible.
 
 [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 是 Flutter 最常用的滑动 widget。默认构造函数需要一个数据列表的参数。
@@ -1192,8 +1190,7 @@ ListView.builder(
 {% include android-ios-figure-pair.md image="react-native/flatlist.gif" alt="Flat list" class="border" %}
 
 To learn how to implement an infinite scrolling list, see the
-[Write Your First Flutter App,
-Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1) codelab.
+[Write Your First Flutter App, Part 1][] codelab.
 
 如果要了解如何实现无限滑动列表，请参考 [Write Your First Flutter App,
 Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1) codelab。
@@ -1225,18 +1222,17 @@ render() {
   );
 }
 ```
-In Flutter, you can use the
-[`CustomPaint`]({{site.api}}/flutter/widgets/CustomPaint-class.html)
-and [`CustomPainter`]({{site.api}}/flutter/rendering/CustomPainter-class.html)
-classes to draw to the canvas.
+In Flutter, you can use the [`CustomPaint`][]
+and [`CustomPainter`][] classes to draw to the canvas.
 
 在 Flutter 中，你可以使用 [`CustomPaint`]({{site.api}}/flutter/widgets/CustomPaint-class.html)
 和 [`CustomPainter`]({{site.api}}/flutter/rendering/CustomPainter-class.html) 进行绘图。
 
 The following example shows how to draw during the paint phase using the
-`CustomPaint` widget. It implements the abstract class, CustomPainter,
-and passes it to CustomPaint's painter property. CustomPaint subclasses
-must implement the `paint` and `shouldRepaint` methods.
+`CustomPaint` widget. It implements the abstract class, `CustomPainter`,
+and passes it to `CustomPaint`'s painter property.
+`CustomPaint` subclasses must implement the `paint()`
+and `shouldRepaint()` methods.
 
 下面的示例代码展示了如何使用 `CustomPaint` 进行绘图。它实现了抽象类 CustomPainter，然后将它赋值给 CustomPainter 的 painter 属性。CustomPainter 子类必须实现 `paint` 和 `shouldRepaint` 方法。
 
@@ -1302,22 +1298,23 @@ components in a column, you would specify a prop such as:
 >
 ```
 
-In Flutter, the layout is primarily defined by widgets specifically designed to
- provide layout, combined with control widgets and their style properties.
+In Flutter, the layout is primarily defined by widgets
+specifically designed to provide layout,
+combined with control widgets and their style properties.
 
 在 Flutter 中，布局主要是由专门的 widget 定义的，它们同控制类 widget 和样式属性一起发挥功能。
 
 For example, the
-[Column]({{site.api}}/flutter/widgets/Column-class.html) and
-[Row]({{site.api}}/flutter/widgets/Row-class.html) widgets
+[Column][] and
+[Row][] widgets
 take an array of children and align them vertically and horizontally respectively.
-A [Container]({{site.api}}/flutter/widgets/Container-class.html)
+A [Container][]
 widget takes a combination of layout and styling properties, and a
-[`Center`]({{site.api}}/flutter/widgets/Center-class.html) widget centers
+[`Center`][] widget centers
 its child widgets.
 
-比如，[Column]({{site.api}}/flutter/widgets/Column-class.html) 和
-[Row]({{site.api}}/flutter/widgets/Row-class.html) widget
+比如，[Column][] 和
+[Row][] widget
 接受一个数组的子元素并且分别按照纵向和横向进行排列。
 
 <!-- skip -->
@@ -1347,17 +1344,15 @@ Center(
 ```
 
 Flutter provides a variety of layout widgets in its core widget library.
-For example, [`Padding`]({{site.api}}/flutter/widgets/Padding-class.html),
-[`Align`]({{site.api}}/flutter/widgets/Align-class.html),
-and [`Stack`]({{site.api}}/flutter/widgets/Stack-class.html).
+For example, [`Padding`][], [`Align`][], and [`Stack`][].
 
-Flutter 在核心 widget 库中提供多种不同的布局 widget。比如 [`Padding`]({{site.api}}/flutter/widgets/Padding-class.html)、
-[`Align`]({{site.api}}/flutter/widgets/Align-class.html) 
-和 [`Stack`]({{site.api}}/flutter/widgets/Stack-class.html)。
+Flutter 在核心 widget 库中提供多种不同的布局 widget。比如 [`Padding`][]、
+[`Align`][] 
+和 [`Stack`][]。
 
-For a complete list, see [Layout Widgets](/docs/development/ui/widgets/layout).
+For a complete list, see [Layout Widgets][].
 
-要得到完整的 widget 列表，请参考 [Layout Widgets](/docs/development/ui/widgets/layout)。
+要得到完整的 widget 列表，请参考 [Layout Widgets][]。
 
 {% include android-ios-figure-pair.md image="react-native/basic-layout.gif" alt="Layout" class="border" %}
 
@@ -1370,11 +1365,11 @@ In React Native, components can be layered using `absolute` positioning.
 在 React Native 中，组件可以通过 `absolute` 划分层次。
 
 Flutter uses the
-[`Stack`]({{site.api}}/flutter/widgets/Stack-class.html)
+[`Stack`][]
 widget to arrange children widgets in layers.
 The widgets can entirely or partially overlap the base widget.
 
-在 Flutter 中使用 [`Stack`]({{site.api}}/flutter/widgets/Stack-class.html) widget 将子 widget 进行分层。该 widget 可以将整体或者部分的子 widget 进行分层。
+在 Flutter 中使用 [`Stack`][] widget 将子 widget 进行分层。该 widget 可以将整体或者部分的子 widget 进行分层。
 
 The `Stack` widget positions its children relative to the edges of its box.
 This class is useful if you simply want to overlap several children widgets.
@@ -1410,10 +1405,9 @@ the text using the alignment property and Alignment coordinates.
 
 {% include android-ios-figure-pair.md image="react-native/stack.png" alt="Stack" class="border" %}
 
-For more information, see the
-[Stack]({{site.api}}/flutter/widgets/Stack-class.html) class documentation.
+For more information, see the [`Stack`][] class documentation.
 
-如果想了解更多相关信息，请参考 [Stack]({{site.api}}/flutter/widgets/Stack-class.html) 类文档。
+如果想了解更多相关信息，请参考 [Stack][] 类文档。
 
 ## Styling
 
@@ -1446,12 +1440,12 @@ const styles = StyleSheet.create({
 });
 ```
 
-In Flutter, a `Text` widget can take a `TextStyle` class for its style property.
-If you want to use the same text style in multiple places, you can create a
-[`TextStyle`]({{site.api}}/flutter/dart-ui/TextStyle-class.html)
-class and use it for multiple `Text` widgets.
+In Flutter, a `Text` widget can take a `TextStyle` class
+for its style property. If you want to use the same text
+style in multiple places, you can create a
+[`TextStyle`][] class and use it for multiple `Text` widgets.
 
-在 Flutter 中， `Text` widget 可以接受 `TextStyle` 作为它的风格化属性。如果你想在不同的场合使用相同的文本风格，你可以创建一个 [`TextStyle`]({{site.api}}/flutter/dart-ui/TextStyle-class.html) 类，并且在多个 `Text` widget 中使用它。
+在 Flutter 中， `Text` widget 可以接受 `TextStyle` 作为它的风格化属性。如果你想在不同的场合使用相同的文本风格，你可以创建一个 [`TextStyle`][] 类，并且在多个 `Text` widget 中使用它。
 
 <!-- skip -->
 ```dart
@@ -1487,11 +1481,11 @@ React Native doesn't include support for icons so third party libraries are used
 React Native 并不包含默认图标，所以需要使用第三方库。
 
 In Flutter, importing the Material library also pulls in the rich set of
-[Material icons]({{site.api}}/flutter/material/Icons-class.html)
-and [colors]({{site.api}}/flutter/material/Colors-class.html).
+[Material icons][]
+and [colors][].
 
-在 Flutter 中，引用 Material 库的时候就同时引入了 [Material icons]({{site.api}}/flutter/material/Icons-class.html)
-和 [colors]({{site.api}}/flutter/material/Colors-class.html)。
+在 Flutter 中，引用 Material 库的时候就同时引入了 [Material icons][]
+和 [colors][]。
 
 <!-- skip -->
 ```dart
@@ -1501,22 +1495,22 @@ Icon(Icons.lightbulb_outline, color: Colors.redAccent)
 When using the `Icons` class, make sure to set `uses-material-design: true` in
 the project's `pubspec.yaml` file. This ensures that
 the `MaterialIcons` font, which displays the icons, is included in your app.
-{% prettify dart %}
+```yaml
 name: my_awesome_application
-flutter: [[highlight]]uses-material-design: true[[/highlight]]
-{% endprettify %}
+flutter: uses-material-design: true
+```
 
 当使用 `Icons` 类时，确保在项目的 `pubspec.yaml` 文件中设置 `uses-material-design: true`。这样保证 `MaterialIcons` 相关字体被包含在你的应用中。
-{% prettify dart %}
+```yaml
 name: my_awesome_application
 flutter: [[highlight]]uses-material-design: true[[/highlight]]
-{% endprettify %}
+```
 
-Flutter's [Cupertino (iOS-style)](/docs/development/ui/widgets/cupertino) package provides high
+Flutter's [Cupertino (iOS-style)][] package provides high
 fidelity widgets for the current iOS design language. To use the `CupertinoIcons`
 font, add a dependency for `cupertino_icons` in your project's  `pubspec.yaml` file.
 
-Flutter 的 [Cupertino (iOS-style)](/docs/development/ui/widgets/cupertino) 包为 iOS 设计语言提供高分辨率的 widget。要使用 `CupertinoIcons` 字体，在项目的 `pubspec.yaml` 文件中添加 `cupertino_icons` 的依赖即可。
+Flutter 的 [Cupertino (iOS-style)][] 包为 iOS 设计语言提供高分辨率的 widget。要使用 `CupertinoIcons` 字体，在项目的 `pubspec.yaml` 文件中添加 `cupertino_icons` 的依赖即可。
 
 ```yaml
 name: my_awesome_application
@@ -1524,15 +1518,13 @@ dependencies:
   cupertino_icons: ^0.1.0
 ```
 
-To globally customize the colors and styles of components, use `ThemeData`
-to specify default colors for various aspects of the theme. Set the theme
-property in `MaterialApp` to the `ThemeData` object. The
-[`Colors`]({{site.api}}/flutter/material/Colors-class.html)
-class provides colors from the Material Design [color
-palette]({{site.material}}/guidelines/style/color.html).
+To globally customize the colors and styles of components,
+use `ThemeData` to specify default colors for various aspects of
+the theme. Set the theme property in `MaterialApp` to the
+`ThemeData` object. The [`Colors`][] class provides colors
+from the Material Design [color palette][].
 
-要在全局范围内自定义组件的颜色和风格，使用 `ThemeData` 为不同的主题指定默认颜色。在 `MaterialApp` 的主题属性中设置 `ThemeData` 对象。[`Colors`]({{site.api}}/flutter/material/Colors-class.html) 类提供 Material Design [color
-palette]({{site.material}}/guidelines/style/color.html) 中所提供的颜色配置。
+要在全局范围内自定义组件的颜色和风格，使用 `ThemeData` 为不同的主题指定默认颜色。在 `MaterialApp` 的主题属性中设置 `ThemeData` 对象。[`Colors`][] 类提供 Material Design [color palette][] 中所提供的颜色配置。
 
 The following example sets the primary swatch to `blue` and the text
 selection to `red`.
@@ -1540,21 +1532,21 @@ selection to `red`.
 下面的示例代码将主色调设置为 `blue` 然后文本颜色设置为 `red`。
 
 <!-- skip -->
-{% prettify dart %}
+```dart
 class SampleApp extends StatelessWidget {
   @override
  widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        [[highlight]]primarySwatch: Colors.blue,[[/highlight]]
-        [[highlight]]textSelectionColor: Colors.red[[/highlight]]
+        primarySwatch: Colors.blue,
+        textSelectionColor: Colors.red
       ),
       home: SampleAppPage(),
     );
   }
 }
-{% endprettify %}
+```
 
 ### How do I add style themes?
 
@@ -1567,10 +1559,9 @@ then used in components.
 
 In Flutter, create uniform styling for almost everything by defining the
  styling in the
-[`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html)
+[`ThemeData`][]
 class and passing it to the theme property in the
-[`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
-widget.
+[`MaterialApp`][] widget.
 
 在 Flutter 中，为所有组件创建统一风格可以在 [`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html) 类中定义，并将它赋值给 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html) 的主题属性。
 
@@ -1588,10 +1579,10 @@ widget.
   }
 ```
 
-A `Theme` can be applied even without using the `MaterialApp` widget. The
-[`Theme`]({{site.api}}/flutter/material/Theme-class.html)
-widget takes a `ThemeData` in its `data` parameter and applies the
-`ThemeData` to all of its children widgets.
+A `Theme` can be applied even without using the
+`MaterialApp` widget.  The [`Theme`][]
+widget takes a `ThemeData` in its `data` parameter
+and applies the `ThemeData` to all of its children widgets.
 
 `Theme` 可以在不使用 `MaterialApp` widget 的情况下使用。[`Theme`]({{site.api}}/flutter/material/Theme-class.html) 接受一个 `ThemeData` 参数，并且将 `ThemeData` 应用于它的全部子 widget。
 
@@ -1620,7 +1611,7 @@ widget takes a `ThemeData` in its `data` parameter and applies the
 State is information that can be read synchronously when a widget is built
 or information that might change during the lifetime of a widget.
 To manage app state in Flutter, use a
-[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
+[StatefulWidget][]
 paired with a State object.
 
 当 widget 被创建或者在 widget 的生命周期中有信息发生改变时所产生的信息叫做状态。
@@ -1645,23 +1636,23 @@ change&mdash;it has no internal state to manage.
 Stateless widgets are useful when the part of the user interface you are
 describing does not depend on anything other than the configuration information
 in the object itself and the
-[`BuildContext`]({{site.api}}/flutter/widgets/BuildContext-class.html)
+[`BuildContext`][]
 in which the widget is inflated.
 
 当你展现给用户的界面并不依赖其它任何配置信息并且使用
-[`BuildContext`]({{site.api}}/flutter/widgets/BuildContext-class.html)
+[`BuildContext`][]
 来解析 widget，则需要使用无状态 widget。
 
-[AboutDialog]({{site.api}}/flutter/material/AboutDialog-class.html),
-[CircleAvatar]({{site.api}}/flutter/material/CircleAvatar-class.html),
-and [Text]({{site.api}}/flutter/widgets/Text-class.html) are examples
+[`AboutDialog`][],
+[`CircleAvatar`][],
+and [`Text`][] are examples
 of stateless widgets which subclass
-[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html).
+[`StatelessWidget`][].
 
-[AboutDialog]({{site.api}}/flutter/material/AboutDialog-class.html)、
-[CircleAvatar]({{site.api}}/flutter/material/CircleAvatar-class.html)
-和 [Text]({{site.api}}/flutter/widgets/Text-class.html) 是
-[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html) 的子类，并且是很典型的无状态 widget。
+[`AboutDialog`][]、
+[`CircleAvatar`][]
+和 [`Text`][] 是
+[`StatelessWidget`][] 的子类，并且是很典型的无状态 widget。
 
 <!-- skip -->
 ```dart
@@ -1686,9 +1677,9 @@ class MyStatelessWidget extends StatelessWidget {
 }
 ```
 
-In the previous example, you used the constructor of the `MyStatelessWidget`
-class to pass the `text`, which is marked as `final`. This class extends
- `StatelessWidget`&mdash;it contains immutable data.
+The previous example uses the constructor of the `MyStatelessWidget`
+class to pass the `text`, which is marked as `final`.
+This class extends `StatelessWidget`&mdash;it contains immutable data.
 
 在上面的例子中，你用到了 `MyStatelessWidget` 类的构造函数来传递 `text`。
 并且它被标记为 `final`。该类继承了 `StatelessWidget`，它包含不可变的数据。
@@ -1707,7 +1698,7 @@ The `build` method of a stateless widget is typically called in only three
   当 widget 的父 widget 改变了配置
 
 * When an
-  [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
+  [`InheritedWidget`][]
   it depends on, changes
 
   当所依赖的 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html) 发生了改变
@@ -1716,13 +1707,13 @@ The `build` method of a stateless widget is typically called in only three
 
 ### StatefulWidget widget
 
-A [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
+A [StatefulWidget][]
 is a widget that changes state. Use the `setState` method to manage the
 state changes for a `StatefulWidget`. A call to `setState` tells the Flutter
 framework that something has changed in a state, which causes an app to
 rerun the `build` method so that the app can reflect the change.
 
-[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html) 
+[StatefulWidget][] 
 是携带状态变化的 widget。通过调用 `setState` 方法可以管理 `StatefulWidget` 的状态。
 当调用 `setState` 的时候，程序会通知 Flutter 框架有状态发生了改变，
 然后会重新运行 `build` 方法来更新应用的状态。
@@ -1741,23 +1732,23 @@ or moving a slider. Or, it can change over time—perhaps a data feed updates th
 比如，某个 widget 会随着用户填写表单或者移动滑块的时候发生改变。
 亦或者随着数据源更新的时候发生改变。
 
-[Checkbox]({{site.api}}/flutter/material/Checkbox-class.html),
-[Radio]({{site.api}}/flutter/material/Radio-class.html),
-[Slider]({{site.api}}/flutter/material/Slider-class.html),
-[InkWell]({{site.api}}/flutter/material/InkWell-class.html),
-[Form]({{site.api}}/flutter/widgets/Form-class.html),
-and [TextField]({{site.api}}/flutter/material/TextField-class.html)
+[`Checkbox`][],
+[`Radio`][],
+[`Slider`][],
+[`InkWell`][],
+[`Form`][],
+and [`TextField`][]
 are examples of stateful widgets, that subclass
-[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
+[`StatefulWidget`][].
 
-[Checkbox]({{site.api}}/flutter/material/Checkbox-class.html)、
-[Radio]({{site.api}}/flutter/material/Radio-class.html)、
-[Slider]({{site.api}}/flutter/material/Slider-class.html)、
-[InkWell]({{site.api}}/flutter/material/InkWell-class.html)、
-[Form]({{site.api}}/flutter/widgets/Form-class.html)、
-和 [TextField]({{site.api}}/flutter/material/TextField-class.html)
+[`Checkbox`][]、
+[`Radio`][]、
+[`Slider`][]、
+[`InkWell`][]、
+[`Form`][]、
+和 [`TextField`][]
 都是有状态的 widget，是
-[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html) 的子类。
+[`StatefulWidget`][] 的子类。
 
 The following example declares a `StatefulWidget` which requires a `createState()`
 method. This method creates the state object that manages the widget's state,
@@ -1777,10 +1768,11 @@ class MyStatefulWidget extends StatefulWidget {
 }
 ```
 
-The following state class, `_MyStatefulWidgetState`, implements the `build()`
-method for the widget. When the state changes, for example, when the user toggles
-the button, `setState` is called with the new toggle value. This causes the
-framework to rebuild this widget in the UI.
+The following state class, `_MyStatefulWidgetState`,
+implements the `build()` method for the widget.
+When the state changes, for example, when the user toggles
+the button, `setState()` is called with the new toggle value.
+This causes the framework to rebuild this widget in the UI.
 
 下面的状态类，`_MyStatefulWidgetState`，实现了 `build()` 方法。
 当状态发生改变的时候，比如说用户点击了开关按钮，
@@ -1850,9 +1842,9 @@ Here are a few things to consider when designing your widget.
 
 下面有一些设计原则供大家参考。
 
-#### 1. Determine whether a widget should be a StatefulWidget or a StatelessWidget
+1. Determine whether a widget should be a StatefulWidget or a StatelessWidget
 
-### 1. 确定一个 widget 应该是 StatefulWidget 还是 StatelessWidget
+1. 确定一个 widget 应该是 StatefulWidget 还是 StatelessWidget
 
 In Flutter, widgets are either Stateful or Stateless—depending on whether
 they depend on a state change.
@@ -1868,9 +1860,9 @@ they depend on a state change.
 
   如果一个 widget 是 final 类型或者 immutable 类型的，那么该 widget 是无状态的。
 
-#### 2. Determine which object manages the widget’s state (for a StatefulWidget)
+2. Determine which object manages the widget’s state (for a StatefulWidget)
 
-#### 2. 确定哪个对象来控制 widget 的状态（ 针对 StatefulWidget ）。
+2. 确定哪个对象来控制 widget 的状态（ 针对 StatefulWidget ）。
 
 In Flutter, there are three primary ways to manage state:
 
@@ -1910,9 +1902,9 @@ When deciding which approach to use, consider the following principles:
 
 
 
-#### 3. Subclass StatefulWidget and State
+3. Subclass StatefulWidget and State.
 
-#### 3. 继承 StatefulWidget 和 状态
+3. 继承 StatefulWidget 和 状态
 
 The `MyStatefulWidget` class manages its own state—it extends
 `StatefulWidget`, it overrides the `createState()` method to create the State
@@ -1944,7 +1936,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 }
 ```
 
-#### 4. Add the StatefulWidget into the widget tree
+4. Add the StatefulWidget into the widget tree.
 
 #### 4. 将 StatefulWidget 添加到 widget 树中
 
@@ -2019,8 +2011,6 @@ class App extends React.Component {
 }
 ```
 
-
-
 In Flutter, you assign a local variable or function marked `final` with the
  property received in the parameterized constructor.
 
@@ -2093,12 +2083,13 @@ AsyncStorage.getItem('counterkey').then(value => {
 });
 ```
 
-In Flutter, use the
-[`shared_preferences`]({{site.github}}/flutter/plugins/tree/master/packages/shared_preferences)
-plugin to store and retrieve key-value data that is persistent and global
-to the app. The `shared_preferences` plugin wraps `NSUserDefaults` on iOS
-and `SharedPreferences` on Android, providing a persistent store for simple data.
-To use the plugin, add `shared_preferences` as a dependency in the `pubspec.yaml`
+In Flutter, use the [`shared_preferences`][] plugin to
+store and retrieve key-value data that is persistent and global
+to the app. The `shared_preferences` plugin wraps
+`NSUserDefaults` on iOS and `SharedPreferences` on Android,
+providing a persistent store for simple data.
+To use the plugin,
+add `shared_preferences` as a dependency in the `pubspec.yaml`
 file then import the package in your Dart file.
 
 在 Flutter 中，使用 
@@ -2193,23 +2184,23 @@ In Flutter, there are two main widgets used to navigate between screens:
 
 在 Flutter 中，有两种主要的 widget 实现页面之间的切换：
 
-* A [Route]({{site.api}}/flutter/widgets/Route-class.html)
+* A [Route][]
   is an abstraction for an app screen or page.
 
-  [Route]({{site.api}}/flutter/widgets/Route-class.html) 是应用程序页面的一个抽象类。
+  [Route][] 是应用程序页面的一个抽象类。
 
-* A [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)
+* A [Navigator][]
   is a widget that manages routes.
 
-  [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html) 是管理页面路径的 widget。
+  [Navigator][] 是管理页面路径的 widget。
 
 A `Navigator` is defined as a widget that manages a set of child widgets with a
 stack discipline. The navigator manages a stack of `Route` objects and provides
 methods for managing the stack, like
-[`Navigator.push`]({{site.api}}/flutter/widgets/Navigator/push.html)
-and [`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html).
+[`Navigator.push`][]
+and [`Navigator.pop`][].
 A list of routes might be specified in the
-[`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
+[`MaterialApp`][]
 widget, or they might be built on the fly, for example, in hero animations.
 The following example specifies named routes in the `MaterialApp` widget.
 
@@ -2235,9 +2226,8 @@ class NavigationApp extends StatelessWidget {
 }
 ```
 
-To navigate to a named route, the
-[of]({{site.api}}/flutter/widgets/Navigator/of.html)
-method of the `Navigator` widget is used to specify the `BuildContext`
+To navigate to a named route, the [`Navigator.of()`][]
+method is used to specify the `BuildContext`
 (a handle to the location of a widget in the widget tree).
 The name of the route is passed to the `pushNamed` function to
 navigate to the specified route.
@@ -2249,16 +2239,13 @@ navigate to the specified route.
 Navigator.of(context).pushNamed('/a');
 ```
 
-You can also use the push method of `Navigator` which adds the given
-[`route`]({{site.api}}/flutter/widgets/Route-class.html)
-to the history of the navigator that most tightly encloses the given
-[`context`]({{site.api}}/flutter/widgets/BuildContext-class.html),
-and transitions to it. In the following example, the
-[`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html)
-widget is a modal route that replaces the entire screen with a platform-adaptive
-transition. It takes a
-[`WidgetBuilder`]({{site.api}}/flutter/widgets/WidgetBuilder.html)
-as a required parameter.
+You can also use the push method of `Navigator` which
+adds the given [`Route`][] to the history of the
+navigator that most tightly encloses the given [`BuildContext`][],
+and transitions to it. In the following example,
+the [`MaterialPageRoute`][] widget is a modal route that
+replaces the entire screen with a platform-adaptive
+transition. It takes a [`WidgetBuilder`][] as a required parameter.
 
 你可以使用 `Navigator` 中的 push 方法添加 [`route`]({{site.api}}/flutter/widgets/Route-class.html) 到 navigator 的历史队列中，其中包含 [`context`]({{site.api}}/flutter/widgets/BuildContext-class.html) 并且可以切换到指定页面。在下面的例子中，[`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html) 是一个模式化路径，可以将整个页面通过平台自适应切换方式进行切换。它需要一个 [`WidgetBuilder`]({{site.api}}/flutter/widgets/WidgetBuilder.html) 参数。
 
@@ -2302,22 +2289,22 @@ Flutter provides several specialized widgets for drawer and tab navigation:
 
 Flutter 针对 drawer 和 tab 导航提供几种专用的 widget：
 
-* [TabController]({{site.api}}/flutter/material/TabController-class.html)&mdash;Coordinates
+* [`TabController`][]&mdash;Coordinates
   the tab selection between a TabBar and a TabBarView.
 
-  [TabController]({{site.api}}/flutter/material/TabController-class.html)&mdash;将 tab 与 TabBar 和 TabBarView 结合起来使用。
+  [`TabController`][]&mdash;将 tab 与 TabBar 和 TabBarView 结合起来使用。
 
-* [TabBar]({{site.api}}/flutter/material/TabBar-class.html)&mdash;Displays
+* [`TabBar`][]&mdash;Displays
   a horizontal row of tabs.
 
-  [TabBar]({{site.api}}/flutter/material/TabBar-class.html)&mdash;水平显示一行 tab。
+  [`TabBar`][]&mdash;水平显示一行 tab。
 
-* [Tab]({{site.api}}/flutter/material/Tab-class.html)&mdash;Creates
+* [`Tab`][]&mdash;Creates
   a material design TabBar tab.
 
-  [Tab]({{site.api}}/flutter/material/Tab-class.html)&mdash;创建一个 material design 风格的 TabBar 中的 tab。
+  [`Tab`][]&mdash;创建一个 material design 风格的 TabBar 中的 tab。
 
-* [TabBarView]({{site.api}}/flutter/material/TabBarView-class.html)&mdash;Displays
+* [`TabBarView`][]&mdash;Displays
   the widget that corresponds to the currently selected tab.
 
   [TabBarView]({{site.api}}/flutter/material/TabBarView-class.html)&mdash;显示目前所选 tab 所对应的 widget。
@@ -2340,7 +2327,6 @@ TabBar(
 
 ```
 
-
 A `TabController` is required to coordinate the tab selection between a `TabBar`
 and a `TabBarView`. The `TabController` constructor `length` argument is the total
 number of tabs. A `TickerProvider` is required to trigger the notification whenever
@@ -2350,31 +2336,31 @@ a new `TabController`.
 
 要将 tab 选项与 `TabBar` 和 `TabBarView` 结合起来使用就需要 `TabController`。 `TabController` 的构造函数中的 `length` 参数定义了 tab 的总数。当状态变化时，需要使用 `TickerProvider` 来触发通知。`TickerProvider` 是 `vsync`。当你需要创建新的 `TabController` 时，将 `vsync: this` 作为构造函数的参数即可。
 
-The [TickerProvider]({{site.api}}/flutter/scheduler/TickerProvider-class.html)
+The [`TickerProvider`][]
 is an interface implemented by classes that can vend
-[`Ticker`]({{site.api}}/flutter/scheduler/Ticker-class.html)
+[`Ticker`][]
 objects. Tickers can be used by any object that must be notified whenever a
 frame triggers, but they're most commonly used indirectly via an
-[`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html).
-`AnimationControllers` need a `TickerProvider` to obtain their `Ticker`.
-If you are creating an AnimationController from a State, then you can use the
-[`TickerProviderStateMixin`]({{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html)
-or [`SingleTickerProviderStateMixin`]({{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html)
+[`AnimationController`][]. `AnimationControllers`
+need a `TickerProvider` to obtain their `Ticker`.
+If you are creating an AnimationController from a State,
+then you can use the [`TickerProviderStateMixin`][]
+or [`SingleTickerProviderStateMixin`][]
 classes to obtain a suitable `TickerProvider`.
 
-[TickerProvider]({{site.api}}/flutter/scheduler/TickerProvider-class.html) 接口可以用于生成 [`Ticker`]({{site.api}}/flutter/scheduler/Ticker-class.html) 对象。
-当有对象被触发通知后会用到 Tickers，不过它通常都是被 [`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html) 间接调用。
+[`TickerProvider`][] 接口可以用于生成 [`Ticker`][] 对象。
+当有对象被触发通知后会用到 Tickers，不过它通常都是被 [`AnimationController`][] 间接调用。
 `AnimationControllers` 需要 `TickerProvider` 来获得对应的 `Ticker`。 
-如果你通过 State 创建了一个 AnimationController，那么你就可以使用 [`TickerProviderStateMixin`]({{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html) 或者
-[`SingleTickerProviderStateMixin`]({{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html) 来获得对应的 `TickerProvider`。
+如果你通过 State 创建了一个 AnimationController，那么你就可以使用 [`TickerProviderStateMixin`][] 或者
+[`SingleTickerProviderStateMixin`][] 来获得对应的 `TickerProvider`。
 
-The [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html)
+The [`Scaffold`][]
 widget wraps a new `TabBar` widget and creates two tabs. The `TabBarView` widget
 is passed as the `body` parameter of the `Scaffold` widget. All screens
 corresponding to the `TabBar` widget’s tabs are children to the `TabBarView`
 widget along with the same `TabController`.
 
-[`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html) 
+[`Scaffold`][] 
 封装了一个新的 `TabBar` widget，其中包含两个 tab。`TabBarView` 作为 `body` 参数传递到 `Scaffold` 中。所有和 `TabBar` 中的 tab 相关的页面均是 `TabBarView` 的子 widget，并且都对应同一个 `TabController`。
 
 
@@ -2430,22 +2416,22 @@ export default (MyApp1 = DrawerNavigator({
 }));
 ```
 
-In Flutter, we can use the `Drawer` widget in combination with a `Scaffold` to
-create a layout with a Material Design drawer. To add a `Drawer` to an app,
-wrap it in a `Scaffold` widget. The `Scaffold` widget provides a consistent
+In Flutter, we can use the `Drawer` widget in combination with a
+`Scaffold` to create a layout with a Material Design drawer.
+To add a `Drawer` to an app, wrap it in a `Scaffold` widget.
+The `Scaffold` widget provides a consistent
 visual structure to apps that follow the
-[Material Design]({{site.material}}/design) guidelines. It also supports
+[Material Design][] guidelines. It also supports
 special Material Design components, such as `Drawers`, `AppBars`, and `SnackBars`.
 
-在 Flutter 中，我们可以结合 `Drawer` 和 `Scaffold` 一起使用来实现 Material Design 风格的 drawer 布局。如果要在应用程序中添加 `Drawer`， 可以将它封装在 `Scaffold` widget 中。`Scaffold` widget 提供了一种一致的界面风格，它遵循 [Material Design]({{site.material}}/design) 的设计原则。同时它还支持一些特殊的 Material Design 组件，比如 `Drawers`，`AppBars`， 和 `SnackBars`。
+在 Flutter 中，我们可以结合 `Drawer` 和 `Scaffold` 一起使用来实现 Material Design 风格的 drawer 布局。如果要在应用程序中添加 `Drawer`， 可以将它封装在 `Scaffold` widget 中。`Scaffold` widget 提供了一种一致的界面风格，它遵循 [Material Design][] 的设计原则。同时它还支持一些特殊的 Material Design 组件，比如 `Drawers`，`AppBars`， 和 `SnackBars`。
 
 The `Drawer` widget is a Material Design panel that slides in horizontally from
 the edge of a `Scaffold` to show navigation links in an application. You can
-provide a [`Button`]({{site.api}}/flutter/material/RaisedButton-class.html),
-a [`Text`]({{site.api}}/flutter/widgets/Text-class.html) widget,
+provide a [`Button`][],
+a [`Text`][] widget,
 or a list of items to display as the child to the `Drawer` widget.
-In the following example, the
-[`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
+In the following example, the [`ListTile`][]
 widget provides the navigation on tap.
 
 `Drawer` 就是一个 Material Design 窗格，它可以从 `Scaffold` 边缘水平滑动显示应用程序的导航选项。你可以在里面添加 [`Button`]({{site.api}}/flutter/material/RaisedButton-class.html)， [`Text`]({{site.api}}/flutter/widgets/Text-class.html)。或者添加一个列表的元素作为 `Drawer` 的子 widget。
@@ -2535,11 +2521,10 @@ the `Touchable` components.
 </TouchableOpacity>
 ```
 
-For more complex gestures and combining several touches into a single gesture,
-[`PanResponder`](https://facebook.github.io/react-native/docs/panresponder.html)
-is used.
+For more complex gestures and combining several touches into
+a single gesture, [`PanResponder`][] is used.
 
-对于更加复杂手势以及将多个触摸添加到单独的一个手势中，可以使用 [`PanResponder`](https://facebook.github.io/react-native/docs/panresponder.html)。
+对于更加复杂手势以及将多个触摸添加到单独的一个手势中，可以使用 [`PanResponder`][]。
 
 ```js
 // React Native
@@ -2571,10 +2556,9 @@ class App extends Component {
 
 In Flutter, to add a click (or press) listener to a widget, use a button
 or a touchable widget that has an `onPress: field`. Or, add gesture detection
-to any widget by wrapping it in a
-[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html).
+to any widget by wrapping it in a [`GestureDetector`][].
 
-在 Flutter 中，要为 widget 添加点击或者按压监听器，使用带有 `onPress: field` 的按钮或者可触摸 widget 即可。或者，用任何 widget 封装 [`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)，在其中添加手势检测。
+在 Flutter 中，要为 widget 添加点击或者按压监听器，使用带有 `onPress: field` 的按钮或者可触摸 widget 即可。或者，用任何 widget 封装 [`GestureDetector`][]，在其中添加手势检测。
 
 <!-- skip -->
 ```dart
@@ -2610,7 +2594,7 @@ GestureDetector(
 For more information, including a list of Flutter `GestureDetector` callbacks,
 see the [GestureDetector class][].
 
-如果想要了解更多详细内容，包括 Flutter 的 `GestureDetector` 回调函数的列表，请查看页面 [`GestureDetector class`]({{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties)。
+如果想要了解更多详细内容，包括 Flutter 的 `GestureDetector` 回调函数的列表，请查看页面 [`GestureDetector class`][]。
 
 
 [GestureDetector class]: {{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties
@@ -2661,18 +2645,18 @@ dependencies:
   http: <latest_version>
 ```
 
-Flutter uses the
-[`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html)
-core HTTP support client. To create an HTTP Client, import `dart:io`.
+Flutter uses the [`dart:io`][] core HTTP support client.
+To create an HTTP Client, import `dart:io`.
 
-Flutter 使用 [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html) 提供核心的 HTTP 客户端支持，要创建一个 HTTP 客户端，引用 `dart:io`。
+Flutter 使用 [`dart:io`][] 提供核心的 HTTP 客户端支持，要创建一个 HTTP 客户端，引用 `dart:io`。
 
 <!-- skip -->
 ```dart
 import 'dart:io';
 ```
 
-The client supports the following HTTP operations: GET, POST, PUT, and DELETE.
+The client supports the following HTTP operations:
+GET, POST, PUT, and DELETE.
 
 客户端支持如下所列的 HTTP 操作：GET, POST, PUT 和 DELETE。
 
@@ -2701,12 +2685,12 @@ _getIPAddress() async {
 Text fields allow users to type text into your app so they can be used to build
 forms, messaging apps, search experiences, and more. Flutter provides two
 core text field widgets:
-[TextField]({{site.api}}/flutter/material/TextField-class.html) and
-[TextFormField]({{site.api}}/flutter/material/TextFormField-class.html).
+[TextField][] and
+[TextFormField][].
 
 TextField 用于在应用程序中输入文本，这样就可以实现创建表单、短消息应用、搜索框等等功能。Flutter 提供两个核心文本输入 widget ：
-[TextField]({{site.api}}/flutter/material/TextField-class.html) 和
-[TextFormField]({{site.api}}/flutter/material/TextFormField-class.html).
+[TextField][] 和
+[TextFormField][].
 
 ### How do I use text field widgets?
 
@@ -2726,12 +2710,12 @@ input box and then use the callback to store the value in a variable.
 <Button title="Submit" onPress={this.validate} />
 ```
 
-In Flutter, use the
-[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
-class to manage a `TextField` widget. Whenever the text field is modified,
+In Flutter, use the [`TextEditingController`][]
+class to manage a `TextField` widget.
+Whenever the text field is modified,
 the controller notifies its listeners.
 
-在 Flutter 中，使用 [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html) 类来管理 `TextField` widget。当用户修改文本的时候，controller 会通知监听器。
+在 Flutter 中，使用 [`TextEditingController`][] 类来管理 `TextField` widget。当用户修改文本的时候，controller 会通知监听器。
 
 Listeners read the text and selection properties to learn what the user typed
 into the field. You can access the text in `TextField` by the `text` property of
@@ -2766,11 +2750,11 @@ RaisedButton(
 ```
 
 In this example, when a user clicks on the submit button an alert dialog
-displays the current text entered in the text field. This is achieved using an
-[`alertDialog`]({{site.api}}/flutter/material/AlertDialog-class.html)
+displays the current text entered in the text field.
+This is achieved using an [`alertDialog`][]
 widget that displays the alert message, and the text from
 the `TextField` is accessed by the `text` property of the
-[TextEditingController]({{site.api}}/flutter/widgets/TextEditingController-class.html).
+[`TextEditingController`][].
 
 在这个例子中，当用户点击提交按钮的时候，会弹出窗口显示当前输入的文本内容。
 可以使用
@@ -2784,24 +2768,26 @@ the `TextField` is accessed by the `text` property of the
 ### 如何使用 Form widget 呢？
 
 In Flutter, use the
-[`Form`]({{site.api}}/flutter/widgets/Form-class.html)
+[`Form`][]
 widget where
-[`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html)
+[`TextFormField`][]
 widgets along with the submit button are passed as children.
 The `TextFormField` widget has a parameter called
-[`onSaved`]({{site.api}}/flutter/widgets/FormField/onSaved.html)
-which takes a callback and executes when the form is saved. A `FormState`
+[`onSaved`][] that takes a callback and executes
+when the form is saved. A `FormState`
 object is used to save, reset, or validate
-each `FormField` that is a descendant of this `Form`. To obtain the `FormState`,
-you can use  `Form.of` with a context whose ancestor is the Form, or pass a
-`GlobalKey` to the Form constructor and call `GlobalKey.currentState`.
+each `FormField` that is a descendant of this `Form`.
+To obtain the `FormState`, you can use `Form.of()`
+with a context whose ancestor is the `Form`,
+or pass a `GlobalKey` to the `Form` constructor and call
+`GlobalKey.currentState()`.
 
 在 Flutter 中，当需要使用带有提交按钮和
-[`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html)
+[`TextFormField`][]
 组件的复合 widget 时，就会用到
-[`Form`]({{site.api}}/flutter/widgets/Form-class.html)。
+[`Form`][]。
 `TextFormField` 内含一个
-[`onSaved`]({{site.api}}/flutter/widgets/FormField/onSaved.html) 参数，
+[`onSaved`][] 参数，
 它可以设置一个回调函数，当表单存储的时候会回调该函数。
 `FormState` 用于存储、重置或者验证 `Form` 内含的每个 `FormField`。
 你可以通过将当前表单的 context 属性赋值给 `Form.of` 来获得 `FormState`。
@@ -3029,15 +3015,15 @@ In React Native, Animated APIs are used to create animations.
 在 React Native 中，动画 API 用于创建动画。
 
 In Flutter, use the
-[`Animation`]({{site.api}}/flutter/animation/Animation-class.html)
+[`Animation`][]
 class and the
-[`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html)
+[`AnimationController`][]
 class.  `Animation` is an abstract class that understands its current value and
 its state (completed or dismissed). The `AnimationController` class lets you
 play an animation forward or in reverse, or stop animation and set the animation
 to a specific value to customize the motion.
 
-在 Flutter 中，使用 [`Animation`]({{site.api}}/flutter/animation/Animation-class.html) 类和 [`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html) 类实现动画。`Animation` 是抽象类，内含其当前的值和它的状态（已完成或者已取消）。`AnimationController` 类可以正向或者反向播放动画或者停止动画以及为动画设置特定值来自定义动画。
+在 Flutter 中，使用 [`Animation`][] 类和 [`AnimationController`][] 类实现动画。`Animation` 是抽象类，内含其当前的值和它的状态（已完成或者已取消）。`AnimationController` 类可以正向或者反向播放动画或者停止动画以及为动画设置特定值来自定义动画。
 
 ### How do I add a simple fade-in animation?
 
@@ -3080,14 +3066,14 @@ class FadeInView extends React.Component {
 ```
 
 To create the same animation in Flutter, create an
-[`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html)
-object named `controller` and specify the duration. By default, an
-`AnimationController` linearly produces values that range from 0.0 to 1.0,
+[`AnimationController`][] object named `controller`
+and specify the duration. By default, an `AnimationController`
+linearly produces values that range from 0.0 to 1.0,
 during a given duration. The animation controller generates a new value
 whenever the device running your app is ready to display a new frame.
 Typically, this rate is around 60 values per second.
 
-要在 Flutter 中实现相同的动画效果，创建一个 [`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html) 对象，叫它 `controller`，并且指定时间间隔。在默认配置下， `AnimationController` 会在给定时间间隔线性的生成从 0.0 到 1.0 的数值。当你的程序可以显示新一帧画面的时候，AnimationController 会生成一个新的值。通常，这个频率在每秒 60 个值。
+要在 Flutter 中实现相同的动画效果，创建一个 [`AnimationController`][] 对象，叫它 `controller`，并且指定时间间隔。在默认配置下， `AnimationController` 会在给定时间间隔线性的生成从 0.0 到 1.0 的数值。当你的程序可以显示新一帧画面的时候，AnimationController 会生成一个新的值。通常，这个频率在每秒 60 个值。
 
 When defining an `AnimationController`, you must pass in a `vsync` object. The
 presence of `vsync` prevents offscreen animations from consuming unnecessary
@@ -3098,24 +3084,24 @@ constructor.
 
 当定义 `AnimationController` 的时候，你必须传入一个 `vsync` 对象。`vsync` 会防止屏幕显示区域之外的动画消耗不必要的资源。你可以通过添加 `TickerProviderStateMixin` 到类定义中来使用有状态的对象。`AnimationController` 需要传入一个 TickerProvider，它是通过构造函数里的 `vsync` 参数进行配置的。
 
-A [`Tween`]({{site.api}}/flutter/animation/Tween-class.html)
+A [`Tween`][]
 describes the interpolation between a beginning and ending value
 or the mapping from an input range to an output range. To use a `Tween` object
 with an animation, call the `Tween` object's `animate` method and pass it the
 `Animation` object that you want to modify.
 
-[`Tween`]({{site.api}}/flutter/animation/Tween-class.html) 定义了起始和结束值之间或者输入段到输出段之间的过渡。如果要在动画中使用 `Tween` 对象，调用 `Tween` 对象的 `animate` 方法，然后把它赋给你要修改的 `Animation` 对象。
+[`Tween`][] 定义了起始和结束值之间或者输入段到输出段之间的过渡。如果要在动画中使用 `Tween` 对象，调用 `Tween` 对象的 `animate` 方法，然后把它赋给你要修改的 `Animation` 对象。
 
 For this example, a
-[`FadeTransition`]({{site.api}}/flutter/widgets/FadeTransition-class.html)
+[`FadeTransition`][]
 widget is used and the `opacity` property is mapped to the `animation` object.
 
-在这个例子中，用到了 [`FadeTransition`]({{site.api}}/flutter/widgets/FadeTransition-class.html) widget，它的 `opacity` 属性映射到了 `animation` 对象上。
+在这个例子中，用到了 [`FadeTransition`][] widget，它的 `opacity` 属性映射到了 `animation` 对象上。
 
 To start the animation, use `controller.forward()`. Other operations can also be
 performed using the controller such as `fling()` or `repeat()`. For this
 example, the
-[`FlutterLogo`]({{site.api}}/flutter/material/FlutterLogo-class.html)
+[`FlutterLogo`][]
 widget is used inside the `FadeTransition` widget.
 
 要开始动画，使用 `controller.forward()`。其它的操作也可以使用控制器里的方法，比如 `fling()` 或者 `repeat()`。这个例子里，[`FlutterLogo`]({{site.api}}/flutter/material/FlutterLogo-class.html) widget 被用于 `FadeTransition` widget 中。
@@ -3178,8 +3164,7 @@ swipe animation.
 在 React Native 中，无论  `PanResponder` 或者第三方库都可被用于滑动动画。
 
 In Flutter, to add a swipe animation, use the
-[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html)
-widget and nest the child widgets.
+[`Dismissible`][] widget and nest the child widgets.
 
 在 Flutter 中，要添加滑动动画，使用 [`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) widget 封装其它子 widget 即可。
 
@@ -3210,11 +3195,11 @@ corresponding Flutter widget and common widget properties.
 <div class="table-wrapper" markdown="1">
 | React Native Component                                                                    | Flutter widget                                                                                              | 描述                                                                                                                            |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| [Button](https://facebook.github.io/react-native/docs/button.html)                        | [Raised Button]({{site.api}}/flutter/material/RaisedButton-class.html)                           | 基本的悬浮按钮                                                                              |
+| [Button](https://facebook.github.io/react-native/docs/button.html)                        | [Raised Button][]                           | 基本的悬浮按钮                                                                              |
 |                                                                                           |  onPressed [required]                                                                                        | 该回调函数在当按钮被点击的时候被触发。                                                       |
 |                                                                                           | Child                                                                              | 按钮的标签                                                                                                     |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [Button](https://facebook.github.io/react-native/docs/button.html)                        | [Flat Button]({{site.api}}/flutter/material/FlatButton-class.html)                               | 基本的平面按钮                                                                                                       |
+| [Button](https://facebook.github.io/react-native/docs/button.html)                        | [Flat Button][]                               | 基本的平面按钮                                                                                                       |
 |                                                                                           |  onPressed [required]                                                                                        | 该回调函数在当按钮被点击的时候被触发。                                                        |
 |                                                                                           | Child                                                                              | The button's label.                                                                                                      |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
@@ -3281,10 +3266,109 @@ corresponding Flutter widget and common widget properties.
 </div>
 
 
+[`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
+[Adding Assets and Images in Flutter]: /docs/development/ui/assets-and-images
+[`alertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
+[`Align`]: {{site.api}}/flutter/widgets/Align-class.html
+[`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
+[`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [async and await]: {{site.dart-site}}/guides/language/language-tour#asynchrony-support
+[`Axis`]: {{site.api}}/flutter/painting/Axis-class.html
+[`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
+[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
+[color palette]: {{site.material}}/guidelines/style/color.html
+[colors]: {{site.api}}/flutter/material/Colors-class.html
+[`Colors`]: {{site.api}}/flutter/material/Colors-class.html
+[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
+[`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
+[`CircleAvatar`]: {{site.api}}/flutter/material/CircleAvatar-class.html
+[`CircularProgressIndicator`]: {{site.api}}/flutter/material/CircularProgressIndicator-class.html
+[Cupertino (iOS-style)]: /docs/development/ui/widgets/cupertino
+[`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
+[`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
+[Dart]: {{site.dart-site}}/dart-2
+[Dart's Type System]: {{site.dart-site}}/guides/language/sound-dart
+[`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
+[DartPadA]: {{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1
+[DartPadB]: {{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5
+[DartPadC]: {{site.dartpad}}/3f4625c16e05eec396d6046883739612
+[DartPadD]: {{site.dartpad}}/57ec21faa8b6fe2326ffd74e9781a2c7
+[DartPadE]: {{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6
+[DartPadF]: {{site.dartpad}}/5454e8bfadf3000179d19b9bc6be9918
 [Developing Packages & Plugins]: /docs/development/packages-and-plugins/developing-packages
 [DevTools]: /docs/development/tools/devtools
+[`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
+[`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [Flutter packages]: {{site.pub}}/flutter/
+[Flutter Technical Overview]: /docs/resources/technical-overview
+[Flutter Basic Widgets]: /docs/development/ui/widgets/basics
+[Flutter Widget Catalog]: /docs/development/ui/widgets
+[Flutter Widget Index]: /docs/reference/widgets
+[`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html
+[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
+[`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
+[functions]: {{site.dart-site}}/guides/language/language-tour#functions
+[`Future`]: {{site.dart-site}}/tutorials/language/futures
+[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[Getting started]: /docs/get-started
+[`Image`]: {{site.api}}/flutter/widgets/Image-class.html
+[`IndexedWidgetBuilder`]: {{site.api}}/flutter/widgets/IndexedWidgetBuilder.html
+[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
+[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[Layout Widgets]: /docs/development/ui/widgets/layout
+[`LinearProgressIndicator`]: {{site.api}}/flutter/material/LinearProgressIndicator-class.html
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html)
+[Material Design]: {{site.material}}/design
+[Material icons]: {{site.api}}/flutter/material/Icons-class.html
+[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
+[`ModalRoute`]: {{site.api}}/flutter/widgets/ModalRoute-class.html
+[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`Navigator.of()`]: ({{site.api}}/flutter/widgets/Navigator/of.html
+[`Navigator.pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
+[`Navigator.push`]: {{site.api}}/flutter/widgets/Navigator/push.html
+[`onSaved`]: {{site.api}}/flutter/widgets/FormField/onSaved.html
+[optional parameters]: {{site.dart-site}}/guides/language/language-tour#optional-parameters
+[`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
+[`PanResponder`]: https://facebook.github.io/react-native/docs/panresponder.html
 [pub.dev]: {{site.pub}}
+[`Radio`]: {{site.api}}/flutter/material/Radio-class.html
+[`RaisedButton`]: {{site.api}}/flutter/material/RaisedButton-class.html
+[`RefreshIndicator`]: {{site.api}}/flutter/material/RefreshIndicator-class.html
+[`Route`]: {{site.api}}/flutter/widgets/Route-class.html
+[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`ScrollController`]: {{site.api}}/flutter/widgets/ScrollController-class.html
+[`shared_preferences`]: {{site.github}}/flutter/plugins/tree/master/packages/shared_preferences
+[`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
+[`Slider`]: {{site.api}}/flutter/material/Slider-class.html
+[`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
 [State management]: /docs/development/data-and-backend/state-mgmt
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
+[`Switch`]: {{site.api}}/flutter/material/Switch-class.html
+[`Tab`]: {{site.api}}/flutter/material/Tab-class.html
+[`TabBar`]: {{site.api}}/flutter/material/TabBar-class.html
+[`TabBarView`]: {{site.api}}/flutter/material/TabBarView-class.html
+[`TabController`]: {{site.api}}/flutter/material/TabController-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+[`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign-class.html
+[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
+[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
+[`TextInput`]: {{site.api}}/flutter/services/TextInput-class.html
+[`TextStyle`]: {{site.api}}/flutter/dart-ui/TextStyle-class.html
+[`Theme`]: {{site.api}}/flutter/material/Theme-class.html
+[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`Ticker`]: {{site.api}}/flutter/scheduler/Ticker-class.html
+[`TickerProvider`]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
+[`TickerProviderStateMixin`]: {{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html
+[`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
 [Using Packages]: /docs/development/packages-and-plugins/using-packages
+[variables]: {{site.dart-site}}/guides/language/language-tour#variables
+[`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
+[Write Your First Flutter App, Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+

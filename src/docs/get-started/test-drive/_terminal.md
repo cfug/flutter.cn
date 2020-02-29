@@ -16,11 +16,10 @@ $ cd myapp
 ```
 
 The command creates a Flutter project directory called `myapp` that
-contains a simple demo app that uses
-[Material Components]({{site.material}}/guidelines/).
+contains a simple demo app that uses [Material Components][].
 
 该命令会创建一个名为 `myapp`，里面包含一个简单的示例程序，
-里面用到了 [Material 组件]({{site.material}}/guidelines/)
+里面用到了 [Material 组件][Material Components]
 
 {% include_relative _main-code-note.md %}
 
@@ -58,5 +57,7 @@ contains a simple demo app that uses
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 {% include run-profile.md %}
 
-[Install]: /docs/get-started/install
 </div>
+
+[Install]: /docs/get-started/install
+[Material Components]: {{site.material}}/guidelines/

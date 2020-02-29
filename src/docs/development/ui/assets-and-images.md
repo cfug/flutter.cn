@@ -1,6 +1,8 @@
 ---
 title: Adding assets and images
 title: 添加资源和图片
+description: How to use images (and other assets) in your Flutter app.
+description: 如何在你的 Flutter 应用中使用图片或者其他类型的资源。
 short-title: Assets and images
 short-title: 资源和图片
 ---
@@ -636,7 +638,7 @@ Flutter renders the first frame of your application.
 
 {{site.alert.note}}
 
-  This implies that if you don't call [runApp()][] in the
+  This implies that if you don't call [`runApp()`][] in the
   `main()` function of your app (or more specifically, if you don't call
   [`window.render()`][] in response to [`window.onDrawFrame`][]),
   the launch screen persists forever.
@@ -722,5 +724,6 @@ customization using the Interface Builder in
 [package]: /docs/development/packages-and-plugins/using-packages
 [pathForResource:ofType:]: https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource
 [PluginRegistry.Registrar]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
+[`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [video_player plugin]: {{site.pub}}/packages/video_player
 [ios_platform_images]: {{site.pub}}/packages/ios_platform_images

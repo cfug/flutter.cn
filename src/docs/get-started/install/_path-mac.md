@@ -3,11 +3,11 @@
 ### 更新 PATH 环境变量
 
 You can update your PATH variable for the current session only at
-the command line, as shown in [Get the Flutter SDK](#get-sdk).
+the command line, as shown in [Get the Flutter SDK][].
 You'll probably want to update this variable permanently,
 so you can run `flutter` commands in any terminal session.
 
-正如 [获取 Flutter SDK ](#get-sdk)一文中所展示你可以仅仅在当前命令行会话中
+正如 [获取 Flutter SDK ][Get the Flutter SDK]一文中所展示你可以仅仅在当前命令行会话中
 更新你的 PATH 环境变量。但你也许想让这个配置永久生效，
 这样就可以在任意一个命令行会话中使用 `flutter` 命令了。
 
@@ -89,3 +89,4 @@ see [this StackOverflow question][].
 
 [this StackExchange question]: https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
 [this StackOverflow question]: https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh
+[Get the Flutter SDK]: #get-sdk

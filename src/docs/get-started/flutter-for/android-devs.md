@@ -13,6 +13,15 @@ can use this document as a jump start to Flutter development.
 这篇文档旨在帮助 Android 开发者利用既有的 Android 知识来通过 Flutter 开发移动应用。
 如果你了解 Android 框架的基本知识，你就可以使用这篇文档作为 Flutter 开发的快速入门。
 
+{{site.alert.note}}
+
+  To integrate Flutter code into your Android app, see
+  [Add Flutter to existing app][].
+
+  要向你的 Android 应用中集成 Flutter 请参阅 [向已有应用中添加 Flutter][Add Flutter to existing app]。
+
+{{site.alert.end}}
+
 Your Android knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
 capabilities and configurations. Flutter is a new way to build UIs for mobile,
@@ -103,8 +112,8 @@ Flutter 非常灵活、有表达能力，它可以实现任何设计语言。例
 ### 如何更新 widgets？
 
 In Android, you update your views by directly mutating them. However,
-in Flutter, `Widget`s are immutable and are not updated directly, instead
-you have to work with the widget's state.
+in Flutter, `Widget`s are immutable and are not updated directly,
+instead you have to work with the widget's state.
 
 在 Android 中，你可以直接操作更新 View。然而在 Flutter 中，`Widget` 是不可变的，
 无法被直接更新，你需要操作 Widget 的状态。
@@ -160,12 +169,12 @@ the `Text` widget you'll find that it subclasses `StatelessWidget`.
 下面的例子展示了如何使用 `StatelessWidget`。`Text` Widget 是一个普通的 `StatelessWidget`。
 如果你查看 `Text` Widget 的实现，你会发现它继承自 `StatelessWidget`。
 
-{% prettify dart %}
+```dart
 Text(
   'I like Flutter!',
   style: TextStyle(fontWeight: FontWeight.bold),
 );
-{% endprettify %}
+```
 
 As you can see, the `Text` Widget has no state information associated with it,
 it renders what is passed in its constructors and nothing more.
@@ -187,7 +196,7 @@ For example:
 
 例如：
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -241,7 +250,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 ### How do I lay out my widgets? Where is my XML layout file?
 
@@ -256,7 +265,7 @@ The following example shows how to display a simple widget with padding:
 
 以下示例展示了如何显示一个带有填充 (padding) 的简单 Widget：
 
-{% prettify dart %}
+```dart
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -272,10 +281,10 @@ The following example shows how to display a simple widget with padding:
       ),
     );
   }
-{% endprettify %}
+```
 
-You can view the layouts that Flutter has to offer in the [widget
-catalog](/docs/development/ui/widgets/layout).
+You can view some of the layouts that Flutter has to offer in the
+[widget catalog][].
 
 你可以在 [widget 目录](/docs/development/ui/widgets/layout) 中查看 Flutter 提供
 的布局。
@@ -300,7 +309,7 @@ For example, here is how you can toggle between two widgets when you click on a
 
 例如，下面就是你可以如何在点击一个 `FloatingActionButton` 的时候在两个 Widget 之间切换。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -362,7 +371,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 ### How do I animate a widget?
 
@@ -408,7 +417,7 @@ widget into a logo when you press the `FloatingActionButton`:
 下面的例子展示了如何实现一个点击 `FloatingActionButton` 的时候将一个 Widget 渐变为一个图标
 的 `FadeTransition`：
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -470,12 +479,12 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
     );
   }
 }
-{% endprettify %}
+```
 
 For more information, see
-[Animation & Motion widgets](/docs/development/ui/widgets/animation),
-the [Animations tutorial](/docs/development/ui/animations/tutorial),
-and the [Animations overview](/docs/development/ui/animations).
+[Animation & Motion widgets][],
+the [Animations tutorial][],
+and the [Animations overview][].
 
 获取更多内容，请查看 [动画 Widget](/docs/development/ui/widgets/animation)，
 [动画指南](/docs/development/ui/animations/tutorial) 以及
@@ -506,7 +515,7 @@ see Collin's answer on [Custom Paint][].
 
 如果想学习在 Flutter 中如何实现一个签名功能，可以查看 Collin 在 [Custom Paint][] 上的回答。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: DemoApp()));
@@ -552,7 +561,7 @@ class SignaturePainter extends CustomPainter {
   }
   bool shouldRepaint(SignaturePainter other) => other.points != points;
 }
-{% endprettify %}
+```
 
 ### How do I build custom widgets?
 
@@ -582,7 +591,7 @@ a label, rather than by extending `RaisedButton`:
 举例来说，你该如何创建一个在构造器接收标签参数的 `CustomButton`？你要组合 `RaisedButton` 和一个标签来创建
 自定义按钮，而不是继承 `RaisedButton`：
 
-{% prettify dart %}
+```dart
 class CustomButton extends StatelessWidget {
   final String label;
 
@@ -593,20 +602,20 @@ class CustomButton extends StatelessWidget {
     return RaisedButton(onPressed: () {}, child: Text(label));
   }
 }
-{% endprettify %}
+```
 
 Then use `CustomButton`, just as you'd use any other Flutter widget:
 
 然后就像使用其它 Flutter Widget 一样使用 `CustomButton`：
 
-{% prettify dart %}
+```dart
 @override
 Widget build(BuildContext context) {
   return Center(
     child: CustomButton("Hello"),
   );
 }
-{% endprettify %}
+```
 
 ## Intents
 
@@ -617,8 +626,7 @@ Widget build(BuildContext context) {
 In Android, there are two main use cases for `Intent`s: navigating between
 Activities, and communicating with components. Flutter, on the other hand,
 does not have the concept of intents, although you can still start intents
-through native integrations
-(using [a plugin]({{site.pub}}/packages/android_intent)).
+through native integrations (using [a plugin][]).
 
 在 Android 中，`Intent` 主要有两个使用场景：在 Activity 之前进行导航，以及组件间通信。
 Flutter 却没有 intent 这样的概念，但是你依然可以通过原生集成 ([插件]({{site.pub}}/packages/android_intent)) 来启动 intent。
@@ -662,7 +670,7 @@ The following example builds a Map.
 
 下面的例子创建了一个 Map。
 
-{% prettify dart %}
+```dart
  void main() {
   runApp(MaterialApp(
     home: MyAppHome(), // becomes the route named '/'
@@ -673,25 +681,25 @@ The following example builds a Map.
     },
   ));
 }
-{% endprettify %}
+```
 
 Navigate to a route by `push`ing its name to the `Navigator`.
 
 通过将 route 名`压栈` (`push`) 到 `Navigator` 中来跳转到这个 route。
 
-{% prettify dart %}
+```dart
 Navigator.of(context).pushNamed('/b');
-{% endprettify %}
+```
 
 The other popular use-case for `Intent`s is to call external components such
 as a Camera or File picker. For this, you would need to create a native platform
-integration (or use an [existing plugin]({{site.pub}}/flutter/)).
+integration (or use an [existing plugin][]).
 
 `Intent` 的另一种常见的使用场景是调用外部的组件，例如相机或文件选择器。对于这种情况，你需要创建
 一个原生平台集成（或者使用 [已有的插件]({{site.pub}}/flutter/))。
 
 To learn how to build a native platform integration,
-see [Developing packages and plugins][].
+see [developing packages and plugins][].
 
 想要学习如何创建一个原生平台集成，请查看 
 [开发包和插件](/docs/development/packages-and-plugins/developing-packages)。
@@ -723,7 +731,7 @@ First, register the intent filter for all intents in `AndroidManifest.xml`:
 
 首先，在 `AndroidManifest.xml` 中注册 intent 过滤器：
 
-{% prettify xml %}
+```xml
 <activity
   android:name=".MainActivity"
   android:launchMode="singleTop"
@@ -738,7 +746,7 @@ First, register the intent filter for all intents in `AndroidManifest.xml`:
     <data android:mimeType="text/plain" />
   </intent-filter>
 </activity>
-{% endprettify %}
+```
 
 Then in `MainActivity`, handle the intent, extract the text that was
 shared from the intent, and hold onto it. When Flutter is ready to process,
@@ -748,7 +756,7 @@ across from the native side:
 接着在 `MainActivity` 中处理 intent，提取出其它 intent 分享的文本并保存。当 Flutter 准备好处理的时候，
 它会使用一个平台通道请求数据，数据便会从原生端发送过来：
 
-{% prettify java %}
+```java
 package com.example.shared;
 
 import android.content.Intent;
@@ -797,13 +805,14 @@ public class MainActivity extends FlutterActivity {
     sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
   }
 }
-{% endprettify %}
+```
 
-Finally, request the data from the Flutter side when the widget is rendered:
+Finally, request the data from the Flutter side
+when the widget is rendered:
 
 最后，当 Widget 渲染的时候，从 Flutter 这端请求数据：
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -856,7 +865,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     }
   }
 }
-{% endprettify %}
+```
 
 ### What is the equivalent of startActivityForResult()?
 
@@ -874,18 +883,18 @@ their location, you could do the following:
 
 例如，要打开一个让用户选择位置的 route，你可以这样做：
 
-{% prettify dart %}
+```dart
 Map coordinates = await Navigator.of(context).pushNamed('/location');
-{% endprettify %}
+```
 
 And then, inside your location route, once the user has selected their location
 you can `pop` the stack with the result:
 
 然后，在你的位置 route 内，一旦用户选择了位置，你就可以弹栈 (`pop`) 并返回结果：
 
-{% prettify dart %}
+```dart
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
-{% endprettify %}
+```
 
 ## Async UI
 
@@ -926,7 +935,7 @@ using `async`/`await` and letting Dart do the heavy lifting:
 例如，你可以通过使用 `async`/`await` 来运行网络代码而且不会导致 UI 挂起，同时让 Dart 来处理
 背后的繁重细节：
 
-{% prettify dart %}
+```dart
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
@@ -934,7 +943,7 @@ loadData() async {
     widgets = json.decode(response.body);
   });
 }
-{% endprettify %}
+```
 
 Once the `await`ed network call is done, update the UI by calling `setState()`,
 which triggers a rebuild of the widget sub-tree and updates the data.
@@ -946,7 +955,7 @@ The following example loads data asynchronously and displays it in a `ListView`:
 
 下面的例子展示了异步加载数据并将之展示在 `ListView` 内：
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1014,7 +1023,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     });
   }
 }
-{% endprettify %}
+```
 
 Refer to the next section for more information on doing work in the
 background, and how Flutter differs from Android.
@@ -1053,7 +1062,7 @@ and `await` on long-running tasks inside the function:
 
 对于和 I/O 绑定的任务，将方法声明为 `async` 方法，并在方法内 `await` 一个长时间运行的任务：
 
-{% prettify dart %}
+```dart
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
@@ -1061,7 +1070,7 @@ loadData() async {
     widgets = json.decode(response.body);
   });
 }
-{% endprettify %}
+```
 
 This is how you would typically do network or database calls, which are both
 I/O operations.
@@ -1099,7 +1108,7 @@ the main thread to update the UI.
 
 下面的例子展示了一个简单的 Isolate 是如何将数据分享给主线程来更新 UI 的。
 
-{% prettify dart %}
+```dart
 loadData() async {
   ReceivePort receivePort = ReceivePort();
   await Isolate.spawn(dataLoader, receivePort.sendPort);
@@ -1138,7 +1147,7 @@ Future sendReceive(SendPort port, msg) {
   port.send([msg, response.sendPort]);
   return response.first;
 }
-{% endprettify %}
+```
 
 Here, `dataLoader()` is the `Isolate` that runs in its own separate
 execution thread.  In the isolate you can perform more CPU intensive
@@ -1153,7 +1162,7 @@ You can run the full example below:
 
 你可以运行下面这个完整的例子：
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1272,14 +1281,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return response.first;
   }
 }
-{% endprettify %}
+```
 
 ### What is the equivalent of OkHttp on Flutter?
 
 ### OkHttp 在 Flutter 中的对应物是什么？
 
 Making a network call in Flutter is easy when you use the popular
-[`http` package]({{site.pub}}/packages/http).
+[`http` package][].
 
 Flutter 中使用流行的 [`http` 包]({{site.pub}}/packages/http) 进行网络请求是很简单的。
 
@@ -1294,17 +1303,17 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 如果要使用 `http` 包，需要在 `pubspec.yaml` 文件中添加依赖：
 
-{% prettify yaml %}
+```yaml
 dependencies:
   ...
   http: ^0.11.3+16
-{% endprettify %}
+```
 
 To make a network call, call `await` on the `async` function `http.get()`:
 
 如果要发起一个网络请求，在异步 (`async`) 方法 `http.get()` 上调用 `await` 即可：
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1318,7 +1327,7 @@ import 'package:http/http.dart' as http;
     });
   }
 }
-{% endprettify %}
+```
 
 ### How do I show the progress for a long-running task?
 
@@ -1345,7 +1354,7 @@ then render the `ProgressIndicator`. Otherwise, render the
 在下面的例子中，build 方法被拆分成三个不同的方法。如果 `showLoadingDialog()` 返回 `true`（当 `widgets.length == 0`），
 渲染 `ProgressIndicator`。否则，在 `ListView` 里渲染网络请求返回的数据。
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1427,7 +1436,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     });
   }
 }
-{% endprettify %}
+```
 
 ## Project structure & resources
 
@@ -1491,9 +1500,9 @@ and are accessed on the native side using Android's `AssetManager`:
 
 至于 Flutter beta 2，文件是放置于原生端的 asset 文件夹中，所以可以被原生端的 `AssetManager` 访问：
 
-{% prettify kotlin %}
+```kotlin
 val flutterAssetStream = assetManager.open("flutter_assets/assets/my_flutter_asset.png")
-{% endprettify %}
+```
 
 As of Flutter beta 2, Flutter still cannot access native resources,
 nor it can access native assets.
@@ -1520,29 +1529,29 @@ Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 接下来，你需要在 `pubspec.yaml` 文件中定义这些图片：
 
-{% prettify yaml %}
+```yaml
 assets:
  - images/my_icon.jpeg
-{% endprettify %}
+```
 
 You can then access your images using `AssetImage`:
 
 然后你就可以使用 `AssetImage` 访问你的图片了：
 
-{% prettify dart %}
+```dart
 return AssetImage("images/my_icon.jpeg");
-{% endprettify %}
+```
 
 or directly in an `Image` widget:
 
 或者通过 `Image` Widget 直接访问：
 
-{% prettify dart %}
+```dart
 @override
 Widget build(BuildContext context) {
   return Image.asset("images/my_image.png");
 }
-{% endprettify %}
+```
 
 ### Where do I store strings? How do I handle localization?
 
@@ -1555,19 +1564,19 @@ static fields and accessing them from there. For example:
 Flutter 当下并没有一个特定的管理字符串的资源管理系统。目前来讲，最好的办法是将字符串作为静态域
 存放在类中，并通过类访问它们。例如：
 
-{% prettify dart %}
+```dart
 class Strings {
   static String welcomeMessage = "Welcome To Flutter";
 }
-{% endprettify %}
+```
 
 Then in your code, you can access your strings as such:
 
 接着在你们的代码中，你可以这样访问你的字符串：
 
-{% prettify dart %}
+```dart
 Text(Strings.welcomeMessage)
-{% endprettify %}
+```
 
 Flutter has basic support for accessibility on Android,
 though this feature is a work in progress.
@@ -1575,10 +1584,10 @@ though this feature is a work in progress.
 Flutter 在 Android 上提供无障碍的基本支持，但是这个功能当下仍在开发。
 
 Flutter developers are encouraged to use the [intl
-package]({{site.pub}}/packages/intl) for internationalization and
+package][] for internationalization and
 localization.
 
-我们鼓励 Flutter 开发者使用 [intl 包]({{site.pub}}/packages/intl) 进行国际化和本地化。
+我们鼓励 Flutter 开发者使用 [intl 包][intl package] 进行国际化和本地化。
 
 ### What is the equivalent of a Gradle file? How do I add dependencies?
 
@@ -1596,8 +1605,7 @@ While there are Gradle files under the `android` folder in your Flutter project,
 only use these if you are adding native dependencies needed for
 per-platform integration. In general, use `pubspec.yaml` to declare
 external dependencies to use in Flutter.
-A good place to find Flutter packages is
-[Pub]({{site.pub}}/flutter/packages/).
+A good place to find Flutter packages is [pub.dev][].
 
 虽然在你的 Flutter 项目的 `android` 文件夹下有 Gradle 文件，但是它们只用于给对应平台的集成添加原生依赖。
 一般来说，在 `pubspec.yaml` 文件中定义在 Flutter 里使用的外部依赖。[Pub]({{site.pub}}/flutter/packages/) 
@@ -1622,14 +1630,13 @@ In Flutter, both of these concepts fall under the umbrella of `Widget`s.
 在 Flutter 中，这两个概念都对应于 `Widget`。
 
 To learn more about the UI for building Activities and Fragements,
-see the community-contributed medium article,
-[Flutter For Android Developers : How to design an Activity UI in
-Flutter]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48).
+see the community-contributed Medium article,
+[Flutter for Android Developers: How to design Activity UI in Flutter][].
 
 如果要学习更多的关于 Activity 和 Fragment 创建界面的内容，请阅读社区贡献的 Medium 文章，
-[给 Android 开发者的 Flutter 指南：如何在 Flutter 中设计一个 Activity 界面]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48)。
+[给 Android 开发者的 Flutter 指南：如何在 Flutter 中设计一个 Activity 界面][]。
 
-As mentioned in the [Intents](#what-is-the-equivalent-of-an-intent-in-flutter)
+As mentioned in the [Intents][]
 section, screens in Flutter are represented by `Widget`s since everything is
 a widget in Flutter. Use a `Navigator` to move between different `Route`s
 that represent different screens or pages, or maybe just different states or
@@ -1709,7 +1716,7 @@ containing activity:
 
 下面的例子展示了如何监听容器 Activity 的生命周期状态：
 
-{% prettify dart %}
+```dart
 import 'package:flutter/widgets.dart';
 
 class LifecycleWatcher extends StatefulWidget {
@@ -1752,7 +1759,7 @@ class _LifecycleWatcherState extends State<LifecycleWatcher> with WidgetsBinding
 void main() {
   runApp(Center(child: LifecycleWatcher()));
 }
-{% endprettify %}
+```
 
 ## Layouts
 
@@ -1778,7 +1785,7 @@ children.
 如果你注意看的话，会发现下面的两段代码除了 `Row` 和 `Column` Widget 以外是一模一样的。
 它们的孩子是一样的，而这个特性可以被充分利用来开发包含有相同的孩子但是会随时间改变的复杂布局。
 
-{% prettify dart %}
+```dart
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -1791,26 +1798,26 @@ children.
       ],
     );
   }
-{% endprettify %}
+```
 
-{% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text('Column One'),
-        Text('Column Two'),
-        Text('Column Three'),
-        Text('Column Four'),
-      ],
-    );
-  }
-{% endprettify %}
+```dart
+@override
+Widget build(BuildContext context) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      Text('Column One'),
+      Text('Column Two'),
+      Text('Column Three'),
+      Text('Column Four'),
+    ],
+  );
+}
+```
 
 To learn more about building linear layouts,
-see the community contributed medium article
-[Flutter For Android Developers : How to design LinearLayout in Flutter?][].
+see the community-contributed Medium article
+[Flutter for Android Developers: How to design LinearLayout in Flutter][].
 
 如果想学习更多的构建线性布局的内容，请阅读社区贡献的 Medium 文章 
 [给 Android 开发者的 Flutter 指南：如何在 Flutter 中设计线性布局？]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a)
@@ -1855,7 +1862,7 @@ both a ScrollView and an Android ListView.
 在 Flutter 中，实现这个功能的最简单的方法是使用 ListView Widget。从 Android 的角度看，这样做可能
 是杀鸡用牛刀了，但是 Flutter 中 ListView Widget 既是一个 ScrollView，也是一个 Android 中的 ListView。
 
-{% prettify dart %}
+```dart
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -1867,7 +1874,7 @@ both a ScrollView and an Android ListView.
       ],
     );
   }
-{% endprettify %}
+```
 
 ### How do I handle landscape transitions in Flutter?
 
@@ -1877,9 +1884,9 @@ FlutterView handles the config change if AndroidManifest.xml contains:
 
 FlutterView 会处理配置的变化，前提条件是在 AndroidManifest.xml 文件中声明了：
 
-{% prettify yaml %}
+```yaml
 android:configChanges="orientation|screenSize"
-{% endprettify %}
+```
 
 ## Gesture detection and touch event handling
 
@@ -2030,7 +2037,7 @@ on a double tap:
 
 下面的例子展示了一个实现了双击旋转 Flutter 标志的 `GestureDetector`：
 
-{% prettify dart %}
+```dart
 AnimationController controller;
 CurvedAnimation curve;
 
@@ -2062,7 +2069,7 @@ class SampleApp extends StatelessWidget {
     ));
   }
 }
-{% endprettify %}
+```
 
 ## Listviews & adapters
 
@@ -2092,7 +2099,7 @@ that scrolling is fast and smooth.
 因为 Flutter Widget 不可变的特点，你需要向 ListView 传入一组 Widget，
 Flutter 会保证滑动的快速顺畅。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2139,7 +2146,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return widgets;
   }
 }
-{% endprettify %}
+```
 
 ### How do I know which list item is clicked on?
 
@@ -2152,7 +2159,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 在 Android 中，ListView 有一个可以帮助你定位哪个列表项被点击了的方法 `onItemClickListener`。
 在 Flutter 中，则使用传入 Widget 的触摸监听。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2206,7 +2213,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return widgets;
   }
 }
-{% endprettify %}
+```
 
 ### How do I update ListView's dynamically?
 
@@ -2236,7 +2243,7 @@ as shown in the next example.
 更新 `ListView` 的一个简单方法是，在 `setState()` 里创建一个新的 `List`，并将数据从旧列表
 拷贝到新列表。虽然这个方法很简单，就如下面例子所示，但是并不推荐在大数据集的时候使用。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2300,7 +2307,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 The recommended, efficient, and effective way to build a list uses a
 ListView.Builder. This method is great when you have a dynamic
@@ -2312,7 +2319,7 @@ recycles list elements for you:
 动态列表或者拥有大量数据的列表。这基本上就是 Android 里的 RecyclerView，会为你
 自动回收列表项：
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2378,7 +2385,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 Instead of creating a "ListView", create a ListView.builder that
 takes two key parameters: the initial length of the list, and an ItemBuilder
@@ -2419,19 +2426,19 @@ In Flutter, place the font file in a folder and reference it in the
 在 Flutter 中，将字体文件放入一个文件夹，并在 `pubspec.yaml` 文件中引用它，就
 和导入图片一样。
 
-{% prettify yaml %}
+```yaml
 fonts:
    - family: MyCustomFont
      fonts:
        - asset: fonts/MyCustomFont.ttf
        - style: italic
-{% endprettify %}
+```
 
 Then assign the font to your `Text` widget:
 
 然后将字体赋值给你的 `Text` Widget：
 
-{% prettify dart %}
+```dart
 @override
 Widget build(BuildContext context) {
   return Scaffold(
@@ -2446,7 +2453,7 @@ Widget build(BuildContext context) {
     ),
   );
 }
-{% endprettify %}
+```
 
 ### How do I style my Text widgets?
 
@@ -2479,8 +2486,8 @@ customize many parameters, such as:
 ## 表单输入
 
 For more information on using Forms, see
-[Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input),
-from the [Flutter Cookbook](/docs/cookbook).
+[Retrieve the value of a text field][],
+from the [Flutter Cookbook][].
 
 如果需要更多使用表单的信息，请查看 [Flutter Cookbook](/docs/cookbook) 中的 
 [检索一个文本字段的值](/docs/cookbook/forms/retrieve-input)。
@@ -2496,13 +2503,13 @@ the Text Widget.
 在 Flutter 中，你可以简单地通过向 Text Widget 构造器的 decoration 参数传入一个 InputDecoration 对象
 来为输入框展示一个“提示”或占位文本。
 
-{% prettify dart %}
+```dart
 body: Center(
   child: TextField(
     decoration: InputDecoration(hintText: "This is a hint"),
   )
 )
-{% endprettify %}
+```
 
 ### How do I show validation errors?
 
@@ -2521,7 +2528,7 @@ update the state, and pass a new `InputDecoration` object.
 然而，你并不想一开始就显示错误信息。相反，当用户输入了无效的信息后，
 更新状态并传入一个新的 `InputDecoration` 对象。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2588,7 +2595,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return regExp.hasMatch(em);
   }
 }
-{% endprettify %}
+```
 
 
 ## Flutter plugins
@@ -2599,7 +2606,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### 如何使用 GPS 传感器？
 
-Use the [`geolocator`]({{site.pub}}/packages/geolocator) community plugin.
+Use the [`geolocator`][] community plugin.
 
 使用 [`geolocator`]({{site.pub}}/packages/geolocator) 社区插件。
 
@@ -2607,7 +2614,7 @@ Use the [`geolocator`]({{site.pub}}/packages/geolocator) community plugin.
 
 ### 如何使用相机？
 
-The [`image_picker`]({{site.pub}}/packages/image_picker) plugin is popular
+The [`image_picker`][] plugin is popular
 for accessing the camera.
 
 [`image_picker`]({{site.pub}}/packages/image_picker) 插件被常用于相机功能的使用。
@@ -2617,7 +2624,7 @@ for accessing the camera.
 ### 如何使用 Facebook 登录？
 
 To Log in with Facebook, use the
-[`flutter_facebook_login`]({{site.pub}}/packages/flutter_facebook_login) community plugin.
+[`flutter_facebook_login`][] community plugin.
 
 使用 [`flutter_facebook_login`]({{site.pub}}/packages/flutter_facebook_login) 社区插件实现
 Facebook 登录功能。
@@ -2627,43 +2634,43 @@ Facebook 登录功能。
 ### 如何使用 Firebase 的功能？
 
 Most Firebase functions are covered by
-[first party plugins]({{site.pub}}/flutter/packages?q=firebase).
+[first party plugins][].
 These plugins are first-party integrations, maintained by the Flutter team:
 
-[官方插件]({{site.pub}}/flutter/packages?q=firebase) 提供了 Firebase 的大多数功能。
+[官方插件][] 提供了 Firebase 的大多数功能。
 这些插件都是由 Flutter 团队维护的官方集成插件：
 
- * [`firebase_admob`]({{site.pub}}/packages/firebase_admob) for Firebase AdMob
+ * [`firebase_admob`][] for Firebase AdMob
   
-   [`firebase_admob`]({{site.pub}}/packages/firebase_admob) 提供 Firebase AdMob 功能
+   [`firebase_admob`][] 提供 Firebase AdMob 功能
 
- * [`firebase_analytics`]({{site.pub}}/packages/firebase_analytics) for Firebase Analytics
+ * [`firebase_analytics`][] for Firebase Analytics
 
-   [`firebase_analytics`]({{site.pub}}/packages/firebase_analytics) 提供 Firebase Analytics 功能
+   [`firebase_analytics`][] 提供 Firebase Analytics 功能
 
- * [`firebase_auth`]({{site.pub}}/packages/firebase_auth) for Firebase Auth
+ * [`firebase_auth`][] for Firebase Auth
   
-   [`firebase_auth`]({{site.pub}}/packages/firebase_auth) 提供 Firebase Auth 功能
+   [`firebase_auth`][] 提供 Firebase Auth 功能
 
- * [`firebase_database`]({{site.pub}}/packages/firebase_database) for Firebase RTDB
+ * [`firebase_database`][] for Firebase RTDB
   
-   [`firebase_database`]({{site.pub}}/packages/firebase_database) 提供 Firebase RTDB 功能
+   [`firebase_database`][] 提供 Firebase RTDB 功能
 
- * [`firebase_storage`]({{site.pub}}/packages/firebase_storage) for Firebase Cloud Storage
+ * [`firebase_storage`][] for Firebase Cloud Storage
 
-   [`firebase_storage`]({{site.pub}}/packages/firebase_storage) 提供 Firebase Cloud Storage 功能
+   [`firebase_storage`][] 提供 Firebase Cloud Storage 功能
 
- * [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) for Firebase Messaging (FCM)
+ * [`firebase_messaging`][] for Firebase Messaging (FCM)
   
-   [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) 提供 Firebase Messaging (FCM) 功能
+   [`firebase_messaging`][] 提供 Firebase Messaging (FCM) 功能
 
- * [`flutter_firebase_ui`]({{site.pub}}/packages/flutter_firebase_ui) for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
+ * [`flutter_firebase_ui`][] for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
   
-   [`flutter_firebase_ui`]({{site.pub}}/packages/flutter_firebase_ui) 提供快速的 Firebase Auth 集成功能 (Facebook, Google, Twitter 和 email)
+   [`flutter_firebase_ui`][] 提供快速的 Firebase Auth 集成功能 (Facebook, Google, Twitter 和 email)
 
- * [`cloud_firestore`]({{site.pub}}/packages/cloud_firestore) for Firebase Cloud Firestore
+ * [`cloud_firestore`][] for Firebase Cloud Firestore
   
-   [`cloud_firestore`]({{site.pub}}/packages/cloud_firestore) 提供 Firebase Cloud Firestore 功能
+   [`cloud_firestore`][] 提供 Firebase Cloud Firestore 功能
 
 You can also find some third-party Firebase plugins on Pub that cover areas
 not directly covered by the first-party plugins.
@@ -2676,7 +2683,7 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
-[developing packages and plugins](/docs/development/packages-and-plugins/developing-packages) page.
+[developing packages and plugins][] page.
 
 如果有 Flutter 官方或社区第三方插件没有涵盖的平台特定的功能，你可以根据 
 [开发包和插件](/docs/development/packages-and-plugins/developing-packages) 页面
@@ -2740,7 +2747,7 @@ It builds upon a WidgetsApp by adding Material specific functionality.
 MaterialApp 是一个包装了一系列 Widget 的为你给予便利的 Widget，而这些 Widget 通常是实现 
 Material Design 的应用所必须的。它基于 WidgetsApp 并添加了 Material 相关的功能。
 
-You can also use a `WidgetApp` as your app widget, which provides some of the
+You can also use a `WidgetsApp` as your app widget, which provides some of the
 same functionality, but is not as rich as `MaterialApp`.
 
 你也可以使用 `WidgetApp` 作为应用的 Widget，它会提供一些相同的功能，但是不如 `MaterialApp` 提供
@@ -2753,7 +2760,7 @@ the primary swatch is set to blue and text selection color is red.
 如果要自定义任意子组件的颜色或者样式，给 `MaterialApp` Widget 传入一个 `ThemeData` 对象即可。
 例如，在下面的代码中，主色调设置为蓝色，文本选中颜色设置为红色。
 
-{% prettify dart %}
+```dart
 class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -2767,7 +2774,7 @@ class SampleApp extends StatelessWidget {
     );
   }
 }
-{% endprettify %}
+```
 
 
 ## Databases and local storage
@@ -2784,14 +2791,14 @@ the SharedPreferences API.
 在 Android 中，你可以使用 SharedPreferences API 来存储少量的键值对。
 
 In Flutter, access this functionality using the
-[Shared_Preferences plugin]({{site.pub}}/packages/shared_preferences).
-This plugin wraps the functionality of both Shared Preferences and
-NSUserDefaults (the iOS equivalent).
+[Shared_Preferences plugin][].
+This plugin wraps the functionality of both
+Shared Preferences and NSUserDefaults (the iOS equivalent).
 
 在 Flutter 中，使用 [Shared_Preferences 插件]({{site.pub}}/packages/shared_preferences) 实现此功能。
 这个插件同时包装了 Shared Preferences 和 NSUserDefaults（iOS 平台对应 API）的功能。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -2816,8 +2823,7 @@ _incrementCounter() async {
   print('Pressed $counter times.');
   prefs.setInt('counter', counter);
 }
-
-{% endprettify %}
+```
 
 ### How do I access SQLite in Flutter?
 
@@ -2829,7 +2835,7 @@ using SQL.
 在 Android 中，你会使用 SQLite 来存储可以通过 SQL 进行查询的结构化数据。
 
 In Flutter, access this functionality using the
-[SQFlite]({{site.pub}}/packages/sqflite) plugin.
+[SQFlite][] plugin.
 
 在 Flutter 中，使用 [SQFlite]({{site.pub}}/packages/sqflite) 插件实现此功能。
 ## Debugging
@@ -2878,21 +2884,49 @@ plugin documentation.
 [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) 插件文档。
 [Firebase Messaging][] plugin.
 For more information on using the Firebase Cloud Messaging API,
-see the [firebase_messaging][] plugin documentation.
+see the [`firebase_messaging`][] plugin documentation.
 
+
+[Add Flutter to existing app]: /docs/development/add-to-app
+[Animation & Motion widgets]: /docs/development/ui/widgets/animation
+[Animations tutorial]: /docs/development/ui/animations/tutorial
+[Animations overview]: /docs/development/ui/animations
 [`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 [Apple's iOS design language]: https://developer.apple.com/design/resources/
+[`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: /docs/resources/technical-overview#everythings-a-widget
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino
 [Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
-[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
+[developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [devicePixelRatio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
 [DevTools]: /docs/development/tools/devtools
+[existing plugin]: {{site.pub}}/flutter/
+[`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
+[`firebase_admob`]: {{site.pub}}/packages/firebase_admob
+[`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
+[`firebase_auth`]: {{site.pub}}/packages/firebase_auth
+[`firebase_database`]: {{site.pub}}/packages/firebase_database
+[`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
+[`firebase_storage`]: {{site.pub}}/packages/firebase_storage
+[`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
 [Firebase Messaging]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages/firebase_messaging
-[firebase_messaging]: {{site.pub}}/packages/firebase_messaging
-[Flutter For Android Developers : How to design LinearLayout in Flutter?]: {{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
+[first party plugins]: {{site.pub}}/flutter/packages?q=firebase
+[Flutter cookbook]: /docs/cookbook
+[Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
+[Flutter for Android Developers: How to design Activity UI in Flutter]: https://blog.usejournal.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48
+[`geolocator`]: {{site.pub}}/packages/geolocator
+[`http` package]: {{site.pub}}/packages/http
+[`image_picker`]: {{site.pub}}/packages/image_picker
+[Intents]: #what-is-the-equivalent-of-an-intent-in-flutter
+[intl package]: {{site.pub}}/packages/intl
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
 [Material Components]: {{site.material}}/develop/flutter
 [Material Design guidelines]: {{site.material}}/design
 [optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[a plugin]: {{site.pub}}/packages/android_intent
+[pub.dev]: {{site.pub}}/flutter/packages/
+[Retrieve the value of a text field]: /docs/cookbook/forms/retrieve-input
+[Shared_Preferences plugin]: {{site.pub}}/packages/shared_preferences
+[SQFlite]: {{site.pub}}/packages/sqflite
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
+[widget catalog]: /docs/development/ui/widgets/layout

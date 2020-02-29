@@ -1,6 +1,8 @@
 ---
 title: Work with tabs
 title: 使用 tabs
+description: How to implement tabs in a layout.
+description: 如何实现 tab 布局。
 prev:
   title: Use themes to share colors and font styles
   title: 使用 Themes 统一颜色和字体风格
@@ -14,8 +16,9 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-Working with tabs is a common pattern in apps that follow the Material Design
-guidelines. Flutter includes a convenient way to create tab layouts as part of
+Working with tabs is a common pattern in apps that follow the
+Material Design guidelines.
+Flutter includes a convenient way to create tab layouts as part of
 the [material library][].
 
 在 Material Design 设计准则里，tabs 是一种常用的布局模型。

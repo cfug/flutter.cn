@@ -1,6 +1,8 @@
 ---
 title: Focus and text fields
 title: 焦点和文本框
+description: How focus works with text fields.
+description: 文本框的聚焦是如何工作的。
 prev:
   title: Retrieve the value of a text field
   title: 获取文本框的输入值

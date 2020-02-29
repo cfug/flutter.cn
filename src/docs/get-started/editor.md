@@ -1,6 +1,8 @@
 ---
 title: Set up an editor
 title: 编辑工具设定
+description: Configuring an IDE for Flutter.
+description: 为 Flutter 配置 IDE 环境。
 prev:
   title: Install
   title: 安装和环境配置
@@ -23,7 +25,7 @@ highlighting, widget editing assists, run & debug support, and more.
 
 Follow the steps below to add an editor plugin for Android Studio, IntelliJ, or
 VS Code. If you want to use a different editor, that's OK, skip ahead to the
-[next step: Test drive](/docs/get-started/test-drive).
+[next step: Test drive][].
 
 参考以下步骤为 Android Studio、IntelliJ 或者 VS Code 添加编辑器插件。
 如果你想使用其他的编辑器，请直接打开 [下一节: 开发体验初探](/docs/get-started/test-drive)，
@@ -52,7 +54,7 @@ Android Studio offers a complete, integrated IDE experience for Flutter.
 
 Android Studio 为 Flutter 提供了一个完整的集成开发环境。
 
-* [Android Studio]({{site.android-dev}}/studio), version 3.0 or later
+* [Android Studio][], version 3.0 or later
 
   [Android Studio](https://developer.android.google.cn/studio)，3.0 或之后的版本
 
@@ -60,13 +62,13 @@ Alternatively, you can also use IntelliJ:
 
 同时, 你也可以使用 IntelliJ：
 
-* [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/), version 2017.1 or later
+* [IntelliJ IDEA Community][], version 2017.1 or later
 
-  [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/)， 2017.1 或之后的版本
+  [IntelliJ IDEA Community][]， 2017.1 或之后的版本
 
-* [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/), version 2017.1 or later
+* [IntelliJ IDEA Ultimate][], version 2017.1 or later
 
-  [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/)， 2017.1 或之后的版本
+  [IntelliJ IDEA Ultimate][]， 2017.1 或之后的版本
 
 ## Install the Flutter and Dart plugins
 
@@ -110,9 +112,9 @@ VS Code is a light-weight editor with Flutter app execution and debug support.
 
 VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
-* [VS Code](https://code.visualstudio.com/), latest stable version
+* [VS Code][], latest stable version
 
-  [VS Code](https://code.visualstudio.com/)，最新稳定版本
+  [VS Code][]，最新稳定版本
 
 ## Install the Flutter and Dart plugins
 
@@ -168,3 +170,10 @@ Take Flutter for a test drive: create a first project, run it, and experience
 "hot reload".
 
 开发体验初探：创建第一个项目，运行并体验“热重载”。
+
+[Android Studio]: {{site.android-dev}}/studio
+[IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
+[IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
+[next step: Test drive]: /docs/get-started/test-drive
+[VS Code]: https://code.visualstudio.com/
+

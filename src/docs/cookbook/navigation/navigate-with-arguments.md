@@ -1,6 +1,8 @@
 ---
 title: Pass arguments to a named route
 title: 给特定的 route 传参
+description: How to pass arguments to a named route.
+description: 如何向命名路由传参。
 prev:
   title: Navigate with named routes
   title: 导航到对应名称的 routes 里

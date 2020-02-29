@@ -1,6 +1,8 @@
 ---
 title: Hero Animations
 title: 主动画 (Hero animations)
+description: How to animate a widget to fly between two screens.
+description: 如何让 widget 动画飞跃两个屏幕。
 short-title: Hero
 ---
 
@@ -822,11 +824,11 @@ provided example to your needs.** The heavy lifting is done for you.
   The radial hero animation involves intersecting a round shape with
   a square shape. This can be hard to see, even when slowing
   the animation with `timeDilation`, so you might consider enabling
-  the [`debugPaintSizedEnabled`][] flag during development.
+  the [`debugPaintSizeEnabled`][] flag during development.
   
   径向 hero 动画设计圆形和正方形的交叉。
   这个很难看出来，即使使用 `timeDilation` 来减慢动画。
-  所以在开发时，可以考虑启用 Flutter 的 [`debugPaintSizedEnabled`][] 这个 flag。
+  所以在开发时，可以考虑启用 Flutter 的 [`debugPaintSizeEnabled`][] 这个 flag。
 
 {{site.alert.end}}
 
@@ -1031,13 +1033,13 @@ Key information:
   `RadialExpansion` 动画由两个重叠的剪裁创建。
 
 - The example defines the tweening interpolation using
-  [MaterialRectCenterArcTween][]. The default flight path for a hero animation
+  [`MaterialRectCenterArcTween`][]. The default flight path for a hero animation
   interpolates the tweens using the corners of the heroes. This approach affects
   the hero's aspect ratio during the radial transformation, so the new flight
   path uses `MaterialRectCenterArcTween` to interpolate the tweens using the
   center point of each hero.
 
-   这个示例用 [MaterialRectCenterArcTween][] 定义了补间插值。
+   这个示例用 [`MaterialRectCenterArcTween`][] 定义了补间插值。
    hero 动画的默认飞翔路径，利用 heroes 的角插值补间。
    这个方法会影响到径向过渡时 hero 的长宽比例，
    所以新的飞翔路径使用 `MaterialRectCenterArcTween` 方法，
@@ -1103,6 +1105,9 @@ The following resources might help when writing animations:
 [Material motion spec]({{site.material}}/guidelines/motion/)<br>
   介绍使用 Material 设计应用程序的动作。
 
-[MaterialRectCenterArcTween]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
-[Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
+
 [`debugPaintSizeEnabled`]: /docs/testing/code-debugging#debug-flags-layout
+[`MaterialRectCenterArcTween`]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
+[Radial hero animation code]: #radial-hero-animation-code
+[Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
+[Standard hero animation code]: #standard-hero-animation-cod)

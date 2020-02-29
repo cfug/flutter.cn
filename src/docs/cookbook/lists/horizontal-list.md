@@ -1,6 +1,8 @@
 ---
 title: Create a horizontal list
 title: 创建一个水平滑动的列表
+description: How to implement a horizontal list.
+description: 如何实现一个水平列表。
 prev:
   title: Use lists
   title: 基础列表

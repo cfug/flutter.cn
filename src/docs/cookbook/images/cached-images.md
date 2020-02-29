@@ -1,6 +1,8 @@
 ---
 title: Work with cached images
 title: 使用缓存图片
+description: How to work with cached images.
+description: 如何操作缓存的图片。
 prev:
   title: Fade in images with a placeholder
   title: 占位符和网络图片淡入
@@ -17,10 +19,10 @@ use the [`cached_network_image`][] package.
 
 在一些情况下，缓存从网络下载的图片用于离线显示是十分方便的。你需要引入 [`cached_network_image`]({{site.pub-pkg}}/cached_network_image) 包来实现这项功能。
 
-In addition to caching, the cached_image_network package also supports
+In addition to caching, the `cached_image_network` package also supports
 placeholders and fading images in as they're loaded.
 
-除了缓存，cached_image_network 包也支持占位符和加载后的图片淡入。
+除了缓存，`cached_image_network` 包也支持占位符和加载后的图片淡入。
 
 <!-- skip -->
 ```dart

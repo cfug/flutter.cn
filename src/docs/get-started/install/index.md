@@ -1,6 +1,8 @@
 ---
 title: Install
 title: 安装和环境配置
+description: How to set up your code editor.
+description: 如何设置你的代码编辑器。
 next:
   title: Set up an editor
   title: 编辑工具设定
@@ -17,9 +19,9 @@ Select the operating system on which you are installing Flutter:
   
   **你在使用 Chrome OS 吗**
 
-  If so, see the official [Chrome OS Flutter installation docs!](/docs/get-started/install/chromeos)
+  If so, see the official [Chrome OS Flutter installation docs][]
   
-  Chrome OS 用户可以参考本文档 [在 Chrome OS 上安装和配置 Flutter 开发环境](/docs/get-started/install/chromeos)
+  Chrome OS 用户可以参考本文档 [在 Chrome OS 上安装和配置 Flutter 开发环境][]
   
 {{site.alert.end}}
 
@@ -38,8 +40,11 @@ Select the operating system on which you are installing Flutter:
 
 {{site.alert.important}}
 
-  If you're in China, first read [Using Flutter in China](/community/china).
+  If you're in China, first read [Using Flutter in China][].
   
-  如果你在中国的网络环境下使用 Flutter，请先看一下 [这篇文章](/community/china)，查看是否需要对网络环境进行特别设置。
+  如果你在中国的网络环境下使用 Flutter，请先看一下 [这篇文章][Using Flutter in China]，查看是否需要对网络环境进行特别设置。
 
 {{site.alert.end}}
+
+[Chrome OS Flutter installation docs]: /docs/get-started/install/chromeos
+[Using Flutter in China]: /community/china

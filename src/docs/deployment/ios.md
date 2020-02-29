@@ -2,6 +2,8 @@
 title: Build and release an iOS app
 title: 打包并发布 iOS 应用
 short-title: iOS
+description: How to release a Flutter app to the App Store.
+description: 如何在 App Store 上发布一个 Flutter 应用。
 short-title: iOS
 ---
 	
@@ -10,8 +12,7 @@ the [App Store][appstore] and [TestFlight][testflight].
 
 这个教程将为你提供关于如何将 Flutter App 发布到 [App Store][appstore_cn] 和 [TestFlight][testflight_cn] 的说明。
 
-For information on obfuscating Dart code, see [Obfuscating Dart
-Code][].
+For information on obfuscating Dart code, see [Obfuscating Dart Code][].
 
 关于混淆 Dart 代码的更多信息，你可以看 [混淆 Dart 代码][Obfuscating Dart Code]
 
@@ -386,7 +387,7 @@ For more details, see
 
 ## 发布你的 app 到 TestFlight
 
-[TestFlight][testflight] allows developers to push their apps to internal and
+[TestFlight][] allows developers to push their apps to internal and
 external testers. In this optional step, you'll release your build on
 TestFlight.
 
@@ -522,7 +523,7 @@ the process of releasing an app to the App Store.
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none
 [Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
-[testflight]: https://developer.apple.com/testflight/
+[TestFlight]: https://developer.apple.com/testflight/
 
 [appreview_cn]: https://developer.apple.com/cn/app-store/review/
 [appstore_cn]: https://developer.apple.com/cn/app-store/submissions/

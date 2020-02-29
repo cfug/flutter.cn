@@ -167,11 +167,11 @@ of the widget tree, but if you want a greater level of detail,
 or you want a verbose text-based dump of the widget,
 layer, or render trees, see
 [Debug flags: application layers][]
-in the [Debugging Flutter apps programatically][] page.
+in the [Debugging Flutter apps programmatically][] page.
 
 Flutter widget 检查器提供了 widget 树的视觉展现，如果你想要更多细节，
 或关于 wiget、层级或渲染树的详尽文本转储，请查看 
-[添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programatically] 
+[添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programmatically] 
 页面的 [调试标志：应用层][Debug flags: application layers] 部分。
 
 ## Debug mode assertions
@@ -205,7 +205,7 @@ down the source of the problem.
 
 有不变式被违反时，它会被报告给控制台，并携带一些帮助跟踪问题源的上下文信息。
 
-For more information, see [Assert][] in the
+For more information, see [`Assert`][] in the
 [Dart language tour][].
 
 想获取更多信息，请查看 [探索 Dart 语言][Dart language tour] 中的 [断言][Assert] 部分。
@@ -396,9 +396,9 @@ You might find the following docs useful:
 
   [Flutter 构建模式][Flutter's modes]
 
-* [Debugging Flutter apps programatically][]
+* [Debugging Flutter apps programmatically][]
 
-  [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programatically]
+  [添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programmatically]
 
 * [DevTools][]
 
@@ -414,6 +414,7 @@ You might find the following docs useful:
 
 [Debugging Flutter apps programatically]: /docs/testing/code-debugging
 [添加输出代码的方式调试 Flutter 应用]: /docs/testing/code-debugging
+[Debugging Flutter apps programmatically]: /docs/testing/code-debugging
 [perform traces programmatically]: /docs/testing/code-debugging#tracing-dart-code-performance
 [在代码中跟踪]: /docs/testing/code-debugging#tracing-dart-code-performance
 [Debug flags: application layers]: /docs/testing/code-debugging#debug-flags-application-layers
@@ -464,7 +465,6 @@ You might find the following docs useful:
 [release mode]: /docs/testing/build-modes#release
 [release 模式]: /docs/testing/build-modes#release
 
-[Assert]: {{site.dart-site}}/guides/language/language-tour#assert
-[断言]: {{site.dart-site}}/guides/language/language-tour#assert
+[`Assert`]: {{site.dart-site}}/guides/language/language-tour#assert
 [Dart language tour]: {{site.dart-site}}/guides/language/language-tour
 [探索 Dart 语言]: {{site.dart-site}}/guides/language/language-tour

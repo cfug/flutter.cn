@@ -1,6 +1,8 @@
 ---
 title: Handle taps
 title: 捕获和处理点击动作
+description: How to handle tapping and dragging.
+description: 如何处理点击和拖拽。
 prev:
   title: Add Material touch ripples
   title: 添加点按涟漪效果 (Material Design)

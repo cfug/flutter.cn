@@ -1,6 +1,8 @@
 ---
 title: Handle changes to a text field
 title: 响应文本框内容的更改
+description: How to detect changes to a text field.
+description: 如何检测文本框内容的更改。
 prev:
   title: Create and style a text field
   title: 文本框的创建和设定

@@ -1,6 +1,8 @@
 ---
 title: Implement swipe to dismiss
 title: 实现「滑动清除」效果
+description: How to implement swiping to dismiss or delete.
+description: 如何实现滑动取消或清除效果。
 prev:
   title: Handle taps
   title: 捕获和处理点击动作
@@ -14,8 +16,9 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-The "swipe to dismiss" pattern is common in many mobile apps.  For example,
-when writing an email app, you might want to allow a user to swipe away
+The "swipe to dismiss" pattern is common in many mobile apps.
+For example, when writing an email app,
+you might want to allow a user to swipe away
 email messages to delete them from a list.
 
 “滑动清除”在许多移动应用中都很常见。

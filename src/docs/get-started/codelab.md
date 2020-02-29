@@ -1,6 +1,8 @@
 ---
 title: Write your first Flutter app, part 1
 title: 编写第一个 Flutter 应用
+description: How to write a web-based app in Flutter.
+description: 如何使用 Flutter 编写一个网页应用。
 short-title: Write your first app
 short-title: 编写第一个 Flutter 应用
 prev:
@@ -19,7 +21,7 @@ diff2html: true
   This codelab walks you through writing your first Flutter
   app on mobile. You might prefer to try
   [writing your first Flutter app on the web][].
-  **Note that if you have [enabled web],
+  **Note that if you have [enabled web][],
   the completed app just works on all of these devices!**
 
   这篇 codelab 将带你初体验移动端 Flutter 应用开发。
@@ -166,10 +168,10 @@ The animated GIF shows how the app works at the completion of part 1.
 <?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
 
 Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter app].
+[Getting Started with your first Flutter app][].
 Name the project **startup_namer** (instead of _myapp_).
 
-按照 [这个指南](/docs/get-started/test-drive#create-app) 中所描述的步骤，
+按照 [这个指南][Getting Started with your first Flutter app] 中所描述的步骤，
 创建一个简单的、基于模板的 Flutter 工程，然后将项目命名为 startup_namer (而不是 myapp)，
 接下来你将会修改这个工程来完成最终的 App。
 
@@ -523,7 +525,7 @@ a child inside the existing `MyApp` stateless widget.
     ```
 
     Notice the declaration `State<RandomWords>`.
-    This indicates that we're using the generic [State][]
+    This indicates that we're using the generic [`State`][]
     class specialized for use with `RandomWords`. Most of the app's logic
     and state resides here&mdash;it maintains the state for the `RandomWords`
     widget. This class saves the generated word pairs, which grows infinitely

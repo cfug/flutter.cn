@@ -2,9 +2,9 @@
 
 ## Web 平台设置
 
-{{site.alert.warning}}
+{{site.alert.note}}
 
-Note: As of 1.12, Flutter has early support for running web applications, but you need to be running the beta channel of
+As of 1.12, Flutter has early support for running web applications, but you need to be running the beta channel of
 Flutter at present. If you experience a problem that hasn’t yet been reported, please [file an issue][] and make sure that
 “web” appears in the title.
 
@@ -14,7 +14,7 @@ Flutter at present. If you experience a problem that hasn’t yet been reported,
 并在标题里注明 `[web]` 关键字。
 {{site.alert.end}}
 
-To prepare to run and test your Flutter app on the web,
+To prepare to run, test, and debug your Flutter app on the web,
 you must [install Chrome][], if you haven't already.
 
 如果要在 Web 平台运行 Flutter 应用，你必须 [安装 Chrome 浏览器][]。

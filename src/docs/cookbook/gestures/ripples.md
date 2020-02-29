@@ -1,6 +1,8 @@
 ---
 title: Add Material touch ripples
 title: 添加点按涟漪效果 (Material Design)
+description: How to implement ripple animations.
+description: 如何实现涟漪动画。
 prev:
   title: Focus and text fields
   title: 焦点和文本框

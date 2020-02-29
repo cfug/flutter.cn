@@ -6,21 +6,22 @@ description: 创建在 Web 平台上运行的 Flutter 应用。
 ---
 
 This page covers the following steps for getting started with web support:
-- Configure the `flutter` tool for web support.
-- Create a new project with web support.
-- Run a new project with web support.
-- Build an app with web support.
-- Add web support to an existing project.
+
+* Configure the `flutter` tool for web support.
+* Create a new project with web support.
+* Run a new project with web support.
+* Build an app with web support.
+* Add web support to an existing project.
 
 ## Requirements
 
 ## 要求
 
-- [Install the Flutter SDK on your platform][Install Flutter].
+* [Install the Flutter SDK on your platform][Install Flutter].
 
   [在你的平台上安装 Flutter SDK][Install Flutter]。
 
-- [Install Chrome]. Debugging a web app requires the Chrome browser.
+* [Install Chrome]. Debugging a web app requires the Chrome browser.
 
   [安装 Chrome][Install Chrome]，当前情况下，调试 web 应用需要 Chrome 浏览器。
 
@@ -38,7 +39,7 @@ For more information, see the [web FAQ].
   但你目前需要运行 Flutter 的 `beta` 频道。
   如果在使用中发现问题，请 [发一个 Issue][file an issue] 给我们，
   并确保标题上有 `[web]` 字样。
-{{ site.alert.end }}
+{{site.alert.end}}
 
 ## Create a new project with web support
 
@@ -69,20 +70,20 @@ $ flutter config --enable-web
 ```
 
 {{site.alert.note}}
-The `flutter upgrade` command silently fails
-when `origin` points to a personal fork.
-To validate that `origin` points to `{{site.repo.flutter}}.git`,
-run the following commands in the root directory
-of your local copy of the `{{site.repo.flutter}}` repository:
+  The `flutter upgrade` command silently fails
+  when `origin` points to a personal fork.
+  To validate that `origin` points to `{{site.repo.flutter}}.git`,
+  run the following commands in the root directory
+  of your local copy of the `{{site.repo.flutter}}` repository:
 
-这里的 `flutter upgrade` 命令会在个人 fork 情况下失效，
-验证 origin 是否指向 "flutter/flutter" 仓库，可以通过下面命令：
+  这里的 `flutter upgrade` 命令会在个人 fork 情况下失效，
+  验证 origin 是否指向 "flutter/flutter" 仓库，可以通过下面命令：
 
-```terminal
-$ cd <inside local copy of the flutter/flutter repo>
-$ git remote get-url origin
-https://github.com/flutter/flutter.git
-```
+  ```terminal
+  $ cd <inside local copy of the flutter/flutter repo>
+  $ git remote get-url origin
+  https://github.com/flutter/flutter.git
+  ```
 
 ## Enable web support
 
@@ -110,10 +111,11 @@ with the following:
 }
 ```
 {{site.alert.end}}
+
 Once web is enabled,
-the `flutter devices` command outputs a `Chrome` device that opens the
-Chrome browser with your app running, and a `Web Server` that provides the URL
-serving the app.
+the `flutter devices` command outputs a `Chrome` device
+that opens the Chrome browser with your app running,
+and a `Web Server` that provides the URL serving the app.
 
 一旦开启了 Web 支持，运行 `flutter devices`
 命令会输出一个名为 `Chrome` 的设备信息。
@@ -158,8 +160,9 @@ from the top of the project package:
 flutter create .
 ```
 {{site.alert.note}}
-You should only need to execute these configure steps once. You can always
-check the status of your configuration using the `flutter config` command.
+  You should only need to execute these configure steps once.
+  You can always check the status of your configuration using
+  the `flutter config` command.
 {{site.alert.end}}
 
 ### Create and run
@@ -189,10 +192,10 @@ flutter run -d chrome
 ```
 {{site.alert.note}}
 
-If there aren't any other connected devices,
-the `-d chrome` is optional.
+  If there aren't any other connected devices,
+  the `-d chrome` is optional.
 
-如果没有其他连接的设备，那么 `-d chrome` 是可选的。
+  如果没有其他连接的设备，那么 `-d chrome` 是可选的。
 
 {{site.alert.end}}
 
@@ -212,10 +215,12 @@ Run the following command to generate a release build:
 flutter build web
 ```
 
-A release build uses [dart2js] (instead of the [development compiler])
+A release build uses [dart2js][]
+(instead of the [development compiler][])
 to produce a single JavaScript file `main.dart.js`.
-You can create a release build using release mode (`flutter run --release`)
-or by using `flutter build web`. This populates a `build/web` directory
+You can create a release build using release mode
+(`flutter run --release`) or by using `flutter build web`.
+This populates a `build/web` directory
 with built files, including an `assets` directory,
 which need to be served together.
 
@@ -240,6 +245,7 @@ terminal from the root project directory:
 ```terminal
 $ flutter create .
 ```
+
 To serve your app from `localhost` in Chrome,
 enter the following from the top of the package:
 

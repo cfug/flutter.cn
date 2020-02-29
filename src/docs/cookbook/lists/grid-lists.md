@@ -1,6 +1,8 @@
 ---
 title: Create a grid list
 title: 创建一个网格列表
+description: How to implement a grid list.
+description: 如何实现一个网格列表。
 prev:
   title: Create a horizontal list
   title: 创建一个水平滑动的列表

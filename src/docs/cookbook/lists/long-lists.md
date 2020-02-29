@@ -1,6 +1,8 @@
 ---
 title: Work with long lists
 title: 长列表的处理
+description: Use ListView.builder to implement a long or infinite list.
+description: 使用 ListView.builder 实现一个长或无限的列表。
 prev:
   title: Place a floating app bar above a list
   title: 在列表顶部放置一个浮动的 app bar

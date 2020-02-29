@@ -1,6 +1,8 @@
 ---
 title: Persist data with SQLite
 title: 用 SQLite 做数据持久化
+description: How to use SQLite to store and retrieve data.
+description: 如何使用 SQLite 做数据持久化。
 prev:
   title: Work with WebSockets
   title: 发起 WebSockets 请求

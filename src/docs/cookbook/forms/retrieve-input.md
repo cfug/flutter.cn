@@ -1,6 +1,8 @@
 ---
 title: Retrieve the value of a text field
 title: 获取文本框的输入值
+description: How to retrieve text from a text field.
+description: 如何获取文本框输入的文字
 prev:
   title: Handle changes to a text field
   title: 响应文本框内容的更改

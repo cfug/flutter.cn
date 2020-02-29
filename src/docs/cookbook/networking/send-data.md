@@ -1,6 +1,8 @@
 ---
 title: Send data to the internet
 title: 发送网络数据
+description: How to use the http package to send data over the internet.
+description: 如何通过 http 包发送网络数据。
 prev:
   title: Fetch data from the internet
   title: 获取网络数据
@@ -26,14 +28,14 @@ This recipe uses the following steps:
 
 To install the `http` package, add it to the dependencies section
 of the `pubspec.yaml`. You can find the latest version of the
-[http package][] on pub.dev.
+[`http` package][] on pub.dev.
 
 ```yaml
 dependencies:
   http: <latest_version>
 ```
 
-Import the http package.
+Import the `http` package.
 
 <!-- skip -->
 ```dart
@@ -43,7 +45,8 @@ import 'package:http/http.dart' as http;
 ## 2. Sending data to server
 
 In this example, let's send an album title to the
-[JSONPlaceholder][] using the [http.post()][] method to create an Album
+[JSONPlaceholder][] using the
+[`http.post()`][] method to create an Album.
 
 <!-- skip -->
 ```dart
@@ -326,8 +329,8 @@ class _MyAppState extends State<MyApp> {
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [`http`]: {{site.pub-pkg}}/http
-[http.post()]: {{site.pub-api}}/http/latest/http/post.html
-[http package]: {{site.pub}}/packages/http#-installing-tab-
+[`http.post()`]: {{site.pub-api}}/http/latest/http/post.html
+[`http` package]: {{site.pub-pkg}}/http#-installing-tab-
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html

@@ -1,6 +1,8 @@
 ---
 title: Create lists with different types of items
 title: 创建拥有不同列表项的列表
+description: How to implement a list that contains different types of assets.
+description: 如何实现一个包含不同类型资源的列表。
 prev:
   title: Create a grid list
   title: 创建一个网格列表

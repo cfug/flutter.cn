@@ -1,6 +1,8 @@
 ---
 title: Dealing with box constraints
 title: 处理边界约束 (Box constraints) 的问题
+description: How box constraints might go wrong.
+description: 为何框约束可能会出错。
 short-title: Box constraints
 short-title: 边界约束 (Box constraints)
 ---

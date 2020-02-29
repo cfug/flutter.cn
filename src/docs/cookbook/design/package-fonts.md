@@ -1,6 +1,8 @@
 ---
 title: Export fonts from a package
 title: 以 package 的方式使用字体
+description: How to export fonts from a package.
+description: 如何从 package 中导出字体。
 prev:
   title: Display a snackbars
   title: 显示 SnackBars
@@ -221,6 +223,6 @@ class MyHomePage extends StatelessWidget {
 ![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
 [Google Fonts]: https://fonts.google.com
-[google_fonts]: {{site.pub}}/packages/google_fonts
+[google_fonts]: {{site.pub-pkg}}/google_fonts
 [pub.dev]: {{site.pub}}
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html

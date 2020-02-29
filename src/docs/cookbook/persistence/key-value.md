@@ -1,6 +1,8 @@
 ---
 title: Store key-value data on disk
 title: 存储键值对数据
+description: How to use the shared_preferences package to store key-value data.
+description: 如何使用 shared_preferences 包来存储 key-value 数据。
 prev:
   title: Read and write files
   title: 文件读写
@@ -12,19 +14,19 @@ next:
 ---
 
 If you have a relatively small collection of key-values
-to save, you can use the [shared_preferences][] plugin.
+to save, you can use the [`shared_preferences`][] plugin.
 
-如果你要存储的键值集合相对较少，则可以用 [shared_preferences]({{site.pub}}/packages/shared_preferences) 插件。
+如果你要存储的键值集合相对较少，则可以用 [`shared_preferences`]({{site.pub}}/packages/shared_preferences) 插件。
 
 Normally,
 you would have to write native platform integrations for storing
 data on both iOS and Android. Fortunately,
-the [shared_preferences][] plugin can be used to persist
+the [`shared_preferences`][] plugin can be used to persist
 key-value data on disk. The shared preferences plugin
 wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
 
-通常你需要在两个平台用原生的方式存储数据。幸运的是 [shared_preferences]({{site.pub-pkg}}/shared_preferences) 插件可以把 key-value 保存到磁盘中。它通过封装 iOS 上的 `NSUserDefaults` 和 Android 上的 `SharedPreferences` 为简单数据提供持久化存储。
+通常你需要在两个平台用原生的方式存储数据。幸运的是 [`shared_preferences`]({{site.pub-pkg}}/shared_preferences) 插件可以把 key-value 保存到磁盘中。它通过封装 iOS 上的 `NSUserDefaults` 和 Android 上的 `SharedPreferences` 为简单数据提供持久化存储。
 
 This recipe uses the following steps:
 
@@ -50,7 +52,7 @@ This recipe uses the following steps:
 
 ## 1. 添加依赖
 
-Before starting, add the [shared_preferences][]
+Before starting, add the [`shared_preferences`][]
 plugin to the `pubspec.yaml` file:
 
 在开始之前，你需要在 `pubspec.yaml` 文件中添加 [shared_preferences]({{site.pub-pkg}}/shared_preferences) 插件：
@@ -67,8 +69,8 @@ dependencies:
 ## 2. 保存数据
 
 To persist data, use the setter methods provided by the
-`SharedPreferences` class. Setter methods are available for various primitive
-types, such as `setInt`, `setBool`, and `setString`.
+`SharedPreferences` class. Setter methods are available for
+various primitive types, such as `setInt`, `setBool`, and `setString`.
 
 要存储数据，请使用 `SharedPreferences` 类的 setter 方法。Setter方法可用于各种基本数据类型，例如  `setInt`、`setBool` 和 `setString`。
 
@@ -260,5 +262,5 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 
-[shared_preferences]: {{site.pub}}/packages/shared_preferences
+[`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
 [shared preferences documentation]: {{site.android-dev}}/guide/topics/data/data-storage#pref

@@ -1,6 +1,8 @@
 ---
 title: Make authenticated requests
 title: 发起 HTTP 认证授权请求
+description: How to fetch authorized data from a web service.
+description: 如何从 web 服务中获取授权信息。
 prev:
   title: Fetch data from the internet
   title: 获取网络数据
@@ -25,11 +27,11 @@ uses the `Authorization` HTTP header.
 
 The [`http`][] package provides a
 convenient way to add headers to your requests.
-Alternatively, use the [HttpHeaders][]
+Alternatively, use the [`HttpHeaders`][]
 class from the `dart:io` library.
 
 [`http`][] 这个 package 提供了相当实用的方法来向请求中添加 headers，
-你也可以使用 `dart:io` 来使用一些常见的 `HttpHeaders`。
+你也可以使用 `dart:io` 来使用一些常见的 [`HttpHeaders`][]。
 
 <!-- skip -->
 ```dart
@@ -88,4 +90,4 @@ class Album {
 
 [Fetching data from the internet]: /docs/cookbook/networking/fetch-data
 [`http`]: {{site.pub-pkg}}/http
-[HttpHeaders]: {{site.dart.api}}/stable/dart-io/HttpHeaders-class.html
+[`HttpHeaders`]: {{site.dart.api}}/stable/dart-io/HttpHeaders-class.html

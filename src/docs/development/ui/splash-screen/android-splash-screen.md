@@ -27,7 +27,7 @@ Flutter 支持在 Android 应用初始化的时候展示启动页，
 {{site.alert.note}}
 
   Strategies are available to minimize wait time related to Flutter
-  initialization. Consider [pre-warming a FlutterEngine]() and
+  initialization. Consider [pre-warming a `FlutterEngine`]() and
   [re-using a FlutterEngine throughout your app]() to avoid most wait time.
 
   使用一些策略来最小化 Flutter 初始化相关过程中的等待时间。
@@ -47,8 +47,6 @@ display a `Drawable` while the app is initializing.
 当操作系统建立应用程序进程的同时，每个 Android 应用都需要初始化的时间。
 Android 提供了 [启动页][launch screen] 的概念，
 用于在应用初始化的过程中展示一个 `Drawable`。
-
-[launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 
 Flutter provides support for displaying an Android launch screen before showing
 a `FlutterActivity`. The instructions to display an Android launch screen are discussed in the next sections.
@@ -321,3 +319,7 @@ system, and share your creations with the community!
 
 对于自定义的闪屏页而言，天空才是极限。实际上，你可以创建一个展示天空动画的闪屏页！享受这个
 灵活的启动系统所带来的乐趣，并在社区中分享你的创作！
+
+[launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
+[pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
+

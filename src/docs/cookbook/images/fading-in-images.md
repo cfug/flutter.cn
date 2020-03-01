@@ -1,6 +1,8 @@
 ---
 title: Fade in images with a placeholder
 title: 占位符和网络图片淡入
+description: How to fade images into view.
+description: 如何淡入占位符和网络图片。
 prev:
   title: Display images from the internet
   title: 显示网络上的远程图片
@@ -11,9 +13,9 @@ next:
   path: /docs/cookbook/images/cached-images
 ---
 
-When displaying images using the default `Image` widget, you might notice they
-simply pop onto the screen as they're loaded. This might feel visually jarring
-to your users.
+When displaying images using the default `Image` widget,
+you might notice they simply pop onto the screen as they're loaded.
+This might feel visually jarring to your users.
 
 当使用默认的 `Image` widget 显示图片时，你可能会注意到图片只是在加载完后直接显示到屏幕上。用户可能会觉得这看起来不舒服。
 
@@ -32,10 +34,10 @@ or images from the internet.
 
 ## 从内存加载占位符
 
-In this example, use the [transparent_image][]
+In this example, use the [`transparent_image`][]
 package for a simple transparent placeholder.
 
-本例将使用 [transparent_image]({{site.pub-pkg}}/transparent_image) 包来实现一个简单的透明占位符。
+本例将使用 [`transparent_image`][] 包来实现一个简单的透明占位符。
 
 <!-- skip -->
 ```dart
@@ -156,4 +158,4 @@ class MyApp extends StatelessWidget {
 [Adding assets and images]: /docs/development/ui/assets-and-images
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
 [`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
-[transparent_image]: {{site.pub-pkg}}/transparent_image
+[`transparent_image`]: {{site.pub-pkg}}/transparent_image

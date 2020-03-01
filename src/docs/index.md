@@ -92,6 +92,12 @@ Docs added and updated since the last announcement include:
   [编写你的第一个 Flutter Web 应用][write your first Flutter app on the web] codelab
   已添加到 [使用入门][Get started] 文档中，其中包括在 DevTools 中设置断点的说明。
 
+* We've introduced a program for recommending particular Dart and
+  Flutter plugins and packages. Learn more about the
+  [Flutter Favorite program][].
+
+  我们推出了一个计划以介绍特定 Dart 或者 Flutter 包或插件。请在 [最受欢迎的 Flutter 包计划中][Flutter Favorite program]查看更多信息。
+
 * A new [implicit animations][] codelab is available
   featuring DartPad.
   (To run it, you don't need to download any software!)
@@ -143,6 +149,7 @@ Happy Fluttering!
 [building a web app with Flutter]: /docs/get-started/web
 [Desktop support for Flutter]: /desktop
 [Flutter: the first UI platform designed for ambient computing]: https://developers.googleblog.com/2019/12/flutter-ui-ambient-computing.html?m=1
+[Flutter Favorite program]: /docs/development/packages-and-plugins/favorites
 [Flutter 1.12.13]: /docs/development/tools/sdk/release-notes/release-notes-1.12.13
 [Flutter Gallery]: https://flutter.github.io/samples/#/
 [Flutter Layout Explorer]: https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer

@@ -1,6 +1,8 @@
 ---
 title: Work with WebSockets
 title: 发起 WebSockets 请求
+description: How to connect to a web socket.
+description: 如何建立 web socket 连接。
 prev:
   title: Parse JSON in the background
   title: 在后台处理 JSON 数据解析
@@ -11,11 +13,12 @@ next:
   path: /docs/cookbook/persistence/sqlite
 ---
 
-In addition to normal HTTP requests, you can connect to servers using
-WebSockets.  WebSockets allow for two-way communication with a server
+In addition to normal HTTP requests,
+you can connect to servers using `WebSockets`.
+`WebSockets` allow for two-way communication with a server
 without polling.
 
-除了普通的 HTTP 请求，你还可以通过 WebSockets 来连接服务器。WebSockets 可以以非轮询的方式与服务器进行双向通信。
+除了普通的 HTTP 请求，你还可以通过 `WebSockets` 来连接服务器。`WebSockets` 可以以非轮询的方式与服务器进行双向通信。
 
 In this example, connect to a
 [test server provided by websocket.org][].

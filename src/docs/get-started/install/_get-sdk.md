@@ -18,10 +18,9 @@
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds, see the [SDK
-    releases](/docs/development/tools/sdk/releases) page.
+    For other release channels, and older builds, see the [SDK archive][] page.
 
-    想要获取到其他版本的安装包，请参阅 [SDK 版本列表](/docs/development/tools/sdk/releases) 页面。
+    想要获取到其他版本的安装包，请参阅 [SDK 版本列表][SDK archive] 页面。
 
  2. Extract the file in the desired location, for example:
 
@@ -43,11 +42,11 @@
 
      If you don't want to install a fixed version of the installation bundle, 
      you can skip steps 1 and 2. 
-     Instead, get the source code from the [Flutter repo](https://github.com/flutter/flutter) on GitHub,
+     Instead, get the source code from the [Flutter repo][] on GitHub,
      and change branches or tags as needed. For example:
 
      如果你不想安装固定版本的安装包，你可以跳过步骤 1 和 2。
-     或者是从 GitHub 上的 [Flutter repo](https://github.com/flutter/flutter) 获取源代码，
+     或者是从 GitHub 上的 [Flutter repo][] 获取源代码，
      并根据需要更改分支或标签。
 
     ```terminal
@@ -63,11 +62,11 @@
     ```
 
     This command sets your `PATH` variable for the _current_ terminal window only.
-    To permanently add Flutter to your path, see [Update your
-    path](#update-your-path).
+    To permanently add Flutter to your path, see
+    [Update your path][].
 
     这个命令配置了 `PATH` 环境变量，且只会在你 **当前** 命令行窗口中生效。
-    如果想让它永久生效，请查看 [更新 PATH 环境变量](#update-your-path)。
+    如果想让它永久生效，请查看 [更新 PATH 环境变量][Update your path]。
     
  4. Optionally, pre-download development binaries:
     
@@ -100,11 +99,12 @@ You are now ready to run Flutter commands!
 {{site.alert.note}}
 
   To update an existing version of Flutter, see
-  [Upgrading Flutter](/docs/development/tools/sdk/upgrading).
+  [Upgrading Flutter][].
   
-  如果想要升级当前的 Flutter 版本，可以查看 [升级 Flutter](/docs/development/tools/sdk/upgrading)。
+  如果想要升级当前的 Flutter 版本，可以查看 [升级 Flutter][Upgrading Flutter]。
 
 {{site.alert.end}}
+
 
 ### Run flutter doctor
 
@@ -154,3 +154,7 @@ command again to verify that you’ve set everything up correctly.
 
 {% include_relative _analytics.md %}
 
+[Flutter repo]: {{site.github}}/flutter/flutter
+[SDK archive]: /docs/development/tools/sdk/archive
+[Update your path]: #update-your-path
+[Upgrading Flutter]: /docs/development/tools/sdk/upgrading

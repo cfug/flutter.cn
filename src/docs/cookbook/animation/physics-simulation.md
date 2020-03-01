@@ -1,6 +1,8 @@
 ---
 title: Animate a widget using a physics simulation
 title: Widget 的物理模拟动画效果
+description: How to implement a physics animation.
+description: 如何实现物理动画。
 prev:
   title: Animate a page route transition
   title: 为页面切换加入动画效果

@@ -1,6 +1,8 @@
 ---
 title: Return data from a screen
 title: 从一个页面回传数据
+description: How to return data from a new screen.
+description: 如何从新页面返回数据。
 prev:
   title: Pass arguments to a named route
   title: 给特定的 route 传参

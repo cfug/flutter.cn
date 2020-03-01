@@ -1,6 +1,8 @@
 ---
 title: Read and write files
 title: 文件读写
+description: How to read from and write to files on disk.
+description: 如何读写硬盘上的文件。
 prev:
   title: Persist data with SQLite
   title: 用 SQLite 做数据持久化

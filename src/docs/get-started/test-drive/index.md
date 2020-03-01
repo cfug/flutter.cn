@@ -1,6 +1,8 @@
 ---
 title: Test drive
 title: 开发体验初探
+description: How to create a templated Flutter app and use hot reload.
+description: 如何使用 hot reload 创建一个 Flutter 应用模版。
 prev:
   title: Set up an editor
   title: 编辑工具设定

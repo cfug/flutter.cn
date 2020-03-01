@@ -1,6 +1,8 @@
 ---
 title: Handle scrolling
 title: 列表滚动
+description: How to handle scrolling in an integration test.
+description: 如何在集成测试中控制滚动。
 prev:
   title: Performance profiling
   title: 性能分析
@@ -11,15 +13,15 @@ next:
   path: /docs/cookbook/testing/unit/introduction
 ---
 
-Many apps feature lists of content, from email clients to music apps
-and beyond.
-To verify that lists contain the expected content using integration
-tests, you need a way to scroll through lists to search for particular items.
+Many apps feature lists of content,
+from email clients to music apps and beyond.
+To verify that lists contain the expected content
+using integration tests,
+you need a way to scroll through lists to search for particular items.
 
 不论是 Email 客户端还是音乐应用，绝大多数 app 都使用到列表来展示内容。我们期望使用集成测试来验证列表中的内容，并需要一种方法去滚动列表来查找特定的项。
 
-To scroll through lists via integration tests, use the methods
-provided by the [`FlutterDriver`][] class,
+To scroll through lists via integration tests, use the methods provided by the [`FlutterDriver`][] class,
 which is included in the [`flutter_driver`][] package:
 
 为了在集成测试中检验滚动列表，我们可以使用 [`flutter_driver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 这个 package 中的 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html) 类：

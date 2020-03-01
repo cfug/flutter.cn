@@ -1,6 +1,8 @@
 ---
 title: Display images from the internet
 title: 显示网络上的远程图片
+description: How to display images from the internet.
+description: 如何显示网络上的图片。
 prev:
   title: Implement swipe to dismiss
   title: 实现「滑动清除」效果
@@ -62,13 +64,13 @@ the following recipes:
 下载之后将图片缓存到设备等更进一步的功能。
 请参阅以下链接来实现这些功能：
 
-  * [Fade in images with a placeholder][]
+* [Fade in images with a placeholder][]
   
-    [占位符和网络图片淡入][Fade in images with a placeholder]
+  [占位符和网络图片淡入][Fade in images with a placeholder]
   
-  * [Working with cached images][]
+* [Work with cached images][]
   
-    [使用缓存图片][Working with cached images]
+  [使用缓存图片][Work with cached images]
 
 ## Interactive example
 
@@ -107,4 +109,4 @@ class MyApp extends StatelessWidget {
 [Fade in images with a placeholder]: /docs/cookbook/images/fading-in-images
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [`Image.network()`]: {{site.api}}/flutter/widgets/Image/Image.network.html
-[Working with cached images]: /docs/cookbook/images/cached-images
+[Work with cached images]: /docs/cookbook/images/cached-images

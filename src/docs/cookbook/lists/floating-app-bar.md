@@ -1,6 +1,8 @@
 ---
 title: Place a floating app bar above a list
 title: 在列表顶部放置一个浮动的 app bar
+description: How to place a floating app bar above a list.
+description: 如何在列表顶部放置一个浮动的 app bar。
 prev:
   title: Create lists with different types of items
   title: 创建拥有不同列表项的列表
@@ -14,9 +16,10 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-To make it easier for users to view a list of items, you might want to hide the
-app bar as the user scrolls down the list. This is especially true if your app
-displays a "tall" app bar that occupies a lot of vertical space.
+To make it easier for users to view a list of items,
+you might want to hide the app bar as the user scrolls down the list.
+This is especially true if your app displays a "tall"
+app bar that occupies a lot of vertical space.
 
 为了方便用户查看列表，你可能希望在用户向下滚动列表时隐藏 app bar，
 尤其在你的 app bar 特别高，导致它占据了很多竖向空间的时候。

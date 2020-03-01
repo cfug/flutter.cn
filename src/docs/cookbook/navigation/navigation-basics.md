@@ -1,7 +1,8 @@
 ---
 title: Navigate to a new screen and back
 title: 导航到一个新页面和返回
-description: How to navigate between routes
+description: How to navigate between routes.
+description: 如何在路由之间进行导航。
 prev:
   title: Animate a widget across screens
   title: 跨页面切换的动效 Widget (Hero animations)

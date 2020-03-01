@@ -1,6 +1,8 @@
 ---
 title: Animate a widget across screens
 title: 跨页面切换的动效 Widget (Hero animations)
+description: How to animate a widget from one screen to another
+description: 如何让一个 widget 跨页面进行动画。
 prev:
   title: Report errors to a service
   title: 把报错信息通过服务上传

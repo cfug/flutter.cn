@@ -43,27 +43,27 @@ which creates a new application and starts your app.
 对于 Xamarin.Forms 里的每个平台，你可以调用 `LoadApplication` 方法，
 创建一个新应用并运行你的 app 。
 
-{% prettify csharp %}
+```csharp
 LoadApplication(new App());
-{% endprettify %}
+```
 
 In Flutter, the default main entry point is `main` where you load your
 Flutter app.
 
 在 Flutter 中，加载 Flutter app 的默认主入口点是 `main`。
 
-{% prettify dart %}
+```dart
 void main() {
   runApp(new MyApp());
 }
-{% endprettify %}
+```
 
 In Xamarin.Forms, you assign a `Page` to the `MainPage` property in the
 `Application` class.
 
 在 Xamarin.Forms 中，你分配一个 `Page` 到 `Application` 类中的 `MainPage` 属性。
 
-{% prettify csharp %}
+```csharp
 public class App: Application
 {
     public App()
@@ -79,7 +79,7 @@ public class App: Application
                  };
     }
 }
-{% endprettify %}
+```
 
 In Flutter, "everything is a widget", even the application itself.
 The following example shows `MyApp`, a simple application `Widget`.
@@ -87,7 +87,7 @@ The following example shows `MyApp`, a simple application `Widget`.
 在 Flutter 中，“万物皆 widget”，甚至连应用本身也是。
 接下来的示例展示了 `MyApp` ,一个简单的应用 `Widget`。
 
-{% prettify dart %}
+```dart
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -96,7 +96,7 @@ class MyApp extends StatelessWidget {
         child: Text("Hello World!", textDirection: TextDirection.ltr));
   }
 }
-{% endprettify %}
+```
 
 ### How do you create a page?
 
@@ -136,7 +136,7 @@ The following example uses MaterialApp, which holds its root page in the
 
 下面的示例使用 MaterialApp，它在 `home` 属性中控制它的根页面。
 
-{% prettify dart %}
+```dart
 class MyApp extends StatelessWidget {
   // This widget is the root of your application(这个 widget 是你的应用程序的根 widget)。
 
@@ -147,11 +147,11 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      [[highlight]]home: new MyHomePage(title: 'Flutter Demo Home Page'),[[/highlight]]
+      home: new MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
-{% endprettify %}
+```
 
 From here, your actual first page is another `Widget`,
 in which you create your state.
@@ -167,7 +167,7 @@ the life of the widget.
 第一部分，是它自身不变的，创建一个状态对象（State object）来管控对象的状态。
 状态对象持续存在于 widget 的整个生命周期中。
 
-{% prettify dart %}
+```dart
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -176,7 +176,7 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
-{% endprettify %}
+```
 
 The `State` object implements the `build()` method for the stateful widget.
 
@@ -190,7 +190,7 @@ or it can result in poor UI performance.
 当 widget 树的状态发生了改变，将会调用 `setState()` 触发 widget 当中该部分UI的构建。
 确保只在需要时调用 `setState()` ，并且在只有部分 widget 树发生变化时调用，否则会造成糟糕的UI性能表现。
 
-{% prettify dart %}
+```dart
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -232,7 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-{% endprettify %}
+```
 
 In Flutter,
 the UI (also known as widget tree), is immutable, meaning you
@@ -260,10 +260,10 @@ but there are many benefits to this approach.
   How is react-style, or _declarative_, programming different than the
   traditional imperative style?
   For a comparison, see [Introduction to declarative
-  UI](/docs/get-started/flutter-for/declarative).
+  UI][].
 
   类 react 的风格，或者说是_声明式_编程风格，与传统的命令式编程风格有何不同？
-  作为比较，可以参考 [声明式 UI 介绍](/docs/get-started/flutter-for/declarative)。
+  作为比较，可以参考 [声明式 UI 介绍][Introduction to declarative UI]。
 
 {{site.alert.end}}
 
@@ -286,29 +286,31 @@ are all widgets. When building a route, you create a widget tree.
 按钮、进度条、动画控制器都是 widget。当构建一个路由时，就会创建一棵 widget 树。
 
 Flutter includes the [Material
-Components](/docs/development/ui/widgets/material)
+Components][]
 library. These are widgets that implement the
-[Material Design guidelines]({{site.material}}/design). Material Design is a
+[Material Design guidelines][]. Material Design is a
 flexible design system [optimized for all
-platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+platforms][],
 including iOS.
 
-Flutter 包含 [Material 组件](/docs/development/ui/widgets/material) 库。
-这些都是实现了 [Material Design 指南]({{site.material}}/design) 的 widget。
+Flutter 包含 [Material 组件][Material
+Components] 库。
+这些都是实现了 [Material Design 指南][Material Design guidelines] 的 widget。
 Material Design 是一个灵活的 
-[针对所有平台]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines) 
+[针对所有平台][optimized for all
+platforms]
 的设计系统，包括 iOS。
 
 But Flutter is flexible and expressive enough to implement any design language.
 For example, on iOS, you can use the [Cupertino
-widgets](/docs/development/ui/widgets/cupertino)
+widgets][]
 to produce an interface that looks like
-[Apple's iOS design language](https://developer.apple.com/design/resources/).
+[Apple's iOS design language][].
 
 不过， Flutter 有足够灵活和自描述性（expressive）去实现任何设计语言。
-举个例子，在 iOS 上，你可以用 [Cupertino widget](/docs/development/ui/widgets/cupertino)
+举个例子，在 iOS 上，你可以用 [Cupertino widget][]
 来生成一个看起来像 
-[苹果 iOS 设计语言](https://developer.apple.com/design/resources/) 的接口。
+[苹果 iOS 设计语言][Apple's iOS design language] 的接口。
 
 ### How do I update widgets?
 
@@ -384,12 +386,12 @@ the `Text` widget you'll find it subclasses `StatelessWidget`.
 `StatelessWidget`是`Text` widget。
 如果你查阅 `Text` widget 的实现，你会发现他是 `StatelessWidget` 的子类。
 
-{% prettify dart %}
+```dart
 new Text(
   'I like Flutter!',
   style: new TextStyle(fontWeight: FontWeight.bold),
 );
-{% endprettify %}
+```
 
 As you can see, the `Text` widget has no state information associated with it,
 it renders what is passed in its constructors and nothing more.
@@ -408,7 +410,7 @@ example:
 为了实现这个目标，需要将 `Text` widget 封装到一个`StatefulWidget`中，并在用用户点击按钮时更新它，
 正如接下来的例子：
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -462,7 +464,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 ### How do I lay out my widgets? What is the equivalent of an XAML file?
 
@@ -479,7 +481,7 @@ The following example shows how to display a simple widget with padding:
 
 接下来的示例展示如何显示一个简单的带填充（padding）的 widget：
 
-{% prettify dart %}
+```dart
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -493,14 +495,15 @@ The following example shows how to display a simple widget with padding:
           padding: new EdgeInsets.only(left: 10.0, right: 10.0),
         ),
       ),
-    );
-  }
-{% endprettify %}
+    ),
+  );
+}
+```
 
-You can view the layouts that Flutter has to offer in the [widget
-catalog](/docs/development/ui/widgets/layout).
+You can view the layouts that Flutter has to offer in the
+[widget catalog][].
 
-您可以查看 Flutter 在 [widget 目录](/docs/development/ui/widgets/layout) 中提供的布局。
+您可以查看 Flutter 在 [widget 目录][widget catalog] 中提供的布局。
 
 ### How do I add or remove an Element from my layout?
 
@@ -525,7 +528,7 @@ clicks the `FloatingActionButton`:
 
 下面的示例展示当用户点击 `FloatingActionButton` 时，如何在两个 widget 之间切换。
 
-{% prettify dart %}
+```dart
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -584,7 +587,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 ### How do I animate a widget?
 
@@ -598,18 +601,18 @@ to perform the required animations.
 在 Xamarin.Forms 中，你可以利用包括例如 `FadeTo` 和 `TranslateTo`  等方法的视图扩展（ViewExtensions）来创建简单的动画。
 你会在一个视图中使用这些方法来执行需要的动画。
 
-{% prettify xml %}
+```xml
 <Image Source="{Binding MyImage}" x:Name="myImage" />
-{% endprettify %}
+```
 
 Then in code behind, or a behavior, this would fade in the image,
 over a 1 second period.
 
 然后再后面的代码或一个动作中，这个会在1秒内淡入这张图像。
 
-{% prettify csharp %}
+```csharp
 myImage.FadeTo(0, 1000);
-{% endprettify %}
+```
 
 In Flutter, you animate widgets using the animation library by wrapping
 widgets inside an animated widget. Use an `AnimationController`,
@@ -645,7 +648,7 @@ the widget into a logo when you press the `FloatingActionButton`:
 
 下面的实例展示如何去写一个 `渐退（FadeTransition）`，当你按下 `FloatingActionButton` 时，它会把 widget 渐变到一个logo。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -706,16 +709,14 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
     );
   }
 }
-{% endprettify %}
+```
 
-For more information, see
-[Animation & Motion widgets](/docs/development/ui/widgets/animation),
-the [Animations tutorial](/docs/development/ui/animations/tutorial),
-and the [Animations overview](/docs/development/ui/animations).
+For more information, see [Animation & Motion widgets][],
+the [Animations tutorial][], and the [Animations overview][].
 
-更多信息，可以查阅 [动画 & 运动 widget](/docs/development/ui/widgets/animation)， 
-[动画教程](/docs/development/ui/animations/tutorial)，
-以及[动画概述](/docs/development/ui/animations)。
+更多信息，可以查阅 [动画 & 运动 widget][Animation & Motion widgets]， 
+[动画教程][Animations tutorial]，
+以及[动画概述][Animations overview]。
 
 ### How do I draw/paint on the screen?
 
@@ -741,7 +742,7 @@ see Collin's answer on [StackOverflow][].
 
 [StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(new MaterialApp(home: new DemoApp()));
@@ -787,7 +788,7 @@ class SignaturePainter extends CustomPainter {
   }
   bool shouldRepaint(SignaturePainter other) => other.points != points;
 }
-{% endprettify %}
+```
 
 ### Where is the widget's opacity?
 
@@ -795,11 +796,10 @@ class SignaturePainter extends CustomPainter {
 
 On Xamarin.Forms, all `VisualElement`s have an Opacity.
 In Flutter, you need to wrap a widget in an
-[Opacity widget]({{site.api}}/flutter/widgets/Opacity-class.html)
-to accomplish this.
+[`Opacity` widget][] to accomplish this.
 
 Xamarin.Forms 上，所有 `虚拟元素（VisualElement）`都拥有一个不透明度。
-在 Flutter 中，你需要封装一个 widget 到一个 [不透明度 widget]({{site.api}}/flutter/widgets/Opacity-class.html) 来实现它。
+在 Flutter 中，你需要封装一个 widget 到一个 [不透明度 widget][`Opacity` widget] 来实现它。
 
 ### How do I build custom widgets?
 
@@ -812,14 +812,14 @@ implement methods that achieve the desired behavior.
 在 Xamarin.Forms 中，通常派生 `VisualElement` 或使用一个已有的 `VisualElement` ，来重写和实现所需行为的方法。
 
 In Flutter, build a custom widget by
-[composing](/docs/resources/technical-overview#everythings-a-widget)
+[composing][]
 smaller widgets (instead of extending them).
 It is somewhat similar to implementing a custom control based off a
 `Grid` with numerous `VisualElement`s added in, while extending with
 custom logic.
 
 在 Flutter 中，通过
-[组合（composing）](/docs/resources/technical-overview#everythings-a-widget)
+[组合（composing）][composing]
 更小的 widget（而不是扩展它们）来构建一个自定义 widget。
 这有点类似于基于 `Grid` 实现自定义控件，其中添加了大量 `VisualElement`，同时使用自定义逻辑进行扩展。
 
@@ -830,7 +830,7 @@ with a label, rather than by extending `RaisedButton`:
 举个例子，如何构建一个在构造器接受一个标签的`自定义按钮`？
 创建一个组合了一个带有标签的`RaisedButton`的自定义按钮，而不是扩展 `RaisedButton` 。
 
-{% prettify dart %}
+```dart
 class CustomButton extends StatelessWidget {
   final String label;
 
@@ -841,20 +841,20 @@ class CustomButton extends StatelessWidget {
     return new RaisedButton(onPressed: () {}, child: new Text(label));
   }
 }
-{% endprettify %}
+```
 
 Then use `CustomButton`, just as you'd use any other Flutter widget:
 
 然后就可以像使用其他 Flutter widget 一样使用这个`自定义按钮`。
 
-{% prettify dart %}
+```dart
 @override
 Widget build(BuildContext context) {
   return new Center(
     child: new CustomButton("Hello"),
   );
 }
-{% endprettify %}
+```
 
 ## Navigation
 
@@ -873,13 +873,11 @@ forwards and backwards.
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a `Page` of an app, and
-a `Navigator` is a
-[widget](/docs/resources/technical-overview#everythings-a-widget)
-that manages routes.
+a `Navigator` is a [widget][] that manages routes.
 
 Flutter 也有类似的实现，使用了一个`导航器（Navigator）`和`路由（Routes）`。
 一个`路由`是一个应用程序里一个`页面`的抽象，
-而一个`导航器`是一个管理路由的 [widget](/docs/resources/technical-overview#everythings-a-widget)。
+而一个`导航器`是一个管理路由的 [widget][]。
 
 A route dd maps to a `Page`. The navigator works in a similar way to the
 Xamarin.Forms `NavigationPage`, in that it can `push()` and `pop()` routes
@@ -902,7 +900,7 @@ The following example builds a Map.
 
 接下来构建一个映射的示例。
 
-{% prettify dart %}
+```dart
 void main() {
   runApp(new MaterialApp(
     home: new MyAppHome(), // becomes the route named '/'
@@ -913,27 +911,27 @@ void main() {
     },
   ));
 }
-{% endprettify %}
+```
 
 Navigate to a route by pushing its name to the `Navigator`.
 
 通过`推入`一个路由的名称到`导航器`来导航到这个路由。
 
-{% prettify dart %}
+```dart
 Navigator.of(context).pushNamed('/b');
-{% endprettify %}
+```
 
-The Navigator is a stack that manages your app's routes.
+The `Navigator` is a stack that manages your app's routes.
 Pushing a route to the stack moves to that route.
-Popping a route from the stack, returns to the previous route. This
-is done by awaiting on the `Future` returned by `push()`.
+Popping a route from the stack, returns to the previous route.
+This is done by awaiting on the `Future` returned by `push()`.
 
 导航器是一个管理你的应用程序的路由的堆栈。把一个路由推入堆栈可以移动到这个路由，
 而从堆栈弹出一个路由可以返回到前一个路由。
 这是通过`等待`被 `push()` 返回的 `未来（Future）` 来完成的。
 
 `Async`/`await` is very similar to the .NET implementation and is
-explained in more detail in [Async UI](#async-ui).
+explained in more detail in [Async UI][].
 
 `Async`/`await` 与 .NET 的实现非常类似，并且是在 [Async UI](#async-ui)中有更详尽的解释。
 
@@ -942,18 +940,18 @@ location, you might do the following:
 
 举个例子，要开始一个让用户选择他们的定位的 `定位（location）` 路由，你需要做以下步骤：
 
-{% prettify dart %}
+```dart
 Map coordinates = await Navigator.of(context).pushNamed('/location');
-{% endprettify %}
+```
 
 And then, inside your ‘location’ route, once the user has selected their
 location, pop the stack with the result:
 
 然后，在你的“定位”路由里，一旦用户选择他们的定位，使用结果来 `pop()` 这个堆栈。
 
-{% prettify dart %}
+```dart
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
-{% endprettify %}
+```
 
 ### How do I navigate to another app?
 
@@ -1012,7 +1010,7 @@ using `async`/`await` and letting Dart do the heavy lifting:
 
 例如，您可以使用 `async`/`await` 运行网络请求代码，而不会导致UI挂起，并让Dart完成繁重的工作：
 
-{% prettify dart %}
+```dart
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
@@ -1020,7 +1018,7 @@ loadData() async {
     widgets = json.decode(response.body);
   });
 }
-{% endprettify %}
+```
 
 Once the awaited network call is done, update the UI by calling `setState()`,
 which triggers a rebuild of the widget sub-tree and updates the data.
@@ -1032,7 +1030,7 @@ in a `ListView`:
 
 下面的实例异步加载数据并在一个 `ListView` 中显示：
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1100,7 +1098,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     });
   }
 }
-{% endprettify %}
+```
 
 Refer to the next section for more information on doing work in the
 background, and how Flutter differs from Android.
@@ -1136,7 +1134,7 @@ and `await` on long-running tasks inside the function:
 
 对于 I/O 密集型的工作，将函数声明为一个 `异步` 函数，并在函数内部 `等待` 长时间运行的任务：
 
-{% prettify dart %}
+```dart
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
@@ -1144,7 +1142,7 @@ loadData() async {
     widgets = json.decode(response.body);
   });
 }
-{% endprettify %}
+```
 
 This is how you would typically do network or database calls,
 which are both I/O operations.
@@ -1170,7 +1168,7 @@ the main thread to update the UI.
 
 下面的示例以简单的方式展示了如何将数据共享回主线程以更新UI。
 
-{% prettify dart %}
+```dart
 loadData() async {
   ReceivePort receivePort = new ReceivePort();
   await Isolate.spawn(dataLoader, receivePort.sendPort);
@@ -1209,7 +1207,7 @@ Future sendReceive(SendPort port, msg) {
   port.send([msg, response.sendPort]);
   return response.first;
 }
-{% endprettify %}
+```
 
 Here, `dataLoader()` is the `Isolate` that runs in its own separate
 execution thread.  In the isolate you can perform more CPU intensive
@@ -1224,7 +1222,7 @@ You can run the full example below:
 
 你可以运行下面这个完整的例子：
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1343,15 +1341,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return response.first;
   }
 }
-{% endprettify %}
+```
 
 ### How do I make network requests?
 
 ### 如何发送一个网络请求？
 
 In Xamarin.Forms you would use `HttpClient`. Making a network call in Flutter
-is easy when you use the popular
-[`http` package]({{site.pub}}/packages/http).
+is easy when you use the popular [`http` package][].
 This abstracts away a lot of the networking that you might normally
 implement yourself, making it simple to make network calls.
 
@@ -1363,15 +1360,15 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 要使用 `http` 包，请将它添加到  `pubspec.yaml` 文件中的依赖项中：
 
-{% prettify yaml %}
+```yaml
 dependencies:
   ...
   http: ^0.11.3+16
-{% endprettify %}
+```
 
 To make a network request, call `await` on the `async` function `http.get()`:
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1385,7 +1382,7 @@ import 'package:http/http.dart' as http;
     });
   }
 }
-{% endprettify %}
+```
 
 ### How do I show the progress for a long-running task?
 
@@ -1415,7 +1412,7 @@ then render the `ProgressIndicator`. Otherwise, render the
 如果 `showLoadingDialog()` 是 `true` （即当`widgets.length == 0`时）就会渲染出 `进度指示器`。
 另一方面，用网络调用返回的数据渲染 `列表视图（ListView）`。
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1497,7 +1494,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     });
   }
 }
-{% endprettify %}
+```
 
 ## Project structure & resources
 
@@ -1527,13 +1524,12 @@ Flutter follows a simple density-based format like iOS.
 Assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
 Flutter doesn't have `dp`s but there are logical pixels,
 which are basically the same as device-independent pixels.
-The so-called
-[`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
-expresses the ratio of physical pixels in a single logical pixel.
+The so-called [`devicePixelRatio`][] expresses the ratio
+of physical pixels in a single logical pixel.
 
 Flutter 遵循一种与 iOS 类似的简单的基于密度（density-based）的格式。
 资产可能是 `1.0x`、`2.0x`、`3.0x` 或任何其他倍数。Flutter 没有 `dp`，但是有逻辑像素，这基本上是与设备无关像素相同。
-用所谓 [`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html) 表示单个逻辑像素中物理像素的比例。
+用所谓 [`devicePixelRatio`][] 表示单个逻辑像素中物理像素的比例。
 
 The equivalent to Android's density buckets are:
 
@@ -1593,34 +1589,34 @@ Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 接下来，您需要在您的 `pubspec.yaml` 文件中声明这些图像：
 
-{% prettify yaml %}
+```yaml
 assets:
  - images/my_icon.jpeg
-{% endprettify %}
+```
 
 You can then access your images using `AssetImage`:
 
 之后就可以用 `AssetImage` 来访问你的图像了：
 
-{% prettify dart %}
+```dart
 return new AssetImage("images/a_dot_burr.jpeg");
-{% endprettify %}
+```
 
 or directly in an `Image` widget:
 
 或者可以直接在一个 `Image` widget 中访问：
 
-{% prettify dart %}
+```dart
 @override
 Widget build(BuildContext context) {
   return new Image.asset("images/my_image.png");
 }
-{% endprettify %}
+```
 
 More detailed information can be found in
-[Adding assets and images](/docs/development/ui/assets-and-images).
+[Adding assets and images][].
 
-更多详尽的信息可以在 [在 Flutter 中添加资产和图像](/docs/development/ui/assets-and-images) 中找到。
+更多详尽的信息可以在 [在 Flutter 中添加资产和图像][Adding assets and images] 中找到。
 
 ### Where do I store strings? How do I handle localization?
 
@@ -1635,45 +1631,44 @@ fields and accessing them from there. For example:
 此时，最佳实践是将复制文本作为静态字段保存在类中，并从那里访问它们。
 举个例子：
 
-{% prettify dart %}
+```dart
 class Strings {
   static String welcomeMessage = "Welcome To Flutter";
 }
-{% endprettify %}
+```
 
 Then in your code, you can access your strings as such:
 
 那么在你的代码中，你可以像这样访问你的字符串：
 
-{% prettify dart %}
+```dart
 new Text(Strings.welcomeMessage)
-{% endprettify %}
+```
 
 By default, Flutter only supports US English for its strings. If you need to
 add support for other languages, include the `flutter_localizations`
-package. You might also need to add Dart's
-[`intl`]({{site.pub}}/packages/intl)
+package. You might also need to add Dart's [`intl`][]
 package to use i10n machinery, such as date/time formatting.
 
 默认情况下，Flutter 的字符串只支持美式英语。
 如果你需要添加其他语音的支持，可以包含 `flutter_localizations` 包。
-你可能还需要添加 Dart的 [`intl`]({{site.pub}}/packages/intl)
+你可能还需要添加 Dart的 [`intl`][]
 包来使用 i10n 装置，例如日期、时间的格式化。
 
-{% prettify yaml %}
+```yaml
 dependencies:
   # ...
   flutter_localizations:
     sdk: flutter
   intl: "^0.15.6"
-{% endprettify %}
+```
 
 To use the `flutter_localizations` package,
 specify the `localizationsDelegates` and `supportedLocales` on the app widget:
 
 使用 `flutter_localizations` 包时，要在应用程序的 widget 上指定 `localizationsDelegates` 和 `supportedLocales`：
 
-{% prettify dart %}
+```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 new MaterialApp(
@@ -1689,7 +1684,7 @@ new MaterialApp(
   ],
   // ...
 )
-{% endprettify %}
+```
 
 The delegates contain the actual localized values, while the `supportedLocales`
 defines which locales the app supports. The above example uses a `MaterialApp`,
@@ -1706,36 +1701,32 @@ localizable copy, if you want those to be localized too.
 请注意，这两个委托包含“默认”值，但是如果您希望它们也本地化，则需要为您自己的应用程序的可本地化副本提供一个或多个委托。
 
 When initialized, the `WidgetsApp` (or `MaterialApp`) creates a
-[`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html)
+[`Localizations`][]
 widget for you, with the delegates you specify.
 The current locale for the device is always accessible from the `Localizations`
 widget from the current context (in the form of a `Locale` object),
-or using the
-[`Window.locale`]({{site.api}}/flutter/dart-ui/Window/locale.html).
+or using the [`Window.locale`][].
 
 初始化后， `WidgetsApp` （或 `MaterialApp`）为您创建一个
-[`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html)
+[`Localizations`][]
 widget，其中包含您指定的委托。
-设备的当前区域设置总是可以从当前上下文的 `Localizations` widget (以 `Locale` 对象的形式)或使用 [`Window.locale`]({{site.api}}/flutter/dart-ui/Window/locale.html) 访问。
+设备的当前区域设置总是可以从当前上下文的 `Localizations` widget (以 `Locale` 对象的形式)或使用 [`Window.locale`][] 访问。
 
 To access localized resources, use the `Localizations.of()` method to
 access a specific localizations class that is provided by a given delegate.
-Use the [`intl_translation`]({{site.pub}}/packages/intl_translation)
-package to extract translatable copy to
-[arb]({{site.github}}/google/i18n/app-resource-bundle)
-files for translating, and importing them back into the app for using them
-with `intl`.
+Use the [`intl_translation`][] package to extract translatable
+copy to [arb][] files for translating,
+and importing them back into the app for using them with `intl`.
 
 要访问本地化的资源，请使用 `Localizations.of()` 方法去访问一个由给定委托提供的特定本地化类。
-使用 [`intl_translation`]({{site.pub}}/packages/intl_translation) 包将可翻译的文本拷贝到 [arb]({{site.github}}/google/i18n/app-resource-bundle) 
+使用 [`intl_translation`][] 包将可翻译的文本拷贝到 [arb][] 
 文件中进行翻译，并将其导入到应用程序中与 `intl` 一起使用。
 
 For further details on internationalization and localization in Flutter,
-see the
-[internationalization guide](/docs/development/accessibility-and-localization/internationalization),
+see the [internationalization guide][],
 which has sample code with and without the `intl` package.
 
-要了解更多关于 Flutter 国际化和本地化的细节，请查阅 [国际化指南](/docs/development/accessibility-and-localization/internationalization)，
+要了解更多关于 Flutter 国际化和本地化的细节，请查阅 [国际化指南][internationalization guide]，
 它有带和不带 `intl` 包的示例代码。
 
 ### Where is my project file?
@@ -1776,11 +1767,10 @@ Flutter 使用 Dart 自己的构建系统和 Pub 包管理器。
 这些工具将原生 Android 和 iOS 封装应用程序的构建委托给各自的构建系统。
 
 In general, use `pubspec.yaml` to declare external dependencies to use in
-Flutter. A good place to find Flutter packages is the
-[Pub]({{site.pub}}/flutter) site.
+Flutter. A good place to find Flutter packages is on [pub.dev][].
 
 一般来说，使用 `pubspec.yaml` 来声明要在 Flutter 中使用的外部依赖项。
-[Pub]({{site.pub}}/flutter) 是一个寻找 Flutter 包的好地方。
+[pub.dev][] 是一个寻找 Flutter 包的好地方。
 
 ## Application lifecycle
 
@@ -1820,11 +1810,9 @@ The observable lifecycle events are:
 For more details on the meaning of these states, see the
 [`AppLifecycleStatus` documentation][].
 
-有关这些状态的含义的更多细节，可参考 [`AppLifecycleStatus` 文档][]。
+有关这些状态的含义的更多细节，可参考 [`AppLifecycleStatus` 文档][`AppLifecycleStatus` documentation]。
 
 [`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
-
-[`AppLifecycleStatus` 文档]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 
 ## Layouts
 
@@ -1849,7 +1837,7 @@ children.
 如果您注意到除了“Row” 和“Column” widget 之外，这两个代码示例是相同的。
 这些子元素是相同的，可以利用这个特性开发丰富的布局，这些布局可以随着时间的推移而改变。
 
-{% prettify dart %}
+```dart
   @override
   Widget build(BuildContext context) {
     return new Row(
@@ -1862,22 +1850,22 @@ children.
       ],
     );
   }
-{% endprettify %}
+```
 
-{% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return new Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        new Text('Column One'),
-        new Text('Column Two'),
-        new Text('Column Three'),
-        new Text('Column Four'),
-      ],
-    );
-  }
-{% endprettify %}
+```dart
+@override
+Widget build(BuildContext context) {
+  return new Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      new Text('Column One'),
+      new Text('Column Two'),
+      new Text('Column Three'),
+      new Text('Column Four'),
+    ],
+  );
+}
+```
 
 ### What is the equivalent of a Grid?
 
@@ -1891,7 +1879,7 @@ content exceeds its viewable space.
 与`Grid`最接近的对等项是 `GridView`。这比您在 Xamarin.Forms 中习惯使用的功能强大得多。
 `GridView` 在内容超出其可视空间时自动滚动。
 
-{% prettify dart %}
+```dart
   GridView.count(
     // Create a grid with 2 columns. If you change the scrollDirection to
     // horizontal, this would produce 2 rows.
@@ -1906,7 +1894,7 @@ content exceeds its viewable space.
       );
     }),
   );
-{% endprettify %}
+```
 
 You might have used a `Grid` in Xamarin.Forms to implement widgets
 that overlay other widgets.
@@ -1919,7 +1907,7 @@ This sample creates two icons that overlap each other.
 
 这个示例创建了两个相互重叠的图标。
 
-{% prettify dart %}
+```dart
   child: new Stack(
     children: <Widget>[
       new Icon(Icons.add_box, size: 24.0, color: const Color.fromRGBO(0,0,0,1.0)),
@@ -1929,7 +1917,7 @@ This sample creates two icons that overlap each other.
       ),
     ],
   ),
-{% endprettify %}
+```
 
 ### What is the equivalent of a ScrollView?
 
@@ -1946,14 +1934,14 @@ You simply fill the Widget with the content that you want to be scrollable.
 在 Flutter 中，最接近的是 `SingleChildScrollView` widget。
 您只需用想要可滚动的内容来填充 widget。
 
-{% prettify dart %}
+```dart
   @override
   Widget build(BuildContext context) {
     return new SingleChildScrollView(
       child: new Text('Long Content'),
     );
   }
-{% endprettify %}
+```
 
 If you have many items you want to wrap in a scroll,
 even of different `Widget` types, you might want
@@ -1965,7 +1953,7 @@ which is backing on to platform specific controls.
 如果您想在滚动条中包含许多项，即使是不同的`Widget`类型，也可以使用 `ListView`。
 这可能看起来有点过火，但在 Flutter 中，它比 Xamarin.Forms 的回到平台特定控件的 `ListView` 优化得多，松散得多。
 
-{% prettify dart %}
+```dart
   @override
   Widget build(BuildContext context) {
     return new ListView(
@@ -1977,7 +1965,7 @@ which is backing on to platform specific controls.
       ],
     );
   }
-{% endprettify %}
+```
 
 ### How do I handle landscape transitions in Flutter?
 
@@ -1988,9 +1976,9 @@ Landscape transitions can be handled automatically by setting the
 
 通过在 AndroidManifest.xml 中设置 `configChanges` 属性，可以自动处理横向转换。
 
-{% prettify yaml %}
+```yaml
 android:configChanges="orientation|screenSize"
-{% endprettify %}
+```
 
 ## Gesture detection and touch event handling
 
@@ -2157,7 +2145,7 @@ Flutter logo on a double tap:
 
 下面的例子展示了一个`手势检测器`，它可以在双击下旋转 Flutter 的 logo：
 
-{% prettify dart %}
+```dart
 AnimationController controller;
 CurvedAnimation curve;
 
@@ -2189,7 +2177,7 @@ class SampleApp extends StatelessWidget {
     ));
   }
 }
-{% endprettify %}
+```
 
 ## Listviews and adapters
 
@@ -2220,7 +2208,7 @@ that scrolling is fast and smooth.
 
 由于 Flutter 的不可变的 widget 模式，您将一个 widget 列表传递给您的 `ListView`，Flutter 会负责确保滚动速度快且平稳。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2267,7 +2255,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return widgets;
   }
 }
-{% endprettify %}
+```
 
 ### How do I know which list item has been clicked?
 
@@ -2285,7 +2273,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 
 在 Flutter 中，使用传入 widget 提供的触摸处理。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2339,7 +2327,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return widgets;
   }
 }
-{% endprettify %}
+```
 
 ### How do I update a ListView dynamically?
 
@@ -2375,7 +2363,7 @@ as shown in the next example.
 要更新 `ListView` 的有一个简单方法，请在 `setState()` 中创建一个新 `列表` ，并将数据从旧列表复制到新列表。
 虽然这种方法很简单，但不推荐用于大型数据集，如下例所示。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2439,7 +2427,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 The recommended, efficient, and effective way to build a list uses a
 ListView.Builder. This method is great when you have a dynamic
@@ -2451,7 +2439,7 @@ recycles list elements for you:
 在您有一个动态列表或一个包含大量数据的列表时，这种方法非常棒。
 这基本上相当于 Android 上的 `RecyclerView`，它会自动回收列表元素：
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2517,7 +2505,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 Instead of creating a "ListView", create a ListView.builder that
 takes two key parameters: the initial length of the list,
@@ -2540,14 +2528,12 @@ doesn't recreate the list anymore, but instead adds to it.
 而是用 `.add` 添加给它的。
 
 For more information, see
-[Write your first Flutter app,
-part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
-and [Write your first Flutter app,
-part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
+[Write your first Flutter app, part 1][]
+and [Write your first Flutter app, part 2][].
 
 更多信息，请访问
-[编写你的第一个 Flutter 应用程序，第1部分]({{site.codelabs}}/codelabs/first-flutter-app-pt1-cn/index.html)
-和 [编写你的第一个 Flutter 应用程序，第2部分]({{site.codelabs}}/codelabs/first-flutter-app-pt2-cn/index.html)
+[编写你的第一个 Flutter 应用程序，第1部分][Write your first Flutter app, part 1]
+和 [编写你的第一个 Flutter 应用程序，第2部分][Write your first Flutter app, part 2]。
 
 ## Working with text
 
@@ -2570,17 +2556,17 @@ In Flutter, place the font file in a folder and reference it in the
 
 在 Flutter 中，将字体文件放在一个文件夹中，并在 `pubspec.yaml` 中引用它，这跟导入图像的方式类似。
 
-{% prettify yaml %}
+```yaml
 fonts:
    - family: MyCustomFont
      fonts:
        - asset: fonts/MyCustomFont.ttf
        - style: italic
-{% endprettify %}
+```
 
 Then assign the font to your `Text` widget:
 
-{% prettify dart %}
+```dart
 @override
 Widget build(BuildContext context) {
   return new Scaffold(
@@ -2595,7 +2581,7 @@ Widget build(BuildContext context) {
     ),
   );
 }
-{% endprettify %}
+```
 
 ### How do I style my text widgets?
 
@@ -2639,16 +2625,15 @@ Xamarin.Forms 的`元素`允许您直接查询`元素`来确定它的任何属�
 
 Retrieving information in Flutter is handled by specialized widgets
 and is different than how you are used to. If you have a `TextField`
-or a `TextFormField`, you can supply a
-[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
+or a `TextFormField`, you can supply a [`TextEditingController`][]
 to retrieve user input:
 
 在 Flutter 中检索信息是由专门的 widget 处理的，这是跟原来的习惯不同的。
 如果你有一个 `TextField` 或 `TextFormField` ，你可以提供一个 
-[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html) 
+[`TextEditingController`][]
 来检索用户输入:
 
-{% prettify dart %}
+```dart
 class _MyFormState extends State<MyForm> {
   // Create a text controller and use it to retrieve the current value
   // of the TextField.
@@ -2694,13 +2679,13 @@ class _MyFormState extends State<MyForm> {
     );
   }
 }
-{% endprettify %}
+```
 
 You can find more information and the full code listing in
-[Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input),
-from the [Flutter cookbook](/docs/cookbook).
+[Retrieve the value of a text field][],
+from the [Flutter cookbook][].
 
-你可以在 [Flutter 实用教程](/docs/cookbook) 中的 [获取文本框的输入值](/docs/cookbook/forms/retrieve-input) 找到更多的信息和完整的代码清单。
+你可以在 [Flutter 实用教程][Flutter cookbook] 中的 [获取文本框的输入值][Retrieve the value of a text field] 找到更多的信息和完整的代码清单。
 
 ### What is the equivalent of a Placeholder on an Entry?
 
@@ -2711,9 +2696,9 @@ that you can assign a value to. For example:
 
 在 Xamarin.Forms 中，一些`元素`支持`占位符（Placeholder）`属性，可以给它赋一个值。如：
 
-{% prettify xml %}
+```xml
   <Entry Placeholder="This is a hint">
-{% endprettify %}
+```
 
 In Flutter, you can easily show a "hint" or a placeholder text
 for your input by adding an InputDecoration object to the
@@ -2721,13 +2706,13 @@ decoration constructor parameter for the text widget.
 
 在 Flutter 中，通过在文本 widget 的装饰器构造函数参数中添加 `InputDecoration` 对象，可以轻松地为输入显示“提示”或占位符文本。
 
-{% prettify dart %}
+```dart
 body: new Center(
   child: new TextField(
     decoration: new InputDecoration(hintText: "This is a hint"),
   )
 )
-{% endprettify %}
+```
 
 ### How do I show validation errors?
 
@@ -2751,7 +2736,7 @@ update the state, and pass a new `InputDecoration` object.
 然而，您不希望从显示错误开始。
 相反，当用户输入无效数据时，应该更新状态，并传递一个新的 `InputDecoration` 对象。
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2818,7 +2803,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return regExp.hasMatch(em);
   }
 }
-{% endprettify %}
+```
 
 ## Flutter plugins
 
@@ -2847,10 +2832,9 @@ Flutter 不直接在底层平台上运行代码。相反，构成一个 Flutter 
 Flutter 应用程序仍然作为视图驻留在原生应用程序的 `ViewController`或 `Activity` 中，但您不能直接访问这个或原生框架。
 
 This doesn't mean Flutter apps can't interact with those native APIs,
-or with any native code you have. Flutter provides [platform
-channels](/docs/development/platform-integration/platform-channels)
-that communicate and exchange data with the `ViewController` or
-`Activity` that hosts your Flutter view.
+or with any native code you have. Flutter provides
+[platform channels][] that communicate and exchange data with
+the `ViewController` or `Activity` that hosts your Flutter view.
 Platform channels are essentially an asynchronous messaging
 mechanism that bridges the Dart code with the host `ViewController`
 or `Activity` and the iOS or Android framework it runs on.
@@ -2864,8 +2848,7 @@ Flutter 提供 [平台通道](/docs/development/platform-integration/platform-ch
 例如，您可以使用平台通道在原生端执行一个方法，或者从设备的传感器检索一些数据。
 
 In addition to directly using platform channels,
-you can use a variety of pre-made
-[plugins](/docs/development/packages-and-plugins/using-packages)
+you can use a variety of pre-made [plugins][]
 that encapsulate the native and Dart code for a specific goal.
 For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter,
@@ -2875,35 +2858,37 @@ Dart and Flutter's open source package repository.
 Some packages might support native integrations on iOS,
 or Android, or both.
 
-除了直接使用平台通道外，您还可以使用各种预制 [插件](/docs/development/packages-and-plugins/using-packages)，它们封装了针对特定目标的原生代码和Dart代码。
+除了直接使用平台通道外，您还可以使用各种预制 [插件][plugins]，它们封装了针对特定目标的原生代码和Dart代码。
 例如，您可以使用插件直接从Flutter访问相机交卷和设备相机，而无需编写自己的集成。
-插件可以在 [Pub]({{site.pub}})、Dart 和 Flutter 的开源包存储库中找到。
+插件可以在 [pub.dev][]、Dart 和 Flutter 的开源包存储库中找到。
 有些包可能支持iOS上的本地集成，有些支持Android，还有两者都兼而有之的。
 
 
 If you can't find a plugin on Pub that fits your needs,
 you can [write your
-own](/docs/development/packages-and-plugins/developing-packages),
+own][],
 and [publish it on
-Pub](/docs/development/packages-and-plugins/developing-packages#publish).
+Pub][].
 
 如果在Pub上找不到适合您需求的插件，您可以
-[编写自己的插件](/docs/development/packages-and-plugins/developing-packages)
-并 [在Pub上发布](/docs/development/packages-and-plugins/developing-packages#publish)。
+[编写自己的插件][write your
+own]
+并 [在Pub上发布][publish it on
+Pub]。
 
 ### How do I access the GPS sensor?
 
 ### 如何访问 GPS 传感器?
 
-Use the [`geolocator`]({{site.pub}}/packages/geolocator) community plugin.
+Use the [`geolocator`][] community plugin.
 
-使用 [`geolocator`]({{site.pub}}/packages/geolocator) 社区插件.
+使用 [`geolocator`][] 社区插件.
 
 ### How do I access the camera?
 
 ### 如何访问摄相机？
 
-The [`image_picker`]({{site.pub}}/packages/image_picker) plugin is popular
+The [`image_picker`][] plugin is popular
 for accessing the camera.
 
 [`image_picker`]({{site.pub}}/packages/image_picker) 是流行的访问相机的插件。
@@ -2914,7 +2899,7 @@ for accessing the camera.
 
 To log in with Facebook, use the
 
-[`flutter_facebook_login`]({{site.pub}}/packages/flutter_facebook_login) community plugin.
+[`flutter_facebook_login`][] community plugin.
 
 使用 [`flutter_facebook_login`]({{site.pub}}/packages/flutter_facebook_login) 社区插件来通过 Facebook 登录。
 
@@ -2923,22 +2908,22 @@ To log in with Facebook, use the
 ### 如何使用 Firebase 特性？
 
 Most Firebase functions are covered by
-[first party plugins]({{site.pub}}/flutter/packages?q=firebase).
+[first party plugins][].
 These plugins are first-party integrations, maintained by the Flutter team:
 
-大多数 Firebase 功能被 [第一方插件]({{site.pub}}/flutter/packages?q=firebase) 覆盖。
+大多数 Firebase 功能被 [官方插件][first party plugins] 覆盖。
 
- * [`firebase_admob`]({{site.pub}}/packages/firebase_admob) for Firebase AdMob
- * [`firebase_analytics`]({{site.pub}}/packages/firebase_analytics) for Firebase Analytics
- * [`firebase_auth`]({{site.pub}}/packages/firebase_auth) for Firebase Auth
- * [`firebase_database`]({{site.pub}}/packages/firebase_database) for Firebase RTDB
- * [`firebase_storage`]({{site.pub}}/packages/firebase_storage) for Firebase Cloud Storage
- * [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) for Firebase Messaging (FCM)
- * [`flutter_firebase_ui`]({{site.pub}}/packages/flutter_firebase_ui) for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
- * [`cloud_firestore`]({{site.pub}}/packages/cloud_firestore) for Firebase Cloud Firestore
+ * [`firebase_admob`][] for Firebase AdMob
+ * [`firebase_analytics`][] for Firebase Analytics
+ * [`firebase_auth`][] for Firebase Auth
+ * [`firebase_database`][] for Firebase RTDB
+ * [`firebase_storage`][] for Firebase Cloud Storage
+ * [`firebase_messaging`][] for Firebase Messaging (FCM)
+ * [`flutter_firebase_ui`][] for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
+ * [`cloud_firestore`][] for Firebase Cloud Firestore
 
-You can also find some third-party Firebase plugins on Pub that cover areas
-not directly covered by the first-party plugins.
+You can also find some third-party Firebase plugins on pub.dev
+that cover areas not directly covered by the first-party plugins.
 
 你也可以在 Pub 上找一些第三方 Firebase 插件，它们覆盖了第一方插件没有直接覆盖的区域。
 
@@ -2948,10 +2933,9 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 plugins are missing, you can build your own following the
-[developing packages and
-plugins](/docs/development/packages-and-plugins/developing-packages) page.
+[developing packages and plugins][] page.
 
-如果有 Flutter 或它的社区插件没有的指定平台的功能，可以根据 [开发包与插件](/docs/development/packages-and-plugins/developing-packages) 页面自己构建。
+如果有 Flutter 或它的社区插件没有的指定平台的功能，可以根据 [开发包与插件][developing packages and plugins] 页面自己构建。
 
 Flutter's plugin architecture, in a nutshell,
 is much like using an Event bus in Android:
@@ -2998,7 +2982,7 @@ adding Material-specific functionality.
 MaterialApp 是一个方便的 widget，它封装了许多实现Material Design的应用程序通常需要的各种 widget。
 它通过添加 Material 的指定功能来构建一个 WidgetsApp。
 
-You can also use a `WidgetApp` as your app widget,
+You can also use a `WidgetsApp` as your app widget,
 which provides some of the same functionality,
 but is not as rich as `MaterialApp`.
 
@@ -3012,7 +2996,7 @@ the primary swatch is set to blue and text selection color is red.
 要定制任何子组件的颜色和样式，请将`主题数据（ThemeData）`对象传递给`MaterialApp` widget。
 例如，在下面的代码中，主色调设置为蓝色，文本选择颜框色为红色。
 
-{% prettify dart %}
+```dart
 class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -3026,7 +3010,7 @@ class SampleApp extends StatelessWidget {
     );
   }
 }
-{% endprettify %}
+```
 
 ## Databases and local storage
 
@@ -3042,11 +3026,11 @@ Xamarin.Forms developers will likely be familar with the
 Xamarin.Forms 开发者可能会熟悉 `Xam.Plugins.Settings` 插件。
 
 In Flutter, access equivalent functionality using the
-[shared_preferences]({{site.pub}}/packages/shared_preferences) plugin.
-This plugin wraps the functionality of both `UserDefaults` and the Android
+[`shared_preferences`][] plugin. This plugin wraps the
+functionality of both `UserDefaults` and the Android
 equivalent, `SharedPreferences`.
 
-在 Flutter 中，使用 [Shared Preferences 插件]({{site.pub}}/packages/shared_preferences) 就可以访问相同的功能。
+在 Flutter 中，使用 [Shared Preferences 插件][`shared_preferences`] 就可以访问相同的功能。
 这个插件封装了 `用户默认值` 和等同 Android 的 `共享首选项`。
 
 ### How do I access SQLite in Flutter?
@@ -3059,9 +3043,9 @@ plugin to access SQLite databases.
 在 Xamarin.Forms 中大多数应用会使用 `sqlite-net-pcl` 插件来访问 SQLite 数据库。
 
 In Flutter, access this functionality using the
-[sqflite]({{site.pub}}/packages/sqflite) plugin.
+[`sqflite`][] plugin.
 
-在 Flutter 中，使用 [SQFlite]({{site.pub}}/packages/sqflite) 插件来访问这个功能。
+在 Flutter 中，使用 [SQFlite][`sqflite`] 插件来访问这个功能。
 
 ## Debugging
 
@@ -3108,13 +3092,60 @@ plugin documentation.
 来访问这个功能。
 更多关于使用 Firebase Cloud Messaging API 的信息，可以参考 [`firebase_messaging`][] 插件文档。
 
+[Adding assets and images]: /docs/development/ui/assets-and-images
+[Animation & Motion widgets]: /docs/development/ui/widgets/animation
+[Animations overview]: /docs/development/ui/animations
+[Animations tutorial]: /docs/development/ui/animations/tutorial
+[Apple's iOS design language]: https://developer.apple.com/design/resources/
+[arb]: {{site.github}}/google/i18n/app-resource-bundle
+[Async UI]: #async-ui
+[`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
+[composing]: /docs/resources/technical-overview#everythings-a-widget
+[Cupertino widgets]: /docs/development/ui/widgets/cupertino
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
+[developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [DevTools]: /docs/development/tools/devtools/overview
-[`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
-[Firebase_Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
 [existing plugin]: {{site.pub}}/flutter
+[`firebase_admob`]: {{site.pub}}/packages/firebase_admob
+[`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
+[`firebase_auth`]: {{site.pub}}/packages/firebase_auth
+[`firebase_database`]: {{site.pub}}/packages/firebase_database
+[`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
+[`firebase_storage`]: {{site.pub}}/packages/firebase_storage
+[Firebase_Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
+[first party plugins]: {{site.pub}}/flutter/packages?q=firebase
+[Flutter cookbook]: /docs/cookbook
+[`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
+[`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
+[`geolocator`]: {{site.pub}}/packages/geolocator
+[`http` package]: {{site.pub}}/packages/http
+[`image_picker`]: {{site.pub}}/packages/image_picker
+[internationalization guide]: /docs/development/accessibility-and-localization/internationalization
+[`intl`]: {{site.pub}}/packages/intl
+[`intl_translation`]: {{site.pub}}/packages/intl_translation
+[Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
+[`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
+[Material Components]: /docs/development/ui/widgets/material
 [Material Design]: {{site.material}}/design
+[Material Design guidelines]: {{site.material}}/design
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`Opacity` widget]: {{site.api}}/flutter/widgets/Opacity-class.html
+[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[platform channels]: /docs/development/platform-integration/platform-channels
+[plugins]: /docs/development/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub}}
+[publish it on pub.dev]: /docs/development/packages-and-plugins/developing-packages#publish
+[Retrieve the value of a text field]: /docs/cookbook/forms/retrieve-input
+[`shared_preferences`]: {{site.pub}}/packages/shared_preferences
+[`sqflite`]: {{site.pub}}/packages/sqflite
+[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
+[widget]: /docs/resources/technical-overview#everythings-a-widget
+[widget catalog]: /docs/development/ui/widgets/layout
 [WidgetsApp]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
+[`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
+[Write your first Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[Write your first Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[write your own]: /docs/development/packages-and-plugins/developing-packages
+

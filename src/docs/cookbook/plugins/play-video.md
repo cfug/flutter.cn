@@ -1,6 +1,8 @@
 ---
 title: Play and pause a video
 title: 视频的播放和暂停
+description: How to use the video_player plugin.
+description: 如何使用 video_player 插件。
 prev:
   title: Store key-value data on disk
   title: 存储键值对数据

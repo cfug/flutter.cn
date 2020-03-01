@@ -7,11 +7,27 @@ description: 创建在 Web 平台上运行的 Flutter 应用。
 
 This page covers the following steps for getting started with web support:
 
+本页面包含如下主题，帮助你开启 Flutter Web：
+
 * Configure the `flutter` tool for web support.
+
+  配置 `flutter` 工具以支持 Web
+
 * Create a new project with web support.
+
+  创建一个支持 web 的新项目
+
 * Run a new project with web support.
+
+  在新工程中开启 Flutter Web
+
 * Build an app with web support.
+
+  创建一个支持 Web 运行的新应用
+
 * Add web support to an existing project.
+
+  对已有的应用添加 Web 支持
 
 ## Requirements
 
@@ -30,6 +46,7 @@ For more information, see the [web FAQ].
 更多详细信息请参阅 [web 常见问题解答][web FAQ]。
 
 {{ site.alert.note }}
+
   As of 1.12, Flutter has early support for running web applications, but
   you need to be running the `beta` channel of Flutter at present.
   If you experience a problem that hasn’t yet been reported,
@@ -70,6 +87,7 @@ $ flutter config --enable-web
 ```
 
 {{site.alert.note}}
+
   The `flutter upgrade` command silently fails
   when `origin` points to a personal fork.
   To validate that `origin` points to `{{site.repo.flutter}}.git`,
@@ -160,14 +178,18 @@ from the top of the project package:
 flutter create .
 ```
 {{site.alert.note}}
+
   You should only need to execute these configure steps once.
   You can always check the status of your configuration using
   the `flutter config` command.
+  
+  这些配置部分的步骤和工作，大概率你只需要运行一次就好，
+  你可以随时通过 `flutter config` 来查看你的配置内容。
 {{site.alert.end}}
 
 ### Create and run
 
-## 创建一个有支持 Web 运行的新应用
+### 创建和运行
 
 To create a new app for use with web support
 (in addition to mobile support), run the following commands,
@@ -248,6 +270,9 @@ $ flutter create .
 
 To serve your app from `localhost` in Chrome,
 enter the following from the top of the package:
+
+如果需要在 Chrome 中通过 `localhost` 打开，
+在 package 顶部输入下面的命令：
 
 ```terminal
 $ flutter run -d chrome

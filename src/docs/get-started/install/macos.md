@@ -39,6 +39,7 @@ your development environment must meet these minimum requirements:
   - `rm`
   - `unzip`
   - `which`
+  - `zip`
 
 {% include_relative _get-sdk.md %}
 

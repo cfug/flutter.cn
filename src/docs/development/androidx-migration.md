@@ -7,10 +7,10 @@ description: 如何将现有的 Flutter 项目迁移到 AndroidX。
 
 {{site.alert.note}}
 
-  You might be directed to this page if the tool detects that your project
+  You might be directed to this page if Flutter detects that your project
   doesn't use AndroidX.
 
-  如果工具监测到你的项目中未使用到 AndroidX，那么你会跳转到此页面。
+  如果 Flutter 监测到你的项目中未使用到 AndroidX，那么你会跳转到此页面。
 {{site.alert.end}}
 
 [AndroidX]({{site.android-dev}}/jetpack/androidx) is a major improvement
@@ -101,7 +101,7 @@ your `CHANGELOG.md` to indicate that this new version is compatible with Android
 最后，如果你对插件进行了迁移，
 请发布新的 AndroidX 版本到 pub 并更新的 `CHANGELOG.md` ，以指明该版本与 AndroidX 兼容。
 
-### What about if I can't use Android Studio?
+### What if I can't use Android Studio?
 
 ### 若无法使用 Android Studio 怎么办？
 

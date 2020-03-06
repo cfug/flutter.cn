@@ -40,6 +40,7 @@ your development environment must meet these minimum requirements:
   - `unzip`
   - `which`
   - `xz-utils`
+  - `zip`
 
 - **Shared libraries**: Flutter `test` command depends on this library
   being available in your environment.

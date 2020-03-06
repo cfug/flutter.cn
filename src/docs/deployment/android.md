@@ -245,9 +245,9 @@ Configure signing for your app by editing the
    }
 ```
    
-   Load the `keystore.properties` file into the `keystoreProperties` object.
+   Load the `key.properties` file into the `keystoreProperties` object.
 
-   将 `keystore.properties` 文件加载到 `keystoreProperties` 对象中。
+   将 `key.properties` 文件加载到 `keystoreProperties` 对象中。
 
 </li>
 

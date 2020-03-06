@@ -236,8 +236,15 @@
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式化
           permalink: /docs/development/tools/formatting
-    - title: 迁移到 AndroidX
+    - title: 迁移说明
       permalink: /docs/development/androidx-migration
+      children:
+        - title: 迁移到 AndroidX
+          permalink: /docs/development/androidx-migration
+        - title: 升级 Android plugin
+          permalink: /docs/development/packages-and-plugins/plugin-api-migration
+        - title: Xcode 11.4 支持
+          permalink: /docs/development/ios-project-migration
 
 - title: 测试和调试
   permalink: /docs/testing

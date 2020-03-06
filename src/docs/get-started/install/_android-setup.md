@@ -23,15 +23,24 @@
 
     下载并安装 [Android Studio]({{site.android-dev}}/studio)。
 
- 2. Start Android Studio, and go through the 'Android Studio Setup Wizard'. This
-    installs the latest Android SDK, Android SDK Platform-Tools, and Android SDK
-    Build-Tools, which are required by Flutter when developing for Android.
+ 1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
+    This installs the latest Android SDK, Android SDK Command-line Tools,
+    and Android SDK Build-Tools, which are required by Flutter
+    when developing for Android.
 
     运行 Android Studio，并进入 'Android Studio Setup Wizard'，
     这会安装最新的 Android SDK，
     Android SDK Platform-Tools 以及 Android SDK Build-Tools，
     这些都是在开发 Android Flutter 应用时所需要的。
 
+{{site.alert.note}}
+
+We're updating the flutter tool to use either the Platform-Tools (now obsolete), or the new Command-Line tool if it is available. 
+
+我们正在更新 flutter tool 以使用 Platform-Tools（现已废弃）或者
+新的可用的命令行工具。
+
+{{site.alert.end}}
 ### Set up your Android device
 
 ### 配置 Android 设备

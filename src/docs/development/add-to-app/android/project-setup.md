@@ -205,7 +205,7 @@ repositories {
     // if using a relative path.
   }
   maven {
-    url 'http://download.flutter.io'
+    url 'https://storage.googleapis.com/download.flutter.io'
   }
 }
 

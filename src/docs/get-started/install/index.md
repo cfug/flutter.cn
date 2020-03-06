@@ -21,7 +21,7 @@ Select the operating system on which you are installing Flutter:
 
   If so, see the official [Chrome OS Flutter installation docs][]
   
-  Chrome OS 用户可以参考本文档 [在 Chrome OS 上安装和配置 Flutter 开发环境][]
+  Chrome OS 用户可以参考本文档 [在 Chrome OS 上安装和配置 Flutter 开发环境][Chrome OS Flutter installation docs]
   
 {{site.alert.end}}
 

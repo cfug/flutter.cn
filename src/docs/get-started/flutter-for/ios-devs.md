@@ -790,7 +790,7 @@ use the asynchronous facilities that the Dart language provides, such as
 `async`/`await`, to perform asynchronous work.
 
 Dart 的单线程模型并不意味着你需要以阻塞 UI 的形式来执行代码，相反，你更应该使用 Dart 语言提供的异步功能，
-比如使用 `async`/`awati` 来实现异步操作。
+比如使用 `async`/`await` 来实现异步操作。
 
 For example, you can run network code without causing the UI to hang by using
 `async`/`await` and letting Dart do the heavy lifting:

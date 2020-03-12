@@ -1,11 +1,15 @@
 ---
 title: Delete data on the internet
+title: 删除网络数据
 description: How to use the http package to delete data on the internet.
+description: 如何使用 http 这个 package 来删除远程服务器的数据。
 prev:
   title: Update data over the internet
+  title: 更新网络数据
   path: /docs/cookbook/networking/update-data
 next:
   title: Make authenticated requests
+  title: 发起 HTTP 认证授权请求
   path: /docs/cookbook/networking/authenticated-requests
 ---
 

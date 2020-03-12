@@ -226,7 +226,7 @@ prefix', for example: `samples.flutter.dev/battery`.
 使用唯一的**域前缀**为通道名称添加前缀，比如：`samples.flutter.dev/battery`。
 
 <!-- skip -->
-<?code-excerpt "main.dart" title?>
+<!--code-excerpt "main.dart" title-->
 ```dart
 import 'dart:async';
 
@@ -256,7 +256,7 @@ inside `setState`.
 在 `setState` 中使用返回结果来更新 `_batteryLevel` 内的用户界面状态。
 
 <!-- skip -->
-<?code-excerpt "main.dart" title?>
+<!--code-excerpt "main.dart" title-->
 ```dart
   // Get battery level.
   String _batteryLevel = 'Unknown battery level.';
@@ -283,7 +283,7 @@ and a button for refreshing the value.
 最后，将模板中的 `build` 方法替换为包含以字符串形式显示电池状态、并包含一个用于刷新该值的按钮的小型用户界面。
 
 <!-- skip -->
-<?code-excerpt "main.dart" title?>
+<!--code-excerpt "main.dart" title-->
 ```dart
   @override
   Widget build(BuildContext context) {
@@ -348,7 +348,7 @@ Flutter client side.
 接下来，在 `configureFlutterEngine()` 方法中创建一个 `MethodChannel` 并设置一个
 `MethodCallHandler`。确保使用的通道名称与 Flutter 客户端使用的一致。
 
-<?code-excerpt "MainActivity.java" title?>
+<!--code-excerpt "MainActivity.java" title-->
 ```java
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity;
@@ -383,8 +383,7 @@ Android 应用中编写的代码完全相同。
 First, add the needed imports at the top of the file:
 
 首先在文件头部添加所需的依赖：
-
-<?code-excerpt "MainActivity.java" title?>
+<!--code-excerpt "MainActivity.java" title-->
 ```java
 import android.content.ContextWrapper;
 import android.content.Intent;
@@ -399,8 +398,7 @@ Then add the following as a new method in the activity class,
 below the `configureFlutterEngine()` method:
 
 然后在 Activity 类中的 `onCreate()` 方法下方添加以下新方法：
-
-<?code-excerpt "MainActivity.java" title?>
+<!--code-excerpt "MainActivity.java" title-->
 ```java
   private int getBatteryLevel() {
     int batteryLevel = -1;
@@ -433,8 +431,7 @@ If an unknown method is called, report that instead.
 Remove the following code:
 
 移除以下代码：
-
-<?code-excerpt "MainActivity.java" title?>
+<!--code-excerpt "MainActivity.java" title-->
 ```java
           (call, result) -> {
             // Note: this method is invoked on the main thread.
@@ -445,8 +442,7 @@ Remove the following code:
 And replace with the following:
 
 并替换成以下内容：
-
-<?code-excerpt "MainActivity.java" title?>
+<!--code-excerpt "MainActivity.java" title-->
 ```java
           (call, result) -> {
             // Note: this method is invoked on the main thread.
@@ -517,8 +513,7 @@ was used on the Flutter client side.
 
 在 `configureFlutterEngine()` 方法中创建一个 `MethodChannel` 并调用
 `setMethodCallHandler()`。确保使用的通道名称与 Flutter 客户端使用的一致。
-
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterActivity
@@ -550,8 +545,7 @@ Android 应用中编写的代码完全相同。
 First, add the needed imports at the top of the file:
 
 首先在文件头部添加所需的依赖：
-
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 import android.content.Context
 import android.content.ContextWrapper
@@ -565,9 +559,8 @@ import android.os.Build.VERSION_CODES
 Next, add the following method in the `MainActivity` class,
 below the `configureFlutterEngine()` method:
 
-然后在 `MainActivity` 类中的 `onCreate()` 方法下方添加以下新方法：
-
-<?code-excerpt "MyActivity.kt" title?>
+然后在 `MainActivity` 类中的 `configureFlutterEngine()` 方法下方添加以下新方法：
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
   private fun getBatteryLevel(): Int {
     val batteryLevel: Int
@@ -590,15 +583,15 @@ Android code written in the previous step, and returns a response for both
 the success and error cases using the `result` argument.
 If an unknown method is called, report that instead.
 
-最后，完成前面添加的 `onMethodCall()` 方法。你需要处理单个平台方法 `getBatteryLevel()`，所以在参数
-`call` 中对其进行验证。该平台方法的实现是调用上一步编写的 Android 代码，并使用 `result`
-参数来返回成功和错误情况下的响应。如果调用了未知方法，则报告该方法。
+最后，完成前面添加的 `onMethodCall()` 方法。
+你需要处理单个平台方法 `getBatteryLevel()`，所以在参数 `call` 中对其进行验证。
+该平台方法的实现是调用上一步编写的 Android 代码，并使用 `result` 参数来返回成功
+和错误情况下的响应。如果调用了未知方法，则报告该方法。
 
 Remove the following code:
 
 删除以下代码：
-
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
@@ -610,8 +603,7 @@ Remove the following code:
 And replace with the following:
 
 并替换成以下内容：
-
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       // Note: this method is invoked on the main thread.
@@ -677,8 +669,7 @@ as was used on the Flutter client side.
 
 在 `application didFinishLaunchingWithOptions:` 方法中创建一个 `FlutterMethodChannel`
 并添加一个处理程序。确保使用的通道名称与 Flutter 客户端使用的一致。
-
-<?code-excerpt "AppDelegate.m" title?>
+<!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
@@ -711,8 +702,7 @@ iOS 应用中编写的代码完全相同。
 Add the following method in the `AppDelegate` class, just before `@end`:
 
 在 `AppDelegate` 类中的 `@end` 之前添加以下方法：
-
-<?code-excerpt "AppDelegate.m" title?>
+<!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
 - (int)getBatteryLevel {
   UIDevice* device = UIDevice.currentDevice;
@@ -732,11 +722,11 @@ this platform method calls the iOS code written in the previous step,
 and returns a response for both the success and error cases using
 the `result` argument. If an unknown method is called, report that instead.
 
-最后，完成前面添加的 `setMethodCallHandler()` 方法。你需要处理单个平台方法 `getBatteryLevel()`，所以在参数
-`call` 中对其进行验证。该平台方法的实现是调用上一步编写的 iOS 代码，并使用 `result`
-参数来返回成功和错误情况下的响应。如果调用了未知方法，则报告该方法。
-
-<?code-excerpt "AppDelegate.m" title?>
+最后，完成前面添加的 `setMethodCallHandler()` 方法。
+你需要处理单个平台方法 `getBatteryLevel()`，所以在参数`call` 中对其进行验证。
+该平台方法的实现是调用上一步编写的 iOS 代码，并使用 `result` 参数来返回成功
+和错误情况下的响应。如果调用了未知方法，则报告该方法。
+<!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
 __weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
@@ -815,8 +805,7 @@ a `FlutterMethodChannel` tied to the channel name
 
 重写 `application:didFinishLaunchingWithOptions:` 方法并创建一个绑定了通道名称
 `samples.flutter.dev/battery` 的 `FlutterMethodChannel`：
-
-<?code-excerpt "AppDelegate.swift" title?>
+<!--code-excerpt "AppDelegate.swift" title-->
 ```swift
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -849,8 +838,7 @@ iOS 应用中编写的代码完全相同。
 Add the following as a new method at the bottom of `AppDelegate.swift`:
 
 在 `AppDelegate.swift` 末尾添加以下新方法：
-
-<?code-excerpt "AppDelegate.swift" title?>
+<!--code-excerpt "AppDelegate.swift" title-->
 ```swift
 private func receiveBatteryLevel(result: FlutterResult) {
   let device = UIDevice.current
@@ -871,10 +859,11 @@ the `call` argument. The implementation of this platform method calls
 the iOS code written in the previous step. If an unknown method
 is called, report that instead.
 
-最后，完成前面添加的 `setMethodCallHandler()` 方法。你需要处理单个平台方法 `getBatteryLevel()`，所以在参数
-`call` 中对其进行验证。该平台方法的实现是调用上一步编写的 iOS 代码。如果调用了未知方法，则报告该方法。
-
-<?code-excerpt "AppDelegate.swift" title?>
+最后，完成前面添加的 `setMethodCallHandler()` 方法。
+你需要处理单个平台方法 `getBatteryLevel()`，所以在参数 `call` 中对其进行验证。
+该平台方法的实现是调用上一步编写的 iOS 代码。
+如果调用了未知方法，则报告该方法。
+<!--code-excerpt "AppDelegate.swift" title-->
 ```swift
 batteryChannel.setMethodCallHandler({
   [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in

@@ -14,21 +14,21 @@ The integration flow can be done using the Android Studio IDE with the
 
 {{site.alert.warning}}
 Your existing Android app may support architectures such as `mips`
-or `x86`/`x86_64`. Flutter currently [only supports](/docs/resources/faq#what-devices-and-os-versions-does-flutter-run-on)
-building ahead-of-time (AOT) compiled libraries for `armeabi-v7a` and `arm64-v8a`.
+or `x86`. Flutter currently [only supports](/docs/resources/faq#what-devices-and-os-versions-does-flutter-run-on)
+building ahead-of-time (AOT) compiled libraries for `x86_64`, `armeabi-v7a` and `arm64-v8a`.
 
 Consider using the [`abiFilters`](http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.NdkOptions.html)
 Android Gradle Plugin API to limit the supported architectures in your APK. Doing this
 avoids a missing `libflutter.so` runtime crash, for example:
 
-<?code-excerpt "MyApp/app/build.gradle" title?>
+<!--code-excerpt "MyApp/app/build.gradle" title-->
 ```gradle
 android {
   //...
   defaultConfig {
     ndk {
       // Filter for architectures supported by Flutter.
-      abiFilters 'armeabi-v7a', 'arm64-v8a'
+      abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
     }
   }
 }
@@ -122,7 +122,7 @@ ensure that your host Android app declares the following source
 compatibility within your app's `build.gradle` file, under the `android { }`
 block, such as:
 
-<?code-excerpt "MyApp/app/build.gradle" title?>
+<!--code-excerpt "MyApp/app/build.gradle" title-->
 ```gradle
 android {
   //...
@@ -192,7 +192,7 @@ To depend on the AAR, the host app must be able to find these files.
 To do that, edit `app/build.gradle` in your host app such as it includes
 the local repository and the dependency:
 
-<?code-excerpt "MyApp/app/build.gradle" title?>
+<!--code-excerpt "MyApp/app/build.gradle" title-->
 ```gradle
 android {
   // ...
@@ -235,7 +235,7 @@ iterate, but your team must install the Flutter SDK to build the host app.
 
 Include the Flutter module as a subproject in the host app's `settings.gradle`:
 
-<?code-excerpt "MyApp/settings.gradle" title?>
+<!--code-excerpt "MyApp/settings.gradle" title-->
 ```groovy
 include ':app'                                     // assumed existing content
 setBinding(new Binding([gradle: this]))                                 // new
@@ -252,7 +252,7 @@ The binding and script evaluation allows the Flutter module to `include` itself
 `:video_player`, etc) in the evaluation context of your `settings.gradle`.
 
 Introduce an `implementation` dependency on the Flutter module from your app:
-<?code-excerpt "MyApp/app/build.gradle" title?>
+<!--code-excerpt "MyApp/app/build.gradle" title-->
 ```groovy
 dependencies {
   implementation project(':flutter')

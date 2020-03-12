@@ -50,3 +50,8 @@ Select your development tool of choice for writing, building, and running Flutte
 You'll next learn some core Flutter concepts by creating a small app.
 
 接下来，你会通过一个小的应用学到一些 Flutter 的核心概念。
+
+[Install]: /docs/get-started/install
+[Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
+[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
+[Material Components]: {{site.material}}/guidelines

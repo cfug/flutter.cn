@@ -206,26 +206,32 @@ to add a `Podfile` to your project.
 <ol markdown="1">
 <li markdown="1"><t>Add the following lines to your `Podfile`:</t> <t>在 `Podfile` 中添加下面代码：</t>
 
-<?code-excerpt "MyApp/Podfile" title?>
+Add the following lines to your `Podfile`:
+
+<!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
 flutter_application_path = '../my_flutter'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 ```
+
 </li>
 
 <li markdown="1"><t>For each [Podfile target][] that needs to
 embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.</t> <t>每个需要集成 Flutter 的 [Podfile target][]，
    执行 `install_all_flutter_pods(flutter_application_path)`：</t>
 
-<?code-excerpt "MyApp/Podfile" title?>
+<!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
 target 'MyApp' do
   install_all_flutter_pods(flutter_application_path)
 end
 ```
+
 </li>
 
-<li markdown="1">Run `pod install`.
+<li markdown="1">
+
+Run `pod install`.
 
    运行 `pod install`。
 
@@ -318,9 +324,9 @@ some/path/MyApp/
 └── Flutter/
     ├── Debug/
     │   ├── Flutter.framework
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework (only if you have plugins with iOS platform code)
-    │   └── example_plugin.framework (each plugin is a separate framework)
+    │   ├── App.framework
+    │   ├── FlutterPluginRegistrant.framework (only if you have plugins with iOS platform code)
+    │   └── example_plugin.framework (each plugin is a separate framework)
     ├── Profile/
     │   ├── Flutter.framework
     │   ├── App.framework
@@ -497,7 +503,7 @@ some/path/MyApp/
 
 Host apps using CocoaPods can add Flutter to their Podfile:
 
-<?code-excerpt "MyApp/Podfile" title?>
+<!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/{build_mode}/Flutter.podspec'
 ```

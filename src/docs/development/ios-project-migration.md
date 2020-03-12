@@ -1,6 +1,6 @@
 ---
 title: Xcode 11.4 Support
-title: Xcode 11.4 支持
+title: 支持 Xcode 11.4
 description: How to migrate existing Flutter iOS projects to Xcode 11.4.
 description: 如何迁移已有 Flutter iOS 项目至 Xcode 11.4。
 ---
@@ -35,7 +35,7 @@ in **Build Phases > Embed Frameworks**.
 ```
 {% include app-figure.md image="development/ios-project-migration/script-phase.png" alt="Update Thin Binary Script Build Phase" %}
 </li>
-<li markdown="1">In the Runner target **Build Settings > Other Linker Arguments** (`OTHER_LDFLAGS`)
+<li markdown="1">In the Runner target **Build Settings > Other Linker Flags** (`OTHER_LDFLAGS`)
 add `$(inherited) -framework Flutter`.
 {% include app-figure.md image="development/ios-project-migration/linker-arguments.png" alt="Update Other Linker Arguments Build Setting" %}
 </li>

@@ -386,7 +386,6 @@ of Flutter apps would be limited by the quality of those widgets.
 我们希望最终能够产生出更高质量的应用。如果我们直接使用 OEM 自带的 widget，那么 Flutter 应用的质量和性能将受到这些 widget 质量的限制。
 
 In Android, for example, there's a hard-coded set of gestures and fixed
-
 own gesture recognizer that is a first-class participant in the
 [gesture system][]. Moreover, two widgets authored by different
 people can coordinate to disambiguate gestures.

@@ -157,7 +157,7 @@ There are two ways to embed Flutter in your existing application.
 
 Using Flutter [increases your app size][].
 
-使用 Flutter 会 [增加应用体积][increase your app size] 。
+使用 Flutter 会 [增加应用体积][increases your app size] 。
 
 ### Option A - Embed with CocoaPods and the Flutter SDK
 

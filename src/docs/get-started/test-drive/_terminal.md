@@ -58,6 +58,3 @@ contains a simple demo app that uses [Material Components][].
 {% include run-profile.md %}
 
 </div>
-
-[Install]: /docs/get-started/install
-[Material Components]: {{site.material}}/guidelines/

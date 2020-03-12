@@ -99,7 +99,7 @@ Finally, if you migrated a plugin, publish the new AndroidX version to pub and u
 your `CHANGELOG.md` to indicate that this new version is compatible with AndroidX.
 
 最后，如果你对插件进行了迁移，
-请发布新的 AndroidX 版本到 pub 并更新的 `CHANGELOG.md` ，以指明该版本与 AndroidX 兼容。
+请发布新的 AndroidX 版本到 pub 并更新的 `CHANGELOG.md`，以指明该版本与 AndroidX 兼容。
 
 ### What if I can't use Android Studio?
 
@@ -116,7 +116,7 @@ To create a new project run:
 要创建一个新的项目，请运行：
 
 ```bash
-flutter create --androidx -t <project-type> <new-project-path>
+flutter create -t <project-type> <new-project-path>
 ```
 
 ### Add to App

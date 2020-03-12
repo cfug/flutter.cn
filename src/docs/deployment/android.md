@@ -40,8 +40,6 @@ This page covers the following topics:
 
 * [R8](#r8)
 
-  [R8](#r8)
-
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
 
   [检查 app manifest 文件](#reviewing-the-app-manifest)
@@ -76,8 +74,7 @@ To customize this icon, you might want to check out the
 [flutter_launcher_icons][] package.
 
 当我们创建一个新的 Flutter app 的时候，它会有一个默认的启动图标。
-要自定义这个图标，可以参考
-[Flutter Launcher Icons][]。
+要自定义这个图标，可以参考使用 [flutter_launcher_icons][] 这个 package。
 
 Alternatively, you can do it manually using the following steps:
 
@@ -101,14 +98,15 @@ Alternatively, you can do it manually using the following steps:
    step (for example,
    `<application android:icon="@mipmap/ic_launcher" ...`).
    
-   在 `AndroidManifest.xml` 中，更新 [`application`][applicationtag] 标签中的 `android:icon`
-   属性来引用上一步骤中我们自己的图标文件
+   在 `AndroidManifest.xml` 中，更新 [`application`][applicationtag] 标签中的
+   `android:icon` 属性来引用上一步骤中我们自己的图标文件
    (例如，`<application android:icon="@mipmap/ic_launcher" ...`)。
 
 1. To verify that the icon has been replaced,
    run your app and inspect the app icon in the Launcher.
    
-   用 `flutter run` 运行 app，检查启动程序中的 app 图标是否已经替换成我们自己的图标文件。
+   用 `flutter run` 运行 app，检查启动程序中的 app 图标
+   是否已经替换成我们自己的图标文件。
 
 ## Signing the app
 
@@ -140,6 +138,8 @@ keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000
 ```
 
 On Windows, use the following command:
+
+在 Windows 系统上，执行下述代码：
 
 ```terminal
 keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
@@ -506,6 +506,21 @@ the Play Store.
   
 {{site.alert.end}}
 
+{{site.alert.warning}}
+  Recently, the Flutter team has received [several reports][crash-issue]
+  from developers indicating they are experiencing app
+  crashes on certain devices on Android 6.0. If you are targeting
+  Android 6.0, follow the following steps:
+
+  * If you build an App Bundle
+    Edit `android/gradle.properties` and add the flag: `android.bundle.enableUncompressedNativeLibs=false`.
+
+  * If you build an APK
+    Make sure `android/app/src/AndroidManifest.xml` doesn't set `android:extractNativeLibs=false` in the `<application>` tag.
+
+  For more information, see the [public issue][crash-issue].
+{{site.alert.end}}
+
 ### Build an app bundle
 
 ### 构建一个 app bundle
@@ -516,25 +531,6 @@ the app bundle will be signed.
 
 这个部分描述了如何构建一个发布的 app bundle。
 如果在前面的部分已经完成了签名步骤，发布的 bundle 会被签名。
-
-{{site.alert.warning}}
-
-  Recently, the Flutter team has received several reports
-  from developers indicating they are experiencing app
-  crashes on certain devices on Android 6.0 when building
-  an app bundle.
-
-  最近 Flutter team 收到的几份开发者反馈显示，
-  他们在尝试构建 app bundle 的时候，会在某些 Android 6.0 某些设备上崩溃。
-
-  While the Android team is working to identify a feasible
-  solution, you might try [splitting the APK as](#what-is-a-fat-apk)
-  a temporary workaround. For more information, see [Issue 36822][].
-
-  在 Android team 努力寻找可行的解决方案时，你可以先尝试[将 APK 拆分](#what-is-a-fat-apk)作为临时解决方案。
-  更多有关信息请查看 [Issue 36822][]。
-  
-{{site.alert.end}}
 
 From the command line:
 
@@ -585,11 +581,11 @@ describes two.
    
 2. [Generate a set of APKs][apk-set] from your app bundle.
 
-   从你的 app bundle [Generate a set of APKs][apk-set]
+   从你的 app bundle [生成 APKs][apk-set]
 
 3. [Deploy the APKs][apk-deploy] to connected devices.
 
-  [Deploy the APKs][apk-deploy] 连接到你的设备
+   [将这 APKs 部署到][apk-deploy] 已连接的设备
 
 #### Online using Google Play
 
@@ -600,12 +596,13 @@ describes two.
    or the alpha or beta channels to test the bundle before
    releasing it in production.
    
-   上传你的 bundle 到 Google Play 去测试它。或者在正式发布之前用 alpha 或 beta 频道去测试。
+   上传你的 bundle 到 Google Play 去测试它。
+   或者在正式发布之前用 alpha 或 beta 频道去测试。
    
 2. Follow [these steps to upload your bundle][upload-bundle]
    to the Play Store.
    
-   按照 [these steps to upload your bundle][upload-bundle] 上传到 Play Store。
+   按照 [这些步骤把你的 bundle][upload-bundle] 上传到 Play Store。
 
 ### Build an APK
 
@@ -817,8 +814,8 @@ Flutter does not currently support building for x86 Android
 (See [Issue 9253][]).
 
 当使用 release 模式构建你的应用程序时, 
-Flutter app 可以基于 [armeabi-v7a][] (ARM 32-bit)、
-[arm64-v8a][] (ARM 64-bit) 以及 [x86-64][] (x86 64-bit) 被编译。
+Flutter app 可以基于 [armeabi-v7a][] (ARM 32 位)、
+[arm64-v8a][] (ARM 64 位) 以及 [x86-64][] (x86 64 位) 被编译。
 Flutter 目前不支持 x86 Android (参考 [Issue 9253][]).
 
 ### How do I sign the app bundle created by `flutter build appbundle`?
@@ -844,7 +841,8 @@ Next, select the build variant. Click **Build > Select Build Variant**
 in the main menu. Select any of the variants in the **Build Variants**
 panel (debug is the default):
 
-接下来，选择构建变体。在主菜单中点击 **Build > Select Build Variant**。从 **Build Variants** 面板中选择任意一个变体 （默认是 debug）。
+接下来，选择构建变体。在主菜单中点击 **Build > Select Build Variant**。
+从 **Build Variants** 面板中选择任意一个变体 （默认是 debug）。
 
 {% asset 'deployment/android/build-variant-menu.png' alt='screenshot of build variant menu' %}
 
@@ -886,6 +884,7 @@ This doc need to assign to a new translator.
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
+[crash-issue]: https://issuetracker.google.com/issues/147096055
 [x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle
@@ -898,8 +897,7 @@ This doc need to assign to a new translator.
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
-[Issue 22139]: {{site.github}}/flutter/flutter/issues/22139
-[Issue 36822]: {{site.github}}/flutter/flutter/issues/36822
+
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element

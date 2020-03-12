@@ -13,9 +13,9 @@ next:
   path: /docs/cookbook/networking/background-parsing
 ---
 
-To fetch data from many web services, you need to provide
-authorization. There are many ways to do this, but perhaps the most common
-uses the `Authorization` HTTP header.
+To fetch data from most web services, you need to provide
+authorization. There are many ways to do this,
+but perhaps the most common uses the `Authorization` HTTP header.
 
 为了从众多的网络服务中获取数据，你需要提供相应的授权认证信息。
 当然了，解决这一问题的方法有很多，

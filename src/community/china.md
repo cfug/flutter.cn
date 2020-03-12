@@ -10,7 +10,7 @@ toc: true
 
 The Flutter community has made a Simplified Chinese version of the
 Flutter website available at
-[https://flutter-io.cn](https://flutter-io.cn).
+[https://flutter.cn](https://flutter.cn).
 
 欢迎你来到由中国 Flutter 社区维护的中文 Flutter 资源网站：[https://flutter.cn](https://flutter.cn)
 

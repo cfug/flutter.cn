@@ -4,7 +4,7 @@ title: Container 里的动画渐变效果
 description: How to animate properties of a container using implicit animations.
 description: 如何通过控制 container 的属性以使用隐式动画。
 prev:
-  title: Animate a widget using a physics simulation
+  title: Widget 的物理模拟动画效果
   path: /docs/cookbook/animation/physics-simulation
 next:
   title: Fade a Widget in and out

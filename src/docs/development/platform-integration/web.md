@@ -48,7 +48,7 @@ You can also add web support to existing plugins or
 
 可以使用了，许多 plugin 已经支持 web。
 使用 web 过滤器在 [pub.dev][] 上寻找 plugin 更新列表。
-你也可以向已有 plugin 添加 web 支持，或者编写[你的 web plugin](write your own plugins)。
+你也可以向已有 plugin 添加 web 支持，或者编写[你的 web plugin][write your own plugins]。
 
 ### How do I file an issue about web support?
 

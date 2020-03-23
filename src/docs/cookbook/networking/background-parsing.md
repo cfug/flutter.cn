@@ -18,13 +18,15 @@ In many cases, this model simplifies coding and is fast enough
 that it does not result in poor app performance or stuttering animations,
 often called "jank."
 
-Dart 应用通常只会在单线程中处理它们的工作。并且在大多数情况中，这种模式不但简化了代码而且速度也够快，基本不会出现像动画卡顿以及性能不足这种「不靠谱」的问题。
+Dart 应用通常只会在单线程中处理它们的工作。并且在大多数情况中，
+这种模式不但简化了代码而且速度也够快，基本不会出现像动画卡顿以及性能不足这种「不靠谱」的问题。
 
 However, you might need to perform an expensive computation, such as parsing a
 very large JSON document. If this work takes more than 16 milliseconds,
 your users experience jank.
 
-但是，当你需要进行一个非常复杂的计算时，例如解析一个巨大的 JSON 文档。如果这项工作耗时超过了 16 毫秒， 那么你的用户就会感受到掉帧。
+但是，当你需要进行一个非常复杂的计算时，例如解析一个巨大的 JSON 文档。
+如果这项工作耗时超过了 16 毫秒， 那么你的用户就会感受到掉帧。
 
 To avoid jank, you need to perform expensive computations like this in the
 background. On Android, this means scheduling work on a different thread.
@@ -39,21 +41,21 @@ This recipe uses the following steps:
 
 ## 使用步骤
 
-  1. Add the `http` package
+  1. Add the `http` package.
 
-     添加 `http` 包
+     添加 `http` 这个 package；
 
-  2. Make a network request using the `http` package
+  2. Make a network request using the `http` package.
 
-     使用 `http` 包发起一个网络请求
+     使用 `http` package 发起一个网络请求；
 
-  3. Convert the response into a list of photos
+  3. Convert the response into a list of photos.
 
-     将响应转换成一列照片
+     将响应转换成一列照片；
 
-  4. Move this work to a separate isolate
+  4. Move this work to a separate isolate.
 
-     将这个工作移交给一个单独的 isolate
+     将这个工作移交给一个单独的 isolate。
 
 ## 1. Add the `http` package
 
@@ -63,7 +65,8 @@ First, add the [`http`][] package to your project.
 The `http` package makes it easier to perform network
 requests, such as fetching data from a JSON endpoint.
 
-首先，在你的项目中添加 [`http`]({{site.pub-pkg}}/http) 包，`http` 包会让网络请求变的像从 JSON 端点获取数据一样简单。
+首先，在你的项目中添加 [`http`][] 这个 package，
+`http` package 会让网络请求变的像从 JSON 端点获取数据一样简单。
 
 ```yaml
 dependencies:
@@ -74,9 +77,9 @@ dependencies:
 
 ## 2. 发起一个网络请求
 
-In this example,
-you'll fetch a JSON large document that contains a list of
-5000 photo objects from the [JSONPlaceholder REST API][],
+This example covers how to fetch a large JSON document
+that contains a list of 5000 photo objects from the
+[JSONPlaceholder REST API][],
 using the [`http.get()`][] method.
 
 在这个例子中，你将会使用 [`http.get()`][] 方法通过

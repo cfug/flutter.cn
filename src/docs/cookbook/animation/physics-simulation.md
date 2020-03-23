@@ -110,7 +110,8 @@ class _DraggableCardState extends State<DraggableCard> {
 ```
 
 Make the `_DraggableCardState` class extend from
-[SingleTickerProviderStateMixin][].  Then construct an [AnimationController][] in
+[SingleTickerProviderStateMixin][].
+Then construct an [AnimationController][] in
 `initState` and set `vsync` to `this`.
 
 让 `_DraggableCardState` 类继承至 [SingleTickerProviderStateMixin][]。
@@ -127,6 +128,7 @@ Make the `_DraggableCardState` class extend from
   
 {{site.alert.end}}
 
+<!-- skip -->
 ```dart
 class _DraggableCardState extends State<DraggableCard>
     with SingleTickerProviderStateMixin {
@@ -157,6 +159,7 @@ Make the widget move when it's dragged, and add an [Alignment][] field to the
 
 让 widget 获得拖拽能力，并为 `_DraggableCardState` 类添加一个 [Alignment][] 范围。
 
+<!-- skip -->
 ```dart
 Alignment _dragAlignment = Alignment.center;
 ```
@@ -168,10 +171,11 @@ coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 `_dragAlignment`:
 
 添加一个 [GestureDetector][] 来捕获 `onPanDown`， `onPanUpdate` 以及 `onPanEnd` 回掉。
-为了调整对齐方式，请使用 [MediaQuery][] 来获得 Widget 的大小，然后除以 2。
+为了调整对齐方式，请使用 [MediaQuery][] 来获得 widget 的大小，然后除以 2。
 （这会将“拖动的像素”单位转为 [Align][] 使用的坐标。）然后，
 将 `Align` widget 的 `alignmnt` 属性设为 `_dragAlignment`。
 
+<!-- skip -->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -212,6 +216,7 @@ dragged to, to the point in the center.
 添加一个 `Animation<Alignment>`，以及 `_runAnimation` 方法。
 此方法定义了一个 `Tween`，它在 widget 被拖动到的点之间插入到中心点。
 
+<!-- skip -->
 ```dart
   Animation<Alignment> _animation;
 
@@ -232,6 +237,7 @@ value:
 
 接下来，当 `AnimationController` 产生一个值时，更新 `_dragAlignment`：
 
+<!-- skip -->
 ```dart
 @override
 void initState() {
@@ -249,6 +255,7 @@ Next, make the `Align` widget use the `_dragAlignment` field:
 
 下一步，让 `Align` 小部件使用 `_dragAlignment` 字段：
 
+<!-- skip -->
 ```dart
 child: Align(
   alignment: _dragAlignment,
@@ -258,11 +265,11 @@ child: Align(
 ),
 ```
 
-
 Finally, update the `GestureDetector` to manage the animation controller:
 
 最后，更新 `GestureDetector` 来管理动画控制器：
 
+<!-- skip -->
 ```dart
 onPanDown: (details) {
  _controller.stop();
@@ -295,8 +302,9 @@ already sets the direction by setting the animation's start and end alignment.)
 
 First, import the `physics` package:
 
-首先，引入 `physics` 包：
+首先，引入 `physics` 这个 package:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/physics.dart';
 ```
@@ -311,8 +319,8 @@ to coordinate values in this range.
 `onPanEnd` 回调提供了一个 [DragEndDetails][] 对象。
 此对象提供指针停止接触屏幕时的速度。速度以每秒像素为单位，
 但 `Align` widget 不使用像素。
-它使用 [-1.0，-1.0] 和 [1.0,1.0] 之间的坐标值，
-其中 [0.0,0.0] 表示中心。在步骤 2 中计算的 `size` 用于将像素转换为该范围内的坐标值。
+它使用 [-1.0，-1.0] 和 [1.0,1.0] 之间的坐标值，其中 [0.0,0.0] 表示中心。
+在步骤 2 中计算的 `size` 用于将像素转换为该范围内的坐标值。
 
 Finally, `AnimationController` has an `animateWith()` method that can be given a
 [SpringSimulation][]:
@@ -320,6 +328,7 @@ Finally, `AnimationController` has an `animateWith()` method that can be given a
 最后，`AnimationController` 有一个 `animateWith()` 
 方法可以产生 [SpringSimulation][]:
 
+<!-- skip -->
 ```dart
 void _runAnimation(Offset pixelsPerSecond, Size size) {
   _animation = _controller.drive(
@@ -351,6 +360,7 @@ Don't forget to call `_runAnimation()`  with the velocity and size:
 
 不要忘记调用 `_runAnimation()`，并传入速度和大小：
 
+<!-- skip -->
 ```dart
 onPanEnd: (details) {
   _runAnimation(details.velocity.pixelsPerSecond, size);

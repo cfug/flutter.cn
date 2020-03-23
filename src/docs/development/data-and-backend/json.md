@@ -10,12 +10,14 @@ web server or easily store structured data at some point. When making
 network-connected apps, the chances are that it needs to consume some good old
 JSON, sooner or later.
 
-很难想象一个移动应用会不需要与 web 服务器通信或者在某些时候轻松地存储结构化数据。当创造需要网络连接的应用时，它可能迟早会处理一些旧的 JSON。
+很难想象一个移动应用会不需要与 web 服务器通信或者在某些时候轻松地存储结构化数据。
+当创造需要网络连接的应用时，它可能迟早会处理一些旧的 JSON。
 
 This guide looks into ways of using JSON with Flutter. 
 It covers which JSON solution to use in different scenarios, and why.
 
-本指南介绍了如何在 Flutter 中使用 JSON。包括了如何在不同场景中使用相应的 JSON 解决方案以及为什么要这么做。
+本指南介绍了如何在 Flutter 中使用 JSON，
+包括了如何在不同场景中使用相应的 JSON 解决方案以及为什么要这么做。
 
 {{site.alert.info}}
 
@@ -176,7 +178,9 @@ you similarly easy-to-use APIs but are based on code generation instead. This
 approach is covered in more detail in the [code generation
 libraries](#code-generation) section.
 
-尽管你不能在 Flutter 中使用运行时反射，还是有一些库提供了基于代码生成的方便使用的 API。这个方法的更多细节在 [代码生成库](#code-generation) 部分。
+尽管你不能在 Flutter 中使用运行时反射，
+还是有一些库提供了基于代码生成的方便使用的 API，
+这个方法的更多细节在 [代码生成库](#code-generation) 部分。
 
 <a name="manual-encoding"></a>
 ## Serializing JSON manually using dart:convert
@@ -374,8 +378,7 @@ Although there are other libraries available, this guide uses
 [`json_serializable`][], an automated source code generator that
 generates the JSON serialization boilerplate for you.
 
-尽管有其它库可以使用，本指南使用了
-[json_serializable package]({{site.pub}}/packages/json_serializable)，
+尽管有其它库可以使用，本指南使用了[`json_serializable`][]，
 一个自动化源代码生成器来为你生成 JSON 序列化数据模板。
 
 {{site.alert.info}}
@@ -396,7 +399,8 @@ generates the JSON serialization boilerplate for you.
   [Flutter Favorite][] 以及 [`json_serializable`][] & [`built_value`][]。
   那么你该如何在这些 packages 之间进行选择呢？
   `json_serializable` package 能够通过注解让你的普通类序列化，
-  而 `built_value` package 则提供了更高层次的方法，让定义为无变化的类也能够被序列化为 JSON。
+  而 `built_value` package 则提供了更高层次的方法，
+  让定义为无变化的类也能够被序列化为 JSON。
   
 {{site.alert.end}}
 
@@ -655,6 +659,7 @@ Consider the following `Address` class:
 
 比如下面的这个 `Address` 类：
 
+<!-- skip -->
 ```dart
 import 'package:json_annotation/json_annotation.dart';
 part 'address.g.dart';
@@ -675,6 +680,7 @@ The `Address` class is nested inside the `User` class:
 
 一个 `Address` 类被嵌套在 `User` 类中使用：
 
+<!-- skip -->
 ```dart
 import 'address.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -699,6 +705,7 @@ looks something like the following:
 在终端中运行 `flutter pub run build_runner build` 创建 `* .g.dart`文件，
 但私有函数如 `_ $ UserToJson（）` 会看起来像下面这样：
 
+<!-- skip -->
 ```dart
 (
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -711,6 +718,7 @@ All looks fine now, but if you do a print() on the user object:
 
 看起来没有什么问题，如果 `print` 用户对象时：
 
+<!-- skip -->
 ```dart
 Address address = Address("My st.", "New York");
 User user = User("John", address);
@@ -720,7 +728,6 @@ print(user.toJson());
 The result is:
 
 结果会是：
-
 
 ```json
 {name: John, address: Instance of 'address'}

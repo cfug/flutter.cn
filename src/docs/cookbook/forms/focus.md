@@ -38,9 +38,10 @@ is visible, without needing to manually tap the text field.
 我们可以聚焦文本框的搜索项。
 这将允许用户在搜索页面可见时能够立即开始输入，而无需手动点击文本框。
 
-In this recipe, learn how to give the focus to a text field as soon
-as it's visible,
-as well as how to give focus to a text field when a button is tapped.
+In this recipe, learn how to give the focus
+to a text field as soon as it's visible,
+as well as how to give focus to a text field
+when a button is tapped.
 
 在本文中，我们将学习如何聚焦到文本框上，以及点击按钮时聚焦文本框。
 
@@ -195,13 +196,29 @@ this task.
 FloatingActionButton(
   // When the button is pressed, give focus to the text field using
   // myFocusNode.
-  onPressed: () => FocusScope.of(context).requestFocus(myFocusNode),
+  onPressed: () => myFocusNode.requestFocus(),
 );
 ```
 
 ## Interactive example
 
 ## 交互式样例
+
+{{site.alert.note}}
+
+  While the following code runs successfully in DartPad,
+  it fails due to [Issue 52221][] when run against the 
+  stable (1.12) or beta (1.14) versions of the Flutter SDK.
+  Until this [fix has landed][] (hash [flutter/flutter@bf551a3][])
+  in the channel you are using,
+  you can use the [workaround][] described in the issue.
+  
+  尽管以下代码可以在 DartPad 中成功运行，
+  但在 Flutter SDK 的稳定版（1.12）或 beta（1.14）版本上，
+  会由于 [这个问题][Issue 52221] 而运行失败。
+  直至 [这个修复][fix has landed] (hash [flutter/flutter@bf551a3][]) 
+  合并进你的 Flutter SDK 之前，你可以使用这个 [解决方法][workaround]。
+{{site.alert.end}}
 
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
@@ -271,7 +288,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
       floatingActionButton: FloatingActionButton(
         // When the button is pressed,
         // give focus to the text field using myFocusNode.
-        onPressed: () => FocusScope.of(context).requestFocus(myFocusNode),
+        onPressed: () => myFocusNode.requestFocus(),
         tooltip: 'Focus Second Text Field',
         child: Icon(Icons.edit),
       ), // This trailing comma makes auto-formatting nicer for build methods.
@@ -284,6 +301,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
   <img src="/images/cookbook/focus.gif" alt="Text Field Focus Demo" class="site-mobile-screenshot" />
 </noscript>
 
+
+[fix has landed]: {{site.github}}/flutter/flutter/pull/50372
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
 [Forms]: /docs/cookbook#forms
+[flutter/flutter@bf551a3]: {{site.github}}/flutter/flutter/commit/bf551a31fe7ef45c854a219686b6837400bfd94c
+[Issue 52221]: {{site.github}}/flutter/flutter/issues/52221
 [`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html
+[workaround]: {{site.github}}/flutter/flutter/issues/52221#issuecomment-598244655

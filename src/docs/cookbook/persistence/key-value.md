@@ -172,7 +172,7 @@ const MethodChannel('plugins.flutter.io/shared_preferences')
   });
 ```
 
-## Example
+## Complete example
 
 ## 示例
 

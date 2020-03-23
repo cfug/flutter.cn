@@ -204,8 +204,8 @@ to set up physical device deployment in Xcode.
           任何 Apple ID 都可以进行开发和测试。
           如果想将应用上架 App Store，你需要加入 Apple Developer Program，
           你可以在 [Choosing a Membership][] 页面中查看详细的说明。
-         
-
+        
+        <a name="trust"></a>
         * The first time you use an attached physical device for iOS
           development, you need to trust both your Mac and the
           Development Certificate on that device.

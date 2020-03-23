@@ -33,14 +33,39 @@
     Android SDK Platform-Tools 以及 Android SDK Build-Tools，
     这些都是在开发 Android Flutter 应用时所需要的。
 
-{{site.alert.note}}
+{{site.alert.warning}}
 
-We're updating the flutter tool to use either the Platform-Tools (now obsolete), or the new Command-Line tool if it is available. 
+  In Android Studio 3.6 or later, you need to manually add the old
+  version of the Android SDK Tools for Flutter to work. To do this:
+  
+  在 Android Studio 3.6 或以上的版本，你需要手动为 Flutter 加入
+  旧版本的 Android SDK 工具才能正常工作：
+  
+   1. Open the **Android Studio SDK Manager**
 
-我们正在更新 flutter tool 以使用 Platform-Tools（现已废弃）或者
-新的可用的命令行工具。
+      打开 **Android Studio SDK Manager**
+      
+   1. In the Android SDK tab, uncheck **Hide Obsolete Packages**
 
+      找到 Android SDK 这个选项卡，取消勾选 **Hide Obsolete Packages**
+
+   1. Check **Android SDK Tools (Obsolete)**
+
+      检查 **Android SDK Tools (Obsolete)**
+  
+  The dialog below shows the appropriate settings:
+  
+  如下所示：
+  
+  {% asset 'get-started/android/android-sdk-tools.png' %}
+  
+  This is a [known issue](https://github.com/flutter/flutter/issues/51712) 
+  that will be addressed in an upcoming version of Flutter.
+  
+  这是一个 [已知问题](https://github.com/flutter/flutter/issues/51712)，
+  在未来的版本里可以得到解决。
 {{site.alert.end}}
+
 ### Set up your Android device
 
 ### 配置 Android 设备

@@ -32,7 +32,7 @@ downloading and installing Flutter or Dart!
 
 Flutter is different from other frameworks because its UI
 is built in code, not (for example) in an XML file or similar.
-Widgets are the basic building blocks of a Flutter UI.
+widgets are the basic building blocks of a Flutter UI.
 As you progress through this codelab,
 you'll learn that almost everything in Flutter is a widget.
 A widget is an immutable object that describes a specific part of a UI.
@@ -44,11 +44,11 @@ into building a Flutter UI that displays a business card.
 
 Flutter 与其他框架有着明显的差异，
 原因在于它使用代码来构建 UI，而不是 XML 或其他东西。
-其中，Widget 是构建 Flutter UI 的基本单元。
-当你逐渐深入这个 codelab，你将会发现在 Flutter 中几乎所有的东西都是 Widget。
-Widget 是一个不会改变的对象，它是 UI 中一个特定部分的描述。
-你还会学到 Flutter 的 Widget 非常容易组合，
-这意味着你能够通过组合已有的 Widgets 来创造更多复杂的 Widgets。
+其中，widget 是构建 Flutter UI 的基本单元。
+当你逐渐深入这个 codelab，你将会发现在 Flutter 中几乎所有的东西都是 widget。
+widget 是一个不会改变的对象，它是 UI 中一个特定部分的描述。
+你还会学到 Flutter 的 widget 非常容易组合，
+这意味着你能够通过组合已有的 widgets 来创造更多复杂的 widgets。
 到这篇文章的最后，你会运用这里所学的知识构建一个显示名片的 Flutter UI。
 
 **Estimated time to complete this codelab: 45-60 minutes.**
@@ -60,15 +60,15 @@ Widget 是一个不会改变的对象，它是 UI 中一个特定部分的描述
 ## Row 和 Column 类
 
 `Row` and `Column` are classes that contain and lay out widgets.
-Widgets inside of a `Row` or `Column` are called *children*,
+widgets inside of a `Row` or `Column` are called *children*,
 and `Row` and `Column` are referred to as *parents*.
 `Row` lays out its widgets horizontally,
 and `Column` lays out its widgets vertically.
 
-`Row` 和 `Column` 是两个用来容纳和布局 Widgets 的类。
-在它们内部的 Widgets 我们称为 *children*，
+`Row` 和 `Column` 是两个用来容纳和布局 widgets 的类。
+在它们内部的 widgets 我们称为 *children*，
 `Row` 和 `Column` 就作为它们的父级。
-`Row` 将会让 Widgets 水平排列，而 Column 则会让其竖直排列。
+`Row` 将会让 widgets 水平排列，而 Column 则会让其竖直排列。
 
 #### Example: Creating a Column
 {:.no_toc}
@@ -106,7 +106,7 @@ You can change how the `BlueBox` widgets are spaced
 out using the axis size and alignment properties.
 
 至此，`BlueBox` widget 已经在一起被压扁了 (在界面的左边或者上面 )。
-你可以通过轴大小和对齐属性来改变 `BlueBox` Widget 的间距。
+你可以通过轴大小和对齐属性来改变 `BlueBox` widget 的间距。
 
 ### mainAxisSize property
 
@@ -131,7 +131,7 @@ The `mainAxisSize` property has two possible values:
 
 `MainAxisSize.max`
 <br>  `Row` 和 `Column` 占据它们主轴上所有空间。
-  如果子 Widget 的总宽度小于主轴上的空间，它们就会充满剩余的空间。
+  如果子 widget 的总宽度小于主轴上的空间，它们就会充满剩余的空间。
 
 `MainAxisSize.min`
 <br> `Row` and `Column` only occupy enough space on their main axes
@@ -356,7 +356,7 @@ The `crossAxisAlignment` property has five possible values:
 
   为了演示横轴对齐方式，`mainAxisAlignment` 被设为
   `MainAxisAlignment.spaceAround`，`Row` 现在包含一个比
-  “BlueBox” Widget 更高的 `BiggerBlueBox` Widget。
+  “BlueBox” widget 更高的 `BiggerBlueBox` widget。
 
 1. Click the **Run** button.
 
@@ -407,7 +407,7 @@ the widgets are resized according to their
 
 `Flexible` widget 包裹一个 widget 让这个 widget 变得可以调整大小。
 当 `Flexible` widget 包裹 widget 时，
-这个 Widget 就成为 `Flexible` widget 的子节点，
+这个 widget 就成为 `Flexible` widget 的子节点，
 并被视为 *flexible* 的。在布置固定大小的 widget 后，
 Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 
@@ -424,7 +424,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   fills all of its extra space.
 
 `fit`
-<br> 决定 `Flexible` 的 Widget 是否能够填充所有剩余空间。 
+<br> 决定 `Flexible` 的 widget 是否能够填充所有剩余空间。 
 
 #### Example: Changing fit properties
 {:.no_toc}
@@ -443,7 +443,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   <br> The widget's preferred size is used. (Default)
 
   `FlexFit.loose`
-  <br> 使用 Widget 的自身作为首选大小。 (默认情况下 )
+  <br> 使用 widget 的自身作为首选大小。 (默认情况下 )
 
   `FlexFit.tight`
   <br> Forces the widget to fill all of its extra space.
@@ -488,17 +488,18 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   values set to 1 (the default value).
 
   在下面这个例子中，`Row` 包含了一个 `BlueBox` widget 和
-  两个 `Flexible` widgets 包裹的 `BlueBox` Widget。
+  两个 `Flexible` widgets 包裹的 `BlueBox` widget。
   `Flexible` widgets 包含了 `flex` 属性，并将其值设为 1。 (默认值 )
 
   When `flex` properties are compared against one another, 
   the ratio between their `flex` values determines 
   what fraction of the total remaining space each
   `Flexible` widget receives.
-
-  当 `flex` 属性互相比较时，它们的 `flex` 值的比率决定了 `Flexible` Widget
+  
+  当 `flex` 属性互相比较时，它们的 `flex` 值的比率决定了 `Flexible` widget
   自身所占剩余空间的比例。
 
+  <!-- skip -->
   ```dart
   remainingSpace * (flex / totalOfAllFlexValues)
   ```
@@ -532,7 +533,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 Similar to `Flexible`, the `Expanded` widget can
 wrap a widget and force the widget to fill extra space.
 
-`Expanded` widget 能够包裹一个 Widget 并强制其填满剩余空间，
+`Expanded` widget 能够包裹一个 widget 并强制其填满剩余空间，
 与 `Flexible` 非常相似。
 
 {{site.alert.tip}}
@@ -546,7 +547,7 @@ wrap a widget and force the widget to fill extra space.
 
   **Flexible 和 Expanded 有何不同呢？**
   使用 `Flexible` 在  `Row` 或 `Column` 中重新调整 widgets 的大小。
-  这样，你就可以调整子 Widget 的间距同时保持其相对于父 Widget  的大小。
+  这样，你就可以调整子 widget 的间距同时保持其相对于父 widget  的大小。
   `Expanded`改变子窗口小部件的约束， 所以它会填补全部空白空间。
 
 {{site.alert.end}} 
@@ -562,28 +563,30 @@ wrap a widget and force the widget to fill extra space.
   The following example demonstrates how the
   `Expanded` widget forces its child widget to
   fill extra space.
+  
+  下面的例子演示了 `Expanded` widget 是如何
+  强制其子 widget 填满空间的。
 
-1. Click the **Run** button.
-
-   点击**运行**按钮 
-
-1. Wrap the second `BlueBox` widget in an `Expanded` widget. 
-
-   在第二个 `BlueBox` widget 外包裹一个 `Expanded` widget。
-
-For example: 
-
-例如：
-
-```dart
-Expanded(child: BlueBox(),),
-```
-1. Select the **Format** button to properly format the code,
-   and run again. 
-        
-   点击 **Format (格式化)** 按钮格式化你的代码，再重新运行一次。
+  **1.** Click the **Run** button.
          
+         点击**运行**按钮 
+
+  **2.** Wrap the second `BlueBox` widget in an `Expanded` widget.
+  
+         在第二个 `BlueBox` widget 外包裹一个 `Expanded` widget。
+
+  For example:
+
+  <!-- skip -->
+  ```dart
+  Expanded(child: BlueBox(),),
+  ```
+  **3.** Select the **Format** button to properly format the code,
+         and run again.
+         
+         选择 **Format** 按钮格式化代码，然后再次运行。
 {{site.alert.end}}
+
 {% comment %}
   Gist: https://gist.github.com/c4dfa9058f803dea1cff4fca2532977a
 {% endcomment %}
@@ -600,15 +603,15 @@ it uses the `height` and `width` properties to
 create empty space.
 
 `SizedBox` widget 的两种用途之一就是创建精确的尺寸。
-当 `SizedBox` 包裹了一个 Widget 时，
+当 `SizedBox` 包裹了一个 widget 时，
 它会使用 `height` 和 `width` 调整其大小。
-如果它没有包裹 Widget，
+如果它没有包裹 widget，
 它可以使用`height`和`width`属性创造空的空间。
 
 #### Example: Resizing a widget 
 {:.no_toc}
 
-#### 样例：调整一个 Widget
+#### 样例：调整一个 widget
 {:.no_toc}
 
 {{site.alert.secondary}}
@@ -673,7 +676,7 @@ create empty space.
 Similar to `SizedBox`, the `Spacer` widget also
 can create space between widgets.
 
-与 `SizedBox` 相似，`Spacer` widget 也能在 Widgets 之间创建空间。
+与 `SizedBox` 相似，`Spacer` widget 也能在 widgets 之间创建空间。
 
 {{site.alert.tip}}
 
@@ -765,7 +768,7 @@ that represents an aspect of the UI.
 Flutter is preloaded with icon packages for
 [Material][] and [Cupertino][] applications.
 
-`Icon` Widget 能够显示图形符号，这代表了 UI 的一个方面。
+`Icon` widget 能够显示图形符号，这代表了 UI 的一个方面。
 Flutter 将会为 [Material][] 和 [Cupertino][]
 的应用提前加载 icon packages。
 
@@ -779,7 +782,7 @@ Flutter 将会为 [Material][] 和 [Cupertino][]
   The following example displays the widget `Icons.widget`
   from the [Material Icon library][] in red and blue.
 
-  下面的样例显示了来自 [Material Icon library][] 的红蓝 `Icons.widget` Widget。
+  下面的样例显示了来自 [Material Icon library][] 的红蓝 `Icons.widget` widget。
 
 1. Click the **Run** button. 
 
@@ -933,7 +936,7 @@ which are positioned below the contact information.
 
   Implement a `Column` that contains two text widgets:
 
-  实现含有两个 Text Widget 的 `Column`：
+  实现含有两个 Text widget 的 `Column`：
 
 <ul markdown="1">
   <li markdown="1">
@@ -973,7 +976,7 @@ which are positioned below the contact information.
   Wrap the `Column` you implemented in a
   `Row` that contains the following widgets:
 
-  你将在下面的 Widgets 中实现 `Row` 包裹一个 `Column`：ßß
+  你将在下面的 widgets 中实现 `Row` 包裹一个 `Column`：ßß
 
 <ul markdown="1">
   <li markdown="1">
@@ -996,6 +999,7 @@ which are positioned below the contact information.
   </li>
 </ul>
 
+  <!-- skip -->
   ```dart
      Row(
        children: [
@@ -1057,12 +1061,12 @@ which are positioned below the contact information.
   The `Column`'s list of widgets should be formatted as follows, 
   so the contact information and icons are displayed below the
   name and title:
-
-  `Column` Widget 的列表格式应该如下一样，
+  
+  `Column` widget 的列表格式应该如下一样，
   联系信息和图标显示在名称和头衔下方：
 
+  <!-- skip -->
   ```dart
-
      ],
     ), // <--- Closing parenthesis for the Row
     SizedBox(),

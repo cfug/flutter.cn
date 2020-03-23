@@ -19,10 +19,9 @@ you learned how to test Dart classes using the `test` package.
 To test widget classes, you need a few additional tools provided by the
 [`flutter_test`][] package, which ships with the Flutter SDK.
 
-在 [单元测试介绍](/docs/cookbook/testing/unit/introduction) 部分，
+在 [单元测试介绍][introduction to unit testing] 部分，
 我们学习了使用 `test` 这个 package 测试 Dart 类的方法。
-为了测试 widget 类，我们需要使用
-[`flutter_test`]({{api}}/flutter_test/flutter_test-library.html) package 提供的额外工具，
+为了测试 widget 类，我们需要使用 [`flutter_test`][] package 提供的额外工具，
 这些工具是跟 Flutter SDK 一起发布的。
 
 The `flutter_test` package provides the following tools for
@@ -33,24 +32,25 @@ testing widgets:
   * The [`WidgetTester`][] allows building and interacting
     with widgets in a test environment.
   
-    [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html)，使用该工具可在测试环境下建立 widget 并与其交互。
+    [`WidgetTester`][]，使用该工具可在测试环境下建立 widget 并与其交互。
   
   * The [`testWidgets()`][] function automatically
     creates a new `WidgetTester` for each test case,
     and is used in place of the normal `test()` function.
   
-    [`testWidgets()`]({{api}}/flutter_test/testWidgets.html) 函数，此函数会自动为每个测试创建一个 `WidgetTester`，用来代替普通的 `test` 函数。
+    [`testWidgets()`][] 函数，此函数会自动为每个测试创建一个 `WidgetTester`，
+    用来代替普通的 `test` 函数。
      
   * The [`Finder`][] classes allow searching for widgets
     in the test environment.
   
-    [`Finder`]({{api}}/flutter_test/Finder-class.html) 类，允许我们在测试环境下查找 widgets。
+    [`Finder`][] 类，可以方便我们在测试环境下查找 widgets。
     
   * Widget-specific [`Matcher`][] constants help verify
    whether a `Finder` locates a widget or
     multiple widgets in the test environment.
   
-    Widget-specific [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html) 常量，
+    Widget-specific [`Matcher`][] 常量，
     该常量在测试环境下帮助我们验证 `Finder` 是否定位到一个或多个 widgets。
 
 If this sounds overwhelming, don't worry. Learn how all of these pieces fit
@@ -95,7 +95,9 @@ dependency in the `dev_dependencies` section of the `pubspec.yaml` file.
 If creating a new Flutter project with the command line tools or
 a code editor, this dependency should already be in place.
 
-我们开始编写测试之前，需要先给 `pubspec.yaml` 文件的 `dev_dependencies` 段添加 `flutter_test` 依赖。如果使用命令行或编译器新建一个 Flutter 项目，那么依赖已经默认添加了。
+我们开始编写测试之前，需要先给 `pubspec.yaml` 文件的 `dev_dependencies` 段
+添加 `flutter_test` 依赖。如果使用命令行或编译器新建一个 Flutter 项目，
+那么依赖已经默认添加了。
 
 ```yaml
 dev_dependencies:
@@ -110,8 +112,10 @@ dev_dependencies:
 Next, create a widget for testing. For this recipe,
 create a widget that displays a `title` and `message`.
 
-接下来，我们需要创建一个可以测试的 widget！在此例中，我们创建了一个 widget 显示一个`标题`和`信息`。
+接下来，我们需要创建一个可以测试的 widget！在此例中，
+我们创建了一个 widget 显示一个 `标题 (title)` 和 `信息 (message)`。
 
+<!-- skip -->
 ```dart
 class MyWidget extends StatelessWidget {
   final String title;
@@ -152,8 +156,8 @@ widget test and creates a `WidgetTester` to work with.
 
 现在我们有了一个可以测试的 widget，可以开始编写第一个测试了！
 第一步，我们用 `flutter_test` 这个 package 提供的
-[`testWidgets()`]({{api}}/flutter_test/testWidgets.html) 函数定义一个测试。
-`testWidgets` 函数可以定义一个 Widget 测试并创建一个可以使用的 `WidgetTester`。
+[`testWidgets()`][] 函数定义一个测试。
+`testWidgets` 函数可以定义一个 widget 测试并创建一个可以使用的 `WidgetTester`。
 
 This test verifies that `MyWidget` displays a given title and message.
 
@@ -180,8 +184,7 @@ Next, build `MyWidget` inside the test environment by using the
 The `pumpWidget` method builds and renders the provided widget.
 
 下一步，为了在测试环境中建立 `MyWidget`，我们可以使用 `WidgetTester` 提供的
-[`pumpWidget()`]({{api}}/flutter_test/WidgetTester/pumpWidget.html) 方法。
-`pumpWidget` 方法会建立并渲染我们提供的 widget。
+[`pumpWidget()`][]方法，`pumpWidget` 方法会建立并渲染我们提供的 widget。
 
 Create a `MyWidget` instance that displays "T" as the title
 and "M" as the message.
@@ -254,15 +257,14 @@ Since you know you're looking for `Text` widgets, use the
 [`find.text()`][] method.
 
 为了实现这个目的，我们使用 `flutter_test` 这个 package 提供的顶级
-[`find()`]({{api}}/flutter_test/find-constant.html) 方法来创建我们的 `Finders`。
-因为我们要查找的是 `Text` widgets，所以可以使用
-[`find.text()`]({{api}}/flutter_test/CommonFinders-class.html) 方法。
+[`find()`][] 方法来创建我们的 `Finders`。因为我们要查找的是 `Text` widgets，
+所以可以使用 [`find.text()`][] 方法。
 
 For more information about `Finder` classes, see the
 [Finding widgets in a widget test][] recipe.
 
-关于 `Finder` classes 的更多信息，请参阅
-[定位到目标 Widgets](/docs/cookbook/testing/widget/finders) 章节。
+关于 `Finder` classes 的更多信息，
+请参阅 [定位到目标 Widgets][Finding widgets in a widget test] 章节。
 
 <!-- skip -->
 ```dart
@@ -294,8 +296,8 @@ value meets expectations.
 Ensure that the widgets appear on screen exactly one time.
 For this purpose, use the [`findsOneWidget`][] `Matcher`.
 
-在这个示例中，我们要确保 Widget 只在屏幕中出现一次。因此，可以使用
-[`findsOneWidget`]({{api}}/flutter_test/findsOneWidget-constant.html) `Matcher`。
+在这个示例中，我们要确保 Widget 只在屏幕中出现一次。
+因此，可以使用 [`findsOneWidget`][] `Matcher`。
 
 <!-- skip -->
 ```dart

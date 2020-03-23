@@ -15,6 +15,7 @@ if a user specifies a `color` instead of a `decoration`.
 
 It is very common to use the `Container` widget as follows:
 
+<!-- skip -->
 ```dart
 return Container(color: Colors.red);
 ```

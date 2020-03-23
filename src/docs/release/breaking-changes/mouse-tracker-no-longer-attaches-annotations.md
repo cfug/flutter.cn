@@ -71,6 +71,7 @@ Calls to `MouseTracker.attachAnnotation` and
 
 Code before migration:
 
+<!-- skip -->
 ```dart
 class MyMouseRegion extends SingleChildRenderObjectWidget {
   const MyMouseRegion({this.onHoverChange});
@@ -96,6 +97,7 @@ class MyMouseRegion extends SingleChildRenderObjectWidget {
 
 Code after migration:
 
+<!-- skip -->
 ```dart
 class MyMouseRegion extends SingleChildRenderObjectWidget {
   const MyMouseRegion({this.onHoverChange});

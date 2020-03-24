@@ -145,19 +145,15 @@ Then, build the UI using the given todo.
 <!-- skip -->
 ```dart
 class DetailScreen extends StatelessWidget {
-  // Declare a field that holds the Todo.  
   // 声明一个成员变量来保存 Todo 对象 (Declare a field that holds the Todo)
   final Todo todo;
 
-
-  // In the constructor, require a Todo.
   // 构造函数需要 Todo 对象 (In the constructor, require a Todo)
   DetailScreen({Key key, @required this.todo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Use the Todo to create the UI.    
-    // 使用 Todo 对象构建 UI (Use the Todo to create our UI)
+    // 使用 Todo 对象构建 UI (Use the Todo to create the UI)
     return Scaffold(
       appBar: AppBar(
         title: Text(todo.title),
@@ -217,6 +213,8 @@ ListView.builder(
 ### Interactive example
 
 ### 交互式样例
+
+### Interactive example
 
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/foundation.dart';
@@ -322,6 +320,7 @@ This method returns the current route with the arguments.
 为了访问 `Todo` 页面，请使用 `ModalRoute.of()` 方法。
 它将会返回带有参数的当前路由。
 
+<!-- skip -->
 ```dart
 class DetailScreen extends StatelessWidget {
   @override

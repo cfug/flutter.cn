@@ -74,7 +74,6 @@ button that navigates back to the first.
 第一个界面将包含一个跳转到第二个界面的按钮，
 第二个界面将包含一个跳转回第一个界面的按钮。
 
-
 ```dart
 class FirstScreen extends StatelessWidget {
   @override
@@ -87,8 +86,7 @@ class FirstScreen extends StatelessWidget {
         child: RaisedButton(
           child: Text('Launch screen'),
           onPressed: () {
-            // Navigate to the second screen when tapped.            
-            // 点击时跳转到第二个界面！（Navigate to second screen when tapped!）
+            // Navigate to the second screen when tapped.
           },
         ),
       ),
@@ -106,8 +104,7 @@ class SecondScreen extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            // Navigate back to first screen when tapped.            
-            // 点击时跳转回第一个界面！（Navigate back to first screen when tapped!）
+            // Navigate back to first screen when tapped.
           },
           child: Text('Go back!'),
         ),
@@ -135,8 +132,6 @@ to build when navigating to those routes.
 `initialRoute` 属性定义了应用应该从哪个路由启动。
 `routes` 属性定义了所有可用的命名路由，
 以及当我们跳转到这些路由时应该构建的 widgets。
-
-
 
 <!-- skip -->
 ```dart
@@ -232,16 +227,16 @@ void main() {
     title: 'Named Routes Demo',
     // Start the app with the "/" named route. In this case, the app starts
     // on the FirstScreen widget.
-    
+
     // 使用“/”命名路由来启动应用（Start the app with the "/" named route. In our case, the app will start）
     // 在这里，应用将从 FirstScreen Widget 启动（on the FirstScreen Widget）
     initialRoute: '/',
     routes: {
-      // When navigating to the "/" route, build the FirstScreen widget.    
+      // When navigating to the "/" route, build the FirstScreen widget.
       // 当我们跳转到“/”时，构建 FirstScreen Widget（When we navigate to the "/" route, build the FirstScreen Widget）
-      
+
       '/': (context) => FirstScreen(),
-      
+
       // When navigating to the "/second" route, build the SecondScreen widget.
       // 当我们跳转到“/second”时，构建 SecondScreen Widget（When we navigate to the "/second" route, build the SecondScreen Widget）
       '/second': (context) => SecondScreen(),
@@ -292,6 +287,7 @@ class SecondScreen extends StatelessWidget {
     );
   }
 }
+
 ```
 
 <noscript>

@@ -338,7 +338,6 @@ class CartModel extends [!ChangeNotifier!] {
   final List<Item> _items = [];
 
   /// An unmodifiable view of the items in the cart.
-
   UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
 
   /// The current total price of all items (assuming all items cost $42).

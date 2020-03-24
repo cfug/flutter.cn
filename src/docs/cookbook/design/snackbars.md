@@ -156,9 +156,9 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(SnackBarDemo());
 
-class SnackBarDemo extends Statelesswidget {
+class SnackBarDemo extends StatelessWidget {
   @override
-  widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SnackBar Demo',
       home: Scaffold(
@@ -171,9 +171,9 @@ class SnackBarDemo extends Statelesswidget {
   }
 }
 
-class SnackBarPage extends Statelesswidget {
+class SnackBarPage extends StatelessWidget {
   @override
-  widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Center(
       child: RaisedButton(
         onPressed: () {

@@ -223,19 +223,15 @@ class MyApp extends StatelessWidget {
 }
 
 /// The base class for the different types of items the list can contain.
-// List 能容纳的不同类型项目的基类
 abstract class ListItem {
   /// The title line to show in a list item.
-  /// 标题行显示项目列表
   Widget buildTitle(BuildContext context);
 
   /// The subtitle line, if any, to show in a list item.
-  
   Widget buildSubtitle(BuildContext context);
 }
 
 /// A ListItem that contains data to display a heading.
-// 一种包含展示标题数据的 ListItem
 class HeadingItem implements ListItem {
   final String heading;
 

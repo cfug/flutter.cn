@@ -725,7 +725,7 @@ Navigate to a route by `push`ing its name to the `Navigator`.
 
 通过把 route 名称传递给 `Naivgator` 来实现 `push` 效果。
 
-```dart
+```
 Navigator.of(context).pushNamed('/b');
 ```
 
@@ -1624,7 +1624,7 @@ or maybe different states or renderings of the same data.
 这些组合在一起构成了复杂的用户界面，并以此对应用的 UI 做不断的扩充。
 在 Flutter 中，这一任务又落到了 Widget 这里。就像在导航那一章提到的，
 Flutter 中的屏幕也是使用 Widgets 表示的，因为“万物皆 widget！”。使用 `Naivgator` 在不同的 
-`Route` 之间切换，而不同的路由则代表了不同的屏幕或页面，或是不同的状态，也可能是渲染相同的数据。
+`Route` 之间切换，而不同的路由则代表了不同的屏幕或页面，或是不同的���态，也可能是渲染相同的数据。
 
 ### How do I listen to iOS lifecycle events?
 
@@ -2307,8 +2307,8 @@ To customize the colors and styles of any child components, pass a
 `ThemeData` object to the `MaterialApp` widget. For example, in the code below,
 the primary swatch is set to blue and text selection color is red.
 
-定义所有子组件颜色和样式，可以直接传递 `ThemeData` 对象给 `MaterialApp` widget。���如，
-在下面的代码中，primary swatch 被设置为蓝色，而文本选中后的颜色被设置为红色。
+定义所有子组件颜色和样式，可以直接传递 `ThemeData` 对象给 `MaterialApp` widget。
+例如在下面的代码中，primary swatch 被设置为蓝色，而文本选中后的颜色被设置为红色。
 
 ```
 class SampleApp extends StatelessWidget {

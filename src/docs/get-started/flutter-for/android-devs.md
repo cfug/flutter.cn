@@ -110,7 +110,6 @@ Flutter 支持 [Material Components][] 库。
 Meterial Design 是一套 [为所有平台优化][optimized for all platforms]
 （包括 iOS）的灵活的设计系统。
 
-
 But Flutter is flexible and expressive enough to implement any design language.
 For example, on iOS, you can use the [Cupertino widgets][]
 to produce an interface that looks like [Apple's iOS design language][].
@@ -1642,6 +1641,7 @@ Flutter 当下并没有一个特定的管理字符串的资源管理系统。
 目前来讲，最好的办法是将字符串作为静态域存放在类中，
 并通过类访问它们。例如：
 
+<!-- skip -->
 ```dart
 class Strings {
   static String welcomeMessage = "Welcome To Flutter";
@@ -1652,6 +1652,7 @@ Then in your code, you can access your strings as such:
 
 接着在你们的代码中，你可以这样访问你的字符串：
 
+<!-- skip -->
 ```dart
 Text(Strings.welcomeMessage)
 ```
@@ -1874,6 +1875,7 @@ children.
 它们的孩子是一样的，
 而这个特性可以被充分利用来开发包含有相同的孩子但是会随时间改变的复杂布局。
 
+<!-- skip -->
 ```dart
   @override
   Widget build(BuildContext context) {

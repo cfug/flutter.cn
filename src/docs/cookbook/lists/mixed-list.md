@@ -35,7 +35,7 @@ Here's how you can create such a structure with Flutter:
 
   2. Convert the data source into a list of widgets.
 
-     把数据源转换成一个包含 Widget 的 List
+     将数据源的数据转换成列表 widget
 
 ## 1. Create a data source with different types of item
 
@@ -127,7 +127,7 @@ final items = List<ListItem>.generate(
 
 ## 2. Convert the data source into a list of widgets
 
-## 2. 把数据源转换成 widget 的 List
+## 2. 将数据源的数据转换成列表 widget
 
 To convert each item into a widget,
 use the [`ListView.builder()`][] constructor.
@@ -140,7 +140,7 @@ of item you're dealing with, and returns the appropriate widget
 for that type of item.
 
 通常，我们需要提供一个 builder 函数来确定我们正在处理的项目类型，
-并返回该类型项目的相应 Widget。
+并返回该类型项目的相应 widget。
 
 This example uses the `is` keyword to check the type of item.
 It's fast, and automatically casts each item to the appropriate type.

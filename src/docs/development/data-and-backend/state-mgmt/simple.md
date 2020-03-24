@@ -1,6 +1,8 @@
 ---
 title: Simple app state management
 title: 简单的应用状态管理
+description: A simple form of state management.
+description: 一个简单形式的状态管理。
 prev:
   title: Ephemeral versus app state
   title: 局部状态和全局应用状态
@@ -11,8 +13,8 @@ next:
   path: /docs/development/data-and-backend/state-mgmt/options
 ---
 
-Now that you know about [declarative UI programming]
-and the difference between [ephemeral and app state],
+Now that you know about [declarative UI programming][]
+and the difference between [ephemeral and app state][],
 you are ready to learn about simple app state management.
 
 现在大家已经了解了
@@ -164,6 +166,7 @@ parent or above.
 因为你只能通过父类的 build 方法来构建新 widget，
 如果你想修改 `contents`，就需要调用 `MyCart` 的父类甚至更高一级的类。
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (myTapHandler)"?>
 ```dart
 // GOOD
@@ -177,6 +180,7 @@ Now `MyCart` has only one code path for building any version of the UI.
 
 这里 `MyCart` 可以在各种版本的 UI 中调用同一个代码路径。
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (build)"?>
 ```dart
 // GOOD
@@ -244,6 +248,7 @@ so you can pass them around any way you want. So, inside
 Dart 的函数都是 first class 对象，所以你可以以任意方式传递它们。
 所以在 `MyCatalog` 里你可以使用下面的代码：
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/passing_callbacks.dart (methods)"?>
 ```dart
 @override
@@ -325,6 +330,7 @@ In our shopping app example, we want to manage the state of the cart in a
 在我们的购物应用示例中，我们打算用 `ChangeNotifier` 来管理购物车的状态。
 我们创建一个新类，继承它，像下面这样：
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
 ```dart
 class CartModel extends [!ChangeNotifier!] {
@@ -332,15 +338,22 @@ class CartModel extends [!ChangeNotifier!] {
   final List<Item> _items = [];
 
   /// An unmodifiable view of the items in the cart.
-
   UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
 
   /// The current total price of all items (assuming all items cost $42).
   int get totalPrice => _items.length * 42;
 
-  /// Adds [item] to cart. This is the only way to modify the cart from outside. 
+  /// Adds [item] to cart. This and [removeAll] are the only ways to modify the
+  /// cart from the outside.
   void add(Item item) {
     _items.add(item);
+    // This call tells the widgets that are listening to this model to rebuild.
+    [!notifyListeners!]();
+  }
+
+  /// Removes all items from the cart.
+  void removeAll() {
+    _items.clear();
     // This call tells the widgets that are listening to this model to rebuild.
     [!notifyListeners!]();
   }
@@ -366,6 +379,7 @@ here's a simple unit test of `CartModel`:
 （你都不需要使用 [widget 测试][widget testing]）。
 比如，这里有一个针对 `CartModel` 简单的单元测试：
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
 ```dart
 test('adding item increases total cost', () {
@@ -403,6 +417,7 @@ the only widget that is on top of both `MyCart` and `MyCatalog` is `MyApp`.
 放的级别太高（因为你不希望破坏整个结构）。
 但是在我们这里的例子中，`MyCart` 和 `MyCatalog` 之上只有 `MyApp`。
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/main.dart (main)" replace="/ChangeNotifierProvider/[!$&!]/g"?>
 ```dart
 void main() {
@@ -429,6 +444,7 @@ If you want to provide more than one class, you can use `MultiProvider`:
 
 如果你想提供更多状态，可以使用 `MultiProvider`：
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/main.dart (multi-provider-main)" replace="/multiProviderMain/main/g;/MultiProvider/[!$&!]/g"?>
 ```dart
 void main() {
@@ -456,6 +472,7 @@ This is done through the `Consumer` widget.
 
 完成这一步需要通过 `Consumer` widget。
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (descendant)" replace="/Consumer/[!$&!]/g"?>
 ```dart
 return [!Consumer!]<CartModel>(
@@ -507,6 +524,7 @@ once and get it through the builder.
 当模型发生改变的时候，该子树 **并不会** 改变，
 那么你就可以仅仅创建它一次，然后通过 builder 获得该实例。
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)" replace="/\bchild\b/[!$&!]/g"?>
 ```dart
 return Consumer<CartModel>(
@@ -529,6 +547,7 @@ just because some detail somewhere changed.
 最好能把 `Consumer` 放在 widget 树尽量低的位置上。
 你总不希望 UI 上任何一点小变化就全盘重新构建 widget 吧。
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
 // DON'T DO THIS
@@ -549,6 +568,7 @@ Instead:
 
 换成：
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (leafDescendant)"?>
 ```dart
 // DO THIS
@@ -590,6 +610,7 @@ with the `listen` parameter set to `false`.
 所以这里我们可以使用 `Provider.of`，
 并且将 `listen` 设置为 `false`。
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
 Provider.of<CartModel>(context, [!listen: false!]).removeAll();
@@ -606,10 +627,10 @@ rebuild when `notifyListeners` is called.
 
 ## 把代码集成在一起
 
-You can [check out the example] covered in this article.
+You can [check out the example][] covered in this article.
 If you want something simpler,
 see what the simple Counter app looks like when
-[built with `provider`].
+[built with `provider`][].
 
 你可以在文章中 [查看这个示例][check out the example]。
 如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何

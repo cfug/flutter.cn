@@ -78,8 +78,20 @@ contains a simple demo app that uses [Material Components][].
     然后在这个窗口中创建一个新的虚拟机。更多详细介绍，参见 [管理 AVDs][Managing AVDs]。
     
  1. Click the run icon in the toolbar, or invoke the menu item **Run > Run**.
-
+ 
     点击工具栏中的 Run 图标，或者在菜单中选择 **Run > Run**。
+
+
+{{site.alert.warning}}
+
+  When launching your app from a Mac, if you see
+  `ERROR: Could not connect to lockdownd, error code -17`,
+  make sure that you have [trusted your computer][].
+  
+  当在 Mac 电脑上运行你的应用时，如果看到这个错误提示：
+  `ERROR: Could not connect to lockdownd, error code -17`，
+  请确保设定了 [受信任的电脑选项][trusted your computer]。
+{{site.alert.end}}
 
 {% capture save_changes -%}
  : invoke **Save All**, or click **Hot Reload**
@@ -107,3 +119,7 @@ contains a simple demo app that uses [Material Components][].
 {% include run-profile.md ide_profile=ide_profile %}
 
 </div>
+
+[trusted your computer]: /docs/get-started/install/macos#trust
+
+

@@ -10,7 +10,7 @@ next:
 
 _If you are already familiar with state management in reactive apps,
 you can skip this section, though you might want to review the
-[list of different approaches]._
+[list of different approaches][]._
 
 **如果你早已熟悉响应式 App 中的状态管理，你可以跳过这个部分，
 不过这里也有一些关于 

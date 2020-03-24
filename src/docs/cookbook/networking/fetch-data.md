@@ -47,18 +47,12 @@ This recipe uses the following steps:
 The [`http`][] package provides the
 simplest way to fetch data from the internet.
 
-<<<<<<< HEAD
 [`http`][] 包为我们提供了获取网络数据最简单的方法。
 
-To install the `http` package, add it to the dependencies section
-of the `pubspec.yaml`. You can find the latest version of the
-[http package][] the pub.dev.
-=======
 To install the `http` package, add it to the
 dependencies section of the `pubspec.yaml` file.
 You can find the latest version of the
 [`http` package][] the pub.dev.
->>>>>>> f6a2ab9a2a8e2d29062f0f170fcd33c2ed590a25
 
 安装 `http` 包之前，你必须先把它添加到 `pubspec.yaml` 的依赖区域。
 你可以在 [pub.dev 找到 http 包的最新版本][http package]。
@@ -77,17 +71,13 @@ import 'package:http/http.dart' as http;
 
 ## 2. Make a network request
 
-<<<<<<< HEAD
 ## 2. 进行网络请求
 
-In this example, fetch a sample album from the
-=======
-In this example, you'll fetch a sample album from the
->>>>>>> f6a2ab9a2a8e2d29062f0f170fcd33c2ed590a25
+This recipe covers how to fetch a sample album from the
 [JSONPlaceholder][] using the [`http.get()`][] method.
 
-在这里，你可以使用 [`http.get()`][] 方法从 [JSONPlaceholder][] 上
-获取到一个样本相册数据。
+在这里，你可以使用 [`http.get()`][] 方法
+从 [JSONPlaceholder][] 上获取到一个样本相册数据。
 
 <!-- skip -->
 ```dart
@@ -122,20 +112,14 @@ While it's easy to make a network request, working with a raw
 To make your life easier,
 convert the `http.Response` into a Dart object.
 
-<<<<<<< HEAD
 虽然进行网络请求很容易，但是处理 `Future<http.Response>` 却并不简单，
 为了后续处理起来更加方便，我们需要将 `http.Response` 转换成一个 Dart 对象。
 
-### Create a `Album` class
+### Create an `Album` class
 
 ### 创建一个 `Album` 类
 
-First, create a `Album` class that contains the data from the
-=======
-### Create an `Album` class
-
 First, create an `Album` class that contains the data from the
->>>>>>> f6a2ab9a2a8e2d29062f0f170fcd33c2ed590a25
 network request. It includes a factory constructor that
 creates an `Album` from JSON.
 
@@ -239,7 +223,7 @@ The `initState()` method is called exactly once and then never again.
 If you want to have the option of reloading the API in response to an
 [`InheritedWidget`][] changing, put the call into the
 `didChangeDependencies()` method.
-See [`State`][] for more details. 
+See [`State`][] for more details.
 
 `initState()` 方法仅会被调用一次。
 如果你想要响应 [`InheritedWidget`][] 改变以重新加载 API 的话，
@@ -330,9 +314,9 @@ it's not recommended to put an API call in a `build()` method.
 
 Flutter calls the `build()` method every time it needs
 to change anything in the view,
-and this happens surprisingly often. If you leave the fetch
-call in your `build()` method,
-you'll flood the API with unnecessary calls and slow down your app.
+and this happens surprisingly often.
+Leaving the `fetch` call in your `build()` method
+floods the API with unnecessary calls and slows down your app.
 
 每当 Flutter 需要改变视图中的一些内容时（这个发生的频率非常高），
 就会调用 `build()` 方法。因此，如果你将数据请求置于 `build()` 内部，
@@ -467,7 +451,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-Future<Album> futureAlbum;
+  Future<Album> futureAlbum;
 
   @override
   void initState() {

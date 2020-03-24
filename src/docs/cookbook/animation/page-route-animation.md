@@ -86,6 +86,7 @@ a second route titled "Page 2".
 下面的样例将会创建两个路由：一个主页路由，
 包含了 "Go!" 按钮，还有第二个路由，包含了一个显示 "Page 2 的标题。
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 
@@ -143,9 +144,10 @@ constructor). In this case, the Offset is a 2D vector for the
 Setting the `dy` argument to 1 represents a vertical translation one
 full height of the page.
 
-为了使新页面从底部动画出来，它应该从 `Offset(0,1)` 到 `Offset(0, 0)` 进行动画。（通常我们会使用 `Offset.zero` 构造器。）
-在这个情况下，对于 [FractionalTranslation]({{site.api}}/flutter/widgets/FractionalTranslation-class.html)
-widget 来说偏移量是一个 2D 矢量值。将 `dy` 参数设为 1，这代表在竖直方向上切换整个页面的高度。
+为了使新页面从底部动画出来，它应该从 `Offset(0,1)` 到 `Offset(0, 0)` 进行动画。
+（通常我们会使用 `Offset.zero` 构造器。）在这个情况下，
+对于 ['FractionalTranslation'][] widget 来说偏移量是一个 2D 矢量值。
+将 `dy` 参数设为 1，这代表在竖直方向上切换整个页面的高度。
 
 The `transitionsBuilder` callback has an `animation` parameter. It's an
 `Animation<double>` that produces values between 0 and 1. Convert the
@@ -155,6 +157,7 @@ Animation<double> into an Animation<Offset> using a Tween:
 它其实是一个 `Animation<double>`，提供 0 到 1 的值。
 使用 Tween 来将 Animation<double> 转为 Animation<Offset>。
 
+<!-- skip -->
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -185,6 +188,7 @@ with the `Animation<Offset>` and the child widget:
 AnimatedWidget 返回了一个 带有 `Animation<Offset>` 
 的 [`SlideTransition`][]，以及 child widget：
 
+<!-- skip -->
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -219,6 +223,7 @@ and pass it a Curve:
 
 要使用 Curve，创建一个 [`CurveTween`][] 并传一个 Curve：
 
+<!-- skip -->
 ```dart
 var curve = Curves.ease;
 var curveTween = CurveTween(curve: curve);
@@ -238,6 +243,7 @@ use [`chain()`][]:
 
 为了结合两个 tween，请使用 [`chain()`][]:
 
+<!-- skip -->
 ```dart
 var begin = Offset(0.0, 1.0);
 var end = Offset.zero;
@@ -249,9 +255,11 @@ var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 Then use this tween by passing it to `animation.drive()`. This creates a new
 `Animation<Offset>` that can be given to the `SlideTransition` widget:
 
-它们通过把这个 tween 传递给 `animation.drive()` 来创建一个新的 `Animation<Offset>`，
+它们通过把这个 tween 传递给 `animation.drive()` 
+来创建一个新的 `Animation<Offset>`，
 然后你就能把它传给 `SlideTransition` widget：
 
+<!-- skip -->
 ```dart
 return SlideTransition(
   position: animation.drive(tween),
@@ -285,6 +293,7 @@ Another way to create an `Animation<Offset>` with an easing curve is to use a
 
 使用缓动曲线创建 `Animation<Offset>` 的另一种方法是使用 `CurvedAnimation`：
 
+<!-- skip -->
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);

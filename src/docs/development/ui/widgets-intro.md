@@ -1,6 +1,8 @@
 ---
 title: Introduction to widgets
 title: Widgets 介绍
+description: Learn about Flutter's widgets.
+description: 了解 Flutter widget 相关的内容。
 ---
 
 {% assign api = site.api | append: '/flutter' -%}

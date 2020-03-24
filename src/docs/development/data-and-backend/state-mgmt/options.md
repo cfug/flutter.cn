@@ -1,6 +1,8 @@
 ---
 title: List of state management approaches
 title: 状态 (State) 管理参考
+description: A list of different approaches to managing state.
+description: 通过其他不同的方式来进行状态管理。
 prev:
   title: Simple app state management
   title: 简单的共享 (app) 状态管理

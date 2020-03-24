@@ -497,7 +497,7 @@ a different Dart function.
   防止被 [tree-shaken][] 优化掉，
   而没有编译。
 
-  <!--code-excerpt "main.dart" title-->
+  <!-- skip -->
   ```dart
   @pragma('vm:entry-point')
   void myOtherEntrypoint() { ... };

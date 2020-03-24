@@ -3,6 +3,8 @@ title: Differentiate between ephemeral state and app state
 title: 短时 (ephemeral) 和应用 (app) 状态的区别
 short-title: Ephemeral versus app state
 short-title: 区分短时和共享状态
+description: How to tell the difference between ephemeral and app state.
+description: 介绍短时 (ephemeral) 和应用 (app) 状态的区别有哪些。
 prev:
   title: Start thinking declaratively
   title: 声明式的编程思维
@@ -16,7 +18,8 @@ next:
 _This doc introduces app state, ephemeral state,
 and how you might manage each in a Flutter app._
  
-**本文将介绍应用 (app)状态 ，短时 (ephemeral) 状态, 以及在一个 Flutter 应用中你可以如何应用这两种状态**
+本文将介绍应用 (app) 状态 ，短时 (ephemeral) 状态, 
+以及在一个 Flutter 应用中你可以如何应用这两种状态。
 
 In the broadest possible sense, the state of an app is everything that
 exists in memory when the app is running. This includes the app's assets,
@@ -37,8 +40,10 @@ moment in time". Second, the state that you _do_ manage yourself can
 be separated into two conceptual types: ephemeral state and app state.
 
 首先，你不需要管理一些状态（例如纹理），框架本身会替你管理。
-所以对于状态的更有用的定义是“当任何时候你需要重建你的用户界面时你所需要的数据”。
-其次，你需要自己**管理**的状态可以分为两种概念类型：短时 (ephemeral) 状态和应用 (app)状态。
+所以对于状态的更有用的定义是
+“当任何时候你需要重建你的用户界面时你所需要的数据”。
+其次，你需要自己 **管理** 的状态可以分为两种概念类型：
+短时 (ephemeral) 状态和应用 (app) 状态。
 
 ## Ephemeral state
 
@@ -47,7 +52,8 @@ be separated into two conceptual types: ephemeral state and app state.
 Ephemeral state (sometimes called _UI state_ or _local state_)
 is the state you can neatly contain in a single widget.
 
-短时状态 (有时也称 **用户界面(UI)状态** 或者 **局部状态**) 是你可以完全包含在一个独立 widget 中的状态。
+短时状态 (有时也称 **用户界面(UI)状态** 或者 **局部状态**) 
+是你可以完全包含在一个独立 widget 中的状态。
 
 This is, intentionally, a vague definition, so here are a few examples. 
 
@@ -68,21 +74,23 @@ This is, intentionally, a vague definition, so here are a few examples.
 Other parts of the widget tree seldom need to access this kind of state.
 There is no need to serialize it, and it doesn't change in complex ways.
 
-widget 树中其他部分不需要访问这种状态。不需要去序列化这种状态，这种状态也不会以复杂的方式改变。
+widget 树中其他部分不需要访问这种状态。
+不需要去序列化这种状态，这种状态也不会以复杂的方式改变。
 
 In other words, there is no need to use state management techniques
 (ScopedModel, Redux, etc.) on this kind of state.
 All you need is a `StatefulWidget`.
 
-换句话说，不需要使用状态管理架构（例如 ScopedModel, Redux）去管理这种状态。你需要用的只是一个 `StatefulWidget`。
+换句话说，不需要使用状态管理架构（例如 ScopedModel, Redux）去管理这种状态。
+你需要用的只是一个 `StatefulWidget`。
 
 Below, you see how the currently selected item in a bottom navigation bar is
 held in the `_index` field of the `_MyHomepageState` class.
 In this example, `_index` is ephemeral state.
 
 在下方你可以看到一个底部导航栏中当前被选中的项目是
-如何被被保存在 `_MyHomepageState` 类 的 `_index` 变量中。在这个例子中， 
-`_index` 是一个短时状态。
+如何被被保存在 `_MyHomepageState` 类的 `_index` 变量中。
+在这个例子中，`_index` 是一个短时状态。
 
 <?code-excerpt "state_mgmt/simple/lib/src/set_state.dart (Ephemeral)" plaster="// ... items ..."?>
 ```dart
@@ -115,7 +123,7 @@ class is completely natural. No other part of your app needs to access
 And, if the user closes and restarts the app,
 you don't mind that `_index` resets to zero.
 
-在这里，使用 `setState()` 和一个在有状态 Widget 的 State 类中的变量是很自然的。
+在这里，使用 `setState()` 和一个在有状态 widget 的 State 类中的变量是很自然的。
 你的 app 中的其他部分不需要访问 `_index`。
 这个变量只会在 `MyHomepage` widget 中改变。
 而且，如果用户关闭并重启这个 app，你不会介意 `_index` 重置回 0.
@@ -174,8 +182,9 @@ the state in your app. In fact, the Flutter team does this in many
 simple app samples (including the starter app that you get with every
 `flutter create`).
 
-需要说明的是，你*可以*使用 `State` 和 `setState()` 管理你的应用中的所有状态。实际上Flutter团队在很多简单的
-示例程序（包括你每次使用 `flutter create` 命令创建的初始应用）中正是这么做的。
+需要说明的是，你*可以*使用 `State` 和 `setState()` 管理你的应用中的所有状态。
+实际上Flutter团队在很多简单的示例程序
+（包括你每次使用 `flutter create` 命令创建的初始应用）中正是这么做的。
 
 It goes the other way, too. For example, you might decide that&mdash;in
 the context of your particular app&mdash;the selected tab in a bottom

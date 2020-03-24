@@ -39,6 +39,7 @@ void onLoadImage(Image image) {
 }
 ```
 
+<!-- skip -->
 ```dart
 // New Logic Pseudocode
 void onLoadImage(Image image) {

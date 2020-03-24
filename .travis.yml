@@ -28,9 +28,9 @@ env:
     - TASK="./tool/check-code.sh"
     - TASK="./tool/translator/build.sh"
 
-matrix:
-  allow_failures:
-    - env: TASK="./tool/check-code.sh"
+matrix: 
+  allow_failures:       
+      - env: TASK="./tool/check-code.sh"        
 
 before_install:
   - source ./tool/env-set.sh

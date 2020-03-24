@@ -115,6 +115,7 @@ Next, import the flutter_localizations library and specify
 下一步，引入 flutter_localizations 库，
 然后为 MaterialApp 指定 `localizationsDelegates` 和 `supportedLocales`：
 
+<!-- skip -->
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -199,6 +200,7 @@ locales should include:
 三个不同的国家/地区代码能够完整地表达每个变种的中文，
 你应该包括以下支持的语言环境:
 
+<!-- skip -->
 ```dart
 // Full Chinese support for CN, TW, and HK
 supportedLocales: [
@@ -274,6 +276,7 @@ You can always lookup an app's current locale with
 
 你可以通过调用 `Localizations.localeOf()` 方法来查看 app 当前的语言环境。 
 
+<!-- skip -->
 ```dart
 Locale myLocale = Localizations.localeOf(context);
 ```
@@ -343,6 +346,7 @@ They can be retrieved with `Localizations.of()`:
 类提供的一个 `LocalizationDelegate` 方法创建的，
 它们可以通过 `Localizations.of` 方法获得。
 
+<!-- skip -->
 ```dart
 Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 ```
@@ -353,6 +357,7 @@ so the `MaterialLocalizations` class provides a convenient shorthand:
 因为这个特定的 `Localizations.of()` 表达式经常使用，
 所以 `MaterialLocalizations` 类提供了一个快捷访问：
 
+<!-- skip -->
 ```dart
 static MaterialLocalizations of(BuildContext context) {
   return Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
@@ -400,6 +405,7 @@ flutter_localizations package 包括了多种语言本地化接口的实现，�
 国际化 app 必须为这些类的指定本地化 delegate，
 就如在 [配置一个国际化的 app](#setting-up) 中描述的那样。
 
+<!-- skip -->
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -470,6 +476,7 @@ DemoLocalizations 类包含了 app 语言环境内支持的
 `initializeMessages()` 方法来加载翻译好的字符串，
 然后使用 [`Intl.message()`][] 来查阅它们。
 
+<!-- skip -->
 ```dart
 class DemoLocalizations {
   DemoLocalizations(this.localeName);
@@ -563,6 +570,7 @@ whatever locale the user selects:
 [`localeResolutionCallback`][]，
 例如，让你的 app 无条件的接受用户选择的任何语言环境：
 
+<!-- skip -->
 ```dart
 class DemoApp extends StatelessWidget {
   @override
@@ -603,6 +611,7 @@ directly in per language Maps.
 localizations 和 DemoLocalizations，
 并且直接将它所有的翻译放在每个语言的映射当中。
 
+<!-- skip -->
 ```dart
 class DemoLocalizations {
   DemoLocalizations(this.locale);
@@ -635,6 +644,7 @@ because no asynchronous loading needs to take place.
 在这个最小实现的 app 当中，DemoLocalizationDelegate 有一点不一样。
 它的 `load` 方法返回了一个 [`SynchronousFuture`][]，因为不需要进行异步的加载。
 
+<!-- skip -->
 ```dart
 class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations> {
   const DemoLocalizationsDelegate();
@@ -710,6 +720,7 @@ delegate 类包括基本的日期和数字格式的本地化。
 里面的字符串值属性的 getters 所定义的，
 像下面这样：
 
+<!-- skip -->
 ```dart
 @override
 String get backButtonTooltip => r'Back';
@@ -744,6 +755,7 @@ The variables are expanded by parameterized localization methods:
 因为有一些时候这些字符串会包含一些带有 `$` 前缀的变量。
 通过调用带参数的本地化方法，这些变量会被替换：
 
+<!-- skip -->
 ```dart
 @override
 String get aboutListTileTitleRaw => r'About $applicationName';
@@ -773,6 +785,7 @@ adds the `BeMaterialLocalizations` delegate instance to the app's
 这里有一些代码展示了如何设置 app 的语言为白俄罗斯语以及如何给 app 的
 `localizationsDelegates` 列表添加 `BeMaterialLocalizations` delegate 实例。
 
+<!-- skip -->
 ```dart
 MaterialApp(
   localizationsDelegates: [

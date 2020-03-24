@@ -15,6 +15,8 @@ don't include a `default:` case.
 
 Prior to this change, the `TargetPlatform` enum only contained four values,
 and was defined like this:
+
+<!-- skip -->
 ```dart
 enum TargetPlatform {
   android,
@@ -28,6 +30,7 @@ A `switch` statement only needed to handle these cases, and desktop applications
 which wanted to run on Linux or Windows usually had a test something like this
 in their `main()` method:
 
+<!-- skip -->
 ```dart
 // Sets a platform override for desktop to avoid exceptions. See
 // https://flutter.dev/desktop#target-platform-override for more info.
@@ -47,6 +50,7 @@ void main() {
 
 The `TargetPlatform` enum is now defined as:
 
+<!-- skip -->
 ```dart
 enum TargetPlatform {
   android,

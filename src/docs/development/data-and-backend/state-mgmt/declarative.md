@@ -1,6 +1,8 @@
 ---
 title: Start thinking declaratively
 title: 状态管理中的声明式编程思维
+description: How to think about declarative programming.
+description: 如何理解声明式编程。
 prev:
   title: Intro
   title: 状态 (State) 管理介绍
@@ -11,9 +13,9 @@ next:
   path: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
 ---
 
-If you're coming to Flutter from an imperative framework (such as Android SDK or
-iOS UIKit), you need to start thinking about app development from a new
-perspective.
+If you're coming to Flutter from an imperative framework
+(such as Android SDK or iOS UIKit), you need to start
+thinking about app development from a new perspective.
 
 如果你是从命令式框架（例如 Android SDK 或者 iOS UIKit）转到 Flutter 应用，
 那么，你需要开始从一个新的角度来考虑 app 开发了。
@@ -52,7 +54,7 @@ and the UI rebuilds from scratch.
 （例如 widget.setText ）&mdash;你改变了状态，那么用户界面将重新构建。
 
 Read more about the declarative approach to UI programming
-[in the get started guide].
+[in the get started guide][].
 
 在 [声明式 UI 介绍][in the get started guide]
 中你可以阅读更多有关声明式编程思维的信息。

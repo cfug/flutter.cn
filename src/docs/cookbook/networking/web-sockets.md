@@ -18,31 +18,34 @@ you can connect to servers using `WebSockets`.
 `WebSockets` allow for two-way communication with a server
 without polling.
 
-除了普通的 HTTP 请求，你还可以通过 `WebSockets` 来连接服务器。`WebSockets` 可以以非轮询的方式与服务器进行双向通信。
+除了普通的 HTTP 请求，你还可以通过 `WebSockets` 来连接服务器，
+`WebSockets` 可以以非轮询的方式与服务器进行双向通信。
 
 In this example, connect to a
 [test server provided by websocket.org][].
 The server sends back the same message you send to it.
 
-在这里，你可以连接一个 [由 websocket.org 提供的测试服务器](http://www.websocket.org/echo.html)。该服务器只会返回你发送的信息。
+在这里，你可以连接一个 
+[由 websocket.org 提供的测试服务器][test server provided by websocket.org]。
+该服务器只会返回你发送的信息。
 
 This recipe uses the following steps:
 
 这个教程里包含以下步骤：
 
-  1. Connect to a WebSocket server
+  1. Connect to a WebSocket server.
 
      连接 WebSocket 服务器
 
-  2. Listen for messages from the server
+  2. Listen for messages from the server.
 
      监听来自服务器的消息
 
-  3. Send data to the server
+  3. Send data to the server.
 
      向服务器发送数据
   
-  4. Close the WebSocket connection
+  4. Close the WebSocket connection.
 
      关闭 WebSocket 连接
 
@@ -139,7 +142,8 @@ To send data to the server,
 `add()` messages to the `sink` provided
 by the `WebSocketChannel`.
 
-要向服务器发送数据，可以使用 `WebSocketChannel` 提供的 `sink` 下的 `add()` 方法来发送信息。
+要向服务器发送数据，
+可以使用 `WebSocketChannel` 提供的 `sink` 下的 `add()` 方法来发送信息。
 
 <!-- skip -->
 ```dart

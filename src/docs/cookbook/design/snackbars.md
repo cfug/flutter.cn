@@ -115,13 +115,14 @@ the message.
 在某些情况下，我们可能想在显示 SnackBar 的时候给用户提供一个附加的操作。
 比如，当他们意外的删除了一个消息，我们可以提供一个撤销更改的操作。
 
-To achieve this, we can provide an additional `action` to the `SnackBar` Widget.
+To achieve this, we can provide an additional `action` to the `SnackBar` widget.
 
 Here's an example of providing
 an additional `action` to the `SnackBar` widget:
 
 这个例子里，我们在创建 `SnackBar` widget 的时候提供一个附加的 `action ` 参数。
 
+<!-- skip -->
 ```dart
 final snackBar = SnackBar(
   content: Text('Yay! A SnackBar!'),

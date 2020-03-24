@@ -30,7 +30,7 @@ When a todo is tapped, navigate to a new screen (widget) that
 displays information about the todo.
 This recipe uses the following steps:
 
-还记得么，全屏的界面也只是 Widget。在这个例子中，我们会创建一个待办事项列表，
+还记得么，全屏的界面也只是 widget。在这个例子中，我们会创建一个待办事项列表，
 当某个事项被点击的时候，会跳转到新的一屏 (widget)，
 在新的一屏显示待办事项的详细信息。
 
@@ -97,9 +97,9 @@ see the [Use lists][] recipe.
 final todos = List<Todo>.generate(
   20,
   (i) => Todo(
-        'Todo $i',
-        'A description of what needs to be done for Todo $i',
-      ),
+    'Todo $i',
+    'A description of what needs to be done for Todo $i',
+  ),
 );
 ```
 
@@ -145,19 +145,15 @@ Then, build the UI using the given todo.
 <!-- skip -->
 ```dart
 class DetailScreen extends StatelessWidget {
-  // Declare a field that holds the Todo.  
   // 声明一个成员变量来保存 Todo 对象 (Declare a field that holds the Todo)
   final Todo todo;
 
-
-  // In the constructor, require a Todo.
   // 构造函数需要 Todo 对象 (In the constructor, require a Todo)
   DetailScreen({Key key, @required this.todo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Use the Todo to create the UI.    
-    // 使用 Todo 对象构建 UI (Use the Todo to create our UI)
+    // 使用 Todo 对象构建 UI (Use the Todo to create the UI)
     return Scaffold(
       appBar: AppBar(
         title: Text(todo.title),
@@ -236,9 +232,9 @@ void main() {
       todos: List.generate(
         20,
         (i) => Todo(
-              'Todo $i',
-              'A description of what needs to be done for Todo $i',
-            ),
+          'Todo $i',
+          'A description of what needs to be done for Todo $i',
+        ),
       ),
     ),
   ));
@@ -313,12 +309,16 @@ Repeat the first two steps.
 
 ### 创建一个详情页以提取参数
 
-Next, create a detail screen that extracts and displays the title and description from the `Todo`. To access the `Todo`, use the `ModalRoute.of()` method. This method returns the current route with the arguments.
+Next, create a detail screen that extracts and displays
+the title and description from the `Todo`. 
+To access the `Todo`, use the `ModalRoute.of()` method.
+This method returns the current route with the arguments.
 
 接下来，创建一个详情页用于提取并显示来自 `Todo` 页面的标题和描述信息。
 为了访问 `Todo` 页面，请使用 `ModalRoute.of()` 方法。
 它将会返回带有参数的当前路由。
 
+<!-- skip -->
 ```dart
 class DetailScreen extends StatelessWidget {
   @override
@@ -343,36 +343,42 @@ class DetailScreen extends StatelessWidget {
 
 ### 导航并向详情页传递参数
 
-Finally, navigate to the `DetailScreen` when a user taps a `ListTile` widget using `Navigator.push()`. Pass the arguments as part of the `RouteSettings`. The `DetailScreen` extracts these arguments.
+Finally, navigate to the `DetailScreen` when a user taps
+a `ListTile` widget using `Navigator.push()`.
+Pass the arguments as part of the `RouteSettings`.
+The `DetailScreen` extracts these arguments.
 
-最后，当用户点击 `ListTile` widget 时，使用 `Navigator.push()` 导航到 `DetailScreen`。
-将参数作为 `RouteSettings` 的一部分进行传递。`DetailScreen` 将会提取这些参数。
+最后，当用户点击 `ListTile` widget 时，
+使用 `Navigator.push()` 导航到 `DetailScreen`。
+将参数作为 `RouteSettings` 的一部分进行传递，
+`DetailScreen` 将会提取这些参数。
 
+<!-- skip -->
 ```dart
-ListView.builder(                                                    
-  itemCount: todos.length,                                           
-  itemBuilder: (context, index) {                                    
-    return ListTile(                                                 
-      title: Text(todos[index].title),                               
+ListView.builder(
+  itemCount: todos.length,
+  itemBuilder: (context, index) {
+    return ListTile(
+      title: Text(todos[index].title),
       // When a user taps the ListTile, navigate to the DetailScreen.
-      // Notice that you're not only creating a DetailScreen, you're 
-      // also passing the current todo through to it.                
-      onTap: () {                                                    
-        Navigator.push(                                              
-          context,                                                   
-          MaterialPageRoute(                                         
-            builder: (context) => DetailScreen(),                    
-            // Pass the arguments as part of the RouteSettings. The  
-            // DetailScreen reads the arguments from these settings. 
-            settings: RouteSettings(                                 
-              arguments: todos[index],                               
-            ),                                                        
-          ),                                                          
-        );                                                           
-      },                                                             
-    );                                                                
-  },                                                                 
-),                                                                                                                           
+      // Notice that you're not only creating a DetailScreen, you're
+      // also passing the current todo through to it.
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailScreen(),
+            // Pass the arguments as part of the RouteSettings. The
+            // DetailScreen reads the arguments from these settings.
+            settings: RouteSettings(
+              arguments: todos[index],
+            ),
+          ),
+        );
+      },
+    );
+  },
+),
 ```
 
 ### Complete example

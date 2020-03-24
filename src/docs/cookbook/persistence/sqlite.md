@@ -287,7 +287,7 @@ for a specific dog or a list of all dogs. This involves two steps:
   2. Convert the `List<Map>` into a `List<Dog>`.
   
      将 `List<Map>` 转换成 `List<Dog>` 数据类型。
-  
+
 <!-- skip -->
 ```dart
 // A method that retrieves all the dogs from the dogs table.
@@ -321,8 +321,8 @@ you might want to update that information at a later time.
 You can do this by using the [`update()`][]
 method from the `sqflite` library.
 
-使用 `sqflite` package 中的
-[`update()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html) 方法，可以对已经插入到数据库中的数据进行修改（更新）。
+使用 `sqflite` package 中的 [`update()`][]方法，
+可以对已经插入到数据库中的数据进行修改（更新）。
 
 This involves two steps:
 
@@ -386,9 +386,7 @@ you can also remove dogs from the database. To delete data,
 use the [`delete()`][] method from the `sqflite` library.
 
 除了插入和修改狗狗们的数据，你还可以从数据库中删除狗狗的数据。
-删除数据用到了 `sqflite` package 中的
-[`delete()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html)
-方法
+删除数据用到了 `sqflite` package 中的 [`delete()`][] 方法。
 
 In this section, create a function that takes an id and deletes the dog with
 a matching id from the database. To make this work, you must provide a `where`
@@ -464,15 +462,13 @@ void main() async {
     // 设置版本。 它将执行 onCreate 方法，同时提供数据库升级和降级的路径。
     version: 1,
   );
-
   Future<void> insertDog(Dog dog) async {
     // Get a reference to the database (获得数据库引用)
     final Database db = await database;
-
     // Insert the Dog into the correct table. Also specify the
     // `conflictAlgorithm`. In this case, if the same dog is inserted
     // multiple times, it replaces the previous data.
-	// 在正确的数据表里插入狗狗的数据。 我们也要在这个操作中指定 `conflictAlgorithm` 策略。
+    // 在正确的数据表里插入狗狗的数据。 我们也要在这个操作中指定 `conflictAlgorithm` 策略。
     // 如果同样的狗狗数据被多次插入，后一次插入的数据将会覆盖之前的数据。
     await db.insert(
       'dogs',
@@ -484,10 +480,8 @@ void main() async {
   Future<List<Dog>> dogs() async {
     // Get a reference to the database (获得数据库引用)
     final Database db = await database;
-
     // Query the table for all The Dogs (查询数据表，获取所有的狗狗们)
     final List<Map<String, dynamic>> maps = await db.query('dogs');
-
     // Convert the List<Map<String, dynamic> into a List<Dog> (将 List<Map<String, dynamic> 转换成 List<Dog> 数据类型)
     return List.generate(maps.length, (i) {
       return Dog(
@@ -501,7 +495,6 @@ void main() async {
   Future<void> updateDog(Dog dog) async {
     // Get a reference to the database (获得数据库引用)
     final db = await database;
-
     // Update the given Dog (修改给定的狗狗的数据)
     await db.update(
       'dogs',
@@ -516,7 +509,6 @@ void main() async {
   Future<void> deleteDog(int id) async {
     // Get a reference to the database (获得数据库引用)
     final db = await database;
-
     // Remove the Dog from the database (将狗狗从数据库移除)
     await db.delete(
       'dogs',
@@ -532,13 +524,10 @@ void main() async {
     name: 'Fido',
     age: 35,
   );
-
   // Insert a dog into the database (在数据库插入一条狗狗的数据)
   await insertDog(fido);
-
   // Print the list of dogs (only Fido for now) [打印一个列表的狗狗们 (现在列表里只有一只叫 Fido 的狗狗)]
   print(await dogs());
-
   // Update Fido's age and save it to the database (修改数据库中 Fido 的 年龄并且保存)
   fido = Dog(
     id: fido.id,
@@ -546,13 +535,10 @@ void main() async {
     age: fido.age + 7,
   );
   await updateDog(fido);
-
   // Print Fido's updated information (打印 Fido 的修改后的信息)
   print(await dogs());
-
   // Delete Fido from the database (从数据库中删除 Fido)
   await deleteDog(fido.id);
-
   // Print the list of dogs (empty) [打印一个列表的狗狗们 (这里已经空了)]
   print(await dogs());
 }
@@ -561,9 +547,7 @@ class Dog {
   final int id;
   final String name;
   final int age;
-
   Dog({this.id, this.name, this.age});
-
   Map<String, dynamic> toMap() {
     return {
       'id': id,

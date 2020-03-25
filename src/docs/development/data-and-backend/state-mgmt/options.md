@@ -34,7 +34,7 @@ many of which have been contributed by the Flutter community:
   a video from Google I/O 2018, and an [accompanying article]
 
   [使用 Flutter 构建响应式移动应用](https://www.bilibili.com/video/av55808989/)，
-  ���频来自 Google I/O 2018，
+  视频来自 Google I/O 2018，
   以及一篇 
   [随附文章：Build reactive mobile apps in Flutter — companion article][accompanying article]
 

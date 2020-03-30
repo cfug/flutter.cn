@@ -1,6 +1,8 @@
 ---
 title: Performance profiling
 title: 性能分析
+description: How to profile performance for a Flutter app.
+description: 本篇将如何测量你的 Flutter 应用的性能。
 prev:
   title: An introduction to integration testing
   title: Flutter 集成测试介绍

@@ -1,6 +1,8 @@
 ---
 title: Platform specific behaviors and adaptations
 title: 不同平台操作体验的差异和适配
+description: Learn more about Flutter's platform adaptiveness.
+description: 了解更多 Flutter 的平台适配机制。
 ---
 
 ## Adaptation philosophy

@@ -1,7 +1,7 @@
 ---
 title: Performance
 title: 性能评估
-description: Evaluating the performance of your app from several angles..
+description: Evaluating the performance of your app from several angles.
 description: 从多个角度评估你的应用性能..
 ---
 

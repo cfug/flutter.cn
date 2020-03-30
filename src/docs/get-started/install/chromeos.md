@@ -1,6 +1,8 @@
 ---
 title: Chrome OS install
 title: 在 Chrome OS 上安装和配置 Flutter 开发环境
+description: How to install on Chrome OS.
+description: 如何在 Chrome OS 上安装 Flutter。
 short-title: Chrome OS
 next:
   title: Set up an editor

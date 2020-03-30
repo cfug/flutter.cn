@@ -85,7 +85,7 @@ and it's good for a quick proof of concept.
 
 Manual decoding does not perform well when your project becomes bigger.
 Writing decoding logic by hand can become hard to manage and error-prone.
-If you have a typo when accessing an nonexistent JSON
+If you have a typo when accessing a nonexistent JSON
 field, your code throws an error during runtime.
 
 当你的项目变大时，手动解码表现得并不理想。
@@ -93,8 +93,8 @@ field, your code throws an error during runtime.
 如果你产生了笔误去获取一个不存在的 JSON 字段，
 你的代码会在运行时抛出一个错误。
 
-If you do not have many JSON models in your project and are looking to test a
-concept quickly, manual serialization might be the way you want to start.
+If you do not have many JSON models in your project and are looking to test a concept quickly, 
+manual serialization might be the way you want to start.
 For an example of manual encoding, see
 [Serializing JSON manually using dart:convert][].
 
@@ -175,8 +175,8 @@ when using reflection.
 
 Although you cannot use runtime reflection with Flutter, some libraries give
 you similarly easy-to-use APIs but are based on code generation instead. This
-approach is covered in more detail in the [code generation
-libraries](#code-generation) section.
+approach is covered in more detail in the 
+[code generation libraries][] section.
 
 尽管你不能在 Flutter 中使用运行时反射，
 还是有一些库提供了基于代码生成的方便使用的 API，
@@ -796,6 +796,7 @@ For more information, see the following resources:
   [Flutter 中有关 dart:mirrors 的讨论][discussion about dart:mirrors in Flutter]
 
 [`built_value`]: {{site.pub}}/packages/built_value
+[code generation libraries]: #code-generation
 [`dart:convert`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [`explicitToJson`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
 [Flutter Favorite]: /docs/development/packages-and-plugins/favorites

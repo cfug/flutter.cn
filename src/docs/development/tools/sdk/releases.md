@@ -3,7 +3,7 @@ title: Flutter SDK releases
 title: Flutter SDK 版本列表
 short-title: Releases
 short-title: 版本列表
-description: All current Flutter SDK releases, both stable and developer.
+description: All current Flutter SDK releases, both stable and dev.
 description: 所有 Flutter SDK 的版本列表，包括稳定版和开发版。
 toc: false
 ---

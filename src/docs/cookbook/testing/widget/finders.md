@@ -1,6 +1,8 @@
 ---
 title: Find widgets
 title: 定位到目标 Widgets
+description: How to use the Finder classes for testing widgets.
+description: 如何在 widget 测试中使用 Finder 类。
 prev:
   title: An introduction to widget testing
   title: Widget 测试介绍

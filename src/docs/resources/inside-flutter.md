@@ -1,6 +1,8 @@
 ---
 title: Inside Flutter
 title: Flutter 工作原理
+description: Learn about Flutter's inner workings from one of the founding engineers.
+description: 向核心工程师了解 Flutter 的内部工作原理。
 ---
 
 This document describes the inner workings of the Flutter toolkit that make

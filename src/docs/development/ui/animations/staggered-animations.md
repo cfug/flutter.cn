@@ -1,6 +1,8 @@
 ---
 title: Staggered Animations
 title: 交织动画
+description: How to write a staggered animation in Flutter.
+description: 如何在 Flutter 中编写一个交织动画。
 short-title: Staggered
 short-title: 交织动画
 ---

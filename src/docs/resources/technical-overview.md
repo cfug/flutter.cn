@@ -1,6 +1,8 @@
 ---
 title: Technical overview
 title: 技术概览
+description: A technical overview of Flutter.
+description: Flutter 技术概览。
 ---
 
 ## What is Flutter?
@@ -9,7 +11,9 @@ title: 技术概览
 
 Flutter is an app SDK for building high-performance,
 high-fidelity apps for iOS, Android, web
-([beta](https://flutter.dev/web)), and desktop ([technical preview](https://flutter.dev/desktop)) from a single codebase.
+([beta](https://flutter.dev/web)),
+and desktop ([technical preview](https://flutter.dev/desktop))
+from a single codebase.
 
 Flutter 是 Google 开源的 UI 工具包，帮助开发者通过一套代码库高效构建多平台精美应用，
 支持移动、Web ([测试版][https://flutter.cn/web])、桌面 ([技术预览版](https://flutter.dev/desktop)) 式平台。

@@ -1,6 +1,8 @@
 ---
 title: Tap, drag, and enter text
 title: 点击、拖拽事件和文本输入
+description: How to test widgets for user interaction.
+description: 如何测试与用户交互的 widgets。
 prev:
   title: Find widgets
   title: 定位到目标 widgets

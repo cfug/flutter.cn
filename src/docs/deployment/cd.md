@@ -370,12 +370,12 @@ repository root.
 
 ### 参考
 
-The [Flutter Gallery in the Flutter repo][]
-uses fastlane for continuous deployment. See the source for a working example
-of fastlane in action. Also see the Flutter framework repository's
-[Cirrus script][].
+The [Flutter Gallery Project][]
+uses fastlane for continuous deployment. 
+See the source for a working example of fastlane in action. 
+Also see the Flutter framework repository's [Cirrus script][].
 
-[Flutter repo 里的示例应用 Flutter Gallery][Flutter Gallery in the Flutter repo] 
+[Flutter repo 里的示例应用 Flutter Gallery][Flutter Gallery Project]
 使用 fastlane 连续部署。有关 fastlane 实际运行示例，请参阅源代码。
 另请参阅 Flutter 框架仓库库的 [Cirrus 脚本][Cirrus script]。
 
@@ -414,7 +414,7 @@ The following are some other options available to help automate the delivery of 
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
-[Flutter Gallery in the Flutter repo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
+[Flutter Gallery Project]: {{site.github}}/flutter/gallery
 [GitHub Actions- CI/CD on GitHub]: https://github.com/features/actions
 [GitLab Continuous Integration (GitLab CI/CD)]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [Match]: https://docs.fastlane.tools/actions/match/

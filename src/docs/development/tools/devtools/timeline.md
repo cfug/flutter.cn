@@ -8,8 +8,7 @@ description: 学习如何在开发者工具里使用时间轴视图。
 {{site.alert.note}}
 
   The timeline view works with mobile apps only.
-  Use Chrome DevTools to [generate timeline
-  events](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference)
+  Use Chrome DevTools to [generate timeline events][]
   for a web app.
 
   时间线视图仅适用于移动应用。
@@ -56,7 +55,7 @@ It consists of three parts, each increasing in granularity.
 
 The timeline view also supports importing and exporting of
 timeline data files. For more information,
-see the [Import and export](#import-and-export) section.
+see the [Import and export][] section.
 
 时间线视图也支持导入和导出时间线数据文件。更多信息请参考[导入和导出](#import-and-export) 部分。
 
@@ -68,7 +67,7 @@ This chart is populated with individual frames as they are rendered
 in your application. Each bar in the chart represents a frame.
 The bars are color-coded to highlight the different portions of
 work that occur when rendering a Flutter frame: work from the UI
-thread and work from the GPU thread.
+thread and work from the raster thread (previously known as GPU thread).
 
 这个图表是使用你的应用程序中渲染的所有帧组合而成的。每一个条形框都代表一个帧。
 这些条形框使用颜色编码以突出显示 Flutter 在帧渲染过程中不同线程的执行情况: UI 线程和 GPU 线程。
@@ -85,39 +84,41 @@ The UI thread executes Dart code in the Dart VM. This includes
 code from your application as well as the Flutter framework.
 When your app creates and displays a scene, the UI thread creates
 a layer tree, a lightweight object containing device-agnostic
-painting commands, and sends the layer tree to the GPU thread
+painting commands, and sends the layer tree to the raster thread
 to be rendered on the device. Do **not** block this thread.
 
 UI 线程执行 Dart VM 中的 Dart 代码。它包括你的应用程序和 Flutter 框架的所有代码。
-当你创建或打开一个页面，UI 线程会创建一个图层树和一个轻量级的与设备无关的绘制指令集，并把图层树交给设备的 GPU 线程进行渲染。**不要**阻塞这个线程。
+当你创建或打开一个页面，UI 线程会创建一个图层树和一个轻量级的与设备无关的绘制指令集，并把图层树交给设备的 raster（栅格）线程进行渲染。**不要**阻塞这个线程。
 
-### GPU
+### Raster
 
-The GPU thread executes graphics code from the Flutter Engine.
+### 栅格线程
+
+The raster thread (previously known as the GPU thread) executes 
+graphics code from the Flutter Engine.
 This thread takes the layer tree and displays it by talking to
 the GPU (graphic processing unit). You cannot directly access
-the GPU thread or its data, but if this thread is slow, it's a
+the raster thread or its data, but if this thread is slow, it's a
 result of something you've done in the Dart code. Skia, the
-graphics library, runs on this thread, which is sometimes called
-the rasterizer thread.
+graphics library, runs on this thread.
 
-GPU 线程执行 Flutter 引擎中图形相关的代码。
-这个线程通过与 GPU (图形处理单元) 通信，获取图形树并显示它。你不能直接访问 GPU 线程或它的数据，但如果这个线程较慢，那它肯定是由你的 Dart 代码引起的。图形化库 Skia 运行在这个线程上，有时候也称它为光栅线程。
+栅格化线程（也就是我们之前知道的 GPU 线程）执行 Flutter 引擎中图形相关的代码。
+这个线程通过与 GPU (图形处理单元) 通信，获取图形树并显示它。你不能直接访问 Raster 线程或它的数据，但如果这个线程较慢，那它肯定是由你的 Dart 代码引起的。图形化库 Skia 运行在这个线程上，有时候也称它为光栅线程。
 
 Sometimes a scene results in a layer tree that is easy to construct,
-but expensive to render on the GPU thread. In this case, you'll
+but expensive to render on the raster thread. In this case, you
 need to figure out what your code is doing that is causing
 rendering code to be slow. Specific kinds of workloads are more
 difficult for the GPU. They might involve unnecessary calls to
 `saveLayer()`, intersecting opacities with multiple objects,
 and clips or shadows in specific situations.
 
-有时候一个页面的图形层树比较容易构建但 GPU 线程的渲染却比较昂贵。在这种情形下，你需要找出导致渲染变慢的代码。为 GPU 设定特定多种类型的 workload 是相当困难的。在一些特定的情形下，多个对象的透明度重叠、剪切或阴影，有可能会导致不必要的 `saveLayer()` 的调用。
+有时候一个页面的图形层树比较容易构建但 raster 线程的渲染却比较昂贵。在这种情形下，你需要找出导致渲染变慢的代码。为 GPU 设定特定多种类型的 workload 是相当困难的。在一些特定的情形下，多个对象的透明度重叠、剪切或阴影，有可能会导致不必要的 `saveLayer()` 的调用。
 
 For more information on profiling, see
-[Identifying problems in the GPU graph][GPU thread].
+[Identifying problems in the GPU graph][GPU graph].
 
-更多详细信息，请查看 [Identifying problems in the GPU graph][GPU thread]。
+更多详细信息，请查看 [Identifying problems in the GPU graph][GPU graph]。
 
 ### Jank
 
@@ -317,5 +318,7 @@ DevTools 支持导入和导出时间线快照。
 单击export按钮(帧渲染图表右上角)下载当前时间线的快照。要导入时间线快照，可以从任何页面拖放快照到DevTools。
 **提示 : DevTools 仅支持导入 DevTools 导出的源文件。**
 
-[GPU thread]: /docs/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
+[generate timeline events]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference
+[GPU graph]: /docs/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance
+[Import and export]: #import-and-export

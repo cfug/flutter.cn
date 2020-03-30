@@ -643,7 +643,7 @@ Flutter renders the first frame of your application.
   [`window.render()`][] in response to [`window.onDrawFrame`][]),
   the launch screen persists forever.
 
-  这意味着如果你不在应用程序的 `main()` 方法中调用 [runApp()][] 函数
+  这意味着如果你不在应用程序的 `main()` 方法中调用 [`runApp()`][] 函数
   （或者更具体地说，如果你不调用 [`window.render()`][] 去响应 
   [`window.onDrawFrame`][]的话， 启动页将永远持续显示。
 

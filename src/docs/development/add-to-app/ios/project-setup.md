@@ -339,6 +339,17 @@ some/path/MyApp/
         └── example_plugin.framework
 ```
 
+{{site.alert.warning}}
+
+  Always use `Flutter.framework` and `App.framework` from the same directory.
+  Mixing `.framework` imports from different directories (such as
+  `Profile/Flutter.framework` with `Debug/App.framework`) causes runtime crashes.
+
+  始终使用相同目录下的 `Flutter.framework` 和 `App.framework`。
+  混合使用不同目录（例如 `Profile/Flutter.framework` 以及 `Debug/App.framework`）将会导致运行失败。
+
+{{site.alert.end}}
+
 {{site.alert.tip}}
 
   With Xcode 11 installed, you can generate
@@ -359,9 +370,9 @@ this&mdash;use the method that is best for your project.
 General > Frameworks, Libraries, and Embedded Content 下，
 然后在 Embed 下拉列表中选择 "Embed & Sign"。
 
-### Link on the frameworks
+#### Link on the frameworks
 
-### 链接到框架
+#### 链接到框架
 
 For example, you can drag the frameworks from
 `some/path/MyApp/Flutter/Release/` in Finder
@@ -382,7 +393,7 @@ Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`)
 
 {% include app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
 
-### Embed the frameworks
+#### Embed the frameworks
 
 ### 内嵌框架
 

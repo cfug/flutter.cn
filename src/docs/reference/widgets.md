@@ -1,6 +1,8 @@
 ---
 title: Flutter widget index
 title: Flutter Widget 目录
+description: An alphabetical list of Flutter widgets.
+description: 按照字母顺序排序的 Flutter widgets 列表。
 short-title: Widgets
 short-title: Widget 目录
 show_breadcrumbs: false

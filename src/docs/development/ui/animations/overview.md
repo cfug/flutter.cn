@@ -3,8 +3,8 @@ title: Animations overview
 title: 动画概览
 short-title: Overview
 short-title: 概览
-description: An overview of animation concepts
-description: 动画效果的概念简述
+description: An overview of animation concepts.
+description: 动画效果的概念简述。
 ---
 
 The animation system in Flutter is based on typed

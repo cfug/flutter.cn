@@ -1,6 +1,8 @@
 ---
 title: An introduction to widget testing
 title: Widget 测试介绍
+description: Learn more about widget testing in Flutter.
+description: 了解更多 Flutter 的 widget 测试。
 short-title: Introduction
 prev:
   title: Mock dependencies using Mockito

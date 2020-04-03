@@ -16,7 +16,7 @@ This builds a _debug_ version of your app.
 这会构建出 **debug** 版本的应用。
 
 This page helps you prepare a _release_ version
-of your app.
+of your app and covers the following topics:
 
 本页面会帮助你构建 **release** 版本的应用。
 
@@ -31,6 +31,10 @@ This page covers the following topics:
 * [Obfuscation and minification](#obfuscation-and-minification)
 
   [混淆并压缩代码](#obfuscation-and-minification)
+
+* [Minification](#minification)
+
+  [压缩](#minification)
 
 * [Building the app for release](#building-the-app-for-release)
 
@@ -48,14 +52,14 @@ TBD
 
 暂未完成
 
-## Obfuscation and minification
+## Minification
 
 ## 混淆并压缩代码
 
-Obfuscation and minification is handled for you when you
+Minification is handled for you when you
 create a release build.
 
-当你创建了一个 release 版本时，便混淆并压缩了代码。
+当你创建了一个 release 版本时，便已经压缩了代码。
 
 A debug build of a web app is not minified and
 tree shaking has not been performed.

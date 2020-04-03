@@ -8,8 +8,7 @@ description: 学习如何使用开发者工具的性能视图。
 {{site.alert.note}}
 
   The performance view works with mobile apps only.
-  Use Chrome DevTools to [analyze
-  performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
+  Use Chrome DevTools to [analyze performance][]
   of a web app.
 
   性能视图仅适用于移动应用。
@@ -22,15 +21,17 @@ description: 学习如何使用开发者工具的性能视图。
 
 ## 它是什么?
 
-The performance view allows you to record and profile a session from your Dart application.
+The performance view allows you to record and profile a 
+session from your Dart application.
 
 性能视图可以记录并分析 Dart 应用程序的性能，以帮助我们找到应用程序的性能瓶颈。
 
 {{site.alert.note}}
 
-  **If you are running a Flutter application, use a profile build to analyze performance.**
-  Cpu profiles are not indicative of release performance unless your Flutter application is
-  run in profile mode.
+  **If you are running a Flutter application, 
+  use a profile build to analyze performance.**
+  Cpu profiles are not indicative of release performance 
+  unless your Flutter application is run in profile mode.
 
    **对于 Flutter 应用程序，需要使用 profile 构建模式才能使用性能分析**
    如果你希望你的 Flutter 应用程序性能与 Release 模式下相同且希望使用性能分析工具，请使用 Profile 模式。
@@ -187,3 +188,5 @@ In this table, a method can be expanded to show its _callers_.
 
 ![Screenshot of a bottom up table]({% asset tools/devtools/cpu_profiler_bottom_up.png @path %}){:width="100%"}
 
+
+[analyze performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/

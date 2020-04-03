@@ -1,6 +1,8 @@
 ---
 title: macOS install
 title: 在 macOS 上安装和配置 Flutter 开发环境
+description: How to install on macOS.
+description: 如何在 macOS 上安装 Flutter。
 short-title: macOS
 next:
   title: Set up an editor

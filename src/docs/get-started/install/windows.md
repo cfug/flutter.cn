@@ -1,6 +1,8 @@
 ---
 title: Windows install
 title: 在 Windows 操作系统上安装和配置 Flutter 开发环境
+description: How to install on Windows.
+description: 如何在 Windows 上安装 Flutter。
 short-title: Windows
 next:
   title: Set up an editor

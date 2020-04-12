@@ -1,11 +1,11 @@
 ---
 title: Web support for Flutter
 title: Flutter 正式支持 Web 平台
-description: "Announcing the tech preview release of Flutter for web."
-description: "宣布在 Web 端使用 Flutter 的发布预览版"
+description: "Details of how Flutter supports the creation of web experiences."
+description: "有关 Flutter 如何支持创建 Web 体验的详细信息。"
 ---
 
-Web support is a code-compatible implementation of Flutter that is
+In addition to mobile apps, Flutter supports the generation of web content 
 rendered using standards-based web technologies: HTML, CSS and JavaScript.
 With web support, you can compile existing Flutter code written in
 Dart into a client experience that can be embedded in the browser and
@@ -19,11 +19,11 @@ Web 支持是 Flutter 的代码兼容实现，使用基于标准的 Web 技术�
 
 {{site.alert.warning}}
 
-  **As of 1.12, web support is available on the beta channel.**
+  **While in development, web support is available in the beta channel.**
   If you experience a problem that hasn't yet been reported, please
   [file an issue][] and make sure that "web" appears in the title.
   
-  **在 1.12 版本，Web 支持已支持 beta 频道。**
+  **在开发阶段，Web 支持已支持 beta 频道。**
   如果你遇到了尚未被报告的问题，请 [提交一个 issue][file an issue]，并确保标题中标注了 “web” 字样。
   
 {{site.alert.end}}
@@ -33,11 +33,12 @@ Web 支持是 Flutter 的代码兼容实现，使用基于标准的 Web 技术�
      width="100%">
 
 Adding web support to Flutter involved implementing Flutter's
-core drawing layer on top of standard browser APIs.
-Using a combination of DOM, Canvas, and CSS,
-web support aims to provide a portable, high-quality,
+core drawing layer on top of standard browser APIs, in addition
+to compiling Dart to JavaScript, instead of the ARM machine code that
+is used for mobile applications. Using a combination of DOM, Canvas, 
+and CSS, Flutter can provide a portable, high-quality,
 and performant user experience across modern browsers.
-We implemented this core drawing layer completely in Dart
+We implemented the core drawing layer completely in Dart
 and used Dart's optimized JavaScript compiler to compile the
 Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
@@ -49,11 +50,12 @@ any web server.
 并使用 Dart 的优化过的 JavaScript 编译器将 Flutter 核心与框架，
 同你的应用程序一起编译成一个可以部署到任何 Web 服务器的简化源文件。
 
-In this early stage of development,
-we envision the web version of Flutter
-being valuable in many scenarios. For example:
+While traditional web approaches remain a great choice, we envision
+the web support available in Flutter being valuable in many scenarios. 
+For example:
 
-在开发的早期阶段，我们设想 Flutter 的 Web 版本在许多场景中都很有应用价值。比方说：
+虽然以传统方式开发 web 仍旧是一个不错的选择，但我们认为在 Flutter 中提供的 Web 支持在许多情况下都很有价值。
+例如：
 
 **A connected [Progressive Web Application][] built with Flutter**
 <br> Web support for Flutter enables existing mobile-based applications
@@ -85,6 +87,12 @@ being valuable in many scenarios. For example:
   The support Flutter now offers for a unified environment for
   web and mobile content enables you to deploy content online
   or embedded in an app without rewriting.
+  
+Not every HTML scenario is ideally suited for Flutter at this time. 
+For example, text-rich flow-based content such as blog articles
+benefit from the document-centric model that the web is built around,
+rather than the app-centric services that a UI framework like Flutter
+can deliver.
 
 **在 Flutter 移动应用中嵌入动态内容**
 <br> 在现有移动应用程序内提供动态内容更新的既定方法是使用 Web 视图控件，
@@ -131,6 +139,11 @@ The following resources can help you get started:
 * [File an issue][] on the main Flutter repo.
 
   请从 [File an issue][] 向 Flutter 主仓库提一个 issue。
+
+* You can chat and ask web-related questions on the
+  **#help** channel on [Discord][].
+
+  你可以在 [Discord][] 的 **#help** 频道咨询 web 相关的问题。
   
 * You can chat and ask web-related questions on the
   [Discord group][].
@@ -139,7 +152,7 @@ The following resources can help you get started:
 
 [Building a web application with Flutter]: /docs/get-started/web
 [Creating responsive apps]: /docs/development/ui/layout/responsive
-[Discord group]: https://discordapp.com/invite/yeZ6s7k
+[Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
 [main Flutter repo]: {{site.github}}/flutter/flutter
 [Preparing an app for web release]: /docs/deployment/web

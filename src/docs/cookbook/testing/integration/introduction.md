@@ -15,7 +15,7 @@ next:
 
 Unit tests and widget tests are handy for testing individual classes,
 functions, or widgets. However, they generally don't test how
-individual pieces work together as a whole or capture the performance
+individual pieces work together as a whole, or capture the performance
 of an application running on a real device. These tasks are performed
 with *integration tests*.
 
@@ -72,9 +72,10 @@ This recipe uses the following steps:
 
 ### 1. 创建一个应用程序用于测试
 
-First, create an app for testing. In this example, test the
-counter app produced by the `flutter create` command. This app allows
-a user to tap on a button to increase a counter.
+First, create an app for testing. In this example, 
+test the counter app produced by the `flutter create` 
+command. This app allows a user to tap on a button 
+to increase a counter.
 
 首先，我们需要创建一个应用程序用于测试。在这个示例中，我们将会测试一个由 `flutter create` 命令创建的计数器应用。这个应用程序允许用户点击按钮增加计数。
 
@@ -198,7 +199,7 @@ reside in the same directory. By convention, the directory is named
      第一个文件包含了应用的 “待检测” 版本号。这个检测允许我们利用测试套件驱动应用并记录运行概况。这个文件可以被命名成任何名字。在本例中，创建了文件，命名为 `test_driver/app.dart`。
 
   2. The second file contains the test suite, which drives the app and
-     verifies it works as expected. The test suite also records
+     verifies that it works as expected. The test suite also records
      performance profiles. The name of the test file must correspond
      to the name of the file that contains the instrumented app,
      with `_test` added at the end. Therefore,
@@ -219,7 +220,6 @@ counter_app/
     app_test.dart
 ```
 
-
 ### 4. Instrument the app
 
 ### 4. 安装测试应用程序
@@ -236,7 +236,8 @@ Now, instrument the app. This involves two steps:
 
      运行应用程序
 
-Add this code inside the `test_driver/app.dart` file.
+Add this code inside the 
+`test_driver/app.dart` file.
 
 我们会在 `test_driver/app.dart` 文件中增加以下代码：
 
@@ -265,20 +266,20 @@ This involves four steps:
 现在我们有了待测应用，我们可以为它编写测试文件了。这包含了四个步骤：
 
   1. Create [`SerializableFinders`][]
-     to locate specific widgets
+     to locate specific widgets.
  
-     创建 [`SerializableFinders`][] 定位指定组件
+     创建 [`SerializableFinders`][] 定位指定组件。
 
-  2. Connect to the app before our tests run in the `setUpAll()` function
+  2. Connect to the app before our tests run in the `setUpAll()` function.
 
-     在 `setUpAll()` 函数中运行测试案例前，先与待测应用建立连接
+     在 `setUpAll()` 函数中运行测试案例前，先与待测应用建立连接。
 
-  3. Test the important scenarios
+  3. Test the important scenarios.
 
-     测试重要场景
+     测试重要场景。
 
   4. Disconnect from the app in the `teardownAll()` function after the tests
-     complete
+     complete.
 
      完成测试后，在 `teardownAll()` 函数中与待测应用断开连接
 
@@ -329,21 +330,41 @@ void main() {
 
 ### 6. 运行集成测试
 
-Now that you have an instrumented app and a test suite, run the tests.
-First, be sure to launch an Android Emulator, iOS Simulator,
+Now that you have an instrumented app _and_ a test suite,
+run the tests. The process of running the integration
+tests varies depending on the platform you are testing
+against. You can test against a mobile platform or the web.
+
+我们有了待测应用和测试套件后，就可以运行测试了。可以只针对特定依赖的平台运行集成测试。
+你可以测试移动平台也可以测试 web。
+
+#### 6a. Mobile
+
+#### 6a. 移动平台
+
+To test on iOS or Android,
+launch an Android Emulator, iOS Simulator,
 or connect your computer to a real iOS / Android device.
 
-我们有了待测应用和测试套件后，就可以运行测试了。首先，启动安卓模拟器或者 iOS 模拟器，或者直接把 iOS 或 Android 真机连接到你的电脑上。
+要测试 iOS 或者 Android，首先需要打开一个 Android 模拟器或者 iOS 模拟器，或者让你的电脑连接真机。
 
 Then, run the following command from the root of the project:
 
 接着，在项目的根文件夹下运行下面的命令：
 
-```
+```shell
 flutter drive --target=test_driver/app.dart
 ```
 
-This command:
+This command performs the following:
+
+* Builds the `--target` app and installs
+  it on the emulator / device.
+* Launches the app.
+* Runs the `app_test.dart` test suite located
+  in `test_driver/` folder.
+
+---
 
 这个指令的作用：
 
@@ -359,6 +380,44 @@ This command:
 
      运行位于 `test_driver/` 文件夹下的 `app_test.dart` 测试套件
 
+#### 6b. Web
+
+To test for web,
+determine which browser you want to test against
+and download the corresponding web driver:
+
+要测试 web 应用，确定要针对哪个浏览器进行测试
+并下载相应的 Web 驱动程序：
+
+  * Chrome: [Download ChromeDriver][]
+  * Firefox: [Download GeckoDriver][]
+  * Safari: Safari can only be tested on a Mac;
+    the SafariDriver is already installed on Mac machines.
+
+    Safari：Safari 仅支持在 Mac 上进行测试；
+    Mac 中内已经置了它的驱动程序。
+
+  * Edge [Download EdgeDriver][]
+
+Launch the WebDriver, for example:
+
+打开 WebDriver，例如：
+
+```shell
+./chromedriver --port=4444
+```
+From the root of the project,
+run the following command:
+
+在项目根目录运行以下命令：
+
+```shell
+flutter drive --target=test_driver/app.dart --browser-name=[browser name] --release
+```
+
+[Download ChromeDriver]: {{site.github}}/mozilla/geckodriver/releases
+[Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+[Download GeckoDriver]: https://github.com/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
 [`SerializableFinders`]: {{site.api}}/flutter/flutter_driver/CommonFinders-class.html
 [`ValueKey`]: {{site.api}}/flutter/foundation/ValueKey-class.html

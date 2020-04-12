@@ -99,6 +99,8 @@
               permalink: /docs/development/ui/advanced/slivers
             - title: 手势
               permalink: /docs/development/ui/advanced/gestures
+            - title: 闪屏页
+              permalink: /docs/development/ui/advanced/splash-screen
         - title: 平台特定主题
         - title: 核心 Widget 目录
           permalink: /docs/development/ui/widgets
@@ -178,7 +180,7 @@
             permalink: /docs/development/add-to-app/ios/project-setup
           - title: 添加单个 Flutter 页面
             permalink: /docs/development/add-to-app/ios/add-flutter-screen
-      - title: 运行，调试以及热重载
+      - title: 调试及热重载
         permalink: /docs/development/add-to-app/debugging
       - title: 加载顺序和性能
         permalink: /docs/development/add-to-app/performance

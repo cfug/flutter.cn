@@ -46,14 +46,20 @@ specify the directory name with the `/` character at the end:
 ```yaml
 flutter:
   assets:
-    - assets/
+    - directory/
+    - directory/subdirectory/
 ```
 
-Note that only files located directly in the directory are
-included. To add files located in subdirectories,
-create an entry per directory.
+{{site.alert.note}}
 
-注意只包含目录下根节点的所有文件，如果要添加子目录下的文件，需要给每个目录创建节点。
+  Only files located directly in the directory are
+  included. To add files located in subdirectories,
+  create an entry per directory.
+
+  只包含当前目录下的的所有文件。如果想要添加子文件夹中的文件，
+  请为每个目录创建一个条目。
+
+{{site.alert.end}}
 
 ### Asset bundling
 
@@ -63,13 +69,13 @@ The `assets` subsection of the `flutter` section specifies files that
 should be included with the app. Each asset is identified by an
 explicit path (relative to the `pubspec.yaml` file) where the asset
 file is located. The order in which the assets are declared does not
-matter. The actual directory used (`assets` in this case) does not
-matter.
+matter. The actual directory name used (`assets` in first example or others `directory`) 
+does not matter.
 
 该 `assets` 部分的 `flutter` 部分需要指定包含在应用程序中的文件。
 每个资源都通过相对于 `pubspec.yaml` 文件所在位置的路径进行标识。
 资源的声明顺序是无关紧要的。
-资源的实际目录可以是任意文件夹（在本示例中是 `assets`）
+资源的实际目录可以是任意文件夹（在第一个样例中是 `assets`，其他的是 `directory`）
 
 During a build, Flutter places assets into a special archive called
 the _asset bundle_, which apps can read from at runtime.
@@ -667,9 +673,9 @@ screen in commented code. You can uncomment it or use other
 现有模板提供了一个示例，用于将图片添加到白色启动页的中间（注释代码中）。
 你也可以取消注释使用 [可绘制对象资源][drawables] 来实现预期效果。
 
-For more details, see [Adding a splash screen and launch screen to an Android app](/docs/development/ui/splash-screen/android-splash-screen).
+For more details, see [Adding a splash screen and launch screen to an Android app](/docs/development/ui/advanced/splash-screen).
 
-更多详细信息，请查看 [在 Android 应用中添加闪屏页与启动页](/docs/development/ui/splash-screen/android-splash-screen)。
+更多详细信息，请查看 [在 Android 应用中添加闪屏页与启动页](/docs/development/ui/advanced/splash-screen)。
 
 #### iOS
 

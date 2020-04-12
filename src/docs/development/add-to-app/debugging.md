@@ -1,10 +1,13 @@
 ---
-title: 运行、调试和热重载
-short-title: 调试
-description: 如何在使用 Flutter module 的混合应用运行调试以及热重载
+title: Debugging your add-to-app module
+title: 在混合应用模式下进行调试
+short-title: Debugging
+short-title: 调试应用
+description: How to run, debug, and hot reload your add-to-app Flutter module.
+description: 如何在使用 Flutter module 的混合应用运行调试以及热重载。
 ---
 
-## Running, debugging, and hot reload
+## Debugging your add-to-app module
 
 Once you've integrated the Flutter module to your project and used Flutter's
 platform APIs to run the Flutter engine and/or UI,

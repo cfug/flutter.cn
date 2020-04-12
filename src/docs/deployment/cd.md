@@ -66,16 +66,16 @@ Visit the [fastlane docs][fastlane] for more info.
    编辑 `Appfile` 以确保它有应用程序的基本数据配置：
 
     * ![Android](/images/cd/android.png) Check that `package_name` in
-    `[project]/android/Appfile` matches your package name in AndroidManifest.xml.
+    `[project]/android/fastlane/Appfile` matches your package name in AndroidManifest.xml.
     
-      ![Android](/images/cd/android.png) 检查在 `[project]/android/Appfile` 
+      ![Android](/images/cd/android.png) 检查在 `[project]/android/fastlane/Appfile` 
       文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
     
     * ![iOS](/images/cd/ios.png) Check that `app_identifier` in
-    `[project]/ios/Appfile` also matches Info.plist's bundle identifier. 
+    `[project]/ios/fastlane/Appfile` also matches Info.plist's bundle identifier. 
     Fill in `apple_id`, `itc_team_id`, `team_id` with your respective account info.
     
-      ![iOS](/images/cd/ios.png) 检查在 `[project]/ios/Appfile` 中的
+      ![iOS](/images/cd/ios.png) 检查在 `[project]/ios/fastlane/Appfile` 中的
       `app_identifier` 是否匹配 Info.plist 文件中的 bundle identifier.
     
 1. Set up your local login credentials for the stores.

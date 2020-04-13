@@ -20,7 +20,7 @@ changes that break these tests without working with the developers of
 those tests to (a) determine if the change is sufficiently valuable,
 and (b) provide fixes for the code so that the tests continue to pass.
 
-为此，我们已经创建了一个测试注册表。你可以在这里针对每一个更改，为你的应用或库提供单元测试，以帮助我们追踪那些对现存应用造成破坏的改动。我们承诺，与这些测试的开发者进行合作以确定以下两点之前，将不会做出任何破坏这些测试的改动。
+为此，我们已经创建了一个测试集合。你可以在这里针对每一个更改，为你的应用或库提供单元测试，以帮助我们追踪那些对现存应用造成破坏的改动。我们承诺，与这些测试的开发者进行合作以确定以下两点之前，将不会做出任何破坏这些测试的改动。
 （1）决定改动是否足够有价值；（2）提供对代码的修复方案使得这些测试能够继续通过。 
 
 If you would like to provide tests as part of this program, please

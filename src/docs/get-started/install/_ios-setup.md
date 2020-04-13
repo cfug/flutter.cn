@@ -40,7 +40,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
     Xcode once and confirming or running
     `sudo xcodebuild -license` from the command line.
  
-    运行一次 Xocde 或者通过输入命令 `sudo xcodebuild -license`
+    运行一次 Xcode 或者通过输入命令 `sudo xcodebuild -license`
     来确保已经同意 Xcode 的许可协议。
 
 Versions older than the latest stable version may still work,

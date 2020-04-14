@@ -246,7 +246,7 @@ Scrolling is an important part of the platform's
 look and feel, and Flutter automatically adjusts
 the scrolling behavior to match the current platform.
 
-滚动是不通平台提供独有体验非常重要的一环，
+滚动是不同平台提供独有体验非常重要的一环，
 Flutter 会根据当前的平台自动适配滚动体验。
 
 ### Physics simulation

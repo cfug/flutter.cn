@@ -292,7 +292,7 @@ iOS 的滚动通常提供更多的分量和动态的阻力；
         <img src="../../images/platform-adaptations/scroll-strong.gif" class="figure-img img-fluid rounded" alt="A strong fling where the Android scrollable reach speed faster and reached significantly more distance" />
         <figcaption class="figure-caption">
 <!--           <span><t>Strong fling comparison</t><t>突然强烈的滚动效果比较</t></span> -->
-          <span><突然强烈的滚动效果比较</span>
+          <span>突然强烈的滚动效果比较</span>
         </figcaption>
       </figure>
     </div>

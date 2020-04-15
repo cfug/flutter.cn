@@ -246,7 +246,7 @@ Scrolling is an important part of the platform's
 look and feel, and Flutter automatically adjusts
 the scrolling behavior to match the current platform.
 
-滚动是不通平台提供独有体验非常重要的一环，
+滚动是不同平台提供独有体验非常重要的一环，
 Flutter 会根据当前的平台自动适配滚动体验。
 
 ### Physics simulation
@@ -292,7 +292,7 @@ iOS 的滚动通常提供更多的分量和动态的阻力；
         <img src="../../images/platform-adaptations/scroll-strong.gif" class="figure-img img-fluid rounded" alt="A strong fling where the Android scrollable reach speed faster and reached significantly more distance" />
         <figcaption class="figure-caption">
 <!--           <span><t>Strong fling comparison</t><t>突然强烈的滚动效果比较</t></span> -->
-          <span><突然强烈的滚动效果比较</span>
+          <span>突然强烈的滚动效果比较</span>
         </figcaption>
       </figure>
     </div>

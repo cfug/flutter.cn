@@ -14,8 +14,9 @@ next:
   path: /docs/cookbook/testing/unit/mocking
 ---
 
-How can you ensure that your app continues to work as you add more features or
-change existing functionality? By writing tests.
+How can you ensure that your app continues to work as you
+add more features or change existing functionality?
+By writing tests.
 
 我们如何保证 app 在增加了新特性或者改变了现有功能之后还能正常工作呢？答案是写测试！
 
@@ -98,8 +99,9 @@ the tests themselves and lives inside the `test` folder.
 `counter.dart` 文件包含一个位于 `lib` 文件夹的待测试类，
 而位于 `test` 文件夹的`counter_test.dart` 文件将包含测试本身。
 
-In general, test files should reside inside a `test` folder located at the root
-of your Flutter application or package. Test files should always end with `_test.dart`, 
+In general, test files should reside inside a `test` folder 
+located at the root of your Flutter application or package. 
+Test files should always end with `_test.dart`, 
 this is the convention used by the test runner when searching for tests.
 
 通常测试文件应位于放置在 Flutter 应用或包的根目录下的 `test` 文件夹。
@@ -225,7 +227,8 @@ void main() {
 
 ### 6. 执行测试
 
-Now that you have a `Counter` class with tests in place, you can run the tests.
+Now that you have a `Counter` class with tests in place, 
+you can run the tests.
 
 现在 `Counter` 类和它的测试都有了，开始执行测试！
 
@@ -255,7 +258,8 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
 
        点击选项 `Run 'tests in counter_test.dart'`
 
-    4. *Alternatively, use the appropriate keyboard shortcut for your platform.*
+    4. *Alternatively, use the appropriate keyboard shortcut 
+       for your platform.*
 
        *或者，也可以使用系统快捷键!*
 
@@ -273,7 +277,8 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
 
        点击选项 `Start Debugging`
 
-    4. *Alternatively, use the appropriate keyboard shortcut for your platform.*
+    4. *Alternatively, use the appropriate keyboard shortcut 
+       for your platform.*
 
        *或者，也可以使用系统快捷键!*
 

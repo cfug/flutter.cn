@@ -866,7 +866,7 @@ If the parent rebuilds and creates a new `ShoppingList`,
 the `_ShoppingListState` rebuilds with the new widget value.
 If you wish to be notified when the `widget` property changes,
 override the [`didUpdateWidget()`][] function, which is passed
-as `oldWidget` to let you compare the old widget with
+an `oldWidget` to let you compare the old widget with
 the current widget.
 
 为了访问当前 `ShoppingList` 的属性，`_ShoppingListState` 可以使用它的 [`widget`][] 属性。
@@ -874,7 +874,7 @@ the current widget.
 如果希望在 [`widget`][] 属性更改时收到通知，
 则可以重写 [`didUpdateWidget()`][] 函数，
 该函数将 `oldWidget` 作为参数传递，
-以便将 `oldWidget`  与当前 widget。
+以便将 `oldWidget` 与当前 widget 进行比较。
 
 When handling the `onCartChanged` callback, the `_ShoppingListState`
 mutates its internal state by either adding or removing a product from

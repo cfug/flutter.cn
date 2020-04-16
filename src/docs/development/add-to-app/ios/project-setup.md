@@ -153,6 +153,12 @@ There are two ways to embed Flutter in your existing application.
   你的应用将不能在模拟器上运行 Release 模式，
   因为 Flutter 还不支持将 Dart 代码编译成 x86 ahead-of-time (AOT) 模式的二进制文件。
   你可以在模拟机和真机上运行 Debug 模式，在真机上运行 Release 模式。
+
+  To run your app on a simulator follow the instructions in the bottom of section
+  [embed the frameworks][].
+
+  要在模拟器上运行您的应用，请按照本节底部的[嵌入框架][embed the frameworks]说明进行操作。
+
 {{site.alert.end}}
 
 Using Flutter [increases your app size][].
@@ -545,3 +551,4 @@ You can now [add a Flutter screen][] to your existing application.
 [XCFrameworks]: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes
 [static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [add a Flutter screen]: /docs/development/add-to-app/ios/add-flutter-screen
+[embed the frameworks]: /docs/development/add-to-app/ios/project-setup#embed-the-frameworks

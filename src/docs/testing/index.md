@@ -1,6 +1,8 @@
 ---
 title: Testing Flutter apps
 title: 测试 Flutter 应用
+description: Learn more about the different types of testing and how to write them.
+description: 了解并编写不同类型的测试。
 ---
 
 The more features your app has, the harder it is to test manually.
@@ -27,11 +29,11 @@ Automated testing falls into a few categories:
 
   [**集成测试**](#integration-tests) 测试一个完整的应用或者一个应用的大部分功能。
   
-Generally speaking, a well-tested app has many unit and widget tests, tracked by
-[code coverage](https://en.wikipedia.org/wiki/Code_coverage), plus enough
-integration tests to cover all the important use cases. This advice is based on
-the fact that there are trade-offs between different kinds of testing, seen
-below.
+Generally speaking, a well-tested app has many unit and widget tests, 
+tracked by [code coverage][], plus enough integration tests 
+to cover all the important use cases. This advice is based on
+the fact that there are trade-offs between different kinds of testing, 
+seen below.
 
 一般来说，在自动化测试方面做的比较好的应用会有许多单元测试和 widget 测试，并且使用 [代码覆盖率](https://en.wikipedia.org/wiki/Code_coverage) 进行追踪，还会有足够的集成测试来覆盖所有的重要使用场景。这样做是因为不同类型的测试之间需要权衡，如下所示：
 
@@ -52,12 +54,14 @@ below.
 
 ## 单元测试
 
-A _unit test_ tests a single function, method, or class. The goal of a unit test
-is to verify the correctness of a unit of logic under a variety of conditions.
-External dependencies of the unit under test are generally [mocked
-out](/cookbook/testing/mocking). Unit tests generally don't read from or write
-to disk, render to screen, or receive user actions from outside the process
-running the test.
+A _unit test_ tests a single function, method, or class. 
+The goal of a unit test is to verify the correctness of a 
+unit of logic under a variety of conditions.
+External dependencies of the unit under test are generally 
+[mocked out](/cookbook/testing/mocking). 
+Unit tests generally don't read from or write
+to disk, render to screen, or receive user actions from 
+outside the process running the test.
 
 **单元测试** 测试单一的函数，方法或类。
 单元测试的目标是验证逻辑单元在各种条件下的正确性。
@@ -102,15 +106,17 @@ an implementation much simpler than a full-blown UI system.
 
 ## 集成测试
 
-An _integration test_ tests a complete app or a large part of an app. The goal
-of an integration test is to verify that all the widgets and services being
-tested work together as expected. Furthermore, you can use integration
+An _integration test_ tests a complete app or a large part of an app. 
+The goal of an integration test is to verify that all the widgets 
+and services being tested work together as expected. 
+Furthermore, you can use integration 
 tests to verify your app's performance.
 
 **集成测试** 测试一个完整的应用或者一个应用的大部分功能。集成测试的目标是验证正在测试的所有 widget 和服务是否按照预期的方式一起工作。此外，还可以使用集成测试来验证应用的性能。
 
-Generally, an _integration test_ runs on a real device or an OS emulator, such
-as iOS Simulator or Android Emulator. The app under test is typically isolated
+Generally, an _integration test_ runs on a real device or an OS emulator, 
+such as iOS Simulator or Android Emulator. 
+The app under test is typically isolated
 from the test driver code to avoid skewing the results.
 
 通常情况下，一个 **集成测试** 运行在真机或 OS 模拟器上，如 iOS 模拟器 (iOS Simulator) 或 Android 模拟器 (Android Emulator) 。测试中的应用通常与测试驱动程序代码隔离，以避免结果出现偏差。
@@ -125,14 +131,15 @@ from the test driver code to avoid skewing the results.
 
 ## 持续集成服务
 
-Continuous integration (CI) services allow you to run your tests automatically
-when pushing new code changes. This provides timely feedback on whether the code
+Continuous integration (CI) services allow you to run your 
+tests automatically when pushing new code changes. 
+This provides timely feedback on whether the code
 changes work as expected and do not introduce bugs.
 
 持续集成 (CI) 服务允许我们在推送新代码（代码变更）时自动运行测试。当代码变更后，会立即收到关于代码是否仍按预期工作、是否引入新问题的反馈。
 
-For information on running tests on various continuous integration services,
-see the following:
+For information on running tests on various continuous 
+integration services,see the following:
 
 有关各种持续集成服务的信息，参考如下：
 

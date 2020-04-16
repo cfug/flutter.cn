@@ -173,6 +173,8 @@
             permalink: /docs/development/add-to-app/android/add-flutter-screen
           - title: 添加一个 Flutter Fragment
             permalink: /docs/development/add-to-app/android/add-flutter-fragment
+          - title: Plugin 初始化
+            permalink: /docs/development/add-to-app/android/plugin-setup
       - title: 将 Flutter 添加到现有 iOS 应用
         permalink: /docs/development/add-to-app/ios
         children:

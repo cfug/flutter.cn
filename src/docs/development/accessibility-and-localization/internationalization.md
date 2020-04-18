@@ -893,7 +893,7 @@ project's `Runner` folder.
 
 Next, select the **Information Property List** item,
 select **Add Item** from the **Editor** menu,
-then select **eLocalizations** from the pop-up menu.
+then select **Localizations** from the pop-up menu.
 
 下一步，选择 **Information Property List** 项，
 从 *Editor* 菜单中选择 *Add Item*，

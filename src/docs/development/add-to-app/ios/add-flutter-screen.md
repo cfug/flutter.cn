@@ -99,7 +99,8 @@ the app delegate.
 **在 `AppDelegate.m`:**
 <!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
-#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Used to connect plugins.
+// Used to connect plugins (only if you have plugins with iOS platform code).
+#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
 
 #import "AppDelegate.h"
 
@@ -110,6 +111,7 @@ the app delegate.
   self.flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
   // Runs the default Dart entrypoint with a default Flutter route.
   [self.flutterEngine run];
+  // Used to connect plugins (only if you have plugins with iOS platform code).
   [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
@@ -124,7 +126,8 @@ the app delegate.
 ```swift
 import UIKit
 import Flutter
-import FlutterPluginRegistrant // Used to connect plugins.
+// Used to connect plugins (only if you have plugins with iOS platform code).
+import FlutterPluginRegistrant
 
 @UIApplicationMain
 class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
@@ -133,6 +136,7 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Runs the default Dart entrypoint with a default Flutter route.
     flutterEngine.run();
+    // Used to connect plugins (only if you have plugins with iOS platform code).
     GeneratedPluginRegistrant.register(with: self.flutterEngine);
     return super.application(application, didFinishLaunchingWithOptions: launchOptions);
   }

@@ -377,10 +377,10 @@ respectively.
 widget 中。使用 Transform widget 的 `alignment` 和 `origin`
 属性分别来指定转换原点（支点）的相对和绝对位置信息。
 
-For a simple 2D rotation, the widget is rotated on the Z axis using radians.
-(degrees × π / 180)
+For a simple 2D rotation, in which the widget is rotated on the Z axis, create a new [`Matrix4`][] identity object and use
+its `rotateZ()` method to specify the rotation factor using radians (degrees × π / 180).
 
-对于简单的 2D 旋转，widget 是依据弧度在 Z 轴上旋转的。(角度 × π / 180)
+对于简单的 2D 旋转，widget 是依据弧度在 Z 轴上旋转的，创建一个新的 [`Matrix4`][] 标志对象，并使用它的 `rotateZ()` 方法使用弧度系数 (角度 × π / 180) 以指定旋转系数。
 
 <div class="lefthighlight">
 {% prettify css %}
@@ -981,11 +981,10 @@ var container = Container( // grey box
 
 ### 内联样式更改
 
-A [`Text`][] widget lets
-you display text with the same formatting characteristics. To
-display text that uses multiple styles (in this example, a single word with
-emphasis), use a
-[`RichText`][]
+A [`Text`][] widget lets you display text with the some 
+formatting characteristics. To display text that uses 
+multiple styles (in this example, 
+a single word with emphasis), use a [`RichText`][]
 widget instead. Its `text` property can specify one or more
 [`TextSpan`][] widgets
 that can be individually styled.

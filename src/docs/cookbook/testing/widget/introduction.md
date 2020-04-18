@@ -203,7 +203,7 @@ void main() {
 }
 ```
 
-#### Note
+#### Notes about the pump() methods
 
 #### 备注
 
@@ -222,19 +222,36 @@ Use one of the following methods to ask Flutter to rebuild the widget.
 并不会自动重建你的 widget。我们需要用以下列举的方法来让 Flutter
 再一次建立我们的 widget。
 
-[`tester.pump()`][]
-<br> Triggers a rebuild of the widget after a given duration.
+[`tester.pump(Duration duration)`][]
+: Schedules a frame and triggers a rebuild of the widget.
+  If a `Duration` is specified, it advances the clock by
+  that amount and schedules a frame. It does not schedule
+  multiple frames even if the duration is longer than a
+  single frame.
 
-[`tester.pump()`][]
-<br> 在一段给定时间后重建 widget。
+[`tester.pump(Duration duration)`][]
+: 调度一帧以触发 widget 的重建。
+  若指定了 `Duration`，那么则会让 clock 经过该时长之后调度一帧。
+  它并不会因为持续时间大于一帧的时间而调度多帧。
+
+{{site.alert.note}}
+
+  To kick off the animation, you need to call `pump()`
+  once (with no duration specified) to start the ticker.
+  Without it, the animation does not start.
+
+  要开始播放动画，则需要调用一次 `pump()`（不指定 duration）以启动 ticker。
+  如果没有这一步骤，动画将不会执行。
+  
+{{site.alert.end}}
 
 [`tester.pumpAndSettle()`][]
-<br> Repeatedly calls pump with the given duration until
+: Repeatedly calls `pump()` with the given duration until
   there are no longer any frames scheduled.
   This essentially waits for all animations to complete.
   
 [`tester.pumpAndSettle()`][]
-<br> 在给定期间内不断重复调用 pump 直到完成所有绘制帧。一般需要等到所有动画全部完成。
+: 在给定期间内不断重复调用 pump 直到完成所有绘制帧。一般需要等到所有动画全部完成。
 
 These methods provide fine-grained control over the build lifecycle,
 which is particularly useful while testing.
@@ -411,7 +428,7 @@ class MyWidget extends StatelessWidget {
 [introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`Matcher`]: {{api}}/package-matcher_matcher/Matcher-class.html
 [`pumpWidget()`]: {{api}}/flutter_test/WidgetTester/pumpWidget.html
-[`tester.pump()`]: {{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html
+[`tester.pump(Duration duration)`]: {{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html
 [`tester.pumpAndSettle()`]: {{api}}/flutter_test/WidgetTester/pumpAndSettle.html
 [`testWidgets()`]: {{api}}/flutter_test/testWidgets.html
 [`WidgetTester`]: {{api}}/flutter_test/WidgetTester-class.html

@@ -10,16 +10,17 @@ description: 如何连接各开发平台的调试器调试 Flutter 应用。
 If you are exclusively writing Flutter apps with Dart code and not using
 platform-specific libraries, or otherwise accessing platform-specific
 features, you can debug your code using your IDE's debugger.
-Only the first section of this guide, Debugging Dart code, is relevant for you.
+Only the first section of this guide, Debugging Dart code,
+is relevant for you.
 
 如果你只使用 Dart 语言开发 Flutter 应用，并且不使用特定于平台的的库或者功能，你可以使用 IDE 的调试器调试你的代码。
 只有这篇指南的第一部分「调试 Dart 代码」对你有用。
 
 If you're writing a platform-specific plugin or using platform-specific
 libraries written in Swift, ObjectiveC, Java, or Kotlin, you can debug
-that portion of your code using Xcode (for iOS) or Android Gradle (for Android).
-This guide shows you how you can connect _two_ debuggers to your Dart app,
-one for Dart, and one for the OEM code.
+that portion of your code using Xcode (for iOS) or Android Gradle
+(for Android).  This guide shows you how you can connect _two_
+debuggers to your Dart app, one for Dart, and one for the OEM code.
 
 如果你正在开发特定于平台的的插件或者使用由 Swift，ObjectiveC，Java 或 Kotlin 语言编写的特定于平台的库，
 你可以使用 Xcode（用于 iOS）或者 Android Gradle（用于 Android）调试这部分代码。
@@ -69,7 +70,8 @@ plugins installed and configured.
 
   {% asset 'testing/debugging/oem/debug-pane.png' alt='Debug pane' %}{:width="100%"}
 
-  You can configure where the debug pane appears, or even tear it off to its own
+  You can configure where the debug pane appears,
+  or even tear it off to its own
   window using the gear to the right in the Debug pane bar.
   This is true for any inspector in Android Studio.
 
@@ -94,8 +96,8 @@ Not needed for breakpoints to work.
 
 {% endcomment -%}
 
-* In the app, click the **+** button (FloatingActionButton, or FAB, for short)
-  to increment the counter. The app pauses.
+* In the app, click the **+** button (FloatingActionButton,
+  or FAB, for short) to increment the counter. The app pauses.
 
   在应用里，点击 **+** 按钮（FloatingActionButton，或者简称 FAB）来增加数字。应用会暂停。
 
@@ -243,8 +245,8 @@ Considere moving the info below to a new page.
 
     {% asset 'testing/debugging/oem/presentation-assistant-search-results.png' alt='Find panel' %}
 
-  * After an update, you might enter _Flutter_ or _Dart_ to see if new actions
-    are available.
+  * After an update, you might enter _Flutter_ or _Dart_ to see if
+    new actions are available.
 
     更新之后，你可以输入 **Flutter** 或者 **Dart** 来查看是否有新的可用的操作。
 
@@ -259,9 +261,10 @@ Considere moving the info below to a new page.
 
 ## 使用 Android Gradle 调试（Android）
 
-In order to debug OEM Android code, you need an app that contains OEM Android code.
-In this section, you'll learn how to connect two debuggers to your app: 1) the
-Dart debugger and, 2) the Android Gradle debugger.
+In order to debug OEM Android code, you need an app that contains 
+OEM Android code.In this section, you'll learn how to connect 
+two debuggers to your app: 1) the Dart debugger and, 
+2) the Android Gradle debugger.
 
 为了调试原生代码，你需要一个包含 Android 原生代码的应用。
 在本节中，你将学会如何连接两个调试器到你的应用：1）Dart 调试器，和 2）Android Gradle 调试器。
@@ -381,7 +384,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   添加 `url_launcher` 依赖到 pubspec 文件，并执行 `flutter pub get`：
 
-{% prettify yaml %}
+```yaml
 name: flutter_app
 description: A new Flutter application.
 version: 1.0.0+1
@@ -390,13 +393,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  [[highlight]]url_launcher: ^3.0.3[[/highlight]]
+  url_launcher: ^3.0.3
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-{% endprettify %}
+```
 
 * Click the debug icon
   ({% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %})
@@ -450,8 +453,10 @@ dev_dependencies:
   在调试面板中，你现在应该可以看到一个 **Android Debugger** 标签页。
 
 * In the project pane, expand
-  <strong><em>app_name</em> > android > app > src > main > java > io.flutter plugins</strong>.
-  Double click **GeneratedProjectRegistrant** to open the Java code in the edit pane.
+  <nobr><strong><em>app_name</em> > android > app > src > main >
+  java > io.flutter plugins</strong></nobr>.
+  Double click **GeneratedProjectRegistrant** to open the
+  Java code in the edit pane.
 
   在项目面板，展开 <strong><em>app_name</em> > android > app > src > main > java > io.flutter plugins</strong>。
   双击 **GeneratedProjectRegistrant** 在编辑面板中打开 Java 代码。
@@ -481,8 +486,8 @@ Dart 和原生调试器都在与同一个进程交互。使用其中一个或者
 ## 使用 Xcode 调试（iOS）
 
 In order to debug OEM iOS code, you need an app that contains OEM iOS code.
-In this section, you'll learn how to connect two debuggers to your app: 1) the
-Dart debugger and, 2) the Xcode debugger.
+In this section, you'll learn how to connect two debuggers to your app:
+1) the Dart debugger and, 2) the Xcode debugger.
 
 为了调试原生 iOS 代码，你需要一个包含原生 iOS 代码的应用。在本节中，你将学会如何连接两个调试器到你的应用：1）Dart 调试器，和 2）Xcode 调试器。
 
@@ -540,12 +545,12 @@ You can find the following debugging resources on
 
 * [Instruments Help][]
 
-[Flutter's modes]: /docs/testing/build-modes
-[developer.android.com]: {{site.android-dev}}
-[Debug your app]: {{site.android-dev}}/studio/debug
 [Android Debug Bridge (adb)]: {{site.android-dev}}/studio/command-line/adb
-[developer.apple.com]: https://developer.apple.com
+[Debug your app]: {{site.android-dev}}/studio/debug
 [Debugging]: https://developer.apple.com/support/debugging/
-[Instruments Help]: https://help.apple.com/instruments/mac/current/
-[Flutter inspector]: /docs/development/tools/devtools/inspector
+[developer.android.com]: {{site.android-dev}}
+[developer.apple.com]: https://developer.apple.com
 [DevTools]: /docs/development/tools/devtools
+[Flutter inspector]: /docs/development/tools/devtools/inspector
+[Flutter's modes]: /docs/testing/build-modes
+[Instruments Help]: https://help.apple.com/instruments/mac/current/

@@ -37,7 +37,7 @@ Here's how you can create such a structure with Flutter:
 
      将数据源的数据转换成列表 widget
 
-## 1. Create a data source with different types of item
+## 1. Create a data source with different types of items
 
 ## 1. 创建一个具有不同类型项目的数据源
 

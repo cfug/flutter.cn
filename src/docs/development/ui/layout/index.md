@@ -1286,7 +1286,7 @@ The widgets can completely or partially overlap the base widget.
 
 * You can choose to clip children that exceed the render box
 
-  你可以编辑超出渲染框的子项
+  你可以剪切掉超出渲染框的子项
 
 #### Examples (Stack)
 {:.no_toc}

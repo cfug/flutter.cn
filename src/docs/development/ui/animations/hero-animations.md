@@ -915,9 +915,13 @@ To run the example:
 
 ### Photo class
 
+### Photo 类
 
 The `Photo` class builds the widget tree that holds the image:
 
+Photo 类创建保存图像的 widget 树：
+
+{% prettify dart %}
 class Photo extends StatelessWidget {
   Photo({ Key key, this.photo, this.color, this.onTap }) : super(key: key);
 

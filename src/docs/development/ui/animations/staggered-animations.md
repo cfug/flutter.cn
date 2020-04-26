@@ -70,15 +70,15 @@ This guide shows how to build a staggered animation in Flutter.
   本指南解释了 basic_staggered_animation 示例。你也可参考更复杂的例子，staggered_pic_selection。
 
   [basic_staggered_animation][]
-  : Shows a series of sequential and overlapping animations
+  <br> Shows a series of sequential and overlapping animations
     of a single widget. Tapping the screen begins an animation
     that changes opacity, size, shape, color, and padding. 
     
   [basic_staggered_animation][]
-  ：展示一个单独的 widget 的一系列连续和重叠动画。轻击屏幕开始一个动画，改变不透明度，大小，形状、颜色和填充。
+  <br> 展示一个单独的 widget 的一系列连续和重叠动画。轻击屏幕开始一个动画，改变不透明度，大小，形状、颜色和填充。
   
   [staggered_pic_selection][]
-  : Shows deleting an image from a list of images displayed
+  <br> Shows deleting an image from a list of images displayed
     in one of three sizes. This example uses two
     [animation controllers][]: one for image selection/deselection,
     and one for image deletion. The selection/deselection
@@ -94,7 +94,7 @@ This guide shows how to build a staggered animation in Flutter.
     see in Google Photos.
     
   [staggered_pic_selection][]
-  ：展示从一个以三种大小显示的图像列表中删除一个图像。
+  <br> 展示从一个以三种大小显示的图像列表中删除一个图像。
     这个例子使用两个 [animation controllers][]:
     一个用于控制图像的选择/取消选择, 一个用于控制删除图像.
     选择/取消选择的动画是交织动画. (想看到这种效果，你可能需要增加 `timeDilation` 的数值。)
@@ -368,9 +368,12 @@ marking the widget tree dirty as values change.
 For each tick of the animation, the values are updated,
 resulting in a call to `_buildAnimation()`.
 
-在无状态 widget 中，`StaggerAnimation`， the `build()` 函数实例化了一个[`AnimatedBuilder`][]&mdash;一个用于构建动画的通用 widget。
-`AnimatedBuilder` 构建一个 widget 并使用 Tweens 的当前值配置它。这个例子创建一个名为 `_buildAnimation()` （实际更新 UI）的方法，
-并将其分配给其 `builder` 属性。`AnimatedBuilder` 监听来自动画控制器的通知，当值发生更改时，将 widget 树标记为dirty。
+在无状态 widget 中，`StaggerAnimation`，the `build()` 函数实例化了一个
+[`AnimatedBuilder`][]&mdash;一个用于构建动画的通用 widget。
+`AnimatedBuilder` 构建一个 widget 并使用 Tweens 的当前值配置它。
+这个例子创建一个名为 `_buildAnimation()` （实际更新 UI）的方法，
+并将其分配给其 `builder` 属性。`AnimatedBuilder` 监听来自动画控制器的通知，
+当值发生更改时，将 widget 树标记为 dirty。
 对于动画的每一个标记，值都会更新，导致调用 `_buildAnimation()`。
 
 
@@ -453,8 +456,9 @@ the animation, and builds the non-animating portion of the widget tree.
 The animation begins when a tap is detected in the screen.
 The animation runs forward, then backward.
 
-有状态的 widget, StaggerDemo， 创建 AnimationController（控制所有动画的控制器），设定一个 2000 毫秒的周期。
-控制器播放一个动画，然后在 widget 树上创建一个无动画的部分。当在屏幕上检测到一个点击时，动画开始。动画向前运行，然后向后运行。
+有状态的 widget, StaggerDemo， 创建 AnimationController（控制所有动画的控制器），
+设定一个 2000 毫秒的周期。控制器播放一个动画，然后在 widget 树上创建一个无动画的部分。
+当在屏幕上检测到一个点击时，动画开始。动画向前运行，然后向后运行。
 
 {% prettify dart %}
 [[highlight]]class StaggerDemo extends StatefulWidget[[/highlight]] {

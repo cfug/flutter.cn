@@ -23,13 +23,12 @@ highlighting, widget editing assists, run & debug support, and more.
 然而，我们推荐使用我们的编辑器插件以获取更好的开发体验。这些插件提供了代码补全、
 代码高亮、widget 辅助编辑的功能，以及为项目的运行和调试提供支持等。
 
-Follow the steps below to add an editor plugin for Android Studio, IntelliJ, or
-VS Code. If you want to use a different editor, that's OK, skip ahead to the
-[next step: Test drive][].
+Follow the steps below to add an editor plugin for Android Studio,
+IntelliJ, VS Code, or Emacs. If you want to use a different editor,
+that's OK, skip ahead to the [next step: Test drive][].
 
 参考以下步骤为 Android Studio、IntelliJ 或者 VS Code 添加编辑器插件。
-如果你想使用其他的编辑器，请直接打开 [下一节: 开发体验初探](/docs/get-started/test-drive)，
-来查看使用其他文本编辑器配合命令行工具来创建和运行 Flutter 应用。
+如果你想使用其他的编辑器，请直接打开 [下一节: 开发体验初探][next step: Test drive]，来查看使用其他文本编辑器配合命令行工具来创建和运行 Flutter 应用。
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -38,6 +37,9 @@ VS Code. If you want to use a different editor, that's OK, skip ahead to the
   </li>
   <li class="nav-item">
     <a class="nav-link" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="false">Visual Studio Code</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="emacs-tab" href="#emacs" role="tab" aria-controls="emacs" aria-selected="false">Emacs</a>
   </li>
 </ul>
 
@@ -159,7 +161,19 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
     打开 **输出** 面板查看是否有错误。
 
 </div>
+<div class="tab-pane" id="emacs" role="tabpanel" aria-labelledby="emacs-tab" markdown="1">
 
+## Install Emacs
+
+Emacs is a lightweight editor with support for Flutter and Dart.
+
+* [Emacs][], latest stable version
+
+## Install the lsp-dart package
+
+For information on how to install and use the package, see the [lsp-dart documentation][].
+
+</div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
 
 ## Next step
@@ -176,4 +190,6 @@ Take Flutter for a test drive: create a first project, run it, and experience
 [IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
 [next step: Test drive]: /docs/get-started/test-drive
 [VS Code]: https://code.visualstudio.com/
+[Emacs]: https://www.gnu.org/software/emacs/download.html
+[lsp-dart documentation]: https://emacs-lsp.github.io/lsp-dart/
 

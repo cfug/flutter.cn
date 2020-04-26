@@ -205,7 +205,7 @@ void main() {
 
 #### Notes about the pump() methods
 
-#### 备注
+#### pump() 方法相关提示
 
 After the initial call to `pumpWidget()`, the `WidgetTester` provides
 additional ways to rebuild the same widget. This is useful if you're

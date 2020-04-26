@@ -372,9 +372,8 @@ widget. Use the Transform widget’s `alignment` and `origin` properties to
 specify the transform origin (fulcrum) in relative and absolute terms,
 respectively.
 
-要旋转一个 widget，请将它嵌套在
-[Transform]({{site.api}}/flutter/widgets/Transform-class.html)
-widget 中。使用 Transform widget 的 `alignment` 和 `origin`
+要旋转一个 widget，请将它嵌套在 [`Transform`][] widget 中。
+使用 Transform widget 的 `alignment` 和 `origin`
 属性分别来指定转换原点（支点）的相对和绝对位置信息。
 
 For a simple 2D rotation, in which the widget is rotated on the Z axis, create a new [`Matrix4`][] identity object and use
@@ -981,9 +980,9 @@ var container = Container( // grey box
 
 ### 内联样式更改
 
-A [`Text`][] widget lets you display text with the some 
-formatting characteristics. To display text that uses 
-multiple styles (in this example, 
+A [`Text`][] widget lets you display text with some
+formatting characteristics. To display text that uses
+multiple styles (in this example,
 a single word with emphasis), use a [`RichText`][]
 widget instead. Its `text` property can specify one or more
 [`TextSpan`][] widgets

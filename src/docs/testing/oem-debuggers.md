@@ -261,9 +261,9 @@ Considere moving the info below to a new page.
 
 ## 使用 Android Gradle 调试（Android）
 
-In order to debug OEM Android code, you need an app that contains 
-OEM Android code.In this section, you'll learn how to connect 
-two debuggers to your app: 1) the Dart debugger and, 
+In order to debug OEM Android code, you need an app that contains
+OEM Android code. In this section, you'll learn how to connect
+two debuggers to your app: 1) the Dart debugger and,
 2) the Android Gradle debugger.
 
 为了调试原生代码，你需要一个包含 Android 原生代码的应用。

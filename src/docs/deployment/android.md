@@ -40,6 +40,10 @@ This page covers the following topics:
 
 * [R8](#r8)
 
+* [Shrinking your code with R8](#shrinking-your-code-with-r8)
+
+  [使用 R8 缩小你的代码体积](#shrinking-your-code-with-r8)
+
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
 
   [检查 app manifest 文件](#reviewing-the-app-manifest)
@@ -146,13 +150,16 @@ keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg R
 ```
 
 {{site.alert.note}}
-  
-  Keep the `keystore` file private;
-  do not check it into public source control.
-  
-  保证这个文件的私有性，不要将它提交到公共的代码管理空间。
 
-{{site.alert.end}}
+This command stores the `key.jks` file in your home
+directory. If you want to store it elsewhere, change
+the argument you pass to the `-keystore` parameter.
+**However, keep the `keystore` file private;
+don't check it into public source control!**
+
+该命令将会把 `key.jks` 文件储存在你的主文件夹中。
+如果你想要储存在其他地方，请通过指定 `-keystore` 传入参数。
+注意，请保证这个文件的私有性，不要将它提交到公共的代码管理空间。
 
 {{site.alert.note}}
 
@@ -163,15 +170,18 @@ keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg R
   'Java binary at:'. Then use that fully qualified path
   replacing `java` (at the end) with `keytool`.
   If your path includes space-separated names,
-  such as `Program Files`, place quotes around the
-  space-separated names. For example: `/"Program Files"/`
+  such as `Program Files`, use platform-appropriate
+  notation for the names. For example, on Mac/Linux
+  use `Program\ Files`, and on Windows use
+  `"Program Files"`.
   
   `keytool` 可能不在我们的系统路径中。
   它是 Java 的一部分，在安装 Android Studio 的时候会被一起安装。
   运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，
   然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。  
-  如果文件路径包含空格，类似 `Program Files` 这样的，你需要在路径上加入转义符：
-  `/"Program Files"/`。
+  如果文件路径包含空格，类似 `Program Files` 这样的，请使用平台允许的命名规则。
+  例如，在 Mac/Linux 上使用 `Program\ Files`，而在 Windows 上可以使用
+  `"Program Files"`。
   
 * The `-storetype JKS` tag is only required for Java 9
   or newer. As of the Java 9 release,
@@ -201,7 +211,7 @@ storeFile=<密钥库的位置，e.g. /Users/<用户名>/key.jks>
 {{site.alert.note}}
 
   Keep the `key.properties` file private;
-  do not check it into public source control.
+  don't check it into public source control.
   
   （再次）请保证这个文件的私有性，不要将它提交到公共的代码管理空间。
   
@@ -383,14 +393,21 @@ android {
 {{site.alert.note}}
 
   You may need to run `flutter clean` after changing the gradle file.
-  This will prevent cached builds affecting the signing process.
+  This prevents cached builds from affecting the signing process.
 
   当你更改 gradle 文件后也许需要运行一下 `flutter clean`。
   这将防止缓存的版本影响签名过程。
 
 {{site.alert.end}}
 
-## R8
+For more information on signing your app, see
+[Sign your app][] on developer.android.com.
+
+有关应用签名的更多信息，请查看 developer.android.com 的[为您的应用设置签名][Sign your app]。
+
+## Shrinking your code with R8
+
+## 使用 R8 压缩你的代码
 
 [R8][] is the new code shrinker from Google, and it's enabled by default
 when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
@@ -896,15 +913,13 @@ This doc need to assign to a new translator.
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
-[crash-issue]: https://issuetracker.google.com/issues/147096055
-[x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[crash-issue]: https://issuetracker.google.com/issues/147096055
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Flutter wiki]: {{site.github}}/flutter/flutter/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
-[Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
@@ -917,6 +932,8 @@ This doc need to assign to a new translator.
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [R8]: {{site.android-dev}}/studio/build/shrink-code
+[Sign your app]: https://developer.android.com/studio/publish/app-signing.html#generate-key
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 [versions]: {{site.android-dev}}/studio/publish/versioning
+[x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64

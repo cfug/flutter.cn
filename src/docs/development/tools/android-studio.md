@@ -546,7 +546,7 @@ You can also define custom templates in **Settings > Editor > Live Templates**.
 **热重载**
 
 On Linux (keymap _Default for XWin_) and Windows the keyboard shortcuts
-are `Controle`+`Alt`+`;` and `Control`+`Backslash`.
+are `Control`+`Alt`+`;` and `Control`+`Backslash`.
 
 在 Linux（映射方案默认为 **XWin**）和 Windows 上，
 快捷键是 `Controle`+`Alt`+`;` 和 `Control`+`Backslash`。

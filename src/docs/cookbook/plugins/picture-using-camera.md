@@ -98,6 +98,15 @@ dependencies:
 
     针对 Android 来说，工程的 `minSdkVersion` 需要设置为 21 或者更高。
     
+  - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera.
+
+    在 iOS 上，在 `ios/Runner/Info.plist` 中添加下面几行以访问摄像头。
+
+    ```
+    <key>NSCameraUsageDescription</key>
+    <string>Explanation on why the camera access is needed.</string>
+    ```
+
 {{site.alert.end}}
 
 ## 2. Get a list of the available cameras

@@ -847,7 +847,7 @@ The following example sets a dependency for
 android {
     // lines skipped
     dependencies {
-        provided rootProject.findProject(":url_launcher")
+        compileOnly rootProject.findProject(":url_launcher")
     }
 }
 ```

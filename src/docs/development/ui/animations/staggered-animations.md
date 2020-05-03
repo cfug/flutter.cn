@@ -259,7 +259,7 @@ To set up the animation:
   
     Tween 定义一个值的范围。
   
-  * The `Twee`n's `animate` method requires the
+  * The `Tween`'s `animate` method requires the
     `parent` controller, and produces an `Animation`
     for that property.
     
@@ -486,7 +486,7 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
       [[highlight]]await _controller.forward().orCancel;[[/highlight]]
       [[highlight]]await _controller.reverse().orCancel;[[/highlight]]
     } on TickerCanceled {
-      // the animation got canceled, probably because we were disposed
+      // the animation got canceled, probably because it was disposed of
     }
   }
 

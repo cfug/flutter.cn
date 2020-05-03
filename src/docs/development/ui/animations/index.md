@@ -248,6 +248,18 @@ fade through transitions, and fade transitions.
 这个 package 包含了以下内置常用模式：
 `Container`变换，共享轴变换，
 
+## Common animation patterns
+
+## 常见动画模式
+
+Most UX or motion designers find that certain
+animation patterns are used repeatedly when designing a UI.
+This section lists some of the commonly
+used animation patterns, and tells you where to learn more.
+
+大多数 UX 或 动效设计师在设计 UI 时都会寻找主要动画模式。
+本章的列表将介绍一些常见的动画模式，并向你介绍更多学习它们的地方。
+
 ### Animated list or grid
 
 ### 列表或网格动画

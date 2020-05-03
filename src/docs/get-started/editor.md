@@ -15,8 +15,9 @@ toc: false
 ---
 
 You can build apps with Flutter using any text editor combined with our
-command-line tools. However, we recommend using one of our editor plugins for an
-even better experience. These plugins provide you with code completion, syntax
+command-line tools. However, we recommend using one of our editor
+plugins for an even better experience.
+These plugins provide you with code completion, syntax
 highlighting, widget editing assists, run & debug support, and more.
 
 你可以使用任意文本编辑器，结合我们的命令行工具来开发 Flutter 应用。
@@ -84,16 +85,15 @@ To install these:
     
     打开 Android Studio。
 
- 1. Open plugin preferences (**Preferences > Plugins** on macOS,
-    **File > Settings > Plugins** on Windows & Linux).
+ 1. Open plugin preferences (**Configure > Plugins** as of
+     v3.6.3.0 or later).
 
-    打开插件设置（macOS 系统打开 **Preferences > Plugins**，
-    Windows 和 Linux 系统打开 **File > Settings > Plugins**）。
+    打开插件设置（在 v3.6.3.0 以上的系统打开 **Configure > Plugins**）。
 
- 1. Select **Marketplace**,  select the Flutter plugin and click
-    **Install**.
+ 1. Select the Flutter plugin and
+     click **Install**.
 
-    选择 **Marketplace**，然后选择 Flutter 插件并点击 **安装**。
+    然后选择 Flutter 插件并点击 **安装**。
 
  1. Click **Yes** when prompted to install the Dart plugin.
 
@@ -102,6 +102,27 @@ To install these:
  1. Click **Restart** when prompted.
 
     当弹出重新启动提示时，点击 **Restart**。
+
+{{site.alert.note}}
+
+  Prior to v3.6.3.0, access plugin preferences as follows:
+   
+  v3.6.3.0 之前的版本请按照下面这样访问插件设置： 
+   
+   1. Open plugin preferences (**Preferences > Plugins** on macOS,
+      **File > Settings > Plugins** on Windows & Linux).
+
+      打开插件设置（macOS 系统打开 **Preferences > Plugins**，
+      Windows 和 Linux 系统打开 **File > Settings > Plugins**）
+
+   1. Select **Marketplace**,  select the Flutter plugin and click
+      **Install**.
+
+      选择 **Marketplace**，然后选择 Flutter 插件并点击 **安装**。
+
+{{site.alert.end}}
+
+    
 
 </div>
 <div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">

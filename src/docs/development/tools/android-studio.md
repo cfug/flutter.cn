@@ -549,7 +549,7 @@ On Linux (keymap _Default for XWin_) and Windows the keyboard shortcuts
 are `Control`+`Alt`+`;` and `Control`+`Backslash`.
 
 在 Linux（映射方案默认为 **XWin**）和 Windows 上，
-快捷键是 `Controle`+`Alt`+`;` 和 `Control`+`Backslash`。
+快捷键是 `Control`+`Alt`+`;` 和 `Control`+`Backslash`。
 
 On macOS (keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are
 `Command`+`Option` and `Command`+`Backslash`.

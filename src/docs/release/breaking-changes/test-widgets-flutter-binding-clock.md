@@ -1,7 +1,7 @@
 ---
 title: TestWidgetsFlutterBinding.clock change
 title: TestWidgetsFlutterBinding.clock 变动
-description: The Clock implementation will now come from package:clock.
+description: The Clock implementation now comes from package:clock.
 description: Clock 的具体实现移至 package:clock。
 ---
 

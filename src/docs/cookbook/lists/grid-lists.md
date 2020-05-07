@@ -49,7 +49,7 @@ GridView.count(
     return Center(
       child: Text(
         'Item $index',
-        style: Theme.of(context).textTheme.headline,
+        style: Theme.of(context).textTheme.headline5,
       ),
     );
   }),
@@ -87,7 +87,7 @@ class MyApp extends StatelessWidget {
             return Center(
               child: Text(
                 'Item $index',
-                style: Theme.of(context).textTheme.headline,
+                style: Theme.of(context).textTheme.headline5,
               ),
             );
           }),

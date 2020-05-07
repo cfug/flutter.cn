@@ -50,9 +50,9 @@ any web server.
 并使用 Dart 的优化过的 JavaScript 编译器将 Flutter 核心与框架，
 同你的应用程序一起编译成一个可以部署到任何 Web 服务器的简化源文件。
 
-While traditional web approaches remain a great choice, we envision
-the web support available in Flutter being valuable in many scenarios. 
-For example:
+While traditional web approaches remain a great choice,
+we envision the web support available in Flutter being
+valuable in many scenarios. For example:
 
 虽然以传统方式开发 web 仍旧是一个不错的选择，但我们认为在 Flutter 中提供的 Web 支持在许多情况下都很有价值。
 例如：
@@ -92,7 +92,8 @@ Not every HTML scenario is ideally suited for Flutter at this time.
 For example, text-rich flow-based content such as blog articles
 benefit from the document-centric model that the web is built around,
 rather than the app-centric services that a UI framework like Flutter
-can deliver.
+can deliver. However, you _can_ use Flutter to embed interactive
+experiences into these websites.
 
 **在 Flutter 移动应用中嵌入动态内容**
 <br> 在现有移动应用程序内提供动态内容更新的既定方法是使用 Web 视图控件，
@@ -144,11 +145,9 @@ The following resources can help you get started:
   **#help** channel on [Discord][].
 
   你可以在 [Discord][] 的 **#help** 频道咨询 web 相关的问题。
-  
-* You can chat and ask web-related questions on the
-  [Discord group][].
-  
-  你可以在 [Discord group][] 聊聊或询问 Web 相关的问题。
+
+---
+
 
 [Building a web application with Flutter]: /docs/get-started/web
 [Creating responsive apps]: /docs/development/ui/layout/responsive

@@ -549,6 +549,13 @@ wrap a widget and force the widget to fill extra space.
   使用 `Flexible` 在  `Row` 或 `Column` 中重新调整 widgets 的大小。
   这样，你就可以调整子 widget 的间距同时保持其相对于父 widget  的大小。
   `Expanded`改变子窗口小部件的约束， 所以它会填补全部空白空间。
+  
+  To learn more about constraints and how they affect how
+  Flutter determines the size and position of its widgets,
+  see [Understanding constraints][].
+  
+  如果您想了解 Flutter 是如何约束确定 widget 的大小和位置，
+  请阅读文档 [了解约束][Understanding constraints]。
 
 {{site.alert.end}} 
 
@@ -1195,3 +1202,5 @@ You can download Flutter from the [install][] page.
 [Material Color palette]: {{site.api}}/flutter/material/Colors-class.html
 [Material Icon library]: {{site.api}}/flutter/material/Icons-class.html
 [sample apps]: {{site.github}}/flutter/samples/blob/master/INDEX.md
+[Understanding constraints]: /docs/development/ui/layout/constraints
+

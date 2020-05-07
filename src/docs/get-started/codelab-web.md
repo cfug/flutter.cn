@@ -79,7 +79,7 @@ You'll start with a simple web app that we provide for you.
 <li markdown="1">Enable web development.<br>
 At the command line, perform the following commands to
 make sure that you have the latest web support and that
-it is enabled. You only need to run `flutter config` once
+it's enabled. You only need to run `flutter config` once
 to enable Flutter support for web.
 If you see "flutter: command not found",
 then make sure that you have installed the
@@ -195,7 +195,7 @@ class _LoginFormState extends State<LoginForm> {
           Text('Sign Up', style: Theme
               .of(context)
               .textTheme
-              .display1), // display1 changes to headline4 in 1.16
+              .headline4),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
@@ -304,7 +304,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.display3),
+        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
       ),
     );
   }
@@ -746,7 +746,7 @@ Then, replace the `LinearProgressIndicator` in the Form with this new
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress), // NEW
-          Text('Sign Up', style: Theme.of(context).textTheme.display1),
+          Text('Sign Up', style: Theme.of(context).textTheme.headline4),
           Padding(
 ...
 ```
@@ -803,7 +803,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.display3),
+        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
       ),
     );
   }
@@ -852,7 +852,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress),
-          Text('Sign Up', style: Theme.of(context).textTheme.display1),
+          Text('Sign Up', style: Theme.of(context).textTheme.headline4),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(

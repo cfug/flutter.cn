@@ -9,16 +9,67 @@ description: 在 Flutter 中编写或运行 Web 应用程序时遇到的一些�
 
 ### Web 版本的 Flutter 是否已经准备好投入生产环境中了呢？
 
-As of the 1.12 release, web support for Flutter
-is available on the beta channel.
+Flutter web support is available on the beta channel.
+As is typical for beta software, we're still making
+changes to improve performance and quality, and you
+may discover rendering bugs compared to the stable
+mobile platforms. While web support is in beta,
+we recommend careful testing on a variety of platforms
+before deploying to production, and that you track and
+apply Flutter updates to your deployed site on a regular
+basis.
 
-从 1.12 版本开始，Flutter 的 Beta 频道已支持 Web 。
+Flutter 网页支持在测试版频道中提供。
+作为典型的测试版软件，我们仍在进行修改以提高性能和质量，
+与稳定的移动平台相比，您可能会发现渲染方面的 BUG。
+虽然网页支持还在测试阶段，
+但我们建议您在部署到生产环境之前在各种平台上仔细测试，
+定期跟踪 Flutter 更新并将其应用于已部署的站点。
 
-**We don't recommend deploying a web app to production.**
+### What scenarios are ideal for Flutter on the web?
 
-**我们不建议将 Web 应用部署到生产环境中**
+### 在 Web 平台使用 Flutter 的场景有哪些？
 
-See [Upgrading from package:flutter_web to the Flutter SDK].
+While traditional web approaches remain a great choice,
+we envision the web support available in Flutter being
+valuable in many scenarios. For example:
+
+尽管传统的 Web 场景是非常有价值，
+但我们设想在如下场景中的 Web 支持也有很大价值：
+
+* Rich interactive single page applications
+
+  丰富的交互式单页应用
+
+* Connected Progressive Web Applications (PWAs)
+
+  渐进式网络应用 (PWA)
+  
+* Embedding dynamic/interactive content in an existing website
+
+  在现有网站中嵌入动态/互动内容
+
+Not every HTML scenario is ideally suited for Flutter at
+this time. For example, text-rich flow-based content such
+as blog articles benefit from the document-centric model that
+the web is built around, rather than the app-centric services
+that a UI framework like Flutter can deliver.
+However, you _can_ use Flutter to
+embed interactive experiences into these websites.
+
+目前，并不是每一个 HTML 场景在这个阶段都适合 Flutter。
+例如，博客文章等基于流媒体的丰富文本内容，
+其受益于网络构建的以文档为中心的模式，
+而不是像 Flutter 这样的 UI 框架可以提供的以应用为中心的服务。
+然而，你可以使用 Flutter 将交互式体验嵌入到这些网站中。
+
+For more information on how you can use Flutter on the web,
+see [Web support for Flutter][].
+
+有关如何在 Web 上使用 Flutter 的更多信息，参考文档：
+[Flutter 的 Web 支持][Web support for Flutter]。
+
+See [Upgrading from package:flutter_web to the Flutter SDK][].
 
 点击查看 [将使用 flutter_web package 升级使用到 Flutter SDK][Upgrading from package:flutter_web to the Flutter SDK]
 以获得 Flutter Web 体验。
@@ -35,16 +86,16 @@ See [building a web app with Flutter](/docs/get-started/web).
 
 ### Web 应用上能热重载吗？
 
-No.
+No, but you can use hot restart.
 
-不能。
+不能，但是可以使用热重启 (hot restart)。
 
 ### Can I use Flutter plugins?
 
 Yes, several plugins have web support. 
-Find an updated list of plugins on [pub.dev] using the web filter.
+Find an updated list of plugins on [pub.dev][] using the web filter.
 You can also add web support to existing plugins or
-[write your own plugins] for the web.
+[write your own plugins][] for the web.
 
 可以使用了，许多 plugin 已经支持 web。
 使用 web 过滤器在 [pub.dev][] 上寻找 plugin 更新列表。
@@ -54,12 +105,10 @@ You can also add web support to existing plugins or
 
 ### 我该如何提交关于 Web 支持的 issue？
 
-You can [file an issue](https://goo.gle/flutter_web_issue)
-on the main Flutter repo. Make sure that "web" is
-included in the title.
+You can [file an issue][] on the main Flutter repo.
+Make sure that "web" is included in the title.
 
-你可以在 Flutter 主仓库中
-[提交一个 issue](https://goo.gle/flutter_web_issue)。
+你可以在 Flutter 主仓库中 [提交一个 issue][file an issue]。
 确保标题中包含 “Web” 字样。
 
 ### How do I refresh the app running in the browser?
@@ -105,16 +154,16 @@ option.
 
 ### 我该如何构建响应式 web 应用？
 
-See [Creating responsive apps](/docs/development/ui/layout/responsive).
+See [Creating responsive apps][].
 
-请参阅[创建响应式应用](/docs/development/ui/layout/responsive)。
+请参阅[创建响应式应用][Creating responsive apps]。
 
 ### Can I use `dart:io` with a web app?
 
 ### 我能在 web 应用中使用 `dart:io` 这个 package 吗？
 
 No. The file system is not accessible from the browser.
-For network functionality, use the [`http`]
+For network functionality, use the [`http`][]
 package. Note that security works somewhat
 differently because the browser (and not the app)
 controls the headers on an HTTP request.
@@ -130,7 +179,7 @@ controls the headers on an HTTP request.
 
 The browser's back button is supported for web apps.
 The forward button is not yet enabled.
-For more information, see [Issue 32248].
+For more information, see [Issue 32248][].
 
 Web 应用支持浏览器的后退按钮。
 前进按钮尚未支持。
@@ -141,7 +190,7 @@ Web 应用支持浏览器的后退按钮。
 ### 复制和粘贴功能状况如何？
 
 Copy/paste works on mobile. If you encounter problems,
-please [file an issue].
+please [file an issue][].
 
 在移动设备上复制和粘贴可以使用。
 如果你遇到了什么问题，请 [提一个 issue][file an issue]。
@@ -152,7 +201,7 @@ please [file an issue].
 
 You can embed a Flutter web app,
 as you would embed other content,
-in an [`iframe`] tag of an HTML file.
+in an [`iframe`][] tag of an HTML file.
 In the following example, replace "URL"
 with the location of your hosted HTML page:
 
@@ -190,31 +239,31 @@ IDK
 
 ### 我该如何调试一个 web 应用？
 
-Use [Flutter DevTools] for the following tasks:
+Use [Flutter DevTools][] for the following tasks:
 
-使用 [Flutter DevTools] 来尝试如下工作：
+使用 [Flutter DevTools][] 来尝试如下工作：
 
-* [Debugging]
+* [Debugging][]
 
   [调试][Debugging]
   
-* [Logging]
+* [Logging][]
 
   [查看日志][Logging]
   
-* [Running Flutter inspector]
+* [Running Flutter inspector][]
 
   [运行 Flutter inspector][Running Flutter inspector]
 
-Use [Chrome DevTools] for the following tasks:
+Use [Chrome DevTools][] for the following tasks:
 
-使用 [Chrome DevTools] 来尝试如下工作：
+使用 [Chrome DevTools][] 来尝试如下工作：
 
-* [Generating event timeline]
+* [Generating event timeline][]
 
   [生成事件的时间线][Generating event timeline]
   
-* [Analyzing performance]&mdash;make sure to use a
+* [Analyzing performance][]&mdash;make sure to use a
   profile build
   
   [分析性能][Analyzing performance]&mdash;请确保应用使用的是 profile 构建
@@ -223,7 +272,7 @@ Use [Chrome DevTools] for the following tasks:
 
 ### 我该如何测试 Web 应用？
 
-Use the normal [widget tests].
+Use the normal [widget tests][].
 
 跟常规的 [widget tests][] 通用。
 
@@ -243,8 +292,7 @@ TBD
 
 ### 我该如何部署 Web 应用？
 
-See [Preparing a web app for
-release](/docs/deployment/web).
+See [Preparing a web app for release][]
 
 请参阅 [打包并发布到 Web 平台](/docs/deployment/web)
 
@@ -260,12 +308,16 @@ Not currently.
 
 ### 如何跟其他使用者交流？
 
-Check out the **#web** discussion board on [Discord].
+Check out the **#web** discussion board on [Discord][].
 Flutter engineers routinely read and respond on Discord.
 
 请在 [Discord][] 平台的 **#web** 这个讨论板跟大家讨论，
 Flutter 团队的工程师会经常阅读和互动。
 
+[Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
+[building a web app with Flutter]: /docs/get-started/web
+[Chrome DevTools]: https://developers.google.com/web/tools/chrome-devtools
+[Creating responsive apps]: /docs/development/ui/layout/responsive
 [Analyzing performance]: https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance
 [Chrome DevTools]: https://developers.google.cn/web/tools/chrome-devtools
 [Debugging]: /docs/development/tools/devtools/debugger
@@ -277,8 +329,10 @@ Flutter 团队的工程师会经常阅读和互动。
 [`iframe`]: https://html.com/tags/iframe/
 [Issue 32248]: {{site.github}}/flutter/flutter/issues/32248
 [Logging]: /docs/development/tools/devtools/logging
+[Preparing a web app for release]: /docs/deployment/web
 [Running Flutter inspector]: /docs/development/tools/devtools/inspector
-[Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
+[Upgrading from package:flutter_web to the Flutter SDK]: {{site.github}}/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /docs/testing#widget-tests
-[pub.dev]: https://pub.dev/flutter/packages?platform=web
-[write your own plugins]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
+[pub.dev]: {{site.pub}}/flutter/packages?platform=web
+[Web support for Flutter]: /web
+[write your own plugins]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1

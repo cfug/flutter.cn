@@ -7,8 +7,8 @@ description: Learn how to integrate a Flutter module into your existing iOS proj
 description: 了解如何将 Flutter module 集成到你现有的 iOS 项目中。
 ---
 
-Flutter can be incrementaly added into your existing iOS application as embedded
-frameworks.
+Flutter can be incrementaly added into your existing iOS
+application as embedded frameworks.
 
 Flutter 可以以 framework 框架的形式添加到你的既有 iOS 应用中。
 
@@ -44,13 +44,15 @@ flutter create --template module my_flutter
 ```
 
 A Flutter module project is created at `some/path/my_flutter/`.
-From that directory, you can run the same `flutter` commands you would
-in any other Flutter project, like `flutter run --debug` or
-`flutter build ios`.  You can also run the module in
+From that directory, you can run the same `flutter`
+commands you would in any other Flutter project,
+like `flutter run --debug` or `flutter build ios`.
+You can also run the module in
 [Android Studio/IntelliJ][] or [VS Code][] with
 the Flutter and Dart plugins. This project contains a
 single-view example version of your module before it's
-embedded in your existing application, which is useful for incrementally
+embedded in your existing application,
+which is useful for incrementally
 testing the Flutter-only parts of your code.
 
 Flutter module 会创建在 `some/path/my_flutter/` 目录。
@@ -65,8 +67,8 @@ Flutter module 会创建在 `some/path/my_flutter/` 目录。
 
 ### 模块组织
 
-The `my_flutter` module directory structure is similar to a normal Flutter
-application:
+The `my_flutter` module directory structure is similar to a
+normal Flutter application:
 
 在 `my_flutter` 模块，目录结构和普通 Flutter 应用类似：
 
@@ -85,15 +87,16 @@ Add your Dart code to the `lib/` directory.
 
 添加你的 Dart 代码到 `lib/` 目录。
 
-Add Flutter dependencies to `my_flutter/pubspec.yaml`, including Flutter packages
-and plugins.
+Add Flutter dependencies to `my_flutter/pubspec.yaml`,
+including Flutter packages and plugins.
 
 添加 Flutter 依赖到 `my_flutter/pubspec.yaml`，
 包括 Flutter packages 和 plugins。
 
-The `.ios/` hidden subfolder contains an Xcode workspace where you can run a
-standalone version of your module. It is a wrapper project to bootstrap your
-Flutter code, and contains helper scripts to facilitate building frameworks or
+The `.ios/` hidden subfolder contains an Xcode workspace where
+you can run a standalone version of your module.
+It is a wrapper project to bootstrap your Flutter code,
+and contains helper scripts to facilitate building frameworks or
 embedding the module into your existing application with [CocoaPods][].
 
 `.ios/` 隐藏文件夹包含了一个 Xcode workspace，用于单独运行你的 Flutter module。
@@ -102,10 +105,11 @@ embedding the module into your existing application with [CocoaPods][].
 
 {{site.alert.note}}
 
-  Add custom iOS code to your own existing application's project or to a plugin,
-  not to the module's `.ios/` directory. Changes made in your module's `.ios/`
-  directory do not appear in your existing iOS project using the module,
-  and may be overwritten by Flutter.
+  Add custom iOS code to your own existing application's
+  project or to a plugin, not to the module's `.ios/`
+  directory. Changes made in your module's `.ios/`
+  directory do not appear in your existing iOS project
+  using the module, and may be overwritten by Flutter.
   
   iOS 代码要添加到你的既有应用或者 Flutter plugin中，
   而不是 Flutter module 的 `.ios/` 目录下。
@@ -154,8 +158,8 @@ There are two ways to embed Flutter in your existing application.
   因为 Flutter 还不支持将 Dart 代码编译成 x86 ahead-of-time (AOT) 模式的二进制文件。
   你可以在模拟机和真机上运行 Debug 模式，在真机上运行 Release 模式。
 
-  To run your app on a simulator follow the instructions in the bottom of section
-  [embed the frameworks][].
+  To run your app on a simulator follow the instructions
+  in the bottom of section [embed the frameworks][].
 
   要在模拟器上运行您的应用，请按照本节底部的[嵌入框架][embed the frameworks]说明进行操作。
 
@@ -169,10 +173,10 @@ Using Flutter [increases your app size][].
 
 ### 选项 A - 使用 CocoaPods 和 Flutter SDK 集成
 
-This method requires every developer working on your project to have a
-locally installed version of the Flutter SDK.
-Simply build your application in Xcode to automatically run the script to
-embed your Dart and plugin code.
+This method requires every developer working on your
+project to have a locally installed version of the Flutter SDK.
+Simply build your application in Xcode to automatically
+run the script to embed your Dart and plugin code.
 This allows rapid iteration with the most up-to-date
 version of your Flutter module without running additional
 commands outside of Xcode.
@@ -182,9 +186,9 @@ commands outside of Xcode.
 这个方法允许你使用 Flutter module 中的最新代码快速迭代开发，
 而无需在 Xcode 以外执行额外的命令。
 
-The following example assumes that your existing application and
-the Flutter module are in sibling directories.
-If you have a different directory structure,
+The following example assumes that your existing
+application and the Flutter module are in sibling
+directories. If you have a different directory structure,
 you may need to adjust the relative paths.
 
 下面的示例假设你的既有应用和 Flutter module 在相邻目录。
@@ -243,8 +247,9 @@ Run `pod install`.
 
 {{site.alert.note}}
 
-  When you change the Flutter plugin dependencies in `my_flutter/pubspec.yaml`,
-  run `flutter pub get` in your Flutter module directory to refresh the list
+  When you change the Flutter plugin dependencies in
+  `my_flutter/pubspec.yaml`, run `flutter pub get`
+  in your Flutter module directory to refresh the list
   of plugins read by the `podhelper.rb` script.
   Then, run `pod install` again from
   your application at`some/path/MyApp`.
@@ -265,8 +270,8 @@ The `podhelper.rb` script embeds your plugins,
 `podhelper.rb` 脚本会把你的 plugins，
 `Flutter.framework`，和 `App.framework` 集成到你的项目中。
 
-Your app's Debug and Release build configurations embeds the Debug or
-Release [build modes of Flutter][], respectively.
+Your app's Debug and Release build configurations embed
+the Debug or Release [build modes of Flutter][], respectively.
 Add a Profile build configuration
 to your app to test in profile mode.
 
@@ -347,12 +352,14 @@ some/path/MyApp/
 
 {{site.alert.warning}}
 
-  Always use `Flutter.framework` and `App.framework` from the same directory.
-  Mixing `.framework` imports from different directories (such as
-  `Profile/Flutter.framework` with `Debug/App.framework`) causes runtime crashes.
+  Always use `Flutter.framework` and `App.framework`
+  from the same directory. Mixing `.framework` imports
+  from different directories (such as `Profile/Flutter.framework`
+  with `Debug/App.framework`) causes runtime crashes.
 
   始终使用相同目录下的 `Flutter.framework` 和 `App.framework`。
-  混合使用不同目录（例如 `Profile/Flutter.framework` 以及 `Debug/App.framework`）将会导致运行失败。
+  混合使用不同目录（例如 `Profile/Flutter.framework` 
+  以及 `Debug/App.framework`）将会导致运行失败。
 
 {{site.alert.end}}
 
@@ -403,8 +410,8 @@ Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`)
 
 ### 内嵌框架
 
-The generated dynamic frameworks must be embedded into your app
-to be loaded at runtime.
+The generated dynamic frameworks must be embedded
+into your app to be loaded at runtime.
 
 生成的动态框架必须嵌入你的应用并且在运行时被加载。
 
@@ -473,12 +480,12 @@ You should now be able to build the project in Xcode using `⌘B`.
 
 ### 选项 C -  使用 CocoaPods 在 Xcode 和 Flutter 框架中内嵌应用和插件框架 
 
-Alternatively, instead of distributing the large Flutter.framework to other 
-developers, machines, or continuous integration systems, 
-you can instead generate Flutter as CocoaPods podspec 
-by adding the flag `--cocoapods`. 
-This produces a `Flutter.podspec` instead of an engine Flutter.framework. 
-The App.framework and plugin frameworks will be generated 
+Alternatively, instead of distributing the large Flutter.framework
+to other developers, machines, or continuous integration systems,
+you can instead generate Flutter as CocoaPods podspec by adding
+the flag `--cocoapods`. This produces a `Flutter.podspec`
+instead of an engine Flutter.framework.
+The App.framework and plugin frameworks are generated
 as described in Option B.
 
 除了将一个很大的 Flutter.framework 分发给其他开发者、机器或者持续集成 (CI) 系统
@@ -525,7 +532,8 @@ Host apps using CocoaPods can add Flutter to their Podfile:
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
 
-Embed and link the generated App.framework, FlutterPluginRegistrant.framework,
+Embed and link the generated App.framework,
+FlutterPluginRegistrant.framework,
 and any plugin frameworks into your existing application
 as described in Option B.
 
@@ -538,17 +546,19 @@ You can now [add a Flutter screen][] to your existing application.
 你现在可以 [添加一个 Flutter 页面][add a Flutter screen] 到你的既有应用中。
 
 
+[add a Flutter screen]: /docs/development/add-to-app/ios/add-flutter-screen
 [macOS system requirements for Flutter]: /docs/get-started/install/macos#system-requirements
 [Xcode installed]: /docs/get-started/install/macos#install-xcode
 [Android Studio/IntelliJ]: /docs/development/tools/android-studio
-[VS Code]: /docs/development/tools/vs-code
+[build modes of Flutter]: /docs/testing/build-modes
+[embed the frameworks]: /docs/development/add-to-app/ios/project-setup#embed-the-frameworks
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html
 [Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
-[Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
 [increases your app size]: /docs/resources/faq#how-big-is-the-flutter-engine
-[build modes of Flutter]: /docs/testing/build-modes
-[XCFrameworks]: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes
+[macOS system requirements for Flutter]: /docs/get-started/install/macos#system-requirements
+[Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
 [static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
-[add a Flutter screen]: /docs/development/add-to-app/ios/add-flutter-screen
-[embed the frameworks]: /docs/development/add-to-app/ios/project-setup#embed-the-frameworks
+[VS Code]: /docs/development/tools/vs-code
+[XCFrameworks]: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes
+[Xcode installed]: /docs/get-started/install/macos#install-xcode

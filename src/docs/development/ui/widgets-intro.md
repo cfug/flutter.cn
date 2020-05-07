@@ -26,7 +26,7 @@ Widget 描述了在当前的配置和状态下视图所应该呈现的样子。
 {{site.alert.note}}
 
   If you would like to become better acquainted with Flutter by diving
-  into some code, check out the [basic layout codelab][],
+  into some code, check out [basic layout codelab][],
   [building layouts][],
   and [adding interactivity to your Flutter app][].
 
@@ -207,7 +207,7 @@ class MyScaffold extends StatelessWidget {
           MyAppBar(
             title: Text(
               'Example title',
-              style: Theme.of(context).primaryTextTheme.title,
+              style: Theme.of(context).primaryTextTheme.headline6,
             ),
           ),
           Expanded(
@@ -495,8 +495,9 @@ StatefulWidgets 是一种特殊的 widget，
 ```dart
 class Counter extends StatefulWidget {
   // This class is the configuration for the state. It holds the
-  // values (in this case nothing) provided by the parent and used by the build
-  // method of the State. Fields in a Widget subclass are always marked "final".
+  // values (in this case nothing) provided by the parent and used
+  // by the build  method of the State. Fields in a Widget
+  // subclass are always marked "final".
 
   @override
   _CounterState createState() => _CounterState();
@@ -550,11 +551,13 @@ hand, are persistent between calls to
 Widget 是临时对象，用于构造应用当前状态的展示。
 而 State 对象在调用 `build()` 之间是持久的，以此来存储信息。
 
-The example above accepts user input and directly uses the result in its
-`build()` method.  In more complex applications, different parts of the widget
-hierarchy might be responsible for different concerns; for example, one
-widget might present a complex user interface with the goal of gathering
-specific information, such as a date or location, while another widget might
+The example above accepts user input and directly uses
+the result in its `build()` method.  In more complex applications,
+different parts of the widget hierarchy might be
+responsible for different concerns; for example, one
+widget might present a complex user interface
+with the goal of gathering specific information,
+such as a date or location, while another widget might
 use that information to change the overall presentation.
 
 上面的示例接受用户输入并直接在其 `build()` 方法中直接使用结果。
@@ -562,10 +565,12 @@ use that information to change the overall presentation.
 例如，一个 widget 可能呈现复杂的用户界面，
 来收集像日期或位置这样特定的信息，而另一个 widget 可能使用该信息来改变整体的展现。
 
-In Flutter, change notifications flow "up" the widget hierarchy by way of
-callbacks, while current state flows "down" to the stateless widgets that do
-presentation. The common parent that redirects this flow is the `State`.
-The following slightly more complex example shows how this works in practice:
+In Flutter, change notifications flow "up" the widget
+hierarchy by way of callbacks, while current state flows
+"down" to the stateless widgets that do presentation.
+The common parent that redirects this flow is the `State`.
+The following slightly more complex example shows how
+this works in practice:
 
 在 Flutter 中，widget 通过回调得到状态改变的通知，
 同时当前状态通知给其他 widget 用于显示。
@@ -680,8 +685,9 @@ class ShoppingListItem extends StatelessWidget {
   final CartChangedCallback onCartChanged;
 
   Color _getColor(BuildContext context) {
-    // The theme depends on the BuildContext because different parts of the tree
-    // can have different themes.  The BuildContext indicates where the build is
+    // The theme depends on the BuildContext because different parts
+    // of the tree can have different themes.
+    // The BuildContext indicates where the build is
     // taking place and therefore which theme to use.
 
     return inCart ? Colors.black54 : Theme.of(context).primaryColor;
@@ -712,9 +718,10 @@ class ShoppingListItem extends StatelessWidget {
 }
 ```
 
-The `ShoppingListItem` widget follows a common pattern for stateless widgets.
-It stores the values it receives in its constructor in [`final`][]
-member variables, which it then uses during its [`build()`][] function.
+The `ShoppingListItem` widget follows a common pattern
+for stateless widgets.  It stores the values it receives
+in its constructor in [`final`][] member variables,
+which it then uses during its [`build()`][] function.
 For example, the `inCart` boolean toggles between two visual
 appearances: one that uses the primary color from the current
 theme, and another that uses gray.
@@ -725,9 +732,10 @@ theme, and another that uses gray.
 例如，`inCart` 布尔值使两种样式进行切换：
 一个使用当前主题的主要颜色，另一个使用灰色。
 
-When the user taps the list item, the widget doesn't modify its `inCart` value
-directly. Instead, the widget calls the `onCartChanged` function it received
-from its parent widget. This pattern lets you store state higher in the widget
+When the user taps the list item, the widget doesn't modify
+its `inCart` value directly. Instead, the widget calls the
+`onCartChanged` function it received from its parent widget.
+This pattern lets you store state higher in the widget
 hierarchy, which causes the state to persist for longer periods of time.
 In the extreme, the state stored on the widget passed to
 [`runApp()`][] persists for the lifetime of the
@@ -739,10 +747,12 @@ application.
 从而使状态持久化。甚至，widget 传给 [`runApp()`][] 
 的状态可以持久到整个应用的生命周期。
 
-When the parent receives the `onCartChanged` callback, the parent updates its
-internal state, which triggers the parent to rebuild and create a new instance
-of `ShoppingListItem` with the new `inCart` value. Although the parent creates a
-new instance of `ShoppingListItem` when it rebuilds, that operation is cheap
+When the parent receives the `onCartChanged` callback,
+the parent updates its internal state, which triggers
+the parent to rebuild and create a new instance
+of `ShoppingListItem` with the new `inCart` value.
+Although the parent creates a new instance of
+`ShoppingListItem` when it rebuilds, that operation is cheap
 because the framework compares the newly built widgets with the previously
 built widgets and applies only the differences to the underlying
 [`RenderObject`][].
@@ -757,26 +767,16 @@ Here's an example parent widget that stores mutable state:
 
 这里有一个示例展示父组件是如何存储可变状态：
 
-<!--
-class Product {
-  const Product({this.name});
-  final String name;
-}
-
-class ShoppingListItem extends StatelessWidget {
-  ShoppingListItem({Product product, bool inCart, Function onCartChanged});
-  @override
-  Widget build(BuildContext context) => null;
-}
--->
+<!-- skip -->
 ```dart
 class ShoppingList extends StatefulWidget {
   ShoppingList({Key key, this.products}) : super(key: key);
 
   final List<Product> products;
 
-  // The framework calls createState the first time a widget appears at a given
-  // location in the tree. If the parent rebuilds and uses the same type of
+  // The framework calls createState the first time a widget
+  // appears at a given location in the tree.
+  // If the parent rebuilds and uses the same type of
   // widget (with the same key), the framework re-uses the State object
   // instead of creating a new State object.
 
@@ -882,12 +882,13 @@ mutates its internal state by either adding or removing a product from
 state, it wraps those calls in a [`setState()`][] call.
 Calling `setState` marks this widget as dirty and schedules it to be rebuilt
 the next time your app needs to update the screen.
-If you forget to call `setState` when modifying the internal state of a widget,
-the framework won't know your widget is dirty and might not call the widget's
-[`build()`][] function, which means the user interface might not
-update to reflect the changed state.
-By managing state in this way, you don't need to write separate code for
-creating and updating child widgets. Instead, you simply implement the `build`
+If you forget to call `setState` when modifying the internal
+state of a widget, the framework won't know your widget is
+dirty and might not call the widget's [`build()`][] function,
+which means the user interface might not update to reflect
+the changed state.  By managing state in this way,
+you don't need to write separate code for creating and
+updating child widgets. Instead, you simply implement the `build`
 function, which handles both situations.
 
 当处理 `onCartChanged` 回调时，`_ShoppingListState` 
@@ -956,24 +957,28 @@ the same [`key`][] as well as the same `runtimeType`.
 
 Keys are most useful in widgets that build many instances of
 the same type of widget. For example, the `ShoppingList` widget,
-which builds just enough `ShoppingListItem` instances to fill its visible region:
+which builds just enough `ShoppingListItem` instances to
+fill its visible region:
 
 Key 在构建相同类型 widget 的多个实例时很有用。
 例如，`ShoppingList` widget，它只构建刚刚好足够的 `ShoppingListItem` 实例来填充其可见区域：
 
- * Without keys, the first entry in the current build would always sync with the
-   first entry in the previous build, even if, semantically, the first entry in
-   the list just scrolled off screen and is no longer visible in the viewport.
+ * Without keys, the first entry in the current build
+   would always sync with the first entry in the previous build,
+   even if, semantically, the first entry in the list just
+   scrolled off screen and is no longer visible in the viewport.
 
    如果没有 key，当前构建中的第一个条目将始终与前一个构建中的第一个条目同步，
    在语义上，列表中的第一个条目如果滚动出屏幕，那么它应该不会再在窗口中可见。
 
- * By assigning each entry in the list a "semantic" key, the infinite list can
-   be more efficient because the framework syncs entries with matching
-   semantic keys and therefore similar (or identical) visual appearances.
-   Moreover, syncing the entries semantically means that state retained in
-   stateful child widgets remains attached to the same semantic entry rather
-   than the entry in the same numerical position in the viewport.
+ * By assigning each entry in the list a "semantic" key,
+   the infinite list can be more efficient because the
+   framework syncs entries with matching semantic keys
+   and therefore similar (or identical) visual appearances.
+   Moreover, syncing the entries semantically means that
+   state retained in stateful child widgets remains attached
+   to the same semantic entry rather than the entry in the
+   same numerical position in the viewport.
 
    通过给列表中的每个条目分配为“语义” key，无限列表可以更高效，
    因为框架将通过相匹配的语义 key 来同步条目，
@@ -985,14 +990,16 @@ For more information, see the [`Key`][] API.
 
 有关更多信息，请参阅 [`Key`]({{api}}/foundation/Key-class.html) API。
 
-## Global Keys
+## Global keys
 
 ## 全局 key
 
-Use global keys to uniquely identify child widgets. Global keys must be
-globally unique across the entire widget hierarchy, unlike local keys which need
-only be unique among siblings. Because they are globally unique, a global key
-can be used to retrieve the state associated with a widget.
+Use global keys to uniquely identify child widgets.
+Global keys must be globally unique across the entire
+widget hierarchy, unlike local keys which need
+only be unique among siblings. Because they are
+globally unique, a global key can be used to
+retrieve the state associated with a widget.
 
 全局 key 可以用来标识唯一子 widget。
 全局 key 在整个 widget 结构中必须是全局唯一的，

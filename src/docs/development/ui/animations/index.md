@@ -222,17 +222,6 @@ Similarly, dropping a ball attached to a spring falls
   请参考 API 文档 [AnimationController<wbr>.animateWith][AnimationController.animateWith] 和
   [SpringSimulation][]。
 
-## Common animation patterns
-
-## 常见动画模式
-
-Most UX or motion designers find that certain
-animation patterns are used repeatedly when designing a UI.
-This section lists some of the commonly
-used animation patterns, and tells you where to learn more.
-
-多数 UX 或动画设计人员会发现在设计 UI 时，经常重复使用某些动画模式。本章列举了一些常用的动画模式，并提供更多学习路径。
-
 ## Pre-canned animations
 
 ## 预置动画

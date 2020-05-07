@@ -235,7 +235,7 @@ also contains platform-specific implementations written for
 Android (Kotlin or Java code), iOS (Swift or Objective-C),
 web (Dart), macos (Dart), or any subset thereof.
 The API is connected to the platform-specific
-implementation(s) using [platform channels][].
+implementation(s) using a [platform channel][].
 
 如果想要开发一个调用特定平台 API 的 package，你需要开发一个原生插件 packgae。
 原生插件 packgae 是 Dart package 的特别版本，
@@ -362,8 +362,22 @@ generated plugin code.
 使用 `--org` 选项，以反向域名表示法来指定你的组织。
 该值用于生成的 Android 及 iOS 代码。
 
+Use the `-a` option to specify the language for android or the `-i` option to specify the language for ios. Please choose **one** of the following:
+
+使用 `-a` 选项指定 Android 的语言，或使用 `-i` 选项指定 iOS 的语言。 
+请选择以下 **任一项**：
+
 ```terminal
-$ flutter create --org com.example --template=plugin hello
+$ flutter create --org com.example --template=plugin -a kotlin hello
+```
+```terminal
+$ flutter create --org com.example --template=plugin -a java hello
+```
+```terminal
+$ flutter create --org com.example --template=plugin -i objc hello
+```
+```terminal
+$ flutter create --org com.example --template=plugin -i swift hello
 ```
 
 This creates a plugin project in the `hello` folder
@@ -410,7 +424,10 @@ Android 代码使用 Kotlin 编写。
 使用`-a` 指定 Android 所使用的语言。比如：
 
 ```terminal
-$ flutter create --template=plugin -i objc -a java hello
+$ flutter create --template=plugin -i objc hello
+```
+```terminal
+$ flutter create --template=plugin -a java hello
 ```
 
 ### Step 2: Implement the package {#edit-plugin-package}

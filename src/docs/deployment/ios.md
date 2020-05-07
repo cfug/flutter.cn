@@ -184,23 +184,23 @@ In the **Identity** section:
 `Display Name` 
 : Runner
 
-{{site.note.alert}}
+{{site.alert.note}}
 
-  Changing the display name to anything other
-  than `Runner` causes the app not to run with
-  the Flutter tools. For more information,
-  see [Issue 41793][].
+  Flutter versions prior to 1.18.0-10.0.pre
+  do not support changing the display name
+  to anything other than `Runner`. For more
+  information, see [Issue 41793][].
+  
+  Flutter 1.18.0-10.0.pre 之前的版本只能将
+  显示名称设定为 `Runner`，不能命名为其他名字。
+  有关更多信息，请参见 [Issue 41793][]。
+{{site.alert.end}}
+  
+`Bundle Identifier`
+<br> The App ID you registered on App Store Connect.
 
-  将显示名称更改为其他名称而不是 `Runner` 将导致应用无法运行
-  Flutter工具。了解更多信息，
-  请参见 [Issue 41793][]。
-
-{{site.note.end}}
-    
-`Bundle Identifier` 
-: the App ID you registered on App Store Connect.
-    
-  你在 App Store Connect 注册的 App ID。
+`Bundle Identifier`
+<br> 你在 App Store Connect 注册的 App ID。
 
 In the **Signing** section:
 

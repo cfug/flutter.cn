@@ -32,22 +32,22 @@ Android 与 iOS 应用（用于集成到现有应用的两个受支持的平台�
 
 ### 查找 Flutter 资源
 
-Flutter's engine runtime and your application's compiled Dart code are both
-bundled as shared libraries on Android and iOS. The first step of loading
-Flutter is to find those resources in your .apk/.ipa/.app (along with
-other Flutter assets such as images, fonts, and JIT code if applicable).
+Flutter's engine runtime and your application's compiled
+Dart code are both bundled as shared libraries on Android
+and iOS. The first step of loading Flutter is to find those
+resources in your .apk/.ipa/.app (along with other Flutter
+assets such as images, fonts, and JIT code if applicable).
 
 Flutter 的引擎运行时和应用已编译的 Dart 代码都被打包为 Android 和 iOS 上的共享库。
 加载 Flutter 的第一步是在 .apk、.ipa 或 .app 中查找这些资源
 （以及其他 Flutter 资源，例如图像和字体，假如适用的话还有 JIT 代码）。
 
-This happens when you construct a FlutterEngine for the first time on both
-**[Android][android-engine]** and **[iOS][ios-engine]** APIs.
+This happens when you construct a `FlutterEngine` for the
+first time on both **[Android][android-engine]**
+and **[iOS][ios-engine]** APIs.
 
-当您首次在 
-**[Android]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html)** 
-和 **[iOS]({{site.api}}/objcdoc/Classes/FlutterEngine.html)**
-上调用 API 构建 FlutterEngine 时，就会发生这种情况。
+当您首次在 **[Android][android-engine]** 和 **[iOS][ios-engine]** 
+上调用 API 构建 `FlutterEngine` 时，就会发生这种情况。
 
 ### Loading the Flutter library
 
@@ -76,14 +76,16 @@ such as by running [`runWithEntrypoint:`][].
 
 ### 启动 Dart VM
 
-The Dart runtime is responsible for managing Dart memory and concurrency for
-your Dart code. In JIT mode, it's additionally responsible for compiling
+The Dart runtime is responsible for managing Dart memory and
+concurrency for your Dart code. In JIT mode,
+it's additionally responsible for compiling
 the Dart source code into machine code during runtime.
 
 Dart 运行时负责管理 Dart 代码的 Dart 内存与异步。
 在 JIT 模式下，它还负责在运行时将 Dart 源代码编译为机器码。
 
-A single Dart runtime exists per application session on Android and iOS.
+A single Dart runtime exists per application session on
+Android and iOS.
 
 在 Android 和 iOS 上，每个应用程序会话都存在一个 Dart 运行时。
 
@@ -123,7 +125,7 @@ runtime is the next step.
 
 在初始化 Dart 运行时之后，下一步就是 Flutter 引擎对 Dart 运行时的使用。
 
-This is done by starting a [Dart `Isolate`] in the Dart runtime.
+This is done by starting a [Dart `Isolate`][] in the Dart runtime.
 The isolate is Dart's container for memory and threads.
 A number of [auxiliary threads][] on the host platform are
 also created at this point to support the isolate, such
@@ -269,7 +271,8 @@ The remaining time is joined to the time-to-first-frame latency.
 
 Flutter 用户界面可以在预热期间被加载。所需时间与渲染出首帧的时间有关。
 
-Memory-wise, a cost sample (variable, depending on the use case) could be:
+Memory-wise, a cost sample (variable,
+depending on the use case) could be:
 
 在内存方面的开销（具体根据使用情况而定）可能是：
 
@@ -317,7 +320,8 @@ a cost sample (variable, depending on the use case) could be:
 
 The `FlutterEngine` should be pre-warmed late enough to delay the
 memory consumption needed but early enough to avoid combining the
-Flutter engine start-up time with the first frame latency of showing Flutter.
+Flutter engine start-up time with the first frame latency of
+showing Flutter.
 
 应该对 `FlutterEngine` 进行预热，不应过于提早，以延迟内存占用，
 但又要避免 Flutter 引擎初始化的时机与显示 Flutter 的首帧的时机赶在一起。

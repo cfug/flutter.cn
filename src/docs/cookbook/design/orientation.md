@@ -162,7 +162,7 @@ class OrientationList extends StatelessWidget {
               return Center(
                 child: Text(
                   'Item $index',
-                  style: Theme.of(context).textTheme.headline,
+                  style: Theme.of(context).textTheme.headline1,
                 ),
               );
             }),

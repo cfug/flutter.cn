@@ -13,6 +13,11 @@ their Flutter/Dart code equivalents.
 本文是为那些熟悉用 HTML 与 CSS 语法来管理应用页面中元素的开发者准备的。
 本文会将 HTML/CSS 代码片段替换为等价的 Flutter/Dart 代码。
 
+One of the fundamental differences between designing a web
+layout and a Flutter layout, is learning how constraints work,
+and how widgets are sized and positioned. To learn more,
+see [Understanding constraints][].
+
 The examples assume:
 
 这些示例包含如下假设：
@@ -73,7 +78,7 @@ color properties are individual properties of a
 child of a
 [`Text`][] widget.
 
-CSS 所处理的字体样式、大小以及其他文本属性，都是一个 [`Text`][] widget 子元素 [`TextStyle`][] 中单独的属性。
+CSS 所处理的字���样式、大小以及其他文本属性，都是一个 [`Text`][] widget 子元素 [`TextStyle`][] 中单独的属性。
 
 In both HTML and Flutter, child elements or widgets are anchored at
 the top left, by default.
@@ -913,7 +918,7 @@ giving a length value for the letter-spacing and word-spacing properties,
 respectively. The amount of space can be in px, pt, cm, em, etc.
 
 在 CSS 中你可以通过分别给 letter-spacing 和 word-spacing
-属性的长度赋值来指定每个字母以及每个单词间的空白距离。距离的单位可以是 px, pt, cm, em 等等。
+属性的长度赋值来指定每个字母��及每个单词间的空白距离。距离的单位可以是 px, pt, cm, em 等等。
 
 In Flutter, you specify white space as logical pixels
 (negative values are allowed)
@@ -1006,7 +1011,7 @@ styling.
 {% prettify css %}
 <div class="greybox">
   <div class="redbox">
-    [[highlight]]Lorem <em>ipsum</em> [[/highlight]]
+    [[highlight]]Lorem <em>ipsum</em>[[/highlight]]
   </div>
 </div>
 
@@ -1014,7 +1019,7 @@ styling.
   background-color: #e0e0e0; /* grey 300 */
   width: 320px;
   height: 240px;
-  [[highlight]]font: 900 24px Roboto; [[/highlight]]
+  [[highlight]]font: 900 24px Roboto;[[/highlight]]
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1154,3 +1159,5 @@ var container = Container( // grey box
 [`TextSpan`]: {{site.api}}/flutter/painting/TextSpan-class.html
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
+[Understanding constraints]: /docs/development/ui/layout/constraints
+

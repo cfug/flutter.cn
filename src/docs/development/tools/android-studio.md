@@ -703,7 +703,9 @@ location of the Android SDK:
     Make sure to select an Android SDK matching the one used by
     Flutter (as reported by `flutter doctor`).
 
-    在 **Dependencies** 选项中，找到 **Module SDK**，并选择一个 Android SDK。如果这里没有列出 SDK，点击 **New** 并指定 Android SDK 的位置。确保选择和 Flutter 使用相匹配的 Android SDK（如 `flutter doctor` 中所示）。
+    在 **Dependencies** 选项中，找到 **Module SDK**，并选择一个 Android SDK。
+    如果这里没有列出 SDK，点击 **New** 并指定 Android SDK 的位置。
+    确保选择和 Flutter 使用相匹配的 Android SDK（如 `flutter doctor` 中所示）。
 
  1. Click **OK**.
 

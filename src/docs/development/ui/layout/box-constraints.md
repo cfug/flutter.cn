@@ -17,6 +17,12 @@ short-title: 边界约束 (Box constraints)
 
 {{site.alert.end}}
 
+{{site.alert.note}}
+  If you are confused by how constraints, sizing,
+  and positioning work in Flutter, see
+  [Understanding constraints][].
+{{site.alert.end}}
+
 In Flutter, widgets are rendered by their underlying
 [`RenderBox`][] objects. Render boxes are given
 constraints by their parent, and size themselves within those
@@ -141,7 +147,7 @@ in its cross-direction (for example,
 if it's a vertically-scrolling block,
 it tries to be as wide as its parent).
 If you nest a vertically scrolling [`ListView`][]
-inside a horizontally scrolling [`ListView`][],
+inside a horizontally scrolling `ListView`,
 the inner one tries to be as wide as possible,
 which is infinitely wide,
 since the outer one is scrollable in that direction.
@@ -192,10 +198,15 @@ In the _cross_ direction, for example, in the width for
 [`Row`][] (horizontal flex), they must never be unbounded,
 otherwise they would not be able to reasonably align their children.
 
+<<<<<<< HEAD
 在 **交叉** 方向上，如 [`Column`][]（垂直的 flex）的宽度和 
 [`Row`][]（水平的 flex）的高度，它们必将不能是无界的，
 否则它们将无法合理地对齐它们的子 widget。
 
+=======
+
+[`build`]: {{site.api}}/flutter/widgets/State/build.html
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
@@ -209,4 +220,9 @@ otherwise they would not be able to reasonably align their children.
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
+<<<<<<< HEAD
 [`build`]: {{site.api}}/flutter/widgets/State/build.html
+=======
+[Understanding constraints]: /docs/development/ui/layout/constraints
+
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1

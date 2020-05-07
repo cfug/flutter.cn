@@ -45,7 +45,8 @@ and grids that arrange, constrain, and align the visible widgets.
 Flutter 布局的核心机制是 widgets。在 Flutter 中，几乎所有东西都是 widget —— 甚至布局模型都是 widgets。你在 Flutter 应用程序中看到的图像，图标和文本都是 widgets。此外不能直接看到的也是 widgets，例如用来排列、限制和对齐可见 widgets 的行、列和网格。
 
 You create a layout by composing widgets to build more complex widgets.
-For example, the first screenshot below shows 3 icons with a label under each one:
+For example, the first screenshot below shows 3 icons with a label
+under each one:
 
 你可以通过组合 widgets 来构建更复杂的 widgets 来创建布局。比如，下面第一个截图上有 3 个图标，每个图标下面都有一个标签：
 
@@ -84,21 +85,27 @@ Here's a diagram of the widget tree for this UI:
 {:.text-center}
 
 Most of this should look as you might expect, but you might be wondering
-about the containers (shown in pink). [Container][] is a widget class
+about the containers (shown in pink). [`Container`][] is a widget class
 that allows you to customize its child widget. Use a `Container` when
 you want to add padding, margins, borders, or background color,
 to name some of its capabilities.
 
+<<<<<<< HEAD
 图上大部分应该和你预想的一样，但你可能会疑惑 containers（图上粉色显示的）是什么。[Container][] 是一个 widget，允许你自定义其子 widget。举几个例子，如果要添加 padding、margin、边框或背景颜色，你就可以用上 `Container` 了。
 
 In this example, each [Text][] widget is placed in a `Container` to add margins.
 The entire [Row][] is also placed in a `Container` to add padding around the
 row.
+=======
+In this example, each [`Text`][] widget is placed in a `Container`
+to add margins. The entire [`Row`][] is also placed in a
+`Container` to add padding around the row.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
 在这个例子中，每个 [Text][] widget 都被放在一个 `Container` 以添加 padding。整个 [Row][] 也被放在一个 `Container` 中，以便添加 padding。
 
 The rest of the UI in this example is controlled by properties.
-Set an [Icon][]'s color using its `color` property.
+Set an [`Icon`][]'s color using its `color` property.
 Use the `Text.style` property to set the font, its color, weight, and so on.
 Columns and rows have properties that allow you to specify how their
 children are aligned vertically or horizontally, and how much space
@@ -108,6 +115,7 @@ the children should occupy.
 
 ## Lay out a widget
 
+<<<<<<< HEAD
 ## 布局 widget
 
 How do you layout a single widget in Flutter? This section shows you how to
@@ -118,6 +126,14 @@ Hello World app.
 
 In Flutter, it takes only a few steps to put text, an icon, or an image on the
 screen.
+=======
+How do you layout a single widget in Flutter? This section
+shows you how to create and display a simple widget.
+It also shows the entire code for a simple Hello World app.
+
+In Flutter, it takes only a few steps to put text, an icon,
+or an image on the screen.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
 在 Flutter 中，只需几步就可以在屏幕上显示文本、图标或图像。
 
@@ -130,18 +146,26 @@ on how you want to align or constrain the visible widget,
 as these characteristics are typically passed on to the
 contained widget.
 
+<<<<<<< HEAD
 根据你想要对齐或限制可见 widget 的方式从各种 [layout widgets][] 中进行选择，因为这些特性通常会传递它所给包含的 widget。
 
 This example uses [Center][] which centers its content
+=======
+This example uses [`Center`][] which centers its content
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 horizontally and vertically.
 
 本例使用将其内容水平和垂直居中的 [Center][]。
 
 ### 2. Create a visible widget
 
+<<<<<<< HEAD
 ### 2. 创建一个可见 widget
 
 For example, create a [Text][] widget:
+=======
+For example, create a [`Text`][] widget:
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
 举个例子，创建一个 [Text][] widget：
 
@@ -150,7 +174,7 @@ For example, create a [Text][] widget:
 Text('Hello World'),
 ```
 
-Create an [Image][] widget:
+Create an [`Image`][] widget:
 
 创建一个 [Image][] widget：
 
@@ -162,7 +186,7 @@ Image.asset(
 ),
 ```
 
-Create an [Icon][] widget:
+Create an [`Icon`][] widget:
 
 创建一个 [Icon][] widget：
 
@@ -182,6 +206,7 @@ Icon(
 
 All layout widgets have either of the following:
 
+<<<<<<< HEAD
 所有布局 widgets 都具有以下任一项：
 
 - A `child` property if they take a single child -- for example, `Center` or
@@ -191,6 +216,12 @@ All layout widgets have either of the following:
 
 - A `children` property if they take a list of widgets -- for example, `Row`,
   `Column`, `ListView`, or `Stack`.
+=======
+* A `child` property if they take a single child&mdash;for example,
+  `Center` or `Container`
+* A `children` property if they take a list of widgets&mdash;for example,
+  `Row`, `Column`, `ListView`, or `Stack`.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
   一个 `children` 属性，如果它们包含多个子项 —— 例如 `Row`、`Column`、`ListView` 和 `Stack`
 
@@ -207,19 +238,24 @@ Center(
 
 ### 4. Add the layout widget to the page
 
+<<<<<<< HEAD
 ### 4. 将布局 widget 添加到页面
 
 A Flutter app is itself a widget, and most widgets have a [build()][]
+=======
+A Flutter app is itself a widget, and most widgets have a [`build()`][]
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 method. Instantiating and returning a widget in the app's `build()` method
 displays the widget.
 
 一个 Flutter app 本身就是一个 widget，大多数 widgets 都有一个 [build()][] 方法，
 在 app 的 `build()` 方法中实例化和返回一个 widget 会让它显示出来。
 
-For a `Material` app, you can use a [Scaffold][] widget; it provides a default
-banner, background color, and has API for adding drawers, snack bars, and bottom
-sheets. Then you can add the `Center` widget directly to the `body` property for
-the home page.
+For a `Material` app, you can use a [`Scaffold`][] widget;
+it provides a default banner, background color,
+and has API for adding drawers, snack bars, and bottom sheets.
+Then you can add the `Center` widget directly to the `body`
+property for the home page.
 
 对于 `Material` app，你可以使用 [Scaffold][] widget，它提供默认的 banner、背景颜色，
 还有用于添加抽屉、提示条和底部列表弹窗的 API。
@@ -250,6 +286,7 @@ class MyApp extends StatelessWidget {
 
   The [Material library][] implements widgets that follow [Material
   Design][] principles. When designing your UI, you can exclusively use
+<<<<<<< HEAD
   widgets from the standard [widgets library][], or you can use widgets from
   the Material library. You can mix widgets from both libraries, you can
   customize existing widgets, or you can build your own set of custom
@@ -260,6 +297,12 @@ class MyApp extends StatelessWidget {
   也可以使用 Material library 中的 widgets。你可以混合来自两个库的 widgets，
   可以自定义现有 widgets，也可以构建自己的一组自定义 widgets。
 
+=======
+  widgets from the standard [widgets library][], or you can use
+  widgets from the Material library. You can mix widgets from both
+  libraries, you can customize existing widgets,
+  or you can build your own set of custom widgets.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 {{site.alert.end}}
 
 #### Non-Material apps
@@ -294,10 +337,10 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-By default a non-Material app doesn't include an `AppBar`, title, or background
-color. If you want these features in a non-Material app, you have to build them
-yourself. This app changes the background color to white and the text to dark
-grey to mimic a Material app.
+By default a non-Material app doesn't include an `AppBar`, title,
+or background color. If you want these features in a non-Material app,
+you have to build them yourself. This app changes the background
+color to white and the text to dark grey to mimic a Material app.
 
 默认情况下，非 Material app 不包含 `AppBar`、标题和背景颜色。
 如果你希望在非 Material app 中使用这些功能，则必须自己构建它们。
@@ -334,9 +377,10 @@ grey to mimic a Material app.
 
 <?code-excerpt path-base=""?>
 
-One of the most common layout patterns is to arrange widgets vertically
-or horizontally. You can use a Row widget to arrange widgets horizontally,
-and a Column widget to arrange widgets vertically.
+One of the most common layout patterns is to arrange
+widgets vertically or horizontally. You can use a
+`Row` widget to arrange widgets horizontally,
+and a `Column` widget to arrange widgets vertically.
 
 最常见的布局模式之一是垂直或水平 widgets。 你可以使用 Row widget 水平排列 widgets，使用 Column widget 垂直排列 widgets。
 
@@ -344,6 +388,7 @@ and a Column widget to arrange widgets vertically.
 
   <h4 class="no_toc">What's the point?</h4>
 
+<<<<<<< HEAD
   <h4 class="no_toc">要点</h4>
 
   * Row and Column are two of the most commonly used layout patterns.
@@ -371,16 +416,32 @@ and a Column widget to arrange widgets vertically.
 
     可以指定子 widgets 如何占用 Row 或 Column 的可用空间。
 
+=======
+  * `Row` and `Column` are two of the most commonly used layout patterns.
+  * `Row` and `Column` each take a list of child widgets.
+  * A child widget can itself be a `Row`, `Column`,
+    or other complex widget.
+  * You can specify how a `Row` or `Column` aligns its children,
+    both vertically and horizontally.
+  * You can stretch or constrain specific child widgets.
+  * You can specify how child widgets use the `Row`'s or
+    `Column`'s available space.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 {{site.alert.end}}
 
-To create a row or column in Flutter, you add a list of children widgets to a
-[Row][] or [Column][] widget. In turn, each child can itself be a row or column,
-and so on. The following example shows how it is possible to nest rows or
+To create a row or column in Flutter, you add a list of children
+widgets to a [`Row`][] or [`Column`][] widget. In turn,
+each child can itself be a row or column, and so on.
+The following example shows how it is possible to nest rows or
 columns inside of rows or columns.
 
+<<<<<<< HEAD
 要在 Flutter 中创建行或列，可以将子 widgets 列表添加到 [Row][] 或 [Column][] widget 中。反过来，每个子项本身可以是一行或一列，依此类推。以下示例演示了如何在行或列中嵌套行或列。
 
 This layout is organized as a Row. The row contains two children:
+=======
+This layout is organized as a `Row`. The row contains two children:
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 a column on the left, and an image on the right:
 
 这个布局被组织为 Row。这一行包含两个子项：左侧的列和右侧的图像：
@@ -401,15 +462,19 @@ You'll implement some of Pavlova's layout code in
 你将在 [嵌套行和列](#nesting-rows-and-columns) 中实现蛋糕介绍示例的一些布局代码。
 
 {{site.alert.note}}
+<<<<<<< HEAD
 
   Row and Column are basic primitive widgets for horizontal
+=======
+  `Row` and `Column` are basic primitive widgets for horizontal
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
   and vertical layouts&mdash;these low-level widgets allow for maximum
   customization. Flutter also offers specialized, higher level widgets
-  that might be sufficient for your needs. For example, instead of Row
-  you might prefer
-  [ListTile]({{api}}/material/ListTile-class.html),
+  that might be sufficient for your needs. For example,
+  instead of `Row` you might prefer [`ListTile`][],
   an easy-to-use widget with properties for leading and trailing icons,
   and up to 3 lines of text.  Instead of Column, you might prefer
+<<<<<<< HEAD
   [ListView]({{api}}/widgets/ListView-class.html),
   a column-like layout that automatically scrolls if its content is too long
   to fit the available space.  For more information,
@@ -423,6 +488,11 @@ You'll implement some of Pavlova's layout code in
   这是一种类似于列的布局，但如果其内容太长导致可用空间不够容纳时会自动滚动。
   更多信息可以查看 [通用布局 widgets](#common-layout-widgets)。
 
+=======
+  [`ListView`][], a column-like layout that automatically scrolls
+  if its content is too long to fit the available space.
+  For more information, see [Common layout widgets][].
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 {{site.alert.end}}
 
 ### Aligning widgets
@@ -445,8 +515,7 @@ axis runs horizontally.
       alt="Diagram showing the main axis and cross axis for a column" %}
 </div>
 
-The [MainAxisAlignment]({{api}}/rendering/MainAxisAlignment-class.html)
-and [CrossAxisAlignment]({{api}}/rendering/CrossAxisAlignment-class.html)
+The [`MainAxisAlignment`][] and [`CrossAxisAlignment`][]
 classes offer a variety of constants for controlling alignment.
 
 [MainAxisAlignment]({{api}}/rendering/MainAxisAlignment-class.html) 和 [CrossAxisAlignment]({{api}}/rendering/CrossAxisAlignment-class.html) 类为控制对齐提供了各种常量。
@@ -454,6 +523,7 @@ classes offer a variety of constants for controlling alignment.
 {{site.alert.note}}
 
   When you add images to your project,
+<<<<<<< HEAD
   you need to update the `pubspec.yaml` file to access them&mdash;this
   example uses `Image.asset` to display the images.  For more information,
   see this example's [pubspec.yaml
@@ -467,12 +537,21 @@ classes offer a variety of constants for controlling alignment.
   或文档：[添加资源和图片](/docs/development/ui/assets-and-images)。
   如果你正在使用 `Image.network` 引用在线图像，则不需要这些操作。
 
+=======
+  you need to update the `pubspec.yaml` file to access
+  them&mdash;this example uses `Image.asset` to display
+  the images.  For more information, see this example's
+  [`pubspec.yaml` file][] or [Adding assets and images][].
+  You don't need to do this if you're referencing online
+  images using `Image.network`.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 {{site.alert.end}}
 
 In the following example, each of the 3 images is 100 pixels wide.
-The render box (in this case, the entire screen) is more than 300 pixels wide,
-so setting the main axis alignment to `spaceEvenly` divides the free
-horizontal space evenly between, before, and after each image.
+The render box (in this case, the entire screen)
+is more than 300 pixels wide, so setting the main axis
+alignment to `spaceEvenly` divides the free horizontal
+space evenly between, before, and after each image.
 
 在以下示例中，3 个图像每个都是是 100 像素宽。渲染框（在本例中是整个屏幕）宽度超过 300 像素，因此设置主轴对齐方式为 `spaceEvenly` 会将空余空间在每个图像之间、之前和之后均匀地划分。
 
@@ -533,20 +612,27 @@ space evenly between, above, and below each image.
 
 ### Sizing widgets
 
+<<<<<<< HEAD
 ### 调整 widgets 大小
 
 When a layout is too large to fit a device, a yellow and black striped pattern
 appears along the affected edge. Here is an [example][sizing] of a row that is
 too wide:
+=======
+When a layout is too large to fit a device, a yellow
+and black striped pattern appears along the affected edge.
+Here is an [example][sizing] of a row that is too wide:
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
 当某个布局太大而超出屏幕时，受影响的边缘会出现黄色和黑色条纹图案。这里有一个行太宽的 [例子][sizing]
 
 {% asset ui/layout/layout-too-large.png class="mw-100" alt="Overly-wide row" %}
 {:.text-center}
 
-Widgets can be sized to fit within a row or column by using the [Expanded][]
-widget. To fix the previous example where the row of images is too wide for its
-render box, wrap each image with an `Expanded` widget.
+Widgets can be sized to fit within a row or column by using the
+[`Expanded`][] widget. To fix the previous example where the
+row of images is too wide for its render box,
+wrap each image with an `Expanded` widget.
 
 通过使用 [Expanded][] widget，可以调整 widgets 的大小以适合行或列。要修复上一个图像行对其渲染框来说太宽的示例，可以用 `Expanded` widget 把每个图像包起来。
 
@@ -580,9 +666,10 @@ render box, wrap each image with an `Expanded` widget.
 </div>
 </div>
 
-Perhaps you want a widget to occupy twice as much space as its siblings. For
-this, use the `Expanded` widget `flex` property, an integer that determines the
-flex factor for a widget. The default flex factor is 1. The following code sets
+Perhaps you want a widget to occupy twice as much space as its
+siblings. For this, use the `Expanded` widget `flex` property,
+an integer that determines the flex factor for a widget.
+The default flex factor is 1. The following code sets
 the flex factor of the middle image to 2:
 
 也许你想要一个 widget 占用的空间是兄弟项的两倍。为了达到这个效果，可以使用 `Expanded` widget 的 `flex` 属性，这是一个用来确定 widget 的弹性系数的整数。默认的弹性系数为 1。以下代码将中间图像的弹性系数设置为 2：
@@ -659,10 +746,16 @@ uses this property to pack the star icons together.
 
 ### Nesting rows and columns
 
+<<<<<<< HEAD
 ### 嵌套行和列
 
 The layout framework allows you to nest rows and columns inside of rows
 and columns as deeply as you need. Let's look at the code for the outlined
+=======
+The layout framework allows you to nest rows and columns
+inside of rows and columns as deeply as you need.
+Let's look at the code for the outlined
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 section of the following layout:
 
 布局框架允许你根据需要在行和列内嵌套行和列。让我们看看以下布局的概述部分的代码：
@@ -684,8 +777,8 @@ The widget tree for the ratings row:
 {% asset ui/layout/widget-tree-pavlova-rating-row.png class="mw-100" alt="Ratings row widget tree" %}
 {:.text-center}
 
-The `ratings` variable creates a row containing a smaller row of 5 star icons,
-and text:
+The `ratings` variable creates a row containing a smaller row
+of 5 star icons, and text:
 
 `ratings` 变量创建了一个行，其中包含较小的由 5 个星形图标和文本组成的一行：
 
@@ -724,16 +817,23 @@ final [!ratings!] = Container(
 ```
 
 {{site.alert.tip}}
+<<<<<<< HEAD
 
   To minimize the visual confusion that can result from heavily nested layout
   code, implement pieces of the UI in variables and functions.
 
   为了最大限度地减少高度嵌套的布局代码可能导致的视觉混乱，可以在变量和函数中实现 UI 的各个部分。
 
+=======
+  To minimize the visual confusion that can result from
+  heavily nested layout code, implement pieces of the UI
+  in variables and functions.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 {{site.alert.end}}
 
-The icons row, below the ratings row, contains 3 columns; each column contains
-an icon and two lines of text, as you can see in its widget tree:
+The icons row, below the ratings row, contains 3 columns;
+each column contains an icon and two lines of text,
+as you can see in its widget tree:
 
 评级行下方的图标行包含 3 列，每列包含一个图标和两行文本，你可以在其 widget 树中看到：
 
@@ -791,8 +891,8 @@ final [!iconList!] = DefaultTextStyle.merge(
 );
 ```
 
-The `leftColumn` variable contains the ratings and icons rows, as well as the
-title and text that describes the Pavlova:
+The `leftColumn` variable contains the ratings and icons rows,
+as well as the title and text that describes the Pavlova:
 
 `leftColumn` 变量包含评级和图标行，以及蛋糕介绍的标题和文本：
 
@@ -820,9 +920,8 @@ left column and the image) inside a `Card`.
 The [Pavlova image][] is from [Pixabay][].
 You can embed an image from the net using `Image.network()` but,
 for this example, the image is saved to an images directory in the project,
-added to the [pubspec file,]({{examples}}/layout/pavlova/pubspec.yaml)
-and accessed using `Images.asset()`. For more information, see
-[Adding assets and images](/docs/development/ui/assets-and-images).
+added to the [pubspec file][], and accessed using `Images.asset()`.
+For more information, see [Adding assets and images][].
 
 [蛋糕图片][] 来自 [Pixabay][]。你可以使用 `Image.network()` 从网络上引用图像，但是在本例图像将保存到项目中的一个图像目录中，添加到 [pubspec 文件]({{examples}}/layout/pavlova/pubspec.yaml)，并使用 `Images.asset()` 访问。更多信息可以查看文档中关于 [添加资源和图片](/docs/development/ui/assets-and-images)　这一章。
 
@@ -849,6 +948,7 @@ body: Center(
 ```
 
 {{site.alert.tip}}
+<<<<<<< HEAD
 
   The Pavlova example runs best horizontally on a wide device, such as a tablet.
   If you are running this example in the iOS simulator, you can select a
@@ -859,6 +959,16 @@ body: Center(
 
   蛋糕介绍的例子在宽屏设备（如平板电脑）上横向运行效果最佳。如果在 iOS 模拟器中运行这个示例，可以使用 **Hardware > Device** 菜单选择不同的设备。在本例中，我们推荐 iPad Pro。你可以使用 **Hardware > Rotate** 将其方向更改为横向模式。你还可以使用 **Window > Scale** 更改模拟器窗口的大小（不改变逻辑像素的数量）。
 
+=======
+  The Pavlova example runs best horizontally on a wide device,
+  such as a tablet.  If you are running this example in the iOS simulator,
+  you can select a different device using the **Hardware > Device** menu.
+  For this example, we recommend the iPad Pro.
+  You can change its orientation to landscape mode using
+  **Hardware > Rotate**. You can also change the size of the
+  simulator window (without changing the number of logical pixels)
+  using **Window > Scale**.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 {{site.alert.end}}
 
 **App source:** [pavlova]({{examples}}/layout/pavlova)
@@ -873,6 +983,7 @@ body: Center(
 
 ## Common layout widgets
 
+<<<<<<< HEAD
 ## 通用布局 widgets
 
 Flutter has a rich library of layout widgets. Here are a few of those most
@@ -893,6 +1004,22 @@ The following widgets fall into two categories: standard widgets from the
 [widgets library][], and specialized widgets from the [Material library][]. Any
 app can use the widgets library but only Material apps can use the Material
 Components library.
+=======
+Flutter has a rich library of layout widgets.
+Here are a few of those most commonly used.
+The intent is to get you up and running as quickly as possible,
+rather than overwhelm you with a complete list.
+For information on other available widgets,
+refer to the [Widget catalog][],
+or use the Search box in the [API reference docs][].
+Also, the widget pages in the API docs often make suggestions
+about similar widgets that might better suit your needs.
+
+The following widgets fall into two categories: standard widgets
+from the [widgets library][], and specialized widgets from the
+[Material library][]. Any app can use the widgets library but
+only Material apps can use the Material Components library.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
 下面的 widget 会分为两类：[widgets 库][widgets library] 中的标准 widgets 和
 [Material 库][Material library] 中的 widgets。
@@ -900,6 +1027,7 @@ Components library.
 
 ### Standard widgets
 
+<<<<<<< HEAD
 ### 标准 widgets
 
 * [Container](#container): Adds padding, margins, borders, background color, or
@@ -916,11 +1044,19 @@ Components library.
   [ListView](#listview)：将 widget 展示为一个可滚动的列表。
 
 * [Stack](#stack): Overlaps a widget on top of another.
+=======
+* [`Container`](#container): Adds padding, margins, borders,
+  background color, or other decorations to a widget.
+* [`GridView`](#gridview): Lays widgets out as a scrollable grid.
+* [`ListView`](#listview): Lays widgets out as a scrollable list.
+* [`Stack`](#stack): Overlaps a widget on top of another.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
   [Stack](#stack)：将 widget 覆盖在另一个的上面。
 
 ### Material widgets
 
+<<<<<<< HEAD
 * [Card](#card): Organizes related info into a box with rounded corners and a
   drop shadow.
 
@@ -928,14 +1064,21 @@ Components library.
 
 * [ListTile](#listtile): Organizes up to 3 lines of text, and optional leading
   and trailing icons, into a row.
+=======
+* [`Card`](#card): Organizes related info into a box with
+  rounded corners and a drop shadow.
+* [`ListTile`](#listtile): Organizes up to 3 lines of text,
+  and optional leading and trailing icons, into a row.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
   [ListTile](#listtile)：将最多三行的文本、可选的导语以及后面的图标组织在一行中。
 
 ### Container
 
-Many layouts make liberal use of [Container][]s to separate widgets using
-padding, or to add borders or margins. You can change the device's background
-by placing the entire layout into a `Container` and changing its background
+Many layouts make liberal use of [`Container`][]s to separate
+widgets using padding, or to add borders or margins.
+You can change the device's background by placing the
+entire layout into a `Container` and changing its background
 color or image.
 
 许多布局都可以随意的用 [Container][]，它可以将使用了 padding 或者增加了 borders/margins 的 widget 分开。
@@ -952,6 +1095,7 @@ color or image.
     增加 padding、margins、borders
 
   * Change background color or image
+<<<<<<< HEAD
 
     改变背景色或者图片
 
@@ -960,6 +1104,10 @@ color or image.
 
     只包含一个子 widget，但是这个子 widget 可以是行、列或者是 widget 树的根 widget
 
+=======
+  * Contains a single child widget, but that child can be a Row,
+    Column, or even the root of a widget tree
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 </div>
 <div class="col-lg-6 text-center">
   {% asset ui/layout/margin-padding-border.png class="mb-4 mw-100"
@@ -971,12 +1119,18 @@ color or image.
 #### Examples (Container)
 {:.no_toc}
 
+<<<<<<< HEAD
 #### 示例 (Container)
 {:.no_toc}
 
 This layout consists of a column with two rows, each containing 2 images. A
 [Container][] is used to change the background color of the column to a lighter
 grey.
+=======
+This layout consists of a column with two rows, each containing
+2 images. A [`Container`][] is used to change the background color
+of the column to a lighter grey.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
 这个布局包含一个有两行的列，每行有两张图片。[Container][] 用来将列的背景色变为浅灰色。
 
@@ -1003,7 +1157,8 @@ grey.
 </div>
 </div>
 
-A `Container` is also used to add a rounded border and margins to each image:
+A `Container` is also used to add a rounded border and margins
+to each image:
 
 `Container` 还用来为每个图片添加圆角和外边距：
 
@@ -1028,8 +1183,8 @@ Widget _buildImageRow(int imageIndex) => Row(
     );
 ```
 
-You can find more `Container` examples in the [tutorial][] and the [Flutter
-Gallery][].
+You can find more `Container` examples in the [tutorial][]
+and the Flutter Gallery ([running app][], [repo][]).
 
 你可以在 [布局构建教程][] 和 [Flutter Gallery][] 中可以发现更多关于 `Container` 的例子。
 
@@ -1041,10 +1196,11 @@ Gallery][].
 
 ### GridView
 
-Use [GridView][] to lay widgets out as a two-dimensional list. `GridView`
-provides two pre-fabricated lists, or you can build your own custom grid. When a
-`GridView` detects that its contents are too long to fit the render box, it
-automatically scrolls.
+Use [`GridView`][] to lay widgets out as a two-dimensional
+list. `GridView` provides two pre-fabricated lists,
+or you can build your own custom grid. When a `GridView`
+detects that its contents are too long to fit the render box,
+it automatically scrolls.
 
 使用 [GridView][] 将 widget 作为二维列表展示。`GridView` 提供两个预制的列表，或者你可以自定义网格。当 `GridView` 检测到内容太长而无法适应渲染盒时，它就会自动支持滚动。
 
@@ -1055,6 +1211,7 @@ automatically scrolls.
 {:.no_toc}
 
 * Lays widgets out in a grid
+<<<<<<< HEAD
 
   在网格中使用 widget
 
@@ -1063,11 +1220,16 @@ automatically scrolls.
 
   当列的内容超出渲染容器的时候，它会自动支持滚动。
 
+=======
+* Detects when the column content exceeds the render box
+  and automatically provides scrolling
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 * Build your own custom grid, or use one of the provided grids:
 
   创建自定义的网格，或者使用下面提供的网格的其中一个：
 
   * `GridView.count` allows you to specify the number of columns
+<<<<<<< HEAD
 
     `GridView.count` 允许你制定列的数量
 
@@ -1081,17 +1243,29 @@ automatically scrolls.
   
   使用 `MediaQuery.of(context).orientation` 创建一个网格，它会根据设备处于宽屏模式还是竖屏模式来改变布局。
 
+=======
+  * `GridView.extent` allows you to specify the maximum pixel
+  width of a tile
+{% comment %}
+* Use `MediaQuery.of(context).orientation` to create a grid
+  that changes its layout depending on whether the device
+  is in landscape or portrait mode.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 {% endcomment %}
 
 {{site.alert.note}}
   When displaying a two-dimensional list where it's important which
   row and column a cell occupies (for example,
   it's the entry in the "calorie" column for the "avocado" row), use
+<<<<<<< HEAD
   [Table]({{api}}/widgets/Table-class.html) or
   [DataTable]({{api}}/material/DataTable-class.html).
   
   当展示二维列表中的单元格所在的行和列的位置很重要的（例如，它是 “calorie” 行和 “avocado” 列的条目）的时候，使用 [Table]({{api}}/widgets/Table-class.html) 或者 [DataTable]({{api}}/material/DataTable-class.html)。
 
+=======
+  [`Table`][] or [`DataTable`][].
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 {{site.alert.end}}
 
 #### Examples (GridView)
@@ -1105,7 +1279,8 @@ automatically scrolls.
   {% asset ui/layout/gridview-extent.png class="mw-100" alt="A 3-column grid of photos" %}
   {:.text-center}
 
-  Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.
+  Uses `GridView.extent` to create a grid with tiles a maximum
+  150 pixels wide.
 
   使用 `GridView.extent` 创建一个最大宽度为 150 像素的网格。
 
@@ -1119,17 +1294,22 @@ automatically scrolls.
       alt="A 2 column grid with footers" %}
   {:.text-center}
 
-  Uses `GridView.count` to create a grid that's 2 tiles wide in portrait mode,
-  and 3 tiles wide in landscape mode. The titles are created by setting the
-  `footer` property for each [GridTile][].
+  Uses `GridView.count` to create a grid that's 2 tiles
+  wide in portrait mode, and 3 tiles wide in landscape mode.
+  The titles are created by setting the `footer` property for
+  each [`GridTile`][].
 
   使用 `GridView.count` 创建一个网格，它在竖屏模式下有两行，在横屏模式下有三行。可以通过为每个 [GridTile][] 设置 `footer` 属性来创建标题。
 
   **Dart code:** [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
+<<<<<<< HEAD
   from the [Flutter Gallery][]
 
   **Dart 代码：** [Flutter Gallery][] 中的 [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
 
+=======
+  from the [Flutter Gallery][repo]
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 </div>
 </div>
 
@@ -1153,15 +1333,16 @@ List<Container> _buildGridTileList(int count) => List.generate(
 
 ### ListView
 
-[ListView]({{api}}/widgets/ListView-class.html),
-a column-like widget, automatically provides scrolling when
-its content is too long for its render box.
+[`ListView`][], a column-like widget, automatically
+provides scrolling when its content is too long for
+its render box.
 
 [ListView]({{api}}/widgets/ListView-class.html)，一个和列很相似的 widget，当内容长于自己的渲染盒时，就会自动支持滚动。
 
 #### Summary (ListView)
 {:.no_toc}
 
+<<<<<<< HEAD
 #### 摘要 (ListView)
 {:.no_toc}
 
@@ -1169,15 +1350,23 @@ its content is too long for its render box.
 
   一个用来组织盒子中列表的专用 [Column][]
 
+=======
+* A specialized [`Column`][] for organizing a list of boxes
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 * Can be laid out horizontally or vertically
 
   可以水平或者垂直布局
 
 * Detects when its content won't fit and provides scrolling
+<<<<<<< HEAD
 
   当监测到空间不足时，会提供滚动
 
 * Less configurable than `Column`, but easier to use and supports scrolling
+=======
+* Less configurable than `Column`, but easier to use and]
+  supports scrolling
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
   比 `Column` 的配置少，使用更容易，并且支持滚动
 
@@ -1193,8 +1382,9 @@ its content is too long for its render box.
       alt="ListView containing movie theaters and restaurants" %}
   {:.text-center}
 
-  Uses `ListView` to display a list of businesses using `ListTile`s. A `Divider`
-  separates the theaters from the restaurants.
+  Uses `ListView` to display a list of businesses using]
+  `ListTile`s. A `Divider` separates the theaters from
+  the restaurants.
 
   使用 `ListView` 的业务列表，它使用了多个 `ListTile`。`Divider` 将餐厅从剧院中分隔开。
 
@@ -1208,17 +1398,21 @@ its content is too long for its render box.
       alt="ListView containing shades of blue" %}
   {:.text-center}
 
-  Uses `ListView` to display the [Colors]({{api}}/material/Colors-class.html) from
-  the [Material Design palette]({{site.material}}/guidelines/style/color.html)
+  Uses `ListView` to display the [`Colors`][] from
+  the [Material Design palette][]
   for a particular color family.
 
   使用 `ListView` 展示特定颜色系列 [Material Design 调色板]({{site.material}}/guidelines/style/color.html) 中的 [颜色]({{api}}/material/Colors-class.html)
 
   **Dart code:** [colors_demo.dart]({{demo}}/colors_demo.dart) from the
+<<<<<<< HEAD
   [Flutter Gallery][]
 
   **Dart 代码：** [Flutter Gallery][] 中的 [colors_demo.dart]({{demo}}/colors_demo.dart)
   
+=======
+  [Flutter Gallery][repo]
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 </div>
 </div>
 
@@ -1260,8 +1454,9 @@ ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
 
 ### Stack
 
-Use [Stack][] to arrange widgets on top of a base widget&mdash;often an image.
-The widgets can completely or partially overlap the base widget.
+Use [`Stack`][] to arrange widgets on top of a base
+widget&mdash;often an image. The widgets can completely
+or partially overlap the base widget.
 
 可以使用 [Stack][] 在基础 widget（通常是图片） 上排列 widget。widget 可以完全或者部分覆盖基础 widget。
 
@@ -1299,7 +1494,8 @@ The widgets can completely or partially overlap the base widget.
   {% asset ui/layout/stack.png class="mw-100" width="200px" alt="Circular avatar image with a label" %}
   {:.text-center}
 
-  Uses `Stack` to overlay a `Container` (that displays its `Text` on a translucent
+  Uses `Stack` to overlay a `Container`
+  (that displays its `Text` on a translucent
   black background) on top of a `CircleAvatar`.
   The `Stack` offsets the text using the `alignment` property and
   `Alignment`s.
@@ -1321,10 +1517,14 @@ The widgets can completely or partially overlap the base widget.
   使用 `Stack` 将渐变叠加到图片的顶部。渐变可以将工具栏的图标和图片区分开来。
 
   **Dart code:** [contacts_demo.dart]({{demo}}/contacts_demo.dart)
+<<<<<<< HEAD
   from the [Flutter Gallery][]
 
   **Dart 代码：** [Flutter Gallery][] 中的 [contacts_demo.dart]({{demo}}/contacts_demo.dart)
 
+=======
+  from the [Flutter Gallery][repo]
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 </div>
 </div>
 
@@ -1358,6 +1558,7 @@ Widget _buildStack() => [!Stack!](
 
 ### Card
 
+<<<<<<< HEAD
 A [Card][], from the [Material library][], contains related nuggets of
 information and can be composed from almost any widget, but is often used with
 [ListTile][]. `Card` has a single child, but its child can be a column, row,
@@ -1377,6 +1578,26 @@ the `Card` further from the surface and causes the shadow to become more
 dispersed. For a list of supported elevation values, see [Elevation][] in the
 [Material guidelines][Material Design]. Specifying an unsupported value disables
 the drop shadow entirely.
+=======
+A [`Card`][], from the [Material library][],
+contains related nuggets of information and can
+be composed from almost any widget, but is often used with
+[`ListTile`][]. `Card` has a single child,
+but its child can be a column, row, list, grid,
+or other widget that supports multiple children.
+By default, a `Card` shrinks its size to 0 by 0 pixels.
+You can use [`SizedBox`][] to constrain the size of a card.
+
+In Flutter, a `Card` features slightly rounded corners
+and a drop shadow, giving it a 3D effect.
+Changing a `Card`'s `elevation` property allows you to control
+the drop shadow effect. Setting the elevation to 24,
+for example, visually lifts the `Card` further from the
+surface and causes the shadow to become more dispersed.
+For a list of supported elevation values, see [Elevation][] in the
+[Material guidelines][Material Design].
+Specifying an unsupported value disables the drop shadow entirely.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
 在 Flutter 中，`Card` 有轻微的圆角和阴影来使它具有 3D 效果。改变 `Card` 的 `elevation` 属性可以控制阴影效果。例如，把 elevation 设置为 24，可以从视觉上更多的把 `Card` 抬离表面，使阴影变得更加分散。关于支持的 elevation 的值的列表，可以查看 [Material guidelines][Material Design] 中的 [Elevation][]。使用不支持的值则会使阴影无效。
 
@@ -1391,6 +1612,7 @@ the drop shadow entirely.
   实现一个 [Material card][]
 
 * Used for presenting related nuggets of information
+<<<<<<< HEAD
 
   用于呈现相关有价值的信息
 
@@ -1399,6 +1621,10 @@ the drop shadow entirely.
 
   接收单个子项，但是子项可以是 `Row`、`Column` 或者其他可以包含列表子项的 widget
 
+=======
+* Accepts a single child, but that child can be a `Row`,
+  `Column`, or other widget that holds a list of children
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 * Displayed with rounded corners and a drop shadow
 
   显示圆角和阴影
@@ -1422,8 +1648,9 @@ the drop shadow entirely.
   {% asset ui/layout/card.png class="mw-100" alt="Card containing 3 ListTiles" %}
   {:.text-center}
 
-  A `Card` containing 3 ListTiles and sized by wrapping it with a `SizedBox`. A
-  `Divider` separates the first and second `ListTiles`.
+  A `Card` containing 3 ListTiles and sized by wrapping
+  it with a `SizedBox`. A `Divider` separates the first
+  and second `ListTiles`.
 
   包含 3 个 ListTile 的 `Card`，并且通过被 `SizedBox` 包住来调整大小。`Divider` 分隔了第一个和第二个 `ListTiles`。
 
@@ -1442,10 +1669,14 @@ the drop shadow entirely.
   包含图片和文本的 `Card`。
 
   **Dart code:** [cards_demo.dart]({{demo}}/material/cards_demo.dart)
+<<<<<<< HEAD
   from the [Flutter Gallery][]
 
   **Dart 代码：** [Flutter Gallery][] 中的 [cards_demo.dart]({{demo}}/material/cards_demo.dart)
 
+=======
+  from the [Flutter Gallery][repo]
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 </div>
 </div>
 
@@ -1490,16 +1721,18 @@ Widget _buildCard() => SizedBox(
 
 ### ListTile
 
-Use [ListTile][], a specialized row widget from the [Material library][], for an
-easy way to create a row containing up to 3 lines of text and optional leading
-and trailing icons. `ListTile` is most commonly used in [Card][] or
-[ListView][], but can be used elsewhere.
+Use [`ListTile`][], a specialized row widget from the
+[Material library][], for an easy way to create a row
+containing up to 3 lines of text and optional leading
+and trailing icons. `ListTile` is most commonly used in
+[`Card`][] or [`ListView`][], but can be used elsewhere.
 
 [ListTile][] 是 [Material 库][Material library] 中专用的行 widget，它可以很轻松的创建一个包含三行文本以及可选的行前和行尾图标的行。`ListTile` 在 [Card][] 或者 [ListView][] 中最常用，但是也可以在别处使用。
 
 #### Summary (ListTile)
 {:.no_toc}
 
+<<<<<<< HEAD
 #### 摘要 (ListTile)
 {:.no_toc}
 
@@ -1507,6 +1740,10 @@ and trailing icons. `ListTile` is most commonly used in [Card][] or
 
   一个可以包含最多 3 行文本和可选的图标的专用的行
 
+=======
+* A specialized row that contains up to 3 lines of text and
+  optional icons
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 * Less configurable than `Row`, but easier to use
 
   比 `Row` 更少的配置，更容易使用
@@ -1545,22 +1782,39 @@ and trailing icons. `ListTile` is most commonly used in [Card][] or
   使用 `ListTile` 列出 3 个下拉按钮类型。<br>
 
   **Dart code:** [buttons_demo.dart]({{demo}}/material/buttons_demo.dart)
+<<<<<<< HEAD
   from the [Flutter Gallery][]
 
   **Dart 代码：** [Flutter Gallery][] 中的 [buttons_demo.dart]({{demo}}/material/buttons_demo.dart)
 
+=======
+  from the [Flutter Gallery][repo]
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 </div>
 </div>
 
 <hr>
 
+## Constraints
+
+To fully understand Flutter's layout system, you need
+to learn how Flutter positions and sizes
+the components in a layout. For more information,
+see [Understanding constraints][].
+
 ## Videos
 
+<<<<<<< HEAD
 ## 视频
 
 The following videos, part of the [Flutter in
 Focus](https://www.youtube.com/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 series, explain Stateless and Stateful widgets.
+=======
+The following videos, part of the
+[Flutter in Focus][] series,
+explain `Stateless` and `Stateful` widgets.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
 
 下面的视频是 [Flutter in
 Focus](https://www.youtube.com/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2) 系列的一部分，解释了 Stateless 和 Stateful 的 widget。
@@ -1573,8 +1827,8 @@ Focus](https://www.youtube.com/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO
 
 ---
 
-Each episode of the [Widget of the Week
-series](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+Each episode of the
+[Widget of the Week series](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 focuses on a widget. Several of them includes layout widgets.
 
 [每周 widget 系列](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG) 的每一集都会关注一个 widget。其中会包含布局 widget。
@@ -1588,6 +1842,7 @@ focuses on a widget. Several of them includes layout widgets.
 
 The following resources might help when writing layout code.
 
+<<<<<<< HEAD
 当写布局代码时，下面的资源可能会帮助到你。
 
 * [Layout tutorial](/docs/development/ui/layout/tutorial)<br>
@@ -1638,34 +1893,81 @@ The following resources might help when writing layout code.
   
   [Flutter 从 0 到 1]({{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354)<br>
   一位开发者第一次写 Flutter app 的经验分享文章。
+=======
+* [Layout tutorial][]
+: Learn how to build a layout.
 
-[build()]: {{api}}/widgets/StatelessWidget/build.html
-[Card]: {{api}}/material/Card-class.html
-[Center]: {{api}}/widgets/Center-class.html
-[Column]: {{api}}/widgets/Column-class.html
-[Container]: {{api}}/widgets/Container-class.html
+* [Widget catalog][]
+: Describes many of the widgets available in Flutter.
+
+* [HTML/CSS Analogs in Flutter][]
+: For those familiar with web programming,
+  this page maps HTML/CSS functionality to Flutter features.
+
+* Flutter Gallery [running app][], [repo][]
+: Demo app showcasing many Material Design widgets and other
+  Flutter features.
+
+* [API reference docs][]
+: Reference documentation for all of the Flutter libraries.
+
+* [Dealing with Box Constraints in Flutter][]
+: Discusses how widgets are constrained by their render boxes.
+
+* [Adding assets and images][]
+: Explains how to add images and other assets to your app's package.
+
+* [Zero to One with Flutter][]
+: One person's experience writing his first Flutter app.
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
+
+
+[Adding assets and images]: /docs/development/ui/assets-and-images
+[API reference docs]: {{api}}
+[`build()`]: {{api}}/widgets/StatelessWidget/build.html
+[`Card`]: {{api}}/material/Card-class.html
+[`Center`]: {{api}}/widgets/Center-class.html
+[`Column`]: {{api}}/widgets/Column-class.html
+[Common layout widgets]: #common-layout-widgets
+[`Colors`]: {{api}}/material/Colors-class.html
+[`Container`]: {{api}}/widgets/Container-class.html
+[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment-class.html
+[`DataTable`]: {{api}}/material/DataTable-class.html
+[Dealing with Box Constraints in Flutter]: /docs/development/ui/layout/box-constraints
 [Elevation]: {{site.material}}/design/environment/elevation.html
-[Expanded]: {{api}}/widgets/Expanded-class.html
-[Flutter Gallery]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
-[GridView]: {{api}}/widgets/GridView-class.html
-[GridTile]: {{api}}/material/GridTile-class.html
-[Icon]: {{api}}/material/Icons-class.html
-[Image]: {{api}}/widgets/Image-class.html
+[`Expanded`]: {{api}}/widgets/Expanded-class.html
+[Flutter in Focus]: https://www.youtube.com/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[`GridView`]: {{api}}/widgets/GridView-class.html
+[`GridTile`]: {{api}}/material/GridTile-class.html
+[HTML/CSS Analogs in Flutter]: /docs/get-started/flutter-for/web-devs
+[`Icon`]: {{api}}/material/Icons-class.html
+[`Image`]: {{api}}/widgets/Image-class.html
+[Layout tutorial]: /docs/development/ui/layout/tutorial
 [layout widgets]: /docs/development/ui/widgets/layout
-[ListTile]: {{api}}/material/ListTile-class.html
-[ListView]: {{api}}/widgets/ListView-class.html
+[`ListTile`]: {{api}}/material/ListTile-class.html
+[`ListView`]: {{api}}/widgets/ListView-class.html
+[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment-class.html
 [Material card]: {{site.material}}/design/components/cards.html
 [Material Design]: {{site.material}}/design
+[Material Design palette]: {{site.material}}/guidelines/style/color.html
 [Material library]: {{api}}/material/material-library.html
-[Row]: {{api}}/widgets/Row-class.html
-[Scaffold]: {{api}}/material/Scaffold-class.html
-[SizedBox]: {{api}}/widgets/SizedBox-class.html
-[Stack]: {{api}}/widgets/Stack-class.html
-[Text]: {{api}}/widgets/Text-class.html
+[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
+[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
+[repo]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
+[`Row`]: {{api}}/widgets/Row-class.html
+[running app]: https://flutter.github.io/gallery/#/
+[`Scaffold`]: {{api}}/material/Scaffold-class.html
+[`SizedBox`]: {{api}}/widgets/SizedBox-class.html
+[`Stack`]: {{api}}/widgets/Stack-class.html
+[`Table`]: {{api}}/widgets/Table-class.html
+[`Text`]: {{api}}/widgets/Text-class.html
 [tutorial]: /docs/development/ui/layout/tutorial
 [布局构建教程]: /docs/development/ui/layout/tutorial
 [widgets library]: {{api}}/widgets/widgets-library.html
 [Widget catalog]: /docs/development/ui/widgets
 [Widget 目录]: /docs/development/ui/widgets
 [Debugging layout issues visually]: /docs/development/tools/devtools/inspector#debugging-layout-issues-visually
+[Understanding constraints]: /docs/development/ui/layout/constraints
 [Using the Flutter inspector]: /docs/development/tools/devtools/inspector
+[Widget of the Week series]: https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
+[Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

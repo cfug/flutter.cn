@@ -256,9 +256,12 @@ To set up the animation:
   为每一个有动画的属性创建一个 Tween 
   
   * The `Tween` defines a range of values.
+<<<<<<< HEAD
   
     Tween 定义一个值的范围。
   
+=======
+>>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
   * The `Tween`'s `animate` method requires the
     `parent` controller, and produces an `Animation`
     for that property.

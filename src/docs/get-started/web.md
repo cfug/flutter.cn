@@ -31,11 +31,23 @@ This page covers the following steps for getting started with web support:
 
 ## Requirements
 
-## 要求
+## 前置条件
 
-* [Install the Flutter SDK on your platform][Install Flutter].
+To create a Flutter app with web support,
+you need the following software:
 
-  [在你的平台上安装 Flutter SDK][Install Flutter]。
+* Flutter SDK. See the
+  [Flutter SDK][] installation instructions.
+* [Chrome][]; debugging a web app requires
+  the Chrome browser.
+* Optional: An IDE that supports Flutter.
+  You can install [Android Studio][], [IntelliJ IDEA][],
+  or [Visual Studio Code][] and
+  [install the Flutter and Dart plugins][]
+  to enable language support and tools for refactoring,
+  running, debugging, and reloading your web app
+  within an editor. See [setting up an editor][]
+  for more details.
 
 * [Install Chrome]. Debugging a web app requires the Chrome browser.
 
@@ -47,12 +59,12 @@ For more information, see the [web FAQ].
 
 {{ site.alert.note }}
 
-  As of 1.12, Flutter has early support for running web applications, but
+  Flutter has early support for running web applications, but
   you need to be running the `beta` channel of Flutter at present.
   If you experience a problem that hasn’t yet been reported,
-  please [file an issue][] and make sure that “web” appears in the title.
+  please [file an issue][] and make sure that "web" appears in the title.
   
-  在 1.12 版本之后，Flutter 已经有了对 Web 应用的早期支持，
+  Flutter 已经有了对 Web 应用的早期支持，
   但你目前需要运行 Flutter 的 `beta` 频道。
   如果在使用中发现问题，请 [发一个 Issue][file an issue] 给我们，
   并确保标题上有 `[web]` 字样。
@@ -86,6 +98,7 @@ $ flutter upgrade
 $ flutter config --enable-web
 ```
 
+[PENDING: Do we really need the following note?]
 {{site.alert.note}}
 
   The `flutter upgrade` command silently fails
@@ -142,12 +155,13 @@ and a `Web Server` that provides the URL serving the app.
 $ flutter devices
 2 connected device:
 
-Chrome     • chrome     • web-javascript • Google Chrome 78.0.3904.108
 Web Server • web-server • web-javascript • Flutter Tools
+Chrome     • chrome     • web-javascript • Google Chrome 81.0.4044.129
 ```
 
 **After enabling web support, restart your IDE.**
-You should now see **Chrome (web)** in the device pulldown.
+You should now see **Chrome (web)** and
+**Web Server (web)** in the device pulldown.
 
 **在开启了 Web 支持后，需要重启 IDE**。
 你现在可以在设备下拉列表中看到 **Chrome (web)**。
@@ -179,11 +193,12 @@ flutter create .
 ```
 {{site.alert.note}}
 
-  You should only need to execute these configure steps once.
+  You only need to execute `flutter config --enable-web` once.
   You can always check the status of your configuration using
-  the `flutter config` command.
+  the no-argument `flutter config` command.
   
-  这些配置部分的步骤和工作，大概率你只需要运行一次就好，
+  这些配置部分的步骤和工作，
+  你只需要运行一次 `flutter config --enable-web` 就好。
   你可以随时通过 `flutter config` 来查看你的配置内容。
 {{site.alert.end}}
 
@@ -191,7 +206,30 @@ flutter create .
 
 ### 创建和运行
 
-To create a new app for use with web support
+Creating a new project with web support is no different
+than [creating a new Flutter project][] for other platforms.
+
+Once you've configured your environment for web
+support, you can create and run a web app either
+in the IDE or from the command line.
+
+#### IDE
+
+After you've configured your environment to support
+the web, make sure you restart the IDE if it was
+already running.
+
+Create a new app in your IDE and it automatically
+creates iOS, Android, and web versions of your app.
+(And macOS, too, if you've enabled [desktop support][].)
+From the device pulldown, select **Chrome (web)**
+and run your app to see it launch in Chrome.
+
+#### Command line
+
+#### 命令行
+
+To create a new app that includes web support
 (in addition to mobile support), run the following commands,
 substituting `myapp` with the name of your project:
 
@@ -246,14 +284,19 @@ This populates a `build/web` directory
 with built files, including an `assets` directory,
 which need to be served together.
 
-Release 构建产物使用 [dart2js][]（不是 dartdevc）生成了一个单独的 JavaScript `main.dart.js` 文件。
-你可以通过 release 模式 (`flutter run --release`) 或者 `flutter build web` 创建一个发行构建。
-输出文件在 `build/web` 目录下，包括需要一起提供的 `assets` 资源文件。
-因为 debug 构建可能包含数千个小文件，所以这里不支持 debug 构建。
+Release 构建产物使用 [dart2js][]（不是 dartdevc）
+生成了一个单独的 JavaScript `main.dart.js` 文件。
+你可以通过 release 模式 (`flutter run --release`) 
+或者 `flutter build web` 创建一个发行构建。
+输出文件在 `build/web` 目录下，
+包括需要一起提供的 `assets` 资源文件。
 
-{%comment%} add link to deploy / build doc {%endcomment%}
+For more information, see
+[Build and release a web app][].
 
-### Add web support to an existing app
+了解更多相关信息，请查阅文档：[Build and release a web app][]。
+
+## Add web support to an existing app
 
 ### 向现有应用添加 Web 支持
 
@@ -268,19 +311,14 @@ terminal from the root project directory:
 $ flutter create .
 ```
 
-To serve your app from `localhost` in Chrome,
-enter the following from the top of the package:
-
-如果需要在 Chrome 中通过 `localhost` 打开，
-在 package 顶部输入下面的命令：
-
-```terminal
-$ flutter run -d chrome
-```
-
-[dart2js]: https://dart.cn/tools/dart2js
-[development compiler]: https://dart.cn/tools/dartdevc
-[file an issue]: https://github.com/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[Build and release a web app]: /docs/deployment/web
+[creating a new Flutter project]: /docs/get-started/test-drive
+[dart2js]: https://dart.dev/tools/dart2js
+[desktop support]: /desktop
+[development compiler]: https://dart.dev/tools/dartdevc
+[file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[install the Flutter and Dart plugins]: /docs/get-started/editor
+[setting up an editor]: /docs/get-started/editor
 [web FAQ]: /docs/development/platform-integration/web
-[install Chrome]: https://www.google.cn/chrome/
-[Install Flutter]: /docs/get-started/install
+[Chrome]: https://www.google.com/chrome/
+[Flutter SDK]: https://flutter.dev/docs/get-started/install

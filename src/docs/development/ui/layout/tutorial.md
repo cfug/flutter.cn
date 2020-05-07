@@ -42,16 +42,17 @@ You'll build the layout for the following app:
 {% include app-figure.md img-class="site-mobile-screenshot border"
     image="ui/layout/lakes.jpg" caption="The finished app" %}
 
-This guide then takes a step back to explain Flutter's approach to layout,
-and shows how to place a single widget on the screen.
-After a discussion of how to lay widgets out horizontally and vertically,
-some of the most common layout widgets are covered.
+This guide then takes a step back to explain Flutter's
+approach to layout, and shows how to place a single widget
+on the screen. After a discussion of how to lay widgets
+out horizontally and vertically, some of the most common
+layout widgets are covered.
 
 这份指南之前溯源一步解释了 Flutter 中的布局方式，以及展示了如何在屏幕中放置单个 widget。
 经过了如何水平以及竖直放置 widgets 的讨论之后，一些最常使用的 widgets 都涉及到了。
 
 If you want a "big picture" understanding of the layout mechanism,
-start with [Flutter's approach to layout](/docs/development/ui/layout).
+start with [Flutter's approach to layout][].
 
 如果你想对布局机制有个"全局"的理解，可以先从 [Flutter 中的布局](/docs/development/ui/layout) 开始.
 
@@ -59,10 +60,10 @@ start with [Flutter's approach to layout](/docs/development/ui/layout).
 
 ## 第一步: 创建 app 基础代码
 
-Make sure you've [set up](/docs/get-started/install) your environment,
+Make sure to [set up][] your environment,
 then do the following:
 
-确保你已经 [安装和配置](/docs/get-started/install) 好了你的环境，
+确保你已经 [安装和配置][set up] 好了你的环境，
 然后做如下步骤：
 
  1. [Create a basic "Hello World" Flutter app][hello-world].
@@ -92,8 +93,6 @@ then do the following:
                child: Text('Hello World'),
     ```
 
-[hello-world]: /docs/get-started/codelab#step-1-create-the-starter-flutter-app
-
 ## Step 1: Diagram the layout
 
 ## 第一步: 对布局进行图形分解
@@ -122,8 +121,8 @@ The first step is to break the layout down to its basic elements:
 
   留意需要对齐、内间距、或者边界的区域。
 
-First, identify the larger elements. In this example, four elements are
-arranged into a column: an image, two rows, and a block of text.
+First, identify the larger elements. In this example,
+four elements are arranged into a column: an image, two rows, and a block of text.  
 
 首先，识别出稍大的元素。在这个例子中，四个元素排成一列：一个图像，两个行区域，和一个文本区域。
 
@@ -150,10 +149,10 @@ The second row, called the Button section, also has
 
 {% include app-figure.md image="ui/layout/button-section-diagram.png" alt="Button section" %}
 
-Once the layout has been diagrammed, it's easiest to take a bottom-up
-approach to implementing it. To minimize the visual
-confusion of deeply nested layout code, place some of the implementation
-in variables and functions.
+Once the layout has been diagrammed, it's easiest to
+take a bottom-up approach to implementing it.
+To minimize the visual confusion of deeply nested layout code,
+place some of the implementation in variables and functions.
 
 一旦图解好布局，采取自下而上的方法来实现它就变得尤为轻松了。
 为了最大程度减少，深层嵌套的布局代码带来的视觉混乱，需要用一些变量和函数来替代某些实现。
@@ -164,8 +163,9 @@ in variables and functions.
 
 <?code-excerpt path-base="layout/lakes/step2"?>
 
-First, you'll build the left column in the title section. Add the following code
-at the top of the `build()` method of the `MyApp` class:
+First, you'll build the left column in the title section.
+Add the following code at the top of the `build()`
+method of the `MyApp` class:
 
 首先，你可以构建标题部分左侧列。添加如下代码到 `MyApp` 类的 `build()` 方法内顶部。
 
@@ -211,23 +211,27 @@ Widget titleSection = Container(
 ```
 
 {:.numbered-code-notes}
- 1. Putting a Column inside an Expanded widget stretches the column to use all
-    remaining free space in the row. Setting the `crossAxisAlignment` property to
-    `CrossAxisAlignment.start` positions the column at the start of the row.
+ 1. Putting a `Column` inside an `Expanded` widget stretches
+    the column to use all remaining free space in the row.
+    Setting the `crossAxisAlignment` property to
+    `CrossAxisAlignment.start` positions the column at
+    the start of the row.
 
     将 Column 元素放到 Expanded widget 中可以拉伸该列，以利用该行中所有剩余的闲置空间。
     设置 `crossAxisAlignment` 属性值为 `CrossAxisAlignment.start`，
     这会将该列放置在行的起始位置。
 
- 2. Putting the first row of text inside a Container enables you to add padding.
-    The second child in the Column, also text, displays as grey.
+ 2. Putting the first row of text inside a `Container`
+    enables you to add padding. The second child in the
+    `Column`, also text, displays as grey.
 
     将第一行文本放入 Container 容器中使得你可以增加内间距。
     列中的第二个子元素，同样为文本，显示为灰色。
 
- 3. The last two items in the title row are a star icon, painted red,
-    and the text "41". The entire row is in a Container and padded
-    along each edge by 32 pixels.
+ 3. The last two items in the title row are a star icon,
+    painted red, and the text "41". The entire row is in
+    a `Container` and padded along each edge by 32 pixels.
+    Add the title section to the app body like this:
 
     标题行中的最后两项是一个红色星形图标，和文字"41"。
     整行都在一个 Container 容器布局中，而且每条边都有 32 像素的内间距。
@@ -260,26 +264,22 @@ Add the title section to the app body like this:
 ```
 
 {{site.alert.tip}}
-  - When pasting code into your app, indentation can
+  * When pasting code into your app, indentation can
     become skewed. You can fix this in your Flutter editor
-    using the [automatic reformatting support](/docs/development/tools/formatting).
+    using the [automatic reformatting support][].
 
     在粘贴代码到你的 app 中时，行首缩进可能会发生偏移。
-    你可以通过使用 [代码自动格式化](/docs/development/tools/formatting) 来修复这个问题。
+    你可以通过使用 [代码自动格式化][automatic reformatting support] 来修复这个问题。
 
-  - For a faster development experience, try Flutter's [hot reload][] feature.
+  - For a faster development experience,
+    try Flutter's [hot reload][] feature.
 
-    为了获得更便捷的开发体验，请尝试 Flutter 的 [热加载][] 功能。
+    为了获得更便捷的开发体验，请尝试 Flutter 的 [热重载][hot reload] 功能。
 
-  - If you have problems, compare your code to [lib/main.dart][].
+  - If you have problems, compare your code to [`lib/main.dart`][].
 
-    如果你有任何问题，可以将你的代码与 [lib/main.dart][] 比对.
+    如果你有任何问题，可以将你的代码与 [`lib/main.dart`][] 比对.
 
-  [hot reload]: /docs/development/tools/hot-reload
-
-  [热加载]: /docs/development/tools/hot-reload
-
-  [lib/main.dart]: {{examples}}/layout/lakes/step2/lib/main.dart
 {{site.alert.end}}
 
 ## Step 3: Implement the button row
@@ -288,15 +288,17 @@ Add the title section to the app body like this:
 
 <?code-excerpt path-base="layout/lakes/step3"?>
 
-The button section contains 3 columns that use the same layout&mdash;an
-icon over a row of text. The columns in this row are evenly spaced,
+The button section contains 3 columns that use the same
+layout&mdash;an icon over a row of text.
+The columns in this row are evenly spaced,
 and the text and icons are painted with the primary color.
 
 按钮区域包含三列使用相同布局－一行文本上面一个图标。此行的各列被等间隙放置，文本和图标被着以初始色。
 
-Since the code for building each column is almost identical, create a private
-helper method named `buildButtonColumn()`, which takes a color, an Icon and
-Text, and returns a column with its widgets painted in the given color.
+Since the code for building each column is almost identical,
+create a private helper method named `buildButtonColumn()`,
+which takes a color, an `Icon` and `Text`,
+and returns a column with its widgets painted in the given color.
 
 由于构建每列的代码基本相同，因此可以创建一个名为 `buildButtonColumn()` 的私有辅助函数，
 以颜色、图标和文本为入参，返回一个以指定颜色绘制自身 widgets 的一个 column 列对象。
@@ -332,15 +334,20 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-The function adds the icon directly to the column. The text is inside a
-Container with a top-only margin, separating the text from the icon.
+The function adds the icon directly to the column.
+The text is inside a `Container` with a top-only margin,
+separating the text from the icon.
 
-这个函数直接将图标添加到这列里。文本在以一个仅有上间距的 Container 容器中，使得文本与图标分隔开。
+这个函数直接将图标添加到这列里。
+文本在以一个仅有上间距的 Container 容器中，
+使得文本与图标分隔开。
 
-Build the row containing these columns by calling the function and passing the
-color, `Icon`, and text specific to that column. Align the columns along the main axis
-using `MainAxisAlignment.spaceEvenly` to arrange the free space evenly before,
-between, and after each column. Add the following code just below the
+Build the row containing these columns by calling the
+function and passing the color, `Icon`, and text specific
+to that column. Align the columns along the main axis
+using `MainAxisAlignment.spaceEvenly` to arrange the
+free space evenly before, between, and after each column.
+Add the following code just below the
 `titleSection` declaration inside the `build()` method:
 
 通过调用函数并传递针对某列的颜色，`Icon` 图标和文本，来构建包含这些列的行。
@@ -394,8 +401,9 @@ Add the button section to the body:
 
 <?code-excerpt path-base="layout/lakes/step4"?>
 
-Define the text section as a variable. Put the text in a Container and add
-padding along each edge. Add the following code just below the `buttonSection`
+Define the text section as a variable. Put the text
+in a `Container` and add padding along each edge.
+Add the following code just below the `buttonSection`
 declaration:
 
 将文本区域定义为一个变量。将文本放置到一个 Container 容器中，然后为每条边添加内边距。
@@ -449,37 +457,33 @@ Add the text section to the body:
 
 ## 第五步: 实现图片区域
 
-Three of the four column elements are now complete, leaving only the image.
-Add the image file to the example:
+Three of the four column elements are now complete,
+leaving only the image. Add the image file to the example:
 
 四个列元素中的三个已经完成了，只剩下图片部分了。如下添加图片文件到示例工程中：
 
 * Create an `images` directory at the top of the project.
+* Add [`lake.jpg`][].
 
-  在工程的顶部创建一个 `images` 目录。
+  添加 [`lake.jpg`][]
 
-* Add [`lake.jpg`]({{rawExFile}}/layout/lakes/step5/images/lake.jpg).
+{{site.alert.info}}
 
-  添加 [`lake.jpg`]({{rawExFile}}/layout/lakes/step5/images/lake.jpg)。
+  Note that `wget` doesn't work for saving this binary file.
+  The original image is [available online][] under a
+  Creative Commons license, but it's large and slow to fetch.
+  
+  注意 `wget` 不能保存二进制文件。
+  原始的图片虽然可以在 Creative Commons 许可下 [在线获取][available online]，
+  但是文件较大，下载缓慢。
+  
+{{site.alert.end}}
 
-  {{site.alert.info}}
-    Note that `wget` doesn't work for saving this binary file. The original image
-    is [available online][] under a Creative Commons license, but it's large and
-    slow to fetch.
+* Update the `pubspec.yaml` file to include an `assets` tag.
+  This makes the image available to your code.
 
-    注意 `wget` 不能保存二进制文件。原始的图片虽然可以在 Creative Commons 许可下[在线获取][]，
-    但是文件较大，下载缓慢。
-
-    [available online]: https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=
-
-    [在线获取]: https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=
-
-  {{site.alert.end}}
-
-* Update the `pubspec.yaml` file to include an `assets` tag. This makes the
-  image available to your code.
-
-  更新 `pubspec.yaml` 文件，添加一个 `assets` 标签。这使得在你的代码中可以访问到该图片。
+  更新 `pubspec.yaml` 文件，添加一个 `assets` 标签。
+  这使得在你的代码中可以访问到该图片。
 
   <?code-excerpt "{step4,step5}/pubspec.yaml"?>
   ```diff
@@ -492,10 +496,13 @@ Add the image file to the example:
   +  assets:
   +    - images/lake.jpg
   ```
-  {{site.alert.tip}}
-    - Note that `pubspec.yaml` is case sensitive. So, you should write `assets: ` and
-      `image address` as above shown format.
-    - For `image address` proper indentation must be there.
+{{site.alert.tip}}
+  * Note that `pubspec.yaml` is case sensitive,
+    so write `assets:` and the image URL
+    as shown above.
+  * The pubspec file is also sensitive to white
+    space, so use proper indentation.
+{{site.alert.end}}
 
 Now you can reference the image from your code:
 
@@ -520,8 +527,8 @@ Now you can reference the image from your code:
              textSection,
 ```
 
-`BoxFit.cover` tells the framework that the image should be as small as
-possible but cover its entire render box.
+`BoxFit.cover` tells the framework that the image should
+be as small as possible but cover its entire render box.
 
 `BoxFit.cover` 告诉系统图片应当尽可能等比缩小到刚好能够覆盖住整个渲染 box。
 
@@ -529,8 +536,9 @@ possible but cover its entire render box.
 
 ## 第六步: 最终的收尾
 
-In this final step, arrange all of the elements in a `ListView`, rather than a
-`Column`, because a `ListView` supports app body scrolling when the app is run
+In this final step, arrange all of the elements in a
+`ListView`, rather than a `Column`, because a
+`ListView` supports app body scrolling when the app is run
 on a small device.
 
 在最后的步骤中，需要在一个 `ListView` 中排列好所有的元素，而不是在一个 `Column` 中，
@@ -557,16 +565,35 @@ on a small device.
                fit: BoxFit.cover,
 ```
 
-**Dart code:** [main.dart]({{examples}}/layout/lakes/step6/lib/main.dart)<br>
-**Image:** [images]({{examples}}/layout/lakes/step6/images)<br>
-**Pubspec:** [pubspec.yaml]({{examples}}/layout/lakes/step6/pubspec.yaml)
+**Dart code:** [`main.dart`][]<br>
+**Image:** [images][]<br>
+**Pubspec:** [`pubspec.yaml`][]<br>
 
-That's it! When you hot reload the app, you should see the same app layout as
+That's it! When you hot reload the app,
+you should see the same app layout as
 the screenshot at the top of this page.
 
 大功告成！当你热加载 app 时，你应当可以看到和本页开头截图一样的 app 布局了。
 
-You can add interactivity to this layout by following [Adding Interactivity to
-Your Flutter App](/docs/development/ui/interactive).
+You can add interactivity to this layout by following
+[Adding Interactivity to Your Flutter App][].
 
-你可以参考文档 [为你的 Flutter 应用加入交互体验](/docs/development/ui/interactive) 来给这个布局增加交互。
+你可以参考文档
+[为你的 Flutter 应用加入交互体验][Adding Interactivity to Your Flutter App] 
+来给这个布局增加交互。
+
+[Adding Interactivity to Your Flutter App]: /docs/development/ui/interactive
+[automatic reformatting support]: /docs/development/tools/formatting
+[available online]: https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=
+[Flutter's approach to layout]: /docs/development/ui/layout
+[hello-world]: /docs/get-started/codelab#step-1-create-the-starter-flutter-app
+[images]: {{examples}}/layout/lakes/step6/images
+[`lake.jpg`]: {{rawExFile}}/layout/lakes/step5/images/lake.jpg
+[`lib/main.dart`]: {{examples}}/layout/lakes/step2/lib/main.dart
+[hot reload]: /docs/development/tools/hot-reload
+[`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
+[`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
+[set up]: /docs/get-started/install
+[hot reload]: /docs/development/tools/hot-reload
+[lib/main.dart]: {{examples}}/layout/lakes/step2/lib/main.dart
+

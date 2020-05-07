@@ -81,7 +81,7 @@ To install these:
 
 安装过程如下：
 
- 1. Start Android Studio.
+ 1.  Start Android Studio.
     
     打开 Android Studio。
 

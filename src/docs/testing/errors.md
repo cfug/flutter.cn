@@ -9,7 +9,7 @@ The Flutter framework catches errors that occur during callbacks
 triggered by the framework itself, including during build, layout, and
 paint.
 
-Flutter框架可以捕获运行期间的错误，包括构建期间、布局期间和绘制期间。
+Flutter 框架可以捕获运行期间的错误，包括构建期间、布局期间和绘制期间。
 
 All these errors are routed to the [FlutterError.onError][] handler. 
 By default, this calls [FlutterError.dumpErrorToConsole][],

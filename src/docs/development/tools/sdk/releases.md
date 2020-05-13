@@ -21,6 +21,18 @@ most stable Flutter builds. See [Flutter’s channels][] for details.
 Flutter 的 {{site.sdk.channel | capitalize }} channel 是相对稳定的发布版本，
 查阅这个文档了解更多：[Flutter 的构建（发布）渠道 channels][Flutter’s channels]。
 
+{{site.alert.note}}
+
+  As of release 1.17 (stable), we've updated our release process,
+  including changes to how we name releases and their download files.
+  For details, see the "Updating our release process" section
+  in the [Flutter Spring 2020 Update][] blog post.
+  
+  自 Flutter 1.17 稳定版开始，我们更新了发布流程，包括对下载文件的命名等。
+  与此相关的更多信息，请参见我们官宣文章中的「版本发布流程更新」部分内容。
+  
+{{site.alert.end}}
+
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
   <li class="nav-item">
@@ -60,8 +72,11 @@ $ ./flutter/bin/flutter --version
 For additional details on how our installation bundles are structured,
 see [Installation bundles][].
 
-关于安装包结构的更多信息，请查看这个页面：[Flutter 安装包结构][Installation bundles]。
+关于安装包结构的更多信息，请查看这个页面：
+[Flutter 安装包结构][Installation bundles]。
 
+
+[Flutter Spring 2020 Update]: {{site.medium}}/flutter/flutter-spring-2020-update-f723d898d7af
 [Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles
 [GitHub repo]: {{site.repo.flutter}}

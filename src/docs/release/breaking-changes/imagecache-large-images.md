@@ -7,8 +7,8 @@ description: 停止增加 ImageCache 的 maxByteSize 以容纳较大的图片。
 
 ## Summary
 
-Stop increasing the `ImageCache maxByteSize` value
-to accommodate large images.
+The `maxByteSize` of the `ImageCache` is no longer
+automatically made larger to accommodate large images.
 
 ## Context
 
@@ -26,7 +26,7 @@ the changes made to the `ImageCache` algorithm:
 
 <!-- skip -->
 ```dart
-// Old Logic Pseudocode
+// Old logic pseudocode
 void onLoadImage(Image image) {
   if (image.byteSize > _cache.maxByteSize) {
     _cache.maxByteSize = image.byteSize + 1000;
@@ -41,7 +41,7 @@ void onLoadImage(Image image) {
 
 <!-- skip -->
 ```dart
-// New Logic Pseudocode
+// New logic pseudocode
 void onLoadImage(Image image) {
   if (image.byteSize < _cache.maxByteSize) {
     _cache.add(image);
@@ -73,7 +73,9 @@ This can be remedied by one of the following approaches:
 ## Timeline
 
 The old algorithm is no longer supported.
-This changed was introduced in v1.15.2.
+
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 

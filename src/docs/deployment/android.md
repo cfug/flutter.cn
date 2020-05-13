@@ -146,7 +146,7 @@ On Windows, use the following command:
 在 Windows 系统上，执行下述代码：
 
 ```terminal
-keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
+keytool -genkey -v -keystore c:\Users\USER_NAME\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
 {{site.alert.note}}

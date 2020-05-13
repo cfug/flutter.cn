@@ -1180,8 +1180,8 @@ here are a few suggestions for resources worth exploring:
 
   查看 [sample apps][]。
 
-* Visit [Flutter's YouTube channel][], 
-  where you can watch a variety videos from
+* Visit [Flutter's YouTube channel][],
+  where you can watch a variety of videos, from
   videos that focus on individual widgets
   to videos of developers building apps.
 

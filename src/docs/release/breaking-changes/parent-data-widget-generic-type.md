@@ -7,12 +7,12 @@ description: 现在 ParentDataWidget 已绑定为 ParentData 类型。
 
 ## Summary
 
-The generic type of `ParentDataWidget` changed from
+The generic type of `ParentDataWidget` has changed from
 `RenderObjectWidget` to `ParentData`.
 
 ## Context
 
-Prior to this change a `ParentDataWidget` was bound
+Prior to this change, a `ParentDataWidget` was bound
 to a specific `RenderObjectWidget` type as ancestor.
 For example, a `Positioned` widget could only be used
 within a `Stack` widget. With this change,
@@ -116,14 +116,15 @@ changes from `FrogJar` (a `RenderObjectWidget`) to
 `FrogSize.applyParentData` wants to operate on).
 Additionally, the new `debugTypicalAncestorWidgetClass`
 is implemented for this `ParentDataWidget` subclass.
-It returns the type of a typical ancestor `RenderObjectWidget` for
-this `ParentDataWidget`. Most of the times,
+It returns the type of a typical ancestor `RenderObjectWidget`
+for this `ParentDataWidget`. Most of the time,
 you just want to return the old generic type here
 (`FrogJar` in this example).
 
 ## Timeline
 
-This change was made in January of 2020 after the v1.13.7 release.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 

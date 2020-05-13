@@ -43,20 +43,19 @@ It currently has the _**following limitations**_:
   
 * Using Flutter in background mode is still a WIP.
 
-  在后台模式使用 Flutter 的能力还在开发中；
+  在后台模式使用 Flutter 的功能还在开发中；
   
-* Packing a Flutter library into another sharable library
-  or packing multiple Flutter libraries into an
+* Packing multiple Flutter libraries into an
   application isn't supported.
 
-  将 Flutter 库打包进另一个可共享的库或将
-  多个 Flutter 库打包到同一个应用中，目前都尚未被支持。
+  目前尚未支持将多个 Flutter 库打包到同一个应用中；
   
 * Plugins used in add-to-app on Android should migrate
   to the [new Android plugin APIs][], based on [`FlutterPlugin`].
   Plugins that don't support `FlutterPlugin` may have unexpected
   behaviors if they make assumptions that are untenable in add-to-app
   (such as assuming that a Flutter `Activity` is always present).
+* As of v1.17, the Flutter module only supports AndroidX applications on Android.
 
   在 Android 平台，使用了添加到现有应用 (add-to-app) 的插件需要迁移到支持
   使用基于 [`FlutterPlugin`] 的 [Android 插件 API][new Android plugin APIs]。

@@ -27,12 +27,12 @@ whenever you open a new window. For example:
     获取并记录这个目录的路径，你将要在第 3 步中用到它。
 
  2. Open (or create) the `rc` file for your shell.
-    For example, macOS Mojave (and earlier)
-    uses the Bash shell by default,
-    so edit `$HOME/.bash_profile` or `$HOME/.bashrc`.
-    macOS Catalina uses the Z shell by default,
-    so edit `$HOME/.zshrc`.
-    If you are using a different shell, the file path
+    Typing `echo $SHELL` in your Terminal tells you
+    which shell you're using.
+    If you're using Bash,
+    edit `$HOME/.bash_profile` or `$HOME/.bashrc`.
+    If you're using Z shell, edit `$HOME/.zshrc`.
+    If you're using a different shell, the file path
     and filename will be different on your machine.
  
     打开或者创建 shell 的 `rc` 文件，

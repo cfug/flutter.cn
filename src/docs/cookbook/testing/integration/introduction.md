@@ -19,26 +19,34 @@ individual pieces work together as a whole, or capture the performance
 of an application running on a real device. These tasks are performed
 with *integration tests*.
 
-Unit tests 和 Widget tests 在测试独立的类、函数或者组件时非常方便。然而，它们并不能够测试单独的模块形成的整体或者获取真实设备上应用运行状态。这些任务需要集成测试 *integration tests* 来处理。 
+Unit tests 和 Widget tests 在测试独立的类、函数或者组件时非常方便。
+然而，它们并不能够测试单独的模块形成的整体或者获取真实设备上应用运行状态。
+这些任务需要集成测试 (**integration tests**) 来处理。 
 
 Integration tests work as a pair: first, deploy an instrumented application
 to a real device or emulator and then "drive" the application from a
 separate test suite, checking to make sure everything is correct along
 the way.
 
-Integration tests 是成对出现的：首先，发布一个可测试应用程序到真是设备或者模拟器，然后，利用独立的测试套件去驱动应用程序，检查一切是否完好可用。
+集成测试是成对出现的：
+首先，发布一个可测试应用程序到真实设备或者模拟器，
+然后，利用独立的测试套件去驱动应用程序，检查一切是否完好可用。
 
 To create this test pair, use the [flutter_driver][] package.
 It provides tools to create instrumented apps and drive those apps
 from a test suite.
 
-为了创建这个测试对，可以使用 [flutter_driver]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html) 包。这个包提供了创建可测试应用的工具并支持从测试套件驱动应用程序。
+为了创建这个测试对，可以使用 [flutter_driver][] 这个 package。
+这个 package 提供了创建可测试应用的工具并支持从测试套件驱动应用程序。
 
 In this recipe, learn how to test a counter app. It demonstrates
 how to setup integration tests, how to verify specific text is displayed
 by the app, how to tap specific widgets, and how to run integration tests.
 
-在这个章节中，我们将会学习如何去测试一个计数器应用程序，包括如何设置集成测试 integration tests、如何验证指定文本能否在应用程序内正常显示、如何模拟点击指定组件和如何运行 integration tests。
+在这个章节中，我们将会学习如何去测试一个计数器应用程序，
+包括如何设置集成测试、
+如何验证指定文本能否在应用程序内正常显示、
+如何模拟点击指定组件和如何运行集成测试。
 
 This recipe uses the following steps:
 
@@ -62,11 +70,11 @@ This recipe uses the following steps:
 
   5. Write the integration tests.
 
-     编写集成测试 integration tests
+     编写集成测试
      
   6. Run the integration test.
 
-     运行集成测试 integration test
+     运行集成测试
 
 ### 1. Create an app to test
 
@@ -77,14 +85,18 @@ test the counter app produced by the `flutter create`
 command. This app allows a user to tap on a button 
 to increase a counter.
 
-首先，我们需要创建一个应用程序用于测试。在这个示例中，我们将会测试一个由 `flutter create` 命令创建的计数器应用。这个应用程序允许用户点击按钮增加计数。
+首先，我们需要创建一个应用程序用于测试。
+在这个示例中，我们将会测试一个由 `flutter create` 命令创建的计数器应用。
+这个应用程序允许用户点击按钮增加计数。
 
 Furthermore, provide a [`ValueKey`][] to
 the `Text` and `FloatingActionButton` widgets.
 This allows identifying and interacting with these
 specific widgets inside the test suite.
 
-此外，我们将会给 `Text` 组件和 `FloatingActionButton` 组件增加 [`ValueKey`]({{site.api}}/flutter/foundation/ValueKey-class.html) 属性。这将允许我们在测试套件中标识特定组件并进行交互。
+此外，我们将会给 `Text` 组件和 `FloatingActionButton`
+组件增加 [`ValueKey`][] 属性。
+通过这个我们将可以在测试套件中标识特定组件并进行交互。
 
 
 ```dart
@@ -165,7 +177,9 @@ Next, use the `flutter_driver` package to write integration tests.
 Add the `flutter_driver` dependency to the `dev_dependencies` section of
 the apps's `pubspec.yaml` file.
 
-接着，我们需要用到 `flutter_driver` 包来编写 integration tests。因此，我们需要把 `flutter_driver` 依赖添加到应用`pubspec.yaml` 文件的 `dev_dependencies` 区域。
+接着，我们需要用到 `flutter_driver` 包来编写集成测试。
+因此，我们需要把 `flutter_driver` 依赖添加到应用`pubspec.yaml` 文件的
+`dev_dependencies` 区域。
 
 Also add the `test` dependency in order to use actual test functions and
 assertions.
@@ -188,7 +202,10 @@ process as the app being tested. Therefore, create two files that
 reside in the same directory. By convention, the directory is named
 `test_driver`.
 
-和 unit tests 以及 widget tests 不一样的是，integration test 套件并不会和待测应用运行在同一个进程内。因此，我们需要同一个文件夹下创建两份文件。为了方便，我们把文件夹命名为 `test_driver`。
+和 unit tests 以及 widget tests 不一样的是，
+集成测试套件并不会和待测应用运行在同一个进程内。
+因此，我们需要同一个文件夹下创建两份文件。
+为了方便，我们把文件夹命名为 `test_driver`。
 
   1. The first file contains an "instrumented" version of the app.
      The instrumentation allows you to "drive" the app and record
@@ -196,7 +213,10 @@ reside in the same directory. By convention, the directory is named
      name that makes sense. For this example, create a file called
     `test_driver/app.dart`.
 
-     第一个文件包含了应用的 “待检测” 版本号。这个检测允许我们利用测试套件驱动应用并记录运行概况。这个文件可以被命名成任何名字。在本例中，创建了文件，命名为 `test_driver/app.dart`。
+     第一个文件包含了应用的 “待检测” 版本号。
+     这个检测允许我们利用测试套件驱动应用并记录运行概况。
+     这个文件可以被命名成任何名字。
+     在本例中，创建了文件，命名为 `test_driver/app.dart`。
 
   2. The second file contains the test suite, which drives the app and
      verifies that it works as expected. The test suite also records
@@ -205,7 +225,12 @@ reside in the same directory. By convention, the directory is named
      with `_test` added at the end. Therefore,
      create a second file called `test_driver/app_test.dart`.
 
-     第二个文件包含了测试套件，用于驱动应用程序并验证应用的运行状况是否与预期一致。测试套件也可以记录运行概况。这个测试文件的命名有严格要求，必须是待测应用的名称并在名称尾部加上 `_test`。因此，我们需要创建的第二个文件被命名成 `test_driver/app_test.dart`。
+     第二个文件包含了测试套件，
+     用于驱动应用程序并验证应用的运行状况是否与预期一致。
+     测试套件也可以记录运行概况。这个测试文件的命名有严格要求，
+     必须是待测应用的名称并在名称尾部加上 `_test`。
+     因此，我们需要创建的第二个文件被命名成
+     `test_driver/app_test.dart`。
 
 This creates the following directory structure:
 
@@ -335,7 +360,8 @@ run the tests. The process of running the integration
 tests varies depending on the platform you are testing
 against. You can test against a mobile platform or the web.
 
-我们有了待测应用和测试套件后，就可以运行测试了。可以只针对特定依赖的平台运行集成测试。
+我们有了待测应用**和**测试套件后，就可以运行测试了。
+可以只针对特定依赖的平台运行集成测试。
 你可以测试移动平台也可以测试 web。
 
 #### 6a. Mobile
@@ -346,7 +372,8 @@ To test on iOS or Android,
 launch an Android Emulator, iOS Simulator,
 or connect your computer to a real iOS / Android device.
 
-要测试 iOS 或者 Android，首先需要打开一个 Android 模拟器或者 iOS 模拟器，或者让你的电脑连接真机。
+要测试 iOS 或者 Android，
+首先需要打开一个 Android 模拟器或者 iOS 模拟器，或者让你的电脑连接真机。
 
 Then, run the following command from the root of the project:
 

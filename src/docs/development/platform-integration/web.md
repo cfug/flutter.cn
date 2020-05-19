@@ -304,7 +304,7 @@ Not currently.
 
 目前还不行。
 
-### How can I compare notes others who are playing with this feature?
+### How can I compare notes with others who are playing with this feature?
 
 ### 如何跟其他使用者交流？
 

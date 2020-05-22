@@ -50,7 +50,7 @@
      并根据需要更改分支或标签。
 
     ```terminal
-    $ git clone https://github.com/flutter/flutter.git -b stable
+    $ git clone https://github.com/flutter/flutter.git -b stable --depth 1
     ```
 
  3. Add the `flutter` tool to your path:

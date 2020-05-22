@@ -47,7 +47,7 @@ It supports animated gifs.
 <!-- skip -->
 ```dart
 Image.network(
-  'https://github.com/flutter/plugins/raw/master/packages/video_player/doc/demo_ipod.gif?raw=true',
+  'https://github.com/flutter/plugins/raw/master/packages/video_player/video_player/doc/demo_ipod.gif?raw=true',
 );
 ```
 

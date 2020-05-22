@@ -36,10 +36,21 @@ This page covers the following steps for getting started with web support:
 To create a Flutter app with web support,
 you need the following software:
 
+如果希望创建一个支持 Web 的 Flutter 应用，
+你需要先安装好下面的应用：
+
 * Flutter SDK. See the
   [Flutter SDK][] installation instructions.
+
+  Flutter SDK，请查阅 [这个链接][Flutter SDK]
+  找到安装教程。
+  
 * [Chrome][]; debugging a web app requires
   the Chrome browser.
+  
+  [谷歌浏览器][Chrome-CN]，在调试
+  Web 应用时需要谷歌浏览器。
+  
 * Optional: An IDE that supports Flutter.
   You can install [Android Studio][], [IntelliJ IDEA][],
   or [Visual Studio Code][] and
@@ -49,15 +60,17 @@ you need the following software:
   within an editor. See [setting up an editor][]
   for more details.
 
-* [Install Chrome]. Debugging a web app requires the Chrome browser.
+  可选：支持 Flutter 的集成开发环境 (IDE)，你可以选择使用
+  [Android Studio CN][]、[IntelliJ IDEA][] 或者 [Visual Studio Code][]，
+  并安装 [Flutter 和 Dart 插件的 IDE 插件][install the Flutter and Dart plugins]
+  以获取编程语言支持和在 IDE 里进行编译、调试、运行、重新加载等功能。
+  了解更多详细信息，请查看文档：[编辑器设定][setting up an editor]。
 
-  [安装 Chrome][Install Chrome]，当前情况下，调试 web 应用需要 Chrome 浏览器。
-
-For more information, see the [web FAQ].
+For more information, see the [web FAQ][].
 
 更多详细信息请参阅 [web 常见问题解答][web FAQ]。
 
-{{ site.alert.note }}
+{{site.alert.note}}
 
   Flutter has early support for running web applications, but
   you need to be running the `beta` channel of Flutter at present.
@@ -209,21 +222,37 @@ flutter create .
 Creating a new project with web support is no different
 than [creating a new Flutter project][] for other platforms.
 
+创建一个支持 Web 的 Flutter 工程与在支持其他平台的过程没有区别，
+请查看文档 [创建一个 Flutter 工程][creating a new Flutter project]。
+
 Once you've configured your environment for web
 support, you can create and run a web app either
 in the IDE or from the command line.
 
+当你配置好对 Web 的支持后，你可以通过 IDE 或者命令行
+创建和运行一个 Web 应用。
+
 #### IDE
+
+#### 集成开发环境 (IDE) 配置
 
 After you've configured your environment to support
 the web, make sure you restart the IDE if it was
 already running.
+
+在你配置好支持 Web 应用的环境后，
+如果 IDE 已经在运行了，请重启一下它。
 
 Create a new app in your IDE and it automatically
 creates iOS, Android, and web versions of your app.
 (And macOS, too, if you've enabled [desktop support][].)
 From the device pulldown, select **Chrome (web)**
 and run your app to see it launch in Chrome.
+
+在 IDE 里创建一个新的应用，它将会自动创建应用的对应的 iOS、Android 和 Web 版本。
+（如果启用了 [桌面版应用支持][desktop support]，它还会创建 macOS 应用的版本）。
+在设备下拉菜单中，选择 **Chrome (web)**，
+然后点击运行，你的应用就会在 Chrome 中打开。
 
 #### Command line
 
@@ -321,4 +350,9 @@ $ flutter create .
 [setting up an editor]: /docs/get-started/editor
 [web FAQ]: /docs/development/platform-integration/web
 [Chrome]: https://www.google.com/chrome/
+[Chrome-CN]: https://www.google.com/chrome/
 [Flutter SDK]: https://flutter.dev/docs/get-started/install
+[Android Studio]: https://developer.android.com/studio
+[Android Studio CN]: https://developer.android.com/studio
+[IntelliJ IDEA]: https://www.jetbrains.com/idea/
+[Visual Studio Code]: https://code.visualstudio.com/

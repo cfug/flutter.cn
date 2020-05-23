@@ -15,7 +15,7 @@ static data (for example, JSON files),
 configuration files, icons, and images
 (JPEG, WebP, GIF, animated WebP/GIF, PNG, BMP, and WBMP).
 
-Flutter 应用程序包含代码和 _assets_（有时称为资源）。资源是被打包到应用程序安装包中，
+Flutter 应用程序包含代码和 **assets**（也为资源）。资源是被打包到应用程序安装包中，
 可以在运行时访问的一种文件。常见的资源类型包括静态数据（例如 JSON 文件），配置文件，图标和
 图片（JPEG，WebP，GIF，动画 WebP / GIF，PNG，BMP 和 WBMP）。
 
@@ -27,7 +27,8 @@ Flutter uses the [`pubspec.yaml`][] file,
 located at the root of your project,
 to identify assets required by an app.
 
-Flutter 使用 [`pubspec.yaml`]({{site.dart-site}}/tools/pub/pubspec) 文件，位于项目根目录, 来识别应用程序所需的资源。
+Flutter 使用 [`pubspec.yaml`][] 文件，
+位于项目根目录，来识别应用程序所需的资源。
 
 Here is an example:
 
@@ -43,7 +44,8 @@ flutter:
 To include all assets under a directory,
 specify the directory name with the `/` character at the end:
 
-如果要包含一个目录下的所有 assets，需要在目录名称的结尾加上  `/`：
+如果要包含一个目录下的所有 assets，
+需要在目录名称的结尾加上  `/`：
 
 ```yaml
 flutter:
@@ -75,6 +77,7 @@ file is located. The order in which the assets are
 declared doesn't matter. The actual directory name used
 (`assets` in first example or `directory` in the above
 example) doesn't matter.
+
 该 `assets` 部分的 `flutter` 部分需要指定包含在应用程序中的文件。
 每个资源都通过相对于 `pubspec.yaml` 文件所在位置的路径进行标识。
 资源的声明顺序是无关紧要的。
@@ -84,7 +87,8 @@ During a build, Flutter places assets into a special
 archive called the _asset bundle_ that apps read
 from at runtime.
 
-在一次构建中，Flutter 将 assets 放到 _asset bundle_ 的特殊归档中，以便应用程序在运行时读取它们。
+在一次构建中，Flutter 将 assets 放到 **asset bundle**
+的特殊归档中，以便应用程序在运行时读取它们。
 
 ### Asset variants
 
@@ -130,9 +134,10 @@ Then both `graphics/background.png` and `graphics/dark/background.png`
 are included in your asset bundle. The former is considered the
 _main asset_, while the latter is considered a _variant_.
 
-...那么这两个图片， `graphics/background.png` 和 `graphics/dark/background.png`
+那么这两个图片：
+`graphics/background.png` 和 `graphics/dark/background.png`
 将被打包在你的资源 bundle 中。
-前者被称为是 _main asset_，后者被称为是一种变体（ _variant_）。
+前者被称为是 **main asset**，后者被称为是一种变体（**variant**）。
 
 If, on the other hand, the graphics directory is specified:
 
@@ -187,7 +192,8 @@ It is possible to load assets directly using the
 `package:flutter/services.dart`.
 
 每个 Flutter 应用程序都有一个 [`rootBundle`][] 对象， 
-可以轻松访问主资源 bundle 。还可以直接使用 `package:flutter/services.dart` 中
+可以轻松访问主资源 bundle 。还可以直接使用
+`package:flutter/services.dart` 中
 全局静态的 `rootBundle` 来加载资源。
 
 However, it's recommended to obtain the `AssetBundle`
@@ -199,7 +205,7 @@ different `AssetBundle` at run time,
 which can be useful for localization or testing
 scenarios.
 
-但是，如果获取当前 BuildContext 的 AssetBundle，建议
+但是，如果获取当前 `BuildContext` 的 `AssetBundle`，建议
 使用 [`DefaultAssetBundle`][]。
 这种方式不是使用应用程序构建的默认资源 bundle，而是让父级 widget 在
 运行时替换的不同的 AssetBundle，这对于本地化或测试场景很有用。
@@ -209,7 +215,7 @@ to indirectly load an asset, for example a JSON file,
 from the app's runtime `rootBundle`.
 
 通常，你可以从应用程序运行时的 `rootBundle` 中，间接使用 `DefaultAssetBundle.of()` 
-来加载资源（例如JSON文件）。
+来加载资源（例如 JSON 文件）。
 
 {% comment %}
 Need example here to show obtaining the AssetBundle for the current
@@ -236,7 +242,7 @@ Future<String> loadAsset() async {
 
 ### Loading images
 
-### 加载 images
+### 加载图片
 
 Flutter can load resolution-appropriate images for
 the current device pixel ratio.
@@ -460,12 +466,12 @@ for instance [`openFd`][], is obtained from
 while `FlutterView` would be the choice when developing an
 app including a platform view.
 
-在 Android 平台上，assets 通过 [AssetManager API][] 读取。
-通过 [PluginRegistry.Registrar][] 的 `lookupKeyForAsset` 方法，
-或者 [FlutterView][] 的 `getLookupKeyForAsset` 方法来获取文件路径，
-然后 [AssetManager API][] 的 [openFd][] 根据文件路径得到文件描述符。
+在 Android 平台上，assets 通过 [`AssetManager`][] API 读取。
+通过 [`PluginRegistry.Registrar`][] 的 `lookupKeyForAsset` 方法，
+或者 [`FlutterView`][] 的 `getLookupKeyForAsset` 方法来获取文件路径，
+然后 [`AssetManager`][] 的 [`openFd`][] 根据文件路径得到文件描述符。
 开发插件时可以使用 `PluginRegistry.Registrar`，
-而开发应用程序使用平台视图时，`FlutterView` 是最好的选择。
+而开发应用程序使用平台视图时，[`FlutterView`][] 是最好的选择。
 
 As an example, suppose you have specified the following
 in your pubspec.yaml
@@ -582,7 +588,7 @@ loaded and running.
 
 ### Updating the app icon
 
-### 更新桌面icon
+### 更新桌面图标
 
 Updating a Flutter application's launch icon works
 the same way as updating launch icons in native
@@ -590,8 +596,6 @@ Android or iOS applications.
 
 更新你的 Flutter 应用程序启动图标，
 和原生 Android 或 iOS 应用程序中更新启动图标的方法相同。
-
-![Launch icon](/images/assets-and-images/icon.png)
 
 ![启动图标](/images/assets-and-images/icon.png)
 
@@ -606,10 +610,9 @@ screen density as indicated by the [Android Developer Guide][].
 
 在 Flutter 项目的根目录中，导航到 `.../android/app/src/main/res` 路径。
 各种位图资源文件夹，比如 `mipmap-hdpi`，已包含占位符图像 `ic_launcher.png`。 
-只需按照 [Android 开发指南][Android Developer Guide]中的说明，
+只需按照 [Android 开发者指南][Android Developer Guide] 中的说明，
 将其替换为所需的资源，并遵守每种屏幕分辨率的建议图标大小标准。
 
-![Android icon location](/images/assets-and-images/android-icon-path.png)
 ![Android 图标位置](/images/assets-and-images/android-icon-path.png)
 
 {{site.alert.note}}

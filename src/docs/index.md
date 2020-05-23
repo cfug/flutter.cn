@@ -45,7 +45,7 @@ including [Write your first Flutter app][],
 here are some next steps.
 
 你可以从 [安装和环境配置][Get Started] 开始，
-也可以上手试试看 [第一个 Flutter 应用的开发][Write Your First Flutter App,]。
+也可以上手试试看 [第一个 Flutter 应用的开发][Write your first Flutter app]。
 
 ### Docs
 

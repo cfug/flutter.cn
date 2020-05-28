@@ -111,7 +111,9 @@ $ flutter upgrade
 $ flutter config --enable-web
 ```
 
+{% comment %}
 [PENDING: Do we really need the following note?]
+{% endcomment %}
 {{site.alert.note}}
 
   The `flutter upgrade` command silently fails

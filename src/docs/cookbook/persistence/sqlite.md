@@ -125,14 +125,17 @@ to the database. This involves two steps:
 打开一个数据库有以下两个步骤：
 
   1. Define the path to the database file using `getDatabasesPath()` from the
-  `sqflite` package, combined with the `path` function from the `path` package.
+  `sqflite` package, combined with the `join` function from the `path` package.
   
      使用 `sqflite` package 里的 `getDatabasesPath` 方法并配合 `path` package里的
-     `path` 方法定义数据库的路径。
+     `join` 方法定义数据库的路径。
      
   2. Open the database with the `openDatabase()` function from `sqflite`.
   
   	 使用 `sqflite` package 里的 `openDatabase` 方法打开数据库。
+
+Note: In order to use the keyword `await`, the code must be placed
+inside an `async` function.
 
 <!-- skip -->
 ```dart

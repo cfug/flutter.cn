@@ -374,7 +374,7 @@ flutter/.travis.yml, or flutter/.cirrus.yml, respectively.
 
 ### Widgets marked const that should be equal to each other, aren't
 
-### 被标记为 const 的 Widget 应被视为同一对象
+### 被标记为 const 的相同 Widget 应被视为同一对象，然而却并没有
 
 In debug mode, you may find that two `const` widgets that should to all
 appearances be equal (because of Dart's constant deduplication) are not.

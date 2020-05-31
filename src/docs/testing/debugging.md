@@ -372,6 +372,81 @@ flutter/.travis.yml, or flutter/.cirrus.yml, respectively.
 请通过在 flutter/.travis.yml 或 flutter/.cirrus.yml 
 中增加同样的命令来增加它们可以打开的句柄数量。
 
+### Widgets marked const that should be equal to each other, aren't
+
+### 被标记为 const 的相同 Widget 应被视为同一对象，然而却并没有
+
+In debug mode, you may find that two `const` widgets that should to all
+appearances be equal (because of Dart's constant deduplication) are not.
+
+在 debug 模式下，（由于 Dart 的常量去重策略）你也许会发现两个 `const` 的 widget 长得并不完全一样。
+
+For example, this code should print 1:
+
+例如，下面的代码应该打印 1：
+
+<!--skip-->
+```dart
+print(<Widget>{ // this is the syntax for a Set<Widget> literal
+  const SizedBox(),
+  const SizedBox(),
+}.length);
+```
+
+It should print 1 (rather than 2) because the two constants are the same and sets
+coallesce duplicate values (and indeed the analyzer complains that
+"Two elements in a set literal shouldn't be equal"). As expected, in release
+builds, it does print 1. However, in debug builds it prints 2. This is because the
+flutter tool injects the source location of Widget constructors into the code at compile
+time, so the code is effectively:
+
+这段代码应该打印 1（而不是 2），这是由于两个常量相同且在同一个 set 中（实际上分析器抱怨
+“集合文字中的两个元素不应相等”）。正如我们所期待的那样，在 release 模式下构建的时候，它确实打印了 1。
+然而，在 debug 模式下它却打印了 2。这是由于 Flutter tool 在编译期向 Widget 的构造器注入了源位置，
+所以下面的代码有效：
+
+<!--skip-->
+```dart
+print(<Widget>{
+  const SizedBox(location: Location(file: 'foo.dart', line: 12)),
+  const SizedBox(location: Location(file: 'foo.dart', line: 13)),
+}.length);
+```
+
+This results in the instances being different, and so they are not deduplicated by the set.
+We use this injected information to make the error messages clearer when
+a widget is involved in an exception, by reporting where the relevant widget was created.
+Unfortunately, it has the visible side-effect of making otherwise-identical constants be
+different at compile time.
+
+上面的代码在结果中的实例不同，故它们在 set 中并没有重复。我们使用注入信息汇报相关 widget 的创建信息，使得 widget 出现异常时错误消息会更加清晰。不幸的是，它会导致相同常量在编译期变为不同实例。
+
+
+To disable this behavior, pass `--no-track-widget-creation` to the `flutter run` command.
+With that flag set, the code above prints "1" in debug and release builds, and error messages
+include a message saying that they cannot provide all the information that they would otherwise
+be able to provide if widget creation tracking was enabled.
+
+要关闭此行为，请在运行 `flutter run` 命令的同时传 `--no-track-widget-creation`。有了这个标记，代码将会在
+debug 和 release 模式下打印 1，而错误消息这边会有一条消息说，除非打开 widget 创建跟踪器，否则我们将无法提供完整的信息。
+
+See also:
+
+你也可以查看：
+
+ * Our documentation on [how the Widget Inspector uses widget creation tracking][].
+
+   文档 [Widget Inspector 是如何使用 widget 创建跟踪的][how the Widget Inspector uses widget creation tracking]。
+ 
+ * [WidgetInspectorService.isWidgetCreationTracked][].
+ * The `_Location` class in [widget_inspector.dart][].
+
+   [widget_inspector.dart][] 中的 `_Location` 类。
+
+ * The [kernel transform that implements this feature][].
+
+   [实现该功能的核心转换][kernel transform that implements this feature]。
+
 ## Other resources
 
 ## 其他资源
@@ -468,3 +543,7 @@ You might find the following docs useful:
 [`Assert`]: {{site.dart-site}}/guides/language/language-tour#assert
 [Dart language tour]: {{site.dart-site}}/guides/language/language-tour
 [探索 Dart 语言]: {{site.dart-site}}/guides/language/language-tour
+[how the Widget Inspector uses widget creation tracking]: /docs/development/tools/devtools/inspector#track-widget-creation
+[WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
+[widget_inspector.dart]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart
+[kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/master/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart

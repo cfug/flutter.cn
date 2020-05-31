@@ -544,10 +544,6 @@ You might find the following docs useful:
 [Dart language tour]: {{site.dart-site}}/guides/language/language-tour
 [探索 Dart 语言]: {{site.dart-site}}/guides/language/language-tour
 [how the Widget Inspector uses widget creation tracking]: /docs/development/tools/devtools/inspector#track-widget-creation
-
-[`Assert`]: {{site.dart-site}}/guides/language/language-tour#assert
-[Dart language tour]: {{site.dart-site}}/guides/language/language-tour
-
 [WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
 [widget_inspector.dart]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart
 [kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/master/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart

@@ -399,9 +399,17 @@ can assist in correcting it.
 
   Changes a child argument to a children argument,
   and wraps the argument value in a list.
-
-  将 child 转换成 children，并且把参数值写进一个 list。
   
+  将 child 转换成 children，并且把参数值写进一个 list。
+
+**Convert StatelessWidget to StatefulWidget assist**
+<br> Changes the implementation of a `StatelessWidget` to that of a `StatefulWidget`,
+  by creating the `State` class and moving the code there.
+  
+**StatelessWidget 到 StatefulWidget 的转换**
+<br> 创建 `State` 类并将代码移到过去，
+可以将 `StatelessWidget` 的实现更改为 `StatefulWidget`。
+
 ### Snippets
 
 ### 代码片段

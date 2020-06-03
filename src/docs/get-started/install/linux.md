@@ -36,6 +36,7 @@ your development environment must meet these minimum requirements:
 
   - `bash`
   - `curl`
+  - `file`
   - `git` 2.x
   - `mkdir`
   - `rm`

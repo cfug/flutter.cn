@@ -42,13 +42,18 @@ The images, icons, and text that you see in a Flutter app  are all widgets.
 But things you don't see are also widgets, such as the rows, columns,
 and grids that arrange, constrain, and align the visible widgets.
 
-Flutter 布局的核心机制是 widgets。在 Flutter 中，几乎所有东西都是 widget —— 甚至布局模型都是 widgets。你在 Flutter 应用程序中看到的图像，图标和文本都是 widgets。此外不能直接看到的也是 widgets，例如用来排列、限制和对齐可见 widgets 的行、列和网格。
+Flutter 布局的核心机制是 widgets。
+在 Flutter 中，几乎所有东西都是 widget —— 甚至布局模型都是 widgets。
+你在 Flutter 应用程序中看到的图像，图标和文本都是 widgets。
+此外不能直接看到的也是 widgets，
+例如用来排列、限制和对齐可见 widgets 的行、列和网格。
 
 You create a layout by composing widgets to build more complex widgets.
 For example, the first screenshot below shows 3 icons with a label
 under each one:
 
-你可以通过组合 widgets 来构建更复杂的 widgets 来创建布局。比如，下面第一个截图上有 3 个图标，每个图标下面都有一个标签：
+你可以通过组合 widgets 来构建更复杂的 widgets 来创建布局。
+比如，下面第一个截图上有 3 个图标，每个图标下面都有一个标签：
 
 <div class="row mb-4">
   <div class="col-12 text-center">
@@ -60,7 +65,8 @@ under each one:
 The second screenshot displays the visual layout, showing a row of
 3 columns where each column contains an icon and a label.
 
-第二个截图显示了可视布局，可以看到有一排三列，其中每列包含一个图标和一个标签。
+第二个截图显示了可视布局，可以看到有一排三列，
+其中每列包含一个图标和一个标签。
 
 {{site.alert.note}}
 
@@ -520,7 +526,11 @@ of 3 images, each is 100 pixels high. The height of the render box
 setting the main axis alignment to `spaceEvenly` divides the free vertical
 space evenly between, above, and below each image.
 
-列的工作方式与行的工作方式相同。以下示例展示了包含 3 个图像的列，每个图像的高度为 100 像素。渲染框（在本例中是整个屏幕）高度超过 300 像素，因此设置主轴对齐方式为 `spaceEvenly` 会将空余空间在每个图像之间、之上和之下均匀地划分。
+列的工作方式与行的工作方式相同。
+以下示例展示了包含 3 个图像的列，每个图像的高度为 100 像素。
+渲染框（在本例中是整个屏幕）高度超过 300 像素，
+因此设置主轴对齐方式为 `spaceEvenly` 会将空余空间
+在每个图像之间、之上和之下均匀地划分。
 
 <div class="row">
 <div class="col-lg-8" markdown="1">
@@ -692,7 +702,8 @@ inside of rows and columns as deeply as you need.
 Let's look at the code for the outlined
 section of the following layout:
 
-布局框架允许你根据需要在行和列内嵌套行和列。让我们看看以下布局的概述部分的代码：
+布局框架允许你根据需要在行和列内嵌套行和列。
+让我们看看以下布局的概述部分的代码：
 
 {% asset ui/layout/pavlova-large-annotated.png class="border mw-100"
     alt="Screenshot of the pavlova app, with the ratings and icon rows outlined in red" %}
@@ -702,7 +713,8 @@ The outlined section is implemented as two rows. The ratings row contains
 five stars and the number of reviews. The icons row contains three
 columns of icons and text.
 
-概述的部分实现为两行，评级一行包含五颗星和评论的数量，图标一行包含由图标与文本组成的三列。
+概述的部分实现为两行，评级一行包含五颗星和评论的数量，
+图标一行包含由图标与文本组成的三列。
 
 The widget tree for the ratings row:
 
@@ -714,7 +726,8 @@ The widget tree for the ratings row:
 The `ratings` variable creates a row containing a smaller row
 of 5 star icons, and text:
 
-`ratings` 变量创建了一个行，其中包含较小的由 5 个星形图标和文本组成的一行：
+`ratings` 变量创建了一个行，
+其中包含较小的由 5 个星形图标和文本组成的一行：
 
 <?code-excerpt "layout/pavlova/lib/main.dart (ratings)" replace="/ratings/[!$&!]/g"?>
 ```dart
@@ -765,7 +778,8 @@ The icons row, below the ratings row, contains 3 columns;
 each column contains an icon and two lines of text,
 as you can see in its widget tree:
 
-评级行下方的图标行包含 3 列，每列包含一个图标和两行文本，你可以在其 widget 树中看到：
+评级行下方的图标行包含 3 列，每列包含一个图标和两行文本，
+你可以在其 widget 树中看到：
 
 {% asset ui/layout/widget-tree-pavlova-icon-row.png class="mw-100" alt="Icon widget tree" %}
 {:.text-center}
@@ -824,7 +838,8 @@ final [!iconList!] = DefaultTextStyle.merge(
 The `leftColumn` variable contains the ratings and icons rows,
 as well as the title and text that describes the Pavlova:
 
-`leftColumn` 变量包含评级和图标行，以及蛋糕介绍的标题和文本：
+`leftColumn` 变量包含评级和图标行，
+以及蛋糕介绍的标题和文本：
 
 <?code-excerpt "layout/pavlova/lib/main.dart (leftColumn)" replace="/leftColumn/[!$&!]/g"?>
 ```dart
@@ -853,7 +868,11 @@ for this example, the image is saved to an images directory in the project,
 added to the [pubspec file][], and accessed using `Images.asset()`.
 For more information, see [Adding assets and images][].
 
-[蛋糕图片][] 来自 [Pixabay][]。你可以使用 `Image.network()` 从网络上引用图像，但是在本例图像将保存到项目中的一个图像目录中，添加到 [pubspec 文件]({{examples}}/layout/pavlova/pubspec.yaml)，并使用 `Images.asset()` 访问。更多信息可以查看文档中关于 [添加资源和图片](/docs/development/ui/assets-and-images)　这一章。
+[蛋糕图片][Pavlova image] 来自 [Pixabay][] 网站。
+你可以使用 `Image.network()` 从网络上引用图像，
+但是在本例图像将保存到项目中的一个图像目录中，
+添加到 [pubspec 文件][pubspec file]，并使用 `Images.asset()` 访问。
+更多信息可以查看文档中关于 [添加资源和图片][Adding assets and images] 这一章。
 
 <?code-excerpt "layout/pavlova/lib/main.dart (body)"?>
 ```dart
@@ -1024,7 +1043,8 @@ This layout consists of a column with two rows, each containing
 2 images. A [`Container`][] is used to change the background color
 of the column to a lighter grey.
 
-这个布局包含一个有两行的列，每行有两张图片。[`Container`][] 用来将列的背景色变为浅灰色。
+这个布局包含一个有两行的列，每行有两张图片。
+[`Container`][] 用来将列的背景色变为浅灰色。
 
 <div class="row">
 <div class="col-lg-7">
@@ -1132,7 +1152,9 @@ it automatically scrolls.
   that changes its layout depending on whether the device
   is in landscape or portrait mode.
   
-  使用 `MediaQuery.of(context).orientation` 创建一个网格，它会根据设备处于宽屏模式还是竖屏模式来改变布局。
+  使用 `MediaQuery.of(context).orientation` 创建一个网格，
+  它会根据设备处于宽屏模式还是竖屏模式来改变布局。
+
 {% endcomment %}
 
 {{site.alert.note}}
@@ -1235,7 +1257,7 @@ its render box.
 
   当监测到空间不足时，会提供滚动
 
-* Less configurable than `Column`, but easier to use and]
+* Less configurable than `Column`, but easier to use and
   supports scrolling
 
   比 `Column` 的配置少，使用更容易，并且支持滚动
@@ -1435,8 +1457,10 @@ You can use [`SizedBox`][] to constrain the size of a card.
 
 [Material 库][Material library] 中的 [`Card`][] 包含相关有价值的信息，
 几乎可以由任何 widget 组成，但是通常和 [`ListTile`][] 一起使用。
-`Card` 只有一个子项，这个子项可以是列、行、列表、网格或者其他支持多个子项的 widget。
-默认情况下，`Card` 的大小是 0x0 像素。你可以使用 [SizedBox][] 控制 card 的大小。
+`Card` 只有一个子项，
+这个子项可以是列、行、列表、网格或者其他支持多个子项的 widget。
+默认情况下，`Card` 的大小是 0x0 像素。
+你可以使用 [`SizedBox`][] 控制 card 的大小。
 
 In Flutter, a `Card` features slightly rounded corners
 and a drop shadow, giving it a 3D effect.

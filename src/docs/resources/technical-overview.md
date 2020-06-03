@@ -11,8 +11,7 @@ description: Flutter 技术概览。
 
 Flutter is an app SDK for building high-performance,
 high-fidelity apps for iOS, Android, web
-([beta](https://flutter.dev/web)),
-and desktop ([technical preview](https://flutter.dev/desktop))
+([beta](/web)), and desktop ([technical preview](/desktop))
 from a single codebase.
 
 Flutter 是 Google 开源的 UI 工具包，帮助开发者通过一套代码库高效构建多平台精美应用，
@@ -27,19 +26,18 @@ Flutter 旨在帮助开发者创作媲美原生的高性能应用，并遵从了
 
 <object type="image/svg+xml" data="/images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 
-This is a demo app from the [Flutter Gallery][],
-a collection of Flutter sample apps you can run after
-installing Flutter and setting up your environment.
+This is a demo app from the Flutter Gallery ([running app][]
+and [repo][]), a collection of Flutter sample apps.
 Shrine has high-quality scrolling images,
 interactive cards, buttons, dropdown lists, and a shopping cart page.
 To look at the single codebase for this and more examples,
-[visit our GitHub repository][].
+[visit our examples GitHub repository][].
 
-这是一个名为 [Gallery 的示例应用][Flutter Gallery]，
+这是一个名为 [Gallery 的示例应用][running app]以及其 [源代码][repo]，
 Gallery 是一个在安装完 Flutter 并配置好环境后可以立即运行的
 Flutter 示例应用集合。Shrine 有高质量的滚动图片、交互式卡片、按钮、
 下拉列表以及一个购物车页面。
-[访问我们的 GitHub 项目][visit our GitHub repository]
+[访问我们的 GitHub 项目][visit our examples GitHub repository]
 以查看该应用的代码库与更多示例。
 
 No mobile development experience is required to get started.
@@ -61,47 +59,48 @@ What are some advantages of Flutter? It helps you:
 
 Flutter 的优势是什么？它能够帮你：
 
-*   Be highly productive
+* Be highly productive
+
+  高效率
+  
+  * Develop for iOS and Android from a single codebase
+ 
+    利用单一代码库开发 iOS 与 Android 应用
+
+  * Do more with less code, even on a single OS,
+    with a modern, expressive
+    language and a declarative approach
+
+    即便在单一操作系统上，也可以通过使用现代、
+    富有表现力的语言以及声明式方法，写更少代码做更多事
+
+  * Prototype and iterate easily
+
+    原型与轻松迭代
+
+    * Experiment by changing code and reloading as your app runs
+      (with hot reload)
+      
+      在应用运行时尝试修改代码并重载（通过热重载）
+      
+    * Fix crashes and continue debugging from where the app left off
     
-    高效率
-    
-    *   Develop for iOS and Android from a single codebase
-        
-        利用单一代码库开发 iOS 与 Android 应用
-        
-    *   Do more with less code, even on a single OS, with a modern, expressive
-        language and a declarative approach
-        
-        即便在单一操作系统上，也可以通过使用现代、
-        富有表现力的语言以及声明式方法，写更少代码做更多事
-        
-    *   Prototype and iterate easily
-        
-        原型与轻松迭代
-        
-        *  Experiment by changing code and reloading as your app runs
-            (with hot reload)
-            
-           在应用运行时尝试修改代码并重载（通过热重载）
-            
-        *  Fix crashes and continue debugging from where the app left off
-            
-           修复崩溃并从应用停止的地方开始继续调试
-            
-*   Create beautiful, highly-customized user experiences
-    
-    生成美观、高度定制化的用户体验
-    
-    *   Benefit from a rich set of Material Design and Cupertino (iOS-flavor)
-        widgets built using Flutter's own framework
-        
-        受益于用 Flutter 框架构建的丰富的 
-        Material Design 以及 Cupertino （iOS 风格） widget
-        
-    *   Realize custom, beautiful, brand-driven designs, without the
-        limitations of OEM widget sets
-        
-        实现定制、美观、品牌驱动的设计，不受 OEM widget 集合的限制
+      修复崩溃并从应用停止的地方开始继续调试
+      
+* Create beautiful, highly-customized user experiences
+
+  创造美观、高度定制化的用户体验
+  
+  * Benefit from a rich set of Material Design and Cupertino (iOS-flavor)
+    widgets built using Flutter's own framework
+
+    受益于用 Flutter 框架构建的丰富的
+    Material Design 以及 Cupertino （iOS 风格） widget
+
+  * Realize custom, beautiful, brand-driven designs, without the
+    limitations of OEM widget sets
+
+    实现定制、美观、品牌驱动的设计，不受 OEM widget 集合的限制
 
 ## Core principles
 
@@ -136,21 +135,21 @@ A widget can define:
 
 一个 widget 可以定义：
 
-*   a structural element (like a button or menu)
+* a structural element (like a button or menu)
     
-    一个结构元素（比如一个按钮或者菜单）
+  一个结构元素（比如一个按钮或者菜单）
+
+* a stylistic element (like a font or color scheme)
     
-*   a stylistic element (like a font or color scheme)
+  一个风格元素（比如一个字体或者配色方案）
     
-    一个风格元素（比如一个字体或者配色方案）
+* an aspect of layout (like padding)
     
-*   an aspect of layout (like padding)
+  布局的一个方面（比如 padding）
     
-    布局的一个方面（比如 padding）
+* and so on...
     
-*   and so on...
-    
-    等等……
+  等等……
 
 Widgets form a hierarchy based on composition.
 Each widget nests inside, and inherits properties from,
@@ -480,7 +479,6 @@ Flutter 是开源的，而且我们鼓励公开对话，但需要阅读我们的
 [@flutterdev]: https://twitter.com/flutterdev
 [fully concrete widgets]: {{site.api}}/flutter/widgets/RenderObjectWidget-class.html
 [Flutter tutorials]: /docs/reference/tutorials
-[Flutter Gallery]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [flutter-dev]: {{site.groups}}/d/forum/flutter-dev
 [GitHub]: {{site.github}}/flutter/flutter/issues
@@ -491,6 +489,8 @@ Flutter 是开源的，而且我们鼓励公开对话，但需要阅读我们的
 [`LimitedBox`]: {{site.api}}/flutter/widgets/LimitedBox-class.html
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [MyApp template]: {{site.github}}/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl
+[repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
+[running app]: https://gallery.flutter.dev/
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
 [Stack Overflow]: {{site.so}}/tags/flutter
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
@@ -501,4 +501,4 @@ Flutter 是开源的，而且我们鼓励公开对话，但需要阅读我们的
 [tour of the widget framework]: /docs/development/ui/widgets-intro
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
 [various]: {{site.api}}/flutter/material/IconButton-class.html
-[visit our GitHub repository]: {{site.github}}/flutter/flutter/tree/master/examples
+[visit our examples GitHub repository]: {{site.github}}/flutter/flutter/tree/master/examples

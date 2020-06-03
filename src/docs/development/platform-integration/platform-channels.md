@@ -460,7 +460,6 @@ And replace with the following:
       }
     }
 ```
-{% endsamplecode %}
 
 {% sample Java %}
 Start by opening the Android host portion of your Flutter app in Android Studio:
@@ -604,6 +603,8 @@ And replace with the following:
             }
           }
 ```
+
+{% endsamplecode %}
 
 You should now be able to run the app on Android. If using the Android
 Emulator, set the battery level in the Extended Controls panel

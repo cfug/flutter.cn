@@ -171,7 +171,8 @@ Flutter 扩展执行代码分析，它提供：
   For information on using launching DevTools, see
   [Running DevTools from VS Code][] in the [DevTools][] docs.
 
-  以下说明描述了 VS Code 可用的功能。更多使用 DevTools 的详细信息请参考 [DevTools][] 中的 [Running DevTools from VS Code][] 文档。
+  以下说明描述了 VS Code 可用的功能。更多使用 DevTools 的详细信息请参考
+  [DevTools][] 中的 [Running DevTools from VS Code][] 文档。
   
 {{site.alert.end}}
 
@@ -407,7 +408,7 @@ can assist in correcting it.
   by creating the `State` class and moving the code there.
   
 **StatelessWidget 到 StatefulWidget 的转换**
-<br> 创建 `State` 类并将代码移到过去，
+<br> 创建 `State` 类并将代码移动过去，
 可以将 `StatelessWidget` 的实现更改为 `StatefulWidget`。
 
 ### Snippets

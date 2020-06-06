@@ -368,8 +368,8 @@ as well as many other open source packages, on [pub.dev][].
     your project. You should see the following in the console:
 
     在 Android Studio 的编辑器视图中查看 `pubspec.yaml` 文件时，
-    单击右上角的 Packages get，这会将依赖包安装到你的项目。
-    你可以在控制台中看到以下内容：
+    点击 **Pub get** 会将依赖包安装到你的项目。
+    你应该会在控制台中看到以下内容：
 
     ```terminal
     $ flutter pub get
@@ -381,8 +381,8 @@ as well as many other open source packages, on [pub.dev][].
     file with a list of all packages pulled into the project and
     their version numbers.
     
-    在执行 `Packages get` 命令的时候，同时会自动生成一个名为 `pubspec.lock`
-    的文件，这里包含了你依赖 packages 的名称和版本。
+    在执行 `Pub get` 命令时会自动生成一个名为 `pubspec.lock` 文件，
+    这里包含了你依赖 packages 的名称和版本。
 
  3. In `lib/main.dart`, import the new package:
     

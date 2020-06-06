@@ -6,13 +6,13 @@
   url: /docs/development/ui/widgets
 - name: API 文档
   description: Flutter 框架的 API 文档。
-  url: https://docs.flutter.cn
+  url: https://api.flutter-io.cn
 - name: 实用教程 (Cookbook)
   description: 官方实用教程合集，帮助你解决编写 Flutter 应用中的常见问题。
   url: /docs/cookbook
 - name: 样例代码
   description: 包含官方以及社区发布的样例工程，Demo 应用，范例代码等。
   url: https://github.com/flutter/samples/blob/master/INDEX.md
-- name: 视频频道
-  description: 关注 Flutter 的官方 YouTube 频道。
+- name: 视频资源
+  description: 关注 Flutter 官方 YouTube 频道发布的视频。
   url: https://www.youtube.com/flutterdev

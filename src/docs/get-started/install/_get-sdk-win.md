@@ -146,7 +146,7 @@ Flutter SDK 是免费且开源的，你可以从 GitHub 上的
 C:\src>git clone https://github.com/flutter/flutter.git -b stable
 ```
 
-You are now ready to run Flutter commands in the Flutter Console!
+You are now ready to run Flutter commands in the Flutter Console.
 
 现在你可以在控制台当中使用 Flutter 的命令了。
 
@@ -182,10 +182,10 @@ take these steps to add Flutter to the `PATH` environment variable:
     如果不存在的话，在用户环境变量中创建一个新的 `Path` 变量，
     然后将 `flutter\bin` 所在的完整路径作为新变量的值。
 
-Note that you have to close and reopen any existing console windows
+You have to close and reopen any existing console windows
 for these changes to take effect.
 
-注意，你需要关闭和重新启动已经打开的各个控制台窗口，
+你需要关闭和重新启动已经打开的各个控制台窗口，
 这样下次启动控制台时才能访问到刚才修改的变量。
 
 ### Run `flutter doctor`

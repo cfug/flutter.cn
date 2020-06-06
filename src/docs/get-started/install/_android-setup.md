@@ -7,10 +7,10 @@
 
   Flutter relies on a full installation of Android Studio to supply
   its Android platform dependencies. However, you can write your
-  Flutter apps in a number of editors; a later step will discuss that.
+  Flutter apps in a number of editors; a later step discusses that.
 
   Flutter 依赖 Android Studio 的全量安装来为其提供 Android 平台的支持。
-  但你也可以使用其他的编辑器来写 Flutter 应用，稍后会说明讨论这个问题。
+  但你也可以使用其他的编辑器来写 Flutter 应用，接下来的步骤会提到这个问题。
 
 {{site.alert.end}}
 
@@ -38,7 +38,7 @@
 ### 配置 Android 设备
 
 To prepare to run and test your Flutter app on an Android device,
-you'll need an Android device running Android 4.1 (API level 16) or higher.
+you need an Android device running Android 4.1 (API level 16) or higher.
 
 在 Android 设备上运行或测试 Flutter 应用之前，
 你需要一个运行 Android 4.1（API 版本 16）或者更高的设备。

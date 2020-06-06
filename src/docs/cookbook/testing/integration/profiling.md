@@ -4,13 +4,13 @@ title: 性能分析
 description: How to profile performance for a Flutter app.
 description: 本篇将如何测量你的 Flutter 应用的性能。
 prev:
-  title: An introduction to integration testing
-  title: Flutter 集成测试介绍
-  path: /docs/cookbook/testing/integration/introduction
-next:
   title: Handle scrolling
   title: 列表滚动
   path: /docs/cookbook/testing/integration/scrolling
+next:
+  title: An introduction to unit testing
+  title: Flutter 集成测试介绍
+  path: /docs/cookbook/testing/unit/introduction
 ---
 
 When it comes to mobile apps, performance is critical to user experience.
@@ -177,8 +177,12 @@ summary of the results to disk, run the test with the following command:
 我们可以使用以下命令运行测试代码：
 
 ```
-flutter drive --target=test_driver/app.dart
+flutter drive --target=test_driver/app.dart --profile
 ```
+
+The `--profile` option means to compile the app for the "profile mode" 
+rather than the "debug mode", so that the benchmark result is closer to 
+what will be experienced by end users. 
 
 ### 5. Review the results
 

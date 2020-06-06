@@ -106,9 +106,13 @@ We also have some helpful videos on our
 out the Flutter in Focus series,
 and learn about other series on our [videos][] page.
 
-我们在 YouTube 上有一个 [视频频道][Flutter Youtube channel]，欢迎订阅！
+我们在 YouTube 上有一个 [视频频道][Flutter YouTube channel]，欢迎订阅！
 更多视频和播放列表介绍，以及社区制作的视频教程，
 可以查看我们的 [Flutter 技术视频资源][videos] 页面。
+同时，你可以关注 [“Google中国”的哔哩哔哩账号](https://space.bilibili.com/64169458)
+了解更多更全面的谷歌技术中文内容，
+也可以关注 [“Flutter 社区”的哔哩哔哩账号](https://space.bilibili.com/344928717)
+了解更多来自社区的内容更新。
 
 First up, why use Flutter? What makes it different than other
 app frameworks?

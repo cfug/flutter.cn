@@ -202,7 +202,7 @@ In the **Identity** section:
 `Bundle Identifier`
 <br> 你在 App Store Connect 注册的 App ID。
 
-In the **Signing** section:
+In the **Signing & Capabilities** section:
 
 在 Signing 部分：
 

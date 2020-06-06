@@ -31,14 +31,23 @@ where time might be better spent on code behavior rather than code style.
 Install the `Dart` plugin (see [Editor setup](/docs/get-started/editor))
 to get automatic formatting of code in Android Studio and IntelliJ.
 
-在 Android Studio / IntelliJ 中安装 `Dart` 插件（见章节 [编辑工具设定](/docs/get-started/editor)）来进行代码的自动格式化。
+在 Android Studio / IntelliJ 中安装 `Dart` 插件
+（见章节 [编辑工具设定](/docs/get-started/editor)）
+来进行代码的自动格式化。
 
-To automatically format the code in the current source code window,
-right-click in the code window and select `Reformat Code with dartfmt`.
-You can add a keyboard shortcut to this in Keymap section of IntelliJ
-Preferences.
+To automatically format your code in the current source code window,
+use `Cmd+Alt+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
+Android Studio and IntelliJ also provides a check box named `Format code on save` on
+the Flutter page in Preferences (on Mac) or Settings (on Windows and Linux)
+which will format the current file automatically when you save it.
 
-格式化当前窗口中代码的方法是先在代码窗口中单击右键，然后选择 `Reformat Code with dartfmt` 选项即可。也可以在 IntelliJ 的偏好设置里的 Keymap 部分中增加快捷键，然后使用快捷键操作。
+在当前代码窗口中格式化代码的方法是，
+在 Windows 和 Linux 系统里使用 `Ctrl+Alt+L`，
+在 Mac 系统里使用 `Cmd+Alt+L`。
+Android Studio 和 IntelliJ 为 Flutter 页面提供了一个选项，
+即“在保存的时候格式化代码”—— `Format code on save`，
+要开启这个，可以在 Windows 和 Linux 下选择设置、在 Mac 下选择偏好设置。
+这样在每次保存代码的时候就会自动格式化当前文件。
 
 ## Automatically formatting code in VS Code
 
@@ -47,18 +56,23 @@ Preferences.
 Install the `Flutter` extension (see [Editor setup](/docs/get-started/editor))
 to get automatic formatting of code in VS Code.
 
-在 VS Code 中安装 `Flutter` 扩展（见章节 [编辑工具设定](/docs/get-started/editor)）来进行代码的自动格式化。
+在 VS Code 中安装 `Flutter` 扩展
+（见章节 [编辑工具设定](/docs/get-started/editor)）来进行代码的自动格式化。
 
 To automatically format the code in the current source code window,
 right-click in the code window and select `Format Document`.
 You can add a keyboard shortcut to this VS Code Preferences.
 
-格式化当前窗口中代码的方法是先在代码窗口中单击右键，然后选择 `Format Document` 选项即可。也可以在 VS Code 的偏好设置里面增加快捷键，然后使用快捷键操作。
+格式化当前窗口中代码的方法是先在代码窗口中单击右键，
+然后选择 `Format Document` 选项即可。
+也可以在 VS Code 的偏好设置里面增加快捷键，
+然后使用快捷键操作。
 
 To automatically format code whenever you save a file, set the
 `editor.formatOnSave` setting to `true`.
 
-将 `editor.formatOnSave` 设置成 `true`，可以在保存文件的时候自动进行代码格式化。
+将 `editor.formatOnSave` 设置成 `true`，
+可以在保存文件的时候自动进行代码格式化。
 
 ## Automatically formatting code with the 'flutter' command
 
@@ -67,7 +81,8 @@ To automatically format code whenever you save a file, set the
 You can also automatically format code in the command line interface
 (CLI) using the `flutter format` command:
 
-我们也可以在命令行界面（CLI）中使用 `flutter format` 命令，进行代码的自动格式化。
+我们也可以在命令行界面（CLI）中使用 `flutter format` 命令，
+进行代码的自动格式化。
 
 ```terminal
 $ flutter format path1 path2 ...
@@ -87,7 +102,12 @@ keeping the formatting you crafted.
 This helps the automatic formatter to insert an appropriate
 amount of line breaks for Flutter-style code.
 
-Flutter 代码经常会构建一定深度的树形数据结构，如在 `build` 方法中。为了有更好的自动格式化效果，我们推荐在末尾处添加逗号，尽管也可以不这样做。规则也比较简单：总是在函数、普通方法、构造方法参数列表的末尾处添加逗号。这样做会使格式化工具自动插入一些换行符，使代码更具有 Flutter 风格。
+Flutter 代码经常会构建一定深度的树形数据结构，如在 `build` 方法中。
+为了有更好的自动格式化效果，我们推荐在末尾处添加逗号，
+尽管也可以不这样做。
+规则也比较简单：总是在函数、普通方法、构造方法参数列表的末尾处添加逗号。
+这样做会使格式化工具自动插入一些换行符，
+使代码更具有 Flutter 风格。
 
 Here is an example of automatically formatted code *with* trailing commas:
 

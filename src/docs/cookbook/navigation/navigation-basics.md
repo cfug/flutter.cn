@@ -39,13 +39,15 @@ In Android, a route is equivalent to an Activity.
 In iOS, a route is equivalent to a ViewController.
 In Flutter, a route is just a widget.
 
-在 Android 开发中，Activity 相当于“路由”，在 iOS 开发中，ViewController 相当于“路由”。
+在 Android 开发中，Activity 相当于“路由”，
+在 iOS 开发中，ViewController 相当于“路由”。
 在 Flutter 中，“路由”也是一个 Widget。
 
-Navigate to a new route using the [`Navigator`][].
-This recipe uses the following steps:
+This recipe uses the [`Navigator`][] to navigate to a new route.
 
 怎么样从一个“路由”跳转到新的“路由“呢？[`Navigator`][] 类。
+
+这个教程里我们使用 [`Navigator`][] 来跳转到一个新的“路由”：
 
 ## Directions
 

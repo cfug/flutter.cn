@@ -76,17 +76,6 @@ whenever you open a new window. For example:
     $ which flutter
     ```
 
-For more details on setting the path in Bash,
-see [this StackExchange question][].
-For more information on setting the path in Z shell,
-see [this StackOverflow question][].
+{% include dart-tool.md %}
 
-想要查看更多详细关于在 Bash 中设置 path 环境变量的内容，请查看
-[在 StackExchange 的这个提问][this StackExchange question]，
-想要查看更多详细关于在 Z shell 中设置 path 环境变量的内容，请查看
-[在 StackOverflow 的这个提问][this StackOverflow question]。
-
-
-[this StackExchange question]: https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
-[this StackOverflow question]: https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh
 [Get the Flutter SDK]: #get-sdk

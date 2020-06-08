@@ -107,7 +107,7 @@ including iOS.
 
 Flutter 支持 [Material Components][] 库。
 它提供实现了 [Material Design 设计规范][Material Design guidelines] 的 widgets。
-Meterial Design 是一套 [为所有平台优化][optimized for all platforms]
+Material Design 是一套 [为所有平台优化][optimized for all platforms]
 （包括 iOS）的灵活的设计系统。
 
 But Flutter is flexible and expressive enough to implement any design language.

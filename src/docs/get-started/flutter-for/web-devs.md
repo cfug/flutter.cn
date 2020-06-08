@@ -78,7 +78,7 @@ color properties are individual properties of a
 child of a
 [`Text`][] widget.
 
-CSS 所处理的字���样式、大小以及其他文本属性，都是一个 [`Text`][] widget 子元素 [`TextStyle`][] 中单独的属性。
+CSS 所处理的字体样式、大小以及其他文本属性，都是一个 [`Text`][] widget 子元素 [`TextStyle`][] 中单独的属性。
 
 In both HTML and Flutter, child elements or widgets are anchored at
 the top left, by default.

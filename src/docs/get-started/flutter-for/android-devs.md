@@ -2748,7 +2748,7 @@ Most Firebase functions are covered by
 [first party plugins][].
 These plugins are first-party integrations, maintained by the Flutter team:
 
-[官方插件][] 提供了 Firebase 的大多数功能。
+[官方插件][first party plugins] 提供了 Firebase 的大多数功能。
 这些插件都是由 Flutter 团队维护的官方集成插件：
 
  * [`firebase_admob`][] for Firebase AdMob

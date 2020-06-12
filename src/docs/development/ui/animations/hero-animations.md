@@ -153,7 +153,7 @@ the original route.
   </iframe>
 </div>
 
-**Radial hero animations**<br>
+<br>**Radial hero animations**<br>
 
 **径向 hero 动画**<br>
 
@@ -182,7 +182,7 @@ the original route, displayed with a circular shape.
   </iframe>
 </div>
 
-Before moving to the sections specific to
+<br>Before moving to the sections specific to
 [standard](#standard-hero-animations)
 or [radial](#radial-hero-animations) hero animations,
 read [basic structure of a hero animation](#basic-structure)

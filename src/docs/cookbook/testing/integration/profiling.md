@@ -194,7 +194,7 @@ the project contains two files:
 在测试代码运行成功以后，在项目根目录下的 `build` 文件夹里包含以下两个文件：
 
   1. `scrolling_summary.timeline_summary.json` contains the summary. Open
-     Open the file with any text editor to review the information contained
+     the file with any text editor to review the information contained
      within.  With a more advanced setup, you could save a summary every
      time the test runs and create a graph of the results.
      

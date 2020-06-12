@@ -592,9 +592,9 @@ you’ve created your first animation in Flutter!
     部分查阅更多信息。
     
   * Examples of `AnimatedWidget`s in the Flutter API:
-    `AnimatedBuilder`, `AnimatedModal&shy;Barrier`,
-    `DecoratedBox&shy;Transition`, `FadeTransition`,
-    `Positioned&shy;Transition`, `Relative&shy;Positioned&shy;Transition`,
+    `AnimatedBuilder`, `AnimatedModalBarrier`,
+    `DecoratedBoxTransition`, `FadeTransition`,
+    `PositionedTransition`, `RelativePositionedTransition`,
     `RotationTransition`, `ScaleTransition`,
     `SizeTransition`, `SlideTransition`.
     
@@ -1142,7 +1142,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
 ## 下面的步骤
 
-This tutorial gives you a foundation for creating animations ins
+This tutorial gives you a foundation for creating animations in
 Flutter using `Tweens`, but there are many other classes to explore.
 You might investigate the specialized `Tween` classes,
 animations specific to Material Design,

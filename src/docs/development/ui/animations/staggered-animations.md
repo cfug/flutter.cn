@@ -72,10 +72,11 @@ This guide shows how to build a staggered animation in Flutter.
   [basic_staggered_animation][]
   <br> Shows a series of sequential and overlapping animations
     of a single widget. Tapping the screen begins an animation
-    that changes opacity, size, shape, color, and padding. 
+    that changes opacity, size, shape, color, and padding.
     
   [basic_staggered_animation][]
-  <br> 展示一个单独的 widget 的一系列连续和重叠动画。轻击屏幕开始一个动画，改变不透明度，大小，形状、颜色和填充。
+  <br> 展示一个单独的 widget 的一系列连续和重叠动画。
+  轻触屏幕开始一个动画，改变不透明度，大小，形状、颜色和填充。
   
   [staggered_pic_selection][]
   <br> Shows deleting an image from a list of images displayed
@@ -97,9 +98,12 @@ This guide shows how to build a staggered animation in Flutter.
   <br> 展示从一个以三种大小显示的图像列表中删除一个图像。
     这个例子使用两个 [animation controllers][]:
     一个用于控制图像的选择/取消选择, 一个用于控制删除图像.
-    选择/取消选择的动画是交织动画. (想看到这种效果，你可能需要增加 `timeDilation` 的数值。)
-    选择最大的一个图像，它会收缩同时在一个在蓝色圆圈里显示一个对勾，然后，选择一个最小的图像，最大的图像会展开同时对勾消失。
-    在最大的图像结束展开前，最小的图像会收缩并显示对勾。这个交织行为比较类似于你在 Google Photos 中看到的效果。
+    选择/取消选择的动画是交织动画。
+    (想看到这种效果，你可能需要增加 `timeDilation` 的数值。)
+    选择最大的一个图像，它会收缩同时在一个在蓝色圆圈里显示一个对勾，
+    然后，选择一个最小的图像，最大的图像会展开同时对勾消失。
+    在最大的图像结束展开前，最小的图像会收缩并显示对勾。
+    这个交织行为比较类似于你在 Google Photos 中看到的效果。
 {{site.alert.end}}
 
 The following video demonstrates the animation performed by
@@ -234,10 +238,10 @@ You might notice the following characteristics:
   
   将圆角半径增加到 0.5，将圆角正方形变成一个圆。
   
-* The padding and border radius changes occur during
+* The padding and height changes occur during
   the same exact interval, but they don't have to.
   
-  填充和边框半径的变化发生在相同的时间间隔内，但它们不必这么做。
+  填充和高度的变化发生在相同的时间间隔内，但它们不必这么做。
 
 {% asset ui/animations/StaggeredAnimationIntervals.png
     alt="Diagram showing the interval specified for each motion"
@@ -256,12 +260,9 @@ To set up the animation:
   为每一个有动画的属性创建一个 Tween 
   
   * The `Tween` defines a range of values.
-<<<<<<< HEAD
   
     Tween 定义一个值的范围。
   
-=======
->>>>>>> fbb06172968a59c7e37630afc6e9cd84171a0fc1
   * The `Tween`'s `animate` method requires the
     `parent` controller, and produces an `Animation`
     for that property.

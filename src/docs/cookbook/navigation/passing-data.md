@@ -224,7 +224,7 @@ class DetailScreen extends StatelessWidget {
 
 ## 5. Navigate and pass data to the detail screen
 
-## 4. 传递数据并跳转到待办事项详细信息界面
+## 5. 传递数据并跳转到待办事项详细信息界面
 
 With a `DetailScreen` in place,
 you're ready to perform the Navigation.

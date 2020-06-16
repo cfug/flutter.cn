@@ -122,11 +122,66 @@ ListView.builder(
 So far, so good.
 This generates 20 todos and displays them in a ListView.
 
-到目前为止， 我们生成了 20 条待办事项， 并用 `ListView` 把它显示出来了。
+到目前为止，我们生成了 20 条待办事项，
+并用 `ListView` 把它显示出来了。
 
-## 3. Create a detail screen to display information about a todo
+## 3. Create a Todo screen to display the list
 
-## 3. 创建一个显示待办事项详细信息的界面
+## 3. 创建一个待办页面显示待办事件列表
+
+For this, we create a `StatelessWidget`. We call it `TodosScreen`.
+Since the contents of this page won't change during runtime,
+we'll have to require the list
+of todos within the scope of this widget.
+
+为了实现这个，我们要创建一个无状态的 widget (`StatelessWidget`)，
+我们叫它 `TodosScreen`。
+因为这个页面在运行时内容并不会变动，
+在这个 widget 的 scope 里，
+我们会把这个待办事项的数组设置为必须 (加入 @require 限定符）。
+
+We pass in our `ListView.builder` as body of the widget we're returning to `build()`.
+This'll render the list on to the screen for you to get going!
+
+我们把 `ListView.builder` 作为 body 的参数返回给 `build()` 方法，
+这将会把列表渲染到屏幕上供你继续下一步。
+
+<!-- skip -->
+```dart
+class TodosScreen extends StatelessWidget {
+  final List<Todo> todos;
+
+  //requiring the list of todos
+  TodosScreen({Key key, @required this.todos}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Todos'),
+      ),
+      //passing in the ListView.builder
+      body: ListView.builder(
+        itemCount: todos.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(todos[index].title)
+          );
+        },
+      ),
+    );
+  }
+}
+```
+
+With Flutter's default styling, you're good to go without sweating about 
+things that you'd like to do later on!
+
+使用 Flutter 自带的样式，未来会变得很轻松。
+
+## 4. Create a detail screen to display information about a todo
+
+## 4. 创建一个显示待办事项详细信息的界面
 
 Now, create the second screen. The title of the screen contains the
 title of the todo, and the body of the screen shows the description.
@@ -167,7 +222,7 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-## 4. Navigate and pass data to the detail screen
+## 5. Navigate and pass data to the detail screen
 
 ## 4. 传递数据并跳转到待办事项详细信息界面
 
@@ -180,11 +235,12 @@ taps a todo in the list. Pass the todo to the `DetailScreen`.
 我们想让用户在点击列表中的某个待办事项时跳转到 `DetailScreen` 界面，
 同时能传递点击的这条代办事项对象（`Todo` 对象） 。
 
-To capture the user's tap, write an [`onTap()`][]
+To capture the user's tap in the `TodosScreen`, write an [`onTap()`][]
 callback for the `ListTile` widget. Within the `onTap()` callback,
 use the [`Navigator.push()`][] method.
 
-想要实现这些，我们来编写 `ListTile` widget 的 `onTap()` 回调函数，
+想要获取到用户在 `TodosScreen` 的点击事件，
+我们来编写 `ListTile` widget 的 `onTap()` 回调函数，
 继续使用 [`Navigator.push()`][] 方法。
 
 <!-- skip -->

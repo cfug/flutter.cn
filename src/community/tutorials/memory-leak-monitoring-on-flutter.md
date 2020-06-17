@@ -3,6 +3,8 @@ title: Flutter 上的内存泄漏监控
 toc: true
 ---
 
+文/ 戚耿鑫，快手应用研发平台组 Flutter 团队
+
 ## 一、前言
 
 Flutter 所使用的 Dart 语言具有垃圾回收机制，有垃圾回收就避免不了会内存泄漏。
@@ -407,10 +409,14 @@ Flutter 的 widget tree 的层次是非常深的。
 
 ### 排查 1.9.1 Framework 泄漏根源
 
+English placeholder for the translation toggle tools issue.
+
 通过上述的种种优化后，我得到了下面这个工具，
 在两个 `_InkResponseState` 节点中发现了问题：
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/GMbQYt.png)
+![](https://files.flutter-io.cn/posts/community/tutorial/images/GMbQYt.png){:width="70%"}
+
+English placeholder for the translation toggle tools issue.
 
 泄漏路径中有两个 `_InkResponseState` 节点所属的 route 信息不同，
 表明这两个节点在两个不同的页面中。
@@ -418,7 +424,9 @@ Flutter 的 widget tree 的层次是非常深的。
 说明组件已经销毁了，但是还是被 `FocusManager` 引用着！
 问题出现在这，来看下这部分代码
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/GMbq7d.png)
+![](https://files.flutter-io.cn/posts/community/tutorial/images/GMbq7d.png){:width="90%"}
+
+English placeholder for the translation toggle tools issue.
 
 代码中可以明显的看到 `addListener` 时候
 对 `StatefulWidget` 的生命周期理解错误。
@@ -426,10 +434,14 @@ Flutter 的 widget tree 的层次是非常深的。
 `dispose` 只会调用一次，
 所以这里就会出现 `listener` 移除不干净的情况。
 
+English placeholder for the translation toggle tools issue.
+
 修复了上述泄漏之后，发现还有一处泄漏。
 排查后发现泄漏源在 `TransitionRoute` 中：
 
-![](https://files.flutter-io.cn/posts/community/tutorial/images/toDJAS.jpg)
+![](https://files.flutter-io.cn/posts/community/tutorial/images/toDJAS.jpg){:width="90%"}
+
+English placeholder for the translation toggle tools issue.
 
 当打开一个新页面的时候，
 该页面的 `Route`（也就是代码中的 `nextRoute`）
@@ -438,6 +450,7 @@ Flutter 的 widget tree 的层次是非常深的。
 那么所有的 `Route` 都会泄漏！
 
 {{site.alert.note}}
+
 好消息是以上泄漏都在 1.12 版本之后修复了。
 {{site.alert.end}}
 
@@ -449,6 +462,8 @@ Flutter 的 widget tree 的层次是非常深的。
 
 **本文作者：** 戚耿鑫
 
-现就职于快手应用研发平台组 Flutter 团队，负责 APM 方向开发研究。从 2018 年开始接触 Flutter，在 Flutter 混合栈、工程化落地、UI 组件等方面有大量经验。
+现就职于快手应用研发平台组 Flutter 团队，负责 APM 方向开发研究。
+从 2018 年开始接触 Flutter，
+在 Flutter 混合栈、工程化落地、UI 组件等方面有大量经验。
 
 联系方式：qigengxin@kuaishou.com

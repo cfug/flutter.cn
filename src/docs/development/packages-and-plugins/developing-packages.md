@@ -8,28 +8,23 @@ description: 如何编写和提交你的 Packages。
 ---
 
 {{site.note.alert}}
-  If you write plugins for Flutter, you should know that
-  the plugin API was upgraded to 2.0 in Flutter 1.12
-  to support [federated plugins][] and to make it easier to
-  [test your plugin][].
-  In Flutter 1.10, Flutter's pubspec format was updated to
-  allow you to specify
-  [which platforms a plugin][supported-platforms] supports,
-  such as web and macos.
+  The plugin API has been updated and now supports [federated plugins][] that
+  enable separation of different platform implementations. You can also now
+  indicate [which platforms a plugin][supported-platforms] supports, for example
+  web and macOS.
 
-  Eventually, the old style of plugin will be deprecated and,
-  in the short term, you will see a warning when the framework
-  detects that you are using an old-style plugin.
-  For information on how to upgrade your plugin, see
-  [Supporting the new Android plugins APIs][].
+  Eventually, the old plugin APIs will be deprecated. In the short term, you
+  will see a warning when the framework detects that you are using an old-style
+  plugin. For information on how to upgrade your plugin, see [Supporting the new
+  Android plugins APIs][].  
 {{site.note.end}}
 
 ## Package introduction
 
 ## Package 介绍
 
-Packages enable the creation of modular code that can be
-shared easily. A minimal package consists of the following:
+Packages enable the creation of modular code that can be shared easily. A
+minimal package consists of the following:
 
 通过使用 packages （的模式）可以创建易于共享的模块化代码。
 一个最基本的 package 由以下内容构成：
@@ -85,10 +80,11 @@ Package 包含以下两种类别：
 <br> A specialized Dart package that contains an API written in
   Dart code combined with one or more platform-specific
   implementations.
-  Plugin packages can be written for Android
-  (using Kotlin or Java), iOS (using Swift or Objective-C),
-  web (using Dart), macos (using Dart), or any combination
+
+  Plugin packages can be written for Android (using Kotlin or Java), iOS (using
+  Swift or Objective-C), web, macOS, Windows, or Linux, or any combination
   thereof.
+
   A concrete example is the [`url_launcher`][] plugin package.
   To see how to use the `url_launcher` package, and how it
   was extended to implement support for web,
@@ -243,23 +239,33 @@ implementation(s) using a [platform channel][].
 或 Swift 分别在 Android 和/或 iOS 平台实现，
 你可以使用 [platform channels][] 中的 API 来实现特定平台的调用。
 
+The API is connected to the platform-specific implementation(s) using a
+[platform channel][].
+
+它的 API 通过 [platform channel][] 连接到平台特定的实现。
+
 ### Federated plugins
 
-Federated plugins were introduced in Flutter 1.12
-as a way of splitting support for different platforms
-into separate packages. So, a federated plugin can use
-one package for iOS, another for Android,
-another for web, and yet another for your car
-(as an example of an IoT device).
-Among other benefits, this approach allows a
-domain expert to extend an existing plugin to work for
-the platform they know best.
+### 联合插件
+
+Federated plugins are a a way of splitting support for different platforms into
+separate packages. So, a federated plugin can use one package for iOS, another
+for Android, another for web, and yet another for a car (as an example of an IoT
+device). Among other benefits, this approach allows a domain expert to extend an
+existing plugin to work for the platform they know best.
+
+Federated plugins （联合插件）是一种将对不同平台的支持分为单独的软件包。所以，联合插件能够使用针对 iOS、Android、web 甚至是针对汽车（例如在 IoT 设备上）分别使用对应的 package。
+除了这些好处之外，它还能够让领域专家在他们最了解的平台上扩展现有平台插件。
 
 A federated plugin requires the following packages:
+
+联合插件需要以下 package：
 
 **app-facing package**
 : The package that plugin users depend on to use the plugin.
   This package specifies the API used by the Flutter app.
+
+  
 
 **platform package(s)**
 : One or more packages that contain the platform-specific
@@ -276,23 +282,22 @@ A federated plugin requires the following packages:
   that defines this interface ensures that all platform
   packages implement the same functionality in a uniform way.
   
-For more information on federated plugins,
-why they are useful, and how they are implemented,
-see the Medium article by Harry Terkelsen,
-[How To Write a Flutter Web Plugin, Part 2][].
+For more information on federated plugins, why they are useful, and how they are
+implemented, see the Medium article by Harry Terkelsen, [How To Write a Flutter
+Web Plugin, Part 2][].
 
 ### Specifying a plugin's supported platforms {#plugin-platforms}
 
 ### 指定一个插件支持的平台 {#plugin-platforms}
 
-In Flutter 1.12 and later, plugins can specify
+Plugins can specify
 the platforms they support by adding keys to the
 `platforms` map in the `pubspec.yaml` file.
 For example, the following pubspec file shows the
 `flutter:` map for the `hello` plugin, which supports
 only iOS and Android:
 
-从 Flutter 1.12 版开始，插件可以通过向 `pubspec.yaml` 中的 `platforms` map 
+插件可以通过向 `pubspec.yaml` 中的 `platforms` map 
 添加 keys 来指定其支持的平台。
 例如，以下是 `hello` 插件的 `flutter:` map：
 
@@ -313,11 +318,9 @@ environment:
   flutter: ">=1.12.0 <2.0.0"
 ```
 
-When adding plugin implementations for more platforms,
-the `platforms` map should be updated accordingly. 
-For example, here's the map in the pubspec file
-for the `hello` plugin, when updated to add support
-for macOS and web:
+When adding plugin implementations for more platforms, the `platforms` map
+should be updated accordingly. For example, here's the map in the pubspec file
+for the `hello` plugin, when updated to add support for macOS and web:
 
 当为更多平台添加插件实现时，应相应地更新 `platforms` map，
 例如这是支持 Android、iOS、macOS 和 web 的 `hello` 插件的 map：
@@ -362,7 +365,8 @@ generated plugin code.
 使用 `--org` 选项，以反向域名表示法来指定你的组织。
 该值用于生成的 Android 及 iOS 代码。
 
-Use the `-a` option to specify the language for android or the `-i` option to specify the language for ios. Please choose **one** of the following:
+Use the `-a` option to specify the language for android or the `-i` option to 
+specify the language for ios. Please choose **one** of the following:
 
 使用 `-a` 选项指定 Android 的语言，或使用 `-i` 选项指定 iOS 的语言。 
 请选择以下 **任一项**：
@@ -566,10 +570,10 @@ interface package.
 
 ### Testing your plugin
 
-As of Flutter 1.12, it is now easier to write code to
-test your plugin. For more information, see
-[Testing your plugin][], a section in
-[Supporting the new Android plugins APIs][].
+We encourage you test your plugin with automated tests, to ensure that
+functionality does not regress as you make changes to your code. For more
+information, see [Testing your plugin][], a section in [Supporting the new
+Android plugins APIs][].
 
 ## Adding documentation
 
@@ -908,7 +912,6 @@ file like any other Dart package.
 
 PENDING
 {% endcomment %}
-
 
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
 [`device_info`]: {{site.pub-api}}/device_info/latest

@@ -787,6 +787,19 @@ see [Version your app][] in the Android documentation.
 更多信息请参考 Android 文档中的
 [为你的应用添加版本][Version your app]。
 
+After updating the version number in the pubspec file,
+run `flutter pub get` from the top of the project, or
+use the **Pub get** button in your IDE. This updates
+the `versionName` and `versionCode` in the `local.properties` file,
+which are later updated in the `build.gradle` file when you
+rebuild the Flutter app.
+
+在更新完 pubspec 文件中的版本号之后，
+在项目根目录下运行 `flutter pub get`，
+或者使用 IDE 中的 **Pub get** 按钮。
+这将会更新 `local.properties` 文件中的 `versionName` 和 `versionCode`，
+之后它会在你构建 Flutter 应用的时候更新 `build.gradle`。
+
 ## Android release FAQ
 
 ## Android发布常见问题

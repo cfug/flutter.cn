@@ -36,10 +36,21 @@ Flutter 使用了灵活的系统，它允许你调用相关平台的 API，
   这一类插件不使用平台通道。
 {{site.alert.end}}
 
-Flutter's platform-specific API support does not rely on code generation,
-but rather on a flexible message passing style:
+Flutter uses a flexible system that allows you to call
+platform-specific APIs whether available in Kotlin or
+Java code on Android, or in Swift or Objective-C code on iOS.
 
-Flutter 的平台相关 API 支持不依赖于代码生成，而是依赖于灵活的消息传递：
+Flutter 使用了灵活系统，无论是在 Android 上
+的 Kotlin 还是 Java，亦或是 iOS 上的 Swift 或 Objective-C，
+它都允许你调用平台特定 API。
+
+Flutter's builtin platform-specific API support does not rely on code
+generation, but rather on a flexible message passing style.  Alternatively, the
+package [Pigeon][] can be used for [sending structured typesafe messages][] via
+code generation:
+
+Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是灵活的依赖于传递消息格式。
+或者，你也可以使用 [Pigeon][] 这个 package，通过生成代码来 [发送结构化类型安全消息][sending structured typesafe messages]。
 
 * The Flutter portion of the app sends messages to its *host*,
   the iOS or Android portion of the app, over a platform channel.
@@ -157,7 +168,6 @@ platform side and vice versa:
 | List                       | java.util.ArrayList | List        | NSArray                                        | Array                                   |
 | Map                        | java.util.HashMap   | HashMap     | NSDictionary                                   | Dictionary                              |
 
-<br>
 ## Example: Calling platform-specific iOS and Android code using platform channels {#example}
 
 ## 示例: 通过平台通道调用平台的 iOS 和 Android 代码 {#example}
@@ -873,6 +883,72 @@ and the app displays 'battery info unavailable'.
 现在你应该可以在 iOS 中运行该应用。如果使用了 iOS 模拟器，注意它并不支持
 battery API，并且应用会显示 'battery info unavailable'。
 
+## Typesafe platform channels via Pigeon {#pigeon}
+
+## 通过 Pigeon 获得类型安全的通道 {#pigeon}
+
+The previous example uses `MethodChannel` to communicate between the host and
+client which isn't typesafe.  Calling and receiving messages depends on the host
+and client declaring the same arguments and datatypes in order for messages to
+work.  The [Pigeon][] package can be used as an alternative to `MethodChannel`
+to generate code that sends messages in a structured typesafe manner.
+
+在之前的样例中，我们使用 `MethodChannel` 在 host 和 client 之间进行通信，然而这并不是类型安全的。为了正确通信，调用/接收消息取决于 host 和 client 声明相同的参数和数据类型。[Pigeon][] 包可以用作 `MethodChannel` 的替代品，它将生成以结构化类型安全方式发送消息的代码。
+
+With [Pigeon][] the messaging protocol is defined in a subset of Dart which then
+generates messaging code for Android or iOS.  A more complete example and more
+information can be found on the [Pigeon pub.dev page][];
+
+在 [Pigeon][] 中，消息接口在 Dart 中进行定义，然后它将生成对应的 Android 以及 iOS 的代码。更复杂的例子以及更多信息尽在 [Pigeon pub.dev page][]。
+
+Using [Pigeon][] eliminates the need to match strings between host and client
+for the names and datatypes of messages.  It supports: nested classes, grouping
+messages into APIs, generation of asynchronous wrapper code and sending messages
+in either direction.  The generated code is readable and guarentees there will
+be no conflicts between multiple clients of different versions.  Supported
+languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
+
+使用 [Pigeon][] 消除了在主机和客户端之间匹配字符串的需要消息的名称和数据类型。
+它支持：嵌套类，消息转换为 API，生成异步包装代码并发送消息。生成的代码具有相当的可读性并保证在不同版本的多个客户端之间没有冲突。支持 Objective-C，Java，Kotlin 和 Swift（通过Objective-C互操作）语言。
+
+### Pigeon example
+
+### Pigeon 样例
+
+**Pigeon file:**
+
+<!-- skip -->
+```dart
+import 'package:pigeon/pigeon.dart';
+
+class SearchRequest {
+  String query;
+}
+
+class SearchReply {
+  String result;
+}
+
+@HostApi()
+abstract class Api {
+  SearchReply search(SearchRequest request);
+}
+```
+
+**Dart usage:**
+
+<!-- skip -->
+```dart
+import 'generated_pigeon.dart'
+
+void onClick() async {
+  SearchRequest request = SearchRequest()..query = 'test';
+  Api api = Api();
+  SearchReply reply = await api.search(request);
+  print('reply: ${reply.result}');
+}
+```
+
 ## Separate platform-specific code from UI code {#separate}
 
 ## 从 UI 代码中分离平台相关代码 {#separate}
@@ -1033,4 +1109,6 @@ DispatchQueue.main.async {
 [the main thread]: https://developer.apple.com/documentation/uikit?language=objc
 [the UI thread]: https://developer.android.com/guide/components/processes-and-threads#Threads
 [using packages]: /docs/development/packages-and-plugins/using-packages
-
+[Pigeon]: https://pub.dev/packages/pigeon
+[Pigeon pub.dev page]: https://pub.dev/packages/pigeon
+[sending structured typesafe messages]: #pigeon

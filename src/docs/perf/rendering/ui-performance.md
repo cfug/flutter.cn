@@ -436,38 +436,6 @@ To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
 
-要用代码实现性能图层，可以查看
-[添加输出代码的方式调试 Flutter 应用][Debugging Flutter apps programmatically] 
-中的 [Performance overlay][] 章节。
-
-You are probably familiar with the Flutter Gallery example app.
-To use the performance overlay with Flutter Gallery,
-use the copy in the [examples][] directory that was installed
-with Flutter, and run the app in profile mode. The program is written
-so that the app menu allows you to dynamically toggle the overlay,
-as well as enable checks for calls to `saveLayer` and the presence of
-cached images.
-
-可能读者已经对 Flutter Gallery 样例应用相当熟悉了。
-要在 Flutter Gallery 中使用性能图层，
-请使用与 Flutter 一起安装的 [examples][] 目录的副本在分析模式下运行应用。
-应用的代码中已经写好了通过应用菜单动态触发图层，
-同时允许对 `saveLayer` 的调用和当前已缓存的图片的检查。
-
-{{site.alert.note}}
-
-  You can’t enable the performance overlay in the Flutter
-  Gallery app downloaded from the App Store.
-  That version of the app is compiled to release mode
-  (not profile mode), and doesn’t provide
-  a menu for enabling or disabling the overlay.
-  
-  从应用市场下载的 Flutter Gallery 应用是无法打开性能图层的。
-  因为该版本是用发布模式编译的（而不是分析模式），
-  并且没有提供图层开关的菜单。
-  
-{{site.alert.end}}
-
 ## Identifying problems in the UI graph
 
 ## 定位 UI 图表中的问题

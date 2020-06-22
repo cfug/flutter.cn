@@ -1,7 +1,9 @@
 ---
-title: Dart 进阶 | 深入理解 Function & Closure
+title: 深入理解 Function & Closure
 toc: true
 ---
+
+文/ 鑫磊，滴滴出行实习生
 
 # 前言
 
@@ -369,7 +371,7 @@ class Counter{
 
 上面这段代码会输出什么呢？
 
-如果你已经想好了答案，就来 https://dartpad.cn/75e338c727ae608cd31d389f7557a0f1 看看是否正确吧！也欢迎大家在底下评论区一起讨论～
+如果你已经想好了答案，就来 <a href="https://dartpad.cn/75e338c727ae608cd31d389f7557a0f1">DartPad 线上运行</a> 看看是否正确吧！
 
 ## 写在最后
 
@@ -377,6 +379,5 @@ class Counter{
 
 时隔半年来迟迟的更新，不知道是否对大家有点帮助呢～ Closure 在实现 Flutter 的诸多功能上都发挥着重要的作用，可以说它已经深入你编程的日常，默默帮助我们更好地编写 Dart 代码，作为一名不断精进的 Dart 开发者，是时候用起来啦～之后的文章中，我会逐渐转向 Dart，给大家带来更深入的内容，敬请期待！
 
-如果您对本文还有任何疑问或者文章的建议，欢迎在下方评论区以及我的邮箱 xinlei966@gmail.com 与我联系，我会及时回复！
+如果您对本文还有任何疑问或者文章的建议，欢迎通过我的邮箱 xinlei966@gmail.com 与我联系，我会及时回复！
 
-后续我的博文将首发 [xinlei.dev](https://www.xinlei.dev)，欢迎关注！

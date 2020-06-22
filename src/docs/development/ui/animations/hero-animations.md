@@ -153,7 +153,7 @@ the original route.
   </iframe>
 </div>
 
-**Radial hero animations**<br>
+<br>**Radial hero animations**<br>
 
 **径向 hero 动画**<br>
 
@@ -182,7 +182,7 @@ the original route, displayed with a circular shape.
   </iframe>
 </div>
 
-Before moving to the sections specific to
+<br>Before moving to the sections specific to
 [standard](#standard-hero-animations)
 or [radial](#radial-hero-animations) hero animations,
 read [basic structure of a hero animation](#basic-structure)
@@ -1138,7 +1138,7 @@ The following resources might help when writing animations:
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [hero_animation]: {{site.github}}/flutter/website/tree/master/examples/_animation/hero_animation/
 [`Inkwell`]: {{site.api}}/flutter/material/InkWell-class.html
-[Material Design motion spec]: {{site.material}}/guidelines/motion/movement.html
+[Material Design motion spec]: {{site.material}}/design/motion/understanding-motion.html#principles
 [`MaterialRectArcTween`]: {{site.api}}/flutter/material/MaterialRectArcTween-class.html
 [`MaterialRectCenterArcTween`]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html

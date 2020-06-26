@@ -7,11 +7,11 @@ description: 学习如何使用开发者工具的性能视图。
 
 {{site.alert.note}}
 
-  The performance view works with mobile apps only.
+  The performance view works with Dart CLI and mobile apps only.
   Use Chrome DevTools to [analyze performance][]
   of a web app.
 
-  性能视图仅适用于移动应用。
+  性能视图适用于移动应用和 Dart 命令行工具。
   对于 web 应用程序，请使用 Chrome 自带的开发者工具进行
   [性能分析](https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance/)
 
@@ -21,10 +21,11 @@ description: 学习如何使用开发者工具的性能视图。
 
 ## 它是什么?
 
-The performance view allows you to record and profile a 
-session from your Dart application.
+The performance view allows you to record and profile a
+session from your Dart or Flutter application.
 
-性能视图可以记录并分析 Dart 应用程序的性能，以帮助我们找到应用程序的性能瓶颈。
+性能视图可以记录并分析 Flutter 和 Dart 应用的性能，
+以帮助我们找到应用程序的性能瓶颈。
 
 {{site.alert.note}}
 
@@ -34,9 +35,13 @@ session from your Dart application.
   unless your Flutter application is run in profile mode.
 
    **对于 Flutter 应用程序，需要使用 profile 构建模式才能使用性能分析**
-   如果你希望你的 Flutter 应用程序性能与 Release 模式下相同且希望使用性能分析工具，请使用 Profile 模式。
+   如果你希望你的 Flutter 应用程序性能与 Release 模式下相同
+   且希望使用性能分析工具，请使用 Profile 模式。
 
 {{site.alert.end}}
+
+<!-- TODO(kenz): this is the same information that is in the Timeline page.
+Consolidate somehow. -->
 
 ## CPU Profiler
 
@@ -85,8 +90,12 @@ app's performance less. The VM's sample buffer also fills more slowly, so you ca
 CPU samples for a longer period of app run time. This means that you have a better
 chance of viewing CPU samples from the beginning of the recorded profile.
 
-**低粒度** 的配置具有较低的采样率，因此单元时间内采集的 CPU 信息会比较粗略且采集样例较少。
-当然，这样也会对你的应用程序性能影响更小。VM 示例缓冲区填充速度也会较慢，因此你可以采集到相当长一段时间内应用程序的 CPU 样例数据。这也意味着你有更好的机会去查看 CPU 样例数据。
+**低粒度** 的配置具有较低的采样率，
+因此单元时间内采集的 CPU 信息会比较粗略且采集样例较少。
+当然，这样也会对你的应用程序性能影响更小。
+VM 示例缓冲区填充速度也会较慢，
+因此你可以采集到相当长一段时间内应用程序的 CPU 样例数据，
+这也意味着你有更好的机会去查看 CPU 样例数据。
 
 ### Flame chart
 
@@ -168,14 +177,14 @@ In this table, a method can be expanded to show its _callers_.
     (the callers in the CPU profile), this is the self time
     of the callee when being called by the caller.
     In the following example, the self time of the caller
-    `Element.updateSlotForChild.visit()` is equal to the self time of
-    the callee `[Stub] OneArgCheckInLineCache` when being called by
-    the caller.</p>
+    `createRenderObject` is equal to the self time of
+    the callee `debugCheckHasDirectionality` when being called by
+    the caller.
 
-<p>在 Bottom up 调用树中对于最顶层的方法(叶堆栈帧)，它表示执行自己的代码所需要的时间。
+<p>在自下而上调用树中对于最顶层的方法(叶堆栈帧)，它表示执行自己的代码所需要的时间。
 对于子节点(调用者)，它表示调用者运行被调用者的时间。
-在下面的这个例子中，调用者 `Element.updateSlotForChild.visit()` 
-的执行时间等于被调用者 `[Stub] OneArgCheckInLineCache` 的执行时间。
+在下面的这个例子中，调用者 `createRenderObject` 
+的执行时间等于被调用者 `debugCheckHasDirectionality` 的执行时间。
 </p>
 
 </dd>

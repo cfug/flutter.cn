@@ -10,13 +10,12 @@ description: 学习如何在 Flutter 里使用开发者工具。
 ## 开发工具是什么？
 
 DevTools is a suite of performance and debugging tools
-for Dart and Flutter. It's currently in preview release,
+for Dart and Flutter. It's currently in beta release,
 but is under active development.
 
 开发工具是一套 Dart 和 Flutter 的性能调试工具。现在它还是预览版，但它正在持续开发中。
 
-![Screenshot of timeline dark mode]({% asset tools/devtools/timeline-dark-mode.png @path %}){:width="100%"}
-<br><center><span>DevTools Timeline view in dark mode</span><span>黑暗模式下的开发工具时间轴截图</span></center>
+![Dart DevTools Screens]({% asset tools/devtools/dart-devtools.gif @path %}){:width="100%"}
 
 ## What can I do with DevTools?
 
@@ -28,21 +27,28 @@ Here are some of the things you can do with DevTools:
 
 * Inspect the UI layout and state of a Flutter app.
 
-  检查 Flutter 应用程序的 UI 组件布局和状态
+  检查 Flutter 应用程序的 UI 组件布局和状态；
 
 * Diagnose UI jank performance issues in a Flutter app.
 
-  在 Flutter 应用程序中诊断 UI 性能过低的问题。
+  在 Flutter 应用程序中诊断 UI 性能过低的问题；
+  
+* CPU profiling for a Flutter or Dart app.
 
-* Source-level debugging of a Flutter or Dart
-  command-line app.
+  Flutter 和 Dart 应用的 CPU 性能检测；
 
-  在 Flutter 或 Dart 的命令行应用程序中进行源码级的调试。
+* Network profiling for a Flutter app.
+
+  为 Flutter 应用进行网络性能检测；
+
+* Source-level debugging of a Flutter or Dart app.
+
+  为 Flutter 或 Dart 应用进行源码级的调试；
 
 * Debug memory issues in a Flutter or Dart
   command-line app.
 
-  在 Flutter 或 Dart 命令行应用程序中测试内存问题。
+  在 Flutter 或 Dart 命令行应用中测试内存问题；
 
 * View general log and diagnostics information
   about a running Flutter or Dart
@@ -55,30 +61,12 @@ your existing IDE or command-line based development workflow.
 
 我们希望您将开发工具与现有的 IDE 或基于命令行的开发流程结合起来使用。
 
-![GIF showing DevTools features]({% asset tools/devtools/inspector.gif @path %}){:width="100%"}
-<br><center><span>DevTools in action</span><span>运行中的开发工具</span></center>
-
 ## How do I install DevTools?
 
 ## 如何安装开发工具？
 
 See the [Android Studio/IntelliJ][], [VS Code][], or
 [command line][] pages for installation instructions.
-
-详细安装教程，请查阅 [Android Studio/IntelliJ][]、[VS Code][] 或 [命令行][] 页面。
-
-## How do I try DevTools written in Flutter?
-
-## 我该如何尝试使用 Flutter 编写的 DevTools？
-
-To test the alpha version of DevTools written in Flutter, click the “beaker” icon in the upper-right corner of DevTools.
-This will launch DevTools running on Flutter web. This version is in early preview with only the inspector tab feature
-complete. It is under active development.
-
-要测试使用 Flutter 编写的 DevTools 的 Alpha 版本，请单击 DevTools 右上角的“烧杯”图标。
-这将启动在 Flutter 网站上运行的 DevTools。此版本处于早期预览状态，仅具有检查器选项卡功能。它正在积极演进中。
-
-![DevTools alpha 入口点的屏幕截图]({% asset tools/devtools/devtools_alpha_entrypoint.png @path %}){:width="100%"}
 
 ## Providing feedback
 

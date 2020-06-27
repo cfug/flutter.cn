@@ -45,42 +45,32 @@ concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
 previous experience with Dart, mobile, or web programming.
 
-<<<<<<< HEAD
 这是一个指引你完成第一个 Flutter 应用的手把手操作教程（我们也称之为是 codelab）。
 我们将会着手创建一个简单的 Flutter 应用，无需 Dart 语言、
 移动开发语言或 Web 开发经验，
 只需你具备面向对象语言开发基础即可（如变量，循环和条件语句）。
 
-This guide is part 1 of a two-part codelab.
-You can find [part 2][] on the [Google Developers Codelabs][],
-as well as [part 1][].
-=======
 This codelab is part 1 of a two-part codelab.
 You can find [part 2][] on [Google Developers Codelabs][]
 (as well as a copy of this codelab, [part 1][]).
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
 
 完整的教程分为两部分，本页面是第一部分的内容，
-你可以在这里查看 
-[第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0) 的内容。
+你可以在这里查看 [第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0) 的内容。
+(Codelabs 里的第一部分内容与本页内容相同)。
 
 ## What you'll build in part 1
 {:.no_toc}
 
-<<<<<<< HEAD
 ## 第一部分的内容概览
 {:.no_toc}
 
-You’ll implement a simple mobile app that generates proposed
-=======
 You’ll implement a simple app that generates proposed
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
 names for a startup company. The user can select and unselect names,
 saving the best ones. The code lazily generates 10 names at a time.
 As the user scrolls, more names are generated.
 There is no limit to how far a user can scroll.
 
-你将完成一个简单的移动应用程序，功能是：为一个创业公司生成建议的公司名称。
+你将完成一个简单的应用，功能是：为一个创业公司生成建议的公司名称。
 用户可以选择和取消选择的名称、保存喜欢的名称。
 该代码一次生成十个名称，当用户滚动时，会生成一新批名称。
 
@@ -95,36 +85,27 @@ The animated GIF shows how the app works at the completion of part 1.
   <h4 class="no_toc">第一部分，我们将共同构建：</h4>
 
   * How to write a Flutter app that looks natural on iOS, Android,
-<<<<<<< HEAD
-    and the web.
+    and the web
   
     Flutter 如何在 Android、iOS 和 Web 里自动适应不同的 UI 体系
 
-  * Basic structure of a Flutter app.
+  * Basic structure of a Flutter app
 
     Flutter 工程/项目的基本结构
   
-  * Finding and using packages to extend functionality.
+  * Finding and using packages to extend functionality
  
     查找和使用 packages 来扩展功能
 
-  * Using hot reload for a quicker development cycle.
+  * Using hot reload for a quicker development cycle
    
     使用热重载 (hot reload) 加快开发周期
 
-  * How to implement a stateful widget.
+  * How to implement a stateful widget
   
     如何实现有状态的 widget
 
-  * How to create an infinite, lazily loaded list.
-=======
-    and the web
-  * Basic structure of a Flutter app
-  * Finding and using packages to extend functionality
-  * Using hot reload for a quicker development cycle
-  * How to implement a stateful widget
   * How to create an infinite, lazily loaded list
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
 
     如何创建一个无限的、延迟加载的列表
 
@@ -157,8 +138,7 @@ The animated GIF shows how the app works at the completion of part 1.
   本 codelab 里，我们以 macOS 环境下的 Android Studio 以做演示，
   但你可以选用更顺手的配置。
 
-<<<<<<< HEAD
-  You can run this codelab using any of the following devices:
+  You can run this codelab by using any of the following devices:
   
   你可以通过如下任何设备完成本 codelab：
 
@@ -167,22 +147,14 @@ The animated GIF shows how the app works at the completion of part 1.
     
     开启开发者模式 (developer mode) 的 [Android](install/macos#set-up-your-android-device) 和 / 或 [iOS](install/macos#deploy-to-ios-devices) 真机；
 
-  * The [iOS simulator][]
-    
-    [iOS 模拟器](install/macos#set-up-the-ios-simulator)；
-  
-  * The [Android emulator][]
-    
-    [Android 模拟器](install/macos#set-up-the-android-emulator)。
- 
-=======
-  You can run this codelab by using any of the following devices:
-
-  * A physical device ([Android][] or [iOS][]) connected to your
-    computer and set to developer mode
   * The [iOS simulator][] (requires installing Xcode tools)
+    
+    [iOS 模拟器](install/macos#set-up-the-ios-simulator) (需要安装 Xcode 工具)；
+  
   * The [Android emulator][] (requires setup in Android Studio)
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
+    
+    [Android 模拟器](install/macos#set-up-the-android-emulator) (需要安装设置 Android Studio)。
+ 
   * A browser (Chrome is required for debugging)
    
     浏览器（如果需要 debug，则需要用 Chrome 浏览器）
@@ -283,14 +255,10 @@ where the Dart code lives.
     {{site.alert.tip}}
     
       When pasting code into your app, indentation can become skewed.
-<<<<<<< HEAD
-      You can fix this automatically with the Flutter tools:
+      You can fix this with the following Flutter tools:
       
       在向你的工程项目中粘贴代码的时候，缩进可能会变形。
-      你可以使用 Flutter 工具自动修复此问题：
-=======
-      You can fix this with the following Flutter tools:
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
+      你可以使用下面的 Flutter 工具修复此问题：
 
       * Android Studio and IntelliJ IDEA: Right-click the code and
         select **Reformat Code with dartfmt**.
@@ -324,15 +292,15 @@ where the Dart code lives.
       it can take awhile to load.
       Afterward, you can use hot reload for quick updates.
       **Save** also performs a hot reload if the app is running.
-<<<<<<< HEAD
-      
-      第一次真机运行的时候可能会需要更多的等待时间，但是这是值得的，
-      因为接下来你就可以使用热重载（hot reload）功能，真正的为下次运行时更新的预览**节省**更多时间。
-      
-=======
       When running an app directly from the console using
       `flutter run`, enter `r` to perform hot reload.
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
+      
+      第一次真机运行的时候可能会需要更多的等待时间，但是这是值得的，
+      因为接下来你就可以使用热重载（hot reload）功能，
+      真正的为下次运行时更新的预览**节省**更多时间。
+      如果你是在终端窗口里通过 `flutter run` 运行应用的化，
+      直接输入 `r` 进行热重载。
+      
     {{site.alert.end}}
 
 ### Observations
@@ -352,14 +320,10 @@ where the Dart code lives.
   
 * The `main()` method uses arrow (`=>`) notation.
   Use arrow notation for one-line functions or methods.
-<<<<<<< HEAD
 
   主函数（main）使用了 (`=>`) 符号，这是 Dart 中单行函数或方法的简写。
 
-* The app extends `StatelessWidget` which makes the app itself a
-=======
 * The app extends `StatelessWidget`, which makes the app itself a
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
   widget. In Flutter, almost everything is a widget, including
   alignment, padding, and layout.
   
@@ -380,7 +344,8 @@ where the Dart code lives.
   that describes how to display the widget in terms of other,
   lower level widgets.
 
-  一个 widget 的主要工作是提供一个 `build()` 方法来描述如何根据其他较低级别的 widgets 来显示自己。
+  一个 widget 的主要工作是提供一个 `build()` 
+  方法来描述如何根据其他较低级别的 widgets 来显示自己。
 
 * The body for this example consists of a `Center` widget containing
   a `Text` child widget. The Center widget aligns its widget subtree
@@ -573,109 +538,10 @@ In this step, you’ll add a stateful widget, `RandomWords`, which creates
 its `State` class, `_RandomWordsState`. You'll then use `RandomWords` as
 a child inside the existing `MyApp` stateless widget.
 
-<<<<<<< HEAD
 在这一步，你将添加一个 stateful widget（有状态的 widget）—— `RandomWords`，
-它会创建自己的状态类 —— `RandomWordsState`，然后你需要将 `RandomWords`
+它会创建自己的状态类 —— `_RandomWordsState`，然后你需要将 `RandomWords`
 内嵌到已有的无状态的 `MyApp` widget。
 
- 1. Create a minimal state class. Add the following to the bottom
-    of `main.dart`:
-
-    创建一个最简的 state 类，这个类可以在任意地方创建而不一定非要在 MyApp 里，
-    我们的示例代码是放在 MyApp 类的最下面了：
-
-    <?code-excerpt "lib/main.dart (RandomWordsState)" title region="RWS-class-only" plaster="// TODO Add build() method" indent-by="2"?>
-    ```dart
-      class RandomWordsState extends State<RandomWords> {
-        // TODO Add build() method
-      }
-    ```
-
-    Notice the declaration `State<RandomWords>`.
-    This indicates that we're using the generic [`State`][]
-    class specialized for use with `RandomWords`. Most of the app's logic
-    and state resides here&mdash;it maintains the state for the `RandomWords`
-    widget. This class saves the generated word pairs, which grows infinitely
-    as the user scrolls, and favorite word pairs (in [part 2][]),
-    as the user adds or removes them from the list by toggling the heart icon.
-    
-    注意一下 `State<RandomWords>` 的声明。这表明我们在使用专门用于 `RandomWords` 的 
-    [State]({{site.api}}/flutter/widgets/State-class.html) 泛型类。
-    应用的大部分逻辑和状态都在这里 —— 它会维护 RandomWords widget 的状态。
-    这个类会保存代码生成的单词对，这个单词对列表会随着用户滑动而无限增长，
-    另外还会保存用户喜爱的单词对（第二部分），
-    也即当用户点击爱心图标的时候会从喜爱的列表中添加或者移除当前单词对。
-
-    `RandomWordsState` depends on the `RandomWords` class.
-    You'll add that next.
-    
-    `RandomWordsState` 依赖 `RandomWords`，我们接下来会创建这个类。
-
- 2. Add the stateful `RandomWords` widget to `main.dart`.
-    The `RandomWords` widget does little else beside creating its
-    `State` class:
-
-    添加有状态的 `RandomWords` widget 到 `main.dart`，`RandomWords` widget
-    除了创建 State 类之外几乎没有其他任何东西：
-
-    <?code-excerpt "lib/main.dart (RandomWords)" title indent-by="2"?>
-    ```dart
-      class RandomWords extends StatefulWidget {
-        @override
-        RandomWordsState createState() => RandomWordsState();
-      }
-    ```
-
-    After adding the state class, the IDE complains that
-    the class is missing a build method. Next, you'll add a basic
-    build method that generates the word pairs by moving the
-    word generation code from `MyApp` to `RandomWordsState`.
-    
-    在添加状态类后，IDE 会提示该类缺少 build 方法。
-    接下来，你将添加一个基本的 build 方法，
-    该方法通过将生成单词对的代码从 `MyApp` 移动到 `RandomWordsState` 来生成单词对。
-
- 3. Add the `build()` method to `RandomWordsState`:
- 
-    将 `build()` 方法添加到 `RandomWordsState` 中，如下所示：
-
-    <?code-excerpt "lib/main.dart (RandomWordsState)" title indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
-    ```dart
-      class RandomWordsState extends State<RandomWords> {
-        [!@override!]
-        [!Widget build(BuildContext context) {!]
-        [!  final wordPair = WordPair.random();!]
-        [!  return Text(wordPair.asPascalCase);!]
-        [!}!]
-      }
-    ```
-
- 4. Remove the word generation code from `MyApp`
-    by making the changes shown in the following diff:
-    
-    如下所示，删除 `MyApp` 里生成文字的代码：
-
-    <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
-    ```diff
-    --- step2_use_package/lib/main.dart
-    +++ step3_stateful_widget/lib/main.dart
-    @@ -10,7 +10,6 @@
-     class MyApp extends StatelessWidget {
-       @override
-       Widget build(BuildContext context) {
-    -    final wordPair = WordPair.random();
-         return MaterialApp(
-           title: 'Welcome to Flutter',
-           home: Scaffold(
-    @@ -18,8 +17,8 @@
-               title: Text('Welcome to Flutter'),
-             ),
-             body: Center(
-    -          child: Text(wordPair.asPascalCase),
-    +          child: RandomWords(),
-             ),
-=======
 <ol markdown="1">
 <li markdown="1"> Create the boilerplate code for a stateful widget.<br>
   In `lib/main.dart`, position your cursor after all of the code,
@@ -761,7 +627,6 @@ class _RandomWordsState extends State<RandomWords> {
          home: Scaffold(
   @@ -18,8 +17,8 @@
              title: Text('Welcome to Flutter'),
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
            ),
            body: Center(
   -          child: Text(wordPair.asPascalCase),
@@ -772,39 +637,20 @@ class _RandomWordsState extends State<RandomWords> {
      }
   ```
 
-<li markdown="1"> Restart the app.
+<li markdown="1"> <t>Restart the app.
   The app should behave as before, displaying a word
-  pairing each time you hot reload or save the app.
+  pairing each time you hot reload or save the app.</t>
+  <t>重启应用。
+    应用应该像之前一样运行，每次热重载或保存应用程序时都会显示一个单词对。</t>
 </li>
 
-    重启应用。
-    应用应该像之前一样运行，每次热重载或保存应用程序时都会显示一个单词对。
 
 {{site.alert.tip}}
-<<<<<<< HEAD
-
-  If you see the following warning on a hot reload, consider restarting
-  the app:
-  
-  如果你尝试热重载，则可能会看到一条警告，考虑重新启动当前应用：
-
-  **Reloading...<br>
-  Some program elements were changed during reload but did not run when
-  the view was reassembled; you might need to restart the app (by pressing "R")
-  for the changes to have an effect.**
-
-  It might be a false positive, but restarting ensures that your changes
-  are reflected in the app's UI.
-  
-  因为重启应用之后就可以生效，故这可能是误报。
-  
-=======
   If you see a warning on a hot reload that you might
   need to restart the app, consider restarting it.
   The warning might be a false positive, but
   restarting your app ensures that
   your changes are reflected in the app's UI.
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
 {{site.alert.end}}
 
 
@@ -838,21 +684,11 @@ and display a list of word pairings. As the user scrolls the list
 `builder` factory constructor allows you to build a list view
 lazily, on demand.
 
-<<<<<<< HEAD
-在这一步中，你将扩展（继承）`RandomWordsState` 类，以生成并显示单词对列表。
-当用户滚动时，`ListView` 中显示的列表将无限增长。
-`ListView` 的 `builder` 工厂构造函数允许你按需建立一个懒加载的列表视图。
-
- 1. Add a `_suggestions` list to the `RandomWordsState`
-    class for saving suggested word pairings.
-    Also, add a `_biggerFont` variable for making the font size larger.
-=======
  1. Add a `_suggestions` list to the `_RandomWordsState`
     class for saving suggested word pairings. Also,
     add a `_biggerFont` variable for making the font size larger.
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
 
-    向 `RandomWordsState` 类中添加一个 `_suggestions` 列表以保存建议的单词对，
+    向 `_RandomWordsState` 类中添加一个 `_suggestions` 列表以保存建议的单词对，
     同时，添加一个 `_biggerFont` 变量来增大字体大小。
 
     <?code-excerpt "lib/main.dart" title region="RWS-var" indent-by="2" replace="/final .*/[!$&!]/g"?>
@@ -864,44 +700,12 @@ lazily, on demand.
       }
     ```
 
-<<<<<<< HEAD
-    {{site.alert.note}}
-    
-      Prefixing an identifier with an underscore [enforces privacy]
-      in the Dart language.
-      
-      在 Dart 语言中使用下划线前缀标识符，会 [强制其变成私有][enforces privacy]。
-      
-    {{site.alert.end}}
-
-    Next, you'll add a `_buildSuggestions()` function to the `RandomWordsState`
-    class. This method builds the `ListView` that displays the suggested
-    word pairing.
-    
-    接下来，我们将向 `RandomWordsState` 类添加一个 `_buildSuggestions()` 方法，
-    此方法构建显示建议单词对的 `ListView`。
-
-    The `ListView` class provides a builder property, `itemBuilder`, that's a
-    factory builder and callback function specified as an anonymous function.
-    Two parameters are passed to the function&mdash;the `BuildContext`,
-    and the row iterator, `i`. The iterator begins at 0 and increments each
-    time the function is called. It increments twice for every suggested
-    word pairing: once for the ListTile, and once for the Divider.
-    This model allows the suggested
-    list to grow infinitely as the user scrolls.
-    
-    `ListView` 类提供了一个名为 `itemBuilder` 的 builder 属性，这是一个工厂匿名回调函数，
-    接受两个参数 `BuildContext` 和行迭代器 `i`。迭代器从 0 开始，每调用一次该函数 `i` 就会自增，
-    每次建议的单词对都会让其递增两次，一次是 ListTile，另一次是 Divider。
-    它用于创建一个在用户滚动时候无限增长的列表。
-
- 2. Add a `_buildSuggestions()` function to the `RandomWordsState` class:
- 
-    向 `RandomWordsState` 类添加 `_buildSuggestions()` 方法，内容如下：
-=======
     Next, you'll add a `_buildSuggestions()` function to the
     `_RandomWordsState` class. This method builds the
     `ListView` that displays the suggested word pairing.
+
+    接下来，我们将向 `_RandomWordsState` 类添加一个 `_buildSuggestions()` 方法，
+    此方法构建显示建议单词对的 `ListView`。
 
     The `ListView` class provides a builder property, `itemBuilder`,
     that's a factory builder and callback function specified as an
@@ -912,9 +716,15 @@ lazily, on demand.
     once for the ListTile, and once for the Divider.
     This model allows the suggested list to continue growing
     as the user scrolls.
+    
+    `ListView` 类提供了一个名为 `itemBuilder` 的 builder 属性，这是一个工厂匿名回调函数，
+    接受两个参数 `BuildContext` 和行迭代器 `i`。迭代器从 0 开始，每调用一次该函数 `i` 就会自增，
+    每次建议的单词对都会让其递增两次，一次是 ListTile，另一次是 Divider。
+    它用于创建一个在用户滚动时候无限增长的列表。
 
  2. Add a `_buildSuggestions()` function to the `_RandomWordsState` class:
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
+ 
+    向 `_RandomWordsState` 类添加 `_buildSuggestions()` 方法，内容如下：
 
     <?code-excerpt "lib/main.dart (_buildSuggestions)" title indent-by="2"?>
     ```dart
@@ -972,13 +782,9 @@ lazily, on demand.
     这个函数在 `ListTile` 中显示每个新词对，
     这使你在下一步中可以生成更漂亮的显示行，详见本 codelab 的第二部分。
 
-<<<<<<< HEAD
- 3. Add a `_buildRow()` function to `RandomWordsState`:
-    
-    在 `RandomWordsState` 中添加 `_buildRow()` 函数 : 
-=======
  3. Add a `_buildRow()` function to `_RandomWordsState`:
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
+    
+    在 `_RandomWordsState` 中添加 `_buildRow()` 函数 : 
 
     <?code-excerpt "lib/main.dart (_buildRow)" title indent-by="2"?>
     ```dart
@@ -998,10 +804,9 @@ lazily, on demand.
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 
-    更新 RandomWordsState 的 build 方法以使用 _buildSuggestions()，
+    更新 `_RandomWordsState` 的 `build()` 方法以使用 _buildSuggestions()，
     而不是直接调用单词生成库，代码更改后如下：
-    （使用 [Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
-    类实现基础的 Material Design 布局）
+    （使用 [`Scaffold`][] 类实现基础的 Material Design 布局）
 
     <?code-excerpt "lib/main.dart (build)" title region="RWS-build" replace="/(\n  )(return.*|  .*|\);)/$1[!$2!]/g" indent-by="2"?>
     ```dart
@@ -1141,11 +946,8 @@ where you add the following functionality:
 
 * Modify the theme color, making an all-white app.
 
-<<<<<<< HEAD
   修改应用的主题，变成一个白色系的应用。
 
-=======
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
 [an editor]: /docs/get-started/editor
 [Android]: install/macos#set-up-your-android-device
 [Android emulator]: install/macos#set-up-the-android-emulator

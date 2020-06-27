@@ -6,49 +6,33 @@ description: 学习如何在开发者工具里使用时间轴视图。
 ---
 
 {{site.alert.note}}
-<<<<<<< HEAD
 
-  The timeline view works with mobile apps only.
-=======
   The timeline view works with Dart CLI and mobile apps only.
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
   Use Chrome DevTools to [generate timeline events][]
   for a web app.
 
-  时间线视图仅适用于移动应用。
-  对于 web 应用程序，请使用 Chrome 的开发者工具[生成时间线事件](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference)。
+  时间线视图适用于 Dart 命令行应用和移动应用。
+  对于 web 应用程序，请使用 Chrome 的开发者工具
+  [生成时间线事件][generate timeline events]。
 
 {{site.alert.end}}
 
 
 ## What is it?
 
-<<<<<<< HEAD
 ## 它是什么?
 
-The timeline view displays information about Flutter frames.
-
-时间线视图用于显示 Flutter 帧信息。
-
-It consists of three parts, each increasing in granularity.
-
-它由三部分组成，每个部分的粒度都在增加。
-
-* Frame rendering chart
-
-  帧渲染图表
-
-* Frame events chart
-
-  帧事件图表
-
-=======
 The timeline view offers timing and performance information for activity in your
 application. It consists of three parts, each increasing in granularity.
 
 * Flutter frames chart (Flutter apps only)
+
+  Flutter 帧图（仅适用于 Flutter 应用） 
+
 * Timeline events chart
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
+
+  时间线事件图表
+  
 * CPU profiler
 
   CPU 分析器
@@ -69,24 +53,9 @@ The timeline view also supports importing and exporting of
 timeline data files. For more information,
 see the [Import and export][] section.
 
-<<<<<<< HEAD
-时间线视图也支持导入和导出时间线数据文件。更多信息请参考[导入和导出](#import-and-export) 部分。
+时间线视图也支持导入和导出时间线数据文件。
+更多信息请参考[导入和导出][Import and export] 部分。
 
-## Frame rendering chart
-
-## 帧渲染图表
-
-This chart is populated with individual frames as they are rendered
-in your application. Each bar in the chart represents a frame.
-The bars are color-coded to highlight the different portions of
-work that occur when rendering a Flutter frame: work from the UI
-thread and work from the raster thread (previously known as GPU thread).
-
-这个图表是使用你的应用程序中渲染的所有帧组合而成的。每一个条形框都代表一个帧。
-这些条形框使用颜色编码以突出显示 Flutter 在帧渲染过程中不同线程的执行情况: UI 线程和 GPU 线程。
-
-![Screenshot from a timeline recording]({% asset tools/devtools/timeline_frame_rendering_chart.png @path %}){:width="100%"}
-=======
 ## Flutter frames chart
 
 This chart contains Flutter frame information for your application. Each bar set
@@ -96,7 +65,6 @@ frame: work from the UI thread and work from the raster thread (previously known
 as the GPU thread).
 
 ![Screenshot from a timeline recording]({% asset tools/devtools/timeline-flutter-frames-chart.png @path %}){:width="100%"}
->>>>>>> 979e845d525016a5833c939707e7b64e73eabeab
 
 Selecting a bar from this chart centers the flame chart below on the timeline
 events corresponding to the selected Flutter frame. The events are highlighted

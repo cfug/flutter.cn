@@ -13,7 +13,8 @@ DevTools is a suite of performance and debugging tools
 for Dart and Flutter. It's currently in beta release,
 but is under active development.
 
-开发工具是一套 Dart 和 Flutter 的性能调试工具。现在它还是预览版，但它正在持续开发中。
+开发工具是一套 Dart 和 Flutter 的性能调试工具。
+目前已经“行进”到 Beta 版本了，但仍在正在持续开发中。
 
 ![Dart DevTools Screens]({% asset tools/devtools/dart-devtools.gif @path %}){:width="100%"}
 

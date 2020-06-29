@@ -45,7 +45,8 @@ application. It consists of three parts, each increasing in granularity.
   unless your application is run in profile mode.
 
   **请使用 profile 构建模式进行性能分析**
-  只有当你的应用程序运行在 profile 模式下，帧渲染时间才能与发行版本的性能保持一致。
+  只有当你的应用程序运行在 profile 模式下，
+  帧渲染时间才能与发行版本的性能保持一致。
 
 {{site.alert.end}}
 
@@ -57,6 +58,8 @@ see the [Import and export][] section.
 更多信息请参考[导入和导出][Import and export] 部分。
 
 ## Flutter frames chart
+
+## Flutter 帧图
 
 This chart contains Flutter frame information for your application. Each bar set
 in the chart represents a single Flutter frame. The bars are color-coded to
@@ -83,8 +86,12 @@ a layer tree, a lightweight object containing device-agnostic
 painting commands, and sends the layer tree to the raster thread
 to be rendered on the device. Do **not** block this thread.
 
-UI 线程执行 Dart VM 中的 Dart 代码。它包括你的应用程序和 Flutter 框架的所有代码。
-当你创建或打开一个页面，UI 线程会创建一个图层树和一个轻量级的与设备无关的绘制指令集，并把图层树交给设备的 raster（栅格）线程进行渲染。**不要**阻塞这个线程。
+UI 线程执行 Dart VM 中的 Dart 代码。
+它包括你的应用程序和 Flutter 框架的所有代码。
+当你创建或打开一个页面，
+UI 线程会创建一个图层树和一个轻量级的与设备无关的绘制指令集，
+并把图层树交给设备的 raster（栅格）线程进行渲染。
+**不要**阻塞这个线程。
 
 ### Raster
 
@@ -98,8 +105,12 @@ the raster thread or its data, but if this thread is slow, it's a
 result of something you've done in the Dart code. Skia, the
 graphics library, runs on this thread.
 
-栅格化线程（也就是我们之前知道的 GPU 线程）执行 Flutter 引擎中图形相关的代码。
-这个线程通过与 GPU (图形处理单元) 通信，获取图形树并显示它。你不能直接访问 Raster 线程或它的数据，但如果这个线程较慢，那它肯定是由你的 Dart 代码引起的。图形化库 Skia 运行在这个线程上，有时候也称它为光栅线程。
+栅格化线程（也就是我们之前知道的 GPU 线程）
+执行 Flutter 引擎中图形相关的代码。
+这个线程通过与 GPU (图形处理单元) 通信，获取图形树并显示它。
+你不能直接访问 Raster 线程或它的数据，
+但如果这个线程较慢，那它肯定是由你的 Dart 代码引起的。
+图形化库 Skia 运行在这个线程上，有时候也称它为光栅线程。
 
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the raster thread. In this case, you
@@ -109,7 +120,11 @@ difficult for the GPU. They might involve unnecessary calls to
 `saveLayer()`, intersecting opacities with multiple objects,
 and clips or shadows in specific situations.
 
-有时候一个页面的图形层树比较容易构建但 raster 线程的渲染却比较昂贵。在这种情形下，你需要找出导致渲染变慢的代码。为 GPU 设定特定多种类型的 workload 是相当困难的。在一些特定的情形下，多个对象的透明度重叠、剪切或阴影，有可能会导致不必要的 `saveLayer()` 的调用。
+有时候一个页面的图形层树比较容易构建但 raster 线程的渲染却比较昂贵。
+在这种情形下，你需要找出导致渲染变慢的代码。
+为 GPU 设定特定多种类型的 workload 是相当困难的。
+在一些特定的情形下，多个对象的透明度重叠、剪切或阴影，
+有可能会导致不必要的 `saveLayer()` 的调用。
 
 For more information on profiling, see
 [Identifying problems in the GPU graph][GPU graph].
@@ -117,6 +132,8 @@ For more information on profiling, see
 更多详细信息，请查看 [Identifying problems in the GPU graph][GPU graph]。
 
 ### Jank
+
+### 丢帧 (Jank)
 
 The frame rendering chart shows jank with a red overlay.
 A frame is considered to be janky if it takes more than
@@ -133,7 +150,8 @@ experience UI jank or dropped frames.
 For more information on how to analyze your app's performance,
 see [Flutter performance profiling][].
 
-更多关于性能分析信息，请查看[Flutter performance profiling][].
+更多关于性能分析信息，请查看文档：
+[Flutter 性能分析][Flutter performance profiling]。
 
 ## Timeline events chart
 
@@ -185,7 +203,9 @@ respectively. It is important to know the trade-offs of modifying this setting.
 
 VM 收集 CPU 样本的默认速率为 1/250μs (即每 250 微秒收集一次数据)。
 在时间线视图里，`Profile granularity` 的默认值为 “medium”。
-可以通过页面顶部下选择器进行修改。抽样率低、中、高粒度分别顺序对应 1/50μs、1/250μs 和 1/1000μs。正确设定此值对性能分析非常重要。
+可以通过页面顶部下选择器进行修改。
+抽样率低、中、高粒度分别顺序对应 1/50μs、1/250μs 和 1/1000μs。
+正确设定此值对性能分析非常重要。
 
 
 A **higher granularity** profile has a higher sampling rate, and therefore yields
@@ -197,9 +217,13 @@ rate, the space fills up and begins to overflow sooner than it would have if a
 lower sampling rate was used. This means that you may not have access to CPU samples
 for frames in the beginning of the timeline.
 
-**高粒度** 的配置会具有更高效的采样率，因此单元时间内采集的 CPU 信息会更加详细且采集样例更多。
-因此 VM 会被经常中断以收集样本数据，所以这有可能会影响你的应用程序的运行或导致性能下降。
-VM 中 CPU 样例数据信息的存储空间是受限制的。相对低采样率，高采样率存储空间会被迅速填满并会出现溢出。这意味着，你可能无法获取时间线初始阶段几帧的 CPU 采样数据。
+**高粒度** 的配置会具有更高效的采样率，
+因此单元时间内采集的 CPU 信息会更加详细且采集样例更多。
+因此 VM 会被经常中断以收集样本数据，
+所以这有可能会影响你的应用程序的运行或导致性能下降。
+VM 中 CPU 样例数据信息的存储空间是受限制的。
+相对低采样率，高采样率存储空间会被迅速填满并会出现溢出。
+这意味着，你可能无法获取时间线初始阶段几帧的 CPU 采样数据。
 
 A **lower granularity** profile has a lower sampling rate, and therefore
 yields a coarse-grained CPU profile with fewer samples. However, this impacts your
@@ -271,8 +295,11 @@ This means that each top-level method in the table is actually the
 last method in the call stack for a given CPU sample (in other words,
 it's the leaf node for the sample).
 
-**Bottom up** 视图也是用于显示方法调用堆栈，但顾名思义，它是一个自下而上的表示方式。
-这意味着表格中的每个最上方的方法实际上是给定 CPU 样本的调用堆栈中的最后一个方法(换句话说，这是样本的叶节点)。
+**Bottom up** 视图也是用于显示方法调用堆栈，
+但顾名思义，它是一个自下而上的表示方式。
+这意味着表格中的每个最上方的方法实际上是
+给定 CPU 样本的调用堆栈中的最后一个方法
+(换句话说，这是样本的叶节点)。
 
 In this table, a method can be expanded to show its _callers_.
 
@@ -294,7 +321,7 @@ In this table, a method can be expanded to show its _callers_.
     In the following example, the self time of the caller
     `createRenderObject` is equal to the self time of
     the callee `debugCheckHasDirectionality` when being called by
-    the caller.
+    the caller.</p>
 
 <p>在自下而上调用树中对于最顶层的方法 (叶堆栈帧)，
 它表示执行自己的代码所需要的时间。
@@ -325,10 +352,11 @@ snapshot into DevTools from any page. **Note that DevTools only
 supports importing files that were originally exported from DevTools.**
 
 DevTools 支持导入和导出时间线快照。
-单击export按钮(帧渲染图表右上角)下载当前时间线的快照。要导入时间线快照，可以从任何页面拖放快照到DevTools。
+单击export按钮(帧渲染图表右上角)下载当前时间线的快照。
+要导入时间线快照，可以从任何页面拖放快照到 DevTools。
 **提示 : DevTools 仅支持导入 DevTools 导出的源文件。**
 
-[generate timeline events]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference
+[generate timeline events]: https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [GPU graph]: /docs/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance
 [Import and export]: #import-and-export

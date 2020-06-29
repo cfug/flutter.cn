@@ -87,9 +87,9 @@ Visit the [fastlane docs][fastlane] for more info.
     Play Store console. _Treat the .json file like your password and do not check
     it into any public source control repositories._
     
-      ![Android](/images/cd/android.png) 按照
-      [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply) 
-      操作，并且确保 `fastlane supply init` 成功同步了你在 Google Play 商店控制台中的数据。
+      ![Android](/images/cd/android.png) 按照 [Supply setup steps][] 文档操作，
+      并且确保 `fastlane supply init` 成功同步了
+      你在 Google Play 商店控制台中的数据。
       **.json 文件与密码一样重要，切勿将其公开在任何公共源代码控制存储库。**
     
     * ![iOS](/images/cd/ios.png) Your iTunes Connect username is already
@@ -141,7 +141,9 @@ Visit the [fastlane docs][fastlane] for more info.
     distribution certificate instead of a development certificate when you're
     ready to test and deploy using TestFlight or App Store.
     
-      ![iOS](/images/cd/ios.png) 在iOS上，当您准备使用 TestFlight 或 App Store 进行测试和部署时，使用分发证书而不是开发证书进行创建和签名。
+      ![iOS](/images/cd/ios.png) 在iOS上，
+      当您准备使用 TestFlight 或 App Store 进行测试和部署时，
+      使用分发证书而不是开发证书进行创建和签名。
       
         * Create and download a distribution certificate in your [Apple Developer Account console][].
         
@@ -334,10 +336,10 @@ repository root.
          
            Bundler 可以使用 `gem install bundler`。
             
-         * For Android, make sure the Android SDK is available and the `ANDROID_HOME`
-         path is set.
+         * For Android, make sure the Android SDK is available and the `ANDROID_SDK_ROOT`
+           path is set.
            
-           对于 Android 平台，请确保已经设置正确的 `ANDROID_HOME` 环境变量。
+           对于 Android 平台，请确保已经设置正确的 `ANDROID_SDK_ROOT` 环境变量。
          
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
            
@@ -398,8 +400,12 @@ The following are some other options available to help automate the delivery of 
    
   [使用 Bitrise 为 Flutter 应用加入持续交付][Flutter CI/CD with Bitrise]
 
-* [Github Actions- CI/CD on Github][] Get
-  [Example Project][]
+* [Appcircle CI/CD for Flutter][]
+  
+  [使用 Appcircle 为 Flutter 应用加入持续交付][Appcircle CI/CD for Flutter]
+
+* [GitHub Actions- CI/CD on GitHub][]
+  Get an [Example Project][]
 
   [使用 GitHub Actions 进行持续交付][Github Actions- CI/CD on Github]，
   查看这个 [样例项目][Example Project]
@@ -408,6 +414,7 @@ The following are some other options available to help automate the delivery of 
 [Cirrus]: https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables
 [Cirrus script]: {{site.github}}/flutter/flutter/blob/master/.cirrus.yml
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
+[Appcircle CI/CD for Flutter]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
 [Example Project]: {{site.github}}/nabilnalakath/flutter-githubaction
 [fastlane]: https://docs.fastlane.tools
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/

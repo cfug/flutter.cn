@@ -1503,9 +1503,11 @@ The screen forces the `UnconstrainedBox` to be exactly
 the same size as the screen. However, the `UnconstrainedBox`
 lets its child `Container` be any size it wants.
 
-
+屏幕强制 `UnconstrainedBox` 变得和屏幕一样大，而 `UnconstrainedBox` 允许其子级的 `Container` 可以变为任意大小。
 
 ### Example 14
+
+### 样例 14
 
 {% asset ui/layout/layout-14.png class="mw-100" alt="Example 14 layout" %}
 

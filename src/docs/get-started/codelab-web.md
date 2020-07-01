@@ -264,7 +264,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
-          Text('Sign Up', style: Theme
+          Text('Sign up', style: Theme
               .of(context)
               .textTheme
               .headline4),
@@ -318,11 +318,11 @@ class _SignUpFormState extends State<SignUpForm> {
 <li markdown="1">Run the example.<br>
 Click the **Run** button to run the example.
 Note that you can type into the text fields,
-but the Sign up button is disabled.
+but the **Sign up** button is disabled.
 
 运行代码示例。<br>
 点击 **Run** 按钮来运行示例代码。
-你就可以在文本框中输入内容，但是注册按钮是禁用状态的。
+你就可以在文本框中输入内容，但是**注册 (Sign up) 按钮**是禁用状态的。
 
 </li>
 
@@ -389,12 +389,14 @@ From your IDE, editor, or at the command line,
 ## 第 1 步：显示欢迎页面
 
 The `SignUpForm` class is a stateful widget.
-This simply means that the widget stores information that can change,
-such as user input, or data from a feed.
-Since widgets themselves are immutable (can’t be modified once created),
+This simply means that the widget stores information
+that can change, such as user input, or data from a feed.
+Since widgets themselves are immutable
+(can’t be modified once created),
 Flutter stores state information in a companion class,
 called the `State` class. In this lab,
-all of your edits will be made to the private `_SignUpFormState` class.
+all of your edits will be made to the private
+`_SignUpFormState` class.
 
 `SignUpForm` 类是一个有状态组件。
 这代表着组件的存储信息可动态改变，例如用户输入，或者传递的数据。
@@ -414,7 +416,9 @@ Dart 编译器会将任何带有下划线前缀标识的视为私有。
 
 {{site.alert.end}}
 
-First, in your new `lib/main.dart` file, add the following class definition for the `WelcomeScreen` widget after the `SignUpScreen` class:
+First, in your `lib/main.dart` file,
+add the following class definition for the
+`WelcomeScreen` widget after the `SignUpScreen` class:
  
 首先，在 `lib/main.dart` 文件中，在 `SignUpScreen` 类后面添加下面 `WelcomeScreen` 组件的定义类：
 
@@ -431,15 +435,16 @@ class WelcomeScreen extends StatelessWidget {
 }
 ```
 
-Next, you will enable the button to display the screen and create a method to
-display it.
+Next, you will enable the button to display the screen
+and create a method to display it.
 
 接下来，你需要创建一个显示方法，然后使用按钮通过方法控制页面的显示。
 
 <ol markdown="1">
 
-<li markdown="1"> Locate `build()` method for the `_SignUpFormState` class.
-This is the part of the code that builds the SignUp button.
+<li markdown="1"> Locate the `build()` method for the
+`_SignUpFormState` class. This is the part of the code
+that builds the SignUp button.
 Notice how the button is defined:
 It’s a `FlatButton` with a blue background,
 white text that says **Sign up** and, when pressed,
@@ -488,7 +493,8 @@ void _showWelcomeScreen() {
 </li>
 
 <li markdown="1">Add the `/welcome` route.<br>
-Create the connection to show the new screen. In the `build()` method for `SignUpApp`,
+Create the connection to show the new screen.
+In the `build()` method for `SignUpApp`,
 add the following route below `'/'`:
 
 添加 `/welcome` 页面路由。<br>
@@ -537,10 +543,13 @@ You get that behavior for free.
   stack switches the display to that new screen.
   This is why the `_showWelcomeScreen` function pushes
   the `WelcomeScreen` onto the Navigator’s stack.
-  The user clicks the button and, voila, the welcome screen appears.
-  Likewise, calling `pop()` on the `Navigator` returns to the previous screen.
-  Because Flutter’s navigation is integrated into the browser’s navigation,
-  this happens implicitly when clicking the browser’s back arrow button.
+  The user clicks the button and, voila,
+  the welcome screen appears. Likewise,
+  calling `pop()` on the `Navigator` returns to the
+  previous screen. Because Flutter’s navigation is
+  integrated into the browser’s navigation,
+  this happens implicitly when clicking the browser's
+  back arrow button.
   Flutter 中存在一个 `Navigator` 对象。
   这个组件用来管理 Flutter 堆栈中的页面(也可以被称为路由或者页面管理器)。
   当前显示的视图是堆栈中最上面的页面。通过往堆栈中 push 新的视图来切换新的视图。
@@ -549,6 +558,7 @@ You get that behavior for free.
   同样，可以通过调用 `Navigator` 的 `pop()` 方法来返回上一个页面。
   因为 Flutter 的 navigation 已经集成了浏览器的导航中，
   所以当点击浏览器的返回箭头也会返回到上一个页面。
+
 
 ## Step 2: Enable sign in progress tracking
 
@@ -602,16 +612,17 @@ void _updateFormProgress() {
 ...
 ```
 
-This method updates `_formProgress` based on the the number of non-empty text
-fields.
+This method updates the `_formProgress` field based on the
+the number of non-empty text fields.
 
 这个方法根据非空字段的数量来更新 `_formProgress` 属性。
 
 </li>
 
-<li markdown="1">Call `_updateFormProgress` when the form changes<br>
-In the `build()` method of the `_SignUpFormState` class, add a callback
-to the `Form` widget's `onChanged` argument:
+<li markdown="1">Call `_updateFormProgress` when the form
+changes.<br>
+In the `build()` method of the `_SignUpFormState` class,
+add a callback to the `Form` widget's `onChanged` argument.
 Add the code below marked as NEW:
 
 表单改变时调用 `_updateFormProgress()` 方法<br>
@@ -655,7 +666,8 @@ FlatButton(
 
 <li markdown="1">Run the app.<br>
 The **Sign up** button is initially disabled,
-but becomes enabled when all three text fields contain (any) text.
+but becomes enabled when all three text fields contain
+(any) text.
 
 运行程序。<br>
 刚打开页面时 **Sign up** 按钮是禁用状态，
@@ -753,14 +765,13 @@ See the tip at the end of this section for more information.
 <ol markdown="1">
 <li markdown="1">Run the app.<br>
 If your app isn’t currently running, launch it.
-From the command line, use `flutter run -d chrome`,
-or select the **Chrome** device from the pull down
-and launch it from your IDE.
+Select the **Chrome** device from the pull down
+and launch it from your IDE or,
+from the command line, use `flutter run -d chrome`,
 
 运行程序。<br>
-如果程序未启动，启动程序。
-在命令行中使用 `flutter run -d chrome` ，或者从下拉选项中
-选择 **Chrome** 设备然后使用 IDE 启动。
+从下拉选项中选择设备 **Chrome**，然后使用 IDE 启动。
+或者在命令行中使用 `flutter run -d chrome`。
 
 </li>
 
@@ -804,7 +815,8 @@ launch the DevTools server as explained in the
 </li>
 
 <li markdown="1">Connect to DevTools.<br>
-When DevTools launches, you should see something like the following:
+When DevTools launches, you should see something
+like the following:
 
 连接到 DevTools 。<br>
 当 DevTools 启动时，你应该会看到如下类似的内容：
@@ -908,7 +920,8 @@ In the running app, click one of the text fields to gain focus.
 The app hits the breakpoint and pauses.
 In the DevTools screen, you can see on the left
 the value of `progress`, which is 0. This is to be expected,
-since none of the fields are filled in. Step through the for loop to see
+since none of the fields are filled in.
+Step through the for loop to see
 the program execution.
 
 触发断点。<br>
@@ -949,9 +962,10 @@ see the [DevTools documentation][].
 
 ## 第3步：为输入进度添加动画效果
 
-It’s time to add animation! In this final step, you’ll create the animation for
-the LinearProgressIndicator at the top of the sign in area. The animation has
-the following behavior:
+It’s time to add animation! In this final step,
+you’ll create the animation for the
+`LinearProgressIndicator` at the top of the sign in
+area. The animation has the following behavior:
 
 是时候添加动画效果了！在最后一步，我们将在登录区域上方创建一个进度条动画，
 特效如下所述：
@@ -978,7 +992,7 @@ the following behavior:
   也变成可点击状态。
 
 <ol markdown="1">
-<li markdown="1">Add an AnimatedProgressIndicator.<br>
+<li markdown="1">Add an `AnimatedProgressIndicator`.<br>
 At the bottom of the file, add this widget:
 
 添加进度条动画效果。<br>
@@ -1049,9 +1063,9 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 ```
 </li>
 
-<li markdown="1">Use the new AnimatedProgressIndicator.<br>
-Then, replace the `LinearProgressIndicator` in the Form with this new
-`AnimatedProgressIndicator`:
+<li markdown="1">Use the new `AnimatedProgressIndicator`.<br>
+Then, replace the `LinearProgressIndicator` in the `Form`
+with this new `AnimatedProgressIndicator`:
 
 使用新的进度条。<br>
 然后，使用新的 `AnimatedProgressIndicator` 组件替换表单中的 `LinearProgressIndicator` 
@@ -1064,21 +1078,22 @@ Then, replace the `LinearProgressIndicator` in the Form with this new
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress), // NEW
-          Text('Sign Up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headline4),
           Padding(
 ...
 ```
 
-This widget uses an `AnimatedBuilder` to animate the progress indicator to the
-latest value. 
+This widget uses an `AnimatedBuilder` to animate the
+progress indicator to the latest value. 
 
 该组件使用 `AnimatedBuilder` 为最新值实现了进度的动画显示。
 
 </li>
 
 <li markdown="1">Run the app.<br>
-Type anything into the three fields to verify that the animation works,
-and that clicking the **Sign up** button brings up the Welcome screen.
+Type anything into the three fields to verify that
+the animation works, and that clicking the
+**Sign up** button brings up the **Welcome** screen.
 
 运行程序。<br>
 在三个字段中输入任意值来验证动画效果是否正常显示，
@@ -1087,7 +1102,7 @@ and that clicking the **Sign up** button brings up the Welcome screen.
 </li>
 </ol>
 
-### Complete Sample
+### Complete sample
 
 ### 完整的示例
 
@@ -1180,7 +1195,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress),
-          Text('Sign Up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headline4),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(

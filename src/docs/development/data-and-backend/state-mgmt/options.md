@@ -153,6 +153,10 @@ many of which have been contributed by the Flutter community:
 
   由 Marcelo Glasberg 提供的 
   [Async Redux - 无需模版文件的 Redux，支持同步/异步 Reducer][Async Redux - Redux without boilerplate. Allows for both sync and async reducers],
+  
+* [Flutter meets Redux: The Redux way of managing Flutter applications state], by Amir Ghezelbash
+ 
+  [由 Amir Ghezelbash 撰写的文章：当 Flutter 遇上 Redux —— 使用 Redux 的方式管理 Flutter 应用状态][Flutter meets Redux: The Redux way of managing Flutter applications state]
 
 ## BLoC / Rx
 
@@ -196,7 +200,7 @@ many of which have been contributed by the Flutter community:
 [Architect your Flutter project using BLoC pattern]: {{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1
 [Async Redux - Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux/
 [Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
-[Flutter meets Redux: The Redux way of managing Flutter applications state]: https://medium.com/@bardiarastin/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
+[Flutter meets Redux: The Redux way of managing Flutter applications state]: https://medium.com/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
 [BloC Library]: https://felangel.github.io/bloc
 [Build reactive mobile apps with Flutter]: https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/

@@ -2,7 +2,7 @@
 title: Understanding constraints
 title: 深入理解布局约束
 description: Flutter's model for widget constraints, sizing, positioning, and how they interact.
-description: 理解 Flutter widget 约束模型，了解它是如何确定自身的大小，位置，以及影响彼此的。
+description: 理解 Flutter widget 约束模型，了解它是如何确定自身的大小，位置以及影响彼此的。
 toc: false
 js:
   - defer: true
@@ -16,8 +16,8 @@ with `width:100` isn't 100 pixels wide,
 the default answer is to tell them to put that widget
 inside of a `Center`, right?
 
-常常有人在学习 Flutter 的时候会感到疑惑，为什么我设置了 `width:100`，
-但是看上去却不是 100 像素宽呢。
+我们会经常听到一些开发者在学习 Flutter 时的疑惑：为什么我设置了 `width:100`，
+但是看上去却不是 100 像素宽呢。（注意，本文中的“像素”均指的是逻辑像素）
 通常你会回答，将这个 Widget 放进 `Center` 中，对吧？
 
 **Don't do that.**
@@ -29,28 +29,30 @@ asking why some `FittedBox` isn't working,
 why that `Column` is overflowing, or what
 `IntrinsicWidth` is supposed to be doing.
 
-如果你这样做了，他们会一遍又一遍不断询问，为什么 `FittedBox` 又不起作用了？
+如果你这样做了，他们会不断找你询问这样的问题：为什么 `FittedBox` 又不起作用了？
 为什么 `Column` 又溢出边界，亦或是 `IntrinsicWidth` 应该做什么。
 
 Instead, first tell them that Flutter layout is very different
 from HTML layout (which is probably where they’re coming from),
 and then make them memorize the following rule:
 
-而正确的做法是，首先告诉他们 Flutter 的布局方式与 HTML 的布局差异相当大
-（这些开发者很大程度上可能来自于 Web），然后要让他们记住下面的规则：
+其实我们首先应该做的，是告诉他们 Flutter 的布局方式与 HTML 的布局差异相当大
+（这些开发者很可能是 Web 开发），然后要让他们熟记这条规则：
 
 <center><font size="+2">
 
 <b>Constraints go down. Sizes go up. Parent sets position.</b>
 
-<b>约束方向从上至下传递。大小的确定从下至上。父级将决定其位置。</b>
+<b> 首先，上层 widget 向下层 widget 传递约束条件。</b>
+<b> 然后，下层 widget 向上层 widget 传递大小信息。</b>
+<b> 最后，上层 widget 决定下层 widget 的位置。</b>
 
 </font></center>
 
 Flutter layout can’t really be understood without knowing
 this rule, so Flutter developers should learn it early on.
 
-不知道这段规则，是无法真正理解 Flutter 的布局方式的，所以 Flutter 开发者们尽早学习它。
+如果我们在开发时无法熟练运用这条规则，在布局时就不能完全理解其原理，所以越早掌握这条规则越好！
 
 In more detail:
 
@@ -60,7 +62,7 @@ In more detail:
   A _constraint_ is just a set of 4 doubles:
   a minimum and maximum width, and a minimum and maximum height.
 
-  Widget 通过它的 **父级** 获得自身的约束。
+  Widget 会通过它的 **父级** 获得自身的约束。
   约束实际上就是 4 个浮点类型的集合：
   最大/最小宽度，以及最大/最小高度。
 
@@ -69,27 +71,27 @@ In more detail:
   **constraints** are (which can be different for each child),
   and then asks each child what size it wants to be.
 
-  然后，这个 widget 将会逐个查看它的 **children** 列表。告诉他的子级
-  **约束**（子级之间的约束可能会有所不同），然后询问它的每一个子级想要多大的大小。
+  然后，这个 widget 将会逐个遍历它的 **children** 列表。向子级传递
+  **约束**（子级之间的约束可能会有所不同），然后询问它的每一个子级需要用于布局的大小。
 
 * Then, the widget positions its **children**
   (horizontally in the `x` axis, and vertically in the `y` axis),
   one by one.
 
-  然后，这个 widget 就会对它内部的 **children** 逐个进行布局。
+  然后，这个 widget 就会对它子级的 **children** 逐个进行布局。
   （水平方向是 `x` 轴，竖直是 `y` 轴）
 
 * And, finally, the widget tells its parent about its own **size**
   (within the original constraints, of course).
 
-  最后，widget 将会告诉它的父级关于其大小（当然还包括其原始的约束）。
+  最后，widget 将会把它的大小信息向上传递至父 widget（包括其原始约束条件）。
 
 For example, if a composed widget contains a column
 with some padding, and wants to lay out its two children
 as follows:
 
-例如，如果一个组合类型的 widget 中包含了一个具有一些 padding 的 column，
-并且想要对它的两个子级进行如下布局：
+例如，如果一个 widget 中包含了一个具有 padding 的 Column，
+并且要对 Column 的子 widget 进行如下的布局：
 
 {% asset ui/layout/children.png class="mw-100" alt="Visual layout" %}
 
@@ -110,7 +112,7 @@ The negotiation goes something like this:
    then my children can have at most `290` pixels of width
    and `75` pixels of height."
 
-**Widget**: "嗯...我想要 `5` 个像素的边距，然后想让我的子级能有 `290` 个像素的宽度，以及 `75` 个像素的高度。"
+**Widget**: "嗯...我想要 `5` 个像素的内边距，这样我的子级能最多拥有 `290` 个像素宽度和 `75` 个像素高度。"
 
 **Widget**: "Hey first child, You must be from `0` to `290`
    pixels wide, and `0` to `75` tall."
@@ -157,7 +159,7 @@ As a result of the layout rule mentioned above,
 Flutter’s layout engine has a few important limitations:
 
 正如上述所介绍的布局规则中所说的那样，
-Flutter 的布局引擎有少数几个重要限制：
+Flutter 的布局引擎有一些重要限制：
 
 * A widget can decide its own size only within the
   constraints given to it by its parent.
@@ -180,7 +182,7 @@ Flutter 的布局引擎有少数几个重要限制：
   without taking into consideration the tree as a whole.
 
   当轮到父级决定其大小和位置的时候，同样的也取决于它自身的父级。
-  所以，你不可能在不考虑整棵树的情况下，精确定义任何 widget 的大小和位置。
+  所以，在不考虑整棵树的情况下，几乎不可能精确定义任何 widget 的大小和位置。
 
 ## Examples
 
@@ -190,7 +192,7 @@ For an interactive experience, use the following DartPad.
 Use the numbered horizontal scrolling bar to switch between
 29 different examples.
 
-下面的 DartPad 中提供了交互体验。
+下面的示例由 DartPad 提供，具有良好的交互体验。
 使用下面水平滚动条的编号切换 29 个不同的示例。
 
 <!-- skip -->
@@ -1116,7 +1118,7 @@ If you prefer, you can grab the code from
 [this GitHub repo][].
 
 如果你愿意的话，你还可以在
-[这个 Github repo 中][this GitHub repo] 获取其代码。
+[这个 Github 仓库中][this GitHub repo] 获取其代码。
 
 The examples are explained in the following sections.
 
@@ -2165,8 +2167,8 @@ However, if you decide to study the layout source-code,
 you can easily find it by using the navigating capabilities
 of your IDE.
 
-布局源代码通常很复杂，因此最好阅读文档。
-然而，如果你决定研究布局源代码，则可以使用 IDE 的导航功能轻松找到它。
+布局源代码通常很复杂，因此阅读文档是更好的选择。
+但是当你在研究布局源代码时，可以使用 IDE 的导航功能轻松找到它。
 
 Here is an example:
 
@@ -2180,9 +2182,9 @@ Here is an example:
   source code (also in `basic.dart`).
 
   在你的代码中找到一个 `Column` 并跟进到它的源代码。
-  为此，请在 Android Studio 或 IntelliJ 中使用
+  为此，请在 (Android Studio/IntelliJ) 中使用
   `command+B`（macOS）或 `control+B`（Windows/Linux）。
-  你将跳到 `basic.dart` 文件中，由于`Column` 扩展了 `Flex`，
+  你将跳到 `basic.dart` 文件中。由于 `Column` 扩展了 `Flex`，
   请导航至 `Flex` 源代码（也位于 `basic.dart` 中）。
 
 * Scroll down until you find a method called
@@ -2194,7 +2196,7 @@ Here is an example:
 
   向下滚动直到找到一个名为 `createRenderObject()` 的方法。
   如你所见，此方法返回一个 `RenderFlex`。
-  这是 `Column` 的渲染对象，
+  它是 `Column` 的渲染对象，
   现在导航到 `flex.dart` 文件中的 `RenderFlex` 的源代码。
 
 * Scroll down until you find a method called

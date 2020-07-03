@@ -41,11 +41,17 @@ and then make them memorize the following rule:
 
 <center><font size="+2">
 
-<b>Constraints go down. Sizes go up. Parent sets position.</b>
+* <b>Constraints go down.</b>
 
-<b> 首先，上层 widget 向下层 widget 传递约束条件。</b>
-<b> 然后，下层 widget 向上层 widget 传递大小信息。</b>
-<b> 最后，上层 widget 决定下层 widget 的位置。</b>
+  <b> 首先，上层 widget 向下层 widget 传递约束条件。</b>
+
+* <b>Sizes go up.</b>
+
+  <b> 然后，下层 widget 向上层 widget 传递大小信息。</b>
+
+* <b>Parent sets position.</b>
+
+  <b> 最后，上层 widget 决定下层 widget 的位置。</b>
 
 </font></center>
 

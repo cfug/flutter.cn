@@ -40,25 +40,18 @@ and then make them memorize the following rule:
 （这些开发者很可能是 Web 开发），然后要让他们熟记这条规则：
 
 <center><font size="+2">
-
-* <b>Constraints go down.</b>
-
-  <b> 首先，上层 widget 向下层 widget 传递约束条件。</b>
-
-* <b>Sizes go up.</b>
-
-  <b> 然后，下层 widget 向上层 widget 传递大小信息。</b>
-
-* <b>Parent sets position.</b>
-
-  <b> 最后，上层 widget 决定下层 widget 的位置。</b>
-
+  <t><b>Constraints go down. Sizes go up. Parent sets position.</b></t>
+  <t>首先，上层 widget 向下层 widget 传递约束条件；<br/>
+    然后，下层 widget 向上层 widget 传递大小信息。<br/>
+    最后，上层 widget 决定下层 widget 的位置。<br/>
+  </t>
 </font></center>
 
 Flutter layout can’t really be understood without knowing
 this rule, so Flutter developers should learn it early on.
 
-如果我们在开发时无法熟练运用这条规则，在布局时就不能完全理解其原理，所以越早掌握这条规则越好！
+如果我们在开发时无法熟练运用这条规则，在布局时就不能完全理解其原理，
+所以越早掌握这条规则越好！
 
 In more detail:
 

@@ -74,9 +74,9 @@ contains a simple demo app that uses [Material Components][].
     有一个红色或者橘色的点，它在 DEBUG 文本框旁边，选择 Flutter。
     选择调试配置：选择现在连接的设备，或者模拟器（如果没有，请创建）。
 
- 1. Invoke **Debug > Start Debugging** or press <kbd>F5</kbd>.
+ 1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
     
-    选择 **Debug > 开始 Debugging** 或者按<kbd>F5</kbd>。
+    选择 **Run > 开始 Debugging** 或者按<kbd>F5</kbd>。
     
  1. Wait for the app to launch &mdash; progress is printed
     in the **Debug Console** view.

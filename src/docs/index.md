@@ -1,5 +1,5 @@
 ---
-title: Flutter Documentation
+title: Flutter documentation
 title: Flutter 开发文档
 short-title: Docs
 short-title: 文档

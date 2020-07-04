@@ -179,7 +179,7 @@ Flutter 扩展执行代码分析，它提供：
 Start debugging by clicking **Run > Start Debugging**
 from the main IDE window, or press `F5`.
 
-在 IDE 主窗口点击 **Debug > Start Debugging** 或按 `F5` 开启调试。
+在 IDE 主窗口点击 **Run > Start Debugging** 或按 `F5` 开启调试。
 
 ### Selecting a target device
 

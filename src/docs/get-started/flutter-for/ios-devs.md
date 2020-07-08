@@ -1624,7 +1624,7 @@ or maybe different states or renderings of the same data.
 这些组合在一起构成了复杂的用户界面，并以此对应用的 UI 做不断的扩充。
 在 Flutter 中，这一任务又落到了 Widget 这里。就像在导航那一章提到的，
 Flutter 中的屏幕也是使用 Widgets 表示的，因为“万物皆 widget！”。使用 `Naivgator` 在不同的 
-`Route` 之间切换，而不同的路由则代表了不同的屏幕或页面，或是不同的���态，也可能是渲染相同的数据。
+`Route` 之间切换，而不同的路由则代表了不同的屏幕或页面，或是不同的状态，也可能是渲染相同的数据。
 
 ### How do I listen to iOS lifecycle events?
 
@@ -1675,6 +1675,8 @@ has no equivalent event.
 
 For more details on the meaning of these states, see
 [`AppLifecycleStatus` documentation][].
+
+关于这些状态含义的更多细节，请参看 [AppLifecycleStatus 文档][`AppLifecycleStatus` documentation]。
 
 ## Layouts
 
@@ -2000,7 +2002,7 @@ Instead of creating a "ListView", create a `ListView.builder` that
 takes two key parameters: the initial length of the list,
 and an `ItemBuilder` function.
 
-和创建 `ListVie` 不同，创建 `ListView.Builder` 需要两个关键参数：初始化列表长度和 `ItemBuilder` 函数。
+和创建 `ListView` 不同，创建 `ListView.Builder` 需要两个关键参数：初始化列表长度和 `ItemBuilder` 函数。
 
 The `ItemBuilder` function is similar to the `cellForItemAt` delegate method
 in an iOS table or collection view, as it takes a position, and returns the
@@ -2217,11 +2219,6 @@ Using `GestureDetector` you can listen to a wide range of gestures such as:
     screen and moving horizontally is no longer in contact with the screen.
     
     `onHorizontalDragEnd` —— 用户之前手指接触了屏幕并发生了水平移动操作，并且停止接触前还在以一定的速率移动。
-
-  **`onHorizontalDragEnd`**
-  : A pointer that was previously in contact with the
-    screen and moving horizontally is no longer in
-    contact with the screen.
 
 下面的示例展示了 `GestureDetector` 是如何实现双击时旋转 Flutter 的 logo 的：
 
@@ -2745,6 +2742,7 @@ Flutter 的插件结构，简单来说，更像是 Android 中的 Event bus：
 
 In iOS, you can store a collection of key-value pairs using a property list,
 known as the `UserDefaults`.
+
 在 iOS 里，可以使用属性列表存储一个键值对的集合，也就是我们所说的 `UserDefaults`。
 
 In Flutter, access equivalent functionality using the

@@ -27,9 +27,9 @@ For information,
 see [Flutter's build modes][].
 
 如果看到不稳定（不流畅）的动画，
-请**确保**你正在做性能分析的应用是在 _profile_ 模式下构建的，
+请 **确保** 你正在做性能分析的应用是在 **profile** 模式下构建的，
 因为默认情况下 Flutter 会在 debug 模式下创建应用，这并不表示应用正式发布后的性能。
-更多信息，参见 [Flutter 的构建模式]()。
+更多信息，参见 [Flutter 的构建模式][Flutter's build modes]。
 
 A couple common pitfalls:
 
@@ -38,7 +38,8 @@ A couple common pitfalls:
 * Rebuilding far more of the UI than expected each frame.
   To track widget rebuilds, see [Show performance data][].
   
-  每帧重建的 UI 比预期的要多得多。要跟踪组件的重建，请参阅[显示性能数据]()。
+  每帧重建的 UI 比预期的要多得多。要跟踪组件的重建，
+  请参阅 [显示性能数据][Show performance data]。
   
 * Building a large list of children directly, rather than
   using a ListView.
@@ -53,11 +54,11 @@ see the following docs:
 
 * [Performance best practices][]
 
-  [Flutter 应用性能优化最佳实践]()
+  [Flutter 应用性能优化最佳实践][Performance best practices]
 
 * [Flutter performance profiling][]
 
-  [Flutter 性能分析]()
+  [Flutter 性能分析][Flutter performance profiling]
 
 [Flutter's build modes]: /docs/testing/build-modes
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance

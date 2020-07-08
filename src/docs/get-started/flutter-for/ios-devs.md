@@ -723,7 +723,7 @@ void main() {
 
 Navigate to a route by `push`ing its name to the `Navigator`.
 
-通过把 route 名称传递给 `Naivgator` 来实现 `push` 效果。
+通过把 route 名称传递给 `Navigator` 来实现 `push` 效果。
 
 ```
 Navigator.of(context).pushNamed('/b');

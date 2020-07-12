@@ -216,6 +216,8 @@
               permalink: /docs/development/tools/devtools/memory
             - title: 性能视图
               permalink: /docs/development/tools/devtools/performance
+            - title: 网络视图
+              permalink: /docs/development/tools/devtools/network
             - title: 调试器
               permalink: /docs/development/tools/devtools/debugger
             - title: 日志视图

@@ -132,7 +132,7 @@ contains a `.android` directory, add the following line to `pubspec.yaml`:
 ```yaml
  module:
    ...
-    androidX: true // Add this line.
+    androidX: true # Add this line.
 ```
 
 Finally, run `flutter clean`.

@@ -236,7 +236,7 @@ reference the same `@drawable/launch_background` in the
 #### 在FlutterFragment中配置
 
 To display a `Drawable` as a Flutter splash screen in a
-`FlutterFragment`, make `FlutterFragment` a subclass and override
+`FlutterFragment`, make a subclass of `FlutterFragment` and override
 `provideSplashScreen()`.
 
 在 `FlutterFragment` 中将一个 `Drawable` 作为 Flutter 闪屏页进行展示，

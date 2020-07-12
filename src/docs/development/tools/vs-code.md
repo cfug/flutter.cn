@@ -176,10 +176,10 @@ Flutter 扩展执行代码分析，它提供：
   
 {{site.alert.end}}
 
-Start debugging by clicking **Debug > Start Debugging**
+Start debugging by clicking **Run > Start Debugging**
 from the main IDE window, or press `F5`.
 
-在 IDE 主窗口点击 **Debug > Start Debugging** 或按 `F5` 开启调试。
+在 IDE 主窗口点击 **Run > Start Debugging** 或按 `F5` 开启调试。
 
 ### Selecting a target device
 
@@ -244,12 +244,12 @@ Flutter 扩展会自动选择上次连接的设备。
 
 ### 无断点运行
 
- 1. Click **Debug > Start Without Debugging** in the
+ 1. Click **Run > Start Without Debugging** in the
     main IDE window, or press `Ctrl`+`F5`.
     The status bar turns orange to show you are in a debug session.<br>
 
-    在 IDE 主窗口点击 **Debug > Start Without Debugging**，或者按 `Ctrl`+`F5`。
-    状态栏变橙色说明你正处于调试模式。<br>
+    在 IDE 主窗口点击 **Run > Start Without Debugging**，
+    或者按 `Ctrl`+`F5`，状态栏变橙色说明你正处于调试模式。<br>
     ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:width="490px"}
     
 ### Run app with breakpoints
@@ -260,10 +260,10 @@ Flutter 扩展会自动选择上次连接的设备。
     
     如果需要，在源代码中设置断点。
    
- 1. Click **Debug > Start Debugging** in the main IDE window, 
+ 1. Click **Run > Start Debugging** in the main IDE window,
     or press `F5`.
     
-    在 IDE 主窗口点击 **Debug > Start Debugging** 或按 `F5`。
+    在 IDE 主窗口点击 **Run > Start Debugging** 或按 `F5`。
  
     * The left **Debug Sidebar** shows stack frames and variables.
       

@@ -269,9 +269,9 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
 
        打开文件 `counter_test.dart`
 
-    2. Select the `Debug` menu
+    2. Select the `Run` menu
 
-       选择菜单 `Debug`
+       在菜单里选择 `Run`
 
     3. Click the `Start Debugging` option
 

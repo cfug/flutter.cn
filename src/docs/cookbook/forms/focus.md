@@ -204,22 +204,6 @@ FloatingActionButton(
 
 ## 交互式样例
 
-{{site.alert.note}}
-
-  While the following code runs successfully in DartPad,
-  it fails due to [Issue 52221][] when run against the 
-  stable (1.12) or beta (1.14) versions of the Flutter SDK.
-  Until this [fix has landed][] (hash [flutter/flutter@bf551a3][])
-  in the channel you are using,
-  you can use the [workaround][] described in the issue.
-  
-  尽管以下代码可以在 DartPad 中成功运行，
-  但在 Flutter SDK 的稳定版（1.12）或 beta（1.14）版本上，
-  会由于 [这个问题][Issue 52221] 而运行失败。
-  直至 [这个修复][fix has landed] (hash [flutter/flutter@bf551a3][]) 
-  合并进你的 Flutter SDK 之前，你可以使用这个 [解决方法][workaround]。
-{{site.alert.end}}
-
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 

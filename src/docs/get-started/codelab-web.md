@@ -11,6 +11,7 @@ js:
 ---
 
 {{site.alert.tip}}
+
   This codelab walks you through writing your first Flutter
   app on the web. You might prefer to try
   [writing your first Flutter app on mobile][].
@@ -54,32 +55,35 @@ Clicking the **Sign up** button causes a welcome screen
 to animate in from the bottom of the screen.
 
 你将实现一个只显示登录页面的简单 Web 应用。
-这个页面包含了三个文本字段:名字、姓氏和  用户名。当用户输入字段内容时，
-在登录区域顶部显示一个精度条动画效果。当所有的字段被输入时，这个精度条将会以绿色
+这个页面包含了三个文本输入框:名字、姓氏和  用户名。当用户向输入框输入内容时，
+在登录区域顶部显示一个进度条动画效果。当用户完成输入时，绿色的进度条将会随着
 充满整个登录区域的顶部，而且 **Sign up** 按钮变成可点击。
-点击 **Sign up** 按钮从屏幕下方跳出一个欢迎页面
+点击 **Sign up** 按钮从屏幕下方弹出一个欢迎页面
 
 
 The animated GIF shows how the app works at the completion of this lab.
 
-右侧的动图展示了完成该教程程序后的运行效果。
+右侧的动图展示了完成该教程后程序的运行效果。
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What you’ll learn</h4>
 
   * How to write a Flutter app that looks natural on the web.
     如何使用 Flutter 构建一个原始的 Web 程序。
   * Basic structure of a Flutter app.
-    Flutter程序的基本结构
+    Flutter 程序的基本结构。
   * How to implement a Tween animation.
-    如何实现一个动画效果。
+    如何实现一个补间动画。
   * How to implement a stateful widget.
-    如何实现一个动态组件。
+    如何实现一个 Stateful Widget 。
   * How to use the debugger to set breakpoints.
     如何使用断点调试程序。
+
 {{site.alert.end}}
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What you'll use</h4>
 
   <h4 class="no_toc">我们将用到:</h4>
@@ -93,15 +97,15 @@ The animated GIF shows how the app works at the completion of this lab.
   * [Chrome browser][]
     [Chrome 浏览器][Chrome browser]
   * [Text editor or IDE][editor]
-    [Text editor or IDE][editor]
+    [文本编辑器 或 IDE][editor]
 
   For a web-only codelab,
   we recommend either [IntelliJ IDEA or VS Code][editor].
   Android Studio and Xcode aren’t required.
   You can also use a text editor, if you prefer.
 
-  对于该 Web 程序教程，我们更推荐使用 [IntelliJ IDEA or VS Code][editor] 。
-  Android Studio 和 Xcode 是不必要。当然如果你愿意的话，也可以使用文本编辑器。
+  对于该 Web 程序教程，我们更推荐使用 [IntelliJ IDEA 或 VS Code][editor] 。
+  你不必使用 Android Studio 和 Xcode 。当然如果你愿意的话，也可以使用文本编辑器。
 
   While developing, run your web app in Chrome
   so you can debug with Dart DevTools.
@@ -130,9 +134,9 @@ then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
 启用 Web 开发。<br>
-打开命令行，执行下面命令并确保你已经获取到最新 SDK 来支持 Web 开发而且启用它。
-你可以使用 `flutter config --enable-web` 来启用 Flutter 对 Web 开发的支持。
-如果运行命令出现 "flutter: command not found" 错误，说明你 [Flutter SDK][] 未安装或者
+打开命令行，执行下面命令并确保你已经获取到最新 SDK 并且开启了 Web 支持。
+你仅需要使用一次 `flutter config --enable-web` 来启用 Flutter 对 Web 开发的支持。
+如果运行命令出现 "flutter: command not found" 错误，说明你未安装 [Flutter SDK][] 或者
 未配置 Flutter 环境变量。
 
 ```terminal
@@ -304,12 +308,13 @@ class _SignUpFormState extends State<SignUpForm> {
 ```
 
 {{site.alert.important}}
+
   This page uses an embedded version of [DartPad][]
   to display examples and exercises.
   If you see empty boxes instead of DartPads,
   go to the [DartPad troubleshooting page][].
 
-  本页面使用了嵌入式 [DartPad] 来显示和联系示例。
+  本页面使用了嵌入式 [DartPad] 来显示和练习示例。
   如果你看到的是空白页面，请转到 [DartPad troubleshooting page][]
 
 {{site.alert.end}}
@@ -331,7 +336,7 @@ Click the clipboard icon in the upper right of the
 code pane to copy the Dart code to your clipboard.
 
 复制代码。<br>
-点击代码区域左上角的复制图标复制 Dart 代码。
+点击代码区域右上角的复制图标复制 Dart 代码。
 
 </li>
 
@@ -341,7 +346,7 @@ From your IDE, editor, or at the command line,
 
 创建一个新的 Flutter 工程。<br>
 使用 IDE、编辑器或者命令行，创建一个名称为 `signin_example` 的新项目，
-参考[create a new Flutter project][]
+参考 [create a new Flutter project][]
 
 </li>
 
@@ -363,10 +368,11 @@ From your IDE, editor, or at the command line,
   `lib/main.dart` file.
   完整的示例代码都位于 `lib/main.dart` 文件中。
 * If you know Java, the Dart language should feel very familiar.
-  如果你了解 Java ，那 Dart 也会给你一种熟悉得到感觉。
+  如果你了解 Java ，那 Dart 也会给你一种熟悉的感觉。
 * All of the app's UI is created in Dart code.
   For more information, see [Introduction to declarative UI][].
-  应用程序的所有的UI的都是通过 Dart 构建的。你可以通过 [Introduction to declarative UI][] 了解到更多的信息。
+  应用程序的所有的 UI 的都是通过 Dart 构建的。
+  你可以通过 [Introduction to declarative UI][] 了解到更多的信息。
 * The app’s UI adheres [Material Design][],
   a visual design language that runs on any device or platform.
   You can customize the Material Design widgets,
@@ -381,7 +387,7 @@ From your IDE, editor, or at the command line,
 * In Flutter, most everything is a [Widget][].
   Even the app itself is a widget.
   The app’s UI can be described as a widget tree.
-  在 Flutter 的世界，万物皆 [Widget][] ，甚至连应用程序本身都是组件。
+  在 Flutter 的世界，万物皆 [Widget][]，甚至连应用程序本身都是组件。
   应用程序的 UI 也可以看成组件树。
 
 ## Step 1: Show the Welcome screen
@@ -396,19 +402,20 @@ Flutter stores state information in a companion class,
 called the `State` class. In this lab,
 all of your edits will be made to the private `_SignUpFormState` class.
 
-`SignUpForm` 类是一个有状态组件。
+`SignUpForm` 类是一个 Stateful Widget。
 这代表着组件的存储信息可动态改变，例如用户输入，或者传递的数据。
 由于组件本身是不可变的(一旦创建不可修改)，
 所有 Flutter 的状态信息存储在一种叫 `State` 的附加类中。
-在这个代码示例中，所有的编辑将在一个` _SignUpFormState` 的私有类中实现。
+在这个代码示例中，所有的编辑将在一个 ` _SignUpFormState` 的私有类中实现。
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">Fun fact</h4>
 The Dart compiler enforces privacy for any identifier
 prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
   
-  有趣的是</h4>
+  有趣的事</h4>
 Dart 编译器会将任何带有下划线前缀标识的视为私有。
 可以查阅 [Effective Dart Style Guide][] 获取更多信息。
 
@@ -416,7 +423,8 @@ Dart 编译器会将任何带有下划线前缀标识的视为私有。
 
 First, in your new `lib/main.dart` file, add the following class definition for the `WelcomeScreen` widget after the `SignUpScreen` class:
  
-首先，在 `lib/main.dart` 文件中，在 `SignUpScreen` 类后面添加下面 `WelcomeScreen` 组件的定义类：
+首先，在 `lib/main.dart` 文件中，在 `SignUpScreen` 类后面
+添加下面 `WelcomeScreen` widget 的定义类：
 
 ```dart
 class WelcomeScreen extends StatelessWidget {
@@ -446,8 +454,7 @@ white text that says **Sign up** and, when pressed,
 does nothing.
 
 找到 `_SignUpFormState` 类的 `build()` 方法。
-这部分代码是用来构建注册按钮的。
-注意，按钮是如何定义：
+这部分代码是用来构建注册按钮的。注意，按钮是如何定义：
 它是一个背景为蓝色， **Sign up** 文本为白色的 `FlatButton` 按钮，当我们点击它时，
 并未执行任何操作。
 
@@ -458,7 +465,7 @@ Change the `onPressed` property to call the (non-existent)
 method that will display the welcome screen.
 
 修改按钮的 `onPressed` 属性。<br>
-将按钮的 `onPressed` 属性改为调用显示还原页面的方法(该方法在下一步创建)。
+将按钮的 `onPressed` 属性改为调用显示欢迎页面的方法(该方法在下一步创建)。
 
 Change `onPressed: null` to the following:
 
@@ -476,8 +483,9 @@ is not defined. Directly above the `build()` method,
 add the following function:
 
 新增 `_showWelcomeScreen` 方法。<br>
-上面的代码将会报 `_showWelcomeScreen` 未定义错误，
-在 `build()` 方法上方添加下面的函数：
+修复上述代码导致的编译器提示： 
+`_showWelcomeScreen` is not defined. (未定义 `_showWelcomeScreen`) 的错误。
+在 `build()` 方法上方添加下面的方法：
 
 <!-- skip -->
 ```dart
@@ -563,11 +571,13 @@ and update the app’s UI when the form is complete.
 下一步，我们将实现监听用户输入表单的进度，并且在表单完成后更新应用程序的 UI 。
 
 {{site.alert.note}}
+
   This example does **not** validate the accuracy of the user input.
   That is something you can add later using form validation, if you like.
 
   这个简单的示例并未对用户的输入进行准确性验证。
   如果需要，你可以后面自己添加表单验证。
+
 {{site.alert.end}}
 
 <ol markdown="1">
@@ -844,6 +854,7 @@ Congratulations, you are now running Dart DevTools!
 </ol>
 
 {{site.alert.note}}
+
   This is not the only way to launch DevTools.
   If you are using IntelliJ,
   you can open DevTools by going to
@@ -857,6 +868,7 @@ Congratulations, you are now running Dart DevTools!
   {% indent %}
   ![Screenshot of Flutter inspector with DevTools menu]({% asset get-started/intellij-devtools.png @path %}){:width="100%"}
   {% endindent %}
+
 {{site.alert.end}}
 
 <ol markdown="1">

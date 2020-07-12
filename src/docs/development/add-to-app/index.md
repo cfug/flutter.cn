@@ -51,7 +51,7 @@ It currently has the _**following limitations**_:
   目前尚未支持将多个 Flutter 库打包到同一个应用中；
   
 * Plugins used in add-to-app on Android should migrate
-  to the [new Android plugin APIs][], based on [`FlutterPlugin`].
+  to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
   Plugins that don't support `FlutterPlugin` may have unexpected
   behaviors if they make assumptions that are untenable in add-to-app
   (such as assuming that a Flutter `Activity` is always present).

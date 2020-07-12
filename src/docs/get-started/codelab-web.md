@@ -60,7 +60,6 @@ to animate in from the bottom of the screen.
 充满整个登录区域的顶部，而且 **Sign up** 按钮变成可点击。
 点击 **Sign up** 按钮从屏幕下方弹出一个欢迎页面
 
-
 The animated GIF shows how the app works at the completion of this lab.
 
 右侧的动图展示了完成该教程后程序的运行效果。
@@ -69,15 +68,26 @@ The animated GIF shows how the app works at the completion of this lab.
 
   <h4 class="no_toc">What you’ll learn</h4>
 
+  <h4 class="no_toc">你将学到以下内容。</h4>
+
   * How to write a Flutter app that looks natural on the web.
+
     如何使用 Flutter 构建一个原始的 Web 程序。
+
   * Basic structure of a Flutter app.
+
     Flutter 程序的基本结构。
+
   * How to implement a Tween animation.
+
     如何实现一个补间动画。
+
   * How to implement a stateful widget.
+
     如何实现一个 Stateful Widget 。
+
   * How to use the debugger to set breakpoints.
+
     如何使用断点调试程序。
 
 {{site.alert.end}}
@@ -96,7 +106,7 @@ The animated GIF shows how the app works at the completion of this lab.
     [Flutter SDK][]
   * [Chrome browser][]
     [Chrome 浏览器][Chrome browser]
-  * [Text editor or IDE][editor]
+  * [Text editor 或 IDE][editor]
     [文本编辑器 或 IDE][editor]
 
   For a web-only codelab,
@@ -156,7 +166,7 @@ see [Building a web application with Flutter][].
 The `flutter doctor` command reports the status of the installation.
 You should see something like the following:
 
-命令行运行 `flutter doctor` 。<br>
+命令行运行 `flutter doctor`。<br>
 `flutter doctor` 命令将会检测安装状态。
 你应该可以看到如下类似的内容:
 
@@ -268,7 +278,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
-          Text('Sign Up', style: Theme
+          Text('Sign up', style: Theme
               .of(context)
               .textTheme
               .headline4),
@@ -323,11 +333,11 @@ class _SignUpFormState extends State<SignUpForm> {
 <li markdown="1">Run the example.<br>
 Click the **Run** button to run the example.
 Note that you can type into the text fields,
-but the Sign up button is disabled.
+but the **Sign up** button is disabled.
 
 运行代码示例。<br>
 点击 **Run** 按钮来运行示例代码。
-你就可以在文本框中输入内容，但是注册按钮是禁用状态的。
+你就可以在文本框中输入内容，但是 **Sign up** 按钮是禁用状态的。
 
 </li>
 
@@ -366,13 +376,19 @@ From your IDE, editor, or at the command line,
 
 * The entire code for this example lives in the
   `lib/main.dart` file.
+
   完整的示例代码都位于 `lib/main.dart` 文件中。
+
 * If you know Java, the Dart language should feel very familiar.
+
   如果你了解 Java ，那 Dart 也会给你一种熟悉的感觉。
+
 * All of the app's UI is created in Dart code.
   For more information, see [Introduction to declarative UI][].
+
   应用程序的所有的 UI 的都是通过 Dart 构建的。
   你可以通过 [Introduction to declarative UI][] 了解到更多的信息。
+
 * The app’s UI adheres [Material Design][],
   a visual design language that runs on any device or platform.
   You can customize the Material Design widgets,
@@ -380,31 +396,36 @@ From your IDE, editor, or at the command line,
   Flutter also offers the Cupertino widget library,
   which implements the current iOS design language.
   Or you can create your own custom widget library.
+
   应用程序的 UI 遵循 [Material Design][] 的设计规范，
   这是一种在任何设备和平台都可以运行的可视化设计语言。
-  而且你也有其他选择，Flutter 也提供了一款 iOS 设计风格的 Cupertino 组件库。
-  当然你也可以创建自己的自定义组件库。
+  而且你也有其他选择，Flutter 也提供了一款 iOS 设计风格的 Cupertino widget 库。
+  当然你也可以创建自己的自定义 widget 库。
+
 * In Flutter, most everything is a [Widget][].
   Even the app itself is a widget.
   The app’s UI can be described as a widget tree.
-  在 Flutter 的世界，万物皆 [Widget][]，甚至连应用程序本身都是组件。
-  应用程序的 UI 也可以看成组件树。
+
+  在 Flutter 的世界，万物皆 [Widget][]，甚至连应用程序本身都是 widget。
+  应用程序的 UI 也可以看成 widget 树。
 
 ## Step 1: Show the Welcome screen
 
 ## 第 1 步：显示欢迎页面
 
 The `SignUpForm` class is a stateful widget.
-This simply means that the widget stores information that can change,
-such as user input, or data from a feed.
-Since widgets themselves are immutable (can’t be modified once created),
+This simply means that the widget stores information
+that can change, such as user input, or data from a feed.
+Since widgets themselves are immutable
+(can’t be modified once created),
 Flutter stores state information in a companion class,
 called the `State` class. In this lab,
-all of your edits will be made to the private `_SignUpFormState` class.
+all of your edits will be made to the private
+`_SignUpFormState` class.
 
 `SignUpForm` 类是一个 Stateful Widget。
-这代表着组件的存储信息可动态改变，例如用户输入，或者传递的数据。
-由于组件本身是不可变的(一旦创建不可修改)，
+这代表着 widget 的存储信息可动态改变，例如用户输入，或者传递的数据。
+由于 widget 本身是不可变的(一旦创建不可修改)，
 所有 Flutter 的状态信息存储在一种叫 `State` 的附加类中。
 在这个代码示例中，所有的编辑将在一个 ` _SignUpFormState` 的私有类中实现。
 
@@ -415,14 +436,16 @@ The Dart compiler enforces privacy for any identifier
 prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
   
-  有趣的事</h4>
+  <h4 class="no_toc">有趣的事</h4>
 Dart 编译器会将任何带有下划线前缀标识的视为私有。
 可以查阅 [Effective Dart Style Guide][] 获取更多信息。
 
 {{site.alert.end}}
 
-First, in your new `lib/main.dart` file, add the following class definition for the `WelcomeScreen` widget after the `SignUpScreen` class:
- 
+First, in your `lib/main.dart` file,
+add the following class definition for the
+`WelcomeScreen` widget after the `SignUpScreen` class:
+
 首先，在 `lib/main.dart` 文件中，在 `SignUpScreen` 类后面
 添加下面 `WelcomeScreen` widget 的定义类：
 
@@ -439,15 +462,16 @@ class WelcomeScreen extends StatelessWidget {
 }
 ```
 
-Next, you will enable the button to display the screen and create a method to
-display it.
+Next, you will enable the button to display the screen
+and create a method to display it.
 
 接下来，你需要创建一个显示方法，然后使用按钮通过方法控制页面的显示。
 
 <ol markdown="1">
 
-<li markdown="1"> Locate `build()` method for the `_SignUpFormState` class.
-This is the part of the code that builds the SignUp button.
+<li markdown="1"> Locate the `build()` method for the
+`_SignUpFormState` class. This is the part of the code
+that builds the SignUp button.
 Notice how the button is defined:
 It’s a `FlatButton` with a blue background,
 white text that says **Sign up** and, when pressed,
@@ -496,12 +520,13 @@ void _showWelcomeScreen() {
 </li>
 
 <li markdown="1">Add the `/welcome` route.<br>
-Create the connection to show the new screen. In the `build()` method for `SignUpApp`,
+Create the connection to show the new screen.
+In the `build()` method for `SignUpApp`,
 add the following route below `'/'`:
 
 添加 `/welcome` 页面路由。<br>
 为新的页面添加跳转路由。在 `SignUpApp` 类的 `build()` 方法中，
-在 `'/'` 路由下面添加如下路由：
+在 `'/'` 下面添加如下路由：
 
 <!-- skip -->
 ```dart
@@ -535,8 +560,10 @@ You get that behavior for free.
   method as a callback function. Callback functions are often
   used in Dart code and, in this case, this means
   “call this method when the button is pressed”.
+
   `_showWelcomeScreen()` 函数被当成回调函数在 `build()` 方法中被调用。
-  会掉函数在 Dart 中经常会用到，在这里意味着“点击按钮时调用该方法”。
+  你经常会在 Dart 中使用回调函数，在这里意味着“点击按钮时调用该方法”。
+
 * Flutter has only one `Navigator` object.
   This widget manages Flutter’s screens
   (also called _routes_ or _pages_) inside a stack.
@@ -545,17 +572,21 @@ You get that behavior for free.
   stack switches the display to that new screen.
   This is why the `_showWelcomeScreen` function pushes
   the `WelcomeScreen` onto the Navigator’s stack.
-  The user clicks the button and, voila, the welcome screen appears.
-  Likewise, calling `pop()` on the `Navigator` returns to the previous screen.
-  Because Flutter’s navigation is integrated into the browser’s navigation,
-  this happens implicitly when clicking the browser’s back arrow button.
-  Flutter 中存在一个 `Navigator` 对象。
-  这个组件用来管理 Flutter 堆栈中的页面(也可以被称为路由或者页面管理器)。
-  当前显示的视图是堆栈中最上面的页面。通过往堆栈中 push 新的视图来切换新的视图。
-  这也是 `_showWelcomeScreen` 函数向 Navigator 堆栈中添加 `WelcomeScreen` 视图的原因。
+  The user clicks the button and, voila,
+  the welcome screen appears. Likewise,
+  calling `pop()` on the `Navigator` returns to the
+  previous screen. Because Flutter’s navigation is
+  integrated into the browser’s navigation,
+  this happens implicitly when clicking the browser's
+  back arrow button.
+
+  Flutter 中仅存在一个 `Navigator` 对象。
+  这个 Widget 用来管理 Flutter 堆栈中的页面(也可以被称为路由或者页面管理器)。
+  当前显示的页面是堆栈中最上面的页面。通过往堆栈中 push 新的页面来切换新的页面。
+  这也是 `_showWelcomeScreen` 函数向 Navigator 堆栈中添加 `WelcomeScreen` 页面的原因。
   用户点击按钮，然后出现欢迎页面。
   同样，可以通过调用 `Navigator` 的 `pop()` 方法来返回上一个页面。
-  因为 Flutter 的 navigation 已经集成了浏览器的导航中，
+  因为 Flutter 的 navigation 已经集成到浏览器的导航中，
   所以当点击浏览器的返回箭头也会返回到上一个页面。
 
 ## Step 2: Enable sign in progress tracking
@@ -567,7 +598,7 @@ Next, you will enable the ability to track the
 user’s progress on filling in the form fields,
 and update the app’s UI when the form is complete.
 
-在这个页面有三个字段。
+在这个页面有三个文本框。
 下一步，我们将实现监听用户输入表单的进度，并且在表单完成后更新应用程序的 UI 。
 
 {{site.alert.note}}
@@ -612,21 +643,22 @@ void _updateFormProgress() {
 ...
 ```
 
-This method updates `_formProgress` based on the the number of non-empty text
-fields.
+This method updates the `_formProgress` field based on the
+the number of non-empty text fields.
 
-这个方法根据非空字段的数量来更新 `_formProgress` 属性。
+这个方法根据非空输入框的数量来更新 `_formProgress` 属性。
 
 </li>
 
-<li markdown="1">Call `_updateFormProgress` when the form changes<br>
-In the `build()` method of the `_SignUpFormState` class, add a callback
-to the `Form` widget's `onChanged` argument:
+<li markdown="1">Call `_updateFormProgress` when the form
+changes.<br>
+In the `build()` method of the `_SignUpFormState` class,
+add a callback to the `Form` widget's `onChanged` argument.
 Add the code below marked as NEW:
 
-表单改变时调用 `_updateFormProgress()` 方法<br>
-在 `_SignUpFormState` 类的 `build()` 方法中，为 `Form` 组件的 `onChanged` 参数添加
-回调函数：添加的代码如下所示：
+表单改变时调用 `_updateFormProgress()` 方法。<br>
+在 `_SignUpFormState` 类的 `build()` 方法中，为 `Form` Widget 的 `onChanged` 参数添加回调函数。
+添加的代码如下所示：
 
 <!-- skip -->
 ```dart
@@ -645,8 +677,7 @@ Now, update that button to display the welcome
 screen only when the form is completely filled in:
 
 再次更改按钮的 `onPressed` 属性。<br>
-还记得我们在第一步中，我们通过修改 `onPressed` 属性实现了点击 **Sign up** 按钮
-跳转到欢迎页面。
+还记得我们在第一步中，我们通过修改 `onPressed` 属性实现了点击 **Sign up** 按钮跳转到欢迎页面吗？
 现在，将它改成只有完成表单输入时才可以点击按钮跳转到欢迎页面。
 
 <!-- skip -->
@@ -665,7 +696,8 @@ FlatButton(
 
 <li markdown="1">Run the app.<br>
 The **Sign up** button is initially disabled,
-but becomes enabled when all three text fields contain (any) text.
+but becomes enabled when all three text fields contain
+(any) text.
 
 运行程序。<br>
 刚打开页面时 **Sign up** 按钮是禁用状态，
@@ -691,37 +723,47 @@ but becomes enabled when all three text fields contain (any) text.
   in less than 1/60th of a second to create a smooth visual
   transition—especially for an animation.
   Luckily Flutter *is* fast.
-  调用动态组件的 `setState()` 方法通知 Flutter 视图上的组件需要重新构建。
-  框架将销毁之前的不可变组件(上面说过组件一旦创建不可更改)(包含它的子级组件)，
-  然后创建一个新的组件(包含他的子级组件树)并将新的组件渲染到视图上。
-  为了使程序运行顺畅， Flutter 需要快速的销毁和创建组件。
-  新创建的组件必须在不到 1/60 秒的时间渲染到视图上，才能创建一个流畅的动画效果。
-  幸运的是 Flutter 就 **是** 这么这么快
+
+  调用 widget 的 `setState()` 方法通知 Flutter 页面上的 Widget 需要重新构建。
+  框架将销毁之前的不可变 widget (上面说过 widget 一旦创建不可更改)(包含它的子级 widget) ，
+  然后创建一个新的 widget (包含他的子级 widget 树)并将新的 widget 渲染到页面上。
+  为了使程序运行顺畅， Flutter 需要快速的销毁和创建 widget 。
+  新创建的 widget 必须在不到 1/60 秒的时间渲染到页面上，才能创建一个流畅的动画效果。
+  幸运的是 Flutter 就是这么**这么快**
+
 * The `progress` field is defined as a floating value,
   and is updated in the `_updateFormProgress` method.
   When all three fields are filled in, `_formProgress` is set to 1.0.
   When `_formProgress` is set to 1.0, the `onPressed` callback is set to the
   `_showWelcomeScreen` method. The button is enabled when it's `onPressed`
-  argument is non-null
+  argument is non-null.
+
   `progress` 属性定义为浮点值，并在 `_updateFormProgress` 方法中更新。
-  当三个字段都被输入后， `_formProgress` 设置为 1.0 。
+  当三个输入框都被输入后， `_formProgress` 设置为 1.0 。
   当 `_formProgress` 设置为 1.0 后， `onPressed` 的回调函数将设置为 `_showWelcomeScreen` 方法。
   当 `onPressed` 参数变为非空时按钮将会变成可点击。
+
 * Notice that the `_updateFormProgress` passes a function to `setState()`.
   This is called an anonymous
   function and has the following syntax:
-  请注意, `_updateFormProgress` 是通过函数调用 `setState()` 。
+
+  请注意, `_updateFormProgress` 是通过匿名函数调用 `setState()` 。
   这种被称为匿名函数,语法如下所示:
+
   <!-- skip -->
   ```dart
   methodName(() {...});
   ```
   Where `methodName` is a named function that takes an anonymous
   callback function as an argument.
-  名为`methodName`的函数把匿名回调函数作为参数。
+
+  名为 `methodName` 的函数把匿名回调函数作为参数。
+
 * The Dart syntax in the last step that displays the
   welcome screen is:
-  最后一步显示欢迎视图的 Dart 语法如下所示:
+
+  最后一步显示欢迎页面的 Dart 语法如下所示:
+
   <!-- skip -->
   ```dart
   onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
@@ -731,9 +773,9 @@ but becomes enabled when all three text fields contain (any) text.
   If the expression `_formProgress == 1` is true, the entire expression results
   in the value on the left hand side of the `:`, which is the
   `_showWelcomeScreen` method in this case.
-  Dart三目运算有如下语法:`condition ? expression1 : expression2`。
-  如果`_formProgress == 1`是正确的，则会去`:`左侧的值，在这个示例中会取
-  `_showWelcomeScreen`方法。
+  Dart 三目运算有如下语法: `condition ? expression1 : expression2` 。
+  如果 `_formProgress == 1` 是正确的，则会去 `:` 左侧的值，在这个示例中会取 
+  `_showWelcomeScreen` 方法。
 
 ## Step 2.5: Launch Dart DevTools
 
@@ -749,28 +791,26 @@ You want to use [Dart DevTools][]!
 你应该使用 [Dart DevTools][]!
 (不要和 Chrome 开发者工具搞混淆了)
 
-
 Our app currently has no bugs, but let’s check it out anyway.
 The following instructions for launching DevTools applies to any workflow,
 but there is a short cut if you’re using IntelliJ.
 See the tip at the end of this section for more information.
 
 虽然我们的程序现在没有 bug ，但是我们依然验证一下。
-下面的指引讲明了 DevTools 使用的场景，
-如果你使用的是 IntelliJ 编辑器则会有更好的方式。
+下面的指引讲明了 DevTools 使用的场景，如果你使用的是 IntelliJ 编辑器则会有更好的方式。
 可以通过查看文档末尾的提示信息获取更多的信息。
 
 <ol markdown="1">
 <li markdown="1">Run the app.<br>
 If your app isn’t currently running, launch it.
-From the command line, use `flutter run -d chrome`,
-or select the **Chrome** device from the pull down
-and launch it from your IDE.
+Select the **Chrome** device from the pull down
+and launch it from your IDE or,
+from the command line, use `flutter run -d chrome`,
 
 运行程序。<br>
 如果程序未启动，启动程序。
-在命令行中使用 `flutter run -d chrome` ，或者从下拉选项中
-选择 **Chrome** 设备然后使用 IDE 启动。
+从下拉选项中选择 **Chrome** 设备然后使用 IDE 启动，或者在命令行中
+使用 `flutter run -d chrome` ，
 
 </li>
 
@@ -814,9 +854,10 @@ launch the DevTools server as explained in the
 </li>
 
 <li markdown="1">Connect to DevTools.<br>
-When DevTools launches, you should see something like the following:
+When DevTools launches, you should see something
+like the following:
 
-连接到 DevTools 。<br>
+连接到 DevTools。<br>
 当 DevTools 启动时，你应该会看到如下类似的内容：
 
 ```terminal
@@ -881,8 +922,7 @@ Select `signin/main.dart` to display your Dart code
 in the center pane.
 
 设置断点。<br>
-现在你以前启动了开发者工具，
-在上面的蓝色工具栏中选择 **Debugger** 选项。
+现在你以前启动了开发者工具，在上面的蓝色工具栏中选择 **Debugger** 选项。
 在左下角出现调试面板，可以查看示例中使用的类库。
 选择 `signin/main.dart` 将在页面中间显示 Dart 代码。
 
@@ -897,6 +937,7 @@ scroll down to where `progress` is updated:
 
 设置断点。<br>
 在 Dart 代码中，向下拉找到被修改的 `progress` ，如下所示：
+
 <!-- skip -->
 ```dart
     for (var controller in controllers) {
@@ -920,14 +961,15 @@ In the running app, click one of the text fields to gain focus.
 The app hits the breakpoint and pauses.
 In the DevTools screen, you can see on the left
 the value of `progress`, which is 0. This is to be expected,
-since none of the fields are filled in. Step through the for loop to see
+since none of the fields are filled in.
+Step through the for loop to see
 the program execution.
 
 触发断点。<br>
-在正在运行的程序中，点击任意一个字段获取焦点。
+在正在运行的程序中，点击任意一个输入框获取焦点。
 应用程序会遇到断点并暂停程序。
 在开发者工具页面，你可以在左侧看到 `progress` 的值是 0 。
-这是正常的，因为你没有填写任何字段。遍历 for 循环观察程序的运行。
+这是正常的，因为你没有输入任何内容。遍历 for 循环观察程序的运行。
 
 </li>
 
@@ -953,7 +995,7 @@ This gives you a tiny glimpse of what is possible using DevTools,
 but there is lots more! For more information,
 see the [DevTools documentation][].
 
-这里只是对开发者工具的使用方式进行粗略的介绍，还有更多没有讲到。
+这里只是粗略的介绍开发者工具的使用方式，还有更多没有讲到。
 请参考 [DevTools documentation][] 学习更多的内容。
 
 
@@ -961,40 +1003,48 @@ see the [DevTools documentation][].
 
 ## 第3步：为输入进度添加动画效果
 
-It’s time to add animation! In this final step, you’ll create the animation for
-the LinearProgressIndicator at the top of the sign in area. The animation has
-the following behavior:
+It’s time to add animation! In this final step,
+you’ll create the animation for the
+`LinearProgressIndicator` at the top of the sign in
+area. The animation has the following behavior:
 
 是时候添加动画效果了！在最后一步，我们将在登录区域上方创建一个进度条动画，
 特效如下所述：
 
 * When the app starts,
   a tiny red bar appears across the top of the sign in area.
+
   刚启动时，登录区域的顶部显示一条红色的进度条。
+
 * When one text field contains text,
   the red bar turns orange and animates one-third
   of the way across the sign in area.
+
   当一个字段被键入内容时，进度条从红色变成橙色
   并且进度条前进到 1/3 的登录区域顶部的距离。
+
 * When two text fields contain text,
   the orange bar turns yellow and animates two-thirds
   of the way across the sign in area.
+
   当第二个字段被键入内容时，进度条从橙色变为黄色
   并且进度条前进到 2/3 的登录区域顶部的距离。
+
 * When all three text fields contain text,
   the orange bar turns green and animates all the
   way across the sign in area.
   Also, the **Sign up** button becomes enabled.
-  当三个字段全部被输入内容时，进度条从橙色变成绿色
+
+  当三个文本框全部被输入内容时，进度条从橙色变成绿色
   并且逐渐充满整个登录区域顶部。除此之外， **Sign up** 按钮
   也变成可点击状态。
 
 <ol markdown="1">
-<li markdown="1">Add an AnimatedProgressIndicator.<br>
+<li markdown="1">Add an `AnimatedProgressIndicator`.<br>
 At the bottom of the file, add this widget:
 
 添加进度条动画效果。<br>
-在文件的下面，添加下面的组件：
+在文件的下面，添加下面的 widget：
 
 <!--skip-->
 ```dart
@@ -1061,13 +1111,13 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 ```
 </li>
 
-<li markdown="1">Use the new AnimatedProgressIndicator.<br>
-Then, replace the `LinearProgressIndicator` in the Form with this new
-`AnimatedProgressIndicator`:
+<li markdown="1">Use the new `AnimatedProgressIndicator`.<br>
+Then, replace the `LinearProgressIndicator` in the `Form`
+with this new `AnimatedProgressIndicator`:
 
 使用新的进度条。<br>
-然后，使用新的 `AnimatedProgressIndicator` 组件替换表单中的 `LinearProgressIndicator` 
-组件，如下所示：
+然后，使用新的 `AnimatedProgressIndicator` widget 替换表单中的 `LinearProgressIndicator` 
+ widget，如下所示：
 
 <!--skip-->
 ```dart
@@ -1076,30 +1126,31 @@ Then, replace the `LinearProgressIndicator` in the Form with this new
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress), // NEW
-          Text('Sign Up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headline4),
           Padding(
 ...
 ```
 
-This widget uses an `AnimatedBuilder` to animate the progress indicator to the
-latest value. 
+This widget uses an `AnimatedBuilder` to animate the
+progress indicator to the latest value. 
 
-该组件使用 `AnimatedBuilder` 为最新值实现了进度的动画显示。
+该 widget 使用 `AnimatedBuilder` 为最新值实现了进度的动画显示。
 
 </li>
 
 <li markdown="1">Run the app.<br>
-Type anything into the three fields to verify that the animation works,
-and that clicking the **Sign up** button brings up the Welcome screen.
+Type anything into the three fields to verify that
+the animation works, and that clicking the
+**Sign up** button brings up the **Welcome** screen.
 
 运行程序。<br>
-在三个字段中输入任意值来验证动画效果是否正常显示，
+在三个输入框中输入任意值来验证动画效果是否正常显示，
 然后点击 **Sign up** 按钮将弹出欢迎页面。
 
 </li>
 </ol>
 
-### Complete Sample
+### Complete sample
 
 ### 完整的示例
 
@@ -1192,7 +1243,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress),
-          Text('Sign Up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headline4),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
@@ -1295,14 +1346,18 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 {:.no_toc}
 
 * You can use an `AnimationController` to run any animation.
+
   你可以使用 `AnimationController` 控制任何动画效果。
+
 * `AnimatedBuilder` rebuilds the widget tree when the value
   of an `Animation` changes.
-  当 `Animation` 的值改变时 `AnimatedBuilder` 将重新构建组件树。
+
+  当 `Animation` 的值改变时 `AnimatedBuilder` 将重新构建 widget 树。
+
 * Using a `Tween`, you can interpolate between almost any value,
   in this case, `Color`.
 
-  使用动画 `Tween` ，你还可以使用很多值，像这个示例中的 `Color` 。
+  使用动画 `Tween` ，你还可以使用很多值，像这个示例中的 `Color`。
 
 ## What next?
 
@@ -1320,8 +1375,7 @@ For advice on how to do this,
 see the [Building a form with validation][]
 recipe in the [Flutter cookbook][].
 
-如果你想继续使用这个示例，
-或许你可以添加表单验证。
+如果你想继续使用这个示例，或许你可以添加表单验证。
 如何继续的建议，请参考 [Flutter cookbook][] 中 
 [Building a form with validation][]
 

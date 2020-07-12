@@ -29,7 +29,9 @@ IntelliJ, VS Code, or Emacs. If you want to use a different editor,
 that's OK, skip ahead to the [next step: Test drive][].
 
 参考以下步骤为 Android Studio、IntelliJ 或者 VS Code 添加编辑器插件。
-如果你想使用其他的编辑器，请直接打开 [下一节: 开发体验初探][next step: Test drive]，来查看使用其他文本编辑器配合命令行工具来创建和运行 Flutter 应用。
+如果你想使用其他的编辑器，请直接打开
+[下一节: 开发体验初探][next step: Test drive]，
+来查看使用其他文本编辑器配合命令行工具来创建和运行 Flutter 应用。
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -177,9 +179,10 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
     输入 "doctor"，选择 **Flutter: Run Flutter Doctor**。
 
- 1. Review the output in the **OUTPUT** pane for any issues.
+ 1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
 
-    打开 **输出** 面板查看是否有错误。
+    打开 **输出 (OUTPUT)** 面板查看是否有错误，
+    确保在不同的输出选项 (Output Options) 的下拉列表中选择了 Flutter。
 
 </div>
 <div class="tab-pane" id="emacs" role="tabpanel" aria-labelledby="emacs-tab" markdown="1">

@@ -22,10 +22,10 @@ the [Flutter extension][].
 
 Start a debug session for your application by opening the root
 folder of your project (the one containing `pubspec.yaml`)
-in VS Code and clicking **Debug > Start Debugging** (`F5`).
+in VS Code and clicking **Run > Start Debugging** (`F5`).
 
 通过在 VS Code 中打开你的项目的根目录
-（包含 `pubspec.yaml`）并点击 **Debug > Debugging** (`F5`)，
+（包含 `pubspec.yaml`）并点击 **Run > Debugging** (`F5`)，
 来开启调试会话。
 
 ## Launch DevTools
@@ -47,17 +47,15 @@ is updated), you are prompted to activate or upgrade DevTools.
 
 ![Screenshot showing Active DevTools command]({% asset tools/vs-code/vscode_install_prompt.png @path %}){:width="100%"}
 
-<br><center><span>Clicking the <b>Activate/Upgrade</b> button uses
-<code>pub global activate</code> to activate the DevTools package for you</span><span>点击 <b>激活/更新</b> 按钮来使用<code>全局激活</code>为你激活开发工具包</span></center>
-
-Next, DevTools launches in your browser and automatically connects
-to your debug session.
+Clicking the **Open** button uses `pub global activate` to activate
+the DevTools package for you. Next, DevTools launches in your browser and
+automatically connects to your debug session.
 
 接下来，开发工具将会在浏览器中启动，并自动连接至你的调试会话。
 
 ![Screenshot showing DevTools in a browser]({% asset tools/vs-code/vscode_show_in_browser.png @path %}){:width="100%"}
 
-While the DevTools are active, you'll see them in the status bar
+While DevTools is active, you'll see them in the status bar
 of VS Code. If you've closed the browser tab,
 you can click the status bar to re-launch your browser, so long
 as there's still a suitable Dart/Flutter debugging session available.

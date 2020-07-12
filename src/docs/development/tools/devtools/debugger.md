@@ -7,35 +7,27 @@ description: 学习如何使用开发者工具里的调试器。
 
 {{site.alert.note}}
 
-  The debugger works with Flutter mobile and web applications.
+  The debugger works with all Flutter and Dart applications.
   
-  适用于 Flutter 移动和网页应用的调试器。
+  这个调试器工具适用于所有 Flutter 应用和 Dart 应用。
   
 {{site.alert.end}}
 
 ## Getting started
 
-## 开始
+## 开始使用
 
 DevTools includes a full source-level debugger, supporting
 breakpoints, stepping, and variable inspection.
 
 开发工具中包含了一个完整的源码级调试器，支持断点、单步调试以及变量检视。
 
-When you open the debugger tab, you should see all the libraries
-for your application listed in the bottom left screen
-(under the **Scripts** area), and the source for the main
-entry-point for your app in is loaded in the main app source area.
+When you open the debugger tab, you should see the source for the main
+entry-point for your app loaded in the debugger.
 
-当打开调试器选项卡时，可以看到屏幕左下方（在 **Scripts** 区域下方）
-列出了应用使用的全部依赖库，并且在主应用源码区展示了应用的入口代码。
-
-In order to browse around more of your application sources,
-you can scroll through the `Scripts` area and select other
-source files to display.
-
-如果想浏览更多应用源代码，可以在 `Scripts`
-区域滑动并选择其他需要展示的代码文件。
+In order to browse around more of your application sources, click **Libraries**
+(top right) or us the hot key command `⌘ + P` / `ctrl + P`. This will open the
+libraries window and allow you to search for other source files.
 
 ![Screenshot of the debugger tab]({% asset tools/devtools/debugger_screenshot.png @path %}){:width="100%"}
 
@@ -118,12 +110,11 @@ You can also see the output in the [Logging view][].
 
 ## 异常跳出
 
-To adjust the break-on-exceptions behavior, toggle the
-**Break on unhandled exceptions** and **Break on all exceptions**
-checkboxes in the upper right of the debugger view.
+To adjust the stop-on-exceptions behavior, toggle the
+**Ignore** dropdown at the top of the debugger view.
 
-选中调试界面右上方的 **Break on unhandled exceptions**
-和 **Break on all exceptions** 复选框来适配异常跳出的行为。
+请在调试器视图顶部切换 **Ignore** 下拉菜单来
+适配异常跳出的行为。
 
 Breaking on unhandled excepts only pauses execution if the
 breakpoint is considered uncaught by the application code.

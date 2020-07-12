@@ -136,39 +136,46 @@ tests automatically when pushing new code changes.
 This provides timely feedback on whether the code
 changes work as expected and do not introduce bugs.
 
-持续集成 (CI) 服务允许我们在推送新代码（代码变更）时自动运行测试。当代码变更后，会立即收到关于代码是否仍按预期工作、是否引入新问题的反馈。
+持续集成 (CI) 服务允许我们在推送新代码（代码变更）时自动运行测试。
+当代码变更后，会立即收到关于代码是否
+仍按预期工作、是否引入新问题的反馈。
 
 For information on running tests on various continuous
 integration services, see the following:
 
-有关各种持续集成服务的信息，参考如下：
+有关各种持续集成服务的信息，
+参考如下：
 
-* [Continuous Delivery using fastlane with
-  Flutter](/docs/deployment/fastlane-cd/)
+* [Continuous delivery using fastlane with Flutter][]
+ 
+  [Flutter 里的持续部署][Continuous delivery using fastlane with Flutter]
 
-  [Flutter 里的持续部署](/docs/deployment/cd/#fastlane)
+* [Test Flutter apps on Appcircle][]
+ 
+  [使用 Appcircle 测试 Flutter 应用][Test Flutter apps on Appcircle]
 
-* [Test Flutter apps on
-  Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
+* [Test Flutter apps on Travis][]
 
-  [使用 Travis 测试 Flutter 应用]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
+  [使用 Travis 测试 Flutter 应用][Test Flutter apps on Travis]
 
-* [Test Flutter apps on Cirrus](https://cirrus-ci.org/examples/#flutter)
-  
-  [使用 Cirrus 测试 Flutter 应用](https://cirrus-ci.org/examples/#flutter)
-  
-* [GitLab Continuous Integration
-  (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
-  You'll need to create and configure a `.gitlab-ci.yml` file. You can
-  [find an example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
-  in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
+* [Test Flutter apps on Cirrus][]
 
-  [GitLab 持续集成（GitLab CI/CD）](https://docs.gitlab.com/ee/ci/README.html#doc-nav)。需要创建，并且配置 `.gitlab-ci.yml` 文件。可以在 [flutter_redux 库]({{site.github}}/brianegan/flutter_redux)中 [找到例子](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)。
+  [使用 Cirrus 测试 Flutter 应用][Test Flutter apps on Cirrus]
 
-* [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
-  
-  [Flutter 中的 Codemagic 持续集成/持续交付](https://blog.codemagic.io/getting-started-with-codemagic/)
+* [Codemagic CI/CD for Flutter][]
+ 
+  [使用 Codemagic 进行 Flutter 持续集成/持续交付][Codemagic CI/CD for Flutter]
 
-* [Flutter CI/CD with Bitrise](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
-  
-  [使用 Bitrise 进行 Flutter 持续集成/持续交付](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
+* [Flutter CI/CD with Bitrise][]
+
+  [使用 Bitrise 进行 Flutter 持续集成/持续交付][Flutter CI/CD with Bitrise]
+
+
+[code coverage]: https://en.wikipedia.org/wiki/Code_coverage
+[Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
+[Continuous delivery using fastlane with Flutter]: /docs/deployment/cd#fastlane
+[Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
+[mocked out]: /cookbook/testing/mocking
+[Test Flutter apps on Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/#testing-the-flutter-app
+[Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
+[Test Flutter apps on Travis]: {{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c

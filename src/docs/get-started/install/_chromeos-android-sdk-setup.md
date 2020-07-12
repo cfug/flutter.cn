@@ -61,14 +61,14 @@ ran the sdkmanager command: $PLATFORM_PATH):
 $ export PATH="$PATH:$PLATFORM_PATH/platform-tools"
 ```
 
-Set the `ANDROID_HOME` variable to where you unzipped sdk-tools before (aka
+Set the `ANDROID_SDK_ROOT` variable to where you unzipped sdk-tools before (aka
 your $TOOLS_PATH):
 
-将 `ANDROID_HOME` 设置为你之前解压缩 sdk-tools 的路径
+将 `ANDROID_SDK_ROOT` 设置为你之前解压缩 sdk-tools 的路径
 （也是你的 $TOOLS_PATH 路径）：
 
 ```terminal
-$ export ANDROID_HOME="$TOOLS_PATH"
+$ export ANDROID_SDK_ROOT="$TOOLS_PATH"
 ```
 
 Now, run flutter doctor to accept the android-licenses:

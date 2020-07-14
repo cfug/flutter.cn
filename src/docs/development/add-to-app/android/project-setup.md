@@ -11,7 +11,7 @@ Flutter can be embedded into your existing Android
 application piecemeal, as a source code Gradle
 subproject or as AARs.
 
-Flutter 可以作为 Grade 子项目源码或者 AAR 嵌入到现有的 Android 应用程序中。
+Flutter 可以作为 Gradle 子项目源码或者 AAR 嵌入到现有的 Android 应用程序中。
 
 The integration flow can be done using the Android Studio
 IDE with the [Flutter plugin][] or manually.
@@ -93,7 +93,8 @@ Android Studio in your existing Android project,
 you can either create a new Flutter module to integrate,
 or select an existing Flutter module that was created previously.
 
-在 Android Studio 打开现有的 Android 项目并点击菜单按钮 **File > New > New Module...** ，这样就可以创建处一个可以集成的新 Flutter 模块，或者选择导入已有的 Flutter 模块。
+在 Android Studio 打开现有的 Android 项目并点击菜单按钮 **File > New > New Module...** ，
+这样就可以创建处一个可以集成的新 Flutter 模块，或者选择导入已有的 Flutter 模块。
 
 {% include app-figure.md image="development/add-to-app/android/project-setup/ide-new-module.png" %}
 
@@ -335,7 +336,6 @@ so that it includes the local repository and the dependency:
 为此，需要在宿主应用程序中修改 `app/build.gradle` 文件，使其包含本地存储库和上述依赖项：
 
 <!--code-excerpt "MyApp/app/build.gradle" title-->
-
 ```gradle
 android {
   // ...
@@ -433,7 +433,7 @@ evaluate(new File(                                                     // new
 
 Assuming `my_flutter` is a sibling to `MyApp`.
 
-假设 `my_flutter` 和 `MyApp` 时同级目录。
+假设 `my_flutter` 和 `MyApp` 是同级目录。
 
 The binding and script evaluation allows the Flutter]
 module to `include` itself (as `:flutter`) and any

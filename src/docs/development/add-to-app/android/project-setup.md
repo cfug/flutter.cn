@@ -8,7 +8,7 @@ description: 了解如何将 Flutter module 集成到你现有的 Android 项目
 ---
 
 Flutter can be embedded into your existing Android
-application piecemeal, as a source code Grade
+application piecemeal, as a source code Gradle
 subproject or as AARs.
 
 Flutter 可以作为 Grade 子项目源码或者 AAR 嵌入到现有的 Android 应用程序中。

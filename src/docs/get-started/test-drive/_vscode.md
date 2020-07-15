@@ -60,19 +60,22 @@ contains a simple demo app that uses [Material Components][].
     - To setup a real device, follow the device-specific instructions on the
       [Install][] page for your OS.
       
-      如果要设置一台实际硬件设备，请根据操作系统在 [安装][] 页面
-      按照相关设备配置步骤进行操作
-      
- 1. Press the **Settings button**&mdash;a cog icon gear
-    on the top right (now marked with a red or orange indicator)
-    next to the DEBUG text box that reads **No Configuration**.
-    Select flutter. And choose the debug configuration:
-    To create your emulator if it is closed or to run the
-    emulator or device that is now connected.
+ 1. Activate a **Flutter** launch configuration. If needed, add one like:
+
+    激活 **Flutter** 启动配置。如果需要的话，可以添加类似以下内容：
+
+    ```json
+    {
+      "name": "Flutter",
+      "type": "dart",
+      "request": "launch"
+    }
+    ```
     
-    点击右上角一个齿轮状的**设置按钮**&mdash; <i class="material-icons align-bottom">gear</i>，
-    有一个红色或者橘色的点，它在 DEBUG 文本框旁边，选择 Flutter。
-    选择调试配置：选择现在连接的设备，或者模拟器（如果没有，请创建）。
+    For more information on adding a launch configuration, see
+    ["Launch configurations" in the Visual Studio Code User Guide][launch config].
+
+    更多关于添加启动配置信息请查看 [Visual Studio Code 用户指南中的 “启动配置”][launch config]。
 
  1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
     
@@ -107,6 +110,7 @@ contains a simple demo app that uses [Material Components][].
 [Install]: /docs/get-started/install
 [Material Components]: {{site.material}}/guidelines
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
+[launch config]: https://code.visualstudio.com/Docs/editor/debugging#_launch-configurations
 [status bar]: {% asset tools/vs-code/device_status_bar.png @path %}
 [在 Flutter 设备中快速切换]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
 [安装]: /docs/get-started/install

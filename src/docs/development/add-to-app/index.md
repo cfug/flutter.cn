@@ -51,14 +51,14 @@ It currently has the _**following limitations**_:
   目前尚未支持将多个 Flutter 库打包到同一个应用中；
   
 * Plugins used in add-to-app on Android should migrate
-  to the [new Android plugin APIs][], based on [`FlutterPlugin`].
+  to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
   Plugins that don't support `FlutterPlugin` may have unexpected
   behaviors if they make assumptions that are untenable in add-to-app
   (such as assuming that a Flutter `Activity` is always present).
 * As of v1.17, the Flutter module only supports AndroidX applications on Android.
 
   在 Android 平台，使用了添加到现有应用 (add-to-app) 的插件需要迁移到支持
-  使用基于 [`FlutterPlugin`] 的 [Android 插件 API][new Android plugin APIs]。
+  使用基于 [`FlutterPlugin`] 的 [Android 插件 API][Android plugin APIs]。
   一些不支持 `FlutterPlugin` 的插件可能会有不可预知的行为，比如进行了错误的预判，
   认为 Flutter `Activity` 一直处于活跃状态。
 

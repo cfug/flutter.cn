@@ -99,7 +99,7 @@ following structure:
   assets
     AssetManifest.json
     FontManifest.json
-    LICENSE
+    NOTICES
     fonts
       MaterialIcons-Regular.ttf
       <other font files>

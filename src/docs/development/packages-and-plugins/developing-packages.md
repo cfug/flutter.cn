@@ -33,7 +33,7 @@ minimal package consists of the following:
 <br> A metadata file that declares the package name,
   version, author, and so on.
 
-**pubspec.yaml` 文件**
+**pubspec.yaml文件**
 <br> 用于定义 package 名称、版本号、作者等其他信息的元数据文件。
 
 **`lib`**

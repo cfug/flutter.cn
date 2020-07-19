@@ -16,9 +16,11 @@ Flutter 可以作为 Gradle 子项目源码或者 AAR 嵌入到现有的 Android
 The integration flow can be done using the Android Studio
 IDE with the [Flutter plugin][] or manually.
 
-开发者可以使用带有 [Flutter 插件][Flutter plugin] 的 Android Studio 或手动完成整个集成流程。
+开发者可以使用带有 [Flutter 插件][Flutter plugin] 
+的 Android Studio 或手动完成整个集成流程。
 
 {{site.alert.warning}}
+
   Your existing Android app may support architectures such as `mips`
   or `x86`. Flutter currently [only supports][]
   building ahead-of-time (AOT) compiled libraries
@@ -83,7 +85,8 @@ supports integrating using a source code Gradle subproject,
 rather than using AARs. See below for more details on
 the distinction.
 
-只有在 Android Studio 3.6 及以上的版本，配合 42 以上版本的 IntelliJ [Flutter 插件][Flutter plugin] 才能直接通过 Android Studio 执行集成流程，
+只有在 Android Studio 3.6 及以上的版本，配合 42 以上版本的
+IntelliJ [Flutter 插件][Flutter plugin] 才能直接通过 Android Studio 执行集成流程，
 并且，Android Studio 目前仅支持以 Gradle 子项目源码的方式集成，而不能以 AAR 方式集成。
 有关这两种方式的区别及更多详细信息，请参见下文。
 
@@ -112,6 +115,7 @@ and your app is ready to build.
 配置添加 Flutter 模块作为依赖项，这时集成应用就已准备好进行下一步的构建。
 
 {{site.alert.note}}
+
   To see the changes that were automatically made to your
   Android project by the IDE plugin, consider using
   source control for your Android project before performing
@@ -142,7 +146,8 @@ You can jump to the [Adding a Flutter screen to an Android app][]
 to follow the next steps.
 
 现在，应用程序已经包含了 Flutter 模块作为依赖项，
-你可以跳转至 [向 Android 应用中添加 Flutter 页面][Adding a Flutter screen to an Android app] 执行后续步骤。
+你可以跳转至
+[向 Android 应用中添加 Flutter 页面][Adding a Flutter screen to an Android app] 执行后续步骤。
 
 ## Manual integration
 
@@ -186,6 +191,7 @@ module an embeddable Android library.
 而且还可以作为封装程序来帮助引导 Flutter 模块作为可嵌入的 Android 库。
 
 {{site.alert.note}}
+
   Add custom Android code to your own existing
   application's project or a plugin,
   not to the module in `.android/`.
@@ -300,7 +306,8 @@ More specifically, this command creates
 (by default all debug/profile/release modes)
 a [local repository][], with the following files:
 
-详细地说，该命令应用于创建（默认情况下创建 debug/profile/release 所有模式）本地存储库，主要包含以下文件：
+详细地说，该命令应用于创建（默认情况下创建 debug/profile/release 所有模式）本地存储库，
+主要包含以下文件：
 
 ```text
 build/host/outputs/repo
@@ -332,7 +339,8 @@ to find these files.
 To do that, edit `app/build.gradle` in your host app
 so that it includes the local repository and the dependency:
 
-为此，需要在宿主应用程序中修改 `app/build.gradle` 文件，使其包含本地存储库和上述依赖项：
+为此，需要在宿主应用程序中修改 `app/build.gradle` 文件，
+使其包含本地存储库和上述依赖项：
 
 <!--code-excerpt "MyApp/app/build.gradle" title-->
 ```gradle
@@ -402,6 +410,7 @@ Flutter SDK to build the host app.
 但是此时，你的团队必须安装 Flutter SDK 才能构建宿主应用程序。
 
 {{site.alert.tip}}
+
   By default, the host app provides the `:app` Gradle project.
   To change the name of this project, set
   `flutter.hostAppProjectName` in the Flutter module's
@@ -462,7 +471,9 @@ Your app now includes the Flutter module as a dependency.
 You can follow the next steps in the [Adding a Flutter screen to an Android app][].
 
 此时，你的应用程序已将 Flutter 模块添加为依赖项，
-下面，你可以按照 [向 Android 应用中添加 Flutter 页面][Adding a Flutter screen to an Android app] 中的后续步骤继续操作。
+下面，你可以按照 
+[向 Android 应用中添加 Flutter 页面][Adding a Flutter screen to an Android app] 
+中的后续步骤继续操作。
 
 
 [`abiFilters`]: http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.NdkOptions.html

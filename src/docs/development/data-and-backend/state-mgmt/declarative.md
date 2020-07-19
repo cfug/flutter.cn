@@ -56,7 +56,7 @@ and the UI rebuilds from scratch.
 Read more about the declarative approach to UI programming
 in the [get started guide][].
 
-在 [声明式 UI 介绍][in the get started guide]
+在 [声明式 UI 介绍][get started guide]
 中你可以阅读更多有关声明式编程思维的信息。
 
 The declarative style of UI programming has many benefits.

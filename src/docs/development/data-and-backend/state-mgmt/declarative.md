@@ -54,9 +54,9 @@ and the UI rebuilds from scratch.
 （例如 widget.setText ）&mdash;你改变了状态，那么用户界面将重新构建。
 
 Read more about the declarative approach to UI programming
-[in the get started guide][].
+in the [get started guide][].
 
-在 [声明式 UI 介绍][in the get started guide]
+在 [声明式 UI 介绍][get started guide]
 中你可以阅读更多有关声明式编程思维的信息。
 
 The declarative style of UI programming has many benefits.
@@ -74,4 +74,4 @@ imperative style. This is why this section is here. Read on.
 刚开始的时候，这种编码风格可能看起来不像命令式的那么直观。
 这也是本章为什么出现在这的原因。
 
-[in the get started guide]: /docs/get-started/flutter-for/declarative
+[get started guide]: /docs/get-started/flutter-for/declarative

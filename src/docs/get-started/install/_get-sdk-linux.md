@@ -8,24 +8,36 @@
 
 ## Get the Flutter SDK {#get-sdk}
 
-## 获取 Flutter SDK {#get-sdk}
+On Linux, you have two ways you can install Flutter.
 
+### Install Flutter using snapd
+
+The easiest way to install Flutter on Linux is by
+using snapd. For more information,
+see [Installing snapd][].
+
+Once you have snapd, you can
+[install Flutter using the Snap Store][],
+or at the command line:
+
+```sh
+$ sudo snap install flutter --classic
+```
+
+### Install Flutter manually
+
+If you don't have `snapd`, or can't use it, you can
+install Flutter using the following steps.
 
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
-
-    下载以下安装包来获取最新的 {{site.sdk.channel}} Flutter SDK：
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds,
     see the [SDK archive][] page.
 
-    想要获取到其他版本的安装包，请参阅 [SDK 版本列表][SDK archive] 页面。
-
  1. Extract the file in the desired location, for example:
-
-    将文件解压到目标路径, 比如:
 
     {% comment %}
       Our JS also updates the filename in this template, but it doesn't include the terminal formatting:
@@ -46,10 +58,6 @@
     Instead, get the source code from the [Flutter repo][]
     on GitHub with the following command:
     
-    如果你不想安装固定版本的安装包，你可以跳过步骤 1 和 2。
-    或者是从 GitHub 上的 [Flutter repo][] 获取源代码，
-    并根据需要更改分支或标签。
-    
     ```terminal
     $ git clone https://github.com/flutter/flutter.git
     ```
@@ -57,15 +65,11 @@
     You can also change branches or tags as needed.
     For example, to get just the stable version:
     
-    你也可以根据需要切换选择分支，比如用下面的参数获得稳定版本：
-    
     ```terminal
     $ git clone https://github.com/flutter/flutter.git -b stable --depth 1
     ```
-
- 3. Add the `flutter` tool to your path:
-
-    配置 `flutter` 的 PATH 环境变量：
+    
+ 1. Add the `flutter` tool to your path:
 
     ```terminal
     $ export PATH="$PATH:`pwd`/flutter/bin"
@@ -76,59 +80,32 @@
     To permanently add Flutter to your path, see
     [Update your path][].
 
-    这个命令配置了 `PATH` 环境变量，且只会在你 **当前** 命令行窗口中生效。
-    如果想让它永久生效，请查看 [更新 PATH 环境变量][Update your path]。
-    
- 4. Optionally, pre-download development binaries:
-    
-    开发二进制文件预下载（可选操作）
+ 1. Optionally, pre-download development binaries:
 
     The `flutter` tool downloads platform-specific development binaries as
     needed. For scenarios where pre-downloading these artifacts is preferable
     (for example, in hermetic build environments,
     or with intermittent network availability), iOS
     and Android binaries can be downloaded ahead of time by running:
-    
-    `flutter` 命令行工具会下载不同平台的开发二进制文件，
-    如果需要一个封闭式的构建环境，
-    或在网络可用性不稳定的情况下使用等情况，
-    你可能需要通过下面这个命令预先下载
-    iOS 和 Android 的开发二进制文件：
-
 
     ```terminal
     $ flutter precache
     ```
 
     For additional download options, see `flutter help precache`.
-    
-    更多使用方式，请使用 `flutter help precache` 命令查看。
 
 You are now ready to run Flutter commands!
 
-现在你可以愉快地运行 Flutter 的命令行啦！
-
-
 {{site.alert.note}}
-
   To update an existing version of Flutter, see
   [Upgrading Flutter][].
-  
-  如果想要升级当前的 Flutter 版本，可以查看 [升级 Flutter][Upgrading Flutter]。
-
 {{site.alert.end}}
 
 
 ### Run flutter doctor
 
-### 运行 flutter doctor 命令
-
-
 Run the following command to see if there are any dependencies you need to
 install to complete the setup (for verbose output, add the `-v` flag):
-
-通过运行以下命令来查看当前环境是否需要安装其他的依赖
-（如果想查看更详细的输出，增加一个 `-v` 参数即可）：
 
 ```terminal
 $ flutter doctor
@@ -139,40 +116,27 @@ window. The Dart SDK is bundled with Flutter; it is not necessary to install
 Dart separately. Check the output carefully for other software you might
 need to install or further tasks to perform (shown in **bold** text).
 
-这个命令会检查你当前的配置环境，并在命令行窗口中生成一份报告。
-安装 Flutter 会附带安装 Dart SDK，所以不需要再对 Dart 进行单独安装。
-你需要仔细阅读上述命令生成的报告，看看别漏了一些需要安装的依赖，
-或者需要之后执行的命令（这个会以 **加粗的文本** 显示出来）。
-
 For example:
-
-比如你可能会看到下面这样的输出：
 
 <pre>
 [-] Android toolchain - develop for Android devices
     • Android SDK at /Users/obiwan/Library/Android/sdk
     <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
     • Try re-installing or updating your Android SDK,
-      visit https://flutter.dev/setup/#android-setup for detailed instructions.
+      visit {{site.url}}/setup/#android-setup for detailed instructions.
 </pre>
 
 The following sections describe how to perform these tasks and finish the setup
 process.
 
-之后的部分会向你描述如果执行这些命令来完成整体的配置过程。
-
 Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you’ve set everything up correctly.
-
-当你安装了任一缺失部分的依赖后，
-可以再次运行 `flutter doctor` 命令来确认是否成功安装。
 
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.github}}/flutter/flutter
+[install Flutter using the Snap Store]: https://snapcraft.io/flutter
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: /docs/development/tools/sdk/archive
-[Snap Store]: https://snapcraft.io/store
-[snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading

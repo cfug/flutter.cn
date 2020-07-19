@@ -57,7 +57,7 @@ your development environment must meet these minimum requirements:
     比如 Ubuntu/Debian 系统下的 `libglu1-mesa`，
     以及 Fedora 系统下的 `mesa-libGLU`。
 
-{% include_relative _get-sdk.md %}
+{% include_relative _get-sdk-linux.md %}
 
 {% include_relative _path-linux-chromeos.md %}
 

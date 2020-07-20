@@ -11,18 +11,19 @@
 ## 获取 Flutter SDK {#get-sdk}
 
 
- 1. Download the following installation bundle to get the latest {{site.sdk.channel}} release of the
-    Flutter SDK:
+ 1. Download the following installation bundle to get the latest
+    {{site.sdk.channel}} release of the Flutter SDK:
 
     下载以下安装包来获取最新的 {{site.sdk.channel}} Flutter SDK：
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds, see the [SDK archive][] page.
+    For other release channels, and older builds,
+    see the [SDK archive][] page.
 
     想要获取到其他版本的安装包，请参阅 [SDK 版本列表][SDK archive] 页面。
 
- 2. Extract the file in the desired location, for example:
+ 1. Extract the file in the desired location, for example:
 
     将文件解压到目标路径, 比如:
 
@@ -42,7 +43,8 @@
     
     If you don't want to install a fixed version of the installation bundle, 
     you can skip steps 1 and 2. 
-    Instead, get the source code from the [Flutter repo][] on GitHub with the following command:
+    Instead, get the source code from the [Flutter repo][]
+    on GitHub with the following command:
     
     如果你不想安装固定版本的安装包，你可以跳过步骤 1 和 2。
     或者是从 GitHub 上的 [Flutter repo][] 获取源代码，
@@ -52,7 +54,8 @@
     $ git clone https://github.com/flutter/flutter.git
     ```
     
-    You can also change branches or tags as needed. For example, to get just the stable version:
+    You can also change branches or tags as needed.
+    For example, to get just the stable version:
     
     你也可以根据需要切换选择分支，比如用下面的参数获得稳定版本：
     
@@ -68,7 +71,8 @@
     $ export PATH="$PATH:`pwd`/flutter/bin"
     ```
 
-    This command sets your `PATH` variable for the _current_ terminal window only.
+    This command sets your `PATH` variable for the
+    _current_ terminal window only.
     To permanently add Flutter to your path, see
     [Update your path][].
 
@@ -85,8 +89,10 @@
     or with intermittent network availability), iOS
     and Android binaries can be downloaded ahead of time by running:
     
-    `flutter` 命令行工具会下载不同平台的开发二进制文件，如果需要一个封闭式的构建环境，
-    或在网络可用性不稳定的情况下使用等情况，你可能需要通过下面这个命令预先下载
+    `flutter` 命令行工具会下载不同平台的开发二进制文件，
+    如果需要一个封闭式的构建环境，
+    或在网络可用性不稳定的情况下使用等情况，
+    你可能需要通过下面这个命令预先下载
     iOS 和 Android 的开发二进制文件：
 
 
@@ -121,7 +127,8 @@ You are now ready to run Flutter commands!
 Run the following command to see if there are any dependencies you need to
 install to complete the setup (for verbose output, add the `-v` flag):
 
-通过运行以下命令来查看当前环境是否需要安装其他的依赖（如果想查看更详细的输出，增加一个 `-v` 参数即可）：
+通过运行以下命令来查看当前环境是否需要安装其他的依赖
+（如果想查看更详细的输出，增加一个 `-v` 参数即可）：
 
 ```terminal
 $ flutter doctor
@@ -157,11 +164,15 @@ process.
 Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you’ve set everything up correctly.
 
-当你安装了任一缺失部分的依赖后，可以再次运行 `flutter doctor` 命令来确认是否成功安装。
+当你安装了任一缺失部分的依赖后，
+可以再次运行 `flutter doctor` 命令来确认是否成功安装。
 
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.github}}/flutter/flutter
+[Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: /docs/development/tools/sdk/archive
+[Snap Store]: https://snapcraft.io/store
+[snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading

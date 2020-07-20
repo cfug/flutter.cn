@@ -136,11 +136,11 @@ Flutter 扩展执行代码分析，它提供：
   (**View > Problems** or `Ctrl`+`Shift`+`M`
   (`Cmd`+`Shift`+`M` on macOS))
   Any analysis issues are shown in the Problems pane:<br>
-  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:width="90%"}
+  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:.mw-100.pt-1}
   
   查看所有当前代码问题（**View > Problems** 或 `Ctrl`+`Shift`+`M` (macOS 用 `Cmd`+`Shift`+`M`)）。
   所有问题分析都会在 Problems 面板展示：<br>
-  ![Problems 面板]({% asset tools/vs-code/problems.png @path %}){:width="660px"}
+  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:.mw-100.pt-1}
 
 ## Running and debugging
 
@@ -188,13 +188,13 @@ from the main IDE window, or press `F5`.
 When a Flutter project is open in VS Code,
 you should see a set of Flutter specific entries in the status bar,
 including a Flutter SDK version and a
-device name (or the message **No Devices**).
+device name (or the message **No Devices**):<br>
 
 当一个 Flutter 项目在 VS Code 中打开，
 你会在状态栏看到一些 Flutter 特有项，
-包括 Flutter SDK 版本和设备名称（或者**无设备**信息）。
+包括 Flutter SDK 版本和设备名称（或者**无设备**信息）：<br>
 
-![Flutter device]({% asset tools/vs-code/device_status_bar.png @path %}){:width="450px"}
+![VS Code status bar][]{:.mw-100.pt-1}
 
 {{site.alert.note}}
   * If you do not see a Flutter version number or device info,
@@ -247,10 +247,11 @@ Flutter 扩展会自动选择上次连接的设备。
  1. Click **Run > Start Without Debugging** in the
     main IDE window, or press `Ctrl`+`F5`.
     The status bar turns orange to show you are in a debug session.<br>
+    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:.mw-100.pt-1}
 
     在 IDE 主窗口点击 **Run > Start Without Debugging**，
     或者按 `Ctrl`+`F5`，状态栏变橙色说明你正处于调试模式。<br>
-    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:width="490px"}
+    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:.mw-100.pt-1}
     
 ### Run app with breakpoints
 
@@ -554,3 +555,4 @@ When filing new issues, include [flutter doctor][] output.
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
 [Set up an editor]: /docs/get-started/editor?tab=vscode
+[VS Code status bar]: {% asset tools/vs-code/device_status_bar.png @path %}

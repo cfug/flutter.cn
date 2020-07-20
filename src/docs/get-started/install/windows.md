@@ -25,9 +25,9 @@ your development environment must meet these minimum requirements:
   
   **操作系统**：Windows 7 SP1 或更高的版本（64 位操作系统）。
   
-- **Disk Space**: 400 MB (does not include disk space for IDE/tools).
+- **Disk Space**: 1.32 GB (does not include disk space for IDE/tools).
 
-  **磁盘空间**：除安装 IDE 和一些工具之外还应有至少 400 MB 的空间。
+  **磁盘空间**：除安装 IDE 和一些工具之外还应有至少 1.32 GB 的空间。
 
 - **Tools**: Flutter depends on these tools being available in your environment.
 

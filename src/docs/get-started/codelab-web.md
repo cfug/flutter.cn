@@ -1017,14 +1017,14 @@ area. The animation has the following behavior:
   刚启动时，登录区域的顶部显示一条红色的进度条。
 
 * When one text field contains text,
-  the red bar turns orange and animates one-third
+  the red bar turns orange and animates 0.15
   of the way across the sign in area.
 
   当一个字段被键入内容时，进度条从红色变成橙色
   并且进度条前进到 1/3 的登录区域顶部的距离。
 
 * When two text fields contain text,
-  the orange bar turns yellow and animates two-thirds
+  the orange bar turns yellow and animates half
   of the way across the sign in area.
 
   当第二个字段被键入内容时，进度条从橙色变为黄色

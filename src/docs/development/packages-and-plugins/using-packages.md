@@ -361,6 +361,7 @@ additional dependency options are available:
 **Path dependency**
 <br> A Flutter app can depend on a plugin via a file system
   `path:` dependency. The path can be either relative or absolute.
+  Relative paths are evaluated relative to the directory containing `pubspec.yaml`.
   For example, to depend on a plugin `plugin1` located in a directory
   next to the app, use the following syntax:
 

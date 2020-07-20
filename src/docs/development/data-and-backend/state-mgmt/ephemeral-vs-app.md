@@ -224,7 +224,7 @@ Dan Abramov, replied:
 当我们就 React 的 setState 和 Redux 的 Store 
 哪个好这个问题问 Redux 的作者 Dan Abramov 时, 他如此回答:
 
-> "The rule of thumb is: [Do whatever is less awkward]."
+> "The rule of thumb is: [Do whatever is less awkward][]."
 >
 > "经验原则是: [选择能够减少麻烦的方式][Do whatever is less awkward]"
 
@@ -240,5 +240,5 @@ the two depends on your own preference and the complexity of the app.
 其他的是你的应用应用状态，在任何一个 Flutter 应用中这两种状态都有自己的位置。
 如何划分这两种状态取决于你的偏好以及应用的复杂度。
 
-[`PageView`]: {{site.api}}/flutter/widgets/PageView-class.html
 [Do whatever is less awkward]: {{site.github}}/reduxjs/redux/issues/1287#issuecomment-175351978
+[`PageView`]: {{site.api}}/flutter/widgets/PageView-class.html

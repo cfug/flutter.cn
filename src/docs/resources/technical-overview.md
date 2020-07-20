@@ -475,7 +475,7 @@ Flutter 是开源的，而且我们鼓励公开对话，但需要阅读我们的
 [`DecoratedBox`]: {{site.api}}/flutter/widgets/DecoratedBox-class.html
 [Discord]: https://discord.gg/N7Yshp4
 [tech preview]: /web
-[examples]: {{site.github}}/flutter/samples/blob/master/INDEX.md
+[examples]: https://flutter.github.io/samples
 [@flutterdev]: https://twitter.com/flutterdev
 [fully concrete widgets]: {{site.api}}/flutter/widgets/RenderObjectWidget-class.html
 [Flutter tutorials]: /docs/reference/tutorials

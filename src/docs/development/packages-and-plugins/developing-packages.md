@@ -33,7 +33,7 @@ minimal package consists of the following:
 <br> A metadata file that declares the package name,
   version, author, and so on.
 
-**pubspec.yaml` 文件**
+**`pubspec.yaml` 文件**
 <br> 用于定义 package 名称、版本号、作者等其他信息的元数据文件。
 
 **`lib`**
@@ -254,7 +254,9 @@ for Android, another for web, and yet another for a car (as an example of an IoT
 device). Among other benefits, this approach allows a domain expert to extend an
 existing plugin to work for the platform they know best.
 
-Federated plugins （联合插件）是一种将对不同平台的支持分为单独的软件包。所以，联合插件能够使用针对 iOS、Android、web 甚至是针对汽车（例如在 IoT 设备上）分别使用对应的 package。
+Federated plugins （联合插件）是一种将对不同平台的支持分为单独的软件包。
+所以，联合插件能够使用针对 iOS、Android、Web 甚至是针对汽车
+（例如在 IoT 设备上）分别使用对应的 package。
 除了这些好处之外，它还能够让领域专家在他们最了解的平台上扩展现有平台插件。
 
 A federated plugin requires the following packages:
@@ -264,8 +266,6 @@ A federated plugin requires the following packages:
 **app-facing package**
 : The package that plugin users depend on to use the plugin.
   This package specifies the API used by the Flutter app.
-
-  
 
 **platform package(s)**
 : One or more packages that contain the platform-specific

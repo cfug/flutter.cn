@@ -36,7 +36,7 @@ It also uses concepts that are applicable in every other approach.
 
 That said, if you have a strong background in
 state management from other reactive frameworks,
-you can find packages and tutorials listed on the [options page].
+you can find packages and tutorials listed on the [options page][].
 
 即便如此，如果你已经从其它响应式框架上积累了丰富的状态管理经验的话，
 那么可以在 
@@ -371,7 +371,7 @@ model itself and its business logic.
 
 `ChangeNotifier` is part of `flutter:foundation` and doesn't depend on 
 any higher-level classes in Flutter. It's easily testable (you don't even need
-to use [widget testing] for it). For example,
+to use [widget testing][] for it). For example,
 here's a simple unit test of `CartModel`:
 
 `ChangeNotifier` 是 `flutter:foundation` 的一部分，

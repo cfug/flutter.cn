@@ -155,8 +155,10 @@ There are two ways to embed Flutter in your existing application.
   and Release on a real device.
 
   你的应用将不能在模拟器上运行 Release 模式，
-  因为 Flutter 还不支持将 Dart 代码编译成 x86 ahead-of-time (AOT) 模式的二进制文件。
-  你可以在模拟机和真机上运行 Debug 模式，在真机上运行 Release 模式。
+  因为 Flutter 还不支持将 Dart 代码编译成
+  x86 ahead-of-time (AOT) 模式的二进制文件。
+  你可以在模拟机和真机上运行 Debug 模式，
+  在真机上运行 Release 模式。
 
   To run your app on a simulator follow the instructions
   in the bottom of section [embed the frameworks][].
@@ -493,13 +495,6 @@ as described in Option B.
 CocoaPods 的 podspec 文件分发。
 这将会生成一个 `Flutter.podspec` 文件而不再生成 Flutter.framework 引擎文件。
 如选项 B 中所说的那样，它将会生成 App.framework 和插件框架。
-
-{{site.alert.important}}
-
-  The `--cocoapods` flag is available in Flutter v1.13.6.
-  
-  `--cocoapods` 参数在 Flutter 的 1.13.6 版本之后才生效。
-{{site.alert.end}}
 
 ```sh
 flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/

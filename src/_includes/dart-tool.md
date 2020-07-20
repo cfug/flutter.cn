@@ -24,15 +24,15 @@
   `flutter` 和 `dart` 命令是否位于同一目录以确保兼容。
   部分 Windows 系统也支持类似 `where` 的命令：
   
-  ```sh
-  $ which flutter; which dart
-  <path-to-flutter-sdk>/flutter-sdk/bin/flutter
+  ```terminal
+  $ which flutter dart
+  /path-to-flutter-sdk/bin/flutter
   /usr/local/bin/dart
   ```
 
   As shown above, the two commands don't come from
   the same `bin` directory. Update your path to use
-  commands from `<path-to-flutter-sdk>/bin` before 
+  commands from `/path-to-flutter-sdk/bin` before
   commands from `/usr/local/bin` (in this case).
   After updating your shell for the change to take effect,
   running the `which` or `where` command again
@@ -46,19 +46,18 @@
   修改完并使命令行窗口生效之后，再次运行 `which` 或 `where` 命令，
   就可以发现，`flutter` 和 `dart` 位于同一目录了：
 
-  ```sh
-  $ which flutter; which dart
-  <path-to-flutter-sdk>/flutter-sdk/bin/flutter
-  <path-to-flutter-sdk>/flutter-sdk/bin/dart
+  ```terminal
+  $ which flutter dart
+  /path-to-flutter-sdk/bin/flutter
+  /path-to-flutter-sdk/bin/dart
   ```
 
   To learn more about the `dart` command, run `dart -h`
-  from the command line, or see the [`dart` tool][] page
-  on dart.dev.
+  from the command line, or see the [dart tool][] page.
   
   了解更多关于 `dart` 命令的内容，可以在命令行运行 `dart -h`，
   或者在 Dart 文档查看 [`dart` 工具][`dart` tool] 了解更多。
   
 {{site.alert.end}}
 
-[`dart` tool]: {{site.dart-site}}/tools/dart-vm
+[dart tool]: {{site.dart-site}}/tools/dart-vm

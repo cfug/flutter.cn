@@ -1187,10 +1187,12 @@ The `Center` tells the `Container` that it can be any size it
 wants, but not bigger than the screen. Now the `Container`
 can indeed be 100 × 100.
 
-让后 `Center` 告诉 `Container` 可以变成任意大小，但是不能超出屏幕。
+然后 `Center` 告诉 `Container` 可以变成任意大小，但是不能超出屏幕。
 现在，`Container` 可以真正变成 100 × 100 大小了。
 
 ### Example 4
+
+### 样例 4
 
 {% asset ui/layout/layout-4.png class="mw-100" alt="Example 4 layout" %}
 
@@ -1243,7 +1245,7 @@ but not bigger than the screen. The `Container` wants to be
 of infinite size, but since it can’t be bigger than the screen,
 it just fills the screen.
 
-让后 `Center` 告诉 `Container` 可以变成任意大小，但是不能超出屏幕。
+然后 `Center` 告诉 `Container` 可以变成任意大小，但是不能超出屏幕。
 现在，`Container` 想要无限的大小，但是由于它不能比屏幕更大，
 所以就仅充满屏幕。
 
@@ -2175,7 +2177,7 @@ Here is an example:
 
 * Find a `Column` in your code and navigate to its
   source code. To do this, use `command+B` (macOS)
-  or `control+B` (Windows/Linux) in Android Studio or IntelliJ).
+  or `control+B` (Windows/Linux) in Android Studio or IntelliJ.
   You’ll be taken to the `basic.dart` file.
   Since `Column` extends `Flex`, navigate to the `Flex`
   source code (also in `basic.dart`).

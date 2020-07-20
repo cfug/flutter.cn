@@ -51,12 +51,13 @@ your development environment must meet these minimum requirements:
   **公用库**: Flutter 的 `test` 命令需要你的系统安装或存在如下的公用库。
   
   - `libGLU.so.1` - provided by mesa packages such as `libglu1-mesa` on
-     Ubuntu/Debian
+     Ubuntu/Debian and `mesa-libGLU` on Fedora.
     
     `libGLU.so.1` - 由 mesa 套件 (packages) 提供，
-    比如 Ubuntu/Debian 系统下的 `libglu1-mesa`
+    比如 Ubuntu/Debian 系统下的 `libglu1-mesa`，
+    以及 Fedora 系统下的 `mesa-libGLU`。
 
-{% include_relative _get-sdk.md %}
+{% include_relative _get-sdk-linux.md %}
 
 {% include_relative _path-linux-chromeos.md %}
 

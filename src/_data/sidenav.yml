@@ -128,7 +128,6 @@
           permalink: /docs/development/data-and-backend/networking
         - title: JSON 和序列化数据
           permalink: /docs/development/data-and-backend/json
-        - title: 后端服务
         - title: 使用 Firebase
           permalink: /docs/development/data-and-backend/firebase
     - title: 应用的无障碍和国际化 # TODO: use: Accessibility & localization
@@ -307,6 +306,8 @@
       permalink: /docs/deployment/ios
     - title: 打包和发布为 Web 应用
       permalink: /docs/deployment/web
+    - title: 打包和发布为 Linux 应用
+      permalink: /docs/deployment/linux
     - title: 持续部署
       permalink: /docs/deployment/cd
 

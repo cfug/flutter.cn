@@ -13,7 +13,8 @@ features, you can debug your code using your IDE's debugger.
 Only the first section of this guide, Debugging Dart code,
 is relevant for you.
 
-如果你只使用 Dart 语言开发 Flutter 应用，并且不使用特定于平台的的库或者功能，你可以使用 IDE 的调试器调试你的代码。
+如果你只使用 Dart 语言开发 Flutter 应用，并且不使用特定于平台的的库或者功能，
+你可以使用 IDE 的调试器调试你的代码。
 只有这篇指南的第一部分「调试 Dart 代码」对你有用。
 
 If you're writing a platform-specific plugin or using platform-specific
@@ -22,7 +23,8 @@ that portion of your code using Xcode (for iOS) or Android Gradle
 (for Android).  This guide shows you how you can connect _two_
 debuggers to your Dart app, one for Dart, and one for the OEM code.
 
-如果你正在开发特定于平台的的插件或者使用由 Swift，ObjectiveC，Java 或 Kotlin 语言编写的特定于平台的库，
+如果你正在开发特定于平台的的插件或者使用由
+Swift、ObjectiveC、Java 或 Kotlin 语言编写的特定于平台的库，
 你可以使用 Xcode（用于 iOS）或者 Android Gradle（用于 Android）调试这部分代码。
 本指南介绍如何将用于 Dart 和用于原生代码的 *两个* 调试器连接到你的 Dart 应用。
 
@@ -34,7 +36,8 @@ Use your IDE for standard Dart debugging. These instructions describe Android
 Studio, but you can use your preferred IDE with the Flutter and Dart
 plugins installed and configured.
 
-你可以使用 IDE 进行一般的 Dart 调试。以下内容针对 Android Studio 进行说明，但你也可以使用你喜欢的安装并配置好 Flutter 和 Dart 插件的编辑器来进行调试。
+你可以使用 IDE 进行一般的 Dart 调试。以下内容针对 Android Studio 进行说明，
+但你也可以使用你喜欢的安装并配置好 Flutter 和 Dart 插件的编辑器来进行调试。
 
 {{site.alert.tip}}
 
@@ -42,7 +45,8 @@ plugins installed and configured.
   simulator, which don't support profile mode. For more information, see
   [Flutter's modes][].
 
-  推荐连接到真机进行调试，而不是使用不支持 profie 构建模式的仿真器或模拟器。更多信息参考 [Flutter 的构建模式][Flutter's modes]。
+  推荐连接到真机进行调试，而不是使用不支持 profie 构建模式的仿真器或模拟器。
+  更多信息参考 [Flutter 的构建模式][Flutter's modes]。
 
 {{site.alert.end}}
 
@@ -82,24 +86,11 @@ plugins installed and configured.
 
   在 `counter++` 这一行上添加断点。
 
-{% comment %}
-
-Not needed for breakpoints to work.
-
-这些功能不需要断点。
-
-* Hot reload the app.
-
-  应用热重载。
-
-  {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}
-
-{% endcomment -%}
-
 * In the app, click the **+** button (FloatingActionButton,
   or FAB, for short) to increment the counter. The app pauses.
 
-  在应用里，点击 **+** 按钮（FloatingActionButton，或者简称 FAB）来增加数字。应用会暂停。
+  在应用里，点击 **+** 按钮
+  （FloatingActionButton，或者简称 FAB）来增加数字，应用会暂停。
 
 * The following screenshot shows:
 
@@ -123,7 +114,8 @@ You can step in, out, and over Dart statements, hot reload or resume the app,
 and use the debugger in the same way you'd use any debugger.
 The **5: Debug** button toggles display of the debug pane.
 
-你可以 step in/out/over Dart 语句、热重载和恢复执行应用、以及像使用其他调试器一样来使用 Dart 调试器。
+你可以 step in/out/over Dart 语句、热重载和恢复执行应用、
+以及像使用其他调试器一样来使用 Dart 调试器。
 **5: Debug** 按钮切换调试面板的显示。
 
 ### Flutter inspector
@@ -132,7 +124,8 @@ There are two other features provided by the Flutter plugin that you might
 find useful. The Flutter inspector is a tool for visualizing and exploring
 the Flutter widget tree and helps you:
 
-Flutter 插件提供了另外两个可能给你提供帮助的功能。Flutter inspector 是一个用来可视化以及查看 Flutter widget 树的工具，
+Flutter 插件提供了另外两个可能给你提供帮助的功能。
+Flutter inspector 是一个用来可视化以及查看 Flutter widget 树的工具，
 并帮助你：
 
 * Understand existing layouts
@@ -173,7 +166,8 @@ TODO: Android 提示 - 在 Mac 上如何设置快捷键？
 The rest of this guide shows how to set up your environment to debug OEM
 code. As you'd expect, the process works differently for iOS and Android.
 
-这篇指南剩下的部分介绍了如何搭建原生代码的调试环境。你应该可以想象到，对于 iOS 和 Android 这个过程是不同的。
+这篇指南剩下的部分介绍了如何搭建原生代码的调试环境。
+你应该可以想象到，对于 iOS 和 Android 这个过程是不同的。
 
 {% comment %}
 
@@ -191,12 +185,14 @@ Considere moving the info below to a new page.
   _Presen_ in the search field.
 
   通过安装 **Presentation Assistant** 插件来成为 Android Studio 的专业用户。
-  你可以打开 **Preferences** > **Plugins** > **Browsing repositories...** 并在搜索框中输入 **Presen** 来找到并安装这个插件。
+  你可以打开 **Preferences** > **Plugins** > **Browsing repositories...** 
+  并在搜索框中输入 **Presen** 来找到并安装这个插件。
 
   Once installed and AS is relaunched, this plugin helps you to become a
   pro user by:
 
-  当你安装并重启 Android Studio 之后，通过使用以下功能这个插件可以帮助你成为一个专业用户：
+  当你安装并重启 Android Studio 之后，
+  通过使用以下功能这个插件可以帮助你成为一个专业用户：
 
   * Showing the name and Windows/Linux/Mac shortcuts of any action you
     invoke.
@@ -226,7 +222,8 @@ Considere moving the info below to a new page.
     The plugin simultaneously brings up the Find panel and shows a hint for
     performing this same operation on all three platforms.
 
-    当焦点在编辑面板中时，输入 **command-Shift-A**（Mac）或者 **shift-control-A**（Windows 和 Linux）。
+    当焦点在编辑面板中时，
+    输入 **command-Shift-A**（Mac）或者 **shift-control-A**（Windows 和 Linux）。
     该插件会同时显示「查找」面板并显示在所有三个平台上执行此操作的提示。
 
     {% asset 'testing/debugging/oem/presentation-assistant-find-pane.png' alt='Find panel' %}{:width="100%"}
@@ -248,7 +245,8 @@ Considere moving the info below to a new page.
   * After an update, you might enter _Flutter_ or _Dart_ to see if
     new actions are available.
 
-    更新之后，你可以输入 **Flutter** 或者 **Dart** 来查看是否有新的可用的操作。
+    更新之后，你可以输入 **Flutter** 或者
+    **Dart** 来查看是否有新的可用的操作。
 
   Hide the Presentation Assistant's Find panel by using **Escape**.
 
@@ -267,7 +265,8 @@ two debuggers to your app: 1) the Dart debugger and,
 2) the Android Gradle debugger.
 
 为了调试原生代码，你需要一个包含 Android 原生代码的应用。
-在本节中，你将学会如何连接两个调试器到你的应用：1）Dart 调试器，和 2）Android Gradle 调试器。
+在本节中，你将学会如何连接两个调试器到你的应用：
+1）Dart 调试器，和 2）Android Gradle 调试器。
 
 * Create a basic Flutter app.
   
@@ -277,7 +276,8 @@ two debuggers to your app: 1) the Dart debugger and,
 [`url_launcher`]({{site.pub}}/packages/url_launcher)
 package:
 
-  替换 `lib/main.dart` 为来自 [`url_launcher`]({{site.pub}}/packages/url_launcher) 包的以下示例代码
+  替换 `lib/main.dart` 为来自 
+  [`url_launcher`]({{site.pub}}/packages/url_launcher) 包的以下示例代码：
 
 {% prettify dart %}
 // Copyright 2017 The Chromium Authors. All rights reserved.
@@ -411,24 +411,30 @@ dev_dependencies:
    opens flutter.dev in your phone's default browser and 2) **Launch
    in app** opens flutter.dev within your app.
 
-   点击调试按钮（{% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %}）来同时打开调试面板并启动应用。
+   点击调试按钮
+   （{% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %}）
+   来同时打开调试面板并启动应用。
    等待应用在设备上启动并在调试面板中显示 **Connected**。
    （第一次可能需要一分钟，但是之后的启动会变快。）
-   应用包含两个按钮：1）**Launch in browser** 在你的手机默认浏览器中打开 flutter.io 和 2）**Launch in app** 在你的应用中打开 flutter.io。
+   应用包含两个按钮：
+   1）**Launch in browser** 在你的手机默认浏览器中打开 flutter.dev 网站 
+   2）**Launch in app** 在你的应用中打开 flutter.dev 网站。
 
   {% asset 'testing/debugging/oem/launch-flutter-dev.png' alt='screenshot containing two buttons for opening flutter.dev' %}
 
 * Click the **Attach debugger to Android process** button (
   {% asset 'testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug' %} )
 
-  点击 **Attach debugger to Android process** 按钮（{% asset 'testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug' %}）
+  点击 **Attach debugger to Android process** 按钮
+  （{% asset 'testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug' %}）
 
 {{site.alert.tip}}
 
   If this button doesn't appear in the Projects menu bar, make sure that
   you are inside a Flutter project but <em>not a Flutter plugin</em>.
 
-  如果这个按钮没有显示在 Projects 菜单栏上，确定你正在使用的是 Flutter 项目而<em>不是 Flutter 插件</em>。
+  如果这个按钮没有显示在 Projects 菜单栏上，
+  确定你正在使用的是 Flutter 项目而<em>不是 Flutter 插件</em>。
 
 {{site.alert.end}}
 
@@ -436,17 +442,19 @@ dev_dependencies:
   Select **show all processes** to display available processes for each
   device.
 
-  从进程对话框中，你应该可以看到每一个设备的入口。选择 **show all processes** 来显示每个设备可用的进程。
+  从进程对话框中，你应该可以看到每一个设备的入口。
+  选择 **show all processes** 来显示每个设备可用的进程。
 
 * Choose the process you want to attach to. In this case, it's the
   `com.google.clickcount`
    (or <strong>com.<em>company</em>.<em>app_name</em></strong>)
    process for the Motorola Moto G.
 
-  选择你想附加到的进程。在这个例子中是 Motorola Moto G 的 `com.google.clickcount`（或 <strong>com.<em>company</em>.<em>app_name</em></strong>）进程。
+  选择你想附加到的进程。
+  在这个例子中是 Motorola Moto G 的 `com.google.clickcount`
+  （或 <strong>com.<em>company</em>.<em>app_name</em></strong>）进程。
   
   {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev' %}{:width="100%"}
-
 
 * In the debug pane, you should now see a tab for **Android Debugger**.
 
@@ -465,7 +473,8 @@ Both the Dart and OEM debuggers are interacting with the same process.
 User either, or both, to set breakpoints, examine stack, resume execution...
 In other words, debug!
 
-Dart 和原生调试器都在与同一个进程交互。使用其中一个或者同时使用两个来设置断点、检查堆栈、恢复运行……
+Dart 和原生调试器都在与同一个进程交互。
+使用其中一个或者同时使用两个来设置断点、检查堆栈、恢复运行……
 换句话说，调试！
 
   {% asset 'testing/debugging/oem/dart-debugger.png' alt='screenshot of Android Studio in the Dart debug pane.' %}{:width="100%"}
@@ -479,7 +488,8 @@ Dart 和原生调试器都在与同一个进程交互。使用其中一个或者
   Toggle between the debuggers by clicking the appropriate debugger in
    the Debug pane's banner.</center>
 
-  <center>Android 调试面板和 `GeneratedPluginRegistrant.java` 中的一个断点。通过单击调试面板顶部的相应调试器，在调试器之间进行切换。</center>
+  <center>Android 调试面板和 `GeneratedPluginRegistrant.java` 中的一个断点。
+  通过单击调试面板顶部的相应调试器，在调试器之间进行切换。</center>
 
 ## Debugging with Xcode (iOS)
 
@@ -489,7 +499,10 @@ In order to debug OEM iOS code, you need an app that contains OEM iOS code.
 In this section, you'll learn how to connect two debuggers to your app:
 1) the Dart debugger and, 2) the Xcode debugger.
 
-为了调试原生 iOS 代码，你需要一个包含原生 iOS 代码的应用。在本节中，你将学会如何连接两个调试器到你的应用：1）Dart 调试器，和 2）Xcode 调试器。
+为了调试原生 iOS 代码，你需要一个包含原生 iOS 代码的应用。
+在本节中，你将学会如何连接两个调试器到你的应用：
+1）Dart 调试器
+2）Xcode 调试器。
 
 [PENDING]
 

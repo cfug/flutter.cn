@@ -70,7 +70,7 @@ The following instructions outline the steps for supporting the new API:
    for more details on accessing app resources with
    the latest version (v2) of embedding.
    
-   将插件的主类文件 (`*Plugin.java`) 实现 [`FlutterPlugin`][] 接口。
+   在插件的主类文件中 (`*Plugin.java`) 实现 [`FlutterPlugin`][] 接口。
    对于稍微复杂的插件，您可以将 `FlutterPlugin` 与 `MethodCallHandler`
    拆分到不同的类中。如需更多关于如何使用新版 API 获取资源的内容，请参考下一节
    [基础插件][Basic plugin] 。

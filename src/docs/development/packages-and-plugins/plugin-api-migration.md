@@ -6,6 +6,7 @@ description: 如何升级旧 API 的插件以支持新的 API。
 ---
 
 {{site.alert.note}}
+
   You might be directed to this page if the framework detects that
   your app uses a plugin based on the old Android APIs.
 
@@ -16,8 +17,8 @@ description: 如何升级旧 API 的插件以支持新的 API。
 _If you don't write or maintain an Android Flutter plugin,
 you can skip this page._
 
-_如果您并非亲自开发或维护一个 Flutter 的 Android 插件，
-您可以跳过本页面。_
+**如果您并非亲自开发或维护一个 Flutter 的 Android 插件，
+您可以跳过本页面。**
 
 As of the 1.12 release,
 new plugin APIs are available for the Android platform.
@@ -38,7 +39,7 @@ Flutter isn't attached to any activities.
 
 相较旧的 API 而言，新版 API 的优点是为生命周期的相关组件提供了
 更简洁清晰的访问方式。例如，在使用旧的 [`PluginRegistry.Registrar.activity()`][]
-时，如果 Flutter 尚未附加到任何 activites ，可能会返回 null 。
+时，如果 Flutter 尚未附加到任何 activites，可能会返回 null 。
 
 In other words, plugins using the old API may produce undefined
 behaviors when embedding Flutter into an Android app.
@@ -51,7 +52,7 @@ a plugin that uses the new APIs, see the
 换句话说，在使用旧的 API 进行 Flutter 嵌入 Android 应用时，
 可能会产生意外的行为。
 Flutter 开发团队提供的大部分 [Flutter 插件][Flutter plugins] 已经完成了迁移。
-（了解如何成为[认证的发布者][verified publisher]）
+（了解如何成为 [认证的发布者][verified publisher]）
 作为参考， [battery package][] 已经迁移到新版 API 。
 
 ## Upgrade steps
@@ -136,9 +137,9 @@ The following instructions outline the steps for supporting the new API:
    to use `io.flutter.embedding.android.FlutterActivity`.
    For example:
    
-   （可选）如果您移除了 `MainActivity.java` ，请更新
+   （可选）如果您移除了 `MainActivity.java`，请更新
    `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`
-   以使用 `io.flutter.embedding.android.FlutterActivity` 。例如：
+   以使用 `io.flutter.embedding.android.FlutterActivity`。例如：
 
     <!--code-excerpt "AndroidManifest.xml" title-->
     ```xml
@@ -318,7 +319,7 @@ but aren't required.
    
    更新 `<plugin_name>/pubspec.yaml` 中 Flutter 版本的最低限制。
    所有已迁移的插件都将会设置最低版本为我们保证支持的最低版本
-   1.12.13+hotfix.6 。例如：
+   1.12.13+hotfix.6。例如：
 
     <!--code-excerpt "pubspec.yaml" title-->
     ```yaml
@@ -334,7 +335,7 @@ but aren't required.
    with the new embedder. For example:
    
    在 `<plugin_name>/test/<plugin_name>_e2e.dart` 中创建一个简单的测试。
-   为了测试添加了 v2 版本嵌入支持的 PR ，我们将尝试测试一些插件的基础功能。
+   为了测试添加了 v2 版本嵌入支持的 PR，我们将尝试测试一些插件的基础功能。
    这是一个确保插件正确注册到新的嵌入器的烟雾测试。例如：
 
     <!-- skip -->

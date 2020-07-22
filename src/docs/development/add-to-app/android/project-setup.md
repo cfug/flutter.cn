@@ -132,7 +132,7 @@ and your app is ready to build.
 
   默认情况下，项目的 Project 窗口中可能会显示的是 “Android” 视图，
   如果在 Project 窗口中看不到新创建的 Flutter 文件，
-  可以将 Project 窗口设置为显示 “Project  Files”，
+  可以将 Project 窗口设置为显示 “Project Files”，
   这时就会显示所有未过滤的文件。
 
 {{site.alert.end}}

@@ -14,8 +14,9 @@ If you feel that some of your questions haven't been answered,
 or that the approach described on these pages
 is not viable for your use cases, you are probably right.
 
-状态管理是一个复杂的议题。你可能遇到此教程暂未解答的问题，
-或者与此教程结果不符的现象。
+状态管理是一个相当复杂的话题。
+如果您在浏览后发现一些问题并未得到解答，或者并不适用于您的具体需求场景，
+自信些，您的实现就是对的。
 
 Learn more at the following links,
 many of which have been contributed by the Flutter community:
@@ -144,7 +145,7 @@ A state container approach familiar to many web developers.
 * [Flutter + Redux&mdash;How to make a shopping list app][],
   by Paulina Szklarska on Hackernoon
   
-  [Flutter + Redux&mdash;构建一个购物列表 APP  (Flutter + Redux&mdash;How to make a shopping list app)][Flutter + Redux&mdash;How to make a shopping list app]，
+  [Flutter + Redux&mdash;构建一个购物列表 APP (Flutter + Redux&mdash;How to make a shopping list app)][Flutter + Redux&mdash;How to make a shopping list app]，
   发布于 Hackernoon，Paulina Szklarska 著。
 
 * [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1][],

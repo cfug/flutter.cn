@@ -69,11 +69,6 @@ The following instructions outline the steps for supporting the new API:
    into two classes. See the next section, [Basic plugin][],
    for more details on accessing app resources with
    the latest version (v2) of embedding.
-   
-   在插件的主类文件中 (`*Plugin.java`) 实现 [`FlutterPlugin`][] 接口。
-   对于稍微复杂的插件，您可以将 `FlutterPlugin` 与 `MethodCallHandler`
-   拆分到不同的类中。如需更多关于如何使用新版 API 获取资源的内容，请参考下一节
-   [基础插件][Basic plugin] 。
    <br><br>
    Also, note that the plugin should still contain the static
    `registerWith()` method to remain compatible with apps that
@@ -84,15 +79,20 @@ The following instructions outline the steps for supporting the new API:
    `registerWith()` and `onAttachedToEngine()` can call.
    Either `registerWith()` or `onAttachToEngine()` will be called,
    not both.
-   
-   同时需要注意的是，插件仍需保留静态的 `registerWith()` 方法，从而适配不兼容
-   v2 版本嵌入的应用。 (查看 [Upgrading pre 1.12 Android projects][] 获取更多信息)
    <br><br>
    In addition, you should document all non-overridden public members
    within the plugin. In an add-to-app scenario,
    these classes are accessible to a developer and
    require documentation.
    
+   在插件的主类文件中 (`*Plugin.java`) 实现 [`FlutterPlugin`][] 接口。
+   对于稍微复杂的插件，您可以将 `FlutterPlugin` 与 `MethodCallHandler`
+   拆分到不同的类中。如需更多关于如何使用新版 API 获取资源的内容，请参考下一节
+   [基础插件][Basic plugin] 。
+   <br><br>
+   同时需要注意的是，插件仍需保留静态的 `registerWith()` 方法，从而适配不兼容
+   v2 版本嵌入的应用。 (查看 [Upgrading pre 1.12 Android projects][] 获取更多信息)
+   <br><br>
    此外，所有不可覆盖的公开成员都应该使用文档标注。在嵌入开发的场景下，这些可见内容
    通常需要包含文档。
 
@@ -406,17 +406,19 @@ important references:
 FlutterPluginBinding 为您的插件提供了几个重要的引用：
 
 **binding.getFlutterEngine()**
-: Returns the `FlutterEngine` that your plugin is attached to,
+<br> Returns the `FlutterEngine` that your plugin is attached to,
   providing access to components like the `DartExecutor`,
   `FlutterRenderer`, and more.
 
-: 返回插件附加到的 `FlutterEngine` ，提供了诸如 `DartExecutor` 、
+**binding.getFlutterEngine()**
+<br> 返回插件附加到的 `FlutterEngine` ，提供了诸如 `DartExecutor` 、
   `FlutterRenderer` 等内容的获取。
 
 **binding.getApplicationContext()**
-: Returns the Android application's `Context` for the running app.
+<br> Returns the Android application's `Context` for the running app.
 
-: 返回当前运行的安卓应用的 Application `Context` 。
+**binding.getApplicationContext()**
+<br> 返回当前运行的安卓应用的 Application `Context` 。
 
 ## UI/Activity plugin
 

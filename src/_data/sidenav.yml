@@ -335,6 +335,8 @@
       permalink: /docs/resources/faq
     - title: 规划文档
       permalink: /docs/resources/design-docs
+    - title: Creating useful bug reports
+      permalink: /docs/resources/bug-reports
 
 - title: 参考资料
   expanded: true

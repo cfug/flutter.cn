@@ -357,6 +357,15 @@ flag with `flutter create`.
 想要创建原生插件 package，
 请使用带有 `--template=plugin` 标志的 `flutter create` 命令。
 
+As of Flutter 1.20.0, Use the `--platforms=` option followed by a comma separated list to 
+specify the platforms that the plugin supports. Available platforms are: `android`, `ios`, `web`, `linux`, `macos`, and `windows`.
+If no platforms are specified, the resulting project doesn't support any platforms.
+
+从Flutter 1.20.0 版本，我们开始使用 `--platforms=` 这个选项，
+后面参数是用逗号分隔的列表，这个参数代表指定插件支持的平台。
+可用的平台有：`android`、`ios`、`web`、`linux`、`macos` 和`windows`。
+如果没有指定平台，则生成的项目不支持任何平台。
+
 Use the `--org` option to specify your organization,
 using reverse domain name notation. This value is used
 in various package and bundle identifiers in the
@@ -372,16 +381,16 @@ specify the language for ios. Please choose **one** of the following:
 请选择以下 **任一项**：
 
 ```terminal
-$ flutter create --org com.example --template=plugin -a kotlin hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios -a kotlin hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin -a java hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios -a java hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin -i objc hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios -i objc hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin -i swift hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios -i swift hello
 ```
 
 This creates a plugin project in the `hello` folder
@@ -428,10 +437,10 @@ Android 代码使用 Kotlin 编写。
 使用`-a` 指定 Android 所使用的语言。比如：
 
 ```terminal
-$ flutter create --template=plugin -i objc hello
+$ flutter create --template=plugin --platforms=android,ios -i objc hello
 ```
 ```terminal
-$ flutter create --template=plugin -a java hello
+$ flutter create --template=plugin --platforms=android,ios -a java hello
 ```
 
 ### Step 2: Implement the package {#edit-plugin-package}
@@ -568,12 +577,48 @@ interface package.
 最后，你需要将 Dart 编写的 API 代码与特定平台的实现相互关联。
 这是通过 [platform channels][] 完成的。
 
+### Add support for platforms in an existing plugin project
+
+### 为现有的插件项目加入平台的支持
+
+To add support for specific platforms to an existing plugin project, run `flutter create` with
+the `--template=plugin` flag again in the project directory.
+For example, to add web support in an existing plugin, run:
+
+要在现有的插件项目中添加对特定平台的支持，
+请在项目目录运行 `flutter create` 命令，并加入 `--template=plugin`。
+例如，要对现有的插件项目添加 Web 支持，请运行以下命令。
+
+```terminal
+$ flutter create --template=plugin --platforms=web .
+```
+
+If this command displays a message about updating the `pubspec.yaml` file,
+follow the provided instructions.
+
+如果这个命令返回了一个关于需要更新 `pubspec.yaml` 文件的提醒，
+请按照提示的说明进行操作。
+
+{{site.alert.important}}
+
+  The `--platforms ` flag is available in Flutter 1.20.0.
+  
+  `--platforms` 命令在 Flutter 1.20.0 版本之后可用。
+  
+{{site.alert.end}}
+
 ### Testing your plugin
+
+### 测试你的插件
 
 We encourage you test your plugin with automated tests, to ensure that
 functionality does not regress as you make changes to your code. For more
 information, see [Testing your plugin][], a section in [Supporting the new
 Android plugins APIs][].
+
+我们鼓励您使用自动化测试来测试您的插件，以确保代码在修改时候功能保持完整。
+更多信息，请参见文档：[支持新的 Android 的 API][Supporting the new Android plugins APIs]
+中关于 [测试您的插件][Testing your plugin] 这个小节。
 
 ## Adding documentation
 

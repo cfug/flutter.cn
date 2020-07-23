@@ -99,7 +99,7 @@ we recommend using automated accessibility scanners:
 
     1. In the Accessibility Inspector,
        select **Audit** in the toolbar, and then
-       select **Run Audio** to get a report of potential issues
+       select **Run Audit** to get a report of potential issues
 
        在辅助检查器中，选择工具栏中的**审核**，
        然后选择**运行音频”**来获取潜在问题的报告

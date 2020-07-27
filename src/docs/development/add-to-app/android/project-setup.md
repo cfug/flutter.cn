@@ -381,6 +381,7 @@ dependencies {
 {{site.alert.end}}
 
 {{site.alert.tip}}
+
   You can also build an AAR for your Flutter module in Android Studio using
   the `Build > Flutter > Build AAR` menu.
 

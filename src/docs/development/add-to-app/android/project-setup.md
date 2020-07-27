@@ -128,6 +128,7 @@ and your app is ready to build.
 {{site.alert.end}}
 
 {{site.alert.tip}}
+
   By default, your project's Project pane is probably
   showing the 'Android' view. If you can't see your new
   Flutter files in the Project pane, ensure that
@@ -368,13 +369,14 @@ dependencies {
 ```
 
 {{site.alert.important}}
+
   If you're located in China, use a mirror site such as
   `https://[a mirror site]/download.flutter.io` rather than the
   `storage.googleapis.com` domain directly. See our
   [Using Flutter in China][] page for information on mirrors.
 
   在国内，需要使用镜像站点（如直接使用 `https://[a mirror site]/download.flutter.io` 代替 `storage.googleapis.com`）。 
-  有关镜像的详细信息，参见 [在中国网络环境下使用 Flutter][Flutter's build modes] 页面。
+  有关镜像的详细信息，参见 [在中国网络环境下使用 Flutter][Using Flutter in China] 页面。
 
 {{site.alert.end}}
 

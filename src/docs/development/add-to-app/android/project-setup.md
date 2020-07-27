@@ -374,7 +374,7 @@ dependencies {
   [Using Flutter in China][] page for information on mirrors.
 
   在国内，需要使用镜像站点（如直接使用 `https://[a mirror site]/download.flutter.io` 代替 `storage.googleapis.com`）。 
-  有关镜像的详细信息，参见 [在中国网络环境下使用 Flutter][Flutter's build modes] 页面。
+  有关镜像的详细信息，参见 [在中国网络环境下使用 Flutter][Using Flutter in China] 页面。
 
 {{site.alert.end}}
 

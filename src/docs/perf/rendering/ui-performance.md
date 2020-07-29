@@ -524,16 +524,16 @@ instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise
 manipulated, a [`RepaintBoundary`][] might help.
 
-[programmatically]: /docs/testing/code-debugging#debugging-animations
-[`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
-
 卡顿是第一帧发生的还是贯穿整个动画过程呢？
 如果是整个动画过程的话，会是裁剪导致的吗？
 也许有可以替代裁剪的方法来绘制场景。
 比如说，不透明图层的长方形中用尖角来取代圆角裁剪。
 如果是一个静态场景的淡入、旋转或者其他操作，
 可以尝试使用重绘边界 ([RepaintBoundary][])。
+
+[programmatically]: /docs/testing/code-debugging#debugging-animations
+[`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
+[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
 #### Checking for offscreen layers
 

@@ -23,15 +23,31 @@ in a series of articles, written by the Flutter Material team,
 after they modified the [Flutter Gallery][] app to make it more
 performant on the web:
 
+如果你在用 Flutter 编写 Web 应用，你可能会对下面的系列文章感兴趣，
+他们由 Flutter Material 团队撰写，记录对 [Flutter Gallery][] 应用的修改，
+使其在 Web 上的展现更为丰富:
+
 * [Optimizing performance in Flutter web apps with tree
    shaking and deferred loading][web-perf-1]
+
+  [通过 tree shaking 和延迟加载来优化 Flutter Web 应用的性能
+  (Optimizing performance in Flutter web apps with 
+  tree shaking and deferred loading)][web-perf-1]
+
 * [Improving perceived performance with image placeholders,
-   precaching, and disabled navigation transitions][web-perf-2]
+  precaching, and disabled navigation transitions][web-perf-2]
+
+  [通过使用图像占位符、预缓存和禁用导航效果来提高性能
+  (Improving perceived performance with image placeholders, 
+  precaching, and disabled navigation transitions)][web-perf-2]
+
 * [Building performant Flutter widgets][web-perf-3]
+
+  [高效构建 Flutter widgets (Building performant Flutter widgets)][web-perf-3]
 
 
 [Flutter Gallery]: https://gallery.flutter.dev/#/
-[web-perf-1]: {{site.medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[web-perf-1]: {{site.medium}}/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [web-perf-2]: {{site.medium}}/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
 [web-perf-3]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
 

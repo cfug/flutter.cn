@@ -18,6 +18,23 @@ Flutter app possible.
 而不需要使用复杂的分析工具对细节做优化。
 这些最佳建议将帮助你编写性能最佳的 Flutter 应用程序。
 
+If you are writing web apps in Flutter, you might be interested
+in a series of articles, written by the Flutter Material team,
+after they modified the [Flutter Gallery][] app to make it more
+performant on the web:
+
+* [Optimizing performance in Flutter web apps with tree
+   shaking and deferred loading][web-perf-1]
+* [Improving perceived performance with image placeholders,
+   precaching, and disabled navigation transitions][web-perf-2]
+* [Building performant Flutter widgets][web-perf-3]
+
+
+[Flutter Gallery]: https://gallery.flutter.dev/#/
+[web-perf-1]: {{site.medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[web-perf-2]: {{site.medium}}/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
+[web-perf-3]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
+
 ## Best practices
 
 ## 最佳实践
@@ -48,7 +65,7 @@ when designing your app:
   避免在一个超长的 `build()` 方法中返回一个过于庞大的 widget。
   把他们分拆成不同的 widget，并进行封装，另外他们要这样改变：
 
-  * When `setState()` is called on a State, all descendent widgets will
+  * When `setState()` is called on a State, all descendent widgets
     rebuild. Therefore, localize the `setState()` call to the part of
     the subtree whose UI actually needs to change. Avoid calling
     setState() high up in the tree if the change is contained to a small
@@ -76,11 +93,16 @@ when designing your app:
 
 Also see:
 
-另见：
+另请参考：
 
-* [Performance considerations], part of the [`StatefulWidget`] API doc
+* [Performance considerations][], part of the [`StatefulWidget`][] API doc
+ 
+  [`StatefulWidget`][] API 文档中的 [Performance considerations][] 部分。
 
-  [`Statefulwidget`] API 文档的 [Performance considerations] 部分。
+[Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
+[source code for `SlideTransition`]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/transitions.dart
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
 
 ### Apply effects only when needed
 
@@ -111,8 +133,8 @@ Some general rules when applying specific effects:
 
 一些在使用效果时的通用规则：
 
-* Use the [`Opacity`] widget only when necessary.
-  See the [Transparent image] section in the Opacity
+* Use the [`Opacity`][] widget only when necessary.
+  See the [Transparent image][] section in the Opacity
   API page for an example of applying opacity directly
   to an image, which is faster than using the Opacity
   widget.
@@ -136,31 +158,32 @@ Other widgets that might trigger `saveLayer()` and are potentially costly:
 
 其他会触发 `saveLayer()` 的 widget，可能也会代价高昂。
 
-* [`ShaderMask`]
-* [`ColorFilter`]
-* [`Chip`]&mdash;might cause call to `saveLayer()` if
+* [`ShaderMask`][]
+* [`ColorFilter`][]
+* [`Chip`][]&mdash;might cause call to `saveLayer()` if
   `disabledColorAlpha != 0xff`
   
-  [`Chip`]&mdash;
+  [`Chip`][]&mdash;
   当 `disabledColorAlpha != 0xff` 的时候，会调用 `saveLayer()`  
 
-* [`Text`]&mdash;might cause call to `saveLayer()`
+* [`Text`][]&mdash;might cause call to `saveLayer()`
   if there's an `overflowShader`
   
-  [`Text`]&mdash;
+  [`Text`][]&mdash;
   当有 `overflowShader` 时，会调用`saveLayer()`
 
 Ways to avoid calls to `saveLayer()`:
 
 避免调用 `saveLayer()` 的方式：
 
-* To implement fading in an image, consider using the FadeInImage widget,
+* To implement fading in an image, consider using the
+  [`FadeInImage`][] widget,
   which applies a gradual opacity using the GPU’s fragment shader.
-  For more information, see the [`Opacity`] docs.
+  For more information, see the [`Opacity`][] docs.
 
-  要在图像中实现淡入淡出，请考虑使用 FadeInImage widget，
+  要在图像中实现淡入淡出，请考虑使用 [`FadeInImage`][] widget，
   该 widget 使用 GPU 的片段着色器应用渐变不透明度。
-  了解更多详情，请参见 [`Opacity`] 文档。
+  了解更多详情，请参见 [`Opacity`][] 文档。
 
 * To create a rectangle with rounded corners, instead of applying a
   clipping rectangle, consider using the `borderRadius` property offered
@@ -168,6 +191,14 @@ Ways to avoid calls to `saveLayer()`:
 
   要创建带圆角的矩形，而不是应用剪切矩形，
   请考虑使用很多 widget 都提供的 `borderRadius`属性。
+
+[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
+[`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
+[`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
+[`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
+[`ShaderMask`]: {{site.api}}/flutter/widgets/ShaderMask-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+[Transparent image]: {{site.api}}/flutter/widgets/Opacity-class.html#transparent-image
 
 ### Render grids and lists lazily
 
@@ -183,17 +214,22 @@ Also see:
 
 请参阅：
 
-* [Working with long lists] in the [Cookbook]
+* [Working with long lists][] in the [Cookbook][]
 
   [实用教程][Cookbook]里的 [长列表的处理][Working with long lists] 文档
 
-* [Creating a ListView that loads one page at a time]
+* [Creating a ListView that loads one page at a time][]
   a community article by AbdulRahman AlHamali
 
-  来自社区的 AbdulRahman AlHamali 撰写的
+  来自社区的 AbdulRahman AlHamali 撰写的文章
   [Creating a ListView that loads one page at a time]
 
-* [`Listview.builder`] API
+* [`Listview.builder`][] API
+
+[Cookbook]: /cookbook
+[Creating a ListView that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
+[`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[Working with long lists]: /cookbook/lists/long-lists
 
 ###  Build and display frames in 16ms
 
@@ -213,7 +249,7 @@ the build and render stages is OK.
 如果需要考虑丢帧（jankyness），那么每个构建和渲染阶段的 16ms 都可以。
 
 If your frames are rendering in well under 16ms total in
-[profile mode],
+[profile mode][],
 you likely don’t have to worry about performance even if some
 performance pitfalls apply, but you should still aim to build and
 render a frame as fast as possible. Why?
@@ -240,7 +276,10 @@ render a frame as fast as possible. Why?
   当 120fps 的设备普及之后，便需要在 8ms 之内完成每一帧的渲染来保证流畅平滑的体验。
 
 If you are wondering why 60fps leads to a smooth visual experience,
-see the video [Why 60fps?]
+see the video [Why 60fps?][]
+
+[profile mode]: /docs/testing/build-modes#profile
+[Why 60fps?]: https://www.youtube.com/watch?v=CaMTIgxCSqU
 
 如果你想弄明白为什么 60fps 会带来平滑的视觉体验，
 请看视频 [Why 60fps?](https://www.bilibili.com/video/av55811304/)
@@ -269,7 +308,7 @@ The following behaviors might negatively impact your app's performance.
 * Avoid using the `Opacity` widget, and particularly avoid it in an animation.
   Use `AnimatedOpacity` or `FadeInImage` instead.
   For more information,
-  see [Performance considerations for opacity animation].
+  see [Performance considerations for opacity animation][].
 
   避免使用 `Opacity` widget，尤其是在动画中避免使用。
   请用 `AnimatedOpacity` 或 `FadeInImage` 进行代替。
@@ -280,7 +319,8 @@ The following behaviors might negatively impact your app's performance.
   function that builds widgets that don’t depend on the animation.
   This subtree is rebuilt for every tick of the animation.
   Instead, build that part of the subtree once and pass it as a child to
-  the AnimatedBuilder. For more information, see [Performance optimizations].
+  the AnimatedBuilder. For more information,
+  see [Performance optimizations][].
 
   使用 AnimatedBuilder 时，请避免在不依赖于动画的 widget 的构造方法中构建 widget 树。
   动画的每次变动都会重建这个 widget 树。
@@ -308,40 +348,24 @@ For more performance info, see the following resources:
 
 要了解更多性能信息，请参见以下资源：
 
-* [Performance optimizations] in the AnimatedBuilder API page
+* [Performance optimizations][] in the AnimatedBuilder API page
 
-  AnimatedBuilder API 页面的 [Performance optimizations] 部分；
+  AnimatedBuilder API 页面的 [Performance optimizations][] 部分；
 
-* [Performance considerations for opacity animation] in the Opacity API page
+* [Performance considerations for opacity animation][] in the Opacity API page
 
-  Opacity API 页面的 [Performance considerations for opacity animation] 部分；
+  Opacity API 页面的 [Performance considerations for opacity animation][] 部分；
 
-* [Child elements' lifecycle] and how to load them efficiently,
+* [Child elements' lifecycle][] and how to load them efficiently,
   in the ListView API page
 
   ListView API 页面中 [Child elements' lifecycle][]，以及如何高效加载元素；
   
-* [Performance considerations] of a `StatefulWidget`
+* [Performance considerations][] of a `StatefulWidget`
  
-  Statefulwidget 的 [Performance considerations][] API 文档。
+  `StatefulWidget` 的 [Performance considerations][] API 文档。
   
   
 [Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
-[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
-[`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
-[Cookbook]: /cookbook
-[Creating a ListView that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
-[`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
-[Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
-[profile mode]: /docs/testing/build-modes#profile
-[`ShaderMask`]: {{site.api}}/flutter/widgets/ShaderMask-class.html
-[source code for `SlideTransition`]: https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/transitions.dart
-[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
-[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
-[Transparent image]: {{site.api}}/flutter/widgets/Opacity-class.html#transparent-image
-[Why 60fps?]: https://www.youtube.com/watch?v=CaMTIgxCSqU
-[Working with long lists]: /cookbook/lists/long-lists

@@ -105,7 +105,6 @@
               permalink: /docs/development/ui/advanced/gestures
             - title: 闪屏页
               permalink: /docs/development/ui/advanced/splash-screen
-        - title: 平台特定主题
         - title: 核心 Widget 目录
           permalink: /docs/development/ui/widgets
     - title: 数据调用和后端

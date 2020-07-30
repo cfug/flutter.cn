@@ -63,6 +63,9 @@ steps to take, and tools that can help.
 
 {{site.alert.end}}
 
+[Debugging]: /docs/testing/debugging
+[Tracing Dart code]: /docs/testing/debugging#tracing-dart-code
+
 ## Diagnosing performance problems
 
 ## 分析性能问题
@@ -78,6 +81,8 @@ your users might use.
 分析应用的性能问题需要打开性能监控图层 (performance overlay) 
 来观察 UI 和 GPU 线程。在此之前，要确保是在 [分析模式][profile mode] 下运行，
 而且当前设备不是虚拟机。使用用户可能采用的最慢设备来获取最佳结果。
+
+[profile mode]: /docs/testing/build-modes#profile
 
 ### Connect to a physical device
 
@@ -182,12 +187,15 @@ Launch the app in profile mode as follows:
 For more information on the different modes,
 see [Flutter's build modes][].
 
-关于不同模式的更多信息，请参考 [Flutter 的构建模式选择][]
+关于不同模式的更多信息，请参考文档：
+[Flutter 的构建模式选择][Flutter's build modes]。
 
 You'll begin by opening DevTools and viewing
 the performance overlay, as discussed in the next section.
 
 下面我们会从打开 DevTools、查看性能图层开始讲述。
+
+[Flutter's build modes]: /docs/testing/build-modes
 
 ## Launch DevTools
 
@@ -205,7 +213,11 @@ DevTool 的 [Timeline] 界面可以让开发者逐帧分析应用的 UI 性能�
 Once your app is running in profile mode,
 [launch DevTools][].
 
-一旦你的应用程序在分析模式下运行，即 [运行了 DevTools][launch DevTools]。
+一旦你的应用程序在分析模式下运行，
+即 [运行 DevTools][launch DevTools]。
+
+[launch DevTools]: /docs/development/tools/devtools
+[Timeline view]: /docs/development/tools/devtools/timeline
 
 ## The performance overlay
 
@@ -230,7 +242,8 @@ and use it to diagnose the cause of jank in your application.
 The following screenshot shows the performance overlay running
 on the Flutter Gallery example:
 
-本节阐述如何打开性能图层并用其来分析应用中卡顿的原因。下面的截图展示了 Flutter Gallery 样例的性能图层：
+本节阐述如何打开性能图层并用其来分析应用中卡顿的原因。
+下面的截图展示了 Flutter Gallery 样例的性能图层：
 
 ![Screenshot of overlay showing zero jank]({% asset tools/devtools/performance-overlay-green.png @path %})
 
@@ -238,7 +251,8 @@ on the Flutter Gallery example:
 and UI thread (bottom).<br>The vertical green bars
 represent the current frame.
 
-<br>raster 线程的性能情况在上面，UI 线程显示在下面。<br>垂直的绿色条条代表的是当前帧。
+<br>raster 线程的性能情况在上面，UI 线程显示在下面。
+<br>垂直的绿色条条代表的是当前帧。
 
 ## Interpreting the graphs
 
@@ -294,6 +308,8 @@ display red, start by diagnosing the UI thread.
 <br>红色竖条表明当前帧的渲染和绘制都很耗时。<br>
 当两张图表都是红色时，就要开始对 UI 线程 (Dart VM) 进行诊断了。
 
+[debug mode]: /docs/testing/build-modes#debug
+
 ## Flutter's threads
 
 ## Flutter 的线程
@@ -333,10 +349,12 @@ The UI thread executes Dart code in the Dart VM.
     be rendered on the device. _Don't block this thread!_
     Shown in the bottom row of the performance overlay.
 </t>
-<t> UI 线程在 Dart VM 中执行 Dart 代码。该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。
+<t> UI 线程在 Dart VM 中执行 Dart 代码。
+该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。
 当应用创建和展示场景的时候，UI 线程首先建立一个 **图层树(layer tree)** ，
 一个包含设备无关的渲染命令的轻量对象，
-并将图层树发送到 GPU 线程来渲染到设备上。**不要阻塞这个线程！**在性能图层的最低栏展示该线程。
+并将图层树发送到 GPU 线程来渲染到设备上。
+**不要阻塞这个线程！**在性能图层的最低栏展示该线程。
 </t>
 
 <dt markdown="1">
@@ -356,9 +374,13 @@ The raster thread takes the layer tree and displays
     to "raster thread" because many developers wrongly (but understandably)
     assumed the thread runs on the GPU unit.
 </t>
-<t>raster 线程拿到 layer tree，并将它交给 GPU（图形处理单元）。你无法直接与 GPU 线程或其数据通信，
+<t>raster 线程拿到 layer tree，并将它交给 GPU（图形处理单元）。
+你无法直接与 GPU 线程或其数据通信，
 但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。
-图形库 Skia 在该线程运行，并在性能图层的最顶栏显示该线程。这个线程之前被叫做 “GPU 线程”，因为它为 GPU 进行栅格化，但我们重新将它命名为 “raster 线程”，这是因为许多开发者错误的（但是能理解）认为该线程运行在 GPU 单元。</t>
+图形库 Skia 在该线程运行，并在性能图层的最顶栏显示该线程。
+这个线程之前被叫做 “GPU 线程”，因为它为 GPU 进行栅格化，
+但我们重新将它命名为 “raster 线程”，
+这是因为许多开发者错误的（但是能理解）认为该线程运行在 GPU 单元。</t>
 
 <dt markdown="1">
 <t>**I/O thread**</t>
@@ -382,6 +404,12 @@ see [The Framework architecture][] on the
 你可以在 [GitHub wiki][] 上的框架结构 ([The Framework architecture][]) 一文中
 了解更多信息和一些视频内容，
 另外你可以在我们的社区中查看文章 [The Layer Cake][]。
+
+[GitHub wiki]: {{site.github}}/flutter/flutter/wiki/
+[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
+[The Framework architecture]: {{site.github}}/flutter/flutter/wiki/The-Framework-architecture
+[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[UIKit]: https://developer.apple.com/documentation/uikit
 
 ### Displaying the performance overlay
 
@@ -417,7 +445,10 @@ on your running app.
 Flutter 插件提供的 Flutter inspector，
 你可以在 [开发者工具][DevTools] 的 
 [使用 Flutter inspector 工具][Inspector view] 中找到。
-只需单击 **Performance Overlay** 按钮，即可在正在运行的应用程序上切换图层。
+只需单击 **Performance Overlay** 按钮，
+即可在正在运行的应用程序上切换图层。
+
+[Inspector view]: /docs/development/tools/devtools/inspector
 
 #### From the command line
 
@@ -435,6 +466,9 @@ the command line.
 To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
+
+[Debugging Flutter apps programmatically]: /docs/testing/code-debugging
+[Performance overlay]: /docs/testing/code-debugging#performance-overlay
 
 ## Identifying problems in the UI graph
 
@@ -488,7 +522,7 @@ Maybe there's an alternative way of drawing the scene that doesn't
 use clipping. For example, overlay opaque corners onto a square
 instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise
-manipulated, a [RepaintBoundary][] might help.
+manipulated, a [`RepaintBoundary`][] might help.
 
 卡顿是第一帧发生的还是贯穿整个动画过程呢？
 如果是整个动画过程的话，会是裁剪导致的吗？
@@ -496,6 +530,10 @@ manipulated, a [RepaintBoundary][] might help.
 比如说，不透明图层的长方形中用尖角来取代圆角裁剪。
 如果是一个静态场景的淡入、旋转或者其他操作，
 可以尝试使用重绘边界 ([RepaintBoundary][])。
+
+[programmatically]: /docs/testing/code-debugging#debugging-animations
+[`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
+[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
 #### Checking for offscreen layers
 
@@ -507,7 +545,7 @@ to the scene, but it can slow your app and should be avoided if
 you don’t need it.  Even if you don’t call `saveLayer` explicitly,
 implicit calls might happen on your behalf. You can check whether
 your scene is using `saveLayer` with the
-[PerformanceOverlayLayer.checkerboardOffscreenLayers][] switch.
+[`PerformanceOverlayLayer.checkerboardOffscreenLayers`][] switch.
 
 保存图层 ([`saveLayer`][]) 方法是 Flutter 框架中最重量的操作之一。
 更新屏幕时这个方法很有用，但它可能使应用变慢，
@@ -568,6 +606,8 @@ ask yourself these questions:
 
   可以对单独元素操作而不是一组元素么？
 
+[`PerformanceOverlayLayer.checkerboardOffscreenLayers`]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html
+
 #### Checking for non-cached images
 
 #### 检查没有缓存的图像
@@ -598,7 +638,7 @@ cache images only where absolutely necessary._
 **因为光栅缓存入口的构建需要大量资源，同时增加了 GPU 存储的负载，所以只在必须时才缓存图片。**
 
 You can see which images are being cached by enabling the
-[PerformanceOverlayLayer.checkerboardRasterCacheImages][] switch.
+[`PerformanceOverlayLayer.checkerboardRasterCacheImages`][] switch.
 
 打开覆盖层性能 棋盘格光栅缓存图像
 ([PerformanceOverlayLayer.checkerboardRasterCacheImages][]) 开关可以检查哪些图片被缓存了。
@@ -629,6 +669,8 @@ boundary if it thinks the image isn't complex enough.
 ([RepaintBoundary][]) widget 中来缓存。
 虽然引擎也可能忽略 repaint boundary，如果它认为图像还不够复杂的话。
 
+[`PerformanceOverlayLayer.checkerboardRasterCacheImages`]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html
+
 ### Viewing the widget rebuild profiler
 
 ### 检视 widget 重建性能
@@ -646,11 +688,14 @@ Widget rebuild profiler 可以帮助调试和修复这些问题引起的 bug。
 
 You can view the widget rebuilt counts for the current screen and
 frame in the Flutter plugin for Android Studio and IntelliJ.
-For details on how to do this, see [Show performance data][]
+For details on how to do this, see [Show performance data][].
 
 可以检视 widget inspector 中当前屏幕和帧下的 widget 重建数量。
 了解细节，可以参考
-[在 Android Studio 或类 IntelliJ 里开发 Flutter 应用][] 中的 [显示性能数据][]。
+[在 Android Studio 或类 IntelliJ 里开发 Flutter 应用][] 中的
+[显示性能数据][Show performance data]。
+
+[Show performance data]: /docs/development/tools/android-studio#show-performance-data
 
 ## Benchmarking
 
@@ -689,7 +734,11 @@ regression is introduced that adversely affects performance.
 For more information, see [Integration testing][],
 a section in [Testing Flutter apps][].
 
-了解更多，请参考 [测试 Flutter 应用][] 中的 [集成测试][] 一节。
+了解更多，请参考 [测试 Flutter 应用][Integration testing] 中的
+[集成测试][Testing Flutter apps] 一节。
+
+[Integration testing]: /docs/testing#integration-tests
+[Testing Flutter apps]: /docs/testing
 
 ## Other resources
 
@@ -722,51 +771,19 @@ Flutter's tools and debugging in Flutter:
 
   [Dart 开发者工具][devtools]: Dart 和 Flutter 应用的开发者性能调试工具；
   
-* [Flutter API][] docs, particularly the [PerformanceOverlay][] class,
+* [Flutter API][] docs, particularly the [`PerformanceOverlay`][] class,
   and the [dart:developer][] package
-  
-  [Flutter API][] 文档, 特别是 [PerformanceOverlay][] 这个类和 [dart:developer][] 这个 package。
 
-[Android Studio/IntelliJ]: /docs/development/tools/android-studio
-[bookshelf-like icon]: /docs/testing/ui-performance/images/performance-overlay-icon.png
+  [Flutter API][] 文档, 特别是 [`PerformanceOverlay`][] 这个类
+  和 [dart:developer][] 这个 package。
+
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
-[debug mode]: /docs/testing/build-modes#debug
-[Debugging]: /docs/testing/debugging
-[Debugging Flutter apps programmatically]: /docs/testing/code-debugging
-[launch DevTools]: /docs/development/tools/devtools
 [devtools]: /docs/development/tools/devtools
-[examples]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
 [Flutter API]: {{site.api}}
 [Flutter inspector]: /docs/development/tools/devtools/inspector
-[Flutter inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
-[Flutter's build modes]: /docs/testing/build-modes
-[GitHub wiki]: {{site.github}}/flutter/flutter/wiki/
-[Inspector view]: /docs/development/tools/devtools/inspector
-[Integration testing]: /docs/testing#integration-tests
-[issues or feature requests]: {{site.github}}/dart-lang/sdk/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-observatory
-[line-chart icon]: /docs/testing/ui-performance/images/observatory-timeline-icon.png
-[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[Performance overlay]: /docs/testing/code-debugging#performance-overlay
-[PerformanceOverlay]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
-[PerformanceOverlayLayer.checkerboardOffscreenLayers]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html
-[PerformanceOverlayLayer.checkerboardRasterCacheImages]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html
-[profile mode]: /docs/testing/build-modes#profile
-[programmatically]: /docs/testing/code-debugging#debugging-animations
-[rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
-[RepaintBoundary]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
-[Show performance data]: /docs/development/tools/android-studio#show-performance-data
-[stopwatch icon]: /docs/testing/ui-performance/images/observatory-icon.png
-[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
-[The Framework architecture]: {{site.github}}/flutter/flutter/wiki/The-Framework-architecture
-[timeDilation]: {{site.api}}/flutter/scheduler/timeDilation.html
-[Tracing Dart code]: /docs/testing/debugging#tracing-dart-code
-[Testing Flutter apps]: /docs/testing
-[Timeline view]: /docs/development/tools/devtools/timeline
-[UIKit]: https://developer.apple.com/documentation/uikit
-[Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
+[`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [video]: https://youtu.be/5F-6n_2XWR8
-
+[Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
 [跟踪 Dart 代码性能]: /docs/testing/debugging#tracing-dart-code
 [调试 Flutter 应用]: /docs/testing/debugging
 [Flutter 的构建模式选择]: /docs/testing/build-modes

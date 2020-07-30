@@ -457,12 +457,12 @@ You can also define custom snippets by executing
 
 **热重载**
 
-: During a debug session, clicking the **Restart** button on the
-  **Debug Toolbar**, or pressing `Ctrl`+`Shift`+`F5`
-  (`Cmd`+`Shift`+`F5` on macOS) performs a hot reload.
+: During a debug session, clicking the **Hot Reload** button on the
+  **Debug Toolbar**, or pressing `Ctrl`+`F5`
+  (`Cmd`+`F5` on macOS) performs a hot reload.
   
-  调试期间，在**调试工具栏**点击**重启**按钮，
-  或者按 `Ctrl`+`Shift`+`F5` (macOS 用 `Cmd`+`Shift`+`F5`)执行热重载。
+  调试期间，在**调试工具栏**点击**热重载 (Hot Reload)**按钮，
+  或者按 `Ctrl`+`F5` (macOS 用 `Cmd`+`F5`)执行热重载。
   
   Keyboard mappings can be changed by executing the **Open Keyboard Shortcuts**
   command from the [Command Palette][].
@@ -499,7 +499,7 @@ A few types of code changes cannot be hot reloaded though:
 For these changes, fully restart your application without
 having to end your debugging session. To perform a hot restart,
 run the **Flutter: Hot Restart** command from the
-[Command Palette][], or press `Ctrl`+`F5`.
+[Command Palette][], or press `Ctrl`+`Shift`+`F5`(`Cmd`+`Shift`+`F5` on macOS).
 
 对于这些更改，你无需结束调试过程而直接热重启 (hot restart) 你的应用。
 要执行热重启，执行 [命令面板][] 的 **Flutter：热重启**命令，或者按 `Ctrl`+`F5`。

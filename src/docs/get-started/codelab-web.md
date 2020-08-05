@@ -102,10 +102,12 @@ The animated GIF shows how the app works at the completion of this lab.
   我们需要下面三个软件来实现该教程：
 
   * [Flutter SDK][]
-    [Flutter SDK][]
   * [Chrome browser][]
+  
     [Chrome 浏览器][Chrome browser]
+    
   * [Text editor 或 IDE][editor]
+  
     [文本编辑器 或 IDE][editor]
 
   For a web-only codelab,
@@ -114,7 +116,8 @@ The animated GIF shows how the app works at the completion of this lab.
   You can also use a text editor, if you prefer.
 
   对于该 Web 程序教程，我们更推荐使用 [IntelliJ IDEA 或 VS Code][editor] 。
-  你不必使用 Android Studio 和 Xcode 。当然如果你愿意的话，也可以使用文本编辑器。
+  你不必使用 Android Studio 和 Xcode。
+  当然如果你愿意的话，也可以使用文本编辑器。
 
   While developing, run your web app in Chrome
   so you can debug with Dart DevTools.
@@ -157,7 +160,8 @@ $ flutter config --enable-web
 If you have problems enabling web development,
 see [Building a web application with Flutter][].
 
-如果你在开启 Web 开发支持时遇到问题，请查看 [Building a web application with Flutter][]
+如果你在开启 Web 开发支持时遇到问题，请查看文档了解更多：
+[使用 Flutter 构建 Web 应用][Building a web application with Flutter]。
 
 </li>
 
@@ -216,7 +220,8 @@ and the web server when you want to test on other browsers.
 
 **Chrome** 表示默认用 Chrome 启动。
 **Web Server** 表示可以启动一个可以用任意浏览器访问的本地应用程序服务。
-为了在使用其他浏览器时可以使用 DevTools 和 Web 服务，请在开发阶段使用 Chrome 设备。
+为了在使用其他浏览器时可以使用 DevTools 和 Web 服务，
+请在开发阶段使用 Chrome 设备。
 
 </li>
 
@@ -355,7 +360,7 @@ From your IDE, editor, or at the command line,
 
 创建一个新的 Flutter 工程。<br>
 使用 IDE、编辑器或者命令行，创建一个名称为 `signin_example` 的新项目，
-参考 [create a new Flutter project][]
+更多内容可以参考文档 [Flutter 开发体验初探][create a new Flutter project]。
 
 </li>
 
@@ -386,7 +391,8 @@ From your IDE, editor, or at the command line,
   For more information, see [Introduction to declarative UI][].
 
   应用程序的所有的 UI 的都是通过 Dart 构建的。
-  你可以通过 [Introduction to declarative UI][] 了解到更多的信息。
+  你可以通过文档 
+  [声明式 UI 介绍][Introduction to declarative UI] 了解到更多的信息。
 
 * The app’s UI adheres [Material Design][],
   a visual design language that runs on any device or platform.
@@ -434,8 +440,9 @@ prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
   
   <h4 class="no_toc">有趣的事</h4>
-Dart 编译器会将任何带有下划线前缀标识的视为私有。
-可以查阅 [Effective Dart Style Guide][] 获取更多信息。
+Dart 编译器会将任何带有下划线前缀标识的视为私有。可查阅
+[Dart 文档 —— 高效 Dart 语言指南：代码风格][Effective Dart Style Guide]
+获取更多信息。
 
 {{site.alert.end}}
 
@@ -504,9 +511,8 @@ is not defined. Directly above the `build()` method,
 add the following function:
 
 新增 `_showWelcomeScreen` 方法。<br>
-修复上述代码导致的编译器提示： 
-`_showWelcomeScreen` is not defined. （未定义 `_showWelcomeScreen`） 的错误。
-在 `build()` 方法上方添加下面的方法：
+修复上述代码导致的编译器提示： `_showWelcomeScreen` is not defined. 
+（未定义 `_showWelcomeScreen`） 的错误。在 `build()` 方法上方添加下面的方法：
 
 <!-- skip -->
 ```dart
@@ -837,8 +843,8 @@ launch the DevTools server as explained in the
 [DevTools command line][] page.
 
 确认开发工具已被安装。<br>
-你是否 [DevTools installed][] ？
-如果你使用的是编辑器 （IDE） ，先确认已经用 [VS Code][] 和
+你是否 [已经安装 DevTools 了呢][DevTools installed]？
+如果你使用的是编辑器 (IDE) ，先确认已经用 [VS Code][] 和
  [Android Studio and IntelliJ][] 文档描述的方式安装 Flutter 
 和 Dart 插件。如果你使用的是命令行的方式，用 [DevTools command line][] 
 文档说明的方式启动开发者工具服务 （DevTools server）。

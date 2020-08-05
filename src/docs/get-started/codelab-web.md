@@ -54,11 +54,10 @@ and the **Sign up** button becomes enabled.
 Clicking the **Sign up** button causes a welcome screen
 to animate in from the bottom of the screen.
 
-你将实现一个只显示登录页面的简单 Web 应用。
-这个页面包含了三个文本输入框:名字、姓氏和  用户名。当用户向输入框输入内容时，
-在登录区域顶部显示一个进度条动画效果。当用户完成输入时，绿色的进度条将会随着
-充满整个登录区域的顶部，而且 **Sign up** 按钮变成可点击。
-点击 **Sign up** 按钮从屏幕下方弹出一个欢迎页面
+你将实现一个只显示登录页面的简单 Web 应用。这个页面包含了三个文本输入框:名字、姓氏和用户名。
+当用户向输入框输入内容时，在登录区域顶部显示一个进度条动画效果。当用户完成输入时，绿色的进度条将会跟随着
+充满整个登录区域的顶部，而且 **Sign up** 按钮状态变成可点击。
+点击 **Sign up** 按钮从屏幕下方弹出一个欢迎页面。
 
 The animated GIF shows how the app works at the completion of this lab.
 
@@ -68,7 +67,7 @@ The animated GIF shows how the app works at the completion of this lab.
 
   <h4 class="no_toc">What you’ll learn</h4>
 
-  <h4 class="no_toc">你将学到以下内容。</h4>
+  <h4 class="no_toc">你将学到以下内容：</h4>
 
   * How to write a Flutter app that looks natural on the web.
 
@@ -96,7 +95,7 @@ The animated GIF shows how the app works at the completion of this lab.
 
   <h4 class="no_toc">What you'll use</h4>
 
-  <h4 class="no_toc">我们将用到:</h4>
+  <h4 class="no_toc">你将用到：</h4>
 
   You need three pieces of software to complete this lab:
 
@@ -121,7 +120,7 @@ The animated GIF shows how the app works at the completion of this lab.
   so you can debug with Dart DevTools.
 
   在开发过程中，你需要将你的程序在 Chrome 浏览器中运行，
-  所以你可以使用 Dart DevTools 进行调试。
+  以便使用 Dart DevTools 进行调试。
 
 {{site.alert.end}}
 
@@ -144,8 +143,8 @@ then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
 启用 Web 开发。<br>
-打开命令行，执行下面命令并确保你已经获取到最新 SDK 并且开启了 Web 支持。
-你仅需要使用一次 `flutter config --enable-web` 来启用 Flutter 对 Web 开发的支持。
+打开命令行，执行下面命令以确保你的 SDK 是最新的，并且开启了 Web 支持。
+你仅需要执行一次 `flutter config --enable-web` 来启用 Flutter 对 Web 开发的支持。
 如果运行命令出现 "flutter: command not found" 错误，说明你未安装 [Flutter SDK][] 或者
 未配置 Flutter 环境变量。
 
@@ -187,8 +186,8 @@ since our app is intended for the web only.
 If you later want this app to work on mobile,
 you will need to do additional installation and setup.
 
-如果我们只用于 Web 开发，缺少 Android 工具、Android Studio 和 Xcode 也是可以的。
-后续如果你想用于移动端开发，你将需要安装配置这些工具。
+如上所示，显示我们缺少 Android 工具、Android Studio 和 Xcode，如果我们只用于 Web 开发，
+这些都不是必要的。后续如果你想用于移动端开发，你将需要安装配置这些工具。
 
 </li>
 
@@ -223,7 +222,7 @@ and the web server when you want to test on other browsers.
 
 <li markdown="1">The starting app is displayed in the following DartPad.
 
-运行程序将显示在 DartPad 。
+运行程序将在 DartPad 中显示。
 
 <!-- skip -->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
@@ -423,10 +422,8 @@ called the `State` class. In this lab,
 all of your edits will be made to the private
 `_SignUpFormState` class.
 
-`SignUpForm` 类是一个 Stateful Widget。
-这代表着 widget 的存储信息可动态改变，例如用户输入，或者传递的数据。
-由于 widget 本身是不可变的(一旦创建不可修改)，
-所有 Flutter 的状态信息存储在一种叫 `State` 的附加类中。
+`SignUpForm` 类是一个 Stateful Widget。这代表着 widget 的存储信息可动态改变，例如用户输入，或者传递的数据。
+由于 widget 本身是不可变的（一旦创建不可修改），所有 Flutter 的状态信息存储在一种叫 `State` 的附加类中。
 在这个代码示例中，所有的编辑将在一个 ` _SignUpFormState` 的私有类中实现。
 
 {{site.alert.secondary}}
@@ -489,11 +486,11 @@ Change the `onPressed` property to call the (non-existent)
 method that will display the welcome screen.
 
 修改按钮的 `onPressed` 属性。<br>
-将按钮的 `onPressed` 属性改为调用显示欢迎页面的方法(该方法在下一步创建)。
+将按钮的 `onPressed` 属性改为调用显示欢迎页面的方法（该方法在下一步创建）。
 
 Change `onPressed: null` to the following:
 
-将 `onPressed: null` 属性改为以下内容：
+将 `onPressed: null` 改为以下内容：
 
 <!-- skip -->
 ```dart
@@ -508,7 +505,7 @@ add the following function:
 
 新增 `_showWelcomeScreen` 方法。<br>
 修复上述代码导致的编译器提示： 
-`_showWelcomeScreen` is not defined. (未定义 `_showWelcomeScreen`) 的错误。
+`_showWelcomeScreen` is not defined. （未定义 `_showWelcomeScreen`） 的错误。
 在 `build()` 方法上方添加下面的方法：
 
 <!-- skip -->
@@ -562,7 +559,7 @@ You get that behavior for free.
   “call this method when the button is pressed”.
 
   `_showWelcomeScreen()` 函数被当成回调函数在 `build()` 方法中被调用。
-  你经常会在 Dart 中使用回调函数，在这里意味着“点击按钮时调用该方法”。
+  在 Dart 中你会经常使用回调函数，在这里意味着“点击按钮时调用该方法”。
 
 * Flutter has only one `Navigator` object.
   This widget manages Flutter’s screens
@@ -581,13 +578,11 @@ You get that behavior for free.
   back arrow button.
 
   Flutter 中仅存在一个 `Navigator` 对象。
-  这个 Widget 用来管理 Flutter 堆栈中的页面(也可以被称为路由或者页面管理器)。
+  这个 widget 用来管理 Flutter 堆栈中的页面（也可以被称为路由或者页面管理器）。
   当前显示的页面是堆栈中最上面的页面。通过往堆栈中 push 新的页面来切换新的页面。
   这也是 `_showWelcomeScreen` 函数向 Navigator 堆栈中添加 `WelcomeScreen` 页面的原因。
-  用户点击按钮，然后出现欢迎页面。
-  同样，可以通过调用 `Navigator` 的 `pop()` 方法来返回上一个页面。
-  因为 Flutter 的 navigation 已经集成到浏览器的导航中，
-  所以当点击浏览器的返回箭头也会返回到上一个页面。
+  用户点击按钮，然后出现欢迎页面。同样，可以通过调用 `Navigator` 的 `pop()` 方法来返回上一个页面。
+  因为 Flutter 的 navigation 已经集成到浏览器的导航中，所以当点击浏览器的返回箭头也会返回到上一个页面。
 
 ## Step 2: Enable sign in progress tracking
 
@@ -657,7 +652,7 @@ add a callback to the `Form` widget's `onChanged` argument.
 Add the code below marked as NEW:
 
 表单改变时调用 `_updateFormProgress()` 方法。<br>
-在 `_SignUpFormState` 类的 `build()` 方法中，为 `Form` Widget 的 `onChanged` 参数添加回调函数。
+在 `_SignUpFormState` 类的 `build()` 方法中，为 `Form` widget 的 `onChanged` 参数添加回调函数。
 添加的代码如下所示：
 
 <!-- skip -->
@@ -700,8 +695,7 @@ but becomes enabled when all three text fields contain
 (any) text.
 
 运行程序。<br>
-刚打开页面时 **Sign up** 按钮是禁用状态，
-当为三个字段输入内容(任意内容)时将会变成可点击状态。
+刚打开页面时 **Sign up** 按钮是禁用状态，当为三个字段输入内容（任意内容）时将会变成可点击状态。
 
 </li>
 </ol>
@@ -724,12 +718,12 @@ but becomes enabled when all three text fields contain
   transition—especially for an animation.
   Luckily Flutter *is* fast.
 
-  调用 widget 的 `setState()` 方法通知 Flutter 页面上的 Widget 需要重新构建。
-  框架将销毁之前的不可变 widget (上面说过 widget 一旦创建不可更改)(包含它的子级 widget) ，
-  然后创建一个新的 widget (包含他的子级 widget 树)并将新的 widget 渲染到页面上。
+  调用 widget 的 `setState()` 方法通知 Flutter 页面上的 widget 需要重新构建。
+  框架将销毁之前的不可变 widget （上面说过 widget 一旦创建不可更改）（包含它的子级 widget） ，
+  然后创建一个新的 widget （包含他的子级 widget 树）并将新的 widget 渲染到页面上。
   为了使程序运行顺畅， Flutter 需要快速的销毁和创建 widget 。
   新创建的 widget 必须在不到 1/60 秒的时间渲染到页面上，才能创建一个流畅的动画效果。
-  幸运的是 Flutter 就是这么**这么快**
+  幸运的是 Flutter 就是这么**这么快**。当然如果你愿意的话，也可以使用文本编辑器。
 
 * The `progress` field is defined as a floating value,
   and is updated in the `_updateFormProgress` method.
@@ -747,7 +741,7 @@ but becomes enabled when all three text fields contain
   This is called an anonymous
   function and has the following syntax:
 
-  请注意, `_updateFormProgress` 是通过匿名函数调用 `setState()` 。
+  请注意, `_updateFormProgress` 是通过传递一个函数调用 `setState()` 。
   这种被称为匿名函数,语法如下所示:
 
   <!-- skip -->
@@ -773,8 +767,8 @@ but becomes enabled when all three text fields contain
   If the expression `_formProgress == 1` is true, the entire expression results
   in the value on the left hand side of the `:`, which is the
   `_showWelcomeScreen` method in this case.
-  Dart 三目运算有如下语法: `condition ? expression1 : expression2` 。
-  如果 `_formProgress == 1` 是正确的，则会去 `:` 左侧的值，在这个示例中会取 
+  Dart 三目运算语法如下: `condition ? expression1 : expression2` 。
+  如果 `_formProgress == 1` 是正确的，则会取 `:` 左侧的值，在这个示例中会取 
   `_showWelcomeScreen` 方法。
 
 ## Step 2.5: Launch Dart DevTools
@@ -786,17 +780,15 @@ It’s not too different from debugging any Flutter app.
 You want to use [Dart DevTools][]!
 (Not to be confused with Chrome DevTools.)
 
-如何调试 Flutter Web 应用？
-所有的 Flutter 应用调试方法没有很大的区别。
-你应该使用 [Dart DevTools][]!
-(不要和 Chrome 开发者工具搞混淆了)
+如何调试 Flutter Web 应用？所有的 Flutter 应用调试方法没有很大的区别。
+你应该使用 [Dart DevTools][]！（不要和 Chrome 开发者工具搞混淆了）
 
 Our app currently has no bugs, but let’s check it out anyway.
 The following instructions for launching DevTools applies to any workflow,
 but there is a short cut if you’re using IntelliJ.
 See the tip at the end of this section for more information.
 
-虽然我们的程序现在没有 bug ，但是我们依然验证一下。
+虽然我们的程序现在没有 bug ，但是我们依然来验证一下。
 下面的指引讲明了 DevTools 使用的场景，如果你使用的是 IntelliJ 编辑器则会有更好的方式。
 可以通过查看文档末尾的提示信息获取更多的信息。
 
@@ -818,7 +810,7 @@ from the command line, use `flutter run -d chrome`,
 At the command line, or in the IDE,
 you should see a message stating something like the following:
 
-获取开发者工具 (DevTools) 的 socket 信息。<br>
+获取开发者工具 （DevTools） 的 socket 信息。<br>
 在命令行或者 IDE 中你应该可以看下如下所示内容的信息：
 
 ```terminal
@@ -846,10 +838,10 @@ launch the DevTools server as explained in the
 
 确认开发工具已被安装。<br>
 你是否 [DevTools installed][] ？
-如果你使用的是编辑器 (IDE) ，先确认已经用 [VS Code][] 和
+如果你使用的是编辑器 （IDE） ，先确认已经用 [VS Code][] 和
  [Android Studio and IntelliJ][] 文档描述的方式安装 Flutter 
 和 Dart 插件。如果你使用的是命令行的方式，用 [DevTools command line][] 
-文档说明的方式启动开发者工具服务 (DevTools server) 。
+文档说明的方式启动开发者工具服务 （DevTools server）。
 
 </li>
 
@@ -866,7 +858,7 @@ Serving DevTools at http://127.0.0.1:9100
 Go to this URL in a Chrome browser. You should see the DevTools
 launch screen. It should look like the following:
 
-在谷歌浏览器中打开上面 URL 。你应该可以看到 DevTools 运行页面。如下所示：
+在 Chrome 浏览器中打开上面 URL 。你应该可以看到 DevTools 运行页面。如下所示：
 
 {% indent %}
   ![Screenshot of the DevTools launch screen]({% asset get-started/devtools-launch-screen.png @path %}){:width="100%"}
@@ -881,7 +873,7 @@ running successfully in your Chrome browser:
 
 连接到运行的程序。<br>
 在 **Connect to a running site** 下面粘贴你在上面第 2 步中复制的 ws 地址，
-然后点击连接。现在你应该可以看到 Dart DevTools 成功的运行在你的谷歌浏览器中，如下所示：
+然后点击连接。现在你应该可以看到 Dart DevTools 成功的运行在你的 Chrome 浏览器中，如下所示：
 
 {% indent %}
   ![Screenshot of DevTools running screen]({% asset get-started/devtools-running.png @path %}){:width="100%"}
@@ -1020,24 +1012,23 @@ area. The animation has the following behavior:
   the red bar turns orange and animates 0.15
   of the way across the sign in area.
 
-  当一个字段被键入内容时，进度条从红色变成橙色
-  并且进度条前进到 1/3 的登录区域顶部的距离。
+  当一个文本框被键入内容时，进度条从红色变成橙色，
+  并且进度条前进到距登录区域顶部 1/3 的位置。
 
 * When two text fields contain text,
   the orange bar turns yellow and animates half
   of the way across the sign in area.
 
-  当第二个字段被键入内容时，进度条从橙色变为黄色
-  并且进度条前进到 2/3 的登录区域顶部的距离。
+  当第二个文本框被键入内容时，进度条从橙色变为黄色，
+  并且进度条前进到距登录区域顶部 2/3 的位置。
 
 * When all three text fields contain text,
   the orange bar turns green and animates all the
   way across the sign in area.
   Also, the **Sign up** button becomes enabled.
 
-  当三个文本框全部被输入内容时，进度条从橙色变成绿色
-  并且逐渐充满整个登录区域顶部。除此之外， **Sign up** 按钮
-  也变成可点击状态。
+  当三个文本框全部被输入内容时，进度条从橙色变成绿色，并且逐渐充满整个登录区域顶部。
+  除此之外， **Sign up** 按钮的状态也变成可点击。
 
 <ol markdown="1">
 <li markdown="1">Add an `AnimatedProgressIndicator`.<br>
@@ -1375,10 +1366,9 @@ For advice on how to do this,
 see the [Building a form with validation][]
 recipe in the [Flutter cookbook][].
 
-如果你想继续使用这个示例，或许你可以添加表单验证。
-如何继续的建议，请参考 [Flutter cookbook][] 中 
+如果你想继续完善这个示例，或许你可以添加表单验证。
+如何继续的建议，请参考 [Flutter cookbook][] 中的 
 [Building a form with validation][]
-
 
 For more information on Flutter web apps,
 Dart DevTools, or Flutter animations, see the following:

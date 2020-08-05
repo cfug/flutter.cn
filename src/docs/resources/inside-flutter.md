@@ -447,10 +447,10 @@ the major algorithms discussed above.
 
   **可观察对象**。 Flutter 使用模型观察及响应设计模式。显而易见，
   响应模式占主导地位，但 Flutter 在某些叶子节点的数据结构上使用了可观察对象。
-  比如 **Animation** 会在值发生变化时通知观察者列表。
+  比如 `Animation` 会在值发生变化时通知观察者列表。
   Flutter 将这些可观察对象从 widget 树转移到渲染树中，
   渲染树直接监听这些对象，并在它们改变时仅重绘管道的相关阶段。
-  比如，更改 **Animation<Color>** 可能只触发绘制阶段，
+  比如，更改 `Animation<Color>` 可能只触发绘制阶段，
   而非整个构建和绘制阶段。
 
 Taken together and summed over the large trees created by aggressive

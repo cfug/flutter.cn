@@ -111,6 +111,34 @@ Make sure that "web" is included in the title.
 你可以在 Flutter 主仓库中 [提交一个 issue][file an issue]。
 确保标题中包含 “Web” 字样。
 
+### Which web browser does Flutter support?
+
+### Flutter 支持哪些浏览器
+
+Today Flutter web apps can run on the following browsers:
+
+目前使用 Flutter 构建的 Web 应用可以运行在下述浏览器中：
+
+Chrome (mobile & desktop)
+Safari (mobile & desktop)
+Edge (mobile & desktop)
+Firefox (desktop)
+
+谷歌 Chrome 浏览器 (移动端和桌面端)
+苹果 Safari 浏览器 (移动端和桌面端)
+微软 Edge 浏览器 (移动端和桌面端)
+Firefox 火狐浏览器 (桌面端)
+
+During development, Chrome is the default browser for running your app. 
+In order to test your web app on other browsers use the `Web server` device option to get a URL serving the app.
+Learn more on how to [run your web apps in any supported browser][]
+
+在开发过程中，Chrome 是运行应用时的默认浏览器。
+如果希望在其他浏览器里测试你的 Web 应用，
+可以使用 `Web server` 选项来获得一个运行应用的 URL 地址。
+了解更多，请查看文档
+[在支持的浏览器上运行 Web 应用][run your web apps in any supported browser]。
+
 ### How do I refresh the app running in the browser?
 
 ### 我该如何在浏览器中刷新正在运行的应用？
@@ -205,7 +233,8 @@ in an [`iframe`][] tag of an HTML file.
 In the following example, replace "URL"
 with the location of your hosted HTML page:
 
-你可以通过下面这个例子，以 [`iframe`] 来内嵌，把 URL 替换成托管 Flutter Web 的页面 URL：
+你可以通过下面这个例子，以 [`iframe`] 来内嵌，
+把 URL 替换成托管 Flutter Web 的页面 URL：
 
 ```html
 <iframe src="URL"></iframe>
@@ -336,3 +365,4 @@ Flutter 团队的工程师会经常阅读和互动。
 [pub.dev]: {{site.pub}}/flutter/packages?platform=web
 [Web support for Flutter]: /web
 [write your own plugins]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
+[run your web apps in any supported browser]: https://flutter.dev/docs/get-started/web#create-and-run

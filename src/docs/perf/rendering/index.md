@@ -18,6 +18,10 @@ excellent performance.
 Flutter 应用在默认情况下就能保证拥有良好的性能，
 因此我们只需避开常见的陷阱就可以获得出色的性能。
 
+## General advice
+
+## 一些基本的建议
+
 If you _are_ seeing janky (non smooth) animations, make
 **sure** that you are profiling performance with an
 app built in _profile_ mode.
@@ -60,8 +64,49 @@ see the following docs:
 
   [Flutter 性能分析][Flutter performance profiling]
 
+## Mobile-only advice
+
+## 纯移动应用
+
+Do you see noticeable jank on your mobile app, but only on
+the first run of an animation? If so, see
+[Reduce shader animation jank on mobile][].
+
+如果移动应用里遇到一些肉眼可见的卡顿，单只是在第一次运行动画的时候？
+如果是这样的话，可以查看这个文档
+[减少过移动应用的着色器动画卡顿][Reduce shader animation jank on mobile]。
+
+[Reduce shader animation jank on mobile]: /docs/perf/rendering/shader
+
+## Web-only advice
+
+## 纯 Web 应用
+
+The following series of articles cover what the Flutter Material
+team learned when improving performance of the Flutter Gallery
+app on the web:
+
+下面的内容是 Flutter Material 团队在提高
+Flutter Gallery Web 应用性能时候总结的经验：
+
+* [Optimizing performance in Flutter web apps with tree shaking and deferred loading][shaking]
+
+  [通过 tree shaking 和延迟加载来优化 Flutter Web 应用的性能 (Optimizing performance in Flutter web apps with 
+  tree shaking and deferred loading)][shaking]
+
+* [Improving perceived performance with image placeholders, precaching, and disabled navigation transitions][images]
+
+  [通过使用图像占位符、预缓存和禁用导航效果来提高性能(Improving perceived performance with image placeholders, precaching, and disabled navigation transitions)][images]
+  
+* [Building performant Flutter widgets][]
+
+  [高效构建 Flutter widgets (Building performant Flutter widgets)][Building performant Flutter widgets]
+
+[Building performant Flutter widgets]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
 [Flutter's build modes]: /docs/testing/build-modes
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance
+[images]: {{site.medium}}/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
 [Performance best practices]: /docs/perf/rendering/best-practices
+[shaking]: {{site.medium}}/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [Show performance data]: /docs/development/tools/android-studio#show-performance-data
 

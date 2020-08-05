@@ -923,7 +923,14 @@ and access the `UrlLauncherPlugin`
 class in the source code at `hello/android/src`.
 
 现在你可以在 `hello/android/src` 目录下的源代码文件中使用
-`import io.flutter.plugins.urllauncher.UrlLauncherPlugin` 并访问类 `UrlLauncherPlugin`。
+`import io.flutter.plugins.urllauncher.UrlLauncherPlugin`
+并访问类 `UrlLauncherPlugin`。
+
+For more information on `build.gradle` files, see the
+[Gradle Documentation][] on build scripts.
+
+如果希望了解更多有关 `build.gradle` 文件更多的信息，请参阅
+[Gradle 文档][Gradle Documentation] 了解构建脚本。
 
 ### iOS
 
@@ -944,6 +951,13 @@ at `hello/ios/Classes`.
 现在你可以在 `hello/ios/Classes` 目录下的源代码文件中使用 `#import "UrlLauncherPlugin.h"` 
 并访问 `UrlLauncherPlugin` 这个类了。
 
+For additional details on `.podspec` files, see the
+[CocoaPods Documentation][] on them.
+
+如果希望了解更多有关 `.podspec` 文件更多的信息，请参阅
+[CocoaPods 文档][CocoaPods Documentation] 了解。
+
+
 ### Web
 
 All web dependencies are handled by the `pubspec.yaml`
@@ -958,6 +972,7 @@ file like any other Dart package.
 PENDING
 {% endcomment %}
 
+[CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
@@ -966,6 +981,7 @@ PENDING
 [Flutter editor]: /docs/get-started/editor
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
 [Flutter Favorites program]: /docs/development/packages-and-plugins/favorites
+[Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
 [How to Write a Flutter Web Plugin, Part 1]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: https://github.com/flutter/flutter/issues/33302

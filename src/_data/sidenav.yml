@@ -251,6 +251,8 @@
           permalink: /docs/development/androidx-migration
         - title: 升级 Android plugin
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
+        - title: iOS 14 beta 支持
+          permalink: /docs/development/ios-14
         - title: Xcode 11.4 支持
           permalink: /docs/development/ios-project-migration
 
@@ -286,12 +288,15 @@
     - title: 渲染性能
       permalink: /docs/perf/rendering
       children:
-        - title: 概览
-          permalink: /docs/perf/rendering
-        - title: 性能最佳实践
-          permalink: /docs/perf/rendering/best-practices
-        - title: 性能分析
-          permalink: /docs/perf/rendering/ui-performance
+      - title: 概览
+        permalink: /docs/perf/rendering
+        match-page-url-exactly: true
+      - title: 性能最佳实践
+        permalink: /docs/perf/rendering/best-practices
+      - title: 性能分析
+        permalink: /docs/perf/rendering/ui-performance
+      - title: Reduce shader compilation jank
+        permalink: /docs/perf/rendering/shader
 
 - title: 打包部署
   children:

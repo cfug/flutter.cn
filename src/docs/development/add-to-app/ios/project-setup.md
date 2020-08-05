@@ -149,21 +149,22 @@ There are two ways to embed Flutter in your existing application.
 
 {{site.alert.note}}
 
-  Your app does not run on a simulator in Release mode because Flutter does
-  not yet support output x86 ahead-of-time (AOT) binaries for your Dart code.
-  You can run in Debug mode on a simulator or a real device,
+  Your app does not run on a simulator in Release mode because Flutter does not
+  yet support outputting x86/x86_64 ahead-of-time (AOT) binaries for your Dart
+  code. You can run in Debug mode on a simulator or a real device,
   and Release on a real device.
 
   你的应用将不能在模拟器上运行 Release 模式，
   因为 Flutter 还不支持将 Dart 代码编译成
-  x86 ahead-of-time (AOT) 模式的二进制文件。
+  x86/x86_64 ahead-of-time (AOT) 模式的二进制文件。
   你可以在模拟机和真机上运行 Debug 模式，
   在真机上运行 Release 模式。
 
   To run your app on a simulator follow the instructions
   in the bottom of section [embed the frameworks][].
 
-  要在模拟器上运行您的应用，请按照本节底部的[嵌入框架][embed the frameworks]说明进行操作。
+  要在模拟器上运行您的应用，请按照本节底部的
+  [嵌入框架][embed the frameworks]说明进行操作。
 
 {{site.alert.end}}
 

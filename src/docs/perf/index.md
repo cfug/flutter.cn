@@ -37,7 +37,7 @@ your app.
 
 ## Rendering performance
 
-Are you animations janky (not smooth)? Learn how to
+Are your animations janky (not smooth)? Learn how to
 evaluate and fix rendering issues.
 
 [Improving rendering performance](/docs/perf/rendering)

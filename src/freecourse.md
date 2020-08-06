@@ -4,6 +4,7 @@ title: 来自 App Brewery 提供的免费 Flutter 教程
 description: Link for registering for the free App Brewery course.
 description: 链接到 App Brewery 提供的免费 Flutter 教程。
 ---
+<h1>This course is closed for enrollment.</h1>
 
 <section class="landing-page__cta card text-center">
     <div class="card-body">

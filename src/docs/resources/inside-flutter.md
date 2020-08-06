@@ -383,7 +383,7 @@ the major algorithms discussed above.
 * **Child-model agnostic.** Unlike most toolkits, which use child lists,
   Flutter’s render tree does not commit to a specific child model.
   For example, the `RenderBox` class has an abstract `visitChildren()`
-  method rather than a concrete _firstChild_ and _nextSibling_ interface.
+  method rather than a concrete `firstChild` and `nextSibling` interface.
   Many subclasses support only a single child, held directly as a member
   variable, rather than a list of children. For example, `RenderPadding`
   supports only a single child and, as a result, has a simpler layout
@@ -438,19 +438,19 @@ the major algorithms discussed above.
 * **Observable objects.** Flutter uses both the model-observation and
   the reactive paradigms. Obviously, the reactive paradigm is dominant,
   but Flutter uses observable model objects for some leaf data structures.
-  For example, _Animations_ notify an observer list when their value changes.
+  For example, `Animation`s notify an observer list when their value changes.
   Flutter hands off these observable objects from the widget tree to the
   render tree, which observes them directly and invalidates only the
   appropriate stage of the pipeline when they change. For example,
-  a change to an _Animation<Color>_ might trigger only the paint phase
+  a change to an `Animation<Color>` might trigger only the paint phase
   rather than both the build and paint phases.
 
   **可观察对象**。 Flutter 使用模型观察及响应设计模式。显而易见，
   响应模式占主导地位，但 Flutter 在某些叶子节点的数据结构上使用了可观察对象。
-  比如 **Animation** 会在值发生变化时通知观察者列表。
+  比如 `Animation` 会在值发生变化时通知观察者列表。
   Flutter 将这些可观察对象从 widget 树转移到渲染树中，
   渲染树直接监听这些对象，并在它们改变时仅重绘管道的相关阶段。
-  比如，更改 **Animation<Color>** 可能只触发绘制阶段，
+  比如，更改 `Animation<Color>` 可能只触发绘制阶段，
   而非整个构建和绘制阶段。
 
 Taken together and summed over the large trees created by aggressive
@@ -460,8 +460,8 @@ composition, these optimizations have a substantial effect on performance.
 
 ### Separation of the Element and RenderObject trees
 
-The RenderObject and Element (widget) trees in Flutter are isomorphic
-(strictly speaking, the RenderObject tree is a subset of the Element
+The `RenderObject` and `Element` (widget) trees in Flutter are isomorphic
+(strictly speaking, the `RenderObject` tree is a subset of the `Element`
 tree). An obvious simplification would be to combine these trees into
 one tree. However, in practice there are a number of benefits to having
 these trees be separate:

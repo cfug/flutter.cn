@@ -24,7 +24,7 @@ must meet these minimum requirements:
 * **Operating Systems**: Chrome OS (64-bit) with [Linux (Beta)][] turned on
 
   **操作系统**：64 位的 Chrome OS 系统（需开启 [Linux (Beta)][] 功能）
-  
+
 * **Disk Space**: 600 MB (does not include disk space for IDE/tools).
 
   **磁盘空间**：600 MB （不包括 IDE/tools 所占的空间）
@@ -94,9 +94,15 @@ of `http://127.0.0.1:8080/auth_code=/`. Use this URL
 and select "Connect" to start the Flutter DevTools
 for your Android app.
 
-然后在浏览器中打开地址 http://localhost:8000/?port=8080
+然后在你的 Chrome 浏览器里打开 URL: http://127.0.0.1:8000/#，
+上面最后一个 `flutter run` 命令会输出一个类似 `http://127.0.0.1:8080/auth_code=/`
+的 URL，使用这个 URL 并选择 "Connect" 来启动
+适用于 Android 应用的 Flutter DevTools。
+
 
 #### Flutter Chrome OS lint analysis
+
+#### Chrome OS 上的 Flutter lint 分析
 
 The Flutter team is adding Chrome OS specific
 Lint Analysis checks that are available to make

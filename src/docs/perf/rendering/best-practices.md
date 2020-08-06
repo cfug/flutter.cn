@@ -35,7 +35,7 @@ performant on the web:
   tree shaking and deferred loading)][web-perf-1]
 
 * [Improving perceived performance with image placeholders,
-  precaching, and disabled navigation transitions][web-perf-2]
+   precaching, and disabled navigation transitions][web-perf-2]
 
   [通过使用图像占位符、预缓存和禁用导航效果来提高性能
   (Improving perceived performance with image placeholders, 
@@ -44,7 +44,6 @@ performant on the web:
 * [Building performant Flutter widgets][web-perf-3]
 
   [高效构建 Flutter widgets (Building performant Flutter widgets)][web-perf-3]
-
 
 [Flutter Gallery]: https://gallery.flutter.dev/#/
 [web-perf-1]: {{site.medium}}/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674

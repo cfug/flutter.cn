@@ -454,10 +454,12 @@ You can also define custom snippets by executing
 ### 键盘快捷键
 
 **Hot reload**
+<br> During a debug session, clicking the **Hot Reload** button on the
+  **Debug Toolbar**, or pressing `Ctrl`+`F5`
+  (`Cmd`+`F5` on macOS) performs a hot reload.
 
 **热重载**
-
-: During a debug session, clicking the **Hot Reload** button on the
+<br> During a debug session, clicking the **Hot Reload** button on the
   **Debug Toolbar**, or pressing `Ctrl`+`F5`
   (`Cmd`+`F5` on macOS) performs a hot reload.
   
@@ -502,7 +504,8 @@ run the **Flutter: Hot Restart** command from the
 [Command Palette][], or press `Ctrl`+`Shift`+`F5`(`Cmd`+`Shift`+`F5` on macOS).
 
 对于这些更改，你无需结束调试过程而直接热重启 (hot restart) 你的应用。
-要执行热重启，执行 [命令面板][] 的 **Flutter：热重启**命令，或者按 `Ctrl`+`F5`。
+要执行热重启，执行 [命令面板][Command Palette] 的 **Flutter：热重启**命令，
+或者按 ``Ctrl`+`Shift`+`F5 (在 macOS 上使用 `Cmd`+`Shift`+`F5`)。
 
 ## Troubleshooting
 

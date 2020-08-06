@@ -2148,7 +2148,7 @@ Knowing the general layout rule is necessary, but it’s not enough.
 掌握通用布局是非常重要的，但这还不够。
 
 Each widget has a lot of freedom when applying the general rule,
-so there is no way of knowing what might do by just reading
+so there is no way of knowing what it will do by just reading
 the widget’s name.
 
 应用一般规则时，每个 widget 都具有很大的自由度，

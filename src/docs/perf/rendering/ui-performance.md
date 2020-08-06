@@ -641,7 +641,7 @@ You can see which images are being cached by enabling the
 [`PerformanceOverlayLayer.checkerboardRasterCacheImages`][] switch.
 
 打开覆盖层性能 棋盘格光栅缓存图像
-([PerformanceOverlayLayer.checkerboardRasterCacheImages][]) 开关可以检查哪些图片被缓存了。
+([`PerformanceOverlayLayer.checkerboardRasterCacheImages`][]) 开关可以检查哪些图片被缓存了。
 
 {% comment %}
 [TODO: Document how to do this, either via UI or programmatically.
@@ -694,6 +694,8 @@ For details on how to do this, see [Show performance data][].
 了解细节，可以参考
 [在 Android Studio 或类 IntelliJ 里开发 Flutter 应用][] 中的
 [显示性能数据][Show performance data]。
+
+[Show performance data]: /docs/development/tools/android-studio#show-performance-data
 
 [Show performance data]: /docs/development/tools/android-studio#show-performance-data
 

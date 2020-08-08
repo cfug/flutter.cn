@@ -69,6 +69,20 @@ see [Web support for Flutter][].
 有关如何在 Web 上使用 Flutter 的更多信息，参考文档：
 [Flutter 的 Web 支持][Web support for Flutter]。
 
+### How do I file an issue about web support?
+
+### 我应该如何提交 web 支持相关的 issue
+
+You can [file an issue][] on the main Flutter repo.
+Make sure that "web" is included in the title.
+
+你可以在 Flutter 主仓库中[发起一个 issue][file an issue]。
+请确保标题中包含了 "web" 关键字。
+
+### How do I migrate a web app built using the flutter_web repo to the flutter repo?
+
+### 我应该如何从 flutter_web 仓库编写的应用迁移到 flutter 仓库下
+
 See [Upgrading from package:flutter_web to the Flutter SDK][].
 
 点击查看 [将使用 flutter_web package 升级使用到 Flutter SDK][Upgrading from package:flutter_web to the Flutter SDK]
@@ -150,11 +164,45 @@ but you can enter "R" in the console where
 使用浏览器的刷新按钮不会起作用，
 但你可以在执行 “flutter run -d chrome” 的控制台中输入“R” 进行刷新。
 
+### Which web browsers are supported by Flutter?
+
+### 现在有哪些浏览器支持 Flutter 了？
+
+Flutter web apps can run on the following browsers:
+
+现在 Flutter web 应用可以运行在以下浏览器中：
+
+* Chrome (mobile & desktop)
+
+  Chrome（移动和桌面端）
+
+* Safari (mobile & desktop)
+
+  Safari（移动和桌面端）
+
+* Edge (mobile & desktop)
+
+  Edge（移动和桌面端）
+
+* Firefox (desktop)
+
+  Firefox（仅桌面端）
+
+During development, Chrome (on macOS, Windows, and Linux) and Edge (on Windows)
+are supported as the default browsers for debugging your app. In order to test
+your web app on other browsers use the `Web server` device option to get a URL
+serving the app. Learn more on how to [run your web apps in any supported
+browser][]
+
+在开发阶段，Chrome（在 macOS、Windows 以及 Linux）以及 Edge（在 Windows 上）将作为默认
+浏览器用于调试。为了在其他浏览器上测试你的 web 应用，需要使用 `Web server` 选项设备获得 URL 以提供应用服务。你可以[在支持的浏览器中运行你的 web 应用][run your web apps in any supported
+browser]了解更多。
+
 ### Can I build, run, and deploy web apps in any of the IDEs?
 
 ### 我可以在任意 IDE 中，构建、运行并发布 web 应用吗？
 
-You can select **Chrome** as the target device in
+You can select a browser as the target device, such as **Chrome**, in
 Android Studio/IntelliJ and VS Code if you are using the
 latest beta channel of Flutter and have enabled web support.
 To enable support, run the following in the terminal:
@@ -185,6 +233,19 @@ option.
 See [Creating responsive apps][].
 
 请参阅[创建响应式应用][Creating responsive apps]。
+
+### Can I use Flutter plugins?
+
+### 我能使用 Flutter 插件么？
+
+Yes, several plugins have web support. 
+Find an updated list of plugins on [pub.dev][] using the web filter.
+You can also add web support to existing plugins or
+[write your own plugins][] for the web.
+
+是的，目前有很多插件已经支持了 web。
+在 [pub.dev][] 上使用 web 过滤以找到更新的插件清单。
+你也可以为已有的或者[你自己编写的 plugin][write your own plugins] 添加 web 支持。
 
 ### Can I use `dart:io` with a web app?
 

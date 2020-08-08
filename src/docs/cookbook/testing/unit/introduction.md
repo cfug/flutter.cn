@@ -295,6 +295,13 @@ command from the root of the project:
 flutter test test/counter_test.dart
 ```
 
+For more options regarding unit tests, you can execute this command:
+
+你可以执行下面的命令获得更多有关单元测试的帮助：
+
+```
+flutter test --help
+```
 
 [`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [`test`]: {{site.pub-pkg}}/test

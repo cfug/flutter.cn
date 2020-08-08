@@ -291,7 +291,6 @@ We also recommend the following online class:
 
 {{site.alert.end}}
 
-
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Basic Flutter layout concepts]: /docs/codelabs/layout-basics

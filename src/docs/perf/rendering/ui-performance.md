@@ -697,8 +697,6 @@ For details on how to do this, see [Show performance data][].
 
 [Show performance data]: /docs/development/tools/android-studio#show-performance-data
 
-[Show performance data]: /docs/development/tools/android-studio#show-performance-data
-
 ## Benchmarking
 
 ## 评分

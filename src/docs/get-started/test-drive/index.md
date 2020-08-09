@@ -43,7 +43,6 @@ Select your development tool of choice for writing, building, and running Flutte
   {% include_relative _terminal.md %}
 </div>
 
-## Next step
 
 ## 下一步
 

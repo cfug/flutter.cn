@@ -225,10 +225,6 @@ module an embeddable Android library.
   为了避免 Dex 合并出现问题，`flutter.androidPackage` 不应与应用的包名相同。
 {{site.alert.end}}
 
-{{site.alert.note}}
-  To avoid Dex merging issues, `flutter.androidPackage` should not be identical to your host app's package name
-{{site.alert.end}}
-
 ### Java 8 requirement
 
 ### 引入 Java 8

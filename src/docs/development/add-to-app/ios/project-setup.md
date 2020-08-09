@@ -148,7 +148,6 @@ There are two ways to embed Flutter in your existing application.
    用 Xcode 手动集成到你的应用中，并更新编译设置。
 
 {{site.alert.note}}
-
   Your app does not run on a simulator in Release mode because Flutter does not
   yet support outputting x86/x86_64 ahead-of-time (AOT) binaries for your Dart
   code. You can run in Debug mode on a simulator or a real device,

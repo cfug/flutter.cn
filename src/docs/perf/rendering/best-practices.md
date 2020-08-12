@@ -13,20 +13,16 @@ instead of needing to micro-optimize with complicated profiling tools.
 These best recommendations will help you write the most performant
 Flutter app possible.
 
-<<<<<<< HEAD
 通常来说，Flutter 技术构建的应用程序在默认情况下都是高性能的。
 所以你只需要避开常见的陷阱，就可以获得优异的性能，
 而不需要使用复杂的分析工具对细节做优化。
 这些最佳建议将帮助你编写性能最佳的 Flutter 应用程序。
 
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 If you are writing web apps in Flutter, you might be interested
 in a series of articles, written by the Flutter Material team,
 after they modified the [Flutter Gallery][] app to make it more
 performant on the web:
 
-<<<<<<< HEAD
 如果你在用 Flutter 编写 Web 应用，你可能会对下面的系列文章感兴趣，
 他们由 Flutter Material 团队撰写，记录对 [Flutter Gallery][] 应用的修改，
 使其在 Web 上的展现更为丰富:
@@ -48,14 +44,6 @@ performant on the web:
 * [Building performant Flutter widgets][web-perf-3]
 
   [高效构建 Flutter widgets (Building performant Flutter widgets)][web-perf-3]
-=======
-* [Optimizing performance in Flutter web apps with tree
-   shaking and deferred loading][web-perf-1]
-* [Improving perceived performance with image placeholders,
-   precaching, and disabled navigation transitions][web-perf-2]
-* [Building performant Flutter widgets][web-perf-3]
-
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 
 [Flutter Gallery]: https://gallery.flutter.dev/#/
 [web-perf-1]: {{site.medium}}/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
@@ -88,13 +76,10 @@ when designing your app:
 * Avoid overly large single widgets with a large `build()` function.
   Split them into different widgets based on encapsulation but also on how
   they change:
-<<<<<<< HEAD
 
   避免在一个超长的 `build()` 方法中返回一个过于庞大的 widget。
   把他们分拆成不同的 widget，并进行封装，另外他们要这样改变：
 
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
   * When `setState()` is called on a State, all descendent widgets
     rebuild. Therefore, localize the `setState()` call to the part of
     the subtree whose UI actually needs to change. Avoid calling
@@ -123,15 +108,11 @@ when designing your app:
 
 Also see:
 
-<<<<<<< HEAD
 另请参考：
 
 * [Performance considerations][], part of the [`StatefulWidget`][] API doc
  
   [`StatefulWidget`][] API 文档中的 [Performance considerations][] 部分。
-=======
-* [Performance considerations][], part of the [`StatefulWidget`][] API doc
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [source code for `SlideTransition`]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/transitions.dart
@@ -165,11 +146,8 @@ Use effects carefully, as they can be expensive. Some of them invoke
 
 Some general rules when applying specific effects:
 
-<<<<<<< HEAD
 一些在使用效果时的通用规则：
 
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 * Use the [`Opacity`][] widget only when necessary.
   See the [Transparent image][] section in the Opacity
   API page for an example of applying opacity directly
@@ -193,22 +171,16 @@ Some general rules when applying specific effects:
 
 Other widgets that might trigger `saveLayer()` and are potentially costly:
 
-<<<<<<< HEAD
 其他会触发 `saveLayer()` 的 widget，可能也会代价高昂。
 
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 * [`ShaderMask`][]
 * [`ColorFilter`][]
 * [`Chip`][]&mdash;might cause call to `saveLayer()` if
   `disabledColorAlpha != 0xff`
-<<<<<<< HEAD
   
   [`Chip`][]&mdash;
   当 `disabledColorAlpha != 0xff` 的时候，会调用 `saveLayer()`  
 
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 * [`Text`][]&mdash;might cause call to `saveLayer()`
   if there's an `overflowShader`
   
@@ -217,33 +189,24 @@ Other widgets that might trigger `saveLayer()` and are potentially costly:
 
 Ways to avoid calls to `saveLayer()`:
 
-<<<<<<< HEAD
 避免调用 `saveLayer()` 的方式：
 
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 * To implement fading in an image, consider using the
   [`FadeInImage`][] widget,
   which applies a gradual opacity using the GPU’s fragment shader.
   For more information, see the [`Opacity`][] docs.
-<<<<<<< HEAD
 
   要在图像中实现淡入淡出，请考虑使用 [`FadeInImage`][] widget，
   该 widget 使用 GPU 的片段着色器应用渐变不透明度。
   了解更多详情，请参见 [`Opacity`][] 文档。
 
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 * To create a rectangle with rounded corners, instead of applying a
   clipping rectangle, consider using the `borderRadius` property offered
   by many of the widget classes.
 
-<<<<<<< HEAD
   要创建带圆角的矩形，而不是应用剪切矩形，
   请考虑使用很多 widget 都提供的 `borderRadius`属性。
 
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 [`Chip`]: {{site.api}}/flutter/material/Chip-class.html
 [`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
@@ -264,7 +227,6 @@ That way only the visible portion of the screen is built at startup time.
 
 Also see:
 
-<<<<<<< HEAD
 请参阅：
 
 * [Working with long lists][] in the [Cookbook][]
@@ -277,11 +239,6 @@ Also see:
   来自社区的 AbdulRahman AlHamali 撰写的文章
   [Creating a ListView that loads one page at a time]
 
-=======
-* [Working with long lists][] in the [Cookbook][]
-* [Creating a ListView that loads one page at a time][]
-  a community article by AbdulRahman AlHamali
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 * [`Listview.builder`][] API
 
 [Cookbook]: /cookbook
@@ -338,12 +295,9 @@ see the video [Why 60fps?][]
 
 [profile mode]: /docs/testing/build-modes#profile
 [Why 60fps?]: https://www.youtube.com/watch?v=CaMTIgxCSqU
-<<<<<<< HEAD
 
 如果你想弄明白为什么 60fps 会带来平滑的视觉体验，
 请看视频 [Why 60fps?](https://www.bilibili.com/video/av55811304/)
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 
 ## Pitfalls
 
@@ -370,14 +324,11 @@ The following behaviors might negatively impact your app's performance.
   Use `AnimatedOpacity` or `FadeInImage` instead.
   For more information,
   see [Performance considerations for opacity animation][].
-<<<<<<< HEAD
 
   避免使用 `Opacity` widget，尤其是在动画中避免使用。
   请用 `AnimatedOpacity` 或 `FadeInImage` 进行代替。
   更多信息，请参阅
   [Performance considerations for opacity animation][]。
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 
 * When using an AnimatedBuilder, avoid putting a subtree in the builder
   function that builds widgets that don’t depend on the animation.
@@ -385,14 +336,11 @@ The following behaviors might negatively impact your app's performance.
   Instead, build that part of the subtree once and pass it as a child to
   the AnimatedBuilder. For more information,
   see [Performance optimizations][].
-<<<<<<< HEAD
 
   使用 AnimatedBuilder 时，请避免在不依赖于动画的 widget 的构造方法中构建 widget 树。
   动画的每次变动都会重建这个 widget 树。
   而应该构建子树的那一部分，并将其作为 child 传递给 AnimatedBuilder。
   更多内容，请查看 [这个文档][Performance optimizations]。
-=======
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 
 * Avoid clipping in an animation. If possible, pre-clip the image before
   animating it.
@@ -413,7 +361,6 @@ The following behaviors might negatively impact your app's performance.
 
 For more performance info, see the following resources:
 
-<<<<<<< HEAD
 要了解更多性能信息，请参见以下资源：
 
 * [Performance optimizations][] in the AnimatedBuilder API page
@@ -421,13 +368,6 @@ For more performance info, see the following resources:
   AnimatedBuilder API 页面的 [Performance optimizations][] 部分；
 
 * [Performance considerations for opacity animation][] in the Opacity API page
-=======
-* [Performance optimizations][] in the AnimatedBuilder API page
-* [Performance considerations for opacity animation][] in the Opacity API page
-* [Child elements' lifecycle][] and how to load them efficiently,
-  in the ListView API page
-* [Performance considerations][] of a `StatefulWidget`
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 
   Opacity API 页面的 [Performance considerations for opacity animation][] 部分；
 

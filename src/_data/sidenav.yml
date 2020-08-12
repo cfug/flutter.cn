@@ -251,15 +251,9 @@
           permalink: /docs/development/androidx-migration
         - title: 升级 Android plugin
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
-<<<<<<< HEAD
         - title: iOS 14 beta 支持
           permalink: /docs/development/ios-14
         - title: Xcode 11.4 支持
-=======
-        - title: Developing for iOS 14 beta
-          permalink: /docs/development/ios-14
-        - title: Xcode 11.4 support
->>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
           permalink: /docs/development/ios-project-migration
 
 - title: 测试和调试

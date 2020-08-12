@@ -957,13 +957,13 @@ For additional details on `.podspec` files, see the
 如果希望了解更多有关 `.podspec` 文件更多的信息，请参阅
 [CocoaPods 文档][CocoaPods Documentation] 了解。
 
-
 ### Web
 
 All web dependencies are handled by the `pubspec.yaml`
 file like any other Dart package.
 
-与其他的 Dart package 一样，所有的 Web 依赖都由文件 `pubspec.yaml` 来处理。
+与其他的 Dart package 一样，
+所有的 Web 依赖都由文件 `pubspec.yaml` 来处理。
 
 {% comment %}
 <!-- Remove until we have better text. -->

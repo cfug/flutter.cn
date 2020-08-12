@@ -99,7 +99,6 @@ for your Android app.
 的 URL，使用这个 URL 并选择 "Connect" 来启动
 适用于 Android 应用的 Flutter DevTools。
 
-
 #### Flutter Chrome OS lint analysis
 
 #### Chrome OS 上的 Flutter lint 分析

@@ -25,9 +25,9 @@ method, or class. The [`test`][] package provides the
 core framework for writing unit tests, and the [`flutter_test`][]
 package provides additional utilities for testing widgets.
 
-使用单元测试可轻松地验证单个函数、方法或类的行为。[`test`]({{site.pub-pkg}}/test) 这个 package 提供了写单测的核心框架，
-[`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
-包则提供了额外的功能来测试 widget。
+使用单元测试可轻松地验证单个函数、方法或类的行为。
+[`test`][]这个 package 提供了写单测的核心框架，
+[`flutter_test`][] package 则提供了额外的功能来测试 widget。
 
 This recipe demonstrates the core features provided by the `test` package
 using the following steps:
@@ -59,13 +59,11 @@ using the following steps:
      执行测试。
      
 
-使用单元测试可轻松地验证单个函数、方法或类的行为。[`test`]({{site.pub-pkg}}/test) 包提供了写单测的核心框架，
-[`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html) 包则提供了额外的功能来测试 Widget。
-
 For more information about the test package,
 see the [test package documentation][].
 
-关于测试包的更多内容，可移步至 [测试包文档](https://github.com/dart-lang/test/blob/master/README.md).
+关于 package 测试的更多内容，
+可移步至 [test package 的文档][test package documentation]。
 
 ## 1. Add the `test` or `flutter_test` dependency
 
@@ -76,8 +74,10 @@ you can import the `test` package. The test package provides the core
 functionality for writing tests in Dart. This is the best approach when
 writing packages consumed by web, server, and Flutter apps.
 
-如果 Dart 包没有依赖 Flutter，可以导入 `test` 包。Test 包提供了编写测试所需要的核心功能。
-当我们写的包需要被 web、服务端和 Flutter app 使用时，这是最佳的方式。
+如果 Dart package 没有依赖 Flutter，可以导入 `test` package。
+Test package 提供了编写测试所需要的核心功能。
+当我们写的 package 需要被 web、服务端和 Flutter app 使用时，
+这是最佳的方式。
 
 ```yaml
 dev_dependencies:

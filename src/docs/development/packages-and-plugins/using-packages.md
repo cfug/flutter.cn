@@ -341,14 +341,14 @@ to retrieve the highest available version of the package
 that is allowed by the version constraint specified in
 `pubspec.yaml`. 
 Note that this is a different command from 
-`flutter upgrade` or `flutter update-packages', 
+`flutter upgrade` or `flutter update-packages`, 
 which both update Flutter itself.
 
 如果你想升级到 package 的最新版本，比如使用 package 的最新特性，
 请运行 `flutter packages upgrade`
-（IntelliJ 或 Android Studio 的 `flutter packages upgrade`）。
+（IntelliJ 或 Android Studio 的 **Upgrade dependencies** 功能）。
 这将检索你在 `pubspec.yaml` 文件中指定的版本约束所允许的最高可用版本。
-请注意，`flutter upgrade` 与 `flutter update-packages' 是两个
+请注意，`flutter upgrade` 与 `flutter update-packages` 是两个
 不同的命令，但它们都会更新 Flutter。
 
 ### Dependencies on unpublished packages

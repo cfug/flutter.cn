@@ -13,6 +13,7 @@ Flutter applications are performant by default,
 so you only need to avoid common pitfalls to achieve
 excellent performance.
 
+<<<<<<< HEAD
 在衡量性能时，应用程序中的渲染动画一直是最受关注的话题之一。
 由于 Flutter 自带的 Skia 引擎以及它能够快速创建和处理组件的能力，
 Flutter 应用在默认情况下就能保证拥有良好的性能，
@@ -22,6 +23,10 @@ Flutter 应用在默认情况下就能保证拥有良好的性能，
 
 ## 一些基本的建议
 
+=======
+## General advice
+
+>>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 If you _are_ seeing janky (non smooth) animations, make
 **sure** that you are profiling performance with an
 app built in _profile_ mode.
@@ -62,30 +67,42 @@ see the following docs:
 
 * [Flutter performance profiling][]
 
+<<<<<<< HEAD
   [Flutter 性能分析][Flutter performance profiling]
 
 ## Mobile-only advice
 
 ## 纯移动应用
 
+=======
+## Mobile-only advice
+
+>>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 Do you see noticeable jank on your mobile app, but only on
 the first run of an animation? If so, see
 [Reduce shader animation jank on mobile][].
 
+<<<<<<< HEAD
 如果移动应用里遇到一些肉眼可见的卡顿，单只是在第一次运行动画的时候？
 如果是这样的话，可以查看这个文档
 [减少过移动应用的着色器动画卡顿][Reduce shader animation jank on mobile]。
 
+=======
+>>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 [Reduce shader animation jank on mobile]: /docs/perf/rendering/shader
 
 ## Web-only advice
 
+<<<<<<< HEAD
 ## 纯 Web 应用
 
+=======
+>>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 The following series of articles cover what the Flutter Material
 team learned when improving performance of the Flutter Gallery
 app on the web:
 
+<<<<<<< HEAD
 下面的内容是 Flutter Material 团队在提高
 Flutter Gallery Web 应用性能时候总结的经验：
 
@@ -101,6 +118,12 @@ Flutter Gallery Web 应用性能时候总结的经验：
 * [Building performant Flutter widgets][]
 
   [高效构建 Flutter widgets (Building performant Flutter widgets)][Building performant Flutter widgets]
+=======
+* [Optimizing performance in Flutter web apps with tree shaking and deferred loading][shaking]
+* [Improving perceived performance with image placeholders, precaching, and disabled navigation transitions][images]
+* [Building performant Flutter widgets][]
+
+>>>>>>> fe6ad0f6d50e9f704c52e445dc92fc324ab10596
 
 [Building performant Flutter widgets]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
 [Flutter's build modes]: /docs/testing/build-modes

@@ -218,7 +218,7 @@ iOS、Android、Web 和桌面端。
 
   [使用 Flutter 构建 iOS 风格的应用][Building a Cupertino app with Flutter]
   构建 iOS 风格和体验的购物应用 Shrine，创建多个选项卡，
-  使用 [provider]({{site.pub}}/packages/provider) 来管理不同的页面。
+  使用 [provider][] package 来管理不同的页面。
 
 * [How to write a Flutter plugin][]<br>
   Learn how to write a plugin by creating a music plugin
@@ -272,9 +272,12 @@ some of the most commonly used, yet unique features of the Dart language.
 For Dart-specific codelabs, see the
 [codelabs][] page on the [Dart site][].
 
+查看更多 Dart 相关的 codelab，
+请在 [Dart 网站][Dart site] 上查看 [codelabs][] 页面。
+
 We also recommend the following online class:
 
-### 其他资源
+下面这些线上的课程也很不错：
 
 * [The Complete Flutter Development Bootcamp Using Dart][]
 

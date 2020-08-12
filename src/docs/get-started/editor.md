@@ -124,7 +124,7 @@ To install these:
 
 {{site.alert.end}}
 
-    
+
 
 </div>
 <div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
@@ -189,25 +189,28 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
 ## Install Emacs
 
+## 安装 Emacs 编辑器
+
 Emacs is a lightweight editor with support for Flutter and Dart.
+
+Emacs 是一个轻量级的编辑器，支持 Flutter 和 Dart。
 
 * [Emacs][], latest stable version
 
+  最新版本的 [Emacs][] 编辑器。
+
 ## Install the lsp-dart package
 
+## 安装 lsp-dart 包
+
 For information on how to install and use the package, see the [lsp-dart documentation][].
+
+关于如何安装和使用 lsp-dart 包，可以查看
+[lsp-dart 文档][lsp-dart documentation]。
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
 
-## Next step
-
-## 下一节
-
-Take Flutter for a test drive: create a first project, run it, and experience
-"hot reload".
-
-开发体验初探：创建第一个项目，运行并体验“热重载”。
 
 [Android Studio]: {{site.android-dev}}/studio
 [IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/

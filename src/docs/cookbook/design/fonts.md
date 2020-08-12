@@ -34,6 +34,12 @@ or perhaps you downloaded a font from [Google Fonts][].
 
 {{site.alert.end}}
 
+{{site.alert.note}}
+  For another approach to using custom fonts, 
+  especially if you want to re-use one font over multiple projects, 
+  see [Export fonts from a package][].
+{{site.alert.end}}
+
 Flutter works with custom fonts and you can apply a custom
 font across an entire app or to individual widgets.
 This recipe creates an app that uses custom fonts with
@@ -305,8 +311,7 @@ class MyHomePage extends StatelessWidget {
 ```
 
 ![Custom Fonts Demo](/images/cookbook/fonts.png){:.site-mobile-screenshot}
-
-
+[Export fonts from a package]:  /docs/cookbook/design/package-fonts
 [`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
 [`fontStyle`]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
 [`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html

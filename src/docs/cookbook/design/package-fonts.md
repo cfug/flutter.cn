@@ -4,8 +4,8 @@ title: 以 package 的方式使用字体
 description: How to export fonts from a package.
 description: 如何从 package 中导出字体。
 prev:
-  title: Display a snackbars
-  title: 显示 SnackBars
+  title: Display a snackbar
+  title: 显示 SnackBar
   path: /docs/cookbook/design/snackbars
 next:
   title: Update the UI based on orientation

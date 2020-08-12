@@ -9,7 +9,9 @@ The more features your app has, the harder it is to test manually.
 Automated tests help ensure that your app performs correctly before
 you publish it, while retaining your feature and bug fix velocity.
 
-通常一个应用的功能越多，手工测试就越困难。自动化测试在发布之前运行，有助于保证我们应用的稳定性和功能的完整性，并且可以快速修复问题。
+通常一个应用的功能越多，手工测试就越困难。
+自动化测试在发布之前运行，有助于保证我们应用的稳定性和功能的完整性，
+并且可以快速修复问题。
 
 Automated testing falls into a few categories:
 
@@ -35,7 +37,10 @@ to cover all the important use cases. This advice is based on
 the fact that there are trade-offs between different kinds of testing,
 seen below.
 
-一般来说，在自动化测试方面做的比较好的应用会有许多单元测试和 widget 测试，并且使用 [代码覆盖率](https://en.wikipedia.org/wiki/Code_coverage) 进行追踪，还会有足够的集成测试来覆盖所有的重要使用场景。这样做是因为不同类型的测试之间需要权衡，如下所示：
+一般来说，在自动化测试方面做的比较好的应用会有许多单元测试和 widget 测试，
+并且使用 [代码覆盖率][code coverage] 进行追踪，
+还会有足够的集成测试来覆盖所有的重要使用场景。
+这样做是因为不同类型的测试之间需要权衡，如下所示：
 
 |                      | <t>Unit</t><t>单元测试</t> | <t>Widget</t><t>Widget 测试</t> | <t>Integration</t><t>集成测试</t> |
 |----------------------|--------|--------|-------------|
@@ -98,7 +103,9 @@ widgets. A widget test is therefore more comprehensive than a unit test.
 However, like a unit test, a widget test's environment is replaced with
 an implementation much simpler than a full-blown UI system.
 
-例如，被测试的 widget 可以接收和响应用户操作和事件，进行布局，并实例化子 widget 。所以，widget 测试比单元测试更全面。但是，就像单元测试一样，widget 测试环境实现上比成熟的 UI 系统简单得多。
+例如，被测试的 widget 可以接收和响应用户操作和事件，进行布局并实例化子 widget。
+所以，widget 测试比单元测试更全面。
+但是，就像单元测试一样，widget 测试环境实现上比成熟的 UI 系统简单得多。
 
 ### Recipes
 
@@ -116,14 +123,18 @@ and services being tested work together as expected.
 Furthermore, you can use integration
 tests to verify your app's performance.
 
-**集成测试** 测试一个完整的应用或者一个应用的大部分功能。集成测试的目标是验证正在测试的所有 widget 和服务是否按照预期的方式一起工作。此外，还可以使用集成测试来验证应用的性能。
+**集成测试** 测试一个完整的应用或者一个应用的大部分功能。
+集成测试的目标是验证正在测试的所有 widget 和服务是否按照预期的方式一起工作。
+此外，还可以使用集成测试来验证应用的性能。
 
 Generally, an _integration test_ runs on a real device or an OS emulator,
 such as iOS Simulator or Android Emulator.
 The app under test is typically isolated
 from the test driver code to avoid skewing the results.
 
-通常情况下，一个 **集成测试** 运行在真机或 OS 模拟器上，如 iOS 模拟器 (iOS Simulator) 或 Android 模拟器 (Android Emulator) 。测试中的应用通常与测试驱动程序代码隔离，以避免结果出现偏差。
+通常情况下，一个 **集成测试** 运行在真机或 OS 模拟器上，
+如 iOS 模拟器 (iOS Simulator) 或 Android 模拟器 (Android Emulator) 。
+测试中的应用通常与测试驱动程序代码隔离，以避免结果出现偏差。
 
 ### Recipes
 

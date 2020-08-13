@@ -76,7 +76,7 @@ see [Web support for Flutter][].
 You can [file an issue][] on the main Flutter repo.
 Make sure that "web" is included in the title.
 
-你可以在 Flutter 主仓库中[发起一个 issue][file an issue]。
+你可以在 Flutter 主仓库中 [发起一个 issue][file an issue]。
 请确保标题中包含了 "web" 关键字。
 
 ### How do I migrate a web app built using the flutter_web repo to the flutter repo?
@@ -85,7 +85,8 @@ Make sure that "web" is included in the title.
 
 See [Upgrading from package:flutter_web to the Flutter SDK][].
 
-点击查看 [将使用 flutter_web package 升级使用到 Flutter SDK][Upgrading from package:flutter_web to the Flutter SDK]
+点击查看 
+[将使用 flutter_web package 升级使用到 Flutter SDK][Upgrading from package:flutter_web to the Flutter SDK]
 以获得 Flutter Web 体验。
 
 ### How do I create an app that also runs on the web?
@@ -103,55 +104,6 @@ See [building a web app with Flutter](/docs/get-started/web).
 No, but you can use hot restart.
 
 不能，但是可以使用热重启 (hot restart)。
-
-### Can I use Flutter plugins?
-
-Yes, several plugins have web support. 
-Find an updated list of plugins on [pub.dev][] using the web filter.
-You can also add web support to existing plugins or
-[write your own plugins][] for the web.
-
-可以使用了，许多 plugin 已经支持 web。
-使用 web 过滤器在 [pub.dev][] 上寻找 plugin 更新列表。
-你也可以向已有 plugin 添加 web 支持，或者编写[你的 web plugin][write your own plugins]。
-
-### How do I file an issue about web support?
-
-### 我该如何提交关于 Web 支持的 issue？
-
-You can [file an issue][] on the main Flutter repo.
-Make sure that "web" is included in the title.
-
-你可以在 Flutter 主仓库中 [提交一个 issue][file an issue]。
-确保标题中包含 “Web” 字样。
-
-### Which web browser does Flutter support?
-
-### Flutter 支持哪些浏览器
-
-Today Flutter web apps can run on the following browsers:
-
-目前使用 Flutter 构建的 Web 应用可以运行在下述浏览器中：
-
-Chrome (mobile & desktop)
-Safari (mobile & desktop)
-Edge (mobile & desktop)
-Firefox (desktop)
-
-谷歌 Chrome 浏览器 (移动端和桌面端)
-苹果 Safari 浏览器 (移动端和桌面端)
-微软 Edge 浏览器 (移动端和桌面端)
-Firefox 火狐浏览器 (桌面端)
-
-During development, Chrome is the default browser for running your app. 
-In order to test your web app on other browsers use the `Web server` device option to get a URL serving the app.
-Learn more on how to [run your web apps in any supported browser][]
-
-在开发过程中，Chrome 是运行应用时的默认浏览器。
-如果希望在其他浏览器里测试你的 Web 应用，
-可以使用 `Web server` 选项来获得一个运行应用的 URL 地址。
-了解更多，请查看文档
-[在支持的浏览器上运行 Web 应用][run your web apps in any supported browser]。
 
 ### How do I refresh the app running in the browser?
 
@@ -194,9 +146,12 @@ your web app on other browsers use the `Web server` device option to get a URL
 serving the app. Learn more on how to [run your web apps in any supported
 browser][]
 
-在开发阶段，Chrome（在 macOS、Windows 以及 Linux）以及 Edge（在 Windows 上）将作为默认
-浏览器用于调试。为了在其他浏览器上测试你的 web 应用，需要使用 `Web server` 选项设备获得 URL 以提供应用服务。你可以[在支持的浏览器中运行你的 web 应用][run your web apps in any supported
-browser]了解更多。
+在开发阶段，Chrome（在 macOS、Windows 以及 Linux）以及
+Edge（在 Windows 上）将作为默认浏览器用于调试。
+为了在其他浏览器上测试你的 web 应用，
+需要使用 `Web server` 选项设备获得 URL 以提供应用服务。
+你可以 [在支持的浏览器中运行你的 web 应用][run your web apps in any supported browser]
+了解更多。
 
 ### Can I build, run, and deploy web apps in any of the IDEs?
 
@@ -245,11 +200,11 @@ You can also add web support to existing plugins or
 
 是的，目前有很多插件已经支持了 web。
 在 [pub.dev][] 上使用 web 过滤以找到更新的插件清单。
-你也可以为已有的或者[你自己编写的 plugin][write your own plugins] 添加 web 支持。
+你也可以为已有的或者 [你自己编写的 plugin][write your own plugins] 添加 web 支持。
 
 ### Can I use `dart:io` with a web app?
 
-### 我能在 web 应用中使用 `dart:io` 这个 package 吗？
+### 我能在 Web 应用中使用 `dart:io` 这个 package 吗？
 
 No. The file system is not accessible from the browser.
 For network functionality, use the [`http`][]

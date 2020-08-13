@@ -459,18 +459,8 @@ You can also define custom snippets by executing
   (`Cmd`+`F5` on macOS) performs a hot reload.
 
 **热重载**
-<br> During a debug session, clicking the **Hot Reload** button on the
-  **Debug Toolbar**, or pressing `Ctrl`+`F5`
-  (`Cmd`+`F5` on macOS) performs a hot reload.
-  
-  调试期间，在**调试工具栏**点击**热重载 (Hot Reload)**按钮，
+<br> 调试期间，在**调试工具栏**点击**热重载 (Hot Reload)**按钮，
   或者按 `Ctrl`+`F5` (macOS 用 `Cmd`+`F5`)执行热重载。
-  
-  Keyboard mappings can be changed by executing the **Open Keyboard Shortcuts**
-  command from the [Command Palette][].
-  
-  键盘映射可以在 [命令面板][] 执行**Open Keyboard Shortcuts**修改。
-
 
 ### Hot reload vs. hot restart
 

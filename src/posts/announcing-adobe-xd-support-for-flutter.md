@@ -1,4 +1,5 @@
 ---
+title: Announcing Adobe XD support for Flutter
 title: 所见即所得: Adobe XD 的 Flutter 插件
 description: 我们很高兴宣布 CodePen 现已提供 Flutter 支持。
 ---
@@ -23,7 +24,6 @@ Flutter 希望成为任您挥洒创意的画布。
 ![flutter-plugin](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/flutter-plugin.png){:width="90%"}
 
 △ 使用插件即可轻松从 Adobe XD 导出到 Flutter
-
 
 ## 从 Adobe XD 中导出 Flutter 代码
 
@@ -56,5 +56,3 @@ Flutter 希望成为任您挥洒创意的画布。
 
 原文：[Announcing Adobe XD support for Flutter](https://medium.com/flutter/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e) 
 中文发布：谷歌开发者公众号
-
-

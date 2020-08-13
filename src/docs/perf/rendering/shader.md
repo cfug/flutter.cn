@@ -54,7 +54,7 @@ jank in later animations. Use the following instructions to collect
 and package the SkSL shaders:
 
 <ol markdown="1">
-<li markdown="1">Run the app with `--cache-sksl` turned on 
+<li markdown="1">Run the app with `--cache-sksl` turned on
     to capture shaders in SkSL:
 
 ```sh
@@ -152,9 +152,6 @@ The worst frame rasterization time is a nice metric from such integration tests 
    works in the wild. ([`FrameTiming`][] can be used to compute the worst frame
    rasterization time in release mode; the worst frame rasterization time is
    a good indicator on how severe the shader compilation jank is.)
-
-[`FrameTiming`]: {{site.api}}/flutter/dart-ui/FrameTiming-class.html
-[SkSL-based warmup issue]: {{site.github}}/flutter/flutter/issues/53607#issuecomment-608587484
 
 3. **SkSL warm-up doesn't help newer iPhones using Metal.**<br>
    Flutter recently migrated from OpenGL to Metal for all newer iOS

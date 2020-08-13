@@ -460,7 +460,7 @@ composition, these optimizations have a substantial effect on performance.
 
 ### Separation of the Element and RenderObject trees
 
-The `RenderObject` and `Element` (widget) trees in Flutter are isomorphic
+The `RenderObject` and `Element` (Widget) trees in Flutter are isomorphic
 (strictly speaking, the `RenderObject` tree is a subset of the `Element`
 tree). An obvious simplification would be to combine these trees into
 one tree. However, in practice there are a number of benefits to having

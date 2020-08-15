@@ -408,7 +408,7 @@ From your IDE, editor, or at the command line,
   而且你也有其他选择，Flutter 也提供了一款 iOS 设计风格的 Cupertino widget 库。
   当然你也可以创建自己的自定义 widget 库。
 
-* In Flutter, most everything is a [Widget][].
+* In Flutter, almost everything is a [Widget][].
   Even the app itself is a widget.
   The app’s UI can be described as a widget tree.
 

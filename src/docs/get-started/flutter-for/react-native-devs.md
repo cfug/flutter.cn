@@ -1538,13 +1538,18 @@ and [colors][].
 Icon(Icons.lightbulb_outline, color: Colors.redAccent)
 ```
 
-When using the `Icons` class, make sure to set `uses-material-design: true` in
-the project's `pubspec.yaml` file. This ensures that
-the `MaterialIcons` font, which displays the icons, is included in your app.
+When using the `Icons` class,
+make sure to set `uses-material-design: true` in
+the project's `pubspec.yaml` file.
+This ensures that the `MaterialIcons` font,
+which displays the icons, is included in your app.
+In general, if you intend to use the Material library, 
+you should include this line.
 
 当使用 `Icons` 类时，确保在项目的 `pubspec.yaml` 文件中
 设置 `uses-material-design: true`，
 这样保证 `MaterialIcons` 相关字体被包含在你的应用中。
+一般来说，如果你想用 Material 库的话，则需要包含这一行内容。
 
 ```yaml
 name: my_awesome_application
@@ -3434,7 +3439,7 @@ corresponding Flutter widget and common widget properties.
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [Flutter packages]: {{site.pub}}/flutter/
-[Flutter Technical Overview]: /docs/resources/technical-overview
+[Flutter Architectural Overview]: /docs/resources/architectural-overview
 [Flutter Basic Widgets]: /docs/development/ui/widgets/basics
 [Flutter Widget Catalog]: /docs/development/ui/widgets
 [Flutter Widget Index]: /docs/reference/widgets

@@ -20,7 +20,7 @@ Android apps must [declare their use of the internet][declare] in the Android
 manifest (`AndroidManifest.xml `):
 
 ```
-<manifest xlmns:android...>
+<manifest xmlns:android...>
  ...
  <uses-permission android:name="android.permission.INTERNET" />
  <application ...

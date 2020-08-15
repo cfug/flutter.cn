@@ -312,12 +312,19 @@ where the Dart code lives.
 * This example creates a Material app.
   [Material][] is a visual design language
   that is standard on mobile and the web.
-  Flutter offers a rich set of Material widgets.
+  Flutter offers a rich set of Material widgets.  
+  It's a good idea to have a `uses-material-design: true` entry
+  in the `flutter` section of your `pubspec.yaml` file. 
+  This will allow you to use more features of Material,
+  such as their set of predefined [Icons][].
 
   本示例创建了一个具有 Material Design 风格的应用，
   [Material][] 是一种移动端和网页端通用的视觉设计语言，
   Flutter 提供了丰富的 Material 风格的 widgets。
-  
+  在 `pubspec.yaml` 文件的 `flutter` 部分选择加入
+  `uses-material-design: true` 会是一个明智之举，
+  通过这个可以让您使用更多 Material 的特性，比如其预定义好的 [图标][Icons] 集。
+
 * The `main()` method uses arrow (`=>`) notation.
   Use arrow notation for one-line functions or methods.
 
@@ -961,6 +968,7 @@ where you add the following functionality:
 [Google Developers Codelabs]: {{site.codelabs}}
 [hot reload]: /docs/get-started/test-drive
 [in the way your IDE describes]: /docs/get-started/test-drive
+[Icons]: https://design.google.com/icons/
 [iOS]: install/macos#deploy-to-ios-devices
 [iOS simulator]: install/macos#set-up-the-ios-simulator
 [Material]: {{site.material}}/guidelines

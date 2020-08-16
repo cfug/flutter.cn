@@ -509,7 +509,7 @@ AssetFileDescriptor fd = assetManager.openFd(key);
 
 ### 在 iOS 中加载 Flutter 资源文件
 
-On iOS the assets are available throughh the [`mainBundle`][].
+On iOS the assets are available through the [`mainBundle`][].
 The lookup key used in, for instance [`pathForResource:ofType:`][],
 is obtained from `lookupKeyForAsset` or `lookupKeyForAsset:fromPackage:`
 on [`FlutterPluginRegistrar`][], or `lookupKeyForAsset:` or
@@ -518,12 +518,11 @@ on [`FlutterPluginRegistrar`][], or `lookupKeyForAsset:` or
 a plugin while `FlutterViewController` would be the choice
 when developing an app including a platform view.
 
-在 iOS 平台上，assets 资源文件通过 [mainBundle][] 读取。
+在 iOS 平台上，assets 资源文件通过 [`mainBundle`][] 读取。
 通过 [`pathForResource:ofType:`][] 的 `lookupKeyForAsset` 
 或者 `lookupKeyForAsset:fromPackage:` 方法获取文件路径，
-同样 [FlutterViewController][]的 `lookupKeyForAsset:` 
-或者 `lookupKeyForAsset:fromPackage:` 方法也可以获取文件路径，
-然后 [AssetManager API][] 的 [openFd][] 根据文件路径得到文件描述符。
+同样，[FlutterViewController][] 的 `lookupKeyForAsset:` 
+或者 `lookupKeyForAsset:fromPackage:` 方法也可以获取文件路径。
 开发插件时可以使用 `FlutterPluginRegistrar`，
 而开发应用程序使用平台视图时， `FlutterViewController` 是最好的选择。
 

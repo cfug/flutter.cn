@@ -145,6 +145,8 @@
           permalink: /docs/development/platform-integration/web
         - title: 撰写双端平台代码 (插件编写实现)
           permalink: /docs/development/platform-integration/platform-channels
+        - title: Apple Watch 支持
+          permalink: /docs/development/platform-integration/apple-watch
     - title: Packages (纯 Dart 和原生插件)
       permalink: /docs/development/packages-and-plugins
       children:
@@ -321,14 +323,14 @@
       permalink: /docs/resources/bootstrap-into-dart
     - title: Flutter 兼容性策略
       permalink: /docs/resources/compatibility
+    - title: Flutter 架构概览
+      permalink: /docs/resources/architectural-overview
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
     - title: Google 文字库
       permalink: https://pub.flutter-io.cn/packages/google_fonts
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
-    - title: 技术概览
-      permalink: /docs/resources/technical-overview
     - title: Flutter 技术视频资源
       permalink: /docs/resources/videos
     - title: 书籍
@@ -341,7 +343,7 @@
       permalink: /docs/resources/design-docs
     - title: 有效提出 Bug
       permalink: /docs/resources/bug-reports
-    - title: Official brand assets
+    - title: 品牌资源
       permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
 
 - title: 参考资料

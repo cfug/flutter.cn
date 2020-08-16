@@ -231,7 +231,8 @@ void main() {
 
 Be sure to have a `uses-material-design: true` entry in the `flutter`
 section of your `pubspec.yaml` file. It allows you to use the predefined
-set of [Material icons][].
+set of [Material icons][]. It's generally a good idea to include this line 
+if you are using the Materials library.
 
 请确认在 `pubspec.yaml` 文件中 `flutter` 部分有
 `uses-material-design: true` 这条，它能让你使用预置的 [Material icons][]。

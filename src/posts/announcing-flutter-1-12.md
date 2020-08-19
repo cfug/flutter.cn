@@ -398,4 +398,7 @@ We hope you agree that Flutter is moving in the right direction and picking up s
 
 我们认为 Flutter 正朝着正确的方向快步前进，希望您也同意我们的看法。拥有这么多的新功能和新工具之后，您会构建什么呢？我们拭目以待。
 
-文/ (Flutter Blog](https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d)，译/ [谷歌开发者](https://mp.weixin.qq.com/s/sETtUi-J4cxCCbKP_FQkpA)
+English Placehodler
+
+文/ [Flutter Blog](https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d)，
+译/ [谷歌开发者](https://mp.weixin.qq.com/s/sETtUi-J4cxCCbKP_FQkpA)

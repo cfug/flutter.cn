@@ -1,11 +1,7 @@
 ---
-title: Flutter 1.12 发布
+title: Flutter 1.12 正式发布，为这一年画上圆满的句号！
 description: Flutter 1.12 正式发布，包括多项性能改进等。
 ---
-
-# Announcing Flutter 1.12: What a year!
-
-# Flutter 1.12 正式发布，为这一年画上圆满的句号！
 
 Posted by Chris Sells, Product Manager, Flutter developer experience*
 
@@ -36,7 +32,7 @@ More big news in Flutter 1.12 is the completion of our work to support the iOS 1
 
 Flutter 1.12 带来的一个重磅消息是，我们现已支持 iOS 13 风格的界面和操作。这包括在 Cupertino widget 中对深色模式的全面支持。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/ios-13-dark-mode.png){:width="95%"}
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/ios-13-dark-mode.png){:width="60%"}
 
 If you'll notice in the screen shots above, dark mode support is much more than just swapping out the background color, but also adapting the rest of the colors to be a good match. Such deep attention to dark mode was a huge amount of work, but worth it to get pixel-perfect iOS design support across both dark and light mode.
 
@@ -46,7 +42,7 @@ Also, in our continuing goal for pixel-perfection for iOS 13, we've added two ne
 
 在 iOS 13 上实现像素级完美是我们一直在努力的目标，为此，我们在 Flutter 1.12 中新增了 2 个 widget。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/cupertino-context-menu-and-cupertino-sliding-segmented-control.png){:width="95%"}
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/cupertino-context-menu-and-cupertino-sliding-segmented-control.png){:width="60%"}
 
 [CupertinoContextMenu](https://api.flutter.cn/flutter/cupertino/CupertinoContextMenu-class.html) and [CupertinoSlidingSegmentedControl](https://api.flutter.cn/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html)
 
@@ -62,7 +58,7 @@ Another improvement in our mobile support is an update to Add-to-App, which is t
 
 Add-to-App 功能更新是我们在移动支持方面所做的另一项改进。通过 Add-to-App，开发者可以将 Flutter 集成到现有的 Android 或 iOS 应用中。我们一直在努力简化集成流程，让您可以更轻松地把 Flutter 代码库添加到应用中，比如说，我们在 Android Studio 中添加了一个全新的 Flutter 模块向导。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-module.png){:width="95%"}
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-module.png){:width="70%"}
 
 With Flutter 1.12, Add-to-App is now officially supported for adding one fullscreen Flutter instance to your app. In supporting this functionality, we've also:
 
@@ -154,7 +150,7 @@ In addition to the tooling support, we've also been working on the density that'
 
 除了工具支持之外，我们也在一直探索适合桌面级应用的 widget 密度。移动应用需要较大的控制区域才能正常进行触控操作，但在桌面应用中，用户更可能会使用鼠标。为了把 Flutter 带到桌面，我们现在允许您选择 widget 密度，以便更好地满足桌面用户的需求。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/sample-demonstrating-flutters-implementation-of-the-material-density-guidelines.gif){:width="95%"}
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/sample-demonstrating-flutters-implementation-of-the-material-density-guidelines.gif){:width="60%"}
 
 [Sample](https://github.com/gspencergoog/density_sample) demonstrating Flutter's implementation of [the Material Density guidelines](https://material.io/design/layout/applying-density.html)
 
@@ -310,7 +306,7 @@ The term "golden image" refers to a master image file that is considered the tru
 
 Golden 图像指的是一个主图像文件，它是 widget、state、应用或其它您选择捕捉的视觉内容的正确渲染结果。在 Flutter 1.12 中，我们实现了 [GoldenFileComparator](https://api.flutter.cn/flutter/flutter_test/GoldenFileComparator-class.html) 和 [LocalFileComparator](https://api.flutter.cn/flutter/flutter_test/LocalFileComparator-class.html) 类，它们依照像素而不是比特来进行比较，因此可以彻底消除错误的比较结果。这些新的实现强调呈现视觉差异，从而更清楚地展现出 Golden 图像和正在测试中的更新文件之间的差异。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/golden-image-testing.png){:width="95%"}
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/golden-image-testing.png){:width="60%"}
 
 In this case, it's clear that the differences between the master and the test image are all in the border, making it much easier to track down the discrepancy.
 
@@ -342,7 +338,7 @@ Still, our users have asked again and again for a set of "recommended" packages 
 
 我们的用户仍在不断要求推出 "官方推荐" 的代码包和插件。为此，我们很高兴地推出 [Flutter Favorite 计划](https://flutter.cn/docs/development/packages-and-plugins/favorites)。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/the-flutter-favorite-program.png)
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/the-flutter-favorite-program.png){:width="30%"}
 
 A Flutter Favorite package (or plugin) is one that we think that you should consider first when building your app. The "we" in that sentence is the Flutter Ecosystem Committee, a group of regionally-diverse individuals picked from the Flutter team at Google and from the Flutter community at large to address issues across the Flutter ecosystem. Their first job was to establish a high quality bar and to identify an initial set of packages that met that quality bar. The authors of those packages are able to use the Flutter Favorite logo in their package documentation. Furthermore, pub.dev has been updated to show the logo in search results and other places.
 
@@ -360,15 +356,15 @@ And speaking of contributions to be proud of, the Flutter community at large has
 
 谈到值得骄傲的贡献，就不得不说 Flutter 社区打造的众多出色工具。我们在下面列举部分成果。
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-device-preview.png){:width="95%"}
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/flutter-device-preview.png){:width="85%"}
 
 [Flutter Device Preview](https://github.com/aloisdeniel/flutter_device_preview)
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/widget-maker.png){:width="95%"}
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/widget-maker.png){:width="85%"}
 
 [Widget Maker](https://www.widgetmaker.dev/)
 
-![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/panache.png){:width="95%"}
+![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot12-release/panache.png){:width="85%"}
 
 [Panache](https://rxlabz.github.io/panache/#/)
 
@@ -402,4 +398,7 @@ We hope you agree that Flutter is moving in the right direction and picking up s
 
 我们认为 Flutter 正朝着正确的方向快步前进，希望您也同意我们的看法。拥有这么多的新功能和新工具之后，您会构建什么呢？我们拭目以待。
 
-文/ (Flutter Blog](https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d)，译/ [谷歌开发者](https://mp.weixin.qq.com/s/sETtUi-J4cxCCbKP_FQkpA)
+English Placehodler
+
+文/ [Flutter Blog](https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d)，
+译/ [谷歌开发者](https://mp.weixin.qq.com/s/sETtUi-J4cxCCbKP_FQkpA)

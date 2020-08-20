@@ -5,7 +5,7 @@ description: How to debug your app using the DevTools suite.
 description: 如何使用开发者工具来调试你的 Flutter 应用。
 ---
 
-There are a wide variety of tools and features to help debug
+There's a wide variety of tools and features to help debug
 Flutter applications. Here are some of the available tools:
 
 有很多工具和特性可以帮助调试 Flutter 应用程序，如下列举了一些：

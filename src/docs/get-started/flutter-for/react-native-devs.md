@@ -3441,6 +3441,7 @@ corresponding Flutter widget and common widget properties.
 [Flutter packages]: {{site.pub}}/flutter/
 [Flutter Architectural Overview]: /docs/resources/architectural-overview
 [Flutter Basic Widgets]: /docs/development/ui/widgets/basics
+[Flutter Technical Overview]: /docs/resources/architectural-overview
 [Flutter Widget Catalog]: /docs/development/ui/widgets
 [Flutter Widget Index]: /docs/reference/widgets
 [`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html

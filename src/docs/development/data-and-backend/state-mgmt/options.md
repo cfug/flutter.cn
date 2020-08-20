@@ -221,10 +221,11 @@ A popular library based on observables and reactions.
 
 A simplified reactive state management solution.
 
+一个轻量级响应式状态管理解决方案。
+
 * [GetX package][]
 * [Complete GetX State Management][], a video by Tadas Petra
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
-
 
 [Adding interactivity to your Flutter app]: /docs/development/ui/interactive
 [accompanying article]: {{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381

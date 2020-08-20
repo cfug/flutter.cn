@@ -51,8 +51,7 @@ but for now use "git clone".
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds, see the [SDK
-    releases](/docs/development/tools/sdk/releases) page.
+    For other release channels, and older builds, see the [SDK archive][] page.
 
     要查看其他发行通道和以往的版本，请参阅 
     [SDK 版本列表](/docs/development/tools/sdk/releases) 页面。
@@ -66,6 +65,15 @@ but for now use "git clone".
     将压缩包解压，然后把其中的 `flutter` 目录整个放在你预想的 Flutter SDK 
     安装目录中（比如 `C:\src\flutter`；
     请勿将该目录放在一些需要额外操作权限的目录，比如 `C:\Program Files\`）。
+
+{{site.alert.warning}}
+
+    Do not install Flutter in a directory like 
+    `C:\Program Files\` that requires elevated privileges.
+
+    请勿将 Flutter 安装在需要高权限的文件夹内，例如 `C:\Program Files\`。
+
+{{site.alert.end}}
 
  1. Locate the file **flutter_console.bat** inside the `flutter` directory.
     Start it by double-clicking.
@@ -130,7 +138,6 @@ git clone -b stable https://github.com/flutter/flutter.git
     Double-click the file to start it.
 
     定位并打开 `flutter` 的文件夹，双击运行 **flutter_console.bat** 开始安装。
-
 
 If you don't want to install a fixed version of the installation 
 bundle, you can skip steps 1 and 2. Instead, get the source code 

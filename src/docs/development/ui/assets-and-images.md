@@ -358,6 +358,14 @@ you'll also notice parameters related to scale.)
 [`ImageCache`]({{site.api}}/flutter/painting/ImageCache-class.html)，
 你需要注意 scale 相关的参数)。
 
+{{site.alert.note}}
+
+  [Device pixel ratio][] depends on [MediaQueryData.size][] which requires to have either a [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
+
+  [设备像素比][Device pixel ratio] 取决于 [MediaQueryData.size][] 的大小，它需要在祖先节点提供 [MaterialApp][] 或者 [CupertinoApp][] 作为 [`AssetImage`][] 的祖先节点。
+
+{{site.alert.end}}
+
 ### Asset images in package dependencies {#from-packages}
 
 ### 依赖包中的资源图片
@@ -757,3 +765,7 @@ For more details, see
 [`video_player` plugin]: {{site.pub}}/packages/video_player
 [`window.onDrawFrame`]: {{site.api}}/flutter/dart-ui/Window/onDrawFrame.html
 [`window.render()`]: {{site.api}}/flutter/dart-ui/Window/render.html
+[MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
+[MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
+[CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[Device pixel ratio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html

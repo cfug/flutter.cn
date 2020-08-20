@@ -220,10 +220,219 @@ publication since the last stable release:
 
 ## Aug 5, 2020
 
+## 2020 年 5 月
+
+Flutter 1.20 is live! For details, see [Announcing Flutter 1.20][].
+
+Flutter 1.20 版本正式发布！ 更多信息请参见[Flutter 1.20 发布介绍][Announcing Flutter 1.20]。
+
+**Docs updated or added to flutter.dev**
+
+**flutter.dev 文档更新**
+
+* [Reducing shader compilation jank on mobile][] is added to the
+  performance docs.
+
+  [减少移动设备上的着色器（shader）掉帧问题][Reducing shader compilation jank on mobile]
+  文档已添加到性能章节中。
+
+* [Developing for iOS 14 beta][] outlines some issues you might
+  run into if developing for devices running iOS 14 beta.
+
+  [在 iOS 14 beta 上进行开发][Developing for iOS 14 beta]介绍了一些
+  你在 iOS 14 beta 开发中可能会遇到的一些问题。
+
+* New instructions for [installing Flutter on Linux using snapd.][]
+
+  [使用 snaped 在 Linux 安装 Flutter 应用][installing Flutter on Linux using snapd.]提供了最新介绍。
+
+* Updated the [Desktop support][] page to reflect that Linux
+  desktop apps (as well as macOS) are available as alpha.
+
+  更新了[桌面支持][Desktop support]介绍页面，Linux 桌面应用（以及 macOS）已经进入 alpha 阶段。
+
+* Several new Flutter books have been published. The [Flutter books][]
+  page is updated.
+
+  多本全新 Flutter 书籍正式出版。更新了 [Flutter 书籍][Flutter books]页面。
+
+* The [codelabs landing][] page has been updated.
+
+  更新了[代码实验室主页][codelabs landing]。
+
+A deep dive into null safety has been added to dart.dev:
+
+dart.dev 增加了深入探索 null safety（空安全）文章：
+
+* [Understanding null safety][]
+
+  [深入理解空安全][Understanding null safety]
+
+**Codelabs**
+
+**代码实验室**
+
+[Flutter Day][] was held on 6/25/2020. In preparation for the event,
+we wrote new codelabs and updated existing codelabs.
+New codelabs include:
+
+在 2020 年 6 月 25 日我们举办了 [Flutter Day][]。
+为了准备这次活动，我们编写了全新的代码实验室并更新了已有的代码实验室。
+最新的代码实验室包括以下内容：
+
+* [Adding Admob Ads to a Flutter app][]
+
+  [为 Flutter 应用添加 Admob 广告][Adding Admob Ads to a Flutter app]
+
+* [How to write a Flutter plugin][]
+
+  [如何编写一个 Flutter plugin][How to write a Flutter plugin]
+
+* [Multi-platform Firestore Flutter][]
+
+  [使用 Flutter Firestore 支持多端存储][Multi-platform Firestore Flutter]
+
+* [Using a plugin with a Flutter web app][]
+
+  [在 Flutter web 应用中使用 plugin][]
+
+* [Write a Flutter desktop application][]
+
+  [编写一个 Flutter 桌面应用][]
+
+For a complete list, see [Flutter codelabs][].
+
+完整列表请查看[Flutter 代码实验室][Flutter codelabs]。
+
+**Articles**
+
+**文章**
+
+We've published the following articles on the [Flutter Medium][]
+publication since the last stable release:
+
+自从上次稳定版发布以来，我们在 [Flutter Medium][] 上发布了一系列文章：
+
+  * [Announcing Adobe XD support for Flutter][]
+
+    [介绍 Flutter Adobe XD 支持][Announcing Adobe XD support for Flutter]
+
+  * [What are the important & difficult tasks for Flutter
+     devs? — Q1 2020 survey results][q1-2020]
+
+    [对于 Flutter 开发者来说有哪些重要且困难的问题？ - 2020 第一季度调查结果][What are the important & difficult tasks for Flutter
+     devs? — Q1 2020 survey results]
+
+  * [Optimizing performance in Flutter web apps with tree
+     shaking and deferred loading][shaking]
+
+    [Flutter web 应用中的性能优化，包括了 tree
+     shaking 和延迟加载][shaking]
+
+  * [Flutter Package Ecosystem Update][]
+
+    [Flutter 插件生态更新][Flutter Package Ecosystem Update]
+
+  * [Improving perceived performance with image placeholders,
+     precaching, and disabled navigation transitions][web-perf]
+
+    [使用图片占位符改善感知性能，预缓存和禁用的导航转换][web-perf]
+
+  * [Two Months of #FlutterGoodNewsWednesday][]
+
+    [#FlutterGoodNewsWednesday 的两个月][Two Months of #FlutterGoodNewsWednesday]
+
+  * [Handling 404: Page not found error in Flutter][]
+
+    [在 Flutter 中处理 404 无法找到页面的问题][Handling 404: Page not found error in Flutter]
+
+  * [Flutter and Desktop apps][]
+
+    [Flutter 桌面应用][Flutter and Desktop apps]
+
+  * [What's new with the Slider widget?][]
+
+    [Slider widget 有哪些更新？][What's new with the Slider widget?]
+
+  * [New tools for Flutter developers, built in Flutter][dev-tools]
+
+    [为 Flutter 开发者们带来全新工具，工具也是 Flutter 编写的哦][dev-tools]
+
+  * [Canonical enables Linux desktop app support with Flutter][ubuntu]
+
+    [通过启用 CanonicalFlutterLinux 开启桌面应用程序支持][ubuntu]
+
+  * [Enums with Extensions in Dart][]
+
+    [Dart 中对枚举值添加扩展方法][Enums with Extensions in Dart]
+
+  * [Managing issues in a large-scale open source project][]
+
+    [在大型开源项目中管理 issue][Managing issues in a large-scale open source project]
+
+  * [What we learned from the Flutter Q2 2020 survey][]
+
+    [我们在 Flutter 第二季度调查报告中发现了哪些亮点][What we learned from the Flutter Q2 2020 survey]
+
+  * [Building performant Flutter widgets][]
+
+    [构建高性能 Flutter widgets][Building performant Flutter widgets]
+
+  * [How to debug layout issues with the Flutter Inspector][]
+
+    [如何使用 Flutter Inspector 调试布局问题][How to debug layout issues with the Flutter Inspector]
+
+  * [Going deeper with Flutter's web support][]
+
+    [深入 Flutter web 支持][Going deeper with Flutter's web support]
+
+  * [Flutter Performance Updates in 2019][]
+
+    [Flutter 在 2019 年中性能有哪些改进][Flutter Performance Updates in 2019]
+
+
+[Adding Admob Ads to a Flutter app]: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter/
+[Announcing Adobe XD Support for Flutter]: {{site.medium}}/flutter/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e
+[Announcing Flutter 1.20]: {{site.medium}}/flutter/announcing-flutter-1-20-2aaf68c89c75
+[Building performant Flutter widgets]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
+[codelabs landing]: /docs/codelabs
+[Desktop support]: /desktop
+[dev-tools]: {{site.medium}}/flutter/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
+[Developing for iOS 14 beta]: /docs/development/ios-14
+[Enums with Extensions in Dart]: {{site.medium}}/flutter/enums-with-extensions-dart-460c42ea51f7
+[Flutter and Desktop apps]: {{site.medium}}/flutter/handling-404-page-not-found-error-in-flutter-731f5a9fba29
+[Flutter books]: /docs/resources/books
+[Flutter codelabs]: /docs/codelabs
+[Flutter Day]: https://events.withgoogle.com/flutter-day/
+[Flutter Package Ecosystem Update]: {{site.medium}}/flutter/flutter-package-ecosystem-update-d50645f2d7bc
+[Flutter Performance Updates in 2019]: {{site.medium}}/flutter/going-deeper-with-flutters-web-support-66d7ad95eb5224
+[Going deeper with Flutter's web support]: {{site.medium}}/flutter/going-deeper-with-flutters-web-support-66d7ad95eb52
+[Handling 404: Page not found error in Flutter]: {{site.medium}}/flutter/handling-404-page-not-found-error-in-flutter-731f5a9fba29
+[How to write a Flutter plugin]: https://codelabs.developers.google.com/codelabs/write-flutter-plugin
+[installing Flutter on Linux using snapd.]: /docs/get-started/install/linux
+[Managing issues in a large-scale open source project]: {{site.medium}}/flutter/managing-issues-in-a-large-scale-open-source-project-b3be6eecae2b
+[How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[Multi-platform Firestore Flutter]: https://codelabs.developers.google.com/codelabs/friendlyeats-flutter/
+[q1-2020]: {{site.medium}}/flutter/what-are-the-important-difficult-tasks-for-flutter-devs-q1-2020-survey-results-a5ef2305429b
+[Reducing shader compilation jank on mobile]: /docs/perf/rendering/shader
+[shaking]: {{site.medium}}/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[Two Months of #FlutterGoodNewsWednesday]: {{site.medium}}/flutter/two-months-of-fluttergoodnewswednesday-a12e60bab782
+[ubuntu]: {{site.medium}}/flutter/announcing-flutter-linux-alpha-with-canonical-19eb824590a9
+[Understanding null safety]: {{site.dart-site}}/null-safety/understanding-null-safety
+[Using a plugin with a Flutter web app]: https://codelabs.developers.google.com/codelabs/web-url-launcher/
+[web-perf]: {{site.medium}}/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
+[What's new with the Slider widget?]: {{site.medium}}/flutter/whats-new-with-the-slider-widget-ce48a22611a3
+[What we learned from the Flutter Q2 2020 survey]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q2-2020-survey-a4f1fc8faac9
+[Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/
+
+## Aug 5, 2020
+
 Flutter 1.20 is live! For details, see [Announcing Flutter 1.20][].
 
 **Docs updated or added to flutter.dev**
 
+* [Flutter architectural overview][], a deep dive into Flutter's
+  architecture, was added to the site just a few days after the 1.20 release.
 * [Reducing shader compilation jank on mobile][] is added to the
   performance docs.
 * [Developing for iOS 14 beta][] outlines some issues you might
@@ -290,7 +499,8 @@ publication since the last stable release:
 [dev-tools]: {{site.medium}}/flutter/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
 [Developing for iOS 14 beta]: /docs/development/ios-14
 [Enums with Extensions in Dart]: {{site.medium}}/flutter/enums-with-extensions-dart-460c42ea51f7
-[Flutter and Desktop apps]: {{site.medium}}/flutter/handling-404-page-not-found-error-in-flutter-731f5a9fba29
+[Flutter and Desktop apps]: {{site.medium}}/flutter/flutter-and-desktop-3a0dd0f8353e
+[Flutter architectural overview]: /docs/resources/architectural-overview
 [Flutter books]: /docs/resources/books
 [Flutter codelabs]: /docs/codelabs
 [Flutter Day]: https://events.withgoogle.com/flutter-day/

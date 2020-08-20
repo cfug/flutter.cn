@@ -1,11 +1,10 @@
------
+---
 title: Announcing Flutter 1.20
-title: Flutter 1.20 来啦！规模最大的版本发布都有哪些更新？
------
-
-Performance improvements, mobile autofill, a new widget and more!
-
-性能改进、移动端自动填充、全新 widget 以及更多内容！
+title: Flutter 1.20 正式发布
+description: Performance improvements, mobile autofill, a new widget and more!
+description: 性能改进、移动端自动填充、全新 widget 以及更多内容！
+toc: true
+---
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/08/bbbf90037ad95.png){:width="95%"}
 

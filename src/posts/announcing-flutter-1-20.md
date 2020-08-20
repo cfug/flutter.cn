@@ -35,7 +35,7 @@ And it’s because of Flutter’s openness and amazing community contributors th
 
 Each new release of Flutter brings with it increased usage and momentum. In fact, in April, [we reported](https://medium.com/flutter/flutter-spring-2020-update-f723d898d7af) that the number of Flutter apps in the Google Play store had reached 50,000, with a peak rate of 10,000 new apps/month. Now, just over three months later, there are more than 90,000 Flutter apps in Google Play. We’re seeing a lot of this growth in India, which is now the #1 region for Flutter developers, having doubled in the last six months, which aligns well with [Google’s increased investment](https://www.businessinsider.com/google-alphabet-india-health-agriculture-education-tech-ai-sundar-pichai-2020-7) in that region. And finally, Flutter isn’t Flutter without Dart, so it’s great to see the that [the IEEE has reported that Dart has moved up 4 slots since last year to be #12](https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2020) in the top 50 languages that they track.
 
-Flutter 每一个新版本的发布都伴随着使用量的增长和更迅猛的发展态势。事实上，在 4 月份我们曾[报道过](https://mp.weixin.qq.com/s/DS8lAkqtK_Qp37o8ISlthA) Google Play 商店中 Flutter 应用的数量已经达到 50,000，月度新增应用数量峰值更是高达 10,000。现在，短短三个月后，Google Play 中的 Flutter 应用数量已经超过 90,000。增长最快的当属印度，那里已经是 Flutter 开发者最多的地区，开发者数量在过去六个月中翻了一番，这与 [Google 在该地区增加的投资](https://www.businessinsider.com/google-alphabet-india-health-agriculture-education-tech-ai-sundar-pichai-2020-7)密切相关。最后，如果没有 Dart 语言，Flutter 也不会成为现在的 Flutter。这里分享一个好消息：在 IEEE 的[开发语言榜单](https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2020)中，Dart 相比去年上升了 4 位，在榜单的前 50 种语言中排名第 12。
+Flutter 每一个新版本的发布都伴随着使用量的增长和更迅猛的发展态势。事实上，在 4 月份我们曾 [报道过](https://flutter.cn/posts/flutter-spring-2020-update) Google Play 商店中 Flutter 应用的数量已经达到 50,000，月度新增应用数量峰值更是高达 10,000。现在，短短三个月后，Google Play 中的 Flutter 应用数量已经超过 90,000。增长最快的当属印度，那里已经是 Flutter 开发者最多的地区，开发者数量在过去六个月中翻了一番，这与 [Google 在该地区增加的投资](https://www.businessinsider.com/google-alphabet-india-health-agriculture-education-tech-ai-sundar-pichai-2020-7) 密切相关。最后，如果没有 Dart 语言，Flutter 也不会成为现在的 Flutter。这里分享一个好消息：在 IEEE 的 [开发语言榜单](https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2020) 中，Dart 相比去年上升了 4 位，在榜单的前 50 种语言中排名第 12。
 
 # Performance improvements for Flutter and Dart
 
@@ -43,7 +43,7 @@ Flutter 每一个新版本的发布都伴随着使用量的增长和更迅猛的
 
 On the Flutter team, we’re always looking for new ways to decrease the size and latency of your app. As an example of the former, this release fixes [a tooling performance issue with icon font tree shaking](https://github.com/flutter/flutter/pull/55417) and [makes font tree shaking the default behavior](https://github.com/flutter/flutter/pull/56633) when building your non-web apps. Icon font tree shaking removes the icons that you’re not using in your app, thus reducing the size. Using this against the Flutter Gallery app, we found that it [reduced the app size by 100kb](https://github.com/flutter/flutter/pull/49737). Now you get this behavior by default in your mobile apps when you’re doing a release build. It’s currently restricted to TrueType Fonts, but that restriction will be lifted in future releases.
 
-Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大小，[此版本修复了在进行图标字体摇树（tree-shaking）操作时的工具性能问题](https://github.com/flutter/flutter/pull/55417)，并在您构建非 web 应用时默认进行[字体摇树操作](https://github.com/flutter/flutter/pull/56633)。图标字体摇树操作会移除应用中未使用的图标，从而缩减其大小。在对 Flutter Gallery 应用进行该操作后，我们发现[应用大小缩减了 100kb](https://github.com/flutter/flutter/pull/49737)。现在，在构建移动版应用的发布版本时该操作会默认执行。目前仅限于 TrueType 字体，但在未来版本中将取消这个限制。
+Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大小，[此版本修复了在进行图标字体摇树（tree-shaking）操作时的工具性能问题](https://github.com/flutter/flutter/pull/55417)，并在您构建非 web 应用时默认进行 [字体摇树操作](https://github.com/flutter/flutter/pull/56633)。图标字体摇树操作会移除应用中未使用的图标，从而缩减其大小。在对 Flutter Gallery 应用进行该操作后，我们发现 [应用大小缩减了 100kb](https://github.com/flutter/flutter/pull/49737)。现在，在构建移动版应用的发布版本时该操作会默认执行。目前仅限于 TrueType 字体，但在未来版本中将取消这个限制。
 
 Another performance improvement we’ve made in this release reduces jank in the initial display of your animation using a warm-up phase. You can see an example of the jank improvement in this animation (slowed down to half speed).
 
@@ -61,7 +61,7 @@ If a Flutter app has janky animations during the first run, the Skia Shading Lan
 
 And finally, as we optimize for desktop form-factors, we continue to refine our mouse support. In this release, we’ve [refactored the mouse hit testing system](https://github.com/flutter/flutter/pull/59883) to provide a number of architectural advantages that were blocked due to performance issues. The refactoring enables us to improve the performance by as much as 15x in our web-based microbenchmarks! What this means to you is that you get better, more consistent, and more accurate hit testing w/o giving up performance: win-win!
 
-最后，在针对桌面环境的优化中，我们进一步完善了对鼠标的支持。在此版本，我们[重构了鼠标点击测试系统](https://github.com/flutter/flutter/pull/59883)，带来了许多曾因性能问题受阻的架构优势。在基于 web 的微型基准测试中，重构使性能提高了多达 15 倍！这意味着，您可以在保证性能的前提下，获得更好、更一致、更准确的点击测试结果：实现双赢！
+最后，在针对桌面环境的优化中，我们进一步完善了对鼠标的支持。在此版本，我们 [重构了鼠标点击测试系统](https://github.com/flutter/flutter/pull/59883)，带来了许多曾因性能问题受阻的架构优势。在基于 web 的微型基准测试中，重构使性能提高了多达 15 倍！这意味着，您可以在保证性能的前提下，获得更好、更一致、更准确的点击测试结果：实现双赢！
 
 With this better, faster, stronger mouse hit testing, we’ve added support for mouse cursors — one of the most upvoted features for desktop. Several commonly used widgets will display the cursors you expect by default, or you can specify another from the list of supported cursors.
 
@@ -101,7 +101,7 @@ You’ll be pleased to hear that we’ve already started adding this functionali
 
 This release introduces a new widget, the InteractiveViewer. The InteractiveViewer is designed for building common kinds of interactivity into your app, like pan, zoom, and drag ’n’ drop, even in the face of resizing, which [this simple Go board sample](https://github.com/justinmc/flutter-go) demonstrates.
 
-此版本引入了一个新的 widget：InteractiveViewer。InteractiveViewer 旨在为您的应用构建常见交互，如平移、缩放和拖放，甚至在可调节大小的窗口中也可实现这些交互，请参见下面这个[简单的围棋示例](https://github.com/justinmc/flutter-go)。
+此版本引入了一个新的 widget：InteractiveViewer。InteractiveViewer 旨在为您的应用构建常见交互，如平移、缩放和拖放，甚至在可调节大小的窗口中也可实现这些交互，请参见下面这个 [简单的围棋示例](https://github.com/justinmc/flutter-go)。
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/08/1926f95f7fd40.gif){:width="95%"}
 
@@ -115,7 +115,7 @@ To see how to integrate the InteractiveViewer into your own app, [check out the 
 
 If you’re interested in adding the kind of interactivity to your Flutter app that InteractiveViewer enables, then you’ll probably also be happy to hear that we’ve [added more capabilities to drag ’n’ drop](https://github.com/monkeyswarm/DragTargetDetailsExample) in this release. Specifically, if you’d like to know precisely where the drop happened on the target widget (it’s always been available to the Draggable object itself), now you can get that information with the DragTarget onAcceptDetails method.
 
-有兴趣在 Flutter 应用中加入更多类似 InteractiveViewer 的交互？欢迎了解一下我们在这一版本[对拖放功能所做的增强](https://github.com/monkeyswarm/DragTargetDetailsExample)。具体来说，如果您想知道拖拽的“放置”操作发生在目标 widget（始终对 Draggable 对象可用）上的精确位置，现在您可以通过 DragTarget 的 onAcceptDetails 方法获得该信息。
+有兴趣在 Flutter 应用中加入更多类似 InteractiveViewer 的交互？欢迎了解一下我们在这一版本 [对拖放功能所做的增强](https://github.com/monkeyswarm/DragTargetDetailsExample)。具体来说，如果您想知道拖拽的“放置”操作发生在目标 widget（始终对 Draggable 对象可用）上的精确位置，现在您可以通过 DragTarget 的 onAcceptDetails 方法获得该信息。
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/08/89b6c425a5767.gif){:width="95%"}
 
@@ -125,7 +125,7 @@ New drag target accept details in action
 
 Check out [this sample](https://github.com/monkeyswarm/DragTargetDetailsExample) for the details and look forward to a future release that will make this information available during the drag as well so that the DragTarget can more easily provide visual updates during a drag operation.
 
-您可以通过这个[示例](https://github.com/monkeyswarm/DragTargetDetailsExample)了解详细信息，未来版本还将在拖动过程中提供这些信息，以便 DragTarget 在拖动操作期间更轻松地提供可视化的更新。
+您可以通过这个 [示例](https://github.com/monkeyswarm/DragTargetDetailsExample)了解详细信息，未来版本还将在拖动过程中提供这些信息，以便 DragTarget 在拖动操作期间更轻松地提供可视化的更新。
 
 # Updated Material Slider, RangeSlider, TimePicker, and DatePicker
 
@@ -135,7 +135,7 @@ Check out [this sample](https://github.com/monkeyswarm/DragTargetDetailsExample)
 
 In addition to new widgets, this release includes a number of updated widgets to match [the latest Material guidelines](https://material.io/components/sliders). These include Slider and RangeSlider. For more information, see [What’s new with the Slider widget?](https://medium.com/flutter/whats-new-with-the-slider-widget-ce48a22611a3)
 
-除了新添加的 widget，此版本还包含许多既有 widget 的更新，以匹配[最新的 Material 指南](https://material.io/components/sliders)。其中包括 Slider 和 RangeSlider。更多信息参见 [Slider widget 的更新](https://medium.com/flutter/whats-new-with-the-slider-widget-ce48a22611a3)。
+除了新添加的 widget，此版本还包含许多既有 widget 的更新，以匹配 [最新的 Material 指南](https://material.io/components/sliders)。其中包括 Slider 和 RangeSlider。更多信息参见 [Slider widget 的更新](https://medium.com/flutter/whats-new-with-the-slider-widget-ce48a22611a3)。
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/08/163a04b7ec35d.png){:width="95%"}
 
@@ -169,7 +169,7 @@ updated TimePicker
 
 If you’d like to play around with it, here’s [a fun web demo built with Flutter](https://flutter-time-picker.firebaseapp.com/#/).
 
-如果您想上手操作，请试试[使用 Flutter 构建的趣味网络演示](https://flutter-time-picker.firebaseapp.com/#/)。
+如果您想上手操作，请试试 [使用 Flutter 构建的趣味网络演示](https://flutter-time-picker.firebaseapp.com/#/)。
 
 # Responsive Licenses page
 
@@ -209,7 +209,7 @@ Legacy pubspec format error message upon plugin publication
 
 The old format did not support specifying which platforms your plugins support, and has been deprecated since Flutter 1.12. [The new pubspec.yaml format](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms) is now required for publishing new or updated plugins.
 
-旧格式不能指定插件支持的平台，自 Flutter 1.12 起已弃用。现在，发布新的插件或更新插件时需要使用[新的 pubspec.yaml 格式](https://flutter.cn/docs/development/packages-and-plugins/developing-packages#plugin-platforms)。
+旧格式不能指定插件支持的平台，自 Flutter 1.12 起已弃用。现在，发布新的插件或更新插件时需要使用 [新的 pubspec.yaml 格式](https://flutter.cn/docs/development/packages-and-plugins/developing-packages#plugin-platforms)。
 
 For clients of plugins, the tools still understand the old pubspec format and will for the foreseeable future. All existing plugins on pub.dev using the legacy pubspec.yaml format will continue to work with Flutter apps for the foreseeable future.
 
@@ -231,9 +231,9 @@ Preview of Layout Explorer from Dart DevTools embedded into Visual Studio Code
 
 △ 预览功能：在 Visual Studio Code 中嵌入 Dart DevTools 的 Layout Explorer
 
-Enable this feature with the new dart.previewEmbeddedDevTools setting. The above screenshot shows the Flutter Widget Inspector embedded directly into Visual Studio Code but with this new setting enabled, you can choose your favorite page embed using the Dart DevTools menu on the status bar.
+Enable this feature with the new `dart.previewEmbeddedDevTools` setting. The above screenshot shows the Flutter Widget Inspector embedded directly into Visual Studio Code but with this new setting enabled, you can choose your favorite page embed using the Dart DevTools menu on the status bar.
 
-使用新的 dart.previewEmbeddedDevTools 设置启用此功能。在上面的屏幕截图中，Flutter Widget Inspector 直接嵌入 Visual Studio Code，但是启用新设置后，您可以使用状态栏上的 Dart DevTools 菜单嵌入其他您偏好的页面。
+使用新的 `dart.previewEmbeddedDevTools` 设置启用此功能。在上面的屏幕截图中，Flutter Widget Inspector 直接嵌入 Visual Studio Code，但是启用新设置后，您可以使用状态栏上的 Dart DevTools 菜单嵌入其他您偏好的页面。
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/08/e483d4839aed8.png){:width="95%"}
 
@@ -245,7 +245,7 @@ This menu allows you to choose which pages to show.
 
 This feature is still in preview, so [let us know if you have any trouble with it](https://github.com/Dart-Code/Dart-Code/issues).
 
-该功能仍处于预览状态，如果您遇到任何问题，请[在这里提交反馈](https://github.com/Dart-Code/Dart-Code/issues)。
+该功能仍处于预览状态，如果您遇到任何问题，请 [在这里提交反馈](https://github.com/Dart-Code/Dart-Code/issues)。
 
 # Updates to network tracking
 
@@ -293,15 +293,15 @@ One more update to mention is for people building Flutter tooling. We’ve creat
 
 * a [catalog](https://github.com/flutter/tools_metadata/blob/master/resources/catalog/widgets.json) of all of the current Flutter widgets (395 widgets!)
 
-	当前所有 Flutter widget 的[目录](https://github.com/flutter/tools_metadata/blob/master/resources/catalog/widgets.json)（有 395 个！）
+ 当前所有 Flutter widget 的 [目录](https://github.com/flutter/tools_metadata/blob/master/resources/catalog/widgets.json)（有 395 个！）
 
 * a [mapping of Flutter framework color names to color values](https://github.com/flutter/tools_metadata/tree/master/resources/colors), for both the Material and Cupertino color sets
 
-	Flutter 框架中[颜色名称到颜色值的映射](https://github.com/flutter/tools_metadata/tree/master/resources/colors)，支持 Material 和 Cupertino 颜色集
+ Flutter 框架中 [颜色名称到颜色值的映射](https://github.com/flutter/tools_metadata/tree/master/resources/colors)，支持 Material 和 Cupertino 颜色集
 
 * [Icon metadata](https://github.com/flutter/tools_metadata/tree/master/resources/icons) for Material and Cupertino icons, including icon names and preview icons
 
-	Material 和 Cupertino 图标的[图标元数据](https://github.com/flutter/tools_metadata/tree/master/resources/icons)，包括图标名称和预览图标
+ Material 和 Cupertino 图标的 [图标元数据](https://github.com/flutter/tools_metadata/tree/master/resources/icons)，包括图标名称和预览图标
 
 
 This is the same metadata that we use for the Android Studio / IntelliJ and VS Code extensions ourselves; we thought you might find it useful when building your own tools. In fact, this metadata enables the feature in the IntelliJ family of IDEs to show the color being used in your Flutter code:
@@ -326,13 +326,13 @@ Special thanks to [dratushnyy](https://github.com/dratushnyy) on GitHub for cont
 
 In response to popular demand from plugin authors in our user surveys, recently we’ve been experimenting on how to make communication between Flutter and the host platform safer and easier for [plugins](https://flutter.dev/docs/development/packages-and-plugins/developing-packages) and [Add-to-App](https://flutter.dev/docs/development/add-to-app). To address this need, we created [Pigeon](https://pub.dev/packages/pigeon), a command-line tool that uses Dart syntax to generate type-safe messaging code on top of platform channels without adding additional runtime dependencies. With Pigeon, instead of manually matching method strings on platform channels and serializing arguments, you can invoke Java/Objective-C/Kotlin/Swift class methods and pass non-primitive data objects by directly calling Dart methods (and vice versa).
 
-为了回应插件作者在用户调研中的普遍需求，最近，我们一直以[插件](https://flutter.cn/docs/development/packages-and-plugins/developing-packages)和 [Add-to-App](https://flutter.cn/docs/development/add-to-app) （部分使用了 Flutter 的应用）为对象，探求如何才能让 Flutter 与宿主平台之间的通信更安全、更轻松。为了满足这一需求，我们创建了命令行工具 [Pigeon](https://pub.flutter-io.cn/packages/pigeon)，使用 Dart 语法在平台通道上生成类型安全的消息代码，无需添加其他运行时依赖项。您无需在平台通道上手动匹配方法字符串和序列化参数，就可以调用 Java/Objective-C/Kotlin/Swift 类方法，并通过直接调用 Dart 方法传递非原始类型数据对象（反之亦然）。
+为了回应插件作者在用户调研中的普遍需求，最近，我们一直以 [插件](https://flutter.cn/docs/development/packages-and-plugins/developing-packages) 和 [Add-to-App](https://flutter.cn/docs/development/add-to-app) （部分使用了 Flutter 的应用）为对象，探求如何才能让 Flutter 与宿主平台之间的通信更安全、更轻松。为了满足这一需求，我们创建了命令行工具 [Pigeon](https://pub.flutter-io.cn/packages/pigeon)，使用 Dart 语法在平台通道上生成类型安全的消息代码，无需添加其他运行时依赖项。您无需在平台通道上手动匹配方法字符串和序列化参数，就可以调用 Java/Objective-C/Kotlin/Swift 类方法，并通过直接调用 Dart 方法传递非原始类型数据对象（反之亦然）。
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/08/607007baf455d.png){:width="95%"}
 
 While still in prerelease, Pigeon has become mature enough that we’re using it ourselves in the [video_player](https://pub.dev/packages/video_player) plugin. If you’d interested in testing out Pigeon for your own uses, see the updated the [platform channel documentation](https://flutter.dev/docs/development/platform-integration/platform-channels#pigeon) as well as this [sample project](https://github.com/flutter/samples/tree/master/add_to_app/flutter_module_books).
 
-Pigeon 虽然处于预发布阶段，但已经足够成熟，我们已经将其用于 [video_player](https://pub.flutter-io.cn/packages/video_player) 插件。如果您有兴趣测试 Pigeon 供自己使用，请参见更新的[平台通道文档](https://flutter.cn/docs/development/platform-integration/platform-channels#pigeon)以及此[示例项目](https://github.com/flutter/samples/tree/master/add_to_app/flutter_module_books)。
+Pigeon 虽然处于预发布阶段，但已经足够成熟，我们已经将其用于 [video_player](https://pub.flutter-io.cn/packages/video_player) 插件。如果您有兴趣测试 Pigeon 供自己使用，请参见更新的 [平台通道文档](https://flutter.cn/docs/development/platform-integration/platform-channels#pigeon) 以及此 [示例项目](https://github.com/flutter/samples/tree/master/add_to_app/flutter_module_books)。
 
 # Too many tooling updates to list
 
@@ -344,31 +344,31 @@ So much great stuff has happened to the tools in the Flutter 1.20 timeframe that
 
 * [VS Code extensions v3.13](https://groups.google.com/g/flutter-announce/c/TlN12RemsYw)
 
-	[VS Code 扩展 v3.13](https://groups.google.com/g/flutter-announce/c/TlN12RemsYw)
+ [VS Code 扩展 v3.13](https://groups.google.com/g/flutter-announce/c/TlN12RemsYw)
 
 * [VS Code extensions v3.12](https://groups.google.com/g/flutter-announce/c/8tSufvaRJUg)
 
-	[VS Code 扩展 v3.12](https://groups.google.com/g/flutter-announce/c/8tSufvaRJUg)
+ [VS Code 扩展 v3.12](https://groups.google.com/g/flutter-announce/c/8tSufvaRJUg)
 
 * [VS Code extensions v3.11](https://groups.google.com/g/flutter-announce/c/gM0bqO7NFA0)
 
-	[VS Code 扩展 v3.11](https://groups.google.com/g/flutter-announce/c/gM0bqO7NFA0)
+ [VS Code 扩展 v3.11](https://groups.google.com/g/flutter-announce/c/gM0bqO7NFA0)
 
 * [Flutter IntelliJ Plugin M46 Release](https://groups.google.com/g/flutter-announce/c/8C2v2ueXjts)
 
-	[Flutter IntelliJ 插件 M46 版](https://groups.google.com/g/flutter-announce/c/8C2v2ueXjts)
+ [Flutter IntelliJ 插件 M46 版](https://groups.google.com/g/flutter-announce/c/8C2v2ueXjts)
 
 * [Flutter IntelliJ Plugin M47 Release](https://groups.google.com/g/flutter-announce/c/6SF3PG_XB8g/m/6mAY7eC_AAAJ)
 
-	[Flutter IntelliJ 插件 M47 版](https://groups.google.com/g/flutter-announce/c/6SF3PG_XB8g/m/6mAY7eC_AAAJ)
+ [Flutter IntelliJ 插件 M47 版](https://groups.google.com/g/flutter-announce/c/6SF3PG_XB8g/m/6mAY7eC_AAAJ)
 
 * [Flutter IntelliJ Plugin M48 Release](https://groups.google.com/g/flutter-announce/c/i9NTk5o9rZQ)
 
-	[Flutter IntelliJ 插件 M48 版](https://groups.google.com/g/flutter-announce/c/i9NTk5o9rZQ)
+ [Flutter IntelliJ 插件 M48 版](https://groups.google.com/g/flutter-announce/c/i9NTk5o9rZQ)
 
 * [New tools for Flutter developers, built in Flutter](https://medium.com/flutter/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86)
 
-	[我们用 Flutter 写了一套全新的 Flutter 开发者工具](https://mp.weixin.qq.com/s/4mcFo3z8DhCDkEMX7IPmww)
+ [我们用 Flutter 写了一套全新的 Flutter 开发者工具](https://mp.weixin.qq.com/s/4mcFo3z8DhCDkEMX7IPmww)
 
 
 # Breaking Changes
@@ -381,26 +381,27 @@ As ever, we try to keep the number of breaking changes low. Here’s the list fr
 
 * [55336](https://github.com/flutter/flutter/pull/55336) Adding tabSemanticsLabel to CupertinoLocalizations — [Migration guide PR](https://github.com/flutter/website/pull/3996)
 
-	[55336](https://github.com/flutter/flutter/pull/55336)：将 tabSemanticsLabel 添加到 CupertinoLocalizations - 迁移[指南 PR](https://flutter.cn/docs/release/breaking-changes/cupertino-tab-bar-localizations)
+ [55336](https://github.com/flutter/flutter/pull/55336)：将 tabSemanticsLabel 添加到 CupertinoLocalizations - 迁移 [指南 PR](https://flutter.cn/docs/release/breaking-changes/cupertino-tab-bar-localizations)
 
 * [55977](https://github.com/flutter/flutter/pull/55977) [Add clipBehavior to widgets with clipRect](https://flutter.dev/go/clip-behavior)
 
-	[55977](https://github.com/flutter/flutter/pull/55977)：[将 clipBehavior 添加至具有 clipRect 的 widget](https://files.flutter-io.cn/sources/flutter-design-docs/Clip_Behavior.docx)
+ [55977](https://github.com/flutter/flutter/pull/55977)：[将 clipBehavior 添加至具有 clipRect 的 widget](https://files.flutter-io.cn/sources/flutter-design-docs/Clip_Behavior.docx)
 
 * [55998](https://github.com/flutter/flutter/pull/55998) [Fixes the navigator pages update crashes when there is still route wa…](https://groups.google.com/forum/#!searchin/flutter-announce/55998%7Csort:date/flutter-announce/yoq2VGi94q8/8pTsRL28AQAJ)
 
-	[55998](https://github.com/flutter/flutter/pull/55998)：[为 Navigator 的 TransitionDelegate 新加入了 isWaitingForExitingDecision 判断。](https://groups.google.com/forum/#!searchin/flutter-announce/55998%7Csort:date/flutter-announce/yoq2VGi94q8/8pTsRL28AQAJ)	
+ [55998](https://github.com/flutter/flutter/pull/55998)：[为 Navigator 的 TransitionDelegate 新加入了 isWaitingForExitingDecision 判断。](https://groups.google.com/forum/#!searchin/flutter-announce/55998%7Csort:date/flutter-announce/yoq2VGi94q8/8pTsRL28AQAJ)	
+ 
 * [56582](https://github.com/flutter/flutter/pull/56582) [Update Tab semantics in Cupertino to be the same as Material](https://flutter.dev/docs/release/breaking-changes/cupertino-tab-bar-localizations#migration-guide)
 
-	[56582](https://github.com/flutter/flutter/pull/56582)：[更新 Cupertino 中的 Tab 语义，使其与 Material 相同](https://flutter.cn/docs/release/breaking-changes/cupertino-tab-bar-localizations#migration-guide)
+ [56582](https://github.com/flutter/flutter/pull/56582)：[更新 Cupertino 中的 Tab 语义，使其与 Material 相同](https://flutter.cn/docs/release/breaking-changes/cupertino-tab-bar-localizations#migration-guide)
 
 * [57065](https://github.com/flutter/flutter/pull/57065) Remove deprecated child parameter for NestedScrollView’s overlap managing slivers
 
-	[57065](https://github.com/flutter/flutter/pull/57065)：移除 NestedScrollView 重叠管理条中被弃用的子参数	
+ [57065](https://github.com/flutter/flutter/pull/57065)：移除 NestedScrollView 重叠管理条中被弃用的子参数	
 
 * [58392](https://github.com/flutter/flutter/pull/58392) iOS mid-drag activity indicator
 
-	[58392](https://github.com/flutter/flutter/pull/58392)：确保在 iOS 里的系统行为一致性，为 CupertinoActivityIndicator 加入 progress 参数
+ [58392](https://github.com/flutter/flutter/pull/58392)：确保在 iOS 里的系统行为一致性，为 CupertinoActivityIndicator 加入 progress 参数
 
 
 # Summary
@@ -409,10 +410,8 @@ As ever, we try to keep the number of breaking changes low. Here’s the list fr
 
 Hopefully, you’re as excited about this release as we are. From many angles, this is Flutter’s biggest release yet. With performance improvements, new and updated widgets, and tooling improvements, we can only hit the highlights. We want to thank you, the strong and growing set of community contributors that enables every Flutter release to be bigger, faster, and stronger than the one before. And there’s more to come, with support for [null safety](http://dart.dev/null-safety), a new version of the Ads, Maps, and WebView plugins, and more tooling support in the works. (In fact, you might be interested in Bob Nystrom’s deep dive on [Understanding null safety](https://dart.dev/null-safety/understanding-null-safety).)
 
-希望您和我们一样喜爱这一版本。从很多角度来看，这都是 Flutter 迄今为止规模最大的版本发布。其中包含性能的显著提升、新增并更新了许多 widget，以及对工具做出的诸多改进，考虑到文章篇幅我们只能着重介绍部分亮点。我们要向大家致谢，感谢不断壮大的社区贡献者群体，让每一个 Flutter 版本都比先前功能更丰富、运行更流畅、性能更强大。敬请期待更多内容，包括[空安全](http://dart.cn/null-safety)支持、新版本的 Ads、Maps 和 WebView 插件，以及正在构建的更多工具支持。（也欢迎大家阅读 Bob Nystrom 的文章以深入[了解空安全](https://dart.cn/null-safety/understanding-null-safety)）
+希望您和我们一样喜爱这一版本。从很多角度来看，这都是 Flutter 迄今为止规模最大的版本发布。其中包含性能的显著提升、新增并更新了许多 widget，以及对工具做出的诸多改进，考虑到文章篇幅我们只能着重介绍部分亮点。我们要向大家致谢，感谢不断壮大的社区贡献者群体，让每一个 Flutter 版本都比先前功能更丰富、运行更流畅、性能更强大。敬请期待更多内容，包括 [空安全](http://dart.cn/null-safety)支持、新版本的 Ads、Maps 和 WebView 插件，以及正在构建的更多工具支持。（也欢迎大家阅读 Bob Nystrom 的文章以深入 [了解空安全](https://dart.cn/null-safety/understanding-null-safety)）
 
 With all of this extra power in Flutter and the tools, what are you going to build?
 
 Flutter 和工具已经全新升级，您会打造出怎样精彩的 Flutter 作品呢？
-
-当然，如果您有任何 Flutter 相关的问题或者反馈，记得在微信留言区找我们~

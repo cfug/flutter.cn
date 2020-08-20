@@ -6,7 +6,7 @@ description: 性能改进、移动端自动填充、全新 widget 以及更多�
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/bbbf90037ad95.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/bbbf90037ad95.png){:max-width="90%"}
 
 Chris Sells
 
@@ -48,7 +48,7 @@ Another performance improvement we’ve made in this release reduces jank in the
 
 此版本带来的另一项性能改进是使用预热阶段减少动画初始显示时的卡顿。以下为卡顿改进的动画示例（半速播放）。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/455f666234c9d.gif){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/455f666234c9d.gif){:max-width="90%"}
 
 animation without and with the SkSL warm-up
 
@@ -66,7 +66,7 @@ With this better, faster, stronger mouse hit testing, we’ve added support for 
 
 有了更好、更快、更强大的鼠标点击测试，我们又增加了鼠标光标支持，这也是桌面端最受期待的功能之一。一些常用的 widget 将默认显示主流光标，您也可以从支持的光标列表中指定其他光标。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/86c0af8ecf3d3.gif){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/86c0af8ecf3d3.gif){:max-width="90%"}
 
 new mouse cursors over existing widgets on Android
 
@@ -84,7 +84,7 @@ One of the #1 most requested Flutter features for a while has been to support th
 
 一段时间以来，呼声最高的 Flutter 功能之一就是为 Flutter 应用中的文本自动填充提供 Android 和 iOS 的底层支持。通过 [PR 52126](https://github.com/flutter/flutter/pull/52126)，我们很高兴地宣布该支持已经实现，如果操作系统已经搜集到可供自动填充的信息，您的用户无需再重新输入了。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/04693616a125a.gif){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/04693616a125a.gif){:max-width="90%"}
 
 Autofill in action
 
@@ -102,7 +102,7 @@ This release introduces a new widget, the InteractiveViewer. The InteractiveView
 
 此版本引入了一个新的 widget：InteractiveViewer。InteractiveViewer 旨在为您的应用构建常见交互，如平移、缩放和拖放，甚至在可调节大小的窗口中也可实现这些交互，请参见下面这个 [简单的围棋示例](https://github.com/justinmc/flutter-go)。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/1926f95f7fd40.gif){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/1926f95f7fd40.gif){:max-width="90%"}
 
 Zooming, panning, resizing, dragging and dropping with the InteractiveViewer
 
@@ -116,7 +116,7 @@ If you’re interested in adding the kind of interactivity to your Flutter app t
 
 有兴趣在 Flutter 应用中加入更多类似 InteractiveViewer 的交互？欢迎了解一下我们在这一版本 [对拖放功能所做的增强](https://github.com/monkeyswarm/DragTargetDetailsExample)。具体来说，如果您想知道拖拽的“放置”操作发生在目标 widget（始终对 Draggable 对象可用）上的精确位置，现在您可以通过 DragTarget 的 onAcceptDetails 方法获得该信息。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/89b6c425a5767.gif){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/89b6c425a5767.gif){:max-width="90%"}
 
 New drag target accept details in action
 
@@ -134,13 +134,13 @@ In addition to new widgets, this release includes a number of updated widgets to
 
 除了新添加的 widget，此版本还包含许多既有 widget 的更新，以匹配 [最新的 Material 指南](https://material-io.cn/components/sliders)。其中包括 Slider 和 RangeSlider。更多信息参见 [Slider widget 的更新](https://medium.com/flutter/whats-new-with-the-slider-widget-ce48a22611a3)。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/163a04b7ec35d.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/163a04b7ec35d.png){:max-width="90%"}
 
 updated Material Slider
 
 △ 新版 Material Slider
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/4b39c88d13982.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/4b39c88d13982.png){:max-width="95%"}
 
 Updated Material RangeSlider
 
@@ -150,7 +150,9 @@ DatePicker has been updated to include a new compact design as well as support f
 
 更新的 DatePicker 新添了紧凑型设计以及对日期范围的支持。
 
-updated DatePicker![](https://devrel.andfun.cn/devrel/posts/2020/08/9b72841cf6b9a.gif){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/9b72841cf6b9a.gif){:max-width="90%"}
+
+Updated DatePicker
 
 △ 新版 DatePicker
 
@@ -158,7 +160,7 @@ And finally, TimePicker has a completely new style.
 
 最后，TimePicker 也有了全新的视觉风格。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/aa761b870a116.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/aa761b870a116.png){:max-width="90%"}
 
 updated TimePicker
 
@@ -176,7 +178,7 @@ Another update this release is the new responsive licenses page available from t
 
 此版本的另一个更新是 AboutDialog 中提供的新的响应式许可页面。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/f46d9adbfbdba.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/f46d9adbfbdba.png){:max-width="90%"}
 
 new licenses page
 
@@ -198,7 +200,7 @@ First and foremost, a public service announcement: if you’re a Flutter plugin 
 
 首先是一则声明：如果您是 Flutter 插件作者，发布插件时将不再支持使用旧的 pubspec.yaml 格式。在使用旧格式文件执行 pub publish 时会收到以下错误消息：
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/439e46e8de177.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/439e46e8de177.png){:max-width="90%"}
 
 Legacy pubspec format error message upon plugin publication
 
@@ -220,7 +222,7 @@ The biggest tooling update in this release comes to the Visual Studio Code exten
 
 此版本最大的工具更新是 Visual Studio Code 扩展，它提供了一项新功能的预览，使您能够将 Dart DevTools 界面直接嵌入编程工作区。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/1bb7686b6aee2.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/1bb7686b6aee2.png){:max-width="90%"}
 
 Preview of Layout Explorer from Dart DevTools embedded into Visual Studio Code
 
@@ -230,13 +232,13 @@ Enable this feature with the new `dart.previewEmbeddedDevTools` setting. The abo
 
 使用新的 `dart.previewEmbeddedDevTools` 设置启用此功能。在上面的屏幕截图中，Flutter Widget Inspector 直接嵌入 Visual Studio Code，但是启用新设置后，您可以使用状态栏上的 Dart DevTools 菜单嵌入其他您偏好的页面。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/e483d4839aed8.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/e483d4839aed8.png){:max-width="90%"}
 
 This menu allows you to choose which pages to show.
 
 通过此菜单选择要显示的页面。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/3a9be4183f989.gif){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/3a9be4183f989.gif){:max-width="90%"}
 
 This feature is still in preview, so [let us know if you have any trouble with it](https://github.com/Dart-Code/Dart-Code/issues).
 
@@ -250,7 +252,7 @@ The latest version of Dart DevTools comes with an updated version of the Network
 
 最新版本 Dart DevTools 带有更新的 Network 页面，可以实现网络套接字分析。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/f2570ba7c41dd.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/f2570ba7c41dd.png){:max-width="90%"}
 
 Timing, status and content type of socket connections on the Network page of Dart DevTools
 
@@ -268,7 +270,7 @@ Another new feature for Visual Studio Code is updating imports on rename, which 
 
 Visual Studio Code 的另一个新功能是当文件被移动或重命名时自动更新导入语句。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/3a9be4183f989.gif){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/3a9be4183f989.gif){:max-width="90%"}
 
 moving Dart files in Visual Studio Code updates the import statements
 
@@ -303,13 +305,13 @@ This is the same metadata that we use for the Android Studio / IntelliJ and VS C
 
 这与我们在 Android Studio / IntelliJ 和 VS Code 扩展中的元数据相同；我们认为这对您构建自己的工具会有所帮助。实际上，此元数据使 IntelliJ 系列 IDE 的功能可以显示 Flutter 代码中使用的颜色：
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/ca7d24a599cd8.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/ca7d24a599cd8.png){:max-width="90%"}
 
 Related to that is a new feature in IntelliJ and Android Studio that displays color blocks for Color.fromARGB() and Color.fromRGBO():
 
 与此相关的是 IntelliJ 和 Android Studio 中的一项新功能，该功能可为 Color.fromARGB() 和 Color.fromRGBO() 显示色块：
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/5c8d5b3dcd271.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/5c8d5b3dcd271.png){:max-width="90%"}
 
 Special thanks to [dratushnyy](https://github.com/dratushnyy) on GitHub for contributing improvements to the color previews in IntelliJ!
 
@@ -323,7 +325,7 @@ In response to popular demand from plugin authors in our user surveys, recently 
 
 为了回应插件作者在用户调研中的普遍需求，最近，我们一直以 [插件](https://flutter.cn/docs/development/packages-and-plugins/developing-packages) 和 [Add-to-App](https://flutter.cn/docs/development/add-to-app) （部分使用了 Flutter 的应用）为对象，探求如何才能让 Flutter 与宿主平台之间的通信更安全、更轻松。为了满足这一需求，我们创建了命令行工具 [Pigeon](https://pub.flutter-io.cn/packages/pigeon)，使用 Dart 语法在平台通道上生成类型安全的消息代码，无需添加其他运行时依赖项。您无需在平台通道上手动匹配方法字符串和序列化参数，就可以调用 Java/Objective-C/Kotlin/Swift 类方法，并通过直接调用 Dart 方法传递非原始类型数据对象（反之亦然）。
 
-![](https://devrel.andfun.cn/devrel/posts/2020/08/607007baf455d.png){:width="95%"}
+![](https://devrel.andfun.cn/devrel/posts/2020/08/607007baf455d.png){:max-width="90%"}
 
 While still in prerelease, Pigeon has become mature enough that we’re using it ourselves in the [video_player](https://pub.dev/packages/video_player) plugin. If you’d interested in testing out Pigeon for your own uses, see the updated the [platform channel documentation](https://flutter.dev/docs/development/platform-integration/platform-channels#pigeon) as well as this [sample project](https://github.com/flutter/samples/tree/master/add_to_app/flutter_module_books).
 

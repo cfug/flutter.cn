@@ -41,6 +41,7 @@ android-dev: https://developer.android.google.cn
 codelabs: https://codelabs.flutter-io.cn
 groups: https://groups.google.com
 firebase: https://firebase.google.cn
+flutterfire: https://firebase.flutter.dev
 dartpadx-dart: https://dartpad.cn/experimental/embed-new-dart.html ## Adding the exp version for dart here.
 
 defaults:

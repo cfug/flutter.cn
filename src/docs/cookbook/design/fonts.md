@@ -35,9 +35,14 @@ or perhaps you downloaded a font from [Google Fonts][].
 {{site.alert.end}}
 
 {{site.alert.note}}
+
   For another approach to using custom fonts, 
   especially if you want to re-use one font over multiple projects, 
   see [Export fonts from a package][].
+
+  这里还有另一个关于使用自定义字体的教程，
+  如果你想要在多项目中重用一份字体的情况下，请参考[将字体导出到包][Export fonts from a package]。
+
 {{site.alert.end}}
 
 Flutter works with custom fonts and you can apply a custom

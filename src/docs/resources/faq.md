@@ -314,6 +314,19 @@ We measure our [test coverage][] on every commit.
 我们使用自己的测试功能来测试我们的 SDK，
 每次提交代码前我们都会测量提交的 [测试覆盖率][test coverage]。
 
+### Does Flutter come with debugging tools?
+
+### Flutter 是否附带调试工具？
+
+While Flutter doesn't ship with debugging tools, 
+there are many tools available that 
+can help you debug your Flutter application. 
+Learn more about [debugging with Flutter][].
+
+Flutter 本身不附带调试工具，
+但我们有非常多可用的调试工具能够帮助你调试 Flutter 应用。
+你可以在[调试 Flutter][debugging with Flutter]文章中了解更多信息。
+
 ### Does Flutter come with a dependency injection framework or solution?
 
 ### Flutter 是否带有依赖注入 (dependency injection) 的框架或解决方案？
@@ -1600,7 +1613,7 @@ deployed to Apple's App Store.
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
 [Android Studio/IntelliJ]: /docs/development/tools/android-studio
 [`AnimatedDefaultTextStyle`]: {{site.api}}/flutter/widgets/AnimatedDefaultTextStyle-class.html
-[`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
+[`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/AnimatedPhysicalModel-class.html
 [apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
 [architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
@@ -1614,6 +1627,7 @@ deployed to Apple's App Store.
 [Contributing Guide]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
 [CodePen]: https://codepen.io/flutter
 [Dart DevTools]: /docs/development/tools/devtools
+[debugging with Flutter]: /docs/testing/debugging
 [desktop]: /desktop
 [detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
 [Discord]: https://discord.gg/N7Yshp4

@@ -195,7 +195,7 @@ You might also find these docs useful:
 [FAQ]: /docs/resources/faq
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 [Flutter in Focus]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
-[Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus series]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter YouTube channel]: {{site.social.youtube}}
 [Get started]: /docs/get-started/install
 [iOS]: /docs/get-started/flutter-for/ios-devs
@@ -209,39 +209,4 @@ You might also find these docs useful:
 [What's new archive]: /docs/whats-new-archive
 [Write your first Flutter app]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
-[1.9.1 release notes]: {{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1
-[building a web application]: /docs/get-started/web
-[ColorFiltered]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
-[ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
-[creating responsive apps]: /docs/development/ui/layout/responsive
-[Flutter Medium publication]: https://medium.com/flutter
-[Flutter for web]: /web
-[Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
-[Improving Flutter's Error Messages]: https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9
-[Performance view]: /docs/development/tools/devtools/performance
-[preparing a web app for release]: /docs/deployment/web
-[SelectableText]: {{site.api}}/flutter/material/SelectableText-class.html
-[Showcase]: /showcase
-[ToggleButtons]: {{site.api}}/flutter/material/ToggleButtons-class.html
-[ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
-[Try it out]: /docs/codelabs/layout-basics
-[Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
-[using the dart:ffi library]: /docs/development/platform-integration/c-interop
-[web FAQ]: /docs/development/platform-integration/web
-[add Flutter to an existing app]: /docs/development/add-to-app
-[Announcing Flutter 1.12: What a year!]: https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d
-[app size]: /docs/perf/app-size#ios
-[building a web app with Flutter]: /docs/get-started/web
-[Desktop support for Flutter]: /desktop
-[Flutter: the first UI platform designed for ambient computing]: https://developers.googleblog.com/2019/12/flutter-ui-ambient-computing.html?m=1
-[Flutter 1.12.13]: /docs/development/tools/sdk/release-notes/release-notes-1.12.13
-[Flutter Gallery]: https://flutter.github.io/samples/#/
-[Flutter Layout Explorer]: https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer
-[Flutter Medium publication]: https://medium.com/flutter
-[Migrating your plugin to the new Android APIs]: /docs/development/packages-and-plugins/plugin-api-migration
-[implicit animations]: /docs/codelabs/implicit-animation
-[Web support for Flutter]: /web
-[Web support for Flutter goes beta]: https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0
-[write your first Flutter app on the web]: /docs/get-started/codelab-web
-[Get started]: /docs/get-started/install
 

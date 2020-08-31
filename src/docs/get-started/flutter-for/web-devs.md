@@ -119,10 +119,18 @@ the top left, by default.
 
 ### Setting background color
 
+<<<<<<< HEAD
 ### 设置背景颜色
 
 In Flutter, you set the background color using a
 [`Container`][]’s `decoration` property.
+=======
+In Flutter, you set the background color using the 
+`color` property or the `decoration` property of a [`Container`][]. However, you cannot
+supply both, since it would potentially result in the decoration drawing over
+the background color. The `color` property should be preferred when the background is a simple color.
+For other cases, such as gradients or images, use the `decoration` property.
+>>>>>>> 2341c639fdfcf7aeef464a95dabab604bbf12532
 
 在 Flutter 中，你可以通过 [`Container`][]
 的 `decoration` 属性来设置背景颜色。
@@ -143,6 +151,20 @@ CSS 示例使用十六进制颜色，这等价于材质调色板。
       height: 240px;
       font: 900 24px Roboto;
     }
+{% endprettify %}
+</div>
+
+<div class="righthighlight">
+{% prettify dart %}
+  var container = Container( // grey box
+    child: Text(
+      "Lorem ipsum",
+      style: bold24Roboto,
+    ),
+    width: 320,
+    height: 240,
+    [[highlight]]color: Colors.grey[300],[[/highlight]]
+  );
 {% endprettify %}
 </div>
 

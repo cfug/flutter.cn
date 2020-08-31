@@ -359,7 +359,6 @@ in binary form, use the following instructions:
    downloaded from a repository, such as
    JCenter.
 
-
 ### Web
 
 This feature is not yet supported for web plugins.

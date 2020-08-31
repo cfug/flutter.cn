@@ -55,6 +55,10 @@ void main() {
 
 // rest of `flutter create` code...
 ```
+{{site.alert.note}}
+  Use the top-level [`kReleaseMode`][] constant to determine whether the
+  app was compiled in release mode.
+{{site.alert.end}}
 
 This handler can also be used to report errors to a logging service.
 For more details, see our cookbook chapter for 
@@ -67,3 +71,4 @@ For more details, see our cookbook chapter for
 [FlutterError.dumpErrorToConsole]: {{site.api}}/flutter/foundation/FlutterError/dumpErrorToConsole.html
 [ErrorWidget.builder]: {{site.api}}/flutter/widgets/ErrorWidget/builder.html
 [reporting errors to a service]: /docs/cookbook/maintenance/error-reporting
+[`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html

@@ -1,6 +1,6 @@
 ---
-title: New currentAutofillScope property on TextInputClient
-title: TextInputClient 的新属性 currentAutofillScope
+title: Adding TextInputClient.currentAutofillScope property
+title: 添加新属性 TextInputClient.currentAutofillScope
 description: A new getter TextInputClient.currentAutofillScope was added to the TextInputClient interface for autofill support.
 description: 新的 TextInputClient.currentAutofillScope 已添加到 TextInputClient 界面中，用于支持自动填充功能。
 ---
@@ -59,8 +59,8 @@ simply return `null` in the getter:
 ```dart
 class CustomTextField implements TextInputClient {
   // Not having an AutofillScope does not prevent the input field
-  // from being autofilled. However, only this input field will
-  // be autofilled when autofill is triggered on it.
+  // from being autofilled. However, only this input field is
+  // autofilled when autofill is triggered on it.
   AutofillScope get currentAutofillScope => null;
 }
 ```
@@ -83,11 +83,9 @@ For more information, see [`AutofillGroup`][].
 ## Timeline
 
 Landed in version: 1.18.0<br>
-In stable release: not yet
+In stable release: 1.20
 
 ## References
-
-{% include master-api.md %}
 
 API documentation:
 * [`AutofillGroup`][]
@@ -103,6 +101,6 @@ Relevant PRs:
 [Framework PR that added autofill support]: {{site.github}}/flutter/flutter/pull/52126
 [Issue 13015: Autofill support]: {{site.github}}/flutter/flutter/issues/13015
 
-[`AutofillGroup`]: https://master-api.flutter.dev/flutter/widgets/AutofillGroup-class.html
-[`TextInputClient.currentAutofillScope`]: https://master-api.flutter.dev/flutter/services/TextInputClient/currentAutofillScope.html
+[`AutofillGroup`]: {{site.api}}/flutter/widgets/AutofillGroup-class.html
+[`TextInputClient.currentAutofillScope`]: {{site.api}}/flutter/services/TextInputClient/currentAutofillScope.html
 

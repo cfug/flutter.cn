@@ -474,35 +474,28 @@ We recommend you edit the Android code using Android Studio.
 
 我们建议你使用 Android Studio 来编辑 Android 代码。
 
-Before editing the Android platform code in Android Studio,
-first make sure that the code has been built at least once
-(in other words, run the example app from your IDE/editor,
-or in a terminal execute `cd hello/example; flutter build apk`).
-
-使用 Android Studio 编辑 Android 平台代码之前，首先确保代码至少被构建过一次
-（换句话说，即从 IDE/编辑器执行示例程序，
-或在终端中执行以下命令：`cd hello/example; flutter build apk`）。
-
 Then use the following steps:
 
 接下来进行如下步骤：
 
 1. Launch Android Studio.
 
-   启动 Android Studio
+   启动 Android Studio；
    
-1. Select **Import project** in the
-   **Welcome to Android Studio** dialog,
-   or select **File > New > Import Project...** from the menu,
+1. Select **Open an existing Android Studio Project** 
+   in the **Welcome to Android Studio** dialog,
+   or select **File > Open** from the menu,
    and select the `hello/example/android/build.gradle` file.
 
-   在 “Welcome to Android Studio” 对话框中选择 “Import project”，
-   或在菜单中选择“File > New > Import Project...”，
+   在 Android Studio 的欢迎菜单 (**Welcome to Android Studio**) 对话框中
+   选择打开现有的 Android Studio 项目
+   (**Open an existing Android Studio Project**)，
+   或在菜单中选择 **File > Open**，
    然后选择 `hello/example/android/build.gradle` 文件；
 
 1. In the **Gradle Sync** dialog, select **OK**.
 
-   在“Gradle Sync”对话框中，选择“OK”；
+    在**Gradle Sync** 对话框中，选择 **OK**；
    
 1. In the **Android Gradle Plugin Update** dialog,
    select **Don't remind me again for this project**.
@@ -513,8 +506,8 @@ Then use the following steps:
 The Android platform code of your plugin is located in
 `hello/java/com.example.hello/HelloPlugin`.
 
-The Android platform code of your plugin is located in
-`hello/java/com.example.hello/HelloPlugin`.
+插件中与 Android 系统徐相关的代码在
+`hello/java/com.example.hello/HelloPlugin` 这个文件里。
 
 You can run the example app from Android Studio by
 pressing the run (&#9654;) button.
@@ -722,7 +715,7 @@ a license for each one.)
 
 如果 LICENSE 文件中包含多个组件许可证，那么每个组件许可证必须以其所在 package
 的名称开始，每个 package 名称单独一行显示，并且 package
-名称列表与实际许可证内容由空行隔开。（package 名称无需与 pub package 相匹配。
+名称列表与实际许可证内容由空行隔开。（package 名称则需与 pub package 相匹配。
 比如，一个 package 可能包含多个第三方代码，并且可能需要为每个 package 添加许可证。）
 
 The following example shows a well-organized license file:
@@ -924,7 +917,7 @@ class in the source code at `hello/android/src`.
 
 现在你可以在 `hello/android/src` 目录下的源代码文件中使用
 `import io.flutter.plugins.urllauncher.UrlLauncherPlugin`
-并访问类 `UrlLauncherPlugin`。
+并访问文件 `UrlLauncherPlugin`。
 
 For more information on `build.gradle` files, see the
 [Gradle Documentation][] on build scripts.

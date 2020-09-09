@@ -239,7 +239,6 @@ to set up physical device deployment in Xcode.
           ![Check the app's Bundle ID][]{:.mw-100}
 
  5. Start your app by running `flutter run`.
-    或是在 Xcode 中点击运行按钮。
 
     执行 `flutter run` 命令来运行你的应用。
 

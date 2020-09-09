@@ -218,11 +218,16 @@ to set up physical device deployment in Xcode.
           
           ![Trust Mac][]{:.mw-100}
 
-          Then, go to the Settings app on the iOS device, select **General >
-          Device Management** and trust your Certificate.
+          Then, go to the Settings app on the iOS device, 
+          select **General > Device Management** 
+          and trust your Certificate.
+          For first time users, you may need to select
+          **General > Profiles > Device Management** instead.
           
           然后在 iOS 开发机上进入 Settings 应用，
           选择 **General > Device Management** 然后信任相应的证书。
+          对于首次打开的用户，请选择 
+          **General > Profiles > Device Management**。
 
 
         * If automatic signing fails in Xcode, verify that the project's
@@ -234,6 +239,7 @@ to set up physical device deployment in Xcode.
           ![Check the app's Bundle ID][]{:.mw-100}
 
  5. Start your app by running `flutter run`.
+    或是在 Xcode 中点击运行按钮。
 
     执行 `flutter run` 命令来运行你的应用。
 

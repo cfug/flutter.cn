@@ -111,8 +111,8 @@ To install these:
    
   v3.6.3.0 之前的版本请按照下面这样访问插件设置： 
    
-   1. Open plugin preferences (**Preferences > Plugins** on macOS,
-      **File > Settings > Plugins** on Windows & Linux).
+   1. Open plugin preferences (on MacOS go to **Preferences > Plugins**; 
+      on Windows & Linux go to **File > Settings > Plugins**).
 
       打开插件设置（macOS 系统打开 **Preferences > Plugins**，
       Windows 和 Linux 系统打开 **File > Settings > Plugins**）

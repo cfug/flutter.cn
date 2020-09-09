@@ -56,11 +56,12 @@ flutter:
 
 {{site.alert.note}}
 
-  Only files located directly in the directory are
-  included. To add files located in subdirectories,
-  create an entry per directory.
+  Only files located directly in the directory are included unless
+  there are files with the same name inside a subdirectory 
+  (see [Asset Variants](#asset-variants)). To add files located in subdirectories, create 
+  an entry per directory.
 
-  只包含当前目录下的的所有文件。如果想要添加子文件夹中的文件，
+  仅包含当前目录下的所有文件，以及子目录下（与主目录中的文件）的同名文件。（请参阅 [Asset 变体](#asset-variants)）。如果想要添加子文件夹中的文件，
   请为每个目录创建一个条目。
 
 {{site.alert.end}}

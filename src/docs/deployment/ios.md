@@ -207,28 +207,31 @@ In the **Signing & Capabilities** section:
 在 Signing 部分：
 
 `Automatically manage signing` 
-: whether Xcode should automatically manage 
+<br> whether Xcode should automatically manage 
 app signing and provisioning. This is set `true` by default, which should be sufficient for most apps. For more complex scenarios, see the [Code Signing Guide][codesigning_guide].
 
-`Automatically manage signing` 是否需要 Xcode 自动管理 app 签名和设置。
+`Automatically manage signing` 
+<br> 是否需要 Xcode 自动管理 app 签名和设置。
 这个默认被设置为 `true` ，对于绝大多数 App 来说都是适用的。对于更复杂的场景，查看 [代码签名指南][codesigning_guide]。
     
-`Team:` select the team associated with your registered Apple Developer account. If required, select **Add Account...**, then update this setting.
+`Team` 
+<br> select the team associated with your registered Apple Developer account. If required, select **Add Account...**, then update this setting.
     
-`Team`：选择关联到你注册的 Apple 开发者账户的团队。如果需要，选择 **Add Account...**, 然后更新选项。
+`Team`
+<br> 选择关联到你注册的 Apple 开发者账户的团队。如果需要，选择 **Add Account...**, 然后更新选项。
 
 In the **Deployment Info** section:
 
 在 Development 部分：
 
 `Deployment Target:`
-: The minimum iOS version that your app supports.
+<br> The minimum iOS version that your app supports.
   Flutter supports iOS 8.0 and later. If your app includes
   Objective-C or Swift code that makes use of APIs that
   were unavailable in iOS 8, update this setting appropriately.
 
 `Deployment Target:` 你的 App 将会支持的最低版本的 iOS。
-    Flutter 支持 iOS 8.0 及以后的版本。
+<br>Flutter 支持 iOS 8.0 及以后的版本。
     如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，请设置到合适的版本。
 
 The **General** tab of your project settings should resemble

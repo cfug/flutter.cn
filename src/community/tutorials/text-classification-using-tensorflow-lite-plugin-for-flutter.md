@@ -9,22 +9,29 @@ title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/09/93ee17c31cb71.tif)
 
-If you wished that there was an easy, efficient, and flexible way to integrate TensorFlow trained models with your flutter apps, I am glad to announce the release of a new plugin [tflite_flutter](https://pub.dev/packages/tflite_flutter).
+If you wished that there was an easy, efficient, and flexible way to integrate TensorFlow trained models with your flutter apps, I am glad to announce the release of a new plugin [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter).
 
 如果您希望能有一种简单、高效且灵活的方式把 TensorFlow 模型集成到 Flutter 应用里，那请您一定不要错过我们今天介绍的这个全新插件 [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter)。这个插件的开发者是 TensorFlow 团队的一名实习生 Amish Garg，本文来自他在 Medium 上的一篇文章《在 Flutter 中使用 TensorFlow Lite 插件实现文字分类》。
 
-Key features of [tflite_flutter](https://pub.dev/packages/tflite_flutter): 
+Key features of [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter): 
 
-[tflite_flutter](https://pub.dev/packages/tflite_flutter) 插件的核心特性：
+[tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter) 插件的核心特性：
 
 * It provides a Dart API similar to the TFLite Java and Swift APIs, thus no compromise with the flexibility offered on those platforms.
-	它提供了与 TFLite Java 和 Swift API 相似的 Dart API，所以其灵活性和在这些平台上的效果是完全一样的
+  
+  它提供了与 TFLite Java 和 Swift API 相似的 Dart API，所以其灵活性和在这些平台上的效果是完全一样的
+  
 * Directly binds to the TensorFlow Lite C API using dart:ffi, making it more efficient than platform integration approaches.
-	通过 dart:ffi 直接与 TensorFlow Lite C API 相绑定，所以它比其它平台集成方式更加高效。
+  
+  通过 dart:ffi 直接与 TensorFlow Lite C API 相绑定，所以它比其它平台集成方式更加高效。
+  
 * No need to write any platform-specific code.
-	无需编写特定平台的代码。
+  
+  无需编写特定平台的代码。
+  
 * Offers acceleration support using NNAPI, GPU delegates on Android, and Metal delegate on iOS.
-	通过 NNAPI 提供加速支持，在 Android 上使用 GPU Delegate，在 iOS 上使用 Metal Delegate。
+  
+  通过 NNAPI 提供加速支持，在 Android 上使用 GPU Delegate，在 iOS 上使用 Metal Delegate。
 
 In this article, I will walk you through building a **Text Classification Flutter App** using tflite_flutter. Let’s get started by creating a new flutter project `text_classification_app`.
 
@@ -34,15 +41,17 @@ In this article, I will walk you through building a **Text Classification Flutte
 
 ## （很重要）初始化配置
 
-* Linux and Mac users
-	Linux 和 Mac 用户
+### Linux and Mac users
+  
+### Linux 和 Mac 用户
 
 Copy the [`install.sh`](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.sh) file in the root folder of your app, and execute the command, `sh install.sh` in the root folder, `text_classification_app/` in our case.
 
 将 [`install.sh`](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.sh) 拷贝到您应用的根目录，然后在根目录执行 `sh install.sh`，本例中就是目录 `text_classification_app/`。
 
-* Windows users
-	Windows 用户
+### Windows users
+  
+### Windows 用户
 
 Copy the [`install.bat`](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.bat) file in the root folder of your app, and execute the command, `install.bat` in the root folder, text_classification_app/ in our case.
 
@@ -60,15 +69,15 @@ This will automatically download the latest binaries from [release assets](https
 
 ## 获取插件
 
-In `pubspec.yaml` include `tflite_flutter: ^<latest_version>` ([details here](https://pub.dev/packages/tflite_flutter#-installing-tab-)).
+In `pubspec.yaml` include `tflite_flutter: ^<latest_version>` ([details here](https://pub.flutter-io.cn/packages/tflite_flutter#-installing-tab-)).
 
-在 `pubspec.yaml` 添加 `tflite_flutter: ^<latest_version>` （[详情](https://pub.dev/packages/tflite_flutter#-installing-tab-)）。
+在 `pubspec.yaml` 添加 `tflite_flutter: ^<latest_version>` （[详情](https://pub.flutter-io.cn/packages/tflite_flutter#-installing-tab-)）。
 
 ## Downloading the model
 
 ## 下载模型
 
-To use any TensorFlow trained model on mobile, we need to obtain it in `.tflite` format. For more information on how to convert a TensorFlow trained model to `.tflite` format, [refer to this official guide.](https://www.tensorflow.org/lite/convert/python_api)
+To use any TensorFlow trained model on mobile, we need to obtain it in `.tflite` format. For more information on how to convert a TensorFlow trained model to `.tflite` format, [refer to this official guide.](https://tensorflow.google.cn/lite/convert/python_api)
 
 要在移动端上运行 TensorFlow 训练模型，我们需要使用 `.tflite` 格式。如果需要了解如何将 TensorFlow 训练的模型转换为 `.tflite` 格式，请参阅[官方指南](https://tensorflow.google.cn/lite/convert/python_api)。 
 
@@ -76,7 +85,7 @@ We are going to use the pre-trained Text Classification Model available on the T
 
 这里我们准备使用 TensorFlow 官方站点上预训练的文字分类模型，可[从这里下载](https://files.flutter-io.cn/posts/flutter-cn/2020/tensorflow-lite-plugin/text_classification.tflite)。
 
-> This pretrained model predicts if a paragraph’s sentiment is positive or negative. It was trained on [Large Movie Review Dataset v1.0](http://ai.stanford.edu/~amaas/data/sentiment/) from Mass et al, which consists of IMDB movie reviews labeled as either positive or negative. [Find more info here.](https://www.tensorflow.org/lite/models/text_classification/overview) 
+> This pretrained model predicts if a paragraph’s sentiment is positive or negative. It was trained on [Large Movie Review Dataset v1.0](http://ai.stanford.edu/~amaas/data/sentiment/) from Mass et al, which consists of IMDB movie reviews labeled as either positive or negative. [Find more info here.](https://tensorflow.google.cn/lite/models/text_classification/overview) 
 
 > 该预训练的模型可以预测当前段落的情感是积极还是消极。它是基于来自 Mass 等人的  [Large Movie Review Dataset v1.0](http://ai.stanford.edu/~amaas/data/sentiment/) 数据集进行训练的。数据集由基于 IMDB 电影评论所标记的积极或消极标签组成，[点击查看更多信息](https://tensorflow.google.cn/lite/models/text_classification/overview)。
 
@@ -106,16 +115,21 @@ Now, we are all set, to begin with coding. 🚀
 
 ## 预处理
 
-As mentioned on the [text_classification model’s page,](https://www.tensorflow.org/lite/models/text_classification/overview#how_it_works) Here are the steps to classify a paragraph with the model:
+As mentioned on the [text_classification model’s page,](https://tensorflow.google.cn/lite/models/text_classification/overview#how_it_works) Here are the steps to classify a paragraph with the model:
 
 正如[文字分类模型页面](https://tensorflow.google.cn/lite/models/text_classification/overview#how_it_works)里所提到的。可以按照下面的步骤使用模型对段落进行分类：
 
 1. Tokenize the paragraph and convert it to a list of word ids using a predefined vocabulary.
-	对段落文本进行分词，然后使用预定义的词汇集将它转换为一组词汇 ID；
+   
+   对段落文本进行分词，然后使用预定义的词汇集将它转换为一组词汇 ID；
+   
 2. Feed the list to the TensorFlow Lite model.
-	将生成的这组词汇 ID 输入 TensorFlow Lite 模型里；
+   
+   将生成的这组词汇 ID 输入 TensorFlow Lite 模型里；
+   
 3. Get the probability of the paragraph being positive or negative from the model outputs.
-	从模型的输出里获取当前段落是积极或者是消极的概率值。
+   
+   从模型的输出里获取当前段落是积极或者是消极的概率值。
 
 We will first write a method to tokenize the raw string using [`text_classification_vocab.txt`](https://github.com/am15h/tflite_flutter_plugin/blob/master/example/assets/text_classification_vocab.txt) as vocabulary.
 
@@ -263,9 +277,9 @@ This is the main section of this blog, as here we are going to discuss the usage
 
 这是本文的主体部分，这里我们会讨论 tflite_flutter 插件的用途。
 
-> The term **inference** refers to the process of executing a TensorFlow Lite model on-device in order to make predictions based on input data. To perform an inference with a TensorFlow Lite model, you must run it through an **interpreter**. [Learn more.](https://www.tensorflow.org/lite/guide/inference) 
+> The term **inference** refers to the process of executing a TensorFlow Lite model on-device in order to make predictions based on input data. To perform an inference with a TensorFlow Lite model, you must run it through an **interpreter**. [Learn more.](https://tensorflow.google.cn/lite/guide/inference) 
 
-> 这里的分析是指基于输入数据在设备上使用 TensorFlow Lite 模型的处理过程。要使用 TensorFlow Lite 模型进行分析，需要通过 **解释器** 来运行它。[了解更多](https://www.tensorflow.org/lite/guide/inference)。
+> 这里的分析是指基于输入数据在设备上使用 TensorFlow Lite 模型的处理过程。要使用 TensorFlow Lite 模型进行分析，需要通过 **解释器** 来运行它。[了解更多](https://tensorflow.google.cn/lite/guide/inference)。
 
 **Creating the interpreter, loading the model**
 
@@ -713,9 +727,9 @@ Visit the repository [**am15h/tflite_flutter_plugin** on Github](https://github.
 
 ## 答疑
 
-### Q. How is this plugin [`tflite_flutter`](https://pub.dev/packages/tflite_flutter) different from [`tflite v1.0.5`](https://pub.dev/packages/tflite)
+### Q. How is this plugin [`tflite_flutter`](https://pub.flutter-io.cn/packages/tflite_flutter) different from [`tflite v1.0.5`](https://pub.flutter-io.cn/packages/tflite)
 
-### 问：[`tflite_flutter`](https://pub.dev/packages/tflite_flutter) 和 [`tflite v1.0.5`](https://pub.dev/packages/tflite) 有哪些区别？
+### 问：[`tflite_flutter`](https://pub.flutter-io.cn/packages/tflite_flutter) 和 [`tflite v1.0.5`](https://pub.flutter-io.cn/packages/tflite) 有哪些区别？
 
 While `tflite v1.0.5` focuses on offering some high-level features to build apps with specific use cases like Image Classification, Object Detection, etc…, the new, tflite_flutter offers the same flexibility and features as the Java API and can be used with any tflite model. It also offers support for delegates.
 
@@ -735,15 +749,15 @@ Update (07/01/2020): TFLite Flutter Helper library is released.
 
 [TensorFlow Lite Flutter Helper Library](https://github.com/am15h/tflite_flutter_helper) provides a simple architecture for processing and manipulating input and output of TFLite Models. Its API design and documentation are identical to the TensorFlow Lite Android Support Library. More info [here](https://github.com/am15h/tflite_flutter_helper#tensorflow-lite-flutter-helper-library).
 
-[TensorFlow Lite Flutter Helper Library](https://github.com/am15h/tflite_flutter_helper) 为处理和控制输入及输出的 TFLite 模型提供了易用的架构。它的 API 设计和文档与 TensorFlow Lite Android Support Library 是一样的。更多信息请[参考这里](https://github.com/am15h/tflite_flutter_helper#tensorflow-lite-flutter-helper-library)。
+[TensorFlow Lite Flutter Helper Library](https://github.com/am15h/tflite_flutter_helper) 为处理和控制输入及输出的 TFLite 模型提供了易用的架构。它的 API 设计和文档与 TensorFlow Lite Android Support Library 是一样的。更多信息请 [参考这里](https://github.com/am15h/tflite_flutter_helper#tensorflow-lite-flutter-helper-library)。
 
 That’s all for this blog, I would love to hear your feedback on tflite_flutter plugin. Feel free to [file an issue](https://github.com/am15h/tflite_flutter_plugin/issues) to report bugs or for feature requests.
 
-以上是本文的全部内容，欢迎大家对 tflite_flutter 插件进行反馈，请在这里[上报 bug 或提出功能需求](https://github.com/am15h/tflite_flutter_plugin/issues)。
+以上是本文的全部内容，欢迎大家对 tflite_flutter 插件进行反馈，请在这里 [上报 bug 或提出功能需求](https://github.com/am15h/tflite_flutter_plugin/issues)。
 
-Thanks for reading. ✌️
+Thanks for reading. 
 
-谢谢关注。 ✌️
+谢谢关注。
 
 Thanks to Michael Thomsen. 
 

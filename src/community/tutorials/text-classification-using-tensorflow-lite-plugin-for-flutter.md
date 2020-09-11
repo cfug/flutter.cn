@@ -63,7 +63,7 @@ This will automatically download the latest binaries from [release assets](https
 
 [Refer to the readme for more info on the initial setup.](https://github.com/am15h/tflite_flutter_plugin#initial-setup) 
 
-请点击到 README 文件里查看更多[关于初始配置的信息](https://github.com/am15h/tflite_flutter_plugin#important-initial-setup)。
+请点击到 README 文件里查看更多 [关于初始配置的信息](https://github.com/am15h/tflite_flutter_plugin#important-initial-setup)。
 
 ## Getting the plugin
 
@@ -117,7 +117,7 @@ Now, we are all set, to begin with coding. 🚀
 
 As mentioned on the [text_classification model’s page,](https://tensorflow.google.cn/lite/models/text_classification/overview#how_it_works) Here are the steps to classify a paragraph with the model:
 
-正如[文字分类模型页面](https://tensorflow.google.cn/lite/models/text_classification/overview#how_it_works)里所提到的。可以按照下面的步骤使用模型对段落进行分类：
+正如 [文字分类模型页面](https://tensorflow.google.cn/lite/models/text_classification/overview#how_it_works) 里所提到的。可以按照下面的步骤使用模型对段落进行分类：
 
 1. Tokenize the paragraph and convert it to a list of word ids using a predefined vocabulary.
    
@@ -279,7 +279,7 @@ This is the main section of this blog, as here we are going to discuss the usage
 
 > The term **inference** refers to the process of executing a TensorFlow Lite model on-device in order to make predictions based on input data. To perform an inference with a TensorFlow Lite model, you must run it through an **interpreter**. [Learn more.](https://tensorflow.google.cn/lite/guide/inference) 
 
-> 这里的分析是指基于输入数据在设备上使用 TensorFlow Lite 模型的处理过程。要使用 TensorFlow Lite 模型进行分析，需要通过 **解释器** 来运行它。[了解更多](https://tensorflow.google.cn/lite/guide/inference)。
+> 这里的分析是指基于输入数据在设备上使用 TensorFlow Lite 模型的处理过程。要使用 TensorFlow Lite 模型进行分析，需要通过 **解释器** 来运行它，[了解更多](https://tensorflow.google.cn/lite/guide/inference)。
 
 **Creating the interpreter, loading the model**
 
@@ -295,7 +295,7 @@ static Future<Interpreter> fromAsset(String assetName, {InterpreterOptions opti
 
 As our model is in `assets/` directory we will just use the above method to create the interpreter. For info on InterpreterOptions [refer to this](https://github.com/am15h/tflite_flutter_plugin/blob/master/lib/src/interpreter_options.dart).
 
-由于我们的模型在 `assets/` 文件夹下，需要使用上面的方法来创建解析器。对于 InterpreterOptions 的相关说明，请[参考这里](https://github.com/am15h/tflite_flutter_plugin/blob/master/lib/src/interpreter_options.dart)。
+由于我们的模型在 `assets/` 文件夹下，需要使用上面的方法来创建解析器。对于 InterpreterOptions 的相关说明，请 [参考这里](https://github.com/am15h/tflite_flutter_plugin/blob/master/lib/src/interpreter_options.dart)。
 
 ```dart
 import 'package:flutter/services.dart';

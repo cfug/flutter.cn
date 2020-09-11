@@ -204,7 +204,7 @@ In the **Identity** section:
 
 In the **Signing & Capabilities** section:
 
-在 Signing 部分：
+在 **Signing & Capabilities** 部分：
 
 `Automatically manage signing` 
 <br> whether Xcode should automatically manage 
@@ -222,7 +222,7 @@ app signing and provisioning. This is set `true` by default, which should be suf
 
 In the **Deployment Info** section:
 
-在 Development 部分：
+在 **Deployment Info** 部分：
 
 `Deployment Target:`
 <br> The minimum iOS version that your app supports.
@@ -279,7 +279,8 @@ Both the version and the build number may be overridden in Flutter's
 build by specifying `--build-name` and `--build-number`,
 respectively.
 
-版本号与构建号都可以在 Flutter 打包时分别使用 `--build-name` 和 `--build-number` 重新指定。
+版本号与构建号都可以在 Flutter 打包时分别使用
+`--build-name` 和 `--build-number` 重新指定。
 
 In iOS, `build-name` uses `CFBundleShortVersionString`
 while `build-number` uses `CFBundleVersion`.
@@ -317,7 +318,7 @@ app's icons:
 
 ## Create a build archive
 
-## 创建一个构建归档(build archive)
+## 创建一个构建归档 (build archive)
 
 In this step, you'll create a build archive and upload 
 your build to App Store Connect.
@@ -332,8 +333,8 @@ to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
 
 在开发过程中，你将会使用 _debug_ 模式来完成构建、调试并测试。
-当你准备好通过 App Store 或 TestFlight 交付你的 app 给用户时，你需要准备一个 *release* 构建。
-这时你也许想要[混淆你的 Dart 代码][obfuscating your Dart code]以加大反编译难度。
+当你准备好通过 App Store 或 TestFlight 交付你的 app 给用户时，你需要准备一个 **release** 构建。
+这时你也许想要 [混淆你的 Dart 代码][obfuscating your Dart code]以加大反编译难度。
 混淆你的代码需要在 build 的时候添加一些标志，并维护其他文件以消除反编译的堆栈跟踪。
 
 On the command line, follow these steps in your application directory:
@@ -429,7 +430,7 @@ For more details, see
 
 ## Release your app on TestFlight
 
-## 发布你的 app 到 TestFlight
+## 在 TestFlight 发布你的应用
 
 [TestFlight][] allows developers to push their apps 
 to internal and external testers. This optional step
@@ -467,7 +468,7 @@ For more details, see [Distribute an app using TestFlight]
 
 ## Release your app to the App Store
 
-## 发布你的 app 到 App Store
+## 在 App Store 发布你的应用
 
 When you're ready to release your app to the world, 
 follow these steps to submit your app for review and 

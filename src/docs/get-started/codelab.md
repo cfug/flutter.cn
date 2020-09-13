@@ -72,7 +72,7 @@ There is no limit to how far a user can scroll.
 
 你将完成一个简单的应用，功能是：为一个创业公司生成建议的公司名称。
 用户可以选择和取消选择的名称、保存喜欢的名称。
-该代码一次生成十个名称，当用户滚动时，会生成一新批名称。
+该代码一次生成十个名称，当用户滚动时，会生成新一批名称。
 
 The animated GIF shows how the app works at the completion of part 1.
 

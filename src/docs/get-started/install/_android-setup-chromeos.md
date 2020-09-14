@@ -26,7 +26,7 @@
     and Android SDK Build-Tools, which are required by Flutter
     when developing for Android.
 
-    启动 Android Studio，并前往 'Android Studio Setup Wizard'，这将会帮你安装最新版本的 Android SDK，Android SDK 命令行工具，以及 Android SDK 构建工具，等一系列你在构建 Android 应用时会需要用到的组建。
+    启动 Android Studio，并前往 'Android Studio Setup Wizard'，这将会帮你安装最新版本的 Android SDK，Android SDK 命令行工具，以及 Android SDK 构建工具，等一系列你在构建 Android 应用时会需要用到的组件。
 
  1. Accept Android licenses.
 

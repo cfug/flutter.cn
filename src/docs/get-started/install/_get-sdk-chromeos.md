@@ -85,7 +85,7 @@
 
     用这个命令添加 `PATH` 仅在当前的命令行视窗生效。
     要将 Flutter 永久添加到环境变量中，请参阅
-    [更新您的路径][Update your path]。
+    [更新环境变量值][Update your path]。
 
  1. Optionally, pre-download development binaries:
 
@@ -119,7 +119,7 @@ You are now ready to run Flutter commands!
   To update an existing version of Flutter, see
   [Upgrading Flutter][].
 
-  要更新已有 Flutter版本，请参阅[升级你的 Flutter][Upgrading Flutter]。
+  要更新已有 Flutter版本，请参阅 [升级你的 Flutter][Upgrading Flutter]。
 
 {{site.alert.end}}
 

@@ -124,7 +124,7 @@ For information on setting the path in Z shell,
 see [this StackOverflow question][zsh].
 
 更多关于如何在 Bash 中配置环境变量的信息请查看[这条 StackExchange 提问][bash]。
-更多关于如何在 Z shell 中配置环境变量的信息请查看[这条 StackExchange 提问][zsh]。
+更多关于如何在 Z shell 中配置环境变量的信息请查看 [这条 StackExchange 提问][zsh]。
 
 
 [Get the Flutter SDK]: #get-sdk

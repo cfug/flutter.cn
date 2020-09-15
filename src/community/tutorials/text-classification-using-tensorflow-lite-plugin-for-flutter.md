@@ -3,15 +3,11 @@ title: Text Classification using TensorFlow Lite Plugin for Flutter
 title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 ---
 
-# Text Classification using TensorFlow Lite Plugin for Flutter
-
-# 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
-
-![](https://devrel.andfun.cn/devrel/posts/2020/09/93ee17c31cb71.tif)
+![](https://devrel.andfun.cn/devrel/posts/2020/09/a21e5b12e71bb.png)
 
 If you wished that there was an easy, efficient, and flexible way to integrate TensorFlow trained models with your flutter apps, I am glad to announce the release of a new plugin [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter).
 
-如果您希望能有一种简单、高效且灵活的方式把 TensorFlow 模型集成到 Flutter 应用里，那请您一定不要错过我们今天介绍的这个全新插件 [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter)。这个插件的开发者是 TensorFlow 团队的一名实习生 Amish Garg，本文来自他在 Medium 上的一篇文章《在 Flutter 中使用 TensorFlow Lite 插件实现文字分类》。
+如果您希望能有一种简单、高效且灵活的方式把 TensorFlow 模型集成到 Flutter 应用里，那请您一定不要错过我们今天介绍的这个全新插件 [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter)。这个插件的开发者是 TensorFlow 团队的一名实习生 Amish Garg，本文来自他在 Medium 上的一篇文章[《在 Flutter 中使用 TensorFlow Lite 插件实现文字分类》](https://medium.com/@am15hg/text-classification-using-tensorflow-lite-plugin-for-flutter-3b92f6655982)。
 
 Key features of [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter): 
 
@@ -99,7 +95,6 @@ Include `assets/` in `pubspec.yaml` .
 
 ```
 assets:    
-
   - assets/
 ```
 
@@ -147,39 +142,26 @@ Let’s first write code to load `text_classification_vocab.txt` to a dictionary
 import 'package:flutter/services.dart';
 
 class Classifier {
+  final _vocabFile = 'text_classification_vocab.txt';
+  
+  Map<String, int> _dict;
 
-  final _vocabFile = 'text_classification_vocab.txt';
+  Classifier() {
+    _loadDictionary();
+  }
 
-  Map<String, int> _dict;
-
-  Classifier() {
-
-    _loadDictionary();
-
-  }
-
-  void _loadDictionary() async {
-
-    final vocab = await rootBundle.loadString('assets/$_vocabFile');
-
-    var dict = <String, int>{};
-
-    final vocabList = vocab.split('\n');
-
-    for (var i = 0; i < vocabList.length; i++) {
-
-      var entry = vocabList[i].trim().split(' ');
-
-      dict[entry[0]] = int.parse(entry[1]);
-
-    }
-
-    _dict = dict;
-
-    print('Dictionary loaded successfully');
-
-  }
-
+  void _loadDictionary() async {
+    final vocab = await rootBundle.loadString('assets/$_vocabFile');
+    var dict = <String, int>{};
+    final vocabList = vocab.split('\n');
+    for (var i = 0; i < vocabList.length; i++) {
+      var entry = vocabList[i].trim().split(' ');
+      dict[entry[0]] = int.parse(entry[1]);
+    }
+    _dict = dict;
+    print('Dictionary loaded successfully');
+  }
+  
 }
 ```
 
@@ -195,74 +177,46 @@ Now, we will write a function to tokenize the raw string.
 import 'package:flutter/services.dart';
 
 class Classifier {
+  final _vocabFile = 'text_classification_vocab.txt';
 
-  final _vocabFile = 'text_classification_vocab.txt';
+  // 单句的最大长度
+  final int _sentenceLen = 256;
 
-  // Maximum length of sentence
+  final String start = '<START>';
+  final String pad = '<PAD>';
+  final String unk = '<UNKNOWN>';
 
-  // 单句的最大长度
+  Map<String, int> _dict;
+  
+  List<List<double>> tokenizeInputText(String text) {
+    
+    // 使用空格进行分词
+    final toks = text.split(' ');
+    
+    // 创建一个列表，它的长度等于 _sentenceLen，并且使用 <pad> 的对应的字典值来填充
+    var vec = List<double>.filled(_sentenceLen, _dict[pad].toDouble());
 
-  final int _sentenceLen = 256;
+    var index = 0;
+    if (_dict.containsKey(start)) {
+      vec[index++] = _dict[start].toDouble();
+    }
 
-  final String start = '<START>';
+    // 对于句子里的每个单词在 dict 里找到相应的 index 值
+    for (var tok in toks) {
+      if (index > _sentenceLen) {
+        break;
+      }
+      vec[index++] = _dict.containsKey(tok)
+          ? _dict[tok].toDouble()
+          : _dict[unk].toDouble();
+    }
 
-  final String pad = '<PAD>';
-
-  final String unk = '<UNKNOWN>';
-
-  Map<String, int> _dict;
-
-  List<List<double>> tokenizeInputText(String text) {
-
-    // Whitespace tokenization
-
-    // 使用空格进行分词
-
-    final toks = text.split(' ');
-
-    // Create a list of length==_sentenceLen filled with the value <pad>
-
-    // 创建一个列表，它的长度等于 _sentenceLen，并且使用 <pad> 的对应的字典值来填充
-
-    var vec = List<double>.filled(_sentenceLen, _dict[pad].toDouble());
-
-    var index = 0;
-
-    if (_dict.containsKey(start)) {
-
-      vec[index++] = _dict[start].toDouble();
-
-    }
-
-    // For each word in sentence find corresponding index in dict
-
-    // 对于句子里的每个单词在 dict 里找到相应的 index 值
-
-    for (var tok in toks) {
-
-      if (index > _sentenceLen) {
-
-        break;
-
-      }
-
-      vec[index++] = _dict.containsKey(tok)
-
-          ? _dict[tok].toDouble()
-
-          : _dict[unk].toDouble();
-
-    }
-
-    // returning List<List<double>> as our interpreter input tensor expects the shape, [1,256]
-
-    // 按照我们的解释器输入 tensor 所需的形状 [1,256] 返回 List<List<double>>
-
-    return [vec];
-
-  }
-
+    // 按照我们的解释器输入 tensor 所需的形状 [1,256] 返回 List<List<double>>
+    return [vec];
+  }
 }
+
+
 ```
 
 Tokenization
@@ -300,49 +254,30 @@ As our model is in `assets/` directory we will just use the above method to crea
 ```dart
 import 'package:flutter/services.dart';
 
-// Import tflite_flutter
-
 // 引入 tflite_flutter
-
 import 'package:tflite_flutter/tflite_flutter.dart';
 
 class Classifier {
+  // 模型文件的名称
+  final _modelFile = 'text_classification.tflite';
 
-  // name of the model file
+  // TensorFlow Lite 解释器对象
+  Interpreter _interpreter;
 
-  // 模型文件的名称
+  Classifier() {
+    // 当分类器初始化以后加载模型
+    _loadModel();
+  }
 
-  final _modelFile = 'text_classification.tflite';
-
-  // TensorFlow Lite Interpreter object
-
-  // TensorFlow Lite 解释器对象
-
-  Interpreter _interpreter;
-
-  Classifier() {
-
-    // Load model when the classifier is initialized.
-
-    // 当分类器初始化以后加载模型
-
-    _loadModel();
-
-  }
-
-  void _loadModel() async {
-
-    // Creating the interpreter using Interpreter.fromAsset
-
-    // 使用 Interpreter.fromAsset 创建解释器
-
-    _interpreter = await Interpreter.fromAsset(_modelFile);
-
-    print('Interpreter loaded successfully');
-
-  }
+  void _loadModel() async {
+    
+    // 使用 Interpreter.fromAsset 创建解释器
+    _interpreter = await Interpreter.fromAsset(_modelFile);
+    print('Interpreter loaded successfully');
+  }
 
 }
+
 ```
 
 Code to create Interpreter
@@ -379,17 +314,9 @@ To view, the shapes and sizes of input tensors, output tensors you can do,
 
 ```dart
 _interpreter.allocateTensors();
-
-// Print list of input tensors
-
 // 打印 input tensor 列表
-
 print(_interpreter.getInputTensors());
-
-// Print list of output tensors
-
 // 打印 output tensor 列表
-
 print(_interpreter.getOutputTensors());
 ```
 
@@ -399,12 +326,9 @@ In the case of our text_classification model,
 
 ```
 InputTensorList:
-
-[Tensor{_tensor: Pointer<TfLiteTensor>: address=0xbffcf280, name: embedding_input, type: TfLiteType.float32, shape: [1, 256], data:  1024]
-
+[Tensor{_tensor: Pointer<TfLiteTensor>: address=0xbffcf280, name: embedding_input, type: TfLiteType.float32, shape: [1, 256], data:  1024]
 OutputTensorList:
-
-[Tensor{_tensor: Pointer<TfLiteTensor>: address=0xbffcf140, name: dense_1/Softmax, type: TfLiteType.float32, shape: [1, 2], data:  8]
+[Tensor{_tensor: Pointer<TfLiteTensor>: address=0xbffcf140, name: dense_1/Softmax, type: TfLiteType.float32, shape: [1, 2], data:  8]
 ```
 
 Now, lets, write the classify method which returns 1 for positive, and 0 for negative.
@@ -413,50 +337,27 @@ Now, lets, write the classify method which returns 1 for positive, and 0 for neg
 
 ```dart
 int classify(String rawText) {
+    
+    //  tokenizeInputText 返回形状为 [1, 256] 的 List<List<double>>
+    List<List<double>> input = tokenizeInputText(rawText);
+   
+    // [1,2] 形状的输出
+    var output = List<double>(2).reshape([1, 2]);
+    
+    // run 方法会运行分析并且存储输出的值
+    _interpreter.run(input, output);
 
-    // tokenizeInputText returns List<List<double>> 
+    var result = 0;
+    // 如果输出中第一个元素的值比第二个大，那么句子就是消极的
+    
+    if ((output[0][0] as double) > (output[0][1] as double)) {
+      result = 0;
+    } else {
+      result = 1;
+    }
+    return result;
+  }
 
-    // of shape [1, 256].
-
-    //  tokenizeInputText 返回形状为 [1, 256] 的 List<List<double>>
-
-    List<List<double>> input = tokenizeInputText(rawText);
-
-    // output of shape [1,2].
-
-    // [1,2] 形状的输出
-
-    var output = List<double>(2).reshape([1, 2]);
-
-    // The run method will run inference and 
-
-    // store the resulting values in output.
-
-    // run 方法会运行分析并且存储输出的值
-
-    _interpreter.run(input, output);
-
-    var result = 0;
-
-    // If value of first element in output is greater than second, 
-
-    // then sentece is negative
-
-    // 如果输出中第一个元素的值比第二个大，那么句子就是消极的
-
-    if ((output[0][0] as double) > (output[0][1] as double)) {
-
-      result = 0;
-
-    } else {
-
-      result = 1;
-
-    }
-
-    return result;
-
-}
 ```
 
 Code for Inference
@@ -468,31 +369,16 @@ There are some useful extensions defined under `extension ListShape` on `List` i
 在 tflite_flutter 的 extension ListShape on List 下面定义了一些使用的扩展：
 
 ```dart
-// reshapes a given list to shape, provided total number of elements // remain equal
-
-// 将提供的列表进行矩阵变形，输入参数为元素总数 // 保持相等 
-
-// Usage: List(400).reshape([2,10,20]) 
-
-// 用法：List(400).reshape([2,10,20]) 
-
-// returns List<dynamic>
-
-// 返回  List<dynamic>
+// 将提供的列表进行矩阵变形，输入参数为元素总数 // 保持相等 
+// 用法：List(400).reshape([2,10,20]) 
+// 返回  List<dynamic>
 
 List reshape(List<int> shape)
-
-// returns shape of a list
-
 // 返回列表的形状
-
 List<int> get shape
-
-// return total elements in a list of any shape
-
 // 返回列表任意形状的元素数量
-
 int get computeNumElements
+
 ```
 
 The final `classifier.dart` should look like this,
@@ -502,183 +388,98 @@ The final `classifier.dart` should look like this,
 ```dart
 import 'package:flutter/services.dart';
 
-// Import tflite_flutter
-
 // 引入 tflite_flutter
-
 import 'package:tflite_flutter/tflite_flutter.dart';
 
 class Classifier {
-
-  // name of the model file
-
-  // 模型文件的名称
-
-  final _modelFile = 'text_classification.tflite';
-
-  final _vocabFile = 'text_classification_vocab.txt';
-
-  // Maximum length of sentence
-
-  // 语句的最大长度
-
-  final int _sentenceLen = 256;
-
-  final String start = '<START>';
-
-  final String pad = '<PAD>';
-
-  final String unk = '<UNKNOWN>';
-
-  Map<String, int> _dict;
-
-  // TensorFlow Lite Interpreter object
-
-  // TensorFlow Lite 解释器对象
-
-  Interpreter _interpreter;
-
-  Classifier() {
-
-    // Load model when the classifier is initialized.
-
-    // 当分类器初始化的时候加载模型
-
-    _loadModel();
-
-    _loadDictionary();
-
-  }
-
-  void _loadModel() async {
-
-    // Creating the interpreter using Interpreter.fromAsset
-
-    // 使用 Intepreter.fromAsset 创建解析器
-
-    _interpreter = await Interpreter.fromAsset(_modelFile);
-
-    print('Interpreter loaded successfully');
-
-  }
-
-  void _loadDictionary() async {
-
-    final vocab = await rootBundle.loadString('assets/$_vocabFile');
-
-    var dict = <String, int>{};
-
-    final vocabList = vocab.split('\n');
-
-    for (var i = 0; i < vocabList.length; i++) {
-
-      var entry = vocabList[i].trim().split(' ');
-
-      dict[entry[0]] = int.parse(entry[1]);
-
-    }
-
-    _dict = dict;
-
-    print('Dictionary loaded successfully');
-
-  }
-
-  int classify(String rawText) {
-
-    // tokenizeInputText returns List<List<double>>
-    // of shape [1, 256].
-
-    // tokenizeInputText  返回形状为 [1, 256] 的 List<List<double>>
-
-    List<List<double>> input = tokenizeInputText(rawText);
-
-    // output of shape [1,2].
-
-    //输出形状为 [1, 2] 的矩阵
-
-    var output = List<double>(2).reshape([1, 2]);
-
-    // The run method will run inference and
-    // store the resulting values in output.
-
-    // run 方法会运行分析并且将结果存储在 output 中。
-
-    _interpreter.run(input, output);
-
-    var result = 0;
-
-    // If value of first element in output is greater than second,
-
-    // then sentece is negative
-
-    // 如果第一个元素的输出比第二个大，那么当前语句是消极的
-
-    if ((output[0][0] as double) > (output[0][1] as double)) {
-
-      result = 0;
-
-    } else {
-
-      result = 1;
-
-    }
-
-    return result;
-
-  }
-
-  List<List<double>> tokenizeInputText(String text) {
-
-    // Whitespace tokenization
-
-    // 用空格分词
-
-    final toks = text.split(' ');
-
-    // Create a list of length==_sentenceLen filled with the value <pad>
-
-    // 创建一个列表，它的长度等于 _sentenceLen，并且使用 <pad> 对应的字典值来填充
-
-    var vec = List<double>.filled(_sentenceLen, _dict[pad].toDouble());
-
-    var index = 0;
-
-    if (_dict.containsKey(start)) {
-
-      vec[index++] = _dict[start].toDouble();
-
-    }
-
-    // For each word in sentence find corresponding index in dict
-
-    // 对于句子中的每个单词，在 dict 中找到相应的 index 值
-
-    for (var tok in toks) {
-
-      if (index > _sentenceLen) {
-
-        break;
-
-      }
-
-      vec[index++] = _dict.containsKey(tok)
-
-          ? _dict[tok].toDouble()
-
-          : _dict[unk].toDouble();
-
-    }
-
-    // returning List<List<double>> as our interpreter input tensor expects the shape, [1,256]
-
-    // 按照我们的解释器输入 tensor 所需的形状 [1,256] 返回 List<List<double>>
-
-    return [vec];
-
-  }
-
+  // 模型文件的名称
+  final _modelFile = 'text_classification.tflite';
+  final _vocabFile = 'text_classification_vocab.txt';
+
+  // 语句的最大长度
+  final int _sentenceLen = 256;
+
+  final String start = '<START>';
+  final String pad = '<PAD>';
+  final String unk = '<UNKNOWN>';
+
+  Map<String, int> _dict;
+
+  // TensorFlow Lite 解释器对象
+  Interpreter _interpreter;
+
+  Classifier() {
+    // 当分类器初始化的时候加载模型
+    _loadModel();
+    _loadDictionary();
+  }
+
+  void _loadModel() async {
+    // 使用 Intepreter.fromAsset 创建解析器
+    _interpreter = await Interpreter.fromAsset(_modelFile);
+    print('Interpreter loaded successfully');
+  }
+
+  void _loadDictionary() async {
+    final vocab = await rootBundle.loadString('assets/$_vocabFile');
+    var dict = <String, int>{};
+    final vocabList = vocab.split('\n');
+    for (var i = 0; i < vocabList.length; i++) {
+      var entry = vocabList[i].trim().split(' ');
+      dict[entry[0]] = int.parse(entry[1]);
+    }
+    _dict = dict;
+    print('Dictionary loaded successfully');
+  }
+
+  int classify(String rawText) {
+    // tokenizeInputText  返回形状为 [1, 256] 的 List<List<double>>
+    List<List<double>> input = tokenizeInputText(rawText);
+
+    //输出形状为 [1, 2] 的矩阵
+    var output = List<double>(2).reshape([1, 2]);
+
+    // run 方法会运行分析并且将结果存储在 output 中。
+    _interpreter.run(input, output);
+
+    var result = 0;
+    // 如果第一个元素的输出比第二个大，那么当前语句是消极的
+
+    if ((output[0][0] as double) > (output[0][1] as double)) {
+      result = 0;
+    } else {
+      result = 1;
+    }
+    return result;
+  }
+
+  List<List<double>> tokenizeInputText(String text) {
+    // 用空格分词
+    final toks = text.split(' ');
+
+    // 创建一个列表，它的长度等于 _sentenceLen，并且使用 <pad> 对应的字典值来填充
+    var vec = List<double>.filled(_sentenceLen, _dict[pad].toDouble());
+
+    var index = 0;
+    if (_dict.containsKey(start)) {
+      vec[index++] = _dict[start].toDouble();
+    }
+
+    // 对于句子中的每个单词，在 dict 中找到相应的 index 值
+    for (var tok in toks) {
+      if (index > _sentenceLen) {
+        break;
+      }
+      vec[index++] = _dict.containsKey(tok)
+          ? _dict[tok].toDouble()
+          : _dict[unk].toDouble();
+    }
+
+    // 按照我们的解释器输入 tensor 所需的形状 [1,256] 返回 List<List<double>>
+    return [vec];
+  }
 }
+
 ```
 
 Now, it’s up to you to code the desired UI for this, the usage of classifier would be simple,
@@ -686,26 +487,12 @@ Now, it’s up to you to code the desired UI for this, the usage of classifier w
 现在，可以根据您的喜好实现 UI 的代码，分类器的用法比较简单。
 
 ```dart
-// Create Classifier object
-
 // 创建 Classifier 对象
-
 Classifer _classifier = Classifier();
-
-// call classify method with sentence as parameter
-
 // 将目标语句作为参数，调用 classify 方法
-
 _classifier.classify("I liked the movie");
-
-// returns 1 (POSITIVE)
-
 // 返回 1 （积极的）
-
 _classifier.classify("I didn't liked the movie");
-
-// returns 0 (NEGATIVE)
-
 // 返回 0 （消极的）
 ```
 

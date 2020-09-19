@@ -58,8 +58,8 @@ testing the Flutter-only parts of your code.
 Flutter module 会创建在 `some/path/my_flutter/` 目录。
 在这个目录中，你可以像在其它 Flutter 项目中一样，执行 `flutter` 命令。
 比如 `flutter run --debug` 或者 `flutter build ios`。
-你也同样可以在 [Android Studio/IntelliJ][] 或者 [VS Code][] 中运行这个模块，
-并附带 Flutter 和 Dart 插件。在集成到既有应用前，
+同样，你也可以通过 [Android Studio/IntelliJ][] 或者 [VS Code][]
+中的 Flutter 和 Dart 插件运行这个模块，在集成到现有应用前，
 这个项目在 Flutter module 中包含了一个单视图的示例代码，
 对 Flutter 侧代码的测试会有帮助。
 

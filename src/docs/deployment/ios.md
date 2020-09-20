@@ -5,6 +5,8 @@ short-title: iOS
 description: How to release a Flutter app to the App Store.
 description: 如何在 App Store 上发布一个 Flutter 应用。
 short-title: iOS
+tags: 发布, iOS
+keywords: 上传App Store,发布Flutter应用
 ---
 	
 This guide provides a step-by-step walkthrough of releasing a Flutter app to

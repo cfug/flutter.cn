@@ -5,6 +5,8 @@ short-title: Add a Flutter Fragment
 short-title: 添加 Flutter Fragment
 description: Learn how to add a Flutter Fragment to your existing Android app.
 description: 了解如何向你现有的 Android 应用添加一个 Flutter Fragment。
+tags: Flutter混合工程,add2app
+keywords: Android,Flutter Fragment
 ---
 
 {% asset

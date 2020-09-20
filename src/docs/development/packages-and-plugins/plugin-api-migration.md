@@ -3,6 +3,8 @@ title: Supporting the new Android plugins APIs
 title: 支持新的 Android 的 API
 description: How to update a plugin using the old APIs to support the new APIs。
 description: 如何升级旧 API 的插件以支持新的 API。
+tags: Packages,插件
+keywords: 迁移,Android平台,开发,新特性
 ---
 
 {{site.alert.note}}

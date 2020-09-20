@@ -3,6 +3,8 @@ title: Install and run DevTools from Android Studio
 title: 在 Android Studio 上安装和运行开发者工具
 description: Learn how to install and use DevTools from Android Studio.
 description: 学习如何在 Android Studio 上使用开发者工具。
+tags: Flutter开发工具,DevTools
+keywords: Android Studio,安卓,调试
 ---
 
 ## Install the Flutter plugin

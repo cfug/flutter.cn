@@ -3,6 +3,8 @@ title: Hot reload
 title: 热重载 (Hot reload)
 description: Speed up development using Flutter's hot reload feature.
 description: 使用热重载提高你的开发速度和体验。
+tags: SDK,Flutter SDK
+keywords: 热重载,效率提升,widget渲染
 ---
 
 Flutter's hot reload feature helps you quickly and
@@ -394,7 +396,8 @@ exceptions, some code changes might not be visible in the refreshed UI.
 This behavior is common after changes to the app's `main()` or
 `initState()` methods.
 
-即使热重载操作看起来成功了并且没有抛出异常，但某些代码更改可能在更新的 UI 中不可见。
+即使热重载操作看起来成功了并且没有抛出异常，
+但某些代码更改可能在更新的 UI 中不可见。
 这种行为在更改应用程序的 `main()` 方法后很常见。
 
 As a general rule, if the modified code is downstream of the root
@@ -492,7 +495,8 @@ The hot reload mechanism then causes the Flutter framework
 to trigger a rebuild/re-layout/repaint of all existing
 widgets and render objects.
 
-然后，热重载机制使 Flutter 框架触发所有现有的 widgets 和渲染对象的重建/重新布局/重绘。
+然后，热重载机制使 Flutter 框架触发所有现有的
+widget 和渲染对象的重建/重新布局/重绘。
 
 [static fields are lazily initialized]: {{site.news}}/2012/02/static-variables-no-longer-have-to-be.html
 [静态字段会被惰性初始化]: {{site.news}}/2012/02/static-variables-no-longer-have-to-be.html

@@ -3,6 +3,8 @@ title: Build a form with validation
 title: 构建一个有验证判断的表单
 description: How to build a form that validates input.
 description: 如何创建一个能够验证输入内容的表单。
+tags: cookbook, 实用教程, 表格交互
+keywords: 文本框, 验证
 prev:
   title: Work with tabs
   title: 使用 tabs

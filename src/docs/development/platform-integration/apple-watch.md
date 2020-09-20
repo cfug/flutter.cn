@@ -1,6 +1,9 @@
 ---
 title: "Adding an Apple Watch extension"
+title: 作为 Apple Watch 插件
 description: "Learn how to add an Apple Watch target to a Flutter app."
+tags: 平台集成
+keywords: Apple Watch,手表,Flutter嵌入式
 ---
 
 While you cannot build an Apple Watch app with Flutter,

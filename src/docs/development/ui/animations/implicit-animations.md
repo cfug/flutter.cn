@@ -3,6 +3,8 @@ title: Implicit Animations
 title: 隐式动画
 description: Where to find more information on using implicit animations in Flutter.
 description: 在 Flutter 中寻找有关使用隐式动画的更多信息。
+tags: 用户界面,Flutter UI,动画
+keywords: 隐式动画
 ---
 
 With Flutter's [animation library][],

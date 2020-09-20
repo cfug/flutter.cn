@@ -2,6 +2,8 @@
 title: Flutter 桌面支持
 description: 发布 Flutter 桌面的 Alpha 版本。
 toc: true
+tags: 文档
+keywords: Flutter Desktop, Flutter 桌面版
 ---
 
 Desktop support allows you to compile Flutter source code

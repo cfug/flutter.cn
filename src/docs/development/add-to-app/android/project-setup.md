@@ -5,6 +5,8 @@ short-title: Integrate Flutter
 short-title: 集成 Flutter
 description: Learn how to integrate a Flutter module into your existing Android project.
 description: 了解如何将 Flutter module 集成到你现有的 Android 项目中。
+tags: Flutter混合工程,add2app
+keywords: Android,项目集成
 ---
 
 Flutter can be embedded into your existing Android
@@ -27,8 +29,8 @@ IDE with the [Flutter plugin][] or manually.
   for `x86_64`, `armeabi-v7a` and `arm64-v8a`.
 
   你目前现有的 Android 项目可能支持 `mips`  或 `x86` 之类的架构，
-  然而，Flutter 当前仅支持为 `x86_64`，`armeabi-v7a` 和 `arm64-v8a` 构建预编
-  （AOT）的库。
+  然而，Flutter [当前仅支持][only supports]
+  为 `x86_64`，`armeabi-v7a` 和 `arm64-v8a` 构建预编（AOT）的库。
 
   Consider using the [`abiFilters`][] Android Gradle
   Plugin API to limit the supported architectures in your APK.

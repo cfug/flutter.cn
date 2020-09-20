@@ -3,6 +3,8 @@ title: Add a Drawer to a screen
 title: 在屏幕上添加一个 Drawer
 description: How to implement a Material Drawer.
 description: 如何实现一个 Material 风格的 Drawer。
+tags: cookbook, 实用教程, 设计
+keywords: Material Design 效果, Tab效果
 prev:
   title: Fade a widget in and out
   title: Widget 的淡入淡出效果

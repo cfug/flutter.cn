@@ -3,6 +3,8 @@ title: Performance profiling
 title: 性能分析
 description: How to profile performance for a Flutter app.
 description: 本篇将如何测量你的 Flutter 应用的性能。
+tags: cookbook, 实用教程, 测试
+keywords: 性能优化,卡顿,时间轴
 prev:
   title: Handle scrolling
   title: 列表滚动
@@ -15,7 +17,7 @@ next:
 
 When it comes to mobile apps, performance is critical to user experience.
 Users expect apps to have smooth scrolling and meaningful animations free of
-stuttering or skipped frames, known as "jank." How to ensure that your app
+stuttering or skipped frames, known as "jank". How to ensure that your app
 is free of jank on a wide variety of devices?
 
 性能移动应用用户来说相当重要，用户希望应用程序有流畅的滚动和优雅的动画，
@@ -27,7 +29,6 @@ cumbersome as an app grows in size. Alternatively, run an integration
 test that performs a specific task and records a performance timeline.
 Then, examine the results to determine whether a specific section of
 the app needs to be improved.
-
 
 以下两种方式可供选择：首先，我们可以在不同的设备对应用程序进行手动测试。
 这种方式适用于较小的应用程序，但随着应用程序扩展性的提升，它将变得更加繁琐。
@@ -75,7 +76,7 @@ on the [Scrolling][] recipe in integration tests.
 
 在这一章节，我们将记录当滚动列表条目时应用程序的性能。
 为了专注于性能分析，这一小节在
-[Scrolling in integration tests（列表滚动集成测试）](/docs/cookbook/testing/integration/scrolling)
+[Scrolling in integration tests（列表滚动集成测试）][Scrolling]
 的基础上进行。
 
 Follow the instructions in that recipe to create an app, instrument the
@@ -92,7 +93,8 @@ Next, record the performance of the app as it scrolls through the
 list. Perform this task using the [`traceAction()`][]
 method provided by the [`FlutterDriver`][] class.
 
-然后，我们需要再应用程序的列表滚动的时候记录它的性能。使用 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 类中的 [`traceAction()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html) 方法实现这项功能。
+然后，我们需要再应用程序的列表滚动的时候记录它的性能。
+使用 [`FlutterDriver`][] 类中的 [`traceAction()`][] 方法实现这项功能。
 
 This method runs the provided function and records a [`Timeline`][]
 with detailed information about the performance of the app. This example
@@ -100,7 +102,7 @@ provides a function that scrolls through the list of items,
 ensuring that a specific item is displayed. When the function completes,
 the `traceAction()` method returns a `Timeline`.
 
-这种方式运行提供的方法，并将应用程序性能的详细信息记录在 [`Timeline`]({{site.api}}/flutter/flutter_driver/Timeline-class.html) 中。
+这种方式运行提供的方法，并将应用程序性能的详细信息记录在 [`Timeline`][] 中。
 在这个示例中，我们提供一个方法，用以滚动列表的条目并确保指定条目是否被显示出来。
 当方法执行完成的时候，`traceAction` 会返回一个 `Timeline`。
 
@@ -133,7 +135,7 @@ Therefore, convert the `Timeline` into a [`TimelineSummary`][].
 The `TimelineSummary` can perform two tasks that make it easier
 to review the results:
 
-因此，我们可以将 `Timeline` 转换成 [`TimelineSummary`]({{site.api}}/flutter/flutter_driver/TimelineSummary-class.html)，
+因此，我们可以将 `Timeline` 转换成 [`TimelineSummary`][]，
 `TimelineSummary` 通过执行两个任务可以使我们更容易的检查结果：
 
   1. Writing a json document on disk that summarizes the data contained
@@ -149,7 +151,7 @@ to review the results:
      
      它可以将完整的 `Timeline` 以 json 文件的形式存储在磁盘上，
      可以使用 Chrome 浏览器的追踪工具打开此文件。
-     追踪工具在这里: [chrome://tracing](chrome://tracing)。
+     追踪工具在这里: [chrome://tracing][]。
 
 <!-- skip -->
 ```dart
@@ -210,7 +212,7 @@ the project contains two files:
      
      `scrolling_timeline.timeline.json` 包含完整的时间轴数据。
      使用 Chorme 浏览器的追踪工具打开这个文件。
-     追踪工具在这里： [chrome://tracing](chrome://tracing)。
+     追踪工具在这里：[chrome://tracing][]。
      追踪工具提供了一个便捷的用户界面，用以检测时间轴数据并发现其中导致性能问题的源头。
 
 #### Summary example

@@ -3,6 +3,8 @@ title: "Binding to native code using dart:ffi"
 title: 使用 dart:ffi 调用原生代码
 description: "To use C code in your Flutter program, use the dart:ffi library (currently in beta)."
 description: "在你的 Flutter 工程里使用 C 语言代码，可以通过 dart:ffi 库来实现（Beta 测试版）"
+tags: 平台集成
+keywords: dartffi
 ---
 
 Flutter mobile can use the [dart:ffi][] library

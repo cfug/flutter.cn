@@ -3,6 +3,8 @@ title: Using the Timeline view
 title: 使用时间线视图 (Timeline view)
 description: Learn how to use the DevTools timeline view.
 description: 学习如何在开发者工具里使用时间轴视图。
+tags: Flutter开发工具,DevTools
+keywords: 开发者工具,性能视图,Dart,性能优化
 ---
 
 {{site.alert.note}}

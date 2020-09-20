@@ -3,6 +3,8 @@ title: Background processes
 title: 后台进程
 description: Where to find more information on implementing background processes in Flutter.
 description: 可以找到更多关于 Flutter 中后台进程实现的信息的地方
+tags: Packages,插件
+keywords: isolate,多线程,调度器
 ---
 
 Have you ever wanted to execute Dart code in the background—even if

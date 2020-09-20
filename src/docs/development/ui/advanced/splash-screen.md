@@ -5,6 +5,8 @@ short-title: Splash screens
 short-title: 闪屏页
 description: Learn how to add a splash screen to your mobile app.
 description: 了解如何向你的 Android 应用添加一个闪屏页。
+tags: 用户界面,Flutter UI
+keywords: 闪屏页,启动页,Loading图,应用商店
 ---
 
 {% asset
@@ -31,7 +33,9 @@ All apps submitted to the Apple App Store
 [must use an Xcode storyboard][] to
 provide the app's launch screen.
 
-所有应用在交付到 Apple 应用商店之前 [必须使用 Xcode storyboard][must use an Xcode storyboard] 以提供应用启动页面。
+所有应用在交付到 Apple 应用商店之前
+[必须使用 Xcode storyboard][must use an Xcode storyboard]
+以提供应用启动页面。
 
 The default Flutter template includes an Xcode storyboard named
 `LaunchScreen.storyboard` that can be customized as you see fit with
@@ -41,7 +45,8 @@ by typing `open ios/Runner.xcworkspace` from the root of your app directory.
 Then select `Runner/Assets.xcassets` from the Project Navigator and
 drop in the desired images to the `LaunchImage` image set.
 
-默认的 Flutter 模板包括一个名为 `LaunchScreen.storyboard` 的 Xcode storyboard，
+默认的 Flutter 模板包括一个名为
+`LaunchScreen.storyboard` 的 Xcode storyboard，
 可以根据您的选择进行定制你自己的资源。
 默认情况下，storyboard 将显示空白图像，但你可以修改它。
 请通过点击项目根目录下的 `open ios/Runner.xcworkspace` 
@@ -52,7 +57,8 @@ drop in the desired images to the `LaunchImage` image set.
 Apple provides detailed guidance for launch screens as
 part of the [Human Interface Guidelines][].
 
-Apple 在[人机接口指南][Human Interface Guidelines]部分中为发布启动页提供了详细的指南。
+Apple 在 [人机接口指南][Human Interface Guidelines]
+部分中为发布启动页提供了详细的指南。
 
 ## Android launch screen
 
@@ -87,7 +93,8 @@ operating system sets up the app's process.
 Android provides the concept of a [launch screen][] to
 display a `Drawable` while the app is initializing.
 
-当操作系统执行应用进程时，所有 Android app 都需要一定的初始化时间。
+当操作系统执行应用进程时，
+所有 Android app 都需要一定的初始化时间。
 因此 Android 提供了 [launch screen][] 的概念，
 它在应用初始化的时候显示 `Drawable`。
 
@@ -121,9 +128,12 @@ Therefore, it is recommended that the normal theme use a
 solid background color that looks similar to the primary
 background color of the Flutter UI.
 
-此外，在 `styles.xml` 中定义一个普通主题，当启动页消失后，将其应用在 `FlutterActivity` 上。
-普通主题的背景仅仅展示非常短暂的时间，比如当启动页消失后、方向改变或者 `Activity` 恢复期间。
-因此对于普通主题的背景颜色，建议使用与 Flutter UI 主要背景颜色相似的纯色。
+此外，在 `styles.xml` 中定义一个普通主题，
+当启动页消失后，将其应用在 `FlutterActivity` 上。
+普通主题的背景仅仅展示非常短暂的时间，
+比如当启动页消失后、方向改变或者 `Activity` 恢复期间。
+因此对于普通主题的背景颜色，
+建议使用与 Flutter UI 主要背景颜色相似的纯色。
 
 ```xml
 <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
@@ -179,9 +189,12 @@ until Flutter renders its first frame. Flutter supports
 an improved user experience by displaying an Android
 `View` as a splash screen while Flutter initializes.
 
-应用程序中的每种 Flutter 体验都需要一些时间以初始化运行代码的 Dart isolate。
-这意味着用户将暂时地看到空白屏幕，直到 Flutter 渲染其第一帧为止。
-为了提升用户体验，Flutter 提供了在其初始化时展示一个 Android `View` 作为闪屏页的方式。
+应用程序中的每种 Flutter 体验都需要一些时间
+以初始化运行代码的 Dart isolate。
+这意味着用户将暂时地看到空白屏幕，
+直到 Flutter 渲染其第一帧为止。
+为了提升用户体验，Flutter 提供了在其初始化时
+展示一个 Android `View` 作为闪屏页的方式。
 
 Flutter supports two options for a splash screen.
 The first option is to  display a `Drawable` of
@@ -203,7 +216,8 @@ Android `View` content that you want.
 A `Drawable` splash screen can be configured for a
 `FlutterActivity`, `FlutterFragment`, or `FlutterView`.
 
-`Drawable` 闪屏页可被配置在 `FlutterActivity`、`FlutterFragment` 或者 `FlutterView` 中。
+`Drawable` 闪屏页可被配置在
+`FlutterActivity`、`FlutterFragment` 或者 `FlutterView` 中。
 
 #### In a FlutterActivity
 
@@ -213,8 +227,10 @@ To display a `Drawable` as a Flutter splash screen
 in a `FlutterActivity`, add the following metadata
 to the associated `FlutterActivity` in `AndroidManifest.xml`.
 
-在 `FlutterActivity` 中将一个 `Drawable` 作为 Flutter 闪屏页进行展示，请将以下元数据
-添加到 `AndroidManifest.xml` 中所关联的 `FlutterActivity` 中。
+在 `FlutterActivity` 中将一个 `Drawable`
+作为 Flutter 闪屏页进行展示，
+请将以下元数据添加到 `AndroidManifest.xml`
+中所关联的 `FlutterActivity` 中。
 
 ```xml
 <meta-data
@@ -239,8 +255,10 @@ To display a `Drawable` as a Flutter splash screen in a
 `FlutterFragment`, make a subclass of `FlutterFragment` and override
 `provideSplashScreen()`.
 
-在 `FlutterFragment` 中将一个 `Drawable` 作为 Flutter 闪屏页进行展示，
-创建一个 `FlutterFragment` 的子类并重写其 `provideSplashScreen()` 方法。
+在 `FlutterFragment` 中将一个 `Drawable`
+作为 Flutter 闪屏页进行展示，
+创建一个 `FlutterFragment` 的子类
+并重写其 `provideSplashScreen()` 方法。
 
 ```java
 public class MyFlutterFragment extends FlutterFragment {
@@ -267,9 +285,12 @@ Flutter allows you to display an arbitrary Android `View` as a splash
 screen, and even allows you to control how that `View` transitions to
 Flutter after Flutter renders its first frame.
 
-闪屏页是一个非常好推广品牌的时机。因此，很多应用实现了独特且高度定制化的闪屏体验。
-为方便起见，Flutter 允许你将任意的 Android `View` 作为显示屏进行展示，甚至可以
-控制 Flutter 第一帧渲染完毕之后如何将 `View` 过渡到 Flutter。
+闪屏页是一个非常好推广品牌的时机。
+因此，很多应用实现了独特且高度定制化的闪屏体验。
+为方便起见，Flutter 允许你将任意的
+Android `View` 作为显示屏进行展示，
+甚至可以控制 Flutter 第一帧渲染完毕之后
+如何将 `View` 过渡到 Flutter。
 
 #### Implement a custom splash View
 
@@ -295,8 +316,9 @@ implementation. First, the following is an example of a
 `SplashScreen` that has no visual state and no transition
 animation.
 
-本指南展示了两种实现 `SplashScreen` 的方式。首先，下面是一个 `SplashScreen` 的示例，它既没
-有视觉状态，也没有过渡动画。
+本指南展示了两种实现 `SplashScreen` 的方式。
+首先，下面是一个 `SplashScreen` 的示例，
+它既没有视觉状态，也没有过渡动画。
 
 ```java
 public class SimpleSplashScreen implements SplashScreen {
@@ -329,8 +351,10 @@ a reference to its custom `View` and instructs the custom
 `View` to transition away, passing the `onTransitionComplete`
 callback to the custom `View` to invoke.
 
-第二个示例更为复杂。在此示例中，自定义 `SplashScreen` 保留了对其自定义 `View` 的引用，并
-指示自定义 `View` 的过渡效果，将 `onTransitionComplete` 回调传递给自定义 `View` 进行调用。
+第二个示例更为复杂。在此示例中，
+自定义 `SplashScreen` 保留了对其自定义 `View` 的引用，
+并指示自定义 `View` 的过渡效果，
+将 `onTransitionComplete` 回调传递给自定义 `View` 进行调用。
 
 ```java
 public class SplashScreenWithTransition implements SplashScreen {
@@ -365,7 +389,8 @@ users by adding to your app's load time.
 UX Collective provides some good
 tips on how to build a [dynamic yet performant splash screen][].
 
-对于自定义的闪屏页而言，天空才是极限。实际上，你可以创建一个展示天空动画的闪屏页！享受这个
+对于自定义的闪屏页而言，天空才是极限。
+实际上，你可以创建一个展示天空动画的闪屏页！享受这个
 灵活的启动系统所带来的乐趣，并在社区中分享你的创作！
 
 [dynamic yet performant splash screen]: https://uxdesign.cc/building-the-perfect-splash-screen-46e080395f06

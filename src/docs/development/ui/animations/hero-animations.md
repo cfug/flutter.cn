@@ -4,6 +4,8 @@ title: 主动画 (Hero animations)
 description: How to animate a widget to fly between two screens.
 description: 如何让 widget 动画飞跃两个屏幕。
 short-title: Hero
+tags: 用户界面,Flutter UI,动画
+keywords: 共享元素过渡,补间动画
 ---
 
 {{site.alert.secondary}}
@@ -45,7 +47,8 @@ motion is sometimes referred to as a _shared element transition_.
 
 你可能经常遇到 hero 动画。比如，页面上显示的代售商品列表。
 选择一件商品后，应用会跳转至包含更多细节以及“购买”按钮的新页面。
-在 Flutter 中，图像从当前页面转到另一个页面称为 **hero 动画**，相同的动作有时也被称为 **共享元素过渡**。
+在 Flutter 中，图像从当前页面转到另一个页面称为 **hero 动画**，
+相同的动作有时也被称为 **共享元素过渡**。
 
 You might want to watch this one-minute video introducing the Hero widget:
 
@@ -94,8 +97,8 @@ during flight.
   using Flutter’s widgets. For more information, see
   [Building Layouts in Flutter][].
   
-  这部分假定您已经了解如何使用 Flutter 的 widget 创建布局。更多信息请参见 [Building Layouts in
-  Flutter](/docs/development/ui/layout)。  
+  这部分假定您已经了解如何使用 Flutter 的 widget 创建布局。
+  更多信息请参考文档 [Flutter 中的布局][Building Layouts in Flutter]。
   
 {{site.alert.end}}
 
@@ -160,7 +163,8 @@ the original route.
 In _radial hero animation_, as the hero flies between routes
 its shape appears to change from circular to rectangular.
 
-在 **径向 hero 动画** 中，随着 hero 在页面间飞翔，它的形状也会有圆形变成矩形。
+在 **径向 hero 动画** 中，随着 hero 在页面间飞翔，
+它的形状也会有圆形变成矩形。
 
 The following video (recorded at slow speed),
 shows an example of a radial hero animation. At the start, a
@@ -321,7 +325,8 @@ Flutter calculates the tween that animates the Hero's bounds from
 the starting point to the endpoint (interpolating size and position),
 and performs the animation in an overlay.
 
-Flutter 设置了 tween 用来界定 Hero 从起点到终点的界限（插入大小和位置），并在图层上执行动画。
+Flutter 设置了 tween 用来界定 Hero
+从起点到终点的界限（插入大小和位置），并在图层上执行动画。
 
 The next section describes Flutter's process in greater detail.
 
@@ -348,7 +353,8 @@ Before transition, the source hero waits in the source
 route's widget tree. The destination route does not yet exist, 
 and the overlay is empty.
 
-过渡前，source hero 在原页面的 widget 树中等待。而目标页面此时并不存在，图层也是空的。
+过渡前，source hero 在原页面的 widget 树中等待。
+而目标页面此时并不存在，图层也是空的。
 
 ---
 
@@ -369,14 +375,18 @@ At t=0.0, Flutter does the following:
   using the curved motion as described in the Material
   motion spec. Flutter now knows where the hero ends up.
 
-  使用 Material motion spec 中介绍的曲线运动计算 destination hero 路径，后台运行。Flutter 限制知道 hero 应在何处终止。
+  使用 Material motion spec 中介绍的曲线运动计算 
+  destination hero 路径，后台运行。
+  Flutter 限制知道 hero 应在何处终止。
 
 * Places the destination hero in the overlay,
   at the same location and size as the _source_ hero.
   Adding a hero to the overlay changes its Z-order so that it
   appears on top of all routes.
 
-  将 destination hero 放到图层，与 _source_ hero 相同的位置和大小。添加一个 hero 到图层改变其 Z-order，这样才可以出现在所有页面的上面。
+  将 destination hero 放到图层，与 _source_ hero 相同的位置和大小。
+  添加一个 hero 到图层改变其 Z-order，
+  这样才可以出现在所有页面的上面。
 
 * Moves the source hero offscreen.
 
@@ -401,7 +411,12 @@ rectangle's opposing corners along a curved path.
 (See [Radial hero animations][] for an example
 that uses a different Tween animation.)
 
-hero 飞翔时，它的矩形边界使用 Hero 的 [`createRectTween`]({{site.api}}/flutter/widgets/CreateRectTween.html) 属性中特定的 [Tween&lt;Rect&gt;,]({{site.api}}/flutter/animation/Tween-class.html) 进行动画。默认情况下，Flutter 使用 [MaterialRectArcTween,]({{site.api}}/flutter/material/MaterialRectArcTween-class.html) 的示例，它沿着一个曲线路径设置矩形对角动画。（参考 [径向 hero 动画](#radial-hero-animations)，该示例使用了不同的补间动画。）
+hero 飞翔时，它的矩形边界使用 Hero 的 
+[`createRectTween`][] 属性中特定的 [Tween&lt;Rect&gt;][] 进行动画。
+默认情况下，Flutter 使用 [`MaterialRectArcTween`][] 的示例，
+它沿着一个曲线路径设置矩形对角动画。
+（参考 [径向 hero 动画][Radial hero animations]，
+该示例使用了不同的补间动画）
 
 ---
 
@@ -449,7 +464,7 @@ implement hero animations:
 本指南中的示例使用了如下类来实现 hero 动画：
 
 [`Hero`][]
-: The widget that flies from the source to the destination route.
+<br> The widget that flies from the source to the destination route.
   Define one Hero for the source route and another for the
   destination route, and assign each the same tag.
   Flutter animates pairs of heroes with matching tags.
@@ -460,23 +475,23 @@ implement hero animations:
   Flutter 为成对的含有匹配标签的 heroes 设置动画。
 
 [Inkwell][]
-：Specifies what happens when tapping the hero.
+<br> Specifies what happens when tapping the hero.
   The InkWell's `onTap()` method builds the new route and pushes it
   to the Navigator's stack.
 
 [Inkwell][]
-：指定点击 hero 时发生什么。
+<br> 指定点击 hero 时发生什么。
   InkWell 的 `onTap()` 方法可以创建新页面并推送至 Navigator 的堆栈。
 
 [Navigator][]
-：The Navigator manages a stack of routes. Pushing a route on or
+<br> The Navigator manages a stack of routes. Pushing a route on or
   popping a route from the Navigator's stack triggers the animation.
 
 [Navigator][]
-：Navigator 管理一个页面堆栈。推送或弹出 Navigator 堆栈中的页面触发动画。
+<br> Navigator 管理一个页面堆栈。推送或弹出 Navigator 堆栈中的页面触发动画。
 
-[Route][]
-：Specifies a screen or page. Most apps, beyond the most basic,
+[Route][]<br>
+Specifies a screen or page. Most apps, beyond the most basic,
   have multiple routes.
 
 [Route]({{site.api}}/flutter/widgets/Route-class.html)<br>
@@ -524,21 +539,21 @@ implement hero animations:
   下面的每个示例都演示了一个图形从一页面飞至另一页面。本指南详细介绍第一个例子。
 
   [hero_animation][]
-  ：Encapsulates the hero code in a custom PhotoHero widget.
+  <br> Encapsulates the hero code in a custom PhotoHero widget.
     Animates the hero's motion along a curved path,
     as described in the Material motion spec.
 
   [hero_animation][]
-  ：将 hero 代码封装到自定义的 PhotoHero widget 中。
+  <br> 将 hero 代码封装到自定义的 PhotoHero widget 中。
     沿 Material motion spec 中介绍的曲线路径设置 hero 动作的动画。
 
   [basic_hero_animation][]
-  ：Uses the hero widget directly.
+  <br> Uses the hero widget directly.
     This more basic example, provided for your reference, isn't
     described in this guide.
     
   [basic_hero_animation][]
-  ：直接使用 hero widget。
+  <br> 直接使用 hero widget。
     这个基础示例仅供参考，本指南中无详细介绍。
 
 {{site.alert.end}}
@@ -552,14 +567,16 @@ using Flutter's hero widget. When using `MaterialPageRoute`
 to specify the new route, the image flies along a curved path,
 as described by the [Material Design motion spec][].
 
-使用 Flutter 的 hero widget 可以轻松实现图像由一个页面飞至另一个。当使用 MaterialPageRoute 指定新页面时，图像将沿 [Material Design motion
-spec.][] 中介绍的曲线路径飞翔。
+使用 Flutter 的 hero widget 可以轻松实现图像由一个页面飞至另一个。
+当使用 MaterialPageRoute 指定新页面时，
+图像将沿 [Material Design motion spec][] 中介绍的曲线路径飞翔。
 
 [Create a new Flutter example][] and
 update it using the files from the
 [GitHub directory.][]
 
-[创建一个新的 Flutter 示例][Create a new Flutter example] 和使用来自 [GitHub 仓库][GitHub directory.] 的文件更新。
+[创建一个新的 Flutter 示例][Create a new Flutter example]
+和使用来自 [GitHub 仓库][GitHub directory.] 的文件更新。
 
 To run the example:
 
@@ -636,12 +653,14 @@ Key information:
 * The starting route is implicitly pushed by `MaterialApp` when
   `HeroAnimation` is provided as the app's home property.
   
-  当 `HeroAnimation` 作为应用程序的主页属性时，起始页面由 `MaterialApp` 隐式推送。
+  当 `HeroAnimation` 作为应用程序的主页属性时，
+  起始页面由 `MaterialApp` 隐式推送。
   
 * An `InkWell` wraps the image, making it trivial to add a tap
   gesture to the both the source and destination heroes.
   
-  `InkWell` 裹挟图像，使得为 source hero 和 destination hero 添加点击动作变得简单。
+  `InkWell` 裹挟图像，使得为 source hero 和
+  destination hero 添加点击动作变得简单。
   
 * Defining the Material widget with a transparent color
   enables the image to "pop out" of the background as it
@@ -658,7 +677,8 @@ Key information:
   ensures that the image is as large as possible during the
   transition without changing its aspect ratio.
   
-  设置图像的 `fit` 属性到 `BoxFit.contain`，可以确保在过渡过程中尽可能放大，且不改变长宽比例。
+  设置图像的 `fit` 属性到 `BoxFit.contain`，
+  可以确保在过渡过程中尽可能放大，且不改变长宽比例。
 
 ### HeroAnimation class
 
@@ -726,7 +746,8 @@ Key information:
   Pushing the destination route to the `Navigator`’s stack triggers
   the animation.
   
-  当用户点击含有 source hero 的 `InkWell` 时，代码使用 `MaterialPageRoute` 生成目标页面。并将目标页面推送至 `Navigator` 堆栈，触发动画。
+  当用户点击含有 source hero 的 `InkWell` 时，代码使用 `MaterialPageRoute` 
+  生成目标页面。并将目标页面推送至 `Navigator` 堆栈，触发动画。
   
 * The `Container` positions the `PhotoHero` in the destination
   route's top-left corner, below the `AppBar`.
@@ -789,12 +810,20 @@ position in the destination route. For visual examples
 of this transition, see [Radial transformation][]
 in the Material motion spec.
 
-hero 从一个页面飞至另一页的同时由圆形过渡到矩形，这是一个滑入效果，可使用 Hero widgets 来实现。要做到这一点，代码需要动画两个剪裁形状的交叉：一个圆形和一个正方形。整个动画中，圆形剪裁（和图片）由 `minRadius` 缩放到 `maxRadius`，而正方形剪裁保持大小不变。同时，图像从原页面飞至目标页面的相同位置。这个过渡的效果示例，请参见 Material motion spec 中的 [Radial transformation][]。
+hero 从一个页面飞至另一页的同时由圆形过渡到矩形，
+这是一个滑入效果，可使用 Hero widgets 来实现。
+要做到这一点，代码需要动画两个剪裁形状的交叉：
+一个圆形和一个正方形。整个动画中，圆形剪裁（和图片）由
+`minRadius` 缩放到 `maxRadius`，而正方形剪裁保持大小不变。
+同时，图像从原页面飞至目标页面的相同位置。
+这个过渡的效果示例，
+请参见 Material motion spec 中的 [Radial transformation][]。
 
 This animation might seem complex (and it is), but you can **customize the
 provided example to your needs.** The heavy lifting is done for you.
 
-这个动画看起来复杂，但是您可以**根据自身需要自定义范例**。艰巨的工作已为您完成。
+这个动画看起来复杂，但是您可以**根据自身需要自定义范例**。
+艰巨的工作已为您完成。
 
 <a name="radial-hero-animation-code"></a>
 {{site.alert.secondary}}
@@ -805,31 +834,35 @@ provided example to your needs.** The heavy lifting is done for you.
   Each of the following examples demonstrates a radial hero animation.
   This guide describes the first example.
 
-  下面的每个示例都演示了一个径向 hero 动画。本指南详细介绍第一个示例。
+  下面的每个示例都演示了一个径向 hero 动画。
+  本指南详细介绍第一个示例。
 
   [radial_hero_animation][]
-  : A radial hero animation as described in the Material motion spec.
+  <br> A radial hero animation as described in the Material motion spec.
 
   [radial_hero_animation][]
-  ： Material motion spec 中详细介绍了这个径向 hero 动画。
+  <br> Material motion spec 中详细介绍了这个径向 hero 动画。
 
   [basic_radial_hero_animation][]
-  : The simplest example of a radial hero animation. The destination
+  <br> The simplest example of a radial hero animation. The destination
     route has no Scaffold, Card, Column, or Text.
     This basic example, provided for your reference, isn't
     described in this guide.
 
   [basic_radial_hero_animation][]
-  ： 径向 hero 动画最简单的示例。目标页面没有 Scaffold, Card, Column, 或 Text。这个基本示例仅供参考，本指南不详述。
+  <br> 径向 hero 动画最简单的示例。
+  目标页面没有 Scaffold, Card, Column, 或 Text。
+  这个基本示例仅供参考，本指南不详述。
 
 
   [radial_hero_animation_animate<wbr>_rectclip][]
-  ： Extends radial_hero_animaton by also animating the size of the
+  <br> Extends radial_hero_animaton by also animating the size of the
     rectangular clip. This more advanced example,
     provided for your reference, isn't described in this guide.
     
   [radial_hero_animation_animate<wbr>_rectclip][]
-  : 通过动画矩形剪裁大小，扩展径向 hero 动画。这个高阶示例亦供参考，本指南不详述。
+  <br> 通过动画矩形剪裁大小，扩展径向 hero 动画。
+  这个高阶示例亦供参考，本指南不详述。
 
 {{site.alert.end}}
 
@@ -889,9 +922,8 @@ longer clipped.
 update it using the files from the
 [radial_hero_animation][] GitHub directory.
 
-[创建一个新的 Flutter 示例](/docs/get-started/test-drive) 和使用来自
-[GitHub directory.]({{site.github}}/flutter/website/tree/master/examples/_animation/radial_hero_animation)
-的文件更新。
+[创建一个新的 Flutter 示例][Create a new Flutter example] 和使用来自
+[GitHub 文件夹][radial_hero_animation] 的文件更新。
 
 To run the example:
 
@@ -901,7 +933,8 @@ To run the example:
   to a larger square positioned in the middle of a new route that
   obscures the original route.
   
-  点击三个圆形缩略图中的任意一个，使图像变成位于新页面中间的一个较大的正方形，且覆盖原页面。
+  点击三个圆形缩略图中的任意一个，
+  使图像变成位于新页面中间的一个较大的正方形，且覆盖原页面。
   
 * Return to the previous route by tapping the image, or by using the
   device’s back-to-the-previous-route gesture.
@@ -986,7 +1019,8 @@ The clipped shape results from the intersection of a circular clip
 with a rectangular clip (that remains a constant size throughout).
 
 RadialExpansion widget，demo 的核心，建立过渡过程中剪裁图像的 widget 树。
-剪裁的形状来自于圆形剪裁（飞翔过程中增长）和矩形剪裁（自始至终保持一致大小）的交集。
+剪裁的形状来自于圆形剪裁（飞翔过程中增长）
+和矩形剪裁（自始至终保持一致大小）的交集。
 
 To do this, it builds the following widget tree:
 
@@ -1109,21 +1143,21 @@ The following resources might help when writing animations:
   library]({{site.api}}/flutter/animation/animation-library.html) 文档。
 
 [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-  Demo app showcasing many Material Design widgets and other Flutter
+: Demo app showcasing many Material Design widgets and other Flutter
   features.  The [Shrine
   demo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
   implements a hero animation.
 
 [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-  Demo 应用程序展示了许多 Material Design widgets 和其他 Flutter 特征。[Shrine
+: Demo 应用程序展示了许多 Material Design widgets 和其他 Flutter 特征。[Shrine
   demo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
   执行了一个 hero 动画。
 
 [Material motion spec]({{site.material}}/guidelines/motion/)<br>
-  Describes motion for Material design apps.
+: Describes motion for Material design apps.
 
 [Material motion spec]({{site.material}}/guidelines/motion/)<br>
-  介绍使用 Material 设计应用程序的动作。
+: 介绍使用 Material 设计应用程序的动作。
 
 
 [Animations in Flutter tutorial]: /docs/development/ui/animations/tutorial

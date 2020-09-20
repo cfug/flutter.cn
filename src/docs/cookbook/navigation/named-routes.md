@@ -3,6 +3,8 @@ title: Navigate with named routes
 title: 导航到对应名称的 routes 里
 description: How to implement named routes for navigating between screens.
 description: 如何实现用于导航的命名路由。
+tags: cookbook, 实用教程, 路由
+keywords: 页面跳转
 prev:
   title: Navigate to a new screen and back
   title: 导航到一个新页面和返回

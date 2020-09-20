@@ -5,6 +5,8 @@ short-title: Animations
 short-title: 动画
 description: How to perform animations in Flutter.
 description: 如何使用 Flutter 实现动画效果。
+tags: 用户界面,Flutter UI,动画
+keywords: 动画效果实现
 ---
 
 Well-designed animations make a UI feel more intuitive,
@@ -28,7 +30,8 @@ To help you decide, check out the video,
 在 Flutter 中创建动画可以有多种不同实现方式。
 那么，究竟哪种才是最适合你的呢？
 为了帮助你更好的理解它，你可以观看下面的视频，
-[如何在 Flutter 中选择合适的动画 Widget][How to choose which Flutter Animation Widget is right for you?]（同时也发布了一篇[配套文章][article1]。）
+[如何在 Flutter 中选择合适的动画 Widget][How to choose which Flutter Animation Widget is right for you?]
+（同时也发布了一篇[配套文章][article1]。）
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/GXIJJkq_H8g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
@@ -57,7 +60,8 @@ to implement) suits your needs, watch
 (Also published as a [_companion article_][article2].)
 
 如果内置的隐式动画（最简单的动画）已经能够满足你的需求，
-请观看[隐式动画基础][[Animation basics with implicit animations]]。（同时也发布了一篇[配套文章][article2]。）
+请观看[隐式动画基础][[Animation basics with implicit animations]]。
+（同时也发布了一篇[配套文章][article2]。）
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
@@ -66,7 +70,9 @@ To create a custom implicit animation, watch
 (Also published as a [_companion article_][article3].)
 
 要创建一个自定义的隐式动画，
-请观看[使用 TweenAnimationBuilder 创建独特的隐式动画][Creating your own custom implicit animations with TweenAnimationBuilder]。（同时也发布了一篇[配套文章][article3]。）
+请观看
+[使用 TweenAnimationBuilder 创建独特的隐式动画][Creating your own custom implicit animations with TweenAnimationBuilder]。
+（同时也发布了一篇[配套文章][article3]。）
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/6KiPEqzJIKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
@@ -78,7 +84,8 @@ For more information, watch
 built-in explicit animations][].
 (Also published as a [_companion article_][article4].)
 
-要创建显式动画（手动控制，而不是让框架控制），你可以使用内置的其中一个显式动画类来实现。更多有关信息，请观看 
+要创建显式动画（手动控制，而不是让框架控制），
+你可以使用内置的其中一个显式动画类来实现。更多有关信息，请观看 
 [使用内置显式动画][Making your first directional animations with
 built-in explicit animations]。
 （同时也发布了一篇[配套文章][article4]。）
@@ -90,8 +97,10 @@ If you need to build an explicit animation from scratch, watch
 AnimatedBuilder and AnimatedWidget][].
 (Also published as a [_companion article_][article5].)
 
-如果你需要从头开始构建显式动画，请观看[通过 AnimatedBuilder 和 AnimatedWidget 创建一个自定义动画][Creating custom explicit animations with
-AnimatedBuilder and AnimatedWidget]。（同时也发布了一篇[配套文章][article5]。）
+如果你需要从头开始构建显式动画，
+请观看
+[通过 AnimatedBuilder 和 AnimatedWidget 创建一个自定义动画][Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]。
+（同时也发布了一篇[配套文章][article5]。）
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/fneC7t4R_B0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
@@ -99,7 +108,8 @@ For a deeper understanding of just how animations work in Flutter, watch
 [Animation deep dive][].
 (Also published as a [_companion article_][article6].)
 
-想要更深入的理解动画在 Flutter 中的工作方式，请观看[深入理解动画][Animation deep dive]。
+想要更深入的理解动画在 Flutter 中的工作方式，
+请观看[深入理解动画][Animation deep dive]。
 （同时也发布了一篇[配套文章][article6]。）
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/PbcILiN8rbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
@@ -140,14 +150,16 @@ If you have a specific request,
   different aspects of the animation APIs.
 
   [动画教程](/docs/development/ui/animations/tutorial)<br>
-  阐释了 Flutter 动画包中的基本类（控制器，动画，曲线，监听器，构建器），这些可以帮助您使用不同的动画 APIs 完成补间动画。
+  阐释了 Flutter 动画包中的基本类（控制器，动画，曲线，监听器，构建器），
+  这些可以帮助您使用不同的动画 APIs 完成补间动画。
 
 * [Zero to One with Flutter, part
   1]({{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354) and [part
   2]({{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
   Medium articles showing how to create an animated chart using tweening.
 
-  [使用 Flutter 从零到一, 第一部分]({{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354) 和 [第二部分]({{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
+  [使用 Flutter 从零到一, 第一部分]({{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354) 
+  和 [第二部分]({{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
   Medium 文章中有介绍如何使用补间动画创建图表动画。
 
 * [Building Beautiful UIs with
@@ -166,7 +178,9 @@ Generally, animations are either tween- or physics-based.
 The following sections explain what these terms mean,
 and point you to resources where you can learn more.
 
-动画分为两类：补间动画和基于物理动画。下面将解释这些术语的含义，并帮助您找到更多相关资源。在一些情况下，我们现有的最佳文档是 Flutter gallery 中的示例代码。
+动画分为两类：补间动画和基于物理动画。下面将解释这些术语的含义，
+并帮助您找到更多相关资源。在一些情况下，
+我们现有的最佳文档是 Flutter gallery 中的示例代码。
 
 ### Tween animation
 
@@ -178,13 +192,17 @@ that defines the timing and speed of the transition.
 The framework calculates how to transition from the beginning point
 to the end point.
 
-补间动画是“介于两者之间”的缩写。在补间动画中，定义了起点和终点以及时间轴，再定义过渡时间和速度的曲线。然后框架会计算如何从起点过渡到终点。
+补间动画是“介于两者之间”的缩写。
+在补间动画中，定义了起点和终点以及时间轴，
+再定义过渡时间和速度的曲线。然后框架会计算如何从起点过渡到终点。
 
 The documents listed above, such as the [animations
 tutorial][] are not about tweening,
 specifically, but they use tweens in their examples.
 
-上文列出的文档，比如 [教程 | 在 Flutter 应用里实现动画效果][animations tutorial] 并不是特别针对补间动画的，但是其示例中使用了补间动画。
+上文列出的文档，比如 
+[教程 | 在 Flutter 应用里实现动画效果][animations tutorial] 
+并不是特别针对补间动画的，但是其示例中使用了补间动画。
 
 ### Physics-based animation
 
@@ -196,7 +214,9 @@ depends on how fast it was tossed and how far it was from the ground.
 Similarly, dropping a ball attached to a spring falls
 (and bounces) differently than dropping a ball attached to a string.
 
-在基于物理基础的动画中，动作是模拟真实世界的行为来进行建模的。举个例子，当您抛球时，球落地的时间和位置取决于抛出的速度和距离地面的高度。类似地，附在弹簧上的球和附在绳子上的球掉落（和反弹）方式是不一样的。
+在基于物理基础的动画中，动作是模拟真实世界的行为来进行建模的。
+举个例子，当您抛球时，球落地的时间和位置取决于抛出的速度和距离地面的高度。
+类似地，附在弹簧上的球和附在绳子上的球掉落（和反弹）方式是不一样的。
 
 * [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
 
@@ -213,14 +233,14 @@ Similarly, dropping a ball attached to a spring falls
   image with flinging or dragging gestures.
 
   [Flutter Gallery][]<br>
-  在 **Material 组件** 下，[Grid]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) 示例演示了一个抛物动画。从网格中选取一个图像并放大。您可以通过使用投掷和拖动来平移图像。
+  在 **Material 组件** 下，[`Grid`][] 示例演示了一个抛物动画。
+  从网格中选取一个图像并放大。您可以通过使用投掷和拖动来平移图像。
 
 * Also see the API documentation for
   [`AnimationController.animateWith`][] and
   [`SpringSimulation`][].
 
-  请参考 API 文档 [AnimationController<wbr>.animateWith][AnimationController.animateWith] 和
-  [SpringSimulation][]。
+  请参考 API 文档 [`AnimationController.animateWith`][] 和 [`SpringSimulation`][]。
 
 ## Pre-canned animations
 
@@ -233,7 +253,8 @@ the following commonly used patterns:
 `Container` transforms, shared axis transitions,
 fade through transitions, and fade transitions.
 
-如果你在使用 Material widgets，你也许想要看看 pub.dev 上的[动画 package][animations package]。
+如果你在使用 Material widgets，
+你也许想要看看 pub.dev 上的[动画 package][animations package]。
 这个 package 包含了以下内置常用模式：
 `Container`变换，共享轴变换，
 
@@ -265,7 +286,10 @@ elements from a list or grid.
   the plus (+) and minus (-) buttons.
 
   [`AnimatedList` example][]<br>
-  这个来自 [Sample app catalog][] 的演示展示了如何动态添加元素至列表或删除选定元素。当用户使用 plus (+) 和 minus (-) 按钮修改列表时，会同步到内部 Dart 列表。
+  这个来自 [Sample app catalog][] 的演示展示了
+  如何动态添加元素至列表或删除选定元素。
+  当用户使用 plus (+) 和 minus (-) 按钮修改列表时，
+  会同步到内部 Dart 列表。
 
 ### Shared element transition
 
@@ -277,7 +301,10 @@ to a new page with more detail. In Flutter, you can easily implement
 shared element transitions between routes (pages)
 using the `Hero` widget.
 
-在这个模式中，用户从页面中选择一个元素，通常是图像，然后 UI 会在新页面中为指定元素添加动画，并生成更多细节。在 Flutter 中，您可以通过 Hero widget 轻松实现路径（页面）间的共享元素转换动画。
+在这个模式中，用户从页面中选择一个元素，通常是图像，
+然后 UI 会在新页面中为指定元素添加动画，并生成更多细节。
+在 Flutter 中，您可以通过 Hero widget
+轻松实现路径（页面）间的共享元素转换动画。
 
 * [Hero animations][]
 How to create two styles of Hero animations:
@@ -300,14 +327,13 @@ How to create two styles of Hero animations:
   demo includes an example of a hero animation.
 
   [Flutter Gallery][]<br>
-您可以自己自己创建 Gallery 应用程序，或者到 Play 商店中下载。[Shrine]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart) 演示中有关于 Hero 动画的示例。
+  您可以自己自己创建 Gallery 应用程序，或者到 Play 商店中下载。
+  [Shrine][] 演示中有关于 Hero 动画的示例。
 
 * Also see the API documentation for the
   [`Hero`][], [`Navigator`][], and [`PageRoute`][] classes.
 
-  另请参阅 API 文档 [Hero,]({{site.api}}/flutter/widgets/Hero-class.html)
-[Navigator,]({{site.api}}/flutter/widgets/Navigator-class.html) 
-[PageRoute]({{site.api}}/flutter/widgets/PageRoute-class.html)。
+  另请参阅 API 文档 [`Hero`][]、[`Navigator`][] 和 [`PageRoute`][] 类。
 
 ### Staggered animation
 
@@ -318,11 +344,12 @@ where some of the motion is delayed.
 The smaller animations might be sequential,
 or might partially or completely overlap.
 
-动画被分解成较小的动作，其中一些动作被延迟。这些小动画可以是连续的，也可以部分或完全重叠。
+动画被分解成较小的动作，其中一些动作被延迟。
+这些小动画可以是连续的，也可以部分或完全重叠。
 
 * [Staggered Animations][]
 
-  [交织动画](/docs/development/ui/animations/staggered-animations)
+  [交织动画][Staggered Animations]
 
 {% comment %}
   Save so I can remember how to add it back later.
@@ -352,14 +379,14 @@ Learn more about Flutter animations at the following links:
   A look at some of the major classes in the
   animations library, and Flutter's animation architecture.
 
-  [动画概览](/docs/development/ui/animations/overview.html)<br>
+  [动画概览][Animations: overview]<br>
   动画库中主要类简介，以及 Flutter 动画结构。
 
 * [Animation and motion widgets][]<br>
   A catalog of some of the animation widgets
   provided in the Flutter APIs.
 
-  [动画及动作 Widgets](/docs/development/ui/widgets/animation)<br>
+  [动画及动作 Widgets][Animation and motion widgets]<br>
   Flutter APIs 提供的动画 widgets 目录。
 
 * The [animation library][] in the [Flutter API documentation][]<br>

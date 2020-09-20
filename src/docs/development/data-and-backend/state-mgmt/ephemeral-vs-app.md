@@ -5,6 +5,8 @@ short-title: Ephemeral versus app state
 short-title: 区分短时和共享状态
 description: How to tell the difference between ephemeral and app state.
 description: 介绍短时 (ephemeral) 和应用 (app) 状态的区别有哪些。
+tags: Flutter状态管理
+keywords: 理论,状态管理思想,界面,动画状态,纹理,字体
 prev:
   title: Start thinking declaratively
   title: 声明式的编程思维

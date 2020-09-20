@@ -3,6 +3,8 @@ title: Continuous delivery with Flutter
 title: Flutter 里的持续部署
 description: How to automate continuous building and releasing of your Flutter app.
 description: 如何自动的持续编译构建和发布你的 Flutter 应用。
+tags: CI/CD,持续部署,发布应用
+keywords: fastlane
 ---
 
 Follow continuous delivery best practices with Flutter to make sure your

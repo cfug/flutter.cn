@@ -3,6 +3,8 @@ title: Parse JSON in the background
 title: 在后台处理 JSON 数据解析
 description: How to perform a task in the background.
 description: 如何在后台执行任务。
+tags: cookbook, 实用教程, 网络请求
+keywords: json,后台任务,调度,fps,卡顿
 prev:
   title: Make authenticated requests
   title: 发起 HTTP 认证授权请求
@@ -18,15 +20,17 @@ In many cases, this model simplifies coding and is fast enough
 that it does not result in poor app performance or stuttering animations,
 often called "jank."
 
-Dart 应用通常只会在单线程中处理它们的工作。并且在大多数情况中，
-这种模式不但简化了代码而且速度也够快，基本不会出现像动画卡顿以及性能不足这种「不靠谱」的问题。
+Dart 应用通常只会在单线程中处理它们的工作。
+并且在大多数情况中，
+这种模式不但简化了代码而且速度也够快，
+基本不会出现像动画卡顿以及性能不足这种「不靠谱」的问题。
 
 However, you might need to perform an expensive computation, such as parsing a
 very large JSON document. If this work takes more than 16 milliseconds,
 your users experience jank.
 
 但是，当你需要进行一个非常复杂的计算时，例如解析一个巨大的 JSON 文档。
-如果这项工作耗时超过了 16 毫秒， 那么你的用户就会感受到掉帧。
+如果这项工作耗时超过了 16 毫秒，那么你的用户就会感受到掉帧。
 
 To avoid jank, you need to perform expensive computations like this in the
 background. On Android, this means scheduling work on a different thread.
@@ -83,7 +87,8 @@ that contains a list of 5000 photo objects from the
 using the [`http.get()`][] method.
 
 在这个例子中，你将会使用 [`http.get()`][] 方法通过
-[JSONPlaceholder REST API][] 获取到一个包含 5000 张图片对象的超大 JSON 文档。
+[JSONPlaceholder REST API][] 获取到一个包含
+5000 张图片对象的超大 JSON 文档。
 
 <!-- skip -->
 ```dart

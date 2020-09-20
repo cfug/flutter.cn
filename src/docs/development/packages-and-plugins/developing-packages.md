@@ -5,6 +5,8 @@ short-title: Developing
 short-title: 开发和提交
 description: How to write packages and plugins for Flutter.
 description: 如何编写和提交你的 Packages。
+tags: Packages,插件
+keywords: 插件开发,Flutter插件教程
 ---
 
 {{site.note.alert}}

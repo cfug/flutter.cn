@@ -5,6 +5,8 @@ short-title: Tutorial
 short-title: 教程
 description: A tutorial showing how to build explicit animations in Flutter.
 description: 如何在 Flutter 中实现动画效果。
+tags: 用户界面,Flutter UI,动画
+keywords: 教程,实战,显式动画
 diff2html: true
 ---
 
@@ -34,7 +36,10 @@ introducing some of the essential concepts, classes, and methods in the
 animation library, it walks you through 5 animation examples. The examples build
 on each other, introducing you to different aspects of the animation library.
 
-本教程将讲解如何在 Flutter 中构建显式动画。我们先来介绍一些动画库中的基本概念，类和方法，然后列举五个动画示例。这些示例互相关联，展示了动画库的不同方面。
+本教程将讲解如何在 Flutter 中构建显式动画。
+我们先来介绍一些动画库中的基本概念，类和方法，
+然后列举五个动画示例。这些示例互相关联，
+展示了动画库的不同方面。
 
 The Flutter SDK also provides implicit transition animations,
 such as [`FadeTransition`][], [`SizeTransition`][],
@@ -43,7 +48,10 @@ triggered by setting a beginning and ending point.
 They are simpler to implement
 than explicit animations, which are described here.
 
-Flutter SDK 也提供过渡动画，比如 [`FadeTransition`][]，[`SizeTransition`][] 和 [`SlideTransition`][]。这些简单的动画可以通过设置起点和终点来触发。它们比下面介绍的显式动画更容易实现。
+Flutter SDK 也提供过渡动画，比如
+[`FadeTransition`][]，[`SizeTransition`][] 和 [`SlideTransition`][]。
+这些简单的动画可以通过设置起点和终点来触发。
+它们比下面介绍的显式动画更容易实现。
 
 <a name="concepts"></a>
 ## Essential animation concepts and classes
@@ -58,13 +66,15 @@ Flutter SDK 也提供过渡动画，比如 [`FadeTransition`][]，[`SizeTransiti
   * [`Animation`][], a core class in Flutter's animation library,
     interpolates the values used to guide an animation.
     
-    [`Animation`][]，Flutter 动画库中的核心类，插入用于指导动画的值。
+    [`Animation`][]，Flutter 动画库中的核心类，
+    插入用于指导动画的值。
     
   * An `Animation` object knows the current state of an animation (for example,
     whether it's started, stopped, or moving forward or in reverse),
     but doesn't know anything about what appears onscreen.
     
-    `Animation` 对象知道动画目前的状态（例如，是否开始，暂停，前进或倒退），但是对屏幕上显示的内容一无所知。
+    `Animation` 对象知道动画目前的状态
+    （例如，是否开始，暂停，前进或倒退），但是对屏幕上显示的内容一无所知。
     
   * An [`AnimationController`][] manages the `Animation`.
   
@@ -78,7 +88,8 @@ Flutter SDK 也提供过渡动画，比如 [`FadeTransition`][]，[`SizeTransiti
     object being animated. For example, a `Tween` might define an interpolation
     from red to blue, or from 0 to 255.
     
-    [`Tween`][] 为动画对象插入一个范围值。例如，`Tween` 可以定义插入值由红到蓝，或从 0 到 255。
+    [`Tween`][] 为动画对象插入一个范围值。
+    例如，`Tween` 可以定义插入值由红到蓝，或从 0 到 255。
   
   * Use Listeners and StatusListeners to monitor animation state changes.
   
@@ -93,7 +104,10 @@ changes or they can use the animations as the basis of
 more elaborate animations that they pass along to
 other widgets.
 
-Flutter 中的动画系统基于类型化的 [`Animation`] [] 对象。Widgets 既可以通过读取当前值和监听状态变化直接合并动画到 build 函数，也可以作为传递给其他 widgets 的更精细动画的基础。
+Flutter 中的动画系统基于类型化的 [`Animation`] [] 对象。
+Widgets 既可以通过读取当前值和监听状态变化直接
+合并动画到 build 函数，也可以作为传递给其他 widgets
+的更精细动画的基础。
 
 <a name="animation-class"></a>
 
@@ -104,7 +118,9 @@ is onscreen. An `Animation` is an abstract class that
 understands its current value and its state (completed or dismissed).
 One of the more commonly used animation types is `Animation<double>`.
 
-在 Flutter 中，动画对象无法获取屏幕上显示的内容。`Animation` 是一个已知当前值和状态（已完成或已解除）的抽象类。一个比较常见的动画类型是 `Animation<double>`。
+在 Flutter 中，动画对象无法获取屏幕上显示的内容。
+`Animation` 是一个已知当前值和状态（已完成或已解除）的抽象类。
+一个比较常见的动画类型是 `Animation<double>`。
 
 An `Animation` object sequentially generates
 interpolated numbers between two values over a certain duration.
@@ -114,17 +130,24 @@ Depending on how the `Animation` object is controlled,
 it could run in reverse, or even switch directions in the
 middle.
 
-一个 `Animation` 对象在一段时间内，持续生成介于两个值之间的插入值。这个 `Animation` 对象输出的可能是直线，曲线，阶梯函数，或者任何自定义的映射。根据 `Animation` 对象的不同控制方式，它可以反向运行，或者中途切换方向。
+一个 `Animation` 对象在一段时间内，
+持续生成介于两个值之间的插入值。
+这个 `Animation` 对象输出的可能是直线，
+曲线，阶梯函数，或者任何自定义的映射。
+根据 `Animation` 对象的不同控制方式，
+它可以反向运行，或者中途切换方向。
 
 Animations can also interpolate types other than double, such as
 `Animation<Color>` or `Animation<Size>`.
 
-动画还可以插入除 double 以外的类型，比如 `Animation<Color>` 或者 `Animation<Size>`。
+动画还可以插入除 double 以外的类型，
+比如 `Animation<Color>` 或者 `Animation<Size>`。
 
 An `Animation` object has state. Its current value is
 always available in the `.value` member.
 
-`Animation` 对象具有状态。它的当前值在 `.value` 中始终可用。
+`Animation` 对象具有状态。
+它的当前值在 `.value` 中始终可用。
 
 An `Animation` object knows nothing about rendering or
 `build()` functions.
@@ -148,7 +171,8 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   The [`Curves`][] class defines many commonly used curves,
   or you can create your own. For example:
 
-  [`Curves`][] 类定义了很多常用曲线，或者您也可以自定义。例如：
+  [`Curves`][] 类定义了很多常用曲线，
+  或者您也可以自定义。例如：
 
   <?code-excerpt "animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
   {% prettify dart context="html" %}
@@ -163,7 +187,8 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   Browse the [`Curves`] documentation for a complete listing
   (with visual previews) of the `Curves` constants that ship with Flutter.
 
-  浏览 [`Curves`] 文档以获取完整的（带有预览）Flutter 附带的 `Curves` 常数列表。
+  浏览 [`Curves`] 文档以获取完整的
+  （带有预览）Flutter 附带的 `Curves` 常数列表。
 
 {{site.alert.end}}
 
@@ -172,7 +197,10 @@ are both of type `Animation<double>`, so you can pass them interchangeably.
 The `CurvedAnimation` wraps the object it’s modifying&mdash;you
 don’t subclass `AnimationController` to implement a curve.
 
-`CurvedAnimation` 和 `AnimationController`（下面将会详细说明）都是 `Animation<double>` 类型，所以可以互换使用。`CurvedAnimation` 封装正在修改的对象 &mdash; 不需要将 `AnimationController` 分解成子类来实现曲线。
+`CurvedAnimation` 和 `AnimationController`（下面将会详细说明）
+都是 `Animation<double>` 类型，所以可以互换使用。
+`CurvedAnimation` 封装正在修改的对象 &mdash; 
+不需要将 `AnimationController` 分解成子类来实现曲线。
 
 ### Animation&shy;Controller
 
@@ -184,7 +212,11 @@ from 0.0 to 1.0 during a given duration.
 For example, this code creates an `Animation` object,
 but does not start it running:
 
-[`AnimationController`][] 是个特殊的 `Animation` 对象，每当硬件准备新帧时，他都会生成一个新值。默认情况下，`AnimationController` 在给定期间内会线性生成从 0.0 到 1.0 的数字。例如，这段代码创建了一个动画对象，但是没有启动运行。
+[`AnimationController`][] 是个特殊的 `Animation` 对象，
+每当硬件准备新帧时，他都会生成一个新值。
+默认情况下，`AnimationController` 在给定期间内会线性
+生成从 0.0 到 1.0 的数字。
+例如，这段代码创建了一个动画对象，但是没有启动运行。
 
 <?code-excerpt "animate5/lib/main.dart (AnimationController)"?>
 ```dart
@@ -201,7 +233,14 @@ second. After each number is generated, each `Animation` object calls the
 attached `Listener` objects. To create a custom display list for each
 child, see [`RepaintBoundary`][].
 
-`AnimationController` 源自于 `Animation<double>`，所以可以用在任何需要 `Animation` 对象的地方。但是 `AnimationController` 还有其他方法控制动画。例如，使用 `.forward()` 方法启动动画。数字的生成与屏幕刷新关联，所以一般来说每秒钟会生成 60 个数字。数字生成之后，每个动画对象都调用附加 Listener 对象。为每个 child 创建自定义显示列表，请参考 [`RepaintBoundary`][]。
+`AnimationController` 源自于 `Animation<double>`，
+所以可以用在任何需要 `Animation` 对象的地方。
+但是 `AnimationController` 还有其他方法控制动画。
+例如，使用 `.forward()` 方法启动动画。
+数字的生成与屏幕刷新关联，所以一般来说每秒钟会生成 60 个数字。
+数字生成之后，每个动画对象都调用附加 Listener 对象。
+为每个 child 创建自定义显示列表，
+请参考 [`RepaintBoundary`][]。
 
 When creating an `AnimationController`, you pass it a `vsync` argument.
 The presence of `vsync` prevents offscreen animations from consuming
@@ -210,7 +249,13 @@ You can use your stateful object as the vsync by adding
 `SingleTickerProviderStateMixin` to the class definition.
 You can see an example of this in [animate1][] on GitHub.
 
-创建 `AnimationController` 的同时，也赋予了一个 `vsync` 参数。`vsync` 的存在防止后台动画消耗不必要的资源。您可以通过添加 `SingleTickerProviderStateMixin` 到类定义，将有状态的对象用作 vsync。可参考 GitHub 网站 [animate1]({{examples}}/animation/animate1/lib/main.dart) 中的示例。
+创建 `AnimationController` 的同时，
+也赋予了一个 `vsync` 参数。
+`vsync` 的存在防止后台动画消耗不必要的资源。
+您可以通过添加 `SingleTickerProviderStateMixin` 到类定义，
+将有状态的对象用作 vsync。
+可参考 GitHub 网站 [animate1]({{examples}}/animation/animate1/lib/main.dart) 
+中的示例。
 
 {% comment %}
 The `vsync` object ties the ticking of the animation controller to
@@ -221,7 +266,11 @@ been ticking the whole time, but without using the CPU.)
 To use your custom State object as the `vsync`, include the
 `TickerProviderStateMixin` when defining the custom State class.
 
-`vsync` 对象将动画控制器的时钟系统和 widget 的可见性连结，所以当动画 widget 切换到后台，时钟停止；而当 widget 恢复前台运行，时钟重新启动（这个过程时钟并不终止，可被认为一直在运行中，只是不占用 CPU）。在定义自定义状态类时，也可将自定义状态对象用作 `vsync`，包括 `TickerProviderStateMixin`。
+`vsync` 对象将动画控制器的时钟系统和 widget 的可见性连结，
+所以当动画 widget 切换到后台，时钟停止；而当 widget 恢复前台运行，
+时钟重新启动（这个过程时钟并不终止，可被认为一直在运行中，
+只是不占用 CPU）。在定义自定义状态类时，
+也可将自定义状态对象用作 `vsync`，包括 `TickerProviderStateMixin`。
 {% endcomment -%}
 
 {{site.alert.note}}
@@ -232,7 +281,11 @@ To use your custom State object as the `vsync`, include the
   (via the Force object). The position can be anything and
   so can be outside of the 0.0 to 1.0 range.
   
-  在一些情况下，一个位置可能会超过 `AnimationController` 的 0.0-1.0 的范围。例如，`fling()` 函数允许提供速度，力和位置（通过 Force 对象）。这个位置可以是任意的，所以可能会超出 0.0-1.0 的范围。
+  在一些情况下，一个位置可能会超过
+  `AnimationController` 的 0.0-1.0 的范围。
+  例如，`fling()` 函数允许提供速度，
+  力和位置（通过 Force 对象）。这个位置可以是任意的，
+  所以可能会超出 0.0-1.0 的范围。
 
   A `CurvedAnimation` can also exceed the 0.0 to 1.0 range,
   even if the `AnimationController` doesn't.
@@ -241,7 +294,11 @@ To use your custom State object as the `vsync`, include the
   For example, elastic curves such as `Curves.elasticIn`
   significantly overshoots or undershoots the default range.
   
-  即使 `AnimationController` 在范围内，`CurvedAnimation` 也可能会出现超出 0.0-1.0 范围的情况。根据所选曲线的不同，`CurvedAnimation` 的输出范围可能会超过输入。举个例子，弹性曲线（比如Curves.elasticIn）会明显超出或低于默认范围。
+  即使 `AnimationController` 在范围内，
+  `CurvedAnimation` 也可能会出现超出 0.0-1.0 范围的情况。
+  根据所选曲线的不同，`CurvedAnimation` 的输出范围可能会超过输入。
+  举个例子，弹性曲线（比如Curves.elasticIn）
+  会明显超出或低于默认范围。
 {{site.alert.end}}
 
 ### Tween
@@ -252,7 +309,10 @@ If you need a different range or a different data type, you can use a
 different range or data type. For example, the
 following `Tween` goes from -200.0 to 0.0:
 
-在默认情况下，`AnimationController` 对象的范围是 0.0-0.1。如果需要不同的范围或者不同的数据类型，可以使用 [`Tween`][] 配置动画来插入不同的范围或数据类型。例如下面的示例中，`Tween` 的范围是 -200 到 0.0。
+在默认情况下，`AnimationController` 对象的范围是 0.0-0.1。
+如果需要不同的范围或者不同的数据类型，
+可以使用 [`Tween`][] 配置动画来插入不同的范围或数据类型。
+例如下面的示例中，`Tween` 的范围是 -200 到 0.0。
 
 <?code-excerpt "animate5/lib/main.dart (tween)"?>
 ```dart
@@ -264,13 +324,17 @@ The sole job of a `Tween` is to define a mapping from an
 input range to an output range. The input range is commonly
 0.0 to 1.0, but that’s not a requirement.
 
-`Tween` 是无状态的对象，只有 `begin` 和 `end`。`Tween` 的这种单一用途用来定义从输入范围到输出范围的映射。输入范围一般为 0.0-1.0，但这并不是必须的。
+`Tween` 是无状态的对象，只有 `begin` 和 `end`。
+`Tween` 的这种单一用途用来定义从输入范围到输出范围的映射。
+输入范围一般为 0.0-1.0，但这并不是必须的。
 
 A `Tween` inherits from `Animatable<T>`, not from `Animation<T>`.
 An `Animatable`, like `Animation`, doesn't have to output double.
 For example, `ColorTween` specifies a progression between two colors.
 
-`Tween` 源自 `Animatable<T>`，而不是 `Animation<T>`。像动画这样的可动画元素不必重复输出。例如，`ColorTween` 指定了两种颜色之间的过程。
+`Tween` 源自 `Animatable<T>`，而不是 `Animation<T>`。
+像动画这样的可动画元素不必重复输出。
+例如，`ColorTween` 指定了两种颜色之间的过程。
 
 <?code-excerpt "animate5/lib/main.dart (colorTween)"?>
 ```dart
@@ -285,7 +349,12 @@ The current value of the `Animation` object can be found in the
 such as ensuring that begin and end are returned when the
 animation values are 0.0 and 1.0, respectively.
 
-`Tween` 对象不存储任何状态。而是提供 `evaluate(Animation<double> animation)` 方法，将映射函数应用于动画当前值。`Animation` 对象的当前值可以在 `.value` 方法中找到。evaluate 函数还执行一些内部处理内容，比如确保当动画值在 0.0 和1.0 时分别返回起始点和终点。
+`Tween` 对象不存储任何状态。
+而是提供 `evaluate(Animation<double> animation)` 方法，
+将映射函数应用于动画当前值。
+`Animation` 对象的当前值可以在 `.value` 方法中找到。
+evaluate 函数还执行一些内部处理内容，
+比如确保当动画值在 0.0 和1.0 时分别返回起始点和终点。
 
 #### Tween.animate
 
@@ -294,7 +363,9 @@ passing in the controller object. For example,
 the following code generates the
 integer values from 0 to 255 over the course of 500 ms.
 
-要使用 `Tween` 对象，请在 `Tween` 调用 `animate()`，传入控制器对象。例如，下面的代码在 500 ms 的进程中生成 0-255 范围内的整数值。
+要使用 `Tween` 对象，请在 `Tween` 调用 `animate()`，
+传入控制器对象。例如，下面的代码在 500 ms 的进程中
+生成 0-255 范围内的整数值。
 
 <?code-excerpt "animate5/lib/main.dart (IntTween)"?>
 ```dart
@@ -338,7 +409,16 @@ The next section has an example of the `addListener()` method,
 and [Monitoring the progress of the animation][] shows an
 example of `addStatusListener()`.
 
-一个 [`Animation`][] 对象可以有不止一个 `Listener` 和 `StatusListener`，用 `addListener()` 和 `addStatusListener()` 来定义。当动画值改变时调用 `Listener`。`Listener` 最常用的操作是调用 `setState()` 进行重建。当一个动画开始，结束，前进或后退时，会调用 `StatusListener`，用 `AnimationStatus` 来定义。下一部分有关于 `addListener()` 方法的示例，在 [监控动画过程](#monitoring) 中也有 `addStatusListener()` 的示例。
+一个 [`Animation`][] 对象可以有不止一个
+`Listener` 和 `StatusListener`，
+用 `addListener()` 和 `addStatusListener()` 来定义。
+当动画值改变时调用 `Listener`。
+`Listener` 最常用的操作是调用 `setState()` 进行重建。
+当一个动画开始，结束，前进或后退时，
+会调用 `StatusListener`，用 `AnimationStatus` 来定义。
+下一部分有关于 `addListener()` 方法的示例，
+在 [监控动画过程][Monitoring the progress of the animation]
+中也有 `addStatusListener()` 的示例。
 
 ---
 
@@ -349,7 +429,8 @@ example of `addStatusListener()`.
 This section walks you through 5 animation examples.
 Each section provides a link to the source code for that example.
 
-这部分列举了五个动画示例，每个示例都提供了源代码的链接。
+这部分列举了五个动画示例，
+每个示例都提供了源代码的链接。
 
 ### Rendering animations
 

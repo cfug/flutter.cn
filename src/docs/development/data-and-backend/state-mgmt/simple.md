@@ -3,6 +3,8 @@ title: Simple app state management
 title: 简单的应用状态管理
 description: A simple form of state management.
 description: 一个简单形式的状态管理。
+tags: Flutter状态管理
+keywords: provider状态管理
 prev:
   title: Ephemeral versus app state
   title: 局部状态和全局应用状态

@@ -3,6 +3,8 @@ title: Read and write files
 title: 文件读写
 description: How to read from and write to files on disk.
 description: 如何读写硬盘上的文件。
+tags: cookbook, 实用教程, 持久化
+keywords: 文件读写,临时文件夹,Documents目录
 prev:
   title: Persist data with SQLite
   title: 用 SQLite 做数据持久化
@@ -23,8 +25,8 @@ or download data from the internet and save it for later offline use.
 To save files to disk, combine the [`path_provider`][]
 plugin with the [`dart:io`][] library.
 
-为了将文件保存到磁盘，你需要结合使用 [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html) 
-库中的 [`path_provider`]({{site.pub-pkg}}/path_provider) 这个 package。
+为了将文件保存到磁盘，你需要结合使用
+[`dart:io`][] 库中的 [`path_provider`][] 这个 package。
 
 ## Directions
 
@@ -114,8 +116,7 @@ file's full location. You can use the [`File`][]
 class from the [`dart:io`][] library to achieve this.
 
 确定文件的存储位置后，需要创建对文件完整位置的引用。
-为此，你可以使用 [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
-库的 [`File`]({{site.api}}/flutter/dart-io/File-class.html) 类来实现。
+为此，你可以使用 [`dart:io`][] 库的 [`File`][] 类来实现。
 
 <!-- skip -->
 ```dart
@@ -136,7 +137,8 @@ The counter is an integer, but is written to the
 file as a string using the `'$counter'` syntax.
 
 现在你已经有了可以使用的 `File`，接下来使用这个文件来读写数据。
-首先，将一些数据写入该文件。由于使用了计数器，因此只需将整数存储为字符串格式，
+首先，将一些数据写入该文件。由于使用了计数器，
+因此只需将整数存储为字符串格式，
 使用 `'$counter'` 即可调用。
 
 <!-- skip -->
@@ -194,7 +196,8 @@ so you interact with the test environment's file system.
 To mock the method call, provide a `setupAll()` function in the test file.
 This function runs before the tests are executed.
 
-要模拟方法调用，请在测试文件中提供 `setupAll` 函数。这样会先运行这个函数，然后再执行测试。
+要模拟方法调用，请在测试文件中提供 `setupAll` 函数。
+这样会先运行这个函数，然后再执行测试。
 
 <!-- skip -->
 ```dart

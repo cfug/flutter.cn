@@ -3,6 +3,8 @@ title: Display images from the internet
 title: 显示网络上的远程图片
 description: How to display images from the internet.
 description: 如何显示网络上的图片。
+tags: cookbook, 实用教程, 使用图片
+keywords: 网络图片,使用gif
 prev:
   title: Implement swipe to dismiss
   title: 实现「滑动清除」效果

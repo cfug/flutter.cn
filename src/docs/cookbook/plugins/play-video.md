@@ -3,6 +3,8 @@ title: Play and pause a video
 title: 视频的播放和暂停
 description: How to use the video_player plugin.
 description: 如何使用 video_player 插件。
+tags: cookbook, 实用教程, 原生插件
+keywords: Flutter播放视频
 prev:
   title: Store key-value data on disk
   title: 存储键值对数据
@@ -20,18 +22,15 @@ You can use the `video_player` plugin to play videos
 stored on the file system, as an asset, or from the internet.
 
 在任何应用开发中，视频播放都是一项常见任务，Flutter 应用也不例外。
-为了支持视频播放，Flutter 团队提供了
-[`video_player`]({{site.pub-pkg}}/video_player) 插件。
+为了支持视频播放，Flutter 团队提供了 [`video_player`][] 插件。
 你可以使用 `video_player` 插件播放存储在本地文件系统中的视频或者网络视频。
 
 On iOS, the `video_player` plugin makes use of
 [`AVPlayer`][] to handle playback. On Android,
 it uses [`ExoPlayer`][].
 
-在 iOS 上，`video_player` 使用
-[`AVPlayer`](https://developer.apple.com/documentation/avfoundation/avplayer) 
-进行播放控制。
-在 Android 上，使用的是 [`ExoPlayer`](https://google.github.io/ExoPlayer/)。
+在 iOS 上，`video_player` 使用 [`AVPlayer`][] 进行播放控制。
+在 Android 上，使用的是 [`ExoPlayer`][]。
 
 This recipe demonstrates how to use the `video_player` package to stream a
 video from the internet with basic play and pause controls using
@@ -160,7 +159,8 @@ Before you can play videos, you must also `initialize` the controller.
 This establishes the connection to the video and prepare the
 controller for playback.
 
-在播放视频前，需要对播放控制器进行初始化。初始化过程主要是与视频源建立连接和播放控制的准备。
+在播放视频前，需要对播放控制器进行初始化。
+初始化过程主要是与视频源建立连接和播放控制的准备。
 
 To create and initialize the `VideoPlayerController` do the following:
 
@@ -240,7 +240,7 @@ By default, the `VideoPlayer` widget takes up as much space as possible.
 This often isn't ideal for videos because they are meant
 to be displayed in a specific aspect ratio, such as 16x9 or 4x3.
 
-现在到了展示播放器的时候。`video_player` 插件提供了 [`VideoPlayer`][]组件
+现在到了展示播放器的时候。`video_player` 插件提供了 [`VideoPlayer`][] 组件
 来展示已经被 `VideoPlayerController` 初始化完成的视频。
 默认情况下，`VideoPlayer` 组件会尽可能撑满整个空间。
 但是这通常不会太理想，因为很多时候视频需要在特定的宽高比下展示，
@@ -250,8 +250,7 @@ Therefore, wrap the `VideoPlayer` widget in an [`AspectRatio`][]
 widget to ensure that the video has the correct proportions.
 
 因此，你可以把 `VideoPlayer` 组件嵌进一个
-[`AspectRatio`]({{site.api}}/flutter/widgets/AspectRatio-class.html) 
-组件中，保证视频播放保持正确的比例。
+[`AspectRatio`][] 组件中，保证视频播放保持正确的比例。
 
 Furthermore, you must display the `VideoPlayer` widget after the
 `_initializeVideoPlayerFuture()` completes. Use `FutureBuilder` to

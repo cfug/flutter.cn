@@ -4,6 +4,8 @@ title: Dart 速查表 codelab
 description: Interactively learn (or relearn) some of Dart's unique features.
 description: 用交互的形式学习（或回顾）Dart 的独特之处。
 toc: false
+tags: 教程, 代码实验室
+keywords: Dart,Dart语法,Dart特性速查,Dart代码示例
 ---
 
 <style>

@@ -5,6 +5,8 @@ short-title: VS Code
 short-title: VS Code
 description: How to develop Flutter apps in Visual Studio Code.
 description: 如何在 VS Code 里开发 Flutter 应用。
+tags: SDK,Flutter SDK,开发工具
+keywords: VS Code,IDE,配置,安装
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
@@ -29,7 +31,7 @@ install the Dart and Flutter extensions
 
 ### Updating the extension {#updating}
 
-### 更新扩展程序 {#updating}
+### 更新扩展程序
 
 Updates to the extensions are shipped on a regular basis.
 By default, VS Code automatically updates extensions when

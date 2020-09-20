@@ -3,6 +3,8 @@ title: Codelabs
 title: Codelabs
 description: "Codelabs help you quickly get started programming Flutter."
 description: "Codelabs 是一种引导式的动手编码教程体验，帮助你更好的掌握 Flutter 编程技巧"
+tags: 教程, 代码实验室
+keywords: Flutter教程合辑,手把手教程,Flutter起步教程
 ---
 
 The Flutter codelabs provide a guided,

@@ -3,6 +3,8 @@ title: Animate a widget using a physics simulation
 title: Widget 的物理模拟动画效果
 description: How to implement a physics animation.
 description: 如何实现物理动画。
+tags: cookbook, 实用教程, 动画效果
+keywords: 物理动画效果,重力效果,交互
 prev:
   title: Animate a page route transition
   title: 为页面切换加入动画效果

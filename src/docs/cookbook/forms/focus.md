@@ -3,6 +3,8 @@ title: Focus and text fields
 title: 焦点和文本框
 description: How focus works with text fields.
 description: 文本框的聚焦是如何工作的。
+tags: cookbook, 实用教程, 表格交互
+keywords: Flutter输入框
 prev:
   title: Retrieve the value of a text field
   title: 获取文本框的输入值

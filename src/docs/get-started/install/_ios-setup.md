@@ -83,8 +83,13 @@ follow these steps:
 
  3. Depending on your development machine's screen size,
     simulated high-screen-density iOS devices
-    might overflow your screen. Set the device scale under the
-    **Window > Scale** menu in the simulator.
+    might overflow your screen. Grab the corner of the 
+    simulator and drag it to change the scale. You can also 
+    use the **Window > Physical Size** or **Window > Pixel Accurate**
+    options if your computer's resolution is high enough.
+    * If you are using a version of XCode older 
+    than 9.1, you should instead set the device scale
+    in the **Window > Scale** menu.
 
     根据你当前开发机器的屏幕尺寸，
     模拟器模拟出来的高密度屏幕的设备可能会占满你的屏幕，

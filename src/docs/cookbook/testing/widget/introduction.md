@@ -164,6 +164,7 @@ widget test and creates a `WidgetTester` to work with.
 `testWidgets` 函数可以定义一个 widget 测试并创建一个可以使用的 `WidgetTester`。
 
 This test verifies that `MyWidget` displays a given title and message.
+It is titled accordingly, and it will be populated in the next section.
 
 我们的测试会验证 `MyWidget` 是否显示给定的标题和信息。
 

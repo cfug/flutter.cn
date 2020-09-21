@@ -21,7 +21,7 @@
   {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
   {% assign desc = page.description | default: page.content | strip_html | replace:'"','' | strip_newlines | truncatewords: 50 | split: '{%' | first %}
   <meta name="description" content="{{desc}}">
-  <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
+  <meta name="keywords" content="{{page.tags}}{% if page.tags %},{% endif %}{{page.keywords}}">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@flutterdev">

@@ -2,6 +2,8 @@
 title: Reduce shader compilation jank on mobile
 short-title: Shader jank
 description: What is shader jank and how to minimize it.
+tags: Flutter性能
+keywords: 卡顿
 ---
 
 If the animations on your mobile app appear to be janky,

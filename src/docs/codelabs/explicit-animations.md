@@ -1,7 +1,9 @@
 ---
 title: "Explicit animations"
-description: "A codelab that uses interactive examples and exercises to teach  how to use explicit animations in Flutter."
+description: "A codelab that uses interactive examples and exercises to teach how to use explicit animations in Flutter."
 toc: true
+tags: 教程, 代码实验室
+keywords: 
 diff2html: true
 js:
   - defer: true

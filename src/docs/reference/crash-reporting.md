@@ -3,6 +3,8 @@ title: Flutter crash reporting
 title: Flutter 崩溃报告
 description: How Google uses crash reporting, what is collected, and how to opt out.
 description: 了解 Google 是如何使用崩溃报告的，它收集了什么，又输出了什么。
+tags: Flutter参考资料
+keywords: 崩溃提交,禁用统计
 ---
 
 If you have not opted-out of Flutter's analytics and crash reporting,

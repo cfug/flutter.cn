@@ -4,6 +4,8 @@ title: 单元测试介绍
 description: How to write unit tests.
 description: 如何编写单元测试。
 short-title: Introduction
+tags: cookbook, 实用教程, 测试
+keywords: 单元测试,test package,flutter_test,IDE
 prev:
   title: Perform scrolling
   title: 列表滚动
@@ -241,7 +243,8 @@ This is often the best option while writing tests because it provides the
 fastest feedback loop as well as the ability to set breakpoints.
 
 IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
-用这种方式执行测试是最好的，因为它可以提供最快的反馈闭环，而且还支持断点调试。
+用这种方式执行测试是最好的，因为它可以提供最快的反馈闭环，
+而且还支持断点调试。
 
 
   * **IntelliJ**

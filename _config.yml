@@ -1,5 +1,5 @@
 # Site settings
-title: Flutter 中文文档 - Flutter 社区中文资源
+title: Flutter 中文文档 - Flutter 中文资源
 # description: TBC
 email: flutter-dev@googlegroups.com
 url: https://flutter.cn
@@ -13,7 +13,7 @@ repo:
 branch: master
 
 dart:
-  api: https://api.dart.dev
+  api: https://api.dart.cn
   sdk:
     channel: stable
 sdk: # Flutter SDK

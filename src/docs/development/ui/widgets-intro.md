@@ -3,6 +3,8 @@ title: Introduction to widgets
 title: Widgets 介绍
 description: Learn about Flutter's widgets.
 description: 了解 Flutter widget 相关的内容。
+tags: 用户界面,Flutter UI,布局
+keywords: Flutter widget,矩形,边框
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
@@ -487,7 +489,8 @@ this idea. `StatefulWidgets` are special widgets that know how to generate
 `State` objects, which are then used to hold state.
 Consider this basic example, using the [`RaisedButton`][] mentioned earlier:
 
-为了构建更复杂的体验，例如，以更有趣的方式对用户输入做出反应&mdash;应用通常带有一些状态。
+为了构建更复杂的体验，例如，
+以更有趣的方式对用户输入做出反应&mdash;应用通常带有一些状态。
 Flutter 使用 StatefulWidgets 来实现这一想法。
 StatefulWidgets 是一种特殊的 widget，
 它会生成 State 对象，用于保存状态。看看这个基本的例子，

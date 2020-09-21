@@ -3,6 +3,8 @@ title: "Basic Flutter layout concepts"
 title: "Flutter 布局基础教程"
 description: "A codelab that teaches basic Flutter layout concepts through DartPad examples and exercises."
 description: "使用 DartPad2 工具教你如何构建 Flutter 布局"
+tags: 教程, 代码实验室
+keywords: Flutter布局教程
 toc: true
 ---
 Welcome to the Flutter layout codelab,

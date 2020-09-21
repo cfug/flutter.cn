@@ -4,6 +4,8 @@ title: Widget 测试介绍
 description: Learn more about widget testing in Flutter.
 description: 了解更多 Flutter 的 widget 测试。
 short-title: Introduction
+tags: cookbook, 实用教程, 测试
+keywords: widget测试,Matcher使用
 prev:
   title: Mock dependencies using Mockito
   title: 使用 Mockito 模拟依赖关系
@@ -223,14 +225,14 @@ Use one of the following methods to ask Flutter to rebuild the widget.
 再一次建立我们的 widget。
 
 [`tester.pump(Duration duration)`][]
-: Schedules a frame and triggers a rebuild of the widget.
+<br> Schedules a frame and triggers a rebuild of the widget.
   If a `Duration` is specified, it advances the clock by
   that amount and schedules a frame. It does not schedule
   multiple frames even if the duration is longer than a
   single frame.
 
 [`tester.pump(Duration duration)`][]
-: 调度一帧以触发 widget 的重建。
+<br> 调度一帧以触发 widget 的重建。
   若指定了 `Duration`，那么则会让 clock 经过该时长之后调度一帧。
   它并不会因为持续时间大于一帧的时间而调度多帧。
 
@@ -246,12 +248,13 @@ Use one of the following methods to ask Flutter to rebuild the widget.
 {{site.alert.end}}
 
 [`tester.pumpAndSettle()`][]
-: Repeatedly calls `pump()` with the given duration until
+<br> Repeatedly calls `pump()` with the given duration until
   there are no longer any frames scheduled.
   This essentially waits for all animations to complete.
   
 [`tester.pumpAndSettle()`][]
-: 在给定期间内不断重复调用 pump 直到完成所有绘制帧。一般需要等到所有动画全部完成。
+<br> 在给定期间内不断重复调用 pump 直到完成所有绘制帧。
+一般需要等到所有动画全部完成。
 
 These methods provide fine-grained control over the build lifecycle,
 which is particularly useful while testing.
@@ -315,7 +318,7 @@ value meets expectations.
 Ensure that the widgets appear on screen exactly one time.
 For this purpose, use the [`findsOneWidget`][] `Matcher`.
 
-在这个示例中，我们要确保 Widget 只在屏幕中出现一次。
+在这个示例中，我们要确保 widget 只在屏幕中出现一次。
 因此，可以使用 [`findsOneWidget`][] `Matcher`。
 
 <!-- skip -->

@@ -4,6 +4,8 @@ title: 打包并发布 Android 应用
 short-title: Android
 description: How to prepare for and release an Android app to the Play store.
 description: 如何打包把 App 发布到 Play 商店。
+tags: 发布, Android
+keywords: 上传Google商店,发布Flutter应用
 ---
 
 During a typical development cycle,

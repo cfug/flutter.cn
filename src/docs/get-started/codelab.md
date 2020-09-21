@@ -5,6 +5,8 @@ description: How to write a web-based app in Flutter.
 description: 如何使用 Flutter 编写一个网页应用。
 short-title: Write your first app
 short-title: 编写第一个 Flutter 应用
+tags: Flutter安装,Flutter起步教程
+keywords: Flutter 第一个应用,Flutter Hello World,codelab
 prev:
   title: Test drive
   title: 开发体验初探
@@ -55,7 +57,7 @@ You can find [part 2][] on [Google Developers Codelabs][]
 (as well as a copy of this codelab, [part 1][]).
 
 完整的教程分为两部分，本页面是第一部分的内容，
-你可以在这里查看 [第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0) 的内容。
+你可以在这里查看 [第二部分][part 2] 的内容。
 (Codelabs 里的第一部分内容与本页内容相同)。
 
 ## What you'll build in part 1
@@ -114,7 +116,7 @@ The animated GIF shows how the app works at the completion of part 1.
   to a new screen (called a _route_ in Flutter).
   
   在本 codelab 的 
-  [第二部分](https://codelabs.flutter-io.cn/codelabs/first-flutter-app-pt2-cn/index.html#0)，
+  [第二部分][part 2]，
   你还将学到添加交互，
   修改应用的主题，
   以及为应用添加一个新的页面（在 Flutter，我们称之为 route）。
@@ -133,8 +135,8 @@ The animated GIF shows how the app works at the completion of part 1.
   but you can use your preferred editor.
   
   你需要安装两部分内容来完成本次实验：
-  [Flutter SDK 安装](/docs/get-started/install) 和 
-  [编辑器 (editor)](/docs/get-started/editor) 设置。
+  [Flutter SDK 安装][Flutter SDK] 和 
+  [编辑器 (editor)][an editor] 设置。
   本 codelab 里，我们以 macOS 环境下的 Android Studio 以做演示，
   但你可以选用更顺手的配置。
 
@@ -145,15 +147,15 @@ The animated GIF shows how the app works at the completion of part 1.
   * A physical device ([Android][] or [iOS][]) connected to your
     computer and set to developer mode
     
-    开启开发者模式 (developer mode) 的 [Android](install/macos#set-up-your-android-device) 和 / 或 [iOS](install/macos#deploy-to-ios-devices) 真机；
+    开启开发者模式 (developer mode) 的 [Android][] 和 / 或 [iOS][] 真机；
 
   * The [iOS simulator][] (requires installing Xcode tools)
     
-    [iOS 模拟器](install/macos#set-up-the-ios-simulator) (需要安装 Xcode 工具)；
+    [iOS 模拟器][iOS simulator] (需要安装 Xcode 工具)；
   
   * The [Android emulator][] (requires setup in Android Studio)
     
-    [Android 模拟器](install/macos#set-up-the-android-emulator) (需要安装设置 Android Studio)。
+    [Android 模拟器][Android emulator] (需要安装设置 Android Studio)。
  
   * A browser (Chrome is required for debugging)
    

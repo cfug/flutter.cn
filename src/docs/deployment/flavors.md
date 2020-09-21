@@ -5,6 +5,8 @@ short-title: Flavors
 short-title: Flavors
 description: How to create build flavors specific to different release types or development environments.
 description: 使用 flavors 配置多渠道构建。
+tags: 发布应用,跨平台,双端
+keywords: 配置flavor
 ---
 
 Do you need to set up product flavors for different development
@@ -27,8 +29,6 @@ The following packages are listed alphabetically:
 
 * [`flutter_flavor`][]
 * [`flutter_flavorizr`][]
-
-
 
 [Creating flavors of a Flutter app]: https://cogitas.net/creating-flavors-of-a-flutter-app/
 [Flavoring Flutter]: {{site.medium}}/@salvatoregiordanoo/flavoring-flutter-392aaa875f36

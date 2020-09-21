@@ -1,6 +1,8 @@
 ---
 title: Disclaimer
 title: Flutter 社区中文资源网站特别说明 (免责条款)
+tags: 站点资源
+keywords: 免责声明, Flutter.cn免责说明
 ---
 
 *英文在下面 (ENGLISH BELOW)*

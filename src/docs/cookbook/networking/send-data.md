@@ -3,6 +3,8 @@ title: Send data to the internet
 title: 发送网络数据
 description: How to use the http package to send data over the internet.
 description: 如何通过 http 包发送网络数据。
+tags: cookbook, 实用教程, 网络请求
+keywords: 网络数据
 prev:
   title: Fetch data from the internet
   title: 获取网络数据

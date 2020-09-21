@@ -1,9 +1,11 @@
 ---
 title: Understanding constraints
-title: 深入理解布局约束
+title: 深入理解 Flutter 布局约束
 description: Flutter's model for widget constraints, sizing, positioning, and how they interact.
 description: 理解 Flutter widget 约束模型，了解它是如何确定自身的大小，位置以及影响彼此的。
 toc: false
+tags: 用户界面,Flutter UI,布局
+keywords: 布局约束,必读,布局示例
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

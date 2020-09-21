@@ -3,6 +3,8 @@ title: Handle scrolling
 title: 列表滚动
 description: How to handle scrolling in an integration test.
 description: 如何在集成测试中控制滚动。
+tags: cookbook, 实用教程, 测试
+keywords: 列表滚动,集成测试
 prev:
   title: An introduction to integration testing
   title: 单元测试介绍
@@ -24,14 +26,17 @@ you need a way to scroll through lists to search for particular items.
 To scroll through lists via integration tests, use the methods provided by the [`FlutterDriver`][] class,
 which is included in the [`flutter_driver`][] package:
 
-为了在集成测试中检验滚动列表，我们可以使用 [`flutter_driver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html) 这个 package 中的 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html) 类：
+为了在集成测试中检验滚动列表，
+我们可以使用 [`flutter_driver`][] 这个 package 中的 [`FlutterDriver`][] 类：
 
 In this recipe, learn how to scroll through a list of items to
 verify a specific widget is being displayed, and discuss the pros on cons of
 different approaches. If you're just getting started with integration testing,
 read through the [Introduction to integration testing][] recipe.
 
-在本章节，我们将学习如何在滚动列表中验证是否正在显示特定的 Widget，并讨论不同方法的优缺点。如果您刚刚开始进行集成测试，请阅读 [集成测试介绍](/docs/cookbook/testing/integration) 获取更多信息。
+在本章节，我们将学习如何在滚动列表中验证是否正在显示特定的 widget，
+并讨论不同方法的优缺点。如果您刚刚开始进行集成测试，
+请阅读 [集成测试介绍][Introduction to integration testing] 获取更多信息。
 
 This recipe uses the following steps:
 
@@ -63,13 +68,16 @@ To keep this recipe focused on testing, use the app created in the
 If you're unsure of how to work with long lists,
 see that recipe for an introduction.
 
-在本章节，我们创建一个带有长列表的 app。为了能够在本章节中专注于测试，我们将使用在 [使用长列表](/docs/cookbook/lists/long-lists) 章节中创建的 app。如果你不确定如何处理内容列表，请自行查看相关章节的介绍。
+在本章节，我们创建一个带有长列表的 app。为了能够在本章节中专注于测试，
+我们将使用在 [使用长列表][Work with long lists] 章节中创建的 app。
+如果你不确定如何处理内容列表，请自行查看相关章节的介绍。
 
 As you did in the [Introduction to integration testing][] recipe,
 add keys to the widgets you want to interact with
 inside the integration tests.
 
-正如我们在 [集成测试简介](/docs/cookbook/testing/integration) 章节中做的那样，我们还将向集成测试内我们需要互动的 Widget 添加 key。
+正如我们在 [集成测试简介][Introduction to integration testing] 章节中做的那样，
+我们还将向集成测试内我们需要互动的 widget 添加 key。
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -126,7 +134,8 @@ class MyApp extends StatelessWidget {
 Next, create an instrumented version of the app. This code lives
 in a file called `test_driver/app.dart`.
 
-接下来，我们需要创建 app 的测试版本，这段代码位于 `test_driver/app.dart` 文件中。
+接下来，我们需要创建 app 的测试版本，
+这段代码位于 `test_driver/app.dart` 文件中。
 
 <!-- skip -->
 ```dart
@@ -167,7 +176,7 @@ scrolling through lists:
   Some widgets, such as [`ListView.builder`][],
   render items on-demand.
 
-  方法找到已经被渲染的特定的 Widget，
+  方法找到已经被渲染的特定的 widget，
   并将它完全滚动到视图中，某些 widget 
   比如 [`ListView.builder`][]，只有在将要显示的时候才会去渲染列表项。
   
@@ -179,13 +188,15 @@ scrolling through lists:
 While all three methods work for specific use-cases,
 `scrollUntilVisible` is oftentimes the most robust option. Why?
 
-当我们遇到三种方法同时使用的情况时，`scrollUntilVisible` 方法通常来说是最优的方式，为什么呢？
+当我们遇到三种方法同时使用的情况时，`scrollUntilVisible`
+方法通常来说是最优的方式，为什么呢？
 
   1. If using the `scroll()` method alone, you might incorrectly assume
      the height of each item in the list. This could lead to scrolling
      too much or too little.
   
-     如果只使用 `scroll()` 方法，我们可能错误地假定列表中每一项的高度，这可能导致滚动的太多或太少。
+     如果只使用 `scroll()` 方法，我们可能错误地假定列表中每一项的高度，
+     这可能导致滚动的太多或太少。
   
   2. If using the `scrollIntoView()` method, you might assume that the
      widget has been instantiated and rendered. To verify that an app
@@ -194,20 +205,27 @@ While all three methods work for specific use-cases,
      renders items on-demand, whether a particular widget has been
      rendered can depend on the size of the screen.
   
-     如果使用 `scrollIntoView()` 方法，我们假定 Widget 已被实例化和渲染。为了验证 app 在不同的设备了能够很好的运行，我们可以对具有不同屏幕大小的设备运行集成测试。因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，所以是否渲染特定的 Widget 取决于屏幕的大小。
+     如果使用 `scrollIntoView()` 方法，我们假定 widget 已被实例化和渲染。
+     为了验证 app 在不同的设备了能够很好的运行，
+     我们可以对具有不同屏幕大小的设备运行集成测试。
+     因为 `ListView.builder` 是只有在需要的时候才会渲染列表项，
+     所以是否渲染特定的 widget 取决于屏幕的大小。
 
 Therefore, rather than assuming that you know the height of all the items
 in a list, or that a particular widget is rendered on all devices,
 use the `scrollUntilVisible()` method to repeatedly scroll through
 a list of items until you find what you're looking for.
 
-所以，我们既不需要知道所有列表项的高度，也不需要知道一个特定的 Widget 在不同的屏幕大小的设备上是否被渲染，我们只需要调用 `scrollUntilVisible()` 方法反复滚动列表直到找到要查找的列表项。
+所以，我们既不需要知道所有列表项的高度，
+也不需要知道一个特定的 widget 在不同的屏幕大小的设备上是否被渲染，
+我们只需要调用 `scrollUntilVisible()` 方法反复滚动列表直到找到要查找的列表项。
 
 The following code shows how to use the `scrollUntilVisible()` method
 to look through the list for a particular item. This code lives in a
 file called `test_driver/app_test.dart`.
 
-让我们看一下如何通过 `scrollUntilVisible()` 方法去寻找列表中特定的一项，这段代码位于 `test_driver/app_test.dart` 文件中。
+让我们看一下如何通过 `scrollUntilVisible()` 方法去寻找列表中特定的一项，
+这段代码位于 `test_driver/app_test.dart` 文件中。
 
 ```dart
 // Imports the Flutter Driver API.

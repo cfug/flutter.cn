@@ -3,6 +3,8 @@ title: Navigate to a new screen and back
 title: 导航到一个新页面和返回
 description: How to navigate between routes.
 description: 如何在路由之间进行导航。
+tags: cookbook, 实用教程, 路由
+keywords: 路由之间的切换
 prev:
   title: Animate a widget across screens
   title: 跨页面切换的动效 Widget (Hero animations)
@@ -23,7 +25,8 @@ When the user taps the image of a product, a new screen displays
 details about the product.
 
 我们通常会用“屏”来表示应用的不同页面（界面）。
-比如，某个应用有一“屏”展示商品列表，当用户点击某个商品的图片，会跳到新的一“屏”展示商品的详细信息。
+比如，某个应用有一“屏”展示商品列表，当用户点击某个商品的图片，
+会跳到新的一“屏”展示商品的详细信息。
 
 {{site.alert.secondary}}
 
@@ -41,11 +44,11 @@ In Flutter, a route is just a widget.
 
 在 Android 开发中，Activity 相当于“路由”，
 在 iOS 开发中，ViewController 相当于“路由”。
-在 Flutter 中，“路由”也是一个 Widget。
+在 Flutter 中，“路由”也是一个 widget。
 
 This recipe uses the [`Navigator`][] to navigate to a new route.
 
-怎么样从一个“路由”跳转到新的“路由“呢？[`Navigator`][] 类。
+怎么样从一个“路由”跳转到新的“路由”呢？[`Navigator`][] 类。
 
 这个教程里我们使用 [`Navigator`][] 来跳转到一个新的“路由”：
 
@@ -80,7 +83,8 @@ first route navigates to the second route. Tapping the button on the
 second route returns to the first route.
 
 首先，我们来创建两个路由。这是个最简单的例子，每个路由只包含一个按钮。
-点击第一个路由上的按钮会跳转到第二个路由，点击第二个路由上的按钮，会回退到第一个路由。
+点击第一个路由上的按钮会跳转到第二个路由，
+点击第二个路由上的按钮，会回退到第一个路由。
 
 First, set up the visual structure:
 

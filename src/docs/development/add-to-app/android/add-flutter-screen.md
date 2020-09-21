@@ -5,6 +5,8 @@ short-title: Add a Flutter screen
 short-title: 添加一个 Flutter 页面
 description: Learn how to add a single Flutter screen to your existing Android app.
 description: 了解如何向你现有的 Android 应用添加单个 Flutter 页面。
+tags: Flutter混合工程,add2app
+keywords: Android,Flutter 页面
 ---
 
 This guide describes how to add a single Flutter screen to an

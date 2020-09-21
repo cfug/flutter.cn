@@ -3,6 +3,8 @@ title: Improving rendering performance
 title: 提高渲染性能
 description: How to measure and evaluate your app's rendering performance.
 description: 如何测量以及评估你的应用渲染性能。
+tags: Flutter性能
+keywords: 性能测量,建议,常见问题,性能调试
 ---
 
 Rendering animations in your app is one of the most cited

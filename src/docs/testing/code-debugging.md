@@ -3,6 +3,8 @@ title: Debugging Flutter apps programmatically
 title: 添加输出代码的方式调试 Flutter 应用
 description: How to enable various debugging tools from your code and at the command line.
 description: 如何通过在代码中加入 log 输出。
+tags: Flutter测试
+keywords: Flutter调试,Flutter加log,Flutter输出
 ---
 
 This doc describes debugging features that you can enable in code.

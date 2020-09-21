@@ -3,6 +3,8 @@ title: "Implicit animations"
 title: 渐变动画
 description: "A codelab that uses interactive examples and exercises to teach  how to use Flutter's implicitly animated widgets."
 description: "通过交互式示例和练习学习如何在 Flutter 中使用渐变动画的 widgets。"
+tags: 教程, 代码实验室
+keywords: 渐变动画,UI,用户界面
 toc: true
 diff2html: true
 js:

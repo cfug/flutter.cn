@@ -3,6 +3,8 @@ title: Using the Performance view
 title: 使用性能视图 (Performance view)
 description: Learn how to use the DevTools performance view.
 description: 学习如何使用开发者工具的性能视图。
+tags: Flutter开发工具,DevTools
+keywords: 开发者工具,性能视图,Dart,性能优化
 ---
 
 {{site.alert.note}}
@@ -13,7 +15,7 @@ description: 学习如何使用开发者工具的性能视图。
 
   性能视图适用于移动应用和 Dart 命令行工具。
   对于 web 应用程序，请使用 Chrome 自带的开发者工具进行
-  [性能分析](https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance/)
+  [性能分析][analyze performance]。
 
 {{site.alert.end}}
 
@@ -198,4 +200,4 @@ In this table, a method can be expanded to show its _callers_.
 ![Screenshot of a bottom up table]({% asset tools/devtools/cpu_profiler_bottom_up.png @path %}){:width="100%"}
 
 
-[analyze performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/
+[analyze performance]: https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance/

@@ -5,6 +5,8 @@ short-title: SnackBars
 short-title: SnackBars
 description: How to implement a SnackBar to display messages.
 description: 学习使用 SnackBar 展示消息。
+tags: cookbook, 实用教程, 设计
+keywords: Material Design 效果, SnackBar, 滑动删除
 prev:
   title: Add a drawer to a screen
   title: 在屏幕上添加一个 Drawer

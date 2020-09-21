@@ -3,6 +3,8 @@ title: Internationalizing Flutter apps
 title: Flutter 应用里的国际化
 short-title: i18n
 description: How to internationalize your Flutter app.
+tags: Flutter开发
+keywords: 国际化
 ---
 
 {{site.alert.secondary}}
@@ -60,7 +62,7 @@ can also be internationalized using the same classes and logic.
   If Dart's intl package is new to you,
   see [Using the Dart intl tools][].
   
-  如果你想通过阅读已经国际化的 Flutter app 代码来开始的话，
+  如果你想通过阅读已经国际化的 Flutter app 代码来开始的���，
   这里有两个小例子。第一个例子是一个尽可能简单的实现。
   第二个例子使用了 [`intl`][] package 提供的 API 和工具。
   如果你还不熟悉 Dart 的 intl 包，请查看
@@ -93,7 +95,7 @@ then you have to add the package
 默认情况下，Flutter 只提供美式英语的本地化。
 如果想要添加其他语言，你的应用必须指定额外的 MaterialApp
 属性并且添加一个单独的 package，叫做 `flutter_localizations`。
-截至到 2020 年 2 月份，这个 package 已经支持大约 77 种语言。
+截至到 2020 年 2 月份，这��� package 已经支持大约 77 种语言。
 
 To use flutter_localizations,
 add the package as a dependency to your `pubspec.yaml` file:
@@ -139,7 +141,7 @@ MaterialApp(
 Apps based on `WidgetsApp` are similar except that the
 `GlobalMaterialLocalizations.delegate` isn't needed.
 
-基于 WidgetsApp 构建的 app 在添加语言环境时，
+基于 WidgetsApp 构建的 app 在添加语言环境���，
 除了 `GlobalMaterialLocalizations.delegate` 不需要之外，
 其他的操作是类似的。
 
@@ -170,7 +172,7 @@ structured, can be found below.
 
 想知道更多关于这些 app 属性，
 它们依赖的类型以及那些国际化的 Flutter app 通常是如何组织的，
-可以继续阅读下面内容。
+可以��续阅读下面内容。
 
 <a name="advanced-locale"></a>
 ## Advanced locale definition
@@ -258,7 +260,7 @@ displayed "Hello World" would be rebuilt with "Bonjour le monde".
 [`Locale`][] 类用来识别用户的语言。
 移动设备支持为所有的应用设置语言环境，经常是通过系统设置菜单来进行操作。
 设置完之后，国际化的 app 就会展示成对应特定语言环境的值。
-例如，如果用户把设备的语言环境从英语切换到法语，
+例如，如果用户把设备的语��环境从英语切换到法语，
 显示 "Hello World" 的文本 widget 会使用 "Bonjour le monde" 进行重建。
 
 The [`Localizations`][widgets-global] widget defines the locale
@@ -695,7 +697,7 @@ Here's the source code for the complete [`add_language`][] example,
 minus the actual Belarusian translations.
 
 这是支持添加一种新语言的[一个完整例子的源码][`add_language`]，
-相对实际上要翻译的白俄罗斯语数量，我们只翻译了部分。
+相对实际上要翻译的白俄罗斯语数量，我们只翻译��部分。
 
 The locale-specific `GlobalMaterialLocalizations` subclass
 is called `BeMaterialLocalizations`,

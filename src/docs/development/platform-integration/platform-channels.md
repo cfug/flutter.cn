@@ -5,6 +5,8 @@ short-title: Platform-specific code
 short-title: 平台相关代码
 description: Learn how to write custom platform-specific code in your app.
 description: 学习如何撰写原生实现的代码。
+tags: 平台集成
+keywords: Android,iOS,平台代码
 ---
 
 This guide describes how to write custom platform-specific code. Some

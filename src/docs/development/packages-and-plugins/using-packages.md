@@ -3,6 +3,8 @@ title: Using packages
 title: 在 Flutter 里使用 Packages
 description: How to use packages in your Flutter app.
 description: 如何在你的 Flutter 应用里使用 Packages。
+tags: Packages,插件
+keywords: 使用packages,Flutter第三方库
 ---
 
 Flutter supports using shared packages contributed by other developers

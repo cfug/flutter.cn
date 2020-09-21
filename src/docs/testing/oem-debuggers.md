@@ -5,6 +5,8 @@ short-title: debuggers
 short-title: 调试器
 description: How to connect an OEM debugger to your running Flutter app.
 description: 如何连接各开发平台的调试器调试 Flutter 应用。
+tags: Flutter调试器
+keywords: Flutter处理错误,平台的调试器,Flutter调试,Flutter构建模式
 ---
 
 If you are exclusively writing Flutter apps with Dart code and not using

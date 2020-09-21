@@ -3,6 +3,8 @@ title: Web support for Flutter
 title: Flutter 正式支持 Web 平台
 description: "Details of how Flutter supports the creation of web experiences."
 description: "有关 Flutter 如何支持创建 Web 体验的详细信息。"
+tags: 平台
+keywords: Flutter web, web跨端
 ---
 
 In addition to mobile apps, Flutter supports the generation of web content 
@@ -44,8 +46,10 @@ Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
 any web server.
 
-向 Flutter 添加 Web 支持涉及在标准浏览器 API 之上实现Flutter 的核心绘图层。
-通过结合使用DOM、Canvas 和 CSS，Web 支持旨在为现代浏览器提供便携、高质量和高性能的用户体验。
+向 Flutter 添加 Web 支持涉及在标准浏览器 API
+之上实现 Flutter 的核心绘图层。
+通过结合使用 DOM、Canvas 和 CSS，Web 支持旨在为现代浏览器提供
+便携、高质量和高性能的用户体验。
 我们在 Dart 中完全实现了这个核心绘图层，
 并使用 Dart 的优化过的 JavaScript 编译器将 Flutter 核心与框架，
 同你的应用程序一起编译成一个可以部署到任何 Web 服务器的简化源文件。
@@ -54,7 +58,8 @@ While traditional web approaches remain a great choice,
 we envision the web support available in Flutter being
 valuable in many scenarios. For example:
 
-虽然以传统方式开发 web 仍旧是一个不错的选择，但我们认为在 Flutter 中提供的 Web 支持在许多情况下都很有价值。
+虽然以传统方式开发 web 仍旧是一个不错的选择，
+但我们认为在 Flutter 中提供的 Web 支持在许多情况下都很有价值。
 例如：
 
 **A connected [Progressive Web Application][] built with Flutter**

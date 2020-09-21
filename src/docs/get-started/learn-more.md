@@ -3,6 +3,8 @@ title: Learn more
 title: 了解更多
 description: More resources to help you learn Flutter.
 description: 更多 Flutter 学习资料。
+tags: Flutter安装,Flutter起步教程
+keywords: Flutter安装,Flutter示例,线上课程,布局构建教程
 prev:
   title: Write your first Flutter app
   title: 编写第一个 Flutter 应用

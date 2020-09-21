@@ -5,6 +5,8 @@ short-title: Add a Flutter screen
 short-title: 添加 Flutter 页面
 description: Learn how to add a single Flutter screen to your existing iOS app.
 description: 了解如何在现有 iOS 应用中添加单个 Flutter 页面。
+tags: Flutter混合工程,add2app
+keywords: iOS,Flutter页面,FlutterEngine
 ---
 
 This guide describes how to add a single Flutter screen to an existing iOS app.

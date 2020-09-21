@@ -3,6 +3,8 @@ title: Take a picture using the camera
 title: 使用 Camera 插件实现拍照功能
 description: How to use a camera plugin on mobile.
 description: 如何在移动设备上使用 camera 插件。
+tags: cookbook, 实用教程, 原生插件
+keywords: Flutter使用相机,录像,相机预览
 prev:
   title: Play and pause a video
   title: 视频的播放和暂停
@@ -20,13 +22,15 @@ available cameras, display a preview coming from a specific camera,
 and take photos or videos.
 
 很多应用都需要使用到设备的相机模块拍摄图片和视频。
-因此，Flutter 提供了 [`camera`]({{site.pub-pkg}}/camera) 插件。
-`camera` 插件提供了一系列可用的相机，并使用特定的相机展示相机预览、拍照、录视频。
+因此，Flutter 提供了 [`camera`][] 插件。
+`camera` 插件提供了一系列可用的相机，
+并使用特定的相机展示相机预览、拍照、录视频。
 
 This recipe demonstrates how to use the `camera` plugin to display a preview, 
 take a photo, and display it using the following steps:
 
-这个章节将会讲解如何使用 `camera` 插件去展示相机预览、拍照并显示。
+这个章节将会讲解如何使用 `camera` 插件去
+展示相机预览、拍照并显示。
 
 ## Directions
 
@@ -81,8 +85,6 @@ To complete this recipe, you need to add three dependencies to your app:
 
 [`path`][]
 <br> 创建适配任何平台的路径
-
-    [`path`]({{site.pub-pkg}}/path) - 创建适配任何平台的路径
 
 ```yaml
 dependencies:
@@ -158,7 +160,8 @@ To achieve this, please:
   3. Add a variable to the `State` class to store the `Future`
      returned from `CameraController.initialize()`.
 
-     添加另外一个变量到 `State` 类中来存放 `CameraController.initialize()` 返回的 `Future`
+     添加另外一个变量到 `State` 类中来存放
+     `CameraController.initialize()` 返回的 `Future`
 
   4. Create and initialize the controller in the `initState()` method.
 
@@ -252,7 +255,7 @@ display a preview of the camera's feed.
 
 Use a [`FutureBuilder`][] for exactly this purpose.
 
-你可以使用 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) 完成这个任务。
+你可以使用 [`FutureBuilder`][] 完成这个任务。
 
 <!-- skip -->
 ```dart
@@ -283,8 +286,7 @@ create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
 
 你可以使用 `CameraController` 的
-[`takePicture`]({{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html) 
-方法拍照。在这个示例中，
+[`takePicture()`][] 方法拍照。在这个示例中，
 创建了一个浮动按钮 `FloatingActionButton`，
 用户点击这个按钮，就能通过 `CameraController` 来拍摄图片。
 

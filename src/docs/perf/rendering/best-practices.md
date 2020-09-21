@@ -5,6 +5,8 @@ short-title: Best practices
 short-title: 最佳实践
 description: How to ensure that your Flutter app is performant.
 description: 确保 Flutter 应用的性能。
+tags: Flutter性能
+keywords: 最佳实践
 ---
 
 Generally, Flutter applications are performant by default,

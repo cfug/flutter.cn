@@ -3,6 +3,8 @@ title: Testing Flutter apps
 title: 测试 Flutter 应用
 description: Learn more about the different types of testing and how to write them.
 description: 了解并编写不同类型的测试。
+tags: Flutter测试
+keywords: 单元测试,Widget 测试,组件测试,集成测试,代码覆盖率
 ---
 
 The more features your app has, the harder it is to test manually.

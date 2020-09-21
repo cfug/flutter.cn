@@ -3,6 +3,8 @@ title: Slivers
 title: 滑动效果 (Slivers)
 description: What are slivers in Flutter and how to use them.
 description: 什么是 Flutter 中的滑动效果，应该如何使用它。
+tags: 用户界面,Flutter UI
+keywords: 滚动效果
 ---
 
 A sliver is a portion of a scrollable area. You can use slivers to

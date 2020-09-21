@@ -4,6 +4,8 @@ title: 打包并发布 Web 应用
 description: How to prepare for and release a web app.
 description: 如何打包并发布到 Web 平台。
 short-title: Web
+tags: 发布, Web
+keywords: 发布Flutter应用为Web应用
 ---
 
 During a typical development cycle,

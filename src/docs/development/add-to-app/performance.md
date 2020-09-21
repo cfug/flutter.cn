@@ -3,6 +3,8 @@ title: Load sequence, performance, and memory
 title: 控制加载顺序，优化性能与内存
 description: What are the steps involved when showing a Flutter UI.
 description: 介绍在显示一个 Flutter 界面时有哪些步骤。
+tags: Flutter混合工程,add2app
+keywords: 性能优化
 ---
 
 This page describes the breakdown of the steps involved

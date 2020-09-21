@@ -3,6 +3,8 @@ title: Report errors to a service
 title: 把报错信息通过服务上传
 description: How to keep track of errors that users encounter.
 description: 如何持续收集报错信息。
+tags: cookbook, 实用教程
+keywords: Flutter收集错误信息
 prev:
   title: Work with long lists
   title: 长列表的处理

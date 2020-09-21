@@ -3,6 +3,8 @@ title: AndroidX Migration
 title: 迁移到 AndroidX
 description: How to migrate existing Flutter projects to AndroidX.
 description: 如何将现有的 Flutter 项目迁移到 AndroidX。
+tags: Flutter开发,部署
+keywords: AndoridX, Android Studio, Flutter 里使用 AndroidX
 ---
 
 {{site.alert.note}}
@@ -22,7 +24,7 @@ It provides the `androidx.*` package libraries, unbundled from the platform API.
 This means that it offers backward compatibility and is updated more frequently
 than the Android platform.
 
-其提供了包名为 `androidx.*` ，且并未与平台 API 关联的类库，
+其提供了包名为 `androidx.*`，且并未与平台 API 关联的类库，
 这意味着它提供了向后的兼容性，以及比 Android 平台更频繁的更新。
 
 ## Common Questions

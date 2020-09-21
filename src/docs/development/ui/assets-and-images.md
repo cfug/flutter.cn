@@ -5,6 +5,8 @@ description: How to use images (and other assets) in your Flutter app.
 description: 如何在你的 Flutter 应用中使用图片或者其他类型的资源。
 short-title: Assets and images
 short-title: 资源和图片
+tags: 用户界面,Flutter UI,布局
+keywords: Flutter资源优化,添加图片
 ---
 
 Flutter apps can include both code and _assets_

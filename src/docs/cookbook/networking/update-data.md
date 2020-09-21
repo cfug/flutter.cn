@@ -3,6 +3,8 @@ title: Update data over the internet
 title: 更新网络数据
 description: How to use the http package to update data over the internet.
 description: 如何使用 http 这个 package 来更新远程服务器的数据。
+tags: cookbook, 实用教程, 网络请求
+keywords: 
 prev:
   title: Send data to the internet
   title: 发送网络数据

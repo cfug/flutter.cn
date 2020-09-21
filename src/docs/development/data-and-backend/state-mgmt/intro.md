@@ -2,6 +2,8 @@
 title: State management
 title: 状态 (State) 管理介绍
 description: How to structure an app to manage the state of the data flowing through it.
+tags: Flutter状态管理
+keywords: 概览
 next:
   title: Start thinking declaratively
   title: 状态管理中的声明式编程思维

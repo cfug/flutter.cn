@@ -3,6 +3,8 @@ title: Persist data with SQLite
 title: 用 SQLite 做数据持久化
 description: How to use SQLite to store and retrieve data.
 description: 如何使用 SQLite 做数据持久化。
+tags: cookbook, 实用教程, 持久化
+keywords: SQLite,数据库
 prev:
   title: Work with WebSockets
   title: 发起 WebSockets 请求
@@ -20,7 +22,8 @@ and queries, compared to other local persistence solutions.
 
 如果您正在编写一个需要持久化且查询大量本地设备数据的 app，
 可考虑采用数据库，而不是本地文件夹或关键值库。
-总的来说，相比于其他本地持久化方案来说，数据库能够提供更为迅速的插入、更新、查询功能。
+总的来说，相比于其他本地持久化方案来说，
+数据库能够提供更为迅速的插入、更新、查询功能。
 
 Flutter apps can make use of the SQLite databases via the
 [`sqflite`][] plugin available on pub.
@@ -36,8 +39,7 @@ If you are new to SQLite and SQL statements, review the
 completing this recipe.
 
 如果你对于 SQLite 和 SQL 的各种语句还不熟悉，请查看 SQLite 官方的教程
-[SQLite 教程](http://www.sqlitetutorial.net/)，
-在查看本文之前需要掌握基本的SQL语句。
+[SQLite 教程][SQLite Tutorial]，在查看本文之前需要掌握基本的SQL语句。
 
 This recipe uses the following steps:
 

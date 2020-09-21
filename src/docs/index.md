@@ -5,6 +5,8 @@ short-title: Docs
 short-title: 文档
 description: The landing page for Flutter documentation.
 description: Flutter 开发文档页面。
+tags: Flutter中文文档
+keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
 
 {% for card in site.data.docs_cards -%}

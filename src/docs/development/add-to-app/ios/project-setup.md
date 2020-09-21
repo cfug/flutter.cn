@@ -5,6 +5,8 @@ short-title: Integrate Flutter
 short-title: 集成 Flutter
 description: Learn how to integrate a Flutter module into your existing iOS project.
 description: 了解如何将 Flutter module 集成到你现有的 iOS 项目中。
+tags: Flutter混合工程,add2app
+keywords: iOS,项目集成
 ---
 
 Flutter can be incrementaly added into your existing iOS

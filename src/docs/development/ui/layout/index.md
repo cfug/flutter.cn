@@ -5,6 +5,8 @@ short-title: Layout
 short-title: 布局
 description: Learn how Flutter's layout mechanism works and how to build a layout.
 description: 了解 Flutter 的布局机制和如何构建布局。
+tags: 用户界面,Flutter UI,布局
+keywords: Flutter布局核心介绍,核心机制,Flutter布局
 diff2html: true
 ---
 

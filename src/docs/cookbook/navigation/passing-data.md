@@ -3,6 +3,8 @@ title: Send data to a new screen
 title: 传递数据到新页面
 description: How to pass data to a new route.
 description: 如何向新路由传递数据。
+tags: cookbook, 实用教程, 路由
+keywords: 传参,待办事项应用
 prev:
   title: Return data from a screen
   title: 从一个页面回传数据
@@ -44,7 +46,7 @@ This recipe uses the following steps:
 
   2. Display a list of todos.
 
-     用列表 (List Widget) 显示待办事项
+     显示待办事项
 
   3. Create a detail screen that can display information about a todo.
 

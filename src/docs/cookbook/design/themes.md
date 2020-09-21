@@ -5,6 +5,8 @@ short-title: Themes
 short-title: Themes
 description: How to share colors and font styles throughout an app using Themes.
 description: 学习如何使用 Themes 统一颜色和字体风格。
+tags: cookbook, 实用教程, 设计
+keywords: Material Design 效果, Theme, 主题, 全局主题, 自定义
 prev:
   title: Update the UI based on orientation
   title: 根据屏幕方向更新界面

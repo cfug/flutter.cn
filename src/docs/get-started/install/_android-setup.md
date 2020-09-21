@@ -102,15 +102,20 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
     选择 **Create Virtual Device...**
     
      * In older versions of Android Studio, you should instead
-     launch **Android Studio > Tools > Android > AVD Manager** and select
-     **Create Virtual Device**. (The **Android** submenu is only present
-     when inside an Android project.)
+    launch **Android Studio > Tools > Android > AVD Manager** and select
+    **Create Virtual Device**. (The **Android** submenu is only present
+    when inside an Android project.)
 
        在一些旧的 Android Studio 版本里，需要通过
        **Android Studio > Tools > Android > AVD Manager**，
        然后选择 **Create Virtual Device** 选项。
        （只有在 Android 项目中才会显示 **Android** 子选项。）
-
+       
+     * If you do not have a project open, you can choose 
+    **Configure > AVD Manager** and select **Create Virtual Device...**
+    
+       如果你以及还没打开某个项目，你可以选择
+       **Configure > AVD Manager** 然后选择 **Create Virtual Device** 选项
  1. Choose a device definition and select **Next**.
 
     选择相应的设备并选择 **Next** 选项。

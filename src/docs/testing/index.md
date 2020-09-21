@@ -15,6 +15,15 @@ you publish it, while retaining your feature and bug fix velocity.
 自动化测试在发布之前运行，有助于保证我们应用的稳定性和功能的完整性，
 并且可以快速修复问题。
 
+{{site.alert.note}}
+
+  For hands-on practice of testing Flutter apps, see the
+  [How to test a Flutter app][] codelab.
+  
+  动手试试看测试你的 Flutter 应用？
+  请关注 codelab：[如何测试一个 Flutter 应用][How to test a Flutter app]。
+{{site.alert.end}}
+
 Automated testing falls into a few categories:
 
 自动化测试可分为以下几类：
@@ -192,6 +201,7 @@ integration services, see the following:
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
 [Continuous delivery using fastlane with Flutter]: /docs/deployment/cd#fastlane
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
+[How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing
 [mocked out]: /cookbook/testing/mocking
 [Test Flutter apps on Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/#testing-the-flutter-app
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter

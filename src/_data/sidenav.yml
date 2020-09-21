@@ -34,7 +34,7 @@
 - title: 教程和样例代码
   children:
     - title: Flutter Gallery 应用
-      permalink: https://flutter.github.io/gallery/
+      permalink: https://gallery.flutter.cn
     - title: Flutter Gallery 源码仓库
       permalink: https://github.com/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
     - title: GitHub 上的样例应用
@@ -222,6 +222,8 @@
               permalink: /docs/development/tools/devtools/debugger
             - title: 日志视图
               permalink: /docs/development/tools/devtools/logging
+              title: Code size tool
+              permalink: /docs/development/tools/devtools/code-size
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -253,7 +255,7 @@
           permalink: /docs/development/androidx-migration
         - title: 升级 Android plugin
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
-        - title: iOS 14 beta 支持
+        - title: iOS 14 支持
           permalink: /docs/development/ios-14
         - title: Xcode 11.4 支持
           permalink: /docs/development/ios-project-migration

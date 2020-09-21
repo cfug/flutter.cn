@@ -12,8 +12,8 @@
       { "source": "/privacy", "destination": "https://www.google.com/intl/en/policies/privacy", "type": 301 },
       { "source": "/research-signup", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform?usp=sf_link", "type": 301 },
       { "source": "/research-optout", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeG2Nhj0YQkr3m75P74Zb9G-v7zgNhAE9arCyig-a5B1A8uDw/viewform?usp=sf_link", "type": 301 },
-
-      { "source": "/docs/catalog", "destination": "/docs/catalog/samples", "type": 301 },
+      { "source": "/docs/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
+      { "source": "/docs/catalog/samples/*", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/docs/cookbook/networking", "destination": "/docs/cookbook#networking", "type": 301 },
       { "source": "/docs/cookbook/networking/named-routes", "destination": "/docs/cookbook/navigation/named-routes", "type": 301 },
       { "source": "/docs/cookbook/testing/integration-test-introduction", "destination": "/docs/cookbook/testing/integration", "type": 301 },
@@ -29,6 +29,7 @@
       { "source": "/docs/get-started/flutter-for", "destination": "/docs/get-started/flutter-for/android-devs", "type": 301 },
       { "source": "/docs/get-started/install/null", "destination": "/docs/get-started/install", "type": 301 },
       { "source": "/docs/development/add-to-app/android/add-splash-screen", "destination": "/docs/development/ui/advanced/splash-screen", "type": 301 },
+      { "source": "/docs/development/tools/devtools/codeSize", "destination": "/docs/development/tools/devtools/code-size", "type": 301 },
       { "source": "/docs/development/tools/ide", "destination": "/docs/development/tools/android-studio", "type": 301 },
       { "source": "/docs/development/tools/ide/android-studio", "destination": "/docs/development/tools/android-studio", "type": 301 },
       { "source": "/docs/development/tools/ide/vs-code", "destination": "/docs/development/tools/vs-code", "type": 301 },
@@ -49,12 +50,6 @@
       { "source": "/assets-and-images", "destination": "/docs/development/ui/assets-and-images", "type": 301 },
       { "source": "/bootstrap-into-dart", "destination": "/docs/resources/bootstrap-into-dart", "type": 301 },
       { "source": "/bug-reports", "destination": "/docs/resources/bug-reports", "type": 301 },
-      { "source": "/catalog/samples", "destination": "/docs/catalog/samples", "type": 301 },
-      { "source": "/catalog/samples/tabbed-app-bar", "destination": "/docs/cookbook/design/tabs", "type": 301 },
-      { "source": "/catalog/samples/:page*_index", "destination": "/docs/catalog/samples/:page*", "type": 301 },
-      { "source": "/catalog/samples/AppBar_index", "destination": "/docs/catalog/samples/AppBar", "type": 301 },
-      { "source": "/catalog/samples/TabBar_index", "destination": "/docs/catalog/samples/TabBar", "type": 301 },
-      { "source": "/catalog/samples/:rest*", "destination": "/docs/catalog/samples/:rest*", "type": 301 },
       { "source": "/cd", "destination": "/docs/deployment/cd", "type": 301 },
       { "source": "/codelabs", "destination": "/docs/codelabs", "type": 301 },
       { "source": "/cookbook", "destination": "/docs/cookbook", "type": 301 },
@@ -236,7 +231,8 @@
       { "source": "/go/flutter-nonhost", "destination": "https://docs.google.com/document/d/1rTLxAxsshEir-B2vE6DU_MaqMMusOdCgLGEGpBYG3CM", "type": 301 },
       { "source": "/go/material-button-migration-guide", "destination": "https://docs.google.com/document/d/1yohSuYrvyya5V1hB6j9pJskavCdVq9sVeTqSoEPsWH0", "type": 301 },
       { "source": "/go/desktop-resize-macos", "destination": "https://docs.google.com/document/d/1slGllp1Jhde7wkF6snqGhdrZwHV1VVmXeIF3f0t24JU/edit?usp=sharing", "type": 301 },
-      { "source": "/go/rfc-ios8-deprecation", "destination": "https://docs.google.com/document/d/1G5L7ux7ofQp3bCSNAt4ovvL5-8PF_rqo2erAVIcHHeg", "type": 301 }
+      { "source": "/go/rfc-ios8-deprecation", "destination": "https://docs.google.com/document/d/1G5L7ux7ofQp3bCSNAt4ovvL5-8PF_rqo2erAVIcHHeg", "type": 301 },
+      { "source": "/go/reorderable-list-view-update", "destination": "https://docs.google.com/document/d/1JzNtMQ-jnPnSHEBoi6IO0x2qMMylwhvRslEDcmqiwSs", "type": 301 }
     ]
   }
 }

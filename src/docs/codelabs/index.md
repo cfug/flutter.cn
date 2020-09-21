@@ -82,6 +82,12 @@ one of these codelabs:
   在本篇 codelab 中，你将会编写一个聊天应用，
   其中将包括简单的动画，以及在 iOS 和 Android 上自定义 UI 等内容。
 
+[Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
+[codelab on flutter.dev]: /docs/get-started/codelab
+[Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[Write your first Flutter app on the web]: /docs/get-started/codelab-web
+
 ## Designing a Flutter UI
 
 ## 使用 Flutter 设计 UI
@@ -115,6 +121,14 @@ like layout and animations:
 
   [渐变动画][Implicit animations]<br>
   使用 DartPad 学习如果创建渐变动画。
+  
+* [Building Beautiful Transitions with Material Motion for Flutter][]<br>
+  Learn how to use the Material [animations][] package to
+  add pre-built transitions to a Material app called Reply.
+
+  [使用 Material Motion 为 Flutter 构建精美的过渡动画][Building Beautiful Transitions with Material Motion for Flutter]<br>
+  了解如何使用 Material [animations] [] package 为名叫
+  Reply 的 Material 应用添加预构建的过渡。
 
 * [MDC 101 Flutter: Material Components (MDC) Basics][]<br>
   Learn the basics of using Material Components by building
@@ -159,6 +173,16 @@ like layout and animations:
   本期我们将通过加入一个全屏（backdrop）样式的菜单，用于分类显示你的产品。
   至此我们就结束了这个电子商务应用的构建
 
+[animations]: {{site.pub}}/packages/animations
+[Basic Flutter layout concepts]: /docs/codelabs/layout-basics
+[Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
+[How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[Implicit animations]: /docs/codelabs/implicit-animations
+[MDC 101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
+[MDC 102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
+[MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
+[MDC 104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
+
 ## Using Flutter with...
 
 ## 在 Flutter 应用中集成
@@ -201,6 +225,32 @@ Learn how to use Flutter with other technologies.
   from a single Dart codebase.
 
 
+[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
+[Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
+[Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
+[Firebase for Flutter]: {{site.codelabs}}/codelabs/flutter-firebase
+[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
+
+## Testing
+
+## 测试
+
+Learn how to test your Flutter application.
+
+学习如何测试你的 Flutter 应用：
+
+* [How to test a Flutter app][]<br>
+  Start with a simple app that manages state with the Provider package.
+  Unit test the provider package. Write widget tests for two of the
+  widgets. Use Flutter Driver to create an integration test.
+
+  [如何测试一个 Flutter 应用][How to test a Flutter app]<br>
+  从一个简单的应用开始，该应用使用 Provider package 来管理状态，
+  进而对提供应用进行单元测试 —— 为其中两个小部件编写小部件测试；
+  使用 Flutter Driver 创建集成测试。
+
+[How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing/#0
+
 ## Writing platform-specific code
 
 ## 撰写平台特别的代码
@@ -227,17 +277,45 @@ iOS、Android、Web 和桌面端。
   for iOS and Android that processes audio on the host platform.
   Then make an example app that uses your plugin to make a music keyboard.
 
+  [如何编写一个 Flutter (原生平台) 插件][How to write a Flutter plugin]<br>
+  编写一个原生平台（iOS 和 Android）的音乐插件，
+  处理原生平台音频，然后构建一个示例应用，
+  使用这个插件制作一个音乐键盘。
+
 * [Using a plugin with a Flutter web app][]<br>
   Finish an app that reports the number of stars on a GitHub repository.
   use Dart DevTools to do some simple debugging, and
   Host your app on Firebase and, finally, use a Flutter plugin to
   launch the app and open the hosted privacy policy.
 
+  [在 Flutter Web 应用使用插件][Using a plugin with a Flutter web app]<br>
+  Finish an app that reports the number of stars on a GitHub repository.
+  use Dart DevTools to do some simple debugging, and
+  Host your app on Firebase and, finally, use a Flutter plugin to
+  launch the app and open the hosted privacy policy.
+  构建一个完整的应用来显示 GitHub 仓库的星星（收藏）数量，
+  使用 Dart DevTools 开发者工具进行一些简答的调试，
+  然后将应用部署到 Firebase 上。最后使用 Flutter 插件
+  启动应用以及显示隐私权政策。
+
 * [Write a Flutter desktop application][]<br>
   Build a Flutter desktop app that accesses GitHub APIs to retrieve your
   repositories, assigned issues, and pull requests. As part of this task,
   create and use plugins to interact with native APIs and desktop applications,
   and use code generation to build type-safe client libraries for GitHub's APIs.
+
+  [编写一个 Flutter 桌面应用][Write a Flutter desktop application]<br>
+  构建一个 Flutter 桌面应用以通过 GitHub APIs 来检索你的代码仓库 (repo)，
+  已分配的问题 (issue) 和拉取请求 (pull request)。
+  本任务还有一部分内容，需要创建并使用插件，
+  让原生 API 和桌面应用进行交互，
+  并为 GitHub APIs 构建一个类型安全的客户端库。
+
+[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
+[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin/
+[provider]: {{site.pub}}/packages/provider
+[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
 
 ## Other resources
 
@@ -292,7 +370,7 @@ We also recommend the following online class:
   [this mirror of the Flutter codelabs][].
 
   如果你在 `codelabs.google.developer.com` 浏览这些 codelabs 的时候遇到问题，
-  请尝试[访问这个 Flutter codelabs 镜像][this mirror of the Flutter codelabs]。
+  请尝试 [访问这个 Flutter codelabs 镜像][this mirror of the Flutter codelabs]。
 
 {{site.alert.end}}
 
@@ -305,20 +383,5 @@ We also recommend the following online class:
 [codelab on flutter.dev]: /docs/get-started/codelab
 [codelabs]: {{site.dart-site}}/codelabs
 [Dart site]: {{site.dart-site}}
-[Firebase for Flutter]: {{site.codelabs}}/codelabs/flutter-firebase
-[How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
-[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin/
-[Implicit animations]: /docs/codelabs/implicit-animations
-[MDC 101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
-[MDC 102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
-[MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
-[MDC 104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
-[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
-[provider]: {{site.pub}}/packages/provider
 [The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
 [this mirror of the Flutter codelabs]: https://codelabs.flutter-io.cn/
-[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
-[Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-[Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
-[Write your first Flutter app on the web]: /docs/get-started/codelab-web

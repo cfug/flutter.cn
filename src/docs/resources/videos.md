@@ -3,6 +3,8 @@ title: Technical videos
 title: 学习 Flutter 的视频列表
 description: Available videos on various aspects of developing in Flutter.
 description: 开发 Flutter 应用时的技术学习视频。
+tags: Flutter参考资料
+keywords: Flutter视频资料,Flutter学习,Flutter社区视频
 ---
 These Flutter videos, produced both internally at Google and by the
 Flutter community, might help if you are a visual learner.

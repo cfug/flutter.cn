@@ -3,6 +3,8 @@ title: Building a web application with Flutter
 title: 使用 Flutter 构建 Web 应用
 description: Instructions for creating a Flutter app on the web.
 description: 创建在 Web 平台上运行的 Flutter 应用。
+tags: Flutter安装,Flutter起步教程
+keywords: Flutter Web,Flutter Web教程
 ---
 
 This page covers the following steps for getting started with web support:

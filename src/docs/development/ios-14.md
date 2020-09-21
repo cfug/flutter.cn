@@ -1,6 +1,8 @@
 ---
 title: Developing for iOS 14 beta
 description: Describes a couple gotchas (and how to work around them) when developing for iOS14 on Flutter 1.20.
+tags: Flutter开发,部署
+keywords: iOS 14
 ---
 
 The iOS 14 release, the new version of Apple's mobile operating system,

@@ -5,6 +5,8 @@ description: How to create a Flutter web app.
 description: 如何创建一个 Flutter 网页应用。
 short-title: Write your first web app
 short-title: 编写你的第一个网页应用
+tags: Flutter安装,Flutter起步教程
+keywords: Flutter Web应用,DartPad,在线教程,零基础
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

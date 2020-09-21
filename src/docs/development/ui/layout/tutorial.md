@@ -5,6 +5,8 @@ short-title: Tutorial
 short-title: 布局教程
 description: Learn how to build a layout.
 description: 学习如何在 Flutter 里构建布局。
+tags: 用户界面,Flutter UI,布局
+keywords: 布局教程,自动换行
 diff2html: true
 ---
 
@@ -145,7 +147,8 @@ Expanded widget.
 The second row, called the Button section, also has
 3 children: each child is a column that contains an icon and text.
 
-第二行，也就是按钮区域，同样有三个子元素：每个子元素是一个包含图标和文本的列。
+第二行，也就是按钮区域，同样有三个子元素：
+每个子元素是一个包含图标和文本的列。
 
 {% include app-figure.md image="ui/layout/button-section-diagram.png" alt="Button section" %}
 
@@ -155,7 +158,8 @@ To minimize the visual confusion of deeply nested layout code,
 place some of the implementation in variables and functions.
 
 一旦图解好布局，采取自下而上的方法来实现它就变得尤为轻松了。
-为了最大程度减少，深层嵌套的布局代码带来的视觉混乱，需要用一些变量和函数来替代某些实现。
+为了最大程度减少，深层嵌套的布局代码带来的视觉混乱，
+需要用一些变量和函数来替代某些实现。
 
 ## Step 2: Implement the title row
 
@@ -234,7 +238,8 @@ Widget titleSection = Container(
     Add the title section to the app body like this:
 
     标题行中的最后两项是一个红色星形图标，和文字"41"。
-    整行都在一个 Container 容器布局中，而且每条边都有 32 像素的内间距。
+    整行都在一个 Container 容器布局中，
+    而且每条边都有 32 像素的内间距。
 
 Add the title section to the app body like this:
 
@@ -293,15 +298,20 @@ layout&mdash;an icon over a row of text.
 The columns in this row are evenly spaced,
 and the text and icons are painted with the primary color.
 
-按钮区域包含三列使用相同布局－一行文本上面一个图标。此行的各列被等间隙放置，文本和图标被着以初始色。
+按钮区域包含三列使用相同布局－一行文本上面一个图标。
+此行的各列被等间隙放置，文本和图标被着以初始色。
 
 Since the code for building each column is almost identical,
 create a private helper method named `buildButtonColumn()`,
 which takes a color, an `Icon` and `Text`,
 and returns a column with its widgets painted in the given color.
 
-由于构建每列的代码基本相同，因此可以创建一个名为 `buildButtonColumn()` 的私有辅助函数，
-以颜色、图标和文本为入参，返回一个以指定颜色绘制自身 widgets 的一个 column 列对象。
+由于构建每列的代码基本相同，
+因此可以创建一个名为
+`buildButtonColumn()` 的私有辅助函数，
+以颜色、图标和文本为入参，
+返回一个以指定颜色绘制自身
+widgets 的一个 column 列对象。
 
 <?code-excerpt "lib/main.dart (_buildButtonColumn)" title?>
 ```dart
@@ -350,9 +360,12 @@ free space evenly before, between, and after each column.
 Add the following code just below the
 `titleSection` declaration inside the `build()` method:
 
-通过调用函数并传递针对某列的颜色，`Icon` 图标和文本，来构建包含这些列的行。
-然后在行的主轴方向通过使用 `MainAxisAlignment.spaceEvenly` ，将剩余的空间均分到每列各自的前后及中间。
-只需在 `build()` 方法中的 `titleSection` 声明下添加如下代码：
+通过调用函数并传递针对某列的颜色，`Icon` 图标和文本，
+来构建包含这些列的行。
+然后在行的主轴方向通过使用 `MainAxisAlignment.spaceEvenly`，
+将剩余的空间均分到每列各自的前后及中间。
+只需在 `build()` 方法中的 `titleSection`
+声明下添加如下代码：
 
 <?code-excerpt "lib/main.dart (buttonSection)" title?>
 ```dart
@@ -406,7 +419,9 @@ in a `Container` and add padding along each edge.
 Add the following code just below the `buttonSection`
 declaration:
 
-将文本区域定义为一个变量。将文本放置到一个 Container 容器中，然后为每条边添加内边距。
+将文本区域定义为一个变量，
+将文本放置到一个 Container 容器中，
+然后为每条边添加内边距。
 只需在 `buttonSection` 声明下添加如下代码：
 
 <?code-excerpt "lib/main.dart (textSection)" title?>
@@ -428,7 +443,8 @@ Widget textSection = Container(
 By setting `softwrap` to true, text lines will fill the column width before
 wrapping at a word boundary.
 
-通过设置 `softwrap` 为 true，文本将在填充满列宽后在单词边界处自动换行。
+通过设置 `softwrap` 为 true，
+文本将在填充满列宽后在单词边界处自动换行。
 
 Add the text section to the body:
 

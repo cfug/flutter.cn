@@ -3,6 +3,8 @@ title: Flutter for Android developers
 title: 给 Android 开发者的 Flutter 指南
 description: Learn how to apply Android developer knowledge when building Flutter apps.
 description: 学习如何把 Android 开发的经验应用到 Flutter 应用的开发中。
+tags: Flutter教程,Flutter起步,Flutter入门
+keywords: Flutter Android,安卓,用Flutter开发Android
 ---
 
 This document is meant for Android developers looking to apply their

@@ -5,6 +5,8 @@ subtitle: Where to look when your Flutter app drops frames in the UI.
 subtitle: 找出你的 Flutter 应用 UI 在哪里掉帧了
 description: Diagnosing UI performance issues in Flutter.
 description: 诊断 Flutter 里的 UI 性能问题。
+tags: Flutter性能
+keywords: 性能分析,性能调试工具,开发者工具,60fps,120fps,profile mode
 ---
 
 {{site.alert.secondary}}
@@ -15,7 +17,7 @@ description: 诊断 Flutter 里的 UI 性能问题。
   * Flutter aims to provide 60 frames per second (fps) performance,
     or 120 fps performance on devices capable of 120Hz updates.
     
-    Flutter 的目标是提供 60 帧每秒(fps)的性能，
+    Flutter 的目标是提供 60 帧每秒 (fps) 的性能，
     或者是在可以达到 120 Hz 的设备上提供 120 fps 的性能。
     
   * For 60fps, frames need to render approximately every 16ms.

@@ -4,6 +4,8 @@ title: Flutter 实践教程
 toc: false
 description: A list of Flutter tutorials.
 description: 一系列 Flutter 的教程。
+tags: Flutter参考资料
+keywords: 实践教程
 ---
 
 The **Flutter tutorials** teach you how to use the Flutter framework to

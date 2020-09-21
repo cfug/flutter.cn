@@ -3,6 +3,8 @@ title: Flutter for iOS developers
 title: 给 iOS 开发者的 Flutter 指南
 description: Learn how to apply iOS developer knowledge when building Flutter apps.
 description: 学习如何将 iOS 开发经验应用到 Flutter 应用开发中。
+tags: Flutter教程,Flutter起步,Flutter入门
+keywords: Flutter iOS,iOS,用Flutter开发iOS,Cupertino
 ---
 
 This document is for iOS developers looking to apply their existing iOS

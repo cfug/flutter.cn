@@ -5,6 +5,8 @@ description: How to implement a stateful widget that responds to taps.
 description: 如何实现一个能够响应点击事件的有状态 widget。
 short-title: Adding interactivity
 short-title: 交互添加
+tags: 用户界面,Flutter UI,布局
+keywords: 交互,Flutter交互,有状态的widget,无状态,StatefulWidget,状态管理
 diff2html: true
 ---
 
@@ -323,7 +325,8 @@ You'll define the callback function next.
 状态对象也定义了 `build()` 方法。这个 `build()` 方法
 创建一个包含红色 `IconButton` 和 `Text` 的行。
 该 widget 使用 [IconButton][]（而不是 `Icon`），
-因为它具有一个 `onPressed` 属性，该属性定义了处理点击的回调方法（`_toggleFavorite`）。
+因为它具有一个 `onPressed` 属性，
+该属性定义了处理点击的回调方法（`_toggleFavorite`）。
 你将会在接下来的步骤中尝试定义它。
 
 <!-- skip -->
@@ -517,7 +520,11 @@ to make your widget interactive. You, as the widget designer,
 make the decision based on how you expect your widget to be used.
 Here are the most common ways to manage state:
 
-谁管理着 stateful widget 的状态？widget 本身？父 widget？双方？另一个对象？答案是......这取决于实际情况。有几种有效的方法可以给你的 widget 添加互动。作为 widget 设计师，你可以基于你所期待的表现 widget 的方式来做决定。以下是一些管理状态的最常见的方法：
+谁管理着 stateful widget 的状态？widget 本身？
+父 widget？双方？另一个对象？答案是......
+这取决于实际情况。有几种有效的方法可以给你的 widget 加入交互。
+作为 widget 设计师，你可以基于你所期待的表现 widget 的方式来做决定。
+以下是一些管理状态的最常见的方法：
 
 * [The widget manages its own state](#self-managed)
 
@@ -548,7 +555,8 @@ The following principles should help you decide:
   for example an animation, then the
   state is best managed by the widget itself.
   
-  如果所讨论的状态是有关界面外观效果的，例如动画，那么状态最好由 widget 本身来管理。
+  如果所讨论的状态是有关界面外观效果的，
+  例如动画，那么状态最好由 widget 本身来管理。
 
 If in doubt, start by managing state in the parent widget.
 

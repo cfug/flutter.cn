@@ -3,6 +3,8 @@ title: Install
 title: 安装和环境配置
 description: How to set up your code editor.
 description: 如何设置你的代码编辑器。
+tags: Flutter安装,Flutter环境搭建
+keywords: Flutter Windows,Flutter Linux,Flutter macOS,Flutter镜像,Flutter使用教程
 next:
   title: Set up an editor
   title: 编辑工具设定

@@ -4,6 +4,8 @@ title: 在 Linux 操作系统上安装和配置 Flutter 开发环境
 description: How to install on Linux.
 description: 如何在 Linux 上安装 Flutter。
 short-title: Linux
+tags: Flutter安装,Flutter环境搭建
+keywords: Flutter Linux,Flutter macOS,Flutter镜像,Linux开发Flutter
 next:
   title: Set up an editor
   title: 编辑工具设定

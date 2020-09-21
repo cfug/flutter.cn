@@ -24,7 +24,6 @@ our [videos](/docs/resources/videos) page.
 一个不同的 Flutter Widget。关于更多系列视频，也欢迎查看我们的 [学习 Flutter 的视频列表](/docs/resources/videos)。
 
 
-
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55795672&cid=97539385&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Widget of the Week playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 

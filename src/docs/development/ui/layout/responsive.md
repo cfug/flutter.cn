@@ -3,6 +3,8 @@ title: Creating responsive apps
 title: 创建响应式应用
 short-title: Responsive
 short-title: 响应式
+tags: 用户界面,Flutter UI,布局
+keywords: 响应式,自适应
 ---
 
 A responsive app lays out its UI according to the

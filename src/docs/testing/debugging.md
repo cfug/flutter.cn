@@ -3,6 +3,8 @@ title: Debugging Flutter apps
 title: 调试 Flutter 应用
 description: How to debug your app using the DevTools suite.
 description: 如何使用开发者工具来调试你的 Flutter 应用。
+tags: Flutter测试
+keywords: Flutter调试工具,Flutter开发者工具,Flutter性能调试,Flutter打断点
 ---
 
 There's a wide variety of tools and features to help debug

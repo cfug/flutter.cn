@@ -3,6 +3,8 @@ title: Inside Flutter
 title: Flutter 工作原理
 description: Learn about Flutter's inner workings from one of the founding engineers.
 description: 向核心工程师了解 Flutter 的内部工作原理。
+tags: Flutter参考资料
+keywords: 组合性API,Flutter设计思路,Flutter设计架构,Flutter Android,Flutter跨平台
 ---
 
 This document describes the inner workings of the Flutter toolkit that make
@@ -1097,7 +1099,7 @@ widget 又由更为基础的 widget 构成。
   common case of shrink-wrapping.
 
 <sup><a name="a2">2</a></sup> 现实情况当然更复杂一些。有些布局涉及内部维度及基线测量，
-  这涉及到相关子树的额外遍历（在最坏的情况下，使用积极缓存来降低潜在的二次性能）。
+  这涉及到相关子树的额外遍历���在最坏的情况下，使用积极缓存来降低潜在的二次性能）。
   但是，这些情况非常罕见。特别是在常见的 shrink-wrapping 情况下，根本不需要内部尺寸。
 
 <sup><a name="a3">3</a></sup> Technically, the child's position is not

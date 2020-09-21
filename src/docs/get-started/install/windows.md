@@ -4,6 +4,8 @@ title: 在 Windows 操作系统上安装和配置 Flutter 开发环境
 description: How to install on Windows.
 description: 如何在 Windows 上安装 Flutter。
 short-title: Windows
+tags: Flutter安装,Flutter环境搭建
+keywords: Flutter Windows,Flutter镜像,Windows开发Flutter,Windows开发环境配置
 next:
   title: Set up an editor
   title: 编辑工具设定

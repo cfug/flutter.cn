@@ -5,6 +5,8 @@ description: How box constraints might go wrong.
 description: 为何框约束可能会出错。
 short-title: Box constraints
 short-title: 边界约束 (Box constraints)
+tags: 用户界面,Flutter UI,布局
+keywords: 边界约束问题,渲染
 ---
 
 {{site.alert.note}}

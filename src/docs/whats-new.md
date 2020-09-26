@@ -1,13 +1,10 @@
 ---
-<<<<<<< HEAD:src/docs/whats-new-archive.md
+title: What’s new
 title: 文档网站更新内容归档
-description: 文档网站更新的最新内容。
+description: A list of what’s new on flutter.dev and related sites.
+description: Flutter 和 Dart 文档的相关更新说明页面。
 tags: Flutter文档更新
 keywords: 内容归档
-=======
-title: What’s new
-description: A list of what’s new on flutter.dev and related sites.
->>>>>>> 358082337dd9f3ded6f2a4bc2a2a9eb93c9f1cd5:src/docs/whats-new.md
 ---
 
 This page contains current and previous announcements of

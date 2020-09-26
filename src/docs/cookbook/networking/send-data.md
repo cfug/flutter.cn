@@ -6,13 +6,13 @@ description: 如何通过 http 包发送网络数据。
 tags: cookbook, 实用教程, 网络请求
 keywords: 网络数据
 prev:
-  title: Fetch data from the internet
-  title: 获取网络数据
-  path: /docs/cookbook/networking/fetch-data
+  title: Parse JSON in the background
+  title: 在后台处理 JSON 数据解析
+  path: /docs/cookbook/networking/background-parsing
 next:
-  title: Make authenticated requests
-  title: 发起 HTTP 认证授权请求
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Update data over the internet
+  title: 通过网络更新数据
+  path: /docs/cookbook/networking/update-data
 ---
 
 Sending data to the internet is necessary for most apps.

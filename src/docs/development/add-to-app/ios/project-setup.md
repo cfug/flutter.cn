@@ -9,7 +9,7 @@ tags: Flutter混合工程,add2app
 keywords: iOS,项目集成
 ---
 
-Flutter can be incrementaly added into your existing iOS
+Flutter can be incrementally added into your existing iOS
 application as embedded frameworks.
 
 Flutter 可以以 framework 框架的形式添加到你的既有 iOS 应用中。

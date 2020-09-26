@@ -147,6 +147,8 @@
           permalink: /docs/development/platform-integration/platform-channels
         - title: Apple Watch 支持
           permalink: /docs/development/platform-integration/apple-watch
+        - title: iOS App Clip 支持
+          permalink: /docs/development/platform-integration/ios-app-clip
     - title: Packages (纯 Dart 和原生插件)
       permalink: /docs/development/packages-and-plugins
       children:
@@ -222,8 +224,8 @@
               permalink: /docs/development/tools/devtools/debugger
             - title: 日志视图
               permalink: /docs/development/tools/devtools/logging
-              title: Code size tool
-              permalink: /docs/development/tools/devtools/code-size
+              title: App size tool
+              permalink: /docs/development/tools/devtools/app-size
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:

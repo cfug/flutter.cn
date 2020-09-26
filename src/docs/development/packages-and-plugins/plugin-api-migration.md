@@ -200,7 +200,7 @@ The following instructions outline the steps for supporting the new API:
     这会让示例应用使用 v2 版本的嵌入。
 
 1. (Optional) If you created an `EmbeddingV1Activity`
-   in the previoous step, add the `EmbeddingV1Activity` to the
+   in the previous step, add the `EmbeddingV1Activity` to the
    `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` file.
    For example:
    

@@ -1,12 +1,14 @@
 ---
+title: What’s new
 title: 文档网站更新内容归档
-description: 文档网站更新的最新内容。
+description: A list of what’s new on flutter.dev and related sites.
+description: Flutter 和 Dart 文档的相关更新说明页面。
 tags: Flutter文档更新
 keywords: 内容归档
 ---
 
-This archive contains current and previous announcements of
-what's new on the site.
+This page contains current and previous announcements of
+what's new on the Flutter website and blog.
 
 该归档包含了历史公告，以及网站上的更新内容。
 

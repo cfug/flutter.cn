@@ -6,13 +6,13 @@ description: 如何使用 http 这个 package 来删除远程服务器的数据�
 tags: cookbook, 实用教程, 网络请求
 keywords: 
 prev:
-  title: Update data over the internet
-  title: 更新网络数据
-  path: /docs/cookbook/networking/update-data
+  title: Send data to a new screen
+  title: 传递数据到新页面
+  path: /docs/cookbook/navigation/passing-data
 next:
-  title: Make authenticated requests
-  title: 发起 HTTP 认证授权请求
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Fetch data from the internet
+  title: 通过网络获取数据
+  path: /docs/cookbook/networking/fetch-data
 ---
 
 This recipe covers how to delete data over

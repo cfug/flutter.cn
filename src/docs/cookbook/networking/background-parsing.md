@@ -10,9 +10,9 @@ prev:
   title: 发起 HTTP 认证授权请求
   path: /docs/cookbook/networking/authenticated-requests
 next:
-  title: Work with WebSockets
-  title: 发起 WebSockets 请求
-  path: /docs/cookbook/networking/web-sockets
+  title: Send data to the internet
+  title: 发送网络数据请求
+  path: /docs/cookbook/networking/send-data
 ---
 
 By default, Dart apps do all of their work on a single thread.

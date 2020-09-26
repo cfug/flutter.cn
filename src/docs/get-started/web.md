@@ -63,7 +63,7 @@ you need the following software:
   for more details.
 
   可选：支持 Flutter 的集成开发环境 (IDE)，你可以选择使用
-  [Android Studio CN][]、[IntelliJ IDEA][] 或者 [Visual Studio Code][]，
+  [Android Studio][]、[IntelliJ IDEA][] 或者 [Visual Studio Code][]，
   并安装 [Flutter 和 Dart 插件的 IDE 插件][install the Flutter and Dart plugins]
   以获取编程语言支持和在 IDE 里进行编译、调试、运行、重新加载等功能。
   了解更多详细信息，请查看文档：[编辑器设定][setting up an editor]。
@@ -331,7 +331,7 @@ For more information, see
 
 ## Add web support to an existing app
 
-### 向现有应用添加 Web 支持
+## 向现有应用添加 Web 支持
 
 To add web support to an existing project,
 run the following command in a

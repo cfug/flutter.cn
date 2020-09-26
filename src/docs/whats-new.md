@@ -1,12 +1,17 @@
 ---
+<<<<<<< HEAD:src/docs/whats-new-archive.md
 title: 文档网站更新内容归档
 description: 文档网站更新的最新内容。
 tags: Flutter文档更新
 keywords: 内容归档
+=======
+title: What’s new
+description: A list of what’s new on flutter.dev and related sites.
+>>>>>>> 358082337dd9f3ded6f2a4bc2a2a9eb93c9f1cd5:src/docs/whats-new.md
 ---
 
-This archive contains current and previous announcements of
-what's new on the site.
+This page contains current and previous announcements of
+what's new on the Flutter website and blog.
 
 该归档包含了历史公告，以及网站上的更新内容。
 

@@ -11,13 +11,14 @@ but for now use "git clone".
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
-    下载下面的安装包以获取最新版本 {{site.sdk.channel}} 的 Flutter SDK
+    下载下面的安装包以获取最新版本 {{site.sdk.channel}} 的 Flutter SDK：
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds, see the [SDK archive][] page.
 
-    要查看其他发行通道和以往的版本，请参阅 [SDK 版本列表][SDK archive][] 页面。
+    要查看其他发行通道和以往的版本，请参阅
+    [SDK 版本列表][SDK archive][] 页面。
 
  1. Extract the zip file and place the contained `flutter` in the desired
     installation location for the Flutter SDK
@@ -216,7 +217,8 @@ software you might need to install or further tasks to perform
 (shown in **bold** text).
 
 上述命令会检查你的现有环境，然后把检测结果以报告形式呈现出来。
-仔细阅读它显示的内容，检查是否有尚未安装的软件或是有其他的步骤需要完成（通常会以**粗体**呈现）。
+仔细阅读它显示的内容，检查是否有尚未安装的软件
+或是有其他的步骤需要完成（通常会以**粗体**呈现）。
 
 For example:
 
@@ -236,10 +238,23 @@ dependencies, you can run the `flutter doctor` command again to
 verify that you’ve set everything up correctly.
 
 下面的章节描述了如何执行报告中提到的任务来完成整体配置。
-每当按照报告安装了任何的依赖项，就可以执行 `flutter doctor` 来检查还有什么没有完成的。
+每当按照报告安装了任何的依赖项，
+就可以执行 `flutter doctor` 来检查还有什么没有完成的。
+
+{{site.alert.note}}
+
+  If `flutter doctor` returns that either the Flutter plugin
+  or Dart plugin of Android Studio are not installed, move
+  on to [Set up an editor][] to resolve this issue.
+  
+  如果 `flutter doctor` 命令返回说 Android Studio 的
+  Flutter 或者 Dart 插件尚未安装，请移步文档 [编辑器设定][Set up an editor]
+  查阅如何解决这个问题。
+{{site.alert.end}}
 
 {% include_relative _analytics.md %}
 
 
 [Flutter repo]: {{site.github}}/flutter/flutter
 [SDK archive]: /docs/development/tools/sdk/archive
+[Set up an editor]: /docs/get-started/editor?tab=androidstudio

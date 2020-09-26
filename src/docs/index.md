@@ -2,11 +2,15 @@
 title: Flutter documentation
 title: Flutter 开发文档
 short-title: Docs
+<<<<<<< HEAD
 short-title: 文档
 description: The landing page for Flutter documentation.
 description: Flutter 开发文档页面。
 tags: Flutter中文文档
 keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
+=======
+description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
+>>>>>>> 358082337dd9f3ded6f2a4bc2a2a9eb93c9f1cd5
 ---
 
 {% for card in site.data.docs_cards -%}
@@ -33,7 +37,7 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ## 网站更新
 
 To see changes to the site since our last release,
-see the [What's new archive][].
+see [What's new][].
 
 查看最近网站更新的内容，请查阅
 [文档网站更新内容归档][What's new archive]。
@@ -51,11 +55,17 @@ here are some next steps.
 
 ### Docs
 
+<<<<<<< HEAD
 ### 文档
 
 Coming from another platform? Check out: 
 [Android][], [iOS][], [Web][], [React Native][],
 [Xamarin.Forms][]
+=======
+Coming from another platform? Check out Flutter for:
+[Android][], [iOS][], [Web][], [React Native][] and
+[Xamarin.Forms][] developers.
+>>>>>>> 358082337dd9f3ded6f2a4bc2a2a9eb93c9f1cd5
 
 看我们为各种已经有相关平台开发经验的开发者准备的文档：
 [给 Android 开发者的 Flutter 指南][Android]、
@@ -208,7 +218,7 @@ You might also find these docs useful:
 [Using packages]: /docs/development/packages-and-plugins/using-packages
 [videos]: /docs/resources/videos
 [Web]: /docs/get-started/flutter-for/web-devs
-[What's new archive]: /docs/whats-new-archive
+[What's new]: /docs/whats-new
 [Write your first Flutter app]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
 

@@ -1,8 +1,8 @@
 ---
 title: Install
 title: 安装和环境配置
-description: How to set up your code editor.
-description: 如何设置你的代码编辑器。
+description: Install Flutter and get started. Downloads available for Windows, macOS, Linux, and Chrome OS operating systems.
+description: Flutter安装和上手起步教程, 下载 Windows、macOS、Linux 和 Chrome OS 系统的 Flutter SDK。
 tags: Flutter安装,Flutter环境搭建
 keywords: Flutter Windows,Flutter Linux,Flutter macOS,Flutter镜像,Flutter使用教程
 next:
@@ -35,8 +35,8 @@ Select the operating system on which you are installing Flutter:
 
   If you're in China, first read [Using Flutter in China][].
   
-  如果你在中国的网络环境下使用 Flutter，请先看一下 [这篇文章][Using Flutter in China]，查看是否需要对网络环境进行特别设置。
-
+  如果你在中国的网络环境下使用 Flutter，请先看一下
+  [这篇文章][Using Flutter in China]，查看是否需要对网络环境进行特别设置。
 {{site.alert.end}}
 
 [Using Flutter in China]: /community/china

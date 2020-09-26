@@ -10,9 +10,9 @@ prev:
   title: 从一个页面回传数据
   path: /docs/cookbook/navigation/returning-data
 next:
-  title: Fetch data from the internet
-  title: 获取网络数据
-  path: /docs/cookbook/networking/fetch-data
+  title: Delete data on the internet
+  title: 删除网络数据
+  path: /docs/cookbook/networking/delete-data
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

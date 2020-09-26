@@ -10,9 +10,9 @@ prev:
   title: 发送网络数据
   path: /docs/cookbook/networking/send-data
 next:
-  title: Delete data on the internet
-  title: 删除网络数据
-  path: /docs/cookbook/networking/delete-data
+  title: Work with WebSockets
+  title: 发起 WebSockets 请求
+  path: /docs/cookbook/networking/web-sockets
 ---
 
 Updating data over the internet is necessary for most apps.

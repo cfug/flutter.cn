@@ -290,7 +290,36 @@ Flutter 中的 _Everything is a Widget™_。
 Instead, we are going to use a package that works with the low-level
 widgets but is simple to use. It's called `provider`.
 
-我们会用一个 package 来和这些底层的 widget 打交道，就是 `provider` package 。
+我们会用一个 package 来和这些底层的 widget 打交道，
+就是 `provider` package。
+
+Before working with `provider`,
+don't forget to add the dependency on it to your `pubspec.yaml`.
+
+在使用 `provider` 之前，请不要忘记在
+`pubspec.yaml` 文件里加入依赖。
+
+```yaml
+name: my_name
+description: Blah blah blah.
+
+# ...
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  provider: ^3.0.0
+
+dev_dependencies:
+  # ...
+```
+
+Now you can `import 'package:provider/provider.dart';`
+and start building.
+
+现在可以在代码里加入 `import 'package:provider/provider.dart';`
+进而开始构建你的应用了/
 
 With `provider`, you don't need to worry about callbacks or
 `InheritedWidgets`. But you do need to understand 3 concepts:
@@ -638,32 +667,14 @@ see what the simple Counter app looks like when
 如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何
 [基于 `provider` 实现的][built with `provider`]。
 
-When you're ready to play around with `provider` yourself,
-don't forget to add the dependency on it to your `pubspec.yaml` first.
+By following along with these articles, you've greatly 
+improved your ability to create state-based applications. 
+Try building an application with `provider` yourself to 
+master these skills. 
 
-如果你已经学会了并且准备使用 `provider` 的时候，
-别忘了先在 `pubspec.yaml` 中添加相应的依赖。
-
-```yaml
-name: my_name
-description: Blah blah blah.
-
-# ...
-
-dependencies:
-  flutter:
-    sdk: flutter
-
-  provider: ^3.0.0
-
-dev_dependencies:
-  # ...
-```
-
-Now you can `import 'package:provider/provider.dart';`
-and start building.
-
-现在你可以 `import 'package:provider/provider.dart';`，开始写代码吧。
+通过跟着这些文章的学习，你已经大大提高了
+创建一个包含状态管理应用的能力。
+试着自己用 `provider` 构建一个应用来掌握这些技能吧！
 
 ## 我们的样例 {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
 

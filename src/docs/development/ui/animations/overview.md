@@ -251,17 +251,21 @@ A `Ticker` can be started and stopped. When started, it returns a
 一个 `Ticker` 可以被启动和停止，启动时，
 它会返回一个 `Future`，这个 `Future` 在 `Ticker` 停止时会被改为完成状态。
 
-Each tick, the `Ticker` provides the callback with the duration since
-the first tick after it was started.
+一个 `Ticker` 可以被启动和停止，启动时，
+它会返回一个 `Future`，这个 `Future` 在 `Ticker` 停止时会被改为完成状态。
+
+Each tick, the `Ticker` provides the callback with the
+duration since the first tick after it was started. 
 
 每次运行, `Ticker` 都会为回调函数提供从
 `Ticker` 开始运行到现在的持续时间。
 
 Because tickers always give their elapsed time relative to the first
 tick after they were started, tickers are all synchronised. If you
-start three ticks at different times between two frames, they will all
+start three tickers at different times between two ticks, they will all
 nonetheless be synchronised with the same starting time, and will
-subsequently tick in lockstep.
+subsequently tick in lockstep. Like people at a bus-stop, all the tickers 
+will wait for a regularly occuring event (the tick) to begin moving (counting time).
 
 因为运行器总是会提供在自它们开始运行以来的持续时间，
 所以所有运行器都是同步的。

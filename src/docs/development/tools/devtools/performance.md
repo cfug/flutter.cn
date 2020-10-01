@@ -61,24 +61,31 @@ PU 分析器会把收集的信息推送到VM并分别在不同的信息窗口进
 
 ### 分析粒度
 
-The default rate at which the VM collects CPU samples is 1 sample / 250 μs.
-This is selected by default on the Performance view as "Profile granularity: medium".
-This rate can be modified via the selector at the top of the page. The sampling rates
-for low, medium, and high granularity are 1 / 50 μs, 1 / 250 μs, and 1 / 1000 μs,
-respectively. It is important to know the trade-offs of modifying this setting.
+The default rate at which the VM collects CPU samples
+is 1 sample / 250 μs.  This is selected by default on
+the Performance view as "Profile granularity: medium".
+This rate can be modified via the selector at the top
+of the page. The sampling rates for low, medium,
+and high granularity are 1 / 1000 μs, 1 / 250 μs, and 1 / 50 μs,
+respectively. It is important to know the trade-offs
+of modifying this setting.
+
 
 VM 收集 CPU 样本的默认速率为 1/250μs (即每 250 微秒收集一次数据)。
 一般情况下，`Profile granularity` 的默认值为 “medium”。
-可以通过页面顶部下拉列表进行修改。抽样率低、中、高粒度分别顺序对应 1/50μs、1/250μs 和 1/1000μs。
+可以通过页面顶部下拉列表进行修改。抽样率低、中、高粒度分别
+顺序对应 1/50μs、1/250μs 和 1/1000μs。
 正确设定此值对性能分析非常重要。
 
-A **higher granularity** profile has a higher sampling rate, and therefore yields
-a fine-grained CPU profile with more samples. This may also impact performance of
-your app since the VM is being interrupted more often to collect samples.
-This also causes the VM's CPU sample buffer to overflow more quickly. The VM has
-limited space where it can store CPU sample information. At a higher sampling
-rate, the space fills up and begins to overflow sooner than it would have if a
-lower sampling rate was used. This means that you may not have access to CPU samples
+A **higher granularity** profile has a higher sampling rate,
+and therefore yields a fine-grained CPU profile with more samples.
+This may also impact performance of your app since the VM
+is being interrupted more often to collect samples. This also
+causes the VM's CPU sample buffer to overflow more quickly.
+The VM has limited space where it can store CPU sample information.
+At a higher sampling rate, the space fills up and begins
+to overflow sooner than it would have if a lower sampling
+rate was used. This means that you may not have access to CPU samples
 from the beginning of the recorded profile.
 
 **高粒度** 的配置会具有更高效的采样率，因此单元时间内采集的 CPU 信息会更加详细且采集样例更多。

@@ -31,7 +31,7 @@ one of these codelabs:
   an infinite scrolling list. You can also find this
   [codelab on flutter.dev][].
 
-  [编写你的第一个 Flutter App，第一部分][Write your first Flutter app, part 1][]<br>
+  [编写你的第一个 Flutter App，第一部分][Write your first Flutter app, part 1-cn]<br>
   你将完成一个简单的移动应用程序，
   它将具有为一个创业公司生成建议的公司名称的功能。
   在本节中，你将使用一个 package 并使用它生成的随机文字对创建一个无限滚动的列表。
@@ -45,7 +45,7 @@ one of these codelabs:
   page where users can view the selected names.
   Finally, you'll change the app's theme color.
 
-  [编写你的第一个 Flutter App，第二部分][Write your first Flutter app, part 2]<br>
+  [编写你的第一个 Flutter App，第二部分][Write your first Flutter app, part 2-cn]<br>
   你将完成一个简单的移动应用程序，
   功能是：为一个创业公司生成建议的公司名称（第二部分）。
   在本节，你将在一个基础的 Flutter 应用里加入交互功能，
@@ -77,7 +77,7 @@ one of these codelabs:
   this codelab, learn how to use keyboard shortcuts in
   Android Studio.
 
-  [使用 Flutter 创建精美的 UI][Building beautiful UIs with Flutter]<br>
+  [使用 Flutter 创建精美的 UI][Building beautiful UIs with Flutter-cn]<br>
   这将是一次“深入探索”，而不是 Flutter 的“入门级教程”。
   在本篇 codelab 中，你将会编写一个聊天应用，
   其中将包括简单的动画，以及在 iOS 和 Android 上自定义 UI 等内容。
@@ -86,6 +86,11 @@ one of these codelabs:
 [codelab on flutter.dev]: /docs/get-started/codelab
 [Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[Write your first Flutter app on the web]: /docs/get-started/codelab-web
+
+[Building beautiful UIs with Flutter-cn]: {{site.codelabs}}/codelabs/flutter-cn
+[Write your First Flutter app, part 1-cn]: {{site.codelabs}}/codelabs/first-flutter-app-pt1-cn
+[Write your First Flutter app, part 2-cn]: {{site.codelabs}}/codelabs/first-flutter-app-pt2-cn
 [Write your first Flutter app on the web]: /docs/get-started/codelab-web
 
 ## Designing a Flutter UI
@@ -126,7 +131,7 @@ like layout and animations:
   Learn how to use the Material [animations][] package to
   add pre-built transitions to a Material app called Reply.
 
-  [使用 Material Motion 为 Flutter 构建精美的过渡动画][Building Beautiful Transitions with Material Motion for Flutter]<br>
+  [使用 Material Motion 为 Flutter 构建精美的过渡动画][Building Beautiful Transitions with Material Motion for Flutter-cn]<br>
   了解如何使用 Material [animations] [] package 为名叫
   Reply 的 Material 应用添加预构建的过渡。
 
@@ -137,7 +142,7 @@ like layout and animations:
   You'll start by building a login page using several of MDC
   Flutter's components.
 
-  [MDC Flutter 教程 1：Material 组件基础][MDC 101 Flutter: Material Components (MDC) Basics]<br>
+  [MDC Flutter 教程 1：Material 组件基础][MDC 101 Flutter: Material Components (MDC) Basics-cn]<br>
   学习使用 Material 核心组件构建一个简单的应用。
   我们最终会构建一个售卖衣服和家居的电子商务应用 － Shrine，
   本节将从一个简单的登陆页面开始帮助你在 Flutter 上使用 Material 组件。
@@ -147,7 +152,7 @@ like layout and animations:
   Continue building the e-commerce app, introduced in MDC-101,
   by adding navigation, structure, and data.
 
-  [MDC Flutter 教程 2：Material 组件结构和布局][MDC 102 Flutter: Material Structure and Layout]<br>
+  [MDC Flutter 教程 2：Material 组件结构和布局][MDC 102 Flutter: Material Structure and Layout-cn]<br>
   学习如何在 Flutter 中使用 Material 样式的结构和布局。
   通过添加导航、结构和数据，继续构建那个电子商务应用 － Shrine。
 
@@ -157,7 +162,7 @@ like layout and animations:
   brand through design. Continue building your e-commerce
   app by adding a home screen that displays products.
 
-  [MDC Flutter 教程 3：Material 组件主题、形状、阴影和类型][MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type]<br>
+  [MDC Flutter 教程 3：Material 组件主题、形状、阴影和类型][MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type-cn]<br>
   探寻如何通过 Flutter Material 组件让你的产品更出众，
   并通过你的设计传达产品的品牌。
   我们会为我们的电子商务应用加入一个首页展现所有的产品。
@@ -168,7 +173,7 @@ like layout and animations:
   by adding a backdrop with a menu that filters
   products by the selected category.
 
-  [MDC Flutter 教程 4：Material 组件进阶][MDC 104 Flutter: Material Advanced Components]<br>
+  [MDC Flutter 教程 4：Material 组件进阶][MDC 104 Flutter: Material Advanced Components-cn]<br>
   改进设计并学习如何使用高级的组件 - backdrop 菜单。
   本期我们将通过加入一个全屏（backdrop）样式的菜单，用于分类显示你的产品。
   至此我们就结束了这个电子商务应用的构建
@@ -182,6 +187,12 @@ like layout and animations:
 [MDC 102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
 [MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
 [MDC 104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
+
+[Building Beautiful Transitions with Material Motion for Flutter-cn]: {{site.codelabs}}/codelabs/material-motion-flutter-cn
+[MDC 101 Flutter: Material Components (MDC) Basics-cn]: {{site.codelabs}}/codelabs/mdc-101-flutter-cn
+[MDC 102 Flutter: Material Structure and Layout-cn]: {{site.codelabs}}/codelabs/mdc-102-flutter-cn
+[MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type-cn]: {{site.codelabs}}/codelabs/mdc-103-flutter-cn
+[MDC 104 Flutter: Material Advanced Components-cn]: {{site.codelabs}}/codelabs/mdc-104-flutter-cn
 
 ## Using Flutter with...
 
@@ -209,6 +220,10 @@ Learn how to use Flutter with other technologies.
   Learn how to add an AdMob banner, an interstitial ad,
   and a rewarded ad to an app called Awesome Drawing Quiz,
   a game that lets players guess the name of the drawing.
+  
+  [为 Flutter 应用加入 AdMob][Adding AdMob Ads to a Flutter app]<br>
+  为一个名叫 Awesome Drawing Quiz 的小游戏加入 AdMob 标语广告、插页式广告和奖励广告。
+  这是一个看图猜字的游戏。
 
 * [Firebase for Flutter][]<br>
   Connect a Flutter app to a Firebase database,
@@ -223,7 +238,10 @@ Learn how to use Flutter with other technologies.
   powered by Flutter and Cloud Firestore.
   The finished app runs on Android, iOS, and web,
   from a single Dart codebase.
-
+  
+  [使用 Cloud Firestore 和 Flutter 构建一个多平台应用][]<br>
+  构建一个多平台的餐馆推荐应用，只需要一套 Dart 代码，
+  就可以运行在 Android、iOS 和 Web 平台。
 
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
@@ -289,10 +307,6 @@ iOS、Android、Web 和桌面端。
   launch the app and open the hosted privacy policy.
 
   [在 Flutter Web 应用使用插件][Using a plugin with a Flutter web app]<br>
-  Finish an app that reports the number of stars on a GitHub repository.
-  use Dart DevTools to do some simple debugging, and
-  Host your app on Firebase and, finally, use a Flutter plugin to
-  launch the app and open the hosted privacy policy.
   构建一个完整的应用来显示 GitHub 仓库的星星（收藏）数量，
   使用 Dart DevTools 开发者工具进行一些简答的调试，
   然后将应用部署到 Firebase 上。最后使用 Flutter 插件
@@ -311,11 +325,16 @@ iOS、Android、Web 和桌面端。
   让原生 API 和桌面应用进行交互，
   并为 GitHub APIs 构建一个类型安全的客户端库。
 
-[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
-[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin/
+[Building a Cupertino app with Flutter]: https://codelabs.developers.google.com/codelabs/flutter-cupertino
+[How to write a Flutter plugin]: https://codelabs.developers.google.com/codelabs/write-flutter-plugin/
 [provider]: {{site.pub}}/packages/provider
-[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
+[Using a plugin with a Flutter web app]: https://codelabs.developers.google.com/codelabs/web-url-launcher/
+[Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/
+
+[Building a Cupertino app with Flutter-cn]: {{site.codelabs}}/codelabs/flutter-cupertino-cn
+[How to write a Flutter plugin-cn]: {{site.codelabs}}/codelabs/write-flutter-plugin-cn
+[Using a plugin with a Flutter web app-cn]: {{site.codelabs}}/codelabs/web-url-launcher-cn
+[Write a Flutter desktop application-cn]: {{site.codelabs}}/codelabs/flutter-github-graphql-client-cn
 
 ## Other resources
 

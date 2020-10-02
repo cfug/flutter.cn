@@ -55,13 +55,13 @@ Copy the [`install.sh`](https://github.com/am15h/tflite_flutter_plugin/blob/mast
 
 Copy the [`install.bat`](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.bat) file in the root folder of your app, and execute the command, `install.bat` in the root folder, text_classification_app/ in our case.
 
-将 [install.bat](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.bat) 文件拷贝到应用根目录，并在根目录运行批处理文件 `install.bat`，本例中就是目录 `text_classification_app/`。 
+将 [install.bat](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.bat) 文件拷贝到应用根目录，并在根目录运行批处理文件 `install.bat`，本例中就是目录 `text_classification_app/`。
 
 This will automatically download the latest binaries from [release assets](https://github.com/am15h/tflite_flutter_plugin/releases) and place them in appropriate folders for you.
 
 它会自动从 [release assets](https://github.com/am15h/tflite_flutter_plugin/releases) 下载最新的二进制资源，然后把它放到指定的目录下。
 
-[Refer to the readme for more info on the initial setup.](https://github.com/am15h/tflite_flutter_plugin#initial-setup) 
+[Refer to the readme for more info on the initial setup.](https://github.com/am15h/tflite_flutter_plugin#initial-setup)
 
 请点击到 README 文件里查看更多 [关于初始配置的信息](https://github.com/am15h/tflite_flutter_plugin#important-initial-setup)。
 

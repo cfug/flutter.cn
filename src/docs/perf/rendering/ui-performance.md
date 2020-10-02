@@ -480,12 +480,9 @@ If the performance overlay shows red in the UI graph,
 start by profiling the Dart VM, even if the GPU graph
 also shows red.
 
-如果性能图层的 UI 图表显示红色，就要从分析 Dart VM 开始着手了，即使 GPU 图表同样显示红色。
-
-PENDING: Other than saying "debug with DevTools", what
-can be said here?
-
-思考：除了说“使用DevTools调试”，这里还可以说什么？
+如果性能图层的 UI 图表显示红色，
+就要从分析 Dart VM 开始着手了，
+即使 GPU 图表同样显示红色。
 
 ## Identifying problems in the GPU graph
 

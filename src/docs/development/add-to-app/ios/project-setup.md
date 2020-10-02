@@ -12,7 +12,13 @@ keywords: iOS,项目集成
 Flutter can be incrementally added into your existing iOS
 application as embedded frameworks.
 
-Flutter 可以以 framework 框架的形式添加到你的既有 iOS 应用中。
+Flutter 可以以 framework 框架的形式添加到
+你的既有 iOS 应用中。
+
+For examples, see the iOS directories in the [add_to_app code samples][].
+
+请参阅
+[add_to_app代码示例][add_to_app code samples] 的 iOS 目录。
 
 ## System requirements
 
@@ -393,8 +399,8 @@ General > Frameworks, Libraries, and Embedded Content 下，
 
 For example, you can drag the frameworks from
 `some/path/MyApp/Flutter/Release/` in Finder
-into your targets' build
-settings > Build Phases > Link Binary With Libraries.
+into your target's **Build
+Settings > Build Phases > Link Binary With Libraries**.
 
 例如，你可以将框架从 Finder 的 `some/path/MyApp/Flutter/Release/` 
 拖到你的目标项目中，
@@ -439,8 +445,8 @@ into your app to be loaded at runtime.
 For example, you can drag the framework
 (except for `FlutterPluginRegistrant` and any other
 static frameworks) from your application's Frameworks group
-into your targets' build settings > Build Phases >
-Embed Frameworks.
+into your target's **Build Settings > Build Phases >
+Embed Frameworks**.
 Then, select **Embed & Sign** from the drop-down list.
 
 例如，你可以从应用框架组中拖拽框架
@@ -534,6 +540,76 @@ FlutterPluginRegistrant.framework,
 and any plugin frameworks into your existing application
 as described in Option B.
 
+## Local Network Privacy Permissions
+On iOS 14 and higher, enable the Dart multicast DNS
+service in the Debug version of your app
+to add [debugging functionalities such as hot-reload and
+DevTools][] via `flutter attach`.
+
+{{site.alert.warning}}
+  This service must not be enabled in the **Release**
+  version of your app, or you may experience App Store rejections.
+{{site.alert.end}}
+
+One way to do this is to maintain a separate copy of your app's Info.plist per
+build configuration. The following instructions assume
+the default **Debug** and **Release**.
+Adjust the names as needed depending on your app's build configurations.
+
+<ol markdown="1">
+<li markdown="1">
+
+Rename your app's **Info.plist** to **Info-Debug.plist**.
+Make a copy of it called **Info-Release.plist** and add it to your Xcode project.
+
+{% include app-figure.md image="development/add-to-app/ios/project-setup/info-plists.png" alt="Info-Debug.plist and Info-Release.plist in Xcode" %}
+
+</li>
+
+<li markdown="1">
+In **Info-Debug.plist** _only_ add the key `NSBonjourServices`
+and set the value to an array with the string `_dartobservatory._tcp`.
+Note Xcode will display this as "Bonjour services".
+
+Optionally, add the key `NSLocalNetworkUsageDescription` set to your
+desired customized permission dialog text.
+
+{% include app-figure.md image="development/add-to-app/ios/project-setup/debug-plist.png" alt="Info-Debug.plist with additional keys" %}
+
+</li>
+
+<li markdown="1">
+
+In your target's build settings, change the **Info.plist File**
+(`INFOPLIST_FILE`) setting path from `path/to/Info.plist` to `path/to/Info-$(CONFIGURATION).plist`.
+
+{% include app-figure.md image="development/add-to-app/ios/project-setup/set-plist-build-setting.png" alt="Set INFOPLIST_FILE build setting" %}
+
+This will resolve to the path **Info-Debug.plist** in **Debug** and
+**Info-Release.plist** in **Release**.
+
+{% include app-figure.md image="development/add-to-app/ios/project-setup/plist-build-setting.png" alt="Resolved INFOPLIST_FILE build setting" %}
+
+Alternatively, you can explicitly set the **Debug** path to **Info-Debug.plist**
+and the **Release** path to **Info-Debug.plist**.
+
+</li>
+
+<li markdown="1">
+
+If the **Info-Release.plist** copy is in your target's **Build Settings > Build Phases > Copy Bundle**
+Resources build phase, remove it.
+
+{% include app-figure.md image="development/add-to-app/ios/project-setup/copy-bundle.png" alt="Copy Bundle build phase" %}
+
+The first Flutter screen loaded by your Debug app will now prompt
+for local network permission. The permission can also be allowed by enabling
+**Settings > Privacy > Local Network > Your App**.
+{% include app-figure.md image="development/add-to-app/ios/project-setup/network-permission.png" alt="Local network permission dialog" %}
+
+</li>
+</ol>
+
 ## Development
 
 ## 开发
@@ -542,7 +618,7 @@ You can now [add a Flutter screen][] to your existing application.
 
 你现在可以 [添加一个 Flutter 页面][add a Flutter screen] 到你的既有应用中。
 
-
+[add_to_app code samples]: {{site.github}}/flutter/samples/tree/master/add_to_app
 [add a Flutter screen]: /docs/development/add-to-app/ios/add-flutter-screen
 [macOS system requirements for Flutter]: /docs/get-started/install/macos#system-requirements
 [Xcode installed]: /docs/get-started/install/macos#install-xcode
@@ -551,9 +627,11 @@ You can now [add a Flutter screen][] to your existing application.
 [embed the frameworks]: /docs/development/add-to-app/ios/project-setup#embed-the-frameworks
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html
+[debugging functionalities such as hot-reload and DevTools]: /docs/development/add-to-app/debugging
 [Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
 [increases your app size]: /docs/resources/faq#how-big-is-the-flutter-engine
 [macOS system requirements for Flutter]: /docs/get-started/install/macos#system-requirements
+[On iOS 14 and higher]: https://developer.apple.com/news/?id=0oi77447
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
 [static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [VS Code]: /docs/development/tools/vs-code

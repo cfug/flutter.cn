@@ -77,6 +77,11 @@ see [Installation bundles][].
 关于安装包结构的更多信息，请查看这个页面：
 [Flutter 安装包结构][Installation bundles]。
 
+We will post a Weibo message with each Flutter releases,
+please follow us on Weibo: [Flutter Community](https://weibo.com/u/6723427904)!
+
+每次版本发布我们也都会在微博上发布一条信息，欢迎关注
+[Flutter社区](https://weibo.com/u/6723427904) 微博账号！
 
 [Flutter Spring 2020 Update]: {{site.medium}}/flutter/flutter-spring-2020-update-f723d898d7af
 [Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels

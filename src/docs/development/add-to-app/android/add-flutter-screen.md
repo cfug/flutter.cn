@@ -341,7 +341,7 @@ pass the appropriate `BackgroundMode` to the `IntentBuilder`:
 startActivity(
   FlutterActivity
     .withNewEngine()
-    .backgroundMode(FlutterActivity.BackgroundMode.transparent)
+    .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
     .build(context)
 );
 
@@ -349,7 +349,7 @@ startActivity(
 startActivity(
   FlutterActivity
     .withCachedEngine("my_engine_id")
-    .backgroundMode(FlutterActivity.BackgroundMode.transparent)
+    .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
     .build(context)
 );
 ```
@@ -360,7 +360,7 @@ startActivity(
 startActivity(
   FlutterActivity
     .withNewEngine()
-    .backgroundMode(FlutterActivity.BackgroundMode.transparent)
+    .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
     .build(this)
 );
 
@@ -368,7 +368,7 @@ startActivity(
 startActivity(
   FlutterActivity
     .withCachedEngine("my_engine_id")
-    .backgroundMode(FlutterActivity.BackgroundMode.transparent)
+    .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
     .build(this)
 );
 ```

@@ -79,7 +79,7 @@ When a new Flutter app is created, it has a default launcher icon.
 To customize this icon, you might want to check out the
 [flutter_launcher_icons][] package.
 
-当我们创建一个新的 Flutter app 的时候，它���有一个默认的启动图标。
+当我们创建一个新的 Flutter app 的时候，它会有一个默认的启动图标。
 要自定义这个图标，可以参考使用 [flutter_launcher_icons][] 这个 package。
 
 Alternatively, you can do it manually using the following steps:
@@ -423,7 +423,7 @@ flag to `flutter build apk` or `flutter build appbundle`.
   Obfuscation and minification can considerably extend compile time
   of the Android application.
   
-  混���和压缩会大大地延长安卓应用程序的编译时间。
+  混淆和压缩会大大地延长安卓应用程序的编译时间。
   
 {{site.alert.end}}
 
@@ -482,7 +482,7 @@ values in the `defaultConfig` block:
   and the version number display string. You can do this by setting
   the `version` property in the pubspec.yaml file. Consult the version
   information guidance in the [versions documentation][versions].
-  
+
 `versionCode` & `versionName`
 <br> 指定 app 的内部版本号，以及用于显示的版本号，
 这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。
@@ -502,7 +502,7 @@ values in the `defaultConfig` block:
 中的 API 版本的部分。
 
 `buildToolsVersion`
-: Specify the version of Android SDK Build Tools that your app uses. 
+<br> Specify the version of Android SDK Build Tools that your app uses. 
   Alternatively, you can use the [Android Gradle Plugin] in Android Studio,
   which will automatically import the minimum required Build Tools for your app
   without the need for this property.
@@ -541,21 +541,35 @@ the Play Store.
 {{site.alert.end}}
 
 {{site.alert.warning}}
+
   Recently, the Flutter team has received [several reports][crash-issue]
   from developers indicating they are experiencing app
   crashes on certain devices on Android 6.0. If you are targeting
   Android 6.0, use the following steps:
+  
+  最近，Flutter 团队收到了很多开发者的 [报告][crash-issue]，
+  表示他们在 Android 6.0 的某些设备上遇到了应用崩溃的情况。
+  如果你的目标 API 等级是 Android 6.0，请参考以下步骤：
 
   * If you build an App Bundle
     Edit `android/gradle.properties` and add the flag:
     `android.bundle.enableUncompressedNativeLibs=false`.
+
+    如果以 App Bundle 构建发布，编辑 `android/gradle.properties` 文件，
+    添加一行属性 `android.bundle.enableUncompressedNativeLibs=false`；
 
   * If you build an APK
     Make sure `android/app/src/AndroidManifest.xml`
     doesn't set `android:extractNativeLibs=false`
     in the `<application>` tag.
 
+    如果以 APK 构建发布，需要确保清单文件 `android/app/src/AndroidManifest.xml`
+    的 `<application>` 标签里不包含 `android:extractNativeLibs=false`。
+
   For more information, see the [public issue][crash-issue].
+  
+  更多内容，请参考这个 [错误报告][crash-issue]。
+  
 {{site.alert.end}}
 
 ### Build an app bundle
@@ -705,7 +719,7 @@ native binaries that are not applicable to their device's architecture.
 
 Follow these steps to install the APK on a connected Android device.
 
-按照如下这些步骤，将前一步中构建出来�� APK 安装到 Android 设备上。
+按照如下这些步骤，将前一步中构建出来的 APK 安装到 Android 设备上。
 
 From the command line:
 
@@ -815,7 +829,7 @@ rebuild the Flutter app.
 在项目根目录下运行 `flutter pub get`，
 或者使用 IDE 中的 **Pub get** 按钮。
 这将会更新 `local.properties` 文件中的 `versionName` 和 `versionCode`，
-之后它会在你构建 Flutter 应用的时候��新 `build.gradle`。
+之后它会在你构建 Flutter 应用的时候更新 `build.gradle`。
 
 ## Android release FAQ
 
@@ -901,7 +915,7 @@ in the main menu. Select any of the variants in the **Build Variants**
 panel (debug is the default):
 
 接下来，选择构建变体。在主菜单中点击 **Build > Select Build Variant**。
-从 **Build Variants** 面板中��择任意一个变体 （默认是 debug）。
+从 **Build Variants** 面板中选择任意一个变体（默认是 debug）。
 
 {% asset 'deployment/android/build-variant-menu.png' alt='screenshot of build variant menu' %}
 

@@ -124,6 +124,7 @@
     innovation.
   logo_src: showcase/cards/abbey_road-logo.png
   video_id: _ACWeGGBP4E
+  learn_more_link: https://www.miquido.com/portfolio/topline-abbey-road-studios/
   app_store_link: https://itunes.apple.com/us/app/topline/id1270125833?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.abbeyroadandroid&hl=en_US&e=-EnableAppDetailsPageRedesign
   video_frame_image: showcase/video-frames/abbey_road@.jpg
@@ -181,6 +182,7 @@
   video_id: lCeRZhoqEP8
   learn_more_cta: Learn more
   learn_more_link: https://www.dream11.com/download-app
+  app_store_link: https://apps.apple.com/in/app/dream11-fantasy-sports/id1077286074
   video_frame_image: showcase/video-frames/dream11@.jpg
   quote_testimonial: true
   quote: >
@@ -245,6 +247,8 @@
   logo_src: showcase/cards/philips_hue-logo.png
   logo_has_name: true
   learn_more_dropdown: true
+  app_store_link: https://apps.apple.com/us/app/philips-hue/id1055281310
+  play_store_link: https://play.google.com/store/apps/details?id=com.philips.lighting.hue2&hl=en
   learn_more_links:
     - link_item:
       link: https://www2.meethue.com/en-us/entertainment/sync-with-tv#get-the-app

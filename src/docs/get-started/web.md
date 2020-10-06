@@ -295,10 +295,13 @@ flutter run -d chrome
 The `flutter run` command launches the application using the
 [development compiler] in a Chrome browser.
 
-运行 `flutter run` 命令将使用 Chrome 浏览器的
-[development compiler][] 来启动应用程序。
+运行 `flutter run` 命令将使用 Dart 的
+[开发编译器 dartdevc][development compiler]
+在 Chrome 浏览器中启动应用程序。
 
 ### Build
+
+### 使用 build 命令
 
 Run the following command to generate a release build:
 
@@ -327,7 +330,8 @@ Release 构建产物使用 [dart2js][]（不是 dartdevc）
 For more information, see
 [Build and release a web app][].
 
-了解更多相关信息，请查阅文档：[Build and release a web app][]。
+了解更多相关信息，请查阅文档：
+[打包并发布 Web 应用][Build and release a web app]。
 
 ## Add web support to an existing app
 
@@ -346,9 +350,9 @@ $ flutter create .
 
 [Build and release a web app]: /docs/deployment/web
 [creating a new Flutter project]: /docs/get-started/test-drive
-[dart2js]: https://dart.dev/tools/dart2js
+[dart2js]: {{site.dart-site}}/tools/dart2js
 [desktop support]: /desktop
-[development compiler]: https://dart.dev/tools/dartdevc
+[development compiler]: {{site.dart-site}}/tools/dartdevc
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [install the Flutter and Dart plugins]: /docs/get-started/editor
 [setting up an editor]: /docs/get-started/editor

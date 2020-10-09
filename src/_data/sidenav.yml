@@ -233,9 +233,15 @@
           children:
             - title: 版本升级
               permalink: /docs/development/tools/sdk/upgrading
+<<<<<<< HEAD
             - title: 版本列表
               permalink: /docs/development/tools/sdk/releases
             - title: 重要改动 (Breaking changes)
+=======
+            - title: Releases
+              permalink: /docs/development/tools/sdk/releases
+            - title: Breaking changes
+>>>>>>> c87a045250893bd99cabb9dca7328d617b66e711
               permalink: /docs/release/breaking-changes
             - title: 版本说明
               permalink: /docs/development/tools/sdk/release-notes

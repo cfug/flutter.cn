@@ -15,11 +15,11 @@ Flutter website available at
 欢迎你来到由中国 Flutter 社区维护的中文 Flutter 资源网站：[https://flutter.cn](https://flutter.cn)
 
 If you’d like to install Flutter using an [installation
-bundle](/docs/development/tools/sdk/archive),
+bundle](/docs/development/tools/sdk/releases),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
 
-如果你需要下载 [Flutter SDK 的独立打包文件](/docs/development/tools/sdk/archive)，
+如果你需要下载 [Flutter SDK 的独立打包文件](/docs/development/tools/sdk/releases)，
 你可以将下载链接前缀替换为你信任的镜像链接。
 
 * 原始链接:<br>
@@ -147,14 +147,14 @@ $ export PUB_HOSTED_URL=http://mirrors.cnnic.cn/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
 ```
 
-<!--### 腾讯云开源镜像站-->
+### 腾讯云开源镜像站
 
-<!--使用 TUNA 开源的脚本每天凌晨 0 - 2 点定时与站源同步，数据延迟很大，未配置回源策略。-->
+使用 TUNA 开源的脚本每天凌晨 0 - 2 点定时与站源同步，未配置回源策略。
 
-<!--```terminal-->
-<!--$ export PUB_HOSTED_URL=https://mirrors.cloud.tencent.com/dart-pub-->
-<!--$ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter-->
-<!--```-->
+```terminal
+$ export PUB_HOSTED_URL=https://mirrors.cloud.tencent.com/dart-pub
+$ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
+```
 
 ### 已知问题
 
@@ -166,8 +166,9 @@ $ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
 - [上海大学的镜像](https://mirrornews.shuosc.org/p/6d7146f9.html) 
   暂时只允许校内访问，故暂未展示，感谢上海大学 Linux 用户组的同学。
 - 腾讯云开源镜像站使用 TUNA 开源脚本制作，每天同步一次，
-  经测试，其数据延迟较大并尚未配置有效的回源策略，基于数据完整性考虑，
-  本页面暂时撤下了腾讯云开源镜像站，如有需要请点击访问 [腾讯云开源镜像站](https://mirrors.cloud.tencent.com) 自行配置。
+  经测试，其数据延迟较大并尚未配置有效的回源策略，有待于社区成员进一步验证。
+- 任何其他跟镜像相关的问题，请
+  [发 Issue 给我们](https://github.com/cfug/flutter.cn/issues)。
 
 ## 致谢
 

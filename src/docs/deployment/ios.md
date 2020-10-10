@@ -183,26 +183,17 @@ In the **Identity** section:
 
 在 **Identity** 部分：
 
-`Display Name` 
-: Runner
+`Display Name`
+<br> The display name of your app.
 
-{{site.alert.note}}
+`Display Name`
+<br> 应用的名字。
 
-  Flutter versions prior to 1.18.0-10.0.pre
-  do not support changing the display name
-  to anything other than `Runner`. For more
-  information, see [Issue 41793][].
-  
-  Flutter 1.18.0-10.0.pre 之前的版本只能将
-  显示名称设定为 `Runner`，不能命名为其他名字。
-  有关更多信息，请参见 [Issue 41793][]。
-{{site.alert.end}}
-  
 `Bundle Identifier`
 <br> The App ID you registered on App Store Connect.
 
 `Bundle Identifier`
-<br> 你在 App Store Connect 注册的 App ID。
+<br> 在 App Store Connect 注册的 App ID。
 
 In the **Signing & Capabilities** section:
 
@@ -246,16 +237,8 @@ the following:
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
 
-更多关于 App 签名新的介绍，查看 [创建, 导出, 和删除签名证书][appsigning]
-
-## Updating the app's name
-
-## 更改应用名称
-
-In the main view sidebar, select the `Info.plist` file.
-Rename the **Bundle name** field.
-
-在主视图的侧边栏中，选择 `Info.plist` 文件，并重新命名 **Bundle name** 字段。
+更多关于 App 签名新的介绍，查看文档
+[创建, 导出, 和删除签名证书][appsigning]。
 
 ## Updating the app's version number
 
@@ -335,9 +318,12 @@ to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
 
 在开发过程中，你将会使用 _debug_ 模式来完成构建、调试并测试。
-当你准备好通过 App Store 或 TestFlight 交付你的 app 给用户时，你需要准备一个 **release** 构建。
-这时你也许想要 [混淆你的 Dart 代码][obfuscating your Dart code]以加大反编译难度。
-混淆你的代码需要在 build 的时候添加一些标志，并维护其他文件以消除反编译的堆栈跟踪。
+当你准备好通过 App Store 或 TestFlight 交付你的 app 给用户时，
+你需要准备一个 **release** 构建。
+这时你也许想要
+[混淆你的 Dart 代码][obfuscating your Dart code] 以加大反编译难度。
+混淆你的代码需要在 build 的时候添加一些标志，
+并维护其他文件以消除反编译的堆栈跟踪。
 
 On the command line, follow these steps in your application directory:
 
@@ -570,7 +556,6 @@ the process of releasing an app to the App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[Issue 41793]: {{site.github}}/flutter/flutter/issues/41793
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [TestFlight]: https://developer.apple.com/testflight/
 

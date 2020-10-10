@@ -205,7 +205,7 @@ Future<Album> fetchAlbum() async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -428,7 +428,7 @@ Future<Album> fetchAlbum() async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.

@@ -12,13 +12,14 @@ what's new on the Flutter website and blog.
 
 该归档包含了历史公告，以及网站上的更新内容。
 
-To stay on top of Flutter announcements, including breaking changes,
+To stay on top of Flutter announcements,
+including breaking changes,
 join the [flutter-announce][] Google group.
 
-要及时同步最新 Flutter 公告，包括 breaking changes 请加入 [flutter-announce][] Google 社区。
+要及时同步最新 Flutter 公告，包括重大变更 (breaking changes) 等，
+请加入 [flutter-announce][] 邮件组。
 
-[flutter-announce][]
-
+[flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
 ## Aug 5, 2020
 
@@ -324,14 +325,12 @@ publication since the last stable release:
   * [What are the important & difficult tasks for Flutter
      devs? — Q1 2020 survey results][q1-2020]
 
-    [对于 Flutter 开发者来说有哪些重要且困难的问题？ - 2020 第一季度调查结果][What are the important & difficult tasks for Flutter
-     devs? — Q1 2020 survey results]
+    [对于 Flutter 开发者来说有哪些重要且困难的问题？ - 2020 第一季度调查结果][q1-2020]
 
   * [Optimizing performance in Flutter web apps with tree
      shaking and deferred loading][shaking]
 
-    [Flutter web 应用中的性能优化，包括了 tree
-     shaking 和延迟加载][shaking]
+    [Flutter web 应用中的性能优化，包括了 tree shaking 和延迟加载][shaking]
 
   * [Flutter Package Ecosystem Update][]
 
@@ -431,31 +430,36 @@ publication since the last stable release:
 
 ## Oct 1, 2020
 
-Flutter 1.22 is live! For details, see [Announcing Flutter 1.22][].
+Flutter 1.22 is live! For details, see
+[Announcing Flutter 1.22][].
 
 
 **Docs updated or added to flutter.dev since the 1.20 release**
 
 * Updated the [Developing for iOS 14][] page with
-  details about targeting iOS 14 with Flutter, including some Add-to-App,
-  deep linking, and notification considerations.
-* Added a page on how to [add an iOS App Clip][], a new iOS 14 feature
-  that supports running lightweight, no-install apps under 10 MB.
+  details about targeting iOS 14 with Flutter, including some
+  Add-to-App, deep linking, and notification considerations.
+* Added a page on how to [add an iOS App Clip][],
+  a new iOS 14 feature that supports running lightweight,
+  no-install apps under 10 MB.
 * Added a page that describes how to [migrate your app to use the
-  new icon glyphs available in `CupertinoIcons`][cupertino-icons].
-* Added a page that describes the new [implementation for Platform Views
-  and how to use them to host native Android and iOS views in your
-  Flutter app][platform-views]. This feature has enabled the
-  [google_maps_flutter][] and [webview_flutter][] plugins to be
+  new icon glyphs available in
+  `CupertinoIcons`][cupertino-icons].
+* Added a page that describes the new [implementation for
+  Platform Views and how to use them to host native Android
+  and iOS views in your Flutter app][platform-views].
+  This feature has enabled the [google_maps_flutter][]
+  and [webview_flutter][] plugins to be
   updated to production-ready release 1.0.
-* Added a page that describes how to use the new [App Size tool][]
-  in Dart DevTools.
+* Added a page that describes how to use the new
+  [App Size tool][] in Dart DevTools.
 
 **Codelabs**
 
 We've added a new codelab since the last stable release:
 
-* [Building Beautiful Transitions with Material Motion for Flutter][]
+* [Building Beautiful Transitions with Material Motion
+  for Flutter][]<br>
   Learn how to use the Material [animations][] package to
   add prebuilt transitions to a Material app called Reply.
 
@@ -498,21 +502,24 @@ publication since the last stable release:
 
 ## Aug 5, 2020
 
-Flutter 1.20 is live! For details, see [Announcing Flutter 1.20][].
+Flutter 1.20 is live! For details,
+see [Announcing Flutter 1.20][].
 
 **Docs updated or added to flutter.dev**
 
 * [Flutter architectural overview][], a deep dive into Flutter's
-  architecture, was added to the site just a few days after the 1.20 release.
+  architecture, was added to the site just a few days after the
+  1.20 release.
 * [Reducing shader compilation jank on mobile][] is added to the
   performance docs.
 * [Developing for iOS 14 beta][] outlines some issues you might
   run into if developing for devices running iOS 14 beta.
-* New instructions for [installing Flutter on Linux using snapd.][]
+* New instructions for [installing Flutter on Linux using
+  snapd.][]
 * Updated the [Desktop support][] page to reflect that Linux
   desktop apps (as well as macOS) are available as alpha.
-* Several new Flutter books have been published. The [Flutter books][]
-  page is updated.
+* Several new Flutter books have been published. The
+  [Flutter books][] page is updated.
 * The [codelabs landing][] page has been updated.
 
 A deep dive into null safety has been added to dart.dev:
@@ -521,7 +528,8 @@ A deep dive into null safety has been added to dart.dev:
 
 **Codelabs**
 
-[Flutter Day][] was held on 6/25/2020. In preparation for the event,
+[Flutter Day][] was held on 6/25/2020.
+In preparation for the event,
 we wrote new codelabs and updated existing codelabs.
 New codelabs include:
 
@@ -551,7 +559,8 @@ publication since the last stable release:
   * [Flutter and Desktop apps][]
   * [What's new with the Slider widget?][]
   * [New tools for Flutter developers, built in Flutter][dev-tools]
-  * [Canonical enables Linux desktop app support with Flutter][ubuntu]
+  * [Canonical enables Linux desktop app support with
+     Flutter][ubuntu]
   * [Enums with Extensions in Dart][]
   * [Managing issues in a large-scale open source project][]
   * [What we learned from the Flutter Q2 2020 survey][]
@@ -1003,7 +1012,7 @@ We are updating DartPad to work with Flutter. Try our new
 [Basic Flutter layout codelab][] and tell us what you think!
 
 [Basic Flutter layout codelab]: /docs/codelabs/layout-basics
-[download the release]: /docs/development/tools/sdk/archive
+[download the release]: /docs/development/tools/sdk/releases
 [Flutter 1.5]: https://developers.googleblog.com/2019/05/Flutter-io19.html
 [1.5.4 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
 
@@ -1045,7 +1054,7 @@ If you have questions or comments about any of these docs,
 
 [Android Studio/IntelliJ]: /docs/development/tools/android-studio
 [different state management options]: /docs/development/data-and-backend/state-mgmt/options
-[download the release]: /docs/development/tools/sdk/archive
+[download the release]: /docs/development/tools/sdk/releases
 [ephemeral vs app state]: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
 [file an issue]: {{site.repo.this}}/issues
 [introduction]: /docs/development/data-and-backend/state-mgmt/intro

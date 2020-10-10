@@ -15,20 +15,18 @@ but for now use "git clone".
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds, see the [SDK archive][] page.
+    For other release channels, and older builds, see the
+    [SDK releases][] page.
 
     要查看其他发行通道和以往的版本，请参阅
-    [SDK 版本列表][SDK archive][] 页面。
+    [SDK 版本列表][SDK releases] 页面。
 
- 1. Extract the zip file and place the contained `flutter` in the desired
-    installation location for the Flutter SDK
-    (for example, `C:\src\flutter`; do not
-    install Flutter in a directory like `C:\Program Files\` that requires
-    elevated privileges).
+ 1. Extract the zip file and place the contained `flutter`
+    in the desired installation location for the Flutter SDK
+    (for example, `C:\src\flutter`).
     
-    将压缩包解压，然后把其中的 `flutter` 目录整个放在你预想的 Flutter SDK 
-    安装目录中（比如 `C:\src\flutter`；
-    请勿将该目录放在一些需要额外操作权限的目录，比如 `C:\Program Files\`）。
+    将压缩包解压，然后把其中的 `flutter` 目录整个放在
+    你想放置 Flutter SDK 的文件夹中（比如 `C:\src\flutter`）。
 
  1. Locate the file `flutter_console.bat` inside the `flutter` directory.
     Start it by double-clicking.
@@ -256,5 +254,5 @@ verify that you’ve set everything up correctly.
 
 
 [Flutter repo]: {{site.github}}/flutter/flutter
-[SDK archive]: /docs/development/tools/sdk/archive
+[SDK releases]: /docs/development/tools/sdk/releases
 [Set up an editor]: /docs/get-started/editor?tab=androidstudio

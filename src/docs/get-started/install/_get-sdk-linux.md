@@ -52,7 +52,7 @@ install Flutter using the following steps.
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds,
-    see the [SDK archive][] page.
+    see the [SDK releases][] page.
 
     对于其他发布频道以及更久的构建版本，请查看 [SDK 存档][SDK archive]页面。
 
@@ -198,6 +198,6 @@ command again to verify that you’ve set everything up correctly.
 [Flutter repo]: {{site.github}}/flutter/flutter
 [install Flutter using the Snap Store]: https://snapcraft.io/flutter
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[SDK archive]: /docs/development/tools/sdk/archive
+[SDK releases]: /docs/development/tools/sdk/releases
 [Update your path]: #update-your-path
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading

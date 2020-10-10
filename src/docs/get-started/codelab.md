@@ -341,7 +341,7 @@ where the Dart code lives.
   包括对齐 (alignment)、填充 (padding) 和布局 (layout)。
 
 * The `Scaffold` widget, from the Material library,
-  provides a default app bar, title, and a body property that
+  provides a default app bar, and a body property that
   holds the widget tree for the home screen. The widget subtree
   can be quite complex.
 
@@ -611,11 +611,6 @@ class _RandomWordsState extends State<RandomWords> {
     [!}!]
   }
   ```
-
-  After adding the state class, the IDE complains that
-  the class is missing a build method. Next, you'll add a basic
-  build method that generates the word pairs by moving the
-  word generation code from `MyApp` to `_RandomWordsState`.
 </li>
 
 <li markdown="1"> Remove the word generation code from `MyApp`

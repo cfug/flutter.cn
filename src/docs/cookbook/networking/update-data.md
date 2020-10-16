@@ -183,12 +183,12 @@ the data from the internet.
 
 ## 5. Update the existing title from user input
 
-Create a `TextField` to enter a title and a `RaisedButton`
+Create a `TextField` to enter a title and a `ElevatedButton`
 to update the data on server.
 Also define a `TextEditingController` to
 read the user input from a `TextField`.
 
-When the `RaisedButton` is pressed,
+When the `ElevatedButton` is pressed,
 the `_futureAlbum` is set to the value returned by
 `updateAlbum()` method.
 
@@ -204,7 +204,7 @@ Column(
         decoration: InputDecoration(hintText: 'Enter Title'),
       ),
     ),
-    RaisedButton(
+    ElevatedButton(
       child: Text('Update Data'),
       onPressed: () {
         setState(() {
@@ -367,7 +367,7 @@ class _MyAppState extends State<MyApp> {
                         controller: _controller,
                         decoration: InputDecoration(hintText: 'Enter Title'),
                       ),
-                      RaisedButton(
+                      ElevatedButton(
                         child: Text('Update Data'),
                         onPressed: () {
                           setState(() {
@@ -407,4 +407,3 @@ class _MyAppState extends State<MyApp> {
 [JSON and serialization]: /docs/development/data-and-backend/json
 [Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
-

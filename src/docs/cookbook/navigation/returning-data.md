@@ -102,7 +102,7 @@ Now, create the SelectionButton, which does the following:
 class SelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () {
         _navigateAndDisplaySelection(context);
       },
@@ -156,7 +156,7 @@ class SelectionScreen extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   // 在这里返回 "Yep" (Pop here with "Yep"...)
                 },
@@ -165,7 +165,7 @@ class SelectionScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   // 在这里返回 "Nope" (Pop here with "Nope")
                 },
@@ -201,7 +201,7 @@ Any result is returned to the `Future` in the SelectionButton.
 
 <!-- skip -->
 ```dart
-RaisedButton(
+ElevatedButton(
   onPressed: () {
     // The Yep button returns "Yep!" as the result.
     Navigator.pop(context, 'Yep!');
@@ -216,7 +216,7 @@ RaisedButton(
 
 <!-- skip -->
 ```dart
-RaisedButton(
+ElevatedButton(
   onPressed: () {
     // The Nope button returns "Nope!" as the result.
     Navigator.pop(context, 'Nope!');
@@ -286,7 +286,7 @@ class HomeScreen extends StatelessWidget {
 class SelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () {
         _navigateAndDisplaySelection(context);
       },
@@ -325,7 +325,7 @@ class SelectionScreen extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   // Close the screen and return "Yep!" as the result.
                   Navigator.pop(context, 'Yep!');
@@ -335,7 +335,7 @@ class SelectionScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   // Close the screen and return "Nope!" as the result.
                   Navigator.pop(context, 'Nope.');

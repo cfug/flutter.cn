@@ -60,7 +60,7 @@ Future<Response> deleteAlbum(String id) async {
       'Content-Type': 'application/json; charset=UTF-8',
     },
   );
-  
+
   return response;
 }
 ```
@@ -90,7 +90,7 @@ Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: <Widget>[
     Text('${snapshot.data?.title ?? 'Deleted'}'),
-    RaisedButton(
+    ElevatedButton(
       child: Text('Delete Data'),
       onPressed: () {
        setState(() {
@@ -110,7 +110,7 @@ the same data that you fetched from the internet.
 ### Returning a response from the deleteAlbum() method
 Once the delete request has been made,
 you can return a response from the `deleteAlbum()`
-method to notify our screen that the data has been deleted. 
+method to notify our screen that the data has been deleted.
 
 <!-- skip -->
 ```dart
@@ -249,7 +249,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text('${snapshot.data?.title ?? 'Deleted'}'),
-                      RaisedButton(
+                      ElevatedButton(
                         child: Text('Delete Data'),
                         onPressed: () {
                           setState(() {
@@ -291,4 +291,3 @@ class _MyAppState extends State<MyApp> {
 [Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
 [JSON and serialization]: /docs/development/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
-

@@ -445,8 +445,8 @@ Try it out in [DartPad][DartPadE].
 
 For more information, see the documentation for [async and await][].
 
-如果想了解更多相关信息，请参考 [`async` 和
-`await` 的相关文档][async and await]。
+如果想了解更多相关信息，请参考
+[`async` 和 `await` 的相关文档][async and await]。
 
 ## The basics
 
@@ -459,7 +459,8 @@ For more information, see the documentation for [async and await][].
 To create an app using React Native,
 you would run `create-react-native-app` from the command line.
 
-如果要使用 React Native 创建应用，你需要在命令行里运行 `create-react-native-app`。
+如果要使用 React Native 创建应用，
+你需要在命令行里运行 `create-react-native-app`。
 
 ```terminal
 $ create-react-native-app <projectname>
@@ -799,7 +800,7 @@ as shown in the `build` function in the following example.
 ```dart
 // Flutter
 class CustomCard extends StatelessWidget {
-  CustomCard({@required this.index, @required 
+  CustomCard({@required this.index, @required
      this.onPress});
 
   final index;
@@ -811,7 +812,7 @@ class CustomCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text('Card $index'),
-          FlatButton(
+          TextButton(
             child: const Text('Press'),
             onPressed: this.onPress,
           ),
@@ -1160,6 +1161,7 @@ For more information about the core widgets from the Widgets package, see
 In React Native, `View` is a container that supports layout with `Flexbox`,
 style, touch handling, and accessibility controls.
 
+<<<<<<< HEAD
 在 React Native 中， `View` 是支持 `Flexbox` 
 布局、风格化、触摸事件处理和访问性控制的容器。
 
@@ -1172,6 +1174,11 @@ and [Center][].
 在 Flutter 中，你可以使用 Widgets 库中的核心布局 widget，
 比如 [Container][]、[Column][]、[Row][] 和 [Center][]。
 
+=======
+In Flutter, you can use the core layout widgets in the `Widgets`
+library, such as [`Container`][], [`Column`][],
+[`Row`][], and [`Center`][].
+>>>>>>> f8fe6bec96c1a8c15eeb3bbf196cccbf7e87e90a
 For more information, see the [Layout Widgets][] catalog.
 
 如果想了解更多相关信息，请参考 [布局类 Widgets][Layout Widgets] 目录。
@@ -1538,11 +1545,11 @@ Icon(Icons.lightbulb_outline, color: Colors.redAccent)
 ```
 
 When using the `Icons` class,
-make sure to set `uses-material-design: true` in
-the project's `pubspec.yaml` file.
+make sure to set `uses-material-design: true` in
+the project's `pubspec.yaml` file.
 This ensures that the `MaterialIcons` font,
 which displays the icons, is included in your app.
-In general, if you intend to use the Material library, 
+In general, if you intend to use the Material library,
 you should include this line.
 
 当使用 `Icons` 类时，确保在项目的 `pubspec.yaml` 文件中
@@ -1873,7 +1880,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             Padding(
               padding: EdgeInsets.only(top: 70.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: toggleBlinkState,
                 child: (toggleState
                   ?( Text('Blink'))
@@ -1924,7 +1931,7 @@ they depend on a state change.
 
 In Flutter, there are three primary ways to manage state:
 
-在 Flutter 中，有三种途径来管理状态：
+在 Flutter 中，有三种途径来管理���态：
 
 * The widget manages its own state
 
@@ -2091,7 +2098,7 @@ class CustomCard extends StatelessWidget {
     child: Column(
       children: <Widget>[
         Text('Card $index'),
-        FlatButton(
+        TextButton(
           child: const Text('Press'),
           onPressed: this.onPress,
         ),
@@ -2306,7 +2313,9 @@ method is used to specify the `BuildContext`
 The name of the route is passed to the `pushNamed` function to
 navigate to the specified route.
 
-要切换到一个已命名的路径，`Navigator` 中的 [of]({{site.api}}/flutter/widgets/Navigator/of.html) 方法被用于指定 `BuildContext` ( 该对象可以定位到 widget 树中的一个具体的 widget )。路径的名称传递到 `pushNamed` 函数来切换至指定的路径。
+要切换到一个已命名的路径，[`Navigator.of()`][] 方法被用于
+指定 `BuildContext` (该对象可以定位到 widget 树中的一个具体的 widget )。
+路径的名称传递到 `pushNamed` 函数来切换至指定的路径。
 
 <!-- skip -->
 ```dart
@@ -2321,7 +2330,11 @@ the [`MaterialPageRoute`][] widget is a modal route that
 replaces the entire screen with a platform-adaptive
 transition. It takes a [`WidgetBuilder`][] as a required parameter.
 
-你可以使用 `Navigator` 中的 push 方法添加 [`route`]({{site.api}}/flutter/widgets/Route-class.html) 到 navigator 的历史队列中，其中包含 [`context`]({{site.api}}/flutter/widgets/BuildContext-class.html) 并且可以切换到指定页面。在下面的例子中，[`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html) 是一个模式化路径，可以将整个页面通过平台自适应切换方式进行切换。它需要一个 [`WidgetBuilder`]({{site.api}}/flutter/widgets/WidgetBuilder.html) 参数。
+你可以使用 `Navigator` 中的 push 方法添加 [`Route`][] 到 navigator 的历史队列中，
+其中包含 [`BuildContext`][] 并且可以切换到指定页面。
+在下面的例子中，[`MaterialPageRoute`][] widget 是一个模式化路径，
+可以将整个页面通过平台自适应切换方式进行切换。
+它需要一个 [`WidgetBuilder`][] 参数。
 
 <!-- skip -->
 ```dart
@@ -2508,7 +2521,8 @@ To add a `Drawer` to an app, wrap it in a `Scaffold` widget.
 The `Scaffold` widget provides a consistent
 visual structure to apps that follow the
 [Material Design][] guidelines. It also supports
-special Material Design components, such as `Drawers`, `AppBars`, and `SnackBars`.
+special Material Design components,
+such as `Drawers`, `AppBars`, and `SnackBars`.
 
 在 Flutter 中，我们可以结合 `Drawer` 和 `Scaffold`
 一起使用来实现 Material Design 风格的 drawer 布局。
@@ -2518,10 +2532,10 @@ special Material Design components, such as `Drawers`, `AppBars`, and `SnackBars
 同时它还支持一些特殊的 Material Design 组件，
 比如 `Drawers`，`AppBars`， 和 `SnackBars`。
 
-The `Drawer` widget is a Material Design panel that slides in horizontally from
-the edge of a `Scaffold` to show navigation links in an application. You can
-provide a [`Button`][],
-a [`Text`][] widget,
+The `Drawer` widget is a Material Design panel that slides
+in horizontally from the edge of a `Scaffold` to show navigation
+links in an application. You can
+provide a [`ElevatedButton`][], a [`Text`][] widget,
 or a list of items to display as the child to the `Drawer` widget.
 In the following example, the [`ListTile`][]
 widget provides the navigation on tap.
@@ -2845,7 +2859,7 @@ TextField(
     hintText: 'Type something', labelText: 'Text Field '
   ),
 ),
-RaisedButton(
+ElevatedButton(
   child: Text('Submit'),
   onPressed: () {
     showDialog(
@@ -2921,7 +2935,7 @@ Form(
           labelText: 'Email',
         ),
       ),
-      RaisedButton(
+      ElevatedButton(
         onPressed: _submit,
         child: Text('Login'),
       ),
@@ -3330,75 +3344,74 @@ corresponding Flutter widget and common widget properties.
 下面的表格列举了通用的 React Native 组件与对应的 Flutter widget 和通用的 widget 属性。
 
 <div class="table-wrapper" markdown="1">
-| React Native Component                                                                    | Flutter widget                                                                                              | 描述                                                                                                                            |
+| React Native 组件   | Flutter Widget      | 描述                                                     |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| [Button](https://facebook.github.io/react-native/docs/button.html)                        | [Raised Button][]                           | 基本的悬浮按钮                                                                              |
-|                                                                                           |  onPressed [required]                                                                                        | 该回调函数在当按钮被点击的时候被触发。                                                       |
-|                                                                                           | Child                                                                              | 按钮的标签                                                                                                     |
+| [`Button`](https://facebook.github.io/react-native/docs/button.html)                        | [`ElevatedButton`][]                           | 基础的凸起按钮                                                                           |
+|                                                                                           |  onPressed [required]                                                                                        | 该回调函数在当按钮被点击的时候被触发。                                                         |
+|                                                                                           | Child                                                                              | 按钮的标签                                                                     |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [Button](https://facebook.github.io/react-native/docs/button.html)                        | [Flat Button][]                               | 基本的平面按钮                                                                                                       |
-|                                                                                           |  onPressed [required]                                                                                        | 该回调函数在当按钮被点击的时候被触发。                                                        |
-|                                                                                           | Child                                                                              | The button's label.                                                                                                      |
+| [`Button`](https://facebook.github.io/react-native/docs/button.html)                        | [`TextButton`][]                               | 基础的扁平化按钮.                                                                                                         |
+|                                                                                           |  onPressed [required]                                                                                        | 当按钮被点击的时候触发该回调函数。                                                          |
+|                                                                                           | Child             | 按钮的标签                                                                                                     |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [ScrollView](https://facebook.github.io/react-native/docs/scrollview.html)                | [ListView]({{site.api}}/flutter/widgets/ListView-class.html)                                    | 一个可滑动的纵向排列的 widget 列表。|
-||        children                                                                              |   ( <Widget\> [ ])  要显示的子 widget 列表
-||controller |[ [Scroll Controller]({{site.api}}/flutter/widgets/ScrollController-class.html) ] 可用于控制滑动 widget 的对象
+| [`ScrollView`](https://facebook.github.io/react-native/docs/scrollview.html)                | [`ListView`][]                                    | 一个可滑动的纵向排列的 widget 列表。|
+||        children                                                                              | 	( <Widget\> [ ])  要显示的子 widget 列表
+||controller |[ [`ScrollController`][] ] 可用于控制滑动 widget 的对象
 ||itemExtent|[ double ] 如果非空，那么强制所有子 widget 在滑动方向上增加给定的距离
-||scroll Direction|[ [Axis]({{site.api}}/flutter/painting/Axis-class.html) ] 滑动页面的滑动轴
+||scroll Direction|[ [`Axis`][] ] 滑动页面的滑动轴
 ||                                                                                                            |                                                                                                                                        |
-| [FlatList](https://facebook.github.io/react-native/docs/flatlist.html)                    | [ListView. builder()]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)               | 根据需要创建的一组 widget 的构造函数。
-||itemBuilder [required] |[[ Indexed Widget Builder]({{site.api}}/flutter/widgets/IndexedWidgetBuilder.html)] 根据需要创建子 widget。当元素序号大于等于零并且小于队列元素总数时，该回调函数会被调用。
+| [`FlatList`](https://facebook.github.io/react-native/docs/flatlist.html)                    | [`ListView.builder`][]               | 根据需要创建的一组 widget 的构造函数。
+||itemBuilder [required] |[[`IndexedWidgetBuilder`][]] 根据需要创建子 widget。当元素序号大于等于零并且小于队列元素总数时，该回调函数会被调用。
 ||itemCount |[ int ] 优化了 ListView 对于最大滑动范围的预估能力。
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [Image]({{site.api}}/flutter/widgets/Image-class.html)                         | [Image](https://facebook.github.io/react-native/docs/image.html)                                           | 显示图片的 widget。                                                                                                    |
-|                                                                                           |  image [required]                                                                                          | 要显示的图片                                              |
-|                                                                                           | Image. asset                                                                                                | 有多个构造函数可以用于指定图片。       |
-|                                                                                           | 宽, 高, 颜色, alignment                                                                            | 图片的风格和布局。                                                                                                         |
-|                                                                                           | fit                                                                                                        | 将图片内嵌到布局对应的空间里。I                       |
+| [`Image`](https://facebook.github.io/react-native/docs/image.html)                         | [`Image`][]                                           | 显示图片的 widget。                                                                                                      |
+|                                                                                           |  image [required]                                                                                          | 要显示的图片                                                                                                             |
+|                                                                                           | Image. asset                                                                                                | 有多个构造函数可以用于指定图片。                                                |
+|                                                                                           | width, height, color, alignment                                                                            | 图片的风格和布局。                                                                                                      |
+|                                                                                           | fit                                                                                                        | 将图片内嵌到布局对应的空间里。                                                                           |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [Modal](https://facebook.github.io/react-native/docs/modal.html)                          | [ModalRoute]({{site.api}}/flutter/widgets/ModalRoute-class.html)                                | 避免和之前路径交叉的路径。               |
-|                                                                                           | animation                                                                                                  | 路径切换的动画和之前路径向前切换的动画。        |
+| [`Modal`](https://facebook.github.io/react-native/docs/modal.html)                          | [`ModalRoute`][]                                | 避免和之前路径交叉的路径。                                          |
+|                                                                                           | animation                                                                                                  | 路径切换的动画和之前路径向前切换的动画。                                         |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-|  [Activity Indicator](https://facebook.github.io/react-native/docs/activityindicator.html) | [Circular Progress Indicator]({{site.api}}/flutter/material/CircularProgressIndicator-class.html) | 一个圆形的进度条 widget。                                        |
-|                                                                                           | strokeWidth                                                                                                | 圆形线条的宽度。         |
-|                                                                                           | backgroundColor                                                                                            | 指示进度的背景色。默认是当前主题的 `ThemeData.backgroundColor`。
+|  [`ActivityIndicator`](https://facebook.github.io/react-native/docs/activityindicator.html) | [`CircularProgressIndicator`][] | 一个圆形的进度条 widget。                                                                                       |
+|                                                                                           | strokeWidth                                                                                                | 圆形线条的宽度。                                                                                        |
+|                                                                                           | backgroundColor                                                                                            | 指示进度的背景色。默认是当前主题的 `ThemeData.backgroundColor`。                         |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-|  [Activity Indicator](https://facebook.github.io/react-native/docs/activityindicator.html) | [Linear Progress Indicator]({{site.api}}/flutter/material/LinearProgressIndicator-class.html)     | 一个水平条形的进度条。                                                         |
-|                                                                                           | value                                                                                                      | 进度值。       |
+|  [`ActivityIndicator`](https://facebook.github.io/react-native/docs/activityindicator.html) | [`LinearProgressIndicator`][]     | 一个水平条形的进度条。                                                                                          |
+|                                                                                           | value                                                                                                      | 进度条的进度值。                                                                                            |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [Refresh Control](https://facebook.github.io/react-native/docs/refreshcontrol.html)        | [Refresh Indicator]({{site.api}}/flutter/material/RefreshIndicator-class.html)                   | 支持 Material 中滑动刷新的 widget      |
-|                                                                                           | color                                                                                                      | 进度指示的前景色。         |
-|                                                                                           | onRefresh                                                                                                  | 当用户拖拽刷新指示器想要刷新的时候会调用该函数。  |
+| [`RefreshControl`](https://facebook.github.io/react-native/docs/refreshcontrol.html)        | [`RefreshIndicator`][]                   | 支持 Material 中滑动刷新的 widget  |
+|                                                                                           | color                                                                                                      | 进度指示的前景色。                                                                                      |
+|                                                                                           | onRefresh                                                                                                  | 	当用户拖拽刷新指示器想要刷新的时候会调用该函数。  |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [View](https://facebook.github.io/react-native/docs/view.html)                            | [Container]({{site.api}}/flutter/widgets/Container-class.html)                                  | 封装子 widget 的 widget。      |
+| [`View`](https://facebook.github.io/react-native/docs/view.html)                            | [`Container`][]                                  | 封装子 widget 的 widget。                                                                                                               |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [View](https://facebook.github.io/react-native/docs/view.html)                            | [Column]({{site.api}}/flutter/widgets/Column-class.html)                                        | 将子 widget 纵向排列的 widget。                     |
+| [`View`](https://facebook.github.io/react-native/docs/view.html)                            | [`Column`][]                                        | 将子 widget 纵向排列的 widget。                                                                            |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [View](https://facebook.github.io/react-native/docs/view.html)                            | [Row]({{site.api}}/flutter/widgets/Row-class.html)                                              | 将子 widget 横向排列的 widget。                   |
+| [`View`](https://facebook.github.io/react-native/docs/view.html)                            | [`Row`][]                                              | 将子 widget 横向排列的 widget。                                                                              |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [View](https://facebook.github.io/react-native/docs/view.html)                            | [Center]({{site.api}}/flutter/widgets/Center-class.html)                                        | 将子 widget 放置于中央的 widget。                                  |
-|                                                                                           |                                                                                                            |                                                                                                                                        |
-| [View](https://facebook.github.io/react-native/docs/view.html)                            | [Padding]({{site.api}}/flutter/widgets/Padding-class.html)                                      | 将子 widget 按照给定的间隔进行排列的 widget。              |
+| [`View`](https://facebook.github.io/react-native/docs/view.html)                            | [`Center`][]                                        | 将子 widget 放置于中央的 widget。                                                      |                                                                                                            |                                                                                                                                        |
+| [`View`](https://facebook.github.io/react-native/docs/view.html)                            | [`Padding`][]                                      | 将子 widget 按照给定的间隔进行排列的 widget。                                                                 |
 |                                                                                           | padding [required]                                                                                         | [ EdgeInsets ] 子 widget 间隔。
 |||
-| [Touchable Opacity](https://facebook.github.io/react-native/docs/touchableopacity.html)    | [Gesture Detector]({{site.api}}/flutter/widgets/GestureDetector-class.html)                      | 检测手势的 widget。                                                                    |
-|                                                                                           | onTap                                                                                                      | 当点击的时候会调用。         |
+| [`TouchableOpacity`](https://facebook.github.io/react-native/docs/touchableopacity.html)    | [`GestureDetector`][]                      | 检测手势的 widget。                                                                                                                     |
+|                                                                                           | onTap                                                                                                      | 当点击的时候会调用。                                                                                                 |
 |                                                                                           | onDoubleTap                                                                                                | 当两次点击的时候会调用。
 |||
-| [Text Input]({{site.api}}/flutter/services/TextInput-class.html)                | [Text Input](https://facebook.github.io/react-native/docs/textinput.html)                                   | 调用系统文本输入的接口。                                |
-|                                                                                           | controller                                                                                                 | [ [Text Editing Controller]({{site.api}}/flutter/widgets/TextEditingController-class.html) ] 用于获取或者修改文本。
+| [`TextInput`](https://facebook.github.io/react-native/docs/textinput.html)                | [`TextInput`][]                                   | 调用系统文本输入的接口。                                                 |
+|                                                                                           | controller                                                                                                 | [ [`TextEditingController`][] ] 用于获取或者修改文本。
 |||
-| [Text](https://facebook.github.io/react-native/docs/text.html)                          | [Text]({{site.api}}/flutter/widgets/Text-class.html)                                            | 以单一的样式显示文本的文本 widget。                                                                              |
-|                                                                                         | data                                                                                                      | [ String ] 要显示的文本。                                                                                                                                                                          |
-|                                                                                         | textDirection                                                                                             | [ [Text Align]({{site.api}}/flutter/dart-ui/TextAlign-class.html) ]文本的方向。    |
+| [`Text`](https://facebook.github.io/react-native/docs/text.html)                          | [`Text`][]                                            | 以单一的样式显示文本的文本 widget。                                                                                                                                                                       |
+|                                                                                         | data                                                                                                      | [ String ] 要显示的文本。                                                                                                                                                                         |
+|                                                                                         | textDirection                                                                                             | [ [`TextAlign`][] ] 文本的方向。        |
 |                                                                                         |                                                                                                           |                                                                                                                                                                                                              |
-| [Switch](https://facebook.github.io/react-native/docs/switch.html)                      | [Switch]({{site.api}}/flutter/material/Switch-class.html)                                      | Material Design 样式的开关。                                                                                                                                         |
-|                                                                                         | value [required]                                                                                          | [ boolean ] 开关的开启或者闭合状态。                                                                                                                                                                 |
-|                                                                                         | onChanged [required]                                                                                      | [ callback ] 当用户点击开关的时候调用。                   |
+| [`Switch`](https://facebook.github.io/react-native/docs/switch.html)                      | [`Switch`][]                                      | Material Design 样式的开关。                                           |
+|                                                                                         | value [required]                                                                                          | [ boolean ] 开关的开启或者闭合状态。                                                                                                                                                        |
+|                                                                                         | onChanged [required]                                                                                      | [ callback ] 当用户点击开关的时候调用。                                                                 |
 |                                                                                         |                                                                                                           |                                                                                                                                                                                                              |
-| [Slider](https://facebook.github.io/react-native/docs/slider.html)                      | [Slider]({{site.api}}/flutter/material/Slider-class.html)                                      | 选择一个范围的值。                                                                                                                               |
-|                                                                                         | value [required]                                                                                          | [ double ] 当前滑动器的值。                                                                                                                                                                           |
-|                                                                                         | onChanged [required]                                                                                      | 当用户为滑动器选择了新的值时会调用                                                                       |
+| [`Slider`](https://facebook.github.io/react-native/docs/slider.html)                      | [`Slider`][]                                      |选择一个范围的值。                                                                                                                      |
+|                                                                                         | value [required]                                                                                          | [ double ] 当前滑动器的值。                                      |
+|                                                                                         | onChanged [required]                                                                                      | 当用户为滑动器选择了新的值时会调用           |
 {:.table.table-striped}
 </div>
 
@@ -3445,7 +3458,7 @@ corresponding Flutter widget and common widget properties.
 [Flutter Widget Index]: /docs/reference/widgets
 [`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
-[`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [functions]: {{site.dart-site}}/guides/language/language-tour#functions
 [`Future`]: {{site.dart-site}}/tutorials/language/futures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
@@ -3474,7 +3487,7 @@ corresponding Flutter widget and common widget properties.
 [`PanResponder`]: https://facebook.github.io/react-native/docs/panresponder.html
 [pub.dev]: {{site.pub}}
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
-[`RaisedButton`]: {{site.api}}/flutter/material/RaisedButton-class.html
+[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [`RefreshIndicator`]: {{site.api}}/flutter/material/RefreshIndicator-class.html
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
@@ -3509,4 +3522,3 @@ corresponding Flutter widget and common widget properties.
 [variables]: {{site.dart-site}}/guides/language/language-tour#variables
 [`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
 [Write Your First Flutter App, Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-

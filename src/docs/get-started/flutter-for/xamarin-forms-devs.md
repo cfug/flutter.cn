@@ -499,10 +499,12 @@ Widget build(BuildContext context) {
       title: Text("Sample App"),
     ),
     body: Center(
-      child: MaterialButton(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.only(left: 20.0, right: 30.0),
+        ),
         onPressed: () {},
         child: Text('Hello'),
-        padding: EdgeInsets.only(left: 10.0, right: 10.0),
       ),
     ),
   );
@@ -840,8 +842,8 @@ custom logic.
 这有点类似于基于 `Grid` 实现自定义控件，其中添加了大量 `VisualElement`，同时使用自定义逻辑进行扩展。
 
 For example, how do you build a `CustomButton` that takes a label in
-the constructor? Create a CustomButton that composes a `RaisedButton`
-with a label, rather than by extending `RaisedButton`:
+the constructor? Create a CustomButton that composes a `ElevatedButton`
+with a label, rather than by extending `ElevatedButton`:
 
 举个例子，如何构建一个在构造器接受一个标签的`自定义按钮`？
 创建一个组合了一个带有标签的`RaisedButton`的自定义按钮，而不是扩展 `RaisedButton` 。
@@ -855,7 +857,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(onPressed: () {}, child: Text(label));
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -2066,7 +2068,7 @@ tied to this event. Alternatively you would use the
 或者你可以使用 `TapGestureRecognizer`。在 Flutter 中有两种非常相似的方式：
 
  1. If the widget supports event detection, pass a function to it and
-    handle it in the function. For example, the RaisedButton has an
+    handle it in the function. For example, the ElevatedButton has an
     `onPressed` parameter:
 
     如果 widget 支持事件发现（detection），
@@ -2076,7 +2078,7 @@ tied to this event. Alternatively you would use the
     ```dart
     @override
     Widget build(BuildContext context) {
-      return RaisedButton(
+      return ElevatedButton(
           onPressed: () {
             print("click");
           },
@@ -3230,4 +3232,3 @@ plugin documentation.
 [Write your first Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your first Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
 [write your own]: /docs/development/packages-and-plugins/developing-packages
-

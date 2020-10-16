@@ -320,14 +320,14 @@ We measure our [test coverage][] on every commit.
 
 ### Flutter 是否附带调试工具？
 
-While Flutter doesn't ship with debugging tools, 
-there are many tools available that 
-can help you debug your Flutter application. 
+While Flutter doesn't ship with debugging tools,
+there are many tools available that
+can help you debug your Flutter application.
 Learn more about [debugging with Flutter][].
 
 Flutter 本身不附带调试工具，
 但我们有非常多可用的调试工具能够帮助你调试 Flutter 应用。
-你可以在[调试 Flutter][debugging with Flutter]文章中了解更多信息。
+你可以在 [调试 Flutter][debugging with Flutter] 文章中了解更多信息。
 
 ### Does Flutter come with a dependency injection framework or solution?
 
@@ -887,7 +887,7 @@ Rather than having each widget provide a large number of parameters,
 Flutter embraces composition. Widgets are built out of smaller
 widgets that you can reuse and combine in novel ways to make
 custom widgets. For example, rather than subclassing a generic
-button widget, `RaisedButton` combines a Material widget with a
+button widget, `ElevatedButton` combines a Material widget with a
 `GestureDetector` widget. The Material widget provides the visual
 design and the `GestureDetector` widget provides the interaction design.
 
@@ -1193,8 +1193,7 @@ Flutter 是一个多范式的编程环境。过去几十年中许多编程技术
   small objects with narrow scopes of behavior, composed together to
   obtain more complicated effects. Most widgets in the Flutter widget
   library are built in this way. For example, the Material
-  [`FlatButton`][] class is built using a [`MaterialButton`][]
-  class, which itself is built using
+  [`TextButton`][] class is built using
   an [`IconTheme`][], an [`InkWell`][], a [`Padding`][],
   a [`Center`][], a [`Material`][],
   an [`AnimatedDefaultTextStyle`][], and a [`ConstrainedBox`][].
@@ -1641,7 +1640,7 @@ deployed to Apple's App Store.
 [example of using isolates with Flutter]: {{site.github}}/flutter/flutter/blob/master/examples/layers/services/isolate.dart
 [example project]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
 [Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [Flutter 1.0: Google's Portable UI Toolkit]: https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html
 [flutter_view]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_view
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html

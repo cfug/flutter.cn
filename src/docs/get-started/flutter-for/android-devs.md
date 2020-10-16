@@ -294,10 +294,12 @@ The following example shows how to display a simple widget with padding:
         title: Text("Sample App"),
       ),
       body: Center(
-        child: MaterialButton(
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.only(left: 20.0, right: 30.0),
+          ),
           onPressed: () {},
           child: Text('Hello'),
-          padding: EdgeInsets.only(left: 10.0, right: 10.0),
         ),
       ),
     );
@@ -371,7 +373,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     if (toggle) {
       return Text('Toggle One');
     } else {
-      return MaterialButton(onPressed: () {}, child: Text('Toggle Two'));
+      return ElevatedButton(onPressed: () {}, child: Text('Toggle Two'));
     }
   }
 
@@ -612,8 +614,8 @@ custom layout logic.
 有些类似，所有的构建 UI 的模块代码都在手边，不过由你提供不同的行为&mdash;例如，自定义布局 (layout) 逻辑。
 
 For example, how do you build a `CustomButton` that takes a label in
-the constructor? Create a CustomButton that composes a `RaisedButton` with
-a label, rather than by extending `RaisedButton`:
+the constructor? Create a CustomButton that composes a `ElevatedButton` with
+a label, rather than by extending `ElevatedButton`:
 
 举例来说，你该如何创建一个在构造器接收标签参数的 `CustomButton`？你要组合 `RaisedButton` 和一个标签来创建
 自定义按钮，而不是继承 `RaisedButton`：
@@ -627,7 +629,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(onPressed: () {}, child: Text(label));
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -2004,7 +2006,7 @@ In Flutter there are two ways of adding touch listeners:
 在 Flutter 中有两种添加触摸监听器的方法：
 
  1. If the Widget supports event detection, pass a function to it and handle it
-    in the function. For example, the RaisedButton has an `onPressed` parameter:
+    in the function. For example, the ElevatedButton has an `onPressed` parameter:
 
     如果 Widget 支持事件监听，那么向它传入一个方法并在方法中处理事件。
     例如，RaisedButton 有一个 `onPressed` 参数：
@@ -2013,7 +2015,7 @@ In Flutter there are two ways of adding touch listeners:
     ```dart
     @override
     Widget build(BuildContext context) {
-      return RaisedButton(
+      return ElevatedButton(
           onPressed: () {
             print("click");
           },
@@ -2928,7 +2930,7 @@ void main() {
     MaterialApp(
       home: Scaffold(
         body: Center(
-          child: RaisedButton(
+          child: ElevatedButton(
             onPressed: _incrementCounter,
             child: Text('Increment Counter'),
           ),

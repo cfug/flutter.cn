@@ -163,8 +163,8 @@ Gesture 可以分发多种事件，
     and moving vertically is no longer in contact with the screen and was moving
     at a specific velocity when it stopped contacting the screen.
 
-`onVerticalDragEnd` 
-: 指针先前和屏幕产生了接触，以特定速度纵向移动，并且此后不会在屏幕接触上发生纵向移动。
+`onVerticalDragEnd` <br>
+  指针先前和屏幕产生了接触，以特定速度纵向移动，并且此后不会在屏幕接触上发生纵向移动。
 
 **Horizontal drag**
 
@@ -239,19 +239,16 @@ To listen to gestures from the widgets layer, use a
 
 从组件层监听手势，需要用到 [`GestureDetector`][]。
 
-If you're using Material Components, many of those widgets already respond
-to taps or gestures.
-For example,
-[IconButton][] and
-[FlatButton][]
-respond to presses (taps), and
-[`ListView`][]
+If you're using Material Components,
+many of those widgets already respond to taps or gestures.
+For example, [`IconButton`][] and [`TextButton`][]
+respond to presses (taps), and [`ListView`][]
 responds to swipes to trigger scrolling.
 If you are not using those widgets, but you want the
 "ink splash" effect on a tap, you can use [`InkWell`][].
 
 如果使用 Material 风格的组件，其中的许多组件都能够支持响应点击或者手势事件。
-比如 [IconButton][] 和 [FlatButton][] 响应了按压事件（点击事件），
+比如 [`IconButton`][] 和 [`TextButton`][] 响应了按压事件（点击事件），
 [`ListView`][] 响应了滚动事件。如果使用了上述组件，
 你也可以使用 [`InkWell`][] 来实现点击的“水波纹”效果。
 
@@ -321,7 +318,7 @@ further gesture disambiguation.
 这意味着横向移动从第一个像素开始就能够被立即处理成横向拖动手势，
 而并不需要等待进一步的手势消歧处理。
 
-[`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html

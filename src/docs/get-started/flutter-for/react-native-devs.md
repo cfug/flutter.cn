@@ -1161,24 +1161,16 @@ For more information about the core widgets from the Widgets package, see
 In React Native, `View` is a container that supports layout with `Flexbox`,
 style, touch handling, and accessibility controls.
 
-<<<<<<< HEAD
 在 React Native 中， `View` 是支持 `Flexbox` 
 布局、风格化、触摸事件处理和访问性控制的容器。
 
-In Flutter, you can use the core layout widgets in the Widgets library, such
-as  [Container][],
-[Column][],
-[Row][],
-and [Center][].
-
-在 Flutter 中，你可以使用 Widgets 库中的核心布局 widget，
-比如 [Container][]、[Column][]、[Row][] 和 [Center][]。
-
-=======
 In Flutter, you can use the core layout widgets in the `Widgets`
 library, such as [`Container`][], [`Column`][],
 [`Row`][], and [`Center`][].
->>>>>>> f8fe6bec96c1a8c15eeb3bbf196cccbf7e87e90a
+
+在 Flutter 中，你可以使用 Widgets 库中的核心布局 widget，
+比如 [`Container`][]、[`Column`][]、[`Row`][] 和 [`Center`][]。
+
 For more information, see the [Layout Widgets][] catalog.
 
 如果想了解更多相关信息，请参考 [布局类 Widgets][Layout Widgets] 目录。
@@ -1246,7 +1238,8 @@ Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1) codelab。
 
 In React Native, canvas components aren't present so third party libraries like `react-native-canvas` are used.
 
-在 React Native 中，canvas 组件是不可见的，所以需要使用类似 `react-native-canvas` 这样的组件。
+在 React Native 中，canvas 组件是不可见的，
+所以需要使用类似 `react-native-canvas` 这样的组件。
 
 ```js
 // React Native
@@ -1931,7 +1924,7 @@ they depend on a state change.
 
 In Flutter, there are three primary ways to manage state:
 
-在 Flutter 中，有三种途径来管理���态：
+在 Flutter 中，有三种途径来管理状态：
 
 * The widget manages its own state
 

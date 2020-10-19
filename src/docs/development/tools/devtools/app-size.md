@@ -1,21 +1,33 @@
 ---
 title: Using the app size tool
+title: 使用app体积工具
+description: Learn how to use the DevTools app size tool.
 description: Learn how to use the DevTools app size tool.
 ---
 
 ## What is it?
 
+## 这是什么?
+
 The app size tool allows you to analyze the total size of your app. You can
 view a single snapshot of "size information" using the [Analysis tab][], or
 compare two different snapshots of "size information" using the [Diff tab][].
 
+应用程序体积工具可让您分析应用的总体积。 您可以使用[Analysis tab][]来查看“体积信息”的单个快照， 或使用[Diff tab][]比较使用“体积信息”的两个不同快照。
+
 ### What is "size information"?
+
+### 什么是“体积信息”?
 
 "Size information" contains size data for Dart code, native code, and non-code
 elements of your app, like the application package, assets and fonts. A "size
 information" file contains data for the total picture of your application size.
 
+"体积信息"包含dart代码、原生代码和非代码部分（比如应用包，资产和字体）。 一个 "体积信息"文件包含你应用的所有图片数据。
+
 ### Dart size information
+
+### Dart 体积信息
 
 The Dart AOT compiler performs tree-shaking on your code when compiling your
 application (profile or release mode only - the AOT compiler is not used for
@@ -23,11 +35,15 @@ debug builds, which are JIT compiled). This means that the compiler attempts to
 optimize your app's size by removing pieces of code that are unused or
 unreachable.
 
+Dart AOT编译器在编译应用程序时会对代码进行摇树（仅profile或release模式-AOT编译器不用于JIT编译的debug版本）。这意味着编译器会尝试通过删除未使用或无法访问的代码段来优化应用程序的体积。
+
 After the compiler optimizes your code as much as it can, the end result can be
 summarized as the collection of packages, libraries, classes, and functions that
 exist in the binary output, along with their size in bytes. This is the Dart
 portion of "size information" we can analyze in the app size tool to further
 optimize Dart code and track down size issues.
+
+编译器尽最大可能优化代码后，最终结果为二进制输出中存在的程序包，库，类和函数的集合，以及它们的体积（以字节为单位）。 这是“体积信息”的Dart部分，我们可以在应用体积工具中进行分析，以进一步优化Dart代码并跟踪体积问题。
 
 ## How to use it
 

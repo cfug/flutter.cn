@@ -2,7 +2,7 @@
 title: Using the app size tool
 title: 使用应用体积工具
 description: Learn how to use the DevTools app size tool.
-description: 学习如何使用 DevTools 中的应用体积工具
+description: 学习如何使用 DevTools 中的应用体积工具。
 ---
 
 ## What is it?

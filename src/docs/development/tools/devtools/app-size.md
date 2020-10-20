@@ -219,7 +219,7 @@ size data like the dominator tree, the call graph shows the many-to-many
 relationships that existing between nodes of code size data.
 
 调用图提供了与支配树相似的信息，
-帮助您理解编译后的应用程序中为什么存在代码。
+帮助您理解编译后的应用程序中为何出现某些代码片段。
 它并不像支配树一样提供了一对多的代码体积数据节点，
 而是展示了代码体积数据的节点之间存在的多对多关系。
 

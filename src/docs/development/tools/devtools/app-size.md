@@ -2,7 +2,7 @@
 title: Using the app size tool
 title: 使用应用体积工具
 description: Learn how to use the DevTools app size tool.
-description: 学习如何使用DevTools中的应用体积工具
+description: 学习如何使用 DevTools 中的应用体积工具
 ---
 
 ## What is it?
@@ -88,7 +88,7 @@ included in your compiled application) using the dominator tree and call graph.
 When you open the Analysis tab, you'll see instructions to load an app size
 file. Drag and drop an app size file into the dialog, and click "Analyze Size".
 
-当你打开 "Analysis tab" 时, 你可以看到加载一个体积文件的使用说明。拖动一个尺寸文件到弹框中，并点击 "Analyze Size"。
+当你打开 "Analysis tab" 时，你可以看到加载一个体积文件的使用说明。拖动一个尺寸文件到弹框中，并点击 "Analyze Size"。
 
 ![Screenshot of app size analysis loading screen]({% asset tools/devtools/app_size_load_analysis.png @path %}){:width="100%"}
 
@@ -116,7 +116,7 @@ of each rectangle (call one A), there are additional rectangles that exist one
 level deeper in the data hierarchy (children of A).
 
 树状图是数据结构的可视化表示。
-空间被分解成矩形，其中每个矩形的体积和顺序由一些定量变量（在本例中，体积以字节为单位）。
+空间被分解成矩形，其中每个矩形的体积和顺序由一些定量变量 (在本例中，体积以字节为单位)。
 每个矩形的面积与节点在编译后的应用程序中所占的大小成比例。
 在每个矩形（称为 A）的内部，还有更多的矩形存在于数据层次结构的更深层（A 的子级）。
 
@@ -151,7 +151,7 @@ A [dominator tree](https://en.wikipedia.org/wiki/Dominator_(graph_theory)) is a
 tree where each node's children are those nodes it immediately dominates. A node
 `a` is said to "dominate" a node `b` if every path to `b` must go through `a`.
 
-[支配树](https://en.wikipedia.org/wiki/Dominator_(graph_theory))是可以立刻控制每一个子节点的树。
+[支配树](https://en.wikipedia.org/wiki/Dominator_(graph_theory)) 是可以立刻控制每一个子节点的树。
 如果到“b”的每条路径都必须经过“A”，则节点“A”被称为“支配”节点“b”。
 
 To put it in context of app size analysis, imagine `package:a` imports both
@@ -242,7 +242,7 @@ Use the dominator tree if you want to understand the *root* cause for why a
 piece of code is included in your application. Use the call graph if you want
 to understand all the call paths to and from a piece of code.
 
-如果您想了解应用程序中包含一段代码的*根本*原因，请使用支配树。
+如果您想了解应用程序中包含一段代码的 **根本** 原因，请使用支配树。
 如果您想了解一段代码之间的所有调用路径，请使用调用图。
 
 A dominator tree is an analysis or slice of call graph data, where nodes are

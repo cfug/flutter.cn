@@ -13,7 +13,8 @@ The app size tool allows you to analyze the total size of your app. You can
 view a single snapshot of "size information" using the [Analysis tab][], or
 compare two different snapshots of "size information" using the [Diff tab][].
 
-应用程序体积工具可让您分析应用的总体积。 您可以使用[Analysis tab][]来查看『体积信息』的单个快照，或使用[Diff tab][]比较使用『体积信息』的两个不同快照。
+应用程序体积工具可让您分析应用的总体积。 您可以使用 [Analysis tab][] 来查看「体积信息」的单个快照，
+或使用 [Diff tab][] 比较使用「体积信息」的两个不同快照。
 
 ### What is "size information"?
 
@@ -23,7 +24,7 @@ compare two different snapshots of "size information" using the [Diff tab][].
 elements of your app, like the application package, assets and fonts. A "size
 information" file contains data for the total picture of your application size.
 
-『体积信息』包含 dart 代码、原生代码和非代码部分（比如应用包，资产和字体）。一个『体积信息』文件包含你应用的所有图片数据。
+「体积信息」包含 dart Dart、原生代码和非代码部分（比如应用包，assets 资源和字体）。一个「体积信息」文件包含你应用的所有图片数据。
 
 ### Dart size information
 
@@ -35,8 +36,8 @@ debug builds, which are JIT compiled). This means that the compiler attempts to
 optimize your app's size by removing pieces of code that are unused or
 unreachable.
 
-Dart AOT 编译器在编译应用程序时会对代码进行摇树（仅限 profile 或 release 模式 - 
-AOT 编译器不用于 debug 生成, debug 模式是JIT编译的）。
+Dart AOT 编译器在编译应用程序时会对代码进行摇树（仅限 profile 或 release 模式 ——
+AOT 编译器不用于 debug 生成，debug 模式是 JIT 编译的）。
 这意味着编译器会尝试通过删除未使用或无法访问的代码段来优化应用程序的体积。
 
 After the compiler optimizes your code as much as it can, the end result can be
@@ -46,7 +47,7 @@ portion of "size information" we can analyze in the app size tool to further
 optimize Dart code and track down size issues.
 
 编译器尽最大可能优化代码后，最终二进制输出结果中包含包、库、类和函数的集合，以及它们的体积（以字节为单位）。
-这是『体积信息』的 Dart 部分，我们可以在应用体积工具中进行分析，以进一步优化 Dart 代码并跟踪体积问题。
+这是「体积信息」的 Dart 部分，我们可以在应用体积工具中进行分析，以进一步优化 Dart 代码并跟踪体积问题。
 
 ## How to use it
 
@@ -76,7 +77,7 @@ You can view the hierarchical structure of the size data using the treemap and
 table, and you can view code attribution data (i.e. why a piece of code is
 included in your compiled application) using the dominator tree and call graph.
 
-『分析』标签允许您检查体积信息的单个快照。
+「分析」标签允许您检查体积信息的单个快照。
 你可以看到层次结构的树状图和表格，并且可以使用 "dominator tree" 和 "call graph" 看到代码的属性数据（例如：为什么编译后的应用程序中包含一段代码）。
 
 ![Screenshot of app size analysis]({% asset tools/devtools/app_size_analysis.png @path %}){:width="100%"}
@@ -286,7 +287,7 @@ When you open the Diff tab, you'll see instructions to load "old" and "new" size
 files. Again, these files need to be generated from the same application. Drag
 and drop these files into their respective dialogs, and click "Analyze Diff".
 
-当您打开 Diff 选项卡时，您将看到加载『旧』和『新』大小文件的说明。
+当您打开 Diff 选项卡时，您将看到加载「旧」和「新」大小文件的说明。
 同样，这些文件需要从同一个应用程序生成。
 将这些文件拖放到各自的对话框中，然后单击 "Analyze Diff"。
 
@@ -319,7 +320,7 @@ Dart code, assets, fonts, etc.), and you can generate it using the
 `--analyze-size` flag:
 
 要使用尺寸体积工具，您需要生成一个 flutter 体积分析文件。
-此文件包含整个应用程序的大小信息（本机代码、Dart 代码、资产、字体等），
+此文件包含整个应用程序的大小信息（本机代码、Dart 代码、assets 资源、字体等），
 您可以使用`--analyze size`标志生成它：
 
 ```
@@ -345,7 +346,7 @@ In this example, import the `build/apk-code-size-analysis_01.json` file into the
 app size tool to analyze further. For more information, see [App Size Documentation][].
 
 在这个示例中，更进一步导入 `build/apk-code-size-analysis_01.json` 文件到体积分析工具。
-更多信息，可以查看[应用体积尺寸文档][App Size Documentation]。
+更多信息，可以查看 [应用体积尺寸文档][App Size Documentation]。
 
 [Using the treemap]: #using-the-treemap
 [Generating size files]: #generating-size-files

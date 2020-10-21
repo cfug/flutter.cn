@@ -70,7 +70,8 @@ If DevTools is not connected to a running application, you can
 access the tool from the landing page that appears once you have launched
 DevTools (see [installation instructions][]).
 
-如果 DevTools 未连接到应用，您可以从启动 DevTools 后出现的登录页访问该工具(查看 [安装说明][installation instructions])。
+如果 DevTools 未连接到应用，您可以从启动 DevTools 后出现的登录页访问该工具查看（
+[安装说明][installation instructions]）。
 
 ![Screenshot of app size access on landing page]({% asset tools/devtools/app_size_access_landing_page.png @path %}){:width="100%"}
 
@@ -293,7 +294,7 @@ versions of the same app, for example, the size file generated before and after
 changes to your code. You can visualize the difference between the two data sets
 using the treemap and table.
 
-diff 选项卡让您可以比较体积信息的两个快照。
+diff 标签页让您可以比较体积信息的两个快照。
 您要比较的两个体积信息文件应该从同一个应用程序的两个不同版本生成，
 例如，在更改代码之前和之后生成的体积文件。
 您可以使用树状图和表格可视化两个数据集之间的差异。
@@ -308,7 +309,7 @@ When you open the Diff tab, you'll see instructions to load "old" and "new" size
 files. Again, these files need to be generated from the same application. Drag
 and drop these files into their respective dialogs, and click "Analyze Diff".
 
-当您打开 Diff 选项卡时，您将看到加载「旧」和「新」大小文件的使用说明。
+当您打开 Diff 标签页时，您将看到加载「旧」和「新」大小文件的使用说明。
 同样，这些文件需要从同一个应用程序生成。
 将这些文件拖放到各自的对话框中，然后单击 "Analyze Diff"。
 

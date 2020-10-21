@@ -2,7 +2,7 @@
 title: "Adding an Apple Watch extension"
 title: 作为 Apple Watch 插件
 description: "Learn how to add an Apple Watch target to a Flutter app."
-description: "学习如何为 Flutter app 添加 Apple Watch"
+description: "学习将 Apple Watch target 添加到 Flutter app"
 tags: 平台集成
 keywords: Apple Watch,手表,Flutter嵌入式
 ---
@@ -10,7 +10,7 @@ keywords: Apple Watch,手表,Flutter嵌入式
 While you cannot build an Apple Watch app with Flutter,
 it is possible to add a native Apple Watch extension to a Flutter app.
 
-虽然您不能使用 Flutter 构建 Apple Watch 应用程序，但可以向 Flutter 应用程序添加本机 Apple Watch 扩展。
+虽然您不能使用 Flutter 构建 Apple Watch 应用程序，但可以向 Flutter 应用程序添加 Apple Watch 的本地扩展。
 
 ## Step 1: Enable bitcode in Xcode
 
@@ -22,8 +22,8 @@ so follow the steps in
 to use bitcode in your app.
 
 Apple Watch target 要求启用 bitcode，
-因此请按照 [创建iOS支持 bitcode 的应用程序](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app) 
-中的步骤操作在应用程序中使用 bitcode。
+因此请按照 [创建 iOS 支持 bitcode 的应用程序](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app) 
+中的步骤在您的应用程序中使用 bitcode。
 
 ## Step 2: Add an Apple Watch target
 
@@ -35,7 +35,7 @@ enter a product name, and select **Enter**.
 
 在菜单中，选择 **File > New > Target**。
 当对话框打开后，在顶部选择 **watchOS** 并且点击 **Watch App for iOS App**。
-点击 **Next**，输入产品名，然后点击 **Enter**。
+然后，点击 **Next**，输入产品名，最后选择 **Enter**。
 
 ![Adding an Apple Watch target](/images/AppleWatchTarget.png){:width="70%"}
 

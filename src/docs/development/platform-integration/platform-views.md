@@ -1,14 +1,14 @@
 ---
 title: Hosting native Android and iOS views in your Flutter app with Platform Views
-title: 在 Flutter 应用中使用 Platform Views托管你的原生 Android 和 iOS 视图
+title: 在 Flutter 应用中使用 Platform Views 托管你的原生 Android 和 iOS 视图
 short-title: Platform-views
 description: Learn how to host native Android and iOS views in your Flutter app with Platform Views.
-description: 学习如何在 Flutter 应用中使用 Platform Views托管你的原生 Android 和 iOS 视图
+description: 学习如何在 Flutter 应用中使用 Platform Views 托管你的原生 Android 和 iOS 视图
 ---
 
 <!-- 译者按：因为 Platform Views 是一个相对专有的名词，
-翻译为平台视图总感觉怪怪的，而且在本文中容易和 Native views 混淆
-所以倾向于保持原样。
+翻译为平台视图总感觉怪怪的，而且在本文中容易和 Native views 混淆，
+所以倾向于保持原样，如 Reviewer 觉得应该翻译，可以给出参考建议，我会一一修改。
 同时，native view 在本篇中会被翻译为本地视图。
 -->
 
@@ -17,15 +17,15 @@ you can apply transforms, clips, and opacity to the native view
 from Dart.
 
 Platform views 允许将本地视图嵌入到 Flutter 应用中，
-所以您可以将变换、裁剪和不透明度等效果应用从 Dart 应用到本地视图。
+所以您可以将变换、裁剪和不透明度等效果从 Dart 应用到本地视图。
 
 This allows you, for example, to use the native
 Google Maps from the Android and iOS SDKs
 directly inside your Flutter app, by using Platform Views.
 
 例如，这使您可以使用 Platform Views
-直接在 Flutter 应用内部使用 Android 和 iOS SDK 
-中的 Google Maps。
+直接在 Flutter 应用内部
+使用 Android 和 iOS SDK 中的 Google Maps。
 
 This page discusses how to host your own native views
 within a Flutter app.
@@ -39,18 +39,18 @@ Flutter supports two modes: Virtual displays and Hybrid composition.
 Flutter 支持两种模式：Virtual displays 和 Hybrid composition。
 
 <!-- 译者按：这里这两个强行翻译为中文都感觉怪怪的（虚拟显示，模拟显示，混合组成，混合合成），
-所以本人倾向于保持原样 -->
+所以本人倾向于整篇中保持原样 -->
 
 Which one to use depends on the use case. Let's take a look:
 
-使用哪种取决于具体情况。让我们来看看：
+应该使用哪种取决于具体情况。让我们来看看：
 
 * Virtual displays renders the `android.view.View` instance to a texture,
   so it's not embedded within the Android Activity's view hierachy.
   Certain platform interactions such as keyboard handling, and accessibility
   features might not work.
 
-  虚拟显示会将 `android.view.View` 实例渲染为纹理，
+  Virtual displays 会将 `android.view.View` 实例渲染为纹理，
   因此它不会嵌入到 Android Activity 的视图层次结构中。
   某些平台交互（例如键盘处理和辅助功能）可能无法正常工作。
 
@@ -63,7 +63,7 @@ Which one to use depends on the use case. Let's take a look:
   Hybrid composition 需要 Flutter 1.22。
   这种模式将原生 `android.view.View` 附加到视图层次结构中。
   因此，键盘处理和可访问性是开箱即用的。
-  在Android 10之前，此模式可能会大大降低 Flutter UI 的帧吞吐量(FPS)。
+  在 Android 10 之前，此模式可能会大大降低 Flutter UI 的帧吞吐量(FPS)。
   有关更多信息，请参见[性能][performance]。
 
 To create a platform view on Android, follow these steps:
@@ -100,7 +100,7 @@ In your Dart file, for example `native_view_example.dart`,
 do the following:
 
 在 Dart 文件中，例如 `native_view_example.dart`，
-如下所示：
+请执行下列操作：
 
 1. Add the following imports:
 
@@ -165,7 +165,7 @@ In your Dart file, for example `native_view_example.dart`,
 do the following:
 
 在 Dart 文件中，例如 `native_view_example.dart`，
-如下所示：
+请执行下列操作：
 
 1. Add the following imports:
 
@@ -199,18 +199,18 @@ Widget build(BuildContext context) {
 
 For more information, see the API docs for:
 
-更多信息：查阅 API 文档：
+更多信息，查阅 API 文档：
 
 * [`AndroidView`][]
 
 ### On the platform side
 
-在平台（Android）端
+### 在平台（Android）端
 
 On the platform side, use the standard
 `io.flutter.plugin.platform` package in either Java or Kotlin:
 
-在平台端，在 Java 或 Kotlin 使用标准的 `io.flutter.plugin.platform` 软件包。
+在平台端，使用 Java 或 Kotlin 中的标准包 `io.flutter.plugin.platform`。
 
 {% samplecode android-platform-views %}
 {% sample Kotlin %}
@@ -279,11 +279,11 @@ internal class NativeViewFactory(private val messenger: BinaryMessenger, private
 Finally, register the platform view. This can be done in an app or a plugin.
 
 最后，注册这个 Platform View。
-这个 View 可以在应用或是插件中。
+它可以被注册到应用或插件。
 
 For app registration, modify the app's main activity (e.g. `MainActivity.kt`):
 
-对于在应用注册，修改你应用的主 Activity （例如：`MainActivity.kt`）：
+对于在应用中注册，修改你应用的主 Activity （例如：`MainActivity.kt`）：
 
 ```kotlin
 package dev.flutter.example
@@ -412,7 +412,7 @@ Finally, register the platform view. This can be done in an app or a plugin.
 
 For app registration, modify the app's main activity (e.g. `MainActivity.java`):
 
-在应用中注册，修改应用的主 Activity （例如：`MainActivity.java`）：
+如果在应用中注册，请修改应用的主 Activity （例如：`MainActivity.java`）：
 
 ```java
 package dev.flutter.example;
@@ -434,7 +434,7 @@ public class MainActivity extends FlutterActivity {
 
 For plugin registration, modify the plugin's main file (e.g. `PlatformViewPlugin.java`):
 
-在插件中注册，修改插件的主类（例如：`PlatformViewPlugin.java`）：
+如果在插件中注册，修改插件的主类（例如：`PlatformViewPlugin.java`）：
 
 ```java
 package dev.flutter.plugin.example;
@@ -459,7 +459,7 @@ public class PlatformViewPlugin implements FlutterPlugin {
 
 For more information, see the API docs for:
 
-查看更多信息，查看 API 文档：
+更多信息，请查看 API 文档：
 
 * [`FlutterPlugin`][]
 * [`PlatformViewRegistry`][]
@@ -511,15 +511,17 @@ and add the following build implementation,
 as shown in the following steps.
 
 在 Dart 端，创建一个 `Widget`
-然后添加如下的实现，具体如下：
+并添加如下的实现，具体如下：
 
 In your Dart file, for example
 do the following in `native_view_example.dart`:
 
-在 Dart 文件（例如 `native_view_example.dart`）中
-添加如下
+在 Dart 文件中，例如 `native_view_example.dart`，
+请执行下列操作：
 
 1. Add the following imports:
+
+   添加如下导入：
 
 <!-- skip -->
 ```dart
@@ -527,6 +529,8 @@ import 'package:flutter/widget.dart';
 ```
 
 2. Implement a `build()` method:
+
+   实现 `build` 方法：
 
 <!-- skip -->
 ```dart
@@ -548,9 +552,16 @@ Widget build(BuildContext context) {
 For more information, see the API docs for:
 [`UIKitView`][].
 
+更多信息，请查看 API 文档：
+[`UIKitView`][].
+
 ### On the platform side
 
+### 在平台（iOS）端
+
 On the platform side, you use the either Swift or Objective-C:
+
+在平台端，你可以使用 Swift 或是 Objective-C：
 
 {% samplecode ios-platform-views %}
 {% sample Swift %}
@@ -558,6 +569,10 @@ On the platform side, you use the either Swift or Objective-C:
 Implement the factory and the platform view.
 The `FLNativeViewFactory` creates the platform view, and the platform view
 provides a reference to the `UIView`. For example, `FLNativeView.swift`:
+
+实现工厂和 Platform View。
+`FLNativeViewFactory` 创建一个关联了 `UIView` 的 Platform View。
+举个例子，`FLNativeView.swift`：
 
 ```swift
 import Flutter
@@ -605,7 +620,12 @@ class FLNativeView: NSObject, FlutterPlatformView {
 
 Finally, register the platform view. This can be done in an app or a plugin.
 
+最后，注册 Platform View，
+这可以在应用程序或插件中完成。
+
 For app registration, modify the App's `AppDelegate.swift`:
+
+对于在应用中注册，修改应用中的 `AppDelegate.swift`：
 
 ```swift
 import Flutter
@@ -632,6 +652,8 @@ import UIKit
 
 For plugin registration, modify the plugin's main file (e.g. `FLPlugin.swift`):
 
+对于在插件注册，修改插件的主类（例如`FLPlugin.swift`）：
+
 ```swift
 import Flutter
 import UIKit
@@ -648,6 +670,9 @@ class FLPlugin: NSObject, FlutterPlugin {
 
 Add the headers for the factory and the platform view.
 For example, `FLNativeView.h`:
+
+在工厂类和 Platform View 的头文件中添加。
+用 `FLNativeView.h` 举例：
 
 ```objc
 #import <Flutter/Flutter.h>
@@ -670,6 +695,10 @@ For example, `FLNativeView.h`:
 Implement the factory and the platform view.
 The `FLNativeViewFactory` creates the platform view, and the platform view
 provides a reference to the `UIView`. For example, `FLNativeView.m`:
+
+实现工厂类和 Platform View。
+`FLNativeViewFactory` 创建一个关联了 `UIView` 的 Platform View。
+用 `FLNativeView.m` 举例：
 
 ```objc
 #import "FLNativeView.h"
@@ -720,7 +749,12 @@ provides a reference to the `UIView`. For example, `FLNativeView.m`:
 
 Finally, register the platform view. This can be done in an app or a plugin.
 
+最后，注册这个 Platform View。
+这一步可以在应用程序或插件中完成。
+
 For app registration, modify the App's `AppDelegate.m`:
+
+对于在应用中注册，修改应用中的 `AppDelegate.m`：
 
 ```objc
 #import "AppDelegate.h"
@@ -749,6 +783,8 @@ For app registration, modify the App's `AppDelegate.m`:
 
 For plugin registration, modify the main plugin file (e.g. `FLPlugin.m`):
 
+对于在插件中注册，修改插件主文件（例如 `FLPlugin.m`）：
+
 ```objc
 
 #import <Flutter/Flutter.h>
@@ -772,14 +808,21 @@ For plugin registration, modify the main plugin file (e.g. `FLPlugin.m`):
 
 For more information, see the API docs for:
 
+更多信息，请查看 API 文档：
+
 * [`FlutterPlatformViewFactory`][]
 * [`FlutterPlatformView`][]
 * [`PlatformView`][]
 
 ## Putting it together
 
+## 把这些整合在一起
+
 When implementing the `build()` method in Dart, you can use [`defaultTargetPlatform`][]
 to detect the platform, and decide what widget to use:
+
+当在 Dart 中实现了 `build()` 方法，你可以使用 [`defaultTargetPlatform`][] 
+来检测当前的平台，并且决定如何使用这个 Widget：
 
 <!-- skip -->
 ```dart
@@ -802,15 +845,26 @@ Widget build(BuildContext context) {
 
 ## Performance
 
+## 性能
+
 Platform views in Flutter come with performance trade-offs.
+
+Platform View 为了在 Flutter 对于性能有所折衷。
 
 For example, in a typical Flutter app, the Flutter UI is composed
 on a dedicated raster thread. This allows Flutter apps to be fast,
 as the main platform thread is rarely blocked.
 
+例如，在典型的 Flutter 应用中，Flutter UI 是在专用栅格线程上组成的。
+由于平台的主线程很少被阻塞，因此 Flutter 应用程序可以快速运行。
+
 While a platform view is rendered with Hybrid composition, the Flutter
 UI is composed from the platform thread, which competes with other
 tasks like handling OS or plugin messages, etc.
+
+使用 Hybrid composition 渲染 Platform View 时，
+Flutter UI 由平台线程完成，与其他线程一起竞争，
+例如：处理系统或插件消息等任务。
 
 Prior to Android 10, Hybrid composition copies each Flutter frame
 out of the graphic memory into main memory, and then copies it back
@@ -818,19 +872,36 @@ to a GPU texture. In Android 10 or above, the graphics memory is
 copied twice. As this copy happens per frame, the performance of
 the entire Flutter UI may be impacted.
 
+在 Android 10 之前，
+Hybrid composition 将每个 Flutter 帧从显存中复制到主内存中，
+然后再将其复制回 GPU 纹理中。
+在 Android 10 或更高版本中，显存会被复制两次。
+由于此复制每帧发生一次，因此可能会影响整个 Flutter UI 的性能。
+
 Virtual display, on the other hand, makes each pixel of the native view
 flow through additional intermediate graphic buffers, which cost graphic
 memory and drawing performance.
 
+另一方面，Virtual display 使 Platform View 的每个像素
+流经附加的中间图形缓冲区，这会浪费显存和绘图性能。
+
 For complex cases, there are some techniques that can be used to mitigate
 these issues.
+
+对于复杂的情况，可以使用一些技术来缓解这些问题。
 
 For example, you could use a placeholder texture while an animation is
 happening in Dart. In other words, if an animation is slow while a
 platform view is rendered, then consider taking a screenshot of the
 native view and rendering it as a texture.
 
+例如，当 Dart 中发生动画时，您可以使用占位符纹理。
+换句话说，如果在渲染平台视图时动画很慢，
+请考虑拍摄本地视图的屏幕快照并将其渲染为纹理。
+
 For more information, see:
+
+更多消息，查看：
 
 * [`TextureLayer`][]
 * [`TextureRegistry`][]

@@ -70,8 +70,8 @@ If DevTools is not connected to a running application, you can
 access the tool from the landing page that appears once you have launched
 DevTools (see [installation instructions][]).
 
-如果 DevTools 未连接到应用，您可以从启动 DevTools 后出现的登录页访问该工具查看（
-[安装说明][installation instructions]）。
+如果 DevTools 未连接到应用，您可以从启动 DevTools 后出现的登录页访问该工具
+（查看[安装说明][installation instructions]）。
 
 ![Screenshot of app size access on landing page]({% asset tools/devtools/app_size_access_landing_page.png @path %}){:width="100%"}
 

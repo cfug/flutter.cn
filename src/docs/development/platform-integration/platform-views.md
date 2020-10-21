@@ -1,30 +1,58 @@
 ---
 title: Hosting native Android and iOS views in your Flutter app with Platform Views
+title: 在 Flutter 应用中使用 Platform Views托管你的原生 Android 和 iOS 视图
 short-title: Platform-views
 description: Learn how to host native Android and iOS views in your Flutter app with Platform Views.
+description: 学习如何在 Flutter 应用中使用 Platform Views托管你的原生 Android 和 iOS 视图
 ---
+
+<!-- 译者按：因为 Platform Views 是一个相对专有的名词，
+翻译为平台视图总感觉怪怪的，而且在本文中容易和 Native views 混淆
+所以倾向于保持原样。
+同时，native view 在本篇中会被翻译为本地视图。
+-->
 
 Platform views allow to embed native views in a Flutter app, so
 you can apply transforms, clips, and opacity to the native view
 from Dart.
 
+Platform views 允许将本地视图嵌入到 Flutter 应用中，
+所以您可以将变换、裁剪和不透明度等效果应用从 Dart 应用到本地视图。
+
 This allows you, for example, to use the native
 Google Maps from the Android and iOS SDKs
 directly inside your Flutter app, by using Platform Views.
 
+例如，这使您可以使用 Platform Views
+直接在 Flutter 应用内部使用 Android 和 iOS SDK 
+中的 Google Maps。
+
 This page discusses how to host your own native views
 within a Flutter app.
+
+本篇文档讨论了如何在你的 Flutter 应用中托管你的本地视图。
 
 ## Android
 
 Flutter supports two modes: Virtual displays and Hybrid composition.
 
+Flutter 支持两种模式：Virtual displays 和 Hybrid composition。
+
+<!-- 译者按：这里这两个强行翻译为中文都感觉怪怪的（虚拟显示，模拟显示，混合组成，混合合成），
+所以本人倾向于保持原样 -->
+
 Which one to use depends on the use case. Let's take a look:
+
+使用哪种取决于具体情况。让我们来看看：
 
 * Virtual displays renders the `android.view.View` instance to a texture,
   so it's not embedded within the Android Activity's view hierachy.
   Certain platform interactions such as keyboard handling, and accessibility
   features might not work.
+
+  虚拟显示会将 `android.view.View` 实例渲染为纹理，
+  因此它不会嵌入到 Android Activity 的视图层次结构中。
+  某些平台交互（例如键盘处理和辅助功能）可能无法正常工作。
 
 * Hybrid composition requires Flutter 1.22. This mode appends the
   native `android.view.View` to the view hierarchy. Therefore, keyboard
@@ -32,18 +60,37 @@ Which one to use depends on the use case. Let's take a look:
   this mode may significantly reduce the frame throughput (FPS) of the
   Flutter UI. See [performance][] for more.
 
+  Hybrid composition 需要 Flutter 1.22。
+  这种模式将原生 `android.view.View` 附加到视图层次结构中。
+  因此，键盘处理和可访问性是开箱即用的。
+  在Android 10之前，此模式可能会大大降低 Flutter UI 的帧吞吐量(FPS)。
+  有关更多信息，请参见[性能][performance]。
+
 To create a platform view on Android, follow these steps:
 
+要在安卓上创建 Platform view 需要如下的步骤：
+
 ### On the Dart side
+
+### 在 Dart 端
 
 On the Dart side, create a `Widget`
 and add the following build implementation,
 as shown in the following steps.
 
+在 Dart 端，创建一个 `Widget`
+然后添加如下的实现，具体如下：
+
 {{site.alert.warning}}
+
   For this to work, your plugin or app must use Android embedding v2.
   If you haven't updated your plugin, see the
   [plugin migration guide][].
+
+  为此，您的插件或应用必须使用 Android embedding v2。
+  如果你还没有更新你的插件，查看
+  [插件迁移指南][plugin migration guide].
+
 {{site.alert.end}}
 
 
@@ -52,7 +99,12 @@ as shown in the following steps.
 In your Dart file, for example `native_view_example.dart`,
 do the following:
 
+在 Dart 文件中，例如 `native_view_example.dart`，
+如下所示：
+
 1. Add the following imports:
+
+   添加下面的导入：
 
 <!-- skip -->
 ```dart
@@ -63,6 +115,8 @@ import 'package:flutter/services.dart';
 ```
 
 2. Implement a `build()` method:
+
+   实现 `build` 方法：
 
 <!-- skip -->
 ```dart
@@ -99,6 +153,8 @@ Widget build(BuildContext context) {
 
 For more information, see the API docs for:
 
+更多信息可以查看下面的 API 文档：
+
 * [`PlatformViewLink`][]
 * [`AndroidViewService`][]
 * [`PlatformViewsService`][]
@@ -108,7 +164,12 @@ For more information, see the API docs for:
 In your Dart file, for example `native_view_example.dart`,
 do the following:
 
+在 Dart 文件中，例如 `native_view_example.dart`，
+如下所示：
+
 1. Add the following imports:
+
+   添加下面的导入：
 
 <!-- skip -->
 ```dart
@@ -116,6 +177,8 @@ import 'package:flutter/widget.dart';
 ```
 
 2. Implement a `build()` method:
+
+   实现 `build` 方法：
 
 <!-- skip -->
 ```dart
@@ -136,21 +199,31 @@ Widget build(BuildContext context) {
 
 For more information, see the API docs for:
 
+更多信息：查阅 API 文档：
+
 * [`AndroidView`][]
 
 ### On the platform side
 
+在平台（Android）端
+
 On the platform side, use the standard
 `io.flutter.plugin.platform` package in either Java or Kotlin:
 
+在平台端，在 Java 或 Kotlin 使用标准的 `io.flutter.plugin.platform` 软件包。
 
 {% samplecode android-platform-views %}
 {% sample Kotlin %}
 
 In your native code, implement the following:
 
+在你的本地代码中，实现如下方法：
+
 Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
 For example `NativeView.kt`:
+
+继承 `io.flutter.plugin.platform.PlatformView` 以提供对 `android.view.View` 的引用，
+如 `NativeView.kt` 所示：
 
 ```kotlin
 package dev.flutter.example
@@ -182,6 +255,8 @@ internal class NativeView(context: Context, id: Int, creationParams: Map<String?
 Create a factory class that creates an instance of the `NativeView` created earlier,
 for example `NativeViewFactory.kt`:
 
+创建一个用来创建 `NativeView` 的实例的工厂类，
+参考 `NativeViewFactory.kt`：
 
 ```kotlin
 package dev.flutter.example
@@ -203,7 +278,12 @@ internal class NativeViewFactory(private val messenger: BinaryMessenger, private
 
 Finally, register the platform view. This can be done in an app or a plugin.
 
+最后，注册这个 Platform View。
+这个 View 可以在应用或是插件中。
+
 For app registration, modify the app's main activity (e.g. `MainActivity.kt`):
+
+对于在应用注册，修改你应用的主 Activity （例如：`MainActivity.kt`）：
 
 ```kotlin
 package dev.flutter.example
@@ -222,6 +302,8 @@ class MainActivity : FlutterActivity() {
 ```
 
 For plugin registration, modify the plugin's main class (e.g. `PlatformViewPlugin.kt`):
+
+对于在插件中注册，修改你插件的主类（例如：`PlatformViewPlugin.kt`）：
 
 ```kotlin
 package dev.flutter.plugin.example
@@ -244,8 +326,13 @@ class PlatformViewPlugin : FlutterPlugin {
 
 In your native code, implement the following:
 
+在你的本地代码中，实现如下方法：
+
 Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
 For example, `NativeView.java`:
+
+继承 `io.flutter.plugin.platform.PlatformView` 以提供对 `android.view.View` 的引用，
+如 `NativeView.java` 所示：
 
 ```java
 package dev.flutter.example;
@@ -283,6 +370,9 @@ class NativeView implements PlatformView {
 Create a factory class that creates an instance of the `NativeView` created earlier,
 for example, `NativeViewFactory.java`:
 
+创建一个用来创建 `NativeView` 的实例的工厂类，
+参考 `NativeViewFactory.java`：
+
 ```java
 package dev.flutter.example;
 
@@ -317,7 +407,12 @@ class NativeViewFactory extends PlatformViewFactory {
 
 Finally, register the platform view. This can be done in an app or a plugin.
 
+最后，注册你的 Platform View。
+这一步可以在应用中，也可以在插件中。
+
 For app registration, modify the app's main activity (e.g. `MainActivity.java`):
+
+在应用中注册，修改应用的主 Activity （例如：`MainActivity.java`）：
 
 ```java
 package dev.flutter.example;
@@ -338,6 +433,8 @@ public class MainActivity extends FlutterActivity {
 ```
 
 For plugin registration, modify the plugin's main file (e.g. `PlatformViewPlugin.java`):
+
+在插件中注册，修改插件的主类（例如：`PlatformViewPlugin.java`）：
 
 ```java
 package dev.flutter.plugin.example;
@@ -362,6 +459,8 @@ public class PlatformViewPlugin implements FlutterPlugin {
 
 For more information, see the API docs for:
 
+查看更多信息，查看 API 文档：
+
 * [`FlutterPlugin`][]
 * [`PlatformViewRegistry`][]
 * [`PlatformViewFactory`][]
@@ -369,6 +468,9 @@ For more information, see the API docs for:
 
 Finally, modify your `build.gradle` file to require one of the
 minimal Android SDK versions:
+
+最后，修改你的 `build.gradle` 文件
+来满足 Android SDK 最低版本的要求：
 
 ```gradle
 android {
@@ -384,20 +486,38 @@ android {
 iOS only uses Hybrid composition, which means that the native
 `UIView` is appended to view hierarchy.
 
+iOS 只支持 Hybrid composition，
+这意味着本地的 `UIView` 会被加入视图层级中。
+
 Prior to Flutter 1.22, platform views were in developers preview.
 In 1.22 or above, it's no longer the case, so there's no need to
 set the `io.flutter.embedded_views_preview` flag in `Info.plist`.
 
+在 Flutter 1.22 前，Platform View 是一个开发者预览的版本。
+在 1.22 或更高版本则中不再是这样了，
+所以我们不再需要在 `Info.plist` 中
+添加 `io.flutter.embedded_views_preview`。
+
 To create a platform view on iOS, follow these steps:
 
+要在 iOS 中创建 Platform View，需要如下步骤：
+
 ### On the Dart side
+
+### 在 Dart 端
 
 On the Dart side, create a `Widget`
 and add the following build implementation,
 as shown in the following steps.
 
+在 Dart 端，创建一个 `Widget`
+然后添加如下的实现，具体如下：
+
 In your Dart file, for example
 do the following in `native_view_example.dart`:
+
+在 Dart 文件（例如 `native_view_example.dart`）中
+添加如下
 
 1. Add the following imports:
 

@@ -264,7 +264,7 @@ Flutter. For example to show a [custom Flutter route][].
 This is a standard step for App Clip development. See the
 [official Apple documentation][].
 
-这是 App Clip 开发的标准步骤。
+这是一个 App Clip 开发的标准步骤。
 请查看 [苹果官方文档][official Apple documentation]。
 
 **6.1**
@@ -292,7 +292,7 @@ your main app group and rename it to the same name as your main target
 such as `Runner.entitlements`.
 
 将 `<app clip target>.entitlements` 
-文件从应用程序剪辑组复制到主应用程序组，
+文件从 App Clip 组复制到主应用程序组，
 并将其重命名为与主目标相同的名称，
 例如 `Runner.entitlements`。
 
@@ -355,7 +355,8 @@ image="development/platform-integration/ios-app-clip/app-clip-framework-search.p
 For Swift target, set the `Objective-C Bridging Header` build setting to
 `Runner/Runner-Bridging-Header.h`
 
-如果是 Swift target，设置 `Objective-C Bridging Header` 构建配置为 `Runner/Runner-Bridging-Header.h`。
+如果是 Swift target，设置 `Objective-C Bridging Header` 构建配置
+为 `Runner/Runner-Bridging-Header.h`。
 
 In other words, the same as the main app target's build settings.
 
@@ -459,7 +460,8 @@ image="development/platform-integration/ios-app-clip/bitcode.png"
 
 Open the `Podfile` for your Flutter project or add-to-app host project.
 
-在您的 Flutter 项目或是 add-to-app 的 host 项目中打开 `Podfile` 文件。
+在您的 Flutter 项目
+或是 add-to-app 的 host 项目中打开 `Podfile` 文件。
 
 For full-Flutter apps, replace the following section:
 
@@ -491,11 +493,11 @@ At the top of the file, also uncomment `platform :ios, '9.0'` and set the
 version to the lowest of the 2 target's iOS Deployment Target.
 
 在文件的开始，需要把 `platform :ios, '9.0'` 的注释解除，
-并且设置为您的最低 iOS 部署目标。
+并且为您的 2 个 target 设置最低可运行的 iOS 系统版本。
 
 For add-to-app, add to:
 
-如果是 add-to-app，找到如下代码：
+如果是 add-to-app，紧跟下面的代码：
 
 ```ruby
 target 'MyApp' do
@@ -505,7 +507,7 @@ end
 
 with:
 
-修改为：
+添加：
 
 ```ruby
 target 'MyApp' do
@@ -521,13 +523,13 @@ end
 
 From the command line, enter your Flutter project directory.
 
-在命令行中，工作目录为您的 Flutter 项目目录。
+在命令行中，目前工作目录需要是您的 Flutter 项目目录。
 
 `cd ios`
 
 then
 
-然后
+然后运行
 
 `pod install`.
 
@@ -539,7 +541,7 @@ You can now run your App Clip target from Xcode by selecting your App Clip
 target from the scheme drop-down, selecting an iOS 14 device and pressing run.
 
 您现在可以在 Xcode 的 scheme 下拉中选择并运行您的 App Clip target 了，
-选择一个 iOS 14 的设置并点击运行。
+选择一个 iOS 14 的设备并点击运行。
 
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/run-select.png"
@@ -558,7 +560,8 @@ To test launching an App Clip from the beginning, also consult Apple's doc on
 Unfortunately `flutter attach` cannot auto-discover the Flutter session
 in an App Clip due to networking permission restrictions.
 
-不幸的是，由于网络权限的原因，`flutter attach` 无法在应用程序剪辑中自动发现 Flutter 会话。
+不幸的是，由于网络权限的原因，`flutter attach` 
+无法在 App clip 中自动发现 Flutter 会话。
 
 In order to debug your App Clip and use functionalities like hot reload, you
 must look for the Observatory URI from the console output in Xcode after

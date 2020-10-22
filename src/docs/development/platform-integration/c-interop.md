@@ -2,7 +2,7 @@
 title: "Binding to native code using dart:ffi"
 title: 使用 dart:ffi 调用本地代码
 description: "To use C code in your Flutter program, use the dart:ffi library (currently in beta)."
-description: "在你的 Flutter 工程中，通过 dart:ffi （目前处于 Beta）来使用 C 语言代码"
+description: "在您的 Flutter 工程中，通过 dart:ffi （目前处于 Beta）来使用 C 语言代码"
 tags: 平台集成
 keywords: dartffi
 ---
@@ -14,8 +14,8 @@ Other terms for similar functionality include
 _native interface_ and _language bindings._
 
 Flutter 移动版可以使用 [dart:ffi][] 库来调用本地的 C API。
-_FFI_ 代表[_外部功能接口_][FFI]。
-类似功能的其他术语包括 _本地接口和语言绑定_。
+**FFI** 代表[**外部功能接口**][FFI]。
+类似功能的其他术语包括**本地接口**和**语言绑定**。
 
 Before your library or program can use the FFI library
 to bind to native code, you must ensure that the
@@ -23,9 +23,9 @@ native code is loaded and its symbols are visible to Dart.
 This page focuses on compiling, packaging,
 and loading native code within a Flutter plugin or app.
 
-你必须首先确保本地代码已加载并且其符号对 Dart 可见，
-然后才可以在库或程序使用 FFI 库绑定到本地代码。
-本页主要介绍在 Flutter 插件或应用程序中编译、打包和加载本地代码。
+您必须首先确保本地代码已加载，并且其符号对 Dart 可见，
+然后才能在库或程序使用 FFI 库绑定本地代码。
+本页主要介绍如何在 Flutter 插件或应用程序中编译、打包和加载本地代码。
 
 This tutorial demonstrates how to bundle C/C++
 sources in a Flutter plugin and bind to them using
@@ -34,18 +34,18 @@ In this walkthrough, you'll create a C function
 that implements 32-bit addition and then
 exposes it through a Dart plugin named "native_add".
 
-本教程演示如何在 Flutter 插件中捆绑 C/C++ 源代码，
+本教程演示了如何在 Flutter 插件中捆绑 C/C++ 源代码，
 并使用 Android 和 iOS 上的 Dart FFI 库绑定它们。
-在本示例中，您将创建一个实现 32 位加法的 C 函数，
-然后通过名为 "native_add" 的 Dart 插件公开它。
+在本示例中，您将创建一个实现 32 位的加法 C 函数，
+然后通过名为 "native_add" 的 Dart 插件暴露它。
 
 {{ site.alert.note }}
 
   The dart:ffi library is [in beta][ffi issue],
   and breaking API changes might still happen.
 
-  目前 dart:ffi 库还在 [beta 中][ffi issue]，
-  并且可能存在破坏性修改。
+  目前 dart:ffi 库还处于 [beta 阶段][ffi issue]，
+  所以随时会出现破坏性的修改。
 
 {{ site.alert.end }}
 
@@ -76,11 +76,11 @@ linked library is distributed as a set of `.so` (ELF)
 files, one for each architecture. On iOS,
 it's distributed as a `.framework` folder.
 
-相比之下，动态链接库则分布在应用程序中的单独文件或文件夹中，
+相比之下，动态链接库则分布在应用程序中的单独的文件或文件夹中，
 并按需加载。
-在Android上，动态链接库作为一组 `.so`(ELF) 文件分发，
+在 Android 上，动态链接库作为一组 `.so`（ELF）文件分发，
 每个架构各有一个。
-在iOS上，它是作为 `.framework` 文件夹分发的。
+在 iOS 上，它是作为 `.framework` 文件夹分发的。
 
 A dynamically linked library can be loaded into
 Dart via `DynamicLibrary.open`.
@@ -90,8 +90,8 @@ Dart via `DynamicLibrary.open`.
 API documentation is available from the Dart dev channel:
 [Dart API reference documentation][].
 
-Dart dev 频道中的 API 文档已经可用：
-[Dart Api 文档][Dart API reference documentation].
+Dart dev 频道中的 API 已经可用：
+[Dart Api][Dart API reference documentation].
 
 ## Step 1: Create a plugin
 
@@ -99,13 +99,13 @@ Dart dev 频道中的 API 文档已经可用：
 
 If you already have a plugin, skip this step.
 
-如果你已经有一个插件，跳过这步。
+如果您已经有一个插件，跳过这步。
 
 To create a plugin called "native_add",
 do the following:
 
 如果要创建一个名为 "native_add" 的插件，
-你需要这么做：
+您需要这么做：
 
 ```terminal
 $ flutter create --platforms=android,ios --template=plugin native_add
@@ -118,8 +118,8 @@ $ cd native_add
   to build to. However, you need to include the platform of 
   the device you are testing on.
 
-  您可以使用 --platforms 来排除你不需要的平台。
-  但是，您需要包括要测试的设备的平台。
+  您可以使用 --platforms 来排除您不需要的平台。
+  但是，您仍需要包含测试设备所需的平台。
 
 {{ site.alert.end }}
 
@@ -131,7 +131,7 @@ You need to inform both the Android and iOS build
 systems about the native code so the code can be compiled
 and linked appropriately into the final application.
 
-您需要将本地代码告知 Android 和 iOS 构建系统，
+您需要让 Android 和 iOS 构建系统知道本地代码的存在，
 以便代码可以被编译并链接到最终的应用程序中。
 
 You add the sources to the `ios` folder,
@@ -144,11 +144,11 @@ to the `android` folder and modify `CMakeLists.txt`
 appropriately.
 
 您可以将源代码添加到 `ios` 文件夹，
-因为 CocoaPods 不允许在 podspec 文件上方包含源代码，
+因为 CocoaPods 不允许源码处于比 podspec 文件更高的目录层级，
 但是 Gradle 允许您指向 `ios` 文件夹。
 iOS 和 Android 不需要使用相同的源代码；
 当然，您也可以将特定于 Android 的源代码添加到 `android` 文件夹
-并修改 CMakeLists.txt 文件。
+并修改 `CMakeLists.txt` 文件。
 
 The FFI library can only bind against C symbols,
 so in C++ these symbols must be marked `extern C`.
@@ -157,10 +157,9 @@ symbols are referenced from Dart,
 to prevent the linker from discarding the symbols
 during link-time optimization.
 
-FFI 库只能与 C 符号绑定，因此在 C++ 中，
-这些符号必须标记为 `extern C`。
-还应该添加属性来指示符号是从 Dart 引用的，
-以防止链接器在链接优化期间丢弃符号。
+FFI 库只能与 C 符号绑定，因此在 C++ 中，这些符号添加 `extern C` 标记。
+还应该添加属性来表明符号是需要被 Dart 引用的，
+以防止链接器在优化链接时会丢弃符号。
 
 For example,
 to create a C++ file named `ios/Classes/native_add.cpp`,
@@ -169,9 +168,9 @@ has already created this file for you.) Start from the
 root directory of your project:
 
 作为示例，创建一个 C++ 文件，
-路径为： `ios/Classes/native_add.cpp`。
+路径为：`ios/Classes/native_add.cpp`。
 （请注意，模板已经为您创建了此文件。）
-在项目的根目录命令行中执行：
+在项目的根目录下中执行以下命令：
 
 ```bash
 cat > ios/Classes/native_add.cpp << EOF
@@ -186,7 +185,7 @@ EOF
 
 On iOS, you need to tell Xcode to statically link the file:
 
-在 iOS 中，你需要告诉 Xcode 如何静态链接这个文件：
+在 iOS 中，您需要告诉 Xcode 如何静态链接这个文件：
 
  1. In Xcode, open `Runner.xcworkspace`.
     
@@ -195,7 +194,7 @@ On iOS, you need to tell Xcode to statically link the file:
  2. Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
 
-    添加 C/C++/Objective-C/Swift 源码文件到 XCode 工程中。
+    添加 C/C++/Objective-C/Swift 源码文件到 Xcode 工程中。
 
 On Android, you need to create a `CMakeLists.txt` file
 to define how the sources should be compiled and point
@@ -203,8 +202,8 @@ Gradle to it. From the root of your project directory,
 use the following instructions
 
 在 Android 中，
-你需要创建一个 `CMakeLists.txt` 文件去定义应该如何编译源文件，
-然后还要告诉 Gradle 如何去定位它们。
+您需要创建一个 `CMakeLists.txt` 文件用来定义如何编译源文件，
+同时告诉 Gradle 如何去定位它们。
 在项目根目录下，运行如下代码：
 
 ```bash
@@ -225,7 +224,7 @@ Finally, add an `externalNativeBuild` section to
 `android/build.gradle`. For example:
 
 最后，添加一个 `externalNativeBuild` 到
-你的 `android/build.gradle` 文件中。
+您的 `android/build.gradle` 文件中。
 示例如下：
 
 ```nocode
@@ -244,19 +243,19 @@ android {
 
 ## Step 3: Load the code using the FFI library
 
-## 步骤 3： 在 FFI 库中读取代码
+## 步骤 3：在 FFI 库中读取代码
 
 In this example, you can add the following code to
 `lib/native_add.dart`. However the location of the
 Dart binding code is not important.
 
-在示例中，你需要添加如下的代码到 `lib/native_add.dart`。
-但是，Dart 绑定代码的位置并不重要。
+在示例中，您需要添加如下的代码到 `lib/native_add.dart`。
+但是，Dart 在何处进行代码绑定并不重要。
 
 First, you must create a `DynamicLibrary` handle to
 the native code. This step varies between iOS and Android:
 
-首先，你需要创建一个 `DynamicLibrary` 来处理本地代码。
+首先，您需要创建一个 `DynamicLibrary` 来处理本地代码。
 这一步在 iOS 和 Android 之间有所不同：
 
 ```dart
@@ -274,12 +273,12 @@ but on iOS it takes the plugin's name.
 
 请注意，在 Android 上，
 本地库的名称是定义在 `CMakeLists.txt` 中的（见上文），
-但在 iOS 上它使用插件的名称。
+但在 iOS 上，它将使用插件的名称。
 
 With a handle to the enclosing library,
 you can resolve the `native_add` symbol:
 
-使用库的的句柄，你可以解析 `native_add` 符号：
+您可以通过使用库的句柄来解析 `native_add` 符号：
 
 <!-- skip -->
 ```dart
@@ -292,9 +291,9 @@ final int Function(int x, int y) nativeAdd =
 Finally, you can call it. To demonstrate this within
 the auto-generated "example" app (`example/lib/main.dart`):
 
-现在，你可以调用它了。
+现在，您可以调用它了。
 在自动生成的 example 项目
-(`example/lib/main.dart`)中演示它。
+（`example/lib/main.dart`）中演示它。
 
 ```nocode
 // Inside of _MyAppState.build:
@@ -323,14 +322,14 @@ review process handles this.
 它们的组成符号可以用 [`DynamicLibrary.process`][]。
 您还可以使用 [`DynamicLibrary.open`][] 
 来限制符号解析的范围，
-但目前还不清楚苹果的审查程序如何处理这一问题。
+但目前仍然不确定苹果的审查程序将如何处理两者的使用。
 
 Symbols statically linked into the application binary
 can be resolved using [`DynamicLibrary.executable`][] or
 [`DynamicLibrary.process`][].
 
-静态链接到应用程序二进制文件的符号
-可以使用 [`DynamicLibrary.executable`][] 或 [`DynamicLibrary.process`][].
+您可以使用 [`DynamicLibrary.executable`][] 或 [`DynamicLibrary.process`][]
+解析静态链接到应用程序二进制文件的符号。
 
 #### Platform library
 
@@ -340,7 +339,7 @@ To link against a platform library,
 use the following instructions:
 
 要链接到平台库，
-请使用以下方式：
+请按照如下说明：
 
 1. In Xcode, open `Runner.xcworkspace`.
 
@@ -348,7 +347,7 @@ use the following instructions:
 
 2. Select the target platform.
 
-   选择 target 设备。
+   选择目标设备。
 
 3. Click **+** in the **Linked Frameworks and Libraries**
    section.
@@ -378,22 +377,22 @@ archives as well, but it requires testing.
 To link directly to source code,
 use the following instructions:
 
-要直接链接到源代码，请按照以下说明：
+要直接链接到源代码，请按照如下说明：
 
  1. In Xcode, open `Runner.xcworkspace`.
 
     在 Xcode 中，打开 `Runner.xcworkspace`。
 
- 2. Add the C/C++/Objective-C/Swift
+ 1. Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
 
     添加 C/C++/Objective-C/Swift 源码到 Xcode 工程中。
 
- 3. Add the following prefix to the
+ 1. Add the following prefix to the
     exported symbol declarations to ensure they
     are visible to Dart:
 
-    将以下前缀添加到导出的符号声明中，以确保它们对 Dart 可见
+    将以下前缀添加到导出的符号声明中，以确保它们对 Dart 可见：
 
     **C/C++/Objective-C**
 
@@ -419,7 +418,7 @@ use the following instructions:
 1. If a properly signed `Framework` file is present,
    open `Runner.xcworkspace`.
 
-   如果存在签名正确的 `Framework` 文件，请打开 `Runner.xcworkspace`。
+   如果存在已进行签名的 `Framework` 文件，请打开 `Runner.xcworkspace`。
 
 2. Add the framework file to the **Embedded Binaries**
    section.
@@ -438,7 +437,7 @@ use the following instructions:
 To create add a closed source library to a [Flutter macOS Desktop][] app,
 use the following instructions.
 
-要添加一个闭源的库到 [Flutter macOS 桌面][Flutter macOS Desktop] 应用
+要添加一个闭源的库到 [Flutter macOS 桌面][Flutter macOS Desktop] 应用，
 请按照如下说明：
 
 1. Follow the instructions for Flutter desktop to create a Flutter desktop app.
@@ -451,7 +450,7 @@ use the following instructions.
 
    1. Drag your precompiled library (`libyourlibrary.dylib`) into `Runner/Frameworks`.
 
-      拖动你的预编译的 `libyourlibrary.dylib` 到你的 `Runner/Frameworks`。
+      拖动您已经预编译的 `libyourlibrary.dylib` 到您的 `Runner/Frameworks`。
 
    2. Click `Runner` and go to the `Build Phases` tab.
 
@@ -459,7 +458,7 @@ use the following instructions.
 
       1. Drag `libyourlibrary.dylib` into the `Copy Bundle Resources` list.
 
-         拖动 `libyourlibrary.dylib` 到 `Copy Bundle Resources` 列表.
+         拖动 `libyourlibrary.dylib` 到 `Copy Bundle Resources` 列表。
 
       2. Under `Bundle Framework`, check `Code Sign on Copy`.
 
@@ -491,11 +490,11 @@ use the following instructions.
 
    2. Call your native function somewhere in a widget.
 
-      在 widget 的某个地方调用你的本地代码。
+      在 widget 的某个地方调用您的本地代码。
 
 1. Run `flutter run` and check that your native function gets called.
 
-   运行 `flutter run` 然后检查你的本地方法的调用结果。
+   运行 `flutter run` 然后检查您的本地方法的调用结果。
 
 2. Run `flutter build macos` to build a selfcontained release version of your app.
 
@@ -509,14 +508,13 @@ To create a Flutter plugin that includes both
 C/C++/Objective-C _and_ Dart code,
 use the following instructions:
 
-要创建一个包含 C/C++/Objective-C _and_ Dart 
-代码的 Flutter 插件，
-你需要如下步骤：
+要创建一个包含 C/C++/Objective-C **and** Dart 代码的 Flutter 插件，
+请按照如下说明：
 
 1. In your plugin project,
    open `ios/<myproject>.podspec`.
 
-   在你的插件项目打开 `ios/<myproject>.podspec`.
+   在您的插件项目打开 `ios/<myproject>.podspec`.
 
 2. Add the native code to the `source_files`
    field.
@@ -537,14 +535,14 @@ To create a Flutter plugin that includes Dart
 source code, but distribute the C/C++ library
 in binary form, use the following instructions:
 
-要创建包含 Dart 源代码
+要创建包含 Dart 源代码，
 但 C/C++ 部分是以二进制形式分发的库的 Flutter 插件，
-请查看以下使用说明：
+请按照如下说明：
 
 1. In your plugin project,
    open `ios/<myproject>.podspec`.
 
-   在你的插件目录打开 `ios/<myproject>.podspec`。
+   在您的插件目录打开 `ios/<myproject>.podspec`。
 
 2. Add a `vendored_frameworks` field.
    See the [CocoaPods example][].
@@ -560,7 +558,7 @@ as shown in the CocoaPods example.
 
 **不要**将此插件
 （或任何包含二进制代码的插件）上载到 pub.dev。
-而是应该从可信的第三方下载此插件，
+相反，应该从可信的第三方下载此插件。
 如 CocoaPods 示例所示。
 
 ### Android
@@ -573,12 +571,13 @@ To link against a platform library,
 use the following instructions:
 
 如果要链接一个平台库，
-请查看如下使用说明：
+请按照如下说明：
 
  1. Find the desired library in the [Android NDK Native APIs][]
     list in the Android docs. This lists stable native APIs.
 
-    在 Android 文档的 [Android NDK Native api][] 列表中找到所需的库。它列出了稳定的本地 API。
+    在 Android 文档的 [Android NDK Native api][] 列表中找到所需的库。
+    它列出了稳定的本地 API。
  
  2. Load the library using [`DynamicLibrary.open`][].
 
@@ -598,7 +597,7 @@ file of the app or plugin if indicated by
 the documentation.
 
 如果文档中有说明，
-你还需要根据说明更新 Android 应用程序或插件的清单文件。
+您还需要根据说明更新 Android 应用程序或插件的清单文件。
 
 #### First-party library
 
@@ -620,7 +619,7 @@ instructions in the Android docs to
 add native code and support for the native
 code toolchain (either CMake or `ndk-build`).
 
-遵循安卓文档中的 [添加C和C++代码到项目][Add C and C++ code to your project] 
+遵循安卓文档中的 [添加 C 和 C++ 代码到项目][Add C and C++ code to your project] 
 来添加本地代码和对本地代码工具链的支持（CMake 或 `ndk-build`）。
 
 #### Closed-source third-party library
@@ -631,14 +630,14 @@ To create a Flutter plugin that includes Dart
 source code, but distribute the C/C++ library
 in binary form, use the following instructions:
 
-要创建包含 Dart 源代码
+要创建包含 Dart 源代码，
 但以二进制形式分发 C/C++ 库的 Flutter 插件，
-请查看如下说明：
+请按照如下说明：
 
 1. Open the `android/build.gradle` file for your
    project.
 
-   打开你项目的 `android/build.gradle` 文件。
+   打开您项目的 `android/build.gradle` 文件。
 
 1. Add the AAR artifact as a dependency.
    **Don't** include the artifact in your
@@ -646,9 +645,9 @@ in binary form, use the following instructions:
    downloaded from a repository, such as
    JCenter.
 
-   添加 aar 工件作为依赖。
-   **不要**在你的 flutter package 中导入工件。
-   对应的，它需要在一个仓库中下载，比如 Jcenter。
+   添加 aar 工件添加为依赖。
+   **不要**在您的 Flutter package 中导入工件。
+   对应的，它需要在一个仓库中下载，比如 JCenter。
 
 ### Web
 
@@ -669,19 +668,18 @@ temporary location and then loading. APKs are additionally packed in transit -
 that is why you should be looking at download size.
 
 [Android 指南][Android guidelines] 通常建议分发未压缩的本地共享对象，
-因为这样实际上可以节省设备空间。
-共享对象可以直接从APK加载，
+因为这种做法实际上可以节省设备空间。
+共享对象可以直接从 APK 加载，
 而不是将它们解压到设备上的临时位置然后再加载。
-APK是在传输过程中额外打包的 - 
+APK 是在传输过程中额外打包的 - 
 这就是为什么您应该查看下载的文件尺寸。
 
 Flutter APKs by default don't follow these guidelines and compress
 `libflutter.so` and `libapp.so` - this leads to smaller APK size but larger on
 device size.
 
-Flutter apk 文件默认情况下不遵循这些指导原则
-来压缩 `libflutter.so` 和 `libapp.so`，
-这导致 APK 体积更小，但在设备体积上更大。
+Flutter APK 文件默认情况下不遵循这些指导原则来压缩 `libflutter.so` 和 `libapp.so`，
+这会导致 APK 体积更小，但在设备上体积更大。
 
 Shared objects from third parties can change this default setting with
 `android:extractNativeLibs="true"` in their `AndroidManifest.xml` and stop the
@@ -722,7 +720,7 @@ To re-enable compression, override the setting in
 
 When creating a release archive (IPA) the symbols are stripped by Xcode.
 
-当创建一个 release 档案(IPA)时，符号会被 Xcode 删除。
+当创建一个 release 档案（IPA）时，符号会被 Xcode 删除。
 
 1. In Xcode, go to **Target Runner > Build Settings > Strip Style**.
 
@@ -730,7 +728,7 @@ When creating a release archive (IPA) the symbols are stripped by Xcode.
 
 2. Change from **All Symbols** to **Non-Global Symbols**.
 
-   从 **All Symbols** 修改为 **Non-Global Symbols**。
+   将 **All Symbols** 修改为 **Non-Global Symbols**。
 
 [Add C and C++ code to your project]: {{site.android-dev}}/studio/projects/add-native-code
 [Android NDK Native APIs]: {{site.android-dev}}/ndk/guides/stable_apis

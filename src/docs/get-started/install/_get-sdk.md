@@ -21,7 +21,7 @@
     For other release channels, and older builds,
     see the [SDK releases][] page.
 
-    想要获取到其他版本的安装包，请参阅 [SDK 版本列表][SDK archive] 页面。
+    想要获取到其他版本的安装包，请参阅 [SDK 版本列表][SDK releases] 页面。
 
  1. Extract the file in the desired location, for example:
 

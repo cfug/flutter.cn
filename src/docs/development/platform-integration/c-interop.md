@@ -514,7 +514,7 @@ To create a Flutter plugin that includes both
 C/C++/Objective-C _and_ Dart code,
 use the following instructions:
 
-要创建一个包含 C/C++/Objective-C **and** Dart 代码的 Flutter 插件，
+要创建一个包含 C/C++/Objective-C **和** Dart 代码的 Flutter 插件，
 请按照如下说明：
 
 1. In your plugin project,

@@ -14,7 +14,7 @@ Other terms for similar functionality include
 _native interface_ and _language bindings._
 
 Flutter 移动版可以使用 [dart:ffi][] 库来调用本地的 C API。
-**FFI** 代表[**外部功能接口**][FFI]。
+**FFI** 代表 [**外部功能接口**][FFI]。
 类似功能的其他术语包括**本地接口**和**语言绑定**。
 
 Before your library or program can use the FFI library
@@ -743,4 +743,3 @@ When creating a release archive (IPA) the symbols are stripped by Xcode.
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading
 [Flutter macOS Desktop]: https://flutter.dev/desktop
 [Android guidelines]: https://developer.android.com/topic/performance/reduce-apk-size#extract-false
-

@@ -351,16 +351,16 @@ use the following instructions:
 
    在 Xcode 中，打开 `Runner.xcworkspace`。
 
-2. Select the target platform.
+1. Select the target platform.
 
    选择目标设备。
 
-3. Click **+** in the **Linked Frameworks and Libraries**
+1. Click **+** in the **Linked Frameworks and Libraries**
    section.
 
    在 **Linked Frameworks and Libraries** 中点击 **+**。
 
-4. Select the system library to link against.
+1. Select the system library to link against.
 
    选择要链接的系统库。
 

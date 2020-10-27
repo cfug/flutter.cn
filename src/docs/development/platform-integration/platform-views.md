@@ -6,12 +6,6 @@ description: Learn how to host native Android and iOS views in your Flutter app 
 description: 学习如何在 Flutter 应用中使用集成平台视图托管您的原生 Android 和 iOS 视图。
 ---
 
-<!-- 译者按：因为 Platform Views 是一个相对专有的名词，
-翻译为平台视图总感觉怪怪的，而且在本文中容易和 Native views 混淆，
-所以倾向于保持原样，如 Reviewer 觉得应该翻译，可以给出参考建议，我会一一修改。
-同时，native view 在本篇中会被翻译为原生视图。
--->
-
 Platform views allow to embed native views in a Flutter app, so
 you can apply transforms, clips, and opacity to the native view
 from Dart.
@@ -36,9 +30,6 @@ within a Flutter app.
 Flutter supports two modes: Virtual displays and Hybrid composition.
 
 Flutter 支持两种集成模式：虚拟显示模式 (Virtual displays) 和混合集成模式 (Hybrid composition) 。
-
-<!-- 译者按：这里这两个强行翻译为中文都感觉怪怪的（虚拟显示，模拟显示，混合组成，混合合成），
-所以本人倾向于整篇中保持原样 -->
 
 Which one to use depends on the use case. Let's take a look:
 

@@ -17,7 +17,7 @@ you can apply transforms, clips, and opacity to the native view
 from Dart.
 
 Platform views 允许将本地视图嵌入到 Flutter 应用中，
-所以您可以将变换、裁剪和不透明度等效果从 Dart 应用到本地视图。
+所以您可以通过 Dart 将变换、裁剪和不透明度等效果应用到原生视图。
 
 This allows you, for example, to use the native
 Google Maps from the Android and iOS SDKs
@@ -36,14 +36,14 @@ within a Flutter app.
 
 Flutter supports two modes: Virtual displays and Hybrid composition.
 
-Flutter 支持两种模式：Virtual displays 和 Hybrid composition。
+Flutter 支持两种集成模式：虚拟显示模式 (Virtual displays) 和混合集成模式 (Hybrid composition) 。
 
 <!-- 译者按：这里这两个强行翻译为中文都感觉怪怪的（虚拟显示，模拟显示，混合组成，混合合成），
 所以本人倾向于整篇中保持原样 -->
 
 Which one to use depends on the use case. Let's take a look:
 
-应该使用哪种取决于具体情况。让我们来看看：
+我们应根据具体情况来决定使用哪种模式。让我们来看看：
 
 * Virtual displays renders the `android.view.View` instance to a texture,
   so it's not embedded within the Android Activity's view hierachy.
@@ -61,18 +61,18 @@ Which one to use depends on the use case. Let's take a look:
   Flutter UI. See [performance][] for more.
 
   Hybrid composition 需要 Flutter 1.22。
-  这种模式将原生 `android.view.View` 附加到视图层次结构中。
+  这种模式将原生的 `android.view.View` 附加到视图层次结构中。
   因此，键盘处理和可访问性是开箱即用的。
-  在 Android 10 之前，此模式可能会大大降低 Flutter UI 的帧吞吐量(FPS)。
-  有关更多信息，请参见[性能][performance]。
+  在 Android 10 之前，此模式可能会大大降低 Flutter UI 的帧吞吐量 (FPS)。
+  有关更多信息，请参见 [性能][performance] 小节。
 
 To create a platform view on Android, follow these steps:
 
-要在安卓上创建 Platform view 需要如下的步骤：
+在 Android 上创建平台视图需要如下的步骤：
 
 ### On the Dart side
 
-### 在 Dart 端
+### 在 Dart 中进行的处理
 
 On the Dart side, create a `Widget`
 and add the following build implementation,
@@ -87,7 +87,7 @@ as shown in the following steps.
   If you haven't updated your plugin, see the
   [plugin migration guide][].
 
-  为此，您的插件或应用必须使用 Android embedding v2。
+  您的插件或应用必须使用 Android embedding v2 以确保平台视图可用。
   如果你还没有更新你的插件，查看
   [插件迁移指南][plugin migration guide].
 
@@ -210,7 +210,7 @@ For more information, see the API docs for:
 On the platform side, use the standard
 `io.flutter.plugin.platform` package in either Java or Kotlin:
 
-在平台端，使用 Java 或 Kotlin 中的标准包 `io.flutter.plugin.platform`。
+在平台端，使用 Java 或 Kotlin 中的标准包 `io.flutter.plugin.platform`：
 
 {% samplecode android-platform-views %}
 {% sample Kotlin %}
@@ -279,11 +279,11 @@ internal class NativeViewFactory(private val messenger: BinaryMessenger, private
 Finally, register the platform view. This can be done in an app or a plugin.
 
 最后，注册这个 Platform View。
-它可以被注册到应用或插件。
+这一步可以在应用或插件中完成。
 
 For app registration, modify the app's main activity (e.g. `MainActivity.kt`):
 
-对于在应用中注册，修改你应用的主 Activity （例如：`MainActivity.kt`）：
+要在应用中进行注册，修改应用的主 Activity （例如：`MainActivity.kt`）：
 
 ```kotlin
 package dev.flutter.example
@@ -487,16 +487,16 @@ iOS only uses Hybrid composition, which means that the native
 `UIView` is appended to view hierarchy.
 
 iOS 只支持 Hybrid composition，
-这意味着本地的 `UIView` 会被加入视图层级中。
+这意味着原生的 `UIView` 会被加入视图层级中。
 
 Prior to Flutter 1.22, platform views were in developers preview.
 In 1.22 or above, it's no longer the case, so there's no need to
 set the `io.flutter.embedded_views_preview` flag in `Info.plist`.
 
 在 Flutter 1.22 前，Platform View 是一个开发者预览的版本。
-在 1.22 或更高版本则中不再是这样了，
+在 1.22 或更高版本中则不再是这样了，
 所以我们不再需要在 `Info.plist` 中
-添加 `io.flutter.embedded_views_preview`。
+设置 `io.flutter.embedded_views_preview` 标识。
 
 To create a platform view on iOS, follow these steps:
 
@@ -652,7 +652,7 @@ import UIKit
 
 For plugin registration, modify the plugin's main file (e.g. `FLPlugin.swift`):
 
-对于在插件注册，修改插件的主类（例如`FLPlugin.swift`）：
+要在插件进行注册，修改插件的主类（例如 `FLPlugin.swift`）：
 
 ```swift
 import Flutter
@@ -816,13 +816,13 @@ For more information, see the API docs for:
 
 ## Putting it together
 
-## 把这些整合在一起
+## 整合
 
 When implementing the `build()` method in Dart, you can use [`defaultTargetPlatform`][]
 to detect the platform, and decide what widget to use:
 
-当在 Dart 中实现了 `build()` 方法，你可以使用 [`defaultTargetPlatform`][] 
-来检测当前的平台，并且决定如何使用这个 Widget：
+在 Dart 中实现 `build()` 方法时，您可以使用 [`defaultTargetPlatform`][] 
+来检测当前的平台，并且决定如何使用这个 widget：
 
 <!-- skip -->
 ```dart
@@ -876,7 +876,7 @@ the entire Flutter UI may be impacted.
 Hybrid composition 将每个 Flutter 帧从显存中复制到主内存中，
 然后再将其复制回 GPU 纹理中。
 在 Android 10 或更高版本中，显存会被复制两次。
-由于此复制每帧发生一次，因此可能会影响整个 Flutter UI 的性能。
+由于每帧都会进行一次复制，因此可能会影响整个 Flutter UI 的性能。
 
 Virtual display, on the other hand, makes each pixel of the native view
 flow through additional intermediate graphic buffers, which cost graphic
@@ -888,7 +888,7 @@ memory and drawing performance.
 For complex cases, there are some techniques that can be used to mitigate
 these issues.
 
-对于复杂的情况，可以使用一些技术来缓解这些问题。
+对于复杂的情况，可以使用一些技巧来缓解这些问题。
 
 For example, you could use a placeholder texture while an animation is
 happening in Dart. In other words, if an animation is slow while a
@@ -897,7 +897,7 @@ native view and rendering it as a texture.
 
 例如，当 Dart 中发生动画时，您可以使用占位符纹理。
 换句话说，如果在渲染平台视图时动画很慢，
-请考虑拍摄本地视图的屏幕快照并将其渲染为纹理。
+请考虑对原生视图进行截图，并将其渲染为纹理。
 
 For more information, see:
 

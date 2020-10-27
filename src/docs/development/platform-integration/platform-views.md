@@ -1,15 +1,15 @@
 ---
 title: Hosting native Android and iOS views in your Flutter app with Platform Views
-title: 在 Flutter 应用中使用 Platform Views 托管你的原生 Android 和 iOS 视图
+title: 在 Flutter 应用中使用 Platform Views 托管您的原生 Android 和 iOS 视图
 short-title: Platform-views
 description: Learn how to host native Android and iOS views in your Flutter app with Platform Views.
-description: 学习如何在 Flutter 应用中使用 Platform Views 托管你的原生 Android 和 iOS 视图
+description: 学习如何在 Flutter 应用中使用 Platform Views 托管您的原生 Android 和 iOS 视图。
 ---
 
 <!-- 译者按：因为 Platform Views 是一个相对专有的名词，
 翻译为平台视图总感觉怪怪的，而且在本文中容易和 Native views 混淆，
 所以倾向于保持原样，如 Reviewer 觉得应该翻译，可以给出参考建议，我会一一修改。
-同时，native view 在本篇中会被翻译为本地视图。
+同时，native view 在本篇中会被翻译为原生视图。
 -->
 
 Platform views allow to embed native views in a Flutter app, so
@@ -30,7 +30,7 @@ directly inside your Flutter app, by using Platform Views.
 This page discusses how to host your own native views
 within a Flutter app.
 
-本篇文档讨论了如何在你的 Flutter 应用中托管你的本地视图。
+本篇文档讨论了如何在您的 Flutter 应用中托管您的原生视图。
 
 ## Android
 
@@ -88,7 +88,7 @@ as shown in the following steps.
   [plugin migration guide][].
 
   您的插件或应用必须使用 Android embedding v2 以确保平台视图可用。
-  如果你还没有更新你的插件，查看
+  如果您还没有更新您的插件，查看
   [插件迁移指南][plugin migration guide].
 
 {{site.alert.end}}
@@ -217,7 +217,7 @@ On the platform side, use the standard
 
 In your native code, implement the following:
 
-在你的本地代码中，实现如下方法：
+在您的本地代码中，实现如下方法：
 
 Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
 For example `NativeView.kt`:
@@ -303,7 +303,7 @@ class MainActivity : FlutterActivity() {
 
 For plugin registration, modify the plugin's main class (e.g. `PlatformViewPlugin.kt`):
 
-对于在插件中注册，修改你插件的主类（例如：`PlatformViewPlugin.kt`）：
+对于在插件中注册，修改您插件的主类（例如：`PlatformViewPlugin.kt`）：
 
 ```kotlin
 package dev.flutter.plugin.example
@@ -326,7 +326,7 @@ class PlatformViewPlugin : FlutterPlugin {
 
 In your native code, implement the following:
 
-在你的本地代码中，实现如下方法：
+在您的本地代码中，实现如下方法：
 
 Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
 For example, `NativeView.java`:
@@ -407,7 +407,7 @@ class NativeViewFactory extends PlatformViewFactory {
 
 Finally, register the platform view. This can be done in an app or a plugin.
 
-最后，注册你的 Platform View。
+最后，注册您的 Platform View。
 这一步可以在应用中，也可以在插件中。
 
 For app registration, modify the app's main activity (e.g. `MainActivity.java`):
@@ -469,7 +469,7 @@ For more information, see the API docs for:
 Finally, modify your `build.gradle` file to require one of the
 minimal Android SDK versions:
 
-最后，修改你的 `build.gradle` 文件
+最后，修改您的 `build.gradle` 文件
 来满足 Android SDK 最低版本的要求：
 
 ```gradle
@@ -561,7 +561,7 @@ For more information, see the API docs for:
 
 On the platform side, you use the either Swift or Objective-C:
 
-在平台端，你可以使用 Swift 或是 Objective-C：
+在平台端，您可以使用 Swift 或是 Objective-C：
 
 {% samplecode ios-platform-views %}
 {% sample Swift %}

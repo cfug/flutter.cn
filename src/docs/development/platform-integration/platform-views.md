@@ -663,7 +663,7 @@ class FLPlugin: NSObject, FlutterPlugin {
 Add the headers for the factory and the platform view.
 For example, `FLNativeView.h`:
 
-在工厂类和平台视图的头文件中添加。
+在工厂类和平台视图的文件头部添加以下内容。
 用 `FLNativeView.h` 举例：
 
 ```objc
@@ -841,7 +841,7 @@ Widget build(BuildContext context) {
 
 Platform views in Flutter come with performance trade-offs.
 
-为了在 Flutter 中使用平台视图，所以性能有所折衷。
+在 Flutter 中使用平台视图时，性能会有所折衷。
 
 For example, in a typical Flutter app, the Flutter UI is composed
 on a dedicated raster thread. This allows Flutter apps to be fast,
@@ -874,7 +874,7 @@ Virtual display, on the other hand, makes each pixel of the native view
 flow through additional intermediate graphic buffers, which cost graphic
 memory and drawing performance.
 
-另一方面，Virtual display 使平台视图的每个像素
+另一方面，虚拟显示模式使平台视图的每个像素
 流经附加的中间图形缓冲区，这会浪费显存和绘图性能。
 
 For complex cases, there are some techniques that can be used to mitigate

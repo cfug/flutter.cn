@@ -35,7 +35,7 @@ To get the most out of this codelab, you should have basic knowledge about:
 
 This codelab covers the following material:
 
-该codelab包括以下内容:
+该 codelab 包括以下内容:
 
 * Using `AnimatedOpacity` to create a fade-in effect.
 
@@ -549,7 +549,7 @@ animation takes to complete. Implicit animations also allow you to
 control changes to __the rate__ of an animation within the `duration`.
 The parameter you use to define this change in rate is [curve].
 
-前面的示例展示了：如何让你通过渐变动画对特定的 widget 属性值进行动画变化，以及如何通过`duration` 参数设置动画完成所需的时间。渐变动画还允许你在 `duration` 时长内控制动画的__速率__变化。用来定义这种速率变化的参数是 [curve][curve]。
+前面的示例展示了：如何让你通过渐变动画对特定的 widget 属性值进行动画变化，以及如何通过 `duration` 参数设置动画完成所需的时间。渐变动画还允许你在 `duration` 时长内控制动画的__速率__变化。用来定义这种速率变化的参数是 [curve][curve]。
 
 The preceding examples do not specify a `curve`,
 so the implicit animations apply a [linear animation curve] by default.
@@ -585,6 +585,7 @@ Now that you have passed `easeInOutBack` as the value for `curve` to
   <source src="{{site.flutter-assets}}/animation/curve_ease_in_out_back.mp4" type="video/mp4">
 </video>
 {{site.alert.secondary}}
+
   The `easeInOutBack` constant is only one of many that you can
   pass for the `curve` parameter. Explore the
   [list of curve constants] to discover more ways
@@ -621,7 +622,7 @@ additional capabilities of implicit animations:
   new values of properties when they change using the provided
   `curve` and `duration`.
   
-  当属性们改变使用提供的`curve`和`duration`时，渐变动画会自动在新旧属性值之间进行动画。
+  当属性们改变使用提供的 `curve` 和 `duration` 时，渐变动画会自动在新旧属性值之间进行动画。
   
 * If you do not specify a `curve`,
   implicit animations default to a [linear curve].
@@ -653,7 +654,7 @@ here are some suggestions for where to go next:
 
   试一下其他的 [codelab][codelab].
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="100%" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://g.forms.cn/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="100%" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 [AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html

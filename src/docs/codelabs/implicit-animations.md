@@ -77,7 +77,7 @@ the widget animates the property from the old value to the new one.
 In this way, implicit animations trade control for convenience&mdash;they
 manage animation effects so that you don't have to.
 
-使用渐变动画，您可以通过设置一个目标值来驱动widget的属性进行动画；每当目标值发生变化时，该widget的属性会从旧值逐渐更新到新值，使得该属性产生动画效果。通过这种方式，渐变动画内部实现了动画控制从而更方便使用&mdash;让渐变动画组件来管理动画效果，不需要用户来处理。
+使用渐变动画，您可以通过设置一个目标值来驱动widget的属性进行动画；每当目标值发生变化时，该 widget 的属性会从旧值逐渐更新到新值，使得该属性产生动画效果。通过这种方式，渐变动画内部实现了动画控制从而更方便使用&mdash;让渐变动画组件来管理动画效果，不需要用户来处理。
 
 ## Example: Fade-in text effect
 

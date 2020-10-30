@@ -20,7 +20,7 @@ Flutter SDK or the packages that your app depends on.
 
 ## 升级 Flutter SDK
 
-To update both the Flutter SDK use the `flutter upgrade` command:
+To update the Flutter SDK use the `flutter upgrade` command:
 
 如果要升级 Flutter SDK 的话，请使用 `flutter upgrade` 命令：
 

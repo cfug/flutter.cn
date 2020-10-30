@@ -225,9 +225,10 @@ Learn how to use Flutter with other technologies.
   为一个名叫 Awesome Drawing Quiz 的小游戏加入 AdMob 标语广告、插页式广告和奖励广告。
   这是一个看图猜字的游戏。
 
-* [Firebase for Flutter][]<br>
-  Connect a Flutter app to a Firebase database,
-  and use a transaction to update shared information.
+* [Get to know Firebase for Flutter][]<br>
+  Build an event RSVP and guestbook chat app on both Android
+  and iOS using Flutter, authenticating users with Firebase
+  Authentication and sync data using Cloud Firestore.
 
   [在 Flutter 里使用 Firebase][Firebase for Flutter]<br>
   学习如何在 Flutter 里使用 Firebase 实时数据库的功能，
@@ -246,7 +247,7 @@ Learn how to use Flutter with other technologies.
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
-[Firebase for Flutter]: {{site.codelabs}}/codelabs/flutter-firebase
+[Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 
 ## Testing

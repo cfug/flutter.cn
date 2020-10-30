@@ -93,7 +93,7 @@ channels as illustrated in this diagram:
 
 消息使用平台通道在客户端（UI）和宿主（平台）之间传递，如下图所示：
 
-![Platform channels architecture](/images/PlatformChannels.png)
+![Platform channels architecture](/images/PlatformChannels.png){:width="100%"}
 
 Messages and responses are passed asynchronously,
 to ensure the user interface remains responsive.
@@ -895,13 +895,19 @@ and client declaring the same arguments and datatypes in order for messages to
 work.  The [Pigeon][] package can be used as an alternative to `MethodChannel`
 to generate code that sends messages in a structured typesafe manner.
 
-在之前的样例中，我们使用 `MethodChannel` 在 host 和 client 之间进行通信，然而这并不是类型安全的。为了正确通信，调用/接收消息取决于 host 和 client 声明相同的参数和数据类型。[Pigeon][] 包可以用作 `MethodChannel` 的替代品，它将生成以结构化类型安全方式发送消息的代码。
+在之前的样例中，我们使用 `MethodChannel` 在 host 和 client 之间进行通信，
+然而这并不是类型安全的。为了正确通信，
+调用/接收消息取决于 host 和 client 声明相同的参数和数据类型。
+[Pigeon][] 包可以用作 `MethodChannel` 的替代品，
+它将生成以结构化类型安全方式发送消息的代码。
 
 With [Pigeon][] the messaging protocol is defined in a subset of Dart which then
 generates messaging code for Android or iOS.  A more complete example and more
 information can be found on the [Pigeon pub.dev page][];
 
-在 [Pigeon][] 中，消息接口在 Dart 中进行定义，然后它将生成对应的 Android 以及 iOS 的代码。更复杂的例子以及更多信息尽在 [Pigeon pub.dev page][]。
+在 [Pigeon][] 中，消息接口在 Dart 中进行定义，
+然后它将生成对应的 Android 以及 iOS 的代码。
+更复杂的例子以及更多信息尽在 [Pigeon pub.dev page][]。
 
 Using [Pigeon][] eliminates the need to match strings between host and client
 for the names and datatypes of messages.  It supports: nested classes, grouping
@@ -910,8 +916,11 @@ in either direction.  The generated code is readable and guarentees there will
 be no conflicts between multiple clients of different versions.  Supported
 languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
 
-使用 [Pigeon][] 消除了在主机和客户端之间匹配字符串的需要消息的名称和数据类型。
-它支持：嵌套类，消息转换为 API，生成异步包装代码并发送消息。生成的代码具有相当的可读性并保证在不同版本的多个客户端之间没有冲突。支持 Objective-C，Java，Kotlin 和 Swift（通过Objective-C互操作）语言。
+使用 [Pigeon][] 消除了在主机和客户端之间
+匹配字符串的需要消息的名称和数据类型。
+它支持：嵌套类，消息转换为 API，生成异步包装代码并发送消息。
+生成的代码具有相当的可读性并保证在不同版本的多个客户端之间没有冲突。
+支持 Objective-C，Java，Kotlin 和 Swift（通过 Objective-C 互操作）语言。
 
 ### Pigeon example
 

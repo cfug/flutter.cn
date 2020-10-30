@@ -33,7 +33,7 @@ To get the most out of this codelab, you should have basic knowledge about:
   
 * How to use [stateful widgets].
 
-  如何使用 [stateful widgets][stateful widgets]。
+  如何使用 [stateful widgets][]。
 
 This codelab covers the following material:
 
@@ -72,8 +72,8 @@ or _implicitly animated widgets_, deriving their name from the
 [ImplicitlyAnimatedWidget] class that they implement.
 
 您可以使用库中的一套组件来管理动画，
-这些组件统称为**渐变动画**或**渐变动画组件**，
-其名称源于它们都实现了 [ImplicitlyAnimatedWidget] 类。
+这些组件统称为**隐式动画**或**隐式动画组件**，
+其名称源于它们都实现了 [ImplicitlyAnimatedWidget][] 类。
 
 With implicit animations,
 you can animate a widget property by setting a target value;
@@ -82,7 +82,7 @@ the widget animates the property from the old value to the new one.
 In this way, implicit animations trade control for convenience&mdash;they
 manage animation effects so that you don't have to.
 
-使用渐变动画，您可以通过设置一个目标值，驱动 widget 的属性进行动画变换；
+使用隐式动画，您可以通过设置一个目标值，驱动 widget 的属性进行动画变换；
 每当目标值发生变化时，属性会从旧值逐渐更新到新值。
 通过这种方式，隐式动画内部实现了动画控制，从而能够方便地使用&mdash;
 隐式动画组件会管理动画效果，用户不需要再进行额外的处理。
@@ -94,7 +94,7 @@ manage animation effects so that you don't have to.
 The following example shows how to add a fade-in effect to existing UI
 using an implicitly animated widget called [AnimatedOpacity].
 
-下面的示例展示了如何使用名为 [AnimatedOpacity][] 的渐变动画 widget，
+下面的示例展示了如何使用名为 [AnimatedOpacity][] 的隐式动画 widget，
 为已存在的 UI 添加淡入效果。
 
 **The example begins with no animation code**&mdash;it
@@ -136,7 +136,7 @@ Click the **Run** button to run the example:
 
   本页面使用一个嵌入式版本的 [DartPad][] 来显示示例和进行练习。
   如果您看到的是空白内容，而不是 DartPad，
-  请前往 [DartPad故障排除页][DartPad troubleshooting page]。
+  请前往 [DartPad 故障排除页][DartPad troubleshooting page]。
 
 {{site.alert.end}}
 
@@ -154,7 +154,7 @@ Click the **Run** button to run the example:
   这部分包含在 [淡入初始代码][fade-in starter code] 中添加一个隐式动画一系列步骤。
   完成这些步骤后，您还可以运行 [淡入完成代码][fade-in complete]，
   该代码已经实现了淡入效果。
-  这些步骤概述了如何使用`AnimatedOpacity` widget 来添加以下的动画特性：
+  这些步骤概述了如何使用 `AnimatedOpacity` widget 来添加以下的动画特性：
 
   * The owl's description text remains hidden until the user clicks the
     **Show details** button.
@@ -388,7 +388,7 @@ different types (`double` and `Color`).
 * A `Container` with `borderRadius`, `margin`, and `color` properties that are
   different each time you run the example.
   
-  一个有`margin`、`borderRadius`、和 `color` 属性的 `Container`，
+  一个有 `margin`、`borderRadius`、和 `color` 属性的 `Container`，
   这些属性每次运行时的值都不同。
   
 * A **Change** button that does nothing when clicked.
@@ -430,8 +430,8 @@ you can refactor this code to do the following:
 
 在 [形状变化初始代码][shape-shifting starter code] 中
 每个 `Container` widget 的属性（`color`、`borderRadius` 和 `margin`）
-都由一个相关的函数赋值（ 分别是 `randomColor()`、
-`randomBorderRadius()` 和 `randomMargin()`）。 
+都由一个相关的函数赋值
+（ 分别是 `randomColor()`、`randomBorderRadius()` 和 `randomMargin()`）。 
 您可以使用 `AnimatedContainer` widget 重构这段代码，
 来完成以下的效果:
 
@@ -447,7 +447,6 @@ you can refactor this code to do the following:
   每当 `color`、`borderRadius` 和 `margin` 被设置时，
   都会进行动画变换到新的值。
   
-
 #### 1. Add an implicit animation
 
 #### 1. 添加一个隐式动画
@@ -476,7 +475,7 @@ Change the `Container` widget to an `AnimatedContainer` widget:
   make these changes in [shape-shifting starter code]
 
   您可以根据示例代码中的行号，
-  查看[形状变化初始代码][shape-shifting starter code] 里修改的位置。
+  查看 [形状变化初始代码][shape-shifting starter code] 里修改的位置。
 
 {{site.alert.end}}
 
@@ -492,7 +491,8 @@ for the `color`, `borderRadius`, and `margin` state variables:
 
 当属性的新旧值发生变化时，`AnimatedContainer` 会自动在新旧值之间产生动画效果。
 通过创建一个 `change()` 方法，我们将定义当用户点击 **Change** 按钮时触发变更的行为。
-`change()` 方法可以使用`setState()` 为 `color`、`borderRadius` 和 `margin` 状态变量设置新值：
+`change()` 方法可以使用 `setState()` 
+为 `color`、`borderRadius` 和 `margin` 状态变量设置新值：
 
 <?code-excerpt "container{2,3}/lib/main.dart"?>
 ```diff
@@ -614,7 +614,7 @@ and watch how the animation changes when you pass the
 前面的例子中没有指定 `curve`，
 所以隐式动画默认使用 [线性动画曲线][linear animation curve]。
 在 [形状变化完成代码][shape-shifting complete] 中添加一个 `curve` 参数，
-然后当您将常量 [easeInOutBack][easeInOutBack] 传递给 `curve` 时，
+然后当您将常量 [easeInOutBack][] 传递给 `curve` 时，
 观察动画的变化：
 
 <?code-excerpt "container{5,6}/lib/main.dart"?>
@@ -637,7 +637,8 @@ Now that you have passed `easeInOutBack` as the value for `curve` to
 `easeInOutBack` curve:
 
 现在您已经将 `easeInOutBack` 作为 `curve` 的值传递给了 `AnimatedContainer`，
-注意：`margin`、`borderRadius` 和 `color` 的变化速率遵循 `easeInOutBack` 所定义的曲线:
+注意：`margin`、`borderRadius` 和 `color` 的变化速率
+遵循 `easeInOutBack` 所定义的曲线:
 
 <div id="animation_1_play_button_"></div>
 <video id="animation_1" style="width:464px; height:192px;" loop="">
@@ -669,11 +670,13 @@ and even `child` and `alignment`!
 The [shape-shifting complete] example builds upon [fade-in complete] by showing
 additional capabilities of implicit animations:
 
-[形状变化完成代码][shape-shifting complete] 示例对 `margin`、`borderRadius` 和 `color` 属性值进行了动画变换。
+[形状变化完成代码][shape-shifting complete] 示例
+对 `margin`、`borderRadius` 和 `color` 属性值进行了动画变换。
 注意：`AnimatedContainer` 可以对它的任意属性进行动画改变，
 包括那些您没有使用的属性，比如 `padding`、`transform`，
 甚至是 `child` 和 `alignment`!
-这个 [形状变化完成代码][shape-shifting complete] 的示例建立在 [渐变完成代码][fade-in complete] 的基础上，
+这个 [形状变化完成代码][shape-shifting complete] 的示例
+建立在 [渐变完成代码][fade-in complete] 的基础上，
 展现出隐式动画的额外功能:
 
 * Some implicit animations (for example,
@@ -688,7 +691,7 @@ additional capabilities of implicit animations:
   new values of properties when they change using the provided
   `curve` and `duration`.
   
-  渐变动画会在新旧属性值变换时，
+  隐式动画会在新旧属性值变换时，
   自动使用提供的 `curve` 和 `duration` 进行动画变换。
   
 * If you do not specify a `curve`,
@@ -712,7 +715,7 @@ here are some suggestions for where to go next:
 
 * Learn about [hero animations] and [staggered animations].
 
-  学习 [hero动画][hero animations] 和 [staggered动画][staggered animations]。
+  学习 [hero 动画][hero animations] 和 [staggered 动画][staggered animations]。
 
 * Checkout the [animation library].
 
@@ -750,4 +753,3 @@ here are some suggestions for where to go next:
 [shape-shifting starter code]: #shape-shifting-starter-code
 [staggered animations]: /docs/development/ui/animations/staggered-animations
 [stateful widgets]: /docs/development/ui/interactive#stateful-and-stateless-widgets
-

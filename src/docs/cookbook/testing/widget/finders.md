@@ -26,6 +26,13 @@ provided by the [`flutter_test`][] package.
 我们可以编写自己的 `finder` 类，
 不过通常使用 [`flutter_test`][] package 提供的工具来定位 widgets 更加方便。
 
+During a `flutter run` session on a widget test, you can also
+interactively tap parts of the screen for the Flutter tool to
+print the suggested [`Finder`].
+
+运行 widget 测试，在执行 `flutter run` 的时候，你还可以与屏幕进行交互点击，
+Flutter 工具会输出建议的 [`Finder`][]。
+
 This recipe looks at the [`find`][] constant provided by
 the `flutter_test` package, and demonstrates how
 to work with some of the `Finders` it provides.

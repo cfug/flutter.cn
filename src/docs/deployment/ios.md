@@ -217,20 +217,21 @@ In the **Deployment Info** section:
 
 在 **Deployment Info** 部分：
 
-`Deployment Target:`
+`Deployment Target`
 <br> The minimum iOS version that your app supports.
   Flutter supports iOS 8.0 and later. If your app includes
   Objective-C or Swift code that makes use of APIs that
   were unavailable in iOS 8, update this setting appropriately.
 
-`Deployment Target:` 你的 App 将会支持的最低版本的 iOS。
-<br>Flutter 支持 iOS 8.0 及以后的版本。
-    如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，请设置到合适的版本。
+`Deployment Target` 
+<br> 你的 App 将会支持的最低版本的 iOS，
+   Flutter 支持 iOS 8.0 及以后的版本。
+   如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，请设置到合适的版本。
 
 The **General** tab of your project settings should resemble
 the following:
 
-你项目的 General tab 应该看起来像是这样的：
+你项目的 **General** tab 应该看起来像是这样的：
 
 ![Xcode Project Settings](/images/releaseguide/xcode_settings.png){:width="100%"}
 
@@ -239,6 +240,18 @@ For a detailed overview of app signing, see
 
 更多关于 App 签名新的介绍，查看文档
 [创建, 导出, 和删除签名证书][appsigning]。
+
+## Updating the app's deployment version
+
+## 更新应用的开发版本
+
+If you changed `Deployment Target` in your Xcode project,
+open `ios/Flutter/AppframeworkInfo.plist` in your Flutter app
+and update the `MinimumOSVersion` value to match.
+
+如果你在 Xcode 工程里更改了 `Deployment Target`，
+你需要打开 Flutter app 的 `ios/Flutter/AppframeworkInfo.plist`
+文件并修改 `MinimumOSVersion` 值与之匹配。
 
 ## Updating the app's version number
 

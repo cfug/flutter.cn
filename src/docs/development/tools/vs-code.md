@@ -284,6 +284,52 @@ Flutter 扩展会自动选择上次连接的设备。
       调试基于默认的配置。
       也可以通过点击**调试侧边栏**顶部的齿轮创建 `launch.json` 文件自定义调试。
       你可以修改里面的值。
+      
+### Run app in debug, profile, or release mode
+
+### 以 调试 (debug)、性能 (profile) 或发布 (release) 模式运行应用
+
+Flutter offers many different build modes to run your app in. 
+You can read more about them in [Flutter's build modes][].
+
+Flutter 提供了很多种不同的构建模式运行你的应用，
+更多内容请参考文档 [Flutter 的构建模式][Flutter's build modes]。
+
+ 1. Open the `launch.json` file in VS Code.
+    
+    打开 VS Code 里的 `launch.json` 文件
+
+    If you do not have a `launch.json` file, go to 
+    the **Run** view in VS Code and click **create a launch.json file**.
+    
+    如果你没有 `launch.json` 文件，请到 VS Code 的 **Run** 视图，
+    点击 **create a launch.json file** 创建。
+    
+ 1. In the `configurations` section, change the `flutterMode` property to 
+ the build mode you want to target. 
+
+    在 `configurations` 部分，修改 `flutterMode` 属性值为你想要的构建模式即可。
+    
+     * For example, if you want to run in debug mode, 
+     your `launch.json` might look like this: 
+     
+       举个例子，如果你希望在调试模式下运行，
+       你的 `launch.json` 文件应该类似下面这样：
+       
+     ```json
+      "configurations": [
+       {
+         "name": "Flutter",
+         "request": "launch",
+         "type": "dart",
+         "flutterMode": "debug"
+       }
+     ]
+     ```
+ 1. Run the app through the **Run** view. 
+ 
+    在 **Run** 视图里运行你的应用。
+
 
 ## Fast edit and refresh development cycle
 
@@ -425,7 +471,7 @@ and then selecting from the code completion window:
 代码片段可以用来加速输入通用类型代码段。
 通过输入前缀来调用，然后从代码完成窗口中选择：
 
-![Snippets]({% asset tools/vs-code/snippets.png @path %}){:width="700px"}
+![Snippets]({% asset tools/vs-code/snippets.png @path %}){:width="100%"}
 
 The Flutter extension includes the following snippets:
 
@@ -546,6 +592,7 @@ When filing new issues, include [flutter doctor][] output.
 [DevTools]: /docs/development/tools/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [Flutter inspector]: /docs/development/tools/devtools/inspector
+[Flutter's build modes]: /docs/testing/build-modes
 [let us know]: {{site.github}}/flutter/website/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /docs/development/tools/devtools/vscode

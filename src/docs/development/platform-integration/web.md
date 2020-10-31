@@ -355,10 +355,10 @@ Not currently.
 
 ### 如何跟其他使用者交流？
 
-Check out the **#web** discussion board on [Discord][].
+Check out the **#hackers-web-🌍** discussion board on [Discord][].
 Flutter engineers routinely read and respond on Discord.
 
-请在 [Discord][] 平台的 **#web** 这个讨论板跟大家讨论，
+请在 [Discord][] 平台的 **#hackers-web-🌍** 这个讨论板跟大家讨论，
 Flutter 团队的工程师会经常阅读和互动。
 
 [Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance

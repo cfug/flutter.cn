@@ -179,6 +179,7 @@ A state container approach familiar to many web developers.
 
 * [Flutter meets Redux: The Redux way of managing Flutter applications state][],
   by Amir Ghezelbash
+* [Redux and epics for better-organized code in Flutter apps][], by Nihad Delic
   
   [当 Flutter 遇见 Redux：以 Redux 的风格管理 Flutter 应用的状态 (Flutter meets Redux: The Redux way of managing Flutter applications state)][Flutter meets Redux: The Redux way of managing Flutter applications state]，Amir Ghezelbash 著。
 
@@ -293,3 +294,4 @@ A simplified reactive state management solution.
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 [You might not need Redux: The Flutter edition]: https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
+[Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61

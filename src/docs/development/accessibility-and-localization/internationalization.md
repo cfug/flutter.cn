@@ -93,7 +93,7 @@ then you have to add the package
 `flutter_cupertino_localizations` as well.
 
 默认情况下，Flutter 只提供美式英语的本地化。
-如果想要添加其他语言，你的应用必须指定额外的 MaterialApp
+如果想要添加其他语言，你的应用必须指定额外的 `MaterialApp`
 属性并且添加一个单独的 package，叫做 `flutter_localizations`。
 截至到 2020 年 2 月份，这个 package 已经支持大约 77 种语言。
 
@@ -963,4 +963,3 @@ Once all supported locales have been added, save the file.
 [widgets-local]: {{site.api}}/flutter/widgets/Localizations-class.html
 [widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-

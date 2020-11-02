@@ -24,7 +24,7 @@ to use bitcode in your app.
 
 Apple Watch target 要求启用 bitcode，
 因此请按照 
-[创建 iOS 支持 bitcode 的应用程序](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app) 
+[创建支持 bitcode 的 iOS 应用程序](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app) 
 中的步骤在您的应用程序中使用 bitcode。
 
 ## Step 2: Add an Apple Watch target

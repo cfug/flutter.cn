@@ -40,8 +40,7 @@ app, see feature request [#65451][].
   CocoaPods version 1.10.0.beta.1 or higher is required to run Flutter apps with
   plugins.
 
-  需要具有 CocoaPods 1.10.0.beta.1 或更高版本
-  才能运行带有插件的 Flutter 应用程序。
+  运行带有插件的 Flutter 应用程序需要 CocoaPods 1.10.0.beta.1 或更高版本。
 
 {{site.alert.end}}
 
@@ -451,7 +450,7 @@ image="development/platform-integration/ios-app-clip/bitcode.png"
   CocoaPods version 1.10.0.beta.1 or higher is required to run Flutter apps with
   plugins.
 
-  需要 CocoaPods 的版本为 1.10.0.beta.1 或更高才可以运行 Flutter 插件。
+  运行带有插件的 Flutter 应用程序需要 CocoaPods 1.10.0.beta.1 或更高版本。
   
 {{site.alert.end}}
 

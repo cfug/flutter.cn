@@ -157,8 +157,7 @@ Move files to trash.
 If you don't use the `SceneDelegate.swift` file, remove the reference to it in
 the `Info.plist`.
 
-如果您不使用 `SceneDelegate.swift` 文件,
- 移除在 `Info.plist` 中对应的引用。
+如果您不使用 `SceneDelegate.swift` 文件，移除在 `Info.plist` 中对应的引用。
 
 Open the `Info.plist` file in the App Clip group. Delete the entire
 dictionary entry for `Application Scene Manifest`.

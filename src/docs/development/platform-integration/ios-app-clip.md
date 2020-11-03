@@ -10,7 +10,7 @@ description: 如何为您的 Flutter 工程加入 iOS 14 的 App Clip。
   This support is offered experimentally on Flutter version 1.22, may not be
   stable, and may change in the future.
 
-  这个支持在 Flutter 1.22 版本中是试验性功能, 可能不稳定, 也许在未来会修改。
+  这个支持在 Flutter 1.22 版本中是实验性功能, 可能不稳定, 也许在未来会修改。
 
 {{site.alert.end}}
 
@@ -18,7 +18,7 @@ This guide describes how to manually add another Flutter-rendering iOS App Clip
 target to your existing Flutter project or [add-to-app][] project.
 
 这个指南介绍了如何手动添加另一个使用 Flutter 来渲染的 iOS App Clip target, 
-并将它到您现有的 Flutter 项目或 [add-to-app][] 项目。
+并将它集成到您现有的 Flutter 项目或 [add-to-app][] 项目。
 
 If you are interested in automatically integrating an App Clip into your iOS
 app, see feature request [#65451][].
@@ -47,7 +47,7 @@ app, see feature request [#65451][].
 
 To see a working sample, see the [App Clip sample][] on GitHub.
 
-要查看一个示例，请参阅 GitHub 上的 [App Clip 示例][App Clip sample]。
+要查看完整可用的示例，请参阅 GitHub 上的 [App Clip 示例][App Clip sample]。
 
 ## Step 1 - Open project
 
@@ -56,7 +56,7 @@ To see a working sample, see the [App Clip sample][] on GitHub.
 Open your iOS Xcode project, such as `ios/Runner.xcworkspace` for full-Flutter
 apps.
 
-打开您的 iOS Xcode 工程, 例如您的完整 Flutter 项目中的 `ios/Runner.xcworkspace`
+打开您的 iOS Xcode 工程，例如您的纯 Flutter 项目中的 `ios/Runner.xcworkspace`。
 
 ## Step 2 - Add an App Clip target
 
@@ -116,7 +116,7 @@ image="development/platform-integration/ios-app-clip/app-clip-details.png" %}
 In the following dialog, activate the new scheme for the new target.
 
 在接下来的对话框中，
-为新的 target 激活(activate)一个新的 scheme。
+为新的 target 激活 (activate) 一个新的 scheme。
 
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/activate-scheme.png" %}
@@ -130,8 +130,8 @@ image="development/platform-integration/ios-app-clip/activate-scheme.png" %}
 In the Project Navigator, in the newly created App Clip group, delete
 everything except `Info.plist` and `<app clip target>.entitlements`.
 
-在项目浏览器的新创建的 App Clip 组中，
-删除除 `Info.plist` 和 `App Clip target.entitlements` 之外的所有内容。
+在项目 Project Navigator 的新创建的 App Clip 组中，
+将除了 `Info.plist` 和 `App Clip target.entitlements` 以外的所有内容删除。
 
 {{site.alert.tip}}
 
@@ -164,14 +164,14 @@ Open the `Info.plist` file in the App Clip group. Delete the entire
 dictionary entry for `Application Scene Manifest`.
 
 打开 App Clip 组中的 `Info.plist`。
-删除 `Application Scene Manifest` 字典。
+删除 `Application Scene Manifest` 字典条目。
 
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/scene-manifest.png" %}
 
 ## Step 4 - Share build configurations
 
-## 步骤4 共享构建配置
+## 步骤 4 -  共享构建配置
 
 This step isn't necessary for add-to-app projects since add-to-app projects
 have their custom build configurations and versions.
@@ -237,9 +237,9 @@ also include the App Clip target in the `Target Membership` checkbox group.
 对于以下每一个文件： `Main.storyboard`、 `Assets.xcassets`、
 `LaunchScreen.storyboard`、`GeneratedPluginRegistrant.m` 和 
 `AppDelegate.swift`，
-如果您是 Objective-C 还应该包括 `Supporting Files/main.m`，
+（如果您是 Objective-C 还应该包括 `Supporting Files/main.m`）
 选择文件并且在检查器中选择第一个选项卡，
-还应该在 `Target Membership` 选中 `App Clip`。
+并且在 `Target Membership` 选中 `App Clip`。
 
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/add-target-membership.png"
@@ -259,7 +259,7 @@ Flutter. For example to show a [custom Flutter route][].
 
 ## Step 6 - Add App Clip associated domains
 
-## 步骤 6 - 添加 App Clip 的 关联域
+## 步骤 6 - 添加 App Clip 的关联域名
 
 This is a standard step for App Clip development. See the
 [official Apple documentation][].
@@ -273,7 +273,7 @@ Open the `<app clip target>.entitlements` file. Add an `Associated Domains`
 Array type. Add a row to the array with `appclips:<your bundle id>`.
 
 打开 `<app clip target>.entitlements` 文件。
-添加 `Associated Domains` 数组类型。
+添加 `Associated Domains` 数组。
 添加一行 `appclips:<your bundle id>` 到数组中。
 
 {% include app-figure.md
@@ -461,7 +461,7 @@ image="development/platform-integration/ios-app-clip/bitcode.png"
 Open the `Podfile` for your Flutter project or add-to-app host project.
 
 在您的 Flutter 项目
-或是 add-to-app 的 host 项目中打开 `Podfile` 文件。
+或是 add-to-app 的宿主项目中打开 `Podfile` 文件。
 
 For full-Flutter apps, replace the following section:
 
@@ -550,7 +550,7 @@ image="development/platform-integration/ios-app-clip/run-select.png"
 To test launching an App Clip from the beginning, also consult Apple's doc on
 [Testing Your App Clip's Launch Experience][].
 
-要从一开始测试启动一个 App Clip，也可以查看苹果公司的文档
+要从头测试 App Clip 的启动，您也可以查看苹果公司的文档
  [测试您的 App Clip 的启动体验][Testing Your App Clip's Launch Experience]。
 
 ## Debugging, hot reload

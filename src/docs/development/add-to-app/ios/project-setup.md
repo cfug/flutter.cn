@@ -29,7 +29,7 @@ Your development environment must meet the
 with [Xcode installed][].
 Flutter supports iOS 8.0 and later.
 
-你的开发环境必须满足 
+你的开发环境必须满足
 [Flutter 对 macOS 系统的版本要求][macOS system requirements for Flutter]
 并 [已经安装 Xcode][Xcode installed]，Flutter 支持 iOS 8.0 及以上。
 
@@ -118,7 +118,7 @@ embedding the module into your existing application with [CocoaPods][].
   directory. Changes made in your module's `.ios/`
   directory do not appear in your existing iOS project
   using the module, and may be overwritten by Flutter.
-  
+
   iOS 代码要添加到你的既有应用或者 Flutter plugin中，
   而不是 Flutter module 的 `.ios/` 目录下。
   `.ios/` 下的改变不会集成到你的既有应用，
@@ -151,7 +151,7 @@ There are two ways to embed Flutter in your existing application.
 1. Create frameworks for the Flutter engine, your compiled Dart code,
    and all Flutter plugins. Manually embed the frameworks,
    and update your existing application's build settings in Xcode.
-   
+
    把 Flutter engine 、你的 dart 代码和所有 Flutter plugin 编译成 framework 。
    用 Xcode 手动集成到你的应用中，并更新编译设置。
 
@@ -262,7 +262,7 @@ Run `pod install`.
   in your Flutter module directory to refresh the list
   of plugins read by the `podhelper.rb` script.
   Then, run `pod install` again from
-  your application at`some/path/MyApp`.
+  your application at `some/path/MyApp`.
 
   当你在 `my_flutter/pubspec.yaml` 改变了 Flutter plugin 依赖，
   需要在 Flutter module 目录运行 `flutter pub get`，
@@ -285,7 +285,7 @@ the Debug or Release [build modes of Flutter][], respectively.
 Add a Profile build configuration
 to your app to test in profile mode.
 
-你应用的 Debug 和 Release 编译配置，将会集成相对应的 
+你应用的 Debug 和 Release 编译配置，将会集成相对应的
 Debug 或 Release 的 [编译产物][build modes of Flutter]。
 可以增加一个 Profile 编译配置用于在 profile 模式下测试应用。
 
@@ -293,7 +293,7 @@ Debug 或 Release 的 [编译产物][build modes of Flutter]。
 
   `Flutter.framework` is the bundle for the Flutter engine,
   and `App.framework` is the compiled Dart code for this project.
-  
+
   `Flutter.framework` 是 Flutter engine 的框架，
   `App.framework` 是你的 Dart 代码的编译产物。
 {{site.alert.end}}
@@ -327,7 +327,7 @@ If you're using the previous
 you can skip these instructions.
 
 
-如果你使用前面的 
+如果你使用前面的
 [使用 CocoaPods 和 Flutter SDK 集成][Embed with CocoaPods and Flutter tools]，
 你可以跳过本步骤。
 
@@ -337,38 +337,38 @@ frameworks to `some/path/MyApp/Flutter/`.
 下面的示例假设你想在 `some/path/MyApp/Flutter/` 目录下创建 frameworks：
 
 ```sh
-flutter build ios-framework --output=some/path/MyApp/Flutter/
+flutter build ios-framework --xcframework --no-universal --output=some/path/MyApp/Flutter/
 ```
 
 ```text
 some/path/MyApp/
 └── Flutter/
     ├── Debug/
-    │   ├── Flutter.framework
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework (only if you have plugins with iOS platform code)
-    │   └── example_plugin.framework (each plugin is a separate framework)
+    │   ├── Flutter.xcframework
+    │   ├── App.xcframework
+    │   ├── FlutterPluginRegistrant.xcframework (only if you have plugins with iOS platform code)
+    │   └── example_plugin.xcframework (each plugin is a separate framework)
     ├── Profile/
-    │   ├── Flutter.framework
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework
+    │   ├── Flutter.xcframework
+    │   ├── App.xcframework
+    │   ├── FlutterPluginRegistrant.xcframework
+    │   └── example_plugin.xcframework
     └── Release/
-        ├── Flutter.framework
-        ├── App.framework
-        ├── FlutterPluginRegistrant.framework
-        └── example_plugin.framework
+        ├── Flutter.xcframework
+        ├── App.xcframework
+        ├── FlutterPluginRegistrant.xcframework
+        └── example_plugin.xcframework
 ```
 
 {{site.alert.warning}}
 
-  Always use `Flutter.framework` and `App.framework`
-  from the same directory. Mixing `.framework` imports
-  from different directories (such as `Profile/Flutter.framework`
-  with `Debug/App.framework`) causes runtime crashes.
+  Always use `Flutter.xcframework` and `App.xcframework`
+  from the same directory. Mixing `.xcframework` imports
+  from different directories (such as `Profile/Flutter.xcframework`
+  with `Debug/App.xcframework`) causes runtime crashes.
 
   始终使用相同目录下的 `Flutter.framework` 和 `App.framework`。
-  混合使用不同目录（例如 `Profile/Flutter.framework` 
+  混合使用不同目录（例如 `Profile/Flutter.framework`
   以及 `Debug/App.framework`）将会导致运行失败。
 
 {{site.alert.end}}
@@ -378,8 +378,8 @@ some/path/MyApp/
   With Xcode 11 installed, you can generate
   [XCFrameworks][] instead of universal frameworks by adding
   the flags `--xcframework --no-universal`.
-  
-  在 Xcode 11 中，你可以添加 `--xcframework --no-universal` 
+
+  在 Xcode 11 中，你可以添加 `--xcframework --no-universal`
   参数来生成 [XCFrameworks][]，而不是使用通用的 framework。
 {{site.alert.end}}
 
@@ -388,8 +388,8 @@ application in Xcode.  There are multiple ways to do
 this&mdash;use the method that is best for your project.
 
 在 Xcode 中将生成的 frameworks 集成到你的既有应用中。
-例如，你可以在 `some/path/MyApp/Flutter/Release/` 
-目录拖拽 frameworks 到 你的应用 target 编译设置的 
+例如，你可以在 `some/path/MyApp/Flutter/Release/`
+目录拖拽 frameworks 到 你的应用 target 编译设置的
 General > Frameworks, Libraries, and Embedded Content 下，
 然后在 Embed 下拉列表中选择 "Embed & Sign"。
 
@@ -402,16 +402,16 @@ For example, you can drag the frameworks from
 into your target's **Build
 Settings > Build Phases > Link Binary With Libraries**.
 
-例如，你可以将框架从 Finder 的 `some/path/MyApp/Flutter/Release/` 
+例如，你可以将框架从 Finder 的 `some/path/MyApp/Flutter/Release/`
 拖到你的目标项目中，
-然后点击以下步骤 
+然后点击以下步骤
 build settings > Build Phases > Link Binary With Libraries。
 
 In the target's build settings, add `$(PROJECT_DIR)/Flutter/Release/`
 to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`).
 
-在 target 的编译设置中的 
-Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`) 
+在 target 的编译设置中的
+Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`)
 增加 `$(PROJECT_DIR)/Flutter/Release/`。
 
 {% include app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
@@ -465,8 +465,8 @@ You should now be able to build the project in Xcode using `⌘B`.
   To embed the Debug version of the Flutter frameworks in your
   Debug build configuration and the Release version in your
   Release configuration, in your `MyApp.xcodeproj/project.pbxproj`,
-  try replacing `path = Flutter/Release/example.framework;`
-  with `path = "Flutter/$(CONFIGURATION)/example.framework";`
+  try replacing `path = Flutter/Release/example.xcframework;`
+  with `path = "Flutter/$(CONFIGURATION)/example.xcframework";`
   for all added frameworks. (Note the added `"`.)
 
   如果你想在 Debug 编译配置下使用 Debug 版本的 Flutter frameworks，
@@ -474,28 +474,28 @@ You should now be able to build the project in Xcode using `⌘B`.
   在 `MyApp.xcodeproj/project.pbxproj` 文件中，
   尝试在所有 Flutter 相关 frameworks 上使用
   `path = "Flutter/$(CONFIGURATION)/example.framework";`
-  替换 `path = Flutter/Release/example.framework;` 
+  替换 `path = Flutter/Release/example.framework;`
   （注意添加引号 `"`）。
 
   You must also add `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)`
   to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`)
   build setting.
-  
-  你也必须在 **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`) 
+
+  你也必须在 **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`)
   编译设置中使用 `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)`。
-  
+
 {{site.alert.end}}
 
 ### Option C - Embed application and plugin frameworks in Xcode and Flutter framework with CocoaPods
 
-### 选项 C -  使用 CocoaPods 在 Xcode 和 Flutter 框架中内嵌应用和插件框架 
+### 选项 C -  使用 CocoaPods 在 Xcode 和 Flutter 框架中内嵌应用和插件框架
 
-Alternatively, instead of distributing the large Flutter.framework
+Alternatively, instead of distributing the large Flutter.xcframework
 to other developers, machines, or continuous integration systems,
 you can instead generate Flutter as CocoaPods podspec by adding
 the flag `--cocoapods`. This produces a `Flutter.podspec`
-instead of an engine Flutter.framework.
-The App.framework and plugin frameworks are generated
+instead of an engine Flutter.xcframework.
+The App.xcframework and plugin frameworks are generated
 as described in Option B.
 
 除了将一个很大的 Flutter.framework 分发给其他开发者、机器或者持续集成 (CI) 系统
@@ -505,7 +505,7 @@ CocoaPods 的 podspec 文件分发。
 如选项 B 中所说的那样，它将会生成 App.framework 和插件框架。
 
 ```sh
-flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
+flutter build ios-framework --cocoapods --xcframework --no-universal --output=some/path/MyApp/Flutter/
 ```
 
 ```text
@@ -513,19 +513,19 @@ some/path/MyApp/
 └── Flutter/
     ├── Debug/
     │   ├── Flutter.podspec
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework (each plugin with iOS platform code is a separate framework)
+    │   ├── App.xcframework
+    │   ├── FlutterPluginRegistrant.xcframework
+    │   └── example_plugin.xcframework (each plugin with iOS platform code is a separate framework)
     ├── Profile/
     │   ├── Flutter.podspec
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework
+    │   ├── App.xcframework
+    │   ├── FlutterPluginRegistrant.xcframework
+    │   └── example_plugin.xcframework
     └── Release/
         ├── Flutter.podspec
-        ├── App.framework
-        ├── FlutterPluginRegistrant.framework
-        └── example_plugin.framework
+        ├── App.xcframework
+        ├── FlutterPluginRegistrant.xcframework
+        └── example_plugin.xcframework
 ```
 
 Host apps using CocoaPods can add Flutter to their Podfile:
@@ -535,8 +535,8 @@ Host apps using CocoaPods can add Flutter to their Podfile:
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
 
-Embed and link the generated App.framework,
-FlutterPluginRegistrant.framework,
+Embed and link the generated App.xcframework,
+FlutterPluginRegistrant.xcframework,
 and any plugin frameworks into your existing application
 as described in Option B.
 

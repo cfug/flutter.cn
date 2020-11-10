@@ -50,7 +50,7 @@ Flutter has four [release channels][]:
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
-Flutter 有 [4个发布渠道][release channels]，分别是 
+Flutter 有 [4个发布渠道][release channels]，分别是
 **stable**, **beta**, **dev**, 和 **master**。
 我们推荐使用 **{{site.sdk.channel}}** 渠道
 除非你需要更加新的版本。
@@ -81,10 +81,10 @@ $ flutter upgrade
 
   If you need a specific version of the Flutter SDK,
   you can download it from the [Flutter SDK releases][].
-  
+
   如果你需要某个特定的 Flutter SDK 版本,
   你可以从 [SDK 版本][Flutter SDK releases] 页面下载.
-  
+
 {{site.alert.end}}
 
 
@@ -138,21 +138,6 @@ we'd love to hear from you!
 我们将在 [Flutter 通知邮件列表][flutter-announce] 上发布重大更改的公告。
 你也可以在 [Flutter 开发邮件列表][flutter-dev] 上提问！
 除了订阅接收公告外我们很乐意听取您的意见！
-
-## Selecting a specific version
-
-## 选择特定版本
-
-If you have a specific version of Flutter that you'd like to switch to,
-you can use the `flutter version` command:
-
-如果想切换到特定版本的 Flutter，
-你可以使用 `flutter version` 命令：
-
-```terminal
-$ flutter version v1.9.1+hotfix.3
-```
-
 
 [Flutter SDK releases]: /docs/development/tools/sdk/releases
 [release channels]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels

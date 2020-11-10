@@ -223,6 +223,7 @@ onPressed: () {
 
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
+
 void main() {
   runApp(MaterialApp(
     title: 'Named Routes Demo',
@@ -241,6 +242,7 @@ void main() {
     },
   ));
 }
+
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -261,6 +263,7 @@ class FirstScreen extends StatelessWidget {
     );
   }
 }
+
 class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -283,6 +286,7 @@ class SecondScreen extends StatelessWidget {
     );
   }
 }
+
 ```
 
 <noscript>

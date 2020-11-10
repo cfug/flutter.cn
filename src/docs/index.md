@@ -67,7 +67,7 @@ Coming from another platform? Check out Flutter for:
 [Building layouts][]
 <br> Learn how to create layouts in Flutter,
   where everything is a widget.
-  
+
 [Flutter 中的布局][Building layouts]
 <br> 学习如何在 Flutter 中创建布局，在 Flutter 里，所有事物都是 widget。
 
@@ -76,7 +76,7 @@ Coming from another platform? Check out Flutter for:
   flow up. Sizes flow down. Parents set
   positions", then you are well on your
   way to understanding Flutter's layout model.
-  
+
 [理解布局约束][Understanding constraints]
 <br> 一旦你理解了 "Constraints flow up. Sizes flow down. Parents set positions"
 这个之后，就会方便你了解 Flutter 的布局模型。
@@ -121,7 +121,7 @@ app frameworks?
 
 首先你需要知道，为何我们要使用 Flutter？ 是什么让它与众不同？
 
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=68736077&cid=119126400&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><br>
+<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=68736077&cid=119126400&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><br>
 
 <p>How is Flutter different for app development?</p>
 <p>视频名称：使用 Flutter 开发应用与其他有何不同</p>
@@ -166,23 +166,23 @@ You might also find these docs useful:
 下列文档可能也会对你有所帮助：
 
 * [Using packages][]
-  
+
   [在 Flutter 里使用 Packages][Using packages]
-  
+
 * [Adding assets and images][]
-  
+
   [添加资源和图片][Adding assets and images]
-  
+
 * [Navigation and routing][]
-  
+
   [路由和导航][Navigation and routing]
-  
+
 * [State management][]
-  
+
   [状态 (State) 管理介绍][State management]
-  
+
 * [Animations][]
-  
+
   [动画效果介绍][Animations]
 
 
@@ -211,4 +211,3 @@ You might also find these docs useful:
 [What's new]: /docs/whats-new
 [Write your first Flutter app]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
-

@@ -66,7 +66,7 @@ Symbols from a statically linked library can be
 loaded using `DynamicLibrary.executable` or
 `DynamicLibrary.process`.
 
-静态链接中的符号可以使用 `DynamicLibrary.executable` 
+静态链接中的符号可以使用 `DynamicLibrary.executable`
 或 `DynamicLibrary.process` 来加载.
 
 A dynamically linked library, by contrast, is distributed
@@ -190,7 +190,7 @@ On iOS, you need to tell Xcode to statically link the file:
 在 iOS 中，您需要告诉 Xcode 如何静态链接这个文件：
 
  1. In Xcode, open `Runner.xcworkspace`.
-    
+
     在 Xcode 中，打开 `Runner.xcworkspace`。
 
  2. Add the C/C++/Objective-C/Swift
@@ -322,7 +322,7 @@ review process handles this.
 
 动态链接库在应用程序启动时由动态链接器自动加载。
 它们的组成符号可以用 [`DynamicLibrary.process`][]。
-您还可以使用 [`DynamicLibrary.open`][] 
+您还可以使用 [`DynamicLibrary.open`][]
 来限制符号解析的范围，
 但目前仍然不确定苹果的审查程序将如何处理两者的使用。
 
@@ -446,7 +446,7 @@ use the following instructions.
 
    按照 Flutter 桌面的使用说明来创建 Flutter 桌面应用程序。
 
-1. Open the `yourapp/macos/Runner.xcworkspace` in XCode.
+1. Open the `yourapp/macos/Runner.xcworkspace` in Xcode.
 
    在 Xcode 中打开 `yourapp/macos/Runner.xcworkspace`。
 
@@ -580,7 +580,7 @@ use the following instructions:
 
     在 Android 文档的 [Android NDK Native api][] 列表中找到所需的库。
     它列出了稳定的本地 API。
- 
+
  2. Load the library using [`DynamicLibrary.open`][].
 
     使用 [`DynamicLibrary.open`][] 加载库。
@@ -621,7 +621,7 @@ instructions in the Android docs to
 add native code and support for the native
 code toolchain (either CMake or `ndk-build`).
 
-遵循安卓文档中的 [添加 C 和 C++ 代码到项目][Add C and C++ code to your project] 
+遵循安卓文档中的 [添加 C 和 C++ 代码到项目][Add C and C++ code to your project]
 来添加本地代码和对本地代码工具链的支持（CMake 或 `ndk-build`）。
 
 #### Closed-source third-party library
@@ -673,7 +673,7 @@ that is why you should be looking at download size.
 因为这种做法实际上可以节省设备空间。
 共享对象可以直接从 APK 加载，
 而不是将它们解压到设备上的临时位置然后再加载。
-APK 是在传输过程中额外打包的 - 
+APK 是在传输过程中额外打包的 -
 这就是为什么您应该查看下载的文件尺寸。
 
 Flutter APKs by default don't follow these guidelines and compress
@@ -689,7 +689,7 @@ compression of `libflutter.so`, `libapp.so`, and any user-added shared objects.
 To re-enable compression, override the setting in
 `your_app_name/android/app/src/main/AndroidManifest.xml` in the following way.
 
-来自第三方的共享库可以使用其 `AndroidManifest.xml` 
+来自第三方的共享库可以使用其 `AndroidManifest.xml`
 中的 `android:extractNativeLibs="true"` 更改此默认设置，
 来停止压缩 `libflutter.so`、`libapp.so` 和任何用户添加的共享库。
 要重新启用压缩，

@@ -220,7 +220,7 @@ From Wed May 1 16:56:00 2019 -0700 to Thu Jul 18 08:04:00 2019 -0700
 
 [32410](https://github.com/flutter/flutter/pull/32410) Add ancestor and descendant finders to Driver (cla: yes, framework, waiting for tree to go green)
 
-[32425](https://github.com/flutter/flutter/pull/32425) Fix benchmark regression in `layer.find<S>(Offset)` (cla: yes)
+[32425](https://github.com/flutter/flutter/pull/32425) Fix benchmark regression in layer.find&lt;S&gt;(Offset) (cla: yes)
 
 [32434](https://github.com/flutter/flutter/pull/32434) Support for replacing the TabController, after disposing the old one (cla: yes, f: material design, framework)
 

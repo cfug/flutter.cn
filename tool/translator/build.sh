@@ -11,6 +11,8 @@ cp tool/translator/robots.txt _site
 
 cd tool/translator
 
+export NODE_OPTIONS=–max_old_space_size=8192
+
 npm i
 
 npx gulp mark-side-toc

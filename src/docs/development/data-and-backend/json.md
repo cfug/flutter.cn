@@ -68,7 +68,7 @@ and lend itself to many small errors.
 
 不同的项目复杂度不同，用例也不一样。
 对于较小的概念验证项目或者快速原型，使用代码生成器可能有些过于繁杂。
-对于具有很多更加复杂的 JSON 模型的 App，
+对于具有很多更加复杂的 JSON 模型的应用，
 手动编码可能很快变得无聊、重复并且出现很多小错误。
 
 ### Use manual serialization for smaller projects
@@ -253,7 +253,7 @@ introduce a typo. A typo that the compiler doesn't know about since the
 JSON lives in a map structure.
 
 例如，当你获取 `name` 或者 `email` 字段，你可能很快引入一个笔误。
-然而编译器却无法知道映射中瑟吉是否有 JSON 笔误。
+然而编译器却无法知道映射中是否有 JSON 笔误。
 
 ### Serializing JSON inside model classes
 
@@ -341,7 +341,7 @@ methods both need to have unit tests in place to verify correct behavior.
 
 通过这种方法，被调用的代码根本不需要担心序列化 JSON 数据的问题。
 然而，你仍然需要模型类。
-你当然会希望序列化数据在一个生产环境的 App 里能奏效。
+你当然会希望序列化数据在一个生产环境的应用里能奏效。
 在实践中，`User.fromJson()` 和
 `User.toJson()` 方法都需要单元测试以便验证正确的行为。
 
@@ -386,7 +386,7 @@ Although there are other libraries available, this guide uses
 [`json_serializable`][], an automated source code generator that
 generates the JSON serialization boilerplate for you.
 
-尽管有其它库可以使用，但是本指南使用了[`json_serializable`][]，
+尽管有其它库可以使用，但是本指南使用了 [`json_serializable`][]，
 一个自动化源代码生成器来为你生成 JSON 序列化数据模板。
 
 {{site.alert.info}}
@@ -512,7 +512,7 @@ For example, if the API returns objects with _snake\_case_,
 and you want to use _lowerCamelCase_ in your models,
 you can use the `@JsonKey` annotation with a name parameter:
 
-如果需要，你可以轻松自定义命名策略。
+如果需要，你可以很轻易地自定义命名策略。
 例如，如果 API 返回带有 **蛇形命名方式** 的对象，
 并且你想要在你的模型里使用 **小驼峰** 的命名方式，
 你可以使用带有一个 name 参数的 `@JsonKey` 注解。
@@ -659,7 +659,7 @@ appropriately.
 源代码生成器会创建一个名为 `user.g.dart` 的文件，
 它包含了所有必须的序列化数据逻辑。
 你不必再编写自动化测试来确保序列化数据奏效。
-现在 **由库来负责** 确保序列化数据能正确地奏效。
+现在 **由库来负责** 确保序列化数据能正确地被转换。
 
 ## Generating code for nested classes
 

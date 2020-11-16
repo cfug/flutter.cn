@@ -13,7 +13,7 @@ existing plugins that support the macOS or Linux platforms,
 or you can create your own.
 
 桌面支持可以让您的 Flutter 代码编译成
-Windows、 macOS、 或 Linux 本地的桌面应用。
+Windows、 macOS、 或 Linux 原生的桌面应用。
 Flutter 的桌面支持也允许插件拓展&mdash;
 您可以使用已经支持了 macOS 或 Linux 平台的插件，
 或者创建您自己的插件来实现功能。
@@ -30,7 +30,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   **预览版!**
   本页涵盖的桌面支持，
   只能是在 Flutter dev 渠道的预览版特性。
-  桌面支持仍然存在显著的特性差距，
+  桌面支持仍然存在许多不足之处，
   包括易访问性支持。
 
 {{site.alert.end}}
@@ -45,7 +45,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   "desktop:macos/linux/windows"
   (whichever platform is appropriate) in the title.
 
-  为了能够编译桌面应用，您必须**在**目标平台上
+  为了能够编译桌面应用，您必须**在特定的平台**上
   编译应用: 在 Windows 上构建 Windows 应用，
   在 macOS 上构建 macOS 应用，
   在 Linux 上构建 Linux 应用。
@@ -85,7 +85,7 @@ following software:
   您可以安装 [Android Studio][]、[IntelliJ IDEA][] 
   或 [Visual Studio Code][]，并且需要
   [安装 Flutter 和 Dart 插件][install the Flutter and Dart plugins]。
-  它们可以让 IDE 支持 Dart 语言，
+  这些插件可以使 IDE 支持 Dart 语言，
   也为您提供了一些工具，如重构、允许、调试
   和重载桌面应用。
   详情请查看 [设置一个编辑器][setting up an editor]。 
@@ -104,15 +104,15 @@ following software:
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:
 
-为了可以开发 Windows 桌面程序，
+要开发 Windows 桌面程序，
 除了 Flutter SDK，您还需要以下准备:
 
 * [Visual Studio 2019][] (not to be confused with Visual Studio Code)
   with the "Desktop development with C++" workload installed,
   including all of its default components
 
-  [Visual Studio 2019][]（不要与 Visual Studio Code混淆）
-  安装了 “Desktop development with C++” 的工作负载，
+  安装有 “Desktop development with C++” 工作负载的
+  [Visual Studio 2019][]（不要与 Visual Studio Code 混淆），
   包括它所有的默认组件。
 
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
@@ -124,7 +124,7 @@ you need the following in addition to the Flutter SDK:
 For macOS desktop development,
 you need the following in addition to the Flutter SDK:
 
-为了可以开发 macOS 桌面程序，
+要开发 macOS 桌面程序，
 除了 Flutter SDK，您还需要以下准备:
 
 * [Xcode][]
@@ -145,7 +145,7 @@ you need the following in addition to the Flutter SDK:
 For Linux desktop development,
 you need the following in addition to the Flutter SDK:
 
-为了可以开发 Linux 桌面程序，
+要开发 Linux 桌面程序，
 除了 Flutter SDK，您还需要以下准备:
 
 * [Clang][]
@@ -183,7 +183,7 @@ For more information, see [Installing snapd][].
 Once you have `snapd`, you can install Flutter using the [Snap Store][],
 or at the command line:
 
-当您拥有snapd，
+安装 snapd 后，
 您就可以使用 [Snap Store][] 安装 Flutter，
 也可以在命令行进行安装:
 
@@ -230,11 +230,11 @@ it's enabled. If you see "flutter: command not found",
 then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
-在命令行，中执行如下命令，
-以保证您有最新的桌面支持，并且它是可用的。
+在命令行中执行如下命令，
+来确保您使用了最新版可用的桌面支持。
 如果您看到 “flutter: command not found”，
 那么请确保您安装了 [Flutter SDK][]，
-并且它在您的环境路径中。
+并且配置在您的环境路径中。
 
 ```terminal
 $ flutter channel dev
@@ -258,7 +258,7 @@ You should see something like the following
 (you'll see Windows, macOS, or Linux,
 depending on which platforms you've enabled):
 
-为了确保桌面**是**安装成功的，
+为了确保桌面**已经安装成功**，
 可以列出可用的设备。
 您应该会看到如下的内容
 （您将看到 Windows、macOS 或 Linux，
@@ -277,7 +277,7 @@ You might also run `flutter doctor` to see if there are
 any unresolved issues. It should look something like
 the following on Windows:
 
-您可能也要运行 `flutter doctor` 来查看
+您也可以运行 `flutter doctor` 来查看
 是否存在未解决的问题。在 Windows 上
 您可能会看到如下内容:
 
@@ -340,7 +340,7 @@ You should now see **windows (desktop)**, **macOS (desktop)**, or
 
   您只需要执行一次 
   `flutter config --enable-<platform>-desktop`。
-  您总是可以使用不带参数的 `flutter config` 
+  您之后可以使用不带参数的 `flutter config` 
   命令检查配置的状态。
 
 {{site.alert.end}}
@@ -389,9 +389,9 @@ and run your app to see it launch on the desktop.
 它会自动创建 iOS、 Android 和应用的桌面版本。
 （如果您开启过 [web 支持][web support]，
 对于 web，也是一样的。）
-重设备的下拉选项中，选择 **windows (desktop)**、
+从设备的下拉选项中，选择 **windows (desktop)**、
 **macOS (desktop)**、或 **linux (desktop)** 
-然后运行您的应用，会看到它在桌面启动。
+然后运行您的应用，就会看到应用在桌面启动。
 
 [web support]: /docs/get-started/web
 
@@ -403,7 +403,7 @@ To create a new app that includes desktop support
 (in addition to mobile support), run the following commands,
 substituting `myapp` with the name of your project:
 
-为了创建一个包含桌面支持的新应用
+想要创建一个包含桌面支持的新应用
 （除了移动支持），运行下面的命令，
 将 `myapp` 替换成您项目的名称：
 
@@ -415,8 +415,8 @@ To launch your app from the command line,
 enter one of the following commands from the top
 of the package:
 
-为了能够从命令行启动您的应用，
-从根目录执行以下命令之一：
+想要从命令行启动您的应用，
+可以在根目录执行以下命令之一：
 
 ```terminal
 $ flutter run -d windows
@@ -592,7 +592,7 @@ such as the following:
 macOS 构建时使用默认的签名进行配置，
 并且通过 App Sandbox 进行沙盒化。
 这意味着如果您想要在 macOS 应用中
-授予特定的权限或者服务，比如下面：
+授予特定的权限或者服务，比如：
 
 * Accessing the internet
 
@@ -647,6 +647,9 @@ reason, you should always make identical changes to both files.
 capabilities 编辑器只更新两个文件中的一个，
 在某些情况下，它会创建一个全新的权限 
 文件，并且切换项目，使其应用于所有配置。
+这些情况都会导致问题。我们建议您
+直接编辑这些文件。除非有非常特殊的原因，
+否则您应该始终对两个文件进行相同的更改。
 
 If you keep the App Sandbox enabled (which is required if you
 plan to distribute your app in the [App Store][]), you need to manage
@@ -749,12 +752,19 @@ and `com.apple.security.device.microphone` (for App Sandbox).
 
 默认情况下，权利文件允许 JIT 进行 
 debug 模式构建，但是，与 App Sandbox 
-一样，您可能需要管理其他权利。
+一样，您可能需要管理其他权限。
+如果你需要同时启用 App Sandbox 和 Hardened 
+Runtime，你需要为同一资源添加多个权限。
+例如，麦克风访问需要这两个权限：
+`com.apple.security.device.audio-input`
+(对于 Hardened Runtime) 和
+`com.apple.security.device.microphone`
+(对于 App Sandbox)。
 
 For more information on this topic,
 see [Hardened Runtime][] on the Apple Developer site.
 
-有关这个主题的更多信息，
+有关这个话题的更多信息，
 参见 Apple Developer 网站上的 
 [Hardened Runtime][]。
 
@@ -921,7 +931,7 @@ as well as download and inspect the source code to
 learn more about Flutter desktop support.
 
 您可以运行下面的桌面应用案例，
-也可以下载并检查源代码，以了解
+也可以下载并阅读源代码，以了解
 更多关于 Flutter 桌面支持的信息。
 
 Flutter Gallery [running web app][], [repo][]
@@ -939,6 +949,8 @@ Flutter Gallery [运行 web 应用]
 Gallery 的构成部分有：Material design 
 widgets 的集合、behaviors 
 和用 Flutter 实现的 vignettes。
+你可以克隆该项目，并按照 [README][] 
+中的说明，将 Gallery 作为桌面应用程序运行。
 
 [Photo Search app][]
 : A sample app built as a desktop application that
@@ -966,4 +978,3 @@ widgets 的集合、behaviors
 [repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
 [running web app]: https://flutter.github.io/gallery/#/
 [Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html
-

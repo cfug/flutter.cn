@@ -264,7 +264,6 @@ depending on which platforms you've enabled):
 （您将看到 Windows、macOS 或 Linux，
 这取决于您启用的是哪个平台）：
 
-
 ``` terminal
 $ flutter devices
 1 connected device:

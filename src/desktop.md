@@ -45,7 +45,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   "desktop:macos/linux/windows"
   (whichever platform is appropriate) in the title.
 
-  为了能够编译桌面应用，您必须**在特定的平台**上
+  要能够编译桌面应用，您必须**在特定的平台**上
   编译应用: 在 Windows 上构建 Windows 应用，
   在 macOS 上构建 macOS 应用，
   在 Linux 上构建 Linux 应用。
@@ -64,7 +64,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
 To create a Flutter app with desktop support, you need the
 following software:
 
-为了创建一个支持桌面的 Flutter 应用，
+要创建一个支持桌面的 Flutter 应用，
 您需要以下的软件：
 
 * Flutter SDK. See the
@@ -258,7 +258,7 @@ You should see something like the following
 (you'll see Windows, macOS, or Linux,
 depending on which platforms you've enabled):
 
-为了确保桌面**已经安装成功**，
+想要确保桌面**已经安装成功**，
 可以列出可用的设备。
 您应该会看到如下的内容
 （您将看到 Windows、macOS 或 Linux，

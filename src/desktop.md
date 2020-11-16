@@ -934,7 +934,7 @@ Flutter Gallery [running web app][], [repo][]
   by following the instructions provided in the [README][].
 
 Flutter Gallery [运行 web 应用]
-[running web app],[仓库地址][repo]：
+[running web app]，[仓库地址][repo]：
 一个托管在 GitHub 上案例项目，
 可以用来帮助开发人员评估和使用 Flutter。
 Gallery 的构成部分有：Material design 

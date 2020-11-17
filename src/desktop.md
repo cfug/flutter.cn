@@ -8,7 +8,7 @@ keywords: Flutter Desktop, Flutter 桌面版
 
 Desktop support allows you to compile Flutter source code
 to a native Windows, macOS, or Linux desktop app. Flutter's desktop
-support also extends to plugins&mdash;you can install
+support also extends to plugins&mdash;you can install 
 existing plugins that support the macOS or Linux platforms,
 or you can create your own.
 
@@ -62,9 +62,9 @@ following software:
 
 * Flutter SDK. See the
   [Flutter SDK][] installation instructions.
-
+  
   Flutter SDK。查看 [Flutter SDK][] 安装说明。
-
+  
 * Optional: An IDE that supports Flutter.
   You can install [Android Studio][], [IntelliJ IDEA][],
   or [Visual Studio Code][] and
@@ -75,10 +75,10 @@ following software:
   for more details.
 
   可选项：一个支持 Flutter 的 IDE。您可以安装 [Android Studio][]、
-  [IntelliJ IDEA][] 或 [Visual Studio Code][]，并且需要
+  [IntelliJ IDEA][] 或 [Visual Studio Code][]，并且需要 
   [安装 Flutter 和 Dart 插件][install the Flutter and Dart plugins]。
   这些插件可以使 IDE 支持 Dart 语言，也为您提供了一些工具，
-  如重构、允许、调试和重载桌面应用。详情请查看 [配置一个编辑器][setting up an editor]。
+  如重构、允许、调试和重载桌面应用。详情请查看 [配置一个编辑器][setting up an editor]。 
 
 [Android Studio]: {{site.android-dev}}/studio/install
 [Flutter SDK]: /docs/get-started/install
@@ -300,11 +300,11 @@ for example, if you're writing a Linux desktop app.
 您不必安装 Android Studio 和 Android SDK。
 
 **After enabling desktop support, restart your IDE.**
-You should now see **windows (desktop)**, **macOS (desktop)**, or
+You should now see **windows (desktop)**, **macOS (desktop)**, or 
 **linux (desktop)** in the device pulldown.
 
 **在开启桌面支持后，重启您的 IDE。**在设备下拉栏里，
-您应该可以看到 **windows (desktop)**、**macOS (desktop)** 或
+您应该可以看到 **windows (desktop)**、**macOS (desktop)** 或 
 **linux (desktop)**。
 
 {{site.alert.note}}
@@ -325,8 +325,8 @@ You should now see **windows (desktop)**, **macOS (desktop)**, or
 Creating a new project with desktop support is no different
 than [creating a new Flutter project][] for other platforms.
 
-创建一个桌面支持的新项目，与在其他平台
-[创建新的 Flutter 项目][creating a new Flutter project]
+创建一个桌面支持的新项目，与在其他平台 
+[创建新的 Flutter 项目][creating a new Flutter project] 
 没什么不同的地方。
 
 Once you've configured your environment for desktop
@@ -355,7 +355,7 @@ and run your app to see it launch on the desktop.
 在您的 IDE 中创建新应用时，它会自动创建 iOS、 Android 和应用的桌面版本。
 （如果您开启过 [web 支持][web support]，也会创建 Web 版本。）
 从设备的下拉选项中，选择 **windows (desktop)**、
-**macOS (desktop)** 或 **linux (desktop)**
+**macOS (desktop)** 或 **linux (desktop)** 
 然后运行您的应用，就会看到应用在桌面启动。
 
 [web support]: /docs/get-started/web
@@ -431,17 +431,17 @@ The executable can be found in your project under
 `build\windows\runner\<build mode>\`.
 In addition to that executable, you need the following:
 
-您可以在项目中的 `build\windows\runner\<build mode>\`
+您可以在项目中的 `build\windows\runner\<build mode>\` 
 看到可执行文件。除了该可执行文件之外，您还需要以下内容:
 
 * From the same directory:
 
   从相同的目录：
-
+  
     * all the `.dll` files
 
       所有的 `.dll` 文件
-
+      
     * the `data` directory
 
       `data` 文件夹
@@ -451,7 +451,7 @@ In addition to that executable, you need the following:
   [deployment example walkthroughs][] on the Microsoft site.
   If you use the `application-local` option, you need to copy:
 
-  Visual C++ 发布包。您可以使用 Microsoft 站点上
+  Visual C++ 发布包。您可以使用 Microsoft 站点上 
   [部署示例演练][deployment example walkthroughs] 所示的任何方法进行发布。
   如果您使用 `application-local` 选项, 需要拷贝:
 
@@ -487,7 +487,7 @@ For information on publishing a Linux app to the
 [Snap Store][], see
 [Build and release a Linux desktop app][].
 
-有关向 [Snap Store][] 发布 Linux 应用，请参见
+有关向 [Snap Store][] 发布 Linux 应用，请参见 
 [构建发布一个Linux桌面程序][Build and release a Linux desktop app]。
 
 As the tooling solidifies, stay tuned for updates on other ways
@@ -541,7 +541,7 @@ macOS 构建时使用默认的签名进行配置，并且通过 App Sandbox 进�
 
   访问网络
 
-* Capturing movies and images from the built-in camera
+* Capturing movies and images from the built-in camera 
 
   从内置摄像头捕捉影像和图像
 
@@ -568,8 +568,8 @@ as they're necessary for the `debug` and `profile`
 modes to function correctly.
 
 在 `macos/Runner/*.entitlements` 文件中完成管理沙盒的设置。
-当编辑这些文件时，您不应该删除原来的 `Runner-DebugProfile.entitlements`
-中的条款（它们会支持传入网络连接和 JIT），因为 `debug` 和 `profile`
+当编辑这些文件时，您不应该删除原来的 `Runner-DebugProfile.entitlements` 
+中的条款（它们会支持传入网络连接和 JIT），因为 `debug` 和 `profile` 
 模式正常工作需要它们。
 
 If you're used to managing entitlement files through
@@ -581,7 +581,7 @@ Either scenario causes issues. We recommend that you
 edit the files directly. Unless you have a very specific
 reason, you should always make identical changes to both files.
 
-如果您习惯通过 **Xcode capabilities UI** 来管理权限文件，请注意
+如果您习惯通过 **Xcode capabilities UI** 来管理权限文件，请注意 
 capabilities 编辑器只更新两个文件中的一个，在某些情况下，
 它会创建一个全新的权限文件，并且切换项目，使其应用于所有配置。
 这些情况都会导致问题。我们建议您直接编辑这些文件。
@@ -599,8 +599,8 @@ which you must add if you make any network requests.
 
 如果您保持 App Sandbox 可用（如果您计划在 [App Store][] 上发布应用，这是必需的），
 当您添加某些插件或其他本地功能时，您需要管理应用的权限。例如，
-使用 [`file_chooser`][] 插件需要添加
-`com.apple.security.files.user-selected.read-only` 或
+使用 [`file_chooser`][] 插件需要添加 
+`com.apple.security.files.user-selected.read-only` 或 
 `com.apple.security.files.user-selected.read-write` 权限。
 另一个通常使用到的权限是 `com.apple.security.network.client`，
 如果您想要进行网络请求，那么必须添加它。
@@ -634,7 +634,7 @@ address = example.com, port = 443
   默认情况下只在 `debug` 和 `profile` 构建时可用，
   会让 Flutter 工具和运行中的应用之间能够进行通信。
   如果您需要在您的应用中允许传入的网络请求，
-  您也必须将 `com.apple.security.network.server`
+  您也必须将 `com.apple.security.network.server` 
   权限添加到 `Runner-Release.entitlements`中。
   否则，您的应用将在 debug 或 profile 测试时正常工作，
   但在 release 构建时将失败。
@@ -678,7 +678,7 @@ and `com.apple.security.device.microphone` (for App Sandbox).
 默认情况下，权利文件允许 JIT 进行 debug 模式构建，但是，与 App Sandbox 一样，
 您可能需要管理其他权限。如果你需要同时启用 App Sandbox 和 Hardened Runtime，
 你需要为同一资源添加多个权限。例如，麦克风访问需要这两个权限：
-`com.apple.security.device.audio-input`（对于 Hardened Runtime）和
+`com.apple.security.device.audio-input`（对于 Hardened Runtime）和 
 `com.apple.security.device.microphone`（对于 App Sandbox）。
 
 For more information on this topic,
@@ -788,22 +788,22 @@ see the following resources:
 
 * [Developing packages and plugins][], particularly the
   [Federated plugins][] section.
-
+  
   [开发包和插件][Developing packages and plugins]，特别是 [联合插件][] 部分。
-
+  
 * [How to write a Flutter web plugin, part 2][],
   covers the structure of federated plugins and
   contains information applicable to desktop
   plugins.
-
+  
   [如何写一个 Flutter web 插件，第 2 部分][How to write a Flutter web plugin, part 2]，
   介绍联合插件的结构，并包含适用于桌面插件的信息。
-
+  
 * [Modern Flutter Plugin Development][] covers
   recent enhancements to Flutter's plugin support.
-
+  
   [现代 Flutter 插件开发][Modern Flutter Plugin Development] 介绍了最近对 Flutter 插件支持的增强。
-
+  
 * [Federated Plugin proposal][]
 
   [联合插件提议][Federated Plugin proposal]

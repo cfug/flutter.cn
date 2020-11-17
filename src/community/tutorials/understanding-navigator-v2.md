@@ -18,7 +18,7 @@ Flutter 1.22 发布后，大家可以发现，
 而 Navigator 2.0 引入了一套全新的声明式 API，
 全新的实现方式与调用方法与以往都截然不同，
 在官方推荐的 [Learning Flutter’s new navigation and routing system](https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade)
-（译文：[Flutter Navigator 2.0 全面解析](https://mp.weixin.qq.com/s/hrdHSs2bMS2SEyz91PCU6Q)）文章中，
+（译文：[Flutter Navigator 2.0 全面解析](https://mp.weixin.qq.com/s/zGpzJahDSTZDhWqYmkzi5g)）文章中，
 许多读者也表示并不能立即适应 Navigator 2.0 的一些反差。
 
 本文就来带领读者们进一步深入 Navigator2.0 的基本原理，
@@ -41,7 +41,7 @@ Flutter 团队为什么要不惜这些代价对 Navigator API 做这次的重构
   开发者一些非常针对性的接口，如 push、pop 等，
   而没有给出一种更灵活的方式让我们直接操作路由栈**。
   这种做法其实与 Flutter 理念相违背，
-  试想如果我们想要改变某个 Widget 的所有子组件
+  试想如果我们想要改变某个 widget 的所有子组件
   只需要重建所有子组件并且创建一系列新的 widget 即可，
   而将此概念应用在路由中，
   当应用中存在一系列路由页面并想要更改时，
@@ -71,7 +71,7 @@ Page API、Router API 两个部分，
 
 Page 是 Navigator2.0 中最常见的类之一，
 从名字就能知道它的含义就是 “**页面**”，
-正如 Widget 就是**组件**一样，
+正如 widget 就是**组件**一样，
 但 Page 与 Widget 的关系也更加微妙。
 
 与 Flutter 中 Widget、Element、
@@ -89,6 +89,7 @@ Widget 和 Page 中也都有一个 `canUpdate()` 方法，
 帮助 Flutter 判断其是否已更新或改变：
 
 <!--skip-->
+
 ```dart
 // Page
 bool canUpdate(Page<dynamic> other) {
@@ -228,6 +229,7 @@ bool _onPopPage(Route<dynamic> route, dynamic result) {
 也可以在 `onPopPage` 的回调函数中直接返回 false：
 
 <!--skip-->
+
 ```dart
 bool _onPopPage(Route<dynamic> route, dynamic result) {
   if (...) {
@@ -257,6 +259,7 @@ Flutter 框架中预先内置了 `MaterialPage` 和
 使用 `MaterialPage` 创建页面：
 
 <!--skip-->
+
 ```dart
 List<Page> pages = <Page>[
   MaterialPage(

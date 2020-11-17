@@ -18,7 +18,7 @@ Flutter 1.22 发布后，大家可以发现，
 而 Navigator 2.0 引入了一套全新的声明式 API，
 全新的实现方式与调用方法与以往都截然不同，
 在官方推荐的 [Learning Flutter’s new navigation and routing system](https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade)
-（译文：[Flutter Navigator 2.0 全面解析](https://mp.weixin.qq.com/s/hrdHSs2bMS2SEyz91PCU6Q)） 文章中，
+（译文：[Flutter Navigator 2.0 全面解析](https://mp.weixin.qq.com/s/hrdHSs2bMS2SEyz91PCU6Q)）文章中，
 许多读者也表示并不能立即适应 Navigator 2.0 的一些反差。
 
 本文就来带领读者们进一步深入 Navigator2.0 的基本原理，
@@ -30,8 +30,8 @@ Flutter 1.22 发布后，大家可以发现，
 Flutter 团队为什么要不惜这些代价对 Navigator API 做这次的重构，
 主要有如下几点原因。
 
-- **原始 API 中的 initialRoute 参数，
-  即系统默认的初始页面，在应用运行后就不能在更改了**。
+- **原始 API 中的 `initialRoute` 参数，
+  即系统默认的初始页面，在应用运行后就不能再更改了**。
   这种情况下，如果用户接收到一个系统通知，
   点击后想要从当前的路由栈状态 [Main -> Profile -> Settings] 
   重启切换到新的 [Main -> List -> Detail[id=24] 路由栈，
@@ -62,7 +62,7 @@ Flutter 团队为什么要不惜这些代价对 Navigator API 做这次的重构
 
 ## Navigator2.0
 
-Navigator2.0 新增的声明式 API 主要包含 
+Navigator2.0 新增的声明式 API 主要包含
 Page API、Router API 两个部分，
 它们各自强大的功能为 Navigator2.0 提供了强有力的基石，
 本节我就带读者们看看它们各自的实现细节。
@@ -83,11 +83,12 @@ Page 同样只保存页面路由相关信息，
 框架层也存在一个 `createRoute()` 方法
 可以创建与之对应的 Route 实例。
 
-![](https://cdn.jsdelivr.net/gh/meandni/blogimg@main/img/2020-11-14-2020-11-10-route.png)
+![](https://devrel.andfun.cn/devrel/posts/2020/11/bc57589cd7882.png)
 
 Widget 和 Page 中也都有一个 `canUpdate()` 方法，
 帮助 Flutter 判断其是否已更新或改变：
 
+<!--skip-->
 ```dart
 // Page
 bool canUpdate(Page<dynamic> other) {
@@ -102,11 +103,12 @@ static bool canUpdate(Widget oldWidget, Widget newWidget) {
 }
 ```
 
-甚至连比较的条件都是**运行时类型与 key**。
+甚至连比较的条件都是 **运行时类型与 key**。
 
 而在代码层面，Page 类就继承自我们在
 旧的 Navigator API 用过的 `RouteSettings`：
 
+<!--skip-->
 ```
 abstract class Page<T> extends RouteSettings
 ```
@@ -114,11 +116,12 @@ abstract class Page<T> extends RouteSettings
 其中就保存了包含路由名称（name，如 "/settings"）和
 路由参数 (arguments) 等信息。
 
-#### pages
+#### pages 参数
 
 在新的 Navigator 组件中，接受一个 `pages` 参数，
 它接受的就是一个 Page 对象列表，如下这段代码：
 
+<!--skip-->
 ```dart
 class _MyAppState extends State<MyApp> {
   final pages = [
@@ -155,10 +158,11 @@ class _MyAppState extends State<MyApp> {
 即与 pages 对应的三个路由页面。
 
 应用打开某个页面，就表示在 pages 中添加一个 Page 对象，
-系统接收接收到上层的 pages 改变后就会**比较新的 pages 与旧的 pages **，
+系统接收接收到上层的 pages 改变后就会 **比较新的 pages 与旧的 pages**，
 根据比较结果，Flutter 就会在底层路由栈中新生成一个 Route 实例，
 这样一个新的页面就算打开成功了。
 
+<!--skip-->
 ```dart
 void addPage(MyPage page) {
   setState(() => pages.add(page));
@@ -169,6 +173,7 @@ Navigator 组件同样也新增了一个 `onPopPage` 参数，
 接受一个回调函数来响应页面的 pop 事件，
 如下面代码中的 `_onPopPage` 函数：
 
+<!--skip-->
 ```dart
 class _MyAppState extends State<MyApp> {
 
@@ -211,10 +216,9 @@ bool _onPopPage(Route<dynamic> route, dynamic result) {
 那么，此时会导致什么现象？
 `route.didPop(result)` 函数被直接触发，
 表示在底层路由栈中弹出该页面，
-这时，Flutter 就会比较**底层已经关闭了
-一个页面的路由栈**和**当前 Navigator 中存有的 pages**，
-发现不一致，
-就会按照现有的 pages 将多余的一个 Page 当做新页面，
+这时，Flutter 就会比较
+**底层已经关闭了一个页面的路由栈** 和 **当前 Navigator 中存有的 pages**，
+发现不一致，就会按照现有的 pages 将多余的一个 Page 当做新页面，
 再生成一个 Route 对象，这样，底层路由栈中的内容
 就能随时保持与上层 pages 数据一致了。
 
@@ -223,6 +227,7 @@ bool _onPopPage(Route<dynamic> route, dynamic result) {
 这里，如果我们不想关闭某个页面，
 也可以在 `onPopPage` 的回调函数中直接返回 false：
 
+<!--skip-->
 ```dart
 bool _onPopPage(Route<dynamic> route, dynamic result) {
   if (...) {
@@ -240,7 +245,7 @@ bool _onPopPage(Route<dynamic> route, dynamic result) {
 那么下次弹出页面时候，底层路由栈会直接与
 新的 pages 列表比较来做出相应改变。
 
-要运行上述完整案例，查看完整代码：https://github.com/MeandNi/flutter_navigator_v2/blob/master/lib/pages_example.dart
+要运行上述完整案例，查看 [完整代码](https://github.com/MeandNi/flutter_navigator_v2/blob/master/lib/pages_example.dart)。
 
 Flutter 框架中预先内置了 `MaterialPage` 和 
 `CupertinoPage` 两种 Page，分别表示 Material 
@@ -251,6 +256,7 @@ Flutter 框架中预先内置了 `MaterialPage` 和
 例如下面这个例子，我们可以直接在 pages 中
 使用 `MaterialPage` 创建页面：
 
+<!--skip-->
 ```dart
 List<Page> pages = <Page>[
   MaterialPage(
@@ -269,6 +275,7 @@ List<Page> pages = <Page>[
 
 我们也可以直接继承 Page 定义自己的页面类型，如下：
 
+<!--skip-->
 ```dart
 class MyPage extends Page {
   final Veggie veggie;
@@ -305,11 +312,12 @@ Router 是 Navigator2.0 中新增的另一个非常重要的组件，
 所以当 Navigator 作为 Router 的子组件时，
 就会天然具有感知路由状态改变的能力了，如下图所示：
 
-![](https://cdn.jsdelivr.net/gh/meandni/blogimg@main/img/2020-11-14-2020-11-08-%E5%9B%BE%E7%89%871.png)
+![](https://devrel.andfun.cn/devrel/posts/2020/11/957f7d75ef977.png)
 
 当用户点击某个按钮就会触发类似下面这个函数的调用，
 该函数又会导致状态改变而重建子组件。
 
+<!--skip-->
 ```dart
 void _pushPage() {
   MyRouteDelegate.of(context).push('Route$_counter');
@@ -331,6 +339,7 @@ MaterialApp 的新构造函数 router
 来帮助我们直接在应用顶层
 构造出全局的 Router 组件，使用方式如下：
 
+<!--skip-->
 ```dart
 MaterialApp.router(
   title: 'Flutter Demo',
@@ -347,6 +356,7 @@ MaterialApp.router(
 这里，就可以传入我们自己创建的 
 `MyRouteDelegate` 对象，具体代码如下：
 
+<!--skip-->
 ```dart
 class MyRouteDelegate extends RouterDelegate<String>
     with PopNavigatorRouterDelegateMixin<String>, ChangeNotifier {
@@ -431,7 +441,7 @@ BackButtonDispatcher Delegate 回退事件都会转发给
 
 整个过程可以用下图表示：
 
-![](https://cdn.jsdelivr.net/gh/meandni/blogimg@main/img/2020-11-14-2020-11-08-%E5%9B%BE%E7%89%872.png)
+![](https://devrel.andfun.cn/devrel/posts/2020/11/516f15849e0aa.png)
 
 需要知道的是，RouteNameProvider Delegate 和 
 BackButtonDispatcher Delegate 都有 Flutter 内置的默认实现，
@@ -471,6 +481,7 @@ RouterDelegate 中的路由事件主要由下面几个函数接受：
 
 因此，我们最终就可以实现如下这样的 RouterDelegate：
 
+<!--skip-->
 ```dart
 class MyRouteDelegate extends RouterDelegate<String>
     with PopNavigatorRouterDelegateMixin<String>, ChangeNotifier {
@@ -554,13 +565,14 @@ class MyRouteDelegate extends RouterDelegate<String>
 每个数据会在 build 函数中创建出一个 MyPage，默认为空。
 应用启动时，会先调用这里的 
 `setInitialRoutePath(String configuration)` 方法，
-参数为 ’/‘，此时路由栈就会存在一个首页了。
+参数为 `/`，此时路由栈就会存在一个首页了。
 
-完整代码，参见：https://github.com/MeandNi/flutter_navigator_v2/blob/master/lib/router_example.dart
+完整代码，请 [参考这里](https://github.com/MeandNi/flutter_navigator_v2/blob/master/lib/router_example.dart)。
 
-在子组件中，我们也可以使用 MyRouteDelegate，
+在子组件中，我们也可以使用 `MyRouteDelegate`，
 通过如下方式打开或者关闭一个页面：
 
+<!--skip-->
 ```dart
 MyRouteDelegate.of(context).push('Route$_counter');
 
@@ -578,6 +590,7 @@ MyRouteDelegate.of(context).pop();
 路由代理 `routerDelegate` 这个必要参数外，
 还需要同时指定 `routeInformationParser` 参数，如下：
 
+<!--skip-->
 ```dart
 MaterialApp.router(
   title: 'Flutter Demo',
@@ -589,6 +602,7 @@ MaterialApp.router(
 该参数接收一个 RouteInformationParser 对象，
 定义该类通常有一个最简单直接的实现，如下：
 
+<!--skip-->
 ```
 class MyRouteParser extends RouteInformationParser<String> {
   @override
@@ -615,6 +629,7 @@ MyRouteParser 继承自 RouteInformationParser，
 下面这个 routerDelegate 中 `setNewRoutePath()` 方法的
 参数 configuration 就是从那里转发而来的：
 
+<!--skip-->
 ```dart
 @override
 Future<void> setNewRoutePath(String configuration) {
@@ -634,11 +649,13 @@ RouteInformation 对象，表示从传入的 configuration 恢复路由信息。
 此时如果我们想要恢复整个页面的路由栈则需要重写此方法，
 
 上面 MyRouteParser 的实现，是最简单的实现方式，
-功能就是在 `parseRouteInformation()` 中接收底层 RouteInformation，`restoreRouteInformation()` 恢复上层的 configuration。
+功能就是在 `parseRouteInformation()` 中接收底层 RouteInformation，
+`restoreRouteInformation()` 恢复上层的 configuration。
 
 我们也可以继续为这两个方法赋能，
 实现更符合业务需求的逻辑，如下这代码：
 
+<!--skip-->
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_navigator_v2/navigator_v2/model.dart';
@@ -695,6 +712,7 @@ class VeggieRouteInformationParser extends RouteInformationParser<VeggieRoutePat
 我们上层熟悉的 VeggieRoutePath Model 对象。
 VeggieRoutePath 类内容如下：
 
+<!--skip-->
 ```dart
 class VeggieRoutePath {
   final int id;
@@ -735,7 +753,7 @@ Navigator 2.0 与以往不同的方面主要体现在，
 - [router_example.dart](https://github.com/MeandNi/flutter_navigator_v2/blob/master/lib/router_example.dart)，Router + Navigator + Page 实现路由状态的统一管理
 - [水果列表最佳实践](https://github.com/MeandNi/flutter_navigator_v2/blob/master/lib/)，相对完整的一个案例，包含自定义 RouteInformationParser Model 和路由状态管理操作。
 
-示例完整源码地址：https://github.com/MeandNi/flutter_navigator_v2
+[示例完整源码地址](https://github.com/MeandNi/flutter_navigator_v2)。
 
 ## 写在最后
 

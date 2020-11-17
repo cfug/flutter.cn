@@ -78,7 +78,7 @@ following software:
   [IntelliJ IDEA][] 或 [Visual Studio Code][]，并且需要 
   [安装 Flutter 和 Dart 插件][install the Flutter and Dart plugins]。
   这些插件可以使 IDE 支持 Dart 语言，也为您提供了一些工具，
-  如重构、允许、调试和重载桌面应用。详情请查看 [配置一个编辑器][setting up an editor]。 
+  如重构、允许、调试和重载桌面应用。详情请查看 [配置一个编辑器][setting up an editor]。
 
 [Android Studio]: {{site.android-dev}}/studio/install
 [Flutter SDK]: /docs/get-started/install

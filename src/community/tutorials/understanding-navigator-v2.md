@@ -1,5 +1,5 @@
 ---
-title: Flutter Navigator2.0 指南与原理解析
+title: Flutter Navigator 2.0 指南与原理解析
 toc: true
 ---
 
@@ -21,7 +21,7 @@ Flutter 1.22 发布后，大家可以发现，
 （译文：[Flutter Navigator 2.0 全面解析](https://mp.weixin.qq.com/s/zGpzJahDSTZDhWqYmkzi5g)）文章中，
 许多读者也表示并不能立即适应 Navigator 2.0 的一些反差。
 
-本文就来带领读者们进一步深入 Navigator2.0 的基本原理，
+本文就来带领读者们进一步深入 Navigator 2.0 的基本原理，
 帮助大家从中探索出最佳的使用方式。
 
 ## 为什么需要新的 API
@@ -58,18 +58,18 @@ Flutter 团队为什么要不惜这些代价对 Navigator API 做这次的重构
   我们当然可以使用某种措施来避免这种状况，
   但归咎起来，这也不应该是应用开发者应该考虑的问题。
 
-于是，Navigator2.0 就肩负着这千里之任来了。
+于是，Navigator 2.0 就肩负着这千里之任来了。
 
-## Navigator2.0
+## Navigator 2.0
 
-Navigator2.0 新增的声明式 API 主要包含
+Navigator 2.0 新增的声明式 API 主要包含
 Page API、Router API 两个部分，
-它们各自强大的功能为 Navigator2.0 提供了强有力的基石，
+它们各自强大的功能为 Navigator 2.0 提供了强有力的基石，
 本节我就带读者们看看它们各自的实现细节。
 
 ### Page
 
-Page 是 Navigator2.0 中最常见的类之一，
+Page 是 Navigator 2.0 中最常见的类之一，
 从名字就能知道它的含义就是 “**页面**”，
 正如 widget 就是**组件**一样，
 但 Page 与 Widget 的关系也更加微妙。
@@ -303,7 +303,7 @@ class MyPage extends Page {
 
 ### Router
 
-Router 是 Navigator2.0 中新增的另一个非常重要的组件，
+Router 是 Navigator 2.0 中新增的另一个非常重要的组件，
 继承自 StatefulWidget，可以管理自己的状态。
 
 它所管理的状态就是应用的**路由状态**，
@@ -327,7 +327,7 @@ void _pushPage() {
 }
 ```
 
-Navigator2.0 所强调的声明式 API 的核心就在于此，
+Navigator 2.0 所强调的声明式 API 的核心就在于此，
 我们操作路由的方式并非再是 push 或者 pop，
 而是改变应用的状态了！
 我们需要从观念上理解声明式 API 与以往的不同之处。
@@ -337,7 +337,7 @@ Navigator2.0 所强调的声明式 API 的核心就在于此，
 Router 要完成上面所说的功能主要需要
 通过配置 RouterDelegate（路由代理）实现。
 
-Navigator2.0 之后，Flutter 也提供了 
+Navigator 2.0 之后，Flutter 也提供了 
 MaterialApp 的新构造函数 router 
 来帮助我们直接在应用顶层
 构造出全局的 Router 组件，使用方式如下：
@@ -707,7 +707,7 @@ class VeggieRouteInformationParser extends RouteInformationParser<VeggieRoutePat
 这里的 VeggieRouteInformationParser 
 继承的 RouteInformationParser 泛型类型被指定为了
 我们自定义的 VeggieRoutePath，
-在 Navigator2.0 中我们称这个解析后的形式为**路由 Model**。
+在 Navigator 2.0 中我们称这个解析后的形式为**路由 Model**。
 
 此时 VeggieRouteInformationParser 作用就凸显出来了，
 它在 `parseRouteInformation()` 方法中

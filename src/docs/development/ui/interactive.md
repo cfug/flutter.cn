@@ -1078,7 +1078,7 @@ to your app.
 <br> How to create a button and make it respond to input.
 
 [处理手势][Handling gestures], [widgets 介绍][Introduction to widgets] 文档中一部分
-如何创建一个按钮并使其响应用户动作.
+<br> 如何创建一个按钮并使其响应用户动作.
 
 [Gestures in Flutter][]
 <br> A description of Flutter's gesture mechanism.
@@ -1095,16 +1095,18 @@ to your app.
 Flutter Gallery [running app][], [repo][]
 <br> Demo app showcasing many Material components and
   other Flutter features.
-  
+
 [Flutter Gallery][running app] 应用，[代码仓库][repo]
 <br> 一个 Demo 应用程序，展示了许多 Material 和其他 Flutter 功能
 
 [Flutter's Layered Design][] (video)
 <br> This video includes information about state and
   stateless widgets.  Presented by Google engineer, Ian Hickson.
-  
+
 [Flutter的分层设计][] (视频)
-<br> 此视频包含有关有状态和无状态 widget 的信息。由 Google 工程师 Ian Hickson 讲解。
+<br> 此视频包含有关有状态和无状态 widget 的信息。
+由 Google 工程师 Ian Hickson 讲解。
+
 
 
 [Android emulator]: /docs/get-started/install/windows#set-up-the-android-emulator

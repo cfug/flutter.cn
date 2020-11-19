@@ -71,7 +71,7 @@ Page API、Router API 两个部分，
 
 Page 是 Navigator 2.0 中最常见的类之一，
 从名字就能知道它的含义就是 “**页面**”，
-正如 widget 就是**组件**一样，
+正如 widget 就是 **组件** 一样，
 但 Page 与 Widget 的关系也更加微妙。
 
 与 Flutter 中 Widget、Element、
@@ -110,6 +110,7 @@ static bool canUpdate(Widget oldWidget, Widget newWidget) {
 旧的 Navigator API 用过的 `RouteSettings`：
 
 <!--skip-->
+
 ```
 abstract class Page<T> extends RouteSettings
 ```
@@ -119,10 +120,11 @@ abstract class Page<T> extends RouteSettings
 
 #### pages 参数
 
-在新的 Navigator 组件中，接受一个 `pages` 参数，
+在新的 Navigator 组件中，新增了一个 `pages` 参数，
 它接受的就是一个 Page 对象列表，如下这段代码：
 
 <!--skip-->
+
 ```dart
 class _MyAppState extends State<MyApp> {
   final pages = [
@@ -159,7 +161,7 @@ class _MyAppState extends State<MyApp> {
 即与 pages 对应的三个路由页面。
 
 应用打开某个页面，就表示在 pages 中添加一个 Page 对象，
-系统接收接收到上层的 pages 改变后就会 **比较新的 pages 与旧的 pages**，
+系统接收到上层的 pages 改变的通知后就会 **比较新的 pages 与旧的 pages**，
 根据比较结果，Flutter 就会在底层路由栈中新生成一个 Route 实例，
 这样一个新的页面就算打开成功了。
 
@@ -177,7 +179,6 @@ Navigator 组件同样也新增了一个 `onPopPage` 参数，
 <!--skip-->
 ```dart
 class _MyAppState extends State<MyApp> {
-
   bool _onPopPage(Route<dynamic> route, dynamic result) {
     setState(() => pages.remove(route.settings));
     return route.didPop(result);
@@ -198,7 +199,7 @@ class _MyAppState extends State<MyApp> {
 
 当我们调用 `Navigator.pop()` 关闭某个页面时，
 即能触发这个函数调用，
-而函数接收到的 route 对象就表示需要在 pages 中被移除的页面，
+而函数接受到的 route 对象参数就表示需要在 pages 中被移除的页面，
 在这里，我们顺势更新 pages 列表做移除操作即可。
 
 在 `_onPopPage` 中，如果我们同意关闭该页面，
@@ -224,7 +225,7 @@ bool _onPopPage(Route<dynamic> route, dynamic result) {
 就能随时保持与上层 pages 数据一致了。
 
 也就是说，**某个页面是否能够关闭完全由开发者掌控**，
-而不是单纯地交给系统的 `Navigator.pop()` 。
+而不是单纯地交给系统的 `Navigator.pop()`。
 这里，如果我们不想关闭某个页面，
 也可以在 `onPopPage` 的回调函数中直接返回 false：
 
@@ -252,7 +253,7 @@ bool _onPopPage(Route<dynamic> route, dynamic result) {
 Flutter 框架中预先内置了 `MaterialPage` 和 
 `CupertinoPage` 两种 Page，分别表示 Material 
 和 Cupertino 风格下的页面，
-与 Navigator1.0 中的 `MaterialPageRoute` 
+与之前我们常用的 `MaterialPageRoute` 
 和 `CupertinoPageRoute` 相呼应，
 它们都接受一个 child 组件表示该页面所要呈现的内容。
 例如下面这个例子，我们可以直接在 pages 中
@@ -272,7 +273,7 @@ List<Page> pages = <Page>[
   if (show404)
     MaterialPage(key: ValueKey('UnknownPage'), child: UnknownScreen())
   else if (_selectedVeggie != null)
-      VeggieDetailsPage(veggie: _selectedVeggie)
+    VeggieDetailsPage(veggie: _selectedVeggie)
 ];
 ```
 
@@ -306,10 +307,10 @@ class MyPage extends Page {
 Router 是 Navigator 2.0 中新增的另一个非常重要的组件，
 继承自 StatefulWidget，可以管理自己的状态。
 
-它所管理的状态就是应用的**路由状态**，
+它所管理的状态就是应用的 **路由状态**，
 结合上节中提到的 Page 的概念，
 我们就可以将其中的 pages 看做这里的路由状态，当
-我们改变 pages 内容/状态时，Router 就会将该状态分发给子组件，
+我们改变 pages 的内容或状态时，Router 就会将该状态分发给子组件，
 状态改变导致子组件重建应用最新的状态。
 
 所以当 Navigator 作为 Router 的子组件时，
@@ -397,11 +398,11 @@ class MyRouteDelegate extends RouterDelegate<String>
 
 上面的 MyRouteDelegate 继承自 RouterDelegate，
 内部可以实现它的 `setInitialRoutePath`、`setNewRoutePath`、
-build 与 `currentConfiguration getter` 四个方法，
+`build` 三个方法与 `currentConfiguration` 的 getter 方法，
 并且也混入了 `PopNavigatorRouterDelegateMixin` 类，
 它的主要作用是响应 Android 设备的回退按钮，
 而 `ChangeNotifier` 作用便是做事件通知，
-下文的 “[实现 RouterDelegate](#实现 RouterDelegate)” 中
+下文的 “[实现 RouterDelegate](#实现-RouterDelegate)” 中
 就会分析这些方法各自的作用。
 
 这里，我们先看 `MyRouteDelegate.build` 方法，
@@ -438,7 +439,7 @@ RouteNameParser Delegate 会将该字符串传递给 RouteNameParser，
 
 最终，RouteNameParser 解析的对象数据和 
 BackButtonDispatcher Delegate 回退事件都会转发给
-上文中的 RouteDelegate，RouteDelegate 接受到这些事件后，
+上文中的 RouteDelegate，RouteDelegate 接收到这些事件通知后，
 就会执行响应，改变状态，从而导致含有 pages 的 Navigator 组件重建，
 在应用层中呈现最新的路由状态。
 
@@ -469,7 +470,7 @@ RouteDelegate 本身实现自 Listenable，即可监听对象，
 每当状态改变时，观察者们就能通知它响应该事件，
 从而触使 Navigator 组件重建，更新路由状态。
 
-RouterDelegate 中的路由事件主要由下面几个函数接受：
+RouterDelegate 中的路由事件的通知主要由下面几个函数接收：
 
 - backButtonDispatcher 发出回退按钮事件时，
 会调用 RouterDelegate 的 **popRoute** 方法，
@@ -602,7 +603,7 @@ MaterialApp.router(
 )
 ```
 
-该参数接收一个 RouteInformationParser 对象，
+该参数接受一个 RouteInformationParser 对象，
 定义该类通常有一个最简单直接的实现，如下：
 
 <!--skip-->
@@ -625,14 +626,15 @@ MyRouteParser 继承自 RouteInformationParser，
 和 `restoreRouteInformation()` 两个方法。
 
 如上文所述，`parseRouteInformation()` 方法的作用就是
-接收系统传递给我们的路由信息 routeInformation，
-然后，返回并转发给我们之前定义的路由代理 RouterDelegate，
+接受系统传递给我们的路由信息 routeInformation，
+然后，返回转发给我们之前定义的路由代理 RouterDelegate，
 解析后的类型为 RouteInformationParser 的泛型类型，
 即这里的 String。也就是说，
 下面这个 routerDelegate 中 `setNewRoutePath()` 方法的
 参数 configuration 就是从那里转发而来的：
 
 <!--skip-->
+
 ```dart
 @override
 Future<void> setNewRoutePath(String configuration) {
@@ -652,7 +654,7 @@ RouteInformation 对象，表示从传入的 configuration 恢复路由信息。
 此时如果我们想要恢复整个页面的路由栈则需要重写此方法，
 
 上面 MyRouteParser 的实现，是最简单的实现方式，
-功能就是在 `parseRouteInformation()` 中接收底层 RouteInformation，
+功能就是在 `parseRouteInformation()` 中接受底层 RouteInformation，
 `restoreRouteInformation()` 恢复上层的 configuration。
 
 我们也可以继续为这两个方法赋能，
@@ -707,15 +709,16 @@ class VeggieRouteInformationParser extends RouteInformationParser<VeggieRoutePat
 这里的 VeggieRouteInformationParser 
 继承的 RouteInformationParser 泛型类型被指定为了
 我们自定义的 VeggieRoutePath，
-在 Navigator 2.0 中我们称这个解析后的形式为**路由 Model**。
+在 Navigator 2.0 中我们称这个解析后的形式为 **路由 Model**。
 
 此时 VeggieRouteInformationParser 作用就凸显出来了，
 它在 `parseRouteInformation()` 方法中
-接收系统的 RouteInformation 信息后就可以转换成
+接受到系统传递过来的 RouteInformation 信息后就可以将其转换成
 我们上层熟悉的 VeggieRoutePath Model 对象。
 VeggieRoutePath 类内容如下：
 
 <!--skip-->
+
 ```dart
 class VeggieRoutePath {
   final int id;

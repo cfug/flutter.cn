@@ -14,9 +14,9 @@ diff2html: true
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>
-
+  
   <h4 class="no_toc">你会学到什么</h4>
-
+  
   * How to respond to taps.
   
     如何响应点击。    
@@ -29,7 +29,6 @@ diff2html: true
   
     无状态和有状态 widget 之间的区别。
     
-
 {{site.alert.end}}
 
 How do you modify your app to make it react to user input?
@@ -135,7 +134,7 @@ Widget 的状态是一些可以更改的值, 如一个滑动条的当前值或�
 {{site.alert.secondary}}
 
   <h4 class="no_toc">What's the point?</h4>
-
+  
   <h4 class="no_toc">重点是什么？</h4>
 
   * A stateful widget is implemented by two classes:
@@ -153,7 +152,6 @@ Widget 的状态是一些可以更改的值, 如一个滑动条的当前值或�
     
     当 widget 状态改变时, State 对象调用 `setState()`, 告诉框架去重绘 widget。
     
-
 {{site.alert.end}}
 
 In this section, you'll create a custom stateful widget.
@@ -195,11 +193,11 @@ skip to the next section.
 如果你已经在 [Layout tutorial (step 6)][] 中成功创建了应用程序，你可以跳过下面的部分。
 
  1. Make sure you've [set up][] your environment.
-
+ 
     确保你已经 [设置][set up] 好了你的环境.
 
  1. [Create a basic "Hello World" Flutter app][hello-world].
-
+ 
     [创建一个基础的 Flutter 应用 —— "Hello World"][hello-world]
 
  1. Replace the `lib/main.dart` file with [`main.dart`][].
@@ -282,12 +280,12 @@ class FavoriteWidget extends StatefulWidget {
   (`_`) are private. For more information,
   see [Libraries and visibility][], a section in the
   [Dart language tour][].
-
+  
   以下划线（`_`）开头的成员或类是私有的。有关更多信息，请参阅 [Dart language
   tour][] 中的 [Libraries and visibility][] 部分。
 
-[Dart language tour]: {{site.dart-site}}/guides/language/language-tour
-[Libraries and visibility]: {{site.dart-site}}/guides/language/language-tour#libraries-and-visibility
+  [Dart language tour]: {{site.dart-site}}/guides/language/language-tour
+  [Libraries and visibility]: {{site.dart-site}}/guides/language/language-tour#libraries-and-visibility
 {{site.alert.end}}
 
 <a name="step-3"></a>
@@ -368,10 +366,10 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
   width prevents a discernible "jump" when the text changes
   between the values of 40 and 41 &mdash; a jump would
   otherwise occur because those values have different widths.
-
+  
   当 `Text` 在 40 和 41 之间变化时，将文本放在 [SizedBox][] 中
   并设置其宽度可防止出现明显的“跳跃”，因为这些值具有不同的宽度。
-
+  
 {{site.alert.end}}
 
 The `_toggleFavorite()` method, which is called when the
@@ -394,7 +392,6 @@ UI between these two states:
 
   轮廓线的星形图标和数字 ‘40’ 之间切换 UI
   
-
 <?code-excerpt "lib/main.dart (_toggleFavorite)"?>
 ```dart
 void _toggleFavorite() {
@@ -500,7 +497,7 @@ be managed, and lists other available interactive widgets.
 {{site.alert.secondary}}
 
   <h4 class="no_toc">What's the point?</h4>
-
+  
   <h4 class="no_toc">重点是什么？</h4>
 
   * There are different approaches for managing state.
@@ -514,7 +511,7 @@ be managed, and lists other available interactive widgets.
   * If in doubt, start by managing state in the parent widget.
   
     如果不是很清楚时, 就在父 widget 中管理状态。
-
+  
 {{site.alert.end}}
 
 
@@ -540,7 +537,7 @@ Here are the most common ways to manage state:
   [父 widget 管理此 widget 的状态](#parent-managed)
   
 * [A mix-and-match approach](#mix-and-match)
-
+ 
   [混搭管理](#mix-and-match)
 
 How do you decide which approach to use?
@@ -820,7 +817,7 @@ class TapboxB extends StatelessWidget {
   parameters that your code relies on. To use `@required`, import the
   [`foundation` library][] (which re-exports Dart's
   [`meta.dart`][] library):
-
+  
   在创建 API 时，请考虑使用 `@required` 为代码所依赖的任何参数使用注解。
   要使用 `@required` 注解，
   请导入 [foundation library][]（该库重新导出 Dart 的 [meta.dart][]）：
@@ -1032,9 +1029,9 @@ in [Handle taps][], a recipe in the [Flutter cookbook][].
 
   Flutter also provides a set of iOS-style widgets called
   [`Cupertino`][].
-
+  
   Futter还提供了一组名为 [Cupertino][] 的 iOS 风格的小部件。
-
+  
 {{site.alert.end}}
 
 When you need interactivity, it's easiest to use one of
@@ -1098,14 +1095,14 @@ to your app.
 Flutter Gallery [running app][], [repo][]
 <br> Demo app showcasing many Material components and
   other Flutter features.
-
+  
 [Flutter Gallery][running app] 应用，[代码仓库][repo]
 <br> 一个 Demo 应用程序，展示了许多 Material 和其他 Flutter 功能
 
 [Flutter's Layered Design][] (video)
 <br> This video includes information about state and
   stateless widgets.  Presented by Google engineer, Ian Hickson.
-
+  
 [Flutter的分层设计][] (视频)
 <br> 此视频包含有关有状态和无状态 widget 的信息。由 Google 工程师 Ian Hickson 讲解。
 

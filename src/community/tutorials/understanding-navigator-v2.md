@@ -161,7 +161,8 @@ class _MyAppState extends State<MyApp> {
 即与 pages 对应的三个路由页面。
 
 应用打开某个页面，就表示在 pages 中添加一个 Page 对象，
-系统接收到上层的 pages 改变的通知后就会 **比较新的 pages 与旧的 pages**，
+系统接收到上层的 pages 改变的通知后
+就会 **比较新的 pages 与旧的 pages**，
 根据比较结果，Flutter 就会在底层路由栈中新生成一个 Route 实例，
 这样一个新的页面就算打开成功了。
 
@@ -310,7 +311,8 @@ Router 是 Navigator 2.0 中新增的另一个非常重要的组件，
 它所管理的状态就是应用的 **路由状态**，
 结合上节中提到的 Page 的概念，
 我们就可以将其中的 pages 看做这里的路由状态，当
-我们改变 pages 的内容或状态时，Router 就会将该状态分发给子组件，
+我们改变 pages 的内容或状态时，
+Router 就会将该状态分发给子组件，
 状态改变导致子组件重建应用最新的状态。
 
 所以当 Navigator 作为 Router 的子组件时，
@@ -440,7 +442,8 @@ RouteNameParser Delegate 会将该字符串传递给 RouteNameParser，
 最终，RouteNameParser 解析的对象数据和 
 BackButtonDispatcher Delegate 回退事件都会转发给
 上文中的 RouteDelegate，RouteDelegate 接收到这些事件通知后，
-就会执行响应，改变状态，从而导致含有 pages 的 Navigator 组件重建，
+就会执行响应，改变状态，
+从而导致含有 pages 的 Navigator 组件重建，
 在应用层中呈现最新的路由状态。
 
 整个过程可以用下图表示：

@@ -156,6 +156,7 @@ you need the following in addition to the Flutter SDK:
   [pkg-config][]
 
 * libblkid
+* liblzma
 
   libblkid
 
@@ -182,7 +183,7 @@ you might use the following command:
 如果您在使用的 Linux 发行版上无法使用 `snapd`，您可以使用下面的命令行:
 
 ```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev libblkid-dev
+$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev libblkid-dev liblzma-dev
 ```
 
 [Clang]: https://clang.llvm.org/

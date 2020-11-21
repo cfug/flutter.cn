@@ -180,7 +180,7 @@ You have two options for how to apply fonts to text: as the default font
 or only within specific widgets.
 
 关于如何应用这些字体，你有两种选择：
-将其设为默认字体，或者仅在某些特定 Widget 中使用。
+将其设为默认字体，或者仅在某些特定 widget 中使用。
 
 To use a font as the default, set the `fontFamily` property as part of
 the app's `theme`. The value provided to `fontFamily` must match the `family`

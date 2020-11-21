@@ -130,6 +130,6 @@ class MyApp extends StatelessWidget {
 
 
 
-[`List.generate`]: lh({{site.api}}/flutter/dart-core/List/List.generate.html)
+[`List.generate`]: {{site.api}}/flutter/dart-core/List/List.generate.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html

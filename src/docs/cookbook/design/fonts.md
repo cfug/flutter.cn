@@ -30,9 +30,10 @@ or perhaps you downloaded a font from [Google Fonts][].
 {{site.alert.note}}
 
   Check out the [google_fonts][] package for direct access
-  to almost 1000 open-sourced font families.
+  to over 1,000 open-sourced font families.
 
-  查看 [google_fonts][] 库，你将可以直接访问近 1000 个开源字体族。
+  查看 [google_fonts][] 库，
+  你将可以直接访问 1000 个以上的开源字体。
 
 {{site.alert.end}}
 
@@ -43,7 +44,8 @@ or perhaps you downloaded a font from [Google Fonts][].
   see [Export fonts from a package][].
 
   这里还有另一个关于使用自定义字体的教程，
-  如果你想要在多项目中重用一份字体的情况下，请参考[将字体导出到包][Export fonts from a package]。
+  如果你想要在多项目中重用一份字体的情况下，
+  请参考 [将字体导出到 package][Export fonts from a package]。
 
 {{site.alert.end}}
 
@@ -134,13 +136,16 @@ flutter:
 The `family` determines the name of the font, which you use in the
 [`fontFamily`][] property of a [`TextStyle`][] object.
 
-`family` 属性决定了字体的名称，你将会在 [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) 的 [`fontFamily`]({{site.api}}/flutter/painting/TextStyle/fontFamily.html) 属性中用到。
+`family` 属性决定了字体的名称，
+你将会在 [`TextStyle`][] 的 [`fontFamily`][] 属性中用到。
 
 The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
 These files contain the outlines for the glyphs in the font.
 When building the app, these files are included in the app's asset bundle.
 
-`asset` 是字体文件对于 `pubspec.yaml` 文件的相对路径。这些文件包含了字体中字形的轮廓。构建应用时，这些文件将会被包含在应用程序的资源包中。
+`asset` 是字体文件对于 `pubspec.yaml` 文件的相对路径。
+这些文件包含了字体中字形的轮廓。
+构建应用时，这些文件将会被包含在应用程序的资源包中。
 
 A single font can reference many different files with different
 outline weights and styles:
@@ -174,7 +179,8 @@ outline weights and styles:
 You have two options for how to apply fonts to text: as the default font
 or only within specific widgets.
 
-关于如何应用这些字体，你有两种选择：将其设为默认字体，或者仅在某些特定 Widget 中使用。
+关于如何应用这些字体，你有两种选择：
+将其设为默认字体，或者仅在某些特定 widget 中使用。
 
 To use a font as the default, set the `fontFamily` property as part of
 the app's `theme`. The value provided to `fontFamily` must match the `family`
@@ -182,7 +188,7 @@ name declared in the `pubspec.yaml`.
 
 如果你想要设为默认字体，
 请将 `fontFamily` 设为应用（全局）`theme` 的属性的一部分。
-提供的 `fontFamily` 的值必须与 pubspec.yaml 中声明的名称相匹配。
+提供的 `fontFamily` 的值必须与 `pubspec.yaml` 中声明的名称相匹配。
 
 <!-- skip -->
 ```dart
@@ -197,7 +203,8 @@ MaterialApp(
 For more information on themes,
 see the [Using Themes to share colors and font styles][] recipe.
 
-有关主题的更多信息，请参阅文档：[使用 Themes 统一颜色和字体风格](/docs/cookbook/design/themes) 。
+有关主题的更多信息，请参阅文档：
+[使用 Themes 统一颜色和字体风格][Using Themes to share colors and font styles]。
 
 ## 4. Use the font in a specific widget
 
@@ -249,7 +256,7 @@ Engine 则会使用一个更加通用的字体文件，
 The Raleway and RobotoMono fonts were downloaded from
 [Google Fonts][].
 
-Raleway 和 RobotoMono 字体是从 [Google Fonts](https://fonts.google.com) 下载的。
+Raleway 和 RobotoMono 字体是从 [Google Fonts][] 下载的。
 
 ### `pubspec.yaml`
 

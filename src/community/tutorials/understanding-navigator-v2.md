@@ -89,6 +89,8 @@ Page 同样只保存页面路由相关信息，
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/11/bc57589cd7882.png)
 
+English placeholder for the translation toggle tools issue.
+
 Widget 和 Page 中也都有一个 `canUpdate()` 方法，
 帮助 Flutter 判断其是否已更新或改变：
 
@@ -437,7 +439,7 @@ class MyRouteDelegate extends RouterDelegate<String>
 最初，应用启动或者打开新页面的事件从系统发出时，
 **会转发给应用层一个表示该事件的字符串**，
 RouteNameParser Delegate 会将该字符串传递给 RouteNameParser，
-经而会解析成一个类型 `T` 的对象，
+进而会解析成一个类型 `T` 的对象，
 类型 `T` 默认为 `RouteSetting`，
 其中就会包含传递的路由名称和参数等信息了。
 
@@ -480,7 +482,7 @@ BackButtonDispatcher Delegate 都有 Flutter 内置的默认实现，
 RouteDelegate 本身实现自 Listenable，即可监听对象，
 也可以叫做被观察者，
 每当状态改变时，观察者们就能通知它响应该事件，
-从而触使 Navigator 组件重建，更新路由状态。
+从而促使 Navigator 组件重建，更新路由状态。
 
 RouterDelegate 中的路由事件的通知主要由下面几个函数接收：
 
@@ -491,7 +493,7 @@ RouterDelegate 中的路由事件的通知主要由下面几个函数接收：
 会调用 RouterDelegate 的 `setInitialRoutePath()` 方法，
 该方法接受路由名称作为参数，
 默认此方法会直接调用 RouterDelegate 的 `setNewRoutePath()` 函数。
-- routeNameProvider 系统出发打开新路由页面的通知时，
+- 系统通过 routeNameProvider 发出打开新路由页面的通知时，
 直接调用 `setNewRoutePath()` 方法，
 参数就是由 routeNameParser 解析的结果。
 

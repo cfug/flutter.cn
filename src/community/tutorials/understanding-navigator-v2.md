@@ -89,6 +89,8 @@ Page 同样只保存页面路由相关信息，
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/11/bc57589cd7882.png)
 
+English placeholder for the translation toggle tools issue.
+
 Widget 和 Page 中也都有一个 `canUpdate()` 方法，
 帮助 Flutter 判断其是否已更新或改变：
 

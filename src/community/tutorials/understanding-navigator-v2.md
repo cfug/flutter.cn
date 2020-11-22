@@ -12,8 +12,12 @@ Flutter 1.22 发布后，大家可以发现，
 并**没有给开发者一种灵活的方式去直接管理路由栈**，
 甚至觉得已经过时了，一点也不 Flutter。
 
-> As mentioned by a participant in one of Flutter's user studies, 
-> the API also feels outdated and not very Flutter-y.
+{{site.alert.note}}
+
+As mentioned by a participant in one of Flutter's user studies, 
+the API also feels outdated and not very Flutter-y.
+
+{{site.alert.end}}
 
 而 Navigator 2.0 引入了一套全新的声明式 API，
 全新的实现方式与调用方法与以往都截然不同，
@@ -38,14 +42,14 @@ Flutter 团队为什么要不惜这些代价对 Navigator API 做这次的重构
   旧的 Navigator API 并没有一种优雅的实现方式实现这种效果。
 
 - **原始的命令式 Navigator API 只提供给了
-  开发者一些非常针对性的接口，如 push、pop 等，
+  开发者一些非常针对性的接口，如 `push()`、`pop()` 等，
   而没有给出一种更灵活的方式让我们直接操作路由栈**。
   这种做法其实与 Flutter 理念相违背，
   试想如果我们想要改变某个 widget 的所有子组件
   只需要重建所有子组件并且创建一系列新的 widget 即可，
   而将此概念应用在路由中，
   当应用中存在一系列路由页面并想要更改时，
-  我们只能调用 push、pop 这类接口来回操作，
+  我们只能调用 `push()`、`pop()` 这类接口来回操作，
   **这样的 Flutter 食之无味**。
 
 - **嵌套路由下，手机设备自带的回退按钮
@@ -63,7 +67,7 @@ Flutter 团队为什么要不惜这些代价对 Navigator API 做这次的重构
 ## Navigator 2.0
 
 Navigator 2.0 新增的声明式 API 主要包含
-Page API、Router API 两个部分，
+[Page](https://api.flutter-io.cn/flutter/widgets/Page-class.html) API、[Router](https://api.flutter-io.cn/flutter/widgets/Router-class.html) API 两个部分，
 它们各自强大的功能为 Navigator 2.0 提供了强有力的基石，
 本节我就带读者们看看它们各自的实现细节。
 
@@ -346,6 +350,7 @@ MaterialApp 的新构造函数 router
 构造出全局的 Router 组件，使用方式如下：
 
 <!--skip-->
+
 ```dart
 MaterialApp.router(
   title: 'Flutter Demo',
@@ -426,8 +431,8 @@ class MyRouteDelegate extends RouterDelegate<String>
 - 监听设备回退，关闭路由栈中顶部路由。
 
 而要想完整的响应这些事件，
-还得为 Router 配置 RouteNameProvider Delegate 
-和 BackButtonDispatcher Delegate。
+还得为 Router 配置 **RouteNameProvider Delegate** 
+和 **BackButtonDispatcher Delegate**。
 
 最初，应用启动或者打开新页面的事件从系统发出时，
 **会转发给应用层一个表示该事件的字符串**，
@@ -450,11 +455,15 @@ BackButtonDispatcher Delegate 回退事件都会转发给
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/11/516f15849e0aa.png)
 
+{{site.alert.note}}
+
 需要知道的是，RouteNameProvider Delegate 和 
 BackButtonDispatcher Delegate 都有 Flutter 内置的默认实现，
 因此，大部分情况下，我们并不需要考虑其中的细节，
 此时类型 `T` 默认为 RouteSetting
 （与旧的 Navogator API 一致，包含路由信息）。
+
+{{site.alert.end}}
 
 从以上部分可以看出，
 一系列的操作只是将最终事件传递给 RouterDelegate 而已，
@@ -476,19 +485,20 @@ RouteDelegate 本身实现自 Listenable，即可监听对象，
 RouterDelegate 中的路由事件的通知主要由下面几个函数接收：
 
 - backButtonDispatcher 发出回退按钮事件时，
-会调用 RouterDelegate 的 **popRoute** 方法，
+会调用 RouterDelegate 的 `popRoute()` 方法，
 由混入的 PopNavigatorRouterDelegateMixin 实现。
 - 发出应用初始路由的通知时，
-会调用 RouterDelegate 的 **setInitialRoutePath** 方法，
+会调用 RouterDelegate 的 `setInitialRoutePath()` 方法，
 该方法接受路由名称作为参数，
-默认此方法会直接调用 RouterDelegate 的 setNewRoutePath 函数。
+默认此方法会直接调用 RouterDelegate 的 `setNewRoutePath()` 函数。
 - routeNameProvider 系统出发打开新路由页面的通知时，
-直接调用 **setNewRoutePath** 方法，
+直接调用 `setNewRoutePath()` 方法，
 参数就是由 routeNameParser 解析的结果。
 
 因此，我们最终就可以实现如下这样的 RouterDelegate：
 
 <!--skip-->
+
 ```dart
 class MyRouteDelegate extends RouterDelegate<String>
     with PopNavigatorRouterDelegateMixin<String>, ChangeNotifier {
@@ -576,7 +586,7 @@ class MyRouteDelegate extends RouterDelegate<String>
 
 完整代码，请 [参考这里](https://github.com/MeandNi/flutter_navigator_v2/blob/master/lib/router_example.dart)。
 
-在子组件中，我们也可以使用 `MyRouteDelegate`，
+在子组件中，我们也可以使用 MyRouteDelegate，
 通过如下方式打开或者关闭一个页面：
 
 <!--skip-->
@@ -588,8 +598,8 @@ MyRouteDelegate.of(context).pop();
 
 与 InheritWidget 的性质相同，
 这里会触发 MyRouteDelegate 中，
-我们自定义的 push 和 pop 方法操作声明的路由栈，
-最终通知更新路由状态。
+我们自定义的 `push()` 和 `pop()` 方法操作声明的路由栈，
+最终通知 Navigator 更新路由状态。
 
 ### 实现 RouteInformationParser
 
@@ -633,8 +643,8 @@ MyRouteParser 继承自 RouteInformationParser，
 然后，返回转发给我们之前定义的路由代理 RouterDelegate，
 解析后的类型为 RouteInformationParser 的泛型类型，
 即这里的 String。也就是说，
-下面这个 routerDelegate 中 `setNewRoutePath()` 方法的
-参数 configuration 就是从那里转发而来的：
+下面这个 RouterDelegate 中 `setNewRoutePath()` 方法的
+参数 `configuration` 就是从那里转发而来的：
 
 <!--skip-->
 
@@ -650,20 +660,21 @@ Future<void> setNewRoutePath(String configuration) {
 ```
 
 `restoreRouteInformation()` 方法返回一个 
-RouteInformation 对象，表示从传入的 configuration 恢复路由信息。
-与 parseRouteInformation 相呼应。
+RouteInformation 对象，表示从传入的 `configuration` 恢复路由信息。
+与 `parseRouteInformation()` 相呼应。
 
 例如，在浏览器中，Flutter 应用所在的标签被关闭，
 此时如果我们想要恢复整个页面的路由栈则需要重写此方法，
 
 上面 MyRouteParser 的实现，是最简单的实现方式，
-功能就是在 `parseRouteInformation()` 中接受底层 RouteInformation，
-`restoreRouteInformation()` 恢复上层的 configuration。
+功能就是在 `parseRouteInformation()` 中接受底层的 `routeInformation`，
+在 `restoreRouteInformation()` 中恢复上层的 `configuration`。
 
 我们也可以继续为这两个方法赋能，
 实现更符合业务需求的逻辑，如下这代码：
 
 <!--skip-->
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_navigator_v2/navigator_v2/model.dart';

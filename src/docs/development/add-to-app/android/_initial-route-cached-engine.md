@@ -6,8 +6,9 @@ This is because a cached engine is expected to already be
 running Dart code, which means it's too late to configure the
 initial route.
 
-当配置一个使用新 `FlutterEngine` 的 `FlutterActivity` 或者 `FlutterFragment` 时，会使用到初始化路由的概念。
-但是，使用缓存中的 Flutter 引擎时，`FlutterActivity` 或者 `FlutterFragment` 则没有提供初始化路由。
+当配置一个使用新 `FlutterEngine` 的 `FlutterActivity` 或者 `FlutterFragment` 时，
+会使用到初始化路由的概念。但是，使用缓存中的 Flutter 引擎时，
+`FlutterActivity` 或者 `FlutterFragment` 则没有涉及初始化路由的概念。
 这是因为一个缓存中的引擎预期是已经执行了 Dart 代码的，在这时配置初始化路由已经太迟了。
 
 Developers that would like their cached engine to begin
@@ -16,9 +17,9 @@ with a custom initial route can configure their cached
 executing the Dart entrypoint. The following example
 demonstrates the use of an initial route with a cached engine:
 
-开发者如果想要他们缓存中的引擎是从一个自定义的初始化路由开始运行的，
-那么可以在 Dart 入口执行之前给缓存中的 `FlutterEngine` 配置一个自定义的初始化路由。
-下面的例子展示了要缓存的引擎如何使用初始化路由：
+开发者如果想要让缓存中的引擎从自定义的初始路由开始运行，
+那么可以在 Dart 入口执行之前给缓存中的 `FlutterEngine` 配置一个自定义的初始路由。
+如下面这个例子：
 
 {% samplecode cached-engine-with-initial-route %}
 {% sample Java %}
@@ -71,7 +72,9 @@ By setting the initial route of the navigation channel, the associated
 `FlutterEngine` displays the desired route upon initial execution of the
 `runApp()` Dart function.
 
-通过设置导航通道中的初始化路由，关联的 `FlutterEngine` 在 Dart 的 `runApp()` 方法初始化执行之后会展示对应的那个路由。
+通过设置导航通道中的初始路由，
+一旦 Dart 的 `runApp()` 方法初始执行后，
+关联的 `FlutterEngine` 就会展示配置的路由页面。
 
 Changing the initial route property of the navigation channel
 after the initial execution of `runApp()` has no effect.
@@ -80,7 +83,7 @@ between different `Activity`s and `Fragment`s and switch
 the route between those displays need to setup a method channel and
 explicitly instruct their Dart code to change `Navigator` routes.
 
-在 `runApp()` 的初始化执行之后修改导航通道中的初始化路由属性不会生效。
+在 `runApp()` 的初始执行之后去修改导航通道中的初始路由属性是不会生效的。
 想要在不同的 `Activity` 和 `Fragment` 之间使用同一个 `FlutterEngine`，
 并且在其展示时切换不同的路由，开发者需要设置一个方法通道，
 来显式地通知他们的 Dart 代码切换 `Navigator` 路由。

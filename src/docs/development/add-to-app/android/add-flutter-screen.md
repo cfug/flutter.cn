@@ -57,7 +57,8 @@ Android's system chrome, like Android's navigation bar, and to
 the background color of the `FlutterActivity` just before
 the Flutter UI renders itself for the first time.
 
-上述代码中的 `@style/LaunchTheme` 可以替换为想要在你的 `FlutterActivity` 中使用的其他 Android 主题。
+上述代码中的 `@style/LaunchTheme` 可以替换为想要在你的
+`FlutterActivity` 中使用的其他 Android 主题。
 主题的选择决定 Android 系统展示框架所使用的颜色，
 例如 Android 的导航栏，以及 Flutter UI 自身的第一次渲染前 `FlutterActivity` 的背景色。
 
@@ -70,8 +71,8 @@ add code to launch `FlutterActivity` from whatever point
 in your app that you'd like. The following example shows
 `FlutterActivity` being launched from an `OnClickListener`.
 
-在你的 manifest 文件中注册了 `FlutterActivity` 之后，
-根据需要，你可以在应用中的任意位置添加代码来打开 `FlutterActivity`。
+在你的清单文件中注册了 `FlutterActivity` 之后，
+根据需要，你可以在应用中的任意位置添加打开 `FlutterActivity` 的代码。
 下边的代码展示了如何在 `OnClickListener` 的点击事件中打开 `FlutterActivity`。
 
 {% samplecode default-activity-launch %}
@@ -154,8 +155,8 @@ initialization time. That approach is discussed next.
 
 工厂方法 `withNewEngine()` 可以用于配置一个 `FlutterActivity`，
 它会在内部创建一个属于自己的 `FlutterEngine` 实例，这会有一个明显的初始化时间。
-另外一种可选的做法是，
-命令 `FlutterActivity` 使用一个预热好的，已经在缓存中的 `FlutterEngine`，
+另外一种可选的做法是让
+`FlutterActivity` 使用一个预热且缓存的 `FlutterEngine`，
 这可以最小化 Flutter 初始化的时间。
 这种方式接下来会讨论到。
 
@@ -177,7 +178,7 @@ your pre-warmed `FlutterEngine` instead.
 这意味着加载一个标准的 `FlutterActivity` 时，
 在你的 Flutter 交互页面可见之前会有一个短暂的延迟。
 想要最小化这个延迟时间，你可以在抵达你的 `FlutterActivity` 之前，
-初始化一个 `FlutterEngine`，然后使用已经预热好的这个 `FlutterEngine`。
+初始化一个 `FlutterEngine`，然后使用这个已经预热好的 `FlutterEngine`。
 
 To pre-warm a `FlutterEngine`, find a reasonable
 location in your app to instantiate a `FlutterEngine`.
@@ -186,7 +187,7 @@ The following example arbitrarily pre-warms a
 
 要预热一个 `FlutterEngine`，
 可以在你的应用中找一个合理的地方实例化一个 `FlutterEngine`。
-下面的这个例子在 `Application` 类中预先初始化一个 `FlutterEngine`：
+下面的这个例子是在 `Application` 类中预先初始化一个 `FlutterEngine`：
 
 {% samplecode prewarm-engine %}
 {% sample Java %}
@@ -244,10 +245,12 @@ Using `FlutterActivity` with a cached `FlutterEngine`
 is discussed next.
 
 传给 `FlutterEngineCache` 的 ID 可以是你想要的任何名称。
-确保传递同样的 ID 给应该使用缓存中 `FlutterEngine` 的 `FlutterActivity` 或 `FlutterFragment`。
-基于缓存中的 `FlutterEngine` 来使用 `FlutterActivity` 会在后续讨论到。
+确保 `FlutterActivity` 或 `FlutterFragment` 在使用缓存的
+`FlutterEngine` 时，传递了同样的 ID。
+基于缓存的 `FlutterEngine` 来使用 `FlutterActivity` 会在后续讨论到。
 
 {{site.alert.note}}
+
   To warm up a `FlutterEngine`, you must execute a Dart
   entrypoint. Keep in mind that the moment
   `executeDartEntrypoint()` is invoked,
@@ -266,6 +269,7 @@ is discussed next.
   那么你的 Flutter 应用会像是运行在一个大小为零的窗口中，
   直至 `FlutterEngine` 附属到一个 `FlutterActivity`，`FlutterFragment` 或 `FlutterView`。
   请确保你的应用在开始预热到你展示 Flutter 内容中间的这段时间里表现正常。
+  
 {{site.alert.end}}
 
 With a pre-warmed, cached `FlutterEngine`, you now need
@@ -274,8 +278,8 @@ to instruct your `FlutterActivity` to use the cached
 To accomplish this, use `FlutterActivity`'s `withCachedEngine()`
 builder:
 
-要使用一个预热好的 `FlutterEngine`，
-你现在需要命令 `FlutterActivity` 来使用缓存中的 `FlutterEngine`，而不是创建一个新的。
+要使用预热且缓存的 `FlutterEngine` 时，
+让你的 `FlutterActivity` 从缓存中获取 `FlutterEngine`，而不是创建一个新的。
 可以使用 `FlutterActivity` 的 `withCachedEngine()` 方法来实现：
 
 {% samplecode cached-engine-activity-launch %}
@@ -319,6 +323,7 @@ the display of Flutter content.
 现在，当你加载 `FlutterActivity` 时，在展示 Flutter 内容前的延迟会明显降低。
 
 {{site.alert.note}}
+
   When using a cached `FlutterEngine`, that `FlutterEngine` outlives any
   `FlutterActivity` or `FlutterFragment` that displays it. Keep in
   mind that Dart code begins executing as soon as you pre-warm the
@@ -333,9 +338,11 @@ the display of Flutter content.
   并且在你的 `FlutterActivity` 或 `FlutterFragment` 销毁后继续运行。
   要停止代码运行和清理相关资源，可以从 `FlutterEngineCache` 中获取你的 `FlutterEngine`，
   然后使用 `FlutterEngine.destroy()` 来销毁 `FlutterEngine`。
+
 {{site.alert.end}}
 
 {{site.alert.note}}
+
   Runtime performance isn't the only reason that you might
   pre-warm and cache a `FlutterEngine`.
   A pre-warmed `FlutterEngine` executes Dart code independent
@@ -349,19 +356,22 @@ the display of Flutter content.
 
   运行时的性能考量并不是你会预热和缓存一个 `FlutterEngine` 的唯一原因。
   一个预热的 `FlutterEngine` 会独立于 `FlutterActivity` 执行 Dart 代码，
-  即允许一个 `FlutterEngine` 在任意时刻用于执行任意代码。
+  即一个 `FlutterEngine` 可以在任意时刻用于执行任意代码。
   非 UI 的应用逻辑可以在 `FlutterEngine` 中执行，
   例如网络请求和数据缓存，以及在 `Service` 中或其他地方的后台行为。
   当使用 `FlutterEngine` 在后台执行任务时，确保满足 Android 对于后台执行的所有限制。
+
 {{site.alert.end}}
 
 {{site.alert.note}}
+
   Flutter's debug/release builds have drastically different
   performance characteristics. To evaluate the performance
   of Flutter, use a release build.
 
-  Flutter 的 debug 或 release 构建有完全不同的性能特征。
+  Flutter 的 debug 与 release 构建体现了完全不同的性能。
   评估 Flutter 的性能表现时，请使用 release 构建版本。
+
 {{site.alert.end}}
 
 #### Initial route with a cached engine
@@ -389,7 +399,7 @@ To make your `FlutterActivity` translucent,
 make the following changes to the regular process of
 creating and launching a `FlutterActivity`.
 
-要将你的 `FlutterActivity` 设置为透明的，
+要将你的 `FlutterActivity` 设置为透明，
 在创建和加载 `FlutterActivity` 的常规步骤中做如下的变更。
 
 ### Step 1: Use a theme with translucency
@@ -400,7 +410,7 @@ Android requires a special theme property for `Activity`s that render
 with a translucent background. Create or update an Android theme with the
 following property:
 
-Android 需要一个特殊的主题属性来让 Activity 以一个透明的背景渲染。
+Android 需要一个特殊的主题属性来让 `Activity` 以一个透明的背景渲染。
 使用如下属性来创建或者修改一个 Android 主题：
 
 ```xml
@@ -411,7 +421,7 @@ Android 需要一个特殊的主题属性来让 Activity 以一个透明的背�
 
 Then, apply the translucent theme to your `FlutterActivity`.
 
-然后，将透明主题应用到你的 `FlutterActivity` 中。
+然后，将透明主题应用到你的 `FlutterActivity`。
 
 ```xml
 <activity
@@ -428,7 +438,7 @@ Next, you need to launch your `FlutterActivity`
 with explicit transparency support.
 
 现在你的 `FlutterActivity` 已经支持透明化。
-下一步，你需要在打开 `FlutterActivity` 时明确声明支持透明。
+下一步，你需要在打开 `FlutterActivity` 时显式启用透明模式。
 
 ### Step 2: Start FlutterActivity with transparency
 
@@ -482,9 +492,10 @@ startActivity(
 
 You now have a `FlutterActivity` with a transparent background.
 
-你现在有一个透明背景的 `FlutterActivity` 了。
+现在你的 `FlutterAcivity` 的背景已经是透明的了。
 
 {{site.alert.note}}
+
   Make sure that your Flutter content also includes a
   translucent background. If your Flutter UI paints a
   solid background color, then it still appears as
@@ -493,4 +504,5 @@ You now have a `FlutterActivity` with a transparent background.
   确保你的 Flutter 内容也有一个透明的背景。
   如果你的 Flutter UI 绘制了一个特定的背景颜色，
   那么你的 `FlutterActivity` 依旧看起来会是有一个不透明的背景。
+
 {{site.alert.end}}

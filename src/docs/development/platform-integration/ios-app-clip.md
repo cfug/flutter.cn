@@ -7,10 +7,11 @@ description: 如何为您的 Flutter 工程加入 iOS 14 的 App Clip。
 
 {{site.alert.important}}
 
-  This support is offered experimentally on Flutter version 1.22, may not be
-  stable, and may change in the future.
+  This experimental preview currently exceeds the 10MB uncompressed IPA payload
+  size limit and cannot be used in production ([#71098][]).
 
-  这个支持在 Flutter 1.22 版本中是实验性功能, 可能不稳定, 也许在未来会修改。
+  目前该实验测试版本会突破 10MB 的未压缩 IPA 有效负载的大小限制，
+  请勿在生产环境中使用([#71098][])。
 
 {{site.alert.end}}
 
@@ -585,6 +586,7 @@ Such as
 
 [add-to-app]: /docs/development/add-to-app
 [#65451]: {{site.github}}/flutter/flutter/issues/65451
+[#71098]: {{site.github}}/flutter/flutter/issues/71098
 [official Apple documentation]: https://developer.apple.com/documentation/app_clips/creating_an_app_clip_with_xcode#3604097
 [iOS add-to-app APIs]: /docs/development/add-to-app/ios/add-flutter-screen
 [custom Flutter route]: /docs/development/add-to-app/ios/add-flutter-screen#route

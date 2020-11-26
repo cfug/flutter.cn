@@ -63,7 +63,7 @@
     $ git clone https://github.com/flutter/flutter.git -b stable --depth 1
     ```
 
- 3. Add the `flutter` tool to your path:
+ 1. Add the `flutter` tool to your path:
 
     配置 `flutter` 的 PATH 环境变量：
 
@@ -166,6 +166,49 @@ command again to verify that you’ve set everything up correctly.
 
 当你安装了任一缺失部分的依赖后，
 可以再次运行 `flutter doctor` 命令来确认是否成功安装。
+
+### Downloading straight from GitHub instead of using an archive
+
+### 直接从 Github 上（而不是归档）下载
+
+_This is only suggested for advanced use cases._
+
+**该建议仅适用于高级用例**
+
+You can also use git directly instead of downloading the prepared archive. For example,
+to download the stable branch:
+
+你也可以不从归档，而是用 Git 直接下载。
+例如，可以运行下方的命令，以下载稳定分支的 SDK：
+    
+```terminal
+$ git clone https://github.com/flutter/flutter.git -b stable
+```
+
+[Update your path][], and run `flutter doctor`. That will let you know if there are
+other dependencies you need to install to use Flutter (e.g. the Android SDK).
+
+[更新环境变量][Update your path]，并运行 `flutter doctor`。
+这个命令将会告诉你，是否还缺少运行 Flutter 所需要安装的其他依赖项（例如 Android SDK）。
+
+If you did not use the archive, Flutter will download necessary development binaries as they
+are needed (if you used the archive, they are included in the download). You may wish to
+pre-download these development binaries (for example, you may wish to do this when setting
+up hermetic build environments, or if you only have intermittent network availability). To
+do so, run the following command:
+
+如果你不使用归档，Flutter 将会下载必要的开发二进制文件（如果你使用的归档，那么这些文件已经包含在内了）。
+你也许会想要提前下载这些开发二进制文件（例如，您可能希望设置系统构建环境，或是您的网络可用性不佳）。
+那么你可以运行以下命令：
+
+```terminal
+$ flutter precache
+```
+
+For additional download options, see `flutter help precache`.
+
+更多额外下载选项，请参阅 `flutter help precache`。
+
 
 {% include_relative _analytics.md %}
 

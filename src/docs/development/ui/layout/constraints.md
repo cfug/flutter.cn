@@ -185,6 +185,15 @@ Flutter 的布局引擎有一些重要限制：
   当轮到父级决定其大小和位置的时候，同样的也取决于它自身的父级。
   所以，在不考虑整棵树的情况下，几乎不可能精确定义任何 widget 的大小和位置。
 
+* If a child wants a different size from its parent and 
+  the parent doesn't have enough information to align it,
+  then the child's size might be ignored.
+  **Be specific when defining alignment.**
+
+  如果子级想要拥有和父级不同的大小，然而父级没有足够的空间对其进行布局的话，
+  子级的设置的大小可能会不生效。
+  **这时请明确指定它的对齐方式**
+  
 ## Examples
 
 ## 样例

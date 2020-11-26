@@ -169,11 +169,11 @@ command again to verify that you’ve set everything up correctly.
 
 ### Downloading straight from GitHub instead of using an archive
 
-### 直接从 Github 上（而不是归档）中下载
+### 直接从 Github 上（而不是归档）下载
 
 _This is only suggested for advanced use cases._
 
-_该建议仅适用于高级用例_
+**该建议仅适用于高级用例**
 
 You can also use git directly instead of downloading the prepared archive. For example,
 to download the stable branch:
@@ -197,7 +197,8 @@ pre-download these development binaries (for example, you may wish to do this wh
 up hermetic build environments, or if you only have intermittent network availability). To
 do so, run the following command:
 
-如果你不使用归档，Flutter 将会下载必要的开发二进制文件（如果你使用的归档，那么这些文件已经包含在内了）。你也许会想要提前下载这些开发二进制文件（例如，您可能希望设置系统构建环境，或是您的网络可用性不佳）。
+如果你不使用归档，Flutter 将会下载必要的开发二进制文件（如果你使用的归档，那么这些文件已经包含在内了）。
+你也许会想要提前下载这些开发二进制文件（例如，您可能希望设置系统构建环境，或是您的网络可用性不佳）。
 那么你可以运行以下命令：
 
 ```terminal

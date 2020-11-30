@@ -44,8 +44,8 @@ over time. A crash report may contain the following information:
   as intended after you upgrade to the next version of Flutter.
   
   客户端 ID：为安装了 Flutter 的计算机而生成的一串恒定且唯一的数字。
-  帮助我们删除同一台计算机的重复崩溃报告。
-  还可以帮助我们验证，在升级了下一个 Flutter 版本后，解决方案是否按预期工作。
+  它将帮助我们删除同一台计算机的重复崩溃报告。
+  还可以帮助我们验证在升级了下一个 Flutter 版本后，解决方案是否按预期工作。
 
 Google handles all data reported by this tool in accordance with the 
 [Google Privacy Policy][].

@@ -36,7 +36,7 @@ To see changes to the site since our last release,
 see [What's new][].
 
 查看最近网站更新的内容，请查阅
-[文档网站更新内容归档][What's new archive]。
+[文档网站更新内容归档][What's new]。
 
 ## New to Flutter?
 

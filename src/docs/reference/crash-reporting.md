@@ -2,8 +2,8 @@
 title: Flutter crash reporting
 title: Flutter 崩溃报告
 description: How Google uses crash reporting, what is collected, and how to opt out.
-description: 了解 Google 是如何使用崩溃报告的，它收集了什么，以及如何禁用。
-tags: Flutter参考资料
+description: 了解 Google 如何使用崩溃报告、它收集了什么、以及如何禁用它。
+tags: Flutter 参考资料
 keywords: 崩溃提交,禁用统计
 ---
 
@@ -12,7 +12,8 @@ when a `flutter` command crashes it attempts to send a crash report
 to Google in order to help Google contribute improvements to Flutter
 over time. A crash report may contain the following information:
 
-如果您未禁用 Flutter 的分析和崩溃报告，当一条 `flutter` 命令崩溃时，会尝试向 Google 发送一份崩溃报告，用于帮助 Google 逐步改进 Flutter。
+如果您未禁用 Flutter 的分析和崩溃报告，当一条 `flutter` 命令崩溃时，
+分析工具会尝试向 Google 发送一份崩溃报告，用于帮助 Google 逐步改进 Flutter。
 
 一份崩溃报告可能包含以下信息：
 
@@ -42,12 +43,14 @@ over time. A crash report may contain the following information:
   It also helps us verify if a fix works
   as intended after you upgrade to the next version of Flutter.
   
-  客户端 ID：为安装了 Flutter 的计算机而生成的一串恒定且唯一的数字。帮助我们删除同一台计算机的重复崩溃报告。还可以帮助我们验证，在升级了下一个 Flutter 版本后，解决方案是否按预期工作。
+  客户端 ID：为安装了 Flutter 的计算机而生成的一串恒定且唯一的数字。
+  帮助我们删除同一台计算机的重复崩溃报告。
+  还可以帮助我们验证，在升级了下一个 Flutter 版本后，解决方案是否按预期工作。
 
 Google handles all data reported by this tool in accordance with the 
 [Google Privacy Policy][].
 
-Google 会根据 [Google 隐私政策][] 处理此工具报告的所有数据。
+Google 会根据 [Google 隐私政策][Privacy Policy] 处理此工具报告的所有数据。
 
 ## Disabling analytics reporting
 
@@ -56,7 +59,7 @@ Google 会根据 [Google 隐私政策][] 处理此工具报告的所有数据。
 You can opt out of anonymous crash reporting and feature
 usage statistics from Flutter by running the following command:
 
-您可以通过运行以下命令，禁用 Flutter 提供的匿名崩溃报告和功能使用统计功能：
+您可以通过运行以下命令，禁用 Flutter 提供的匿名崩溃报告和功能使用统计：
 
 ```terminal
 $ flutter config --no-analytics
@@ -76,4 +79,4 @@ To display the current setting, you can run the following command:
 $ flutter config
 ```
 
-[Google 隐私政策]: https://policies.google.com/privacy
+[Privacy Policy]: https://policies.google.cn/privacy

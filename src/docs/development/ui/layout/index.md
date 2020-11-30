@@ -180,7 +180,7 @@ Image.asset(
 
 Create an [`Icon`][] widget:
 
-创建一个 [Icon][] widget：
+创建一个 [`Icon`][] widget：
 
 <?code-excerpt "layout/lakes/step5/lib/main.dart (Icon)"?>
 ```dart

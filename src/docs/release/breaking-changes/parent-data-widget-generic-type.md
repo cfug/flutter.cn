@@ -32,7 +32,8 @@ new `SuperStack` widget.
 在此次更改之前，`ParentDataWidget` 是作为祖先被绑定至特定的 `RenderObjectWidget` 类型的。
 例如：`Positioned` 部件只能在 `Stack` 部件中使用。
 
-通过此次更改，只要上述 `RenderObjectWidget` 的 `RenderObject` 设置了正确的 `ParentData` 类型，
+通过此次更改，只要上述 `RenderObjectWidget` 的 `RenderObject`
+设置了正确的 `ParentData` 类型，
 `ParentDataWidget` 就可以作为任意 `RenderObjectWidget` 类型的祖先和其一起使用。
 
 通过这种新的方式，`Positioned` 部件就可以通过假想的 `SuperStack` 新部件而被重用了。
@@ -152,7 +153,8 @@ for this `ParentDataWidget`. Most of the time,
 you just want to return the old generic type here
 (`FrogJar` in this example).
 
-父类 `ParentDataWidget` 的泛型从 `FrogJar` （一个 `RenderObjectWidget`）更改为 `FrogJarParentData`
+父类 `ParentDataWidget` 的泛型从 `FrogJar`（一个 `RenderObjectWidget`）
+更改为 `FrogJarParentData`
 （`FrogSize.applyParentData` 所操作的 `ParentData` 类型）。
 
 除此之外，子类 `ParentDataWidget` 实现了新的 `debugTypicalAncestorWidgetClass`。

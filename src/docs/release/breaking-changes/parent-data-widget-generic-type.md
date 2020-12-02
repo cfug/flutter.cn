@@ -29,12 +29,10 @@ sets up the correct `ParentData` type. In this new world,
 the `Positioned` widget can be reused with a hypothetical
 new `SuperStack` widget.
 
-在此次更改之前，`ParentDataWidget` 是作为祖先被绑定至特定的 `RenderObjectWidget` 类型的。
+在此次更改之前，`ParentDataWidget` 是作为祖先节点被绑定至特定的 `RenderObjectWidget` 类型的。
 例如：`Positioned` 部件只能在 `Stack` 部件中使用。
-
 通过此次更改，只要上述 `RenderObjectWidget` 的 `RenderObject` 设置了正确的 `ParentData` 类型，
-`ParentDataWidget` 就可以作为任意 `RenderObjectWidget` 类型的祖先和其一起使用。
-
+`ParentDataWidget` 就可以作为任意 `RenderObjectWidget` 类型的祖先节点和其一起使用。
 通过这种新的方式，`Positioned` 部件就可以通过假想的 `SuperStack` 新部件而被重用了。
 
 ## Description of change
@@ -156,7 +154,7 @@ you just want to return the old generic type here
 （`FrogSize.applyParentData` 所操作的 `ParentData` 类型）。
 
 除此之外，子类 `ParentDataWidget` 实现了新的 `debugTypicalAncestorWidgetClass`。
-它给 `ParentDataWidget` 返回了一个典型的 `RenderObjectWidget` 类型的祖先。
+它给 `ParentDataWidget` 返回了一个典型的 `RenderObjectWidget` 类型的祖先节点。
 大多数时候，您只是想在此处返回旧的泛型（在这个示例中就是 `FrogJar`）。
 
 ## Timeline
@@ -174,18 +172,16 @@ In stable release: 1.17
 ## 参考文献
 
 API documentation:
-* [`ParentDataWidget`][]
 
-API文档：
+API 文档：
+
 * [`ParentDataWidget`][]
 
 Relevant PR:
-* [Make ParentDataWidget usable with different ancestor RenderObjectWidget types][]
 
 相关 PR：
+
 * [Make ParentDataWidget usable with different ancestor RenderObjectWidget types][]
-
-
 
 [Make ParentDataWidget usable with different ancestor RenderObjectWidget types]: {{site.github}}/flutter/flutter/pull/48541
 [`ParentDataWidget`]: {{site.api}}/flutter/widgets/ParentDataWidget-class.html

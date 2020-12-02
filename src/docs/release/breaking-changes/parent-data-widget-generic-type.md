@@ -150,7 +150,7 @@ for this `ParentDataWidget`. Most of the time,
 you just want to return the old generic type here
 (`FrogJar` in this example).
 
-父类 `ParentDataWidget` 的泛型从 `FrogJar` （一个 `RenderObjectWidget`）更改为 `FrogJarParentData`
+父类 `ParentDataWidget` 的泛型从 `FrogJar`（一个 `RenderObjectWidget`）更改为 `FrogJarParentData`
 （`FrogSize.applyParentData` 所操作的 `ParentData` 类型）。
 
 除此之外，子类 `ParentDataWidget` 实现了新的 `debugTypicalAncestorWidgetClass`。

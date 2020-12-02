@@ -31,7 +31,8 @@ new `SuperStack` widget.
 
 在此次更改之前，`ParentDataWidget` 是作为祖先节点被绑定至特定的 `RenderObjectWidget` 类型的。
 例如：`Positioned` 部件只能在 `Stack` 部件中使用。
-通过此次更改，只要上述 `RenderObjectWidget` 的 `RenderObject` 设置了正确的 `ParentData` 类型，
+通过此次更改，只要上述 `RenderObjectWidget` 的 `RenderObject`
+设置了正确的 `ParentData` 类型，
 `ParentDataWidget` 就可以作为任意 `RenderObjectWidget` 类型的祖先节点和其一起使用。
 通过这种新的方式，`Positioned` 部件就可以通过假想的 `SuperStack` 新部件而被重用了。
 

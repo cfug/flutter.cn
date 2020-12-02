@@ -50,7 +50,6 @@ is supposed to be used in.
 
 `ParentDataWidget` 的泛型参数已由 `RenderObjectWidget` 更改为 `ParentData`，
 并添加了一个新的调试属性 `debugTypicalAncestorWidgetClass`。
-
 后者用于展示错误信息，让用户更好地理解 `ParentDataWidget` 中应该使用的上下文。
 
 ## Migration guide
@@ -63,7 +62,6 @@ If you do, the analyzer shows the following warnings when you
 upgrade to the Flutter version that includes this change:
 
 如果您继承或实现了 `ParentDataWidget`，则必须按照本节所述迁移您的代码。
-
 当您升级至包含了此更改的 Flutter 版本时，分析器会展示如下警告信息：
 
 ```none
@@ -153,7 +151,6 @@ you just want to return the old generic type here
 
 父类 `ParentDataWidget` 的泛型从 `FrogJar`（一个 `RenderObjectWidget`）更改为 `FrogJarParentData`
 （`FrogSize.applyParentData` 所操作的 `ParentData` 类型）。
-
 除此之外，子类 `ParentDataWidget` 实现了新的 `debugTypicalAncestorWidgetClass`。
 它给 `ParentDataWidget` 返回了一个典型的 `RenderObjectWidget` 类型的祖先节点。
 大多数时候，您只是想在此处返回旧的泛型（在这个示例中就是 `FrogJar`）。

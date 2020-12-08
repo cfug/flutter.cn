@@ -97,7 +97,6 @@ attach an instance of `FlutterFragment` in `onCreate()` within the
 {% samplecode add-fragment %}
 {% sample Java %}
 <!--code-excerpt "MyActivity.java" title-->
-
 ```java
 public class MyActivity extends FragmentActivity {
     // Define a tag String to represent the FlutterFragment within this
@@ -209,7 +208,6 @@ Flutter 依赖操作系统的各种信号，
 {% samplecode forward-activity-calls %}
 {% sample Java %}
 <!--code-excerpt "MyActivity.java" title-->
-
 ```java
 public class MyActivity extends FragmentActivity {
     @Override
@@ -341,7 +339,6 @@ factory method.
 {% samplecode use-prewarmed-engine %}
 {% sample Java %}
 <!--code-excerpt "MyApplication.java" title-->
-
 ```java
 // Somewhere in your app, before your FlutterFragment is needed,
 // like in the Application class ...
@@ -447,7 +444,6 @@ allows you to specify a desired initial route, as shown:
 {% samplecode launch-with-initial-route %}
 {% sample Java %}
 <!--code-excerpt "MyActivity.java" title-->
-
 ```java
 // With a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -498,7 +494,6 @@ To specify an entrypoint, build `FlutterFragment`, as shown:
 {% samplecode launch-with-custom-entrypoint %}
 {% sample Java %}
 <!--code-excerpt "MyActivity.java" title-->
-
 ```java
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
@@ -565,7 +560,6 @@ Select a `TextureView` by building a `FlutterFragment` with a
 {% samplecode launch-with-rendermode %}
 {% sample Java %}
 <!--code-excerpt "MyActivity.java" title-->
-
 ```java
 // With a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -579,7 +573,6 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
 ```
 {% sample Kotlin %}
 <!--code-excerpt "MyActivity.kt" title-->
-
 ```kotlin
 // With a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -654,7 +647,6 @@ build it with the following configuration:
 {% samplecode launch-with-transparency %}
 {% sample Java %}
 <!--code-excerpt "MyActivity.java" title-->
-
 ```java
 // Using a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -734,7 +726,6 @@ use the `shouldAttachEngineToActivity()` method in
 {% samplecode attach-to-activity %}
 {% sample Java %}
 <!--code-excerpt "MyActivity.java" title-->
-
 ```java
 // Using a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -748,7 +739,6 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
 ```
 {% sample Kotlin %}
 <!--code-excerpt "MyActivity.kt" title-->
-
 ```kotlin
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()

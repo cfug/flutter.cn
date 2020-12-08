@@ -415,7 +415,7 @@ file of the package, it's bundled automatically with the
 application. In particular, assets used by the package
 itself must be specified in its `pubspec.yaml`.
 
-如果在 `pubspec.yaml` 文件中声明了资源文件，它将会打包到响应的 package 中。
+如果期望的资源文件被指定在 package 的 `pubspec.yaml` 文件中，它会被自动打包到应用程序中。
 特别是，package 本身使用的资源必须在 `pubspec.yaml` 中指定。
 
 A package can also choose to have assets in its `lib/`

@@ -22,8 +22,8 @@ single-`Activity` app. Flutter provides a `FlutterFragment`
 so that developers can present a Flutter experience any place
 that they can use a regular `Fragment`.
 
-本篇指南介绍了如何向一个现有的 Android 应用中添加 Flutter  [`Fragment`][] 。
-在 Android 开发中，一个 `Fragment` 代表了一块较大的模块化 UI。 
+本篇指南介绍如何向一个现有的 Android 应用中添加 Flutter `Fragment`。
+在 Android 开发中，一个 [`Fragment`][] 代表了一块较大的模块化 UI。 
 `Fragment` 可能被用来展示滑动抽屉、标签内容和 `ViewPager` 中的页面，
 或者在单 `Activity` 应用中，`Fragment` 可能仅代表正常的屏幕内容。
 Flutter 提供了 `FlutterFragment`，
@@ -198,9 +198,9 @@ Flutter behavior. Flutter depends on various OS signals that
 must  be forwarded from your host `Activity` to `FlutterFragment`.
 These calls are shown in the following example:
 
-前面的代码设置了 Dart 入口函数为 `main()`、初始路由为 `/` 以及使用了新的 `FlutterEngine`，
-这些已经足以渲染出您的 Flutter UI。
-但是这些代码无法满足我们对 Flutter 的预期。
+上面的代码会以 `main()` 为 Dart 入口函数， `/` 为初始路由，
+并使用新的 `FlutterEngine`，能够正确渲染出 Flutter UI。
+但是，这些代码还无法使 Flutter 如预期一样完全正常地工作。
 Flutter 依赖操作系统的各种信号，
 这些信号必须通过宿主 `Activity` 发送到 `FlutterFragment` 中。
 下面的示例展示了这些系统回调：
@@ -297,7 +297,7 @@ your `FlutterFragment` works as expected.
 You have now added a `FlutterFragment` to your existing Android app.
 
 随着 OS 信号传递到 Flutter，
-您的 `FlutterFragment` 运行表现达到了预期。
+您的 `FlutterFragment` 可以如预期正常工作。
 现在可以尝试将 `FlutterFragment` 添加进您的 Android 应用了。
 
 The simplest integration path uses a new `FlutterEngine`,
@@ -309,7 +309,7 @@ a cached, pre-warmed `FlutterEngine`, which is discussed next.
 
 使用新的 `FlutterEngine` 是最简单的集成方式，
 但是会存在一段明显的初始化时间，
-而且在 Flutter 初始化和首次渲染完成之前会出现短暂的白屏。
+此时，在 Flutter 初始化和首次渲染完成之前会出现短暂的白屏。
 使用缓存、预热的 `FlutterEngine` 则可以避免上述的大部分耗时，
 下面我们将讨论这些内容。
 
@@ -482,7 +482,7 @@ Dart entrypoints. In a typical Flutter app, there is only one
 Dart entrypoint: `main()`, but you can define other entrypoints.
 
 和变化的初始路由类似，不同的 `FlutterFragment` 可能需要执行不同的 Dart 代码入口。
-在一个典型的 Flutter 应用中只会有一个 `main()` 入口，但是您可以定义不同的入口。
+正常的 Flutter 应用中，只会有一个 `main()` 入口，但是您也可以定义不同的入口。
 
 `FlutterFragment` supports specification of the desired
 Dart entrypoint to execute for the given Flutter experience.
@@ -550,7 +550,7 @@ Select a `TextureView` by building a `FlutterFragment` with a
 
 `FlutterFragment` 可以选择使用 `SurfaceView` 或者 `TextureView` 来渲染其内容。
 默认配置的 `SurfaceView` 在性能上明显好于 `TextureView`。
-然而，`SurfaceView` 无法插入 Android 的 `View` 层级之中。
+然而，`SurfaceView` 无法插入到 Android 的 `View` 层级之中。
 `SurfaceView` 在视图层级中必须是最底层的 `View` 或者最顶层的 `View`。
 此外，在 Android N 之前，`SurfaceView` 无法用于制作动画，
 因为它们的布局和渲染无法和视图层级中的其它 `View` 同步。

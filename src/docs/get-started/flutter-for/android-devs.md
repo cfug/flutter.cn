@@ -3008,9 +3008,6 @@ plugin documentation.
 [Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging) 
 插件实现此功能。想要获得更多关于使用 Firebase Cloud Messaging API 的信息，请查阅 
 [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) 插件文档。
-[Firebase Messaging][] plugin.
-For more information on using the Firebase Cloud Messaging API,
-see the [`firebase_messaging`][] plugin documentation.
 
 
 [Add Flutter to existing app]: /docs/development/add-to-app

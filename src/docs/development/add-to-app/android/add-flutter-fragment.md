@@ -525,7 +525,7 @@ not included in the `dartEntrypoint` `String` name.
 
   当使用已预热的 `FlutterEngine` 构建 `FlutterFragment` 时，指定的 Dart 入口是无效的。
   因为已预热的 `FlutterEngine` 已经执行了一个入口函数。
-  只有 `FlutterEngine`   在预热之时是可以明确选择入口的。
+  只有 `FlutterEngine` 在预热之时是可以明确选择入口的。
 
 {{site.alert.end}}
 
@@ -633,7 +633,7 @@ Flutter supports translucency in a `FlutterFragment`.
   这意味着 `SurfaceView` 会展示在其它所有 `View` 之上。
   这是 `SurfaceView` 自身的限制。
   如果可以接受您的 Flutter 内容渲染在其它所有内容之上，
-  应该使用默认的 `surface` 作为`FlutterFragment` 的 `RenderMode` 的配置。
+  应该使用默认的 `surface` 作为 `FlutterFragment` 的 `RenderMode` 的配置。
   但是如果需要在 Flutter 内容的上方和下方展示 Android `View`，
   您必须指定 `RenderMode` 为 `texture`。
 

@@ -91,7 +91,7 @@ attach an instance of `FlutterFragment` in `onCreate()` within the
 `Activity`, or at another time that works for your app:
 
 要向宿主 `Activity` 中添加 `FlutterFragment`，
-首先需要在 `Activity` 的 `onCreate()` 或者其它合适的地方，
+需要在 `Activity` 的 `onCreate()` 或者其它合适的地方，
 实例化 `FlutterFragment` 并且与 `Activity` 绑定。
 
 {% samplecode add-fragment %}
@@ -333,8 +333,7 @@ instantiate a `FlutterFragment` with the `withCachedEngine()`
 factory method.  
 
 要在 `FlutterFragment` 中使用预热 `FlutterEngine`，
-可以使用 `FlutterFragment` 的工厂方法 `withCachedEngine()` ，
-以完成 `FlutterFragment` 的实例化。
+可以使用工厂方法 `withCachedEngine()` 实例化 `FlutterFragment`。
 
 {% samplecode use-prewarmed-engine %}
 {% sample Java %}
@@ -396,8 +395,7 @@ By providing a pre-warmed `FlutterEngine`,
 as previously shown, your app renders the
 first Flutter frame as quickly as possible.
 
-通过提供预热的 `FlutterEngine`（如上所示），
-您的应用将以最快速度渲染出第一帧。
+如上所示，通过提供预热的 `FlutterEngine`，您的应用将以最快速度渲染出第一帧。
 
 #### Initial route with a cached engine
 
@@ -513,8 +511,8 @@ of a Dart entrypoint called `mySpecialEntrypoint()`.
 Notice that the parentheses `()` are
 not included in the `dartEntrypoint` `String` name.
 
-上面 `FlutterFragment` 的配置将 Dart 入口的执行函数设置为 `mySpecialEntrypoint()`。
-注意：括号 `()` 不包含在 `dartEntrypoint` 的 `String` 类型的参数中。
+这里，`FlutterFragment` 的配置会将 Dart 入口的执行函数设置为 `mySpecialEntrypoint()`。
+需要注意的是，括号 `()` 不包含在 `dartEntrypoint` 的 `String` 类型的参数中。
 
 {{site.alert.note}}
   `FlutterFragment`'s Dart entrypoint property has no effect
@@ -683,7 +681,8 @@ control system chrome like Android's status bar,
 navigation bar, and orientation.
 
 一些应用选择使用 `Fragment` 作为整个 Android 屏幕内容。
-在这些应用里，`Fragment` 控制一些系统属性（例如 Android 状态栏、导航栏以及屏幕方向）是合理的。
+在这些应用里，`Fragment` 可能会需要控制一些系统属性，
+例如 Android 的状态栏、导航栏以及屏幕方向。
 
 {% asset
  development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_fullscreen.png
@@ -697,9 +696,9 @@ inappropriate for the `FlutterFragment` to affect
 Android's system chrome because there are other UI
 pieces within the same `Window`.
 
-在其它应用中，`Fragment` 只是整个 UI 的一部分。
+在其它应用中，`Fragment` 通常只是整个 UI 的一部分。
 `FlutterFragment` 可能用于实现抽屉、视频播放器或卡片的内容。
-在这些情况下，`FlutterFragment` 能够影响 Android 的系统属性是不合理的，
+在这些情况下，`FlutterFragment` 就不应当影响 Android 的系统属性，
 因为同一个 `Window` 中还有其它 UI 组件。
 
 {% asset
@@ -716,10 +715,10 @@ prevent Flutter from controlling the `Activity`'s system UI,
 use the `shouldAttachEngineToActivity()` method in
 `FlutterFragment`'s `Builder`, as shown:
 
-`FlutterFragment` 提供了一个概念，
-用于帮助区分 `FlutterFragment` 应该能够控制宿主 `Activity` 和应该只影响自身行为这两种情形。
-为了防止 `FlutterFragment` 将其 `Activity` 暴露给 Flutter 插件，
-也防止 Flutter 控制 `Activity` 的系统 UI，
+`FlutterFragment` 自身包含一种特性，
+可以用于决定 `FlutterFragment` 是否应该控制宿主 `Activity`，或者只影响自身行为。
+要预防 `FlutterFragment` 将其 `Activity` 暴露给 Flutter 插件，
+以免 Flutter 控制 `Activity` 的系统 UI，
 可以使用 `FlutterFragment`  的 `Builder` 中的 `shouldAttachEngineToActivity()` 方法。
 如下所示：
 

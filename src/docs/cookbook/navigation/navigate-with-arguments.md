@@ -46,7 +46,7 @@ route and read the arguments using `ModalRoute.of()`
 and `onGenerateRoute()` using the following steps:
 
 这个章节讲解的是如何给特定路由传递参数并使用
-`ModelRoute.of()` 和 `onGenerateRoute()` 来读取参数。
+`ModalRoute.of()` 和 `onGenerateRoute()` 来读取参数。
 
 ## Directions
 

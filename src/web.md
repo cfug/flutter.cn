@@ -122,6 +122,11 @@ The following resources can help you get started:
   要向现有应用添加Web支持，或创建一个包含 Web 支持的新应用，
   请参阅 [使用 Flutter 构建 Web 应用][Building a web application with Flutter]。
   
+* To learn about Flutter's different web renderers (HTML and CanvasKit), see 
+  [Web renderers][]
+
+  了解更多关于 Flutter web 渲染器 (HTML and CanvasKit) 的不同之处，请查阅[网页渲染器][Web renderers]。
+
 * To learn how to create a responsive Flutter
   app, see [Creating responsive apps][].
   
@@ -163,3 +168,4 @@ The following resources can help you get started:
 [Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
 [web FAQ]: /docs/development/platform-integration/web
 [web samples for Flutter]: https://flutter.github.io/samples/
+[Web renderers]: /docs/development/tools/web-renderers

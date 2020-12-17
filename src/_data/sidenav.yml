@@ -143,7 +143,7 @@
           permalink: /docs/development/platform-integration/ios-app-clip
         - title: Apple Watch 支持
           permalink: /docs/development/platform-integration/apple-watch
-        - title: C/C++ 代码集成及调用
+        - title: C 语言代码集成及调用
           permalink: /docs/development/platform-integration/c-interop
         - title: 托管 Android 和 iOS 原生视图
           permalink: /docs/development/platform-integration/platform-views
@@ -254,6 +254,8 @@
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式化
           permalink: /docs/development/tools/formatting
+        - title: Web 渲染
+          permalink: /docs/development/tools/web-renderers
     - title: 迁移说明
       permalink: /docs/development/androidx-migration
       children:
@@ -283,6 +285,9 @@
       permalink: /docs/testing/errors
     - title: 测试 Flutter 应用
       permalink: /docs/testing
+      match-page-url-exactly: true
+    - title: 集成测试
+      permalink: /docs/testing/integration-tests
       match-page-url-exactly: true
 
 - title: 性能优化

@@ -147,6 +147,11 @@ from the test driver code to avoid skewing the results.
 如 iOS 模拟器 (iOS Simulator) 或 Android 模拟器 (Android Emulator) 。
 测试中的应用通常与测试驱动程序代码隔离，以避免结果出现偏差。
 
+For more information on how to write integration tests, see the [integration
+testing page][].
+
+更多关于如何编写集成测试的相关信息，请参阅[集成测试文档][integration testing page]。
+
 ### Recipes
 
 ### 更多信息
@@ -206,3 +211,4 @@ integration services, see the following:
 [Test Flutter apps on Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/#testing-the-flutter-app
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
 [Test Flutter apps on Travis]: {{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c
+[integration testing page]: /docs/testing/integration-tests

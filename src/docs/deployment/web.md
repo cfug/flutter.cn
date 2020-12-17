@@ -84,11 +84,14 @@ Release 模式构建的 Web 应用被压缩了，并且 Tree-shaking 执行了�
 
 Build the app for deployment using the
 `flutter build web` command.
+You can also choose which renderer to use
+by using the `--web-renderer` option (See[Web renderers][]).
 This generates the app, including the assets,
 and places the files into the `/build/web`
 directory of the project.
 
 使用 `flutter build web` 命令构建应用程序以进行部署。
+你也可以通过使用 `--web-renderer` 自行选择渲染方式。（请查看[网页渲染器][Web renderers]）
 这将生成包括资源的应用程序，并将文件放入项目的 `/build/web` 目录中。
 
 The release build of a simple app has the
@@ -177,3 +180,5 @@ so please [give us feedback][] if you see something that doesn’t look right.
 [give us feedback]: {{site.github}}/flutter/flutter/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/smb/web-hosting/
 [`iframe`]: https://html.com/tags/iframe/
+[Web renderers]: /docs/development/tools/web-renderers
+

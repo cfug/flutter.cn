@@ -390,29 +390,79 @@ Finally, create a build archive and upload it to App Store Connect:
 
 最后，创建一个构建归档并将其上传到 App Store Connect：
 
-1. Select **Product > Archive** to produce a build archive.
+<ol markdown="1">
+<li markdown="1">
 
-   选择 **Product > Archive** 来生成一个构建归档
+Select **Product > Archive** to produce a build archive.
 
-1. In the sidebar of the Xcode Organizer window, select your iOS app,
-   then select the build archive you just produced.
+选择 **Product > Archive** 来生成一个构建归档
 
-   在 Xcode 组织界面的侧边栏中，选择你的 iOS app，然后选择你刚刚的生成的构建归档。
+{{site.alert.note}}
 
-1. Click the **Validate App** button. If any issues are reported,
-   address them and produce another build. You can reuse the same
-   build ID until you upload an archive.
+  On Flutter version 1.24.0-6.0 and later you can create an
+  archive by instead running `flutter build ipa`.
+  Then open `build/ios/archive/MyApp.xcarchive` in Xcode to
+  validate and distribute your app.
+  See `flutter build ipa -h` for available flags.
 
-   点击 **Validate...** 按钮。如果报告了任何问题，记录下他们并重新开始一个新的构建。
-   你可以使用同一个 Build ID 直到你上传了一个归档。
+  在 Flutter 1.24.0-6.0 以及之后的版本你可以创建一个归档（archive），
+  而不是运行 `flutter build ipa`。
+  然后打开 Xcode 中的 `build/ios/archive/MyApp.xcarchive` 目录以验证并发布你的应用。
+  运行 `flutter build ipa -h` 以查看可用标记。
 
-1. After the archive has been successfully validated, click
-   **Distribute App**. You can follow the status of your build in the
-   Activities tab of your app's details page on
-   [App Store Connect][appstoreconnect_login].
+{{site.alert.end}}
 
-   当这个归档校验成功以后，点击 **Upload to App Store...**。你可以在
-   [App Store Connect][appstoreconnect_login] 中应用详情页面的 Activities 标签页查看你的构建状态。
+</li>
+<li markdown="1">
+
+In the sidebar of the Xcode Organizer window, select your iOS app,
+then select the build archive you just produced.
+
+在 Xcode 组织界面的侧边栏中，选择你的 iOS app，然后选择你刚刚的生成的构建归档。
+
+</li>
+<li markdown="1">
+
+Click the **Validate App** button. If any issues are reported,
+address them and produce another build. You can reuse the same
+build ID until you upload an archive.
+
+点击 **Validate...** 按钮。如果报告了任何问题，记录下他们并重新开始一个新的构建。
+你可以使用同一个 Build ID 直到你上传了一个归档。
+
+</li>
+<li markdown="1">
+
+After the archive has been successfully validated, click
+**Distribute App**. You can follow the status of your build in the
+Activities tab of your app's details page on
+[App Store Connect][appstoreconnect_login].
+
+当这个归档校验成功以后，点击 **Upload to App Store...**。你可以在
+[App Store Connect][appstoreconnect_login] 中应用详情页面的 Activities 标签页查看你的构建状态。
+
+{{site.alert.note}}
+
+  When you export your app at the end of **Distribute App**,
+  Xcode will create a directory containing
+  an IPA of your app and an `ExportOptions.plist` file.
+  On Flutter version 1.24.0-6.0 and later you can
+  create new IPAs with the same options without launching
+  Xcode by running
+  `flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
+  See `xcodebuild -h` for details about the keys in this property list.
+
+  当你最后在 **Distribute App** 导出应用时，Xcode 将会创建一个含有你的应用 IPA 
+  以及 `ExportOptions.plist` 文件的文件夹。
+  在 Flutter 1.24.0-6.0 版本后，你可以无需启动 Xcode，通过运行 `flutter build ipa --export-options-plist=path/to/ExportOptions.plist` 
+  就可以创建新的 IPA。运行 `xcodebuild -h` 以查看该属性列表中 key 的详细信息。
+
+{{site.alert.end}}
+
+</li>
+</ol>
+
+   
 
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers

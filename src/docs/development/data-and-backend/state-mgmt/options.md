@@ -263,6 +263,34 @@ Reactive state management that uses the Command Pattern and is based on `ValueNo
 * [Flutter Command package][] 
 * [RxCommand package][], 基于 `Stream` 的实现.
 
+## Binder
+
+A state management package that uses `InheritedWidget` at its core. Inspired in part by recoil. This package promotes the separation of concerns.
+一个使用 `InheritedWidget` 作为核心实现的状态管理库。受到 recoil 的启发，该库提供了分治的解决方式。
+
+* [Binder package][] 
+
+  [Binder 包][Binder package]
+
+* [Binder examples][]
+
+  [Binder 样例][Binder examples]
+
+* [Binder snippets][], vscode snippets to be even more productive with Binder
+
+  [Binder snippets][] 是一个 vscode 插件，能够将代码拆分以获得更高的生产力
+
+## GetX
+
+A simplified reactive state management solution.
+
+一个简单的响应式状态管理解决方案。
+
+* [GetX package][]
+* [Complete GetX State Management][], a video by Tadas Petra
+* [GetX Flutter Firebase Auth Example][], by Jeff McMorris
+
+
 [Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
 [Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
 [Fish-Redux-Library]: {{site.pub-pkg}}/fish_redux
@@ -277,6 +305,7 @@ Reactive state management that uses the Command Pattern and is based on `ValueNo
 [BloC Library]: https://felangel.github.io/bloc
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
 [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: https://www.youtube.com/watch?v=Wj216eSBBWs
+[Complete GetX State Management]: https://www.youtube.com/watch?v=CNpXbeI_slw
 [Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [Flutter: State Management with Mobx]: https://www.youtube.com/watch?v=p-MUBLOEkCs
@@ -285,6 +314,7 @@ Reactive state management that uses the Command Pattern and is based on `ValueNo
 [Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
 [Flutter + Redux&mdash;How to make a shopping list app]: https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
+[GetX Flutter Firebase Auth Example]: {{site.medium}}/@jeffmcmorris/getx-flutter-firebase-auth-example-b383c1dd1de2
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
 [Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
@@ -294,6 +324,7 @@ Reactive state management that uses the Command Pattern and is based on `ValueNo
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
 [Pragmatic State Management in Flutter]: https://www.youtube.com/watch?v=d_m5csmrf7I
 [Provider package]: {{site.pub-pkg}}/provider
+[GetX package]: {{site.pub-pkg}}/get
 [Reactive Programming - Streams - BLoC - Practical Use Cases]: https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases
 [Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
@@ -305,3 +336,6 @@ Reactive state management that uses the Command Pattern and is based on `ValueNo
 [GetIt Mixin package]: https://pub.dev/packages/get_it_mixin
 [Flutter Command package]: https://pub.dev/packages/flutter_command
 [RxCommand package]: https://pub.dev/packages/rx_command
+[Binder package]: https://pub.dev/packages/binder
+[Binder examples]: https://github.com/letsar/binder/tree/main/examples
+[Binder snippets]: https://marketplace.visualstudio.com/items?itemName=romain-rastel.flutter-binder-snippets

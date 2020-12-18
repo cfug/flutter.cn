@@ -21,6 +21,7 @@ release, and listed in alphabetical order:
 * [TextSelectionTheme migration][]
 * [Android FlutterMain.setIsRunningInRobolectricTest testing API removed][]
 * [Clip behavior][]
+* [Dry layout support for RenderBox][]
 
 [Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
 [Android FlutterMain.setIsRunningInRobolectricTest testing API removed]: /docs/release/breaking-changes/android-setIsRunningInRobolectricTest-removed
@@ -30,6 +31,7 @@ release, and listed in alphabetical order:
 [SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
 [TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
 [Clip behavior]: /docs/release/breaking-changes/clip-behavior
+[Dry layout support for RenderBox]: /docs/release/breaking-changes/renderbox-dry-layout
 
 ### Released in Flutter 1.22
 

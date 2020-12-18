@@ -327,6 +327,13 @@ Release 构建产物使用 [dart2js][]（不是 dartdevc）
 输出文件在 `build/web` 目录下，
 包括需要一起提供的 `assets` 资源文件。
 
+You can also include `--web-renderer html`  or `--web-renderer canvaskit` to
+select between the HTML or CanvasKit renderers, respsectively. For more
+information, see [Web renderers][].
+
+你也可以使用 `--web-renderer html` 或 `--web-renderer canvaskit` 来切换 HTML 或 CanvasKit 渲染器。
+更多信息请参阅[网页渲染器][Web renderers]。
+
 For more information, see
 [Build and release a web app][].
 
@@ -364,3 +371,4 @@ $ flutter create .
 [Android Studio CN]: https://developer.android.com/studio
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [Visual Studio Code]: https://code.visualstudio.com/
+[Web renderers]: /docs/development/tools/web-renderers

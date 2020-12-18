@@ -84,7 +84,7 @@ CSS 所处理的字体样式、大小以及其他文本属性，都是一个 [`T
 
 For text-align property in CSS that is used for aligning text, there is a textAlign property of a [`Text`][] widget.
 
-对于 CSS 中文本对齐属性来讲，它的作用就是对齐文字。我们这里使用 [`Text`][] widget 中的 textAlign 属性达到一样的作用。
+[`Text`][] widget 中的 textAlign 属性与 CSS 中的 text-align 属性作用相同，用来控制文本的对齐方向。
 
 In both HTML and Flutter, child elements or widgets are anchored at
 the top left, by default.

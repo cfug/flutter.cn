@@ -266,6 +266,7 @@ Reactive state management that uses the Command Pattern and is based on `ValueNo
 ## Binder
 
 A state management package that uses `InheritedWidget` at its core. Inspired in part by recoil. This package promotes the separation of concerns.
+
 一个使用 `InheritedWidget` 作为核心实现的状态管理库。受到 recoil 的启发，该库提供了分治的解决方式。
 
 * [Binder package][] 

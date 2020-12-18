@@ -405,8 +405,8 @@ Select **Product > Archive** to produce a build archive.
   validate and distribute your app.
   See `flutter build ipa -h` for available flags.
 
-  在 Flutter 1.24.0-6.0 以及之后的版本你可以创建一个归档（archive），
-  而不是运行 `flutter build ipa`。
+  在 Flutter 1.24.0-6.0 以及之后的版本
+  你可以通过运行 `flutter build ipa` 创建一个归档（archive）。
   然后打开 Xcode 中的 `build/ios/archive/MyApp.xcarchive` 目录以验证并发布你的应用。
   运行 `flutter build ipa -h` 以查看可用标记。
 
@@ -428,7 +428,7 @@ address them and produce another build. You can reuse the same
 build ID until you upload an archive.
 
 点击 **Validate...** 按钮。如果报告了任何问题，记录下他们并重新开始一个新的构建。
-你可以使用同一个 Build ID 直到你上传了一个归档。
+在你上传一个归档前，可以一直使用同一个 Build ID。
 
 </li>
 <li markdown="1">
@@ -461,8 +461,6 @@ Activities tab of your app's details page on
 
 </li>
 </ol>
-
-   
 
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers

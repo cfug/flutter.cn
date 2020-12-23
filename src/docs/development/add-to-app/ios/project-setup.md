@@ -28,10 +28,13 @@ Your development environment must meet the
 [macOS system requirements for Flutter][]
 with [Xcode installed][].
 Flutter supports iOS 8.0 and later.
+Additionally, you will need [CocoaPods][]
+version 1.10 or later.
 
 你的开发环境必须满足
 [Flutter 对 macOS 系统的版本要求][macOS system requirements for Flutter]
 并 [已经安装 Xcode][Xcode installed]，Flutter 支持 iOS 8.0 及以上。
+此外，你还需要 1.10 或以上版本的 [CocoaPods][]
 
 ## Create a Flutter module
 
@@ -105,11 +108,11 @@ The `.ios/` hidden subfolder contains an Xcode workspace where
 you can run a standalone version of your module.
 It is a wrapper project to bootstrap your Flutter code,
 and contains helper scripts to facilitate building frameworks or
-embedding the module into your existing application with [CocoaPods][].
+embedding the module into your existing application with CocoaPods.
 
 `.ios/` 隐藏文件夹包含了一个 Xcode workspace，用于单独运行你的 Flutter module。
 它是一个独立启动 Flutter 代码的壳工程，并且包含了一个帮助脚本，
-用于编译 framewroks 或者使用 [CocoaPods][] 将 Flutter module 集成到你的既有应用。
+用于编译 framewroks 或者使用 CocoaPods 将 Flutter module 集成到你的既有应用。
 
 {{site.alert.note}}
 

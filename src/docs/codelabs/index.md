@@ -386,10 +386,10 @@ We also recommend the following online class:
 {{site.alert.note}}
 
   If you have trouble viewing any of the codelabs
-  on `codelabs.google.developer.com`, try 
+  on [`codelabs.developers.google.com`](https://codelabs.developers.google.com/), try 
   [this mirror of the Flutter codelabs][].
 
-  如果你在 `codelabs.google.developer.com` 浏览这些 codelabs 的时候遇到问题，
+  如果你在 [`codelabs.developers.google.com`](https://codelabs.developers.google.com/) 浏览这些 codelabs 的时候遇到问题，
   请尝试 [访问这个 Flutter codelabs 镜像][this mirror of the Flutter codelabs]。
 
 {{site.alert.end}}

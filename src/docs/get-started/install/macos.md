@@ -31,18 +31,23 @@ your development environment must meet these minimum requirements:
 
   **磁盘空间**：2.8 GB（不包含 IDE 或其余工具所需要的磁盘空间） 
 
-- **Tools**: Flutter depends on these command-line tools being available
-  in your environment.
+- **Tools**: Flutter uses `git` for installation and upgrade. We recommend
+  installing [Xcode][], which includes `git`, but you can also 
+  [install `git` separately][]. 
+  
+  **工具**：Flutter 使用 `git` 进行安装和升级， 我们建议您安装包括了 `git` 的 Xcode，
+  或者您也可以 [单独安装 `git` ][install `git` separately]。
 
-  **命令工具**：Flutter 需要你的开发环境中已经配置了以下命令行工具。
+{{site.alert.important}}
 
-  - `bash`
-  - `curl`
-  - `git` 2.x
-  - `mkdir`
-  - `rm`
-  - `unzip`
-  - `which`
+  If you're installing on a Mac with the latest [Apple M1 processor][],
+  you may find [these supplementary notes][] useful reading as we complete support
+  for the new Apple Silicon architecture.
+
+  如果您要在装有最新 [Apple M1处理器][] 的 Mac 上安装，
+  则在我们完全支持新的 Apple Silicon 架构时，[这些补充说明][] 可能对您很有用。
+
+{{site.alert.end}}
 
 {% include_relative _get-sdk.md %}
 
@@ -75,3 +80,8 @@ macOS 可以允许开发 iOS、Android 和 Web（技术预览版正式发布）
 Set up your preferred editor.
 
 编辑器设置。
+
+[Apple M1 processor]: https://www.apple.com/mac/m1
+[these supplementary notes]: https://github.com/flutter/flutter/wiki/Developing-with-Flutter-on-Apple-Silicon
+[Xcode]: https://developer.apple.com/xcode/
+[install `git` separately]: https://git-scm.com/download/mac

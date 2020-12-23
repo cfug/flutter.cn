@@ -1683,9 +1683,9 @@ has no equivalent event.
 <br> 应用被挂起，在 iOS 平台没有这一事件。
 
 For more details on the meaning of these states, see
-[`AppLifecycleStatus` documentation][].
+[`AppLifecycleState` documentation][].
 
-关于这些状态含义的更多细节，请参看 [AppLifecycleStatus 文档][`AppLifecycleStatus` documentation]。
+关于这些状态含义的更多细节，请参看 [AppLifecycleStatus 文档][`AppLifecycleState` documentation]。
 
 ## Layouts
 
@@ -2007,7 +2007,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 ```
 
-Instead of creating a "ListView", create a `ListView.builder` that
+Instead of creating a `ListView`, create a `ListView.builder` that
 takes two key parameters: the initial length of the list,
 and an `ItemBuilder` function.
 

@@ -27,28 +27,31 @@ keywords: 国际化
   
 {{site.alert.end}}
 
-If your app might be deployed to users who speak another language then
-you'll need to internationalize it. That means you need to write
-the app in a way that makes it possible to localize values like text
-and layouts for each language or locale that the app
-supports. Flutter provides widgets and classes that help with
-internationalization and the Flutter libraries themselves are
-internationalized.
-
-如果你的 app 会部署给说其他语言的用户使用，那么你就需要对它进行国际化。
-这就意味着你在编写 app 的时候，需要采用一种容易对它进行本地化的方式进行开发，
-这种方式让你能够为每一种语言或者 app 所支持的语言环境下的文本和布局等进行本地化。
-Flutter 提供了 widgets 和类来帮助开发者进行国际化，
-当然 Flutter 库本身就是国际化的。
-
-This page covers concepts and workflows necessary to localize a
-Flutter application using the `MaterialApp` and `CupertinoApp`
-classes, as most apps are written that way. However, applications
-written using the lower level `WidgetsApp` class can also
-be internationalized using the same classes and logic.
-
-由于大多数应用程序都是以这种方式编写的，因此该页面主要介绍了使用 `MaterialApp` 和`CupertinoApp`对 Flutter 应用程序进行本地化所必要的概念和工作流程。 
-但是，使用较低级别的 `WidgetsApp` 类编写的应用程序也可以使用相同的类和逻辑进行国际化。
+  If your app might be deployed to users who speak another language then
+  you'll need to internationalize it. That means you need to write
+  the app in a way that makes it possible to localize values like text
+  and layouts for each language or locale that the app
+  supports. Flutter provides widgets and classes that help with
+  internationalization and the Flutter libraries themselves are
+  internationalized.
+  
+  如果你的 app 会部署给说其他语言的用户使用，那么你就需要对它进行国际化。
+  这就意味着你在编写 app 的时候，需要采用一种容易对它进行本地化的方式进行开发，
+  这种方式让你能够为每一种语言或者 app 所支持的语言环境下的文本和布局等进行本地化。
+  Flutter 提供了 widgets 和类来帮助开发者进行国际化，
+  当然 Flutter 库本身就是国际化的。
+  
+  This page covers concepts and workflows necessary to localize a
+  Flutter application using the `MaterialApp` and `CupertinoApp`
+  classes, as most apps are written that way. However, applications
+  written using the lower level `WidgetsApp` class can also
+  be internationalized using the same classes and logic.
+  
+  由于大多数应用程序都是以这种方式编写的，
+  因此该页面主要介绍了使用 `MaterialApp` 和 `CupertinoApp` 
+  对 Flutter 应用程序进行本地化所需的概念和工作流程。 
+  但是，使用较低级别的 `WidgetsApp` 类编写的应用程序
+  也可以使用相同的类和逻辑进行国际化。
 
 {{site.alert.secondary}}
 
@@ -99,7 +102,7 @@ this package supports 78 languages.
 默认情况下，Flutter 只提供美式英语的本地化。
 如果想要添加其他语言，你的应用必须指定额外的
 `MaterialApp` 或者 `CupertinoApp` 属性并且
-添加一个叫做 `flutter_localizations` 的 package。
+添加一个名为 `flutter_localizations` 的 package。
 截至到 2020 年 11 月份，这个 package 已经支持大约 78 种语言。
 
 To use flutter_localizations,
@@ -157,10 +160,10 @@ Arabic (`ar`) and notice that the messages should
 be localized and widgets are laid out with
 right-to-left layout in mind.
 
-引入`flutter_localizations`package 并添加了上面的代码之后，
+引入 `flutter_localizations` package 并添加了上面的代码之后，
 `Material` 和 `Cupertino` 包现在应该被正确地本地化为 78 个受支持的语言环境之一。
 widget 应当与本地化信息保持同步，并具有正确的从左到右或从右到左的布局。 
-尝试将目标平台的语言环境切换为阿拉伯语（`ar`），
+您可以尝试将目标平台的语言环境切换为阿拉伯语（`ar`），
 请注意应该对信息进行本地化，并且此时的 widget 应当以从右到左的布局排列。
 
 Apps based on `WidgetsApp` are similar except that the

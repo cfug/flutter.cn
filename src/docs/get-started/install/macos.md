@@ -44,8 +44,8 @@ your development environment must meet these minimum requirements:
   you may find [these supplementary notes][] useful reading as we complete support
   for the new Apple Silicon architecture.
 
-  如果您要在装有最新 [Apple M1处理器][] 的 Mac 上安装，
-  则在我们完全支持新的 Apple Silicon 架构时，[这些补充说明][] 可能对您很有用。
+  如果您要在装有最新 [Apple M1处理器][Apple M1 processor] 的 Mac 上安装，
+  则在我们完全支持新的 Apple Silicon 架构时，[这些补充说明][these supplementary notes] 可能对您很有用。
 
 {{site.alert.end}}
 

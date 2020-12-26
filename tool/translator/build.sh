@@ -17,7 +17,7 @@ npm i
 
 npx gulp mark-side-toc
 
-npx nt inject '../../_site/**/*.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
+npx --node-arg --max-old-space-size=2048 nt inject '../../_site/**/*.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
 
 npx --node-arg --max-old-space-size=2048 nt mark '../../_site/**/*.html'
 

@@ -117,17 +117,21 @@ $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 ### 上海交大 Linux 用户组
 
-使用反向代理方式建立 Flutter 镜像，数据与站源实时同步。
-Pub API 返回值未做处理，可能造成无法访问的情况。
+使用全量同步方式建立 Flutter 镜像，数据与站源实时同步（推荐）。
+
+查看帮助文档：
+[Flutter 镜像安装帮助](https://mirrors.sjtug.sjtu.edu.cn/docs/flutter_infra)，
+[Pub 镜像安装帮助](https://mirrors.sjtug.sjtu.edu.cn/docs/dart-pub)。
 
 ```terminal
-$ export PUB_HOSTED_URL=https://dart-pub.mirrors.sjtug.sjtu.edu.cn
+$ export PUB_HOSTED_URL=https://mirrors.sjtug.sjtu.edu.cn/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
 ```
 
 ### 清华大学 TUNA 协会
 
 采取自定义脚本定时主动抓取策略，并配置了完善的回源策略（推荐）。
+
 查看帮助文档：
 [Flutter 镜像安装帮助](https://mirrors.tuna.tsinghua.edu.cn/help/flutter/)，
 [Pub 镜像安装帮助](https://mirrors.tuna.tsinghua.edu.cn/help/dart-pub/)。
@@ -160,9 +164,6 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 
 - 所有 Flutter 镜像目前均不支持/也不应支持上传 packages 到 pub.dev 网站。
   这个过程通常需要登陆谷歌账号，而这将是一个无法绕开且复杂的挑战。
-- 上海交大 Linux 用户组镜像的 Pub API 返回值未做处理，
-  会导致用户获取 package 下载地址时从 Google 服务器获取资源，
-  会造成 Packages 无法下载的情况（错误已上报，目前并未修复）。
 - [上海大学的镜像](https://mirrornews.shuosc.org/p/6d7146f9.html) 
   暂时只允许校内访问，故暂未展示，感谢上海大学 Linux 用户组的同学。
 - 腾讯云开源镜像站使用 TUNA 开源脚本制作，每天同步一次，

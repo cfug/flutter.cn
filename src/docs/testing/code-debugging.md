@@ -149,7 +149,7 @@ void someFunction(double offset) {
 
 ## Debug flags: application layers
 
-## Debug 标识： 应用程序层
+## Debug 标识：应用层
 
 {% comment %}  DevTool's doesn't currently print the render tree.
 {{site.alert.note}}
@@ -850,7 +850,6 @@ The [`debugPrintScheduleFrameStacks`][] flag can also be used
 to print the call stack causing the current frame to be scheduled.
 
 当前帧被调度时，[`debugPrintScheduleFrameStacks`][] 标志也可以用来打印调用堆栈信息。
-
 
 ## Debug flags: layout
 

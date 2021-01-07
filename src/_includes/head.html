@@ -6,17 +6,15 @@
   <title>{{page.title}} {% if page.homepage != true %} - {{ site.title }} {% endif %}</title>
   <link rel="shortcut icon" href="/images/favicon.png">
 
-  <!-- Google Optimize -->
-  <!--<script src="https://www.googleoptimize.com/optimize.js?id=GTM-MPZP6R8"></script>-->
-  <!-- End Google Optimize -->
-
-  <!-- Google Tag Manager -->
-  <!--<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
-  <!--new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
-  <!--j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
-  <!--'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
-  <!--})(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>-->
-  <!-- End Google Tag Manager -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPSFTRXK91"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-HPSFTRXK91');
+  </script>
 
   {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
   {% assign desc = page.description | default: page.content | strip_html | replace:'"','' | strip_newlines | truncatewords: 50 | split: '{%' | first %}
@@ -24,7 +22,7 @@
   <meta name="keywords" content="{{page.tags}}{% if page.tags %},{% endif %}{{page.keywords}}">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@flutterdev">
+  <meta name="twitter:site" content="@flutterchina">
 
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:url" content="{{ page_url | absolute_url }}">
@@ -40,7 +38,7 @@
   {% comment %}
     TODO: use a local copy of clipboard.js rather than CDN
   {% endcomment -%}
-  <script src="https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js"></script>
+  <script src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
   {% asset main.js %}
   {% for js in page.js -%}
     <script {% if js.defer %}defer{% endif %} src="{{js.url | default: js}}"></script>
@@ -48,7 +46,4 @@
 
   {% include head-diff2html.html -%}
 
-
-  
-  <!--<meta name="google-site-verification" content="HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4" />-->
 </head>

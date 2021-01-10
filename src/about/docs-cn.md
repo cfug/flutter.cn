@@ -4,7 +4,7 @@ title: 关于 Flutter 文档中文版
 toc: true
 ---
 
-Flutter 的魅力之一是其开源开放，Flutter 由 Google 主导，与全球的开发者共同协作。
+Flutter 的魅力之一是开源开放，Flutter 由 Google 主导，与全球的开发者共同协作。
 中国的开发者数量占全球的 20% 以上，也有大量贡献者为 Flutter 的生态提供了很大的帮助和贡献。
 请查看这个视频，了解更多 [Flutter 中国开发者的情况](https://www.bilibili.com/video/av68148864)。
 
@@ -28,17 +28,18 @@ Flutter 中国社区的活跃壮大离不开每一位为社区贡献的人，在
 1. 感谢掘金翻译计划协调资源帮助完成 Flutter 文档本地化项目的启动 (2019/4/16)；
 1. 感谢阅文前端团队协调资源帮助完成 Flutter 文档本地化项目第一阶段的收尾 (2019/6/21)；
 1. 感谢持续维护 Dart 中文文档的 Haijun Gu (@amisare)，感谢他允许并帮忙将已经翻译的内容贡献到 dart.cn；
-1. 感谢参与 Flutter / Dart 文档本地化项目的志愿者们：@5ibinbin, @AigeStudio, @amisare, @ASkyBig, @bestony, @changer0, @chenglu, @chunlea, @Dong09, @DongXYZ, @Dosimz, @duxinfeng, @ElderJames, @EvilLee6, @gejiaheng, @git-patrickliu, @guanxf, @Hao3o5, @hijiangtao, @Iamnotromantic, @iCell, @inferjay, @JasonLinkinBright, @Jenniferyingni, @jin-zz, @krave1986, @lennonover, @linguowu, @linhou, @liuzhen0218, @LyndonChin, @MzoneCL, @nanjingboy, @nervouself, @nesger, @noahziheng, @panda8z, @phxnirvana, @qiuyuezhong, @reachzhai, @Realank, @realcarlos, @Robinhaizhou, @shengxinyuan, @songfei, @SouthernBox, @talisk, @tyisme614, @Vadaski, @vinciarts, @wonderful89, @wswdevil, @x531tanxl, @XatMassacrE, @xilihuasi, @xiongcai, @yantao13145210, @yanxin, @yanyixin, @yeqiling, @youngyou, @Yuan, @Zhangdroid, @zhangjiana, @Zhiw, @zhuangtao97, @ziank 等。
+1. 感谢参与 Flutter / Dart 文档本地化项目的志愿者们：@5ibinbin, @AigeStudio, @amisare, @ASkyBig, @bestony, @changer0, @chenglu, @chunlea, @Dong09, @DongXYZ, @Dosimz, @duxinfeng, @ElderJames, @EvilLee6, @gejiaheng, @git-patrickliu, @guanxf, @Hao3o5, @hijiangtao, @Iamnotromantic, @iCell, @inferjay, @JasonLinkinBright, @Jenniferyingni, @jin-zz, @krave1986, @lennonover, @linguowu, @linhou, @liuzhen0218, @LyndonChin, @MzoneCL, @nanjingboy, @nervouself, @nesger, @noahziheng, @panda8z, @phxnirvana, @qiuyuezhong, @reachzhai, @Realank, @realcarlos, @Robinhaizhou, @shengxinyuan, @songfei, @SouthernBox, @talisk, @tyisme614, @Vadaski, @vinciarts, @wonderful89, @wswdevil, @x531tanxl, @XatMassacrE, @xilihuasi, @xiongcai, @yantao13145210, @yanxin, @yanyixin, @yeqiling, @youngyou, @Yuan, @Zhangdroid, @zhangjiana, @Zhiw, @zhuangtao97, @ziank, @DaoXingHuang, @qingmei2, @CaiJingLong, @toly1994328 等。
 
 #### CFUG 团队
 1. 感谢 Adam Yi, Zhongdong Yang, Xiaoyu Li, Shena Bian, Bing Gao, Steven Tian 以及 Study Jams 学员和谷创字幕组译者在 18 年 5 月份加班加点完成初版 Flutter Codelabs 和 Flutter 中文社区资源网站的设计；
-1. Shena Bian, Yihui Miao 对 Flutter 中文社区资源网址的设计；
-1. 感谢 Zhongdong Yang 对 Flutter 社区中文资源网站 flutter.cn, codelabs.flutter-io.cn 的前端技术实现；
-1. 感谢雪狼帮助适配、调试和制作双语对照的翻译工具以及 debug server 的 CI 调试部署，感谢 @Zheaoli 帮忙搭建和调试 CI 以及文档部署方案；
-1. 感谢 @eatmiya 维护 Flutter 社区微信公众号。
+1. Shena Bian, Yihui Miao 对 Flutter 中文社区资源网址的设计 (2018 - 2020)；
+1. 感谢 Zhongdong Yang 对 Flutter 社区中文资源网站 flutter.cn, codelabs.flutter-io.cn 的前端技术实现 (2018 - 2019)；
+1. 感谢雪狼帮助适配、调试和制作双语对照的翻译工具以及 debug server 的 CI 调试部署，感谢 @Zheaoli 帮忙搭建和调试 CI 以及文档部署方案 (2018 - 2019)；
+1. 感谢 @eatmiya 维护 Flutter 社区微信公众号 (2019)；
+1. 感谢 Alex Li (@AlexV525) 和 家康 (@MeandNi) 加入贡献 CFUG 团队，大量参与社区的讨论并实质性推动了本地化项目进程，感谢 Alex 为 Flutter 项目提交 PR 并成功加入成为 Flutter members! (2020)
 
 #### Google 公司和合作伙伴团队
-1. 特别感谢 Google Flutter 团队里一直对中国社区支持并作出卓越贡献的 Tao Dong, Xiao Yu 和 Yuqian Li，感谢前 DevRel 团队 Lynn Wang 在 Flutter 社区里的活跃和积极贡献，感谢谷歌开发者运营团队的 Anna；
+1. 特别感谢 Google Flutter 团队里一直对中国社区支持并作出卓越贡献的 Tao Dong, Xiao Yu 和 Yuqian Li，感谢前 DevRel 团队 Lynn Wang 在 Flutter 社区里的活跃和积极贡献，感谢谷歌开发者运营团队的 Anna 和 Smile；
 1. 感谢 360 前端委员会的 Shuo He 和 360 大学的 Weiyang Zhang 举办的 360 互联网技术训练营 Flutter 专场，感谢声网的 Xingxing Qin 和 Olivia，感谢 RTC 开发者社区和 GDG 社区积极举办多次与 Flutter 相关的活动（2019 年）；
 1. 感谢各大公司 / 团队的社区联系人帮助在内部分享 Flutter 和推动 Flutter 的落地，及时有效的安排 Googler 的拜访，内部的技术问题的收集和优先级排序，以及在各种大会上出席做演讲认可和推广 Flutter；
 1. 感谢阿里巴巴闲鱼的宗心、KyleWong 和树彬，感谢一直对 Flutter 的代码、文章等资源贡献，感谢开源 Fish Redux 和 FlutterBoost，感谢在阿里内部推动 Flutter；

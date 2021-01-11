@@ -90,7 +90,9 @@ CanvasKit on desktop browsers. This is our recommended combination
 to optimize for the characteristics of each platform.
 
 默认情况下，`flutter build` 和 `flutter run` 命令对 Web 渲染器使用 `auto` 参数。 
-这意味着您的应用程序在移动浏览器上会与 HTML 渲染器一起运行，而在桌面浏览器上与 CanvasKit 一起运行。这是我们推荐的组合方式，能够针对每个平台特性优化。
+这意味着您的应用程序在移动浏览器上会与 HTML 渲染器一起运行，
+而在桌面浏览器上与 CanvasKit 一起运行。
+这是我们推荐的组合方式，能够针对每个平台特性优化。
 
 For more information, see [Web renderers][].
 

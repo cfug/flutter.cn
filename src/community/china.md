@@ -109,6 +109,8 @@ Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其
 ### Flutter 社区
 
 社区主镜像，采用多种方式同步 Flutter 开发者资源（推荐）。
+有任何镜像相关的问题，请与我们
+[反馈镜像问题](https://github.com/cfug/flutter.cn/issues)。
 
 ```terminal
 $ export PUB_HOSTED_URL=https://pub.flutter-io.cn
@@ -117,7 +119,10 @@ $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 ### 上海交大 Linux 用户组
 
-使用全量同步方式建立 Flutter 镜像，数据与站源实时同步（推荐）。
+使用全量同步方式建立 Flutter 镜像，配置了完善的回源
+(flutter-io.cn 主镜像和 GCS 站源) 策略（推荐），
+有任何镜像相关的问题，请向上海交大 Linux 用户组
+[反馈镜像问题](https://github.com/sjtug/mirror-requests/issues/new?labels=bug&template=2-bug-report.md)。
 
 查看帮助文档：
 [Flutter 镜像安装帮助](https://mirrors.sjtug.sjtu.edu.cn/docs/flutter_infra)，
@@ -130,7 +135,10 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
 
 ### 清华大学 TUNA 协会
 
-采取自定义脚本定时主动抓取策略，并配置了完善的回源策略（推荐）。
+采取自定义脚本定时主动抓取策略，并配置了完善的回源
+(flutter-io.cn 主镜像和 GCS 站源) 策略（推荐），
+有任何镜像相关的问题（包含 TUNA、OpenTUNA），请向清华大学 TUNA 协会
+[反馈镜像问题](https://github.com/tuna/issues/issues)。
 
 查看帮助文档：
 [Flutter 镜像安装帮助](https://mirrors.tuna.tsinghua.edu.cn/help/flutter/)，
@@ -141,23 +149,38 @@ $ export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 ```
 
-### CNNIC
+#### OpenTUNA
 
-基于 TUNA 协会的镜像服务，数据策略与 TUNA 一致，
-通过非教育网的域名访问（建议选择 TUNA）。
+也可选择数据策略一致的、由清华 TUNA 协会运行维护
+[OpenTUNA](https://mirrors.tuna.tsinghua.edu.cn/news/opentuna-mirror/) 服务器，
+通过 CloudFront CDN 进行分发。
 
 ```terminal
-$ export PUB_HOSTED_URL=http://mirrors.cnnic.cn/dart-pub
-$ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
+$ export PUB_HOSTED_URL=https://opentuna.cn/dart-pub
+$ export FLUTTER_STORAGE_BASE_URL=https://opentuna.cn/flutter
 ```
 
 ### 腾讯云开源镜像站
 
-使用 TUNA 开源的脚本每天凌晨 0 - 2 点定时与站源同步，未配置回源策略。
+使用 TUNA 开源的脚本每天凌晨 0 - 2 点执行同步，未配置回源策略。
+使用腾讯云服务器的用户，可将源域名从 mirrors.cloud.tencent.com 修改为
+mirrors.tencentyun.com，使用内网流量不占用公网流量。
+有任何镜像问题，请通过邮件 (mirrors@tencent.com) 向腾讯云开源镜像站反馈。
 
 ```terminal
 $ export PUB_HOSTED_URL=https://mirrors.cloud.tencent.com/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
+```
+
+### CNNIC
+
+基于 TUNA 协会的镜像服务，数据策略和内容与 TUNA 一致，
+通过非教育网的域名访问（建议选择 TUNA）。
+暂无反馈渠道，可尝试 TUNA 反馈渠道。
+
+```terminal
+$ export PUB_HOSTED_URL=http://mirrors.cnnic.cn/dart-pub
+$ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
 ```
 
 ### 已知问题
@@ -168,7 +191,7 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
   暂时只允许校内访问，故暂未展示，感谢上海大学 Linux 用户组的同学。
 - 腾讯云开源镜像站使用 TUNA 开源脚本制作，每天同步一次，
   经测试，其数据延迟较大并尚未配置有效的回源策略，有待于社区成员进一步验证。
-- 任何其他跟镜像相关的问题，请
+- 任何其他与镜像相关的问题，请通过
   [发 Issue 给我们](https://github.com/cfug/flutter.cn/issues)。
 
 ## 致谢

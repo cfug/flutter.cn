@@ -223,7 +223,7 @@ PWA support remains a work in progress,
 so please [give us feedback][] if you see something that doesn’t look right.
 
 对 PWA 的支持仍在进行中，因此，如果您发现不正确的地方，
-欢迎 [给予我们反馈] [give us feedback]。
+欢迎 [给予我们反馈][give us feedback]。
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /docs/development/platform-integration/web-images

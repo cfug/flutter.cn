@@ -90,7 +90,7 @@ CanvasKit on desktop browsers. This is our recommended combination
 to optimize for the characteristics of each platform.
 
 默认情况下，`flutter build` 和 `flutter run` 命令对 Web 渲染器使用 `auto` 参数。 
-这意味着您的应用程序在移动浏览器上会与 HTML 渲染器一起运行，而在桌面浏览器上与 CanvasKit 一起运行。 这是我们推荐的组合方式，能够针对每个平台特性优化。
+这意味着您的应用程序在移动浏览器上会与 HTML 渲染器一起运行，而在桌面浏览器上与 CanvasKit 一起运行。这是我们推荐的组合方式，能够针对每个平台特性优化。
 
 For more information, see [Web renderers][].
 
@@ -133,7 +133,7 @@ and places the files into the `/build/web`
 directory of the project.
 
 使用 `flutter build web` 命令构建应用程序以进行部署。
-你也可以通过使用 `--web-renderer` 自行选择渲染方式。（请查看[网页渲染器][Web renderers]）
+你也可以通过使用 `--web-renderer` 自行选择渲染方式。（请查看 [网页渲染器][Web renderers]）
 这将生成包括资源的应用程序，并将文件放入项目的 `/build/web` 目录中。
 
 The release build of a simple app has the
@@ -211,10 +211,17 @@ Flutter-based PWAs can be installed in the same way as any other web-based
 PWA; the settings signaling that your Flutter app is a PWA are provided by
 `manifest.json`, which is produced by `flutter create` in the `web` directory.
 
+从 1.20 版开始，用于 Web 应用程序的 Flutter 模板包括了对可安装的，
+具有离线功能的 PWA 应用程序所需的核心功能的支持。 
+基于 Flutter 的 PWA 的安装方式与其他基于 Web 的 PWA 基本相同；
+由 `manifest.json` 提供的配置信息可以声明您的 Flutter 应用程序是 PWA，
+该文件可以在 `web` 目录中使用 `Flutter create` 命令生成。
+
 PWA support remains a work in progress,
 so please [give us feedback][] if you see something that doesn’t look right.
 
-在未来，我们计划生成 PWA 配置文件来支持渐进式 Web 应用。
+对 PWA 的支持仍在进行中，因此，如果您发现不正确的地方，
+欢迎 [给予我们反馈] [give us feedback]。
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /docs/development/platform-integration/web-images

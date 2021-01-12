@@ -213,7 +213,7 @@ Flutter-based PWAs can be installed in the same way as any other web-based
 PWA; the settings signaling that your Flutter app is a PWA are provided by
 `manifest.json`, which is produced by `flutter create` in the `web` directory.
 
-从 1.20 版开始，用于 Web 应用程序的 Flutter 模板包括了对可安装的，
+从 1.20 版开始，用于 Web 应用程序的 Flutter 模板包括了对可安装且
 具有离线功能的 PWA 应用程序所需的核心功能的支持。 
 基于 Flutter 的 PWA 的安装方式与其他基于 Web 的 PWA 基本相同；
 由 `manifest.json` 提供的配置信息可以声明您的 Flutter 应用程序是 PWA，
@@ -233,4 +233,3 @@ so please [give us feedback][] if you see something that doesn’t look right.
 [Google Cloud Hosting]: https://cloud.google.com/solutions/smb/web-hosting/
 [`iframe`]: https://html.com/tags/iframe/
 [Web renderers]: /docs/development/tools/web-renderers
-

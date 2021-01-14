@@ -34,19 +34,19 @@ keywords: 国际化
   supports. Flutter provides widgets and classes that help with
   internationalization and the Flutter libraries themselves are
   internationalized.
-  
+
   如果你的 app 会部署给说其他语言的用户使用，那么你就需要对它进行国际化。
   这就意味着你在编写 app 的时候，需要采用一种容易对它进行本地化的方式进行开发，
   这种方式让你能够为每一种语言或者 app 所支持的语言环境下的文本和布局等进行本地化。
   Flutter 提供了 widgets 和类来帮助开发者进行国际化，
   当然 Flutter 库本身就是国际化的。
-  
+
   This page covers concepts and workflows necessary to localize a
   Flutter application using the `MaterialApp` and `CupertinoApp`
   classes, as most apps are written that way. However, applications
   written using the lower level `WidgetsApp` class can also
   be internationalized using the same classes and logic.
-  
+
   由于大多数应用程序都是以这种方式编写的，
   因此该页面主要介绍了使用 `MaterialApp` 和 `CupertinoApp` 
   对 Flutter 应用程序进行本地化所需的概念和工作流程。 
@@ -56,7 +56,7 @@ keywords: 国际化
 {{site.alert.secondary}}
 
   <h4 class="no_toc">Sample internationalized apps</h4>
-  
+
   <h4 class="no_toc">国际化的 app 示例</h4>
 
   If you'd like to start out by reading the code for an internationalized
@@ -65,7 +65,7 @@ keywords: 国际化
   provided by the [`intl`][] package.
   If Dart's intl package is new to you,
   see [Using the Dart intl tools][].
-  
+
   如果你想通过阅读已经国际化的 Flutter app 代码来开始的话，
   这里有两个小例子。第一个例子是一个尽可能简单的实现。
   第二个例子使用了 [`intl`][] package 提供的 API 和工具。
@@ -79,7 +79,7 @@ keywords: 国际化
   * [Internationalization based on the `intl` package][]
     
     [基于 `intl` package 的国际化实现示例][Internationalization based on the `intl` package]
-  
+
 {{site.alert.end}}
 
 ## Introduction to localizations in Flutter
@@ -210,7 +210,12 @@ structured, can be found below.
 Once the `flutter_localizations` package is added, use the
 following instructions to add localized text to your application.
 
+引入 `flutter_localizations` package 后，
+请按照以下说明将本地化的文本添加到您的应用程序。
+
 1. Add the `intl` package to the `pubspec.yaml` file:
+
+   将 `intl` package 添加到 `pubspec.yaml` 文件中：
 
    ```yaml
    dependencies:
@@ -226,28 +231,41 @@ flag. This is added to the section of the pubspec that is
 specific to Flutter, and usually comes later in the pubspec
 file.
 
-   ```yaml
-   # The following section is specific to Flutter.
-   flutter:
-     generate: true    # Add this line
-   ```
+  另外，在 `pubspec.yaml` 文件中，启用 `generate` 标志。
+  该设置项添加在 pubspec 中 Flutter 的特定部分，
+  通常处在 pubspec 文件中后面的部分。
+
+  ```yaml
+  # The following section is specific to Flutter.
+  flutter:
+    generate: true    # Add this line
+  ```
 
 3. Add a new yaml file to the root directory of the Flutter
-project called `l10n.yaml` with the following content:
+    project called `l10n.yaml` with the following content:
 
-   ```yaml
-   arb-dir: lib/l10n
-   template-arb-file: app_en.arb
-   output-localization-file: app_localizations.dart
-   ```
+  在 Flutter 项目的根目录中添加一个新的 yaml 文件，
+  命名为`l10n.yaml`，其内容如下：
 
-   This file configures the localization tool; in this example,
-   the input files are located in `${FLUTTER_PROJECT}/lib/l10n`,
-   the `app_en.arb` file provides the template, and the generated
-   localizations are placed in the `app_localizations.dart` file.
+  ```yaml
+  arb-dir: lib/l10n
+  template-arb-file: app_en.arb
+  output-localization-file: app_localizations.dart
+  ```
+
+  This file configures the localization tool; in this example,
+  the input files are located in `${FLUTTER_PROJECT}/lib/l10n`,
+  the `app_en.arb` file provides the template, and the generated
+  localizations are placed in the `app_localizations.dart` file.
+
+  该文件用于配置本地化工具；在上面的示例中，指定输入文件在 
+  `${FLUTTER_PROJECT}/lib/l10n` 中，`app_en.arb` 文件提供模板，
+  生成的本地化文件在 `app_localizations.dart` 文件中。
 
 4. In `${FLUTTER_PROJECT}/lib/l10n`,
    add the `app_en.arb` template file. For example:
+   
+   在 `${FLUTTER_PROJECT}/lib/l10n` 中，添加 `app_en.arb` 模板文件。如下：
 
    ```json
    {
@@ -260,6 +278,9 @@ project called `l10n.yaml` with the following content:
 
 5. Next, add an `app_es.arb` file in the same directory for
    Spanish translation of the same message:
+   
+   接下来，在同一目录中添加一个 `app_es.arb` 文件，
+   对同一条信息做西班牙语的翻译：
 
    ```json
    {
@@ -270,39 +291,55 @@ project called `l10n.yaml` with the following content:
 6. To test the localization tool, run your application.
    You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
+   
+   要测试本地化工具，可以运行您的应用程序。
+   您应该能在 `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n` 中看到生成的文件。
 
 7. Test the generated localizations in your app as follows:
 
+   如下，测试应用中生成的本地化文件内容：
+   
    <!-- skip -->
    ```dart
    import 'package:flutter_localizations/flutter_localizations.dart';
    import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Add this line
-
+   
    // ...
-
+   
    // Use AppLocalizations anywhere in your app.
    // Here, the translated message is used in a Text widget.
    Widget build(BuildContext context) {
      // ...
      return Text(AppLocalizations.of(context).helloWorld);
-   }
+}
    ```
-
+   
    This code generates a Text widget that displays "Hello World!"
    if the target device's locale is set to English, and "Hola Mundo!"
    if the target device's locale is set to Spanish. In the `arb` files,
    the key of each entry is used as the method name of the getter,
    while the value of that entry contains the localized message.
+   
+   如果目标设备的语言环境设置为英语，此代码生成的 Text widget 会展示「Hello World!」。
+   如果目标设备的语言环境设置为西班牙语，则展示「Hola Mundo!」，
+   在 `arb` 文件中，每个条目的键都用作 getter 的方法名称，
+   而该条目的值表示本地化的信息。
 
 To see a sample Flutter app using this tool, please see
 [`gen_l10n_example`][].
+
+要查看使用该工具的示例 Flutter 应用，请参阅 [`gen_l10n_example`][]。
 
 For more information about the localization tool,
 such as dealing with DateTime and handling plurals,
 see the [Internationalization User's Guide][].
 
+有关本地化工具的更多信息，例如处理 DateTime 和复数，请参见 [国际化用户指南][Internationalization User's Guide]。
+
 <a name="ios-specifics"></a>
 ### Localizing for iOS: Updating the iOS app bundle
+
+### iOS 本地化：更新 iOS app bundle
 
 iOS applications define key application metadata,
 including supported locales, in an `Info.plist` file
@@ -310,14 +347,26 @@ that is built into the application bundle.
 To configure the locales supported by your app,
 use the following instructions:
 
+iOS 应用在内置于应用程序包中的 `Info.plist` 文件中
+定义了关键的应用程序元数据，其中包括了受支持的语言环境，
+要配置您的应用支持的语言环境，请按照以下说明进行操作：
+
 1. Open your project's `ios/Runner.xcworkspace` Xcode file.
+
+   打开项目的 `ios/Runner.xcworkspace` Xcode 文件。
 
 2. In the **Project Navigator**, open the `Info.plist` file
    under the `Runner` project's `Runner` folder.
+   
+   在 **Project Navigator** 中，打开 `Runner` 项目的 `Runner` 文件夹
+   下的 `Info.plist` 文件。
 
 3. Select the **Information Property List** item.
    Then select **Add Item** from the **Editor** menu,
    and select **Localizations** from the pop-up menu.
+   
+   选择 **Information Property List** 项。然后从 **Editor** 菜单中
+   选择 **Add Item**，接着从弹出菜单中选择 **Localizations**。
 
 4. Select and expand the newly-created `Localizations` item.
    For each locale your application supports,
@@ -325,14 +374,24 @@ use the following instructions:
    from the pop-up menu in the **Value** field.
    This list should be consistent with the languages listed
    in the [supportedLocales][] parameter.
+   
+   选择并展开新创建的 `Localizations` 项。对于您的应用程序支持的每种语言环境，
+   请添加一个新项，然后从 **Value** 字段中的弹出菜单中选择要添加的语言环境。
+   该列表应需要与 [supportedLocales][] 参数中列出的语言一致。
 
 5. Once all supported locales have been added, save the file.
+
+   添加所有受支持的语言环境后，保存文件。
 
 <a name="advanced-customization">
 ## Advanced topics for further customization
 
+## 高级主题：进一步定制
+
 This section covers additional ways to customize a
 localized Flutter application.
+
+本节介绍自定义本地 Flutter 应用程序的其他方法。
 
 <a name="advanced-locale"></a>
 ### Advanced locale definition
@@ -805,20 +864,31 @@ MaterialApp(
 This section describes different approaches to internationalize
 your Flutter application.
 
+本节主要介绍国际化 Flutter 应用程序的不同方法。
+
 <a name="alternative-class"></a>
 ### An alternative class for the app's localized resources
+
+### 应用程序本地化资源的替代类
 
 The previous DemoApp example was defined in terms of the Dart `intl`
 package. Developers can choose their own approach for managing
 localized values for the sake of simplicity or perhaps to integrate
 with a different i18n framework.
 
+之前的 DemoApp 示例应用主要根据 Dart `intl` package 定义，为了简单起见，
+或者可能想要与不同的 i18n 框架集成，开发者也可以选择自己的方法来管理本地化的值。
+
 Complete source code for the [`minimal`][] app.
+
+点击查看 [`minimal`][] 应用的完整源代码。
 
 In this version of DemoApp the class that contains the app's
 localizations, DemoLocalizations, includes all of its translations
 directly in per language Maps.
 
+在该版本的 DemoApp 中，包含应用程序本地化版本的类 DemoLocalizations 
+直接在每种语言的 Map 中包括了所有的翻译。
 
 <!-- skip -->
 ```dart
@@ -849,6 +919,9 @@ class DemoLocalizations {
 In the minimal app the `DemoLocalizationsDelegate` is slightly
 different. Its `load` method returns a [`SynchronousFuture`][]
 because no asynchronous loading needs to take place.
+
+在 minimal 应用中，`DemoLocalizationsDelegate` 略有不同，
+它的 `load` 方法返回一个 [`SynchronousFuture`][]，因为不需要进行异步加载。
 
 <!-- skip -->
 ```dart

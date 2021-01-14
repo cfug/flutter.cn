@@ -10,12 +10,12 @@ keywords: 开发者工具,性能视图,Dart,性能优化
 {{site.alert.note}}
 
   The performance view works with Dart CLI and mobile apps only.
-  Use Chrome DevTools to [analyze performance][]
+  Use Chrome DevTools to [generate timeline events][]
   of a web app.
 
   性能视图适用于移动应用和 Dart 命令行工具。
-  对于 web 应用程序，请使用 Chrome 自带的开发者工具进行
-  [性能分析][analyze performance]。
+  对于 web 应用程序，请使用 Chrome 自带的开发者工具
+  [生成时间线事件][generate timeline events]。
 
 {{site.alert.end}}
 
@@ -23,11 +23,22 @@ keywords: 开发者工具,性能视图,Dart,性能优化
 
 ## 它是什么?
 
-The performance view allows you to record and profile a
-session from your Dart or Flutter application.
+The performance view offers timing and performance information for activity in
+your application. It consists of three parts, each increasing in granularity.
 
-性能视图可以记录并分析 Flutter 和 Dart 应用的性能，
-以帮助我们找到应用程序的性能瓶颈。
+性能视图提供了应用活动的时间线以及性能信息。它由三个部分组成，且每个部分的粒度都更加细。
+
+* Flutter frames chart (Flutter apps only)
+
+  Flutter 火焰图（仅支持 Flutter 应用）
+
+* Timeline events chart
+
+  时间线事件图
+
+* CPU profiler
+
+  CPU 监控
 
 {{site.alert.note}}
 

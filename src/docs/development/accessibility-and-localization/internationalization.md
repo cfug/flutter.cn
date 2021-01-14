@@ -119,22 +119,25 @@ dependencies:
     sdk: flutter         # Add this line
 ```
 
-Next, import the flutter_localizations library and specify
+Next, run `pub get packages`, then import the `flutter_localizations` library and specify
 `localizationsDelegates` and `supportedLocales` for `MaterialApp`:
 
-下一步，引入 flutter_localizations 库，
+下一步，先运行 `pub get packages`，然后引入 flutter_localizations 库，
 然后为 MaterialApp 指定 `localizationsDelegates` 和 `supportedLocales`：
 
 <!-- skip -->
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
+// TODO: uncomment the line below after codegen
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // ...
 
 MaterialApp(
  localizationsDelegates: [
    // ... app-specific localization delegate[s] here
-   AppLocalizations.delegate,
+   // TODO: uncomment the line below after codegen
+   // AppLocalizations.delegate,
    GlobalMaterialLocalizations.delegate,
    GlobalWidgetsLocalizations.delegate,
    GlobalCupertinoLocalizations.delegate,
@@ -267,16 +270,38 @@ project called `l10n.yaml` with the following content:
    }
    ```
 
-6. To test the localization tool, run your application.
-   You should see generated files in
+6. Now, run your app so that codegen takes place. You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
 
-7. Test the generated localizations in your app as follows:
+7. Remove the comment for the import statement on `app_localizations.dart` 
+   and `AppLocations.delegate` in your call to the constructor for 
+   `MaterialApp`. Test the generated localizations in your app as follows:
 
    <!-- skip -->
    ```dart
    import 'package:flutter_localizations/flutter_localizations.dart';
-   import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Add this line
+   // import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // remove the comment for this line
+
+   // ...
+   
+   MaterialApp(
+     localizationsDelegates: [
+       // ... app-specific localization delegate[s] here
+       // AppLocalizations.delegate, // remove the comment for this line
+       GlobalMaterialLocalizations.delegate,
+       // ...
+   );
+   // ...
+
+   // In your Material/Widget/CupertinoApp:
+   @override
+   Widget build(BuildContext context) {
+     return MaterialApp(
+       localizationsDelegates: AppLocalizations.localizationsDelegates, // Add this line
+       supportedLocales: AppLocalizations.supportedLocales, // Add this line
+       home: // ...
+     );
+   }
 
    // ...
 
@@ -296,6 +321,21 @@ project called `l10n.yaml` with the following content:
 
 To see a sample Flutter app using this tool, please see
 [`gen_l10n_example`][].
+
+To localize your device app description, you can pass in the localized
+string into [MaterialApp.onGenerateTitle][]:
+
+  <!-- skip -->
+  ```dart
+  // In your Material/Widget/CupertinoApp:
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      onGenerateTitle: (BuildContext context) => AppLocalizations.of(context).appTitle,
+      // ...
+    );
+  }
+  ```
 
 For more information about the localization tool,
 such as dealing with DateTime and handling plurals,
@@ -669,15 +709,16 @@ that analyzes the source code for classes that contain
 An app that needs to support a language that's not included in
 [`GlobalMaterialLocalizations`][] has to do some extra work:
 it must provide about 70 translations ("localizations")
-for words or phrases.
+for words or phrases and the date patterns and symbols for the
+locale.
 
 如果你要开发一个 app 需要支持的语言不在 [`GlobalMaterialLocalizations`][] 当中，
-那就需要做一些额外的工作：它必须提供大概 70 个字和词的翻译（本地化）。
+那就需要做一些额外的工作：它必须提供大概 70 个字和词还有日期以及符号的翻译（本地化）。
 
 See the following for an example of how to add
-support for the Belarusian language.
+support for the Norwegian Nynorsk language.
 
-举个例子，我们将给大家展示如何支持白俄罗斯语。
+举个例子，我们将给大家展示如何支持挪威尼诺斯克语。
 
 A new `GlobalMaterialLocalizations` subclass defines the
 localizations that the Material library depends on.
@@ -691,28 +732,28 @@ must also be defined.
 它是给 `GlobalMaterialLocalizations` 子类作为一个工厂使用的。
 
 Here's the source code for the complete [`add_language`][] example,
-minus the actual Belarusian translations.
+minus the actual Nynorsk translations.
 
 这是支持添加一种新语言的[一个完整例子的源码][`add_language`]，
-相对实际上要翻译的白俄罗斯语数量，我们只翻译了一小部分。
+相对实际上要翻译的尼诺斯克语数量，我们只翻译了一小部分。
 
 The locale-specific `GlobalMaterialLocalizations` subclass
-is called `BeMaterialLocalizations`,
+is called `NnMaterialLocalizations`,
 and the `LocalizationsDelegate` subclass is
-`_BeMaterialLocalizationsDelegate`.
-The value of `BeMaterialLocalizations.delegate`
+`_NnMaterialLocalizationsDelegate`.
+The value of `NnMaterialLocalizations.delegate`
 is an instance of the delegate, and is all
 that's needed by an app that uses these localizations.
 
 这个特定语言环境的 `GlobalMaterialLocalizations`
-子类被称为 `BeMaterialLocalizations`，
-`LocalizationsDelegate` 子类被称为 `_BeMaterialLocalizationsDelegate`。
+子类被称为 `NnMaterialLocalizations`，
+`LocalizationsDelegate` 子类被称为 `_NnMaterialLocalizationsDelegate`。
 `BeMaterialLocalizations.delegate` 是 delegate 的一个实例，
 这就是 app 使用这些本地化所需要的全部。
 
 The delegate class includes basic date and number format
 localizations. All of the other localizations are defined by `String`
-valued property getters in `BeMaterialLocalizations`, like this:
+valued property getters in `NnMaterialLocalizations`, like this:
 
 delegate 类包括基本的日期和数字格式的本地化。
 其他所有的本地化是由 `BeMaterialLocalizations`
@@ -735,14 +776,14 @@ String get closeButtonLabel => r'CLOSE';
 
 These are the English translations, of course.
 To complete the job you need to change the return
-value of each getter to an appropriate Belarusian string.
+value of each getter to an appropriate Nynorsk string.
 
 These are the English translations of course. To complete the job you 
 need to change the return value of each getter to an appropriate 
 Belarusian string.
 
 当然，这些都是英语翻译。为了完成本地化操作，
-你需要把每一个 getter 的返回值翻译成合适的白俄罗斯语字符。
+你需要把每一个 getter 的返回值翻译成合适的尼诺斯克语字符。
 
 The getters return "raw" Dart strings that have an r prefix,
 like `r'About $applicationName'`,
@@ -766,6 +807,58 @@ String aboutListTileTitle(String applicationName) {
 }
 ```
 
+The date patterns and symbols of the locale will also need to
+be specified. In the source code, the date patterns and symbols
+are defined like this:
+
+<!-- skip -->
+```dart
+const nnLocaleDatePatterns = {
+  'd': 'd.',
+  'E': 'ccc',
+  //...
+}
+
+const nnDateSymbols = {
+  'NAME': 'nn',
+  'ERAS': <dynamic>[
+    'f.Kr.',
+    'e.Kr.',
+  ],
+  // ...
+}
+```
+
+These will need to be modified for the locale to use the correct
+date formatting. Unfortunately, since the `intl` library does
+not share the same flexibility for number formatting, the formatting
+for an existing locale will have to be used as a substitute in
+`_NnMaterialLocalizationsDelegate`:
+
+<!-- skip -->
+```dart
+class _NnMaterialLocalizationsDelegate extends LocalizationsDelegate<MaterialLocalizations> {
+  // ...
+  @override
+  Future<MaterialLocalizations> load(Locale locale) async {
+    return SynchronousFuture<MaterialLocalizations>(
+      NnMaterialLocalizations(
+        localeName: localeName,
+        // The `intl` library's NumberFormat class is generated from CLDR data
+        // (see https://github.com/dart-lang/intl/blob/master/lib/number_symbols_data.dart).
+        // Unfortunately, there is no way to use a locale that isn't defined in
+        // this map and the only way to work around this is to use a listed
+        // locale's NumberFormat symbols. So, here we use the number formats
+        // for 'en_US' instead.
+        decimalFormat: intl.NumberFormat('#,##0.###', 'en_US'),
+        twoDigitZeroPaddedFormat: intl.NumberFormat('00', 'en_US'),
+        //...
+      ),
+    );
+  }
+}
+```
+
 For more information about localization strings, see the
 [flutter_localizations README][].
 
@@ -774,15 +867,15 @@ For more information about localization strings, see the
 Once you've implemented your language-specific subclasses of
 `GlobalMaterialLocalizations` and `LocalizationsDelegate`,
 you just need to add the language and a delegate instance to your app.
-Here's some code that sets the app's language to Belarusian and
-adds the `BeMaterialLocalizations` delegate instance to the app's
+Here's some code that sets the app's language to Nynorsk and
+adds the `NnMaterialLocalizations` delegate instance to the app's
 `localizationsDelegates` list:
 
 一旦你实现了指定语言的
 `GlobalMaterialLocalizations` 和 `LocalizationsDelegate` 的子类，
 你只需要给你的 app 添加此语言以及一个 delegate 的实例。
-这里有一些代码展示了如何设置 app 的语言为白俄罗斯语以及如何给 app 的
-`localizationsDelegates` 列表添加 `BeMaterialLocalizations` delegate 实例。
+这里有一些代码展示了如何设置 app 的语言为尼诺斯克语以及如何给 app 的
+`localizationsDelegates` 列表添加 `NnMaterialLocalizations` delegate 实例。
 
 <!-- skip -->
 ```dart
@@ -790,10 +883,10 @@ MaterialApp(
   localizationsDelegates: [
     GlobalWidgetsLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
-    BeMaterialLocalizations.delegate,
+    NnMaterialLocalizations.delegate,
   ],
   supportedLocales: [
-    const Locale('be', 'BY')
+    const Locale('nn')
   ],
   home: ...
 )
@@ -971,6 +1064,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [`LocalizationsDelegate`]: {{site.api}}/flutter/widgets/LocalizationsDelegate-class.html
 [material-global]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`MaterialApp.onGenerateTitle`]: {{site.api}}/flutter/material/MaterialApp/onGenerateTitle.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
 [`minimal`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Minimal internationalization]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal

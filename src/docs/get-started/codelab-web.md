@@ -191,7 +191,7 @@ $ flutter doctor
 
 It's okay if the Android toolchain, Android Studio,
 and the Xcode tools are not installed,
-since our app is intended for the web only.
+since the app is intended for the web only.
 If you later want this app to work on mobile,
 you will need to do additional installation and setup.
 
@@ -1126,6 +1126,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     _curveAnimation = _controller.drive(CurveTween(curve: Curves.easeIn));
   }
 
+  @override
   void didUpdateWidget(oldWidget) {
     super.didUpdateWidget(oldWidget);
     _controller.animateTo(widget.value);
@@ -1144,6 +1145,10 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   }
 }
 ```
+
+The [`didUpdateWidget`][] function updates
+the `AnimatedProgressIndicatorState` whenever
+`AnimatedProgressIndicator` changes.
 </li>
 
 <li markdown="1">Use the new `AnimatedProgressIndicator`.<br>
@@ -1444,6 +1449,7 @@ Dart DevTools, or Flutter animations, see the following:
 [DevTools documentation]: /docs/development/tools/devtools
 [DevTools installed]: /docs/development/tools/devtools/overview#how-do-i-install-devtools
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
+[`didUpdateWidget`]: {{site.api}}/flutter/widgets/State/didUpdateWidget.html
 [editor]: /docs/get-started/editor
 [Effective Dart Style Guide]: {{site.dart-site}}/guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
 [Flutter cookbook]: /docs/cookbook

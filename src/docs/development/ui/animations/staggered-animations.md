@@ -69,7 +69,7 @@ This guide shows how to build a staggered animation in Flutter.
   This guide explains the basic_staggered_animation example. You can also
   refer to a more complex example, staggered_pic_selection.
   
-  本指南解释了 basic_staggered_animation 示例。你也可参考更复杂的例子，staggered_pic_selection。
+  本指南主要介绍 basic_staggered_animation 示例，您也可参考更复杂的例子：staggered_pic_selection。
 
   [basic_staggered_animation][]
   <br> Shows a series of sequential and overlapping animations
@@ -98,7 +98,7 @@ This guide shows how to build a staggered animation in Flutter.
     
   [staggered_pic_selection][]
   <br> 展示从一个以三种大小显示的图像列表中删除一个图像。
-    这个例子使用两个 [animation controllers][]:
+    这个例子使用两个 [animation controllers][]：
     一个用于控制图像的选择/取消选择, 一个用于控制删除图像.
     选择/取消选择的动画是交织动画。
     (想看到这种效果，你可能需要增加 `timeDilation` 的数值。)

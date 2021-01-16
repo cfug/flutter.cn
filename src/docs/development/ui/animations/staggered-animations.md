@@ -111,6 +111,8 @@ This guide shows how to build a staggered animation in Flutter.
 The following video demonstrates the animation performed by
 basic_staggered_animation:
 
+以下视频演示了 basic_staggered_animation 所执行的动画：
+
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
     src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1"
@@ -179,21 +181,21 @@ After running forward, the animation runs in reverse.
   * Regardless of how long the animation lasts in real time,
     the controller's values must be between 0.0 and 1.0, inclusive.
     
-    无论动画在真实时间中播放多长时间，控制器的值必须在 0.0　和 1.0 之间， 包括 0.0　和 1.0。
+    无论动画在真实时间中播放多长时间，控制器的值必须在 0.0 和 1.0 之间， 包括 0.0 和 1.0。
     
   * Each animation has an
     [`Interval`][]
     between 0.0 and 1.0, inclusive.
     
     每个动画都有一个 [`Interval`][]，
-    值必须在 0.0　和 1.0 之间， 包括 0.0　和 1.0。
+    值必须在 0.0 和 1.0 之间，包括 0.0 和 1.0。
     
   * For each property that animates in an interval, create a
     [`Tween`][].
     The `Tween` specifies the start and end values for that property.
     
     对于每一个间隔内产生动画的属性，创建一个 [`Tween`][]。
-    `Tween` 指定此属性的开始值和结束值。 
+    `Tween` 可以指定该属性的开始值和结束值。 
     
   * The `Tween` produces an
     [`Animation`][]
@@ -528,48 +530,6 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
   }
 }
 {% endprettify %}
-
-## Resources
-
-## 资源
-
-The following resources might help when writing animations:
-
-以下资源可能会在编写动画时有所帮助：
-
-[Animations landing page][]<br>
-  Lists the available documentation for Flutter animations.
-  If tweens are new to you, check out the
-  [Animations tutorial](/docs/development/ui/animations/tutorial).
-  
-[动画效果介绍][Animations landing page]<br>
-Flutter 动画效果文档的合集页面，如果你刚接触，可以从
-[这个教程](/docs/development/ui/animations/tutorial)开始。
-
-[Flutter API documentation][]<br>
-  Reference documentation for all of the Flutter libraries.
-  In particular, see the [animation library][]
-  documentation.
-  
-[Flutter API 文档][Flutter API documentation]<br>
-  Flutter 库所有的参考文档。特别是 [animation library][] 
-  文档。
-
-[Flutter Gallery][]<br>
-  Demo app showcasing many Material Components and other Flutter
-  features.  The [Shrine demo][]
-  implements a hero animation.
-
-[Flutter Gallery][]<br>
-  Demo 应用程序展示了许多 Material Design 组件和其他 Flutter 特性。[Shrine demo][]
-  执行了一个 hero 动画。
-
-[Material motion spec][]
-<br>
-  Describes motion for Material apps.
-
-[Material 动画效果指导文档][Material motion spec]<br>
- Material 动效果文档。
 
 {% comment %}
 Package not yet vetted.

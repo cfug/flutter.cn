@@ -90,7 +90,7 @@ This section provides a tutorial on how to internationalize
 a Flutter application, along with any additional setup that a
 target platform might require.
 
-本节主要介绍如何国际化 Flutter 应用以及针对目标平台可能还需要的其他设置。
+本节主要介绍如何对 Flutter 应用进行国际化，以及针对目标平台需要设置的其他内容。
 
 ### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {#setting-up}
 
@@ -238,7 +238,7 @@ following instructions to add localized text to your application.
    file.
 
    另外，在 `pubspec.yaml` 文件中，启用 `generate` 标志。
-   该设置项添加在 pubspec 中 Flutter 的特定部分，
+   该设置项添加在 pubspec 中 Flutter 部分，
    通常处在 pubspec 文件中后面的部分。
 
    ```yaml
@@ -251,7 +251,7 @@ following instructions to add localized text to your application.
    project called `l10n.yaml` with the following content:
    
    在 Flutter 项目的根目录中添加一个新的 yaml 文件，
-   命名为`l10n.yaml`，其内容如下：
+   命名为 `l10n.yaml`，其内容如下：
 
    ```yaml
    arb-dir: lib/l10n
@@ -299,11 +299,11 @@ following instructions to add localized text to your application.
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
    
    要测试本地化工具，可以运行您的应用程序。
-   您应该能在 `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n` 中看到生成的文件。
+   您将在 `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n` 中看到生成的文件。
 
 7. Test the generated localizations in your app as follows:
 
-   如下，测试应用中生成的本地化文件内容：
+   测试应用中生成的本地化文件内容如下：
    
    <!-- skip -->
    ```dart
@@ -328,8 +328,8 @@ following instructions to add localized text to your application.
    
    如果目标设备的语言环境设置为英语，此代码生成的 Text widget 会展示「Hello World!」。
    如果目标设备的语言环境设置为西班牙语，则展示「Hola Mundo!」，
-   在 `arb` 文件中，每个条目的键都用作 getter 的方法名称，
-   而该条目的值表示本地化的信息。
+   在 `arb` 文件中，每个条目的键值都被用作 getter 的方法名称，
+   而该条目的值则表示本地化的信息。
 
 To see a sample Flutter app using this tool, please see
 [`gen_l10n_example`][].
@@ -355,7 +355,7 @@ use the following instructions:
 
 iOS 应用在内置于应用程序包中的 `Info.plist` 文件中
 定义了关键的应用程序元数据，其中包括了受支持的语言环境，
-要配置您的应用支持的语言环境，请按照以下说明进行操作：
+要配置您的应用支持的语言环境，请按照以下步骤进行操作：
 
 1. Open your project's `ios/Runner.xcworkspace` Xcode file.
 
@@ -392,7 +392,7 @@ iOS 应用在内置于应用程序包中的 `Info.plist` 文件中
 <a name="advanced-customization">
 ## Advanced topics for further customization
 
-## 高级主题：进一步定制
+## 定制的进阶操作
 
 This section covers additional ways to customize a
 localized Flutter application.

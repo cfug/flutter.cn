@@ -84,14 +84,13 @@ keywords: 国际化
 
 ## Introduction to localizations in Flutter
 
-## Flutter 中的本地化介绍
+## Flutter 应用本地化介绍
 
 This section provides a tutorial on how to internationalize
 a Flutter application, along with any additional setup that a
 target platform might require.
 
-本节提供有关如何国际化 Flutter 应用
-以及目标平台可能还需要的任何其他设置的教程。
+本节主要介绍如何国际化 Flutter 应用以及针对目标平台可能还需要的其他设置。
 
 ### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {#setting-up}
 

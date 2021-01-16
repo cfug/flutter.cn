@@ -8,9 +8,9 @@ keywords: 国际化
 ---
 
 {{site.alert.secondary}}
- 
+
   <h4 class="no_toc">What you’ll learn</h4>
-  
+
   <h4 class="no_toc">你将学习到</h4>
 
   * How to track the device's locale (the user's preferred language).
@@ -24,7 +24,7 @@ keywords: 国际化
   * How to define the locales an app supports.
   
     如何去定义 app 支持的语言环境。
-  
+
 {{site.alert.end}}
 
   If your app might be deployed to users who speak another language then
@@ -84,9 +84,14 @@ keywords: 国际化
 
 ## Introduction to localizations in Flutter
 
+## Flutter 中的本地化介绍
+
 This section provides a tutorial on how to internationalize
 a Flutter application, along with any additional setup that a
 target platform might require.
+
+本节提供有关如何国际化 Flutter 应用
+以及目标平台可能还需要的任何其他设置的教程。
 
 ### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {#setting-up}
 
@@ -207,6 +212,8 @@ structured, can be found below.
 <a name="adding-localized-messages"></a>
 ### Adding your own localized messages
 
+### 添加您自己的本地化信息
+
 Once the `flutter_localizations` package is added, use the
 following instructions to add localized text to your application.
 
@@ -227,40 +234,40 @@ following instructions to add localized text to your application.
    ```
 
 2. Also, in the `pubspec.yaml` file, enable the `generate`
-flag. This is added to the section of the pubspec that is
-specific to Flutter, and usually comes later in the pubspec
-file.
+   flag. This is added to the section of the pubspec that is
+   specific to Flutter, and usually comes later in the pubspec
+   file.
 
-  另外，在 `pubspec.yaml` 文件中，启用 `generate` 标志。
-  该设置项添加在 pubspec 中 Flutter 的特定部分，
-  通常处在 pubspec 文件中后面的部分。
+   另外，在 `pubspec.yaml` 文件中，启用 `generate` 标志。
+   该设置项添加在 pubspec 中 Flutter 的特定部分，
+   通常处在 pubspec 文件中后面的部分。
 
-  ```yaml
-  # The following section is specific to Flutter.
-  flutter:
-    generate: true    # Add this line
-  ```
+   ```yaml
+   # The following section is specific to Flutter.
+   flutter:
+     generate: true    # Add this line
+   ```
 
 3. Add a new yaml file to the root directory of the Flutter
-    project called `l10n.yaml` with the following content:
+   project called `l10n.yaml` with the following content:
+   
+   在 Flutter 项目的根目录中添加一个新的 yaml 文件，
+   命名为`l10n.yaml`，其内容如下：
 
-  在 Flutter 项目的根目录中添加一个新的 yaml 文件，
-  命名为`l10n.yaml`，其内容如下：
+   ```yaml
+   arb-dir: lib/l10n
+   template-arb-file: app_en.arb
+   output-localization-file: app_localizations.dart
+   ```
 
-  ```yaml
-  arb-dir: lib/l10n
-  template-arb-file: app_en.arb
-  output-localization-file: app_localizations.dart
-  ```
+   This file configures the localization tool; in this example,
+   the input files are located in `${FLUTTER_PROJECT}/lib/l10n`,
+   the `app_en.arb` file provides the template, and the generated
+   localizations are placed in the `app_localizations.dart` file.
 
-  This file configures the localization tool; in this example,
-  the input files are located in `${FLUTTER_PROJECT}/lib/l10n`,
-  the `app_en.arb` file provides the template, and the generated
-  localizations are placed in the `app_localizations.dart` file.
-
-  该文件用于配置本地化工具；在上面的示例中，指定输入文件在 
-  `${FLUTTER_PROJECT}/lib/l10n` 中，`app_en.arb` 文件提供模板，
-  生成的本地化文件在 `app_localizations.dart` 文件中。
+   该文件用于配置本地化工具；在上面的示例中，指定输入文件在 
+   `${FLUTTER_PROJECT}/lib/l10n` 中，`app_en.arb` 文件提供模板，
+   生成的本地化文件在 `app_localizations.dart` 文件中。
 
 4. In `${FLUTTER_PROJECT}/lib/l10n`,
    add the `app_en.arb` template file. For example:
@@ -303,17 +310,17 @@ file.
    ```dart
    import 'package:flutter_localizations/flutter_localizations.dart';
    import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Add this line
-   
+
    // ...
-   
+
    // Use AppLocalizations anywhere in your app.
    // Here, the translated message is used in a Text widget.
    Widget build(BuildContext context) {
      // ...
      return Text(AppLocalizations.of(context).helloWorld);
-}
+   }
    ```
-   
+
    This code generates a Text widget that displays "Hello World!"
    if the target device's locale is set to English, and "Hola Mundo!"
    if the target device's locale is set to Spanish. In the `arb` files,

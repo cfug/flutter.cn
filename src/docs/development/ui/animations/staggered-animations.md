@@ -98,7 +98,7 @@ This guide shows how to build a staggered animation in Flutter.
     
   [staggered_pic_selection][]
   <br> 展示从一个以三种大小显示的图像列表中删除一个图像。
-    这个例子使用两个 [animation controllers][]：
+    这个例子使用了两个 [动画控制器][animation controllers]：
     一个用于控制图像的选择/取消选择, 一个用于控制删除图像.
     选择/取消选择的动画是交织动画。
     (想看到这种效果，你可能需要增加 `timeDilation` 的数值。)
@@ -181,7 +181,7 @@ After running forward, the animation runs in reverse.
   * Regardless of how long the animation lasts in real time,
     the controller's values must be between 0.0 and 1.0, inclusive.
     
-    无论动画在真实时间中播放多长时间，控制器的值必须在 0.0 和 1.0 之间， 包括 0.0 和 1.0。
+    无论动画在真实时间中播放多长时间，控制器的值必须在 0.0 和 1.0 之间，包括 0.0 和 1.0。
     
   * Each animation has an
     [`Interval`][]

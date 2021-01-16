@@ -8,9 +8,9 @@ keywords: 国际化
 ---
 
 {{site.alert.secondary}}
-
+ 
   <h4 class="no_toc">What you’ll learn</h4>
-
+  
   <h4 class="no_toc">你将学习到</h4>
 
   * How to track the device's locale (the user's preferred language).
@@ -24,7 +24,7 @@ keywords: 国际化
   * How to define the locales an app supports.
   
     如何去定义 app 支持的语言环境。
-
+  
 {{site.alert.end}}
 
   If your app might be deployed to users who speak another language then
@@ -34,19 +34,19 @@ keywords: 国际化
   supports. Flutter provides widgets and classes that help with
   internationalization and the Flutter libraries themselves are
   internationalized.
-
+  
   如果你的 app 会部署给说其他语言的用户使用，那么你就需要对它进行国际化。
   这就意味着你在编写 app 的时候，需要采用一种容易对它进行本地化的方式进行开发，
   这种方式让你能够为每一种语言或者 app 所支持的语言环境下的文本和布局等进行本地化。
   Flutter 提供了 widgets 和类来帮助开发者进行国际化，
   当然 Flutter 库本身就是国际化的。
-
+  
   This page covers concepts and workflows necessary to localize a
   Flutter application using the `MaterialApp` and `CupertinoApp`
   classes, as most apps are written that way. However, applications
   written using the lower level `WidgetsApp` class can also
   be internationalized using the same classes and logic.
-
+  
   由于大多数应用程序都是以这种方式编写的，
   因此该页面主要介绍了使用 `MaterialApp` 和 `CupertinoApp` 
   对 Flutter 应用程序进行本地化所需的概念和工作流程。 
@@ -56,7 +56,7 @@ keywords: 国际化
 {{site.alert.secondary}}
 
   <h4 class="no_toc">Sample internationalized apps</h4>
-
+  
   <h4 class="no_toc">国际化的 app 示例</h4>
 
   If you'd like to start out by reading the code for an internationalized
@@ -65,7 +65,7 @@ keywords: 国际化
   provided by the [`intl`][] package.
   If Dart's intl package is new to you,
   see [Using the Dart intl tools][].
-
+  
   如果你想通过阅读已经国际化的 Flutter app 代码来开始的话，
   这里有两个小例子。第一个例子是一个尽可能简单的实现。
   第二个例子使用了 [`intl`][] package 提供的 API 和工具。
@@ -79,7 +79,7 @@ keywords: 国际化
   * [Internationalization based on the `intl` package][]
     
     [基于 `intl` package 的国际化实现示例][Internationalization based on the `intl` package]
-
+  
 {{site.alert.end}}
 
 ## Introduction to localizations in Flutter

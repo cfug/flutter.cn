@@ -347,7 +347,7 @@ The following behaviors might negatively impact your app's performance.
 * Avoid clipping in an animation. If possible, pre-clip the image before
   animating it.
 
-  避免在动画中剪裁，如果可能，请在动画开始之前预先剪裁图像。
+  避免在动画中剪裁，尽可能的在动画开始之前预先剪裁图像。
 
 * Avoid using constructors with a concrete List of children (such as
   `Column()` or `ListView()`) if most of the children are not visible

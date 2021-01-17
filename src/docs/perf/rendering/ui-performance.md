@@ -40,7 +40,7 @@ how do you fix it? Where do you begin?
 This guide shows you where to start,
 steps to take, and tools that can help.
 
-有句话叫“**快**的应用固然很好，但**流畅**的应用则更好。”
+有句话叫「**快**的应用固然很好，但**流畅**的应用则更好。」
 如果你的应用渲染并不流畅，该怎么处理呢？
 从哪里着手呢？本文展示了应该从哪里着手，步骤以及可以提供帮助的工具。
 
@@ -323,49 +323,56 @@ Although you have no direct access to any other thread,
 your actions on the UI thread have performance consequences
 on other threads.
 
+Flutter 使用多个线程来完成其必要的工作，图层中仅展示了其中两个线程。 
+您写的所有 Dart 代码都在 UI 线程上运行。尽管您没有直接访问其他线程的权限，
+但是您对 UI 线程的操作会对其他线程产生性能影响。
+
 <dl markdown="1">
 <dt markdown="1">
 <t>**Platform thread**</t>
+
 <t>**平台线程**</t>
 </dt>
 <dd markdown="1">
-<t>The platform's main thread. Plugin code runs here.
+    <t>The platform's main thread. Plugin code runs here.
     For more information, see the [UIKit][] documentation for iOS,
     or the [MainThread][] documentation for Android.
     This thread is not shown in the performance overlay.</t>
-<t> 平台线程实际上就是主线程。Plugin 的代码将会在这里运行。想要了解更多信息，
-请参阅 Android 的 [MainThread][] 以及 iOS 的 [UIKit][] 文档。</t>
+
+    <t>平台线程实际上就是主线程。Plugin 的代码将会在这里运行。想要了解更多信息，
+    请参阅 Android 的 [MainThread][] 以及 iOS 的 [UIKit][] 文档。</t>
+</dd>
 
 <dt markdown="1">
 <t>**UI thread**</t>
+
 <t>**UI 线程**</t>
 </dt>
 <dd markdown="1">
-<t>
-The UI thread executes Dart code in the Dart VM.
+    <t>The UI thread executes Dart code in the Dart VM.
     This thread includes code that you wrote, and code executed by
     Flutter's framework on your app's behalf.
     When your app creates and displays a scene, the UI thread creates
     a _layer tree_, a lightweight object containing device-agnostic
     painting commands, and sends the layer tree to the raster thread to
     be rendered on the device. _Don't block this thread!_
-    Shown in the bottom row of the performance overlay.
-</t>
-<t> UI 线程在 Dart VM 中执行 Dart 代码。
-该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。
-当应用创建和展示场景的时候，UI 线程首先建立一个 **图层树(layer tree)** ，
-一个包含设备无关的渲染命令的轻量对象，
-并将图层树发送到 GPU 线程来渲染到设备上。
-**不要阻塞这个线程！**在性能图层的最低栏展示该线程。
-</t>
+    Shown in the bottom row of the performance overlay.</t>
+
+    <t>UI 线程在 Dart VM 中执行 Dart 代码。
+    该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。
+    当应用创建和展示场景的时候，UI 线程首先建立一个 **图层树（layer tree）** ，
+    一个包含设备无关的渲染命令的轻量对象，
+    并将图层树发送到 GPU 线程来渲染到设备上。
+    **不要阻塞这个线程！** 在性能图层的最低栏展示该线程。</t>
+</dd>
 
 <dt markdown="1">
 <t>**Raster thread** (previously known as the GPU thread)</t>
+
 <t>**Raster 线程**（以前叫 GPU 线程）</t>
 </dt>
 <dd markdown="1">
-<t>
-The raster thread takes the layer tree and displays
+    <t>The raster thread takes the layer tree and displays
     it by talking to the GPU (graphic processing unit).
     You cannot directly access the raster thread or its data but,
     if this thread is slow, it's a result of something you've done
@@ -374,28 +381,30 @@ The raster thread takes the layer tree and displays
     This thread was previously known as the "GPU thread" because it
     rasterizes for the GPU. But it is running on the CPU. We renamed it
     to "raster thread" because many developers wrongly (but understandably)
-    assumed the thread runs on the GPU unit.
-</t>
-<t>raster 线程拿到 layer tree，并将它交给 GPU（图形处理单元）。
-你无法直接与 GPU 线程或其数据通信，
-但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。
-图形库 Skia 在该线程运行，并在性能图层的最顶栏显示该线程。
-这个线程之前被叫做 “GPU 线程”，因为它为 GPU 进行栅格化，
-但我们重新将它命名为 “raster 线程”，
-这是因为许多开发者错误的（但是能理解）认为该线程运行在 GPU 单元。</t>
+    assumed the thread runs on the GPU unit.</t>
+    
+    <t>raster 线程拿到 layer tree，并将它交给 GPU（图形处理单元）。
+    你无法直接与 GPU 线程或其数据通信，
+    但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。
+    图形库 Skia 在该线程运行，并在性能图层的最顶栏显示该线程。
+    这个线程之前被叫做「GPU 线程」，因为它为 GPU 进行栅格化，
+    但我们重新将它命名为「raster 线程」，
+    这是因为许多开发者错误的（但是能理解）认为该线程运行在 GPU 单元。</t>
+</dd>
 
 <dt markdown="1">
 <t>**I/O thread**</t>
-<t><**I/O线程**</t>
+
+<t>**I/O线程**</t>
 </dt>
 <dd markdown="1">
-<t>
-Performs expensive tasks (mostly I/O) that would
+    <t>Performs expensive tasks (mostly I/O) that would
     otherwise block either the UI or raster threads.
-    This thread is not shown in the performance overlay.
-    </t>
-<t>执行昂贵的操作（常见的有 I/O）以避免阻塞 UI 或者 raster 线程。
-这个线程将不会显示在 performance overlay 上。</t>
+    This thread is not shown in the performance overlay.</t>
+    
+    <t>执行昂贵的操作（常见的有 I/O）以避免阻塞 UI 或者 raster 线程。
+    这个线程将不会显示在 performance overlay 上。</t>
+</dd>
 </dl>
     
 For links to more information and videos,

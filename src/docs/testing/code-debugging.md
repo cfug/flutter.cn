@@ -36,8 +36,8 @@ or by importing `dart:io` and invoking methods on
 `stderr` and `stdout`. For example:
 
 在应用中有两种日志输出方式。第一种方式是使用 `stdout` 和 `stderr`。
-通常我们使用 `print()` 语句完成的，或者通过引入 `dart:io` 和调用 `stderr` 与 `stdout` 方法。
-比如：
+通常，我们使用 `print()` 语句或者通过引入 `dart:io` 
+并且调用 `stderr` 与 `stdout` 中的方法。如下：
 
 <!-- skip -->
 ```dart
@@ -50,9 +50,9 @@ from Flutter's `foundation` library. This is a wrapper around `print`
 that throttles the output to a level that avoids being dropped by
 Android's kernel.
 
-如果您一次输出太多，有时在 Android 平台会丢失一些长的输出行。
-可以使用 Flutter 里 `foundation` 包中的 [`debugPrint()`][] 方法来避免这个问题。
-它包装了 `print` 方法，通过控制输出的等级，来避免内容被 Android 的内核丢弃。
+如果您一次输出太多，Android 有时可能会丢失一些日志行。
+可以使用 Flutter 的 `foundation` 包中的 [`debugPrint()`][] 方法来避免这个问题。
+它封装了 `print` 方法，通过控制输出的等级，从而避免输出内容被 Android 的内核丢弃。
 
 The other option for application logging is to use the
 `dart:developer` [`log()`][] function. This allows you to include a
@@ -60,7 +60,7 @@ bit more granularity and information in the logging output.
 Here's an example:
 
 另一种应用日志输出的方式是使用 `dart:developer` 中的 [`log()`][] 方法。
-您通过这种方式可以在输出日志中包含更多的粒度和信息。下面是一个示例：
+通过这种方式，您可以在输出日志中包含更精细化的信息。如下面这个示例：
 
 <!-- skip -->
 ```dart
@@ -80,8 +80,9 @@ parameter on the `log()` call, JSON encode the object
 you want to send, and pass the encoded string to the
 error parameter.
 
-您也可以在打印日志时传递应用数据。通常在调用 `log()` 时使用命名参数 `error:`，
-通过 JSON 编码您想要发送的对象，并将编码后的字符串传给 error 参数。
+您也可以在打印日志时传入应用数据。
+通常，在调用 `log()` 时也会使用命名参数 `error:`，
+您可以通过 JSON 编码想要传入的对象，并将编码后的字符串传给 error 参数。
 
 <!-- skip -->
 ```dart
@@ -134,8 +135,8 @@ The `debugger()` statement takes an optional `when`
 argument that you can specify to only break when a
 certain condition is true, as in the following example:
 
-`debugger()` 语句有一个可选的 `when` 参数，用来指定断点触发的特定条件，
-比如下面案例：
+`debugger()` 语句有一个可选参数 `when`，
+用来指定该断点触发的特定条件，如下这个示例：
 
 <!-- skip -->
 ```dart
@@ -149,7 +150,7 @@ void someFunction(double offset) {
 
 ## Debug flags: application layers
 
-## Debug 标识：应用层
+## Debug 标识： 应用程序层
 
 {% comment %}  DevTool's doesn't currently print the render tree.
 {{site.alert.note}}
@@ -180,13 +181,13 @@ the middle of running a build sphae (in other words, not anywhere inside a
 `build()` method), if the app has built at least once and is in debug mode
 (in other words, any time after calling `runApp()`).
 
-如果应用至少构建了一次，并且处调试模于式时（换句话说，在调用 `runApp()` 后的任何时间）。
-调用 [`debugDumpApp()`][] 可以转储 Widget 库的状态。只要应用不在运行构建阶段，
-您就可以随意调用该函数（换句话说，不能在 `build()` 方法中使用它）。
+可以通过调用 [`debugDumpApp()`][] 方法转储 widget 库的状态，
+如果应用已至少构建了一次，并且正处于调试模式时（`runApp()` 调用后的任何时间）。
+只要应用不在运行构建阶段，您可以调用随意该方法（也就是说，不能在 `build()` 方法中使用它）。
 
 For example, the following application:
 
-比如，下面的应用：
+如下面这个应用：
 
 ```dart
 import 'package:flutter/material.dart';
@@ -310,7 +311,7 @@ widgets' build functions. For example,
 （如果您调用根 widget 的 `toStringDeep()` 方法，就会得到这棵树。）
 您会看到很多 widget ，虽然它们没出现在应用的源码中，但却出现在这颗树中，
 因为它们是由框架中 widget 的 build 函数插入的。
-比如，[`_InkFeature`][] 是 [`Material`][] widget 的实现细节。
+比如，[`Material`][] widget 的实现细节中就包括了 [`_InkFeature`][] 。
 
 Since the `debugDumpApp()` call is invoked when the button changes
 from being pressed to being released, it coincides with the
@@ -335,7 +336,7 @@ objects to the method's argument, and call the superclass method.
 This function is what the `toString` method uses to fill in the
 widget's description.
 
-对于您自己写的 widget，可以通过重写 [`debugFillProperties()`][widget-fill] 方法添加信息。
+对于您自定义的 widget，可以通过重写 [`debugFillProperties()`][widget-fill] 方法添加信息。
 为方法中的参数添加 [DiagnosticsProperty][] 对象，并调用父类方法。
 该方法在 widget 调用 `toString` 方法时会被填充到其描述信息中。
 
@@ -678,14 +679,14 @@ I/flutter ( 6559):            └╌no offstage children
 This is the output of the root `RenderObject` object's
 `toStringDeep()` function.
 
-这是根节点 `RenderObject` 对象 `toStringDeep()` 方法的输出结果。
+这是根节点 `RenderObject` 对象的 `toStringDeep()` 方法的输出结果。
 
 When debugging layout issues, the key fields to look at are the
 `size` and `constraints` fields. The constraints flow down the tree,
 and the sizes flow back up.
 
-在调试布局问题时，关键的是 `size` 和 `constraints` 两个字段。
-constraint 沿树向下流动，而 size 则向上追溯。
+在调试布局问题时，主要需要关注 `size` 和 `constraints` 两个字段。
+constraint 沿树向下传递，而 size 则向上追溯。
 
 For example, in the previous dump you can see that the window size,
 `Size(411.4, 683.4)`, is used to force all the boxes down to the
@@ -710,8 +711,9 @@ the Material Design guidelines regarding button dimensions.)
 从转储文件可以看出 `RenderPositionedBox` 是由 [`Center`][] widget 创建的
 （可以从 `creator` 字段的描述看出来），并将其 child 的约束条件变得松散：
 约束范围是 `BoxConstraints(0.0<=w<=411.4, 0.0<=h<=683.4)`。
-后面 [`RenderPadding`][] 进一步插入这些约束来确保空间的边距，因此 [`RenderConstrainedBox`][] 
-有一个宽松的约束： `BoxConstraints(0.0<=w<=395.4,0.0<=h<=667.4)`。
+其后代的 [`RenderPadding`][] 进一步插入这些约束来确保留出空间作为内边距，
+因此 [`RenderConstrainedBox`][] 有一个宽松的约束，该约束为：
+`BoxConstraints(0.0<=w<=395.4,0.0<=h<=667.4)`。
 `creator` 字段告诉我们，这个对象很可能是 [`TextButton`][] 定义的一部分，
 它内容的最小宽度为 88 像素，具体高度为 36.0。（ `TextButton` 是 Material Design 中按钮尺寸标准的实现。）
 
@@ -724,9 +726,10 @@ width of all the boxes that form the button, as they all take their
 child's dimensions to size themselves.
 
 最内部的 `RenderPositionedBox` 再次放松了约束，这次是把文本放在了按钮的中间。
-[`RenderParagraph`][] 根据其内容确定大小。由于它们都使用 child 的尺寸来调整自己的尺寸，
-如果您现在沿着这个链往回追溯尺寸，您会看到在按钮形成过程中，
-所有的 box 宽度是如何受到文本尺寸影响的。
+[`RenderParagraph`][] 可以根据其内容确定自身大小。
+如果您现在沿着这条链路往回追溯渲染对象的尺寸大小，
+您就会看到在文本的大小是如何影响按钮边框大小的形成过程，
+因为它们都会根据子组件的尺寸自行调整大小。
 
 Another way to notice this is by looking at the "relayoutSubtreeRoot"
 part of the descriptions of each box, which essentially tells you how
@@ -833,7 +836,7 @@ and the [`debugPrintEndFrameBanner`][] booleans to print the
 beginning and end of the frames to the console.
 
 如果您想要找到事件触发对应的开始或结束帧，可以将 [`debugPrintBeginFrameBanner`][] 
-和[`debugPrintEndFrameBanner`][] 这两个布尔值切换为 true，在控制台中打印开始和结束帧的信息。
+和 [`debugPrintEndFrameBanner`][] 这两个布尔值切换为 true，在控制台中打印开始和结束帧的信息。
 
 For example:
 
@@ -851,6 +854,7 @@ to print the call stack causing the current frame to be scheduled.
 
 当前帧被调度时，[`debugPrintScheduleFrameStacks`][] 标志也可以用来打印调用堆栈信息。
 
+
 ## Debug flags: layout
 
 ## 调试标志：布局
@@ -863,7 +867,8 @@ The easiest way to set it is at the top of your `void main()`
 entry point. See an example in the following code:
 
 通过将 [`debugPaintSizeEnabled`][] 设置为 true，您也可以可视地调试布局问题。
-这个布尔值在 `rendering` 库中。它可以在任何时候被启用，并且当其为 true 时会影响界面上所有的绘画。
+该布尔值在 `rendering` 库中，可以在任何时候被启用，
+并且当其为 true 时，会影响界面上所有的绘制。
 最简单的方式是在程序顶部入口 `void main()`中设置它，如下案例代码所示：
 
 <!-- skip -->
@@ -955,7 +960,7 @@ will observe time going backwards, which will probably
 result in asserts and generally interfere with your efforts.
 
 将 [`timeDilation`][] 变量（来自 `scheduler` 库）设置为大于 1.0 的数字，例如，50.0。
-这最好在应用启动时只是一次。如果您动态地改变它，尤其是您在动画运行时减少它，
+该操作最好在应用启动时只执行一次。如果您动态地改变，尤其是在动画运行时减少它时，
 框架可能会观察到时间倒退，这可能会导致断言失败，通常这会让您徒劳无功。
 
 ## Debug flags: performance
@@ -984,7 +989,7 @@ highlights some of flags (and one function) from the
 
 Flutter 提供了各种各样的调试标志和功能，来帮助您在开发周期的不同阶段调试应用。
 想要使用这些特性，必须在调试模式下编译。下面的列表虽然不完整，
-但是突出显示了[rendering library][] 中用于调试性能问题的一些标志(以及一个函数)。
+但是突出显示了 [rendering library][] 中用于调试性能问题的一些标志（以及一个函数）。
 
 You can set these flags either by editing the framework code,
 or by importing the module and setting the value in your
@@ -1040,7 +1045,7 @@ or by importing the module and setting the value in your
 
 |   [`debugRepaintRainbowEnabled`][]  |
 | ---- |
-|您可以通过点击 **Repaint Rainbow** 按钮，在Flutter inspector 中启用此标志。
+|您可以通过点击 **Repaint Rainbow** 按钮，在 Flutter inspector 中启用此标志。
 如果任何静态 widget 在彩虹七颜色之间轮转（比如一个静态标题），
 那么这些区域就可能需要添加重新绘制边界进行优化。   |
 
@@ -1097,8 +1102,7 @@ recording option and perform the function you want to measure.
 Refreshing the page displays the chronological timeline records
 of your app in Chrome's [tracing tool][].
 
-在Chrome的 [跟踪工具][tracing tool] 中点击 Refresh 按钮刷新页面，
-会显示出应用的 timeline 时序记录。
+在 Chrome 的 [跟踪工具][tracing tool] 中刷新页面，展示您应用的 timeline 时序记录。
 
 Be sure to run your app in [profile mode][] to ensure that the
 runtime performance characteristics closely match that of your
@@ -1128,7 +1132,7 @@ setting the `showPerformanceOverlay` property to `true` on the
 constructor:
 
 您可以通过编程方式启用 PerformanceOverlay widget，在 [`MaterialApp`][]、[`CupertinoApp`][] 
-或 [`WidgetsApp`][] 构造函数中，将设置 `showPerformanceOverlay` 属性为 `true` 即可。
+或 [`WidgetsApp`][] 构造函数中，将 `showPerformanceOverlay` 属性设置为 `true` 即可。
 
 <!-- skip -->
 {% prettify dart %}
@@ -1152,7 +1156,7 @@ or `WidgetsApp`, you can get the same effect by wrapping your
 application in a stack and putting a widget on your stack that was
 created by calling [`PerformanceOverlay.allEnabled()`][].)
 
-（如果不使用 `MaterialApp`、`CupertinoApp` 或 `WidgetsApp`，您可以通过将应用包装在一个 Stack 中，
+（如果您没有使用 `MaterialApp`、`CupertinoApp` 或 `WidgetsApp`，可以通过将应用包装在一个 Stack 中，
 并通过调用 [`PerformanceOverlay.allEnabled()`][] 来创建一个 widget，来获得相同的效果。）
 
 For information on how to interpret the graphs in the overlay,
@@ -1171,11 +1175,13 @@ help verify alignments by using the
 `debugShowMaterialGrid` argument in the
 [`MaterialApp` constructor][].
 
+您可以通过编程的方式将 [Material Design 基线网格][Material Design baseline grid] 覆盖在应用的顶层来辅助对齐校验，
+通过使用 [`MaterialApp` 构造函数][`MaterialApp` constructor] 中的 `debugShowMaterialGrid` 参数进行设置。
+
 In non-Material applications, you can achieve a similar
 effect by using a [`GridPaper`][] widget directly.
 
-您可以通过编程的方式将 [Material Design 基线网格][Material Design baseline grid] 覆盖在应用的顶层来辅助对齐校验，
-通过使用 [`MaterialApp` 构造函数][`MaterialApp` constructor] 中的 `debugShowMaterialGrid` 参数进行设置。
+在非 Material 应用中，您可以通过直接使用 [`GridPaper`][] widget 来达到类似的效果。
 
 [`GridPaper`]: {{site.api}}/flutter/widgets/GridPaper-class.html
 [Material Design]: {{site.material}}/design/introduction

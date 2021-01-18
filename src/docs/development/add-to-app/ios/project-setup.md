@@ -618,7 +618,8 @@ for local network permission. The permission can also be allowed by enabling
 Flutter does not yet support `arm64` iOS simulators. To run your host app on an Apple Silicon
 Mac, exclude `arm64` from the simulator architectures.
 
-Flutter 目前暂未支持 `arm64` 的 iOS 模拟器。要在 Apple Silicon Mac 设备上运行你的宿主应用，请从模拟器体系结构中排除 `arm64`。
+Flutter 目前暂未支持 `arm64` 的 iOS 模拟器。
+要在 Apple Silicon Mac 设备上运行你的宿主应用，请从模拟器支持架构中移除 `arm64`。
 
 In your host app target, find the **Excluded Architectures** (`EXCLUDED_ARCHS`) build setting.
 Click the right arrow disclosure indicator icon to expand the available build configurations.

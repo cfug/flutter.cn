@@ -295,7 +295,7 @@ A simplified reactive state management solution.
 
 An approach similar to Provider that is compile-safe and testable. It doesn't have a dependency on the Flutter SDK.
 
-一个编译安全，非常容易测试的类似于 Provider 的解决方案。而且它不依赖于 Flutter SDK。
+一个编译安全，测试步骤简单的类似于 Provider 的解决方案。且它不依赖于 Flutter SDK。
 
 * [Riverpod][] homepage
 * [Getting started with Riverpod][]

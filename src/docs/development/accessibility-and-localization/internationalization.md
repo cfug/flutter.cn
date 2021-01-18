@@ -811,6 +811,9 @@ The date patterns and symbols of the locale will also need to
 be specified. In the source code, the date patterns and symbols
 are defined like this:
 
+语言对应的日期格式和符号需要一并指定。
+在源码中，它们会以下列形式进行定义：
+
 <!-- skip -->
 ```dart
 const nnLocaleDatePatterns = {
@@ -834,6 +837,11 @@ date formatting. Unfortunately, since the `intl` library does
 not share the same flexibility for number formatting, the formatting
 for an existing locale will have to be used as a substitute in
 `_NnMaterialLocalizationsDelegate`:
+
+上列内容需要修改以匹配语言的正确日期格式。
+可惜的是，`intl` 并不具备数字格式的灵活性，
+以至于 `_NnMaterialLocalizationsDelegate` 需要使用
+现有的语言的格式作为替代方法：
 
 <!-- skip -->
 ```dart

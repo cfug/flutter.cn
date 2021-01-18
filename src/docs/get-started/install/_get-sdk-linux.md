@@ -144,7 +144,11 @@ install Flutter using the following steps.
 
     For additional download options, see `flutter help precache`.
 
-    对于这些可选的下载项，请参考 `flutter help precache`。
+    对于这些可选的下载项，请参考 `flutter help precache`。如果执行命令后超过5分钟后还是停在`Building flutter tool...`不动，可以将其中断，设置镜像地址后再执行:
+    ```
+    $ export PUB_HOSTED_URL=https://pub.flutter-io.cn
+    $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+    ```
 
 You are now ready to run Flutter commands!
 

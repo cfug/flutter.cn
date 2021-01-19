@@ -1001,11 +1001,9 @@ or by importing the module and setting the value in your
 <dl markdown="1">
 <dt markdown="1">[`debugDumpRenderTree()`][]</dt>
 <dd markdown="1">
-  Call this function when not in a layout or repaint
-  phase to dump the rendering tree to the console.
-  (Pressing **t** from `flutter run` calls this command.)
-  Search for "RepaintBoundary" to see diagnostics
-  on how useful a boundary is.
+  当不在布局或重新绘制阶段时，调用此函数将 render 树转储到控制台。
+  （可以从 `flutter run`  按下 **t** 调用此命令。）
+  通过搜索其中的「RepaintBoundary」可以查看关于边界的有用诊断信息。
 {% comment %} Feature is not yet added to DevTools:
     Rather than using this flag to dump the render tree
     to a file, view the render tree in the Flutter inspector.
@@ -1014,51 +1012,21 @@ or by importing the module and setting the value in your
 <dt markdown="1">[`debugPaintLayerBordersEnabled`][]</dt>
 <dd markdown="1">PENDING
 <dt markdown="1">[`debugRepaintRainbowEnabled`][]</dt>
-<dd markdown="1">You can enable this flag in the Flutter
-    inspector by selecting the **Repaint Rainbow** button.
-    If any static widgets are rotating through the colors of the rainbow
-    (for example, a static header), those areas are candidates for adding
-    repaint boundaries.
+<dd markdown="1">您可以通过点击 **Repaint Rainbow** 按钮，
+    在 Flutter inspector 中启用此标志。
+    如果任何静态 widget 在彩虹七颜色之间轮转（比如一个静态标题），
+    那么这些区域就可能需要添加重新绘制边界进行优化。
 <dt markdown="1">[`debugPrintMarkNeedsLayoutStacks`][]</dt>
-<dd markdown="1">Enable this flag if you're seeing more layouts
-    than you expect (for example, on the timeline, on a profile,
-    or from a `print` statement inside a layout method).
-    Once enabled, the console is flooded with stack traces
-    showing why each render object is being marked dirty for
-    layout. You can use the `debugPrintStack()` method from the
-    `services` library to print your own stack traces on demand,
-    if this kind of approach is useful to you.
+<dd markdown="1">如果您看到的布局比预期的要多
+    （比如，在 timeline 、profile 或者一个布局方法中的 `print` 语句中)，
+    可以启用这个标志。一旦启用，控制台将会充满堆栈跟踪，
+    来显示在布局时每个渲染对象被标记为 dirty 的原因。
+    如果有需要的话，您可以使用 `services` 库中的 `debugPrintStack()` 方法
+    按需打印出堆栈的跟踪信息。
 <dt markdown="1">[`debugPrintMarkNeedsPaintStacks`][]</dt>
-<dd markdown="1">Similar to `debugPrintMarkNeedsLayoutStacks`,
-    but for excess painting. You can use the `debugPrintStack()`
-    method from the `services` library to print your own stack
-    traces on demand, if this kind of approach is useful to you.
-
-|   [`debugDumpRenderTree()`][]   |
-| ---- |
-|当不在布局或重新绘制阶段时，调用此函数将 render 树转储到控制台。（可以从 `flutter run` 
-按下 **t** 调用此命令。）通过搜索其中的「RepaintBoundary」可以查看关于边界的有用诊断信息。   |
-
-|   [`debugPaintLayerBordersEnabled`][]   |
-| ---- |
-|   PENDING   |
-
-|   [`debugRepaintRainbowEnabled`][]  |
-| ---- |
-|您可以通过点击 **Repaint Rainbow** 按钮，在 Flutter inspector 中启用此标志。
-如果任何静态 widget 在彩虹七颜色之间轮转（比如一个静态标题），
-那么这些区域就可能需要添加重新绘制边界进行优化。   |
-
-|   [`debugPrintMarkNeedsLayoutStacks`][]  |
-| ---- |
-|如果您看到的布局比预期的要多（比如，在 timeline 、profile 或者一个布局方法中的 `print` 语句中)，
-可以启用这个标志。一旦启用，控制台将会充满堆栈跟踪，来显示在布局时每个渲染对象被标记为 dirty 的原因。
-如果有需要的话，您可以使用 `services` 库中的 `debugPrintStack()` 方法按需打印出堆栈的跟踪信息。   |
-    
-|   [`debugPrintMarkNeedsPaintStacks`][]  |
-| ---- |
-| 它和 `debugPrintMarkNeedsLayoutStacks` 类似，但用于多余的绘制。
-如果有需要的话，您可以使用 `services` 库中的 `debugPrintStack()` 方法按需打印出堆栈的跟踪信息。   |
+<dd markdown="1">它和 `debugPrintMarkNeedsLayoutStacks` 类似，
+    但用于多余的绘制。如果有需要的话，您可以使用 `services` 库中的
+    `debugPrintStack()` 方法按需打印出堆栈的跟踪信息。
 
 ### Tracing Dart code performance
 
@@ -1163,7 +1131,7 @@ For information on how to interpret the graphs in the overlay,
 see [The performance overlay][] in
 [Profiling Flutter performance][].
 
-有关如何解释浮层中的图形的信息，可以参见 [Profiling Flutter performance][] 中的 [The performance overlay][]。
+有关如何解释浮层中的图形的信息，可以参见 [Flutter 性能分析][Profiling Flutter performance] 中的 [性能图层][The performance overlay]。
 
 ## Widget alignment grid
 

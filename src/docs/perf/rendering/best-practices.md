@@ -15,9 +15,9 @@ instead of needing to micro-optimize with complicated profiling tools.
 These best recommendations will help you write the most performant
 Flutter app possible.
 
-通常来说，Flutter 技术构建的应用程序在默认情况下都是高性能的。
-所以你只需要避开常见的陷阱，就可以获得优异的性能，
-而不需要使用复杂的分析工具对细节做优化。
+通常来说，Flutter 构建的应用程序在默认情况下都是高性能的。
+所以你只需要避开常见的陷阱，不需要使用复杂的分析工具
+对细节做优化，就可以获得优异的性能，
 这些最佳建议将帮助你编写性能最佳的 Flutter 应用程序。
 
 If you are writing web apps in Flutter, you might be interested
@@ -26,8 +26,8 @@ after they modified the [Flutter Gallery][] app to make it more
 performant on the web:
 
 如果你在用 Flutter 编写 Web 应用，你可能会对下面的系列文章感兴趣，
-他们由 Flutter Material 团队撰写，记录对 [Flutter Gallery][] 应用的修改，
-使其在 Web 上的展现更为丰富:
+他们由 Flutter Material 团队撰写，记录了对 [Flutter Gallery][] 应用的修改，
+使其在 Web 上的性能更好:
 
 * [Optimizing performance in Flutter web apps with tree
    shaking and deferred loading][web-perf-1]
@@ -104,7 +104,7 @@ when designing your app:
 
     当重新遇到与前一帧相同的子 widget 实例时，将停止遍历。
     这种技术在框架内部大量使用，用于优化动画不影响子树的动画。
-    请参阅 [`TransitionBuilder`] 模式和遵循此原则的 
+    请参阅 [`TransitionBuilder`][] 模式和遵循此原则的 
     [SlideTransition 代码][source code for `SlideTransition`]，
     以避免在动画过程中重建其后代 widget。
 
@@ -113,7 +113,7 @@ Also see:
 另请参考：
 
 * [Performance considerations][], part of the [`StatefulWidget`][] API doc
- 
+
   [`StatefulWidget`][] API 文档中的 [Performance considerations][] 部分。
 
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
@@ -134,16 +134,16 @@ Use effects carefully, as they can be expensive. Some of them invoke
 {{site.alert.secondary}}
 
   <h4>Why is savelayer expensive?</h4><a name="why-is-savelayer-expensive"></a>
-  
+
   <h4>为什么 saveLayer 代价很大？</h4><a name="why-is-savelayer-expensive"></a>
-  
+
   Calling `saveLayer()` allocates an offscreen buffer. Drawing content
   into the offscreen buffer might trigger render target switches that
   are particularly slow in older GPUs.
 
   调用 `saveLayer()` 会开辟一片离屏缓冲区。
   将内容绘制到离屏缓冲区可能会触发渲染目标切换，这些切换在较早期的 GPU 中特别慢。
-  
+
 {{site.alert.end}}
 
 Some general rules when applying specific effects:
@@ -156,9 +156,9 @@ Some general rules when applying specific effects:
   to an image, which is faster than using the Opacity
   widget.
 
-  能不用 [`Opacity`] widget，
+  能不用 [`Opacity`][] widget，
   就尽量不要用。有关将透明度直接应用于图像的示例，
-  请参见 [Transparent image]，
+  请参见 [Transparent image][]，
   这比使用 Opacity widget 更快。
 
 * **Clipping** doesn’t call `saveLayer()` (unless
@@ -233,7 +233,7 @@ Also see:
 
 * [Working with long lists][] in the [Cookbook][]
 
-  [实用教程][Cookbook]里的 [长列表的处理][Working with long lists] 文档
+  [实用教程][Cookbook] 里的 [长列表的处理][Working with long lists] 文档
 
 * [Creating a ListView that loads one page at a time][]
   a community article by AbdulRahman AlHamali
@@ -312,11 +312,11 @@ information** check box. This feature helps you detect when
 frames are being rendered and displayed in more than 16ms.
 Where possible, the plugin provides a link to a relevant tip.
 
-如果你需要调整应用程序的性能，或者 UI 顺畅度没达到你的预期，
+如果你需要改善应用程序的性能，或者 UI 流畅度没达到你的预期，
 那么 IDE 的 Flutter plugin 可以提供帮助。
 在 Flutter Performance 窗口中，勾选 **Show widget rebuild information** 复选框。 
 此功能可帮助你检测帧的渲染和显示时间是否超过 16ms。
-在可能的情况下，插件提供指向相关提示的链接。
+在可能的情况下，插件也会提供指向相关提示的链接。
 
 The following behaviors might negatively impact your app's performance.
 
@@ -328,7 +328,7 @@ The following behaviors might negatively impact your app's performance.
   see [Performance considerations for opacity animation][].
 
   避免使用 `Opacity` widget，尤其是在动画中避免使用。
-  请用 `AnimatedOpacity` 或 `FadeInImage` 进行代替。
+  可以使用 `AnimatedOpacity` 或 `FadeInImage` 代替该操作。
   更多信息，请参阅
   [Performance considerations for opacity animation][]。
 
@@ -339,15 +339,15 @@ The following behaviors might negatively impact your app's performance.
   the AnimatedBuilder. For more information,
   see [Performance optimizations][].
 
-  使用 AnimatedBuilder 时，请避免在不依赖于动画的 widget 的构造方法中构建 widget 树。
-  动画的每次变动都会重建这个 widget 树。
-  而应该构建子树的那一部分，并将其作为 child 传递给 AnimatedBuilder。
+  使用 AnimatedBuilder 时，请避免在不依赖于动画的 widget 的构造方法中构建 widget 树，
+  不然，动画的每次变动都会重建这个 widget 树，
+  应当将这部分子树作为 child 传递给 AnimatedBuilder，从而只构建一次。
   更多内容，请查看 [这个文档][Performance optimizations]。
 
 * Avoid clipping in an animation. If possible, pre-clip the image before
   animating it.
 
-  避免在动画中剪裁。如果可能，请在动画开始之前预先剪切图像。
+  避免在动画中剪裁，尽可能的在动画开始之前预先剪裁图像。
 
 * Avoid using constructors with a concrete List of children (such as
   `Column()` or `ListView()`) if most of the children are not visible
@@ -379,7 +379,7 @@ For more performance info, see the following resources:
   ListView API 页面中 [Child elements' lifecycle][]，以及如何高效加载元素；
   
 * [Performance considerations][] of a `StatefulWidget`
- 
+
   `StatefulWidget` 的 [Performance considerations][] API 文档。
   
   

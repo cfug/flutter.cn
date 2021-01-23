@@ -87,7 +87,7 @@ To install these:
 
  1.  Start Android Studio.
     
-    打开 Android Studio。
+     打开 Android Studio。
 
  1. Open plugin preferences (**Configure > Plugins** as of
      v3.6.3.0 or later).

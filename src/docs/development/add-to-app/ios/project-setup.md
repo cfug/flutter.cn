@@ -613,6 +613,34 @@ for local network permission. The permission can also be allowed by enabling
 </li>
 </ol>
 
+## Apple Silicon (`arm64` Macs)
+
+Flutter does not yet support `arm64` iOS simulators. To run your host app on an Apple Silicon
+Mac, exclude `arm64` from the simulator architectures.
+
+Flutter 目前暂未支持 `arm64` 的 iOS 模拟器。
+要在 Apple Silicon Mac 设备上运行你的宿主应用，请从模拟器支持架构中移除 `arm64`。
+
+In your host app target, find the **Excluded Architectures** (`EXCLUDED_ARCHS`) build setting.
+Click the right arrow disclosure indicator icon to expand the available build configurations.
+Hover over **Debug** and click the plus icon. Change **Any SDK** to **Any iOS Simulator SDK**.
+Add `arm64` to the build settings value.
+
+在宿主应用的 Target 中，找到名为 **Excluded Architectures** (`EXCLUDED_ARCHS`) 的构建设置。
+单击右侧的箭头指示器图标以展开可用的构建配置。
+将鼠标悬停在 **Debug** 处并单击加号图标。将 **Any SDK** 更改为 **Any iOS Simulator SDK**。
+然后向构建设置值中添加 `arm64`。
+
+{% include app-figure.md image="development/add-to-app/ios/project-setup/excluded-archs.png" alt="Set conditional EXCLUDED_ARCHS build setting" %}
+
+When done correctly, Xcode will add `"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;` to your **project.pbxproj** file.
+
+当全部都正确设置后，Xcode 将会向你的 **project.pbxproj** 文件中添加 `"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;`。
+
+Repeat for any iOS unit test targets.
+
+然后对全部 iOS 目标再次执行单元测试。
+
 ## Development
 
 ## 开发

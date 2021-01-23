@@ -704,12 +704,10 @@ The following examples show how to make and customize shapes.
 
 ### 圆角
 
-To round the corners of a rectangular shape, use the `borderRadius` property
-of a
-[BoxDecoration][]
-object. Create a new
-[BorderRadius][]
-object that specifies the radii for rounding each corner.
+To round the corners of a rectangular shape,
+use the `borderRadius` property of a [`BoxDecoration`][] object.
+Create a new [`BorderRadius`][]
+object that specifies the radius for rounding each corner.
 
 在矩形上实现圆角，请用
 [BoxDecoration][]

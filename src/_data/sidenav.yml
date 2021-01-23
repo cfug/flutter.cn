@@ -220,6 +220,8 @@
               permalink: /docs/development/tools/devtools/memory
             - title: 性能视图
               permalink: /docs/development/tools/devtools/performance
+            - title: CPU 探测视图
+              permalink: /docs/development/tools/devtools/cpu-profiler
             - title: 网络视图
               permalink: /docs/development/tools/devtools/network
             - title: 调试器
@@ -358,6 +360,8 @@
       permalink: /docs/resources/design-docs
     - title: 有效提出 Bug
       permalink: /docs/resources/bug-reports
+    - title: 为 Flutter 作出贡献
+      permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
     - title: 品牌资源
       permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
 

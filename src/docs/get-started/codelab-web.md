@@ -1078,7 +1078,7 @@ area. The animation has the following behavior:
 <li markdown="1">Add an `AnimatedProgressIndicator`.<br>
 At the bottom of the file, add this widget:
 
-添加进度条动画效果。<br>
+添加进度条动画效果 (`AnimatedProgressIndicator`)<br>
 在文件的下面，添加下面的 widget：
 
 <!--skip-->

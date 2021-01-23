@@ -1149,6 +1149,9 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 The [`didUpdateWidget`][] function updates
 the `AnimatedProgressIndicatorState` whenever
 `AnimatedProgressIndicator` changes.
+
+[`didUpdateWidget`][] 方法会在 `AnimatedProgressIndicator` 变化时更新
+`AnimatedProgressIndicatorState`。
 </li>
 
 [`didUpdateWidget`][] 方法会在 `AnimatedProgressIndicator` 变化时更新

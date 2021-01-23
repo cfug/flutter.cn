@@ -226,9 +226,9 @@ use the `-i` and/or `-a` flags:
 默认情况下，我们的模板使用 Kotlin 编写 Android 或使用 Swift 编写 iOS 代码。要使用
 Java 或 Objective-C，请使用 `-i` 和/或 `-a` 标志：
 
-* In a terminal run: `flutter create -i swift -a kotlin batterylevel`
+* In a terminal run: `flutter create -i objc -a java batterylevel`
 
-  在终端中运行：`flutter create -i swift -a kotlin batterylevel`
+  在终端中运行：`flutter create -i objc -a java batterylevel`
 
 ### Step 2: Create the Flutter platform client {#example-client}
 

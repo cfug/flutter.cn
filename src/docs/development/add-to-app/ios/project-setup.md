@@ -626,7 +626,7 @@ Click the right arrow disclosure indicator icon to expand the available build co
 Hover over **Debug** and click the plus icon. Change **Any SDK** to **Any iOS Simulator SDK**.
 Add `arm64` to the build settings value.
 
-在主机应用目标中，找到叫做 **Excluded Architectures** (`EXCLUDED_ARCHS`) 的构建设置。
+在宿主应用的 Target 中，找到名为 **Excluded Architectures** (`EXCLUDED_ARCHS`) 的构建设置。
 单击右侧的箭头指示器图标以展开可用的构建配置。
 将鼠标悬停在 **Debug** 处并单击加号图标。将 **Any SDK** 更改为 **Any iOS Simulator SDK**。
 然后向构建设置值中添加 `arm64`。

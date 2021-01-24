@@ -15,13 +15,12 @@ npm i
 
 npx gulp mark-side-toc
 
-#npx nt inject '../../_site/!(community|tutorials)/**/!(*_cn).html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
+npx nt inject '../../_site/!(community|tutorials)/**/!(*_cn).html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
 
-#npx nt mark '../../_site/!(community|tutorials)**/!(*_cn).html'
+npx nt mark '../../_site/!(community|tutorials)/**/!(*_cn).html'
 
-npx nt inject '../../_site/**/*.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
-
-npx nt mark '../../_site/**/*.html'
+#npx nt inject '../../_site/**/*.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
+#npx nt mark '../../_site/**/*.html'
 
 npx gulp remove-space
 

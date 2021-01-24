@@ -105,7 +105,7 @@ integration_test/
 test/
   # Other unit tests go here.
 test_driver/
-  integration_test.dart
+  integration_test_driver.dart
 ```
 
 See also:
@@ -120,13 +120,13 @@ These tests can be launched with the `flutter drive` command, where
 
 ```bash
 flutter drive \
-  --driver=test_driver/integration_test.dart \
+  --driver=test_driver/integration_test_driver.dart \
   --target=integration_test/foo_test.dart \
   -d <DEVICE_ID>
 ```
 
 This runs the tests in `foo_test.dart` via the adapter in
-`test_driver/integration_test.dart`.
+`test_driver/integration_test_driver.dart`.
 
 
 ### Running in a browser 

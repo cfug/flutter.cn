@@ -193,7 +193,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 If you run the `fetchPhotos()` function on a slower device,
 you might notice the app freezes for a brief moment as it parses and
-converts the JSON. This is jank, and you want to be rid of it.
+converts the JSON. This is jank, and you want to get rid of it.
 
 如果你在一台很慢的手机上运行 `fetchPhotos()` 函数，
 你或许会注意到应用会有点卡顿，因为它需要解析并转换 json。

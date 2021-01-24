@@ -139,6 +139,8 @@
     - title: 平台集成
       permalink: /docs/development/platform-integration
       children:
+        - title: 已支持的平台
+          permalink: /docs/development/tools/sdk/release-notes/supported-platforms
         - title: 添加 iOS App Clip 支持
           permalink: /docs/development/platform-integration/ios-app-clip
         - title: Apple Watch 支持

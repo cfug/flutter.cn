@@ -55,8 +55,8 @@ It currently has the _**following limitations**_:
 * Plugins used in add-to-app on Android should migrate
   to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
   
-  在 Android 平台，使用了添加到现有应用（add-to-app）的插件需要迁移到支持
-  使用基于 [`FlutterPlugin`] 的 [Android 插件 API][Android plugin APIs]。
+  在 Android 平台，使用了添加到现有应用 (add-to-app) 的插件需要迁移到
+  基于 [`FlutterPlugin`] 的 [Android 插件 API][Android plugin APIs]。
   
 * Plugins that don't support `FlutterPlugin` might have unexpected
   behaviors if they make assumptions that are untenable in add-to-app

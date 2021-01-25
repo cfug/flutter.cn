@@ -19,3 +19,7 @@ h1[translation-result] + h1[translation-origin=on] {
 h2[translation-result] + h2[translation-origin=on] {
     margin-top: -12px;
 }
+
+.site-header__search.form-inline {
+    margin-block-end: 0 !important;
+}

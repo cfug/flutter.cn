@@ -347,12 +347,14 @@ Not at this time. Share your ideas at
 
 ### Flutter 是使用什么技术构建的？
 
-Flutter is built with C, C++, Dart, and Skia
-(a 2D rendering engine). See this
-[architecture diagram][] for a better
-picture of the main components.
+Flutter is built with C, C++, Dart, and Skia (a 2D rendering engine). See this
+[architecture diagram][] for a better picture of the main components. For a more detailed
+description of the layered architecture of Flutter, read the [architectural
+overview].
 
-Flutter 使用 C、C++、Dart 和 Skia (2D 渲染引擎) 构建。您可以参阅下面这张 [架构图][architecture diagram]。
+Flutter 使用 C、C++、Dart 和 Skia (2D 渲染引擎) 构建。
+您可以参阅下面这张 [架构图][architecture diagram] 来理解其主要构建。
+若您需要了解 Flutter 的分层架构，请阅读 [架构概览][architectural overview]。
 
 ### How does Flutter run my code on Android? {#run-android}
 
@@ -796,11 +798,12 @@ App Campaigns connect you with the right user, at the right time.
 
   我们支持使用 Android 和 iOS 设备以及这两种 OS 的模拟器来开发 Flutter 应用。
 
-* We test on a variety of low-end to high-end phones and tablets,
-  but we don't yet have an official device compatibility guarantee.
+* We test on a variety of low-end to high-end phones and tablets.
+  For a detailed list of the platforms on which we test, see 
+  our list of [supported platforms][].
 
-  我们会在各种从低端到高端的手机上进行测试，但我们还没有正式保证设备兼容性。
-
+  我们会在各种从低端到高端的手机上进行测试。
+  您可以查看 [已支持的平台][supported platforms] 以了解已测试的平台列表。
 
 ### Does Flutter run on the web?
 
@@ -1714,3 +1717,4 @@ deployed to Apple's App Store.
 [web instructions]: /docs/get-started/web
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: /docs/development/ui/widgets
+[supported platforms]: /docs/development/tools/sdk/release-notes/supported-platforms

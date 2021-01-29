@@ -56,6 +56,7 @@
         - title: Widgets 介绍
           permalink: /docs/development/ui/widgets-intro
         - title: 布局构建
+          permalink: /docs/development/ui/layout
           children:
             - title: Flutter 中的布局
               permalink: /docs/development/ui/layout
@@ -68,11 +69,6 @@
               permalink: /docs/development/ui/layout/constraints
             - title: 边界约束 (Box constraints)
               permalink: /docs/development/ui/layout/box-constraints
-        - title: 闪屏页
-          permalink: /docs/development/ui/splash-screen
-          children:
-            - title: Android 闪屏页
-              permalink: /docs/development/ui/splash-screen/android-splash-screen
         - title: 添加互动
           permalink: /docs/development/ui/interactive
         - title: 资源和图片
@@ -295,11 +291,11 @@
       match-page-url-exactly: true
 
 - title: 性能优化
-#  permalink: /docs/perf
-  expanded: true
+  permalink: /docs/perf
   children:
     - title: 概览
       permalink: /docs/perf
+      match-page-url-exactly: true
     - title: 应用大小
       permalink: /docs/perf/app-size
 #    - title: Memory

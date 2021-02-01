@@ -83,4 +83,12 @@
   iframe {
     border: 1px solid #ccc;
   }
+
+  dt > p {
+    margin: 0px;
+  }
+
+  dd > p {
+    margin: 0px;
+  }
 }

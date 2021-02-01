@@ -328,32 +328,45 @@ Flutter 使用多个线程来完成其必要的工作，图层中仅展示了其
 但是您对 UI 线程的操作会对其他线程产生性能影响。
 
 <dl markdown="1">
-<dt markdown="1">**平台线程**
-{% comment %}>**Platform thread**{% endcomment %}</dt>
-<dd markdown="1">平台线程实际上就是主线程。Plugin 的代码将会在这里运行。
+<dt>
+<p markdown="1">**Platform thread**</p>
+<p markdown="1">**平台线程**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">The platform's main thread. Plugin code runs here.
+    For more information, see the [UIKit][] documentation for iOS,
+    or the [MainThread][] documentation for Android.
+    This thread is not shown in the performance overlay.</p>
+<p markdown="1">平台线程实际上就是主线程。Plugin 的代码将会在这里运行。
     想要了解更多信息，请参阅 Android 的 [MainThread][] 
-    以及 iOS 的 [UIKit][] 文档。
-    {% comment %}
-    The UI thread executes Dart code in the Dart VM.
+    以及 iOS 的 [UIKit][] 文档。</p>
+</dd>
+<dt>
+<p markdown="1">**UI thread**</p>
+<p markdown="1">**UI 线程**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">The UI thread executes Dart code in the Dart VM.
     This thread includes code that you wrote, and code executed by
     Flutter's framework on your app's behalf.
     When your app creates and displays a scene, the UI thread creates
     a _layer tree_, a lightweight object containing device-agnostic
     painting commands, and sends the layer tree to the raster thread to
     be rendered on the device. _Don't block this thread!_
-    Shown in the bottom row of the performance overlay.
-    {% endcomment %}
-</dd>
-<dt markdown="1">**UI 线程**
-{% comment %}**UI thread**{% endcomment %}</dt>
-<dd markdown="1">UI 线程在 Dart VM 中执行 Dart 代码。
+    Shown in the bottom row of the performance overlay.</p>
+<p markdown="1">UI 线程在 Dart VM 中执行 Dart 代码。
     该线程包括开发者写下的代码和 Flutter 框架根据应用行为生成的代码。
     当应用创建和展示场景的时候，UI 线程首先建立一个 **图层树（layer tree）** ，
     一个包含设备无关的渲染命令的轻量对象，
     并将图层树发送到 GPU 线程来渲染到设备上。
-    **不要阻塞这个线程！** 在性能图层的最低栏展示该线程。
-    {% comment %}
-    The raster thread takes the layer tree and displays
+    **不要阻塞这个线程！** 在性能图层的最低栏展示该线程。</p>
+</dd>
+<dt>
+<p markdown="1">**Raster thread** (previously known as the GPU thread)</p>
+<p markdown="1">**Raster 线程**（以前叫 GPU 线程）</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">The raster thread takes the layer tree and displays
     it by talking to the GPU (graphic processing unit).
     You cannot directly access the raster thread or its data but,
     if this thread is slow, it's a result of something you've done
@@ -362,40 +375,25 @@ Flutter 使用多个线程来完成其必要的工作，图层中仅展示了其
     This thread was previously known as the "GPU thread" because it
     rasterizes for the GPU. But it is running on the CPU. We renamed it
     to "raster thread" because many developers wrongly (but understandably)
-    assumed the thread runs on the GPU unit.
-    {% endcomment %}
-</dd>
-<dt markdown="1">**Raster 线程**（以前叫 GPU 线程）
-{% comment %}**Raster thread** (previously known as the GPU thread){% endcomment %}</dt>
-<dd markdown="1">raster 线程拿到 layer tree，并将它交给 GPU（图形处理单元）。
+    assumed the thread runs on the GPU unit.</p>
+<p markdown="1">raster 线程拿到 layer tree，并将它交给 GPU（图形处理单元）。
     你无法直接与 GPU 线程或其数据通信，
     但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。
     图形库 Skia 在该线程运行，并在性能图层的最顶栏显示该线程。
     这个线程之前被叫做「GPU 线程」，因为它为 GPU 进行栅格化，
     但我们重新将它命名为「raster 线程」，
-    这是因为许多开发者错误的（但是能理解）认为该线程运行在 GPU 单元。
-    {% comment %}
-    The raster thread takes the layer tree and displays
-    it by talking to the GPU (graphic processing unit).
-    You cannot directly access the raster thread or its data but,
-    if this thread is slow, it's a result of something you've done
-    in the Dart code. Skia, the graphics library, runs on this thread.
-    Shown in the top row of the performance overlay.
-    This thread was previously known as the "GPU thread" because it
-    rasterizes for the GPU. But it is running on the CPU. We renamed it
-    to "raster thread" because many developers wrongly (but understandably)
-    assumed the thread runs on the GPU unit.
-    {% endcomment %}
+    这是因为许多开发者错误的（但是能理解）认为该线程运行在 GPU 单元。</p>
 </dd>
-<dt markdown="1">**I/O线程**
-{% comment %}**I/O thread**{% endcomment %}</dt>
-<dd markdown="1">执行昂贵的操作（常见的有 I/O）以避免阻塞 UI 或者 raster 线程。
-    这个线程将不会显示在 performance overlay 上。
-    {% comment %}
-    Performs expensive tasks (mostly I/O) that would
+<dt>
+<p markdown="1">**I/O thread**</p>
+<p markdown="1">**I/O线程**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Performs expensive tasks (mostly I/O) that would
     otherwise block either the UI or raster threads.
-    This thread is not shown in the performance overlay.
-    {% endcomment %}
+    This thread is not shown in the performance overlay.</p>
+<p markdown="1">执行昂贵的操作（常见的有 I/O）以避免阻塞 UI 或者 raster 线程。
+    这个线程将不会显示在 performance overlay 上。</p>
 </dd>
 </dl>
     

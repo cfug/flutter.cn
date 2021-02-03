@@ -27,8 +27,8 @@ diff2html: true
   the completed app just works on all of these devices!**
 
   这篇 codelab 将带你初体验移动端 Flutter 应用开发。
-  你也许更想尝试[编写你的第一个 Flutter 网页应用][codelab-web]。
-  **请注意，如果你[开启 web][enabled web]，完整的应用程序仅可在这些设备上使用！**
+  你也许更想尝试 [编写你的第一个 Flutter 网页应用][codelab-web]。
+  **请注意，如果你 [开启 web][enabled web]，完整的应用程序仅可在这些设备上使用！**
 
 {{site.alert.end}}
 
@@ -167,7 +167,7 @@ If you want to compile your app to run on the web,
 you must enable this feature (which is currently in beta).
 To enable web support, use the following instructions:
 
-如果您想要在 Web 上编译运行您的应用程序，
+如果您想要编译在 Web 上运行的应用程序，
 则必须先启用此功能（当前处于测试版）。 
 要启用 Web 支持，可以按照以下说明操作：
 
@@ -192,14 +192,14 @@ other browsers. For more information,
 see [Building a web application with Flutter][]
 and [Write your first Flutter app on the web][codelab-web].
 
-您只需要运行一次 config 命令。 启用 Web 支持后，
+您只需要运行一次 config 命令。启用 Web 支持后，
 您创建的每个 Flutter 应用程序都可以针对 Web 平台编译。 
 在 IDE 下拉菜单的 **devices**，或使用命令行 `flutter devices`，
 您应该就可以看到列出了 **Chrome** 和 **Web server**。 
 **Chrome** 设备会自动启动 Chrome，**Web server** 会启动承载该应用的服务器，
 这样您就可以从任何浏览器加载访问。 
-在开发过程中使用 Chrome 设备，您可以使用 DevTools，
-当您想要在其他浏览器上进行测试时，可以使用 web server。
+在开发过程中使用 Chrome 设备时，您也可以使用 DevTools，
+如果您想要在其他浏览器上进行测试，可以使用 web server。
 更多相关信息，请参见 [使用 Flutter 构建 Web 应用程序][Building a web application with Flutter] 和
 在 [编写你的第一个 Flutter 网页应用][codelab-web]。
 
@@ -578,8 +578,8 @@ a child inside the existing `MyApp` stateless widget.
   your stateful widget.</p>
   <p markdown="1">创建有状态 widget 的样板代码。<br>
   在 `lib/main.dart` 中，将光标置于所有代码之后，
-  输入 **Return** 几次另起新行。
-  在 IDE 中，输入 stful，编辑器就会提示您是否要创建一个 `Stateful` widget。
+  输入 **回车** 几次另起新行。
+  在 IDE 中，输入 `stful`，编辑器就会提示您是否要创建一个 `Stateful` widget。
   按回车键表示接受建议，随后就会出现两个类的样板代码，
   光标也会被定位在输入有状态 widget 的名称处。</p>
 </li>
@@ -606,7 +606,7 @@ a child inside the existing `MyApp` stateless widget.
   the list by toggling the heart icon.<br><br>
   Both classes now look as follows:</p>
   <p markdown="1">输入 `RandomWords` 作为有状态 widget 的名称。<br>
-  `RandomWords` widget 的主要作用就是创建其对应的 State 类。<br><br>
+  `RandomWords` widget 的主要作用就是创建其对应的 `State` 类。<br><br>
   输入 `RandomWords` 作为有有状态 widget 的名称后，
   IDE 会自动更新其对应的 `State` 类，并将其命名为 `_RandomWordsState`。
   默认情况下，`State` 类的名称带有下划线前缀。

@@ -27,8 +27,8 @@ diff2html: true
   the completed app just works on all of these devices!**
 
   这篇 codelab 将带你初体验移动端 Flutter 应用开发。
-  你也许更想尝试[编写你的第一个 Flutter 网页应用][writing your first Flutter app on the web]。
-  **请注意，如果你[开启 web][enabled web]，完整的应用程序仅可在这些设备上使用！**
+  你也许更想尝试 [编写你的第一个 Flutter 网页应用][codelab-web]。
+  **请注意，如果你 [开启 web][enabled web]，完整的应用程序仅可在这些设备上使用！**
 
 {{site.alert.end}}
 
@@ -167,6 +167,10 @@ If you want to compile your app to run on the web,
 you must enable this feature (which is currently in beta).
 To enable web support, use the following instructions:
 
+如果您想要编译在 Web 上运行的应用程序，
+则必须先启用此功能（当前处于测试版）。 
+要启用 Web 支持，可以按照以下说明操作：
+
 ```terminal
 $ flutter channel beta
 $ flutter upgrade
@@ -187,6 +191,17 @@ and the web server when you want to test on
 other browsers. For more information,
 see [Building a web application with Flutter][]
 and [Write your first Flutter app on the web][codelab-web].
+
+您只需要运行一次 config 命令。启用 Web 支持后，
+您创建的每个 Flutter 应用程序都可以针对 Web 平台编译。 
+在 IDE 下拉菜单的 **devices**，或使用命令行 `flutter devices`，
+您应该就可以看到列出了 **Chrome** 和 **Web server**。 
+**Chrome** 设备会自动启动 Chrome，**Web server** 会启动承载该应用的服务器，
+这样您就可以从任何浏览器加载访问。 
+在开发过程中使用 Chrome 设备时，您也可以使用 DevTools，
+如果您想要在其他浏览器上进行测试，可以使用 web server。
+更多相关信息，请参见 [使用 Flutter 构建 Web 应用程序][Building a web application with Flutter] 和
+在 [编写你的第一个 Flutter 网页应用][codelab-web]。
 
 ## Step 1: Create the starter Flutter app
 
@@ -552,7 +567,7 @@ a child inside the existing `MyApp` stateless widget.
 内嵌到已有的无状态的 `MyApp` widget。
 
 <ol markdown="1">
-<li markdown="1"> Create the boilerplate code for a stateful widget.<br>
+<li markdown="1"> <p markdown="1">Create the boilerplate code for a stateful widget.<br>
   In `lib/main.dart`, position your cursor after all of the code,
   enter **Return** a couple times to start on a fresh line.
   In your IDE, start typing `stful`.
@@ -560,10 +575,16 @@ a child inside the existing `MyApp` stateless widget.
   `Stateful` widget. Press **Return** to accept.
   The boilerplate code for two classes appears,
   and the cursor is positioned for you to enter the name of
-  your stateful widget.
+  your stateful widget.</p>
+  <p markdown="1">创建有状态 widget 的样板代码。<br>
+  在 `lib/main.dart` 中，将光标置于所有代码之后，
+  输入 **回车** 几次另起新行。
+  在 IDE 中，输入 `stful`，编辑器就会提示您是否要创建一个 `Stateful` widget。
+  按回车键表示接受建议，随后就会出现两个类的样板代码，
+  光标也会被定位在输入有状态 widget 的名称处。</p>
 </li>
 
-<li markdown="1"> Enter `RandomWords` as the name of your widget.<br>
+<li markdown="1"> <p markdown="1">Enter `RandomWords` as the name of your widget.<br>
   The `RandomWords` widget does little else beside creating its
   `State` class.<br><br>
   Once you've entered `RandomWords` as the name of
@@ -583,7 +604,20 @@ a child inside the existing `MyApp` stateless widget.
   as the user scrolls and, in part 2 of this lab,
   favorites word pairs as the user adds or removes them from
   the list by toggling the heart icon.<br><br>
-  Both classes now look as follows:
+  Both classes now look as follows:</p>
+  <p markdown="1">输入 `RandomWords` 作为有状态 widget 的名称。<br>
+  `RandomWords` widget 的主要作用就是创建其对应的 `State` 类。<br><br>
+  输入 `RandomWords` 作为有有状态 widget 的名称后，
+  IDE 会自动更新其对应的 `State` 类，并将其命名为 `_RandomWordsState`。
+  默认情况下，`State` 类的名称带有下划线前缀。
+  Dart 语言中，给标识符加上下划线前缀可以 [增强隐私性][enforces privacy]，
+  并且这也是针对 `State` 对象推荐的最佳实践写法。<br><br>
+  IDE 也会自动将状态类继承自 `State<RandomWords>`，
+  这表示专门用于 `RandomWords` 的通用 [`State`][] 类。
+  该应用程序的大多数逻辑都位于此处&mdash;它维护 `RandomWords` widget 的状态。
+  该类会保存生成的单词对的列表，该列表随用户滚动而无限增长，
+  在本实验的第 2 部分中，用户可以通过点击心形图标，添加或删除列表中收藏的单词对。<br><br>
+  这两个类现在都如下所示：</p>
 
   ```dart
 class RandomWords extends StatefulWidget {
@@ -600,7 +634,8 @@ class _RandomWordsState extends State<RandomWords> {
   ```
 </li>
 
-<li markdown="1"> Update the `build()` method in `_RandomWordsState`:
+<li markdown="1"> <p markdown="1">Update the `build()` method in `_RandomWordsState`:</p>
+<p markdown="1">更新 `_RandomWordsState` 中的 `build()` 方法：</p>
   <?code-excerpt "lib/main.dart (_RandomWordsState)" title replace="/(\n  )(.*)/$1[!$2!]/g"?>
   ```dart
   class _RandomWordsState extends State<RandomWords> {
@@ -613,8 +648,9 @@ class _RandomWordsState extends State<RandomWords> {
   ```
 </li>
 
-<li markdown="1"> Remove the word generation code from `MyApp`
-  by making the changes shown in the following diff:
+<li markdown="1"> <p markdown="1">Remove the word generation code from `MyApp`
+  by making the changes shown in the following diff:</p>
+  <p markdown="1">通过以下差异所示的更改，删除 `MyApp` 中单词生成的代码：</p>
 
   <?code-excerpt path-base="codelabs/startup_namer"?>
   <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
@@ -641,20 +677,25 @@ class _RandomWordsState extends State<RandomWords> {
      }
   ```
 
-<li markdown="1"> <t>Restart the app.
+<li markdown="1"> <p markdown="1">Restart the app.
   The app should behave as before, displaying a word
-  pairing each time you hot reload or save the app.</t>
-  <t>重启应用。
-    应用应该像之前一样运行，每次热重载或保存应用程序时都会显示一个单词对。</t>
+  pairing each time you hot reload or save the app.</p>
+  <p markdown="1">重启应用。
+    应用应该像之前一样运行，每次热重载或保存应用程序时都会显示一个单词对。</p>
 </li>
 
 
 {{site.alert.tip}}
+
   If you see a warning on a hot reload that you might
   need to restart the app, consider restarting it.
   The warning might be a false positive, but
   restarting your app ensures that
   your changes are reflected in the app's UI.
+
+  如果在热重载时看到需要您重启应用程序的警告，请考虑重新启动。
+  该警告可能是误报，但重新启动您的应用程序可确保您的更改真实反映在应用程序的 UI 中。
+  
 {{site.alert.end}}
 
 
@@ -687,6 +728,10 @@ and display a list of word pairings. As the user scrolls the list
 (displayed in a `ListView` widget) grows infinitely. `ListView`'s
 `builder` factory constructor allows you to build a list view
 lazily, on demand.
+
+在该步骤中，您会拓展 `_RandomWordsState` 以生成并显示单词对列表。
+随着用户滚动，列表（显示在 `ListView` widget 中）将无限增长。
+`ListView` 的 `builder` 工厂构造函数使您可以按需延迟构建列表视图。
 
  1. Add a `_suggestions` list to the `_RandomWordsState`
     class for saving suggested word pairings. Also,

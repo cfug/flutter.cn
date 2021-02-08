@@ -9,12 +9,20 @@ keywords: Flutter原理,Flutter架构指南,Flutter分层设计
 This article is intended to provide a high-level overview of the architecture of
 Flutter, including the core principles and concepts that form its design.
 
+该文章旨在提供更深入的 Flutter 架构概览，包含其设计层面的核心原则及概念。
+
 Flutter is a cross-platform UI toolkit that is designed to allow code reuse
 across operating systems such as iOS and Android, while also allowing
 applications to interface directly with underlying platform services. The goal
 is to enable developers to deliver high-performance apps that feel natural on
 different platforms, embracing differences where they exist while sharing as
 much code as possible.
+
+Flutter 是一个跨平台的 UI 工具集，
+它被设计为可以使用同样的代码在各种操作系统上复用，例如 iOS 和 Android，
+同时让应用程序可以直接与底层平台服务进行交互。
+如此设计的目的，是为了让开发者能够在不同的平台上，交付高性能且拥有自然体验的应用，
+尽可能地共享复用代码的同时包容不同平台的差异。
 
 During development, Flutter apps run in a VM that offers stateful hot reload of
 changes without needing a full recompile. For release, Flutter apps are compiled
@@ -23,27 +31,60 @@ JavaScript if targeting the web. The framework is open source, with a permissive
 BSD license, and has a thriving ecosystem of third-party packages that
 supplement the core library functionality.
 
+在开发中，Flutter 应用会在一个 VM（程序虚拟机）中运行，
+从而可以在保留状态且无需重新编译的情况下，热重载相关的更新。
+而对于发行环境 (release) 而言，无论是英特尔的 x64 还是 ARM 指令，
+又或是 Web 平台的 JavaScript，Flutter 应用都将直接编译成机器码，
+
 This overview is divided into a number of sections:
 
+概览分为以下几部分内容：
+
 1. The **layer model**: The pieces from which Flutter is constructed.
+
+   **分层模型**：构建 Flutter 的各个部分。
+
 1. **Reactive user interfaces**: A core concept for Flutter user interface
    development.
+
+   **响应式用户界面**：Flutter 用户界面开发的核心概念。
+
 1. An introduction to **widgets**: The fundamental building blocks of Flutter user
    interfaces.
+
+   **widgets** 介绍：Flutter 用户界面。
+
 1. The **rendering process**: How Flutter turns UI code into pixels.
+
+   **渲染过程**：Flutter 如何将界面布局转化为像素。
+
 1. An overview of the **platform embedders**: The code that lets mobile and
    desktop OSes execute Flutter apps.
+
+   **平台嵌入构建** 的概览：让 Flutter 应用可以在移动端及桌面端操作系统执行的代码。
+
 1. **Integrating Flutter with other code**: Information about different techniques
    available to Flutter apps.
+
+   **将 Flutter 与其他代码进行集成**：Flutter 应用可用的各项技术的更多信息。
+
 1. **Support for the web**: Concluding remarks about the characteristics of
    Flutter in a browser environment.
 
+   **Web 支持**：Flutter 在浏览器环境中的特性的概述。
+
 ## Architectural layers
+
+## 构建层面
 
 Flutter is designed as an extensible, layered system. It exists as a series of
 independent libraries that each depend on the underlying layer. No layer has
 privileged access to the layer below, and every part of the framework level is
 designed to be optional and replaceable.
+
+Flutter 在设计之初，就是一个可扩展的分层架构系统。
+它是各个独立的组件的系列合集，这些组件各自依赖了底层。
+组件们无法越权访问更底层的内容，并且它们每一个都是可选且可替代的。
 
 {% comment %}
 The PNG diagrams in this document were created using draw.io. The draw.io
@@ -75,6 +116,16 @@ be the entire content of the application. Flutter includes a number of embedders
 for common target platforms, but [other embedders also
 exist](https://hover.build/blog/one-year-in/).
 
+对于底层操作系统而言，Flutter 应用程序的包装方式与其他原生应用相同。
+在每一个平台上，会包含一个特定的嵌入构建，从而提供一个程序入口，
+程序由此可以与底层操作系统进行协调，访问诸如 surface 渲染、辅助功能和输入等服务，
+并且管理事件循环队列。
+嵌入构建由平台适用的编程语言编写，当前 Android 使用的是 Java 和 C++，
+iOS 和 macOS 使用的是 Objective-C 和 Objective-C++，Windows 和 Linux 使用的是 C++。
+Flutter 代码可以通过这些嵌入构建，以模块方式集成到现有的应用中，或是成为应用的全部内容。
+Flutter 包含了常见平台的嵌入构建，
+但同时也有 [存在一些其他的构建][other embedders also exist]。
+
 At the core of Flutter is the **Flutter engine**, which is mostly written in C++
 and supports the primitives necessary to support all Flutter applications. The
 engine is responsible for rasterizing composited scenes whenever a new frame
@@ -83,16 +134,31 @@ API, including graphics (through [Skia](https://skia.org/)), text layout, file
 and network I/O, accessibility support, plugin architecture, and a Dart runtime
 and compile toolchain.
 
+**Flutter 引擎** 毫无疑问是 Flutter 的核心，
+基本使用 C++ 进行编写，支持所有 Flutter 应用所需的原语。
+当一个需要绘制新一帧的内容时，引擎将负责对需要合成的场景进行栅格化。
+它提供了 Flutter 核心 API 的底层实现，包括图形（通过 [Skia](https://skia.org/)）、
+文本布局、文件及网络 IO、辅助功能支持、插件架构和 Dart 运行时和编译时的工具链。
+
 The engine is exposed to the Flutter framework through
 [`dart:ui`]({{site.github}}/flutter/engine/tree/master/lib/ui),
 which wraps the underlying C++ code in Dart classes. This library
 exposes the lowest-level primitives, such as classes for driving input,
 graphics, and text rendering subsystems.
 
+引擎将底层 C++ 代码包装成 Dart 代码，通过
+[`dart:ui`]({{site.github}}/flutter/engine/tree/master/lib/ui)
+暴露给 Flutter 框架层。
+该库暴露了最底层的原语，包括驱动输入、图形、和文本渲染的子系统的类。
+
 Typically, developers interact with Flutter through the **Flutter framework**,
 which provides a modern, reactive framework written in the Dart language. It
 includes a rich set of platform, layout, and foundational libraries, composed of
 a series of layers. Working from the bottom to the top, we have:
+
+一般而言，开发者会使用以现代语言（Dart 语言）及响应式框架编写的 **Flutter 框架**
+来与 Flutter 进行交互。它包含了由一系列构建层组成的一套丰富的平台、布局和基础库。
+总的来说，它有以下的内容：
 
 - Basic **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
   classes, and building block services such as
@@ -100,22 +166,44 @@ a series of layers. Working from the bottom to the top, we have:
   [painting]({{site.api}}/flutter/painting/painting-library.html), and
   [gestures]({{site.api}}/flutter/gestures/gestures-library.html)** that offer
   commonly used abstractions over the underlying foundation.
+
+  基础的 **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
+  类，以及 **[animation]({{site.api}}/flutter/animation/animation-library.html)、
+  [painting]({{site.api}}/flutter/painting/painting-library.html) 和
+  [gestures]({{site.api}}/flutter/gestures/gestures-library.html)**，
+  提供了底层基础内容的常用抽象。
+
 - The **[rendering
   layer]({{site.api}}/flutter/rendering/rendering-library.html)** provides an
   abstraction for dealing with layout. With this layer, you can build a tree of
   renderable objects. You can manipulate these objects dynamically, with the
   tree automatically updating the layout to reflect your changes.
+
+  **[渲染层]({{site.api}}/flutter/rendering/rendering-library.html)**
+  提供了操作布局的抽象。有了渲染层，您可以构建以树状结构组织的可渲染对象。
+  在您动态更新这些对象时，构建树也会自动根据您的变更来更新布局。
+
 - The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
   a composition abstraction. Each render object in the rendering layer has a
   corresponding class in the widgets layer. In addition, the widgets layer
   allows you to define combinations of classes that you can reuse. This is the
   layer at which the reactive programming model is introduced.
+
+  **[widget 层]({{site.api}}/flutter/widgets/widgets-library.html)** 是一种组合的抽象。
+  每一个渲染层中的渲染对象，都在 widgets 层中有一个对应的类。
+  此外，widgets 层让您可以自由组合您需要复用的各种类。
+  响应式编程模型就在该层级中被引入。
+
 - The
   **[Material]({{site.api}}/flutter/material/material-library.html)**
   and
   **[Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html)**
   libraries offer comprehensive sets of controls that use the widget layer's
   composition primitives to implement the Material or iOS design languages.
+
+  **[Material]({{site.api}}/flutter/material/material-library.html)** 和
+  **[Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html)** 库
+  提供了全面的 widgets 层的原语组合，这套组合分别实现了 Material 和 iOS 设计规范。
 
 The Flutter framework is relatively small; many higher-level features that
 developers might use are implemented as packages, including platform plugins
@@ -130,12 +218,29 @@ payments]({{site.pub}}/packages/square_in_app_payments), [Apple
 authentication]({{site.pub}}/packages/sign_in_with_apple), and
 [animations]({{site.pub}}/packages/lottie).
 
+Flutter 框架相对较小，因为一些开发者可能会使用到的更高层级的功能，已经被拆分到不同的软件包中，
+使用 Dart 和 Flutter 的核心库实现，其中包括平台插件，例如
+[camera]({{site.pub}}/packages/camera) 和
+[webview]({{site.pub}}/packages/webview_flutter)；与平台无关的功能，例如
+[characters]({{site.pub}}/packages/characters)、
+[http]({{site.pub}}/packages/http) 和
+[animations]({{site.pub}}/packages/animations)。
+还有一些软件包来自于更为宽泛的生态系统中，例如
+[应用内支付]({{site.pub}}/packages/square_in_app_payments)、
+[Apple 认证]({{site.pub}}/packages/sign_in_with_apple) 和
+[Lottie 动画]({{site.pub}}/packages/lottie)。
+
 The rest of this overview broadly navigates down the layers, starting with the
 reactive paradigm of UI development. Then, we describe how widgets are composed
 together and converted into objects that can be rendered as part of an
 application. We describe how Flutter interoperates with other code at a platform
 level, before giving a brief summary of how Flutter’s web support differs from
 other targets.
+
+该概览的其余部分将从 UI 开发的响应式范例开始，浏览各个构建层。
+而后，我们会对讲述 widgets 如何被组织，并转换成应用程序的渲染对象。
+同时我们也会讲述 Flutter 如何在平台层面与其他代码进行交互，
+最终，我们会对目前 Flutter 对于 Web 平台的支持与其他平台的异同做一个总结。
 
 ## Reactive user interfaces
 

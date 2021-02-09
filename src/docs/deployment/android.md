@@ -32,6 +32,10 @@ This page covers the following topics:
 
   [添加启动图标](#adding-a-launcher-icon)
   
+* [Enabling Material Components](#material-components)
+
+  [启用 Material 组件](#material-components)
+
 * [Signing the app](#signing-the-app)
 
   [创建一个密钥库](#signing-the-app)
@@ -113,6 +117,48 @@ Alternatively, you can do it manually using the following steps:
    
    用 `flutter run` 运行 app，检查启动程序中的 app 图标
    是否已经替换成我们自己的图标文件。
+
+## Enabling Material Components
+
+## 启用 Material 组件
+
+If your app uses [Platform Views][], you may want to enable
+Material Components by following the steps described in the
+[Getting Started guide for Android][].
+
+如果你的应用使用了 [平台视图 (Platform Views)][Platform Views]，
+你可能要通过 [Android 平台的入门指南文档][Getting Started guide for Android]
+中的步骤使用 Material 组件：
+
+For example:
+
+举个例子：
+
+1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle`:
+
+   在 `<my-app>/android/app/build.gradle` 文件中添加
+   Android Material 组件依赖：
+
+```groovy
+dependencies {
+    // ...
+    implementation 'com.google.android.material:material:<version>'
+    // ...
+}
+```
+
+To find out the latest version, visit [Google Maven][].
+
+查看最新的版本，请访问 [Google Maven 仓库][Google Maven]。
+
+2. Set the theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
+
+   在 `<my-app>/android/app/src/main/res/values/styles.xml` 文件中设置主题：
+
+```diff
+-<style name="LaunchTheme" parent="Theme.AppCompat">
++<style name="LaunchTheme" parent="Theme.MaterialComponents.NoActionBar">
+```
 
 ## Signing the app
 
@@ -952,7 +998,9 @@ The resulting app bundle or APK files are located in
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Flutter wiki]: {{site.github}}/flutter/flutter/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
+[Getting Started guide for Android]: {{site.material}}/develop/android/docs/getting-started
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
+[Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
@@ -962,6 +1010,7 @@ The resulting app bundle or APK files are located in
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
+[Platform Views]: /docs/development/platform-integration/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
 [R8]: {{site.android-dev}}/studio/build/shrink-code

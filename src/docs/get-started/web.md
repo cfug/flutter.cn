@@ -165,8 +165,10 @@ the `flutter devices` command outputs a `Chrome` device
 that opens the Chrome browser with your app running,
 and a `Web Server` that provides the URL serving the app.
 
-一旦开启了 Web 支持，运行 `flutter devices`
-命令会输出一个名为 `Chrome` 的设备信息。
+一旦开启了 Web 支持，运行 `flutter devices`，
+命令会输出一个名为 `Chrome` 的设备信息，
+开启一个为 Web 应用提供服务的 `Web Sever`，
+并打开 Chrome 浏览器并访问某个 URL 地址。
 
 ```terminal
 $ flutter devices
@@ -181,7 +183,8 @@ You should now see **Chrome (web)** and
 **Web Server (web)** in the device pulldown.
 
 **在开启了 Web 支持后，需要重启 IDE**。
-你现在可以在设备下拉列表中看到 **Chrome (web)**。
+你现在可以在设备下拉列表中看到
+**Chrome (web)** 和 **Web Server (web)**。
 
 The `flutter run` command launches the application using the
 [development compiler][] in a Chrome browser.
@@ -299,13 +302,24 @@ The `flutter run` command launches the application using the
 [开发编译器 dartdevc][development compiler]
 在 Chrome 浏览器中启动应用程序。
 
+{{site.alert.warning}}
+
+  **Hot reload not supported on web**
+  Currently, Flutter web supports **hot restart**,
+  but not **hot reload**.
+  
+  **尚未支持在 Web 平台使用热重载**
+  目前 Flutter Web 平台支持 **热重启**，
+  尚不支持 **热重载**。
+{{site.alert.end}}
+
 ### Build
 
 ### 使用 build 命令
 
 Run the following command to generate a release build:
 
-运行下面命令以生成发行构建：
+运行下面命令以生成发行版构建：
 
 ```terminal
 flutter build web
@@ -328,10 +342,11 @@ Release 构建产物使用 [dart2js][]（不是 dartdevc）
 包括需要一起提供的 `assets` 资源文件。
 
 You can also include `--web-renderer html`  or `--web-renderer canvaskit` to
-select between the HTML or CanvasKit renderers, respsectively. For more
+select between the HTML or CanvasKit renderers, respectively. For more
 information, see [Web renderers][].
 
-你也可以使用 `--web-renderer html` 或 `--web-renderer canvaskit` 来切换 HTML 或 CanvasKit 渲染器。
+你也可以使用 `--web-renderer html` 或
+`--web-renderer canvaskit` 来切换 HTML 或 CanvasKit 渲染器。
 更多信息请参阅[网页渲染器][Web renderers]。
 
 For more information, see
@@ -365,10 +380,10 @@ $ flutter create .
 [setting up an editor]: /docs/get-started/editor
 [web FAQ]: /docs/development/platform-integration/web
 [Chrome]: https://www.google.com/chrome/
-[Chrome-CN]: https://www.google.com/chrome/
+[Chrome-CN]: https://www.google.cn/chrome/
 [Flutter SDK]: https://flutter.dev/docs/get-started/install
 [Android Studio]: https://developer.android.com/studio
-[Android Studio CN]: https://developer.android.com/studio
+[Android Studio CN]: https://developer.android.google.cn/studio
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [Visual Studio Code]: https://code.visualstudio.com/
 [Web renderers]: /docs/development/tools/web-renderers

@@ -91,7 +91,7 @@ This recipe covers how to fetch a sample album from the
 <!-- skip -->
 ```dart
 Future<http.Response> fetchAlbum() {
-  return http.get('https://jsonplaceholder.typicode.com/albums/1');
+  return http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 }
 ```
 
@@ -423,7 +423,7 @@ import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
   final response =
-      await http.get('https://jsonplaceholder.typicode.com/albums/1');
+      await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,

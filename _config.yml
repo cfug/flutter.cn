@@ -115,7 +115,10 @@ alert:
     <i class="fas fa-info-circle"></i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-info-circle"></i> **备忘**
+    <i class="fas fa-info-circle"></i> **提示**
+  version-note: >-
+    <aside class="alert alert-info" role="alert" markdown="1">
+    <i class="fas fa-code-branch"></i> **版本提示**
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-

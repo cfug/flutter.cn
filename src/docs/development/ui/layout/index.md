@@ -242,7 +242,7 @@ Then you can add the `Center` widget directly to the `body`
 property for the home page.
 
 对于 `Material` app，你可以使用 [`Scaffold`][] widget，
-它提供默认的 banner、背景颜色，
+它提供默认的 banner 背景颜色，
 还有用于添加抽屉、提示条和底部列表弹窗的 API。
 你可以将 `Center` widget 直接添加到主页 `body` 的属性中。
 

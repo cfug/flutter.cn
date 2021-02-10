@@ -128,13 +128,15 @@ iOS 系统使用 [`MethodChanneliOS`][] 来
 在开发平台插件的时候，可以减少样板代码。
 
 {{site.alert.note}}
+
   If desired, method calls can also be sent in the reverse direction,
   with the platform acting as client to methods implemented in Dart.
   A concrete example of this is the [`quick_actions`][] plugin.
+  
+  如果需要，方法调用也可以反向发送，由平台充当客户端来调用 Dart
+  实现的方法。一个具体的例子是 [`quick_actions`][] 插件。
 {{site.alert.end}}
 
-**注意**：如果需要，方法调用也可以反向发送，由平台充当客户端来调用 Dart
-实现的方法。一个具体的例子是 [`quick_actions`][] 插件。
 
 ### Platform channel data types support and codecs {#codec}
 

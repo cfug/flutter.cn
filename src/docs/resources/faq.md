@@ -775,53 +775,6 @@ App Campaigns connect you with the right user, at the right time.
 
 ### What devices and OS versions does Flutter run on?
 
-<<<<<<< HEAD
-### Flutter 可以运行在哪些设备，哪些操作系统版本上？
-
-* Mobile operating systems: Android Jelly Bean, v16,
-  4.1.x or newer, and iOS 8 or newer.
-  Mobile hardware: iOS devices (iPhone 4S or newer)
-  and ARM Android devices.
-
-  移动操作系统：iOS 设备 (iPhone 4S 以及更新的机型) 以及
-  ARM 架构的 Android 设备。
-
-* Mobile hardware: iOS devices (iPhone 4S or newer)
-  and ARM Android devices.
-=======
-* We support and test running Flutter on a variety of low-end to high-end platforms.
-  For a detailed list of the platforms on which we test, see 
-  our list of [supported platforms][].
->>>>>>> 027bacce152af23d8a39bd371bcbfac3b91b0f8f
-
-  移动硬件：iOS 设备（iPhone 4S 或更新版本）和 ARM Android 设备。
-
-* Flutter supports building ahead-of-time (AOT) compiled libraries
-  for `x86_64`, `armeabi-v7a`, and `arm64-v8a`.
-
-* Apps built for ARMv7 or ARM64 run fine (using ARM emulation)
-  on many x86 Android devices.
-
-<<<<<<< HEAD
-* We support developing Flutter apps with Android and iOS devices,
-  as well as with Android emulators and the iOS simulator.
-
-  我们支持使用 Android 和 iOS 设备以及这两种 OS 的模拟器来开发 Flutter 应用。
-
-* We test on a variety of low-end to high-end phones and tablets.
-  For a detailed list of the platforms on which we test, see 
-  our list of [supported platforms][].
-=======
-* We support developing Flutter apps on a range of platforms.
-  See the system requirements listed under each
-  [development operating system][install].
->>>>>>> 027bacce152af23d8a39bd371bcbfac3b91b0f8f
-
-  我们会在各种从低端到高端的手机上进行测试。
-  您可以查看 [已支持的平台][supported platforms] 以了解已测试的平台列表。
-
-### What devices and OS versions does Flutter run on?
-
 ### Flutter 可以运行在哪些设备，哪些操作系统版本上？
 
 * We support and test running Flutter on a variety of low-end to high-end platforms.

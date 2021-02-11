@@ -8,4 +8,5 @@
 	branch = stable
 [submodule "examples/codelabs"]
 	path = examples/codelabs
-	url = https://github.com/flutter/codelabs
+	url = https://github.com/flutter/codelabs.git
+	branch = master

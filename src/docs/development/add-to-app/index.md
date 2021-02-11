@@ -40,13 +40,10 @@ It currently has the _**following limitations**_:
 
 * Running multiple Flutter instances or running in partial screen
   views may have undefined behavior.
-  
-  运行多个 Flutter 实例，或在屏幕局部上运行 Flutter 可能会导致不可预测的行为；
-  
-* Using Flutter in background mode is still a WIP.
 
-  在后台模式使用 Flutter 的功能还在开发中；
-  
+  运行多个 Flutter 实例，或在屏幕局部上运行 Flutter，
+  可能会导致不可预测的行为；
+
 * Packing multiple Flutter libraries into an
   application isn't supported.
 
@@ -54,19 +51,19 @@ It currently has the _**following limitations**_:
   
 * Plugins used in add-to-app on Android should migrate
   to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
-  
+
   在 Android 平台，使用了添加到现有应用 (add-to-app) 的插件需要迁移到
   基于 [`FlutterPlugin`] 的 [Android 插件 API][Android plugin APIs]。
   
 * Plugins that don't support `FlutterPlugin` might have unexpected
   behaviors if they make assumptions that are untenable in add-to-app
   (such as assuming that a Flutter `Activity` is always present).
-  
+
   一些不支持 `FlutterPlugin` 的插件可能会有不可预知的行为，比如产生错误的预判，
   认为 Flutter `Activity` 一直处于活跃状态。
   
 * As of v1.17, the Flutter module only supports AndroidX applications on Android.
-  
+
   从 1.17 开始，Flutter 模块仅支持 Android 平台中的 AndroidX 应用。
 
 ## Supported features

@@ -777,33 +777,31 @@ App Campaigns connect you with the right user, at the right time.
 
 ### Flutter 可以运行在哪些设备，哪些操作系统版本上？
 
-* Mobile operating systems: Android Jelly Bean, v16,
-  4.1.x or newer, and iOS 8 or newer.
+* We support and test running Flutter on a variety of low-end to high-end platforms.
+  For a detailed list of the platforms on which we test, see 
+  our list of [supported platforms][].
 
-  移动操作系统：Android Jelly Bean, v16, 4.1.x 或更新版本，以及 iOS 8 或更高版本。
-
-* Mobile hardware: iOS devices (iPhone 4S or newer)
-  and ARM Android devices.
-
-  移动硬件：iOS 设备（iPhone 4S 或更新版本）和 ARM Android 设备。
+  我们会为各种从低端到高端的平台进行支持并且加入测试。
+  您可以查看 [已支持的平台][supported platforms] 以了解已测试的平台列表。
 
 * Flutter supports building ahead-of-time (AOT) compiled libraries
   for `x86_64`, `armeabi-v7a`, and `arm64-v8a`.
 
+  Flutter 支持在 `x86_64`、`armeabi-v7a` 和 `arm64-v8a`
+  架构下构建为 ahead-of-time (AOT) 库。
+
 * Apps built for ARMv7 or ARM64 run fine (using ARM emulation)
   on many x86 Android devices.
 
-* We support developing Flutter apps with Android and iOS devices,
-  as well as with Android emulators and the iOS simulator.
+  为 ARMv7 或 ARM64 构建的应用在很多
+  x86 Android 设备上运行良好 (使用 ARM 模拟器)。
 
-  我们支持使用 Android 和 iOS 设备以及这两种 OS 的模拟器来开发 Flutter 应用。
+* We support developing Flutter apps on a range of platforms.
+  See the system requirements listed under each
+  [development operating system][install].
 
-* We test on a variety of low-end to high-end phones and tablets.
-  For a detailed list of the platforms on which we test, see 
-  our list of [supported platforms][].
-
-  我们会在各种从低端到高端的手机上进行测试。
-  您可以查看 [已支持的平台][supported platforms] 以了解已测试的平台列表。
+  我们支持在不同的平台上开发 Flutter 应用，
+  请参阅 [不同操作系统下安装 Flutter 的方法文档][install] 了解更多。
 
 ### Does Flutter run on the web?
 
@@ -1663,6 +1661,7 @@ deployed to Apple's App Store.
 [iOS]: #run-ios
 [iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
 [iOS instructions]: /docs/deployment/ios
+[install]: /docs/get-started/install
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [internationalization tutorial]: /docs/development/accessibility-and-localization/internationalization
 [is easy]: /docs/development/packages-and-plugins/using-packages

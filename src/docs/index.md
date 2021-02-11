@@ -58,11 +58,11 @@ Coming from another platform? Check out Flutter for:
 [Xamarin.Forms][] developers.
 
 看我们为各种已经有相关平台开发经验的开发者准备的文档：
-[给 Android 开发者的 Flutter 指南][Android]、
-[给 iOS 开发者的 Flutter 指南][iOS]、
-[给 React Native 开发者的 Flutter 指南][React Native]、
-[给 Web 开发者的 Flutter 指南][Web]、
-[给 Xamarin.Forms 开发者的 Flutter 指南][Xamarin.Forms]。
+- [给 Android 开发者的 Flutter 指南][Android]
+- [给 iOS 开发者的 Flutter 指南][iOS]
+- [给 React Native 开发者的 Flutter 指南][React Native]
+- [给 Web 开发者的 Flutter 指南][Web]
+- [给 Xamarin.Forms 开发者的 Flutter 指南][Xamarin.Forms]
 
 [Building layouts][]
 <br> Learn how to create layouts in Flutter,
@@ -78,8 +78,8 @@ Coming from another platform? Check out Flutter for:
   way to understanding Flutter's layout model.
 
 [理解布局约束][Understanding constraints]
-<br> 一旦你理解了 "Constraints flow up. Sizes flow down. Parents set positions"
-这个之后，就会方便你了解 Flutter 的布局模型。
+<br> 一旦你理解了 Constraints flow up. Sizes flow down. Parents set positions
+这个思路之后，就能更好帮助你了解 Flutter 的布局模型。
 
 [Adding interactivity to your Flutter app][]
 <br> Learn how to add a stateful widget to your app.
@@ -123,25 +123,22 @@ app frameworks?
 
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=68736077&cid=119126400&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><br>
 
-<p>How is Flutter different for app development?</p>
-<p>视频名称：使用 Flutter 开发应用与其他有何不同</p>
+How is Flutter different for app development?<br/>
+
+视频名称：使用 Flutter 开发应用与其他有何不同<br/>
 
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 
 Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
-[Flutter in Focus playlist][]
 
 FiF 系列视频：十分钟以内学会一个 Flutter 特性<br>
-[Flutter in Focus 播放列表][Flutter in Focus playlist]
 
-In Flutter, "everything is a widget"! If you want to better
-understand the two kinds of widgets, Stateless and Stateful,
-see the following videos,
-part of the [Flutter in Focus][] series.
+In Flutter, "everything is a widget"! If you want to better understand
+the two kinds of widgets, Stateless and Stateful, see the following videos,
 
 Flutter 里 “所有的事物都是 widget”，
-如果你想更好了解有状态和无状态的 widget，请关注
-[Flutter in Focus 系列视频][Flutter in Focus]。
+如果你想更好了解有状态和无状态的 widget，
+请查看下面两支视频了解更多：
 
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -185,6 +182,9 @@ You might also find these docs useful:
 
   [动画效果介绍][Animations]
 
+The documentation on this site reflects the latest stable release of Flutter.
+
+本网站的文档基于 Flutter 最新的稳定版。
 
 [A tour of the Flutter widget framework]: /docs/development/ui/widgets-intro
 [Adding assets and images]: /docs/development/ui/assets-and-images

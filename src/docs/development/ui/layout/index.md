@@ -125,7 +125,7 @@ the children should occupy.
 
 ## 布局 widget
 
-How do you layout a single widget in Flutter? This section
+How do you lay out a single widget in Flutter? This section
 shows you how to create and display a simple widget.
 It also shows the entire code for a simple Hello World app.
 
@@ -146,7 +146,9 @@ on how you want to align or constrain the visible widget,
 as these characteristics are typically passed on to the
 contained widget.
 
-根据你想要对齐或限制可见 widget 的方式从各种 [layout widgets][] 中进行选择，因为这些特性通常会传递它所给包含的 widget。
+根据你想要对齐或限制可见 widget 的方式从各种
+[layout widgets][] 中进行选择，
+因为这些特性通常会传递它所给包含的 widget。
 
 This example uses [`Center`][] which centers its content
 horizontally and vertically.
@@ -229,7 +231,8 @@ A Flutter app is itself a widget, and most widgets have a [`build()`][]
 method. Instantiating and returning a widget in the app's `build()` method
 displays the widget.
 
-一个 Flutter app 本身就是一个 widget，大多数 widgets 都有一个 [`build()`][] 方法，
+一个 Flutter app 本身就是一个 widget，
+大多数 widgets 都有一个 [`build()`][] 方法，
 在 app 的 `build()` 方法中实例化和返回一个 widget 会让它显示出来。
 
 For a `Material` app, you can use a [`Scaffold`][] widget;
@@ -238,7 +241,8 @@ and has API for adding drawers, snack bars, and bottom sheets.
 Then you can add the `Center` widget directly to the `body`
 property for the home page.
 
-对于 `Material` app，你可以使用 [`Scaffold`][] widget，它提供默认的 banner、背景颜色，
+对于 `Material` app，你可以使用 [`Scaffold`][] widget，
+它提供默认的 banner 背景颜色，
 还有用于添加抽屉、提示条和底部列表弹窗的 API。
 你可以将 `Center` widget 直接添加到主页 `body` 的属性中。
 
@@ -275,7 +279,8 @@ class MyApp extends StatelessWidget {
   [Material 库][Material library] 实现了一些遵循 [Material
   Design][] 原则的 widgets。在设计 UI 时，
   你可以只使用标准 [widgets 库][widgets library] 中的 widgets，
-  也可以使用 Material library 中的 widgets。你可以混合来自两个库的 widgets，
+  也可以使用 Material library 中的 widgets。
+  你可以混合来自两个库的 widgets，
   可以自定义现有 widgets，也可以构建自己的一组自定义 widgets。
 
 {{site.alert.end}}
@@ -357,7 +362,9 @@ widgets vertically or horizontally. You can use a
 `Row` widget to arrange widgets horizontally,
 and a `Column` widget to arrange widgets vertically.
 
-最常见的布局模式之一是垂直或水平 widgets。 你可以使用 Row widget 水平排列 widgets，使用 Column widget 垂直排列 widgets。
+最常见的布局模式之一是垂直或水平 widgets。
+你可以使用 Row widget 水平排列 widgets，
+使用 Column widget 垂直排列 widgets。
 
 {{site.alert.secondary}}
 
@@ -458,8 +465,10 @@ For a row, the main axis runs horizontally and the cross axis runs
 vertically. For a column, the main axis runs vertically and the cross
 axis runs horizontally.
 
-你可以使用 `mainAxisAlignment` 和 `crossAxisAlignment` 属性控制行或列如何对齐其子项。
-对于一行来说，主轴水平延伸，交叉轴垂直延伸。对于一列来说，主轴垂直延伸，交叉轴水平延伸。
+你可以使用 `mainAxisAlignment` 和 `crossAxisAlignment`
+属性控制行或列如何对齐其子项。
+对于一行来说，主轴水平延伸，交叉轴垂直延伸。
+对于一列来说，主轴垂直延伸，交叉轴水平延伸。
 
 <div class="mb-2 text-center">
   {% asset ui/layout/row-diagram.png class="mb-2 mw-100"
@@ -471,7 +480,8 @@ axis runs horizontally.
 The [`MainAxisAlignment`][] and [`CrossAxisAlignment`][]
 classes offer a variety of constants for controlling alignment.
 
-[MainAxisAlignment]({{api}}/rendering/MainAxisAlignment-class.html) 和 [CrossAxisAlignment]({{api}}/rendering/CrossAxisAlignment-class.html) 类为控制对齐提供了各种常量。
+[`MainAxisAlignment`][] 和 [`CrossAxisAlignment`][] 这两个类
+提供了很多用于控制对齐的常量。
 
 {{site.alert.note}}
 
@@ -497,7 +507,10 @@ is more than 300 pixels wide, so setting the main axis
 alignment to `spaceEvenly` divides the free horizontal
 space evenly between, before, and after each image.
 
-在以下示例中，3 个图像每个都是是 100 像素宽。渲染框（在本例中是整个屏幕）宽度超过 300 像素，因此设置主轴对齐方式为 `spaceEvenly` 会将空余空间在每个图像之间、之前和之后均匀地划分。
+在以下示例中，3 个图像每个都是是 100 像素宽。
+渲染框（在本例中是整个屏幕）宽度超过 300 像素，
+因此设置主轴对齐方式为 `spaceEvenly` 会将
+空余空间在每个图像之间、之前和之后均匀地划分。
 
 <div class="row">
 <div class="col-lg-8">
@@ -1393,7 +1406,9 @@ widget 可以完全或者部分覆盖基础 widget。
   The `Stack` offsets the text using the `alignment` property and
   `Alignment`s.
 
-  在 `CircleAvatar` 的上面使用 `Stack` 覆盖 `Container`（在透明的黑色背景上展示它的 `Text`）。`Stack` 使用 `alignment` 属性和 `Alignment` 让文本偏移。
+  在 `CircleAvatar` 的上面使用 `Stack` 覆盖 `Container`
+  （在透明的黑色背景上展示它的 `Text`）。
+  `Stack` 使用 `alignment` 属性和 `Alignment` 让文本偏移。
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 
@@ -1407,7 +1422,8 @@ widget 可以完全或者部分覆盖基础 widget。
   Uses `Stack` to overlay a gradient to the top of the image. The gradient
   ensures that the toolbar's icons are distinct against the image.
 
-  使用 `Stack` 将渐变叠加到图片的顶部。渐变可以将工具栏的图标和图片区分开来。
+  使用 `Stack` 将渐变叠加到图片的顶部，
+  渐变可以将工具栏的图标和图片区分开来。
 
   **Dart code:** [contacts_demo.dart]({{demo}}/contacts_demo.dart)
   from the [Flutter Gallery][repo]

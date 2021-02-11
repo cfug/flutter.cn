@@ -27,8 +27,8 @@
         - title: 声明式 UI 介绍
           permalink: /docs/get-started/flutter-for/declarative
     - title: Dart 语言概览
-      permalink: https://dart.cn/guides/language
-    - title: 构建 Web 应用
+      permalink: https://dart.cn/overview
+    - title: 构建一个 Web 应用
       permalink: /docs/get-started/web
 
 - title: 教程和样例代码
@@ -75,6 +75,12 @@
           permalink: /docs/development/ui/assets-and-images
         - title: 路由和导航
           permalink: /docs/development/ui/navigation
+          children:
+            - title: 路由和导航
+              permalink: /docs/development/ui/navigation
+              match-page-url-exactly: true
+            - title: 深层链接
+              permalink: /docs/development/ui/navigation/deep-linking
         - title: 动画效果
           permalink: /docs/development/ui/animations
           children:
@@ -179,6 +185,8 @@
             permalink: /docs/development/add-to-app/android/add-flutter-screen
           - title: 添加一个 Flutter Fragment
             permalink: /docs/development/add-to-app/android/add-flutter-fragment
+          - title: 添加 Flutter 视图
+            permalink: /docs/development/add-to-app/android/add-flutter-view
           - title: Plugin 初始化
             permalink: /docs/development/add-to-app/android/plugin-setup
       - title: 将 Flutter 添加到现有 iOS 应用
@@ -314,6 +322,12 @@
         permalink: /docs/perf/rendering/ui-performance
       - title: Reduce shader compilation jank
         permalink: /docs/perf/rendering/shader
+    - title: Performance metrics
+      permalink: /docs/perf/metrics
+    - title: Frequently Asked Questions
+      permalink: /docs/perf/faq
+    - title: Appendix
+      permalink: /docs/perf/appendix
 
 - title: 打包部署
   children:

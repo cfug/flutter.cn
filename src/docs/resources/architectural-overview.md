@@ -19,10 +19,10 @@ different platforms, embracing differences where they exist while sharing as
 much code as possible.
 
 Flutter 是一个跨平台的 UI 工具集，
-它被设计为可以使用同样的代码在各种操作系统上复用，例如 iOS 和 Android，
+它的设计初衷，就是可以使用同样的代码在各种操作系统上复用，例如 iOS 和 Android，
 同时让应用程序可以直接与底层平台服务进行交互。
-如此设计的目的，是为了让开发者能够在不同的平台上，交付高性能且拥有自然体验的应用，
-尽可能地共享复用代码的同时包容不同平台的差异。
+如此设计是为了让开发者能够在不同的平台上，交付高性能且拥有自然体验的应用，
+尽可能地共享复用代码的同时，包容不同平台的差异。
 
 During development, Flutter apps run in a VM that offers stateful hot reload of
 changes without needing a full recompile. For release, Flutter apps are compiled
@@ -33,8 +33,8 @@ supplement the core library functionality.
 
 在开发中，Flutter 应用会在一个 VM（程序虚拟机）中运行，
 从而可以在保留状态且无需重新编译的情况下，热重载相关的更新。
-而对于发行环境 (release) 而言，无论是英特尔的 x64 还是 ARM 指令，
-又或是 Web 平台的 JavaScript，Flutter 应用都将直接编译成机器码，
+而对于发行环境 (release) 而言，无论是英特尔的 x64 还是 ARM 指令集，
+又或是 Web 平台的 JavaScript，Flutter 应用都将直接编译成机器码。
 
 This overview is divided into a number of sections:
 
@@ -75,7 +75,7 @@ This overview is divided into a number of sections:
 
 ## Architectural layers
 
-## 构建层面
+## 架构层
 
 Flutter is designed as an extensible, layered system. It exists as a series of
 independent libraries that each depend on the underlying layer. No layer has
@@ -117,14 +117,14 @@ for common target platforms, but [other embedders also
 exist](https://hover.build/blog/one-year-in/).
 
 对于底层操作系统而言，Flutter 应用程序的包装方式与其他原生应用相同。
-在每一个平台上，会包含一个特定的嵌入构建，从而提供一个程序入口，
-程序由此可以与底层操作系统进行协调，访问诸如 surface 渲染、辅助功能和输入等服务，
-并且管理事件循环队列。
+在每一个平台上，会包含一个特定的嵌入构建，
+从而提供一个程序入口，程序由此可以与底层操作系统进行协调，
+访问诸如 surface 渲染、辅助功能和输入等服务，并且管理事件循环队列。
 嵌入构建由平台适用的编程语言编写，当前 Android 使用的是 Java 和 C++，
 iOS 和 macOS 使用的是 Objective-C 和 Objective-C++，Windows 和 Linux 使用的是 C++。
 Flutter 代码可以通过这些嵌入构建，以模块方式集成到现有的应用中，或是成为应用的全部内容。
-Flutter 包含了常见平台的嵌入构建，
-但同时也有 [存在一些其他的构建][other embedders also exist]。
+Flutter 包含了常见平台的嵌入构建，但同时也
+[存在一些其他的构建][other embedders also exist]。
 
 At the core of Flutter is the **Flutter engine**, which is mostly written in C++
 and supports the primitives necessary to support all Flutter applications. The
@@ -135,10 +135,10 @@ and network I/O, accessibility support, plugin architecture, and a Dart runtime
 and compile toolchain.
 
 **Flutter 引擎** 毫无疑问是 Flutter 的核心，
-基本使用 C++ 进行编写，支持所有 Flutter 应用所需的原语。
-当一个需要绘制新一帧的内容时，引擎将负责对需要合成的场景进行栅格化。
+它基本使用 C++ 进行编写，支持所有 Flutter 应用所需的原语。
+当需要绘制新一帧的内容时，引擎将负责对需要合成的场景进行栅格化。
 它提供了 Flutter 核心 API 的底层实现，包括图形（通过 [Skia](https://skia.org/)）、
-文本布局、文件及网络 IO、辅助功能支持、插件架构和 Dart 运行时和编译时的工具链。
+文本布局、文件及网络 IO、辅助功能支持、插件架构和 Dart 运行环境及编译环境的工具链。
 
 The engine is exposed to the Flutter framework through
 [`dart:ui`]({{site.github}}/flutter/engine/tree/master/lib/ui),
@@ -189,8 +189,8 @@ a series of layers. Working from the bottom to the top, we have:
   allows you to define combinations of classes that you can reuse. This is the
   layer at which the reactive programming model is introduced.
 
-  **[widget 层]({{site.api}}/flutter/widgets/widgets-library.html)** 是一种组合的抽象。
-  每一个渲染层中的渲染对象，都在 widgets 层中有一个对应的类。
+  **[widget 层]({{site.api}}/flutter/widgets/widgets-library.html)**
+  是一种组合的抽象。每一个渲染层中的渲染对象，都在 widgets 层中有一个对应的类。
   此外，widgets 层让您可以自由组合您需要复用的各种类。
   响应式编程模型就在该层级中被引入。
 
@@ -218,8 +218,9 @@ payments]({{site.pub}}/packages/square_in_app_payments), [Apple
 authentication]({{site.pub}}/packages/sign_in_with_apple), and
 [animations]({{site.pub}}/packages/lottie).
 
-Flutter 框架相对较小，因为一些开发者可能会使用到的更高层级的功能，已经被拆分到不同的软件包中，
-使用 Dart 和 Flutter 的核心库实现，其中包括平台插件，例如
+Flutter 框架相对较小，因为一些开发者可能会使用到的更高层级的功能，
+已经被拆分到不同的软件包中，使用 Dart 和 Flutter 的核心库实现，
+其中包括平台插件，例如
 [camera]({{site.pub}}/packages/camera) 和
 [webview]({{site.pub}}/packages/webview_flutter)；与平台无关的功能，例如
 [characters]({{site.pub}}/packages/characters)、
@@ -244,6 +245,8 @@ other targets.
 
 ## Reactive user interfaces
 
+## 响应式用户界面
+
 On the surface, Flutter is [a reactive, pseudo-declarative UI
 framework](/docs/resources/faq#what-programming-paradigm-does-flutters-framework-use),
 in which the developer provides a mapping from application state to interface
@@ -253,11 +256,24 @@ from Facebook for their own React
 framework](https://www.youtube.com/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo),
 which includes a rethinking of many traditional design principles.
 
+粗略一看，Flutter 是
+[一个响应式的且伪声明式的 UI 框架](/docs/resources/faq#what-programming-paradigm-does-flutters-framework-use)
+，开发者负责提供应用状态与界面状态之间的映射，框架则在运行时将应用状态的更改更新到界面上。
+这样的模型架构的灵感来自
+[Facebook 自己的 React 框架](https://www.youtube.com/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo)
+，其中囊括了对传统架构设计的挑战。
+
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
 to events. One challenge of this approach is that, as the application grows in
 complexity, the developer needs to be aware of how state changes cascade
 throughout the entire UI. For example, consider the following UI:
+
+在大部分传统的 UI 框架中，对界面的初始状态下定义的行为是一次性的，
+在其被定义后，会根据代码在运行时单独更新，并与事件进行交互。
+在这里有一项大挑战，即随着应用程序的复杂性日益增长，
+开发者需要对整个 UI 的状态关联有整体的认知。
+让我们来看看如下的 UI：
 
 ![Color picker dialog](/images/arch-overview/color-picker.png){:width="66%"}
 
@@ -267,16 +283,28 @@ reflected in every other place. Worse, unless care is taken, a minor change to
 one part of the user interface can cause ripple effects to seemingly unrelated
 pieces of code.
 
+此处会有很多的状态改变的可能性：颜色框、色调滑条、单选按钮。
+在用户与 UI 进行交互时，状态的改变可能会影响到每一个位置。
+更糟糕的是，UI 的小规模变动很有可能会引发无关代码的效果，尤其是当开发者并未注意其关联的时候。
+
 One solution to this is an approach like MVC, where you push data changes to the
 model via the controller, and then the model pushes the new state to the view
 via the controller. However, this also is problematic, since creating and
 updating UI elements are two separate steps that can easily get out of sync.
+
+我们可以通过类似 MVC 的方式进行处理，
+开发者将数据的改动通过控制器推至模型，模型再将新的状态通过控制器推至界面。
+但这样的处理方式仍然存在问题，
+我们为了更新 UI 而创建了两个单独的步骤，十分容易造成它们的不同步。
 
 Flutter, along with other reactive frameworks, takes an alternative approach to
 this problem, by explicitly decoupling the user interface from its underlying
 state. With React-style APIs, you only create the UI description, and the
 framework takes care of using that one configuration to both create and/or
 update the user interface as appropriate.
+
+Flutter 与其他响应式框架类似，采用了显式剥离基础状态和用户界面的方式，来解决这一问题。
+您可以通过 React 风格的 API，创建 UI 的描述，让框架负责通过配置优雅地创建和更新用户界面。
 
 In Flutter, widgets (akin to components in React) are represented by immutable
 classes that are used to configure a tree of objects. These widgets are used to
@@ -286,8 +314,15 @@ mechanisms for efficiently walking the modified parts of trees, converting trees
 of objects into lower-level trees of objects, and propagating changes across
 these trees.
 
+在 Flutter 里，widgets（类似于 React 中的组件）是用来配置对象树的不可变类。
+这些 widgets 会管理单独的布局对象树，接着参与管理合成的布局对象树。
+Flutter 的核心就是一套高效的遍历树的变动的机制，
+它会将对象树转换为更底层的对象树，并在树与树之间传递更改。
+
 A widget declares its user interface by overriding the `build()` method, which
 is a function that converts state to UI:
+
+`build()` 是将状态转化为 UI 的方法，widget 通过重写该方法来声明 UI 的构造：
 
 ```none
 UI = f(state)
@@ -297,10 +332,16 @@ The `build()` method is by design fast to execute and should be free of side
 effects, allowing it to be called by the framework whenever needed (potentially
 as often as once per rendered frame).
 
+`build()` 方法在框架需要时都可以被调用（每个渲染帧可能会调用一次），
+从设计角度来看，它应该是快速且没有其他影响的。
+
 This approach relies on certain characteristics of a language runtime (in
 particular, fast object instantiation and deletion). Fortunately, [Dart is
 particularly well suited for this
 task](https://medium.com/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
+
+这样的实现设计依赖于语言的运行时特征（特别是对象的快速实例化和清除）。
+幸运的是，[Dart 非常适合这份工作](https://medium.com/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30)。
 
 ## Widgets
 
@@ -308,10 +349,18 @@ As mentioned, Flutter emphasizes widgets as a unit of composition. Widgets are
 the building blocks of a Flutter app’s user interface, and each widget is an
 immutable declaration of part of the user interface.
 
+前文提到，Flutter 强调 widgets 是组成单元。
+Widgets 是搭建 Flutter 应用界面的砖块，每个 widget 都是一部分不可变的 UI 声明。
+
 Widgets form a hierarchy based on composition. Each widget nests inside its
 parent and can receive context from the parent. This structure carries all the
 way up to the root widget (the container that hosts the Flutter app, typically
 `MaterialApp` or `CupertinoApp`), as this trivial example shows:
+
+Widgets 通过互相组成来形成层次结构。
+每个 Widget 都嵌套在其父级的内部，并可以通过父级接收上下文。
+从根布局（托管 Flutter 应用的容器，通常是 `MaterialApp` 或`CupertinoApp`）开始，
+从上至下都是这样的结构，如下面的示例所示：
 
 <!-- skip -->
 ```dart
@@ -351,10 +400,15 @@ class MyApp extends StatelessWidget {
 
 In the preceding code, all instantiated classes are widgets.
 
+在上面的代码中，所有实例化的类都是 widgets。
+
 Apps update their user interface in response to events (such as a user
 interaction) by telling the framework to replace a widget in the hierarchy with
 another widget. The framework then compares the new and old widgets, and
 efficiently updates the user interface.
+
+用户会根据事件交互（例如用户操作），通知框架替换层级中的旧 widget 为新 widget，
+来高效地更新用户界面。
 
 Flutter has its own implementations of each UI control, rather than deferring to
 those provided by the system: for example, there is a pure [Dart
@@ -364,17 +418,36 @@ control](https://developer.apple.com/design/human-interface-guidelines/ios/contr
 and the [one for](https://material.io/develop/android/components/switches) the
 [Android equivalent](https://material.io/develop/android/components/switches).
 
+Flutter 拥有其自己的 UI 控制实现，而不是由系统自带的方法进行托管：
+例如，
+[iOS 的 Switch 控件](https://developer.apple.com/design/human-interface-guidelines/ios/controls/switches/)
+和 [Android 的选择控件](https://material.io/develop/android/components/switches)
+均有一个纯 [Dart 实现]({{site.api}}/flutter/material/Switch-class.html)。
+
 This approach provides several benefits:
+
+这样的实现有几个优势：
 
 - Provides for unlimited extensibility. A developer who wants a variant of the
   Switch control can create one in any arbitrary way, and is not limited to the
   extension points provided by the OS.
+
+  提供了无限的扩展性。当开发者想要一个 Switch 的改装时，他们可以以任意方式创建一个，
+  而不被系统提供的扩展所限制。
+
 - Avoids a significant performance bottleneck by allowing Flutter to composite
   the entire scene at once, without transitioning back and forth between Flutter
   code and platform code.
+
+  Flutter 可以直接合成所有的场景，而无需在 Flutter 与原生平台之间来回切换，
+  从而避免了明显的性能瓶颈。
+
 - Decouples the application behavior from any operating system dependencies. The
   application looks and feels the same on all versions of the OS, even if the OS
   changed the implementations of its controls.
+
+  将应用的行为与操作系统的依赖解构。
+  在任意一种系统平台上体验应用，都将是一致的，就算某个系统更改了其控件的实现，也是如此。
 
 ### Composition
 

@@ -2271,7 +2271,7 @@ In a Xamarin.Forms `ListView`,
 you create a `ViewCell` and possibly a `DataTemplateSelector`
 and pass it into the `ListView`, which renders each row with
 what your `DataTemplateSelector` or `ViewCell` returns.
-However, you often have have to make sure you turn on Cell Recycling
+However, you often have to make sure you turn on Cell Recycling
 otherwise you will run into memory issues and slow scrolling speeds.
 
 在一个 Xamarin.Forms 的 `ListView` 中，你可以创建一个 `ViewCell` 可能还有一个 `DataTemplateSelector` 
@@ -3105,7 +3105,7 @@ class SampleApp extends StatelessWidget {
 
 ### 如何访问共享首选项或用户默认值?
 
-Xamarin.Forms developers will likely be familar with the
+Xamarin.Forms developers will likely be familiar with the
 `Xam.Plugins.Settings` plugin.
 
 Xamarin.Forms 开发者可能会熟悉 `Xam.Plugins.Settings` 插件。
@@ -3181,7 +3181,7 @@ plugin documentation.
 [Animation & Motion widgets]: /docs/development/ui/widgets/animation
 [Animations overview]: /docs/development/ui/animations
 [Animations tutorial]: /docs/development/ui/animations/tutorial
-[Apple's iOS design language]: https://developer.apple.com/design/resources/
+[Apple's iOS design language]: {{site.apple-dev}}/design/resources/
 [arb]: {{site.github}}/google/app-resource-bundle
 [Async UI]: #async-ui
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore

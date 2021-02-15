@@ -498,10 +498,8 @@ widgets and render objects.
 然后，热重载机制使 Flutter 框架触发所有现有的
 widget 和渲染对象的重建/重新布局/重绘。
 
-[static fields are lazily initialized]: {{site.news}}/2012/02/static-variables-no-longer-have-to-be.html
-[静态字段会被惰性初始化]: {{site.news}}/2012/02/static-variables-no-longer-have-to-be.html
-[const-new]: {{site.news}}/2012/02/static-variables-no-longer-have-to-be.html
-[Dart Virtual Machine (VM)]: https://dart.dev/platforms
+[const-new]: https://news.dartlang.org/2012/06/const-static-final-oh-my.html
+[Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform
 [Flutter editor]: /docs/get-started/editor
 [Issue 43574]: {{site.github}}/flutter/flutter/issues/43574
 [kernel files]: {{site.github}}/dart-lang/sdk/tree/master/pkg/kernel

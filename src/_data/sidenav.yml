@@ -200,6 +200,8 @@
         permalink: /docs/development/add-to-app/debugging
       - title: 加载顺序和性能
         permalink: /docs/development/add-to-app/performance
+      - title: 多个 Flutter 实例
+        permalink: /docs/development/add-to-app/multiple-flutters
     - title: 开发工具和技术细节
       permalink: /docs/development/tools
       children:

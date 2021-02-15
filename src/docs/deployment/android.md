@@ -510,8 +510,9 @@ are correct, especially the following:
 
 ## 检查构建配置
 
-Review the default [Gradle build file][gradlebuild] file, `build.gradle`,located in `<app dir>/android/app` and 
-verify the values are correct,especially the following
+Review the default [Gradle build file][gradlebuild],
+`build.gradle`, located in `<app dir>/android/app` and
+verify the values are correct, especially the following
 values in the `defaultConfig` block:
 
 检查位于 `<app dir>/android/app` 的默认 [Gradle build file][gradlebuild]，

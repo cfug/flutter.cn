@@ -250,7 +250,7 @@ The API is connected to the platform-specific implementation(s) using a
 
 ### 联合插件
 
-Federated plugins are a a way of splitting support for different platforms into
+Federated plugins are a way of splitting support for different platforms into
 separate packages. So, a federated plugin can use one package for iOS, another
 for Android, another for web, and yet another for a car (as an example of an IoT
 device). Among other benefits, this approach allows a domain expert to extend an
@@ -623,14 +623,6 @@ follow the provided instructions.
 
 如果这个命令返回了一个关于需要更新 `pubspec.yaml` 文件的提醒，
 请按照提示的说明进行操作。
-
-{{site.alert.important}}
-
-  The `--platforms ` flag is available in Flutter 1.20.0.
-  
-  `--platforms` 命令在 Flutter 1.20.0 版本之后可用。
-  
-{{site.alert.end}}
 
 ### Testing your plugin
 
@@ -1009,7 +1001,7 @@ PENDING
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
 [How to Write a Flutter Web Plugin, Part 1]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
-[issue #33302]: https://github.com/flutter/flutter/issues/33302
+[issue #33302]: {{site.github}}/flutter/flutter/issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
 [platform channel]: /docs/development/platform-integration/platform-channels

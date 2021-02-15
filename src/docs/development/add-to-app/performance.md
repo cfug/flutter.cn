@@ -8,9 +8,10 @@ keywords: 性能优化
 ---
 
 This page describes the breakdown of the steps involved
-to show a Flutter UI. Knowing this, you can make better, informed decisions
-about when to pre-warm the Flutter engine, which operations are possible
-at which stage, and the latency and memory costs of those operations.
+to show a Flutter UI. Knowing this, you can make better,
+more informed decisions about when to pre-warm the Flutter engine,
+which operations are possible at which stage,
+and the latency and memory costs of those operations.
 
 本页面描述了展示一个 Flutter UI 的分解步骤。
 知道了这一点，您可以就何时对 Flutter 引擎进行预热，
@@ -38,7 +39,7 @@ Flutter's engine runtime and your application's compiled
 Dart code are both bundled as shared libraries on Android
 and iOS. The first step of loading Flutter is to find those
 resources in your .apk/.ipa/.app (along with other Flutter
-assets such as images, fonts, and JIT code if applicable).
+assets such as images, fonts, and JIT code, if applicable).
 
 Flutter 的引擎运行时和应用已编译的 Dart 代码都被打包为 Android 和 iOS 上的共享库。
 加载 Flutter 的第一步是在 .apk、.ipa 或 .app 中查找这些资源
@@ -240,7 +241,7 @@ The most relevant choice for add-to-app scenarios is for you
 to decide when to pre-load a `FlutterEngine`
 (that is, to load the Flutter library, start the Dart VM,
 and run entrypoint in an isolate), and what the memory and latency
-cost is of that pre-warm. You also need to know how the pre-warm 
+cost is of that pre-warm. You also need to know how the pre-warm
 affects the memory and latency cost of rendering a first Flutter
 frame when the UI component is subsequently attached
 to that `FlutterEngine`.
@@ -366,12 +367,19 @@ This doesn't affect the Flutter state, which lives in the `FlutterEngine`
 (unless the `FlutterEngine` is also released).
 
 释放 Flutter UI 组件后，将释放与 UI 相关的内存。
-这不会影响 Flutter 状态（除非也释放了 `FlutterEngine`），状态位于 `FlutterEngine` 中。
+这不会影响 Flutter 状态（除非也释放了 `FlutterEngine`），
+状态位于 `FlutterEngine` 中。
+
+For performance details on creating more than one `FlutterEngine`, see
+[multiple Flutters][].
+
+关于创建多个 `FlutterEngine` 对性能影响的详细情况，请参考文档：
+[多个 Flutter 实例][multiple Flutters]。 
 
 [android-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [auxiliary threads]: {{site.github}}/flutter/flutter/wiki/The-Engine-architecture#threading
-[CAEAGLLayer]: https://developer.apple.com/documentation/quartzcore/caeagllayer
-[CAMetalLayer]: https://developer.apple.com/documentation/quartzcore/cametallayer
+[CAEAGLLayer]: {{site.apple-dev}}/documentation/quartzcore/caeagllayer
+[CAMetalLayer]: {{site.apple-dev}}/documentation/quartzcore/cametallayer
 [Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.html
 [Dart SDK]: {{site.dart-site}}/tools/sdk
 [`DartExecutor.executeDartEntrypoint()`]: {{site.api}}/javadoc/io/flutter/embedding/engine/dart/DartExecutor.html#executeDartEntrypoint-io.flutter.embedding.engine.dart.DartExecutor.DartEntrypoint-
@@ -380,11 +388,11 @@ This doesn't affect the Flutter state, which lives in the `FlutterEngine`
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [`FlutterViewController initWithProject: nibName: bundle:`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithProject:nibName:bundle:
 [`initWithEngine: nibName: bundle:`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithEngine:nibName:bundle:
-[`Intent`]: https://developer.android.com/reference/android/content/Intent.html
+[`Intent`]: {{site.android-dev}}/reference/android/content/Intent.html
 [ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
 [`Layer`]: {{site.api}}/flutter/rendering/Layer-class.html
 [`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [`runWithEntrypoint:`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:
 [snapshot]: {{site.github}}/dart-lang/sdk/wiki/Snapshots
-[`startActivity()`]: https://developer.android.com/reference/android/content/Context.html#startActivity(android.content.Intent
-[`Surface`]: https://developer.android.com/reference/android/view/Surface
+[`startActivity()`]: {{site.android-dev}}/reference/android/content/Context.html#startActivity(android.content.Intent
+[`Surface`]: {{site.android-dev}}/reference/android/view/Surface

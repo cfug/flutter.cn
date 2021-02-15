@@ -36,11 +36,11 @@ than the Android platform.
 ### 如何将现有的应用程序、插件，或者可编辑的模块项目迁移至 AndroidX?
 
 _You will need Android Studio 3.2 or higher. If you don’t have it installed,
-you can download the latest version from
-[developer.android.com/studio]({{site.android-dev}}/studio)_.
+you can download the latest version from the
+[Android Studio]({{site.android-dev}}/studio) site_.
 
 **你需要 Android Studio 3.2 或其更高的版本。
-若尚未安装，可从 [developer.android.com/studio]({{site.android-dev}}/studio) 
+若尚未安装，可从 [Android Studio]({{site.android-dev}}/studio) 页面
 下载最新的版本。**
 
 1. Open Android Studio.
@@ -157,10 +157,12 @@ use AndroidX by default.
 命令行创建的 Flutter 项目将会默认使用 AndroidX。
 
 Projects created prior to this Flutter version must not depend on any
-[old build artifact][] or [old Support Library class][].
+[old build artifact]({{site.android-dev}}/jetpack/androidx/migrate/artifact-mappings) or
+[old Support Library class]({{site.android-dev}}/jetpack/androidx/migrate/class-mappings).
 
 在此 Flutter 版本（1.12.13）之前创建的项目不能依赖任何
-[工件映射][old build artifact] 和 [类映射][old Support Library class]。
+[工件映射]({{site.android-dev}}/jetpack/androidx/migrate/artifact-mappings)
+和 [类映射]({{site.android-dev}}/jetpack/androidx/migrate/class-mappings)。
 
 In an app or module project, the file `android/gradle.properties` or `.android/gradle.properties`
 must contain:
@@ -200,12 +202,9 @@ Flutter 工具使用 Jetifier 将支持库中的 Flutter 插件自动迁移到 A
 
 ### 在迁移至 AndroidX 的过程中遇到了问题
 
-[Open an issue on GitHub][] and add `[androidx-migration]` to the title of the issue.
+[Open an issue on GitHub]({{site.github}}/flutter/flutter/issues/new/choose)
+and add `[androidx-migration]` to the title of the issue.
 
-[在 GitHub 上创建一个问题][Open an issue on GitHub]
+[在 GitHub 上创建一个问题]({{site.github}}/flutter/flutter/issues/new/choose)
 并为其添加一个 `[androidx-migration]` 标题。
 
-
-[old build artifact]: https://developer.android.com/jetpack/androidx/migrate/artifact-mappings
-[old Support Library class]: https://developer.android.com/jetpack/androidx/migrate/class-mappings
-[Open an issue on GitHub]: https://github.com/flutter/flutter/issues/new/choose

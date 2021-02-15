@@ -31,9 +31,14 @@ Web 支持是 Flutter 的代码兼容实现，使用基于标准的 Web 技术�
 {{site.alert.end}}
 
 {{site.alert.warning}}
+
   **Hot reload not supported**
   As of beta, only **hot restart** is supported on the web;
   **hot reload** is not supported.
+
+**不支持热重载**
+在 beta 分支上，Web 已支持 **热重启**，**热重载** 仍不支持。
+
 {{site.alert.end}}
 
 <img src="/images/Dart-framework-v-browser-framework.png"

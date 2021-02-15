@@ -76,7 +76,6 @@ Flutter 引擎 (engine)、页面 (screen) 或视图 (view) 添加到你的应用
 同时使用最少的内存资源。请多详细内容，请参考文档：
 [多个 Flutter 实例][multiple Flutters]。 
 
-
 ## Supported features
 
 ## 已支持的特性

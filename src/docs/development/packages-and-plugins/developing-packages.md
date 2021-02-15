@@ -621,20 +621,9 @@ $ flutter create --template=plugin --platforms=web .
 If this command displays a message about updating the `pubspec.yaml` file,
 follow the provided instructions.
 
-<<<<<<< HEAD
 如果这个命令返回了一个关于需要更新 `pubspec.yaml` 文件的提醒，
 请按照提示的说明进行操作。
 
-{{site.alert.important}}
-
-  The `--platforms ` flag is available in Flutter 1.20.0.
-  
-  `--platforms` 命令在 Flutter 1.20.0 版本之后可用。
-  
-{{site.alert.end}}
-
-=======
->>>>>>> 18c62b84bbae8aab7769869c87917158b872ed00
 ### Testing your plugin
 
 ### 测试你的插件

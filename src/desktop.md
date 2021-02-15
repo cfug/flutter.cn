@@ -505,7 +505,9 @@ read through the [macOS-specific support](#macos-specific-support) section below
 to understand about how entitlements, the App Sandbox, and the Hardened Runtime
 impact your distributable application.
 
-`.app` 是自包含的，可以按原样发布。
+`.app` 是自包含的，可以按原样发布。不过，你应该通读一下
+[macOS 的额外要求](#macos-specific-support)，了解 Entitlements、App Sandbox 和
+Hardened Runtime 是如何影响你打包的应用的。
 
 #### Linux
 

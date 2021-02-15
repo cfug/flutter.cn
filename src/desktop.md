@@ -9,7 +9,7 @@ keywords: Flutter Desktop, Flutter 桌面版
 Desktop support allows you to compile Flutter source code
 to a native Windows, macOS, or Linux desktop app. Flutter's desktop
 support also extends to plugins&mdash;you can install 
-existing plugins that support the macOS or Linux platforms,
+existing plugins that support the Windows, macOS, or Linux platforms,
 or you can create your own.
 
 桌面支持可以让您的 Flutter 代码编译成 Windows、macOS、或 Linux 的原生桌面应用。
@@ -124,7 +124,7 @@ you need the following in addition to the Flutter SDK:
   如果使用插件，需要安装 [CocoaPods][]
 
 [CocoaPods]: https://cocoapods.org/
-[Xcode]: https://developer.apple.com/xcode/
+[Xcode]: {{site.apple-dev}}/xcode/
 
 ### Additional Linux requirements
 
@@ -248,8 +248,8 @@ $ flutter devices
 1 connected device:
 
 Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.18362.1082]
-macOS (desktop) • macos • darwin-x64 • Mac OS X 10.15.5 19F101
-Linux (desktop) • linux • linux-x64 • Linux
+macOS (desktop)   • macos   • darwin-x64  • macOS 11.2 20D64 darwin-x64
+Linux (desktop)   • linux   • linux-x64   • Linux
 ```
 
 You might also run `flutter doctor` to see if there are
@@ -271,11 +271,12 @@ On macOS, you might see something like the following:
 在 macOS 上，您可能会看到如下内容:
 
 ```terminal
-[✓] Flutter (Channel master, 1.18.0-10.0.pre, on Mac OS X 10.15.4 19E287, locale
-    en-US)
-[✓] Xcode - develop for iOS and macOS (Xcode 11.2)
+[✓] Flutter (Channel dev, 1.26.0-17.2.pre, on macOS 11.2 20D64 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
+[✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
-[✓] VS Code (version 1.44.2)
+[✓] Android Studio (version 4.0)
+[✓] VS Code (version 1.53.0)
 [✓] Connected device (3 available)
 ```
 
@@ -292,7 +293,7 @@ $ flutter doctor
 ```
 
 If `flutter doctor` finds problems for a platform you don't
-support, you can ignore those warnings. You don't have
+want to develop for, you can ignore those warnings. You don't have
 to install Android Studio and the Android SDK,
 for example, if you're writing a Linux desktop app.
 
@@ -428,6 +429,27 @@ build output on other machines for testing purposes.
 
 #### Windows
 
+For building Windows executables, you can either use tooling to construct an
+MSIX installer, or you can build your own zip file that collects
+the components together.
+
+##### MSIX Packaging
+
+[MSIX][] is Microsoft's Windows app package format that provides a modern 
+packaging experience to all Windows apps. This format can either be used 
+to ship applications to Microsoft's Windows Apps store, or distribute 
+application installers directly.
+
+The easiest way to create an MSIX distribution for a Flutter project is to use
+the [`msix` pub package][msix package]. For an example of using the `msix` package
+from a Flutter desktop app, see the [Desktop Photo Search sample][].
+
+[MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
+[msix package]: {{site.pub}}/packages/msix
+[Desktop Photo Search sample]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
+
+##### Building your own zip file for Windows
+
 The executable can be found in your project under
 `build\windows\runner\<build mode>\`.
 In addition to that executable, you need the following:
@@ -478,7 +500,10 @@ and the other DLLs, and bundle them together in a zip file.
 
 #### macOS
 
-The `.app` is self-contained, and can be distributed as-is.
+The `.app` is self-contained, and can be distributed as-is. However, you should 
+read through the [macOS-specific support](#macos-specific-support) section below
+to understand about how entitlements, the App Sandbox, and the Hardened Runtime
+impact your distributable application.
 
 `.app` 是自包含的，可以按原样发布。
 
@@ -649,9 +674,9 @@ on the Apple Developer site.
 关于这些话题的更多信息，
 请参见 Apple Developer 网站上的 [App Sandbox][] 和 [Entitlements][]。
 
-[App Sandbox]: https://developer.apple.com/documentation/security/app_sandbox
-[App Store]: https://developer.apple.com/app-store/submissions/
-[Entitlements]: https://developer.apple.com/documentation/bundleresources/entitlements
+[App Sandbox]: {{site.apple-dev}}/documentation/security/app_sandbox
+[App Store]: {{site.apple-dev}}/app-store/submissions/
+[Entitlements]: {{site.apple-dev}}/documentation/bundleresources/entitlements
 [`file_chooser`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
 
 ### Hardened runtime
@@ -812,7 +837,7 @@ see the following resources:
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [Federated Plugin proposal]: /go/federated-plugins
 [Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
-[How to write a Flutter web plugin, part 2]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
 
 ## Samples and codelabs

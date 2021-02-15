@@ -261,11 +261,12 @@ duration since the first tick after it was started.
 `Ticker` 开始运行到现在的持续时间。
 
 Because tickers always give their elapsed time relative to the first
-tick after they were started, tickers are all synchronised. If you
+tick after they were started; tickers are all synchronised. If you
 start three tickers at different times between two ticks, they will all
 nonetheless be synchronised with the same starting time, and will
-subsequently tick in lockstep. Like people at a bus-stop, all the tickers 
-will wait for a regularly occuring event (the tick) to begin moving (counting time).
+subsequently tick in lockstep. Like people at a bus-stop,
+all the tickers wait for a regularly occurring event
+(the tick) to begin moving (counting time).
 
 因为运行器总是会提供在自它们开始运行以来的持续时间，
 所以所有运行器都是同步的。

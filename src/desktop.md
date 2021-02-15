@@ -14,7 +14,7 @@ or you can create your own.
 
 桌面支持可以让您的 Flutter 代码编译成 Windows、macOS、或 Linux 的原生桌面应用。
 Flutter 的桌面支持也允许插件拓展&mdash;
-您可以使用已经支持了 macOS 或 Linux 平台的插件，或者创建您自己的插件来实现功能。
+您可以使用已经支持了 Windows、macOS 或 Linux 平台的插件，或者创建您自己的插件来实现功能。
 
 {{site.alert.warning}}
 

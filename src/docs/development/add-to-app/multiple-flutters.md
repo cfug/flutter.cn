@@ -32,7 +32,7 @@ As of the 1.26 release, communication between Flutter instances is handled using
 [platform channels][] (or [Pigeon][]) through the host platform. To see
 our roadmap on communication, or other multiple-Flutters issues, see [Issue 72009][].
 
-随着 1.26 发行版的发布，Flutter 实例之间将通过宿主平台的
+随着 1.26 正式版的发布，Flutter 实例之间将通过宿主平台的
 [平台通道][platform channels]（或 [Pigeon][]）进行处理。
 若您对我们平台通信的里程碑感兴趣，或是有其他多个 Flutter 实例的问题，请查看 [Issue 72009][]。
 
@@ -84,7 +84,7 @@ scenarios motivating the usage of multiple Flutters can be found at
 使用多个 Flutter 实例的优势在于，每一个实例互相独立，各自维护路由栈、UI 和应用状态。
 这简化了应用程序整体的状态保持考虑，并且进一步模块化。
 了解更多关于多个 Flutter 使用的动机和场景，请查看
-[flutter.cn/go/multiple-flutters][flutter.dev/go/multiple-flutters]。
+[flutter.cn/go/multiple-flutters](https://files.flutter-io.cn/sources/flutter-design-docs/Multiple_Flutters.pdf)。
 
 The 1.26 Flutter release drastically reduces the memory footprint of additional
 Flutter engines from **~19MB** on Android and **~13MB** on iOS, to **~180kB** on Android and

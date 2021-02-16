@@ -451,8 +451,12 @@ This approach provides several benefits:
 
 ### Composition
 
+### 组成
+
 Widgets are typically composed of many other small, single-purpose widgets that
 combine to produce powerful effects.
+
+Widgets 通常由更小的且用途单一的 widgets 组合而成，它们可以通过互相加持来产生更大的效果。
 
 Where possible, the number of design concepts is kept to a minimum while
 allowing the total vocabulary to be large. For example, in the widgets layer,
@@ -465,6 +469,15 @@ accessibility. In each of these cases, the corresponding vocabulary ends up
 being large: there are hundreds of widgets and render objects, and dozens of
 animation and tween types.
 
+在设计时，相关的设计概念已尽可能地少量存在，而通过大量的内容进行填充。
+（译者注：即以最小的原语加最多的单一实现创造出最大的价值。）
+举个例子，Flutter 在 widgets 层中使用了相同的概念（一个 `Widget`）
+来表示屏幕上的绘制、布局（定位及大小）、用户交互、状态管理、主题、动画及导航。
+在动画层，`Animation` 和 `Tween` 这对概念组合，涵盖了大部分的设计空间。
+在渲染层，`RenderObject` 用来描述布局、绘制、触摸判断及可访问性。
+在这些场景中，最终对应包含的内容都很多：
+有数百个 widgets 和 render objects，以及数十种动画和补间类型。
+
 The class hierarchy is deliberately shallow and broad to maximize the possible
 number of combinations, focusing on small, composable widgets that each do one
 thing well. Core features are abstract, with even basic features like padding
@@ -475,10 +488,22 @@ example, to center a widget, rather than adjusting a notional `Align` property,
 you wrap it in a [`Center`]({{site.api}}/flutter/widgets/Center-class.html)
 widget.
 
+类的层次结构有意的浅显且宽泛，以尽可能增加组合的数量，重点将放在小型可组合的 widget 上，
+这些 widget 的单一功能都负责的非常到位。
+核心功能都是抽象的，甚至像边距和对齐这样的基础功能，都以组件化方式单独实现，而不是构建在核心中。
+（这样的实现也与传统的 API 形成了对比，类似边距这样的功能都内置在了每个组件的公共核心内。）
+因此，假设您需要将一个 widget 居中，与其调整 `Align` 这样的属性，您应该将它包裹在一个
+[`Center`]({{site.api}}/flutter/widgets/Center-class.html) widget 内。
+
 There are widgets for padding, alignment, rows, columns, and grids. These layout
 widgets do not have a visual representation of their own. Instead, their sole
 purpose is to control some aspect of another widget’s layout. Flutter also
 includes utility widgets that take advantage of this compositional approach.
+
+Flutter 中包含了边距、对齐、行、列和网格系列的 widgets。
+这些布局 widgets 并不自带视觉内容。
+实际上它们只用于控制其他 widgets 的部分布局条件。
+Flutter 还包含了以这种组合方法组成的实用型 widgets。
 
 For example, [`Container`]({{site.api}}/flutter/widgets/Container-class.html), a
 commonly used widget, is made up of several widgets responsible for layout,
@@ -495,7 +520,24 @@ than subclassing `Container` to produce a customized effect, you can compose it
 and other simple widgets in novel ways, or just create a new widget using
 `Container` as inspiration.
 
+例如，一个常用的 widget
+[`Container`]({{site.api}}/flutter/widgets/Container-class.html)，
+是由几个 widget 组合而成，包含了布局、绘制、定位和大小的功能。
+更具体地说，Container 是由
+[`LimitedBox`]({{site.api}}/flutter/widgets/LimitedBox-class.html)、
+[`ConstrainedBox`]({{site.api}}/flutter/widgets/ConstrainedBox-class.html)、
+[`Align`]({{site.api}}/flutter/widgets/Align-class.html)、
+[`Padding`]({{site.api}}/flutter/widgets/Padding-class.html)、
+[`DecoratedBox`]({{site.api}}/flutter/widgets/DecoratedBox-class.html) 和
+[`Transform`]({{site.api}}/flutter/widgets/Transform-class.html) 组成的，
+您也可以通过查看源码看到这些组合。
+Flutter 有一个典型的特征，即您可以深入到任意一个 widget，查看其源码。
+因此，您可以通过同样的方式组合其他的 widgets，也可以参考 `Container` 来创建其他的 widget，
+而不需要继承 `Container` 来实现自定义的效果。
+
 ### Building widgets
+
+### 构建 widgets
 
 As mentioned earlier, you determine the visual representation of a widget by
 overriding the
@@ -513,6 +555,20 @@ objects]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html). The
 framework then stitches together the renderable objects into a renderable object
 tree.
 
+先前提到，您可以通过重写
+[`build()`]({{site.api}}/flutter/widgets/StatelessWidget/build.html)
+方法，返回一个新的元素树，来定义视觉展示。
+这棵树用更为具体的术语表示了 widget 在 UI 中的部分。
+例如，工具栏 widget 的 build 方法可能会返回
+[水平布局]({{site.api}}/flutter/widgets/Row-class.html)，
+其中可能包含一些 [文字]({{site.api}}/flutter/widgets/Text-class.html)，
+[各种各样]({{site.api}}/flutter/material/IconButton-class.html) 的
+[按钮]({{site.api}}/flutter/material/PopupMenuButton-class.html)。
+根据需要，框架会递归请求每个 widget 进行构建，直到整棵树都被
+[具体的可渲染对象]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html)
+描述为止。
+然后，框架会将可渲染的对象缝合在一起，组成可渲染对象树。
+
 A widget’s build function should be free of side effects. Whenever the function
 is asked to build, the widget should return a new tree of widgets<sup><a
 href="#a1">1</a></sup>, regardless of what the widget previously returned. The
@@ -521,17 +577,33 @@ be called based on the render object tree (described in more detail later). More
 information about this process can be found in the [Inside Flutter
 topic](/docs/resources/inside-flutter#linear-reconciliation).
 
+Widget 的 build 方法应该是没有副作用的。每当一个方法要求构建时，
+widget 都应当能返回一个 widget 的元素树<sup><a href="#a1">1</a></sup>，
+与先前返回的 widget 也没有关联。
+框架会根据渲染对象树（稍后将进一步介绍）来确定哪些构建方法需要被调用，这是一项略显繁重的工作。
+有关这个过程的更多信息，可以在
+[Flutter 工作原理](/docs/resources/inside-flutter#linear-reconciliation)
+中进一步了解。
+
 On each rendered frame, Flutter can recreate just the parts of the UI where the
 state has changed by calling that widget’s `build()` method. Therefore it is
 important that build methods should return quickly, and heavy computational work
 should be done in some asynchronous manner and then stored as part of the state
 to be used by a build method.
 
+每个渲染帧，Flutter 都可以根据变化的状态，调用 `build()` 方法重建部分 UI。
+因此，build 方法保持轻量且能快速返回 widget 是非常关键的，
+繁重的计算工作应该通过一些异步方法完成，并存储在状态中，在 build 方法中使用。
+
 While relatively naïve in approach, this automated comparison is quite
 effective, enabling high-performance, interactive apps. And, the design of the
 build function simplifies your code by focusing on declaring what a widget is
 made of, rather than the complexities of updating the user interface from one
 state to another.
+
+尽管这样的实现看起来不够成熟，但这样的自动对比方法非常有效，可以实现高性能的交互应用。
+同时，以这种方式设计的 build 方法，将着重点放在 widget 组成的声明上，从而简化了您的代码，
+而不是以一种状态去更新另一种状态这样的复杂过程。
 
 ### Widget state
 

@@ -105,7 +105,7 @@ to construct `FlutterEngines`, rather than the `FlutterEngine`
 constructors used previously.
 
 在 Android 和 iOS 上添加多个 Flutter 实例的主要 API
-是基于新的 `FlutterEgineGroup` 类 ([Android API][], [iOS API][])
+是基于新的 `FlutterEngineGroup` 类 ([Android API][], [iOS API][])
 来创建 `FlutterEngine` 的，而不是通过以前的 `FlutterEngine` 构造。
 
 Whereas the `FlutterEngine` API was direct and easier to consume, the

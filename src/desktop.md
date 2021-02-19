@@ -541,7 +541,7 @@ to understand how entitlements, the App Sandbox, and the Hardened Runtime
 impact your distributable application.
 
 在 Xcode 里，请参考 Apple 的文档：
-[在分发前对 macOS 软件进行公证][CHS distribute your app via the macOS App Store]
+[在分发前对 macOS 软件进行公证][CHS documentation on notarizing macOS Applications]
 或 [将 app 提交至 Mac App Store][CHS distribute your app via the macOS App Store]。
 你也应该通读一下
 [macOS 的额外要求](#macos-specific-support)，了解 Entitlements、App Sandbox 和

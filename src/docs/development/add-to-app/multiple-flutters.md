@@ -101,7 +101,7 @@ Flutter 1.26 大幅减少了额外的 Flutter 引擎的内存占用，
 
 The primary API for adding multiple Flutter instances on both Android and iOS
 is based on a new `FlutterEngineGroup` class ([Android API][], [iOS API][])
-to construct `FlutterEngines`, rather than the `FlutterEngine`
+to construct `FlutterEngine`s, rather than the `FlutterEngine`
 constructors used previously.
 
 在 Android 和 iOS 上添加多个 Flutter 实例的主要 API
@@ -109,7 +109,7 @@ constructors used previously.
 来创建 `FlutterEngine` 的，而不是通过以前的 `FlutterEngine` 构造。
 
 Whereas the `FlutterEngine` API was direct and easier to consume, the
-`FlutterEngines` spawned from the same `FlutterEngineGroup` have the performance
+`FlutterEngine` spawned from the same `FlutterEngineGroup` have the performance
 advantage of sharing many of the common, reusable resources such as the GPU
 context, font metrics, and isolate group snapshot, leading to a faster initial
 rendering latency and lower memory footprint.
@@ -163,7 +163,7 @@ engines. Destroying the `FlutterEngineGroup` doesn't affect existing spawned
 ## 示例
 
 You can find a sample demonstrating how to use `FlutterEngineGroup`
-on both Android and iOS on[GitHub][].
+on both Android and iOS on [GitHub][].
 
 您可以在 [GitHub 仓库][GitHub] 上找到在 Android 和 iOS 上
 使用 `FlutterEngineGroup` 的示例。

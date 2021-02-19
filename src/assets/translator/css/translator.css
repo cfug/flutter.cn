@@ -20,6 +20,10 @@ h2[translation-result] + h2[translation-origin=on] {
     margin-top: -12px;
 }
 
+h3[translation-result] + h3[translation-origin=on] {
+    margin-top: 0;
+}
+
 .site-header__search.form-inline {
     margin-block-end: 0 !important;
 }

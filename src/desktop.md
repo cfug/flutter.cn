@@ -589,6 +589,8 @@ change the `platforms` list to include only the platform(s) you
 want to add.
 
 这将会在您的 Flutter 桌面项目中添加必要的已有文件和文件夹。
+如果需要只添加特定平台桌面端的支持，修改 `platforms` 的值
+为你想要支持的平台即可。
 
 ## macOS-specific support
 

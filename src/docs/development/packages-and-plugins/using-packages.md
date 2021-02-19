@@ -238,10 +238,12 @@ Platform-specific dependencies on
 [Gradle modules][] and/or [CocoaPods][]
 are solved in a similar way.
 
-如果 `some_package` 声明了以上依赖，并且 `another_package` 声明了一个兼容的
-`url_launcher` 依赖项，如 `'0.4.5'` 或 `^0.4.0`，`pub` 能够自动解决冲突问题。
-类似的注解也适用于插件 package 特定平台里
-[Gradle modules][] 和/或 [CocoaPods][] 的依赖关系。
+如果 `some_package` 声明了以上依赖，
+并且 `another_package` 声明了一个兼容的
+`url_launcher` 依赖项，如 `'5.4.6'` 或 `^5.5.0`，
+pub 能够自动解决冲突问题。
+[Gradle modules][] 和 [CocoaPods][]
+也是用类似的方式解决平台依赖的。
 
 Even if `some_package` and `another_package`
 declare incompatible versions for `url_launcher`,
@@ -456,17 +458,13 @@ additional dependency options are available:
   ```
 
 **Git dependency on a package in a folder**
-<<<<<<< HEAD
-<br> The pub tool assumes the package is located in
-=======
-: Pub assumes the package is located in
->>>>>>> 095e0f22631442d02fb8d8aa440f5c2e9192eea1
+<br> Pub assumes the package is located in
   the root of the Git repository. If that is not
   the case, specify the location with the `path` argument.
   For example:
 
 **Git 依赖于文件夹中的 package **
-<br> 默认情况下，pub 工具会默认假定 package 位于 Git 仓库的根目录。
+<br> 默认情况下，pub 会默认假定 package 位于 Git 仓库的根目录。
   如果不是这种情况，你可以使用 `path` 参数指定位置，例如：
   
   ```yaml
@@ -482,7 +480,7 @@ additional dependency options are available:
   [Package dependencies][].
 
   最后，你可以使用 `ref` 参数将依赖固定到 git 特定的 commit、branch 或者 tag。
-  更多详细信息，请参阅 [Package dependencies]。
+  更多详细信息，请参阅 [Package dependencies][]。
 
 ## Examples
 

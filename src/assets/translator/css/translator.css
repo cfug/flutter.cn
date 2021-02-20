@@ -28,6 +28,9 @@ h3[translation-result] + h3[translation-origin=on] {
     margin-block-end: 0 !important;
 }
 
+.site-content__title > h1[id]:not(.no_toc)::before {
+    display: none;
+}
 
 dt > p {
     margin: 0px;

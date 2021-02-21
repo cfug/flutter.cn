@@ -6,6 +6,7 @@ description: 选择合适的渲染器来运行和构建 Web 应用。
 ---
 
 {{site.alert.warning}}
+
   **While in development, web support is available in the beta channel.**
   
   **Flutter 对 Web 的支持目前处于 Beta 阶段。**
@@ -13,7 +14,7 @@ description: 选择合适的渲染器来运行和构建 Web 应用。
   If you experience a problem that hasn't yet been reported, please
   [file an issue][] and make sure that "web" appears in the title.
   
-  开发过程中如果遇到问题，请[提交 issue][]并确保 issue 标题包含 "web" 关键词。
+  开发过程中如果遇到问题，请 [提交 issue][file an issue] 并确保 issue 标题包含 "web" 关键词。
 {{site.alert.end}}
 
 
@@ -25,14 +26,10 @@ your needs. The two renderers are:
 
 **HTML**
 
-**HTML**
-
   : Uses a combination of HTML elements, CSS, Canvas elements, and SVG elements.
   This renderer has a smaller download size.
 
   : 使用 HTML，CSS，Canvas 和 SVG 元素来渲染，应用的大小相对较小。
-
-**CanvasKit**
 
 **CanvasKit**
 
@@ -57,15 +54,15 @@ The `--web-renderer` command line option takes one of three values, `auto`,
   chooses the HTML renderer when the app is running in a mobile browser, and
   CanvasKit renderer when the app is running in a desktop browser.
   
-* `auto` (默认) - 自动选择渲染器。移动端浏览器选择 HTML，桌面端浏览器选择 CanvasKit。
+  `auto` (默认) - 自动选择渲染器。移动端浏览器选择 HTML，桌面端浏览器选择 CanvasKit。
   
 * `html` - always use the HTML renderer. 
 
-* `html` - 强制使用 HTML 渲染器。
+  `html` - 强制使用 HTML 渲染器。
 
 * `canvaskit` - always use the CanvasKit renderer. 
 
-* `canvaskit` - 强制使用 CanvasKit 渲染器。
+  `canvaskit` - 强制使用 CanvasKit 渲染器。
 
 This flag can be used with the `run` or `build` subcommands. For example:
 
@@ -136,4 +133,4 @@ Run your app in profile mode using the HTML renderer:
 flutter run -d chrome --web-renderer html --profile
 ```
 
-[提交 issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version

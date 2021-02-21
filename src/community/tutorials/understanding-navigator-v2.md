@@ -95,7 +95,6 @@ Widget 和 Page 中也都有一个 `canUpdate()` 方法，
 帮助 Flutter 判断其是否已更新或改变：
 
 <!--skip-->
-
 ```dart
 // Page
 bool canUpdate(Page<dynamic> other) {
@@ -116,7 +115,6 @@ static bool canUpdate(Widget oldWidget, Widget newWidget) {
 旧的 Navigator API 用过的 `RouteSettings`：
 
 <!--skip-->
-
 ```
 abstract class Page<T> extends RouteSettings
 ```
@@ -130,7 +128,6 @@ abstract class Page<T> extends RouteSettings
 它接受的就是一个 Page 对象列表，如下这段代码：
 
 <!--skip-->
-
 ```dart
 class _MyAppState extends State<MyApp> {
   final pages = [
@@ -352,7 +349,6 @@ MaterialApp 的新构造函数 router
 构造出全局的 Router 组件，使用方式如下：
 
 <!--skip-->
-
 ```dart
 MaterialApp.router(
   title: 'Flutter Demo',
@@ -500,7 +496,6 @@ RouterDelegate 中的路由事件的通知主要由下面几个函数接收：
 因此，我们最终就可以实现如下这样的 RouterDelegate：
 
 <!--skip-->
-
 ```dart
 class MyRouteDelegate extends RouterDelegate<String>
     with PopNavigatorRouterDelegateMixin<String>, ChangeNotifier {
@@ -649,7 +644,6 @@ MyRouteParser 继承自 RouteInformationParser，
 参数 `configuration` 就是从那里转发而来的：
 
 <!--skip-->
-
 ```dart
 @override
 Future<void> setNewRoutePath(String configuration) {
@@ -676,7 +670,6 @@ RouteInformation 对象，表示从传入的 `configuration` 恢复路由信息�
 实现更符合业务需求的逻辑，如下这代码：
 
 <!--skip-->
-
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_navigator_v2/navigator_v2/model.dart';
@@ -734,7 +727,6 @@ class VeggieRouteInformationParser extends RouteInformationParser<VeggieRoutePat
 VeggieRoutePath 类内容如下：
 
 <!--skip-->
-
 ```dart
 class VeggieRoutePath {
   final int id;

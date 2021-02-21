@@ -12,7 +12,7 @@ support also extends to plugins&mdash;you can install
 existing plugins that support the Windows, macOS, or Linux platforms,
 or you can create your own.
 
-桌面支持可以让您的 Flutter 代码编译成 Windows、macOS、或 Linux 的原生桌面应用。
+桌面支持可以让您的 Flutter 代码编译成 Windows、macOS 或 Linux 的原生桌面应用。
 Flutter 的桌面支持也允许插件拓展&mdash;
 您可以使用已经支持了 Windows、macOS 或 Linux 平台的插件，或者创建您自己的插件来实现功能。
 
@@ -260,10 +260,15 @@ the following on Windows:
 在 Windows 上您可能会看到如下内容:
 
 ```terminal
-[✓] Flutter (Channel master, 1.22.0-10.0.pre.196, on Microsoft Windows [Version 10.0.18362.1082], locale en-US)
-[✓] Visual Studio - develop for Windows (Visual Studio Professional 2019 16.6.2)
-[✓] VS Code (version 1.48.2)
-[✓] Connected device (1 available)
+PS > flutter doctor                                                                     
+Doctor summary (to see all details, run flutter doctor -v):                                           
+[√] Flutter (Channel dev, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
+[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)                      
+[√] Chrome - develop for the web                                                                      
+[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.7.7)                         
+[√] Android Studio (version 4.1.0)                                                                    
+[√] VS Code (version 1.51.1)                                                                          
+[√] Connected device (3 available)                                                                    
 ```
 
 On macOS, you might see something like the following:
@@ -271,12 +276,14 @@ On macOS, you might see something like the following:
 在 macOS 上，您可能会看到如下内容:
 
 ```terminal
-[✓] Flutter (Channel dev, 1.26.0-17.2.pre, on macOS 11.2 20D64 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
+$ flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 4.0)
-[✓] VS Code (version 1.53.0)
+[✓] Android Studio (version 4.1)
+[✓] VS Code (version 1.53.2)
 [✓] Connected device (3 available)
 ```
 
@@ -285,11 +292,14 @@ On Linux, you might see something like the following:
 在 Linux 上，您可能会看到如下内容:
 
 ```terminal
-$ flutter doctor
-[✓] Flutter (Channel master, 1.20.0-1.0.pre.132, on Linux, locale en_US.UTF-8)
+$ flutter doctor 
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[✓] Chrome - develop for the web
 [✓] Linux toolchain - develop for Linux desktop
-[✓] VS Code (version 1.33.1)
-[✓] Connected device (1 available)
+[✓] Android Studio
+[✓] Connected device (2 available)
 ```
 
 If `flutter doctor` finds problems for a platform you don't
@@ -500,14 +510,48 @@ and the other DLLs, and bundle them together in a zip file.
 
 #### macOS
 
-The `.app` is self-contained, and can be distributed as-is. However, you should 
+To distribute your macOS application, you can either [distribute your app via the macOS App Store][], 
+or alternatively you can distribute the `.app` itself, for example on your own website.  
+However, as of macOS 14.5 you need to notarize your macOS application before distributing 
+it outside of the macOS App Store. 
+
+要发布你的 macOS 软件，你可以选择
+[将 app 提交至 Mac App Store][CHS distribute your app via the macOS App Store]，
+或者直接生成 `.app` 文件，并在自己的网站上发布。
+不过，从 macOS 14.5 开始，你需要对自己的 macOS 软件进行公证，然后才能在
+Mac App Store 之外的渠道发布。
+
+The first step in both of the above processes involves working with your app inside of Xcode.
+To be able to compile your app from inside of Xcode you first need to build the app for release
+using the `flutter build` command, then open the Flutter macOS Runner application.
+
+不论选择什么方式发布你的 macOS 软件，你都需要在 Xcode 中操作。
+为了能够在 Xcode 内操作，你需要先使用 `flutter build` 命令生成所需的工程文件，
+然后打开工程。
+
+```bash
+$ flutter build macos
+$ open macos/Runner.xcworkspace
+```
+
+Once inside of Xcode, follow either Apple's [documentation on notarizing macOS Applications][],
+or [on distributing an application via the App Store][]. You should also
 read through the [macOS-specific support](#macos-specific-support) section below
-to understand about how entitlements, the App Sandbox, and the Hardened Runtime
+to understand how entitlements, the App Sandbox, and the Hardened Runtime
 impact your distributable application.
 
-`.app` 是自包含的，可以按原样发布。不过，你应该通读一下
+在 Xcode 里，请参考 Apple 的文档：
+[在分发前对 macOS 软件进行公证][CHS documentation on notarizing macOS Applications]
+或 [将 app 提交至 Mac App Store][CHS distribute your app via the macOS App Store]。
+你也应该通读一下
 [macOS 的额外要求](#macos-specific-support)，了解 Entitlements、App Sandbox 和
 Hardened Runtime 是如何影响你打包的应用的。
+
+[distribute your app via the macOS App Store]: https://developer.apple.com/macos/submit/
+[documentation on notarizing macOS Applications]: https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution
+[on distributing an application via the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
+[CHS distribute your app via the macOS App Store]: https://developer.apple.com/cn/macos/submit/
+[CHS documentation on notarizing macOS Applications]: https://developer.apple.com/cn/documentation/xcode/notarizing_macos_software_before_distribution
 
 #### Linux
 
@@ -536,13 +580,17 @@ root project directory:
 想为已有的 Flutter 项目添加桌面支持，您可以从项目根目录在控制台运行下面命令：
 
 ```terminal
-$ flutter create .
+$ flutter create --platforms=windows,macos,linux .
 ```
 
 This adds the necessary desktop files and directories to your
-existing Flutter project.
+existing Flutter project. To add only specific desktop platforms,
+change the `platforms` list to include only the platform(s) you
+want to add.
 
 这将会在您的 Flutter 桌面项目中添加必要的已有文件和文件夹。
+如果需要只添加特定平台桌面端的支持，修改 `platforms` 的值
+为你想要支持的平台即可。
 
 ## macOS-specific support
 
@@ -803,11 +851,11 @@ this effort with the original plugin author.
 
 当您开始构建自己的插件时，您需要记住联合。联合是定义几个不同包的能力，
 其中每个包都针对不同的平台，将它们合并到一个插件中，这样方便开发人员使用。
-
 比如，Windows 实现的 `url_launcher`，实际是通过 `url_launcher_windows` 完成的，
 但是 Flutter 开发者可以在 `pubspec.yaml` 中，
 简单地添加 `url_launcher` 包作为依赖，在构建过程中会基于目标平台引入正确的实现。
 联合非常方便，因为具有不同专长的不同团队，可以为不同的平台构建相应的插件实现。
+与原插件作者协调之后，你可以为 pub.dev 上任何联合插件添加新的平台实现。
 
 For more information, including information about endorsed plugins,
 see the following resources:
@@ -847,7 +895,7 @@ see the following resources:
 ## 示例和 codelabs
 
 [Write a Flutter desktop application][]
-: A codelab that walks you through building
+<br> A codelab that walks you through building
 a desktop app that integrates the GitHub
 GraphQL API with your Flutter app.
 
@@ -862,7 +910,7 @@ learn more about Flutter desktop support.
 以了解更多关于 Flutter 桌面支持的信息。
 
 Flutter Gallery [running web app][], [repo][]
-: A samples project hosted on GitHub to help developers
+<br> A samples project hosted on GitHub to help developers
   evaluate and use Flutter. The Gallery consists of a
   collection of Material design widgets, behaviors,
   and vignettes implemented with Flutter.
@@ -876,23 +924,15 @@ Flutter Gallery [运行 web 应用][running web app]，[仓库地址][repo]
   你可以克隆该项目，并按照 [README][] 中的说明，将 Gallery 作为桌面应用程序运行。
 
 [Photo Search app][]
-: A sample app built as a desktop application that
+<br> A sample app built as a desktop application that
   uses the following desktop-supported plugins:
 
 [图片搜索应用][Photo Search app]
 <br>使用以下桌面支持插件构建的一个桌面应用案例。
 
   * [`file_chooser`][]
-
-    [`file_chooser`][]
-
   * [`menubar`][]
-
-    [`menubar`][]
-
   * [`url_launcher`][]
-
-    [`url_launcher`][]
 
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search

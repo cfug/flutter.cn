@@ -6,9 +6,9 @@ description: 如何实现涟漪动画。
 tags: cookbook, 实用教程, 手势操作
 keywords: 动画,涟漪效果
 prev:
-  title: Focus and text fields
-  title: 焦点和文本框
-  path: /docs/cookbook/forms/focus
+  title: Create an expandable FAB
+  title: 创建一个点击展开的 FAB
+  path: /docs/cookbook/effects/expandable-fab
 next:
   title: Handle taps
   title: 捕获和处理点击动作
@@ -17,6 +17,12 @@ js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
 ---
+
+{% comment %}
+prev:
+  title: Focus and text fields
+  path: /docs/cookbook/forms/focus
+{% endcomment %}
 
 Widgets that follow the Material Design guidelines display
 a ripple animation when tapped.

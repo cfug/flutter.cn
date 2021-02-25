@@ -607,12 +607,20 @@ state to another.
 
 ### Widget state
 
+### Widget 的状态
+
 The framework introduces two major classes of widget: _stateful_ and _stateless_
 widgets.
+
+框架包含两种核心的 widget 类：**有状态的** 和 **无状态的** widget。
 
 Many widgets have no mutable state: they don’t have any properties that change
 over time (for example, an icon or a label). These widgets subclass
 [`StatelessWidget`]({{site.api}}/flutter/widgets/StatelessWidget-class.html).
+
+大部分 widget 都没有需要变更的状态：它们并不包含随时变化的属性（例如图标或者标签）。
+这些 widget 会继承
+[`StatelessWidget`]({{site.api}}/flutter/widgets/StatelessWidget-class.html)。
 
 However, if the unique characteristics of a widget need to change based on user
 interaction or other factors, that widget is _stateful_. For example, if a
@@ -625,10 +633,24 @@ class that subclasses [`State`]({{site.api}}/flutter/widgets/State-class.html).
 `StatefulWidget`s don’t have a build method; instead, their user interface is
 built through their `State` object.
 
+然而，当 widget 拥有需要根据用户交互或其他因素而变化的特有属性，它就是 **有状态的**。
+例如，计数器 widget 在用户点击按钮时数字递增，那么计数值就是计数器 widget 的状态。
+当值变化时，widget 需要更新或者重建部分 UI。
+这些 widget 会继承
+[`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)，
+并且状态会保持在继承
+[`State`]({{site.api}}/flutter/widgets/State-class.html) 的另一个子类中
+（因为 widget 本身是不可变的）。
+`StatefulWidget` 没有 build 方法，对于它而言，build 方法在其对应的 `State` 对象中。
+
 Whenever you mutate a `State` object (for example, by incrementing the counter),
 you must call [`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
 to signal the framework to update the user interface by calling the `State`’s
 build method again.
+
+每当您更改 `State` 对象时（例如计数增加），您需要调用
+[`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
+来告知框架，再次调用 `State` 的 build 方法来更新 UI。
 
 Having separate state and widget objects lets other widgets treat both stateless
 and stateful widgets in exactly the same way, without being concerned about
@@ -637,14 +659,26 @@ the parent can create a new instance of the child at any time without losing the
 child’s persistent state. The framework does all the work of finding and reusing
 existing state objects when appropriate.
 
-### State management
+在状态和 widget 对象分离的情况下，
+其他的 widget 可以以对无状态和有状态的 widget 进行同样的处理，同时不需要担心丢失状态。
+父级可以随时创建新的实例，旧的状态也不会丢失，而不需要通过子级关系保持其状态。
+框架会在合适的时间，搜寻已存在的状态对象进行复用。
+
+### State management Available
+
+### 状态管理
 
 So, if many widgets can contain state, how is state managed and passed around
 the system?
 
+那么，在众多 widget 都持有状态的情况下，系统中的状态是如何被传递和管理的呢？
+
 As with any other class, you can use a constructor in a widget to initialize its
 data, so a `build()` method can ensure that any child widget is instantiated
 with the data it needs:
+
+与其他类相同，您可以通过构造来为 widget 初始化它的数据，
+如此一来 `build()` 方法可以确保子 widget 使用其所需的数据进行实例化：
 
 <!-- skip -->
 ```dart
@@ -661,10 +695,20 @@ provides an easy way to grab data from a shared ancestor. You can use
 `InheritedWidget` to create a state widget that wraps a common ancestor in the
 widget tree, as shown in this example:
 
+然而，随着 widget 树逐渐深入，依赖树形结构上下传递状态信息将变得十分麻烦。
+这时，第三种类型的 widget&mdash;&mdash;
+[`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)，
+提供了一种从共用的祖先节点获取数据的简易方法。
+您可以使用 `InheritedWidget` 创建包含状态的 widget，
+该 widget 将一个共用的祖先节点包裹在 widget 树中，如下面的例子所示：
+
 ![Inherited widgets](/images/arch-overview/inherited-widget.png){:width="50%"}
 
 Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 `StudentState`, it can now access it with a command such as:
+
+现在当 `ExamWidget` 或 `GradeWidget` 对象需要获取 `StudentState` 的数据时，
+可以直接使用以下方式：
 
 <!-- skip -->
 ```dart
@@ -678,6 +722,12 @@ that matches the `StudentState` type. `InheritedWidget`s also offer an
 `updateShouldNotify()` method, which Flutter calls to determine whether a state
 change should trigger a rebuild of child widgets that use it.
 
+调用 `of(context)` 会获取构建的上下文（当前 widget 位置的句柄），
+并返回类型为 `StudentState` 的
+[在树中距离最近的祖先节点]({{site.api}}/flutter/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html)。
+`InheritedWidget` 同时也包含了 `updateShouldNotify()` 方法，
+Flutter 会调用它来判断依赖了某个状态的 widget 是否需要重建。
+
 Flutter itself uses `InheritedWidget` extensively as part of the framework for
 shared state, such as the application’s _visual theme_, which includes
 [properties like color and type
@@ -685,6 +735,12 @@ styles]({{site.api}}/flutter/material/ThemeData-class.html) that are
 pervasive throughout an application. The `MaterialApp` `build()` method inserts
 a theme in the tree when it builds, and then deeper in the hierarchy a widget
 can use the `.of()` method to look up the relevant theme data, for example:
+
+`InheritedWidget` 在 Flutter 框架中被大量用于共享状态，例如应用的 **视觉主题**，
+包含了应用于整个应用的
+[颜色和字体样式等属性]({{site.api}}/flutter/material/ThemeData-class.html)。
+`MaterialApp` 的 `build()` 方法会在构建时在树中插入一个主题，
+更深层级的 widget 便可以使用 `.of()` 方法来查找相关的主题数据，例如：
 
 <!-- skip -->
 ```dart
@@ -703,6 +759,11 @@ page routing; and
 [MediaQuery]({{site.api}}/flutter/widgets/MediaQuery-class.html), which provides
 access to screen metrics such as orientation, dimensions, and brightness.
 
+同样以该方法实现的还有
+[Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)，提供了页面路由；
+[MediaQuery]({{site.api}}/flutter/widgets/MediaQuery-class.html)，
+提供了屏幕的一些信息指标，包括旋转、尺寸和亮度等。
+
 As applications grow, more advanced state management approaches that reduce the
 ceremony of creating and using stateful widgets become more attractive. Many
 Flutter apps use utility packages like
@@ -710,6 +771,13 @@ Flutter apps use utility packages like
 `InheritedWidget`. Flutter’s layered architecture also enables alternative
 approaches to implement the transformation of state into UI, such as the
 [flutter_hooks]({{site.pub}}/packages/flutter_hooks) package.
+
+随着应用程序的不断迭代，更高级的状态管理方法变得更有吸引力，
+它们可以减少有状态的 widget 的创建。
+许多 Flutter 应用使用了 [provider]({{site.pub}}/packages/provider) 用于状态管理，
+它对 `InheritedWidget` 进行了进一步的包装。
+Flutter 的分层架构还支持使用其他实现来替换状态至 UI 的方案，例如
+[flutter_hooks]({{site.pub}}/packages/flutter_hooks)。
 
 ## Rendering and layout
 

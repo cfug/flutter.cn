@@ -110,6 +110,7 @@ for assistance.
 `flutter-io.cn` 所提供的镜像由中国的 Flutter 开发者社区提供和维护，
 Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其他可信的机构提供的镜像服务。
 
+{% comment %}
 ## Community-run mirror sites
 {% endcomment %}
 

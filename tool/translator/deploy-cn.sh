@@ -17,7 +17,7 @@ cd /tmp/site-flutter.cn
 git init
 git add .
 
-git config --global user.name "travis-ci deploy"
+git config --global user.name "github actions deploy"
 git config --global user.email "cfug-dev@googlegroups.com"
 
 git commit --allow-empty -am "${commitMessage}"

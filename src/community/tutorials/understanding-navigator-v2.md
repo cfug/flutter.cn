@@ -212,6 +212,7 @@ class _MyAppState extends State<MyApp> {
 当然，我们也完全可以选择在接收到通知时不更新 pages 列表，
 这完全由我们控制，如下这段代码：
 
+<!--skip-->
 ```dart
 bool _onPopPage(Route<dynamic> route, dynamic result) {
   // setState(() => pages.remove(route.settings));
@@ -234,7 +235,6 @@ bool _onPopPage(Route<dynamic> route, dynamic result) {
 也可以在 `onPopPage` 的回调函数中直接返回 false：
 
 <!--skip-->
-
 ```dart
 bool _onPopPage(Route<dynamic> route, dynamic result) {
   if (...) {
@@ -264,7 +264,6 @@ Flutter 框架中预先内置了 `MaterialPage` 和
 使用 `MaterialPage` 创建页面：
 
 <!--skip-->
-
 ```dart
 List<Page> pages = <Page>[
   MaterialPage(
@@ -617,7 +616,7 @@ MaterialApp.router(
 定义该类通常有一个最简单直接的实现，如下：
 
 <!--skip-->
-```
+```dart
 class MyRouteParser extends RouteInformationParser<String> {
   @override
   Future<String> parseRouteInformation(RouteInformation routeInformation) {

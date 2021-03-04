@@ -8,7 +8,7 @@ commitMessage=$(git log --oneline -n 1)
 
 rm -rf /tmp/site-flutter.cn/ || true
 
-git clone https://chenglu:${CHENGLU_DEPLOY_KEY}@github.com/chenglu/site-flutter.cn /tmp/site-flutter.cn
+git clone https://chenglu:${{secrets.CHENGLU_DEPLOY_KEY}}@github.com/chenglu/site-flutter.cn /tmp/site-flutter.cn
 
 cp -r _site/* /tmp/site-flutter.cn/
 

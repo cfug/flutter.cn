@@ -69,7 +69,7 @@ jobs:
           - name: "Stable channel: code check"
             sdk: stable
             task: tool/check-code.sh
-            experimental: false
+            experimental: true
           - name: "Stable channel: jekyll build"
             sdk: stable
             task: bundle exec jekyll build
@@ -120,7 +120,7 @@ jobs:
     if: |
       github.event_name == 'push'
       && github.ref == 'refs/heads/master'
-      && github.repository == 'flutter/website'
+      && github.repository == 'chenglu/flutter.cn'
     steps:
       - uses: actions/checkout@v2
         with:
@@ -151,6 +151,6 @@ jobs:
         run: flutter/bin/flutter doctor
       - run: tool/shared/write-ci-info.sh -v
       - run: tool/translator/build.sh
-      - run: tool/shared/deploy-cn.sh --robots ok default
+      - run: tool/translator/deploy-cn.sh --robots ok default
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

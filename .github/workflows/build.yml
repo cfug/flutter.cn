@@ -153,4 +153,4 @@ jobs:
       - run: tool/translator/build.sh
       - run: tool/translator/deploy-cn.sh --robots ok default
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          DEPLOY_TOKEN: ${{ secrets.CHENGLU_DEPLOY_KEY }}

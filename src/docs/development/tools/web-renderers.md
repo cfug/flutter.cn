@@ -15,6 +15,7 @@ description: 选择合适的渲染器来运行和构建 Web 应用。
   [file an issue][] and make sure that "web" appears in the title.
   
   开发过程中如果遇到问题，请 [提交 issue][file an issue] 并确保 issue 标题包含 "web" 关键词。
+
 {{site.alert.end}}
 
 
@@ -38,7 +39,7 @@ your needs. The two renderers are:
   is less likely to have differences across browsers, but adds about 2MB in
   download size.
 
-  : 将 Skia 编译成 WebAssembly 格式，并使用 WebGL 渲染，从而使应用在移动和桌面端保持一致，
+  : 将 Skia 编译成 WebAssembly 格式，并使用 WebGL 渲染。应用在移动和桌面端保持一致，
   有更好的性能，以及降低不同浏览器渲染效果不一致的风险。但是应用的大小会增加大约 2MB。
   
 ## Command line options
@@ -48,13 +49,13 @@ your needs. The two renderers are:
 The `--web-renderer` command line option takes one of three values, `auto`,
 `html`, or `canvaskit`.
 
-`--web-renderer` 可选参数值为 `auto`, `html`, 或 `canvaskit`。
+`--web-renderer` 可选参数值为 `auto`、`html` 或 `canvaskit`。
 
 * `auto` (default) - automatically chooses which renderer to use. This option
   chooses the HTML renderer when the app is running in a mobile browser, and
   CanvasKit renderer when the app is running in a desktop browser.
   
-  `auto` (默认) - 自动选择渲染器。移动端浏览器选择 HTML，桌面端浏览器选择 CanvasKit。
+  `auto`（默认）- 自动选择渲染器。移动端浏览器选择 HTML，桌面端浏览器选择 CanvasKit。
   
 * `html` - always use the HTML renderer. 
 
@@ -66,7 +67,7 @@ The `--web-renderer` command line option takes one of three values, `auto`,
 
 This flag can be used with the `run` or `build` subcommands. For example:
 
-此选项适用于 `run` or `build`。例如：
+此选项适用于 `run` 和 `build` 命令。例如：
 
 ```
 flutter run -d chrome --web-renderer html
@@ -85,12 +86,12 @@ target is selected.
 Choose the `auto` option (default) if you are optimizing for download size on
 mobile browsers and optimizing for performance on desktop browsers.
 
-`auto` (默认)：移动端浏览器更关心应用大小，桌面端浏览器更关心性能。
+如果您在移动端浏览器平台上更关心应用大小，而桌面端浏览器更关心性能，请选择 `auto` 选项（默认）。
 
 Choose the `html` option if you are optimizing download size over performance on
 both desktop and mobile browsers.
 
-`html`：移动端和桌面端都更关心应用大小。
+如果您在移动端和桌面端都更关心应用大小，请选择 `html` 选项。
   
 Choose the `canvaskit` option if you are prioritizing performance and
 pixel-perfect consistency on both desktop and mobile browsers.
@@ -99,11 +100,11 @@ pixel-perfect consistency on both desktop and mobile browsers.
 
 ## Examples
 
-## 例子
+## 示例
 
 Run in Chrome using the default renderer option (`auto`):
 
-在 Chrome 浏览器上使用默认（`auto`）渲染器运行：
+在 Chrome 浏览器上使用默认 (`auto`) 渲染器运行：
 
 ```
 flutter run -d chrome
@@ -111,7 +112,7 @@ flutter run -d chrome
 
 Build your app in release mode, using the default (auto) option:
 
-使用默认（`auto`）渲染器构建应用（发布模式）：
+使用默认 (`auto`) 渲染器构建应用（发布模式）：
 
 ```
 flutter build web --release

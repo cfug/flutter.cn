@@ -3,14 +3,16 @@ title: Send data to the internet
 title: 发送网络数据
 description: How to use the http package to send data over the internet.
 description: 如何通过 http 包发送网络数据。
+tags: cookbook, 实用教程, 网络请求
+keywords: 网络数据
 prev:
-  title: Fetch data from the internet
-  title: 获取网络数据
-  path: /docs/cookbook/networking/fetch-data
+  title: Parse JSON in the background
+  title: 在后台处理 JSON 数据解析
+  path: /docs/cookbook/networking/background-parsing
 next:
-  title: Make authenticated requests
-  title: 发起 HTTP 认证授权请求
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Update data over the internet
+  title: 通过网络更新数据
+  path: /docs/cookbook/networking/update-data
 ---
 
 Sending data to the internet is necessary for most apps.
@@ -42,6 +44,13 @@ Import the `http` package.
 import 'package:http/http.dart' as http;
 ```
 
+If you develop for android, add the following permission inside manifest tag in the AndroidManifest.xml file located at android/app/src/main.
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+
 ## 2. Sending data to server
 
 This recipe covers how to create an `Album`
@@ -53,7 +62,7 @@ by sending an album title to the
 ```dart
 Future<http.Response> createAlbum(String title) {
   return http.post(
-    'https://jsonplaceholder.typicode.com/albums',
+    Uri.https('jsonplaceholder.typicode.com', 'albums'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -129,8 +138,8 @@ function to return a `Future<Album>`:
 <!-- skip -->
 ```dart
 Future<Album> createAlbum(String title) async {
-  final http.Response response = await http.post(
-    'https://jsonplaceholder.typicode.com/albums',
+  final response = await http.post(
+    Uri.https('jsonplaceholder.typicode.com', 'albums'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -141,7 +150,7 @@ Future<Album> createAlbum(String title) async {
   if (response.statusCode == 201) {
     // If the server did return a 201 CREATED response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 201 CREATED response,
     // then throw an exception.
@@ -156,11 +165,11 @@ server to create an album.
 ## 4. Get a title from user input
 
 Next, create a `TextField` to enter a title and
-a `RaisedButton` to send data to server.
+a `ElevatedButton` to send data to server.
 Also define a `TextEditingController` to read the
 user input from a `TextField`.
 
-When the `RaisedButton` is pressed, the `_futureAlbum`
+When the `ElevatedButton` is pressed, the `_futureAlbum`
 is set to the value returned by `createAlbum()` method.
 
 <!-- skip -->
@@ -175,7 +184,7 @@ Column(
         decoration: InputDecoration(hintText: 'Enter Title'),
       ),
     ),
-    RaisedButton(
+    ElevatedButton(
       child: Text('Create Data'),
       onPressed: () {
         setState(() {
@@ -239,8 +248,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Album> createAlbum(String title) async {
-  final http.Response response = await http.post(
-    'https://jsonplaceholder.typicode.com/albums',
+  final response = await http.post(
+    Uri.https('jsonplaceholder.typicode.com', 'albums'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -250,7 +259,7 @@ Future<Album> createAlbum(String title) async {
   );
 
   if (response.statusCode == 201) {
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     throw Exception('Failed to create album.');
   }
@@ -309,7 +318,7 @@ class _MyAppState extends State<MyApp> {
                       controller: _controller,
                       decoration: InputDecoration(hintText: 'Enter Title'),
                     ),
-                    RaisedButton(
+                    ElevatedButton(
                       child: Text('Create Data'),
                       onPressed: () {
                         setState(() {
@@ -353,4 +362,3 @@ class _MyAppState extends State<MyApp> {
 [Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
 [JSON and serialization]: /docs/development/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
-

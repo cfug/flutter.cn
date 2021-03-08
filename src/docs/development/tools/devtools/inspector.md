@@ -2,7 +2,9 @@
 title: Using the Flutter inspector
 title: 使用 Flutter inspector 工具
 description: Learn how to use the Flutter inspector to explore a Flutter app's widget tree.
-description: 学习如何使用 Flutt  inspector 来检查 Flutter 应用的 widget 树。
+description: 学习如何使用 Flutter inspector 来检查 Flutter 应用的 widget 树。
+tags: Flutter开发工具,DevTools
+keywords: Flutter inspector,widget 树
 ---
 
 {{site.alert.note}}
@@ -206,11 +208,11 @@ with and without track widget creation enabled.
 
 Track widget creation enabled (default):
 
-![The widget tree with track widget creation enabled]({% asset tools/devtools/track_widget_creation_enabled.png @path %})
+![The widget tree with track widget creation enabled]({% asset tools/devtools/track_widget_creation_enabled.png @path %}){:width="100%"}
 
 Track widget creation disabled (not recommended):
 
-![The widget tree with track widget creation disabled]({% asset tools/devtools/track_widget_creation_disabled.png @path %})
+![The widget tree with track widget creation disabled]({% asset tools/devtools/track_widget_creation_disabled.png @path %}){:width="100%"}
 
 This feature prevents otherwise-identical `const` Widgets from
 being considered equal in debug builds. For more details, see

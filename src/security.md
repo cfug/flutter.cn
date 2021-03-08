@@ -1,5 +1,8 @@
 ---
 title: Security
+title: Flutter 的安全性说明
+tags: 站点资源
+keywords: Flutter安全问题汇报,安全性
 ---
 
 The Flutter team takes the security of Flutter and the applications
@@ -20,7 +23,7 @@ For more information about how Google handles security issues, see
 * **Keep current with the latest Flutter SDK releases.**
   We regularly update Flutter, and these updates may fix security
   defects discovered in previous versions. Check the Flutter
-  [change log](https://github.com/flutter/flutter/wiki/Changelog)
+  [change log]({{site.github}}/flutter/flutter/wiki/Changelog)
   for security-related updates.
 
 * **Keep your application’s dependencies up to date.**

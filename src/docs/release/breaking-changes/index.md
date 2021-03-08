@@ -9,19 +9,43 @@ As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
 
-The following guides are available. They sorted by
+The following guides are available. They are sorted by
 release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Android v1 embedding app and plugin creation deprecation][]
+* [Eliminating `nullOk` Parameters][]
+* [Android ActivityControlSurface attachToActivity signature change][]
 * [Material Chip button semantics][]
 * [Network Policy on iOS and Android][]
+* [SnackBars managed by the ScaffoldMessenger][]
+* [TextSelectionTheme migration][]
+* [Android FlutterMain.setIsRunningInRobolectricTest testing API removed][]
+* [Clip behavior][]
+* [Dry layout support for RenderBox][]
+* [Use maxLengthEnforcement instead of maxLengthEnforced][]
+
+[Eliminating `nullOk` Parameters]: /docs/release/breaking-changes/eliminating-nullok-parameters
+[Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
+[Android FlutterMain.setIsRunningInRobolectricTest testing API removed]: /docs/release/breaking-changes/android-setIsRunningInRobolectricTest-removed
+[Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
+
+[Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
+[SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
+[TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
+[Clip behavior]: /docs/release/breaking-changes/clip-behavior
+[Dry layout support for RenderBox]: /docs/release/breaking-changes/renderbox-dry-layout
+[Use maxLengthEnforcement instead of maxLengthEnforced]: /docs/release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
+
+### Released in Flutter 1.22
+
+* [Android v1 embedding app and plugin creation deprecation][]
+* [Cupertino icons 1.0.0][]
 * [The new Form, FormField auto-validation API][]
 
+
 [Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
-[Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
-[Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
+[Cupertino icons 1.0.0]: /docs/release/breaking-changes/cupertino-icons-1.0.0
 [The new Form, FormField auto-validation API]: /docs/release/breaking-changes/form-field-autovalidation-api
 
 ### Released in Flutter 1.20

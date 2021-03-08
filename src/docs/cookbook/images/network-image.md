@@ -3,6 +3,8 @@ title: Display images from the internet
 title: 显示网络上的远程图片
 description: How to display images from the internet.
 description: 如何显示网络上的图片。
+tags: cookbook, 实用教程, 使用图片
+keywords: 网络图片,使用gif
 prev:
   title: Implement swipe to dismiss
   title: 实现「滑动清除」效果
@@ -30,9 +32,7 @@ To work with images from a URL, use the
 
 <!-- skip -->
 ```dart
-Image.network(
-  'https://picsum.photos/250?image=9',
-)
+Image.network('https://picsum.photos/250?image=9')
 ```
 
 ## Bonus: animated gifs
@@ -46,9 +46,7 @@ It supports animated gifs.
 
 <!-- skip -->
 ```dart
-Image.network(
-  'https://github.com/flutter/plugins/raw/master/packages/video_player/video_player/doc/demo_ipod.gif?raw=true',
-);
+Image.network('https://github.com/flutter/plugins/raw/master/packages/video_player/video_player/doc/demo_ipod.gif?raw=true');
 ```
 
 ## Placeholders and caching
@@ -92,9 +90,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text(title),
         ),
-        body: Image.network(
-          'https://picsum.photos/250?image=9',
-        ),
+        body: Image.network('https://picsum.photos/250?image=9'),
       ),
     );
   }

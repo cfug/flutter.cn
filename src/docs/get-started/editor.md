@@ -3,6 +3,8 @@ title: Set up an editor
 title: 编辑工具设定
 description: Configuring an IDE for Flutter.
 description: 为 Flutter 配置 IDE 环境。
+tags: Flutter安装,Flutter起步教程
+keywords: Flutter编辑工具,IDE配置
 prev:
   title: Install
   title: 安装和环境配置
@@ -85,7 +87,7 @@ To install these:
 
  1.  Start Android Studio.
     
-    打开 Android Studio。
+     打开 Android Studio。
 
  1. Open plugin preferences (**Configure > Plugins** as of
      v3.6.3.0 or later).

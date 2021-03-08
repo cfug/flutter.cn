@@ -3,6 +3,8 @@ title: Start thinking declaratively
 title: 状态管理中的声明式编程思维
 description: How to think about declarative programming.
 description: 如何理解声明式编程。
+tags: Flutter状态管理
+keywords: 声明式编程,编程思维
 prev:
   title: Intro
   title: 状态 (State) 管理介绍
@@ -34,7 +36,7 @@ reflect the current state of your app:
 Flutter 应用是 **声明式** 的，
 这也就意味着 Flutter 构建的用户界面就是应用的当前状态。
 
-{% asset development/data-and-backend/state-mgmt/ui-equals-function-of-state alt="A mathematical formula of UI = f(state). 'UI' is the layout on the screen. 'f' is your build methods. 'state' is the application state." %}
+{% asset development/data-and-backend/state-mgmt/ui-equals-function-of-state width="100%" alt="A mathematical formula of UI = f(state). 'UI' is the layout on the screen. 'f' is your build methods. 'state' is the application state." %}
 
 {% comment %}
 Source drawing for the png above: : https://docs.google.com/drawings/d/1RDcR5LyFtzhpmiT5-UupXBeos2Ban5cUTU0-JujS3Os/edit?usp=sharing

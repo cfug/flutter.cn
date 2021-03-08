@@ -3,6 +3,8 @@ title: Web FAQ
 title: Web 常见问题
 description: Some gotchas and differences when writing or running web apps in Flutter.
 description: 在 Flutter 中编写或运行 Web 应用程序时遇到的一些问题，以及 Web 与不同之处。
+tags: 平台集成
+keywords: Flutter网页版,常见问题
 ---
 
 ### Is the web version of Flutter ready for production?
@@ -353,10 +355,10 @@ Not currently.
 
 ### 如何跟其他使用者交流？
 
-Check out the **#web** discussion board on [Discord][].
+Check out the **#hackers-web-🌍** discussion board on [Discord][].
 Flutter engineers routinely read and respond on Discord.
 
-请在 [Discord][] 平台的 **#web** 这个讨论板跟大家讨论，
+请在 [Discord][] 平台的 **#hackers-web-🌍** 这个讨论板跟大家讨论，
 Flutter 团队的工程师会经常阅读和互动。
 
 [Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
@@ -367,7 +369,7 @@ Flutter 团队的工程师会经常阅读和互动。
 [Chrome DevTools]: https://developers.google.cn/web/tools/chrome-devtools
 [Debugging]: /docs/development/tools/devtools/debugger
 [Discord]: https://discord.gg/N7Yshp4
-[file an issue]: https://goo.gle/flutter_web_issue
+[file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: /docs/development/tools/devtools/overview
 [Generating event timeline]: https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
@@ -381,4 +383,4 @@ Flutter 团队的工程师会经常阅读和互动。
 [pub.dev]: {{site.pub}}/flutter/packages?platform=web
 [Web support for Flutter]: /web
 [write your own plugins]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
-[run your web apps in any supported browser]: https://flutter.dev/docs/get-started/web#create-and-run
+[run your web apps in any supported browser]: /docs/get-started/web#create-and-run

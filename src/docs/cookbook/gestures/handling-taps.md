@@ -3,6 +3,8 @@ title: Handle taps
 title: 捕获和处理点击动作
 description: How to handle tapping and dragging.
 description: 如何处理点击和拖拽。
+tags: cookbook, 实用教程, 手势操作
+keywords: 交互,点击,拖动,snackbar
 prev:
   title: Add Material touch ripples
   title: 添加点按涟漪效果 (Material Design)
@@ -75,7 +77,7 @@ GestureDetector(
 
   2. Although this example creates a custom button,
      Flutter includes a handful of button implementations, such as:
-     [`RaisedButton`][], [`FlatButton`][], and
+     [`ElevatedButton`][], [`TextButton`][], and
      [`CupertinoButton`][].
 
      这里为了说明原理，我们创建了自定义的按钮，
@@ -151,6 +153,6 @@ class MyButton extends StatelessWidget {
 
 [Add Material touch ripples]: /docs/cookbook/gestures/ripples
 [`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
-[`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[`RaisedButton`]: {{site.api}}/flutter/material/RaisedButton-class.html
+[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html

@@ -3,6 +3,8 @@ title: Animate a page route transition
 title: 为页面切换加入动画效果
 description: How to animate from one page to another.
 description: 如何在页面过渡之间使用动画。
+tags: cookbook, 实用教程, 动画效果
+keywords: 页面切换效果,自定义路由
 next:
   title: Animate a widget using a physics simulation
   title: 在物理模拟器上构建动画
@@ -101,7 +103,7 @@ class Page1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('Go!'),
           onPressed: () {
             Navigator.of(context).push(_createRoute());
@@ -331,7 +333,7 @@ class Page1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('Go!'),
           onPressed: () {
             Navigator.of(context).push(_createRoute());

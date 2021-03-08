@@ -3,6 +3,8 @@ title: Flutter for iOS developers
 title: 给 iOS 开发者的 Flutter 指南
 description: Learn how to apply iOS developer knowledge when building Flutter apps.
 description: 学习如何将 iOS 开发经验应用到 Flutter 应用开发中。
+tags: Flutter教程,Flutter起步,Flutter入门
+keywords: Flutter iOS,iOS,用Flutter开发iOS,Cupertino
 ---
 
 This document is for iOS developers looking to apply their existing iOS
@@ -489,6 +491,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 
   @override
   void initState() {
+    super.initState();
     controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
     curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
@@ -558,11 +561,42 @@ To learn how to implement a signature painter in Flutter, see Collin's answer on
 
 <!-- skip -->
 ```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: DemoApp()));
+
+class DemoApp extends StatelessWidget {
+  Widget build(BuildContext context) => Scaffold(body: Signature());
+}
+
+class Signature extends StatefulWidget {
+  SignatureState createState() => SignatureState();
+}
+
+class SignatureState extends State<Signature> {
+  List<Offset> _points = <Offset>[];
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onPanUpdate: (DragUpdateDetails details) {
+        setState(() {
+          RenderBox referenceBox = context.findRenderObject();
+          Offset localPosition =
+              referenceBox.globalToLocal(details.globalPosition);
+          _points = List.from(_points)..add(localPosition);
+        });
+      },
+      onPanEnd: (DragEndDetails details) => _points.add(null),
+      child: CustomPaint(
+        painter: SignaturePainter(_points),
+        size: Size.infinite,
+      ),
+    );
+  }
+}
+
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
-
   final List<Offset> points;
-
   void paint(Canvas canvas, Size size) {
     var paint = Paint()
       ..color = Colors.black
@@ -575,30 +609,6 @@ class SignaturePainter extends CustomPainter {
   }
 
   bool shouldRepaint(SignaturePainter other) => other.points != points;
-}
-
-class Signature extends StatefulWidget {
-  SignatureState createState() => SignatureState();
-}
-
-class SignatureState extends State<Signature> {
-
-  List<Offset> _points = <Offset>[];
-
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onPanUpdate: (DragUpdateDetails details) {
-        setState(() {
-          RenderBox referenceBox = context.findRenderObject();
-          Offset localPosition =
-          referenceBox.globalToLocal(details.globalPosition);
-          _points = List.from(_points)..add(localPosition);
-        });
-      },
-      onPanEnd: (DragEndDetails details) => _points.add(null),
-      child: CustomPaint(painter: SignaturePainter(_points), size: Size.infinite),
-    );
-  }
 }
 ```
 
@@ -628,7 +638,7 @@ Flutter, build a custom widget by
 
 For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a
-`RaisedButton` with a label, rather than by extending `RaisedButton`:
+`ElevatedButton` with a label, rather than by extending `ElevatedButton`:
 
 例如，应该如何构建一个初始方法中就包含文本标签的 `CustomButton`？需要创建一个合成一个 `RaisedButton` 和一个
 文本标签的 CustomButton，而不是继承 `RaisedButton`：
@@ -642,7 +652,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(onPressed: () {}, child: Text(label));
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -830,7 +840,7 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = json.decode(response.body);
+    widgets = jsonDecode(response.body);
   });
 }
 ```
@@ -884,7 +894,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   void initState() {
     super.initState();
-
     loadData();
   }
 
@@ -912,7 +921,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -949,7 +958,7 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = json.decode(response.body);
+    widgets = jsonDecode(response.body);
   });
 }
 ```
@@ -1013,7 +1022,7 @@ static dataLoader(SendPort sendPort) async {
     String dataURL = data;
     http.Response response = await http.get(dataURL);
     // Lots of JSON to parse
-    replyTo.send(json.decode(response.body));
+    replyTo.send(jsonDecode(response.body));
   }
 }
 
@@ -1154,7 +1163,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       String dataURL = data;
       http.Response response = await http.get(dataURL);
       // Lots of JSON to parse
-      replyTo.send(json.decode(response.body));
+      replyTo.send(jsonDecode(response.body));
     }
   }
 
@@ -1205,7 +1214,7 @@ import 'package:http/http.dart' as http;
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -1322,7 +1331,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -1674,9 +1683,9 @@ has no equivalent event.
 <br> 应用被挂起，在 iOS 平台没有这一事件。
 
 For more details on the meaning of these states, see
-[`AppLifecycleStatus` documentation][].
+[`AppLifecycleState` documentation][].
 
-关于这些状态含义的更多细节，请参看 [AppLifecycleStatus 文档][`AppLifecycleStatus` documentation]。
+关于这些状态含义的更多细节，请参看 [AppLifecycleStatus 文档][`AppLifecycleState` documentation]。
 
 ## Layouts
 
@@ -1880,7 +1889,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Widget> widgets = [];
 
   @override
   void initState() {
@@ -1909,7 +1918,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       onTap: () {
         setState(() {
           widgets = List.from(widgets);
-          widgets.add(getRow(widgets.length + 1));
+          widgets.add(getRow(widgets.length));
           print('row $i');
         });
       },
@@ -1956,7 +1965,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Widget> widgets = [];
 
   @override
   void initState() {
@@ -1989,7 +1998,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       ),
       onTap: () {
         setState(() {
-          widgets.add(getRow(widgets.length + 1));
+          widgets.add(getRow(widgets.length));
           print('row $i');
         });
       },
@@ -1998,7 +2007,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 ```
 
-Instead of creating a "ListView", create a `ListView.builder` that
+Instead of creating a `ListView`, create a `ListView.builder` that
 takes two key parameters: the initial length of the list,
 and an `ItemBuilder` function.
 
@@ -2024,7 +2033,6 @@ In iOS, you wrap your views in a `ScrollView` that allows a user to scroll
 your content if needed.
 
 在 iOS 里，把视图放在 `ScrollView` 里来允许用户在需要时滚动内容。
-
 
 In Flutter the easiest way to do this is using the `ListView` widget. This
 acts as both a `ScrollView` and an iOS `TableView`, as you can layout widgets
@@ -2069,16 +2077,16 @@ click events. In Flutter, there are two ways of adding touch listeners:
 
  1. If the widget supports event detection, pass a function to it,
     and handle the event in the function. For example, the
-    `RaisedButton` widget has an `onPressed` parameter:
+    `ElevatedButton` widget has an `onPressed` parameter:
     
-    如果 widget 本身支持事件检测，则直接传递处理函数给它。例如，`RaisedButton` 拥有
-    一个  `onPressed` 参数：
+    如果 widget 本身支持事件检测，则直接传递处理函数给它。
+    例如，`ElevatedButton` 拥有一个 `onPressed` 参数：
 
     <!-- skip -->
     ```dart
     @override
     Widget build(BuildContext context) {
-      return RaisedButton(
+      return ElevatedButton(
         onPressed: () {
           print("click");
         },
@@ -2127,98 +2135,106 @@ Using `GestureDetector` you can listen to a wide range of gestures such as:
   **单击事件**
 
   **`onTapDown`**
-  : A pointer that might cause a tap has contacted the screen at a
+  <br> A pointer that might cause a tap has contacted the screen at a
     particular location.
     
-    `onTapDown` —— 用户在特定区域发生点触屏幕的一个即时操作。
+  **`onTapDown`**
+  <br> 用户在特定区域发生点触屏幕的一个即时操作。
     
   **`onTapUp`**
-  : A pointer that triggers a tap has stopped contacting the
+  <br> A pointer that triggers a tap has stopped contacting the
     screen at a particular location.
 
-    `onTapUp` —— 用户在特定区域发生触摸抬起的一个即时操作。
+  **`onTapUp`**
+  <br> 用户在特定区域发生触摸抬起的一个即时操作。
     
   **`onTap`**
-  : A tap has occurred.
+  <br> A tap has occurred.
 
-    `onTap` —— 从点触屏幕之后到触摸抬起之间的单击操作。
+  **`onTap`**
+  <br> 从点触屏幕之后到触摸抬起之间的单击操作。
     
   **`onTapCancel`**
-  : The pointer that previously triggered the `onTapDown` won't
+  <br> The pointer that previously triggered the `onTapDown` won't
     cause a tap.
     
-    `onTapCancel` —— 用户在之前触发了 `onTapDown` 时间，但未触发 tap 事件。
+  **`onTapCancel`**
+  <br>用户在之前触发了 `onTapDown` 时间，但未触发 tap 事件。
 
 * **Double tapping**
   
   双击事件
 
   **`onDoubleTap`**
-  : The user tapped the screen at the same location twice in
+  <br> The user tapped the screen at the same location twice in
     quick succession.
     
-    `onDoubleTap` —— 用户在同一位置发生快速点击屏幕两次的操作。
+  **`onDoubleTap`**
+  <br>用户在同一位置发生快速点击屏幕两次的操作。
 
 * **Long pressing**
 
   长按事件
 
   **`onLongPress`**
-  : A pointer has remained in contact with the screen at the same
+  <br> A pointer has remained in contact with the screen at the same
     location for a long period of time.
     
-    `onLongPress` —— 用户在同一位置长时间触摸屏幕的操作。
+  **`onLongPress`**
+  <br> 用户在同一位置长时间触摸屏幕的操作。
 
 * **Vertical dragging**
 
   垂直拖动事件
 
   **`onVerticalDragStart`**
-  : A pointer has contacted the screen and might begin to
+  <br> A pointer has contacted the screen and might begin to
     move vertically.
     
-    `onVerticalDragStart` —— 用户手指接触屏幕，并且将要进行垂直移动事件。
+  **`onVerticalDragStart`**
+  <br> 用户手指接触屏幕，并且将要进行垂直移动事件。
   
   **`onVerticalDragUpdate`**
-  : A pointer in contact with the screen
+  <br> A pointer in contact with the screen
     has moved further in the vertical direction.
     
-    `onVerticalDragUpdate` —— 用户手指接触屏幕，已经开始垂直移动，且会持续进行移动。
+  **`onVerticalDragUpdate`**
+  <br>用户手指接触屏幕，已经开始垂直移动，且会持续进行移动。
     
   **`onVerticalDragEnd`**
-  : A pointer that was previously in contact with the
-    screen and moving vertically is no longer in contact with the screen and was
-    moving at a specific velocity when it stopped contacting the screen.
-    
-    `onVerticalDragEnd` —— 用户之前手指接触了屏幕并发生了垂直移动操作，并且停止接触前还在以一定的速率移动。
-
-  **`onVerticalDragEnd`**
-  : A pointer that was previously in contact with the
+  <br> A pointer that was previously in contact with the
     screen and moving vertically is no longer in contact
     with the screen and was moving at a specific velocity
     when it stopped contacting the screen.
+    
+  **`onVerticalDragEnd`**
+  <br>用户之前手指接触了屏幕并发生了垂直移动操作，
+  并且停止接触前还在以一定的速率移动。
 
 * **Horizontal dragging**
 
   水平拖动事件
 
   **`onHorizontalDragStart`**
-  : A pointer has contacted the screen and might begin
+  <br> A pointer has contacted the screen and might begin
     to move horizontally.
     
-    `onHorizontalDragStart` —— 用户手指接触屏幕，并且将要进行水平移动事件。
+  **`onHorizontalDragStart`**
+  <br>用户手指接触屏幕，并且将要进行水平移动事件。
     
   **`onHorizontalDragUpdate`**
-  : A pointer in contact with the screen
+  <br> A pointer in contact with the screen
     has moved further in the horizontal direction.
     
-    `onHorizontalDragUpdate` —— 用户手指接触屏幕，已经开始水平移动，且会持续进行移动。
+  **`onHorizontalDragUpdate`**
+  <br>用户手指接触屏幕，已经开始水平移动，且会持续进行移动。
     
   **`onHorizontalDragEnd`**
-  : A pointer that was previously in contact with the
+  <br> A pointer that was previously in contact with the
     screen and moving horizontally is no longer in contact with the screen.
     
-    `onHorizontalDragEnd` —— 用户之前手指接触了屏幕并发生了水平移动操作，并且停止接触前还在以一定的速率移动。
+  **`onHorizontalDragEnd`**
+  <br>用户之前手指接触了屏幕并发生了水平移动操作，并且停止接触前还在以一定的速率移动。
 
 下面的示例展示了 `GestureDetector` 是如何实现双击时旋转 Flutter 的 logo 的：
 
@@ -2229,6 +2245,7 @@ CurvedAnimation curve;
 
 @override
 void initState() {
+  super.initState();
   controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
   curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 }
@@ -2830,7 +2847,7 @@ plugin documentation.
 [developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
 [DevTools]: /docs/development/tools/devtools
-[existing plugin]: ({{site.pub}}/flutter
+[existing plugin]: {{site.pub}}/flutter
 [`firebase_admob`]: {{site.pub-pkg}}/firebase_admob
 [`firebase_analytics`]: {{site.pub-pkg}}/firebase_analytics
 [`firebase_auth`]: {{site.pub-pkg}}/firebase_auth

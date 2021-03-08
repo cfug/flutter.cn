@@ -3,6 +3,8 @@ title: Return data from a screen
 title: 从一个页面回传数据
 description: How to return data from a new screen.
 description: 如何从新页面返回数据。
+tags: cookbook, 实用教程, 路由
+keywords: 传参, 回传数据
 prev:
   title: Pass arguments to a named route
   title: 给特定的 route 传参
@@ -100,7 +102,7 @@ Now, create the SelectionButton, which does the following:
 class SelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () {
         _navigateAndDisplaySelection(context);
       },
@@ -154,7 +156,7 @@ class SelectionScreen extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   // 在这里返回 "Yep" (Pop here with "Yep"...)
                 },
@@ -163,7 +165,7 @@ class SelectionScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   // 在这里返回 "Nope" (Pop here with "Nope")
                 },
@@ -199,7 +201,7 @@ Any result is returned to the `Future` in the SelectionButton.
 
 <!-- skip -->
 ```dart
-RaisedButton(
+ElevatedButton(
   onPressed: () {
     // The Yep button returns "Yep!" as the result.
     Navigator.pop(context, 'Yep!');
@@ -214,7 +216,7 @@ RaisedButton(
 
 <!-- skip -->
 ```dart
-RaisedButton(
+ElevatedButton(
   onPressed: () {
     // The Nope button returns "Nope!" as the result.
     Navigator.pop(context, 'Nope!');
@@ -284,7 +286,7 @@ class HomeScreen extends StatelessWidget {
 class SelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () {
         _navigateAndDisplaySelection(context);
       },
@@ -323,7 +325,7 @@ class SelectionScreen extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   // Close the screen and return "Yep!" as the result.
                   Navigator.pop(context, 'Yep!');
@@ -333,7 +335,7 @@ class SelectionScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   // Close the screen and return "Nope!" as the result.
                   Navigator.pop(context, 'Nope.');

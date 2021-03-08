@@ -5,6 +5,8 @@ short-title: Developing
 short-title: 开发和提交
 description: How to write packages and plugins for Flutter.
 description: 如何编写和提交你的 Packages。
+tags: Packages,插件
+keywords: 插件开发,Flutter插件教程
 ---
 
 {{site.note.alert}}
@@ -248,7 +250,7 @@ The API is connected to the platform-specific implementation(s) using a
 
 ### 联合插件
 
-Federated plugins are a a way of splitting support for different platforms into
+Federated plugins are a way of splitting support for different platforms into
 separate packages. So, a federated plugin can use one package for iOS, another
 for Android, another for web, and yet another for a car (as an example of an IoT
 device). Among other benefits, this approach allows a domain expert to extend an
@@ -281,10 +283,40 @@ A federated plugin requires the following packages:
   support the app-facing package. Having a single package
   that defines this interface ensures that all platform
   packages implement the same functionality in a uniform way.
+
+#### Endorsed federated plugin
+
+Ideally, when adding a platform implementation to
+a federated plugin, you will coordinate with the package
+author to include your implementation.
+In this way, the original author _endorses_ your
+implementation.
+
+For example, say you write a `foobar_windows`
+implementation for the (imaginary) `foobar` plugin. 
+In an endorsed plugin, the original `foobar` author
+adds your Windows implementation as a dependency
+in the pubspec for the app-facing package.
+Then, when a developer includes the `foobar` plugin
+in their Flutter app, the Windows implementation,
+as well as the other endorsed implementations,
+are automatically available to the app.
+
+#### Non-endorsed federated plugin
+
+If you can't, for whatever reason, get your implementation
+added by the original plugin author, then your plugin
+is _not_ endorsed. A developer can still use your
+implementation, but must manually add the plugin
+to the app's pubspec file. So, the developer
+must include both the `foobar` dependency _and_
+the `foobar_windows` dependency in order to achieve
+full functionality.
   
-For more information on federated plugins, why they are useful, and how they are
-implemented, see the Medium article by Harry Terkelsen, [How To Write a Flutter
-Web Plugin, Part 2][].
+For more information on federated plugins,
+why they are useful, and how they are
+implemented, see the Medium article by Harry Terkelsen,
+[How To Write a Flutter Web Plugin, Part 2][].
 
 ### Specifying a plugin's supported platforms {#plugin-platforms}
 
@@ -591,14 +623,6 @@ follow the provided instructions.
 
 如果这个命令返回了一个关于需要更新 `pubspec.yaml` 文件的提醒，
 请按照提示的说明进行操作。
-
-{{site.alert.important}}
-
-  The `--platforms ` flag is available in Flutter 1.20.0.
-  
-  `--platforms` 命令在 Flutter 1.20.0 版本之后可用。
-  
-{{site.alert.end}}
 
 ### Testing your plugin
 
@@ -977,7 +1001,7 @@ PENDING
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
 [How to Write a Flutter Web Plugin, Part 1]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
-[issue #33302]: https://github.com/flutter/flutter/issues/33302
+[issue #33302]: {{site.github}}/flutter/flutter/issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
 [platform channel]: /docs/development/platform-integration/platform-channels

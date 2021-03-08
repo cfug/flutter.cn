@@ -3,10 +3,12 @@ title: Work with WebSockets
 title: 发起 WebSockets 请求
 description: How to connect to a web socket.
 description: 如何建立 web socket 连接。
+tags: cookbook, 实用教程, 网络请求
+keywords: WebSockets
 prev:
-  title: Parse JSON in the background
-  title: 在后台处理 JSON 数据解析
-  path: /docs/cookbook/networking/background-parsing
+  title: Update data over the internet
+  title: 通过网络更新数据
+  path: /docs/cookbook/networking/update-data
 next:
   title: Persist data with SQLite
   title: 用 SQLite 做数据持久化
@@ -199,7 +201,7 @@ class MyApp extends StatelessWidget {
       title: title,
       home: MyHomePage(
         title: title,
-        channel: IOWebSocketChannel.connect('ws://echo.websocket.org'),
+        channel: IOWebSocketChannel.connect('wss://echo.websocket.org'),
       ),
     );
   }

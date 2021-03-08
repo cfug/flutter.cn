@@ -3,6 +3,8 @@ title: Work with cached images
 title: 使用缓存图片
 description: How to work with cached images.
 description: 如何操作缓存的图片。
+tags: cookbook, 实用教程, 使用图片
+keywords: Flutter使用图片,图片缓存,网络图片,API
 prev:
   title: Fade in images with a placeholder
   title: 占位符和网络图片淡入

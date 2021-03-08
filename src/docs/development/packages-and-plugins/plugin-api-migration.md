@@ -3,6 +3,8 @@ title: Supporting the new Android plugins APIs
 title: 支持新的 Android 的 API
 description: How to update a plugin using the old APIs to support the new APIs。
 description: 如何升级旧 API 的插件以支持新的 API。
+tags: Packages,插件
+keywords: 迁移,Android平台,开发,新特性
 ---
 
 {{site.alert.note}}
@@ -198,7 +200,7 @@ The following instructions outline the steps for supporting the new API:
     这会让示例应用使用 v2 版本的嵌入。
 
 1. (Optional) If you created an `EmbeddingV1Activity`
-   in the previoous step, add the `EmbeddingV1Activity` to the
+   in the previous step, add the `EmbeddingV1Activity` to the
    `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` file.
    For example:
    
@@ -495,7 +497,7 @@ a non-UI configuration.
 [`ActivityAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/activity/ActivityAware.html
 [Basic plugin]: #basic-plugin
 [battery package]: {{site.github}}/flutter/plugins/tree/master/packages/battery
-[Flutter plugins]: {{site.pub}}/flutter.dev/packages
+[Flutter plugins]: {{site.pub}}/flutter/packages
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`PluginRegistry.Registrar.activity()`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html#activity--

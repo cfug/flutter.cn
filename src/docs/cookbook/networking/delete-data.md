@@ -3,14 +3,16 @@ title: Delete data on the internet
 title: 删除网络数据
 description: How to use the http package to delete data on the internet.
 description: 如何使用 http 这个 package 来删除远程服务器的数据。
+tags: cookbook, 实用教程, 网络请求
+keywords: 
 prev:
-  title: Update data over the internet
-  title: 更新网络数据
-  path: /docs/cookbook/networking/update-data
+  title: Send data to a new screen
+  title: 传递数据到新页面
+  path: /docs/cookbook/navigation/passing-data
 next:
-  title: Make authenticated requests
-  title: 发起 HTTP 认证授权请求
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Fetch data from the internet
+  title: 通过网络获取数据
+  path: /docs/cookbook/networking/fetch-data
 ---
 
 This recipe covers how to delete data over
@@ -58,7 +60,7 @@ Future<Response> deleteAlbum(String id) async {
       'Content-Type': 'application/json; charset=UTF-8',
     },
   );
-  
+
   return response;
 }
 ```
@@ -88,7 +90,7 @@ Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: <Widget>[
     Text('${snapshot.data?.title ?? 'Deleted'}'),
-    RaisedButton(
+    ElevatedButton(
       child: Text('Delete Data'),
       onPressed: () {
        setState(() {
@@ -108,7 +110,7 @@ the same data that you fetched from the internet.
 ### Returning a response from the deleteAlbum() method
 Once the delete request has been made,
 you can return a response from the `deleteAlbum()`
-method to notify our screen that the data has been deleted. 
+method to notify our screen that the data has been deleted.
 
 <!-- skip -->
 ```dart
@@ -127,7 +129,7 @@ Future<Album> deleteAlbum(String id) async {
     // Don't return `null`, otherwise
     // `snapshot.hasData` will always return false
     // on `FutureBuilder`.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     throw Exception('Failed to delete album.');
   }
@@ -159,7 +161,7 @@ Future<Album> fetchAlbum() async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response, then throw an exception.
     throw Exception('Failed to load album');
@@ -247,7 +249,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text('${snapshot.data?.title ?? 'Deleted'}'),
-                      RaisedButton(
+                      ElevatedButton(
                         child: Text('Delete Data'),
                         onPressed: () {
                           setState(() {
@@ -289,4 +291,3 @@ class _MyAppState extends State<MyApp> {
 [Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
 [JSON and serialization]: /docs/development/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
-

@@ -5,8 +5,10 @@ short-title: iOS
 description: How to release a Flutter app to the App Store.
 description: 如何在 App Store 上发布一个 Flutter 应用。
 short-title: iOS
+tags: 发布, iOS
+keywords: 上传App Store,发布Flutter应用
 ---
-	
+
 This guide provides a step-by-step walkthrough of releasing a Flutter app to
 the [App Store][appstore] and [TestFlight][testflight].
 
@@ -20,15 +22,15 @@ For information on obfuscating Dart code, see [Obfuscating Dart Code][].
 
 ## 预先准备
 
-Before beginning the process of releasing your app, 
+Before beginning the process of releasing your app,
 ensure that it meets
 Apple's [App Review Guidelines][appreview].
 
 在开始发布你的 app 的进程之前，确保你已经看过了 Apple 的 [App Store 审核指南][appreview_cn]。
 
-In order to publish your app to the App Store, 
+In order to publish your app to the App Store,
 you'll need to enroll in the
-[Apple Developer Program][devprogram]. 
+[Apple Developer Program][devprogram].
 You can read more about the various
 membership options in Apple's
 [Choosing a Membership][devprogram_membership] guide.
@@ -66,7 +68,7 @@ guide.
 
 ### Register a Bundle ID
 
-### 登记套装 ID 
+### 登记套装 ID
 
 Every iOS application is associated with a Bundle ID, a unique identifier
 registered with Apple. To register a Bundle ID for your app, follow these
@@ -83,17 +85,17 @@ steps:
 
    点击 **+** 来创建一个新的套装 ID。
 
-1. Enter an app name, select **Explicit App ID**, and enter an ID. 
+1. Enter an app name, select **Explicit App ID**, and enter an ID.
 
    输入一个 App 名称，选择 **Explicit App ID**，然后输入一个 ID。
 
 1. Select the services your app uses, then click **Continue**.
-    
+
    选择你的 App 将要使用的服务，然后点击 **继续**
 
 1. On the next page, confirm the details and click **Register**
-   to register your Bundle ID.  
-   
+   to register your Bundle ID.
+
    在下一页，确认细节并点击 **注册** 来注册你的 Bundle ID。
 
 ### Create an application record on App Store Connect
@@ -108,34 +110,34 @@ Next, you'll register your app on App Store Connect:
 
 接下来，你需要在 App Store Connect 注册你的应用：
 
-1. Open [App Store Connect][appstoreconnect_login] in your browser.  
-    
+1. Open [App Store Connect][appstoreconnect_login] in your browser.
+
    在你的浏览器里打开 [App Store Connect][appstoreconnect_login]。
-    
-1. On the App Store Connect landing page, click **My Apps**. 
+
+1. On the App Store Connect landing page, click **My Apps**.
 
    在 App Store Connect 的落地页，点击 **My Apps**。
 
 1. Click **+** in the top-left corner of the My Apps page, then select
-   **New App**.  
-   
+   **New App**.
+
    在我的 app 页面的顶部左侧 ，点击 **+** ，然后选择 **New App**。
 
 1. Fill in your app details in the form that appears. In the Platforms section,
    ensure that iOS is checked. Since Flutter does not currently support tvOS,
-   leave that checkbox unchecked. Click **Create**. 
-   
+   leave that checkbox unchecked. Click **Create**.
+
    在出现的表单中填写你的 app 细节。在平台部分，确保 iOS 被选中。
    由于 Flutter 暂时不支持 tvOS，保持该选项为未选。点击 **Create**。
-   
+
 1. Navigate to the application details for your app and select **App
-   Information** from the sidebar.  
-   
+   Information** from the sidebar.
+
    跳转到你的应用详情，然后从侧边栏选择 **App Information** 。
-   
+
 1. In the General Information section, select the Bundle ID you registered in
-   the preceding step. 
-   
+   the preceding step.
+
    在基础信息部分，选择你在前一步注册的套装 ID。
 
 For a detailed overview,
@@ -147,9 +149,9 @@ see [Add an app to your account][appstoreconnect_guide_register].
 
 ## 检查 Xcode 项目设置
 
-In this step, you'll review the most important settings 
+In this step, you'll review the most important settings
 in the Xcode workspace.
-For detailed procedures and descriptions, see 
+For detailed procedures and descriptions, see
 [Prepare for app distribution][distributionguide_config].
 
 在这一步，你需要在 Xcode 工作空间检查绝大多数重要设置。
@@ -159,18 +161,18 @@ Navigate to your target's settings in Xcode:
 
 在 Xcode 中跳转到你的目标设置：
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.  
+1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
 
    在 Xcode 中，打开你的 App 的 `ios` 目录中的 `Runner.xcworkspace`
-   
+
 1. To view your app's settings, select the **Runner** project in the Xcode
    project navigator. Then, in the main view sidebar, select the **Runner**
-   target.    
-   
-   想要看你的 app 设置，在 Xcode 的项目导航栏中选择 **Runner** 
-   
-1. Select the **General** tab.  
-   
+   target.
+
+   想要看你的 app 设置，在 Xcode 的项目导航栏中选择 **Runner**
+
+1. Select the **General** tab.
+
    选择 **General** tab
 
 Verify the most important settings.
@@ -181,82 +183,81 @@ In the **Identity** section:
 
 在 **Identity** 部分：
 
-`Display Name` 
-: Runner
+`Display Name`
+<br> The display name of your app.
 
-{{site.alert.note}}
+`Display Name`
+<br> 应用的名字。
 
-  Flutter versions prior to 1.18.0-10.0.pre
-  do not support changing the display name
-  to anything other than `Runner`. For more
-  information, see [Issue 41793][].
-  
-  Flutter 1.18.0-10.0.pre 之前的版本只能将
-  显示名称设定为 `Runner`，不能命名为其他名字。
-  有关更多信息，请参见 [Issue 41793][]。
-{{site.alert.end}}
-  
 `Bundle Identifier`
 <br> The App ID you registered on App Store Connect.
 
 `Bundle Identifier`
-<br> 你在 App Store Connect 注册的 App ID。
+<br> 在 App Store Connect 注册的 App ID。
 
 In the **Signing & Capabilities** section:
 
-在 Signing 部分：
+在 **Signing & Capabilities** 部分：
 
-`Automatically manage signing` 
-: whether Xcode should automatically manage 
+`Automatically manage signing`
+<br> whether Xcode should automatically manage
 app signing and provisioning. This is set `true` by default, which should be sufficient for most apps. For more complex scenarios, see the [Code Signing Guide][codesigning_guide].
 
-`Automatically manage signing` 是否需要 Xcode 自动管理 app 签名和设置。
+`Automatically manage signing`
+<br> 是否需要 Xcode 自动管理 app 签名和设置。
 这个默认被设置为 `true` ，对于绝大多数 App 来说都是适用的。对于更复杂的场景，查看 [代码签名指南][codesigning_guide]。
-    
-`Team:` select the team associated with your registered Apple Developer account. If required, select **Add Account...**, then update this setting.
-    
-`Team`：选择关联到你注册的 Apple 开发者账户的团队。如果需要，选择 **Add Account...**, 然后更新选项。
 
-In the **Deployment Info** section:
+`Team`
+<br> select the team associated with your registered Apple Developer account. If required, select **Add Account...**, then update this setting.
 
-在 Development 部分：
+`Team`
+<br> 选择关联到你注册的 Apple 开发者账户的团队。如果需要，选择 **Add Account...**, 然后更新选项。
 
-`Deployment Target:`
-: The minimum iOS version that your app supports.
+In the **Build Settings** section:
+
+在 **Build Settings** 部分：
+
+`iOS Deployment Target`
+<br> The minimum iOS version that your app supports.
   Flutter supports iOS 8.0 and later. If your app includes
   Objective-C or Swift code that makes use of APIs that
   were unavailable in iOS 8, update this setting appropriately.
 
-`Deployment Target:` 你的 App 将会支持的最低版本的 iOS。
-    Flutter 支持 iOS 8.0 及以后的版本。
-    如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，请设置到合适的版本。
+`iOS Deployment Target`
+<br> 你的 App 将会支持的最低版本的 iOS，
+   Flutter 支持 iOS 8.0 及以后的版本。
+   如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，请设置到合适的版本。
 
 The **General** tab of your project settings should resemble
 the following:
 
-你项目的 General tab 应该看起来像是这样的：
+你项目的 **General** tab 应该看起来像是这样的：
 
 ![Xcode Project Settings](/images/releaseguide/xcode_settings.png){:width="100%"}
 
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
 
-更多关于 App 签名新的介绍，查看 [创建, 导出, 和删除签名证书][appsigning]
+更多关于 App 签名新的介绍，查看文档
+[创建, 导出, 和删除签名证书][appsigning]。
 
-## Updating the app's name
+## Updating the app's deployment version
 
-## 更改应用名称
+## 更新应用的开发版本
 
-In the main view sidebar, select the `Info.plist` file.
-Rename the **Bundle name** field.
+If you changed `Deployment Target` in your Xcode project,
+open `ios/Flutter/AppframeworkInfo.plist` in your Flutter app
+and update the `MinimumOSVersion` value to match.
 
-在主视图的侧边栏中，选择 `Info.plist` 文件，并重新命名 **Bundle name** 字段。
+如果你在 Xcode 工程里更改了 `Deployment Target`，
+你需要打开 Flutter app 的 `ios/Flutter/AppframeworkInfo.plist`
+文件并修改 `MinimumOSVersion` 值与之匹配。
 
 ## Updating the app's version number
 
 ## 更新应用版本号
 
-The default version number of the app is `1.0.0`. 
+The default version number of the app is `1.0.0`.
 To update it, navigate to the `pubspec.yaml` file
 and update the following line:
 
@@ -276,7 +277,8 @@ Both the version and the build number may be overridden in Flutter's
 build by specifying `--build-name` and `--build-number`,
 respectively.
 
-版本号与构建号都可以在 Flutter 打包时分别使用 `--build-name` 和 `--build-number` 重新指定。
+版本号与构建号都可以在 Flutter 打包时分别使用
+`--build-name` 和 `--build-number` 重新指定。
 
 In iOS, `build-name` uses `CFBundleShortVersionString`
 while `build-number` uses `CFBundleVersion`.
@@ -298,25 +300,25 @@ app's icons:
 当你创建一个新的 Flutter 应用时，则会创建一个默认的图标。
 在这一步，你将使用你自己的图标替换占位图标：
 
-1. Review the [iOS App Icon][appicon] guidelines. 
+1. Review the [iOS App Icon][appicon] guidelines.
 
    回顾 [iOS 的 App Icon][appicon] 指南。
 
 1. In the Xcode project navigator, select `Assets.xcassets` in the `Runner`
-   folder. Update the placeholder icons with your own app icons. 
-   
+   folder. Update the placeholder icons with your own app icons.
+
    在 Xcode 项目导航栏，选择 `Runner` 目录中的 `Assets.xcassets`，
    更新占位图标为你自己的 app 的图标。
-   
-1. Verify the icon has been replaced by running your app using `flutter run`. 
-   
+
+1. Verify the icon has been replaced by running your app using `flutter run`.
+
    通过执行 `flutter run` 来验证你的图标是否已经被替换。
 
 ## Create a build archive
 
-## 创建一个构建归档(build archive)
+## 创建一个构建归档 (build archive)
 
-In this step, you'll create a build archive and upload 
+In this step, you'll create a build archive and upload
 your build to App Store Connect.
 
 在这一步，你将创建一个构建归档，并上传到 App Store Connect。
@@ -329,22 +331,25 @@ to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
 
 在开发过程中，你将会使用 _debug_ 模式来完成构建、调试并测试。
-当你准备好通过 App Store 或 TestFlight 交付你的 app 给用户时，你需要准备一个 *release* 构建。
-这时你也许想要[混淆你的 Dart 代码][obfuscating your Dart code]以加大反编译难度。
-混淆你的代码需要在 build 的时候添加一些标志，并维护其他文件以消除反编译的堆栈跟踪。
+当你准备好通过 App Store 或 TestFlight 交付你的 app 给用户时，
+你需要准备一个 **release** 构建。
+这时你也许想要
+[混淆你的 Dart 代码][obfuscating your Dart code] 以加大反编译难度。
+混淆你的代码需要在 build 的时候添加一些标志，
+并维护其他文件以消除反编译的堆栈跟踪。
 
 On the command line, follow these steps in your application directory:
 
 在命令行中你的应用目录下执行如下步骤：
 
 1. Run `flutter build ios` to create a release build (`flutter build` defaults to `--release`).
-   
+
    执行 `flutter build ios` 来创建一个 release 构建 (`flutter build` 默认指向 `--release`)。
-   
+
 1. To ensure that Xcode refreshes the release mode configuration, close and
    re-open your Xcode workspace. For Xcode 8.3 and later, this step is not
-   required. 
-   
+   required.
+
    为了确保 Xcode 刷新了发布模式的配置，关闭并重新打开你的 Xcode。
    对于 Xcode 8.3 及以后版本，这一步不是必须的。
 
@@ -352,32 +357,32 @@ In Xcode, configure the app version and build:
 
 在 Xcode中，配置 app 的版本，并开始构建：
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder. 
+1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
 
    在 Xcode 中，打开你应用 `ios` 目录中的 `Runner.xcworkspace`
-   
-1. Select **Product > Scheme > Runner**. 
+
+1. Select **Product > Scheme > Runner**.
 
    选择 **Product > Scheme > Runner**
-   
-1. Select **Product > Destination > Generic iOS Device**. 
 
-   选择 **Product > Destination > Generic iOS Device**
-   
+1. Select **Product > Destination > Any iOS Device**.
+
+   选择 **Product > Destination > Any iOS Device**
+
 1. Select **Runner** in the Xcode project navigator, then select the **Runner**
-   target in the settings view sidebar.  
-   
+   target in the settings view sidebar.
+
    在 Xcode 项目导航栏中选择 **Runner**，然后在设置界面侧边栏选择 **Runner** 目标。
-   
+
 1. In the Identity section, update the **Version** to the user-facing
-   version number you wish to publish. 
-   
+   version number you wish to publish.
+
    在 Identity 部分，更新 **Version** 为你想要发布的用户可见的版本号。
-   
+
 1. In the Identity section, update the **Build** identifier to a unique
    build number used to track this build on App Store Connect. Each upload requires a
-   unique build number. 
-   
+   unique build number.
+
    在 Identity 部分，更新 **Build** 标示为一个唯一的 Build 数字，用来在 App Store Connect 上追踪。
    每一个上传都需要一个独立的 Build 数字。
 
@@ -385,29 +390,77 @@ Finally, create a build archive and upload it to App Store Connect:
 
 最后，创建一个构建归档并将其上传到 App Store Connect：
 
-1. Select **Product > Archive** to produce a build archive.
+<ol markdown="1">
+<li markdown="1">
 
-   选择 **Product > Archive** 来生成一个构建归档 
-   
-1. In the sidebar of the Xcode Organizer window, select your iOS app,
-   then select the build archive you just produced. 
-   
-   在 Xcode 组织界面的侧边栏中，选择你的 iOS app，然后选择你刚刚的生成的构建归档。
-   
-1. Click the **Validate App** button. If any issues are reported,
-   address them and produce another build. You can reuse the same
-   build ID until you upload an archive. 
-   
-   点击 **Validate...** 按钮。如果报告了任何问题，记录下他们并重新开始一个新的构建。
-   你可以使用同一个 Build ID 直到你上传了一个归档。
-   
-1. After the archive has been successfully validated, click
-   **Distribute App**. You can follow the status of your build in the
-   Activities tab of your app's details page on
-   [App Store Connect][appstoreconnect_login].  
-   
-   当这个归档校验成功以后，点击 **Upload to App Store...**。你可以在
-   [App Store Connect][appstoreconnect_login] 中应用详情页面的 Activities 标签页查看你的构建状态。
+Select **Product > Archive** to produce a build archive.
+
+选择 **Product > Archive** 来生成一个构建归档
+
+{{site.alert.note}}
+
+  On Flutter version 1.24.0-6.0 and later you can create an
+  archive by instead running `flutter build ipa`.
+  Then open `build/ios/archive/MyApp.xcarchive` in Xcode to
+  validate and distribute your app.
+  See `flutter build ipa -h` for available flags.
+
+  在 Flutter 1.24.0-6.0 以及之后的版本
+  你可以通过运行 `flutter build ipa` 创建一个归档（archive）。
+  然后打开 Xcode 中的 `build/ios/archive/MyApp.xcarchive` 目录以验证并发布你的应用。
+  运行 `flutter build ipa -h` 以查看可用标记。
+
+{{site.alert.end}}
+
+</li>
+<li markdown="1">
+
+In the sidebar of the Xcode Organizer window, select your iOS app,
+then select the build archive you just produced.
+
+在 Xcode 组织界面的侧边栏中，选择你的 iOS app，然后选择你刚刚的生成的构建归档。
+
+</li>
+<li markdown="1">
+
+Click the **Validate App** button. If any issues are reported,
+address them and produce another build. You can reuse the same
+build ID until you upload an archive.
+
+点击 **Validate...** 按钮。如果报告了任何问题，记录下他们并重新开始一个新的构建。
+在你上传一个归档前，可以一直使用同一个 Build ID。
+
+</li>
+<li markdown="1">
+
+After the archive has been successfully validated, click
+**Distribute App**. You can follow the status of your build in the
+Activities tab of your app's details page on
+[App Store Connect][appstoreconnect_login].
+
+当这个归档校验成功以后，点击 **Upload to App Store...**。你可以在
+[App Store Connect][appstoreconnect_login] 中应用详情页面的 Activities 标签页查看你的构建状态。
+
+{{site.alert.note}}
+
+  When you export your app at the end of **Distribute App**,
+  Xcode will create a directory containing
+  an IPA of your app and an `ExportOptions.plist` file.
+  On Flutter version 1.24.0-6.0 and later you can
+  create new IPAs with the same options without launching
+  Xcode by running
+  `flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
+  See `xcodebuild -h` for details about the keys in this property list.
+
+  当你最后在 **Distribute App** 导出应用时，Xcode 将会创建一个含有你的应用 IPA 
+  以及 `ExportOptions.plist` 文件的文件夹。
+  在 Flutter 1.24.0-6.0 版本后，你可以无需启动 Xcode，通过运行 `flutter build ipa --export-options-plist=path/to/ExportOptions.plist` 
+  就可以创建新的 IPA。运行 `xcodebuild -h` 以查看该属性列表中 key 的详细信息。
+
+{{site.alert.end}}
+
+</li>
+</ol>
 
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers
@@ -426,9 +479,9 @@ For more details, see
 
 ## Release your app on TestFlight
 
-## 发布你的 app 到 TestFlight
+## 在 TestFlight 发布你的应用
 
-[TestFlight][] allows developers to push their apps 
+[TestFlight][] allows developers to push their apps
 to internal and external testers. This optional step
 covers releasing your build on TestFlight.
 
@@ -436,22 +489,22 @@ covers releasing your build on TestFlight.
 这个步骤为可选，接下来的内容将引导你将发布你的构建到 TestFlight。
 
 1. Navigate to the TestFlight tab of your app's application details page on
-   [App Store Connect][appstoreconnect_login]. 
-   
+   [App Store Connect][appstoreconnect_login].
+
    在 [App Store Connect][appstoreconnect_login]中，你的应用的详情页面跳转到 TestFlight Tab。
-   
-1. Select **Internal Testing** in the sidebar. 
+
+1. Select **Internal Testing** in the sidebar.
 
    在侧边栏选择 **Internal Testing**。
-   
-1. Select the build to publish to testers, then click **Save**. 
-   
+
+1. Select the build to publish to testers, then click **Save**.
+
    选择要发布给测试人员的构建，然后点击 **保存**。
-   
+
 1. Add the email addresses of any internal testers. You can add additional
    internal users in the **Users and Roles** page of App Store Connect, available from
-   the dropdown menu at the top of the page. 
-   
+   the dropdown menu at the top of the page.
+
    为每一个内部测试人员添加邮件。你可以在 App Store Connect 的**用户与角色**页面添加额外的内部用户，
    他们将会出现在页面顶部的下拉菜单中。
 
@@ -464,29 +517,29 @@ For more details, see [Distribute an app using TestFlight]
 
 ## Release your app to the App Store
 
-## 发布你的 app 到 App Store
+## 在 App Store 发布你的应用
 
-When you're ready to release your app to the world, 
-follow these steps to submit your app for review and 
+When you're ready to release your app to the world,
+follow these steps to submit your app for review and
 release to the App Store:
 
 当你准备发布你的 app 到这个世界时，跟随下面的步骤，来提交你的 App 去审核，并将其发布到 App Store。
 
 1. Select **Pricing and Availability** from the sidebar of your app's
-   application details page on 
-   [App Store Connect][appstoreconnect_login] and complete the required information.  
-   
+   application details page on
+   [App Store Connect][appstoreconnect_login] and complete the required information.
+
    从你的 app 在 [App Store Connect][appstoreconnect_login]
    的页面中的侧边栏中选择 **Pricing and Availability**，然后完善所有的必填信息。
-   
+
 1. Select the status from the sidebar. If this is the first
    release of this app, its status is
    **1.0 Prepare for Submission**. Complete all required fields.
-   
+
    从侧边栏选择状态。如果这是第一次发布这个 App，
    这个状态将会是 **1.0 Prepare for Submission**，填写所有需要填写的区域。
-   
-1. Click **Submit for Review**. 
+
+1. Click **Submit for Review**.
 
    点击 **提交审核**
 
@@ -564,7 +617,6 @@ the process of releasing an app to the App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[Issue 41793]: {{site.github}}/flutter/flutter/issues/41793
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [TestFlight]: https://developer.apple.com/testflight/
 

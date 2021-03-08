@@ -3,6 +3,8 @@ title: Test drive
 title: 开发体验初探
 description: How to create a templated Flutter app and use hot reload.
 description: 如何使用 hot reload 创建一个 Flutter 应用模版。
+tags: Flutter安装,Flutter环境搭建
+keywords: Flutter IDE,Flutter编辑器,Android Studio,VS Code,Flutter插件
 prev:
   title: Set up an editor
   title: 编辑工具设定
@@ -17,7 +19,8 @@ toc: false
 This page describes how to create a new Flutter app from templates, run it,
 and experience "hot reload" after you make changes to the app.
 
-本页面讲解如何通过模板实现一个 Flutter 应用，执行并且在修改程序之后触发“热重载 (hot reload)”功能。
+本页面讲解如何通过模板实现一个 Flutter 应用，
+执行并且在修改程序之后触发“热重载 (hot reload)”功能。
 
 Select your development tool of choice for writing, building, and running Flutter apps.
 

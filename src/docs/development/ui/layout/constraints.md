@@ -1,9 +1,11 @@
 ---
 title: Understanding constraints
-title: 深入理解布局约束
+title: 深入理解 Flutter 布局约束
 description: Flutter's model for widget constraints, sizing, positioning, and how they interact.
 description: 理解 Flutter widget 约束模型，了解它是如何确定自身的大小，位置以及影响彼此的。
 toc: false
+tags: 用户界面,Flutter UI,布局
+keywords: 布局约束,必读,布局示例
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -144,7 +146,7 @@ The negotiation goes something like this:
 
 **Widget**: "很好。我的第一个子级将被放在 `x: 5` & `y: 5` 的位置，
    而我的第二个子级将在 `x: 80` & `y: 25` 的位置。"
- 
+
 **Widget**: "Hey parent, I’ve decided that my size is going to be `300`
    pixels wide, and `60` pixels tall."
 
@@ -183,6 +185,15 @@ Flutter 的布局引擎有一些重要限制：
   当轮到父级决定其大小和位置的时候，同样的也取决于它自身的父级。
   所以，在不考虑整棵树的情况下，几乎不可能精确定义任何 widget 的大小和位置。
 
+* If a child wants a different size from its parent and 
+  the parent doesn't have enough information to align it,
+  then the child's size might be ignored.
+  **Be specific when defining alignment.**
+
+  如果子级想要拥有和父级不同的大小，然而父级没有足够的空间对其进行布局的话，
+  子级的设置的大小可能会不生效。
+  **这时请明确指定它的对齐方式**
+  
 ## Examples
 
 ## 样例
@@ -389,9 +400,12 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-        color: isSelected ? Colors.grey : Colors.grey[800],
-        child: Text(exampleNumber.toString(), style: TextStyle(color: Colors.white)),
+    return TextButton(
+        style: TextButton.styleFrom(
+          primary: Colors.white,
+          backgroundColor: isSelected ? Colors.grey : Colors.grey[800],
+        ),
+        child: Text(exampleNumber.toString()),
         onPressed: () {
           Scrollable.ensureVisible(
             context,
@@ -1370,9 +1384,9 @@ in the previous example.
 ```dart
 ConstrainedBox(
    constraints: BoxConstraints(
-      minWidth: 70, 
+      minWidth: 70,
       minHeight: 70,
-      maxWidth: 150, 
+      maxWidth: 150,
       maxHeight: 150,
    ),
    child: Container(color: Colors.red, width: 10, height: 10),
@@ -1407,13 +1421,13 @@ to also assume the size of the screen, thus ignoring its
 Center(
    child: ConstrainedBox(
       constraints: BoxConstraints(
-         minWidth: 70, 
+         minWidth: 70,
          minHeight: 70,
-         maxWidth: 150, 
+         maxWidth: 150,
          maxHeight: 150,
       ),
       child: Container(color: Colors.red, width: 10, height: 10),
-   )    
+   )
 )
 ```
 
@@ -1442,13 +1456,13 @@ Container 必须介于 70 到 150 像素之间。虽然它希望自己有 10 个
 Center(
   child: ConstrainedBox(
      constraints: BoxConstraints(
-        minWidth: 70, 
+        minWidth: 70,
         minHeight: 70,
-        maxWidth: 150, 
+        maxWidth: 150,
         maxHeight: 150,
         ),
      child: Container(color: Colors.red, width: 1000, height: 1000),
-  )  
+  )
 )
 ```
 
@@ -1478,13 +1492,13 @@ so it ends up having 150 (the maximum).
 Center(
    child: ConstrainedBox(
       constraints: BoxConstraints(
-         minWidth: 70, 
+         minWidth: 70,
          minHeight: 70,
-         maxWidth: 150, 
+         maxWidth: 150,
          maxHeight: 150,
       ),
       child: Container(color: Colors.red, width: 100, height: 100),
-   ) 
+   )
 )
 ```
 
@@ -1600,8 +1614,8 @@ with no warnings given.
 ```dart
 UnconstrainedBox(
    child: Container(
-      color: Colors.red, 
-      width: double.infinity, 
+      color: Colors.red,
+      width: double.infinity,
       height: 100,
    )
 )
@@ -1634,9 +1648,9 @@ Flutter 无法渲染无限大的东西，所以它抛出以下错误：
 UnconstrainedBox(
    child: LimitedBox(
       maxWidth: 100,
-      child: Container( 
+      child: Container(
          color: Colors.red,
-         width: double.infinity, 
+         width: double.infinity,
          height: 100,
       )
    )
@@ -1791,7 +1805,7 @@ and breaks the line so that it fits the screen.
 ```dart
 FittedBox(
    child: Container(
-      height: 20.0, 
+      height: 20.0,
       width: double.infinity,
    )
 )
@@ -2216,7 +2230,7 @@ Article by Marcelo Glasberg
 
 本文作者：Marcelo Glasberg
 
-Marcelo originally published this content as 
+Marcelo originally published this content as
 [Flutter: The Advanced Layout Rule Even Beginners Must Know][]
 on Medium. We loved it and asked that he allow us to publish
 in on flutter.dev, to which he graciously agreed. Thanks, Marcelo!
@@ -2225,17 +2239,16 @@ You can find Marcelo on [GitHub][] and [pub.dev][].
 Marcelo Glasberg 最初在 Medium 发表 [Flutter: The Advanced Layout Rule Even Beginners Must Know][] 本文。
 我们十分喜欢这篇文章，在征得他的允许后发布在 flutter.dev。再次感谢你，Marcelo!
 你可以找到 [GitHub][] 以及 [pub.dev][] 找到 Marcelo。
-   
+
 Also, thanks to [Simon Lightfoot][] for creating the
 header image at the top of the article.
 
 同时，还要感谢 [Simon Lightfoot][] 创造了本文的标题图片。
 
 [`Container` documentation]: {{site.api}}/flutter/widgets/Container-class.html
-[DartPad instance]: https://dartpad.dev/60174a95879612e500203084a0588f94
+[DartPad instance]: https://dartpad.cn/60174a95879612e500203084a0588f94
 [Flutter: The Advanced Layout Rule Even Beginners Must Know]: https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
 [GitHub]: {{site.github}}/marcglasberg
 [pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages
 [Simon Lightfoot]: {{site.github}}/slightfoot
 [this GitHub repo]: {{site.github}}/marcglasberg/flutter_layout_article
-

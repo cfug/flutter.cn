@@ -4,13 +4,13 @@ title: 获取网络数据
 description: How to fetch data over the internet using the http package.
 description: 如何使用 http 包获取网络数据。
 prev:
-  title: Send data to a new screen
-  title: 传递数据到新页面
-  path: /docs/cookbook/navigation/passing-data
+  title: Delete data on the internet
+  title: 删除网络数据
+  path: /docs/cookbook/networking/delete-data
 next:
-  title: Send data to the internet
-  title: 发送网络数据
-  path: /docs/cookbook/networking/send-data
+  title: Make authenticated requests
+  title: 发起认证的请求
+  path: /docs/cookbook/networking/authenticated-requests
 ---
 
 Fetching data from the internet is necessary for most apps.
@@ -69,6 +69,15 @@ Import the http package.
 import 'package:http/http.dart' as http;
 ```
 
+Additionally, in your AndroidManifest.xml file, 
+add the Internet permission.
+
+<!-- skip -->
+```xml
+<!-- Required to fetch data from the internet. -->
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
 ## 2. Make a network request
 
 ## 2. 进行网络请求
@@ -82,7 +91,7 @@ This recipe covers how to fetch a sample album from the
 <!-- skip -->
 ```dart
 Future<http.Response> fetchAlbum() {
-  return http.get('https://jsonplaceholder.typicode.com/albums/1');
+  return http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 }
 ```
 
@@ -188,13 +197,15 @@ function to return a `Future<Album>`:
 
 <!-- skip -->
 ```dart
+import 'dart:convert';
+
 Future<Album> fetchAlbum() async {
   final response = await http.get('https://jsonplaceholder.typicode.com/albums/1');
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -412,12 +423,12 @@ import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
   final response =
-      await http.get('https://jsonplaceholder.typicode.com/albums/1');
+      await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.

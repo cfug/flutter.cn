@@ -3,6 +3,8 @@ title: Add Flutter to existing app
 title: 将 Flutter 集成到现有应用
 description: Adding Flutter as a library to an existing Android or iOS app.
 description: 将 Flutter 作为 library 集成到现有的 Android 或 iOS 应用。
+tags: Flutter混合工程,add2app
+keywords: Flutter原生混编,Flutter集成
 ---
 
 ## Add-to-app
@@ -36,15 +38,6 @@ It currently has the _**following limitations**_:
 每个应用在同一时间可以集成一个全屏幕的 Flutter 实例。
 目前仍有以下限制：
 
-* Running multiple Flutter instances or running in partial screen
-  views may have undefined behavior.
-  
-  运行多个 Flutter 实例，或在屏幕局部上运行 Flutter 可能会导致不可预测的行为；
-  
-* Using Flutter in background mode is still a WIP.
-
-  在后台模式使用 Flutter 的功能还在开发中；
-  
 * Packing multiple Flutter libraries into an
   application isn't supported.
 
@@ -52,15 +45,36 @@ It currently has the _**following limitations**_:
   
 * Plugins used in add-to-app on Android should migrate
   to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
-  Plugins that don't support `FlutterPlugin` may have unexpected
+
+  在 Android 平台，使用了添加到现有应用 (add-to-app) 的插件需要迁移到
+  基于 [`FlutterPlugin`] 的 [Android 插件 API][Android plugin APIs]。
+  
+* Plugins that don't support `FlutterPlugin` might have unexpected
   behaviors if they make assumptions that are untenable in add-to-app
   (such as assuming that a Flutter `Activity` is always present).
+
+  一些不支持 `FlutterPlugin` 的插件可能会有不可预知的行为，比如产生错误的预判，
+  认为 Flutter `Activity` 一直处于活跃状态。
+  
 * As of v1.17, the Flutter module only supports AndroidX applications on Android.
 
-  在 Android 平台，使用了添加到现有应用 (add-to-app) 的插件需要迁移到支持
-  使用基于 [`FlutterPlugin`] 的 [Android 插件 API][Android plugin APIs]。
-  一些不支持 `FlutterPlugin` 的插件可能会有不可预知的行为，比如进行了错误的预判，
-  认为 Flutter `Activity` 一直处于活跃状态。
+  从 1.17 开始，Flutter 模块仅支持 Android 平台中的 AndroidX 应用。
+
+As of Flutter v1.26, add-to-app experimentally supports adding multiple
+instances of Flutter engines, screens, or views into your app. This can
+help integration scenarios such as a hybrid navigation stack with mixed
+native and Flutter screens, or a page with multiple partial-screen Flutter
+views. Having multiple Flutter instances allows each instance to maintain
+independent application and UI state while using minimal
+memory resources. See more in the [multiple Flutters][] page.
+
+自 Flutter 1.26 版本开始，add-to-app 开始实验性的支持将多个
+Flutter 引擎 (engine)、页面 (screen) 或视图 (view) 添加到你的应用中。
+适用于混合栈应用在导航到原生页面和 Flutter 页面的情况，
+也适用于一个页面有原生视图和 Flutter 视图的情况等混合栈应用。
+多个 Flutter 实例会帮助每个实例保持独立的应用和 UI 状态，
+同时使用最少的内存资源。请多详细内容，请参考文档：
+[多个 Flutter 实例][multiple Flutters]。 
 
 ## Supported features
 
@@ -74,21 +88,21 @@ It currently has the _**following limitations**_:
 
 * Auto-build and import the Flutter module by adding a
   Flutter SDK hook to your Gradle script.
-  
+
   在 Gradle 脚本中添加一个自动构建并引入 Flutter 模块的 Flutter SDK 钩子。
   
 * Build your Flutter module into a generic
   [Android Archive (AAR)][] for integration into your
   own build system and for better Jetifier interoperability
   with AndroidX.
-  
+
   将 Flutter 模块构建为通用的 [Android Archive (AAR)][Android Archive (AAR)]
   以便集成到您自己的构建系统中，并提高 Jetifier 与 AndroidX 的互操作性；
   
 * [`FlutterEngine`][java-engine] API for starting and persisting
   your Flutter environment independently of attaching a
   [`FlutterActivity`][]/[`FlutterFragment`][] etc.
-  
+
   [`FlutterEngine`][java-engine] API 用于启动并持续地为挂载 
   [`FlutterActivity`][] 或 [`FlutterFragment`][] 提供独立的 Flutter 环境；
   
@@ -108,7 +122,7 @@ It currently has the _**following limitations**_:
   for best add-to-app correctness. As of Flutter v1.12,
   most of the plugins [maintained by the Flutter team][]
   as well as [FlutterFire][] have been migrated.
-  
+
   Flutter 模块可以通过使用 [Flutter plugins][] 与平台进行交互。
   Android 平台的 plugin 应该
   [迁移至 V2 plugin API][migrated to the V2 plugins APIs] 以确保最佳的兼容性。
@@ -118,7 +132,7 @@ It currently has the _**following limitations**_:
 * Support for Flutter debugging and stateful hot reload by
   using `flutter attach` from IDEs or the command line to
   connect to an app that contains Flutter.
-  
+
   支持通过从 IDE 或命令行中使用 `flutter attach` 
   来实现 Flutter 调试与有状态的热重载。
 
@@ -130,20 +144,20 @@ It currently has the _**following limitations**_:
 
 * Auto-build and import the Flutter module by adding a Flutter
   SDK hook to your CocoaPods and to your Xcode build phase.
-  
+
   在 Xcode 的 Build Phase 以及 CocoaPods 中，
   添加一个自动构建并引入 Flutter 模块的 Flutter SDK 钩子。
   
 * Build your Flutter module into a generic [iOS Framework][]
   for integration into your own build system.
-  
+
   将 Flutter 模块构建为通用的 [iOS Framework][]
   以便集成到您自己的构建系统中；
   
 * [`FlutterEngine`][ios-engine] API for starting and persisting
   your Flutter environment independently of attaching a
   [`FlutterViewController`][].
-  
+
   [`FlutterEngine`][ios-engine] API 用于启动并持续地为挂载
   [`FlutterViewController`][] 以提供独立的 Flutter 环境；
   
@@ -153,7 +167,7 @@ It currently has the _**following limitations**_:
   
 * Flutter modules can use [Flutter plugins][] to interact
   with the platform.
-  
+
   Flutter 模块可以通过使用 [Flutter plugins][] 与平台进行交互；
   
 - Support for Flutter debugging and stateful hot reload by
@@ -224,7 +238,7 @@ see our API usage guides at the following links:
 
 
 [add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/add_to_app
-[Android Archive (AAR)]: https://developer.android.com/studio/projects/android-library
+[Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
 [Android plugin APIs]: /docs/development/packages-and-plugins/plugin-api-migration
 [Flutter plugins]: {{site.pub}}/flutter
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
@@ -234,6 +248,7 @@ see our API usage guides at the following links:
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
-[iOS Framework]: https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
+[iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
 [maintained by the Flutter team]: {{site.github}}/flutter/plugins/tree/master/packages
 [migrated to the V2 plugins APIs]: /docs/development/packages-and-plugins/plugin-api-migration
+[multiple Flutters]: /docs/development/add-to-app/multiple-flutters

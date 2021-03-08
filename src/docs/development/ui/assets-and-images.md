@@ -5,6 +5,8 @@ description: How to use images (and other assets) in your Flutter app.
 description: 如何在你的 Flutter 应用中使用图片或者其他类型的资源。
 short-title: Assets and images
 short-title: 资源和图片
+tags: 用户界面,Flutter UI,布局
+keywords: Flutter资源优化,添加图片
 ---
 
 Flutter apps can include both code and _assets_
@@ -413,7 +415,7 @@ file of the package, it's bundled automatically with the
 application. In particular, assets used by the package
 itself must be specified in its `pubspec.yaml`.
 
-如果在 `pubspec.yaml` 文件中声明了资源文件，它将会打包到响应的 package 中。
+如果期望的资源文件被指定在 package 的 `pubspec.yaml` 文件中，它会被自动打包到应用程序中。
 特别是，package 本身使用的资源必须在 `pubspec.yaml` 中指定。
 
 A package can also choose to have assets in its `lib/`
@@ -752,13 +754,13 @@ For more details, see
 [`FlutterPluginRegistrar`]: {{site.api}}/objcdoc/Protocols/FlutterPluginRegistrar.html
 [`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
-[Human Interface Guidelines]: https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon
+[Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/graphics/app-icon
 [`ios_platform_images`]: {{site.pub}}/packages/ios_platform_images
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
-[`mainBundle`]: https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle
+[`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
 [`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String
 [package]: /docs/development/packages-and-plugins/using-packages
-[`pathForResource:ofType:`]: https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource
+[`pathForResource:ofType:`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410989-pathforresource
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`pubspec.yaml`]: {{site.dart-site}}/tools/pub/pubspec
 [`rootBundle`]: {{site.api}}/flutter/services/rootBundle.html

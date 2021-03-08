@@ -54,6 +54,7 @@ Here are some of the things you can do with DevTools:
 * View general log and diagnostics information
   about a running Flutter or Dart
   command-line app.
+* Analyze code and app size.
 
   查看正在运行的 Flutter 或 Dart 的命令行应用程序相关的常规日志和诊断信息。
 

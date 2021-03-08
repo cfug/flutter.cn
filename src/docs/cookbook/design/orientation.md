@@ -3,6 +3,8 @@ title: Update the UI based on orientation
 title: 根据屏幕方向更新界面
 description: Respond to a change in the screen's orientation.
 description: 根据屏幕方向自适应界面。
+tags: cookbook, 实用教程, 设计
+keywords: 屏幕切换,横屏模式,竖屏模式,自适应
 prev:
   title: Exporting fonts from a package
   title: 以 package 的方式使用字体

@@ -3,14 +3,16 @@ title: Update data over the internet
 title: 更新网络数据
 description: How to use the http package to update data over the internet.
 description: 如何使用 http 这个 package 来更新远程服务器的数据。
+tags: cookbook, 实用教程, 网络请求
+keywords: 
 prev:
   title: Send data to the internet
   title: 发送网络数据
   path: /docs/cookbook/networking/send-data
 next:
-  title: Delete data on the internet
-  title: 删除网络数据
-  path: /docs/cookbook/networking/delete-data
+  title: Work with WebSockets
+  title: 发起 WebSockets 请求
+  path: /docs/cookbook/networking/web-sockets
 ---
 
 Updating data over the internet is necessary for most apps.
@@ -141,7 +143,7 @@ Future<Album> updateAlbum(String title) async {
   if (response.statusCode == 200) {
     // If the server did return a 200 UPDATED response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 UPDATED response,
     // then throw an exception.
@@ -166,7 +168,7 @@ Future<Album> fetchAlbum() async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -181,12 +183,12 @@ the data from the internet.
 
 ## 5. Update the existing title from user input
 
-Create a `TextField` to enter a title and a `RaisedButton`
+Create a `TextField` to enter a title and a `ElevatedButton`
 to update the data on server.
 Also define a `TextEditingController` to
 read the user input from a `TextField`.
 
-When the `RaisedButton` is pressed,
+When the `ElevatedButton` is pressed,
 the `_futureAlbum` is set to the value returned by
 `updateAlbum()` method.
 
@@ -202,7 +204,7 @@ Column(
         decoration: InputDecoration(hintText: 'Enter Title'),
       ),
     ),
-    RaisedButton(
+    ElevatedButton(
       child: Text('Update Data'),
       onPressed: () {
         setState(() {
@@ -271,7 +273,7 @@ Future<Album> fetchAlbum() async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -293,7 +295,7 @@ Future<Album> updateAlbum(String title) async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -365,7 +367,7 @@ class _MyAppState extends State<MyApp> {
                         controller: _controller,
                         decoration: InputDecoration(hintText: 'Enter Title'),
                       ),
-                      RaisedButton(
+                      ElevatedButton(
                         child: Text('Update Data'),
                         onPressed: () {
                           setState(() {
@@ -405,4 +407,3 @@ class _MyAppState extends State<MyApp> {
 [JSON and serialization]: /docs/development/data-and-backend/json
 [Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
-

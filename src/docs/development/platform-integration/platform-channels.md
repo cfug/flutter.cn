@@ -5,6 +5,8 @@ short-title: Platform-specific code
 short-title: 平台相关代码
 description: Learn how to write custom platform-specific code in your app.
 description: 学习如何撰写原生实现的代码。
+tags: 平台集成
+keywords: Android,iOS,平台代码
 ---
 
 This guide describes how to write custom platform-specific code. Some
@@ -91,7 +93,7 @@ channels as illustrated in this diagram:
 
 消息使用平台通道在客户端（UI）和宿主（平台）之间传递，如下图所示：
 
-![Platform channels architecture](/images/PlatformChannels.png)
+![Platform channels architecture](/images/PlatformChannels.png){:width="100%"}
 
 Messages and responses are passed asynchronously,
 to ensure the user interface remains responsive.
@@ -125,12 +127,16 @@ iOS 系统使用 [`MethodChanneliOS`][] 来
 接收和返回来自 `MethodChannel` 的方法调用。
 在开发平台插件的时候，可以减少样板代码。
 
-*Note*: If desired, method calls can also be sent in the reverse direction,
-with the platform acting as client to methods implemented in Dart.
-A concrete example of this is the [`quick_actions`][] plugin.
+{{site.alert.note}}
 
-**注意**：如果需要，方法调用也可以反向发送，由平台充当客户端来调用 Dart
-实现的方法。一个具体的例子是 [`quick_actions`][] 插件。
+  If desired, method calls can also be sent in the reverse direction,
+  with the platform acting as client to methods implemented in Dart.
+  A concrete example of this is the [`quick_actions`][] plugin.
+  
+  如果需要，方法调用也可以反向发送，由平台充当客户端来调用 Dart
+  实现的方法。一个具体的例子是 [`quick_actions`][] 插件。
+{{site.alert.end}}
+
 
 ### Platform channel data types support and codecs {#codec}
 
@@ -224,9 +230,9 @@ use the `-i` and/or `-a` flags:
 默认情况下，我们的模板使用 Kotlin 编写 Android 或使用 Swift 编写 iOS 代码。要使用
 Java 或 Objective-C，请使用 `-i` 和/或 `-a` 标志：
 
-* In a terminal run: `flutter create -i swift -a kotlin batterylevel`
+* In a terminal run: `flutter create -i objc -a java batterylevel`
 
-  在终端中运行：`flutter create -i swift -a kotlin batterylevel`
+  在终端中运行：`flutter create -i objc -a java batterylevel`
 
 ### Step 2: Create the Flutter platform client {#example-client}
 
@@ -316,7 +322,7 @@ and a button for refreshing the value.
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            RaisedButton(
+            ElevatedButton(
               child: Text('Get Battery Level'),
               onPressed: _getBatteryLevel,
             ),
@@ -893,23 +899,32 @@ and client declaring the same arguments and datatypes in order for messages to
 work.  The [Pigeon][] package can be used as an alternative to `MethodChannel`
 to generate code that sends messages in a structured typesafe manner.
 
-在之前的样例中，我们使用 `MethodChannel` 在 host 和 client 之间进行通信，然而这并不是类型安全的。为了正确通信，调用/接收消息取决于 host 和 client 声明相同的参数和数据类型。[Pigeon][] 包可以用作 `MethodChannel` 的替代品，它将生成以结构化类型安全方式发送消息的代码。
+在之前的样例中，我们使用 `MethodChannel` 在 host 和 client 之间进行通信，
+然而这并不是类型安全的。为了正确通信，
+调用/接收消息取决于 host 和 client 声明相同的参数和数据类型。
+[Pigeon][] 包可以用作 `MethodChannel` 的替代品，
+它将生成以结构化类型安全方式发送消息的代码。
 
 With [Pigeon][] the messaging protocol is defined in a subset of Dart which then
 generates messaging code for Android or iOS.  A more complete example and more
 information can be found on the [Pigeon pub.dev page][];
 
-在 [Pigeon][] 中，消息接口在 Dart 中进行定义，然后它将生成对应的 Android 以及 iOS 的代码。更复杂的例子以及更多信息尽在 [Pigeon pub.dev page][]。
+在 [Pigeon][] 中，消息接口在 Dart 中进行定义，
+然后它将生成对应的 Android 以及 iOS 的代码。
+更复杂的例子以及更多信息尽在 [Pigeon pub.dev page][]。
 
 Using [Pigeon][] eliminates the need to match strings between host and client
 for the names and datatypes of messages.  It supports: nested classes, grouping
 messages into APIs, generation of asynchronous wrapper code and sending messages
-in either direction.  The generated code is readable and guarentees there will
-be no conflicts between multiple clients of different versions.  Supported
+in either direction. The generated code is readable and guarantees there will
+be no conflicts between multiple clients of different versions. Supported
 languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
 
-使用 [Pigeon][] 消除了在主机和客户端之间匹配字符串的需要消息的名称和数据类型。
-它支持：嵌套类，消息转换为 API，生成异步包装代码并发送消息。生成的代码具有相当的可读性并保证在不同版本的多个客户端之间没有冲突。支持 Objective-C，Java，Kotlin 和 Swift（通过Objective-C互操作）语言。
+使用 [Pigeon][] 消除了在主机和客户端之间
+匹配字符串的需要消息的名称和数据类型。
+它支持：嵌套类，消息转换为 API，生成异步包装代码并发送消息。
+生成的代码具有相当的可读性并保证在不同版本的多个客户端之间没有冲突。
+支持 Objective-C，Java，Kotlin 和 Swift（通过 Objective-C 互操作）语言。
 
 ### Pigeon example
 
@@ -1087,12 +1102,12 @@ DispatchQueue.main.async {
 
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
-[block]: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
+[block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
 [`cloud_firestore`]: {{site.github}}/FirebaseExtended/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [defaultTargetPlatform]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [developing packages]: /docs/development/packages-and-plugins/developing-packages
 [plugins]: /docs/development/packages-and-plugins/developing-packages#plugin
-[dispatch queue]: https://developer.apple.com/documentation/dispatch/dispatchqueue
+[dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
 [`/examples/platform_channel/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
 [`/examples/platform_channel_swift/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel_swift
 [federated plugin]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
@@ -1106,9 +1121,9 @@ DispatchQueue.main.async {
 [section on threading]: #channels-and-platform-threading
 [`StandardMessageCodec`]: {{site.api}}/flutter/services/StandardMessageCodec-class.html
 [`StringCodec`]: {{site.api}}/flutter/services/StringCodec-class.html
-[the main thread]: https://developer.apple.com/documentation/uikit?language=objc
-[the UI thread]: https://developer.android.com/guide/components/processes-and-threads#Threads
+[the main thread]: {{site.apple-dev}}/documentation/uikit?language=objc
+[the UI thread]: {{site.android-dev}}/guide/components/processes-and-threads#Threads
 [using packages]: /docs/development/packages-and-plugins/using-packages
-[Pigeon]: https://pub.dev/packages/pigeon
-[Pigeon pub.dev page]: https://pub.dev/packages/pigeon
+[Pigeon]: {{site.pub-pkg}}/pigeon
+[Pigeon pub.dev page]: {{site.pub-pkg}}/pigeon
 [sending structured typesafe messages]: #pigeon

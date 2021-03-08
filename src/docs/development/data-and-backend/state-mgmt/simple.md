@@ -3,6 +3,8 @@ title: Simple app state management
 title: 简单的应用状态管理
 description: A simple form of state management.
 description: 一个简单形式的状态管理。
+tags: Flutter状态管理
+keywords: provider状态管理
 prev:
   title: Ephemeral versus app state
   title: 局部状态和全局应用状态
@@ -75,9 +77,7 @@ Here's the app visualized as a widget tree.
 
 这是应用程序对应的可视化的 widget 树。
 
-<!--{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="A widget tree with MyApp at the top, and MyLoginScreen, MyCatalog and MyCart below it. MyLoginScreen and MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems." %}-->
-
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="MyApp 位于 widget 树的最顶部，然后下面是 MyCatalog 和 MyCart。MyCart 是 widget 树的叶子节点。MyCatalog 有两个子节点: MyAppBar 和 MyListItem 列表。" %}
+{% asset development/data-and-backend/state-mgmt/simple-widget-tree width="100%" alt="MyApp 位于 widget 树的最顶部，然后下面是 MyCatalog 和 MyCart。MyCart 是 widget 树的叶子节点。MyCatalog 有两个子节点: MyAppBar 和 MyListItem 列表。" %}
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
@@ -206,9 +206,7 @@ what to show for any given `contents`. When that changes, the old
 当内容发生改变的时候，旧的 `MyCart` widget 就会消失，
 完全被新的 widget 替代。
 
-<!--{% asset development/data-and-backend/state-mgmt/simple-widget-tree-with-cart alt="Same widget tree as above, but now we show a small 'cart' badge next to MyApp, and there are two arrows here. One comes from one of the MyListItems to the 'cart', and another one goes from the 'cart' to the MyCart widget." %}-->
-
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree-with-cart alt="和上面的空间树一样，不过我们在 MyApp 的旁边显示一个 'cart' 标记。这里有两个箭头。一个从 MyListItems 指向 'cart'，另一个从 'cart' 指向 MyCart " %}
+{% asset development/data-and-backend/state-mgmt/simple-widget-tree-with-cart width="100%" alt="和上面的空间树一样，不过我们在 MyApp 的旁边显示一个 'cart' 标记。这里有两个箭头。一个从 MyListItems 指向 'cart'，另一个从 'cart' 指向 MyCart" %}
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1ErMyaX4fwfbIW9ABuPAlHELLGMsU6cdxPDFz_elsS9k/edit?zx=j42inp8903pt
@@ -288,7 +286,36 @@ Flutter 中的 _Everything is a Widget™_。
 Instead, we are going to use a package that works with the low-level
 widgets but is simple to use. It's called `provider`.
 
-我们会用一个 package 来和这些底层的 widget 打交道，就是 `provider` package 。
+我们会用一个 package 来和这些底层的 widget 打交道，
+就是 `provider` package。
+
+Before working with `provider`,
+don't forget to add the dependency on it to your `pubspec.yaml`.
+
+在使用 `provider` 之前，请不要忘记在
+`pubspec.yaml` 文件里加入依赖。
+
+```yaml
+name: my_name
+description: Blah blah blah.
+
+# ...
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  provider: ^4.0.0
+
+dev_dependencies:
+  # ...
+```
+
+Now you can `import 'package:provider/provider.dart';`
+and start building.
+
+现在可以在代码里加入 `import 'package:provider/provider.dart';`
+进而开始构建你的应用了/
 
 With `provider`, you don't need to worry about callbacks or
 `InheritedWidgets`. But you do need to understand 3 concepts:
@@ -636,32 +663,14 @@ see what the simple Counter app looks like when
 如果你想参考稍微简单一点的示例，可以看看 Counter 应用程序是如何
 [基于 `provider` 实现的][built with `provider`]。
 
-When you're ready to play around with `provider` yourself,
-don't forget to add the dependency on it to your `pubspec.yaml` first.
+By following along with these articles, you've greatly 
+improved your ability to create state-based applications. 
+Try building an application with `provider` yourself to 
+master these skills. 
 
-如果你已经学会了并且准备使用 `provider` 的时候，
-别忘了先在 `pubspec.yaml` 中添加相应的依赖。
-
-```yaml
-name: my_name
-description: Blah blah blah.
-
-# ...
-
-dependencies:
-  flutter:
-    sdk: flutter
-
-  provider: ^3.0.0
-
-dev_dependencies:
-  # ...
-```
-
-Now you can `import 'package:provider/provider.dart';`
-and start building.
-
-现在你可以 `import 'package:provider/provider.dart';`，开始写代码吧。
+通过跟着这些文章的学习，你已经大大提高了
+创建一个包含状态管理应用的能力。
+试着自己用 `provider` 构建一个应用来掌握这些技能吧！
 
 ## 我们的样例 {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
 

@@ -3,6 +3,8 @@ title: Pass arguments to a named route
 title: 给特定的 route 传参
 description: How to pass arguments to a named route.
 description: 如何向命名路由传参。
+tags: cookbook, 实用教程, 路由
+keywords: 参数传递,读取参数
 prev:
   title: Navigate with named routes
   title: 导航到对应名称的 routes 里
@@ -44,7 +46,7 @@ route and read the arguments using `ModalRoute.of()`
 and `onGenerateRoute()` using the following steps:
 
 这个章节讲解的是如何给特定路由传递参数并使用
-`ModelRoute.of()` 和 `onGenerateRoute()` 来读取参数。
+`ModalRoute.of()` 和 `onGenerateRoute()` 来读取参数。
 
 ## Directions
 
@@ -169,7 +171,7 @@ arguments.
 ```dart
 // A button that navigates to a named route. The named route
 // extracts the arguments by itself.
-RaisedButton(
+ElevatedButton(
   child: Text("Navigate to screen that extracts arguments"),
   onPressed: () {
     // When the user taps the button, navigate to a named route
@@ -291,7 +293,7 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             // A button that navigates to a named route that. The named route
             // extracts the arguments by itself.
-            RaisedButton(
+            ElevatedButton(
               child: Text("Navigate to screen that extracts arguments"),
               onPressed: () {
                 // When the user taps the button, navigate to a named route
@@ -309,7 +311,7 @@ class HomeScreen extends StatelessWidget {
             // A button that navigates to a named route. For this route, extract
             // the arguments in the onGenerateRoute function and pass them
             // to the screen.
-            RaisedButton(
+            ElevatedButton(
               child: Text("Navigate to a named that accepts arguments"),
               onPressed: () {
                 // When the user taps the button, navigate to a named route

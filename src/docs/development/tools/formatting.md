@@ -3,8 +3,9 @@ title: Code formatting
 title: 代码格式化
 description: Flutter's code formatter formats your code along recommended style guidelines.
 description: Flutter 的代码格式化工具以及推荐的代码格式。
+tags: SDK,Flutter SDK
+keywords: 代码格式化,dartfmt,代码审查,code review
 ---
-
 
 While your code might follow any preferred style&mdash;in our
 experience&mdash;teams of developers might find it more productive to:
@@ -22,7 +23,10 @@ experience&mdash;teams of developers might find it more productive to:
 The alternative is often tiring formatting debates during code reviews,
 where time might be better spent on code behavior rather than code style.
 
-如果没有统一的代码样式，当进行代码审查的时候，可能会为了一些样式的问题而进行争论，从而浪费时间。代码审查最好把时间花在代码的行为上，而不是代码的样式上。
+如果没有统一的代码样式，当进行代码审查的时候，
+可能会为了一些样式的问题而进行争论从而浪费时间。
+代码审查最好把时间花在代码的行为上，
+而不是代码的样式上。
 
 ## Automatically formatting code in Android Studio and IntelliJ
 
@@ -113,14 +117,10 @@ Here is an example of automatically formatted code *with* trailing commas:
 
 自动格式化的时候，末尾处 *加入* 逗号的例子：
 
-![Automatically formatted code with trailing commas]({% asset tools/android-studio/trailing-comma-with.png @path %})
-
-![末尾处有逗号进行代码自动格式化的情况(Automatically formatted code with trailing commas)]({% asset tools/android-studio/trailing-comma-with.png @path %})
+![末尾处有逗号进行代码自动格式化的情况(Automatically formatted code with trailing commas)]({% asset tools/android-studio/trailing-comma-with.png @path %}){:width="100%"}
 
 And the same code automatically formatted code *without* trailing commas:
 
 同样的代码在进行自动格式化的时候，末尾处没有逗号的例子：
 
-![Automatically formatted code without trailing commas]({% asset tools/android-studio/trailing-comma-without.png @path %})
-
-![末尾处没有逗号进行代码自动格式化的情况(Automatically formatted code without trailing commas)]({% asset tools/android-studio/trailing-comma-without.png @path %})
+![末尾处没有逗号进行代码自动格式化的情况(Automatically formatted code without trailing commas)]({% asset tools/android-studio/trailing-comma-without.png @path %}){:width="100%"}

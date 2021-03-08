@@ -3,6 +3,8 @@ title: Debugging Flutter apps
 title: 调试 Flutter 应用
 description: How to debug your app using the DevTools suite.
 description: 如何使用开发者工具来调试你的 Flutter 应用。
+tags: Flutter测试
+keywords: Flutter调试工具,Flutter开发者工具,Flutter性能调试,Flutter打断点
 ---
 
 There's a wide variety of tools and features to help debug
@@ -394,7 +396,7 @@ print(<Widget>{ // this is the syntax for a Set<Widget> literal
 ```
 
 It should print 1 (rather than 2) because the two constants are the same and sets
-coallesce duplicate values (and indeed the analyzer complains that
+coalesce duplicate values (and indeed the analyzer complains that
 "Two elements in a set literal shouldn't be equal"). As expected, in release
 builds, it does print 1. However, in debug builds it prints 2. This is because the
 flutter tool injects the source location of Widget constructors into the code at compile

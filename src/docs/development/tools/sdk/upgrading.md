@@ -5,6 +5,8 @@ short-title: Upgrading
 short-title: 升级
 description: How to upgrade Flutter.
 description: 如何升级你的 Flutter 版本
+tags: 升级,下载,Flutter版本
+keywords: 中国镜像,升级Flutter
 ---
 
 No matter which one of the Flutter [release channels][]
@@ -18,7 +20,7 @@ Flutter SDK or the packages that your app depends on.
 
 ## 升级 Flutter SDK
 
-To update both the Flutter SDK use the `flutter upgrade` command:
+To update the Flutter SDK use the `flutter upgrade` command:
 
 如果要升级 Flutter SDK 的话，请使用 `flutter upgrade` 命令：
 
@@ -48,7 +50,7 @@ Flutter has four [release channels][]:
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
-Flutter 有 [4个发布渠道][release channels]，分别是 
+Flutter 有 [4个发布渠道][release channels]，分别是
 **stable**, **beta**, **dev**, 和 **master**。
 我们推荐使用 **{{site.sdk.channel}}** 渠道
 除非你需要更加新的版本。
@@ -78,11 +80,11 @@ $ flutter upgrade
 {{site.alert.note}}
 
   If you need a specific version of the Flutter SDK,
-  you can download it from the [Flutter SDK archive][].
-  
+  you can download it from the [Flutter SDK releases][].
+
   如果你需要某个特定的 Flutter SDK 版本,
-  你可以从 [SDK 归档][Flutter SDK archive] 页面下载.
-  
+  你可以从 [SDK 版本][Flutter SDK releases] 页面下载.
+
 {{site.alert.end}}
 
 
@@ -137,22 +139,7 @@ we'd love to hear from you!
 你也可以在 [Flutter 开发邮件列表][flutter-dev] 上提问！
 除了订阅接收公告外我们很乐意听取您的意见！
 
-## Selecting a specific version
-
-## 选择特定版本
-
-If you have a specific version of Flutter that you'd like to switch to,
-you can use the `flutter version` command:
-
-如果想切换到特定版本的 Flutter，
-你可以使用 `flutter version` 命令：
-
-```terminal
-$ flutter version v1.9.1+hotfix.3
-```
-
-
-[Flutter SDK archive]: /docs/development/tools/sdk/archive
+[Flutter SDK releases]: /docs/development/tools/sdk/releases
 [release channels]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [flutter-dev]: {{site.groups}}/forum/#!forum/flutter-dev

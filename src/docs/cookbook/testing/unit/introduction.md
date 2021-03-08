@@ -4,6 +4,8 @@ title: 单元测试介绍
 description: How to write unit tests.
 description: 如何编写单元测试。
 short-title: Introduction
+tags: cookbook, 实用教程, 测试
+keywords: 单元测试,test package,flutter_test,IDE
 prev:
   title: Perform scrolling
   title: 列表滚动
@@ -69,9 +71,8 @@ see the [test package documentation][].
 
 ## 1. 添加测试依赖 —— 将 `test` 或者 `flutter_test`加入依赖文件
 
-If you're working on a Dart package that does not depend on Flutter,
-you can import the `test` package. The test package provides the core
-functionality for writing tests in Dart. This is the best approach when
+The `test` package provides the core functionality for 
+writing tests in Dart. This is the best approach when
 writing packages consumed by web, server, and Flutter apps.
 
 如果 Dart package 没有依赖 Flutter，可以导入 `test` package。
@@ -241,7 +242,8 @@ This is often the best option while writing tests because it provides the
 fastest feedback loop as well as the ability to set breakpoints.
 
 IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
-用这种方式执行测试是最好的，因为它可以提供最快的反馈闭环，而且还支持断点调试。
+用这种方式执行测试是最好的，因为它可以提供最快的反馈闭环，
+而且还支持断点调试。
 
 
   * **IntelliJ**

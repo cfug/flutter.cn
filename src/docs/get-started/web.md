@@ -3,6 +3,8 @@ title: Building a web application with Flutter
 title: 使用 Flutter 构建 Web 应用
 description: Instructions for creating a Flutter app on the web.
 description: 创建在 Web 平台上运行的 Flutter 应用。
+tags: Flutter安装,Flutter起步教程
+keywords: Flutter Web,Flutter Web教程
 ---
 
 This page covers the following steps for getting started with web support:
@@ -61,7 +63,7 @@ you need the following software:
   for more details.
 
   可选：支持 Flutter 的集成开发环境 (IDE)，你可以选择使用
-  [Android Studio CN][]、[IntelliJ IDEA][] 或者 [Visual Studio Code][]，
+  [Android Studio][]、[IntelliJ IDEA][] 或者 [Visual Studio Code][]，
   并安装 [Flutter 和 Dart 插件的 IDE 插件][install the Flutter and Dart plugins]
   以获取编程语言支持和在 IDE 里进行编译、调试、运行、重新加载等功能。
   了解更多详细信息，请查看文档：[编辑器设定][setting up an editor]。
@@ -163,8 +165,10 @@ the `flutter devices` command outputs a `Chrome` device
 that opens the Chrome browser with your app running,
 and a `Web Server` that provides the URL serving the app.
 
-一旦开启了 Web 支持，运行 `flutter devices`
-命令会输出一个名为 `Chrome` 的设备信息。
+一旦开启了 Web 支持，运行 `flutter devices`，
+命令会输出一个名为 `Chrome` 的设备信息，
+开启一个为 Web 应用提供服务的 `Web Sever`，
+并打开 Chrome 浏览器并访问某个 URL 地址。
 
 ```terminal
 $ flutter devices
@@ -179,7 +183,8 @@ You should now see **Chrome (web)** and
 **Web Server (web)** in the device pulldown.
 
 **在开启了 Web 支持后，需要重启 IDE**。
-你现在可以在设备下拉列表中看到 **Chrome (web)**。
+你现在可以在设备下拉列表中看到
+**Chrome (web)** 和 **Web Server (web)**。
 
 The `flutter run` command launches the application using the
 [development compiler][] in a Chrome browser.
@@ -293,14 +298,28 @@ flutter run -d chrome
 The `flutter run` command launches the application using the
 [development compiler] in a Chrome browser.
 
-运行 `flutter run` 命令将使用 Chrome 浏览器的
-[development compiler][] 来启动应用程序。
+运行 `flutter run` 命令将使用 Dart 的
+[开发编译器 dartdevc][development compiler]
+在 Chrome 浏览器中启动应用程序。
+
+{{site.alert.warning}}
+
+  **Hot reload not supported on web**
+  Currently, Flutter web supports **hot restart**,
+  but not **hot reload**.
+  
+  **尚未支持在 Web 平台使用热重载**
+  目前 Flutter Web 平台支持 **热重启**，
+  尚不支持 **热重载**。
+{{site.alert.end}}
 
 ### Build
 
+### 使用 build 命令
+
 Run the following command to generate a release build:
 
-运行下面命令以生成发行构建：
+运行下面命令以生成发行版构建：
 
 ```terminal
 flutter build web
@@ -322,14 +341,23 @@ Release 构建产物使用 [dart2js][]（不是 dartdevc）
 输出文件在 `build/web` 目录下，
 包括需要一起提供的 `assets` 资源文件。
 
+You can also include `--web-renderer html`  or `--web-renderer canvaskit` to
+select between the HTML or CanvasKit renderers, respectively. For more
+information, see [Web renderers][].
+
+你也可以使用 `--web-renderer html` 或
+`--web-renderer canvaskit` 来切换 HTML 或 CanvasKit 渲染器。
+更多信息请参阅[网页渲染器][Web renderers]。
+
 For more information, see
 [Build and release a web app][].
 
-了解更多相关信息，请查阅文档：[Build and release a web app][]。
+了解更多相关信息，请查阅文档：
+[打包并发布 Web 应用][Build and release a web app]。
 
 ## Add web support to an existing app
 
-### 向现有应用添加 Web 支持
+## 向现有应用添加 Web 支持
 
 To add web support to an existing project,
 run the following command in a
@@ -344,17 +372,18 @@ $ flutter create .
 
 [Build and release a web app]: /docs/deployment/web
 [creating a new Flutter project]: /docs/get-started/test-drive
-[dart2js]: https://dart.dev/tools/dart2js
+[dart2js]: {{site.dart-site}}/tools/dart2js
 [desktop support]: /desktop
-[development compiler]: https://dart.dev/tools/dartdevc
+[development compiler]: {{site.dart-site}}/tools/dartdevc
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [install the Flutter and Dart plugins]: /docs/get-started/editor
 [setting up an editor]: /docs/get-started/editor
 [web FAQ]: /docs/development/platform-integration/web
 [Chrome]: https://www.google.com/chrome/
-[Chrome-CN]: https://www.google.com/chrome/
+[Chrome-CN]: https://www.google.cn/chrome/
 [Flutter SDK]: https://flutter.dev/docs/get-started/install
 [Android Studio]: https://developer.android.com/studio
-[Android Studio CN]: https://developer.android.com/studio
+[Android Studio CN]: https://developer.android.google.cn/studio
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [Visual Studio Code]: https://code.visualstudio.com/
+[Web renderers]: /docs/development/tools/web-renderers

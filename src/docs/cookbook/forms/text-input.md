@@ -3,6 +3,8 @@ title: Create and style a text field
 title: 文本框的创建和设定
 description: How to implement a text field.
 description: 如何实现一个文本框。
+tags: cookbook, 实用教程, 表格交互
+keywords: 文本框,实现,Flutter搜索框
 prev:
   title: Build a form with validation
   title: 构建一个有验证判断的表单

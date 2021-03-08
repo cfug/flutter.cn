@@ -3,6 +3,8 @@ title: Fade a widget in and out
 title: Widget 的淡入淡出效果
 description: How to fade a widget in and out.
 description: 如何淡入淡出一个 widget。
+tags: cookbook, 实用教程, 动画效果
+keywords: 淡入淡出效果,隐藏元素,用户体验
 prev:
   title: Animate the properties of a Container
   title: Container 里的动画渐变效果

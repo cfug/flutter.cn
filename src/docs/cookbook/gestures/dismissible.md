@@ -3,6 +3,8 @@ title: Implement swipe to dismiss
 title: 实现「滑动清除」效果
 description: How to implement swiping to dismiss or delete.
 description: 如何实现滑动取消或清除效果。
+tags: cookbook, 实用教程, 手势
+keywords: 滑动清除
 prev:
   title: Handle taps
   title: 捕获和处理点击动作

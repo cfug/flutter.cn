@@ -3,14 +3,16 @@ title: Parse JSON in the background
 title: 在后台处理 JSON 数据解析
 description: How to perform a task in the background.
 description: 如何在后台执行任务。
+tags: cookbook, 实用教程, 网络请求
+keywords: json,后台任务,调度,fps,卡顿
 prev:
   title: Make authenticated requests
   title: 发起 HTTP 认证授权请求
   path: /docs/cookbook/networking/authenticated-requests
 next:
-  title: Work with WebSockets
-  title: 发起 WebSockets 请求
-  path: /docs/cookbook/networking/web-sockets
+  title: Send data to the internet
+  title: 发送网络数据请求
+  path: /docs/cookbook/networking/send-data
 ---
 
 By default, Dart apps do all of their work on a single thread.
@@ -18,15 +20,17 @@ In many cases, this model simplifies coding and is fast enough
 that it does not result in poor app performance or stuttering animations,
 often called "jank."
 
-Dart 应用通常只会在单线程中处理它们的工作。并且在大多数情况中，
-这种模式不但简化了代码而且速度也够快，基本不会出现像动画卡顿以及性能不足这种「不靠谱」的问题。
+Dart 应用通常只会在单线程中处理它们的工作。
+并且在大多数情况中，
+这种模式不但简化了代码而且速度也够快，
+基本不会出现像动画卡顿以及性能不足这种「不靠谱」的问题。
 
 However, you might need to perform an expensive computation, such as parsing a
 very large JSON document. If this work takes more than 16 milliseconds,
 your users experience jank.
 
 但是，当你需要进行一个非常复杂的计算时，例如解析一个巨大的 JSON 文档。
-如果这项工作耗时超过了 16 毫秒， 那么你的用户就会感受到掉帧。
+如果这项工作耗时超过了 16 毫秒，那么你的用户就会感受到掉帧。
 
 To avoid jank, you need to perform expensive computations like this in the
 background. On Android, this means scheduling work on a different thread.
@@ -83,7 +87,8 @@ that contains a list of 5000 photo objects from the
 using the [`http.get()`][] method.
 
 在这个例子中，你将会使用 [`http.get()`][] 方法通过
-[JSONPlaceholder REST API][] 获取到一个包含 5000 张图片对象的超大 JSON 文档。
+[JSONPlaceholder REST API][] 获取到一个包含
+5000 张图片对象的超大 JSON 文档。
 
 <!-- skip -->
 ```dart
@@ -169,7 +174,7 @@ Now, use the following instructions to update the
 ```dart
 // A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
-  final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+  final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
 
   return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
 }
@@ -188,7 +193,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 If you run the `fetchPhotos()` function on a slower device,
 you might notice the app freezes for a brief moment as it parses and
-converts the JSON. This is jank, and you want to be rid of it.
+converts the JSON. This is jank, and you want to get rid of it.
 
 如果你在一台很慢的手机上运行 `fetchPhotos()` 函数，
 你或许会注意到应用会有点卡顿，因为它需要解析并转换 json。

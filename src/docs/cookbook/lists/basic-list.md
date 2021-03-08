@@ -3,6 +3,8 @@ title: Use lists
 title: 基础列表
 description: How to implement a list.
 description: 如何实现列表。
+tags: cookbook, 实用教程, 列表相关
+keywords: 基础列表
 prev:
   title: Work with cached images
   title: 使用缓存图片

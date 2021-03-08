@@ -3,6 +3,8 @@ title: Install and run DevTools from Android Studio
 title: 在 Android Studio 上安装和运行开发者工具
 description: Learn how to install and use DevTools from Android Studio.
 description: 学习如何在 Android Studio 上使用开发者工具。
+tags: Flutter开发工具,DevTools
+keywords: Android Studio,安卓,调试
 ---
 
 ## Install the Flutter plugin
@@ -53,10 +55,10 @@ you can start DevTools using one of the following:
 * Select the **Open DevTools** action from the **More Actions** 
   menu in the Flutter Inspector view.
 
-  Flutter Inspector 里，在 **More Actions** 
+  Flutter Inspector 里，在 **More Actions**
   的菜单中选择 **Open DevTools**。
-  
-![screenshot of Open DevTools button]({% asset tools/devtools/android_studio_open_devtools.png @path %})
+
+![screenshot of Open DevTools button]({% asset tools/devtools/android_studio_open_devtools.png @path %}){:width="100%"}
 
 ## Launch DevTools from an action
 

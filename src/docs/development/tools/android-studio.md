@@ -3,6 +3,8 @@ title: Android Studio and IntelliJ
 title: 在 Android Studio 或 IntelliJ 里开发 Flutter 应用
 description: How to develop Flutter apps in Android Studio or other IntelliJ products.
 description: 如何在 Android Studio 或者其他类 IntelliJ 产品里开发 Flutter 应用。
+tags: SDK,Flutter SDK
+keywords: Android Studio,IntelliJ,安装,检查更新,创建新项目
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
@@ -168,11 +170,11 @@ Dart 插件的代码分析，可以做到：
 * Viewing all current source code problems
   (**View > Tool Windows > Dart Analysis**).
   Any analysis issues are shown in the Dart Analysis pane:<br>
-  ![Dart Analysis pane]({% asset tools/android-studio/dart-analysis.png @path %})
+  ![Dart Analysis pane]({% asset tools/android-studio/dart-analysis.png @path %}){:width="90%"}
 
   查看当前存在的代码问题（**View > Tool Windows > Dart Analysis**），
   所有问题会在 Dart Analysis 窗口中显示<br>
-  ![Dart Analysis 窗口]({% asset tools/android-studio/dart-analysis.png @path %})
+  ![Dart Analysis 窗口]({% asset tools/android-studio/dart-analysis.png @path %}){:width="90%"}
 
 ## Running and debugging
 
@@ -190,7 +192,8 @@ Dart 插件的代码分析，可以做到：
     DevTools replaces the previous browser-based profiling
     tool, Observatory.
 
-    使用 [开发者工具 (DevTools)][DevTools], 运行在浏览器里的一系列调试和分析工具，
+    使用 [开发者工具 (DevTools)][DevTools], 
+    运行在浏览器里的一系列调试和分析工具，
     **也包括 Flutter inspector**，开发者工具替代了之前的
     Observatory 分析工具。
     
@@ -336,10 +339,11 @@ information, start the app in **Debug** mode, and then open
 the Performance tool window using
 **View > Tool Windows > Flutter Performance**.
 
-在 **Debug** 模式下启动应用后，使用 **View > Tool Windows > Flutter Performance**
-打开性能工具窗口，以查看性能数据，以及 widget 的重载信息。
+在 **Debug** 模式下启动应用后，使用
+**View > Tool Windows > Flutter Performance**
+打开性能工具窗口，以查看性能数据以及 widget 的 rebuild 信息。
 
-![Flutter performance window]({% asset tools/android-studio/widget-rebuild-info.png @path %})
+![Flutter performance window]({% asset tools/android-studio/widget-rebuild-info.png @path %}){:width="90%"}
 
 To see the stats about which widgets are being rebuilt, and how often,
 click **Show widget rebuild information** in the **Performance** pane.
@@ -465,7 +469,7 @@ keyboard shortcut (`Alt`+`Enter` on Linux and Windows,
 （在 Linux 和 Windows 上使用 `Alt`+`Enter`，在 macOS 上使用 `Option`+`Return`），
 如下图所示：
 
-![IntelliJ editing assists]({% asset tools/android-studio/assists.gif @path %})
+![IntelliJ editing assists]({% asset tools/android-studio/assists.gif @path %}){:width="100%"}
 
 Quick Fixes are similar, only they are shown with a piece of code has an error
 and they can assist in correcting it. They are indicated with a red lightbulb.
@@ -511,7 +515,7 @@ completion window:
 
 实时模板用于增加典型代码结构的输入速度。输入前缀后，在代码完成窗口中选择它：
 
-![IntelliJ live templates]({% asset tools/android-studio/templates.gif @path %})
+![IntelliJ live templates]({% asset tools/android-studio/templates.gif @path %}){:width="100%"}
 
 The Flutter plugin includes the following templates:
 
@@ -565,7 +569,7 @@ Right click the binding you want to change and _Add Keyboard Shortcut_.
 在右上角的搜索框输入 **flutter**。
 右键点击你想修改的快捷键，点击 **Add Keyboard Shortcut**
 
-![IntelliJ settings keymap]({% asset tools/android-studio/keymap-settings-flutter-plugin.png @path %})
+![IntelliJ settings keymap]({% asset tools/android-studio/keymap-settings-flutter-plugin.png @path %}){:width="100%"}
 
 ### Hot reload vs. hot restart
 
@@ -631,7 +635,8 @@ version of Android Studio and the Flutter plugins.
   the root of your flutter app named `android`. Right click on it,
   then select **Flutter > Open Android module in Android Studio**.
 
-  在[“项目视图”][]中，你可以在 flutter 应用的根目录下看到一个 `android` 的子目录。
+  在[“项目视图 (project view)”]["project view"]中，
+  你可以在 flutter 应用的根目录下看到一个 `android` 的子目录。
   右键点击它，选择 **Flutter > Open Android module in Android Studio**。
 
 * OR, you can open any of the files under the `android` subdirectory for
@@ -647,7 +652,8 @@ For both options, Android Studio gives you the option to use separate windows or
 to replace the existing window with the new project when opening a second
 project. Either option is fine.
 
-这两种方法，Android Studio 都允许你选择使用单独的窗口，或替换现有窗口打开新项目，两种都是可以的。
+这两种方法，Android Studio 都允许你选择使用单独的窗口，
+或替换现有窗口打开新项目，两种都是可以的。
 
 If you don't already have the Flutter project opened in Android studio,
 you can open the Android files as their own project from the start:
@@ -657,20 +663,24 @@ you can open the Android files as their own project from the start:
 1. Click **Open an existing Android Studio Project** on the Welcome
    splash screen, or **File > Open** if Android Studio is already open.
 
-   点击欢迎窗口中的 **Open an existing Android Studio Project**。如果 Android Studio 已打开，也可以点击 **File > Open**。
+   点击欢迎窗口中的 **Open an existing Android Studio Project**。
+   如果 Android Studio 已打开，也可以点击 **File > Open**。
 
 2. Open the `android` subdirectory immediately under the flutter app root.
    For example if the project is called `flutter_app`,
    open `flutter_app/android`.
 
-   打开 flutter 应用根目录下的 `android` 子目录。例如，项目名为 `flutter_app`，则打开 `flutter_app/android`。
+   打开 flutter 应用根目录下的 `android` 子目录。
+   例如，项目名为 `flutter_app`，则打开 `flutter_app/android`。
 
 If you haven't run your Flutter app yet, you might see Android Studio report a
 build error when you open the `android` project. Run `flutter pub get` in
 the app's root directory and rebuild the project by selecting **Build > Make**
 to fix it.
 
-如果你还未运行过你的 Flutter 应用，可能会在打开 `android` 项目时，看到 Android Studio 构建失败的报告。运行项目根目录的 `flutter pub get`，并通过点击 **Build > Make** 重建项目，可修复该问题。
+如果你还未运行过你的 Flutter 应用，可能会在打开 `android` 项目时，
+看到 Android Studio 构建失败的报告。运行项目根目录的 `flutter pub get`，
+并通过点击 **Build > Make** 重建项目，可修复该问题。
 
 ## Editing Android code in IntelliJ IDEA {#edit-android-code}
 

@@ -10,9 +10,9 @@
   
      打开 **View > Command Palette**。
     
-  1. Type "flutter", and select the **Flutter: New Project**.
+  1. Type "flutter", and select the **Flutter: New Application Project**.
      
-     输入 "flutter"，选择 **Flutter: New Project**。
+     输入 "flutter"，选择 **Flutter: New Application Project**。
     
   1. Enter a project name, such as `myapp`, and press **Enter**.
      
@@ -60,8 +60,26 @@ contains a simple demo app that uses [Material Components][].
       
       如果没有可用设备而且你也打算用模拟器，点击 **No Devices** 然后打开一个模拟器。
       
+      {{site.alert.warning}}
+
+      You may not see **Start iOS Simulator** option when you click **No Devices** in VS Code. If you are on Mac then you may have to run following command in terminal to launch a simulator.
+
+      当你在 VS Code 中点击 **No Devices** 的时候，你也许看不到 **Start iOS Simulator** 选项。如果你使用 Mac，你可能得运行以下命令才能启动模拟器。
+
+      ```
+      open -a simulator
+      ```
+      
+      In Android it is not possible to launch iOS simulator.
+
+      Android 是不可能启动 iOS 模拟器的。
+
+      {{site.alert.end}}
+
     - To setup a real device, follow the device-specific instructions on the
       [Install][] page for your OS.
+
+      要设置真实设备，请在操作系统的[安装][Install]页面进行操作。
 
  1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
     

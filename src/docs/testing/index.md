@@ -3,6 +3,8 @@ title: Testing Flutter apps
 title: 测试 Flutter 应用
 description: Learn more about the different types of testing and how to write them.
 description: 了解并编写不同类型的测试。
+tags: Flutter测试
+keywords: 单元测试,Widget 测试,组件测试,集成测试,代码覆盖率
 ---
 
 The more features your app has, the harder it is to test manually.
@@ -12,6 +14,15 @@ you publish it, while retaining your feature and bug fix velocity.
 通常一个应用的功能越多，手工测试就越困难。
 自动化测试在发布之前运行，有助于保证我们应用的稳定性和功能的完整性，
 并且可以快速修复问题。
+
+{{site.alert.note}}
+
+  For hands-on practice of testing Flutter apps, see the
+  [How to test a Flutter app][] codelab.
+  
+  动手试试看测试你的 Flutter 应用？
+  请关注 codelab：[如何测试一个 Flutter 应用][How to test a Flutter app]。
+{{site.alert.end}}
 
 Automated testing falls into a few categories:
 
@@ -136,6 +147,11 @@ from the test driver code to avoid skewing the results.
 如 iOS 模拟器 (iOS Simulator) 或 Android 模拟器 (Android Emulator) 。
 测试中的应用通常与测试驱动程序代码隔离，以避免结果出现偏差。
 
+For more information on how to write integration tests, see the [integration
+testing page][].
+
+更多关于如何编写集成测试的相关信息，请参阅[集成测试文档][integration testing page]。
+
 ### Recipes
 
 ### 更多信息
@@ -190,7 +206,9 @@ integration services, see the following:
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
 [Continuous delivery using fastlane with Flutter]: /docs/deployment/cd#fastlane
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
+[How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing
 [mocked out]: /cookbook/testing/mocking
 [Test Flutter apps on Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/#testing-the-flutter-app
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
 [Test Flutter apps on Travis]: {{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c
+[integration testing page]: /docs/testing/integration-tests

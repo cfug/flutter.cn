@@ -3,6 +3,8 @@ title: "Basic Flutter layout concepts"
 title: "Flutter 布局基础教程"
 description: "A codelab that teaches basic Flutter layout concepts through DartPad examples and exercises."
 description: "使用 DartPad2 工具教你如何构建 Flutter 布局"
+tags: 教程, 代码实验室
+keywords: Flutter布局教程
 toc: true
 ---
 Welcome to the Flutter layout codelab,
@@ -841,30 +843,32 @@ the following example uses an image from the network.
   下面的样例将会显示一张储存在远端 [GitHub][] 上的图片。
   `Image.network` 方法接收一个含有图片 url 的字符串。
 
-  In this example, `Image.network` contains a short URL. 
+  In this example, `Image.network` contains a non-working URL.
 
-  在这个样例中，`Image.network` 包含了一个短小的 URL。
+  在这个样例中，`Image.network` 包含了一个无法访问的 URL。
+  
+  In this example, `Image.network` contains a non-working URL.
 
-1. Click the **Run** button. 
+  **1.** Click the **Run** button.
+  
+         点击 **运行** 按钮
 
-   点击**运行**按钮
+  **2.** Change the non-working URL to the actual URL:
+         `https://raw.githubusercontent.com/flutter/website/master/examples/layout/sizing/images/pic1.jpg`
+  
+         将那个无法访问的 URL 更换成可以访问的 URL:
+         `https://raw.githubusercontent.com/flutter/website/master/examples/layout/sizing/images/pic1.jpg`
 
-1. Change the short URL to the actual URL: 
-
-   将短 URL 替换为实际 URL：
-
-  `https://github.com/flutter/website/blob/master/examples/layout/sizing/images/pic3.jpg?raw=true`
-
-1. Then change `pic3.jpg` to `pic1.jpg` or `pic2.jpg`, 
-   and run again. 
-
-   然后将 `pic3.jpg` 改为 `pic1.jpg` 或 `pic2.jpg`，然后重新运行。
-
+  **3.** Then change `pic1.jpg` to `pic2.jpg` or `pic3.jpg`,
+         and run again.
+         
+         然后将 `pic3.jpg` 改为 `pic1.jpg` 或 `pic2.jpg`，然后重新运行。
+         
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/b42464ac4e9bff23ab567721581183aa
+  Gist: https://gist.github.com/ee5d93b2c9bb05776f66dbc74dcd0ae9
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=b42464ac4e9bff23ab567721581183aa&amp;theme=dark&amp;split=60&amp;ga_id=display_image" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=ee5d93b2c9bb05776f66dbc74dcd0ae9&amp;theme=dark&amp;split=60&amp;ga_id=display_image" width="100%" height="400px"></iframe>
 
 ## Putting it all together
 

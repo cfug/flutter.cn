@@ -3,6 +3,8 @@ title: Firebase
 title: 使用 Firestore 调用 Firebase 服务
 description: How to use Firebase and Firestore with Flutter.
 description: 如何使用 Firestore 调用 Firebase 服务。
+tags: Firebase,Firestore,数据调用和后端
+keywords: 使用Firebase服务
 ---
 
 Firebase is a Backend-as-a-Service (BaaS) app development platform
@@ -10,7 +12,9 @@ that provides hosted backend services such as a realtime database,
 cloud storage, authentication, crash reporting, machine learning,
 remote configuration, and hosting for your static files.
 
-Firebase 是一个用于开发 BaaS 应用的开发平台，它提供了诸如实时数据库、云存储、鉴权、Crash 上报、机器学习、远程配置以及托管你的静态文件等后台托管服务。
+Firebase 是一个用于开发 BaaS 应用的开发平台，
+它提供了诸如实时数据库、云存储、鉴权、Crash 上报、
+机器学习、远程配置以及托管你的静态文件等后台托管服务。
 
 {{site.alert.note}}
 

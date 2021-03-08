@@ -1,7 +1,9 @@
 ---
 title: "Explicit animations"
-description: "A codelab that uses interactive examples and exercises to teach  how to use explicit animations in Flutter."
+description: "A codelab that uses interactive examples and exercises to teach how to use explicit animations in Flutter."
 toc: true
+tags: 教程, 代码实验室
+keywords: 
 diff2html: true
 js:
   - defer: true
@@ -638,7 +640,7 @@ registering listeners, and play or sequence controls:
   the current value of the animation&mdash;just
   use the `value` property.
 * To "play" an animation,
-  you can use one one of several methods that
+  you can use one of several methods that
   initiate the sequence of changes to `value`.
   For example, to "play" an animation
   from its starting value to its ending value,
@@ -710,7 +712,7 @@ of the editor:
 
 
   `AnimationController`
-  abstracts away the the work of interpolation,
+  abstracts away the work of interpolation,
   allowing you to reason about and create an animation
   in terms of its duration, and the starting and ending
   values of the property that you are animating:

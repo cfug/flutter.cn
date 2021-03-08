@@ -5,6 +5,8 @@ description: How to create a Flutter web app.
 description: 如何创建一个 Flutter 网页应用。
 short-title: Write your first web app
 short-title: 编写你的第一个网页应用
+tags: Flutter安装,Flutter起步教程
+keywords: Flutter Web应用,DartPad,在线教程,零基础
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -105,11 +107,11 @@ The animated GIF shows how the app works at the completion of this lab.
 
   * [Flutter SDK][]
   * [Chrome browser][]
-  
+
     [Chrome 浏览器][Chrome browser]
-    
+
   * [Text editor 或 IDE][editor]
-  
+
     [文本编辑器 或 IDE][editor]
 
   For a web-only codelab,
@@ -189,7 +191,7 @@ $ flutter doctor
 
 It's okay if the Android toolchain, Android Studio,
 and the Xcode tools are not installed,
-since our app is intended for the web only.
+since the app is intended for the web only.
 If you later want this app to work on mobile,
 you will need to do additional installation and setup.
 
@@ -308,9 +310,15 @@ class _SignUpFormState extends State<SignUpForm> {
               decoration: InputDecoration(hintText: 'Username'),
             ),
           ),
-          FlatButton(
-            color: Colors.blue,
-            textColor: Colors.white,
+          TextButton(
+            style: ButtonStyle(
+              foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled) ? null : Colors.white;
+              }),
+              backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+              }),
+            ),
             onPressed: null,
             child: Text('Sign up'),
           ),
@@ -392,7 +400,7 @@ From your IDE, editor, or at the command line,
   For more information, see [Introduction to declarative UI][].
 
   应用程序的所有的 UI 的都是通过 Dart 构建的。
-  你可以通过文档 
+  你可以通过文档
   [声明式 UI 介绍][Introduction to declarative UI] 了解到更多的信息。
 
 * The app’s UI adheres [Material Design][],
@@ -440,7 +448,7 @@ all of your edits will be made to the private
 The Dart compiler enforces privacy for any identifier
 prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
-  
+
   <h4 class="no_toc">有趣的事</h4>
 Dart 编译器会将任何带有下划线前缀标识的视为私有。可查阅
 [Dart 文档 —— 高效 Dart 语言指南：代码风格][Effective Dart Style Guide]
@@ -479,7 +487,7 @@ and create a method to display it.
 `_SignUpFormState` class. This is the part of the code
 that builds the SignUp button.
 Notice how the button is defined:
-It’s a `FlatButton` with a blue background,
+It’s a `TextButton` with a blue background,
 white text that says **Sign up** and, when pressed,
 does nothing.
 
@@ -514,7 +522,7 @@ add the following function:
 
 新增 `_showWelcomeScreen` 方法。<br>
 修复上述代码导致的编译器提示错误：
-`_showWelcomeScreen` is not defined. 
+`_showWelcomeScreen` is not defined.
 （未定义 `_showWelcomeScreen`）。
 在 `build()` 方法上方添加下面的方法：
 
@@ -626,7 +634,7 @@ and update the app’s UI when the form is complete.
 <li markdown="1">Add a method to update `_formProgress`.
 In the `_SignUpFormState` class, add a new method called
 `_updateFormProgress()`:
- 
+
 添加一个用于更新进度 `_formProgress` 属性的方法。
 在 `_SignUpFormState` 类，添加一个名为 `_updateFormProgress()` 的新方法：
 
@@ -655,7 +663,7 @@ void _updateFormProgress() {
 ```
 
 This method updates the `_formProgress` field based on the
-the number of non-empty text fields.
+number of non-empty text fields.
 
 这个方法根据非空输入框的数量来更新 `_formProgress` 属性。
 
@@ -676,7 +684,7 @@ Add the code below marked as NEW:
 ```dart
 ...
 return Form(
-  onChanged: _updateFormProgress, // NEW
+  onChanged: _updateFormProgress,  // NEW
   child: Column(
 ...
 ```
@@ -696,9 +704,15 @@ screen only when the form is completely filled in:
 <!-- skip -->
 ```dart
 ...
-FlatButton(
-  color: Colors.blue,
-  textColor: Colors.white,
+TextButton(
+  style: ButtonStyle(
+    foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+      return states.contains(MaterialState.disabled) ? null : Colors.white;
+    }),
+    backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+      return states.contains(MaterialState.disabled) ? null : Colors.blue;
+    }),
+  ),
   onPressed: _formProgress == 1 ? _showWelcomeScreen : null, // UPDATED
   child: Text('Sign up'),
 ),
@@ -748,6 +762,9 @@ but becomes enabled when all three text fields contain
   and is updated in the `_updateFormProgress` method.
   When all three fields are filled in, `_formProgress` is set to 1.0.
   When `_formProgress` is set to 1.0, the `onPressed` callback is set to the
+  `_showWelcomeScreen` method. Now that its `onPressed` argument is non-null, the button is enabled.
+  Like most Material Design buttons in Flutter,
+  [TextButton][]s are disabled by default if their `onPressed` and `onLongPress` callbacks are null.
   `_showWelcomeScreen` method. The button is enabled when it's `onPressed`
   argument is non-null.
 
@@ -756,6 +773,8 @@ but becomes enabled when all three text fields contain
   当 `_formProgress` 设置为 1.0 后，
   `onPressed` 的回调函数将设置为 `_showWelcomeScreen` 方法。
   当 `onPressed` 参数变为非空时按钮将会变成可点击。
+  所有的 [TextButton][] 在 `onPressed` 和 `onLongPress` 回调为空时，默认也是无法点击的，
+  与 Flutter 中其他 Material Design 的按钮一致。
 
 * Notice that the `_updateFormProgress` passes a function to `setState()`.
   This is called an anonymous
@@ -782,14 +801,14 @@ but becomes enabled when all three text fields contain
   ```dart
   onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
   ```
-  This is a Dart conditional assignment and has the syntax: 
-  `condition ? expression1 : expression2`. 
+  This is a Dart conditional assignment and has the syntax:
+  `condition ? expression1 : expression2`.
   If the expression `_formProgress == 1` is true, the entire expression results
   in the value on the left hand side of the `:`, which is the
   `_showWelcomeScreen` method in this case.
-  
+
   Dart 三目运算语法如下: `condition ? expression1 : expression2` 。
-  如果 `_formProgress == 1` 是正确的，则会取 `:` 左侧的值，在这个示例中会取 
+  如果 `_formProgress == 1` 是正确的，则会取 `:` 左侧的值，在这个示例中会取
   `_showWelcomeScreen` 方法。
 
 ## Step 2.5: Launch Dart DevTools
@@ -861,8 +880,8 @@ launch the DevTools server as explained in the
 确认开发工具已被安装。<br>
 你是否 [已经安装 DevTools 了呢][DevTools installed]？
 如果你使用的是编辑器 (IDE) ，先确认已经用 [VS Code][] 和
- [Android Studio and IntelliJ][] 文档描述的方式安装 Flutter 
-和 Dart 插件。如果你使用的是命令行的方式，用 [DevTools command line][] 
+ [Android Studio and IntelliJ][] 文档描述的方式安装 Flutter
+和 Dart 插件。如果你使用的是命令行的方式，用 [DevTools command line][]
 文档说明的方式启动开发者工具服务 （DevTools server）。
 
 </li>
@@ -967,7 +986,7 @@ Place a breakpoint on the line with the for loop by clicking to the
 left of the line number. The breakpoint now appears
 in the **Breakpoints** section to the left of the window.
 
-在 for 循环行的行数前面单击设置断点。 
+在 for 循环行的行数前面单击设置断点。
 这个断点将显示在窗口左侧的 **Breakpoints** 栏中。
 
 </li>
@@ -994,7 +1013,7 @@ the program execution.
 Resume the app by clicking the green **Resume**
 button in the DevTools window.
 
-恢复应用程序。<br> 
+恢复应用程序。<br>
 在开发者工具窗口点击绿色的 **Resume** 按钮来恢复应用程序。
 
 </li>
@@ -1059,7 +1078,7 @@ area. The animation has the following behavior:
 <li markdown="1">Add an `AnimatedProgressIndicator`.<br>
 At the bottom of the file, add this widget:
 
-添加进度条动画效果。<br>
+添加进度条动画效果 (`AnimatedProgressIndicator`)<br>
 在文件的下面，添加下面的 widget：
 
 <!--skip-->
@@ -1107,6 +1126,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     _curveAnimation = _controller.drive(CurveTween(curve: Curves.easeIn));
   }
 
+  @override
   void didUpdateWidget(oldWidget) {
     super.didUpdateWidget(oldWidget);
     _controller.animateTo(widget.value);
@@ -1125,14 +1145,24 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   }
 }
 ```
+
+The [`didUpdateWidget`][] function updates
+the `AnimatedProgressIndicatorState` whenever
+`AnimatedProgressIndicator` changes.
+
+[`didUpdateWidget`][] 方法会在 `AnimatedProgressIndicator` 变化时更新
+`AnimatedProgressIndicatorState`。
 </li>
+
+[`didUpdateWidget`][] 方法会在 `AnimatedProgressIndicator` 变化时更新
+`AnimatedProgressIndicatorState`。
 
 <li markdown="1">Use the new `AnimatedProgressIndicator`.<br>
 Then, replace the `LinearProgressIndicator` in the `Form`
 with this new `AnimatedProgressIndicator`:
 
 使用新的进度条。<br>
-然后，使用新的 `AnimatedProgressIndicator` widget 替换表单中的 `LinearProgressIndicator` 
+然后，使用新的 `AnimatedProgressIndicator` widget 替换表单中的 `LinearProgressIndicator`
  widget，如下所示：
 
 <!--skip-->
@@ -1148,7 +1178,7 @@ with this new `AnimatedProgressIndicator`:
 ```
 
 This widget uses an `AnimatedBuilder` to animate the
-progress indicator to the latest value. 
+progress indicator to the latest value.
 
 该 widget 使用 `AnimatedBuilder` 为最新值实现了进度的动画显示。
 
@@ -1281,9 +1311,15 @@ class _SignUpFormState extends State<SignUpForm> {
               decoration: InputDecoration(hintText: 'Username'),
             ),
           ),
-          FlatButton(
-            color: Colors.blue,
-            textColor: Colors.white,
+          TextButton(
+            style: ButtonStyle(
+              foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled) ? null : Colors.white;
+              }),
+              backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+              }),
+            ),
             onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
             child: Text('Sign up'),
           ),
@@ -1392,7 +1428,7 @@ see the [Building a form with validation][]
 recipe in the [Flutter cookbook][].
 
 如果你想继续完善这个示例，或许你可以添加表单验证。
-如何继续的建议，请参考 [Flutter cookbook][] 中的 
+如何继续的建议，请参考 [Flutter cookbook][] 中的
 [Building a form with validation][]
 
 For more information on Flutter web apps,
@@ -1419,13 +1455,15 @@ Dart DevTools, or Flutter animations, see the following:
 [DevTools documentation]: /docs/development/tools/devtools
 [DevTools installed]: /docs/development/tools/devtools/overview#how-do-i-install-devtools
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
+[`didUpdateWidget`]: {{site.api}}/flutter/widgets/State/didUpdateWidget.html
 [editor]: /docs/get-started/editor
 [Effective Dart Style Guide]: {{site.dart-site}}/guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
 [Flutter cookbook]: /docs/cookbook
 [Flutter SDK]: /docs/get-started/install
 [Implicit animations]: /docs/codelabs/implicit-animations
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
-[Material Design]: https://material.io/design/introduction/#
+[Material Design]: {{site.material}}/design/introduction/#
+[TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: /docs/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/master/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html

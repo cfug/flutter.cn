@@ -5,6 +5,8 @@ short-title: Plugin setup
 short-title: 初始化 Plugin
 description: Learn how to use plugins and share your plugin's library dependencies with your existing app.
 description: 学习如何在现有应用中使用 plugin，并共享 plugin 的依赖库。
+tags: Flutter混合工程,add2app
+keywords: Android,插件依赖
 ---
 
 This guide describes how to set up your project to consume

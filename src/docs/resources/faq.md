@@ -3,6 +3,8 @@ title: FAQ
 title: 常见问题与解答
 description: Frequently asked questions and answers.
 description: 常见问题与解答
+tags: Flutter参考资料
+keywords: Flutter常见问题和答案,Flutter的优势
 ---
 
 ## Introduction
@@ -318,14 +320,14 @@ We measure our [test coverage][] on every commit.
 
 ### Flutter 是否附带调试工具？
 
-While Flutter doesn't ship with debugging tools, 
-there are many tools available that 
-can help you debug your Flutter application. 
+While Flutter doesn't ship with debugging tools,
+there are many tools available that
+can help you debug your Flutter application.
 Learn more about [debugging with Flutter][].
 
 Flutter 本身不附带调试工具，
 但我们有非常多可用的调试工具能够帮助你调试 Flutter 应用。
-你可以在[调试 Flutter][debugging with Flutter]文章中了解更多信息。
+你可以在 [调试 Flutter][debugging with Flutter] 文章中了解更多信息。
 
 ### Does Flutter come with a dependency injection framework or solution?
 
@@ -345,12 +347,14 @@ Not at this time. Share your ideas at
 
 ### Flutter 是使用什么技术构建的？
 
-Flutter is built with C, C++, Dart, and Skia
-(a 2D rendering engine). See this
-[architecture diagram][] for a better
-picture of the main components.
+Flutter is built with C, C++, Dart, and Skia (a 2D rendering engine). See this
+[architecture diagram][] for a better picture of the main components. For a more detailed
+description of the layered architecture of Flutter, read the [architectural
+overview].
 
-Flutter 使用 C、C++、Dart 和 Skia (2D 渲染引擎) 构建。您可以参阅下面这张 [架构图][architecture diagram]。
+Flutter 使用 C、C++、Dart 和 Skia (2D 渲染引擎) 构建。
+您可以参阅下面这张 [架构图][architecture diagram] 来理解其主要构建。
+若您需要了解 Flutter 的分层架构，请阅读 [架构概览][architectural overview]。
 
 ### How does Flutter run my code on Android? {#run-android}
 
@@ -773,32 +777,31 @@ App Campaigns connect you with the right user, at the right time.
 
 ### Flutter 可以运行在哪些设备，哪些操作系统版本上？
 
-* Mobile operating systems: Android Jelly Bean, v16,
-  4.1.x or newer, and iOS 8 or newer.
+* We support and test running Flutter on a variety of low-end to high-end platforms.
+  For a detailed list of the platforms on which we test, see 
+  our list of [supported platforms][].
 
-  移动操作系统：Android Jelly Bean, v16, 4.1.x 或更新版本，以及 iOS 8 或更高版本。
-
-* Mobile hardware: iOS devices (iPhone 4S or newer)
-  and ARM Android devices.
-
-  移动硬件：iOS 设备（iPhone 4S 或更新版本）和 ARM Android 设备。
+  我们会为各种从低端到高端的平台进行支持并且加入测试。
+  您可以查看 [已支持的平台][supported platforms] 以了解已测试的平台列表。
 
 * Flutter supports building ahead-of-time (AOT) compiled libraries
   for `x86_64`, `armeabi-v7a`, and `arm64-v8a`.
 
+  Flutter 支持在 `x86_64`、`armeabi-v7a` 和 `arm64-v8a`
+  架构下构建为 ahead-of-time (AOT) 库。
+
 * Apps built for ARMv7 or ARM64 run fine (using ARM emulation)
   on many x86 Android devices.
 
-* We support developing Flutter apps with Android and iOS devices,
-  as well as with Android emulators and the iOS simulator.
+  为 ARMv7 或 ARM64 构建的应用在很多
+  x86 Android 设备上运行良好 (使用 ARM 模拟器)。
 
-  我们支持使用 Android 和 iOS 设备以及这两种 OS 的模拟器来开发 Flutter 应用。
+* We support developing Flutter apps on a range of platforms.
+  See the system requirements listed under each
+  [development operating system][install].
 
-* We test on a variety of low-end to high-end phones and tablets,
-  but we don't yet have an official device compatibility guarantee.
-
-  我们会在各种从低端到高端的手机上进行测试，但我们还没有正式保证设备兼容性。
-
+  我们支持在不同的平台上开发 Flutter 应用，
+  请参阅 [不同操作系统下安装 Flutter 的方法文档][install] 了解更多。
 
 ### Does Flutter run on the web?
 
@@ -885,7 +888,7 @@ Rather than having each widget provide a large number of parameters,
 Flutter embraces composition. Widgets are built out of smaller
 widgets that you can reuse and combine in novel ways to make
 custom widgets. For example, rather than subclassing a generic
-button widget, `RaisedButton` combines a Material widget with a
+button widget, `ElevatedButton` combines a Material widget with a
 `GestureDetector` widget. The Material widget provides the visual
 design and the `GestureDetector` widget provides the interaction design.
 
@@ -1191,8 +1194,7 @@ Flutter 是一个多范式的编程环境。过去几十年中许多编程技术
   small objects with narrow scopes of behavior, composed together to
   obtain more complicated effects. Most widgets in the Flutter widget
   library are built in this way. For example, the Material
-  [`FlatButton`][] class is built using a [`MaterialButton`][]
-  class, which itself is built using
+  [`TextButton`][] class is built using
   an [`IconTheme`][], an [`InkWell`][], a [`Padding`][],
   a [`Center`][], a [`Material`][],
   an [`AnimatedDefaultTextStyle`][], and a [`ConstrainedBox`][].
@@ -1639,7 +1641,7 @@ deployed to Apple's App Store.
 [example of using isolates with Flutter]: {{site.github}}/flutter/flutter/blob/master/examples/layers/services/isolate.dart
 [example project]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
 [Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [Flutter 1.0: Google's Portable UI Toolkit]: https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html
 [flutter_view]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_view
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
@@ -1659,6 +1661,7 @@ deployed to Apple's App Store.
 [iOS]: #run-ios
 [iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
 [iOS instructions]: /docs/deployment/ios
+[install]: /docs/get-started/install
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [internationalization tutorial]: /docs/development/accessibility-and-localization/internationalization
 [is easy]: /docs/development/packages-and-plugins/using-packages
@@ -1713,3 +1716,4 @@ deployed to Apple's App Store.
 [web instructions]: /docs/get-started/web
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: /docs/development/ui/widgets
+[supported platforms]: /docs/development/tools/sdk/release-notes/supported-platforms

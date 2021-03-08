@@ -3,6 +3,8 @@ title: Web support for Flutter
 title: Flutter 正式支持 Web 平台
 description: "Details of how Flutter supports the creation of web experiences."
 description: "有关 Flutter 如何支持创建 Web 体验的详细信息。"
+tags: 平台
+keywords: Flutter web, web跨端
 ---
 
 In addition to mobile apps, Flutter supports the generation of web content 
@@ -28,6 +30,17 @@ Web 支持是 Flutter 的代码兼容实现，使用基于标准的 Web 技术�
   
 {{site.alert.end}}
 
+{{site.alert.warning}}
+
+  **Hot reload not supported**
+  As of beta, only **hot restart** is supported on the web;
+  **hot reload** is not supported.
+
+**不支持热重载**
+在 beta 分支上，Web 已支持 **热重启**，**热重载** 仍不支持。
+
+{{site.alert.end}}
+
 <img src="/images/Dart-framework-v-browser-framework.png"
      alt="showing Flutter architecture for C++ vs Flutter for web"
      width="100%">
@@ -44,8 +57,10 @@ Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
 any web server.
 
-向 Flutter 添加 Web 支持涉及在标准浏览器 API 之上实现Flutter 的核心绘图层。
-通过结合使用DOM、Canvas 和 CSS，Web 支持旨在为现代浏览器提供便携、高质量和高性能的用户体验。
+向 Flutter 添加 Web 支持涉及在标准浏览器 API
+之上实现 Flutter 的核心绘图层。
+通过结合使用 DOM、Canvas 和 CSS，Web 支持旨在为现代浏览器提供
+便携、高质量和高性能的用户体验。
 我们在 Dart 中完全实现了这个核心绘图层，
 并使用 Dart 的优化过的 JavaScript 编译器将 Flutter 核心与框架，
 同你的应用程序一起编译成一个可以部署到任何 Web 服务器的简化源文件。
@@ -54,7 +69,8 @@ While traditional web approaches remain a great choice,
 we envision the web support available in Flutter being
 valuable in many scenarios. For example:
 
-虽然以传统方式开发 web 仍旧是一个不错的选择，但我们认为在 Flutter 中提供的 Web 支持在许多情况下都很有价值。
+虽然以传统方式开发 web 仍旧是一个不错的选择，
+但我们认为在 Flutter 中提供的 Web 支持在许多情况下都很有价值。
 例如：
 
 **A connected [Progressive Web Application][] built with Flutter**
@@ -117,6 +133,11 @@ The following resources can help you get started:
   要向现有应用添加Web支持，或创建一个包含 Web 支持的新应用，
   请参阅 [使用 Flutter 构建 Web 应用][Building a web application with Flutter]。
   
+* To learn about Flutter's different web renderers (HTML and CanvasKit), see 
+  [Web renderers][]
+
+  了解更多关于 Flutter web 渲染器 (HTML and CanvasKit) 的不同之处，请查阅[网页渲染器][Web renderers]。
+
 * To learn how to create a responsive Flutter
   app, see [Creating responsive apps][].
   
@@ -158,3 +179,4 @@ The following resources can help you get started:
 [Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
 [web FAQ]: /docs/development/platform-integration/web
 [web samples for Flutter]: https://flutter.github.io/samples/
+[Web renderers]: /docs/development/tools/web-renderers

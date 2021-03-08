@@ -4,6 +4,8 @@ title: 集成测试介绍
 description: Learn about integration testing in Flutter.
 description: 了解 Flutter 中的集成测试。
 short-title: Introduction
+tags: cookbook, 实用教程, 测试
+keywords: 集成测试
 prev:
   title: Take a picture using the camera
   path: /docs/cookbook/plugins/picture-using-camera
@@ -12,6 +14,18 @@ next:
   title: 列表滚动
   path: /docs/cookbook/testing/integration/scrolling
 ---
+
+{{site.alert.note}}
+
+  The integration_test package is now the recommended way to write integration
+  tests. See the [Integration testing](/docs/testing/integration-tests/) page
+  for details.
+
+  集成测试（integration_test）包目前已经成为首推的编写集成测试的方式。
+  请参阅[集成测试](/docs/testing/integration-tests/)查看更多详细信息。
+
+{{site.alert.end}}
+
 
 Unit tests and widget tests are handy for testing individual classes,
 functions, or widgets. However, they generally don't test how
@@ -148,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               // Provide a Key to this specific Text widget. This allows
-              // identifing the widget from inside the test suite,
+              // identifying the widget from inside the test suite,
               // and reading the text.
               key: Key('counter'),
               style: Theme.of(context).textTheme.headline4,
@@ -175,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Next, use the `flutter_driver` package to write integration tests.
 Add the `flutter_driver` dependency to the `dev_dependencies` section of
-the apps's `pubspec.yaml` file.
+the app's `pubspec.yaml` file.
 
 接着，我们需要用到 `flutter_driver` 包来编写集成测试。
 因此，我们需要把 `flutter_driver` 依赖添加到应用`pubspec.yaml` 文件的
@@ -351,6 +365,24 @@ void main() {
 }
 ```
 
+By default, `flutter_driver` waits until there are no pending frames,
+and tests similar to the example above fail with a timeout if,
+for example, you have a continuous animation running.  In that case, wrap
+the driver actions in `runUnsynchronized` as follows:
+
+<!-- skip -->
+```dart
+test('increments the counter during animation', () async {
+  await driver.runUnsynchronized(() async {
+    // First, tap the button.
+    await driver.tap(buttonFinder);
+
+    // Then, verify the counter text is incremented by 1.
+    expect(await driver.getText(counterTextFinder), "1");
+  });
+});
+```
+
 ### 6. Run the tests
 
 ### 6. 运行集成测试
@@ -441,6 +473,15 @@ run the following command:
 ```shell
 flutter drive --target=test_driver/app.dart --browser-name=[browser name] --release
 ```
+
+To simulate different screen dimensions, you can use the `--browser-dimension` argument,
+for example:
+
+```shell
+flutter drive --target=test_driver/app.dart --browser-name=chrome --browser-dimension 300,550 --release
+```
+
+Will run the tests in the `chrome` browser in a window with dimensions 300 by 550.
 
 [Download ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/

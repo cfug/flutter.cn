@@ -3,8 +3,10 @@ title: Flutter documentation
 title: Flutter 开发文档
 short-title: Docs
 short-title: 文档
-description: The landing page for Flutter documentation.
-description: Flutter 开发文档页面。
+description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
+description: Flutter 上手起步，包括 widgets 介绍、样例代码、最新更新和 API 文档，帮助您撰写第一个 Flutter 应用。
+tags: Flutter中文文档
+keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
 
 {% for card in site.data.docs_cards -%}
@@ -31,10 +33,10 @@ description: Flutter 开发文档页面。
 ## 网站更新
 
 To see changes to the site since our last release,
-see the [What's new archive][].
+see [What's new][].
 
 查看最近网站更新的内容，请查阅
-[文档网站更新内容归档][What's new archive]。
+[文档网站更新内容归档][What's new]。
 
 ## New to Flutter?
 
@@ -51,21 +53,21 @@ here are some next steps.
 
 ### 文档
 
-Coming from another platform? Check out: 
-[Android][], [iOS][], [Web][], [React Native][],
-[Xamarin.Forms][]
+Coming from another platform? Check out Flutter for:
+[Android][], [iOS][], [Web][], [React Native][] and
+[Xamarin.Forms][] developers.
 
 看我们为各种已经有相关平台开发经验的开发者准备的文档：
-[给 Android 开发者的 Flutter 指南][Android]、
-[给 iOS 开发者的 Flutter 指南][iOS]、
-[给 React Native 开发者的 Flutter 指南][React Native]、
-[给 Web 开发者的 Flutter 指南][Web]、
-[给 Xamarin.Forms 开发者的 Flutter 指南][Xamarin.Forms]。
+- [给 Android 开发者的 Flutter 指南][Android]
+- [给 iOS 开发者的 Flutter 指南][iOS]
+- [给 React Native 开发者的 Flutter 指南][React Native]
+- [给 Web 开发者的 Flutter 指南][Web]
+- [给 Xamarin.Forms 开发者的 Flutter 指南][Xamarin.Forms]
 
 [Building layouts][]
 <br> Learn how to create layouts in Flutter,
   where everything is a widget.
-  
+
 [Flutter 中的布局][Building layouts]
 <br> 学习如何在 Flutter 中创建布局，在 Flutter 里，所有事物都是 widget。
 
@@ -74,10 +76,10 @@ Coming from another platform? Check out:
   flow up. Sizes flow down. Parents set
   positions", then you are well on your
   way to understanding Flutter's layout model.
-  
+
 [理解布局约束][Understanding constraints]
-<br> 一旦你理解了 "Constraints flow up. Sizes flow down. Parents set positions"
-这个之后，就会方便你了解 Flutter 的布局模型。
+<br> 一旦你理解了 Constraints flow up. Sizes flow down. Parents set positions
+这个思路之后，就能更好帮助你了解 Flutter 的布局模型。
 
 [Adding interactivity to your Flutter app][]
 <br> Learn how to add a stateful widget to your app.
@@ -119,27 +121,24 @@ app frameworks?
 
 首先你需要知道，为何我们要使用 Flutter？ 是什么让它与众不同？
 
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=68736077&cid=119126400&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><br>
+<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=68736077&cid=119126400&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><br>
 
-<p>How is Flutter different for app development?</p>
-<p>视频名称：使用 Flutter 开发应用与其他有何不同</p>
+How is Flutter different for app development?<br/>
+
+视频名称：使用 Flutter 开发应用与其他有何不同<br/>
 
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 
 Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
-[Flutter in Focus playlist][]
 
 FiF 系列视频：十分钟以内学会一个 Flutter 特性<br>
-[Flutter in Focus 播放列表][Flutter in Focus playlist]
 
-In Flutter, "everything is a widget"! If you want to better
-understand the two kinds of widgets, Stateless and Stateful,
-see the following videos,
-part of the [Flutter in Focus][] series.
+In Flutter, "everything is a widget"! If you want to better understand
+the two kinds of widgets, Stateless and Stateful, see the following videos,
 
 Flutter 里 “所有的事物都是 widget”，
-如果你想更好了解有状态和无状态的 widget，请关注
-[Flutter in Focus 系列视频][Flutter in Focus]。
+如果你想更好了解有状态和无状态的 widget，
+请查看下面两支视频了解更多：
 
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -164,25 +163,28 @@ You might also find these docs useful:
 下列文档可能也会对你有所帮助：
 
 * [Using packages][]
-  
+
   [在 Flutter 里使用 Packages][Using packages]
-  
+
 * [Adding assets and images][]
-  
+
   [添加资源和图片][Adding assets and images]
-  
+
 * [Navigation and routing][]
-  
+
   [路由和导航][Navigation and routing]
-  
+
 * [State management][]
-  
+
   [状态 (State) 管理介绍][State management]
-  
+
 * [Animations][]
-  
+
   [动画效果介绍][Animations]
 
+The documentation on this site reflects the latest stable release of Flutter.
+
+本网站的文档基于 Flutter 最新的稳定版。
 
 [A tour of the Flutter widget framework]: /docs/development/ui/widgets-intro
 [Adding assets and images]: /docs/development/ui/assets-and-images
@@ -206,7 +208,6 @@ You might also find these docs useful:
 [Using packages]: /docs/development/packages-and-plugins/using-packages
 [videos]: /docs/resources/videos
 [Web]: /docs/get-started/flutter-for/web-devs
-[What's new archive]: /docs/whats-new-archive
+[What's new]: /docs/whats-new
 [Write your first Flutter app]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
-

@@ -4,6 +4,8 @@ title: 打包并发布 Android 应用
 short-title: Android
 description: How to prepare for and release an Android app to the Play store.
 description: 如何打包把 App 发布到 Play 商店。
+tags: 发布, Android
+keywords: 上传Google商店,发布Flutter应用
 ---
 
 During a typical development cycle,
@@ -30,6 +32,10 @@ This page covers the following topics:
 
   [添加启动图标](#adding-a-launcher-icon)
   
+* [Enabling Material Components](#material-components)
+
+  [启用 Material 组件](#material-components)
+
 * [Signing the app](#signing-the-app)
 
   [创建一个密钥库](#signing-the-app)
@@ -111,6 +117,48 @@ Alternatively, you can do it manually using the following steps:
    
    用 `flutter run` 运行 app，检查启动程序中的 app 图标
    是否已经替换成我们自己的图标文件。
+
+## Enabling Material Components
+
+## 启用 Material 组件
+
+If your app uses [Platform Views][], you may want to enable
+Material Components by following the steps described in the
+[Getting Started guide for Android][].
+
+如果你的应用使用了 [平台视图 (Platform Views)][Platform Views]，
+你可能要通过 [Android 平台的入门指南文档][Getting Started guide for Android]
+中的步骤使用 Material 组件：
+
+For example:
+
+举个例子：
+
+1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle`:
+
+   在 `<my-app>/android/app/build.gradle` 文件中添加
+   Android Material 组件依赖：
+
+```groovy
+dependencies {
+    // ...
+    implementation 'com.google.android.material:material:<version>'
+    // ...
+}
+```
+
+To find out the latest version, visit [Google Maven][].
+
+查看最新的版本，请访问 [Google Maven 仓库][Google Maven]。
+
+2. Set the theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
+
+   在 `<my-app>/android/app/src/main/res/values/styles.xml` 文件中设置主题：
+
+```diff
+-<style name="LaunchTheme" parent="Theme.AppCompat">
++<style name="LaunchTheme" parent="Theme.MaterialComponents.NoActionBar">
+```
 
 ## Signing the app
 
@@ -462,8 +510,9 @@ are correct, especially the following:
 
 ## 检查构建配置
 
-Review the default [Gradle build file][gradlebuild] file, `build.gradle`,located in `<app dir>/android/app` and 
-verify the values are correct,especially the following
+Review the default [Gradle build file][gradlebuild],
+`build.gradle`, located in `<app dir>/android/app` and
+verify the values are correct, especially the following
 values in the `defaultConfig` block:
 
 检查位于 `<app dir>/android/app` 的默认 [Gradle build file][gradlebuild]，
@@ -486,15 +535,30 @@ values in the `defaultConfig` block:
 这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。
 具体可以参考 [版本文档][versions] 中的版本信息指南。
 
-`minSdkVersion` & `targetSdkVersion`
+`minSdkVersion`, `compilesdkVersion`, & `targetSdkVersion`
 <br> Specify the minimum API level,
-  and the API level on which the app is designed to run.
+  the API level on which the app was compiled,
+  and the maximum API level on which the app is designed to run.
   Consult the API level section in the [versions documentation][versions]
   for details.
 
-`minSdkVersion` & `targetSdkVersion`
-<br> 指定支持的最低 API 版本，以及我们 app 的目标 API 版本。
-具体可以参考 [版本文档][versions] 中的 API 版本部分。
+`minSdkVersion`、`compilesdkVersion` 和 `targetSdkVersion`
+<br> 指定应用运行所需要的最低 API 级别 `minSdkVersion`、
+编译 API 级别 `compilesdkVersion` 以及目标 API 级别 `targetSdkVersion`。
+具体可以参考 Android 开发者网站上关于 [版本的文档][versions]
+中的 API 版本的部分。
+
+`buildToolsVersion`
+<br> Specify the version of Android SDK Build Tools that your app uses. 
+  Alternatively, you can use the [Android Gradle Plugin] in Android Studio,
+  which will automatically import the minimum required Build Tools for your app
+  without the need for this property.
+  
+`buildToolsVersion`
+<br> 指定应用所需的 Android SDK 构建工具的版本，或者你可以在 Android Studio 里使用
+[Android Gradle 插件][Android Gradle Plugin]，
+它可以自动设置导入你应用所需的构建工具版本，
+这样就无需过多操心这个属性啦。
 
 ## Building the app for release
 
@@ -503,7 +567,7 @@ values in the `defaultConfig` block:
 You have two possible release formats when publishing to
 the Play Store.
 
-当要发布到 Play Store 时，你有两种可能的发布方式
+当要发布到 Play Store 时，你有两种发布方式的选择：
 
 * App bundle (preferred)
   
@@ -524,21 +588,35 @@ the Play Store.
 {{site.alert.end}}
 
 {{site.alert.warning}}
+
   Recently, the Flutter team has received [several reports][crash-issue]
   from developers indicating they are experiencing app
   crashes on certain devices on Android 6.0. If you are targeting
   Android 6.0, use the following steps:
+  
+  最近，Flutter 团队收到了很多开发者的 [报告][crash-issue]，
+  表示他们在 Android 6.0 的某些设备上遇到了应用崩溃的情况。
+  如果你的目标 API 等级是 Android 6.0，请参考以下步骤：
 
   * If you build an App Bundle
     Edit `android/gradle.properties` and add the flag:
     `android.bundle.enableUncompressedNativeLibs=false`.
+
+    如果以 App Bundle 构建发布，编辑 `android/gradle.properties` 文件，
+    添加一行属性 `android.bundle.enableUncompressedNativeLibs=false`；
 
   * If you build an APK
     Make sure `android/app/src/AndroidManifest.xml`
     doesn't set `android:extractNativeLibs=false`
     in the `<application>` tag.
 
+    如果以 APK 构建发布，需要确保清单文件 `android/app/src/AndroidManifest.xml`
+    的 `<application>` 标签里不包含 `android:extractNativeLibs=false`。
+
   For more information, see the [public issue][crash-issue].
+  
+  更多内容，请参考这个 [错误报告][crash-issue]。
+  
 {{site.alert.end}}
 
 ### Build an app bundle
@@ -877,16 +955,16 @@ select **build.gradle (Module: app)** in the project panel:
 在Android Studio中, 打开你的 app 文件夹下的 `android/`
 文件夹. 然后在项目面板中选择 **build.gradle (Module: app)** :
 
-{% asset 'deployment/android/gradle-script-menu.png' alt='screenshot of gradle build script menu' %}
+{% asset 'deployment/android/gradle-script-menu.png' width="100%" alt='screenshot of gradle build script menu' %}
 
 Next, select the build variant. Click **Build > Select Build Variant**
 in the main menu. Select any of the variants in the **Build Variants**
 panel (debug is the default):
 
 接下来，选择构建变体。在主菜单中点击 **Build > Select Build Variant**。
-从 **Build Variants** 面板中选择任意一个变体 （默认是 debug）。
+从 **Build Variants** 面板中选择任意一个变体（默认是 debug）。
 
-{% asset 'deployment/android/build-variant-menu.png' alt='screenshot of build variant menu' %}
+{% asset 'deployment/android/build-variant-menu.png' width="100%" alt='screenshot of build variant menu' %}
 
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.
@@ -901,19 +979,7 @@ The resulting app bundle or APK files are located in
 
 {% endcomment %}
 
-{% comment %}
 
-### TODO
-
-This doc need to assign to a new translator.
-
-该文档需要分配给新的译者。
-
-{% endcomment %}
-
-[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
-[apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [appid]: {{site.android-dev}}/studio/build/application-id
@@ -933,7 +999,9 @@ This doc need to assign to a new translator.
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Flutter wiki]: {{site.github}}/flutter/flutter/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
+[Getting Started guide for Android]: {{site.material}}/develop/android/docs/getting-started
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
+[Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
@@ -943,7 +1011,9 @@ This doc need to assign to a new translator.
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
+[Platform Views]: /docs/development/platform-integration/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start
+[plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
 [R8]: {{site.android-dev}}/studio/build/shrink-code
 [Sign your app]: https://developer.android.com/studio/publish/app-signing.html#generate-key
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle

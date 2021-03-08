@@ -5,6 +5,8 @@ short-title: Debugging
 short-title: 调试应用
 description: How to run, debug, and hot reload your add-to-app Flutter module.
 description: 如何在使用 Flutter module 的混合应用运行调试以及热重载。
+tags: Flutter混合工程,add2app
+keywords: 工程调试,VS Code
 ---
 
 ## Debugging your add-to-app module

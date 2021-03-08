@@ -3,6 +3,8 @@ title: Make authenticated requests
 title: 发起 HTTP 认证授权请求
 description: How to fetch authorized data from a web service.
 description: 如何从 web 服务中获取授权信息。
+tags: cookbook, 实用教程, 网络请求
+keywords: HTTP 认证授权请求
 prev:
   title: Fetch data from the internet
   title: 获取网络数据
@@ -65,7 +67,7 @@ Future<Album> fetchAlbum() async {
     'https://jsonplaceholder.typicode.com/albums/1',
     headers: {HttpHeaders.authorizationHeader: "Basic your_api_token_here"},
   );
-  final responseJson = json.decode(response.body);
+  final responseJson = jsonDecode(response.body);
 
   return Album.fromJson(responseJson);
 }

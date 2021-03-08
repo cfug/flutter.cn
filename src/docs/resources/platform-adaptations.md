@@ -3,6 +3,8 @@ title: Platform specific behaviors and adaptations
 title: 不同平台操作体验的差异和适配
 description: Learn more about Flutter's platform adaptiveness.
 description: 了解更多 Flutter 的平台适配机制。
+tags: Flutter参考资料
+keywords: 平台适配,研究,Flutter Android,Flutter iOS,Flutter跨平台
 ---
 
 ## Adaptation philosophy
@@ -140,7 +142,7 @@ On **Android**,
 two page transition animation styles exist depending
 on your OS version:
 
-**Android** 平台上，根据你的操作系统版本差异，有两种不通的转场动画：
+**Android** 平台上，根据你的操作系统版本差异，有两种不同的转场动画：
 
 * Pre API 28 uses a bottom-up animation that
   [slides up and fades in][].
@@ -457,7 +459,7 @@ are horizontal on iOS and vertical on Android.
 The back button is a simple chevron on iOS and
 has a stem/shaft on Android.
 
-当使用 Material 包的时候，根据平台不通，图标的具体样式会有差别。
+当使用 Material 包的时候，根据平台不同，图标的具体样式会有差别。
 举例来说，更多按钮的图标，Android 上是竖直的三个点而 iOS 是横着的三个点；
 退回按钮，iOS 是一个简单的 V 型标记，而 Android 平台，V 型标记有个短横线。
 

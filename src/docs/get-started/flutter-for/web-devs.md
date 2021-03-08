@@ -3,6 +3,8 @@ title: Flutter for web developers
 title: 给 Web 开发者的 Flutter 指南
 description: Learn how to apply Web developer knowledge when building Flutter apps.
 description: 学习如何把 Web 的开发经验应用到 Flutter 应用的开发中。
+tags: Flutter教程,Flutter起步,Flutter入门
+keywords: Flutter Web,iOS,用Flutter开发iOS,Flutter网页版
 css-old: [two_column.css]
 ---
 
@@ -80,6 +82,10 @@ child of a
 
 CSS 所处理的字体样式、大小以及其他文本属性，都是一个 [`Text`][] widget 子元素 [`TextStyle`][] 中单独的属性。
 
+For text-align property in CSS that is used for aligning text, there is a textAlign property of a [`Text`][] widget.
+
+[`Text`][] widget 中的 textAlign 属性与 CSS 中的 text-align 属性作用相同，用来控制文本的对齐方向。
+
 In both HTML and Flutter, child elements or widgets are anchored at
 the top left, by default.
 
@@ -96,6 +102,7 @@ the top left, by default.
       width: 320px;
       height: 240px;
       [[highlight]]font: 900 24px Georgia;[[/highlight]]
+      [[highlight]]text-align: center;[[/highlight]]
     }
 {% endprettify %}
 </div>
@@ -104,6 +111,7 @@ the top left, by default.
   var container = Container( // grey box
     child: Text(
       "Lorem ipsum",
+      [[highlight]]textAlign: TextAlign.center,[[/highlight]]
       style: [[highlight]]TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.w900,
@@ -696,12 +704,10 @@ The following examples show how to make and customize shapes.
 
 ### 圆角
 
-To round the corners of a rectangular shape, use the `borderRadius` property
-of a
-[BoxDecoration][]
-object. Create a new
-[BorderRadius][]
-object that specifies the radii for rounding each corner.
+To round the corners of a rectangular shape,
+use the `borderRadius` property of a [`BoxDecoration`][] object.
+Create a new [`BorderRadius`][]
+object that specifies the radius for rounding each corner.
 
 在矩形上实现圆角，请用
 [BoxDecoration][]

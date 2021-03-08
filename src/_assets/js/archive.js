@@ -6,6 +6,8 @@ var releasesToShow = 99999;
 // Fetches Flutter release JSON for the given OS and calls the callback once the data is available.
 var fetchFlutterReleases = function (os, callback, errorCallback) {
   // OS: windows, macos, linux
+  // var url = "https://storage.googleapis.com/flutter_infra_release/releases/releases_" + os + ".json";
+  // TODO: CN Mirror is not ready
   var url = "https://storage.flutter-io.cn/flutter_infra/releases/releases_" + os + ".json";
   $.ajax({
     type: "GET",

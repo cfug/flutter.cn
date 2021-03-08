@@ -3,6 +3,8 @@ title: List of state management approaches
 title: 状态 (State) 管理参考
 description: A list of different approaches to managing state.
 description: 通过不同的方式来进行状态管理。
+tags: Flutter状态管理
+keywords: 参考资料
 prev:
   title: Simple app state management
   title: 简单的共享 (app) 状态管理
@@ -177,9 +179,31 @@ A state container approach familiar to many web developers.
 
 * [Flutter meets Redux: The Redux way of managing Flutter applications state][],
   by Amir Ghezelbash
+* [Redux and epics for better-organized code in Flutter apps][], by Nihad Delic
   
   [当 Flutter 遇见 Redux：以 Redux 的风格管理 Flutter 应用的状态 (Flutter meets Redux: The Redux way of managing Flutter applications state)][Flutter meets Redux: The Redux way of managing Flutter applications state]，Amir Ghezelbash 著。
 
+## Fish-Redux
+
+Fish Redux is an assembled flutter application framework based on Redux state management. 
+It is suitable for building medium and large applications.
+
+Fish Redux 是一个基于 Redux 状态管理的组合式 Flutter 应用框架，
+适用于构建中型和大型应用。
+
+* [Fish-Redux-Library][] package, by Alibaba
+
+  由阿里巴巴开发的 [Fish-Redux-Library][] package
+  
+* [Fish-Redux-Source][], project code
+
+  [Fish-Redux-Source][]，工程代码
+  
+* [Flutter-Movie][] - Non-trivial example demonstrating how to use Fish Redux,
+with more than 30 screens, graphql, payment api and media player.
+
+  [Flutter-Movie][] 展示如何使用 Fish Redux 的简单示例应用，
+  包含 30 多个页面、graphql、支付 api 和媒体播放器等。
 
 ## BLoC / Rx
 
@@ -203,6 +227,14 @@ A family of stream/observable based patterns.
   [响应式编程 - 流 - BLoC - 用例 (Reactive Programming - Streams - BLoC - Practical Use Cases)][Reactive Programming - Streams - BLoC - Practical Use Cases]，
   Didier Boelens 著。
 
+## GetIt
+
+A service locator based state management approach that doesn't need a `BuildContext`.
+
+* [GetIt package][], the service locator. It can also be used together with BloCs.
+* [GetIt Mixin package][], a mixin that completes `GetIt` to a full state management solution.
+* [GetIt Hooks package][], same as the mixin in case you already use `flutter_hooks`.
+
 ## MobX
 
 A popular library based on observables and reactions.
@@ -221,22 +253,64 @@ A popular library based on observables and reactions.
   
   [Flutter：使用 MobX 进行状态管理 (Flutter: State Management with Mobx)][Flutter: State Management with Mobx]
 
+## Flutter Commands
+
+Reactive state management that uses the Command Pattern and is based on `ValueNotifiers`. Best in combination with [GetIt](#getit), but can be used with `Provider` or other locators too.
+
+基于 `ValueNotifiers` 的命令式的状态管理，能与 [GetIt](#getit) 完美结合使用，
+也可以与 `Provider` 或者其他 locators 配合使用。
+
+* [Flutter Command package][] 
+* [RxCommand package][], 基于 `Stream` 的实现.
+
+## Binder
+
+A state management package that uses `InheritedWidget` at its core. Inspired in part by recoil. This package promotes the separation of concerns.
+
+一个使用 `InheritedWidget` 作为核心实现的状态管理库。受到 recoil 的启发，该库提供了分治的解决方式。
+
+* [Binder package][] 
+
+  [Binder 包][Binder package]
+
+* [Binder examples][]
+
+  [Binder 样例][Binder examples]
+
+* [Binder snippets][], vscode snippets to be even more productive with Binder
+
+  [Binder snippets][] 是一个 vscode 插件，能够将代码拆分以获得更高的生产力
+
 ## GetX
 
 A simplified reactive state management solution.
 
-一个轻量级响应式状态管理解决方案。
+一个简单的响应式状态管理解决方案。
 
 * [GetX package][]
 * [Complete GetX State Management][], a video by Tadas Petra
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
 
+## Riverpod
+
+An approach similar to Provider that is compile-safe and testable. It doesn't have a dependency on the Flutter SDK.
+
+一个编译安全，测试步骤简单的类似于 Provider 的解决方案。且它不依赖于 Flutter SDK。
+
+* [Riverpod][] homepage
+* [Getting started with Riverpod][]
+
+[Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
+[Riverpod]: https://riverpod.dev/
+[Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
+[Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
+[Fish-Redux-Library]: {{site.pub-pkg}}/fish_redux
 [Adding interactivity to your Flutter app]: /docs/development/ui/interactive
 [accompanying article]: {{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381
 [Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
 [Animation Management with Redux and Flutter]: https://www.youtube.com/watch?v=9ZkLtr0Fbgk
 [Architect your Flutter project using BLoC pattern]: {{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1
-[Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux/
+[Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux
 [Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 [Flutter meets Redux: The Redux way of managing Flutter applications state]: https://medium.com/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
 [BloC Library]: https://felangel.github.io/bloc
@@ -267,3 +341,12 @@ A simplified reactive state management solution.
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 [You might not need Redux: The Flutter edition]: https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
+[Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
+[GetIt package]: https://pub.dev/packages/get_it
+[GetIt Hooks package]: https://pub.dev/packages/get_it_hooks
+[GetIt Mixin package]: https://pub.dev/packages/get_it_mixin
+[Flutter Command package]: https://pub.dev/packages/flutter_command
+[RxCommand package]: https://pub.dev/packages/rx_command
+[Binder package]: https://pub.dev/packages/binder
+[Binder examples]: https://github.com/letsar/binder/tree/main/examples
+[Binder snippets]: https://marketplace.visualstudio.com/items?itemName=romain-rastel.flutter-binder-snippets

@@ -3,6 +3,8 @@ title: Using packages
 title: 在 Flutter 里使用 Packages
 description: How to use packages in your Flutter app.
 description: 如何在你的 Flutter 应用里使用 Packages。
+tags: Packages,插件
+keywords: 使用packages,Flutter第三方库
 ---
 
 Flutter supports using shared packages contributed by other developers
@@ -12,7 +14,54 @@ an app without having to develop everything from scratch.
 Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共享 package，
 这意味着你可以快速构建应用而不是一切从零开始。
 
-Existing packages enable many use cases for example,
+{{site.alert.secondary}}
+
+  **What is the difference between a package
+  and a plugin?** A plugin is a _type_ of
+  package&mdash;the full designation is _plugin package_,
+  which is generally shortened to _plugin_.
+  
+  **Package 和插件 (plugin) 有什么区别呢？**
+  插件 (plugin) 是 package 的一种，全称是 plugin package，
+  我们简称为 plugin，中文叫插件。
+
+  **Packages**
+  <br> At a minimum, a Dart package is a directory
+    containing a pubspec file. Additionally,
+    a package can contain dependencies
+    (listed in the pubspec), Dart libraries, apps,
+    resources, tests, images, and examples.
+    The [pub.dev][] site lists many packages—developed by Google engineers
+    and generous members of the Flutter and Dart community—
+    that you can use in your app.
+    
+  **Packages**
+  <br> Dart package 最低要求是包含一个 `pubspec.yaml` 文件。
+  此外，一个 package 可以包含依赖关系 (在 `pubspec.yaml` 文件里声明)、
+  Dart 库、应用、资源、测试、图片和例子等。
+  pub.dev 上列出了很多 package，由 Google 工程师和
+  Flutter 和 Dart 社区的开发者开发和发布，你可以用在自己的应用里。
+
+  **Plugins**
+  <br> A plugin package is a special kind of package that makes
+    platform functionality available to the app.
+    Plugin packages can be written for Android (using Kotlin or Java),
+    iOS (using Swift or Objective-C), web, macOS, Windows, Linux,
+    or any combination thereof.
+    For example, a plugin might provide Flutter apps
+    with the ability to use a device's camera.
+
+  **Plugins**
+  <br> 插件 (plugin package) 是一种特别的 package，特别指
+  那些帮助你获得原生平台特性的 package。
+  插件可以为 Android (使用 Kotlin 或 Java 语言)、
+  iOS (使用 Swift 或 Objective-C 语言)、Web、macOS、Windows、Linux 平台，
+  或其任意组合的平台编写。
+  比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
+
+{{site.alert.end}}
+
+Existing packages enable many use cases—for example,
 making network requests ([`http`][]),
 custom navigation/route handling ([`fluro`][]),
 integration with device APIs
@@ -69,9 +118,18 @@ your app. For more information on what it means to
 be a Flutter Favorite, see the
 [Flutter Favorites program][].
 
+Pub.dev 上的 [Flutter Favorites][] 页面列出了一系列编写应用时
+可以首先考虑使用的插件和 package，关于这个项目的更多信息，请
+查看 [Flutter Favorites 项目][Flutter Favorites program] 页面。
+
 You can also browse the packages on pub.dev by filtering
 on [Android plugins][], [iOS plugins][], [web plugins][],
 or any combination thereof.
+
+在 pub.dev 网站上同时可以过滤出适合
+[Android][Android plugins]、[iOS][iOS plugins] 或
+[Web][web plugins] 的插件，也可以通过复选框，
+过滤出组合结果（适配一个或者多个平台）。
 
 ### Adding a package dependency to an app
 
@@ -175,15 +233,17 @@ dependencies:
 If `some_package` declares the dependencies above
 and `another_package` declares a compatible
 `url_launcher` dependency like `'5.4.6'` or
-`^5.5.0`, `pub` resolves the issue automatically.
+`^5.5.0`, pub resolves the issue automatically.
 Platform-specific dependencies on
 [Gradle modules][] and/or [CocoaPods][]
 are solved in a similar way.
 
-如果 `some_package` 声明了以上依赖，并且 `another_package` 声明了一个兼容的
-`url_launcher` 依赖项，如 `'0.4.5'` 或 `^0.4.0`，`pub` 能够自动解决冲突问题。
-类似的注解也适用于插件 package 特定平台里
-[Gradle modules][] 和/或 [CocoaPods][] 的依赖关系。
+如果 `some_package` 声明了以上依赖，
+并且 `another_package` 声明了一个兼容的
+`url_launcher` 依赖项，如 `'5.4.6'` 或 `^5.5.0`，
+pub 能够自动解决冲突问题。
+[Gradle modules][] 和 [CocoaPods][]
+也是用类似的方式解决平台依赖的。
 
 Even if `some_package` and `another_package`
 declare incompatible versions for `url_launcher`,
@@ -339,9 +399,9 @@ run `flutter pub upgrade`
 (**Upgrade dependencies** in IntelliJ or Android Studio)
 to retrieve the highest available version of the package
 that is allowed by the version constraint specified in
-`pubspec.yaml`. 
-Note that this is a different command from 
-`flutter upgrade` or `flutter update-packages`, 
+`pubspec.yaml`.
+Note that this is a different command from
+`flutter upgrade` or `flutter update-packages`,
 which both update Flutter itself.
 
 如果你想升级到 package 的最新版本，比如使用 package 的最新特性，
@@ -398,13 +458,13 @@ additional dependency options are available:
   ```
 
 **Git dependency on a package in a folder**
-<br> The pub tool assumes the package is located in
+<br> Pub assumes the package is located in
   the root of the Git repository. If that is not
   the case, specify the location with the `path` argument.
   For example:
 
 **Git 依赖于文件夹中的 package **
-<br> 默认情况下，pub 工具会默认假定 package 位于 Git 仓库的根目录。
+<br> 默认情况下，pub 会默认假定 package 位于 Git 仓库的根目录。
   如果不是这种情况，你可以使用 `path` 参数指定位置，例如：
   
   ```yaml
@@ -420,7 +480,7 @@ additional dependency options are available:
   [Package dependencies][].
 
   最后，你可以使用 `ref` 参数将依赖固定到 git 特定的 commit、branch 或者 tag。
-  更多详细信息，请参阅 [Package dependencies]。
+  更多详细信息，请参阅 [Package dependencies][]。
 
 ## Examples
 
@@ -470,7 +530,8 @@ To use this package:
      css_colors: ^1.0.0
    ```
 
-1. Run `flutter pub get` in the terminal, or click **Packages get** in
+1. Run `flutter pub get` in the terminal,
+   or click **Packages get** in
    IntelliJ or Android Studio.
 
    在命令行中运行 `flutter packages get`，
@@ -581,7 +642,7 @@ To use this plugin:
       Widget build(BuildContext context) {
         return Scaffold(
           body: Center(
-            child: RaisedButton(
+            child: ElevatedButton(
               onPressed: launchURL,
               child: Text('Show Flutter homepage'),
             ),

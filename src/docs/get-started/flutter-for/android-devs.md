@@ -3,6 +3,8 @@ title: Flutter for Android developers
 title: 给 Android 开发者的 Flutter 指南
 description: Learn how to apply Android developer knowledge when building Flutter apps.
 description: 学习如何把 Android 开发的经验应用到 Flutter 应用的开发中。
+tags: Flutter教程,Flutter起步,Flutter入门
+keywords: Flutter Android,安卓,用Flutter开发Android
 ---
 
 This document is meant for Android developers looking to apply their
@@ -292,10 +294,12 @@ The following example shows how to display a simple widget with padding:
         title: Text("Sample App"),
       ),
       body: Center(
-        child: MaterialButton(
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.only(left: 20.0, right: 30.0),
+          ),
           onPressed: () {},
           child: Text('Hello'),
-          padding: EdgeInsets.only(left: 10.0, right: 10.0),
         ),
       ),
     );
@@ -369,7 +373,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     if (toggle) {
       return Text('Toggle One');
     } else {
-      return MaterialButton(onPressed: () {}, child: Text('Toggle Two'));
+      return ElevatedButton(onPressed: () {}, child: Text('Toggle Two'));
     }
   }
 
@@ -610,8 +614,8 @@ custom layout logic.
 有些类似，所有的构建 UI 的模块代码都在手边，不过由你提供不同的行为&mdash;例如，自定义布局 (layout) 逻辑。
 
 For example, how do you build a `CustomButton` that takes a label in
-the constructor? Create a CustomButton that composes a `RaisedButton` with
-a label, rather than by extending `RaisedButton`:
+the constructor? Create a CustomButton that composes a `ElevatedButton` with
+a label, rather than by extending `ElevatedButton`:
 
 举例来说，你该如何创建一个在构造器接收标签参数的 `CustomButton`？你要组合 `RaisedButton` 和一个标签来创建
 自定义按钮，而不是继承 `RaisedButton`：
@@ -625,7 +629,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(onPressed: () {}, child: Text(label));
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -791,23 +795,21 @@ package com.example.shared;
 import android.content.Intent;
 import android.os.Bundle;
 
-import java.nio.ByteBuffer;
+import androidx.annotation.NonNull;
 
-import io.flutter.app.FlutterActivity;
-import io.flutter.plugin.common.ActivityLifecycleListener;
-import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
+import io.flutter.embedding.android.FlutterActivity;
+import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
 public class MainActivity extends FlutterActivity {
 
   private String sharedText;
+  private static final String CHANNEL = "app.channel.shared.data";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    GeneratedPluginRegistrant.registerWith(this);
     Intent intent = getIntent();
     String action = intent.getAction();
     String type = intent.getType();
@@ -817,17 +819,21 @@ public class MainActivity extends FlutterActivity {
         handleSendText(intent); // Handle text being sent
       }
     }
+  }
 
-    new MethodChannel(getFlutterView(), "app.channel.shared.data").setMethodCallHandler(
-      new MethodCallHandler() {
-        @Override
-        public void onMethodCall(MethodCall call, MethodChannel.Result result) {
-          if (call.method.contentEquals("getSharedText")) {
-            result.success(sharedText);
-            sharedText = null;
-          }
-        }
-      });
+  @Override
+  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
+      GeneratedPluginRegistrant.registerWith(flutterEngine);
+
+      new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
+              .setMethodCallHandler(
+                      (call, result) -> {
+                          if (call.method.contentEquals("getSharedText")) {
+                              result.success(sharedText);
+                              sharedText = null;
+                          }
+                      }
+              );
   }
 
   void handleSendText(Intent intent) {
@@ -977,7 +983,7 @@ Future<void> loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = json.decode(response.body);
+    widgets = jsonDecode(response.body);
   });
 }
 ```
@@ -1028,7 +1034,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   void initState() {
     super.initState();
-
     loadData();
   }
 
@@ -1058,7 +1063,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -1112,7 +1117,7 @@ Future<void> loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = json.decode(response.body);
+    widgets = jsonDecode(response.body);
   });
 }
 ```
@@ -1192,7 +1197,7 @@ static Future<void> dataLoader(SendPort sendPort) async {
     String dataURL = data;
     http.Response response = await http.get(dataURL);
     // Lots of JSON to parse
-    replyTo.send(json.decode(response.body));
+    replyTo.send(jsonDecode(response.body));
   }
 }
 
@@ -1333,7 +1338,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       String dataURL = data;
       http.Response response = await http.get(dataURL);
       // Lots of JSON to parse
-      replyTo.send(json.decode(response.body));
+      replyTo.send(jsonDecode(response.body));
     }
   }
 
@@ -1388,7 +1393,7 @@ import 'package:http/http.dart' as http;
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -1502,7 +1507,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -2002,7 +2007,7 @@ In Flutter there are two ways of adding touch listeners:
 在 Flutter 中有两种添加触摸监听器的方法：
 
  1. If the Widget supports event detection, pass a function to it and handle it
-    in the function. For example, the RaisedButton has an `onPressed` parameter:
+    in the function. For example, the ElevatedButton has an `onPressed` parameter:
 
     如果 Widget 支持事件监听，那么向它传入一个方法并在方法中处理事件。
     例如，RaisedButton 有一个 `onPressed` 参数：
@@ -2011,7 +2016,7 @@ In Flutter there are two ways of adding touch listeners:
     ```dart
     @override
     Widget build(BuildContext context) {
-      return RaisedButton(
+      return ElevatedButton(
           onPressed: () {
             print("click");
           },
@@ -2139,6 +2144,7 @@ CurvedAnimation curve;
 
 @override
 void initState() {
+  super.initState();
   controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
   curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 }
@@ -2376,7 +2382,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = <Widget>[];
+  List<Widget> widgets = [];
 
   @override
   void initState() {
@@ -2405,7 +2411,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       onTap: () {
         setState(() {
           widgets = List.from(widgets);
-          widgets.add(getRow(widgets.length + 1));
+          widgets.add(getRow(widgets.length));
           print('row $i');
         });
       },
@@ -2453,7 +2459,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = <Widget>[];
+  List<Widget> widgets = [];
 
   @override
   void initState() {
@@ -2484,7 +2490,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       ),
       onTap: () {
         setState(() {
-          widgets.add(getRow(widgets.length + 1));
+          widgets.add(getRow(widgets.length));
           print('row $i');
         });
       },
@@ -2926,7 +2932,7 @@ void main() {
     MaterialApp(
       home: Scaffold(
         body: Center(
-          child: RaisedButton(
+          child: ElevatedButton(
             onPressed: _incrementCounter,
             child: Text('Increment Counter'),
           ),
@@ -3002,9 +3008,6 @@ plugin documentation.
 [Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging) 
 插件实现此功能。想要获得更多关于使用 Firebase Cloud Messaging API 的信息，请查阅 
 [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) 插件文档。
-[Firebase Messaging][] plugin.
-For more information on using the Firebase Cloud Messaging API,
-see the [`firebase_messaging`][] plugin documentation.
 
 
 [Add Flutter to existing app]: /docs/development/add-to-app

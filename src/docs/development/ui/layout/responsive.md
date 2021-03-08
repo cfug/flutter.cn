@@ -3,6 +3,8 @@ title: Creating responsive apps
 title: 创建响应式应用
 short-title: Responsive
 short-title: 响应式
+tags: 用户界面,Flutter UI,布局
+keywords: 响应式,自适应
 ---
 
 A responsive app lays out its UI according to the
@@ -49,7 +51,7 @@ apps with responsive design:
 <br> 通过它的 [`builder`][] 属性你能得到一个 [`BoxConstraints`][]对象，
   通过检查 constraints 的属性来确定要显示的内容。
   例如，如果你的 [`maxWidth`][]（最大宽度）大于你的宽度断点，
-  它会返回一个包含剧左的列表的 [`Scaffold`][] 对象。
+  它会返回一个包含居左的列表的 [`Scaffold`][] 对象。
   如果它更窄，则会通过返回包含一个抽屉（drawer）的[`Scaffold`][] 对象。
   同时你可以根据设备的高度、宽高比或者其他属性调整 UI 显示，
   当 constraints 发生变化时候，比如用户旋转手机或者应用分屏时，

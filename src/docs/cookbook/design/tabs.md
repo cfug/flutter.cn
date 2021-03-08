@@ -3,6 +3,8 @@ title: Work with tabs
 title: 使用 tabs
 description: How to implement tabs in a layout.
 description: 如何实现 tab 布局。
+tags: cookbook, 实用教程, 设计
+keywords: Material Design 效果, 标签页布局, tabs
 prev:
   title: Use themes to share colors and font styles
   title: 使用 Themes 统一颜色和字体风格

@@ -3,6 +3,8 @@ title: Creating useful bug reports
 title: 如何有效提出 Bug
 description: Where to file bug reports and enhancement requests for flutter and the website.
 description: 在哪里提出 bug 最有效呢？
+tags: Flutter参考资料
+keywords: 提出错误,Flutter调试信息,Flutter反馈指南,Flutter doctor
 ---
 
 The instructions in this document detail the current steps
@@ -20,26 +22,40 @@ We appreciate your effort in sending us as much feedback as possible.
 
 ## Provide some Flutter diagnostics
 
-* Run `flutter doctor` in your project directory and paste
+* Run `flutter doctor -v` in your project directory and paste
   the results into the GitHub issue:
 
 ```none
-[✓] Flutter (on Mac OS, channel master)
-    • Flutter at /Users/me/projects/flutter
-    • Framework revision 8cbeb2e (4 hours ago), engine revision 5c28578
+[✓] Flutter (Channel stable, 1.22.3, on Mac OS X 10.15.7 19H2, locale en-US)
+    • Flutter version 1.22.3 at /Users/me/projects/flutter
+    • Framework revision 8874f21e79 (5 days ago), 2020-10-29 14:14:35 -0700
+    • Engine revision a1440ca392
+    • Dart version 2.10.3
 
-[✓] Android toolchain - develop for Android devices (Android SDK 23.0.2)
-    • Android SDK at /usr/local/Cellar/android-sdk/24.4.1_1
-    • Platform android-23, build-tools 23.0.2
-    • Java(TM) SE Runtime Environment (build 1.8.0_73-b02)
+[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.2)
+    • Android SDK at /Users/me/Library/Android/sdk
+    • Platform android-30, build-tools 29.0.2
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+    • All Android licenses accepted.
 
-[✓] iOS toolchain - develop for iOS devices (Xcode 7.3)
-    • XCode at /Applications/Xcode.app/Contents/Developer
-    • Xcode 7.3, Build version 7D175
+[✓] Xcode - develop for iOS and macOS (Xcode 12.2)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 12.2, Build version 12B5035g
+    • CocoaPods version 1.9.3
 
-[✓] IntelliJ IDEA Ultimate Edition (version 2016.2.5)
-    • Dart plugin installed
-    • Flutter plugin installed
+[✓] Android Studio (version 4.0)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin version 50.0.1
+    • Dart plugin version 193.7547
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+
+[✓] VS Code (version 1.50.1)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.13.2
+
+[✓] Connected device (1 available)
+    • iPhone (mobile) • 00000000-0000000000000000 • ios • iOS 14.0
 ```
 
 ## Run the command in verbose mode
@@ -51,7 +67,7 @@ Follow these steps only if your issue is related to the
   If attached to the issue, the output from this command
   might aid in diagnosing the problem.
 * Attach the results of the command to the GitHub issue.
-![flutter verbose](/images/verbose_flag.png)
+![flutter verbose](/images/verbose_flag.png){:width="100%"}
 
 ## Provide the most recent logs
 
@@ -63,7 +79,7 @@ Follow these steps only if your issue is related to the
 * If you are getting exceptions thrown by the framework,
   include all the output between and including the dashed
   lines of the first such exception.
-![flutter logs](/images/logs.png)
+![flutter logs](/images/logs.png){:width="100%"}
 
 ## Provide the crash report
 
@@ -73,7 +89,7 @@ Follow these steps only if your issue is related to the
   a crash report is generated in `~/Library/Logs/CrashReporter/MobileDevice`.
 * Find the report corresponding to the crash (usually the latest)
   and attach it to the GitHub issue.
-![crash report](/images/crash_reports.png)
+![crash report](/images/crash_reports.png){:width="100%"}
 
 
 [Flutter issue]: {{site.github}}/flutter/flutter/issues/new/choose

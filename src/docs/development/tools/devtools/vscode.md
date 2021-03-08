@@ -3,6 +3,8 @@ title: Install and run DevTools from VS Code
 title: 在 VS Code 里安装和使用开发者工具
 description: Learn how to install and use DevTools from VS Code.
 description: 学习如何在 VS Code 里使用开发者工具。
+tags: Flutter开发工具,DevTools
+keywords: 开发者工具,VSCode,IDE,插件安装,启动
 ---
 
 ## Install the VS Code extensions

@@ -1,6 +1,9 @@
 ---
 title: Flutter Favorite program
+title: Flutter Favorite 项目
 description: Guidelines for identifying a plugin or package as a Flutter Favorite.
+tags: Packages,插件
+keywords: Flutter优秀插件推荐项目
 ---
 
 ![The Flutter Favorite program logo]({% asset development/packages-and-plugins/FlutterFavoriteLogo.png @path %}){:width="20%"}

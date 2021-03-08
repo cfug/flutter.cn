@@ -5,11 +5,15 @@ title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 
 ![](https://devrel.andfun.cn/devrel/posts/2020/09/a21e5b12e71bb.png)
 
+Authors.
+
+文/ Amish Garg，Google Summer of Code(GSoC) 实习生，译/ Yuan，谷创字幕组，审校/ Xinlei、Lynn Wang，CFUG 社区。
+
 If you wished that there was an easy, efficient, and flexible way to integrate TensorFlow trained models with your flutter apps, I am glad to announce the release of a new plugin [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter).
 
-如果您希望能有一种简单、高效且灵活的方式把 TensorFlow 模型集成到 Flutter 应用里，那请您一定不要错过我们今天介绍的这个全新插件 [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter)。这个插件的开发者是 TensorFlow 团队的一名实习生 Amish Garg，本文来自他在 Medium 上的一篇文章[《在 Flutter 中使用 TensorFlow Lite 插件实现文字分类》](https://medium.com/@am15hg/text-classification-using-tensorflow-lite-plugin-for-flutter-3b92f6655982)。
+如果您希望能有一种简单、高效且灵活的方式把 TensorFlow 模型集成到 Flutter 应用里，那请您一定不要错过我们今天介绍的这个全新插件 [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter)。这个插件的开发者是 Google Summer of Code(GSoC) 的一名实习生 Amish Garg，本文来自他在 Medium 上的一篇文章[《在 Flutter 中使用 TensorFlow Lite 插件实现文字分类》](https://medium.com/@am15hg/text-classification-using-tensorflow-lite-plugin-for-flutter-3b92f6655982)。
 
-Key features of [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter): 
+Key features of [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter): 
 
 [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter) 插件的核心特性：
 
@@ -33,57 +37,57 @@ In this article, I will walk you through building a **Text Classification Flutte
 
 本文中，我们将使用 tflite_flutter 构建一个 **文字分类 Flutter 应用** 带您体验 tflite_flutter 插件，首先从新建一个 Flutter 项目 `text_classification_app` 开始。
 
-## (Important) Initial setup
+### (Important) Initial setup
 
-## （很重要）初始化配置
+### （很重要）初始化配置
 
-### Linux and Mac users
-  
-### Linux 和 Mac 用户
+#### Linux and Mac users
+
+#### Linux 和 Mac 用户
 
 Copy the [`install.sh`](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.sh) file in the root folder of your app, and execute the command, `sh install.sh` in the root folder, `text_classification_app/` in our case.
 
 将 [`install.sh`](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.sh) 拷贝到您应用的根目录，然后在根目录执行 `sh install.sh`，本例中就是目录 `text_classification_app/`。
 
-### Windows users
+#### Windows users
   
-### Windows 用户
+#### Windows 用户
 
 Copy the [`install.bat`](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.bat) file in the root folder of your app, and execute the command, `install.bat` in the root folder, text_classification_app/ in our case.
 
-将 [install.bat](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.bat) 文件拷贝到应用根目录，并在根目录运行批处理文件 `install.bat`，本例中就是目录 `text_classification_app/`。 
+将 [install.bat](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.bat) 文件拷贝到应用根目录，并在根目录运行批处理文件 `install.bat`，本例中就是目录 `text_classification_app/`。
 
 This will automatically download the latest binaries from [release assets](https://github.com/am15h/tflite_flutter_plugin/releases) and place them in appropriate folders for you.
 
 它会自动从 [release assets](https://github.com/am15h/tflite_flutter_plugin/releases) 下载最新的二进制资源，然后把它放到指定的目录下。
 
-[Refer to the readme for more info on the initial setup.](https://github.com/am15h/tflite_flutter_plugin#initial-setup) 
+[Refer to the readme for more info on the initial setup.](https://github.com/am15h/tflite_flutter_plugin#initial-setup)
 
 请点击到 README 文件里查看更多 [关于初始配置的信息](https://github.com/am15h/tflite_flutter_plugin#important-initial-setup)。
 
-## Getting the plugin
+### Getting the plugin
 
-## 获取插件
+### 获取插件
 
 In `pubspec.yaml` include `tflite_flutter: ^<latest_version>` ([details here](https://pub.flutter-io.cn/packages/tflite_flutter#-installing-tab-)).
 
 在 `pubspec.yaml` 添加 `tflite_flutter: ^<latest_version>` （[详情](https://pub.flutter-io.cn/packages/tflite_flutter#-installing-tab-)）。
 
-## Downloading the model
+### Downloading the model
 
-## 下载模型
+### 下载模型
 
 To use any TensorFlow trained model on mobile, we need to obtain it in `.tflite` format. For more information on how to convert a TensorFlow trained model to `.tflite` format, [refer to this official guide.](https://tensorflow.google.cn/lite/convert/python_api)
 
-要在移动端上运行 TensorFlow 训练模型，我们需要使用 `.tflite` 格式。如果需要了解如何将 TensorFlow 训练的模型转换为 `.tflite` 格式，请参阅[官方指南](https://tensorflow.google.cn/lite/convert/python_api)。 
+要在移动端上运行 TensorFlow 训练模型，我们需要使用 `.tflite` 格式。如果需要了解如何将 TensorFlow 训练的模型转换为 `.tflite` 格式，请参阅[官方指南](https://tensorflow.google.cn/lite/convert/python_api)。 
 
 We are going to use the pre-trained Text Classification Model available on the TensorFlow website. [Click here to download.](https://storage.googleapis.com/download.tensorflow.org/models/tflite/text_classification/text_classification.tflite)
 
 这里我们准备使用 TensorFlow 官方站点上预训练的文字分类模型，可[从这里下载](https://files.flutter-io.cn/posts/flutter-cn/2020/tensorflow-lite-plugin/text_classification.tflite)。
 
-> This pretrained model predicts if a paragraph’s sentiment is positive or negative. It was trained on [Large Movie Review Dataset v1.0](http://ai.stanford.edu/~amaas/data/sentiment/) from Mass et al, which consists of IMDB movie reviews labeled as either positive or negative. [Find more info here.](https://tensorflow.google.cn/lite/models/text_classification/overview) 
+> This pretrained model predicts if a paragraph’s sentiment is positive or negative. It was trained on [Large Movie Review Dataset v1.0](http://ai.stanford.edu/~amaas/data/sentiment/) from Mass et al, which consists of IMDB movie reviews labeled as either positive or negative. [Find more info here.](https://tensorflow.google.cn/lite/models/text_classification/overview) 
 
-> 该预训练的模型可以预测当前段落的情感是积极还是消极。它是基于来自 Mass 等人的  [Large Movie Review Dataset v1.0](http://ai.stanford.edu/~amaas/data/sentiment/) 数据集进行训练的。数据集由基于 IMDB 电影评论所标记的积极或消极标签组成，[点击查看更多信息](https://tensorflow.google.cn/lite/models/text_classification/overview)。
+> 该预训练的模型可以预测当前段落的情感是积极还是消极。它是基于来自 Mass 等人的  [Large Movie Review Dataset v1.0](http://ai.stanford.edu/~amaas/data/sentiment/) 数据集进行训练的。数据集由基于 IMDB 电影评论所标记的积极或消极标签组成，[点击查看更多信息](https://tensorflow.google.cn/lite/models/text_classification/overview)。
 
 Place [`text_classification.tflite`](https://storage.googleapis.com/download.tensorflow.org/models/tflite/text_classification/text_classification.tflite) and [`text_classification_vocab.txt`](https://github.com/am15h/tflite_flutter_plugin/blob/master/example/assets/text_classification_vocab.txt) in the text_classification_app/assets/ directory.
 
@@ -94,21 +98,21 @@ Include `assets/` in `pubspec.yaml` .
 在 `pubspec.yaml` 文件中添加 `assets/`。
 
 ```
-assets:    
-  - assets/
+assets:
+  - assets/
 ```
 
 Now, we are all set, to begin with coding. 🚀
 
 现在万事俱备，我们可以开始写代码了。 🚀
 
-## Coding the classifier
+### Coding the classifier
 
-## 实现分类器
+### 实现分类器
 
-## Pre-processing
+### Pre-processing
 
-## 预处理
+### 预处理
 
 As mentioned on the [text_classification model’s page,](https://tensorflow.google.cn/lite/models/text_classification/overview#how_it_works) Here are the steps to classify a paragraph with the model:
 
@@ -132,12 +136,13 @@ We will first write a method to tokenize the raw string using [`text_classificat
 
 Create a new file `classifier.dart` under the `lib/` folder.
 
-在 `lib/` 文件夹下创建一个新文件 `classifier.dart`。 
+在 `lib/` 文件夹下创建一个新文件 `classifier.dart`。 
 
 Let’s first write code to load `text_classification_vocab.txt` to a dictionary.
 
 这里先写代码加载 `text_classification_vocab.txt` 到字典里。
 
+<!-- skip -->
 ```dart
 import 'package:flutter/services.dart';
 
@@ -173,6 +178,7 @@ Now, we will write a function to tokenize the raw string.
 
 现在我们来编写一个函数对原始字符串进行分词。
 
+<!-- skip -->
 ```dart
 import 'package:flutter/services.dart';
 
@@ -223,17 +229,17 @@ Tokenization
 
 分词
 
-## Inference using tflite_flutter
+### Inference using tflite_flutter
 
-## 使用 tflite_flutter 进行分析
+### 使用 tflite_flutter 进行分析
 
 This is the main section of this blog, as here we are going to discuss the usage of the tflite_flutter plugin.
 
 这是本文的主体部分，这里我们会讨论 tflite_flutter 插件的用途。
 
-> The term **inference** refers to the process of executing a TensorFlow Lite model on-device in order to make predictions based on input data. To perform an inference with a TensorFlow Lite model, you must run it through an **interpreter**. [Learn more.](https://tensorflow.google.cn/lite/guide/inference) 
+The term **inference** refers to the process of executing a TensorFlow Lite model on-device in order to make predictions based on input data. To perform an inference with a TensorFlow Lite model, you must run it through an **interpreter**. [Learn more.](https://tensorflow.google.cn/lite/guide/inference) 
 
-> 这里的分析是指基于输入数据在设备上使用 TensorFlow Lite 模型的处理过程。要使用 TensorFlow Lite 模型进行分析，需要通过 **解释器** 来运行它，[了解更多](https://tensorflow.google.cn/lite/guide/inference)。
+这里的分析是指基于输入数据在设备上使用 TensorFlow Lite 模型的处理过程。要使用 TensorFlow Lite 模型进行分析，需要通过 **解释器** 来运行它，[了解更多](https://tensorflow.google.cn/lite/guide/inference)。
 
 **Creating the interpreter, loading the model**
 
@@ -243,14 +249,16 @@ tflite_flutter provides a method to create the interpreter direct from assets.
 
 tflite_flutter 提供了一个方法直接通过资源创建解释器。
 
+<!-- skip -->
 ```
-static Future<Interpreter> fromAsset(String assetName, {InterpreterOptions options})
+static Future<Interpreter> fromAsset(String assetName, {InterpreterOptions options})
 ```
 
 As our model is in `assets/` directory we will just use the above method to create the interpreter. For info on InterpreterOptions [refer to this](https://github.com/am15h/tflite_flutter_plugin/blob/master/lib/src/interpreter_options.dart).
 
 由于我们的模型在 `assets/` 文件夹下，需要使用上面的方法来创建解析器。对于 InterpreterOptions 的相关说明，请 [参考这里](https://github.com/am15h/tflite_flutter_plugin/blob/master/lib/src/interpreter_options.dart)。
 
+<!-- skip -->
 ```dart
 import 'package:flutter/services.dart';
 
@@ -290,7 +298,7 @@ If you don’t want to put your model in `assets/` directory then tflite_flutter
 
 **Let’s perform Inference!**
 
-我们开始进行分析！
+**我们开始进行分析！**
 
 We are going to use this method for inference,
 
@@ -310,8 +318,9 @@ The `Object input` and `Object output` must be multi-dimensional lists having th
 
 To view, the shapes and sizes of input tensors, output tensors you can do,
 
-要查看  input tensors 和 output tensors 的维度，可以使用如下代码：
+要查看  input tensors 和 output tensors 的维度，可以使用如下代码：
 
+<!-- skip -->
 ```dart
 _interpreter.allocateTensors();
 // 打印 input tensor 列表
@@ -322,7 +331,7 @@ print(_interpreter.getOutputTensors());
 
 In the case of our text_classification model,
 
-在本例中 text_classification 模型的输出如下： 
+在本例中 text_classification 模型的输出如下：
 
 ```
 InputTensorList:
@@ -335,6 +344,7 @@ Now, lets, write the classify method which returns 1 for positive, and 0 for neg
 
 现在，我们实现分类方法，该方法返回值为 1 表示积极，返回值为 0 表示消极。
 
+<!-- skip -->
 ```dart
 int classify(String rawText) {
     
@@ -368,6 +378,7 @@ There are some useful extensions defined under `extension ListShape` on `List` i
 
 在 tflite_flutter 的 extension ListShape on List 下面定义了一些使用的扩展：
 
+<!-- skip -->
 ```dart
 // 将提供的列表进行矩阵变形，输入参数为元素总数 // 保持相等 
 // 用法：List(400).reshape([2,10,20]) 
@@ -385,6 +396,7 @@ The final `classifier.dart` should look like this,
 
 最终的 `classifier.dart` 应该是这样的：
 
+<!-- skip -->
 ```dart
 import 'package:flutter/services.dart';
 
@@ -486,6 +498,7 @@ Now, it’s up to you to code the desired UI for this, the usage of classifier w
 
 现在，可以根据您的喜好实现 UI 的代码，分类器的用法比较简单。
 
+<!-- skip -->
 ```dart
 // 创建 Classifier 对象
 Classifer _classifier = Classifier();
@@ -510,13 +523,13 @@ Visit the repository [**am15h/tflite_flutter_plugin** on Github](https://github.
 
 了解更多关于 tflite_flutter 插件的信息，请访问 GitHub repo: [**am15h/tflite_flutter_plugin**](https://github.com/am15h/tflite_flutter_plugin)。
 
-## FAQs
+### FAQs
 
-## 答疑
+### 答疑
 
-### Q. How is this plugin [`tflite_flutter`](https://pub.flutter-io.cn/packages/tflite_flutter) different from [`tflite v1.0.5`](https://pub.flutter-io.cn/packages/tflite)
+##### Q. How is this plugin [`tflite_flutter`](https://pub.flutter-io.cn/packages/tflite_flutter) different from [`tflite v1.0.5`](https://pub.flutter-io.cn/packages/tflite)
 
-### 问：[`tflite_flutter`](https://pub.flutter-io.cn/packages/tflite_flutter) 和 [`tflite v1.0.5`](https://pub.flutter-io.cn/packages/tflite) 有哪些区别？
+##### 问：[`tflite_flutter`](https://pub.flutter-io.cn/packages/tflite_flutter) 和 [`tflite v1.0.5`](https://pub.flutter-io.cn/packages/tflite) 有哪些区别？
 
 While `tflite v1.0.5` focuses on offering some high-level features to build apps with specific use cases like Image Classification, Object Detection, etc…, the new, tflite_flutter offers the same flexibility and features as the Java API and can be used with any tflite model. It also offers support for delegates.
 
@@ -526,9 +539,9 @@ tflite_flutter is fast (has low latency) as it uses dart:ffi (dart ↔️ (ffi) 
 
 由于使用 dart:ffi (dart ↔️ (ffi) ↔️ C)，tflite_flutter 非常快 (拥有低延时)。而 tflite 使用平台集成 (dart ↔️ platform-channel ↔️ (Java/Swift) ↔️ JNI ↔️ C)。
 
-### Q. How to create an Image Classification app using tflite_flutter, is there any package similar to [TensorFlow Lite Android Support Library](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/experimental/support/java/README.md)?
+##### Q. How to create an Image Classification app using tflite_flutter, is there any package similar to [TensorFlow Lite Android Support Library](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/experimental/support/java/README.md)?
 
-### 问：如何使用 tflite_flutter 创建图片分类应用？有没有类似 [TensorFlow Lite Android Support Library](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/experimental/support/java/README.md) 的依赖包？
+##### 问：如何使用 tflite_flutter 创建图片分类应用？有没有类似 [TensorFlow Lite Android Support Library](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/experimental/support/java/README.md) 的依赖包？
 
 Update (07/01/2020): TFLite Flutter Helper library is released.
 
@@ -546,6 +559,15 @@ Thanks for reading.
 
 谢谢关注。
 
-Thanks to Michael Thomsen. 
+Thanks to Michael Thomsen. 
 
 感谢 Michael Thomsen。
+
+### 延展阅读
+
+如果需要关注更多 TensorFlow 和 Google AI 相关内容，请查阅下面资料
+- [TensorFlow 微信公众号](https://mp.weixin.qq.com/s/XCZ3xOZa7x1lfdoiHOLqrw)
+- [TensorFlow 官方文档](https://tensorflow.google.cn)
+- [最新简单粗暴 TF 手册](https://tf.wiki)
+- [TensorFlow 交流论坛](https://discuss.tf.wiki)
+- [TensorFlow Codelabs](https://codelabs.tf.wiki)

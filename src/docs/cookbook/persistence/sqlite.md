@@ -3,6 +3,8 @@ title: Persist data with SQLite
 title: 用 SQLite 做数据持久化
 description: How to use SQLite to store and retrieve data.
 description: 如何使用 SQLite 做数据持久化。
+tags: cookbook, 实用教程, 持久化
+keywords: SQLite,数据库
 prev:
   title: Work with WebSockets
   title: 发起 WebSockets 请求
@@ -13,17 +15,18 @@ next:
   path: /docs/cookbook/persistence/reading-writing-files
 ---
 
-If writing an app that needs to persist and query larger amounts of data on
+If you are writing an app that needs to persist and query large amounts of data on
 the local device, consider using a database instead of a local file or
 key-value store. In general, databases provide faster inserts, updates,
-and queries, compared to other local persistence solutions.
+and queries compared to other local persistence solutions.
 
 如果您正在编写一个需要持久化且查询大量本地设备数据的 app，
 可考虑采用数据库，而不是本地文件夹或关键值库。
-总的来说，相比于其他本地持久化方案来说，数据库能够提供更为迅速的插入、更新、查询功能。
+总的来说，相比于其他本地持久化方案来说，
+数据库能够提供更为迅速的插入、更新、查询功能。
 
 Flutter apps can make use of the SQLite databases via the
-[`sqflite`][] plugin available on pub.
+[`sqflite`][] plugin available on pub.dev.
 This recipe demonstrates the basics of using `sqflite`
 to insert, read, update, and remove data about various Dogs.
 
@@ -36,8 +39,7 @@ If you are new to SQLite and SQL statements, review the
 completing this recipe.
 
 如果你对于 SQLite 和 SQL 的各种语句还不熟悉，请查看 SQLite 官方的教程
-[SQLite 教程](http://www.sqlitetutorial.net/)，
-在查看本文之前需要掌握基本的SQL语句。
+[SQLite 教程][SQLite Tutorial]，在查看本文之前需要掌握基本的SQL语句。
 
 This recipe uses the following steps:
 
@@ -134,11 +136,17 @@ to the database. This involves two steps:
   
   	 使用 `sqflite` package 里的 `openDatabase` 方法打开数据库。
 
-Note: In order to use the keyword `await`, the code must be placed
-inside an `async` function.
+{{site.alert.note}}
+  In order to use the keyword `await`, the code must be placed
+  inside an `async` function. You should place all the following
+  table functions inside `void main() async {}`. 
+{{site.alert.end}}
 
 <!-- skip -->
 ```dart
+// Avoid errors caused by flutter upgrade.
+// Importing 'package:flutter/widgets.dart' is required.
+WidgetsFlutterBinding.ensureInitialized();
 // Open the database and store the reference.
 final Future<Database> database = openDatabase(
   // Set the path to the database. Note: Using the `join` function from the
@@ -189,7 +197,9 @@ SQLite database, see the [official SQLite Datatypes documentation][].
 <!-- skip -->
 ```dart
 final Future<Database> database = openDatabase(
-  // Set the path to the database.
+  // Set the path to the database. Note: Using the `join` function from the
+  // `path` package is best practice to ensure the path is correctly
+  // constructed for each platform.
   join(await getDatabasesPath(), 'doggie_database.db'),
   // When the database is first created, create a table to store dogs.
   onCreate: (db, version) {
@@ -246,7 +256,10 @@ class Dog {
     };
   }
 }
+```
 
+<!-- skip -->
+```dart
 // Define a function that inserts dogs into the database
 Future<void> insertDog(Dog dog) async {
   // Get a reference to the database.
@@ -262,7 +275,10 @@ Future<void> insertDog(Dog dog) async {
     conflictAlgorithm: ConflictAlgorithm.replace,
   );
 }
+```
 
+<!-- skip -->
+```dart
 // Create a Dog and add it to the dogs table.
 final fido = Dog(
   id: 0,
@@ -310,7 +326,10 @@ Future<List<Dog>> dogs() async {
     );
   });
 }
+```
 
+<!-- skip -->
+```dart
 // Now, use the method above to retrieve all the dogs.
 print(await dogs()); // Prints a list that include Fido.
 ```
@@ -355,7 +374,10 @@ Future<void> updateDog(Dog dog) async {
     whereArgs: [dog.id],
   );
 }
+```
 
+<!-- skip -->
+```dart
 // Update Fido's age.
 await updateDog(Dog(
   id: 0,
@@ -451,6 +473,7 @@ void main() async {
   // Avoid errors caused by flutter upgrade.
   // Importing 'package:flutter/widgets.dart' is required.
   WidgetsFlutterBinding.ensureInitialized();
+  // Open the database and store the reference.
   final Future<Database> database = openDatabase(
     // Set the path to the database. Note: Using the `join` function from the
     // `path` package is best practice to ensure the path is correctly
@@ -575,9 +598,9 @@ class Dog {
 ```
 
 
-[`delete()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html'
-[`insert()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html
+[`delete()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/delete.html
+[`insert()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/insert.html
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 [SQLite Tutorial]: http://www.sqlitetutorial.net/
 [official SQLite Datatypes documentation]: https://www.sqlite.org/datatype3.html
-[`update()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html
+[`update()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/update.html

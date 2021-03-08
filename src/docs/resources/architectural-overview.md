@@ -2,6 +2,8 @@
 title: Flutter architectural overview
 title: Flutter 架构概览
 description: A high-level overview of the architecture of Flutter, including the core principles and concepts that form its design.
+tags: Flutter参考资料
+keywords: Flutter原理,Flutter架构指南,Flutter分层设计
 ---
 
 This article is intended to provide a high-level overview of the architecture of
@@ -225,7 +227,7 @@ class MyApp extends StatelessWidget {
                 children: [
                   Text('Hello World'),
                   SizedBox(height: 20),
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () {
                       print('Click!');
                     },

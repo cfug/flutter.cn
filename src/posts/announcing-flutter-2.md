@@ -1,4 +1,7 @@
-# Flutter 2 正式发布！
+---
+title: Flutter 2 正式发布！
+toc: true
+---
 
 3月4日凌晨，**Flutter 2** 正式发布: 开发者为*任何*平台创建美观、快速且可移植应用的能力得以更上一层楼。通过 Flutter 2，您可以使用相同的代码库为五种操作系统构建原生应用: iOS、Android、Windows、macOS 和 Linux；以及为 Chrome、Firefox、Safari 和 Edge 等浏览器打造 web 体验。Flutter 甚至可以嵌入到汽车、电视和智能家电，为环境计算提供最普适、可移植的体验。
 
@@ -16,7 +19,7 @@
 
 几个月前，[Google Pay 改用 Flutter](https://mp.weixin.qq.com/s/2y3dWbA4uZbwfTx_bOGdSQ) 打造其旗舰移动应用，在生产力和质量上取得重大进步。通过统一代码库，团队消除了平台之间的功能差异，精简了超过 50 万行代码。Google Pay 还表示，其工程师效率大幅提高，技术债务显著减少，并在 iOS 和 Android 系统上统一了安全审查和实验等发布流程。
 
-## **Flutter web 支持**
+## Flutter web 支持
 
 也许 Flutter 2 带来的最重大的进展是**在 web 平台达到了稳定版**。
 
@@ -42,7 +45,7 @@ Web 的 [早期基础以文档为中心](https://tools.ietf.org/html/rfc1866)。
 
 您可以从 [Flutter web 发布文章](https://medium.com/flutter/web-post-d6b84e83b425) 中了解更多信息。
 
-## **桌面、可折叠和嵌入式设备上的 Flutter 2**
+## 桌面、可折叠和嵌入式设备上的 Flutter 2
 
 除了传统的移动设备和 web 之外，Flutter 正越来越多地覆盖到其他类型设备。[Flutter Engage](https://zhuanlan.zhihu.com/p/355036482) 主题演讲中重点介绍了三位合作伙伴，以展示 Flutter 的可移植性。
 
@@ -60,7 +63,7 @@ Web 的 [早期基础以文档为中心](https://tools.ietf.org/html/rfc1866)。
 
 我们很荣幸与 Toyota 等合作伙伴继续深入协作，将 Flutter 带到汽车、电视和其他嵌入式设备中，在未来几个月我们会为大家带来更多这方面的示例。
 
-## **持续发展的 Flutter 生态系统**
+## 持续发展的 Flutter 生态系统
 
 目前，Flutter 和 Dart 有超过 15,000 个 package: 包括 [Amazon](https://pub.flutter-io.cn/publishers/aws-amplify.com/packages)、[Microsoft](https://pub.flutter-io.cn/publishers/microsoft.com/packages)、[Adobe](https://pub.flutter-io.cn/publishers/adobe.com/packages)、[Alibaba](https://pub.flutter-io.cn/publishers/community.opensource.alibaba.com/packages)、[eBay](https://pub.flutter-io.cn/publishers/ebay.com/packages) 和 [Square](https://pub.flutter-io.cn/packages/square_in_app_payments) 等企业 package，[Lottie](https://pub.flutter-io.cn/packages/lottie)、[Sentry](https://pub.flutter-io.cn/packages/sentry_flutter) 和 [SVG](https://pub.flutter-io.cn/packages/flutter_svg) 等关键 package，以及 [sign_in_with_apple](https://pub.flutter-io.cn/packages/sign_in_with_apple)、[google_fonts](https://pub.flutter-io.cn/packages/google_fonts)、[geolocator](https://pub.flutter-io.cn/packages/geolocator) 和 [sqflite](https://pub.flutter-io.cn/packages/sqflite) 等 [Flutter Favorite](https://flutter.cn/docs/development/packages-and-plugins/favorites) package。
 
@@ -70,7 +73,7 @@ Web 的 [早期基础以文档为中心](https://tools.ietf.org/html/rfc1866)。
 
 我们还更新了 [几项核心 Firebase 服务的 Flutter 插件](https://firebase.flutter.dev/): Authentication、Cloud Firestore、Cloud Functions、Cloud Messaging、Cloud Storage 和 Crashlytics，包括对健全空安全的支持以及对 Cloud Messaging package 的全面改版。
 
-## **Dart: Flutter 背后的秘诀**
+## Dart: Flutter 背后的秘诀
 
 如前所述，Flutter 2 可以移植到许多不同的平台和设备上。之所以能轻松过渡到支持 web、桌面和嵌入式设备，这在很大程度上要归功于 [Dart](https://dart.cn)，它是 Google 为多平台开发优化的编程语言。
 
@@ -86,7 +89,7 @@ Dart 为构建应用提供了一套独特的功能:
 
 这一版本的更新还包括: [FFI 的稳定版本](https://dart.cn/guides/libraries/c-interop)，让您可以编写出高性能的代码与基于 C 语言的 API 进行互操作；使用 Flutter 编写的 [新的集成开发者和性能剖析器工具](https://flutter.cn/docs/development/tools/devtools/overview)；以及许多性能改进和尺寸优化，只需重新编译即可让代码得到长足的改进。如需了解详细信息，请查看 [Dart 2.12 发布文章](https://medium.com/dartlang/announcing-dart-2-12-499a6e689c87)。
 
-## **即刻体验 Flutter 2**
+## 即刻体验 Flutter 2
 
 在介绍 Flutter 2 时，本文由于篇幅限制难免挂一漏万。事实上，被合并的 PR (pull request) 清单就有足足 200 页！请阅读 [Flutter 2 技术博文](https://medium.com/@csells_18027/fe8e95ecc65)，里面介绍了更多新功能和性能改进，我们认为会让 Flutter 开发者感到满意，也请大家立即下载 Flutter 2 开始体验。
 

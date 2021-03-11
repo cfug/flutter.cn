@@ -14,7 +14,7 @@ description: 如何将多个 Flutter 引擎 (engine)、页面 (screen) 或视图
 {{site.alert.note}}
 
   Support for adding multiple instances of Flutter became available
-  as of Flutter 1.26. Use at your own risk since stability or
+  as of Flutter 2.0.0. Use at your own risk since stability or
   performance issues, and API changes are still possible.
 
   自 Flutter 1.26 开始，您可以同时添加多个 Flutter 实例。
@@ -28,22 +28,33 @@ first instance is ~180kB on Android and iOS.
 目前在 Android 和 iOS 上，除了第一个 Flutter 实例以外，
 其他每一个实例的内存占用量大约为 180kB。
 
-As of the 1.26 release, communication between Flutter instances is handled using
+As of the 2.0.0 release, communication between Flutter instances is handled using
 [platform channels][] (or [Pigeon][]) through the host platform. To see
 our roadmap on communication, or other multiple-Flutters issues, see [Issue 72009][].
 
-随着 1.26 正式版的发布，Flutter 实例之间将通过宿主平台的
+随着 Flutter 2.0.0 正式版的发布，Flutter 实例之间将通过宿主平台的
 [平台通道][platform channels]（或 [Pigeon][]）进行处理。
 若您对我们平台通信的里程碑感兴趣，或是有其他多个 Flutter 实例的问题，请查看 [Issue 72009][]。
 
 {{site.alert.warning}}
 
-  In 1.26, the use of [platform views][] is not supported in conjunction with
+  In 2.0.0, the use of [platform views][] is not supported in conjunction with
   multiple Flutters. When a second Flutter instance is created, platform views
   will be globally disabled.
 
-  在 1.26 版本中，[平台视图][platform views] 不支持与多个 Flutter 实例一同使用。
+  在 2.0.0 版本中，[平台视图][platform views] 不支持与多个 Flutter 实例一同使用。
   当第二个 Flutter 实例被创建时，平台视图将被全局禁用。
+
+{{site.alert.end}}
+
+{{site.alert.warning}}
+
+  In 2.0.0, the memory usage is only fully optimized in AOT mode (in profile
+  and release builds). Some memory redundancy will still be present in JIT mode
+  (in debug builds) and will be addressed in a future release.
+
+  在 2.0.0 版本里，系统内存的占用只在 AOT 模式 (Profile 和 Release 模式) 下做了完全优化，
+  在 JIT 模式 (debug 模式) 下仍会存在一些内存冗余，这个将在未来的版本中解决。
 
 {{site.alert.end}}
 
@@ -51,11 +62,11 @@ our roadmap on communication, or other multiple-Flutters issues, see [Issue 7200
 
 ## 使用场景
 
-Before Flutter 1.26, multiple instances of `FlutterEngine` and its associated
+Before Flutter 2.0.0, multiple instances of `FlutterEngine` and its associated
 UI could be launched, but each instance came with significant latency
 and fixed memory cost.
 
-在 Flutter 1.26 发布之前，`FlutterEngine` 的多个实例和相关的 UI 可以同时启动，
+在 Flutter 2.0.0 发布之前，`FlutterEngine` 的多个实例和相关的 UI 可以同时启动，
 但是每个实例都有明显的延迟和固定的内存占用。
 
 Multiple Flutter instances can be useful in the following scenarios:
@@ -86,12 +97,12 @@ scenarios motivating the usage of multiple Flutters can be found at
 了解更多关于多个 Flutter 使用的动机和场景，请查看
 [flutter.cn/go/multiple-flutters](https://files.flutter-io.cn/sources/flutter-design-docs/Multiple_Flutters.pdf)。
 
-The 1.26 Flutter release drastically reduces the memory footprint of additional
+The 2.0.0 Flutter release drastically reduces the memory footprint of additional
 Flutter engines from **~19MB** on Android and **~13MB** on iOS, to **~180kB** on Android and
 iOS. This ~99% fixed cost reduction allows the multiple Flutters pattern to be
 used more liberally in your add-to-app integration.
 
-Flutter 1.26 大幅减少了额外的 Flutter 引擎的内存占用，
+Flutter 2.0.0 大幅减少了额外的 Flutter 引擎的内存占用，
 从 Android 上 **约 19MB**，iOS 上 **约 13MB**，降至 **约 180kB**。
 将固定成本减少了约 99% 后，您可以更自由地将多个 Flutter 集成至您的应用。
 

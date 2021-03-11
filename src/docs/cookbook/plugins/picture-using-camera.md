@@ -281,30 +281,21 @@ FutureBuilder<void>(
 ## 5. 使用 `CameraController` 拍照
 
 You can use the `CameraController` to take pictures using the
-[`takePicture()`][] method. In this example,
-create a `FloatingActionButton` that takes a picture
+[`takePicture()`][] method, which returns an [`XFile`][],
+a cross-platform, simplified `File` abstraction.
+On both Android and IOS, the new image is stored in their
+respective cache directories,
+and the `path` to that location is returned in the `XFile`.
+
+[`XFile`]:  {{site.pub}}/documentation/camera/latest/camera/XFile-class.html
+
+In this example, create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
 
-你可以使用 `CameraController` 的
-[`takePicture()`][] 方法拍照。在这个示例中，
-创建了一个浮动按钮 `FloatingActionButton`，
-用户点击这个按钮，就能通过 `CameraController` 来拍摄图片。
+Taking a picture requires 2 steps:
 
-Saving a picture requires 3 steps:
-
-保存一张图片，需要经过一下三个步骤：
-
-  1. Ensure the camera is initialized
-
-     确保相机模块已经被初始化完成
-
-  2. Construct a path that defines where the picture should be saved
-
-     创建图片需要被保存的路径
-
-  3. Use the controller to take a picture and save the result to the path
-
-     使用控制器拍摄一张图片并保存结果到上述路径
+  1. Ensure that the camera is initialized.
+  2. Use the controller to take a picture and ensure that it returns a `Future<XFile>`.
   
 It is good practice to wrap these operations in a `try / catch` block in order
 to handle any errors that might occur.
@@ -323,17 +314,9 @@ FloatingActionButton(
       // Ensure that the camera is initialized.
       await _initializeControllerFuture;
 
-      // Construct the path where the image should be saved using the path
-      // package.
-      final path = join(
-        // Store the picture in the temp directory.
-        // Find the temp directory using the `path_provider` plugin.
-        (await getTemporaryDirectory()).path,
-        '${DateTime.now()}.png',
-      );
-
-      // Attempt to take a picture and log where it's been saved.
-      await _controller.takePicture(path);
+      // Attempt to take a picture and then get the location
+      // where the image file is saved.
+      final image = await _controller.takePicture();
     } catch (e) {
       // If an error occurs, log the error to the console.
       print(e);

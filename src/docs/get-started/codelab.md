@@ -23,13 +23,10 @@ diff2html: true
   This codelab walks you through writing your first Flutter
   app on mobile. You might prefer to try
   [writing your first Flutter app on the web][codelab-web].
-  **Note that if you have [enabled web][],
-  the completed app just works on all of these devices!**
 
   这篇 codelab 将带你初体验移动端 Flutter 应用开发。
   你也许更想尝试 [编写你的第一个 Flutter 网页应用][codelab-web]。
-  **请注意，如果你 [开启 web][enabled web]，完整的应用程序仅可在这些设备上使用！**
-
+  
 {{site.alert.end}}
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
@@ -162,46 +159,6 @@ The animated GIF shows how the app works at the completion of part 1.
     浏览器（如果需要 debug，则需要用 Chrome 浏览器）
     
 {{site.alert.end}}
-
-If you want to compile your app to run on the web,
-you must enable this feature (which is currently in beta).
-To enable web support, use the following instructions:
-
-如果您想要编译在 Web 上运行的应用程序，
-则必须先启用此功能（当前处于测试版）。 
-要启用 Web 支持，可以按照以下说明操作：
-
-```terminal
-$ flutter channel beta
-$ flutter upgrade
-$ flutter config --enable-web
-```
-
-You need only run the config command once.
-After you enable web support, every Flutter app you
-create also compiles for the web. In your IDE under
-the **devices** pulldown, or at the command line
-using `flutter devices`, you should now see **Chrome**
-and **Web server** listed. The **Chrome** device
-automatically starts Chrome. The **Web server**
-starts a server that hosts the app so that you can
-load it from any browser. Use the Chrome device during
-development so that you can use DevTools,
-and the web server when you want to test on
-other browsers. For more information,
-see [Building a web application with Flutter][]
-and [Write your first Flutter app on the web][codelab-web].
-
-您只需要运行一次 config 命令。启用 Web 支持后，
-您创建的每个 Flutter 应用程序都可以针对 Web 平台编译。 
-在 IDE 下拉菜单的 **devices**，或使用命令行 `flutter devices`，
-您应该就可以看到列出了 **Chrome** 和 **Web server**。 
-**Chrome** 设备会自动启动 Chrome，**Web server** 会启动承载该应用的服务器，
-这样您就可以从任何浏览器加载访问。 
-在开发过程中使用 Chrome 设备时，您也可以使用 DevTools，
-如果您想要在其他浏览器上进行测试，可以使用 web server。
-更多相关信息，请参见 [使用 Flutter 构建 Web 应用程序][Building a web application with Flutter] 和
-在 [编写你的第一个 Flutter 网页应用][codelab-web]。
 
 ## Step 1: Create the starter Flutter app
 

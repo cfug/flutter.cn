@@ -330,28 +330,12 @@ At this point, you might consider [obfuscating your Dart code][]
 to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
 
-在开发过程中，你将会使用 _debug_ 模式来完成构建、调试并测试。
+在开发过程中，你将会使用 **debug** 模式来完成构建、调试并测试。
 当你准备好通过 App Store 或 TestFlight 交付你的 app 给用户时，
 你需要准备一个 **release** 构建。
-这时你也许想要
-[混淆你的 Dart 代码][obfuscating your Dart code] 以加大反编译难度。
-混淆你的代码需要在 build 的时候添加一些标志，
+这时你也许想要 [混淆你的 Dart 代码][obfuscating your Dart code]
+以加大反编译难度。混淆你的代码需要在 build 的时候添加一些标志，
 并维护其他文件以消除反编译的堆栈跟踪。
-
-On the command line, follow these steps in your application directory:
-
-在命令行中你的应用目录下执行如下步骤：
-
-1. Run `flutter build ios` to create a release build (`flutter build` defaults to `--release`).
-
-   执行 `flutter build ios` 来创建一个 release 构建 (`flutter build` 默认指向 `--release`)。
-
-1. To ensure that Xcode refreshes the release mode configuration, close and
-   re-open your Xcode workspace. For Xcode 8.3 and later, this step is not
-   required.
-
-   为了确保 Xcode 刷新了发布模式的配置，关闭并重新打开你的 Xcode。
-   对于 Xcode 8.3 及以后版本，这一步不是必须的。
 
 In Xcode, configure the app version and build:
 
@@ -361,18 +345,11 @@ In Xcode, configure the app version and build:
 
    在 Xcode 中，打开你应用 `ios` 目录中的 `Runner.xcworkspace`
 
-1. Select **Product > Scheme > Runner**.
+1. Select **Runner** in the Xcode project navigator, then select the
+   **Runner** target in the settings view sidebar.
 
-   选择 **Product > Scheme > Runner**
-
-1. Select **Product > Destination > Any iOS Device**.
-
-   选择 **Product > Destination > Any iOS Device**
-
-1. Select **Runner** in the Xcode project navigator, then select the **Runner**
-   target in the settings view sidebar.
-
-   在 Xcode 项目导航栏中选择 **Runner**，然后在设置界面侧边栏选择 **Runner** 目标。
+   在 Xcode 项目导航栏中选择 **Runner**，
+   然后在设置界面侧边栏选择 **Runner** 目标。
 
 1. In the Identity section, update the **Version** to the user-facing
    version number you wish to publish.
@@ -383,8 +360,8 @@ In Xcode, configure the app version and build:
    build number used to track this build on App Store Connect. Each upload requires a
    unique build number.
 
-   在 Identity 部分，更新 **Build** 标示为一个唯一的 Build 数字，用来在 App Store Connect 上追踪。
-   每一个上传都需要一个独立的 Build 数字。
+   在 Identity 部分，更新 **Build** 标示为一个唯一的 Build 数字，
+   用来在 App Store Connect 上追踪，每一个上传都需要一个独立的 Build 数字。
 
 Finally, create a build archive and upload it to App Store Connect:
 
@@ -393,30 +370,27 @@ Finally, create a build archive and upload it to App Store Connect:
 <ol markdown="1">
 <li markdown="1">
 
-Select **Product > Archive** to produce a build archive.
+Run `flutter build ipa` to produce a build archive.
 
 选择 **Product > Archive** 来生成一个构建归档
 
 {{site.alert.note}}
 
-  On Flutter version 1.24.0-6.0 and later you can create an
-  archive by instead running `flutter build ipa`.
-  Then open `build/ios/archive/MyApp.xcarchive` in Xcode to
-  validate and distribute your app.
-  See `flutter build ipa -h` for available flags.
+  On versions of Flutter where `flutter build ipa`
+  is unavailable, open Xcode and select **Product > Archive**.
+  In the sidebar of the Xcode Organizer window, select your iOS app,
+  then select the build archive you just produced.
 
-  在 Flutter 1.24.0-6.0 以及之后的版本
-  你可以通过运行 `flutter build ipa` 创建一个归档（archive）。
-  然后打开 Xcode 中的 `build/ios/archive/MyApp.xcarchive` 目录以验证并发布你的应用。
-  运行 `flutter build ipa -h` 以查看可用标记。
-
+  在无法使用命令 `flutter build ipa` 的 Flutter 版本里，
+  打开 Xcode 并选择 **Product > Archive**，在 Xcode Organizer 窗口的侧栏，
+  选择你的 iOS 应用，然后选择你刚生成的构建文档。
+  
 {{site.alert.end}}
 
 </li>
 <li markdown="1">
 
-In the sidebar of the Xcode Organizer window, select your iOS app,
-then select the build archive you just produced.
+Open `build/ios/archive/MyApp.xcarchive` in Xcode.
 
 在 Xcode 组织界面的侧边栏中，选择你的 iOS app，然后选择你刚刚的生成的构建归档。
 
@@ -446,8 +420,7 @@ Activities tab of your app's details page on
   When you export your app at the end of **Distribute App**,
   Xcode will create a directory containing
   an IPA of your app and an `ExportOptions.plist` file.
-  On Flutter version 1.24.0-6.0 and later you can
-  create new IPAs with the same options without launching
+  You can create new IPAs with the same options without launching
   Xcode by running
   `flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
   See `xcodebuild -h` for details about the keys in this property list.

@@ -17,15 +17,14 @@ Flutter 的桌面支持也允许插件拓展&mdash;
 您可以使用已经支持了 Windows、macOS 或 Linux 平台的插件，或者创建您自己的插件来实现功能。
 
 {{site.alert.warning}}
-
-  **Alpha!**
+  **Beta!**
   This page covers desktop support,
-  which is available as alpha-quality
-  features in the Flutter dev channel.
+  which is available as beta-quality
+  features in the Flutter beta channel.
   Support still has notable feature gaps,
   including accessibility support.
 
-  **预览版!**
+  **测试版发布!**
   本页涵盖的桌面支持，只能是在 Flutter dev 渠道的预览版特性。
   桌面支持仍然存在许多不足之处，包括辅助功能的支持。
 
@@ -48,6 +47,16 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   其中标题包含 "desktop:macos/linux/windows" (所处的平台)。
 
 {{site.alert.end}}
+
+## Beta Snapshot in Stable channel
+
+To make it easier to try out Desktop support for Flutter, we are
+shipping a snapshot of Flutter beta channel’s Desktop support in
+Flutter 2 stable. This means that you can easily try it out without
+needing to switch to the Flutter beta channel. However, the snapshot
+included in the stable channel will not be updated with the latest
+Flutter support for Desktop until the next Flutter stable release.
+
 
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
 
@@ -96,12 +105,12 @@ you need the following in addition to the Flutter SDK:
 
 要开发 Windows 桌面程序，除了 Flutter SDK，您还需要做以下准备:
 
-* [Visual Studio 2019][] (not to be confused with Visual Studio Code)
+* [Visual Studio 2019][] (not to be confused with Visual Studio _Code_)
   with the "Desktop development with C++" workload installed,
   including all of its default components
 
   安装有 “Desktop development with C++” 工作负载的
-  [Visual Studio 2019][]（不要与 Visual Studio Code 混淆），
+  [Visual Studio 2019][]（不要与 Visual Studio Code - VS Code 混淆），
   包括它所有的默认组件。
 
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
@@ -219,8 +228,6 @@ then make sure that you have installed the
 那么请确保您安装了 [Flutter SDK][]，并且配置在您的环境路径中。
 
 ```terminal
-$ flutter channel dev
-$ flutter upgrade
 $ flutter config --enable-<platform>-desktop
 ```
 
@@ -234,7 +241,7 @@ $ flutter config --enable-macos-desktop
 $ flutter config --enable-linux-desktop
 ```
 
-To ensure that desktop _is_ installed,
+To ensure that desktop _is_ enabled,
 list the devices available.
 You should see something like the following
 (you'll see Windows, macOS, or Linux,
@@ -262,7 +269,7 @@ the following on Windows:
 ```terminal
 PS > flutter doctor                                                                     
 Doctor summary (to see all details, run flutter doctor -v):                                           
-[√] Flutter (Channel dev, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
+[√] Flutter (Channel beta, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
 [√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)                      
 [√] Chrome - develop for the web                                                                      
 [√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.7.7)                         
@@ -278,7 +285,7 @@ On macOS, you might see something like the following:
 ```terminal
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
+[✓] Flutter (Channel beta, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
 [✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
@@ -294,7 +301,7 @@ On Linux, you might see something like the following:
 ```terminal
 $ flutter doctor 
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
+[✓] Flutter (Channel beta, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
 [✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [✓] Chrome - develop for the web
 [✓] Linux toolchain - develop for Linux desktop
@@ -358,8 +365,7 @@ already running.
 在您配置好桌面支持的环境后，记得重启已经在运行的 IDE。
 
 Create a new app in your IDE and it automatically
-creates iOS, Android, and desktop versions of your app.
-(And web, too, if you've enabled [web support][].)
+creates iOS, Android, web, and desktop versions of your app.
 From the device pulldown, select **windows (desktop)**,
 **macOS (desktop)**, or **linux (desktop)**
 and run your app to see it launch on the desktop.
@@ -377,7 +383,7 @@ and run your app to see it launch on the desktop.
 #### 命令行
 
 To create a new app that includes desktop support
-(in addition to mobile support), run the following commands,
+(in addition to mobile and web support), run the following commands,
 substituting `myapp` with the name of your project:
 
 想要创建一个包含桌面支持的新应用（除了移动支持），运行下面的命令，
@@ -481,7 +487,8 @@ In addition to that executable, you need the following:
 
 * The Visual C++ redistributables.
   You can use any of the methods shown in the
-  [deployment example walkthroughs][] on the Microsoft site.
+  [deployment example walkthroughs][] on the Microsoft site
+  to ensure that end users have the C++ redistributables.
   If you use the `application-local` option, you need to copy:
 
   Visual C++ 发布包。您可以使用 Microsoft 站点上 
@@ -512,7 +519,7 @@ and the other DLLs, and bundle them together in a zip file.
 
 To distribute your macOS application, you can either [distribute your app via the macOS App Store][], 
 or alternatively you can distribute the `.app` itself, for example on your own website.  
-However, as of macOS 14.5 you need to notarize your macOS application before distributing 
+However, as of macOS 10.14.5 you need to notarize your macOS application before distributing 
 it outside of the macOS App Store. 
 
 要发布你的 macOS 软件，你可以选择
@@ -555,19 +562,42 @@ Hardened Runtime 是如何影响你打包的应用的。
 
 #### Linux
 
+The executable can be found in your project under `build/linux/<build mode>/bundle/`. Alongside your 
+executable binary in the `bundle` directory there are two directories:
+ * `lib` contains the required `.so` library files
+ * `data` contains the application's data assets, such as fonts or images
+
+In addition to these files, your application also relies on various operating system libraries that your
+application has been compiled against. You can see the full list by running `ldd` against your application.
+For example, assuming you have a Flutter desktop application called `linux_desktop_test` you could inspect 
+the system libraries it depends upon as follows:
+
+```
+$ flutter build linux --release
+$ ldd build/linux/release/bundle/linux_desktop_test
+```
+
+To wrap up this application for distribution you need to include everything in the `bundle` directory,
+and make sure the Linux system you are installing it upon has all of the system libraries required. This may 
+be as simple as:
+
+```
+$ sudo apt-get install libgtk-3-0 libblkid1 liblzma5
+```
+
 For information on publishing a Linux app to the
 [Snap Store][], see
-[Build and release a Linux desktop app][].
+[Build and release a Linux app to the Snap Store][].
 
 有关向 [Snap Store][] 发布 Linux 应用，请参见 
-[构建发布一个Linux桌面程序][Build and release a Linux desktop app]。
+[构建发布一个Linux桌面程序][Build and release a Linux app to the Snap Store]。
 
 As the tooling solidifies, stay tuned for updates on other ways
 to distribute a Linux desktop app.
 
 这些工具将不断进行完善，欢迎您持续关注 Linux 桌面应用的其他方式的更新信息。
 
-[Build and release a Linux desktop app]: /docs/deployment/linux
+[Build and release a Linux app to the Snap Store]: /docs/deployment/linux
 
 ## Add desktop support to an existing Flutter app
 
@@ -909,7 +939,7 @@ learn more about Flutter desktop support.
 您可以运行下面的桌面应用案例，也可以下载并阅读源代码，
 以了解更多关于 Flutter 桌面支持的信息。
 
-Flutter Gallery [running web app][], [repo][]
+Flutter Gallery [running web app][], [repo][flutter-gallery-repo]
 <br> A samples project hosted on GitHub to help developers
   evaluate and use Flutter. The Gallery consists of a
   collection of Material design widgets, behaviors,
@@ -917,11 +947,20 @@ Flutter Gallery [running web app][], [repo][]
   You can clone the project and run Gallery as a desktop app
   by following the instructions provided in the [README][].
 
-Flutter Gallery [运行 web 应用][running web app]，[仓库地址][repo]
+Flutter Gallery [线上运行的 Web 应用][flutter gallery cn]，[源代码仓库地址][flutter-gallery-repo]
 <br>一个托管在 GitHub 上案例项目，可以用来帮助开发人员评估和使用 Flutter。
   Gallery 的构成部分有：Material design widgets 的集合、
   behaviors 和用 Flutter 实现的 vignettes。
   你可以克隆该项目，并按照 [README][] 中的说明，将 Gallery 作为桌面应用程序运行。
+
+Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-repo]
+<br> A Google contacts manager that integrates with GitHub and Twitter. 
+  It syncs with your Google account, imports your contacts,
+  and allows you to manage them.
+
+Flokk [官宣文章][gskinner-flokk-blogpost], [源代码仓库地址][gskinner-flokk-repo]
+<br>一款集成了 GitHub 和 Twitter 的谷歌联系人管理器应用。
+可以从你的 Google 账户同步数据，导入联系人信息，并管理它们。
 
 [Photo Search app][]
 <br> A sample app built as a desktop application that
@@ -937,6 +976,9 @@ Flutter Gallery [运行 web 应用][running web app]，[仓库地址][repo]
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
 [README]: {{site.github}}/flutter/gallery#flutter-gallery
-[repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
+[flutter-gallery-repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
+[gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
+[gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
 [running web app]: https://flutter.github.io/gallery/#/
+[flutter gallery cn]: https://gallery.flutter.cn/#/
 [Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html

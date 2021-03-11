@@ -4,16 +4,16 @@ title: 创建一个点击展开的 FAB
 description: How to implement a FAB that expands to multiple buttons when tapped.
 description: 如何实现一个可以点击展开为好几个按钮的 FAB。
 prev:
-  title: Retrieve the value of a text field
-  title: 获取文本框的输入值
-  path: /docs/cookbook/forms/retrieve-input
+  title: Create a typing indicator
+  title: 创建一个「正在输入」的指示器
+  path:  /docs/cookbook/effects/typing-indicator
 next:
-  title: Add Material touch ripples
-  title: 添加点按涟漪效果 (Material Design)
-  path: /docs/cookbook/gestures/ripples
+  title: Create gradient chat bubbles
+  title: 创建一个渐变的聊天气泡
+  path:  /docs/cookbook/effects/gradient-bubbles
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 {% include null-safe-recipe.md %}
@@ -28,7 +28,9 @@ in the following figure. When pressed, this expandable FAB spawns
 multiple, other action buttons. Each button corresponds to one of
 those critical actions.
 
-![pic of a collapsed FAB]({% asset cookbook/effects/expandable-fab_closed.png @path %}){:width="40%"}   ![pic of an expanded FAB]({% asset cookbook/effects/expandable-fab_open.png @path %}){:width="40%"}
+The following animation shows the app's behavior:
+
+![Expanding and collapsing the FAB]({% asset cookbook/effects/ExpandingFAB.gif @path %}){:.site-mobile-screenshot}
 
 ## Create an ExpandableFab widget
 
@@ -398,9 +400,23 @@ class _ExpandableFabState extends State<ExpandableFab> with SingleTickerProvider
 }
 ```
 
+Congratulations! You now have an expandable FAB.
+
 ## Interactive example
 
-Congratulations! You now have an expandable FAB.
+Run the app:
+
+* Click the FAB in the lower-right corner,
+  represented with an Edit icon.
+  It fans out to 3 buttons and is itself replaced by
+  a close button, represented by an **X**.
+* Click the close button to see the expanded
+  buttons fly back to the original FAB and
+  the **X** is replaced by the Edit icon.
+* Expand the FAB again, and click on any
+  of the 3 satellite buttons to see a dialog
+  representing that button's action.
+
 
 <!--skip-->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true

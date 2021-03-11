@@ -10,9 +10,9 @@ prev:
   title: 使用 Themes 统一颜色和字体风格
   path: /docs/cookbook/design/themes
 next:
-  title: Build a form with validation
-  title: 构建一个有验证判断的表单
-  path: /docs/cookbook/forms/validation
+  title: Create a download button
+  title: 创建一个下载按钮
+  path: /docs/cookbook/effects/download-button
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

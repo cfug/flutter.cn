@@ -12,7 +12,7 @@ frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
 picture-in-picture" allowfullscreen></iframe>
 [Flutter performance basics](https://www.youtube.com/watch?v=PKGguGUwSYE)
 
-[ Flutter 性能入门](https://www.youtube.com/watch?v=PKGguGUwSYE)
+[Flutter 性能入门](https://www.youtube.com/watch?v=PKGguGUwSYE)
 
 What is performance? Why is performance important? How do I improve performance?
 
@@ -32,7 +32,7 @@ performance issues that need to be solved. Therefore, the answers to those
 questions are in the [appendix](/docs/perf/appendix).
 
 前两个问题的答案比较哲学，对于正在阅读这篇文章的开发者而言，当他们需要解决特定的性能问题时，并没有什么帮助。
-所以，我们它们放在了 [附录](/docs/perf/appendix)。
+所以，我们将它们放在了 [附录](/docs/perf/appendix)。
 
 To improve performance, you first need metrics: some measurable numbers to
 verify the problems and improvements. In the [metrics](/docs/perf/metrics) 
@@ -124,7 +124,7 @@ download.
 
 How to ensure a longer battery life when running your app.
 
-当运行你的应用程序，如何确保更久的电池续航。
+当运行你的应用程序时，如何确保更久的电池续航。
 
 [Preserving your battery](/docs/perf/power)
 

@@ -25,7 +25,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   including accessibility support.
 
   **测试版发布!**
-  本页涵盖的桌面支持，只能是在 Flutter dev 渠道的预览版特性。
+  本页涵盖的桌面支持，描述的是 Flutter beta 渠道的支持和特性。
   桌面支持仍然存在许多不足之处，包括辅助功能的支持。
 
 {{site.alert.end}}
@@ -50,6 +50,8 @@ Flutter 的桌面支持也允许插件拓展&mdash;
 
 ## Beta Snapshot in Stable channel
 
+##  Stable 渠道包含了一份 Beta 渠道的桌面支持
+
 To make it easier to try out Desktop support for Flutter, we are
 shipping a snapshot of Flutter beta channel’s Desktop support in
 Flutter 2 stable. This means that you can easily try it out without
@@ -57,7 +59,10 @@ needing to switch to the Flutter beta channel. However, the snapshot
 included in the stable channel will not be updated with the latest
 Flutter support for Desktop until the next Flutter stable release.
 
-
+为了让开发者更轻松尝试 Flutter 的桌面支持，我们在 Flutter 2 稳定版
+构建渠道里打包了一份 Flutter 桌面支持的测试版构建渠道的快照。
+您可以尝试 Flutter 桌面支持而无需切换到 Flutter 测试版构建渠道。
+但在下个稳定版本发布之前，这个快照不会有更新。
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
 
 ## Requirements
@@ -386,7 +391,7 @@ To create a new app that includes desktop support
 (in addition to mobile and web support), run the following commands,
 substituting `myapp` with the name of your project:
 
-想要创建一个包含桌面支持的新应用（除了移动支持），运行下面的命令，
+想要创建一个包含桌面支持的新应用（除了支持移动和 Web），请运行下面的命令，
 将 `myapp` 替换成您项目的名称：
 
 ```terminal

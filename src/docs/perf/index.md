@@ -52,7 +52,7 @@ were already answered or encountered, and whether there are existing solutions.
 这里有一个 [常见问题](/docs/perf/faq) 的列表，
 您可以查询您的问题是否出现过或者已经被解答，
 以及是否有现成的解决方案。
-（你也可以查看 [性能](performancee)） 
+（您也可以查看 GitHub issues 里含有 [性能][performance] 标签的内容。） 
 
 Finally, the performance issues are divided into four categories. They 
 correspond to the four labels that are used in the Flutter GitHub issue 

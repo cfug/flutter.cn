@@ -2,7 +2,7 @@
 title: Performance
 title: 性能评估
 description: Evaluating the performance of your app from several angles.
-description: 从多个角度评估您的应用性能..
+description: 从多个角度评估你的应用性能..
 tags: Flutter性能
 keywords: 性能评估,包体积,内存占用
 ---
@@ -24,7 +24,7 @@ point or the root node of a tree of resources that addresses any questions
 that you have about performance.
 
 我们的目标是回答这三个问题（主要是第三个）以及任何与之相关的话题。
-如果您有任何关于性能方面的问题，本文档可以作为解决您疑惑的起点。
+如果你有任何关于性能方面的问题，本文档可以作为解决你疑惑的起点。
 
 The answers to the first two questions are mostly philosophical, and not as 
 helpful to many developers who visit this page with speicifc
@@ -39,8 +39,8 @@ verify the problems and improvements. In the [metrics](/docs/perf/metrics)
 page, you'll see which metrics are currently used, and which tools and APIs 
 are available to get the metrics.
 
-为了提升性能，首先您需要一些可以量化的指标来验证问题和性能的提升。
-在 [指标](/docs/perf/metrics) 页面，您可以看到一些现有的指标，
+为了提升性能，首先你需要一些可以量化的指标来验证问题和性能的提升。
+在 [指标](/docs/perf/metrics) 页面，你可以看到一些现有的指标，
 以及哪些工具和 API 可以用于获取这些指标。
 
 There is a list of [Frequently asked questions](/docs/perf/faq), 
@@ -50,9 +50,9 @@ were already answered or encountered, and whether there are existing solutions.
  [performance][performance] label.)
  
 这里有一个 [常见问题](/docs/perf/faq) 的列表，
-您可以查询您的问题是否出现过或者已经被解答，
+你可以查询你的问题是否出现过或者已经被解答，
 以及是否有现成的解决方案。
-（您也可以查看 GitHub issues 里含有 [性能][performance] 标签的内容。） 
+（你也可以查看 GitHub issues 里含有 [性能][performance] 标签的内容。） 
 
 Finally, the performance issues are divided into four categories. They 
 correspond to the four labels that are used in the Flutter GitHub issue 
@@ -81,7 +81,7 @@ category.
 Are your animations janky (not smooth)? Learn how to 
 evaluate and fix rendering issues.
 
-您的动画是否卡顿（不流畅）？学习如何评估和修复渲染问题。
+你的动画是否卡顿（不流畅）？学习如何评估和修复渲染问题。
 
 [Improving rendering performance](/docs/perf/rendering)
 
@@ -91,7 +91,7 @@ evaluate and fix rendering issues.
 Do your apps take a long time to open? We'll also cover the startup speed issue
 in some future pages.
 
-您的应用需要很长时间打开吗？我们将在未来的一些文章中讨论启动速度问题。
+你的应用需要很长时间打开吗？我们将在未来的一些文章中讨论启动速度问题。
 
 {% endcomment %}
 
@@ -126,7 +126,7 @@ download.
 
 How to ensure a longer battery life when running your app.
 
-当运行您的应用程序时，如何确保更久的电池续航。
+当运行你的应用程序时，如何确保更久的电池续航。
 
 [Preserving your battery](/docs/perf/power)
 

@@ -41,7 +41,7 @@ are available to get the metrics.
 
 为了提升性能，首先您需要一些可以量化的指标来验证问题和性能的提升。
 在 [指标](/docs/perf/metrics) 页面，您可以看到一些现有的指标，
-以及哪些工具和API可以用于获取这些指标。
+以及哪些工具和 API 可以用于获取这些指标。
 
 There is a list of [Frequently asked questions](/docs/perf/faq), 
 so you can find out if the questions you have or the problems you're having 

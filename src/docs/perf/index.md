@@ -49,7 +49,9 @@ were already answered or encountered, and whether there are existing solutions.
 (Alternatively, you can check the Flutter GitHub issue database using the
  [performance][performance] label.)
  
-这里有一个常见问题的列表，你可以查询你的问题是否出现过或者已经被解答，以及是否有现成的解决方案。
+这里有一个 [常见问题](/docs/perf/faq) 的列表，
+您可以查询您的问题是否出现过或者已经被解答，
+以及是否有现成的解决方案。
 （你也可以查看 [性能](performancee)） 
 
 Finally, the performance issues are divided into four categories. They 

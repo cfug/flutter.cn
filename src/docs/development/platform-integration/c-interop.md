@@ -44,8 +44,8 @@ exposes it through a Dart plugin named "native_add".
   As of Dart 2.12.0 (included in Flutter 2.0 or later),
   FFI has been marked as stable.
 
-  Dart 2.12.0 版本之后 (这个 Dart 的包含在 Flutter 2.0 和以后的版本里)，
-  FFI 已经被标记为稳定！
+  Dart 2.12.0 版本之后 (同时包含在 Flutter 2.0 和以后的版本里)，
+  FFI 已经作为稳定版本发布。
 
 {{ site.alert.end }}
 
@@ -745,4 +745,3 @@ When creating a release archive (IPA) the symbols are stripped by Xcode.
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading
 [Flutter macOS Desktop]: /desktop
 [Android guidelines]: {{site.android-dev}}/topic/performance/reduce-apk-size#extract-false
-

@@ -63,7 +63,7 @@
               match-page-url-exactly: true
             - title: 布局构建教程
               permalink: /docs/development/ui/layout/tutorial
-            - title: 创建响应式和紫石英应用
+            - title: 创建响应式和自适应的应用
               permalink: /docs/development/ui/layout/adaptive-responsive
             - title: 布局约束 [新增]
               permalink: /docs/development/ui/layout/constraints
@@ -259,7 +259,7 @@
                 - title: 1.7.8
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.7.8.md
                 - title: 1.5.4
-                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4.md
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
                 - title: 1.2.1
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1
         - title: 热重载 (Hot reload)
@@ -386,7 +386,7 @@
 - title: 参考资料
   expanded: true
   children:
-    - title: Who is Dash?
+    - title: 了解 Dash
       permalink: /dash
     - title: Flutter Widget 目录
       permalink: /docs/reference/widgets

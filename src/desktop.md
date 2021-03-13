@@ -50,7 +50,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
 
 ## Beta Snapshot in Stable channel
 
-##  Stable 渠道包含了一份 Beta 渠道的桌面支持
+## Stable 渠道包含了一份 Beta 渠道的桌面支持
 
 To make it easier to try out Desktop support for Flutter, we are
 shipping a snapshot of Flutter beta channel’s Desktop support in
@@ -63,6 +63,7 @@ Flutter support for Desktop until the next Flutter stable release.
 构建渠道里打包了一份 Flutter 桌面支持的测试版构建渠道的快照。
 您可以尝试 Flutter 桌面支持而无需切换到 Flutter 测试版构建渠道。
 但在下个稳定版本发布之前，这个快照不会有更新。
+
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
 
 ## Requirements
@@ -572,10 +573,20 @@ executable binary in the `bundle` directory there are two directories:
  * `lib` contains the required `.so` library files
  * `data` contains the application's data assets, such as fonts or images
 
+您可以在您的项目下的 `build/linux/<构建模式>/bundle/` 路径下找到可执行文件。
+同时在 `bundle` 目录下还有两个文件夹：
+ * `lib` 包含必需的 `.so` 库文件
+ * `data` 包含应用的资源，例如字体和图片
+
 In addition to these files, your application also relies on various operating system libraries that your
 application has been compiled against. You can see the full list by running `ldd` against your application.
 For example, assuming you have a Flutter desktop application called `linux_desktop_test` you could inspect 
 the system libraries it depends upon as follows:
+
+除了这些文件之外，您的应用程序还依赖于针对您的应用程序进行编译的各种操作系统库。
+您可以通过对应用运行 `ldd` 来查看完整的列表。
+例如，假设您有一个名为 `linux_desktop_test` 的 Flutter 桌面应用，
+您可以通过以下步骤查看相关的系统依赖：
 
 ```
 $ flutter build linux --release
@@ -586,6 +597,10 @@ To wrap up this application for distribution you need to include everything in t
 and make sure the Linux system you are installing it upon has all of the system libraries required. This may 
 be as simple as:
 
+如果您需要打包发布您的应用，您需要打包 `bundle` 下的所有文件，
+并且确保您的 Linux 系统安装了所需的系统依赖。
+简单来说：
+
 ```
 $ sudo apt-get install libgtk-3-0 libblkid1 liblzma5
 ```
@@ -595,7 +610,7 @@ For information on publishing a Linux app to the
 [Build and release a Linux app to the Snap Store][].
 
 有关向 [Snap Store][] 发布 Linux 应用，请参见 
-[构建发布一个Linux桌面程序][Build and release a Linux app to the Snap Store]。
+[构建发布一个 Linux桌面程序][Build and release a Linux app to the Snap Store]。
 
 As the tooling solidifies, stay tuned for updates on other ways
 to distribute a Linux desktop app.

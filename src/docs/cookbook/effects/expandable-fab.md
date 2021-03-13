@@ -10,7 +10,7 @@ prev:
 next:
   title: Create gradient chat bubbles
   title: 创建一个渐变的聊天气泡
-  path:  /docs/cookbook/effects/gradient-bubbles
+  path: /docs/cookbook/effects/gradient-bubbles
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

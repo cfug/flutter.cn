@@ -372,7 +372,7 @@ Finally, create a build archive and upload it to App Store Connect:
 
 Run `flutter build ipa` to produce a build archive.
 
-选择 **Product > Archive** 来生成一个构建归档
+运行 `flutter build ipa` 来生成一个构建归档
 
 {{site.alert.note}}
 
@@ -392,7 +392,7 @@ Run `flutter build ipa` to produce a build archive.
 
 Open `build/ios/archive/MyApp.xcarchive` in Xcode.
 
-在 Xcode 组织界面的侧边栏中，选择你的 iOS app，然后选择你刚刚的生成的构建归档。
+在 Xcode 中打开 `build/ios/archive/MyApp.xcarchive`。
 
 </li>
 <li markdown="1">

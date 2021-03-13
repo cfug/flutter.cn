@@ -17,7 +17,7 @@ description: 如何将多个 Flutter 引擎 (engine)、页面 (screen) 或视图
   as of Flutter 2.0.0. Use at your own risk since stability or
   performance issues, and API changes are still possible.
 
-  自 Flutter 1.26 开始，您可以同时添加多个 Flutter 实例。
+  自 Flutter 2.0.0 开始，您可以同时添加多个 Flutter 实例。
   由于稳定性、性能问题以及 API 仍然可能变动，请您谨慎使用。
 
 {{site.alert.end}}

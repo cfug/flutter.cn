@@ -1,6 +1,8 @@
 ---
 title: Ads support for Flutter
+title: Flutter 对广告的支持
 description: Learn how to put ads in your Flutter apps.
+description: 学习如何将广告加入您的 Flutter 应用中。
 ---
 
 Monetizing apps by using ads has been one of

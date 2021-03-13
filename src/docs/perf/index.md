@@ -60,7 +60,7 @@ database: "[perf: speed][speed]", "[perf: memory][memory]",
 "[perf: app size][size]", "[perf: energy][energy]".
 
 最后，性能问题可以分为四类，对应 GitHub issue 里的四个标签：
-「[流畅度][speed]」，「[内存][memory]」，「[应用大小][size]」，「[功耗][energy]」。
+「[流畅度][speed]」、「[内存][memory]」、「[应用大小][size]」、和 「[功耗][energy]」。
 
 The rest of the content is organized using those four categories. (Note that
 these docs are in the process of being expanded.)

@@ -65,7 +65,7 @@ database: "[perf: speed][speed]", "[perf: memory][memory]",
 The rest of the content is organized using those four categories. (Note that
 these docs are in the process of being expanded.)
 
-其它内容被归纳到这四个类别中。（注意：这些文档正在扩展中）
+其它内容均已归纳到这四个类别中。（注意：这些文档正在扩展中。）
 
 <!--
 Let's put "speed" (rendering) first as it's the most popular performance issue

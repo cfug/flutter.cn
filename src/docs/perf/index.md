@@ -2,7 +2,7 @@
 title: Performance
 title: 性能评估
 description: Evaluating the performance of your app from several angles.
-description: 从多个角度评估你的应用性能..
+description: 从多个角度评估您的应用性能..
 tags: Flutter性能
 keywords: 性能评估,包体积,内存占用
 ---
@@ -24,7 +24,7 @@ point or the root node of a tree of resources that addresses any questions
 that you have about performance.
 
 我们的目标是回答这三个问题（主要是第三个）以及任何与之相关的话题。
-如果你有任何关于性能方面的问题，本文档可以作为解决你疑惑的起点。
+如果您有任何关于性能方面的问题，本文档可以作为解决您疑惑的起点。
 
 The answers to the first two questions are mostly philosophical, and not as 
 helpful to many developers who visit this page with speicifc
@@ -59,8 +59,8 @@ correspond to the four labels that are used in the Flutter GitHub issue
 database: "[perf: speed][speed]", "[perf: memory][memory]", 
 "[perf: app size][size]", "[perf: energy][energy]".
 
-最后，性能问题可以分为四类，对应 Flutter GitHub issue 里的四个标签：
-[「流畅度 」][speed]，[「内存」][memory]，[「应用大小」][size]，[「功耗 」][energy]。
+最后，性能问题可以分为四类，对应 GitHub issue 里的四个标签：
+「[流畅度][speed]」，「[内存][memory]」，「[应用大小][size]」，「[功耗][energy]」。
 
 The rest of the content is organized using those four categories. (Note that
 these docs are in the process of being expanded.)
@@ -81,7 +81,7 @@ category.
 Are your animations janky (not smooth)? Learn how to 
 evaluate and fix rendering issues.
 
-你的动画是否卡顿（不流畅）？学习如何评估和修复渲染问题。
+您的动画是否卡顿（不流畅）？学习如何评估和修复渲染问题。
 
 [Improving rendering performance](/docs/perf/rendering)
 
@@ -91,7 +91,7 @@ evaluate and fix rendering issues.
 Do your apps take a long time to open? We'll also cover the startup speed issue
 in some future pages.
 
-你的应用需要很长时间打开吗？我们将在未来的一些文章中讨论启动速度问题。
+您的应用需要很长时间打开吗？我们将在未来的一些文章中讨论启动速度问题。
 
 {% endcomment %}
 
@@ -126,7 +126,7 @@ download.
 
 How to ensure a longer battery life when running your app.
 
-当运行你的应用程序时，如何确保更久的电池续航。
+当运行您的应用程序时，如何确保更久的电池续航。
 
 [Preserving your battery](/docs/perf/power)
 

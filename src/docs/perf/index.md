@@ -115,7 +115,7 @@ download.
 
 [Measuring your app's size][]
 
-[测量应用的体积][]
+[测量应用的体积][Measuring your app's size]
 
 {% comment %}
 

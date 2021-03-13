@@ -102,7 +102,7 @@ in some future pages.
 
 [Using memory wisely](/docs/perf/memory)
 
-[明智的使用内存](/docs/perf/memory)
+[明智地使用内存](/docs/perf/memory)
 
 ## App size
 

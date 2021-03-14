@@ -253,7 +253,7 @@ You should see something like the following
 (you'll see Windows, macOS, or Linux,
 depending on which platforms you've enabled):
 
-想要确保桌面**已经安装成功**，可以列出可用的设备。
+想要确保桌面 **已成功启用**，可以列出可用的设备。
 您应该会看到如下的内容（您将看到 Windows、macOS 或 Linux，这取决于您启用的是哪个平台）：
 
 ``` terminal
@@ -358,7 +358,8 @@ Once you've configured your environment for desktop
 support, you can create and run a desktop app either
 in the IDE or from the command line.
 
-一旦您配置好了桌面支持的环境，您在 IDE 或命令行里都可以创建和运行桌面程序。
+一旦配置好了桌面支持的环境，
+你可以通过 IDE 或命令行创建和运行桌面程序。
 
 [creating a new Flutter project]: /docs/get-started/test-drive
 
@@ -377,7 +378,6 @@ From the device pulldown, select **windows (desktop)**,
 and run your app to see it launch on the desktop.
 
 在您的 IDE 中创建新应用时，它会自动创建 iOS、 Android 和应用的桌面版本。
-（如果您开启过 [web 支持][web support]，也会创建 Web 版本。）
 从设备的下拉选项中，选择 **windows (desktop)**、
 **macOS (desktop)** 或 **linux (desktop)** 
 然后运行您的应用，就会看到应用在桌面启动。
@@ -472,6 +472,8 @@ from a Flutter desktop app, see the [Desktop Photo Search sample][].
 
 ##### Building your own zip file for Windows
 
+##### 为 Windows 平台构建压缩包文件
+
 The executable can be found in your project under
 `build\windows\runner\<build mode>\`.
 In addition to that executable, you need the following:
@@ -531,8 +533,8 @@ it outside of the macOS App Store.
 要发布你的 macOS 软件，你可以选择
 [将 app 提交至 Mac App Store][CHS distribute your app via the macOS App Store]，
 或者直接生成 `.app` 文件，并在自己的网站上发布。
-不过，从 macOS 14.5 开始，你需要对自己的 macOS 软件进行公证，然后才能在
-Mac App Store 之外的渠道发布。
+不过，从 macOS 10.14.5 开始，你需要对自己的 macOS 软件进行公证，然后才能在
+macOS App Store 之外的渠道发布。
 
 The first step in both of the above processes involves working with your app inside of Xcode.
 To be able to compile your app from inside of Xcode you first need to build the app for release

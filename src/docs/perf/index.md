@@ -117,9 +117,6 @@ download.
 
 [测量应用的体积][Measuring your app's size]
 
-{% comment %}
-
-
 ## Energy
 
 ## 功耗
@@ -132,7 +129,6 @@ How to ensure a longer battery life when running your app.
 
 [节省电量](/docs/perf/power)
 
-{% endcomment %}
 
 [Measuring your app's size]: /docs/perf/app-size
 [speed]: https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22perf%3A+speed%22+sort%3Aupdated-asc+

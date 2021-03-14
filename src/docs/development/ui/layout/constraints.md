@@ -548,7 +548,7 @@ class Example7 extends Example {
       'The Center tells the red Container that it can be any size it wants, but not bigger than the screen.'
       'Since the red Container has no size but has a child, it decides it wants to be the same size as its child.'
       '\n\n'
-      'The red Container tells its child that if can be any size it wants, but not bigger than the screen.'
+      'The red Container tells its child that it can be any size it wants, but not bigger than the screen.'
       '\n\n'
       'The child is a green Container that wants to be 30x30.'
       '\n\n'
@@ -679,7 +679,7 @@ class Example12 extends Example {
       '                 maxWidth: 150, maxHeight: 150),\n'
       '        child: Container(color: red, width: 100, height: 100))))';
   final String explanation =
-      'Center allow ConstrainedBox to be any size up to the screen size.'
+      'Center allows ConstrainedBox to be any size up to the screen size.'
       'ConstrainedBox imposes ADDITIONAL constraints from its \'constraints\' parameter onto its child.'
       '\n\n'
       'The Container must be between 70 and 150 pixels. It wants to have 100 pixels, and that\'s the size it has, since that\'s between 70 and 150.';

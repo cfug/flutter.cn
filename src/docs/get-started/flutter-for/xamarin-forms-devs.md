@@ -7,26 +7,29 @@ tags: Flutter教程,Flutter起步,Flutter入门
 keywords: Flutter Xamarin.Forms,Xamarin.Forms,Xamarin.Forms转Flutter
 ---
 
-This document is meant for Xamarin.Forms developers looking to apply their
-existing knowledge to build mobile apps with Flutter. If you understand
-the fundamentals of the Xamarin.Forms framework, then you can use this
+This document is meant for Xamarin.Forms developers looking
+to apply their existing knowledge to build mobile apps with
+Flutter. If you understand the fundamentals of the
+Xamarin.Forms framework, then you can use this
 document as a jump start to Flutter development.
 
 本文档旨在帮助 Xamarin.Forms 开发者利用已有的知识去构建 Flutter 移动应用。
 如果你懂得 Xamarin.Forms 框架的基本原理，
 那么你就可以将本文档当作你开始 Flutter 开发的不错的起点。
 
-Your Android and iOS knowledge and skill set are valuable when building with
-Flutter, because Flutter relies on the native operating system configurations,
-similar to how you would configure your native Xamarin.Forms projects.
-The Flutter Frameworks is also similar to how you create a single UI,
+Your Android and iOS knowledge and skill set are valuable
+when building with Flutter, because Flutter relies on
+the native operating system configurations,
+similar to how you would configure your native
+Xamarin.Forms projects. The Flutter Frameworks
+is also similar to how you create a single UI,
 that is used on multiple platforms.
 
 你的 Android 和 iOS 知识以及技能组合在构建 Flutter 时都是有价值的，
 因为 Flutter 依赖的原生系统配置都与你配置 Xamarin.Forms 原生项目时一样。
 Flutter 框架与你创建一个单独的界面时也是一样的，这在多个平台中同样适用。
 
-This document can be used as a cookbook by jumping around and finding questions
+This document can be used as a cookbook by
 that are most relevant to your needs.
 
 本文档可用做可指导手册来翻查与你需求最为相关的问题。
@@ -39,7 +42,7 @@ that are most relevant to your needs.
 
 ### app 是如何运行的？
 
-For each platform in Xamarin.Forms, you call the `LoadApplication` method,
+For each platform in Xamarin.Forms,
 which creates a new application and starts your app.
 
 对于 Xamarin.Forms 里的每个平台，你可以调用 `LoadApplication` 方法，
@@ -49,8 +52,8 @@ which creates a new application and starts your app.
 LoadApplication(App());
 ```
 
-In Flutter, the default main entry point is `main` where you load your
-Flutter app.
+In Flutter, the default main entry point is
+`main` where you load your Flutter app.
 
 在 Flutter 中，加载 Flutter app 的默认主入口点是 `main`。
 
@@ -61,8 +64,8 @@ void main() {
 }
 ```
 
-In Xamarin.Forms, you assign a `Page` to the `MainPage` property in the
-`Application` class.
+In Xamarin.Forms, you assign a `Page` to the
+`MainPage` property in the `Application` class.
 
 在 Xamarin.Forms 中，你分配一个 `Page` 到 `Application` 类中的 `MainPage` 属性。
 
@@ -109,36 +112,40 @@ class MyApp extends StatelessWidget {
 Xamarin.Forms has many different types of pages;
 `ContentPage` is the most common.  In Flutter,
 you specify an application widget that holds your root page.
-You can use a [MaterialApp][] widget,
+You can use a [`MaterialApp`][] widget,
 which supports [Material Design][], or you can use a
-[CupertinoApp][] widget, which supports an iOS-style app,
-or you can use the lower level [WidgetsApp][],
+[`CupertinoApp`][] widget, which supports an iOS-style app,
+or you can use the lower level [`WidgetsApp`][],
 which you can customize in any way you want.
 
 Xamarin.Forms 拥有一些不同类型的页面；
 `ContentPage` 是最为通用的。
 在 Flutter 中，指定一个应用程序 widget 来控制你的根页面。
-你可以使用一个
-[MaterialApp][] widget，
+你可以使用一个 [`MaterialApp`][] widget，
 它支持 [Material Design][]，或者你也可以使用 
-[CupertinoApp][] widget，它能用来创建 ios 风格的应用，或者你也可以使用等级较低的
-[WidgetsApp][]，
-可供你随心所欲地定制。
+[`CupertinoApp`][] widget，它能用来创建 ios 风格的应用，
+或者你也可以使用等级较低的 [`WidgetsApp`][]，可供你随心所欲地定制。
 
-The following code defines the home page, a stateful widget. In Flutter,
-all widgets are immutable, but two types of widgets are supported:
-stateful and stateless. Examples of a stateless widget are titles,
-icons, or images.
+The following code defines the home page, a stateful widget.
+In Flutter, all widgets are immutable,
+but two types of widgets are supported:
+stateful and stateless. Examples of a stateless widget
+are titles, icons, or images.
 
 接下来的代码定义了一个主页，一个有状态的 widget。
 在 Flutter 中，除了以下两个类型的 widget 外，其它 widget 都是不可变的：
 有状态和无状态 widget。
 无状态 widget 的示例都是标题、图标或图片。
 
-The following example uses MaterialApp, which holds its root page in the
-`home` property.
+[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 
-下面的示例使用 MaterialApp，它在 `home` 属性中控制它的根页面。
+The following example uses `MaterialApp`,
+which holds its root page in the `home` property.
+
+下面的示例使用 MaterialApp，
+它在 `home` 属性中控制它的根页面。
 
 <!-- skip -->
 ```dart
@@ -610,7 +617,8 @@ include methods such as `FadeTo` and `TranslateTo`.
 You would use these methods on a view
 to perform the required animations.
 
-在 Xamarin.Forms 中，你可以利用包括例如 `FadeTo` 和 `TranslateTo`  等方法的视图扩展（ViewExtensions）来创建简单的动画。
+在 Xamarin.Forms 中，你可以利用包括例如 `FadeTo` 和 `TranslateTo`
+等方法的视图扩展（ViewExtensions）来创建简单的动画。
 你会在一个视图中使用这些方法来执行需要的动画。
 
 ```xml
@@ -647,7 +655,8 @@ computes the curve that replaces the controller's default linear motion.
 Like widgets, animations in Flutter work with composition.
 
 举个例子，你可以使用 `CurvedAnimation` 来实现一个沿着插值曲线的动画。
-在这个场景中，控制器说一个动画进展的“大师”源，而 `CurvedAnimation` 计算用来替代控制器默认线性运动的曲线。
+在这个场景中，控制器说一个动画进展的“大师”源，
+而 `CurvedAnimation` 计算用来替代控制器默认线性运动的曲线。
 跟 widget 一样，Flutter 中的动画与组成一起工作。
 
 When building the widget tree, you assign the `Animation` to an animated
@@ -1180,7 +1189,8 @@ However, there are times when you might be processing a large amount
 of data and your UI hangs. In Flutter, use `Isolate`s to take advantage of
 multiple CPU cores to do long-running or computationally intensive tasks.
 
-然而，有时您可能正在处理大量数据而UI挂起了。在 Flutter 中，使用`隔离`来利用多个CPU内核来执行长时间运行或计算密集型任务。
+然而，有时您可能正在处理大量数据而UI挂起了。
+在 Flutter 中，使用`隔离`来利用多个CPU内核来执行长时间运行或计算密集型任务。
 
 Isolates are separate execution threads that do not share any memory
 with the main execution memory heap. This is a difference between
@@ -1431,7 +1441,8 @@ import 'package:http/http.dart' as http;
 In Xamarin.Forms you would typically create a loading indicator,
 either directly in XAML or through a 3rd party plugin such as AcrDialogs.
 
-在 Xamarin.Forms 中常会创建一个加载指示器，可以直接在XAML中创建，也可以通过第三方插件创建，比如 AcrDialogs。
+在 Xamarin.Forms 中常会创建一个加载指示器，
+可以直接在XAML中创建，也可以通过第三方插件创建，比如 AcrDialogs。
 
 In Flutter, use a `ProgressIndicator` widget.
 Show the progress programmatically by controlling when it's rendered
@@ -1741,14 +1752,17 @@ MaterialApp(
 )
 ```
 
-The delegates contain the actual localized values, while the `supportedLocales`
-defines which locales the app supports. The above example uses a `MaterialApp`,
+The delegates contain the actual localized values,
+while the `supportedLocales` defines which locales
+the app supports. The above example uses a `MaterialApp`,
 so it has both a `GlobalWidgetsLocalizations` for the base
-widgets localized values, and a `MaterialWidgetsLocalizations` for the Material
-widgets localizations. If you use `WidgetsApp` for your app, you don't
+widgets localized values, and a `MaterialWidgetsLocalizations`
+for the Material widgets localizations.
+If you use `WidgetsApp` for your app, you don't
 need the latter. Note that these two delegates contain "default"
-values, but you'll need to provide one or more delegates for your own app's
-localizable copy, if you want those to be localized too.
+values, but you'll need to provide one or more delegates
+for your own app's localizable copy,
+if you want those to be localized too.
 
 委托包含实际的本地化值，而  `supportedLocales` 定义了应用程序支持哪些本地化。
 上面的示例使用了一个 `MaterialApp`，因此它为基本 widget 本地化值
@@ -3057,9 +3071,10 @@ In Flutter you declare themes in the top level widget.
 
 To take full advantage of Material Components in your app,
 you can declare a top level widget `MaterialApp` as the entry
-point to your application. MaterialApp is a convenience widget
+point to your application. `MaterialApp` is a convenience widget
 that wraps a number of widgets that are commonly required for
-applications implementing Material Design. It builds upon a WidgetsApp by
+applications implementing Material Design.
+It builds upon a `WidgetsApp` by
 adding Material-specific functionality.
 
 要在应用程序中充分利用 Material 组件，需要声明一个最顶级 widget `MaterialApp` 作为应用程序的入口点。
@@ -3187,7 +3202,6 @@ plugin documentation.
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: /docs/resources/architectural-overview#composition
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino
-[CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
 [developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [DevTools]: /docs/development/tools/devtools/overview
@@ -3214,7 +3228,6 @@ plugin documentation.
 [Material Components]: /docs/development/ui/widgets/material
 [Material Design]: {{site.material}}/design
 [Material Design guidelines]: {{site.material}}/design
-[MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`Opacity` widget]: {{site.api}}/flutter/widgets/Opacity-class.html
 [optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [platform channels]: /docs/development/platform-integration/platform-channels
@@ -3228,7 +3241,6 @@ plugin documentation.
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [widget]: /docs/resources/architectural-overview#widgets
 [widget catalog]: /docs/development/ui/widgets/layout
-[WidgetsApp]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
 [Write your first Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your first Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2

@@ -91,17 +91,18 @@ Scaffold(
 ## 2. 显示一个 `SnackBar`
 
 With the `Scaffold` in place, display a `SnackBar`.
-First, create a `SnackBar`, then display it using the `Scaffold`.
+First, create a `SnackBar`, then display it using `ScaffoldMessenger`.
 
 有了 `Scaffold`，我们就可以显示一个 `SnackBar` 了。
-首先，我们需要先创建一个 `SnackBar` ，然后使用 `Scaffold` 来显示它。
+首先，我们需要先创建一个 `SnackBar` ，然后使用 `ScaffoldMessenger` 来显示它。
 
 <!-- skip -->
 ```dart
 final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
-// Find the Scaffold in the widget tree and use it to show a SnackBar.
-Scaffold.of(context).showSnackBar(snackBar);
+// Find the ScaffoldMessenger in the widget tree
+// and use it to show a SnackBar.
+ScaffoldMessenger.of(context).showSnackBar(snackBar);
 ```
 
 ## 3. Provide an optional action
@@ -189,9 +190,9 @@ class SnackBarPage extends StatelessWidget {
             ),
           );
 
-          // Find the Scaffold in the widget tree and use
-          // it to show a SnackBar.
-          Scaffold.of(context).showSnackBar(snackBar);
+          // Find the ScaffoldMessenger in the widget tree
+          // and use it to show a SnackBar.
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
         child: Text('Show SnackBar'),
       ),

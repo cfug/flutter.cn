@@ -21,6 +21,189 @@ join the [flutter-announce][] Google group.
 
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
+
+## March 3, 2021
+
+Flutter 2 is live!!!  For more information, see
+[Announcing Flutter 2][], [What's new in Flutter 2][],
+[Flutter web support hits the stable milestone][],
+[Announcing Dart 2.12][],
+and the [Flutter 2 release notes][].
+
+**Docs updated or added since the 1.22 release**
+
+* A new [Who is Dash?][] page!
+* Information about monetizing your apps has been
+  collected in the new [Flutter Ads][] landing page.
+* Added a new page explaining the [Flutter Fix][]
+  feature and how to use it.
+* New and updated web pages, including:
+  * [Web support for Flutter][]
+  * [Configuring the URL strategy on the web][]
+  * [Web FAQ][] 
+* The [Desktop support for Flutter][] page is updated,
+  as well as other pages on the site that discuss
+  desktop support.
+* The [DevTools][] docs have been updated. The
+  most significant updates are to the following page:
+  * [Flutter inspector][]
+* Added a page on how to [implement deep linking][]
+  for mobile and web.
+* Updated the [Creating responsive and adaptive apps][]
+  page.
+* Many pages (including all codelabs on flutter.dev)
+  and examples are updated to be null safe.
+* Added two new add to app pages:
+  * [Using multiple Flutter instances][]
+  * [Adding a Flutter view to an Android app][]
+* Added a page on how to [write integration tests using
+  the integration_test package][].
+* Significant updates to the [internationalization][] page.
+* New and updated [performance][] pages, including:
+  * [Performance metrics][]
+  * [Performance faq][]
+  * [More thoughts about performance][]
+
+**Codelabs**
+
+Many of our codelabs have been updated to null safety.
+We've also added a new codelab since the last stable release:
+
+* [Adding AdMob banner and native inline ads to a Flutter app][]
+
+For a complete list, see [Flutter codelabs][].
+
+**Articles**
+
+We've published the following articles on the [Flutter Medium][]
+publication since the last stable release:
+
+* [Flutter performance updates in the first half of 2020][perf-H1-2020]
+* [Are you happy with Flutter? — Q4 2020 user survey results][Q4]
+* [Join us for #30DaysOfFlutter][]
+* [Providing operating system compatibility on a large scale][comp]
+* [Updates on Flutter Testing][]
+* [Announcing Dart null safety beta][]
+* [Deprecation Lifetime in Flutter][]
+* [New ad formats for Flutter][]
+* [Accessible expression with Material Icons and Flutter][]
+* [Dart sound null safety: technical preview 2][]
+* [Flutter on the web, slivers, and platform-specific issues: user survey results from Q3 2020][Q3]
+* [Testable Flutter and Cloud Firestore][]
+* [Performance testing on the web][]
+
+
+[Accessible expression with Material Icons and Flutter]: {{site.flutter-medium}}/accessible-expression-with-material-icons-and-flutter-e3f3f622200b
+[Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
+[Adding a Flutter view to an Android app]: /docs/development/add-to-app/android/add-flutter-view
+[Announcing Dart null safety beta]: {{site.flutter-medium}}/announcing-dart-null-safety-beta-4491da22077a
+[Announcing Dart 2.12]: {{site.medium}}/dartlang/announcing-dart-2-12-499a6e689c87
+[Announcing Flutter 2]: https://developers.googleblog.com/2021/03/announcing-flutter-2.html
+[comp]: {{site.flutter-medium}}/providing-operating-system-compatibility-on-a-large-scale-374cc2fb0dad
+[Configuring the URL strategy on the web]: /docs/development/ui/navigation/url-strategies
+[Creating responsive and adaptive apps]: /docs/development/ui/layout/adaptive-responsive
+[Dart sound null safety: technical preview 2]: {{site.flutter-medium}}/null-safety-flutter-tech-preview-cb5c98aba187
+[Deprecation Lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
+[Desktop support for Flutter]: /desktop
+[Devtools]: /docs/development/tools/devtools/overview
+[Flutter Ads]: /ads
+[Flutter 2 release notes]: /docs/development/tools/sdk/release-notes/release-notes-2.0.0
+[Flutter Fix]: /docs/development/tools/flutter-fix
+[Flutter inspector]: /docs/development/tools/devtools/inspector
+[Flutter web support hits the stable milestone]: {{site.flutter-medium}}/flutter-web-support-hits-the-stable-milestone-d6b84e83b425
+[implement deep linking]: /docs/development/ui/navigation/deep-linking
+[internationalization]: /docs/development/accessibility-and-localization/internationalization
+[Join us for #30DaysOfFlutter]: {{site.flutter-medium}}/join-us-for-30daysofflutter-9993e3ec847b
+[More thoughts about performance]: /docs/perf/appendix
+[New ad formats for Flutter]: {{site.flutter-medium}}/new-ads-beta-inline-banner-and-native-support-for-the-flutter-mobile-ads-plugin-e48a7e9a0e64
+[perf-H1-2020]: {{site.flutter-medium}}/flutter-performance-updates-in-the-first-half-of-2020-5c597168b6bb
+[performance]: /docs/perf
+[Performance faq]: /docs/perf/faq
+[Performance metrics]: /docs/perf/metrics
+[Performance testing on the web]: {{site.flutter-medium}}/performance-testing-on-the-web-25323252de69
+[Q3]: {{site.flutter-medium}}/flutter-on-the-web-slivers-and-platform-specific-issues-user-survey-results-from-q3-2020-f8034236b2a8
+[Q4]: {{site.flutter-medium}}/are-you-happy-with-flutter-q4-2020-user-survey-results-41cdd90aaa48
+[Testable Flutter and Cloud Firestore]: {{site.flutter-medium}}/flutter/testable-flutter-and-cloud-firestore-1cf2fbbce97b
+[Updates on Flutter Testing]: {{site.flutter-medium}}/updates-on-flutter-testing-f54aa9f74c7e
+[Using multiple Flutter instances]: /docs/development/add-to-app/multiple-flutters
+[Web FAQ]: /docs/development/platform-integration/web
+[Web support for Flutter]: /web
+[What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
+[Who is Dash?]: /dash
+[write integration tests using the integration_test package]: /docs/testing/integration-tests
+
+## Oct 1, 2020
+
+Flutter 1.22 is live! For details, see
+[Announcing Flutter 1.22][].
+
+
+**Docs updated or added to flutter.dev since the 1.20 release**
+
+* Updated the [Developing for iOS 14][] page with
+  details about targeting iOS 14 with Flutter, including some
+  Add-to-App, deep linking, and notification considerations.
+* Added a page on how to [add an iOS App Clip][],
+  a new iOS 14 feature that supports running lightweight,
+  no-install apps under 10 MB.
+* Added a page that describes how to [migrate your app to use the
+  new icon glyphs available in
+  `CupertinoIcons`][cupertino-icons].
+* Added a page that describes the new [implementation for
+  Platform Views and how to use them to host native Android
+  and iOS views in your Flutter app][platform-views].
+  This feature has enabled the [google_maps_flutter][]
+  and [webview_flutter][] plugins to be
+  updated to production-ready release 1.0.
+* Added a page that describes how to use the new
+  [App Size tool][] in Dart DevTools.
+
+**Codelabs**
+
+We've added a new codelab since the last stable release:
+
+* [Building Beautiful Transitions with Material Motion
+  for Flutter][]<br>
+  Learn how to use the Material [animations][] package to
+  add prebuilt transitions to a Material app called Reply.
+
+For a complete list, see [Flutter codelabs][].
+
+**Articles**
+
+We've published the following articles on the [Flutter Medium][]
+publication since the last stable release:
+
+* [Learning Flutter's new navigation and routing][]
+* [Integration testing with flutter_driver][]
+* [Announcing Flutter Windows Alpha][]
+* [Handling web gestures in Flutter][]
+* [Supporting iOS 14 and Xcode 12 with Flutter][]
+* [Learn testing with the new Flutter sample][]
+* [Platform channel examples][]
+* [Updates on Flutter and Firebase][]
+
+
+[add an iOS App Clip]: /docs/development/platform-integration/ios-app-clip
+[animations]: {{site.pub}}/packages/animations
+[Announcing Flutter 1.22]: {{site.medium}}/flutter/announcing-flutter-1-22-44f146009e5f
+[Announcing Flutter Windows Alpha]: {{site.medium}}/flutter/announcing-flutter-windows-alpha-33982cd0f433
+[App Size tool]: /docs/development/tools/devtools/app-size
+[Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
+[cupertino-icons]: /docs/release/breaking-changes/cupertino-icons-1.0.0
+[Developing for iOS 14]: /docs/development/ios-14
+[google_maps_flutter]: {{site.pub}}/packages/google_maps_flutter
+[Handling web gestures in Flutter]: {{site.medium}}/flutter/handling-web-gestures-in-flutter-e16946a04745
+[Integration testing with flutter_driver]: {{site.medium}}/flutter/integration-testing-with-flutter-driver-36f66ede5cf2
+[Learn testing with the new Flutter sample]: {{site.medium}}/flutter/learn-testing-with-the-new-flutter-sample-gsoc20-work-product-e872c7f6492a
+[Learning Flutter's new navigation and routing]: {{site.medium}}/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Platform channel examples]: {{site.medium}}/flutter/platform-channel-examples-7edeaeba4a66
+[platform-views]: /docs/development/platform-integration/platform-views
+[Supporting iOS 14 and Xcode 12 with Flutter]: {{site.medium}}/flutter/supporting-ios-14-and-xcode-12-with-flutter-15fe0062e98b
+[Updates on Flutter and Firebase]: {{site.medium}}/flutter/updates-on-flutter-and-firebase-8076f70bc90e
+[webview_flutter]: {{site.pub}}/packages/webview_flutter
+
+
 ## Aug 5, 2020
 
 ## 2020 年 08 月 05 日
@@ -404,183 +587,6 @@ publication since the last stable release:
 [Developing for iOS 14 beta]: /docs/development/ios-14
 [Enums with Extensions in Dart]: {{site.medium}}/flutter/enums-with-extensions-dart-460c42ea51f7
 [Flutter and Desktop apps]: {{site.medium}}/flutter/handling-404-page-not-found-error-in-flutter-731f5a9fba29
-[Flutter books]: /docs/resources/books
-[Flutter codelabs]: /docs/codelabs
-[Flutter Day]: https://events.withgoogle.com/flutter-day/
-[Flutter Package Ecosystem Update]: {{site.medium}}/flutter/flutter-package-ecosystem-update-d50645f2d7bc
-[Flutter Performance Updates in 2019]: {{site.medium}}/flutter/going-deeper-with-flutters-web-support-66d7ad95eb5224
-[Going deeper with Flutter's web support]: {{site.medium}}/flutter/going-deeper-with-flutters-web-support-66d7ad95eb52
-[Handling 404: Page not found error in Flutter]: {{site.medium}}/flutter/handling-404-page-not-found-error-in-flutter-731f5a9fba29
-[How to write a Flutter plugin]: https://codelabs.developers.google.com/codelabs/write-flutter-plugin
-[installing Flutter on Linux using snapd.]: /docs/get-started/install/linux
-[Managing issues in a large-scale open source project]: {{site.medium}}/flutter/managing-issues-in-a-large-scale-open-source-project-b3be6eecae2b
-[How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
-[Multi-platform Firestore Flutter]: https://codelabs.developers.google.com/codelabs/friendlyeats-flutter/
-[q1-2020]: {{site.medium}}/flutter/what-are-the-important-difficult-tasks-for-flutter-devs-q1-2020-survey-results-a5ef2305429b
-[Reducing shader compilation jank on mobile]: /docs/perf/rendering/shader
-[shaking]: {{site.medium}}/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
-[Two Months of #FlutterGoodNewsWednesday]: {{site.medium}}/flutter/two-months-of-fluttergoodnewswednesday-a12e60bab782
-[ubuntu]: {{site.medium}}/flutter/announcing-flutter-linux-alpha-with-canonical-19eb824590a9
-[Understanding null safety]: {{site.dart-site}}/null-safety/understanding-null-safety
-[Using a plugin with a Flutter web app]: https://codelabs.developers.google.com/codelabs/web-url-launcher/
-[web-perf]: {{site.medium}}/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
-[What's new with the Slider widget?]: {{site.medium}}/flutter/whats-new-with-the-slider-widget-ce48a22611a3
-[What we learned from the Flutter Q2 2020 survey]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q2-2020-survey-a4f1fc8faac9
-[Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/
-
-## Oct 1, 2020
-
-Flutter 1.22 is live! For details, see
-[Announcing Flutter 1.22][].
-
-
-**Docs updated or added to flutter.dev since the 1.20 release**
-
-* Updated the [Developing for iOS 14][] page with
-  details about targeting iOS 14 with Flutter, including some
-  Add-to-App, deep linking, and notification considerations.
-* Added a page on how to [add an iOS App Clip][],
-  a new iOS 14 feature that supports running lightweight,
-  no-install apps under 10 MB.
-* Added a page that describes how to [migrate your app to use the
-  new icon glyphs available in
-  `CupertinoIcons`][cupertino-icons].
-* Added a page that describes the new [implementation for
-  Platform Views and how to use them to host native Android
-  and iOS views in your Flutter app][platform-views].
-  This feature has enabled the [google_maps_flutter][]
-  and [webview_flutter][] plugins to be
-  updated to production-ready release 1.0.
-* Added a page that describes how to use the new
-  [App Size tool][] in Dart DevTools.
-
-**Codelabs**
-
-We've added a new codelab since the last stable release:
-
-* [Building Beautiful Transitions with Material Motion
-  for Flutter][]<br>
-  Learn how to use the Material [animations][] package to
-  add prebuilt transitions to a Material app called Reply.
-
-For a complete list, see [Flutter codelabs][].
-
-**Articles**
-
-We've published the following articles on the [Flutter Medium][]
-publication since the last stable release:
-
-* [Learning Flutter's new navigation and routing][]
-* [Integration testing with flutter_driver][]
-* [Announcing Flutter Windows Alpha][]
-* [Handling web gestures in Flutter][]
-* [Supporting iOS 14 and Xcode 12 with Flutter][]
-* [Learn testing with the new Flutter sample][]
-* [Platform channel examples][]
-* [Updates on Flutter and Firebase][]
-
-
-[add an iOS App Clip]: /docs/development/platform-integration/ios-app-clip
-[animations]: {{site.pub}}/packages/animations
-[Announcing Flutter 1.22]: {{site.medium}}/flutter/announcing-flutter-1-22-44f146009e5f
-[Announcing Flutter Windows Alpha]: {{site.medium}}/flutter/announcing-flutter-windows-alpha-33982cd0f433
-[App Size tool]: /docs/development/tools/devtools/app-size
-[Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
-[cupertino-icons]: /docs/release/breaking-changes/cupertino-icons-1.0.0
-[Developing for iOS 14]: /docs/development/ios-14
-[google_maps_flutter]: {{site.pub}}/packages/google_maps_flutter
-[Handling web gestures in Flutter]: {{site.medium}}/flutter/handling-web-gestures-in-flutter-e16946a04745
-[Integration testing with flutter_driver]: {{site.medium}}/flutter/integration-testing-with-flutter-driver-36f66ede5cf2
-[Learn testing with the new Flutter sample]: {{site.medium}}/flutter/learn-testing-with-the-new-flutter-sample-gsoc20-work-product-e872c7f6492a
-[Learning Flutter's new navigation and routing]: {{site.medium}}/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
-[Platform channel examples]: {{site.medium}}/flutter/platform-channel-examples-7edeaeba4a66
-[platform-views]: /docs/development/platform-integration/platform-views
-[Supporting iOS 14 and Xcode 12 with Flutter]: {{site.medium}}/flutter/supporting-ios-14-and-xcode-12-with-flutter-15fe0062e98b
-[Updates on Flutter and Firebase]: {{site.medium}}/flutter/updates-on-flutter-and-firebase-8076f70bc90e
-[webview_flutter]: {{site.pub}}/packages/webview_flutter
-
-
-## Aug 5, 2020
-
-Flutter 1.20 is live! For details,
-see [Announcing Flutter 1.20][].
-
-**Docs updated or added to flutter.dev**
-
-* [Flutter architectural overview][], a deep dive into Flutter's
-  architecture, was added to the site just a few days after the
-  1.20 release.
-* [Reducing shader compilation jank on mobile][] is added to the
-  performance docs.
-* [Developing for iOS 14 beta][] outlines some issues you might
-  run into if developing for devices running iOS 14 beta.
-* New instructions for [installing Flutter on Linux using
-  snapd.][]
-* Updated the [Desktop support][] page to reflect that Linux
-  desktop apps (as well as macOS) are available as alpha.
-* Several new Flutter books have been published. The
-  [Flutter books][] page is updated.
-* The [codelabs landing][] page has been updated.
-
-A deep dive into null safety has been added to dart.dev:
-
-* [Understanding null safety][]
-
-**Codelabs**
-
-[Flutter Day][] was held on 6/25/2020.
-In preparation for the event,
-we wrote new codelabs and updated existing codelabs.
-New codelabs include:
-
-* [Adding Admob Ads to a Flutter app][]
-* [How to write a Flutter plugin][]
-* [Multi-platform Firestore Flutter][]
-* [Using a plugin with a Flutter web app][]
-* [Write a Flutter desktop application][]
-
-For a complete list, see [Flutter codelabs][].
-
-**Articles**
-
-We've published the following articles on the [Flutter Medium][]
-publication since the last stable release:
-
-  * [Announcing Adobe XD support for Flutter][]
-  * [What are the important & difficult tasks for Flutter
-     devs? — Q1 2020 survey results][q1-2020]
-  * [Optimizing performance in Flutter web apps with tree
-     shaking and deferred loading][shaking]
-  * [Flutter Package Ecosystem Update][]
-  * [Improving perceived performance with image placeholders,
-     precaching, and disabled navigation transitions][web-perf]
-  * [Two Months of #FlutterGoodNewsWednesday][]
-  * [Handling 404: Page not found error in Flutter][]
-  * [Flutter and Desktop apps][]
-  * [What's new with the Slider widget?][]
-  * [New tools for Flutter developers, built in Flutter][dev-tools]
-  * [Canonical enables Linux desktop app support with
-     Flutter][ubuntu]
-  * [Enums with Extensions in Dart][]
-  * [Managing issues in a large-scale open source project][]
-  * [What we learned from the Flutter Q2 2020 survey][]
-  * [Building performant Flutter widgets][]
-  * [How to debug layout issues with the Flutter Inspector][]
-  * [Going deeper with Flutter's web support][]
-  * [Flutter Performance Updates in 2019][]
-
-
-[Adding Admob Ads to a Flutter app]: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter/
-[Announcing Adobe XD Support for Flutter]: {{site.medium}}/flutter/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e
-[Announcing Flutter 1.20]: {{site.medium}}/flutter/announcing-flutter-1-20-2aaf68c89c75
-[Building performant Flutter widgets]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
-[codelabs landing]: /docs/codelabs
-[Desktop support]: /desktop
-[dev-tools]: {{site.medium}}/flutter/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
-[Developing for iOS 14 beta]: /docs/development/ios-14
-[Enums with Extensions in Dart]: {{site.medium}}/flutter/enums-with-extensions-dart-460c42ea51f7
-[Flutter and Desktop apps]: {{site.medium}}/flutter/flutter-and-desktop-3a0dd0f8353e
-[Flutter architectural overview]: /docs/resources/architectural-overview
 [Flutter books]: /docs/resources/books
 [Flutter codelabs]: /docs/codelabs
 [Flutter Day]: https://events.withgoogle.com/flutter-day/

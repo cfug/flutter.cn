@@ -1,6 +1,6 @@
 ---
 title: Flutter Fix
-description: Keep your code up to date with the help of the Flutter Fix feature.
+description: 使用 Flutter Fix 帮助您的应用跟进最新的 API 用法。
 ---
 
 The _Flutter Fix_ feature, introduced in Flutter 2,

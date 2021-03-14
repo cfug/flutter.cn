@@ -89,10 +89,12 @@ development. The only difference is that hot reload remembers your state and hot
 restart doesn't.
 
 不能，但是可以使用热重启 (hot restart)。
+热重启是可以您的应用快速响应改动的方法，无需等待重新编译的载入。
+它与移动端的热重载功能类似。唯一的区别是热重载可以保持应用的状态。
 
 ### How do I restart the app running in the browser?
 
-### 我该如何在浏览器中刷新正在运行的应用？
+### 我该如何在浏览器中重启正在运行的应用？
 
 Using the browser's refresh button doesn't work,
 but you can enter "R" in the console where
@@ -185,7 +187,7 @@ controls the headers on an HTTP request.
 
 ### How do I embed a Flutter web app in a web page?
 
-### 我该如何把一个 web 应用嵌入到一个网页中？
+### 我该如何把一个 Flutter web 应用嵌入到一个网页中？
 
 You can embed a Flutter web app,
 as you would embed other content,

@@ -1,7 +1,9 @@
 ---
 title: Creating responsive and adaptive apps
+title: 创建响应式和自适应的应用
 description: It's important to create apps, whether for mobile or web, so that they are responsive to size and orientation changes.
-short-title: Responsive and adaptive
+description: 创建用于移动端和 Web 的应用非常重要，它们能够响应尺寸和旋转方向的变化。
+short-title: 响应式且自适应
 ---
 
 One of Flutter's primary goals is to create a framework

@@ -781,14 +781,24 @@ Flutter 的分层架构还支持使用其他实现来替换状态至 UI 的方�
 
 ## Rendering and layout
 
+## 渲染和布局
+
 This section describes the rendering pipeline, which is the series of steps that
 Flutter takes to convert a hierarchy of widgets into the actual pixels painted
 onto a screen.
 
+本节将介绍 Flutter 的渲染机制，
+它包含了从 widget 结构转换成屏幕上绘制的实际像素的一系列步骤。
+
 ### Flutter’s rendering model
+
+### Flutter 的渲染模型
 
 You may be wondering: if Flutter is a cross-platform framework, then how can it
 offer comparable performance to single-platform frameworks?
+
+作为一个好奇宝宝，您可能思考过：
+如果 Flutter 是一个跨平台的框架，它如何能够提供与对应平台的框架匹敌的性能？
 
 It’s useful to start by thinking about how traditional Android apps work. When
 drawing, you first call the Java code of the Android framework. The Android
@@ -797,6 +807,12 @@ Canvas object, which Android can then render with [Skia](https://skia.org/), a
 graphics engine written in C/C++ that calls the CPU or GPU to complete the
 drawing on the device.
 
+让我们从安卓原生应用的角度开始思考。
+当您在编写绘制内容时，您需要调用 Android 框架的 Java 代码。
+Android 的系统库提供了负责绘制 Canvas 对象的组件，
+接下来 Android 就可以使用一个由 C/C++ 编写的 [Skia](https://skia.org/) 图像引擎，
+调用 CPU 和 GPU 完成在设备上的绘制。
+
 Cross-platform frameworks _typically_ work by creating an abstraction layer over
 the underlying native Android and iOS UI libraries, attempting to smooth out the
 inconsistencies of each platform representation. App code is often written in an
@@ -804,6 +820,13 @@ interpreted language like JavaScript, which must in turn interact with the
 Java-based Android or Objective-C-based iOS system libraries to display UI. All
 this adds overhead that can be significant, particularly where there is a lot of
 interaction between the UI and the app logic.
+
+**通常来说** 跨平台框架都会在 Android 和 iOS 的 UI 底层库上创建一层抽象，
+该抽象层尝试抹平各个系统之间的差异。
+这时，应用程序的代码常常使用 JavaScript 等解释性语言来进行编写，
+这些代码会与基于 Java 的 Android 和基于 Objective-C 的 iOS 系统进行交互，
+最终显示 UI 界面。
+所有的流程都增加了显著的开销，在 UI 和应用逻辑有繁杂的交互时更为如此。
 
 By contrast, Flutter minimizes those abstractions, bypassing the system UI
 widget libraries in favor of its own widget set. The Dart code that paints
@@ -814,20 +837,37 @@ improvements even if the phone hasn’t been updated with a new Android version.
 The same is true for Flutter on other native platforms, such as iOS, Windows, or
 macOS.
 
+相比之下，Flutter 通过绕过系统 UI 组件库，使用自己的 widget 内容集，削减了抽象层的开销。
+用于绘制 Flutter 图像内容的 Dart 代码被编译为机器码，并使用 Skia 进行渲染。
+Flutter 同时也嵌入了自己的 Skia 副本，
+让开发者能在设备未更新到最新的系统时，
+也能跟进升级自己的应用，保证稳定性并提升性能。
+
 ### From user input to the GPU
+
+### 从用户操作到 GPU
 
 The overriding principle that Flutter applies to its rendering pipeline is that
 **simple is fast**. Flutter has a straightforward pipeline for how data flows to
 the system, as shown in the following sequencing diagram:
+
+对于 Flutter 的渲染机制而言，首要原则是 **简单快速**。
+Flutter 为数据流向系统提供了直通的管道，如以下的流程图所示：
 
 ![Render pipeline sequencing
 diagram](/images/arch-overview/render-pipeline.png){:width="100%"}
 
 Let’s take a look at some of these phases in greater detail.
 
+接下来，让我们更加深入了解其中的一些阶段。
+
 ### Build: from Widget to Element
 
+### 构建：从 Widget 到 Element
+
 Consider this simple code fragment that demonstrates a simple widget hierarchy:
+
+首先观察以下的代码片段，它代表了一个简单的 widget 结构：
 
 <!-- skip -->
 ```dart
@@ -852,6 +892,14 @@ code]({{site.github}}/flutter/flutter/blob/f7a6a7906be96d2288f5d63a5a54c515a6e98
 for `Container`, you can see that if the color is not null, it inserts a
 `ColoredBox` representing the color:
 
+当 Flutter 需要使用这段代码进行绘制时，框架会调用 `build()` 方法，
+返回一颗基于当前应用状态来绘制 UI 的 widget 子树。
+在这个过程中，`build()` 方法可能会在必要时，根据状态引入新的 widget。
+在上面的例子中，`Container` 的 `color` 和 `child` 就是典型的例子。
+我们可以查看 `Container` 的
+[源代码]({{site.github}}/flutter/flutter/blob/f7a6a7906be96d2288f5d63a5a54c515a6e987fe/packages/flutter/lib/src/widgets/container.dart#L433)，
+您会看到当 `color` 属性不为空时，`ColoredBox` 会被加入用于颜色布局。
+
 <!-- skip -->
 ```dart
 if (color != null)
@@ -863,6 +911,10 @@ as `RawImage` and `RichText` during the build process. The eventual widget
 hierarchy may therefore be deeper than what the code represents, as in this
 case<sup><a href="#a2">2</a></sup>:
 
+与之对应的，`Image` 和 `Text` 在构建过程中也有可能带入 `RawImage` 和 `RichText`。
+如此一来，最终生成的 widget 结构可能比代码表示的更为深入，
+在该场景中如下图<sup><a href="#a2">2</a></sup>：
+
 ![Render pipeline sequencing
 diagram](/images/arch-overview/widgets.png){:width="35%"}
 
@@ -871,14 +923,28 @@ This explains why, when you examine the tree through a debug tool such as the
 Dart DevTools, you might see a structure that is considerably deeper than what
 is in your original code.
 
+这就是为什么您在使用 Dart DevTools 的
+[Flutter inspector](/docs/development/tools/devtools/inspector)
+调试 widget 树结构时，会发现实际的结构比您原本代码中的结构更为多层。
+
 During the build phase, Flutter translates the widgets expressed in code into a
 corresponding **element tree**, with one element for every widget. Each element
 represents a specific instance of a widget in a given location of the tree
 hierarchy. There are two basic types of elements:
 
+在构建的阶段，Flutter 会将代码中描述的 widgets 转换成对应的 **Element 树**，
+每一个 Widget 都有一个对应的 Element。
+每一个 Element 代表了树状层级结构中特定位置的 widget 实例。
+目前有两种 Element 的基本类型：
+
 - `ComponentElement`, a host for other elements.
+
+  `ComponentElement`，其他 Element 的宿主。
+
 - `RenderObjectElement`, an element that participates in the layout or paint
   phases.
+
+  `RenderObjectElement`，参与布局或绘制阶段的 Element。
 
 ![Render pipeline sequencing
 diagram](/images/arch-overview/widget-element.png){:width="85%"}
@@ -886,10 +952,18 @@ diagram](/images/arch-overview/widget-element.png){:width="85%"}
 `RenderObjectElement`s are an intermediary between their widget analog and the
 underlying `RenderObject`, which we’ll come to later.
 
+`RenderObjectElement` 是底层的 `RenderObject` 与类似 widget 的内容之间的桥梁，
+我们晚些会介绍它。
+
 The element for any widget can be referenced through its `BuildContext`, which
 is a handle to the location of a widget in the tree. This is the `context` in a
 function call such as `Theme.of(context)`, and is supplied to the `build()`
 method as a parameter.
+
+任何 widget 都可以通过其 `BuildContext` 引用到 Element，
+它是该 widget 在树中的位置的句柄。
+这个类型的 Element 就是在类似 `Theme.of(context)` 方法调用中的 `context`，
+它也作为 `build()` 方法的参数进行传递。
 
 Because widgets are immutable, including the parent/child relationship between
 nodes, any change to the widget tree (such as changing `Text('A')` to
@@ -900,6 +974,15 @@ critical performance role, allowing Flutter to act as if the widget hierarchy is
 fully disposable while caching its underlying representation. By only walking
 through the widgets that changed, Flutter can rebuild just the parts of the
 element tree that require reconfiguration.
+
+由于 widgets 是不可变的，同样的还有其上下级节点的关系，
+对 widget 树做的任何操作
+（例如将 `Text('A')` 替换成 `Text('B')`）
+都会返回一个新的 widget 对象集合。
+但这并不意味着底层呈现的内容必须要重新构建。
+Element 树每一帧之间都是持久化的，因此它扮演着重要的角色，
+Flutter 依靠这个优势，得以在缓存底层的呈现时，可以完全与 widget 层级脱离。
+仅仅是判断发生变化的 widget，Flutter 就可以重建需要重新配置的 Element 树的部分。
 
 ### Layout and rendering
 

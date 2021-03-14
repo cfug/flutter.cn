@@ -180,8 +180,8 @@ a series of layers. Working from the bottom to the top, we have:
   tree automatically updating the layout to reflect your changes.
 
   **[渲染层]({{site.api}}/flutter/rendering/rendering-library.html)**
-  提供了操作布局的抽象。有了渲染层，您可以构建以树状结构组织的可渲染对象。
-  在您动态更新这些对象时，构建树也会自动根据您的变更来更新布局。
+  提供了操作布局的抽象。有了渲染层，你可以构建以树状结构组织的可渲染对象。
+  在你动态更新这些对象时，构建树也会自动根据你的变更来更新布局。
 
 - The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
   a composition abstraction. Each render object in the rendering layer has a
@@ -191,7 +191,7 @@ a series of layers. Working from the bottom to the top, we have:
 
   **[widget 层]({{site.api}}/flutter/widgets/widgets-library.html)**
   是一种组合的抽象。每一个渲染层中的渲染对象，都在 widgets 层中有一个对应的类。
-  此外，widgets 层让您可以自由组合您需要复用的各种类。
+  此外，widgets 层让你可以自由组合你需要复用的各种类。
   响应式编程模型就在该层级中被引入。
 
 - The
@@ -304,7 +304,7 @@ framework takes care of using that one configuration to both create and/or
 update the user interface as appropriate.
 
 Flutter 与其他响应式框架类似，采用了显式剥离基础状态和用户界面的方式，来解决这一问题。
-您可以通过 React 风格的 API，创建 UI 的描述，让框架负责通过配置优雅地创建和更新用户界面。
+你可以通过 React 风格的 API，创建 UI 的描述，让框架负责通过配置优雅地创建和更新用户界面。
 
 In Flutter, widgets (akin to components in React) are represented by immutable
 classes that are used to configure a tree of objects. These widgets are used to
@@ -492,7 +492,7 @@ widget.
 这些 widget 的单一功能都负责的非常到位。
 核心功能都是抽象的，甚至像边距和对齐这样的基础功能，都以组件化方式单独实现，而不是构建在核心中。
 （这样的实现也与传统的 API 形成了对比，类似边距这样的功能都内置在了每个组件的公共核心内。）
-因此，假设您需要将一个 widget 居中，与其调整 `Align` 这样的属性，您应该将它包裹在一个
+因此，假设你需要将一个 widget 居中，与其调整 `Align` 这样的属性，你应该将它包裹在一个
 [`Center`]({{site.api}}/flutter/widgets/Center-class.html) widget 内。
 
 There are widgets for padding, alignment, rows, columns, and grids. These layout
@@ -530,9 +530,9 @@ and other simple widgets in novel ways, or just create a new widget using
 [`Padding`]({{site.api}}/flutter/widgets/Padding-class.html)、
 [`DecoratedBox`]({{site.api}}/flutter/widgets/DecoratedBox-class.html) 和
 [`Transform`]({{site.api}}/flutter/widgets/Transform-class.html) 组成的，
-您也可以通过查看源码看到这些组合。
-Flutter 有一个典型的特征，即您可以深入到任意一个 widget，查看其源码。
-因此，您可以通过同样的方式组合其他的 widgets，也可以参考 `Container` 来创建其他的 widget，
+你也可以通过查看源码看到这些组合。
+Flutter 有一个典型的特征，即你可以深入到任意一个 widget，查看其源码。
+因此，你可以通过同样的方式组合其他的 widgets，也可以参考 `Container` 来创建其他的 widget，
 而不需要继承 `Container` 来实现自定义的效果。
 
 ### Building widgets
@@ -555,7 +555,7 @@ objects]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html). The
 framework then stitches together the renderable objects into a renderable object
 tree.
 
-先前提到，您可以通过重写
+先前提到，你可以通过重写
 [`build()`]({{site.api}}/flutter/widgets/StatelessWidget/build.html)
 方法，返回一个新的元素树，来定义视觉展示。
 这棵树用更为具体的术语表示了 widget 在 UI 中的部分。
@@ -602,7 +602,7 @@ made of, rather than the complexities of updating the user interface from one
 state to another.
 
 尽管这样的实现看起来不够成熟，但这样的自动对比方法非常有效，可以实现高性能的交互应用。
-同时，以这种方式设计的 build 方法，将着重点放在 widget 组成的声明上，从而简化了您的代码，
+同时，以这种方式设计的 build 方法，将着重点放在 widget 组成的声明上，从而简化了你的代码，
 而不是以一种状态去更新另一种状态这样的复杂过程。
 
 ### Widget state
@@ -648,7 +648,7 @@ you must call [`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
 to signal the framework to update the user interface by calling the `State`’s
 build method again.
 
-每当您更改 `State` 对象时（例如计数增加），您需要调用
+每当你更改 `State` 对象时（例如计数增加），你需要调用
 [`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
 来告知框架，再次调用 `State` 的 build 方法来更新 UI。
 
@@ -677,7 +677,7 @@ As with any other class, you can use a constructor in a widget to initialize its
 data, so a `build()` method can ensure that any child widget is instantiated
 with the data it needs:
 
-与其他类相同，您可以通过构造来为 widget 初始化它的数据，
+与其他类相同，你可以通过构造来为 widget 初始化它的数据，
 如此一来 `build()` 方法可以确保子 widget 使用其所需的数据进行实例化：
 
 <!-- skip -->
@@ -699,7 +699,7 @@ widget tree, as shown in this example:
 这时，第三种类型的 widget&mdash;&mdash;
 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)，
 提供了一种从共用的祖先节点获取数据的简易方法。
-您可以使用 `InheritedWidget` 创建包含状态的 widget，
+你可以使用 `InheritedWidget` 创建包含状态的 widget，
 该 widget 将一个共用的祖先节点包裹在 widget 树中，如下面的例子所示：
 
 ![Inherited widgets](/images/arch-overview/inherited-widget.png){:width="50%"}
@@ -797,7 +797,7 @@ onto a screen.
 You may be wondering: if Flutter is a cross-platform framework, then how can it
 offer comparable performance to single-platform frameworks?
 
-作为一个好奇宝宝，您可能思考过：
+作为一个好奇宝宝，你可能思考过：
 如果 Flutter 是一个跨平台的框架，它如何能够提供与对应平台的框架匹敌的性能？
 
 It’s useful to start by thinking about how traditional Android apps work. When
@@ -808,7 +808,7 @@ graphics engine written in C/C++ that calls the CPU or GPU to complete the
 drawing on the device.
 
 让我们从安卓原生应用的角度开始思考。
-当您在编写绘制内容时，您需要调用 Android 框架的 Java 代码。
+当你在编写绘制内容时，你需要调用 Android 框架的 Java 代码。
 Android 的系统库提供了负责绘制 Canvas 对象的组件，
 接下来 Android 就可以使用一个由 C/C++ 编写的 [Skia](https://skia.org/) 图像引擎，
 调用 CPU 和 GPU 完成在设备上的绘制。
@@ -898,7 +898,7 @@ for `Container`, you can see that if the color is not null, it inserts a
 在上面的例子中，`Container` 的 `color` 和 `child` 就是典型的例子。
 我们可以查看 `Container` 的
 [源代码]({{site.github}}/flutter/flutter/blob/f7a6a7906be96d2288f5d63a5a54c515a6e987fe/packages/flutter/lib/src/widgets/container.dart#L433)，
-您会看到当 `color` 属性不为空时，`ColoredBox` 会被加入用于颜色布局。
+你会看到当 `color` 属性不为空时，`ColoredBox` 会被加入用于颜色布局。
 
 <!-- skip -->
 ```dart
@@ -923,9 +923,9 @@ This explains why, when you examine the tree through a debug tool such as the
 Dart DevTools, you might see a structure that is considerably deeper than what
 is in your original code.
 
-这就是为什么您在使用 Dart DevTools 的
+这就是为什么你在使用 Dart DevTools 的
 [Flutter inspector](/docs/development/tools/devtools/inspector)
-调试 widget 树结构时，会发现实际的结构比您原本代码中的结构更为多层。
+调试 widget 树结构时，会发现实际的结构比你原本代码中的结构更为多层。
 
 During the build phase, Flutter translates the widgets expressed in code into a
 corresponding **element tree**, with one element for every widget. Each element

@@ -81,7 +81,7 @@
               match-page-url-exactly: true
             - title: 深层链接
               permalink: /docs/development/ui/navigation/deep-linking
-            - title: URL 策略
+            - title: 配置 Web 应用的 URL 策略
               permalink: /docs/development/ui/navigation/url-strategies
         - title: 动画效果
           permalink: /docs/development/ui/animations
@@ -257,7 +257,7 @@
                 - title: 1.9.1
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.9.1.md
                 - title: 1.7.8
-                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.7.8.md
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.7.8
                 - title: 1.5.4
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
                 - title: 1.2.1

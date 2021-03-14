@@ -401,9 +401,9 @@ app code. This is similar to the way many game engines work.
 引擎的 C 和 C++ 代码使用 LLVM 编译。Dart 代码 (SDK 的和您的) 
 都是预先 (ahead-of-time, AOT) 编译成本地 ARM 库。
 这些库被包含在一个 iOS "runner" 项目中，
-然后整套内容被编译成一个 .ipa。当应用启动时，
+然后整套内容被编译成一个 `.ipa`。当应用启动时，
 它会加载 Flutter 库。任何渲染、输入或事件处理等都会
-delegate 给编译好的 Flutter 和应用代码。
+代理给编译好的 Flutter 和应用代码。
 这个工作机制与很多游戏引擎颇为相似。
 
 The engine's C and C++ code is compiled with LLVM. The Dart code (both the

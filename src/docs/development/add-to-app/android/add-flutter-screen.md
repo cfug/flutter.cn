@@ -75,10 +75,6 @@ in your app that you'd like. The following example shows
 根据需要，你可以在应用中的任意位置添加打开 `FlutterActivity` 的代码。
 下边的代码展示了如何在 `OnClickListener` 的点击事件中打开 `FlutterActivity`。
 
-在你的清单文件中注册了 `FlutterActivity` 之后，
-根据需要，你可以在应用中的任意位置添加打开 `FlutterActivity` 的代码。
-下边的代码展示了如何在 `OnClickListener` 的点击事件中打开 `FlutterActivity`。
-
   Make sure to use the following import:
 
   确保使用如下的语句导入：

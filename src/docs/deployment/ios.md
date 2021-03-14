@@ -427,7 +427,8 @@ Activities tab of your app's details page on
 
   当你最后在 **Distribute App** 导出应用时，Xcode 将会创建一个含有你的应用 IPA 
   以及 `ExportOptions.plist` 文件的文件夹。
-  在 Flutter 1.24.0-6.0 版本后，你可以无需启动 Xcode，通过运行 `flutter build ipa --export-options-plist=path/to/ExportOptions.plist` 
+  你可以无需启动 Xcode，通过运命令
+  `flutter build ipa --export-options-plist=path/to/ExportOptions.plist` 
   就可以创建新的 IPA。运行 `xcodebuild -h` 以查看该属性列表中 key 的详细信息。
 
 {{site.alert.end}}

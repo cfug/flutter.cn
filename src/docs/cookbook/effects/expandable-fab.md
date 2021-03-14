@@ -6,7 +6,7 @@ description: 如何实现一个可以点击展开为好几个按钮的 FAB。
 prev:
   title: Create a typing indicator
   title: 创建一个「正在输入」的指示器
-  path:  /docs/cookbook/effects/typing-indicator
+  path: /docs/cookbook/effects/typing-indicator
 next:
   title: Create gradient chat bubbles
   title: 创建一个渐变的聊天气泡

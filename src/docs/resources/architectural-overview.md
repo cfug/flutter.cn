@@ -986,10 +986,16 @@ Flutter 依靠这个优势，得以在缓存底层的呈现时，可以完全与
 
 ### Layout and rendering
 
+### 布局和渲染
+
 It would be a rare application that drew only a single widget. An important part
 of any UI framework is therefore the ability to efficiently lay out a hierarchy
 of widgets, determining the size and position of each element before they are
 rendered on the screen.
+
+只绘制单个 widget 的应用极其稀有。
+因此，有效地排布 widget 的结构及在渲染完成前决定每个 Element 的大小和位置，
+是所有 UI 框架的重点之一。
 
 The base class for every node in the render tree is
 [`RenderObject`]({{site.api}}/flutter/rendering/RenderObject-class.html), which
@@ -1001,6 +1007,15 @@ system](https://dartpad.dev/0f020197a5d4c980342d5c7d9e935cee)). Each
 how to _visit_ them and their constraints. This provides `RenderObject` with
 sufficient abstraction to be able to handle a variety of use cases.
 
+在渲染树中，每个节点的基类都是
+[`RenderObject`]({{site.api}}/flutter/rendering/RenderObject-class.html)，
+该基类为布局和绘制定义了一个抽象模型。
+这是再平凡不过的事情：它并不总是一个固定的大小，甚至不符合笛卡尔坐标规律
+（根据该 [极坐标系的示例](https://dartpad.cn/0f020197a5d4c980342d5c7d9e935cee) 所示）。
+每一个 `RenderObject` 都了解其父节点的信息，
+但对于其子节点，除了明白如何 **访问** 和获得他们的限制，并没有更多的信息。
+这样的设计让 `RenderObject` 拥有高效的抽象能力，处理各种各样的使用场景。
+
 During the build phase, Flutter creates or updates an object that inherits from
 `RenderObject` for each `RenderObjectElement` in the element tree.
 `RenderObject`s are primitives:
@@ -1011,6 +1026,17 @@ an image, and
 [`RenderTransform`]({{site.api}}/flutter/rendering/RenderTransform-class.html)
 applies a transformation before painting its child.
 
+在构建过程中，Flutter 会创建或更新在 Element 树中每一个从
+`RenderObject` 继承的 `RenderObjectElement`。
+`RenderObject` 实际上是原语：
+渲染文字的
+[`RenderParagraph`]({{site.api}}/flutter/rendering/RenderParagraph-class.html)、
+渲染图片的
+[`RenderImage`]({{site.api}}/flutter/rendering/RenderImage-class.html)
+以及在绘制子节点内容前应用变换的
+[`RenderTransform`]({{site.api}}/flutter/rendering/RenderTransform-class.html)
+是更为上层的实现。
+
 ![Differences between the widgets hierarchy and the element and render
 trees](/images/arch-overview/trees.png){:width="100%"}
 
@@ -1020,11 +1046,20 @@ Cartesian space. `RenderBox` provides the basis of a _box constraint model_,
 establishing a minimum and maximum width and height for each widget to be
 rendered.
 
+大部分的 Flutter widget 是由一个继承了 `RenderBox` 的子类的对象渲染的，
+它们呈现出的 `RenderObject` 会在二维笛卡尔空间中拥有固定的大小。
+`RenderBox` 提供了 **盒子限制模型**，为每个 widget 关联了渲染的最小和最大的宽度和高度。
+
 To perform layout, Flutter walks the render tree in a depth-first traversal and
 **passes down size constraints** from parent to child. In determining its size,
 the child _must_ respect the constraints given to it by its parent. Children
 respond by **passing up a size** to their parent object within the constraints
 the parent established.
+
+在进行布局的时候，Flutter 会以 DFS（深度优先遍历）方式遍历渲染树，
+并 **将限制以从上到下的方式** 从父节点传递给子节点。
+子节点若需要确定自己的大小，则 **必须要** 遵循父节点传递的限制。
+在这之后，子节点会 **将大小以从下到上的方式** 传递给它们的父节点对象已经建立关联的限制。
 
 ![Constraints go down, sizes go
 up](/images/arch-overview/constraints-sizes.png){:width="80%"}
@@ -1034,24 +1069,43 @@ within its parent’s constraints and is ready to be painted by calling the
 [`paint()`]({{site.api}}/flutter/rendering/RenderObject/paint.html)
 method.
 
+在遍历完一次树后，每个对象都拥有已经根据父级完成定义的大小，随时可以通过调用
+[`paint()`]({{site.api}}/flutter/rendering/RenderObject/paint.html)
+进行渲染。
+
 The box constraint model is very powerful as a way to layout objects in _O(n)_
 time:
+
+盒子限制模型十分强大，它的对象布局的时间复杂度是 **O(n)**：
 
 - Parents can dictate the size of a child object by setting maximum and minimum
   constraints to the same value. For example, the topmost render object in a
   phone app constrains its child to be the size of the screen. (Children can
   choose how to use that space. For example, they might just center what they
   want to render within the dictated constraints.)
+
+  父节点可以通过设定最大和最小的尺寸限制，将子节点对象的大小调整为相同的值。
+  例如，在一个手机应用中，最高层级的渲染对象将会限制其子节点的大小为屏幕的尺寸。
+  （子节点可以选择如何占用空间。例如，它们可能在设定的限制中以居中的方式布局。）
+
 - A parent can dictate the child’s width but give the child flexibility over
   height (or dictate height but offer flexible over width). A real-world example
   is flow text, which might have to fit a horizontal constraint but vary
   vertically depending on the quantity of text.
+
+  父节点可以决定子节点的宽度，而让子节点灵活地自适应布局高度（或决定高度而自适应宽度）。
+  现实中有一种例子就是流式布局的文本，它们常常会填充横向限制，再根据文字内容的多少决定高度。
 
 This model works even when a child object needs to know how much space it has
 available to decide how it will render its content. By using a
 [`LayoutBuilder`]({{site.api}}/flutter/widgets/LayoutBuilder-class.html) widget,
 the child object can examine the passed-down constraints and use those to
 determine how it will use them, for example:
+
+这样的盒子限制模型，同样也适用于子节点对象需要知道它有多少空间可以进行布局，
+决定如何渲染其内容的场景。通过使用
+[`LayoutBuilder`]({{site.api}}/flutter/widgets/LayoutBuilder-class.html) widget，
+子节点可以检查从上层传递下来的限制，并利用该限制决定如何使用，例如下方的使用方法：
 
 <!-- skip -->
 ```dart
@@ -1071,6 +1125,10 @@ More information about the constraint and layout system, along with worked
 examples, can be found in the [Understanding
 constraints](/docs/development/ui/layout/constraints) topic.
 
+更多有关限制和布局系统的信息，以及可参考的例子，可以在
+[深入理解 Flutter 布局约束](/docs/development/ui/layout/constraints)
+文章中查看。
+
 The root of all `RenderObject`s is the `RenderView`, which represents the total
 output of the render tree. When the platform demands a new frame to be rendered
 (for example, because of a
@@ -1082,10 +1140,24 @@ scene. When the scene is complete, the `RenderView` object passes the composited
 scene to the `Window.render()` method in `dart:ui`, which passes control to the
 GPU to render it.
 
+所有 `RenderObject` 的根节点是 `RenderView`，代表了渲染树的总体输出。
+当平台需要渲染新的一帧内容时
+（例如一个 [vsync](https://source.android.com/devices/graphics/implement-vsync)
+信号或者一个纹理的更新完成），会调用一次 `compositeFrame()` 方法，
+它是 `RenderView` 的一部分。
+该方法会创建一个 `SceneBuilder` 来触发当前画面的更新。
+当画面更新完毕，`RenderView` 会将合成的画面传递给 `dart:ui` 中的 `Window.render()` 方法，
+控制 GPU 进行渲染。
+
 Further details of the composition and rasterization stages of the pipeline are
 beyond the scope of this high-level article, but more information can be found
 [in this talk on the Flutter rendering
 pipeline](https://www.youtube.com/watch?v=UUfXWzp0-DU).
+
+有关渲染流程的合成和栅格化阶段的更多细节，将不在本篇深入文章中讨论，
+但可以在
+[关于 Flutter 渲染流程的讨论](https://www.youtube.com/watch?v=UUfXWzp0-DU)
+中了解更多。
 
 ## Platform embedding
 
@@ -1097,6 +1169,12 @@ unique concerns of that platform. The engine is platform-agnostic, presenting a
 [stable ABI (Application Binary
 Interface)]({{site.github}}/flutter/engine/blob/master/shell/platform/embedder/embedder.h)
 that provides a _platform embedder_ with a way to set up and use Flutter.
+
+我们都知道，Flutter 的界面构建、布局、合成和绘制全都由 Flutter 自己完成，
+而不是转换为对应平台系统的部件。
+获取纹理和联动应用底层的生命周期的方法，不可避免地会根据不同平台的考虑而有所不同。
+Flutter 引擎本身是与平台无关的，它提供了一个稳定的 ABI（应用二进制接口），
+包含一个 **平台嵌入构建**，可以通过其方法设置并使用 Flutter。
 
 The platform embedder is the native OS application that hosts all Flutter
 content, and acts as the glue between the host operating system and Flutter.
@@ -1111,8 +1189,22 @@ example]({{site.github}}/chinmaygarde/fluttercast) that supports remoting
 Flutter sessions through a VNC-style framebuffer or [this worked example for
 Raspberry Pi]({{site.github}}/ardera/flutter-pi).
 
+平台嵌入构建是用于呈现所有 Flutter 内容的原生系统应用，
+它充当着宿主操作系统和 Flutter 之间的粘合剂的角色。
+当你启动一个 Flutter 应用时，嵌入构建会提供一个入口，初始化 Flutter 引擎，
+获取 UI 和栅格化线程，创建 Flutter 可以写入的纹理。
+嵌入构建同时负责管理应用的生命周期，包括输入的操作（例如鼠标、键盘和触控），
+窗口大小的变化、线程管理和平台消息的传递。
+Flutter 拥有 Android、iOS、Windows、macOS 和 Linux 的平台嵌入构建，
+当然，开发者可以创建自定义的嵌入构建，正如这个
+[可用的例子]({{site.github}}/chinmaygarde/fluttercast)
+以 VNC 风格的帧缓冲区支持了远程 Flutter，还有
+[支持树莓派运行的例子]{{site.github}}/ardera/flutter-pi)。
+
 Each platform has its own set of APIs and constraints. Some brief
 platform-specific notes:
+
+每一个平台都有各自的一套 API 和限制。以下是一些关于平台简短的说明：
 
 - On iOS and macOS, Flutter is loaded into the embedder as a `UIViewController`
   or `NSViewController`, respectively. The platform embedder creates a
@@ -1120,11 +1212,26 @@ platform-specific notes:
   runtime, and a `FlutterViewController`, which attaches to the `FlutterEngine`
   to pass UIKit or Cocoa input events into Flutter and to display frames
   rendered by the `FlutterEngine` using Metal or OpenGL.
+
+  在 iOS 和 macOS 上，
+  Flutter 分别通过 `UIViewController` 和 `NSViewController` 载入到嵌入构建。
+  这些嵌入构建会创建一个 `FlutterEngine`，作为 Dart VM 和您的 Flutter 运行时的宿主，
+  还有一个 `FlutterViewController`，关联对应的 `FlutterEngine`，
+  传递 UIKit 或者 Cocoa 的输入事件到 Flutter，
+  并将 `FlutterEngine` 渲染的帧内容通过 Metal 或 OpenGL 进行展示。
+
 - On Android, Flutter is, by default, loaded into the embedder as an `Activity`.
   The view is controlled by a
   [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html),
   which renders Flutter content either as a view or a texture, depending on the
   composition and z-ordering requirements of the Flutter content.
+
+  在 Android 上，Flutter 默认会载入到 `Activity` 嵌入构建中。
+  此时视图是通过一个
+  [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
+  进行控制的，基于 Flutter 内容的合成和 z 排列 (z-ordering) 的要求，
+  将 Flutter 的内容以视图模式或纹理模式进行呈现。
+
 - On Windows, Flutter is hosted in a traditional Win32 app, and content is
   rendered using
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md), a
@@ -1133,14 +1240,28 @@ platform-specific notes:
   app model, as well as to replace ANGLE with a more direct path to the GPU via
   DirectX 12.
 
+  在 Windows 上，Flutter 的宿主是一个传统的 Win32 应用，内容是通过一个将 OpenGL API
+  调用转换成 DirectX 11 的等价调用的库
+  [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md)
+  进行渲染的。目前正在尝试将 UWP 应用作为 Windows 的一种嵌入构建，并将 ANGLE 替换为
+  通过 DirectX 12 直接调用 GPU 的方式。
+
 ## Integrating with other code
+
+## 与其他代码进行集成
 
 Flutter provides a variety of interoperability mechanisms, whether you’re
 accessing code or APIs written in a language like Kotlin or Swift, calling a
 native C-based API, embedding native controls in a Flutter app, or embedding
 Flutter in an existing application.
 
+Flutter 提供了多种代码交互机制，无论你是在调用 Kotlin 或者 Swift 这些编写的代码或 API，
+或是调用 C 语言基础的 API，或是将原生代码能力嵌入 Flutter 应用，
+又或是将 Flutter 嵌入现有的应用。
+
 ### Platform channels
+
+### 平台通道
 
 For mobile and desktop apps, Flutter allows you to call into custom code through
 a _platform channel_, which is a simple mechanism for communicating between your
@@ -1151,11 +1272,21 @@ Swift. Data is serialized from a Dart type like `Map` into a standard format,
 and then deserialized into an equivalent representation in Kotlin (such as
 `HashMap`) or Swift (such as `Dictionary`).
 
+对于移动端和桌面端应用而言，Flutter 提供了通过 **平台通道** 调用自定义代码的能力，
+这是一种非常简单的在宿主应用之间让 Dart 代码与平台代码通信的机制。
+通过创建一个常用的通道（封装通道名称和编码），开发者就可以使用通道在
+Dart 和使用例如 Kotlin 和 Swift 代码编写的平台组件直接发送和接收消息。
+类似 Dart 类型中的 `Map` ，会在传输时在 Dart 侧通过标准的格式进行序列化，
+然后反序列化为 Kotlin（例如 `HashMap`）或者 Swift（例如 `Dictionary`）的等效类型表示。 
+
 ![How platform channels allow Flutter to communicate with host
 code](/images/arch-overview/platform-channels.png){:width="70%"}
 
 The following is a simple platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
+
+下方的示例是在 Kotlin (Android) 或 Swift (iOS) 中处理 Dart 调用平台通道事件
+的简单接收处理：
 
 <!-- skip -->
 ```dart
@@ -1195,7 +1326,13 @@ already available]({{site.pub}}/flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and
 Bluetooth.
 
+更多关于如何使用平台通道的例子，包括 macOS 平台的示例，可以在
+[flutter/plugins]({{site.github}}/flutter/plugins) 代码仓库
+<sup><a href="#a3">3</a></sup>找到。
+
 ### Foreign Function Interface
+
+### 外部函数接口
 
 For C-based APIs, including those that can be generated for code written in
 modern languages like Rust or Go, Dart provides a direct mechanism for binding
@@ -1207,9 +1344,20 @@ calls to statically or dynamically linked libraries. FFI is available for all
 platforms other than web, where the [js package]({{site.pub}}/packages/js)
 serves an equivalent purpose.
 
+对于基于 C 语言的 API，包括使用现代语言 Rust 或 Go 生成的代码，Dart 也提供了
+`dart:ffi` 库，一套直接绑定原生代码的机制。
+外部函数接口 (FFI) 比平台通道更快，因为不需要序列化即可传递数据。
+实际上，Dart 的运行时提供了在 Dart 对象的堆上分配内存，以及调用静态或动态链接库的能力。
+除了 Web 平台外，FFI 在其他平台均可以使用，因为 Web 平台上的
+[js 包]({{site.pub}}/packages/js) 已经具有相同的用途。
+
 To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As a simple example,
 here’s a fragment of code to call the traditional Win32 `MessageBox()` API:
+
+若您需要使用 FFI，请为每一个 Dart 和未经管理的函数的签名创建一个 `typedef`，
+并且指示 Dart VM 为它们创建关联。
+下面这段代码片段是调用 Win32 的 `MessageBox()` API 的简单示例：
 
 <!-- skip -->
 ```dart

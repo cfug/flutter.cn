@@ -5,40 +5,29 @@ description: How to choose a web renderer for running and building a web app.
 description: 选择合适的渲染器来运行和构建 Web 应用。
 ---
 
-{{site.alert.warning}}
-
-  **While in development, web support is available in the beta channel.**
-  
-  **Flutter 对 Web 的支持目前处于 Beta 阶段。**
-  
-  If you experience a problem that hasn't yet been reported, please
-  [file an issue][] and make sure that "web" appears in the title.
-  
-  开发过程中如果遇到问题，请 [提交 issue][file an issue] 并确保 issue 标题包含 "web" 关键词。
-
-{{site.alert.end}}
-
-
 When running and building apps for the web, you can choose between two different
 renderers. This page describes both renderers and how to choose the best one for
 your needs. The two renderers are:
 
+你可以选择两种不同的渲染器来运行和构建 Web 应用。
+下文介绍两种渲染器以及它们的适用场景:
+
 你可以选择两种不同的渲染器来运行和构建 Web 应用。下文介绍两种渲染器以及它们的适用场景。
 
-**HTML**
+**HTML renderer**
 <br> Uses a combination of HTML elements, CSS, Canvas elements, and SVG elements.
 This renderer has a smaller download size.
 
-**使用 HTML**
+**使用 HTML 渲染**
 <br> 使用 HTML，CSS，Canvas 和 SVG 元素来渲染，应用的大小相对较小。
 
-**CanvasKit**
+**CanvasKit renderer**
 <br> Uses Skia compiled to WebAssembly and rendered using WebGL. This renderer is
 fully consistent with Flutter mobile and desktop, has faster performance, and
 is less likely to have differences across browsers, but adds about 2MB in
 download size.
 
-**使用 CanvasKit**
+**使用 CanvasKit 渲染**
 <br> 将 Skia 编译成 WebAssembly 格式，并使用 WebGL 渲染。应用在移动和桌面端保持一致，
 有更好的性能，以及降低不同浏览器渲染效果不一致的风险。但是应用的大小会增加大约 2MB。
   

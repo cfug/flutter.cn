@@ -383,30 +383,37 @@ Dart code (hence the "debug" banner they show to remind
 people that they're slightly slower) in order to enable
 Stateful Hot Reload.
 
-调试模式时则使用虚拟机 (VM) 来运行 Dart 代码（因此这时会显示 "Debug" 字样，以提醒开发者速度会稍微变慢)，这样便可以启用有状态热重载 (Stateful Hot Reload)。
+调试模式时则使用虚拟机 (VM) 来运行 Dart 代码
+（因此这时会显示 "Debug" 字样，以提醒开发者速度会稍微变慢)，
+这样便可以启用有状态热重载 (Stateful Hot Reload)。
 
 ### How does Flutter run my code on iOS? {#run-ios}
 
 ### Flutter 如何在 iOS 上运行我的代码？{#run-ios}
 
-The engine's C and C++ code are compiled with LLVM.
-The Dart code (both the SDK's and yours) are ahead-of-time
-(AOT) compiled into a native, ARM library.
-That library is included in a "runner" iOS project,
-and the whole thing is built into an `.ipa`.
-When launched, the app loads the Flutter library.
-Any rendering, input or event handling, and so on,
-are delegated to the compiled Flutter and app code.
-This is similar to the way many game engines work.
+The engine's C and C++ code is compiled with LLVM. The Dart code (both the
+SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM library.
+That library is included in a "runner" iOS project, and the whole thing is built
+into an `.ipa`. When launched, the app loads the Flutter library. Any rendering,
+input or event handling, and so on, are delegated to the compiled Flutter and
+app code. This is similar to the way many game engines work.
 
-引擎的 C 和 C++ 代码使用 LLVM 编译。Dart 代码 (SDK 的和您的) 都是预先 (ahead-of-time, AOT) 编译成本地 ARM 库。这些库被包含在一个 iOS "runner" 项目中，然后整套内容被编译成一个 .ipa。当应用启动时，它会加载 Flutter 库。任何渲染、输入或事件处理等都会 delegate 给编译好的 Flutter 和应用代码。这个工作机制与很多游戏引擎颇为相似。
+引擎的 C 和 C++ 代码使用 LLVM 编译。Dart 代码 (SDK 的和您的) 
+都是预先 (ahead-of-time, AOT) 编译成本地 ARM 库。
+这些库被包含在一个 iOS "runner" 项目中，
+然后整套内容被编译成一个 `.ipa`。当应用启动时，
+它会加载 Flutter 库。任何渲染、输入或事件处理等都会
+代理给编译好的 Flutter 和应用代码。
+这个工作机制与很多游戏引擎颇为相似。
 
-Debug mode builds use a virtual machine (VM) to run
-Dart code (hence the "debug" banner they show to
+The engine's C and C++ code is compiled with LLVM. The Dart code (both the
+SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM library.
 remind people that they're slightly slower)
 in order to enable Stateful Hot Reload.
 
-调试模式时则使用虚拟机 (VM) 来运行 Dart 代码 (因此这时会显示 "Debug" 字样，以提醒开发者速度会稍微变慢)，这样便可以启用有状态热重载 (Stateful Hot Reload)。
+调试模式时则使用虚拟机 (VM) 来运行 Dart 代码
+(因此这时会显示 "Debug" 字样，以提醒开发者速度会稍微变慢)，
+这样便可以启用有状态热重载 (Stateful Hot Reload)。
 
 ### Does Flutter use my system's OEM widgets?
 

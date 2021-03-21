@@ -11,55 +11,44 @@ keywords: Flutter网页版,常见问题
 
 ### Web 版本的 Flutter 是否已经准备好投入生产环境中了呢？
 
-Flutter web support is available on the beta channel.
-As is typical for beta software, we're still making
-changes to improve performance and quality, and you
-may discover rendering bugs compared to the stable
-mobile platforms. While web support is in beta,
-we recommend careful testing on a variety of platforms
-before deploying to production, and that you track and
-apply Flutter updates to your deployed site on a regular
-basis.
+Flutter's web support is now available on the stable channel,
+offering an app-centric framework that
+builds on the power of the modern web platform.
+Find out more details about [Flutter's production quality 
+support for the web][].
 
-Flutter 网页支持在测试版频道中提供。
-作为典型的测试版软件，我们仍在进行修改以提高性能和质量，
-与稳定的移动平台相比，您可能会发现渲染方面的 BUG。
-虽然网页支持还在测试阶段，
-但我们建议您在部署到生产环境之前在各种平台上仔细测试，
-定期跟踪 Flutter 更新并将其应用于已部署的站点。
+Flutter 网页端的支持正式在稳定版渠道发布，提供了以应用为中心的框架，
+框架以现代 Web 平台的功能为基础，如果希望了解更多，请查看文章
+[Flutter Web 支持现已进入稳定版](https://zhuanlan.zhihu.com/p/355976725)。
 
 ### What scenarios are ideal for Flutter on the web?
 
 ### 在 Web 平台使用 Flutter 的场景有哪些？
 
-While traditional web approaches remain a great choice,
-we envision the web support available in Flutter being
-valuable in many scenarios. For example:
+Not every web page makes sense in Flutter, but we think Flutter is particularly
+suited for app-centric experiences:
 
-尽管传统的 Web 场景是非常有价值，
-但我们设想在如下场景中的 Web 支持也有很大价值：
+Flutter 目前并非适用于所有的网页内容，不过我们主要关注三个应用场景：
 
-* Rich interactive single page applications
+* Progressive Web Apps
 
-  丰富的交互式单页应用
+  渐进式 web 应用 (Progressive web apps, PWA)，兼具 web 的高覆盖面与桌面应用的强大功能。
 
-* Connected Progressive Web Applications (PWAs)
+* Single Page Apps
 
-  渐进式网络应用 (PWA)
-  
-* Embedding dynamic/interactive content in an existing website
+  单页应用 (Single page apps, SPA)，只需一次加载，并与互联网服务动态互传数据。
 
-  在现有网站中嵌入动态/互动内容
+* Existing Flutter mobile apps
 
-Not every HTML scenario is ideally suited for Flutter at
-this time. For example, text-rich flow-based content such
-as blog articles benefit from the document-centric model that
-the web is built around, rather than the app-centric services
-that a UI framework like Flutter can deliver.
-However, you _can_ use Flutter to
-embed interactive experiences into these websites.
+  将现有 Flutter 移动应用拓展到 web，在两个平台共享代码。
 
-目前，并不是每一个 HTML 场景在这个阶段都适合 Flutter。
+At this time, Flutter is not suitable for static websites with text-rich
+flow-based content. For example, blog articles benefit from the document-centric
+model that the web is built around, rather than the app-centric services that a
+UI framework like Flutter can deliver. However, you _can_ use Flutter to embed
+interactive experiences into these websites.
+
+现在阶段，Flutter 不适合具有丰富文本和瀑布流的页面。
 例如，博客文章等基于流媒体的丰富文本内容，
 其受益于网络构建的以文档为中心的模式，
 而不是像 Flutter 这样的 UI 框架可以提供的以应用为中心的服务。
@@ -81,16 +70,6 @@ Make sure that "web" is included in the title.
 你可以在 Flutter 主仓库中 [发起一个 issue][file an issue]。
 请确保标题中包含了 "web" 关键字。
 
-### How do I migrate a web app built using the flutter_web repo to the flutter repo?
-
-### 我应该如何从 flutter_web 仓库编写的应用迁移到 flutter 仓库下
-
-See [Upgrading from package:flutter_web to the Flutter SDK][].
-
-点击查看 
-[将使用 flutter_web package 升级使用到 Flutter SDK][Upgrading from package:flutter_web to the Flutter SDK]
-以获得 Flutter Web 体验。
-
 ### How do I create an app that also runs on the web?
 
 ### 如何创建同时在 Web 上运行的应用？
@@ -101,15 +80,21 @@ See [building a web app with Flutter](/docs/get-started/web).
 
 ### Does hot reload work with a web app?
 
-### Web 应用上能热重载吗？
+### 我该如何在浏览器中刷新正在运行的应用？
 
-No, but you can use hot restart.
+No, but you can use hot restart. Hot restart is a fast way of seeing your
+changes without having to relaunch your web app and wait for it to compile and
+load. This works similarly to the hot reload feature for Flutter mobile
+development. The only difference is that hot reload remembers your state and hot
+restart doesn't.
 
 不能，但是可以使用热重启 (hot restart)。
+热重启是可以您的应用快速响应改动的方法，无需等待重新编译的载入。
+它与移动端的热重载功能类似。唯一的区别是热重载可以保持应用的状态。
 
-### How do I refresh the app running in the browser?
+### How do I restart the app running in the browser?
 
-### 我该如何在浏览器中刷新正在运行的应用？
+### 我该如何在浏览器中重启正在运行的应用？
 
 Using the browser's refresh button doesn't work,
 but you can enter "R" in the console where
@@ -138,50 +123,31 @@ Flutter web apps can run on the following browsers:
 
   Edge（移动和桌面端）
 
-* Firefox (desktop)
+* Firefox (mobile & desktop)
 
-  Firefox（仅桌面端）
+  Firefox（移动和桌面端）
 
 During development, Chrome (on macOS, Windows, and Linux) and Edge (on Windows)
-are supported as the default browsers for debugging your app. In order to test
-your web app on other browsers use the `Web server` device option to get a URL
-serving the app. Learn more on how to [run your web apps in any supported
-browser][]
+are supported as the default browsers for debugging your app.
 
 在开发阶段，Chrome（在 macOS、Windows 以及 Linux）以及
 Edge（在 Windows 上）将作为默认浏览器用于调试。
-为了在其他浏览器上测试你的 web 应用，
-需要使用 `Web server` 选项设备获得 URL 以提供应用服务。
-你可以 [在支持的浏览器中运行你的 web 应用][run your web apps in any supported browser]
-了解更多。
 
 ### Can I build, run, and deploy web apps in any of the IDEs?
 
 ### 我可以在任意 IDE 中，构建、运行并发布 web 应用吗？
 
-You can select a browser as the target device, such as **Chrome**, in
-Android Studio/IntelliJ and VS Code if you are using the
-latest beta channel of Flutter and have enabled web support.
-To enable support, run the following in the terminal:
+You can select **Chrome** or **Edge** as the target device in
+Android Studio/IntelliJ and VS Code. 
 
-Flutter 最新的 beta 频道已开启 web 支持，
-你可以在 Android Studio、IntelliJ 和 VS Code 中选择 **Chrome** 作为目标设备。
-要启用 web 支持，请在终端中执行以下命令：
+你可以在 Android Studio/IntelliJ 和 VS Code 里选择使用
+**Chrome** 或者 **Edge** 浏览器。
 
-```terminal
-flutter config --enable-web
-```
-
-You need only run this once.
-
-你仅需要执行一次。
-
-If the IDE is already running, restart it.
 The device pulldown should now include the **Chrome (web)**
-option.
+option for all channels.
 
-如果 IDE 已在运行，请重新启动它。
-设备列表菜单现在应该包含 **Chrome（web）** 选项了。
+设备下拉列表里现在应该在所有平台里都包含了 Chrome (web)。
+
 
 ### How do I build a responsive app for the web?
 
@@ -219,31 +185,9 @@ controls the headers on an HTTP request.
 请注意，安全方面的工作有所不同，
 因为浏览器（而不是应用程序）控制 HTTP 请求上的标头。
 
-### How are forward and backward buttons presented in the web UI?
+### How do I embed a Flutter web app in a web page?
 
-### 如何在 Web 用户界面中显示前进和后退按钮？
-
-The browser's back button is supported for web apps.
-The forward button is not yet enabled.
-For more information, see [Issue 32248][].
-
-Web 应用支持浏览器的后退按钮。
-前进按钮尚未支持。
-有关更多信息，请参阅 [Issue 32248][]。
-
-### How do copy/paste work?
-
-### 复制和粘贴功能状况如何？
-
-Copy/paste works on mobile. If you encounter problems,
-please [file an issue][].
-
-在移动设备上复制和粘贴可以使用。
-如果你遇到了什么问题，请 [提一个 issue][file an issue]。
-
-### How do I embed a web app in a web page?
-
-### 我该如何把一个 web 应用嵌入到一个网页中？
+### 我该如何把一个 Flutter web 应用嵌入到一个网页中？
 
 You can embed a Flutter web app,
 as you would embed other content,
@@ -258,29 +202,9 @@ with the location of your hosted HTML page:
 <iframe src="URL"></iframe>
 ```
 
-### Implementing CORS
+If you encounter problems, please [file an issue][].
 
-### 实现跨域资源共享
-
-HTTP requests work on mobile, but not on the web.
-Web applications have special security restrictions.
-If you experience problems,
-check that the web server you are accessing is setting
-CORS headers that accept requests from the domain
-hosting your Flutter app.
-
-HTTP 请求适用于移动设备，但不适用于网络。
-Web 应用程序有特殊的安全限制。
-如果你遇到问题，请检查正在访问的 Web
-服务器是否设置了接受来自托管 Flutter 应用程序的域的请求的 CORS 标头。
-
-### How do I avoid JS lockout with CORS?
-
-### 我该如何使用 CORS 避免 JS 锁定？
-
-IDK
-
-尚未有明确的解决方案。
+如果你遇到问题，请 [提交一个 issue][file an issue] 给我们。
 
 ### How do I debug a web app?
 
@@ -319,21 +243,18 @@ Use [Chrome DevTools][] for the following tasks:
 
 ### 我该如何测试 Web 应用？
 
-Use the normal [widget tests][].
+Use [widget tests][] or integration tests. To learn more about
+running integration tests in a browser, see the [Integration testing][] page.
 
-跟常规的 [widget tests][] 通用。
+使用常规的 [widget tests][]，了解更多关于如何在浏览器里使用集成测试，请查看
+[集成测试][Integration testing] 文档页面。
 
-Driver tests are not yet supported.
-
-自动化测试尚不支持。
 
 ### How do I internationalize a web app?
 
-### 我该如何国际化 Web 应用？
+This isn’t any different than [internationalizing a Flutter mobile app][].
 
-TBD
-
-暂未完成
+与 [Flutter 移动应用的国际化][internationalizing a Flutter mobile app] 无差别。
 
 ### How do I deploy a web app?
 
@@ -355,10 +276,10 @@ Not currently.
 
 ### 如何跟其他使用者交流？
 
-Check out the **#hackers-web-🌍** discussion board on [Discord][].
+Check out the **#web** discussion channel on [Discord][].
 Flutter engineers routinely read and respond on Discord.
 
-请在 [Discord][] 平台的 **#hackers-web-🌍** 这个讨论板跟大家讨论，
+请在 [Discord][] 平台的 **#web** 这个讨论板跟大家讨论，
 Flutter 团队的工程师会经常阅读和互动。
 
 [Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
@@ -384,3 +305,5 @@ Flutter 团队的工程师会经常阅读和互动。
 [Web support for Flutter]: /web
 [write your own plugins]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [run your web apps in any supported browser]: /docs/get-started/web#create-and-run
+[Integration testing]: /docs/testing/integration-tests#running-in-a-browser
+[internationalizing a Flutter mobile app]: https://flutter.dev/docs/resources/faq#how-do-i-do-internationalization-i18n-localization-l10n-and-accessibility-a11y-in-flutter

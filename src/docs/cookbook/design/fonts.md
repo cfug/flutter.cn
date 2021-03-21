@@ -104,6 +104,21 @@ awesome_app/
     RobotoMono-Bold.ttf
 ```
 
+### Supported font formats
+
+### 已支持的字体格式
+
+Flutter supports the following font formats:
+
+Flutter 支持以下的字体格式：
+
+* `.ttf`
+* `.otf`
+
+Flutter does not support `.woff` and `.woff2` fonts for all platforms.
+
+Flutter 在所有平台上均尚未支持 `.woff` 和 `.woff2` 字体。
+
 ## 2. Declare the font in the pubspec
 
 ## 2. 在 `pubspec.yaml` 中声明字体

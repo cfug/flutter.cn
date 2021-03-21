@@ -13,10 +13,12 @@ keywords: 闪屏页,启动页,Loading图,应用商店
 development/ui/splash-screen/android-splash-screen/splash-screens_header.png
 class="mw-100" alt="Add Splash Screen Header" %}
 
-Splash screens (also known as launch screens) provide a simple initial
-experience while your mobile app loads. They set the stage for your
-application, while allowing time for the app engine to load and your
-app to initialize. This guide teaches you how to use splash screens
+Splash screens (also known as launch screens)
+provide a simple initial experience while your
+mobile app loads. They set the stage for your
+application, while allowing time for the app
+engine to load and your app to initialize.
+This guide teaches you how to use splash screens
 appropriately on iOS and Android.
 
 闪屏页（也称为启动页）是你的应用在启动时给用户的第一印象。
@@ -36,12 +38,16 @@ provide the app's launch screen.
 [必须使用 Xcode storyboard][must use an Xcode storyboard]
 以提供应用启动页面。
 
-The default Flutter template includes an Xcode storyboard named
-`LaunchScreen.storyboard` that can be customized as you see fit with
-your own assets. By default, the storyboard displays a blank image,
-but you can change this. To do so, open the Flutter app's Xcode project
-by typing `open ios/Runner.xcworkspace` from the root of your app directory.
-Then select `Runner/Assets.xcassets` from the Project Navigator and
+The default Flutter template includes an Xcode
+storyboard named `LaunchScreen.storyboard`
+that can be customized as you see fit with
+your own assets. By default,
+the storyboard displays a blank image,
+but you can change this. To do so,
+by typing `open ios/Runner.xcworkspace`
+from the root of your app directory.
+Then select `Runner/Assets.xcassets`
+from the Project Navigator and
 drop in the desired images to the `LaunchImage` image set.
 
 默认的 Flutter 模板包括一个名为
@@ -125,7 +131,7 @@ to be applied to `FlutterActivity` after the launch
 screen is gone. The normal theme background only shows
 for a very brief moment after the splash screen disappears,
 and during orientation change and `Activity` restoration.
-Therefore, it is recommended that the normal theme use a
+Therefore, it's recommended that the normal theme use a
 solid background color that looks similar to the primary
 background color of the Flutter UI.
 
@@ -184,7 +190,7 @@ while the app initializes.
 
 Each Flutter experience in an app requires a few moments
 to initialize the Dart isolate that runs the code.
-This means a user momentarily sees a blank screen
+This means that a user momentarily sees a blank screen
 until Flutter renders its first frame. Flutter supports
 an improved user experience by displaying an Android
 `View` as a splash screen while Flutter initializes.
@@ -252,8 +258,8 @@ reference the same `@drawable/launch_background` in the
 #### 在 FlutterFragment 中配置
 
 To display a `Drawable` as a Flutter splash screen in a
-`FlutterFragment`, make a subclass of `FlutterFragment` and override
-`provideSplashScreen()`.
+`FlutterFragment`, make a subclass of `FlutterFragment`
+and override `provideSplashScreen()`.
 
 想要在 `FlutterFragment` 中使用 `Drawable`
 作为 Flutter 闪屏页，
@@ -281,8 +287,9 @@ public class MyFlutterFragment extends FlutterFragment {
 Splash screens are a great branding opportunity.
 Because of that, many apps implement unique,
 highly customized splash experiences. To facilitate this,
-Flutter allows you to display an arbitrary Android `View` as a splash
-screen, and even allows you to control how that `View` transitions to
+Flutter allows you to display an arbitrary Android `View`
+as a splash screen, and even allows you to control how
+that `View` transitions to
 Flutter after Flutter renders its first frame.
 
 闪屏页是一个非常好的推广品牌时机。
@@ -305,7 +312,7 @@ from a simple solid color to an animation.
 
 #### 实现 SplashScreen 接口
 
-With a custom `View` defined, implement the `SplashScreen` interface.
+With a custom `View` defined, implement the `SplashScreen`.
 
 为已声明的自定义 `View` 实现 `SplashScreen` 接口。
 
@@ -377,12 +384,27 @@ public class SplashScreenWithTransition implements SplashScreen {
     }
 }
 ```
+```java
+
+//MainActivity provideSplashScreen will present the custom splash screen
+
+@Override
+
+@Nullable
+
+public SplashScreen provideSplashScreen() {
+
+return new SplashScreenWithTransition();
+
+}
+
+```
 
 With custom splash screens, the sky is the limit.
 But use the power you have with responsibility: a
 splash screen that is too complex may frustrate your
 users by adding to your app's load time.
-UX Collective provides some good
+The UX Collective provides some good
 tips on how to build a [dynamic yet performant splash screen][].
 
 对于自定义的闪屏页而言，天空才是极限。
@@ -395,3 +417,4 @@ UX Collective 为你提供了一些很好的提示，帮助你构建
 [pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
 [must use an Xcode storyboard]: https://developer.apple.com/news/?id=03042020b
 [Human Interface Guidelines]: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/
+[Sample code]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/android_splash_screens

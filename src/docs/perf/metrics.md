@@ -79,7 +79,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
     and [flutter_gallery_ios][] tests.
     
     查看 [basic_material_app_android][]、[basic_material_app_ios][]、[hello_world_android][]、[hello_world_ios][]、[flutter_gallery_android][] 和
-    [flutter_gallery_ios][] 测试案例.
+    [flutter_gallery_ios][] 测试案例。
     
   * See [metrics][size_perf] in the dashboard.
   

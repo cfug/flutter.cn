@@ -41,7 +41,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
   * See, for example, [metrics][transition_build] for the 
     `flutter_gallery__transition_perf` test.
 
-    例如，查看 `flutter_gallery__transition_perf` 测试案例中的 [数据][transition_build] 。
+    例如，查看 `flutter_gallery__transition_perf` 测试案例中的 [构建数据][transition_build] 。
     
 * Statistics of frame `rasterDuration` (`*_frame_build_time_millis`)
 
@@ -55,7 +55,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
   * See, for example, [metrics][transition_raster] for the 
     `flutter_gallery__transition_perf` test.
 
-    例如，查看 `flutter_gallery__transition_perf` 测试案例中的格栅化数据 [数据][transition_build] 。
+    例如，查看 `flutter_gallery__transition_perf` 测试案例中的 [格栅化数据][transition_build] 。
 
 * CPU/GPU usage (a good approximation for energy use)
 
@@ -68,7 +68,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
     
   * See [metrics][cpu_gpu] for the `simple_animation_perf_ios` test.
   
-    查看 `simple_animation_perf_ios` 测试案例中的 [CPU/GPU数据][cpu_gpu] 。
+    查看 `simple_animation_perf_ios` 测试案例中的 [CPU/GPU 数据][cpu_gpu] 。
 
 * release_size_bytes to approximately measure the size of a Flutter app
 
@@ -83,7 +83,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
     
   * See [metrics][size_perf] in the dashboard.
   
-    查看数据看板中的 [体积大小][size_perf] 指标。
+    查看数据看板中的 [体积大小][size_perf] 数据。
   
   * For info on how to measure the size more accurately,
     see the [app size](/docs/perf/app-size) page.

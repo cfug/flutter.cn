@@ -22,7 +22,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
     
 * Frame buildDuration, rasterDuration, and totalSpan
 
-  一帧的构建时间，格栅化时间，以及总时间
+  一帧的构建时间，栅格化时间，以及总时间
   
   * See [`FrameTiming`]({{site.api}}/flutter/dart-ui/FrameTiming-class.html.)
     in the API docs.
@@ -45,7 +45,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
     
 * Statistics of frame `rasterDuration` (`*_frame_build_time_millis`)
 
-  一帧的格栅化时间 `rasterDuration` (`*_frame_build_time_millis`)
+  一帧的栅格化时间 `rasterDuration` (`*_frame_build_time_millis`)
   
   * We recommend monitoring four stats: average, 90th percentile, 99th
     percentile, and worst frame build time.
@@ -55,7 +55,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
   * See, for example, [metrics][transition_raster] for the 
     `flutter_gallery__transition_perf` test.
 
-    例如，查看 `flutter_gallery__transition_perf` 测试案例中的 [格栅化数据][transition_build] 。
+    例如，查看 `flutter_gallery__transition_perf` 测试案例中的 [栅格化数据][transition_build] 。
 
 * CPU/GPU usage (a good approximation for energy use)
 

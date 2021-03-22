@@ -18,7 +18,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
   * See the
     [perf dashboard](https://flutter-flutter-perf.skia.org/e/?queries=sub_result%3DtimeToFirstFrameRasterizedMicros).
     
-    查看 [性能数据看板](https://flutter-flutter-perf.skia.org/e/?queries=sub_result%3DtimeToFirstFrameRasterizedMicros) 。
+    查看 [性能数据看板](https://flutter-flutter-perf.skia.org/e/?queries=sub_result%3DtimeToFirstFrameRasterizedMicros)。
     
 * Frame buildDuration, rasterDuration, and totalSpan
 
@@ -64,15 +64,15 @@ description: Flutter 性能指标与能获取它们的 API 和工具
   * The usage is currently only available through trace events. See
     [profiling_summarizer.dart][profiling_summarizer].
     
-    该数据目前仅在通过跟踪事件中可用。查看 [profiling_summarizer.dart][profiling_summarizer] 。
+    该数据目前仅能通过跟踪事件获取。查看 [profiling_summarizer.dart][profiling_summarizer] 。
     
   * See [metrics][cpu_gpu] for the `simple_animation_perf_ios` test.
   
-    查看 `simple_animation_perf_ios` 测试案例中的 [CPU/GPU 数据][cpu_gpu] 。
+    查看 `simple_animation_perf_ios` 测试案例中的 [CPU/GPU 数据][cpu_gpu]。
 
 * release_size_bytes to approximately measure the size of a Flutter app
 
-  release_size_bytes 来近似测量 Flutter 应用程序的大小
+  release_size_bytes 对 Flutter 应用程序的大小进行估算
 
   * See the [basic_material_app_android][], [basic_material_app_ios][],
     [hello_world_android][], [hello_world_ios][], [flutter_gallery_android][],
@@ -88,7 +88,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
   * For info on how to measure the size more accurately,
     see the [app size](/docs/perf/app-size) page.
 
-    有关如何更精确的测量应用体积信息，查看 [应用体积](docsperfapp-size) 页面。
+    有关如何更精确的测量应用体积信息，查看 [应用体积](/docs/perf/app-size) 页面。
 
 For a complete list of performance metrics Flutter measures per commit, visit 
 the following sites, click **Query**, and filter the **test** and 

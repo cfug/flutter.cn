@@ -1344,8 +1344,8 @@ calls to statically or dynamically linked libraries. FFI is available for all
 platforms other than web, where the [js package]({{site.pub}}/packages/js)
 serves an equivalent purpose.
 
-对于基于 C 语言的 API，包括使用现代语言 Rust 或 Go 生成的代码，Dart 也提供了
-`dart:ffi` 库，一套直接绑定原生代码的机制。
+对于基于 C 语言的 API，包括使用现代语言 Rust 或 Go 生成的代码，
+Dart 也提供了 `dart:ffi` 库，一套直接绑定原生代码的机制。
 外部函数接口 (FFI) 比平台通道更快，因为不需要序列化即可传递数据。
 实际上，Dart 的运行时提供了在 Dart 对象的堆上分配内存，以及调用静态或动态链接库的能力。
 除了 Web 平台外，FFI 在其他平台均可以使用，因为 Web 平台上的
@@ -1380,11 +1380,17 @@ final result = MessageBox(
 
 ### Rendering native controls in a Flutter app
 
+### 在 Flutter 应用中渲染原生内容
+
 Because Flutter content is drawn to a texture and its widget tree is entirely
 internal, there's no place for something like an Android view to exist within
 Flutter's internal model or render interleaved within Flutter widgets. That’s a
 problem for developers that would like to include existing platform components
 in their Flutter apps, such as a browser control.
+
+由于 Flutter 的内容会绘制在单一的纹理内，并且 widget 树是完全在内部的，
+所以在 Flutter 的内部不存在类似 Android 视图或由 Flutter 内部渲染的 widget。
+对于需要在 Flutter 应用中展示原生组件（例如内置浏览器）的开发者来说，这是一个问题。
 
 Flutter solves this by introducing platform view widgets
 ([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html)
@@ -1394,21 +1400,44 @@ integrated with other Flutter content<sup><a href="#a4">4</a></sup>. Each of
 these widgets acts as an intermediary to the underlying operating system. For
 example, on Android,`AndroidView` serves three primary functions:
 
+Flutter 通过引入了平台 widget
+([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html) 和
+[`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
+解决了这个问题，开发者可以在每一种平台上嵌入此类内容。
+平台视图可以与其他的 Flutter 内容集成<sup><a href="#a4">4</a></sup>。
+这些 widget 充当了底层操作系统与 Flutter 之间的桥梁。
+例如在 Android 上，`AndroidView` 主要提供了三项功能：
+
 - Making a copy of the graphics texture rendered by the native view and
   presenting it to Flutter for composition as part of a Flutter-rendered surface
   each time the frame is painted.
+
+  拷贝原生视图渲染的图形纹理，在 Flutter 每帧渲染时提交给 Flutter 渲染层进行合成。
+
 - Responding to hit testing and input gestures, and translating those into the
   equivalent native input.
+
+  响应接触测试和手势，将其转换为等效的原生输入事件。
+
 - Creating an analog of the accessibility tree, and passing commands and
   responses between the native and Flutter layers.
+
+  创建可访问性树形结构的模拟，在原生和 Flutter 层之间传递命令。
 
 Inevitably, there is a certain amount of overhead associated with this
 synchronization. In general, therefore, this approach is best suited for complex
 controls like Google Maps where reimplementing in Flutter isn’t practical.
 
+但不可避免的是，这样的同步操作必然会带来相应的开销。
+因此该方法通常更适合复杂的控件，例如谷歌地图，在 Flutter 中重新实现是不可行的。
+
 Typically, a Flutter app instantiates these widgets in a `build()` method based
 on a platform test. As an example, from the
 [google_maps_flutter]({{site.pub}}/packages/google_maps_flutter) plugin:
+
+通常 Flutter 应用会在 `build()` 方法中基于平台判断来实例化这些 widget。
+例如在 [google_maps_flutter]({{site.pub}}/packages/google_maps_flutter)
+插件中：
 
 <!-- skip -->
 ```dart
@@ -1437,10 +1466,17 @@ if (defaultTargetPlatform == TargetPlatform.android) {
 Communicating with the native code underlying the `AndroidView` or `UiKitView`
 typically occurs using the platform channels mechanism, as previously described.
 
+如上文所述，`AndroidView` 和 `UiKitView` 通常是利用平台通道的机制与原生进行通信。
+
 At present, platform views aren’t available for desktop platforms, but this is
 not an architectural limitation; support might be added in the future.
 
+目前桌面平台尚未支持平台视图，但这并不是一个架构层面的限制。
+未来可能将增加对桌面平台的支持。
+
 ### Hosting Flutter content in a parent app
+
+在上层应用中托管 Flutter 内容
 
 The converse of the preceding scenario is embedding a Flutter widget in an
 existing Android or iOS app. As described in an earlier section, a newly created
@@ -1448,10 +1484,20 @@ Flutter app running on a mobile device is hosted in an Android activity or iOS
 `UIViewController`. Flutter content can be embedded into an existing Android or
 iOS app using the same embedding API.
 
+与上一个场景相反的是，将 Flutter widget 集成至现有的 Android 或 iOS 应用中。
+先前提到，新创建的 Flutter 应用，在移动设备上是在一个 Android 的 Activity 或
+iOS 的 `UIViewController` 中运行。
+开发者可以使用相同的嵌入 API 将 Flutter 内容集成至现有的 Android 或 iOS 应用中。
+
 The Flutter module template is designed for easy embedding; you can either embed
 it as a source dependency into an existing Gradle or Xcode build definition, or
 you can compile it into an Android Archive or iOS Framework binary for use
 without requiring every developer to have Flutter installed.
+
+Flutter 模块的模板是为了易于集成而设计的。
+开发者可以将其作为源代码依赖项集成到 Gradle 或 Xcode 构建定义中，
+或者将其打包成 Android Archive (AAR) 或 iOS Framework 二进制供其他开发者使用，
+而无需安装 Flutter。
 
 The Flutter engine takes a short while to initialize, because it needs to load
 Flutter shared libraries, initialize the Dart runtime, create and run a Dart
@@ -1463,15 +1509,31 @@ Flutter code is loaded. In addition, separating the Flutter engine allows it to
 be reused across multiple Flutter screens and share the memory overhead involved
 with loading the necessary libraries.
 
+Flutter 引擎将加载 Flutter 的共享库、初始化 Dart 的运行时、创建并运行 Dart isolate 线程、
+并将渲染层与 UI 进行绑定。
+为了将展示 Flutter 内容的任何界面上的延迟降到最小，
+最好是在应用初始化时一并初始化 Flutter 引擎，或至少在第一个 Flutter 页面展示前，
+如此一来用户不会在首个 Flutter 页面加载时感到突然地卡顿。
+另外，将 Flutter 引擎进行分离，可以在多个 Flutter 页面上进行复用，共享加载了必需的库的内存。
+
 More information about how Flutter is loaded into an existing Android or iOS app
 can be found at the [Load sequence, performance and memory
 topic](/docs/development/add-to-app/performance).
 
+更多将 Flutter 集成至现有的 Android 和 iOS 应用的内容，可在
+[控制加载顺序，优化性能与内存](/docs/development/add-to-app/performance)
+文章中查看。
+
 ## Flutter web support
+
+## Flutter 对 Web 的支持
 
 While the general architectural concepts apply to all platforms that Flutter
 supports, there are some unique characteristics of Flutter’s web support that
 are worthy of comment.
+
+虽然 Flutter 支持的所有平台的都适用于同一个架构概念，
+但是在 Web 平台的支持上有一些独特的特征值得说明。
 
 Dart has been compiling to JavaScript for as long as the language has existed,
 with a toolchain optimized for both development and production purposes. Many
@@ -1479,6 +1541,11 @@ important apps compile from Dart to JavaScript and run in production today,
 including the [advertiser tooling for Google Ads](https://ads.google.com/home/).
 Because the Flutter framework is written in Dart, compiling it to JavaScript was
 relatively straightforward.
+
+只要 JavaScript 存在，Dart 就会将产物编译成 JavaScript，并且优化可以用于开发和生产的工具链。
+许多重要的应用已经使用 Dart 编译成的 JavaScript 在生产环境上运行，
+包括 [Google Ads 的广告商工具](https://ads.google.com/home/)。
+由于 Flutter 框架是 Dart 编写的，将其编译成 JavaScript 相对而言更为直截了当。
 
 However, the Flutter engine, written in C++, is designed to interface with the
 underlying operating system rather than a web browser. A different approach is
@@ -1492,7 +1559,18 @@ best code size characteristics, CanvasKit provides the fastest path to the
 browser's graphics stack, and offers somewhat higher graphical fidelity with the
 native mobile targets<sup><a href="#a5">5</a></sup>.
 
+然而，使用 C++ 编写的 Flutter 引擎是为了与底层操作系统进行交互的，而不是 Web 浏览器。
+因此我们需要另辟蹊径。Flutter 在 Web 平台上以浏览器的标准 API 重新实现了引擎。
+目前我们有两种在 Web 上呈现内容的选项：HTML 和 WebGL。
+在 HTML 模式下，Flutter 使用 HTML、CSS、Canvas 和 SVG 进行渲染。
+而在 WebGL 模式下，Flutter 使用了一个编译为 WebAssembly 版本的 Skia，
+名为 [CanvasKit](https://skia.org/user/modules/canvaskit)。
+HTML 模式提供了最佳的代码大小，CanvasKit 则提供了浏览器图形堆栈渲染的最快途径，
+并为原生平台的内容<sup><a href="#a5">5</a></sup>提供了更高的图形保真度。
+
 The web version of the architectural layer diagram is as follows:
+
+Web 版本的分层架构图如下所示：
 
 ![Flutter web
 architecture](/images/arch-overview/web-arch.png){:width="100%"}
@@ -1503,6 +1581,11 @@ the Flutter framework (along with any code you write) is compiled to JavaScript.
 It’s also worthy to note that Dart has very few language semantic differences
 across all its modes (JIT versus AOT, native versus web compilation), and most
 developers will never write a line of code that runs into such a difference.
+
+与其他运行 Flutter 的平台相比，最明显的区别也许是 Flutter 不再需要提供 Dart 的运行时。
+取而代之的是 Flutter 框架本身（和你写的代码）一并编译成 JavaScript。
+另外值得注意的是，Dart 在不同模式下（JIT 和 AOT、平台原生和 Web 编译）的语义几乎没有差异，
+大部分开发者绝对写不出碰到这种差异问题的代码。
 
 During development time, Flutter web uses
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc), a compiler that supports
@@ -1515,23 +1598,48 @@ can be deployed to any web server. Code can be offered in a single file or split
 into multiple files through [deferred
 imports]({{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library).
 
+在进行开发时，Web 版本的 Flutter 使用支持增量编译的编译器
+[`dartdevc`]({{site.dart-site}}/tools/dartdevc) 进行编译，
+以支持应用热重启（尽管目前尚未支持热重载）。
+相反，当你准备好创建一个生产环境的 Web 应用时，Dart 深度优化的编译器
+[`dart2js`]({{site.dart-site}}/tools/dart2js) 将会用于编译，
+将 Flutter 核心框架和你的应用打包至缩小的源文件中，可部署在任何服务器上。
+代码可以在单个文件中提供，也可拆分至多个文件以
+[延迟加载库]({{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library)
+提供。
+
+
 ## Further information
+
+## 更多信息
 
 For those interested in more information about the internals of Flutter, the
 [Inside Flutter](/docs/resources/inside-flutter) whitepaper
 provides a useful guide to the framework’s design philosophy.
 
+若你对 Flutter 的更多内部细节感兴趣
+[Flutter 工作原理](/docs/resources/inside-flutter)
+白皮书为框架的设计理念提供了很好的入门途径。
+
 ---
 
 **Footnotes:**
+
+**脚注：**
 
 <sup><a name="a1">1</a></sup> While the `build` function returns a fresh tree,
 you only need to return something _different_ if there's some new
 configuration to incorporate. If the configuration is in fact the same, you can
 just return the same widget.
 
+<sup><a name="a1">1</a></sup> 在 `build` 方法返回一个全新的结构树时，
+你只需要返回不同的内容，就可以合并一些新的配置。
+如果配置实际上是相同的，完全可以返回同样的 widget。
+
 <sup><a name="a2">2</a></sup> This is a slight simplification for ease of
 reading. In practice, the tree might be more complex.
+
+<sup><a name="a2">2</a></sup> 为了便于阅读，该图已进行简化。实际上的结构可能更为复杂。
 
 <sup><a name="a3">3</a></sup> While work is underway on Linux and Windows,
 examples for those platforms can be found in the [Flutter desktop embedding
@@ -1539,9 +1647,19 @@ repository]({{site.github}}/google/flutter-desktop-embedding/tree/master/plugins
 As development on those platforms reaches maturity, this content will be
 gradually migrated into the main Flutter repository.
 
+<sup><a name="a3">3</a></sup> 在 Linux 和 Windows 平台的开发进程中，平台对应的示例可以在
+[Flutter 桌面集成代码仓库]({{site.github}}/google/flutter-desktop-embedding/tree/master/plugins)
+中找到。随着这些平台的开发愈发成熟，这些内容会逐步迁移到 Flutter 主代码仓库中。
+
 <sup><a name="a4">4</a></sup> There are some limitations with this approach, for
 example, transparency doesn’t composite the same way for a platform view as it
 would for other Flutter widgets.
 
+<sup><a name="a4">4</a></sup> 该方法有一些局限性，例如，
+平台视图的透明度计算与其他 Flutter widget 的计算不同。
+
 <sup><a name="a5">5</a></sup> One example is shadows, which have to be
 approximated with DOM-equivalent primitives at the cost of some fidelity.
+
+<sup><a name="a5">5</a></sup> 其中一个例子便是阴影，
+它必须以等效于 DOM 原语的内容来实现，并且需要丢失一定的保真度。

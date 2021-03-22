@@ -1422,7 +1422,7 @@ Flutter 通过引入了平台 widget
 - Creating an analog of the accessibility tree, and passing commands and
   responses between the native and Flutter layers.
 
-  创建可访问性树形结构的模拟，在原生和 Flutter 层之间传递命令。
+  创建类似的可访问性树，并在原生层与 Flutter 层之间传递命令和响应。
 
 Inevitably, there is a certain amount of overhead associated with this
 synchronization. In general, therefore, this approach is best suited for complex

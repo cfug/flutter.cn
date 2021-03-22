@@ -328,7 +328,7 @@
         permalink: /docs/perf/rendering/ui-performance
       - title: Reduce shader compilation jank
         permalink: /docs/perf/rendering/shader
-    - title: Performance metrics
+    - title: 性能指标
       permalink: /docs/perf/metrics
     - title: Frequently Asked Questions
       permalink: /docs/perf/faq

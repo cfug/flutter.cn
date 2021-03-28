@@ -26,10 +26,11 @@ breaking change optimized how we handle the addition and removal of
 `OverlayEntry`s, and removes unnecessary rebuilds
 to improve performance.
 
-在此更改之前，当一个新的不透明 `OverlayEntry`（记作 A） 被添加到另一个 `OverlayEntry`（记作 B）上，或者 A 从 B 上移除时，
-B 将会重新构建。这些重建是不必要的，因为他们并不是关联了 A 并且由 A 的状态发生改变而触发的。
-这个破坏性的改动优化了我们对 `OverlayEntry` 进行添加和移除的场景，移除了不必要的重建，以此提高性能。
-
+在此更改之前，当一个新的不透明 `OverlayEntry`（记作 A）被添加到另一个 `OverlayEntry`（记作 B）上，
+或者 A 从 B 上移除时，B 将会重新构建。
+这些重建是不必要的，因为它们不是由 `OverlayEntry` 内部状态发生的改变而触发的。
+这个破坏性的改动优化了我们对 `OverlayEntry` 进行添加和移除的场景，
+移除了不必要的重建以提高性能。
 
 Since the `Navigator` internally puts each `Route` into an
 `OverlayEntry` this change also applies to `Route` transitions:
@@ -38,8 +39,8 @@ If an opaque `Route` is pushed on top or removed from above another
 no longer rebuilds unnecessarily.
 
 由于 `Navigator` 在内部会把每一个 `Route` 嵌套在 `OverlayEntry` 中，因此这个改动同样作用于 `Route` 的变换：
-如果一个不透明的 `Route` 被添加到另一个 `Route` 的顶部或从顶部移除时，
-位于该不透明的 `Route` 下面的 `Route` 将不再进行不必要的重建。
+如果一个不透明的 `Route` 被添加到栈顶，或是从另一个 `Route` 的上层被移除时，
+位于不透明的 `Route` 下面的 `Route` 将不再进行不必要的重建。
 
 ## Description of change
 
@@ -59,7 +60,8 @@ widget tree: Prior to this change,
 the `OverlayEntry`s were wrapped in a `Stack` widget.
 The explicit `Stack` widget was removed from the widget hierarchy.
 
-此外，这一更改略微修改了 widget 树的形状：在此更改之前，`OverlayEntry` 集合嵌套在 `Stack` 中。
+此外，这一更改略微调整了 widget 树的层级结构：
+在此更改之前，`OverlayEntry` 集合嵌套在 `Stack` 中。
 更改后，`Stack` 将从 `widget` 树结构中移除。
 
 ## Migration guide

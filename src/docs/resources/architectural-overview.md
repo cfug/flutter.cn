@@ -19,9 +19,9 @@ different platforms, embracing differences where they exist while sharing as
 much code as possible.
 
 Flutter 是一个跨平台的 UI 工具集，
-它的设计初衷，就是可以使用同样的代码在各种操作系统上复用，例如 iOS 和 Android，
+它的设计初衷，就是允许在各种操作系统上复用同样的代码，例如 iOS 和 Android，
 同时让应用程序可以直接与底层平台服务进行交互。
-如此设计是为了让开发者能够在不同的平台上，交付高性能且拥有自然体验的应用，
+如此设计是为了让开发者能够在不同的平台上，都能交付拥有原生体验的高性能应用，
 尽可能地共享复用代码的同时，包容不同平台的差异。
 
 During development, Flutter apps run in a VM that offers stateful hot reload of
@@ -33,8 +33,8 @@ supplement the core library functionality.
 
 在开发中，Flutter 应用会在一个 VM（程序虚拟机）中运行，
 从而可以在保留状态且无需重新编译的情况下，热重载相关的更新。
-而对于发行环境 (release) 而言，无论是英特尔的 x64 还是 ARM 指令集，
-又或是 Web 平台的 JavaScript，Flutter 应用都将直接编译成机器码。
+对于发行版 (release) ，Flutter 应用程序会直接编译为机器代码
+（Intel x64 或 ARM 指令集），或者针对 Web 平台的 JavaScript。
 
 This overview is divided into a number of sections:
 
@@ -42,7 +42,7 @@ This overview is divided into a number of sections:
 
 1. The **layer model**: The pieces from which Flutter is constructed.
 
-   **分层模型**：构建 Flutter 的各个部分。
+   **分层模型**：Flutter 的构成要素。
 
 1. **Reactive user interfaces**: A core concept for Flutter user interface
    development.
@@ -52,7 +52,7 @@ This overview is divided into a number of sections:
 1. An introduction to **widgets**: The fundamental building blocks of Flutter user
    interfaces.
 
-   **widgets** 介绍：Flutter 用户界面。
+   **widgets** 介绍：构建 Flutter 用户界面的基石。
 
 1. The **rendering process**: How Flutter turns UI code into pixels.
 
@@ -149,16 +149,16 @@ graphics, and text rendering subsystems.
 引擎将底层 C++ 代码包装成 Dart 代码，通过
 [`dart:ui`]({{site.github}}/flutter/engine/tree/master/lib/ui)
 暴露给 Flutter 框架层。
-该库暴露了最底层的原语，包括驱动输入、图形、和文本渲染的子系统的类。
+该库暴露了最底层的原语，包括用于驱动输入、图形、和文本渲染的子系统的类。
 
 Typically, developers interact with Flutter through the **Flutter framework**,
 which provides a modern, reactive framework written in the Dart language. It
 includes a rich set of platform, layout, and foundational libraries, composed of
 a series of layers. Working from the bottom to the top, we have:
 
-一般而言，开发者会使用以现代语言（Dart 语言）及响应式框架编写的 **Flutter 框架**
-来与 Flutter 进行交互。它包含了由一系列构建层组成的一套丰富的平台、布局和基础库。
-总的来说，它有以下的内容：
+通常，开发者可以通过 **Flutter 框架层** 与 Flutter 交互，
+该框架提供了以 Dart 语言编写的现代响应式框架。
+它包括由一系列层组成的一组丰富的平台，布局和基础库。从下层到上层，依次有：
 
 - Basic **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
   classes, and building block services such as
@@ -168,10 +168,10 @@ a series of layers. Working from the bottom to the top, we have:
   commonly used abstractions over the underlying foundation.
 
   基础的 **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
-  类，以及 **[animation]({{site.api}}/flutter/animation/animation-library.html)、
+  类及一些基层之上的构建块服务，如 **[animation]({{site.api}}/flutter/animation/animation-library.html)、
   [painting]({{site.api}}/flutter/painting/painting-library.html) 和
   [gestures]({{site.api}}/flutter/gestures/gestures-library.html)**，
-  提供了底层基础内容的常用抽象。
+ 它们可以提供上层常用的抽象。
 
 - The **[rendering
   layer]({{site.api}}/flutter/rendering/rendering-library.html)** provides an
@@ -180,7 +180,7 @@ a series of layers. Working from the bottom to the top, we have:
   tree automatically updating the layout to reflect your changes.
 
   **[渲染层]({{site.api}}/flutter/rendering/rendering-library.html)**
-  提供了操作布局的抽象。有了渲染层，你可以构建以树状结构组织的可渲染对象。
+  用于提供操作布局的抽象。有了渲染层，你可以构建以树状结构组织的可渲染对象。
   在你动态更新这些对象时，构建树也会自动根据你的变更来更新布局。
 
 - The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
@@ -261,7 +261,7 @@ which includes a rethinking of many traditional design principles.
 ，开发者负责提供应用状态与界面状态之间的映射，框架则在运行时将应用状态的更改更新到界面上。
 这样的模型架构的灵感来自
 [Facebook 自己的 React 框架](https://www.youtube.com/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo)
-，其中囊括了对传统架构设计的挑战。
+，其中包含了对传统设计理念的再度解构。
 
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
@@ -269,8 +269,8 @@ to events. One challenge of this approach is that, as the application grows in
 complexity, the developer needs to be aware of how state changes cascade
 throughout the entire UI. For example, consider the following UI:
 
-在大部分传统的 UI 框架中，对界面的初始状态下定义的行为是一次性的，
-在其被定义后，会根据代码在运行时单独更新，并与事件进行交互。
+在大部分传统的 UI 框架中，界面的初始状态通常会被一次性定义，
+然后，在运行时根据用户代码分别响应事件进行更新。
 在这里有一项大挑战，即随着应用程序的复杂性日益增长，
 开发者需要对整个 UI 的状态关联有整体的认知。
 让我们来看看如下的 UI：
@@ -293,7 +293,8 @@ via the controller. However, this also is problematic, since creating and
 updating UI elements are two separate steps that can easily get out of sync.
 
 我们可以通过类似 MVC 的方式进行处理，
-开发者将数据的改动通过控制器推至模型，模型再将新的状态通过控制器推至界面。
+开发者将数据的改动通过控制器（Controller）推至模型（Model），
+模型再将新的状态通过控制器推至界面（View）。
 但这样的处理方式仍然存在问题，
 我们为了更新 UI 而创建了两个单独的步骤，十分容易造成它们的不同步。
 

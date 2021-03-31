@@ -61,7 +61,7 @@ This overview is divided into a number of sections:
 1. An overview of the **platform embedders**: The code that lets mobile and
    desktop OSes execute Flutter apps.
 
-   **平台嵌入构建** 的概览：让 Flutter 应用可以在移动端及桌面端操作系统执行的代码。
+   **平台嵌入层** 的概览：让 Flutter 应用可以在移动端及桌面端操作系统执行的代码。
 
 1. **Integrating Flutter with other code**: Information about different techniques
    available to Flutter apps.
@@ -117,14 +117,14 @@ for common target platforms, but [other embedders also
 exist](https://hover.build/blog/one-year-in/).
 
 对于底层操作系统而言，Flutter 应用程序的包装方式与其他原生应用相同。
-在每一个平台上，会包含一个特定的嵌入构建，
+在每一个平台上，会包含一个特定的嵌入层，
 从而提供一个程序入口，程序由此可以与底层操作系统进行协调，
 访问诸如 surface 渲染、辅助功能和输入等服务，并且管理事件循环队列。
 该嵌入层采用了适合当前平台的语言编写，例如 Android 使用的是 Java 和 C++，
 iOS 和 macOS 使用的是 Objective-C 和 Objective-C++，Windows 和 Linux 使用的是 C++。
 Flutter 代码可以通过嵌入层，以模块方式集成到现有的应用中，也可以作为应用的主体。
-Flutter 包含了常见平台的嵌入构建，但同时也
-[存在一些其他的构建][other embedders also exist]。
+Flutter 包含了常见平台的嵌入层，但同时也
+[存在一些其他的嵌入层][other embedders also exist]。
 
 At the core of Flutter is the **Flutter engine**, which is mostly written in C++
 and supports the primitives necessary to support all Flutter applications. The
@@ -1176,7 +1176,7 @@ that provides a _platform embedder_ with a way to set up and use Flutter.
 而不是转换为对应平台系统的部件。
 获取纹理和联动应用底层的生命周期的方法，不可避免地会根据平台特性而改变。
 Flutter 引擎本身是与平台无关的，它提供了一个稳定的 ABI（应用二进制接口），
-包含一个 **平台嵌入构建**，可以通过其方法设置并使用 Flutter。
+包含一个 **平台嵌入层**，可以通过其方法设置并使用 Flutter。
 
 The platform embedder is the native OS application that hosts all Flutter
 content, and acts as the glue between the host operating system and Flutter.
@@ -1191,14 +1191,14 @@ example]({{site.github}}/chinmaygarde/fluttercast) that supports remoting
 Flutter sessions through a VNC-style framebuffer or [this worked example for
 Raspberry Pi]({{site.github}}/ardera/flutter-pi).
 
-平台嵌入构建是用于呈现所有 Flutter 内容的原生系统应用，
+平台嵌入层是用于呈现所有 Flutter 内容的原生系统应用，
 它充当着宿主操作系统和 Flutter 之间的粘合剂的角色。
-当你启动一个 Flutter 应用时，嵌入构建会提供一个入口，初始化 Flutter 引擎，
+当你启动一个 Flutter 应用时，嵌入层会提供一个入口，初始化 Flutter 引擎，
 获取 UI 和栅格化线程，创建 Flutter 可以写入的纹理。
-嵌入构建同时负责管理应用的生命周期，包括输入的操作（例如鼠标、键盘和触控）、
+嵌入层同时负责管理应用的生命周期，包括输入的操作（例如鼠标、键盘和触控）、
 窗口大小的变化、线程管理和平台消息的传递。
-Flutter 拥有 Android、iOS、Windows、macOS 和 Linux 的平台嵌入构建，
-当然，开发者可以创建自定义的嵌入构建，正如这个
+Flutter 拥有 Android、iOS、Windows、macOS 和 Linux 的平台嵌入层，
+当然，开发者可以创建自定义的嵌入层，正如这个
 [可用的例子]({{site.github}}/chinmaygarde/fluttercast)
 以 VNC 风格的帧缓冲区支持了远程 Flutter，还有
 [支持树莓派运行的例子]{{site.github}}/ardera/flutter-pi)。
@@ -1216,8 +1216,8 @@ platform-specific notes:
   rendered by the `FlutterEngine` using Metal or OpenGL.
 
   在 iOS 和 macOS 上，
-  Flutter 分别通过 `UIViewController` 和 `NSViewController` 载入到嵌入构建。
-  这些嵌入构建会创建一个 `FlutterEngine`，作为 Dart VM 和您的 Flutter 运行时的宿主，
+  Flutter 分别通过 `UIViewController` 和 `NSViewController` 载入到嵌入层。
+  这些嵌入层会创建一个 `FlutterEngine`，作为 Dart VM 和您的 Flutter 运行时的宿主，
   还有一个 `FlutterViewController`，关联对应的 `FlutterEngine`，
   传递 UIKit 或者 Cocoa 的输入事件到 Flutter，
   并将 `FlutterEngine` 渲染的帧内容通过 Metal 或 OpenGL 进行展示。
@@ -1228,7 +1228,7 @@ platform-specific notes:
   which renders Flutter content either as a view or a texture, depending on the
   composition and z-ordering requirements of the Flutter content.
 
-  在 Android 上，Flutter 默认会载入到 `Activity` 嵌入构建中。
+  在 Android 上，Flutter 默认会载入到 `Activity` 嵌入层中。
   此时视图是通过一个
   [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
   进行控制的，基于 Flutter 内容的合成和 z 排列 (z-ordering) 的要求，
@@ -1245,7 +1245,7 @@ platform-specific notes:
   在 Windows 上，Flutter 的宿主是一个传统的 Win32 应用，内容是通过一个将 OpenGL API
   调用转换成 DirectX 11 的等价调用的库
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md)
-  进行渲染的。目前正在尝试将 UWP 应用作为 Windows 的一种嵌入构建，并将 ANGLE 替换为
+  进行渲染的。目前正在尝试将 UWP 应用作为 Windows 的一种嵌入层，并将 ANGLE 替换为
   通过 DirectX 12 直接调用 GPU 的方式。
 
 ## Integrating with other code

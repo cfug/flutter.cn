@@ -799,8 +799,7 @@ onto a screen.
 You may be wondering: if Flutter is a cross-platform framework, then how can it
 offer comparable performance to single-platform frameworks?
 
-作为一个好奇宝宝，你可能思考过：
-如果 Flutter 是一个跨平台的框架，它如何能够提供与对应平台的框架匹敌的性能？
+你可能思考过：如果 Flutter 是一个跨平台的框架，它如何能够提供与对应平台的框架匹敌的性能？
 
 It’s useful to start by thinking about how traditional Android apps work. When
 drawing, you first call the Java code of the Android framework. The Android

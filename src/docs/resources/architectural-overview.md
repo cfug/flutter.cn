@@ -123,7 +123,7 @@ exist](https://hover.build/blog/one-year-in/).
 该嵌入层采用了适合当前平台的语言编写，例如 Android 使用的是 Java 和 C++，
 iOS 和 macOS 使用的是 Objective-C 和 Objective-C++，Windows 和 Linux 使用的是 C++。
 Flutter 代码可以通过嵌入层，以模块方式集成到现有的应用中，也可以作为应用的主体。
-Flutter 包含了常见平台的嵌入层，但同时也
+Flutter 本身包含了各个常见平台的嵌入层，同时也
 [存在一些其他的嵌入层][other embedders also exist]。
 
 At the core of Flutter is the **Flutter engine**, which is mostly written in C++
@@ -361,7 +361,7 @@ way up to the root widget (the container that hosts the Flutter app, typically
 Widgets 通过布局组合形成一种层次结构关系。
 每个 Widget 都嵌套在其父级的内部，并可以通过父级接收上下文。
 从根布局（托管 Flutter 应用的容器，通常是 `MaterialApp` 或`CupertinoApp`）开始，
-从上至下都是这样的结构，如下面的示例所示：
+自上而下都是这样的结构，如下面的示例所示：
 
 <!-- skip -->
 ```dart
@@ -1059,9 +1059,9 @@ respond by **passing up a size** to their parent object within the constraints
 the parent established.
 
 在进行布局的时候，Flutter 会以 DFS（深度优先遍历）方式遍历渲染树，
-并 **将限制以从上到下的方式** 从父节点传递给子节点。
+并 **将限制以自上而下的方式** 从父节点传递给子节点。
 子节点若要确定自己的大小，则 **必须** 遵循父节点传递的限制。
-子节点的响应方式是在父节点建立的约束内 **将大小以从下到上的方式** 传递给父节点。
+子节点的响应方式是在父节点建立的约束内 **将大小以自下而上的方式** 传递给父节点。
 
 ![Constraints go down, sizes go
 up](/images/arch-overview/constraints-sizes.png){:width="80%"}

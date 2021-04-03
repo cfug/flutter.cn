@@ -637,10 +637,10 @@ built through their `State` object.
 
 然而，当 widget 拥有需要根据用户交互或其他因素而变化的特有属性，它就是 **有状态的**。
 例如，计数器 widget 在用户点击按钮时数字递增，那么计数值就是计数器 widget 的状态。
-当值变化时，widget 需要更新或者重建部分 UI。
+当值变化时，widget 则需要被重建以更新相关部分的 UI。
 这些 widget 会继承
 [`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)，
-并且状态会保持在继承
+并且「可变的」状态会保存在继承
 [`State`]({{site.api}}/flutter/widgets/State-class.html) 的另一个子类中
 （因为 widget 本身是不可变的）。
 `StatefulWidget` 没有 build 方法，对于它而言，build 方法在其对应的 `State` 对象中。
@@ -652,7 +652,7 @@ build method again.
 
 每当你更改 `State` 对象时（例如计数增加），你需要调用
 [`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
-来告知框架，再次调用 `State` 的 build 方法来更新 UI。
+来告知框架，再次调用 `State` 的构建方法来更新 UI。
 
 Having separate state and widget objects lets other widgets treat both stateless
 and stateful widgets in exactly the same way, without being concerned about
@@ -661,10 +661,10 @@ the parent can create a new instance of the child at any time without losing the
 child’s persistent state. The framework does all the work of finding and reusing
 existing state objects when appropriate.
 
-在状态和 widget 对象分离的情况下，
-其他的 widget 可以对无状态和有状态的 widget 进行同样的处理，同时不需要担心丢失状态。
-父级可以随时创建新的实例，旧的状态也不会丢失，而不需要通过子级关系保持其状态。
-框架会在合适的时间，搜寻已存在的状态对象进行复用。
+将状态和 widget 对象分离，可以使其他 widget 无差异地看待无状态和有状态 widget，
+而不必担心丢失状态。父级无需担心状态的丢失，可以随时创建新的实例，
+并不需要通过子级关系保持其状态。
+框架也会在合适的时间，复用已存在的状态对象。
 
 ### State management Available
 
@@ -679,7 +679,7 @@ As with any other class, you can use a constructor in a widget to initialize its
 data, so a `build()` method can ensure that any child widget is instantiated
 with the data it needs:
 
-与其他类相同，你可以通过 widget 的构造器来初始化数据，
+与其他类相同，你可以通过 widget 的构造函数来初始化数据，
 如此一来 `build()` 方法可以确保子 widget 使用其所需的数据进行实例化：
 
 <!-- skip -->
@@ -761,10 +761,9 @@ page routing; and
 [MediaQuery]({{site.api}}/flutter/widgets/MediaQuery-class.html), which provides
 access to screen metrics such as orientation, dimensions, and brightness.
 
-同样以该方法实现的还有
-[Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)，提供了页面路由；
-[MediaQuery]({{site.api}}/flutter/widgets/MediaQuery-class.html)，
-提供了屏幕的一些信息指标，包括方向、尺寸和亮度等。
+类似地，以该方法实现的还有
+提供了页面路由的 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)、
+提供了屏幕信息指标，包括方向、尺寸和亮度的 [MediaQuery]({{site.api}}/flutter/widgets/MediaQuery-class.html) 等。
 
 As applications grow, more advanced state management approaches that reduce the
 ceremony of creating and using stateful widgets become more attractive. Many
@@ -789,8 +788,8 @@ This section describes the rendering pipeline, which is the series of steps that
 Flutter takes to convert a hierarchy of widgets into the actual pixels painted
 onto a screen.
 
-本节将介绍 Flutter 的渲染机制，
-包括 widget 结构转换成屏幕上绘制的实际像素的一系列步骤。
+本节介绍 Flutter 的渲染机制，
+包括将 widget 层级结构转换成屏幕上绘制的实际像素的一系列步骤。
 
 ### Flutter’s rendering model
 
@@ -799,7 +798,7 @@ onto a screen.
 You may be wondering: if Flutter is a cross-platform framework, then how can it
 offer comparable performance to single-platform frameworks?
 
-你可能思考过：如果 Flutter 是一个跨平台的框架，它如何能够提供与对应平台的框架匹敌的性能？
+你可能思考过：既然 Flutter 是一个跨平台的框架，那么它如何提供与原生平台框架相当的性能？
 
 It’s useful to start by thinking about how traditional Android apps work. When
 drawing, you first call the Java code of the Android framework. The Android
@@ -809,9 +808,9 @@ graphics engine written in C/C++ that calls the CPU or GPU to complete the
 drawing on the device.
 
 让我们从安卓原生应用的角度开始思考。
-当你在编写绘制内容时，你需要调用 Android 框架的 Java 代码。
-Android 的系统库提供了负责绘制 Canvas 对象的组件，
-接下来 Android 就可以使用一个由 C/C++ 编写的 [Skia](https://skia.org/) 图像引擎，
+当你在编写绘制的内容时，你需要调用 Android 框架的 Java 代码。
+Android 的系统库提供了可以将自身绘制到 Canvas 对象的组件，
+接下来 Android 就可以使用由 C/C++ 编写的 [Skia](https://skia.org/) 图像引擎，
 调用 CPU 和 GPU 完成在设备上的绘制。
 
 Cross-platform frameworks _typically_ work by creating an abstraction layer over
@@ -822,9 +821,9 @@ Java-based Android or Objective-C-based iOS system libraries to display UI. All
 this adds overhead that can be significant, particularly where there is a lot of
 interaction between the UI and the app logic.
 
-**通常来说** 跨平台框架都会在 Android 和 iOS 的 UI 底层库上创建一层抽象，
+**通常来说**，跨平台框架都会在 Android 和 iOS 的 UI 底层库上创建一层抽象，
 该抽象层尝试抹平各个系统之间的差异。
-这时，应用程序的代码常常使用 JavaScript 等解释性语言来进行编写，
+这时，应用程序的代码常常使用 JavaScript 等解释型语言来进行编写，
 这些代码会与基于 Java 的 Android 和基于 Objective-C 的 iOS 系统进行交互，
 最终显示 UI 界面。
 所有的流程都增加了显著的开销，在 UI 和应用逻辑有繁杂的交互时更为如此。
@@ -893,7 +892,7 @@ code]({{site.github}}/flutter/flutter/blob/f7a6a7906be96d2288f5d63a5a54c515a6e98
 for `Container`, you can see that if the color is not null, it inserts a
 `ColoredBox` representing the color:
 
-当 Flutter 需要使用这段代码进行绘制时，框架会调用 `build()` 方法，
+当 Flutter 需要绘制这段代码片段时，框架会调用 `build()` 方法，
 返回一棵基于当前应用状态来绘制 UI 的 widget 子树。
 在这个过程中，`build()` 方法可能会在必要时，根据状态引入新的 widget。
 在上面的例子中，`Container` 的 `color` 和 `child` 就是典型的例子。
@@ -964,7 +963,7 @@ method as a parameter.
 任何 widget 都可以通过其 `BuildContext` 引用到 Element，
 它是该 widget 在树中的位置的句柄。
 类似 `Theme.of(context)` 方法调用中的 `context`，
-它也作为 `build()` 方法的参数进行传递。
+它作为 `build()` 方法的参数被传递。
 
 Because widgets are immutable, including the parent/child relationship between
 nodes, any change to the widget tree (such as changing `Text('A')` to
@@ -981,8 +980,8 @@ element tree that require reconfiguration.
 （例如将 `Text('A')` 替换成 `Text('B')`）
 都会返回一个新的 widget 对象集合。
 但这并不意味着底层呈现的内容必须要重新构建。
-Element 树每一帧之间都是持久化的，因此它扮演着重要的角色，
-Flutter 依靠这个优势，得以在缓存底层的呈现时，可以完全与 widget 层级脱离。
+Element 树每一帧之间都是持久化的，因此起着至关重要的性能作用，
+Flutter 依靠该优势，实现了一种好似 widget 树被完全抛弃，而缓存了底层表示的机制。
 仅仅是判断发生变化的 widget，Flutter 就可以重建需要重新配置的 Element 树的部分。
 
 ### Layout and rendering
@@ -994,7 +993,7 @@ of any UI framework is therefore the ability to efficiently lay out a hierarchy
 of widgets, determining the size and position of each element before they are
 rendered on the screen.
 
-只绘制单个 widget 的应用极其稀有。
+很少有应用只绘制单个 widget。
 因此，有效地排布 widget 的结构及在渲染完成前决定每个 Element 的大小和位置，
 是所有 UI 框架的重点之一。
 
@@ -1011,11 +1010,11 @@ sufficient abstraction to be able to handle a variety of use cases.
 在渲染树中，每个节点的基类都是
 [`RenderObject`]({{site.api}}/flutter/rendering/RenderObject-class.html)，
 该基类为布局和绘制定义了一个抽象模型。
-这是再平凡不过的事情：它并不总是一个固定的大小，甚至不符合笛卡尔坐标规律
+这是再平凡不过的事情：它并不总是一个固定的大小，甚至不遵循笛卡尔坐标规律
 （根据该 [极坐标系的示例](https://dartpad.cn/0f020197a5d4c980342d5c7d9e935cee) 所示）。
 每一个 `RenderObject` 都了解其父节点的信息，
 但对于其子节点，除了如何 **访问** 和获得他们的布局约束，并没有更多的信息。
-这样的设计让 `RenderObject` 拥有高效的抽象能力，处理各种各样的使用场景。
+这样的设计让 `RenderObject` 拥有高效的抽象能力，能够处理各种各样的使用场景。
 
 During the build phase, Flutter creates or updates an object that inherits from
 `RenderObject` for each `RenderObjectElement` in the element tree.
@@ -1027,8 +1026,8 @@ an image, and
 [`RenderTransform`]({{site.api}}/flutter/rendering/RenderTransform-class.html)
 applies a transformation before painting its child.
 
-在构建过程中，Flutter 会创建或更新在 Element 树中每一个从
-`RenderObject` 继承的 `RenderObjectElement`。
+在构建阶段，Flutter 会为 Element 树中的每个 `RenderObjectElement` 创建
+或更新其对应的一个从 `RenderObject` 继承的对象。
 `RenderObject` 实际上是原语：
 渲染文字的
 [`RenderParagraph`]({{site.api}}/flutter/rendering/RenderParagraph-class.html)、
@@ -1085,7 +1084,7 @@ time:
   choose how to use that space. For example, they might just center what they
   want to render within the dictated constraints.)
 
-  父节点可以通过设定最大和最小的尺寸限制，将子节点对象的大小调整为相同的值。
+  父节点可以通过设定最大和最小的尺寸限制，决定其子字节对象的大小。
   例如，在一个手机应用中，最高层级的渲染对象将会限制其子节点的大小为屏幕的尺寸。
   （子节点可以选择如何占用空间。例如，它们可能在设定的限制中以居中的方式布局。）
 
@@ -1126,7 +1125,7 @@ More information about the constraint and layout system, along with worked
 examples, can be found in the [Understanding
 constraints](/docs/development/ui/layout/constraints) topic.
 
-更多有关限制和布局系统的信息，以及可参考的例子，可以在
+更多有关约束和布局系统的信息，及可参考的例子，可以在
 [深入理解 Flutter 布局约束](/docs/development/ui/layout/constraints)
 文章中查看。
 

@@ -102,7 +102,6 @@
         - title: 用户界面 (UI) 进阶
           permalink: /docs/development/ui/advanced
           children:
-            - title: 焦点处理系统 # Where did this go?
             - title: 滑动效果 (Slivers)
               permalink: /docs/development/ui/advanced/slivers
             - title: 手势
@@ -238,7 +237,7 @@
               permalink: /docs/development/tools/devtools/debugger
             - title: 日志视图
               permalink: /docs/development/tools/devtools/logging
-              title: App size tool
+            - title: App 包大小分析工具
               permalink: /docs/development/tools/devtools/app-size
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
@@ -255,13 +254,15 @@
               permalink: /docs/development/tools/sdk/release-notes
               children:
                 - title: 1.9.1
-                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.9.1.md
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.9.1
                 - title: 1.7.8
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.7.8
                 - title: 1.5.4
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
                 - title: 1.2.1
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1
+        - title: Flutter 与 pubspec 文件
+          permalink: /docs/development/tools/pubspec
         - title: 热重载 (Hot reload)
           permalink: /docs/development/tools/hot-reload
         - title: Flutter Fix
@@ -330,7 +331,7 @@
         permalink: /docs/perf/rendering/shader
     - title: 性能指标
       permalink: /docs/perf/metrics
-    - title: Frequently Asked Questions
+    - title: Performance FAQ
       permalink: /docs/perf/faq
     - title: Appendix
       permalink: /docs/perf/appendix
@@ -366,7 +367,7 @@
       permalink: https://pub.flutter-io.cn/packages/google_fonts
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
-    - title: Flutter 技术视频资源
+    - title: Flutter 技术视频和在线资源
       permalink: /docs/resources/videos
     - title: 书籍
       permalink: /docs/resources/books

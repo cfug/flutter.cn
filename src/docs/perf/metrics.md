@@ -24,7 +24,7 @@ description: Flutter 性能指标与能获取它们的 API 和工具
 
   一帧的构建时间，栅格化时间，以及总时间
   
-  * See [`FrameTiming`]({{site.api}}/flutter/dart-ui/FrameTiming-class.html.)
+  * See [`FrameTiming`]({{site.api}}/flutter/dart-ui/FrameTiming-class.html)
     in the API docs.
     
     在 API 文档中查看 [`FrameTiming`]({{site.api}}/flutter/dart-ui/FrameTiming-class.html.) 。

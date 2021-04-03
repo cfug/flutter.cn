@@ -127,11 +127,15 @@ How is Flutter different for app development?<br/>
 
 视频名称：使用 Flutter 开发应用与其他有何不同<br/>
 
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/l-YO9CmaSUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 
 Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
 
 FiF 系列视频：十分钟以内学会一个 Flutter 特性<br>
+
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In Flutter, "everything is a widget"! If you want to better understand
 the two kinds of widgets, Stateless and Stateful, see the following videos,
@@ -140,9 +144,7 @@ Flutter 里 “所有的事物都是 widget”，
 如果你想更好了解有状态和无状态的 widget，
 请查看下面两支视频了解更多：
 
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55832147&cid=97601562&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/wE7khGHVkYY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/AqCMFXEmf3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Want to skill up?
 
@@ -155,7 +157,7 @@ check out the [Boring Flutter Show][] video series:
 如果你想看工程师们在线写代码、写 bug、修 bug，请关注
 [Boring Flutter Show 系列视频][Boring Flutter Show]。
 
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Boring Flutter Show 系列视频][Boring Flutter Show]
 
 You might also find these docs useful:
@@ -191,13 +193,13 @@ The documentation on this site reflects the latest stable release of Flutter.
 [Adding interactivity to your Flutter app]: /docs/development/ui/interactive
 [Android]: /docs/get-started/flutter-for/android-devs
 [Animations]: /docs/development/ui/animations
-[Boring Flutter Show]: https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
-[Boring Flutter Show playlist]: https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
+[Boring Flutter Show]: {{site.youtube-site}}/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
+[Boring Flutter Show playlist]: {{site.youtube-site}}/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
 [Building layouts]: /docs/development/ui/layout
 [FAQ]: /docs/resources/faq
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
-[Flutter in Focus]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
-[Flutter in Focus series]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus series]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter YouTube channel]: {{site.social.youtube}}
 [Get started]: /docs/get-started/install
 [iOS]: /docs/get-started/flutter-for/ios-devs

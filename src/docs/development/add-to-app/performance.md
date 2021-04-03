@@ -370,8 +370,8 @@ This doesn't affect the Flutter state, which lives in the `FlutterEngine`
 这不会影响 Flutter 状态（除非也释放了 `FlutterEngine`），
 状态位于 `FlutterEngine` 中。
 
-For performance details on creating more than one `FlutterEngine`, see
-[multiple Flutters][].
+For performance details on creating more than one `FlutterEngine`,
+see [multiple Flutters][].
 
 关于创建多个 `FlutterEngine` 对性能影响的详细情况，请参考文档：
 [多个 Flutter 实例][multiple Flutters]。 
@@ -391,6 +391,7 @@ For performance details on creating more than one `FlutterEngine`, see
 [`Intent`]: {{site.android-dev}}/reference/android/content/Intent.html
 [ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
 [`Layer`]: {{site.api}}/flutter/rendering/Layer-class.html
+[multiple Flutters]: /docs/development/add-to-app/multiple-flutters
 [`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [`runWithEntrypoint:`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:
 [snapshot]: {{site.github}}/dart-lang/sdk/wiki/Snapshots

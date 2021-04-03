@@ -8,11 +8,9 @@
   but if you've downloaded the Dart SDK separately,
   make sure that the Flutter version of `dart` is
   first in your path, as the two versions might not be compatible.
-  The following command (on macOS, linux, and chrome OS),
-  tells you whether the `flutter` and `dart` commands
-  originate from the same `bin` directory and are therefore
-  compatible. (Some versions of Windows
-  support a similar `where` command.)
+  The following command tells you whether the `flutter` and `dart`
+  commands originate from the same `bin` directory and are
+  therefore compatible.
   
   自 1.19.0 dev 版开始，`dart` 命令就直接包含在 Flutter SDK 里了，
   这样可以更轻松的运行 Dart 命令行应用。
@@ -20,10 +18,9 @@
   但是如果你已经单独的下载了 Dart SDK，需要请你确保
   Flutter SDK 里包含的 `dart` 在 `PATH` 环境变量里靠前的位置，
   因为这两个渠道下载的 `dart` 可能并不兼容。
-  如下在 macOS、Linux 和 chromeOS 的命令可以帮助你查看你的
-  `flutter` 和 `dart` 命令是否位于同一目录以确保兼容。
-  部分 Windows 系统也支持类似 `where` 的命令：
-  
+  下述命令将教你判断 `flutter` 与 `dart` 命令是否来自于相同的 `bin` 目录，
+  以及它们是否兼容。
+
   ```terminal
   $ which flutter dart
   /path-to-flutter-sdk/bin/flutter
@@ -35,7 +32,7 @@
   commands from `/path-to-flutter-sdk/bin` before
   commands from `/usr/local/bin` (in this case).
   After updating your shell for the change to take effect,
-  running the `which` or `where` command again
+  running the `which` command again
   should show that the `flutter` and `dart` commands
   now come from the same directory.
   
@@ -43,7 +40,7 @@
   看起来 `flutter` 和 `dart` 并非来自同一 `bin` 目录，
   在上面的这个例子里，我们需要更新 `PATH` 环境变量，
   将 `<path-to-flutter-sdk>/bin` 放在 `/usr/local/bin` 之前。
-  修改完并使命令行窗口生效之后，再次运行 `which` 或 `where` 命令，
+  修改完并使命令行窗口生效之后，再次运行 `which` 命令，
   就可以发现，`flutter` 和 `dart` 位于同一目录了：
 
   ```terminal

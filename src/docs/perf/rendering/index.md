@@ -7,6 +7,8 @@ tags: Flutter性能
 keywords: 性能测量,建议,常见问题,性能调试
 ---
 
+{% include performance.md %}
+
 Rendering animations in your app is one of the most cited
 topics of interest when it comes to measuring performance.
 Thanks in part to Flutter's Skia engine and its ability

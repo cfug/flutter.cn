@@ -13,6 +13,15 @@ the following message:
 Insecure socket connections are disallowed by platform: <host>
 ```
 
+Use HTTPS instead.
+
+{{site.alert.important}}
+  This change over-restricted HTTP access on local networks beyond the
+  restrictions imposed by mobile platforms ([flutter/flutter#72723](https://github.com/flutter/flutter/issues/72723)).
+
+  This change has since been reverted.
+{{site.alert.end}}
+
 ## Context
 
 Starting with Android [API 28][] and [iOS 9][],
@@ -97,7 +106,8 @@ We **do not** recommend you do this for your release builds.
 ## Timeline
 
 Landed in version: 1.23<br>
-In stable release: 2.0.0
+In stable release: 2.0.0<br>
+Reverted in version: 2.2.0 (proposed)
 
 ## References
 

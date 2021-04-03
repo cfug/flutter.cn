@@ -1751,11 +1751,13 @@ The observable lifecycle events are:
 可以被观察的生命周期事件有：
 
 * `inactive` — The application is in an inactive state and is not receiving user
-  input. This event only works on iOS, as there is no equivalent event to map to
-  on Android.
+  input.
 
   `inactive` — 应用处于非活跃状态并且不接收用户输入。
-  这个事件只适用于 iOS，Android 上没有对应的事件；
+
+* `detached` — The application is still hosted on a flutter engine but is detached from any host views.
+
+  `detached` — 应用依然保留 flutter engine，但是它会脱离全部宿主 view。
 
 * `paused` — The application is not currently visible to the user,
   not responding to user input, and running in the background.
@@ -1769,11 +1771,6 @@ The observable lifecycle events are:
 
   `resumed` — 应用对用户可见并且可以响应用户的输入。
   这个事件对应于 Android 中的 `onPostResume()`；
-
-* `suspending` — The application is suspended momentarily.
-  This is equivalent to `onStop` in Android;
-  it is not triggered on iOS as there is no equivalent
-  event to map to on iOS.
 
   `suspending` — 应用暂时被挂起。这个事件对应于 Android 中的 `onStop`；
   iOS 上由于没有对应的事件，因此不会触发此事件。

@@ -14,8 +14,8 @@ keywords: Flutter网页版,常见问题
 Flutter's web support is now available on the stable channel,
 offering an app-centric framework that
 builds on the power of the modern web platform.
-Find out more details about [Flutter's production quality 
-support for the web][].
+Find out more details about
+[Flutter's production quality support for the web][].
 
 Flutter 网页端的支持正式在稳定版渠道发布，提供了以应用为中心的框架，
 框架以现代 Web 平台的功能为基础，如果希望了解更多，请查看文章
@@ -292,6 +292,7 @@ Flutter 团队的工程师会经常阅读和互动。
 [Discord]: https://discord.gg/N7Yshp4
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: /docs/development/tools/devtools/overview
+[Flutter's production quality support for the web]: /web
 [Generating event timeline]: https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/

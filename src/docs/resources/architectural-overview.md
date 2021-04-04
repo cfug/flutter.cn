@@ -643,7 +643,7 @@ built through their `State` object.
 并且「可变的」状态会保存在继承
 [`State`]({{site.api}}/flutter/widgets/State-class.html) 的另一个子类中
 （因为 widget 本身是不可变的）。
-`StatefulWidget` 没有 build 方法，对于它而言，build 方法在其对应的 `State` 对象中。
+`StatefulWidget` 自身没有 build 方法，而在其对应的 `State` 对象中。
 
 Whenever you mutate a `State` object (for example, by incrementing the counter),
 you must call [`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
@@ -1084,7 +1084,7 @@ time:
   choose how to use that space. For example, they might just center what they
   want to render within the dictated constraints.)
 
-  父节点可以通过设定最大和最小的尺寸限制，决定其子字节对象的大小。
+  父节点可以通过设定最大和最小的尺寸限制，决定其子节点对象的大小。
   例如，在一个手机应用中，最高层级的渲染对象将会限制其子节点的大小为屏幕的尺寸。
   （子节点可以选择如何占用空间。例如，它们可能在设定的限制中以居中的方式布局。）
 
@@ -1102,10 +1102,9 @@ available to decide how it will render its content. By using a
 the child object can examine the passed-down constraints and use those to
 determine how it will use them, for example:
 
-这样的盒子限制模型，同样也适用于子节点对象需要知道它有多少空间可以进行布局，
-决定如何渲染其内容的场景。通过使用
-[`LayoutBuilder`]({{site.api}}/flutter/widgets/LayoutBuilder-class.html) widget，
-子节点可以检查从上层传递下来的限制，并利用该限制决定如何使用，例如下方的使用方法：
+这样的盒子约束模型，同样也适用于子节点对象需要知道有多少可用空间渲染其内容的场景，
+通过使用 [`LayoutBuilder`]({{site.api}}/flutter/widgets/LayoutBuilder-class.html) widget，
+子节点可以得到从上层传递下来的约束，并合理利用该约束对象，使用方法如下：
 
 <!-- skip -->
 ```dart
@@ -1171,7 +1170,7 @@ Interface)]({{site.github}}/flutter/engine/blob/master/shell/platform/embedder/e
 that provides a _platform embedder_ with a way to set up and use Flutter.
 
 我们都知道，Flutter 的界面构建、布局、合成和绘制全都由 Flutter 自己完成，
-而不是转换为对应平台系统的部件。
+而不是转换为对应平台系统的原生组件。
 获取纹理和联动应用底层的生命周期的方法，不可避免地会根据平台特性而改变。
 Flutter 引擎本身是与平台无关的，它提供了一个稳定的 ABI（应用二进制接口），
 包含一个 **平台嵌入层**，可以通过其方法设置并使用 Flutter。
@@ -1226,7 +1225,7 @@ platform-specific notes:
   which renders Flutter content either as a view or a texture, depending on the
   composition and z-ordering requirements of the Flutter content.
 
-  在 Android 上，Flutter 默认会载入到 `Activity` 嵌入层中。
+  在 Android 上，Flutter 默认作为一个 `Activity` 加载到嵌入层中。
   此时视图是通过一个
   [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
   进行控制的，基于 Flutter 内容的合成和 z 排列 (z-ordering) 的要求，
@@ -1255,7 +1254,7 @@ accessing code or APIs written in a language like Kotlin or Swift, calling a
 native C-based API, embedding native controls in a Flutter app, or embedding
 Flutter in an existing application.
 
-Flutter 提供了多种代码交互机制，无论你是在调用 Kotlin 或者 Swift 这些编写的代码或 API，
+Flutter 提供了多种代码交互机制，无论你是在调用 Kotlin 或者 Swift 这些语言编写的代码或 API，
 或是调用 C 语言基础的 API，或是将原生代码能力嵌入 Flutter 应用，
 又或是将 Flutter 嵌入现有的应用。
 
@@ -1346,7 +1345,7 @@ serves an equivalent purpose.
 
 对于基于 C 语言的 API，包括使用现代语言 Rust 或 Go 生成的代码，
 Dart 也提供了 `dart:ffi` 库，一套直接绑定原生代码的机制。
-外部函数接口 (FFI) 比平台通道更快，因为不需要序列化即可传递数据。
+外部函数接口 (foreign function interface，FFI) 比平台通道更快，因为不需要序列化即可传递数据。
 实际上，Dart 的运行时提供了在堆上分配 Dart 对象内存的支持，以及调用静态或动态链接库的能力。
 除了 Web 平台外，FFI 在其他平台均可以使用，因为 Web 平台上的
 [js 包]({{site.pub}}/packages/js) 已经具有相同的用途。
@@ -1389,7 +1388,7 @@ problem for developers that would like to include existing platform components
 in their Flutter apps, such as a browser control.
 
 由于 Flutter 的内容会绘制在单一的纹理内，并且 widget 树是完全在内部的，
-所以在 Flutter 的内部不存在类似 Android 视图或由 Flutter 内部渲染的 widget。
+因此在 Flutter 的内部模型中无法存在 Android 视图之类的内容，也无法与 Flutter 的 widget 交错渲染
 对于需要在 Flutter 应用中展示原生组件（例如内置浏览器）的开发者来说，这是一个问题。
 
 Flutter solves this by introducing platform view widgets
@@ -1476,7 +1475,7 @@ not an architectural limitation; support might be added in the future.
 
 ### Hosting Flutter content in a parent app
 
-在上层应用中托管 Flutter 内容
+### 在上层应用中托管 Flutter 内容
 
 The converse of the preceding scenario is embedding a Flutter widget in an
 existing Android or iOS app. As described in an earlier section, a newly created
@@ -1494,7 +1493,7 @@ it as a source dependency into an existing Gradle or Xcode build definition, or
 you can compile it into an Android Archive or iOS Framework binary for use
 without requiring every developer to have Flutter installed.
 
-Flutter 模块的模板是为了易于集成而设计的。
+Flutter 模块模板设计简单，易于嵌入。
 开发者可以将其作为源代码依赖项集成到 Gradle 或 Xcode 构建定义中，
 或者将其打包成 Android Archive (AAR) 或 iOS Framework 二进制供其他开发者使用，
 而无需安装 Flutter。
@@ -1509,10 +1508,10 @@ Flutter code is loaded. In addition, separating the Flutter engine allows it to
 be reused across multiple Flutter screens and share the memory overhead involved
 with loading the necessary libraries.
 
-Flutter 引擎将加载 Flutter 的共享库、初始化 Dart 的运行时、创建并运行 Dart isolate 线程、
-并将渲染层与 UI 进行绑定。
-为了将任意 Flutter 界面上的延迟降到最小，
-最好是在应用初始化时一并初始化 Flutter 引擎，或至少在第一个 Flutter 页面展示前，
+Flutter 引擎需要一段短暂的时间做初始化，用于加载 Flutter 的共享库、初始化 Dart 的运行时、
+创建并运行 Dart isolate 线程并将渲染层与 UI 进行绑定。
+为了最大限度地减少呈现 Flutter 界面时的延迟，
+最好是在应用初始化时或至少在第一个 Flutter 页面展示前，一并初始化 Flutter 引擎，
 如此一来用户不会在首个 Flutter 页面加载时感到突然地卡顿。
 另外，Flutter 的引擎分离使得多个 Flutter 页面可以复用引擎，共享必要库加载时的内存消耗。
 
@@ -1542,7 +1541,7 @@ including the [advertiser tooling for Google Ads](https://ads.google.com/home/).
 Because the Flutter framework is written in Dart, compiling it to JavaScript was
 relatively straightforward.
 
-只要 JavaScript 存在，Dart 就会将产物编译成 JavaScript，并且优化可以用于开发和生产的工具链。
+Dart 语言存在之初就已经支持直接编译成 JavaScript，并且针对开发和生产目的对其工具链进行了优化。
 许多重要的应用已经使用 Dart 编译成的 JavaScript 在生产环境上运行，
 包括 [Google Ads 的广告商工具](https://ads.google.com/home/)。
 由于 Flutter 框架是 Dart 编写的，将其编译成 JavaScript 相对而言更为简单。
@@ -1563,7 +1562,7 @@ native mobile targets<sup><a href="#a5">5</a></sup>.
 因此我们需要另辟蹊径。Flutter 在 Web 平台上以浏览器的标准 API 重新实现了引擎。
 目前我们有两种在 Web 上呈现内容的选项：HTML 和 WebGL。
 在 HTML 模式下，Flutter 使用 HTML、CSS、Canvas 和 SVG 进行渲染。
-而在 WebGL 模式下，Flutter 使用了一个编译为 WebAssembly 版本的 Skia，
+而在 WebGL 模式下，Flutter 使用了一个编译为 WebAssembly 的 Skia 版本，
 名为 [CanvasKit](https://skia.org/user/modules/canvaskit)。
 HTML 模式提供了最佳的代码大小，CanvasKit 则提供了浏览器图形堆栈渲染的最快途径，
 并为原生平台的内容<sup><a href="#a5">5</a></sup>提供了更高的图形保真度。
@@ -1585,7 +1584,7 @@ developers will never write a line of code that runs into such a difference.
 与其他运行 Flutter 的平台相比，最明显的区别也许是 Flutter 不再需要提供 Dart 的运行时。
 取而代之的是 Flutter 框架本身（和你写的代码）一并编译成 JavaScript。
 另外值得注意的是，Dart 在不同模式下（JIT 和 AOT、平台原生和 Web 编译）的语义几乎没有差异，
-大部分开发者绝对写不出碰到这种差异问题的代码。
+大部分开发者绝对可以无差异地编写这两种模式下的代码。
 
 During development time, Flutter web uses
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc), a compiler that supports

@@ -135,7 +135,7 @@ and network I/O, accessibility support, plugin architecture, and a Dart runtime
 and compile toolchain.
 
 **Flutter 引擎** 毫无疑问是 Flutter 的核心，
-它基本使用 C++ 进行编写，支持所有 Flutter 应用所需的原语。
+它主要使用 C++ 编写，并提供了 Flutter 应用所需的原语。
 当需要绘制新一帧的内容时，引擎将负责对需要合成的场景进行栅格化。
 它提供了 Flutter 核心 API 的底层实现，包括图形（通过 [Skia](https://skia.org/)）、
 文本布局、文件及网络 IO、辅助功能支持、插件架构和 Dart 运行环境及编译环境的工具链。
@@ -218,7 +218,7 @@ payments]({{site.pub}}/packages/square_in_app_payments), [Apple
 authentication]({{site.pub}}/packages/sign_in_with_apple), and
 [animations]({{site.pub}}/packages/lottie).
 
-Flutter 框架相对较小，因为一些开发者可能会使用到的更高层级的功能，
+Flutter 框架相对较小，因为一些开发者可能会使用到的更高层级的功能
 已经被拆分到不同的软件包中，使用 Dart 和 Flutter 的核心库实现，
 其中包括平台插件，例如
 [camera]({{site.pub}}/packages/camera) 和
@@ -239,7 +239,7 @@ level, before giving a brief summary of how Flutter’s web support differs from
 other targets.
 
 该概览的其余部分将从 UI 开发的响应式范例开始，浏览各个构建层。
-而后，我们会对讲述 widgets 如何被组织，并转换成应用程序的渲染对象。
+而后，我们会讲述 widgets 如何被组织，并转换成应用程序的渲染对象。
 同时我们也会讲述 Flutter 如何在平台层面与其他代码进行交互，
 最终，我们会对目前 Flutter 对于 Web 平台的支持与其他平台的异同做一个总结。
 
@@ -283,7 +283,7 @@ reflected in every other place. Worse, unless care is taken, a minor change to
 one part of the user interface can cause ripple effects to seemingly unrelated
 pieces of code.
 
-此处会有很多的状态改变的可能性：颜色框、色调滑条、单选按钮。
+很多地方都可以更改状态：颜色框、色调滑条、单选按钮。
 在用户与 UI 进行交互时，状态的改变可能会影响到每一个位置。
 更糟糕的是，UI 的细微变动很有可能会引发无关代码的连锁反应，尤其是当开发者并未注意其关联的时候。
 
@@ -360,7 +360,7 @@ way up to the root widget (the container that hosts the Flutter app, typically
 
 Widgets 通过布局组合形成一种层次结构关系。
 每个 Widget 都嵌套在其父级的内部，并可以通过父级接收上下文。
-从根布局（托管 Flutter 应用的容器，通常是 `MaterialApp` 或`CupertinoApp`）开始，
+从根布局（托管 Flutter 应用的容器，通常是 `MaterialApp` 或 `CupertinoApp`）开始，
 自上而下都是这样的结构，如下面的示例所示：
 
 <!-- skip -->
@@ -982,7 +982,7 @@ element tree that require reconfiguration.
 但这并不意味着底层呈现的内容必须要重新构建。
 Element 树每一帧之间都是持久化的，因此起着至关重要的性能作用，
 Flutter 依靠该优势，实现了一种好似 widget 树被完全抛弃，而缓存了底层表示的机制。
-仅仅是判断发生变化的 widget，Flutter 就可以重建需要重新配置的 Element 树的部分。
+Flutter 可以根据发生变化的 widget，来重建需要重新配置的 Element 树的部分。
 
 ### Layout and rendering
 

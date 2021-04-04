@@ -181,7 +181,7 @@ a series of layers. Working from the bottom to the top, we have:
   tree automatically updating the layout to reflect your changes.
 
   **[渲染层]({{site.api}}/flutter/rendering/rendering-library.html)**
-  用于提供操作布局的抽象。有了渲染层，你可以构建以树状结构组织的可渲染对象。
+  用于提供操作布局的抽象。有了渲染层，你可以构建一棵可渲染对象的树。
   在你动态更新这些对象时，渲染树也会自动根据你的变更来更新布局。
 
 - The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
@@ -1274,8 +1274,8 @@ and then deserialized into an equivalent representation in Kotlin (such as
 
 对于移动端和桌面端应用而言，Flutter 提供了通过 **平台通道** 调用自定义代码的能力，
 这是一种非常简单的在宿主应用之间让 Dart 代码与平台代码通信的机制。
-通过创建一个常用的通道（封装通道名称和编码），开发者就可以使用通道在
-Dart 和平台组件（例如由 Kotlin 或 Swift 代码编写）之间发送和接收消息。
+通过创建一个常用的通道（封装通道名称和编码），开发者可以在
+Dart 与使用 Kotlin 和 Swift 等语言编写的平台组件之间发送和接收消息。
 数据会由 Dart 类型（例如 Map）序列化为一种标准格式，
 然后反序列化为 Kotlin（例如 `HashMap`）或者 Swift（例如 `Dictionary`）中的等效类型。 
 

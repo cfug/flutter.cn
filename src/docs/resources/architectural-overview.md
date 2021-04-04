@@ -36,6 +36,7 @@ supplement the core library functionality.
 对于发行版 (release) ，Flutter 应用程序会直接编译为机器代码
 （Intel x64 或 ARM 指令集），或者针对 Web 平台的 JavaScript。
 Flutter 的框架代码是开源的，遵循 BSD 开源协议，并拥有蓬勃发展的第三方库生态来补充核心库功能。
+
 This overview is divided into a number of sections:
 
 概览分为以下几部分内容：
@@ -257,8 +258,8 @@ framework](https://www.youtube.com/watch?time_continue=2&v=x7cQ3mrcKaY&feature=e
 which includes a rethinking of many traditional design principles.
 
 粗略一看，Flutter 是
-[一个响应式的且伪声明式的 UI 框架](/docs/resources/faq#what-programming-paradigm-does-flutters-framework-use)
-，开发者负责提供应用状态与界面状态之间的映射，框架则在运行时将应用状态的更改更新到界面上。
+[一个响应式的且伪声明式的 UI 框架](/docs/resources/faq#what-programming-paradigm-does-flutters-framework-use)，
+开发者负责提供应用状态与界面状态之间的映射，框架则在运行时将应用状态的更改更新到界面上。
 这样的模型架构的灵感来自
 [Facebook 自己的 React 框架](https://www.youtube.com/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo)
 ，其中包含了对传统设计理念的再度解构。

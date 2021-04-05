@@ -126,10 +126,9 @@ apps for multiple platforms out of a single codebase.
 Flutter speeds feature development and synchronizes
 release schedules across the entire customer base.
 
-对于工程主管以及雇主来说，
-Flutter 允许统一的应用程序开发人员在包括移动端，前端，
-和桌面应用程序为一个团队，共同建立品牌
-，并在单个代码库中打造的多个平台的应用程序。
+对于工程主管以及雇主来说，Flutter 可以将不同平台的应用开发者，
+统一为一个 **移动端、前端和桌面端应用程序** 的团队，共同建立品牌，
+并在单个代码库中打造的多个平台的应用程序。
 Flutter 加速了跨平台下开发以及同步发布进程的开发进度。
 
 ### How experienced of a programmer/<wbr>developer do I have to be to use Flutter?
@@ -184,7 +183,7 @@ and storage) and services (such as payments, cloud
 storage, authentication, and [ads][]).
 
 Flutter 的 [软件包生态][package ecosystem] 支持绝大多数硬件
-（包括摄像头，GPS，网络，以及储存）以及服务（例如支付，云储存，验证，以及 [广告][ads]）。
+（包括摄像头、GPS、网络以及储存）以及服务（例如支付、云储存、验证以及 [广告][ads]）。
 
 You can build full-featured apps with Flutter, including
 camera, geolocation, network, storage, 3rd-party SDKs, and more.
@@ -1702,7 +1701,9 @@ by engineers at Google. If you're excited about Flutter,
 we encourage you to join the community and
 [contribute to Flutter][]!
 
-是的！我们都知道 Flutter 是一个开源项目。目前 Flutter 中的大部分都是由 Google 的工程师来开发。如果您喜欢 Flutter 的话，我们希望您加入开发社区并做出贡献！
+我们都在参与 Flutter 开发！
+我们都知道 Flutter 是一个开源项目。目前 Flutter 中的大部分都是由 Google 的工程师来开发。
+如果您喜欢 Flutter 的话，我们希望您加入开发者社区并做出贡献！
 
 ### What are Flutter's guiding principles?
 

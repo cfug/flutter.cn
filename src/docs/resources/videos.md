@@ -79,7 +79,7 @@ Five-to-ten minute tutorials (more or less) on using Flutter.
 
 5 - 10 分钟左右的 Flutter 教程视频。
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Introducing Flutter in focus<br>
 [Flutter in focus playlist][]
 
@@ -158,7 +158,7 @@ Here are a some recent Flutter talks given at various conferences.
 
 以下是各种会议上最近的一些Flutter会谈。
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/d_m5csmrf7I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55833267&cid=97603337&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Conference talks playlist][]
 
 [Conference talks playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1UJ0OEpANodVMVm1GeE7Ti

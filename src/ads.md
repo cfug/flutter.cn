@@ -21,7 +21,7 @@ The following video tutorial,
 [Monetizing apps with Flutter][],
 shows how to get started with Ads:
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/m0d_pbgeeG8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=289460171&bvid=BV1Vf4y147Er&cid=305747760&page=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 
 The following resources can help you get started:
 

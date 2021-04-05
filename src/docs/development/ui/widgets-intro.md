@@ -7,7 +7,7 @@ tags: 用户界面,Flutter UI,布局
 keywords: Flutter widget,矩形,边框
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="../null_safety_examples/ui/widgets_intro/"?>

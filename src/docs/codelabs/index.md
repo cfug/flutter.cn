@@ -231,7 +231,7 @@ Learn how to use Flutter with other technologies.
   flight destinations.
 
   [向 Flutter 应用中添加 AdMob 广告横幅以及原生嵌入式广告][Adding AdMob banner and native inline ads to a Flutter app]<br>
-  学习如何实现向旅行预约应用 inline banner 以及原生广告。
+  学习如何在一个旅行预约应用中嵌入 inline banner 以及原生广告。
 
 * [Get to know Firebase for Flutter][]<br>
   Build an event RSVP and guestbook chat app on both Android

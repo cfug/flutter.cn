@@ -1,8 +1,8 @@
 ---
 title: Videos and online courses
-title: 学习 Flutter 的视频列表与课程
+title: 学习 Flutter 的视频列表与在线课程
 description: Available videos and online courses on various aspects of developing in Flutter.
-description: 开发 Flutter 应用时的技术学习视频与课程。
+description: 开发 Flutter 应用时的技术学习视频与在线课程。
 tags: Flutter参考资料
 keywords: Flutter视频资料,Flutter学习,Flutter社区视频
 ---
@@ -36,7 +36,7 @@ Here are some of the series offered on the
 [Flutter Engage 2021][] was a day-long event that
 officially launched Flutter 2.
 
-[Flutter Engage 2021][]是一个长期活动，并正式发布了 Flutter 2。
+[Flutter Engage 2021][] 是一个为期一天的活动，并正式发布了 Flutter 2。
 
 [Flutter Engage 2021]: https://events.flutter.dev/
 
@@ -94,7 +94,7 @@ Each one-minute video highlights a Flutter widget.
 
 每周一分钟，为你种草一个 Flutter widget！
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/b_sQ9bMltGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Introducing widget of the week<br>
 [Flutter widget of the week playlist][]
 
@@ -109,7 +109,7 @@ each of these videos highlights a Flutter package.
 
 ### Google I/O 2019 大会上的 Flutter and Dart 视频列表
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/QFcFEpFmNJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815097&cid=97572523&page=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 `flutter_slidable` package
 [Flutter package of the week playlist][]
 
@@ -174,7 +174,7 @@ millions of downloads.
 视频展示了艾比路工作室 (Abbey Road Studio)、汉密尔顿 (Hamilton) 和阿里巴巴 (Alibaba)
 等开发者 / 公司如何使用 Flutter 开发出百万级别下载量，引人注目的应用程序。
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/_ACWeGGBP4E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55812033&cid=97567456&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Flutter developer stories playlist][]
 
 [Flutter developer stories playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759
@@ -185,7 +185,7 @@ millions of downloads.
 
 ## Online courses
 
-## 线上课程
+## 在线课程
 
 Learn how to build Flutter apps with these video courses.
 Before signing up for a course, verify that it includes
@@ -215,4 +215,3 @@ To include your course, [submit a PR][]:
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
 [submit a PR]: {{site.github}}/flutter/website/pulls
-

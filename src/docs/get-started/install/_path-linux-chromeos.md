@@ -20,7 +20,7 @@ whenever you open a new window. For example:
  1. Determine the path of your clone of the Flutter SDK.
     You need this in Step 3.
 
-    检测你 clone 的 Flutter SDK 的文件夹，你需要在第三步用到它。
+    检测你下载或者 git clone 的 Flutter SDK 的文件夹，你需要在第三步用到它。
 
  2. Open (or create) the `rc` file for your shell.
     For example, Linux uses the Bash shell by default,

@@ -135,7 +135,6 @@ Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
 
 FiF 系列视频：十分钟以内学会一个 Flutter 特性<br>
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In Flutter, "everything is a widget"! If you want to better understand
 the two kinds of widgets, Stateless and Stateful, see the following videos,
@@ -157,7 +156,7 @@ check out the [Boring Flutter Show][] video series:
 如果你想看工程师们在线写代码、写 bug、修 bug，请关注
 [Boring Flutter Show 系列视频][Boring Flutter Show]。
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Boring Flutter Show 系列视频][Boring Flutter Show]
 
 You might also find these docs useful:

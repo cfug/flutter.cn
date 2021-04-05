@@ -20,7 +20,7 @@ Dash is the mascot for the Dart language and the Flutter framework.
 
 ![GIF of Dash fainting created for Flutter Engage]({% asset dash/dash-fainting.gif @path %})
 
-[Dashatar]: https://dashatar-dev.web.app/#/
+[Dashatar]: https://dash.flutter.cn/
 
 ## How did it all start?
 

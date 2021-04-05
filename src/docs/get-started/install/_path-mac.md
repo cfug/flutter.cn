@@ -23,7 +23,7 @@ whenever you open a new window. For example:
  1. Determine the path of your clone of the Flutter SDK.
     You need this in Step 3.
 
-    首先决定你想要将 Flutter SDK clone 到哪一个目录内，
+    首先决定你想要将 Flutter SDK 下载或者通过 `git clone` 命令到哪一个目录内，
     获取并记录这个目录的路径，你将要在第 3 步中用到它。
 
  2. Open (or create) the `rc` file for your shell.

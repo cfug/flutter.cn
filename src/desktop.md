@@ -37,6 +37,8 @@ Flutter 的桌面支持也允许插件拓展&mdash;
 
   你可以在 stable 分支尝试使用 beta 快照版本的桌面支持，
   或者你也可以在 beta 分支跟进桌面的最新更改。
+  了解更多相关消息，请查看在 Medium 上发布的免费文章
+  [What's new in Flutter 2][] 中的 **Desktop** 部分。
 
 {{site.alert.end}}
 
@@ -384,6 +386,8 @@ either in the IDE or from the command line.
 
 #### Using an IDE
 
+#### 使用 IDE
+
 After you've configured your environment to support
 desktop, make sure you restart the IDE if it was
 already running.
@@ -405,7 +409,7 @@ and run your application to see it launch on the desktop.
 
 #### From the command line
 
-#### 命令行
+#### 使用命令行
 
 To create a new application that includes desktop support
 (in addition to mobile and web support), run the following commands,
@@ -441,7 +445,7 @@ $ flutter run -d linux
 
 ## Build a release app
 
-### 创建 release 版本的应用
+## 创建 release 版本的应用
 
 To generate a release build,
 run one of the following commands:
@@ -472,7 +476,7 @@ There are various approaches you can use for
 distributing your Windows application.
 Here are some options:
 
-你有多种方法发布你的 Windows 应用，这里是一些可以选择的：
+你有多种方法发布你的 Windows 应用，以下是一些可以选择的方法：
 
 * Use tooling to construct an MSIX installer
   (described in the next section)
@@ -513,7 +517,7 @@ distribute application installers directly.
 [MSIX][] 是 Microsoft Windows 的应用打包格式，
 它为所有 Windows 应用提供了现代化的打包体验。
 该格式可以用于向 Microsoft Windows 应用商店分发应用，
-也可以分发直接安装包。
+也可以直接分发安装包。
 
 The easiest way to create an MSIX distribution
 for a Flutter project is to use the
@@ -563,53 +567,54 @@ self-signed `.pfx` certificate.
 1. If you haven't already, download the [OpenSSL][]
    toolkit to generate your certificates.
 
-  若你还未安装 [OpenSSL][] 工具以生成一个证书。
+   若你还未安装 [OpenSSL][] 工具以生成一个证书。
 
 1. Go to where you installed OpenSSL, for example,
    `C:\Program Files\OpenSSL-Win64\bin`.
 
-  打开 OpenSSL 的安装目录，例如 `C:\Program Files\OpenSSL-Win64\bin`。
+   打开 OpenSSL 的安装目录，例如 `C:\Program Files\OpenSSL-Win64\bin`。
 
 1. Set an environment variable so that you can access
    `OpenSSL` from anywhere:<br>
    `"C:\Program Files\OpenSSL-Win64\bin"`
 
-  设置环境变量，以便在任何地方都能够访问到 `OpenSSL`:<br>
-  `"C:\Program Files\OpenSSL-Win64\bin"`
+   设置环境变量，以便在任何地方都能够访问到 `OpenSSL`:<br>
+   `"C:\Program Files\OpenSSL-Win64\bin"`
 
 1. Generate a private key as follows:<br>
    `openssl genrsa -out mykeyname.key 2048`
 
-  按照以下命令生成私钥:<br>
-  `openssl genrsa -out mykeyname.key 2048`
+   按照以下命令生成私钥:<br>
+   `openssl genrsa -out mykeyname.key 2048`
 
 1. Generate a certificate signing request (CSR)
    file using the private key:<br>
    `openssl req -new -key mykeyname.key -out mycsrname.csr`
 
-  使用私钥生成一个自签名证书（CSR）:<br>
-  `openssl req -new -key mykeyname.key -out mycsrname.csr`
+   使用私钥生成一个自签名证书（CSR）:<br>
+   `openssl req -new -key mykeyname.key -out mycsrname.csr`
 
 1. Generate the signed certificate (CRT) file using
    the private key and CSR file:<br>
    `openssl x509 -in mycsrname.csr -out mycrtname.crt -req -signkey mykeyname.key -days 10000`
 
-  使用私钥和 CSR 文件生成一个自签名的证书 (CRT) 文件:<br>
-  `openssl x509 -in mycsrname.csr -out mycrtname.crt -req -signkey mykeyname.key -days 10000`
+   使用私钥和 CSR 文件生成一个自签名的证书 (CRT) 文件:<br>
+   `openssl x509 -in mycsrname.csr -out mycrtname.crt -req -signkey mykeyname.key -days 10000`
 
 1. Generate the `.pfx` file using the private key and
    CRT file:<br>
    `openssl pkcs12 -export -out CERTIFICATE.pfx -inkey mykeyname.key -in mycrtname.crt`
 
-  使用私钥与 CRT 文件生成 `.pfx` 文件:<br>
-  `openssl pkcs12 -export -out CERTIFICATE.pfx -inkey mykeyname.key -in mycrtname.crt`
+   使用私钥与 CRT 文件生成 `.pfx` 文件:<br>
+   `openssl pkcs12 -export -out CERTIFICATE.pfx -inkey mykeyname.key -in mycrtname.crt`
 
 1. Install the `.pfx` certificate first on the local machine
    in `Certificate store` as
    `Trusted Root Certification Authorities`
    before installing the app.
 
-   安装应用之前需要先在本地的 `Certificate store` 将 `.pfx` 证书设为 `Trusted Root Certification Authorities`（信赖的根证书签名）。
+   安装应用之前需要先在本地的 `Certificate store` 将 `.pfx` 证书设为
+   `Trusted Root Certification Authorities`（信赖的根证书签名）。
       
 [OpenSSL]: https://slproweb.com/products/Win32OpenSSL.html
 

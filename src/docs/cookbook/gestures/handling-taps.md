@@ -50,7 +50,7 @@ GestureDetector(
   onTap: () {
     final snackBar = SnackBar(content: Text("Tap"));
 
-    Scaffold.of(context).showSnackBar(snackBar);
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   },
   // The custom button
   // 这个是我们的自定义按钮
@@ -130,7 +130,7 @@ class MyButton extends StatelessWidget {
       onTap: () {
         final snackBar = SnackBar(content: Text("Tap"));
 
-        Scaffold.of(context).showSnackBar(snackBar);
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
       },
       // The custom button
       child: Container(

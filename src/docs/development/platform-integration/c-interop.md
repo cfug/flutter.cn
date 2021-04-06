@@ -39,13 +39,13 @@ exposes it through a Dart plugin named "native_add".
 在本示例中，您将创建一个实现 32 位的加法 C 函数，
 然后通过名为 "native_add" 的 Dart 插件暴露它。
 
-{{ site.alert.note }}
+{{ site.alert.version-note }}
 
-  The dart:ffi library is [in beta][ffi issue],
-  and breaking API changes might still happen.
+  As of Dart 2.12.0 (included in Flutter 2.0 or later),
+  FFI has been marked as stable.
 
-  目前 dart:ffi 库还处于 [beta 阶段][ffi issue]，
-  所以随时会出现破坏性的修改。
+  Dart 2.12.0 版本之后 (同时包含在 Flutter 2.0 和以后的版本里)，
+  FFI 已经作为稳定版本发布。
 
 {{ site.alert.end }}
 
@@ -745,4 +745,3 @@ When creating a release archive (IPA) the symbols are stripped by Xcode.
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading
 [Flutter macOS Desktop]: /desktop
 [Android guidelines]: {{site.android-dev}}/topic/performance/reduce-apk-size#extract-false
-

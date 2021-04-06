@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/forms/validation"?>
+
 Apps often require users to enter information into a text field.
 For example, you might require users to log in with an email address
 and password combination.
@@ -69,8 +71,10 @@ and allows validation of the form in a later step.
 `GlobalKey` 唯一标识了这个表单 `Form`，
 在后续的表单验证步骤中，也起到了关键的作用。
 
-<!-- skip -->
+<?code-excerpt "lib/form.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
   @override
@@ -96,9 +100,9 @@ class MyCustomFormState extends State<MyCustomForm> {
       key: _formKey,
       child: Column(
         children: <Widget>[
-              // Add TextFormFields and ElevatedButton here.
-        ]
-     )
+          // Add TextFormFields and ElevatedButton here.
+        ],
+      ),
     );
   }
 }
@@ -151,17 +155,17 @@ return a friendly error message.
 它的功能是判断用户输入的文本是否为空，
 如果为空，就返回「请输入文本」的友情提示。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (TextFormField)"?>
 ```dart
 TextFormField(
   // The validator receives the text that the user has entered.
   validator: (value) {
-    if (value.isEmpty) {
+    if (value == null || value.isEmpty) {
       return 'Please enter some text';
     }
     return null;
   },
-);
+),
 ```
 
 ## 3. Create a button to validate and submit the form
@@ -181,22 +185,20 @@ If it isn't (the text field has no content) display the error message.
 如果文本框有内容，表单有效，则会显示正确信息。
 如果文本框没有输入任何内容，表单无效，会在文本框区域展示错误提示。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ElevatedButton)" replace="/^child\: //g"?>
 ```dart
 ElevatedButton(
   onPressed: () {
-    // Validate returns true if the form is valid, otherwise false.
-    if (_formKey.currentState.validate()) {
+    // Validate returns true if the form is valid, or false otherwise.
+    if (_formKey.currentState!.validate()) {
       // If the form is valid, display a snackbar. In the real world,
       // you'd often call a server or save the information in a database.
-
-      Scaffold
-          .of(context)
+      ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Processing Data')));
     }
   },
   child: Text('Submit'),
-);
+),
 ```
 
 ### How does this work?
@@ -229,7 +231,8 @@ rebuilds the form to display any error messages and returns `false`.
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -278,8 +281,9 @@ class MyCustomFormState extends State<MyCustomForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
+            // The validator receives the text that the user has entered.
             validator: (value) {
-              if (value.isEmpty) {
+              if (value == null || value.isEmpty) {
                 return 'Please enter some text';
               }
               return null;
@@ -289,11 +293,11 @@ class MyCustomFormState extends State<MyCustomForm> {
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
               onPressed: () {
-                // Validate returns true if the form is valid, or false
-                // otherwise.
-                if (_formKey.currentState.validate()) {
-                  // If the form is valid, display a Snackbar.
-                  Scaffold.of(context)
+                // Validate returns true if the form is valid, or false otherwise.
+                if (_formKey.currentState!.validate()) {
+                  // If the form is valid, display a snackbar. In the real world,
+                  // you'd often call a server or save the information in a database.
+                  ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text('Processing Data')));
                 }
               },

@@ -7,6 +7,8 @@ tags: Flutter开发
 keywords: 国际化
 ---
 
+<?code-excerpt path-base="../null_safety_examples/internationalization"?>
+
 {{site.alert.secondary}}
  
   <h4 class="no_toc">What you’ll learn</h4>
@@ -115,6 +117,7 @@ add the package as a dependency to your `pubspec.yaml` file:
 想要使用 flutter_localizations 的话，
 你需要在 `pubspec.yaml` 文件中添加它作为依赖：
 
+<?code-excerpt "gen_l10n_example/pubspec.yaml (FlutterLocalizations)"?>
 ```yaml
 dependencies:
   flutter:
@@ -129,31 +132,29 @@ Next, run `pub get packages`, then import the `flutter_localizations` library an
 下一步，先运行 `pub get packages`，然后引入 flutter_localizations 库，
 然后为 MaterialApp 指定 `localizationsDelegates` 和 `supportedLocales`：
 
-<!-- skip -->
+<?code-excerpt "gen_l10n_example/lib/main.dart (LocalizationDelegatesImport)"?>
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
-// TODO: uncomment the line below after codegen
-// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+```
 
-// ...
-
-MaterialApp(
- localizationsDelegates: [
-   // ... app-specific localization delegate[s] here
-   // TODO: uncomment the line below after codegen
-   // AppLocalizations.delegate,
-   GlobalMaterialLocalizations.delegate,
-   GlobalWidgetsLocalizations.delegate,
-   GlobalCupertinoLocalizations.delegate,
- ],
- supportedLocales: [
-    const Locale('en', ''), // English, no country code
-    const Locale('ar', ''), // Arabic, no country code
-    const Locale.fromSubtags(languageCode: 'zh'), // Chinese *See Advanced Locales below*
-    // ... other locales the app supports
+<?code-excerpt "gen_l10n_example/lib/main.dart (MaterialApp)" remove="AppLocalizations.delegate"?>
+```dart
+return MaterialApp(
+  title: 'Localizations Sample App',
+  localizationsDelegates: [
+    GlobalMaterialLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
   ],
-  // ...
-)
+  supportedLocales: [
+    const Locale('en', ''), // English, no country code
+    const Locale('es', ''), // Spanish, no country code
+  ],
+  theme: ThemeData(
+    primarySwatch: Colors.blue,
+  ),
+  home: MyHomePage(),
+);
 ```
 
 After introducing the `flutter_localizations` package
@@ -162,10 +163,10 @@ packages should now be correctly localized in
 one of the 78 supported locales. Widgets should be
 adapted to the localized messages, along with
 correct left-to-right and right-to-left layout.
+
 Try switching the target platform's locale to
-Arabic (`ar`) and notice that the messages should
-be localized and widgets are laid out with
-right-to-left layout in mind.
+Spanish (`es`) and notice that the messages should
+be localized.
 
 引入 `flutter_localizations` package 并添加了上面的代码之后，
 `Material` 和 `Cupertino` 包现在应该被正确地本地化为 78 个受支持的语言环境之一。
@@ -226,13 +227,17 @@ following instructions to add localized text to your application.
 
    将 `intl` package 添加到 `pubspec.yaml` 文件中：
 
+{% comment %}
+RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: flutter"
+{% endcomment %}
+   <?code-excerpt "gen_l10n_example/pubspec.yaml (Intl)" replace="/(?<!0) # Add this line//g" ?>
    ```yaml
    dependencies:
      flutter:
        sdk: flutter
      flutter_localizations:
        sdk: flutter
-     intl: ^0.16.1    # Add this line
+     intl: ^0.17.0 # Add this line
    ```
 
 2. Also, in the `pubspec.yaml` file, enable the `generate`
@@ -244,10 +249,11 @@ following instructions to add localized text to your application.
    该设置项添加在 pubspec 中 Flutter 部分，
    通常处在 pubspec 文件中后面的部分。
 
+   <?code-excerpt "gen_l10n_example/pubspec.yaml (Generate)"?>
    ```yaml
    # The following section is specific to Flutter.
    flutter:
-     generate: true    # Add this line
+     generate: true # Add this line
    ```
 
 3. Add a new yaml file to the root directory of the Flutter
@@ -256,6 +262,7 @@ following instructions to add localized text to your application.
    在 Flutter 项目的根目录中添加一个新的 yaml 文件，
    命名为 `l10n.yaml`，其内容如下：
 
+   <?code-excerpt "gen_l10n_example/l10n.yaml"?>
    ```yaml
    arb-dir: lib/l10n
    template-arb-file: app_en.arb
@@ -276,12 +283,13 @@ following instructions to add localized text to your application.
    
    在 `${FLUTTER_PROJECT}/lib/l10n` 中，添加 `app_en.arb` 模板文件。如下：
 
+   <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb"?>
    ```json
    {
-     "helloWorld": "Hello World!",
-     "@helloWorld": {
-       "description": "The conventional newborn programmer greeting"
-     }
+       "helloWorld": "Hello World!",
+       "@helloWorld": {
+         "description": "The conventional newborn programmer greeting"
+       }
    }
    ```
 
@@ -291,9 +299,10 @@ following instructions to add localized text to your application.
    接下来，在同一目录中添加一个 `app_es.arb` 文件，
    对同一条信息做西班牙语的翻译：
 
+   <?code-excerpt "gen_l10n_example/lib/l10n/app_es.arb"?>
    ```json
    {
-     "helloWorld": "Hola Mundo!"
+       "helloWorld": "Hola Mundo!"
    }
    ```
 
@@ -303,46 +312,55 @@ following instructions to add localized text to your application.
    要测试本地化工具，可以运行您的应用程序。
    您将在 `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n` 中看到生成的文件。
 
-7. Remove the comment for the import statement on `app_localizations.dart` 
-   and `AppLocations.delegate` in your call to the constructor for 
-   `MaterialApp`. Test the generated localizations in your app as follows:
+7. Add the import statement on `app_localizations.dart` and `AppLocations.delegate` 
+   in your call to the constructor for `MaterialApp`.
 
    测试应用中生成的本地化文件内容如下：
    
-   <!-- skip -->
+   <?code-excerpt "gen_l10n_example/lib/main.dart (AppLocalizationsImport)"?>
    ```dart
-   import 'package:flutter_localizations/flutter_localizations.dart';
-   // import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // remove the comment for this line
+   import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+   ```
 
-   // ...
-   
-   MaterialApp(
+   <?code-excerpt "gen_l10n_example/lib/main.dart (MaterialApp)"?>
+   ```dart
+   return MaterialApp(
+     title: 'Localizations Sample App',
      localizationsDelegates: [
-       // ... app-specific localization delegate[s] here
-       // AppLocalizations.delegate, // remove the comment for this line
+       AppLocalizations.delegate, // Add this line
        GlobalMaterialLocalizations.delegate,
-       // ...
+       GlobalWidgetsLocalizations.delegate,
+       GlobalCupertinoLocalizations.delegate,
+     ],
+     supportedLocales: [
+       const Locale('en', ''), // English, no country code
+       const Locale('es', ''), // Spanish, no country code
+     ],
+     theme: ThemeData(
+       primarySwatch: Colors.blue,
+     ),
+     home: MyHomePage(),
    );
-   // ...
+   ```
+   
+8. Use AppLocalizations anywhere in your app.
+   Here, the translated message is used in a Text widget.
 
-   // In your Material/Widget/CupertinoApp:
-   @override
-   Widget build(BuildContext context) {
-     return MaterialApp(
-       localizationsDelegates: AppLocalizations.localizationsDelegates, // Add this line
-       supportedLocales: AppLocalizations.supportedLocales, // Add this line
-       home: // ...
-     );
-   }
+   <?code-excerpt "gen_l10n_example/lib/examples.dart (Example)"?>
+   ```dart
+   Text(AppLocalizations.of(context)!.helloWorld);
+   ```
+   
+9. You can also use the generated `localizationsDelegates` and `supportedLocales` list
+   instead of providing them manually.
 
-   // ...
-
-   // Use AppLocalizations anywhere in your app.
-   // Here, the translated message is used in a Text widget.
-   Widget build(BuildContext context) {
-     // ...
-     return Text(AppLocalizations.of(context).helloWorld);
-   }
+   <?code-excerpt "gen_l10n_example/lib/examples.dart (MaterialAppExample)"?>
+   ```dart
+   MaterialApp(
+     title: 'Localizations Sample App',
+     localizationsDelegates: AppLocalizations.localizationsDelegates,
+     supportedLocales: AppLocalizations.supportedLocales,
+   );
    ```
 
    This code generates a Text widget that displays "Hello World!"
@@ -367,17 +385,11 @@ string into [`MaterialApp.onGenerateTitle`][]:
 如需本地化设备应用描述，你可以将本地化后的字符串传递给
 [`MaterialApp.onGenerateTitle`][]:
 
-  <!-- skip -->
-  ```dart
-  // In your Material/Widget/CupertinoApp:
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      onGenerateTitle: (BuildContext context) => AppLocalizations.of(context).appTitle,
-      // ...
-    );
-  }
-  ```
+<?code-excerpt "intl_example/lib/main.dart (MaterialAppTitleExample)"?>
+```dart
+return MaterialApp(
+  onGenerateTitle: (BuildContext context) => DemoLocalizations.of(context).title,
+```
 
 For more information about the localization tool,
 such as dealing with DateTime and handling plurals,
@@ -471,9 +483,8 @@ locales should include:
 三个不同的国家/地区代码能够完整地表达每个变种的中文，
 你应该包括以下支持的语言环境:
 
-<!-- skip -->
+<?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
 ```dart
-// Full Chinese support for CN, TW, and HK
 supportedLocales: [
   const Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
   const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
@@ -548,7 +559,7 @@ You can always lookup an app's current locale with
 
 你可以通过调用 `Localizations.localeOf()` 方法来查看 app 当前的语言环境。 
 
-<!-- skip -->
+<?code-excerpt "gen_l10n_example/lib/examples.dart (MyLocale)"?>
 ```dart
 Locale myLocale = Localizations.localeOf(context);
 ```
@@ -575,19 +586,16 @@ method can provide a [`localeResolutionCallback`][].
 For example, to have your app unconditionally accept
 whatever locale the user selects:
 
-<!-- skip -->
+<?code-excerpt "gen_l10n_example/lib/examples.dart (LocaleResolution)"?>
 ```dart
-class DemoApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-       localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocales) {
-         return locale;
-       }
-       // ...
-    );
-  }
-}
+MaterialApp(
+  localeResolutionCallback: (
+    Locale? locale,
+    Iterable<Locale> supportedLocales,
+  ) {
+    return locale;
+  },
+);
 ```
 
 ## How internationalization in Flutter works
@@ -730,21 +738,24 @@ DemoLocalizations 类包含了 app 语言环境内支持的
 `initializeMessages()` 方法来加载翻译好的字符串，
 然后使用 [`Intl.message()`][] 来查阅它们。
 
-<!-- skip -->
+<?code-excerpt "intl_example/lib/main.dart (DemoLocalizations)"?>
 ```dart
 class DemoLocalizations {
   DemoLocalizations(this.localeName);
 
   static Future<DemoLocalizations> load(Locale locale) {
-    final String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
+    final String name = locale.countryCode == null || locale.countryCode!.isEmpty
+        ? locale.languageCode
+        : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
+
     return initializeMessages(localeName).then((_) {
       return DemoLocalizations(localeName);
     });
   }
 
   static DemoLocalizations of(BuildContext context) {
-    return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
+    return Localizations.of<DemoLocalizations>(context, DemoLocalizations)!;
   }
 
   final String localeName;
@@ -835,18 +846,16 @@ delegate 类包括基本的日期和数字格式的本地化。
 里面的字符串值属性的 getters 所定义的，
 像下面这样：
 
-<!-- skip -->
+<?code-excerpt "add_language/lib/nn_intl.dart (Getters)"?>
 ```dart
 @override
-String get backButtonTooltip => r'Back';
+String get moreButtonTooltip => r'More';
 
 @override
-String get cancelButtonLabel => r'CANCEL';
+String get aboutListTileTitleRaw => r'About $applicationName';
 
 @override
-String get closeButtonLabel => r'CLOSE';
-
-// etc..
+String get alertDialogLabel => r'Alert';
 ```
 
 These are the English translations, of course.
@@ -870,16 +879,14 @@ The variables are expanded by parameterized localization methods:
 因为有一些时候这些字符串会包含一些带有 `$` 前缀的变量。
 通过调用带参数的本地化方法，这些变量会被替换：
 
-<!-- skip -->
+<?code-excerpt "add_language/lib/nn_intl.dart (Raw)"?>
 ```dart
 @override
-String get aboutListTileTitleRaw => r'About $applicationName';
+String get pageRowsInfoTitleRaw => r'$firstRow–$lastRow of $rowCount';
 
 @override
-String aboutListTileTitle(String applicationName) {
-  final String text = aboutListTileTitleRaw;
-  return text.replaceFirst(r'$applicationName', applicationName);
-}
+String get pageRowsInfoTitleApproximateRaw =>
+    r'$firstRow–$lastRow of about $rowCount';
 ```
 
 The date patterns and symbols of the locale will also need to
@@ -889,14 +896,25 @@ are defined like this:
 语言对应的日期格式和符号需要一并指定。
 在源码中，它们会以下列形式进行定义：
 
-<!-- skip -->
+{% comment %}
+RegEx adds last two lines with commented out code and closing bracket.
+{% endcomment %}
+<?code-excerpt "add_language/lib/nn_intl.dart (Date)" replace="/  'LLL': 'LLL',/  'LLL': 'LLL',\n  \/\/ ...\n}/g"?>
 ```dart
 const nnLocaleDatePatterns = {
   'd': 'd.',
   'E': 'ccc',
-  //...
+  'EEEE': 'cccc',
+  'LLL': 'LLL',
+  // ...
 }
+```
 
+{% comment %}
+RegEx adds last two lines with commented out code and closing bracket.
+{% endcomment %}
+<?code-excerpt "add_language/lib/nn_intl.dart (Date2)" replace="/  ],/  ],\n  \/\/ ...\n}/g"?>
+```dart
 const nnDateSymbols = {
   'NAME': 'nn',
   'ERAS': <dynamic>[
@@ -918,12 +936,27 @@ for an existing locale will have to be used as a substitute in
 以至于 `_NnMaterialLocalizationsDelegate` 需要使用
 现有的语言的格式作为替代方法：
 
-<!-- skip -->
+<?code-excerpt "add_language/lib/nn_intl.dart (Delegate)"?>
 ```dart
-class _NnMaterialLocalizationsDelegate extends LocalizationsDelegate<MaterialLocalizations> {
-  // ...
+class _NnMaterialLocalizationsDelegate
+    extends LocalizationsDelegate<MaterialLocalizations> {
+  const _NnMaterialLocalizationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) => locale.languageCode == 'nn';
+
   @override
   Future<MaterialLocalizations> load(Locale locale) async {
+    final String localeName = intl.Intl.canonicalizedLocale(locale.toString());
+
+    // The locale (in this case `nn`) needs to be initialized into the custom
+    // date symbols and patterns setup that Flutter uses.
+    date_symbol_data_custom.initializeDateFormattingCustom(
+      locale: localeName,
+      patterns: nnLocaleDatePatterns,
+      symbols: intl.DateSymbols.deserializeFromMap(nnDateSymbols),
+    );
+
     return SynchronousFuture<MaterialLocalizations>(
       NnMaterialLocalizations(
         localeName: localeName,
@@ -935,10 +968,23 @@ class _NnMaterialLocalizationsDelegate extends LocalizationsDelegate<MaterialLoc
         // for 'en_US' instead.
         decimalFormat: intl.NumberFormat('#,##0.###', 'en_US'),
         twoDigitZeroPaddedFormat: intl.NumberFormat('00', 'en_US'),
-        //...
+        // DateFormat here will use the symbols and patterns provided in the
+        // `date_symbol_data_custom.initializeDateFormattingCustom` call above.
+        // However, an alternative is to simply use a supported locale's
+        // DateFormat symbols, similar to NumberFormat above.
+        fullYearFormat: intl.DateFormat('y', localeName),
+        compactDateFormat: intl.DateFormat('yMd', localeName),
+        shortDateFormat: intl.DateFormat('yMMMd', localeName),
+        mediumDateFormat: intl.DateFormat('EEE, MMM d', localeName),
+        longDateFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
+        yearMonthFormat: intl.DateFormat('MMMM y', localeName),
+        shortMonthDayFormat: intl.DateFormat('MMM d'),
       ),
     );
   }
+
+  @override
+  bool shouldReload(_NnMaterialLocalizationsDelegate old) => false;
 }
 ```
 
@@ -960,19 +1006,20 @@ adds the `NnMaterialLocalizations` delegate instance to the app's
 这里有一些代码展示了如何设置 app 的语言为尼诺斯克语以及如何给 app 的
 `localizationsDelegates` 列表添加 `NnMaterialLocalizations` delegate 实例。
 
-<!-- skip -->
+<?code-excerpt "add_language/lib/main.dart (MaterialApp)"?>
 ```dart
 MaterialApp(
   localizationsDelegates: [
     GlobalWidgetsLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
-    NnMaterialLocalizations.delegate,
+    NnMaterialLocalizations.delegate, // Add the newly created delegate
   ],
   supportedLocales: [
-    const Locale('nn')
+    const Locale('en', 'US'),
+    const Locale('nn'),
   ],
-  home: ...
-)
+  home: Home(),
+),
 ```
 
 <a name="alternative-internationalization-workflows">
@@ -1009,7 +1056,7 @@ directly in per language Maps.
 在该版本的 DemoApp 中，包含应用程序本地化版本的类 DemoLocalizations 
 直接在每种语言的 Map 中包括了所有的翻译。
 
-<!-- skip -->
+<?code-excerpt "minimal/lib/main.dart (Demo)"?>
 ```dart
 class DemoLocalizations {
   DemoLocalizations(this.locale);
@@ -1017,7 +1064,7 @@ class DemoLocalizations {
   final Locale locale;
 
   static DemoLocalizations of(BuildContext context) {
-    return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
+    return Localizations.of<DemoLocalizations>(context, DemoLocalizations)!;
   }
 
   static Map<String, Map<String, String>> _localizedValues = {
@@ -1030,7 +1077,7 @@ class DemoLocalizations {
   };
 
   String get title {
-    return _localizedValues[locale.languageCode]['title'];
+    return _localizedValues[locale.languageCode]!['title']!;
   }
 }
 ```
@@ -1042,7 +1089,7 @@ because no asynchronous loading needs to take place.
 在 minimal 应用中，`DemoLocalizationsDelegate` 略有不同，
 它的 `load` 方法返回一个 [`SynchronousFuture`][]，因为不需要进行异步加载。
 
-<!-- skip -->
+<?code-excerpt "minimal/lib/main.dart (Delegate)"?>
 ```dart
 class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations> {
   const DemoLocalizationsDelegate();
@@ -1052,6 +1099,8 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
 
   @override
   Future<DemoLocalizations> load(Locale locale) {
+    // Returning a SynchronousFuture here because an async "load" operation
+    // isn't needed to produce an instance of DemoLocalizations.
     return SynchronousFuture<DemoLocalizations>(DemoLocalizations(locale));
   }
 

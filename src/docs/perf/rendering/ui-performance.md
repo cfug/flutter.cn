@@ -9,6 +9,8 @@ tags: Flutter性能
 keywords: 性能分析,性能调试工具,开发者工具,60fps,120fps,profile mode
 ---
 
+{% include performance.md %}
+
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>
   
@@ -610,15 +612,18 @@ ask yourself these questions:
 
 #### 检查没有缓存的图像
 
-Caching an image with [RepaintBoundary][] is good, _when it makes sense_.
+Caching an image with [`RepaintBoundary`][] is good,
+_when it makes sense_.
 
 使用重绘边界 ([RepaintBoundary][]) 来缓存图片是个好主意，**当需要的时候。**
 
-One of the most expensive operations, from a resource perspective,
-is rendering a texture using an image file. First, the compressed image
+One of the most expensive operations,
+from a resource perspective,
+is rendering a texture using an image file.
+First, the compressed image
 is fetched from persistent storage.
-The image is decompressed into host memory (GPU memory), and transferred
-to device memory (RAM).
+The image is decompressed into host memory (GPU memory),
+and transferred to device memory (RAM).
 
 从资源的角度看，最重量级的操作之一是用图像文件来渲染纹理。
 首先，需要从持久存储中取出压缩图像，
@@ -658,7 +663,7 @@ which would indicate that the cached image is being re-cached.
 
 In most cases, you want to see checkerboards on static images,
 but not on non-static images.  If a static image isn't cached,
-you can cache it by placing it into a [RepaintBoundary][]
+you can cache it by placing it into a [`RepaintBoundary`][]
 widget. Though the engine might still ignore a repaint
 boundary if it thinks the image isn't complex enough.
 

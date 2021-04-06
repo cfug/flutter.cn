@@ -6,9 +6,9 @@
 
 {% include_relative _web-app.md  %}
 
- 1. Open the IDE and select **Start a new Flutter project**.
+ 1. Open the IDE and select **Create New Flutter Project**.
 
-    打开 IDE，选择 **新 Flutter 项目 (Start a new Flutter project)**.
+    打开 IDE，选择 **新 Flutter 项目 (Create New Flutter Project)**.
     
  1. Select **Flutter Application** as the project type. Then click **Next**.
 
@@ -80,18 +80,6 @@ contains a simple demo app that uses [Material Components][].
  1. Click the run icon in the toolbar, or invoke the menu item **Run > Run**.
  
     点击工具栏中的 Run 图标，或者在菜单中选择 **Run > Run**。
-
-
-{{site.alert.warning}}
-
-  When launching your app from a Mac, if you see
-  `ERROR: Could not connect to lockdownd, error code -17`,
-  make sure that you have [trusted your computer][].
-  
-  当在 Mac 电脑上运行你的应用时，如果看到这个错误提示：
-  `ERROR: Could not connect to lockdownd, error code -17`，
-  请确保设定了 [受信任的电脑选项][trusted your computer]。
-{{site.alert.end}}
 
 {% capture save_changes -%}
  : invoke **Save All**, or click **Hot Reload**

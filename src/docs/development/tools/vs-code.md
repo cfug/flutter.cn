@@ -75,9 +75,9 @@ starter app template:
     
     打开命令面板（`Ctrl`+`Shift`+`P` （macOS 用 `Cmd`+`Shift`+`P`））。
  
- 1. Select the **Flutter: New Project** command and press `Enter`.
+ 1. Select the **Flutter: New Application Project** command and press `Enter`.
  
-    选择 **Flutter: New Project** 命令然后按 `Enter`。
+    选择 **Flutter: New Application Project** 命令然后按 `Enter`。
     
  1. Enter your desired **Project name**.
  
@@ -229,18 +229,6 @@ Flutter 扩展会自动选择上次连接的设备。
 然而，如果你有多个设备/模拟器连接，
 点击状态栏的 **device** 查看屏幕顶部的选择列表。
 选择你要用来运行或调试的设备。
-
-{{site.alert.note}}
-
-  If you want to try running your app on the web,
-  but the **Chrome (web)** target doesn't appear in the
-  list of targets, make sure you've enabled web, as
-  described in [Building a web application][].
-
-  如果你尝试运行 web 应用，但是 **Chrome (web)** 并不在目标列表中，
-  请检查是否启用了 web，在 [Building a web application][] 中进行了介绍。
-
-{{site.alert.end}}
 
 ### Run app without breakpoints
 

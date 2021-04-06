@@ -81,7 +81,13 @@ Alternatively, you can also use IntelliJ:
 
 ## 安装 Flutter 和 Dart 插件
 
-To install these:
+The installation instructions vary by platform.
+
+请参考下面不同平台的安装指南：
+
+### Mac
+
+Use the following instructions for macos:
 
 安装过程如下：
 
@@ -107,26 +113,23 @@ To install these:
 
     当弹出重新启动提示时，点击 **Restart**。
 
-{{site.alert.note}}
+### Linux or Windows
 
-  Prior to v3.6.3.0, access plugin preferences as follows:
-   
-  v3.6.3.0 之前的版本请按照下面这样访问插件设置： 
-   
-   1. Open plugin preferences (on MacOS go to **Preferences > Plugins**; 
-      on Windows & Linux go to **File > Settings > Plugins**).
+### Linux 或者 Windows 平台
 
-      打开插件设置（macOS 系统打开 **Preferences > Plugins**，
-      Windows 和 Linux 系统打开 **File > Settings > Plugins**）
+Use the following instructions for Linux or Windows:
+
+参考使用下面介绍的步骤：
+
+   1. Open plugin preferences (**File > Settings > Plugins**).
+
+      打开插件偏好设置 (位于 **File > Settings > Plugins**)
 
    1. Select **Marketplace**,  select the Flutter plugin and click
       **Install**.
 
-      选择 **Marketplace**，然后选择 Flutter 插件并点击 **安装**。
-
-{{site.alert.end}}
-
-
+      选择 **Marketplace (扩展商店)**，选择 Flutter plugin
+      然后点击 **Install (安装)**。
 
 </div>
 <div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
@@ -221,4 +224,3 @@ For information on how to install and use the package, see the [lsp-dart documen
 [VS Code]: https://code.visualstudio.com/
 [Emacs]: https://www.gnu.org/software/emacs/download.html
 [lsp-dart documentation]: https://emacs-lsp.github.io/lsp-dart/
-

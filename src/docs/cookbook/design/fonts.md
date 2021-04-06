@@ -104,6 +104,21 @@ awesome_app/
     RobotoMono-Bold.ttf
 ```
 
+### Supported font formats
+
+### 已支持的字体格式
+
+Flutter supports the following font formats:
+
+Flutter 支持以下的字体格式：
+
+* `.ttf`
+* `.otf`
+
+Flutter does not support `.woff` and `.woff2` fonts for all platforms.
+
+Flutter 在所有平台上均尚未支持 `.woff` 和 `.woff2` 字体。
+
 ## 2. Declare the font in the pubspec
 
 ## 2. 在 `pubspec.yaml` 中声明字体
@@ -139,9 +154,11 @@ The `family` determines the name of the font, which you use in the
 `family` 属性决定了字体的名称，
 你将会在 [`TextStyle`][] 的 [`fontFamily`][] 属性中用到。
 
-The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
+The `asset` is a path to the font file,
+relative to the `pubspec.yaml` file.
 These files contain the outlines for the glyphs in the font.
-When building the app, these files are included in the app's asset bundle.
+When building the app,
+these files are included in the app's asset bundle.
 
 `asset` 是字体文件对于 `pubspec.yaml` 文件的相对路径。
 这些文件包含了字体中字形的轮廓。
@@ -182,8 +199,9 @@ or only within specific widgets.
 关于如何应用这些字体，你有两种选择：
 将其设为默认字体，或者仅在某些特定 widget 中使用。
 
-To use a font as the default, set the `fontFamily` property as part of
-the app's `theme`. The value provided to `fontFamily` must match the `family`
+To use a font as the default, set the `fontFamily` property
+as part of the app's `theme`. The value provided to
+`fontFamily` must match the `family`
 name declared in the `pubspec.yaml`.
 
 如果你想要设为默认字体，
@@ -238,8 +256,9 @@ Text(
 
 If a [`TextStyle`][] object specifies a weight
 or style for which there is no exact font file,
-the engine uses one of the more generic files for the font and attempts to
-extrapolate outlines for the requested weight and style.
+the engine uses one of the more generic files
+for the font and attempts to extrapolate outlines
+for the requested weight and style.
 
 如若 [`TextStyle`][] 指定的字体样式缺少相应的字体文件，
 Engine 则会使用一个更加通用的字体文件，

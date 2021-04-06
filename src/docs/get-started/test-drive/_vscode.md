@@ -57,8 +57,9 @@ contains a simple demo app that uses [Material Components][].
     
     - If no device is available and you want to use a device simulator,
       click **No Devices** and launch a simulator.
-      
-      如果没有可用设备而且你也打算用模拟器，点击 **No Devices** 然后打开一个模拟器。
+
+      如果没有可用设备而且你也打算用模拟器，
+      点击 **No Devices** 然后打开一个模拟器。
       
       {{site.alert.warning}}
 
@@ -69,7 +70,7 @@ contains a simple demo app that uses [Material Components][].
       ```
       open -a simulator
       ```
-      
+
       In Android it is not possible to launch iOS simulator.
 
       Android 是不可能启动 iOS 模拟器的。
@@ -89,19 +90,6 @@ contains a simple demo app that uses [Material Components][].
     in the **Debug Console** view.
     
     当应用启动以后&mdash; 处理进度会出现在 **Debug Console** 页面中。
-
-{{site.alert.warning}}
-
-  When launching your app from a Mac, if you see
-  `ERROR: Could not connect to lockdownd, error code -17`,
-  make sure that you have [trusted your computer][].
-  
-  当你在 Mac 上打开应用时，如果你遇到下面报错：
-  `ERROR: Could not connect to lockdownd, error code -17`，
-  则意味着你需要进行信任设备操作，详见：
-  [信任你的电脑][trusted your computer]。
-  
-{{site.alert.end}}
 
 {% capture save_changes -%}
  : invoke **Save All**, or click **Hot Reload**

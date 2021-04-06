@@ -16,6 +16,8 @@ next:
   path: /docs/cookbook/testing/widget/introduction
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/testing/unit/mocking"?>
+
 Sometimes, unit tests might depend on classes that fetch data from live
 web services or databases. This is inconvenient for a few reasons:
 
@@ -103,6 +105,13 @@ so define that dependency in the `dependencies` section.
 
 本例中还使用了 `http` 包，需要添加到 `dependencies` 部分：
 
+`mockito: 5.0.0` supports Dart's null safety thanks to code generation.
+To run the required code generation, add the `build_runner` dependency
+in the `dev_dependencies` section.
+
+感谢代码生成，`mockito: 5.0.0` 已经支持了 Dart 的空安全。
+要运行所需的代码生成工具，请将 `build_runner` 依赖添加到 `dev_dependencies` 项目下。
+
 ```yaml
 dependencies:
   http: <newest_version>
@@ -110,18 +119,19 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mockito: <newest_version>
+  build_runner: <newest_version>
 ```
 
 ## 2. Create a function to test
 
 ## 2. 创建一个要测试的函数
 
-In this example, unit test the `fetchPost` function from the
+In this example, unit test the `fetchAlbum` function from the
 [Fetch data from the internet][] recipe.
 To test this function, make two changes:
 
 本例中，我们要对 [获取网络数据][Fetch data from the internet]
-章节的 `fetchPost` 函数进行单元测试。
+章节的 `fetchAlbum` 函数进行单元测试。
 为了便于测试，我们需要做两个改动：
 
   1. Provide an `http.Client` to the function. This allows providing the
@@ -146,72 +156,90 @@ The function should now look like this:
 
 函数经过改动之后：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (fetchAlbum)"?>
 ```dart
-class Post {
-  dynamic data;
-  Post.fromJson(this.data);
-}
-
-Future<Post> fetchPost(http.Client client) async {
+Future<Album> fetchAlbum(http.Client client) async {
   final response =
-      await client.get('https://jsonplaceholder.typicode.com/posts/1');
+      await client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
-    // If the call to the server was successful, parse the JSON.
-    return Post.fromJson(jsonDecode(response.body));
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
+    return Album.fromJson(jsonDecode(response.body));
   } else {
-    // If that call was not successful, throw an error.
-    throw Exception('Failed to load post');
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load album');
   }
 }
 ```
+
+In your app code, you can provide an `http.Client` to the `fetchAlbum` method 
+directly with `fetchAlbum(http.Client())`. `http.Client()` creates a default
+`http.Client`.
 
 ## 3. Create a test file with a mock `http.Client`
 
 ## 3. 创建一个模拟了 http.Client 的测试文件
 
-Next, create a test file along with a `MockClient` class.
+Next, create a test file.
 Following the advice in the [Introduction to unit testing][] recipe,
-create a file called `fetch_post_test.dart` in the root `test` folder.
+create a file called `fetch_album_test.dart` in the root `test` folder.
 
-接下来，创建测试文件，我们需要在文件中创建 `MockitoClient` 类。
+接下来，创建一个测试文件。
 遵循 [单元测试介绍][Introduction to unit testing] 章节的建议，
 我们在根目录下的 `test` 文件夹中创建一个名字为 `fetch_post_test.dart` 的文件。
 
-The `MockClient` class implements the `http.Client` class. This allows
-you to pass the `MockClient` to the `fetchPost` function,
+Add the annotation `@GenerateMocks([http.Client])` to the main
+function to generate a `MockClient` class with `mockito`.
+
+在 main 函数上添加一个 `@GenerateMocks([http.Client])` 注解以生成含有 `mockito` 的 `MockClient` 类。
+
+The generated `MockClient` class implements the `http.Client` class.
+This allows you to pass the `MockClient` to the `fetchAlbum` function,
 and return different http responses in each test.
 
-`MockClient` 类会实现 `http.Client` 类。
+`MockClient` 类实现了 `http.Client` 类。
 如此一来，我们就可以把 `MockClient` 传给 `fetchPost` 函数，
 还可以在每个测试中返回不同的 http 请求结果。
 
-<!-- skip -->
+The generated mocks will be located in `fetch_album_test.mocks.dart`.
+Import this file to use them.
+
+生成的 mock 文件将会放在 `fetch_album_test.mocks.dart`，请导入以使用它。
+
+<?code-excerpt "test/fetch_album_test.dart (mockClient)"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 
-// Create a MockClient using the Mock class provided by the Mockito package.
+import '../lib/main.dart';
+import 'fetch_album_test.mocks.dart';
+
+// Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-class MockClient extends Mock implements http.Client {}
+@GenerateMocks([http.Client])
+void main() {
+```
 
-main() {
-  // Tests go here
-}
+Next, generate the mocks running the following command:
+
+```terminal
+$ flutter pub run build_runner build
 ```
 
 ## 4. Write a test for each condition
 
 ## 4. 给每一个条件写一个测试
 
-The `fetchPost()` function does one of two things:
+The `fetchAlbum()` function does one of two things:
 
 回过头来看，`fetchPost()` 函数会完成下面两件事中的一件：
 
-  1. Returns a `Post` if the http call succeeds
-      
+  1. Returns an `Album` if the http call succeeds
+
      如果 http 请求成功，返回 `Post`
 
   2. Throws an `Exception` if the http call fails
@@ -232,27 +260,30 @@ Mockito:
 
 我们使用 Mockito 的 `when()` 函数来达到以上目的：
 
-<!-- skip -->
+<?code-excerpt "test/fetch_album_test.dart"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 
-// Create a MockClient using the Mock class provided by the Mockito package.
+import '../lib/main.dart';
+import 'fetch_album_test.mocks.dart';
+
+// Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-class MockClient extends Mock implements http.Client {}
-
-main() {
-  group('fetchPost', () {
-    test('returns a Post if the http call completes successfully', () async {
+@GenerateMocks([http.Client])
+void main() {
+  group('fetchAlbum', () {
+    test('returns an Album if the http call completes successfully', () async {
       final client = MockClient();
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
-      when(client.get('https://jsonplaceholder.typicode.com/posts/1'))
-          .thenAnswer((_) async => http.Response('{"title": "Test"}', 200));
+      when(client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1')))
+          .thenAnswer((_) async => http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200));
 
-      expect(await fetchPost(client), isA<Post>());
+      expect(await fetchAlbum(client), isA<Album>());
     });
 
     test('throws an exception if the http call completes with an error', () {
@@ -260,26 +291,26 @@ main() {
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.
-      when(client.get('https://jsonplaceholder.typicode.com/posts/1'))
+      when(client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1')))
           .thenAnswer((_) async => http.Response('Not Found', 404));
 
-      expect(fetchPost(client), throwsException);
+      expect(fetchAlbum(client), throwsException);
     });
   });
 }
 ```
 
-### 5. Run the tests
+## 5. Run the tests
 
 ### 5. 执行测试
 
-Now that you have a `fetchPost()` function with tests in place,
+Now that you have a `fetchAlbum()` function with tests in place,
 run the tests.
 
-现在我们有了一个带测试的 `fetchPost()` 函数，开始执行测试！
+现在我们有了一个带测试的 `fetchAlbum()` 函数，开始执行测试！
 
 ```terminal
-$ dart test/fetch_post_test.dart
+$ flutter test test/fetch_album_test.dart
 ```
 
 You can also run tests inside your favorite editor by following the
@@ -289,7 +320,144 @@ instructions in the [Introduction to unit testing][] recipe.
 [单元测试介绍][Introduction to unit testing]
 章节用自己喜欢的编辑器来执行测试。
 
-### Summary
+## Complete example
+
+## 完整的样例
+
+##### lib/main.dart
+
+<?code-excerpt "lib/main.dart"?>
+```dart
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+Future<Album> fetchAlbum(http.Client client) async {
+  final response =
+      await client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+
+  if (response.statusCode == 200) {
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
+    return Album.fromJson(jsonDecode(response.body));
+  } else {
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load album');
+  }
+}
+
+class Album {
+  final int userId;
+  final int id;
+  final String title;
+
+  Album({required this.userId, required this.id, required this.title});
+
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
+      userId: json['userId'],
+      id: json['id'],
+      title: json['title'],
+    );
+  }
+}
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  MyApp({Key? key}) : super(key: key);
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  late final Future<Album> futureAlbum;
+
+  @override
+  void initState() {
+    super.initState();
+    futureAlbum = fetchAlbum(http.Client());
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Fetch Data Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Fetch Data Example'),
+        ),
+        body: Center(
+          child: FutureBuilder<Album>(
+            future: futureAlbum,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(snapshot.data!.title);
+              } else if (snapshot.hasError) {
+                return Text("${snapshot.error}");
+              }
+
+              // By default, show a loading spinner.
+              return CircularProgressIndicator();
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+##### test/fetch_album_test.dart
+
+<?code-excerpt "test/fetch_album_test.dart"?>
+```dart
+import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
+
+import '../lib/main.dart';
+import 'fetch_album_test.mocks.dart';
+
+// Generate a MockClient using the Mockito package.
+// Create new instances of this class in each test.
+@GenerateMocks([http.Client])
+void main() {
+  group('fetchAlbum', () {
+    test('returns an Album if the http call completes successfully', () async {
+      final client = MockClient();
+
+      // Use Mockito to return a successful response when it calls the
+      // provided http.Client.
+      when(client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1')))
+          .thenAnswer((_) async => http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200));
+
+      expect(await fetchAlbum(client), isA<Album>());
+    });
+
+    test('throws an exception if the http call completes with an error', () {
+      final client = MockClient();
+
+      // Use Mockito to return an unsuccessful response when it calls the
+      // provided http.Client.
+      when(client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1')))
+          .thenAnswer((_) async => http.Response('Not Found', 404));
+
+      expect(fetchAlbum(client), throwsException);
+    });
+  });
+}
+```
+
+## Summary
 
 ### 总结
 

@@ -75,6 +75,19 @@ in your app that you'd like. The following example shows
 根据需要，你可以在应用中的任意位置添加打开 `FlutterActivity` 的代码。
 下边的代码展示了如何在 `OnClickListener` 的点击事件中打开 `FlutterActivity`。
 
+{{site.alert.note}}
+
+  Make sure to use the following import:
+
+  确保使用如下的语句导入：
+  
+<!--skip-->
+```dart
+  import io.flutter.embedding.android.FlutterActivity;
+```
+
+{{site.alert.end}}
+
 {% samplecode default-activity-launch %}
 {% sample Java %}
 <!--code-excerpt "ExistingActivity.java" title-->
@@ -469,6 +482,7 @@ startActivity(
     .build(context)
 );
 ```
+
 {% sample Kotlin %}
 <!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin

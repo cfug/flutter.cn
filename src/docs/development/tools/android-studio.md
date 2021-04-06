@@ -258,20 +258,6 @@ Flutter-specific buttons on the right-hand side of the toolbar.
    选择你希望启动应用的设备。当连接设备或启动模拟器时，
    列表中将会加入新选项。
 
-{{site.alert.note}}
-
-  If you want to try running your app on the web,
-  but the **Chrome (web)** target doesn't appear in the
-  list of targets, make sure you've enabled web, as
-  described in [Building a web application][].
-  
-  如果将你的 Flutter 应用运行在 Web 平台，但是你没法找到
-  **Chrome (web)** 这个设备的话，请先确保你已经开启了 Web 支持，
-  请在这个文档里查看更多：
-  [使用 Flutter 构建 Web 应用][Building a web application]。
-  
-{{site.alert.end}}
-
 ### Run app without breakpoints
 
 ### 不使用断点运行应用
@@ -777,7 +763,6 @@ When filing new issues, include the output of [`flutter doctor`][]。
 
 当你在提交新的 issue 时，确保带上运行了 [`flutter doctor`][] 命令之后的返回内容。
 
-[Building a web application]: /docs/get-started/web
 [DevTools]: /docs/development/tools/devtools
 [DevTools' docs]: https://flutter.github.io/devtools
 [DevTools 文档]: https://flutter.github.io/devtools

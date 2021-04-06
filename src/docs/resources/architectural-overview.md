@@ -261,7 +261,7 @@ which includes a rethinking of many traditional design principles.
 [一个响应式的且伪声明式的 UI 框架](/docs/resources/faq#what-programming-paradigm-does-flutters-framework-use)，
 开发者负责提供应用状态与界面状态之间的映射，框架则在运行时将应用状态的更改更新到界面上。
 这样的模型架构的灵感来自
-[Facebook 自己的 React 框架](https://www.youtube.com/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo)
+[Facebook 自己的 React 框架]({{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo)
 ，其中包含了对传统设计理念的再度解构。
 
 In most traditional UI frameworks, the user interface's initial state is
@@ -1156,7 +1156,7 @@ pipeline]({{site.youtube-site}}/watch?v=UUfXWzp0-DU).
 
 有关渲染流程的合成和栅格化阶段的更多细节，将不在本篇深入文章中讨论，
 但可以在
-[关于 Flutter 渲染流程的讨论](https://www.youtube.com/watch?v=UUfXWzp0-DU)
+[关于 Flutter 渲染流程的讨论]({{site.youtube-site}}/watch?v=UUfXWzp0-DU)
 中了解更多。
 
 ## Platform embedding

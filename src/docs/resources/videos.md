@@ -1,8 +1,8 @@
 ---
-title: Technical videos
-title: 学习 Flutter 的视频列表
-description: Available videos on various aspects of developing in Flutter.
-description: 开发 Flutter 应用时的技术学习视频。
+title: Videos and online courses
+title: 学习 Flutter 的视频列表与在线课程
+description: Available videos and online courses on various aspects of developing in Flutter.
+description: 开发 Flutter 应用时的技术学习视频与在线课程。
 tags: Flutter参考资料
 keywords: Flutter视频资料,Flutter学习,Flutter社区视频
 ---
@@ -24,86 +24,96 @@ but there are many others.
 
 ## 系列
 
-The following list of series features the introduction to the series,
-with a link to the complete playlist.
+Here are some of the series offered on the
+[flutterdev YouTube channel][].
 
-如下是一些系列视频，包括他们的介绍和播放列表：
+如下是一些 [flutterdev YouTube channel][] 的系列视频。
 
-### Flutter Interact 2019
+[flutterdev YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
 
-Flutter Interact was a day-long event that showcased
-the latest from Flutter, and focused on creating beautiful
-experiences across devices.
+### Flutter Engage 2021
 
-Flutter Interact 是为期一天的活动，展示了 
-Flutter 的最新作品，专注于创造精美的跨设备体验。
+[Flutter Engage 2021][] was a day-long event that
+officially launched Flutter 2.
 
-Check out the Flutter Interact 2019 Highlights Reel:
+[Flutter Engage 2021][] 是一个为期一天的活动，并正式发布了 Flutter 2。
 
-查看 Flutter Interact 2019 亮点：
+[Flutter Engage 2021]: https://events.flutter.dev/
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EgBMGDtHZhE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Check out the Flutter Engage 2021 highlights reel:
 
-Watch recordings of the sessions on the Flutter Youtube channel.
+查看 Flutter Engage 2021 主要亮点：
 
-在 Flutter Youtube 上观看演讲录像。
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/IdrCyS7EF8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-Vision Keynote<br>
-[Flutter Interact 2019 playlist][]
+Watch recordings of the sessions on the Flutter YouTube channel:
 
-### Flutter in Focus
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/zSbsIiluixw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Keynote<br>
+[Flutter Engage 2021 playlist][]
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NfNdXgJZfFo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Watch recordings of the sessions offered by the Flutter community:
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/-_de6IfY2RU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Flutter Engage community talks playlist][]
+
+[Flutter Engage 2021 playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU21cXt24HLm-ZODXmr4Jw0C
+[Flutter Engage community talks playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1ln3WoiGTUvLr7ZrPPFvXv
+
+### Decoding Flutter
+
+This series focuses on tips, tricks, best practices,
+and general advice on getting the most out of Flutter.
+In the comments section for this series,
+you can submit suggestions future episodes.
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/QIW35-vcA2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Introducing Decoding Flutter
+[Decoding Flutter playlist][]
+
+[Decoding Flutter playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1fRV40Ec8200rX6OuQkmnl
+
+### Flutter in focus
+
 Five-to-ten minute tutorials (more or less) on using Flutter.
 
 5 - 10 分钟左右的 Flutter 教程视频。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Introducing Flutter in focus<br>
+[Flutter in focus playlist][]
 
-Introducing Flutter in Focus<br>
+[Flutter in focus playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 
-介绍 Flutter in Focus 视频列表<br>
-
-[Flutter in Focus playlist][]
-
-### Flutter Widget of the Week
+### Flutter widget of the week
 
 ### 每周 Flutter Widgets
 
-Do you have 60 seconds? Each one-minute video highlights a Flutter widget.
+Do you have 60 seconds?
+Each one-minute video highlights a Flutter widget.
 
 每周一分钟，为你种草一个 Flutter widget！
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55795672&cid=97539385&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-Introducing Widget of the Week<br>
-
-介绍每周 Flutter Widgets 视频列表<br>
-
-[Flutter in Focus playlist][]
-
-### The Boring Flutter Show
-
-This series features Flutter programmers live coding in real time.
-Coding mistakes, solutions, and snazzy intro music included.
-
-这个系列的亮点是 live coding Flutter 应用，包括写 bug，解决方案和「时髦」的介绍音乐。
-
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Introducing widget of the week<br>
+[Flutter widget of the week playlist][]
 
-Introducing the Boring Flutter Show<br>
+[Flutter widget of the week playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 
-介绍 The Boring Flutter Show<br>
+### Flutter package of the week
 
-[The Boring Flutter Show playlist][]
+If you have another minute (or two),
+each of these videos highlights a Flutter package.
 
-### Flutter and Dart at Google I/O 2019
+你是否有几分钟时间，让我们用这些视频为你介绍一些精选 Flutter package。
 
 ### Google I/O 2019 大会上的 Flutter and Dart 视频列表
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815097&cid=97572523&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter and Dart at Google I/O 2019 playlist][]
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815097&cid=97572523&page=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+`flutter_slidable` package
+[Flutter package of the week playlist][]
+
+[Flutter package of the week playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1quF6ny8oFHJ2gBdrYN_AK
 
 ### What's new in Flutter 1.9
 
@@ -131,7 +141,14 @@ Episode 1: Sized Box<br>
 
 ---
 
-Comment this out until we have a working Conference playlist link.
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Introducing the Boring Flutter show<br>
+
+介绍 The Boring Flutter Show<br>
+
+[The Boring Flutter show playlist][]
+
+[The Boring Flutter show playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl
 
 ## Conference talks
 
@@ -141,13 +158,12 @@ Here are a some recent Flutter talks given at various conferences.
 
 以下是各种会议上最近的一些Flutter会谈。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55833267&cid=97603337&page=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[Conference Talks playlist]()
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55833267&cid=97603337&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Conference talks playlist][]
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/d_m5csmrf7I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Conference Talks playlist][]
+[Conference talks playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1UJ0OEpANodVMVm1GeE7Ti
 
-## Flutter Developer Stories
+## Flutter developer stories
 
 ## Flutter 开发者成功故事
 
@@ -159,20 +175,28 @@ millions of downloads.
 等开发者 / 公司如何使用 Flutter 开发出百万级别下载量，引人注目的应用程序。
 
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55812033&cid=97567456&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Flutter developer stories playlist][]
 
-[Flutter Developer Stories playlist][]
+[Flutter developer stories playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759
 
 [Flutter: 开发者成功故事播放列表][Flutter Developer Stories playlist]
 
 ---
 
-## Online course
+## Online courses
 
-## 线上课程
+## 在线课程
 
-Learn how to build Flutter apps with these video courses:Learn how to build Flutter apps with these free video courses:
+Learn how to build Flutter apps with these video courses.
+Before signing up for a course, verify that it includes
+up-to-date information, such as null safe Dart code.
+These courses are listed alphabetically.
+To include your course, [submit a PR][]:
 
-通过这些免费的课程学习如何构建 Flutter 应用：
+通过这些免费的课程学习如何构建 Flutter 应用。
+在注册课程之前，请验证它的内容是否及时更新，例如 Dart 的空安全代码等。
+这些课程按照字幕排序。
+若想要加入你的课程，请 [提交一个 PullRequest][submit a PR]。
 
 * [Build Native Mobile Apps with Flutter](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 
@@ -182,19 +206,12 @@ Learn how to build Flutter apps with these video courses:Learn how to build Flut
 
   [使用 Flutter 构建精美的应用（中文字幕）](https://cn.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)；
   
-* [Flutter Crash Course](https://fluttercrashcourse.com/), by Nick Manning
+* [Flutter Crash Course][], by Nick Manning
 
-  [Flutter 速成课](https://fluttercrashcourse.com/), 由 Nick Manning (社区) 录制。
+  [Flutter 速成课][Flutter Crash Course], 由 Nick Manning (社区) 录制。
   
 
-[The Boring Flutter Show playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl
-[The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
+[Flutter & Dart - the Complete Guide, 2021 edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
+[The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
-[Conference Talks playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU1UJ0OEpANodVMVm1GeE7Ti
-[Flutter Widget of the Week playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
-[Flutter Weekly Widgets playlist]: https://www.youtube.com/playlist?list=PLR2qQy0Zxs_Wot7YfLeeKdMlJ9838C_w0
-[Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
-[Flutter Interact 2019 playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
-[Flutter Live '18 playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU38by1vmaw_BHHsy7emEXl-
-[Flutter Developer Stories playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759
-[Flutter and Dart at Google I/O 2019 playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2no7yROrcQSVtwbYyxAGZV
+[submit a PR]: {{site.github}}/flutter/website/pulls

@@ -2,8 +2,6 @@
 
 ## Create the app  {#create-app}
 
-{% include_relative _web-app.md  %}
-
 ## 创建应用程序
 
 Use the `flutter create` command to create a new project:

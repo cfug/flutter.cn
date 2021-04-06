@@ -127,11 +127,13 @@ How is Flutter different for app development?<br/>
 
 视频名称：使用 Flutter 开发应用与其他有何不同<br/>
 
+
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 
 Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
 
 FiF 系列视频：十分钟以内学会一个 Flutter 特性<br>
+
 
 In Flutter, "everything is a widget"! If you want to better understand
 the two kinds of widgets, Stateless and Stateful, see the following videos,
@@ -191,13 +193,13 @@ The documentation on this site reflects the latest stable release of Flutter.
 [Adding interactivity to your Flutter app]: /docs/development/ui/interactive
 [Android]: /docs/get-started/flutter-for/android-devs
 [Animations]: /docs/development/ui/animations
-[Boring Flutter Show]: https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
-[Boring Flutter Show playlist]: https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
+[Boring Flutter Show]: {{site.youtube-site}}/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
+[Boring Flutter Show playlist]: {{site.youtube-site}}/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
 [Building layouts]: /docs/development/ui/layout
 [FAQ]: /docs/resources/faq
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
-[Flutter in Focus]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
-[Flutter in Focus series]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus series]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter YouTube channel]: {{site.social.youtube}}
 [Get started]: /docs/get-started/install
 [iOS]: /docs/get-started/flutter-for/ios-devs

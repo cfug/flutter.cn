@@ -24,6 +24,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/design/themes"?>
+
 To share colors and font styles throughout an app, use themes.
 You can either define app-wide themes, or use `Theme` widgets
 that define the colors and font styles for a particular part
@@ -60,10 +62,10 @@ If no `theme` is provided, Flutter creates a default theme for you.
 
 如果没有放置 `Theme`，Flutter 将会使用预设的样式。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
 ```dart
 MaterialApp(
-  title: title,
+  title: appName,
   theme: ThemeData(
     // Define the default brightness and colors.
     brightness: Brightness.dark,
@@ -80,7 +82,10 @@ MaterialApp(
       headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
       bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
     ),
-  )
+  ),
+  home: MyHomePage(
+    title: appName,
+  ),
 );
 ```
 
@@ -114,7 +119,7 @@ create a `ThemeData()` instance and pass that to the `Theme` widget.
 如果不想从任何全局 Theme 继承样式，
 我们可以创建一个 `ThemeData()` 实例，然后把它传给 `Theme` widget：
 
-<!-- skip -->
+<?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
 Theme(
   // Create a unique theme with "ThemeData"
@@ -138,7 +143,7 @@ theme. You can handle this by using the [`copyWith()`][] method.
 相比从头开始定义一套样式，从父级 Theme 扩展可能更常规一些，使用 
 [`copyWith()`][] 方法即可。
 
-<!-- skip -->
+<?code-excerpt "lib/theme.dart (ThemeCopyWith)"?>
 ```dart
 Theme(
   // Find and extend the parent theme using "copyWith". See the next
@@ -176,7 +181,7 @@ In fact, the `FloatingActionButton` uses this technique to find the
 
 实际上，`FloatingActionButton` 就是使用这种方式来定义自己的 `accentColor` 的。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
 ```dart
 Container(
   color: Theme.of(context).accentColor,
@@ -184,14 +189,15 @@ Container(
     'Text with a background color',
     style: Theme.of(context).textTheme.headline6,
   ),
-);
+),
 ```
 
 ## Interactive example
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -233,7 +239,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key key, @required this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -253,7 +259,7 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: Theme(
         data: Theme.of(context).copyWith(
           colorScheme:
-              Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
+          Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
         ),
         child: FloatingActionButton(
           onPressed: null,

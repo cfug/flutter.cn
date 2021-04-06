@@ -10,8 +10,7 @@ description: 学习如何在 Flutter 里使用开发者工具。
 ## 开发工具是什么？
 
 DevTools is a suite of performance and debugging tools
-for Dart and Flutter. It's currently in beta release,
-but is under active development.
+for Dart and Flutter.
 
 开发工具是一套 Dart 和 Flutter 的性能调试工具。
 目前已经“行进”到 Beta 版本了，但仍在正在持续开发中。
@@ -63,6 +62,7 @@ your existing IDE or command-line based development workflow.
 
 我们希望您将开发工具与现有的 IDE 或基于命令行的开发流程结合起来使用。
 
+<a name="install-devtools"></a>
 ## How do I install DevTools?
 
 ## 如何安装开发工具？

@@ -47,7 +47,7 @@ whenever you open a new window. For example:
     the path of your clone of the Flutter git repo:
 
     在文件中增加下列这行命令，并将其中的 
-    `[PATH_TO_FLUTTER_GIT_DIRECTORY]` 更改为你第一步获取到的路径：
+    `[PATH_OF_FLUTTER_GIT_DIRECTORY]` 更改为你第一步获取到的路径：
 
     ```terminal
     $ export PATH="$PATH:[PATH_OF_FLUTTER_GIT_DIRECTORY]/bin"

@@ -10,7 +10,8 @@ dev_dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
-  integration_test: ^1.0.0
+  integration_test:
+    sdk: flutter
   path: ^1.5.0
   test: '<2.0.0'
   url_launcher: ^3.0.3
@@ -20,5 +21,5 @@ dev_dependencies:
   css_colors: ^1.0.2
   web_socket_channel: ^1.0.9
   sqflite: ^1.1.0
-  camera: ^0.4.0+3
+  camera: ^0.6.2+1
   video_player: ^0.10.0+2

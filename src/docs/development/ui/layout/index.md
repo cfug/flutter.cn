@@ -12,8 +12,8 @@ diff2html: true
 
 {% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
+{% capture null_safety_examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
+{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/null_safety_examples' -%}
 {% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/dev/integration_tests/flutter_gallery/lib/demo {%- endcapture -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
@@ -125,7 +125,7 @@ the children should occupy.
 
 ## 布局 widget
 
-How do you layout a single widget in Flutter? This section
+How do you lay out a single widget in Flutter? This section
 shows you how to create and display a simple widget.
 It also shows the entire code for a simple Hello World app.
 
@@ -146,7 +146,9 @@ on how you want to align or constrain the visible widget,
 as these characteristics are typically passed on to the
 contained widget.
 
-根据你想要对齐或限制可见 widget 的方式从各种 [layout widgets][] 中进行选择，因为这些特性通常会传递它所给包含的 widget。
+根据你想要对齐或限制可见 widget 的方式从各种
+[layout widgets][] 中进行选择，
+因为这些特性通常会传递它所给包含的 widget。
 
 This example uses [`Center`][] which centers its content
 horizontally and vertically.
@@ -229,7 +231,8 @@ A Flutter app is itself a widget, and most widgets have a [`build()`][]
 method. Instantiating and returning a widget in the app's `build()` method
 displays the widget.
 
-一个 Flutter app 本身就是一个 widget，大多数 widgets 都有一个 [`build()`][] 方法，
+一个 Flutter app 本身就是一个 widget，
+大多数 widgets 都有一个 [`build()`][] 方法，
 在 app 的 `build()` 方法中实例化和返回一个 widget 会让它显示出来。
 
 For a `Material` app, you can use a [`Scaffold`][] widget;
@@ -238,7 +241,8 @@ and has API for adding drawers, snack bars, and bottom sheets.
 Then you can add the `Center` widget directly to the `body`
 property for the home page.
 
-对于 `Material` app，你可以使用 [`Scaffold`][] widget，它提供默认的 banner、背景颜色，
+对于 `Material` app，你可以使用 [`Scaffold`][] widget，
+它提供默认的 banner 背景颜色，
 还有用于添加抽屉、提示条和底部列表弹窗的 API。
 你可以将 `Center` widget 直接添加到主页 `body` 的属性中。
 
@@ -275,7 +279,8 @@ class MyApp extends StatelessWidget {
   [Material 库][Material library] 实现了一些遵循 [Material
   Design][] 原则的 widgets。在设计 UI 时，
   你可以只使用标准 [widgets 库][widgets library] 中的 widgets，
-  也可以使用 Material library 中的 widgets。你可以混合来自两个库的 widgets，
+  也可以使用 Material library 中的 widgets。
+  你可以混合来自两个库的 widgets，
   可以自定义现有 widgets，也可以构建自己的一组自定义 widgets。
 
 {{site.alert.end}}
@@ -331,11 +336,11 @@ color to white and the text to dark grey to mimic a Material app.
 
   App 源码:
 
-  - [Material app]({{examples}}/layout/base)
+  - [Material app]({{null_safety_examples}}/layout/base)
 
-  - [Non-Material app]({{examples}}/layout/non_material)
+  - [Non-Material app]({{null_safety_examples}}/layout/non_material)
 
-    [非 Material app]({{examples}}/layout/non_material)
+    [非 Material app]({{null_safety_examples}}/layout/non_material)
 
 </div>
 <div class="col-md-6">
@@ -357,7 +362,9 @@ widgets vertically or horizontally. You can use a
 `Row` widget to arrange widgets horizontally,
 and a `Column` widget to arrange widgets vertically.
 
-最常见的布局模式之一是垂直或水平 widgets。 你可以使用 Row widget 水平排列 widgets，使用 Column widget 垂直排列 widgets。
+最常见的布局模式之一是垂直或水平 widgets。
+你可以使用 Row widget 水平排列 widgets，
+使用 Column widget 垂直排列 widgets。
 
 {{site.alert.secondary}}
 
@@ -458,8 +465,10 @@ For a row, the main axis runs horizontally and the cross axis runs
 vertically. For a column, the main axis runs vertically and the cross
 axis runs horizontally.
 
-你可以使用 `mainAxisAlignment` 和 `crossAxisAlignment` 属性控制行或列如何对齐其子项。
-对于一行来说，主轴水平延伸，交叉轴垂直延伸。对于一列来说，主轴垂直延伸，交叉轴水平延伸。
+你可以使用 `mainAxisAlignment` 和 `crossAxisAlignment`
+属性控制行或列如何对齐其子项。
+对于一行来说，主轴水平延伸，交叉轴垂直延伸。
+对于一列来说，主轴垂直延伸，交叉轴水平延伸。
 
 <div class="mb-2 text-center">
   {% asset ui/layout/row-diagram.png class="mb-2 mw-100"
@@ -471,7 +480,8 @@ axis runs horizontally.
 The [`MainAxisAlignment`][] and [`CrossAxisAlignment`][]
 classes offer a variety of constants for controlling alignment.
 
-[MainAxisAlignment]({{api}}/rendering/MainAxisAlignment-class.html) 和 [CrossAxisAlignment]({{api}}/rendering/CrossAxisAlignment-class.html) 类为控制对齐提供了各种常量。
+[`MainAxisAlignment`][] 和 [`CrossAxisAlignment`][] 这两个类
+提供了很多用于控制对齐的常量。
 
 {{site.alert.note}}
 
@@ -497,7 +507,10 @@ is more than 300 pixels wide, so setting the main axis
 alignment to `spaceEvenly` divides the free horizontal
 space evenly between, before, and after each image.
 
-在以下示例中，3 个图像每个都是是 100 像素宽。渲染框（在本例中是整个屏幕）宽度超过 300 像素，因此设置主轴对齐方式为 `spaceEvenly` 会将空余空间在每个图像之间、之前和之后均匀地划分。
+在以下示例中，3 个图像每个都是是 100 像素宽。
+渲染框（在本例中是整个屏幕）宽度超过 300 像素，
+因此设置主轴对齐方式为 `spaceEvenly` 会将
+空余空间在每个图像之间、之前和之后均匀地划分。
 
 <div class="row">
 <div class="col-lg-8">
@@ -516,9 +529,9 @@ space evenly between, before, and after each image.
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/row-spaceevenly-visual.png class="mw-100" alt="Row with 3 evenly spaced images" %}
 
-  **App source:** [row_column]({{examples}}/layout/row_column)
+  **App source:** [row_column]({{null_safety_examples}}/layout/row_column)
 
-  **App 源码:** [row_column]({{examples}}/layout/row_column)
+  **App 源码:** [row_column]({{null_safety_examples}}/layout/row_column)
 </div>
 </div>
 
@@ -548,9 +561,9 @@ space evenly between, above, and below each image.
   );
   {% endprettify %}
 
-  **App source:** [row_column]({{examples}}/layout/row_column)
+  **App source:** [row_column]({{null_safety_examples}}/layout/row_column)
 
-  **App 源码:** [row_column]({{examples}}/layout/row_column)
+  **App 源码:** [row_column]({{null_safety_examples}}/layout/row_column)
 </div>
 <div class="col-lg-4 text-center">
   {% asset ui/layout/column-visual.png class="mb-4" height="250px"
@@ -605,9 +618,9 @@ wrap each image with an `Expanded` widget.
   {% asset ui/layout/row-expanded-2-visual.png class="mw-100"
       alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space" %}
 
-  **App source:** [sizing]({{examples}}/layout/sizing)
+  **App source:** [sizing]({{null_safety_examples}}/layout/sizing)
 
-  **App 源码:** [sizing]({{examples}}/layout/sizing)
+  **App 源码:** [sizing]({{null_safety_examples}}/layout/sizing)
 </div>
 </div>
 
@@ -647,13 +660,13 @@ the flex factor of the middle image to 2:
   {% asset ui/layout/row-expanded-visual.png class="mw-100"
       alt="Row of 3 images with the middle image twice as wide as the others" %}
 
-  **App source:** [sizing]({{examples}}/layout/sizing)
+  **App source:** [sizing]({{null_safety_examples}}/layout/sizing)
 
-  **App 源码:** [sizing]({{examples}}/layout/sizing)
+  **App 源码:** [sizing]({{null_safety_examples}}/layout/sizing)
 </div>
 </div>
 
-[sizing]: {{examples}}/layout/sizing
+[sizing]: {{null_safety_examples}}/layout/sizing
 
 ### Packing widgets
 
@@ -689,9 +702,9 @@ uses this property to pack the star icons together.
   {% asset ui/layout/packed.png class="border mw-100"
       alt="Row of 5 stars, packed together in the middle of the row" %}
 
-  **App source:** [pavlova]({{examples}}/layout/pavlova)
+  **App source:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 
-  **App 源码:** [pavlova]({{examples}}/layout/pavlova)
+  **App 源码:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 </div>
 </div>
 
@@ -919,9 +932,9 @@ body: Center(
 
 {{site.alert.end}}
 
-**App source:** [pavlova]({{examples}}/layout/pavlova)
+**App source:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 
-**App 源码:** [pavlova]({{examples}}/layout/pavlova)
+**App 源码:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 
 [Pavlova image]: https://pixabay.com/en/photos/pavlova
 [蛋糕图片]: https://pixabay.com/en/photos/pavlova
@@ -1102,9 +1115,9 @@ and the Flutter Gallery ([running app][], [repo][]).
 
 你可以在 [布局构建教程][] 和 [Flutter Gallery][] 中可以发现更多关于 `Container` 的例子。
 
-**App source:** [container]({{examples}}/layout/container)
+**App source:** [container]({{null_safety_examples}}/layout/container)
 
-**App 源码:** [container]({{examples}}/layout/container)
+**App 源码:** [container]({{null_safety_examples}}/layout/container)
 
 <hr>
 
@@ -1187,9 +1200,9 @@ it automatically scrolls.
 
   使用 `GridView.extent` 创建一个最大宽度为 150 像素的网格。
 
-  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
 
-  **App 源码：** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App 源码：** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1282,9 +1295,9 @@ its render box.
 
   使用 `ListView` 的业务列表，它使用了多个 `ListTile`。`Divider` 将餐厅从剧院中分隔开。
 
-  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
 
-  **App 源码：** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App 源码：** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1393,11 +1406,13 @@ widget 可以完全或者部分覆盖基础 widget。
   The `Stack` offsets the text using the `alignment` property and
   `Alignment`s.
 
-  在 `CircleAvatar` 的上面使用 `Stack` 覆盖 `Container`（在透明的黑色背景上展示它的 `Text`）。`Stack` 使用 `alignment` 属性和 `Alignment` 让文本偏移。
+  在 `CircleAvatar` 的上面使用 `Stack` 覆盖 `Container`
+  （在透明的黑色背景上展示它的 `Text`）。
+  `Stack` 使用 `alignment` 属性和 `Alignment` 让文本偏移。
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App 源码：** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
 
 </div>
 <div class="col-lg-5" markdown="1">
@@ -1407,7 +1422,8 @@ widget 可以完全或者部分覆盖基础 widget。
   Uses `Stack` to overlay a gradient to the top of the image. The gradient
   ensures that the toolbar's icons are distinct against the image.
 
-  使用 `Stack` 将渐变叠加到图片的顶部。渐变可以将工具栏的图标和图片区分开来。
+  使用 `Stack` 将渐变叠加到图片的顶部，
+  渐变可以将工具栏的图标和图片区分开来。
 
   **Dart code:** [contacts_demo.dart]({{demo}}/contacts_demo.dart)
   from the [Flutter Gallery][repo]
@@ -1531,9 +1547,9 @@ Specifying an unsupported value disables the drop shadow entirely.
   包含 3 个 ListTile 的 `Card`，并且通过被 `SizedBox` 包住来调整大小。
   `Divider` 分隔了第一个和第二个 `ListTiles`。
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App 源码：** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1639,9 +1655,9 @@ and trailing icons. `ListTile` is most commonly used in
 
   包含 3 个 `ListTiles` 的 `Card`。
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App 源码：** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1786,8 +1802,8 @@ The following resources might help when writing layout code.
 [Material Design]: {{site.material}}/design
 [Material Design palette]: {{site.material}}/guidelines/style/color.html
 [Material library]: {{api}}/material/material-library.html
-[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
-[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
+[pubspec file]: {{null_safety_examples}}/layout/pavlova/pubspec.yaml
+[`pubspec.yaml` file]: {{null_safety_examples}}/layout/row_column/pubspec.yaml
 [repo]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
 [`Row`]: {{api}}/widgets/Row-class.html
 [running app]: https://flutter.github.io/gallery/#/

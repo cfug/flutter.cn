@@ -85,7 +85,7 @@ for these changes to take effect.
 你需要重新打开已经打开的命令行提示符窗口，
 这样下次启动命令提示符时，才能访问到刚才修改的变量。
 
-{% include dart-tool.md %}
+{% include dart-tool-win.md %}
 
 ### Run `flutter doctor`
 

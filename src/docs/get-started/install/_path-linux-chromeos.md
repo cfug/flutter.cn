@@ -17,10 +17,10 @@ whenever you open a new window. For example:
 下面是更改环境变量的详细步骤，这将会对所有终端生效，且仅在该机器上生效。
 通常，每当你打开一个新的窗口，都会将一行添加到执行的文件。例如：
 
- 1. Determine the directory where you placed the Flutter SDK.
+ 1. Determine the path of your clone of the Flutter SDK.
     You need this in Step 3.
 
-    检测你存放 Flutter SDK 的文件夹，你需要在第三步用到它。
+    检测你下载或者 git clone 的 Flutter SDK 的文件夹，你需要在第三步用到它。
 
  2. Open (or create) the `rc` file for your shell.
     For example, Linux uses the Bash shell by default,
@@ -33,13 +33,13 @@ whenever you open a new window. For example:
     如果你使用不同的 shell，那么在你电脑上的文件路径以及文件名必须不同。
 
  3. Add the following line and change
-    `[PATH_TO_FLUTTER_GIT_DIRECTORY]` to be
-    the path where you cloned Flutter's git repo:
+    `[PATH_OF_FLUTTER_GIT_DIRECTORY]` to be
+    the path of your clone of the Flutter git repo:
 
     添加下面内容，并将 `[PATH_TO_FLUTTER_GIT_DIRECTORY]` 改到你 clone Flutter 的 git 仓库目录下。
 
     ```terminal
-    $ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
+    $ export PATH="$PATH:[PATH_OF_FLUTTER_GIT_DIRECTORY]/bin"
     ```
 
  4. Run `source $HOME/.<rc file>`
@@ -79,9 +79,9 @@ These instructions require administrator privileges:
 在某些情况下，你的分发可能无法长期获取使用上面提到的环境变量。
 发生这种情况时，你可以直接更改环境变量文件。但这需要管理员权限：
 
-   1. Determine the directory where you placed the Flutter SDK.
+   1. Determine the path of your clone of the Flutter SDK.
 
-      找到你存放 Flutter SDK 的目录。
+      找到你存放 Flutter SDK 的路径。
 
    2. Locate the `etc` directory at the root of the system,
       and open the `profile` file with root privileges.
@@ -100,7 +100,7 @@ These instructions require administrator privileges:
       if [ "`id -u`" -eq 0 ]; then
          PATH="..."
       else
-         PATH="/usr/local/bin:...:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
+         PATH="/usr/local/bin:...:[PATH_OF_FLUTTER_GIT_DIRECTORY]/bin"
       fi
       export PATH
       ```

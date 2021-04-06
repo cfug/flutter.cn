@@ -38,11 +38,13 @@ so: https://stackoverflow.com
 github: https://github.com
 flutter-assets: https://flutter.github.io/assets-for-api-docs/assets
 android-dev: https://developer.android.google.cn
+apple-dev: https://developer.apple.com
 codelabs: https://codelabs.flutter-io.cn
 groups: https://groups.google.com
 firebase: https://firebase.google.cn
 flutterfire: https://firebase.flutter.dev
 dartpadx-dart: https://dartpad.cn/experimental/embed-new-dart.html ## Adding the exp version for dart here.
+youtube-site: https://youtube.com
 
 defaults:
 - scope:
@@ -115,7 +117,10 @@ alert:
     <i class="fas fa-info-circle"></i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-info-circle"></i> **备忘**
+    <i class="fas fa-info-circle"></i> **提示**
+  version-note: >-
+    <aside class="alert alert-info" role="alert" markdown="1">
+    <i class="fas fa-code-branch"></i> **版本提示**
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-

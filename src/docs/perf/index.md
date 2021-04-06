@@ -7,42 +7,136 @@ tags: Flutter性能
 keywords: 性能评估,包体积,内存占用
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PKGguGUwSYE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PKGguGUwSYE" 
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+picture-in-picture" allowfullscreen></iframe>
 [Flutter performance basics](https://www.youtube.com/watch?v=PKGguGUwSYE)
 
-There are different ways to evaluate performance.
-These docs deal with the following areas
-where performance can be evaluated and improved.
-(Note that these docs are in process of being expanded.)
+[Flutter 性能入门](https://www.youtube.com/watch?v=PKGguGUwSYE)
 
-## App size
+What is performance? Why is performance important? How do I improve performance?
 
-How to measure your app's size. The smaller the size,
-the quicker it is to download.
+什么是性能？为什么性能很重要？如何才能提升性能？
 
-[Measuring your app's size][]
+Our goal is to answer those three questions (mainly the third one), and 
+anything related to them. This document should serve as the single entry 
+point or the root node of a tree of resources that addresses any questions 
+that you have about performance.
 
-{% comment %}
+我们的目标是回答这三个问题（主要是第三个）以及任何与之相关的话题。
+如果你有任何关于性能方面的问题，本文档可以作为解决你疑惑的起点。
 
-## Memory
+The answers to the first two questions are mostly philosophical, and not as 
+helpful to many developers who visit this page with speicifc
+performance issues that need to be solved. Therefore, the answers to those 
+questions are in the [appendix](/docs/perf/appendix).
 
-[Using memory wisely](/docs/perf/memory)
+前两个问题的答案比较哲学，对于正在阅读这篇文章的开发者而言，当他们需要解决特定的性能问题时，并没有什么帮助。
+所以，我们将它们放在了 [附录](/docs/perf/appendix)。
 
-## Power usage
+To improve performance, you first need metrics: some measurable numbers to
+verify the problems and improvements. In the [metrics](/docs/perf/metrics) 
+page, you'll see which metrics are currently used, and which tools and APIs 
+are available to get the metrics.
 
-How to ensure a longer battery life when running
-your app.
+为了提升性能，首先你需要一些可以量化的指标来验证问题和性能的提升。
+在 [指标](/docs/perf/metrics) 页面，你可以看到一些现有的指标，
+以及哪些工具和 API 可以用于获取这些指标。
 
-[Preserving your battery](/docs/perf/power)
+There is a list of [Frequently asked questions](/docs/perf/faq), 
+so you can find out if the questions you have or the problems you're having 
+were already answered or encountered, and whether there are existing solutions. 
+(Alternatively, you can check the Flutter GitHub issue database using the
+ [performance][performance] label.)
+ 
+这里有一个 [常见问题](/docs/perf/faq) 的列表，
+你可以查询你的问题是否出现过或者已经被解答，
+以及是否有现成的解决方案。
+（你也可以查看 GitHub issues 里含有 [性能][performance] 标签的内容。） 
 
-{% endcomment %}
+Finally, the performance issues are divided into four categories. They 
+correspond to the four labels that are used in the Flutter GitHub issue 
+database: "[perf: speed][speed]", "[perf: memory][memory]", 
+"[perf: app size][size]", "[perf: energy][energy]".
 
-## Rendering performance
+最后，性能问题可以分为四类，对应 GitHub issue 里的四个标签：
+「[流畅度][speed]」、「[内存][memory]」、「[应用大小][size]」、和 「[功耗][energy]」。
 
-Are your animations janky (not smooth)? Learn how to
+The rest of the content is organized using those four categories. (Note that
+these docs are in the process of being expanded.)
+
+其它内容均已归纳到这四个类别中。（注意：这些文档正在扩展中。）
+
+<!--
+Let's put "speed" (rendering) first as it's the most popular performance issue
+category.
+
+让我们把「流畅度」（渲染）放在第一位，因为它是最受欢迎的性能问题。
+
+-->
+## Speed
+
+## 流畅度
+
+Are your animations janky (not smooth)? Learn how to 
 evaluate and fix rendering issues.
+
+你的动画是否卡顿（不流畅）？学习如何评估和修复渲染问题。
 
 [Improving rendering performance](/docs/perf/rendering)
 
+[提高渲染性能](/docs/perf/rendering)
+
+{% comment %}
+Do your apps take a long time to open? We'll also cover the startup speed issue
+in some future pages.
+
+你的应用需要很长时间打开吗？我们将在未来的一些文章中讨论启动速度问题。
+
+{% endcomment %}
+
+
+## Memory
+
+## 内存
+
+[Using memory wisely](/docs/perf/memory)
+
+[明智地使用内存](/docs/perf/memory)
+
+## App size
+
+## 应用大小
+
+How to measure your app's size. The smaller the size, the quicker it is to 
+download.
+
+如何测量应用的体积。体积越小，下载就越快。
+
+[Measuring your app's size][]
+
+[测量应用的体积][Measuring your app's size]
+
+{% comment %}
+
+
+## Energy
+
+## 功耗
+
+How to ensure a longer battery life when running your app.
+
+当运行你的应用程序时，如何确保更久的电池续航。
+
+[Preserving your battery](/docs/perf/power)
+
+[节省电量](/docs/perf/power)
+
+{% endcomment %}
 
 [Measuring your app's size]: /docs/perf/app-size
+[speed]: https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22perf%3A+speed%22+sort%3Aupdated-asc+
+[energy]: https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22perf%3A+energy%22+sort%3Aupdated-asc+
+[memory]: https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22perf%3A+memory%22+sort%3Aupdated-asc+
+[size]: https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22perf%3A+app+size%22+sort%3Aupdated-asc+
+[performance]: https://github.com/flutter/flutter/issues?q=+label%3A%22severe%3A+performance%22

@@ -145,7 +145,7 @@ Dismissible(
 
     // Show a snackbar. This snackbar could also contain "Undo" actions.    
     // 展示一个 snackbar！这个snackbar也可以包含“撤销”动作。
-    Scaffold
+    ScaffoldMessenger
         .of(context)
         .showSnackBar(SnackBar(content: Text("$item dismissed")));
   },
@@ -187,7 +187,7 @@ Dismissible(
       items.removeAt(index);
     });
 
-    Scaffold
+    ScaffoldMessenger
         .of(context)
         .showSnackBar(SnackBar(content: Text("$item dismissed")));
   },
@@ -258,8 +258,7 @@ class MyAppState extends State<MyApp> {
                 });
 
                 // Then show a snackbar.
-                // 展示一个 snackbar！
-                Scaffold.of(context)
+                ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text("$item dismissed")));
               },
               // Show a red background as the item is swiped away.

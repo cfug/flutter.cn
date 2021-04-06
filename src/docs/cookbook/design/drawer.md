@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/design/drawer"?>
+
 In apps that use Material Design,
 there are two primary options for navigation: tabs and drawers.
 When there is insufficient space to support tabs,
@@ -72,7 +74,7 @@ In this example, create a `Scaffold` with a `drawer`:
 
 在这个例子中，我们想要创建一个带有 `drawer` 的 `Scaffold`：
 
-<!-- skip -->
+<?code-excerpt "lib/drawer.dart (DrawerStart)" replace="/null, //g"?>
 ```dart
 Scaffold(
   drawer: // Add a Drawer here in the next step.
@@ -92,12 +94,12 @@ which adheres to the Material Design spec.
 但最好还是使用 [Material Library]({{site.api}}/flutter/material/material-library.html)
 中的 `Drawer` widget，因为这样才符合 Material Design 设计规范。
 
-<!-- skip -->
+<?code-excerpt "lib/drawer.dart (DrawerEmpty)" replace="/null, //g"?>
 ```dart
 Scaffold(
   drawer: Drawer(
     child: // Populate the Drawer in the next step.
-  )
+  ),
 );
 ```
 
@@ -125,7 +127,7 @@ see the [list recipes][].
 我们将使用 [`DrawerHeader`][] 和两个 [`ListTile`][] widget 填充 `ListView`。
 有关使用 List 的更多信息，请参阅实用教程中的 [list recipes][]。
 
-<!-- skip -->
+<?code-excerpt "lib/drawer.dart (DrawerListView)"?>
 ```dart
 Drawer(
   // Add a ListView to the drawer. This ensures the user can scroll
@@ -176,14 +178,14 @@ stack. Therefore, to close the drawer, call `Navigator.pop(context)`.
 当用户打开 Drawer 时，Flutter 会将 drawer widget 覆盖在当前的导航堆栈上。
 因此，要关闭 drawer，我们可以通过调用 `Navigator.pop(context)` 来实现。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (CloseDrawer)"?>
 ```dart
 ListTile(
   title: Text('Item 1'),
   onTap: () {
-    // Update the state of the app.
+    // Update the state of the app
     // ...
-    // Then close the drawer.
+    // Then close the drawer
     Navigator.pop(context);
   },
 ),
@@ -193,7 +195,8 @@ ListTile(
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -213,7 +216,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

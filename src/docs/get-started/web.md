@@ -72,19 +72,6 @@ For more information, see the [web FAQ][].
 
 更多详细信息请参阅 [web 常见问题解答][web FAQ]。
 
-{{site.alert.note}}
-
-  Flutter has early support for running web applications, but
-  you need to be running the `beta` channel of Flutter at present.
-  If you experience a problem that hasn’t yet been reported,
-  please [file an issue][] and make sure that "web" appears in the title.
-  
-  Flutter 已经有了对 Web 应用的早期支持，
-  但你目前需要运行 Flutter 的 `beta` 频道。
-  如果在使用中发现问题，请 [发一个 Issue][file an issue] 给我们，
-  并确保标题上有 `[web]` 字样。
-{{site.alert.end}}
-
 ## Create a new project with web support
 
 ## 创建一个支持 web 的新项目
@@ -102,122 +89,39 @@ to create a new project with web support.
 
 ### 初始化
 
-Run the following commands to use the latest version of the Flutter SDK
-from the beta channel and enable web support:
-
 运行以下命令，使用最新的 beta 频道的 Flutter SDK，并开启 web 支持：
 
 ```terminal
-$ flutter channel beta
+$ flutter channel stable
 $ flutter upgrade
-$ flutter config --enable-web
 ```
 
-{% comment %}
-[PENDING: Do we really need the following note?]
-{% endcomment %}
-{{site.alert.note}}
-
-  The `flutter upgrade` command silently fails
-  when `origin` points to a personal fork.
-  To validate that `origin` points to `{{site.repo.flutter}}.git`,
-  run the following commands in the root directory
-  of your local copy of the `{{site.repo.flutter}}` repository:
-
-  这里的 `flutter upgrade` 命令会在个人 fork 情况下失效，
-  验证 origin 是否指向 "flutter/flutter" 仓库，可以通过下面命令：
-
-  ```terminal
-  $ cd <inside local copy of the flutter/flutter repo>
-  $ git remote get-url origin
-  https://github.com/flutter/flutter.git
-  ```
-
-## Enable web support
-
-## 开启 Web 支持
-
-Use the config command to enable web support:
-
-使用如下命令来开启 Web 支持：
-
-```terminal
-$ flutter config --enable-web
-```
-
-You need only run this once.
-This command modifies (or creates) the
-`~/.flutter_settings` file (on Mac/Linux)
-with the following:
-
-这个命令只需要运行一次即可，它会创建一个 `~/.flutter_settings`
-的配置文件：
-
-```shell
-{
-  "enable-web": true
-}
-```
+{{site.alert.warning}}
+  Running `flutter channel stable` replaces your current version of Flutter
+  with the stable version and can take time if your connection is slow.
+  After this, running `flutter upgrade` upgrades your install to the latest
+ `stable`.  Returning to another channel (beta, dev, or master) requires calling
+ `flutter channel <channel>` explicitly.
 {{site.alert.end}}
 
-Once web is enabled,
+If Chrome is installed,
 the `flutter devices` command outputs a `Chrome` device
 that opens the Chrome browser with your app running,
 and a `Web Server` that provides the URL serving the app.
 
-一旦开启了 Web 支持，运行 `flutter devices`
-命令会输出一个名为 `Chrome` 的设备信息。
+一旦开启了 Web 支持，运行 `flutter devices`，
+命令会输出一个名为 `Chrome` 的设备信息，
+开启一个为 Web 应用提供服务的 `Web Sever`，
+并打开 Chrome 浏览器并访问某个 URL 地址。
 
 ```terminal
 $ flutter devices
-2 connected device:
+1 connected device:
 
-Web Server • web-server • web-javascript • Flutter Tools
-Chrome     • chrome     • web-javascript • Google Chrome 81.0.4044.129
+Chrome (web) • chrome • web-javascript • Google Chrome 88.0.4324.150
 ```
 
-**After enabling web support, restart your IDE.**
-You should now see **Chrome (web)** and
-**Web Server (web)** in the device pulldown.
-
-**在开启了 Web 支持后，需要重启 IDE**。
-你现在可以在设备下拉列表中看到 **Chrome (web)**。
-
-The `flutter run` command launches the application using the
-[development compiler][] in a Chrome browser.
-The name of the web device is currently `chrome`,
-but this doesn't need to be specified
-if there are no other devices attached.
-
-运行 `flutter run` 命令将使用 Chrome 浏览器的
-[development compiler][] 来启动应用程序。
-当前连接的 Web 设备是 `chrome`，
-要在这个设备运行的话，无需特别声明使用它（当没有其他设备的时候）。
-
-## Add web support to an existing app
-
-## 对已有的应用添加 Web 支持
-
-To add web support to an existing project,
-run the following command in a terminal
-from the top of the project package:
-
-对一个已有的工程添加 Web 支持，
-需要在工程根目录下输入下面的命令：
-
-```terminal
-flutter create .
-```
-{{site.alert.note}}
-
-  You only need to execute `flutter config --enable-web` once.
-  You can always check the status of your configuration using
-  the no-argument `flutter config` command.
-  
-  这些配置部分的步骤和工作，
-  你只需要运行一次 `flutter config --enable-web` 就好。
-  你可以随时通过 `flutter config` 来查看你的配置内容。
-{{site.alert.end}}
+In your IDE, you should see **Chrome (web)** in the device pulldown.
 
 ### Create and run
 
@@ -226,26 +130,9 @@ flutter create .
 Creating a new project with web support is no different
 than [creating a new Flutter project][] for other platforms.
 
-创建一个支持 Web 的 Flutter 工程与在支持其他平台的过程没有区别，
-请查看文档 [创建一个 Flutter 工程][creating a new Flutter project]。
-
-Once you've configured your environment for web
-support, you can create and run a web app either
-in the IDE or from the command line.
-
-当你配置好对 Web 的支持后，你可以通过 IDE 或者命令行
-创建和运行一个 Web 应用。
-
 #### IDE
 
-#### 集成开发环境 (IDE) 配置
-
-After you've configured your environment to support
-the web, make sure you restart the IDE if it was
-already running.
-
-在你配置好支持 Web 应用的环境后，
-如果 IDE 已经在运行了，请重启一下它。
+### 集成开发环境 (IDE) 配置
 
 Create a new app in your IDE and it automatically
 creates iOS, Android, and web versions of your app.
@@ -299,13 +186,25 @@ The `flutter run` command launches the application using the
 [开发编译器 dartdevc][development compiler]
 在 Chrome 浏览器中启动应用程序。
 
+{{site.alert.warning}}
+
+  **Hot reload is not supported in a web browser**
+  Currently, Flutter supports **hot restart**,
+  but not **hot reload** in a web browser.
+
+  **尚未支持在浏览器使用热重载**
+  在浏览器里调试的适合，Flutter 支持 **热重启**，
+  尚不支持 **热重载**。
+
+{{site.alert.end}}
+
 ### Build
 
 ### 使用 build 命令
 
 Run the following command to generate a release build:
 
-运行下面命令以生成发行构建：
+运行下面命令以生成发行版构建：
 
 ```terminal
 flutter build web
@@ -328,10 +227,11 @@ Release 构建产物使用 [dart2js][]（不是 dartdevc）
 包括需要一起提供的 `assets` 资源文件。
 
 You can also include `--web-renderer html`  or `--web-renderer canvaskit` to
-select between the HTML or CanvasKit renderers, respsectively. For more
+select between the HTML or CanvasKit renderers, respectively. For more
 information, see [Web renderers][].
 
-你也可以使用 `--web-renderer html` 或 `--web-renderer canvaskit` 来切换 HTML 或 CanvasKit 渲染器。
+你也可以使用 `--web-renderer html` 或
+`--web-renderer canvaskit` 来切换 HTML 或 CanvasKit 渲染器。
 更多信息请参阅[网页渲染器][Web renderers]。
 
 For more information, see
@@ -344,12 +244,13 @@ For more information, see
 
 ## 向现有应用添加 Web 支持
 
-To add web support to an existing project,
-run the following command in a
-terminal from the root project directory:
+To add web support to an existing project
+created using a previous version of Flutter,
+run the following command
+from your project's directory:
 
 为了向现有应用添加 Web 支持，
-请在项目根目录下，在终端运行以下命令：
+请在项目目录下，在终端运行以下命令：
 
 ```terminal
 $ flutter create .
@@ -365,10 +266,10 @@ $ flutter create .
 [setting up an editor]: /docs/get-started/editor
 [web FAQ]: /docs/development/platform-integration/web
 [Chrome]: https://www.google.com/chrome/
-[Chrome-CN]: https://www.google.com/chrome/
+[Chrome-CN]: https://www.google.cn/chrome/
 [Flutter SDK]: https://flutter.dev/docs/get-started/install
 [Android Studio]: https://developer.android.com/studio
-[Android Studio CN]: https://developer.android.com/studio
+[Android Studio CN]: https://developer.android.google.cn/studio
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [Visual Studio Code]: https://code.visualstudio.com/
 [Web renderers]: /docs/development/tools/web-renderers

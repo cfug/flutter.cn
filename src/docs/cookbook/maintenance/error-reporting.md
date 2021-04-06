@@ -53,28 +53,20 @@ the following steps:
 上报给异常监控报警平台 [Sentry][]：
 
   1. Get a DSN from Sentry.
-     
+
      从 Sentry 平台获取 DSN
-
-  2. Import the Sentry package.
      
-     导入 Sentry 包
+  2. Import the Flutter Sentry package
 
-  3. Create a `SentryClient`.
+     导入 Sentry package
 
-     创建 `SentryClient`
+  3. Initialize the Sentry SDK
 
-  4. Create a function to report errors.
+     初始化 Sentry SDK
 
-     创建上报异常的函数
+  4. Capture errors programmatically
 
-  5. Catch and report Dart errors.
-
-     捕获并上报 Dart 异常
-
-  6. Catch and report Flutter errors.
-
-     捕获并上报 Flutter 异常
+     捕获并上报异常
 
 ## 1. Get a DSN from Sentry
 
@@ -97,183 +89,99 @@ To get a DSN, use the following steps:
 
      登录账户
 
-  3. Create a new app.
+  3. Create a new Flutter project.
 
-     在 Sentry 控制台创建一个新的应用
+     新建一个 Flutter 工程
 
-  4. Copy the DSN.
+  4. Copy the code snippet that includes the DSN.
 
-     复制 DSN
+     复制包含 DSN 的代码片段
 
 ## 2. Import the Sentry package
 
 ## 2. 导入 Sentry 包
 
-Import the [`sentry`][] package into the app.
+Import the [`sentry_flutter`][] package into the app.
 The sentry package makes it easier to send
 error reports to the Sentry error tracking service.
 
-导入 [`sentry`][] package 到应用中，
-sentry 会让异常上报更为方便。
+导入 [`sentry_flutter`][] package 到应用中，
+这个 package 能更方便的将错误报告发送给
+Sentry 的错误追踪系统。
 
 ```yaml
 dependencies:
-  sentry: <latest_version>
+  sentry_flutter: <latest_version>
 ```
 
-## 3. Create a `SentryClient`
+## 3. Initialize the Sentry SDK
 
 ## 3. 创建 `SentryClient`
 
-Create a `SentryClient`. Use the `SentryClient` to send
-error reports to the sentry service.
+Initialize the SDK to capture different unhandled errors automatically:
 
-创建 `SentryClient` 用于将异常日志上报给 sentry 平台。
-
-<!-- skip -->
-```dart
-final SentryClient _sentry = SentryClient(dsn: "App DSN goes Here");
-```
-
-## 4. Create a function to report errors
-
-## 4. 创建上报异常的函数
-
-With Sentry set up, you can begin to report errors. Since you don't want to
-report errors to Sentry during development, first create a function that
-lets you know whether you're in debug or production mode.
-
-Sentry 的相关内容都设置好后，就可以开始上报异常了。
-通常在开发环境下可能不需要把异常上报到 Sentry，
-所以可以先创建一个函数来区分当前环境是开发环境还是生产环境。
+初始化 SDK 来自动捕获不同的未处理的错误。
 
 <!-- skip -->
 ```dart
-bool get isInDebugMode {
-  // Assume you're in production mode.
-  bool inDebugMode = false;
+import 'package:flutter/widgets.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
-  // Assert expressions are only evaluated during development. They are ignored
-  // in production. Therefore, this code only sets `inDebugMode` to true
-  // in a development environment.
-  assert(inDebugMode = true);
-
-  return inDebugMode;
+Future<void> main() async {
+  await SentryFlutter.init(
+    (options) => options.dsn = 'https://example@sentry.io/example',
+    appRunner: () => runApp(MyApp()),
+  );
 }
 ```
 
-Next, use this function in combination with the `SentryClient` to report
-errors when the app is in production mode.
+Alternatively, you can pass the DSN to Flutter using the `dart-define` tag:
 
-然后，用这个函数结合 `SentryClient` 就可以实现生产环境的异常上报了。
+另外，你也可以使用 `dart-define` 标记将 DSN 传递给 Flutter。
+
+<!-- skip -->
+```sh
+--dart-define SENTRY_DSN=https://example@sentry.io/example
+```
+
+### What does that give me?
+
+### 这番操作都发生了什么
+
+This is all you need for Sentry to capture unhandled errors in Dart and native layers.  
+This includes Swift, Objective-C, C, and C++ on iOS, and Java, Kotlin, C, and C++ on Android.
+
+使用 Sentry 捕获 Dart 和原生中未处理的错误，以上这些操作就足够了。
+这包括 iOS 上的 Swift、Objective-C、C 和 C++，
+以及 Android 上的 Java、Kotlin、C 和 C++。
+
+## 4. Capture errors programatically
+
+## 4. 捕获并上报异常
+
+Besides the automatic error reporting that Sentry generates by
+importing and initializing the SDK,
+you can use the API to report errors to Sentry:
+
+除了自动初始化 Sentry SDK 来捕获和上报错误之外，
+你还可以通过 API 来报告错误：
 
 <!-- skip -->
 ```dart
-Future<void> _reportError(dynamic error, dynamic stackTrace) async {
-  // Print the exception to the console.
-  print('Caught error: $error');
-  if (isInDebugMode) {
-    // Print the full stacktrace in debug mode.
-    print(stackTrace);
-  } else {
-    // Send the Exception and Stacktrace to Sentry in Production mode.
-    _sentry.captureException(
-      exception: error,
-      stackTrace: stackTrace,
-    );
-  }
-}
+await Sentry.captureException(exception, stackTrace: stackTrace);
 ```
 
-## 5. Catch and report Dart errors
+The complete API is available on [pub.dev][].
 
-## 5. 捕获并上报 Dart 异常
+完整的 API 可在 [pub.dev][] 上阅读。
 
-Now that you have a function to report errors depending on the environment,
-you need a way to capture Dart errors.
+## Learn more
 
-现在已经有了一个能够根据环境上报异常的函数了，
-接着还需要知道如何去捕获 Dart 异常。 
+## 了解更多
 
-For this task, run your app inside a custom [`Zone`][].
-Zones establish an execution context for the code.
-This provides a convenient way to capture all errors
-that occur within that context by providing an `onError()`
-function.
+Extensive documentation about using the Sentry SDK can be found on [Sentry's site][].
 
-为了实现这一目的，可以把应用运行在一个自定义的 [`Zone`][] 里面。
-Zones 为代码建立执行上下文环境。在这个上下文环境中，
-所有发生的异常在抛出 `onError` 时都能够很容易地被捕获到。
-
-In this case, run the app in a new `Zone` and capture all errors.
-With Flutter older than 1.17, you can do that by
-providing an `onError()` callback.
-
-在下面的例子中，将会把应用运行在一个新的 `Zone` 里面并捕获所有错误，
-在 1.17 之前的 Flutter 版本里，你可以通过 `onError()` 回调捕获所有的异常。
-
-<!-- skip -->
-```dart
-runZoned<Future<void>>(() async {
-  runApp(CrashyApp());
-}, onError: (error, stackTrace) {
-  // Whenever an error occurs, call the `_reportError` function. This sends
-  // Dart errors to the dev console or Sentry depending on the environment.
-  _reportError(error, stackTrace);
-});
-```
-
-With Flutter 1.17 which includes Dart 2.8, use `runZonedGuarded` instead:
-
-在包含了 Dart 2.8 的 Flutter 1.17 中，使用 `runZonedGuarded`：
-
-<!-- skip -->
-```dart
-runZonedGuarded<Future<void>>(() async {
-  runApp(CrashyApp());
-}, (Object error, StackTrace stackTrace) {
-  // Whenever an error occurs, call the `_reportError` function. This sends
-  // Dart errors to the dev console or Sentry depending on the environment.
-  _reportError(error, stackTrace);
-});
-```
-
-## 6. Catch and report Flutter errors
-
-## 6. 捕获并上报 Flutter 异常
-
-In addition to Dart errors, Flutter can throw errors such as
-platform exceptions that occur when calling native code. Be sure to
-capture and report these types of errors as well.
-
-除了 Dart 异常，Flutter 也能抛出其他的异常，
-比如调用原生代码发生的平台异常。这种类型的异常也同样是需要上报的。
-
-To capture Flutter errors,
-override the [`FlutterError.onError`][] property.
-If you're in debug mode, use a convenience function
-from Flutter to properly format the error.
-If you're in production mode, send the error to the
-`onError` callback defined in the previous step.
-
-为了捕获 Flutter 异常，需要重写 [`FlutterError.onError`][] 属性。
-在开发环境下，可以将异常格式化输出到控制台。
-在生产环境下，可以把异常传递给上个步骤中的 `onError` 回调。
-
-<!-- skip -->
-```dart
-// This captures errors reported by the Flutter framework.
-FlutterError.onError = (FlutterErrorDetails details) {
-  if (isInDebugMode) {
-    // In development mode, simply print to console.
-    FlutterError.dumpErrorToConsole(details);
-  } else {
-    // In production mode, report to the application zone to report to
-    // Sentry.
-    Zone.current.handleUncaughtError(details.exception, details.stack);
-  }
-};
-```
+更多关于使用 Sentry SDK 的文档可以在 [其官网][Sentry's site] 查看。
 
 ## Complete example
 
@@ -287,8 +195,8 @@ see the [Crashy][] example app.
 
 [Crashy]: {{site.github}}/flutter/crashy
 [Create an account with Sentry]: https://sentry.io/signup/
-[`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/
-[`sentry`]: {{site.pub-pkg}}/sentry
-[`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
+[`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
+[pub.dev]: {{site.pub-pkg}}/documentation/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
+[Sentry's site]: https://docs.sentry.io/platforms/flutter/

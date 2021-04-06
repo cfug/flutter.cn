@@ -56,7 +56,8 @@ Add `integration_test`, `flutter_test`, and optionally `flutter_driver` to your
 pubspec.yaml file:
 
 ```yaml
-integration_test: ^1.0.0
+integration_test:
+  sdk: flutter
 flutter_test:
   sdk: flutter
 flutter_driver:
@@ -105,7 +106,7 @@ integration_test/
 test/
   # Other unit tests go here.
 test_driver/
-  integration_test_driver.dart
+  integration_test.dart
 ```
 
 See also:
@@ -120,13 +121,13 @@ These tests can be launched with the `flutter drive` command, where
 
 ```bash
 flutter drive \
-  --driver=test_driver/integration_test_driver.dart \
+  --driver=test_driver/integration_test.dart \
   --target=integration_test/foo_test.dart \
   -d <DEVICE_ID>
 ```
 
 This runs the tests in `foo_test.dart` via the adapter in
-`test_driver/integration_test_driver.dart`.
+`test_driver/integration_test.dart`.
 
 
 ### Running in a browser 
@@ -142,7 +143,7 @@ In a separate process, run `flutter_drive`:
 
 ```
 flutter drive \
-  --driver=test_driver/integration_test_driver.dart \
+  --driver=test_driver/integration_test.dart \
   --target=integration_test/counter_test.dart \
   -d web-server
 ```
@@ -261,11 +262,9 @@ import 'package:integration_test/integration_test.dart';
 import 'package:integration_test_example/main.dart' as app;
 
 void main() {
-  group('end-to-end test', () {
-    setUpAll(() async {
-      IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-    });
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
+  group('end-to-end test', () {
     testWidgets('tap on the floating action button; verify counter',
         (WidgetTester tester) async {
       app.main();

@@ -1,11 +1,18 @@
 ---
 title: Scrollable AlertDialog
-title: 可滚动的 AlertDialog
+title: 可滚动的 AlertDialog (不再弃用)
 description: AlertDialog should scroll automatically when it overflows.
 description: 当 AlertDialog 边界溢出时将会自动变为可滚动的。
 ---
 
 ## Summary
+
+{{site.alert.note}}
+  `AlertDialog.scrollable` is no longer deprecated because there is
+  no backwards-compatible way to make `AlertDialog` scrollable by default.
+  Instead, the parameter will remain and you can set `scrollable`
+  to true if you want a scrollable `AlertDialog`.
+{{site.alert.end}}
 
 An `AlertDialog` now scrolls automatically when it overflows.
 

@@ -6,9 +6,9 @@ description: 如何实现涟漪动画。
 tags: cookbook, 实用教程, 手势操作
 keywords: 动画,涟漪效果
 prev:
-  title: Focus and text fields
-  title: 焦点和文本框
-  path: /docs/cookbook/forms/focus
+  title: Retrieve the value of a text field
+  title: 获取文本框的输入值
+  path: /docs/cookbook/forms/retrieve-input
 next:
   title: Handle taps
   title: 捕获和处理点击动作
@@ -17,6 +17,12 @@ js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
 ---
+
+{% comment %}
+prev:
+  title: Focus and text fields
+  path: /docs/cookbook/forms/focus
+{% endcomment %}
 
 Widgets that follow the Material Design guidelines display
 a ripple animation when tapped.
@@ -33,12 +39,13 @@ Flutter 提供了 [`InkWell`][] widget 来实现这个功能。
 
   1. Create a widget that supports tap.
 
-     创建一个想要点击的 Widget
+     创建一个想要点击的 widget；
 
   2. Wrap it in an `InkWell` widget to manage tap callbacks and
      ripple animations.
 
-     用 `InkWell` Widget 包裹它，并设置回调函数， 就可以显示涟漪动画了。
+     用 `InkWell` widget 包裹它，并设置回调函数，
+     就可以显示涟漪动画了。
 
 <!-- skip -->
 ```dart
@@ -46,7 +53,7 @@ Flutter 提供了 [`InkWell`][] widget 来实现这个功能。
 InkWell(
   // When the user taps the button, show a snackbar.
   onTap: () {
-    Scaffold.of(context).showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text('Tap'),
     ));
   },
@@ -101,7 +108,7 @@ class MyButton extends StatelessWidget {
     return InkWell(
       // When the user taps the button, show a snackbar.
       onTap: () {
-        Scaffold.of(context).showSnackBar(SnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text('Tap'),
         ));
       },

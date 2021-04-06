@@ -934,7 +934,7 @@ body: Center(
 
 **App source:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 
-**App 源码:** [pavlova]({{examples}}/layout/pavlova)
+**App 源码:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 
 [Pavlova image]: https://pixabay.com/en/photos/pavlova
 [蛋糕图片]: https://pixabay.com/en/photos/pavlova

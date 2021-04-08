@@ -6,6 +6,8 @@ tags: Flutter性能
 keywords: 卡顿
 ---
 
+{% include performance.md %}
+
 If the animations on your mobile app appear to be janky,
 but only on the first run, you can _warm up_ the
 shader captured in the Skia Shader Language (SkSL) for a

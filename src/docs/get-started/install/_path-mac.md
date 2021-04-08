@@ -20,10 +20,10 @@ whenever you open a new window. For example:
 基本上方法都是在某一个文件中增加一句命令，
 让它在每次新的命令行窗口打开时都执行一遍。比如：
 
- 1. Determine the directory where you placed the Flutter SDK.
-    You will need this in Step 3.
+ 1. Determine the path of your clone of the Flutter SDK.
+    You need this in Step 3.
 
-    首先决定你想要将 Flutter SDK 放置在哪一个目录内，
+    首先决定你想要将 Flutter SDK 下载或者通过 `git clone` 命令到哪一个目录内，
     获取并记录这个目录的路径，你将要在第 3 步中用到它。
 
  2. Open (or create) the `rc` file for your shell.
@@ -43,14 +43,14 @@ whenever you open a new window. For example:
     请知晓，如果你使用不同的 shell，文件目录或文件名可能会有所不同。
 
  3. Add the following line and change
-    `[PATH_TO_FLUTTER_GIT_DIRECTORY]` to be
-    the path where you cloned Flutter's git repo:
+    `[PATH_OF_FLUTTER_GIT_DIRECTORY]` to be
+    the path of your clone of the Flutter git repo:
 
     在文件中增加下列这行命令，并将其中的 
-    `[PATH_TO_FLUTTER_GIT_DIRECTORY]` 更改为你第一步获取到的路径：
+    `[PATH_OF_FLUTTER_GIT_DIRECTORY]` 更改为你第一步获取到的路径：
 
     ```terminal
-    $ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
+    $ export PATH="$PATH:[PATH_OF_FLUTTER_GIT_DIRECTORY]/bin"
     ```
 
  4. Run `source $HOME/.<rc file>`

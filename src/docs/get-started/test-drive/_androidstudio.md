@@ -6,9 +6,9 @@
 
 {% include_relative _web-app.md  %}
 
- 1. Open the IDE and select **Start a new Flutter project**.
+ 1. Open the IDE and select **Create New Flutter Project**.
 
-    打开 IDE，选择 **新 Flutter 项目 (Start a new Flutter project)**.
+    打开 IDE，选择 **新 Flutter 项目 (Create New Flutter Project)**.
     
  1. Select **Flutter Application** as the project type. Then click **Next**.
 

@@ -32,9 +32,9 @@ This page covers the following topics:
 
   [添加启动图标](#adding-a-launcher-icon)
   
-* [Enabling Material Components](#material-components)
+* [Enabling Material Components](#enabling-material-components)
 
-  [启用 Material 组件](#material-components)
+  [启用 Material 组件](#enabling-material-components)
 
 * [Signing the app](#signing-the-app)
 
@@ -74,6 +74,19 @@ This page covers the following topics:
 
   [安卓发布常见问题](#android-release-faq)
 
+{{site.alert.note}}
+
+   Throughout this page, `<your app dir>` refers to 
+   the directory that your application is in. While following
+   these instructions, substitute `<your app dir>` with 
+   your app's directory.
+
+   在整个页面中，`<your app dir>` 是指
+   您的应用程序所处的目录。同时关注
+   这些说明，替换 `<your app dir>` 为
+   您的应用程序的目录。
+
+{{site.alert.end}}
 
 ## Adding a launcher icon
 
@@ -95,16 +108,19 @@ Alternatively, you can do it manually using the following steps:
    
    查看 [Material Design Product Icons][launchericons] 指南中图标设计部分。
 
-1. In the `<app dir>/android/app/src/main/res/` directory,
-   place your icon files in folders named using [configuration qualifiers][].
-   The default `mipmap-` folders demonstrate the correct naming convention.
+1. In the `<your app dir>/android/app/src/main/res/` directory,
+   place your icon files in folders named using
+   [configuration qualifiers][].
+   The default `mipmap-` folders demonstrate the correct
+   naming convention.
    
    在 `<app dir>/android/app/src/main/res/` 目录下，
    把我们的图标文件放在以 [配置限定符][] 命名的文件夹中。
    类似默认的 `mipmap-` 文件夹这样的命名方式。
 
-1. In `AndroidManifest.xml`, update the [`application`][applicationtag]
-   tag's `android:icon` attribute to reference icons from the previous
+1. In `AndroidManifest.xml`, update the
+   [`application`][applicationtag] tag's `android:icon`
+   attribute to reference icons from the previous
    step (for example,
    `<application android:icon="@mipmap/ic_launcher" ...`).
    
@@ -244,7 +260,7 @@ don't check it into public source control!**
 
 ### 从 app 中引用密钥库
 
-Create a file named `<app dir>/android/key.properties`
+Create a file named `<your app dir>/android/key.properties`
 that contains a reference to your keystore:
 
 创建一个名为 `<app dir>/android/key.properties` 的文件，它包含了密钥库位置的定义：
@@ -271,7 +287,7 @@ storeFile=<密钥库的位置，e.g. /Users/<用户名>/key.jks>
 
 
 Configure signing for your app by editing the
-`<app dir>/android/app/build.gradle` file.
+`<your app dir>/android/app/build.gradle` file.
 
 通过编辑 `<app dir>/android/app/build.gradle` 文件来为我们的 app 配置签名：
 
@@ -477,8 +493,9 @@ flag to `flutter build apk` or `flutter build appbundle`.
 
 ## 检查 app manifest 文件
 
-Review the default [App Manifest][manifest] file, `AndroidManifest.xml`,
-located in `<app dir>/android/app/src/main` and verify that the values
+Review the default [App Manifest][manifest] file,
+`AndroidManifest.xml`,
+located in `<your app dir>/android/app/src/main` and verify that the values
 are correct, especially the following:
 
 检查位于 `<app dir>/android/app/src/main` 的默认 [App Manifest][manifest] 
@@ -511,7 +528,7 @@ are correct, especially the following:
 ## 检查构建配置
 
 Review the default [Gradle build file][gradlebuild],
-`build.gradle`, located in `<app dir>/android/app` and
+`build.gradle`, located in `<your app dir>/android/app` and
 verify the values are correct, especially the following
 values in the `defaultConfig` block:
 
@@ -640,10 +657,10 @@ From the command line:
 
 使用如下命令：
 
-1. Enter `cd <app dir>`<br>
+1. Enter `cd <your app dir>`<br>
    (Replace `<app dir>` with your application's directory.)
    
-   运行 `cd <app dir>`。（将 `<app dir>` 替换为我们 app 的目录）。
+   运行 `cd <your app dir>`。（将 `<app dir>` 替换为我们 app 的目录）。
    
 1. Run `flutter build appbundle`<br>
    (Running `flutter build` defaults to a release build.)
@@ -652,7 +669,7 @@ From the command line:
    (运行 `flutter build` 默认构建一个发布版本。)
 
 The release bundle for your app is created at
-`<app dir>/build/app/outputs/bundle/release/app.aab`.
+`<your app dir>/build/app/outputs/bundle/release/app.aab`.
 
 你的应用的 release bundle 会被创建到
 `<app dir>/build/app/outputs/bundle/release/app.aab`.
@@ -733,10 +750,10 @@ From the command line:
 
 使用如下命令：
 
-1. Enter `cd <app dir>`<br>
+1. Enter `cd <your app dir>`<br>
    (Replace `<app dir>` with your application's directory.)
    
-   `cd <app dir>` （将 `<app dir>` 替换为我们 app 的目录）。
+   `cd <your app dir>` （将 `<app dir>` 替换为我们 app 的目录）。
    
 1. Run `flutter build apk --split-per-abi`<br>
    (The `flutter build` command defaults to `--release`.)
@@ -747,9 +764,9 @@ This command results in three APK files:
 
 这个命令会生成三个 APK 文件：
 
-* `<app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
-* `<app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
-* `<app dir>/build/app/outputs/apk/release/app-x86_64-release.apk`
+* `<your app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
+* `<your app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
+* `<your app dir>/build/app/outputs/apk/release/app-x86_64-release.apk`
 
 Removing the `--split-per-abi` flag results in a fat APK that contains
 your code compiled for _all_ the target ABIs. Such APKs are larger in
@@ -780,6 +797,10 @@ From the command line:
 
    `cd <app dir>`，`<app dir>` 是我们 app 的目录。
    
+1. Enter `cd <your app dir>`.
+
+   输入 `cd <your app dir>`。
+
 1. Run `flutter install`.
 
    运行 `flutter install`。

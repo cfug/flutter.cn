@@ -7,9 +7,10 @@ tags: Flutter教程,Flutter起步,Flutter入门
 keywords: Flutter iOS,iOS,用Flutter开发iOS,Cupertino
 ---
 
-This document is for iOS developers looking to apply their existing iOS
-knowledge to build mobile apps with Flutter. If you understand the
-fundamentals of the iOS framework then you can use this document as a
+This document is for iOS developers looking to apply
+their existing iOS knowledge to build mobile apps with Flutter.
+If you understand the fundamentals of the iOS framework
+then you can use this document as a
 way to get started learning Flutter development.
 
 这篇文章是为那些想将已有的 iOS 开发经验运用到 Flutter 开发中的 iOS 开发者所作。
@@ -2837,7 +2838,7 @@ plugin documentation.
 [Animations overview]: /docs/development/ui/animations
 [Animations tutorial]: /docs/development/ui/animations/tutorial
 [Apple's iOS design language]: https://developer.apple.com/design/resources
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 [arb]: {{site.github}}/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`cloud_firestore`]: {{site.pub-pkg}}/cloud_firestore

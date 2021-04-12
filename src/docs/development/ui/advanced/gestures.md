@@ -301,7 +301,7 @@ drag.  Similarly, if the user moves more than a certain number
 of logical pixels vertically, the vertical recognizer declares victory.
 
 比如，当纵向拖动和横向拖动需要处理消歧，
-当指南针下落事件发生时，纵向和横向识别器都会进入竞技场，
+当指针下落事件发生时，纵向和横向识别器都会进入竞技场，
 观测指针移动事件。如果用户在横向上移动超过了特定像素，
 横向识别器会宣告胜利，手势也会被当作横向拖动处理。
 同样的，如果用户在纵向上移动超过了特定的像素，纵向识别器会宣告胜利。

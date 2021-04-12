@@ -8,8 +8,11 @@ keywords: Flutter inspector,widget 树
 ---
 
 {{site.alert.note}}
+
   The inspector works with all Flutter applications.
+  
   Flutter inspector 适用于所有 Flutter 应用。
+  
 {{site.alert.end}}
 
 ## What is it?
@@ -31,11 +34,11 @@ Flutter inspector 不仅可以帮助你可视化和查看 Flutter widget 树，�
 
 * understanding existing layouts
 
-* 了解现有布局
+  了解现有布局
 
 * diagnosing layout issues
 
-* 诊断布局问题
+  诊断布局问题
 
 ![Screenshot of the Flutter inspector window]({% asset tools/devtools/inspector_screenshot.png @path %}){:width="100%"}
 
@@ -51,6 +54,7 @@ tab on the DevTools toolbar.
 然后点击 DevTools 工具栏上的 **Flutter inspector** 选项打开调试面板。
 
 {{site.alert.note}}
+
   You can still access the Flutter inspector directly from
   Android Studio/IntelliJ, but you might prefer the
   more spacious view when running it from DevTools
@@ -162,7 +166,7 @@ You might also find the following step-by-step article useful:
 
 * [How to debug layout issues with the Flutter Inspector][debug-article]
 
-* [如何使用 Flutter Inspector 调试布局问题][debug-article]
+  [如何使用 Flutter Inspector 调试布局问题][debug-article]
 
 [debug-article]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 

@@ -1,3 +1,8 @@
+---
+title: Flutter Engage China 开发者常见问题解答 | 上篇
+toc: true
+---
+
 ![](https://devrel.andfun.cn/devrel/posts/2021/04/84565efef718e.jpg){:max-width="90%"}
 
 再次感谢大家对 [Flutter Engage China 活动](https://flutter.cn/posts/flutter-engage-china-event-recap) 的关注和积极参与！我们在活动前后收到了很多来自开发者的反馈和问题，Flutter 团队和演讲嘉宾在直播 Q&A 环节中也针对部分问题在第一时间给出回复。现在我们将一些开发者关心的问题和回复整理出来分享给大家，希望对您有所帮助。由于问题数量较多，我们会分为上下两期发布。您也可以观看 Flutter Engage China 视频回顾精彩内容:
@@ -74,4 +79,4 @@ Ubuntu 则更方便了一些，提供了一个官方的 Flutter 安装工具。�
 
 ・・・
 
-以上就是 Flutter Engage China 开发者常见问题解答 (上篇) 的内容，也请大家继续关注即将到来的下篇内容。
+以上就是 Flutter Engage China 开发者常见问题解答 (上篇) 的内容，也请大家继续关注下篇内容。

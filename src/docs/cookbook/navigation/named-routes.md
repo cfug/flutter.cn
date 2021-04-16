@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/named_routes"?>
+
 In the [Navigate to a new screen and back][] recipe,
 you learned how to navigate to a new screen by creating a new route and
 pushing it to the [`Navigator`][].
@@ -76,7 +78,10 @@ button that navigates back to the first.
 第一个界面将包含一个跳转到第二个界面的按钮，
 第二个界面将包含一个跳转回第一个界面的按钮。
 
+<?code-excerpt "lib/main_original.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -135,9 +140,13 @@ to build when navigating to those routes.
 `routes` 属性定义了所有可用的命名路由，
 以及当我们跳转到这些路由时应该构建的 widgets。
 
-<!-- skip -->
+{% comment %}
+RegEx removes the trailing comma
+{% endcomment %}
+<?code-excerpt "lib/main.dart (MaterialApp)" replace="/,$//g"?>
 ```dart
 MaterialApp(
+  title: 'Named Routes Demo',
   // Start the app with the "/" named route. In this case, the app starts
   // on the FirstScreen widget.
   
@@ -153,7 +162,7 @@ MaterialApp(
     // 当我们跳转到“/second”时，构建 SecondScreen Widget（When we navigate to the "/second" route, build the SecondScreen Widget）
     '/second': (context) => SecondScreen(),
   },
-);
+)
 ```
 
 {{site.alert.warning}}
@@ -182,7 +191,10 @@ callback:
 在 `FirstScreen` widget 的 `build()` 方法中，
 我们将更新 `onPressed()` 回调：
 
-<!-- skip -->
+{% comment %}
+RegEx removes the trailing comma
+{% endcomment %}
+<?code-excerpt "lib/main.dart (PushNamed)" replace="/,$//g"?>
 ```dart
 // Within the `FirstScreen` widget
 // 在 `FirstScreen` Widget中（Within the `FirstScreen` Widget）
@@ -203,7 +215,10 @@ To navigate back to the first screen, use the
 为了能够跳转回第一个页面，
 我们可以使用 [`Navigator.pop()`][] 方法。
 
-<!-- skip -->
+{% comment %}
+RegEx removes the trailing comma
+{% endcomment %}
+<?code-excerpt "lib/main.dart (Pop)" replace="/,$//g"?>
 ```dart
 // Within the SecondScreen widget
 // 在 SecondScreen Widget 中（Within the SecondScreen Widget）
@@ -221,7 +236,8 @@ onPressed: () {
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() {
@@ -252,12 +268,13 @@ class FirstScreen extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Launch screen'),
+          // Within the `FirstScreen` widget
           onPressed: () {
             // Navigate to the second screen using a named route.
             // 使用命名路由跳转到第二个界面（Navigate to the second screen using a named route）
             Navigator.pushNamed(context, '/second');
           },
+          child: Text('Launch screen'),
         ),
       ),
     );
@@ -273,6 +290,7 @@ class SecondScreen extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
+          // Within the SecondScreen widget
           onPressed: () {
             // Navigate back to the first screen by popping the current route
             // off the stack.

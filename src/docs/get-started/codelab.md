@@ -27,6 +27,11 @@ diff2html: true
   这篇 codelab 将带你初体验移动端 Flutter 应用开发。
   你也许更想尝试 [编写你的第一个 Flutter 网页应用][codelab-web]。
   
+  **Note that if you have [enabled web][],
+  the completed app just works on all of these devices!**
+
+  **提示：如果你已经 [启用 web][enabled web]，你的应用可以在这里面的所有设备上运行。
+
 {{site.alert.end}}
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
@@ -160,11 +165,36 @@ The animated GIF shows how the app works at the completion of part 1.
     
 {{site.alert.end}}
 
+Every Flutter app you
+create also compiles for the web. In your IDE under
+the **devices** pulldown, or at the command line
+using `flutter devices`, you should now see **Chrome**
+and **Web server** listed. The **Chrome** device
+automatically starts Chrome. The **Web server**
+starts a server that hosts the app so that you can
+load it from any browser. Use the Chrome device during
+development so that you can use DevTools,
+and the web server when you want to test on
+other browsers. For more information,
+see [Building a web application with Flutter][]
+and [Write your first Flutter app on the web][codelab-web].
+
+任何一个 Flutter 的项目都可以编译为 web 应用。
+你可以在 IDE 中打开 **devices** 选择器，
+或者是在命令行中输入 `flutter devices`，
+这样你就可以看到 **Chrome** 以及 **Web server** 选项卡。
+**Chrome** 设备将会自动打开 Chrome。
+**Web server** 则会运行一个服务程式托管应用，这样你就可以在任意浏览器加载它。
+在开发时请使用 Chrome 进行调试，以使用 DevTools。
+当你想在其他浏览器测试时，请使用 web server。
+更多详细信息请查看 [使用 Flutter 构建 web 应用][Building a web application with Flutter]，
+以及 [编写你的第一个 Flutter web 应用程式][codelab-web]。
+
 ## Step 1: Create the starter Flutter app
 
 ## 第一步：创建初始化工程
 
-<?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
+<?code-excerpt path-base="codelabs/startup_namer_null_safety/step1_base"?>
 
 Create a simple, templated Flutter app, using the instructions in
 [Getting Started with your first Flutter app][].
@@ -362,7 +392,7 @@ as well as many other open source packages, on [pub.dev][].
     在pubspec.yaml 中，将 english_words（3.1.5 或更高版本）添加到依赖项列表，
     如下面高亮显示的行：
 
-    <?code-excerpt path-base="codelabs/startup_namer"?>
+    <?code-excerpt path-base="codelabs/startup_namer_null_safety"?>
     <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
     ```diff
     --- step1_base/pubspec.yaml
@@ -371,8 +401,8 @@ as well as many other open source packages, on [pub.dev][].
      dependencies:
        flutter:
          sdk: flutter
-       cupertino_icons: ^0.1.2
-    +  english_words: ^3.1.5
+       cupertino_icons: ^1.0.2
+    +  english_words: ^4.0.0-0
     ```
 
  2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
@@ -400,7 +430,7 @@ as well as many other open source packages, on [pub.dev][].
     
     在 `lib/main.dart` 中引入，如下所示：
     
-    <?code-excerpt path-base="codelabs/startup_namer/step2_use_package"?>
+    <?code-excerpt path-base="codelabs/startup_namer_null_safety/step2_use_package"?>
     <?code-excerpt "lib/main.dart" title retain="/^import/" replace="/import.*?english.*/[!$&!]/g" indent-by="2"?>
     ```dart
       import 'package:flutter/material.dart';
@@ -419,7 +449,7 @@ as well as many other open source packages, on [pub.dev][].
     
     接下来，我们使用 English words 包生成文本来替换字符串"Hello World"：
 
-    <?code-excerpt path-base="codelabs/startup_namer"?>
+    <?code-excerpt path-base="codelabs/startup_namer_null_safety"?>
     <?code-excerpt "{step1_base,step2_use_package}/lib/main.dart" from="class"?>
     ```diff
     --- step1_base/lib/main.dart
@@ -488,14 +518,14 @@ If needed, use the code at the following links to get back on track.
 来查看 debug 和 profile 的工具。
 如果需要，使用下面链接中的代码来对比更正。
 
-* [pubspec.yaml]({{code-url}}/startup_namer/step2_use_package/pubspec.yaml)
-* [lib/main.dart]({{code-url}}/startup_namer/step2_use_package/lib/main.dart)
+* [pubspec.yaml]({{code-url}}/startup_namer_null_safety/step2_use_package/pubspec.yaml)
+* [lib/main.dart]({{code-url}}/startup_namer_null_safety/step2_use_package/lib/main.dart)
 
 ## Step 3: Add a Stateful widget
 
 ## 第三步：添加一个 Stateful widget
 
-<?code-excerpt path-base="codelabs/startup_namer/step3_stateful_widget"?>
+<?code-excerpt path-base="codelabs/startup_namer_null_safety/step3_stateful_widget"?>
 
 State<em>less</em> widgets are immutable, meaning that their
 properties can’t change&mdash;all values are final.
@@ -609,7 +639,7 @@ class _RandomWordsState extends State<RandomWords> {
   by making the changes shown in the following diff:</p>
   <p markdown="1">通过以下差异所示的更改，删除 `MyApp` 中单词生成的代码：</p>
 
-  <?code-excerpt path-base="codelabs/startup_namer"?>
+  <?code-excerpt path-base="codelabs/startup_namer_null_safety"?>
   <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
   ```diff
   --- step2_use_package/lib/main.dart
@@ -672,13 +702,13 @@ If needed, use the code at the following link to get back on track.
 来查看 debug 和 profile 的工具。
 如果需要，使用下面链接中的代码来对比更正。
 
-* [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
+* [lib/main.dart]({{code-url}}/startup_namer_null_safety/step3_stateful_widget/lib/main.dart)
 
 ## Step 4: Create an infinite scrolling ListView
 
 ## 第四步：创建一个无限滚动的 ListView
 
-<?code-excerpt path-base="codelabs/startup_namer/step4_infinite_list"?>
+<?code-excerpt path-base="codelabs/startup_namer_null_safety/step4_infinite_list"?>
 
 In this step, you'll expand `_RandomWordsState` to generate
 and display a list of word pairings. As the user scrolls the list
@@ -833,7 +863,7 @@ lazily, on demand.
     更新 `MyApp` 的 `build()` 方法，修改 `title` 的值来改变标题，
     修改 `home` 的值为 `RandomWords` widget。
 
-    <?code-excerpt path-base="codelabs/startup_namer"?>
+    <?code-excerpt path-base="codelabs/startup_namer_null_safety"?>
     <?code-excerpt "{step3_stateful_widget,step4_infinite_list}/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
     ```diff
     --- step3_stateful_widget/lib/main.dart
@@ -884,7 +914,7 @@ If needed, use the code at the following link to get back on track.
 来查看 debug 和 profile 的工具。
 如果需要，使用下面链接中的代码来对比更正。
 
-* [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
+* [lib/main.dart]({{code-url}}/startup_namer_null_safety/step4_infinite_list/lib/main.dart)
 
 {% include run-profile.md %}
 

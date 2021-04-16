@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/hero_animations"?>
+
 It's often helpful to guide users through an app as they navigate from screen
 to screen. A common technique to lead users through an app is to animate a
 widget from one screen to the next. This creates a visual anchor connecting
@@ -72,8 +74,10 @@ handle animations in the next steps.
   
 {{site.alert.end}}
 
-
+<?code-excerpt "lib/main_original.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -137,14 +141,17 @@ The `Hero` widget requires two arguments:
   
 </dl>
 
-<!-- skip -->
+{% comment %}
+RegEx removes the first "child" property name and removed the trailing comma at the end
+{% endcomment %}
+<?code-excerpt "lib/main.dart (Hero1)" replace="/^child: //g;/,$//g"?>
 ```dart
 Hero(
   tag: 'imageHero',
   child: Image.network(
     'https://picsum.photos/250?image=9',
   ),
-);
+)
 ```
 
 ## 3. Add a `Hero` widget to the second screen
@@ -164,15 +171,19 @@ the animation between screens just works.
 
 当 `Hero` 组件被应用到第二个页面后，页面的转场动画就生效了。
 
-<!-- skip -->
+{% comment %}
+RegEx removes the first "child" property name and removed the trailing comma at the end
+{% endcomment %}
+<?code-excerpt "lib/main.dart (Hero2)" replace="/^child: //g;/,$//g"?>
 ```dart
 Hero(
   tag: 'imageHero',
   child: Image.network(
     'https://picsum.photos/250?image=9',
   ),
-);
+)
 ```
+
 
 {{site.alert.note}}
 
@@ -191,7 +202,8 @@ Hero(
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(HeroApp());

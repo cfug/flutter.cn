@@ -157,8 +157,9 @@ then make sure that you have installed the
 说明你未安装 [Flutter SDK][] 或者未配置 Flutter 环境变量。
 
 ```terminal
-$ flutter channel stable
+$ flutter channel beta
 $ flutter upgrade
+$ flutter config --enable-web
 ```
 
 If you have problems enabling web development,
@@ -180,15 +181,12 @@ You should see something like the following:
 ```terminal
 $ flutter doctor
 
-[✓] Flutter: is fully installed. (Channel stable, 1.27.0, on macOS 11.2.1 20D74 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
-[✓] Xcode - develop for iOS and macOS
-[✓] Chrome - develop for the web
-[✓] Android Studio (version 4.1)
-[✓] IntelliJ IDEA Ultimate Edition (version 2020.3.2)
-[✓] Connected device (3 available)
-
-• No issues found!
+[✓] Flutter: is fully installed. (Channel dev, v1.9.5, on Mac OS X 10.14.6 18G87, locale en-US)
+[✗] Android toolchain - develop for Android devices: is not installed.
+[✗] Xcode - develop for iOS and macOS: is not installed.
+[✓] Chrome - develop for the web: is fully installed.
+[!] Android Studio: is not available. (not installed)
+[✓] Connected device: is fully installed. (1 available)
 ```
 
 It's okay if the Android toolchain, Android Studio,
@@ -213,20 +211,32 @@ You should see something like the following:
 
 ``` terminal
 $ flutter devices
-1 connected device:
+2 connected devices:
 
-Chrome (web) • chrome • web-javascript • Google Chrome 88.0.4324.150
+Chrome     • chrome     • web-javascript • Google Chrome 78.0.3904.108
+Web Server • web-server • web-javascript • Flutter Tools
 ```
 
 The **Chrome** device automatically starts Chrome.
 
 **Chrome** 表示默认用 Chrome 启动。
+
+The **Web Server** starts a server that hosts the app
+so that you can load it from any browser.
+Use the Chrome device during development so that you can use DevTools,
+and the web server when you want to test on other browsers.
+
+
+**Web服务器**将启动托管该应用程序的服务器以便您可以从任何浏览器加载它。
+在开发时请使用 Chrome 进行调试，以使用 DevTools。当你想在其他浏览器测试时，请使用 web server。
+
 </li>
 
 <li markdown="1"><t>The starting app is displayed in the following DartPad.</t><t>运行程序将在 DartPad 中显示。</t>
 
 <!-- skip -->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+{$ begin main.dart $}
 import 'package:flutter/material.dart';
 
 void main() => runApp(SignUpApp());
@@ -305,10 +315,10 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.white;
               }),
-              backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.blue;
               }),
             ),
@@ -320,7 +330,11 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 }
-
+{$ end main.dart $}
+{$ begin test.dart $}
+// Avoid warning on "double _formProgress = 0;"
+// ignore_for_file: prefer_final_fields
+{$ end test.dart $}
 ```
 
 {{site.alert.important}}
@@ -636,13 +650,13 @@ In the `_SignUpFormState` class, add a new method called
 ...
 void _updateFormProgress() {
   var progress = 0.0;
-  var controllers = [
+  final controllers = [
     _firstNameTextController,
     _lastNameTextController,
     _usernameTextController
   ];
 
-  for (var controller in controllers) {
+  for (final controller in controllers) {
     if (controller.value.text.isNotEmpty) {
       progress += 1 / controllers.length;
     }
@@ -656,7 +670,7 @@ void _updateFormProgress() {
 ```
 
 This method updates the `_formProgress` field based on the
-number of non-empty text fields.
+the number of non-empty text fields.
 
 这个方法根据非空输入框的数量来更新 `_formProgress` 属性。
 
@@ -699,10 +713,10 @@ screen only when the form is completely filled in:
 ...
 TextButton(
   style: ButtonStyle(
-    foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+    foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
       return states.contains(MaterialState.disabled) ? null : Colors.white;
     }),
-    backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+    backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
       return states.contains(MaterialState.disabled) ? null : Colors.blue;
     }),
   ),
@@ -968,7 +982,7 @@ scroll down to where `progress` is updated:
 
 <!-- skip -->
 ```dart
-    for (var controller in controllers) {
+    for (final controller in controllers) {
       if (controller.value.text.isNotEmpty) {
         progress += 1 / controllers.length;
       }
@@ -1091,16 +1105,16 @@ class AnimatedProgressIndicator extends StatefulWidget {
 
 class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<Color> _colorAnimation;
-  Animation<double> _curveAnimation;
+  late AnimationController _controller;
+  late Animation<Color?> _colorAnimation;
+  late Animation<double> _curveAnimation;
 
   void initState() {
     super.initState();
     _controller = AnimationController(
         duration: Duration(milliseconds: 1200), vsync: this);
 
-    var colorTween = TweenSequence([
+    final colorTween = TweenSequence([
       TweenSequenceItem(
         tween: ColorTween(begin: Colors.red, end: Colors.orange),
         weight: 1,
@@ -1132,7 +1146,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       builder: (context, child) => LinearProgressIndicator(
         value: _curveAnimation.value,
         valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value.withOpacity(0.4),
+        backgroundColor: _colorAnimation.value?.withOpacity(0.4),
       ),
     );
   }
@@ -1194,7 +1208,7 @@ the animation works, and that clicking the
 ### 完整的示例
 
 <!-- skip -->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(SignUpApp());
@@ -1253,13 +1267,13 @@ class _SignUpFormState extends State<SignUpForm> {
 
   void _updateFormProgress() {
     var progress = 0.0;
-    var controllers = [
+    final controllers = [
       _firstNameTextController,
       _lastNameTextController,
       _usernameTextController
     ];
 
-    for (var controller in controllers) {
+    for (final controller in controllers) {
       if (controller.value.text.isNotEmpty) {
         progress += 1 / controllers.length;
       }
@@ -1306,10 +1320,10 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.white;
               }),
-              backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.blue;
               }),
             ),
@@ -1326,7 +1340,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
   AnimatedProgressIndicator({
-    @required this.value,
+    required this.value,
   });
 
   @override
@@ -1337,16 +1351,16 @@ class AnimatedProgressIndicator extends StatefulWidget {
 
 class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<Color> _colorAnimation;
-  Animation<double> _curveAnimation;
+  late AnimationController _controller;
+  late Animation<Color?> _colorAnimation;
+  late Animation<double> _curveAnimation;
 
   void initState() {
     super.initState();
     _controller = AnimationController(
         duration: Duration(milliseconds: 1200), vsync: this);
 
-    var colorTween = TweenSequence([
+    final colorTween = TweenSequence([
       TweenSequenceItem(
         tween: ColorTween(begin: Colors.red, end: Colors.orange),
         weight: 1,
@@ -1377,7 +1391,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       builder: (context, child) => LinearProgressIndicator(
         value: _curveAnimation.value,
         valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value.withOpacity(0.4),
+        backgroundColor: _colorAnimation.value?.withOpacity(0.4),
       ),
     );
   }
@@ -1455,7 +1469,7 @@ Dart DevTools, or Flutter animations, see the following:
 [Flutter SDK]: /docs/get-started/install
 [Implicit animations]: /docs/codelabs/implicit-animations
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
-[Material Design]: {{site.material}}/design/introduction/#
+[Material Design]: https://material.io/design/introduction/#
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: /docs/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/master/web

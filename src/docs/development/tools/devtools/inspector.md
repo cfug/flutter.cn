@@ -27,10 +27,10 @@ to layout (such as centering, padding, rows, and columns).
 The inspector helps you visualize and explore Flutter widget
 trees, and can be used for the following:
 
-Flutter inspector 是一个强大的工具，用于可视化和查看 widget 树。
-Flutter 框架层使用 widgets 作为 [核心构建模块][core building block] 来处理从控件（例如文本、按钮和切换等），
-到布局（例如居中、填充、行和列等）的所有内容。
-Flutter inspector 不仅可以帮助你可视化和查看 Flutter widget 树，还可以用于下述行为：
+Flutter widget inspector 是一个强大的工具，用于可视化和查看 widget 树。
+Flutter 框架层使用 widgets 作为 [核心构建模块][core building block]
+来处理从控件（例如文本、按钮和切换等）到布局（例如居中、填充、行和列等）的所有内容。
+Flutter inspector 不仅可以帮助你可视化查看 Flutter widget 树，还有其他的作用：
 
 * understanding existing layouts
 
@@ -60,14 +60,14 @@ tab on the DevTools toolbar.
   more spacious view when running it from DevTools
   in a browser.
   
-  你可以直接从 Android Studio/IntelliJ 中使用 Flutter inspector，
-  但是从浏览器中运行 DevTools 打开 Flutter inspector 时，你可能会喜欢更宽敞的视图。
+  你可以直接在 Android Studio/IntelliJ 中使用 Flutter inspector，
+  但是你可能会更喜欢使用 DevTools 在浏览器中打开 Flutter inspector，这样你能得到更宽敞的视图。
   
 {{site.alert.end}}
 
 ### Debugging layout issues visually
 
-### 可视化的调试布局问题
+### 可视化地调试布局问题
 
 The following is a guide to the features available in the
 inspector's toolbar. When space is limited, the icon is
@@ -82,7 +82,7 @@ used as the visual version of the label.
 <p>Enable this button in order to select
     a widget on the device to inspect it. For more information,
     see [Inspecting a widget](#inspecting-a-widget).</p>
-<p>启用此按钮以选择设备上的 widget 进行查看。
+<p>启用此按钮以在设备上选择 widget 进行查看。
     有关更多信息，请参考 [查看 widget](#inspecting-a-widget)。</p>
 <dt markdown="1">**Refresh tree** ![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"}</dt>
 <dd><p>Reload the current widget info</p>
@@ -90,7 +90,7 @@ used as the visual version of the label.
     </dd>
 <dt markdown="1">**Slow Animations** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</dt>
 <dd><p>Slow down animations to enable visual inspection.</p>
-    <p>减慢动画以启用视觉检查</p>
+    <p>减慢动画以启用视觉检查。</p>
     </dd>
 <dt markdown="1">**Debug Paint** ![Debug paint mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"}</dt>
 <dd><p>Add visual debugging hints to the rendering
@@ -114,7 +114,7 @@ used as the visual version of the label.
 
 ## Inspecting a widget
 
-## 查看 widget
+## 检查一个 widget
 
 You can browse the interactive widget tree to view nearby
 widgets and see their field values.
@@ -132,7 +132,7 @@ widget select mode.
 要在 widget 树中找到单个 UI 元素，
 请点击工具栏中的 **Select Widget Mode** 按钮。
 这将使设备上的应用程序进入「widget select」模式。
-点击应用程序 UI 中的任何 widget，将选择应用程序屏幕上的 widget，并将 widget 树滚动到对应的节点。
+点击应用界面上的任何 widget，将选中 widget 并将 widget 树滚动到对应的节点。
 再次点击 **Select Widget Mode** 按钮则退出 widget 选择模式。
 
 When debugging layout issues, the key fields to look at are the
@@ -142,7 +142,7 @@ see [Understanding constraints][].
 
 在调试布局问题时，要查看的关键字段是 `size` 和 `constraints`。
 其中约束沿树结构向下传递，尺寸信息则向上返回。
-想要了解更多信息，可以查看 [理解布局约束][Understanding constraints]。
+想要了解更多信息，可以查看 [深入理解 Flutter 布局约束][Understanding constraints]。
 
 ## Flutter Layout Explorer
 
@@ -156,13 +156,13 @@ Flutter 布局浏览器可以帮助你更好地理解 Flutter 布局。
 For an overview of what you can do with this tool, see
 the Flutter Explorer video:
 
-有关此工具的操作概述，观看 Flutter Explorer：
+有关此工具的操作概述，观看 Flutter Explorer 的介绍视频：
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Jakrc3Tn_y4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 You might also find the following step-by-step article useful:
 
-你可能还会发现下面这篇分步介绍的文章很有帮助：
+下面详细介绍的文章可能对你有帮助：
 
 * [How to debug layout issues with the Flutter Inspector][debug-article]
 
@@ -179,7 +179,7 @@ supports both [flex layouts][] and fixed size layouts, and has
 specific tooling for both kinds.
 
 从 Flutter Inspector 中，选择一个 widget。
-Layout Explorer 支持 [弹性布局][flex layouts] 和固定大小的布局，并且对这两种布局都有特定的工具。
+布局浏览器支持 [弹性布局][flex layouts] 和固定大小的布局，并且针对它们配备了特定的工具。
 
 #### Flex layouts
 
@@ -189,8 +189,8 @@ When you select a flex widget (for example, [`Row`][], [`Column`][], [`Flex`][])
 or a direct child of a flex widget, the flex layout tool will
 appear in the Layout Explorer.
 
-当你选择了一个弹性布局 widget（例如，[`Row`][]、[`Column`][]、[`flex`][]）
-或他的子 widget 时，弹性布局工具将显示在布局浏览器中。
+当你选择了一个弹性布局 widget（例如，[`Row`][]、[`Column`][]、[`Flex`][]）
+或它的子 widget 时，弹性布局工具将显示在布局浏览器中。
 
 The Layout Explorer visualizes how [`Flex`][] widgets and their
 children are laid out. The explorer identifies the main axis
@@ -199,8 +199,8 @@ and cross axis, as well as the current alignment for each
 It also shows details like flex factor, flex fit, and layout
 constraints.
 
-布局浏览器会显示 [`Flex`][] 类的 widgets 与他们子类 widget 的布局方式。
-浏览器中还会显示主轴和横轴，以及每个轴上当前的对齐方式（例如，start、end 和 spaceBetween）。
+布局浏览器会直观的显示 [`Flex`][] widgets 及其子元素的布局方式。
+浏览器中还会显示主轴和交叉轴，以及每个轴当前的对齐方式（例如，start、end 和 spaceBetween）。
 它还显示了诸如弹性系数、弹性适配和布局约束等详细信息。
 
 Additionally, the explorer shows layout constraint violations
@@ -212,8 +212,8 @@ why overflow errors occur as well as how to fix them.
 
 此外，浏览器中还会显示布局约束冲突和渲染溢出错误。
 正如你在设备上看到的那样，违背布局约束的地方会被标记成红色，溢出错误以标准的「黄色条带」显示。
-这些可视化的错误是为了更好的理解溢出错误发生的原因以及如何修复它们。
-
+这些可视化的错误是为了让我们更好地理解溢出错误发生的原因，
+并了解如何修复它们。
 
 ![The Layout Explorer showing errors and device inspector]({% asset tools/devtools/layout_explorer_errors_and_device.gif @path %}){:width="100%"}
 
@@ -236,11 +236,11 @@ on property changes so that the effect of the change is clear.
 Widget property changes made from the layout explorer don't
 modify your source code and are reverted on hot reload.
 
-对于某些属性，如弹性系数、弹性适配和对齐方式，
-你可以在布局浏览器的下拉列表修改属性值。
-当修改 widget 的属性时，您会看到新的值不仅反映在浏览器中，并且同时反映在运行 Flutter 应用程序的设备上。
+你可以在布局浏览器的下拉列表修改属性值，
+例如弹性系数、弹性适配和对齐方式。
+当修改 widget 的属性时，您会看到新的值同时在浏览器和运行 Flutter 应用程序的设备上生效。
 浏览器通过动画使更改的效果清晰可见。
-从布局浏览器中对 widget 属性的更改不会修改源代码，并在热重载时还原。
+从布局浏览器中对 widget 属性的更改不会修改源代码，将在热重载时还原。
 
 ##### Interactive Properties
 
@@ -293,7 +293,8 @@ Layout Explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
 factor of a flex widget’s child can be any int.
 
-布局浏览器支持设置 7 种弹性因子（null、0、1、2、3、4、5），但从技术上讲，弹性 widget 子级的弹性因子可以是任何整数。
+布局浏览器支持设置 7 种弹性因子（null、0、1、2、3、4、5），
+但从技术上讲，弹性 widget 子级的弹性因子可以是任何整数。
 
 ###### Flexible.fit
 

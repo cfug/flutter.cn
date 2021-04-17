@@ -133,7 +133,7 @@ widget select mode.
 请点击工具栏中的 **Select Widget Mode** 按钮。
 这将使设备上的应用程序进入「widget select」模式。
 点击应用界面上的任何 widget，将选中 widget 并将 widget 树滚动到对应的节点。
-再次点击 **Select Widget Mode** 按钮则退出 widget 选择模式。
+再次点击 **Select Widget Mode** 按钮则退出「widget select」模式。
 
 When debugging layout issues, the key fields to look at are the
 `size` and `constraints` fields. The constraints flow down the tree,

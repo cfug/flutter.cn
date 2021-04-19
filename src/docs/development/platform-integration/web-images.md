@@ -14,9 +14,9 @@ to mobile and desktop platforms. This page explains these limitations
 and offers ways to work around them.
 
 Web 支持使用标准的 [`Image`][1] 组件来展示图片。
-然而，由于 Web 浏览器为了安全地运行不信任的代码，
-和手机以及桌面平台相比，你处理图片会有一定的局限性。
-本页面内容解释了这些限制，并提供了解决方法。
+然而，Web 浏览器和手机以及桌面平台相比，在处理图片上会有一定的局限性，
+因为它需要以安全的方式运行未信任的代码。
+本页面内容解释了这些限制，并提供一些解决方法。
 
 # Background
 
@@ -113,7 +113,7 @@ and the CORS policy disallows access to data.
 
 当使用 `<img>`、`<picture>` 或者 `<canvas>` 时，
 如果浏览器发现图片来源于另一个站点，且 CORS 政策不允许访问数据时，
-浏览器会自动阻止像素信息的访问权限。
+浏览器会自动阻止信息的访问权限。
 
 WebGL requires access to the image data in order
 to be able to render the image. Therefore,
@@ -121,9 +121,8 @@ images to be rendered using WebGL must only come from servers
 that have a CORS policy configured to work with
 the domain that serves your application.
 
-WebGL 需要访问图片信息，用于渲染图片。
-但是，使用 WebGL 渲染的图片必须来自配置了 CORS 政策的服务器，
-才能和你的应用的服务器域名同时工作。
+WebGL 需要访问图片信息以用于渲染图片。
+因此要想使用 WebGL 渲染图片，该图片的来源服务所在的域名必须配置有效且可用的 CORS 策略。
 
 ## Flutter renderers on the web
 
@@ -178,19 +177,19 @@ can do with them:
   
 * Limited support for shader effects that can be applied to images.
 
-  对可应用于图片的着色器效果的支持有限。
+  应用于图片的着色器效果的支持有限。
 
 * No control over image memory (`Image.dispose` has no effect).
   The memory is managed by the browser behind-the-scenes.
   
-  不可控制图片内存（`Image.dispose` 无效）。内存由浏览器幕后控制。
+  不可控制图片内存（`Image.dispose` 无效）。内存由浏览器自行控制。
 
 The CanvasKit renderer implements Flutter's image API fully.
 However, it requires access to image pixels to do so,
 and is therefore subject to the CORS policy.
 
 CanvasKit 完全实现了 Flutter 中的图片 API。
-但是，它需要访问图片的像素信息，因此受制于 CORS 政策。
+但它需要访问图片的像素信息，因此受制于 CORS 政策。
 
 # Solutions
 
@@ -210,7 +209,7 @@ in both HTML and CanvasKit modes.
 
 如果图片在应用内存中有编码后的字节信息、或者以 [asset][12] 的方式提供、
 或者和应用存储在同一服务器上（也就是同源），则不需要做额外工作。
-图片既可以在 HTML 又可以 CanvasKit 模式下，使用 [`Image.memory`][13]、
+图片既可以在 HTML 也可以在 CanvasKit 模式下，使用 [`Image.memory`][13]、
 [`Image.asset`][14] 和 [`Image.network`][15] 来展示。
 
 ## Cross-origin images
@@ -245,7 +244,7 @@ header in the `firebase.json` file.
 
 ### Lack control over the image server? Use a CORS proxy.
 
-### 没有图片服务器控制权？使用一个 CORS 代理。
+### 没有图片服务器控制权？使用一个 CORS 代理
 
 If the image server cannot be configured to allow CORS
 requests from your application,
@@ -289,7 +288,7 @@ limitations explained in the section
 Flutter 支持在应用中使用 [`HtmlElementView`][17] 嵌入 HTML。
 通过它可以创建一个 `<img>` 元素来渲染另一个域名的图片。
 但是，一定要记住，此方法也附带了
-“Web 中的 Flutter 渲染器”一节中提到的限制。
+「Web 中的 Flutter 渲染器」一节中提到的限制。
 
 [As of today][20], using too many HTML elements
 with the CanvasKit renderer may hurt performance.
@@ -299,8 +298,8 @@ If your application needs to display a lot of images
 on the same screen all at once, consider using
 the HTML renderer instead of CanvasKit.
 
-[截至今日][20]，在 CanvasKit 渲染器中过多地使用 HTML 元素，
-可能会影响性能。如果图片和非图片内容交替出现，
+[就目前而言][20]，在 CanvasKit 渲染器中过多地使用 HTML 元素，
+可能较为影响性能。如果图片和非图片内容交替出现，
 Flutter 需要在 `<img>` 元素之间创建额外的 WebGL 上下文。
 如果你的应用需要一次性在同一屏幕中展示大量的图片，
 请考虑使用 HTML 渲染器替代 CanvasKit。

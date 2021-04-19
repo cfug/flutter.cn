@@ -77,40 +77,60 @@ used as the visual version of the label.
 当空间有限时，将直接使用图标展示。
 
 <dl markdown="1">
-<dt markdown="1">**Select widget mode** ![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"}</dt>
+<dt>
+<p markdown="1">**Select widget mode** ![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">**选择 widget 模式** ![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"}</p>
+</dt>
 <dd markdown="1">
-<p>Enable this button in order to select
+<p markdown="1">Enable this button in order to select
     a widget on the device to inspect it. For more information,
     see [Inspecting a widget](#inspecting-a-widget).</p>
-<p>启用此按钮以在设备上选择 widget 进行查看。
+<p markdown="1">启用此按钮以在设备上选择 widget 进行查看。
     有关更多信息，请参考 [查看 widget](#inspecting-a-widget)。</p>
-<dt markdown="1">**Refresh tree** ![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"}</dt>
+<dt>
+<p markdown="1">**Refresh tree** ![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">**刷新树** ![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"}</p>
+</dt>
 <dd><p>Reload the current widget info</p>
     <p>重新加载当前 widget 的信息。</p>
     </dd>
-<dt markdown="1">**Slow Animations** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</dt>
+<dt>
+<p markdown="1">**Slow Animations** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">**慢动画** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</p>
+</dt>
 <dd><p>Slow down animations to enable visual inspection.</p>
     <p>减慢动画以启用视觉检查。</p>
     </dd>
-<dt markdown="1">**Debug Paint** ![Debug paint mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"}</dt>
+<dt>
+<p markdown="1">**Debug Paint** ![Debug paint mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">**调试绘制** ![Debug paint mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"}</p>
+</dt>
 <dd><p>Add visual debugging hints to the rendering
     that display borders, padding, alignment, and spacers.</p>
     <p>为渲染对象添加边框、填充、对齐和间隔等可视化的调试提示。</p>
     </dd>
-<dt markdown="1">**Paint Baselines** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</dt>
+<dt>
+<p markdown="1">**Paint Baselines** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">**绘制基线** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</p>
+</dt>
 <dd><p>Cause each RenderBox to paint a line at each
     of its text baselines.</p>
     <p>对于每个 RenderBox，在其每个文本基线处绘制一条线。</p>
     </dd>
-<dt markdown="1">**Repaint Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</dt>
+<dt>
+<p markdown="1">**Repaint Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">**重绘彩虹** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</p>
+</dt>
 <dd><p>Shows rotating colors on layers when repainting.</p>
     <p>重新绘制时在图层上依次显示不同的颜色。</p>
     </dd>
-<dt markdown="1">**Invert Oversized Images** ![Invert oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"}</dt>
+<dt>
+<p markdown="1">**Invert Oversized Images** ![Invert oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"}</p>
+<p markdown="1">**反转过大图像** ![Invert oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"}</p>
+</dt>
 <dd><p>Inverts oversized images in your running application.</p>
     <p>在运行的应用程序中反转过大的图像。</p>
     </dd>
-</dl>
 
 ## Inspecting a widget
 

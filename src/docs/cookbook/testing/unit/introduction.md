@@ -38,7 +38,7 @@ using the following steps:
 
   1. Add the `test` or `flutter_test` dependency.
      
-     将 `test` 或者 `flutter_test`加入依赖；
+     将 `test` 或者 `flutter_test` 加入依赖；
 
   2. Create a test file.
      
@@ -69,7 +69,7 @@ see the [test package documentation][].
 
 ## 1. Add the `test` or `flutter_test` dependency
 
-## 1. 添加测试依赖 —— 将 `test` 或者 `flutter_test`加入依赖文件
+## 1. 添加测试依赖 —— 将 `test` 或者 `flutter_test` 加入依赖文件
 
 The `test` package provides the core functionality for 
 writing tests in Dart. This is the best approach when
@@ -91,14 +91,14 @@ dev_dependencies:
 
 In this example, create two files: `counter.dart` and `counter_test.dart`.
 
-本例中，我们会创建两个文件：`counter.dart` 和 `couter_test.dart`。
+本例中，我们会创建两个文件：`counter.dart` 和 `counter_test.dart`。
 
 The `counter.dart` file contains a class that you want to test and
 resides in the `lib` folder. The `counter_test.dart` file contains
 the tests themselves and lives inside the `test` folder.
 
 `counter.dart` 文件包含一个位于 `lib` 文件夹的待测试类，
-而位于 `test` 文件夹的`counter_test.dart` 文件将包含测试本身。
+而位于 `test` 文件夹的 `counter_test.dart` 文件将包含测试本身。
 
 In general, test files should reside inside a `test` folder 
 located at the root of your Flutter application or package. 
@@ -129,7 +129,7 @@ function, method, or class. For this example, create a `Counter` class
 inside the `lib/counter.dart` file. It is responsible for incrementing
 and decrementing a `value` starting at `0`.
 
-下一步，我们需要一个“单元”来测试。记住：“单元”是一个抽象的名称，
+下一步，我们需要一个「单元」来测试。记住：「单元」是一个抽象的名称，
 它可以表示一个函数、方法或者类。
 本例中，我们会在 `lib/counter.dart` 文件中创建一个 `Counter` 类。
 它负责增加或减少一个从 `0` 开始的 `value`。
@@ -150,7 +150,7 @@ class Counter {
 Development" approach. If you're more comfortable with that style of
 development, you can always go that route.
 
-**注意：** 为了简化内容，本教程没有遵守“测试驱动开发”的写法。
+**注意：** 为了简化内容，本教程没有遵守「测试驱动开发」的写法。
 如果你擅长那种开发模式，当然可以选择用那种方式来写。
 
 ## 4. Write a test for our class

@@ -76,5 +76,5 @@ toc: true
 
 . . .
 
-以上就是 Flutter Engage China 开发者常见问题解答 (下篇) 的内容，大家也可以随时回顾之前发布的 [上篇内容](https://flutter.cn/posts/flutter-engage-china-developers-qa-part-1)。如果您有任何疑问或者建议，欢迎大家在评论区或 [GitHub](https://github.com/flutter) 积极分享您的反馈与想法:
+以上就是 Flutter Engage China 开发者常见问题解答 (下篇) 的内容，大家也可以随时回顾之前发布的 [上篇内容](https://flutter.cn/posts/flutter-engage-china-developers-qa-part-1)。如果您有任何疑问或者建议，欢迎大家 [GitHub](https://github.com/flutter) 积极分享您的反馈与想法.
 

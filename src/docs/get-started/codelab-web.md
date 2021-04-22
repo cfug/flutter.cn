@@ -227,7 +227,7 @@ Use the Chrome device during development so that you can use DevTools,
 and the web server when you want to test on other browsers.
 
 
-**Web服务器**将启动托管该应用程序的服务器以便您可以从任何浏览器加载它。
+**Web服务器** 将启动托管该应用程序的服务器，以便你可以从任何浏览器加载它。
 在开发时请使用 Chrome 进行调试，以使用 DevTools。当你想在其他浏览器测试时，请使用 web server。
 
 </li>

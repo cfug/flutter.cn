@@ -161,7 +161,12 @@ OutlinedButton(
 If `invokeMethod` throws an error, it won't be forwarded to `FlutterError.onError`.
 Instead, it's forwarded to the `Zone` where `runApp` was run.
 
+如果 `invokeMethod` 抛出了错误，它不会传递至 `FlutterError.onError`，
+而是直接进入 `runApp` 的 `Zone`。
+
 To catch such an error, use [`runZonedGuarded`][].
+
+如果你想捕获这样的错误，请使用 [`runZonedGuarded`][]。
 
 <!-- skip -->
 ```dart
@@ -181,6 +186,11 @@ manually to perform some initialization before calling `runApp` (e.g.
 `Firebase.initializeApp()`), you **must** call
 `WidgetsFlutterBinding.ensureInitialized()` inside `runZonedGuarded`:
 
+请注意，如果你的应用在 `runApp` 中调用了
+`WidgetsFlutterBinding.ensureInitialized()` 方法来进行一些初始化操作
+（例如 `Firebase.initializeApp()`），则必须在 `runZonedGuarded` 中调用
+`WidgetsFlutterBinding.ensureInitialized()`：
+
 <!-- skip -->
 ```dart
 runZonedGuarded(() async {
@@ -191,15 +201,25 @@ runZonedGuarded(() async {
 ```
 
 {{site.alert.note}}
+
     Error handling wouldn't work if `WidgetsFlutterBinding.ensureInitialized()`
     was called from the outside.
+
+    如果 `WidgetsFlutterBinding.ensureInitialized()` 在外部调用，
+    错误将不会被捕获到。
+
 {{site.alert.end}}
 
 ## Handling all types of errors
 
+## 处理所有类型的错误
+
 Say you want to exit application on any exception and to display
 a custom error widget whenever a widget building fails - you can base
 your errors handling on next code snippet:
+
+如果你想在异常抛出时退出应用，并在 build 错误时展示自定义的 ErrorWidget，
+你可以在下面的代码片段的基础上定制你的处理：
 
 <!-- skip -->
 ```dart

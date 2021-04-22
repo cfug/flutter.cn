@@ -408,7 +408,7 @@ The `DetailScreen` extracts these arguments.
 
 最后，当用户点击 `ListTile` widget 时，
 使用 `Navigator.push()` 导航到 `DetailScreen`。
-将参数作为 `RouteSettings` 的一部分进行传递，
+将参数作为 [`RouteSettings`][] 的一部分进行传递，
 `DetailScreen` 将会提取这些参数。
 
 <!-- skip -->

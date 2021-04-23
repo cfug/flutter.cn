@@ -9,7 +9,7 @@ next:
   path:  /docs/cookbook/effects/staggered-menu-animation
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 Loading times are unavoidable in application development.

@@ -9,7 +9,7 @@ next:
   path:  /docs/cookbook/effects/nested-nav
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 Apps are filled with buttons that execute long-running behaviors.

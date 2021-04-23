@@ -9,7 +9,7 @@ next:
   path:  /docs/cookbook/effects/parallax-scrolling
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 Everybody knows that a photo looks better with a filter.

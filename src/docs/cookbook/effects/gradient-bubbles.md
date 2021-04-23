@@ -9,7 +9,7 @@ next:
   path:  /docs/cookbook/effects/drag-a-widget
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 Traditional chat apps display messages in chat bubbles
@@ -266,4 +266,3 @@ widget within a `Scrollable` or within the screen.
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Issue 44152]: {{site.github}}/flutter/flutter/issues/44152
 [`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
-

@@ -188,7 +188,7 @@ and [Write your first Flutter app on the web][codelab-web].
 在开发时请使用 Chrome 进行调试，以使用 DevTools。
 当你想在其他浏览器测试时，请使用 web server。
 更多详细信息请查看 [使用 Flutter 构建 web 应用][Building a web application with Flutter]，
-以及 [编写你的第一个 Flutter web 应用程式][codelab-web]。
+以及 [编写你的第一个 Flutter web 应用程序][codelab-web]。
 
 ## Step 1: Create the starter Flutter app
 

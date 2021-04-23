@@ -9,7 +9,7 @@ next:
   path:  /docs/cookbook/effects/shimmer-loading
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 When you scroll a list of cards (containing images,

@@ -8,7 +8,7 @@ keywords: Flutter布局教程
 toc: true
 js:
 - defer: true
-  url: https://dartpad.dev/inject_embed.dart.js
+  url: https://dartpad.cn/inject_embed.dart.js
 ---
 Welcome to the Flutter layout codelab,
 where you learn how to build a Flutter UI without

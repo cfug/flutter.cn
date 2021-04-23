@@ -47,8 +47,8 @@ they are handled by the `Zone` where they occur. By default,
 a `Zone` only prints errors and does nothing else.
 
 如果在调用堆栈上没有 Flutter 回调的情况下发生错误，
-它们由发生区域的 `Zone` 处理。默认，
-`Zone` 仅会打印错误，而不会执行其他任何操作。
+它们由发生区域的 `Zone` 处理。
+`Zone` 在默认情况下仅会打印错误，而不会执行其他任何操作。
 
 You can customize these behaviors,
 typically by setting them to values in
@@ -61,20 +61,20 @@ there's a code snippet which handles all types of errors. Even
 though you can just copy-paste the snippet, we recommend you
 to first get acquainted with each of the error types.
 
-下面的每一种错误捕获类型都解释了。
-在底部的代码段可以处理所有类型的错误。
-甚至你可以直接复制粘贴代码段，但我们建议您
-先了解每种错误类型。
+下面解释了所有的错误捕获类型。
+在最后的代码段可以用于处理所有类型的错误。
+尽管你可以直接复制粘贴代码段，但我们建议你先了解每种错误类型。
 
 
 ## Errors caught by Flutter
+
 ## Flutter 导致的错误 
 
 For example, to make your application quit immediately any time an
 error is caught by Flutter in release mode, you could use the
 following handler:
 
-例如，当 release 模式下发生错误时，应用理应立即关闭，
+例如，如果你想在 release 模式下发生错误时立刻关闭应用，
 可以使用下面的回调方法:
 
 <!-- skip -->
@@ -113,7 +113,7 @@ For more details, see our cookbook chapter for
 
 ## Define a custom error widget for build phase errors
 
-## 定义一个自定义的 error widget 以构建错误阶段
+## 自定义一个 ErrorWidget 以展示 build 时的错误
 
 To define a customized error widget that displays whenever
 the builder fails to build a widget, use [`MaterialApp.builder`][].
@@ -143,9 +143,14 @@ class MyApp extends StatelessWidget {
 
 ## Errors not caught by Flutter
 
+## 未被 Flutter 捕获的错误
+
 Consider an `onPressed` callback that invokes an asynchronous function,
 such as `MethodChannel.invokeMethod` (or pretty much any plugin).
 For example:
+
+假设一个 `onPressed` 回调调用了异步方法，例如 `MethodChannel.invokeMethod`
+（或者其他 plugin 的方法）：
 
 <!-- skip -->
 ```dart

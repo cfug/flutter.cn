@@ -30,7 +30,7 @@ diff2html: true
   **Note that if you have [enabled web][],
   the completed app just works on all of these devices!**
 
-  **提示：如果你已经 [启用 web][enabled web]，你的应用可以在这里面的所有设备上运行。
+  **提示：如果你已经 [启用 web][enabled web]，你的应用可以在这里面的所有设备上运行。**
 
 {{site.alert.end}}
 

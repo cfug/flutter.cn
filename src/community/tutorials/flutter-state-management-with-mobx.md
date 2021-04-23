@@ -278,8 +278,7 @@ class CounterPage extends StatelessWidget {
 
 希望这篇 MobX 的介绍能够帮到你。我目前仍在持续探索 Flutter 状态管理的最佳实践，所以我也非常期待将来能对该系列进一步的更新。
  
-原文：https://developer.school/flutter-state-management-with-mobx/
-注：文章 & 视频本地化和发布已获得作者本人授权
+原文：[developer.school](https://developer.school/flutter-state-management-with-mobx/)，文章 & 视频本地化和发布已获得作者本人授权
 
 ## 致谢
 

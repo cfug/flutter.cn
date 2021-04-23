@@ -1,5 +1,5 @@
 ---
-title: Flutter 状态管理: 使用 MobX
+title: Flutter 状态管理：使用 MobX
 toc: true
 ---
 

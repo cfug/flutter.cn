@@ -10,7 +10,7 @@ keywords: 交互,Flutter交互,有状态的widget,无状态,StatefulWidget,状�
 diff2html: true
 ---
 
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>
@@ -266,7 +266,8 @@ which you'll implement in the next step.
 在这个例子中，`createState()` 创建 `_FavoriteWidgetState` 的实例，
 您将在下一步中实现该实例。
 
-<?code-excerpt path-base="layout/lakes/interactive"?>
+<!-- skip -->
+<?code-excerpt path-base="../null_safety_examples/layout/lakes/interactive"?>
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
 ```dart
 class FavoriteWidget extends StatefulWidget {
@@ -420,7 +421,7 @@ In the same location, create the stateful widget:
 将您自定义 stateful widget 在 `build()` 方法中添加到 widget 树中。首先，找到创建`图标`和`文本`的代码，并删除它，在相同的位置创建 stateful widget：
 
 <!-- skip -->
-<?code-excerpt path-base=""?>
+<?code-excerpt path-base="../null_safety_examples/"?>
 <?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="}"?>
 ```diff
 --- layout/lakes/step6/lib/main.dart
@@ -1148,8 +1149,8 @@ Flutter Gallery [running app][], [repo][]
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[repo]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
-[running app]: https://flutter.github.io/gallery/#/
+[repo]: {{site.github}}/flutter/gallery
+[running app]: https://gallery.flutter.dev
 [set up]: /docs/get-started/install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html

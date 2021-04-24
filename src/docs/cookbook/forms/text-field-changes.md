@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/forms/text_field_changes/"?>
+
 In some cases, it's useful to run a callback function every time the text
 in a text field changes. For example, you might want to build a search
 screen with autocomplete functionality where you want to update the
@@ -56,13 +58,13 @@ console every time the text changes.
 
 在下面的示例中，每次 text 的值改变，会在控制台中打印出当前文本框的值。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (TextField1)"?>
 ```dart
 TextField(
   onChanged: (text) {
     print("First text field: $text");
   },
-);
+),
 ```
 
 ## 2. Use a `TextEditingController`
@@ -108,7 +110,7 @@ Create a `TextEditingController`:
 创建一个 `TextEditingController`：
 
 
-<!-- skip -->
+<?code-excerpt "lib/main_step1.dart (Step1)" remove="return Container();"?>
 ```dart
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
@@ -161,11 +163,11 @@ you can begin listening for changes to the text field.
 `TextEditingController` 必须绑定到 `TextField` 或者是 `TextFormField` 才能被正常的使用。
 一旦绑定，就能够开始监听文本框的变化。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (TextField2)"?>
 ```dart
 TextField(
   controller: myController,
-);
+),
 ```
 
 ### Create a function to print the latest value
@@ -181,7 +183,7 @@ out the current value of the text field.
 实现打印出文本框当前值。
 
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (printLatestValue)"?>
 ```dart
 _printLatestValue() {
   print("Second text field: ${myController.text}");
@@ -206,16 +208,25 @@ and stop listening when the `_MyCustomFormState` is disposed.
 
 下面的示例会在类 `_MyCustomFormState` 初始化的时候开始监听变化，dispose 时停止监听。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (initState)"?>
 ```dart
-class _MyCustomFormState extends State<MyCustomForm> {
-  @override
-  void initState() {
-    super.initState();
+@override
+void initState() {
+  super.initState();
 
-    // Start listening to changes.
-    myController.addListener(_printLatestValue);
-  }
+  // Start listening to changes.
+  myController.addListener(_printLatestValue);
+}
+```
+
+<?code-excerpt "lib/main.dart (dispose)"?>
+```dart
+@override
+void dispose() {
+  // Clean up the controller when the widget is removed from the widget tree.
+  // This also removes the _printLatestValue listener.
+  myController.dispose();
+  super.dispose();
 }
 ```
 
@@ -223,7 +234,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -255,6 +267,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   void initState() {
     super.initState();
 
+    // Start listening to changes.
     myController.addListener(_printLatestValue);
   }
 

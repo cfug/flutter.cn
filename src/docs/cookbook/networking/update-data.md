@@ -56,7 +56,7 @@ This recipe covers how to update an album title to the
 ```dart
 Future<http.Response> updateAlbum(String title) {
   return http.put(
-    'https://jsonplaceholder.typicode.com/albums/1',
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -132,7 +132,7 @@ function to return a `Future<Album>`:
 ```dart
 Future<Album> updateAlbum(String title) async {
   final http.Response response = await http.put(
-    'https://jsonplaceholder.typicode.com/albums',
+    Uri.parse('https://jsonplaceholder.typicode.com/albums'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -163,8 +163,9 @@ For a complete example, see the [Fetch data][] recipe.
 <!-- skip -->
 ```dart
 Future<Album> fetchAlbum() async {
-  final response =
-      await http.get('https://jsonplaceholder.typicode.com/albums/1');
+  final response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
@@ -267,8 +268,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
-  final response =
-      await http.get('https://jsonplaceholder.typicode.com/albums/1');
+  final response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -283,7 +285,7 @@ Future<Album> fetchAlbum() async {
 
 Future<Album> updateAlbum(String title) async {
   final http.Response response = await http.put(
-    'https://jsonplaceholder.typicode.com/albums/1',
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },

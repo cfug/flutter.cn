@@ -7,6 +7,8 @@ tags: 数据调用和后端
 keywords: JSON,序列化数据,反序列化
 ---
 
+<?code-excerpt path-base="../null_safety_examples/development/data-and-backend/json/"?>
+
 It is hard to think of a mobile app that doesn't need to communicate with a
 web server or easily store structured data at some point. When making
 network-connected apps, the chances are that it needs to consume some good old
@@ -204,6 +206,7 @@ The following sample JSON implements a simple user model.
 
 下面的样例实现了一个简单用户模型。
 
+<?code-excerpt "lib/manual/main.dart (JSON)" skip="1" take="4"?>
 ```json
 {
   "name": "John Smith",
@@ -228,7 +231,7 @@ you'll see that you can decode the JSON by calling the
 你会看到你可以将 JSON 字符串作为方法的参数，
 调用 `jsonDecode()` 方法来解码 JSON。
 
-<!-- skip -->
+<?code-excerpt "lib/manual/main.dart (manual)"?>
 ```dart
 Map<String, dynamic> user = jsonDecode(jsonString);
 
@@ -286,7 +289,7 @@ the app won't compile, instead of crashing at runtime.
 
 **user.dart**
 
-<!-- skip -->
+<?code-excerpt "lib/manual/user.dart"?>
 ```dart
 class User {
   final String name;
@@ -298,11 +301,10 @@ class User {
       : name = json['name'],
         email = json['email'];
 
-  Map<String, dynamic> toJson() =>
-    {
-      'name': name,
-      'email': email,
-    };
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'email': email,
+      };
 }
 ```
 
@@ -312,9 +314,9 @@ itself. With this new approach, you can decode a user easily.
 解码逻辑的责任现在转移到了模型内部。
 通过这个新方法，你可以很容易地解码获得一个 user 实例。
 
-<!-- skip -->
+<?code-excerpt "lib/manual/main.dart (fromJson)"?>
 ```dart
-Map userMap = jsonDecode(jsonString);
+Map<String, dynamic> userMap = jsonDecode(jsonString);
 var user = User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
@@ -328,7 +330,7 @@ already does it for you.
 要对 user 实例进行编码，将 `User` 对象传到 `jsonEncode()` 函数中。
 你不需要调用 `toJson()` 方法，因为 `jsonEncode()` 已经帮你做了这件事。
 
-<!-- skip -->
+<?code-excerpt "lib/manual/main.dart (jsonEncode)" skip="1"?>
 ```dart
 String json = jsonEncode(user);
 ```
@@ -472,18 +474,18 @@ from the previous samples.
 
 **user.dart**
 
-{% prettify dart %}
+<?code-excerpt "lib/serializable/user.dart"?>
+```dart
 import 'package:json_annotation/json_annotation.dart';
 
 /// This allows the `User` class to access private members in
 /// the generated file. The value for this is *.g.dart, where
 /// the star denotes the source file name.
-part '[[highlight]]user[[/highlight]].g.dart';
+part 'user.g.dart';
 
 /// An annotation for the code generator to know that this class needs the
 /// JSON serialization logic to be generated.
-[[highlight]]@JsonSerializable()[[/highlight]]
-
+@JsonSerializable()
 class User {
   User(this.name, this.email);
 
@@ -493,14 +495,14 @@ class User {
   /// A necessary factory constructor for creating a new User instance
   /// from a map. Pass the map to the generated `_$UserFromJson()` constructor.
   /// The constructor is named after the source class, in this case, User.
-  factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   /// `toJson` is the convention for a class to declare support for serialization
   /// to JSON. The implementation simply calls the private, generated
   /// helper method `_$UserToJson`.
-  Map<String, dynamic> toJson() => _$[[highlight]]User[[/highlight]]ToJson(this);
+  Map<String, dynamic> toJson() => _$UserToJson(this);
 }
-{% endprettify %}
+```
 
 With this setup, the source code generator generates code for encoding
 and decoding the `name` and `email` fields from JSON.
@@ -631,16 +633,16 @@ you do not have actually to make any changes to our previous code.
 为了以 `json_serializable` 的方式解码 JSON 字符串，
 你不必对以前的代码做任何的改动。
 
-<!-- skip -->
+<?code-excerpt "lib/serializable/main.dart (fromJson)"?>
 ```dart
-Map userMap = jsonDecode(jsonString);
+Map<String, dynamic> userMap = jsonDecode(jsonString);
 var user = User.fromJson(userMap);
 ```
 The same goes for encoding. The calling API is the same as before.
 
 编码也是如此。调用 API 和以前一样。
 
-<!-- skip -->
+<?code-excerpt "lib/serializable/main.dart (jsonEncode)" skip="1"?>
 ```dart
 String json = jsonEncode(user);
 ```
@@ -677,7 +679,7 @@ Consider the following `Address` class:
 
 比如下面的这个 `Address` 类：
 
-<!-- skip -->
+<?code-excerpt "lib/nested/address.dart"?>
 ```dart
 import 'package:json_annotation/json_annotation.dart';
 part 'address.g.dart';
@@ -689,7 +691,8 @@ class Address {
 
   Address(this.street, this.city);
 
-  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
+  factory Address.fromJson(Map<String, dynamic> json) =>
+      _$AddressFromJson(json);
   Map<String, dynamic> toJson() => _$AddressToJson(this);
 }
 ```
@@ -698,18 +701,20 @@ The `Address` class is nested inside the `User` class:
 
 一个 `Address` 类被嵌套在 `User` 类中使用：
 
-<!-- skip -->
+<?code-excerpt "lib/nested/user.dart" replace="/explicitToJson: true//g"?>
 ```dart
-import 'address.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import 'address.dart';
+
 part 'user.g.dart';
 
 @JsonSerializable()
 class User {
-  String firstName;
-  Address address;
+  User(this.name, this.address);
 
-  User(this.firstName, this.address);
+  String name;
+  Address address;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
@@ -725,9 +730,8 @@ looks something like the following:
 
 <!-- skip -->
 ```dart
-(
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
-  'firstName': instance.firstName,
+  'name': instance.name,
   'address': instance.address,
 };
 ```
@@ -736,7 +740,7 @@ All looks fine now, but if you do a print() on the user object:
 
 现在看起来并没有什么问题，但当你想要打印 (`print()`) 这个用户对象时：
 
-<!-- skip -->
+<?code-excerpt "lib/nested/main.dart (print)"?>
 ```dart
 Address address = Address("My st.", "New York");
 User user = User("John", address);
@@ -765,17 +769,20 @@ annotation over the class declaration. The `User` class now looks as follows:
 为了得到正常的输出，你需要在类声明之前在 `@JsonSerializable` 方法加入 `explicitToJson: true` 参数，
 `User` 类现在看起来是这样的：
 
+<?code-excerpt "lib/nested/user.dart"?>
 ``` dart
-import 'address.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import 'address.dart';
+
 part 'user.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class User {
-  String firstName;
-  Address address;
+  User(this.name, this.address);
 
-  User(this.firstName, this.address);
+  String name;
+  Address address;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);

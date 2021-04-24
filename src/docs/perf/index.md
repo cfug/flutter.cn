@@ -27,7 +27,7 @@ that you have about performance.
 如果你有任何关于性能方面的问题，本文档可以作为解决你疑惑的起点。
 
 The answers to the first two questions are mostly philosophical, and not as 
-helpful to many developers who visit this page with speicifc
+helpful to many developers who visit this page with specific
 performance issues that need to be solved. Therefore, the answers to those 
 questions are in the [appendix](/docs/perf/appendix).
 

@@ -9,10 +9,8 @@ next:
   path:  /docs/cookbook/effects/expandable-fab
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
-
-{% include null-safe-recipe.md %}
 
 Modern chat apps display indicators when other users
 are actively typing responses. These indicators help

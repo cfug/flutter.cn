@@ -274,9 +274,9 @@ Examples:
 
   使用 [Firebase Functions][19]。
 
-### Use <img> in a platform view.
+### Use `<img>` in a platform view.
 
-### 在平台视图中使用 <img>
+### 在平台视图中使用 `<img>`
 
 Flutter supports embedding HTML inside the app using
 [`HtmlElementView`][17].  Use it to create an `<img>`
@@ -320,7 +320,7 @@ Flutter 需要在 `<img>` 元素之间创建额外的 WebGL 上下文。
 [13]: {{site.api}}/flutter/widgets/Image/Image.memory.html
 [14]: {{site.api}}/flutter/widgets/Image/Image.asset.html
 [15]: {{site.api}}/flutter/widgets/Image/Image.network.html
-[16]: https://firebase.google.com/docs/hosting/full-config#headers
+[16]: https://firebase.google.cn/docs/hosting/full-config#headers
 [17]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
 [18]: https://developers.cloudflare.com/workers/examples/cors-header-proxy
 [19]: {{site.github}}/7kfpun/cors-proxy

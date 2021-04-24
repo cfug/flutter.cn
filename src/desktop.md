@@ -1202,8 +1202,9 @@ Flokk [官宣文章][gskinner-flokk-blogpost], [源代码仓库地址][gskinner-
 
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
+[running web app]: https://gallery.flutter.dev
+[flutter-gallery-repo]: {{site.github}}/flutter/gallery
 [README]: {{site.github}}/flutter/gallery#flutter-gallery
-[flutter-gallery-repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
 [running web app]: https://flutter.github.io/gallery/#/

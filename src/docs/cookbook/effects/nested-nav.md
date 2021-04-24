@@ -9,10 +9,8 @@ next:
   path:  /docs/cookbook/effects/photo-filter-carousel
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
-
-{% include null-safe-recipe.md %}
 
 Apps accumulate dozens and then hundreds of routes over time.
 Some of your routes make sense as top-level (global) routes.

@@ -6,6 +6,8 @@ tags: Flutter参考资料
 keywords: Flutter原理,Flutter架构指南,Flutter分层设计
 ---
 
+<?code-excerpt path-base="../null_safety_examples/resources/architectural_overview/"?>
+
 This article is intended to provide a high-level overview of the architecture of
 Flutter, including the core principles and concepts that form its design.
 
@@ -364,7 +366,7 @@ Widgets 通过布局组合形成一种层次结构关系。
 从根布局（托管 Flutter 应用的容器，通常是 `MaterialApp` 或 `CupertinoApp`）开始，
 自上而下都是这样的结构，如下面的示例所示：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Main)"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -745,7 +747,7 @@ can use the `.of()` method to look up the relevant theme data, for example:
 `MaterialApp` 的 `build()` 方法会在构建时在树中插入一个主题，
 更深层级的 widget 便可以使用 `.of()` 方法来查找相关的主题数据，例如：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Container)"?>
 ```dart
 Container(
   color: Theme.of(context).secondaryHeaderColor,
@@ -870,7 +872,7 @@ Consider this simple code fragment that demonstrates a simple widget hierarchy:
 
 首先观察以下的代码片段，它代表了一个简单的 widget 结构：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Container2)"?>
 ```dart
 Container(
   color: Colors.blue,
@@ -889,7 +891,7 @@ During this process, the `build()` method can introduce new widgets, as
 necessary, based on its state. As a simple example, in the preceding code
 fragment, `Container` has `color` and `child` properties. From looking at the
 [source
-code]({{site.github}}/flutter/flutter/blob/f7a6a7906be96d2288f5d63a5a54c515a6e987fe/packages/flutter/lib/src/widgets/container.dart#L433)
+code]({{site.github}}/flutter/flutter/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)
 for `Container`, you can see that if the color is not null, it inserts a
 `ColoredBox` representing the color:
 
@@ -904,7 +906,7 @@ for `Container`, you can see that if the color is not null, it inserts a
 <!-- skip -->
 ```dart
 if (color != null)
-  current = ColoredBox(color: color, child: current);
+  current = ColoredBox(color: color!, child: current);
 ```
 
 Correspondingly, the `Image` and `Text` widgets might insert child widgets such
@@ -1107,18 +1109,19 @@ determine how it will use them, for example:
 通过使用 [`LayoutBuilder`]({{site.api}}/flutter/widgets/LayoutBuilder-class.html) widget，
 子节点可以得到从上层传递下来的约束，并合理利用该约束对象，使用方法如下：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (LayoutBuilder)"?>
 ```dart
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        if (constraints.maxWidth < 600) {
-          return OneColumnLayout();
-        } else {
-          return TwoColumnLayout();
-        }
-      },
-    );
+Widget build(BuildContext context) {
+  return LayoutBuilder(
+    builder: (context, constraints) {
+      if (constraints.maxWidth < 600) {
+        return OneColumnLayout();
+      } else {
+        return TwoColumnLayout();
+      }
+    },
+  );
+}
 ```
 
 More information about the constraint and layout system, along with worked
@@ -1288,7 +1291,7 @@ event handler in Kotlin (Android) or Swift (iOS):
 下方的示例是在 Kotlin (Android) 或 Swift (iOS) 中处理 Dart 调用平台通道事件
 的简单接收处理：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (MethodChannel)"?>
 ```dart
 // Dart side
 const channel = MethodChannel('foo');
@@ -1359,23 +1362,34 @@ here’s a fragment of code to call the traditional Win32 `MessageBox()` API:
 并且指示 Dart VM 为它们创建关联。
 下面这段代码片段是调用 Win32 的 `MessageBox()` API 的简单示例：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (FFI)"?>
 ```dart
 typedef MessageBoxNative = Int32 Function(
-    IntPtr hWnd, Pointer<Utf16> lpText, Pointer<Utf16> lpCaption, Int32 uType);
+  IntPtr hWnd,
+  Pointer<Utf16> lpText,
+  Pointer<Utf16> lpCaption,
+  Int32 uType,
+);
+
 typedef MessageBoxDart = int Function(
-    int hWnd, Pointer<Utf16> lpText, Pointer<Utf16> lpCaption, int uType);
+  int hWnd,
+  Pointer<Utf16> lpText,
+  Pointer<Utf16> lpCaption,
+  int uType,
+);
 
-final user32 = DynamicLibrary.open('user32.dll');
-final MessageBox =
-    user32.lookupFunction<MessageBoxNative, MessageBoxDart>('MessageBoxW');
+void exampleFfi() {
+  final user32 = DynamicLibrary.open('user32.dll');
+  final MessageBox =
+      user32.lookupFunction<MessageBoxNative, MessageBoxDart>('MessageBoxW');
 
-final result = MessageBox(
+  final result = MessageBox(
     0, // No owner window
-    Utf16.toUtf16('Test message'),   // Message
-    Utf16.toUtf16('Window caption'), // Window title
-    0 // OK button only
-    );
+    'Test message'.toNativeUtf16(), // Message
+    'Window caption'.toNativeUtf16(), // Window title
+    0, // OK button only
+  );
+}
 ```
 
 ### Rendering native controls in a Flutter app
@@ -1442,25 +1456,24 @@ on a platform test. As an example, from the
 <!-- skip -->
 ```dart
 if (defaultTargetPlatform == TargetPlatform.android) {
-      return AndroidView(
-        viewType: 'plugins.flutter.io/google_maps',
-        onPlatformViewCreated: onPlatformViewCreated,
-        gestureRecognizers: gestureRecognizers,
-        creationParams: creationParams,
-        creationParamsCodec: const StandardMessageCodec(),
-      );
-    } else if (defaultTargetPlatform == TargetPlatform.iOS) {
-      return UiKitView(
-        viewType: 'plugins.flutter.io/google_maps',
-        onPlatformViewCreated: onPlatformViewCreated,
-        gestureRecognizers: gestureRecognizers,
-        creationParams: creationParams,
-        creationParamsCodec: const StandardMessageCodec(),
-      );
-    }
-    return Text(
-        '$defaultTargetPlatform is not yet supported by the maps plugin');
-  }
+  return AndroidView(
+    viewType: 'plugins.flutter.io/google_maps',
+    onPlatformViewCreated: onPlatformViewCreated,
+    gestureRecognizers: gestureRecognizers,
+    creationParams: creationParams,
+    creationParamsCodec: const StandardMessageCodec(),
+  );
+} else if (defaultTargetPlatform == TargetPlatform.iOS) {
+  return UiKitView(
+    viewType: 'plugins.flutter.io/google_maps',
+    onPlatformViewCreated: onPlatformViewCreated,
+    gestureRecognizers: gestureRecognizers,
+    creationParams: creationParams,
+    creationParamsCodec: const StandardMessageCodec(),
+  );
+}
+return Text(
+    '$defaultTargetPlatform is not yet supported by the maps plugin');
 ```
 
 Communicating with the native code underlying the `AndroidView` or `UiKitView`

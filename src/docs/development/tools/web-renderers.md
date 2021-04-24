@@ -68,6 +68,44 @@ target is selected.
 
 如果运行/构建目标是非浏览器设备（即移动设备或桌面设备），这个选项会被忽略。
 
+## Runtime configuration
+
+## 配置运行时
+
+To override the web renderer at runtime:
+
+要覆写 web 实时渲染器请执行以下操作：
+
+* Build the app with the `auto` option.
+
+  使用 auto 选项构建应用。
+
+* Insert a `<script>` tag  in `web/index.html` file before the `main.dart.js`
+  script.
+ 
+  在 `web/index.html` 文件的 `main.dart.js` 前插入 `<script>` 标签。
+
+* Set `window.flutterWebRenderer` to `"canvaskit"` or `"html"`:
+
+  配置 `window.flutterWebRenderer` 为 `"canvaskit"` 或者 `"html"`：
+
+```html
+  <script type="text/javascript">
+    let useHtml = // ...
+    if(useHtml) {
+      window.flutterWebRenderer = "html";
+    } else {
+      window.flutterWebRenderer = "canvaskit";
+    }
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+```
+
+The web renderer can't be changed after the Flutter engine startup process
+begins in `main.dart.js`.
+
+Flutter engine 启动之后无法再在 `main.dart.js` 更换 web 渲染器。
+
 ## Choosing which option to use
 
 ## 选择合适的渲染器

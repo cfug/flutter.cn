@@ -3202,7 +3202,7 @@ plugin documentation.
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: /docs/resources/architectural-overview#composition
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino
-[`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
+[`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [DevTools]: /docs/development/tools/devtools/overview
 [existing plugin]: {{site.pub}}/flutter

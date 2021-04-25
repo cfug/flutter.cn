@@ -14,7 +14,7 @@ js:
     url: /assets/codelabs/js/animations_examples.js
 ---
 
-<?code-excerpt path-base="animation/implicit"?>
+<?code-excerpt path-base="../null_safety_examples/animation/implicit"?>
 
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
@@ -124,7 +124,6 @@ Click the **Run** button to run the example:
 
 点击 **Run** 按钮来运行这个示例：
 
-<!-- Vanilla AnimatedOpacity https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5 -->
 {% include implicit-animations/fade-in-starter-code.md %}
 
 {{site.alert.important}}
@@ -147,7 +146,7 @@ Click the **Run** button to run the example:
   This section contains a list of steps you can use to add an
   implicit animation to the
   [fade-in starter code]. After the steps, you can also run the
-  [fade-in complete] code with the changes already made.
+  [fade-in complete] code with the the changes already made.
   The steps outline how to use the `AnimatedOpacity`
   widget to add the following animation feature:
 
@@ -320,7 +319,6 @@ example and click the **Show details** button to trigger the animation.
 下面的示例是修改后的完成版代码&mdash;
 运行这个示例，然后点击 **Show details** 按钮就可以触发动画。
 
-<!-- AnimatedOpacity https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
 {% include implicit-animations/fade-in-complete.md %}
 
 ### Putting it all together
@@ -403,7 +401,6 @@ Click the **Run** button to run the example:
 
 点击 **Run** 按钮来运行这个示例：
 
-<!-- Vanilla Animated Container: https://gist.github.com/8501583cb789504d75317a5ba1ca6930 -->
 {% include implicit-animations/shape-shifting-starter-code.md %}
 
 ### Animate color, borderRadius, and margin with AnimatedContainer
@@ -586,7 +583,6 @@ for `margin`, `borderRadius`, and `color`.
 注意：每次您点击 **Change** 按钮，
 形状的 `margin`、 `borderRadius`、 和 `color` 都会进行动画变化到新的值。
 
-<!-- Animated Container: https://gist.github.com/ddfbc68ec9dc28a48703d29248f5366f -->
 {% include implicit-animations/shape-shifting-complete.md %}
 
 ### Using animation curves

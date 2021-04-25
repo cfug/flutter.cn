@@ -9,10 +9,8 @@ next:
   path:  /docs/cookbook/effects/nested-nav
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
-
-{% include null-safe-recipe.md %}
 
 Apps are filled with buttons that execute long-running behaviors.
 For example, a button might trigger a download,

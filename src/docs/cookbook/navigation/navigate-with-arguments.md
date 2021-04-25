@@ -210,9 +210,9 @@ function and pass them to a widget.
 然后把参数传递给组件。
 
 The `onGenerateRoute()` function creates the correct route based on the given
-`RouteSettings`.
+[`RouteSettings`][].
 
-`onGenerateRoute()` 函数会基于给定的 `RouteSettings` 来创建正确的路由。
+`onGenerateRoute()` 函数会基于给定的 [`RouteSettings`][] 来创建正确的路由。
 
 {% comment %}
 RegEx removes the return statement, removed "routes" property and adds the closing parenthesis at the end
@@ -448,3 +448,4 @@ class ScreenArguments {
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.pushNamed()`]: {{site.api}}/flutter/widgets/Navigator/pushNamed.html
 [`onGenerateRoute()`]: {{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html
+[`RouteSettings`]: {{site.api}}/flutter/widgets/RouteSettings-class.html

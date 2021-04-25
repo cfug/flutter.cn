@@ -403,12 +403,12 @@ class DetailScreen extends StatelessWidget {
 
 Finally, navigate to the `DetailScreen` when a user taps
 a `ListTile` widget using `Navigator.push()`.
-Pass the arguments as part of the `RouteSettings`.
+Pass the arguments as part of the [`RouteSettings`][].
 The `DetailScreen` extracts these arguments.
 
 最后，当用户点击 `ListTile` widget 时，
 使用 `Navigator.push()` 导航到 `DetailScreen`。
-将参数作为 `RouteSettings` 的一部分进行传递，
+将参数作为 [`RouteSettings`][] 的一部分进行传递，
 `DetailScreen` 将会提取这些参数。
 
 <!-- skip -->
@@ -532,6 +532,8 @@ class DetailScreen extends StatelessWidget {
 </noscript>
 
 
+[`ModalRoute.of()`]: {{site.api}}/flutter/widgets/ModalRoute/of.html
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`onTap()`]: {{site.api}}/flutter/material/ListTile/onTap.html
+[`RouteSettings`]: {{site.api}}/flutter/widgets/RouteSettings-class.html
 [Use lists]: /docs/cookbook/lists/basic-list

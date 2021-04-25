@@ -62,11 +62,11 @@ the next available Dart VM that is hosted by your engine.
 
 #### Terminal
 
-#### 命令行
+#### 终端
 
 Run `flutter attach` or `flutter attach -d deviceId` to attach from the terminal.
 
-在命令行执行 `flutter attach` 或者 `flutter attach -d deviceId` 来连接你的应用。 
+在终端执行 `flutter attach` 或者 `flutter attach -d deviceId` 来连接你的应用。 
 
 {% include app-figure.md image="development/add-to-app/debugging/cli-attach.png" caption="flutter attach via terminal" %}
 

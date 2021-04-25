@@ -32,7 +32,7 @@ and source-level debugging. As such, it is not representative of a production
 app end users download.
 
 默认情况下，使用 `flutter run` 命令启动应用，或者点击 IDE 的 **Play** 按钮
-（如 [Test drive][] 和 [Write your first Flutter app][] 中所使用的），
+（如 [开发体验初探][Test drive] 和 [编写第一个 Flutter 应用][Write your first Flutter app] 中所使用的），
 会生成 Flutter 应用的 _调试_ 版本。调试版本会很大，因为有用于热重载和源码调试的开销。
 因此，它不能代表用户最终下载的生产应用。
 
@@ -52,7 +52,7 @@ native libraries targeting the phone's CPU architecture.
 是为了方便在 Play Store 和 App Store 上组装你的上传包。
 因此，它们也无法代表你的用户最终下载的大小。
 应用商店通常会针对具体的下载程序及其硬件，重新处理和分割你的上传包，
-例如根据手机的 DPI 分割资源、根据手机的 CPU 架构分割原生库。 
+例如根据手机的 DPI 过滤资源、根据手机的 CPU 架构过滤原生库。 
 
 ### Estimating total size
 
@@ -154,7 +154,7 @@ Sign and export the IPA. The exported directory contains
 application size on different devices and versions of iOS.
 
 签名并导出 IPA 包。导出目录中有一个「App Thinning Size Report.txt」文件，
-记录了应用在不同的设备和 iOS 版本上的预估大小。
+其中记录了有关在不同设备和 iOS 版本上预估的应用程序大小的详细信息。
 
 The App Size Report for the default demo app in Flutter 1.17 shows:
 
@@ -286,7 +286,7 @@ break down the contents of the application into the individual file level and
 up to function level for the Dart AOT artifact.
 
 上面生成的 `*-code-size-analysis_*.json` 文件可以在 DevTools 中进一步深入分析，
-树和树状图可以将应用内容分割至单文件级别，和达到 Dart AOT 构建要求的功能级别。
+树和树状图可以将应用内容分割至单文件级别，和达到 Dart AOT 产物的功能级别。
 
 This can be done by `flutter pub global run devtools`, selecting
 `Open app size tool` and uploading the JSON file.

@@ -48,7 +48,7 @@ your upload package to target the specific downloader and the downloader's
 hardware, such as filtering for assets targeting the phone's DPI, filtering
 native libraries targeting the phone's CPU architecture.
 
-由 `flutter build apk` 或 `flutter build ios` 等生成的默认发布版本，
+由 `flutter build apk` 或 `flutter build ios` 等生成的默认发行版本，
 是为了方便在 Play Store 和 App Store 上组装你的上传包。
 因此，它们也无法代表你的用户最终下载的大小。
 应用商店通常会针对具体的下载程序及其硬件，重新处理和分割你的上传包，
@@ -180,13 +180,13 @@ and iPhone11,8 (iPhone XR) running iOS 13.0.
 
 To measure an iOS app exactly,
 you have to upload a release IPA to Apple’s
-App Store Connect ([instructions][])release
+App Store Connect ([instructions][])
 and obtain the size report from there.
 IPAs are commonly larger than APKs as explained
 in [How big is the Flutter engine?][], a
 section in the Flutter [FAQ][].
 
-为了精确测量一个 iOS 应用，你需要先将一个发布版本的 IPA 包上传至 
+为了精确测量一个 iOS 应用，你需要先将一个发行版本的 IPA 包上传至 
 App Store Connect（[简介][instructions]），再获取它的大小报告。
 IPA 包一般都比 APK 包要大，这在 Flutter [FAQ][] 中的 
 [Flutter 引擎有多大？][How big is the Flutter engine?] 一节中已经阐述过了。
@@ -200,7 +200,7 @@ a size analysis tool is included to help developers understand the breakdown
 of the release build of their application.
 
 从 Flutter 1.22 和 DevTools 0.9.1 版本开始，包含了一个大小分析工具，
-帮助开发者了解和拆分应用的发布版本。
+帮助开发者了解和拆分应用的发行版本。
 
 {{site.alert.warning}}
 
@@ -229,7 +229,7 @@ building:
 
 This build is different from a standard release build in two ways.
 
-这种构建模式和标准的发布构建相比，有以下两方面的区别：
+这种构建模式和标准的发行构建相比，有以下两方面的区别：
 
 1. The tool compiles Dart in a way that records code size usage of Dart
    packages.
@@ -292,7 +292,7 @@ This can be done by `flutter pub global run devtools`, selecting
 `Open app size tool` and uploading the JSON file.
 
 可以通过 `flutter pub global run devtools` 打开 DevTools，
-选择 「Open app size tool」，然后上传 JSON 文件。
+选择 `Open app size tool`，然后上传 JSON 文件。
 
 {% include app-figure.md image="perf/devtools-size.png" alt="Example breakdown of app in DevTools" %}
 
@@ -311,7 +311,7 @@ This tag can dramatically reduce code size.
 For an example of using this tag, see
 [Obfuscating Dart code][].
 
-当构建应用的发布版本时，考虑使用 `--split-debug-info` 标记。
+当构建应用的发行版本时，考虑使用 `--split-debug-info` 标记。
 该标记会显著减少代码量。关于使用此标记的示例，请看 [Obfuscating Dart code][]。
 
 Some of the other things you can do to make your app smaller

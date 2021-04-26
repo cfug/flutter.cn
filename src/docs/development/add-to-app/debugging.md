@@ -19,12 +19,12 @@ you can then build and run your Android or iOS app the same way
 you run normal Android or iOS apps.
 
 当你将 Flutter 模块集成到项目中并使用 Flutter 的平台 APIs 来运行 Flutter 引擎和/或 UI 时，
-你可以像运行普通的 Android 或 iOS 应用程序一样构建和运行你的应用。
+你可以与平时运行 Android 或 iOS 应用程序一样，构建和运行你的应用。
 
 However, Flutter is now powering the UI in places where you're showing a
 `FlutterActivity` or `FlutterViewController`.
 
-Flutter 会在你打开 `FlutterActivity` 或 `FlutterViewController` 的时候为 UI 提供支持。
+但就目前而言，Flutter 需要在 `FlutterActivity` 或 `FlutterViewController` 中展示 UI 内容。
 
 ### Debugging
 
@@ -37,7 +37,7 @@ command from an IDE. But you can also use all your Flutter
 overlays, DevTools, and setting breakpoints in add-to-app scenarios.
 
 你可能习惯于在 IDE 中运行 `flutter run` 或者等效的快捷命令，
-它会自动使用你喜爱的 Flutter 调试工具。
+它会自动启动你喜爱的 Flutter 调试工具。
 同样的，你也可以使用所有 Flutter 的 [调试功能][debugging functionalities]，
 例如热重载、性能调试、DevTools 以及在混合开发的场景中设置断点。
 
@@ -48,17 +48,17 @@ through VS Code or IntelliJ/Android Studio.
 
 这些功能由 `flutter attach` 机制提供。
 `flutter attach` 可以通过不同的路径启动，
-例如通过 SDK 中的 CLI 工具、VS Code 或者 IntelliJ/Android Studio。
+例如通过 SDK 中的命令行工具、VS Code 或者 IntelliJ/Android Studio。
 
 `flutter attach` can connect as soon as you run your `FlutterEngine`, and
 remains attached until your `FlutterEngine` is disposed. But you can invoke
 `flutter attach` before starting your engine. `flutter attach` waits for
 the next available Dart VM that is hosted by your engine.
 
-`flutter attach` 可以在你运行 `FlutterEngine` 时立即进行连接并保持，
-直到 `FlutterEngine` 被释放。
+`flutter attach` 可以在你运行 `FlutterEngine` 时立即进行连接，
+并在 `FlutterEngine` 被释放之前一直保持连接。
 你可以在启动引擎之前执行 `flutter attach`，
-等待由引擎持有下一个有效的 Dart VM 连接。
+它将等待下一个由引擎持有的 Dart VM 进行连接。
 
 #### Terminal
 
@@ -82,7 +82,7 @@ Select the correct device using the status bar in VS Code, then run the **Flutte
 Alternatively, create a `.vscode/launch.json` file in your Flutter module project to enable attaching using the **Run > Start Debugging** command or `F5`:
 
 或者，在你的 Flutter 模块下创建一个 `.vscode/launch.json` 文件，
-使用 **Run > Start Debugging** 命令 或 `F5`。
+使用 **Run > Start Debugging** 命令或按下 `F5`。
 
 ```js
 {
@@ -96,7 +96,7 @@ Alternatively, create a `.vscode/launch.json` file in your Flutter module projec
 
 Select the device on which the Flutter module runs so `flutter attach` filters for the right start signals.
 
-选择 Flutter 模块运行的设备，然后点击右边的 `flutter attach` 按钮。
+选择要运行 Flutter 模块的设备，然后点击右边的 `flutter attach` 按钮。
 
 {% include app-figure.md image="development/add-to-app/debugging/intellij-attach.png" caption="flutter attach via IntelliJ" %}
 
@@ -112,15 +112,15 @@ to each of the attached isolates.
 
 可以在一个应用程序中添加多个 Flutter 实例(`root isolates`)。
 在默认情况下，`flutter attach` 会连接所有可用的 isolates。
-然后，从连接的 CLI 发送的任何命令都会转发到每个已连接的 isolate。
+然后，在已连接的命令行发送的任何命令，都会转发到每个已连接的 isolate。
 
 You can list all the attached isolates by typing `l`
 from an attached `flutter` CLI tool.
 If unspecified, then the isolate names are automatically generated
 from the dart entrypoint file and function name.
 
-你可以通过在已连接的 `flutter` CLI 工具中键入 `l` 来列出所有连接的 isolate。
-如果未指定，isolate 名称会由 dart 入口文件和函数名自动生成。
+你可以在已连接的 `flutter` 命令行工具中键入 `l` 来列出所有连接的 isolate。
+如果未指定 isolate 名称，会由 dart 入口文件和函数名自动生成。
 
 Example `l` output for an application that is displaying two Flutter isolates
 simultaneously:

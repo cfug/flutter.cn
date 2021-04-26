@@ -13,8 +13,8 @@ code and assets needed to run the app, its size can be a concern. The larger an
 app, the more space it requires on a device, the longer it takes to download,
 and it may break the limit of useful features like Android instant apps.
 
-许多开发者都会关注应用编译后的大小。APK、app bundle 和 Flutter 应用的 IPA 版本是各自独立的，
-持有应用运行所需要的所有代码和资源。一个应用越大，在设备上占用的空间就越多，下载时间就越长，
+许多开发者都会关注应用编译后的大小。Flutter 应用编译出的 APK、app bundle 和 IPA 均持有
+应用运行需要的所有代码和资源，是完全独立的。一个应用越大，在设备上占用的空间就越多，下载时间就越长，
 还可能超出 Android 即时应用等实用功能的限制。
 
 ## Debug builds are not representative
@@ -33,8 +33,8 @@ app end users download.
 
 默认情况下，使用 `flutter run` 命令启动应用，或者点击 IDE 的 **Play** 按钮
 （如 [开发体验初探][Test drive] 和 [编写第一个 Flutter 应用][Write your first Flutter app] 中所使用的），
-会生成 Flutter 应用的 _调试_ 版本。调试版本会很大，因为有用于热重载和源码调试的开销。
-因此，它不能代表用户最终下载的生产应用。
+会生成 Flutter 应用的 **调试** 版本。调试版本体积很大，用于热重载和源码调试。
+因此，它不能代表用户最终下载的正式版本的应用。
 
 ## Checking the total size
 
@@ -49,9 +49,9 @@ hardware, such as filtering for assets targeting the phone's DPI, filtering
 native libraries targeting the phone's CPU architecture.
 
 由 `flutter build apk` 或 `flutter build ios` 等生成的默认发行版本，
-是为了方便在 Play Store 和 App Store 上组装你的上传包。
+是为了方便在 Play 商店和 App Store 上组装你上传的应用包。
 因此，它们也无法代表你的用户最终下载的大小。
-应用商店通常会针对具体的下载程序及其硬件，重新处理和分割你的上传包，
+应用商店通常会针对不同的下载程序及其硬件，重新处理和拆分你上传的应用包，
 例如根据手机的 DPI 过滤资源、根据手机的 CPU 架构过滤原生库。 
 
 ### Estimating total size
@@ -95,7 +95,7 @@ The download size is calculated based on an XXXDHPI (~640dpi) device on an
 arm64-v8a architecture. Your end users' download sizes may vary depending on
 their hardware.
 
-该下载大小是基于 XXXDHPI (~640dpi)、arm64-v8a 架构的设备来计算的。
+该下载大小是基于 XXXHDPI (~640dpi) 且架构为 arm64-v8a 的设备来计算的。
 用户最终的下载大小可能因硬件而异。
 
 The top tab has a toggle for download size and install size. The page also
@@ -107,13 +107,13 @@ contains optimization tips further below.
 
 Create an [Xcode App Size Report][].
 
-创建一个 [Xcode 应用大小报告][Xcode App Size Report]。
+创建一份 [Xcode 应用大小报告][Xcode App Size Report]。
 
 First, by configuring the app version and build as described in the
 [iOS create build archive instructions][].
 
 首先，参照 [iOS 创建构建归档指南][iOS create build archive instructions]，
-配置 app 的版本，并开始构建。
+配置应用的版本，并开始构建。
 
 Then:
 
@@ -143,7 +143,7 @@ Then:
 
 1. Select **Rebuild from Bitcode** (available if bitcode is enabled on your project).
 
-   选择 **Rebuild from Bitcode**（如果你的项目中 bitcode 可用）。
+   选择 **Rebuild from Bitcode**（如果你的项目启用了 bitcode）。
 
 1. Select **Strip Swift symbols**.
 
@@ -186,7 +186,7 @@ IPAs are commonly larger than APKs as explained
 in [How big is the Flutter engine?][], a
 section in the Flutter [FAQ][].
 
-为了精确测量一个 iOS 应用，你需要先将一个发行版本的 IPA 包上传至 
+想要精确测量一个 iOS 应用的体积，你需要先将一个发行版本的 IPA 包上传至 
 App Store Connect（[简介][instructions]），再获取它的大小报告。
 IPA 包一般都比 APK 包要大，这在 Flutter [FAQ][] 中的 
 [Flutter 引擎有多大？][How big is the Flutter engine?] 一节中已经阐述过了。
@@ -211,7 +211,7 @@ of the release build of their application.
   
   正如 [检查总大小][#checking-the-total-size] 一节所述，
   上传包的大小并不代表用户最终的下载大小。请注意，拆分工具中显示的冗余的原生库结构和资源密度，
-  都可以通过 Play Store 和 App Store 过滤。
+  都可以通过 Play 商店和 App Store 过滤。
   
 {{site.alert.end}}
 
@@ -241,14 +241,14 @@ This build is different from a standard release build in two ways.
    detailed analysis in DevTools.
    
    该工具在终端上展示了大小拆分的摘要信息，并在 DevTools 中生成了一个
-   「*-code-size-analysis_*.json」文件，用于进行更详细的分析。
+   `*-code-size-analysis_*.json` 文件，用于进行更详细的分析。
 
 In addition to analyzing a single build, two builds can also be diffed by
 loading two `*-code-size-analysis_*.json` files into DevTools. See
 [DevTools documentation][] for details.
 
-除了分析单个构建，你还可以加载两个 `*-code-size-analysis_*.json` 文件
-到 DevTools 中比较差异。详情请看 [DevTools 文档][DevTools documentation]。
+除了分析单个构建，你还可以在 DevTools 中加载两个 `*-code-size-analysis_*.json`
+文件比较差异。详情请阅读 [DevTools 文档][DevTools documentation]。
 
 {% include app-figure.md image="perf/size-summary.png" alt="Size summary of an Android application in terminal" %}
 
@@ -286,7 +286,7 @@ break down the contents of the application into the individual file level and
 up to function level for the Dart AOT artifact.
 
 上面生成的 `*-code-size-analysis_*.json` 文件可以在 DevTools 中进一步深入分析，
-树和树状图可以将应用内容分割至单文件级别，和达到 Dart AOT 产物的功能级别。
+树和树状图可以将应用内容分割至单文件级别，也可以达到 Dart AOT 产物的功能级别。
 
 This can be done by `flutter pub global run devtools`, selecting
 `Open app size tool` and uploading the JSON file.

@@ -209,7 +209,7 @@ of the release build of their application.
   size. Be aware that redundant native library architectures and asset densities
   seen in the breakdown tool can be filtered by the Play Store and App Store.
   
-  正如 [检查总大小][#checking-the-total-size] 一节所述，
+  正如 [检查总大小](#checking-the-total-size) 一节所述，
   上传包的大小并不代表用户最终的下载大小。请注意，拆分工具中显示的冗余的原生库结构和资源密度，
   都可以通过 Play 商店和 App Store 过滤。
   

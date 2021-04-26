@@ -126,7 +126,7 @@ Then:
 1. In the sidebar of the Xcode Organizer window, select your iOS app,
    then select the build archive you just produced.
    
-   在 Xcode Organizer 窗口的侧栏，选择你的 iOS 应用，然后选择你刚刚生成的构建文档。
+   在 Xcode Organizer 窗口的侧栏，选择你的 iOS 应用，然后选择你刚刚生成的构建归档。
    
 1. Click **Distribute App**.
 
@@ -154,7 +154,7 @@ Sign and export the IPA. The exported directory contains
 application size on different devices and versions of iOS.
 
 签名并导出 IPA 包。导出目录中有一个「App Thinning Size Report.txt」文件，
-其中记录了有关在不同设备和 iOS 版本上预估的应用程序大小的详细信息。
+其中记录了在不同设备和 iOS 版本上预估的应用程序大小的详细信息。
 
 The App Size Report for the default demo app in Flutter 1.17 shows:
 
@@ -264,14 +264,14 @@ native library is further broken down by package for quick analysis.
   This tool on iOS creates a .app rather than an IPA. It also contains bitcode
   which drastically increases the .framework file sizes in the .app.
   
-  在 iOS 上，该工具会创建一个 .app 文件，而不是一个 IPA 包。
-  .app 文件同样包含了导致 .framework 文件大小急剧增大的 bitcode。
+  在 iOS 上，该工具会创建一个 .app，而不是一个 IPA 包。
+  .app 同样包含了导致 .framework 文件大小急剧增大的 bitcode。
 
   Use this tool to evaluate the relative size of the .app's content. To get
   a closer estimate of the download size, reference the
   [Estimating total size](#estimating-total-size) section above.
   
-  使用该工具可以评估 .app 文件内容的相对大小。为了获取更准确的下载大小的估算值，
+  使用该工具可以评估 .app 内容的相对大小。为了获取更准确的下载大小的估算值，
   请参考上面的 [估算总大小](#estimating-total-size) 一节。
   
 {{site.alert.end}}
@@ -286,7 +286,7 @@ break down the contents of the application into the individual file level and
 up to function level for the Dart AOT artifact.
 
 上面生成的 `*-code-size-analysis_*.json` 文件可以在 DevTools 中进一步深入分析，
-树和树状图可以将应用内容分割至单文件级别，也可以达到 Dart AOT 产物的功能级别。
+树和树状图可以将应用内容分割至单文件级别，也可以达到 Dart AOT 产物的函数级别。
 
 This can be done by `flutter pub global run devtools`, selecting
 `Open app size tool` and uploading the JSON file.

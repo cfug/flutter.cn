@@ -41,12 +41,12 @@ on each other, introducing you to different aspects of the animation library.
 然后列举五个动画示例。这些示例互相关联，
 展示了动画库的不同方面。
 
-The Flutter SDK also provides implicit transition animations,
+The Flutter SDK also provides built-in explicit animations,
 such as [`FadeTransition`][], [`SizeTransition`][],
 and [`SlideTransition`][]. These simple animations are
 triggered by setting a beginning and ending point.
 They are simpler to implement
-than explicit animations, which are described here.
+than custom explicit animations, which are described here.
 
 Flutter SDK 也提供过渡动画，比如
 [`FadeTransition`][]，[`SizeTransition`][] 和 [`SlideTransition`][]。

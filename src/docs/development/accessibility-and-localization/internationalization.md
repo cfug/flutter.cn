@@ -315,7 +315,8 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
 7. Add the import statement on `app_localizations.dart` and `AppLocalizations.delegate` 
    in your call to the constructor for `MaterialApp`.
 
-   测试应用中生成的本地化文件内容如下：
+   在调用 `MaterialApp` 的构造函数时候，添加 `import` 语句，导入
+   `app_localizations.dart` 和 `AppLocalizations.delegate`。
    
    <?code-excerpt "gen_l10n_example/lib/main.dart (AppLocalizationsImport)"?>
    ```dart
@@ -346,6 +347,9 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
 8. Use AppLocalizations anywhere in your app.
    Here, the translated message is used in a Text widget.
 
+   在你应用的任何地方，都使用 `AppLocalizations`，
+   这里它被用于在 Text widget 里展示翻译过的消息。
+
    <?code-excerpt "gen_l10n_example/lib/examples.dart (Example)"?>
    ```dart
    Text(AppLocalizations.of(context)!.helloWorld);
@@ -353,6 +357,9 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
    
 9. You can also use the generated `localizationsDelegates` and `supportedLocales` list
    instead of providing them manually.
+
+   您也可以使用生成的 `localizationsDelegates` 和 `supportedLocales` 列表，
+   而不是手动提供它们。
 
    <?code-excerpt "gen_l10n_example/lib/examples.dart (MaterialAppExample)"?>
    ```dart
@@ -369,7 +376,8 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
    the key of each entry is used as the method name of the getter,
    while the value of that entry contains the localized message.
    
-   如果目标设备的语言环境设置为英语，此代码生成的 Text widget 会展示「Hello World!」。
+   如果目标设备的语言环境设置为英语，
+   此代码生成的 Text widget 会展示「Hello World!」。
    如果目标设备的语言环境设置为西班牙语，则展示「Hola Mundo!」，
    在 `arb` 文件中，每个条目的键值都被用作 getter 的方法名称，
    而该条目的值则表示本地化的信息。

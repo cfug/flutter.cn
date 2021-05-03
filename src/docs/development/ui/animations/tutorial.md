@@ -48,7 +48,7 @@ triggered by setting a beginning and ending point.
 They are simpler to implement
 than custom explicit animations, which are described here.
 
-Flutter SDK 也提供过渡动画，比如
+Flutter SDK 也内置里显式动画，比如
 [`FadeTransition`][]，[`SizeTransition`][] 和 [`SlideTransition`][]。
 这些简单的动画可以通过设置起点和终点来触发。
 它们比下面介绍的显式动画更容易实现。

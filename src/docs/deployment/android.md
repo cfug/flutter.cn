@@ -191,10 +191,16 @@ download the .apk signed with the 'deployment key'. An 'upload key' is used to
 authenticate the .aab / .apk uploaded by developers onto the Play Store and is 
 re-signed with the deployment key once in the Play Store.
 
-#TODO
+Android 中有两种签名密钥: 部署和上传。
+终端用户下载到的 .apk 文件是被部署密钥签名过的文件，
+上传密钥用于验证开发者上载到 Play 商店的 .aab 或 .apk 文件。
+上传密钥是给予部署密钥重新签名的密钥，上载 Play 商店时候需要用到。
 
 * It's highly recommended to use the automatic cloud managed signing for
   the deployment key. For more information, see the [official Play Store documentation][].
+
+  严重推荐你选择云托管的方式来管理部署密钥，更多相关信息，
+  请参阅官方文档 [使用 Play 应用签名功能][official Play Store documentation Zh Lang]。
 
 ### Create an upload keystore
 
@@ -1051,6 +1057,7 @@ The resulting app bundle or APK files are located in
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
+[official Play Store documentation Zh Lang]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=zh_CN
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [Platform Views]: /docs/development/platform-integration/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start

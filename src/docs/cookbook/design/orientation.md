@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/design/orientation"?>
+
 In some situations,
 you want to update the display of an app when the user
 rotates the screen from portrait mode to landscape mode. For example,
@@ -71,7 +73,7 @@ To learn more about working with `GridViews`,
 see the [Creating a grid list][] recipe.
 
 要了解有关使用 `GridViews` 的更多信息，
-请参阅这个教程文档：[创建一个网格列表](/docs/cookbook/lists/grid-lists)。
+请参阅这个教程文档：[创建一个网格列表][Creating a grid list]。
 
 ## 2. Use an `OrientationBuilder` to change the number of columns
 
@@ -123,7 +125,8 @@ OrientationBuilder(
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() {
@@ -147,7 +150,7 @@ class MyApp extends StatelessWidget {
 class OrientationList extends StatelessWidget {
   final String title;
 
-  OrientationList({Key key, this.title}) : super(key: key);
+  OrientationList({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

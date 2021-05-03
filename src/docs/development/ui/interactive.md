@@ -84,7 +84,9 @@ You can get right to touching the code in
 If you want to try different ways of managing state,
 skip to [Managing state][].
 
-您可以直接查看 [第二步: 创建 StatefulWidget 的子类](#step-2)。如果您想尝试不同的管理状态方式，请跳至 [状态管理](#managing-state)。
+您可以直接查看 [第二步: 创建 StatefulWidget 的子类](#step-2)。
+如果您想尝试不同的管理状态方式，
+请跳至 [状态管理](#managing-state)。
 
 ## Stateful and stateless widgets
 
@@ -94,14 +96,18 @@ A widget is either stateful or stateless. If a widget can
 change&mdash;when a user interacts with it,
 for example&mdash;it's stateful.
 
-有些 widgets 是有状态的, 有些是无状态的。如果用户与 widget 交互，widget 会发生变化，那么它就是_有状态的_。
+有些 widgets 是有状态的, 有些是无状态的。
+如果用户与 widget 交互，widget 会发生变化，
+那么它就是 **有状态的**。
 
 A _stateless_ widget never changes.
 [`Icon`][], [`IconButton`][], and [`Text`][] are
 examples of stateless widgets. Stateless widgets
 subclass [`StatelessWidget`][].
 
-_Stateless_ widget 不会发生变化。[Icon][]、[IconButton][] 和 [Text][] 都是无状态 widget，它们都是 [StatelessWidget][] 的子类。
+_Stateless_ widget 不会发生变化。
+[Icon][]、[IconButton][] 和 [Text][]
+都是无状态 widget，它们都是 [StatelessWidget][] 的子类。
 
 A _stateful_ widget is dynamic: for example,
 it can change its appearance in response to events
@@ -111,9 +117,12 @@ triggered by user interactions or when it receives data.
 are examples of stateful widgets. Stateful widgets
 subclass [`StatefulWidget`][].
 
-而 _stateful_ widget 是动态的。例如，可以通过与用户的交互或是随着数据的改变而导致外观形态的变化。
-[Checkbox][]、[Radio][]、[Slider][]、[InkWell][]、[Form][] 和 [TextField][] 都是有状态 widget，它们都是
-[StatefulWidget][] 的子类。
+而 _stateful_ widget 是动态的。
+例如，可以通过与用户的交互或是随着数据的改变
+而导致外观形态的变化。
+[Checkbox][]、[Radio][]、[Slider][]、
+[InkWell][]、[Form][] 和 [TextField][] 
+都是有状态 widget，它们都是 [StatefulWidget][] 的子类。
 
 A widget's state is stored in a [`State`][] object,
 separating the widget's state from its appearance.
@@ -160,7 +169,10 @@ star and the numeric count next to it&mdash;with a single
 custom stateful widget that manages a row with two
 children widgets: an `IconButton` and `Text`.
 
-在本节中，您将创建一个自定义有状态的 widget。您将使用一个自定义有状态 widget 来替换两个无状态 widget &mdash;红色实心星形图标和其旁边的数字计数&mdash;该 widget 用两个子 widget 管理一行 `IconButton` 和 `Text`。
+在本节中，您将创建一个自定义有状态的 widget。
+您将使用一个自定义有状态 widget 来替换两个无状态 widget &mdash;
+红色实心星形图标和其旁边的数字计数&mdash;
+该 widget 用两个子 widget 管理一行 `IconButton` 和 `Text`。
 
 Implementing a custom stateful widget requires creating two classes:
 
@@ -180,7 +192,9 @@ called `FavoriteWidget`, for the lakes app.
 After setting up, your first step is choosing how state is
 managed for `FavoriteWidget`.
 
-这一节展示如何为 Lakes 应用程序构建一个名为 `FavoriteWidget` 的 StatefulWidget。第一步是选择如何管理 `FavoriteWidget` 的状态。
+这一节展示如何为 Lakes 应用程序构建一个名为
+`FavoriteWidget` 的 StatefulWidget。
+第一步是选择如何管理 `FavoriteWidget` 的状态。
 
 ### Step 0: Get ready
 
@@ -190,7 +204,8 @@ If you've already built the app in the
 [building layouts tutorial (step 6)][],
 skip to the next section.
 
-如果你已经在 [Layout tutorial (step 6)][] 中成功创建了应用程序，你可以跳过下面的部分。
+如果你已经在 [Layout tutorial (step 6)][]
+中成功创建了应用程序，你可以跳过下面的部分。
 
  1. Make sure you've [set up][] your environment.
  
@@ -418,7 +433,9 @@ the app's `build()` method. First, locate the code that
 creates the `Icon` and `Text`, and delete it.
 In the same location, create the stateful widget:
 
-将您自定义 stateful widget 在 `build()` 方法中添加到 widget 树中。首先，找到创建`图标`和`文本`的代码，并删除它，在相同的位置创建 stateful widget：
+将您自定义 stateful widget 在 `build()` 方法中添加到 widget 树中。
+首先，找到创建`图标`和`文本`的代码，并删除它，
+在相同的位置创建 stateful widget：
 
 <!-- skip -->
 <?code-excerpt path-base="../null_safety_examples/"?>
@@ -489,7 +506,8 @@ If you still have questions, refer to any one of the developer
 The rest of this page covers several ways a widget's state can
 be managed, and lists other available interactive widgets.
 
-本页面的其余部分介绍了可以管理 widget 状态的几种方式，并列出了其他可用的可交互的 widget。
+本页面的其余部分介绍了可以管理 widget 状态的几种方式，
+并列出了其他可用的可交互的 widget。
 
 ## Managing state
 
@@ -708,13 +726,15 @@ so it can take appropriate action.
 
 一般来说父 widget 管理状态并告诉其子 widget 何时更新通常是最合适的。
 例如，[IconButton][] 允许您将图标视为可点按的按钮。
-IconButton 是一个无状态的小部件，因为我们认为父 widget 需要知道该按钮是否被点击来采取相应的处理。
+IconButton 是一个无状态的小部件，
+因为我们认为父 widget 需要知道该按钮是否被点击来采取相应的处理。
 
 In the following example, TapboxB exports its state
 to its parent through a callback. Because TapboxB
 doesn't manage any state, it subclasses StatelessWidget.
 
-在以下示例中，TapboxB 通过回调将其状态到其父类。由于 TapboxB 不管理任何状态，因此它继承自 StatelessWidget。
+在以下示例中，TapboxB 通过回调将其状态到其父类。
+由于 TapboxB 不管理任何状态，因此它继承自 StatelessWidget。
 
 The ParentWidgetState class:
 
@@ -782,7 +802,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //------------------------- TapboxB ----------------------------------
 
 class TapboxB extends StatelessWidget {
-  TapboxB({Key key, this.active: false, @required this.onChanged})
+  TapboxB({Key key, this.active: false, required this.onChanged})
       : super(key: key);
 
   final bool active;
@@ -813,22 +833,6 @@ class TapboxB extends StatelessWidget {
 }
 ```
 
-{{site.alert.tip}}
-  When creating API, consider using the `@required` annotation for any
-  parameters that your code relies on. To use `@required`, import the
-  [`foundation` library][] (which re-exports Dart's
-  [`meta.dart`][] library):
-  
-  在创建 API 时，请考虑使用 `@required` 为代码所依赖的任何参数使用注解。
-  要使用 `@required` 注解，
-  请导入 [foundation library][]（该库重新导出 Dart 的 [meta.dart][]）：
-
-  <!-- skip -->
-  ```dart
-  import 'package:flutter/foundation.dart';
-  ```
-{{site.alert.end}}
-
 <hr>
 
 <a name="mix-and-match"></a>
@@ -841,7 +845,9 @@ the most sense. In this scenario, the stateful widget
 manages some of the state, and the parent widget
 manages other aspects of the state.
 
-对于一些 widget 来说，混搭管理的方法最合适的。在这种情况下，有状态的 widget 自己管理一些状态，同时父 widget 管理其他方面的状态。
+对于一些 widget 来说，混搭管理的方法最合适的。
+在这种情况下，有状态的 widget 自己管理一些状态，
+同时父 widget 管理其他方面的状态。
 
 In the `TapboxC` example, on tap down,
 a dark green border appears around the box. On tap up,
@@ -850,7 +856,12 @@ exports its `_active` state to its parent but manages its
 `_highlight` state internally. This example has two `State`
 objects, `_ParentWidgetState` and `_TapboxCState`.
 
-在 `TapboxC` 示例中，点击时，盒子的周围会出现一个深绿色的边框。点击时，边框消失，盒子的颜色改变。`TapboxC` 将其 `_active` 状态导出到其父 widget 中，但在内部管理其 `_highlight` 状态。这个例子有两个状态对象 `_ParentWidgetState` 和 `_TapboxCState`。
+在 `TapboxC` 示例中，点击时，
+盒子的周围会出现一个深绿色的边框。
+点击时，边框消失，盒子的颜色改变。
+`TapboxC` 将其 `_active` 状态导出到其父 widget 中，
+但在内部管理其 `_highlight` 状态。
+这个例子有两个状态对象 `_ParentWidgetState` 和 `_TapboxCState`。
 
 The `_ParentWidgetState` object:
 
@@ -882,17 +893,20 @@ The `_TapboxCState` object:
   As the user taps down, it adds the highlight
   (implemented as a dark green border). As the user releases the
   tap, it removes the highlight.
-  
-  `GestureDetector` 监听所有 tap 事件。当用户点下时，它添加高亮（深绿色边框）；当用户释放时，会移除高亮。  
+
+  `GestureDetector` 监听所有 tap 事件。
+  当用户点下时，它添加高亮（深绿色边框）；
+  当用户释放时，会移除高亮。  
   
 * Calls `setState()` to update the UI on tap down,
   tap up, or tap cancel, and the `_highlight` state changes.
-  
-  当按下、抬起、或者取消点击时更新 `_highlight` 状态，调用 `setState()` 更新UI。
+
+  当按下、抬起、或者取消点击时更新 `_highlight` 状态，
+  调用 `setState()` 更新UI。
   
 * On a tap event, passes that state change to the parent widget to take
   appropriate action using the [`widget`][] property.
-  
+
   当点击时，[`widget`][] 属性将状态的改变传递给父 widget 并进行合适的操作。
 
 <!-- skip -->
@@ -1001,8 +1015,12 @@ The developer probably doesn't care how the highlighting
 is managed, and prefers that the tap box handles those
 details.
 
-另一种实现可能会将高亮状态导出到父 widget，同时保持 active 状态为内部，但如果您要求某人使用该 TapBox，他们可能会抱怨说没有多大意义。
-开发人员只会关心该框是否处于活动状态。开发人员可能不在乎高亮显示是如何管理的，并且倾向于让 TapBox 处理这些细节。
+另一种实现可能会将高亮状态导出到父 widget，
+同时保持 active 状态为内部，
+但如果你要求某人使用该 TapBox，他们可能会抱怨说没有多大意义。
+开发人员只会关心该框是否处于活动状态。
+开发人员可能不在乎高亮显示是如何管理的，
+并且倾向于让 TapBox 处理这些细节。
 
 <hr>
 
@@ -1014,7 +1032,8 @@ Flutter offers a variety of buttons and similar interactive widgets.
 Most of these widgets implement the [Material Design guidelines][],
 which define a set of components with an opinionated UI.
 
-Flutter 提供各种按钮和类似的交互式 widget。这些 widget 中的大多数都实现了 [Material Design guidelines][]，
+Flutter 提供各种按钮和类似的交互式 widget。
+这些 widget 中的大多数都实现了 [Material Design guidelines][]，
 它们定义了一组具有质感的 UI 组件。
 
 If you prefer, you can use [`GestureDetector`][] to build
@@ -1038,7 +1057,8 @@ in [Handle taps][], a recipe in the [Flutter cookbook][].
 When you need interactivity, it's easiest to use one of
 the prefabricated widgets. Here's a partial list:
 
-当你需要交互性时，最容易的是使用预制的 widget。这是预置 widget 部分列表:
+当你需要交互性时，最容易的是使用预制的 widget。
+这是预置 widget 部分列表:
 
 ### Standard widgets
 

@@ -76,14 +76,14 @@ This page covers the following topics:
 
 {{site.alert.note}}
 
-   Throughout this page, `<your app dir>` refers to 
+   Throughout this page, `[project]` refers to 
    the directory that your application is in. While following
-   these instructions, substitute `<your app dir>` with 
+   these instructions, substitute `[project]` with 
    your app's directory.
 
-   在整个页面中，`<your app dir>` 是指
+   在整个页面中，`[project]` 是指
    您的应用程序所处的目录。同时关注
-   这些说明，替换 `<your app dir>` 为
+   这些说明，替换 `[project]` 为
    您的应用程序的目录。
 
 {{site.alert.end}}
@@ -108,7 +108,7 @@ Alternatively, you can do it manually using the following steps:
    
    查看 [Material Design Product Icons][launchericons] 指南中图标设计部分。
 
-1. In the `<your app dir>/android/app/src/main/res/` directory,
+1. In the `[project]/android/app/src/main/res/` directory,
    place your icon files in folders named using
    [configuration qualifiers][].
    The default `mipmap-` folders demonstrate the correct
@@ -186,90 +186,106 @@ signature. Use the following instructions to sign your app.
 要想把 app 发布到 Play store，还需要给 app 一个数字签名。
 我们可以采用以下步骤来为 app 签名：
 
-### Create a keystore
+On Android, there are two signing keys: deployment and upload. The end-users 
+download the .apk signed with the 'deployment key'. An 'upload key' is used to 
+authenticate the .aab / .apk uploaded by developers onto the Play Store and is 
+re-signed with the deployment key once in the Play Store.
 
-### 创建一个密钥库
+#TODO
+
+* It's highly recommended to use the automatic cloud managed signing for
+  the deployment key. For more information, see the [official Play Store documentation][].
+
+### Create an upload keystore
+
+### 创建一个上传到密钥库
 
 If you have an existing keystore, skip to the next step.
-If not, create one by running the following at the command line:
+If not, create one by either:
 
-如果我们已经有一个密钥库，可以跳到下一步。
-如果没有，在命令行中运行以下的命令来创建一个：
+如果你已经有一个密钥库了，可以直接跳到下一步，
+如何还没有，需要参考下面的方式创建一个：
 
-On Mac/Linux, use the following command:
+* Following the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk) 
 
-在 macOS 或者 Linux 系统上，执行下面的代码
-
-```
-```terminal
-keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
-```
-
-On Windows, use the following command:
-
-在 Windows 系统上，执行下述代码：
-
-```terminal
-keytool -genkey -v -keystore c:\Users\USER_NAME\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
-```
-
-{{site.alert.note}}
-
-This command stores the `key.jks` file in your home
-directory. If you want to store it elsewhere, change
-the argument you pass to the `-keystore` parameter.
-**However, keep the `keystore` file private;
-don't check it into public source control!**
-
-该命令将会把 `key.jks` 文件储存在你的主文件夹中。
-如果你想要储存在其他地方，请通过指定 `-keystore` 传入参数。
-注意，请保证这个文件的私有性，不要将它提交到公共的代码管理空间。
-
-{{site.alert.note}}
-
-* The `keytool` command might not be in your path&mdash;it's
-  part of Java, which is installed as part of
-  Android Studio.  For the concrete path,
-  run `flutter doctor -v` and locate the path printed after
-  'Java binary at:'. Then use that fully qualified path
-  replacing `java` (at the end) with `keytool`.
-  If your path includes space-separated names,
-  such as `Program Files`, use platform-appropriate
-  notation for the names. For example, on Mac/Linux
-  use `Program\ Files`, and on Windows use
-  `"Program Files"`.
+  参考文档 [在 Android Studio 上为你的应用签名]({{site.android-dev}}/studio/publish/app-signing#sign-apk)。
   
-  `keytool` 可能不在我们的系统路径中。
-  它是 Java 的一部分，在安装 Android Studio 的时候会被一起安装。
-  运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，
-  然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。  
-  如果文件路径包含空格，类似 `Program Files` 这样的，请使用平台允许的命名规则。
-  例如，在 Mac/Linux 上使用 `Program\ Files`，而在 Windows 上可以使用
-  `"Program Files"`。
-  
-* The `-storetype JKS` tag is only required for Java 9
-  or newer. As of the Java 9 release,
-  the keystore type defaults to PKS12.
+* Running the following at the command line:
 
-  只有 Java 9 或更高版本才需要 `-storetype JKS` 标签。
-  从 Java 9 版本开始，keystore 类型默认为 PKS12。
+  在命令行窗口运行如下的命令：
 
-{{site.alert.end}}
+    On Mac/Linux, use the following command:
+    
+    在 macOS 或者 Linux 系统上，执行下面的代码：
+
+    ```terminal
+    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    ```
+
+    On Windows, use the following command:
+    
+    在 Windows 系统上，执行下述代码：
+
+    ```terminal
+    keytool -genkey -v -keystore c:\Users\USER_NAME\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    ```
+
+    This command stores the `upload-keystore.jks` file in your home
+    directory. If you want to store it elsewhere, change
+    the argument you pass to the `-keystore` parameter.
+    **However, keep the `keystore` file private;
+    don't check it into public source control!**
+    
+    该命令将会把 `upload-keystore.jks` 文件储存在你的主文件夹中。
+    如果你想要储存在其他地方，请通过指定 `-keystore` 传入参数。
+    **注意，请保证这个文件的私有性，不要将它提交到公共的代码管理空间**。
+    
+    {{site.alert.note}}
+    
+    * The `keytool` command might not be in your path&mdash;it's
+      part of Java, which is installed as part of
+      Android Studio.  For the concrete path,
+      run `flutter doctor -v` and locate the path printed after
+      'Java binary at:'. Then use that fully qualified path
+      replacing `java` (at the end) with `keytool`.
+      If your path includes space-separated names,
+      such as `Program Files`, use platform-appropriate
+      notation for the names. For example, on Mac/Linux
+      use `Program\ Files`, and on Windows use
+      `"Program Files"`.
+      
+      `keytool` 可能不在我们的系统路径中。
+      它是 Java 的一部分，在安装 Android Studio 的时候会被一起安装。
+      运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，
+      然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。
+      如果文件路径包含空格，类似 `Program Files` 这样的，请使用平台允许的命名规则。
+      例如，在 Mac/Linux 上使用 `Program\ Files`，而在 Windows 上可以使用
+      `"Program Files"`。
+    
+    * The `-storetype JKS` tag is only required for Java 9
+      or newer. As of the Java 9 release,
+      the keystore type defaults to PKS12.
+      
+      只有 Java 9 或更高版本才需要 `-storetype JKS` 标签。
+      从 Java 9 版本开始，keystore 类型默认为 PKS12。
+      
+    {{site.alert.end}}
 
 ### Reference the keystore from the app
 
 ### 从 app 中引用密钥库
 
-Create a file named `<your app dir>/android/key.properties`
+Create a file named `[project]/android/key.properties`
 that contains a reference to your keystore:
 
-创建一个名为 `<app dir>/android/key.properties` 的文件，它包含了密钥库位置的定义：
+创建一个名为 `[project]/android/key.properties` 的文件，
+它包含了密钥库位置的定义：
 
 ```
 storePassword=<上一步骤中的密码>
 keyPassword=<上一步骤中的密码>
-keyAlias=key
-storeFile=<密钥库的位置，e.g. /Users/<用户名>/key.jks>
+keyAlias=upload
+storeFile=<密钥库的位置，e.g. /Users/<用户名>/upload-keystore.jks>
 ```
 
 {{site.alert.note}}
@@ -285,27 +301,15 @@ storeFile=<密钥库的位置，e.g. /Users/<用户名>/key.jks>
 
 ### 在 gradle 中配置签名
 
+Configure gradle to use your upload key when building your app in release mode 
+by editing the `[project]/android/app/build.gradle` file.
 
-Configure signing for your app by editing the
-`<your app dir>/android/app/build.gradle` file.
-
-通过编辑 `<app dir>/android/app/build.gradle` 文件来为我们的 app 配置签名：
+在以 release 模式下构建你的应用时，修改 `[project]/android/app/build.gradle`
+文件，以通过 gradle 配置你的上传密钥。
 
 
 <ol markdown="1">
-
-<li markdown="1"> Add code before `android` block:
-
-<li markdown="1"> 在 `android` 代码块之前添加：
-```
-   android {
-      ...
-   }
-```
-
-   With the keystore information from your properties file:
-   
-   替换为我们的 properties 文件的密钥库信息：
+<li markdown="1"> <span>Add the keystore information from your properties file before the `android` block:</span><span>在 `android` 代码块之前将你 properties 文件的密钥库信息添加进去：</span>
 
 ```
    def keystoreProperties = new Properties()
@@ -325,7 +329,7 @@ Configure signing for your app by editing the
 
 </li>
 
-<li markdown="1"> Add code before `buildTypes` block:
+<li markdown="1"> Replace the `buildTypes` block:
 
 <li markdown="1"> 在 `buildTypes` 代码块之前添加：
 
@@ -360,17 +364,32 @@ Configure signing for your app by editing the
    }
 ```
 
-   Configure the `signingConfigs` block in your module's `build.gradle` file.
-
-   在你的 module 的 `build.gradle` 文件中配置 
-   `signingConfigs` 部分。
-
 </li>
 </ol>
 
 Release builds of your app will now be signed automatically.
 
 现在我们 app 的发布版本就会被自动签名了。
+
+{{site.alert.note}}
+
+  You may need to run `flutter clean` after changing the gradle file.
+  This prevents cached builds from affecting the signing process.
+  
+  当你更改 gradle 文件后，也许需要运行一下 `flutter clean`。
+  这将防止缓存的版本影响签名过程。
+  
+{{site.alert.end}}
+
+For more information on signing your app, see
+[Sign your app][] on developer.android.com.
+
+有关应用签名的更多信息，请查看 developer.android.com 的
+[为您的应用设置签名][Sign your app]。
+
+{% comment %}
+下面这部分内容已经在新的文档更新中被删除，待确认，
+以及需要确认为什么木有 diff 出来这部分文档。
 
 ## Enabling Proguard
 
@@ -382,7 +401,8 @@ you might want to reduce the size of the APK or protect that code from
 reverse engineering.
 
 默认情况下，Flutter 不会做混淆或者压缩 Android host 的工作。
-如果 app 使用了第三方的 Java 或者 Android 库，我们会希望减小 APK 的大小，或者保护代码不被反编译出来。
+如果 app 使用了第三方的 Java 或者 Android 库，
+我们会希望减小 APK 的大小，或者保护代码不被反编译出来。
 
 For information on obfuscating Dart code, see [Obfuscating Dart
 Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)
@@ -469,6 +489,8 @@ For more information on signing your app, see
 
 有关应用签名的更多信息，请查看 developer.android.com 的[为您的应用设置签名][Sign your app]。
 
+{% endcomment %}
+
 ## Shrinking your code with R8
 
 ## 使用 R8 压缩你的代码
@@ -477,8 +499,10 @@ For more information on signing your app, see
 when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
 flag to `flutter build apk` or `flutter build appbundle`.
 
-[R8][] 是谷歌推出的最新代码压缩器，当你打包 release 版本的 APK 或者 AAB 时会默认开启。
-要关闭 R8，请向 `flutter build apk` 或 `flutter build appbundle` 传 `--no-shrink` 标志。
+[R8][] 是谷歌推出的最新代码压缩器，
+当你打包 release 版本的 APK 或者 AAB 时会默认开启。
+要关闭 R8，请向 `flutter build apk` 或
+`flutter build appbundle` 传 `--no-shrink` 标志。
 
 {{site.alert.note}}
 
@@ -495,7 +519,7 @@ flag to `flutter build apk` or `flutter build appbundle`.
 
 Review the default [App Manifest][manifest] file,
 `AndroidManifest.xml`,
-located in `<your app dir>/android/app/src/main` and verify that the values
+located in `[project]/android/app/src/main` and verify that the values
 are correct, especially the following:
 
 检查位于 `<app dir>/android/app/src/main` 的默认 [App Manifest][manifest] 
@@ -528,7 +552,7 @@ are correct, especially the following:
 ## 检查构建配置
 
 Review the default [Gradle build file][gradlebuild],
-`build.gradle`, located in `<your app dir>/android/app` and
+`build.gradle`, located in `[project]/android/app` and
 verify the values are correct, especially the following
 values in the `defaultConfig` block:
 
@@ -567,12 +591,13 @@ values in the `defaultConfig` block:
 
 `buildToolsVersion`
 <br> Specify the version of Android SDK Build Tools that your app uses. 
-  Alternatively, you can use the [Android Gradle Plugin] in Android Studio,
+  Alternatively, you can use the [Android Gradle Plugin][] in Android Studio,
   which will automatically import the minimum required Build Tools for your app
   without the need for this property.
   
 `buildToolsVersion`
-<br> 指定应用所需的 Android SDK 构建工具的版本，或者你可以在 Android Studio 里使用
+<br> 指定应用所需的 Android SDK 构建工具的版本，
+或者你可以在 Android Studio 里使用
 [Android Gradle 插件][Android Gradle Plugin]，
 它可以自动设置导入你应用所需的构建工具版本，
 这样就无需过多操心这个属性啦。
@@ -655,13 +680,12 @@ and maintaining additional files to de-obfuscate stack traces.
 
 From the command line:
 
-使用如下命令：
+使用如下命令
 
-1. Enter `cd <your app dir>`<br>
-   (Replace `<app dir>` with your application's directory.)
-   
-   运行 `cd <your app dir>`。（将 `<app dir>` 替换为我们 app 的目录）。
-   
+1. Enter `cd [project]`<br>
+
+   运行 `cd [project]`。
+
 1. Run `flutter build appbundle`<br>
    (Running `flutter build` defaults to a release build.)
    
@@ -669,7 +693,7 @@ From the command line:
    (运行 `flutter build` 默认构建一个发布版本。)
 
 The release bundle for your app is created at
-`<your app dir>/build/app/outputs/bundle/release/app.aab`.
+`[project]/build/app/outputs/bundle/release/app.aab`.
 
 你的应用的 release bundle 会被创建到
 `<app dir>/build/app/outputs/bundle/release/app.aab`.
@@ -750,11 +774,10 @@ From the command line:
 
 使用如下命令：
 
-1. Enter `cd <your app dir>`<br>
-   (Replace `<app dir>` with your application's directory.)
-   
-   `cd <your app dir>` （将 `<app dir>` 替换为我们 app 的目录）。
-   
+1. Enter `cd [project]`<br>
+ 
+   输入命令 `cd [project]`<br>
+
 1. Run `flutter build apk --split-per-abi`<br>
    (The `flutter build` command defaults to `--release`.)
    
@@ -762,11 +785,11 @@ From the command line:
 
 This command results in three APK files:
 
-这个命令会生成三个 APK 文件：
+这个命令会生成如下三个 APK 文件
 
-* `<your app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
-* `<your app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
-* `<your app dir>/build/app/outputs/apk/release/app-x86_64-release.apk`
+* `[project]/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
+* `[project]/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
+* `[project]/build/app/outputs/apk/release/app-x86_64-release.apk`
 
 Removing the `--split-per-abi` flag results in a fat APK that contains
 your code compiled for _all_ the target ABIs. Such APKs are larger in
@@ -790,16 +813,12 @@ From the command line:
 使用如下命令：
 
 1. Connect your Android device to your computer with a USB cable.
-	
-   用 USB 线将 Android 设备连接到电脑上。
 
-1. Enter `cd <app dir>` where `<app dir>` is your application directory.
+   用 USB 线将 Android 设备连接到电脑上；
 
-   `cd <app dir>`，`<app dir>` 是我们 app 的目录。
-   
-1. Enter `cd <your app dir>`.
+1. Enter `cd [project]`.
 
-   输入 `cd <your app dir>`。
+   输入命令 `cd [project]`；
 
 1. Run `flutter install`.
 
@@ -1031,6 +1050,7 @@ The resulting app bundle or APK files are located in
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [obfuscating your Dart code]: /docs/deployment/obfuscate
+[official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [Platform Views]: /docs/development/platform-integration/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start

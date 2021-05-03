@@ -25,7 +25,6 @@ errors, and you probably have run into it already.
 When it happens, you’ll see yellow & black stripes indicating the area of
 overflow in the app UI in addition to the error message in the debug console: 
 
-
 ```
 The following assertion was thrown during layout:
 A RenderFlex overflowed by 1146 pixels on the right.
@@ -38,8 +37,6 @@ with a yellow and black striped pattern. This is usually caused by the contents
 being too big for the RenderFlex.
 (Additional lines of this message omitted)
 ```
-
-
 
 **How might you run into this error?**
 
@@ -73,7 +70,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-
 In the above example, the `Column` tries to be wider than the space the `Row`
 (its parent) can allocate to it, causing an overflow error.  Why does the
 `Column` try to do that? To understand this layout behavior, you need to know
@@ -82,8 +78,7 @@ how Flutter framework performs layout:
 "_To perform layout, Flutter walks the render tree in a depth-first traversal
 and **passes down size constraints** from parent to child… Children respond by
 **passing up a size** to their parent object within the constraints the parent
-established._"  – [Flutter architectural
-overview](/docs/resources/architectural-overview#layout-and-rendering)
+established._"  – [Flutter architectural overview](/docs/resources/architectural-overview#layout-and-rendering)
 
 In this case, the `Row` widget doesn’t constrain the size of its children, nor
 does the `Column` widget. Lacking constraints from its parent widget, the second
@@ -91,7 +86,6 @@ Text widget tries to be as wide as all the characters it needs to display. The
 self-determined width of the Text widget then gets adopted by the `Column` which
 clashes with the maximum amount of horizontal space its parent the `Row` widget
 can provide.  
-
 
 **How to fix it?**
 
@@ -112,7 +106,6 @@ child: Row(
   ]
 )
 ```
-
 
 Another way is to wrap the `Column` in a `Flexible` widget and specify a `flex`
 factor. In fact, the `Expanded` widget is equivalent to the `Flexible` widget
@@ -140,13 +133,10 @@ occurring earlier in the rendering pipeline.
 
 The message shown by the error looks like this: 
 
-
 ```
 RenderBox was not laid out: 
 RenderViewport#5a477 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
 ```
-
-
 
 **How might you run into this error?**
 
@@ -171,7 +161,6 @@ while creating a UI in your Flutter app.
 
 The message shown by the error looks like this: 
 
-
 ```
 The following assertion was thrown during performResize():
 Vertical viewport was given unbounded height.
@@ -182,8 +171,6 @@ vertical space in which to expand. This situation typically happens when a
 scrollable widget is nested inside another scrollable widget.
 (Additional lines of this message omitted)
 ```
-
-
 
 **How might you run into this error?**
 
@@ -219,8 +206,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-
-
 **How to fix it?**
 
 To fix this error, specify how tall the `ListView` should be. To make it as tall
@@ -255,8 +240,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-
-
 **Further information:**
 
 The resources linked below provide further information about this error.
@@ -286,8 +269,6 @@ width of the InputDecorator or the TextField that contains it.
 (Additional lines of this message omitted)
 ```
 
-
-
 **How might you run into the error?**
 
 This error occurs, for example, when a `Row` contains a `TextFormField` or a
@@ -311,8 +292,6 @@ Widget build(BuildContext context) {
   );
 }
 ```
-
-
 
 **How to fix it?**
 
@@ -340,8 +319,6 @@ demonstrates using an `Expanded` widget:
   }
 ```
 
-
-
 ## ‘Incorrect use of ParentData widget’
 
 This error is about missing an expected parent widget.
@@ -350,7 +327,6 @@ This error is about missing an expected parent widget.
 
 The message shown by the error looks like this: 
 
-
 ```
 The following assertion was thrown while looking for parent data:
 Incorrect use of ParentDataWidget.
@@ -358,8 +334,6 @@ Incorrect use of ParentDataWidget.
 Usually, this indicates that at least one of the offending ParentDataWidgets 
 listed above is not placed directly inside a compatible ancestor widget.
 ```
-
-
 
 **How might you run into the error?**
 
@@ -377,15 +351,11 @@ the top right corner of the page) to expand this list.
 | `Flexible`                          |      `Row`, `Column`, or `Flex` |
 | `Expanded` (a specialized `Flexible`) |      `Row`, `Column`, or `Flex` |
 | `Positioned`                        |                     `Stack` |
-| `Flexible`                          |      `Row`, `Column`, or `Flex` |
 | `TableCell`                         |                     `Table` |
-
-
 
 **How to fix it?**
 
 The fix should be obvious once you know which parent widget is missing. 
-
 
 ## ‘setState called during build’
 
@@ -442,7 +412,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-
 You don't see the explicit call to `setState`, but it's called by `showDialog`.
 The `build` method is not the right place to call `showDialog` because `build`
 can be called by the framework for every frame, for example, during an
@@ -496,5 +465,4 @@ check out the following resources:
 *   [How to debug layout issues with the Flutter Inspector]({{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db)
 *   [Understanding constraints](/docs/development/ui/layout/constraints)
 *   [Dealing with box constraints](/docs/development/ui/layout/box-constraints)
-*   [Flutter architectural
-    overview](/docs/resources/architectural-overview#layout-and-rendering)
+*   [Flutter architectural overview](/docs/resources/architectural-overview#layout-and-rendering)

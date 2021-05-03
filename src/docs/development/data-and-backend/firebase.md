@@ -30,22 +30,13 @@ Firebase supports Flutter. For more information, see:
 Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下面这些链接：
 
 * [Getting started with Firebase and Flutter][started]
-  in the [Firebase docs][]
+
+  [将 Firebase 添加到您的 Flutter 应用][started]
   
-  [Firebase 文档][Firebase docs] 中的 [将 Firebase 添加到您的 Flutter 应用][started]
+* [Get to know Firebase for Flutter][codelab1]
 
-* [Firebase for Flutter codelab][codelab]
-
-  [基于 Flutter 的 Firebase codelab][codelab-cn]
-
-* [FlutterFire plugins][Flutterfire plugins]
+  [了解如何在 Flutter 中使用 Flutter][codelab1-cn]
   
-  [FlutterFire 插件][Flutterfire plugins]
-  
-* [Using Firestore as a backend to your Flutter app][video] (video)
-   
-  [在你的 Flutter 应用后端中使用 Firestore][video-bilibili] (视频)
-
 * [Multi Platform Firebase Flutter][codelab2]
 
   [在多平台下的 Firebase Futter][codelab2]
@@ -85,6 +76,8 @@ videos that you might find useful. Here are a few:
 
 [article]: {{site.medium}}/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
+[codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
+[codelab1-cn]: https://firebase.google.cn/codelabs/firebase-get-to-know-flutter
 [codelab2]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 [FlutterFire]: https://firebase.flutter.dev
 [started]: https://firebase.flutter.dev/docs/overview

@@ -12,16 +12,61 @@ application is delivered to your beta testers and validated on a frequent basis
 without resorting to manual workflows.
 
 通过 Flutter 持续交付的最佳实践，
-确保您的应用程序交付给您的 Beta 版本测试人员并能够频繁予以验证，而无需借助手动工作流程。
+确保您的应用程序交付给您的 Beta 版本测试人员并能够频繁予以验证，
+而无需借助手动工作流程。
+
+## CI/CD Options
+
+## CI/CD 选择
+
+There are a number of continuous integration (CI) and continuous delivery (CD)
+options available to help automate the delivery of your application.
+
+有许多持续集成 (CI) 和持续交付 (CD) 的工具，帮助自动发布你的应用。
+
+### All-in-one options with built-in Flutter functionality
+
+### 内置 Flutter 的多合一 (All-in-one) 选择：
+
+* [Codemagic][]
+* [Bitrise][]
+* [Appcircle][]
+
+### Integrating fastlane with existing workflows
+
+### 使用 Fastlane 与现有工作流程集成
+
+You can use fastlane with the following tooling:
+
+你可以通过下面的工具使用 fastlane：
+
+* [GitHub Actions][]
+    * Example: Flutter Gallery's [Github Actions workflows][]
+
+      样例：Flutter Galley 的 [GitHub Actions 工作流][Github Actions workflows]
+    
+    * Example: [Github Action in Flutter Project][]
+
+      样例：[适用于 Flutter 项目的 GitHub Actions][Github Action in Flutter Project]
+
+* [Cirrus][]
+* [Travis][]
+* [GitLab][]
+
+This guide shows how to set up fastlane and then integrate it with 
+your existing testing and continuous integration (CI) workflows. 
+For more information, see "Integrating fastlane with existing workflow".
+
+这份指南展示了如何让设置 fastlane 以及
+将其集成到现有应用的测试和持续集成 (CI) 工作流当中去。
+更多相关的内容，请参考上面这部分的内容。
 
 ## fastlane
 
-This guide shows how to integrate [fastlane][], an
-open-source tool suite, with your existing testing and continuous integration
-(CI) workflows (for example, Travis or Cirrus).
+[fastlane][] is an open-source tool suite to automate releases and deployments 
+for your app.
 
-本指南介绍了如何将开源工具套件 fastlane
-与您现有的测试和持续集成（CI）工作流程（比如 Travis 或 Cirrus）整合在一起。
+[fastlane][] 是一个开源工具套件，帮助你自动的打包正式版以及部署你的应用。
 
 ### Local setup
 
@@ -38,13 +83,13 @@ delivery from a local machine.
 Visit the [fastlane docs][fastlane] for more info.
 
    安装 fastlane `gem install fastlane` 或 `brew install fastlane`。
-访问 [fastlane docs][fastlane] 以获得更多信息。
+   访问 [fastlane docs][fastlane] 以获得更多信息。
 
 1. Create your Flutter project, and when ready, make sure that your project builds via
  
    创建您的 Flutter 项目，准备就绪后，确保通过如下途径构建项目：
 
-    * ![Android](/images/cd/android.png) `flutter build appbundle`; 以及
+    * ![Android](/images/cd/android.png) `flutter build appbundle`;
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
     
 1. Initialize the fastlane projects for each platform.
@@ -105,40 +150,12 @@ Visit the [fastlane docs][fastlane] for more info.
       否则，上传到 iTunes/TestFlight时会提示你。
     
 1. Set up code signing.
-   
-   设置代码签名。
-   
-    * ![Android](/images/cd/android.png) On Android, there are two
-      signing keys: deployment and upload. The end-users download the .apk signed
-      with the 'deployment key'. An 'upload key' is used to authenticate the .aab / .apk
-      uploaded by developers onto the Play Store and is re-signed with the
-      deployment key once in the Play Store.
-    
-      ![Android](/images/cd/android.png) 在 Android 上有两种签名 key：
-      发布签名和上传签名。最终用户下载的 .aab / .apk 文件使用发布签名。
-      上传签名提供给开发者上传到 Google Play 商店的认证。
-      上传后，Google Play 商店会重新使用 发布签名对 .apk 文件签名。
 
-        * It's highly recommended to use the automatic cloud managed signing for
-        the deployment key. For more information, see the [official Play Store documentation][].
-        
-          强烈建议使用自动化的云端管理发布签名。更多信息请查看
-          [Google Play 官方说明][official Play Store documentation。
-        
-        * Follow the [key generation 
-        steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk)
-        to create your upload key.
-        
-          按照 [密钥生成步骤]({{site.android-dev}}/studio/publish/app-signing#sign-apk)
-          创建你自己的上传签名。
-        
-        * Configure gradle to use your upload key when building your app in
-        release mode by editing `android.buildTypes.release` in
-        `[project]/android/app/build.gradle`.
-        
-          配置 gradle：通过设置 `[project]/android/app/build.gradle` 文件下的  
-          `android.buildTypes.release`，当编译的时候在 release 模式下使用你自己的上传签名。
-        
+   设置代码签名：
+    * ![Android](/images/cd/android.png) Follow the [Android app signing steps][].
+    
+      ![Android](/images/cd/android.png) 参考文档 [为应用签名][Android app signing steps]。
+
     * ![iOS](/images/cd/ios.png) On iOS, create and sign using a
     distribution certificate instead of a development certificate when you're
     ready to test and deploy using TestFlight or App Store.
@@ -193,7 +210,7 @@ process to a continuous integration (CI) system.
 
 ### Running deployment locally
 
-## 在本地运行部署
+### 在本地运行部署
 
 1. Build the release mode app.
    
@@ -217,7 +234,7 @@ process to a continuous integration (CI) system.
 
 ### Cloud build and deploy setup
 
-## 云构建和部署设置
+### 云构建和部署设置
 
 First, follow the local setup section described in 'Local setup' to make sure
 the process works before migrating onto a cloud system like Travis.
@@ -228,14 +245,14 @@ The main thing to consider is that since cloud instances are ephemeral and
 untrusted, you won't be leaving your credentials like your Play Store service
 account JSON or your iTunes distribution certificate on the server.
 
-需要考虑的主要事项是，由于云实例是短暂且不可信的，因此你不能在服务器上保留你的凭据，如 Play Store 服务帐户 JSON 或 iTunes 分发证书。
+需要考虑的主要事项是，由于云实例是短暂且不可信的，
+因此你不能在服务器上保留你的凭据，
+如 Play Store 服务帐户 JSON 或 iTunes 分发证书。
 
-Continuous Integration (CI) systems, such as
-[Cirrus][]
-generally support encrypted environment variables to store private data.
+Continuous Integration (CI) systems generally support encrypted environment 
+variables to store private data.
 
-诸如 [Cirrus][] 
-之类的持续集成（CI）系统通常支持加密的环境变量来存储私有数据。
+持续集成 (CI) 系统通常支持加密的环境变量来存储私有数据。
 
 **Take precaution not to re-echo those variable values back onto the console in
 your test scripts**. Those variables are also not available in pull requests
@@ -244,7 +261,8 @@ request that prints these secrets out. Be careful with interactions with these
 secrets in pull requests that you accept and merge.
 
 **采取预防措施，不要在测试脚本中将这些变量值重新回显到控制台。**
-在合并之前，这些变量在拉取请求中也不可用，以确保恶意行为者无法创建打印这些密钥的拉取请求。
+在合并之前，这些变量在拉取请求中也不可用，
+以确保恶意行为者无法创建打印这些密钥的拉取请求。
 在接受和合并的 pull 请求中，请注意与这些密钥。
 
 1. Make login credentials ephemeral.
@@ -256,23 +274,28 @@ secrets in pull requests that you accept and merge.
       ![Android](/images/cd/android.png) 在 Android 上：
       
         * Remove the `json_key_file` field from `Appfile` and store the string
-        content of the JSON in your CI system's encrypted variable. Use the
-        `json_key_data` argument in `upload_to_play_store` to read the
-        environment variable directly in your `Fastfile`.
-        
-          从  `Appfile` 里删除 `json_key_file` 并且在你的 CI 系统里的环境变量。
-          在  `upload_to_play_store` 里使用 `json_key_data` 参数从环境变量读取到`Fastfile`。
-        
-        * Serialize your upload key (for example, using base64) and save it as
-        an encrypted environment variable. You can deserialize it on your CI
-        system during the install phase with
-        
-        序列化您的上传密钥（例如，使用base64）并将其另存为加密环境变量。
-         可以可以在安装阶段在 CI 系统上对其进行反序列化
+          content of the JSON in your CI system's encrypted variable. 
+          Read the environment variable directly in your `Fastfile`.
+          
+          从 `Appfile` 中删除 `json_key_file` 并将其存储在 CI 系统的加密变量里。
+          从 `Fastfile` 中直接读取这些环境变量。
 
-        ```bash
-        echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > /home/cirrus/[directory # 在 gradle 中定义的文件夹和文件名].keystore
-        ```
+          ```
+          upload_to_play_store(
+            ...
+            json_key_data: ENV['<variable name>']
+          )
+          ```
+        * Serialize your upload key (for example, using base64) and save it as
+          an encrypted environment variable. You can deserialize it on your CI
+          system during the install phase with
+          
+          序列化您的上传密钥（例如，使用 base64）并将其另存为加密环境变量。
+          可以可以在安装阶段在 CI 系统上对其进行反序列化
+          
+          ```bash
+          echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > [path to your upload keystore]
+          ```
     * ![iOS](/images/cd/ios.png) On iOS:
     
       ![iOS](/images/cd/ios.png) 在 iOS 上:
@@ -313,44 +336,45 @@ dependencies are stable and reproducible between local and cloud machines. Howev
       当你在本地运行的时候,请使用 `bundle exec fastlane` 而不是 `fastlane`。
 
 3. Create the CI test script such as `.travis.yml` or `.cirrus.yml` in your
-repository root.
+   repository root.
 
-   在你的仓库根目录创建一个 CI 测试脚本，例如： `.travis.yml` 或 `.cirrus.yml`。
-   
-    * Shard your script to run on both Linux and macOS platforms.
-    
-      分开你的脚本以便能在 Linux 和 macOS 两个平台运行。
-      
-    * Remember to specify a dependency on Xcode for macOS (for example
-    `osx_image: xcode9.2`).
-    
-      请记住为 macOS 指定具体版本的 Xcode（例如 osx_image: xcode9.2）。
-      
+   在你的仓库根目录创建一个 CI 测试脚本，
+   例如: `.travis.yml` 或 `.cirrus.yml`。
+
     * See [fastlane CI documentation][] for CI specific setup.
-    
-      有关特定于 CI 的设置，请参见 [fastlane CI 文档][]。
-    
-    * During the setup phase, depending on the platform, make sure that:
-    
-      在设置阶段，根据平台，确保以下几点：
-      
-         * Bundler is available using `gem install bundler`.
-         
-           Bundler 可以使用 `gem install bundler`。
-            
-         * For Android, make sure the Android SDK is available and the `ANDROID_SDK_ROOT`
-           path is set.
-           
-           对于 Android 平台，请确保已经设置正确的 `ANDROID_SDK_ROOT` 环境变量。
-         
+
+      有关特定于 CI 的设置，请参见 [fastlane CI 文档][fastlane CI documentation]。
+
+    * Shard your script to run on both Linux and macOS platforms.
+
+      分开你的脚本以便能在 Linux 和 macOS 两个平台运行。
+
+    * During the setup phase of the CI task, do the following:
+
+      在 CI 的设置阶段，执行下列内容：
+
+         * Ensure Bundler is available using `gem install bundler`.
+
+           通过执行 `gem install bundler` 确保 Bundler 可用。
+
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
-           
+
            在 `[project]/android` 或 `[project]/ios` 目录下分别运行 `bundle install`命令。
-         
+
          * Make sure the Flutter SDK is available and set in `PATH`.
          
-           确保 Flutter SDK 已经正确了设置在了 `PATH` 环境变量中
+           确保 Flutter SDK 已经正确了设置在了 `PATH` 环境变量中。
+
+         * For Android, ensure the Android SDK is available and the `ANDROID_SDK_ROOT`
+           path is set.
+
+           在 Android 平台上，请确保已经设置正确的 `ANDROID_SDK_ROOT` 环境变量。
+
+         * For iOS, you may have to specify a dependency on Xcode (for example
+           `osx_image: xcode9.2`).
            
+           在 iOS 平台上，你需要为 Xcode 指定依赖 (比如: `osx_image: xcode9.2`)
+
     * In the script phase of the CI task:
     
       在 CI 任务的脚本阶段：
@@ -370,62 +394,24 @@ repository root.
          
            最后执行 `bundle exec fastlane [name of the lane]` 命令。
 
-### Reference
 
-### 参考
-
-The [Flutter Gallery Project][]
-uses fastlane for continuous deployment. 
-See the source for a working example of fastlane in action. 
-Also see the Flutter framework repository's [Cirrus script][].
-
-[Flutter repo 里的示例应用 Flutter Gallery][Flutter Gallery Project]
-使用 fastlane 连续部署。有关 fastlane 实际运行示例，请参阅源代码。
-另请参阅 Flutter 框架仓库库的 [Cirrus 脚本][Cirrus script]。
-
-[fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
-[fastlane CI 文档]: https://docs.fastlane.tools/best-practices/continuous-integration
-
-## Other services
-
-## 其他服务
-
-The following are some other options available to help automate the delivery of your application.
-
-其他关于如何进行持续交付的服务：
-  
-* [Codemagic CI/CD for Flutter][]
-  
-  [使用 Codemagic 为 Flutter 应用加入持续交付][Codemagic CI/CD for Flutter]
-  
-* [Flutter CI/CD with Bitrise][]
-   
-  [使用 Bitrise 为 Flutter 应用加入持续交付][Flutter CI/CD with Bitrise]
-
-* [Appcircle CI/CD for Flutter][]
-  
-  [使用 Appcircle 为 Flutter 应用加入持续交付][Appcircle CI/CD for Flutter]
-
-* [GitHub Actions- CI/CD on GitHub][]
-  Get an [Example Project][]
-
-  [使用 GitHub Actions 进行持续交付][Github Actions- CI/CD on Github]，
-  查看这个 [样例项目][Example Project]
-
+[Android app signing steps]: /docs/deployment/android#signing-the-app
+[Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
 [Apple Developer Account console]: https://developer.apple.com/account/ios/certificate/
-[Cirrus]: https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables
+[Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
+[CI Options and Examples]: #reference-and-examples
+[Cirrus]: https://cirrus-ci.org
 [Cirrus script]: {{site.github}}/flutter/flutter/blob/master/.cirrus.yml
-[Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
-[Appcircle CI/CD for Flutter]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
-[Example Project]: {{site.github}}/nabilnalakath/flutter-githubaction
+[Codemagic]: https://blog.codemagic.io/getting-started-with-codemagic/
 [fastlane]: https://docs.fastlane.tools
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
 [Flutter Gallery Project]: {{site.github}}/flutter/gallery
-[GitHub Actions- CI/CD on GitHub]: https://github.com/features/actions
-[GitLab Continuous Integration (GitLab CI/CD)]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
+[Github Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
+[GitHub Actions]: https://github.com/features/actions
+[Github Actions workflows]: {{site.github}}/flutter/gallery/tree/master/.github/workflows
+[GitLab]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [Match]: https://docs.fastlane.tools/actions/match/
-[official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [Supply setup steps]: https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply
+[Travis]: https://travis-ci.org/

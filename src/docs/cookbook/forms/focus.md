@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/forms/focus/"?>
+
 When a text field is selected and accepting input,
 it is said to have "focus."
 Generally, users shift focus to a text field by tapping,
@@ -122,7 +124,7 @@ a `FocusNode` instance inside the `initState()` method of a
 为此，需要在 `State` 类的 `initState` 方法中创建 `FocusNode` 实例，
 并在 `dispose` 方法中清除它们。
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
 ```dart
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
@@ -135,7 +137,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   // Define the focus node. To manage the lifecycle, create the FocusNode in
   // the initState method, and clean it up in the dispose method.
-  FocusNode myFocusNode;
+  late FocusNode myFocusNode;
 
   @override
   void initState() {
@@ -206,7 +208,8 @@ FloatingActionButton(
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -232,7 +235,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   // Define the focus node. To manage the lifecycle, create the FocusNode in
   // the initState method, and clean it up in the dispose method.
-  FocusNode myFocusNode;
+  late FocusNode myFocusNode;
 
   @override
   void initState() {

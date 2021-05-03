@@ -293,7 +293,7 @@ a second (approximately 16ms). A frame exceeding this limit
 (in either graph) fails to display, resulting in jank,
 and a vertical red bar appears in one or both of the graphs.
 If a red bar appears in the UI graph, the Dart code is too
-expensive  If a red vertical bar appears in the GPU graph,
+expensive. If a red vertical bar appears in the GPU graph,
 the scene is too complicated to render quickly.
 
 每一帧都应该在 1/60 秒（大约 16 ms）内创建并显示。

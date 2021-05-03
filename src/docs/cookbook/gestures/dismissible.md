@@ -5,6 +5,7 @@ description: How to implement swiping to dismiss or delete.
 description: 如何实现滑动取消或清除效果。
 tags: cookbook, 实用教程, 手势
 keywords: 滑动清除
+diff2html: true
 prev:
   title: Handle taps
   title: 捕获和处理点击动作
@@ -17,6 +18,8 @@ js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
 ---
+
+<?code-excerpt path-base="../null_safety_examples/cookbook/gestures/dismissible"?>
 
 The "swipe to dismiss" pattern is common in many mobile apps.
 For example, when writing an email app,
@@ -88,14 +91,14 @@ be able to swipe these items away just yet.
 首先，我们简单地在屏幕上展示列表中的每一项，
 用户现在还无法滑动清除它们。
 
-<!-- skip -->
+<?code-excerpt "lib/step1.dart (ListView)" replace="/^body: //g;/,$//g"?>
 ```dart
 ListView.builder(
   itemCount: items.length,
   itemBuilder: (context, index) {
     return ListTile(title: Text('${items[index]}'));
   },
-);
+)
 ```
 
 ## 2. Wrap each item in a Dismissible widget
@@ -118,39 +121,31 @@ such as removing the item from a web service or database.
 
 Update the `itemBuilder()` function to return a `Dismissible` widget:
 
-我们可以通过更新 `itemBuilder()` 函数来返回一个`Dismissible` Widget:
+我们可以通过更新 `itemBuilder()` 函数来返回一个`Dismissible` widget:
 
-
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (Dismissible)"?>
 ```dart
-Dismissible(
-  // Each Dismissible must contain a Key. Keys allow Flutter to
-  // uniquely identify widgets.
-  
-  // 每个Dismissible实例都必须包含一个Key。Key让Flutter能够对Widgets做唯一标识。
-  
-  key: Key(item),
-  
-  // Provide a function that tells the app
-  // what to do after an item has been swiped away.
-  
-  // 我们还需要提供一个函数，告诉应用，在项目被移出后，要做什么。
-  onDismissed: (direction) {
-  
-    // Remove the item from the data source.
-    // 从数据源中移除项目
-    setState(() {
-      items.removeAt(index);
-    });
+itemBuilder: (context, index) {
+  final item = items[index];
+  return Dismissible(
+    // Each Dismissible must contain a Key. Keys allow Flutter to
+    // uniquely identify widgets.
+    key: Key(item),
+    // Provide a function that tells the app
+    // what to do after an item has been swiped away.
+    onDismissed: (direction) {
+      // Remove the item from the data source.
+      setState(() {
+        items.removeAt(index);
+      });
 
-    // Show a snackbar. This snackbar could also contain "Undo" actions.    
-    // 展示一个 snackbar！这个snackbar也可以包含“撤销”动作。
-    ScaffoldMessenger
-        .of(context)
-        .showSnackBar(SnackBar(content: Text("$item dismissed")));
-  },
-  child: ListTile(title: Text('$item')),
-);
+      // Then show a snackbar.
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("$item dismissed")));
+    },
+    child: ListTile(title: Text('$item')),
+  );
+},
 ```
 
 ## 3. Provide "leave behind" indicators
@@ -173,33 +168,30 @@ the indicator is a red background.
 To add the indicator,
 provide a `background` parameter to the `Dismissible`.
 
-出于这个目的，我们为 `Dismissible` 设置了一个 `background` 参数。
+出于这个目的，我们为 `Dismissible`
+设置了一个 `background` 参数。
 
-<!-- skip -->
-```dart
-Dismissible(
-  // Show a red background as the item is swiped away.
-  // 列表项被滑出时，显示一个红色背景
-  background: Container(color: Colors.red),
-  key: Key(item),
-  onDismissed: (direction) {
-    setState(() {
-      items.removeAt(index);
-    });
-
-    ScaffoldMessenger
-        .of(context)
-        .showSnackBar(SnackBar(content: Text("$item dismissed")));
-  },
-  child: ListTile(title: Text('$item')),
-);
+<?code-excerpt "lib/{step2,main}.dart (Dismissible)"?>
+```diff
+--- lib/step2.dart (Dismissible)
++++ lib/main.dart (Dismissible)
+@@ -16,6 +16,8 @@
+       ScaffoldMessenger.of(context)
+           .showSnackBar(SnackBar(content: Text("$item dismissed")));
+     },
++    // Show a red background as the item is swiped away.
++    background: Container(color: Colors.red),
+     child: ListTile(title: Text('$item')),
+   );
+ },
 ```
 
 ## Interactive example
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -213,7 +205,7 @@ void main() {
 // MyApp是一个StatefulWidget。这样，我们就能够在列表项被移除的时候，更新Widget的状态。
 
 class MyApp extends StatefulWidget {
-  MyApp({Key key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   MyAppState createState() {
@@ -241,7 +233,6 @@ class MyAppState extends State<MyApp> {
           itemCount: items.length,
           itemBuilder: (context, index) {
             final item = items[index];
-
             return Dismissible(
               // Each Dismissible must contain a Key. Keys allow Flutter to
               // uniquely identify widgets.

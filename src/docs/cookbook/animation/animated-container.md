@@ -17,12 +17,13 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/animation/animated_container/"?>
+
 The [`Container`][] class provides a convenient way
 to create a widget with specific properties:
 width, height, background color, padding, borders, and more.
 
-[`Container`]({{site.api}}/flutter/widgets/Container-class.html)
-类提供了一系列实用方法，能够便捷地创建出一个具有
+[`Container`][] 类提供了一系列实用方法，能够便捷地创建出一个具有
 指定宽度、高度、背景颜色、外边距和边框等属性的 widget。
 
 Simple animations often involve changing these properties over time.
@@ -52,8 +53,8 @@ This recipe describes how to use an `AnimatedContainer` to animate the size,
 background color, and border radius when the user taps a button
 using the following steps:
 
-下面这篇教程将介绍如何使用 `AnimatedContainer` 实现当用户点击按钮时改变它的大小，
-背景颜色，以及边框半径的动画。
+下面这篇教程将介绍如何使用 `AnimatedContainer` 实现
+当用户点击按钮时改变它的大小、背景颜色，以及边框半径的动画。
 
 ## Directions
 
@@ -91,7 +92,7 @@ can be updated when the user taps a button.
 
 但是这些属性必须定义在 `State` 类中，这样我们才能在用户点击按钮时更新它们。
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
 ```dart
 class AnimatedContainerApp extends StatefulWidget {
   @override
@@ -124,7 +125,7 @@ the animation should run.
 接下来，你就可以使用上一步中定义的属性来构建 `AnimatedContainer`。
 此外，你还必须提供一个 `duration` 它将定义这个动画应该运行多长时间。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (AnimatedContainer)" replace="/^child: //g;/,$//g"?>
 ```dart
 AnimatedContainer(
   // Use the properties stored in the State class.
@@ -138,7 +139,7 @@ AnimatedContainer(
   duration: Duration(seconds: 1),
   // Provide an optional curve to make the animation feel smoother.
   curve: Curves.fastOutSlowIn,
-);
+)
 ```
 
 ## 3. Start the animation by rebuilding with new properties
@@ -168,7 +169,7 @@ generate new values each time the user taps the button.
 实际项目通常只会在某些固定值之间进行转换（例如从灰色背景过渡到绿色背景）。
 在这个应用中，每次用户点击按钮都会生成新的值。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
 ```dart
 FloatingActionButton(
   child: Icon(Icons.play_arrow),
@@ -196,14 +197,15 @@ FloatingActionButton(
           BorderRadius.circular(random.nextInt(100).toDouble());
     });
   },
-);
+)
 ```
 
 ## Interactive example
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'dart:math';
 
 import 'package:flutter/material.dart';

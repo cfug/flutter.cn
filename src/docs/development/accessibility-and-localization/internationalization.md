@@ -312,7 +312,7 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
    要测试本地化工具，可以运行您的应用程序。
    您将在 `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n` 中看到生成的文件。
 
-7. Add the import statement on `app_localizations.dart` and `AppLocations.delegate` 
+7. Add the import statement on `app_localizations.dart` and `AppLocalizations.delegate` 
    in your call to the constructor for `MaterialApp`.
 
    测试应用中生成的本地化文件内容如下：

@@ -193,7 +193,7 @@ coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 添加一个 [GestureDetector][] 来捕获 `onPanDown`、`onPanUpdate`，
 以及 `onPanEnd` 回调。为了调整对齐方式，请使用 [MediaQuery][]
 来获得 widget 的大小，然后除以 2。
-（这会将“拖动的像素”单位转为 [Align][] 使用的坐标。）
+（这会将「拖动的像素」单位转为 [Align][] 使用的坐标。）
 然后，将 `Align` widget 的 `alignmnt` 属性设为 `_dragAlignment`。
 
 <?code-excerpt "lib/{step1,step2}.dart (build)"?>

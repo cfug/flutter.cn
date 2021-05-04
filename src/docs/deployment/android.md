@@ -204,13 +204,13 @@ Android 中有两种签名密钥: 部署和上传。
 
 ### Create an upload keystore
 
-### 创建一个上传到密钥库
+### 创建一个用于上传的密钥库
 
 If you have an existing keystore, skip to the next step.
 If not, create one by either:
 
 如果你已经有一个密钥库了，可以直接跳到下一步，
-如何还没有，需要参考下面的方式创建一个：
+如果还没有，需要参考下面的方式创建一个：
 
 * Following the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk) 
 
@@ -507,8 +507,8 @@ flag to `flutter build apk` or `flutter build appbundle`.
 
 [R8][] 是谷歌推出的最新代码压缩器，
 当你打包 release 版本的 APK 或者 AAB 时会默认开启。
-要关闭 R8，请向 `flutter build apk` 或
-`flutter build appbundle` 传 `--no-shrink` 标志。
+要关闭 R8，请运行 `flutter build apk` 或
+`flutter build appbundle` 时加上 `--no-shrink` 参数。
 
 {{site.alert.note}}
 
@@ -604,7 +604,7 @@ values in the `defaultConfig` block:
 `buildToolsVersion`
 <br> 指定应用所需的 Android SDK 构建工具的版本，
 或者你可以在 Android Studio 里使用
-[Android Gradle 插件][Android Gradle Plugin]，
+[Android Gradle 插件 (AGP)][Android Gradle Plugin]，
 它可以自动设置导入你应用所需的构建工具版本，
 这样就无需过多操心这个属性啦。
 
@@ -686,7 +686,7 @@ and maintaining additional files to de-obfuscate stack traces.
 
 From the command line:
 
-使用如下命令
+使用如下命令：
 
 1. Enter `cd [project]`<br>
 

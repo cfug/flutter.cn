@@ -157,13 +157,10 @@ To create this effect:
   3. Add a `flexibleSpace` widget that fills the available
      `expandedHeight`.
 
-<<<<<<< HEAD
-     添加一个 `flexibleSpace` 组件，这个组件将填充可用的 `expandedHeight`。
+     添加一个 `flexibleSpace` 组件，
+     这个组件将填充可用的 `expandedHeight`。
 
-<!-- skip -->
-=======
 <?code-excerpt "lib/step2.dart (SliverAppBar)" replace="/^body: //g;/,$//g"?>
->>>>>>> 66631e8103903e4af62ad61b29f8f58e8e7348b0
 ```dart
 CustomScrollView(
   slivers: <Widget>[

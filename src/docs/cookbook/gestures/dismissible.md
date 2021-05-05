@@ -121,7 +121,7 @@ such as removing the item from a web service or database.
 
 Update the `itemBuilder()` function to return a `Dismissible` widget:
 
-我们可以通过更新 `itemBuilder()` 函数来返回一个`Dismissible` widget:
+我们可以通过更新 `itemBuilder()` 函数来返回一个 `Dismissible` widget:
 
 <?code-excerpt "lib/step2.dart (Dismissible)"?>
 ```dart

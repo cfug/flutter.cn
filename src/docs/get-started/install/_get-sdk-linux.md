@@ -103,7 +103,7 @@ install Flutter using the following steps.
     例如，你可以使用 stable 版本的分支：
     
     ```terminal
-    $ git clone https://github.com/flutter/flutter.git -b stable --depth 1
+    $ git clone https://github.com/flutter/flutter.git -b stable
     ```
     
  1. Add the `flutter` tool to your path:

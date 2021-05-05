@@ -14,6 +14,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/animation/page_route_animation/"?>
+
 A design language, such as Material, defines standard behaviors when
 transitioning between routes (or screens). Sometimes, though, a custom
 transition between screens can make an app more unique. To help,
@@ -88,14 +90,16 @@ a second route titled "Page 2".
 下面的样例将会创建两个路由：一个主页路由，
 包含了 "Go!" 按钮，还有第二个路由，包含了一个显示 "Page 2 的标题。
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Starter)"?>
 ```dart
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(MaterialApp(
-    home: Page1(),
-  ));
+  runApp(
+    MaterialApp(
+      home: Page1(),
+    ),
+  );
 }
 
 class Page1 extends StatelessWidget {
@@ -159,7 +163,7 @@ Animation<double> into an Animation<Offset> using a Tween:
 它其实是一个 `Animation<double>`，提供 0 到 1 的值。
 使用 Tween 来将 Animation<double> 转为 Animation<Offset>。
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Step1)"?>
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -190,7 +194,7 @@ with the `Animation<Offset>` and the child widget:
 AnimatedWidget 返回了一个 带有 `Animation<Offset>` 
 的 [`SlideTransition`][]，以及 child widget：
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Step2)"?>
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -223,9 +227,10 @@ Flutter 提供了一系列缓和曲线，可以调整一段时间内的动画速
 To use a Curve, create a new [`CurveTween`][]
 and pass it a Curve:
 
-要使用 Curve，创建一个 [`CurveTween`][] 并传一个 Curve：
+要使用 Curve，创建一个 [`CurveTween`][]
+并传一个 Curve：
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Step3)"?>
 ```dart
 var curve = Curves.ease;
 var curveTween = CurveTween(curve: curve);
@@ -245,7 +250,7 @@ use [`chain()`][]:
 
 为了结合两个 tween，请使用 [`chain()`][]:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Tween)"?>
 ```dart
 var begin = Offset(0.0, 1.0);
 var end = Offset.zero;
@@ -261,7 +266,7 @@ Then use this tween by passing it to `animation.drive()`. This creates a new
 来创建一个新的 `Animation<Offset>`，
 然后你就能把它传给 `SlideTransition` widget：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (SlideTransition)"?>
 ```dart
 return SlideTransition(
   position: animation.drive(tween),
@@ -295,7 +300,7 @@ Another way to create an `Animation<Offset>` with an easing curve is to use a
 
 使用缓动曲线创建 `Animation<Offset>` 的另一种方法是使用 `CurvedAnimation`：
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Step4)" replace="/,$//g"?>
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -304,13 +309,13 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
   var tween = Tween(begin: begin, end: end);
   var curvedAnimation = CurvedAnimation(
-   parent: animation,
-   curve: curve,
+    parent: animation,
+    curve: curve,
   );
 
   return SlideTransition(
-   position: tween.animate(curvedAnimation),
-   child: child,
+    position: tween.animate(curvedAnimation),
+    child: child,
   );
 }
 ```
@@ -319,13 +324,16 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(MaterialApp(
-    home: Page1(),
-  ));
+  runApp(
+    MaterialApp(
+      home: Page1(),
+    ),
+  );
 }
 
 class Page1 extends StatelessWidget {

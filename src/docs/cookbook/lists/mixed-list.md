@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/lists/mixed_list/"?>
+
 You might need to create lists that display different types of content.
 For example, you might be working on a list that shows a heading
 followed by a few items related to the heading, followed by another heading,
@@ -59,7 +61,7 @@ and `MessageItem`.
 在这个例子中，我们将制作一个展示了标题，后面有五条消息的应用。
 因此，我们将创建三个类：`ListItem`、`HeadingItem` 和 `MessageItem`。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ListItem)"?>
 ```dart
 /// The base class for the different types of items the list can contain.
 abstract class ListItem {
@@ -114,13 +116,13 @@ of 3 types: `ListItem`, `HeadingItem`, or `MessageItem`.
 
 对于这个例子来说，我们将生成一个要使用的项目列表。
 这个列表将包含一个标题，后跟五条消息。
-每条消息都属于以下三种类型中的一种： `ListItem`、`HeadingItem` 
-或者是 `MessageItem`。
+每条消息都属于以下三种类型中的一种：
+`ListItem`、`HeadingItem`，或者是 `MessageItem`。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Items)" replace="/^items:/final items =/g;/,$/;/g"?>
 ```dart
 final items = List<ListItem>.generate(
-  1200,
+  1000,
   (i) => i % 6 == 0
       ? HeadingItem("Heading $i")
       : MessageItem("Sender $i", "Message body $i"),
@@ -144,16 +146,7 @@ for that type of item.
 通常，我们需要提供一个 builder 函数来确定我们正在处理的项目类型，
 并返回该类型项目的相应 widget。
 
-This example uses the `is` keyword to check the type of item.
-It's fast, and automatically casts each item to the appropriate type.
-However, there are different ways to approach this problem if
-you prefer another pattern.
-
-在这个例子中，我们使用 `is` 关键字来检查我们正在处理的项目类型。
-这样做速度很快，并会自动将每个项目转换为适当的类型。
-不过，如果你更喜欢其他模式，也能通过其他方式解决此问题！
-
-<!-- skip -->
+<?code-excerpt "lib/main.dart (builder)" replace="/^body: //g;/,$//g"?>
 ```dart
 ListView.builder(
   // Let the ListView know how many items it needs to build.
@@ -168,31 +161,34 @@ ListView.builder(
       subtitle: item.buildSubtitle(context),
     );
   },
-);
+)
 ```
 
 ## Interactive example
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp(
-    items: List<ListItem>.generate(
-      1000,
-      (i) => i % 6 == 0
-          ? HeadingItem("Heading $i")
-          : MessageItem("Sender $i", "Message body $i"),
+  runApp(
+    MyApp(
+      items: List<ListItem>.generate(
+        1000,
+        (i) => i % 6 == 0
+            ? HeadingItem("Heading $i")
+            : MessageItem("Sender $i", "Message body $i"),
+      ),
     ),
-  ));
+  );
 }
 
 class MyApp extends StatelessWidget {
   final List<ListItem> items;
 
-  MyApp({Key key, @required this.items}) : super(key: key);
+  MyApp({Key? key, required this.items}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

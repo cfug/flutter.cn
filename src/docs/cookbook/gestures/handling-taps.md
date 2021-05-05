@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/gestures/handling_taps/"?>
+
 You not only want to display information to users,
 you want users to interact with your app.
 Use the [`GestureDetector`][] widget to respond
@@ -41,7 +43,7 @@ a snackbar when tapped with the following steps:
 
      用 `GestureDetector` 包裹按钮，并传入 `onTap` 回调函数。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (GestureDetector)" replace="/return //g;/;$//g"?>
 ```dart
 // The GestureDetector wraps the button.
 GestureDetector(
@@ -62,7 +64,7 @@ GestureDetector(
     ),
     child: Text('My Button'),
   ),
-);
+)
 ```
 
 ## Notes
@@ -88,7 +90,8 @@ GestureDetector(
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -108,7 +111,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

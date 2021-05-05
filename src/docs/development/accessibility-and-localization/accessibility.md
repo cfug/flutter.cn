@@ -51,6 +51,8 @@ Flutter 始终致力于支持开发者能够使它的应用更易于访问，
 
 Details of these features are discussed below.
 
+详细关于这个特性的讨论，请继续阅读。
+
 ## Inspecting accessibility support
 
 ## 辅助功能检测
@@ -59,7 +61,8 @@ Details of these are discussed below.
 In addition to testing for these specific topics,
 we recommend using automated accessibility scanners:
 
-关于无障碍功能检测的细节，我们将在下面讨论。除了测试这些特定主题外，我们还建议您使用自动辅助功能扫描程序
+关于无障碍功能检测的细节，我们将在下面讨论。
+除了测试这些特定主题外，我们还建议您使用自动辅助功能扫描程序：
 
   * For Android:
 
@@ -241,7 +244,7 @@ widgets to offer a dramatically more accessible experience.
 Flutter 内置的 widget，
 以提供更加便捷的体验。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bWbBgbmAdQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=630361140&bvid=BV1N84y1c7hW&cid=331074861&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Accessibility release checklist
 

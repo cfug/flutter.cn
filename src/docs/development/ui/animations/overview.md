@@ -482,8 +482,7 @@ animate between, and a duration.
 可以给动画控制器设置动画运行的下限和上限，
 还有动画的持续时间。
 
-In the simple case (using `forward()`, `reverse()`, `play()`, or
-`resume()`), the animation controller simply does a linear
+In the simple case (using `forward()` or `reverse()`), the animation controller simply does a linear
 interpolation from the lower bound to the upper bound (or vice versa,
 for the reverse direction) over the given duration.
 

@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/lists/long_lists/"?>
+
 The standard [`ListView`][] constructor works well
 for small lists. To work with lists that contain
 a large number of items, it's best to use the
@@ -62,14 +64,14 @@ final items = List<String>.generate(10000, (i) => "Item $i");
 To display the list of strings, render each String as a widget
 using `ListView.builder()`.
 
-为了将字符串集合展示出来，需要把集合中的每个字符串都渲染成组件。
+为了将字符串集合展示出来，需要通过 `ListView.builder`
+把集合中的每个字符串都渲染成组件。
 
 In this example, display each String on its own line.
 
-这个渲染过程正是 `ListView.builder` 的作用所在。
 在下面的例子中，将会把每个字符串用单行列表项显示在列表中。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ListView)" replace="/^body: //g;/,$//g"?>
 ```dart
 ListView.builder(
   itemCount: items.length,
@@ -78,14 +80,15 @@ ListView.builder(
       title: Text('${items[index]}'),
     );
   },
-);
+)
 ```
 
 ## Interactive example
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -98,7 +101,7 @@ void main() {
 class MyApp extends StatelessWidget {
   final List<String> items;
 
-  MyApp({Key key, @required this.items}) : super(key: key);
+  MyApp({Key? key, required this.items}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

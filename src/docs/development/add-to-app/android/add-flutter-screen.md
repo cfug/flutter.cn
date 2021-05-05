@@ -90,7 +90,7 @@ in your app that you'd like. The following example shows
 
 {% samplecode default-activity-launch %}
 {% sample Java %}
-<!--code-excerpt "ExistingActivity.java" title-->
+<? code-excerpt "ExistingActivity.java" title ?>
 ```java
 myButton.setOnClickListener(new OnClickListener() {
   @Override
@@ -102,7 +102,7 @@ myButton.setOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<!--code-excerpt "ExistingActivity.kt" title-->
+<? code-excerpt "ExistingActivity.kt" title ?>
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -126,7 +126,7 @@ Dart 代码入口不能通过 `Intent` 改变，但是初始路由可以通过 `
 
 {% samplecode custom-activity-launch %}
 {% sample Java %}
-<!--code-excerpt "ExistingActivity.java" title-->
+<? code-excerpt "ExistingActivity.java" title ?>
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -141,7 +141,7 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<!--code-excerpt "ExistingActivity.kt" title-->
+<? code-excerpt "ExistingActivity.kt" title ?>
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -204,9 +204,11 @@ The following example arbitrarily pre-warms a
 
 {% samplecode prewarm-engine %}
 {% sample Java %}
-<!--code-excerpt "MyApplication.java" title-->
+<? code-excerpt "MyApplication.java" title ?>
 ```java
 public class MyApplication extends Application {
+  public FlutterEngine flutterEngine;
+  
   @Override
   public void onCreate() {
     super.onCreate();
@@ -226,7 +228,7 @@ public class MyApplication extends Application {
 }
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyApplication.kt" title-->
+<? code-excerpt "MyApplication.kt" title ?>
 ```kotlin
 class MyApplication : Application() {
   lateinit var flutterEngine : FlutterEngine
@@ -297,7 +299,7 @@ builder:
 
 {% samplecode cached-engine-activity-launch %}
 {% sample Java %}
-<!--code-excerpt "ExistingActivity.java" title-->
+<? code-excerpt "ExistingActivity.java" title ?>
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -311,7 +313,7 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<!--code-excerpt "ExistingActivity.kt" title-->
+<? code-excerpt "ExistingActivity.kt" title ?>
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -464,7 +466,7 @@ pass the appropriate `BackgroundMode` to the `IntentBuilder`:
 
 {% samplecode transparent-activity-launch %}
 {% sample Java %}
-<!--code-excerpt "ExistingActivity.java" title-->
+<? code-excerpt "ExistingActivity.java" title ?>
 ```java
 // Using a new FlutterEngine.
 startActivity(
@@ -484,7 +486,7 @@ startActivity(
 ```
 
 {% sample Kotlin %}
-<!--code-excerpt "ExistingActivity.kt" title-->
+<? code-excerpt "ExistingActivity.kt" title ?>
 ```kotlin
 // Using a new FlutterEngine.
 startActivity(

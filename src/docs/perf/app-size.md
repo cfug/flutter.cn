@@ -91,7 +91,7 @@ View the application's download and install size in the **Android vitals** ->
 
 {% include app-figure.md image="perf/vital-size.png" alt="App size tab in Google Play Console" %}
 
-The download size is calculated based on an XXXDHPI (~640dpi) device on an
+The download size is calculated based on an XXXHDPI (~640dpi) device on an
 arm64-v8a architecture. Your end users' download sizes may vary depending on
 their hardware.
 
@@ -312,10 +312,10 @@ For an example of using this tag, see
 [Obfuscating Dart code][].
 
 当构建应用的发行版本时，考虑使用 `--split-debug-info` 标记。
-该标记会显著减少代码量。关于使用此标记的示例，请看 [Obfuscating Dart code][]。
+该标记会显著减少代码量。关于使用此标记的示例，
+请查看文档 [Obfuscating Dart code][]。
 
-Some of the other things you can do to make your app smaller
-are:
+Some other things you can do to make your app smaller are:
 
 其他减少应用大小的方式：
 

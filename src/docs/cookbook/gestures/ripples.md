@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/gestures/ripples/"?>
+
 {% comment %}
 prev:
   title: Focus and text fields
@@ -47,7 +49,7 @@ Flutter 提供了 [`InkWell`][] widget 来实现这个功能。
      用 `InkWell` widget 包裹它，并设置回调函数，
      就可以显示涟漪动画了。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (InkWell)" replace="/return //g;/;$//g"?>
 ```dart
 // The InkWell wraps the custom flat button widget.
 InkWell(
@@ -61,14 +63,15 @@ InkWell(
     padding: EdgeInsets.all(12.0),
     child: Text('Flat Button'),
   ),
-);
+)
 ```
 
 ## Interactive example
 
 ### 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -88,7 +91,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

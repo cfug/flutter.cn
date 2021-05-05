@@ -105,7 +105,7 @@ A _stateless_ widget never changes.
 examples of stateless widgets. Stateless widgets
 subclass [`StatelessWidget`][].
 
-_Stateless_ widget 不会发生变化。
+**无状态的** widget 自身无法改变。
 [Icon][]、[IconButton][] 和 [Text][]
 都是无状态 widget，它们都是 [StatelessWidget][] 的子类。
 
@@ -434,8 +434,8 @@ creates the `Icon` and `Text`, and delete it.
 In the same location, create the stateful widget:
 
 将您自定义 stateful widget 在 `build()` 方法中添加到 widget 树中。
-首先，找到创建`图标`和`文本`的代码，并删除它，
-在相同的位置创建 stateful widget：
+首先，找到创建 `Icon` 和 `Text` 的代码，并删除它，
+在相同的位置创建有状态的 widget：
 
 <!-- skip -->
 <?code-excerpt path-base="../null_safety_examples/"?>

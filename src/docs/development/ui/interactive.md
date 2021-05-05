@@ -117,7 +117,7 @@ triggered by user interactions or when it receives data.
 are examples of stateful widgets. Stateful widgets
 subclass [`StatefulWidget`][].
 
-而 _stateful_ widget 是动态的。
+而 **有状态的** widget 自身是可动态改变的（基于State）。
 例如，可以通过与用户的交互或是随着数据的改变
 而导致外观形态的变化。
 [Checkbox][]、[Radio][]、[Slider][]、

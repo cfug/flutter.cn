@@ -15,6 +15,15 @@
   
     gtag('config', 'G-HPSFTRXK91');
   </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?459029b086376519fc9bf43c184e2a4f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
   {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
   {% assign desc = page.description | default: page.content | strip_html | replace:'"','' | strip_newlines | truncatewords: 50 | split: '{%' | first %}

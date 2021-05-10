@@ -187,6 +187,9 @@ which might include the following:
 
 ## Flutter Favorites
 
+You can see the complete list of
+[Flutter Favorite packages][] on pub.dev.
+
 你可以在 pub.dev 上看到完整的 [[Flutter Favorite packages]] 列表。
 
 

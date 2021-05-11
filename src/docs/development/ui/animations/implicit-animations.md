@@ -8,8 +8,7 @@ keywords: 隐式动画
 ---
 
 With Flutter's [animation library][],
-you can add motion and create visual effects
-for the widgets in your UI.
+you can add motion and create visual effectsfor the widgets in your UI.
 One part of the library is an assortment of widgets
 that manage animations for you.
 These widgets are collectively referred to as _implicit animations_,
@@ -18,22 +17,42 @@ or _implicitly animated widgets_, deriving their name from the
 The following set of resources provide many ways to learn
 about implicit animations in Flutter.
 
+通过 Flutter 的[动画库][]，你可以为 UI 中的 widgets 添加动作并创造视觉效果。
+有些库包含各种各样可以帮你管理动画的 widget。
+这些 widgets 被统称为**隐式动画**或**隐式动画 widget** ，其名字来源于它们所实现的 [`ImplicitlyAnimatedWidget`][] class。
+下列资源提供了许多学习在 Flutter 中使用隐性动画的方法。
+
 ## Documentation
+
+## 文档
+
 [Implicit animations codelab][]
 : Jump right into the code!
   This codelab uses interactive examples
   and step-by-step instructions to teach you
   how to use implicit animations.
+  
+[隐式动画 codelab][]
+: 跳转至代码！
+  Codelab uses 交互式示例和分布介绍来教你学会如何使用隐式动画。
 
 [`AnimatedContainer` sample][]
 : A step-by-step recipe from the [Flutter cookbook][]
   for using the [`AnimatedContainer`][]
   implicitly animated widget.
 
+[`AnimatedContainer` 示例][]
+: [Flutter cookbook][] 中关于使用 [`AnimatedContainer`][] 隐式动画 widget 的分步秘诀。
+
 [`ImplicitlyAnimatedWidget`][] API page
 : All implicit animations extend the `ImplicitlyAnimatedWidget` class.
 
+[`ImplicitlyAnimatedWidget`][] API 页面
+: 所有隐式动画都扩展了 `ImplicitlyAnimatedWidget` class。
+
 ## Flutter in Focus videos
+
+## 聚焦 Flutter 视频
 
 Flutter in Focus videos feature 5-10 minute tutorials
 with real code that cover techniques
@@ -41,23 +60,40 @@ that every Flutter dev needs to know from top to bottom.
 The following videos cover topics
 that are relevant to implicit animations.
 
+聚焦 Flutter 视频以 5 到 10 分钟的实战代码为特点，涵盖了每个 Flutter 开发人员都需要从头到尾了解的技术。
+以下视频涵盖了所有与隐性动画相关的话题。
+
 {% comment %} Animation Basics with Implicit Animations {% endcomment %}
+
+{% comment %} 有关隐式动画的动画基础知识 {% endcomment %}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Custom Implicit Animations with Tween Animation Builder {% endcomment %}
+
+{% comment %} 使用 Tween Animation Builder 创建自定义隐式动画 {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6KiPEqzJIKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## The Boring Show
+
+## 无聊秀
 
 Watch the Boring Show to follow Google Engineers build apps
 from scratch in Flutter. The following episode covers
 using implicit animations in a news aggregator app.
 
+观看《无聊秀》，跟随谷歌工程师用 Flutter 从零开始构建应用程序。
+下面这一集涉及在一个新闻聚合器应用中使用隐式动画。
+
 {% comment %} Implicitly animating the Hacker News app {% endcomment %}
+
+{% comment %} Hacker News 应用的隐式动画 {% endcomment %}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8ehlWchLVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Widget of the Week videos
+
+## 每周 Widget 视频
+
 A weekly series of short animated videos each showing
 the important features of one particular widget.
 In about 60 seconds, you'll see real code for each
@@ -65,19 +101,34 @@ widget with a demo about how it works.
 The following Widget of the Week videos cover
 implicitly animated widgets:
 
+每周都有一个系列的动画短片，每个短片都展示了一个特定 widget 的核心功能。
+在大约六十秒的时间里，你将会看到每个 widget 的实战代码，以及关于它是如何工作的演示。
+下面的“每周 widget” 视频涉及了隐含动画 widget 有：
+
 {% comment %} Animated Opacity {% endcomment %}
+
+{% comment %} 动画不透明度 {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QZAvjqOqiLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated Padding {% endcomment %}
+
+{% comment %} 动画填充 {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PY2m0fhGNz4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated Positioned {% endcomment %}
+
+{% comment %} 动画定位 {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hC3s2YdtWt8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated switcher {% endcomment %}
+
+{% comment %} 动画切换器 {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2W7POjFb88g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 [`AnimatedContainer` sample]: /docs/cookbook/animation/animated-container
+[`AnimatedContainer` 示例]: /docs/cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
+[动画库]: {{site.api}}/flutter/animation/animation-library.html
 [Flutter cookbook]: /docs/cookbook
 [Implicit animations codelab]: /docs/codelabs/implicit-animations
+[隐式动画 codelab]: /docs/codelabs/implicit-animations
 [`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html

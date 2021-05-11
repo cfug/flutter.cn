@@ -76,7 +76,6 @@ has met the quality bar to become a Flutter Favorite.
 
 Flutter 生态系统委员会（FEC）由 Flutter 团队成员和社区成员组成并贯穿其生态系统。
 他们的工作之一就是确定一个 package 是否满足成为 Flutter Favorite 的质量要求。
-
 The current committee members
 (ordered alphabetically by last name)
 are as follows:

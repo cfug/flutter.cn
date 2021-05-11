@@ -17,7 +17,7 @@ or _implicitly animated widgets_, deriving their name from the
 The following set of resources provide many ways to learn
 about implicit animations in Flutter.
 
-通过 Flutter 的[动画库][]，你可以为 UI 中的 widgets 添加动作并创造视觉效果。
+通过 Flutter 的[动画库][animation library]，你可以为 UI 中的 widgets 添加动作并创造视觉效果。
 有些库包含各种各样可以帮你管理动画的 widget。
 这些 widgets 被统称为**隐式动画**或**隐式动画 widget** ，其名字来源于它们所实现的 [`ImplicitlyAnimatedWidget`][] class。
 下列资源提供了许多学习在 Flutter 中使用隐性动画的方法。
@@ -32,7 +32,7 @@ about implicit animations in Flutter.
   and step-by-step instructions to teach you
   how to use implicit animations.
   
-[隐式动画 codelab][]
+[隐式动画 codelab][Implicit animations codelab]
 : 跳转至代码！
   Codelab uses 交互式示例和分布介绍来教你学会如何使用隐式动画。
 
@@ -41,8 +41,8 @@ about implicit animations in Flutter.
   for using the [`AnimatedContainer`][]
   implicitly animated widget.
 
-[`AnimatedContainer` 示例][]
-: [Flutter cookbook][] 中关于使用 [`AnimatedContainer`][] 隐式动画 widget 的分步秘诀。
+[`AnimatedContainer` 示例][`AnimatedContainer` sample]
+: [Flutter cookbook][] 中关于使用 [`AnimatedContainer`][] 隐式动画 widget 进行手把手诀窍指导。
 
 [`ImplicitlyAnimatedWidget`][] API page
 : All implicit animations extend the `ImplicitlyAnimatedWidget` class.
@@ -64,13 +64,8 @@ that are relevant to implicit animations.
 以下视频涵盖了所有与隐性动画相关的话题。
 
 {% comment %} Animation Basics with Implicit Animations {% endcomment %}
-
-{% comment %} 有关隐式动画的动画基础知识 {% endcomment %}
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Custom Implicit Animations with Tween Animation Builder {% endcomment %}
-
-{% comment %} 使用 Tween Animation Builder 创建自定义隐式动画 {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6KiPEqzJIKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## The Boring Show
@@ -85,9 +80,6 @@ using implicit animations in a news aggregator app.
 下面这一集涉及在一个新闻聚合器应用中使用隐式动画。
 
 {% comment %} Implicitly animating the Hacker News app {% endcomment %}
-
-{% comment %} Hacker News 应用的隐式动画 {% endcomment %}
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8ehlWchLVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Widget of the Week videos
@@ -106,29 +98,17 @@ implicitly animated widgets:
 下面的“每周 widget” 视频涉及了隐含动画 widget 有：
 
 {% comment %} Animated Opacity {% endcomment %}
-
-{% comment %} 动画不透明度 {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QZAvjqOqiLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated Padding {% endcomment %}
-
-{% comment %} 动画填充 {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PY2m0fhGNz4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated Positioned {% endcomment %}
-
-{% comment %} 动画定位 {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hC3s2YdtWt8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated switcher {% endcomment %}
-
-{% comment %} 动画切换器 {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2W7POjFb88g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 [`AnimatedContainer` sample]: /docs/cookbook/animation/animated-container
-[`AnimatedContainer` 示例]: /docs/cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[动画库]: {{site.api}}/flutter/animation/animation-library.html
 [Flutter cookbook]: /docs/cookbook
 [Implicit animations codelab]: /docs/codelabs/implicit-animations
-[隐式动画 codelab]: /docs/codelabs/implicit-animations
 [`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html

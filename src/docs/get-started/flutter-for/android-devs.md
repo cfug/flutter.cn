@@ -739,7 +739,7 @@ as a Camera or File picker. For this, you would need to create a native platform
 integration (or use an [existing plugin][]).
 
 `Intent` 的另一种常见的使用场景是调用外部的组件，例如相机或文件选择器。
-对于这种情况，你需要创建一个原生平台集成（或者使用 [已有的插件][existing plugin]。
+对于这种情况，你需要创建一个原生平台插件（或者使用 [已有的插件][existing plugin]）。
 
 To learn how to build a native platform integration,
 see [developing packages and plugins][].

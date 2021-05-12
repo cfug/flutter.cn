@@ -1,6 +1,8 @@
 ---
 title: Google APIs
+title: 使用 Google API
 description: How to use Google APIs with Flutter.
+description: 如何在 Flutter 中使用 Google API
 ---
 
 <?code-excerpt path-base="../examples/googleapis/"?>

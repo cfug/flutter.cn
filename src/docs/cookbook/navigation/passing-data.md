@@ -65,14 +65,10 @@ This recipe uses the following steps:
 First, you need a simple way to represent todos. For this example,
 create a class that contains two pieces of data: the title and description.
 
-<<<<<<< HEAD
 首先，我们需要一个简单的方式来描述待办事项。
 我们创建一个类叫做 `Todo`，包含 `title` 和 `description` 两个成员变量。
 
-<!-- skip -->
-=======
 <?code-excerpt "lib/main.dart (Todo)"?>
->>>>>>> c1edbbfa73382969a4fa1435a9ed9ba688029d99
 ```dart
 class Todo {
   final String title;

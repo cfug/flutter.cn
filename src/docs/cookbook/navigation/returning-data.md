@@ -168,11 +168,7 @@ class SelectionScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
-<<<<<<< HEAD
-                  // 在这里返回 "Nope" (Pop here with "Nope")
-=======
                   // Pop here with "Nope"...
->>>>>>> c1edbbfa73382969a4fa1435a9ed9ba688029d99
                 },
                 child: Text('Nope.'),
               ),

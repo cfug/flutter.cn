@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/networking/send-data
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/networking/background_parsing/"?>
+
 By default, Dart apps do all of their work on a single thread.
 In many cases, this model simplifies coding and is fast enough
 that it does not result in poor app performance or stuttering animations,
@@ -90,7 +92,7 @@ using the [`http.get()`][] method.
 [JSONPlaceholder REST API][] 获取到一个包含
 5000 张图片对象的超大 JSON 文档。
 
-<!-- skip -->
+<?code-excerpt "lib/main_step2.dart (fetchPhotos)"?>
 ```dart
 Future<http.Response> fetchPhotos(http.Client client) async {
   return client.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
@@ -131,19 +133,29 @@ Include a `fromJson()` factory method to make it easy to create a
 还需要一个 `fromJson` 的工厂方法，
 使得通过 json 创建 `Photo` 变的更加方便。
 
-<!-- skip -->
+<?code-excerpt "lib/main_step3.dart (Photo)"?>
 ```dart
 class Photo {
+  final int albumId;
   final int id;
   final String title;
+  final String url;
   final String thumbnailUrl;
 
-  Photo({this.id, this.title, this.thumbnailUrl});
+  Photo({
+    required this.albumId,
+    required this.id,
+    required this.title,
+    required this.url,
+    required this.thumbnailUrl,
+  });
 
   factory Photo.fromJson(Map<String, dynamic> json) {
     return Photo(
+      albumId: json['albumId'] as int,
       id: json['id'] as int,
       title: json['title'] as String,
+      url: json['url'] as String,
       thumbnailUrl: json['thumbnailUrl'] as String,
     );
   }
@@ -170,7 +182,7 @@ Now, use the following instructions to update the
 
      在 `fetchPhotos()` 方法中使用 `parsePhotos()` 方法
 
-<!-- skip -->
+<?code-excerpt "lib/main_step3.dart (parsePhotos)"?>
 ```dart
 // A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
@@ -183,6 +195,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response = await client
       .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
+  // Use the compute function to run parsePhotos in a separate isolate.
   return parsePhotos(response.body);
 }
 ```
@@ -211,7 +224,7 @@ run the `parsePhotos()` function in the background.
 这个 `compute()` 函数可以在后台 isolate 中运行复杂的函数并返回结果。
 在这里，我们就需要将 `parsePhotos()` 方法放入后台。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (fetchPhotos)"?>
 ```dart
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response = await client
@@ -244,6 +257,7 @@ such as a `Future` or `http.Response` between isolates.
 
 ## 完整样例
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:convert';
@@ -274,7 +288,13 @@ class Photo {
   final String url;
   final String thumbnailUrl;
 
-  Photo({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
+  Photo({
+    required this.albumId,
+    required this.id,
+    required this.title,
+    required this.url,
+    required this.thumbnailUrl,
+  });
 
   factory Photo.fromJson(Map<String, dynamic> json) {
     return Photo(
@@ -304,7 +324,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -318,7 +338,7 @@ class MyHomePage extends StatelessWidget {
           if (snapshot.hasError) print(snapshot.error);
 
           return snapshot.hasData
-              ? PhotosList(photos: snapshot.data)
+              ? PhotosList(photos: snapshot.data!)
               : Center(child: CircularProgressIndicator());
         },
       ),
@@ -329,7 +349,7 @@ class MyHomePage extends StatelessWidget {
 class PhotosList extends StatelessWidget {
   final List<Photo> photos;
 
-  PhotosList({Key key, this.photos}) : super(key: key);
+  PhotosList({Key? key, required this.photos}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

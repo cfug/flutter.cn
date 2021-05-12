@@ -1,0 +1,15 @@
+name: passing_data
+description: Passing data
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  pedantic: ^1.11.0
+
+flutter:
+  uses-material-design: true

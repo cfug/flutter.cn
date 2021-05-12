@@ -573,31 +573,23 @@ to `"/onboarding"` instead of `"/"`.
 这段代码使用 `"/onboarding"` 取代 `"/"`，
 作为你的 `dart:ui` 的 [`window.defaultRouteName`]({{site.api}}/flutter/dart-ui/Window/defaultRouteName.html)
 
-{{site.alert.warning}}
-
-  `"setInitialRoute"` on the `navigationChannel` must be called
-  before running your `FlutterEngine` in order for Flutter's
-  first frame to use the desired route.
-
-  `navigationChannel` 上的 `"setInitialRoute"` 
-  必须在启动 `FlutterEngine` 前调用，才能在 Flutter 的第一帧中显示期望的路由。
-
-  Specifically, this must be called before running the Dart entrypoint.
-  The entrypoint may lead to a series of events where
-  [`runApp`][] builds a Material/Cupertino/WidgetsApp
-  that implicitly creates a [Navigator][] that might
-  `window.defaultRouteName` when the [`NavigatorState`][] is
-  first initialized.
-  
-  特别是，它必须在运行 Dart 入口函数前被调用。入口函数可能会引起一系列的事件，
-  因为 [`runApp`][] 搭建了一个 Material/Cupertino/WidgetsApp，
-  进而隐式创建了一个 [Navigator][]，Navigator 又可能在第一次初始化
-  [`NavigatorState`][] 时读取 `window.defaultRouteName`。
-
-  Setting the initial route after running the engine doesn't have an effect.
-
-  运行 engine 后设置初始化路由，将不会有作用.
-{{site.alert.end}}
+{% samplecode initial-route-without-pre-warming %}
+{% sample Objective-C %}
+<!--code-excerpt "Creating view controller" title-->
+```objectivec
+FlutterViewController* flutterViewController =
+      [[FlutterViewController alloc] initWithProject:nil
+                                        initialRoute:@"/onboarding"
+                                             nibName:nil
+                                              bundle:nil];
+```
+{% sample Swift %}
+<!--code-excerpt "Creating view controller" title-->
+```swift
+let flutterViewController = FlutterViewController(
+      project: nil, initialRoute: "/onboarding", nibName: nil, bundle: nil)
+```
+{% endsamplecode %}
 
 {{site.alert.tip}}
 

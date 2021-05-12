@@ -281,7 +281,6 @@ which you'll implement in the next step.
 在这个例子中，`createState()` 创建 `_FavoriteWidgetState` 的实例，
 您将在下一步中实现该实例。
 
-<!-- skip -->
 <?code-excerpt path-base="../null_safety_examples/layout/lakes/interactive"?>
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
 ```dart
@@ -345,7 +344,6 @@ You'll define the callback function next.
 该属性定义了处理点击的回调方法（`_toggleFavorite`）。
 你将会在接下来的步骤中尝试定义它。
 
-<!-- skip -->
 <?code-excerpt "lib/main.dart (_FavoriteWidgetState build)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g" title?>
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
@@ -396,18 +394,20 @@ changed and that the widget should be redrawn.
 The function argument to `setState()` toggles the
 UI between these two states:
 
-按下 `IconButton` 时会调用 `_toggleFavorite()` 方法，然后它会调用 `setState()`。
-调用 `setState()` 是至关重要的，因为这告诉框架，widget 的状态已经改变，应该重绘。
+按下 `IconButton` 时会调用 `_toggleFavorite()` 方法，
+然后它会调用 `setState()`。
+调用 `setState()` 是至关重要的，因为这告诉框架，
+widget 的状态已经改变，应该重绘。
 `setState()` 在如下两种状态中切换 UI：
 
 * A `star` icon and the number 41
 
-  实心的星形图标和数字 ‘41’ 
+  实心的星形图标和数字 41
   
 * A `star_border` icon and the number 40
 
-  轮廓线的星形图标和数字 ‘40’ 之间切换 UI
-  
+  轮廓线的星形图标 `star_border` 和数字 40 之间切换 UI
+
 <?code-excerpt "lib/main.dart (_toggleFavorite)"?>
 ```dart
 void _toggleFavorite() {
@@ -437,7 +437,6 @@ In the same location, create the stateful widget:
 首先，找到创建 `Icon` 和 `Text` 的代码，并删除它，
 在相同的位置创建有状态的 widget：
 
-<!-- skip -->
 <?code-excerpt path-base="../null_safety_examples/"?>
 <?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="}"?>
 ```diff
@@ -618,8 +617,10 @@ content exceeds the render box. Most developers
 using `ListView` don't want to manage `ListView`'s
 scrolling behavior, so `ListView` itself manages its scroll offset.
 
-有时，widget 在内部管理其状态是最好的。例如，当 [ListView][] 的内容超过渲染框时，
-ListView 自动滚动。大多数使用 ListView 的开发人员不想管理 ListView 的滚动行为，
+有时，widget 在内部管理其状态是最好的。
+例如，当 [ListView][] 的内容超过渲染框时，
+ListView 自动滚动。大多数使用 ListView
+的开发人员不想管理 ListView 的滚动行为，
 因此 ListView 本身管理其滚动偏移量。
 
 The `_TapboxAState` class:
@@ -638,15 +639,20 @@ The `_TapboxAState` class:
 * Defines the `_handleTap()` function, which updates
   `_active` when the box is tapped and calls the
   `setState()` function to update the UI.
-  
-  定义 `_handleTap()` 函数，该函数在点击该盒子时更新 `_active`,并调用 `setState()` 更新 UI。
+
+  定义 `_handleTap()` 函数，该函数在点击该盒子时更新
+  `_active`,并调用 `setState()` 更新 UI。
   
 * Implements all interactive behavior for the widget.
 
   实现 widget 的所有交互式行为.
 
-<!-- skip -->
+<?code-excerpt path-base="../null_safety_examples/development/ui/interactive/"?>
+
+<?code-excerpt "lib/self_managed.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 // TapboxA manages its own state.
 
 // TapboxA 管理自身状态.
@@ -654,7 +660,7 @@ The `_TapboxAState` class:
 //------------------------- TapboxA ----------------------------------
 
 class TapboxA extends StatefulWidget {
-  TapboxA({Key key}) : super(key: key);
+  TapboxA({Key? key}) : super(key: key);
 
   @override
   _TapboxAState createState() => _TapboxAState();
@@ -742,17 +748,17 @@ ParentWidgetState 类：
 
 * Manages the `_active` state for TapboxB.
 
-  为 TapboxB 管理 `_active` 状态.
+  为 TapboxB 管理 `_active` 状态；
   
 * Implements `_handleTapboxChanged()`,
   the method called when the box is tapped.
 
-  实现 `_handleTapboxChanged()`，当盒子被点击时调用的方法.
+  实现 `_handleTapboxChanged()`，当盒子被点击时调用的方法；
   
 * When the state changes, calls `setState()`
   to update the UI.
 
-  当状态改变时，调用 `setState()` 更新 UI.
+  当状态改变时，调用 `setState()` 更新 UI。
 
 The TapboxB class:
 
@@ -760,19 +766,22 @@ TapboxB 类：
 
 * Extends StatelessWidget because all state is handled by its parent.
 
-  继承 StatelessWidget 类，因为所有状态都由其父 widget 处理.
+  继承 StatelessWidget 类，因为所有状态都由其父 widget 处理；
 
 * When a tap is detected, it notifies the parent.
 
-  当检测到点击时，它会通知父 widget.
+  当检测到点击时，它会通知父 widget。
 
-<!-- skip -->
+<?code-excerpt "lib/parent_managed.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 // ParentWidget manages the state for TapboxB.
 
 // ParentWidget 为 TapboxB 管理状态.
 
 //------------------------ ParentWidget --------------------------------
+
 
 class ParentWidget extends StatefulWidget {
   @override
@@ -802,7 +811,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //------------------------- TapboxB ----------------------------------
 
 class TapboxB extends StatelessWidget {
-  TapboxB({Key key, this.active: false, required this.onChanged})
+  TapboxB({Key? key, this.active: false, required this.onChanged})
       : super(key: key);
 
   final bool active;
@@ -909,8 +918,10 @@ The `_TapboxCState` object:
 
   当点击时，[`widget`][] 属性将状态的改变传递给父 widget 并进行合适的操作。
 
-<!-- skip -->
+<?code-excerpt "lib/mixed.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 //---------------------------- ParentWidget ----------------------------
 
 class ParentWidget extends StatefulWidget {
@@ -941,8 +952,11 @@ class _ParentWidgetState extends State<ParentWidget> {
 //----------------------------- TapboxC ------------------------------
 
 class TapboxC extends StatefulWidget {
-  TapboxC({Key key, this.active: false, @required this.onChanged})
-      : super(key: key);
+  TapboxC({
+    Key? key,
+    this.active: false,
+    required this.onChanged,
+  }) : super(key: key);
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -991,11 +1005,10 @@ class _TapboxCState extends State<TapboxC> {
         width: 200.0,
         height: 200.0,
         decoration: BoxDecoration(
-          color:
-              widget.active ? Colors.lightGreen[700] : Colors.grey[600],
+          color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
           border: _highlight
               ? Border.all(
-                  color: Colors.teal[700],
+                  color: Colors.teal[700]!,
                   width: 10.0,
                 )
               : null,
@@ -1042,8 +1055,10 @@ You can find examples of `GestureDetector` in
 [Managing state][]. Learn more about the `GestureDetector`
 in [Handle taps][], a recipe in the [Flutter cookbook][].
 
-如果你愿意，你可以使用 [GestureDetector][] 来给任何自定义 widget 添加交互性。
-您可以在 [管理状态](#managing-state) 和 [Flutter Gallery][] 中找到 GestureDetector 的示例。
+如果你愿意，你可以使用 [GestureDetector][]
+来给任何自定义 widget 添加交互性。
+您可以在 [管理状态](#managing-state) 和
+[Flutter Gallery][] 中找到 GestureDetector 的示例。
 
 {{site.alert.tip}}
 
@@ -1129,7 +1144,6 @@ Flutter Gallery [running app][], [repo][]
 由 Google 工程师 Ian Hickson 讲解。
 
 
-
 [Android emulator]: /docs/get-started/install/windows#set-up-the-android-emulator
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
@@ -1170,7 +1184,7 @@ Flutter Gallery [running app][], [repo][]
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [repo]: {{site.github}}/flutter/gallery
-[running app]: https://gallery.flutter.dev
+[running app]: https://gallery.flutter.cn
 [set up]: /docs/get-started/install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html

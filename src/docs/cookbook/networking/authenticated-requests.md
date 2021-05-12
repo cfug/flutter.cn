@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/networking/background-parsing
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/networking/authenticated_requests/"?>
+
 To fetch data from most web services, you need to provide
 authorization. There are many ways to do this,
 but perhaps the most common uses the `Authorization` HTTP header.
@@ -35,15 +37,15 @@ class from the `dart:io` library.
 [`http`][] 这个 package 提供了相当实用的方法来向请求中添加 headers，
 你也可以使用 `dart:io` 来使用一些常见的 [`HttpHeaders`][]。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (get)"?>
 ```dart
-Future<http.Response> fetchAlbum() {
-  return http.get(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
-    // Send authorization headers to the backend.
-    headers: {HttpHeaders.authorizationHeader: "Basic your_api_token_here"},
-  );
-}
+final response = await http.get(
+  Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  // Send authorization headers to the backend.
+  headers: {
+    HttpHeaders.authorizationHeader: 'Basic your_api_token_here',
+  },
+);
 ```
 
 ## Complete example
@@ -53,8 +55,10 @@ Future<http.Response> fetchAlbum() {
 This example builds upon the
 [Fetching data from the internet][] recipe.
 
-下面的例子是基于 [获取网络数据][Fetching data from the internet] 中的方法编写的。
+下面的例子是基于
+[获取网络数据][Fetching data from the internet] 中的方法编写的。
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:convert';
@@ -65,7 +69,10 @@ import 'package:http/http.dart' as http;
 Future<Album> fetchAlbum() async {
   final response = await http.get(
     Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
-    headers: {HttpHeaders.authorizationHeader: "Basic your_api_token_here"},
+    // Send authorization headers to the backend.
+    headers: {
+      HttpHeaders.authorizationHeader: 'Basic your_api_token_here',
+    },
   );
   final responseJson = jsonDecode(response.body);
 
@@ -77,7 +84,11 @@ class Album {
   final int id;
   final String title;
 
-  Album({this.userId, this.id, this.title});
+  Album({
+    required this.userId,
+    required this.id,
+    required this.title,
+  });
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(

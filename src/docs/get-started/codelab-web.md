@@ -1094,7 +1094,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
   AnimatedProgressIndicator({
-    @required this.value,
+    required this.value,
   });
 
   @override

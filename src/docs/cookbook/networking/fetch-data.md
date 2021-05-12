@@ -13,6 +13,8 @@ next:
   path: /docs/cookbook/networking/authenticated-requests
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/networking/fetch_data/"?>
+
 Fetching data from the internet is necessary for most apps.
 Luckily, Dart and Flutter provide tools, such as the
 `http` package, for this type of work.
@@ -88,7 +90,7 @@ This recipe covers how to fetch a sample album from the
 在这里，你可以使用 [`http.get()`][] 方法
 从 [JSONPlaceholder][] 上获取到一个样本相册数据。
 
-<!-- skip -->
+<?code-excerpt "lib/main_step1.dart (fetchAlbum)"?>
 ```dart
 Future<http.Response> fetchAlbum() {
   return http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
@@ -142,14 +144,18 @@ For more information, see the full article on
 手动转换 JSON 是我们目前唯一的选项。想了解更多，
 请查看完整的文档 [JSON 和序列化数据][JSON and serialization]。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Album)"?>
 ```dart
 class Album {
   final int userId;
   final int id;
   final String title;
 
-  Album({@required this.userId, @required this.id, @required this.title});
+  Album({
+    required this.userId,
+    required this.id,
+    required this.title,
+  });
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -195,12 +201,11 @@ function to return a `Future<Album>`:
      而不是返回一个 `null`，
      在检查如下所示的 `snapshot` 值的时候，这一点相当重要。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (fetchAlbum)"?>
 ```dart
-import 'dart:convert';
-
 Future<Album> fetchAlbum() async {
-  final response = await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+  final response =
+      await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -241,7 +246,7 @@ See [`State`][] for more details.
 请在 `didChangeDependencies()` 方法中进行调用，
 你可以在 [`State`][] 文档里了解更多。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (State)"?>
 ```dart
 class _MyAppState extends State<MyApp> {
   late Future<Album> futureAlbum;
@@ -289,19 +294,25 @@ You must provide two parameters:
 Note that `snapshot.hasData` only returns `true`
 when the snapshot contains a non-null data value.
 
+需要注意的是：当快照包含非空数据值，
+`snapshot.hasData` 将只返回 `true`。
+
 Because `fetchAlbum` can only return non-null values,
 the function should throw an exception
 even in the case of a "404 Not Found" server response.
 Throwing an exception sets the `snapshot.hasError` to `true`
 which can be used to display an error message.
 
+因为 `fetchAlbum` 只能返回非空值，在服务器响应
+"404 Not Found" 的时候应该引发异常抛出。
+发生异常的时候会将 `snapshot.hasError` 设定为 `true`，
+用来显示错误消息。
+
 Otherwise, the spinner will be displayed.
 
-需要注意的是：当快照包含非空数据值，`snapshot.hasData` 将只返回 `true`，
-这就是为什么要在服务端返回 404 状态码的时候要让 `fetchAlbum` 方法抛出异常。
-如果 `fetchAlbum` 返回 `null` 的话，spinner 会显示不正常。
+其他情况下，spinner 就会正常显示。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/^child: //g;/,$//g"?>
 ```dart
 FutureBuilder<Album>(
   future: futureAlbum,
@@ -315,7 +326,7 @@ FutureBuilder<Album>(
     // By default, show a loading spinner.
     return CircularProgressIndicator();
   },
-);
+)
 ```
 
 ## Why is fetchAlbum() called in initState()?
@@ -418,7 +429,7 @@ see the following recipes:
 
 ## 完整样例
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:convert';
@@ -446,7 +457,11 @@ class Album {
   final int id;
   final String title;
 
-  Album({@required this.userId, @required this.id, @required this.title});
+  Album({
+    required this.userId,
+    required this.id,
+    required this.title,
+  });
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(

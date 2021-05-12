@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/returning_data/"?>
+
 In some cases, you might want to return data from a new screen.
 For example, say you push a new screen that presents two options to a user.
 When the user taps an option, you want to inform the first screen
@@ -65,7 +67,7 @@ it launches the selection screen.
 
 主屏界面显示一个按钮，当点击按钮时跳转到选择界面。
 
-<!-- skip -->
+<?code-excerpt "lib/main_step2.dart (HomeScreen)"?>
 ```dart
 class HomeScreen extends StatelessWidget {
   @override
@@ -97,7 +99,7 @@ Now, create the SelectionButton, which does the following:
 
     等待选择界面给它返回结果
 
-<!-- skip -->
+<?code-excerpt "lib/main_step2.dart (SelectionButton)"?>
 ```dart
 class SelectionButton extends StatelessWidget {
   @override
@@ -110,9 +112,7 @@ class SelectionButton extends StatelessWidget {
     );
   }
 
-  // A method that launches the SelectionScreen and awaits the
-  // result from Navigator.pop.
-  _navigateAndDisplaySelection(BuildContext context) async {
+  void _navigateAndDisplaySelection(BuildContext context) async {
     // Navigator.push returns a Future that completes after calling
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
@@ -142,6 +142,7 @@ The next step adds code to return data.
 
 这一步我们来定义 UI，在下一步完成数据的返回。
 
+<?code-excerpt "lib/main_step2.dart (SelectionScreen)"?>
 ```dart
 class SelectionScreen extends StatelessWidget {
   @override
@@ -167,7 +168,11 @@ class SelectionScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
+<<<<<<< HEAD
                   // 在这里返回 "Nope" (Pop here with "Nope")
+=======
+                  // Pop here with "Nope"...
+>>>>>>> c1edbbfa73382969a4fa1435a9ed9ba688029d99
                 },
                 child: Text('Nope.'),
               ),
@@ -199,30 +204,30 @@ Any result is returned to the `Future` in the SelectionButton.
 
 ### Yep 按钮
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Yep)" replace="/^child: //g;/,$//g"?>
 ```dart
 ElevatedButton(
   onPressed: () {
-    // The Yep button returns "Yep!" as the result.
+    // Close the screen and return "Yep!" as the result.
     Navigator.pop(context, 'Yep!');
   },
   child: Text('Yep!'),
-);
+)
 ```
 
 ### Nope button
 
 ### Nope 按钮
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Nope)" replace="/^child: //g;/,$//g"?>
 ```dart
 ElevatedButton(
   onPressed: () {
-    // The Nope button returns "Nope!" as the result.
-    Navigator.pop(context, 'Nope!');
+    // Close the screen and return "Nope." as the result.
+    Navigator.pop(context, 'Nope.');
   },
-  child: Text('Nope!'),
-);
+  child: Text('Nope.'),
+)
 ```
 
 ## 5. Show a snackbar on the home screen with the selection
@@ -240,9 +245,13 @@ In this case, show a snackbar displaying the result by using the
 在本例中，我们用一个 snackbar 显示结果，
 我们来更新 `SelectionButton` 类中的 `_navigateAndDisplaySelection()` 方法。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (navigateAndDisplay)"?>
 ```dart
-_navigateAndDisplaySelection(BuildContext context) async {
+// A method that launches the SelectionScreen and awaits the result from
+// Navigator.pop.
+void _navigateAndDisplaySelection(BuildContext context) async {
+  // Navigator.push returns a Future that completes after calling
+  // Navigator.pop on the Selection Screen.
   final result = await Navigator.push(
     context,
     MaterialPageRoute(builder: (context) => SelectionScreen()),
@@ -253,7 +262,7 @@ _navigateAndDisplaySelection(BuildContext context) async {
   // 等选择界面返回结果，先隐藏之前的 snackbars，结果显示在新的 snackbars 里  (After the Selection Screen returns a result, hide any previous snackbars and show the new result!)
   ScaffoldMessenger.of(context)
     ..removeCurrentSnackBar()
-    ..showSnackBar(SnackBar(content: Text("$result")));
+    ..showSnackBar(SnackBar(content: Text('$result')));
 }
 ```
 
@@ -261,14 +270,17 @@ _navigateAndDisplaySelection(BuildContext context) async {
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    title: 'Returning Data',
-    home: HomeScreen(),
-  ));
+  runApp(
+    MaterialApp(
+      title: 'Returning Data',
+      home: HomeScreen(),
+    ),
+  );
 }
 
 class HomeScreen extends StatelessWidget {
@@ -296,7 +308,7 @@ class SelectionButton extends StatelessWidget {
 
   // A method that launches the SelectionScreen and awaits the result from
   // Navigator.pop.
-  _navigateAndDisplaySelection(BuildContext context) async {
+  void _navigateAndDisplaySelection(BuildContext context) async {
     // Navigator.push returns a Future that completes after calling
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
@@ -308,7 +320,7 @@ class SelectionButton extends StatelessWidget {
     // and show the new result.
     ScaffoldMessenger.of(context)
       ..removeCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text("$result")));
+      ..showSnackBar(SnackBar(content: Text('$result')));
   }
 }
 
@@ -337,7 +349,7 @@ class SelectionScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  // Close the screen and return "Nope!" as the result.
+                  // Close the screen and return "Nope." as the result.
                   Navigator.pop(context, 'Nope.');
                 },
                 child: Text('Nope.'),

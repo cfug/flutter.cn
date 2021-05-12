@@ -132,6 +132,8 @@
           permalink: /docs/development/data-and-backend/json
         - title: 使用 Firebase
           permalink: /docs/development/data-and-backend/firebase
+        - title: 使用 Google API
+          permalink: /docs/development/data-and-backend/google-apis
     - title: 应用的无障碍和国际化 # TODO: use: Accessibility & localization
       permalink: /docs/development/accessibility-and-localization
       children:

@@ -91,10 +91,10 @@ class FirstScreen extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Launch screen'),
           onPressed: () {
             // Navigate to the second screen when tapped.
           },
+          child: Text('Launch screen'),
         ),
       ),
     );
@@ -106,7 +106,7 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Screen"),
+        title: Text('Second Screen'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -286,7 +286,7 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Screen"),
+        title: Text('Second Screen'),
       ),
       body: Center(
         child: ElevatedButton(

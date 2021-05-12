@@ -141,7 +141,7 @@ itemBuilder: (context, index) {
 
       // Then show a snackbar.
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text("$item dismissed")));
+          .showSnackBar(SnackBar(content: Text('$item dismissed')));
     },
     child: ListTile(title: Text('$item')),
   );
@@ -177,7 +177,7 @@ provide a `background` parameter to the `Dismissible`.
 +++ lib/main.dart (Dismissible)
 @@ -16,6 +16,8 @@
        ScaffoldMessenger.of(context)
-           .showSnackBar(SnackBar(content: Text("$item dismissed")));
+           .showSnackBar(SnackBar(content: Text('$item dismissed')));
      },
 +    // Show a red background as the item is swiped away.
 +    background: Container(color: Colors.red),
@@ -214,7 +214,7 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  final items = List<String>.generate(20, (i) => "Item ${i + 1}");
+  final items = List<String>.generate(20, (i) => 'Item ${i + 1}');
 
   @override
   Widget build(BuildContext context) {
@@ -250,7 +250,7 @@ class MyAppState extends State<MyApp> {
 
                 // Then show a snackbar.
                 ScaffoldMessenger.of(context)
-                    .showSnackBar(SnackBar(content: Text("$item dismissed")));
+                    .showSnackBar(SnackBar(content: Text('$item dismissed')));
               },
               // Show a red background as the item is swiped away.
               // 列表项被滑出时，显示一个红色背景(Show a red background as the item is swiped away)

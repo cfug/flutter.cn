@@ -50,7 +50,7 @@ GestureDetector(
   // When the child is tapped, show a snackbar.
   // 当它的子元素被点击，显示一个 snackbar 
   onTap: () {
-    final snackBar = SnackBar(content: Text("Tap"));
+    final snackBar = SnackBar(content: Text('Tap'));
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   },
@@ -131,7 +131,7 @@ class MyButton extends StatelessWidget {
     return GestureDetector(
       // When the child is tapped, show a snackbar.
       onTap: () {
-        final snackBar = SnackBar(content: Text("Tap"));
+        final snackBar = SnackBar(content: Text('Tap'));
 
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       },

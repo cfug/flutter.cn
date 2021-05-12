@@ -44,14 +44,17 @@ Which one to use depends on the use case. Let's take a look:
   因此它不会嵌入到 Android Activity 的视图层次结构中。
   某些平台交互（例如键盘处理和辅助功能）可能无法正常工作。
 
-* Hybrid composition requires Flutter 1.22 ([version 1.22.2]({{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel#1222--october-16-2020) is recommended). This mode appends the
-  native `android.view.View` to the view hierarchy. Therefore, keyboard
-  handling, and accessibility work out of the box. Prior to Android 10,
-  this mode may significantly reduce the frame throughput (FPS) of the
-  Flutter UI. See [performance][] for more.
+* Hybrid composition requires Flutter 1.22
+  ([version 1.22.2][] is recommended).
+  This mode appends the native `android.view.View`
+  to the view hierarchy. Therefore, keyboard
+  handling, and accessibility work out of the box.
+  Prior to Android 10, this mode might significantly
+  reduce the frame throughput (FPS) of the
+  Flutter UI. See [performance][] for more info.
 
   混合集成模式需要 Flutter 1.22
-  （推荐使用 [1.22.2 版本]({{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel#1222--october-16-2020)）。
+  （推荐使用 [1.22.2 版本][version 1.22.2]）。
   这种模式将原生的 `android.view.View` 附加到视图层次结构中。
   因此，键盘处理和无障碍功能是开箱即用的。
   在 Android 10 之前，此模式可能会大大降低 Flutter UI 的帧吞吐量 (FPS)。
@@ -66,15 +69,15 @@ To create a platform view on Android, follow these steps:
 ### 在 Dart 中进行的处理
 
 On the Dart side, create a `Widget`
-and add the following build implementation,
-as shown in the following steps.
+and add the following build implementation:
 
 在 Dart 端，创建一个 `Widget`
 然后添加如下的实现，具体如下：
 
 {{site.alert.warning}}
 
-  For this to work, your plugin or app must use Android embedding v2.
+  For this to work, your plugin or app must use
+  Android embedding v2.
   If you haven't updated your plugin, see the
   [plugin migration guide][].
 
@@ -85,7 +88,7 @@ as shown in the following steps.
 {{site.alert.end}}
 
 
-#### Hybrid Composition
+#### Hybrid composition
 
 #### 混合集成模式
 
@@ -149,7 +152,7 @@ For more information, see the API docs for:
 更多信息可以查看下面的 API 文档：
 
 * [`PlatformViewLink`][]
-* [`AndroidViewService`][]
+* [`AndroidViewSurface`][]
 * [`PlatformViewsService`][]
 
 #### Virtual Display
@@ -212,10 +215,12 @@ In your native code, implement the following:
 
 在您的原生代码中，实现如下方法：
 
-Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
+Extend `io.flutter.plugin.platform.PlatformView`
+to provide a reference to the `android.view.View`,
 For example `NativeView.kt`:
 
-继承 `io.flutter.plugin.platform.PlatformView` 以提供对 `android.view.View` 的引用，
+继承 `io.flutter.plugin.platform.PlatformView`
+以提供对 `android.view.View` 的引用，
 如 `NativeView.kt` 所示：
 
 ```kotlin
@@ -245,7 +250,8 @@ internal class NativeView(context: Context, id: Int, creationParams: Map<String?
 }
 ```
 
-Create a factory class that creates an instance of the `NativeView` created earlier,
+Create a factory class that creates an instance of the
+`NativeView` created earlier,
 for example `NativeViewFactory.kt`:
 
 创建一个用来创建 `NativeView` 的实例的工厂类，
@@ -268,12 +274,14 @@ class NativeViewFactory : PlatformViewFactory(StandardMessageCodec.INSTANCE) {
 }
 ```
 
-Finally, register the platform view. This can be done in an app or a plugin.
+Finally, register the platform view.
+This can be done in an app or a plugin.
 
 最后，注册这个平台视图。
 这一步可以在应用中，也可以在插件中。
 
-For app registration, modify the app's main activity (e.g. `MainActivity.kt`):
+For app registration, modify the app's main activity
+(for example, `MainActivity.kt`):
 
 要在应用中进行注册，修改应用的主 Activity （例如：`MainActivity.kt`）：
 
@@ -293,7 +301,8 @@ class MainActivity : FlutterActivity() {
 }
 ```
 
-For plugin registration, modify the plugin's main class (e.g. `PlatformViewPlugin.kt`):
+For plugin registration, modify the plugin's main class
+(for example, `PlatformViewPlugin.kt`):
 
 要在插件中进行注册，修改您插件的主类（例如：`PlatformViewPlugin.kt`）：
 
@@ -320,10 +329,12 @@ In your native code, implement the following:
 
 在您的原生代码中，实现如下方法：
 
-Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
+Extend `io.flutter.plugin.platform.PlatformView`
+to provide a reference to the `android.view.View`,
 For example, `NativeView.java`:
 
-继承 `io.flutter.plugin.platform.PlatformView` 以提供对 `android.view.View` 的引用，
+继承 `io.flutter.plugin.platform.PlatformView`
+以提供对 `android.view.View` 的引用，
 如 `NativeView.java` 所示：
 
 ```java
@@ -359,7 +370,8 @@ class NativeView implements PlatformView {
 }
 ```
 
-Create a factory class that creates an instance of the `NativeView` created earlier,
+Create a factory class that creates an instance of the
+`NativeView` created earlier,
 for example, `NativeViewFactory.java`:
 
 创建一个用来创建 `NativeView` 的实例的工厂类，
@@ -397,14 +409,17 @@ class NativeViewFactory extends PlatformViewFactory {
 }
 ```
 
-Finally, register the platform view. This can be done in an app or a plugin.
+Finally, register the platform view.
+This can be done in an app or a plugin.
 
 最后，注册这个平台视图。
 这一步可以在应用中，也可以在插件中。
 
-For app registration, modify the app's main activity (e.g. `MainActivity.java`):
+For app registration, modify the app's main activity
+(for example, `MainActivity.java`):
 
-要在应用中进行注册，修改应用的主 Activity （例如：`MainActivity.java`）：
+要在应用中进行注册，修改应用的主 Activity
+（例如：`MainActivity.java`）：
 
 ```java
 package dev.flutter.example;
@@ -424,7 +439,8 @@ public class MainActivity extends FlutterActivity {
 }
 ```
 
-For plugin registration, modify the plugin's main file (e.g. `PlatformViewPlugin.java`):
+For plugin registration, modify the plugin's main file
+(for example, `PlatformViewPlugin.java`):
 
 要在插件中进行注册，修改插件的主类（例如：`PlatformViewPlugin.java`）：
 
@@ -475,14 +491,15 @@ android {
 
 ## iOS
 
-iOS only uses Hybrid composition, which means that the native
+iOS only uses Hybrid composition,
+which means that the native
 `UIView` is appended to view hierarchy.
 
 iOS 只支持混合集成模式，
 这意味着原生的 `UIView` 会被加入视图层级中。
 
 Prior to Flutter 1.22, platform views were in developers preview.
-In 1.22 or above, it's no longer the case, so there's no need to
+In 1.22 or above, this is no longer the case, so there's no need to
 set the `io.flutter.embedded_views_preview` flag in `Info.plist`.
 
 在 Flutter 1.22 前，平台视图是一个开发者预览的版本。
@@ -622,14 +639,17 @@ class FLNativeView: NSObject, FlutterPlatformView {
 }
 ```
 
-Finally, register the platform view. This can be done in an app or a plugin.
+Finally, register the platform view.
+This can be done in an app or a plugin.
 
 最后，注册这个平台视图。
 这一步可以在应用中，也可以在插件中。
 
-For app registration, modify the App's `AppDelegate.swift`:
+For app registration,
+modify the App's `AppDelegate.swift`:
 
-要在应用中进行注册，修改应用中的 `AppDelegate.swift`：
+要在应用中进行注册，修改应用中的
+`AppDelegate.swift`：
 
 ```swift
 import Flutter
@@ -654,7 +674,9 @@ import UIKit
 }
 ```
 
-For plugin registration, modify the plugin's main file (e.g. `FLPlugin.swift`):
+For plugin registration,
+modify the plugin's main file
+(for example, `FLPlugin.swift`):
 
 要在插件中进行注册，修改插件的主类（例如 `FLPlugin.swift`）：
 
@@ -697,8 +719,9 @@ For example, `FLNativeView.h`:
 ```
 
 Implement the factory and the platform view.
-The `FLNativeViewFactory` creates the platform view, and the platform view
-provides a reference to the `UIView`. For example, `FLNativeView.m`:
+The `FLNativeViewFactory` creates the platform view,
+and the platform view provides a reference to the
+`UIView`. For example, `FLNativeView.m`:
 
 实现工厂类和平台视图。
 `FLNativeViewFactory` 创建一个关联了 `UIView` 的平台视图。
@@ -751,7 +774,8 @@ provides a reference to the `UIView`. For example, `FLNativeView.m`:
 @end
 ```
 
-Finally, register the platform view. This can be done in an app or a plugin.
+Finally, register the platform view.
+This can be done in an app or a plugin.
 
 最后，注册这个平台视图。
 这一步可以在应用中，也可以在插件中。
@@ -785,12 +809,12 @@ For app registration, modify the App's `AppDelegate.m`:
 @end
 ```
 
-For plugin registration, modify the main plugin file (e.g. `FLPlugin.m`):
+For plugin registration,
+modify the main plugin file (for example, `FLPlugin.m`):
 
 要在插件中进行注册，修改插件主文件（例如 `FLPlugin.m`）：
 
 ```objc
-
 #import <Flutter/Flutter.h>
 #import "FLNativeView.h"
 
@@ -822,7 +846,8 @@ For more information, see the API docs for:
 
 ## 整合
 
-When implementing the `build()` method in Dart, you can use [`defaultTargetPlatform`][]
+When implementing the `build()` method in Dart,
+you can use [`defaultTargetPlatform`][]
 to detect the platform, and decide what widget to use:
 
 在 Dart 中实现 `build()` 方法时，您可以使用 [`defaultTargetPlatform`][] 
@@ -864,7 +889,7 @@ as the main platform thread is rarely blocked.
 
 While a platform view is rendered with Hybrid composition, the Flutter
 UI is composed from the platform thread, which competes with other
-tasks like handling OS or plugin messages, etc.
+tasks like handling OS or plugin messages.
 
 使用混合集成模式渲染平台视图时，
 Flutter UI 由平台线程完成，与其他线程一起竞争，
@@ -912,7 +937,7 @@ For more information, see:
 * [`FlutterTextureRegistry`][]
 
 [`AndroidView`]: {{site.api}}/flutter/widgets/AndroidView-class.html
-[`AndroidViewService`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
+[`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [`FlutterPlatformView`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformView.html
 [`FlutterPlatformViewFactory`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformViewFactory.html
@@ -928,3 +953,4 @@ For more information, see:
 [`UIKitView`]: {{site.api}}/flutter/widgets/UiKitView-class.html
 [`TextureLayer`]: {{site.api}}/flutter/rendering/TextureLayer-class.html
 [`TextureRegistry`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html
+[version 1.22.2]: {{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel#1222--october-16-2020

@@ -122,8 +122,7 @@ class ExtractArgumentsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Extract the arguments from the current ModalRoute
     // settings and cast them as ScreenArguments.
-    final ScreenArguments args =
-        ModalRoute.of(context)!.settings.arguments as ScreenArguments;
+    final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
       appBar: AppBar(
@@ -180,7 +179,6 @@ arguments.
 // The named route extracts the arguments
 // by itself.
 ElevatedButton(
-  child: Text("Navigate to screen that extracts arguments"),
   onPressed: () {
     // When the user taps the button,
     // navigate to a named route and
@@ -195,6 +193,7 @@ ElevatedButton(
       ),
     );
   },
+  child: Text('Navigate to screen that extracts arguments'),
 ),
 ```
 
@@ -229,7 +228,7 @@ MaterialApp(
     if (settings.name == PassArgumentsScreen.routeName) {
       // Cast the arguments to the correct
       // type: ScreenArguments.
-      final ScreenArguments args = settings.arguments as ScreenArguments;
+      final args = settings.arguments as ScreenArguments;
 
       // Then, extract the required data from
       // the arguments and pass the data to the
@@ -282,7 +281,7 @@ class MyApp extends StatelessWidget {
         if (settings.name == PassArgumentsScreen.routeName) {
           // Cast the arguments to the correct
           // type: ScreenArguments.
-          final ScreenArguments args = settings.arguments as ScreenArguments;
+          final args = settings.arguments as ScreenArguments;
 
           // Then, extract the required data from
           // the arguments and pass the data to the
@@ -327,7 +326,6 @@ class HomeScreen extends StatelessWidget {
             // The named route extracts the arguments
             // by itself.
             ElevatedButton(
-              child: Text("Navigate to screen that extracts arguments"),
               onPressed: () {
                 // When the user taps the button,
                 // navigate to a named route and
@@ -342,13 +340,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                 );
               },
+              child: Text('Navigate to screen that extracts arguments'),
             ),
             // A button that navigates to a named route.
             // For this route, extract the arguments in
             // the onGenerateRoute function and pass them
             // to the screen.
             ElevatedButton(
-              child: Text("Navigate to a named that accepts arguments"),
               onPressed: () {
                 // When the user taps the button, navigate
                 // to a named route and provide the arguments
@@ -362,6 +360,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 );
               },
+              child: Text('Navigate to a named that accepts arguments'),
             ),
           ],
         ),
@@ -379,8 +378,7 @@ class ExtractArgumentsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Extract the arguments from the current ModalRoute
     // settings and cast them as ScreenArguments.
-    final ScreenArguments args =
-        ModalRoute.of(context)!.settings.arguments as ScreenArguments;
+    final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
       appBar: AppBar(

@@ -95,10 +95,10 @@ Use the following instructions for macos:
     
      打开 Android Studio。
 
- 1. Open plugin preferences (**Configure > Plugins** as of
+ 1. Open plugin preferences (**Preferences > Plugins** as of
      v3.6.3.0 or later).
 
-    打开插件设置（在 v3.6.3.0 以上的系统打开 **Configure > Plugins**）。
+    打开插件设置（在 v3.6.3.0 以上的系统打开 **Preferences > Plugins**）。
 
  1. Select the Flutter plugin and
      click **Install**.

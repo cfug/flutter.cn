@@ -62,7 +62,7 @@ console every time the text changes.
 ```dart
 TextField(
   onChanged: (text) {
-    print("First text field: $text");
+    print('First text field: $text');
   },
 ),
 ```
@@ -185,8 +185,8 @@ out the current value of the text field.
 
 <?code-excerpt "lib/main.dart (printLatestValue)"?>
 ```dart
-_printLatestValue() {
-  print("Second text field: ${myController.text}");
+void _printLatestValue() {
+  print('Second text field: ${myController.text}');
 }
 ```
 
@@ -279,8 +279,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
     super.dispose();
   }
 
-  _printLatestValue() {
-    print("Second text field: ${myController.text}");
+  void _printLatestValue() {
+    print('Second text field: ${myController.text}');
   }
 
   @override
@@ -295,7 +295,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
           children: <Widget>[
             TextField(
               onChanged: (text) {
-                print("First text field: $text");
+                print('First text field: $text');
               },
             ),
             TextField(

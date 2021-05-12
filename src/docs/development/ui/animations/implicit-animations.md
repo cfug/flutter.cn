@@ -8,7 +8,8 @@ keywords: 隐式动画
 ---
 
 With Flutter's [animation library][],
-you can add motion and create visual effectsfor the widgets in your UI.
+you can add motion and create visual effects
+for the widgets in your UI.
 One part of the library is an assortment of widgets
 that manage animations for you.
 These widgets are collectively referred to as _implicit animations_,
@@ -21,7 +22,7 @@ about implicit animations in Flutter.
 有些库包含各种各样可以帮你管理动画的 widget。
 这些 widgets 被统称为 **隐式动画** 或 **隐式动画 widget**，
 其名字来源于它们所实现的 [`ImplicitlyAnimatedWidget`][] class。
-下列资源提供了许多学习在 Flutter 中使用隐性动画的方法。
+下列资源提供了许多在 Flutter 中学习使用隐式动画的方法
 
 ## Documentation
 
@@ -62,7 +63,7 @@ The following videos cover topics
 that are relevant to implicit animations.
 
 聚焦 Flutter 视频以 5 到 10 分钟的实战代码为特点，涵盖了每个 Flutter 开发人员都需要从头到尾了解的技术。
-以下视频涵盖了所有与隐性动画相关的话题。
+下列视频涵盖了所有与隐性动画相关的话题。
 
 {% comment %} Animation Basics with Implicit Animations {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -96,7 +97,7 @@ implicitly animated widgets:
 
 每周都有一个系列的动画短片，每个短片都展示了一个特定 widget 的核心功能。
 在大约六十秒的时间里，你将会看到每个 widget 的实战代码，以及关于它是如何工作的演示。
-下面的“每周 widget” 视频涉及了隐含动画 widget 有：
+下列「每周 Widget」视频涉及了隐含动画 widget 有：
 
 {% comment %} Animated Opacity {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QZAvjqOqiLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

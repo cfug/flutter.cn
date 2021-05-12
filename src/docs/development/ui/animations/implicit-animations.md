@@ -17,9 +17,10 @@ or _implicitly animated widgets_, deriving their name from the
 The following set of resources provide many ways to learn
 about implicit animations in Flutter.
 
-通过 Flutter 的[动画库][animation library]，你可以为 UI 中的 widgets 添加动作并创造视觉效果。
+通过 Flutter 的 [动画库][animation library]，你可以为 UI 中的 widgets 添加动作并创造视觉效果。
 有些库包含各种各样可以帮你管理动画的 widget。
-这些 widgets 被统称为**隐式动画**或**隐式动画 widget** ，其名字来源于它们所实现的 [`ImplicitlyAnimatedWidget`][] class。
+这些 widgets 被统称为 **隐式动画** 或 **隐式动画 widget**，
+其名字来源于它们所实现的 [`ImplicitlyAnimatedWidget`][] class。
 下列资源提供了许多学习在 Flutter 中使用隐性动画的方法。
 
 ## Documentation
@@ -33,7 +34,7 @@ about implicit animations in Flutter.
   how to use implicit animations.
   
 [隐式动画 codelab][Implicit animations codelab]
-: 跳转至代码！
+<br>跳转至代码！
   Codelab uses 交互式示例和分布介绍来教你学会如何使用隐式动画。
 
 [`AnimatedContainer` sample][]
@@ -42,13 +43,13 @@ about implicit animations in Flutter.
   implicitly animated widget.
 
 [`AnimatedContainer` 示例][`AnimatedContainer` sample]
-: [Flutter cookbook][] 中关于使用 [`AnimatedContainer`][] 隐式动画 widget 进行手把手诀窍指导。
+<br>[Flutter cookbook][] 中关于使用 [`AnimatedContainer`][] 隐式动画 widget 进行手把手诀窍指导。
 
 [`ImplicitlyAnimatedWidget`][] API page
 : All implicit animations extend the `ImplicitlyAnimatedWidget` class.
 
 [`ImplicitlyAnimatedWidget`][] API 页面
-: 所有隐式动画都扩展了 `ImplicitlyAnimatedWidget` class。
+<br>所有隐式动画都扩展了 `ImplicitlyAnimatedWidget` class。
 
 ## Flutter in Focus videos
 
@@ -105,6 +106,7 @@ implicitly animated widgets:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hC3s2YdtWt8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated switcher {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2W7POjFb88g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 [`AnimatedContainer` sample]: /docs/cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html

@@ -25,8 +25,12 @@ release, and listed in alphabetical order:
 * [Default Scrollbars on Desktop][]
 
   [桌面端的默认滚动条][Default Scrollbars on Desktop]
+* [ThemeData's accent properties have been deprecated][]
+
+  [弃用 ThemeData 的强调属性]
 
 [Default Scrollbars on Desktop]: /docs/release/breaking-changes/default-desktop-scrollbars
+[ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
 
 ### Reverted changes
 
@@ -215,9 +219,10 @@ The following breaking changes have been reverted.
 * [The Route and Navigator refactoring][]
 
   [重构路由和导航][The Route and Navigator refactoring]
-* [ThemeData's accent properties][]
+* [FloatingActionButton and ThemeData's accent properties][]
 
-  [][ThemeData 的强调属性]
+  [FloatingActionButton 和 ThemeData 的强调速度][FloatingActionButton and ThemeData's accent properties]
+
 
 [Adding 'linux' and 'windows' to TargetPlatform enum]: /docs/release/breaking-changes/target-platform-linux-windows
 [Annotations return local position relative to object]: /docs/release/breaking-changes/annotations-return-local-position-relative-to-object
@@ -236,4 +241,4 @@ The following breaking changes have been reverted.
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
 [The forgetChild() method must call super]: /docs/release/breaking-changes/forgetchild-call-super
 [The Route and Navigator refactoring]: /docs/release/breaking-changes/route-navigator-refactoring
-[ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties
+[FloatingActionButton and ThemeData's accent properties]: /docs/release/breaking-changes/fab-theme-data-accent-properties

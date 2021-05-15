@@ -36,7 +36,7 @@ about implicit animations in Flutter.
   
 [隐式动画 codelab][Implicit animations codelab]
 <br>跳转至代码！
-  Codelab uses 交互式示例和分布介绍来教你学会如何使用隐式动画。
+  Codelab 使用交互式示例和分布介绍来教你学会如何使用隐式动画。
 
 [`AnimatedContainer` sample][]
 : A step-by-step recipe from the [Flutter cookbook][]
@@ -44,13 +44,13 @@ about implicit animations in Flutter.
   implicitly animated widget.
 
 [`AnimatedContainer` 示例][`AnimatedContainer` sample]
-<br>[Flutter cookbook][] 中关于使用 [`AnimatedContainer`][] 隐式动画 widget 进行手把手诀窍指导。
+<br>[Flutter cookbook][] 中针对如何使用 [`AnimatedContainer`][] 隐式动画 widget 进行了手把手的指导。
 
 [`ImplicitlyAnimatedWidget`][] API page
 : All implicit animations extend the `ImplicitlyAnimatedWidget` class.
 
 [`ImplicitlyAnimatedWidget`][] API 页面
-<br>所有隐式动画都扩展了 `ImplicitlyAnimatedWidget` class。
+<br>所有隐式动画都扩展了 `ImplicitlyAnimatedWidget` 类。
 
 ## Flutter in Focus videos
 

@@ -22,7 +22,7 @@ about implicit animations in Flutter.
 有些库包含各种各样可以帮你管理动画的 widget。
 这些 widgets 被统称为 **隐式动画** 或 **隐式动画 widget**，
 其名字来源于它们所实现的 [`ImplicitlyAnimatedWidget`][] class。
-下列资源提供了许多在 Flutter 中学习使用隐式动画的方法
+下列资源提供了许多在 Flutter 中学习使用隐式动画的方法。
 
 ## Documentation
 

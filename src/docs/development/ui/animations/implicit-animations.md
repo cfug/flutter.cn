@@ -78,7 +78,7 @@ Watch the Boring Show to follow Google Engineers build apps
 from scratch in Flutter. The following episode covers
 using implicit animations in a news aggregator app.
 
-观看《无聊秀》，跟随谷歌工程师用 Flutter 从零开始构建应用程序。
+观看《The Boring Show》，跟随谷歌工程师用 Flutter 从零开始构建应用程序。
 下面这一集涉及在一个新闻聚合器应用中使用隐式动画。
 
 {% comment %} Implicitly animating the Hacker News app {% endcomment %}

@@ -801,7 +801,7 @@ lazily, on demand.
         actual number of word pairings in the `ListView`, minus the divider
         widgets.
         
-        语法 `i ~/ 2` 表示 `i` 除以 2，但返回值是整形（向下取整），
+        语法 `i ~/ 2` 表示 `i` 除以 2，但返回值是整型（向下取整），
         比如 i 为：1, 2, 3, 4, 5 时，结果为 0, 1, 1, 2, 2，
         这个可以计算出 `ListView` 中减去分隔线后的实际单词对数量。
         

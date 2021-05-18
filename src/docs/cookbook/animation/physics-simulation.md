@@ -433,7 +433,7 @@ onPanEnd: (details) {
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
-main() {
+void main() {
   runApp(MaterialApp(home: PhysicsCardDragDemo()));
 }
 

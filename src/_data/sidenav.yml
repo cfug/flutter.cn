@@ -331,9 +331,11 @@
         permalink: /docs/perf/rendering/ui-performance
       - title: Reduce shader compilation jank
         permalink: /docs/perf/rendering/shader
+    - title: 延迟加载组件
+      permalink: /docs/perf/deferred-components
     - title: 性能指标
       permalink: /docs/perf/metrics
-    - title: Performance FAQ
+    - title: 性能 FAQ
       permalink: /docs/perf/faq
     - title: Appendix
       permalink: /docs/perf/appendix

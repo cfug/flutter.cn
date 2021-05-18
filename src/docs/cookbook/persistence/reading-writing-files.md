@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/persistence/key-value
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/persistence/reading_writing_files/"?>
+
 In some cases, you need to read and write files to disk.
 For example, you may need to persist data across app launches,
 or download data from the internet and save it for later offline use.
@@ -98,7 +100,7 @@ You can find the path to the documents directory as follows:
 在本示例中，你需要将信息存储在 Documents 目录中。
 可以按如下所示，找到 Documents 目录路径：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (localPath)"?>
 ```dart
 Future<String> get _localPath async {
   final directory = await getApplicationDocumentsDirectory();
@@ -118,7 +120,7 @@ class from the [`dart:io`][] library to achieve this.
 确定文件的存储位置后，需要创建对文件完整位置的引用。
 为此，你可以使用 [`dart:io`][] 库的 [`File`][] 类来实现。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (localFile)"?>
 ```dart
 Future<File> get _localFile async {
   final path = await _localPath;
@@ -141,12 +143,12 @@ file as a string using the `'$counter'` syntax.
 因此只需将整数存储为字符串格式，
 使用 `'$counter'` 即可调用。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (writeCounter)"?>
 ```dart
 Future<File> writeCounter(int counter) async {
   final file = await _localFile;
 
-  // Write the file.
+  // Write the file
   return file.writeAsString('$counter');
 }
 ```
@@ -161,18 +163,18 @@ Once again, use the `File` class.
 现在，你的磁盘上已经有了一些数据可供读取。
 此时同样需要使用 `File` 类。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (readCounter)"?>
 ```dart
 Future<int> readCounter() async {
   try {
     final file = await _localFile;
 
-    // Read the file.
-    String contents = await file.readAsString();
+    // Read the file
+    final contents = await file.readAsString();
 
     return int.parse(contents);
   } catch (e) {
-    // If encountering an error, return 0.
+    // If encountering an error, return 0
     return 0;
   }
 }
@@ -199,7 +201,7 @@ This function runs before the tests are executed.
 要模拟方法调用，请在测试文件中提供 `setupAll` 函数。
 这样会先运行这个函数，然后再执行测试。
 
-<!-- skip -->
+<?code-excerpt "test/widget_test.dart (setUpAll)"?>
 ```dart
 setUpAll(() async {
 
@@ -223,6 +225,7 @@ setUpAll(() async {
 
 ## 完整样例
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:io';
@@ -257,7 +260,7 @@ class CounterStorage {
       final file = await _localFile;
 
       // Read the file
-      String contents = await file.readAsString();
+      final contents = await file.readAsString();
 
       return int.parse(contents);
     } catch (e) {
@@ -277,14 +280,14 @@ class CounterStorage {
 class FlutterDemo extends StatefulWidget {
   final CounterStorage storage;
 
-  FlutterDemo({Key key, @required this.storage}) : super(key: key);
+  FlutterDemo({Key? key, required this.storage}) : super(key: key);
 
   @override
   _FlutterDemoState createState() => _FlutterDemoState();
 }
 
 class _FlutterDemoState extends State<FlutterDemo> {
-  int _counter;
+  int _counter = 0;
 
   @override
   void initState() {

@@ -72,6 +72,8 @@ macOS 可以允许开发 iOS、Android 和 Web（技术预览版正式发布）
 
 {% include_relative _android-setup.md %}
 
+{% include_relative _macos-desktop-setup.md %}
+
 {% include_relative _web-setup.md %}
 
 ## Next step

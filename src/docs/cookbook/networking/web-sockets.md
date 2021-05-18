@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/persistence/sqlite
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/networking/web_sockets/"?>
+
 In addition to normal HTTP requests,
 you can connect to servers using `WebSockets`.
 `WebSockets` allow for two-way communication with a server
@@ -73,9 +75,9 @@ create a `WebSocketChannel` that connects to a server:
 
 在 Flutter 中，只用一行代码就可以创建一个连接到服务器的 `WebSocketChannel`。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (connect)" replace="/_channel/channel/g"?>
 ```dart
-final channel = IOWebSocketChannel.connect('ws://echo.websocket.org');
+final channel = IOWebSocketChannel.connect('wss://echo.websocket.org');
 ```
 
 ## 2. Listen for messages from the server
@@ -99,14 +101,14 @@ widget to listen for new messages, and a
 在这个例子中，我们用 [`StreamBuilder`][] 组件来监听新消息，
 并使用 [`Text`][] 组件来展示它们。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (StreamBuilder)" replace="/_channel/channel/g"?>
 ```dart
 StreamBuilder(
-  stream: widget.channel.stream,
+  stream: channel.stream,
   builder: (context, snapshot) {
     return Text(snapshot.hasData ? '${snapshot.data}' : '');
   },
-);
+)
 ```
 
 ### How this works
@@ -147,7 +149,7 @@ by the `WebSocketChannel`.
 要向服务器发送数据，
 可以使用 `WebSocketChannel` 提供的 `sink` 下的 `add()` 方法来发送信息。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (add)" replace="/_channel/channel/g;/_controller.text/'Hello!'/g"?>
 ```dart
 channel.sink.add('Hello!');
 ```
@@ -176,7 +178,7 @@ To do so, close the `sink`.
 当你使用完 WebSocket 之后，记得关闭这个连接。
 要关闭这个 WebSocket 连接，只需要关闭 `sink`。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (close)" replace="/_channel/channel/g"?>
 ```dart
 channel.sink.close();
 ```
@@ -185,11 +187,11 @@ channel.sink.close();
 
 ## 完整样例
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/foundation.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:flutter/material.dart';
-import 'package:web_socket_channel/web_socket_channel.dart';
 
 void main() => runApp(MyApp());
 
@@ -201,7 +203,6 @@ class MyApp extends StatelessWidget {
       title: title,
       home: MyHomePage(
         title: title,
-        channel: IOWebSocketChannel.connect('wss://echo.websocket.org'),
       ),
     );
   }
@@ -209,17 +210,19 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   final String title;
-  final WebSocketChannel channel;
 
-  MyHomePage({Key key, @required this.title, @required this.channel})
-      : super(key: key);
+  MyHomePage({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
+  final _channel = IOWebSocketChannel.connect('wss://echo.websocket.org');
 
   @override
   Widget build(BuildContext context) {
@@ -238,13 +241,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: InputDecoration(labelText: 'Send a message'),
               ),
             ),
+            SizedBox(height: 24),
             StreamBuilder(
-              stream: widget.channel.stream,
+              stream: _channel.stream,
               builder: (context, snapshot) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 24.0),
-                  child: Text(snapshot.hasData ? '${snapshot.data}' : ''),
-                );
+                return Text(snapshot.hasData ? '${snapshot.data}' : '');
               },
             )
           ],
@@ -260,13 +261,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _sendMessage() {
     if (_controller.text.isNotEmpty) {
-      widget.channel.sink.add(_controller.text);
+      _channel.sink.add(_controller.text);
     }
   }
 
   @override
   void dispose() {
-    widget.channel.sink.close();
+    _channel.sink.close();
     super.dispose();
   }
 }

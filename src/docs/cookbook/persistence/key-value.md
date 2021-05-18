@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/plugins/play-video
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/persistence/key_value/"?>
+
 If you have a relatively small collection of key-values
 to save, you can use the [`shared_preferences`][] plugin.
 
@@ -193,7 +195,7 @@ const MethodChannel('plugins.flutter.io/shared_preferences')
 
 ## 完整示例
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -215,7 +217,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -232,16 +234,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Loading counter value on start
-  _loadCounter() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+  void _loadCounter() async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0);
     });
   }
 
   //Incrementing counter after click
-  _incrementCounter() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+  void _incrementCounter() async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0) + 1;
       prefs.setInt('counter', _counter);

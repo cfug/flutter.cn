@@ -1,4 +1,5 @@
 {{site.alert.note}}
+
   As of Flutter's 1.19.0 dev release, the Flutter SDK
   contains the `dart` command alongside the `flutter`
   command so that you can more easily run Dart
@@ -34,9 +35,9 @@
   should show that the `flutter` and `dart` commands
   from the same directory now come first.
 
-如上所示，Flutter SDK 内的 `dart` 命令不在首位。
-你需要更新 PATH，将 `C:\path-to-flutter-sdk\bin\` 放在 `C:\path-to-dart-sdk\bin\` 前面（当前场景）。
-接着重启命令行使修改生效，再次运行 `where`，此时来自相同目录的 `flutter` 和 `dart` 已经排在前面。
+  如上所示，Flutter SDK 内的 `dart` 命令不在首位。
+  你需要更新 PATH，将 `C:\path-to-flutter-sdk\bin\` 放在 `C:\path-to-dart-sdk\bin\` 前面（当前场景）。
+  接着重启命令行使修改生效，再次运行 `where`，此时来自相同目录的 `flutter` 和 `dart` 已经排在前面。
 
   ```terminal
   C:\>where flutter dart
@@ -50,13 +51,12 @@
   However, if you are using `PowerShell`, in it `where` is
   an alias of `Where-Object` command, so you need to use `where.exe` instead.
 
-然而，如果你在使用 `PowerShell`，`where` 其实是 `Where-Object` 命令的别名，
-所以实际上你需要运行 `where.exe`。
+  然而，如果你在使用 `PowerShell`，`where` 其实是 `Where-Object` 命令的别名，
+  所以实际上你需要运行 `where.exe`。
 
   ```terminal
   PS C:\> where.exe flutter dart
   ```
-
 
   To learn more about the `dart` command, run `dart -h`
   from the command line, or see the [dart tool][] page.

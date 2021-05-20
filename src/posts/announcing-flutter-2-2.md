@@ -1,5 +1,5 @@
 ---
-title: 一起看 I/O | Flutter 2.2 现已发布！
+title: Flutter 2.2 现已发布！
 toc: true
 ---
 

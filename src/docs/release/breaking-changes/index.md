@@ -9,14 +9,14 @@ As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
 
-正如[重要改动策略][breaking change policy]中描述的，
+正如 [重要改动策略][breaking change policy] 中描述的，
 在有重要改动时我们不定期发布跨版本迁移指南。
 
 The following guides are available. They are sorted by
 release, and listed in alphabetical order:
 
 以下是可用的迁移指南，
-它们按版本发布时间分类并按字母顺序排列。
+它们按发行版本分类并按字母顺序排列。
 
 ### Not yet released to stable
 

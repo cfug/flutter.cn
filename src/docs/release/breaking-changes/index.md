@@ -10,7 +10,7 @@ on occasion we publish guides
 for migrating code across a breaking change.
 
 正如 [重要改动策略][breaking change policy] 中描述的，
-在有重要改动时我们不定期发布跨版本迁移指南。
+我们会不定期地发布关于重要改动的迁移指南。
 
 The following guides are available. They are sorted by
 release, and listed in alphabetical order:

@@ -21,13 +21,13 @@ override `MediaQuery.platformBrightness` for Cupertino widgets.
 Before this change, the [`CupertinoThemeData.brightness`][]
 getter returned `Brightness.light` when it was set to null.
 
-[`CupertinoThemeData.brightness`][] 现被用于覆盖 Cupertino widget 的 `MediaQuery.platformBrightness`。
+[`CupertinoThemeData.brightness`][] 现被用于覆盖 Cupertino widgets 的 `MediaQuery.platformBrightness`。
 在此之前，
-[`CupertinoThemeData.brightness`][] 为空时返回 `Brightness.light` 值。
+[`CupertinoThemeData.brightness`][] 为空时返回 `Brightness.light`。
 
 ## Description of change
 
-## 修改内容说明
+## 更改描述
 
 Previously [`CupertinoThemeData.brightness`][]
 was implemented as a getter:
@@ -58,7 +58,7 @@ is rarely useful outside of the Flutter framework.
 To retrieve the brightness for Cupertino widgets,
 now use [`CupertinoTheme.brightnessOf`][] instead.
 
-一般来说 [`CupertinoThemeData.brightness`][] 很少会在 Flutter 框架外用到。
+一般来说 [`CupertinoThemeData.brightness`][] 很少会在 Flutter 框架层外用到。
 现在如果要检索 Cupertino widgets 的亮度，
 使用 [`CupertinoTheme.brightnessOf`][] 代替它即可。
 
@@ -81,8 +81,8 @@ When a `CupertinoTheme` uses the above `CupertinoThemeData`,
 dark mode is enabled for all its Cupertino descendants
 that are affected by this `CupertinoTheme`.
 
-当有一个 `CupertinoTheme` 使用上述 `CupertinoThemeData`时，
-所有受此 `CupertinoTheme` 影响的 Cupertino 派生物都将启用黑深色模式模式。
+当有一个 `CupertinoTheme` 使用上述 `CupertinoThemeData` 时，
+所有受此 `CupertinoTheme` 影响的 Cupertino 类组件都将启用深色模式。
 
 ## Timeline
 

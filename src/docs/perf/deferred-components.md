@@ -37,7 +37,7 @@ which can be compiled into split AOT shared libraries.
   components and assets included at initial install time.
   
   此功能目前仅在 Android 上可用，
-  利用 Android 和 Google Play 商店的 [动态功能模块][dynamic feature modules] 提供打包为 Android 模块的延迟组件。
+  利用 Android 和 Google Play 商店的 [动态功能模块][dynamic feature modules] 提供打包为 Android module 的延迟组件。
   延迟组件中的代码不会影响其他平台，其他平台在初始安装时会正常构建包含所有延迟组件和资源的应用。
   
   Also, note that this is an advanced feature.
@@ -112,7 +112,7 @@ dependencies {
     `android/app/src/main/AndroidManifest.xml` to
     `io.flutter.app.FlutterPlayStoreSplitApplication`:</p>
     <p markdown="1">如果使用 Google Play 商店作为动态功能的分发模型，
-    应用程序必须支持 `SplitCompat` 并提供 `PlayStoreDeferredComponentManager` 的实例。
+    应用程序必须支持 `SplitCompat` 并手动提供 `PlayStoreDeferredComponentManager` 的实例。
     这两个任务都可以通过设置 `android/app/src/main/AndroidManifest.xml` 中的 `android:name` 为
     `io.flatter.app.flatterPlayStoreSplitApplication` 应用属性来完成：</p>
 

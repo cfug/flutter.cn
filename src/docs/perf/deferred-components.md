@@ -23,8 +23,9 @@ libraries and assets as a “deferred component”.
 This is achieved by using Dart’s deferred imports,
 which can be compiled into split AOT shared libraries.
 
-我们将每个唯一的可下载的 Dart 库和静态资源称为「延迟组件」。
-这是通过使用 Dart 的延迟导入来实现的，可以将其编译到拆分的 AOT 共享库中。
+我们将每个独立的可下载的 Dart 库和静态资源称为「延迟组件」。
+这是通过使用 Dart 的延迟导入来实现的，
+可以将其编译到拆分的 AOT 共享库中。
 
 {{site.alert.note}}
   This feature is currently only available on Android,
@@ -52,7 +53,7 @@ Dispatching partial updates without re-uploading
 new Android App Bundles for the entire application
 is not supported.
 
-尽管模块可以延迟加载，但整个应用程序必须作为单个 Android 应用程序完全构建和上传。
+尽管模块可以延迟加载，但整个应用程序必须作为单个 App Bundle 完全构建和上传。
 不支持在没有重新上传整个新 Android 应用程序包的情况下发送部分更新。
 
 Deferred loading is only performed when the app
@@ -446,8 +447,8 @@ of loading units.
   Play-store-based implementation that the validator checks for.
   
   你可以通过 `--no-validate-deferred-components` 标志，来让工具尝试在不执行验证程序下构建应用。
-  这可能导致意外和混乱的指令来解决故障。
-  此标志用于不依赖验证程序检查的默认 Play-store-based 的自定义实现。
+  这可能导致由意外和错误的指令而引起的故障。
+  此标志应当仅在不需要依赖验证程序检查的默认 Play-store-based 的自定义实现时使用。
   
 {{site.alert.end}}
 
@@ -458,9 +459,9 @@ The current generated loading units are tracked in your
 This file should be checked into source control to ensure that
 changes to the loading units by other developers can be caught.
 
-验证程序会检测 `gen_snapshot` 生成所有新增、修改或者删除的加载单元。
-当前生成的加载单元在 `<projectDirectory>/deferred_components_loading_units.yaml` 文件中记录。
-这个文件应该在源码管理中进行检查，以确保其他开发人员对加载单元所做的更改可被追踪。
+验证程序会检测 `gen_snapshot` 生成的所有新增、修改或者删除的加载单元。
+当前生成的加载单元记录在 `<projectDirectory>/deferred_components_loading_units.yaml` 文件中。
+这个文件应该加入到版本管理中，以确保其他开发人员对加载单元所做的更改可被追踪。
 
 The validator also checks for the following in the
 `android` directory:

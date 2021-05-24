@@ -658,7 +658,7 @@ won't load any dart libraries in the component.
 也可以通过省略 libraries 来定义纯静态资源的延迟组件。
 这些静态资源的组件必须与服务中的 [`DeferredComponent`][] 实用程序类一起安装，而不是 `loadLibrary()`。
 由于 Dart 库是与静态资源打包在一起的，因此如果用 `loadLibrary()` 加载 Dart 库，则也会加载组件中的所有资源。
-但是，按组件名称安装和服务实用程序不会加载组件中的任何 Dart 库。
+但是，按组件名称和服务实用程序来安装不会加载组件中的任何 Dart 库。
 
 You are free to include assets in any component,
 as long as they are installed and loaded when they
@@ -766,7 +766,7 @@ installation of deferred components is emulated.
 `<your_app_project_dir>` 是应用程序对应项目的目录位置，
  `<your_temp_dir>` 用于存储 bundletool 输出的所有临时目录。
 这会将你的 `.aab` 文件解压为 `.apks` 文件并将其安装到设备上。
-所有 Android 可用的动态特性都在本地加载到设备上，并模拟延迟组件的安装。
+所有可用的 Android 动态特性都已在本地设备上加载，并模拟了延迟组件的安装。
 
 Before running `build-apks` again,
 remove the existing app .apks file:
@@ -783,7 +783,7 @@ the app, as Android won't update the feature modules
 unless it detects a new version number.
 
 对 Dart 代码库的更改需要增加 Android 构建 ID，或者卸载并重新安装应用程序。
-因为除非检测到新的版本号，否则 Android 不会更新功能模块。
+因为只有检测到新的版本号， Android 才会去更新功能模块。
 
 ### Releasing to the Google Play store
 

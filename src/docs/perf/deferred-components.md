@@ -1,4 +1,3 @@
-
 ---
 title: Deferred components
 title: 延迟加载组件
@@ -28,6 +27,7 @@ which can be compiled into split AOT shared libraries.
 可以将其编译到拆分的 AOT 共享库中。
 
 {{site.alert.note}}
+
   This feature is currently only available on Android,
   taking advantage of Android and Google Play Stores’
   [dynamic feature modules][] to deliver the

@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/testing/integration/scrolling
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/testing/integration/introduction/"?>
+
 {{site.alert.note}}
 
   The integration_test package is now the recommended way to write integration
@@ -112,16 +114,18 @@ specific widgets inside the test suite.
 组件增加 [`ValueKey`][] 属性。
 通过这个我们将可以在测试套件中标识特定组件并进行交互。
 
-
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Counter App',
       home: MyHomePage(title: 'Counter App Home Page'),
     );
@@ -129,7 +133,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -156,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'You have pushed the button this many times:',
             ),
             Text(
@@ -164,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // Provide a Key to this specific Text widget. This allows
               // identifying the widget from inside the test suite,
               // and reading the text.
-              key: Key('counter'),
+              key: const Key('counter'),
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
@@ -173,10 +177,10 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         // Provide a Key to this button. This allows finding this
         // specific button inside the test suite, and tapping it.
-        key: Key('increment'),
+        key: const Key('increment'),
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -278,12 +282,13 @@ Now, instrument the app. This involves two steps:
 Add this code inside the 
 `test_driver/app.dart` file.
 
-我们会在 `test_driver/app.dart` 文件中增加以下代码：
+我们会在 `test_driver/app.dart`
+文件中增加以下代码：
 
-<!-- skip -->
+<?code-excerpt "test_driver/app.dart"?>
 ```dart
 import 'package:flutter_driver/driver_extension.dart';
-import 'package:counter_app/main.dart' as app;
+import 'package:introduction/main.dart' as app;
 
 void main() {
   // This line enables the extension.
@@ -322,6 +327,7 @@ This involves four steps:
 
      完成测试后，在 `teardownAll()` 函数中与待测应用断开连接
 
+<?code-excerpt "test_driver/app_test.dart"?>
 ```dart
 // Imports the Flutter Driver API.
 import 'package:flutter_driver/flutter_driver.dart';
@@ -335,7 +341,7 @@ void main() {
     final counterTextFinder = find.byValueKey('counter');
     final buttonFinder = find.byValueKey('increment');
 
-    FlutterDriver driver;
+    late FlutterDriver driver;
 
     // Connect to the Flutter driver before running any tests.
     setUpAll(() async {
@@ -344,9 +350,7 @@ void main() {
 
     // Close the connection to the driver after the tests have completed.
     tearDownAll(() async {
-      if (driver != null) {
-        driver.close();
-      }
+      driver.close();
     });
 
     test('starts at 0', () async {
@@ -361,6 +365,16 @@ void main() {
       // Then, verify the counter text is incremented by 1.
       expect(await driver.getText(counterTextFinder), "1");
     });
+
+    test('increments the counter during animation', () async {
+      await driver.runUnsynchronized(() async {
+        // First, tap the button.
+        await driver.tap(buttonFinder);
+
+        // Then, verify the counter text is incremented by 1.
+        expect(await driver.getText(counterTextFinder), "1");
+      });
+    });
   });
 }
 ```
@@ -370,7 +384,7 @@ and tests similar to the example above fail with a timeout if,
 for example, you have a continuous animation running.  In that case, wrap
 the driver actions in `runUnsynchronized` as follows:
 
-<!-- skip -->
+<?code-excerpt "test_driver/app_test.dart (Unsynchronized)"?>
 ```dart
 test('increments the counter during animation', () async {
   await driver.runUnsynchronized(() async {

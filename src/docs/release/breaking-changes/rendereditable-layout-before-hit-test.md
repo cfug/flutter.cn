@@ -37,6 +37,7 @@ lay out the `RenderEditable` before doing so.
 
 Code before migration:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -73,6 +74,7 @@ class FakeEditableTextState extends TextSelectionDelegate {
 
 Code after migration:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';

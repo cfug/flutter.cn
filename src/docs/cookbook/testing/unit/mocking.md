@@ -160,7 +160,7 @@ The function should now look like this:
 ```dart
 Future<Album> fetchAlbum(http.Client client) async {
   final response =
-      await client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+      await client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -280,7 +280,7 @@ void main() {
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
-      when(client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1')))
+      when(client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
           .thenAnswer((_) async => http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200));
 
       expect(await fetchAlbum(client), isA<Album>());
@@ -291,7 +291,7 @@ void main() {
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.
-      when(client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1')))
+      when(client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
           .thenAnswer((_) async => http.Response('Not Found', 404));
 
       expect(fetchAlbum(client), throwsException);
@@ -336,7 +336,7 @@ import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum(http.Client client) async {
   final response =
-      await client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+      await client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -437,7 +437,7 @@ void main() {
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
-      when(client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1')))
+      when(client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
           .thenAnswer((_) async => http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200));
 
       expect(await fetchAlbum(client), isA<Album>());
@@ -448,7 +448,7 @@ void main() {
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.
-      when(client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1')))
+      when(client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
           .thenAnswer((_) async => http.Response('Not Found', 404));
 
       expect(fetchAlbum(client), throwsException);

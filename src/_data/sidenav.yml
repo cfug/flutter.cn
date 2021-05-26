@@ -65,7 +65,9 @@
               permalink: /docs/development/ui/layout/tutorial
             - title: 创建响应式和自适应的应用
               permalink: /docs/development/ui/layout/adaptive-responsive
-            - title: 布局约束 [新增]
+            - title: 构建自适应的应用 [新增]
+              permalink: /docs/development/ui/layout/building-adaptive-apps
+            - title: 理解布局约束
               permalink: /docs/development/ui/layout/constraints
             - title: 边界约束 (Box constraints)
               permalink: /docs/development/ui/layout/box-constraints

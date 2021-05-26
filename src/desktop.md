@@ -68,7 +68,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   编译应用: 在 Windows 上构建 Windows 应用，在 macOS 上构建 macOS 应用，
   在 Linux 上构建 Linux 应用。
   如果您遇到了一个尚未被报告的问题，请 [创建一个 issue][file an issue]，
-  其中标题包含 "desktop:macos/linux/windows" (所处的平台)。
+  其中标题包含 "desktop:windows (win32)/windows (uwp)/macos/linux" (所处的平台)。
 
 {{site.alert.end}}
 
@@ -145,9 +145,10 @@ you need the following in addition to the Flutter SDK:
   you need the "Universal Windows Platform development"
   workload installed, with the optional UWP C++ tools.
 
-  安装有 “Desktop development with C++” 工作负载的
-  [Visual Studio 2019][]（不要与 Visual Studio Code - VS Code 混淆），
+  [安装 Visual Studio 2019][Visual Studio 2019] (不要与 Visual Studio Code - VS Code 混淆)。
+  Win 32 开发，请选择 [“使用 C++ 的桌面开发”工作负载](https://docs.microsoft.com/zh-cn/cpp/build/vscpp-step-0-installation?view=msvc-160#step-4---choose-workloads)，
   包括它所有的默认组件。
+  UWP 开发，需要选择“通用 Windows 平台开发”工作负载，选择性安装提供的 UWP C++ 工具。
 
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
 
@@ -293,7 +294,8 @@ You should see something like the following
 depending on which platform you are running on):
 
 想要确保桌面 **已成功启用**，可以列出可用的设备。
-您应该会看到如下的内容（您将看到 Windows、macOS 或 Linux，这取决于您启用的是哪个平台）：
+您应该会看到如下的内容
+（您将看到 Windows、macOS 或 Linux，这取决于您运行的是哪个平台）：
 
 ``` terminal
 $ flutter devices
@@ -459,14 +461,6 @@ $ flutter run -d linux
 ```
 
 {{site.alert.note}}
-<<<<<<< HEAD
-
-  If there aren't any other connected devices,
-  the `-d <platform>` tag is optional.
-
-  如果没有其他的连接设备，这里 `-d <platform>` 标记是可选的。
-
-=======
   If you do not supply the `-d` flag, `flutter run` will list
   the available targets to choose from.
 {{site.alert.end}}
@@ -477,7 +471,6 @@ $ flutter run -d linux
   **Alpha!**
   Flutter Windows UWP desktop support is an alpha release, 
   available on the `dev` channel. 
->>>>>>> 4a17dc55f6ec4dbcdf57c86f139f06b985e2b191
 {{site.alert.end}}
 
 To get started with Windows UWP you need to be using Windows 10. 

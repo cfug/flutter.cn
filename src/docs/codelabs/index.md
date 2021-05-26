@@ -209,13 +209,6 @@ Learn how to use Flutter with other technologies.
   [在 Flutter 应用中添加谷歌地图][Adding Google Maps to a Flutter app]<br>
   在应用里显示谷歌地图，接收网络传回的数据，在地图上显示一个标示。
 
-* [Build a photo sharing app with Google Photos and Flutter][]<br>
-  Build a field trip app that allows you and other
-  members of the trip to share photos.
-
-  [使用 Google Photos API 制作一个照片分享的 Flutter 应用 ][Build a photo sharing app with Google Photos and Flutter]<br>
-  构建一个旅行应用场景下的应用，帮助你和其他成员分享照片。
-
 * [Adding AdMob Ads to a Flutter app][]<br>
   Learn how to add an AdMob banner, an interstitial ad,
   and a rewarded ad to an app called Awesome Drawing Quiz,
@@ -233,7 +226,22 @@ Learn how to use Flutter with other technologies.
   [向 Flutter 应用中添加 AdMob 广告横幅以及原生嵌入式广告][Adding AdMob banner and native inline ads to a Flutter app]<br>
   学习如何在一个旅行预约应用中嵌入 inline banner 以及原生广告。
 
-* [Get to know Firebase for Flutter][]<br>
+* [Adding in-app purchases to your Flutter app][]<br>
+  Extend a simple gaming app that uses the Dash mascot as
+  currency to offer three types of in-app purchases:
+  consumable, non-consumable, and subscription.
+
+* [Build a photo sharing app with Google Photos and Flutter][]<br>
+  Build a field trip app that allows you and other
+  members of the trip to share photos.
+
+* [Build voice bots for mobile with Dialogflow and Flutter][] [NEW]<br>
+  Learn how to build a mobile FAQ bot that can answer most
+  common questions about the tool Dialogflow. End users
+  can interact with the text interface or stream a voice
+  interaction via the built-in microphone of a mobile device.
+
+* [Get to know Firebase for Flutter][] [NEW]<br>
   Build an event RSVP and guestbook chat app on both Android
   and iOS using Flutter, authenticating users with Firebase
   Authentication and sync data using Cloud Firestore.
@@ -242,20 +250,22 @@ Learn how to use Flutter with other technologies.
   学习如何在 Flutter 里使用 Firebase 实时数据库的功能，
   以及如何使用事物 (transaction) 同时更新不同设备里的信息。
 
-* [Multi-platform Firestore Flutter][]<br>
+* [Multi-platform Firestore Flutter][] [NEW]<br>
   Build a multi-platform restaurant recommendation app
   powered by Flutter and Cloud Firestore.
   The finished app runs on Android, iOS, and web,
   from a single Dart codebase.
   
-  [使用 Cloud Firestore 和 Flutter 构建一个多平台应用][]<br>
+  [使用 Cloud Firestore 和 Flutter 构建一个多平台应用][Multi-platform Firestore Flutter]<br>
   构建一个多平台的餐馆推荐应用，只需要一套 Dart 代码，
   就可以运行在 Android、iOS 和 Web 平台。
 
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
 [Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
+[Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
+[Build voice bots for mobile with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
 [Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 

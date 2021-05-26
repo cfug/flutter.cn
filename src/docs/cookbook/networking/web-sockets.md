@@ -77,7 +77,9 @@ create a `WebSocketChannel` that connects to a server:
 
 <?code-excerpt "lib/main.dart (connect)" replace="/_channel/channel/g"?>
 ```dart
-final channel = IOWebSocketChannel.connect('wss://echo.websocket.org');
+final channel = WebSocketChannel.connect(
+  Uri.parse('wss://echo.websocket.org'),
+);
 ```
 
 ## 2. Listen for messages from the server
@@ -190,7 +192,7 @@ channel.sink.close();
 <?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/foundation.dart';
-import 'package:web_socket_channel/io.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -222,7 +224,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
-  final _channel = IOWebSocketChannel.connect('wss://echo.websocket.org');
+  final _channel = WebSocketChannel.connect(
+    Uri.parse('wss://echo.websocket.org'),
+  );
 
   @override
   Widget build(BuildContext context) {

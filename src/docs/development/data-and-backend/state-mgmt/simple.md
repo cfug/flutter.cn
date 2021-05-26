@@ -520,7 +520,7 @@ in your model, all the builder methods of all the corresponding
 `Consumer`  widget 唯一必须的参数就是 builder。 当 `ChangeNotifier`
 发生变化的时候会调用 builder 这个函数。
 （换言之，当你在模型中调用 `notifyListeners()` 时，
-所有相关的 Consumer widget 的 builder 方法都会被调用。）
+所有相关的 `Consumer` widget 的 builder 方法都会被调用。）
 
 The builder is called with three arguments. The first one is `context`,
 which you also get in every build method.

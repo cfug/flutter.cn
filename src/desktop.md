@@ -146,7 +146,7 @@ you need the following in addition to the Flutter SDK:
   workload installed, with the optional UWP C++ tools.
 
   [安装 Visual Studio 2019][Visual Studio 2019] (不要与 Visual Studio Code - VS Code 混淆)。
-  Win 32 开发，请选择 [“使用 C++ 的桌面开发”工作负载](https://docs.microsoft.com/zh-cn/cpp/build/vscpp-step-0-installation?view=msvc-160#step-4---choose-workloads)，
+  Win 32 开发，请选择 [「使用 C++ 的桌面开发」工作负载](https://docs.microsoft.com/zh-cn/cpp/build/vscpp-step-0-installation?view=msvc-160#step-4---choose-workloads)，
   包括它所有的默认组件。
   UWP 开发，需要选择“通用 Windows 平台开发”工作负载，选择性安装提供的 UWP C++ 工具。
 

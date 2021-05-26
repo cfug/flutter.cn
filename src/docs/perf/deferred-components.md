@@ -89,8 +89,7 @@ Android app for deferred loading.
 <ol markdown="1">
 <li markdown="1"><p markdown="1">Add Play Core to the Android app’s
     build.gradle dependencies.
-    In `android/app/build.gradle` add the following:</p>
-    <p markdown="1">将 Play Core 添加到 Android 应用程序的 build.gradle 依赖项中。
+    In `android/app/build.gradle` add the following:</p><p markdown="1">将 Play Core 添加到 Android 应用程序的 build.gradle 依赖项中。
     在 `android/app/build.gradle` 中添加以下内容：</p>
 
 ```gradle
@@ -110,8 +109,7 @@ dependencies {
     Both of these tasks can be accomplished by setting
     the `android:name` property on the application in
     `android/app/src/main/AndroidManifest.xml` to
-    `io.flutter.app.FlutterPlayStoreSplitApplication`:</p>
-    <p markdown="1">如果使用 Google Play 商店作为动态功能的分发模型，
+    `io.flutter.app.FlutterPlayStoreSplitApplication`:</p><p markdown="1">如果使用 Google Play 商店作为动态功能的分发模型，
     应用程序必须支持 `SplitCompat` 并手动提供 `PlayStoreDeferredComponentManager` 的实例。
     这两个任务都可以通过设置 `android/app/src/main/AndroidManifest.xml` 中的 `android:name` 为
     `io.flatter.app.flatterPlayStoreSplitApplication` 应用属性来完成：</p>
@@ -148,8 +146,7 @@ To support `SplitCompat`, there are three methods
 
 <ul markdown="1">
 <li markdown="1"><p markdown="1">Make your application class extend
-    `SplitCompatApplication`:</p>
-    <p markdown="1">让你的 application 类继承 `SplitCompatApplication`：</p>
+    `SplitCompatApplication`:</p><p markdown="1">让你的 application 类继承 `SplitCompatApplication`：</p>
 
 <!-- skip -->
 ```dart
@@ -160,8 +157,7 @@ public class MyApplication extends SplitCompatApplication {
 </li>
 
 <li markdown="1"><p markdown="1">Call `SplitCompat.install(this);`
-    in the `attachBaseContext()` method:</p>
-    <p markdown="1">在 `attachBaseContext()` 中调用 `SplitCompat.install(this);`：</p>
+    in the `attachBaseContext()` method:</p><p markdown="1">在 `attachBaseContext()` 中调用 `SplitCompat.install(this);`：</p>
 
 <!-- skip -->
 ```dart
@@ -176,8 +172,7 @@ protected void attachBaseContext(Context base) {
 
 <li markdown="1"><p markdown="1">Declare `SplitCompatApplication` as the application
     subclass and add the Flutter compatibility code from
-  `FlutterApplication` to your application class:</p>
-  <p markdown="1">将 `SplitCompatApplication` 声明为 application 的子类，
+  `FlutterApplication` to your application class:</p><p markdown="1">将 `SplitCompatApplication` 声明为 application 的子类，
   并将 `FlutterApplication` 中的 flutter 兼容性代码添加到你的 application 类中：</p>
 
 ```js
@@ -214,8 +209,7 @@ FlutterInjector.setInstance(new FlutterInjector.Builder()
     
 <li markdown="1"><p markdown="1">Opt into deferred components by adding
     the `deferred-components` entry to the app’s `pubspec.yaml`
-    under the `flutter` entry:</p>
-    <p markdown="1">通过将 `deferred-components` 依赖添加到应用程序的 `pubspec.yaml` 中的 `flutter` 下，并选择延迟组件：</p>
+    under the `flutter` entry:</p><p markdown="1">通过将 `deferred-components` 依赖添加到应用程序的 `pubspec.yaml` 中的 `flutter` 下，并选择延迟组件：</p>
 
   ```yaml
   ...
@@ -242,7 +236,7 @@ FlutterInjector.setInstance(new FlutterInjector.Builder()
 
 ### Step 2: Implementing deferred Dart libraries
 
-## 步骤 2：实现延迟加载的 Dart 库
+### 步骤 2：实现延迟加载的 Dart 库
 
 Next, implement deferred loaded Dart libraries in your
 app’s Dart code. The implementation does not need
@@ -265,8 +259,7 @@ guarding usages of deferred code behind `loadLibrary()`
     for the purposes of this guide,
     create a simple box as a stand-in.
     To create a simple blue box widget,
-    create `box.dart` with the following contents:</p>
-    <p markdown="1">创建新的 Dart 库。例如，创建一个可以在运行时下载的 `DeferredBox` widget。
+    create `box.dart` with the following contents:</p><p markdown="1">创建新的 Dart 库。例如，创建一个可以在运行时下载的 `DeferredBox` widget。
     这个 widget 可以是任意复杂的，本指南使用以下内容创建了一个简单的框。</p>
     
 <!-- skip -->
@@ -301,8 +294,7 @@ class DeferredBox extends StatelessWidget {
     When the `Future` completes, it returns the `DeferredBox` widget.
     `SomeWidget` can then be used in the app as normal and
     won't ever attempt to access the deferred Dart code until
-    it has successfully loaded.</p>
-    <p markdown="1">在应用中使用 `deferred` 关键字导入新的 Dart 库，并调用 `loadLibrary()`（请参见 [延迟加载库][lazily loading a library]）。
+    it has successfully loaded.</p><p markdown="1">在应用中使用 `deferred` 关键字导入新的 Dart 库，并调用 `loadLibrary()`（请参见 [延迟加载库][lazily loading a library]）。
     下面的示例使用 `FutureBuilder` 等待 `loadLibrary` 的 `Future` 对象（在 `initState` 中创建）完成，
     并将 `CircularProgressIndicator` 做为占位。
     当 `Future` 完成时，会返回 `DeferredBox`。
@@ -421,8 +413,7 @@ any issues and guides you through suggested changes to fix them.
     `gen_snapshot` instructed to produce split AOT shared libraries
     as separate `.so` files. On the first run, the validator will
     likely fail as it detects issues; the tool makes
-    recommendations for how to set up the project and fix these issues.</p>
-    <p markdown="1">`flutter build appbundle` 命令会尝试构建应用，
+    recommendations for how to set up the project and fix these issues.</p><p markdown="1">`flutter build appbundle` 命令会尝试构建应用，
     通过 `gen_snapshot` 将应用中拆分的 AOT 共享库分割为单独的 `.so` 文件。
     第一次运行时，验证程序可能会在检测到问题时失败，
     该工具会为如何设置项目和解决这些问题提供建议。</p>
@@ -474,8 +465,7 @@ The validator also checks for the following in the
     `${componentName}Name` to `${componentName}`.
     This string resource is used by the `AndroidManifest.xml`
     of each feature module to define the `dist:title property`.
-    For example:</p>
-    <p markdown="1">每个延迟组件名称的键值对映射 `${componentName}Name`：`${componentName}`。
+    For example:</p><p markdown="1">每个延迟组件名称的键值对映射 `${componentName}Name`：`${componentName}`。
     每个功能模块的 `AndroidManifest.xml` 使用此字符串资源来定义 `dist:title property`。例如：</p>
 
 ```xml
@@ -493,8 +483,7 @@ The validator also checks for the following in the
     and `src/main/AndroidManifest.xml` file.
     This only checks for existence and does not validate
     the contents of these files. If a file does not exist,
-    it generates a default recommended one.</p>
-    <p markdown="1">每个延迟组件都有一个 Android 动态功能模块，它包含一个 `build.gradle` 和 `src/main/AndroidManifest.xml` 文件。
+    it generates a default recommended one.</p><p markdown="1">每个延迟组件都有一个 Android 动态功能模块，它包含一个 `build.gradle` 和 `src/main/AndroidManifest.xml` 文件。
     验证程序只检查文件是否存在，不验证文件内容。如果文件不存在，它将生成一个默认的推荐文件。</p>
     
 </li>
@@ -504,8 +493,7 @@ The validator also checks for the following in the
     the mapping between loading units and component name the
     loading unit is associated with. This mapping is used by the
     embedder to convert Dart’s internal loading unit id
-    to the name of a deferred component to install. For example:</p>
-    <p markdown="1">包含一个 meta-data 键值对，对加载单元与其关联的组件名称之间的映射进行编码。
+    to the name of a deferred component to install. For example:</p><p markdown="1">包含一个 meta-data 键值对，对加载单元与其关联的组件名称之间的映射进行编码。
     嵌入程序使用此映射将 Dart 的内部加载单元 id 转换为要安装的延迟组件的名称。例如：</p>
     
 ```js
@@ -540,23 +528,22 @@ validator passes.
     the current project state should be committed to
     source control and the recommended changes should be
     reviewed to be appropriate. The tool won't make any
-    changes to your `android/` directory automatically.</p>
-    <p markdown="1">对于每个检查，该工具会创建或者修改需要的文件。
+    changes to your `android/` directory automatically.</p><p markdown="1">对于每个检查，该工具会创建或者修改需要的文件。
     这些文件放在 `<projectDir>/build/android_deferred_components_setup_files` 目录下。
     建议通过复制和覆盖项目 `android` 目录中的相同文件来应用更改。
     在覆盖之前，当前的项目状态应该被提交到源代码管理中，并检查建议的改动。
     该工具不会自动更改 `android` 目录。</p>
 </li>
 
-<li markdown="1"><a name="step-3.3"></a><p markdown="1">Once the available
+<li markdown="1"><a name="step-3.3"></a>
+<p markdown="1">Once the available
     loading units are generated and logged in
     `<projectDirectory>/deferred_components_loading_units.yaml`,
     it is possible to fully configure the pubspec’s
     `deferred-components` section so that the loading units
     are assigned to deferred components as desired.
     To continue with the box example, the generated
-    `deferred_components_loading_units.yaml` file would contain:</p>
-    <p markdown="1">一旦生成可用的加载单元并将其记录到 `<projectDirectory>deferred_components_loading_units.yaml` 中，
+    `deferred_components_loading_units.yaml` file would contain:</p><p markdown="1">一旦生成可用的加载单元并将其记录到 `<projectDirectory>deferred_components_loading_units.yaml` 中，
     便可完善 pubspec 的 `deferred-components` 配置，将加载单元分配给延迟的组件。
     在上面的案例中，生成的 `deferred_components_loading_units.yaml` 文件将包含：</p>
     
@@ -601,34 +588,28 @@ Keep the following guidelines in mind:
 <ul markdown="1">
 
 <li markdown="1"><p markdown="1">Loading units should not be included
-    in more than one component.</p>
-    <p markdown="1">一个加载单元只能包含在一个延迟组件中</p>
+    in more than one component.</p><p markdown="1">一个加载单元只能包含在一个延迟组件中</p>
 </li>
 <li markdown="1"><p markdown="1">Including one Dart library from a
     loading unit indicates that the entire loading
-    unit is assigned to the deferred component.</p>
-    <p markdown="1">引用加载单元中的一个 Dart 库意味着整个加载单元都被包含在延迟组件中。</p>
+    unit is assigned to the deferred component.</p><p markdown="1">引用加载单元中的一个 Dart 库意味着整个加载单元都被包含在延迟组件中。</p>
 </li>
 <li markdown="1"><p markdown="1">All loading units not assigned to
     a deferred component are included in the base component,
-    which always exists implicitly.</p>
-    <p markdown="1">所有未被分配给延迟组件的加载单元都包含在基本组件中，基本组件始终隐式存在。</p>
+    which always exists implicitly.</p><p markdown="1">所有未被分配给延迟组件的加载单元都包含在基本组件中，基本组件始终隐式存在。</p>
 </li>
 <li markdown="1"><p markdown="1">Loading units assigned to the same
     deferred component are downloaded, installed,
-    and shipped together.</p>
-    <p>分配给同一延迟组件的加载单元将一起下载、安装和运行。</p>
+    and shipped together.</p><p>分配给同一延迟组件的加载单元将一起下载、安装和运行。</p>
 </li>
 <li markdown="1"><p markdown="1">The base component is implicit and
-    need not be defined in the pubspec.</p>
-    <p>基本组件是隐式的，不需要在 pubspec 中定义。</p>
+    need not be defined in the pubspec.</p><p>基本组件是隐式的，不需要在 pubspec 中定义。</p>
 </li>
 </ul>
 </li>
 
 <li markdown="1"><p markdown="1">Assets can also be included by adding
-    an assets section in the deferred component configuration:</p>
-    <p>静态资源也可以通过在延迟组件中配置 assets 进行添加 ：</p>
+    an assets section in the deferred component configuration:</p><p>静态资源也可以通过在延迟组件中配置 assets 进行添加 ：</p>
     
 ```yaml
   deferred-components:
@@ -677,8 +658,7 @@ are best packed in the same component.
     For example, if there are three deferred components
     defined in the pubspec named, `boxComponent`, `circleComponent`,
     and `assetComponent`, ensure that `android/settings.gradle`
-    contains the following:</p>
-    <p markdown="1">将在 `pubspec.yaml` 中定义的所有延迟组件手动添加到 `android/settings.gradle` 文件中的 includes 部分。
+    contains the following:</p><p markdown="1">将在 `pubspec.yaml` 中定义的所有延迟组件手动添加到 `android/settings.gradle` 文件中的 includes 部分。
     例如，如果 pubspec 中定义了三个名为 `boxComponent`、 `circleComponent` 和 `assetComponent` 的延迟组件，
     请确保 `android/settings.gradle` 中包含以下内容：</p>
     
@@ -690,8 +670,7 @@ include ':app', ':boxComponent', ':circleComponent', ':assetComponent'
 
 <li markdown="1"><p markdown="1">Repeat steps [3.1][] through 3.6 (this step)
     until all validator recommendations are handled and the tool
-    runs without further recommendations.</p>
-    <p markdown="1">重复步骤 [3.1][] 到 3.6（此步骤），
+    runs without further recommendations.</p><p markdown="1">重复步骤 [3.1][] 到 3.6（此步骤），
     直到处理了所有验证程序的建议，并且该工具在没有更多建议的情况下运行。</p>
 
 When successful, this command outputs an `app-release.aab`

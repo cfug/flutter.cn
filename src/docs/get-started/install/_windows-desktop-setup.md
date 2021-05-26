@@ -65,10 +65,12 @@ For Windows desktop development, you need the following in addition to the Flutt
 
 ### Enable desktop support
 
+### 启用桌面版支持
+
 At the command line, perform the following command
 to enable Win32 desktop support
 
-在命令行中执行以下命令以开启 Win32 桌面端支持
+在命令行中执行以下命令以开启 Win32 桌面端支持：
 
 ```terminal
 $ flutter config --enable-windows-desktop

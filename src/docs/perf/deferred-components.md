@@ -15,7 +15,7 @@ This allows apps to reduce install apk size and download
 features and assets when needed by the user.
 
 Flutter 支持构建在运行时下载额外 Dart 代码和静态资源的应用程序。
-这允许应用程序减少安装 apk 的大小，并在用户需要时下载功能和静态资源。
+这可以减少安装应用程序 apk 的大小，并在用户需要时下载功能和静态资源。
 
 We refer to each uniquely downloadable bundle of Dart
 libraries and assets as a “deferred component”.

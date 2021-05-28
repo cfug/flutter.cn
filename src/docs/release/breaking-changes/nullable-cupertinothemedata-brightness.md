@@ -8,9 +8,10 @@ description: CupertinoThemeData.brightness 现可为空，并按原样返回用�
 ## Summary
 
 ## 概要
-[`CupertinoThemeData.brightness`] is now nullable.
 
-[`CupertinoThemeData.brightness`] 现可为空。
+[`CupertinoThemeData.brightness`][] is now nullable.
+
+[`CupertinoThemeData.brightness`][] 现可为空。
 
 ## Context
 
@@ -96,11 +97,12 @@ In stable release: 1.17
 
 ## References
 
-## 参见
+## 参考资料
 
 Design doc:
 
 设计文档：
+
 * [Make `CupertinoThemeData.brightness nullable`][]
 
   [允许 `CupertinoThemeData.brightness` 为空值][Make `CupertinoThemeData.brightness nullable`]
@@ -108,16 +110,19 @@ Design doc:
 API documentation:
 
 API 文档：
+
 * [`CupertinoThemeData.brightness`][]
 
 Relevant issue:
 
 相关 issue：
+
 * [Issue 47255][]
 
 Relevant PR:
 
 相关 PR：
+
 * [Let material `ThemeData` dictate brightness if `cupertinoOverrideTheme.brightness` is null][]
 
   [如果 `cupertinoOverrideTheme.brightness` 为空，则由 `ThemeData` 决定其亮度][Let material `ThemeData` dictate brightness if `cupertinoOverrideTheme.brightness` is null]

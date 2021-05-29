@@ -388,6 +388,7 @@ any issues and guides you through suggested changes to fix them.
 默认情况下，验证程序检测到任何问题都会导致构建失败，你可以通过系统建议的更改来修复这些问题。
 
 {{site.alert.note}}
+
   You can opt out of building deferred components
   with the `--no-deferred-components` flag.
   This flag causes all assets defined under
@@ -428,6 +429,7 @@ of loading units.
 这是因为在 `gen_snapshot` 完成并生成最后一组加载单元之前，无法执行任何引用加载单元的验证。
 
 {{site.alert.note}}
+
   You can opt to have the tool attempt to build your
   app without the validator by passing the
   `--no-validate-deferred-components` flag.
@@ -750,7 +752,7 @@ installation of deferred components is emulated.
 Before running `build-apks` again,
 remove the existing app .apks file:
 
-再次运行 `build-apks` 之前，请删除已存在的 app.apks 文件：
+再次运行 `build-apks` 之前，请删除已存在的 .apks 文件：
 
 ```sh
 $ rm <your_temp_dir>/app.apks
@@ -762,7 +764,7 @@ the app, as Android won't update the feature modules
 unless it detects a new version number.
 
 对 Dart 代码库的更改需要增加 Android 构建 ID，或者卸载并重新安装应用程序。
-因为只有检测到新的版本号， Android 才会去更新功能模块。
+因为只有检测到新的版本号，Android 才会去更新功能模块。
 
 ### Releasing to the Google Play store
 

@@ -36,6 +36,9 @@ using the following metrics:
 Flutter Favorite packages 通过以下指标来确认是否达到高质量标准：
 
 * [Overall package score][]
+
+  Package 的 [整体分数][Overall package score]
+  
 * **Permissive license**,
   including (but not limited to)
   Apache, Artistic, BSD, CC BY, MIT, MS-PL and W3C
@@ -58,7 +61,7 @@ Flutter Favorite packages 通过以下指标来确认是否达到高质量标准
   
 * [Verified publisher][]
 
-  [已验证发布者][Verified publisher]
+  成为 [已验证发布者][Verified publisher]
   
 * General **usability** when it comes to the overview,
   docs, sample/example code, and API quality
@@ -86,6 +89,7 @@ has met the quality bar to become a Flutter Favorite.
 
 Flutter 生态系统委员会（FEC）由 Flutter 团队成员和社区成员组成并贯穿其生态系统。
 他们的工作之一就是确定一个 package 是否满足成为 Flutter Favorite 的质量要求。
+
 The current committee members
 (ordered alphabetically by last name)
 are as follows:
@@ -107,7 +111,8 @@ potential future Flutter Favorite, or would like
 to bring any other issues to the attention of the committee,
 send the [committee chair][] an email.
 
-如果你想提名一个 package 或插件成为潜在的 Flutter Favorite，亦或是想提请其他需要引起注意的问题至委员会，
+如果你想提名一个 package 或插件成为潜在的 Flutter Favorite，
+亦或是想提请其他需要引起注意的问题至委员会，
 请发送邮件至 [委员会主席][committee chair]。
 
 ## Flutter Favorite usage guidelines

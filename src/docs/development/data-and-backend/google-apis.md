@@ -10,7 +10,7 @@ description: 如何在 Flutter 中使用 Google API
 The [Google APIs package]({{site.pub-pkg}}/googleapis) exposes dozens of Google
 services that you can use from Dart projects.
 
-[Google API 包]({{site.pub-pkg}}/googleapis) 暴露了许多你可以从 Dart 项目中使用的 Google 服务。
+[Google APIs package]({{site.pub-pkg}}/googleapis) 暴露了许多你可以从 Dart 项目中使用的 Google 服务。
 
 This page describes how to use APIs that interact with end-user data by using
 Gooogle authentication.
@@ -57,11 +57,11 @@ To use Google APIs, follow these steps.
 
 1. Pick the desired API
 
-   选择所需的API
+   选择所需的 API
 
 1. Enable the API
 
-   启用API
+   启用 API
 
 1. Authenticate user with the required scopes
 
@@ -77,7 +77,7 @@ To use Google APIs, follow these steps.
 
 ## 1. Pick the desired API
 
-## 1. 选择所需的API
+## 1. 选择所需的 API
 
 The documentation for [package:googleapis]({{site.pub-api}}/googleapis) lists
 each API as a separate Dart library – in a `name.version` format. Let's look at
@@ -91,7 +91,7 @@ Each library may provide many types, but there is one _root_ class that ends in
 `Api`. For YouTube, it's
 [`YouTubeApi`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html).
 
-每一个库都可以提供多种类型，但是一定会有一个以 `Api` 结尾的**根**类。
+每一个库都可以提供多种类型，但是一定会有一个以 `Api` 结尾的 **根** 类。
 在 YouTube 中，根类就是 [`YouTubeApi`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html)。
 
 Not only is the `Api` class the one you need to instantiate – see step 3 – but
@@ -116,7 +116,7 @@ import 'package:googleapis/youtube/v3.dart';
 
 ## 2. Enable the API
 
-## 2. 启用API
+## 2. 启用 API
 
 To use Google APIs you must have a Google account and a Google project. You also
 need to enable your desired API.

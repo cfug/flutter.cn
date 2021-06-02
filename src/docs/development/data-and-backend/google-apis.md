@@ -10,7 +10,7 @@ description: 如何在 Flutter 中使用 Google API
 The [Google APIs package]({{site.pub-pkg}}/googleapis) exposes dozens of Google
 services that you can use from Dart projects.
 
-[Google APIs package]({{site.pub-pkg}}/googleapis) 暴露了许多你可以从 Dart 项目中使用的 Google 服务。
+[Google APIs package]({{site.pub-pkg}}/googleapis) 提供了许多你可以从 Dart 项目中使用的 Google 服务。
 
 This page describes how to use APIs that interact with end-user data by using
 Gooogle authentication.
@@ -61,7 +61,7 @@ To use Google APIs, follow these steps.
 
 1. Enable the API
 
-   启用 API
+   启用 API 服务
 
 1. Authenticate user with the required scopes
 
@@ -84,8 +84,9 @@ each API as a separate Dart library – in a `name.version` format. Let's look 
 [`youtube.v3`]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html)
 as an example.
 
-文档 [package:googleapis]({{site.pub-api}}/googleapis) 列举了每一个可以单独作为 Dart 库的 API 
-——采用 `name.version` 的形式。让我们以 [`youtube.v3`]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html) 为例。
+文档 [package:googleapis]({{site.pub-api}}/googleapis) 采用 `name.version` 的形式，
+列举了每一个可以单独作为 Dart 库的 API。
+一起看看 [`youtube.v3`]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html) 这个例子。
 
 Each library may provide many types, but there is one _root_ class that ends in
 `Api`. For YouTube, it's
@@ -116,17 +117,17 @@ import 'package:googleapis/youtube/v3.dart';
 
 ## 2. Enable the API
 
-## 2. 启用 API
+## 2. 启用 API 服务
 
 To use Google APIs you must have a Google account and a Google project. You also
 need to enable your desired API.
 
-使用 Google API，你必须有一个 Google 账户和一个 Google 项目。你还需要开启所需的 API。
+使用 Google API，你必须有一个 Google 账户和一个 Google 项目。你还需要启用所需的 API 服务。
 
 In this example, you'd enable
 [YouTube Data API v3](https://console.cloud.google.com/apis/api/youtube.googleapis.com).
 
-在这个例子中，你开启了 [YouTube Data API v3](https://console.cloud.google.com/apis/api/youtube.googleapis.com)。
+在本示例中，你将需要启用 [YouTube Data API v3](https://console.cloud.google.com/apis/api/youtube.googleapis.com) 服务。
 
 For details, see the
 [getting started instructions](https://cloud.google.com/apis/docs/getting-started).
@@ -209,7 +210,7 @@ var httpClient = (await _googleSignIn.authenticatedClient())!;
 This [`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) instance
 includes the nessesary credentials when invoking Google API classes.
 
-这个 [`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) 实例
+[`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) 实例
 包含了调用 Google API 类时所需的凭证。
 
 ## 5. Create and use the desired API class
@@ -238,5 +239,5 @@ var favorites = await youTubeApi.playlistItems.list(
   [`extension_google_sign_in_as_googleapis_auth` example]({{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth/example)
   is a working implementation of the concepts described on this page.
   
-  这个 [`extension_google_sign_in_as_googleapis_auth` 例子]({{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth/example) 
+  示例 [`extension_google_sign_in_as_googleapis_auth`]({{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth/example) 
   是本页面所述概念的一个可行的实现。

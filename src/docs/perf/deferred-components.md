@@ -408,7 +408,8 @@ any issues and guides you through suggested changes to fix them.
 {{site.alert.end}}
 
 <ol markdown="1">
-<li markdown="1"><a name="step-3.1"></a><p markdown="1">The
+<li markdown="1"><a name="step-3.1"></a>
+<p markdown="1">The
     `flutter build appbundle` command
     runs the validator and attempts to build the app with
     `gen_snapshot` instructed to produce split AOT shared libraries

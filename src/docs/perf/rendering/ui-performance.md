@@ -583,7 +583,7 @@ other potentially expensive operations, such as clipping or shadows.
   widget tree might cause extra calls to `saveLayer`,
   and needless processing.
   
-  透明度、裁剪以及阴影它们本身并不是个糟糕的注意。
+  透明度、裁剪以及阴影它们本身并不是个糟糕的主意。
   然而对 widget 树顶层 widget 的操作可能导致额外对
   `saveLayer` 的调用以及无用的处理。
   

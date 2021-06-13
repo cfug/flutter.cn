@@ -85,6 +85,12 @@ Visit the [fastlane docs][fastlane] for more info.
    安装 fastlane `gem install fastlane` 或 `brew install fastlane`。
    访问 [fastlane docs][fastlane] 以获得更多信息。
 
+1. Create an environment variable named `FLUTTER_ROOT`,
+    and set it to the root directory of your Flutter SDK.
+    (This is required for the scripts that deploy for iOS.)
+
+    创建一个名为 `FLUTTER_ROOT` 的环境变量，并将其设置为 Flutter SDK 的根目录。（这是为 iOS 部署的脚本所必需的。）
+    
 1. Create your Flutter project, and when ready, make sure that your project builds via
  
    创建您的 Flutter 项目，准备就绪后，确保通过如下途径构建项目：

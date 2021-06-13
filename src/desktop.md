@@ -22,7 +22,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   This page covers desktop support,
   which is available as a beta release for
   Windows (Win32), macOS and Linux. The Windows UWP
-  support is available as a alpha release. Beta
+  support is available as an alpha release. Beta
   support still has notable feature gaps,
   including accessibility support. Meanwhile, the
   Windows UWP alpha release is still in

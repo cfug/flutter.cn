@@ -100,6 +100,17 @@ use under the hood.
 Widget tree 中不同层级间的 widget 通信的基础方法。这是诸如 `provider` 等
 众多方法的底层实现。
 
+The following instructor-led video workshop covers how to
+use `InheritedWidget`:
+
+以下讲师指导的视频 workshop 介绍了如何使用 `InheritedWidget`：
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LFcGPS6cGrY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Other useful docs include:
+
+其他有用的文档包括：
+
 * [InheritedWidget docs][]
   
   [InheritedWidget 文档 (InheritedWidget docs)][InheritedWidget docs]

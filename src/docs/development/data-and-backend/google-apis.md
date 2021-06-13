@@ -13,7 +13,7 @@ services that you can use from Dart projects.
 [Google APIs package]({{site.pub-pkg}}/googleapis) 提供了许多你可以从 Dart 项目中使用的 Google 服务。
 
 This page describes how to use APIs that interact with end-user data by using
-Gooogle authentication.
+Google authentication.
 
 本页面描述了如何通过 Google 身份验证，使用这些 API 和终端用户数据交互。
 

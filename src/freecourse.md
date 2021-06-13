@@ -6,7 +6,13 @@ description: 链接到 App Brewery 提供的免费 Flutter 教程。
 tags: 课程
 keywords: Flutter系列课程, Flutter视频教程, App Brewery
 ---
+
 <h1>This course is closed for enrollment.</h1>
+
+However, for $10 you can purchase a more in-depth version
+of this course, [The Complete Flutter Bootcamp with Dart][].
+
+[The Complete Flutter Bootcamp with Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
 
 {% comment %}
 <section class="landing-page__cta card text-center">

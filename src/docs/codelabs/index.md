@@ -286,13 +286,23 @@ Learn how to use Flutter with other technologies.
   currency to offer three types of in-app purchases:
   consumable, non-consumable, and subscription.
 
+  [为 Flutter 应用添加应用内购买功能][Adding in-app purchases to your Flutter app]<br>
+  扩展一个使用 Dash 吉祥物作为货币的简单游戏应用程序，
+  以提供三种类型的应用程序内购买：消耗品、非消耗品和订阅。
+
 * [Build a photo sharing app with Google Photos and Flutter][]<br>
   Build a field trip app that allows you and other
   members of the trip to share photos.
 
+  [使用 Google 相册和 Flutter 构建照片共享应用][Build a photo sharing app with Google Photos and Flutter]<br>
+  构建一个实地考察应用程序，允许你和旅行中的其他成员分享照片。
+
 * [Build voice bots for mobile with Dialogflow and Flutter][dialogflow-ws] (workshop) **NEW!**<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
+
+  [使用 Dialogflow 和 Flutter 为移动设备构建语音机器人][dialogflow-ws] (workshop) **新!**<br>
+  Dialogflow 和 Flutter codelab 的讲师指导版本（如下所列）。
 
 * [Build voice bots for mobile with Dialogflow and Flutter][]<br>
   Learn how to build a mobile FAQ bot that can answer most
@@ -300,10 +310,17 @@ Learn how to use Flutter with other technologies.
   can interact with the text interface or stream a voice
   interaction via the built-in microphone of a mobile device.
 
+  [使用 Dialogflow 和 Flutter 为移动设备构建语音机器人][Build voice bots for mobile with Dialogflow and Flutter]<br>
+  学习如何构建可以回答有关 Dialogflow 工具的最常见问题的移动式常见问题解答机器人。
+  终端用户可以通过移动设备的内置麦克风与文本界面交互或流式传输语音交互。
+
 * [Get to know Firebase for Flutter][firebase-ws] (workshop) **NEW!**<br>
   An instructor-led version of our popular
   "Get to know Firebase for Flutter" codelab
   (listed below).
+
+  [在 Flutter 里使用 Firebase][firebase-ws] (workshop) **新!**<br>
+  我们广受欢迎的「在 Flutter 里使用 Firebase」codelab 的讲师指导版本（如下所列）。
 
 * [Get to know Firebase for Flutter][]<br>
   Build an event RSVP and guestbook chat app on both Android
@@ -313,8 +330,7 @@ Learn how to use Flutter with other technologies.
   [在 Flutter 里使用 Firebase][Firebase for Flutter]<br>
   学习如何在 Flutter 里使用 Firebase 实时数据库的功能，
   以及如何使用事物 (transaction) 同时更新不同设备里的信息。
-
-* [Multi-platform Firestore Flutter][] [NEW]<br>
+  
 * [Multi-platform Firestore Flutter][]<br>
   Build a multi-platform restaurant recommendation app
   powered by Flutter and Cloud Firestore.

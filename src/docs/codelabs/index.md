@@ -39,7 +39,7 @@ one of these codelabs:
   (listed below).
 
   [构建你的第一个 Flutter App][Building your first Flutter app] (workshop) **新!**<br>
-  我们非常受欢迎的「编写你的第一个 Flutter App，第一部分」 codelab （如下所列）的讲师指导版。
+  我们非常受欢迎的「编写你的第一个 Flutter App，第一部分」 codelab（如下所列）的讲师指导版。
 
 * [Write your first Flutter app, part 1][]<br>
   Create a simple mobile app that generates proposed names
@@ -120,7 +120,7 @@ one of these codelabs:
   and enhance it to create fancy and custom scrolling effects
   by using slivers.
 
-  [在 Flutter 中构建滚动体验][Building scrolling experiences in Flutter]（workshop）**新!**<br>
+  [在 Flutter 中构建滚动体验][Building scrolling experiences in Flutter] (workshop) **新!**<br>
   从一个执行简单、直接滚动的应用程序入门，
   并通过使用 sliver 增强它以创建奇特的自定义滚动效果。
 
@@ -128,7 +128,7 @@ one of these codelabs:
   An instructor-led workshop based on the [Null safety codelab][]
   on the dart.dev site.
 
-  [Dart 空安全实战][Dart null safety in Action]（workshop）**新!**<br>
+  [Dart 空安全实战][Dart null safety in Action] (workshop) **新!**<br>
   基于 dart.dev 站点上的 [空安全 codelab][] 的讲师指导版 workshop。
 
 * [How to manage application states using inherited widgets][inherited-widget-ws] (workshop) **NEW!**<br>
@@ -137,9 +137,9 @@ one of these codelabs:
   [low-level state management][] classes provided
   by Flutter.
 
-  [如何使用 inherited widgets 管理应用程序状态][inherited-widget-ws]（workshop）**新!**<br>
+  [如何使用 inherited widgets 管理应用程序状态][inherited-widget-ws] (workshop) **新!**<br>
   了解如何使用 `InheritedWidget` 类
-  （Flutter 提供的 [低级状态管理][low-level state management] 之一）
+  （Flutter 提供的 [基础状态管理方案][low-level state management] 之一）
   管理应用数据的状态。
 
 [Dart null safety in Action]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY

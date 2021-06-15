@@ -37,7 +37,7 @@ diff2html: true
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:
 
-<iframe width="560" height="315" src="player.bilibili.com/player.html?aid=846249495&bvid=BV1n54y1H7dZ&cid=354773704&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=846249495&bvid=BV1n54y1H7dZ&cid=354773704&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
 

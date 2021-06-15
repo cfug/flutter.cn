@@ -31,22 +31,23 @@
   如果要跟进 Windows UWP 最新版，需要使用 `dev` 渠道。
 
   For more information, see the **Desktop**
-  section in [What's new in Flutter 2][],
+  section in [What's new in Flutter 2.2][],
   a free article on Medium.
 
   更多有关 **桌面版** 的详细信息，请查看文章：
-  [Flutter 2 带来了哪些更新][What's new in Flutter 2 CN]。
+  [Flutter 2.2 带来了哪些更新][What's new in Flutter 2.2 CN]。
   
 {{site.alert.end}}
 
-[What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
-[What's new in Flutter 2 CN]: /posts/whats-new-in-flutter-2-0
+[What's new in Flutter 2.2]: {{site.flutter-medium}}/whats-new-in-flutter-2-2-fd00c65e2039
+[What's new in Flutter 2.2 CN]: /posts/whats-new-in-flutter-2-2
 
 ### Additional Windows requirements
 
 ### 其他 Windows 需要的内容
 
-For Windows desktop development, you need the following in addition to the Flutter SDK:
+For Windows desktop development,
+you need the following in addition to the Flutter SDK:
 
 对于 Windows 桌面开发来说，除了 Flutter SDK 以外你还需要以下内容：
 
@@ -69,8 +70,8 @@ For Windows desktop development, you need the following in addition to the Flutt
 
 ### 启用桌面版支持
 
-At the command line, perform the following command
-to enable Win32 desktop support
+At the command line,
+perform the following command to enable Win32 desktop support:
 
 在命令行中执行以下命令以开启 Win32 桌面端支持：
 

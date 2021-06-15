@@ -57,9 +57,11 @@ For Windows desktop development, you need the following in addition to the Flutt
   you need the "Universal Windows Platform development"
   workload installed, with the optional UWP C++ tools.
 
-  [Visual Studio 2019][]（请别把它与 Visual Studio _Code_ 搞混了）
-  以及安装了 “Desktop development with C++” 工作负载，
-  包括其所有默认组件
+  [Visual Studio 2019][]（请别把它与 Visual Studio **Code** 搞混了）
+  做 Win32 开发的话，你需要安装 “Desktop development with C++” 
+  工作负载，包括其所有默认组件。
+  如果是 UWP 开发的话，你需要安装 "Universal Windows Platform development"
+  工作负载，包括可选的 UWP C++ 工具。
 
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
 
@@ -78,6 +80,8 @@ $ flutter config --enable-windows-desktop
 
 For Windows UWP desktop support perform the following commands to switch to
 the `dev` channel, upgrade Flutter, and enable UWP.
+
+Windows UWP 桌面支持需要先升级到 `dev` 发布渠道，然后启用 UWP。
 
 ```terminal
 $ flutter channel dev

@@ -16,7 +16,7 @@ such as elastic scrolling.
 For a free, instructor-led video workshop that also uses DartPad,
 check out the following video about using slivers:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YY-_yrZdjGc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=291195426&bvid=BV11f4y187gV&cid=354814353&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Resources
 

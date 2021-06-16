@@ -327,7 +327,7 @@ Learn how to use Flutter with other technologies.
   and iOS using Flutter, authenticating users with Firebase
   Authentication and sync data using Cloud Firestore.
 
-  [在 Flutter 里使用 Firebase][Firebase for Flutter]<br>
+  [在 Flutter 里使用 Firebase][Get to know Firebase for Flutter]<br>
   学习如何在 Flutter 里使用 Firebase 实时数据库的功能，
   以及如何使用事物 (transaction) 同时更新不同设备里的信息。
   

@@ -148,7 +148,7 @@ you need the following in addition to the Flutter SDK:
   [安装 Visual Studio 2019][Visual Studio 2019] (不要与 Visual Studio Code - VS Code 混淆)。
   Win 32 开发，请选择 [「使用 C++ 的桌面开发」工作负载](https://docs.microsoft.com/zh-cn/cpp/build/vscpp-step-0-installation?view=msvc-160#step-4---choose-workloads)，
   包括它所有的默认组件。
-  UWP 开发，需要选择“通用 Windows 平台开发”工作负载，选择性安装提供的 UWP C++ 工具。
+  UWP 开发，需要选择「通用 Windows 平台开发」工作负载，以及可选的 UWP C++ 工具。
 
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
 
@@ -280,6 +280,8 @@ $ flutter config --enable-linux-desktop
 
 For Windows UWP desktop support perform the following commands to switch to
 the `dev` channel, upgrade Flutter, and enable UWP.
+
+若想进行 UWP 桌面开发，请执行以下命令切换到 `dev` 分支、升级 Flutter 并启用 UWP 支持。
 
 ```terminal
 $ flutter channel dev
@@ -468,9 +470,14 @@ $ flutter run -d linux
 ## Windows UWP
 
 {{site.alert.warning}}
+
   **Alpha!**
   Flutter Windows UWP desktop support is an alpha release, 
   available on the `dev` channel. 
+
+  **Alpha!**
+  Flutter 对 Windows UWP 桌面开发的支持仍然在 alpha 阶段，仅在 `dev` 渠道可用。
+
 {{site.alert.end}}
 
 To get started with Windows UWP you need to be using Windows 10. 
@@ -478,10 +485,18 @@ You need to install Visual Studio (not Visual Studio _Code_) with the
 "Universal Windows Platform development" workload and the optional 
 Windows UWP C++ tools. 
 
+进行 Windows UWP 开发需要系统版本至少为 Windows 10。
+你需要安装 Visual Studio（不是 Visual Studio **Code**），
+并且添加「通用 Windows 平台开发」工作负载以及可选的 UWP C++ 工具。
+
 To configure Flutter for Windows UWP development, 
 perform the following commands to switch to
 the `dev` channel, upgrade Flutter, and enable 
 Windows UWP desktop support.
+
+若想配置 Windows UWP 开发，
+请执行以下命令切换到 `dev` 分支、升级 Flutter，
+并启用 Windows UWP 桌面开发支持。
 
 ```terminal
 PS C:\> flutter channel dev
@@ -490,6 +505,8 @@ PS C:\> flutter config --enable-windows-uwp-desktop
 ```
 
 To create a new application, run the following commands:
+
+执行以下命令创建新应用：
 
 ```terminal
 PS C:\> flutter create myapp
@@ -501,10 +518,16 @@ sandboxed runtime. You need to run an override for the sandbox
 to enable the injection of Dart code into the running UWP 
 process to enable debugging and Hot Reload.
 
+在 Windows UWP 环境下运行 Flutter 会有一些复杂，这是由 UWP 的沙盒环境决定的。
+为了能正常进行调试和热重载，在开发时你需要对 UWP 进程的沙盒进行一些重载和注入操作。
+
 The suggested approach during development is to first run
 `flutter run -d winuwp` from the command line, which will
 give you a command that you need to run from a PowerShell
 with Administrator privileges.
+
+在此推荐的方法是首次运行应用时，使用命令行运行 `flutter run -d winuwp`，
+此时会提示你以管理员身份在 PowerShell 中运行命令：
 
 ```terminal
 PS C:\myapp> flutter run -d winuwp
@@ -529,6 +552,9 @@ as Administrator. You can then leave this process running for
 the length of your development session, restarting your UWP app
 as required.
 
+以管理员身份在 PowerShell 中运行如上 `checknetisolation` 的命令。
+推荐你在开发过程中保持该命令的运行，执行后请重新运行应用。
+
 ```terminal
 PS C:\> checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
 
@@ -539,6 +565,8 @@ Reproduce your scenario, then press Ctrl-C when done.
 Once you have this process running, you can deploy to
 Windows UWP from within your IDE as normal, or run from
 the command line as follows:
+
+当该进程在运行时，你就可以正常地在 IDE 中运行应用，或者执行以下命令：
 
 ```terminal
 PS C:\myapp> flutter run -d winuwp

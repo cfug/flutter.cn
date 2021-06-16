@@ -25,6 +25,7 @@ release, and listed in alphabetical order:
 * [Default Scrollbars on Desktop][]
 
   [桌面端的默认滚动条][Default Scrollbars on Desktop]
+  
 * [ThemeData's accent properties have been deprecated][]
 
   [弃用 ThemeData 的强调属性]
@@ -57,33 +58,43 @@ The following breaking changes have been reverted.
 * [Added BuildContext parameter to TextEditingController.buildTextSpan][]
 
   [为 TextEditingController.buildTextSpan 添加 BuildContext 参数][Added BuildContext parameter to TextEditingController.buildTextSpan]
+  
 * [Android ActivityControlSurface attachToActivity signature change][]
 
   [变更 Android 端 ActivityControlSurface attachToActivity 签名][Android ActivityControlSurface attachToActivity signature change]
+  
 * [Android FlutterMain.setIsRunningInRobolectricTest testing API removed][]
 
   [移除 Android 端 FlutterMain.setIsRunningInRobolectricTest 测试 API][Android FlutterMain.setIsRunningInRobolectricTest testing API removed]
+  
 * [Clip behavior][]
 
   [剪裁行为][Clip behavior]
+  
 * [Deprecated API removed after v1.22][]
 
   [移除 v1.22 后过时的 API][Deprecated API removed after v1.22]
+  
 * [Dry layout support for RenderBox][]
 
   [对 RenderBox 的 Dry 布局支持][Dry layout support for RenderBox]（译者注：Dry 即 Don't repeat yourself，意思为不要重复自己）
+  
 * [Eliminating nullOk Parameters][]
 
   [取消 nullOk 参数][Eliminating nullOk Parameters]
+  
 * [Material Chip button semantics][]
 
   [语义化 Material 纸片按钮][Material Chip button semantics]
+  
 * [SnackBars managed by the ScaffoldMessenger][]
 
   [由 ScaffoldMessenger 管理 Snackbar][SnackBars managed by the ScaffoldMessenger]
+  
 * [TextSelectionTheme migration][]
 
   [迁移 TextSelectionTheme][TextSelectionTheme migration]
+  
 * [Use maxLengthEnforcement instead of maxLengthEnforced][]
 
   [使用 maxLengthEnforcement 代替 maxLengthEnforced][Use maxLengthEnforcement instead of maxLengthEnforced]
@@ -107,9 +118,11 @@ The following breaking changes have been reverted.
 * [Android v1 embedding app and plugin creation deprecation][]
 
   [废弃 Android v1 嵌入式应用和插件的创建][Android v1 embedding app and plugin creation deprecation]
+  
 * [Cupertino icons 1.0.0][]
 
   [Cupertino 图标 1.0.0][Cupertino icons 1.0.0]
+  
 * [The new Form, FormField auto-validation API][]
 
   [新的表单、表单字段自动验证 API][The new Form, FormField auto-validation API]
@@ -126,34 +139,45 @@ The following breaking changes have been reverted.
 * [Actions API revision][]
 
   [修正 Actions API][Actions API revision]
+  
 * [Adding TextInputClient.currentAutofillScope property][]
 
   [添加 TextInputClient.currentAutofillScope 属性][Adding TextInputClient.currentAutofillScope property]
+  
 * [New Buttons and Button Themes][]
 
   [新的按钮组和按钮主题][New Buttons and Button Themes]
+  
 * [Dialogs' Default BorderRadius][]
 
   [对话框的默认圆角][Dialogs' Default BorderRadius]
+  
 * [More Strict Assertions in the Navigator and the Hero Controller Scope][]
 
   [在导航和 Hero Controller 范围内使用更加严格的断言][More Strict Assertions in the Navigator and the Hero Controller Scope]
+  
 * [The Route Transition record and Transition delegate updates][]
 
   [更新路由 Transition 值和 Transition delegate][The Route Transition record and Transition delegate updates]
+  
 * [The RenderEditable needs to be laid out before hit testing][]
 
   [RenderEditable 需要在点击测试前进行布局][The RenderEditable needs to be laid out before hit testing]
+  
 * [Reversing the dependency between the scheduler and services layer][]
 
   [反转调度器和服务层之间的依赖关系][Reversing the dependency between the scheduler and services layer]
+  
 * [Semantics Order of the Overlay Entries in Modal Routes][]
 
   [语义化路由模型中的 Overlay 项][Semantics Order of the Overlay Entries in Modal Routes]
+
 * [showAutocorrectionPromptRect method added to TextInputClient][]
 
   [TextInputClient 增加 showAutocorrectionPromptRect 方法][showAutocorrectionPromptRect method added to TextInputClient]
+
 * [TestWidgetsFlutterBinding.clock][]
+
 * [TextField requires MaterialLocalizations][]
 
   [文本字段需要 MaterialLocalizations 类][TextField requires MaterialLocalizations]
@@ -176,49 +200,65 @@ The following breaking changes have been reverted.
 * [Adding 'linux' and 'windows' to TargetPlatform enum][]
 
   [在 TargetPlatform 枚举中添加 'linux' 和 'windows'][Adding 'linux' and 'windows' to TargetPlatform enum]
+  
 * [Annotations return local position relative to object][]
 
   [注释返回局部对象的相对位置][Annotations return local position relative to object]
+  
 * [Container color optimization][]
 
   [容器颜色优化][Container color optimization]
+  
 * [CupertinoTabBar requires Localizations parent][]
 
   [CupertinoTabBar 要有 Localizations 父级][CupertinoTabBar requires Localizations parent]
+  
 * [Generic type of ParentDataWidget changed to ParentData][]
 
   [ParentDataWidget 的泛型改为 ParentData][Generic type of ParentDataWidget changed to ParentData]
+  
 * [ImageCache and ImageProvider changes][]
 
   [ImageCache 和 ImageProvider 的更改][ImageCache and ImageProvider changes]
+  
 * [ImageCache large images][]
 
   [ImageCache 缓存大图][ImageCache large images]
+  
 * [MouseTracker moved to rendering][]
 
   [MouseTracker 移动至渲染][MouseTracker  moved to rendering]
+  
 * [MouseTracker no longer attaches annotations][]
 
   [MouseTracker 不再附加注释][MouseTracker no longer attaches annotations]
+  
 * [Nullable CupertinoTheme.brightness][]
 
   [CupertinoTheme.brightness 允许为空值][Nullable CupertinoTheme.brightness]
+  
 * [Rebuild optimization for OverlayEntries and Routes][]
 
   [重建并优化 OverlayEntries 和路由][Rebuild optimization for OverlayEntries and Routes]
+  
 * [Scrollable AlertDialog][]
 
   [可滚动的对话框][Scrollable AlertDialog]
+  
 * [TestTextInput state reset][]
 
-  [][TestTextInput state reset]
+  [TestTextInput 状态重置][TestTextInput state reset]
+  
 * [TextInputClient currentTextEditingValue][]
+
 * [The forgetChild() method must call super][]
 
   [forgetChild() 必须调用 super][The forgetChild() method must call super]
+  
 * [The Route and Navigator refactoring][]
 
   [重构路由和导航][The Route and Navigator refactoring]
+  
 * [FloatingActionButton and ThemeData's accent properties][]
 
   [FloatingActionButton 和 ThemeData 的强调速度][FloatingActionButton and ThemeData's accent properties]

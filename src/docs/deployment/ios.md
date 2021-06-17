@@ -22,11 +22,18 @@ For information on obfuscating Dart code, see [Obfuscating Dart Code][].
 
 ## 预先准备
 
+Xcode is required to build and release your app. You
+must use a device running macOS to follow this guide.
+
+构建和发布一个 macOS 应用需要使用 Xcode，
+你必须要有一个运行着 macOS 系统的设备来学习本指南文档。
+
 Before beginning the process of releasing your app,
 ensure that it meets
 Apple's [App Review Guidelines][appreview].
 
-在开始发布你的 app 的进程之前，确保你已经看过了 Apple 的 [App Store 审核指南][appreview_cn]。
+在开始发布你的 app 的进程之前，
+确保你已经看过了 Apple 的 [App Store 审核指南][appreview_cn]。
 
 In order to publish your app to the App Store,
 you'll need to enroll in the
@@ -35,7 +42,10 @@ You can read more about the various
 membership options in Apple's
 [Choosing a Membership][devprogram_membership] guide.
 
-想要发布你的 app 到 App Store，你需要注册 [Apple Developer Program][devprogram_cn]。你可以在苹果的 [选择会员资格(开发者类型)][devprogram_membership_cn] 中查看到关于多种不同会员类型的选择。
+想要发布你的 app 到 App Store，
+你需要注册 [Apple Developer Program][devprogram_cn]。
+你可以在苹果的 [选择会员资格(开发者类型)][devprogram_membership_cn]
+中查看到关于多种不同会员类型的选择。
 
 ## Register your app on App Store Connect
 
@@ -46,20 +56,26 @@ Manage your app's life cycle on
 You define your app name and description, add screenshots,
 set pricing, and manage releases to the App Store and TestFlight.
 
-在 [App Store Connect][appstoreconnect] 管理你的应用生命周期（以前是 iTunes Connect）。你需要定义你的应用名称、描述以及截图，然后设置价格并管理发布到应用商店和 TestFlight。
+在 [App Store Connect][appstoreconnect]
+管理你的应用生命周期（以前是 iTunes Connect）。
+你需要定义你的应用名称、描述以及截图，
+然后设置价格并管理发布到应用商店和 TestFlight。
 
 [App Store Connect][appstoreconnect] (formerly iTunes Connect) is where you'll
 manage your app's life cycle. You will define your app name and description,
 add screenshots, set pricing, and manage releases to the App Store
 and TestFlight.
 
-[App Store Connect][appstoreconnect_cn]（曾经的 iTunes Connet）是你将会管理应用生命周期的地方。
-你将会定义应用的名称和描述以及截图，设置价格，并管理发布到 App Store 和 Testflight。
+[App Store Connect][appstoreconnect_cn]
+（曾经的 iTunes Connet）是你将会管理应用生命周期的地方。
+你将会定义应用的名称和描述以及截图，设置价格，
+并管理发布到 App Store 和 Testflight。
 
 Registering your app involves two steps: registering a unique Bundle ID, and
 creating an application record on App Store Connect.
 
-注册你的 app 需要两步：登记唯一的套装 ID（Bundle ID），并在你的 App Store Connect 中创建一个 app。
+注册你的 app 需要两步：登记唯一的套装 ID（Bundle ID），
+并在你的 App Store Connect 中创建一个 app。
 
 For a detailed overview of App Store Connect, see the [App Store Connect][appstoreconnect_guide]
 guide.

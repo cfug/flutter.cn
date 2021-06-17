@@ -566,7 +566,7 @@ Once you have this process running, you can deploy to
 Windows UWP from within your IDE as normal, or run from
 the command line as follows:
 
-当该进程在运行时，你就可以正常地在 IDE 中运行应用，或者执行以下命令：
+当该进程在运行时，你就可以正常地在 IDE 中或者执行以下命令运行应用，
 
 ```terminal
 PS C:\myapp> flutter run -d winuwp

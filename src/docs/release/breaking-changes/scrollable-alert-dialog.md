@@ -23,7 +23,7 @@ description: 当 AlertDialog 边界溢出时将会自动变为可滚动的。
 
 An `AlertDialog` now scrolls automatically when it overflows.
 
-`AlertDialog` 现在会在绘制溢出时变为可滚动状态。
+`AlertDialog` 现在会在绘制溢出时自动变为可滚动状态。
 
 ## Context
 
@@ -35,7 +35,7 @@ the display overflowed, causing the contents to be clipped.
 This resulted in the following issues:
 
 在此更改之前，当 `AlertDialog` widget 中的内容过高时，
-会显示绘制溢出，使内容被剪裁。这导致了以下的问题：
+会显示绘制溢出，使内容被剪裁。这会导致以下问题：
 
 * There was no way to view the portion of the content that was clipped.
 
@@ -46,8 +46,8 @@ This resulted in the following issues:
   users might be unaware of their existence.
 
 * 大多数 `AlertDialog` 的内容下方都有按钮，
-用于提示用户执行操作。如果内容溢出，遮盖了按钮，
-用户可能不知道它们的存在。
+  用于提示用户执行操作。如果内容溢出，遮盖了按钮，
+  用户可能不知道它们的存在。
 
 ## Description of change
 
@@ -235,7 +235,7 @@ AlertDialog(
 
 ## Timeline
 
-## 时间轴
+## 时间线
 
 Landed in version: 1.16.3<br>
 In stable release: 1.17

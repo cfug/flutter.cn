@@ -10,12 +10,13 @@ description: 当 AlertDialog 边界溢出时将会自动变为可滚动的。
 ## 概述
 
 {{site.alert.note}}
+
   `AlertDialog.scrollable` is no longer deprecated because there is
   no backwards-compatible way to make `AlertDialog` scrollable by default.
   Instead, the parameter will remain and you can set `scrollable`
   to true if you want a scrollable `AlertDialog`.
   
-  `AlertDialog.scrollable`不再弃用，
+  `AlertDialog.scrollable` 不再弃用，
   因为没有向后兼容的方法使 `AlertDialog` 在默认情况下可滚动。
   相反，参数将保持不变，如果需要 `AlertDialog` 可滚动，可以将 `scrollable` 设置为 true。
     
@@ -39,13 +40,13 @@ This resulted in the following issues:
 
 * There was no way to view the portion of the content that was clipped.
 
-* 无法查看被剪裁的内容。
+  无法查看被剪裁的内容。
 
 * Most alert dialogs have buttons beneath the content to prompt users for
   actions. If the content overflowed, obscuring the buttons,
   users might be unaware of their existence.
 
-* 大多数 `AlertDialog` 的内容下方都有按钮，
+  大多数 `AlertDialog` 的内容下方都有按钮，
   用于提示用户执行操作。如果内容溢出，遮盖了按钮，
   用户可能不知道它们的存在。
 
@@ -56,7 +57,7 @@ This resulted in the following issues:
 The previous approach listed the title and content
 widgets consecutively in a `Column` widget.
 
-在本次改动前，通过下面的方法在 `Column` widget 中连续地列出标题和内容 widget。
+在改动前，可以使用下面的方法在 `Column` widget 中连续地列出标题和内容 widget。
 
 <!-- skip -->
 ```dart
@@ -96,8 +97,8 @@ The new approach wraps both widgets in a
 making both widgets part of the same scrollable
 and exposing the button bar at the bottom of the dialog.
 
-在本次改动后，两个 widget 被嵌套在在按钮栏上方的 `SingleChildScrollView` 中，
-使两个 widget 成为同一个可滚动的模块，
+在改动后，它们被包裹在按钮栏上方的 `SingleChildScrollView` 中，
+作为同一个可滚动的模块的一部分，
 按钮栏将显示在对话框底部。
 
 <!-- skip -->
@@ -148,7 +149,7 @@ You might see the following issues as a result of this change:
   Some Flutter projects have taken to creating semantics tests
   by taking goldens of semantics nodes used in Flutter's debug build.
   
-**黄金测试可能会失败。** 
+**Golden Test 可能会失败。** 
 ：由于 `SingleChildScrollView` 现在嵌套了标题和内容 widget，
 因此此更改可能导致（以前通过的）黄金测试出现不同的结果。
 一些 Flutter 项目已经开始通过获取 Flutter debug 构建过程中使用的语义节点 goldens 来创建语义测试。
@@ -182,9 +183,8 @@ flutter:              label: "Huge content"
   this change corrects the problem.
   This layout change is expected.
   
-**由于滚动视图，可能导致布局更改。**
-：如果对话框发生了绘制溢出，
-此更改将修复问题。
+**滚动视图可能导致布局更改。**
+<br>该变更会修复对话框发生绘制溢出的问题。
 这种布局上的变化是意料之中的。
 
   <br>A nested `SingleChildScrollView` in `AlertDialog.content`
@@ -192,9 +192,9 @@ flutter:              label: "Huge content"
   but should be removed if unintended, since
   it might cause confusion.
     
-  <br>当代码中有 `SingleChildScrollView` 嵌套在 `AlertDialog.content` 时，
-  那么对话框应该正常展示，但如果不是有意为之，
-  则应该将其移除，因为这可能会导致混淆。
+  <br>当代码中有 `SingleChildScrollView` 嵌套在
+  `AlertDialog.content` 时，那么对话框应正常展示。
+  但如果不是有意为之，则应将其移除，否则可能导致代码更为不可读。
   
 Code before migration:
 

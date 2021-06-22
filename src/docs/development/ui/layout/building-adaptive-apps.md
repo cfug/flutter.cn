@@ -1,9 +1,13 @@
 ---
 title: Building adaptive apps
+title: 构建自适应的应用
 description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
+description: 针对多样化的平台构建自适应的应用的重点和指南。
 ---
 
 ## Overview
+
+## 概览
 
 Flutter provides new opportunities to build apps that can
 run on mobile, desktop, and the web from a single codebase.
@@ -14,12 +18,28 @@ ensuring a comfortable and seamless experience.
 That is, you need to build apps that are not just
 multiplatform, but are fully platform adaptive.
 
+Flutter 为在移动端、桌面端和 Web 端使用同样的代码构建应用创造了新的机会。
+伴随着机会而来的，是新的挑战。
+你可能会希望你的应用既能在尽可能复用的情况下自适应多个平台，
+又能保证流畅且无缝的体验，还能不让用户不会忘记习惯。
+这样的应用不只是为了多个平台而构建，而是能完全自适应平台的变化。
+
 There are many considerations for developing platform-adaptive
 apps, but they fall into three major categories:
 
+在构建平台自适应的应用时，有众多的考量因素，总的来说分为以下几类：
+
 * [Layout](#layout)
+
+  [布局](#layout)
+
 * [Input](#input)
+
+  [输入](#input)
+
 * [Idioms and norms](#idioms-and-norms)
+
+  [平台行为习惯与规范](#idioms-and-norms)
 
 {% comment %}
 TODO Embed Kevin's video when available.
@@ -31,82 +51,142 @@ If you’d like to see how these concepts come together,
 check out the [Flokk][] and [Folio][] examples that
 were built using the concepts described here.
 
+指南将通过代码片段，详细说明三个类别的概念。
+若你想了解这些概念的实际落地情况，可以参考 [Flokk][] 和 [Folio][] 示例。
+
 [Flokk]: {{site.github}}/gskinnerTeam/flokk
 [Folio]: {{site.github}}/gskinnerTeam/flutter-folio
 
 ## Building adaptive layouts
+
+## 构建自适应的布局
 
 One of the first things you must consider when bringing
 your app to multiple platforms is how to adapt
 it to the various sizes and shapes of the screens that
 it will run on. 
 
+在构建多平台的应用时，首要考虑的事是如何针对不同设备大小进行尺寸适配。
+
 ### Layout widgets
+
+### 布局 widgets
 
 If you've been building apps or websites,
 you're probably familiar with creating responsive interfaces.
 Luckily for Flutter developers,
 there are a large set of widgets to make this easier. 
 
+如果你已经开发过应用或网站，也许你已经相对熟悉构建自适应的界面。
+对于 Flutter 开发者而言，有非常多的 widgets 让构建更为简单。
+
 Some of Flutter's most useful layout widgets include:
 
+Flutter 中最有用的部分布局 widgets 包括：
+
 **Single child**
+
+**单子级**
 
 * [`Align`][]&mdash;Aligns a child within itself.
   It takes a double value between -1 and 1,
   for both the vertical and horizontal alignment.
 
+  [`Align`][]&mdash;&mdash;让子级在其内部进行对齐。
+  可使用 -1 至 1 的双精度值在垂直和水平方向上进行对齐。
+
 * [`AspectRatio`][]&mdash;Attempts to size the
   child to a specific aspect ratio.
 
+  [`AspectRatio`][]&mdash;&mdash;尝试让子级以指定的比例进行布局。
+
 * [`ConstrainedBox`][]&mdash;Imposes size constraints on its child,
   offering control over the minimum or maximum size.
+
+  [`ConstrainedBox`][]&mdash;&mdash;对子级施加尺寸限制，可以控制最小和最大的尺寸。
 
 * [`CustomSingleChildLayout`][]&mdash;Uses a delegate function
   to position a single child. The delegate can determine
   the layout constraints and positioning for the child.
 
+  [`CustomSingleChildLayout`][]&mdash;&mdash;使用代理方法对单个子级进行定位。
+  代理方法可以为子级确定布局限制和定位。
+
 * [`Expanded`] and [`Flexible`][]&mdash;Allows a child of a
   `Row` or `Column` to shrink or grow to fill any available space.
+
+  [`Expanded`] 和 [`Flexible`][]&mdash;&mdash;允许
+  `Row` 或 `Column` 的子级填充剩余空间或者尽可能地小。
 
 * [`FractionallySizedBox`][]&mdash;Sizes its child to a fraction
   of the available space.
 
+  [`FractionallySizedBox`][]&mdash;&mdash;基于剩余空间的比例限定子级的大小。
+
 * [`LayoutBuilder`][]&mdash;Builds a widget that can reflow
   itself based on its parents size.
+
+  [`LayoutBuilder`][]&mdash;&mdash;让子级可以基于父级的尺寸重新调整其布局。
 
 * [`SingleChildScrollView`][]&mdash;Adds scrolling to a single child.
   Often used with a `Row` or `Column`.
 
+  [`SingleChildScrollView`][]&mdash;为单一的子级添加滚动。
+  通常配合 `Row` 或 `Column` 进行使用。
+
 **Multichild**
+
+**多子级**
 
 * [`Column`][], [`Row`][], and [`Flex`][]&mdash;Lays out children
   in a single horizontal or vertical run.
   Both `Column` and `Row` extend the `Flex` widget.
 
+  [`Column`][]、[`Row`][] 和 [`Flex`][]&mdash;&mdash;
+  在同一水平线或垂直线上放置所有子级。
+  `Column` 和 `Row` 都继承了 `Flex` widget。
+
 * [`CustomMultiChildLayout`][]&mdash;Uses a delegate function to
   position multiple children during the layout phase.
+
+  [`CustomMultiChildLayout`][]&mdash;&mdash;
+  在布局过程中使用代理方法对多个子级进行定位。
 
 * [`Flow`][]&mdash;Similar to `CustomMultiChildLayout`,
   but more efficient because it’s performed during the
   paint phase rather than the layout phase.
 
+  [`Flow`][]&mdash;&mdash;与 `CustomMultiChildLayout` 类似但更高效。
+  在绘制过程中使用代理方法对多个子级进行定位。
+
 * [`ListView`][], [`GridView`][], and
   [`CustomScrollView`][]&mdash;Provides scrollable
   lists of children.
+
+  [`ListView`][]、[`GridView`][] 和 [`CustomScrollView`][]&mdash;&mdash;
+  为所有子级增加滚动支持。
 
 * [`Stack`][]&mdash;Layers and positions multiple children
   relative to the edges of the `Stack`.
   Functions similarly to position-fixed in CSS.
 
+  [`Stack`][]&mdash;基于 `Stack` 的边界对多个子级进行放置和定位。
+  与 CSS 中的 `position: fixed` 功能类似。
+
 * [`Table`][]&mdash;Uses a classic table layout algorithm for
   its children, combining multiple rows and columns.
+
+  [`Table`][]&mdash;&mdash;基于基础的表格布局算法，将子级组合为多列和多行。
 
 * [`Wrap`][]&mdash;Displays its children in multiple horizontal
   or vertical runs.
 
+  [`Wrap`][]&mdash;&mdash;将子级顺序显示在多行或多列内。
+
 To see more available widgets and example code, see
 [Layout widgets][].
+
+查看 [布局 widgets][Layout widgets] 了解更多的 widgets 和代码示例。
 
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html

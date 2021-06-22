@@ -16,8 +16,8 @@ description: 当 AlertDialog 边界溢出时将会自动变为可滚动的。
   Instead, the parameter will remain and you can set `scrollable`
   to true if you want a scrollable `AlertDialog`.
   
-  `AlertDialog.scrollable` 不再弃用，
-  因为没有向后兼容的方法使 `AlertDialog` 在默认情况下可滚动。
+  因为没有向后兼容的方法使 `AlertDialog` 在默认情况下可滚动，
+  所以 `AlertDialog.scrollable` 不再弃用。
   相反，参数将保持不变，如果需要 `AlertDialog` 可滚动，可以将 `scrollable` 设置为 true。
     
 {{site.alert.end}}
@@ -139,7 +139,7 @@ You might see the following issues as a result of this change:
   behavior as before.
   
 **由于添加了 `SingleChildScrollView`，语义测试可能会失败。**
-：对 `Talkback` 和 `VoiceOver` 功能的手动测试表明，
+<br>对 `Talkback` 和 `VoiceOver` 功能的手动测试表明，
 它们仍然表现出与以前相同的（正确的）行为。
 
 **Golden tests might fail.**
@@ -150,7 +150,7 @@ You might see the following issues as a result of this change:
   by taking goldens of semantics nodes used in Flutter's debug build.
   
 **Golden Test 可能会失败。** 
-：由于 `SingleChildScrollView` 现在嵌套了标题和内容 widget，
+<br>由于 `SingleChildScrollView` 现在嵌套了标题和内容 widget，
 因此可能导致 Golden Test 出现不同的结果。
 一些 Flutter 项目已经开始通过获取 Flutter debug 构建过程中使用的语义节点 goldens 来创建语义测试。
 

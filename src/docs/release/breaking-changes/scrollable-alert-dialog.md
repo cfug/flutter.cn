@@ -151,13 +151,13 @@ You might see the following issues as a result of this change:
   
 **Golden Test 可能会失败。** 
 ：由于 `SingleChildScrollView` 现在嵌套了标题和内容 widget，
-因此此更改可能导致（以前通过的）黄金测试出现不同的结果。
+因此可能导致 Golden Test 出现不同的结果。
 一些 Flutter 项目已经开始通过获取 Flutter debug 构建过程中使用的语义节点 goldens 来创建语义测试。
 
   <br>Any semantics golden updates that reflect the scrolling
   container addition are expected and these diffs should be safe to accept.
 
-  <br>任何语义上指示出滚动容器的添加都是可预见的，这类差异可以安全地接受。 
+  <br>滚动容器上附加的所有语义 golden 变动都是符合预期的，它们不会造成其他后果。
 
   Sample resulting Semantics tree:
   

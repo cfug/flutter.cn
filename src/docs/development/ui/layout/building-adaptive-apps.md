@@ -66,7 +66,7 @@ your app to multiple platforms is how to adapt
 it to the various sizes and shapes of the screens that
 it will run on. 
 
-在构建多平台的应用时，首要考虑的事是如何针对不同设备大小进行尺寸适配。
+在构建多平台的应用时，首要考虑的是如何针对不同大小的设备进行尺寸适配。
 
 ### Layout widgets
 
@@ -212,12 +212,18 @@ To see more available widgets and example code, see
 
 ### Visual density
 
+### 视觉密度
+
 Different input devices offer various levels of precision,
 which necessitate differently sized hit areas.
 Flutter's `VisualDensity` class makes it easy to adjust the
 density of your views across the entire application,
 for example, by making a button larger
 (and thereore easier to tap) on a touch device.
+
+不同的设备会提供不同级别的显示密度，使得操作的命中区域也要随之变化。
+Flutter 的 `VisualDensity` 类可以让你快速地调整整个应用的视图密度，
+比如在可触控设备上放大按钮（更容易点击）。
 
 When you change the `VisualDensity` for your `MaterialApp`,
 `MaterialComponents` that support it animate their densities
@@ -226,10 +232,17 @@ are set to 0.0, but you can set the densities to any negative
 or positive value that you want. By switching between different
 densities, you can easily adjust your UI:
 
+在你改变 `MaterialApp` 的 `VisualDensity` 时，
+支持它的 `MaterialComponents` 会以动画过渡改变其自身的密度。
+水平和垂直方向的密度默认都为 0.0，你可以设置为任意的正负值。
+你可以通过调整密度轻松地调整你的 UI：
+
 ![Adaptive scaffold]({% asset development/ui/layout/adaptive_scaffold.gif @path %}){:width="100%"}
 
 To set a custom visual density, inject the density into
 your `MaterialApp` theme:
+
+若想使用自定义的视觉密度，请在你的 `MaterialApp` 的主题中进行设置：
 
 <!--skip-->
 ```dart
@@ -243,6 +256,8 @@ return MaterialApp(
 
 To use `VisualDensity` inside your own views,
 you can look it up: 
+
+若想在你的视图中使用 `VisualDensity`，你可以向上查找：
 
 <!--skip-->
 ```dart
@@ -259,12 +274,20 @@ This ties together your custom components,
 along with the built-in components,
 for a smooth transition effect across the app.
 
+容器在密度变化时会使用动画进行过渡变化。
+所有的自定义组件都会联系在一起，使整个应用平滑过渡。
+
 As shown, `VisualDensity` is unit-less,
 so it can mean different things to different views.
 In this example, 1 density unit equals 6 pixels,
 but this is totally up to your views to decide.
 The fact that it is unit-less makes it quite versatile,
 and it should work in most contexts. 
+
+我们可以看到，`VisualDensity` 是没有单位的，所以在不同的视图上可能有不同的含义。
+在以上的例子中，1 个单位的密度等同于 6 个逻辑像素。
+具体的处理完全由你的视图自行决定。
+无单位的设计让它可以处理通用情况，能在大部分的场景下使用。
 
 It’s worth noting that the Material Components generally
 use a value of around 4 logical pixels for each
@@ -273,10 +296,16 @@ supported components, see [`VisualDensity`][] API.
 For more information about density principles in general,
 see the [Material Design guide][]. 
 
+值得注意的是，在 Material 的组件中，1 个单位的视觉密度通常等于 4 个逻辑像素。
+你可以查看 [`VisualDensity`][] API 文档了解更多支持视觉密度的组件。
+若想了解视觉密度的通用原则，请查看 [Material Design 指南][Material Design guide]。
+
 [Material Design guide]: {{site.material}}/design/layout/applying-density.html#usage
 [`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
 
 ### Contextual layout
+
+### 基于上下文的布局
 
 If you need more than density changes and can't find a
 widget that does what you need, you can take a more
@@ -284,13 +313,23 @@ procedural approach to adjust parameters, calculate sizes,
 swap widgets, or completely restructure your UI to suit
 a particular form factor. 
 
+如果你需要的不仅是密度的变化，同时没有找到一个与你的使用场景契合的 widget，
+你可以使用代码进行更细化的控制、计算尺寸、切换 widgets
+或是完全重新构建你的 UI 适配对应的外形结构。
+
 #### Screen-based breakpoints
+
+#### 基于屏幕大小的断点
 
 The simplest form of procedural layouts uses
 screen-based breakpoints. In Flutter,
 this can be done with the `MediaQuery` API.
 There are no hard and fast rules for the sizes to use
 here, but these are general values: 
+
+最简单的代码控制布局方式是基于屏幕制造断点。
+在 Flutter 中，你可以使用 `MediaQuery` API 进行实现。
+具体需要使用的大小没有作出硬性规定，下方是一些通用的值：
 
 <!--skip-->
 ```dart
@@ -303,6 +342,8 @@ class FormFactor {
 
 Using breakpoints, you can set up a simple system
 to determine the device type:
+
+使用断点可以让你通过简单的判断快速确定设备的类型：
 
 <!--skip-->
 ```dart
@@ -318,6 +359,8 @@ ScreenType getFormFactor(BuildContext context) {
 
 As an alternative, you could abstract it more
 and define it in terms of small to large:
+
+又或者，你可以对大小类型进行更深层次的抽象，并且按照从小到大的方式定义：
 
 <!--skip-->
 ```dart
@@ -337,9 +380,15 @@ top-level decisions in your app. Changing things like
 visual density, paddings, or font-sizes are best when
 defined on a global basis. 
 
+使用基于屏幕大小的断点的最佳场景，是在应用的顶层进行尺寸决策。
+在改变视觉密度、边距或者字体大小时，定义全局的基数是最好的方式。
+
 You can also use screen-based breakpoints to reflow your
 top-level widget trees. For example, you could switch
 from a vertical to a horizontal layout when the user isn’t on a handset:
+
+你也可以利用断点重新组织顶层的 widget 结构。
+例如，你可以判断用户是否使用手持设备，来切换垂直或水平的布局：
 
 <!--skip-->
 ```dart
@@ -351,8 +400,11 @@ return Flex(
     Axis.horizontal
 );
 ```
+
 In another widget,
 you might swap some of the children completely: 
+
+在其他的 widget 中，你也可以切换部分子级 widget：
 
 <!--skip-->
 ```dart

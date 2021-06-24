@@ -418,11 +418,17 @@ Widget foo = Row(children: [
 
 #### Use LayoutBuilder for extra flexibility
 
+#### 使用 LayoutBuilder 提升布局灵活性
+
 Even though checking total screen size is great for
 full-screen pages or making global layout decisions,
 it’s often not ideal for nested subviews.
 Often, subviews have their own internal breakpoints
 and care only about the space that they have available to render.
+
+尽管对于全局的布局决策而言，判断屏幕大小非常有效，
+但对于内嵌的子视图而言，并不一定是合理的方案。
+子视图通常有自己的断点，并且会关心它们可用的渲染空间。
 
 The simplest way to handle this in Flutter is using the
 [`LayoutBuilder`][] class. `LayoutBuilder` allows a
@@ -430,7 +436,13 @@ widget to respond to incoming local size constraints,
 which can make the widget more versatile than if it
 depended on a global value.
 
+在 Flutter 内处理这类场景最简单的做法是使用 [`LayoutBuilder`][]。
+`LayoutBuilder` 让 widget 可以根据其父级的限制进行调整，
+相比依赖全局的尺寸限制而言更为通用。
+
 The previous example could be rewritten using `LayoutBuilder`:
+
+之前的示例可以使用 `LayoutBuilder` 重写：
 
 <!--skip-->
 ```dart
@@ -448,7 +460,12 @@ This widget can now be composed within a side panel,
 dialog, or even a full-screen view,
 and adapt its layout to whatever space is provided.
 
+现在这个 widget 可以组装在侧边面板、弹框又或是全屏视图中，
+并且根据尺寸自适应布局。
+
 #### Device segmentation
+
+#### 细化设备
 
 There are times when you want to make layout decisions
 based on the actual platform you’re running on,
@@ -457,8 +474,14 @@ custom title bar, you might need to check the operating
 system type and tweak the layout of your title bar so
 it doesn’t get covered by the native window buttons. 
 
+有时你可能需要根据实际运行的平台进行布局处理，而不是基于大小。
+例如，在构建自定义的标题栏时，
+你可能需要判断设备的平台来处理布局，以防被原生窗口的按钮遮挡。
+
 To determine which combination of platforms you’re on,
 you can use the [`Platform`][] API along with the `kIsWeb` value:
+
+想判断应用当前所处的平台，你可以使用 [`Platform`][] API 和 `kIsWeb` 组合进行判断：
 
 [`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
 
@@ -476,6 +499,11 @@ throwing an exception, because the `dart.io` package is not
 supported on the web target. As a result, this code checks 
 for web first, and becuase of short-circuiting, Dart will 
 never call `Platform` on web targets.
+
+在构建 Web 平台应用时，由于 `dart.io` package 不支持 Web 平台，
+导致使用 `Platform` API 时会异常。
+所以在上面的代码中，首先对 Web 平台进行了判断，
+而由于判断时条件进行了阻断，在 Web 平台上永远不会调用 `Platform` API。
 
 ### Single source of truth for styling
 

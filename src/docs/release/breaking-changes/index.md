@@ -46,7 +46,7 @@ The following breaking changes have been reverted.
    Reverted in version:   2.2.0 (proposed)
    
 <b>[iOS 端和 Android 端的网络策略][Network Policy on iOS and Android]</b><br>
-<br>  引入版本：2.0.0<br>
+:  引入版本：2.0.0<br>
       回退版本：2.2.0（建议）
 
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
@@ -146,7 +146,7 @@ The following breaking changes have been reverted.
   
 * [New Buttons and Button Themes][]
 
-  [新的按钮组和按钮主题][New Buttons and Button Themes]
+  [新的按钮和按钮主题][New Buttons and Button Themes]
   
 * [Dialogs' Default BorderRadius][]
 

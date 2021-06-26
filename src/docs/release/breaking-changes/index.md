@@ -22,15 +22,29 @@ release, and listed in alphabetical order:
 
 ### 尚未发布稳定版
 
-* [Default Scrollbars on Desktop][]
+* [Default drag scrolling devices][]
 
-  [桌面端的默认滚动条][Default Scrollbars on Desktop]
-  
+  [默认允许触控滑动的设备][Default drag scrolling devices]
+
+* [Introducing package:flutter_lints][]
+
+  [引入 flutter_lints package][[Introducing package:flutter_lints]]
+
 * [ThemeData's accent properties have been deprecated][]
 
   [弃用 ThemeData 的强调属性]
 
-[Default Scrollbars on Desktop]: /docs/release/breaking-changes/default-desktop-scrollbars
+* [GestureRecognizer Cleanup][]
+
+  [GestureRecognizer 代码整理][GestureRecognizer Cleanup]
+
+* [Replace AnimationSheetBuilder.display with collate][]
+
+  [将 AnimationSheetBuilder.display 替换为 collate][Replace AnimationSheetBuilder.display with collate]
+
+[Default drag scrolling devices]: /docs/release/breaking-changes/default-scroll-behavior-drag
+[GestureRecognizer Cleanup]: /docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer
+[Introducing package:flutter_lints]: /docs/release/breaking-changes/flutter-lints-package
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
 
 ### Reverted changes
@@ -50,6 +64,16 @@ The following breaking changes have been reverted.
       回退版本：2.2.0（建议）
 
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
+
+### Released in Flutter 2.2
+
+### 发布于 Flutter 2.2
+
+* [Default Scrollbars on Desktop][]
+
+  [桌面端的默认滚动条][Default Scrollbars on Desktop]
+
+[Default Scrollbars on Desktop]: /docs/release/breaking-changes/default-desktop-scrollbars
 
 ### Released in Flutter 2
 
@@ -96,6 +120,7 @@ The following breaking changes have been reverted.
   [迁移 TextSelectionTheme][TextSelectionTheme migration]
   
 * [Use maxLengthEnforcement instead of maxLengthEnforced][]
+* [Transition of platform channel test interfaces to flutter_test package][]
 
   [使用 maxLengthEnforcement 代替 maxLengthEnforced][Use maxLengthEnforcement instead of maxLengthEnforced]
 
@@ -110,6 +135,7 @@ The following breaking changes have been reverted.
 [SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
 [TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
 [Use maxLengthEnforcement instead of maxLengthEnforced]: /docs/release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
+[Transition of platform channel test interfaces to flutter_test package]: /docs/release/breaking-changes/mock-platform-channels
 
 ### Released in Flutter 1.22
 
@@ -276,6 +302,7 @@ The following breaking changes have been reverted.
 [MouseTracker no longer attaches annotations]: /docs/release/breaking-changes/mouse-tracker-no-longer-attaches-annotations
 [Nullable CupertinoTheme.brightness]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness
 [Rebuild optimization for OverlayEntries and Routes]: /docs/release/breaking-changes/overlay-entry-rebuilds
+[Replace AnimationSheetBuilder.display with collate]: /docs/release/breaking-changes/animation-sheet-builder-display
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value

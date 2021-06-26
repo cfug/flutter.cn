@@ -93,7 +93,7 @@ This recipe covers how to fetch a sample album from the
 <?code-excerpt "lib/main_step1.dart (fetchAlbum)"?>
 ```dart
 Future<http.Response> fetchAlbum() {
-  return http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+  return http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 }
 ```
 
@@ -205,7 +205,7 @@ function to return a `Future<Album>`:
 ```dart
 Future<Album> fetchAlbum() async {
   final response =
-      await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -439,7 +439,7 @@ import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
   final response =
-      await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -475,7 +475,7 @@ class Album {
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-  MyApp({Key key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();

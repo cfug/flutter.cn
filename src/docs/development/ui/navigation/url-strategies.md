@@ -122,7 +122,7 @@ Update the `<base href="/">` tag in `web/index.html`
 to the path where your app is hosted.
 For example, to host your Flutter app at
 `myapp.dev/flutter_app`, change
-this tag to `<base href="/flutter_app">`.
+this tag to `<base href="/flutter_app/">`.
 
 更新 `web/index.html` 中的 `<base href="/">` 标签为你的应用部署路径。
 例如：如果你期望将 Flutter 应用部署在 `myapp.dev/flutter_app`，

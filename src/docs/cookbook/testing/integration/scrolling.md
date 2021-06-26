@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/testing/integration/profiling
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/testing/integration/scrolling/"?>
+
 {{site.alert.note}}
 
   The integration_test package is now the recommended way to write integration
@@ -90,6 +92,7 @@ inside the integration tests.
 正如我们在 [集成测试简介][Introduction to integration testing] 章节中做的那样，
 我们还将向集成测试内我们需要互动的 widget 添加 key。
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -103,27 +106,27 @@ void main() {
 class MyApp extends StatelessWidget {
   final List<String> items;
 
-  MyApp({Key key, @required this.items}) : super(key: key);
+  const MyApp({Key? key, required this.items}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final title = 'Long List';
+    const title = 'Long List';
 
     return MaterialApp(
       title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
         ),
         body: ListView.builder(
           // Add a key to the ListView. This makes it possible to
           // find the list and scroll through it in the tests.
-          key: Key('long_list'),
+          key: const Key('long_list'),
           itemCount: items.length,
           itemBuilder: (context, index) {
             return ListTile(
               title: Text(
-                '${items[index]}',
+                items[index],
                 // Add a key to the Text widget for each item. This makes
                 // it possible to look for a particular item in the list
                 // and verify that the text is correct
@@ -148,10 +151,11 @@ in a file called `test_driver/app.dart`.
 接下来，我们需要创建 app 的测试版本，
 这段代码位于 `test_driver/app.dart` 文件中。
 
-<!-- skip -->
+<?code-excerpt "test_driver/app.dart"?>
 ```dart
+
 import 'package:flutter_driver/driver_extension.dart';
-import 'package:scrollable_app/main.dart' as app;
+import 'package:scrolling/main.dart' as app;
 
 void main() {
   // This line enables the extension.
@@ -238,14 +242,16 @@ file called `test_driver/app_test.dart`.
 让我们看一下如何通过 `scrollUntilVisible()` 方法去寻找列表中特定的一项，
 这段代码位于 `test_driver/app_test.dart` 文件中。
 
+<?code-excerpt "test_driver/app_test.dart"?>
 ```dart
+
 // Imports the Flutter Driver API.
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('Scrollable App', () {
-    FlutterDriver driver;
+    late FlutterDriver driver;
 
     // Connect to the Flutter driver before running any tests.
     setUpAll(() async {
@@ -254,9 +260,7 @@ void main() {
 
     // Close the connection to the driver after the tests have completed.
     tearDownAll(() async {
-      if (driver != null) {
-        await driver.close();
-      }
+      await driver.close();
     });
 
     test('verifies the list contains a specific item', () async {

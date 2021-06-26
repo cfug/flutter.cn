@@ -118,7 +118,7 @@ Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其
 
 如下列表为目前在国内提供镜像的社区以及其镜像配置，
 由于镜像的实现方式有所不同，可能会导致数据的滞后等问题。
-我们制作了一个 [镜像可用性监控页面](https://stats.uptimerobot.com/JZK3ZTql79) 供参考。
+我们制作了一个 [镜像可用性监控页面](https://mirrors.flutter-io.cn) 供参考。
 
 ### Flutter 社区
 
@@ -165,13 +165,26 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 
 #### OpenTUNA
 
-也可选择数据策略一致的、由清华 TUNA 协会运行维护
-[OpenTUNA](https://mirrors.tuna.tsinghua.edu.cn/news/opentuna-mirror/) 服务器，
-通过 CloudFront CDN 进行分发。
+数据策略与 TUNA 镜像一致、由清华 TUNA 协会运行维护，
+[OpenTUNA](https://mirrors.tuna.tsinghua.edu.cn/news/opentuna-mirror/) 
+镜像通过 CloudFront CDN 进行分发。
+
+**已知问题**：Pub API 与预期返回值不一致，可能造成请求无效 (2021/6/8)。
 
 ```terminal
 $ export PUB_HOSTED_URL=https://opentuna.cn/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=https://opentuna.cn/flutter
+```
+
+#### CNNIC
+
+基于 TUNA 协会的镜像服务，数据策略和内容与 TUNA 一致，
+通过非教育网的域名访问（建议选择 TUNA）。
+暂无反馈渠道，可尝试 TUNA 反馈渠道。
+
+```terminal
+$ export PUB_HOSTED_URL=http://mirrors.cnnic.cn/dart-pub
+$ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
 ```
 
 ### 腾讯云开源镜像站
@@ -181,20 +194,12 @@ $ export FLUTTER_STORAGE_BASE_URL=https://opentuna.cn/flutter
 mirrors.tencentyun.com，使用内网流量不占用公网流量。
 有任何镜像问题，请通过邮件 (mirrors@tencent.com) 向腾讯云开源镜像站反馈。
 
+**已知问题**：Flutter Storage 已经从 `flutter_infra` 调整为 `flutter_infra_release`，
+腾讯云开源镜像并未对此做调整，可能会在更新的 Flutter 版本里无法请求到完整数据 (2021/6/8)。
+
 ```terminal
 $ export PUB_HOSTED_URL=https://mirrors.cloud.tencent.com/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
-```
-
-### CNNIC
-
-基于 TUNA 协会的镜像服务，数据策略和内容与 TUNA 一致，
-通过非教育网的域名访问（建议选择 TUNA）。
-暂无反馈渠道，可尝试 TUNA 反馈渠道。
-
-```terminal
-$ export PUB_HOSTED_URL=http://mirrors.cnnic.cn/dart-pub
-$ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
 ```
 
 ### 已知问题
@@ -206,7 +211,8 @@ $ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
 - 腾讯云开源镜像站使用 TUNA 开源脚本制作，每天同步一次，
   经测试，其数据延迟较大并尚未配置有效的回源策略，有待于社区成员进一步验证。
 - 任何其他与镜像相关的问题，请通过
-  [发 Issue 给我们](https://github.com/cfug/flutter.cn/issues)。
+  [Issue 向我们反馈](https://github.com/cfug/flutter.cn/issues/new?template=mirrors_issue.md&title=%5Bmirrors%5D)。
+- 部分镜像的问题已经特别标识，待镜像修复之后移除。
 
 ## 致谢
 

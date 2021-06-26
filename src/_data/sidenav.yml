@@ -41,7 +41,7 @@
       permalink: https://flutter.github.io/samples/
     - title: 实用教程 (Cookbook)
       permalink: /docs/cookbook
-    - title: Codelabs
+    - title: Codelabs & workshops
       permalink: /docs/codelabs
     - title: 实践教程
       permalink: /docs/reference/tutorials
@@ -65,7 +65,9 @@
               permalink: /docs/development/ui/layout/tutorial
             - title: 创建响应式和自适应的应用
               permalink: /docs/development/ui/layout/adaptive-responsive
-            - title: 布局约束 [新增]
+            - title: 构建自适应的应用 [新增]
+              permalink: /docs/development/ui/layout/building-adaptive-apps
+            - title: 理解布局约束
               permalink: /docs/development/ui/layout/constraints
             - title: 边界约束 (Box constraints)
               permalink: /docs/development/ui/layout/box-constraints
@@ -331,9 +333,11 @@
         permalink: /docs/perf/rendering/ui-performance
       - title: Reduce shader compilation jank
         permalink: /docs/perf/rendering/shader
+    - title: 延迟加载组件
+      permalink: /docs/perf/deferred-components
     - title: 性能指标
       permalink: /docs/perf/metrics
-    - title: Performance FAQ
+    - title: 性能 FAQ
       permalink: /docs/perf/faq
     - title: Appendix
       permalink: /docs/perf/appendix
@@ -348,6 +352,10 @@
       permalink: /docs/deployment/android
     - title: 打包和发布为 iOS 应用
       permalink: /docs/deployment/ios
+    - title: 打包和发布为 macOS 应用
+      permalink: /docs/deployment/macos
+    - title: 打包和发布为 Linux 应用
+      permalink: /docs/deployment/linux
     - title: 打包和发布为 Web 应用
       permalink: /docs/deployment/web
     - title: 打包和发布为 Linux 应用

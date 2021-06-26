@@ -17,7 +17,7 @@
 
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
-    (for example, `C:\src\flutter`).
+    (for example, `C:\Users\<your-user-name>\Documents`).
     
     将压缩包解压，然后把其中的 `flutter` 目录整个放在
     你想放置 Flutter SDK 的路径中（例如 `C:\src\flutter`）。

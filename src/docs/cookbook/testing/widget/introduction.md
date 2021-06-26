@@ -16,6 +16,8 @@ next:
   path: /docs/cookbook/testing/widget/finders
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/testing/widget/introduction/"?>
+
 {% assign api = site.api | append: '/flutter' -%}
 
 In the [introduction to unit testing][] recipe,
@@ -120,16 +122,17 @@ create a widget that displays a `title` and `message`.
 我们创建了一个 widget 显示一个 `标题 (title)` 和 `信息 (message)`。
 
 <!-- skip -->
+<?code-excerpt "test/main_test.dart (widget)"?>
 ```dart
 class MyWidget extends StatelessWidget {
+  const MyWidget({
+    Key? key,
+    required this.title,
+    required this.message,
+  }) : super(key: key);
+
   final String title;
   final String message;
-
-  const MyWidget({
-    Key key,
-    @required this.title,
-    @required this.message,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -169,6 +172,7 @@ It is titled accordingly, and it will be populated in the next section.
 我们的测试会验证 `MyWidget` 是否显示给定的标题和信息。
 
 <!-- skip -->
+<?code-excerpt "test/main_step3_test.dart (main)"?>
 ```dart
 void main() {
   // Define a test. The TestWidgets function also provides a WidgetTester
@@ -197,11 +201,12 @@ and "M" as the message.
 在这个示例中，我们将创建一个显示标题“T”和信息“M”的 `MyWidget` 示例。
 
 <!-- skip -->
+<?code-excerpt "test/main_step4_test.dart (main)"?>
 ```dart
 void main() {
   testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
     // Create the widget by telling the tester to build it.
-    await tester.pumpWidget(MyWidget(title: 'T', message: 'M'));
+    await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
   });
 }
 ```
@@ -290,10 +295,11 @@ For more information about `Finder` classes, see the
 请参阅 [定位到目标 Widgets][Finding widgets in a widget test] 章节。
 
 <!-- skip -->
+<?code-excerpt "test/main_step5_test.dart (main)"?>
 ```dart
 void main() {
   testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
-    await tester.pumpWidget(MyWidget(title: 'T', message: 'M'));
+    await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
 
     // Create the Finders.
     final titleFinder = find.text('T');
@@ -323,10 +329,11 @@ For this purpose, use the [`findsOneWidget`][] `Matcher`.
 因此，可以使用 [`findsOneWidget`][] `Matcher`。
 
 <!-- skip -->
+<?code-excerpt "test/main_step6_test.dart (main)"?>
 ```dart
 void main() {
   testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
-    await tester.pumpWidget(MyWidget(title: 'T', message: 'M'));
+    await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
     final titleFinder = find.text('T');
     final messageFinder = find.text('M');
 
@@ -372,6 +379,7 @@ matchers for common cases.
 
 ### 完整样例
 
+<?code-excerpt "test/main_test.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -382,7 +390,7 @@ void main() {
   // with widgets in the test environment.
   testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
     // Create the widget by telling the tester to build it.
-    await tester.pumpWidget(MyWidget(title: 'T', message: 'M'));
+    await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
 
     // Create the Finders.
     final titleFinder = find.text('T');
@@ -396,14 +404,14 @@ void main() {
 }
 
 class MyWidget extends StatelessWidget {
+  const MyWidget({
+    Key? key,
+    required this.title,
+    required this.message,
+  }) : super(key: key);
+
   final String title;
   final String message;
-
-  const MyWidget({
-    Key key,
-    @required this.title,
-    @required this.message,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

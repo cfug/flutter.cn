@@ -11,17 +11,17 @@
      打开 **View > Command Palette**。
     
   1. Type "flutter", and select the **Flutter: New Application Project**.
-     
+
      输入 "flutter"，选择 **Flutter: New Application Project**。
-    
-  1. Enter a project name, such as `myapp`, and press **Enter**.
-     
-     输入项目名称，比如 `myapp`，然后点 **Enter**
-      
+
   1. Create or select the parent directory for the new project folder.
 
      创建或者选择新项目的父文件夹。
-    
+
+  1. Enter a project name, such as `myapp`, and press **Enter**.
+
+     输入项目名称，比如 `myapp`，然后点 **Enter**。
+
   1. Wait for project creation to complete and the `main.dart`
      file to appear.
 

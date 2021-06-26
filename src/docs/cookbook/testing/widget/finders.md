@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/testing/widget/tap-drag
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/testing/widget/finders/"?>
+
 {% assign api = site.api | append: '/flutter' -%}
 
 To locate widgets in a test environment, use the `Finder`
@@ -80,11 +82,11 @@ This is exactly what the `find.text()` method is for. It creates a
 这正是 `find.text()` 的用途。它会创建一个 `Finder`
 来寻找显示特定文本 `String` 的 widget。
 
-<!-- skip -->
+<?code-excerpt "test/tests.dart (test1)"?>
 ```dart
 testWidgets('finds a Text widget', (WidgetTester tester) async {
-  // Build an app with a Text widget that displays the letter 'H'.
-  await tester.pumpWidget(MaterialApp(
+  // Build an App with a Text widget that displays the letter 'H'.
+  await tester.pumpWidget(const MaterialApp(
     home: Scaffold(
       body: Text('H'),
     ),
@@ -117,11 +119,11 @@ the widget in the test environment.
 这样我们就可以唯一识别特定的 widget，
 在测试环境中更容易查找 widget。
 
-<!-- skip -->
+<?code-excerpt "test/tests.dart (test2)"?>
 ```dart
 testWidgets('finds a widget using a Key', (WidgetTester tester) async {
   // Define the test key.
-  final testKey = Key('K');
+  const testKey = Key('K');
 
   // Build a MaterialApp with the testKey.
   await tester.pumpWidget(MaterialApp(key: testKey, home: Container()));
@@ -142,10 +144,10 @@ property and you want to ensure you're rendering the `child` widget.
 最后，我们有时会需要查找 widget 的具体实例。
 比如，当创建含有 `child` 属性的 widget 并需要确保渲染 `child` widget。
 
-<!-- skip -->
+<?code-excerpt "test/tests.dart (test3)"?>
 ```dart
 testWidgets('finds a specific instance', (WidgetTester tester) async {
-  final childWidget = Padding(padding: EdgeInsets.zero);
+  const childWidget = Padding(padding: EdgeInsets.zero);
 
   // Provide the childWidget to the Container.
   await tester.pumpWidget(Container(child: childWidget));
@@ -179,6 +181,7 @@ to review all available methods.
 
 ### 完整样例
 
+<?code-excerpt "test/tests.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -186,7 +189,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('finds a Text widget', (WidgetTester tester) async {
     // Build an App with a Text widget that displays the letter 'H'.
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Scaffold(
         body: Text('H'),
       ),
@@ -198,7 +201,7 @@ void main() {
 
   testWidgets('finds a widget using a Key', (WidgetTester tester) async {
     // Define the test key.
-    final testKey = Key('K');
+    const testKey = Key('K');
 
     // Build a MaterialApp with the testKey.
     await tester.pumpWidget(MaterialApp(key: testKey, home: Container()));
@@ -208,7 +211,7 @@ void main() {
   });
 
   testWidgets('finds a specific instance', (WidgetTester tester) async {
-    final childWidget = Padding(padding: EdgeInsets.zero);
+    const childWidget = Padding(padding: EdgeInsets.zero);
 
     // Provide the childWidget to the Container.
     await tester.pumpWidget(Container(child: childWidget));

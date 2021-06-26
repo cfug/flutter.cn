@@ -173,21 +173,47 @@ outline weights and styles:
     the file as an integer multiple of 100, between 100 and 900.
     These values correspond to the [`FontWeight`][]
     and can be used in the [`fontWeight`][] property of a
-    [`TextStyle`][] object.
+    [`TextStyle`][] object. For example, if you want to use
+    the `RobotoMono-Bold` font defined above, you would set `fontWeight`
+    to `FontWeight.w700` in your `TextStyle`.
 
     `weight` 属性指定了文件中字体轮廓的字重为 100 的整数倍，
     并且范围在 100 和 900 之间。
     这些值对应 [`FontWeight`][] 并能够在 [`TextStyle`][] 
     对象的 [`fontWeight`][] 属性上使用。
+    例如，如果你想使用上面定义的 `RobotoMono-Bold` 字体，
+    你可以在 `TextStyle` 中将 `fontWeight` 设置为 `FontWeight.w700`。
+    
+    Note that defining the `weight` property does not
+    override the actual weight of the font. You would not be able to
+    access `RobotoMono-Bold` with `FontWeight.w100`, even if its `weight`
+    was set to 100.
+
+    需要注意的是，定义 `weight` 属性不会覆盖字体的实际粗细。
+    你无法使用 `FontWeight.w100` 访问 `RobotoMono-Bold`，
+    即使其 `weight` 设置为了 100。
 
   * The `style` property specifies whether the outlines in the file are
     `italic` or `normal`. These values correspond to the
     [`FontStyle`][] and can be used in the [`fontStyle`][] property of a
-    [`TextStyle`][] object.
+    [`TextStyle`][] object. For example, if you want to use
+    the `Raleway-Italic` font defined above, you would set `fontStyle`
+    to `FontStyle.italic` in your `TextStyle`.
 
     `style` 属性指定文件中字体的轮廓是否为 `italic` 或 `normal`。
     这些值对应 [`FontStyle`][] 并能够在 [`TextStyle`][]
-    对象的 [`fontStyle`][] 属性上使用。
+    对象的 [`fontStyle`][] 属性上使用。例如，如果你想使用上面定义的 
+    `Raleway-Italic` 字体，你可以在 `TextStyle` 中
+    将 `fontStyle` 设置为 `FontStyle.italic`。
+    
+    Note that defining the `style` property does not
+    override the actual style of the font; You would not be able to
+    access `Raleway-Italic` with `FontStyle.normal`, even if its `style`
+    was set to normal.
+
+    需要注意的是，定义 `style` 属性不会更改字体的实际样式；
+    你无法使用 `FontStyle.normal` 访问 `Raleway-Italic，
+    即使其 `style` 设置为了 normal。
 
 ## 3. Set a font as the default
 

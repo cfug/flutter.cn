@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/plugins/picture-using-camera
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/plugins/play_video/"?>
+
 Playing videos is a common task in app development,
 and Flutter apps are no exception. To play videos,
 the Flutter team provides the [`video_player`][] plugin.
@@ -186,19 +188,19 @@ To create and initialize the `VideoPlayerController` do the following:
   5. Dispose of the controller in the `dispose` method
 
      在 `dispose` 方法里销毁控制器
-  
-<!-- skip -->
+
+<?code-excerpt "lib/main_step3.dart (VideoPlayerScreen)"?>
 ```dart
 class VideoPlayerScreen extends StatefulWidget {
-  VideoPlayerScreen({Key key}) : super(key: key);
+  VideoPlayerScreen({Key? key}) : super(key: key);
 
   @override
   _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
-  VideoPlayerController _controller;
-  Future<void> _initializeVideoPlayerFuture;
+  late VideoPlayerController _controller;
+  late Future<void> _initializeVideoPlayerFuture;
 
   @override
   void initState() {
@@ -225,6 +227,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     // Complete the code in the next step.
+    return Container();
   }
 }
 ```
@@ -261,7 +264,7 @@ Note: initializing the controller does not begin playback.
 你可以使用 `FutureBuilder` 来展示一个旋转的加载图标直到初始化完成。
 请注意：控制器初始化完成并不会立即开始播放。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/body: //g;/,$//g"?>
 ```dart
 // Use a FutureBuilder to display a loading spinner while waiting for the
 // VideoPlayerController to finish initializing.
@@ -270,7 +273,7 @@ FutureBuilder(
   builder: (context, snapshot) {
     if (snapshot.connectionState == ConnectionState.done) {
       // If the VideoPlayerController has finished initialization, use
-      // the data it provides to limit the aspect ratio of the VideoPlayer.
+      // the data it provides to limit the aspect ratio of the video.
       return AspectRatio(
         aspectRatio: _controller.value.aspectRatio,
         // Use the VideoPlayer widget to display the video.
@@ -309,12 +312,12 @@ or pause the video if it's playing.
 当用户点击按钮，会切换播放状态。
 如果当前是暂停状态，就开始播放。如果当前是播放状态，就暂停播放。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
 ```dart
 FloatingActionButton(
   onPressed: () {
     // Wrap the play or pause in a call to `setState`. This ensures the
-    // correct icon is shown
+    // correct icon is shown.
     setState(() {
       // If the video is playing, pause it.
       if (_controller.value.isPlaying) {
@@ -336,6 +339,7 @@ FloatingActionButton(
 
 ## 完整样例
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 
@@ -355,15 +359,15 @@ class VideoPlayerApp extends StatelessWidget {
 }
 
 class VideoPlayerScreen extends StatefulWidget {
-  VideoPlayerScreen({Key key}) : super(key: key);
+  VideoPlayerScreen({Key? key}) : super(key: key);
 
   @override
   _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
-  VideoPlayerController _controller;
-  Future<void> _initializeVideoPlayerFuture;
+  late VideoPlayerController _controller;
+  late Future<void> _initializeVideoPlayerFuture;
 
   @override
   void initState() {
@@ -435,7 +439,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
         child: Icon(
           _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }

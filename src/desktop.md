@@ -17,33 +17,42 @@ Flutter 的桌面支持也允许插件拓展&mdash;
 您可以使用已经支持了 Windows、macOS 或 Linux 平台的插件，或者创建您自己的插件来实现功能。
 
 {{site.alert.warning}}
+
   **Beta!**
   This page covers desktop support,
-  which is available as a beta release.
-  Beta support still has notable feature gaps,
-  including accessibility support.
-
+  which is available as a beta release for
+  Windows (Win32), macOS and Linux. The Windows UWP
+  support is available as an alpha release. Beta
+  support still has notable feature gaps,
+  including accessibility support. Meanwhile, the
+  Windows UWP alpha release is still in
+  very active development. You can try a beta
+  snapshot of desktop support on the `stable`
+  channel, or you can keep up with the latest
+  changes to desktop on the `beta` channel. For
+  Windows UWP you need to be on the `dev` channel.
+  
   **测试版发布!**
-  本页涵盖的桌面支持，描述的是 Flutter beta 渠道的支持和特性。
-  桌面支持仍然存在许多不足之处，包括辅助功能的支持。
+  本页涵盖的桌面支持，描述的是包括
+  Windows（Win32）、macOS 和 Linux 的 Beta 版支持，
+  Windows 的 UWP 支持目前处于 Alpha 版本。
+  Beta 支持仍有较为明显的功能差距，包括无障碍功能的支持等。
+  同时，Windows UWP 的 Alpha 版本仍在非常积极的开发中。
+  你可以在 `stable` 渠道尝试这个 Beta 版的桌面支持，
+  或者可以切换到使用 `beta` 渠道，使用最新的桌面版支持。
+  如果要跟进 Windows UWP 最新版，需要使用 `dev` 渠道。
 
-  You can try a beta snapshot of desktop support
-  on the stable channel, or you can keep up
-  with the latest changes to desktop on the
-  beta channel.
   For more information, see the **Desktop**
   section in [What's new in Flutter 2][],
   a free article on Medium.
 
-  你可以在 stable 分支尝试使用 beta 快照版本的桌面支持，
-  或者你也可以在 beta 分支跟进桌面的最新更改。
-  了解更多相关消息，请查看在 Medium 上发布的免费文章
-  [What's new in Flutter 2][] 中的 **Desktop** 部分。
+  更多有关 **桌面版** 的详细信息，请查看文章：
+  [Flutter 2 带来了哪些更新][What's new in Flutter 2 CN]。
 
 {{site.alert.end}}
 
 [What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
-
+[What's new in Flutter 2 CN]: /posts/whats-new-in-flutter-2-0
 
 {{site.alert.note}}
 
@@ -52,14 +61,14 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   a macOS application on macOS, and a Linux application on Linux.
   If you experience a problem that hasn’t yet been reported,
   please [file an issue][] and include
-  "desktop:macos/linux/windows"
+  "desktop:windows (win32)/windows (uwp)/macos/linux"
   (whichever platform is appropriate) in the title.
 
   要能够编译桌面应用，您必须**在特定的平台**上
   编译应用: 在 Windows 上构建 Windows 应用，在 macOS 上构建 macOS 应用，
   在 Linux 上构建 Linux 应用。
   如果您遇到了一个尚未被报告的问题，请 [创建一个 issue][file an issue]，
-  其中标题包含 "desktop:macos/linux/windows" (所处的平台)。
+  其中标题包含 "desktop:windows (win32)/windows (uwp)/macos/linux" (所处的平台)。
 
 {{site.alert.end}}
 
@@ -130,13 +139,16 @@ you need the following in addition to the Flutter SDK:
 要开发 Windows 桌面程序，除了 Flutter SDK，您还需要做以下准备:
 
 * [Visual Studio 2019][] (not to be confused with
-  Visual Studio _Code_) with the
+  Visual Studio _Code_). For Win32 you need the
   "Desktop development with C++" workload installed,
-  including all of its default components
+  including all of its default components. For UWP
+  you need the "Universal Windows Platform development"
+  workload installed, with the optional UWP C++ tools.
 
-  安装有 “Desktop development with C++” 工作负载的
-  [Visual Studio 2019][]（不要与 Visual Studio Code - VS Code 混淆），
+  [安装 Visual Studio 2019][Visual Studio 2019] (不要与 Visual Studio Code - VS Code 混淆)。
+  Win 32 开发，请选择 [「使用 C++ 的桌面开发」工作负载](https://docs.microsoft.com/zh-cn/cpp/build/vscpp-step-0-installation?view=msvc-160#step-4---choose-workloads)，
   包括它所有的默认组件。
+  UWP 开发，需要选择「通用 Windows 平台开发」工作负载，以及可选的 UWP C++ 工具。
 
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
 
@@ -266,14 +278,26 @@ $ flutter config --enable-macos-desktop
 $ flutter config --enable-linux-desktop
 ```
 
+For Windows UWP desktop support perform the following commands to switch to
+the `dev` channel, upgrade Flutter, and enable UWP.
+
+若想进行 UWP 桌面开发，请执行以下命令切换到 `dev` 分支、升级 Flutter 并启用 UWP 支持。
+
+```terminal
+$ flutter channel dev
+$ flutter upgrade
+$ flutter config --enable-windows-uwp-desktop
+```
+
 To ensure that desktop _is_ enabled,
 list the devices available.
 You should see something like the following
 (you'll see Windows, macOS, or Linux,
-depending on which platforms you've enabled):
+depending on which platform you are running on):
 
 想要确保桌面 **已成功启用**，可以列出可用的设备。
-您应该会看到如下的内容（您将看到 Windows、macOS 或 Linux，这取决于您启用的是哪个平台）：
+您应该会看到如下的内容
+（您将看到 Windows、macOS 或 Linux，这取决于您运行的是哪个平台）：
 
 ``` terminal
 $ flutter devices
@@ -292,15 +316,17 @@ the following on Windows:
 在 Windows 上您可能会看到如下内容:
 
 ```terminal
-PS > flutter doctor                                                                     
-Doctor summary (to see all details, run flutter doctor -v):                                           
-[√] Flutter (Channel beta, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
-[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)                      
-[√] Chrome - develop for the web                                                                      
-[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.7.7)                         
-[√] Android Studio (version 4.1.0)                                                                    
-[√] VS Code (version 1.51.1)                                                                          
-[√] Connected device (3 available)                                                                    
+PS C:\> flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[√] Flutter (Channel stable, 2.0.6, on Microsoft Windows [Version 10.0.19042.804], locale en-AU)
+[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[√] Chrome - develop for the web
+[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.9.5)
+[√] Android Studio (version 4.1.0)
+[√] VS Code (version 1.56.2)
+[√] Connected device (3 available)
+
+! No issues found!
 ```
 
 On macOS, you might see something like the following:
@@ -310,13 +336,15 @@ On macOS, you might see something like the following:
 ```terminal
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel beta, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[✓] Flutter (Channel stable, 2.0.6, on macOS 11.3.1 20E241 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
 [✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 4.1)
-[✓] VS Code (version 1.53.2)
+[✓] Android Studio (version 4.0)
+[✓] VS Code (version 1.56.2)
 [✓] Connected device (3 available)
+
+• No issues found!
 ```
 
 On Linux, you might see something like the following:
@@ -429,19 +457,120 @@ of the package:
 想要从命令行启动您的应用，可以在根目录执行以下命令之一：
 
 ```terminal
-$ flutter run -d windows
+PS C:\> flutter run -d windows
 $ flutter run -d macos
 $ flutter run -d linux
 ```
 
 {{site.alert.note}}
+  If you do not supply the `-d` flag, `flutter run` will list
+  the available targets to choose from.
+{{site.alert.end}}
 
-  If there aren't any other connected devices,
-  the `-d <platform>` tag is optional.
+## Windows UWP
 
-  如果没有其他的连接设备，这里 `-d <platform>` 标记是可选的。
+{{site.alert.warning}}
+
+  **Alpha!**
+  Flutter Windows UWP desktop support is an alpha release, 
+  available on the `dev` channel. 
+
+  **Alpha!**
+  Flutter 对 Windows UWP 桌面开发的支持仍然在 alpha 阶段，仅在 `dev` 渠道可用。
 
 {{site.alert.end}}
+
+To get started with Windows UWP you need to be using Windows 10. 
+You need to install Visual Studio (not Visual Studio _Code_) with the 
+"Universal Windows Platform development" workload and the optional 
+Windows UWP C++ tools. 
+
+进行 Windows UWP 开发需要系统版本至少为 Windows 10。
+你需要安装 Visual Studio（不是 Visual Studio **Code**），
+并且添加「通用 Windows 平台开发」工作负载以及可选的 UWP C++ 工具。
+
+To configure Flutter for Windows UWP development, 
+perform the following commands to switch to
+the `dev` channel, upgrade Flutter, and enable 
+Windows UWP desktop support.
+
+若想配置 Windows UWP 开发，
+请执行以下命令切换到 `dev` 分支、升级 Flutter，
+并启用 Windows UWP 桌面开发支持。
+
+```terminal
+PS C:\> flutter channel dev
+PS C:\> flutter upgrade
+PS C:\> flutter config --enable-windows-uwp-desktop
+```
+
+To create a new application, run the following commands:
+
+执行以下命令创建新应用：
+
+```terminal
+PS C:\> flutter create myapp
+PS C:\> cd myapp
+```
+
+Running Flutter with Windows UWP is complicated due to UWP's 
+sandboxed runtime. You need to run an override for the sandbox 
+to enable the injection of Dart code into the running UWP 
+process to enable debugging and Hot Reload.
+
+在 Windows UWP 环境下运行 Flutter 会有一些复杂，这是由 UWP 的沙盒环境决定的。
+为了能正常进行调试和热重载，在开发时你需要对 UWP 进程的沙盒进行一些重载和注入操作。
+
+The suggested approach during development is to first run
+`flutter run -d winuwp` from the command line, which will
+give you a command that you need to run from a PowerShell
+with Administrator privileges.
+
+在此推荐的方法是首次运行应用时，使用命令行运行 `flutter run -d winuwp`，
+此时会提示你以管理员身份在 PowerShell 中运行命令：
+
+```terminal
+PS C:\myapp> flutter run -d winuwp
+Launching lib\main.dart on Windows (UWP) in debug mode...
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification [C:\src\flutter-projects\myapp\build\winuwp\runner_uwp\app.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3327,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it. [C:\src\flutter-projects\myapp\build\winuwp\runner_uwp\app.vcxproj]
+Building Windows UWP application...
+Enable Flutter debugging from localhost.
+
+Windows UWP apps run in a sandboxed environment. To enable Flutter debugging
+and hot reload, you will need to enable inbound connections to the app from the
+Flutter tool running on your machine. To do so:
+  1. Launch PowerShell as an Administrator
+  2. Enter the following command:
+     checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
+
+Press "Y" once this is complete, or "N" to abort.:
+```
+
+Run this `checknetisolation` command as shown in a PowerShell
+as Administrator. You can then leave this process running for
+the length of your development session, restarting your UWP app
+as required.
+
+以管理员身份在 PowerShell 中运行如上 `checknetisolation` 的命令。
+推荐你在开发过程中保持该命令的运行，执行后请重新运行应用。
+
+```terminal
+PS C:\> checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
+
+Network Isolation Debug Session started.
+Reproduce your scenario, then press Ctrl-C when done.
+```
+
+Once you have this process running, you can deploy to
+Windows UWP from within your IDE as normal, or run from
+the command line as follows:
+
+当该进程在运行时，你就可以正常地在 IDE 中或者执行以下命令运行应用，
+
+```terminal
+PS C:\myapp> flutter run -d winuwp
+```
 
 ## Build a release app
 
@@ -453,7 +582,7 @@ run one of the following commands:
 要生成 release 版本，可以运行以下命令之一：
 
 ```terminal
-$ flutter build windows
+PS C:\> flutter build windows
 $ flutter build macos
 $ flutter build linux
 ```

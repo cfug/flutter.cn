@@ -151,8 +151,8 @@ You might see the following issues as a result of this change:
   
 **Golden Test 可能会失败。** 
 <br>由于 `SingleChildScrollView` 现在嵌套了标题和内容 widget，
-因此可能导致 Golden Test 出现不同的结果。
-一些 Flutter 项目已经开始通过获取 Flutter debug 构建过程中使用的语义节点 goldens 来创建语义测试。
+  因此可能导致 Golden Test 出现不同的结果。
+  一些 Flutter 项目已经开始通过获取 Flutter debug 构建过程中使用的语义节点 goldens 来创建语义测试。
 
   <br>Any semantics golden updates that reflect the scrolling
   container addition are expected and these diffs should be safe to accept.
@@ -185,7 +185,7 @@ flutter:              label: "Huge content"
   
 **滚动视图可能导致布局更改。**
 <br>该变更会修复对话框发生绘制溢出的问题。
-这种布局上的变化是意料之中的。
+  这种布局上的变化是意料之中的。
 
   <br>A nested `SingleChildScrollView` in `AlertDialog.content`
   should work properly if left in the code,

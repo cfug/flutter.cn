@@ -1,6 +1,5 @@
 ---
 title: Codelabs & workshops
-title: Codelabs & workshops
 description: "Codelabs and workshops help you quickly get started programming Flutter."
 description: "Codelabs 和 workshops 是一种引导式的动手编码教程体验，帮助你更好的掌握 Flutter 编程技巧"
 ---
@@ -33,7 +32,7 @@ one of these codelabs:
 如果你刚开始学习 Flutter，
 我们推荐你学习下面的 Codelab 之一：
 
-* [Building your first Flutter app][]（workshop）**NEW!**<br>
+* [Building your first Flutter app][] (workshop) **NEW!**<br>
   An instructor-led version of our very popular
   "Write your first Flutter app, part 1" codelab
   (listed below).
@@ -142,7 +141,7 @@ one of these codelabs:
   （Flutter 提供的 [基础状态管理方案][low-level state management] 之一）
   管理应用数据的状态。
 
-[Dart null safety in Action]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
+[Dart null safety in Action]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
 [inherited-widget-ws]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
 [low-level state management]: /docs/development/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
 [Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
@@ -428,11 +427,11 @@ iOS、Android、Web 和桌面端。
   让原生 API 和桌面应用进行交互，
   并为 GitHub APIs 构建一个类型安全的客户端库。
 
-[Building a Cupertino app with Flutter]: https://codelabs.developers.google.com/codelabs/flutter-cupertino
-[How to write a Flutter plugin]: https://codelabs.developers.google.com/codelabs/write-flutter-plugin/
+[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
+[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin/
 [provider]: {{site.pub}}/packages/provider
-[Using a plugin with a Flutter web app]: https://codelabs.developers.google.com/codelabs/web-url-launcher/
-[Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/
+[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
 
 [Building a Cupertino app with Flutter-cn]: {{site.codelabs}}/codelabs/flutter-cupertino-cn
 [How to write a Flutter plugin-cn]: {{site.codelabs}}/codelabs/write-flutter-plugin-cn

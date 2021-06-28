@@ -33,6 +33,15 @@
     Android SDK Platform-Tools 以及 Android SDK Build-Tools，
     这些都是在开发 Android Flutter 应用时所需要的。
 
+1. Run `flutter doctor` to confirm that Flutter has located
+   your installation of Android Studio. If Flutter cannot locate it,
+   run `flutter config --android-studio-dir <directory>` to set the
+   directory that Android Studio is installed to.
+
+   运行 `flutter doctor` 确保 Flutter 已经定位到了你的 Android Studio 的安装位置。
+   如果 Flutter 并未定位到，运行 `flutter config --android-studio-dir <directory>`
+   设置你的 Android Studio 的安装目录。
+
 ### Set up your Android device
 
 ### 配置 Android 设备
@@ -68,21 +77,12 @@ you need an Android device running Android 4.1 (API level 16) or higher.
     of the Android SDK, you must set the `ANDROID_SDK_ROOT` environment
     variable to that installation directory.
 
-    在命令行中，使用 `flutter devices` 
+    在命令行中，使用 `flutter devices`
     命令来确保 Flutter 能够识别出你所连接的 Android 设备。
-
-By default, Flutter uses the version of the Android SDK where your `adb` tool is based. If
-you want Flutter to use a different installation of the Android SDK, you must set the
-`ANDROID_HOME` environment variable to that installation directory.
-
-默认情况下，Flutter 会使用当前版本 `adb` 工具所依赖的 Android SDK 版本，
-如果你想让 Flutter 使用别的 Android SDK，
-你可以通过设置 `ANDROID_HOME` 环境变量来达到这个目的。
 
 ### Set up the Android emulator
 
 ### 配置 Android 模拟器
-
 
 To prepare to run and test your Flutter app on the Android emulator, follow these steps:
 
@@ -100,22 +100,23 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
 
     打开 **Android Studio**，点击 **AVD Manager** 按钮，
     选择 **Create Virtual Device...**
-    
+
      * In older versions of Android Studio, you should instead
     launch **Android Studio > Tools > Android > AVD Manager** and select
-    **Create Virtual Device**. (The **Android** submenu is only present
+    **Create Virtual Device...**. (The **Android** submenu is only present
     when inside an Android project.)
 
        在一些旧的 Android Studio 版本里，需要通过
        **Android Studio > Tools > Android > AVD Manager**，
-       然后选择 **Create Virtual Device** 选项。
+       然后选择 **Create Virtual Device...** 选项。
        （只有在 Android 项目中才会显示 **Android** 子选项。）
-       
+
      * If you do not have a project open, you can choose 
     **Configure > AVD Manager** and select **Create Virtual Device...**
-    
+
        如果你以及还没打开某个项目，你可以选择
        **Configure > AVD Manager** 然后选择 **Create Virtual Device** 选项
+
  1. Choose a device definition and select **Next**.
 
     选择相应的设备并选择 **Next** 选项。
@@ -150,3 +151,41 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
 
     在 Android Virtual Device Manager 中，点击工具栏中的 **Run** 选项，
     模拟器会启动并为你所选择的系统版本和设备显示出相应的界面。
+
+### Agree to Android Licenses
+
+### 同意 Android 协议
+
+Before you can use Flutter, you must agree to the
+licenses of the Android SDK platform. This step should be done after
+you have installed the tools listed above.
+
+在使用 Flutter 前，你必须同意 Android SDK 平台的协议。
+你可以在安装完上述工具后执行这一步。
+
+ 1. Make sure that you have a version of Java 8 installed and that your 
+    `JAVA_HOME` environment variable is set to the JDK's folder.
+
+    确保你安装了 Java 8，并且正确设置了 `JAVA_HOME` 环境变量到 JDK 目录。
+
+    Android Studio versions 2.2 and higher come with a JDK, so this should
+    already be done.
+
+    高于 2.2 版本的 Android Studio 自带了 JDK，所以应无需手动操作。
+
+ 1. Open an elevated console window and run the following command to begin
+    signing licenses.
+
+    打开一个已经提升管理员权限的终端窗口，运行以下命令进行协议的确认。
+
+    ```terminal
+    $ flutter doctor --android-licenses
+    ```
+ 1. Review the terms of each license carefully before agreeing to them.
+
+    仔细阅读每条协议后同意。
+
+ 1. Once you are done agreeing with licenses, run `flutter doctor` again
+    to confirm that you are ready to use Flutter.
+
+    当你同意所有协议后，再次运行 `flutter doctor` 以确认是否已经可以正常使用 Flutter。

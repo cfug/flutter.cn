@@ -2,7 +2,6 @@
 title: Visual Studio Code
 title: 在 VS Code 里开发 Flutter 应用
 short-title: VS Code
-short-title: VS Code
 description: How to develop Flutter apps in Visual Studio Code.
 description: 如何在 VS Code 里开发 Flutter 应用。
 tags: SDK,Flutter SDK,开发工具
@@ -44,10 +43,10 @@ To install updates manually:
 
 手动安装更新：
 
- 1. Click the Extensions button in the Side Bar.
- 
-    点击侧边栏的扩展按钮
-    
+ 1. Click the **Extensions** button in the Side Bar.
+
+    点击侧边栏的 **Extensions** 按钮。
+
  1. If the Flutter extension is shown with an available update,
     click the update button and then the reload button.
     
@@ -61,6 +60,10 @@ To install updates manually:
 
 ## 创建项目
 
+There are a couple ways to create a new project.
+
+有几种方式创建一个新项目。
+
 ### Creating a new project
 
 ### 新建项目
@@ -70,12 +73,15 @@ starter app template:
 
 通过 Flutter 入门应用模板新建 Flutter 项目：
 
- 1. Open the Command Palette 
+ 1. Open the Command Palette
     (`Ctrl`+`Shift`+`P` (`Cmd`+`Shift`+`P` on macOS)).
+
+    打开命令面板（`Ctrl`+`Shift`+`P` （macOS 用 `Cmd`+`Shift`+`P`））。
+
+  1. Select the **Flutter: New Application Project** command and press `Enter`.
     
     打开命令面板（`Ctrl`+`Shift`+`P` （macOS 用 `Cmd`+`Shift`+`P`））。
  
- 1. Select the **Flutter: New Application Project** command and press `Enter`.
  
     选择 **Flutter: New Application Project** 命令然后按 `Enter`。
     
@@ -230,6 +236,20 @@ Flutter 扩展会自动选择上次连接的设备。
 点击状态栏的 **device** 查看屏幕顶部的选择列表。
 选择你要用来运行或调试的设备。
 
+{{site.alert.secondary}}
+
+  **Are you developing for macOS or iOS remotely using
+  Visual Studio Code Remote?** If so, you might need to manually
+  unlock the keychain. For more information, see this
+  [question on StackExchange][].
+
+  **你是否使用 VSCode Remote 远程开发 macOS 或 iOS 应用？**
+  如果是，你可能需要手动解锁 iOS 密钥。
+  更多信息请查看 [StackExchange 上的问题解答][question on StackExchange]。
+
+[question on StackExchange]: https://superuser.com/questions/270095/when-i-ssh-into-os-x-i-dont-have-my-keychain-when-i-use-terminal-i-do/363840#363840
+{{site.alert.end}}
+
 ### Run app without breakpoints
 
 ### 无断点运行
@@ -253,9 +273,9 @@ Flutter 扩展会自动选择上次连接的设备。
    
  1. Click **Run > Start Debugging** in the main IDE window,
     or press `F5`.
-    
+
     在 IDE 主窗口点击 **Run > Start Debugging** 或按 `F5`。
- 
+
     * The left **Debug Sidebar** shows stack frames and variables.
       
       左侧的**调试侧边栏**显示堆栈帧和变量。
@@ -335,6 +355,10 @@ Flutter 提供一流的开发周期，通过 **Stateful Hot Reload**
 ## Advanced debugging
 
 ## 进阶调试
+
+You might find the following advanced debugging tips useful:
+
+以下的调试指南可能会对你有帮助：
 
 ### Debugging visual layout issues
 
@@ -417,17 +441,17 @@ can assist in correcting it.
   This can be used when you have a widget that you want to wrap
   in a surrounding widget, for example if you want to wrap a
   widget in a `Row` or `Column`.
-  
+
   当你有个 widget 想包装进一个容器 widget 时，
   例如你想把 widget 放入一个 `Row` 或者 `Column`。
-  
+
 **Wrap widget list with new widget assist**
 
 **Widget 列表嵌套辅助**
 
   Similar to the assist above, but for wrapping an existing
   list of widgets rather than an individual widget.
-  
+
   和上面的辅助类似，但它嵌套的是一个 widget 的列表，
   而不是单个的 widget。
 
@@ -437,16 +461,17 @@ can assist in correcting it.
 
   Changes a child argument to a children argument,
   and wraps the argument value in a list.
-  
+
   将 child 转换成 children，并且把参数值写进一个 list。
 
 **Convert StatelessWidget to StatefulWidget assist**
-<br> Changes the implementation of a `StatelessWidget` to that of a `StatefulWidget`,
-  by creating the `State` class and moving the code there.
-  
+: Changes the implementation of a `StatelessWidget` to that of
+  a `StatefulWidget`, by creating the `State` class and moving
+  the code there.
+
 **StatelessWidget 到 StatefulWidget 的转换**
-<br> 创建 `State` 类并将代码移动过去，
-可以将 `StatelessWidget` 的实现更改为 `StatefulWidget`。
+<br>创建 `State` 类并将代码移动过去，
+  可以将 `StatelessWidget` 的实现更改为 `StatefulWidget`。
 
 ### Snippets
 
@@ -490,13 +515,19 @@ You can also define custom snippets by executing
 ### 键盘快捷键
 
 **Hot reload**
-<br> During a debug session, clicking the **Hot Reload** button on the
+: During a debug session, clicking the **Hot Reload** button on the
   **Debug Toolbar**, or pressing `Ctrl`+`F5`
   (`Cmd`+`F5` on macOS) performs a hot reload.
 
 **热重载**
-<br> 调试期间，在**调试工具栏**点击**热重载 (Hot Reload)**按钮，
-  或者按 `Ctrl`+`F5` (macOS 用 `Cmd`+`F5`)执行热重载。
+<br>调试期间，在 **调试工具栏** 点击 **热重载 (Hot Reload)** 按钮，
+  或者按 `Ctrl`+`F5`（macOS 用 `Cmd`+`F5`）执行热重载。
+
+  Keyboard mappings can be changed by executing the
+  **Open Keyboard Shortcuts** command from the [Command Palette][].
+
+  键位绑定可以在 [命令板][Command Palette] 中使用
+  **Open Keyboard Shortcuts** 命令进行调整。
 
 ### Hot reload vs. hot restart
 
@@ -526,8 +557,8 @@ A few types of code changes cannot be hot reloaded though:
 
 For these changes, fully restart your application without
 having to end your debugging session. To perform a hot restart,
-run the **Flutter: Hot Restart** command from the
-[Command Palette][], or press `Ctrl`+`Shift`+`F5`(`Cmd`+`Shift`+`F5` on macOS).
+run the **Flutter: Hot Restart** command from the [Command Palette][],
+or press `Ctrl`+`Shift`+`F5`(`Cmd`+`Shift`+`F5` on macOS).
 
 对于这些更改，你无需结束调试过程而直接热重启 (hot restart) 你的应用。
 要执行热重启，执行 [命令面板][Command Palette] 的 **Flutter：热重启**命令，
@@ -560,9 +591,9 @@ Prior to filing new issues:
   
 * Make sure you are [up to date](#updating) with the most recent
   version of the plugin.
-  
+
   确保你已经 [更新](#updating) 最新版本插件。
-  
+
 When filing new issues, include [flutter doctor][] output.
 
 提交新 issue 时，请包含 [flutter doctor][] 输出。

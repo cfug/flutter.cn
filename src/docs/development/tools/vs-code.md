@@ -243,9 +243,9 @@ Flutter 扩展会自动选择上次连接的设备。
   unlock the keychain. For more information, see this
   [question on StackExchange][].
 
-  **你是否使用 VSCode Remote 开发 macOS 或 iOS？**
+  **你是否使用 VSCode Remote 远程开发 macOS 或 iOS 应用？**
   如果是，你可能需要手动解锁 iOS 密钥。
-  更多信息请查看 [StackExchange 上的问题解答]。
+  更多信息请查看 [StackExchange 上的问题解答][question on StackExchange]。
 
 [question on StackExchange]: https://superuser.com/questions/270095/when-i-ssh-into-os-x-i-dont-have-my-keychain-when-i-use-terminal-i-do/363840#363840
 {{site.alert.end}}

@@ -1,5 +1,5 @@
 ---
-title: 首个稳定更新版 —— Flutter 1.2 发布
+title: 首个稳定更新版 — Flutter 1.2 发布
 toc: true
 ---
 

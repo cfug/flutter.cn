@@ -381,6 +381,8 @@
       permalink: /docs/resources/videos
     - title: 书籍
       permalink: /docs/resources/books
+    - title: 文章
+      permalink: /posts
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
     - title: 常见问题解答

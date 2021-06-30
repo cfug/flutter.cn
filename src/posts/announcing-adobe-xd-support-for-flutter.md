@@ -1,5 +1,5 @@
 ---
-title: 所见即所得 —— Adobe XD 的 Flutter 插件
+title: 所见即所得 — Adobe XD 的 Flutter 插件
 description: 我们很高兴宣布 CodePen 现已提供 Flutter 支持。
 ---
 

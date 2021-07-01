@@ -69,7 +69,7 @@ Flutter 分别为 Android 和 iOS 提供了各自平台的导航模式，
 ### 导航转场动画
 
 On **Android**, the default [`Navigator.push()`][] transition
-is modeled after [`startActivity()`][]),
+is modeled after [`startActivity()`][],
 which generally has one bottom-up animation variant.
 
 **Android** 平台，默认提供的 [`Navigator.push()`][] 

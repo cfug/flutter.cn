@@ -187,11 +187,11 @@ folder with the following content:
 **lib/hello.dart 文件**
 <br> package 的 Dart 实现代码。
 
-**.idea/modules.xml**, **.idea/modules.xml**, **.idea/workspace.xml**
-<br> A hidden folder containing configuration files
+**.idea/modules.xml**, **.idea/workspace.xml**
+: A hidden folder containing configuration files
   for the IntelliJ IDEs.
 
-**.idea/modules.xml**、**.idea/modules.xml**、**.idea/workspace.xml 文件**
+**.idea/modules.xml**、**.idea/workspace.xml 文件**
 <br> IntelliJ 的各自配置文件（包含在 .idea 隐藏文件夹下）。
 
 **CHANGELOG.md**

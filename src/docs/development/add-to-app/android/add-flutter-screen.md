@@ -30,14 +30,14 @@ class="mw-100" alt="Add Flutter Screen Header" %}
 
 ### 步骤 1：在 AndroidManifest.xml 中添加 FlutterActivity
 
-Flutter provides `FlutterActivity` to display a Flutter
-experience within an Android app. Like any other `Activity`,
+Flutter provides [`FlutterActivity`][] to display a Flutter
+experience within an Android app. Like any other [`Activity`][],
 `FlutterActivity` must be registered in your
 `AndroidManifest.xml`. Add the following XML to your
-`AndroidManifestxml` file under your `application` tag:
+`AndroidManifest.xml` file under your `application` tag:
 
-Flutter 提供了 `FlutterActivity`，用于在 Android 应用内部展示一个 Flutter 的交互界面。
-和其他的 `Activity` 一样，`FlutterActivity` 必须在项目的 `AndroidManifest.xml` 文件中注册。
+Flutter 提供了 [`FlutterActivity`][]，用于在 Android 应用内部展示一个 Flutter 的交互界面。
+和其他的 [`Activity`][] 一样，`FlutterActivity` 必须在项目的 `AndroidManifest.xml` 文件中注册。
 将下边的 XML 代码添加到你的 `AndroidManifest.xml` 文件中的 `application` 标签内：
 
 ```xml
@@ -82,15 +82,15 @@ in your app that you'd like. The following example shows
   确保使用如下的语句导入：
   
 <!--skip-->
-```dart
-  import io.flutter.embedding.android.FlutterActivity;
+```java
+import io.flutter.embedding.android.FlutterActivity;
 ```
 
 {{site.alert.end}}
 
 {% samplecode default-activity-launch %}
 {% sample Java %}
-<? code-excerpt "ExistingActivity.java" title ?>
+<!--code-excerpt "ExistingActivity.java" title-->
 ```java
 myButton.setOnClickListener(new OnClickListener() {
   @Override
@@ -102,7 +102,7 @@ myButton.setOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<? code-excerpt "ExistingActivity.kt" title ?>
+<!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -126,7 +126,7 @@ Dart 代码入口不能通过 `Intent` 改变，但是初始路由可以通过 `
 
 {% samplecode custom-activity-launch %}
 {% sample Java %}
-<? code-excerpt "ExistingActivity.java" title ?>
+<!--code-excerpt "ExistingActivity.java" title-->
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -141,7 +141,7 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<? code-excerpt "ExistingActivity.kt" title ?>
+<!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -160,7 +160,7 @@ Replace `"/my_route"` with your desired initial route.
 
 The use of the `withNewEngine()` factory method
 configures a `FlutterActivity` that internally create
-its own `FlutterEngine` instance. This comes with a
+its own [`FlutterEngine`][] instance. This comes with a
 non-trivial initialization time. The alternative approach
 is to instruct `FlutterActivity` to use a pre-warmed,
 cached `FlutterEngine`, which minimizes Flutter's
@@ -204,7 +204,7 @@ The following example arbitrarily pre-warms a
 
 {% samplecode prewarm-engine %}
 {% sample Java %}
-<? code-excerpt "MyApplication.java" title ?>
+<!--code-excerpt "MyApplication.java" title-->
 ```java
 public class MyApplication extends Application {
   public FlutterEngine flutterEngine;
@@ -228,7 +228,7 @@ public class MyApplication extends Application {
 }
 ```
 {% sample Kotlin %}
-<? code-excerpt "MyApplication.kt" title ?>
+<!--code-excerpt "MyApplication.kt" title-->
 ```kotlin
 class MyApplication : Application() {
   lateinit var flutterEngine : FlutterEngine
@@ -253,14 +253,14 @@ class MyApplication : Application() {
 ```
 {% endsamplecode %}
 
-The ID passed to the `FlutterEngineCache` can be whatever you want.
+The ID passed to the [`FlutterEngineCache`][] can be whatever you want.
 Make sure that you pass the same ID to any `FlutterActivity`
-or `FlutterFragment` that should use the cached `FlutterEngine`.
+or [`FlutterFragment`][] that should use the cached `FlutterEngine`.
 Using `FlutterActivity` with a cached `FlutterEngine`
 is discussed next.
 
-传给 `FlutterEngineCache` 的 ID 可以是你想要的任何名称。
-确保 `FlutterActivity` 或 `FlutterFragment` 在使用缓存的
+传给 [`FlutterEngineCache`][] 的 ID 可以是你想要的任何名称。
+确保 `FlutterActivity` 或 [`FlutterFragment`][] 在使用缓存的
 `FlutterEngine` 时，传递了同样的 ID。
 基于缓存的 `FlutterEngine` 来使用 `FlutterActivity` 会在后续讨论到。
 
@@ -299,7 +299,7 @@ builder:
 
 {% samplecode cached-engine-activity-launch %}
 {% sample Java %}
-<? code-excerpt "ExistingActivity.java" title ?>
+<!--code-excerpt "ExistingActivity.java" title-->
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -313,7 +313,7 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<? code-excerpt "ExistingActivity.kt" title ?>
+<!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -466,7 +466,7 @@ pass the appropriate `BackgroundMode` to the `IntentBuilder`:
 
 {% samplecode transparent-activity-launch %}
 {% sample Java %}
-<? code-excerpt "ExistingActivity.java" title ?>
+<!--code-excerpt "ExistingActivity.java" title-->
 ```java
 // Using a new FlutterEngine.
 startActivity(
@@ -486,7 +486,7 @@ startActivity(
 ```
 
 {% sample Kotlin %}
-<? code-excerpt "ExistingActivity.kt" title ?>
+<!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin
 // Using a new FlutterEngine.
 startActivity(
@@ -522,3 +522,9 @@ You now have a `FlutterActivity` with a transparent background.
   那么你的 `FlutterActivity` 依旧看起来会是有一个不透明的背景。
 
 {{site.alert.end}}
+
+[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
+[`Activity`]: https://developer.android.com/reference/android/app/Activity
+[`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
+[`FlutterEngineCache`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
+[`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html

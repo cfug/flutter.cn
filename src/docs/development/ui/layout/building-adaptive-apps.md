@@ -21,8 +21,8 @@ multiplatform, but are fully platform adaptive.
 Flutter 为在移动端、桌面端和 Web 端使用同样的代码构建应用创造了新的机会。
 伴随着机会而来的，是新的挑战。
 你可能会希望你的应用既能在尽可能复用的情况下自适应多个平台，
-又能保证流畅且无缝的体验，还能不让用户不会忘记习惯。
-这样的应用不只是为了多个平台而构建，而是能完全自适应平台的变化。
+又能保证流畅且无缝的体验，还可以让用户保持一致的使用习惯。
+这样的应用不仅仅是为了多个平台而构建的，它能完全地自适应平台的变化。
 
 There are many considerations for developing platform-adaptive
 apps, but they fall into three major categories:
@@ -131,7 +131,7 @@ Flutter 中最有用的部分布局 widgets 包括：
 * [`SingleChildScrollView`][]&mdash;Adds scrolling to a single child.
   Often used with a `Row` or `Column`.
 
-  [`SingleChildScrollView`][]&mdash;为单一的子级添加滚动。
+  [`SingleChildScrollView`][]&mdash;&mdash;为单一的子级添加滚动。
   通常配合 `Row` 或 `Column` 进行使用。
 
 **Multichild**
@@ -170,7 +170,7 @@ Flutter 中最有用的部分布局 widgets 包括：
   relative to the edges of the `Stack`.
   Functions similarly to position-fixed in CSS.
 
-  [`Stack`][]&mdash;基于 `Stack` 的边界对多个子级进行放置和定位。
+  [`Stack`][]&mdash;&mdash;基于 `Stack` 的边界对多个子级进行放置和定位。
   与 CSS 中的 `position: fixed` 功能类似。
 
 * [`Table`][]&mdash;Uses a classic table layout algorithm for
@@ -234,7 +234,7 @@ densities, you can easily adjust your UI:
 
 在你改变 `MaterialApp` 的 `VisualDensity` 时，
 支持它的 `MaterialComponents` 会以动画过渡改变其自身的密度。
-水平和垂直方向的密度默认都为 0.0，你可以设置为任意的正负值。
+水平和垂直方向的密度默认都为 0.0，你可以将它设置为任意的正负值。
 你可以通过调整密度轻松地调整你的 UI：
 
 ![Adaptive scaffold]({% asset development/ui/layout/adaptive_scaffold.gif @path %}){:width="100%"}
@@ -314,7 +314,7 @@ swap widgets, or completely restructure your UI to suit
 a particular form factor. 
 
 如果你需要的不仅是密度的变化，同时没有找到一个与你的使用场景契合的 widget，
-你可以使用代码进行更细化的控制、计算尺寸、切换 widgets
+那么你可以使用代码进行更细化的控制、计算尺寸、切换 widgets
 或是完全重新构建你的 UI 适配对应的外形结构。
 
 #### Screen-based breakpoints
@@ -327,9 +327,9 @@ this can be done with the `MediaQuery` API.
 There are no hard and fast rules for the sizes to use
 here, but these are general values: 
 
-最简单的代码控制布局方式是基于屏幕制造断点。
-在 Flutter 中，你可以使用 `MediaQuery` API 进行实现。
-具体需要使用的大小没有作出硬性规定，下方是一些通用的值：
+最简单的代码控制布局方式是基于屏幕尺寸来定义断点。
+在 Flutter 中，你可以使用 `MediaQuery` API 实现这些断点。
+具体需要使用的大小并没有作出硬性规定，下方是一些通用的值：
 
 <!--skip-->
 ```dart
@@ -507,10 +507,15 @@ never call `Platform` on web targets.
 
 ### Single source of truth for styling
 
+### 使用单一来源控制样式
+
 You’ll probably find it easier to maintain your views
 if you create a single source of truth for styling values
 like padding, spacing, corner shape, font sizes, and so on.
 This can be done easily with some helper classes:
+
+使用单一的来源对样式进行维护，可以让你更简便地控制边距、间距、圆角、字体等样式值。
+你可以利用一些帮助类进行实现：
 
 <!--skip-->
 ```dart
@@ -535,6 +540,8 @@ class TextStyles {
 
 These constants can then be used in place of hard-coded numeric values:
 
+这些常量可以用来替代硬编码的值：
+
 <!--skip-->
 ```dart
 return Padding(
@@ -550,16 +557,42 @@ can be done in a single place, instead of using an error-prone
 search and replace. Using shared rules has the added benefit
 of helping enforce consistency on the design side.
 
+由于所有的视图都引用了相同设计系统的规则，它们通常看起来更一致且更顺畅。
+与其进行容易出错的搜索替换，你可以将平台对应样式值的修改集中在一处。
+使用共享的规则也对设计部分的一致性有所帮助。
+
 Some common design system categories that can be represented
 this way are: 
 
+常见的设计类型里，有一些分类可以以这样的方式进行组织：
+
 * Animation timings 
+
+  动画时间
+
 * Sizes and breakpoints
+
+  尺寸大小和断点
+
 * Insets and paddings
+
+  遮盖和内边距区域
+
 * Corner radius
-* Shadows 
+
+  圆角
+
+* Shadows
+
+  阴影
+
 * Strokes 
+
+  笔画
+
 * Font families, sizes, and styles
+
+  字体系列、大小和样式
 
 Like most rules, there are exceptions:
 one-off values that are used nowhere else in the app.
@@ -569,6 +602,11 @@ should be derived from an existing value (for example,
 `padding + 1.0`). You should also watch for reuse or duplication
 of the same semantic values. Those values should likely be
 added to the global styling ruleset.
+
+当然，上述的例子也有一些例外：在应用中只使用了一次的值。
+将这些值放在样式规则里属实无用之举，
+但可以考虑它们是否能从现有的值延伸（例如 `padding + 1.0`）。
+你也可以留意一些有着相同意义复用的值，这些值也许可以添加到全局的样式规则里。
 
 ### Design to the strengths of each form factor
 
@@ -580,6 +618,10 @@ functionality everywhere. Consider whether it makes
 sense to focus on specific capabilities,
 or even remove certain features, on some device categories.
 
+除了屏幕尺寸以外，你也应当花时间，针对各种不同外形屏幕的优劣点进行设计。
+支持多平台的应用，并不能在所有的设备上都提供理想的体验。
+实际开发时，可以考虑某些特定的功能是否合理，也可以考虑在某些平台上移除特定的功能。
+
 For example, mobile devices are portable and have cameras,
 but they aren't well suited for detailed creative work.
 With this in mind, you might focus more on capturing content
@@ -587,39 +629,64 @@ and tagging it with location data for a mobile UI,
 but focus on organizing or manipulating that content
 for a tablet or desktop UI.
 
+举个例子，移动设备是十分便携的，一般还配有摄像头，但它们并不适合深度的内容创作工作。
+基于这个前提，你的应用可以更侧重于内容捕获，并使用位置信息对其进行标记，配上移动端的界面，
+而另一方面，在平板和桌面界面上专注于组织和操作产出的内容。
+
 Another example is leveraging the web's extremely low barrier
 for sharing. If you’re deploying a web app,
 decide which deep links to support,
 and design your navigation routes with those in mind.
 
+另一个例子是利用 Web 平台的。如果你正在部署 Web 应用，可以考虑 deep link 将支持哪些页面，
+并根据配置来设计应用的导航。
+
 The key takeaway here is to think about what each
 platform does best and see if there are unique capabilities
 you can leverage.
 
+此处的关键点在于，如何发挥每个平台的长处，寻找平台可以利用的特有功能。
+
 ### Use desktop build targets for rapid testing
+
+### 使用桌面目标构建进行快速测试
 
 One of the most effective ways to test adaptive
 interfaces is to take advantage of the desktop build targets. 
+
+测试自适应界面的最快方式，是利用桌面端快速进行构建。
 
 When running on a desktop, you can easily resize the window
 while the app is running to preview various screen sizes.
 This, combined with hot reload, can greatly accelerate the
 development of a responsive UI.
 
+在桌面上运行应用时，你可以在应用运行时轻易地改变窗口的大小，预览多种尺寸的布局。
+配上热重载，能极大程度地加快响应式开发的速度。
+
 ![Adaptive scaffold 2]({% asset development/ui/layout/adaptive_scaffold2.gif @path %}){:width="100%"}
 
 ### Solve touch first
+
+### 优先处理触摸操作
 
 Building a great touch UI can often be more difficult
 than a traditional desktop UI due, in part,
 to the lack of input accelerators like right-click,
 scroll wheel, or keyboard shortcuts. 
 
+在移动端构建优良的触摸交互式 UI 通常比传统的桌面端更为困难，
+因为它缺少类似右键单击、滚轮或键盘快捷键这样的快速输入设备。
+
 One way to approach this challenge is to focus initially
 on a great touch-oriented UI. You can still do most of
 your testing using the desktop target for its iteration speed.
 But, remember to switch frequently to a mobile device to
 verify that everything feels right. 
+
+应对这样的挑战的方法之一，是在一开始专注于更好的面向触摸的 UI。
+你依旧可以使用桌面端来提高你的开发效率，但要记得时不时切换回移动端，
+验证开发的内容是否正常。
 
 After you have the touch interface polished, you can tweak
 the visual density for mouse users, and then layer on all
@@ -628,6 +695,10 @@ accelerator—alternatives that make a task faster.
 The important thing to consider is what a user expects
 when using a particular input device,
 and work to reflect that in your app.
+
+完善了触摸界面后，你可以调整鼠标用户的视觉密度，然后对所有的输入设备进行分层。
+这些输入设备应当作为加快你的应用使用速度的途径。
+在这里需要考虑的应当是用户对于应用体验的期望，并在应用中合理地实现这些期望。
 
 ## Input
 

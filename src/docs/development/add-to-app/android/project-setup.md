@@ -468,7 +468,7 @@ Assuming `my_flutter` is a sibling to `MyApp`.
 
 假设 `my_flutter` 和 `MyApp` 是同级目录。
 
-The binding and script evaluation allows the Flutter]
+The binding and script evaluation allows the Flutter
 module to `include` itself (as `:flutter`) and any
 Flutter plugins used by the module (as `:package_info`,
 `:video_player`, etc) in the evaluation context of
@@ -500,7 +500,7 @@ You can follow the next steps in the [Adding a Flutter screen to an Android app]
 中的后续步骤继续操作。
 
 
-[`abiFilters`]: http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.NdkOptions.html
+[`abiFilters`]: https://developer.android.com/reference/tools/gradle-api/4.2/com/android/build/api/dsl/Ndk#abiFilters:kotlin.collections.MutableSet
 [Adding a Flutter screen to an Android app]: /docs/development/add-to-app/android/add-flutter-screen
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [local repository]: https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local

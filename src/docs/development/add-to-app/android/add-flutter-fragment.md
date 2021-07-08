@@ -26,10 +26,8 @@ that they can use a regular `Fragment`.
 在 Android 开发中，一个 [`Fragment`][] 代表了一块较大的模块化 UI。 
 `Fragment` 可能被用来展示滑动抽屉、标签内容和 `ViewPager` 中的页面，
 或者在单 `Activity` 应用中，`Fragment` 可能仅代表正常的屏幕内容。
-Flutter 提供了 `FlutterFragment`，
+Flutter 提供了[`FlutterFragment`][]，
 以便于开发者们可以在任何使用常规 `Fragment` 的地方呈现 Flutter 的内容。
-
-[`Fragment`]: https://developer.android.com/guide/components/fragments
 
 If an `Activity` is equally applicable for your application needs,
 consider [using a `FlutterActivity`][] instead of a
@@ -388,7 +386,7 @@ FlutterFragment.withCachedEngine("my_engine_id").build()
 and retrieves the pre-warmed `FlutterEngine` based on the ID
 given to `withCachedEngine()`.
 
-`FlutterFragment` 内部可访问 `FlutterEngineCache`，
+`FlutterFragment` 内部可访问 [`FlutterEngineCache`][]，
 并且可以根据传递给 `withCachedEngine()` 的 ID 获取预热的 `FlutterEngine`。
 
 By providing a pre-warmed `FlutterEngine`,

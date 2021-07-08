@@ -7,7 +7,7 @@ tags: 数据调用和后端
 keywords: JSON,序列化数据,反序列化
 ---
 
-<?code-excerpt path-base="../null_safety_examples/development/data-and-backend/json/"?>
+<?code-excerpt path-base="development/data-and-backend/json/"?>
 
 It is hard to think of a mobile app that doesn't need to communicate with a
 web server or easily store structured data at some point. When making

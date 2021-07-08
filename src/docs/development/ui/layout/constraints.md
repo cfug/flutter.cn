@@ -11,7 +11,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/layout/constraints/"?>
+<?code-excerpt path-base="layout/constraints/"?>
 
 {% asset ui/layout/article-hero-image.png class="mw-100" alt="Hero image from the article" %}
 

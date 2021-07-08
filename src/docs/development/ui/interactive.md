@@ -281,7 +281,7 @@ which you'll implement in the next step.
 在这个例子中，`createState()` 创建 `_FavoriteWidgetState` 的实例，
 您将在下一步中实现该实例。
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/interactive"?>
+<?code-excerpt path-base="layout/lakes/interactive"?>
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
 ```dart
 class FavoriteWidget extends StatefulWidget {
@@ -437,7 +437,7 @@ In the same location, create the stateful widget:
 首先，找到创建 `Icon` 和 `Text` 的代码，并删除它，
 在相同的位置创建有状态的 widget：
 
-<?code-excerpt path-base="../null_safety_examples/"?>
+<?code-excerpt path-base=""?>
 <?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="}"?>
 ```diff
 --- layout/lakes/step6/lib/main.dart
@@ -647,7 +647,7 @@ The `_TapboxAState` class:
 
   实现 widget 的所有交互式行为.
 
-<?code-excerpt path-base="../null_safety_examples/development/ui/interactive/"?>
+<?code-excerpt path-base="development/ui/interactive/"?>
 
 <?code-excerpt "lib/self_managed.dart"?>
 ```dart

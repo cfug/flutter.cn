@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/gestures/handling_taps/"?>
+<?code-excerpt path-base="cookbook/gestures/handling_taps/"?>
 
 You not only want to display information to users,
 you want users to interact with your app.

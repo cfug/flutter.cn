@@ -16,7 +16,7 @@ diff2html: true
 {% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/null_safety_examples' -%}
 {% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/dev/integration_tests/flutter_gallery/lib/demo {%- endcapture -%}
 
-<?code-excerpt path-base="../null_safety_examples/"?>
+<?code-excerpt path-base=""?>
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
@@ -198,7 +198,7 @@ Icon(
 
 ### 3. 将可见 widget 添加到布局 widget
 
-<?code-excerpt path-base="../null_safety_examples/layout/base"?>
+<?code-excerpt path-base="layout/base"?>
 
 All layout widgets have either of the following:
 
@@ -248,7 +248,7 @@ property for the home page.
 还有用于添加抽屉、提示条和底部列表弹窗的 API。
 你可以将 `Center` widget 直接添加到主页 `body` 的属性中。
 
-<?code-excerpt path-base="../null_safety_examples/layout/base"?>
+<?code-excerpt path-base="layout/base"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
@@ -296,7 +296,7 @@ For a non-Material app, you can add the `Center` widget to the app's
 
 对于非 Material app，你可以将 `Center` widget 添加到 app 的 `build()` 方法里：
 
-<?code-excerpt path-base="../null_safety_examples/layout/non_material"?>
+<?code-excerpt path-base="layout/non_material"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
@@ -357,7 +357,7 @@ color to white and the text to dark grey to mimic a Material app.
 
 ## 横向或纵向布局多个 widgets
 
-<?code-excerpt path-base="../null_safety_examples/"?>
+<?code-excerpt path-base=""?>
 
 One of the most common layout patterns is to arrange
 widgets vertically or horizontally. You can use a

@@ -7,7 +7,7 @@ tags: Flutter开发
 keywords: 国际化
 ---
 
-<?code-excerpt path-base="../null_safety_examples/internationalization"?>
+<?code-excerpt path-base="internationalization"?>
 
 {{site.alert.secondary}}
  

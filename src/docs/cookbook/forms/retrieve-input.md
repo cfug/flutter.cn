@@ -16,7 +16,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/forms/retreive_input"?>
+<?code-excerpt path-base="cookbook/forms/retreive_input"?>
 
 {% comment %}
 prev:

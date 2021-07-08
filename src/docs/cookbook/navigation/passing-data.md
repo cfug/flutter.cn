@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/passing_data"?>
+<?code-excerpt path-base="cookbook/navigation/passing_data"?>
 
 Often, you not only want to navigate to a new screen,
 but also pass data to the screen as well.

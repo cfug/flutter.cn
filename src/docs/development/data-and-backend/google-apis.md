@@ -5,7 +5,7 @@ description: How to use Google APIs with Flutter.
 description: 如何在 Flutter 中使用 Google API
 ---
 
-<?code-excerpt path-base="../null_safety_examples/googleapis/"?>
+<?code-excerpt path-base="googleapis/"?>
 
 The [Google APIs package]({{site.pub-pkg}}/googleapis) exposes dozens of Google
 services that you can use from Dart projects.

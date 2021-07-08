@@ -315,7 +315,9 @@ by editing the `[project]/android/app/build.gradle` file.
 
 
 <ol markdown="1">
-<li markdown="1"> <span>Add the keystore information from your properties file before the `android` block:</span><span>在 `android` 代码块之前将你 properties 文件的密钥库信息添加进去：</span>
+<li markdown="1"> Add the keystore information from your properties file before the `android` block:
+
+ 在 `android` 代码块之前将你 properties 文件的密钥库信息添加进去：
 
 ```
    def keystoreProperties = new Properties()
@@ -337,7 +339,7 @@ by editing the `[project]/android/app/build.gradle` file.
 
 <li markdown="1"> Find the `buildTypes` block:
 
-<li markdown="1"> 找到 `buildTypes` 代码块：
+ 找到 `buildTypes` 代码块：
 
 ```
    buildTypes {

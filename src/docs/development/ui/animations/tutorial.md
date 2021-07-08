@@ -688,15 +688,11 @@ the core widget code from the animation code.
 `AnimatedWidget` doesn't need to maintain a `State`
 object to hold the animation. Add the following `AnimatedLogo` class:
 
-<<<<<<< HEAD
 `AnimatedWidget` 基本类可以从动画代码中区分出核心 widget 代码。
 `AnimatedWidget` 不需要保持 `State` 对象来 hold 动画。
 可以添加下面的 `AnimatedLogo` 类：
 
-<?code-excerpt path-base="../null_safety_examples/animation/animate2"?>
-=======
 <?code-excerpt path-base="animation/animate2"?>
->>>>>>> 607da910fdfe37a10cee30d7920af737d493f3df
 <?code-excerpt "lib/main.dart (AnimatedLogo)" title?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {

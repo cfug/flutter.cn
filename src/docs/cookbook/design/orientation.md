@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/design/orientation"?>
+<?code-excerpt path-base="cookbook/design/orientation"?>
 
 In some situations,
 you want to update the display of an app when the user

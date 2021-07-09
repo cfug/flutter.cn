@@ -19,7 +19,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/gestures/dismissible"?>
+<?code-excerpt path-base="cookbook/gestures/dismissible"?>
 
 The "swipe to dismiss" pattern is common in many mobile apps.
 For example, when writing an email app,

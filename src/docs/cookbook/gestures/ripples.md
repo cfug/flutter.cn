@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/gestures/ripples/"?>
+<?code-excerpt path-base="cookbook/gestures/ripples/"?>
 
 {% comment %}
 prev:

@@ -257,7 +257,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('end-to-end test', () {
-    FlutterDriver driver;
+    late FlutterDriver driver;
 
     setUpAll(() async {
       // Connect to a running Flutter application instance.
@@ -265,7 +265,7 @@ void main() {
     });
 
     tearDownAll(() async {
-      if (driver != null) driver.close();
+      driver.close();
     });
 
     test('tap on the floating action button; verify counter', () async {

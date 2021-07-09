@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/navigate_with_arguments"?>
+<?code-excerpt path-base="cookbook/navigation/navigate_with_arguments"?>
 
 The [`Navigator`][] provides the ability to navigate
 to a named route from any part of an app using

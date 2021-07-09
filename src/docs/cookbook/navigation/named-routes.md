@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/named_routes"?>
+<?code-excerpt path-base="cookbook/navigation/named_routes"?>
 
 In the [Navigate to a new screen and back][] recipe,
 you learned how to navigate to a new screen by creating a new route and

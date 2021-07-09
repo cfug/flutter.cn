@@ -76,10 +76,10 @@ then do the following:
 
     按照如下方法修改 app 标题栏的标题以及 app 的标题：
 
-    <?code-excerpt "../null_safety_examples/layout/base/lib/{main_starter,main}.dart"?>
+    <?code-excerpt "layout/base/lib/{main_starter,main}.dart"?>
     ```diff
-    --- ../null_safety_examples/layout/base/lib/main_starter.dart
-    +++ ../null_safety_examples/layout/base/lib/main.dart
+    --- layout/base/lib/main_starter.dart
+    +++ layout/base/lib/main.dart
     @@ -10,10 +10,10 @@
        @override
        Widget build(BuildContext context) {
@@ -165,7 +165,7 @@ place some of the implementation in variables and functions.
 
 ## 第二步: 实现标题行
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/step2"?>
+<?code-excerpt path-base="layout/lakes/step2"?>
 
 First, you'll build the left column in the title section.
 Add the following code at the top of the `build()`
@@ -245,7 +245,7 @@ Add the title section to the app body like this:
 
 如下添加标题部分到 app body 中：
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes"?>
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "{../base,step2}/lib/main.dart" from="return MaterialApp"?>
 ```diff
 --- ../base/lib/main.dart
@@ -291,7 +291,7 @@ Add the title section to the app body like this:
 
 ## 第三步: 实现按钮行
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/step3"?>
+<?code-excerpt path-base="layout/lakes/step3"?>
 
 The button section contains 3 columns that use the same
 layout&mdash;an icon over a row of text.
@@ -387,7 +387,7 @@ Add the button section to the body:
 
 添加按钮部分到 body 属性中去：
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes"?>
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "{step2,step3}/lib/main.dart" from="return MaterialApp" to="}"?>
 ```diff
 --- step2/lib/main.dart
@@ -412,7 +412,7 @@ Add the button section to the body:
 
 ## 第四步: 实现文本区域
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/step4"?>
+<?code-excerpt path-base="layout/lakes/step4"?>
 
 Define the text section as a variable. Put the text
 in a `Container` and add padding along each edge.
@@ -450,7 +450,7 @@ Add the text section to the body:
 
 添加文本部分到 body 属性：
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes"?>
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "{step3,step4}/lib/main.dart" from="return MaterialApp"?>
 ```diff
 --- step3/lib/main.dart

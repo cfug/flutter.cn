@@ -406,7 +406,6 @@ For more details, see
 
 更多详细信息，请参阅 [通过应用程序商店分发应用程序][distributionguide_submit].
 
-
 ## Troubleshooting
 
 ## 故障排除

@@ -49,7 +49,7 @@ which creates a new application and starts your app.
 创建一个新应用并运行你的 app 。
 
 ```csharp
-LoadApplication(App());
+LoadApplication(new App());
 ```
 
 In Flutter, the default main entry point is
@@ -70,19 +70,19 @@ In Xamarin.Forms, you assign a `Page` to the
 在 Xamarin.Forms 中，你分配一个 `Page` 到 `Application` 类中的 `MainPage` 属性。
 
 ```csharp
-public class App: Application
+public class App : Application
 {
     public App()
     {
-      MainPage = ContentPage()
-                 {
-                   Label()
-                   {
-                     Text="Hello World",
-                     HorizontalOptions = LayoutOptions.Center,
-                     VerticalOptions = LayoutOptions.Center
-                   }
-                 };
+        MainPage = new ContentPage
+        {
+            Content = new Label
+            {
+                Text = "Hello World",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            }
+        };
     }
 }
 ```
@@ -281,7 +281,7 @@ but there are many benefits to this approach.
 
 {{site.alert.end}}
 
-`ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you
+`ContentPage`, `TabbedPage`, `FlyoutPage` are all types of pages you
 might in a Xamarin.Forms application. These pages would then hold
 `Element`s to display the various controls. In Xamarin.Forms an `Entry`
 or `Button` are examples of an `Element`.
@@ -2132,8 +2132,9 @@ tied to this event. Alternatively you would use the
 ### 我如何处理 widget 上的其他手势？
 
 In Xamarin.Forms you would add a `GestureRecognizer` to the
-`VisualElement`. You would normally be limited to `TapGestureRecognizer`,
-`PinchGestureRecognizer` and `PanGestureRecognizer`,
+`View`. You would normally be limited to `TapGestureRecognizer`,
+`PinchGestureRecognizer`, `PanGestureRecognizer`, `SwipeGestureRecognizer`,
+`DragGestureRecognizer` and `DropGestureRecognizer`
 unless you built your own.
 
 在 Xamarin.Forms 中你可以在 `VisualElement` 中添加一个 `手势识别器（GestureRecognizer）`。

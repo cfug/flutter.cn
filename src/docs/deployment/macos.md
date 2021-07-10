@@ -10,7 +10,7 @@ short-title: macOS
 This guide provides a step-by-step walkthrough of releasing a
 Flutter app to the [App Store][appstore].
 
-本指南提供如何逐步地在 [App_Store][appstore] 上发布 Flutter 应用程序的教程。
+本教程将指导开发者如何在 [App Store][appstore] 上发布 Flutter 应用程序。
 
 ## Preliminaries
 
@@ -134,7 +134,8 @@ Navigate to your target's settings in Xcode:
 在 Xcode 中配置目标：
 
 1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
-1. 在 Xcode 中，打开应用程序 `ios` 文件夹中的 `Runner.xcworkspace`。
+
+   在 Xcode 中，打开应用程序 `ios` 文件夹中的 `Runner.xcworkspace`。
 1. To view your app's settings, select the **Runner** project in the Xcode
    project navigator. Then, in the main view sidebar, select the **Runner**
    target.
@@ -221,7 +222,6 @@ and update the following line:
 应用程序的默认版本号为 `1.0.0`。
 如需更新版本号，在 `pubspec.yaml` 文件中更新以下位置：
 
-`version: 1.0.0+1`
 `version: 1.0.0+1`
 
 The version number is three numbers separated by dots,
@@ -365,7 +365,7 @@ to internal and external testers. See [distribution guide][distributionguide_mac
 to prepare an archive for distribution to designated Mac computers.
 
 [TestFlight][] 不可用于向内部和外部的测试人员分发 macOS 应用。
-请参阅 [distribution guide][distributionguide_macos]，
+请参阅 [分发指南][distributionguide_macos]，
 准备一个归档文件，以便分发到指定的 Mac 设备。
 
 ## Release your app to the App Store

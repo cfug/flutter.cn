@@ -286,7 +286,7 @@ might in a Xamarin.Forms application. These pages would then hold
 `Element`s to display the various controls. In Xamarin.Forms an `Entry`
 or `Button` are examples of an `Element`.
 
-一个 `ContentPage`、`TabbedPage`、`MasterDetailPage`
+一个 `ContentPage`、`TabbedPage`、`FlyoutPage`
 就是你可以在 Xamarin.Forms 应用程序中使用的全部页面类型。
 这些页面会控制`元素（Element）`来显示各种控件。
 在 Xamarin.Forms 中，`Entry` 或者 `Button` 就是一个 `元素` 的示例。
@@ -2139,7 +2139,8 @@ unless you built your own.
 
 在 Xamarin.Forms 中你可以在 `VisualElement` 中添加一个 `手势识别器（GestureRecognizer）`。
 您通常只能使用
-`TapGestureRecognizer`、`PinchGestureRecognizer` 和 `PanGestureRecognizer`，
+`TapGestureRecognizer`、`PinchGestureRecognizer`、`PanGestureRecognizer`、，
+`SwipeGestureRecognizer`、`DragGestureRecognizer` 和 `DropGestureRecognizer`，
 除非您构建了自己的实现。
 
 In Flutter, using the GestureDetector, you can listen to a wide

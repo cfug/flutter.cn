@@ -49,7 +49,7 @@ which creates a new application and starts your app.
 创建一个新应用并运行你的 app 。
 
 ```csharp
-LoadApplication(App());
+LoadApplication(new App());
 ```
 
 In Flutter, the default main entry point is
@@ -70,19 +70,19 @@ In Xamarin.Forms, you assign a `Page` to the
 在 Xamarin.Forms 中，你分配一个 `Page` 到 `Application` 类中的 `MainPage` 属性。
 
 ```csharp
-public class App: Application
+public class App : Application
 {
     public App()
     {
-      MainPage = ContentPage()
-                 {
-                   Label()
-                   {
-                     Text="Hello World",
-                     HorizontalOptions = LayoutOptions.Center,
-                     VerticalOptions = LayoutOptions.Center
-                   }
-                 };
+        MainPage = new ContentPage
+        {
+            Content = new Label
+            {
+                Text = "Hello World",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            }
+        };
     }
 }
 ```
@@ -281,12 +281,12 @@ but there are many benefits to this approach.
 
 {{site.alert.end}}
 
-`ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you
+`ContentPage`, `TabbedPage`, `FlyoutPage` are all types of pages you
 might in a Xamarin.Forms application. These pages would then hold
 `Element`s to display the various controls. In Xamarin.Forms an `Entry`
 or `Button` are examples of an `Element`.
 
-一个 `ContentPage`、`TabbedPage`、`MasterDetailPage`
+一个 `ContentPage`、`TabbedPage`、`FlyoutPage`
 就是你可以在 Xamarin.Forms 应用程序中使用的全部页面类型。
 这些页面会控制`元素（Element）`来显示各种控件。
 在 Xamarin.Forms 中，`Entry` 或者 `Button` 就是一个 `元素` 的示例。
@@ -2132,13 +2132,15 @@ tied to this event. Alternatively you would use the
 ### 我如何处理 widget 上的其他手势？
 
 In Xamarin.Forms you would add a `GestureRecognizer` to the
-`VisualElement`. You would normally be limited to `TapGestureRecognizer`,
-`PinchGestureRecognizer` and `PanGestureRecognizer`,
+`View`. You would normally be limited to `TapGestureRecognizer`,
+`PinchGestureRecognizer`, `PanGestureRecognizer`, `SwipeGestureRecognizer`,
+`DragGestureRecognizer` and `DropGestureRecognizer`
 unless you built your own.
 
 在 Xamarin.Forms 中你可以在 `VisualElement` 中添加一个 `手势识别器（GestureRecognizer）`。
 您通常只能使用
-`TapGestureRecognizer`、`PinchGestureRecognizer` 和 `PanGestureRecognizer`，
+`TapGestureRecognizer`、`PinchGestureRecognizer`、`PanGestureRecognizer`、，
+`SwipeGestureRecognizer`、`DragGestureRecognizer` 和 `DropGestureRecognizer`，
 除非您构建了自己的实现。
 
 In Flutter, using the GestureDetector, you can listen to a wide

@@ -1,6 +1,6 @@
 ---
 title: Build and release an iOS app
-title: 打包并发布 iOS 应用
+title: 构建和发布为 iOS 应用
 short-title: iOS
 description: How to release a Flutter app to the App Store.
 description: 如何在 App Store 上发布一个 Flutter 应用。
@@ -13,10 +13,6 @@ This guide provides a step-by-step walkthrough of releasing a Flutter app to
 the [App Store][appstore] and [TestFlight][testflight].
 
 这个教程将为你提供关于如何将 Flutter App 发布到 [App Store][appstore_cn] 和 [TestFlight][testflight_cn] 的说明。
-
-For information on obfuscating Dart code, see [Obfuscating Dart Code][].
-
-关于混淆 Dart 代码的更多信息，你可以看 [混淆 Dart 代码][Obfuscating Dart Code]
 
 ## Preliminaries
 

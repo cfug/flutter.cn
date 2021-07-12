@@ -74,15 +74,19 @@ Bundle ID 是在 Apple 注册的唯一标识。
 1. Open the [App IDs][devportal_appids] page of your developer account.
 
    打开开发者帐户的 [App IDs][devportal_appids] 页面。
+   
 1. Click **+** to create a new Bundle ID.
 
    点击 **+** 创建一个新的 Bundle ID。
+   
 1. Enter an app name, select **Explicit App ID**, and enter an ID.
    
    输入应用程序名称，选择 **显式 App ID**，然后输入 ID。
+   
 1. Select the services your app uses, then click **Continue**.
    
    选择应用程序使用的服务，然后点击 **下一步**。
+   
 1. On the next page, confirm the details and click **Register**
    to register your Bundle ID.
    
@@ -99,13 +103,16 @@ Register your app on App Store Connect:
 1. Open [App Store Connect][appstoreconnect_login] in your browser.
   
    在浏览器中打开 [App Store Connect][appstoreconnect_login]。
+   
 1. On the App Store Connect landing page, click **My Apps**.
 
    在 App Store Connect 登录页上，点击我的应用。
+   
 1. Click **+** in the top-left corner of the My Apps page,
    then select **New App**.
    
    点击 **我的应用程序** 页面左上角的 **+**，然后选择 **新建应用程序**。
+   
 1. Fill in your app details in the form that appears.
    In the Platforms section, ensure that iOS is checked.
    Since Flutter does not currently support tvOS,
@@ -114,10 +121,12 @@ Register your app on App Store Connect:
    在表单中填写应用程序详细信息。
    在平台部分，请确保选中了 iOS。
    由于 Flutter 目前不支持 tvOS，所以不要选中该项。点击 **创建**。
+   
 1. Navigate to the application details for your app and select
    **App Information** from the sidebar.
 
    从侧边栏中选择 **应用程序信息**，可以查看应用程序的详细信息。
+   
 1. In the General Information section, select the Bundle ID
    you registered in the preceding step.
    
@@ -147,12 +156,14 @@ Navigate to your target's settings in Xcode:
 1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
 
    在 Xcode 中，打开应用程序 `ios` 文件夹中的 `Runner.xcworkspace`。
+   
 1. To view your app's settings, select the **Runner** project in the Xcode
    project navigator. Then, in the main view sidebar, select the **Runner**
    target.
    
    要查看应用程序的设置，请在 Xcode 导航栏中选择 **Runner** 项目。
-   然后，在主视图侧栏中，选择 **Runner** 目标。   
+   然后，在主视图侧栏中，选择 **Runner** 目标。
+      
 1. Select the **General** tab.
 
    选择 **General（常规）** 选项。
@@ -274,11 +285,13 @@ app's icons:
 1. Review the [macOS App Icon][appicon] guidelines.
 
    查看 [macOS 应用程序图标][appicon] 指南。
+   
 1. In the Xcode project navigator, select `Assets.xcassets` in the
    `Runner` folder. Update the placeholder icons with your own app icons.
    
    在 Xcode 项目导航栏的 `Runner` 文件夹中选择 `Assets.xcassets`。
    用你自己的应用程序图标更新占位图标。
+   
 1. Verify the icon has been replaced by running your app using
    `flutter run -d macos`.
    
@@ -312,14 +325,17 @@ In Xcode, configure the app version and build:
 1. In Xcode, open `Runner.xcworkspace` in your app's `macos` folder.
 
    在 Xcode 中，打开应用程序 `macos` 文件夹中的 `Runner.xcworkspace`。
+   
 1. Select **Runner** in the Xcode project navigator, then select the
    **Runner** target in the settings view sidebar.
    
    在 Xcode 项目导航栏中选择 **Runner**，然后在设置侧栏中选择 **Runner** 目标。
+   
 1. In the Identity section, update the **Version** to the user-facing
    version number you wish to publish.
    
    在标识部分，将 **Version（版本）** 更新为要发布的版本号。
+   
 1. In the Identity section, update the **Build** identifier to a unique
    build number used to track this build on App Store Connect.
    Each upload requires a unique build number.
@@ -406,13 +422,15 @@ release to the App Store:
    
    在 [App Store Connect][appstoreconnect_login] 
    应用程序详情页的侧栏中选择 **定价和可用性**，并完善相关信息。
+   
 1. Select the status from the sidebar. If this is the first
    release of this app, its status is
    **1.0 Prepare for Submission**. Complete all required fields.
    
    从侧边栏中选择状态。
    如果这是应用程序的第一个版本，
-   则其状态为 **1.0 准备提交**。填写所有必填字段。  
+   则其状态为 **1.0 准备提交**。填写所有必填字段。
+     
 1. Click **Submit for Review**.
 
    点击 **提交审核**。

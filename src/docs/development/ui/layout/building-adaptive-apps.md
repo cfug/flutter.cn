@@ -702,22 +702,36 @@ and work to reflect that in your app.
 
 ## Input
 
+## 输入
+
 Of course, it isn’t enough to just adapt how your app looks,
 you also have to support varying user inputs.
 The mouse and keyboard introduce input types beyond those
 found on a touch device—like scroll wheel, right-click,
 hover interactions, tab traversal, and keyboard shortcuts.
 
+当然，应用只适配了界面是远远不够的，你还需要适配各种用户的输入操作。
+鼠标和键盘提供了触摸设备不具备的输入方式，
+例如滚轮、右键点击、悬停交互、Tab 遍历切换和键盘快捷键。
+
 ### Scroll wheel
+
+### 滚轮
 
 Scrolling widgets like `ScrollView` or `ListView`
 support the scroll wheel by default, and because
 almost every scrollable custom widget is built
 using one of these, it works with them as well.
 
+像 `ScrollView` 和 `ListView` 这样的滚动 widget 默认支持滚轮行为，
+而大部分可滚动的自定义 widget 都是基于它们构建的，所以也同样支持。
+
 If you need to implement custom scroll behavior,
 you can use the [`Listener`][] widget, which lets you
 customize how your UI reacts to the scroll wheel.
+
+如果你需要实现自定义的滑动行为，可以使用 [`Listener`][] widget，
+通过它你可以完全自定义 UI 如何响应滚轮行为。
 
 <!--skip-->
 ```dart
@@ -733,14 +747,22 @@ return Listener(
 
 ### Tab traversal and focus interactions
 
+### Tab 遍历切换和焦点交互
+
 Users with physical keyboards expect that they can use
 the tab key to quickly navigate your application,
 and users with motor or vision differences often rely
 completely on keyboard navigation.
 
+使用键盘的用户，可能会希望通过 Tab 键在应用中快速导航，
+特别是有动效和视觉障碍的用户，基本依赖于键盘导航。
+
 There are two considerations for tab interactions:
 how focus moves from widget to widget, known as traversal,
 and the visual highlight shown when a widget is focused.
+
+在考虑 Tab 遍历切换时，有两点需要注意：
+焦点如何在 widget 之间遍历，以及 widget 聚焦时的突出显示。
 
 Most built-in components, like buttons and text fields,
 support traversal and highlights by default.
@@ -751,6 +773,11 @@ of [`Actions`][], [`Shortcuts`][], [`MouseRegion`][], and
 [`Focus`][] widgets to create a detector that defines actions
 and key bindings, and provides callbacks for handling focus
 and hover highlights.
+
+大部分内置的组件，类似于按钮和输入框，都默认支持遍历和高亮。
+如果你想让自己的 widget 包含在遍历中，你可以利用 [`FocusableActionDetector`][] 进行控制。
+它将 [`Actions`][]、[`Shortcuts`][]、[`MouseRegion`][] 和 [`Focus`][]
+的能力进行了整合，创建出一个可以定义行为和键位绑定，并且提供聚焦和悬浮高亮事件回调的 widget。
 
 <!--skip-->
 ```dart
@@ -786,13 +813,20 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
 
 #### Controlling traversal order
 
+#### 控制遍历的顺序
+
 To get more control over the order that
 widgets are focused on when the user presses tab,
 you can use [`FocusTraversalGroup`][] to define sections
 of the tree that should be treated as a group when tabbing. 
 
+想要控制用户按下 Tab 键时的 widget 切换顺序，
+你可以使用 [`FocusTraversalGroup`][] 来指定树中的区域，作为切换时的组别。
+
 For example, you might to tab through all the fields in
 a form before tabbing to the submit button:
+
+例如，你可能想在切换到上传按钮前，先切换到所有的输入框：
 
 <!--skip-->
 ```dart
@@ -809,6 +843,11 @@ defaulting to the `ReadingOrderTraversalPolicy` class.
 This class usually works well, but it’s possible to modify this
 using another predefined `TraversalPolicy` class or by creating
 a custom policy.
+
+Flutter 有几种内置的方法对 widget 和组别进行遍历，默认使用的是
+`ReadingOrderTraversalPolicy` 类。
+这个类通常可以正常使用，你也可以创建另一个 `TraversalPolicy` 或创建一个自定义的规则，
+对它进行定义。
 
 [`FocusTraversalGroup`]: {{site.api}}/flutter/widgets/FocusTraversalGroup-class.html
 

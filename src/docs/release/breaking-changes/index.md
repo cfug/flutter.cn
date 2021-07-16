@@ -32,7 +32,7 @@ release, and listed in alphabetical order:
 
 * [ThemeData's accent properties have been deprecated][]
 
-  [弃用 ThemeData 的强调属性]
+  [弃用 ThemeData 的强调属性][ThemeData's accent properties have been deprecated]
 
 * [GestureRecognizer Cleanup][]
 

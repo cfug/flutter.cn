@@ -26,6 +26,10 @@ release, and listed in alphabetical order:
 
   [默认允许触控滑动的设备][Default drag scrolling devices]
 
+* [Deprecated API removed after v2.2][]
+
+  [v2.2 版本废弃的 API][Deprecated API removed after v2.2]
+
 * [Introducing package:flutter_lints][]
 
   [引入 flutter_lints package][[Introducing package:flutter_lints]]
@@ -44,6 +48,7 @@ release, and listed in alphabetical order:
   [将 AnimationSheetBuilder.display 替换为 collate][Replace AnimationSheetBuilder.display with collate]
 
 [Default drag scrolling devices]: /docs/release/breaking-changes/default-scroll-behavior-drag
+[Deprecated API removed after v1.22]: /docs/release/breaking-changes/2-2-deprecations
 [GestureRecognizer Cleanup]: /docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer
 [Introducing package:flutter_lints]: /docs/release/breaking-changes/flutter-lints-package
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties

@@ -256,6 +256,9 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     futureAlbum = fetchAlbum();
   }
+
+  // ···
+}
 ```
 
 This Future is used in the next step.

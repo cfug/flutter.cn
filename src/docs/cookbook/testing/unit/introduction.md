@@ -224,7 +224,7 @@ void main() {
 }
 ```
 
-### 6. Run the tests
+## 6. Run the tests
 
 ### 6. 执行测试
 
@@ -233,7 +233,7 @@ you can run the tests.
 
 现在 `Counter` 类和它的测试都有了，开始执行测试！
 
-#### Run tests using IntelliJ or VSCode
+### Run tests using IntelliJ or VSCode
 
 #### 用 IntelliJ 或 VSCode 执行测试
 
@@ -284,7 +284,7 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
 
        *或者，也可以使用系统快捷键!*
 
-#### Run tests in a terminal
+### Run tests in a terminal
 
 #### 在终端执行测试
 

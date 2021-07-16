@@ -12,8 +12,8 @@ diff2html: true
 
 {% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
-{% capture null_safety_examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
-{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/null_safety_examples' -%}
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
 {% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/dev/integration_tests/flutter_gallery/lib/demo {%- endcapture -%}
 
 <?code-excerpt path-base=""?>
@@ -338,11 +338,11 @@ color to white and the text to dark grey to mimic a Material app.
 
   App 源码:
 
-  - [Material app]({{null_safety_examples}}/layout/base)
+  - [Material app]({{examples}}/layout/base)
 
-  - [Non-Material app]({{null_safety_examples}}/layout/non_material)
+  - [Non-Material app]({{examples}}/layout/non_material)
 
-    [非 Material app]({{null_safety_examples}}/layout/non_material)
+    [非 Material app]({{examples}}/layout/non_material)
 
 </div>
 <div class="col-md-6">
@@ -531,9 +531,9 @@ space evenly between, before, and after each image.
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/row-spaceevenly-visual.png class="mw-100" alt="Row with 3 evenly spaced images" %}
 
-  **App source:** [row_column]({{null_safety_examples}}/layout/row_column)
+  **App source:** [row_column]({{examples}}/layout/row_column)
 
-  **App 源码:** [row_column]({{null_safety_examples}}/layout/row_column)
+  **App 源码:** [row_column]({{examples}}/layout/row_column)
 </div>
 </div>
 
@@ -563,9 +563,9 @@ space evenly between, above, and below each image.
   );
   {% endprettify %}
 
-  **App source:** [row_column]({{null_safety_examples}}/layout/row_column)
+  **App source:** [row_column]({{examples}}/layout/row_column)
 
-  **App 源码:** [row_column]({{null_safety_examples}}/layout/row_column)
+  **App 源码:** [row_column]({{examples}}/layout/row_column)
 </div>
 <div class="col-lg-4 text-center">
   {% asset ui/layout/column-visual.png class="mb-4" height="250px"
@@ -620,9 +620,9 @@ wrap each image with an `Expanded` widget.
   {% asset ui/layout/row-expanded-2-visual.png class="mw-100"
       alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space" %}
 
-  **App source:** [sizing]({{null_safety_examples}}/layout/sizing)
+  **App source:** [sizing]({{examples}}/layout/sizing)
 
-  **App 源码:** [sizing]({{null_safety_examples}}/layout/sizing)
+  **App 源码:** [sizing]({{examples}}/layout/sizing)
 </div>
 </div>
 
@@ -662,13 +662,13 @@ the flex factor of the middle image to 2:
   {% asset ui/layout/row-expanded-visual.png class="mw-100"
       alt="Row of 3 images with the middle image twice as wide as the others" %}
 
-  **App source:** [sizing]({{null_safety_examples}}/layout/sizing)
+  **App source:** [sizing]({{examples}}/layout/sizing)
 
-  **App 源码:** [sizing]({{null_safety_examples}}/layout/sizing)
+  **App 源码:** [sizing]({{examples}}/layout/sizing)
 </div>
 </div>
 
-[sizing]: {{null_safety_examples}}/layout/sizing
+[sizing]: {{examples}}/layout/sizing
 
 ### Packing widgets
 
@@ -704,9 +704,9 @@ uses this property to pack the star icons together.
   {% asset ui/layout/packed.png class="border mw-100"
       alt="Row of 5 stars, packed together in the middle of the row" %}
 
-  **App source:** [pavlova]({{null_safety_examples}}/layout/pavlova)
+  **App source:** [pavlova]({{examples}}/layout/pavlova)
 
-  **App 源码:** [pavlova]({{null_safety_examples}}/layout/pavlova)
+  **App 源码:** [pavlova]({{examples}}/layout/pavlova)
 </div>
 </div>
 
@@ -934,7 +934,7 @@ body: Center(
 
 {{site.alert.end}}
 
-**App source:** [pavlova]({{null_safety_examples}}/layout/pavlova)
+**App source:** [pavlova]({{examples}}/layout/pavlova)
 
 **App 源码:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 
@@ -1117,7 +1117,7 @@ and the Flutter Gallery ([running app][], [repo][]).
 
 你可以在 [布局构建教程][] 和 [Flutter Gallery][] 中可以发现更多关于 `Container` 的例子。
 
-**App source:** [container]({{null_safety_examples}}/layout/container)
+**App source:** [container]({{examples}}/layout/container)
 
 **App 源码:** [container]({{null_safety_examples}}/layout/container)
 
@@ -1202,9 +1202,9 @@ it automatically scrolls.
 
   使用 `GridView.extent` 创建一个最大宽度为 150 像素的网格。
 
-  **App source:** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 
-  **App 源码：** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
+  **App 源码：** [grid_and_list]({{examples}}/layout/grid_and_list)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1297,9 +1297,9 @@ its render box.
 
   使用 `ListView` 的业务列表，它使用了多个 `ListTile`。`Divider` 将餐厅从剧院中分隔开。
 
-  **App source:** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 
-  **App 源码：** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
+  **App 源码：** [grid_and_list]({{examples}}/layout/grid_and_list)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1412,9 +1412,9 @@ widget 可以完全或者部分覆盖基础 widget。
   （在透明的黑色背景上展示它的 `Text`）。
   `Stack` 使用 `alignment` 属性和 `Alignment` 让文本偏移。
 
-  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
 
 </div>
 <div class="col-lg-5" markdown="1">
@@ -1549,9 +1549,9 @@ Specifying an unsupported value disables the drop shadow entirely.
   包含 3 个 ListTile 的 `Card`，并且通过被 `SizedBox` 包住来调整大小。
   `Divider` 分隔了第一个和第二个 `ListTiles`。
 
-  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1657,9 +1657,9 @@ and trailing icons. `ListTile` is most commonly used in
 
   包含 3 个 `ListTiles` 的 `Card`。
 
-  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1804,8 +1804,8 @@ The following resources might help when writing layout code.
 [Material Design]: {{site.material}}/design
 [Material Design palette]: {{site.material}}/design/color
 [Material library]: {{api}}/material/material-library.html
-[pubspec file]: {{null_safety_examples}}/layout/pavlova/pubspec.yaml
-[`pubspec.yaml` file]: {{null_safety_examples}}/layout/row_column/pubspec.yaml
+[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
+[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
 [repo]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
 [`Row`]: {{api}}/widgets/Row-class.html
 [running app]: https://flutter.github.io/gallery/#/

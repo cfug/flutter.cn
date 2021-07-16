@@ -141,14 +141,14 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 ```dart
 return MaterialApp(
   title: 'Localizations Sample App',
-  localizationsDelegates: [
+  localizationsDelegates: const [
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
   ],
-  supportedLocales: [
-    const Locale('en', ''), // English, no country code
-    const Locale('es', ''), // Spanish, no country code
+  supportedLocales: const [
+    Locale('en', ''), // English, no country code
+    Locale('es', ''), // Spanish, no country code
   ],
   theme: ThemeData(
     primarySwatch: Colors.blue,
@@ -327,15 +327,15 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
    ```dart
    return MaterialApp(
      title: 'Localizations Sample App',
-     localizationsDelegates: [
+     localizationsDelegates: const [
        AppLocalizations.delegate, // Add this line
        GlobalMaterialLocalizations.delegate,
        GlobalWidgetsLocalizations.delegate,
        GlobalCupertinoLocalizations.delegate,
      ],
-     supportedLocales: [
-       const Locale('en', ''), // English, no country code
-       const Locale('es', ''), // Spanish, no country code
+     supportedLocales: const [
+       Locale('en', ''), // English, no country code
+       Locale('es', ''), // Spanish, no country code
      ],
      theme: ThemeData(
        primarySwatch: Colors.blue,
@@ -493,13 +493,13 @@ locales should include:
 
 <?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
 ```dart
-supportedLocales: [
-  const Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'), // 'zh_Hans_CN'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'), // 'zh_Hant_TW'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'HK'), // 'zh_Hant_HK'
+supportedLocales: const [
+  Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
+  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
+  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
+  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'), // 'zh_Hans_CN'
+  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'), // 'zh_Hant_TW'
+  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'HK'), // 'zh_Hant_HK'
 ],
 ```
 
@@ -1017,14 +1017,14 @@ adds the `NnMaterialLocalizations` delegate instance to the app's
 <?code-excerpt "add_language/lib/main.dart (MaterialApp)"?>
 ```dart
 MaterialApp(
-  localizationsDelegates: [
+  localizationsDelegates: const [
     GlobalWidgetsLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
     NnMaterialLocalizations.delegate, // Add the newly created delegate
   ],
-  supportedLocales: [
-    const Locale('en', 'US'),
-    const Locale('nn'),
+  supportedLocales: const [
+    Locale('en', 'US'),
+    Locale('nn'),
   ],
   home: Home(),
 ),
@@ -1198,15 +1198,15 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     来加载本地化的信息，然后使用 `Intl.message()` 来查阅这些本地化的信息。
 
 [78 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
-[`add_language`]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/add_language/lib/main.dart
+[`add_language`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart
 [An alternative class for the app's localized resources]: #alternative-class
-[an example]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/minimal
-[`intl_example`]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/intl_example
-[`gen_l10n_example`]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/gen_l10n_example
+[an example]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
+[`intl_example`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example
+[`gen_l10n_example`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/gen_l10n_example
 [flutter_localizations README]: {{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Internationalization based on the `intl` package]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/intl_example
+[Internationalization based on the `intl` package]: {{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example
 [Internationalization User's Guide]: /go/i18n-user-guide
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl` tool]: #dart-tools
@@ -1222,8 +1222,8 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`MaterialApp.onGenerateTitle`]: {{site.api}}/flutter/material/MaterialApp/onGenerateTitle.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
-[`minimal`]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/minimal
-[Minimal internationalization]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/minimal
+[`minimal`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
+[Minimal internationalization]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Setting up an internationalized app]: #setting-up
 [`SynchronousFuture`]: {{site.api}}/flutter/foundation/SynchronousFuture-class.html
 [`supportedLocales`]: {{site.api}}/flutter/material/MaterialApp/supportedLocales.html

@@ -28,20 +28,24 @@ release, and listed in alphabetical order:
 
 * [Introducing package:flutter_lints][]
 
-  [引入 flutter_lints package][[Introducing package:flutter_lints]]
+  [引入 flutter_lints package][Introducing package:flutter_lints]
 
 * [ThemeData's accent properties have been deprecated][]
 
-  [弃用 ThemeData 的强调属性]
+  [弃用 ThemeData 的强调属性][ThemeData's accent properties have been deprecated]
 
 * [GestureRecognizer Cleanup][]
 
   [GestureRecognizer 代码整理][GestureRecognizer Cleanup]
 
 * [Replace AnimationSheetBuilder.display with collate][]
-* [Using HTML slots to render platform views in the web][]
 
   [将 AnimationSheetBuilder.display 替换为 collate][Replace AnimationSheetBuilder.display with collate]
+
+* [Using HTML slots to render platform views in the web][]
+
+  [使用 HTML 在 Web 中渲染平台视图 (platform views)][Using HTML slots to render platform views in the web]
+
 
 [Default drag scrolling devices]: /docs/release/breaking-changes/default-scroll-behavior-drag
 [GestureRecognizer Cleanup]: /docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer
@@ -57,12 +61,12 @@ The following breaking changes have been reverted.
 
 以下重要改动已被回退。
 
-<b>[Network Policy on iOS and Android][]</b><br>
-:  Introduced in version: 2.0.0<br>
+<b>[Network Policy on iOS and Android][]</b>
+<br/>  Introduced in version: 2.0.0<br>
    Reverted in version:   2.2.0 (proposed)
    
-<b>[iOS 端和 Android 端的网络策略][Network Policy on iOS and Android]</b><br>
-:  引入版本：2.0.0<br>
+<b>[iOS 端和 Android 端的网络策略][Network Policy on iOS and Android]</b>
+<br/> 引入版本：2.0.0<br>
       回退版本：2.2.0（建议）
 
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
@@ -122,9 +126,12 @@ The following breaking changes have been reverted.
   [迁移 TextSelectionTheme][TextSelectionTheme migration]
   
 * [Use maxLengthEnforcement instead of maxLengthEnforced][]
+  
+  [使用 maxLengthEnforcement 代替 maxLengthEnforced][Use maxLengthEnforcement instead of maxLengthEnforced]
+  
 * [Transition of platform channel test interfaces to flutter_test package][]
 
-  [使用 maxLengthEnforcement 代替 maxLengthEnforced][Use maxLengthEnforcement instead of maxLengthEnforced]
+  [平台通道测试向 flutter_test package 过渡][Transition of platform channel test interfaces to flutter_test package]
 
 [Added BuildContext parameter to TextEditingController.buildTextSpan]: /docs/release/breaking-changes/buildtextspan-buildcontext
 [Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
@@ -224,6 +231,8 @@ The following breaking changes have been reverted.
 [The Route Transition record and Transition delegate updates]: /docs/release/breaking-changes/route-transition-record-and-transition-delegate
 
 ### Released in Flutter 1.17
+
+### 发布于 Flutter 1.17
 
 * [Adding 'linux' and 'windows' to TargetPlatform enum][]
 

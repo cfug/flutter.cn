@@ -232,6 +232,8 @@ The following breaking changes have been reverted.
 
 ### Released in Flutter 1.17
 
+### 发布于 Flutter 1.17
+
 * [Adding 'linux' and 'windows' to TargetPlatform enum][]
 
   [在 TargetPlatform 枚举中添加 'linux' 和 'windows'][Adding 'linux' and 'windows' to TargetPlatform enum]

@@ -50,7 +50,7 @@ set pricing, and manage releases to the App Store and TestFlight.
 Registering your app involves two steps: registering a unique
 Bundle ID, and creating an application record on App Store Connect.
 
-注册应用程序包括两个步骤：注册唯一的 Bundle ID，
+注册应用程序包括两个步骤：注册一个唯一的 Bundle ID，
 以及在 App Store Connect 上创建应用程序记录。
 
 For a detailed overview of App Store Connect, see the
@@ -106,12 +106,12 @@ Register your app on App Store Connect:
    
 1. On the App Store Connect landing page, click **My Apps**.
 
-   在 App Store Connect 登录页上，点击我的应用。
+   在 App Store Connect 登录页上，点击 **我的应用程序**。
    
 1. Click **+** in the top-left corner of the My Apps page,
    then select **New App**.
    
-   点击 **我的应用程序** 页面左上角的 **+**，然后选择 **新建应用程序**。
+   点击我的应用程序页面左上角的 **+**，然后选择 **新建应用程序**。
    
 1. Fill in your app details in the form that appears.
    In the Platforms section, ensure that iOS is checked.

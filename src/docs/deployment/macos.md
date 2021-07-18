@@ -314,7 +314,7 @@ to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
 
 在开发时，你已经完成了在 **debug** 模式下的应用构建、调试和测试。
-当你准备好在 App Store 或 TestFlight 上向用户发布应用时，你需要准备一个 _release_ 版产物。
+当你准备好在 App Store 或 TestFlight 上向用户发布应用时，你需要准备一个 **release** 版产物。
 此时，你可以考虑 [混淆你的 Dart 代码][obfuscating your Dart code] 让逆向工程变得更加困难。
 混淆你的代码需要向构建命令添加两个标志。
 
@@ -353,7 +353,7 @@ Finally, create a build archive and upload it to App Store Connect:
 
 Open Xcode and select **Product > Archive**. Run `flutter build macos` to produce a build archive.
 
-打开 Xcode 并选择 **项目 > 存档**。运行 `flutter build macos` 生成构建存档。
+打开 Xcode 并选择 **Product（项目）> Archive（存档）**。运行 `flutter build macos` 生成构建存档。
 
 </li>
 <li markdown="1">

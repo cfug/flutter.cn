@@ -57,7 +57,7 @@ For a detailed overview of App Store Connect, see the
 [App Store Connect][appstoreconnect_guide] guide.
 
 有关 App Store Connect 的详细概述，
-请参阅 [App Store Connect][appstoreconnect_guide]。
+请参阅 [App Store Connect 指南][appstoreconnect_guide]。
 
 ### Register a Bundle ID
 
@@ -313,7 +313,7 @@ At this point, you might consider [obfuscating your Dart code][]
 to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
 
-开发阶段，你已经在 _debug_ 模式下完成应用的构建、调试和测试。
+在开发时，你已经完成了在 **debug** 模式下的应用构建、调试和测试。
 当你准备好在 App Store 或 TestFlight 上向用户发布应用时，你需要准备一个 _release_ 版产物。
 此时，你可以考虑 [混淆你的 Dart 代码][obfuscating your Dart code] 让逆向工程变得更加困难。
 混淆你的代码需要向构建命令添加两个标志。
@@ -340,7 +340,8 @@ In Xcode, configure the app version and build:
    build number used to track this build on App Store Connect.
    Each upload requires a unique build number.
    
-   在标识部分，将 **Build identifier（构建标识）** 更新为在 App Store Connect 上可以跟踪此生成的唯一生成串。
+   在标识部分，将 **Build identifier（构建标识）**
+   更新为在 App Store Connect 上可以跟踪此生成的唯一生成串。
    每次上传都需要一个唯一的构建标识。
 
 Finally, create a build archive and upload it to App Store Connect:
@@ -373,7 +374,8 @@ Activities tab of your app's details page on
 [App Store Connect][appstoreconnect_login].
 
 成功验证存档后，点击 **分发应用程序**。
-你可以在 [App Store Connect][appstoreconnect_login] 上的应用程序详细信息页的活动标签下查看构建状态。
+你可以在 [App Store Connect][appstoreconnect_login]
+上的应用程序详细信息页的活动标签下查看构建状态。
 
 </li>
 </ol>

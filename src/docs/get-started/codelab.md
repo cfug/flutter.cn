@@ -199,7 +199,7 @@ and [Write your first Flutter app on the web][codelab-web].
 
 ## 第一步：创建初始化工程
 
-<?code-excerpt path-base="codelabs/startup_namer_null_safety/step1_base"?>
+<?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
 
 Create a simple, templated Flutter app, using the instructions in
 [Getting Started with your first Flutter app][].
@@ -397,7 +397,7 @@ as well as many other open source packages, on [pub.dev][].
     在pubspec.yaml 中，将 english_words（3.1.5 或更高版本）添加到依赖项列表，
     如下面高亮显示的行：
 
-    <?code-excerpt path-base="codelabs/startup_namer_null_safety"?>
+    <?code-excerpt path-base="codelabs/startup_namer"?>
     <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
     ```diff
     --- step1_base/pubspec.yaml
@@ -406,8 +406,8 @@ as well as many other open source packages, on [pub.dev][].
      dependencies:
        flutter:
          sdk: flutter
-       cupertino_icons: ^1.0.2
-    +  english_words: ^4.0.0-0
+       cupertino_icons: ^1.0.3
+    +  english_words: ^4.0.0
     ```
 
  2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
@@ -435,7 +435,7 @@ as well as many other open source packages, on [pub.dev][].
     
     在 `lib/main.dart` 中引入，如下所示：
     
-    <?code-excerpt path-base="codelabs/startup_namer_null_safety/step2_use_package"?>
+    <?code-excerpt path-base="codelabs/startup_namer/step2_use_package"?>
     <?code-excerpt "lib/main.dart" title retain="/^import/" replace="/import.*?english.*/[!$&!]/g" indent-by="2"?>
     ```dart
       [!import 'package:english_words/english_words.dart';!]
@@ -454,7 +454,7 @@ as well as many other open source packages, on [pub.dev][].
     
     接下来，我们使用 English words 包生成文本来替换字符串"Hello World"：
 
-    <?code-excerpt path-base="codelabs/startup_namer_null_safety"?>
+    <?code-excerpt path-base="codelabs/startup_namer"?>
     <?code-excerpt "{step1_base,step2_use_package}/lib/main.dart" from="class"?>
     ```diff
     --- step1_base/lib/main.dart
@@ -524,14 +524,14 @@ If needed, use the code at the following links to get back on track.
 来查看 debug 和 profile 的工具。
 如果需要，使用下面链接中的代码来对比更正。
 
-* [pubspec.yaml]({{code-url}}/startup_namer_null_safety/step2_use_package/pubspec.yaml)
-* [lib/main.dart]({{code-url}}/startup_namer_null_safety/step2_use_package/lib/main.dart)
+* [pubspec.yaml]({{code-url}}/startup_namer/step2_use_package/pubspec.yaml)
+* [lib/main.dart]({{code-url}}/startup_namer/step2_use_package/lib/main.dart)
 
 ## Step 3: Add a Stateful widget
 
 ## 第三步：添加一个 Stateful widget
 
-<?code-excerpt path-base="codelabs/startup_namer_null_safety/step3_stateful_widget"?>
+<?code-excerpt path-base="codelabs/startup_namer/step3_stateful_widget"?>
 
 State<em>less</em> widgets are immutable, meaning that their
 properties can’t change&mdash;all values are final.
@@ -645,7 +645,7 @@ class _RandomWordsState extends State<RandomWords> {
   by making the changes shown in the following diff:</p>
   <p markdown="1">通过以下差异所示的更改，删除 `MyApp` 中单词生成的代码：</p>
 
-  <?code-excerpt path-base="codelabs/startup_namer_null_safety"?>
+  <?code-excerpt path-base="codelabs/startup_namer"?>
   <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
   ```diff
   --- step2_use_package/lib/main.dart
@@ -708,13 +708,13 @@ If needed, use the code at the following link to get back on track.
 来查看 debug 和 profile 的工具。
 如果需要，使用下面链接中的代码来对比更正。
 
-* [lib/main.dart]({{code-url}}/startup_namer_null_safety/step3_stateful_widget/lib/main.dart)
+* [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
 
 ## Step 4: Create an infinite scrolling ListView
 
 ## 第四步：创建一个无限滚动的 ListView
 
-<?code-excerpt path-base="codelabs/startup_namer_null_safety/step4_infinite_list"?>
+<?code-excerpt path-base="codelabs/startup_namer/step4_infinite_list"?>
 
 In this step, you'll expand `_RandomWordsState` to generate
 and display a list of word pairings. As the user scrolls the list
@@ -869,7 +869,7 @@ lazily, on demand.
     更新 `MyApp` 的 `build()` 方法，修改 `title` 的值来改变标题，
     修改 `home` 的值为 `RandomWords` widget。
 
-    <?code-excerpt path-base="codelabs/startup_namer_null_safety"?>
+    <?code-excerpt path-base="codelabs/startup_namer"?>
     <?code-excerpt "{step3_stateful_widget,step4_infinite_list}/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
     ```diff
     --- step3_stateful_widget/lib/main.dart
@@ -920,7 +920,7 @@ If needed, use the code at the following link to get back on track.
 来查看 debug 和 profile 的工具。
 如果需要，使用下面链接中的代码来对比更正。
 
-* [lib/main.dart]({{code-url}}/startup_namer_null_safety/step4_infinite_list/lib/main.dart)
+* [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
 {% include run-profile.md %}
 

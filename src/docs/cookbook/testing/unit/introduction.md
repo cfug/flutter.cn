@@ -224,18 +224,18 @@ void main() {
 }
 ```
 
-### 6. Run the tests
+## 6. Run the tests
 
-### 6. 执行测试
+## 6. 执行测试
 
 Now that you have a `Counter` class with tests in place, 
 you can run the tests.
 
 现在 `Counter` 类和它的测试都有了，开始执行测试！
 
-#### Run tests using IntelliJ or VSCode
+### Run tests using IntelliJ or VSCode
 
-#### 用 IntelliJ 或 VSCode 执行测试
+### 用 IntelliJ 或 VSCode 执行测试
 
 The Flutter plugins for IntelliJ and VSCode support running tests.
 This is often the best option while writing tests because it provides the
@@ -284,9 +284,9 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
 
        *或者，也可以使用系统快捷键!*
 
-#### Run tests in a terminal
+### Run tests in a terminal
 
-#### 在终端执行测试
+### 在终端执行测试
 
 You can also use a terminal to run the tests by executing the following
 command from the root of the project:

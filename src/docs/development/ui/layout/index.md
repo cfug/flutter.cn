@@ -934,7 +934,7 @@ body: Center(
 
 {{site.alert.end}}
 
-**App source:** [pavlova]({{examples}}/layout/pavlova)
+**App source:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 
 **App 源码:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 
@@ -1117,7 +1117,7 @@ and the Flutter Gallery ([running app][], [repo][]).
 
 你可以在 [布局构建教程][] 和 [Flutter Gallery][] 中可以发现更多关于 `Container` 的例子。
 
-**App source:** [container]({{examples}}/layout/container)
+**App source:** [container]({{null_safety_examples}}/layout/container)
 
 **App 源码:** [container]({{null_safety_examples}}/layout/container)
 

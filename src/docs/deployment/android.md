@@ -571,7 +571,7 @@ values in the `defaultConfig` block:
 <br> Specify the final, unique (Application Id)[appid]
 
 `applicationId`
-<br>：指定最终的，唯一的（Application Id）[appid]。
+<br> 指定最终的，唯一的（Application Id）[appid]。
 
 `versionCode` & `versionName`
 <br> Specify the internal app version number,

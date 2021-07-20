@@ -11,7 +11,7 @@ diff2html: true
 ---
 
 {% assign api = '{{site.api}}/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 <?code-excerpt path-base="animation"?>
 

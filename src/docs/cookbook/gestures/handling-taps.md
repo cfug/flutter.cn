@@ -50,19 +50,19 @@ GestureDetector(
   // When the child is tapped, show a snackbar.
   // 当它的子元素被点击，显示一个 snackbar 
   onTap: () {
-    final snackBar = SnackBar(content: Text('Tap'));
+    const snackBar = SnackBar(content: Text('Tap'));
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   },
   // The custom button
   // 这个是我们的自定义按钮
   child: Container(
-    padding: EdgeInsets.all(12.0),
+    padding: const EdgeInsets.all(12.0),
     decoration: BoxDecoration(
       color: Theme.of(context).buttonColor,
       borderRadius: BorderRadius.circular(8.0),
     ),
-    child: Text('My Button'),
+    child: const Text('My Button'),
   ),
 )
 ```
@@ -94,14 +94,16 @@ GestureDetector(
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final title = 'Gesture Demo';
+    const title = 'Gesture Demo';
 
-    return MaterialApp(
+    return const MaterialApp(
       title: title,
       home: MyHomePage(title: title),
     );
@@ -111,7 +113,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -119,30 +121,34 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Center(child: MyButton()),
+      body: const Center(
+        child: MyButton(),
+      ),
     );
   }
 }
 
 class MyButton extends StatelessWidget {
+  const MyButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // The GestureDetector wraps the button.
     return GestureDetector(
       // When the child is tapped, show a snackbar.
       onTap: () {
-        final snackBar = SnackBar(content: Text('Tap'));
+        const snackBar = SnackBar(content: Text('Tap'));
 
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       },
       // The custom button
       child: Container(
-        padding: EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12.0),
         decoration: BoxDecoration(
           color: Theme.of(context).buttonColor,
           borderRadius: BorderRadius.circular(8.0),
         ),
-        child: Text('My Button'),
+        child: const Text('My Button'),
       ),
     );
   }

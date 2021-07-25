@@ -139,20 +139,17 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (MaterialApp)" remove="AppLocalizations.delegate"?>
 ```dart
-return MaterialApp(
+return const MaterialApp(
   title: 'Localizations Sample App',
-  localizationsDelegates: const [
+  localizationsDelegates: [
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
   ],
-  supportedLocales: const [
+  supportedLocales: [
     Locale('en', ''), // English, no country code
     Locale('es', ''), // Spanish, no country code
   ],
-  theme: ThemeData(
-    primarySwatch: Colors.blue,
-  ),
   home: MyHomePage(),
 );
 ```
@@ -325,21 +322,18 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (MaterialApp)"?>
    ```dart
-   return MaterialApp(
+   return const MaterialApp(
      title: 'Localizations Sample App',
-     localizationsDelegates: const [
+     localizationsDelegates: [
        AppLocalizations.delegate, // Add this line
        GlobalMaterialLocalizations.delegate,
        GlobalWidgetsLocalizations.delegate,
        GlobalCupertinoLocalizations.delegate,
      ],
-     supportedLocales: const [
+     supportedLocales: [
        Locale('en', ''), // English, no country code
        Locale('es', ''), // Spanish, no country code
      ],
-     theme: ThemeData(
-       primarySwatch: Colors.blue,
-     ),
      home: MyHomePage(),
    );
    ```
@@ -363,7 +357,7 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
 
    <?code-excerpt "gen_l10n_example/lib/examples.dart (MaterialAppExample)"?>
    ```dart
-   MaterialApp(
+   const MaterialApp(
      title: 'Localizations Sample App',
      localizationsDelegates: AppLocalizations.localizationsDelegates,
      supportedLocales: AppLocalizations.supportedLocales,
@@ -396,7 +390,8 @@ string into [`MaterialApp.onGenerateTitle`][]:
 <?code-excerpt "intl_example/lib/main.dart (MaterialAppTitleExample)"?>
 ```dart
 return MaterialApp(
-  onGenerateTitle: (BuildContext context) => DemoLocalizations.of(context).title,
+  onGenerateTitle: (BuildContext context) =>
+      DemoLocalizations.of(context).title,
 ```
 
 For more information about the localization tool,
@@ -493,13 +488,26 @@ locales should include:
 
 <?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
 ```dart
-supportedLocales: const [
+supportedLocales: [
   Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
-  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
-  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
-  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'), // 'zh_Hans_CN'
-  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'), // 'zh_Hant_TW'
-  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'HK'), // 'zh_Hant_HK'
+  Locale.fromSubtags(
+      languageCode: 'zh',
+      scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
+  Locale.fromSubtags(
+      languageCode: 'zh',
+      scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
+  Locale.fromSubtags(
+      languageCode: 'zh',
+      scriptCode: 'Hans',
+      countryCode: 'CN'), // 'zh_Hans_CN'
+  Locale.fromSubtags(
+      languageCode: 'zh',
+      scriptCode: 'Hant',
+      countryCode: 'TW'), // 'zh_Hant_TW'
+  Locale.fromSubtags(
+      languageCode: 'zh',
+      scriptCode: 'Hant',
+      countryCode: 'HK'), // 'zh_Hant_HK'
 ],
 ```
 
@@ -752,9 +760,10 @@ class DemoLocalizations {
   DemoLocalizations(this.localeName);
 
   static Future<DemoLocalizations> load(Locale locale) {
-    final String name = locale.countryCode == null || locale.countryCode!.isEmpty
-        ? locale.languageCode
-        : locale.toString();
+    final String name =
+        locale.countryCode == null || locale.countryCode!.isEmpty
+            ? locale.languageCode
+            : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
 
     return initializeMessages(localeName).then((_) {
@@ -1016,13 +1025,13 @@ adds the `NnMaterialLocalizations` delegate instance to the app's
 
 <?code-excerpt "add_language/lib/main.dart (MaterialApp)"?>
 ```dart
-MaterialApp(
-  localizationsDelegates: const [
+const MaterialApp(
+  localizationsDelegates: [
     GlobalWidgetsLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
     NnMaterialLocalizations.delegate, // Add the newly created delegate
   ],
-  supportedLocales: const [
+  supportedLocales: [
     Locale('en', 'US'),
     Locale('nn'),
   ],
@@ -1075,7 +1084,7 @@ class DemoLocalizations {
     return Localizations.of<DemoLocalizations>(context, DemoLocalizations)!;
   }
 
-  static Map<String, Map<String, String>> _localizedValues = {
+  static const _localizedValues = <String, Map<String, String>>{
     'en': {
       'title': 'Hello World',
     },
@@ -1099,7 +1108,8 @@ because no asynchronous loading needs to take place.
 
 <?code-excerpt "minimal/lib/main.dart (Delegate)"?>
 ```dart
-class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations> {
+class DemoLocalizationsDelegate
+    extends LocalizationsDelegate<DemoLocalizations> {
   const DemoLocalizationsDelegate();
 
   @override

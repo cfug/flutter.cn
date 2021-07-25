@@ -68,15 +68,17 @@ Start with a stateful widget called `DraggableCard`:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: PhysicsCardDragDemo()));
+  runApp(const MaterialApp(home: PhysicsCardDragDemo()));
 }
 
 class PhysicsCardDragDemo extends StatelessWidget {
+  const PhysicsCardDragDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: DraggableCard(
+      body: const DraggableCard(
         child: FlutterLogo(
           size: 128,
         ),
@@ -86,15 +88,15 @@ class PhysicsCardDragDemo extends StatelessWidget {
 }
 
 class DraggableCard extends StatefulWidget {
+  const DraggableCard({required this.child, Key? key}) : super(key: key);
+
   final Widget child;
-  DraggableCard({required this.child});
 
   @override
   _DraggableCardState createState() => _DraggableCardState();
 }
 
 class _DraggableCardState extends State<DraggableCard> {
-
   @override
   void initState() {
     super.initState();
@@ -139,7 +141,7 @@ Then construct an [AnimationController][] in
 ```diff
 --- lib/starter.dart
 +++ lib/step1.dart
-@@ -26,15 +26,21 @@
+@@ -29,14 +29,20 @@
    _DraggableCardState createState() => _DraggableCardState();
  }
 
@@ -147,15 +149,14 @@ Then construct an [AnimationController][] in
 +class _DraggableCardState extends State<DraggableCard>
 +    with SingleTickerProviderStateMixin {
 +  late AnimationController _controller;
-
++
    @override
    void initState() {
      super.initState();
 +    _controller =
-+        AnimationController(vsync: this, duration: Duration(seconds: 1));
++        AnimationController(vsync: this, duration: const Duration(seconds: 1));
    }
 
-+
    @override
    void dispose() {
 +    _controller.dispose();
@@ -281,7 +282,7 @@ value:
 @@ -3,4 +3,9 @@
    super.initState();
    _controller =
-       AnimationController(vsync: this, duration: Duration(seconds: 1));
+       AnimationController(vsync: this, duration: const Duration(seconds: 1));
 +  _controller.addListener(() {
 +    setState(() {
 +      _dragAlignment = _animation.value;
@@ -434,15 +435,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
 void main() {
-  runApp(MaterialApp(home: PhysicsCardDragDemo()));
+  runApp(const MaterialApp(home: PhysicsCardDragDemo()));
 }
 
 class PhysicsCardDragDemo extends StatelessWidget {
+  const PhysicsCardDragDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: DraggableCard(
+      body: const DraggableCard(
         child: FlutterLogo(
           size: 128,
         ),
@@ -454,8 +457,9 @@ class PhysicsCardDragDemo extends StatelessWidget {
 /// A draggable card that moves back to [Alignment.center] when it's
 /// released.
 class DraggableCard extends StatefulWidget {
+  const DraggableCard({required this.child, Key? key}) : super(key: key);
+
   final Widget child;
-  DraggableCard({required this.child});
 
   @override
   _DraggableCardState createState() => _DraggableCardState();

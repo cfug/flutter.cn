@@ -370,26 +370,30 @@ Widgets 通过布局组合形成一种层次结构关系。
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('My Home Page')),
+        appBar: AppBar(
+          title: const Text('My Home Page'),
+        ),
         body: Center(
           child: Builder(
             builder: (BuildContext context) {
               return Column(
                 children: [
-                  Text('Hello World'),
-                  SizedBox(height: 20),
+                  const Text('Hello World'),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
                       print('Click!');
                     },
-                    child: Text('A button'),
+                    child: const Text('A button'),
                   ),
                 ],
               );
@@ -879,7 +883,7 @@ Container(
   child: Row(
     children: [
       Image.network('https://www.example.com/1.png'),
-      Text('A'),
+      const Text('A'),
     ],
   ),
 );
@@ -1115,9 +1119,9 @@ Widget build(BuildContext context) {
   return LayoutBuilder(
     builder: (context, constraints) {
       if (constraints.maxWidth < 600) {
-        return OneColumnLayout();
+        return const OneColumnLayout();
       } else {
-        return TwoColumnLayout();
+        return const TwoColumnLayout();
       }
     },
   );
@@ -1380,10 +1384,10 @@ typedef MessageBoxDart = int Function(
 
 void exampleFfi() {
   final user32 = DynamicLibrary.open('user32.dll');
-  final MessageBox =
+  final messageBox =
       user32.lookupFunction<MessageBoxNative, MessageBoxDart>('MessageBoxW');
 
-  final result = MessageBox(
+  final result = messageBox(
     0, // No owner window
     'Test message'.toNativeUtf16(), // Message
     'Window caption'.toNativeUtf16(), // Window title

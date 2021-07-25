@@ -12,7 +12,8 @@ keywords: 上传App Store,发布Flutter应用
 This guide provides a step-by-step walkthrough of releasing a Flutter app to
 the [App Store][appstore] and [TestFlight][testflight].
 
-这个教程将为你提供关于如何将 Flutter App 发布到 [App Store][appstore_cn] 和 [TestFlight][testflight_cn] 的说明。
+这个教程将为你提供关于如何将 Flutter App 发布到
+[App Store][appstore_cn] 和 [TestFlight][testflight_cn] 的说明。
 
 ## Preliminaries
 
@@ -231,14 +232,14 @@ In the **Build Settings** section:
 
 `iOS Deployment Target`
 <br> The minimum iOS version that your app supports.
-  Flutter supports iOS 8.0 and later. If your app includes
-  Objective-C or Swift code that makes use of APIs that
-  were unavailable in iOS 8, update this setting appropriately.
+  Flutter supports iOS 9.0 and later. If your app or plugins
+  include Objective-C or Swift code that makes use of APIs newer
+  than iOS 9, update this setting to the highest required version.
 
 `iOS Deployment Target`
-<br> 你的 App 将会支持的最低版本的 iOS，
-   Flutter 支持 iOS 8.0 及以后的版本。
-   如果你的 App 包含使用了iOS 8 不支持的 API 的 Objective-C 或 Swift 代码，请设置到合适的版本。
+<br> 设定你的应用可以支持到的最低的 iOS 版本。
+Flutter 支持 iOS 9.0 及其之后的版本，如果你的应用包含了 iOS 9 不支持的
+Objective-C 或 Swift 代码，请将这里一并设置为相应所需的最高版本。
 
 The **General** tab of your project settings should resemble
 the following:

@@ -96,7 +96,9 @@ be able to swipe these items away just yet.
 ListView.builder(
   itemCount: items.length,
   itemBuilder: (context, index) {
-    return ListTile(title: Text('${items[index]}'));
+    return ListTile(
+      title: Text(items[index]),
+    );
   },
 )
 ```
@@ -143,7 +145,9 @@ itemBuilder: (context, index) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('$item dismissed')));
     },
-    child: ListTile(title: Text('$item')),
+    child: ListTile(
+      title: Text(item),
+    ),
   );
 },
 ```
@@ -181,9 +185,9 @@ provide a `background` parameter to the `Dismissible`.
      },
 +    // Show a red background as the item is swiped away.
 +    background: Container(color: Colors.red),
-     child: ListTile(title: Text('$item')),
-   );
- },
+     child: ListTile(
+       title: Text(item),
+     ),
 ```
 
 ## Interactive example
@@ -196,7 +200,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 // MyApp is a StatefulWidget. This allows updating the state of the
@@ -205,7 +209,7 @@ void main() {
 // MyApp是一个StatefulWidget。这样，我们就能够在列表项被移除的时候，更新Widget的状态。
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   MyAppState createState() {
@@ -218,7 +222,7 @@ class MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    final title = 'Dismissing Items';
+    const title = 'Dismissing Items';
 
     return MaterialApp(
       title: title,
@@ -227,7 +231,7 @@ class MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
         ),
         body: ListView.builder(
           itemCount: items.length,
@@ -255,7 +259,9 @@ class MyAppState extends State<MyApp> {
               // Show a red background as the item is swiped away.
               // 列表项被滑出时，显示一个红色背景(Show a red background as the item is swiped away)
               background: Container(color: Colors.red),
-              child: ListTile(title: Text('$item')),
+              child: ListTile(
+                title: Text(item),
+              ),
             );
           },
         ),

@@ -96,13 +96,15 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Page1(),
     ),
   );
 }
 
 class Page1 extends StatelessWidget {
+  const Page1({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,7 +114,7 @@ class Page1 extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(_createRoute());
           },
-          child: Text('Go!'),
+          child: const Text('Go!'),
         ),
       ),
     );
@@ -121,7 +123,7 @@ class Page1 extends StatelessWidget {
 
 Route _createRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => Page2(),
+    pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       return child;
     },
@@ -129,11 +131,13 @@ Route _createRoute() {
 }
 
 class Page2 extends StatelessWidget {
+  const Page2({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: const Center(
         child: Text('Page 2'),
       ),
     );
@@ -165,13 +169,13 @@ Animation<double> into an Animation<Offset> using a Tween:
 它其实是一个 `Animation<double>`，提供 0 到 1 的值。
 使用 Tween 来将 Animation<double> 转为 Animation<Offset>。
 
-<?code-excerpt "lib/starter.dart (Step1)"?>
+<?code-excerpt "lib/starter.dart (step1)"?>
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
-  var begin = Offset(0.0, 1.0);
-  var end = Offset.zero;
-  var tween = Tween(begin: begin, end: end);
-  var offsetAnimation = animation.drive(tween);
+  const begin = Offset(0.0, 1.0);
+  const end = Offset.zero;
+  final tween = Tween(begin: begin, end: end);
+  final offsetAnimation = animation.drive(tween);
   return child;
 },
 ```
@@ -196,13 +200,13 @@ with the `Animation<Offset>` and the child widget:
 AnimatedWidget 返回了一个 带有 `Animation<Offset>` 
 的 [`SlideTransition`][]，以及 child widget：
 
-<?code-excerpt "lib/starter.dart (Step2)"?>
+<?code-excerpt "lib/starter.dart (step2)"?>
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
-  var begin = Offset(0.0, 1.0);
-  var end = Offset.zero;
-  var tween = Tween(begin: begin, end: end);
-  var offsetAnimation = animation.drive(tween);
+  const begin = Offset(0.0, 1.0);
+  const end = Offset.zero;
+  final tween = Tween(begin: begin, end: end);
+  final offsetAnimation = animation.drive(tween);
 
   return SlideTransition(
     position: offsetAnimation,
@@ -232,7 +236,7 @@ and pass it a Curve:
 要使用 Curve，创建一个 [`CurveTween`][]
 并传一个 Curve：
 
-<?code-excerpt "lib/starter.dart (Step3)"?>
+<?code-excerpt "lib/starter.dart (step3)"?>
 ```dart
 var curve = Curves.ease;
 var curveTween = CurveTween(curve: curve);
@@ -241,7 +245,8 @@ var curveTween = CurveTween(curve: curve);
 This new Tween still produces values from 0 to 1. In the next step, it will be
 combined the `Tween<Offset>` from step 2.
 
-新的 Tween 依然提供 0 到 1 之间的值。在下一步中，它将会结合第二步中提到的 `Tween<Offset>`。
+新的 Tween 依然提供 0 到 1 之间的值。
+在下一步中，它将会结合第二步中提到的 `Tween<Offset>`。
 
 ## 5. Combine the two Tweens
 
@@ -254,9 +259,9 @@ use [`chain()`][]:
 
 <?code-excerpt "lib/main.dart (Tween)"?>
 ```dart
-var begin = Offset(0.0, 1.0);
-var end = Offset.zero;
-var curve = Curves.ease;
+const begin = Offset(0.0, 1.0);
+const end = Offset.zero;
+const curve = Curves.ease;
 
 var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 ```
@@ -300,17 +305,18 @@ values are computed in this order:
 Another way to create an `Animation<Offset>` with an easing curve is to use a
 `CurvedAnimation`:
 
-使用缓动曲线创建 `Animation<Offset>` 的另一种方法是使用 `CurvedAnimation`：
+使用缓动曲线创建 `Animation<Offset>`
+的另一种方法是使用 `CurvedAnimation`：
 
-<?code-excerpt "lib/starter.dart (Step4)" replace="/,$//g"?>
+<?code-excerpt "lib/starter.dart (step4)" replace="/,$//g"?>
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
-  var begin = Offset(0.0, 1.0);
-  var end = Offset.zero;
-  var curve = Curves.ease;
+  const begin = Offset(0.0, 1.0);
+  const end = Offset.zero;
+  const curve = Curves.ease;
 
-  var tween = Tween(begin: begin, end: end);
-  var curvedAnimation = CurvedAnimation(
+  final tween = Tween(begin: begin, end: end);
+  final curvedAnimation = CurvedAnimation(
     parent: animation,
     curve: curve,
   );
@@ -332,13 +338,15 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Page1(),
     ),
   );
 }
 
 class Page1 extends StatelessWidget {
+  const Page1({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -348,7 +356,7 @@ class Page1 extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(_createRoute());
           },
-          child: Text('Go!'),
+          child: const Text('Go!'),
         ),
       ),
     );
@@ -357,11 +365,11 @@ class Page1 extends StatelessWidget {
 
 Route _createRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => Page2(),
+    pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      var begin = Offset(0.0, 1.0);
-      var end = Offset.zero;
-      var curve = Curves.ease;
+      const begin = Offset(0.0, 1.0);
+      const end = Offset.zero;
+      const curve = Curves.ease;
 
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
@@ -374,11 +382,13 @@ Route _createRoute() {
 }
 
 class Page2 extends StatelessWidget {
+  const Page2({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: const Center(
         child: Text('Page 2'),
       ),
     );

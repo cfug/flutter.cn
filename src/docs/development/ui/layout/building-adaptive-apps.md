@@ -853,6 +853,8 @@ Flutter 有几种内置的方法对 widget 和组别进行遍历，默认使用�
 
 ### Keyboard accelerators
 
+### 提升用户操作速度的键盘
+
 In addition to tab traversal, desktop and web users are accustomed
 to having various keyboard shortcuts bound to actions.
 Whether it’s the `Delete` key for quick deletions or
@@ -861,12 +863,23 @@ accelerators your users expect. The keyboard is a powerful
 input tool, so try to squeeze as much efficiency from it as you can.
 Your users will appreciate it!
 
+除了使用 Tab 遍历元素以外，桌面和 Web 用户还习惯将为各种操作绑定键盘快捷键。
+无论是 `Delete` 键进行快速删除，还是 `Control+N` 新建文档，
+你都需要认真考虑用户对这些操作的期望。
+键盘是非常强力的输入工具，所以请尽可能让它发挥最大的作用和效果。
+用户会给予高度评价。
+
 Keyboard accelerators can be accomplished in a few ways in Flutter
 depending on your goals.
+
+根据目标的不同，在 Flutter 中可以通过几种方式实现利用键盘提升用户操作速度。
 
 If you have a single widget like a `TextField` or a `Button` that
 already has a focus node, you can wrap it in a
 [`RawKeyboardListener`][] and listen for keyboard events:
+
+如果你已经有一个包含焦点的 widget，例如 `TextField` 或者 `Button`，
+你可以嵌套一个 [`RawKeyboardListener`][] 监听键盘事件：
 
 <!--skip-->
 ```dart
@@ -883,6 +896,8 @@ return Focus(
 
 If you’d like to apply a set of keyboard shortcuts to a
 large section of the tree, you can use the [`Shortcuts`][] widget:
+
+如果你想将一组键盘快捷键应用到更大范围的 widget，你可以使用 [`Shortcuts`][] widget：
 
 <!--skip-->
 ```dart
@@ -917,11 +932,18 @@ The [`Shortcuts`][] widget is useful because it only
 allows shortcuts to be fired when this widget tree
 or one of its children has focus and is visible.
 
+[`Shortcuts`][] widget 非常有用，
+因为它会让 widget 树的这一分支或它的子级仅在有焦点且可见时触发快捷方式。
+
 The final option is a global listener. This listener
 can be used for always-on, app-wide shortcuts or for
 panels that can accept shortcuts whenever they're visible
 (regardless of their focus state). Adding global listeners
 is easy with [`RawKeyboard`][]:
+
+最后，你还可以全局添加监听。这样的监听可以用于始终需要监听，且为应用全局的快捷键，
+或是在任何时候（无论是否已聚焦）都接收快捷键的部分。
+使用 [`RawKeyboard`][] 添加全局监听非常简单：
 
 <!--skip-->
 ```dart
@@ -942,6 +964,9 @@ you can use the `RawKeyboard.instance.keysPressed` map.
 For example, a method like the following can check whether any
 of the provided keys are being held down:
 
+要想在全局监听中判断组合按键，你可以使用 `RawKeyboard.instance.keysPressed` map。
+例如下面这个方法，可以判断是否已经按下了指定的按键：
+
 <!--skip-->
 ```dart
 static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
@@ -951,6 +976,8 @@ static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
 
 Putting these two things together,
 you can fire an action when `Shift+N` is pressed:
+
+将它们合并判断，你就可以在 `Shift+N` 同时按下时触发行为：
 
 <!--skip-->
 ```dart
@@ -977,11 +1004,18 @@ important when you’re binding a Delete/Backspace accelerator for
 `Delete`, but then have child `TextFields` that the user
 might be typing in.
 
+使用静态的监听时有一件指的注意的事情，当用户在输入框中输入内容，
+或关联的 widget 从视图中隐藏时，监听通常需要禁用。
+与 `Shortcuts` 和 `RawKeyboardListener` 不同，你需要自己对它们进行管理。
+当你在为 `Delete` 键构建一个删除或退格的行为的监听时，需要尤其注意，
+用户可能会在 `TextField` 输入内容时受到影响。
 
 [`RawKeyboard`]: {{site.api}}/flutter/services/RawKeyboard-class.html
 [`RawKeyboardListener`]: {{site.api}}/flutter/widgets/RawKeyboardListener-class.html
 
 ### Mouse enter, exit, and hover
+
+### 鼠标进入、移出和悬停事件
 
 On desktop, it’s common to change the mouse cursor
 to indicate the functionality about the content the
@@ -989,10 +1023,16 @@ mouse is hovering over. For example, you usually see
 a hand cursor when you hover over a button,
 or an `I` cursor when you hover over text.
 
+在桌面平台上，常会在鼠标悬停在内容上时，改变光标以表明不同的功能用途。
+例如，你会在鼠标悬停的按钮上看到手指光标，或是在悬停的文字上看到一个 `I`。
+
 The Material Component set has built-in support
 for your standard button and text cursors.
 To change the cursor from within your own widgets,
 use [`MouseRegion`][]:
+
+Material 系列组件内置了对标准的按钮和文字的光标支持。
+你可以使用 [`MouseRegion`][] 在你自己的 widget 上改变光标。
 
 <!--skip-->
 ```dart
@@ -1004,6 +1044,8 @@ return MouseRegion(
 
 `MouseRegion` is also useful for creating custom
 rollover and hover effects:
+
+`MouseRegion` 对于创建自定义翻转和悬停效果也很有用：
 
 <!--skip-->
 ```dart

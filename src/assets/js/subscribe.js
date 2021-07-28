@@ -981,7 +981,7 @@ var subscribeData = {
                 'required': 'This field is required.'
             },
             'field_type': 'Choice',
-            'initial': 'United States, value=US',
+            'initial': 'China, value=CN',
             'label': 'Country',
             'required': false
         },
@@ -1043,19 +1043,19 @@ var subscribeData = {
             'choices': [
                 [
                     'en-US',
-                    'English'
+                    '英文'
                 ],
                 [
                     'zh',
-                    'Chinese (Simplified)'
+                    '简体中文'
                 ],
                 [
                     'ja',
-                    'Japanese'
+                    '日文'
                 ],
                 [
                     'ko',
-                    'Korean'
+                    '韩文'
                 ]
             ],
             'error_messages': {
@@ -1064,7 +1064,7 @@ var subscribeData = {
                 'required': 'Required'
             },
             'field_type': 'Choice',
-            'initial': 'English, value=en-US',
+            'initial': '简体中文, value=zh',
             'label': 'Receive the newsletter in:',
             'required': true
         },
@@ -1079,7 +1079,7 @@ var subscribeData = {
         }
     },
     'google_analytics_account': 'UA-5436354-2',
-    'url': 'https://services.google.com/fb/submissions/fluttersubscribe/'
+    'url': 'https://services.google.cn/fb/submissions/fluttersubscribe/'
 };
 
 var firstNameEl = document.querySelector('#first-name');

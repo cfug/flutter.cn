@@ -38,7 +38,7 @@ var subscribePreferencesData = {
         }
     },
     'google_analytics_account': 'UA-5436354-2',
-    'url': 'https://services.google.com/fb/submissions/flutterpreferences/'
+    'url': 'https://services.google.cn/fb/submissions/flutterpreferences/'
 };
 
 var emailAddressEl = document.querySelector('#email-address')

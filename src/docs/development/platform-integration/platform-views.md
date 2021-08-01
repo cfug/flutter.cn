@@ -543,7 +543,7 @@ do the following in `native_view_example.dart`:
 
 <!-- skip -->
 ```dart
-import 'package:flutter/widget.dart';
+import 'package:flutter/widgets.dart';
 ```
 </li>
 

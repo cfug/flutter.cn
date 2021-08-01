@@ -518,6 +518,9 @@ leaving only the image. Add the image file to the example:
     as shown above.
   * The pubspec file is also sensitive to white
     space, so use proper indentation.
+  * You might need to restart the running program
+    (either on the simulator or a connected device) for the
+    pubspec changes to take effect.
 {{site.alert.end}}
 
 Now you can reference the image from your code:
@@ -610,6 +613,3 @@ You can add interactivity to this layout by following
 [`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [set up]: /docs/get-started/install
-[hot reload]: /docs/development/tools/hot-reload
-[lib/main.dart]: {{examples}}/layout/lakes/step2/lib/main.dart
-

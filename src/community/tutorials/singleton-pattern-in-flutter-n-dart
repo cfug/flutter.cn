@@ -186,10 +186,10 @@ Text(
 
 ## 拓展阅读
 
-- 图书 [《Flutter 开发之旅从南到北》](https://mp.weixin.qq.com/s/vO8UowK7A99J9aGb2se8cQ)—— 第 2 章、第 9 章
-- 单例模式: c.biancheng.net/view/1338.html
-- Dart 空安全: dart.cn/null-safety
-- 延迟初始化: dart.cn/null-safety/understanding-null-safety#lazy-initialization
+- 图书 [《Flutter 开发之旅从南到北》](https://item.jd.com/12757223.html)—— 第 2 章、第 9 章
+- [单例模式](https://c.biancheng.net/view/1338.html)
+- [Dart 空安全](https://dart.cn/null-safety)
+- [延迟初始化](https://dart.cn/null-safety/understanding-null-safety#lazy-initialization)
 
 ## 关于本系列文章
 

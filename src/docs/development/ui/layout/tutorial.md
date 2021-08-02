@@ -516,11 +516,22 @@ leaving only the image. Add the image file to the example:
   * Note that `pubspec.yaml` is case sensitive,
     so write `assets:` and the image URL
     as shown above.
+
+    请注意，`pubspec.yaml` 区分大小写，
+    因此请编写如上所示的 `assets:` 和图像 URL。
+
   * The pubspec file is also sensitive to white
     space, so use proper indentation.
+
+    pubspec 文件对空格也很敏感，因此请使用适当的缩进。
+
   * You might need to restart the running program
     (either on the simulator or a connected device) for the
     pubspec changes to take effect.
+
+    你可能需要重新启动正在运行的程序（在模拟器或连接的设备上）
+    才能使 pubspec 更改生效。
+
 {{site.alert.end}}
 
 Now you can reference the image from your code:

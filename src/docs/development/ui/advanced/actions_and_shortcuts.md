@@ -1,7 +1,10 @@
 ---
 title: Using Shortcuts and Actions
+title: 使用快捷方式和操作
 description: How to use Actions and Shortcuts in your Flutter app.
+description: 如何在 Flutter 应用程序中使用操作和快捷方式。
 short-title: Shortcuts and Actions
+short-title: 快捷方式和操作
 ---
 
 ## Using Shortcuts and Actions

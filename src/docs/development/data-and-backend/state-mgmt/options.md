@@ -313,9 +313,19 @@ An approach similar to Provider that is compile-safe and testable. It doesn't ha
 * [Getting started with Riverpod][]
 
 ## states_rebuilder
+
+## states_rebuilder
+
 An approach that combines state management with a dependency injection solution
 and an integrated router. For more information, see the following info:
+
+一种将状态管理与依赖注入解决方案和集成路由器相结合的方法。
+更多信息，请参阅以下信息：
+
 * [States Rebuilder][] project code
+  
+  [States Rebuilder][] 项目代码
+  
 * [States Rebuilder Documentation][]
 
 [States Rebuilder]: {{site.github}}/GIfatahTH/states_rebuilder

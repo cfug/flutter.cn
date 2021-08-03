@@ -177,13 +177,13 @@ In the **Identity** section:
 在 **Identity（标识）** 部分：
 
 `App Category`
-: The app category under which your app will be listed on the Mac App Store. This cannot be none.
+<br> The app category under which your app will be listed on the Mac App Store. This cannot be none.
 
 `App Category（应用类别）`
 <br> 你的应用将出现在 Mac App Store 中的哪个类别，此项不能为空。
 
 `Bundle Identifier` 
-: The App ID you registered on App Store Connect.
+<br> The App ID you registered on App Store Connect.
 
 `Bundle Identifier`
 <br> 你在 App Store Connect 注册的应用程序 ID。
@@ -193,7 +193,7 @@ In the **Deployment info** section:
 在 **Deployment info（部署信息）** 部分：
 
 `Deployment Target`
-: The minimum macOS version that your app supports. Flutter supports macOS 10.11 and later.
+<br> The minimum macOS version that your app supports. Flutter supports macOS 10.11 and later.
 
 `Deployment Target（部署目标）`
 <br> 应用程序支持的最低 macOS 版本。Flutter 支持 macOS 10.11 及更高版本。
@@ -204,7 +204,7 @@ In the **Signing & Capabilities** section:
 在 **Signing & Capabilities（签名和功能）** 部分：
 
 `Automatically manage signing`
-: Whether Xcode should automatically manage app signing
+<br> Whether Xcode should automatically manage app signing
   and provisioning.  This is set `true` by default, which should
   be sufficient for most apps. For more complex scenarios,
   see the [Code Signing Guide][codesigning_guide].
@@ -215,7 +215,7 @@ In the **Signing & Capabilities** section:
   更复杂的场景，请参阅 [代码签名指南][codesigning_guide]。
 
 `Team`
-: Select the team associated with your registered Apple Developer
+<br> Select the team associated with your registered Apple Developer
   account. If required, select **Add Account...**,
   then update this setting.
 
@@ -297,12 +297,12 @@ app's icons:
    
    使用 `flutter run -d macos` 运行应用程序，验证图标是否已被替换。
 
-## Create a build archive
+## Create a build archive with Xcode
 
 ## 创建构建存档
 
 This step covers creating a build archive and uploading
-your build to App Store Connect.
+your build to App Store Connect using Xcode.
 
 此步骤包含创建构建存档并将其上传到 App Store Connect。
 
@@ -351,7 +351,8 @@ Finally, create a build archive and upload it to App Store Connect:
 <ol markdown="1">
 <li markdown="1">
 
-Open Xcode and select **Product > Archive**. Run `flutter build macos` to produce a build archive.
+Open Xcode and select **Product > Archive**. Run `flutter build macos` to
+produce a build archive.
 
 打开 Xcode 并选择 **Product（项目）> Archive（存档）**。运行 `flutter build macos` 生成构建存档。
 
@@ -392,7 +393,286 @@ on TestFlight, or go ahead and release your app to the App Store.
 For more details, see
 [Upload an app to App Store Connect][distributionguide_upload].
 
-更多详细信息，请参阅 [将应用程序上传到 App Store Connect][distributionguide_upload]。
+更多详细信息，请参阅 
+[将应用程序上传到 App Store Connect][distributionguide_upload]。
+
+## Create a build archive with Codemagic CLI tools
+
+## 使用 Codemagic 命令行工具创建一个构建归档
+
+This step covers creating a build archive and uploading
+your build to App Store Connect using Flutter build commands 
+and [Codemagic CLI Tools][codemagic_cli_tools] executed in a terminal
+in the Flutter project directory.
+
+下面的步骤，我们会介绍在 Flutter 应用的工程目录下执行
+Flutter 构建命令和 [Codemagic 命令行工具][codemagic_cli_tools]，
+创建一个构建归档并将其上传至 App Store Connect。
+
+<ol markdown="1">
+<li markdown="1">
+
+Install the Codemagic CLI tools:
+
+安装 Codemagic 命令行工具：
+
+```bash
+pip3 install codemagic-cli-tools
+```
+
+</li>
+<li markdown="1">
+
+You'll need to generate an [App Store Connect API Key][appstoreconnect_api_key]
+with App Manager access to automate operations with App Store Connect. To make
+subsequent commands more concise, set the following environment variables from
+the new key: issuer id, key id, and API key file.
+
+你需要生成一个具有 App Manager 访问权限的 App Store Connect API 密钥，
+以方便对 App Store Connect 进行自动化操作。为了使后续的命令更简洁，
+请设置下面的环境变量：发行者 ID、密钥 ID、API 密钥文件：
+
+```bash
+export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
+export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
+```
+
+</li>
+<li markdown="1">
+
+You need to export or create a Mac App Distribution and a Mac Installer
+Distribution certificate to perform code signing and package a build archive.
+
+你需要导出或者创建 Mac App Distribution 和 Mac Installer Distribution 证书，
+以便与执行代码签名以及打包构建归档。
+
+If you have existing [certificates][devportal_certificates], you can export the
+private keys by executing the following command for each certificate:
+
+对于已有的 [证书][devportal_certificates]，你可以选择通过下吗的命令
+来导出私钥：
+
+```bash
+openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
+```
+
+Or you can create a new private key by executing the following command:
+
+或者通过以下命令创建一个新的私钥：
+
+```bash
+ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
+```
+
+Later, you can have CLI tools automatically create a new Mac App Distribution and
+Mac Installer Distribution certificate. You can use the same private key for
+each new certificate.
+
+之后，你可以让命令行工具自动创建新的
+Mac App Distribution 和 Mac Installer Distribution 证书，
+每个新的证书都可以使用相同的私钥。
+
+</li>
+<li markdown="1">
+
+Fetch the code signing files from App Store Connect:
+
+从 App Store Connect 获取需要代码签名的文件：
+
+```bash
+app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
+    --platform MAC_OS \
+    --type MAC_APP_STORE \
+    --certificate-key=@file:/path/to/cert_key \
+    --create
+```
+
+Where `cert_key` is either your exported Mac App Distribution certificate private key
+or a new private key which automatically generates a new certificate.
+
+上面代码里的 `cert_key` 是你已导出的或者新生成的
+Mac App Distribution 证书私钥。
+
+</li>
+<li markdown="1">
+
+If you do not have a Mac Installer Distribution certificate,
+you can create a new certificate by executing the following:
+
+如果你还没有 Mac Installer Distribution 证书，
+通过执行下面的命令行可以生成一个：
+
+```bash
+app-store-connect create-certificate \
+    --type MAC_INSTALLER_DISTRIBUTION \
+    --certificate-key=@file:/path/to/cert_key \
+    --save
+```
+
+Use `cert_key` of the private key you created earlier.
+
+使用你之前创建的私钥的 `cert_key`。
+
+</li>
+<li markdown="1">
+
+Fetch the Mac Installer Distribution certificates:
+
+获取 Mac 安装程序分发证书：
+
+```bash
+app-store-connect list-certificates \
+    --type MAC_INSTALLER_DISTRIBUTION \
+    --certificate-key=@file:/path/to/cert_key \
+    --save
+```
+
+</li>
+<li markdown="1">
+
+Set up a new temporary keychain to be used for code signing:
+
+设置用于代码签名的新临时钥匙串：
+
+```bash
+keychain initialize
+```
+
+{{site.alert.secondary}}
+  **Restore Login Keychain!**
+  After running `keychain initialize` you **must** run the following:<br>
+
+  **恢复登录钥匙串！**
+   运行 `keychain initialize` 后，你 **必须** 运行以下命令：<br>
+
+  `keychain use-login`
+
+  This sets your login keychain as the default to avoid potential
+  authentication issues with apps on your machine.
+
+  这会将你的登录钥匙串设置为默认值，
+  以避免你机器上的应用程序出现潜在的身份验证问题。
+
+{{site.alert.end}}
+
+</li>
+<li markdown="1">
+
+Now add the fetched certificates to your keychain:
+
+现在将获取的证书添加到你的钥匙串中：
+
+```bash
+keychain add-certificates
+```
+
+</li>
+<li markdown="1">
+
+Update the Xcode project settings to use fetched code signing profiles:
+
+更新 Xcode 项目设置以使用获取的代码签名配置文件：
+
+```bash
+xcode-project use-profiles
+```
+
+</li>
+
+<li markdown="1">
+
+Install Flutter dependencies:
+
+安装 Flutter 依赖项：
+
+```bash
+flutter packages pub get
+```
+
+</li>
+<li markdown="1">
+
+Install CocoaPods dependencies:
+
+安装 CocoaPods 依赖项：
+
+```bash
+find . -name "Podfile" -execdir pod install \;
+```
+
+</li>
+<li markdown="1">
+
+Enable the Flutter macOS option:
+
+启用 Flutter macOS 选项：
+
+```bash
+flutter config --enable-macos-desktop
+```
+
+</li>
+<li markdown="1">
+
+Build the Flutter macOS project:
+
+构建 Flutter macOS 项目：
+
+```bash
+flutter build macos --release
+```
+
+</li>
+<li markdown="1">
+
+Package the app:
+
+打包应用程序：
+
+```bash
+APP_NAME=$(find $(pwd) -name "*.app")
+PACKAGE_NAME=$(basename "$APP_NAME" .app).pkg
+xcrun productbuild --component "$APP_NAME" /Applications/ unsigned.pkg
+
+INSTALLER_CERT_NAME=$(keychain list-certificates \
+          | jq '.[0]
+            | select(.common_name
+            | contains("Mac Developer Installer"))
+            | .common_name' \
+          | xargs)
+xcrun productsign --sign "$INSTALLER_CERT_NAME" unsigned.pkg "$PACKAGE_NAME"
+rm -f unsigned.pkg 
+```
+
+</li>
+<li markdown="1">
+
+Publish the packaged app to App Store Connect:
+
+将打包的应用发布到 App Store Connect：
+
+```bash
+app-store-connect publish \
+    --path "$PACKAGE_NAME"
+```
+
+</li>
+<li markdown="1">
+
+As mentioned earlier, don't forget to set your login keychain
+as the default to avoid authentication issues
+with apps on your machine:
+
+如前所述，不要忘记将你的登录钥匙串设置为默认设置，
+以避免你机器上的应用程序出现身份验证问题：
+
+```bash
+keychain use-login
+```
+
+</li>
+</ol>
 
 ## Distribute to registered devices
 
@@ -463,12 +743,15 @@ detailed overview of the process of releasing an app to the App Store.
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: https://developer.apple.com/app-store/submissions/
 [appstoreconnect]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_api_key]: https://appstoreconnect.apple.com/access/api
 [appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
 [appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
 [appstoreconnect_login]: https://appstoreconnect.apple.com/
+[codemagic_cli_tools]: https://github.com/codemagic-ci-cd/cli-tools
 [codesigning_guide]: https://developer.apple.com/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [Core Foundation Keys]: https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 [devportal_appids]: https://developer.apple.com/account/ios/identifier/bundle
+[devportal_certificates]: https://developer.apple.com/account/resources/certificates
 [devprogram]: https://developer.apple.com/programs/
 [devprogram_membership]: https://developer.apple.com/support/compare-memberships/
 [distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57

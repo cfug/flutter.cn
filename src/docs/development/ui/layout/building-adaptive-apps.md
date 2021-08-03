@@ -1062,6 +1062,8 @@ return MouseRegion(
 
 ## Idioms and norms
 
+## 平台行为习惯与规范
+
 The final area to consider for adaptive apps is platform standards.
 Each platform has its own idioms and norms;
 these nominal or de facto standards inform user expectations
@@ -1070,10 +1072,19 @@ users are accustomed to more customized experiences,
 but reflecting these platform standards can still provide
 significant benefits:
 
+最后，我们需要为自适应应用考虑平台标准。
+每个平台都有其不同的行为习惯与规范，
+这些名义和事实上的标准将 App 会如何行为告知了用户。
+在当下网络如此便利的时代，用户更倾向于更加个性化的体验，
+但是提供这些平台标注，依然可以带来一些显著的好处：
+
 * **Reduce cognitive load**&mdash;By matching the user's
   existing mental model, accomplishing tasks becomes intuitive,
   which requires less thinking,
   boosts productivity, and reduces frustrations.
+
+  **减少认知学习成本**&mdash;&mdash;与用户期望的交互进行匹配，
+  让用户更直接地完成操作，而无需过多地思考，从而提高生产力，减少其中的顿挫感。
 
 * **Build trust**&mdash;Users can become wary or suspicious
   when applications don't adhere to their expectations.
@@ -1082,7 +1093,14 @@ significant benefits:
   This often has the added benefit of better app store
   ratings&mdash;something we can all appreciate! 
 
+  **建立与用户之间的信任**&mdash;&mdash;在应用的交互表现不如预期时，
+  用户会逐渐对应用本身产生怀疑。相反，使用让用户感到熟悉的 UI，
+  可以快速地建立应用与用户之间的信任，让用户提高对应用质量的评价。
+  同时这也会让应用商店的评级更为可观&mdash;&mdash;皆大欢喜。
+
 ### Consider expected behavior on each platform
+
+### 考虑每个平台的预期交互行为
 
 The first step is to spend some time considering what
 the expected appearance, presentation, or behavior is on this platform.
@@ -1090,10 +1108,16 @@ Try to forget any limitations of your current implementation,
 and just envision the ideal user experience.
 Work backwards from there.
 
+考虑的第一步，是花一些时间思考应用在这个平台上期望的外观、表现或者行为。
+在考虑时，你要将已经实现的功能的限制抛诸脑后，仅针对理想的用户体验进行逆向思考。
+
 Another way to think about this is to ask,
 "How would a user of this platform expect to achieve this goal?"
 Then, try to envision how that would work in your app
 without any compromises.
+
+另一种思考方式，是向自己提问：「该平台的用户要想完成这个操作，需要什么样的交互？」
+接着开始设想如何在应用内正常且无妥协地实现它。
 
 This can be difficult if you aren’t a regular user of the platform.
 You might be unaware of the specific idioms and can easily miss
@@ -1103,7 +1127,16 @@ and the same holds true for macOS, Linux, and Windows.
 These differences might be subtle to you,
 but be painfully obvious to an experienced user. 
 
+如果你本身不是这个平台的常用用户，这项工作就有一定的难度。
+某些特定的行为和习惯，很容易会被你完全忽略。
+例如，一位一直使用 Android 的用户很有可能不清楚 iOS 平台的约定，
+同样还有 macOS、Linux 和 Windows。
+对于身为开发者的你来说，这些差异可能微乎其微，
+但对于有经验的用户来说是显而易见的。
+
 #### Find a platform advocate
+
+#### 寻找一位平台的实际用户（倡导者）
 
 If possible, assign someone as an advocate for each platform.
 Ideally, your advocate uses the platform as their primary device,
@@ -1111,6 +1144,11 @@ and can offer the perspective of a highly opinionated user.
 To reduce the number of people, combine roles.
 Have one advocate for Windows and Android,
 one for Linux and the web, and one for Mac and iOS.
+
+最好为每一种适配平台指定一位倡导者。
+理想情况下，这些倡导者以他们熟悉的平台为主，提供他们平台特有的看法和意见。
+若想减少人数，可以有一位支持 Windows 和 Android，
+一位支持 Linux 和 Web，一位支持 Mac 和 iOS。
 
 The goal is to have constant, informed feedback so the app
 feels great on each platform. Advocates should be encouraged
@@ -1121,14 +1159,26 @@ and Linux, but is on the right on Windows.
 Details like that are easy to miss if you aren't using a platform
 on a regular basis.
 
+这样做的目的是为了得到持续且有效的反馈，让应用在每个平台上都能表现良好。
+倡议者应该以挑剔的角度对平台实现进行把关。一个非常简单的例子是在对话框里，
+对话框本身按钮的默认位置在 Mac 和 Linux 上通常位于左侧，而在 Windows 上位于右侧。
+如果你不是平台的常用用户，通常会错过这样的细节。
+
 {{site.alert.secondary}}
+
   **Important**: Advocates don’t need to be developers or
   even full-time team members. They can be designers,
   stakeholders, or external testers that are provided
   with regular builds. 
+
+  **重要**：倡导者不需要是开发者或者一直在开发的团队成员，
+  可以是设计师、利益相关的人士或是外部的版本定期测试人员。
+
 {{site.alert.end}}
 
 #### Stay unique
+
+#### 保持应用的独特
 
 Conforming to expected behaviors doesn't mean that your app
 needs to use default components or styling.
@@ -1136,18 +1186,31 @@ Many of the most popular multiplatform apps have very distinct
 and opinionated UIs including custom buttons, context menus,
 and title bars.
 
+应用并不一定需要默认的组件或样式来保证其符合期望的行为。
+许多非常流行的多平台应用都有自成一派的 UI，包括自定义按钮、选项菜单和标题栏等。
+
 The more you can consolidate styling and behavior across platforms,
 the easier development and testing will be. 
 The trick is to balance creating a unique experience with a
 strong identity, while respecting the norms of each platform.
 
+跨平台样式内容越多，开发和测试就越轻松。
+在构建你的用户体验时，要注意平衡对它们的选择，同时还要尊重各个平台的规范。
+
 ### Common idioms and norms to consider
+
+### 需要考虑的常见平台行为习惯与规范
 
 Take a quick look at a few specific norms and idioms
 you might want to consider, and how you could approach
 them in Flutter.
 
+让我们来快速浏览一下你可能需要考虑的规范和习惯，
+了解一下在 Flutter 中如何实现它们。
+
 #### Scrollbar appearance and behavior
+
+#### 滚动条的外观和行为
 
 Desktop and mobile users expect scrollbars,
 but they expect them to behave differently on different platforms.
@@ -1155,10 +1218,18 @@ Mobile users expect smaller scrollbars that only appear
 while scrolling, whereas desktop users generally expect
 omnipresent, larger scrollbars that they can click or drag. 
 
+无论是桌面端还是移动端的用户，都需要滚动条，
+但他们对不同平台所期待的行为是不一样的。
+移动端的用户希望滚动条小一些，只在滚动时出现，
+而桌面端的用户一般想要更大且一直显示的滚动条，同时可以点击和拖动。
+
 Flutter comes with a built-in `Scrollbar` widget that already
 has support for adaptive colors and sizes according to the
 current platform. The one tweak you might want to make is to
 toggle `alwaysShown` when on a desktop platform:
+
+Flutter 内置了 `Scrollbar` widget，会根据当前所在的平台自适应颜色和大小。
+你可能会需要调整 `alwaysShown` 以在桌面平台上一直显示滚动条：
 
 <!--skip-->
 ```dart
@@ -1172,10 +1243,16 @@ return Scrollbar(
 This subtle attention to detail can make your app feel more
 comfortable on a given platform.
 
+对这些细节的把握，可以让你的应用在对应平台上体验更为良好。
+
 #### Multi-select
+
+#### 多选
 
 Dealing with multi-select within a list is another area
 with subtle differences across platforms: 
+
+跨平台的另一个存在差异的地方，是如何处理列表中的多选：
 
 <!--skip-->
 ```dart
@@ -1185,6 +1262,8 @@ static bool get isSpanSelectModifierDown
 
 To perform a platform-aware check for control or command,
 you can write something like this: 
+
+要想监测不同平台的 Control 或 Command 键，你可以编写以下的代码：
 
 <!--skip-->
 ```dart
@@ -1204,7 +1283,13 @@ If you have a large list of items of selectable items,
 many of your keyboard users will expect that they can use
 `Control+A` to select all the items. 
 
+最后一项针对键盘用户需要考虑的是 **全选** 操作。
+如果你的列表里有很多的可选择内容，
+可能你的许多用户也会希望能使用 `Control+A` 选中所有内容。
+
 ##### Touch devices
+
+##### 触屏设备
 
 On touch devices, multi-selection is typically simplified,
 with the expected behavior being similar to having the
@@ -1213,19 +1298,32 @@ You can select or deselect items using a single tap,
 and will usually have a button to **Select All** or
 **Clear** the current selection. 
 
+在触屏设备上，多选操作通常会被简化，
+与在桌面上按下了 `isMultiSelectModifier`（多选按钮）的行为类似。
+
 How you handle multi-selection on different devices depends
 on your specific use cases, but the important thing is to
 make sure that you're offering each platform the best
 interaction model possible.
 
+在不同设备上处理多选操作，取决于你的用例是否有区分，
+但更重要的是为各个平台提供最好的交互模式。
+
 #### Selectable text
+
+#### 可选中的文字
 
 A common expectation on the web (and to a lesser extent desktop)
 is that most visible text can be selected with the mouse cursor.
 When text is not selectable,
 users on the web tend to have an adverse reaction.
 
+对于 Web 平台（以及小部分的桌面平台）而言，大部分能看到的文字都是可以使用鼠标选择的。
+如果不能选择，用户可能会感到不正常。
+
 Luckily, this is easy to support with the [`SelectableText`][] widget: 
+
+幸运的是，使用 [`SelectableText`][] 就可以很简单地支持选择：
 
 <!--skip-->
 ```dart
@@ -1233,6 +1331,8 @@ return SelectableText('Select me!');
 ```
 
 To support rich text, then use `TextSpan`: 
+
+可以用 `TextSpan` 支持富文本：
 
 <!--skip-->
 ```dart
@@ -1246,36 +1346,54 @@ return SelectableText.rich(TextSpan(children: [
 
 #### Title bars
 
+#### 标题栏
+
 On modern desktop applications, it’s common to customize
 the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
 vertical space in your main UI. 
- 
+
+在当代桌面应用中，经常会有定制应用窗口的标题栏、添加 Logo 或者其他控制的需求，
+能节省界面对于垂直空间的占用。
+
 ![Samples of title bars]({% asset development/ui/layout/titlebar.png @path %})
 
 This isn't supported directly in Flutter, but you can use the
 [`bits_dojo`][] package to disable the native title bars,
 and replace them with your own.
 
+Flutter 并没有内置这样的支持，但是你可以使用 [`bits_dojo`][] package
+禁用标题栏，并且替换成自己的。
+
 This package lets you add whatever widgets you want to the
 `TitleBar` because it uses pure Flutter widgets under the hood.
 This makes it easy to adapt the title bar as you navigate
 to different sections of the app.
 
+你可以利用这个 package 将任意 widget 应用在标题栏上，
+因为它是基于 Flutter 的 widget 进行设置的。
+如此一来，当你在应用内各个地方浏览时，标题栏都能以非常便捷的方式进行适配。
+
 [`bits_dojo`]: {{site.github}}/bitsdojo/bitsdojo_window
 
 #### Context menus and tooltips
+
+#### 上下文菜单和提示
 
 On desktop, there are several interactions that
 manifest as a widget shown in an overlay,
 but with differences in how they’re triggered, dismissed,
 and positioned:
 
+在桌面平台上，通常有几种在叠加层中显示的交互组件，它们各自有不同的触发、关闭和定位方式：
+
 * **Context menu**&mdash;Typically triggered by a right-click,
   a context menu is positioned close to the mouse,
   and is dismissed by clicking anywhere,
   selecting an option from the menu, or clicking outside it.
 
+  **上下文菜单**&mdash;&mdash;通常在右键单击时显示，上下文菜单会显示在鼠标点击位置的附近，
+  可以点击任意位置关闭、点击选项关闭或点击外部区域关闭。
 
 * **Tooltip**&mdash;Typically triggered by hovering for
   200-400ms over an interactive element,
@@ -1283,6 +1401,8 @@ and positioned:
   (as opposed to the mouse position) and is dismissed
   when the mouse cursor leaves that widget.
 
+  **提示**&mdash;&mdash;提示通常会在交互元素上悬停 200-400 毫秒后出现，
+  一般会锚定在 widget 上（与鼠标位置相反），并在鼠标移出元素后消失。
 
 * **Popup panel (also known as flyout)**&mdash;Similar to a tooltip,
   a popup panel is usually anchored to a widget.
@@ -1291,9 +1411,16 @@ and positioned:
   themselves when the cursor leaves.
   Instead, panels are typically dismissed by clicking
   outside the panel or by pressing a **Close** or **Submit** button.
- 
+
+  **悬浮面板（浮出控件）**&mdash;&mdash;悬浮面板与提示类似，通常会锚定在 widget 上。
+  它与提示的区别是一般会在点击事件触发时显示，并且在鼠标移出时不会自动消失。
+  通常来说，点击外部区域或者 **关闭** 或 **提交** 按钮时会关闭悬浮面板。
+
 To show basic tooltips in Flutter,
 use the built-in [`Tooltip`][] widget:
+
+若你想在 Flutter 中显示一个简单的提示，
+你可以使用 [`Tooltip`][] widget：
 
 <!--skip-->
 ```dart
@@ -1306,12 +1433,19 @@ return const Tooltip(
 Flutter also provides built-in context menus when editing
 or selecting text. 
 
+Flutter 同时也为编辑和选择文字提供了内置的上下文菜单。
+
 To show more advanced tooltips, popup panels,
 or create custom context menus,
 you either use one of the available packages,
 or build it yourself using a `Stack` or `Overlay`.
 
+若你想显示更高级的提示、悬浮面板或自定义的上下文菜单，
+你可以使用已有的 package，或利用 `Stack` 和 `Overlay` 进行构建。
+
 Some available packages include: 
+
+可以使用的 package 包括：
 
 * [`context_menus`][]
 * [`anchored_popups`][]
@@ -1326,6 +1460,9 @@ and hover for more information. Failing to meet those expectations
 can lead to disappointed users, or at least,
 a feeling that something isn’t quite right.
 
+尽管这些控制对于触控用户来说只是一种增强，但对于桌面用户而言，它们是必不可少的。
+桌面用户会期望能够右键点击其中一些内容，当场进行编辑，悬浮时查看更多信息。
+若你的应用并不包含这类交互，相关的用户群体可能会感到有些失望，或是认为某些地方不合理。
 
 [`anchored_popups`]: {{site.pub}}/packages/anchored_popups
 [`context_menus`]: {{site.pub}}/packages/context_menus
@@ -1336,14 +1473,21 @@ a feeling that something isn’t quite right.
 
 #### Horizontal button order
 
+#### 按钮的水平排列
+
 On Windows, when presenting a row of buttons,
 the confirmation button is placed at the start of
 the row (left side). On all other platforms,
 it’s the opposite. The confirmation button is
 placed at the end of the row (right side). 
 
+在 Windows 上展示一行按钮时，确认按钮会在一行的起始位置（左侧）。
+而在其他平台上，则是完全相反的，确认按钮显示在末尾位置（右侧）。
+
 This can be easily handled in Flutter using the
 `TextDirection` property on `Row`: 
+
+在 Flutter 里你可以很轻松地修改 `Row` 的 `TextDirection` 来达到这个效果：
 
 <!--skip-->
 ```dart
@@ -1368,13 +1512,22 @@ return Row(
 
 #### Menu bar
 
+#### 菜单栏
+
 Another common pattern on desktop apps is the menu bar.
 On Windows and Linux, this menu lives as part of the Chrome title bar,
 whereas on macOS, it’s located along the top of the primary screen. 
 
+桌面平台有另一种常见的内容：菜单栏。
+在 Windows 和 Linux 上，Chrome 的菜单栏整合在标题栏内，
+而在 macOS 上，菜单栏在主屏幕的顶部。
+
 Currently, you can specify custom menu bar entries using
 a prototype plugin, but it’s expected that this functionality will
 eventually be integrated into the main SDK.
+
+目前你可以使用一个原型插件来指定菜单栏的入口，
+我们希望这个功能最终能合并到 SDK 中。
 
 It’s worth mentioning that on Windows and Linux,
 you can’t combine a custom title bar with a menu bar.
@@ -1382,11 +1535,20 @@ When you create a custom title bar,
 you’re replacing the native one completely,
 which means you also lose the integrated native menu bar.
 
+值得一提的是，在 Windows 和 Linux 上，你无法将自定义的标题栏与菜单栏整合在一起。
+在构建自定义的标题栏时，实际上是替换了整个原生的标题栏，
+意味着你也同时失去了原生的菜单栏。
+
 If you need both a custom title bar and a menu bar,
 you can achieve that by implementing it in Flutter,
 similar to a custom context menu.
 
+如果你同时需要自定义的标题栏和菜单栏，
+你可以使用 Flutter 进行实现，类似于自定义的上下文菜单。
+
 #### Drag and drop
+
+#### 拖放（拖动和放置）
 
 One of the core interactions for both touch-based and
 pointer-based inputs is drag and drop. Although this
@@ -1394,11 +1556,19 @@ interaction is expected for both types of input,
 there are important differences to think about when
 it comes to scrolling lists of draggable items.
 
+拖放是基于触摸和指针的交互的一项核心。
+虽然这两种交互类型都需要拖放，但是在滑动整个包含可拖拽元素的列表时，
+仍然需要考虑其中的差异。
+
 Generally speaking, touch users expect to see drag handles
 to differentiate draggable areas from scrollable ones,
 or alternatively, to initiate a drag by using a long
 press gesture. This is because scrolling and dragging
 are both sharing a single finger for input.
+
+一般来说，触屏用户希望看到拖动的手柄，以区分拖动和滚动的范围，
+或者通过长按操作来进行拖动。
+这是由于滑动和拖动操作都是由一个触摸点完成的。
 
 Mouse users have more input options. They can use a wheel
 or scrollbar to scroll, which generally eliminates the need
@@ -1406,19 +1576,32 @@ for dedicated drag handles. If you look at the macOS
 Finder or Windows Explorer, you’ll see that they work
 this way: you just select an item and start dragging.
 
+鼠标用户有着不止一种输入方式。他们可以使用滚轮和滑动条进行滑动，
+这样便不再专门需要操作手柄进行指示操作。
+如果你使用过 macOS 的访达和 Windows 的资源管理器，
+你会看到它们在选中一个元素后，就可以开始拖动。
+
 In Flutter, you can implement drag and drop in many
 different ways. Discussing specific implementations
 is outside the scope of this article, but some of
 the high level options are: 
 
+在 Flutter 中，你可以用多种方式实现拖放。
+但是我们不在本篇文章中讨论这个话题，以下是一些更高级的选项：
+
 * Use the [`Draggable`][] and [`DragTarget`][] APIs
   directly for a custom look and feel.
+
+  使用 [`Draggable`][] 和 [`DragTarget`][] API 定制界面和交互。
 
 * Hook into `onPan` gesture events,
   and move an object yourself within a parent `Stack`.
 
+  监听 `onPan` 手势事件，利用 `Stack` 移动对象。
+
 * Use one of the [premade list packages][] on pub.dev.  
 
+  使用 pub.dev 上一些 [预先实现的 package][premade list packages]。
 
 [`Draggable`]: {{site.api}}/flutter/widgets/Draggable-class.html
 [`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html
@@ -1426,26 +1609,55 @@ the high level options are:
 
 ### Educate yourself on basic usability principles
 
+### 自身做到熟悉基本的可用性原则
+
 Of course, this page doesn’t constitute an exhaustive list
 of the things you might consider. The more operating systems,
 form factors, and input devices you support,
 the more difficult it becomes to spec out every permutation in design. 
+
+当然，这篇文章并不代表你仅需要考虑这些内容。
+针对平台设计的规范，会随着你适配的平台、设备外形和输入设备数量的增加而变得更为复杂。
 
 Taking time to learn basic usability principles as a
 developer empowers you to make better decisions,
 reduces back-and-forth iterations with design during production,
 and results in improved productivity with better outcomes.
 
+作为开发人员，你应当花一些时间学习基本的可用性原则，帮助你做出更好的决策，
+减少由设计细节带来的返工时间消耗，从而提升自己的生产力，产出更好的结果。
+
 Here are some resources to get you started: 
 
+你可以从下列的资源开始学习：
+
 * [Material guidelines on responsive UI layout][]
+
+  [Material 响应式界面布局指南][Material guidelines on responsive UI layout]
+
 * [Material design for large screens][]
+
+  [大屏设备的 Material Design][Material design for large screens]
+
 * [Build high quality apps (Android)][]
+
+  [构建高质量的应用 (Android)][Build high quality apps (Android)]
+
 * [UI design do's and don'ts (Apple)][]
+
+  [UI 设计的注意事项 (Apple)][UI design do's and don'ts (Apple)]
+
 * [Human interface guidelines (Apple)][]
+
+  [人机界面指南 (Apple)][Human interface guidelines (Apple)]
+
 * [Responsive design techniques (Microsoft)][]
+
+  [响应式设计技术 (Microsoft)][Responsive design techniques (Microsoft)]
+
 * [Machine sizes and breakpoints (Microsoft)][]
 
+  [屏幕大小和断点][Machine sizes and breakpoints (Microsoft)]
 
 [Build high quality apps (Android)]: {{site.android-dev}}/quality
 [Human interface guidelines (Apple)]: {{site.apple-dev}}/design/human-interface-guidelines/

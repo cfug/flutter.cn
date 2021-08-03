@@ -15,7 +15,7 @@ next:
   path: /docs/cookbook/persistence/key-value
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/persistence/reading_writing_files/"?>
+<?code-excerpt path-base="cookbook/persistence/reading_writing_files/"?>
 
 In some cases, you need to read and write files to disk.
 For example, you may need to persist data across app launches,
@@ -278,9 +278,9 @@ class CounterStorage {
 }
 
 class FlutterDemo extends StatefulWidget {
-  final CounterStorage storage;
+  const FlutterDemo({Key? key, required this.storage}) : super(key: key);
 
-  FlutterDemo({Key? key, required this.storage}) : super(key: key);
+  final CounterStorage storage;
 
   @override
   _FlutterDemoState createState() => _FlutterDemoState();
@@ -311,7 +311,9 @@ class _FlutterDemoState extends State<FlutterDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Reading and Writing Files')),
+      appBar: AppBar(
+        title: const Text('Reading and Writing Files'),
+      ),
       body: Center(
         child: Text(
           'Button tapped $_counter time${_counter == 1 ? '' : 's'}.',
@@ -320,7 +322,7 @@ class _FlutterDemoState extends State<FlutterDemo> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

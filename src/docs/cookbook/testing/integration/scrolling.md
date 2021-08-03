@@ -15,7 +15,7 @@ next:
   path: /docs/cookbook/testing/integration/profiling
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/testing/integration/scrolling/"?>
+<?code-excerpt path-base="cookbook/testing/integration/scrolling/"?>
 
 {{site.alert.note}}
 
@@ -153,7 +153,6 @@ in a file called `test_driver/app.dart`.
 
 <?code-excerpt "test_driver/app.dart"?>
 ```dart
-
 import 'package:flutter_driver/driver_extension.dart';
 import 'package:scrolling/main.dart' as app;
 
@@ -244,7 +243,6 @@ file called `test_driver/app_test.dart`.
 
 <?code-excerpt "test_driver/app_test.dart"?>
 ```dart
-
 // Imports the Flutter Driver API.
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';

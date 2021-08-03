@@ -237,6 +237,17 @@ you can view the output by selecting the red icon:
 See the [Firebase Test Lab section of the README][]
 for instructions on uploading the APKs from the command line.
 
+### Uploading XCode tests
+
+See the [Firebase TestLab iOS instructions][]
+for details on how to upload the .zip file
+to the Firebase TestLab section of the Firebase Console.
+
+### Uploading XCode tests from the command line
+See the [iOS Device Testing][] section in the README
+for instructions on how to upload the .zip file
+from the command line.
+
 ## Migrating from flutter_driver
 
 To migrate from flutter_driver,
@@ -257,7 +268,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('end-to-end test', () {
-    FlutterDriver driver;
+    late FlutterDriver driver;
 
     setUpAll(() async {
       // Connect to a running Flutter application instance.
@@ -265,7 +276,7 @@ void main() {
     });
 
     tearDownAll(() async {
-      if (driver != null) driver.close();
+      driver.close();
     });
 
     test('tap on the floating action button; verify counter', () async {
@@ -327,6 +338,7 @@ equivalent methods.
 [Firebase Console]: http://console.firebase.google.com/
 [Firebase Test Lab]: https://firebase.google.com/docs/test-lab
 [Firebase Test Lab section of the README]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#firebase-test-lab
+[Firebase TestLab iOS instructions]: https://firebase.google.com/docs/test-lab/ios/firebase-console
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [`integration_test`]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#integration_test
 [integration_test usage]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#usage

@@ -1,5 +1,7 @@
 ---
+title: Desktop support for Flutter
 title: Flutter 桌面支持
+description: Announcing the alpha release of Flutter for desktop.
 description: 发布 Flutter 桌面的 Alpha 版本。
 toc: true
 tags: 文档
@@ -182,29 +184,10 @@ you need the following in addition to the Flutter SDK:
 要开发 Linux 桌面程序，除了 Flutter SDK，您还需要做以下准备:
 
 * [Clang][]
-
-  [Clang][]
-
 * [CMake][]
-
-  [CMake][]
-
 * [GTK development headers][]
-
-  [GTK development headers][]
-
 * [Ninja build][]
-
-  [Ninja build][]
-
 * [pkg-config][]
-
-  [pkg-config][]
-
-* libblkid
-* liblzma
-
-  libblkid
 
 The easiest way to install the Flutter SDK along with these
 dependencies is by using [snapd][].
@@ -587,9 +570,9 @@ $ flutter build macos
 $ flutter build linux
 ```
 
-### Distribution
+## Distribution
 
-### 发布
+## 发布
 
 **We don't recommend releasing a desktop
 application until desktop support is stable,**
@@ -599,7 +582,7 @@ might still find useful.
 **一般来说，在桌面支持稳定之前，我们不建议发布桌面应用。**
 不过，这里还有一些内容，可以帮助您在其他机器上使用当前构建进行测试。
 
-#### Windows
+### Windows
 
 There are various approaches you can use for
 distributing your Windows application.
@@ -747,9 +730,9 @@ self-signed `.pfx` certificate.
       
 [OpenSSL]: https://slproweb.com/products/Win32OpenSSL.html
 
-##### Building your own zip file for Windows
+#### Building your own zip file for Windows
 
-##### 为 Windows 平台构建压缩包文件
+#### 为 Windows 平台构建压缩包文件
 
 The Flutter executable, `.exe`, can be found in your
 project under `build\windows\runner\<build mode>\`.
@@ -781,16 +764,8 @@ In addition to that executable, you need the following:
   如果您使用 `application-local` 选项, 需要拷贝:
 
     * `msvcp140.dll`
-
-      `msvcp140.dll`
-
     * `vcruntime140.dll`
-
-      `vcruntime140.dll`
-
     * `vcruntime140_1.dll`
-
-      `vcruntime140_1.dll`
   
   These 3 files can be found in C:\Windows\System32 if installed on your PC.
   Place the DLL files in the directory next to the executable
@@ -934,9 +909,9 @@ to the [Snap Store][], see
 [Build and release a Linux application to the Snap Store][].
 
 有关向 [Snap Store][] 发布 Linux 应用，请参见 
-[构建发布一个 Linux桌面程序][Build and release a Linux application to the Snap Store]。
+[构建发布一个 Linux 桌面程序][Build and release a Linux application to the Snap Store]。
 
-As the tooling solidifies, stay tuned for updates 
+As the tooling solidifies, stay tuned for updates
 on other ways to distribute a Linux desktop app.
 
 这些工具将不断进行完善，欢迎您持续关注 Linux 桌面应用的其他方式的更新信息。
@@ -971,7 +946,7 @@ the platform(s) you want to add.
 
 ## 针对 macOS 的支持
 
-The following information applies only to 
+The following information applies only to
 macOS development.
 
 以下信息仅适用于 macOS 开发。
@@ -1276,9 +1251,9 @@ about endorsed plugins, see the following resources:
 [How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
 
-## Samples and codelabs
+## Codelabs and further documentation
 
-## 示例和 codelabs
+## Codelab 和 Flutter 文档
 
 [Write a Flutter desktop application][]
 : A codelab that walks you through building
@@ -1286,7 +1261,21 @@ a desktop application that integrates the GitHub
 GraphQL API with your Flutter app.
 
 [写一个 Flutter 桌面程序][Write a Flutter desktop application]
-：这个 codelab 会引导您通过使用 Flutter，来构建一个集成 GitHub GraphQL API 的桌面应用。
+<br>这个 codelab 会引导您通过使用 Flutter，
+来构建一个集成 GitHub GraphQL API 的桌面应用。
+
+[Creating responsive and adaptive apps][]
+: Learn how to create layouts that are _responsive_ and _adaptive_
+so that they can span the needs of multiple platforms,
+such as both mobile and desktop screens.
+
+[构建自适应的应用][Creating responsive and adaptive apps]
+<br>学习如何构建 **响应式** 且 **自适应** 的布局，
+从而同时满足多个平台的需求，例如移动端和桌面端。
+
+## Samples
+
+## 示例
 
 You can run the following samples as desktop apps,
 as well as download and inspect the source code to
@@ -1296,7 +1285,7 @@ learn more about Flutter desktop support.
 以了解更多关于 Flutter 桌面支持的信息。
 
 Flutter Gallery [running web app][], [repo][flutter-gallery-repo]
-<br> A samples project hosted on GitHub to help developers
+: A samples project hosted on GitHub to help developers
   evaluate and use Flutter. The Gallery consists of a
   collection of Material design widgets, behaviors,
   and vignettes implemented with Flutter.
@@ -1310,7 +1299,7 @@ Flutter Gallery [线上运行的 Web 应用][flutter gallery cn]，[源代码仓
   你可以克隆该项目，并按照 [README][] 中的说明，将 Gallery 作为桌面应用程序运行。
 
 Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-repo]
-<br> A Google contacts manager that integrates with GitHub and Twitter. 
+: A Google contacts manager that integrates with GitHub and Twitter. 
   It syncs with your Google account, imports your contacts,
   and allows you to manage them.
 
@@ -1339,3 +1328,4 @@ Flokk [官宣文章][gskinner-flokk-blogpost], [源代码仓库地址][gskinner-
 [running web app]: https://flutter.github.io/gallery/#/
 [flutter gallery cn]: https://gallery.flutter.cn/#/
 [Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html
+[Creating responsive and adaptive apps]: /docs/development/ui/layout/building-adaptive-apps

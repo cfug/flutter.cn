@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/navigate_with_arguments"?>
+<?code-excerpt path-base="cookbook/navigation/navigate_with_arguments"?>
 
 The [`Navigator`][] provides the ability to navigate
 to a named route from any part of an app using
@@ -116,6 +116,8 @@ This method returns the current route with the arguments.
 // A Widget that extracts the necessary arguments from
 // the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
+  const ExtractArgumentsScreen({Key? key}) : super(key: key);
+
   static const routeName = '/extractArguments';
 
   @override
@@ -153,7 +155,8 @@ RegEx removes the return statement and adds the closing parenthesis at the end
 ```dart
 MaterialApp(
   routes: {
-    ExtractArgumentsScreen.routeName: (context) => ExtractArgumentsScreen(),
+    ExtractArgumentsScreen.routeName: (context) =>
+        const ExtractArgumentsScreen(),
   },
 )
 ```
@@ -193,7 +196,7 @@ ElevatedButton(
       ),
     );
   },
-  child: Text('Navigate to screen that extracts arguments'),
+  child: const Text('Navigate to screen that extracts arguments'),
 ),
 ```
 
@@ -219,6 +222,7 @@ RegEx removes the return statement, removed "routes" property and adds the closi
 <?code-excerpt "lib/main.dart (OnGenerateRoute)" replace="/^return //g;/  routes:((.)*\n){3}//g;/$/\n)/g"?>
 ```dart
 MaterialApp(
+  },
   // Provide a function to handle named routes.
   // Use this function to identify the named
   // route being pushed, and create the correct
@@ -263,14 +267,17 @@ MaterialApp(
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        ExtractArgumentsScreen.routeName: (context) => ExtractArgumentsScreen(),
+        ExtractArgumentsScreen.routeName: (context) =>
+            const ExtractArgumentsScreen(),
       },
       // Provide a function to handle named routes.
       // Use this function to identify the named
@@ -306,22 +313,24 @@ class MyApp extends StatelessWidget {
         return null;
       },
       title: 'Navigation with Arguments',
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: const Text('Home Screen'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             // A button that navigates to a named route.
             // The named route extracts the arguments
             // by itself.
@@ -340,7 +349,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 );
               },
-              child: Text('Navigate to screen that extracts arguments'),
+              child: const Text('Navigate to screen that extracts arguments'),
             ),
             // A button that navigates to a named route.
             // For this route, extract the arguments in
@@ -356,11 +365,12 @@ class HomeScreen extends StatelessWidget {
                   PassArgumentsScreen.routeName,
                   arguments: ScreenArguments(
                     'Accept Arguments Screen',
-                    'This message is extracted in the onGenerateRoute function.',
+                    'This message is extracted in the onGenerateRoute '
+                        'function.',
                   ),
                 );
               },
-              child: Text('Navigate to a named that accepts arguments'),
+              child: const Text('Navigate to a named that accepts arguments'),
             ),
           ],
         ),
@@ -372,6 +382,8 @@ class HomeScreen extends StatelessWidget {
 // A Widget that extracts the necessary arguments from
 // the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
+  const ExtractArgumentsScreen({Key? key}) : super(key: key);
+
   static const routeName = '/extractArguments';
 
   @override

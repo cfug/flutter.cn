@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/design/drawer"?>
+<?code-excerpt path-base="cookbook/design/drawer"?>
 
 In apps that use Material Design,
 there are two primary options for navigation: tabs and drawers.
@@ -136,22 +136,22 @@ Drawer(
   child: ListView(
     // Important: Remove any padding from the ListView.
     padding: EdgeInsets.zero,
-    children: <Widget>[
-      DrawerHeader(
+    children: [
+      const DrawerHeader(
         decoration: BoxDecoration(
           color: Colors.blue,
         ),
         child: Text('Drawer Header'),
       ),
       ListTile(
-        title: Text('Item 1'),
+        title: const Text('Item 1'),
         onTap: () {
           // Update the state of the app.
           // ...
         },
       ),
       ListTile(
-        title: Text('Item 2'),
+        title: const Text('Item 2'),
         onTap: () {
           // Update the state of the app.
           // ...
@@ -181,7 +181,7 @@ stack. Therefore, to close the drawer, call `Navigator.pop(context)`.
 <?code-excerpt "lib/main.dart (CloseDrawer)"?>
 ```dart
 ListTile(
-  title: Text('Item 1'),
+  title: const Text('Item 1'),
   onTap: () {
     // Update the state of the app
     // ...
@@ -199,14 +199,16 @@ ListTile(
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  final appTitle = 'Drawer Demo';
+  const MyApp({Key? key}) : super(key: key);
+
+  static const appTitle = 'Drawer Demo';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: appTitle,
       home: MyHomePage(title: appTitle),
     );
@@ -214,15 +216,17 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final String title;
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
-      body: Center(child: Text('My Page!')),
+      body: const Center(
+        child: Text('My Page!'),
+      ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
@@ -230,15 +234,15 @@ class MyHomePage extends StatelessWidget {
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
+          children: [
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
               child: Text('Drawer Header'),
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: const Text('Item 1'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -247,7 +251,7 @@ class MyHomePage extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('Item 2'),
+              title: const Text('Item 2'),
               onTap: () {
                 // Update the state of the app
                 // ...

@@ -81,10 +81,11 @@ about evaluating and debugging Flutter's performance.
 
 * How to solve my app’s poor animations caused by an expensive
   Dart async function call that is blocking the UI thread?
-  * Spawn another isolate using the
-    [`compute` property][]
+  * Spawn another isolate using the [`compute()`][] method,
+    as demonstrated in [Parse JSON in the background][] cookbook.
 
-[`compute` property]: {{site.api}}/flutter/foundation/compute.html
+[`compute()`]: {{site.api}}/flutter/foundation/compute-constant.html
+[Parse JSON in the background]: /docs/cookbook/networking/background-parsing
 
 * How do I determine my Flutter app’s package size that a
   user will download?
@@ -95,10 +96,10 @@ about evaluating and debugging Flutter's performance.
 * How do I see the breakdown of the Flutter engine size?
   * Visit the [binary size dashboard][], and replace the git
     hash in the URL with a recent commit hash from
-    [GitHub commits][].
+    [GitHub engine repository commits][].
 
-[binary size dashboard]: https://storage.googleapis.com/flutter_infra/flutter/c3976b3c7183f479717bffed3f640fb92afbd3dc/android-arm-release/sizes/index.html
-[GitHub commits]: {{site.github}}/flutter/engine/commits
+[binary size dashboard]: https://storage.googleapis.com/flutter_infra_release/flutter/241c87ad800beeab545ab867354d4683d5bfb6ce/android-arm-release/sizes/index.html
+[GitHub engine repository commits]: {{site.github}}/flutter/engine/commits
 
 * How can I take a screenshot of an app that is running and export it
   as a SKP file?
@@ -122,4 +123,3 @@ about evaluating and debugging Flutter's performance.
 
 * How do I perform a trace in Fuchsia?
   * See [Fuchsia tracing guidelines][traceutil]
-

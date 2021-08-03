@@ -6,8 +6,7 @@
 
 void main() {
   testWidgets('Example app smoke test', (WidgetTester tester) async {
-
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(const MyApp());
 
     // A FlutterError shouldn't normally occur during a smoke test, but it
     // is expected for this not-quite-finished app.

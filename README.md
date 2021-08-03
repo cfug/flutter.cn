@@ -120,13 +120,13 @@ submodule-cloning techniques:
   this command from the repo root:<br>
 
   ```console
-  $ git submodule update --init --remote
+  $ git submodule update --init --recursive
   ```
 
 > NOTE: At any time during development you can use the `git submodule` command to
 > refresh submodules:<br>
 > ```console
-> $ git pull; git submodule update --init --remote
+> $ git pull; git submodule update --init --recursive
 > ```
 
 ### 3. Run installation scripts
@@ -189,8 +189,8 @@ submodule-cloning techniques:
       > Jekyll takes anywhere between 10-20 seconds to generate static
       > content inside the `_sites` directory. If you try to verify the
       > site locally, but aren't able to see the content right away,
-      > wait 20 seconds before stopping the
-      > server or concluding that something is wrong.
+      > wait 20 seconds before stopping the server or concluding that
+      > something is wrong.
  1. Before submitting, validate site links:<br>
     ```console
     $ ./tool/shared/check-links.sh

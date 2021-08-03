@@ -348,17 +348,17 @@
       permalink: /docs/deployment/obfuscate
     - title: 配置 flavors 构建双端
       permalink: /docs/deployment/flavors
-    - title: 打包和发布为 Android 应用
+    - title: 构建和发布为 Android 应用
       permalink: /docs/deployment/android
-    - title: 打包和发布为 iOS 应用
+    - title: 构建和发布为 iOS 应用
       permalink: /docs/deployment/ios
-    - title: 打包和发布为 macOS 应用
+    - title: 构建和发布为 macOS 应用
       permalink: /docs/deployment/macos
-    - title: 打包和发布为 Linux 应用
+    - title: 构建和发布为 Linux 应用
       permalink: /docs/deployment/linux
-    - title: 打包和发布为 Web 应用
+    - title: 构建和发布为 Web 应用
       permalink: /docs/deployment/web
-    - title: 打包和发布为 Linux 应用
+    - title: 构建和发布为 Linux 应用
       permalink: /docs/deployment/linux
     - title: 持续部署
       permalink: /docs/deployment/cd
@@ -379,8 +379,12 @@
       permalink: /docs/resources/platform-adaptations
     - title: Flutter 技术视频和在线资源
       permalink: /docs/resources/videos
+    - title: Flutter 中文社区教程
+      permalink: /community/tutorials
     - title: 书籍
       permalink: /docs/resources/books
+    - title: 文章
+      permalink: /posts
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
     - title: 常见问题解答

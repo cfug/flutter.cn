@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/named_routes"?>
+<?code-excerpt path-base="cookbook/navigation/named_routes"?>
 
 In the [Navigate to a new screen and back][] recipe,
 you learned how to navigate to a new screen by creating a new route and
@@ -83,18 +83,20 @@ button that navigates back to the first.
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Screen'),
+        title: const Text('First Screen'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             // Navigate to the second screen when tapped.
           },
-          child: Text('Launch screen'),
+          child: const Text('Launch screen'),
         ),
       ),
     );
@@ -102,18 +104,20 @@ class FirstScreen extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
+  const SecondScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Screen'),
+        title: const Text('Second Screen'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             // Navigate back to first screen when tapped.
           },
-          child: Text('Go back!'),
+          child: const Text('Go back!'),
         ),
       ),
     );
@@ -156,11 +160,9 @@ MaterialApp(
   initialRoute: '/',
   routes: {
     // When navigating to the "/" route, build the FirstScreen widget.
-    // 当我们跳转到“/”时，构建 FirstScreen Widget（When we navigate to the "/" route, build the FirstScreen Widget）
-    '/': (context) => FirstScreen(),
+    '/': (context) => const FirstScreen(),
     // When navigating to the "/second" route, build the SecondScreen widget.
-    // 当我们跳转到“/second”时，构建 SecondScreen Widget（When we navigate to the "/second" route, build the SecondScreen Widget）
-    '/second': (context) => SecondScreen(),
+    '/second': (context) => const SecondScreen(),
   },
 )
 ```
@@ -241,30 +243,30 @@ onPressed: () {
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    title: 'Named Routes Demo',
-    // Start the app with the "/" named route. In this case, the app starts
-    // on the FirstScreen widget.
-    // 使用“/”命名路由来启动应用（Start the app with the "/" named route. In our case, the app will start）
-    // 在这里，应用将从 FirstScreen Widget 启动（on the FirstScreen Widget）
-    initialRoute: '/',
-    routes: {
-      // When navigating to the "/" route, build the FirstScreen widget.
-      // 当我们跳转到“/”时，构建 FirstScreen Widget（When we navigate to the "/" route, build the FirstScreen Widget）
-      '/': (context) => FirstScreen(),
-      // When navigating to the "/second" route, build the SecondScreen widget.
-      // 当我们跳转到“/second”时，构建 SecondScreen Widget（When we navigate to the "/second" route, build the SecondScreen Widget）
-      '/second': (context) => SecondScreen(),
-    },
-  ));
+  runApp(
+    MaterialApp(
+      title: 'Named Routes Demo',
+      // Start the app with the "/" named route. In this case, the app starts
+      // on the FirstScreen widget.
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => const FirstScreen(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/second': (context) => const SecondScreen(),
+      },
+    ),
+  );
 }
 
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Screen'),
+        title: const Text('First Screen'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -274,7 +276,7 @@ class FirstScreen extends StatelessWidget {
             // 使用命名路由跳转到第二个界面（Navigate to the second screen using a named route）
             Navigator.pushNamed(context, '/second');
           },
-          child: Text('Launch screen'),
+          child: const Text('Launch screen'),
         ),
       ),
     );
@@ -282,11 +284,13 @@ class FirstScreen extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
+  const SecondScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Screen'),
+        title: const Text('Second Screen'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -298,7 +302,7 @@ class SecondScreen extends StatelessWidget {
             // 来返回到第一个界面（off the stack）
             Navigator.pop(context);
           },
-          child: Text('Go back!'),
+          child: const Text('Go back!'),
         ),
       ),
     );

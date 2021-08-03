@@ -24,7 +24,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/design/themes"?>
+<?code-excerpt path-base="cookbook/design/themes"?>
 
 To share colors and font styles throughout an app, use themes.
 You can either define app-wide themes, or use `Theme` widgets
@@ -77,13 +77,13 @@ MaterialApp(
 
     // Define the default TextTheme. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
       headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
       bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
     ),
   ),
-  home: MyHomePage(
+  home: const MyHomePage(
     title: appName,
   ),
 );
@@ -128,7 +128,7 @@ Theme(
   ),
   child: FloatingActionButton(
     onPressed: () {},
-    child: Icon(Icons.add),
+    child: const Icon(Icons.add),
   ),
 );
 ```
@@ -149,7 +149,7 @@ Theme(
   // Find and extend the parent theme using "copyWith". See the next
   // section for more info on `Theme.of`.
   data: Theme.of(context).copyWith(accentColor: Colors.yellow),
-  child: FloatingActionButton(
+  child: const FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
   ),
@@ -202,13 +202,15 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final appName = 'Custom Themes';
+    const appName = 'Custom Themes';
 
     return MaterialApp(
       title: appName,
@@ -223,13 +225,13 @@ class MyApp extends StatelessWidget {
 
         // Define the default TextTheme. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
           headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
         ),
       ),
-      home: MyHomePage(
+      home: const MyHomePage(
         title: appName,
       ),
     );
@@ -239,7 +241,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -259,9 +261,9 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: Theme(
         data: Theme.of(context).copyWith(
           colorScheme:
-          Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
+              Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
         ),
-        child: FloatingActionButton(
+        child: const FloatingActionButton(
           onPressed: null,
           child: Icon(Icons.add),
         ),

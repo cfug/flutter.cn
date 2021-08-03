@@ -98,7 +98,8 @@ do the following:
 在 Dart 文件中，例如 `native_view_example.dart`，
 请执行下列操作：
 
-1. Add the following imports:
+<ol markdown="1">
+<li markdown="1">Add the following imports:
 
    添加下面的导入：
 
@@ -109,8 +110,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 ```
+</li>
 
-2. Implement a `build()` method:
+<li markdown="1">Implement a `build()` method:
 
    实现 `build` 方法：
 
@@ -146,6 +148,8 @@ Widget build(BuildContext context) {
   );
 }
 ```
+</li>
+</ol>
 
 For more information, see the API docs for:
 
@@ -163,7 +167,8 @@ do the following:
 在 Dart 文件中，例如 `native_view_example.dart`，
 请执行下列操作：
 
-1. Add the following imports:
+<ol markdown="1">
+<li markdown="1">Add the following imports:
 
    添加下面的导入：
 
@@ -171,8 +176,9 @@ do the following:
 ```dart
 import 'package:flutter/widget.dart';
 ```
+</li>
 
-2. Implement a `build()` method:
+<li markdown="1">Implement a `build()` method:
 
    实现 `build` 方法：
 
@@ -192,6 +198,8 @@ Widget build(BuildContext context) {
   );
 }
 ```
+</li>
+</ol>
 
 For more information, see the API docs for:
 
@@ -528,7 +536,8 @@ do the following in `native_view_example.dart`:
 在 Dart 文件中，例如 `native_view_example.dart`，
 请执行下列操作：
 
-1. Add the following imports:
+<ol markdown="1">
+<li markdown="1">Add the following imports:
 
    添加如下导入：
 
@@ -536,8 +545,9 @@ do the following in `native_view_example.dart`:
 ```dart
 import 'package:flutter/widget.dart';
 ```
+</li>
 
-2. Implement a `build()` method:
+<li markdown="1">Implement a `build()` method:
 
    实现 `build` 方法：
 
@@ -557,6 +567,8 @@ Widget build(BuildContext context) {
   );
 }
 ```
+</li>
+</ol>
 
 For more information, see the API docs for:
 [`UIKitView`][].

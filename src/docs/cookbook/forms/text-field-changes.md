@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/forms/text_field_changes/"?>
+<?code-excerpt path-base="cookbook/forms/text_field_changes/"?>
 
 In some cases, it's useful to run a callback function every time the text
 in a text field changes. For example, you might want to build a search
@@ -114,6 +114,8 @@ Create a `TextEditingController`:
 ```dart
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
+  const MyCustomForm({Key? key}) : super(key: key);
+
   @override
   _MyCustomFormState createState() => _MyCustomFormState();
 }
@@ -238,12 +240,14 @@ void dispose() {
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Retrieve Text Input',
       home: MyCustomForm(),
     );
@@ -252,6 +256,8 @@ class MyApp extends StatelessWidget {
 
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
+  const MyCustomForm({Key? key}) : super(key: key);
+
   @override
   _MyCustomFormState createState() => _MyCustomFormState();
 }
@@ -287,12 +293,12 @@ class _MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Retrieve Text Input'),
+        title: const Text('Retrieve Text Input'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          children: <Widget>[
+          children: [
             TextField(
               onChanged: (text) {
                 print('First text field: $text');

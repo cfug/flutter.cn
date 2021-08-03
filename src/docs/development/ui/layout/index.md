@@ -12,11 +12,11 @@ diff2html: true
 
 {% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
-{% capture null_safety_examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
-{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/null_safety_examples' -%}
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
 {% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/dev/integration_tests/flutter_gallery/lib/demo {%- endcapture -%}
 
-<?code-excerpt path-base="../null_safety_examples/"?>
+<?code-excerpt path-base=""?>
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
@@ -198,7 +198,7 @@ Icon(
 
 ### 3. 将可见 widget 添加到布局 widget
 
-<?code-excerpt path-base="../null_safety_examples/layout/base"?>
+<?code-excerpt path-base="layout/base"?>
 
 All layout widgets have either of the following:
 
@@ -220,7 +220,7 @@ Add the `Text` widget to the `Center` widget:
 
 <?code-excerpt "lib/main.dart (centered-text)" replace="/body: //g"?>
 ```dart
-Center(
+const Center(
   child: Text('Hello World'),
 ),
 ```
@@ -248,19 +248,21 @@ property for the home page.
 还有用于添加抽屉、提示条和底部列表弹窗的 API。
 你可以将 `Center` widget 直接添加到主页 `body` 的属性中。
 
-<?code-excerpt path-base="../null_safety_examples/layout/base"?>
+<?code-excerpt path-base="layout/base"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter layout demo'),
+          title: const Text('Flutter layout demo'),
         ),
-        body: Center(
+        body: const Center(
           child: Text('Hello World'),
         ),
       ),
@@ -296,15 +298,17 @@ For a non-Material app, you can add the `Center` widget to the app's
 
 对于非 Material app，你可以将 `Center` widget 添加到 app 的 `build()` 方法里：
 
-<?code-excerpt path-base="../null_safety_examples/layout/non_material"?>
+<?code-excerpt path-base="layout/non_material"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Colors.white),
-      child: Center(
+      decoration: const BoxDecoration(color: Colors.white),
+      child: const Center(
         child: Text(
           'Hello World',
           textDirection: TextDirection.ltr,
@@ -338,11 +342,11 @@ color to white and the text to dark grey to mimic a Material app.
 
   App 源码:
 
-  - [Material app]({{null_safety_examples}}/layout/base)
+  - [Material app]({{examples}}/layout/base)
 
-  - [Non-Material app]({{null_safety_examples}}/layout/non_material)
+  - [Non-Material app]({{examples}}/layout/non_material)
 
-    [非 Material app]({{null_safety_examples}}/layout/non_material)
+    [非 Material app]({{examples}}/layout/non_material)
 
 </div>
 <div class="col-md-6">
@@ -357,7 +361,7 @@ color to white and the text to dark grey to mimic a Material app.
 
 ## 横向或纵向布局多个 widgets
 
-<?code-excerpt path-base="../null_safety_examples/"?>
+<?code-excerpt path-base=""?>
 
 One of the most common layout patterns is to arrange
 widgets vertically or horizontally. You can use a
@@ -531,9 +535,9 @@ space evenly between, before, and after each image.
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/row-spaceevenly-visual.png class="mw-100" alt="Row with 3 evenly spaced images" %}
 
-  **App source:** [row_column]({{null_safety_examples}}/layout/row_column)
+  **App source:** [row_column]({{examples}}/layout/row_column)
 
-  **App 源码:** [row_column]({{null_safety_examples}}/layout/row_column)
+  **App 源码:** [row_column]({{examples}}/layout/row_column)
 </div>
 </div>
 
@@ -563,9 +567,9 @@ space evenly between, above, and below each image.
   );
   {% endprettify %}
 
-  **App source:** [row_column]({{null_safety_examples}}/layout/row_column)
+  **App source:** [row_column]({{examples}}/layout/row_column)
 
-  **App 源码:** [row_column]({{null_safety_examples}}/layout/row_column)
+  **App 源码:** [row_column]({{examples}}/layout/row_column)
 </div>
 <div class="col-lg-4 text-center">
   {% asset ui/layout/column-visual.png class="mb-4" height="250px"
@@ -620,9 +624,9 @@ wrap each image with an `Expanded` widget.
   {% asset ui/layout/row-expanded-2-visual.png class="mw-100"
       alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space" %}
 
-  **App source:** [sizing]({{null_safety_examples}}/layout/sizing)
+  **App source:** [sizing]({{examples}}/layout/sizing)
 
-  **App 源码:** [sizing]({{null_safety_examples}}/layout/sizing)
+  **App 源码:** [sizing]({{examples}}/layout/sizing)
 </div>
 </div>
 
@@ -662,13 +666,13 @@ the flex factor of the middle image to 2:
   {% asset ui/layout/row-expanded-visual.png class="mw-100"
       alt="Row of 3 images with the middle image twice as wide as the others" %}
 
-  **App source:** [sizing]({{null_safety_examples}}/layout/sizing)
+  **App source:** [sizing]({{examples}}/layout/sizing)
 
-  **App 源码:** [sizing]({{null_safety_examples}}/layout/sizing)
+  **App 源码:** [sizing]({{examples}}/layout/sizing)
 </div>
 </div>
 
-[sizing]: {{null_safety_examples}}/layout/sizing
+[sizing]: {{examples}}/layout/sizing
 
 ### Packing widgets
 
@@ -694,8 +698,8 @@ uses this property to pack the star icons together.
       Icon(Icons.star, color: Colors.green[500]),
       Icon(Icons.star, color: Colors.green[500]),
       Icon(Icons.star, color: Colors.green[500]),
-      Icon(Icons.star, color: Colors.black),
-      Icon(Icons.star, color: Colors.black),
+      const Icon(Icons.star, color: Colors.black),
+      const Icon(Icons.star, color: Colors.black),
     ],
   )
   {% endprettify %}
@@ -704,9 +708,9 @@ uses this property to pack the star icons together.
   {% asset ui/layout/packed.png class="border mw-100"
       alt="Row of 5 stars, packed together in the middle of the row" %}
 
-  **App source:** [pavlova]({{null_safety_examples}}/layout/pavlova)
+  **App source:** [pavlova]({{examples}}/layout/pavlova)
 
-  **App 源码:** [pavlova]({{null_safety_examples}}/layout/pavlova)
+  **App 源码:** [pavlova]({{examples}}/layout/pavlova)
 </div>
 </div>
 
@@ -754,18 +758,18 @@ var stars = Row(
     Icon(Icons.star, color: Colors.green[500]),
     Icon(Icons.star, color: Colors.green[500]),
     Icon(Icons.star, color: Colors.green[500]),
-    Icon(Icons.star, color: Colors.black),
-    Icon(Icons.star, color: Colors.black),
+    const Icon(Icons.star, color: Colors.black),
+    const Icon(Icons.star, color: Colors.black),
   ],
 );
 
 final [!ratings!] = Container(
-  padding: EdgeInsets.all(20),
+  padding: const EdgeInsets.all(20),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
       stars,
-      Text(
+      const Text(
         '170 Reviews',
         style: TextStyle(
           color: Colors.black,
@@ -807,7 +811,7 @@ The `iconList` variable defines the icons row:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (iconList)" replace="/iconList/[!$&!]/g"?>
 ```dart
-final descTextStyle = TextStyle(
+const descTextStyle = TextStyle(
   color: Colors.black,
   fontWeight: FontWeight.w800,
   fontFamily: 'Roboto',
@@ -821,29 +825,29 @@ final descTextStyle = TextStyle(
 final [!iconList!] = DefaultTextStyle.merge(
   style: descTextStyle,
   child: Container(
-    padding: EdgeInsets.all(20),
+    padding: const EdgeInsets.all(20),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Column(
           children: [
             Icon(Icons.kitchen, color: Colors.green[500]),
-            Text('PREP:'),
-            Text('25 min'),
+            const Text('PREP:'),
+            const Text('25 min'),
           ],
         ),
         Column(
           children: [
             Icon(Icons.timer, color: Colors.green[500]),
-            Text('COOK:'),
-            Text('1 hr'),
+            const Text('COOK:'),
+            const Text('1 hr'),
           ],
         ),
         Column(
           children: [
             Icon(Icons.restaurant, color: Colors.green[500]),
-            Text('FEEDS:'),
-            Text('4-6'),
+            const Text('FEEDS:'),
+            const Text('4-6'),
           ],
         ),
       ],
@@ -861,7 +865,7 @@ as well as the title and text that describes the Pavlova:
 <?code-excerpt "layout/pavlova/lib/main.dart (leftColumn)" replace="/leftColumn/[!$&!]/g"?>
 ```dart
 final [!leftColumn!] = Container(
-  padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+  padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
   child: Column(
     children: [
       titleText,
@@ -895,13 +899,13 @@ For more information, see [Adding assets and images][].
 ```dart
 body: Center(
   child: Container(
-    margin: EdgeInsets.fromLTRB(0, 40, 0, 30),
+    margin: const EdgeInsets.fromLTRB(0, 40, 0, 30),
     height: 600,
     child: Card(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             width: 440,
             child: leftColumn,
           ),
@@ -934,9 +938,9 @@ body: Center(
 
 {{site.alert.end}}
 
-**App source:** [pavlova]({{null_safety_examples}}/layout/pavlova)
+**App source:** [pavlova]({{examples}}/layout/pavlova)
 
-**App 源码:** [pavlova]({{null_safety_examples}}/layout/pavlova)
+**App 源码:** [pavlova]({{examples}}/layout/pavlova)
 
 [Pavlova image]: https://pixabay.com/en/photos/pavlova
 [蛋糕图片]: https://pixabay.com/en/photos/pavlova
@@ -1067,17 +1071,19 @@ of the column to a lighter grey.
 <div class="col-lg-7">
   <?code-excerpt "layout/container/lib/main.dart (column)" replace="/\bContainer/[!$&!]/g;"?>
   {% prettify dart context="html" %}
-  Widget _buildImageColumn() => [!Container!](
-        decoration: BoxDecoration(
-          color: Colors.black26,
-        ),
-        child: Column(
-          children: [
-            _buildImageRow(1),
-            _buildImageRow(3),
-          ],
-        ),
-      );
+  Widget _buildImageColumn() {
+    return [!Container!](
+      decoration: const BoxDecoration(
+        color: Colors.black26,
+      ),
+      child: Column(
+        children: [
+          _buildImageRow(1),
+          _buildImageRow(3),
+        ],
+      ),
+    );
+  }
   {% endprettify %}
 </div>
 <div class="col-lg-5 text-center">
@@ -1097,7 +1103,7 @@ Widget _buildDecoratedImage(int imageIndex) => Expanded(
       child: [!Container!](
         decoration: BoxDecoration(
           border: Border.all(width: 10, color: Colors.black38),
-          borderRadius: const BorderRadius.all(const Radius.circular(8)),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
         ),
         margin: const EdgeInsets.all(4),
         child: Image.asset('images/pic$imageIndex.jpg'),
@@ -1117,9 +1123,9 @@ and the Flutter Gallery ([running app][], [repo][]).
 
 你可以在 [布局构建教程][] 和 [Flutter Gallery][] 中可以发现更多关于 `Container` 的例子。
 
-**App source:** [container]({{null_safety_examples}}/layout/container)
+**App source:** [container]({{examples}}/layout/container)
 
-**App 源码:** [container]({{null_safety_examples}}/layout/container)
+**App 源码:** [container]({{examples}}/layout/container)
 
 <hr>
 
@@ -1202,9 +1208,9 @@ it automatically scrolls.
 
   使用 `GridView.extent` 创建一个最大宽度为 150 像素的网格。
 
-  **App source:** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 
-  **App 源码：** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
+  **App 源码：** [grid_and_list]({{examples}}/layout/grid_and_list)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1297,9 +1303,9 @@ its render box.
 
   使用 `ListView` 的业务列表，它使用了多个 `ListTile`。`Divider` 将餐厅从剧院中分隔开。
 
-  **App source:** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 
-  **App 源码：** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
+  **App 源码：** [grid_and_list]({{examples}}/layout/grid_and_list)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1325,36 +1331,40 @@ its render box.
 
 <?code-excerpt "layout/grid_and_list/lib/main.dart (list)" replace="/\ListView/[!$&!]/g;"?>
 ```dart
-Widget _buildList() => [!ListView!](
-      children: [
-        _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
-        _tile('The Castro Theater', '429 Castro St', Icons.theaters),
-        _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
-        _tile('Roxie Theater', '3117 16th St', Icons.theaters),
-        _tile('United Artists Stonestown Twin', '501 Buckingham Way',
-            Icons.theaters),
-        _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
-        Divider(),
-        _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
-        _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
-        _tile(
-            'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
-        _tile('La Ciccia', '291 30th St', Icons.restaurant),
-      ],
-    );
+Widget _buildList() {
+  return [!ListView!](
+    children: [
+      _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
+      _tile('The Castro Theater', '429 Castro St', Icons.theaters),
+      _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
+      _tile('Roxie Theater', '3117 16th St', Icons.theaters),
+      _tile('United Artists Stonestown Twin', '501 Buckingham Way',
+          Icons.theaters),
+      _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
+      const Divider(),
+      _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
+      _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
+      _tile(
+          'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
+      _tile('La Ciccia', '291 30th St', Icons.restaurant),
+    ],
+  );
+}
 
-ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
-      title: Text(title,
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 20,
-          )),
-      subtitle: Text(subtitle),
-      leading: Icon(
-        icon,
-        color: Colors.blue[500],
-      ),
-    );
+ListTile _tile(String title, String subtitle, IconData icon) {
+  return ListTile(
+    title: Text(title,
+        style: const TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 20,
+        )),
+    subtitle: Text(subtitle),
+    leading: Icon(
+      icon,
+      color: Colors.blue[500],
+    ),
+  );
+}
 ```
 
 <hr>
@@ -1412,9 +1422,9 @@ widget 可以完全或者部分覆盖基础 widget。
   （在透明的黑色背景上展示它的 `Text`）。
   `Stack` 使用 `alignment` 属性和 `Alignment` 让文本偏移。
 
-  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
 
 </div>
 <div class="col-lg-5" markdown="1">
@@ -1438,18 +1448,19 @@ widget 可以完全或者部分覆盖基础 widget。
 
 <?code-excerpt "layout/card_and_stack/lib/main.dart (Stack)" replace="/\bStack/[!$&!]/g;"?>
 ```dart
-Widget _buildStack() => [!Stack!](
+Widget _buildStack() {
+  return [!Stack!](
     alignment: const Alignment(0.6, 0.6),
     children: [
-      CircleAvatar(
+      const CircleAvatar(
         backgroundImage: AssetImage('images/pic.jpg'),
         radius: 100,
       ),
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.black45,
         ),
-        child: Text(
+        child: const Text(
           'Mia B',
           style: TextStyle(
             fontSize: 20,
@@ -1460,6 +1471,7 @@ Widget _buildStack() => [!Stack!](
       ),
     ],
   );
+}
 ```
 
 <hr>
@@ -1549,9 +1561,9 @@ Specifying an unsupported value disables the drop shadow entirely.
   包含 3 个 ListTile 的 `Card`，并且通过被 `SizedBox` 包住来调整大小。
   `Divider` 分隔了第一个和第二个 `ListTiles`。
 
-  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1574,31 +1586,36 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 <?code-excerpt "layout/card_and_stack/lib/main.dart (Card)" replace="/\bCard/[!$&!]/g;"?>
 ```dart
-Widget _buildCard() => SizedBox(
+Widget _buildCard() {
+  return SizedBox(
     height: 210,
     child: [!Card!](
       child: Column(
         children: [
           ListTile(
-            title: Text('1625 Main Street',
-                style: TextStyle(fontWeight: FontWeight.w500)),
-            subtitle: Text('My City, CA 99984'),
+            title: const Text(
+              '1625 Main Street',
+              style: TextStyle(fontWeight: FontWeight.w500),
+            ),
+            subtitle: const Text('My City, CA 99984'),
             leading: Icon(
               Icons.restaurant_menu,
               color: Colors.blue[500],
             ),
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('(408) 555-1212',
-                style: TextStyle(fontWeight: FontWeight.w500)),
+            title: const Text(
+              '(408) 555-1212',
+              style: TextStyle(fontWeight: FontWeight.w500),
+            ),
             leading: Icon(
               Icons.contact_phone,
               color: Colors.blue[500],
             ),
           ),
           ListTile(
-            title: Text('costa@example.com'),
+            title: const Text('costa@example.com'),
             leading: Icon(
               Icons.contact_mail,
               color: Colors.blue[500],
@@ -1608,6 +1625,7 @@ Widget _buildCard() => SizedBox(
       ),
     ),
   );
+}
 ```
 <hr>
 
@@ -1657,9 +1675,9 @@ and trailing icons. `ListTile` is most commonly used in
 
   包含 3 个 `ListTiles` 的 `Card`。
 
-  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 
-  **App 源码：** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
+  **App 源码：** [card_and_stack]({{examples}}/layout/card_and_stack)
 
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1804,8 +1822,8 @@ The following resources might help when writing layout code.
 [Material Design]: {{site.material}}/design
 [Material Design palette]: {{site.material}}/design/color
 [Material library]: {{api}}/material/material-library.html
-[pubspec file]: {{null_safety_examples}}/layout/pavlova/pubspec.yaml
-[`pubspec.yaml` file]: {{null_safety_examples}}/layout/row_column/pubspec.yaml
+[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
+[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
 [repo]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
 [`Row`]: {{api}}/widgets/Row-class.html
 [running app]: https://flutter.github.io/gallery/#/

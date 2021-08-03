@@ -29,9 +29,9 @@ apps, but they fall into three major categories:
 
 在构建平台自适应的应用时，有众多的考量因素，总的来说分为以下几类：
 
-* [Layout](#layout)
+* [Layout](#building-adaptive-layouts)
 
-  [布局](#layout)
+  [布局](#building-adaptive-layouts)
 
 * [Input](#input)
 
@@ -392,7 +392,7 @@ from a vertical to a horizontal layout when the user isn’t on a handset:
 
 <!--skip-->
 ```dart
-bool useVerticalLayout = MediaQuery.of(context).size.width < 600;
+bool isHandset = MediaQuery.of(context).size.width < 600;
 return Flex(
   children: [...],
   direction: isHandset ?

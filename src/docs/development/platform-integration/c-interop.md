@@ -454,7 +454,7 @@ use the following instructions.
 
       拖动您已经预编译的 `libyourlibrary.dylib` 到您的 `Runner/Frameworks`。
 
-   2. Click `Runner` and go to the `Build Phases` tab.
+   1. Click `Runner` and go to the `Build Phases` tab.
 
       点击 `Runner` 然后进入 `Build Phases` 标签.
 
@@ -462,15 +462,15 @@ use the following instructions.
 
          拖动 `libyourlibrary.dylib` 到 `Copy Bundle Resources` 列表。
 
-      2. Under `Bundle Framework`, check `Code Sign on Copy`.
+      1. Under `Embed Libraries`, check `Code Sign on Copy`.
 
-         在 `Bundle Framework` 下，检查 `Code Sign on Copy`。
+         在 `Embed Libararies` 下，检查 `Code Sign on Copy`。
 
-      3. Under `Link Binary With Libraries`, set status to `Optional`. (We use dynamic linking, no need to statically link.)
+      1. Under `Link Binary With Libraries`, set status to `Optional`. (We use dynamic linking, no need to statically link.)
 
-         在 `Link Binary With Libraries` 下，设置状态为 `Optional`。（我们使用动态链接，不需要静态链接）
+         在 `Link Binary With Libraries` 下，设置状态为 `Optional`。（咱们使用动态链接，不需要静态链接）
 
-   3. Click `Runner` and go to the `General` tab.
+   1. Click `Runner` and go to the `General` tab.
 
       点击 `Runner` 然后进入 `General` 标签页。
 
@@ -478,9 +478,17 @@ use the following instructions.
 
          拖动 `libyourlibrary.dylib` 到 `Frameworks, Libararies and Embedded Content` 列表中。
 
-      2. Select `Embed & Sign`.
+      1. Select `Embed & Sign`.
 
          选择 `Embed & Sign`。
+
+   1. Click `Runner` and go to the `Build Settings` tab.
+
+      点击 `Runner` 然后进入 `Build Settings` 标签页。
+
+      1. In the `Search Paths` section configure the `Library Search Paths` to include the path where `libyourlibrary.dylib` is located.
+
+         在 `Search Paths` 部分，配置 `Library Search Paths` 确保 `libyourlibrary.dylib` 的路径包括在内。
 
 1. Edit `lib/main.dart`.
 
@@ -490,7 +498,7 @@ use the following instructions.
 
       使用 `DynamicLibrary.open('libyourlibrary.dylib')` 来动态链接符号表。
 
-   2. Call your native function somewhere in a widget.
+   1. Call your native function somewhere in a widget.
 
       在 widget 的某个地方调用您的本地代码。
 
@@ -498,7 +506,7 @@ use the following instructions.
 
    运行 `flutter run` 然后检查您的本地方法的调用结果。
 
-2. Run `flutter build macos` to build a selfcontained release version of your app.
+1. Run `flutter build macos` to build a selfcontained release version of your app.
 
    运行 `flutter build macos` 去构建一个自包含的 release 版本的应用。
 
@@ -518,7 +526,7 @@ use the following instructions:
 
    在您的插件项目打开 `ios/<myproject>.podspec`.
 
-2. Add the native code to the `source_files`
+1. Add the native code to the `source_files`
    field.
 
    添加本地代码到 `source_files` 字段。

@@ -24,5 +24,4 @@ Flutter 中文社区教程由社区的开发者投稿，
 
 已发布的文章：
 
-- [深入理解 Function & Closure](/community/tutorials/deep-dive-into-dart-s-function-closure)
-- [Flutter 上的内存泄漏监控](/community/tutorials/memory-leak-monitoring-on-flutter)
+{% include posts_toc.md pages=site.pages heading_syntax='##' %}

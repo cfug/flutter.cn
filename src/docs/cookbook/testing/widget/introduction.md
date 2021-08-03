@@ -16,7 +16,7 @@ next:
   path: /docs/cookbook/testing/widget/finders
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/testing/widget/introduction/"?>
+<?code-excerpt path-base="cookbook/testing/widget/introduction/"?>
 
 {% assign api = site.api | append: '/flutter' -%}
 
@@ -432,7 +432,7 @@ class MyWidget extends StatelessWidget {
 
 
 [`find()`]: {{api}}/flutter_test/find-constant.html
-[`find.text()`]: {{api}}/flutter_test/CommonFinders-class.html
+[`find.text()`]: {{api}}/flutter_test/CommonFinders/text.html
 [`findsNothing`]: {{api}}/flutter_test/findsNothing-constant.html
 [`findsOneWidget`]: {{api}}/flutter_test/findsOneWidget-constant.html
 [`findsNWidgets`]: {{api}}/flutter_test/findsNWidgets.html

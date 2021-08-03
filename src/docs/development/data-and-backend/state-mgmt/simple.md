@@ -15,7 +15,7 @@ next:
   path: /docs/development/data-and-backend/state-mgmt/options
 ---
 
-<?code-excerpt path-base="../null_safety_examples/state_mgmt/simple/"?>
+<?code-excerpt path-base="state_mgmt/simple/"?>
 
 Now that you know about [declarative UI programming][]
 and the difference between [ephemeral and app state][],
@@ -447,7 +447,7 @@ void main() {
   runApp(
     [!ChangeNotifierProvider!](
       create: (context) => CartModel(),
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
@@ -476,7 +476,7 @@ void main() {
         ChangeNotifierProvider(create: (context) => CartModel()),
         Provider(create: (context) => SomeOtherClass()),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
@@ -549,14 +549,14 @@ once and get it through the builder.
 ```dart
 return Consumer<CartModel>(
   builder: (context, cart, [!child!]) => Stack(
-        children: [
-          // Use SomeExpensiveWidget here, without rebuilding every time.
-          if ([!child!] != null) [!child!],
-          Text("Total price: ${cart.totalPrice}"),
-        ],
-      ),
+    children: [
+      // Use SomeExpensiveWidget here, without rebuilding every time.
+      if ([!child!] != null) [!child!],
+      Text("Total price: ${cart.totalPrice}"),
+    ],
+  ),
   // Build the expensive widget here.
-  [!child!]: SomeExpensiveWidget(),
+  [!child!]: const SomeExpensiveWidget(),
 );
 ```
 

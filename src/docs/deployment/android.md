@@ -1,6 +1,6 @@
 ---
 title: Build and release an Android app
-title: 打包并发布 Android 应用
+title: 构建和发布为 Android 应用
 short-title: Android
 description: How to prepare for and release an Android app to the Play store.
 description: 如何打包把 App 发布到 Play 商店。
@@ -315,7 +315,9 @@ by editing the `[project]/android/app/build.gradle` file.
 
 
 <ol markdown="1">
-<li markdown="1"> <span>Add the keystore information from your properties file before the `android` block:</span><span>在 `android` 代码块之前将你 properties 文件的密钥库信息添加进去：</span>
+<li markdown="1"> Add the keystore information from your properties file before the `android` block:
+
+ 在 `android` 代码块之前将你 properties 文件的密钥库信息添加进去：
 
 ```
    def keystoreProperties = new Properties()
@@ -335,9 +337,9 @@ by editing the `[project]/android/app/build.gradle` file.
 
 </li>
 
-<li markdown="1"> Replace the `buildTypes` block:
+<li markdown="1"> Find the `buildTypes` block:
 
-<li markdown="1"> 在 `buildTypes` 代码块之前添加：
+ 找到 `buildTypes` 代码块：
 
 ```
    buildTypes {
@@ -350,9 +352,9 @@ by editing the `[project]/android/app/build.gradle` file.
    }
 ```
 
-   With the signing configuration info:
-   
-   替换为我们的配置内容：
+   And replace it with the following signing configuration info:
+
+   将其替换为我们的配置内容：
 
 ```
    signingConfigs {
@@ -569,7 +571,7 @@ values in the `defaultConfig` block:
 <br> Specify the final, unique (Application Id)[appid]
 
 `applicationId`
-<br>：指定最终的，唯一的（Application Id）[appid]。
+<br> 指定最终的，唯一的（Application Id）[appid]。
 
 `versionCode` & `versionName`
 <br> Specify the internal app version number,

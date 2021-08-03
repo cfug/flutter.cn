@@ -18,7 +18,7 @@ Android app.  In Android, a [`Fragment`][] represents a modular
 piece of a larger UI. A `Fragment` might be used to present
 a sliding drawer, tabbed content, a page in a `ViewPager`,
 or it might simply represent a normal screen in a
-single-`Activity` app. Flutter provides a `FlutterFragment`
+single-`Activity` app. Flutter provides a [`FlutterFragment`][]
 so that developers can present a Flutter experience any place
 that they can use a regular `Fragment`.
 
@@ -26,10 +26,8 @@ that they can use a regular `Fragment`.
 在 Android 开发中，一个 [`Fragment`][] 代表了一块较大的模块化 UI。 
 `Fragment` 可能被用来展示滑动抽屉、标签内容和 `ViewPager` 中的页面，
 或者在单 `Activity` 应用中，`Fragment` 可能仅代表正常的屏幕内容。
-Flutter 提供了 `FlutterFragment`，
+Flutter 提供了[`FlutterFragment`][]，
 以便于开发者们可以在任何使用常规 `Fragment` 的地方呈现 Flutter 的内容。
-
-[`Fragment`]: https://developer.android.com/guide/components/fragments
 
 If an `Activity` is equally applicable for your application needs,
 consider [using a `FlutterActivity`][] instead of a
@@ -61,9 +59,9 @@ details of the Flutter experience within the `Fragment`:
 
    `FlutterFragment` 是否能控制它外层的 `Activity`
 
- * Whether a new `FlutterEngine` or a cached `FlutterEngine` should be used
+ * Whether a new [`FlutterEngine`][] or a cached `FlutterEngine` should be used
 
-   使用新的还是缓存的 `FlutterEngine`
+   使用新的还是缓存的 [`FlutterEngine`][]
 
 `FlutterFragment` also comes with a number of calls that
 must be forwarded from its surrounding `Activity`.
@@ -384,11 +382,11 @@ FlutterFragment.withCachedEngine("my_engine_id").build()
 ```
 {% endsamplecode %}
 
-`FlutterFragment` internally knows about `FlutterEngineCache`
+`FlutterFragment` internally knows about [`FlutterEngineCache`][]
 and retrieves the pre-warmed `FlutterEngine` based on the ID
 given to `withCachedEngine()`.
 
-`FlutterFragment` 内部可访问 `FlutterEngineCache`，
+`FlutterFragment` 内部可访问 [`FlutterEngineCache`][]，
 并且可以根据传递给 `withCachedEngine()` 的 ID 获取预热的 `FlutterEngine`。
 
 By providing a pre-warmed `FlutterEngine`,
@@ -475,7 +473,7 @@ val flutterFragment = FlutterFragment.withNewEngine()
 ## 指定 Flutter 运行的入口
 
 Similar to varying initial routes, different
-`FlutterFragments` may want to execute different
+`FlutterFragment`s may want to execute different
 Dart entrypoints. In a typical Flutter app, there is only one
 Dart entrypoint: `main()`, but you can define other entrypoints.
 
@@ -770,3 +768,10 @@ surrounding `Activity`.
   所以在禁用 `Activity` 的访问权限之前，请确保没有插件需要。
 
 {{site.alert.end}}
+
+[`Fragment`]: https://developer.android.com/guide/components/fragments
+[`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
+[using a `FlutterActivity`]: /docs/development/add-to-app/android/add-flutter-screen
+[`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
+[`FlutterEngineCache`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
+[splash screen guide]: /docs/development/ui/advanced/splash-screen

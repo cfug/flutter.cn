@@ -5,27 +5,28 @@ import 'dart:math';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(LogoApp());
+void main() => runApp(const LogoApp());
 
 // #docregion diff
 class AnimatedLogo extends AnimatedWidget {
+  const AnimatedLogo({Key? key, required Animation<double> animation})
+      : super(key: key, listenable: animation);
+
   // Make the Tweens static because they don't change.
   static final _opacityTween = Tween<double>(begin: 0.1, end: 1);
   static final _sizeTween = Tween<double>(begin: 0, end: 300);
 
-  AnimatedLogo({Key key, Animation<double> animation})
-      : super(key: key, listenable: animation);
-
+  @override
   Widget build(BuildContext context) {
     final animation = listenable as Animation<double>;
     return Center(
       child: Opacity(
         opacity: _opacityTween.evaluate(animation),
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
+          margin: const EdgeInsets.symmetric(vertical: 10),
           height: _sizeTween.evaluate(animation),
           width: _sizeTween.evaluate(animation),
-          child: FlutterLogo(),
+          child: const FlutterLogo(),
         ),
       ),
     );
@@ -33,12 +34,15 @@ class AnimatedLogo extends AnimatedWidget {
 }
 
 class LogoApp extends StatefulWidget {
+  const LogoApp({Key? key}) : super(key: key);
+
+  @override
   _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  Animation<double> animation;
-  AnimationController controller;
+  late Animation<double> animation;
+  late AnimationController controller;
 
   @override
   void initState() {
@@ -73,7 +77,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
 class UsedInTutorialTextOnly extends _LogoAppState {
   UsedInTutorialTextOnly() {
-    // ignore: unused_local_variable
+    // ignore: unused_local_variable, prefer_typing_uninitialized_variables
     var animation, sizeAnimation, opacityAnimation, tween, colorTween;
 
     // #docregion CurvedAnimation
@@ -107,7 +111,7 @@ class UsedInTutorialTextOnly extends _LogoAppState {
     // #docregion IntTween-curve
     AnimationController controller = AnimationController(
         duration: const Duration(milliseconds: 500), vsync: this);
-    final Animation curve =
+    final Animation<double> curve =
         CurvedAnimation(parent: controller, curve: Curves.easeOut);
     Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
     // #enddocregion IntTween-curve

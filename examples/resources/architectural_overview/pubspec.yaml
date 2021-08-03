@@ -1,0 +1,17 @@
+name: architectural_overview
+description: samples for architectural-overview.md
+version: 1.0.0
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  ffi: ^1.0.0
+
+dev_dependencies:
+  flutter_lints: ^1.0.3
+
+flutter:
+  uses-material-design: true

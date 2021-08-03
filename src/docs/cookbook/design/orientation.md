@@ -18,7 +18,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/design/orientation"?>
+<?code-excerpt path-base="cookbook/design/orientation"?>
 
 In some situations,
 you want to update the display of an app when the user
@@ -130,15 +130,17 @@ OrientationBuilder(
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'Orientation Demo';
+    const appTitle = 'Orientation Demo';
 
-    return MaterialApp(
+    return const MaterialApp(
       title: appTitle,
       home: OrientationList(
         title: appTitle,
@@ -150,7 +152,7 @@ class MyApp extends StatelessWidget {
 class OrientationList extends StatelessWidget {
   final String title;
 
-  OrientationList({Key? key, required this.title}) : super(key: key);
+  const OrientationList({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

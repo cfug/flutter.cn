@@ -16,7 +16,7 @@ next:
   path: /docs/cookbook/testing/widget/introduction
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/testing/unit/mocking"?>
+<?code-excerpt path-base="cookbook/testing/unit/mocking"?>
 
 Sometimes, unit tests might depend on classes that fetch data from live
 web services or databases. This is inconvenient for a few reasons:
@@ -159,8 +159,8 @@ The function should now look like this:
 <?code-excerpt "lib/main.dart (fetchAlbum)"?>
 ```dart
 Future<Album> fetchAlbum(http.Client client) async {
-  final response =
-      await client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await client
+      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -208,20 +208,16 @@ Import this file to use them.
 
 生成的 mock 文件将会放在 `fetch_album_test.mocks.dart`，请导入以使用它。
 
-<?code-excerpt "test/fetch_album_test.dart (mockClient)"?>
+<?code-excerpt "test/fetch_album_test.dart (mockClient)" plaster="none"?>
 ```dart
-import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
-
-import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
 @GenerateMocks([http.Client])
 void main() {
+}
 ```
 
 Next, generate the mocks running the following command:
@@ -264,9 +260,9 @@ Mockito:
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:mocking/main.dart';
 
 import 'fetch_album_test.mocks.dart';
 
@@ -280,8 +276,10 @@ void main() {
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
-      when(client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
-          .thenAnswer((_) async => http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200));
+      when(client
+              .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
+          .thenAnswer((_) async =>
+              http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200));
 
       expect(await fetchAlbum(client), isA<Album>());
     });
@@ -291,7 +289,8 @@ void main() {
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.
-      when(client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
+      when(client
+              .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
           .thenAnswer((_) async => http.Response('Not Found', 404));
 
       expect(fetchAlbum(client), throwsException);
@@ -335,8 +334,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum(http.Client client) async {
-  final response =
-      await client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await client
+      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -354,7 +353,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({required this.userId, required this.id, required this.title});
+  const Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -365,10 +364,10 @@ class Album {
   }
 }
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -392,7 +391,7 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Fetch Data Example'),
+          title: const Text('Fetch Data Example'),
         ),
         body: Center(
           child: FutureBuilder<Album>(
@@ -405,7 +404,7 @@ class _MyAppState extends State<MyApp> {
               }
 
               // By default, show a loading spinner.
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             },
           ),
         ),
@@ -421,9 +420,9 @@ class _MyAppState extends State<MyApp> {
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:mocking/main.dart';
 
 import 'fetch_album_test.mocks.dart';
 
@@ -437,8 +436,10 @@ void main() {
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
-      when(client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
-          .thenAnswer((_) async => http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200));
+      when(client
+              .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
+          .thenAnswer((_) async =>
+              http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200));
 
       expect(await fetchAlbum(client), isA<Album>());
     });
@@ -448,7 +449,8 @@ void main() {
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.
-      when(client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
+      when(client
+              .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
           .thenAnswer((_) async => http.Response('Not Found', 404));
 
       expect(fetchAlbum(client), throwsException);

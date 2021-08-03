@@ -11,9 +11,9 @@ diff2html: true
 ---
 
 {% assign api = '{{site.api}}/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
-{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/null_safety_examples' -%}
-{% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/null_safety_examples/flutter_gallery/lib/demo {%- endcapture -%}
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
+{% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/examples/flutter_gallery/lib/demo {%- endcapture -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
@@ -76,11 +76,11 @@ then do the following:
 
     按照如下方法修改 app 标题栏的标题以及 app 的标题：
 
-    <?code-excerpt "../null_safety_examples/layout/base/lib/{main_starter,main}.dart"?>
+    <?code-excerpt "layout/base/lib/{main_starter,main}.dart"?>
     ```diff
-    --- ../null_safety_examples/layout/base/lib/main_starter.dart
-    +++ ../null_safety_examples/layout/base/lib/main.dart
-    @@ -10,10 +10,10 @@
+    --- layout/base/lib/main_starter.dart
+    +++ layout/base/lib/main.dart
+    @@ -12,10 +12,10 @@
        @override
        Widget build(BuildContext context) {
          return MaterialApp(
@@ -88,10 +88,10 @@ then do the following:
     +      title: 'Flutter layout demo',
            home: Scaffold(
              appBar: AppBar(
-    -          title: Text('Welcome to Flutter'),
-    +          title: Text('Flutter layout demo'),
+    -          title: const Text('Welcome to Flutter'),
+    +          title: const Text('Flutter layout demo'),
              ),
-             body: Center(
+             body: const Center(
                child: Text('Hello World'),
     ```
 
@@ -165,7 +165,7 @@ place some of the implementation in variables and functions.
 
 ## 第二步: 实现标题行
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/step2"?>
+<?code-excerpt path-base="layout/lakes/step2"?>
 
 First, you'll build the left column in the title section.
 Add the following code at the top of the `build()`
@@ -187,7 +187,7 @@ Widget titleSection = Container(
             /*2*/
             Container(
               padding: const EdgeInsets.only(bottom: 8),
-              child: Text(
+              child: const Text(
                 'Oeschinen Lake Campground',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -208,7 +208,7 @@ Widget titleSection = Container(
         Icons.star,
         color: Colors.red[500],
       ),
-      Text('41'),
+      const Text('41'),
     ],
   ),
 );
@@ -245,19 +245,19 @@ Add the title section to the app body like this:
 
 如下添加标题部分到 app body 中：
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes"?>
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "{../base,step2}/lib/main.dart" from="return MaterialApp"?>
 ```diff
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
-@@ -12,11 +46,13 @@
+@@ -14,11 +48,13 @@
      return MaterialApp(
        title: 'Flutter layout demo',
        home: Scaffold(
          appBar: AppBar(
-           title: Text('Flutter layout demo'),
+           title: const Text('Flutter layout demo'),
          ),
--        body: Center(
+-        body: const Center(
 -          child: Text('Hello World'),
 +        body: Column(
 +          children: [
@@ -291,7 +291,7 @@ Add the title section to the app body like this:
 
 ## 第三步: 实现按钮行
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/step3"?>
+<?code-excerpt path-base="layout/lakes/step3"?>
 
 The button section contains 3 columns that use the same
 layout&mdash;an icon over a row of text.
@@ -316,6 +316,8 @@ widgets 的一个 column 列对象。
 <?code-excerpt "lib/main.dart (_buildButtonColumn)" title?>
 ```dart
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // ···
@@ -371,15 +373,13 @@ Add the following code just below the
 ```dart
 Color color = Theme.of(context).primaryColor;
 
-Widget buttonSection = Container(
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: [
-      _buildButtonColumn(color, Icons.call, 'CALL'),
-      _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
-      _buildButtonColumn(color, Icons.share, 'SHARE'),
-    ],
-  ),
+Widget buttonSection = Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    _buildButtonColumn(color, Icons.call, 'CALL'),
+    _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+    _buildButtonColumn(color, Icons.share, 'SHARE'),
+  ],
 );
 ```
 
@@ -387,16 +387,16 @@ Add the button section to the body:
 
 添加按钮部分到 body 属性中去：
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes"?>
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "{step2,step3}/lib/main.dart" from="return MaterialApp" to="}"?>
 ```diff
 --- step2/lib/main.dart
 +++ step3/lib/main.dart
-@@ -46,3 +59,3 @@
+@@ -48,3 +59,3 @@
      return MaterialApp(
        title: 'Flutter layout demo',
        home: Scaffold(
-@@ -52,8 +65,9 @@
+@@ -54,8 +65,9 @@
          body: Column(
            children: [
              titleSection,
@@ -412,7 +412,7 @@ Add the button section to the body:
 
 ## 第四步: 实现文本区域
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/step4"?>
+<?code-excerpt path-base="layout/lakes/step4"?>
 
 Define the text section as a variable. Put the text
 in a `Container` and add padding along each edge.
@@ -426,15 +426,15 @@ declaration:
 
 <?code-excerpt "lib/main.dart (textSection)" title?>
 ```dart
-Widget textSection = Container(
-  padding: const EdgeInsets.all(32),
+Widget textSection = const Padding(
+  padding: EdgeInsets.all(32),
   child: Text(
     'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-        'Alps. Situated 1,578 meters above sea level, it is one of the '
-        'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-        'half-hour walk through pastures and pine forest, leads you to the '
-        'lake, which warms to 20 degrees Celsius in the summer. Activities '
-        'enjoyed here include rowing, and riding the summer toboggan run.',
+    'Alps. Situated 1,578 meters above sea level, it is one of the '
+    'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
+    'half-hour walk through pastures and pine forest, leads you to the '
+    'lake, which warms to 20 degrees Celsius in the summer. Activities '
+    'enjoyed here include rowing, and riding the summer toboggan run.',
     softWrap: true,
   ),
 );
@@ -450,7 +450,7 @@ Add the text section to the body:
 
 添加文本部分到 body 属性：
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes"?>
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "{step3,step4}/lib/main.dart" from="return MaterialApp"?>
 ```diff
 --- step3/lib/main.dart
@@ -505,7 +505,7 @@ leaving only the image. Add the image file to the example:
   ```diff
   --- step4/pubspec.yaml
   +++ step5/pubspec.yaml
-  @@ -17,3 +17,5 @@
+  @@ -18,3 +18,5 @@
 
    flutter:
      uses-material-design: true
@@ -569,7 +569,7 @@ on a small device.
        title: 'Flutter layout demo',
        home: Scaffold(
          appBar: AppBar(
-           title: Text('Flutter layout demo'),
+           title: const Text('Flutter layout demo'),
          ),
 -        body: Column(
 +        body: ListView(

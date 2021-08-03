@@ -5,12 +5,13 @@ description: How to use Google APIs with Flutter.
 description: 如何在 Flutter 中使用 Google API
 ---
 
-<?code-excerpt path-base="../null_safety_examples/googleapis/"?>
+<?code-excerpt path-base="googleapis/"?>
 
 The [Google APIs package]({{site.pub-pkg}}/googleapis) exposes dozens of Google
 services that you can use from Dart projects.
 
-[Google APIs package]({{site.pub-pkg}}/googleapis) 提供了许多你可以从 Dart 项目中使用的 Google 服务。
+[Google APIs package]({{site.pub-pkg}}/googleapis)
+提供了许多你可以从 Dart 项目中使用的 Google 服务。
 
 This page describes how to use APIs that interact with end-user data by using
 Google authentication.
@@ -80,7 +81,7 @@ To use Google APIs, follow these steps.
 ## 1. 选择所需的 API
 
 The documentation for [package:googleapis]({{site.pub-api}}/googleapis) lists
-each API as a separate Dart library – in a `name.version` format. Let's look at
+each API as a separate Dart library – in a `name.version` format. Let's look at
 [`youtube.v3`]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html)
 as an example.
 
@@ -95,7 +96,7 @@ Each library may provide many types, but there is one _root_ class that ends in
 每一个库都可以提供多种类型，但是一定会有一个以 `Api` 结尾的 **根** 类。
 在 YouTube 中，根类就是 [`YouTubeApi`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html)。
 
-Not only is the `Api` class the one you need to instantiate – see step 3 – but
+Not only is the `Api` class the one you need to instantiate – see step 3 – but
 it also exposes the scopes that represent the permissions needed to use the API.
 Look under the
 [Constants section]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html#constants)
@@ -109,7 +110,7 @@ when authenticating the user.
 你会看到可用的作用域有哪些。为了获取终端用户的 YouTube 数据的读取（并非写入）权限，
 用户验证时使用 [`youtubeReadonlyScope`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi/youtubeReadonlyScope-constant.html)。
 
-<?code-excerpt "lib/main.dart" skip="13" take="2"?>
+<?code-excerpt "lib/main.dart (youtubeImport)"?>
 ```dart
 /// Provides the `YouTubeApi` class.
 import 'package:googleapis/youtube/v3.dart';
@@ -145,7 +146,7 @@ for each platform you want to support.
 使用 [google_sign_in]({{site.pub-pkg}}/google_sign_in) 包对用户进行 Google 身份验证。
 你必须为每一种想要支持的平台配置登录。
 
-<?code-excerpt "lib/main.dart" skip="10" take="2"?>
+<?code-excerpt "lib/main.dart (googleImport)"?>
 ```dart
 /// Provides the `GoogleSignIn` class
 import 'package:google_sign_in/google_sign_in.dart';
@@ -158,7 +159,7 @@ class, you provide the desired scopes as discussed in the previous section.
 当你初始化 [`GoogleSignIn`]({{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn-class.html) 类时，
 你需要提供前面的小节中提到的所需的作用域。
 
-<?code-excerpt "lib/main.dart" skip="35" take="3"?>
+<?code-excerpt "lib/main.dart (init)"?>
 ```dart
 final _googleSignIn = GoogleSignIn(
   scopes: <String>[YouTubeApi.youtubeReadonlyScope],
@@ -190,7 +191,7 @@ package provides an
 在 `GoogleSignIn` 中提供了一个 [扩展方法]({{site.dart-site}}/guides/language/extension-methods)：
 [`authenticatedClient`]({{site.pub-api}}/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authenticatedClient.html)。
 
-<?code-excerpt "lib/main.dart" skip="7" take="1"?>
+<?code-excerpt "lib/main.dart (authImport)"?>
 ```dart
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 ```
@@ -202,7 +203,7 @@ When event value is not `null`, you can create an authenticated client.
 你可以监听 [`onCurrentUserChanged`]({{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html)。
 当事件值不是 `null` 时，你可以创建一个身份验证后的客户端。
 
-<?code-excerpt "lib/main.dart" skip="124" take="1"?>
+<?code-excerpt "lib/main.dart (signinCall)"?>
 ```dart
 var httpClient = (await _googleSignIn.authenticatedClient())!;
 ```
@@ -221,7 +222,7 @@ Use the API to create the desired API type and call methods, for instance:
 
 使用 API 来创建所需的 API 类型和调用方法，例如：
 
-<?code-excerpt "lib/main.dart" skip="125" take="6"?>
+<?code-excerpt "lib/main.dart (playlist)"?>
 ```dart
 var youTubeApi = YouTubeApi(httpClient);
 

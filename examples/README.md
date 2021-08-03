@@ -6,7 +6,7 @@ the repo root (`$PROJECT` represents the app project path, such as
 
 1. `flutter create --no-overwrite $PROJECT`
 2. `cd $PROJECT`
-3. `flutter analyze`
+3. `dart analyze`
 4. `flutter test`
 5. `flutter run`
 

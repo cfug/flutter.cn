@@ -77,8 +77,8 @@ you're probably familiar with creating responsive interfaces.
 Luckily for Flutter developers,
 there are a large set of widgets to make this easier. 
 
-如果你已经开发过应用或网站，也许你已经相对熟悉构建自适应的界面。
-对于 Flutter 开发者而言，有非常多的 widgets 让构建更为简单。
+如果你已经开发过应用或网站，那你可能已经熟悉如何构建自适应的界面。
+好消息是，对于 Flutter 开发者而言，有非常多的 widgets 让构建更为简单。
 
 Some of Flutter's most useful layout widgets include:
 
@@ -284,10 +284,12 @@ but this is totally up to your views to decide.
 The fact that it is unit-less makes it quite versatile,
 and it should work in most contexts. 
 
-我们可以看到，`VisualDensity` 是没有单位的，所以在不同的视图上可能有不同的含义。
+我们可以看到，`VisualDensity` 是没有单位的，
+所以在不同的视图上可能有不同的含义。
 在以上的例子中，1 个单位的密度等同于 6 个逻辑像素。
 具体的处理完全由你的视图自行决定。
-无单位的设计让它可以处理通用情况，能在大部分的场景下使用。
+无单位的设计让它可以处理通用情况，
+能在大部分的场景下使用。
 
 It’s worth noting that the Material Components generally
 use a value of around 4 logical pixels for each

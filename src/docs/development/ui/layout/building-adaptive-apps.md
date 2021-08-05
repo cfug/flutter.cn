@@ -274,8 +274,9 @@ This ties together your custom components,
 along with the built-in components,
 for a smooth transition effect across the app.
 
-容器在密度变化时会使用动画进行过渡变化。
-所有的自定义组件都会联系在一起，使整个应用平滑过渡。
+在密度变化时，容器不仅能自动地对其做出反应，
+还会结合动画进行过渡变化。
+所有的组件都会联系在一起，使整个应用平滑过渡。
 
 As shown, `VisualDensity` is unit-less,
 so it can mean different things to different views.
@@ -315,7 +316,7 @@ procedural approach to adjust parameters, calculate sizes,
 swap widgets, or completely restructure your UI to suit
 a particular form factor. 
 
-如果你需要的不仅是密度的变化，同时没有找到一个与你的使用场景契合的 widget，
+如果你需要的不仅是密度的变化，并且没有找到一个满足需求的 widget，
 那么你可以使用代码进行更细化的控制、计算尺寸、切换 widgets
 或是完全重新构建你的 UI 适配对应的外形结构。
 

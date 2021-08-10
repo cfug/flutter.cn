@@ -1605,7 +1605,7 @@ are:
 
   监听 `onPan` 手势事件，利用 `Stack` 移动对象。
 
-* Use one of the [pre-made list packages][] on pub.dev.
+* Use one of the [pre-made list packages][] on pub.dev.  
 
   使用 pub.dev 上一些 [预先实现的 package][pre-made list packages]。
 

@@ -86,14 +86,14 @@ Flutter 中最有用的部分布局 widgets 包括：
 
 **Single child**
 
-**单子级**
+**单子级 (Single child)**
 
 * [`Align`][]&mdash;Aligns a child within itself.
   It takes a double value between -1 and 1,
   for both the vertical and horizontal alignment.
 
   [`Align`][]&mdash;&mdash;让子级在其内部进行对齐。
-  可使用 -1 至 1 的双精度值在垂直和水平方向上进行对齐。
+  可使用 -1 至 1 之间的任意值在垂直和水平方向上进行对齐。
 
 * [`AspectRatio`][]&mdash;Attempts to size the
   child to a specific aspect ratio.
@@ -136,7 +136,7 @@ Flutter 中最有用的部分布局 widgets 包括：
 
 **Multichild**
 
-**多子级**
+**多子级 (Multi child)**
 
 * [`Column`][], [`Row`][], and [`Flex`][]&mdash;Lays out children
   in a single horizontal or vertical run.
@@ -156,8 +156,8 @@ Flutter 中最有用的部分布局 widgets 包括：
   but more efficient because it’s performed during the
   paint phase rather than the layout phase.
 
-  [`Flow`][]&mdash;&mdash;与 `CustomMultiChildLayout` 类似但更高效。
-  在绘制过程中使用代理方法对多个子级进行定位。
+  [`Flow`][]&mdash;&mdash;相对于 `CustomMultiChildLayout`
+  更高效的布局方式。在绘制过程中使用代理方法对多个子级进行定位。
 
 * [`ListView`][], [`GridView`][], and
   [`CustomScrollView`][]&mdash;Provides scrollable
@@ -176,7 +176,7 @@ Flutter 中最有用的部分布局 widgets 包括：
 * [`Table`][]&mdash;Uses a classic table layout algorithm for
   its children, combining multiple rows and columns.
 
-  [`Table`][]&mdash;&mdash;基于基础的表格布局算法，将子级组合为多列和多行。
+  [`Table`][]&mdash;&mdash;使用经典的表格布局算法，可以组合多列和多行。
 
 * [`Wrap`][]&mdash;Displays its children in multiple horizontal
   or vertical runs.
@@ -223,7 +223,7 @@ for example, by making a button larger
 
 不同的设备会提供不同级别的显示密度，使得操作的命中区域也要随之变化。
 Flutter 的 `VisualDensity` 类可以让你快速地调整整个应用的视图密度，
-比如在可触控设备上放大按钮（更容易点击）。
+比如在可触控设备上放大一个按钮（使其更容易被点击）。
 
 When you change the `VisualDensity` for your `MaterialApp`,
 `MaterialComponents` that support it animate their densities
@@ -233,9 +233,10 @@ or positive value that you want. By switching between different
 densities, you can easily adjust your UI:
 
 在你改变 `MaterialApp` 的 `VisualDensity` 时，
-支持它的 `MaterialComponents` 会以动画过渡改变其自身的密度。
-水平和垂直方向的密度默认都为 0.0，你可以将它设置为任意的正负值。
-你可以通过调整密度轻松地调整你的 UI：
+已支持 `VisualDensity` 的 `MaterialComponents`
+会以动画过渡的形式改变其自身的密度。
+水平和垂直方向的密度默认都为 0.0，你可以将它设置为任意的正负值，
+这样就可以通过调整密度轻松地调整你的 UI：
 
 ![Adaptive scaffold]({% asset development/ui/layout/adaptive_scaffold.gif @path %}){:width="100%"}
 

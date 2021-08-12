@@ -55,7 +55,7 @@ following:
 To learn more about null safety,
 read these pages:
 
-你可以阅读以下内容，进一步学习空安全
+你可以阅读以下内容，进一步学习空安全：
 
 * [Sound null safety][]:
   The null safety homepage.
@@ -86,7 +86,7 @@ check out these pages:
   in which only some libraries are null safe.
 
   [非健全的空安全][Unsound null safety]：
-  混合空安全模式的概念性内容和部分内容，只有部分依赖处于空安全模式。
+  混合空安全模式的概念性和实质性内容，其中只有部分依赖处于空安全模式。
 
 * [FAQ][]:
   Questions that have come up during migration to null safety.
@@ -131,7 +131,7 @@ We're currently aware of the following issues:
     the version of `integration_test` in the Flutter SDK.
 
     使用 [`flutter_driver`](/docs/cookbook/testing/integration/introduction)
-    进行集成测试，以及 Flutter SDK 中的 `integration_test` 的对应版本进行测试。
+    以及 Flutter SDK 中对应版本的 `integration_test` 进行集成测试。
 
       * Currently, these methods do not support null safety on the host
         side of the test. You can drive a null-safe application, but the test

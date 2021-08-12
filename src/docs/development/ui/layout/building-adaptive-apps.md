@@ -323,7 +323,7 @@ a particular form factor.
 
 #### Screen-based breakpoints
 
-#### 基于屏幕大小的断点
+#### 基于屏幕大小的分界点
 
 The simplest form of procedural layouts uses
 screen-based breakpoints. In Flutter,
@@ -331,8 +331,8 @@ this can be done with the `MediaQuery` API.
 There are no hard and fast rules for the sizes to use
 here, but these are general values: 
 
-最简单的代码控制布局方式是基于屏幕尺寸来定义断点。
-在 Flutter 中，你可以使用 `MediaQuery` API 实现这些断点。
+最简单的代码控制布局方式是基于屏幕尺寸来定义分界点。
+在 Flutter 中，你可以使用 `MediaQuery` API 实现这些分界点。
 具体需要使用的大小并没有作出硬性规定，下方是一些通用的值：
 
 <!--skip-->
@@ -347,7 +347,7 @@ class FormFactor {
 Using breakpoints, you can set up a simple system
 to determine the device type:
 
-使用断点可以让你通过简单的判断快速确定设备的类型：
+使用分界点可以让你通过简单的判断快速确定设备的类型：
 
 <!--skip-->
 ```dart
@@ -384,14 +384,14 @@ top-level decisions in your app. Changing things like
 visual density, paddings, or font-sizes are best when
 defined on a global basis. 
 
-使用基于屏幕大小的断点的最佳场景，是在应用的顶层进行尺寸决策。
-在改变视觉密度、边距或者字体大小时，定义全局的基数是最好的方式。
+使用基于屏幕大小的分界点的最佳场景，是在应用的顶层进行尺寸决策。
+在需要改变视觉密度、边距或者字体大小时，定义全局的基数是最好的方式。
 
 You can also use screen-based breakpoints to reflow your
 top-level widget trees. For example, you could switch
 from a vertical to a horizontal layout when the user isn’t on a handset:
 
-你也可以利用断点重新组织顶层的 widget 结构。
+你也可以利用分界点重新组织顶层的 widget 结构。
 例如，你可以判断用户是否使用手持设备，来切换垂直或水平的布局：
 
 <!--skip-->
@@ -432,7 +432,7 @@ and care only about the space that they have available to render.
 
 尽管对于全局的布局决策而言，判断屏幕大小非常有效，
 但对于内嵌的子视图而言，并不一定是合理的方案。
-子视图通常有自己的断点，并且会关心它们可用的渲染空间。
+子视图通常有自己的分界点，并且会关心它们可用的渲染空间。
 
 The simplest way to handle this in Flutter is using the
 [`LayoutBuilder`][] class. `LayoutBuilder` allows a
@@ -469,7 +469,7 @@ and adapt its layout to whatever space is provided.
 
 #### Device segmentation
 
-#### 细化设备
+#### 设备细分
 
 There are times when you want to make layout decisions
 based on the actual platform you’re running on,
@@ -561,9 +561,9 @@ can be done in a single place, instead of using an error-prone
 search and replace. Using shared rules has the added benefit
 of helping enforce consistency on the design side.
 
-由于所有的视图都引用了相同设计系统的规则，它们通常看起来更一致且更顺畅。
+由于所有的视图都引用了相同设计系统的规范，它们通常看起来更一致且更顺畅。
 与其进行容易出错的搜索替换，你可以将平台对应样式值的修改集中在一处。
-使用共享的规则也对设计部分的一致性有所帮助。
+使用共享的规则也对设计的一致性有所帮助。
 
 Some common design system categories that can be represented
 this way are: 
@@ -576,7 +576,7 @@ this way are:
 
 * Sizes and breakpoints
 
-  尺寸大小和断点
+  尺寸大小和分界点
 
 * Insets and paddings
 
@@ -642,8 +642,8 @@ for sharing. If you’re deploying a web app,
 decide which deep links to support,
 and design your navigation routes with those in mind.
 
-另一个例子是利用 Web 平台的。如果你正在部署 Web 应用，可以考虑 deep link 将支持哪些页面，
-并根据配置来设计应用的导航。
+另一个例子是充分利用 Web 平台的快速分享能力。如果你正在部署 Web 应用，
+可以考虑哪些页面会使用 deep link，并根据配置来设计应用的导航。
 
 The key takeaway here is to think about what each
 platform does best and see if there are unique capabilities
@@ -653,7 +653,7 @@ you can leverage.
 
 ### Use desktop build targets for rapid testing
 
-### 使用桌面目标构建进行快速测试
+### 通过构建桌面应用程序进行快速测试
 
 One of the most effective ways to test adaptive
 interfaces is to take advantage of the desktop build targets. 
@@ -688,7 +688,7 @@ your testing using the desktop target for its iteration speed.
 But, remember to switch frequently to a mobile device to
 verify that everything feels right. 
 
-应对这样的挑战的方法之一，是在一开始专注于更好的面向触摸的 UI。
+在一开始就专注于提升触摸体验的 UI，足以应对这样的挑战。
 你依旧可以使用桌面端来提高你的开发效率，但要记得时不时切换回移动端，
 验证开发的内容是否正常。
 
@@ -830,7 +830,7 @@ of the tree that should be treated as a group when tabbing.
 For example, you might to tab through all the fields in
 a form before tabbing to the submit button:
 
-例如，你可能想在切换到上传按钮前，先切换到所有的输入框：
+例如，你可能想要用户逐个切换所有的输入框，最后再切换到提交按钮：
 
 <!--skip-->
 ```dart
@@ -849,8 +849,8 @@ using another predefined `TraversalPolicy` class or by creating
 a custom policy.
 
 Flutter 有几种内置的方法对 widget 和组别进行遍历，默认使用的是
-`ReadingOrderTraversalPolicy` 类。
-这个类通常可以正常使用，你也可以创建另一个 `TraversalPolicy` 或创建一个自定义的规则，
+`ReadingOrderTraversalPolicy` 类。这个类通常可以正常使用，
+你也可以创建另一个 `TraversalPolicy` 或创建一个自定义的规则，
 对它进行定义。
 
 [`FocusTraversalGroup`]: {{site.api}}/flutter/widgets/FocusTraversalGroup-class.html
@@ -968,7 +968,8 @@ you can use the `RawKeyboard.instance.keysPressed` map.
 For example, a method like the following can check whether any
 of the provided keys are being held down:
 
-要想在全局监听中判断组合按键，你可以使用 `RawKeyboard.instance.keysPressed` map。
+要想在全局监听中判断组合按键，你可以使用
+`RawKeyboard.instance.keysPressed` 这个 Map 进行判断。
 例如下面这个方法，可以判断是否已经按下了指定的按键：
 
 <!--skip-->
@@ -1009,7 +1010,7 @@ important when you’re binding a Delete/Backspace accelerator for
 might be typing in.
 
 使用静态的监听时有一件指的注意的事情，当用户在输入框中输入内容，
-或关联的 widget 从视图中隐藏时，监听通常需要禁用。
+或关联的 widget 从视图中隐藏时，通常需要禁用监听。
 与 `Shortcuts` 和 `RawKeyboardListener` 不同，你需要自己对它们进行管理。
 当你在为 `Delete` 键构建一个删除或退格的行为的监听时，需要尤其注意，
 用户可能会在 `TextField` 输入内容时受到影响。
@@ -1357,7 +1358,7 @@ the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
 vertical space in your main UI. 
 
-在当代桌面应用中，经常会有定制应用窗口的标题栏、添加 Logo 或者其他控制的需求，
+在现代的桌面应用程序中，经常会有定制应用窗口的标题栏、添加 Logo 或者其他控制的需求，
 能节省界面对于垂直空间的占用。
 
 ![Samples of title bars]({% asset development/ui/layout/titlebar.png @path %})
@@ -1661,7 +1662,7 @@ Here are some resources to get you started:
 
 * [Machine sizes and breakpoints (Microsoft)][]
 
-  [屏幕大小和断点][Machine sizes and breakpoints (Microsoft)]
+  [屏幕大小和分界点][Machine sizes and breakpoints (Microsoft)]
 
 [Build high quality apps (Android)]: {{site.android-dev}}/quality
 [Human interface guidelines (Apple)]: {{site.apple-dev}}/design/human-interface-guidelines/

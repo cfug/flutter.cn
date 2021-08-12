@@ -111,7 +111,7 @@ apps with responsive design:
   你可以返回一个 [`Scaffold`][]，它包含一列内容，左侧是一个列表。
   如果约束更小，则返回一个列表在抽屉里的 [`Scaffold`][]。
   你也可以根据你的设备高度、屏幕的比例或者其他的属性，来调整你的显示。
-  当限制改变时（例如用户旋转了手机，或是在 Android N 上将应用放置为一个磁铁）
+  当限制改变时（例如用户旋转了手机，或是在 Android N 上将应用放置为一个图块）
   构建方法会运行。
 
 **Use the [`MediaQuery.of()`][] method in your build functions**

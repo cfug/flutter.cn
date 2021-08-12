@@ -11,7 +11,7 @@ that allows you to develop apps from a single codebase
 that look and feel great on any platform.
 
 Flutter 的首要目标，是构建一个可以使用单一代码来源，
-开发所有平台上都有着良好的视觉和体验的框架。
+开发在所有平台上都有着良好的视觉和体验的应用的框架。
 
 This means that your app may appear on screens of
 many different sizes, from a watch, to a foldable
@@ -54,7 +54,7 @@ an app can be both, or neither.
   desktop computer.
 
 **响应式**
-<br> 通常来说，一个 **响应式** 的应用会对可用的屏幕大小进行调整。
+<br> 通常来说，一个 **响应式** 应用的布局会根据可用的屏幕大小而调整。
   常见的场景是在用户重新调整窗口大小或旋转屏幕时，重新布局 UI。
   对于需要在多种设备（手表、手机、平板、笔记本或台式机）上运行的应用而言，
   这是必要的要素。
@@ -124,12 +124,12 @@ apps with responsive design:
 **在构建方法中使用 [`MediaQuery.of()`][] 方法**
 <br> 这个方法可以获取到当前应用（基于上下文）的尺寸、旋转方向等信息。
   如果你需要基于完整的上下文信息进行布局决策，
-  而不是使用仅限制部分 widget，这个方法将非常有用。
+  而不是基于特定的 widget，这个方法将非常有用。
   同样的，如果应用的尺寸发生了改变，构建方法也会自动执行。
 
 Other useful widgets and classes for creating a responsive UI:
 
-以下其他有助于是构建响应式界面的 widget：
+以下是其他有助于构建响应式界面的 widget：
 
 * [`AspectRatio`][]
 * [`CustomSingleChildLayout`][]

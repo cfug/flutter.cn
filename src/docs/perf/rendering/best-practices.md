@@ -139,9 +139,7 @@ which can be an expensive operation.
 
 {{site.alert.secondary}}
 
-  <h4>Why is savelayer expensive?</h4><a name="why-is-savelayer-expensive"></a>
-
-  <h4>为什么 saveLayer 代价很大？</h4><a name="why-is-savelayer-expensive"></a>
+  <h4><t>Why is savelayer expensive?</t><t>为什么 saveLayer 代价很大？</t></h4><a name="why-is-savelayer-expensive"></a>
 
   Calling `saveLayer()` allocates an offscreen buffer.
   Drawing content into the offscreen buffer might trigger

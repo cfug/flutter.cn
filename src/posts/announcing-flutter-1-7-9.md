@@ -15,7 +15,11 @@ toc: true
 
 [AndroidX](https://developer.android.google.cn/jetpack/androidx)  是 Android 团队用于在 Jetpack 中开发、测试、打包和发布库以及对其进行版本控制的开源项目，帮助 Android 应用通过最新的组件保持更新而无需牺牲向后兼容性。目前 AndroidX 已经稳定，很多 Flutter packages 已经更新和支持它，Flutter 现在可以支持 [创建一个 AndroidX 项目 (new Flutter project with AndroidX)](https://github.com/flutter/flutter/pull/31028) 了，这也减少了与 Android 生态系统集成所你需要做的工作。
 
-当创建 Flutter 项目的时候，你可以通过添加 `--androidx`  来确保生成的项目文件支持 AndroidX，更多关于将项目迁移到 AndroidX 的相关信息，请访问 [官方文档](/docs/development/androidx-migration#for-plugin-maintainers-migrating-a-flutter-plugin-to-androidx) 上的说明。我们也在积极努力为使用了 AndroidX 和 Android 混合库的应用带去 AndroidX 或 Jetifier 的支持，也会将其作为 add-to-app 的中的一项来支持，接下来的文章中会为大家带来更多相关的内容。
+当创建 Flutter 项目的时候，你可以通过添加 `--androidx` 来确保生成的项目文件支持 AndroidX，
+更多关于将项目迁移到 AndroidX 的相关信息，
+请访问 [官方文档](/docs/development/androidx-migration#how-do-i-migrate-my-existing-app-plugin-or-host-editable-module-project-to-androidx) 上的说明。
+我们也在积极努力为使用了 AndroidX 和 Android 混合库的应用带去 AndroidX 或 Jetifier 的支持，
+也会将其作为 add-to-app 的中的一项来支持，接下来的文章中会为大家带来更多相关的内容。
 
 ## 支持 Android App Bundles 和 64 位的 Android 应用
 

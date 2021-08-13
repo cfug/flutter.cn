@@ -635,7 +635,7 @@ Flutter, build a custom widget by
 (instead of extending them).
 
 在 iOS 里，你可以直接继承 `UIView` 或者使用已经存在的视图，然后重写并实现对应的方法来达到想要的效果。
-在 Flutter 里，构建自定义 widget 需要通过 [组合](/docs/resources/technical-overview#everythings-a-widget) 一些小的 widget（而不是对它们进行扩展）来实现。
+在 Flutter 里，构建自定义 widget 需要通过 [组合][composing] 一些小的 widget（而不是对它们进行扩展）来实现。
 
 For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a

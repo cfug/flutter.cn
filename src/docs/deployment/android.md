@@ -31,7 +31,7 @@ This page covers the following topics:
 * [Adding a launcher icon](#adding-a-launcher-icon)
 
   [添加启动图标](#adding-a-launcher-icon)
-  
+
 * [Enabling Material Components](#enabling-material-components)
 
   [启用 Material 组件](#enabling-material-components)
@@ -39,12 +39,6 @@ This page covers the following topics:
 * [Signing the app](#signing-the-app)
 
   [创建一个密钥库](#signing-the-app)
-  
-* [Enabling Proguard](#enabling-proguard)
-
-  [启用混淆器](#enabling-proguard)
-
-* [R8](#r8)
 
 * [Shrinking your code with R8](#shrinking-your-code-with-r8)
 

@@ -358,8 +358,6 @@
       permalink: /docs/deployment/linux
     - title: 构建和发布为 Web 应用
       permalink: /docs/deployment/web
-    - title: 构建和发布为 Linux 应用
-      permalink: /docs/deployment/linux
     - title: 持续部署
       permalink: /docs/deployment/cd
 

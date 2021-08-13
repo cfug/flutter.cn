@@ -20,19 +20,7 @@ This builds a _debug_ version of your app.
 This page helps you prepare a _release_ version
 of your app and covers the following topics:
 
-本页面会帮助你构建 **release** 版本的应用。
-
-This page covers the following topics:
-
-本页面内容囊括了如下主题：
-
-* [Adding a launcher icon](#adding-a-launcher-icon)
-
-  [添加一个桌面图标](#adding-a-launcher-icon)
-
-* [Obfuscation and minification](#obfuscation-and-minification)
-
-  [混淆并压缩代码](#obfuscation-and-minification)
+本页面会帮助你构建 **release** 版本的应用，其囊括了如下主题：
 
 * [Handling images on the web](#handling-images-on-the-web)
 
@@ -53,14 +41,6 @@ This page covers the following topics:
 * [Deploying to the web](#deploying-to-the-web)
 
   [发布到 Web 上](#deploying-to-the-web)
-
-## Adding a launcher icon
-
-## 添加一个桌面图标
-
-TBD
-
-暂未完成
 
 ## Handling images on the web
 

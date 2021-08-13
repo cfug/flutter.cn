@@ -47,7 +47,7 @@ To hot reload a Flutter app:
     修改项目中的一个Dart文件。
     大多数类型的代码更改可以热重载；
     一些需要重新启动应用程序的更改列表，
-    请参阅 [特别情况](#limitations)。
+    请参阅 [特别情况](#special-cases)。
     
  1. If you're working in an IDE/editor that supports Flutter's IDE tools,
     select **Save All** (`cmd-s`/`ctrl-s`), or click the hot reload

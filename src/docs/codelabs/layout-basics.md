@@ -623,7 +623,7 @@ The `crossAxisAlignment` property has five possible values:
 <br> 根据 children 的基线对子节点。
    (仅限`Text`类，并要求 `textBaseline` 属性设置为
   `TextBaseline.alphabetic`。
-  在 [Text class](#text-class) 小节中查看样例。
+  在 [Text widget](#text-widget) 小节中查看样例。
 
 #### Example: Modifying cross axis alignment
 {:.no_toc}

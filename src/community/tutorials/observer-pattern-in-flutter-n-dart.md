@@ -373,11 +373,11 @@ class MyRouteObserver extends RouteObserver<PageRoute<dynamic>> {
 
 ## 拓展阅读
 
-- 《Flutter开发之旅从南到北》—— 第8章 路由管理 & 第9章 状态管理
-- 观察者模式 wikipedia：https://en.wikipedia.org/wiki/Observer_pattern
-- Design Patterns in Dart：https://scottt2.github.io/design-patterns-in-dart/observer/
-- Dart | 什么是Stream：https://juejin.cn/post/6844903686737494023
-- 简单的应用状态管理：https://flutter.cn/docs/development/data-and-backend/state-mgmt/simple
+- [《Flutter开发之旅从南到北》](https://item.jd.com/12757223.html) —— 第8章 路由管理 & 第9章 状态管理
+- [观察者模式 wikipedia](https://en.wikipedia.org/wiki/Observer_pattern)
+- [Design Patterns in Dart](https://scottt2.github.io/design-patterns-in-dart/observer/)
+- [什么是Stream](https://juejin.cn/post/6844903686737494023)
+- [简单的应用状态管理](https://flutter.cn/docs/development/data-and-backend/state-mgmt/simple)
 
 ## 关于本系列文章
 

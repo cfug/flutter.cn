@@ -15,7 +15,8 @@ This page collects some common questions asked about
 Flutter. You might also check out the following
 specialized FAQs:
 
-本页面收集了关于 Flutter 一些大家常见问题的解答。你可能还会想要查看下面一些特别的答疑：
+本页面收集了关于 Flutter 一些大家常见问题的解答。
+你可能还会想要查看下面一些特别的答疑：
 
 * [Web FAQ][]
 * [Performance FAQ][]
@@ -34,8 +35,10 @@ Flutter works with existing code,
 is used by developers and organizations around
 the world, and is free and open source.
 
-Flutter 是 Google 的便携式 UI 工具包，帮助你在移动、web、桌面端创造高质量的绝妙原生体验的应用。
-Flutter 可以和世界上的开发人员和开发组织广泛使用的那些现存代码一起使用，并且是开源的、免费的。
+Flutter 是 Google 的便携式 UI 工具包，
+帮助你在移动、web、桌面端创造高质量的绝妙原生体验的应用。
+Flutter 可以和世界上的开发人员和开发组织广泛使用的那些现存代码一起使用，
+并且是开源的、免费的。
 
 ### What does Flutter do?
 
@@ -50,13 +53,15 @@ for building apps. It speeds up development of
 apps and reduces the cost and complexity
 of app production across platforms.
 
-对于开发者来说，Flutter 降低了创建移动应用的门槛。它加速了移动应用的开发，降低了兼顾 Android 和 iOS 应用开发的成本和复杂性。
+对于开发者来说，Flutter 降低了创建移动应用的门槛。
+它加速了移动应用的开发，降低了兼顾 Android 和 iOS 应用开发的成本和复杂性。
 
 For designers, Flutter helps deliver the original
 design vision, without loss of fidelity or compromises.
 It also acts as a productive prototyping tool.
 
-对于设计师而言，Flutter 可以确保精确地实现设计意图，而无需降低保真度或被迫进行妥协。在设计师的手里，Flutter 还可以作为一种高效的原型设计工具。
+对于设计师而言，Flutter 可以确保精确地实现设计意图，而无需降低保真度或被迫进行妥协。
+在设计师的手里，Flutter 还可以作为一种高效的原型设计工具。
 
 ### Who is Flutter for?
 
@@ -115,7 +120,8 @@ It also acts as a productive prototyping tool,
 with [CodePen][] support for sharing your ideas with others.
 
 对于设计师来说，Flutter 提供了一个能够实现高保真度用户体验的画布。
-Fast 公司评价 Flutter 是 [一个设计灵感的源泉][one of the top design ideas of the decade]，
+Fast 公司评价 Flutter 是
+[一个设计灵感的源泉][one of the top design ideas of the decade]，
 提供了将概念转换为生产代码的能力，却没有典型的框架强加的妥协。
 
 For engineering managers and businesses,
@@ -166,7 +172,8 @@ of the beta is available on the stable channel.)
 
 Flutter 设计为了让移动应用能够运行在 Android 与 iOS，
 以及在 web 和桌面端运行可交互式的应用。
-（请注意，桌面版支持目前已进入 beta 版本，但你还可以在 stable channel 中获取的 beta 版本的快照）
+（请注意，桌面版支持目前已进入 beta 版本，
+但你还可以在 stable channel 中获取的 beta 版本的快照）
 
 Apps that need to deliver highly branded designs
 are particularly well suited for Flutter.
@@ -236,7 +243,10 @@ This gives developers tremendous control over the system,
 as well as significantly lowers the bar to approachability
 for the majority of the system.
 
-Flutter 与其它工具的不同之处还在于，它只有一层简洁的 C/C++ 代码，在这之上，Flutter 使用 _Dart_ (一种现代化的、简洁的面向对象语言) 实现其大部分系统功能 (布局、手势、动画、框架、Widget 等)，这种语言使得开发者可以轻松地进行阅读、更改、替换或删除。
+Flutter 与其它工具的不同之处还在于，它只有一层简洁的 C/C++ 代码，
+在这之上，Flutter 使用 **Dart** (一种现代化的、简洁的面向对象语言)
+实现其大部分系统功能 (布局、手势、动画、框架、Widget 等)，
+这种语言使得开发者可以轻松地进行阅读、更改、替换或删除。
 这些特性都为开发者提供了巨大的系统控制权限，同时显著降低了访问大多数系统功能的门槛。
 
 ### Should I build my next production app with Flutter?
@@ -249,7 +259,8 @@ Since then, over 100,000 apps have shipped using
 Flutter to many hundreds of millions of devices.
 See some sample apps in the [showcase][].
 
-[Flutter 1.0][] 已于 2018 年 12 月推出，[Flutter 2][] 在 2021 年 3 月 3 日发布。
+[Flutter 1.0][] 已于 2018 年 12 月推出，
+[Flutter 2][] 在 2021 年 3 月 3 日发布。
 至今为止，成千上万使用了 Flutter 的应用已经被安装到了数亿台设备中。
 请通过成功 [案例页面][showcase] 了解知名开发者们的成果。
 
@@ -361,7 +372,10 @@ Of course, these widgets are only a starting point.
 Flutter is designed to make it easy to create your own
 widgets, or customize the existing widgets.
 
-是的，Flutter 自带了一套 [高品质的 Material Design 和 Cupertino (iOS 风格) Widget][widgets]、布局和主题。当然，这些 Widget 只是一个起点。Flutter 的设计目的就是，让您轻松创建自己的 Widget，或是定制现有的 Widget。
+是的，Flutter 自带了一套
+[高品质的 Material Design 和 Cupertino (iOS 风格) Widget][widgets]、
+布局和主题。当然，这些 Widget 只是一个起点。
+Flutter 的设计目的就是，让您轻松创建自己的 Widget，或是定制现有的 Widget。
 
 ### Does Flutter support Material Theming?
 
@@ -372,7 +386,9 @@ and Material is fully supported. A number of examples
 of this are shown in the [MDC-103 Flutter:
 Material Theming][] codelab.
 
-是的，Flutter 和 Material 团队密切合作，完全支持 Material Theming。你可以通过 codelab 了解 Material 组件 (MDC) 主题定制：[MDC-103 Flutter: Material Theming][]。
+是的，Flutter 和 Material 团队密切合作，完全支持 Material Theming。
+你可以通过 codelab 了解 Material 组件 (MDC) 主题定制：
+[MDC-103 Flutter: Material Theming][]。
 
 ### Does Flutter come with a testing framework?
 
@@ -381,7 +397,9 @@ Material Theming][] codelab.
 Yes, Flutter provides APIs for writing unit and
 integration tests. Learn more about [testing with Flutter][].
 
-是的，Flutter 提供用于编写单元和集成测试的 API。了解更多有关 Flutter 测试的信息请查看 [测试 Flutter 应用][testing with Flutter]。
+是的，Flutter 提供用于编写单元和集成测试的 API。
+了解更多有关 Flutter 测试的信息请查看
+[测试 Flutter 应用][testing with Flutter]。
 
 We use our own testing capabilities to test our SDK,
 and we measure our [test coverage][] on every commit.
@@ -500,16 +518,19 @@ No. Instead, Flutter provides a set of widgets
 managed and rendered by Flutter's framework and engine.
 You can browse a [catalog of Flutter's widgets][].
 
-不会。相反，Flutter 自己提供了一套 widget (包括 Material Design 和 iOS 风格的 Cupertino widget)，由 Flutter 的框架和引擎负责管理和渲染。你可以在这里浏览 [Flutter widget 目录][catalog of Flutter's widgets]。
+不会。相反，Flutter 自己提供了一套 widget
+(包括 Material Design 和 iOS 风格的 Cupertino widget)，
+由 Flutter 的框架和引擎负责管理和渲染。
+你可以在这里浏览 [Flutter widget 目录][catalog of Flutter's widgets]。
 
 We believe that the end result is higher quality apps.
 If we reused the built-in platform widgets,
 the quality and performance of Flutter apps would be limited
 by the flexibility and quality of those widgets.
 
-我们希望最终能够产生出更高质量的应用。如果我们直接使用 OEM 自带的 widget，那么 Flutter 应用的质量和性能将受到这些 widget 质量的限制。
-
-
+我们希望最终能够产生出更高质量的应用。
+如果我们直接使用 OEM 自带的 widget，
+那么 Flutter 应用的质量和性能将受到这些 widget 质量的限制。
 
 In Android, for example, there's a hard-coded set
 of gestures and fixed rules for disambiguating them.
@@ -529,21 +550,27 @@ In order to achieve that level of customized, beautiful design,
 Flutter is architectured to drive pixels instead
 of the built-in widgets.
 
-如今的应用设计趋势表明，很多设计师和用户都需要动效丰富的 UI，同时富有品牌表现力。为了实现这种级别的美学定制化设计，Flutter 在架构上就会倾向于直接驱动像素，而不是交给 OEM widget 来处理。
+如今的应用设计趋势表明，很多设计师和用户都需要动效丰富的 UI，同时富有品牌表现力。
+为了实现这种级别的美学定制化设计，Flutter 在架构上就会倾向于直接驱动像素，
+而不是交给 OEM widget 来处理。
 
 By using the same renderer, framework, and set of widgets,
 it's easier to publish for multiple platforms from the same
 codebase, without having to do careful and costly planning
 to align different feature sets and API characteristics.
 
-由于使用相同的渲染器、框架和 widget，就意味着您能更加轻松地同时发布 iOS 和 Android 版本应用，而无需耗费精力和成本来规划和同步两套独立的代码库和功能集。
+由于使用相同的渲染器、框架和 widget，
+就意味着您能更加轻松地同时发布 iOS 和 Android 版本应用，
+而无需耗费精力和成本来规划和同步两套独立的代码库和功能集。
 
 By using a single language, a single framework,
 and a single set of libraries for all of your code
 (regardless if your UI is different for each platform or not),
 we also aim to help lower app development and maintenance costs.
 
-另外，使用单一的语言、单个框架和同一组适用于所有 UI 的库 (无论您的 UI 在每个移动平台上都各有不同还是基本一致)，也有助于帮助您降低应用开发和维护成本。
+另外，使用单一的语言、单个框架和同一组适用于所有 UI 的库
+（无论您的 UI 在每个移动平台上都各有不同还是基本一致），
+也有助于帮助您降低应用开发和维护成本。
 
 ### What happens when my mobile OS updates and introduces new widgets?
 
@@ -555,7 +582,10 @@ to build support for new widgets. This work might come in the form
 of lower-level framework features, new composable widgets, or new
 widget implementations.
 
-Flutter 团队密切关注来自 iOS 和 Android 的 widget 使用和需求情况，且会与社区合作，对新的 widget 提供构建支持。这些支持可能会以这些形式来提供给开发者: 较低层级的框架功能、新的可编辑组合的 widget，或全新的 widget 实现。
+Flutter 团队密切关注来自 iOS 和 Android 的 widget 使用和需求情况，
+且会与社区合作，对新的 widget 提供构建支持。
+这些支持可能会以这些形式来提供给开发者: 
+较低层级的框架功能、新的可编辑组合的 widget，或全新的 widget 实现。
 
 Flutter's layered architecture is designed to support numerous
 widget libraries, and we encourage and support the community in
@@ -572,7 +602,9 @@ developers to access new mobile OS features and capabilities
 immediately. Developers don't have to wait for the Flutter team
 to expose the new mobile OS capability.
 
-Flutter 的互操作 (interop) 和插件 (plugin) 系统旨在使开发者能够立即访问新的移动操作系统特性和功能。开发者不必等待 Flutter 团队提供新系统功能的访问接口，而是自己第一时间即可使用。
+Flutter 的互操作 (interop) 和插件 (plugin)
+系统旨在使开发者能够立即访问新的移动操作系统特性和功能。
+开发者不必等待 Flutter 团队提供新系统功能的访问接口，而是自己第一时间即可使用。
 
 ### What operating systems can I use to build a Flutter app?
 
@@ -594,6 +626,10 @@ and the Dart virtual machine are implemented in C/C++.
 [Dart][] 是一个现代化高度发展，并为终端应用专门优化的语言。
 底层图形框架和 Dart 虚拟机在 C/C++ 中实现。
 
+### Why did Flutter choose to use Dart?
+
+### Flutter 为什么选择使用 Dart？
+
 During the initial development phase,
 the Flutter team looked at a lot of
 languages and runtimes, and ultimately
@@ -605,7 +641,11 @@ met some requirements, but Dart scored highly on
 all of our evaluation dimensions and met all our
 requirements and criteria.
 
-
+在最初的开发阶段，Flutter 团队调研了很多开发语言和运行时，
+最终在框架和小部件中采用了 Dart。
+Flutter 主要基于四个维度进行评估，并同时考虑了框架作者、开发人员和终端用户的需求。
+我们发现许多语言都满足了一些要求，但 Dart 在我们所有的评估维度上都获得了高分，
+并且满足了我们的所有要求和标准。
 
 Dart runtimes and compilers support the combination of
 two critical features for Flutter: a JIT-based fast
@@ -614,6 +654,10 @@ stateful hot reloads in a language with types,
 plus an Ahead-of-Time compiler that emits efficient
 ARM code for fast startup and predictable performance of
 production deployments.
+
+Dart 运行时和编译器支持 Flutter 的两个关键功能的组合：
+基于 JIT 的高效开发，允许在具有类型的语言中进行形参更改，以及保持状态的热重载；
+还有 AOT 编译器，可产出高效的 ARM 代码，为生产部署带来快速启动和可观的性能。
 
 In addition, we have the opportunity to work closely
 with the Dart community, which is actively investing
@@ -626,43 +670,13 @@ high performance, but now the language does because the Dart team
 built it for Flutter. Similarly, the Dart VM has
 previously been optimized for throughput but the
 team is now optimizing the VM for latency, which is more
-
-### Why did Flutter choose to use Dart?
-
-### Flutter 为什么选择使用 Dart？
-
-Flutter used four primary dimensions for evaluation,
-and considered the needs of framework authors, developers,
-and end users. We found some languages met some requirements,
-but Dart scored highly on all of our evaluation dimensions
-and met all our requirements and criteria.
-
-Flutter 使用四个主要维度进行评估，并综合考虑了框架开发者、应用开发者和最终用户的需求。我们发现某些语言的确在某些维度符合要求，但 Dart 在所有评估维度上都取得了高分，并且符合我们的所有要求和标准。
-
-Dart runtimes and compilers support the combination of two
-critical features for Flutter: a JIT-based fast development
-cycle that allows for shape changing and stateful hot reloads
-in a language with types, plus an Ahead-of-Time compiler that
-emits efficient ARM code for fast startup and predictable
-performance of production deployments.
-
-Dart 的运行时和编译器支持 Flutter 的两个关键特性: 基于 JIT 的快速开发周期，允许在带类型的语言中支持形变和有状态热重载，以及一个能产出高效率 ARM 代码的 AOT 编译器，从而确保快速启动的能力和可预期的生产版本运行性能。
-
-In addition, we have the opportunity to work closely with the Dart
-community, which is actively investing resources in improving Dart
-for use in Flutter. For example, when we adopted Dart, the language
-didn't have an ahead-of-time toolchain for producing native binaries,
-which is instrumental in achieving predictable, high performance,
-but now the language does because the Dart team built it for Flutter.
-Similarly, the Dart VM has previously been optimized for throughput
-but the team is now optimizing the VM for latency, which is more
 important for Flutter’s workload.
 
 此外，我们还有幸与 Dart 社区展开了密切合作，Dart 社区积极投入资源改进 Dart，以便在 Flutter 中更易使用。例如，当我们采用 Dart 时，该语言还没有用于生成原生二进制文件的 AOT 工具链，这些工具有助于实现稳定的高性能表现，但在 Dart 团队为 Flutter 构建了这些工具后，这个缺失已经不复存在了。同样，Dart VM 之前是针对吞吐量进行的优化，但团队现在正在针对延迟进行优化，这对于解决 Flutter 的工作负载更为重要。
 
 Dart scores highly for us on the following primary criteria:
 
-在评估时，Dart 在以下主要标准上得分很高:
+在评估时，Dart 在以下主要标准上得分很高：
 
 _Developer productivity_
 : One of Flutter's main value propositions is that it
@@ -676,10 +690,14 @@ _Developer productivity_
   so we need to stay productive at 100k's lines of code,
   without sacrificing approachability or
   readability of the framework and widgets for our developers.
-  
-  **开发人员生产力**：Flutter 的主要价值之一是通过让开发人员用同一套代码创建适用于 iOS 和 Android 的应用而节省开发资源。使用高生产力的语言加速开发，并提升 Flutter 的吸引力。
+
+  **开发人员生产力**：Flutter 的主要价值之一，是通过让开发人员用同一套代码，
+  创建适用于 iOS 和 Android 的应用而节省开发资源。
+  使用高生产力的语言加速开发，并提升 Flutter 的吸引力。
   这对于我们的框架团队和开发人员都很重要。
-  Flutter 本身的大部分内容所用的语言都和我们提供给用户的一样，所以我们要让十万行代码保持生产力，而不会牺牲框架和部件对我们开发人员的可达性和可读性。
+  Flutter 本身的大部分内容所用的语言都和我们提供给用户的一样，
+  所以我们要让十万行代码保持生产力，
+  而不会牺牲框架和部件对我们开发人员的可达性和可读性。
 
 _Object-orientation_
 : For Flutter, we want a language that's suited to
@@ -692,7 +710,12 @@ _Object-orientation_
   have experience with object-oriented development,
   making it easier to learn how to develop with Flutter.
 
-  **面向对象**：对于 Flutter 而言，我们需要一种适合其问题域——创建可视化用户体验——的语言。这个领域中沉淀了数十年的面向对象构建 UI 框架的经验。虽然我们可以使用非面向对象语言，但这意味着，为了解决几个难题，我们要 "重新发明轮子"。此外，绝大多数开发者都拥有面向对象开发的经验，因此可以更轻松地学习如何使用 Flutter 进行开发。
+  **面向对象**：对于 Flutter 而言，我们需要一种适合创建可视化用户体验的语言。
+  这个领域中沉淀了数十年的面向对象构建 UI 框架的经验。
+  虽然我们可以使用非面向对象语言，但这意味着，
+  为了解决几个难题，我们要 "重新发明轮子"。
+  此外，绝大多数开发者都拥有面向对象开发的经验，
+  因此可以更轻松地学习如何使用 Flutter 进行开发。
 
 _Predictable, high performance_
 : With Flutter, we want to empower developers to create fast,
@@ -703,7 +726,10 @@ _Predictable, high performance_
   performance, without periodic pauses that would cause
   dropped frames.
 
-  **稳定可期的高性能表现**：我们希望开发者能够通过 Flutter 创建快速而流畅的用户体验。为了实现这一点，我们需要能够在每个动画帧期间运行大量的最终开发者代码。这意味着我们需要的语言一方面既要拥有高性能，另一方面又需要避免因周期性的中断而影响帧率，即 "可期性"。
+  **稳定可期的高性能表现**：我们希望开发者能够通过 Flutter 创建快速而流畅的用户体验。
+  为了实现这一点，我们需要能够在每个动画帧期间运行大量的最终开发者代码。
+  这意味着我们需要的语言一方面既要拥有高性能，
+  另一方面又需要避免因周期性的中断而影响帧率，即 "可期性"。
 
 _Fast allocation_
 : The Flutter framework uses a functional-style flow that
@@ -713,7 +739,10 @@ _Fast allocation_
   property and doesn't work efficiently in languages
   that lack this facility.
 
-  **快速内存分配**：Flutter 框架使用的函数式流程，很大程度上依赖于下层的内存分配器高效地对小型的、短生命周期的内容进行内存分配。这个流程是使用支持这种分配机制的语言进行开发的，在缺少这个机制的语言中无法有效运作。
+  **快速内存分配**：Flutter 框架使用的函数式流程，
+  很大程度上依赖于下层的内存分配器高效地对小型的、短生命周期的内容进行内存分配。
+  这个流程是使用支持这种分配机制的语言进行开发的，
+  在缺少这个机制的语言中无法有效运作。
 
 Flutter can run Dart code that doesn't directly or
 transitively import `dart:mirrors` or `dart:html`.
@@ -727,47 +756,51 @@ Flutter 可以运行那些没有直接或间接导入了 `dart:mirrors` 或 `dar
 Flutter should be able to run most Dart code that doesn't import
 (transitively, or directly) dart:mirrors or dart:html.
 
-Flutter 应该能够运行大多数没有引用 dart:mirrors 或 dart:html (不论是直接还是间接引用) 的 Dart 代码。
+Flutter 应该能够运行大多数没有引用 dart:mirrors 或 dart:html
+（不论是直接还是间接引用）的 Dart 代码。
 
 ### How big is the Flutter engine?
 
 ### Flutter 引擎有多大？
 
-In July 2019, we measured the download size of a
+In March 2021, we measured the download size of a
 [minimal Flutter app][] (no Material Components,
 just a single `Center` widget, built with `flutter build
 apk --split-per-abi`), bundled and compressed as a release APK,
-to be approximately 4.3 MB for ARM, and 4.6 MB for ARM 64.
+to be approximately 4.3 MB for ARM32, and 4.8 MB for ARM64.
 
-2019 年 7 月，我们实测了一个 
-[最简版本的 Flutter 应用][minimal Flutter app] 
-(即不含 Material 组件，只包含一个使用 `flutter build apk --split-per-abi` 构建的 `Center` widget 的 app) 
+2021 年 3 月，我们实测了一个
+[最简版本的 Flutter 应用][minimal Flutter app]
+（即不含 Material 组件，只包含一个使用 `flutter build apk --split-per-abi`
+构建的 `Center` widget 的 app）
 压缩且 Bundle 一个 release 的 APK，
-ARM64 下是 4.6 MB，ARM 下是 4.3 MB。
+ARM64 下是 4.6 MB，ARM32 下是 4.3 MB。
 
-In ARM, the core engine is approximately 3.2 MB
+On ARM32, the core engine is approximately 3.4 MB
 (compressed), the framework + app code is approximately
-920.6 KB (compressed), the LICENSE file is 54.3 KB
-(compressed), necessary Java code (classes.dex)
-is 113.6 KB (compressed).
+765 KB (compressed), the LICENSE file is 58 KB
+(compressed), and necessary Java code (`classes.dex`)
+is 120 KB (compressed).
 
-在 ARM 下，核心的引擎大约占 3.2 MB，框架和应用的代码大约是 920.6 KB，
-许可证文件大约是 54.3 KB，必要的 Java 代码（classes.dex）是 113.6KB。
+在 ARM32 下，核心的引擎大约占 3.4 MB，框架和应用的代码大约是 765 KB，
+许可证文件大约是 58 KB，必要的 Java 代码（classes.dex）是 120 KB。
 上述数据均为经过压缩处理之后的大小。
 
-In ARM64, the core engine is approximately 3.5 MB (compressed),
-the framework + app code is approximately 872 KB (compressed),
-the LICENSE file is 54.3 KB (compressed),
-necessary Java code (classes.dex) is 113.6 KB (compressed).
+In ARM64, the core engine is approximately 4.0 MB 
+(compressed), the framework + app code is approximately
+659 KB (compressed), the LICENSE file is 58 KB
+(compressed), and necessary Java code (`classes.dex`)
+is 120 KB (compressed).
 
-在 ARM64 下，核心的引擎大约占 3.5 MB，框架和应用的代码大约是 872 KB，
-许可证文件大约是 54.3 KB，必要的 Java 代码（classes.dex）是 113.6KB。
+在 ARM64 下，核心的引擎大约占 4.0 MB，框架和应用的代码大约是 659 KB，
+许可证文件大约是 58 KB，必要的 Java 代码（classes.dex）是 120 KB。
 上述数据均为经过压缩处理之后的大小。
 
 These numbers were measured using [apkanalyzer][],
 which is also [built into Android Studio][].
 
-这些数字是由 [AndroidStudio][built into Android Studio] 内置的 [apkanalyzer][] 实测得出。
+这些数字是由 [AndroidStudio][built into Android Studio]
+内置的 [apkanalyzer][] 实测得出。
 
 On iOS, a release IPA of the same app has a download
 size of 10.9 MB on an iPhone X, as reported by Apple’s
@@ -781,7 +814,8 @@ section of Apple’s [QA1795][]).
 同一应用的发布 IPA 在 iPhone X 上的下载文件体积为 10.9 MB。
 IPA 比 APK 大，主要是因为 Apple 加密了 IPA 中的二进制文件，
 使得压缩效率降低。
-（可以查看 [iOS App Store Specific Considerations][] 中 [QA1795][] 关于加密的部分）
+（可以查看 [iOS App Store Specific Considerations][]
+中 [QA1795][] 关于加密的部分）
 
 The release engine binary includes LLVM IR (bitcode).
 Xcode uses this bitcode to produce a final binary for
@@ -795,24 +829,20 @@ stripped out during the final steps of the build.
 These steps happen after archiving your app and
 shipping it to the store.
 
-Release 模式下引擎二进制产物将包含 LLVM 的中间语言表示（bitcode）。
-Xcode 将使用 bitcode 为 App Store 生成最终包含了最新的编译器优化和功能的二进制文件。
-Profile 和 Debug 模式下的 Framework 中，bitcode 部分仅包含 **bitcode marker**，因此更能代表引擎的真实大小。
-无论你是否使用 bitcode，release 模式下增加的包大小都会在应用归档后并发布到应用商店后，在构建的最终步骤里被移除。
+Release 模式下引擎二进制产物将包含 LLVM 的中间语言表示 (bitcode)。
+Xcode 将使用 bitcode 为 App Store
+生成最终包含了最新的编译器优化和功能的二进制文件。
+Profile 和 Debug 模式下的 Framework 中，
+bitcode 部分仅包含 **bitcode marker**，因此更能代表引擎的真实大小。
+无论你是否使用 bitcode，
+release 模式下增加的包大小都会在应用归档且发布到应用商店后，
+在构建的最终步骤里被移除。
 
 Of course, we recommend that you measure your own app.
 To do that, see [Measuring your app's size][].
 
 当然，您的实际情况可能跟我们所说的有所不同，我们建议您测量自己的应用的体积。
-想要测量 Android 应用体积，请运行 `flutter build apk`，
-（使用 1.7.8+hotfix.3 之后版本的 Flutter，请加入 `--split-per-abi` 参数）
-并将 APK (`build/app/outputs/apk/release/app-release.apk`) 
-加载到 Android Studio 中，以便获取详细的体积报告。
-想要测量 iOS 应用，请将发布 IPA 加载到 App Store Connect 并获取体积报告。
-你可以查看
-[使用 Android Studio 加载 APK][Android Studio instructions]
-的相关说明，以及
-[使用 App Store Connect 加载 IPA][iOS instructions] 的相关说明。
+想要测量应用体积，请查看 [测量你的应用体积][Measuring your app's size]。
 
 ## Capabilities
 
@@ -828,8 +858,9 @@ Flutter apps run via natively compiled code&mdash;no
 interpreters are involved.
 This means that Flutter apps start quickly.
 
-Flutter 应用会有很出色的性能。Flutter 设计的目标就是帮助开发者轻松实现 60fps 的稳定帧率。
-Flutter 应用通过本地编译的代码运行&mdash;不涉及解释过程。
+Flutter 应用会有很出色的性能。
+Flutter 设计的目标就是帮助开发者轻松实现 60fps 的稳定帧率。
+Flutter 应用通过本地编译的代码运行&mdash;&mdash;不涉及解释过程。
 这也意味着 Flutter 应用启动会非常快捷。
 
 ### What kind of developer cycles can I expect? How long between edit and refresh? {#hot-reload}
@@ -839,15 +870,18 @@ Flutter 应用通过本地编译的代码运行&mdash;不涉及解释过程。
 Flutter implements a _hot reload_ developer cycle. You can expect
 sub-second reload times, on a device or an emulator/simulator.
 
-Flutter 使用的是热重载式的开发操作周期。您在实机或者模拟器上都能实现亚秒级的修改-更新速度。
+Flutter 使用的是热重载式的开发操作周期。
+您在实机或者模拟器上都能实现亚秒级的修改和更新速度。
 
 Flutter's hot reload is _stateful_, which means the app state
 is retained after a reload. This means you can quickly iterate
 on a screen deeply nested in your app, without starting
 from the home screen after every reload.
 
-另外，Flutter 的热重载是有状态的 (stateful)，这意味着重新加载后 app 的状态会被保留。
-这样即使您修改的界面在应用很深的位置，重载后您也能直接看到修改后的该界面，
+另外，Flutter 的热重载是有状态的 (stateful)，
+这意味着重新加载后 app 的状态会被保留。
+这样即使您修改的界面在应用很深的位置，
+重载后您也能直接看到修改后的该界面，
 而无需从应用首页开始重新操作。
 
 ### How is _hot reload_ different from _hot restart_?
@@ -901,11 +935,14 @@ App Campaigns connect you with the right user, at the right time.
 
 * Optimize your budget by allocating more budget to the highest-performing ads. Simply set a target cost-per-install (CPI) and daily budget, and let Google handle the rest.
 
-  通过为效果最好的广告分配更多预算优化你的出价。您需要为其设置应用安装出价，也就是“目标每次安装费用”，同时设置每日推广支出预算（CPI），剩下的工作交给 Google 处理即可。
+  通过为效果最好的广告分配更多预算优化你的出价。
+  您需要为其设置应用安装出价，也就是“目标每次安装费用”，
+  同时设置每日推广支出预算 (CPI)，剩下的工作交给 Google 处理即可。
 
 * Get set up in 10 minutes with an instant ad preview pulled from your app store listing. Then, customize the text and locations.
 
-  从应用商店列表中获得即时广告预览，仅需10分钟即可完成设置。下面你可以设置自定义文本内容与投放区域。
+  从应用商店列表中获得即时广告预览，仅需 10 分钟即可完成设置。
+* 下面你可以设置自定义文本内容与投放区域。
 
 [Get $75 app advertising credit when you spend $25.][]
 
@@ -980,7 +1017,9 @@ Also, note that experimental support for adding
 [multiple Flutter screens or views][] is available.
 
 是的，你可以在我们网上内的 [混合应用][add-to-app] 章节中学习。
-同时，请留意添加 [多个 Flutter 页面或 view][multiple Flutter screens or views] 体验版已经上线了。
+同时，请留意添加
+[多个 Flutter 页面或 view][multiple Flutter screens or views]
+体验版已经上线了。
 
 See the integration documentation in the
 [add-to-app][] section of our website.
@@ -1015,7 +1054,10 @@ Developers can expose as much or as little of the
 platform APIs as they need, and build layers of
 abstractions that are a best fit for their project.
 
-最后，我们鼓励开发者使用 Flutter 的异步消息传递系统来创建出 [自己的平台][platform and third-party APIs] 与第三方 API 的整合方案。开发者可以根据需要公开尽可能多 (或者尽可能少) 的平台 API，并构建最适合其项目的抽象层。
+最后，我们鼓励开发者使用 Flutter 的异步消息传递系统来创建出
+[自己的平台][platform and third-party APIs] 与第三方 API 的整合方案。
+开发者可以根据需要公开尽可能多 (或者尽可能少) 的平台 API，
+并构建最适合其项目的抽象层。
 
 ### Can I extend and customize the bundled widgets?
 
@@ -1084,7 +1126,9 @@ to be more brand-driven and unified across platforms.
 This implies a strong motivation to share layout and UI
 code across iOS and Android.
 
-我们发现移动应用布局和设计正在不断发展，更趋于品牌设计的诉求，而且跨平台之间的呈现逐渐趋同。这意味着不少开发者会有很强的动力在 iOS 和 Android 上共享布局和 UI 代码。
+我们发现移动应用布局和设计正在不断发展，更趋于品牌设计的诉求，
+而且跨平台之间的呈现逐渐趋同。
+这意味着不少开发者会有很强的动力在 iOS 和 Android 上共享布局和 UI 代码。
 
 The brand identity and customization of the app's
 aesthetic design is now becoming more important than
@@ -1093,7 +1137,9 @@ For example, app designs often require custom fonts, colors,
 shapes, motion, and more in order to clearly convey their
 brand identity.
 
-如今，在应用美学设计中，品牌表达和定制比严格遵循平台自己的美学更为重要。例如，应用设计通常需要自定义字体、颜色、形状、动效等，以便清楚地传达出其品牌独有的特性。
+如今，在应用美学设计中，品牌表达和定制比严格遵循平台自己的美学更为重要。
+例如，应用设计通常需要自定义字体、颜色、形状、动效等，
+以便清楚地传达出其品牌独有的特性。
 
 We also see common layout patterns deployed across
 iOS and Android. For example, the "bottom nav bar"
@@ -1101,7 +1147,9 @@ pattern can now be naturally found across iOS and Android.
 There seems to be a convergence of design ideas
 across mobile platforms.
 
-我们还发现，很多应用都在 iOS 和 Android 上采用了通用的布局模式。例如，您现在可以在 iOS 和 Android 上很方便地找到“底部导航”设计模式。移动平台上的设计理念似乎正在趋于一致。
+我们还发现，很多应用都在 iOS 和 Android 上采用了通用的布局模式。
+例如，您现在可以在 iOS 和 Android 上很方便地找到“底部导航”设计模式。
+移动平台上的设计理念似乎正在趋于一致。
 
 ### Can I interop with my mobile platform's default programming language?
 
@@ -1128,7 +1176,8 @@ Here is an [example project][] that shows how to use a
 platform channel to access battery state information on
 iOS and Android.
 
-你也可以通过这个 [示例项目][example project]，学习如何使用平台通道访问 iOS 和 Android 上的电池状态信息。
+你也可以通过这个 [示例项目][example project]，
+学习如何使用平台通道访问 iOS 和 Android 上的电池状态信息。
 
 ### Does Flutter come with a reflection/mirrors system?
 
@@ -1212,7 +1261,8 @@ Absolutely. There are libraries on the
 [pub.dev][] for JSON, XML,
 protobufs, and many other utilities and formats.
 
-当然可以。[Pub 站点][pub.dev] 提供了很多这样的代码库，包括 JSON, XML, protobufs 以及很多其他内容格式。
+当然可以。[Pub 站点][pub.dev] 提供了很多这样的代码库，
+包括 JSON, XML, protobufs 以及很多其他内容格式。
 
 For a detailed writeup on using JSON with Flutter,
 check out the [JSON tutorial][].
@@ -1227,7 +1277,8 @@ Today we don't support for 3D via OpenGL ES or similar.
 We have long-term plans to expose an optimized 3D API,
 but right now we're focused on 2D.
 
-我们暂不支持通过 OpenGL ES 或类似的机制实现 3D。在 3D API 方面我们有一个长期的计划，但目前我们专注于呈现 2D。
+我们暂不支持通过 OpenGL ES 或类似的机制实现 3D。
+在 3D API 方面我们有一个长期的计划，但目前我们专注于呈现 2D。
 
 ### Why is my APK or IPA so big?
 
@@ -1238,14 +1289,16 @@ are the bulk of an APK or IPA. Various tools in the
 Android and iOS ecosystems can help you understand
 what's inside of your APK or IPA.
 
-通常，图像、声音文件、字体等资源在 APK 或 IPA 里占据了相当的比重。Android 和 iOS 生态系统中有很多工具可以帮助您了解 APK 或 IPA 中的各种内容的比重情况。
+通常，图像、声音文件、字体等资源在 APK 或 IPA 里占据了相当的比重。
+Android 和 iOS 生态系统中有很多工具可以帮助您了解 APK 或 IPA 中的各种内容的比重情况。
 
 Also, be sure to create a _release build_
 of your APK or IPA with the Flutter tools.
 A release build is usually _much_ smaller
 than a _debug build_.
 
-此外，请务必使用 Flutter 工具创建 APK 或 IPA 的_发布版本_。发布版本的体积通常_远_小于_调试_版本。
+此外，请务必使用 Flutter 工具创建 APK 或 IPA 的_发布版本_。
+发布版本的体积通常_远_小于_调试_版本。
 
 Learn more about creating a
 [release build of your Android app][],
@@ -1253,7 +1306,9 @@ and creating a [release build of your iOS app][].
 Also, check out [Measuring your app's size][].
 
 
-如果你想学习更多有关如何发布版本的教程，可以查看 [打包和发布到 Android 平台][release build of your Android app] 以及 [打包和发布到 iOS 平台][release build of your iOS app]。
+如果你想学习更多有关如何发布版本的教程，可以查看
+[打包和发布到 Android 平台][release build of your Android app]
+以及 [打包和发布到 iOS 平台][release build of your iOS app]。
 
 ### Do Flutter apps run on Chromebooks?
 
@@ -1263,8 +1318,19 @@ We have seen Flutter apps run on some Chromebooks.
 We are tracking [issues related to running Flutter on
 Chromebooks][].
 
-我们注意到已经有 Flutter 应用运行在某些 Chromebook 上了。针对在 Chromebook 上运行 Flutter 的情况，我们有进行持续的跟踪，你可以查看 [Flutter 运行在 Chromebook 上的问题追踪][issues related to running Flutter on
-Chromebooks] 来获得相关信息。
+我们注意到已经有 Flutter 应用运行在某些 Chromebook 上了。
+针对在 Chromebook 上运行 Flutter 的情况，
+我们有进行持续的跟踪，你可以查看
+[Flutter 运行在 Chromebook 上的问题追踪][issues related to running Flutter on Chromebooks]
+来获得相关信息。
+
+### Is Flutter ABI compatible?
+
+Flutter and Dart do not offer application binary interface (ABI)
+compatibility. Offering ABI compatability is not a current
+goal for Flutter or Dart.
+
+Flutter 和 Dart 尚未提供且目前不会提供应用二进制接口 (ABI) 的支持。
 
 ## Framework
 
@@ -1281,7 +1347,8 @@ subclassing `StatefulWidget`. You can read a more
 [detailed discussion on the API docs for `State.build`][].
 
 将 Widget 的 build(BuildContext context) 方法放在 `State` 上，
-而不是将 `Widget build(BuildContext context, State state)` 方法放在 `StatefulWidget` 上，
+而不是将 `Widget build(BuildContext context, State state)`
+方法放在 `StatefulWidget` 上，
 这个策略能让开发者在继承 `StatefulWidget` 时提供更多的灵活性，
 你可以在 API 文档中查看 
 [关于 State.build 的讨论][detailed discussion on the API docs for `State.build`]。
@@ -1294,14 +1361,16 @@ Flutter UIs are built with an imperative, object-oriented
 language (Dart, the same language used to build Flutter's
 framework). Flutter doesn't ship with a declarative markup.
 
-Flutter 的 UI 由指令式的面向对象语言构建，也就是 Dart。它也是 Flutter 框架的编写语言。Flutter 本身并不包含声明式的标记语言。
+Flutter 的 UI 由指令式的面向对象语言构建，也就是 Dart。
+它也是 Flutter 框架的编写语言。Flutter 本身并不包含声明式的标记语言。
 
 We found that UIs dynamically built with code allow for
 more flexibility. For example, we have found it difficult
 for a rigid markup system to express and produce
 customized widgets with bespoke behaviors.
 
-我们发现将 UI 交给代码来动态构建会带来更多的灵活性。比如，我们发现固化的标记语言系统很难表达一个从视觉到行为都完全定制的 widget。
+我们发现将 UI 交给代码来动态构建会带来更多的灵活性。
+比如，我们发现固化的标记语言系统很难表达一个从视觉到行为都完全定制的 widget。
 
 We have also found that our "code-first" better allows
 for features like hot reload and dynamic environment adaptations.
@@ -1313,7 +1382,9 @@ converted to widgets on the fly. Because build methods
 are "just code", they can do anything,
 including interpreting markup and turning it into widgets.
 
-从根本上来讲，创造出一种能动态转化成 widget 的语言是可能的，毕竟构建方法说到底也还是代码，他们能做的事情很多，自然也包括将标记语言转化成 widget。
+从根本上来讲，创造出一种能动态转化成 widget 的语言是可能的，
+毕竟构建方法说到底也还是代码，他们能做的事情很多，
+自然也包括将标记语言转化成 widget。
 
 ### My app has a Debug banner/ribbon in the upper right. Why am I seeing that?
 
@@ -1328,21 +1399,29 @@ enabling a fast development cycle with [hot reload][]
 (release builds are compiled using the standard [Android][]
 and [iOS][] toolchains).
 
-Debug 编译配置会在一个 VM (Virtual Machine) 里运行您的 Dart 代码，从而提供更快速的开发操作周期，如 [热重载][hot reload]。如果是编译发布版本的话，则会使用 [Android][] 和 [iOS][] 标准的工具链。
+Debug 编译配置会在一个 VM (Virtual Machine) 里运行您的 Dart 代码，
+从而提供更快速的开发操作周期，如 [热重载][hot reload]。
+如果是编译发布版本的话，则会使用 [Android][] 和 [iOS][] 标准的工具链。
 
 The debug configuration also checks all asserts, which helps you catch errors
 early during development, but imposes a runtime cost. The "Debug" banner
 indicates that these checks are enabled. You can run your app without these
 checks by using either the `--profile` or `--release` flag to `flutter run`.
 
-Debug 编译配置也会检查所有的断言 (assert)，这会帮助您在开发时更早地发现错误，但这也会加大运行时的开销。您看到的 Debug 标识是告诉您这些检查目前是打开的状态。您可以通过在运行 `flutter run` 时附加 `--profile` 或者 `--release` 来跳过这些检查。
+Debug 编译配置也会检查所有的断言 (assert)，这会帮助您在开发时更早地发现错误，
+但这也会加大运行时的开销。您看到的 Debug 标识是告诉您这些检查目前是打开的状态。
+您可以通过在运行 `flutter run` 时附加 `--profile`
+或者 `--release` 来跳过这些检查。
 
 If your IDE uses the Flutter plugin,
 you can launch the app in profile or release mode.
 For IntelliJ, use the menu entries
 **Run > Flutter Run in Profile Mode** or **Release Mode**.
 
-如果您在使用 Flutter 的 IntelliJ 插件，您可以在 profile 或者 release 模式下启动应用，只需要在菜单里选择 **Run > Flutter run in Profile Mode 或者 Release Mode** 即可。
+如果您在使用 Flutter 的 IntelliJ 插件，
+您可以在 profile 或者 release 模式下启动应用，
+只需要在菜单里选择 **Run > Flutter run in Profile Mode** 或者
+**Release Mode** 即可。
 
 ### What programming paradigm does Flutter's framework use?
 
@@ -1354,7 +1433,8 @@ are used in Flutter. We use each one where we believe
 the strengths of the technique make it particularly well-suited.
 In no particular order:
 
-Flutter 是一个多范式的编程环境。过去几十年中许多编程技术都有在 Flutter 中使用。我们在选择范式时会考虑其适用性进行综合性的决策。以下列出的范式不分先后：
+Flutter 是一个多范式的编程环境。过去几十年中许多编程技术都有在 Flutter 中使用。
+我们在选择范式时会考虑其适用性进行综合性的决策。以下列出的范式不分先后：
 
 **Composition**
 <br> The primary paradigm used by Flutter is that of using
@@ -1373,7 +1453,8 @@ Flutter 是一个多范式的编程环境。过去几十年中许多编程技术
   And so on. It's widgets all the way down.
 
 **组合 (composition)** 
-<br>这也是 Flutter 的主要开发范式，将简单的、行为有限的小对象进行组合，从而实现更复杂的效果。
+<br>这也是 Flutter 的主要开发范式，将简单的、行为有限的小对象进行组合，
+从而实现更复杂的效果。
 绝大多数 Flutter widget 都是用这种方法构建的。
 比如 Material [`FlatButton`][] 类是基于 [`MaterialButton`][] 类构建的，
 而这个类则是由 
@@ -1423,7 +1504,8 @@ Dart 的 [`Iterable`][] API 也重度使用了这个范式 (如 map, reduce, whe
   with multiple listeners.
 
 **事件驱动编程 (event-driven programming)** 
-<br> 用户的交互操作被包装成事件对象，这些对象发送给被各个 event handler 注册的回调方法。
+<br> 用户的交互操作被包装成事件对象，
+这些对象发送给被各个 event handler 注册的回调方法。
 屏幕内容的更新使用的也是类似的回调机制。
 比如，做为动画系统构建基础的 [`Listenable`][] 类，
 就采用了包含多个事件监听者的订阅模型。
@@ -1621,13 +1703,15 @@ We recommend that you join our mailing list at
 [{{site.email}}][] and let us know how you're
 using Flutter and what you'd like to do with it.
 
-我们也希望您加入我们的邮件讨论 ([{{site.email}}](mailto:{{site.email}}))，告诉我们您是如何使用 Flutter 的，以及打算用 Flutter 开发什么。
+我们也希望您加入我们的邮件讨论 ([{{site.email}}](mailto:{{site.email}}))，
+告诉我们您是如何使用 Flutter 的，以及打算用 Flutter 开发什么。
 
 If you're interested in contributing code, you can start
 by reading our [Contributing Guide][] and check out our
 list of [easy starter issues][].
 
-如果您打算为 Flutter 贡献代码，请先阅读 [代码贡献指南][Contributing Guide]，然后从 [简单待修复问题][easy starter issues] 列表中寻找力所能及的问题开始入手。
+如果您打算为 Flutter 贡献代码，请先阅读 [代码贡献指南][Contributing Guide]，
+然后从 [简单待修复问题][easy starter issues] 列表中寻找力所能及的问题开始入手。
 
 Finally, you can connect with helpful Flutter communities.
 For more information, see our [Community][] page.
@@ -1653,7 +1737,10 @@ binary, and the Dart framework as a separate binary that the engine loads.
 The engine uses multiple software components with many dependencies; view the
 complete list in its [license file][].
 
-Flutter 包含两个部分：一个使用动态链接二进制文件发行的引擎，以及引擎加载的 Dart 框架二进制文件。引擎使用了很多软件组件，且包含许多依存内容。完整的说明和依存清单请查看引擎的 [许可协议][license file]。
+Flutter 包含两个部分：
+一个使用动态链接二进制文件发行的引擎，以及引擎加载的 Dart 框架二进制文件。
+引擎使用了很多软件组件，且包含许多依存内容。
+完整的说明和依存清单请查看引擎的 [许可协议][license file]。
 
 The framework is entirely self-contained and requires
 [only one license][].
@@ -1702,7 +1789,8 @@ we encourage you to join the community and
 [contribute to Flutter][]!
 
 我们都在参与 Flutter 开发！
-我们都知道 Flutter 是一个开源项目。目前 Flutter 中的大部分都是由 Google 的工程师来开发。
+我们都知道 Flutter 是一个开源项目。
+目前 Flutter 中的大部分都是由 Google 的工程师来开发。
 如果您喜欢 Flutter 的话，我们希望您加入开发者社区并做出贡献！
 
 ### What are Flutter's guiding principles?
@@ -1723,19 +1811,22 @@ We believe that:
   high-fidelity experiences, due to automatic behavior (scrolling,
   layout) and legacy support.
 
-  目前常用的 HTML 和 WebView 由于一些默认的交互响应 (滚动、布局等) 以及向后兼容等问题，很难获得稳定的高帧率和精确的设计体验。
+  目前常用的 HTML 和 WebView 由于一些默认的交互响应
+  （滚动、布局等）以及向后兼容等问题，很难获得稳定的高帧率和精确的设计体验。
 
 * Today, it's too costly to build the same app multiple times: it
   requires different teams, different code bases,
   different workflows, different tools, etc.
 
-  目前，开发同一个应用的不同平台版本成本很高：这意味着不同的团队、不同的代码库、不同的工作流程以及不同的工具，等等。
+  目前，开发同一个应用的不同平台版本成本很高：
+  这意味着不同的团队、不同的代码库、不同的工作流程以及不同的工具，等等。
 
 * Developers want an easier, better way to use a single codebase to
   build mobile apps for multiple target platforms,
   and they don't want to sacrifice quality, control, or performance.
 
-  开发者需要一个简单的、更好的方法来使用同一套代码库开发应用的不同平台版本。而且他们不希望在质量、细节和功能控制以及性能上有任何妥协。
+  开发者需要一个简单的、更好的方法来使用同一套代码库开发应用的不同平台版本。
+  而且他们不希望在质量、细节和功能控制以及性能上有任何妥协。
 
 We are focused on three things:
 
@@ -1773,13 +1864,15 @@ model as Unity, the engine that powers many of the
 most popular games on the Apple store.
 
 我们无法代 Apple 发言，但已经有很多使用类似 Flutter 的其他技术开发的应用。
-实际上，Flutter 与 Unity 使用了近乎一致的底层架构模型，Apple store 中最著名的游戏也是使用它的引擎开发的。
+实际上，Flutter 与 Unity 使用了近乎一致的底层架构模型，
+Apple store 中最著名的游戏也是使用它的引擎开发的。
 
 Apple has frequently featured well-designed apps
 that are built with Flutter,
 including [Hamilton][Hamilton for iOS] and [Reflectly][].
 
-Apple 最近评选的最佳设计应用也是使用 Flutter 开发的，其中包括 Hamilton][Hamilton for iOS] 和 [Reflectly][]。
+Apple 最近评选的最佳设计应用也是使用 Flutter 开发的，
+其中包括 [Hamilton][Hamilton for iOS] 和 [Reflectly][]。
 
 As with any app submitted to the Apple store,
 apps built with Flutter should follow Apple's

@@ -23,9 +23,9 @@ your development environment must meet these minimum requirements:
 
 想要安装并运行 Flutter，你的开发环境需要最低满足以下要求：
 
-- **Operating Systems**: macOS (64-bit)
+- **Operating Systems**: macOS
 
-  **操作系统**：macOS（64 位）
+  **操作系统**：macOS
 
 - **Disk Space**: 2.8 GB (does not include disk space for IDE/tools).
 

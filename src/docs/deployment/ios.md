@@ -9,8 +9,8 @@ tags: 发布, iOS
 keywords: 上传App Store,发布Flutter应用
 ---
 
-This guide provides a step-by-step walkthrough of releasing a Flutter app to
-the [App Store][appstore] and [TestFlight][testflight].
+This guide provides a step-by-step walkthrough of releasing a
+Flutter app to the [App Store][appstore] and [TestFlight][].
 
 这个教程将为你提供关于如何将 Flutter App 发布到
 [App Store][appstore_cn] 和 [TestFlight][testflight_cn] 的说明。
@@ -33,7 +33,7 @@ Apple's [App Review Guidelines][appreview].
 确保你已经看过了 Apple 的 [App Store 审核指南][appreview_cn]。
 
 In order to publish your app to the App Store,
-you'll need to enroll in the
+you must first enroll in the
 [Apple Developer Program][devprogram].
 You can read more about the various
 membership options in Apple's
@@ -53,39 +53,30 @@ Manage your app's life cycle on
 You define your app name and description, add screenshots,
 set pricing, and manage releases to the App Store and TestFlight.
 
-在 [App Store Connect][appstoreconnect]
-管理你的应用生命周期（以前是 iTunes Connect）。
-你需要定义你的应用名称、描述以及截图，
-然后设置价格并管理发布到应用商店和 TestFlight。
-
-[App Store Connect][appstoreconnect] (formerly iTunes Connect) is where you'll
-manage your app's life cycle. You will define your app name and description,
-add screenshots, set pricing, and manage releases to the App Store
-and TestFlight.
-
 [App Store Connect][appstoreconnect_cn]
 （曾经的 iTunes Connet）是你将会管理应用生命周期的地方。
 你将会定义应用的名称和描述以及截图，设置价格，
 并管理发布到 App Store 和 Testflight。
 
-Registering your app involves two steps: registering a unique Bundle ID, and
-creating an application record on App Store Connect.
+Registering your app involves two steps: registering a unique
+Bundle ID, and creating an application record on App Store Connect.
 
 注册你的 app 需要两步：登记唯一的套装 ID（Bundle ID），
 并在你的 App Store Connect 中创建一个 app。
 
-For a detailed overview of App Store Connect, see the [App Store Connect][appstoreconnect_guide]
-guide.
+For a detailed overview of App Store Connect, see the
+[App Store Connect][appstoreconnect_guide] guide.
 
-关于更多 App Store Connect 的细节，查看 [App Store Connect][appstoreconnect_guide_cn] 指南。
+关于更多 App Store Connect 的细节，
+查看 [App Store Connect][appstoreconnect_guide_cn] 指南。
 
 ### Register a Bundle ID
 
 ### 登记套装 ID
 
-Every iOS application is associated with a Bundle ID, a unique identifier
-registered with Apple. To register a Bundle ID for your app, follow these
-steps:
+Every iOS application is associated with a Bundle ID,
+a unique identifier registered with Apple.
+To register a Bundle ID for your app, follow these steps:
 
 每一个 iOS 应用都与一个在 Apple 登记的唯一的套装 ID 关联。
 要为你的应用登记一个套装 ID，请参考下面的步骤：
@@ -131,25 +122,26 @@ Next, you'll register your app on App Store Connect:
 
    在 App Store Connect 的落地页，点击 **My Apps**。
 
-1. Click **+** in the top-left corner of the My Apps page, then select
-   **New App**.
+1. Click **+** in the top-left corner of the My Apps page,
+   then select **New App**.
 
    在我的 app 页面的顶部左侧 ，点击 **+** ，然后选择 **New App**。
 
-1. Fill in your app details in the form that appears. In the Platforms section,
-   ensure that iOS is checked. Since Flutter does not currently support tvOS,
+1. Fill in your app details in the form that appears.
+   In the Platforms section, ensure that iOS is checked.
+   Since Flutter does not currently support tvOS,
    leave that checkbox unchecked. Click **Create**.
 
    在出现的表单中填写你的 app 细节。在平台部分，确保 iOS 被选中。
    由于 Flutter 暂时不支持 tvOS，保持该选项为未选。点击 **Create**。
 
-1. Navigate to the application details for your app and select **App
-   Information** from the sidebar.
+1. Navigate to the application details for your app and select
+   **App Information** from the sidebar.
 
    跳转到你的应用详情，然后从侧边栏选择 **App Information** 。
 
-1. In the General Information section, select the Bundle ID you registered in
-   the preceding step.
+1. In the General Information section, select the Bundle ID
+   you registered in the preceding step.
 
    在基础信息部分，选择你在前一步注册的套装 ID。
 
@@ -162,7 +154,7 @@ see [Add an app to your account][appstoreconnect_guide_register].
 
 ## 检查 Xcode 项目设置
 
-In this step, you'll review the most important settings
+This step covers reviewing the most important settings
 in the Xcode workspace.
 For detailed procedures and descriptions, see
 [Prepare for app distribution][distributionguide_config].
@@ -200,10 +192,13 @@ In the **Identity** section:
 <br> The display name of your app.
 
 `Display Name`
+: The display name of your app.
+
+`Display Name`
 <br> 应用的名字。
 
 `Bundle Identifier`
-<br> The App ID you registered on App Store Connect.
+: The App ID you registered on App Store Connect.
 
 `Bundle Identifier`
 <br> 在 App Store Connect 注册的 App ID。
@@ -213,25 +208,31 @@ In the **Signing & Capabilities** section:
 在 **Signing & Capabilities** 部分：
 
 `Automatically manage signing`
-<br> whether Xcode should automatically manage
-app signing and provisioning. This is set `true` by default, which should be sufficient for most apps. For more complex scenarios, see the [Code Signing Guide][codesigning_guide].
+: Whether Xcode should automatically manage app signing
+  and provisioning.  This is set `true` by default, which should
+  be sufficient for most apps. For more complex scenarios,
+  see the [Code Signing Guide][codesigning_guide].
 
 `Automatically manage signing`
 <br> 是否需要 Xcode 自动管理 app 签名和设置。
-这个默认被设置为 `true` ，对于绝大多数 App 来说都是适用的。对于更复杂的场景，查看 [代码签名指南][codesigning_guide]。
+这个默认被设置为 `true` ，对于绝大多数 App 来说都是适用的。
+对于更复杂的场景，查看 [代码签名指南][codesigning_guide]。
 
 `Team`
-<br> select the team associated with your registered Apple Developer account. If required, select **Add Account...**, then update this setting.
+: Select the team associated with your registered Apple Developer
+  account. If required, select **Add Account...**,
+  then update this setting.
 
 `Team`
-<br> 选择关联到你注册的 Apple 开发者账户的团队。如果需要，选择 **Add Account...**, 然后更新选项。
+<br> 选择关联到你注册的 Apple 开发者账户的团队。
+如果需要，选择 **Add Account...**, 然后更新选项。
 
 In the **Build Settings** section:
 
 在 **Build Settings** 部分：
 
 `iOS Deployment Target`
-<br> The minimum iOS version that your app supports.
+: The minimum iOS version that your app supports.
   Flutter supports iOS 9.0 and later. If your app or plugins
   include Objective-C or Swift code that makes use of APIs newer
   than iOS 9, update this setting to the highest required version.
@@ -300,9 +301,10 @@ on the Apple Developer's site.
 
 在 iOS 中，当 `build-number` 用作 `CFBundleVersion` 的时候，
 `build-name` 用作 `CFBundleShortVersionString`。
-阅读关于 iOS 版本控制的更多信息请参考 Apple 开发者网站提供的 [Core Foundation Keys][]。
+阅读关于 iOS 版本控制的更多信息请参考
+Apple 开发者网站提供的 [Core Foundation Keys][]。
 
-## Add an App Icon
+## Add an app icon
 
 ## 添加应用图标
 
@@ -317,28 +319,29 @@ app's icons:
 
    回顾 [iOS 的 App Icon][appicon] 指南。
 
-1. In the Xcode project navigator, select `Assets.xcassets` in the `Runner`
-   folder. Update the placeholder icons with your own app icons.
+1. In the Xcode project navigator, select `Assets.xcassets` in the
+   `Runner` folder. Update the placeholder icons with your own app icons.
 
    在 Xcode 项目导航栏，选择 `Runner` 目录中的 `Assets.xcassets`，
    更新占位图标为你自己的 app 的图标。
 
-1. Verify the icon has been replaced by running your app using `flutter run`.
+1. Verify the icon has been replaced by running your app using
+   `flutter run`.
 
    通过执行 `flutter run` 来验证你的图标是否已经被替换。
 
-## Create a build archive
+## Create a build archive with Xcode
 
 ## 创建一个构建归档 (build archive)
 
-In this step, you'll create a build archive and upload
+This step covers creating a build archive and uploading
 your build to App Store Connect.
 
 在这一步，你将创建一个构建归档，并上传到 App Store Connect。
 
-During development, you've been building, debugging, and testing with _debug_
-builds. When you're ready to ship your app to users on the App Store or
-TestFlight, you'll need to prepare a _release_ build.
+During development, you've been building, debugging, and testing
+with _debug_ builds. When you're ready to ship your app to users
+on the App Store or TestFlight, you need to prepare a _release_ build.
 At this point, you might consider [obfuscating your Dart code][]
 to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
@@ -370,8 +373,8 @@ In Xcode, configure the app version and build:
    在 Identity 部分，更新 **Version** 为你想要发布的用户可见的版本号。
 
 1. In the Identity section, update the **Build** identifier to a unique
-   build number used to track this build on App Store Connect. Each upload requires a
-   unique build number.
+   build number used to track this build on App Store Connect.
+   Each upload requires a unique build number.
 
    在 Identity 部分，更新 **Build** 标示为一个唯一的 Build 数字，
    用来在 App Store Connect 上追踪，每一个上传都需要一个独立的 Build 数字。
@@ -464,6 +467,227 @@ For more details, see
 更多信息可以查看
 [上传一个 App 到 App Store Connect (Upload an app to App Store Connect)][distributionguide_upload]
 
+## Create a build archive with Codemagic CLI tools
+
+## 使用 Codemagic 命令行工具创建一个构建归档
+
+This step covers creating a build archive and uploading
+your build to App Store Connect using Flutter build commands
+and [Codemagic CLI Tools][codemagic_cli_tools] executed in a terminal
+in the Flutter project directory. This allows you to create a build archive
+with full control of distribution certificates in a temporary keychain 
+isolated from your login keychain.
+
+该步骤包含了在 Flutter 项目的目录下，
+通过终端使用 Flutter 构建命令和 [Codemagic 命令行工具][codemagic_cli_tools]，
+构建归档并上传至 App Store 的教程。
+该操作可以让你完全控制分发证书和临时钥匙串，将它们与登录的进行隔离。
+
+<ol markdown="1">
+<li markdown="1">
+
+Install the Codemagic CLI tools:
+
+安装 Codemagic 命令行工具：
+
+```bash
+pip3 install codemagic-cli-tools
+```
+
+</li>
+<li markdown="1">
+
+You'll need to generate an [App Store Connect API Key][appstoreconnect_api_key]
+with App Manager access to automate operations with App Store Connect. To make
+subsequent commands more concise, set the following environment variables from
+the new key: issuer id, key id, and API key file.
+
+你需要使用包含 App 管理权限的 App Store Connect 账号，生成一个
+[App Store Connect API Key][appstoreconnect_api_key]。
+为了使后续的命令更加简洁，你可以在环境变量中配置这些内容：
+issuer id、key id 以及 API key 文件。
+
+```bash
+export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
+export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
+```
+
+</li>
+<li markdown="1">
+
+You need to export or create an iOS Distribution certificate to code sign and package a build archive.
+
+你需要导出或者创建一个 iOS 分发证书，用来签名及归档构建。
+
+If you have existing [certificates][devportal_certificates], you can export the
+private keys by executing the following command for each certificate:
+
+如果你已经有可用的 [证书][devportal_certificates]，你可以使用以下命令导出私钥：
+
+```bash
+openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
+```
+
+Or you can create a new private key by executing the following command:
+
+你也可以使用以下命令创建新的私钥：
+
+```bash
+ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
+```
+
+Later, you can have CLI tools automatically create a new iOS Distribution from the private key.
+
+之后你便可以用命令行工具基于这个私钥创建新的 iOS 分发构建了。
+
+</li>
+<li markdown="1">
+
+Set up a new temporary keychain to be used for code signing:
+
+配置一个用于签名的临时钥匙串：
+
+```bash
+keychain initialize
+```
+
+{{site.alert.secondary}}
+
+**Restore Login Keychain!**
+After running `keychain initialize` you **must** run the following:<br>
+
+**记得重置用于登录的钥匙串！**
+执行完 `keychain initialize` 后，**必须** 执行以下命令：<br>
+
+`keychain use-login`
+
+This sets your login keychain as the default to avoid potential
+authentication issues with apps on your machine.
+
+该命令会将登录的钥匙串设为默认，以避免一些设备上潜在的认证问题。
+
+{{site.alert.end}}
+
+</li>
+<li markdown="1">
+
+Fetch the code signing files from App Store Connect:
+
+从 App Store Connect 上获取签名文件：
+
+```bash
+app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
+    --platform IOS_APP_STORE \
+    --certificate-key=@file:/path/to/cert_key \
+    --create
+```
+
+Where `cert_key` is either your exported iOS Distribution certificate private key
+or a new private key which automatically generates a new certificate. The certificate
+will be created from the private key if it doesn't exist in App Store Connect.
+
+其中，`cert_key` 是你导出的 iOS 分发证书的私钥，或者是自动生成新证书的新私钥。
+如果 App Store Connect 中不存在这个证书，将会通过私钥创建。
+
+</li>
+<li markdown="1">
+
+Now add the fetched certificates to your keychain:
+
+将获取到的证书添加到你的钥匙串中：
+
+```bash
+keychain add-certificates
+```
+
+</li>
+<li markdown="1">
+
+Update the Xcode project settings to use fetched code signing profiles:
+
+更新 Xcode 项目设定，使用获取到的签名配置：
+
+```bash
+xcode-project use-profiles
+```
+
+</li>
+<li markdown="1">
+
+Install Flutter dependencies:
+
+获取 Flutter 依赖：
+
+```bash
+flutter packages pub get
+```
+
+</li>
+<li markdown="1">
+
+Install CocoaPods dependencies:
+
+获取 CocoaPods 依赖：
+
+```bash
+find . -name "Podfile" -execdir pod install \;
+```
+
+</li>
+<li markdown="1">
+
+Build the Flutter the iOS project:
+
+构建 Flutter 的 iOS 项目：
+
+```bash
+flutter build ipa --release \
+    --export-options-plist=/Users/USERNAME/export_options.plist
+```
+
+Note that `export_options.plist` is the output of the `xcode-project use-profiles` command.
+
+注意 `export_options.plist` 路径来源于 `xcode-project use-profiles` 命令的输出。
+
+</li>
+<li markdown="1">
+
+Publish the app to App Store Connect:
+
+将应用发布到 App Store Connect：
+
+```bash
+APP_FILE=$(find $(pwd) -name "*.ipa")
+app-store-connect publish \
+    --path "$APP_FILE"
+```
+
+</li>
+<li markdown="1">
+
+As mentioned earlier, don't forget to set your login keychain
+as the default to avoid authentication issues
+with apps on your machine:
+
+如前文所示，记得将你的登录钥匙串设置为默认，
+避免设备出现认证问题：
+
+```bash
+keychain use-login
+```
+
+</li>
+</ol>
+
+You should receive an email within 30 minutes notifying you that
+your build has been validated and is available to release to testers
+on TestFlight. At this point you can choose whether to release
+on TestFlight, or go ahead and release your app to the App Store.
+
+在 30 分钟内，你会收到一封邮件，提醒你构建已验证，可以在 TestFlight 上发布。
+这时你可以选择在 TestFlight 上发布，或是直接在 App Store 上发布。
+
 ## Release your app on TestFlight
 
 ## 在 TestFlight 发布你的应用
@@ -472,13 +696,11 @@ For more details, see
 to internal and external testers. This optional step
 covers releasing your build on TestFlight.
 
-[TestFlight][testflight] 允许开发者发布他们的 app 给内部或外部的测试人员。
-这个步骤为可选，接下来的内容将引导你将发布你的构建到 TestFlight。
+1. Navigate to the TestFlight tab of your app's application
+   details page on [App Store Connect][appstoreconnect_login].
 
-1. Navigate to the TestFlight tab of your app's application details page on
-   [App Store Connect][appstoreconnect_login].
-
-   在 [App Store Connect][appstoreconnect_login]中，你的应用的详情页面跳转到 TestFlight Tab。
+   在 [App Store Connect][appstoreconnect_login]中，
+   你的应用的详情页面跳转到 TestFlight Tab。
 
 1. Select **Internal Testing** in the sidebar.
 
@@ -488,19 +710,21 @@ covers releasing your build on TestFlight.
 
    选择要发布给测试人员的构建，然后点击 **保存**。
 
-1. Add the email addresses of any internal testers. You can add additional
-   internal users in the **Users and Roles** page of App Store Connect, available from
-   the dropdown menu at the top of the page.
+1. Add the email addresses of any internal testers.
+   You can add additional internal users in the **Users and Roles**
+   page of App Store Connect,
+   available from the dropdown menu at the top of the page.
 
-   为每一个内部测试人员添加邮件。你可以在 App Store Connect 的**用户与角色**页面添加额外的内部用户，
+   为每一个内部测试人员添加邮件。你可以在 App Store Connect 的
+   **用户与角色** 页面添加额外的内部用户，
    他们将会出现在页面顶部的下拉菜单中。
 
 For more details, see [Distribute an app using TestFlight]
 [distributionguide_testflight].
 
 关于更多信息，请查看
-[使用 TestFlight 分发应用 (Distribute an app using TestFlight (iOS, tvOS, watchOS)
-)][distributionguide_testflight]。
+[使用 TestFlight 分发应用 (Distribute an app using TestFlight
+(iOS, tvOS, watchOS))][distributionguide_testflight]。
 
 ## Release your app to the App Store
 
@@ -514,7 +738,8 @@ release to the App Store:
 
 1. Select **Pricing and Availability** from the sidebar of your app's
    application details page on
-   [App Store Connect][appstoreconnect_login] and complete the required information.
+   [App Store Connect][appstoreconnect_login] and complete the
+   required information.
 
    从你的 app 在 [App Store Connect][appstoreconnect_login]
    的页面中的侧边栏中选择 **Pricing and Availability**，然后完善所有的必填信息。
@@ -542,48 +767,15 @@ For more details, see
 
 关于更多细节，查看 [通过 App Store 分发一个 App][distributionguide_submit].
 
-Now that you’ve created your app, attract more users with Google Ads.
-App campaigns use machine learning to drive more installs and make
-the most of your budget.
-
-当你创建了应用之后，你可以通过 Google Ads 吸引更多用户，
-Google Ads 平台可以通过机器学习帮助你以非常高的性价比吸引到更多用户。
-
-1. Create your ad&mdash;we’ll help create your ad from your app
-   information
-
-   创建广告&mdash;我们会根据您的应用信息帮您制作广告。
-   另外，您还可以添加图片和视频。
-
-1. Choose your budget&mdash;set your target cost-per-install
-   (tCPI) and daily budget cap
-
-   决定推广预算&mdash;对于以提高应用安装量为主要目标的广告系列，
-   您需要为其设置应用安装出价，也就是“目标每次安装费用”，同时设置每日推广支出预算。
-
-1. Select your location&mdash;let us know where you’d like your ads
-   to run
-
-   选择目标地区&mdash;让我们知道你希望触达哪些区域的用户。
-
-1. Decide what action you want users to take&mdash;choose installs,
-   in-app actions, or target return on ad spend (ROAS)
-
-   设定用户行动&mdash;决定你希望用户要做什么，
-   比如安装，应用内操作或者目标广告支出回报率 (ROAS)。
-
-[Get $75 app advertising credit when you spend $25.][]
-
-[获取 75 美元的赠金（当你消费 25 美金后）][Get $75 app advertising credit when you spend $25.]
-
 ## Troubleshooting
 
 ## 故障排除
 
-The [Distribute your app][distributionguide] guide provides a detailed overview of
-the process of releasing an app to the App Store.
+The [Distribute your app][distributionguide] guide provides a
+detailed overview of the process of releasing an app to the App Store.
 
-[分发你的 app][distributionguide] 指南提供了一个详细的关于发布一个 App 到 App Store 过程的内容。
+[分发你的应用][distributionguide] 指南，
+提供了详细的发布应用到 App Store 过程的内容。
 
 
 [appicon]: https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/
@@ -591,12 +783,15 @@ the process of releasing an app to the App Store.
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: https://developer.apple.com/app-store/submissions/
 [appstoreconnect]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_api_key]: https://appstoreconnect.apple.com/access/api
 [appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
 [appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
 [appstoreconnect_login]: https://appstoreconnect.apple.com/
+[codemagic_cli_tools]: https://github.com/codemagic-ci-cd/cli-tools
 [codesigning_guide]: https://developer.apple.com/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [Core Foundation Keys]: https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 [devportal_appids]: https://developer.apple.com/account/ios/identifier/bundle
+[devportal_certificates]: https://developer.apple.com/account/resources/certificates
 [devprogram]: https://developer.apple.com/programs/
 [devprogram_membership]: https://developer.apple.com/support/compare-memberships/
 [distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57

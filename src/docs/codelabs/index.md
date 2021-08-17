@@ -188,7 +188,7 @@ like layout and animations:
   了解如何使用 Material [animations] [] package 为名叫
   Reply 的 Material 应用添加预构建的过渡。
 
-* [MDC 101 Flutter: Material Components (MDC) Basics][]<br>
+* [MDC-101 Flutter: Material Components (MDC) Basics][]<br>
   Learn the basics of using Material Components by building
   a simple app with core components.  The four MDC codelabs
   guide you through building an e-commerce app called Shrine.
@@ -200,7 +200,7 @@ like layout and animations:
   我们最终会构建一个售卖衣服和家居的电子商务应用 － Shrine，
   本节将从一个简单的登陆页面开始帮助你在 Flutter 上使用 Material 组件。
 
-* [MDC 102 Flutter: Material Structure and Layout][]<br>
+* [MDC-102 Flutter: Material Structure and Layout][]<br>
   Learn how to use Material for structure and layout in Flutter.
   Continue building the e-commerce app, introduced in MDC-101,
   by adding navigation, structure, and data.
@@ -209,7 +209,7 @@ like layout and animations:
   学习如何在 Flutter 中使用 Material 样式的结构和布局。
   通过添加导航、结构和数据，继续构建那个电子商务应用 － Shrine。
 
-* [MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type][]<br>
+* [MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type][]<br>
   Discover how Material Components for Flutter make it
   easy to differentiate your product, and express your
   brand through design. Continue building your e-commerce
@@ -220,7 +220,7 @@ like layout and animations:
   并通过你的设计传达产品的品牌。
   我们会为我们的电子商务应用加入一个首页展现所有的产品。
 
-* [MDC 104 Flutter: Material Advanced Components][]<br>
+* [MDC-104 Flutter: Material Advanced Components][]<br>
   Improve your design and learn to use our advanced
   component backdrop menu. Finish your e-commerce app
   by adding a backdrop with a menu that filters
@@ -237,10 +237,10 @@ like layout and animations:
 [Building scrolling experiences in Flutter]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: /docs/codelabs/implicit-animations
-[MDC 101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
-[MDC 102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
-[MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
-[MDC 104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
+[MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
+[MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
+[MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
+[MDC-104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
 
 [Building Beautiful Transitions with Material Motion for Flutter-cn]: {{site.codelabs}}/codelabs/material-motion-flutter-cn
 [MDC 101 Flutter: Material Components (MDC) Basics-cn]: {{site.codelabs}}/codelabs/mdc-101-flutter-cn
@@ -272,7 +272,7 @@ Learn how to use Flutter with other technologies.
   为一个名叫 Awesome Drawing Quiz 的小游戏加入 AdMob 标语广告、插页式广告和奖励广告。
   这是一个看图猜字的游戏。
 
-* [Adding AdMob banner and native inline ads to a Flutter app][]<br>
+* [Adding an AdMob banner and native inline ads to a Flutter app][]<br>
   Learn how to implement inline banner and native ads
   to a travel booking app that lists possible
   flight destinations.
@@ -289,27 +289,27 @@ Learn how to use Flutter with other technologies.
   扩展一个使用 Dash 吉祥物作为货币的简单游戏应用程序，
   以提供三种类型的应用程序内购买：消耗品、非消耗品和订阅。
 
-* [Build a photo sharing app with Google Photos and Flutter][]<br>
+* [Build a Photo Sharing app with Google Photos and Flutter][]<br>
   Build a field trip app that allows you and other
   members of the trip to share photos.
 
-  [使用 Google 相册和 Flutter 构建照片共享应用][Build a photo sharing app with Google Photos and Flutter]<br>
+  [使用 Google 相册和 Flutter 构建照片共享应用][Build a Photo sharing app with Google Photos and Flutter]<br>
   构建一个实地考察应用程序，允许你和旅行中的其他成员分享照片。
 
-* [Build voice bots for mobile with Dialogflow and Flutter][dialogflow-ws] (workshop) **NEW!**<br>
+* [Build voice bots for mobile with Dialogflow and Flutter][] (workshop) **NEW!**<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
 
-  [使用 Dialogflow 和 Flutter 为移动设备构建语音机器人][dialogflow-ws] (workshop) **新!**<br>
+  [使用 Dialogflow 和 Flutter 为移动设备构建语音机器人][Build voice bots for mobile with Dialogflow and Flutter] (workshop) **新!**<br>
   Dialogflow 和 Flutter codelab 的讲师指导版本（如下所列）。
 
-* [Build voice bots for mobile with Dialogflow and Flutter][]<br>
+* [Build voice bots for Android with Dialogflow and Flutter][]<br>
   Learn how to build a mobile FAQ bot that can answer most
   common questions about the tool Dialogflow. End users
   can interact with the text interface or stream a voice
   interaction via the built-in microphone of a mobile device.
 
-  [使用 Dialogflow 和 Flutter 为移动设备构建语音机器人][Build voice bots for mobile with Dialogflow and Flutter]<br>
+  [使用 Dialogflow 和 Flutter 为 Android 构建语音机器人][Build voice bots for Android with Dialogflow and Flutter]<br>
   学习如何构建可以回答有关 Dialogflow 工具的最常见问题的移动式常见问题解答机器人。
   终端用户可以通过移动设备的内置麦克风与文本界面交互或流式传输语音交互。
 
@@ -341,12 +341,12 @@ Learn how to use Flutter with other technologies.
   就可以运行在 Android、iOS 和 Web 平台。
 
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
-[Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
+[Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
-[Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
-[Build voice bots for mobile with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
-[dialogflow-ws]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
+[Build a Photo Sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
+[Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
+[Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
 [firebase-ws]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
 [Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/

@@ -11,17 +11,19 @@ keywords: 命令行,启动,开发者工具,DevTools
 
 ## 安装开发者工具
 
-If you have `pub` on your path, you can run:
+If you have `dart` on your path,
+you can run the following command:
 
-如果在你的环境变量 `PATH` 中有 `pub`, 可以运行：
+如果在你的环境变量 `PATH` 中有 `dart`, 可以运行：
 
 ```
-pub global activate devtools
+dart pub global activate devtools
 ```
 
-If you have `flutter` on your path, you can run:
+If you have `flutter` on your path,
+you can run the following:
 
-如果环境变量 `PATH` 中有 `flutter` , 可以运行：
+如果在你的环境变量 `PATH` 中有 `flutter`, 可以运行：
 
 ```
 flutter pub global activate devtools
@@ -43,7 +45,7 @@ two commands:
 运行下面两个命令中的一个。
 
 ```
-pub global run devtools   # If you have `pub` on your path.
+dart pub global run devtools   # If you have `dart` on your path.
 ```
 
 OR
@@ -64,8 +66,10 @@ Serving DevTools at http://127.0.0.1:9100
 
 ## 启动一个 app 来 debug
 
-Next, start an app to connect to. This can be either a Flutter application
-or a Dart command-line application. The command below uses a Flutter app:
+Next, start an app to connect to.
+This can be either a Flutter application
+or a Dart command-line application.
+The command below specifies a Flutter app:
 
 下一步，启动并连接一个 app。可以是 Flutter app 或者一个 Dart 命令行应用。
 下面这个命令是启动一个 Flutter app:
@@ -75,33 +79,32 @@ cd path/to/flutter/app
 flutter run
 ```
 
-You need to have a device connected, or a simulator open, for
-`flutter run` to work. Once the app starts, you'll see a
-message in your terminal that looks like:
+You need to have a device connected, or a simulator open,
+for `flutter run` to work. Once the app starts, you'll see a
+message in your terminal that looks like the following:
 
 运行 `flutter run` 时，你需要连接一个设备或者模拟器。
-当 app 启动后，你会在命令行中看到：
-
+当 app 启动后，你会在命令行中看到如下内容：
 
 ```
 An Observatory debugger and profiler on iPhone X is available
 at: http://127.0.0.1:50976/Swm0bjIe0ks=/
 ```
 
-Keep note this URL, as you will use it to connect your app to
-DevTools.
+Keep note of this URL,
+as you will use it to connect your app to DevTools.
 
-记下这个 URL ，你将会使用它来连接 app 和开发者工具。
+记下这个 URL ，待会儿你可以使用它来连接 app 和开发者工具。
 
 ## Open DevTools and connect to the target app
 
 ## 打开开发者工具并且连接到目标 app
 
-Once it's set up, using DevTools is as simple as opening a 
+Once it's set up, using DevTools is as simple as opening a
 Chrome browser window and navigating to `http://localhost:9100`.
 
 上述完成后，使用开发者工具就会很简单，
-只需打开 chrome 并访问 `http://localhost:9100` 。
+只需打开 chrome 并访问 `http://localhost:9100`。
 
 Once DevTools opens, you should see a connect dialog:
 
@@ -117,11 +120,10 @@ to connect your app to DevTools.
 （在这个例子里是 `http://127.0.0.1:50976/Swm0bjIe0ks=/` ）
 复制到这个链接对话框中来把你的 app 和开发者工具链接起来。
 
-This URL contains a security token, so it will be different
+This URL contains a security token, so it's different
 for each run of your app. This means that if you stop your
 application and re-run it, you need to connect to DevTools
 with the new URL.
 
-这个链接包含一个秘钥 token ，所以每次启动你的 app 时，链接都会改变。
+这个链接包含一个秘钥 token，所以每次启动你的 app 时，链接都会改变。
 这意味着如果重启 app 后，你需要用新的 URL 链接来连接开发者工具。
-

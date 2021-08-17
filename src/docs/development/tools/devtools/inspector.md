@@ -123,7 +123,7 @@ used as the visual version of the label.
     Can be useful for checking if text is aligned.</p>
 <p>针对文字对齐展示文字的基线。对检查文字是否对齐有帮助。</p>
 </dd>
-<dt markdown="1">
+<dt>
 <p markdown="1">![Highlight repaints icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"} **[Highlight repaints][]**</p>
 <p markdown="1">![Highlight repaints icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"} **[高亮重绘制内容][Highlight repaints]**</p>
 </dt>

@@ -430,9 +430,9 @@ it’s often not ideal for nested subviews.
 Often, subviews have their own internal breakpoints
 and care only about the space that they have available to render.
 
-尽管对于全局的布局决策而言，判断屏幕大小非常有效，
+尽管对于全屏页面或者全局的布局决策而言，判断整个屏幕大小非常有效，
 但对于内嵌的子视图而言，并不一定是合理的方案。
-子视图通常有自己的分界点，并且会关心它们可用的渲染空间。
+子视图通常有自己的分界点，并且只关心它们可用的渲染空间。
 
 The simplest way to handle this in Flutter is using the
 [`LayoutBuilder`][] class. `LayoutBuilder` allows a
@@ -506,8 +506,8 @@ never call `Platform` on web targets.
 
 在构建 Web 平台应用时，由于 `dart.io` package 不支持 Web 平台，
 导致使用 `Platform` API 时会异常。
-所以在上面的代码中，首先对 Web 平台进行了判断，
-而由于判断时条件进行了阻断，在 Web 平台上永远不会调用 `Platform` API。
+所以在上面的代码中，会首先判断是否在 Web 平台，
+基于这个条件，在 Web 平台上永远不会调用 `Platform` API。
 
 ### Single source of truth for styling
 
@@ -568,7 +568,7 @@ of helping enforce consistency on the design side.
 Some common design system categories that can be represented
 this way are: 
 
-常见的设计类型里，有一些分类可以以这样的方式进行组织：
+常见的设计类型里，如下这些类别可以以这样的方式进行组织：
 
 * Animation timings 
 
@@ -700,7 +700,7 @@ The important thing to consider is what a user expects
 when using a particular input device,
 and work to reflect that in your app.
 
-完善了触摸界面后，你可以调整鼠标用户的视觉密度，然后对所有的输入设备进行分层。
+完善了触摸界面后，你可以调整面向鼠标用户的视觉密度，然后对所有的输入设备进行分层。
 这些输入设备应当作为加快你的应用使用速度的途径。
 在这里需要考虑的应当是用户对于应用体验的期望，并在应用中合理地实现这些期望。
 
@@ -759,7 +759,7 @@ and users with motor or vision differences often rely
 completely on keyboard navigation.
 
 使用键盘的用户，可能会希望通过 Tab 键在应用中快速导航，
-特别是有动效和视觉障碍的用户，基本依赖于键盘导航。
+特别是对有动效和视觉障碍的用户，他们几乎完全依赖于键盘导航。
 
 There are two considerations for tab interactions:
 how focus moves from widget to widget, known as traversal,
@@ -1009,11 +1009,11 @@ important when you’re binding a Delete/Backspace accelerator for
 `Delete`, but then have child `TextFields` that the user
 might be typing in.
 
-使用静态的监听时有一件指的注意的事情，当用户在输入框中输入内容，
+使用静态的监听时有一件值得注意的事情，当用户在输入框中输入内容，
 或关联的 widget 从视图中隐藏时，通常需要禁用监听。
 与 `Shortcuts` 和 `RawKeyboardListener` 不同，你需要自己对它们进行管理。
-当你在为 `Delete` 键构建一个删除或退格的行为的监听时，需要尤其注意，
-用户可能会在 `TextField` 输入内容时受到影响。
+当你在为 `Delete` 键构建一个删除或退格行为的监听时，需要尤其注意，
+因为用户可能会在 `TextField` 中输入内容时受到影响。
 
 [`RawKeyboard`]: {{site.api}}/flutter/services/RawKeyboard-class.html
 [`RawKeyboardListener`]: {{site.api}}/flutter/widgets/RawKeyboardListener-class.html
@@ -1114,7 +1114,7 @@ and just envision the ideal user experience.
 Work backwards from there.
 
 考虑的第一步，是花一些时间思考应用在这个平台上期望的外观、表现或者行为。
-在考虑时，你要将已经实现的功能的限制抛诸脑后，仅针对理想的用户体验进行逆向思考。
+试着将当前能否实现的限制抛诸脑后，仅针对理想的用户体验进行逆向思考。
 
 Another way to think about this is to ask,
 "How would a user of this platform expect to achieve this goal?"
@@ -1150,9 +1150,9 @@ To reduce the number of people, combine roles.
 Have one advocate for Windows and Android,
 one for Linux and the web, and one for Mac and iOS.
 
-最好为每一种适配平台指定一位倡导者。
-理想情况下，这些倡导者以他们熟悉的平台为主，提供他们平台特有的看法和意见。
-若想减少人数，可以有一位支持 Windows 和 Android，
+最好为每一种适配平台指定一位负责人。
+理想情况下，负责人以他们熟悉的平台为主，提供他们对平台特有的看法和意见。
+若想减少人员，兼顾角色，可以安排一位支持 Windows 和 Android，
 一位支持 Linux 和 Web，一位支持 Mac 和 iOS。
 
 The goal is to have constant, informed feedback so the app
@@ -1165,7 +1165,7 @@ Details like that are easy to miss if you aren't using a platform
 on a regular basis.
 
 这样做的目的是为了得到持续且有效的反馈，让应用在每个平台上都能表现良好。
-倡议者应该以挑剔的角度对平台实现进行把关。一个非常简单的例子是在对话框里，
+负责人应该以挑剔的角度对平台实现进行把关。一个非常简单的例子是在对话框里，
 对话框本身按钮的默认位置在 Mac 和 Linux 上通常位于左侧，而在 Windows 上位于右侧。
 如果你不是平台的常用用户，通常会错过这样的细节。
 
@@ -1176,7 +1176,7 @@ on a regular basis.
   stakeholders, or external testers that are provided
   with regular builds. 
 
-  **重要**：倡导者不需要是开发者或者一直在开发的团队成员，
+  **重要**：负责人不需要是开发者或者一直在开发的团队成员，
   可以是设计师、利益相关的人士或是外部的版本定期测试人员。
 
 {{site.alert.end}}

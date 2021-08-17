@@ -262,6 +262,7 @@ variables to store private data. You can pass these environment variables
 using `--dart-define MY_VAR=MY_VALUE` while building the app.
 
 持续集成 (CI) 系统通常支持加密的环境变量来存储私有数据。
+你可以使用 `--dart-define MY_VAR=MY_VALUE` 在构建应用时传递环境变量。
 
 **Take precaution not to re-echo those variable values back onto the console in
 your test scripts**. Those variables are also not available in pull requests

@@ -1571,7 +1571,7 @@ or alternatively, to initiate a drag by using a long
 press gesture. This is because scrolling and dragging
 are both sharing a single finger for input.
 
-一般来说，触屏用户希望看到拖动的手柄，以区分拖动和滚动的范围，
+一般来说，触屏用户希望看到可拖动的手柄，以区分拖动和滚动的范围，
 或者通过长按操作来进行拖动。
 这是由于滑动和拖动操作都是由一个触摸点完成的。
 

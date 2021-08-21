@@ -83,7 +83,7 @@ an app can be both, or neither.
 Flutter allows you to create apps that self-adapt
 to the device's screen size and orientation.
 
-Flutter 让你能够构建根据屏幕大小和旋转方向自适应的的应用。
+Flutter 让你能够构建自动适配屏幕大小和旋转方向的应用。
 
 There are two basic approaches to creating Flutter
 apps with responsive design:
@@ -111,7 +111,7 @@ apps with responsive design:
   你可以返回一个 [`Scaffold`][]，它包含一列内容，左侧是一个列表。
   如果约束更小，则返回一个列表在抽屉里的 [`Scaffold`][]。
   你也可以根据你的设备高度、屏幕的比例或者其他的属性，来调整你的显示。
-  当限制改变时（例如用户旋转了手机，或是在 Android N 上将应用放置为一个图块）
+  当限制改变时（例如用户旋转了手机，或是在 Android N 上将应用放置为一个 tile UI）
   构建方法会运行。
 
 **Use the [`MediaQuery.of()`][] method in your build functions**
@@ -154,19 +154,19 @@ including contributions from the Flutter community:
   Flutter][] by Deven Joshi
 
   [使用 Flutter 开发兼顾多种屏幕尺寸和旋转的应用][Developing
-  for Multiple Screen Sizes and Orientations in Flutter]
+  for Multiple Screen Sizes and Orientations in Flutter]，
   由 Deven Joshi 撰写
 
 * [Build Responsive UIs in Flutter][] by Raouf Rahiche
 
-  [使用 Flutter 构建响应式界面][Build Responsive UIs in Flutter]
+  [使用 Flutter 构建响应式界面][Build Responsive UIs in Flutter]，
   由 Raouf Rahiche 撰写
 
 * [Making Cross-platform Flutter Landing Page Responsive][]
   by Priyanka Tyagi
 
   [构建响应式的 Flutter 跨平台的登录页][Making Cross-platform
-  Flutter Landing Page Responsive] 由 Priyanka Tyagi 撰写
+  Flutter Landing Page Responsive]，由 Priyanka Tyagi 撰写
 
 * [How to make flutter app responsive according to different screen
   size?][], a question on StackOverflow

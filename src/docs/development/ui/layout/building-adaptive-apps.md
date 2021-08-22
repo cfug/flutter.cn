@@ -614,6 +614,8 @@ added to the global styling ruleset.
 
 ### Design to the strengths of each form factor
 
+### 针对不同外形屏幕的特性进行设计
+
 Beyond screen size, you should also spend time
 considering the unique strengths and weaknesses
 of different form factors. It isn’t always ideal
@@ -1079,9 +1081,9 @@ significant benefits:
 
 最后，我们需要为自适应应用考虑平台标准。
 每个平台都有其不同的行为习惯与规范，
-这些名义和事实上的标准将 App 会如何行为告知了用户。
+这些名义和事实上的标准将操作应用的方法告知了用户。
 在当下网络如此便利的时代，用户更倾向于更加个性化的体验，
-但是提供这些平台标注，依然可以带来一些显著的好处：
+但是提供这些平台标准，依然可以带来一些显著的好处：
 
 * **Reduce cognitive load**&mdash;By matching the user's
   existing mental model, accomplishing tasks becomes intuitive,

@@ -1159,7 +1159,7 @@ Flutter Gallery [running app][], [repo][]
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: /docs/cookbook
 [Flutter's Layered Design]: https://www.youtube.com/watch?v=dkyY9WCGMi0
-[Flutter 的分层设计]https://www.bilibili.com/video/BV1b441157vV
+[Flutter 的分层设计]: https://www.bilibili.com/video/BV1b441157vV
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`foundation` library]: {{site.api}}/flutter/foundation/foundation-library.html

@@ -133,9 +133,9 @@ When the widget's state changes,
 the state object calls `setState()`,
 telling the framework to redraw the widget.
 
-一个 widget 的状态保存在一个 [`State`][] 对象中, 它和 widget 的显示分离。
-Widget 的状态是一些可以更改的值, 如一个滑动条的当前值或一个复选框是否被选中。
-当 widget 状态改变时, State 对象调用 `setState()`, 告诉框架去重绘 widget。
+一个 widget 的状态保存在一个 [`State`][] 对象中，它和 widget 的显示分离。
+Widget 的状态是一些可以更改的值，如一个滑动条的当前值或一个复选框是否被选中。
+当 widget 状态改变时，State 对象调用 `setState()`，告诉框架去重绘 widget。
 
 ## Creating a stateful widget
 
@@ -152,18 +152,18 @@ Widget 的状态是一些可以更改的值, 如一个滑动条的当前值或�
 
     实现一个有状态 widget 需要创建两个类：
     一个 `StatefulWidget` 的子类和一个 `State` 的子类。
-    
+
   * The state class contains the widget's mutable state and
     the widget's `build()` method.
-    
+
     State 类包含该 widget 的可变状态并定义该 widget 的 `build()` 方法。
-    
+
   * When the widget's state changes, the state object calls
     `setState()`, telling the framework to redraw the widget.
-    
+
     当 widget 状态改变时，State 对象调用 `setState()`，
     告诉框架去重绘 widget。
-    
+
 {{site.alert.end}}
 
 In this section, you'll create a custom stateful widget.
@@ -216,7 +216,7 @@ skip to the next section.
 
  1. [Create a basic "Hello World" Flutter app][hello-world].
 
-    [创建一个基础的 Flutter 应用 —— "Hello World"][hello-world]。
+    [创建一个基础的「Hello world」Flutter 应用][hello-world]。
 
  1. Replace the `lib/main.dart` file with [`main.dart`][].
 
@@ -1117,7 +1117,7 @@ to your app.
 [Handling gestures][], a section in [Introduction to widgets][]
 <br> How to create a button and make it respond to input.
 
-[处理手势][Handling gestures], [widgets 介绍][Introduction to widgets] 文档中一部分
+[处理手势][Handling gestures]，[widgets 介绍][Introduction to widgets] 文档中一部分
 <br> 如何创建一个按钮并使其响应用户动作。
 
 [Gestures in Flutter][]
@@ -1129,7 +1129,7 @@ to your app.
 [Flutter API documentation][]
 <br> Reference documentation for all of the Flutter libraries.
 
-[Flutter API 文档][]
+[Flutter API 文档][Flutter API documentation]
 <br> 所有 Flutter API 的参考文档。
 
 Flutter Gallery [running app][], [repo][]

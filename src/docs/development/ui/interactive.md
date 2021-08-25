@@ -13,22 +13,23 @@ diff2html: true
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What you’ll learn</h4>
-  
+
   <h4 class="no_toc">你会学到什么</h4>
-  
+
   * How to respond to taps.
-  
-    如何响应点击。    
-  
+
+    如何响应点击。
+
   * How to create a custom widget.
-  
-    如何创建自定义 widget。 
-  
+
+    如何创建自定义 widget。
+
   * The difference between stateless and stateful widgets.
-  
+
     无状态和有状态 widget 之间的区别。
-    
+
 {{site.alert.end}}
 
 How do you modify your app to make it react to user input?
@@ -46,7 +47,7 @@ stateless widgets.
 The [building layouts tutorial][] showed you how to create
 the layout for the following screenshot.
 
-[Layout tutorial][] 中展示了如何构建下面截图所示的布局。
+[构建布局教程][building layouts tutorial] 中展示了如何构建下面截图所示的布局。
 
 {% include app-figure.md img-class="site-mobile-screenshot border"
     image="ui/layout/lakes.jpg" caption="The layout tutorial app" %}
@@ -86,7 +87,7 @@ skip to [Managing state][].
 
 您可以直接查看 [第二步: 创建 StatefulWidget 的子类](#step-2)。
 如果您想尝试不同的管理状态方式，
-请跳至 [状态管理](#managing-state)。
+请跳至 [状态管理][Managing state]。
 
 ## Stateful and stateless widgets
 
@@ -106,8 +107,8 @@ examples of stateless widgets. Stateless widgets
 subclass [`StatelessWidget`][].
 
 **无状态的** widget 自身无法改变。
-[Icon][]、[IconButton][] 和 [Text][]
-都是无状态 widget，它们都是 [StatelessWidget][] 的子类。
+[`Icon`][]、[`IconButton`][] 和 [`Text`][]
+都是无状态 widget，它们都是 [`StatelessWidget`][] 的子类。
 
 A _stateful_ widget is dynamic: for example,
 it can change its appearance in response to events
@@ -120,9 +121,9 @@ subclass [`StatefulWidget`][].
 而 **有状态的** widget 自身是可动态改变的（基于State）。
 例如，可以通过与用户的交互或是随着数据的改变
 而导致外观形态的变化。
-[Checkbox][]、[Radio][]、[Slider][]、
-[InkWell][]、[Form][] 和 [TextField][] 
-都是有状态 widget，它们都是 [StatefulWidget][] 的子类。
+[`Checkbox`][]、[`Radio`][]、[`Slider`][]、
+[`InkWell`][]、[`Form`][] 和 [`TextField`][] 
+都是有状态 widget，它们都是 [`StatefulWidget`][] 的子类。
 
 A widget's state is stored in a [`State`][] object,
 separating the widget's state from its appearance.
@@ -132,9 +133,9 @@ When the widget's state changes,
 the state object calls `setState()`,
 telling the framework to redraw the widget.
 
-一个 widget 的状态保存在一个 [State][] 对象中, 它和 widget 的显示分离。
-Widget 的状态是一些可以更改的值, 如一个滑动条的当前值或一个复选框是否被选中。
-当 widget 状态改变时, State 对象调用 `setState()`, 告诉框架去重绘 widget。
+一个 widget 的状态保存在一个 [`State`][] 对象中，它和 widget 的显示分离。
+Widget 的状态是一些可以更改的值，如一个滑动条的当前值或一个复选框是否被选中。
+当 widget 状态改变时，State 对象调用 `setState()`，告诉框架去重绘 widget。
 
 ## Creating a stateful widget
 
@@ -143,24 +144,26 @@ Widget 的状态是一些可以更改的值, 如一个滑动条的当前值或�
 {{site.alert.secondary}}
 
   <h4 class="no_toc">What's the point?</h4>
-  
+
   <h4 class="no_toc">重点是什么？</h4>
 
   * A stateful widget is implemented by two classes:
     a subclass of `StatefulWidget` and a subclass of `State`.
-    
-    实现一个有状态 widget 需要创建两个类:一个 `StatefulWidget` 的子类和一个 `State` 的子类。
-    
+
+    实现一个有状态 widget 需要创建两个类：
+    一个 `StatefulWidget` 的子类和一个 `State` 的子类。
+
   * The state class contains the widget's mutable state and
     the widget's `build()` method.
-    
-    State 类包含该 widget 的可变状态并定义该 widget 的 `build()` 方法.    
-    
+
+    State 类包含该 widget 的可变状态并定义该 widget 的 `build()` 方法。
+
   * When the widget's state changes, the state object calls
     `setState()`, telling the framework to redraw the widget.
-    
-    当 widget 状态改变时, State 对象调用 `setState()`, 告诉框架去重绘 widget。
-    
+
+    当 widget 状态改变时，State 对象调用 `setState()`，
+    告诉框架去重绘 widget。
+
 {{site.alert.end}}
 
 In this section, you'll create a custom stateful widget.
@@ -170,13 +173,13 @@ custom stateful widget that manages a row with two
 children widgets: an `IconButton` and `Text`.
 
 在本节中，您将创建一个自定义有状态的 widget。
-您将使用一个自定义有状态 widget 来替换两个无状态 widget &mdash;
-红色实心星形图标和其旁边的数字计数&mdash;
+您将使用一个自定义有状态 widget 来替换两个无状态 widget&mdash;&mdash;
+红色实心星形图标和其旁边的数字计数&mdash;&mdash;
 该 widget 用两个子 widget 管理一行 `IconButton` 和 `Text`。
 
 Implementing a custom stateful widget requires creating two classes:
 
-实现一个自定义的有状态 widget 需要创建两个类:
+实现一个自定义的有状态 widget 需要创建两个类：
 
 * A subclass of `StatefulWidget` that defines the widget.
 
@@ -184,8 +187,8 @@ Implementing a custom stateful widget requires creating two classes:
 
 * A subclass of `State` that contains the state for that
   widget and defines the widget's `build()` method.
-  
-  一个 `State` 的子类，包含该widget状态并定义该 widget 的 `build()` 方法.
+
+  一个 `State` 的子类，包含该widget状态并定义该 widget 的 `build()` 方法。
 
 This section shows you how to build a stateful widget,
 called `FavoriteWidget`, for the lakes app.
@@ -204,29 +207,29 @@ If you've already built the app in the
 [building layouts tutorial (step 6)][],
 skip to the next section.
 
-如果你已经在 [Layout tutorial (step 6)][]
+如果你已经在 [构建布局教程（第 6 步）][building layouts tutorial (step 6)]
 中成功创建了应用程序，你可以跳过下面的部分。
 
  1. Make sure you've [set up][] your environment.
- 
-    确保你已经 [设置][set up] 好了你的环境.
+
+    确保你已经 [设置][set up] 好了你的环境。
 
  1. [Create a basic "Hello World" Flutter app][hello-world].
- 
-    [创建一个基础的 Flutter 应用 —— "Hello World"][hello-world]
+
+    [创建一个基础的「Hello world」Flutter 应用][hello-world]。
 
  1. Replace the `lib/main.dart` file with [`main.dart`][].
-    
+
     用 GitHub 上的 [`main.dart`][] 替换 `lib/main.dart` 文件。
-    
+
  1. Replace the `pubspec.yaml` file with [`pubspec.yaml`][].
-    
+
     用 GitHub 上的 [`pubspec.yaml`][] 替换 `pubspec.yaml` 文件。
 
  1. Create an `images` directory in your project, and add
     [`lake.jpg`][].
-    
-    在你的工程中创建一个 `images` 文件夹, 并添加 [`lake.jpg`][]。
+
+    在你的工程中创建一个 `images` 文件夹，并添加 [`lake.jpg`][]。
 
 Once you have a connected and enabled device,
 or you've launched the [iOS simulator][]
@@ -251,7 +254,9 @@ action that doesn't affect the parent widget or the rest of
 the UI, so the widget can handle its state internally.
 
 一个 widget 的状态可以通过多种方式进行管理，
-但在我们的示例中，widget 本身——`FavoriteWidget`——将管理自己的状态。
+但在我们的示例中，widget 本身
+&mdash;&mdash;`FavoriteWidget`&mdash;&mdash;
+将管理自己的状态。
 在这个例子中，切换星形图标是一个独立的操作，
 不会影响父窗口 widget 或其他用户界面，
 因此该 widget 可以在内部处理它自己的状态。
@@ -293,16 +298,19 @@ class FavoriteWidget extends StatefulWidget {
 ```
 
 {{site.alert.note}}
+
   Members or classes that start with an underscore
   (`_`) are private. For more information,
   see [Libraries and visibility][], a section in the
   [Dart language tour][].
   
-  以下划线（`_`）开头的成员或类是私有的。有关更多信息，请参阅 [Dart language
-  tour][] 中的 [Libraries and visibility][] 部分。
+  以下划线（`_`）开头的成员或类是私有的。
+  有关更多信息，请参阅 [Dart 开发语言概览][Dart language tour]
+  中的 [库和可见性][Libraries and visibility] 部分。
 
   [Dart language tour]: {{site.dart-site}}/guides/language/language-tour
   [Libraries and visibility]: {{site.dart-site}}/guides/language/language-tour#libraries-and-visibility
+
 {{site.alert.end}}
 
 <a name="step-3"></a>
@@ -320,7 +328,7 @@ along with 41 likes. These values are stored in the
 `_FavoriteWidgetState` 类存储可变信息；
 可以在 widget 的生命周期内改变逻辑和内部状态。
 当应用第一次启动时，用户界面显示一个红色实心的星星形图标，
-表明该湖已经被收藏，并有 41 个“喜欢”。
+表明该湖已经被收藏，并有 41 个「喜欢」。
 状态对象存储这些信息在 `_isFavorited` 和 `_favoriteCount` 变量中。
 
 <?code-excerpt "lib/main.dart (_FavoriteWidgetState fields)" replace="/(bool|int) .*/[!$&!]/g" title?>
@@ -342,9 +350,9 @@ You'll define the callback function next.
 
 状态对象也定义了 `build()` 方法。这个 `build()` 方法
 创建一个包含红色 `IconButton` 和 `Text` 的行。
-该 widget 使用 [IconButton][]（而不是 `Icon`），
+该 widget 使用 [`IconButton`][]（而不是 `Icon`），
 因为它具有一个 `onPressed` 属性，
-该属性定义了处理点击的回调方法（`_toggleFavorite`）。
+该属性定义了处理点击的回调方法 (`_toggleFavorite`)。
 你将会在接下来的步骤中尝试定义它。
 
 <?code-excerpt "lib/main.dart (_FavoriteWidgetState build)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g" title?>
@@ -381,14 +389,15 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 ```
 
 {{site.alert.tip}}
+
   Placing the `Text` in a [`SizedBox`][] and setting its
   width prevents a discernible "jump" when the text changes
   between the values of 40 and 41 &mdash; a jump would
   otherwise occur because those values have different widths.
-  
-  当 `Text` 在 40 和 41 之间变化时，将文本放在 [SizedBox][] 中
-  并设置其宽度可防止出现明显的“跳跃”，因为这些值具有不同的宽度。
-  
+
+  当 `Text` 在 40 和 41 之间变化时，将文本放在 [`SizedBox`][] 中
+  并设置其宽度可防止出现明显的「跳跃」，因为这些值具有不同的宽度。
+
 {{site.alert.end}}
 
 The `_toggleFavorite()` method, which is called when the
@@ -408,7 +417,7 @@ widget 的状态已经改变，应该重绘。
 * A `star` icon and the number 41
 
   实心的星形图标和数字 41
-  
+
 * A `star_border` icon and the number 40
 
   轮廓线的星形图标 `star_border` 和数字 40 之间切换 UI
@@ -455,7 +464,7 @@ In the same location, create the stateful widget:
 That's it! When you hot reload the app,
 the star icon should now respond to taps.
 
-就是这样！当您热重载应用后，星形图标就会响应点击了.
+就是这样！当您热重载应用后，星形图标就会响应点击了。
 
 
 ### Problems?
@@ -473,8 +482,6 @@ check your code against the interactive lakes example on GitHub.
 
 {% comment %}
 TODO: replace the following links with tabbed code panes.
-
-TODO:用 tabbed code panes 替换以下链接。
 {% endcomment -%}
 
 * [`lib/main.dart`]({{site.repo.this}}/tree/{{site.branch}}/examples/layout/lakes/interactive/lib/main.dart)
@@ -484,7 +491,7 @@ TODO:用 tabbed code panes 替换以下链接。
 If you still have questions, refer to any one of the developer
 [community][] channels.
 
-如果您仍有问题, 可以咨询 [社区](/community) 中的任何一位开发者。
+如果您仍有问题，可以咨询 [社区][community] 中的任何一位开发者。
 
 ---
 
@@ -501,21 +508,21 @@ be managed, and lists other available interactive widgets.
 {{site.alert.secondary}}
 
   <h4 class="no_toc">What's the point?</h4>
-  
+
   <h4 class="no_toc">重点是什么？</h4>
 
   * There are different approaches for managing state.
-  
+
     有多种方法可以管理状态。
-  
+
   * You, as the widget designer, choose which approach to use.
-  
+
     您作为 widget 的设计者，需要选择使用何种管理方法。
-    
+
   * If in doubt, start by managing state in the parent widget.
-  
-    如果不是很清楚时, 就在父 widget 中管理状态。
-  
+
+    如果不是很清楚时，就在父 widget 中管理状态。
+
 {{site.alert.end}}
 
 
@@ -575,9 +582,11 @@ creates a container that, when tapped, toggles between a
 green or grey box. The `_active` boolean determines the
 color: green for active or grey for inactive.
 
-我们将通过创建三个简单示例来举例说明管理状态的不同方式：TapboxA、TapboxB 和 TapboxC。
-这些例子功能是相似的 - 每创建一个容器，当点击时，在绿色或灰色框之间切换。
-`_active` 确定颜色：绿色为 true,灰色为 false。
+我们将通过创建三个简单示例来举例说明管理状态的不同方式：
+TapboxA、TapboxB 和 TapboxC。
+这些例子功能是相似的&mdash;&mdash;
+每创建一个容器，当点击时，在绿色或灰色框之间切换。
+`_active` 确定颜色：绿色为 true，灰色为 false。
 
 <div class="row mb-4">
   <div class="col-12 text-center">
@@ -589,7 +598,7 @@ color: green for active or grey for inactive.
 These examples use [`GestureDetector`][] to capture activity
 on the `Container`.
 
-这些示例使用 [GestureDetector][] 捕获 Container 上的用户动作。
+这些示例使用 [`GestureDetector`][] 捕获 `Container` 上的用户动作。
 
 <a name="self-managed"></a>
 ### The widget manages its own state
@@ -604,10 +613,10 @@ using `ListView` don't want to manage `ListView`'s
 scrolling behavior, so `ListView` itself manages its scroll offset.
 
 有时，widget 在内部管理其状态是最好的。
-例如，当 [ListView][] 的内容超过渲染框时，
-ListView 自动滚动。大多数使用 ListView
-的开发人员不想管理 ListView 的滚动行为，
-因此 ListView 本身管理其滚动偏移量。
+例如，当 [`ListView`][] 的内容超过渲染框时，
+ListView 自动滚动。大多数使用 `ListView`
+的开发人员不想管理 `ListView` 的滚动行为，
+因此 `ListView` 本身管理其滚动偏移量。
 
 The `_TapboxAState` class:
 
@@ -615,23 +624,23 @@ The `_TapboxAState` class:
 
 * Manages state for `TapboxA`.
 
-  管理 `TapboxA` 的状态.
+  管理 `TapboxA` 的状态。
 
 * Defines the `_active` boolean which determines the
   box's current color.
 
-  定义布尔值 `_active` 确定盒子的当前颜色.
+  定义布尔值 `_active` 确定盒子的当前颜色。
 
 * Defines the `_handleTap()` function, which updates
   `_active` when the box is tapped and calls the
   `setState()` function to update the UI.
 
   定义 `_handleTap()` 函数，该函数在点击该盒子时更新
-  `_active`,并调用 `setState()` 更新 UI。
-  
+  `_active`，并调用 `setState()` 更新 UI。
+
 * Implements all interactive behavior for the widget.
 
-  实现 widget 的所有交互式行为.
+  实现 widget 的所有交互式行为。
 
 <?code-excerpt path-base="development/ui/interactive/"?>
 
@@ -640,8 +649,6 @@ The `_TapboxAState` class:
 import 'package:flutter/material.dart';
 
 // TapboxA manages its own state.
-
-// TapboxA 管理自身状态.
 
 //------------------------- TapboxA ----------------------------------
 
@@ -720,8 +727,8 @@ widget needs to know whether the button has been tapped,
 so it can take appropriate action.
 
 一般来说父 widget 管理状态并告诉其子 widget 何时更新通常是最合适的。
-例如，[IconButton][] 允许您将图标视为可点按的按钮。
-IconButton 是一个无状态 widget，
+例如，[`IconButton`][] 允许您将图标视为可点按的按钮。
+`IconButton` 是一个无状态 widget，
 因为我们认为父 widget 需要知道该按钮是否被点击来采取相应的处理。
 
 In the following example, TapboxB exports its state
@@ -738,12 +745,12 @@ ParentWidgetState 类：
 * Manages the `_active` state for TapboxB.
 
   为 TapboxB 管理 `_active` 状态；
-  
+
 * Implements `_handleTapboxChanged()`,
   the method called when the box is tapped.
 
   实现 `_handleTapboxChanged()`，当盒子被点击时调用的方法；
-  
+
 * When the state changes, calls `setState()`
   to update the UI.
 
@@ -766,8 +773,6 @@ TapboxB 类：
 import 'package:flutter/material.dart';
 
 // ParentWidget manages the state for TapboxB.
-
-// ParentWidget 为 TapboxB 管理状态.
 
 //------------------------ ParentWidget --------------------------------
 
@@ -868,17 +873,17 @@ objects, `_ParentWidgetState` and `_TapboxCState`.
 
 The `_ParentWidgetState` object:
 
-`_ParentWidgetState` 对象:
+`_ParentWidgetState` 对象：
 
 * Manages the `_active` state.
 
   管理`_active` 状态。
-  
+
 * Implements `_handleTapboxChanged()`,
   the method called when the box is tapped.
 
-  实现 `_handleTapboxChanged()`, 此方法在盒子被点击时调用。
-  
+  实现 `_handleTapboxChanged()`，此方法在盒子被点击时调用。
+
 * Calls `setState()` to update the UI when a tap
   occurs and the `_active` state changes.
 
@@ -900,13 +905,13 @@ The `_TapboxCState` object:
   `GestureDetector` 监听所有 tap 事件。
   当用户点下时，它添加高亮（深绿色边框）；
   当用户释放时，会移除高亮。  
-  
+
 * Calls `setState()` to update the UI on tap down,
   tap up, or tap cancel, and the `_highlight` state changes.
 
   当按下、抬起、或者取消点击时更新 `_highlight` 状态，
   调用 `setState()` 更新UI。
-  
+
 * On a tap event, passes that state change to the parent widget to take
   appropriate action using the [`widget`][] property.
 
@@ -1053,18 +1058,19 @@ You can find examples of `GestureDetector` in
 [Managing state][]. Learn more about the `GestureDetector`
 in [Handle taps][], a recipe in the [Flutter cookbook][].
 
-如果你愿意，你可以使用 [GestureDetector][]
+如果你愿意，你可以使用 [`GestureDetector`][]
 来给任何自定义 widget 添加交互性。
-您可以在 [管理状态](#managing-state) 和
-[Flutter Gallery][] 中找到 GestureDetector 的示例。
+你可以在 [管理状态][Managing state] 中找到 `GestureDetector` 的示例。
+同时你也可以在 [Flutter cookbook][] 的 [处理点击][Handle taps]
+中学习更多关于 `GestureDetector` 的内容。
 
 {{site.alert.tip}}
 
   Flutter also provides a set of iOS-style widgets called
   [`Cupertino`][].
-  
-  Futter还提供了一组名为 [Cupertino][] 的 iOS 风格的小部件。
-  
+
+  Flutter 还提供了一组名为 [`Cupertino`][] 的 iOS 风格的小部件。
+
 {{site.alert.end}}
 
 When you need interactivity, it's easiest to use one of
@@ -1106,38 +1112,38 @@ to your app.
 
 [Gestures][], a section in the [Flutter cookbook][].
 
-[手势][Gestures]，[Flutter 实用教程][Flutter cookbook] 里的一个节。
+[手势][Gestures]，[Flutter 实用教程][Flutter cookbook] 里的一个小节。
 
 [Handling gestures][], a section in [Introduction to widgets][]
 <br> How to create a button and make it respond to input.
 
-[处理手势][Handling gestures], [widgets 介绍][Introduction to widgets] 文档中一部分
-<br> 如何创建一个按钮并使其响应用户动作.
+[处理手势][Handling gestures]，[widgets 介绍][Introduction to widgets] 文档中一部分
+<br> 如何创建一个按钮并使其响应用户动作。
 
 [Gestures in Flutter][]
 <br> A description of Flutter's gesture mechanism.
 
 [点击、拖动和其他手势][Gestures in Flutter]
-<br> Flutter 手势机制的描述
+<br> Flutter 手势机制的描述。
 
 [Flutter API documentation][]
 <br> Reference documentation for all of the Flutter libraries.
 
-[Flutter API documentation][]
-<br> 所有 Flutter 库的参考文档.
+[Flutter API 文档][Flutter API documentation]
+<br> 所有 Flutter API 的参考文档。
 
 Flutter Gallery [running app][], [repo][]
 <br> Demo app showcasing many Material components and
   other Flutter features.
 
 [Flutter Gallery][running app] 应用，[代码仓库][repo]
-<br> 一个 Demo 应用程序，展示了许多 Material 和其他 Flutter 功能
+<br> 一个 Demo 应用程序，展示了许多 Material 和其他 Flutter 功能。
 
 [Flutter's Layered Design][] (video)
 <br> This video includes information about state and
   stateless widgets.  Presented by Google engineer, Ian Hickson.
 
-[Flutter的分层设计][] (视频)
+[Flutter 的分层设计][] (视频)
 <br> 此视频包含有关有状态和无状态 widget 的信息。
 由 Google 工程师 Ian Hickson 讲解。
 
@@ -1153,7 +1159,7 @@ Flutter Gallery [running app][], [repo][]
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: /docs/cookbook
 [Flutter's Layered Design]: https://www.youtube.com/watch?v=dkyY9WCGMi0
-[Flutter的分层设计]https://www.bilibili.com/video/BV1b441157vV
+[Flutter 的分层设计]: https://www.bilibili.com/video/BV1b441157vV
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`foundation` library]: {{site.api}}/flutter/foundation/foundation-library.html

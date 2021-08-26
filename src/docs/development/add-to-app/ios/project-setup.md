@@ -340,7 +340,7 @@ frameworks to `some/path/MyApp/Flutter/`.
 下面的示例假设你想在 `some/path/MyApp/Flutter/` 目录下创建 frameworks：
 
 ```sh
-flutter build ios-framework --xcframework --no-universal --output=some/path/MyApp/Flutter/
+flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
 ```text
@@ -508,7 +508,7 @@ CocoaPods 的 podspec 文件分发。
 如选项 B 中所说的那样，它将会生成 App.framework 和插件框架。
 
 ```sh
-flutter build ios-framework --cocoapods --xcframework --no-universal --output=some/path/MyApp/Flutter/
+flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
 ```
 
 ```text
@@ -537,6 +537,11 @@ Host apps using CocoaPods can add Flutter to their Podfile:
 ```ruby
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
+{{site.alert.note}}
+  You must hard code the `[build mode]` value.
+  For example, use `Debug` if you need to use
+  `flutter attach` and `Release` when you're ready to ship.
+{{site.alert.end}}
 
 Embed and link the generated App.xcframework,
 FlutterPluginRegistrant.xcframework,

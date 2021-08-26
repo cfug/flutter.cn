@@ -44,6 +44,7 @@ that can be customized as you see fit with
 your own assets. By default,
 the storyboard displays a blank image,
 but you can change this. To do so,
+open the Flutter app's Xcode project
 by typing `open ios/Runner.xcworkspace`
 from the root of your app directory.
 Then select `Runner/Assets.xcassets`
@@ -184,237 +185,126 @@ while the app initializes.
 
 如此一来，Android 应用程序就会在在初始化时展示对应的启动页面。
 
-### The Flutter splash screen
+### Android S
 
-### Flutter 闪屏页
+### Android 12 (S)
 
-Each Flutter experience in an app requires a few moments
-to initialize the Dart isolate that runs the code.
-This means that a user momentarily sees a blank screen
-until Flutter renders its first frame. Flutter supports
-an improved user experience by displaying an Android
-`View` as a splash screen while Flutter initializes.
+See [Android Splash Screens][] first on how to configure your splash screen on
+Android S.
 
-应用程序中的每个 Flutter 内容都需要一些时间
-以初始化运行代码的 Dart 线程。
-这意味着用户将会看到一小会儿的空白屏幕，
-直到 Flutter 渲染其第一帧为止。
-为了提升用户体验，Flutter 提供了在其初始化时
-支持展示一个 Android `View` 作为闪屏页。
+请先查看 [Android 闪屏页面][Android Splash Screens]
+了解如何在 Android S 上配置闪屏页。
 
-Flutter supports two options for a splash screen.
-The first option is to  display a `Drawable` of
-your choice, which fades out after the initialization
-is complete. The other option is to provide a custom
-`SplashScreen` that is capable of displaying any
-Android `View` content that you want.
+Make sure neither `io.flutter.embedding.android.SplashScreenDrawable` is set in
+your manifest, nor is `provideSplashScreen` implemented, as these APIs are
+deprecated. Doing so will cause the Android splash screen to fade smoothly into
+the Flutter when the app is launched.
 
-针对 Flutter 的闪屏页，这里提供了两个可选项。
-第一个可选项是展示一个你选择的 `Drawable`，
-并在其初始化完成后淡出。
-另外一个可选项是提供一个自定义的 `闪屏页`，
-它能够展示出任意你想要的 Android `View` 内容。
+确保 `io.flutter.embedding.android.SplashScreenDrawable`
+未在 manifest 中设置，且 `provideSplashScreen` 也没有具体实现，
+这些 API 已被废弃。
+如此一来 Android 的闪屏页可以在应用启动时平滑过渡到 Flutter。
 
-### Showing a Drawable splash screen
+Some apps may want to continue showing the last frame of the Android splash
+screen in Flutter. For example, this preserves the illusion of a single frame
+while additional loading continues in Dart. To achieve this, the following
+Android APIs may be helpful:
 
-### 展示Drawable闪屏页
+某些应用可能希望在 Flutter 中继续显示 Android 闪屏页的最后一帧。
+例如，保持一帧的展示，同时 Dart 继续加载其他内容。
+想达到这样的效果，以下 API 可能有帮助：
 
-A `Drawable` splash screen can be configured for a
-`FlutterActivity`, `FlutterFragment`, or `FlutterView`.
-
-`Drawable` 闪屏页可以配置在
-`FlutterActivity`、`FlutterFragment` 或者 `FlutterView` 中。
-
-#### In a FlutterActivity
-
-#### 在 FlutterActivity 中配置
-
-To display a `Drawable` as a Flutter splash screen
-in a `FlutterActivity`, add the following metadata
-to the associated `FlutterActivity` in `AndroidManifest.xml`.
-
-想要在 `FlutterActivity` 中使用 `Drawable`
-作为 Flutter 闪屏页，
-请将以下元数据添加到 `AndroidManifest.xml`
-中所关联的 `FlutterActivity` 中。
-
-```xml
-<meta-data
-    android:name="io.flutter.embedding.android.SplashScreenDrawable"
-    android:resource="@drawable/my_splash"
-    />
-```
-
-To display a splash screen with the same visual as a launch screen,
-reference the same `@drawable/launch_background` in the
-`io.flutter.embedding.android.SplashScreenDrawable` `meta-data`.
-
-为了使闪屏页和启动页展示出相同的效果，在 
-`io.flutter.embedding.android.SplashScreenDrawable` 和
-`meta-data` 中引用相同的 `@drawable/launch_background`。
-
-#### In a FlutterFragment
-
-#### 在 FlutterFragment 中配置
-
-To display a `Drawable` as a Flutter splash screen in a
-`FlutterFragment`, make a subclass of `FlutterFragment`
-and override `provideSplashScreen()`.
-
-想要在 `FlutterFragment` 中使用 `Drawable`
-作为 Flutter 闪屏页，
-创建一个 `FlutterFragment` 的子类
-并重写它的 `provideSplashScreen()` 方法。
-
+{% samplecode android-splash-alignment %}
+{% sample Java %}
+<!--code-excerpt "MainActivity.java" title-->
 ```java
-public class MyFlutterFragment extends FlutterFragment {
-    @Override
-    protected SplashScreen provideSplashScreen() {
-        // Load the splash Drawable.
-        Drawable splash = getResources().getDrawable(R.drawable.my_splash);
+import android.os.Build;
+import android.os.Bundle;
+import android.window.SplashScreenView;
+import androidx.core.view.WindowCompat;
+import io.flutter.embedding.android.FlutterActivity;
 
-        // Construct a DrawableSplashScreen with the loaded splash
-        // Drawable and return it.
-        return new DrawableSplashScreen(splash);
+public class MainActivity extends FlutterActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        // Aligns the Flutter view vertically with the window.
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            // Disable the Android splash screen fade out animation to avoid
+            // a flicker before the similar frame is drawn in Flutter.
+            getSplashScreen()
+                .setOnExitAnimationListener(
+                    (SplashScreenView splashScreenView) -> {
+                        splashScreenView.remove();
+                    });
+        }
+
+        super.onCreate(savedInstanceState);
     }
 }
 ```
+{% sample Kotlin %}
+<!--code-excerpt "MainActivity.kt" title-->
+```kotlin
+import android.os.Build
+import android.os.Bundle
+import androidx.core.view.WindowCompat
+import io.flutter.embedding.android.FlutterActivity
 
-### Creating a custom SplashScreen
+class MainActivity : FlutterActivity() {
+  override fun onCreate(savedInstanceState: Bundle?) {
+    // Aligns the Flutter view vertically with the window.
+    WindowCompat.setDecorFitsSystemWindows(getWindow(), false)
 
-### 创建一个自定义的闪屏页
-
-Splash screens are a great branding opportunity.
-Because of that, many apps implement unique,
-highly customized splash experiences. To facilitate this,
-Flutter allows you to display an arbitrary Android `View`
-as a splash screen, and even allows you to control how
-that `View` transitions to
-Flutter after Flutter renders its first frame.
-
-闪屏页是一个非常好的推广品牌时机。
-因此，很多应用实现了独特且高度定制化的闪屏体验。
-为方便起见，Flutter 允许你将任意的 Android `View` 作为闪屏进行展示，
-甚至可以控制 Flutter 第一帧渲染完毕之后如何将 `View` 过渡到 Flutter。
-
-#### Implement a custom splash View
-
-#### 实现一个自定义闪屏 View
-
-First, define the custom `View` that should be displayed
-as the splash screen. This `View` could display anything,
-from a simple solid color to an animation.
-
-首先，定义一个将被作为闪屏页展示的自定义 `View`。
-该 `View` 可以展示任意内容，从简单的纯色到一个动画。
-
-#### Implement the SplashScreen interface
-
-#### 实现 SplashScreen 接口
-
-With a custom `View` defined, implement the `SplashScreen`.
-
-为已声明的自定义 `View` 实现 `SplashScreen` 接口。
-
-This guide shows two approaches to a `SplashScreen`
-implementation. First, the following is an example of a
-`SplashScreen` that has no visual state and no transition
-animation.
-
-本指南展示了两种实现 `SplashScreen` 的方式。
-首先，下面是一个 `SplashScreen` 的示例，它既没有视觉状态，也没有过渡动画。
-
-```java
-public class SimpleSplashScreen implements SplashScreen {
-    @Override
-    @Nullable
-    public View createSplashView(
-      @NonNull Context context,
-      @Nullable Bundle savedInstanceState
-    ) {
-        // Return a new MySplashView without saving a reference, because it
-        // has no state that needs to be tracked or controlled.
-        return new MySplashView(context);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+      // Disable the Android splash screen fade out animation to avoid
+      // a flicker before the similar frame is drawn in Flutter.
+      splashScreen.setOnExitAnimationListener { splashScreenView -> splashScreenView.remove() }
     }
 
-    @Override
-    public void transitionToFlutter(@NonNull Runnable onTransitionComplete) {
-        // Immediately invoke onTransitionComplete because this SplashScreen
-        // doesn't display a transition animation.
-        //
-        // Every SplashScreen *MUST* invoke onTransitionComplete at some point
-        // for the splash system to work correctly.
-        onTransitionComplete.run();
-    }
+    super.onCreate(savedInstanceState)
+  }
 }
 ```
+{% endsamplecode %}
 
-The second example is a bit more sophisticated.
-In this example, the custom `SplashScreen` keeps
-a reference to its custom `View` and instructs the custom
-`View` to transition away, passing the `onTransitionComplete`
-callback to the custom `View` to invoke.
+Then, you can reimplement the first frame in Flutter that shows elements of your
+Android splash screen in the same positions on screen.
 
-第二个示例稍微有些复杂。
-在此示例中，自定义 `SplashScreen` 保留了对其自定义 `View` 的引用，
-并指示自定义 `View` 的过渡效果，将 `onTransitionComplete` 回调传递给自定义 `View` 进行调用。
+然后你可以重新实现 Flutter 的第一帧，将元素摆放在与 Android 闪屏页相同的位置。
 
-```java
-public class SplashScreenWithTransition implements SplashScreen {
-    private MySplashView mySplashView;
+### Migrating from Manifest / Activity defined custom splash screens
 
-    @Override
-    @Nullable
-    public View createSplashView(
-      @NonNull Context context,
-      @Nullable Bundle savedInstanceState
-    ) {
-        // A reference to the MySplashView is retained so that it can be told
-        // to transition away at the appropriate time.
-        mySplashView = new MySplashView(context);
-        return mySplashView;
-    }
+### 迁移 Manifest 和 Activity 中自定义的闪屏
 
-    @Override
-    public void transitionToFlutter(@NonNull Runnable onTransitionComplete) {
-        // Instruct MySplashView to animate away in whatever manner it wants.
-        // The onTransitionComplete Runnable is passed to the MySplashView
-        // to be invoked when the transition animation is complete.
-        mySplashView.animateAway(onTransitionComplete);
-    }
-}
-```
-```java
+{{site.alert.note}}
 
-//MainActivity provideSplashScreen will present the custom splash screen
+  This is an upcoming change for Flutter 2.5.
 
-@Override
+  该修改将随着 Flutter 2.5 一同发布。
 
-@Nullable
+{{site.alert.end}}
 
-public SplashScreen provideSplashScreen() {
+Previously, Android Flutter apps would either set
+`io.flutter.embedding.android.SplashScreenDrawable` in thier application
+manifest, or implement [`provideSplashScreen`][] within their Flutter Activity.
+This would be shown momentarily in between the time after the Android launch
+screen is shown and when Flutter has drawn the first frame. This is no longer
+needed and is deprecated – Flutter now automatically keeps the Android launch
+screen displayed until Flutter has drawn the first frame. Developers should
+instead remove usage of these APIs.
 
-return new SplashScreenWithTransition();
+在 Flutter 2.5 之前，Flutter 的 Android 应用要么是在 manifest 中设置
+`io.flutter.embedding.android.SplashScreenDrawable`，
+要么是在 Flutter Activity 中实现 [`provideSplashScreen`][]。
+这会导致在 Android 的启动页和 Flutter 的第一帧绘制之间，有短暂的空隙。
+这样的处理方法已被废弃，Flutter 现在会将 Android 的启动页保持到 Flutter 的第一帧渲染完成。
+开发者们可以直接删除这些 API 的使用。
 
-}
-
-```
-
-With custom splash screens, the sky is the limit.
-But use the power you have with responsibility: a
-splash screen that is too complex may frustrate your
-users by adding to your app's load time.
-The UX Collective provides some good
-tips on how to build a [dynamic yet performant splash screen][].
-
-对于自定义的闪屏页而言，天空才是极限。
-但是请注意把持好它的度：因为过于复杂而增加了加载时间的闪屏页会让用户感到不舒服。
-UX Collective 为你提供了一些很好的提示，帮助你构建
-[动态且高性能的闪屏页][dynamic yet performant splash screen]。
-
-[dynamic yet performant splash screen]: https://uxdesign.cc/building-the-perfect-splash-screen-46e080395f06
+[Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
+[`provideSplashScreen`]: https://api.flutter.dev/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
 [must use an Xcode storyboard]: https://developer.apple.com/news/?id=03042020b
 [Human Interface Guidelines]: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/
-[Sample code]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/android_splash_screens

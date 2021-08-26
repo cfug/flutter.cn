@@ -1014,11 +1014,11 @@ or by importing the module and setting the value in your
 <dt markdown="1">[`debugRepaintRainbowEnabled`][]</dt>
 <dd markdown="1">
 <p markdown="1">You can enable this flag in the Flutter
-    inspector by selecting the **Repaint Rainbow** button.
+    inspector by selecting the **Highlight Repaints** button.
     If any static widgets are rotating through the colors of the rainbow
     (for example, a static header), those areas are candidates for adding
     repaint boundaries.</p>
-<p markdown="1">您可以通过点击 **Repaint Rainbow** 按钮，
+<p markdown="1">您可以通过点击 **Highlight Repaints** 按钮，
     在 Flutter inspector 中启用此标志。
     如果任何静态 widget 在彩虹七颜色之间轮转（比如一个静态标题），
     那么这些区域就可能需要添加重新绘制边界进行优化。</p>

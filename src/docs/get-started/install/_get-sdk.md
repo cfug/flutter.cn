@@ -167,6 +167,25 @@ command again to verify that you’ve set everything up correctly.
 当你安装了任一缺失部分的依赖后，
 可以再次运行 `flutter doctor` 命令来确认是否成功安装。
 
+### Downloading and installing with Homebrew
+
+### 使用 Homebrew 下载和安装
+
+If you have Homebrew installed on your machine,
+you can install Flutter using the following command:
+
+如果你的设备安装了 Homebrew，你可以使用下面的命令安装 Flutter：
+
+```terminal
+$ brew install --cask flutter
+```
+
+Then, run `flutter doctor`. That lets you know if there are
+other dependencies you need to install to use Flutter, such as the Android SDK.
+
+接着运行 `flutter doctor`，查看是否有其他 Flutter 依赖需要下载，
+例如 Android SDK。
+
 ### Downloading straight from GitHub instead of using an archive
 
 ### 直接从 Github 上（而不是归档）下载
@@ -208,7 +227,6 @@ $ flutter precache
 For additional download options, see `flutter help precache`.
 
 更多额外下载选项，请参阅 `flutter help precache`。
-
 
 {% include_relative _analytics.md %}
 

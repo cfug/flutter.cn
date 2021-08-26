@@ -7,6 +7,8 @@ tags: Flutter开发工具,DevTools
 keywords: Flutter inspector,widget 树
 ---
 
+<?code-excerpt path-base="../examples/visual_debugging/"?>
+
 {{site.alert.note}}
 
   The inspector works with all Flutter applications.
@@ -17,7 +19,7 @@ keywords: Flutter inspector,widget 树
 
 ## What is it?
 
-## 这是什么?
+## 这是什么？
 
 The Flutter widget inspector is a powerful tool for visualizing and
 exploring Flutter widget trees. The Flutter framework uses widgets
@@ -78,8 +80,8 @@ used as the visual version of the label.
 
 <dl markdown="1">
 <dt>
-<p markdown="1">**Select widget mode** ![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"}</p>
-<p markdown="1">**选择 widget 模式** ![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"} **Select widget mode**</p>
+<p markdown="1">![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"} **选择 widget 模式**</p>
 </dt>
 <dd markdown="1">
 <p markdown="1">Enable this button in order to select
@@ -87,50 +89,63 @@ used as the visual version of the label.
     see [Inspecting a widget](#inspecting-a-widget).</p>
 <p markdown="1">启用此按钮以在设备上选择 widget 进行查看。
     有关更多信息，请参考 [查看 widget](#inspecting-a-widget)。</p>
+</dd>
 <dt>
-<p markdown="1">**Refresh tree** ![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"}</p>
-<p markdown="1">**刷新树** ![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"} **Refresh tree**</p>
+<p markdown="1">![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"} **刷新树**</p>
 </dt>
-<dd><p>Reload the current widget info</p>
-    <p>重新加载当前 widget 的信息。</p>
-    </dd>
+<dd>
+<p>Reload the current widget info</p>
+<p>重新加载当前 widget 的信息。</p>
+</dd>
 <dt>
-<p markdown="1">**Slow Animations** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</p>
-<p markdown="1">**慢动画** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"} **[Slow Animations]**</p>
+<p markdown="1">![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"} **[慢速动画][Slow Animations]**</p>
 </dt>
-<dd><p>Slow down animations to enable visual inspection.</p>
-    <p>减慢动画以启用视觉检查。</p>
-    </dd>
+<dd>
+<p>Run animations 5 times slower to help fine-tune them.</p>
+<p>以五分之一的速度运行动画以便对它们进行优化。</p>
+</dd>
 <dt>
-<p markdown="1">**Debug Paint** ![Debug paint mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"}</p>
-<p markdown="1">**调试绘制** ![Debug paint mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">![Show guidelines mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"} **[Show guidelines][]**</p>
+<p markdown="1">![Show guidelines mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"} **[显示引导线][Show guidelines]**</p>
 </dt>
-<dd><p>Add visual debugging hints to the rendering
-    that display borders, padding, alignment, and spacers.</p>
-    <p>为渲染对象添加边框、填充、对齐和间隔等可视化的调试提示。</p>
-    </dd>
+<dd>
+<p>Overlay guidelines to assist with fixing layout issues.</p>
+<p>覆盖一层引导线以帮助调整布局问题。</p>
+</dd>
 <dt>
-<p markdown="1">**Paint Baselines** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</p>
-<p markdown="1">**绘制基线** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">![Show baselines icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"} **[Show baselines][]**</p>
+<p markdown="1">![Show baselines icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"} **[显示基线][Show baselines]**</p>
 </dt>
-<dd><p>Cause each RenderBox to paint a line at each
-    of its text baselines.</p>
-    <p>对于每个 RenderBox，在其每个文本基线处绘制一条线。</p>
-    </dd>
+<dd>
+<p>Show baselines, which are used for aligning text.
+    Can be useful for checking if text is aligned.</p>
+<p>针对文字对齐展示文字的基线。对检查文字是否对齐有帮助。</p>
+</dd>
 <dt>
-<p markdown="1">**Repaint Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</p>
-<p markdown="1">**重绘彩虹** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</p>
+<p markdown="1">![Highlight repaints icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"} **[Highlight repaints][]**</p>
+<p markdown="1">![Highlight repaints icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"} **[高亮重绘制内容][Highlight repaints]**</p>
 </dt>
-<dd><p>Shows rotating colors on layers when repainting.</p>
-    <p>重新绘制时在图层上依次显示不同的颜色。</p>
-    </dd>
+<dd>
+<p>Shows rotating colors on layers when repainting.</p>
+<p>重新绘制时在图层上依次显示不同的颜色。</p>
+</dd>
 <dt>
-<p markdown="1">**Invert Oversized Images** ![Invert oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"}</p>
-<p markdown="1">**反转过大图像** ![Invert oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"}</p>
+<p markdown="1">![Highlight oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"} **[Highlight oversized images][]**</p>
+<p markdown="1">![Highlight oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"} **[高亮尺寸过大的图片][Highlight oversized images]**</p>
 </dt>
-<dd><p>Inverts oversized images in your running application.</p>
-    <p>在运行的应用程序中反转过大的图像。</p>
-    </dd>
+<dd>
+<p>Highlights images that are using too much memory
+    by inverting colors and flipping them.</p>
+<p>在运行的应用程序中高亮并反转消耗过多内存的图像。</p>
+</dd>
+
+[Slow animations]: #slow-animations
+[Show guidelines]: #show-guidelines
+[Show baselines]: #show-baselines
+[Highlight repaints]: #highlight-repaints
+[Highlight oversized images]: #highlight-oversized-images
 
 ## Inspecting a widget
 
@@ -290,7 +305,6 @@ Supported values:
 * `MainAxisAlignment.spaceAround`
 * `MainAxisAlignment.spaceEvenly`
 
-
 ###### crossAxisAlignment
 
 ![The Layout Explorer changing cross axis alignment]({% asset tools/devtools/layout_explorer_cross_axis_alignment.gif @path %}){:width="100%"}
@@ -303,7 +317,6 @@ Supported values:
 * `CrossAxisAlignment.center`
 * `CrossAxisAlignment.end`
 * `CrossAxisAlignment.stretch`
-
 
 ###### FlexParentData.flex
 
@@ -340,6 +353,396 @@ RenderObject.
 
 ![The Layout Explorer fixed size tool]({% asset tools/devtools/layout_explorer_fixed_layout.png @path %})
 
+## Visual debugging
+
+## 调试视觉效果
+
+The Flutter Inspector provides several options for visually debugging your app.
+These are the options available from the inspector within Flutter DevTools.
+
+Flutter Inspector 提供了多种以可视化方式调试应用的方式。
+以下是在 Flutter DevTools 中的 inspector 可用的选项：
+
+### Slow animations
+
+### 慢速动画
+
+When enabled, this option runs animations 5 times slower for easier visual
+inspection.
+This can be useful if you want to carefully observe and tweak an animation that
+doesn’t look quite right.
+
+启用时，动画将以约五分之一的原有速度运行，方便对视觉效果进行检查。
+当你想要仔细地观察并调试看起来不正常的动画时，这个选项会非常有用。
+
+This can also be set in code:
+
+你也可以使用代码设置：
+
+<?code-excerpt "lib/slow_animations.dart"?>
+```dart
+import 'package:flutter/scheduler.dart';
+
+void setSlowAnimations() {
+  timeDilation = 5.0;
+}
+```
+ 
+This slows the animations by 5x.
+
+这会让动画时长增加 5 倍（速度减慢 5 倍）。
+
+#### See also
+
+#### 更多内容
+
+The following links provide more info.
+
+以下的链接提供了更多细节内容。
+
+* [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html) 
+
+  [Flutter 文档：timeDilation 属性]({{site.api}}/flutter/scheduler/timeDilation.html) 
+
+以下的录屏展示了动画减速前后的对比。
+
+![Screen recording showing normal animation speed]({% asset tools/devtools/debug-toggle-slow-animations-disabled.gif @path %})
+![Screen recording showing slowed animation speed]({% asset tools/devtools/debug-toggle-slow-animations-enabled.gif @path %})
+
+### Show guidelines
+
+### 显示引导线
+
+This feature draws guidelines over your app that display render boxes, alignments,
+paddings, scroll views, clippings and spacers.
+
+该功能会在你的应用顶层绘制引导线，展示绘制区域、对齐、间距、滚动视图、裁剪和空位填充。
+
+This tool can be used for better understanding your layout. For instance,
+by finding unwanted padding or understanding widget alignment.
+
+这个工具能帮助你更加了解你的布局。例如查找不需要的填充或者理解 widget 的对齐方式。
+
+You can also enable this in code:
+
+你也可以通过代码启用：
+
+<?code-excerpt "lib/layout_guidelines.dart"?>
+```dart
+import 'package:flutter/rendering.dart';
+
+void showLayoutGuidelines() {
+  debugPaintSizeEnabled = true;
+}
+```
+
+#### Render boxes
+
+#### RenderBox
+
+Widgets that draw to the screen create a [render box][], the 
+building blocks of Flutter layouts. They’re shown with a bright blue border:
+
+绘制在屏幕上的 widgets 会创建一个 [RenderBox][render box]，
+它是 Flutter 布局的基础构建。
+这些 RenderBox 会加上一个浅蓝色的边框：
+
+![Screenshot of render box guidelines]({% asset tools/devtools/debug-toggle-guideline-render-box.png @path %})
+
+#### Alignments
+
+#### 对齐方式
+
+Alignments are shown with yellow arrows. These arrows show the vertical
+and horizontal offsets of a widget relative to its parent.
+For example, this button’s icon is shown as being centered by the four arrows:
+
+对齐方式将以黄色箭头展示。
+这些箭头会显示出垂直和竖屏方向上 widget 相对其父布局的偏移。
+例如，这个按钮图标有四个箭头表示它被居中展示：
+
+![Screenshot of alignment guidelines]({% asset tools/devtools/debug-toggle-guidelines-alignment.png @path %})
+
+#### Padding
+
+#### 间距
+
+Padding is shown with a semi-transparent blue background:
+
+间距会以半透明的蓝色背景显示：
+
+![Screenshot of padding guidelines]({% asset tools/devtools/debug-toggle-guidelines-padding.png @path %})
+
+#### Scroll views
+
+#### 滚动视图
+
+Widgets with scrolling contents (such as list views) are shown with green arrows:
+
+包含滚动内容的 widget（例如 ListView）会展示绿色的箭头：
+
+![Screenshot of scroll view guidelines]({% asset tools/devtools/debug-toggle-guidelines-scroll.png @path %})
+
+#### Clipping
+
+#### 裁剪
+
+Clipping, for example when using the [ClipRect widget][], are shown
+with a dashed pink line with a scissors icon:
+
+使用了诸如 [ClipRect Widget][] 进行裁剪的内容，会以粉红色的虚线加一个剪刀图标展示：
+
+[ClipRect widget]: {{site.api}}/flutter/widgets/ClipRect-class.html
+
+![Screenshot of clip guidelines]({% asset tools/devtools/debug-toggle-guidelines-clip.png @path %})
+
+#### Spacers
+
+#### 空位填充
+
+Spacer widgets are shown with a grey background,
+such as this `SizedBox` without a child:
+
+空位填充的 widgets 会以灰色背景展示，例如没有 child 的 `SizedBox`：
+
+![Screenshot of spacer guidelines]({% asset tools/devtools/debug-toggle-guidelines-spacer.png @path %})
+
+### Show baselines
+
+### 显示基线
+
+This option makes all baselines visible.
+Baselines are horizontal lines used to position text.
+
+该选项会显示所有的基线。
+基线是水平的用来定位文字的线。
+
+This can be useful for checking whether text is precisely aligned vertically.
+For example, the text baselines in the following screenshot are slightly misaligned:
+
+在检查文字是否垂直对齐时，基线会非常有用。
+例如，下图中文字的基线稍微有一些错位：
+
+![Screenshot with show baselines enabled]({% asset tools/devtools/debug-toggle-guidelines-baseline.png @path %})
+
+The [Baseline][] widget can be used to adjust baselines.
+
+[Baseline][] widget 可以用来调整基线。
+
+[Baseline]: {{site.api}}/flutter/widgets/Baseline-class.html
+
+A line is drawn on any [render box][] that has a baseline set;
+alphabetic baselines are shown as green and ideographic as yellow.
+
+在设置了基线的 [RenderBox][render box] 上，都会显示一条线。
+字母的基线以绿色展示，而符号的基线以黄色展示。
+
+You can also enable this in code:
+
+你也可以通过代码启用：
+
+<?code-excerpt "lib/show_baselines.dart"?>
+```dart
+import 'package:flutter/rendering.dart';
+
+void showBaselines() {
+  debugPaintBaselinesEnabled = true;
+}
+```
+
+### Highlight repaints
+
+### 高亮重绘制内容
+
+This option draws a border around all [render boxes][]
+that changes color every time that box repaints.
+
+该选项会为所有的 [RenderBox][render boxes] 绘制一层边框，
+在它们重新绘制时改变颜色。
+
+[render boxes]: {{site.api}}/flutter/rendering/RenderBox-class.html
+
+This rotating rainbow of colors is useful for finding parts of your app
+that are repainting too often and potentially harming performance.
+
+以彩虹色谱循环的颜色，有利于你找到应用中频繁重绘导致性能消耗过大的部分。
+
+For example, one small animation could be causing an entire page
+to repaint on every frame.
+Wrapping the animation in a [RepaintBoundary widget][] limits
+the repainting to just the animation.
+
+例如，一个小动画可能会导致整个页面一直在重绘。
+将动画使用 [RepaintBoundary widget][] 嵌套，可以保证动画只会导致其本身重绘。
+
+[RepaintBoundary widget]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
+
+Here the progress indicator causes its container to repaint:
+
+下面是一个进度指示器导致其容器重绘的例子：
+
+<?code-excerpt "lib/highlight_repaints.dart (EverythingRepaints)"?>
+```dart
+class EverythingRepaintsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Repaint Example')),
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
+}
+```
+
+![Screen recording of a whole screen repainting]({% asset tools/devtools/debug-toggle-guidelines-repaint-1.gif @path %})
+
+Wrapping the progress indicator in a `RepaintBoundary` causes
+only that section of the screen to repaint:
+
+将进度指示器使用 `RepaintBoundary` 包裹，
+可以将重绘范围缩小至它本身占有的区域。
+
+<?code-excerpt "lib/highlight_repaints.dart (AreaRepaints)"?>
+```dart
+class AreaRepaintsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Repaint Example')),
+      body: Center(
+        child: RepaintBoundary(
+          child: CircularProgressIndicator(),
+        ),
+      ),
+    );
+  }
+}
+```
+
+![Screen recording of a just a progress indicator repainting]({% asset tools/devtools/debug-toggle-guidelines-repaint-2.gif @path %})
+
+`RepaintBoundary` widgets have tradeoffs. They can help with performance,
+but they also have an overhead of creating a new canvas,
+which uses additional memory.
+
+`RepaintBoundary` widget 也有一些额外的消耗。
+它们对性能有一定的帮助，但也会在创建额外的绘制画布时增加一定的内存消耗。
+
+You can also enable this option in code:
+
+你也可以通过代码启用：
+
+<?code-excerpt "lib/highlight_repaints.dart (Toggle)"?>
+```dart
+import 'package:flutter/rendering.dart';
+
+void highlightRepaints() {
+  debugRepaintRainbowEnabled = true;
+}
+```
+
+### Highlight oversized images
+
+### 高亮尺寸过大的图片
+
+This option highlights images that are too large by both inverting their colors
+and flipping them vertically:
+
+该选项会将尺寸过大的图片高亮表示，并且进行垂直翻转及色调反转：
+
+![A highlighted oversized image]({% asset tools/devtools/debug-toggle-guidelines-oversized.png @path %})
+
+The highlighted images use more memory than is required;
+for example, a large 5MB image displayed at 100 by 100 pixels.
+
+被高亮的图片使用了过多的内存。
+例如一张 5MB 大小的图片以 100x100 像素展示。
+
+Such images can cause poor performance, especially on lower-end devices
+and when you have many images, as in a list view,
+this performance hit can add up.
+Information about each image is printed in the debug console:
+
+这样的图片会导致性能低下，在低端设备上尤为明显，
+而当你在诸如列表中有大量这样的图片时，性能的下降会叠加。
+调试控制台窗口中会打印每个图片的信息：
+
+```console
+dash.png has a display size of 213×392 but a decode size of 2130×392, which uses an additional 2542KB.
+```
+
+Images are deemed too large if they use at least 128KB more than required.
+
+超过 128KB 的图片会被视为过大。
+
+#### Fixing images
+
+#### 调整图片
+
+Wherever possible, the best way to fix this problem is resizing
+the image asset file so it’s smaller.
+
+在可能的情况下，最好的办法是调整图片资源的大小，让它变得更小。
+
+If this isn’t possible, you can use the `cacheHeight` and `cacheWidth`
+parameters on the `Image` constructor:
+
+如果该方法不可行，你可以使用 `Image` 构造里的
+`cacheHeight` 和 `cacheWidth` 参数：
+
+<?code-excerpt "lib/oversized_images.dart (ResizedImage)"?>
+```dart
+class ResizedImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      'dash.png',
+      cacheHeight: 213,
+      cacheWidth: 392,
+    );
+  }
+}
+```
+
+This makes the engine decode this image at the specified size,
+and reduces memory usage (decoding and storage is still more expensive
+than if the image asset itself was shrunk).
+The image is rendered to the constraints of the layout or width and height
+regardless of these parameters. 
+
+这样的方法可以让引擎以指定的大小解析图片，减少内存的消耗
+（解析开销和空间占用相较图片调整图片本身仍然较大）。
+无论如何设置参数，图片依然会以布局限制或大小进行渲染。
+
+This property can also be set in code:
+
+该属性同样可以使用代码设置：
+
+<?code-excerpt "lib/oversized_images.dart (Toggle)"?>
+```dart
+import 'package:flutter/painting.dart';
+
+void showOversizedImages() {
+  debugInvertOversizedImages = true;
+}
+```
+
+#### More information
+
+#### 更多内容
+
+You can learn more at the following link:
+
+以下的链接提供了更多细节内容：
+
+- [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+
+  [Flutter 文档：debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+
+[render box]: {{site.api}}/flutter/rendering/RenderBox-class.html
+
 ## Details Tree
 
 ## 树的详细信息
@@ -375,7 +778,8 @@ your application's UI.
 
 Flutter inspector 的部分功能是基于检测应用程序的源码，以便更好地理解创建 widget 的源位置。
 Flutter inspector 可以以类似于在源代码中定义 UI 的方式呈现 widget 树。
-如果没有它，widget 树中的组成某个节点的树结构会更深，并且更难理解运行时 widget 的层次结构如何与应用程序的 UI 相对应。
+如果没有它，widget 树中的组成某个节点的树结构会更深，
+并且更难理解运行时 widget 的层次结构如何与应用程序的 UI 相对应。
 
 You can disable this feature by passing `--no-track-widget-creation` to
 the `flutter run` command.
@@ -414,7 +818,8 @@ For a demonstration of what's generally possible with the inspector,
 see the [DartConf 2018 talk][] demonstrating the IntelliJ version
 of the Flutter inspector.
 
-有关 Flutter inspector 常用功能的演示，请参考 [DartConf 2018 talk][] 中基于 IntelliJ 上的演示。
+有关 Flutter inspector 常用功能的演示，请参考 [DartConf 2018 talk][]
+中基于 IntelliJ 上的演示。
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [common problems when debugging]: /docs/testing/debugging#common-problems

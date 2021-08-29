@@ -466,7 +466,7 @@ localized Flutter application.
 Some languages with multiple variants require more than just a
 language code to properly differentiate.
 
-一些具有着多个变体的语言仅仅用语言代码是不能合适地区分的。
+一些具有着多个变体的语言仅用 ` languageCode` 来区分是不够充分的。
 
 For example, fully differentiating all variants of
 Chinese requires specifying the language code, script code,
@@ -474,15 +474,15 @@ and country code. This is due to the existence
 of simplified and traditional script, as well as regional
 differences in the way characters are written within the same script type.
 
-例如，在多语言应用开发里，如果要完全区分具有多种语言变体的中文，
-则需要指定其语言代码、文字代码以及国家和地区代码 (country code)。
+例如，在多语言应用开发这个话题里，如果要更好的区分具有多种语言变体的中文，
+则需要指定其 `languageCode`、`scriptCode` 和 `countryCode`。
 因为目前有两种主要的，且存在地区使用差异的中文书写系统：简体和繁体。
 
 In order to fully express every variant of Chinese for the
 country codes `CN`, `TW`, and `HK`, the list of supported
 locales should include:
 
-为了让代码 `CN`、`TW` 和 `HK` 能够更充分地表示到每个中文变体，
+为了让 `CN`、`TW` 和 `HK` 能够更充分地表示到每个中文变体，
 构建应用时，设定支持的语言列表可以参考如下代码：
 
 <?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
@@ -522,8 +522,8 @@ localized content for commonly used languages.
 See [`Localizations`][] for information on how the supported
 locales and the preferred locales are resolved.
 
-定义了 `languageCode`、`scriptCode` 和 `countryCode` 后，
-可以确保你的应用为各种不同首选语言环境的用户提供了更加精细化的本地化内容。
+代码里这几组明确和完整的定义，
+可以确保你的应用为各种不同首选语言环境的用户提供更加精细化的本地化内容。
 如果用户没有指定首选的语言环境，那么我们就会使用最近的匹配，这可能与用户的期望会有差异。
 Flutter 只会解析定义在 `supportedLocales` 里面的语言环境。
 对于那些常用语言，Flutter 为本地化内容提供了文字代码级别的区分。

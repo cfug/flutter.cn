@@ -466,7 +466,7 @@ localized Flutter application.
 Some languages with multiple variants require more than just a
 language code to properly differentiate.
 
-一些具有着多个变种的语言仅仅用语言代码是不能合适地区分的。
+一些具有着多个变体的语言仅仅用语言代码是不能合适地区分的。
 
 For example, fully differentiating all variants of
 Chinese requires specifying the language code, script code,
@@ -474,17 +474,16 @@ and country code. This is due to the existence
 of simplified and traditional script, as well as regional
 differences in the way characters are written within the same script type.
 
-例如，要能完全区分具有多个变种的中文需要指定语言代码、文字代码和[「国家地区代码」][]。
-这是因为存在着简体和繁体的文字系统，
-而且同时使用相同文字系统写的字符又有地域性的差别。
+例如，在多语言应用开发里，如果要完全区分具有多种语言变体的中文，
+则需要指定其语言代码、文字代码以及国家和地区代码 (country code)。
+因为目前有两种主要的，且存在地区使用差异的中文书写系统：简体和繁体。
 
 In order to fully express every variant of Chinese for the
 country codes `CN`, `TW`, and `HK`, the list of supported
 locales should include:
 
-为了让 `CN`，`TW` 和 `HK` 
-三个不同的[「国家地区代码」][]能够完整地表达每个变种的中文，
-你应该包括以下支持的语言环境：
+为了让代码 `CN`、`TW` 和 `HK` 能够更充分地表示到每个中文变体，
+构建应用时，设定支持的语言列表可以参考如下代码：
 
 <?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
 ```dart
@@ -523,10 +522,9 @@ localized content for commonly used languages.
 See [`Localizations`][] for information on how the supported
 locales and the preferred locales are resolved.
 
-这种明确完整的定义可以确保你的 app 能够区分
-以及提供完全地道的本地内容给这些[「国家地区代码」][]的所有组合的用户。
-如果用户没有指定首选的语言环境，那么我们就会使用最近的匹配，
-这很可能与用户的期望会有差异。
+定义了 `languageCode`、`scriptCode` 和 `countryCode` 后，
+可以确保你的应用为各种不同首选语言环境的用户提供了更加精细化的本地化内容。
+如果用户没有指定首选的语言环境，那么我们就会使用最近的匹配，这可能与用户的期望会有差异。
 Flutter 只会解析定义在 `supportedLocales` 里面的语言环境。
 对于那些常用语言，Flutter 为本地化内容提供了文字代码级别的区分。
 查看 [`Localizations`][] 了解 Flutter 是如何
@@ -539,6 +537,14 @@ should also be fully differentiated for more nuanced localization.
 虽然中文是最主要的一个示例，
 但是其他语言如法语（`fr_FR`，`fr_CA` 等等）
 也应该为了更细致的本地化而做完全的区分。
+
+{% comment %}
+Issue: cfug#942
+参考内容和拓展阅读：
+- [了解“汉字”](https://zxxy.nwnu.edu.cn/yywzgzw/newsshow-819-12687-1.html)
+- [知网百科——语言变体](https://xuewen.cnki.net/R2006091330000010.html)
+- [国家标准计划《世界各国和地区及其行政区划名称代码 第1部分：国家和地区代码》](http://std.samr.gov.cn/gb/search/gbDetailed?id=5DDA8BA23A9018DEE05397BE0A0A95A7)
+{% endcomment %}
 
 <a name="tracking-locale"></a>
 
@@ -1245,5 +1251,3 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [widgets-local]: {{site.api}}/flutter/widgets/Localizations-class.html
 [widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-
-[「国家地区代码」]: https://zh.wikipedia.org/zh-cn/%E5%9B%BD%E5%AE%B6%E5%9C%B0%E5%8C%BA%E4%BB%A3%E7%A0%81

@@ -161,15 +161,16 @@ one of the 78 supported locales. Widgets should be
 adapted to the localized messages, along with
 correct left-to-right and right-to-left layout.
 
+引入 `flutter_localizations` package 并添加了上面的代码之后，
+`Material` 和 `Cupertino` 包现在应该被正确地本地化为 78 个受支持的语言环境之一。
+widget 应当与本地化信息保持同步，并具有正确的从左到右或从右到左的布局。 
+
 Try switching the target platform's locale to
 Spanish (`es`) and notice that the messages should
 be localized.
 
-引入 `flutter_localizations` package 并添加了上面的代码之后，
-`Material` 和 `Cupertino` 包现在应该被正确地本地化为 78 个受支持的语言环境之一。
-widget 应当与本地化信息保持同步，并具有正确的从左到右或从右到左的布局。 
-您可以尝试将目标平台的语言环境切换为阿拉伯语（`ar`），
-请注意应该对信息进行本地化，并且此时的 widget 应当以从右到左的布局排列。
+你可以尝试将目标平台的语言环境切换为西班牙语（`es`），
+然后应该可以发现信息已经被本地化了。
 
 Apps based on `WidgetsApp` are similar except that the
 `GlobalMaterialLocalizations.delegate` isn't needed.
@@ -885,12 +886,9 @@ These are the English translations, of course.
 To complete the job you need to change the return
 value of each getter to an appropriate Nynorsk string.
 
-These are the English translations of course. To complete the job you 
-need to change the return value of each getter to an appropriate 
-Belarusian string.
-
 当然，这些都是英语翻译。为了完成本地化操作，
-你需要把每一个 getter 的返回值翻译成合适的尼诺斯克语字符。
+你需要把每一个 getter 的返回值翻译成合适的
+新挪威语 (Nynorsk) 字符串。
 
 The getters return "raw" Dart strings that have an r prefix,
 like `r'About $applicationName'`,
@@ -1212,7 +1210,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     function (defined in `intl_messages_all.dart`)
     to load the localized messages and `Intl.message()` to look them up.
     
-    DemoLocalizations 类使用生成的 `initializeMessages()` 方法
+    `DemoLocalizations` 类使用生成的 `initializeMessages()` 方法
     （该方法定义在 `intl_messages_all.dart` 文件）
     来加载本地化的信息，然后使用 `Intl.message()` 来查阅这些本地化的信息。
 

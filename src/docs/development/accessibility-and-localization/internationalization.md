@@ -474,7 +474,7 @@ and country code. This is due to the existence
 of simplified and traditional script, as well as regional
 differences in the way characters are written within the same script type.
 
-例如，要能完全区分具有多个变种的中文需要指定语言代码、文字代码和国家代码。
+例如，要能完全区分具有多个变种的中文需要指定语言代码、文字代码和[「国家地区代码」][]。
 这是因为存在着简体和繁体的文字系统，
 而且同时使用相同文字系统写的字符又有地域性的差别。
 
@@ -483,8 +483,8 @@ country codes `CN`, `TW`, and `HK`, the list of supported
 locales should include:
 
 为了让 `CN`，`TW` 和 `HK` 
-三个不同的国家/地区代码能够完整地表达每个变种的中文，
-你应该包括以下支持的语言环境:
+三个不同的[「国家地区代码」][]能够完整地表达每个变种的中文，
+你应该包括以下支持的语言环境：
 
 <?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
 ```dart
@@ -524,7 +524,7 @@ See [`Localizations`][] for information on how the supported
 locales and the preferred locales are resolved.
 
 这种明确完整的定义可以确保你的 app 能够区分
-以及提供完全地道的本地内容给这些国家/地区代码的所有组合的用户。
+以及提供完全地道的本地内容给这些[「国家地区代码」][]的所有组合的用户。
 如果用户没有指定首选的语言环境，那么我们就会使用最近的匹配，
 这很可能与用户的期望会有差异。
 Flutter 只会解析定义在 `supportedLocales` 里面的语言环境。
@@ -1245,3 +1245,5 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [widgets-local]: {{site.api}}/flutter/widgets/Localizations-class.html
 [widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
+
+[「国家地区代码」]: https://zh.wikipedia.org/zh-cn/%E5%9B%BD%E5%AE%B6%E5%9C%B0%E5%8C%BA%E4%BB%A3%E7%A0%81

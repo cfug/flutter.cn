@@ -800,7 +800,7 @@ lazily, on demand.
         
      2. Add a one-pixel-high divider widget before each row in the `ListView`.
      
-        在每一行之前，添加一个1像素高的分隔线 widget。
+        在 `ListView` 里的每一行之前，添加一个 1 像素高的分隔线 widget。
      
      3. The expression `i ~/ 2` divides `i` by 2 and returns an integer result.
         For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2. This calculates the
@@ -814,7 +814,7 @@ lazily, on demand.
      4. If you've reached the end of the available word pairings,
         then generate 10 more and add them to the suggestions list.
         
-        如果是建议列表中最后一个单词对，接着再生成10个单词对，然后添加到建议列表。
+        如果是建议列表中最后一个单词对，接着再生成 10 个单词对，然后添加到建议列表。
 
     The `_buildSuggestions()` function calls `_buildRow()` once per
     word pair. This function displays each new pair in a `ListTile`,

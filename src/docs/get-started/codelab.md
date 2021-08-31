@@ -800,7 +800,7 @@ lazily, on demand.
         
      2. Add a one-pixel-high divider widget before each row in the `ListView`.
      
-        在每一列之前，添加一个1像素高的分隔线 widget。
+        在每一行之前，添加一个1像素高的分隔线 widget。
      
      3. The expression `i ~/ 2` divides `i` by 2 and returns an integer result.
         For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2. This calculates the

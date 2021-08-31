@@ -63,7 +63,7 @@ plugins installed and configured.
 
 * Simultaneously bring up the Debug pane and run the app in the Console
   view by clicking the bug icon
-  ({% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %}).
+  (<img src='/assets/images/docs/testing/debugging/oem/debug-run.png' alt='Debug-run icon'>).
 
   通过单击调试图标（{% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %}）
   同时打开调试面板并在控制台中运行应用。
@@ -74,7 +74,7 @@ plugins installed and configured.
 
   首次运行应用是最慢的，你会发现窗口底部的调试面板看起来会像这样：
 
-  {% asset 'testing/debugging/oem/debug-pane.png' alt='Debug pane' %}{:width="100%"}
+  <img src='/assets/images/docs/testing/debugging/oem/debug-pane.png' alt='Debug pane'>{:width="100%"}
 
   You can configure where the debug pane appears,
   or even tear it off to its own
@@ -110,7 +110,7 @@ plugins installed and configured.
 
     `this` 变量展开并显示其值。
 
-  {% asset 'testing/debugging/oem/debug-pane-action.png' alt='App status when hitting the set breakpoint' %}{:width="100%"}
+  <img src='/assets/images/docs/testing/debugging/oem/debug-pane-action.png' alt='App status when hitting the set breakpoint'>{:width="100%"}
 
 You can step in, out, and over Dart statements, hot reload or resume the app,
 and use the debugger in the same way you'd use any debugger.
@@ -143,7 +143,7 @@ right of the Android Studio window.
 
 你可以使用 Android Studio 窗口右侧的垂直按钮切换检查器的显示。
 
-{% asset 'testing/debugging/oem/flutter-inspector.png' alt='Flutter inspector' %}
+<img src='/assets/images/docs/testing/debugging/oem/flutter-inspector.png' alt='Flutter inspector'>
 
 ### Flutter outline
 
@@ -155,7 +155,7 @@ button to the right of the AS window.
 Flutter Outline 以可视形式显示构建方法。注意在构建方法上可能与 widget 树不同。
 你可以使用 Android Studio 窗口右侧的垂直按钮切换 outline 的显示。
 
-{% asset 'testing/debugging/oem/flutter-outline.png' alt='screenshot showing the Flutter inspector' %}{:width="100%"}
+<img src='/assets/images/docs/testing/debugging/oem/flutter-outline.png' alt='screenshot showing the Flutter inspector'>{:width="100%"}
 
 {% comment %}
 
@@ -228,21 +228,17 @@ Considere moving the info below to a new page.
     输入 **command-Shift-A**（Mac）或者 **shift-control-A**（Windows 和 Linux）。
     该插件会同时显示「查找」面板并显示在所有三个平台上执行此操作的提示。
 
-    {% asset 'testing/debugging/oem/presentation-assistant-find-pane.png' alt='Find panel' %}{:width="100%"}
-    <center>Presentation assistant's Find panel</center>
-
+    <img src='/assets/images/docs/testing/debugging/oem/presentation-assistant-find-pane.png' alt='Find panel'>{:width="100%"}
     <center>Presentation assistant 的「查找」面板</center>
 
-    {% asset 'testing/debugging/oem/presentation-assistant-teaches.png' alt='Find pane' %}{:width="100%"}
-    <center>Presentation assistant's action hint for opening its Find panel on Mac, Windows and Linux</center>
-
+    <img src='/assets/images/docs/testing/debugging/oem/presentation-assistant-teaches.png' alt='Find pane'>{:width="100%"}
     <center>Presentation assistant 的在 Mac、Windows 和 Linux 上打开「查找」面板的操作提示。</center>
 
   * Enter _attach_ to see the following:
 
     输入 **attach** 显示以下内容：
 
-    {% asset 'testing/debugging/oem/presentation-assistant-search-results.png' alt='Find panel' %}
+    <img src='/assets/images/docs/testing/debugging/oem/presentation-assistant-search-results.png' alt='Find panel'>
 
   * After an update, you might enter _Flutter_ or _Dart_ to see if
     new actions are available.
@@ -404,7 +400,7 @@ dev_dependencies:
 ```
 
 * Click the debug icon
-  ({% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %})
+  (<img src='/assets/images/docs/testing/debugging/oem/debug-run.png' alt='Debug-run icon'>)
   to simultaneously bring up the Debug pane and launch the app.
   Wait for the app to launch on the device, and for the debug pane to
   indicate **Connected**.
@@ -414,7 +410,7 @@ dev_dependencies:
    in app** opens flutter.dev within your app.
 
    点击调试按钮
-   （{% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %}）
+   (<img src='/assets/images/docs/testing/debugging/oem/debug-run.png' alt='Debug-run icon'>)
    来同时打开调试面板并启动应用。
    等待应用在设备上启动并在调试面板中显示 **Connected**。
    （第一次可能需要一分钟，但是之后的启动会变快。）
@@ -422,13 +418,13 @@ dev_dependencies:
    1）**Launch in browser** 在你的手机默认浏览器中打开 flutter.dev 网站 
    2）**Launch in app** 在你的应用中打开 flutter.dev 网站。
 
-  {% asset 'testing/debugging/oem/launch-flutter-dev.png' alt='screenshot containing two buttons for opening flutter.dev' %}
+  <img src='/assets/images/docs/testing/debugging/oem/launch-flutter-dev.png' alt='screenshot containing two buttons for opening flutter.dev'>
 
 * Click the **Attach debugger to Android process** button (
-  {% asset 'testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug' %} )
+  <img src='/assets/images/docs/testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug'> )
 
   点击 **Attach debugger to Android process** 按钮
-  （{% asset 'testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug' %}）
+  <img src='/assets/images/docs/testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug'> )
 
 {{site.alert.tip}}
 
@@ -456,7 +452,7 @@ dev_dependencies:
   在这个例子中是 Motorola Moto G 的 `com.google.clickcount`
   （或 <strong>com.<em>company</em>.<em>app_name</em></strong>）进程。
   
-  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev' %}{:width="100%"}
+  <img src='/assets/images/docs/testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev'>{:width="100%"}
 
 * In the debug pane, you should now see a tab for **Android Debugger**.
 
@@ -479,18 +475,13 @@ Dart 和原生调试器都在与同一个进程交互。
 使用其中一个或者同时使用两个来设置断点、检查堆栈、恢复运行……
 换句话说，调试！
 
-  {% asset 'testing/debugging/oem/dart-debugger.png' alt='screenshot of Android Studio in the Dart debug pane.' %}{:width="100%"}
-  <br><center>The Dart debug pane with two breakpoints set in `lib/main.dart`</center>
+  <img src='/assets/images/docs/testing/debugging/oem/dart-debugger.png' alt='screenshot of Android Studio in the Dart debug pane.'>{:width="100%"}
+  <br><center>Dart 调试面板和 `lib/main.dart` 中的两个断点。</center>
 
   <center>Dart 调试面板和 `lib/main.dart` 中的两个断点。</center>
 
-  {% asset 'testing/debugging/oem/android-debugger.png' alt='screenshot of Android Studio in the Android debug pane.' %}{:width="100%"}
-  <br><center>The Android debug pane with one breakpoint set in
-   `GeneratedPluginRegistrant.java`.
-  Toggle between the debuggers by clicking the appropriate debugger in
-   the Debug pane's banner.</center>
-
-  <center>Android 调试面板和 `GeneratedPluginRegistrant.java` 中的一个断点。
+  <img src='/assets/images/docs/testing/debugging/oem/android-debugger.png' alt='screenshot of Android Studio in the Android debug pane.'>{:width="100%"}
+  <br><center>Android 调试面板和 `GeneratedPluginRegistrant.java` 中的一个断点。
   通过单击调试面板顶部的相应调试器，在调试器之间进行切换。</center>
 
 ## Debugging with Xcode (iOS)

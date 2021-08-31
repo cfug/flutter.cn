@@ -268,7 +268,7 @@ class MyHomePage extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/drawer.png" alt="Drawer Demo（抽屉样例）" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/drawer.png" alt="抽屉样例" class="site-mobile-screenshot" />
 </noscript>
 
 

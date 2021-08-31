@@ -68,7 +68,7 @@ Run `flutter attach` or `flutter attach -d deviceId` to attach from the terminal
 
 在终端执行 `flutter attach` 或者 `flutter attach -d deviceId` 来连接你的应用。 
 
-{% include app-figure.md image="development/add-to-app/debugging/cli-attach.png" caption="flutter attach via terminal" %}
+{% include docs/app-figure.md image="development/add-to-app/debugging/cli-attach.png" caption="flutter attach via terminal" %}
 
 #### VS Code
 
@@ -77,7 +77,7 @@ Select the correct device using the status bar in VS Code, then run the **Flutte
 在 VS Code 中的状态栏中选择待调试的设备，
 然后在命令面板运行 **Flutter: Attach to Flutter on Device** 命令。
 
-{% include app-figure.md image="development/add-to-app/debugging/vscode-attach.png" caption="flutter attach via VS Code" %}
+{% include docs/app-figure.md image="development/add-to-app/debugging/vscode-attach.png" caption="flutter attach via VS Code" %}
 
 Alternatively, create a `.vscode/launch.json` file in your Flutter module project to enable attaching using the **Run > Start Debugging** command or `F5`:
 
@@ -98,7 +98,7 @@ Select the device on which the Flutter module runs so `flutter attach` filters f
 
 选择要运行 Flutter 模块的设备，然后点击右边的 `flutter attach` 按钮。
 
-{% include app-figure.md image="development/add-to-app/debugging/intellij-attach.png" caption="flutter attach via IntelliJ" %}
+{% include docs/app-figure.md image="development/add-to-app/debugging/intellij-attach.png" caption="flutter attach via IntelliJ" %}
 
 
 [debugging functionalities]: /docs/testing/debugging

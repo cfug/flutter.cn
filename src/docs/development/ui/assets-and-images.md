@@ -358,8 +358,7 @@ you'll also notice parameters related to scale.)
 
 使用默认的资源 bundle 加载资源时，系统会自动处理分辨率等。
 （如果你使用一些更低级别的类，如 [`ImageStream`][] 或
-[`ImageCache`]({{site.api}}/flutter/painting/ImageCache-class.html)，
-你需要注意 scale 相关的参数)。
+[`ImageCache`][]，你需要注意 scale 相关的参数)。
 
 {{site.alert.note}}
 
@@ -607,7 +606,7 @@ Android or iOS applications.
 更新你的 Flutter 应用程序启动图标，
 和原生 Android 或 iOS 应用程序中更新启动图标的方法相同。
 
-![启动图标](/images/assets-and-images/icon.png)
+![Launch icon](/assets/images/docs/assets-and-images/icon.png)
 
 #### Android
 
@@ -623,7 +622,7 @@ screen density as indicated by the [Android Developer Guide][].
 只需按照 [Android 开发者指南][Android Developer Guide] 中的说明，
 将其替换为所需的资源，并遵守每种屏幕分辨率的建议图标大小标准。
 
-![Android 图标位置](/images/assets-and-images/android-icon-path.png)
+![Android icon location](/assets/images/docs/assets-and-images/android-icon-path.png)
 
 {{site.alert.note}}
 
@@ -651,14 +650,14 @@ Keep the original file names.
 只需将它们替换为适当大小的图片，
 并且根据 [iOS 开发指南][Human Interface Guidelines]，文件名称保持不变。
 
-![iOS icon location](/images/assets-and-images/ios-icon-path.png)
+![iOS icon location](/assets/images/docs/assets-and-images/ios-icon-path.png)
 
 ### Updating the launch screen
 
 ### 更新启动图
 
 <p align="center">
-  <img src="/images/assets-and-images/launch-screen.png" alt="Launch screen" />
+  <img src="/assets/images/docs/assets-and-images/launch-screen.png" alt="Launch screen" />
 </p>
 
 Flutter also uses native platform mechanisms to draw
@@ -732,7 +731,7 @@ customization using the Interface Builder in
 在 Project Navigator 中导航到 `Runner/Runner` ，然后打开 `Assets.xcassets` 拖入图片，或者
 在 `LaunchScreen.storyboard` 中使用 Interface Builder 进行自定义。
 
-![Adding launch icons in Xcode](/images/assets-and-images/ios-launchscreen-xcode.png){:width="100%"}
+![Adding launch icons in Xcode](/assets/images/docs/assets-and-images/ios-launchscreen-xcode.png){:width="100%"}
 
 For more details, see
 [Adding a splash screen to your mobile app][].

@@ -1251,31 +1251,18 @@ about endorsed plugins, see the following resources:
 [How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
 
-## Codelabs and further documentation
+## Samples and codelabs
 
 ## Codelab 和 Flutter 文档
 
 [Write a Flutter desktop application][]
-: A codelab that walks you through building
+<br> A codelab that walks you through building
 a desktop application that integrates the GitHub
 GraphQL API with your Flutter app.
 
-[写一个 Flutter 桌面程序][Write a Flutter desktop application]
+[构建一个 Flutter 桌面程序][Write a Flutter desktop application]
 <br>这个 codelab 会引导您通过使用 Flutter，
 来构建一个集成 GitHub GraphQL API 的桌面应用。
-
-[Creating responsive and adaptive apps][]
-: Learn how to create layouts that are _responsive_ and _adaptive_
-so that they can span the needs of multiple platforms,
-such as both mobile and desktop screens.
-
-[构建自适应的应用][Creating responsive and adaptive apps]
-<br>学习如何构建 **响应式** 且 **自适应** 的布局，
-从而同时满足多个平台的需求，例如移动端和桌面端。
-
-## Samples
-
-## 示例
 
 You can run the following samples as desktop apps,
 as well as download and inspect the source code to
@@ -1285,7 +1272,7 @@ learn more about Flutter desktop support.
 以了解更多关于 Flutter 桌面支持的信息。
 
 Flutter Gallery [running web app][], [repo][flutter-gallery-repo]
-: A samples project hosted on GitHub to help developers
+<br> A samples project hosted on GitHub to help developers
   evaluate and use Flutter. The Gallery consists of a
   collection of Material design widgets, behaviors,
   and vignettes implemented with Flutter.
@@ -1299,7 +1286,7 @@ Flutter Gallery [线上运行的 Web 应用][flutter gallery cn]，[源代码仓
   你可以克隆该项目，并按照 [README][] 中的说明，将 Gallery 作为桌面应用程序运行。
 
 Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-repo]
-: A Google contacts manager that integrates with GitHub and Twitter. 
+<br> A Google contacts manager that integrates with GitHub and Twitter. 
   It syncs with your Google account, imports your contacts,
   and allows you to manage them.
 
@@ -1308,11 +1295,11 @@ Flokk [官宣文章][gskinner-flokk-blogpost], [源代码仓库地址][gskinner-
 可以从你的 Google 账户同步数据，导入联系人信息，并管理它们。
 
 [Photo Search app][]
-: A sample application built as a desktop application that
+<br> A sample application built as a desktop application that
   uses the following desktop-supported plugins:
 
 [图片搜索应用][Photo Search app]
-: 使用以下桌面支持插件构建的一个桌面应用案例。
+<br> 使用以下桌面支持插件构建的一个桌面应用案例。
 
   * [`file_chooser`][]
   * [`menubar`][]
@@ -1328,4 +1315,3 @@ Flokk [官宣文章][gskinner-flokk-blogpost], [源代码仓库地址][gskinner-
 [running web app]: https://flutter.github.io/gallery/#/
 [flutter gallery cn]: https://gallery.flutter.cn/#/
 [Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html
-[Creating responsive and adaptive apps]: /docs/development/ui/layout/building-adaptive-apps

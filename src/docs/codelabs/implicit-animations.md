@@ -11,7 +11,7 @@ js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
   - defer: true
-    url: /assets/codelabs/js/animations_examples.js
+    url: /assets/js/codelabs/animations_examples.js
 ---
 
 <?code-excerpt path-base="animation/implicit"?>
@@ -124,7 +124,7 @@ Click the **Run** button to run the example:
 
 点击 **Run** 按钮来运行这个示例：
 
-{% include implicit-animations/fade-in-starter-code.md %}
+{% include docs/implicit-animations/fade-in-starter-code.md %}
 
 {{site.alert.important}}
 
@@ -319,7 +319,7 @@ example and click the **Show details** button to trigger the animation.
 下面的示例是修改后的完成版代码&mdash;
 运行这个示例，然后点击 **Show details** 按钮就可以触发动画。
 
-{% include implicit-animations/fade-in-complete.md %}
+{% include docs/implicit-animations/fade-in-complete.md %}
 
 ### Putting it all together
 
@@ -401,7 +401,7 @@ Click the **Run** button to run the example:
 
 点击 **Run** 按钮来运行这个示例：
 
-{% include implicit-animations/shape-shifting-starter-code.md %}
+{% include docs/implicit-animations/shape-shifting-starter-code.md %}
 
 ### Animate color, borderRadius, and margin with AnimatedContainer
 
@@ -581,9 +581,9 @@ for `margin`, `borderRadius`, and `color`.
 下面的示例是修改后的完成版代码&mdash;
 运行这个示例，然后点击 **Change** 按钮就可以触发动画。
 注意：每次您点击 **Change** 按钮，
-形状的 `margin`、 `borderRadius`、 和 `color` 都会进行动画变化到新的值。
+形状的 `margin`、`borderRadius` 和 `color` 都会进行动画变化到新的值。
 
-{% include implicit-animations/shape-shifting-complete.md %}
+{% include docs/implicit-animations/shape-shifting-complete.md %}
 
 ### Using animation curves
 
@@ -598,7 +598,7 @@ The parameter you use to define this change in rate is [curve].
 
 前面的示例展示出，如何让您通过隐式动画对特定的 widget 属性值进行动画变化，
 以及如何通过 `duration` 参数设置动画完成所需的时间。
-隐式动画还允许您在 `duration` 时长内控制动画的**速率**变化。
+隐式动画还允许您在 `duration` 时长内控制动画的 **速率** 变化。
 用来定义这种速率变化的参数是 [curve][]。
 
 The preceding examples do not specify a `curve`,

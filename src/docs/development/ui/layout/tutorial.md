@@ -41,7 +41,7 @@ You'll build the layout for the following app:
 
 这是一份如何在 Flutter 中构建布局的指南。你将为如下 app 创建布局：
 
-{% include app-figure.md img-class="site-mobile-screenshot border"
+{% include docs/app-figure.md img-class="site-mobile-screenshot border"
     image="ui/layout/lakes.jpg" caption="The finished app" %}
 
 This guide then takes a step back to explain Flutter's
@@ -128,7 +128,7 @@ four elements are arranged into a column: an image, two rows, and a block of tex
 
 首先，识别出稍大的元素。在这个例子中，四个元素排成一列：一个图像，两个行区域，和一个文本区域。
 
-{% include app-figure.md img-class="site-mobile-screenshot border"
+{% include docs/app-figure.md img-class="site-mobile-screenshot border"
     image="ui/layout/lakes-column-elts.png" caption="Column elements (circled in red)" %}
 
 Next, diagram each row. The first row, called the Title
@@ -142,7 +142,7 @@ Expanded widget.
 它的第一个子元素，文本列，包含两行文本。
 第一列占据大量空间，因此它应当被封装在一个 Expanded widget 当中。
 
-{% include app-figure.md image="ui/layout/title-section-parts.png" alt="Title section" %}
+{% include docs/app-figure.md image="ui/layout/title-section-parts.png" alt="Title section" %}
 
 The second row, called the Button section, also has
 3 children: each child is a column that contains an icon and text.
@@ -150,7 +150,7 @@ The second row, called the Button section, also has
 第二行，也就是按钮区域，同样有三个子元素：
 每个子元素是一个包含图标和文本的列。
 
-{% include app-figure.md image="ui/layout/button-section-diagram.png" alt="Button section" %}
+{% include docs/app-figure.md image="ui/layout/button-section-diagram.png" alt="Button section" %}
 
 Once the layout has been diagrammed, it's easiest to
 take a bottom-up approach to implementing it.

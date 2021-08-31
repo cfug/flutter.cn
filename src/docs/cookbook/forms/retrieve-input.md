@@ -16,7 +16,7 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="cookbook/forms/retreive_input"?>
+<?code-excerpt path-base="cookbook/forms/retrieve_input"?>
 
 {% comment %}
 prev:
@@ -242,7 +242,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/images/cookbook/retrieve-input.gif" alt="Retrieve Text Input Demo（获取文本输入示例）" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/retrieve-input.gif" alt="获取文本输入示例" class="site-mobile-screenshot" />
 </noscript>
 
 

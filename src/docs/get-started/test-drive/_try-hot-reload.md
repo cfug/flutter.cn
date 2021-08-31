@@ -2,7 +2,7 @@ After the app build completes, you'll see the starter app on your device.
 
 当应用编译完成后，就可以在设备上运行这个起步应用了。
 
-{% include app-figure.md img-class="site-mobile-screenshot border"
+{% include docs/app-figure.md img-class="site-mobile-screenshot border"
     path-prefix="get-started" platform="iOS" image="starter-app.png"
     caption="Starter app" %}
 

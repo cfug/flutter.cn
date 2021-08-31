@@ -170,7 +170,7 @@ Dart 插件的代码分析，可以做到：
 * Viewing all current source code problems
   (**View > Tool Windows > Dart Analysis**).
   Any analysis issues are shown in the Dart Analysis pane:<br>
-  ![Dart Analysis pane]({% asset tools/android-studio/dart-analysis.png @path %}){:width="90%"}
+  ![Dart Analysis pane](/assets/images/docs/tools/android-studio/dart-analysis.png){:width="90%"}
 
   查看当前存在的代码问题（**View > Tool Windows > Dart Analysis**），
   所有问题会在 Dart Analysis 窗口中显示<br>
@@ -222,7 +222,7 @@ Running and debugging are controlled from the main toolbar:
 
 在主工具栏，可以运行和调试代码：
 
-![Main IntelliJ toolbar]({% asset tools/android-studio/main-toolbar.png @path %}){:width="90%"}
+![Main IntelliJ toolbar](/assets/images/docs/tools/android-studio/main-toolbar.png){:width="90%"}
 
 ### Selecting a target
 
@@ -329,7 +329,7 @@ the Performance tool window using
 **View > Tool Windows > Flutter Performance**
 打开性能工具窗口，以查看性能数据以及 widget 的 rebuild 信息。
 
-![Flutter performance window]({% asset tools/android-studio/widget-rebuild-info.png @path %}){:width="90%"}
+![Flutter performance window](/assets/images/docs/tools/android-studio/widget-rebuild-info.png){:width="90%"}
 
 To see the stats about which widgets are being rebuilt, and how often,
 click **Show widget rebuild information** in the **Performance** pane.
@@ -455,7 +455,7 @@ keyboard shortcut (`Alt`+`Enter` on Linux and Windows,
 （在 Linux 和 Windows 上使用 `Alt`+`Enter`，在 macOS 上使用 `Option`+`Return`），
 如下图所示：
 
-![IntelliJ editing assists]({% asset tools/android-studio/assists.gif @path %}){:width="100%"}
+![IntelliJ editing assists](/assets/images/docs/tools/android-studio/assists.gif){:width="100%"}
 
 Quick Fixes are similar, only they are shown with a piece of code has an error
 and they can assist in correcting it. They are indicated with a red lightbulb.
@@ -501,7 +501,7 @@ completion window:
 
 实时模板用于增加典型代码结构的输入速度。输入前缀后，在代码完成窗口中选择它：
 
-![IntelliJ live templates]({% asset tools/android-studio/templates.gif @path %}){:width="100%"}
+![IntelliJ live templates](/assets/images/docs/tools/android-studio/templates.gif){:width="100%"}
 
 The Flutter plugin includes the following templates:
 
@@ -555,7 +555,7 @@ Right click the binding you want to change and _Add Keyboard Shortcut_.
 在右上角的搜索框输入 **flutter**。
 右键点击你想修改的快捷键，点击 **Add Keyboard Shortcut**
 
-![IntelliJ settings keymap]({% asset tools/android-studio/keymap-settings-flutter-plugin.png @path %}){:width="100%"}
+![IntelliJ settings keymap](/assets/images/docs/tools/android-studio/keymap-settings-flutter-plugin.png){:width="100%"}
 
 ### Hot reload vs. hot restart
 
@@ -784,4 +784,4 @@ When filing new issues, include the output of [`flutter doctor`][]。
 [let us know]: {{site.github}}/flutter/website/issues/new
 [告诉我们]: {{site.github}}/flutter/website/issues/new
 [Running DevTools from Android Studio]: /docs/development/tools/devtools/android-studio
-[Timeline view]: /docs/development/tools/devtools/timeline
+[Timeline view]: /docs/development/tools/devtools/performance

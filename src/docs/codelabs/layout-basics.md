@@ -2292,8 +2292,7 @@ displays a business card!
 你就要完成这个 codelab 了！如果你想要检验你刚学的知识，
 为何不讲这些结合起来，构建一个显示名片的 Flutter UI 呢！
 
- ![Completed business card]({% asset codelab/layout/businesscarddisplay1.png
- @path%}){:width="400px"}{:.text-center}
+![Completed business card](/assets/images/docs/codelab/layout/businesscarddisplay1.png){:width="400px"}{:.text-center}
 
 You'll break down Flutter's layout into parts,
 which is how you'd create a Flutter UI in the real world.
@@ -2309,8 +2308,7 @@ which is positioned to the left of the name and title.
 然后你将会在 `Column` 包裹一个含有 icon 的 `Row`，
 它将会被放在姓名和标题的左边。
 
- ![Completed business card]({% asset codelab/layout/businesscarddisplay2.png
- @path%}){:width="400px"}{:.text-center}
+![Completed business card](/assets/images/docs/codelab/layout/businesscarddisplay2.png){:width="400px"}{:.text-center}
 
 In [Part 2](#part-2), you'll wrap the `Row` in a `Column`,
 so the code contains a `Column` within a `Row` within a `Column`.
@@ -2326,8 +2324,7 @@ so it's displayed below the name, title, and icon.
 所以它看起来不错。最后，您将添加联系信息到最外面的`Column`的 children 中，
 所以它将显示在名称，标题和图标下方。
 
- ![Completed business card]({% asset codelab/layout/businesscarddisplay3.png
- @path%}){:width="400px"}{:.text-center}
+![Completed business card](/assets/images/docs/codelab/layout/businesscarddisplay3.png){:width="400px"}{:.text-center}
 
 In [Part 3](#part-3), you'll finish building
 the business card display by adding four more icons,
@@ -2336,8 +2333,7 @@ which are positioned below the contact information.
 在[第三部分](#part-3)，你将会完成添加了更多图标的名片，
 它们会被放在联系信息的下方。
 
- ![Completed business card]({% asset codelab/layout/businesscarddisplay4.png
- @path %}){:width="400px"}{:.text-center}
+![Completed business card](/assets/images/docs/codelab/layout/businesscarddisplay4.png){:width="400px"}{:.text-center}
 
 ### Part 1
 {:.no_toc}

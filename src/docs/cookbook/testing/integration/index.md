@@ -14,4 +14,4 @@ title: 在 Flutter 里做集成测试
 
 {{site.alert.end}}
 
-{% include cookbook_group_index.md %}
+{% include docs/cookbook-group-index.md %}

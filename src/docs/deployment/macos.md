@@ -228,7 +228,7 @@ the following:
 
 项目设置的 **General（常规）** 选项应类似于以下内容：
 
-![Xcode Project Settings](/images/releaseguide/macos_xcode_settings.png){:width="100%"}
+![Xcode Project Settings](/assets/images/docs/releaseguide/macos_xcode_settings.png){:width="100%"}
 
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].

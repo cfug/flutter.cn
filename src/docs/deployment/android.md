@@ -997,7 +997,7 @@ select **build.gradle (Module: app)** in the project panel:
 在Android Studio中, 打开你的 app 文件夹下的 `android/`
 文件夹. 然后在项目面板中选择 **build.gradle (Module: app)** :
 
-{% asset 'deployment/android/gradle-script-menu.png' width="100%" alt='screenshot of gradle build script menu' %}
+<img src="/assets/images/docs/deployment/android/gradle-script-menu.png' width="100%" alt='screenshot of gradle build script menu'>
 
 Next, select the build variant. Click **Build > Select Build Variant**
 in the main menu. Select any of the variants in the **Build Variants**
@@ -1006,7 +1006,7 @@ panel (debug is the default):
 接下来，选择构建变体。在主菜单中点击 **Build > Select Build Variant**。
 从 **Build Variants** 面板中选择任意一个变体（默认是 debug）。
 
-{% asset 'deployment/android/build-variant-menu.png' width="100%" alt='screenshot of build variant menu' %}
+<img src="/assets/images/docs/deployment/android/build-variant-menu.png' width="100%" alt='screenshot of build variant menu'>
 
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.

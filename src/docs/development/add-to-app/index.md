@@ -84,7 +84,7 @@ Flutter 引擎 (engine)、页面 (screen) 或视图 (view) 添加到你的应用
 
 ### 集成到 Android 应用
 
-{% include app-figure.md image="development/add-to-app/android-overview.gif" alt="Add-to-app steps on Android" %}
+{% include docs/app-figure.md image="development/add-to-app/android-overview.gif" alt="Add-to-app steps on Android" %}
 
 * Auto-build and import the Flutter module by adding a
   Flutter SDK hook to your Gradle script.
@@ -140,7 +140,7 @@ Flutter 引擎 (engine)、页面 (screen) 或视图 (view) 添加到你的应用
 
 ### 集成到 iOS 应用
 
-{% include app-figure.md image="development/add-to-app/ios-overview.gif" alt="Add-to-app steps on iOS" %}
+{% include docs/app-figure.md image="development/add-to-app/ios-overview.gif" alt="Add-to-app steps on iOS" %}
 
 * Auto-build and import the Flutter module by adding a Flutter
   SDK hook to your CocoaPods and to your Xcode build phase.

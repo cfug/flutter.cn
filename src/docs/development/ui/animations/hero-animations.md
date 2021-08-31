@@ -341,13 +341,9 @@ transition from one route to another.
 
 下面将介绍 Flutter 如何执行一个页面到另一页面的过渡。
 
-{% asset ui/animations/hero-transition-0.png
-    alt="Before the transition the source hero appears in the source route"
-    class="mw-100" %}
-
-{% asset ui/animations/hero-transition-0.png
+<img src='/assets/images/docs/ui/animations/hero-transition-0.png'
     alt="在过渡之前 source hero 出现在原页面中"
-    class="mw-100" %}
+    class="mw-100">
 
 Before transition, the source hero waits in the source 
 route's widget tree. The destination route does not yet exist, 
@@ -358,13 +354,9 @@ and the overlay is empty.
 
 ---
 
-{% asset ui/animations/hero-transition-1.png
-    alt="The transition begins"
-    class="mw-100" %}
-
-{% asset ui/animations/hero-transition-1.png
+<img src='/assets/images/docs/ui/animations/hero-transition-1.png'
     alt="过渡开始"
-    class="mw-100" %}
+    class="mw-100">
 
 Pushing a route to the `Navigator` triggers the animation. 
 At t=0.0, Flutter does the following:
@@ -384,7 +376,7 @@ At t=0.0, Flutter does the following:
   Adding a hero to the overlay changes its Z-order so that it
   appears on top of all routes.
 
-  将 destination hero 放到图层，与 _source_ hero 相同的位置和大小。
+  将 destination hero 放到图层，与 **source** hero 相同的位置和大小。
   添加一个 hero 到图层改变其 Z-order，
   这样才可以出现在所有页面的上面。
 
@@ -394,13 +386,9 @@ At t=0.0, Flutter does the following:
 
 ---
 
-{% asset ui/animations/hero-transition-2.png
-    alt="The hero flies in the overlay to its final position and size"
-    class="mw-100" %}
-
-{% asset ui/animations/hero-transition-2.png
-    alt="hero 飞入图层到达其最终位置和大小"
-    class="mw-100" %}
+<img src='/assets/images/docs/ui/animations/hero-transition-2.png'
+    alt="The hero flies in the overlay to its final position and size (hero 飞入图层到达其最终位置和大小)"
+    class="mw-100">
 
 As the hero flies, its rectangular bounds are animated using
 [Tween&lt;Rect&gt;][], specified in Hero's
@@ -420,13 +408,9 @@ hero 飞翔时，它的矩形边界使用 Hero 的
 
 ---
 
-{% asset ui/animations/hero-transition-3.png
-    alt="When the transition is complete, the hero is moved from the overlay to the destination route"
-    class="mw-100" %}
-
-{% asset ui/animations/hero-transition-3.png
-    alt="当过渡完成时，hero 从图层移动到目的页面"
-    class="mw-100" %}
+<img src='/assets/images/docs/ui/animations/hero-transition-3.png'
+    alt="When the transition is complete, the hero is moved from the overlay to the destination route (当过渡完成时，hero 从图层移动到目的页面)"
+    class="mw-100">
 
 When the flight completes:
 
@@ -470,7 +454,7 @@ implement hero animations:
   Flutter animates pairs of heroes with matching tags.
 
 [Hero][]
-：从原页面飞到目标页面的 widget。
+<br> 从原页面飞到目标页面的 widget。
   定义一个原页面的 Hero 和另一个目标页面的 Hero，并设置相同的标签。
   Flutter 为成对的含有匹配标签的 heroes 设置动画。
 
@@ -608,9 +592,9 @@ The PhotoHero builds the following widget tree:
 自定义的 PhotoHero 类保留了 hero 以及其大小，图像，和点击时的动作。PhotoHero 创建如下 widget 树：
 
 <div class="text-center mb-4">
-  {% asset ui/animations/photohero-class.png
+  <img src='/assets/images/docs/ui/animations/photohero-class.png'
       alt="PhotoHero class widget tree"
-      class="mw-100" %}
+      class="mw-100">
 </div>
 
 Here's the code:
@@ -891,9 +875,9 @@ The following diagram shows the clipped image at the beginning
 
 下面的图表显示了在动画起始（`t = 0.0`）和结束（`t = 1.0`）时的剪裁图像。
 
-{% asset ui/animations/radial-hero-animation.png
+<img src='/assets/images/docs/ui/animations/radial-hero-animation.png'
     alt="Radial transformation from beginning to end"
-    class="mw-100" %}
+    class="mw-100">
 
 The blue gradient (representing the image), indicates where the clip
 shapes intersect. At the beginning of the transition,
@@ -1027,8 +1011,8 @@ To do this, it builds the following widget tree:
 为此，它建立了如下 widget 树：
 
 <div class="text-center mb-4">
-  {% asset ui/animations/radial-expansion-class.png
-      alt="RadialExpansion widget tree" class="mw-100" %}
+  <img src='/assets/images/docs/ui/animations/radial-expansion-class.png'
+      alt="RadialExpansion widget tree" class="mw-100">
 </div>
 
 Here's the code:
@@ -1123,41 +1107,41 @@ The following resources might help when writing animations:
 
 下面的参考资料对编写动画会有帮助：
 
-[Animations landing page](/docs/development/ui/animations)<br>
-: Lists the available documentation for Flutter animations.
+[Animations landing page](/docs/development/ui/animations)
+<br> Lists the available documentation for Flutter animations.
   If tweens are new to you, check out the
   [Animations tutorial](/docs/development/ui/animations/tutorial).
 
-[Animations landing page](/docs/development/ui/animations)<br>
-: 现有的一些 Flutter 动画文档。
+[Animations landing page](/docs/development/ui/animations)
+<br> 现有的一些 Flutter 动画文档。
   如果您还不了解 tween，可以参考这里 [Animations tutorial](/docs/development/ui/animations/tutorial)
 
-[Flutter API documentation]({{site.api}})<br>
-: Reference documentation for all of the Flutter libraries.
+[Flutter API documentation]({{site.api}})
+<br> Reference documentation for all of the Flutter libraries.
   In particular, see the [animation
   library]({{site.api}}/flutter/animation/animation-library.html)
   documentation.
 
-[Flutter API documentation]({{site.api}})<br>
-: Flutter 库所有的参考文档。特别是 [animation
+[Flutter API documentation]({{site.api}})
+<br> Flutter 库所有的参考文档。特别是 [animation
   library]({{site.api}}/flutter/animation/animation-library.html) 文档。
 
-[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-: Demo app showcasing many Material Design widgets and other Flutter
+[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
+<br> Demo app showcasing many Material Design widgets and other Flutter
   features.  The [Shrine
   demo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
   implements a hero animation.
 
-[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-: Demo 应用程序展示了许多 Material Design widgets 和其他 Flutter 特征。[Shrine
+[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
+<br> Demo 应用程序展示了许多 Material Design widgets 和其他 Flutter 特征。[Shrine
   demo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
   执行了一个 hero 动画。
 
-[Material motion spec]({{site.material}}/guidelines/motion/)<br>
-: Describes motion for Material design apps.
+[Material motion spec]({{site.material}}/guidelines/motion/)
+<br> Describes motion for Material design apps.
 
-[Material motion spec]({{site.material}}/guidelines/motion/)<br>
-: 介绍使用 Material 设计应用程序的动作。
+[Material motion spec]({{site.material}}/guidelines/motion/)
+<br> 介绍使用 Material 设计应用程序的动作。
 
 
 [Animations in Flutter tutorial]: /docs/development/ui/animations/tutorial

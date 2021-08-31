@@ -105,7 +105,7 @@ The following settings were used:
 {% endcomment %}
 
 ![Architectural
-diagram](/images/arch-overview/archdiagram.png){:width="100%"}
+diagram](/assets/images/docs/arch-overview/archdiagram.png){:width="100%"}
 
 To the underlying operating system, Flutter applications are packaged in the
 same way as any other native application. A platform-specific embedder provides
@@ -278,7 +278,7 @@ throughout the entire UI. For example, consider the following UI:
 开发者需要对整个 UI 的状态关联有整体的认知。
 让我们来看看如下的 UI：
 
-![Color picker dialog](/images/arch-overview/color-picker.png){:width="66%"}
+![Color picker dialog](/assets/images/docs/arch-overview/color-picker.png){:width="66%"}
 
 There are many places where the state can be changed: the color box, the hue
 slider, the radio buttons. As the user interacts with the UI, changes must be
@@ -711,7 +711,7 @@ widget tree, as shown in this example:
 你可以使用 `InheritedWidget` 创建包含状态的 widget，
 该 widget 会将一个共同的祖先节点包裹在 widget 树中，如下面的例子所示：
 
-![Inherited widgets](/images/arch-overview/inherited-widget.png){:width="50%"}
+![Inherited widgets](/assets/images/docs/arch-overview/inherited-widget.png){:width="50%"}
 
 Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 `StudentState`, it can now access it with a command such as:
@@ -862,7 +862,7 @@ the system, as shown in the following sequencing diagram:
 Flutter 为数据流向系统提供了直通的管道，如以下的流程图所示：
 
 ![Render pipeline sequencing
-diagram](/images/arch-overview/render-pipeline.png){:width="100%"}
+diagram](/assets/images/docs/arch-overview/render-pipeline.png){:width="100%"}
 
 Let’s take a look at some of these phases in greater detail.
 
@@ -923,7 +923,7 @@ case<sup><a href="#a2">2</a></sup>:
 在该场景中如下图<sup><a href="#a2">2</a></sup>：
 
 ![Render pipeline sequencing
-diagram](/images/arch-overview/widgets.png){:width="35%"}
+diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
 
 This explains why, when you examine the tree through a debug tool such as the
 [Flutter inspector](/docs/development/tools/devtools/inspector), part of the
@@ -954,7 +954,7 @@ hierarchy. There are two basic types of elements:
   `RenderObjectElement`，参与布局或绘制阶段的 Element。
 
 ![Render pipeline sequencing
-diagram](/images/arch-overview/widget-element.png){:width="85%"}
+diagram](/assets/images/docs/arch-overview/widget-element.png){:width="85%"}
 
 `RenderObjectElement`s are an intermediary between their widget analog and the
 underlying `RenderObject`, which we’ll come to later.
@@ -1045,7 +1045,7 @@ applies a transformation before painting its child.
 是更为上层的实现。
 
 ![Differences between the widgets hierarchy and the element and render
-trees](/images/arch-overview/trees.png){:width="100%"}
+trees](/assets/images/docs/arch-overview/trees.png){:width="100%"}
 
 Most Flutter widgets are rendered by an object that inherits from the
 `RenderBox` subclass, which represents a `RenderObject` of fixed size in a 2D
@@ -1069,7 +1069,7 @@ the parent established.
 子节点的响应方式是在父节点建立的约束内 **将大小以自下而上的方式** 传递给父节点。
 
 ![Constraints go down, sizes go
-up](/images/arch-overview/constraints-sizes.png){:width="80%"}
+up](/assets/images/docs/arch-overview/constraints-sizes.png){:width="80%"}
 
 At the end of this single walk through the tree, every object has a defined size
 within its parent’s constraints and is ready to be painted by calling the
@@ -1287,7 +1287,7 @@ Dart 与使用 Kotlin 和 Swift 等语言编写的平台组件之间发送和接
 然后反序列化为 Kotlin（例如 `HashMap`）或者 Swift（例如 `Dictionary`）中的等效类型。 
 
 ![How platform channels allow Flutter to communicate with host
-code](/images/arch-overview/platform-channels.png){:width="70%"}
+code](/assets/images/docs/arch-overview/platform-channels.png){:width="70%"}
 
 The following is a simple platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
@@ -1590,7 +1590,7 @@ The web version of the architectural layer diagram is as follows:
 Web 版本的分层架构图如下所示：
 
 ![Flutter web
-architecture](/images/arch-overview/web-arch.png){:width="100%"}
+architecture](/assets/images/docs/arch-overview/web-arch.png){:width="100%"}
 
 Perhaps the most notable difference compared to other platforms on which Flutter
 runs is that there is no need for Flutter to provide a Dart runtime. Instead,

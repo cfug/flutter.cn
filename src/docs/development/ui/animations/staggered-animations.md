@@ -247,9 +247,9 @@ You might notice the following characteristics:
   
   填充和高度的变化发生在相同的时间间隔内，但它们不必这么做。
 
-{% asset ui/animations/StaggeredAnimationIntervals.png
+<img src='/assets/images/docs/ui/animations/StaggeredAnimationIntervals.png'
     alt="Diagram showing the interval specified for each motion"
-    class="mw-100" %}
+    class="mw-100">
 
 To set up the animation:
 

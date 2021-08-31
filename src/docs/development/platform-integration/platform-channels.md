@@ -93,7 +93,7 @@ channels as illustrated in this diagram:
 
 消息使用平台通道在客户端（UI）和宿主（平台）之间传递，如下图所示：
 
-![Platform channels architecture](/images/PlatformChannels.png){:width="100%"}
+![Platform channels architecture](/assets/images/docs/PlatformChannels.png){:width="100%"}
 
 Messages and responses are passed asynchronously,
 to ensure the user interface remains responsive.

@@ -182,7 +182,7 @@ class OrientationList extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/orientation.gif" alt="Orientation Demo（屏幕方向适配样例）" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/orientation.gif" alt="屏幕方向适配样例" class="site-mobile-screenshot" />
 </noscript>
 
 

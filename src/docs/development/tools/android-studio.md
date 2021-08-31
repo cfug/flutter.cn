@@ -174,7 +174,7 @@ Dart 插件的代码分析，可以做到：
 
   查看当前存在的代码问题（**View > Tool Windows > Dart Analysis**），
   所有问题会在 Dart Analysis 窗口中显示<br>
-  ![Dart Analysis 窗口]({% asset tools/android-studio/dart-analysis.png @path %}){:width="90%"}
+  ![Dart Analysis 窗口](/assets/images/docs/tools/android-studio/dart-analysis.png){:width="90%"}
 
 ## Running and debugging
 

@@ -5,19 +5,19 @@ tags: 站点资源
 keywords: 免责声明, Flutter.cn免责说明
 ---
 
-*英文在下面 (ENGLISH BELOW)*
+*英文在下方 (ENGLISH BELOW)*
 
 ### 网站所有权相关
 
 声明：你正在浏览的网站不隶属于谷歌或 Alphabet 公司，它由热爱 Flutter 和开源技术，以及希望在中国向全球 Flutter 做贡献的开发者们维护。
-
-Flutter 这几个文英文字母和 Flutter 图标 {% asset shared/flutter/logo/square.svg width="32px" alt="Flutter logo" class="align-baseline" %}
-及任何相关标志均为 Google LLC 公司的商标，商标的使用权并不包含在网站下方的 [CC 4.0 协议声明](https://creativecommons.org/licenses/by/4.0/) 里。
-我们根据 Flutter 官方的 [品牌说明](https://flutter.dev/brand)，以社区的名义使用修改为红色为主色调的 Flutter Logo。
+Flutter 这几个文英文字母和 Flutter 图标及任何相关标志均为 Google LLC 公司的商标，
+我们根据 Flutter 官方的 [品牌说明](https://flutter.dev/brand)，遵从社区使用例外的原则，
+使用了修改为红色为主色调的 Flutter Logo。
+更多 Flutter 图标和品牌的使用，请参考 Flutter 官方的 [品牌说明](https://flutter.dev/brand)。
 
 ### 适用范围
 
-flutter-io.cn 和 flutter.cn 以及其分站均在本免责条款下运行。
+Flutter 中文资源网站(flutter.cn / flutter-io.cn) 及其分站，均在本免责条款下运行。
 
 ### 服务等级协议
 
@@ -34,10 +34,10 @@ flutter-io.cn 和 flutter.cn 以及其分站均在本免责条款下运行。
 
 ### Ownership
 
-Note: This is an independent website that runs by the developers in China
+Disclaimer: This is an independent website that runs by the developers in China
 who are passionate and enthusiastic about contributing Flutter from China,
 it's not affiliated with or endorsed by Google and/or Alphabet.
-The “Flutter” name and the Flutter logo Flutter logo {% asset shared/flutter/logo/square.svg width="32px" alt="Flutter logo" class="align-baseline" %}(the “Flutter Marks”) are trademarks owned by Google.
+The "Flutter" name and logo are trademarks owned by Google.
 We've followed the [branding guide](https://flutter.dev/brand) in the official site for using the RED Color Flutter Logo.
 
 ### Scope
@@ -52,7 +52,7 @@ All the main & subsites of flutter-io.cn and flutter.cn will follow this regulat
 * The site didn't include any interactive features, and no UGC (User Generated Contents) like comments.
 * If the force majeure causes the problem, we have the rights to shut down some and/or all the services without explanations.
 
-### Special Information
+### Special Notes
 
 * The links and the sites we recommended in our site, not represent it's affiliated with or endorsed by Google and/or Alphabet.
 * All the Chinese contents that the developers contributed, just on behalf of themselves, not affiliated with their companies.

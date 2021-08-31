@@ -65,7 +65,7 @@ plugins installed and configured.
   view by clicking the bug icon
   (<img src='/assets/images/docs/testing/debugging/oem/debug-run.png' alt='Debug-run icon'>).
 
-  通过单击调试图标（{% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %}）
+  通过单击调试图标 (<img src='/assets/images/docs/testing/debugging/oem/debug-run.png' alt='Debug-run icon'>)
   同时打开调试面板并在控制台中运行应用。
 
   The first time you launch the app is the slowest.

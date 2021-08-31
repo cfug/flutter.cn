@@ -17,8 +17,8 @@ $site-color-primary: $flutter-color-blue-500;
 $twitter-color: #60CAF6;
 
 // Fonts
-$site-font-family-base: 'Noto Sans SC','Helvetica Neue','Helvetica', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-$site-font-family-alt: 'Noto Sans SC', 'Google Sans', 'Roboto', sans-serif;
+$site-font-family-base: -apple-system, 'Google Sans', 'Noto Sans SC', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif;
+$site-font-family-alt: 'Google Sans', Roboto, 'Noto Sans SC', Arial, Helvetica, sans-serif;
 $site-font-family-icon: 'Material Icons';
 $site-font-family-monospace: 'Roboto Mono', monospace;
 $site-font-family-courier: 'Courier', monospace;

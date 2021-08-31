@@ -261,7 +261,7 @@ Flutter 扩展会自动选择上次连接的设备。
 
     在 IDE 主窗口点击 **Run > Start Without Debugging**，
     或者按 `Ctrl`+`F5`，状态栏变橙色说明你正处于调试模式。<br>
-    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:.mw-100.pt-1}
+    ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
     
 ### Run app with breakpoints
 

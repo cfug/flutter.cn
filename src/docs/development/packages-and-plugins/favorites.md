@@ -7,7 +7,7 @@ tags: Packages,插件
 keywords: Flutter优秀插件推荐项目
 ---
 
-![The Flutter Favorite program logo]({% asset development/packages-and-plugins/FlutterFavoriteLogo.png @path %}){:width="20%"}
+![The Flutter Favorite program logo](/assets/images/docs/development/packages-and-plugins/FlutterFavoriteLogo.png){:width="20%"}
 
 The aim of the **Flutter Favorite** program is to identify
 packages and plugins that you should first consider when

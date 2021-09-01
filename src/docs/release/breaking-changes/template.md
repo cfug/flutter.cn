@@ -150,7 +150,7 @@ Reverted in version: xxx  (OPTIONAL, delete if not used)
   real links. Only use the "master-api" include if
   you link to "master-api.flutter.dev".
 
-{% include master-api.md %}
+{% include docs/master-api.md %}
 
 API documentation:
 
@@ -186,7 +186,7 @@ Relevant PRs:
 [`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
 
 <!-- Master channel link: -->
-{% include master-api.md %}
+{% include docs/master-api.md %}
 
 [`ClassName`]: https://master-api.flutter.dev/flutter/[link_to_relevant_page].html
 

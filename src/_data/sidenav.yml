@@ -41,7 +41,7 @@
       permalink: https://flutter.github.io/samples/
     - title: 实用教程 (Cookbook)
       permalink: /docs/cookbook
-    - title: Codelabs & workshops
+    - title: Codelabs
       permalink: /docs/codelabs
     - title: 实践教程
       permalink: /docs/reference/tutorials
@@ -65,8 +65,6 @@
               permalink: /docs/development/ui/layout/tutorial
             - title: 创建响应式和自适应的应用
               permalink: /docs/development/ui/layout/adaptive-responsive
-            - title: 构建自适应的应用
-              permalink: /docs/development/ui/layout/building-adaptive-apps
             - title: 理解布局约束
               permalink: /docs/development/ui/layout/constraints
             - title: 边界约束 (Box constraints)
@@ -110,8 +108,6 @@
               permalink: /docs/development/ui/advanced/gestures
             - title: 闪屏页
               permalink: /docs/development/ui/advanced/splash-screen
-            - title: 使用操作和快捷方式
-              permalink: /docs/development/ui/advanced/actions_and_shortcuts
         - title: 核心 Widget 目录
           permalink: /docs/development/ui/widgets
     - title: 数据调用和后端
@@ -136,8 +132,6 @@
           permalink: /docs/development/data-and-backend/json
         - title: 使用 Firebase
           permalink: /docs/development/data-and-backend/firebase
-        - title: 使用 Google API
-          permalink: /docs/development/data-and-backend/google-apis
     - title: 应用的无障碍和国际化 # TODO: use: Accessibility & localization
       permalink: /docs/development/accessibility-and-localization
       children:
@@ -266,7 +260,7 @@
                 - title: 1.5.4
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
                 - title: 1.2.1
-                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1.md
         - title: Flutter 与 pubspec 文件
           permalink: /docs/development/tools/pubspec
         - title: 热重载 (Hot reload)
@@ -335,8 +329,6 @@
         permalink: /docs/perf/rendering/ui-performance
       - title: Reduce shader compilation jank
         permalink: /docs/perf/rendering/shader
-    - title: 延迟加载组件
-      permalink: /docs/perf/deferred-components
     - title: 性能指标
       permalink: /docs/perf/metrics
     - title: 性能 FAQ
@@ -377,9 +369,9 @@
       permalink: https://pub.flutter-io.cn/packages/google_fonts
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
-    - title: Flutter 技术视频和在线资源
+    - title: 技术视频和在线资源
       permalink: /docs/resources/videos
-    - title: Flutter 中文社区教程
+    - title: 社区中文教程
       permalink: /community/tutorials
     - title: 书籍
       permalink: /docs/resources/books

@@ -40,9 +40,8 @@ watch the [Animations in Flutter done right][] video,
 presented at Flutter Europe.)
 
 （若想要深入了解它的决策流程，
-请观看在 Flutter Europe 发布的
+请观看在 Flutter Europe 社区账号发布的
  [在 Flutter 中使用动画的正确选择][Animations in Flutter done right]）视频。
-
 
 As shown in the video, the following
 decision tree helps you decide what approach
@@ -51,8 +50,8 @@ to use when implementing a Flutter animation:
 正如视频中说的那样，
 下面的决策树将帮助你挑选实现 Flutter 动画的正确方式：
 
-{% asset ui/animations/animation-decision-tree.png
-    alt="The animation decision tree" class="mw-100" %}
+<img src='/assets/images/docs/ui/animations/animation-decision-tree.png'
+    alt="The animation decision tree" class="mw-100">
 
 If a pre-packaged implicit animation (the easiest animation
 to implement) suits your needs, watch
@@ -201,7 +200,7 @@ tutorial][] are not about tweening,
 specifically, but they use tweens in their examples.
 
 上文列出的文档，比如 
-[教程 | 在 Flutter 应用里实现动画效果][animations tutorial] 
+[在 Flutter 应用里实现动画效果][animations tutorial] 
 并不是特别针对补间动画的，但是其示例中使用了补间动画。
 
 ### Physics-based animation
@@ -353,7 +352,7 @@ or might partially or completely overlap.
 
 {% comment %}
   Save so I can remember how to add it back later.
-  <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
+  <img src="/assets/images/docs/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
 {% endcomment -%}
 
 {% comment %}
@@ -404,7 +403,7 @@ Learn more about Flutter animations at the following links:
 [Animation samples]: {{site.github}}/flutter/samples/tree/master/animations#animation-samples
 [Animation videos]: https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw/search?query=animation
 [Animations in Flutter done right]: https://www.youtube.com/watch?v=wnARLByOtKA&t=3s
-[Animations: overview]: /docs/development/ui/animations/overview.html
+[Animations: overview]: /docs/development/ui/animations/overview
 [animations package]: {{site.pub}}/packages/animations
 [Animations tutorial]: /docs/development/ui/animations/tutorial
 [`AnimationController.animateWith`]: {{site.api}}/flutter/animation/AnimationController/animateWith.html

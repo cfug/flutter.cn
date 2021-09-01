@@ -2,4 +2,4 @@
 title: 测试 (Testing)
 ---
 
-{% include cookbook_toc.md pages=site.pages heading_syntax='##' %}
+{% include docs/cookbook-toc.md pages=site.pages header_tag='h2' %}

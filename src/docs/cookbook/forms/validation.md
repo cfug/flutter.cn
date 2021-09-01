@@ -320,7 +320,7 @@ class MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/images/cookbook/form-validation.gif" alt="Form Validation Demo（表单验证示例）" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/form-validation.gif" alt="表单验证示例" class="site-mobile-screenshot" />
 </noscript>
 
 

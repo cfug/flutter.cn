@@ -51,7 +51,7 @@ you can find packages and tutorials listed on the [options page][].
 
 ## 示例
 
-{% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
+<img src='/assets/images/docs/development/data-and-backend/state-mgmt/model-shopper-screencast.gif' alt='An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation.' class='site-image-right'>
 
 For illustration, consider the following simple app.
 
@@ -79,7 +79,7 @@ Here's the app visualized as a widget tree.
 
 这是应用程序对应的可视化的 widget 树。
 
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree width="100%" alt="MyApp 位于 widget 树的最顶部，然后下面是 MyCatalog 和 MyCart。MyCart 是 widget 树的叶子节点。MyCatalog 有两个子节点: MyAppBar 和 MyListItem 列表。" %}
+<img src='/assets/images/docs/development/data-and-backend/state-mgmt/simple-widget-tree.png' width="100%" alt="A widget tree with MyApp at the top, and  MyCatalog and MyCart below it. MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems.">
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
@@ -206,7 +206,7 @@ what to show for any given `contents`. When that changes, the old
 当内容发生改变的时候，旧的 `MyCart` widget 就会消失，
 完全被新的 widget 替代。
 
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree-with-cart width="100%" alt="和上面的空间树一样，不过我们在 MyApp 的旁边显示一个 'cart' 标记。这里有两个箭头。一个从 MyListItems 指向 'cart'，另一个从 'cart' 指向 MyCart" %}
+<img src='/assets/images/docs/development/data-and-backend/state-mgmt/simple-widget-tree-with-cart.png' width="100%" alt="和上面的空间树一样，不过我们在 MyApp 的旁边显示一个 'cart' 标记。这里有两个箭头。一个从 MyListItems 指向 'cart'，另一个从 'cart' 指向 MyCart">
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1ErMyaX4fwfbIW9ABuPAlHELLGMsU6cdxPDFz_elsS9k/edit?zx=j42inp8903pt
@@ -662,21 +662,6 @@ master these skills.
 创建一个包含状态管理应用的能力。
 试着自己用 `provider` 构建一个应用来掌握这些技能吧！
 
-## 我们的样例 {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
-
-For illustration, consider the following simple app.
-
-为了解释它，请参考下面的简单应用。
-
-The app has two separate screens: a catalog,
-and a cart (represented by the `MyCatalog`,
-and `MyCart` widgets, respectively). It could be a shopping app,
-but you can imagine the same structure in a simple social networking
-app (replace catalog for "wall" and cart for "favorites").
-
-这个应用有两个不用的页面，一个目录页面和一个购物车页面（分别代表了 `MyCatalog`，
-和 `MyCart` widgets）。这是一个购物应用，但是你可以想像成
-一个简单的社交网络中的相同结构的应用（将目录页面替换 “墙”，购物车替换成“收藏夹”）。
 
 [built with `provider`]: {{site.github}}/flutter/samples/tree/master/provider_counter
 [check out the example]: {{site.github}}/flutter/samples/tree/master/provider_shopper

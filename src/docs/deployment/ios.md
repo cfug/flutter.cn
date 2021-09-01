@@ -247,7 +247,7 @@ the following:
 
 你项目的 **General** tab 应该看起来像是这样的：
 
-![Xcode Project Settings](/images/releaseguide/xcode_settings.png){:width="100%"}
+![Xcode Project Settings](/assets/images/docs/releaseguide/xcode_settings.png){:width="100%"}
 
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].

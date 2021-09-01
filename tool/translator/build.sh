@@ -3,7 +3,7 @@
 set -x
 set -e
 
-bundle exec jekyll build
+bundle exec jekyll build --config _config.yml
 
 cp -r tool/translator/assets/* _site/assets/
 

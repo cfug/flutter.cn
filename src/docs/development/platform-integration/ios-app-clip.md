@@ -75,7 +75,7 @@ Press `+` at the bottom of the target list to add a new target.
 
 点击 target 列表底部的 `+` 来添加一个新的 target。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/add-target.png" %}
 
 **2.2**
@@ -84,7 +84,7 @@ Select the `App Clip` type for your new target.
 
 为您的新 target 选择 `App Clip` 类型。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/add-app-clip.png" %}
 
 **2.3**
@@ -111,7 +111,7 @@ an Objective-C main target, and vice versa to simplify the setup.)
 (换句话说，请勿为 Objective-C target 创建 Swift 类型的 App Clip target，
 反之亦然，以简化设置。)
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/app-clip-details.png" %}
 
 **2.4**
@@ -121,7 +121,7 @@ In the following dialog, activate the new scheme for the new target.
 在接下来的对话框中，
 为新的 target 激活 (activate) 一个新的 scheme。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/activate-scheme.png" %}
 
 <a name="step-3"></a>
@@ -151,7 +151,7 @@ delete everything except `Info.plist` and
 
 {{site.alert.end}}
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/clean-files.png" %}
 
 Move files to trash.
@@ -171,7 +171,7 @@ Delete the entire dictionary entry for `Application Scene Manifest`.
 打开 App Clip 组中的 `Info.plist`。
 删除 `Application Scene Manifest` 字典条目。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/scene-manifest.png" %}
 
 ## Step 4 - Share build configurations
@@ -211,7 +211,7 @@ required build settings.
 
 这使您的 App Clip target 可以访问 Flutter 的必需构建设置。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/configuration.png" %}
 
 **4.2**
@@ -252,7 +252,7 @@ checkbox group.
 选择文件并且在检查器中选择第一个选项卡，
 并且在 `Target Membership` 选中 `App Clip`。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/add-target-membership.png"
 %}
 
@@ -289,7 +289,7 @@ Add a row to the array with `appclips:<your bundle id>`.
 添加 `Associated Domains` 数组。
 添加一行 `appclips:<your bundle id>` 到数组中。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/app-clip-entitlements.png"
 %}
 
@@ -317,7 +317,7 @@ entry for the main app's entitlement file
 打开文件并删除主应用程序授权文件的 `Parent Application Identifiers` 
 条目（将该条目保留为 App Clip 的授权文件）。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/main-app-entitlements.png"
 %}
 
@@ -332,7 +332,7 @@ relative path of the second entitlements file created for the main app.
 设置 `Code Signing Entitlements` 的值为
 主应用创建的第二个授权文件的相对路径。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/main-app-entitlements-setting.png"
 %}
 
@@ -362,7 +362,7 @@ In other words, the same as the main app target's build settings.
 
 换句话说，与主应用程序 target 的构建设置相同。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/app-clip-framework-search.png"
 %}
 
@@ -378,7 +378,7 @@ In other words, the same as the main app target's build settings.
 
 换句话说，与主应用程序 target 的构建设置相同。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/bridge-header.png"
 %}
 
@@ -389,7 +389,7 @@ Now open the `Build Phases` tab. Press the `+` sign and select
 
 现在打开 `Build Phases` 选项卡。点击 `+` 并且选择 `New Run Script Phase`。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/new-build-phase.png"
 %}
 
@@ -409,7 +409,7 @@ In other words, the same as the main app target's build phases.
 
 简单来说，与主应用程序 target 的构建设置相同。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/xcode-backend-build.png"
 %}
 
@@ -438,7 +438,7 @@ In other words, the same as the main app target's build phases.
 
 简单来说，与主应用程序 target 的构建设置相同。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/xcode-backend-embed.png"
 %}
 
@@ -455,7 +455,7 @@ set the `Enable Bitcode` setting to No.
 在 App Clip target 的 `Build Settings` 选项卡中，
 将 `Enable Bitcode` 设置设置为 No。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/bitcode.png"
 %}
 
@@ -560,7 +560,7 @@ selecting an iOS 14 device and pressing run.
 您现在可以在 Xcode 的 scheme 下拉中选择并运行您的 App Clip target 了，
 选择一个 iOS 14 的设备并点击运行。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/run-select.png"
 %}
 
@@ -588,7 +588,7 @@ from the console output in Xcode after running.
 为了调试 App clip 并使用诸如热重新加载之类的功能，
 必须在运行应用后从 Xcode 中的控制台输出中查找 Observatory URI。
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/observatory-uri.png"
 %}
 

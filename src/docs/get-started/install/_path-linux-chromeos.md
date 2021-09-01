@@ -65,7 +65,7 @@ whenever you open a new window. For example:
     $ which flutter
     ```
 
-{% include dart-tool.md %}
+{% include docs/dart-tool.md %}
 
 ### Update path directly
 

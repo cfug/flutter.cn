@@ -635,7 +635,7 @@ The following images show the Android and iOS UI for the basic Flutter
 下面的图片展示了 Android 和 iOS 中的
 基本 Flutter "Hello world!" 应用程序的界面。
 
-{% include android-ios-figure-pair.md image="react-native/hello-world-basic.png" alt="Hello world app" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/hello-world-basic.png" alt="Hello world app" class="border" %}
 
 Now that you've seen the most basic Flutter app, the next section shows how to
 take advantage of Flutter's rich widget libraries to create a modern, polished
@@ -720,7 +720,7 @@ You get more functionality for free than in the basic "Hello world!" app.
 下面的图片为大家展示了通过 Material Design widget 所实现的 "Hello world!" 应用。
 你可以获得比 "Hello world!" 应用更多的功能。
 
-{% include android-ios-figure-pair.md image="react-native/hello-world.png" alt="Hello world app" %}
+{% include docs/android-ios-figure-pair.md image="react-native/hello-world.png" alt="Hello world app" %}
 
 When writing an app, you'll use two types of widgets:
 
@@ -849,8 +849,7 @@ The following screenshots show an example of the reusable
 
 下面的截图展示了可复用的 CustomCard 类的示例。
 
-{% include android-ios-figure-pair.md image="react-native/custom-cards.png" alt="Custom cards" class="border" %}
-
+{% include docs/android-ios-figure-pair.md image="react-native/custom-cards.png" alt="Custom cards" class="border" %}
 
 ## Project structure and resources
 
@@ -1224,7 +1223,7 @@ ListView.builder(
 )
 ```
 
-{% include android-ios-figure-pair.md image="react-native/flatlist.gif" alt="Flat list" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/flatlist.gif" alt="Flat list" class="border" %}
 
 To learn how to implement an infinite scrolling list, see the
 [Write Your First Flutter App, Part 1][] codelab.
@@ -1307,7 +1306,7 @@ class _MyCanvasState extends State<MyCanvas> {
 }
 ```
 
-{% include android-ios-figure-pair.md image="react-native/canvas.png" alt="Canvas" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/canvas.png" alt="Canvas" class="border" %}
 
 ## Layouts
 
@@ -1395,7 +1394,7 @@ For a complete list, see [Layout Widgets][].
 
 要得到完整的 widget 列表，请参考 [Layout Widgets][]。
 
-{% include android-ios-figure-pair.md image="react-native/basic-layout.gif" alt="Layout" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/basic-layout.gif" alt="Layout" class="border" %}
 
 ### How do I layer widgets?
 
@@ -1446,11 +1445,11 @@ the text using the alignment property and Alignment coordinates.
 上面的示例代码使用 `Stack` 将一个 Container （将 `Text` 显示在一个半透明的黑色背景上）
 覆盖在一个 `CircleAvatar` 上。Stack 使用对齐属性和 Alignment 坐标微调文本。
 
-{% include android-ios-figure-pair.md image="react-native/stack.png" alt="Stack" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/stack.png" alt="Stack" class="border" %}
 
 For more information, see the [`Stack`][] class documentation.
 
-如果想了解更多相关信息，请参考 [Stack][] 类文档。
+如果想了解更多相关信息，请参考 [`Stack`][] 类的文档。
 
 ## Styling
 
@@ -1515,7 +1514,7 @@ Center(
 )
 ```
 
-{% include android-ios-figure-pair.md image="react-native/flutterstyling.gif" alt="Styling" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/flutterstyling.gif" alt="Styling" class="border" %}
 
 ### How do I use `Icons` and `Colors`?
 
@@ -2021,7 +2020,7 @@ class MyStatelessWidget extends StatelessWidget {
 }
 ```
 
-{% include android-ios-figure-pair.md image="react-native/state-change.gif" alt="State change" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/state-change.gif" alt="State change" class="border" %}
 
 ## Props
 
@@ -2109,7 +2108,7 @@ CustomCard(
 )
 ```
 
-{% include android-ios-figure-pair.md image="react-native/modular.png" alt="Cards" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/modular.png" alt="Cards" class="border" %}
 
 ## Local storage
 
@@ -2587,7 +2586,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-{% include android-ios-figure-pair.md image="react-native/navigation.gif" alt="Navigation" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/navigation.gif" alt="Navigation" class="border" %}
 
 ## Gesture detection and touch event handling
 
@@ -2709,7 +2708,7 @@ see the [GestureDetector class][].
 
 [GestureDetector class]: {{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties
 
-{% include android-ios-figure-pair.md image="react-native/flutter-gestures.gif" alt="Gestures" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/flutter-gestures.gif" alt="Gestures" class="border" %}
 
 ## Making HTTP network requests
 
@@ -2790,7 +2789,7 @@ _getIPAddress() async {
 }
 ```
 
-{% include android-ios-figure-pair.md image="react-native/api-calls.gif" alt="API calls" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/api-calls.gif" alt="API calls" class="border" %}
 
 ## Form input
 
@@ -2960,7 +2959,7 @@ void _submit() {
 }
 ```
 
-{% include android-ios-figure-pair.md image="react-native/input-fields.gif" alt="Input" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/input-fields.gif" alt="Input" class="border" %}
 
 ## Platform-specific code
 
@@ -3295,7 +3294,7 @@ class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
 }
 ```
 
-{% include android-ios-figure-pair.md image="react-native/flutter-fade.gif" alt="Flutter fade" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/flutter-fade.gif" alt="Flutter fade" class="border" %}
 
 ### How do I add swipe animation to cards?
 
@@ -3325,7 +3324,7 @@ child: Dismissible(
 ),
 ```
 
-{% include android-ios-figure-pair.md image="react-native/card-swipe.gif" alt="Card swipe" class="border" %}
+{% include docs/android-ios-figure-pair.md image="react-native/card-swipe.gif" alt="Card swipe" class="border" %}
 
 ## React Native and Flutter widget equivalent components
 

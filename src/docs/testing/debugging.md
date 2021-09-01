@@ -91,9 +91,7 @@ debug asserts verifying the framework's various invariants
 如果你要用开发者工具分析应用，需确保使用 [profile 模式][]。
 否则，分析的主要输出将会是用于验证框架中各种不变式的调试断言（查看 [debug 模式断言](#debug-mode-assertions)）。
 
-![GIF showing DevTools features]({% asset tools/devtools/inspector.gif @path %}){:width="100%"}
-
-![展示开发者工具特性的 GIF]({% asset tools/devtools/inspector.gif @path %}){:width="100%"}
+![展示开发者工具特性的 GIF](/assets/images/docs/tools/devtools/inspector.gif){:width="100%"}
 
 For more information, see the
 [DevTools][] documentation.
@@ -534,6 +532,9 @@ You might find the following docs useful:
 [性能图层]: /docs/testing/ui-performance#the-performance-overlay
 [Flutter performance profiling]: /docs/testing/ui-performance
 [Flutter 性能分析]: /docs/testing/ui-performance
+[Timeline view]: /docs/development/tools/devtools/performance
+[The performance overlay]: /docs/perf/rendering/ui-performance#the-performance-overlay
+[Flutter performance profiling]: /docs/perf/rendering/ui-performance
 [overlay]: /docs/testing/code-debugging#performance-overlay
 [debug mode]: /docs/testing/build-modes#debug
 [debug 模式]: /docs/testing/build-modes#debug

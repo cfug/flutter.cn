@@ -9,9 +9,8 @@ tags: 用户界面,Flutter UI
 keywords: 闪屏页,启动页,Loading图,应用商店
 ---
 
-{% asset
-development/ui/splash-screen/android-splash-screen/splash-screens_header.png
-class="mw-100" alt="Add Splash Screen Header" %}
+<img src='/assets/images/docs/development/ui/splash-screen/android-splash-screen/splash-screens_header.png'
+class="mw-100" alt="Add Splash Screen Header">
 
 Splash screens (also known as launch screens)
 provide a simple initial experience while your

@@ -27,7 +27,7 @@ js:
 
 {{site.alert.end}}
 
-{% asset get-started/sign-up alt="The web app that you'll be building" class='site-image-right' %}
+<img src="/assets/images/docs/get-started/sign-up.gif" alt="The web app that you'll be building" class='site-image-right'>
 
 This is a guide to creating your first Flutter **web** app.
 If you are familiar with object-oriented programming,
@@ -910,7 +910,7 @@ launch screen. It should look like the following:
 如下所示：
 
 {% indent %}
-  ![Screenshot of the DevTools launch screen]({% asset get-started/devtools-launch-screen.png @path %}){:width="100%"}
+  ![Screenshot of the DevTools launch screen](/assets/images/docs/get-started/devtools-launch-screen.png){:width="100%"}
 {% endindent %}
 </li>
 
@@ -926,7 +926,7 @@ running successfully in your Chrome browser:
 如下所示：
 
 {% indent %}
-  ![Screenshot of DevTools running screen]({% asset get-started/devtools-running.png @path %}){:width="100%"}
+  ![Screenshot of DevTools running screen](/assets/images/docs/get-started/devtools-running.png){:width="100%"}
 {% endindent %}
 
 Congratulations, you are now running Dart DevTools!
@@ -949,7 +949,7 @@ Congratulations, you are now running Dart DevTools!
   的方式启动开发者工具，如下所示：
 
   {% indent %}
-  ![Screenshot of Flutter inspector with DevTools menu]({% asset get-started/intellij-devtools.png @path %}){:width="100%"}
+  ![Screenshot of Flutter inspector with DevTools menu](/assets/images/docs/get-started/intellij-devtools.png){:width="100%"}
   {% endindent %}
 
 {{site.alert.end}}
@@ -969,7 +969,7 @@ in the center pane.
 选择 `signin/main.dart` 将在页面中间显示 Dart 代码。
 
 {% indent %}
-  ![Screenshot of the DevTools debugger]({% asset get-started/devtools-debugging.png @path %}){:width="100%"}
+  ![Screenshot of the DevTools debugger](/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}
 {% endindent %}
 </li>
 

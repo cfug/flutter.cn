@@ -106,7 +106,7 @@ On **iOS**:
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the bottom-up page transition on Android" />
+        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the bottom-up page transition on Android" />
         <figcaption class="figure-caption">
 <!--           <span><t>Android page transition</t><t>Android 转场动画</t></span> -->
            <span>Android 转场动画</span>
@@ -115,7 +115,7 @@ On **iOS**:
     </div>
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios.gif" class="figure-img img-fluid" alt="An animation of the end-start style push page transition on iOS" />
+        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios.gif" class="figure-img img-fluid" alt="An animation of the end-start style push page transition on iOS" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS push transition</t><t>iOS Push 转场动画</t></span> -->
           <span>iOS Push 转场动画</span>
@@ -124,7 +124,7 @@ On **iOS**:
     </div>
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios-modal.gif" class="figure-img img-fluid" alt="An animation of the bottom-up style present page transition on iOS" />
+        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios-modal.gif" class="figure-img img-fluid" alt="An animation of the bottom-up style present page transition on iOS" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS present transition</t><t>iOS Present 转场动画</t></span> -->
           <span>iOS Present 转场动画</span>
@@ -173,7 +173,7 @@ Flutter 内置的 [`CupertinoNavigationBar`][]
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android pre-Android P" />
+        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android pre-Android P" />
         <figcaption class="figure-caption">
 <!--           <span><t>Android Pre-9</t><t>Android 9 以前</t></span> -->
           <span>Android 9 以前</span>
@@ -182,7 +182,7 @@ Flutter 内置的 [`CupertinoNavigationBar`][]
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android-p.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android on Android P" />
+        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android-p.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android on Android P" />
         <figcaption class="figure-caption">
 <!--           <span><t>Android Post-9</t><t>Android 9 以后</t></span> -->
           <span>Android 9 以后</span>
@@ -191,7 +191,7 @@ Flutter 内置的 [`CupertinoNavigationBar`][]
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios-nav-bar.gif" class="figure-img img-fluid" alt="An animation of the nav bar transitions during a page transition on iOS" />
+        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios-nav-bar.gif" class="figure-img img-fluid" alt="An animation of the nav bar transitions during a page transition on iOS" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS Nav Bar</t><t>iOS 导航栏</t></span> -->
           <span>iOS 导航栏</span>
@@ -221,7 +221,7 @@ an edge swipe gesture can be used to pop the top route.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android-back.gif" class="figure-img img-fluid" alt="A page transition triggered by the Android back button" />
+        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android-back.gif" class="figure-img img-fluid" alt="A page transition triggered by the Android back button" />
         <figcaption class="figure-caption">
 <!--           <span><t>Android back button</t><t>Android 返回按钮</t></span> -->
           <span>Android 返回按钮</span>
@@ -230,7 +230,7 @@ an edge swipe gesture can be used to pop the top route.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios-back.gif" class="figure-img img-fluid" alt="A page transition triggered by an iOS back swipe gesture" />
+        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios-back.gif" class="figure-img img-fluid" alt="A page transition triggered by an iOS back swipe gesture" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS back swipe gesture</t><t>iOS 轻扫返回手势</t></span> -->
           <span>iOS 轻扫返回手势</span>
@@ -273,7 +273,7 @@ iOS 的滚动通常提供更多的分量和动态的阻力；
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/scroll-soft.gif" class="figure-img img-fluid rounded" alt="A soft fling where the iOS scrollable slid longer at lower speed than Android" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-soft.gif" class="figure-img img-fluid rounded" alt="A soft fling where the iOS scrollable slid longer at lower speed than Android" />
         <figcaption class="figure-caption">
 <!--           <span><t>Soft fling comparison</t><t>突然慢慢滚动的效果比较</t></span> -->
           <span>突然慢慢滚动的效果比较</span>
@@ -282,7 +282,7 @@ iOS 的滚动通常提供更多的分量和动态的阻力；
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/scroll-medium.gif" class="figure-img img-fluid rounded" alt="A medium force fling where the Android scrollable reached speed faster and stopped more abruptly after reaching a longer distance" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-medium.gif" class="figure-img img-fluid rounded" alt="A medium force fling where the Android scrollable reached speed faster and stopped more abruptly after reaching a longer distance" />
         <figcaption class="figure-caption">
 <!--           <span><t>Medium fling comparison</t><t>突然较快的滚动效果比较</t></span> -->
           <span>突然较快的滚动效果比较</span>
@@ -291,7 +291,7 @@ iOS 的滚动通常提供更多的分量和动态的阻力；
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/scroll-strong.gif" class="figure-img img-fluid rounded" alt="A strong fling where the Android scrollable reach speed faster and reached significantly more distance" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-strong.gif" class="figure-img img-fluid rounded" alt="A strong fling where the Android scrollable reach speed faster and reached significantly more distance" />
         <figcaption class="figure-caption">
 <!--           <span><t>Strong fling comparison</t><t>突然强烈的滚动效果比较</t></span> -->
           <span>突然强烈的滚动效果比较</span>
@@ -323,7 +323,7 @@ On **iOS**, scrolling past the edge of a scrollable
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/scroll-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" />
         <figcaption class="figure-caption">
 <!--           <span><t>Dynamic overscroll comparison</t><t>动态滚动边界效果比较</t></span> -->
           <span>动态滚动边界效果比较</span>
@@ -332,7 +332,7 @@ On **iOS**, scrolling past the edge of a scrollable
     </div>
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/scroll-static-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-static-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" />
         <figcaption class="figure-caption">
           <span><t>Static overscroll comparison</t><t>静态滚动边界效果比较</t></span>
         </figcaption>
@@ -357,7 +357,7 @@ There is no equivalent behavior on *Android*.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/scroll-momentum-ios.gif" class="figure-img img-fluid rounded" alt="Repeated scroll flings building momentum on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-momentum-ios.gif" class="figure-img img-fluid rounded" alt="Repeated scroll flings building momentum on iOS" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS scroll momentum</t><t>iOS 滚动动量</t></span> -->
           <span>iOS 滚动动量</span>
@@ -382,7 +382,7 @@ There is no equivalent behavior on **Android**.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 22px;" src="../../images/platform-adaptations/scroll-tap-to-top-ios.gif" class="figure-img img-fluid" alt="Tapping the status bar scrolls the primary scrollable back to the top" />
+        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/scroll-tap-to-top-ios.gif" class="figure-img img-fluid" alt="Tapping the status bar scrolls the primary scrollable back to the top" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS status bar tap to top</t><t>iOS 点击状态栏返回顶部</t></span> -->
           <span>iOS 点击状态栏返回顶部</span>
@@ -428,7 +428,7 @@ iOS、macOS 和 tvOS 平台上的软件。
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/typography-android.png" class="figure-img img-fluid rounded" alt="Roboto font on Android" />
+        <img src="/assets/images/docs/platform-adaptations/typography-android.png" class="figure-img img-fluid rounded" alt="Roboto font on Android" />
         <figcaption class="figure-caption">
 <!--           <span><t>Roboto on Android</t><t>Android 平台 Robot 字体</t></span> -->
           <span>Android 平台 Robot 字体</span>
@@ -437,7 +437,7 @@ iOS、macOS 和 tvOS 平台上的软件。
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/typography-ios.png" class="figure-img img-fluid rounded" alt="San Francisco font on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/typography-ios.png" class="figure-img img-fluid rounded" alt="San Francisco font on iOS" />
         <figcaption class="figure-caption">
 <!--           <span><t>San Francisco on iOS</t><t>iOS 平台 San Francisco 字体</t></span> -->
           <span>iOS 平台 San Francisco 字体</span>
@@ -467,7 +467,7 @@ has a stem/shaft on Android.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/iconography-android.png" class="figure-img img-fluid rounded" alt="Android appropriate icons" />
+        <img src="/assets/images/docs/platform-adaptations/iconography-android.png" class="figure-img img-fluid rounded" alt="Android appropriate icons" />
         <figcaption class="figure-caption">
 <!--           <span><t>Icons on Android</t><t>Android 平台图标</t></span> -->
           <span>Android 平台图标</span>
@@ -476,7 +476,7 @@ has a stem/shaft on Android.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/iconography-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate icons" />
+        <img src="/assets/images/docs/platform-adaptations/iconography-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate icons" />
         <figcaption class="figure-caption">
 <!--           <span><t>Icons on iOS</t><t>iOS 平台图标</t></span> -->
           <span>iOS 平台图标</span>
@@ -541,7 +541,7 @@ Material 和 Cupertino 都对这个功能提供了支持。
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-keyboard-move-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via the space key on Android" />
+        <img src="/assets/images/docs/platform-adaptations/text-keyboard-move-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via the space key on Android" />
         <figcaption class="figure-caption">
 <!--           <span><t>Android space key cursor move</t><t>Android 通过空格键移动光标</t></span> -->
           <span>Android 通过空格键移动光标</span>
@@ -550,7 +550,7 @@ Material 和 Cupertino 都对这个功能提供了支持。
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-keyboard-move-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via 3D Touch drag on the keyboard on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/text-keyboard-move-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via 3D Touch drag on the keyboard on iOS" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS 3D Touch drag cursor move</t><t>iOS 通过 3D Touch 拖拽移动光标</t></span> -->
           <span>iOS 通过 3D Touch 拖拽移动光标</span>
@@ -580,7 +580,7 @@ selection is made in a text field.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-toolbar-android.png" class="figure-img img-fluid rounded" alt="Android appropriate text toolbar" />
+        <img src="/assets/images/docs/platform-adaptations/text-toolbar-android.png" class="figure-img img-fluid rounded" alt="Android appropriate text toolbar" />
         <figcaption class="figure-caption">
 <!--           <span><t>Android text selection toolbar</t><t>Android 文本选中工具栏</t></span> -->
           <span>Android 文本选中工具栏</span>
@@ -589,7 +589,7 @@ selection is made in a text field.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-toolbar-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate text toolbar" />
+        <img src="/assets/images/docs/platform-adaptations/text-toolbar-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate text toolbar" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS text selection toolbar</t><t>iOS 文本选中工具栏</t></span> -->
           <span>iOS 文本选中工具栏</span>
@@ -628,7 +628,7 @@ Collapsed text selections don't have draggable handles on iOS.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-single-tap-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the tapped position on Android" />
+        <img src="/assets/images/docs/platform-adaptations/text-single-tap-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the tapped position on Android" />
         <figcaption class="figure-caption">
 <!--           <span><t>Android tap</t><t>Android 点击</t></span> -->
           <span>Android 点击</span>
@@ -637,7 +637,7 @@ Collapsed text selections don't have draggable handles on iOS.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-single-tap-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the nearest edge of the tapped word on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/text-single-tap-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the nearest edge of the tapped word on iOS" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS tap</t><t>iOS 点击</t></span> -->
           <span>iOS 点击</span>
@@ -667,7 +667,7 @@ long press. The selection toolbar is shown upon release.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-long-press-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via long press on Android" />
+        <img src="/assets/images/docs/platform-adaptations/text-long-press-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via long press on Android" />
         <figcaption class="figure-caption">
 <!--           <span><t>Android long press</t><t>Android 长按</t></span> -->
           <span>Android 长按</span>
@@ -676,7 +676,7 @@ long press. The selection toolbar is shown upon release.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-long-press-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a position via long press on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/text-long-press-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a position via long press on iOS" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS long press</t><t>iOS 长按</t></span> -->
           <span>iOS 长按</span>
@@ -704,7 +704,7 @@ dragging while holding the long press moves the cursor.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-long-press-drag-android.gif" class="figure-img img-fluid rounded" alt="Expanding word selection via long press drag on Android" />
+        <img src="/assets/images/docs/platform-adaptations/text-long-press-drag-android.gif" class="figure-img img-fluid rounded" alt="Expanding word selection via long press drag on Android" />
         <figcaption class="figure-caption">
 <!--           <span><t>Android long press drag</t><t>Android 长按并拖放</t></span> -->
           <span>Android 长按并拖放</span>
@@ -713,7 +713,7 @@ dragging while holding the long press moves the cursor.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-long-press-drag-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via long press drag on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/text-long-press-drag-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via long press drag on iOS" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS long press drag</t><t>iOS 长按并拖放</t></span> -->
           <span>iOS 长按并拖放</span>
@@ -739,7 +739,7 @@ Android 和 iOS 平台上，
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-double-tap-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on Android" />
+        <img src="/assets/images/docs/platform-adaptations/text-double-tap-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on Android" />
         <figcaption class="figure-caption">
 <!--           <span><t>Android double tap</t><t>Android 双击</t></span> -->
           <span>Android 双击</span>
@@ -748,7 +748,7 @@ Android 和 iOS 平台上，
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-double-tap-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/text-double-tap-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on iOS" />
         <figcaption class="figure-caption">
 <!--           <span><t>iOS double tap</t><t>iOS 双击</t></span> -->
           <span>iOS 双击</span>

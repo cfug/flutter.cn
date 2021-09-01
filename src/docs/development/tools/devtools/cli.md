@@ -110,7 +110,7 @@ Once DevTools opens, you should see a connect dialog:
 
 当这个网页打开后，你会看到一个链接对话框：
 
-![Screenshot of a logging view]({% asset tools/devtools/connect_dialog.png @path %}){:width="100%"}
+![Screenshot of a logging view](/assets/images/docs/tools/devtools/connect_dialog.png){:width="100%"}
 
 Paste the URL you got from running your app (in this example,
 `http://127.0.0.1:50976/Swm0bjIe0ks=/`) into the connect dialog

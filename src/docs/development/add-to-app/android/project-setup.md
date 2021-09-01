@@ -100,14 +100,14 @@ or select an existing Flutter module that was created previously.
 在 Android Studio 打开现有的 Android 项目并点击菜单按钮 **File > New > New Module...** ，
 这样就可以创建出一个可以集成的新 Flutter 模块，或者选择导入已有的 Flutter 模块。
 
-{% include app-figure.md image="development/add-to-app/android/project-setup/ide-new-module.png" %}
+{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-new-module.png" %}
 
 If you create a new module, you can use a wizard to
 select the module name, location, and so on.
 
 如果你想创建一个新的 Flutter 模块，则可以直接在向导窗口中填写模块名称、路径等信息。
 
-{% include app-figure.md image="development/add-to-app/android/project-setup/ide-wizard.png" %}
+{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-wizard.png" %}
 
 The Android Studio plugin automatically configures your
 Android project to add your Flutter module as a dependency,
@@ -322,7 +322,7 @@ Then, follow the on-screen instructions to integrate.
 
 然后，根据屏幕上的提示完成集成操作。
 
-{% include app-figure.md image="development/add-to-app/android/project-setup/build-aar-instructions.png" %}
+{% include docs/app-figure.md image="development/add-to-app/android/project-setup/build-aar-instructions.png" %}
 
 More specifically, this command creates
 (by default all debug/profile/release modes)
@@ -409,7 +409,7 @@ dependencies {
   你也可以直接点击 Android Studio 菜单中的 `Build > Flutter > Build AAR` 
   为 Flutter 模块构建 AAR。
 
-{% include app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
+{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
 {{site.alert.end}}
 
   Your app now includes the Flutter module as a dependency.

@@ -41,7 +41,7 @@ check out the following workshop:
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
 
-{% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='site-image-right' %}
+<img src="/assets/images/docs/get-started/startup-namer-part-1.gif" alt="The app that you'll be building" class='site-image-right'>
 
 {%- comment %}
   Code highlights in this page are green, to match diff additions.
@@ -292,7 +292,7 @@ where the Dart code lives.
     根据不同的操作系统，你会看到如下运行结果界面：
 
     {% indent %}
-      {% include android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
+      {% include docs/android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
     {% endindent %}
 
     {{site.alert.tip}}
@@ -505,7 +505,7 @@ as well as many other open source packages, on [pub.dev][].
     这是因为单词对是在 build 方法内部生成的。每次 MaterialApp 需要渲染时或者在 Flutter Inspector 中切换平台时 build 都会运行。
 
     {% indent %}
-      {% include android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
+      {% include docs/android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
     {% endindent %}
 
 ### Problems?
@@ -901,7 +901,7 @@ lazily, on demand.
     尽可能地向下滚动，你将继续看到新的单词对。
 
     {% indent %}
-      {% include android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
+      {% include docs/android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
     {% endindent %}
 
 ### Problems?
@@ -922,7 +922,7 @@ If needed, use the code at the following link to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
-{% include run-profile.md %}
+{% include docs/run-profile.md %}
 
 ## Next steps
 {:.no_toc}
@@ -930,7 +930,7 @@ If needed, use the code at the following link to get back on track.
 ## 下一步
 {:.no_toc}
 
-{% include app-figure.md class="site-image-right" img-class="border"
+{% include docs/app-figure.md class="site-image-right" img-class="border"
     image="get-started/startup-namer.gif" caption="The app from part 2" %}
 
 Congratulations!

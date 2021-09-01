@@ -49,7 +49,7 @@ the layout for the following screenshot.
 
 [构建布局教程][building layouts tutorial] 中展示了如何构建下面截图所示的布局。
 
-{% include app-figure.md img-class="site-mobile-screenshot border"
+{% include docs/app-figure.md img-class="site-mobile-screenshot border"
     image="ui/layout/lakes.jpg" caption="The layout tutorial app" %}
 
 When the app first launches, the star is solid red,
@@ -67,9 +67,7 @@ drawing a solid star and increasing the count.
 然后用轮廓线的星形图标代替实心的，并减少计数。
 再次点击会重新收藏，并增加计数。
 
-{% asset ui/favorited-not-favorited.png class="mw-100"
-    alt="The custom widget you'll create" width="200px" %}
-{:.text-center}
+<img src='/assets/images/docs/ui/favorited-not-favorited.png' class="mw-100" alt="The custom widget you'll create" width="200px">{:.text-center}
 
 To accomplish this, you'll create a single custom widget
 that includes both the star and the count,
@@ -590,8 +588,8 @@ TapboxA、TapboxB 和 TapboxC。
 
 <div class="row mb-4">
   <div class="col-12 text-center">
-    {% asset ui/tapbox-active-state.png class="border mt-1 mb-1 mw-100" width="150px" alt="Active state" %}
-    {% asset ui/tapbox-inactive-state.png class="border mt-1 mb-1 mw-100" width="150px" alt="Inactive state" %}
+    <img src='/assets/images/docs/ui/tapbox-active-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Active state">
+    <img src='/assets/images/docs/ui/tapbox-inactive-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Inactive state">
   </div>
 </div>
 

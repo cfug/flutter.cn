@@ -552,7 +552,7 @@ class _DraggableCardState extends State<DraggableCard>
 ```
 
 <noscript>
-  <img src="/images/cookbook/animation-physics-card-drag.gif" alt="Demo showing a widget being dragged and snapped back to the center（样例展示了一个能够被拖动并自动滑回中心的 widget）" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/animation-physics-card-drag.gif" alt="样例展示了一个能够被拖动并自动滑回中心的 widget" class="site-mobile-screenshot" />
 </noscript>
 
 [Align]: {{site.api}}/flutter/widgets/Align-class.html

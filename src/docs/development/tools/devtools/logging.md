@@ -50,7 +50,7 @@ By default, the logging view shows:
 
   应用的自定义日志事件
 
-![日志视图的截图]({% asset tools/devtools/logging_log_entries.png @path %}){:width="100%"}
+![日志视图的截图](/assets/images/docs/tools/devtools/logging_log_entries.png){:width="100%"}
 
 ## Logging from your application
 

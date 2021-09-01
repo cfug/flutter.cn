@@ -285,7 +285,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 ```
 
 <noscript>
-  <img src="/images/cookbook/animated-container.gif" alt="AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius(这个 AnimatedContainer demo 展示了一个通过动画改变颜色、边框半径、放大和缩小的盒子)" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/animated-container.gif" alt="这个 AnimatedContainer demo 展示了一个通过动画改变颜色、边框半径、放大和缩小的盒子" class="site-mobile-screenshot" />
 </noscript>
 
 

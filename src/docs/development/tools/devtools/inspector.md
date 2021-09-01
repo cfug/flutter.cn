@@ -42,7 +42,7 @@ Flutter inspector 不仅可以帮助你可视化查看 Flutter widget 树，还�
 
   诊断布局问题
 
-![Screenshot of the Flutter inspector window]({% asset tools/devtools/inspector_screenshot.png @path %}){:width="100%"}
+![Screenshot of the Flutter inspector window](/assets/images/docs/tools/devtools/inspector_screenshot.png){:width="100%"}
 
 ## Get started
 
@@ -80,8 +80,8 @@ used as the visual version of the label.
 
 <dl markdown="1">
 <dt>
-<p markdown="1">![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"} **Select widget mode**</p>
-<p markdown="1">![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"} **选择 widget 模式**</p>
+<p markdown="1">![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **Select widget mode**</p>
+<p markdown="1">![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **选择 widget 模式**</p>
 </dt>
 <dd markdown="1">
 <p markdown="1">Enable this button in order to select
@@ -91,32 +91,32 @@ used as the visual version of the label.
     有关更多信息，请参考 [查看 widget](#inspecting-a-widget)。</p>
 </dd>
 <dt>
-<p markdown="1">![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"} **Refresh tree**</p>
-<p markdown="1">![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"} **刷新树**</p>
+<p markdown="1">![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **Refresh tree**</p>
+<p markdown="1">![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **刷新树**</p>
 </dt>
 <dd>
 <p>Reload the current widget info</p>
 <p>重新加载当前 widget 的信息。</p>
 </dd>
 <dt>
-<p markdown="1">![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"} **[Slow Animations]**</p>
-<p markdown="1">![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"} **[慢速动画][Slow Animations]**</p>
+<p markdown="1">![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"} **[Slow Animations]**</p>
+<p markdown="1">![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"} **[慢速动画][Slow Animations]**</p>
 </dt>
 <dd>
 <p>Run animations 5 times slower to help fine-tune them.</p>
 <p>以五分之一的速度运行动画以便对它们进行优化。</p>
 </dd>
 <dt>
-<p markdown="1">![Show guidelines mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"} **[Show guidelines][]**</p>
-<p markdown="1">![Show guidelines mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"} **[显示引导线][Show guidelines]**</p>
+<p markdown="1">![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:width="20px"} **[Show guidelines][]**</p>
+<p markdown="1">![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:width="20px"} **[显示引导线][Show guidelines]**</p>
 </dt>
 <dd>
 <p>Overlay guidelines to assist with fixing layout issues.</p>
 <p>覆盖一层引导线以帮助调整布局问题。</p>
 </dd>
 <dt>
-<p markdown="1">![Show baselines icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"} **[Show baselines][]**</p>
-<p markdown="1">![Show baselines icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"} **[显示基线][Show baselines]**</p>
+<p markdown="1">![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"} **[Show baselines][]**</p>
+<p markdown="1">![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"} **[显示基线][Show baselines]**</p>
 </dt>
 <dd>
 <p>Show baselines, which are used for aligning text.
@@ -124,16 +124,16 @@ used as the visual version of the label.
 <p>针对文字对齐展示文字的基线。对检查文字是否对齐有帮助。</p>
 </dd>
 <dt>
-<p markdown="1">![Highlight repaints icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"} **[Highlight repaints][]**</p>
-<p markdown="1">![Highlight repaints icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"} **[高亮重绘制内容][Highlight repaints]**</p>
+<p markdown="1">![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"} **[Highlight repaints][]**</p>
+<p markdown="1">![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"} **[高亮重绘制内容][Highlight repaints]**</p>
 </dt>
 <dd>
 <p>Shows rotating colors on layers when repainting.</p>
 <p>重新绘制时在图层上依次显示不同的颜色。</p>
 </dd>
 <dt>
-<p markdown="1">![Highlight oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"} **[Highlight oversized images][]**</p>
-<p markdown="1">![Highlight oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"} **[高亮尺寸过大的图片][Highlight oversized images]**</p>
+<p markdown="1">![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:width="20px"} **[Highlight oversized images][]**</p>
+<p markdown="1">![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:width="20px"} **[高亮尺寸过大的图片][Highlight oversized images]**</p>
 </dt>
 <dd>
 <p>Highlights images that are using too much memory
@@ -250,7 +250,7 @@ why overflow errors occur as well as how to fix them.
 这些可视化的错误是为了让我们更好地理解溢出错误发生的原因，
 并了解如何修复它们。
 
-![The Layout Explorer showing errors and device inspector]({% asset tools/devtools/layout_explorer_errors_and_device.gif @path %}){:width="100%"}
+![The Layout Explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
 
 Clicking a widget in the layout explorer mirrors
 the selection on the on-device inspector. **Select Widget Mode**
@@ -260,7 +260,7 @@ click on the **Select Widget Mode** button in the inspector.
 在 **Select Widget Mode** 模式下，点击布局浏览器中的 widget 会同步选择到设备上。
 启用此模式，请点击调试面板中的 **Select Widget Mode** 按钮。
 
-![The Select Widget Mode button in the inspector]({% asset tools/devtools/select_widget_mode_devtools_alpha.png @path %})
+![The Select Widget Mode button in the inspector](/assets/images/docs/tools/devtools/select_widget_mode_devtools_alpha.png)
 
 For some properties, like flex factor, flex fit, and alignment,
 you can modify the value via dropdown lists in the explorer.
@@ -292,7 +292,7 @@ such as [`mainAxisSize`][], [`textDirection`][], and
 
 ###### mainAxisAlignment
 
-![The Layout Explorer changing main axis alignment]({% asset tools/devtools/layout_explorer_main_axis_alignment.gif @path %}){:width="100%"}
+![The Layout Explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
 
 Supported values:
 
@@ -307,7 +307,7 @@ Supported values:
 
 ###### crossAxisAlignment
 
-![The Layout Explorer changing cross axis alignment]({% asset tools/devtools/layout_explorer_cross_axis_alignment.gif @path %}){:width="100%"}
+![The Layout Explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
 
 Supported values:
 
@@ -320,7 +320,7 @@ Supported values:
 
 ###### FlexParentData.flex
 
-![The Layout Explorer changing flex factor]({% asset tools/devtools/layout_explorer_flex.gif @path %}){:width="100%"}
+![The Layout Explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
 
 Layout Explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
@@ -331,7 +331,7 @@ factor of a flex widget’s child can be any int.
 
 ###### Flexible.fit
 
-![The Layout Explorer changing fit]({% asset tools/devtools/layout_explorer_fit.gif @path %}){:width="100%"}
+![The Layout Explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
 
 Layout Explorer supports the two different types of
 [`FlexFit`][]: `loose` and `tight`.
@@ -351,7 +351,7 @@ RenderObject.
 当您选择一个固定大小的 widget 而不是弹性 widget 时，它的布局信息将显示在布局浏览器中。
 你可以看到所选 widget 及其最近的上一级 RenderObject 的大小、约束和填充信息。
 
-![The Layout Explorer fixed size tool]({% asset tools/devtools/layout_explorer_fixed_layout.png @path %})
+![The Layout Explorer fixed size tool](/assets/images/docs/tools/devtools/layout_explorer_fixed_layout.png)
 
 ## Visual debugging
 
@@ -406,8 +406,8 @@ The following links provide more info.
 
 以下的录屏展示了动画减速前后的对比。
 
-![Screen recording showing normal animation speed]({% asset tools/devtools/debug-toggle-slow-animations-disabled.gif @path %})
-![Screen recording showing slowed animation speed]({% asset tools/devtools/debug-toggle-slow-animations-enabled.gif @path %})
+![Screen recording showing normal animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-disabled.gif)
+![Screen recording showing slowed animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-enabled.gif)
 
 ### Show guidelines
 
@@ -447,7 +447,7 @@ building blocks of Flutter layouts. They’re shown with a bright blue border:
 它是 Flutter 布局的基础构建。
 这些 RenderBox 会加上一个浅蓝色的边框：
 
-![Screenshot of render box guidelines]({% asset tools/devtools/debug-toggle-guideline-render-box.png @path %})
+![Screenshot of render box guidelines](/assets/images/docs/tools/devtools/debug-toggle-guideline-render-box.png)
 
 #### Alignments
 
@@ -461,7 +461,7 @@ For example, this button’s icon is shown as being centered by the four arrows:
 这些箭头会显示出垂直和竖屏方向上 widget 相对其父布局的偏移。
 例如，这个按钮图标有四个箭头表示它被居中展示：
 
-![Screenshot of alignment guidelines]({% asset tools/devtools/debug-toggle-guidelines-alignment.png @path %})
+![Screenshot of alignment guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-alignment.png)
 
 #### Padding
 
@@ -471,7 +471,7 @@ Padding is shown with a semi-transparent blue background:
 
 间距会以半透明的蓝色背景显示：
 
-![Screenshot of padding guidelines]({% asset tools/devtools/debug-toggle-guidelines-padding.png @path %})
+![Screenshot of padding guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-padding.png)
 
 #### Scroll views
 
@@ -481,7 +481,7 @@ Widgets with scrolling contents (such as list views) are shown with green arrows
 
 包含滚动内容的 widget（例如 ListView）会展示绿色的箭头：
 
-![Screenshot of scroll view guidelines]({% asset tools/devtools/debug-toggle-guidelines-scroll.png @path %})
+![Screenshot of scroll view guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-scroll.png)
 
 #### Clipping
 
@@ -494,7 +494,7 @@ with a dashed pink line with a scissors icon:
 
 [ClipRect widget]: {{site.api}}/flutter/widgets/ClipRect-class.html
 
-![Screenshot of clip guidelines]({% asset tools/devtools/debug-toggle-guidelines-clip.png @path %})
+![Screenshot of clip guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-clip.png)
 
 #### Spacers
 
@@ -505,7 +505,7 @@ such as this `SizedBox` without a child:
 
 空位填充的 widgets 会以灰色背景展示，例如没有 child 的 `SizedBox`：
 
-![Screenshot of spacer guidelines]({% asset tools/devtools/debug-toggle-guidelines-spacer.png @path %})
+![Screenshot of spacer guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-spacer.png)
 
 ### Show baselines
 
@@ -523,7 +523,7 @@ For example, the text baselines in the following screenshot are slightly misalig
 在检查文字是否垂直对齐时，基线会非常有用。
 例如，下图中文字的基线稍微有一些错位：
 
-![Screenshot with show baselines enabled]({% asset tools/devtools/debug-toggle-guidelines-baseline.png @path %})
+![Screenshot with show baselines enabled](/assets/images/docs/tools/devtools/debug-toggle-guidelines-baseline.png)
 
 The [Baseline][] widget can be used to adjust baselines.
 
@@ -596,7 +596,7 @@ class EverythingRepaintsPage extends StatelessWidget {
 }
 ```
 
-![Screen recording of a whole screen repainting]({% asset tools/devtools/debug-toggle-guidelines-repaint-1.gif @path %})
+![Screen recording of a whole screen repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-1.gif)
 
 Wrapping the progress indicator in a `RepaintBoundary` causes
 only that section of the screen to repaint:
@@ -621,7 +621,7 @@ class AreaRepaintsPage extends StatelessWidget {
 }
 ```
 
-![Screen recording of a just a progress indicator repainting]({% asset tools/devtools/debug-toggle-guidelines-repaint-2.gif @path %})
+![Screen recording of a just a progress indicator repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-2.gif)
 
 `RepaintBoundary` widgets have tradeoffs. They can help with performance,
 but they also have an overhead of creating a new canvas,
@@ -652,7 +652,7 @@ and flipping them vertically:
 
 该选项会将尺寸过大的图片高亮表示，并且进行垂直翻转及色调反转：
 
-![A highlighted oversized image]({% asset tools/devtools/debug-toggle-guidelines-oversized.png @path %})
+![A highlighted oversized image](/assets/images/docs/tools/devtools/debug-toggle-guidelines-oversized.png)
 
 The highlighted images use more memory than is required;
 for example, a large 5MB image displayed at 100 by 100 pixels.
@@ -752,14 +752,14 @@ selected widget.
 
 选择 **Details Tree** 标签展示选中 widget 的树结构的详细信息。
 
-![The Details Tree tab]({% asset tools/devtools/details_tree_tab.png @path %})
+![The Details Tree tab](/assets/images/docs/tools/devtools/details_tree_tab.png)
 
 From the details tree, you can gather useful information about a
 widget's properties, render object, and children.
 
 从树的详细信息中，你可以获取有关 widget 的属性、渲染对象和子节点等有用信息。
 
-![The Details Tree view]({% asset tools/devtools/details_tree.png @path %})
+![The Details Tree view](/assets/images/docs/tools/devtools/details_tree.png)
 
 
 ## Track widget creation
@@ -795,13 +795,13 @@ Track widget creation enabled (default):
 
 启用追踪 widget 创建（默认）：
 
-![The widget tree with track widget creation enabled]({% asset tools/devtools/track_widget_creation_enabled.png @path %}){:width="100%"}
+![The widget tree with track widget creation enabled](/assets/images/docs/tools/devtools/track_widget_creation_enabled.png){:width="100%"}
 
 Track widget creation disabled (not recommended):
 
 关闭追踪 widget 创建（不推荐）：
 
-![The widget tree with track widget creation disabled]({% asset tools/devtools/track_widget_creation_disabled.png @path %}){:width="100%"}
+![The widget tree with track widget creation disabled](/assets/images/docs/tools/devtools/track_widget_creation_disabled.png){:width="100%"}
 
 This feature prevents otherwise-identical `const` Widgets from
 being considered equal in debug builds. For more details, see

@@ -13,7 +13,7 @@ js:
 
 <?code-excerpt path-base="layout/constraints/"?>
 
-{% asset ui/layout/article-hero-image.png class="mw-100" alt="Hero image from the article" %}
+<img src='/assets/images/docs/ui/layout/article-hero-image.png' class="mw-100" alt="Hero image from the article">
 
 When someone learning Flutter asks you why some widget
 with `width:100` isn't 100 pixels wide,
@@ -96,7 +96,7 @@ as follows:
 例如，如果一个 widget 中包含了一个具有 padding 的 Column，
 并且要对 Column 的子 widget 进行如下的布局：
 
-{% asset ui/layout/children.png class="mw-100" alt="Visual layout" %}
+<img src='/assets/images/docs/ui/layout/children.png' class="mw-100" alt="Visual layout">
 
 The negotiation goes something like this:
 
@@ -1348,7 +1348,7 @@ The examples are explained in the following sections.
 
 ### 样例 1
 
-{% asset ui/layout/layout-1.png class="mw-100" alt="Example 1 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-1.png' class="mw-100" alt="Example 1 layout">
 
 <?code-excerpt "lib/main.dart (Example1)" replace="/(return |;)//g"?>
 ```dart
@@ -1368,7 +1368,7 @@ So the `Container` fills the screen and paints it red.
 
 ### 样例 2
 
-{% asset ui/layout/layout-2.png class="mw-100" alt="Example 2 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-2.png' class="mw-100" alt="Example 2 layout">
 
 <?code-excerpt "lib/main.dart (Example2)" replace="/(return |;)//g"?>
 ```dart
@@ -1390,7 +1390,7 @@ So the `Container` fills the screen.
 
 ### 样例 3
 
-{% asset ui/layout/layout-3.png class="mw-100" alt="Example 3 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-3.png' class="mw-100" alt="Example 3 layout">
 
 <?code-excerpt "lib/main.dart (Example3)" replace="/(return |;)//g"?>
 ```dart
@@ -1415,7 +1415,7 @@ can indeed be 100 × 100.
 
 ### 样例 4
 
-{% asset ui/layout/layout-4.png class="mw-100" alt="Example 4 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-4.png' class="mw-100" alt="Example 4 layout">
 
 <?code-excerpt "lib/main.dart (Example4)" replace="/(return |;)//g"?>
 ```dart
@@ -1443,7 +1443,7 @@ available space.
 
 ### 样例 5
 
-{% asset ui/layout/layout-5.png class="mw-100" alt="Example 5 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-5.png' class="mw-100" alt="Example 5 layout">
 
 <?code-excerpt "lib/main.dart (Example5)" replace="/(return |;)//g"?>
 ```dart
@@ -1471,7 +1471,7 @@ it just fills the screen.
 
 ### 样例 6
 
-{% asset ui/layout/layout-6.png class="mw-100" alt="Example 6 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-6.png' class="mw-100" alt="Example 6 layout">
 
 <?code-excerpt "lib/main.dart (Example6)" replace="/(return |;)//g"?>
 ```dart
@@ -1512,7 +1512,7 @@ behaves, depending on the circumstances.
 
 ### 样例 7
 
-{% asset ui/layout/layout-7.png class="mw-100" alt="Example 7 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-7.png' class="mw-100" alt="Example 7 layout">
 
 <?code-excerpt "lib/main.dart (Example7)" replace="/(return |;)//g"?>
 ```dart
@@ -1556,7 +1556,7 @@ entirely covers the red `Container`.
 
 ### 样例 8
 
-{% asset ui/layout/layout-8.png class="mw-100" alt="Example 8 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-8.png' class="mw-100" alt="Example 8 layout">
 
 <?code-excerpt "lib/main.dart (Example8)" replace="/(return |;)//g"?>
 ```dart
@@ -1584,7 +1584,7 @@ in the previous example.
 
 ### 样例 9
 
-{% asset ui/layout/layout-9.png class="mw-100" alt="Example 9 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-9.png' class="mw-100" alt="Example 9 layout">
 
 <?code-excerpt "lib/main.dart (Example9)" replace="/(return |;)//g"?>
 ```dart
@@ -1620,7 +1620,7 @@ to also assume the size of the screen, thus ignoring its
 
 ### 样例 10
 
-{% asset ui/layout/layout-10.png class="mw-100" alt="Example 10 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-10.png' class="mw-100" alt="Example 10 layout">
 
 <?code-excerpt "lib/main.dart (Example10)" replace="/(return |;)//g"?>
 ```dart
@@ -1655,7 +1655,7 @@ Container 必须介于 70 到 150 像素之间。虽然它希望自己有 10 个
 
 ### 样例 11
 
-{% asset ui/layout/layout-11.png class="mw-100" alt="Example 11 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-11.png' class="mw-100" alt="Example 11 layout">
 
 <?code-excerpt "lib/main.dart (Example11)" replace="/(return |;)//g"?>
 ```dart
@@ -1691,7 +1691,7 @@ so it ends up having 150 (the maximum).
 
 ### 样例 12
 
-{% asset ui/layout/layout-12.png class="mw-100" alt="Example 12 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-12.png' class="mw-100" alt="Example 12 layout">
 
 <?code-excerpt "lib/main.dart (Example12)" replace="/(return |;)//g"?>
 ```dart
@@ -1727,7 +1727,7 @@ since that’s between 70 and 150.
 
 ### 样例 13
 
-{% asset ui/layout/layout-13.png class="mw-100" alt="Example 13 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-13.png' class="mw-100" alt="Example 13 layout">
 
 <?code-excerpt "lib/main.dart (Example13)" replace="/(return |;)//g"?>
 ```dart
@@ -1746,7 +1746,7 @@ lets its child `Container` be any size it wants.
 
 ### 样例 14
 
-{% asset ui/layout/layout-14.png class="mw-100" alt="Example 14 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-14.png' class="mw-100" alt="Example 14 layout">
 
 <?code-excerpt "lib/main.dart (Example14)" replace="/(return |;)//g"?>
 ```dart
@@ -1775,7 +1775,7 @@ the much dreaded "overflow warning".
 
 ### 样例 15
 
-{% asset ui/layout/layout-15.png class="mw-100" alt="Example 15 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-15.png' class="mw-100" alt="Example 15 layout">
 
 <?code-excerpt "lib/main.dart (Example15)" replace="/(return |;)//g"?>
 ```dart
@@ -1814,7 +1814,7 @@ with no warnings given.
 
 ### 样例 16
 
-{% asset ui/layout/layout-16.png class="mw-100" alt="Example 16 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-16.png' class="mw-100" alt="Example 16 layout">
 
 <?code-excerpt "lib/main.dart (Example16)" replace="/(return |;)//g"?>
 ```dart
@@ -1843,7 +1843,7 @@ Flutter 无法渲染无限大的东西，所以它抛出以下错误：
 
 ### 样例 17
 
-{% asset ui/layout/layout-17.png class="mw-100" alt="Example 17 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-17.png' class="mw-100" alt="Example 17 layout">
 
 <?code-excerpt "lib/main.dart (Example17)" replace="/(return |;)//g"?>
 ```dart
@@ -1887,7 +1887,7 @@ and a `ConstrainedBox`.
 
 ### 样例 18
 
-{% asset ui/layout/layout-18.png class="mw-100" alt="Example 18 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-18.png' class="mw-100" alt="Example 18 layout">
 
 <?code-excerpt "lib/main.dart (Example18)" replace="/(return |;)//g"?>
 ```dart
@@ -1918,7 +1918,7 @@ the available width.
 
 ### 样例 19
 
-{% asset ui/layout/layout-19.png class="mw-100" alt="Example 19 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-19.png' class="mw-100" alt="Example 19 layout">
 
 <?code-excerpt "lib/main.dart (Example19)" replace="/(return |;)//g"?>
 ```dart
@@ -1950,7 +1950,7 @@ no scaling happens.
 
 ### 样例 20
 
-{% asset ui/layout/layout-20.png class="mw-100" alt="Example 20 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-20.png' class="mw-100" alt="Example 20 layout">
 
 <?code-excerpt "lib/main.dart (Example20)" replace="/(return |;)//g"?>
 ```dart
@@ -1981,7 +1981,7 @@ FittedBox 会尝试根据 `Text` 大小调整大小，
 
 ### 样例 21
 
-{% asset ui/layout/layout-21.png class="mw-100" alt="Example 21 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-21.png' class="mw-100" alt="Example 21 layout">
 
 <?code-excerpt "lib/main.dart (Example21)" replace="/(return |;)//g"?>
 ```dart
@@ -2003,7 +2003,7 @@ and breaks the line so that it fits the screen.
 
 ### 样例 22
 
-{% asset ui/layout/layout-22.png class="mw-100" alt="Example 22 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-22.png' class="mw-100" alt="Example 22 layout">
 
 <?code-excerpt "lib/main.dart (Example22)" replace="/(return |;)//g"?>
 ```dart
@@ -2029,7 +2029,7 @@ and you'll see an error in the console.
 
 ### 样例 23
 
-{% asset ui/layout/layout-23.png class="mw-100" alt="Example 23 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-23.png' class="mw-100" alt="Example 23 layout">
 
 <?code-excerpt "lib/main.dart (Example23)" replace="/(return |;)//g"?>
 ```dart
@@ -2062,7 +2062,7 @@ and any extra space remains empty.
 
 ### 样例 24
 
-{% asset ui/layout/layout-24.png class="mw-100" alt="Example 24 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-24.png' class="mw-100" alt="Example 24 layout">
 
 <?code-excerpt "lib/main.dart (Example24)" replace="/(return |;)//g"?>
 ```dart
@@ -2095,7 +2095,7 @@ the available width of the `Row`. In this case, just like an
 
 ### 样例 25
 
-{% asset ui/layout/layout-25.png class="mw-100" alt="Example 25 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-25.png' class="mw-100" alt="Example 25 layout">
 
 <?code-excerpt "lib/main.dart (Example25)" replace="/(return |;)//g"?>
 ```dart
@@ -2140,7 +2140,7 @@ the original child’s width becomes irrelevant, and is ignored.
 
 ### 样例 26
 
-{% asset ui/layout/layout-26.png class="mw-100" alt="Example 26 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-26.png' class="mw-100" alt="Example 26 layout">
 
 <?code-excerpt "lib/main.dart (Example26)" replace="/(return |;)//g"?>
 ```dart
@@ -2186,7 +2186,7 @@ its children.
 
 ### 样例 27
 
-{% asset ui/layout/layout-27.png class="mw-100" alt="Example 27 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-27.png' class="mw-100" alt="Example 27 layout">
 
 <?code-excerpt "lib/main.dart (Example27)" replace="/(return |;)//g"?>
 ```dart
@@ -2245,7 +2245,7 @@ when sizing themselves.
 
 ### 样例 28
 
-{% asset ui/layout/layout-28.png class="mw-100" alt="Example 28 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-28.png' class="mw-100" alt="Example 28 layout">
 
 <?code-excerpt "lib/main.dart (Example28)" replace="/(return |;)//g"?>
 ```dart
@@ -2287,7 +2287,7 @@ but not bigger than the screen.
 
 ### 样例 29
 
-{% asset ui/layout/layout-29.png class="mw-100" alt="Example 29 layout" %}
+<img src='/assets/images/docs/ui/layout/layout-29.png' class="mw-100" alt="Example 29 layout">
 
 <?code-excerpt "lib/main.dart (Example29)" replace="/(return |;)//g"?>
 ```dart
@@ -2376,7 +2376,7 @@ be as small as it wants. In other words,
 a loose constraint has a **minimum** width and height
 both equal to **zero**:
 
-一个宽松约束换句话来说就是设置了最大宽度/高度，
+一个 **宽松** 约束，换句话来说就是设置了最大宽度/高度，
 但是让允许其子 widget 获得比它更小的任意大小。
 换句话来说，宽松约束的最小宽度/高度为 **0**。
 
@@ -2473,7 +2473,7 @@ Here is an example:
   向下滚动，直到找到 `performLayout()` 方法，
   由该方法执行列布局。
 
-{% asset ui/layout/layout-final.png class="mw-100" alt="A goodbye layout" %}
+<img src='/assets/images/docs/ui/layout/layout-final.png' class="mw-100" alt="A goodbye layout">
 
 
 ---

@@ -138,14 +138,7 @@ debug-test:
 # those will be run on the Github action.
 # Usage: `DISABLE_TESTS=1 make build-image`
 build-image:
-	docker build --no-cache --rm --target builder \
-		--build-arg FIREBASE_ALIAS=${FIREBASE_ALIAS} \
-		--build-arg FIREBASE_TOKEN=${FIREBASE_TOKEN} \
-		--build-arg FLUTTER_BRANCH=${FLUTTER_BRANCH} \
-		--build-arg DISABLE_TESTS=${DISABLE_TESTS} \
-		--build-arg COMMIT=${BUILD_COMMIT} \
-		--build-arg RUBY_VERSION=${RUBY_VERSION} \
-		--build-arg NODE_VERSION=${NODE_VERSION} -t ${BUILD_TAG}:${BUILD_COMMIT} .
+	sh tool/translator/build.sh
 
 # Build the production image and copy site build to local. 
 # This will reset and also clean up after finished. 
@@ -166,28 +159,7 @@ build:
 # is used inside the Github action.
 # Usage: `make deploy`
 deploy:
-ifndef FIREBASE_TOKEN
-	firebase deploy -m ${BUILD_COMMIT} --only hosting
-else
-	firebase use ${FIREBASE_ALIAS}
-	firebase deploy -m ${BUILD_COMMIT} \
-		--only hosting \
-		--non-interactive \
-		--token ${FIREBASE_TOKEN} \
-		--project ${FIREBASE_ALIAS} \
-		--debug \
-		--json
-endif
-
-STAGE_NAME ?= stage
-# All in one command to stage your build to a Firebase 
-# channel on your currently selected project
-# Usage: `make stage STAGE_NAME=foo`
-stage:
-	make build
-	npx firebase hosting:channel:deploy ${STAGE_NAME}
-
-
+	sh tool/translator/deploy-cn.sh
 
 # =================== Utility Commands ==================
 

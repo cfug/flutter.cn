@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-          _发现了错误的拼写或内容？你可以点击页面上的小铅笔图标查看页面源代码，也可以完整填写这个 issue。_
+          > 发现了错误的拼写或内容？你可以点击页面上的小铅笔图标查看页面源代码，也可以完整填写这个 issue。
   - type: input
     id: page-url
     attributes:

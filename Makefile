@@ -166,28 +166,7 @@ build:
 # is used inside the Github action.
 # Usage: `make deploy`
 deploy:
-ifndef FIREBASE_TOKEN
-	firebase deploy -m ${BUILD_COMMIT} --only hosting
-else
-	firebase use ${FIREBASE_ALIAS}
-	firebase deploy -m ${BUILD_COMMIT} \
-		--only hosting \
-		--non-interactive \
-		--token ${FIREBASE_TOKEN} \
-		--project ${FIREBASE_ALIAS} \
-		--debug \
-		--json
-endif
-
-STAGE_NAME ?= stage
-# All in one command to stage your build to a Firebase 
-# channel on your currently selected project
-# Usage: `make stage STAGE_NAME=foo`
-stage:
-	make build
-	npx firebase hosting:channel:deploy ${STAGE_NAME}
-
-
+	sh tool/translator/deploy-cn.sh
 
 # =================== Utility Commands ==================
 

@@ -30,7 +30,7 @@ Subsequent tests might then check the state of
 Flutter 测试框架中使用一个名为 `TestTextInput` 的类来跟踪和操作 widgets 测试中的编辑状态。
 个别测试可以通过方法调用来修改此对象的内部状态，
 有时是间接的（例如通过 `SystemChannels.textInput` 设置自己的处理程序）。
-随后的测试可能会检查 `WidgetTester.testTextInput` 的状态并获得非预期的值。
+在其之后的的测试可能会检查 `WidgetTester.testTextInput` 的状态，拿到不符合预期的值。
 
 ## Description of change
 
@@ -54,7 +54,8 @@ from previous tests and a failure to actually set state
 in cases where it should have been set.
 
 之前依赖于 `WidgetTester.testTextInput` 运行时脏状态的测试必须更新。
-例如，来自 `'Controller can update server'` 测试中的 `packages/flutter/test/material/text_field_test.dart`。
+例如 `packages/flutter/test/material/text_field_test.dart`
+文件中的 `'Controller can update server'` 测试。
 在这之前，其它测试使得 `WidgetTester.testTextInput` 处于脏状态，
 并且在应该设置状态的时候设置状态失败，所以它通过了测试。
 

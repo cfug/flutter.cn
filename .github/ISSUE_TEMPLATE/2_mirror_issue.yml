@@ -1,6 +1,6 @@
 name: 镜像问题
 description: Flutter 中国镜像问题或错误
-title: '[Mirror issue] Problem when using flutter CN mirrors'
+title: '[Mirror issue] 使用 Flutter 中国镜像的问题'
 labels: ['E: 镜像问题']
 assignees:
   - chenglu

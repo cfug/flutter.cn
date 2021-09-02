@@ -1,42 +1,42 @@
-name: Page issue
-description: Help improve a flutter.dev page
+name: 文档或页面问题
+description: 协助改进 flutter.cn 的页面内容
 body:
   - type: markdown
     attributes:
       value: |
-          _Found a typo? You can fix it yourself by going to the page source and clicking the pencil icon. Or finish creating this issue._
+          _发现了错误的拼写或内容？你可以点击页面上的小铅笔图标查看页面源代码，也可以完整填写这个 issue。_
   - type: input
     id: page-url
     attributes:
-      label: Page URL
-      placeholder: "Example: https://flutter.dev/docs"
+      label: 页面 URL
+      placeholder: "例如：https://flutter.cn/docs"
     validations:
       required: true
   - type: input
     id: page-source
     attributes:
-      label: Page source
-      placeholder: (Provided automatically by the in-page bug link)
+      label: 页面源地址
+      placeholder: （通过页面上报问题链接时会自动填充）
     validations:
       required: false
   - type: textarea
     id: problem
     attributes:
-      label: Describe the problem
-      placeholder: A clear and concise description of what's wrong.
+      label: 描述问题
+      placeholder: 清晰且简要地描述问题。
     validations:
       required: true
   - type: textarea
     id: fix
     attributes:
-      label: Expected fix
-      placeholder: A clear and concise description of how you think we should fix the problem.
+      label: 期望如何修复
+      placeholder: 清晰且简要地描述你希望我们如何调整相关内容。
     validations:
       required: false
   - type: textarea
     id: additional-info
     attributes:
-      label: Additional context
-      placeholder: Anything else we should know about the problem?
+      label: 附加信息
+      placeholder: 任何你认为我们需要知道的额外信息。
     validations:
       required: false

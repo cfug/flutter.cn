@@ -93,8 +93,3 @@ RUN cd flutter && \
 
 RUN flutter doctor
 RUN tool/translator/build.sh
-
-# -- Deploy target
-FROM builder AS deploy
-
-RUN tool/translator/deploy-cn.sh

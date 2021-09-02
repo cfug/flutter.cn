@@ -2,7 +2,7 @@ ARG RUBY_VERSION=3
 
 FROM ruby:${RUBY_VERSION}-buster as dev
 
-ENV TZ=US/Pacific
+ENV TZ=Asia/Shanghai
 
 ARG NODE_VERSION=15
 ENV NODE_VERSION=$NODE_VERSION
@@ -92,27 +92,9 @@ RUN cd flutter && \
       git pull
 
 RUN flutter doctor
-RUN bundle exec jekyll build --config _config.yml
-
+RUN tool/translator/build.sh
 
 # -- Deploy target
 FROM builder AS deploy
 
-RUN tool/translator/build.sh
 RUN tool/translator/deploy-cn.sh
-
-# ARG FIREBASE_TOKEN
-# ENV FIREBASE_TOKEN=$FIREBASE_TOKEN
-# ARG FIREBASE_ALIAS=default
-# ENV FIREBASE_ALIAS=${FIREBASE_ALIAS:-default}
-# ARG COMMIT=$(git rev-parse --short HEAD)
-# ENV COMMIT=$COMMIT
-
-# RUN firebase use $FIREBASE_ALIAS
-# RUN firebase deploy -m $COMMIT \
-#       --only hosting \
-#       --non-interactive \
-#       --token $FIREBASE_TOKEN \
-#       --project $FIREBASE_ALIAS \
-#       --debug \
-# 	--json

@@ -138,7 +138,14 @@ debug-test:
 # those will be run on the Github action.
 # Usage: `DISABLE_TESTS=1 make build-image`
 build-image:
-	sh tool/translator/build.sh
+	docker build --no-cache --rm --target builder \
+		--build-arg FIREBASE_ALIAS=${FIREBASE_ALIAS} \
+		--build-arg FIREBASE_TOKEN=${FIREBASE_TOKEN} \
+		--build-arg FLUTTER_BRANCH=${FLUTTER_BRANCH} \
+		--build-arg DISABLE_TESTS=${DISABLE_TESTS} \
+		--build-arg COMMIT=${BUILD_COMMIT} \
+		--build-arg RUBY_VERSION=${RUBY_VERSION} \
+		--build-arg NODE_VERSION=${NODE_VERSION} -t ${BUILD_TAG}:${BUILD_COMMIT} .
 
 # Build the production image and copy site build to local. 
 # This will reset and also clean up after finished. 
@@ -152,6 +159,7 @@ build:
 	docker cp ${BUILD_NAME}:/app/_site _site
 	docker stop ${BUILD_NAME}
 	docker rmi -f ${BUILD_TAG}:${BUILD_COMMIT}
+	sh tool/translator/build.sh
 
 # Deploy the Firebase hosting site from local. 
 # NOTE that if you have a FIREBASE_TOKEN exported or 

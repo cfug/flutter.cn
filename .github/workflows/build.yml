@@ -60,3 +60,5 @@ jobs:
           DISABLE_TESTS: 1
       - name: Deploy
         run: make deploy
+        env:
+          DEPLOY_TOKEN: ${{ secrets.CHENGLU_DEPLOY_KEY }}

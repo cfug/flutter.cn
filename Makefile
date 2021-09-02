@@ -159,7 +159,6 @@ build:
 	docker cp ${BUILD_NAME}:/app/_site _site
 	docker stop ${BUILD_NAME}
 	docker rmi -f ${BUILD_TAG}:${BUILD_COMMIT}
-#	sh tool/translator/build.sh
 
 # Deploy the Firebase hosting site from local. 
 # NOTE that if you have a FIREBASE_TOKEN exported or 
@@ -167,7 +166,7 @@ build:
 # is used inside the Github action.
 # Usage: `make deploy`
 deploy:
-#	sh tool/translator/deploy-cn.sh
+	sh tool/translator/deploy-cn.sh
 
 # =================== Utility Commands ==================
 

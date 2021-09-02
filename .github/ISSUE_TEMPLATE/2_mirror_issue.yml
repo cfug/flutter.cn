@@ -1,0 +1,42 @@
+name: 镜像问题
+description: Flutter 中国镜像问题或错误
+title: '[Mirror issue] Problem when using flutter CN mirrors'
+labels: ['E: 镜像问题']
+assignees:
+  - chenglu
+body:
+  - type: input
+    id: page-url
+    attributes:
+      label: 问题镜像 URL
+      placeholder: '例如：https://pub.flutter-io.cn/packages/args'
+    validations:
+      required: true
+  - type: textarea
+    id: error-content
+    attributes:
+      label: 错误内容截图或 log
+      placeholder: '请使用 `<details>(换行)你的内容(换行)</details>` 嵌套内容。'
+    validations:
+      required: true
+  - type: textarea
+    id: pubspec
+    attributes:
+      label: pubspec.yaml
+      placeholder: '请附上你的 pubspec.yaml 文件内容。'
+    validations:
+      required: false
+  - type: input
+    id: network-env
+    attributes:
+      label: 网络环境
+      placeholder: '内网/公网访问，若为公网访问请说明运营商。'
+    validations:
+      required: false
+  - type: textarea
+    id: flutter-doctor
+    attributes:
+      label: 'flutter doctor -v'
+      placeholder: '请附上 `flutter doctor -v` 的输出内容。'
+    validations:
+      required: false

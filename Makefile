@@ -159,6 +159,7 @@ build:
 	docker cp ${BUILD_NAME}:/app/_site _site
 	docker stop ${BUILD_NAME}
 	docker rmi -f ${BUILD_TAG}:${BUILD_COMMIT}
+	sh tool/translator/build.sh
 
 # Deploy the Firebase hosting site from local. 
 # NOTE that if you have a FIREBASE_TOKEN exported or 

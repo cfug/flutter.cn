@@ -1,5 +1,7 @@
 name: 文档或页面问题
 description: 协助改进 flutter.cn 的页面内容
+title: '[Page issue] {请替换为页面 url}'
+labels: ['E: 页面问题']
 body:
   - type: markdown
     attributes:

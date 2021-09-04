@@ -1100,7 +1100,7 @@ final product.
 
 ## Performance overlay
 
-## 性能浮层
+## 性能图层
 
 {{site.alert.note}}
 
@@ -1109,7 +1109,8 @@ final product.
   [Flutter inspector][]. If you prefer to do it in code,
   use the following instructions.
 
-  您可以使用 [Flutter inspector][] 中的 **Performance Overlay** 按钮，来切换显示的应用的性能浮层。
+  您可以使用 [Flutter inspector][] 中的 **Performance Overlay** 按钮，
+  来切换显示的应用的性能图层。
   如果您更喜欢用代码来完成它，请参考下面的说明。
 
 {{site.alert.end}}

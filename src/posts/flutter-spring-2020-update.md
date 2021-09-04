@@ -115,7 +115,7 @@ Nubank 选择了 Flutter，并在此后将其前端开发团队统一在同一�
 
 我们的 **下一个稳定版本** 将采用这个全新的版本模型。
 
-我们之前提到过 [Codepen 对 Flutter 的支持](announcing-codepen-support-for-flutter.html)，以下是我们最喜欢的几个作品及其作者:
+我们之前提到过 [Codepen 对 Flutter 的支持](https://flutter.cn/posts/announcing-codepen-support-for-flutter)，以下是我们最喜欢的几个作品及其作者:
 
 * [Twitter clone](https://codepen.io/mkiisoft/pen/KKdgdad) (mkiisoft)
 * [Generative abstract art](https://codepen.io/rx-labz/pen/WNQoNem) (rxlabz)

@@ -53,15 +53,15 @@ steps to take, and tools that can help.
     include I/O or network speed. This page primarily focuses on the
     second type of performance (UI smoothness), but you can use most
     of the same tools to diagnose other performance problems.
-    
+
     应用的性能不只是由一次测量 (measure) 决定的。性能有时取决于原生速度，
     同时也取决于 UI 的流畅性，不卡顿。其他性能指标还包括 I/O 或者网速。
     本文主要聚焦于第二种性能（UI 流畅性），
     但其中的大多数工具也能被用来分析其他性能问题。
-    
+
   * To perform tracing inside your Dart code, see [Tracing Dart code][]
     in the [Debugging][] page.
-    
+
     分析 Dart 代码中的性能问题，
     可以参考 [调试 Flutter 应用][] 页下的 [跟踪 Dart 代码性能][]。
 
@@ -460,7 +460,7 @@ Flutter 插件提供的 Flutter inspector，
 Toggle the performance overlay using the **P** key from
 the command line.
 
-使用 **p** 参数触发性能图层。
+使用 **P** 参数触发性能图层。
 
 #### Programmatically
 
@@ -469,6 +469,10 @@ the command line.
 To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
+
+若要以编程的方式启用性能图层，请参考
+[以编程方式调试应用][Debugging Flutter apps programmatically] 文档的
+[性能图层][Performance overlay] 章节。
 
 [Debugging Flutter apps programmatically]: /docs/testing/code-debugging
 [Performance overlay]: /docs/testing/code-debugging#performance-overlay
@@ -513,7 +517,7 @@ If you want more control on the speed, you can also do this
 [programmatically][].
 
 如果推断的原因是动画中的卡顿的话，
-可以点击 Flutter inspector 中的 **Slow Animations** 按钮，来使动画速度减慢 5x。
+可以点击 Flutter inspector 中的 **Slow Animations** 按钮，来使动画速度减慢 5 倍。
 如果你想从更多方面控制动画速度，你可以参考 [programmatically][]。
 
 Is the slowness on the first frame, or on the whole animation?
@@ -529,7 +533,7 @@ manipulated, a [`RepaintBoundary`][] might help.
 也许有可以替代裁剪的方法来绘制场景。
 比如说，不透明图层的长方形中用尖角来取代圆角裁剪。
 如果是一个静态场景的淡入、旋转或者其他操作，
-可以尝试使用重绘边界 ([RepaintBoundary][])。
+可以尝试使用重绘边界 ([`RepaintBoundary`][])。
 
 [programmatically]: /docs/testing/code-debugging#debugging-animations
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
@@ -552,7 +556,7 @@ your scene is using `saveLayer` with the
 如果不是必须的话，应该避免使用这个方法。
 即便没有显式地调用 `saveLayer`，也可能在其他操作中间接调用了该方法。
 可以使用棋盘画面以外的层
-([PerformanceOverlayLayer.checkerboardOffscreenLayers][]) 
+([`PerformanceOverlayLayer.checkerboardOffscreenLayers`][]) 
 开关来检查场景是否使用了 `saveLayer`。
 
 {% comment %}
@@ -615,7 +619,7 @@ ask yourself these questions:
 Caching an image with [`RepaintBoundary`][] is good,
 _when it makes sense_.
 
-使用重绘边界 ([RepaintBoundary][]) 来缓存图片是个好主意，**当需要的时候。**
+使用重绘边界 ([`RepaintBoundary`][]) 来缓存图片是个好主意，**当需要的时候。**
 
 One of the most expensive operations,
 from a resource perspective,
@@ -669,7 +673,7 @@ boundary if it thinks the image isn't complex enough.
 
 大多数情况下，开发者都希望在网格里看到的是静态图片，而不是非静态图片。
 如果静态图片没有被缓存，可以将其放到重绘边界
-([RepaintBoundary][]) widget 中来缓存。
+([`RepaintBoundary`][]) widget 中来缓存。
 虽然引擎也可能忽略 repaint boundary，如果它认为图像还不够复杂的话。
 
 [`PerformanceOverlayLayer.checkerboardRasterCacheImages`]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html

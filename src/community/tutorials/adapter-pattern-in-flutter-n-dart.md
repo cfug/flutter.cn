@@ -303,4 +303,4 @@ class SliverToBoxAdapter extends SingleChildRenderObjectWidget {
 Flutter / Dart 设计模式从南到北 (简称 Flutter 设计模式) 系列内容由 CFUG 社区成员、《Flutter 开发之旅从南到北》作者、小米工程师杨加康撰写并发布在 Flutter 社区公众号和 flutter.cn 网站的社区教程栏目。
 
 我很乐意继续完善本系列中的文章，如果您对本文还有任何疑问或者文章的建议，
-欢迎向中文社区官方 Github 仓库提交 issue 或者直接与我联系，我会及时回复。
+欢迎向中文社区官方 Github 仓库提交 issue 或者直接与我联系（yangjiakay@gmail.com），我会及时回复。

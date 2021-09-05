@@ -14,7 +14,7 @@ toc: true
 
 > 适配器模式可以将不兼容的接口转换为可兼容的接口，让原本由于接口不兼容而不能一起工作的类黏合在一起，最终使他们可以一起工作。
 
-和 [观察者模式](https://mp.weixin.qq.com/s/cDETnQpYkin1qpBWjUW8eg) 中的观察者与被观察者类似，适配器模式中担任主要角色是**适配器（Adapter）**和**被适配者（Adaptee）**。一个比较典型的例子是 USB 转接头可以被认为是一种适配器，可以把网线等本身不适应电脑的接口，通过转接变得可以一起工作。
+和 [观察者模式](https://mp.weixin.qq.com/s/cDETnQpYkin1qpBWjUW8eg) 中的观察者与被观察者类似，适配器模式中担任主要角色是**适配器（Adapter）**和**被适配者（Adaptee）**。一个比较典型的例子是，插座转接头可以被认为是一种适配器，可以把本身不兼容的接口，通过转接变得可以一起工作。
 
 ![](https://cdn.jsdelivr.net/gh/meandni/blogimg@main/img/2021-09-05-002.jpg)
 
@@ -275,10 +275,9 @@ return MaterialApp(
 );
 ```
 
-这里，将 Container 放入 SliverToBoxAdapter 中便可以在 CustomScrollView 展示出来了。
+这里，我们认为将 Container 放入 SliverToBoxAdapter 中便可以在 CustomScrollView 展示出来了。
 
-SliverToBoxAdapter 在其中就扮演了适配器的角色，使用 **类适配器** 的方式，将 SingleChildRenderObjectWidget 中 `createRenderObject` 接口重写转换成可以包含 RenderBox（对应一般 widget 的 RenderObject‘）的 RenderSliver（对应 sliver 系列 widget 的 RenderObject），即这里的 RenderSliverToBoxAdapter：
-
+我们认为普通的 widget 是不兼容 CustomScrollView 的，SliverToBoxAdapter 在其中就扮演了适配器的角色。它使用 **类适配器** 的方式，将 SingleChildRenderObjectWidget 中 `createRenderObject` 接口重写转换成可以包含 RenderBox（对应一般 widget 的 RenderObject‘）的 RenderSliver（对应 sliver 系列 widget 的 RenderObject），即这里的 RenderSliverToBoxAdapter：
 
 ```dart
 class SliverToBoxAdapter extends SingleChildRenderObjectWidget {

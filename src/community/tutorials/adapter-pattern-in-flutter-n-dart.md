@@ -20,9 +20,9 @@ toc: true
 
 在代码世界中，也有很多接口不适配的场景，如我们引入了一个第三方库后，发现它其中的类实现与我们现有代码并不兼容，需要一个 Adapter 类做一层转换才行。另外，相较于直接接触原始的代码实现，这种模式下，客户端仅仅依赖适配器类，对于代码复用和维护性也多了一层保障。
 
-### 类适配器与对象适配器
+## 类适配器与对象适配器
 
-![适配器 UML 图](https://files.flutter-io.cn/posts/community/tutorial/images/2021-09-05-1_2oBi8WnJT31i2E-KaW0rhw.png)
+![适配器模式 UML 图](https://files.flutter-io.cn/posts/community/tutorial/images/2021-09-05-1_2oBi8WnJT31i2E-KaW0rhw.png)
 
 适配器模式有两种实现方式：**类适配器** 和 **对象适配器**。其中，类适配器使用继承关系来实现，而对象适配器使用组合关系来实现。具体的代码实现如下所示。
 
@@ -79,7 +79,7 @@ class Client {
 - 如果 Adaptee 接口很多，而且 Adaptee 和 ITarget 接口定义大部分都相同，那我们推荐使用类适配器，因为 可以充分将继承的代码复用作用利用起来。
 - 大部分场景下，我们推荐使用 **对象适配器** 的方式实现适配器模式，因为 **继承** 在很多情况下容易被 **滥用** 并造成 **层级过多** 的现象，而 **组合** 更加灵活。
 
-### 实现
+## 实现
 
 在代码应用中，适配器模式典型的例子是 Android 中的 ListView，在 Android 中，ListView 作为一个展示列表的 UI 组件，它的主要作用是将用户交给它的 Item View 以列表形式展示出来，然而描述 View 的形式却多种多样，可以是 Android 中 XML 布局，也可以是以 Java 代码中自定义 View 的形式提供，甚至可以是自定义的一套规则，实现自己的 UI 描述语言。
 
@@ -256,7 +256,7 @@ class _VeggieListState extends State<VeggieList> {
 
 同理，不同接口来源的数据都可以通过适配器实现 IVeggiesAdapter 接口与 VeggieList 做兼容。
 
-### Flutter
+## Flutter
 
 在应用中，我们经常会使用到 **CustomScrollView** 创建拥有自定义滚动效果的组件，而 CustomScrollView 只允许包含 sliver 系列组件（SliverAppBar、SliverList、SliverPersistentHeader 等），如果想包含普通的组件，必然需要使用 SliverToBoxAdapter：
 
@@ -294,7 +294,7 @@ class SliverToBoxAdapter extends SingleChildRenderObjectWidget {
 }
 ```
 
-### 拓展阅读
+## 拓展阅读
 
 - 适配器模式：https://refactoringguru.cn/design-patterns/adapter
 - 组合优于继承：https://time.geekbang.org/column/article/169593

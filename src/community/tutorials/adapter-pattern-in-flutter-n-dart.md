@@ -14,7 +14,7 @@ toc: true
 
 > 适配器模式可以将不兼容的接口转换为可兼容的接口，让原本由于接口不兼容而不能一起工作的类黏合在一起，最终使他们可以一起工作。
 
-和 [观察者模式](https://mp.weixin.qq.com/s/cDETnQpYkin1qpBWjUW8eg) 中的观察者与被观察者类似，适配器模式中担任主要角色是**适配器（Adapter）**和**被适配者（Adaptee）**。一个比较典型的例子是，插座转接头可以被认为是一种适配器，可以把本身不兼容的接口，通过转接变得可以一起工作。
+和 [观察者模式](https://mp.weixin.qq.com/s/cDETnQpYkin1qpBWjUW8eg) 中的观察者与被观察者类似，适配器模式中担任主要角色是 **适配器（Adapter）** 和 **被适配者（Adaptee）**。一个比较典型的例子是，插座转接头可以被认为是一种适配器，可以把本身不兼容的接口，通过转接变得可以一起工作。
 
 ![](https://files.flutter-io.cn/posts/community/tutorial/images/2021-09-05-002.jpeg)
 
@@ -24,7 +24,7 @@ toc: true
 
 ![适配器 UML 图](https://files.flutter-io.cn/posts/community/tutorial/images/2021-09-05-1_2oBi8WnJT31i2E-KaW0rhw.png)
 
-适配器模式有两种实现方式：类适配器和对象适配器。其中，类适配器使用继承关系来实现，而对象适配器使用组合关系来实现。具体的代码实现如下所示。
+适配器模式有两种实现方式：**类适配器** 和 **对象适配器**。其中，类适配器使用继承关系来实现，而对象适配器使用组合关系来实现。具体的代码实现如下所示。
 
 ```dart
 /// 被适配者
@@ -38,7 +38,7 @@ abstract class ITarget {
   String operator();
 }
 
-// 对象适配器
+/// 对象适配器
 class ObjectAdapter implements ITarget {
   var adaptee = Adaptee();
 
@@ -47,7 +47,7 @@ class ObjectAdapter implements ITarget {
   }
 }
 
-// 类适配器
+/// 类适配器
 class ClassAdapter extends Adaptee {
   String operator() {
     return super.concreteOperator();
@@ -55,7 +55,7 @@ class ClassAdapter extends Adaptee {
 }
 ```
 
-其中，ITarget 表示要转化成的接口，是一个规范化的接口定义。
+ITarget 表示要转化成的接口，是一个规范化的接口定义。
 Dart 本身不支持关键词 `interface`，因此我们可以创建一个没有默认实现的抽象类代替。
 
 需要被适配的 Adaptee 表示一组不兼容 ITarget 接口定义的类或接口，ObjectAdapter 和 ClassAdapter 两种适配器分别用不同的方式将 Adaptee 转化成了符合 ITarget 接口定义的接口。而在客户端使用时只需要依赖 ITarget 即可完成对 Adaptee 的适配。
@@ -77,7 +77,7 @@ class Client {
 
 - 如果希望你一个适配器可以同时适配多个不同的类，则单继承机制的 Dart 语言无法使用 **类适配器** 实现这种一对多的适配器。
 - 如果 Adaptee 接口很多，而且 Adaptee 和 ITarget 接口定义大部分都相同，那我们推荐使用类适配器，因为 可以充分将继承的代码复用作用利用起来。
-- 大部分场景下，我们推荐使用 **对象适配器** 的方式实现适配器模式，因为 **继承** 在很多情况下容易被**滥用**并造成**层级过多**的现象，而 **组合** 更加灵活。
+- 大部分场景下，我们推荐使用 **对象适配器** 的方式实现适配器模式，因为 **继承** 在很多情况下容易被 **滥用** 并造成 **层级过多** 的现象，而 **组合** 更加灵活。
 
 ### 实现
 
@@ -117,7 +117,7 @@ class _VeggieListState extends State<VeggieList> {
 veggies 数据源并不统一，可能来自多个不同的接口，可能在云端，也可能是本地的假数据，并且不同的接口提供的数据格式也可能不相同，可能是 xml 或者是 json。
 
 ```dart
-// 返回 json 数据格式的接口
+/// 返回 json 数据格式的接口
 class JsonVeggiesApi {
   final String _veggiesJson = '''
   {
@@ -137,7 +137,7 @@ class JsonVeggiesApi {
   }
 }
 
-// 返回 xml 数据格式的接口
+/// 返回 xml 数据格式的接口
 class XmlVeggiesApi {
   final String _contactsXml = '''
   <?xml version="1.0"?>
@@ -217,7 +217,7 @@ class AdapterExample extends StatelessWidget {
 }
 
 
-// 最终的 VeggieList
+/// 最终的 VeggieList
 class VeggieList extends StatefulWidget {
   final IVeggiesAdapter adapter;
 
@@ -277,9 +277,9 @@ return MaterialApp(
 );
 ```
 
-这里，我们认为将 Container 放入 SliverToBoxAdapter 中便可以在 CustomScrollView 展示出来了。
+这里，将 Container 放入 SliverToBoxAdapter 中便可以在 CustomScrollView 展示出来了。
 
-我们认为普通的 widget 是不兼容 CustomScrollView 的，SliverToBoxAdapter 在其中就扮演了适配器的角色。它使用 **类适配器** 的方式，将 SingleChildRenderObjectWidget 中 `createRenderObject` 接口重写转换成可以包含 RenderBox（对应一般 widget 的 RenderObject‘）的 RenderSliver（对应 sliver 系列 widget 的 RenderObject），即这里的 RenderSliverToBoxAdapter：
+我们认为普通的 widget 是不兼容 CustomScrollView 的，SliverToBoxAdapter 在其中就扮演了适配器的角色。它使用 **类适配器** 的方式，将 SingleChildRenderObjectWidget 中 `createRenderObject` 接口重写转换成可以包含 RenderBox（对应一般 widget 的 RenderObject）的 RenderSliver（对应 sliver 系列 widget 的 RenderObject），即这里的 RenderSliverToBoxAdapter：
 
 ```dart
 class SliverToBoxAdapter extends SingleChildRenderObjectWidget {
@@ -304,5 +304,5 @@ class SliverToBoxAdapter extends SingleChildRenderObjectWidget {
 
 Flutter / Dart 设计模式从南到北 (简称 Flutter 设计模式) 系列内容由 CFUG 社区成员、《Flutter 开发之旅从南到北》作者、小米工程师杨加康撰写并发布在 Flutter 社区公众号和 flutter.cn 网站的社区教程栏目。
 
-我很乐意继续完善本系列中的文章，如果您对本文还有任何疑问或者文章的建议，
+我很乐意继续完善本系列的文章，如果您对本文还有任何疑问或者文章的建议，
 欢迎向中文社区官方 Github 仓库提交 issue 或者直接与我联系（yangjiakay@gmail.com），我会及时回复。

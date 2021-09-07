@@ -157,7 +157,7 @@ class XmlVeggiesApi {
 }
 ```
 
-这些接口显然是不能直接应用在 VeggieList 中展示出来的，因此，需要做一些适配工作，适配的目的就是将这些数据转换成 Veggie 对象的数组，因此我们可以定义如下这个接口：
+这些接口显然不能直接应用在 VeggieList 中展示，因此，需要做一些适配工作，适配的目的就是将这些数据转换成 Veggie 对象的数组，因此我们可以定义如下这个接口：
 
 ```dart
 abstract class IVeggiesAdapter {
@@ -167,7 +167,7 @@ abstract class IVeggiesAdapter {
 
 其中的 `getVeggies` 方法返回的就是 VeggieList 组件需要的 Veggie 对象数组。
 
-创建适配器时，只需要实现这个接口，然后组合目标需要被适配的类做接口转换即可，如下这个 JsonnVeggiesAdapter，专门负责将 JsonVeggiesApi 转换为兼容 VeggieList 的适配器：
+创建适配器时，只需要实现这个接口，然后组合目标需要被适配的类做接口转换即可，例如下面的 JsonnVeggiesAdapter，专门负责将 JsonVeggiesApi 转换为兼容 VeggieList 的适配器：
 
 ```dart
 class JsonnVeggiesAdapter implements IVeggiesAdapter {
@@ -197,7 +197,7 @@ class JsonnVeggiesAdapter implements IVeggiesAdapter {
 }
 ```
 
-最终，在使用到 VeggieList 时，注入 JsonnVeggiesAdapter 这个适配器就可以在将原本不兼容的 JsonVeggiesApi 中的数据展示出来了：
+最终，在使用到 VeggieList 时，注入 JsonnVeggiesAdapter 这个适配器就可以将原本不兼容的 JsonVeggiesApi 中的数据展示出来了：
 
 ```dart
 class AdapterExample extends StatelessWidget {

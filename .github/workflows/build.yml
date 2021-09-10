@@ -30,7 +30,7 @@ jobs:
             experimental: true
           - name: "Stable channel"
             channel: stable
-            experimental: false
+            experimental: true
     steps:
       - uses: actions/checkout@v2
       - name: Test

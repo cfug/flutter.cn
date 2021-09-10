@@ -5,8 +5,6 @@ description: How to use Actions and Shortcuts in your Flutter app.
 description: 如何在 Flutter 应用程序中使用操作和快捷方式。
 ---
 
-## Using Actions and Shortcuts
-
 This page describes how to bind physical keyboard events to actions in the user
 interface. For instance, to define keyboard shortcuts in your application, this
 page is for you.
@@ -30,7 +28,7 @@ contexts. An [`Action`][] can be a simple callback (as in the case of
 the[`CallbackAction`][]) or something more complex that integrates with entire
 undo/redo architectures (for example) or other logic.
 
-![Using Shortcuts Diagram][]
+![Using Shortcuts Diagram][]{:width="100%"}
 
 [`Shortcuts`][] are key bindings that activate by pressing a key or combination
 of keys. The key combinations reside in a table with their bound intent. When
@@ -142,7 +140,7 @@ Widget build(BuildContext context) {
   return Shortcuts(
     shortcuts: <LogicalKeySet, Intent>{
       LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyA):
-      SelectAllIntent(),
+          SelectAllIntent(),
     },
     child: Actions(
       dispatcher: LoggingActionDispatcher(),
@@ -150,14 +148,13 @@ Widget build(BuildContext context) {
         SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
-        builder: (BuildContext context) =>
-            TextButton(
-              child: const Text('SELECT ALL'),
-              onPressed: Actions.handler<SelectAllIntent>(
-                context,
-                SelectAllIntent(),
-              ),
-            ),
+        builder: (BuildContext context) => TextButton(
+          child: const Text('SELECT ALL'),
+          onPressed: Actions.handler<SelectAllIntent>(
+            context,
+            SelectAllIntent(),
+          ),
+        ),
       ),
     ),
   );
@@ -199,8 +196,9 @@ you could make a `LoggingShortcutManager`:
 ```dart
 class LoggingShortcutManager extends ShortcutManager {
   @override
-  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event, {LogicalKeySet? keysPressed}) {
-    final KeyEventResult result = super.handleKeypress(context, event, keysPressed: keysPressed);
+  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event) {
+    final KeyEventResult result =
+        super.handleKeypress(context, event);
     if (result == KeyEventResult.handled) {
       print('Handled shortcut $event in $context');
     }
@@ -229,6 +227,7 @@ provided model:
 ```dart
 class SelectAllAction extends Action<SelectAllIntent> {
   SelectAllAction(this.model);
+
   final Model model;
 
   @override
@@ -276,7 +275,8 @@ For instance, to find an action associated with an intent, you can use:
 
 <?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (MaybeFindExample)"?>
 ```dart
-Action<SelectAllIntent>? selectAll = Actions.maybeFind<SelectAllIntent>(context);
+Action<SelectAllIntent>? selectAll =
+    Actions.maybeFind<SelectAllIntent>(context);
 ```
 
 This returns an `Action` associated with the `SelectAllIntent` type if one is
@@ -299,7 +299,8 @@ Combine that into one call with the following:
 
 <?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (MaybeInvokeExample)"?>
 ```dart
-Object? result = Actions.maybeInvoke<SelectAllIntent>(context, SelectAllIntent());
+Object? result =
+    Actions.maybeInvoke<SelectAllIntent>(context, SelectAllIntent());
 ```
 
 Sometimes you want to invoke an action as a result of pressing a button or
@@ -376,10 +377,10 @@ If you want a log of all the actions invoked, however, you can create your own
 class LoggingActionDispatcher extends ActionDispatcher {
   @override
   Object? invokeAction(
-      covariant Action<Intent> action,
-      covariant Intent intent, [
-        BuildContext? context,
-      ]) {
+    covariant Action<Intent> action,
+    covariant Intent intent, [
+    BuildContext? context,
+  ]) {
     print('Action invoked: $action($intent) from $context');
     super.invokeAction(action, intent, context);
   }
@@ -470,11 +471,13 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                 ),
                 IconButton(
                   icon: const Icon(Icons.copy),
-                  onPressed: Actions.handler<CopyIntent>(context, const CopyIntent()),
+                  onPressed:
+                      Actions.handler<CopyIntent>(context, const CopyIntent()),
                 ),
                 IconButton(
                   icon: const Icon(Icons.select_all),
-                  onPressed: Actions.handler<SelectAllIntent>(context, const SelectAllIntent()),
+                  onPressed: Actions.handler<SelectAllIntent>(
+                      context, const SelectAllIntent()),
                 ),
                 const Spacer(),
               ],
@@ -489,7 +492,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
 /// A ShortcutManager that logs all keys that it handles.
 class LoggingShortcutManager extends ShortcutManager {
   @override
-  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event, {LogicalKeySet? keysPressed}) {
+  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event) {
     final KeyEventResult result = super.handleKeypress(context, event);
     if (result == KeyEventResult.handled) {
       print('Handled shortcut $event in $context');
@@ -596,8 +599,10 @@ class MyApp extends StatelessWidget {
         manager: LoggingShortcutManager(),
         shortcuts: <LogicalKeySet, Intent>{
           LogicalKeySet(LogicalKeyboardKey.escape): const ClearIntent(),
-          LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyC): const CopyIntent(),
-          LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyA): const SelectAllIntent(),
+          LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyC):
+              const CopyIntent(),
+          LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyA):
+              const SelectAllIntent(),
         },
         child: const CopyableTextField(title: title),
       ),

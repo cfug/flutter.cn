@@ -102,10 +102,12 @@
         - title: 用户界面 (UI) 进阶
           permalink: /docs/development/ui/advanced
           children:
-            - title: 滑动效果 (Slivers)
-              permalink: /docs/development/ui/advanced/slivers
+            - title: 使用 Actions 和 shortcuts [新增]
+              permalink: /docs/development/ui/advanced/actions_and_shortcuts
             - title: 手势
               permalink: /docs/development/ui/advanced/gestures
+            - title: 滑动效果 (Slivers)
+              permalink: /docs/development/ui/advanced/slivers
             - title: 闪屏页
               permalink: /docs/development/ui/advanced/splash-screen
         - title: 核心 Widget 目录
@@ -313,6 +315,8 @@
       match-page-url-exactly: true
     - title: 应用大小
       permalink: /docs/perf/app-size
+    - title: Deferred components [NEW]
+      permalink: /docs/perf/deferred-components
 #    - title: Memory
 #      permalink: /docs/perf/memory
 #    - title: Power usage

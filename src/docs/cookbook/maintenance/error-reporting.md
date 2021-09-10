@@ -188,12 +188,12 @@ Extensive documentation about using the Sentry SDK can be found on [Sentry's sit
 ## 完整样例
 
 To view a working example,
-see the [Crashy][] example app.
+see the [Sentry flutter example][] app.
 
-查看 [Crashy][] 示例应用，体验完整流程。
+查看 [Sentry flutter example][] 示例应用，体验完整流程。
 
 
-[Crashy]: {{site.github}}/flutter/crashy
+[Sentry flutter example]: https://github.com/getsentry/sentry-dart/tree/main/flutter/example
 [Create an account with Sentry]: https://sentry.io/signup/
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/

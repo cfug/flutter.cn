@@ -20,7 +20,15 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-### 尚未发布稳定版
+### 尚未推进到稳定版
+
+TBD
+
+待定
+
+
+### Released in Flutter 2.5
+### 已经在 Flutter 2.5 中发布
 
 * [Default drag scrolling devices][]
 
@@ -30,41 +38,52 @@ release, and listed in alphabetical order:
 
   [v2.2 版本废弃的 API][Deprecated API removed after v2.2]
 
-* [Introducing package:flutter_lints][]
+* [Change the enterText method to move the caret to the end of the input text][]
 
-  [引入 flutter_lints package][Introducing package:flutter_lints]
-
-* [ThemeData's accent properties have been deprecated][]
-
-  [弃用 ThemeData 的强调属性][ThemeData's accent properties have been deprecated]
+  [改变 enterText 方法，将光标移到输入文本的末端][Change the enterText method to move the caret to the end of the input text]
 
 * [GestureRecognizer Cleanup][]
 
   [GestureRecognizer 代码整理][GestureRecognizer Cleanup]
 
+* [Introducing package:flutter_lints][]
+
+  [引入 flutter_lints package][Introducing package:flutter_lints]
+
 * [Replace AnimationSheetBuilder.display with collate][]
 
   [将 AnimationSheetBuilder.display 替换为 collate][Replace AnimationSheetBuilder.display with collate]
+
+* [ThemeData's accent properties have been deprecated][]
+
+  [弃用 ThemeData 的强调属性][ThemeData's accent properties have been deprecated]
+
+* [Transition of platform channel test interfaces to flutter_test package][]
+
+  [平台通道测试接口向 flutter_test package 过渡][Transition of platform channel test interfaces to flutter_test package]
 
 * [Using HTML slots to render platform views in the web][]
 
   [使用 HTML 在 Web 中渲染平台视图 (platform views)][Using HTML slots to render platform views in the web]
 
 
+[Change the enterText method to move the caret to the end of the input text]: /docs/release/breaking-changes/enterText-trailing-caret
 [Default drag scrolling devices]: /docs/release/breaking-changes/default-scroll-behavior-drag
 [Deprecated API removed after v2.2]: /docs/release/breaking-changes/2-2-deprecations
-[GestureRecognizer Cleanup]: /docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer
+[GestureRecognizer cleanup]: /docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer
 [Introducing package:flutter_lints]: /docs/release/breaking-changes/flutter-lints-package
+[Replace AnimationSheetBuilder.display with collate]: /docs/release/breaking-changes/animation-sheet-builder-display
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
+[Transition of platform channel test interfaces to flutter_test package]: /docs/release/breaking-changes/"mock-platform-channels
 [Using HTML slots to render platform views in the web]: /docs/release/breaking-changes/platform-views-using-html-slots-web
 
-### Reverted changes
+### Reverted change in 2.2
 
-### 回退改动
+### 在 2.2 版本中回退的改动
 
-The following breaking changes have been reverted.
+The following breaking change was reverted in release 2.2:
 
-以下重要改动已被回退。
+以下重要改动在 Flutter 2.2 中已被回退。
 
 <b>[Network Policy on iOS and Android][]</b>
 <br/>  Introduced in version: 2.0.0<br>

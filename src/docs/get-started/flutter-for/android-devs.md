@@ -237,7 +237,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -354,7 +354,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -465,15 +465,15 @@ class FadeAppTest extends StatelessWidget {
 }
 
 class MyFadeTest extends StatefulWidget {
-  MyFadeTest({Key key, this.title}) : super(key: key);
+  MyFadeTest({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
   _MyFadeTest createState() => _MyFadeTest();
 }
 
 class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
-  AnimationController controller;
-  CurvedAnimation curve;
+  late AnimationController controller;
+  late CurvedAnimation curve;
 
   @override
   void initState() {
@@ -561,14 +561,13 @@ class Signature extends StatefulWidget {
 }
 
 class SignatureState extends State<Signature> {
-  List<Offset> _points = <Offset>[];
+  List<Offset?> _points = <Offset>[];
   Widget build(BuildContext context) {
     return GestureDetector(
       onPanUpdate: (DragUpdateDetails details) {
         setState(() {
-          RenderBox referenceBox = context.findRenderObject();
-          Offset localPosition =
-              referenceBox.globalToLocal(details.globalPosition);
+          RenderBox? referenceBox = context.findRenderObject() as RenderBox;
+          Offset localPosition = referenceBox.globalToLocal(details.globalPosition);
           _points = List.from(_points)..add(localPosition);
         });
       },
@@ -583,7 +582,7 @@ class SignatureState extends State<Signature> {
 
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
-  final List<Offset> points;
+  final List<Offset?> points;
   void paint(Canvas canvas, Size size) {
     var paint = Paint()
       ..color = Colors.black
@@ -591,7 +590,7 @@ class SignaturePainter extends CustomPainter {
       ..strokeWidth = 5.0;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null)
-        canvas.drawLine(points[i], points[i + 1], paint);
+        canvas.drawLine(points[i]!, points[i + 1]!, paint);
     }
   }
 
@@ -882,7 +881,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -991,7 +990,7 @@ using `async`/`await` and letting Dart do the heavy lifting:
 <!-- skip -->
 ```dart
 Future<void> loadData() async {
-  String dataURL = 'https://jsonplaceholder.typicode.com/posts';
+  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   http.Response response = await http.get(dataURL);
   setState(() {
     widgets = jsonDecode(response.body);
@@ -1033,7 +1032,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -1071,7 +1070,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    String dataURL = 'https://jsonplaceholder.typicode.com/posts';
+    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     http.Response response = await http.get(dataURL);
     setState(() {
       widgets = jsonDecode(response.body);
@@ -1125,7 +1124,7 @@ and `await` on long-running tasks inside the function:
 <!-- skip -->
 ```dart
 Future<void> loadData() async {
-  String dataURL = 'https://jsonplaceholder.typicode.com/posts';
+  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   http.Response response = await http.get(dataURL);
   setState(() {
     widgets = jsonDecode(response.body);
@@ -1260,7 +1259,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -1398,7 +1397,7 @@ import 'package:http/http.dart' as http;
 // ...
 
 Future<void> loadData() async {
-  String dataURL = 'https://jsonplaceholder.typicode.com/posts';
+  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   http.Response response = await http.get(dataURL);
   setState(() {
     widgets = jsonDecode(response.body);
@@ -1457,7 +1456,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -1512,7 +1511,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    String dataURL = 'https://jsonplaceholder.typicode.com/posts';
+    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     http.Response response = await http.get(dataURL);
     setState(() {
       widgets = jsonDecode(response.body);
@@ -2250,7 +2249,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -2313,7 +2312,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -2403,7 +2402,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -2480,7 +2479,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -2694,7 +2693,7 @@ class SampleApp extends StatelessWidget {
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();

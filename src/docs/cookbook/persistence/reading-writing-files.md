@@ -180,47 +180,6 @@ Future<int> readCounter() async {
 }
 ```
 
-## Testing
-
-## 测试
-
-To test code that interacts with files, you need to mock calls to
-the `MethodChannel`&mdash;the class that
-communicates with the host platform. For security reasons,
-you can't directly interact with the file system on a device,
-so you interact with the test environment's file system.
-
-为了测试代码与文件的交互情况，你需要对 `MethodChannel` 发起模拟调用。
-`MethodChannel` 是 Flutter 用于与主平台通信的类。
-出于安全起见，在这些测试中是无法与设备上的文件系统进行交互的，
-你将会与测试环境的文件系统进行交互。
-
-To mock the method call, provide a `setupAll()` function in the test file.
-This function runs before the tests are executed.
-
-要模拟方法调用，请在测试文件中提供 `setupAll` 函数。
-这样会先运行这个函数，然后再执行测试。
-
-<?code-excerpt "test/widget_test.dart (setUpAll)"?>
-```dart
-setUpAll(() async {
-
-  // Create a temporary directory. (提供一个临时文件夹作为工作空间)
-  final directory = await Directory.systemTemp.createTemp();
-
-  // Mock out the MethodChannel for the path_provider plugin. (为 path_provider 插件提供一个模拟的 MethodChannel)  
-  const MethodChannel('plugins.flutter.io/path_provider')
-      .setMockMethodCallHandler((MethodCall methodCall) async {
-    // If you're getting the apps documents directory, return the path to the
-    // temp directory on the test environment instead. (如果您要获取应用的 Documents 目录，请返回测试环境中的临时目录的路径)
-    if (methodCall.method == 'getApplicationDocumentsDirectory') {
-      return directory.path;
-    }
-    return null;
-  });
-});
-```
-
 ## Complete example
 
 ## 完整样例

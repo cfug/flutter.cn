@@ -185,6 +185,19 @@ controls the headers on an HTTP request.
 请注意，安全方面的工作有所不同，
 因为浏览器（而不是应用程序）控制 HTTP 请求上的标头。
 
+### How do I handle web-specific imports?
+
+### 我应该如何处理一个 Web 平台特定的导入？
+
+Some plugins require platform-specific imports, particularly if they use the
+file system, which is not accessible from the browser. To use these plugins
+in your app, see the [documentation for conditional imports][]
+on [dart.dev][].
+
+部分插件需要在特定平台导入库或者文件，尤其是当使用浏览器无法访问的文件系统时。
+若要在你的应用里使用这些插件，请参阅 Dart 文档：
+[选择性的导入][documentation for conditional imports]。
+
 ### How do I embed a Flutter web app in a web page?
 
 ### 我该如何把一个 Flutter web 应用嵌入到一个网页中？
@@ -307,4 +320,5 @@ Flutter 团队的工程师会经常阅读和互动。
 [write your own plugins]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [run your web apps in any supported browser]: /docs/get-started/web#create-and-run
 [Integration testing]: /docs/testing/integration-tests#running-in-a-browser
-[internationalizing a Flutter mobile app]: https://flutter.dev/docs/resources/faq#how-do-i-do-internationalization-i18n-localization-l10n-and-accessibility-a11y-in-flutter
+[internationalizing a Flutter mobile app]: /docs/resources/faq#how-do-i-do-internationalization-i18n-localization-l10n-and-accessibility-a11y-in-flutter
+[documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files

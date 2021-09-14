@@ -50,7 +50,7 @@ your development environment must meet these minimum requirements:
 
 {{site.alert.end}}
 
-{% include_relative _get-sdk.md %}
+{% include_relative _get-sdk-mac.md %}
 
 {% include_relative _path-mac.md %}
 

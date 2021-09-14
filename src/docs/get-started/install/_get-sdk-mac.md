@@ -1,11 +1,3 @@
-{% if os == 'linux' -%}
-  {% assign unzip = 'tar xf' -%}
-  {% assign file_ext = '.tar.xz' -%}
-{% else -%}
-  {% assign unzip = 'unzip' -%}
-  {% assign file_ext = '.zip' -%}
-{% endif -%}
-
 ## Get the Flutter SDK {#get-sdk}
 
 ## 获取 Flutter SDK {#get-sdk}
@@ -32,37 +24,15 @@
 
       {% prettify shell %}
       $ cd ~/development
-      $ {{unzip}} ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}[[/end]]
+      $ unzip ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip[[/end]]
       {% endprettify %}
     {% endcomment -%}
 
     ```terminal
     $ cd ~/development
-    $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
+    $ unzip ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip
     ```
     
-    If you don't want to install a fixed version of the installation bundle, 
-    you can skip steps 1 and 2. 
-    Instead, get the source code from the [Flutter repo][]
-    on GitHub with the following command:
-    
-    如果你不想安装固定版本的安装包，你可以跳过步骤 1 和 2。
-    或者是从 GitHub 上的 [Flutter repo][] 获取源代码，
-    并根据需要更改分支或标签。
-    
-    ```terminal
-    $ git clone https://github.com/flutter/flutter.git
-    ```
-    
-    You can also change branches or tags as needed.
-    For example, to get just the stable version:
-    
-    你也可以根据需要切换选择分支，比如用下面的参数获得稳定版本：
-    
-    ```terminal
-    $ git clone https://github.com/flutter/flutter.git -b stable --depth 1
-    ```
-
  1. Add the `flutter` tool to your path:
 
     配置 `flutter` 的 PATH 环境变量：
@@ -79,35 +49,9 @@
     这个命令配置了 `PATH` 环境变量，且只会在你 **当前** 命令行窗口中生效。
     如果想让它永久生效，请查看 [更新 PATH 环境变量][Update your path]。
     
- 4. Optionally, pre-download development binaries:
-    
-    开发二进制文件预下载（可选操作）
-
-    The `flutter` tool downloads platform-specific development binaries as
-    needed. For scenarios where pre-downloading these artifacts is preferable
-    (for example, in hermetic build environments,
-    or with intermittent network availability), iOS
-    and Android binaries can be downloaded ahead of time by running:
-    
-    `flutter` 命令行工具会下载不同平台的开发二进制文件，
-    如果需要一个封闭式的构建环境，
-    或在网络可用性不稳定的情况下使用等情况，
-    你可能需要通过下面这个命令预先下载
-    iOS 和 Android 的开发二进制文件：
-
-
-    ```terminal
-    $ flutter precache
-    ```
-
-    For additional download options, see `flutter help precache`.
-    
-    更多使用方式，请使用 `flutter help precache` 命令查看。
-
 You are now ready to run Flutter commands!
 
 现在你可以愉快地运行 Flutter 的命令行啦！
-
 
 {{site.alert.note}}
 
@@ -118,11 +62,9 @@ You are now ready to run Flutter commands!
 
 {{site.alert.end}}
 
-
 ### Run flutter doctor
 
 ### 运行 flutter doctor 命令
-
 
 Run the following command to see if there are any dependencies you need to
 install to complete the setup (for verbose output, add the `-v` flag):
@@ -153,7 +95,7 @@ For example:
     • Android SDK at /Users/obiwan/Library/Android/sdk
     <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
     • Try re-installing or updating your Android SDK,
-      visit https://flutter.dev/setup/#android-setup for detailed instructions.
+      visit {{site.url}}/setup/#android-setup for detailed instructions.
 </pre>
 
 The following sections describe how to perform these tasks and finish the setup
@@ -163,28 +105,6 @@ process.
 
 Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you’ve set everything up correctly.
-
-当你安装了任一缺失部分的依赖后，
-可以再次运行 `flutter doctor` 命令来确认是否成功安装。
-
-### Downloading and installing with Homebrew
-
-### 使用 Homebrew 下载和安装
-
-If you have Homebrew installed on your machine,
-you can install Flutter using the following command:
-
-如果你的设备安装了 Homebrew，你可以使用下面的命令安装 Flutter：
-
-```terminal
-$ brew install --cask flutter
-```
-
-Then, run `flutter doctor`. That lets you know if there are
-other dependencies you need to install to use Flutter, such as the Android SDK.
-
-接着运行 `flutter doctor`，查看是否有其他 Flutter 依赖需要下载，
-例如 Android SDK。
 
 ### Downloading straight from GitHub instead of using an archive
 

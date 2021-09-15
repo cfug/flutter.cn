@@ -384,7 +384,7 @@ and a `Column` widget to arrange widgets vertically.
 
    * `Row` and `Column` each take a list of child widgets.
 
-    `Row` 和 `Column` 每个都有一个子 widgets 列表。
+     `Row` 和 `Column` 每个都有一个子 widgets 列表。
 
   * A child widget can itself be a `Row`, `Column`,
     or other complex widget.

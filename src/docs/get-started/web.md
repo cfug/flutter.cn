@@ -97,11 +97,19 @@ $ flutter upgrade
 ```
 
 {{site.alert.warning}}
+
   Running `flutter channel stable` replaces your current version of Flutter
   with the stable version and can take time if your connection is slow.
   After this, running `flutter upgrade` upgrades your install to the latest
  `stable`.  Returning to another channel (beta, dev, or master) requires calling
  `flutter channel <channel>` explicitly.
+  
+  运行 `flutter channel stable` 命令将你当前的 Flutter 版本切换到稳定版的时候，
+  如果你的网络连接速度有限，这个时间可能会很久。
+  在此之后，运行命令 `flutter upgrade` 命令就会 Flutter 版本切换到稳定版渠道。
+  如果需要切到其他渠道 (beta、dev 或者 master) 的时候，需要重新通过命令行切换
+  `flutter channel <channel>`。
+ 
 {{site.alert.end}}
 
 If Chrome is installed,
@@ -123,6 +131,8 @@ Chrome (web) • chrome • web-javascript • Google Chrome 88.0.4324.150
 
 In your IDE, you should see **Chrome (web)** in the device pulldown.
 
+在你的 IDE 中，你应该可以在设备下拉列表里看到 **Chrome (web)**。
+
 ### Create and run
 
 ### 创建和运行
@@ -132,7 +142,7 @@ than [creating a new Flutter project][] for other platforms.
 
 #### IDE
 
-### 集成开发环境 (IDE) 配置
+#### 集成开发环境 (IDE) 配置
 
 Create a new app in your IDE and it automatically
 creates iOS, Android, and web versions of your app.

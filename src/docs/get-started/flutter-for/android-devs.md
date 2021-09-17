@@ -1546,7 +1546,7 @@ expresses the ratio of physical pixels in a single logical pixel.
 Flutter 遵循一个简单的类似 iOS 的密度相关的格式。
 文件可以是一倍 (`1.0x`)、两倍 (`2.0x`)、三倍 (`3.0x`) 或其它的任意倍数。
 Flutter 没有 `dp` 单位，但是有逻辑像素尺寸，基本和设备无关的像素尺寸是一样的。
-名称为 [devicePixelRatio][] 的尺寸表示在单一逻辑像素标准下设备物理像素的比例。
+名称为 [`devicePixelRatio`][] 的尺寸表示在单一逻辑像素标准下设备物理像素的比例。
 
 The equivalent to Android's density buckets are:
 

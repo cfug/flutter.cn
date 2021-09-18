@@ -119,7 +119,7 @@ However, hummingbirds are pointed and angular
 and we wanted a cuddly plushy, so we chose a round
 hummingbird.
 
-然而，又尖又不圆润的蜂鸟无法作为毛茸茸且可爱的玩具，
+然而，又尖又有棱有角的蜂鸟无法作为毛茸茸的可爱玩具，
 所以我们最终选择了圆润的蜂鸟。
 
 Shams specified which color would go where,
@@ -127,7 +127,7 @@ the tail shape, the tuft of hair, the eyes...all the
 little details. The vendor sent the specs to two
 manufacturers who returned the prototypes some weeks later.
 
-Shams 为 Dash 指定了颜色的应用反问、尾巴的形状、一小簇头发、眼睛以及其他小细节。
+Shams 为 Dash 指定了颜色的应用范围、尾巴的形状、一小簇头发、眼睛以及其他小细节。
 供应商将这些细则发给两个制造商后，他们在几周后送回了毛绒玩具的原型。
 
 ![The first Dash prototypes](/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes](/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
@@ -149,7 +149,7 @@ Many boxes of Dash plushies arrived in
 southern California just in time for the conference.
 They were eagerly adopted by Dart _and_ Flutter enthusiasts.
 
-在会议开始前，许多箱 Dash 毛绒玩具赶上了会议开始的时间，送到了南加州。
+许多箱 Dash 毛绒玩具赶在会议开始前送到了南加州。
 它们受到了大量 **Dart 和 Flutter** 爱好者的喜爱。
 
 The people have spoken,
@@ -185,12 +185,12 @@ Dash 2.0 and 2.1
 
 ## Dash facts
 
-## 有关 Dart 的信息
+## 有关 Dash 的信息
 
 * Dash is female, but she doesn't mind
   being called _they_, _their_, _he_, or _him_.
 
-  Dart 是位女性，但她并不在意被称呼为 **它** 或 **他**。
+  Dash 是位女性，但她并不在意被称呼为 **它** 或 **他**。
 
 * Dash has an [Instagram account][].
 

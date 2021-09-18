@@ -531,7 +531,7 @@ when developing an app including a platform view.
 在 iOS 平台上，assets 资源文件通过 [`mainBundle`][] 读取。
 通过 [`pathForResource:ofType:`][] 的 `lookupKeyForAsset` 
 或者 `lookupKeyForAsset:fromPackage:` 方法获取文件路径，
-同样，[FlutterViewController][] 的 `lookupKeyForAsset:` 
+同样，[`FlutterViewController`][] 的 `lookupKeyForAsset:` 
 或者 `lookupKeyForAsset:fromPackage:` 方法也可以获取文件路径。
 开发插件时可以使用 `FlutterPluginRegistrar`，
 而开发应用程序使用平台视图时， `FlutterViewController` 是最好的选择。
@@ -559,7 +559,7 @@ The [`ios_platform_images`][] plugin on pub.dev wraps
 up this logic in a convenient category. You fetch
 an image as follows:
 
-pub.dev 上的 [ios_platform_images][] plugin 将这些逻辑封装成方便的类别。
+pub.dev 上的 [`ios_platform_images`][] plugin 将这些逻辑封装成方便的类别。
 它允许编写：
 
 **Objective-C:**

@@ -710,9 +710,9 @@ Create a new [`BorderRadius`][]
 object that specifies the radius for rounding each corner.
 
 在矩形上实现圆角，请用
-[BoxDecoration][]
+[`BoxDecoration`][]
 对象的 `borderRadius` 属性。新建一个
-[BorderRadius][]
+[`BorderRadius`][]
 对象来指定每个圆角的半径大小。
 
 <div class="lefthighlight">
@@ -787,7 +787,7 @@ to customize the shadow depth, color, and so on.
 
 在 Flutter 中，每个属性与其取值都是单独指定的。
 请使用 BoxDecoration 的 `boxShadow` 属性来生成一系列
-[BoxShadow][]
+[`BoxShadow`][]
 widget。你可以定义一个或多个
 BoxShadow widget，这些 widget 共同用于设置阴影深度、颜色等等。
 

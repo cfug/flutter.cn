@@ -136,7 +136,7 @@ whose value is adjusted by a [`Curve`][].
 例如，你可以创建一个 [`ReverseAnimation`][]，
 效果是复制一个动画但是将其反向运行（比如从 1.0 到 0.0）。
 同样，你可以创建一个 [`CurvedAnimation`][]，
-效果是用 [curve][] 来调整动画的值。
+效果是用 [`Curve`][] 来调整动画的值。
 
 ## Tweens
 

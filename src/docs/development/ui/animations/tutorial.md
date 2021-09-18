@@ -159,7 +159,7 @@ An `Animation` object knows nothing about rendering or
 A [`CurvedAnimation`][] defines the animation's progress
 as a non-linear curve.
 
-[CurvedAnimation][] 定义动画进程为非线性曲线。
+[`CurvedAnimation`][] 定义动画进程为非线性曲线。
 
 <?code-excerpt "animate5/lib/main.dart (CurvedAnimation)"?>
 ```dart
@@ -1188,7 +1188,7 @@ in the bullet points above.
     commonly used curves that you can
     use with a [`CurvedAnimation`][].
     
-    [Curves][] 类定义了一列常用的曲线，您可以配合 [CurvedAnimation][] 来使用。
+    [`Curves`][] 类定义了一列常用的曲线，您可以配合 [`CurvedAnimation`][] 来使用。
     
 {{site.alert.end}}
 
@@ -1215,7 +1215,7 @@ opacity animates from transparent to opaque.
   这个示例展示了如何在同一个动画控制器中使用复合补间动画，
   每个补间动画控制一个动画的不同效果。
   仅用于说明目的。如果您需要在代码中加入渐变不透明度和尺寸效果，
-  可能需要用 [FadeTransition][] 和 [SizeTransition][] 来代替。
+  可能需要用 [`FadeTransition`][] 和 [`SizeTransition`][] 来代替。
   
 {{site.alert.end}}
 

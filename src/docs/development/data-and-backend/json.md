@@ -227,7 +227,7 @@ By looking at the [`dart:convert`][] documentation,
 you'll see that you can decode the JSON by calling the
 `jsonDecode()` function, with the JSON string as the method argument.
 
-通过查阅 [dart:convert][] 文档，
+通过查阅 [`dart:convert`][] 文档，
 你会看到你可以将 JSON 字符串作为方法的参数，
 调用 `jsonDecode()` 方法来解码 JSON。
 

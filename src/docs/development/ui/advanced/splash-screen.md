@@ -86,7 +86,7 @@ initializes.
   time associated with initialization of the Flutter engine.
 
   对于集成了多个 Flutter 内容的 Android 应用，可以考虑
-  [预热 FlutterEngine][pre-warming a FlutterEngine]
+  [预热 `FlutterEngine`][pre-warming a `FlutterEngine`]
   以及在整个应用中复用同一个 Flutter 引擎，
   以减少初始化的等待时间。
 

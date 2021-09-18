@@ -7,13 +7,22 @@ description: 了解关于 Flutter 和 Dart 的吉祥物 Dash 的内容。
 
 This is Dash:
 
+这是 Dash：
+
 ![Dash by herself](/assets/images/dash/Dash.png){:width="50%"}<br>
 
 Dash is the mascot for the Dart language and the Flutter framework.
 
+Dash 是 Dart 语言和 Flutter 框架的吉祥物。
+
 {{site.alert.note}}
+
   You can now make your **own** digital Dash using
   [Dashatar][], a Flutter app for web and mobile!
+
+  你可以通过 [Dashatar][] 这个网页端和移动端的
+  Flutter 应用定制 **你自己的** Dash 虚拟形象。
+
 {{site.alert.end}}
 
 ![A sample of Dashatars](/assets/images/dash/Dashatars.png){:width="100%"}<br>
@@ -24,6 +33,8 @@ Dash is the mascot for the Dart language and the Flutter framework.
 
 ## How did it all start?
 
+## Dash 的由来？
+
 As soon as Shams Zakhour started working as a
 Dart writer at Google in December 2013,
 she started advocating for a Dart mascot.
@@ -31,6 +42,13 @@ After documenting Java for 14 years, she
 had observed how beloved the Java mascot,
 [Duke][], had become,
 and she wanted something similar for Dart.
+
+Shams Zakhour 从 2013 年 12 月
+在 Google 担任 Dart 作者的职务开始，
+她就一直在倡导推进 Dart 的吉祥物。
+在为 Java 撰写了 14 年的文档后，
+她发现 Java 的吉祥物 [Duke][] 十分受欢迎，
+从而希望让 Dart 也拥有类似的东西。
 
 [Duke]: https://www.oracle.com/java/duke.html
 
@@ -41,6 +59,12 @@ The Flutter VP at the time, Joshy Joseph,
 approved the idea and asked the
 organizer for the [2018 Dart Conference][],
 Linda Rasmussen, to make it happen.
+
+但这个想法直到 2017 年才取得了实质性的进展，
+当时一位 Flutter 工程师 Nina Chen 在内部邮件中提出推动这个想法。
+时任副总裁 Joshy Joseph 批准了这个想法，
+并将其指派给了 [2018 年度 Dart 会议][2018 Dart Conference]
+的组织者 Linda Rasmussen 进行落地。
 
 [2018 Dart Conference]: https://events.dartlang.org/2018/dartconf/
 
@@ -55,25 +79,39 @@ who could work within an aggressive deadline
 and started the process of creating
 the specs for the plushy.
 
+Shams 在知晓这个计划后，立刻找到了 Linda，
+希望带领这个项目进行推动，并在会议上公开和生产毛绒玩具。
+Linda 早前已经设计出了一些草图，她将这些草图移交给了 Shams。
+有了这些草图后，Shams 找到了一家可以在截止日期前（赶在农历新年之前）
+合作的供应商，接着开始了制作毛绒玩具的规格的过程。
+
 That's right, Dash was originally a
 **Dart** mascot, not a Flutter mascot.
 
+是的，Dash 最初是 **Dart** 的吉祥物，而不是 Flutter 的。
+
 Here are some early mockups and one of the first prototypes:
+
+以下是最初的原型和一些早期的模型：
 
 ![1st mockup made by Novicell.dk](/assets/images/dash/early-dash-sketches.png){:width="35%"} ![2nd mockup by Squishable.com](/assets/images/dash/early-dash-sketches2.jpg){:width="35%"}<br>
 
 ![Prototype 1](/assets/images/dash/early-dash-sketches3.jpg){:width="35%"} ![Playing with embroidery ideas](/assets/images/dash/early-dash-sketches4.jpg){:width="35%"}<br>
 
 ![First prototype](/assets/images/dash/early-dash-sketches5.jpg){:width="50%"}<br>
-The first prototype had uneven eyes
+<t>The first prototype had uneven eyes</t><t>初版原型的单只眼睛并不是对称的</t>
 
 [event website]: https://events.dartlang.org/2018/dartconf/
 
 ## Why a hummingbird?
 
+## 为什么是一只蜂鸟？
+
 Early on, a hummingbird image was created for the Dart team
 to use for presentations and the web.
 The hummingbird represents that Dart is a speedy language.
+
+最初，蜂鸟用来作为展示和网页用途。使用蜂鸟代表 Dart 是一门速度极快的语言。
 
 ![Early hummingbird drawing](/assets/images/dash/DartHummingbird.jpg){:width="35%"}<br>
 
@@ -81,14 +119,20 @@ However, hummingbirds are pointed and angular
 and we wanted a cuddly plushy, so we chose a round
 hummingbird.
 
+然而，又尖又不圆润的蜂鸟无法作为毛茸茸且可爱的玩具，
+所以我们最终选择了圆润的蜂鸟。
+
 Shams specified which color would go where,
 the tail shape, the tuft of hair, the eyes...all the
 little details. The vendor sent the specs to two
 manufacturers who returned the prototypes some weeks later.
 
+Shams 为 Dash 指定了颜色的应用反问、尾巴的形状、一小簇头发、眼睛以及其他小细节。
+供应商将这些细则发给两个制造商后，他们在几周后送回了毛绒玩具的原型。
+
 ![The first Dash prototypes](/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes](/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
-Introducing Dash at the January 2018 Dart Conference:
+<t>Introducing Dash at the January 2018 Dart Conference</t><t>在 2018 Dart 会议上介绍 Dash</t>:
 <iframe width="541" height="350" src="{{ site.youtube-site }}/embed/R5vIUjRZaZA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 While the manufacturing process was proceeding,
@@ -97,18 +141,28 @@ because it was an early code name for the
 Dart project, it was gender neutral,
 and it seemed appropriate for a hummingbird.
 
+在制造商推进制作的同时，Shams 毛绒玩具取了个名字：Dash，
+它其实是 Dart 项目的早期代号，而且不分性别，
+似乎更适合作为一只蜂鸟的名字。
+
 Many boxes of Dash plushies arrived in
 southern California just in time for the conference.
 They were eagerly adopted by Dart _and_ Flutter enthusiasts.
 
+在会议开始前，许多箱 Dash 毛绒玩具赶上了会议开始的时间，送到了南加州。
+它们受到了大量 **Dart 和 Flutter** 爱好者的喜爱。
+
 The people have spoken,
 so Dash is now the mascot for Flutter **and** Dart.
+
+Flutter 和 Dart 的演讲者都携带着 Dash 进行了演讲，
+所以 Dash 就成为了 **Flutter 和 Dart** 的吉祥物。
 
 ![Dash 1.0](/assets/images/dash/dash-1.0.jpg){:width="35%"}<br>
 Dash 1.0
 
 ![Piles of Dashes awaiting conference goers](/assets/images/dash/dash-conference-swag.jpg){:width="50%"}<br>
-Conference swag
+<t>Conference swag</t><t>会议上的 Dash</t>
 
 Since the creation of Dash 1.0, we've made two more versions.
 Marketing slightly changed the Dart and Flutter color scheme after
@@ -118,6 +172,12 @@ Dash 2.1 is a smaller size and has a few more color
 tweaks. The smaller size is easier to ship,
 and fits better in a claw machine!
 
+自 Dash 1.0 之后，我们又制作了两个版本的 Dash。
+市场部门针对 Dash 1.0 微调了 Dart 和 Flutter 的配色方案，
+Dash 2.0 对应了更新后的配色方案（移除了绿色）。
+Dash 2.1 尺寸更小，并且调整了更多配色。
+小尺寸的 Dash 更易运输，并且更适合放在娃娃机中！
+
 ![Dash 2.0 and 2.1](/assets/images/dash/BigDashAndLittleDash.png){:width="50%"}<br>
 Dash 2.0 and 2.1
 
@@ -125,24 +185,42 @@ Dash 2.0 and 2.1
 
 ## Dash facts
 
+## 有关 Dart 的信息
+
 * Dash is female, but she doesn't mind
   being called _they_, _their_, _he_, or _him_.
+
+  Dart 是位女性，但她并不在意被称呼为 **它** 或 **他**。
+
 * Dash has an [Instagram account][].
+
+  Dash 有自己的 [Instagram 账户][Instagram account]。
+
 * Dash has a **straight** beak. 
   **Please, don't depict Dash with a curved beak.**
-* We also have Mega-Dash, a life-sized mascot
-  who is currently resting in a locked-down Google office.<br>
+
+  Dash 的喙是直的。**请不要用弯的喙描绘 Dash。**
+
+* <t>We also have Mega-Dash, a life-sized mascot
+  who is currently resting in a locked-down Google office.</t>
+  <t>我们还有巨型 Dash，与真人大小相同。目前它正在谷歌的办公室静养。</t><br>
 ![Mega-Dash in the office](/assets/images/dash/MegaDashChilling.png){:width="50%"}<br>
-  Mega-Dash made her
+  <t>Mega-Dash made her
   first appearance at the [Flutter Interact][] event
-  in Brooklyn, New York, on December 11, 2019.<br>
+  in Brooklyn, New York, on December 11, 2019.</t>
+  <t>巨型 Dash 首次在 2019年 12 月 11 日纽约布鲁克林的
+  [Flutter Interact][] 活动中亮相。</t><br>
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/EgBMGDtHZhE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-* We also have a Dash puppet that Shams made from
-  one of the first plushies.
+
+* <t>We also have a Dash puppet that Shams made from
+  one of the first plushies.</t>我们还有一个 Dash 布偶，
+  由 Shams 最早的毛绒玩具制成。</t>
 ![Nilay and the Dash puppet](/assets/images/dash/NilayDashPuppet.png){:width="50%"}<br>
-  A number of our YouTube videos feature the Dash puppet,
+  <t>A number of our YouTube videos feature the Dash puppet,
   voiced by Emily Fortuna, one of our early (and much loved)
-  Flutter Developer Advocates.
+  Flutter Developer Advocates.</t>
+  <t>我们的许多 YouTube 视频都有 Dart 布偶的出镜，由我们早期（且深受大家喜爱）的
+  Flutter 开发倡导者 Emily Fortuna 配音。</t>
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/dsiLVNDJ3t0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/oyy_1CjNdBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %}

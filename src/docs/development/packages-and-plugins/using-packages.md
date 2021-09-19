@@ -353,7 +353,7 @@ following formats:
 为了确保在更新 package 的时候你的应用不会崩溃，
 我们建议使用以下格式之一来指定版本范围：
 
-* Range constraints: Specify a minimum and maximim version. For example:
+* Range constraints: Specify a minimum and maximum version. For example:
 
   范围限制：指定一个最小和最大的版本号，例如：
 

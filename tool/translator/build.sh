@@ -15,9 +15,9 @@ npm i
 
 npx gulp mark-side-toc
 
-npx nt inject '../../_site/!(community|tutorials)/**/!(*_cn).html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
+npx nt inject '../../_site/!(posts|community|tutorials)/**/!(*_cn).html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
 
-npx nt mark '../../_site/!(community|tutorials)/**/!(*_cn).html'
+npx nt mark '../../_site/!(posts|community|tutorials)/**/!(*_cn).html'
 
 # process docs/
 

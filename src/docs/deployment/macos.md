@@ -153,10 +153,10 @@ Navigate to your target's settings in Xcode:
 
 在 Xcode 中配置目标：
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
+1. In Xcode, open `Runner.xcworkspace` in your app's `macos` folder.
 
-   在 Xcode 中，打开应用程序 `ios` 文件夹中的 `Runner.xcworkspace`。
-   
+   在 Xcode 中，打开应用程序 `macos` 文件夹中的 `Runner.xcworkspace`。
+
 1. To view your app's settings, select the **Runner** project in the Xcode
    project navigator. Then, in the main view sidebar, select the **Runner**
    target.

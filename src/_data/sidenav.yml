@@ -282,7 +282,11 @@
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
         - title: iOS 14 支持
           permalink: /docs/development/ios-14
+<<<<<<< HEAD
         - title: Xcode 11.4 支持
+=======
+        - title: Xcode migration
+>>>>>>> 1f455a6e25f929c49091ff8fe1d28351e1507583
           permalink: /docs/development/ios-project-migration
 
 - title: 测试和调试
@@ -350,9 +354,15 @@
       permalink: /docs/deployment/android
     - title: 构建和发布为 iOS 应用
       permalink: /docs/deployment/ios
+<<<<<<< HEAD
     - title: 构建和发布为 macOS 应用
       permalink: /docs/deployment/macos
     - title: 构建和发布为 Linux 应用
+=======
+    - title: Build and release a macOS app
+      permalink: /docs/deployment/macos
+    - title: Build and release a Linux app
+>>>>>>> 1f455a6e25f929c49091ff8fe1d28351e1507583
       permalink: /docs/deployment/linux
     - title: 构建和发布为 Web 应用
       permalink: /docs/deployment/web

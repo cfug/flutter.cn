@@ -3,7 +3,7 @@ title: Flutter 2.2 更新详解
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/fHLvPr.jpg){:max-width="90%"}
+![](https://devrel.andfun.cn/devrel/posts/2021/05/fHLvPr.jpg)
 
 [Flutter 2.2 版](https://flutter.cn/posts/announcing-flutter-2-2?t=1)已正式发布！要获取新版本，您只需切换到 stable 渠道并更新目前安装的 Flutter，或前往 [flutter.cn/docs/get-started](https://flutter.cn/docs/get-started) 从头开始安装。
 

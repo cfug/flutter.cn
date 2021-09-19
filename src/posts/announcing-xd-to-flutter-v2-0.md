@@ -3,7 +3,7 @@ title: XD to Flutter 2.0 现已发布！
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/JEUpoL.jpg){:max-width="90%"}
+![](https://devrel.andfun.cn/devrel/posts/2021/05/JEUpoL.jpg)
 
 Flutter 是 Google 的开源 UI 工具包。利用它，只需一套代码库，就能开发出适合移动设备、桌面设备、嵌入式设备以及 web 等多个平台的精美应用。过去几年，对于想要打造多平台应用的开发者来说，Flutter 已成为他们的首选。但设计师们需要的是一个视觉工具来建立原型和构建 Flutter UI，而不是精雕细琢 Dart 源代码，于是 [XD to Flutter](https://github.com/AdobeXD/xd-to-flutter-plugin) 应运而生！
 

@@ -3,7 +3,7 @@ title: Dart 2.8 同期发布
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/w7DjVe.png){:max-width="90%"}
+![](https://devrel.andfun.cn/devrel/posts/2021/05/w7DjVe.png)
 
 *作者 / Michael Thomsen, Dart & Flutter Product Manager, Google*
 

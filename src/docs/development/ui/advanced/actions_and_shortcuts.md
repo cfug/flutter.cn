@@ -3,6 +3,9 @@ title: Using Actions and Shortcuts
 title: 使用操作和快捷方式
 description: How to use Actions and Shortcuts in your Flutter app.
 description: 如何在 Flutter 应用程序中使用操作和快捷方式。
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 This page describes how to bind physical keyboard events to actions in the user
@@ -25,7 +28,7 @@ context, an intent is a generic action that the user wishes to perform, and an
 [`Intent`][] class instance represents these user intents in Flutter. An
 `Intent` can be general purpose, fulfilled by different actions in different
 contexts. An [`Action`][] can be a simple callback (as in the case of
-the[`CallbackAction`][]) or something more complex that integrates with entire
+the [`CallbackAction`][]) or something more complex that integrates with entire
 undo/redo architectures (for example) or other logic.
 
 ![Using Shortcuts Diagram][]{:width="100%"}

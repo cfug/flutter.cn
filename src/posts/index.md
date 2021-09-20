@@ -38,5 +38,7 @@ title: 官方博客
 - [一起看 I/O：Flutter 2.2 更新详解](/posts/whats-new-in-flutter-2-2)
 - [I/O 照相亭：Flutter + Firebase = 轻松构建 Web 应用](/posts/how-its-made-i-o-photo-booth)
 - [Flutter 不容错过的 7 大亮点：Google I/O 精彩回顾](/posts/google-io-2021-flutter-recap)
+- [Flutter 2.5 更新详解](/posts/whats-new-in-flutter-2-5)
+- [Dart 2.14 版现已发布](/posts/announcing-dart-2-14)
 
 上述内容的刊登均以获得发布许可。

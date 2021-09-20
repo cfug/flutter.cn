@@ -5,7 +5,7 @@ toc: true
 
 在本次 [Google I/O 2021 大会](https://mp.weixin.qq.com/s/S1GZdQdwcdZKIbBY_FlzJQ)上，我们正式发布了 [Flutter 2.2](https://flutter.cn/docs/whats-new)。Flutter 2.2 是我们最新版的开源工具包，可让开发者立足单个平台构建适合任何设备的精美应用。Flutter 2.2 是迄今为止最出色的 Flutter 版本。借助更新后的功能，开发者能更便利地通过应用内购买、支付方式和广告将其应用变现，还能连接到云服务和 API 来扩展应用的功能；而借助工具和语言功能，开发者能够消除一整类的错误，增强应用性能并缩减软件包大小。
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/zC30Hx.png){:max-width="90%"}
+![](https://devrel.andfun.cn/devrel/posts/2021/05/zC30Hx.png)
 
 ## **在 Flutter 2 的基础上打造而成**
 
@@ -53,4 +53,4 @@ Flutter 2.2 侧重于改进开发体验，目的是让您能够向客户提供�
 
 我们在 Flutter 方面所做的工作会在 [Google I/O 大会](https://mp.weixin.qq.com/s/S1GZdQdwcdZKIbBY_FlzJQ)上 [以各种研讨会、演示和视频点播的形式](https://events.google.com/io/program/content?4=topic_flutter) 与大家分享。别忘记尝试我们的 [photo booth web 应用](https://photobooth.flutter.dev)，这个有趣的应用就是用 Flutter 开发的，您可以在那里与我们的吉祥物 Dash 及其伙伴们合影留念！
 
-![](https://devrel.andfun.cn/devrel/posts/2021/05/r8Qxd4.png){:max-width="80%"}
+![](https://devrel.andfun.cn/devrel/posts/2021/05/r8Qxd4.png)

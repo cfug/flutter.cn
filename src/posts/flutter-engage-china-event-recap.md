@@ -3,7 +3,7 @@ title: 精彩回顾 — Flutter Engage China 视频合集
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/04/fada6502a2c26.png){:max-width="90%"}
+![](https://devrel.andfun.cn/devrel/posts/2021/04/fada6502a2c26.png)
 
 在上周的 Flutter Engage China 活动中，Google Flutter 团队和来自国内的开发者们共同探讨和交流 Flutter 的最新更新、实践和未来的发展。虽然只能通过线上交流，但是在活动中嘉宾们的精彩分享和讨论也吸引了众多 Flutter 开发者互动交流，畅谈创新和合作。为了帮助更多开发者们更顺利地进行开发工作，我们将公开活动中嘉宾们分享的内容，并带您回顾精彩亮点，希望能对您有所帮助。
 

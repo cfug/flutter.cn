@@ -3,7 +3,7 @@ title: 用 Flutter 和 Firebase 轻松构建 Web 应用
 toc: true
 ---
 
-![](https://devrel.andfun.cn/devrel/posts/2021/06/Mci8Lr.png){:max-width="90%"}
+![](https://devrel.andfun.cn/devrel/posts/2021/06/Mci8Lr.png)
 
 *作者 / Very Good Ventures Team*
 

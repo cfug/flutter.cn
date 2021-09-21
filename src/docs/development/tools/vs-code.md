@@ -508,7 +508,8 @@ Flutter 扩展包含以下片段：
 You can also define custom snippets by executing
 **Configure User Snippets** from the [Command Palette][].
 
-你也可以通过在 [命令面板][] 执行**Configure User Snippets**来自定义片段。
+你也可以通过在 [命令面板][Command Palette]
+执行 **Configure User Snippets** 来自定义片段。
 
 ### Keyboard shortcuts
 
@@ -576,7 +577,7 @@ All known bugs are tracked in the issue tracker:
 [Dart and Flutter extensions GitHub issue tracker][issue tracker].
 
 所有已知 bug 在这个 issue 列表中记录：
-[Dart 和 Flutter 扩展 GitHub issue 追踪][]。
+[Dart 和 Flutter 扩展 GitHub issue 追踪][issue tracker]。
 
 We welcome feedback,
 both on bugs/issues and feature requests.
@@ -600,14 +601,10 @@ When filing new issues, include [flutter doctor][] output.
  
 [Building a web application]: /docs/get-started/web
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[命令面板]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [DevTools' docs]: https://flutter.github.io/devtools
-[DevTools' 文档]: https://flutter.github.io/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [let us know]: {{site.github}}/flutter/website/issues/new
-[联系我们]: {{site.github}}/flutter/website/issues/new
 [Dart and Flutter extensions GitHub issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
-[Dart 和 Flutter 扩展 GitHub issue 追踪]: {{site.github}}/Dart-Code/Dart-Code/issues
 [DevTools]: /docs/development/tools/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [Flutter inspector]: /docs/development/tools/devtools/inspector

@@ -78,11 +78,8 @@ starter app template:
 
     打开命令面板（`Ctrl`+`Shift`+`P` （macOS 用 `Cmd`+`Shift`+`P`））。
 
-  1. Select the **Flutter: New Application Project** command and press `Enter`.
-    
-    打开命令面板（`Ctrl`+`Shift`+`P` （macOS 用 `Cmd`+`Shift`+`P`））。
- 
- 
+ 1. Select the **Flutter: New Application Project** command and press `Enter`.
+
     选择 **Flutter: New Application Project** 命令然后按 `Enter`。
     
  1. Enter your desired **Project name**.

@@ -469,16 +469,16 @@ The following libraries are recompiled:
 
 * Any libraries with changed code
  
-  任何有代码更改的文件；
+  任何有代码更改的文件
 
 * The application's main library
 
-  应用程序的主入口文件。 
+  应用程序的主入口文件
 
 * The libraries from the main library leading
   to affected libraries
 
-  受主入口文件影响的文件。
+  受主入口文件影响的文件
 
 The source code from those libraries is compiled into
 [kernel files][] and sent to the mobile device's Dart VM.

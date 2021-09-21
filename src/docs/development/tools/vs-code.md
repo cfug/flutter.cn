@@ -465,12 +465,12 @@ can assist in correcting it.
   将 child 转换成 children，并且把参数值写进一个 list。
 
 **Convert StatelessWidget to StatefulWidget assist**
-: Changes the implementation of a `StatelessWidget` to that of
+<br> Changes the implementation of a `StatelessWidget` to that of
   a `StatefulWidget`, by creating the `State` class and moving
   the code there.
 
 **StatelessWidget 到 StatefulWidget 的转换**
-<br>创建 `State` 类并将代码移动过去，
+<br> 创建 `State` 类并将代码移动过去，
   可以将 `StatelessWidget` 的实现更改为 `StatefulWidget`。
 
 ### Snippets
@@ -515,12 +515,12 @@ You can also define custom snippets by executing
 ### 键盘快捷键
 
 **Hot reload**
-: During a debug session, clicking the **Hot Reload** button on the
+<br> During a debug session, clicking the **Hot Reload** button on the
   **Debug Toolbar**, or pressing `Ctrl`+`F5`
   (`Cmd`+`F5` on macOS) performs a hot reload.
 
 **热重载**
-<br>调试期间，在 **调试工具栏** 点击 **热重载 (Hot Reload)** 按钮，
+<br> 调试期间，在 **调试工具栏** 点击 **热重载 (Hot Reload)** 按钮，
   或者按 `Ctrl`+`F5`（macOS 用 `Cmd`+`F5`）执行热重载。
 
   Keyboard mappings can be changed by executing the

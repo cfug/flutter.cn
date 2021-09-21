@@ -679,7 +679,7 @@ Dart scores highly for us on the following primary criteria:
 在评估时，Dart 在以下主要标准上得分很高：
 
 _Developer productivity_
-: One of Flutter's main value propositions is that it
+<br> One of Flutter's main value propositions is that it
   saves engineering resources by letting developers
   create apps for both iOS and Android with the same codebase.
   Using a highly productive language accelerates
@@ -691,7 +691,8 @@ _Developer productivity_
   without sacrificing approachability or
   readability of the framework and widgets for our developers.
 
-  **开发人员生产力**：Flutter 的主要价值之一，是通过让开发人员用同一套代码，
+**开发人员生产力**
+<br> Flutter 的主要价值之一，是通过让开发人员用同一套代码，
   创建适用于 iOS 和 Android 的应用而节省开发资源。
   使用高生产力的语言加速开发，并提升 Flutter 的吸引力。
   这对于我们的框架团队和开发人员都很重要。
@@ -700,7 +701,7 @@ _Developer productivity_
   而不会牺牲框架和部件对我们开发人员的可达性和可读性。
 
 _Object-orientation_
-: For Flutter, we want a language that's suited to
+<br> For Flutter, we want a language that's suited to
   Flutter's problem domain: creating visual user experiences.
   The industry has multiple decades of experience building
   user interface frameworks in object-oriented languages.
@@ -710,7 +711,8 @@ _Object-orientation_
   have experience with object-oriented development,
   making it easier to learn how to develop with Flutter.
 
-  **面向对象**：对于 Flutter 而言，我们需要一种适合创建可视化用户体验的语言。
+**面向对象**
+<br> 对于 Flutter 而言，我们需要一种适合创建可视化用户体验的语言。
   这个领域中沉淀了数十年的面向对象构建 UI 框架的经验。
   虽然我们可以使用非面向对象语言，但这意味着，
   为了解决几个难题，我们要 "重新发明轮子"。
@@ -718,7 +720,7 @@ _Object-orientation_
   因此可以更轻松地学习如何使用 Flutter 进行开发。
 
 _Predictable, high performance_
-: With Flutter, we want to empower developers to create fast,
+<br> With Flutter, we want to empower developers to create fast,
   fluid user experiences. In order to achieve that, we need to
   be able to run a significant amount of end-developer code
   during every animation frame. That means we need a language
@@ -726,20 +728,22 @@ _Predictable, high performance_
   performance, without periodic pauses that would cause
   dropped frames.
 
-  **稳定可期的高性能表现**：我们希望开发者能够通过 Flutter 创建快速而流畅的用户体验。
+**稳定可期的高性能表现**
+<br> 我们希望开发者能够通过 Flutter 创建快速而流畅的用户体验。
   为了实现这一点，我们需要能够在每个动画帧期间运行大量的最终开发者代码。
   这意味着我们需要的语言一方面既要拥有高性能，
   另一方面又需要避免因周期性的中断而影响帧率，即 "可期性"。
 
 _Fast allocation_
-: The Flutter framework uses a functional-style flow that
+<br> The Flutter framework uses a functional-style flow that
   depends heavily on the underlying memory allocator
   efficiently handling small, short-lived allocations.
   This style was developed in languages with this
   property and doesn't work efficiently in languages
   that lack this facility.
 
-  **快速内存分配**：Flutter 框架使用的函数式流程，
+**快速内存分配**
+<br> Flutter 框架使用的函数式流程，
   很大程度上依赖于下层的内存分配器高效地对小型的、短生命周期的内容进行内存分配。
   这个流程是使用支持这种分配机制的语言进行开发的，
   在缺少这个机制的语言中无法有效运作。
@@ -1833,7 +1837,7 @@ We are focused on three things:
 我们目前集中于以下三件事：
 
 _Control_
-: Developers deserve access to, and control over,
+<br> Developers deserve access to, and control over,
   all layers of the system. Which leads to:
 
 **功能控制**

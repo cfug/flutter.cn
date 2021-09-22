@@ -60,10 +60,10 @@ approved the idea and asked the
 organizer for the [2018 Dart Conference][],
 Linda Rasmussen, to make it happen.
 
-但这个想法直到 2017 年才取得了实质性的进展，
-当时一位 Flutter 工程师 Nina Chen 在内部邮件中提出推动这个想法。
+但这个想法直到 2017 年一位 Flutter 工程师 Nina Chen
+在内部邮件中再次提出，才取得了实质性的进展。
 时任副总裁 Joshy Joseph 批准了这个想法，
-并将其指派给了 [2018 年度 Dart 会议][2018 Dart Conference]
+并且让 [2018 年度 Dart 会议][2018 Dart Conference]
 的组织者 Linda Rasmussen 进行落地。
 
 [2018 Dart Conference]: https://events.dartlang.org/2018/dartconf/
@@ -80,10 +80,10 @@ and started the process of creating
 the specs for the plushy.
 
 Shams 在知晓这个计划后，立刻找到了 Linda，
-希望带领这个项目进行推动，并在会议上公开和生产毛绒玩具。
+希望主导并推进这个项目，计划生产一些毛绒玩具。
 Linda 早前已经设计出了一些草图，她将这些草图移交给了 Shams。
 有了这些草图后，Shams 找到了一家可以在截止日期前（赶在农历新年之前）
-合作的供应商，接着开始了制作毛绒玩具的规格的过程。
+合作的供应商，接着便开始制作毛绒玩具的规格。
 
 That's right, Dash was originally a
 **Dart** mascot, not a Flutter mascot.

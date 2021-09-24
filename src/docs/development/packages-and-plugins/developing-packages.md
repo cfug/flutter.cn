@@ -188,7 +188,7 @@ folder with the following content:
 <br> package 的 Dart 实现代码。
 
 **.idea/modules.xml**, **.idea/workspace.xml**
-: A hidden folder containing configuration files
+<br> A hidden folder containing configuration files
   for the IntelliJ IDEs.
 
 **.idea/modules.xml**、**.idea/workspace.xml 文件**
@@ -266,18 +266,18 @@ A federated plugin requires the following packages:
 联合插件需要以下 package：
 
 **app-facing package**
-: The package that plugin users depend on to use the plugin.
+<br> The package that plugin users depend on to use the plugin.
   This package specifies the API used by the Flutter app.
 
 **platform package(s)**
-: One or more packages that contain the platform-specific
+<br> One or more packages that contain the platform-specific
   implementation code. The app-facing package calls into
   these packages&mdash;they aren't included into an app,
   unless they contain platform-specific functionality
   accessible to the end user.
 
 **platform interface package**
-: The package that glues the app-facing packing
+<br> The package that glues the app-facing packing
   to the platform package(s). This package declares an
   interface that any platform package must implement to
   support the app-facing package. Having a single package

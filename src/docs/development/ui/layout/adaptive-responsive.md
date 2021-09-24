@@ -44,7 +44,7 @@ an app can be both, or neither.
 当然，你的应用可能既自适应又为响应式，也可能两者均未实现。
 
 **Responsive**
-: Typically, a _responsive_ app has had its layout
+<br> Typically, a _responsive_ app has had its layout
   tuned for the available screen size. Often this
   means (for example), re-laying out the UI if the
   user resizes the window, or changes the device's
@@ -60,7 +60,7 @@ an app can be both, or neither.
   这是必要的要素。
 
 **Adaptive**
-: _Adapting_ an app to run on different device types,
+<br> _Adapting_ an app to run on different device types,
   such as mobile and desktop, requires dealing
   with mouse and keyboard input, as well as
   touch input. It also means there are different
@@ -91,7 +91,7 @@ apps with responsive design:
 构建响应式设计的 Flutter 应用，有以下两种较为基础的方式：
 
 **Use the [`LayoutBuilder`][] class**
-: From its [`builder`][] property, you get a
+<br> From its [`builder`][] property, you get a
   [`BoxConstraints`][] object.
   Examine the constraint's properties to decide what to
   display. For example, if your [`maxWidth`][] is greater than
@@ -115,7 +115,7 @@ apps with responsive design:
   构建方法会运行。
 
 **Use the [`MediaQuery.of()`][] method in your build functions**
-: This gives you the size, orientation, etc, of your current app.
+<br> This gives you the size, orientation, etc, of your current app.
   This is more useful if you want to make decisions based on the
   complete context rather than on just the size of your particular
   widget. Again, if you use this, then your build function automatically

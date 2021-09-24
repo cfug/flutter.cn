@@ -192,13 +192,13 @@ In the **Identity** section:
 <br> The display name of your app.
 
 `Display Name`
-: The display name of your app.
+<br> The display name of your app.
 
 `Display Name`
 <br> 应用的名字。
 
 `Bundle Identifier`
-: The App ID you registered on App Store Connect.
+<br> The App ID you registered on App Store Connect.
 
 `Bundle Identifier`
 <br> 在 App Store Connect 注册的 App ID。
@@ -208,7 +208,7 @@ In the **Signing & Capabilities** section:
 在 **Signing & Capabilities** 部分：
 
 `Automatically manage signing`
-: Whether Xcode should automatically manage app signing
+<br> Whether Xcode should automatically manage app signing
   and provisioning.  This is set `true` by default, which should
   be sufficient for most apps. For more complex scenarios,
   see the [Code Signing Guide][codesigning_guide].
@@ -219,7 +219,7 @@ In the **Signing & Capabilities** section:
 对于更复杂的场景，查看 [代码签名指南][codesigning_guide]。
 
 `Team`
-: Select the team associated with your registered Apple Developer
+<br> Select the team associated with your registered Apple Developer
   account. If required, select **Add Account...**,
   then update this setting.
 
@@ -232,7 +232,7 @@ In the **Build Settings** section:
 在 **Build Settings** 部分：
 
 `iOS Deployment Target`
-: The minimum iOS version that your app supports.
+<br> The minimum iOS version that your app supports.
   Flutter supports iOS 9.0 and later. If your app or plugins
   include Objective-C or Swift code that makes use of APIs newer
   than iOS 9, update this setting to the highest required version.

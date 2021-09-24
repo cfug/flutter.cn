@@ -364,16 +364,19 @@ matchers for common cases.
 <br> Verifies that one or more widgets are found.
 
 [`findsWidgets`][]
-<br>验证一个或多个 widgets 被找到。
+<br> 验证一个或多个 widgets 被找到。
 
 [`findsNWidgets`][]
 <br> Verifies that a specific number of widgets are found.
 
 [`findsNWidgets`][]
-<br>验证特定数量的 widgets 被找到。
+<br> 验证特定数量的 widgets 被找到。
 
 [`matchesGoldenFile`][]
-: Verifies that a widget's rendering matches a particular bitmap image ("golden file" testing).
+<br> Verifies that a widget's rendering matches a particular bitmap image ("golden file" testing).
+
+[`matchesGoldenFile`][]
+<br> 验证渲染的 widget 是否与特定的图像匹配（「目标文件」测试）。
 
 ### Complete example
 

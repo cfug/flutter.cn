@@ -462,12 +462,12 @@ can assist in correcting it.
   将 child 转换成 children，并且把参数值写进一个 list。
 
 **Convert StatelessWidget to StatefulWidget assist**
-: Changes the implementation of a `StatelessWidget` to that of
+<br> Changes the implementation of a `StatelessWidget` to that of
   a `StatefulWidget`, by creating the `State` class and moving
   the code there.
 
 **StatelessWidget 到 StatefulWidget 的转换**
-<br>创建 `State` 类并将代码移动过去，
+<br> 创建 `State` 类并将代码移动过去，
   可以将 `StatelessWidget` 的实现更改为 `StatefulWidget`。
 
 ### Snippets
@@ -505,19 +505,20 @@ Flutter 扩展包含以下片段：
 You can also define custom snippets by executing
 **Configure User Snippets** from the [Command Palette][].
 
-你也可以通过在 [命令面板][] 执行**Configure User Snippets**来自定义片段。
+你也可以通过在 [命令面板][Command Palette]
+执行 **Configure User Snippets** 来自定义片段。
 
 ### Keyboard shortcuts
 
 ### 键盘快捷键
 
 **Hot reload**
-: During a debug session, clicking the **Hot Reload** button on the
+<br> During a debug session, clicking the **Hot Reload** button on the
   **Debug Toolbar**, or pressing `Ctrl`+`F5`
   (`Cmd`+`F5` on macOS) performs a hot reload.
 
 **热重载**
-<br>调试期间，在 **调试工具栏** 点击 **热重载 (Hot Reload)** 按钮，
+<br> 调试期间，在 **调试工具栏** 点击 **热重载 (Hot Reload)** 按钮，
   或者按 `Ctrl`+`F5`（macOS 用 `Cmd`+`F5`）执行热重载。
 
   Keyboard mappings can be changed by executing the
@@ -573,7 +574,7 @@ All known bugs are tracked in the issue tracker:
 [Dart and Flutter extensions GitHub issue tracker][issue tracker].
 
 所有已知 bug 在这个 issue 列表中记录：
-[Dart 和 Flutter 扩展 GitHub issue 追踪][]。
+[Dart 和 Flutter 扩展 GitHub issue 追踪][issue tracker]。
 
 We welcome feedback,
 both on bugs/issues and feature requests.
@@ -597,14 +598,10 @@ When filing new issues, include [flutter doctor][] output.
  
 [Building a web application]: /docs/get-started/web
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[命令面板]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [DevTools' docs]: https://flutter.github.io/devtools
-[DevTools' 文档]: https://flutter.github.io/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [let us know]: {{site.github}}/flutter/website/issues/new
-[联系我们]: {{site.github}}/flutter/website/issues/new
 [Dart and Flutter extensions GitHub issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
-[Dart 和 Flutter 扩展 GitHub issue 追踪]: {{site.github}}/Dart-Code/Dart-Code/issues
 [DevTools]: /docs/development/tools/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [Flutter inspector]: /docs/development/tools/devtools/inspector

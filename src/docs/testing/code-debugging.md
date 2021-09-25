@@ -750,7 +750,7 @@ dump by overriding [`debugFillProperties()`][render-fill].
 Add [DiagnosticsProperty][]
 objects to the method's argument, and call the superclass method.
 
-对于您自己写的 render 对象，可以通过重写 [`debugFillProperties()`][widget-fill] 
+对于您自己写的 render 对象，可以通过重写 [`debugFillProperties()`][render-fill] 
 方法为转储数据添加信息。在方法中的参数中添加 [DiagnosticsProperty][] 对象，并调用父类方法即可。
 
 ### Layer tree
@@ -1096,7 +1096,7 @@ Be sure to run your app in [profile mode][] to ensure that the
 runtime performance characteristics closely match that of your
 final product.
 
-确保以 [分析模式][profile mode] 运行您的应用，来确保运行时的性能表现与您的最终产品相近。
+确保以 [性能模式][profile mode] 运行您的应用，来确保运行时的性能表现与您的最终产品相近。
 
 ## Performance overlay
 
@@ -1120,8 +1120,9 @@ setting the `showPerformanceOverlay` property to `true` on the
 [`MaterialApp`][], [`CupertinoApp`][], or [`WidgetsApp`][]
 constructor:
 
-您可以通过编程方式启用 PerformanceOverlay widget，在 [`MaterialApp`][]、[`CupertinoApp`][] 
-或 [`WidgetsApp`][] 构造函数中，将 `showPerformanceOverlay` 属性设置为 `true` 即可。
+您可以通过编程方式启用 PerformanceOverlay widget，
+在 [`MaterialApp`][]、[`CupertinoApp`][]或 [`WidgetsApp`][] 构造函数中，
+将 `showPerformanceOverlay` 属性设置为 `true` 即可。
 
 <!-- skip -->
 {% prettify dart %}
@@ -1152,7 +1153,9 @@ For information on how to interpret the graphs in the overlay,
 see [The performance overlay][] in
 [Profiling Flutter performance][].
 
-有关如何解释浮层中的图形的信息，可以参见 [Flutter 性能分析][Profiling Flutter performance] 中的 [性能图层][The performance overlay]。
+有关如何解释浮层中的图形的信息，可以参见
+[Flutter 性能分析][Profiling Flutter performance]
+中的 [性能图层][The performance overlay]。
 
 ## Widget alignment grid
 
@@ -1164,8 +1167,9 @@ help verify alignments by using the
 `debugShowMaterialGrid` argument in the
 [`MaterialApp` constructor][].
 
-您可以通过编程的方式将 [Material Design 基线网格][Material Design baseline grid] 覆盖在应用的顶层来辅助对齐校验，
-通过使用 [`MaterialApp` 构造函数][`MaterialApp` constructor] 中的 `debugShowMaterialGrid` 参数进行设置。
+您可以通过编程的方式将 [Material Design 基线网格][Material Design baseline grid]
+覆盖在应用的顶层来辅助对齐校验，通过使用 [`MaterialApp` 构造函数][`MaterialApp` constructor]
+中的 `debugShowMaterialGrid` 参数进行设置。
 
 In non-Material applications, you can achieve a similar
 effect by using a [`GridPaper`][] widget directly.

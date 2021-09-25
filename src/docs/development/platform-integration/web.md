@@ -155,7 +155,7 @@ option for all channels.
 
 See [Creating responsive apps][].
 
-请参阅[创建响应式应用][Creating responsive apps]。
+请参阅 [创建响应式应用][Creating responsive apps]。
 
 ### Can I use Flutter plugins?
 
@@ -208,7 +208,7 @@ in an [`iframe`][] tag of an HTML file.
 In the following example, replace "URL"
 with the location of your hosted HTML page:
 
-你可以通过下面这个例子，以 [`iframe`] 来内嵌，
+你可以通过下面这个例子，以 [`iframe`][] 来内嵌，
 把 URL 替换成托管 Flutter Web 的页面 URL：
 
 ```html
@@ -230,11 +230,11 @@ Use [Flutter DevTools][] for the following tasks:
 * [Debugging][]
 
   [调试][Debugging]
-  
+
 * [Logging][]
 
   [查看日志][Logging]
-  
+
 * [Running Flutter inspector][]
 
   [运行 Flutter inspector][Running Flutter inspector]
@@ -246,11 +246,11 @@ Use [Chrome DevTools][] for the following tasks:
 * [Generating event timeline][]
 
   [生成事件的时间线][Generating event timeline]
-  
+
 * [Analyzing performance][]&mdash;make sure to use a
   profile build
-  
-  [分析性能][Analyzing performance]&mdash;请确保应用使用的是 profile 构建
+
+  [分析性能][Analyzing performance]&mdash;&mdash;请确保应用使用的是 profile 构建
 
 ### How do I test a web app?
 
@@ -261,7 +261,6 @@ running integration tests in a browser, see the [Integration testing][] page.
 
 使用常规的 [widget tests][]，了解更多关于如何在浏览器里使用集成测试，请查看
 [集成测试][Integration testing] 文档页面。
-
 
 ### How do I internationalize a web app?
 
@@ -275,7 +274,7 @@ This isn’t any different than [internationalizing a Flutter mobile app][].
 
 See [Preparing a web app for release][]
 
-请参阅 [打包并发布到 Web 平台](/docs/deployment/web)
+请参阅 [打包并发布到 Web 平台][Preparing a web app for release]
 
 ### Does `Platform.is` work on the web?
 

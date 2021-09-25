@@ -51,7 +51,7 @@ If you're unfamiliar with widget testing and the role of
 review the [Introduction to widget testing][] recipe.
 
 如果你还不熟悉 Widget 测试和 Finder 类使用方法，
-请参阅 [在 Flutter 里做集成测试][Introduction to widget testing]。
+请参阅 [Widget 测试介绍][Introduction to widget testing]。
 
 This recipe uses the following steps:
 

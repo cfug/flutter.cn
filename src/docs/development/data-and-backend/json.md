@@ -155,7 +155,7 @@ Flutter. Runtime reflection interferes with [tree shaking][], which Dart has
 supported for quite a long time. With tree shaking, you can "shake off" unused
 code from your release builds. This optimizes the app's size significantly.
 
-这样的库需要使用运行时进行 [反射][]，这在 Flutter 中是被禁用的。
+这样的库需要使用运行时进行 [反射][reflection]，这在 Flutter 中是被禁用的。
 运行时反射会影响 Dart 支持了相当久的 [摇树优化][tree shaking]。
 通过 tree shaking，你可以从你的发布版本中“抖掉”不需要使用的代码。
 这会显著优化 App 的体积。
@@ -175,7 +175,8 @@ when using reflection.
   [reflection][], which makes it incompatible with Flutter.
 
   **dartson 怎么样？**
-  [dartson][] 是一个使用运行时使用 [反射][] 的库，这让它不能兼容 Flutter。
+  [dartson][] 是一个使用运行时使用 [反射][reflection]
+  的库，这让它不能兼容 Flutter。
 
 {{site.alert.end}}
 
@@ -814,10 +815,6 @@ For more information, see the following resources:
 * The [`json_serializable` examples][] on GitHub
 
   GitHub 中 [`json_serializable` 的例子][`json_serializable` examples]
-  
-* The [discussion about dart:mirrors in Flutter][]
-
-  [Flutter 中有关 dart:mirrors 的讨论][discussion about dart:mirrors in Flutter]
 
 [`built_value`]: {{site.pub}}/packages/built_value
 [code generation libraries]: #code-generation
@@ -832,7 +829,6 @@ For more information, see the following resources:
 [`json_serializable` examples]: {{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart
 [pubspec file]: https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml
 [reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
-[反射]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [Serializing JSON manually using dart:convert]: #manual-encoding
 [Serializing JSON using code generation libraries]: #code-generation
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking

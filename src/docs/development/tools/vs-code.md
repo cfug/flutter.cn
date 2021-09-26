@@ -202,6 +202,7 @@ device name (or the message **No Devices**):<br>
 ![VS Code status bar][]{:.mw-100.pt-1}
 
 {{site.alert.note}}
+
   * If you do not see a Flutter version number or device info,
     your project might not have been detected as a Flutter project.
     Ensure that the folder that contains your `pubspec.yaml` is
@@ -215,8 +216,8 @@ device name (or the message **No Devices**):<br>
     able to discover any connected iOS or Android devices or simulators.
     You need to connect a device, or start a simulator or emulator,
     to proceed.
-    
-    如果状态栏显示**无设备**表明 Flutter 
+
+    如果状态栏显示 **无设备** 表明 Flutter 
     没有发现任何已连接的 IOS、Android 或者模拟器。
     你需要连接设备或者启动模拟器。
 
@@ -245,6 +246,7 @@ Flutter 扩展会自动选择上次连接的设备。
   更多信息请查看 [StackExchange 上的问题解答][question on StackExchange]。
 
 [question on StackExchange]: https://superuser.com/questions/270095/when-i-ssh-into-os-x-i-dont-have-my-keychain-when-i-use-terminal-i-do/363840#363840
+
 {{site.alert.end}}
 
 ### Run app without breakpoints
@@ -265,31 +267,31 @@ Flutter 扩展会自动选择上次连接的设备。
 ### 断点运行
 
  1. If desired, set breakpoints in your source code.
-    
+
     如果需要，在源代码中设置断点。
-   
+
  1. Click **Run > Start Debugging** in the main IDE window,
     or press `F5`.
 
     在 IDE 主窗口点击 **Run > Start Debugging** 或按 `F5`。
 
     * The left **Debug Sidebar** shows stack frames and variables.
-      
+
       左侧的**调试侧边栏**显示堆栈帧和变量。
-      
+
     * The bottom **Debug Console** pane shows detailed logging output.
-    
+
       底部的**调试控制台**面板显示输出的日志详情。
-    
+
     * Debugging is based on a default launch configuration.
       To customize, click the cog at the top of the
       **Debug Sidebar** to create a `launch.json` file.
       You can then modify the values.
-      
+
       调试基于默认的配置。
       也可以通过点击**调试侧边栏**顶部的齿轮创建 `launch.json` 文件自定义调试。
       你可以修改里面的值。
-      
+
 ### Run app in debug, profile, or release mode
 
 ### 以 调试 (debug)、性能 (profile) 或发布 (release) 模式运行应用
@@ -405,7 +407,7 @@ in the Flutter extension. To enable:
 
 If you have additional tips we should share, [let us know][]!
 
-如果你有其他我们应该提供的代码提示建议，请 [告诉我们][]!
+如果你有其他我们应该提供的代码提示建议，请 [告诉我们][let us know]！
 
 ### Assists & quick fixes
 
@@ -524,7 +526,7 @@ You can also define custom snippets by executing
   Keyboard mappings can be changed by executing the
   **Open Keyboard Shortcuts** command from the [Command Palette][].
 
-  键位绑定可以在 [命令板][Command Palette] 中使用
+  键位绑定可以在 [命令面板][Command Palette] 中使用
   **Open Keyboard Shortcuts** 命令进行调整。
 
 ### Hot reload vs. hot restart

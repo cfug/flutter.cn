@@ -165,8 +165,6 @@ you need the following in addition to the Flutter SDK:
 
 * [Xcode][]
 
-  [Xcode][]
-
 * [CocoaPods][] if you use plugins
 
   如果使用插件，需要安装 [CocoaPods][]
@@ -638,7 +636,7 @@ For an example of using the `msix` package
 from a Flutter desktop app,
 see the [Desktop Photo Search][] sample.
 
-一个为 Flutter 项目创建 MSIX 分发的简单方式是，使用 [`msix` pub 包][msix package]。
+一个为 Flutter 项目创建 MSIX 分发的简单方式是，使用 [`msix` pub package][msix package]。
 要查看使用 `msix` package 的 Flutter 桌面应用，请参考 [桌面照片搜索][Desktop Photo Search] 样例。
 
 [MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
@@ -1145,16 +1143,8 @@ which have been updated to work for desktop apps:
 我们推荐以下插件，它们已经更新，可以在桌面应用中使用:
 
 * [`url_launcher`][]
-
-  [`url_launcher`][]
-
 * [`shared_preferences`][]
-
-  [`shared_preferences`][]
-
 * [`path_provider`][]
-
-  [`path_provider`][]
 
 Use the following links to find all packages on pub.dev
 that support desktop apps. These links lists _all_ packages,
@@ -1167,16 +1157,8 @@ provide an interface to platform-specific services.)
 （记住这点，**插件包** 或 **插件** 提供了一个平台特定的服务接口。）
 
 * [Windows packages][]
-
-  [Windows 包][Windows packages]
-
 * [macOS packages][]
-
-  [macOS 包][macOS packages]
-
 * [Linux packages][]
-
-  [Linux 包][Linux packages]
 
 [Linux packages]: {{site.pub}}/flutter/packages?platform=linux
 [macOS packages]: {{site.pub}}/flutter/packages?platform=macos
@@ -1225,22 +1207,23 @@ about endorsed plugins, see the following resources:
 
 * [Developing packages and plugins][], particularly the
   [Federated plugins][] section.
-  
-  [开发包和插件][Developing packages and plugins]，特别是 [联合插件][] 部分。
-  
+
+  [开发包和插件][Developing packages and plugins]，特别是 [联合插件][Federated plugins] 部分。
+
 * [How to write a Flutter web plugin, part 2][],
   covers the structure of federated plugins and
   contains information applicable to desktop
   plugins.
-  
+
   [如何写一个 Flutter web 插件，第 2 部分][How to write a Flutter web plugin, part 2]，
   介绍联合插件的结构，并包含适用于桌面插件的信息。
-  
+
 * [Modern Flutter Plugin Development][] covers
   recent enhancements to Flutter's plugin support.
-  
-  [现代 Flutter 插件开发][Modern Flutter Plugin Development] 介绍了最近对 Flutter 插件支持的增强。
-  
+
+  [现代 Flutter 插件开发][Modern Flutter Plugin Development]
+  介绍了最近对 Flutter 插件支持的增强。
+
 * [Federated Plugin proposal][]
 
   [联合插件提议][Federated Plugin proposal]
@@ -1261,7 +1244,7 @@ a desktop application that integrates the GitHub
 GraphQL API with your Flutter app.
 
 [构建一个 Flutter 桌面程序][Write a Flutter desktop application]
-<br>这个 codelab 会引导您通过使用 Flutter，
+<br> 这个 codelab 会引导您通过使用 Flutter，
 来构建一个集成 GitHub GraphQL API 的桌面应用。
 
 You can run the following samples as desktop apps,
@@ -1280,7 +1263,7 @@ Flutter Gallery [running web app][], [repo][flutter-gallery-repo]
   by following the instructions provided in the [README][].
 
 Flutter Gallery [线上运行的 Web 应用][flutter gallery cn]，[源代码仓库地址][flutter-gallery-repo]
-<br>一个托管在 GitHub 上案例项目，可以用来帮助开发人员评估和使用 Flutter。
+<br> 一个托管在 GitHub 上案例项目，可以用来帮助开发人员评估和使用 Flutter。
   Gallery 的构成部分有：Material design widgets 的集合、
   behaviors 和用 Flutter 实现的 vignettes。
   你可以克隆该项目，并按照 [README][] 中的说明，将 Gallery 作为桌面应用程序运行。
@@ -1290,8 +1273,8 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
   It syncs with your Google account, imports your contacts,
   and allows you to manage them.
 
-Flokk [官宣文章][gskinner-flokk-blogpost], [源代码仓库地址][gskinner-flokk-repo]
-<br>一款集成了 GitHub 和 Twitter 的谷歌联系人管理器应用。
+Flokk [官宣文章][gskinner-flokk-blogpost]，[源代码仓库地址][gskinner-flokk-repo]
+<br> 一款集成了 GitHub 和 Twitter 的谷歌联系人管理器应用。
 可以从你的 Google 账户同步数据，导入联系人信息，并管理它们。
 
 [Photo Search app][]

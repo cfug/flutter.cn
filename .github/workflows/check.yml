@@ -1,0 +1,17 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check_reference_links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: sudo apt install -y pandoc
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - run: pip install tqdm
+      - run: python tool/markdown_check_reference_links.py src

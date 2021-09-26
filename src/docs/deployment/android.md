@@ -723,7 +723,7 @@ describes two.
 1. If you haven't done so already, download `bundletool` from the
    [GitHub repository][].
    
-   如果你还没准备好，可以从 [GitHub 仓库][] 下载 `bundletool`。
+   如果你还没准备好，可以从 [GitHub 仓库][GitHub repository] 下载 `bundletool`。
    
 2. [Generate a set of APKs][apk-set] from your app bundle.
 

@@ -107,39 +107,11 @@ each of these videos highlights a Flutter package.
 
 你是否有几分钟时间，让我们用这些视频为你介绍一些精选 Flutter package。
 
-### Google I/O 2019 大会上的 Flutter and Dart 视频列表
+### The Boring Flutter show
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815097&cid=97572523&page=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-`flutter_slidable` package
-[Flutter package of the week playlist][]
-
-[Flutter package of the week playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1quF6ny8oFHJ2gBdrYN_AK
-
-### What's new in Flutter 1.9
-
-### Flutter 1.9 更新介绍视频
-
-<iframe src="//player.bilibili.com/player.html?aid=68736608&cid=119127416&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"> </iframe>
-
-### Flutter Weekly Widgets by MTechViral
-
-### MTechViral (社区) 的 Flutter Weekly Widgets 系列视频
-
-Weekly episodes, released on Sunday, feature Flutter widgets.
-
-每周日播出的视频教程，为你带来一个特色的 Flutter widget。
-
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55813706&cid=97570085&page=1" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-Episode 1: Sized Box<br>
-
-第一集: Sized Box<br>
-
-[Flutter Weekly Widgets playlist][]
-
-[Flutter Weekly Widgets 播放列表][Flutter Weekly Widgets playlist]
-
----
+This series features Flutter programmers coding,
+unscripted and in real time. Mistakes, solutions
+(some of them correct), and snazzy intro music included.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Introducing the Boring Flutter show<br>
@@ -179,9 +151,7 @@ millions of downloads.
 
 [Flutter developer stories playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759
 
-[Flutter: 开发者成功故事播放列表][Flutter Developer Stories playlist]
-
----
+[Flutter: 开发者成功故事播放列表][Flutter developer stories playlist]
 
 ## Online courses
 
@@ -196,20 +166,20 @@ To include your course, [submit a PR][]:
 通过这些免费的课程学习如何构建 Flutter 应用。
 在注册课程之前，请验证它的内容是否及时更新，例如 Dart 的空安全代码等。
 这些课程按照字幕排序。
-若想要加入你的课程，请 [提交一个 PullRequest][submit a PR]。
+若想要加入你的课程，请 [提交一个 PR][submit a PR]。
 
-* [Build Native Mobile Apps with Flutter](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
+* [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
 
-* [The Complete Flutter Development Bootcamp Using Dart][] by App Brewery
+  [2021 年 Flutter 开发 Dart 训练营]，由 App Brewery 录制。
+
+* [Flutter & Dart - the Complete Guide, 2021 edition][]
+
+  [Flutter & Dart - 完全指南，2021 年版本][Flutter & Dart - the Complete Guide, 2021 edition]
 
 * [Flutter Crash Course][] by Nick Manning
 
-  [使用 Flutter 构建精美的应用（中文字幕）](https://cn.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)；
-  
-* [Flutter Crash Course][], by Nick Manning
-
   [Flutter 速成课][Flutter Crash Course], 由 Nick Manning (社区) 录制。
-  
+
 
 [Flutter & Dart - the Complete Guide, 2021 edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/

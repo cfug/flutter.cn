@@ -169,17 +169,6 @@ when using reflection.
 工具不知道哪一部分在运行时不会被用到，所以冗余的代码很难被清除。
 当使用反射时，App 的体积不能被轻易优化。
 
-{{site.alert.info}}
-
-  **What about dartson?** The [dartson][] library uses runtime
-  [reflection][], which makes it incompatible with Flutter.
-
-  **dartson 怎么样？**
-  [dartson][] 是一个使用运行时使用 [反射][reflection]
-  的库，这让它不能兼容 Flutter。
-
-{{site.alert.end}}
-
 Although you cannot use runtime reflection with Flutter, some libraries give
 you similarly easy-to-use APIs but are based on code generation instead. This
 approach is covered in more detail in the 

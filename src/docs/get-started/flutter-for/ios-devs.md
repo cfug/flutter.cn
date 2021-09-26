@@ -41,22 +41,22 @@ but it has a plugin system to communicate with iOS (and Android) for non-UI
 tasks. If you're an expert in iOS development, you don't have to relearn
 everything to use Flutter.
 
-在使用 Flutter 开发时，你 iOS 方面的知识和技能都很是非常有用的，因为 Flutter 中
-很多的功能和配置都依赖于移动端操作系统。Flutter 是移动端绘制 UI 的一种新方式，而对于
-非 UI 层面的任务，它通过插件机制来和 iOS（Android）系统进行通信。如果你很精通 iOS 开
-发，使用 Flutter 并不需要完全从头开始。
+你的 iOS 开发技能对于开发 Flutter 而言非常宝贵，
+因为 Flutter 也依赖操作系统进行众多功能和配置。
+Flutter 是一种全新的构建移动应用的方式，
+同时它也包含了可以与 iOS（和 Android）进行非 UI 通信的插件系统。
+如果你已经是 iOS 开发专家，那么你并不需要重新学习 Flutter 的所有内容。
 
 Flutter also already makes a number of adaptations in the framework for you 
 when running on iOS. For a list, see [Platform adaptations][].
 
-Flutter 框架针对 iOS 平台做了一些适配，
-在 [平台行为差异和适配][Platform adaptations] 里可以了解更多。
+Flutter 早已对在 iOS 上运行 Flutter 框架作了许多优化。
+若你需要查看相关内容，请阅读 [平台适配][Platform adaptations]。
 
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
 你同样可以将这篇文章当作一份手册查看，以便查找并解决你所遇到的问题。
-
 
 ## Views
 
@@ -68,14 +68,15 @@ that are most relevant to your needs.
 
 {{site.alert.secondary}}
 
-How is react-style, or _declarative_, programming different than the
-traditional imperative style?
-For a comparison, see [Introduction to declarative
-UI](/docs/get-started/flutter-for/declarative).
+  How is react-style, or _declarative_,
+  programming different than the
+  traditional imperative style?
+  For a comparison, see [Introduction to declarative UI][].
 
-这里有一份关于响应式编程，或者说 **声明式编程** 和
-传统的命令式编程有什么不同之处的文章，
-你可以浏览 [声明式 UI 介绍][Introduction to declarative UI]。
+  这里有一份关于响应式编程，或者说 **声明式编程** 和
+  传统的命令式编程有什么不同之处的文章，
+  你可以浏览 [声明式 UI 介绍][Introduction to declarative UI]。
+
 {{site.alert.end}}
 
 On iOS, most of what you create in the UI is done using view objects, which are
@@ -113,16 +114,15 @@ that get "inflated" into actual view objects under the hood.
 还有，和 `UIView` 不同，Flutter 的 widget 是很轻量的，一部分原因就是源于它的不可变特性。因为它并不
 是视图，也不直接绘制任何内容，而是作为对 UI 及其特性的一种描述，而被“注入”到视图中去。
 
-Flutter includes the [Material Components][]
-library. These are widgets that implement the
-[Material Design guidelines][]. Material Design is a
-flexible design system [optimized for all
-platforms][],
-including iOS.
+Flutter includes the [Material Components][] library.
+These are widgets that implement the
+[Material Design guidelines][].
+Material Design is a flexible design system
+[optimized for all platforms][], including iOS.
 
 Flutter 包含了 [Material Components][] 库。内容都是
-一些遵循了 [Material Design 设计规范][] 的组件。Material Design 是
-一种灵活的 [支持全平台][]
+一些遵循了 [Material Design 设计规范][Material Design guidelines] 的组件。
+Material Design 是一种灵活的 [支持全平台][optimized for all platforms]
 的设计体系，其中也包括了 iOS。
 
 But Flutter is flexible and expressive enough to implement any design language.
@@ -559,6 +559,8 @@ To learn how to implement a signature painter in Flutter, see Collin's answer on
 
 想要学习在 Flutter 里如何实现一个画笔，
 可以查看 Collin 在 [StackOverflow][] 里的回答。
+
+[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 <!-- skip -->
 ```dart
@@ -2295,35 +2297,40 @@ widget that wraps a number of widgets that are commonly required for application
 implementing Material Design. It builds upon a WidgetsApp by adding Material
 specific functionality.
 
-为了充分发挥应用中 Material Components 的优势，声明一个顶级的 widget，MaterialApp，来作为你的应用
-入口。MaterialApp 是一个封装了大量常用 Material Design 组件的 widget。它基于 WidgetsApp 添加了 Material 的
-相关功能。
+为了充分发挥应用中 Material Components 的优势，
+声明一个顶级的 widget，MaterialApp，来作为你的应用入口。
+MaterialApp 是一个封装了大量常用 Material Design 组件的 widget。
+它基于 WidgetsApp 添加了 Material 的相关功能。
 
-But Flutter is flexible and expressive enough to implement any design language.
-On iOS, you can use the
-[Cupertino library][]
-to produce an interface that adheres to the [Human Interface
-Guidelines][].
-For the full set of these widgets, see the
-[Cupertino widgets gallery][].
+But Flutter is flexible and expressive enough to implement
+any design language.  On iOS, you can use the
+[Cupertino library][] to produce an interface that adheres to the
+[Human Interface Guidelines][].
+For the full set of these widgets,
+see the [Cupertino widgets][] gallery.
 
-但是 Flutter 有足够的灵活性和表现力来实现任何设计语言。在 iOS 上，可以使
-用 [Cupertino library][] 来
-制作遵循 [Human Interface
-Guidelines][] 的
-界面。关于这些 widget 的全部集合，可以参看 [Cupertino widgets gallery][]。
+但是 Flutter 有足够的灵活性和表现力来实现任何设计语言。
+在 iOS 上，可以使用 [Cupertino library][] 来
+制作遵循 [人机接口指南][Human Interface Guidelines] 的界面。
+关于这些 widget 的全部集合，
+可以参看 [Cupertino widgets][] gallery。
 
-You can also use a `WidgetApp` as your app widget, which provides some of the
-same functionality, but is not as rich as `MaterialApp`.
+You can also use a `WidgetsApp` as your app widget,
+which provides some of the same functionality,
+but is not as rich as `MaterialApp`.
 
-也可以使用 `WidgetApp` 来做为应用入口，它提供了一部分类似的功能接口，但是不如 `MaterialApp` 强大。
+也可以使用 `WidgetApp` 来做为应用入口，
+它提供了一部分类似的功能接口，但是不如 `MaterialApp` 强大。
 
-To customize the colors and styles of any child components, pass a
-`ThemeData` object to the `MaterialApp` widget. For example, in the code below,
+To customize the colors and styles of any child components,
+pass a `ThemeData` object to the `MaterialApp` widget.
+For example, in the code below,
 the primary swatch is set to blue and text selection color is red.
 
-定义所有子组件颜色和样式，可以直接传递 `ThemeData` 对象给 `MaterialApp` widget。
-例如在下面的代码中，primary swatch 被设置为蓝色，而文本选中后的颜色被设置为红色。
+定义所有子组件颜色和样式，可以直接传递
+`ThemeData` 对象给 `MaterialApp` widget。
+例如在下面的代码中，primary swatch 被设置为蓝色，
+而文本选中后的颜色被设置为红色。
 
 ```
 class SampleApp extends StatelessWidget {
@@ -2614,30 +2621,37 @@ Flutter 并不直接在平台上运行代码；而是以 Dart 代码的方式原
 你的 Flutter 应用仍旧被原生平台的 `ViewController` 当做一个 view 来管理，
 但是你不能够直接访问 `ViewController` 自身或是对应的原生框架。
 
-This doesn't mean Flutter apps cannot interact with those native APIs, or with any
-native code you have. Flutter provides [platform channels][],
-that communicate and exchange data with the `ViewController` that
-hosts your Flutter view. Platform channels are essentially an asynchronous messaging
-mechanism that bridge the Dart code with the host `ViewController` and
-the iOS framework it runs on. You can use platform channels to execute a method on
-the native side, or to retrieve some data from the device's sensors, for example.
+This doesn't mean Flutter apps cannot interact with those native APIs,
+or with any native code you have.
+Flutter provides the [platform channel][],
+which communicates and exchanges data with the
+`ViewController` that hosts your Flutter view.
+Platform channels are essentially an asynchronous messaging
+mechanism that bridge the Dart code with the host
+`ViewController` and the iOS framework it runs on.
+You can use platform channels to execute a method on
+the native side,
+or to retrieve some data from the device's sensors, for example.
 
 这并不意味着 Flutter 应用不能够和原生 API，或是原生代码进行交互。
-Flutter 提供了用来和宿主 `ViewController` 通信和交换数据的 [platform channels][]。
-platform channels 本质上是一个桥接了 Dart 代码与
-宿主 `ViewController` 和 iOS 框架的异步通信模型。
-你可以通过 platform channels 来执行原生代码的方法，
+Flutter 提供了用来和宿主 `ViewController`
+通信和交换数据的 [平台通道][platform channel]。
+平台通道本质上是一个桥接了 Dart 代码与宿主 `ViewController`
+和 iOS 框架的异步通信模型。
+你可以通过平台通道来执行原生代码的方法，
 或者获取设备的传感器信息等数据。
 
-In addition to directly using platform channels, you can use a variety of pre-made
-[plugins][] that encapsulate
-the native and
-Dart code for a specific goal. For example, you can use a plugin to access
-the camera roll and the device camera directly from Flutter, without having to
-write your own integration. Plugins are found on the
-[pub.dev][] site,
-Dart and Flutter's open source package repository. Some packages might
-support native integrations on iOS, or Android, or both.
+In addition to directly using platform channels,
+you can use a variety of pre-made
+[plugins][] that encapsulate the native and
+Dart code for a specific goal.
+For example, you can use a plugin to access
+the camera roll and the device camera directly from Flutter,
+without having to write your own integration.
+Plugins are found on [pub.dev],
+Dart and Flutter's open source package repository.
+Some packages might support native integrations on iOS,
+Android, web, or all of the above.
 
 除了直接使用 platform channels 之外，也可以使用一系列包含了原生代码和 Dart代码，
 实现了特定功能的现有 [插件][plugins]。例如，你在 Flutter 中
@@ -2645,13 +2659,12 @@ support native integrations on iOS, or Android, or both.
 [pub.dev][] 是一个 Dart 和 Flutter 的开源包仓库，你可以在这里找到需要的插件。
 有些包可能支持集成 iOS 或 Android，或两者皆有。
 
-If you can't find a plugin on Pub that fits your needs, you can
-[write your own][]
-and [publish it on Pub][].
+If you can't find a plugin on pub.dev that fits your needs,
+you can [write your own][] and [publish it on pub.dev][].
 
 如果你在 Pub 找不到自己需要的包，你可以自己写一个，
 相关信息可以查阅 [Flutter Packages 的开发和提交][write your own]，
-并且你可以将其 [发布到 Pub 上][publish it on Pub]。
+并且你可以将其 [发布到 Pub 上][publish it on pub.dev]。
 
 ### How do I access the GPS sensor?
 

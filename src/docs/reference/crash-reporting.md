@@ -50,7 +50,8 @@ over time. A crash report may contain the following information:
 Google handles all data reported by this tool in accordance with the 
 [Google Privacy Policy][].
 
-Google 会根据 [Google 隐私政策][Privacy Policy] 处理此工具报告的所有数据。
+Google 会根据 [Google 隐私政策][Google Privacy Policy]
+处理此工具报告的所有数据。
 
 ## Disabling analytics reporting
 
@@ -79,4 +80,4 @@ To display the current setting, you can run the following command:
 $ flutter config
 ```
 
-[Privacy Policy]: https://policies.google.cn/privacy
+[Google Privacy Policy]: https://policies.google.com/privacy

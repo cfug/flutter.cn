@@ -109,7 +109,7 @@ Alternatively, you can do it manually using the following steps:
    naming convention.
    
    在 `<app dir>/android/app/src/main/res/` 目录下，
-   把我们的图标文件放在以 [配置限定符][] 命名的文件夹中。
+   把我们的图标文件放在以 [配置限定符][configuration qualifiers] 命名的文件夹中。
    类似默认的 `mipmap-` 文件夹这样的命名方式。
 
 1. In `AndroidManifest.xml`, update the
@@ -533,7 +533,7 @@ are correct, especially the following:
   the final name of the app.
   
 `application`
-<br>编辑 [`application`][applicationtag]
+<br> 编辑 [`application`][applicationtag]
   标签中的 `android:label` 来设置 app 的最终名字。
 
 `uses-permission`
@@ -544,7 +544,7 @@ are correct, especially the following:
   Flutter tools and a running app.
   
 `uses-permission`：
-<br>如果你的代码需要互联网交互，请加入 `android.permission.INTERNET` 
+<br> 如果你的代码需要互联网交互，请加入 `android.permission.INTERNET` 
   [权限标签][permissiontag]。
   标准开发模版里并未加入这个权限（但是 Flutter debug 模版加入了这个权限），
   加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信。
@@ -558,7 +558,7 @@ Review the default [Gradle build file][gradlebuild],
 verify the values are correct, especially the following
 values in the `defaultConfig` block:
 
-检查位于 `<app dir>/android/app` 的默认 [Gradle build file][gradlebuild]，
+检查位于 `<app dir>/android/app` 的默认 [Gradle 构建文件][gradlebuild]，
 并确认各个值都设置正确，特别是下面 `defaultConfig` 块中的值：
 
 `applicationId`
@@ -588,19 +588,18 @@ values in the `defaultConfig` block:
 `minSdkVersion`、`compilesdkVersion` 和 `targetSdkVersion`
 <br> 指定应用运行所需要的最低 API 级别 `minSdkVersion`、
 编译 API 级别 `compilesdkVersion` 以及目标 API 级别 `targetSdkVersion`。
-具体可以参考 Android 开发者网站上关于 [版本的文档][versions]
+具体可以参考 Android 开发者网站上的 [版本文档][versions]
 中的 API 版本的部分。
 
 `buildToolsVersion`
 <br> Specify the version of Android SDK Build Tools that your app uses. 
-  Alternatively, you can use the [Android Gradle Plugin][] in Android Studio,
+  Alternatively, you can use the Android Gradle Plugin in Android Studio,
   which will automatically import the minimum required Build Tools for your app
   without the need for this property.
   
 `buildToolsVersion`
 <br> 指定应用所需的 Android SDK 构建工具的版本，
-或者你可以在 Android Studio 里使用
-[Android Gradle 插件 (AGP)][Android Gradle Plugin]，
+或者你可以在 Android Studio 里使用 Android Gradle 插件 (AGP)，
 它可以自动设置导入你应用所需的构建工具版本，
 这样就无需过多操心这个属性啦。
 
@@ -677,7 +676,7 @@ and maintaining additional files to de-obfuscate stack traces.
 
 这个部分描述了如何构建一个发布的 app bundle。
 如果在前面的部分已经完成了签名步骤，发布的 bundle 会被签名。
-这时你也许想要[混淆你的 Dart 代码][obfuscating your Dart code]以加大反编译难度。
+这时你也许想要 [混淆你的 Dart 代码][obfuscating your Dart code] 以加大反编译难度。
 混淆你的代码需要在 build 的时候添加一些标志，并维护其他文件以消除反编译的堆栈跟踪。
 
 From the command line:
@@ -724,15 +723,15 @@ describes two.
 1. If you haven't done so already, download `bundletool` from the
    [GitHub repository][].
    
-   如果你还没准备好，可以从 [GitHub repository][] 下载 `bundletool`
+   如果你还没准备好，可以从 [GitHub 仓库][] 下载 `bundletool`。
    
 2. [Generate a set of APKs][apk-set] from your app bundle.
 
-   从你的 app bundle [生成 APKs][apk-set]
+   从你的 app bundle [生成 APKs][apk-set]。
 
 3. [Deploy the APKs][apk-deploy] to connected devices.
 
-   [将这 APKs 部署到][apk-deploy] 已连接的设备
+   [将这 APKs 部署到][apk-deploy] 已连接的设备。
 
 #### Online using Google Play
 
@@ -770,7 +769,9 @@ At this point, you might consider [obfuscating your Dart code][]
 to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
 
-如果你完成签名步骤， APK 就被签名了。
+如果你完成签名步骤，APK 就被签名了。
+这时你也许想要 [混淆你的 Dart 代码][obfuscating your Dart code] 以加大反编译难度。
+混淆你的代码需要在构建时添加一些参数。
 
 From the command line:
 
@@ -834,43 +835,7 @@ For detailed instructions on publishing your app to the Google Play Store,
 see the [Google Play launch][play] documentation.
 
 要了解如何发布一个 app 到 Google Play Store，
-可以参考 [Google Play publishing documentation][play]。
-
-Now that you’ve created your app, attract more users with Google Ads.
-App campaigns use machine learning to drive more installs and
-make the most of your budget. 
-
-当你创建了应用之后，你可以通过 Google Ads 吸引更多用户，
-Google Ads 平台可以通过机器学习帮助你以非常高的性价比吸引到更多用户。
-
-Get your campaign running in a few steps
-
-通过以下几步创建一个广告宣传：
-
-1. Create your ad&mdash;we’ll help create your ad from your app
-   information
-
-   创建广告&mdash;我们会根据您的应用信息帮您制作广告。另外，您还可以添加图片和视频。
-
-1. Choose your budget&mdash;set your target cost-per-install (tCPI)
-   and daily budget cap
-
-   决定推广预算&mdash;对于以提高应用安装量为主要目标的广告系列，
-   您需要为其设置应用安装出价，也就是“目标每次安装费用”，同时设置每日推广支出预算。
-
-1. Select your location&mdash;let us know where you’d like your ads to run
-
-   选择目标地区&mdash;让我们知道你希望触达哪些区域的用户。
-
-1. Decide what action you want users to take&mdash;choose installs,
-   in-app actions, or target return on ad spend (ROAS) 
-
-   设定用户行动&mdash;决定你希望用户要做什么，
-   比如安装，应用内操作或者目标广告支出回报率 (ROAS)。
-
-[Get $75 app advertising credit when you spend $25.][]
-
-[获取 75 美元的赠金（当你消费 25 美金后）][Get $75 app advertising credit when you spend $25.]
+可以参考 [Google Play 发布文档][play]。
 
 ## Updating the app's version number
 
@@ -902,10 +867,9 @@ In Android, `build-name` is used as `versionName` while
 `build-number` used as `versionCode`. For more information,
 see [Version your app][] in the Android documentation.
 
-在 Android 中，当 `build-number` 被用作 `versionCode` 时
-`build-name` 作为 `versionName` 使用。
-更多信息请参考 Android 文档中的
-[为你的应用添加版本][Version your app]。
+在 Android 中，`build-number` 被用作 `versionCode`，
+`build-name` 将作为 `versionName` 使用。
+更多信息请参考 Android 文档中的 [为你的应用添加版本][Version your app]。
 
 After updating the version number in the pubspec file,
 run `flutter pub get` from the top of the project, or
@@ -1026,12 +990,6 @@ The resulting app bundle or APK files are located in
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [appid]: {{site.android-dev}}/studio/build/application-id
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
-[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[versions]: {{site.android-dev}}/studio/publish/versioning
-[launchericons]: {{site.material}}/design/iconography/
-[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
-[配置限定符]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
-[play]: {{site.android-dev}}/distribute/googleplay/start
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
@@ -1047,7 +1005,6 @@ The resulting app bundle or APK files are located in
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
-
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element

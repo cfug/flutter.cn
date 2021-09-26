@@ -63,7 +63,8 @@ flutter:
   (see [Asset Variants](#asset-variants)). To add files located in subdirectories, create 
   an entry per directory.
 
-  仅包含当前目录下的所有文件，以及子目录下（与主目录中的文件）的同名文件。（请参阅 [Asset 变体](#asset-variants)）。如果想要添加子文件夹中的文件，
+  仅包含当前目录下的所有文件，以及子目录下（与主目录中的文件）的同名文件
+  （请参阅 [Asset 变体](#asset-variants)）。如果想要添加子文件夹中的文件，
   请为每个目录创建一个条目。
 
 {{site.alert.end}}
@@ -262,8 +263,8 @@ asset onto one that most closely matches the current
 In order for this mapping to work, assets should be arranged
 according to a particular directory structure:
 
-[`AssetImage`][]
-可以将逻辑请求资源映射到最接近当前设备 [device pixel ratio][]的资源。
+[`AssetImage`][] 可以将逻辑请求资源映射到最接近当前
+[设备像素比][device pixel ratio] 的资源。
 为了使这种映射起作用，应该根据特定的目录结构来保存资源：
 
 ```text
@@ -362,9 +363,14 @@ you'll also notice parameters related to scale.)
 
 {{site.alert.note}}
 
-  [Device pixel ratio][] depends on [MediaQueryData.size][] which requires to have either a [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
+  [Device pixel ratio][] depends on [MediaQueryData.size][]
+  which requires to have either a [MaterialApp][] or [CupertinoApp][]
+  as an ancestor of your [`AssetImage`][].
 
-  [设备像素比][Device pixel ratio] 取决于 [MediaQueryData.size][] 的大小，它需要在祖先节点提供 [MaterialApp][] 或者 [CupertinoApp][] 作为 [`AssetImage`][] 的祖先节点。
+  [设备像素比][Device pixel ratio] 取决于
+  [MediaQueryData.size][] 的大小，
+  它需要在祖先节点提供 [MaterialApp][] 或者
+  [CupertinoApp][] 作为 [`AssetImage`][] 的祖先节点。
 
 {{site.alert.end}}
 
@@ -403,7 +409,7 @@ AssetImage('icons/heart.png', package: 'my_icons')
 Assets used by the package itself should also be fetched
 using the `package` argument as above.
 
-package 使用的本身的 Assets 也需要加上 `package` 参数来获取。
+package 使用本身的 Assets 也需要加上 `package` 参数来获取。
 
 #### Bundling of package assets
 
@@ -553,7 +559,7 @@ NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 For a more complete example, see the implementation of the
 Flutter [`video_player` plugin][] on pub.dev.
 
-这有一个更完整的实例可以理解 Flutter 的应用：[video_player plugin][]。
+这有一个更完整的实例可以理解 Flutter 的应用：[`video_player` plugin][]。
 
 The [`ios_platform_images`][] plugin on pub.dev wraps
 up this logic in a convenient category. You fetch
@@ -702,7 +708,8 @@ screen in commented code. You can uncomment it or use other
 For more details, see
 [Adding a splash screen to your mobile app][].
 
-更多详细信息，请查看 [在 Android 应用中添加闪屏页与启动页][Adding a splash screen to your mobile app]。
+更多详细信息，请查看
+[在 Android 应用中添加闪屏页与启动页][Adding a splash screen to your mobile app]。
 
 #### iOS
 

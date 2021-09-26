@@ -1202,13 +1202,6 @@ wrap a widget and force the widget to fill extra space.
   使用 `Flexible` 在  `Row` 或 `Column` 中重新调整 widgets 的大小。
   这样，你就可以调整子 widget 的间距同时保持其相对于父 widget  的大小。
   `Expanded`改变子窗口小部件的约束， 所以它会填补全部空白空间。
-  
-  To learn more about constraints and how they affect how
-  Flutter determines the size and position of its widgets,
-  see [Understanding constraints][].
-  
-  如果您想了解 Flutter 是如何约束确定 widget 的大小和位置，
-  请阅读文档 [了解约束][Understanding constraints]。
 
 {{site.alert.end}} 
 
@@ -2031,26 +2024,29 @@ Flutter 将会为 [Material][] 和 [Cupertino][]
 {:.no_toc}
 
 {{site.alert.secondary}}
+
   The following example displays the widget `Icons.widget`
   from the [Material Icon library][] in red and blue.
 
-  下面的样例显示了来自 [Material Icon library][] 的红蓝 `Icons.widget` widget。
+  下面的样例显示了来自 [Material Icon library][] 
+  的红蓝 `Icons.widget` widget。
 
 1. Click the **Run** button. 
 
-   点击**运行**按钮
+   点击 **运行** 按钮
 
 1. Add another `Icon` from the 
    [Material Icon library][]
    with a size of 50.
 
-   添加另一个来自 [Material Icon library][] 的 `Icon` 并将其大小设为 50。
+   添加另一个来自 [Material Icon library][]
+   的 `Icon` 并将其大小设为 50。
 
 1. Give the `Icon` a color of `Colors.amber` from the 
    [Material Color palette][], and run again.  
 
    给 `Icon` 设置一个来自 [Material Color palette][] 的
-   `Colors.amber` 色，然后再次运行。
+   `Colors.amber` 颜色，然后再次运行。
 
 {{site.alert.end}}
 

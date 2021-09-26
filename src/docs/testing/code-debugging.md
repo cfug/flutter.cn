@@ -311,7 +311,7 @@ widgets' build functions. For example,
 （如果您调用根 widget 的 `toStringDeep()` 方法，就会得到这棵树。）
 您会看到很多 widget ，虽然它们没出现在应用的源码中，但却出现在这颗树中，
 因为它们是由框架中 widget 的 build 函数插入的。
-比如，[`Material`][] widget 的实现细节中就包括了 [`_InkFeature`][] 。
+比如，[`Material`][] widget 的实现细节中就包括了 [`InkFeature`][]。
 
 Since the `debugDumpApp()` call is invoked when the button changes
 from being pressed to being released, it coincides with the

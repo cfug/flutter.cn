@@ -92,19 +92,13 @@ Package 包含以下两种类别：
   Dart code combined with one or more platform-specific
   implementations.
 
+**原生插件 (Plugin packages)**
+<br> 使用 Dart 编写的，按需使用 Java 或 Kotlin、Objective-C
+或 Swift 分别在 Android 和/或 iOS 平台实现的 package。
+
   Plugin packages can be written for Android (using Kotlin or Java), iOS (using
   Swift or Objective-C), web, macOS, Windows, or Linux, or any combination
   thereof.
-
-  A concrete example is the [`url_launcher`][] plugin package.
-  To see how to use the `url_launcher` package, and how it
-  was extended to implement support for web,
-  see the Medium article by Harry Terkelsen,
-  [How to Write a Flutter Web Plugin, Part 1][].
-  
-**原生插件 (Plugin packages)**
-<br> 使用 Dart 编写的，按需使用 Java 或 Kotlin、Objective-C
-  或 Swift 分别在 Android 和/或 iOS 平台实现的 package。
 
   插件 package 可以针对 Android（使用 Kotlin 或 Java）、
   iOS（使用 Swift 或 Objective-C）、Web、macOS、Windows 或 Linux，
@@ -283,12 +277,21 @@ A federated plugin requires the following packages:
 <br> The package that plugin users depend on to use the plugin.
   This package specifies the API used by the Flutter app.
 
+**面向应用的 package**
+<br> 该 package 是用户使用插件的的直接依赖。
+  它指定了 Flutter 应用使用的 API。
+
 **platform package(s)**
 <br> One or more packages that contain the platform-specific
   implementation code. The app-facing package calls into
   these packages&mdash;they aren't included into an app,
   unless they contain platform-specific functionality
   accessible to the end user.
+
+**平台 package**
+<br> 一个或多个包含特定平台代码的 package。
+  面向应用的 package 会调用这些平台 package&mdash;&mdash;
+  除非它们带有一些终端用户需要的特殊平台功能，否则它们不会包含在应用中。
 
 **platform interface package**
 <br> The package that glues the app-facing packing
@@ -298,13 +301,24 @@ A federated plugin requires the following packages:
   that defines this interface ensures that all platform
   packages implement the same functionality in a uniform way.
 
+**平台接口 package**
+<br> 将面向应用的 package 与平台 package 进行整合的 package。
+  该 package 会声明平台 package 需要实现的接口，供面向应用的 package 使用。
+  使用单一的平台接口 package 可以确保所有平台 package
+  都按照各自的方法实现了统一要求的功能。
+
 #### Endorsed federated plugin
+
+#### 整合的联合插件
 
 Ideally, when adding a platform implementation to
 a federated plugin, you will coordinate with the package
 author to include your implementation.
 In this way, the original author _endorses_ your
 implementation.
+
+理想情况下，当你在为一个联合插件添加某个平台的实现时，
+你会与 package 的作者合作，将你的实现纳入 package。
 
 For example, say you write a `foobar_windows`
 implementation for the (imaginary) `foobar` plugin. 
@@ -316,7 +330,15 @@ in their Flutter app, the Windows implementation,
 as well as the other endorsed implementations,
 are automatically available to the app.
 
+假设你开发了 `foobar_windows` 插件，用于对应 `foobar` 插件的实现。
+在整合的联合插件里，`foobar` 的原作者会将你的 Windows
+实现作为依赖添加在 pubspec 文件中，供面向应用的 package 调用。
+而后在开发者使用 `foobar` 插件时，Windows
+及已包含的其他平台的实现就自动可用了。
+
 #### Non-endorsed federated plugin
+
+#### 未整合的联合插件
 
 If you can't, for whatever reason, get your implementation
 added by the original plugin author, then your plugin
@@ -326,11 +348,21 @@ to the app's pubspec file. So, the developer
 must include both the `foobar` dependency _and_
 the `foobar_windows` dependency in order to achieve
 full functionality.
-  
+
+如果你的实现出于某些原因无法被原作者整合，
+那么你的插件属于 **未整合** 的联合插件。
+开发者仍然可以使用你的实现，但是必须手动在 pubspec 文件里添加引用。
+意味着开发者需要同时引用 `foobar` **和** `foobar_windows` 依赖，
+才能使用对应平台的完整功能。
+
 For more information on federated plugins,
 why they are useful, and how they are
 implemented, see the Medium article by Harry Terkelsen,
 [How To Write a Flutter Web Plugin, Part 2][].
+
+有关联合插件的更多信息、它为什么非常强大，以及如何实现联合插件，
+你可以阅读 Harry Terkelsen 在 Medium 撰写的
+[如何撰写 Flutter Web 插件，第 2 部分][How To Write a Flutter Web Plugin, Part 2]。
 
 ### Specifying a plugin's supported platforms {#plugin-platforms}
 
@@ -345,7 +377,8 @@ only iOS and Android:
 
 插件可以通过向 `pubspec.yaml` 中的 `platforms` map 
 添加 keys 来指定其支持的平台。
-例如，以下是 `hello` 插件的 `flutter:` map：
+例如，以下是 `hello` 插件的 `flutter:` map，
+它仅支持 Android 和 iOS：
 
 ```yaml
 flutter:
@@ -407,9 +440,9 @@ As of Flutter 1.20.0, Use the `--platforms=` option followed by a comma separate
 specify the platforms that the plugin supports. Available platforms are: `android`, `ios`, `web`, `linux`, `macos`, and `windows`.
 If no platforms are specified, the resulting project doesn't support any platforms.
 
-从Flutter 1.20.0 版本，我们开始使用 `--platforms=` 这个选项，
+从 Flutter 1.20.0 版本，我们开始使用 `--platforms=` 这个选项，
 后面参数是用逗号分隔的列表，这个参数代表指定插件支持的平台。
-可用的平台有：`android`、`ios`、`web`、`linux`、`macos` 和`windows`。
+可用的平台有：`android`、`ios`、`web`、`linux`、`macos` 和 `windows`。
 如果没有指定平台，则生成的项目不支持任何平台。
 
 Use the `--org` option to specify your organization,

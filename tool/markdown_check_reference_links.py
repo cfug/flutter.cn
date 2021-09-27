@@ -22,16 +22,18 @@ def check_path(path):
             with file.open() as f:
                 html = check_output("pandoc", stdin=f, encoding="utf8")
 
-            # pre
+            # remove code blocks
             html = re.sub(r"<pre.*?</pre>", "", html, flags=re.DOTALL)
 
-            # pr
+            # remove such lines:
+            # [foo][bar] Pull request title
             html = re.sub(
                 r'<p><a href="https://github.com/.*?/pull/\d+">\d+</a> .*?</p>',
                 "",
                 html,
             )
 
+            # https://github.github.com/gfm/#reference-link
             if m := re.findall(r"\[[^\[\]]+]\[[^\[\]]*]", html):
                 bad_files[filename] = m
 

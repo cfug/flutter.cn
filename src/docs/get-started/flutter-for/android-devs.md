@@ -1727,7 +1727,8 @@ see the community-contributed Medium article,
 [Flutter for Android Developers: How to design Activity UI in Flutter][].
 
 如果要学习更多的关于 Activity 和 Fragment 创建界面的内容，请阅读社区贡献的 Medium 文章，
-[给 Android 开发者的 Flutter 指南：如何在 Flutter 中设计一个 Activity 界面][]。
+[给 Android 开发者的 Flutter 指南：如何在 Flutter 中设计一个 Activity 界面]
+[Flutter for Android Developers: How to design Activity UI in Flutter]。
 
 As mentioned in the [Intents][]
 section, screens in Flutter are represented by `Widget`s since everything is

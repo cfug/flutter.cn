@@ -195,7 +195,7 @@ like layout and animations:
   You'll start by building a login page using several of MDC
   Flutter's components.
 
-  [MDC Flutter 教程 1：Material 组件基础][MDC 101 Flutter: Material Components (MDC) Basics-cn]<br>
+  [MDC Flutter 教程 1：Material 组件基础][MDC-101 Flutter: Material Components (MDC) Basics-cn]<br>
   学习使用 Material 核心组件构建一个简单的应用。
   我们最终会构建一个售卖衣服和家居的电子商务应用 － Shrine，
   本节将从一个简单的登陆页面开始帮助你在 Flutter 上使用 Material 组件。
@@ -205,7 +205,7 @@ like layout and animations:
   Continue building the e-commerce app, introduced in MDC-101,
   by adding navigation, structure, and data.
 
-  [MDC Flutter 教程 2：Material 组件结构和布局][MDC 102 Flutter: Material Structure and Layout-cn]<br>
+  [MDC Flutter 教程 2：Material 组件结构和布局][MDC-102 Flutter: Material Structure and Layout-cn]<br>
   学习如何在 Flutter 中使用 Material 样式的结构和布局。
   通过添加导航、结构和数据，继续构建那个电子商务应用 － Shrine。
 
@@ -215,7 +215,8 @@ like layout and animations:
   brand through design. Continue building your e-commerce
   app by adding a home screen that displays products.
 
-  [MDC Flutter 教程 3：Material 组件主题、形状、阴影和类型][MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type-cn]<br>
+  [MDC Flutter 教程 3：Material 组件主题、形状、阴影和类型][MDC-103 Flutter: 
+  Material Theming with Color, Shape, Elevation, and Type-cn]<br>
   探寻如何通过 Flutter Material 组件让你的产品更出众，
   并通过你的设计传达产品的品牌。
   我们会为我们的电子商务应用加入一个首页展现所有的产品。
@@ -226,7 +227,7 @@ like layout and animations:
   by adding a backdrop with a menu that filters
   products by the selected category.
 
-  [MDC Flutter 教程 4：Material 组件进阶][MDC 104 Flutter: Material Advanced Components-cn]<br>
+  [MDC Flutter 教程 4：Material 组件进阶][MDC-104 Flutter: Material Advanced Components-cn]<br>
   改进设计并学习如何使用高级的组件 - backdrop 菜单。
   本期我们将通过加入一个全屏（backdrop）样式的菜单，用于分类显示你的产品。
   至此我们就结束了这个电子商务应用的构建
@@ -243,10 +244,10 @@ like layout and animations:
 [MDC-104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
 
 [Building Beautiful Transitions with Material Motion for Flutter-cn]: {{site.codelabs}}/codelabs/material-motion-flutter-cn
-[MDC 101 Flutter: Material Components (MDC) Basics-cn]: {{site.codelabs}}/codelabs/mdc-101-flutter-cn
-[MDC 102 Flutter: Material Structure and Layout-cn]: {{site.codelabs}}/codelabs/mdc-102-flutter-cn
-[MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type-cn]: {{site.codelabs}}/codelabs/mdc-103-flutter-cn
-[MDC 104 Flutter: Material Advanced Components-cn]: {{site.codelabs}}/codelabs/mdc-104-flutter-cn
+[MDC-101 Flutter: Material Components (MDC) Basics-cn]: {{site.codelabs}}/codelabs/mdc-101-flutter-cn
+[MDC-102 Flutter: Material Structure and Layout-cn]: {{site.codelabs}}/codelabs/mdc-102-flutter-cn
+[MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type-cn]: {{site.codelabs}}/codelabs/mdc-103-flutter-cn
+[MDC-104 Flutter: Material Advanced Components-cn]: {{site.codelabs}}/codelabs/mdc-104-flutter-cn
 
 ## Using Flutter with...
 
@@ -277,7 +278,7 @@ Learn how to use Flutter with other technologies.
   to a travel booking app that lists possible
   flight destinations.
 
-  [向 Flutter 应用中添加 AdMob 广告横幅以及原生嵌入式广告][Adding AdMob banner and native inline ads to a Flutter app]<br>
+  [向 Flutter 应用中添加 AdMob 广告横幅以及原生嵌入式广告][Adding an AdMob banner and native inline ads to a Flutter app]<br>
   学习如何在一个旅行预约应用中嵌入 inline banner 以及原生广告。
 
 * [Adding in-app purchases to your Flutter app][]<br>
@@ -293,7 +294,7 @@ Learn how to use Flutter with other technologies.
   Build a field trip app that allows you and other
   members of the trip to share photos.
 
-  [使用 Google 相册和 Flutter 构建照片共享应用][Build a Photo sharing app with Google Photos and Flutter]<br>
+  [使用 Google 相册和 Flutter 构建照片共享应用][Build a Photo Sharing app with Google Photos and Flutter]<br>
   构建一个实地考察应用程序，允许你和旅行中的其他成员分享照片。
 
 * [Build voice bots for mobile with Dialogflow and Flutter][] (workshop) **NEW!**<br>
@@ -397,7 +398,7 @@ iOS、Android、Web 和桌面端。
   for iOS and Android that processes audio on the host platform.
   Then make an example app that uses your plugin to make a music keyboard.
 
-  [如何编写一个 Flutter (原生平台) 插件][How to write a Flutter plugin]<br>
+  [如何编写一个 Flutter（原生平台）插件][How to write a Flutter plugin]<br>
   编写一个原生平台（iOS 和 Android）的音乐插件，
   处理原生平台音频，然后构建一个示例应用，
   使用这个插件制作一个音乐键盘。
@@ -442,39 +443,11 @@ iOS、Android、Web 和桌面端。
 
 ## 其他资源
 
-For a full list of available Flutter codelabs, see the
-[Flutter category]({{site.codelabs}}/?cat=Flutter)
-on [Google Developers]({{site.codelabs}}).
-If the previous link doesn't work, try [this
-mirror of the Flutter codelabs](https://codelabs.flutter-io.cn/).
-
-查看所有的 Flutter Codelab，
-请在 [Google Developers Codelabs 网站](https://codelabs.developers.google.com) 
-里查看：[Flutter 分类](https://codelabs.developers.google.com/?cat=Flutter) 的内容，
-或者打开 [中文的 Flutter codelabs 网站](https://codelabs.flutter-io.cn/) 查阅更多。
-
-### Dart 相关 codelabs
-
-#### [为 Java 开发人员准备的 Dart 教程]({{site.codelabs}}/codelabs/from-java-to-dart-cn/index.html)
-
-Use DartPad (no download required!) to explore how
-Dart makes writing modern apps easy and fun.
-
-只要一个浏览器就可以完成这个 codelab，体验使用线上的 DartPad 来学习 Dart 吧！
-
-#### [Dart 速查表](/docs/codelabs/dart-cheatsheet)
-
-Use the latest, experimental version of DartPad to learn,
-remind yourself about, or test your knowledge of
-some of the most commonly used, yet unique features of the Dart language.
-
-使用最新体验版的 DartPad 完成这个 codelab，用交互的形式学习（或回顾）Dart 的独特之处。
-
 For Dart-specific codelabs, see the
 [codelabs][] page on the [Dart site][].
 
-查看更多 Dart 相关的 codelab，
-请在 [Dart 网站][Dart site] 上查看 [codelabs][] 页面。
+查看更多 Dart 相关的 codelab，请在
+[Dart 网站][Dart site] 上查看 [codelabs][] 页面。
 
 We also recommend the following online class:
 
@@ -495,13 +468,6 @@ We also recommend the following online class:
 
 {{site.alert.end}}
 
-[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
-[Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
-[Basic Flutter layout concepts]: /docs/codelabs/layout-basics
-[Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
-[Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
-[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
-[codelab on flutter.dev]: /docs/get-started/codelab
 [codelabs]: {{site.dart-site}}/codelabs
 [Dart site]: {{site.dart-site}}
 [The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart

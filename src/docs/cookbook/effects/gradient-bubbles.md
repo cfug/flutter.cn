@@ -221,10 +221,6 @@ Congratulations! You now have a modern, chat bubble UI.
 {{site.alert.note}}
   The recipe doesn’t yet work on the web because
   Flutter doesn’t yet support `Paint` shaders.
-  {% comment %}
-    For more information, see [Issue xxx][].
-    [I can't find the issue on GitHub, I've asked the web team]
-  {% endcomment %}
 {{site.alert.end}}
 
 {{site.alert.note}}

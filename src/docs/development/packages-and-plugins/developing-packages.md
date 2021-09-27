@@ -10,15 +10,24 @@ keywords: 插件开发,Flutter插件教程
 ---
 
 {{site.note.alert}}
+
   The plugin API has been updated and now supports [federated plugins][] that
   enable separation of different platform implementations. You can also now
   indicate [which platforms a plugin][supported-platforms] supports, for example
   web and macOS.
 
+  插件 API 现已支持 [联合插件][federated plugins]，从而分离在不同平台上的实现。
+  你可以指定 [哪些平台有插件][supported-platforms] 支持，例如 Web 和 macOS。
+
   Eventually, the old plugin APIs will be deprecated. In the short term, you
   will see a warning when the framework detects that you are using an old-style
   plugin. For information on how to upgrade your plugin, see [Supporting the new
   Android plugins APIs][].  
+
+  旧的插件 API 会在将来被废弃。如果在短期内你仍在使用旧版本的插件 API，你会看到警告。
+  想了解更多关于升级 Android 插件的内容，请阅读
+  [支持新的 Android 插件 API][Supporting the new Android plugins APIs]。
+
 {{site.note.end}}
 
 ## Package introduction
@@ -28,7 +37,7 @@ keywords: 插件开发,Flutter插件教程
 Packages enable the creation of modular code that can be shared easily. A
 minimal package consists of the following:
 
-通过使用 packages （的模式）可以创建易于共享的模块化代码。
+通过使用 package（的模式）可以创建易于共享的模块化代码。
 一个最基本的 package 由以下内容构成：
 
 **`pubspec.yaml`**
@@ -54,6 +63,7 @@ minimal package consists of the following:
   
   有关编写高效插件的注意事项列表，请参考 Medium 上的文章：
   [Writing a good plugin][]。
+
 {{site.alert.end}}
 
 ### Package types {#types}
@@ -73,10 +83,9 @@ Package 包含以下两种类别：
   for example the [`fluro`][] package.
   
 **纯 Dart 库 (Dart packages)**
-<br> 用 Dart 编写的传统 package，比如
-  [`path`]。其中一些可能包含 Flutter
-  的特定功能，因此依赖于 Flutter 框架，其使用范围仅限于 Flutter，比如
-  [`fluro`]。
+<br> 用 Dart 编写的传统 package，比如 [`path`][]。
+  其中一些可能包含 Flutter 的特定功能，因此依赖于 Flutter 框架，
+  其使用范围仅限于 Flutter，比如 [`fluro`][]。
 
 **Plugin packages**
 <br> A specialized Dart package that contains an API written in
@@ -94,22 +103,27 @@ Package 包含以下两种类别：
   [How to Write a Flutter Web Plugin, Part 1][].
   
 **原生插件 (Plugin packages)**
-<br> 使用 Dart 编写的，按需使用
-  Java 或 Kotlin、ObjC 或 Swift 分别在 Android 和/或 iOS 平台实现的 package。
-  一个具体的例子是 [`battery`]。
-  Plugin packages can be written for Android
-  (using Kotlin or Java), iOS (using Swift or Objective-C),
-  web (using Dart), macos (using Dart), or any combination
-  thereof.
+<br> 使用 Dart 编写的，按需使用 Java 或 Kotlin、Objective-C
+  或 Swift 分别在 Android 和/或 iOS 平台实现的 package。
+
+  插件 package 可以针对 Android（使用 Kotlin 或 Java）、
+  iOS（使用 Swift 或 Objective-C）、Web、macOS、Windows 或 Linux，
+  又或者它们的各种组合方式，进行编写。
+
   A concrete example is the [`url_launcher`][] plugin package.
   To see how to use the `url_launcher` package, and how it
   was extended to implement support for web,
   see the Medium article by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
 
+  一个较为具体的实现例子是 [`url_launcher`][] 插件 package。
+  想了解如何使用 `url_launcher` package，以及它如何扩展 Web 的实现，
+  请阅读 Medium 上由 Harry Terkelsen 撰写的文章
+  [如何编写 Flutter Web 插件，第一部分][How to Write a Flutter Web Plugin, Part 1]。
+
 ## Developing Dart packages {#dart}
 
-## 开发纯 Dart 库的 packages {#dart}
+## 开发纯 Dart 的 packages {#dart}
 
 The following instructions explain how to write a Flutter
 package.
@@ -239,12 +253,12 @@ implementation(s) using a [platform channel][].
 原生插件 packgae 是 Dart package 的特别版本，
 除了要实现 Dart package 要实现的内容，还需要按需使用 Java 或 Kotlin、ObjC 
 或 Swift 分别在 Android 和/或 iOS 平台实现，
-你可以使用 [platform channels][] 中的 API 来实现特定平台的调用。
+你可以使用 [平台通道][platform channel] 中的 API 来实现特定平台的调用。
 
 The API is connected to the platform-specific implementation(s) using a
 [platform channel][].
 
-它的 API 通过 [platform channel][] 连接到平台特定的实现。
+它的 API 通过 [平台通道][platform channel] 连接到平台特定的实现。
 
 ### Federated plugins
 
@@ -256,7 +270,7 @@ for Android, another for web, and yet another for a car (as an example of an IoT
 device). Among other benefits, this approach allows a domain expert to extend an
 existing plugin to work for the platform they know best.
 
-Federated plugins （联合插件）是一种将对不同平台的支持分为单独的软件包。
+Federated plugins（联合插件）是一种将对不同平台的支持分为单独的软件包。
 所以，联合插件能够使用针对 iOS、Android、Web 甚至是针对汽车
 （例如在 IoT 设备上）分别使用对应的 package。
 除了这些好处之外，它还能够让领域专家在他们最了解的平台上扩展现有平台插件。
@@ -600,7 +614,7 @@ or through the interfaces defined in a platform
 interface package.
 
 最后，你需要将 Dart 编写的 API 代码与特定平台的实现相互关联。
-这是通过 [platform channels][] 完成的。
+这是通过 [平台通道][platform channels] 完成的。
 
 ### Add support for platforms in an existing plugin project
 
@@ -634,8 +648,9 @@ information, see [Testing your plugin][], a section in [Supporting the new
 Android plugins APIs][].
 
 我们鼓励您使用自动化测试来测试您的插件，以确保代码在修改时候功能保持完整。
-更多信息，请参见文档：[支持新的 Android 的 API][Supporting the new Android plugins APIs]
-中关于 [测试您的插件][Testing your plugin] 这个小节。
+更多信息，请参见文档
+[支持新的 Android 的 API][Supporting the new Android plugins APIs]
+中关于 [测试你的插件][Testing your plugin] 这个小节。
 
 ## Adding documentation
 
@@ -715,7 +730,7 @@ For tips on how to write API documentation, see
 [Effective Dart Documentation][].
 
 关于如何编写 API 文档的建议，请参阅 
-[高效 Dart 指南][Effective Dart: Documentation]。
+[高效 Dart 指南][Effective Dart Documentation]。
 
 ### Adding licenses to the LICENSE file
 
@@ -814,6 +829,7 @@ package_1
   这是官方挑选出的、由认证的开发者发布的 packages，
   并建议 Flutter 开发者们需要使用时首要考虑的 package。
   了解更多 [Flutter Favorites 项目][Flutter Favorites program]。
+
 {{site.alert.end}}
 
 Once you have implemented a package, you can publish it on

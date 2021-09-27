@@ -70,6 +70,9 @@ your existing IDE or command-line based development workflow.
 See the [Android Studio/IntelliJ][], [VS Code][], or
 [command line][] pages for installation instructions.
 
+查看 [Android Studio/IntelliJ][]、[VS Code][] 或
+[命令行][command line] 页面获取更多安装指导。
+
 ## Providing feedback
 
 ## 提交反馈
@@ -77,7 +80,7 @@ See the [Android Studio/IntelliJ][], [VS Code][], or
 Please give DevTools a try, provide feedback, and file issues
 in the [DevTools issue tracker][]. Thanks!
 
-请在 [开发者工具 issue 追踪器][] 中尝试使用开发工具，并提交反馈和文件 issue。
+请在 [开发者工具 issue 追踪器][DevTools issue tracker] 中尝试使用开发工具，并提交反馈和文件 issue。
 
 ## Other resources
 
@@ -88,7 +91,8 @@ Flutter apps, see the [Debugging][] page and,
 in particular, its list of [other resources][].
 
 关于调试、分析 Flutter 应用程序的更多详细，
-请查阅 [调试][] 页面，尤其是 [其他资源][] 列表。
+请查阅 [调试][Debugging] 页面，尤其是
+[其他资源][other resources] 列表。
 
 For more information on using DevTools with Dart command-line apps, see the 
 [DevTools documentation on dart.dev]({{site.dart-site}}/tools/dart-devtools).
@@ -102,7 +106,3 @@ For more information on using DevTools with Dart command-line apps, see the
 [DevTools issue tracker]: {{site.github}}/flutter/devtools/issues
 [Debugging]: /docs/testing/debugging
 [Other resources]: /docs/testing/debugging#other-resources
-[命令行]: /docs/development/tools/devtools/cli
-[开发工具 issue 追踪器]: {{site.github}}/flutter/devtools/issues
-[调试]: /docs/testing/debugging
-[其他资源]: /docs/testing/debugging#other-resources

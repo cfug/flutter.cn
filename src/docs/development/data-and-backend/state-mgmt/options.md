@@ -152,47 +152,50 @@ A state container approach familiar to many web developers.
 
 * [Redux Saga Middleware Dart and Flutter][], by Bilal Uslu
 
-  [Dart 与 Flutter 中的 Redux 中间件 Saga][]，Bilal Uslu 著
+  [Dart 与 Flutter 中的 Redux 中间件 Saga][Redux Saga Middleware Dart and Flutter]，Bilal Uslu 著
 
 * [Introduction to Redux in Flutter][], by Xavi Rigau
-  
+
   [Flutter 中的 Redux 介绍][Introduction to Redux in Flutter]，
   Xavi Rigau 著。
 
 * [Flutter + Redux&mdash;How to make a shopping list app][],
   by Paulina Szklarska on Hackernoon
-  
+
   [Flutter + Redux&mdash;构建一个购物列表 APP (Flutter + Redux&mdash;How to make a shopping list app)][Flutter + Redux&mdash;How to make a shopping list app]，
   发布于 Hackernoon，Paulina Szklarska 著。
 
 * [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1][],
   a video by Tensor Programming
-  
+
   [用 Flutter Redux 构建一个任务应用 (CRUD) &mdash;第一部分 (Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1)][Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]，由 Tensor Programming 制作的视频。
 
 * [Flutter Redux Thunk, an example][], by Jack Wong
-  
+
   [Flutter Redux Thunk 示例 (Flutter Redux Thunk, an example)][Flutter Redux Thunk, an example]，Jack Wong 著。
 
 * [Building a (large) Flutter app with Redux][], by Hillel Coren
-  
+
   [使用 Redux 构建（大型）Flutter 应用 (Building a (large) Flutter app with Redux)][Building a (large) Flutter app with Redux]，Hillel Coren 著。
 
 * [Fish-Redux–An assembled flutter application framework based on Redux][],
   by Alibaba
-  
+
   [Fish-Redux&mdash;基于 Redux 封装的 Flutter 应用框架 (Fish-Redux–An assembled flutter application framework based on Redux)][Fish-Redux–An assembled flutter application framework based on Redux]，阿里巴巴著。
 
 * [Async Redux–Redux without boilerplate. Allows for both sync and async reducers][],
   by Marcelo Glasberg
-  
+
   [异步 Redux&mdash;没有模板的 Redux，允许同步和异步 reducers (Async Redux–Redux without boilerplate. Allows for both sync and async reducers)][Async Redux–Redux without boilerplate. Allows for both sync and async reducers]，Marcelo Glasberg 著。
 
 * [Flutter meets Redux: The Redux way of managing Flutter applications state][],
   by Amir Ghezelbash
-* [Redux and epics for better-organized code in Flutter apps][], by Nihad Delic
-  
+
   [当 Flutter 遇见 Redux：以 Redux 的风格管理 Flutter 应用的状态 (Flutter meets Redux: The Redux way of managing Flutter applications state)][Flutter meets Redux: The Redux way of managing Flutter applications state]，Amir Ghezelbash 著。
+
+* [Redux and epics for better-organized code in Flutter apps][], by Nihad Delic
+
+  [使用 Redux 更好地组织 Flutter 应用的代码以管理项目目标 (Redux and epics for better-organized code in Flutter apps)][Redux and epics for better-organized code in Flutter apps]，Nihad Delic 著。
 
 ## Fish-Redux
 
@@ -205,11 +208,11 @@ Fish Redux 是一个基于 Redux 状态管理的组合式 Flutter 应用框架�
 * [Fish-Redux-Library][] package, by Alibaba
 
   由阿里巴巴开发的 [Fish-Redux-Library][] package
-  
+
 * [Fish-Redux-Source][], project code
 
   [Fish-Redux-Source][]，工程代码
-  
+
 * [Flutter-Movie][] - Non-trivial example demonstrating how to use Fish Redux,
 with more than 30 screens, graphql, payment api and media player.
 
@@ -224,17 +227,17 @@ A family of stream/observable based patterns.
 
 * [Architect your Flutter project using BLoC pattern][],
   by Sagar Suri
-  
-  [使用 BLoC 模式构建你的 Flutter 项目][Architect your Flutter project using BLoC pattern]，
+
+  [使用 BLoC 模式构建你的 Flutter 项目 (Architect your Flutter project using BLoC pattern)][Architect your Flutter project using BLoC pattern]，
   Sagar Suri 著。
 
 * [BloC Library][], by Felix Angelov
-  
+
   [BLoC 库 (BLoC Library)][BloC Library]，Felix Angelov 著。
 
 * [Reactive Programming - Streams - BLoC - Practical Use Cases][],
   by Didier Boelens
-  
+
   [响应式编程 - 流 - BLoC - 用例 (Reactive Programming - Streams - BLoC - Practical Use Cases)][Reactive Programming - Streams - BLoC - Practical Use Cases]，
   Didier Boelens 著。
 

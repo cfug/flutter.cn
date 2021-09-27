@@ -57,7 +57,7 @@ You can find the latest version of the
 [`http` package][] the pub.dev.
 
 安装 `http` 包之前，你必须先把它添加到 `pubspec.yaml` 的依赖区域。
-你可以在 [pub.dev 找到 http 包的最新版本][http package]。
+你可以在 [pub.dev 找到 http 包的最新版本][`http` package]。
 
 ```yaml
 dependencies:

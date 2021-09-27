@@ -37,14 +37,15 @@ contains a simple demo app that uses [Material Components][].
  1. Check that an Android device is running. If none are shown, follow the
     device-specific instructions on the [Install][] page for your OS.
 
-    检查一下 Android 设备是否已经正常运行。如果程序未显示，
-    请在[Install][]页面里根据你的操作系统按照设备相关说明进行操作。
-    
+    检查一下 Android 设备是否已经正常运行。
+    如果程序未显示，请在 [安装][Install] 页面里，
+    根据你的操作系统按照设备相关说明进行操作。
+
     ```terminal
     $ flutter devices
     ```
 
- 2. Run the app with the following command:
+ 1. Run the app with the following command:
 
     使用下面指令运行应用程序：
 

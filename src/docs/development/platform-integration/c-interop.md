@@ -78,11 +78,9 @@ it's distributed as a `.framework` folder.
 
 相比之下，动态链接库则分布在应用程序中的单独的文件或文件夹中，
 并按需加载。
-在 Android 上，动态链接库作为一组 `.so`（[ELF（可执行与可链接格式）][ELF]）文件分发，
+在 Android 上，动态链接库作为一组 `.so`（ELF 可执行与可链接格式）文件分发，
 每个架构各有一个。
 在 iOS 上，它是作为 `.framework` 文件夹分发的。
-
-[ELF]: https://zh.wikipedia.org/wiki/%E5%8F%AF%E5%9F%B7%E8%A1%8C%E8%88%87%E5%8F%AF%E9%8F%88%E6%8E%A5%E6%A0%BC%E5%BC%8F
 
 A dynamically linked library can be loaded into
 Dart via `DynamicLibrary.open`.
@@ -330,7 +328,8 @@ Symbols statically linked into the application binary
 can be resolved using [`DynamicLibrary.executable`][] or
 [`DynamicLibrary.process`][].
 
-您可以使用 [`DynamicLibrary.executable`][] 或 [`DynamicLibrary.process`][]
+您可以使用 [`DynamicLibrary.executable`][]
+或 [`DynamicLibrary.process`][]
 解析静态链接到应用程序二进制文件的符号。
 
 #### Platform library
@@ -586,7 +585,7 @@ use the following instructions:
  1. Find the desired library in the [Android NDK Native APIs][]
     list in the Android docs. This lists stable native APIs.
 
-    在 Android 文档的 [Android NDK Native api][] 列表中找到所需的库。
+    在 Android 文档的 [Android NDK Native APIs][] 列表中找到所需的库。
     它列出了稳定的本地 API。
 
  2. Load the library using [`DynamicLibrary.open`][].

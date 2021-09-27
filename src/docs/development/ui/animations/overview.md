@@ -121,7 +121,7 @@ to drive the animation.
 要创建动画，首先要创建一个 [`AnimationController`][]。
 除了作为动画本身，`AnimationController` 还可以用来控制动画。
 例如，你可以通过控制器让动画
-正向播放 [`forward`][]或停止动画 [`stop`][]。
+正向播放 [`forward`][] 或停止动画 [`stop`][]。
 你还可以添加物理模拟效果 [`fling`][]（例如弹簧效果）来驱动动画。
 
 Once you've created an animation controller,
@@ -291,8 +291,8 @@ some simulations (for example,
 change state irreversibly when queried.
 
 原则上，模拟器是无状态的，但在实践中，
-一些模拟器（例如
-[`BouncingScrollSimulation`][] 和 [`ClampingScrollSimulation`][]
+一些模拟器（例如 [`BouncingScrollSimulation`][]
+和 [`ClampingScrollSimulation`][]）
 在查询时会不可逆地被改变状态。
 
 There are [various concrete implementations][]
@@ -321,7 +321,7 @@ value nominally in the range 0.0-1.0 to a typed value
 (for example, a `Color`, or another double).
 It is an `Animatable`.
 
-[`Tween`][] 抽象类将名义范围为 0.0-1.0
+[`Tween<T>`][] 抽象类将名义范围为 0.0-1.0
 的双精度值映射到某个类型值（例如 `Color` 或其他双精度值)。
 它属于 `Animatable`。
 

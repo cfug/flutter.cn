@@ -66,16 +66,8 @@ during flight.
 
   **Examples**: This guide provides examples of each hero animation style at
   the following links.
-  
+
   **示例**: 这个指南在下面的链接中为每种类型的 hero 动画提供示例。
-  
-  * [Standard hero animation code](#standard-hero-animation-code)
-    
-    [标准 hero 动画](#standard-hero-animation-code)
-  
-  * [Radial hero animation code](#radial-hero-animation-code)
-   
-    [径向 hero 动画](#radial-hero-animation-code)
 
   * [Standard hero animation code][]
 
@@ -256,7 +248,7 @@ and another describing the widget in the destination route.
 From the user’s point of view, the hero appears to be shared, and
 only the programmer needs to understand this implementation detail.
 
-Hero 动画需要使用两个 [Hero][`Hero`] widgets 来实现：
+Hero 动画需要使用两个 [`Hero`][] widgets 来实现：
 一个用来在原页面中描述 widget，另一个在目标页面中描述 widget。
 从用户角度来说，hero 似乎是分享的，只有程序员需要了解实施细节。
 
@@ -264,7 +256,7 @@ Hero 动画需要使用两个 [Hero][`Hero`] widgets 来实现：
 
   **Note about dialogs:**
 
-  **注意对话框：**  
+  **有关对话框的注意事项：**  
 
   Heroes fly from one `PageRoute` to another. Dialogs
   (displayed with `showDialog()`, for example), use `PopupRoute`s,
@@ -558,11 +550,10 @@ as described by the [Material Design motion spec][].
 图像将沿 [Material Design motion spec][] 中介绍的曲线路径飞翔。
 
 [Create a new Flutter example][] and
-update it using the files from the
-[GitHub directory.][]
+update it using the files from the [hero_animation][].
 
 [创建一个新的 Flutter 示例][Create a new Flutter example]
-和使用来自 [GitHub 仓库][GitHub directory.] 的文件更新。
+并使用来自 [hero_animation][] 的文件更新。
 
 To run the example:
 
@@ -813,6 +804,7 @@ provided example to your needs.** The heavy lifting is done for you.
 
 <a name="radial-hero-animation-code"></a>
 {{site.alert.secondary}}
+
   **Radial hero animation code**
 
   **径向 hero 动画代码**
@@ -837,8 +829,8 @@ provided example to your needs.** The heavy lifting is done for you.
 
   [basic_radial_hero_animation][]
   <br> 径向 hero 动画最简单的示例。
-  目标页面没有 Scaffold, Card, Column, 或 Text。
-  这个基本示例仅供参考，本指南不详述。
+    目标页面没有 Scaffold, Card, Column, 或 Text。
+    这个基本示例仅供参考，本指南不详述。
 
 
   [radial_hero_animation_animate<wbr>_rectclip][]
@@ -848,11 +840,12 @@ provided example to your needs.** The heavy lifting is done for you.
     
   [radial_hero_animation_animate<wbr>_rectclip][]
   <br> 通过动画矩形剪裁大小，扩展径向 hero 动画。
-  这个高阶示例亦供参考，本指南不详述。
+    这个高阶示例亦供参考，本指南不详述。
 
 {{site.alert.end}}
 
 {{site.alert.secondary}}
+
   **Pro tip:**
   
   **技巧：**
@@ -883,23 +876,18 @@ The following diagram shows the clipped image at the beginning
 
 The blue gradient (representing the image), indicates where the clip
 shapes intersect. At the beginning of the transition,
-the result of the intersection is a circular clip
-([`ClipOval`][]).
-During the transformation,
-the ClipOval scales from `minRadius` to `maxRadius` while the
-[`ClipRect`][]
-maintains a constant size.
-
-蓝色渐变（代表图像），表明剪裁形状交叉的位置。
-在过渡的开始，交叉的结果是圆形剪裁 ([`ClipOval`][])。
-在过渡过程中，ClipOval 由 `minRadius` 缩放至 `maxRadius`，
-[`ClipRect`][] 则保持原尺寸。
-
+the result of the intersection is a circular clip ([`ClipOval`][]).
+During the transformation, the `ClipOval` scales from `minRadius`
+to `maxRadius` while the [ClipRect][] maintains a constant size.
 At the end of the transition the intersection of the circular and
 rectangular clips yield a rectangle that's the same size as the hero
 widget. In other words, at the end of the transition the image is no
 longer clipped.
 
+蓝色渐变（代表图像），表明剪裁形状交叉的位置。
+在过渡的开始，交叉的结果是圆形剪裁 ([`ClipOval`][])。
+在过渡过程中，ClipOval 由 `minRadius` 缩放至 `maxRadius`，
+[ClipRect][] 则保持原尺寸。
 在过渡结束时，圆形和矩形剪裁的交集产生一个与 hero widget 相同大小的矩形。
 也就是说，在过渡结束时，图片已不再被剪裁。
 
@@ -907,8 +895,8 @@ longer clipped.
 update it using the files from the
 [radial_hero_animation][] GitHub directory.
 
-[创建一个新的 Flutter 示例][Create a new Flutter example] 和使用来自
-[GitHub 文件夹][radial_hero_animation] 的文件更新。
+[创建一个新的 Flutter 示例][Create a new Flutter example] 并使用来自
+[radial_hero_animation][] 的文件更新。
 
 To run the example:
 

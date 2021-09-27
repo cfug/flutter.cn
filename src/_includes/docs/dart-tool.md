@@ -11,7 +11,7 @@
   The following command tells you whether the `flutter` and `dart`
   commands originate from the same `bin` directory and are
   therefore compatible.
-  
+
   自 1.19.0 dev 版开始，`dart` 命令就直接包含在 Flutter SDK 里了，
   这样可以更轻松的运行 Dart 命令行应用。
   下载 Flutter SDK 的时候也将同时包含兼容版本的 Dart SDK，
@@ -35,7 +35,7 @@
   running the `which` command again
   should show that the `flutter` and `dart` commands
   now come from the same directory.
-  
+
   如上命令行返回的内容所示，
   看起来 `flutter` 和 `dart` 并非来自同一 `bin` 目录，
   在上面的这个例子里，我们需要更新 `PATH` 环境变量，
@@ -51,10 +51,10 @@
 
   To learn more about the `dart` command, run `dart -h`
   from the command line, or see the [dart tool][] page.
-  
+
   了解更多关于 `dart` 命令的内容，可以在命令行运行 `dart -h`，
-  或者在 Dart 文档查看 [`dart` 工具][`dart` tool] 了解更多。
-  
+  或者在 Dart 文档查看 [`dart` 工具][dart tool] 了解更多。
+
 {{site.alert.end}}
 
 [dart tool]: {{site.dart-site}}/tools/dart-vm

@@ -91,18 +91,17 @@ meaning that a method can be expanded to show its _callees_.
 调用树视图是一种自上而下展示 CPU 中的调用堆栈信息方法。
 在下图中的表格中可以看出，展开其中的一个方法可以查看它所有的 **调用者**。
 
-<dl>
-<dt markdown="1"><t><b>Total time</b></t><t>总时间</t></dt>
-<dd><p>Time the method spent executing its own code as well as
-    the code for its callees.</p>
-
-<p>此方法运行的总时间，包括了调用者的执行时间(即调用此方法整个的生命周期时长)。</p></dd>
-<dt markdown="1"><t><b>Self time</b></t><t>自执行时间</t></dt>
-<dd><t>Time the method spent executing only its own code.</t><t>仅表示执行当前方法把花费的时长。</t></dd>
-<dt markdown="1"><t><b>Method</b></t><t>方法</t></dt>
-<dd><t>Name of the called method.</t><t>调用的方法名称。</t></dd>
-<dt markdown="1"><t><b>Source</b></t><t>源码</t></dt>
-<dd><t>File path for the method call site.</t><t>方法所在的文件路径。</t></dd>
+<dl markdown="1">
+<dt markdown="1">**<t>Total time</t><t>总时间</t>**</dt>
+<dd markdown="1"><p><t>Time the method spent executing its own code as well as
+    the code for its callees.</t><t>此方法运行的总时间，
+    包括了调用者的执行时间(即调用此方法整个的生命周期时长)。</t></p></dd>
+<dt markdown="1">**<t>Self time</t><t>自执行时间</t>**</dt>
+<dd markdown="1"><t>Time the method spent executing only its own code.</t><t>仅表示执行当前方法把花费的时长。</t></dd>
+<dt markdown="1">**<t>Method</b></t><t>方法</t>**</dt>
+<dd markdown="1"><t>Name of the called method.</t><t>调用的方法名称。</t></dd>
+<dt markdown="1">**<t>Source</t><t>源码</t>**</dt>
+<dd markdown="1"><t>File path for the method call site.</t><t>方法所在的文件路径。</t></dd>
 </dl>
 
 ![Screenshot of a call tree table](/assets/images/docs/tools/devtools/cpu_profiler_call_tree.png){:width="100%"}
@@ -117,7 +116,7 @@ This means that each top-level method in the table is actually the
 last method in the call stack for a given CPU sample (in other words,
 it's the leaf node for the sample).
 
-**Bottom up** 视图也是用于显示方法调用堆栈，
+**自下而上** 视图也是用于显示方法调用堆栈，
 但顾名思义，它是一个自下而上的表示方式。
 这意味着表格中的每个最上方的方法实际上是
 给定 CPU 样本的调用堆栈中的最后一个方法
@@ -127,14 +126,14 @@ In this table, a method can be expanded to show its _callers_.
 
 在这张表中，可以展开一个方法查看它的所有 **调用者**。
 
-<dt markdown="1"><t><b>Total time</b></t><t>总时间</t></dt>
-<dd markdown="1"><p>Time the method spent executing its own code
-    as well as the code for its callee.</p>
-<p>此方法运行的总时间，包括了调用者的执行时间(即调用此方法整个的生命周期时长)。</p>
-</dd>
+<dl markdown="1">
+<dt markdown="1">**<t>Total time</t><t>总时间</t>**</dt>
+<dd markdown="1"><p><t>Time the method spent executing its own code
+    as well as the code for its callee.</t><t>此方法运行的总时间，
+    包括了调用者的执行时间(即调用此方法整个的生命周期时长)。</t></p></dd>
 
-<dt markdown="1"><t><b>Self time</b></t><t>自执行时间</t></dt>
-<dd markdown="1"><p>For top-level methods in the bottom-up tree
+<dt markdown="1">**<t>Self time</t><t>自执行时间</t>**</dt>
+<dd markdown="1"><p><t>For top-level methods in the bottom-up tree
     (leaf stack frames in the profile), this is the time the
     method spent executing only its own code. For sub nodes
     (the callers in the CPU profile), this is the self time
@@ -142,20 +141,17 @@ In this table, a method can be expanded to show its _callers_.
     In the following example, the self time of the caller
     `createRenderObject` is equal to the self time of
     the callee `debugCheckHasDirectionality` when being called by
-    the caller.
+    the caller.</t><t>在自下而上调用树中对于最顶层的方法（叶堆栈帧），
+    它表示执行自己的代码所需要的时间。
+    对于子节点(调用者)，它表示调用者运行被调用者的时间。
+    在下面的这个例子中，调用者 `createRenderObject` 
+    的执行时间等于被调用者 `debugCheckHasDirectionality` 的执行时间。</t></p></dd>
 
-<p>在自下而上调用树中对于最顶层的方法(叶堆栈帧)，它表示执行自己的代码所需要的时间。
-对于子节点(调用者)，它表示调用者运行被调用者的时间。
-在下面的这个例子中，调用者 `createRenderObject` 
-的执行时间等于被调用者 `debugCheckHasDirectionality` 的执行时间。
-</p>
-
-</dd>
-
-<dt markdown="1"><t><b>Method</b></t><t>方法</t></dt>
+<dt markdown="1">**<t>Method</t><t>方法</t>**</dt>
 <dd markdown="1"><t>Name of the called method.</t><t>调用方法的名称。</t></dd>
 
-<dt markdown="1"><t><b>Source</b></t><t>源码</t></dt>
+<dt markdown="1">**<t>Source</t><t>源码</t>**</dt>
 <dd markdown="1"><t>File path for the method call site.</t><t>方法所在的文件路径。</t></dd>
+</dl>
 
 ![Screenshot of a bottom up table](/assets/images/docs/tools/devtools/cpu_profiler_bottom_up.png){:width="100%"}

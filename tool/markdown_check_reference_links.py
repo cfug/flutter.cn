@@ -15,6 +15,9 @@ def check_path(path):
         for file in files:
             file: Path
 
+            if file.name.startswith("_"):
+                continue
+
             filename = file.relative_to(path).as_posix()
 
             files.set_postfix(file=filename)

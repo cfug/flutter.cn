@@ -192,7 +192,7 @@ controls the headers on an HTTP request.
 Some plugins require platform-specific imports, particularly if they use the
 file system, which is not accessible from the browser. To use these plugins
 in your app, see the [documentation for conditional imports][]
-on [dart.dev][{{site.dart-site}}].
+on [dart.dev]({{site.dart-site}}).
 
 部分插件需要在特定平台导入库或者文件，尤其是当使用浏览器无法访问的文件系统时。
 若要在你的应用里使用这些插件，请参阅 Dart 文档：

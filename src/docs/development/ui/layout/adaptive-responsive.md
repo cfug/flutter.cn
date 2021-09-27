@@ -248,7 +248,7 @@ in the following resources:
 * [Designing truly adaptive user interfaces][] a blog post and video
   by Aloïs Deniel, presented at this year's FlutterViking conference.
 
-  [设计真正能够自适应的用户交互][Designing truly adaptive user interface]，
+  [设计真正能够自适应的用户交互][Designing truly adaptive user interfaces]，
   由 Aloïs Deniel 在今年的 FlutterViking 会议上发布的文章和视频。
 
 * The [Flutter gallery app][] ([repo][]) has been written as an

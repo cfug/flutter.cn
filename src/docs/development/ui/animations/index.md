@@ -31,7 +31,7 @@ To help you decide, check out the video,
 那么，究竟哪种才是最适合你的呢？
 为了帮助你更好的理解它，你可以观看下面的视频，
 [如何在 Flutter 中选择合适的动画 Widget][How to choose which Flutter Animation Widget is right for you?]
-（同时也发布了一篇[配套文章][article1]。）
+（同时也发布了一篇 [配套文章][article1]。）
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/GXIJJkq_H8g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
@@ -41,7 +41,7 @@ presented at Flutter Europe.)
 
 （若想要深入了解它的决策流程，
 请观看在 Flutter Europe 社区账号发布的
- [在 Flutter 中使用动画的正确选择][Animations in Flutter done right]）视频。
+[在 Flutter 中使用动画的正确选择][Animations in Flutter done right]）视频。
 
 As shown in the video, the following
 decision tree helps you decide what approach
@@ -59,8 +59,8 @@ to implement) suits your needs, watch
 (Also published as a [_companion article_][article2].)
 
 如果内置的隐式动画（最简单的动画）已经能够满足你的需求，
-请观看[隐式动画基础][[Animation basics with implicit animations]]。
-（同时也发布了一篇[配套文章][article2]。）
+请观看 [隐式动画基础][Animation basics with implicit animations]。
+（同时也发布了一篇 [配套文章][article2]。）
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
@@ -68,10 +68,9 @@ To create a custom implicit animation, watch
 [Creating your own custom implicit animations with TweenAnimationBuilder][].
 (Also published as a [_companion article_][article3].)
 
-要创建一个自定义的隐式动画，
-请观看
+要创建一个自定义的隐式动画，请观看
 [使用 TweenAnimationBuilder 创建独特的隐式动画][Creating your own custom implicit animations with TweenAnimationBuilder]。
-（同时也发布了一篇[配套文章][article3]。）
+（同时也发布了一篇 [配套文章][article3]。）
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/6KiPEqzJIKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
@@ -87,7 +86,7 @@ built-in explicit animations][].
 你可以使用内置的其中一个显式动画类来实现。更多有关信息，请观看 
 [使用内置显式动画][Making your first directional animations with
 built-in explicit animations]。
-（同时也发布了一篇[配套文章][article4]。）
+（同时也发布了一篇 [配套文章][article4]。）
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/CunyH6unILQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
@@ -96,8 +95,7 @@ If you need to build an explicit animation from scratch, watch
 AnimatedBuilder and AnimatedWidget][].
 (Also published as a [_companion article_][article5].)
 
-如果你需要从头开始构建显式动画，
-请观看
+如果你需要从头开始构建显式动画，请观看
 [通过 AnimatedBuilder 和 AnimatedWidget 创建一个自定义动画][Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]。
 （同时也发布了一篇[配套文章][article5]。）
 
@@ -108,8 +106,8 @@ For a deeper understanding of just how animations work in Flutter, watch
 (Also published as a [_companion article_][article6].)
 
 想要更深入的理解动画在 Flutter 中的工作方式，
-请观看[深入理解动画][Animation deep dive]。
-（同时也发布了一篇[配套文章][article6]。）
+请观看 [深入理解动画][Animation deep dive]。
+（同时也发布了一篇 [配套文章][article6]。）
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/PbcILiN8rbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
@@ -123,53 +121,46 @@ shows how to write animation code.
 
 通过下面的资源可以很好的学习 Flutter 动画框架。这些文档循序渐进地讲解如何编写动画代码。
 
-{% comment %}
-More documentation is in the works on how to implement common design
-patterns, such as shared element transitions,
-and physics-based animations.
-If you have a specific request,
-[file an issue]({{site.github}}/flutter/website/issues).
-{% endcomment -%}
-
-{% comment %}
-  还有更多关于如何实现通用设计模式的文档正在整理中，比如共享内容转换和基于物理基础的动画。如果您有其他需求，请 [在这里]({{site.github}}/flutter/website/issues) 提出。
-{% endcomment -%}
-
-* [Implicit animations codelab](/docs/codelabs/implicit-animations)<br>
+* [Implicit animations codelab][]<br>
   Covers how to use implicit animations
   using step-by-step instructions and interactive examples.
 
-  [隐式动画 codelab](/docs/codelabs/implicit-animations)<br>
+  [隐式动画 codelab][Implicit animations codelab]<br>
   涵盖了如何使用隐式动画的分步说明及交互示例。
 
-* [Animations tutorial](/docs/development/ui/animations/tutorial)<br>
+* [Animations tutorial][]<br>
   Explains the fundamental classes in the Flutter animation package
   (controllers, Animatable, curves, listeners, builders),
   as it guides you through a progression of tween animations using
   different aspects of the animation APIs.
 
-  [动画教程](/docs/development/ui/animations/tutorial)<br>
+  [动画教程][Animations tutorial]<br>
   阐释了 Flutter 动画包中的基本类（控制器，动画，曲线，监听器，构建器），
   这些可以帮助您使用不同的动画 APIs 完成补间动画。
 
-* [Zero to One with Flutter, part
-  1]({{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354) and [part
-  2]({{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
+* [Zero to One with Flutter, part 1][] and [part 2][]<br>
   Medium articles showing how to create an animated chart using tweening.
 
-  [使用 Flutter 从零到一, 第一部分]({{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354) 
-  和 [第二部分]({{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
+  [使用 Flutter 从零到一, 第一部分][Zero to One with Flutter, part 1] 和 [第二部分][part 2]<br>
   Medium 文章中有介绍如何使用补间动画创建图表动画。
 
-* [Building Beautiful UIs with
-  Flutter]({{site.codelabs}}/codelabs/flutter)<br>
-  Codelab demonstrating how to build a simple chat app. [Step 7 (Animate
-  your app)]({{site.codelabs}}/codelabs/flutter/#6)
-  shows how to animate the new message&mdash;sliding it from the input area up
+* [Write your first Flutter app on the web][]<br>
+  Codelab demonstrating how to create a form
+  that uses animation to show the user's progress
+  as they fill in the fields.
+
+  [撰写你的第一个 Flutter Web 应用][Write your first Flutter app on the web]<br>
+  Codelab 演示如何构建一个根据用户填写的内容以动画展示进度的表单。
+
+* [Building Beautiful UIs with Flutter][]<br>
+  Codelab demonstrating how to build a simple chat app.
+  [Step 7 (Animate your app)][] shows how to animate
+  the new message&mdash;sliding it from the input area up
   to the message list.
 
-  [使用 Flutter 构建美观 UIs]({{site.codelabs}}/codelabs/flutter)<br>
-  Codelab 演示如何构建简单的聊天应用程序。[步骤 7 (应用动画化)]({{site.codelabs}}/codelabs/flutter/#6) 展示了一个新消息动画，使其能从输入区域滑动至消息列表。
+  [使用 Flutter 构建美观 UIs][Building Beautiful UIs with Flutter]<br>
+  Codelab 演示如何构建简单的聊天应用程序。[步骤 7 (应用动画化)][Step 7 (Animate your app)]
+  展示了一个新消息动画，使其能从输入区域滑动至消息列表。
 
 ## Animation types
 
@@ -217,8 +208,6 @@ Similarly, dropping a ball attached to a spring falls
 举个例子，当您抛球时，球落地的时间和位置取决于抛出的速度和距离地面的高度。
 类似地，附在弹簧上的球和附在绳子上的球掉落（和反弹）方式是不一样的。
 
-* [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-
 * [Animate a widget using a physics simulation][]<br>
   A recipe in the animations section of the Flutter cookbook.
 
@@ -239,7 +228,8 @@ Similarly, dropping a ball attached to a spring falls
   [`AnimationController.animateWith`][] and
   [`SpringSimulation`][].
 
-  请参考 API 文档 [`AnimationController.animateWith`][] 和 [`SpringSimulation`][]。
+  请参考 API 文档 [`AnimationController.animateWith`][]
+  和 [`SpringSimulation`][]。
 
 ## Pre-canned animations
 
@@ -253,9 +243,9 @@ the following commonly used patterns:
 fade through transitions, and fade transitions.
 
 如果你在使用 Material widgets，
-你也许想要看看 pub.dev 上的[动画 package][animations package]。
+你也许想要看看 pub.dev 上的 [animations package][]。
 这个 package 包含了以下内置常用模式：
-`Container`变换，共享轴变换，
+`Container` 变换、共享轴变化、渐变穿透和渐变变换。
 
 ## Common animation patterns
 
@@ -306,7 +296,7 @@ using the `Hero` widget.
 轻松实现路径（页面）间的共享元素转换动画。
 
 * [Hero animations][]
-How to create two styles of Hero animations:
+  How to create two styles of Hero animations:
 
   [Hero animations][] 如何创建两种风格的 Hero 动画：
 
@@ -353,11 +343,6 @@ or might partially or completely overlap.
 {% comment %}
   Save so I can remember how to add it back later.
   <img src="/assets/images/docs/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
-{% endcomment -%}
-
-{% comment %}
-  请保存以便记得以后如何添加。
-  <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
 {% endcomment -%}
 
 ## Other resources

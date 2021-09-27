@@ -33,9 +33,10 @@ Flutter 使用了灵活的系统，它允许你调用相关平台的 API，
   don't use platform channels.
   
   本页面的内容适用于大多数插件，
-  有个例外是我们称之为 [联邦 (federated) 插件][federated plugin]，
-  一些 Web 插件的实现是通过联邦插件的方式进行的，
+  有个例外是我们称之为 [联合 (federated) 插件][federated plugin]，
+  一些 Web 插件的实现是通过联合插件的方式进行的，
   这一类插件不使用平台通道。
+
 {{site.alert.end}}
 
 Flutter uses a flexible system that allows you to call
@@ -52,7 +53,8 @@ package [Pigeon][] can be used for [sending structured typesafe messages][] via
 code generation:
 
 Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是灵活的依赖于传递消息格式。
-或者，你也可以使用 [Pigeon][] 这个 package，通过生成代码来 [发送结构化类型安全消息][sending structured typesafe messages]。
+或者，你也可以使用 [Pigeon][] 这个 package，通过生成代码来
+[发送结构化类型安全消息][sending structured typesafe messages]。
 
 * The Flutter portion of the app sends messages to its *host*,
   the iOS or Android portion of the app, over a platform channel.
@@ -132,9 +134,11 @@ iOS 系统使用 [`MethodChanneliOS`][] 来
   If desired, method calls can also be sent in the reverse direction,
   with the platform acting as client to methods implemented in Dart.
   A concrete example of this is the [`quick_actions`][] plugin.
-  
-  如果需要，方法调用也可以反向发送，由平台充当客户端来调用 Dart
-  实现的方法。一个具体的例子是 [`quick_actions`][] 插件。
+
+  如果需要，方法调用也可以反向发送，
+  由平台充当客户端来调用 Dart 实现的方法。
+  一个具体的例子是 [`quick_actions`][] 插件。
+
 {{site.alert.end}}
 
 
@@ -1001,10 +1005,10 @@ You can also use the specialized [`BinaryCodec`][],
 classes, or create your own codec.
 
 除了上面提到的 `MethodChannel`，你还可以使用更基础的
-[`BasicMessageChannel`][BasicMessageChannel]，
+[`BasicMessageChannel`][]，
 它支持使用自定义的消息编解码器进行基本的异步消息传递。你还可以使用专门的
-[`BinaryCodec`][BinaryCodec]，[`StringCodec`][StringCodec] 和
-[`JSONMessageCodec`][JSONMessageCodec] 类，或创建自己的编解码器。
+[`BinaryCodec`][]、[`StringCodec`][] 和
+[`JSONMessageCodec`][] 类，或创建自己的编解码器。
 
 You might also check out an example of a custom codec
 in the [`cloud_firestore`][] plugin,
@@ -1025,8 +1029,8 @@ Annotate methods that need to be run on the UI thread with `@UiThread`.
 On iOS, this thread is officially referred to as [the main thread][].
 
 在平台端编写代码时，请调用平台主线程上的所有通道方法。
-在 Android上，该线程有时称为“主线程”，
-但从技术上讲，它被称之为为 [UI线程][the UI thread]。
+在 Android上，该线程有时称为「主线程」，
+但从技术上讲，它被称之为 [UI 线程][the UI thread]。
 用 `@UiThread` 注释需要在UI线程上运行的方法。
 在iOS上，此线程称为 [主线程][the main thread]。
 
@@ -1079,7 +1083,7 @@ is accomplished by executing a [block][] on the main [dispatch queue][]:
 
 为了符合通道跳转到 iOS 主线程的要求，
 您可能需要从后台线程跳转到 iOS 的主线程来执行通道方法。
-在iOS中，这是通过在主 [dispatch queue] []上执行 [block] []来实现的：
+在iOS中，这是通过在主 [dispatch queue][]上执行 [block][]来实现的：
 
 In Objective-C:
 

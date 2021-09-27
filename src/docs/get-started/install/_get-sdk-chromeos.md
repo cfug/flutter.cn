@@ -20,7 +20,8 @@
     For other release channels, and older builds,
     see the [SDK releases][] page.
 
-    对于其他发布频道，以及更早的版本，请查看 [SDK 存档][SDK archive]页面。
+    对于其他发布频道，以及更早的版本，
+    请查看 [SDK 发布][SDK releases] 页面。
 
  1. In the Files app, drag-and-drop the downloaded file from "Downloads"
     to "Linux Files" to access Flutter from your Linux container.

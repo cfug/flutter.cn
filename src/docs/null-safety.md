@@ -78,7 +78,7 @@ check out these pages:
 * [Migrating to null safety][]:
   Instructions for converting your packages to null safety.
 
-  [迁移至空安全][]：
+  [迁移至空安全][Migrating to null safety]：
   将你的 package 转换为空安全的指南。
 
 * [Unsound null safety][]:

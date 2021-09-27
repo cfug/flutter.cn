@@ -42,6 +42,7 @@ Widget 描述了在当前的配置和状态下视图所应该呈现的样子。
   [Flutter 中的布局][building layouts] 和 
   [为你的 Flutter 应用加入交互体验][adding interactivity to your Flutter app]
   这三篇文章。
+
 {{site.alert.end}}
 
 ## Hello world
@@ -79,11 +80,11 @@ this is taken care of for you, as demonstrated later.
 A `SafeArea` widget is also used to properly pad the text
 so it appears below the display on the top of the screen.
 
-`runApp()` 函数会持有传入的 [`Widget`][`Widget`]，
+`runApp()` 函数会持有传入的 [`Widget`][]，
 并且使它成为 widget 树中的根节点。
 在这个例子中，Widget 树有两个 widgets，
-[`Center`][`Center`] widget 及其子
-widget ——[`Text`][`Text`] 。
+[`Center`][] widget 及其子
+widget —— [`Text`][] widget。
 框架会强制让根 widget 铺满整个屏幕，
 也就是说“Hello World”会在屏幕上居中显示。
 在这个例子我们需要指定文字的方向
@@ -101,9 +102,8 @@ which computes and describes the geometry of the widget.
 
 在写应用的过程中，取决于是否需要管理状态，
 你通常会创建一个新的组件继承
-[`StatelessWidget`][] 或
-[`StatefulWidget`][]。
-Widget 的主要工作是实现 [`build`][`build()`]方法，
+[`StatelessWidget`][] 或 [`StatefulWidget`][]。
+Widget 的主要工作是实现 [`build()`][] 方法，
 该方法根据其它较低级别的 widget 来描述这个 widget。
 框架会逐一构建这些 widget，
 直到最底层的描述 widget 几何形状的
@@ -422,9 +422,9 @@ For more information, see [Material Components widgets][].
   which has its own versions of [`CupertinoApp`][], and [`CupertinoNavigationBar`][].
 
   Material 是 Flutter 中两个自带的设计之一，
-  如果想要以 iOS 为主的设计，
-  可以参考 [Cupertino components][]，
-  它有自己版本的 [`CupertinoApp`][] 和 [`CupertinoNavigationBar`][].。
+  如果想要以 iOS 为主的设计，可以参考 [Cupertino components][]，
+  它有自己版本的 [`CupertinoApp`][] 和 [`CupertinoNavigationBar`][]。
+
 {{site.alert.end}}
 
 
@@ -501,8 +501,9 @@ optional callbacks for other widgets. For example, the
 callbacks that are triggered when the user taps the widget.
 
 许多 widget 使用 [`GestureDetector`][] 为其他 widget 提供可选的回调。
-例如，[`IconButton`][]、[`RaisedButton`][] 和 [`FloatingActionButton`][] widget 
-都有 [`onPressed()`][] 回调，当用户点击 widget 时就会触发这些回调。
+例如，[`IconButton`][]、[`ElevatedButton`][] 和
+[`FloatingActionButton`][] widget 都有 [`onPressed()`][] 回调，
+当用户点击 widget 时就会触发这些回调。
 
 For more information, see [Gestures in Flutter][].
 
@@ -536,7 +537,7 @@ Consider this basic example, using the [`ElevatedButton`][] mentioned earlier:
 Flutter 使用 StatefulWidgets 来实现这一想法。
 StatefulWidgets 是一种特殊的 widget，
 它会生成 State 对象，用于保存状态。看看这个基本的例子，
-它使用了前面提到的[`RaisedButton`][]：
+它使用了前面提到的 [`ElevatedButton`][]：
 
 <?code-excerpt "lib/main_counter.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
@@ -1043,8 +1044,10 @@ override the [`didUpdateWidget()`][] function, which is passed
 an `oldWidget` to let you compare the old widget with
 the current widget.
 
-为了访问当前 `ShoppingList` 的属性，`_ShoppingListState` 可以使用它的 [`widget`][] 属性。
-当父组件重建一个新的 `ShoppingList` 时，`_ShoppingListState` 会使用新的 [`widget`][] 值来创建。
+为了访问当前 `ShoppingList` 的属性，
+`_ShoppingListState` 可以使用它的 [`widget`][] 属性。
+当父组件重建一个新的 `ShoppingList` 时，
+`_ShoppingListState` 会使用新的 [`widget`][] 值来创建。
 如果希望在 [`widget`][] 属性更改时收到通知，
 则可以重写 [`didUpdateWidget()`][] 函数，
 该函数将 `oldWidget` 作为参数传递，
@@ -1068,13 +1071,11 @@ function, which handles both situations.
 当处理 `onCartChanged` 回调时，`_ShoppingListState` 
 通过增加或删除 `_shoppingCart` 中的产品来改变其内部状态。
 为了通知框架它改变了它的内部状态，
-需要调用 [setState()]({{api}}/widgets/State-class.html#setState)。
-调用 [setState()]({{api}}/widgets/State-class.html#setState) 
-会将该 widget 标记为“dirty”（脏的），
+需要调用 [`setState()`][]，将该 widget 标记为「dirty」（脏标记），
 并且计划在下次应用需要更新屏幕时重新构建它。
 如果在修改 widget 的内部状态后忘记调用 setState，
-框架将不知道这个 widget 是“dirty”(脏的)，
-并且可能不会调用 widget 的 [build()]({{api}}/widgets/StatelessWidget/build.html) 方法，
+框架将不知道这个 widget 是「dirty」（脏标记），
+并且可能不会调用 widget 的 [`build()`][] 方法，
 这意味着用户界面可能不会更新以展示新的状态。
 通过以这种方式管理状态，你不需要编写用于创建和更新子 widget 的单独代码。
 相反，你只需实现 build 函数，它可以处理这两种情况。
@@ -1162,7 +1163,7 @@ Key 在构建相同类型 widget 的多个实例时很有用。
 
 For more information, see the [`Key`][] API.
 
-有关更多信息，请参阅 [`Key`]({{api}}/foundation/Key-class.html) API。
+有关更多信息，请参阅 [`Key`][] API。
 
 ## Global keys
 
@@ -1184,7 +1185,6 @@ For more information, see the [`GlobalKey`][] API.
 
 有关更多信息，请参阅 [`GlobalKey`][] API。
 
-[runApp()]: {{api}}/widgets/runApp.html
 [`actions`]: {{api}}/material/AppBar-class.html#actions
 [adding interactivity to your Flutter app]: /docs/development/ui/interactive
 [`AppBar`]: {{api}}/material/AppBar-class.html

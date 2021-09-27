@@ -2520,7 +2520,7 @@ widget provides the navigation on tap.
 
 `Drawer` 就是一个 Material Design 窗格，
 它可以从 `Scaffold` 边缘水平滑动显示应用程序的导航选项。
-你可以在里面添加 [`Button`][] 或 [`Text`][] 。
+你可以在里面添加 [`ElevatedButton`][] 或 [`Text`][] 。
 或者添加一个列表的元素作为 `Drawer` 的子 widget。
 在下面的例子中，[`ListTile`][] 提供了点击导航。
 

@@ -16,18 +16,13 @@ Firebase 是一个用于开发 BaaS 应用的开发平台，
 它提供了诸如实时数据库、云存储、鉴权、Crash 上报、
 机器学习、远程配置以及托管你的静态文件等后台托管服务。
 
-{{site.alert.note}}
-
-  Some Flutterfire plugins are in development and have not yet
-  reached 1.0. For more info, see the [Flutterfire plugins][] page.
-  
-  部分 Flutterfire 插件仍在开发中，尚未发布稳定版本。
-  更多相关信息，请查阅 [Flutterfire 插件][Flutterfire plugins] 页面。
-{{site.alert.end}}
-
 Firebase supports Flutter. For more information, see:
 
 Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下面这些链接：
+
+* The [FlutterFire][] site
+
+  [FlutterFire][] 官网
 
 * [Getting started with Firebase and Flutter][started]
 
@@ -37,22 +32,22 @@ Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下
 
   [了解如何在 Flutter 中使用 Firebase][codelab1-cn]
   
+* [Get to know Firebase for Flutter][workshop] video workshop
+  based on the codelab
+
+  基于 workshop [了解如何在 Flutter 中使用 Firebase][workshop]
+
+* [Get to know Firebase for Flutter][codelab1] codelab
+
+  基于 codelab [了解如何在 Flutter 中使用 Firebase][codelab1]
+
 * [Multi Platform Firebase Flutter][codelab2]
 
   [在多平台下的 Firebase Futter][codelab2]
 
-* [Get to know Firebase for Flutter][workshop] video workshop
-  based on the codelab
-
-  基于 codelab [了解如何在 Flutter 中使用 Firebase][workshop] 的视频 workshop
-
 * [Use Firebase to host your Flutter app on the web][article]
 
   [使用 Firebase 来部署你的 Flutter Web 应用][article]
-
-* [FlutterFire plugins][]
-
-  [FlutterFire 插件][FlutterFire plugins]
 
 Also, the Flutter community has created docs and
 videos that you might find useful. Here are a few:
@@ -65,31 +60,28 @@ videos that you might find useful. Here are a few:
 
 * [Using Firestore as a backend to your Flutter app][video] (video)
 
-  [在你的 Flutter 应用中使用 Firestore 作为后端][video] (视频)
+  [在你的 Flutter 应用中使用 Firestore 作为后端][video]（视频）
 
 * [Live Coding Firebase Authentication with Flutter][video2] (video)
 
-  [在 Flutter 中使用 Firebase 进行验证的代码演示][video2] (视频)
+  [在 Flutter 中使用 Firebase 进行验证的代码演示][video2]（视频）
 
 * [Flutter & Firebase Auth 01][video3] (video)
 
-  [使用 Flutter & Firebase 进行验证 01][video3] (视频)
+  [使用 Flutter & Firebase 进行验证 01][video3]（视频）
 
 * [Flutter: Firebase Tutorial Part 1 - Auth and Sign in][video4] (video)
 
-  [Flutter: Firebase 教程第一部分|验证与登陆][video4] (视频)
+  [Flutter: Firebase 教程第一部分|验证与登陆][video4]（视频）
 
 [article]: {{site.medium}}/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
-[codelab1-cn]: https://firebase.google.cn/codelabs/firebase-get-to-know-flutter
 [codelab2]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 [FlutterFire]: https://firebase.flutter.dev
 [started]: https://firebase.flutter.dev/docs/overview
-[video]: https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s
-[video2]: https://www.youtube.com/watch?v=OlcYP6UXlm8
-[video3]: https://www.youtube.com/watch?v=u_Lyx8KJWpg
-[video4]: https://www.youtube.com/watch?v=13-jNF984C0
+[video]: {{site.youtube-site}}/watch?v=DqJ_KjFzL9I&t=38s
+[video2]: {{site.youtube-site}}/watch?v=OlcYP6UXlm8
+[video3]: {{site.youtube-site}}/watch?v=u_Lyx8KJWpg
+[video4]: {{site.youtube-site}}/watch?v=13-jNF984C0
 [workshop]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
-[video-bilibili]: https://www.bilibili.com/video/av55809997/
-[codelab-cn]: {{site.codelabs}}/codelabs/flutter-firebase-cn/index.html

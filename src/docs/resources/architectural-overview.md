@@ -127,7 +127,7 @@ exist](https://hover.build/blog/one-year-in/).
 iOS 和 macOS 使用的是 Objective-C 和 Objective-C++，Windows 和 Linux 使用的是 C++。
 Flutter 代码可以通过嵌入层，以模块方式集成到现有的应用中，也可以作为应用的主体。
 Flutter 本身包含了各个常见平台的嵌入层，同时也
-[存在一些其他的嵌入层][other embedders also exist]。
+[存在一些其他的嵌入层](https://hover.build/blog/one-year-in/)。
 
 At the core of Flutter is the **Flutter engine**, which is mostly written in C++
 and supports the primitives necessary to support all Flutter applications. The

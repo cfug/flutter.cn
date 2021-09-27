@@ -67,42 +67,9 @@ It also acts as a productive prototyping tool.
 
 ### 哪些人会用到 Flutter？
 
-Flutter is for _developers_ that want a faster
-way to build beautiful apps, or
-a way to reach more users with a single investment.
+For users, Flutter makes beautiful apps come to life.
 
-Flutter 适用于希望快速构建精美的移动应用，
-或者希望用一套代码库覆盖更多用户的开发者。
-
-Flutter is also for _engineering managers_ that lead
-development teams. Flutter allows eng managers
-to create a single _mobile, web, and desktop app dev team_,
-unifying their development investments to ship more features faster,
-ship the same feature set to multiple platforms at the same
-time, and lower maintenance costs.
-
-Flutter 也适用于需要领导研发团队的 **工程经理** 们。
-Flutter 可以让工程经理打造一个统一的应用研发团队，
-这个“应用”包含：移动端、Web 端以及桌面端。
-这可以帮助以便更快地开发更多功能，
-将相同的功能部署到多平台的应用中，并降低维护成本。
-
-While not the initial target audience,
-Flutter is also for _designers_
-that want their original design visions delivered
-consistently, with high fidelity, to all users.
-In fact, [CodePen][] now supports Flutter.
-
-虽然设计师群体不是 Flutter 最初的目标受众，
-但 Flutter 也适用于那些希望将原始设计意图高保真地传递给所有移动用户的设计师。
-以及，[CodePen][] 现在已经支持 Flutter 啦！
-
-Fundamentally, Flutter is for users that want beautiful apps,
-with delightful motion and animation, and UIs with character
-and an identity all their own.
-
-说到底，如果您想要漂亮的应用，令人愉悦的动效和动画，
-以及富有个性和身份感的 UI，那您就是 Flutter 的目标用户。
+对于用户来说，Flutter 将美妙的应用带到了生活中。
 
 For developers, Flutter lowers the bar to entry for building apps.
 It speeds app development and reduces the cost and complexity
@@ -427,8 +394,8 @@ dependency injection and service location, such as [injectable][],
 [get_it][], and [kiwi][].
 
 我们并没有提供相关解决方案，
-但是这里有许多包提供了依赖注入或服务定位的能力，例如 [injectable][]，
-[get_it][], 和 [kiwi][].
+但是这里有许多包提供了依赖注入或服务定位的能力，
+例如 [injectable][]、[get_it][] 和 [kiwi][]。
 
 ## Technology
 
@@ -994,7 +961,7 @@ Also, note that experimental support for adding
 See the integration documentation in the
 [add-to-app][] section of our website.
 
-请参考 [这个文档][add-to-app section]，查看如何将 Flutter 加入现有的项目。
+请参考 [这个文档][add-to-app]，查看如何将 Flutter 加入现有的项目。
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -1014,7 +981,8 @@ A number of platform services and APIs have
 [ready-made packages][] available on pub.dev.
 Using an existing package [is easy][].
 
-很多平台服务和 API 都在 Pub 站点中提供了 [现成的代码包][ready-made packages]，
+很多平台服务和 API 都在 Pub 站点中提供了
+[现成的代码包][ready-made packages]，
 我们可以根据 [说明][is easy] 使用它们，非常方便。
 
 Finally, we encourage developers to use Flutter's
@@ -1429,13 +1397,13 @@ Flutter 是一个多范式的编程环境。过去几十年中许多编程技术
 <br> 这也是 Flutter 的主要开发范式，将简单的、行为有限的小对象进行组合，
   从而实现更复杂的效果。
   绝大多数 Flutter widget 都是用这种方法构建的。
-  比如 Material [`FlatButton`][] 类是基于
+  比如 Material [`TextButton`][] 类是基于
   [`MaterialButton`][] 类构建的，
   而这个类则是由 [`IconTheme`][]、[`InkWell`][]、[`Padding`][]、
-  [`Center`][]、[`Material`][]、[`AnimatedDefaultTextStyle`][] 
+  [`Center`][]、[`Material`][]、[`AnimatedDefaultTextStyle`][]
   以及 [`ConstrainedBox`][] 组合而成的。
   而 [`InkWell`][] 则是由 [`GestureDetector`][] 组成，
-  [`Material`][] 则是由 
+  [`Material`][] 则是由
   [`AnimatedDefaultTextStyle`][]、[`NotificationListener`][]
   和 [`AnimatedPhysicalModel`][] 组成。
   如此等等。
@@ -1868,6 +1836,7 @@ Apple 的 [规范][guidelines]。
 [`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/AnimatedPhysicalModel-class.html
 [apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
 [architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
+[architectural overview]: https://flutter.dev/docs/resources/architectural-overview
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
 [catalog of Flutter's widgets]: /docs/development/ui/widgets
@@ -1876,6 +1845,7 @@ Apple 的 [规范][guidelines]。
 [`color`]: {{site.api}}/flutter/widgets/Icon/color.html
 [Community]: /community
 [`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
+[contribute to Flutter]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
 [Contributing Guide]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
 [CodePen]: https://codepen.io/topic/flutter
 [Dart]: {{site.dart-site}}/
@@ -1901,8 +1871,10 @@ Apple 的 [规范][guidelines]。
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3
 [gesture system]: /docs/development/ui/advanced/gestures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[get_it]: {{site.pub}}/packages/get_it
 [GitHub]: {{site.github}}/flutter/flutter
 [`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
+[guidelines]: https://developer.apple.com/app-store/review/guidelines/
 [Hamilton for Android]: https://play.google.com/store/apps/details?id=com.hamilton.app
 [Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
 [hot reload]: #hot-reload
@@ -1910,6 +1882,7 @@ Apple 的 [规范][guidelines]。
 [`icon`]: {{site.api}}/flutter/widgets/Icon/icon.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`IconTheme`]: {{site.api}}/flutter/widgets/IconTheme-class.html
+[injectable]: {{site.pub}}/packages/injectable
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
 [iOS]: #run-ios
 [iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
@@ -1924,6 +1897,7 @@ Apple 的 [规范][guidelines]。
 [issues related to running Flutter on Chromebooks]: {{site.github}}/flutter/flutter/labels/platform-arc
 [`Iterable`]: {{site.api}}/flutter/dart-core/Iterable-class.html
 [JSON tutorial]: /docs/development/data-and-backend/json
+[kiwi]: {{site.pub}}/packages/kiwi
 [license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
 [`LicenseRegistry`]: {{site.api}}/flutter/foundation/LicenseRegistry-class.html
 [`List`]: {{site.api}}/flutter/dart-core/List-class.html
@@ -1936,6 +1910,7 @@ Apple 的 [规范][guidelines]。
 [minimal Flutter app]: {{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
 [multiple Flutter screens or views]: /docs/development/add-to-app/multiple-flutters
 [`NotificationListener`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
+[one of the top design ideas of the decade]: https://www.fastcompany.com/90442092/the-14-most-important-design-ideas-of-the-decade-according-to-the-experts
 [only one license]: {{site.github}}/flutter/flutter/blob/master/LICENSE
 [package ecosystem]: {{site.pub}}/flutter
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
@@ -1947,6 +1922,7 @@ Apple 的 [规范][guidelines]。
 [QA1795]: https://developer.apple.com/library/archive/qa/qa1795/_index.html
 [ready-made packages]: {{site.pub}}/flutter/
 [`Rect`]: {{site.api}}/flutter/dart-ui/Rect-class.html
+[Reflectly]: https://apps.apple.com/us/app/reflectly-journal-ai-diary/id1241229134
 [release build of your Android app]: /docs/deployment/android
 [release build of your iOS app]: /docs/deployment/ios
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html

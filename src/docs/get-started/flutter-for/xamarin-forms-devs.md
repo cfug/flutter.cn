@@ -315,15 +315,14 @@ Material Design 是一个灵活的
 platforms]
 的设计系统，包括 iOS。
 
-But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino
-widgets][]
+But Flutter is flexible and expressive enough to implement
+any design language. For example, on iOS,
+you can use the [Cupertino widgets][]
 to produce an interface that looks like
 [Apple's iOS design language][].
 
-不过， Flutter 有足够灵活和自描述性（expressive）去实现任何设计语言。
-举个例子，在 iOS 上，你可以用 [Cupertino widget][]
-来生成一个看起来像 
+不过，Flutter 有足够灵活和自描述性 (expressive) 去实现任何设计语言。
+举个例子，在 iOS 上，你可以用 [Cupertino widgets][] 来生成一个看起来像
 [苹果 iOS 设计语言][Apple's iOS design language] 的接口。
 
 ### How do I update widgets?
@@ -2963,18 +2962,12 @@ or Android, or both.
 插件可以在 [pub.dev][]、Dart 和 Flutter 的开源包存储库中找到。
 有些包可能支持iOS上的本地集成，有些支持Android，还有两者都兼而有之的。
 
+If you can't find a plugin on pub.dev that fits your needs,
+you can [write your own][], and [publish it on pub.dev][].
 
-If you can't find a plugin on Pub that fits your needs,
-you can [write your
-own][],
-and [publish it on
-Pub][].
-
-如果在Pub上找不到适合您需求的插件，您可以
-[编写自己的插件][write your
-own]
-并 [在Pub上发布][publish it on
-Pub]。
+如果在 Pub 上找不到适合您需求的插件，你可以
+[编写自己的插件][write your own] 并
+[在 Pub 上发布][publish it on pub.dev]。
 
 ### How do I access the GPS sensor?
 

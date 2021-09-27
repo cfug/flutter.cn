@@ -84,7 +84,7 @@ GestureDetector(
 
      这里为了说明原理，我们创建了自定义的按钮，
      其实 Flutter 已经为我们准备了很多现成的按钮供我们使用，比如：
-     [`RaisedButton`][]、[`FlatButton`][] 和 [`CupertinoButton`][]。
+     [`ElevatedButton`][]、[`TextButton`][] 和 [`CupertinoButton`][]。
 
 ## Interactive example
 

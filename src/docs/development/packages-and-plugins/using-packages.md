@@ -37,10 +37,10 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
     
   **Packages**
   <br> Dart package 最低要求是包含一个 `pubspec.yaml` 文件。
-  此外，一个 package 可以包含依赖关系 (在 `pubspec.yaml` 文件里声明)、
-  Dart 库、应用、资源、测试、图片和例子等。
-  pub.dev 上列出了很多 package，由 Google 工程师和
-  Flutter 和 Dart 社区的开发者开发和发布，你可以用在自己的应用里。
+    此外，一个 package 可以包含依赖关系 (在 `pubspec.yaml` 文件里声明)、
+    Dart 库、应用、资源、测试、图片和例子等。
+    [pub.dev][] 上列出了很多 package，由 Google 工程师和
+    Flutter 和 Dart 社区的开发者开发和发布，你可以用在自己的应用里。
 
   **Plugins**
   <br> A plugin package is a special kind of package that makes
@@ -53,11 +53,11 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
 
   **Plugins**
   <br> 插件 (plugin package) 是一种特别的 package，特别指
-  那些帮助你获得原生平台特性的 package。
-  插件可以为 Android (使用 Kotlin 或 Java 语言)、
-  iOS (使用 Swift 或 Objective-C 语言)、Web、macOS、Windows、Linux 平台，
-  或其任意组合的平台编写。
-  比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
+    那些帮助你获得原生平台特性的 package。
+    插件可以为 Android (使用 Kotlin 或 Java 语言)、
+    iOS (使用 Swift 或 Objective-C 语言)、Web、macOS、Windows、Linux 平台，
+    或其任意组合的平台编写。
+    比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
 
 {{site.alert.end}}
 
@@ -203,10 +203,9 @@ is a handy reference for these steps.
 For a complete example,
 see the [css_colors example][] below.
 
-完整示例，参阅下面的 [CSS Colors example][css_colors example] 。
+完整示例，参阅下面的 [css_colors 示例][css_colors example] 。
 
 ### Conflict resolution
-
 
 ### 冲突解决
 
@@ -313,7 +312,7 @@ If no package exists for your specific use case,
 you can [write a custom package][].
 
 如果某个 package 不适用于你的特定需求，
-你可以 [开发新的自定义 package][develop new custom packages]。
+你可以 [开发新的自定义 package][write a custom package]。
 
 ## Managing package dependencies and versions
 
@@ -337,8 +336,8 @@ well as a list of all prior versions
 
 所有 package 都有一个版本号，在它们的 `pubspec.yaml` 文件中指定。
 当前的 package 版本会在其名称旁边显示当前版本号。
-（例如，参阅 [`url_launcher`] package）以及所有先前版本的列表：
-[url_launcher 版本列表][url_launcher versions]。
+（例如，参阅 [`url_launcher`][] package）以及所有先前版本的列表：
+[url_launcher 版本列表][`url_launcher` versions]。
 
 When a package is added to `pubspec.yaml`,
 the shorthand form `plugin1:` means that any
@@ -389,7 +388,7 @@ if you, or another developer on your team, run `flutter pub get`.
 
 当你添加一个 package 后首次运行
 `flutter pub get`（IntelliJ 或 Android Studio 中的 **Packages Get**），
-Flutter 将会保存在 `pubspec.lock` [lockfile] 中找到的具体 package 版本。
+Flutter 将会保存在 `pubspec.lock` [lockfile][] 中找到的具体 package 版本。
 这将确保当你或者团队中其他开发者运行
 `flutter pub get` 后能得到相同版本的 package。
 
@@ -499,7 +498,7 @@ The [`css_colors`][] package
 defines color constants for CSS colors, so use the constants
 wherever the Flutter framework expects the `Color` type.
 
-[`css_colors`] package 为 CSS 颜色定义颜色常量，
+[`css_colors`][] package 为 CSS 颜色定义颜色常量，
 允许你在 Flutter 框架中任何需要 `Color` 类型的地方使用它们。
 
 To use this package:
@@ -660,7 +659,7 @@ To use this plugin:
    运行应用（如果你的应用在添加插件之前已经运行，请停止并重启应用）。
    当你点击 **Show Flutter homepage** 时，
    你将看到手机默认浏览器打开并出现 Flutter 主页。
-   
+
 
 [Adding assets and images]: /docs/development/ui/assets-and-images
 [Android plugins]: {{site.pub}}/flutter/packages?platform=android

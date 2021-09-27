@@ -265,8 +265,8 @@ This works okay, but for an app state that you need to modify from
 many different places, you'd have to pass around a lot of
 callbacks&mdash;which gets old pretty quickly.
 
-这段代码是没问题的，但是对于全局应用状态来说你需要在不同的地方进行修改，
-可能需要大量传递回调函数&mdash;。
+这段代码是没问题的，但是对于全局应用状态来说，你需要在不同的地方进行修改，
+可能需要大量传递回调函数&mdash;&mdash;这些回调很快就会过时。
 
 Fortunately, Flutter has mechanisms for widgets to provide data and
 services to their descendants (in other words, not just their children,

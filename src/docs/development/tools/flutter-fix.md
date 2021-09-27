@@ -18,8 +18,8 @@ Depending on the IDE, these automated
 updates are called _quick-fixes_ (IntelliJ,
 Android Studio, Eclipse) or _code actions_ (VS Code).
 
-此项功能也已被添加到 Flutter (2.0) 和 Dart (2.12) 的 IDE 插件中。
-该项自动更新的功能在（IntelliJ、Android Studio、Eclipse）中被称为 _quick-fixes_ 
+此功能已被添加到 Flutter (2.0) 和 Dart (2.12) 的 IDE 插件中。
+这种自动更新的功能在（IntelliJ、Android Studio、Eclipse）中被称为 _quick-fixes_ 
 在（VS Code）中被称为 _code actions_。
 
 ## Applying individual fixes
@@ -29,7 +29,7 @@ Android Studio, Eclipse) or _code actions_ (VS Code).
 You can use any supported IDE
 to apply a single fix at a time.
 
-您可以使用任意一个支持此功能的 IDE 来一次应用一个修复。
+你可以在任意一个支持此功能的 IDE 上，一次应用一个修复。
 
 ### IntelliJ and Android Studio
 
@@ -41,8 +41,8 @@ Clicking the light bulb displays the suggested fix
 that updates that code to the new API.
 Clicking the suggested fix performs the update.
 
-当 analyzer 检测到废弃的 API 时，该代码行上会出现一个灯泡状的图标。
-点击灯泡图标会显示将代码更新为新 API 的建议修复。
+当 analyzer 检测到已弃用的 API 时，该行代码上会出现一个灯泡状的图标。
+点击灯泡图标会显示将代码更新为新 API 的修复建议。
 点击建议的修复会执行 API 更新操作。
 
 ![Screenshot showing suggested change in IntelliJ](/assets/images/docs/development/tools/flutter-fix-suggestion-intellij.png)<br>
@@ -106,10 +106,6 @@ This tool has two options:
 * To see a full list of available changes, run
   the following command:
 
-  ```terminal
-  dart fix --dry-run
-  ```
-
 * 若要查看可用更改的完整列表，请执行以下命令:
 
   ```terminal
@@ -118,10 +114,6 @@ This tool has two options:
 
 * To apply all changes in bulk, run the
   following command:
-
-  ```terminal
-  dart fix --apply
-  ```
 
 * 若要批量应用所有更改，请执行以下命令:
 

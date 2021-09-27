@@ -1206,7 +1206,7 @@ For a detailed writeup on using JSON with Flutter,
 check out the [JSON tutorial][].
 
 有关在 Flutter 中使用 JSON 的详细介绍，你可以查看
-[使用 JSON 的教程][the JSON tutorial]。
+[使用 JSON 的教程][JSON tutorial]。
 
 ### Can I build 3D (OpenGL) apps with Flutter?
 

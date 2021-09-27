@@ -614,7 +614,7 @@ or through the interfaces defined in a platform
 interface package.
 
 最后，你需要将 Dart 编写的 API 代码与特定平台的实现相互关联。
-这是通过 [平台通道][platform channels] 完成的。
+这是通过 [平台通道][platform channel] 完成的。
 
 ### Add support for platforms in an existing plugin project
 

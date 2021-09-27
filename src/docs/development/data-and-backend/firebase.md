@@ -27,11 +27,7 @@ Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下
 * [Getting started with Firebase and Flutter][started]
 
   [将 Firebase 添加到您的 Flutter 应用][started]
-  
-* [Get to know Firebase for Flutter][codelab1]
 
-  [了解如何在 Flutter 中使用 Firebase][codelab1-cn]
-  
 * [Get to know Firebase for Flutter][workshop] video workshop
   based on the codelab
 

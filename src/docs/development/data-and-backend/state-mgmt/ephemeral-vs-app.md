@@ -20,7 +20,7 @@ next:
 _This doc introduces app state, ephemeral state,
 and how you might manage each in a Flutter app._
  
-**本文将介绍应用 (app) 状态 ，短时 (ephemeral) 状态, 
+**本文将介绍应用 (app) 状态、短时 (ephemeral) 状态，
 以及在一个 Flutter 应用中你可以如何应用这两种状态。**
 
 In the broadest possible sense, the state of an app is everything that

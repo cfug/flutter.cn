@@ -94,7 +94,7 @@ Package 包含以下两种类别：
 
 **原生插件 (Plugin packages)**
 <br> 使用 Dart 编写的，按需使用 Java 或 Kotlin、Objective-C
-或 Swift 分别在 Android 和/或 iOS 平台实现的 package。
+  或 Swift 分别在 Android 和/或 iOS 平台实现的 package。
 
   Plugin packages can be written for Android (using Kotlin or Java), iOS (using
   Swift or Objective-C), web, macOS, Windows, or Linux, or any combination

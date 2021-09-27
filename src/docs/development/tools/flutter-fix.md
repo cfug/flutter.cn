@@ -9,7 +9,7 @@ changes suggested by the Dart analyzer
 to automatically clean up deprecated APIs
 in your codebase.
 
-Flutter 2 版本中引入的 Flutter Fix 功能将 Dart 命令行工具
+Flutter 2 版本中引入的 **Flutter Fix** 功能将 Dart 命令行工具
 与 Dart analyzer 建议的更改相结合，用于自动清理代码库中已弃用的 API。
 
 This feature has also been added to IDE
@@ -19,8 +19,8 @@ updates are called _quick-fixes_ (IntelliJ,
 Android Studio, Eclipse) or _code actions_ (VS Code).
 
 此功能已被添加到 Flutter (2.0) 和 Dart (2.12) 的 IDE 插件中。
-这种自动更新的功能在（IntelliJ、Android Studio、Eclipse）中被称为 _quick-fixes_ 
-在（VS Code）中被称为 _code actions_。
+这种自动更新的功能在 IntelliJ、Android Studio 和 Eclipse 中被称为 **quick-fixes**，
+在 VS Code 中被称为 **code actions**。
 
 ## Applying individual fixes
 
@@ -29,7 +29,7 @@ Android Studio, Eclipse) or _code actions_ (VS Code).
 You can use any supported IDE
 to apply a single fix at a time.
 
-你可以在任意一个支持此功能的 IDE 上，一次应用一个修复。
+你可以使用支持此功能的 IDE 逐个应用修复。
 
 ### IntelliJ and Android Studio
 
@@ -58,22 +58,22 @@ You can do any of the following:
 
 当 analyzer 检测到已弃用的 API 时，
 它会提供一个报错信息。
-您可以执行以下任一操作：
+你可以执行以下任一操作：
 
 * Hover over the error and then click the
   **Quick Fix** link.
   This presents a filtered list showing
   _only_ fixes.
 
-* 将鼠标悬停在报错的位置处，然后点击 **Quick Fix** 链接。
-  此操作仅显示修复相关的操作列表。
+  将鼠标悬停在报错的位置处，然后点击 **Quick Fix** 选项。
+  此操作将只显示修复代码的选项。
 
 * Put the caret in the code with the error and click
   the light bulb icon that appears.
   This shows a list of all actions, including
   refactors.
 
-* 将光标放在出现错误提示的代码中，然后点击出现的灯泡图标。
+  将光标放在出现错误提示的代码中，然后点击出现的灯泡图标。
   此操作会显示包括重构在内所有可执行操作的列表。
 
 * Put the caret in the code with the error and
@@ -82,7 +82,8 @@ You can do any of the following:
   This shows a list of all actions, including
   refactors.
 
-* 将光标放在出现错误提示的代码中，然后按快捷键（mac 上是 **Command+.**，其他平台是 **Control+.** ）。
+  将光标放在出现错误提示的代码中，然后按快捷键
+  （mac 上是 **Command+.**，其他平台是 **Control+.** ）。
   此操作会显示包括重构在内所有可执行操作的列表。
 
 ![Screenshot showing suggested change in VS Code](/assets/images/docs/development/tools/flutter-fix-suggestion-vscode.png)<br>
@@ -97,7 +98,7 @@ A sample code action in VS Code
 To see or apply changes to an entire project,
 you can use the command-line tool, [`dart fix`][].
 
-您可以使用命令行工具 [`dart fix`][] 来查看或应用整个项目的更改。
+你可以使用命令行工具 [`dart fix`][] 来查看或应用整个项目的更改。
 
 This tool has two options:
 
@@ -125,7 +126,8 @@ For more information on Flutter deprecations, see
 [Deprecation lifetime in Flutter][], a free article
 on Flutter's Medium publication.
 
-更多有关 Flutter 弃用的详细信息，请查看 Medium 上的这篇：[Deprecation lifetime in Flutter][]。
+更多有关 Flutter 废弃 API 的详细信息，请查看 Medium 上的
+[Flutter 废弃 API 的周期][Deprecation lifetime in Flutter] 文章。
 
 
 [Deprecation lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad

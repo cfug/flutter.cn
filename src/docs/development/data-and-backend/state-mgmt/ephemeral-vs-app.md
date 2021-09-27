@@ -20,8 +20,8 @@ next:
 _This doc introduces app state, ephemeral state,
 and how you might manage each in a Flutter app._
  
-本文将介绍应用 (app) 状态 ，短时 (ephemeral) 状态, 
-以及在一个 Flutter 应用中你可以如何应用这两种状态。
+**本文将介绍应用 (app) 状态 ，短时 (ephemeral) 状态, 
+以及在一个 Flutter 应用中你可以如何应用这两种状态。**
 
 In the broadest possible sense, the state of an app is everything that
 exists in memory when the app is running. This includes the app's assets,
@@ -54,7 +54,7 @@ be separated into two conceptual types: ephemeral state and app state.
 Ephemeral state (sometimes called _UI state_ or _local state_)
 is the state you can neatly contain in a single widget.
 
-短时状态 (有时也称 **用户界面(UI)状态** 或者 **局部状态**) 
+短时状态（有时也称 **用户界面 (UI) 状态** 或者 **局部状态**） 
 是你可以完全包含在一个独立 widget 中的状态。
 
 This is, intentionally, a vague definition, so here are a few examples. 
@@ -186,7 +186,7 @@ the state in your app. In fact, the Flutter team does this in many
 simple app samples (including the starter app that you get with every
 `flutter create`).
 
-需要说明的是，你*可以*使用 `State` 和 `setState()` 管理你的应用中的所有状态。
+需要说明的是，你 **可以** 使用 `State` 和 `setState()` 管理你的应用中的所有状态。
 实际上Flutter团队在很多简单的示例程序
 （包括你每次使用 `flutter create` 命令创建的初始应用）中正是这么做的。
 
@@ -197,7 +197,7 @@ from outside the class, keep it between sessions, and so on.
 In that case, the `_index` variable is app state.
 
 也可以用另外一种方式。比如，在一个特定的应用中，
-你可以指定底部导航栏中被选中的项目*不是*一个短时状态。
+你可以指定底部导航栏中被选中的项目 **不是** 一个短时状态。
 你可能需要在底部导航栏类的外部来改变这个值，并在对话期间保留它。
 在种情况下 `_index` 就是一个应用状态。 
 

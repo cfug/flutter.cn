@@ -784,7 +784,8 @@ From the command line:
 1. Run `flutter build apk --split-per-abi`<br>
    (The `flutter build` command defaults to `--release`.)
    
-   运行 `flutter build apk` （`flutter build` 默认带有 `--release` 参数）。
+   运行 `flutter build apk --split-per-abi`<br>
+   （`flutter build` 默认带有 `--release` 参数）。
 
 This command results in three APK files:
 

@@ -107,7 +107,7 @@ This tool has two options:
 * To see a full list of available changes, run
   the following command:
 
-* 若要查看可用更改的完整列表，请执行以下命令:
+  若要查看可用更改的完整列表，请执行以下命令:
 
   ```terminal
   dart fix --dry-run
@@ -116,7 +116,7 @@ This tool has two options:
 * To apply all changes in bulk, run the
   following command:
 
-* 若要批量应用所有更改，请执行以下命令:
+  若要批量应用所有更改，请执行以下命令:
 
   ```terminal
   dart fix --apply

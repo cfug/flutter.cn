@@ -40,6 +40,10 @@ Flutter 中文社区教程由社区的开发者投稿，
 - [流动的观察者模式](/community/tutorials/observer-pattern-in-flutter-n-dart)
 - [灵动的适配器模式](/community/tutorials/adapter-pattern-in-flutter-n-dart)
 
+### 实践
+
+- [Flutter | 如何实现一个精准滑动埋点](/community/tutorials/flutter_accurate_rolling_exposure_practice)
+
 ### Flutter x TensorFlow
 
 - [在 Flutter 中使用 TensorFlow Lite 插件实现文字分类](/community/tutorials/text-classification-using-tensorflow-lite-plugin-for-flutter)

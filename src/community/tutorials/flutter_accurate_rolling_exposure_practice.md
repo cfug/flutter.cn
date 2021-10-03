@@ -8,11 +8,14 @@ toc: true
 
 ## 前言
 
-今天的这篇文章要介绍的内容，是我们经常会用到的一个场景：**埋点**。为了追踪用户的行为特征，之后对数据进行量化分析，优化产品，我们常常需要在特定的时机上报数据埋点，想必大家都对它比较熟悉。而展现埋点则是其中的一个高频使用场景。
+今天的这篇文章要介绍的内容，是我们经常会用到的一个场景：**埋点**。
+为了对行为特征的数据进行量化分析，优化产品，
+我们常常需要在特定的时机上报数据埋点，想必大家都对它比较熟悉。
+而曝光埋点则是其中的一个高频使用场景。
 
 ## 🥲 滑动埋点的痛
 
-在 Flutter 中，我们通常会在 `initState` 这个生命周期上报展现埋点，这在一般的使用场景下当然是没有问题的。然而在滑动场景下这个解决方案就不 work 了，我们来看看。
+在 Flutter 中，我们通常会在 `initState` 这个生命周期上报曝光埋点，这在一般的使用场景下当然是没有问题的。然而在滑动场景下这个解决方案就不 work 了，我们来看看。
 
 ![listview_track.gif](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d02c72f933f747e187524d7fa971b010~tplv-k3u1fbpfcp-watermark.image?)
 
@@ -25,13 +28,13 @@ toc: true
 
 
 ``` dart
-      ListView.builder(
-          cacheExtent: 0,
-          itemCount: 40,
-          itemBuilder: (context, index) {
-            return Item(index: index);
-          },
-      ),
+ListView.builder(
+  cacheExtent: 0,
+  itemCount: 40,
+  itemBuilder: (context, index) {
+    return Item(index: index);
+  },
+),
 ```
 
 ![no_cache_extent.gif](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/673d32dda73f436ba9da39582a6ed261~tplv-k3u1fbpfcp-watermark.image?)
@@ -75,7 +78,7 @@ toc: true
 
 下面我们把 Item 自身的宽度（Item Width）也带上，再使用上面得出的结论来进行计算。
 
-> 我们这里暂时认为 Item 完全划入 ViewPort 才算一次展现。
+> 我们这里暂时认为 Item 完全划入 ViewPort 才算一次曝光。
 
 ![关键变量.jpg](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6fd48bfea1d0481fafa39294d82931ca~tplv-k3u1fbpfcp-watermark.image?)
 
@@ -114,50 +117,50 @@ if (addRepaintBoundaries) child = RepaintBoundary(child: child);
 我们在进行曝光判断的时候，肯定是在每一个 Item 中进行的，而 `ViewPort` 则是存在于 `ListView` 这一层级，所以我们需要从祖先的节点中找到它，幸运的是，Flutter 已经为我们提供了这个方法。
 ``` dart
 static RenderAbstractViewport? of(RenderObject? object) {
-    while (object != null) {
-      if (object is RenderAbstractViewport)
-        return object;
-      object = object.parent as RenderObject?;
-    }
-    return null;
+  while (object != null) {
+    if (object is RenderAbstractViewport)
+      return object;
+    object = object.parent as RenderObject?;
   }
+  return null;
+}
 ```
 我们刚刚已经拿到了 Item 对应的渲染对象，`RenderAbstractViewport.of` 可以通过这个 `RenderObject` 向上寻找祖先节点，直到发现离它最近一个节点的 `RenderAbstractViewport` 就能拿到我们想要的 `ViewPort` 信息了。
 
 ``` dart
 Size? getViewPortSize(BuildContext context) {
-    final RenderObject? box = context.findRenderObject();
-    final RenderAbstractViewport? viewport = RenderAbstractViewport.of(box);
-    assert(() {
-      if (viewport != null) {
-        debugPrint('Please make sure you have a `ScrollView` in ancestor');
-        return false;
-      }
-      return true;
-    });
-    final Size? size = viewport?.paintBounds.size;
-    return size;
-  }
+  final RenderObject? box = context.findRenderObject();
+  final RenderAbstractViewport? viewport = RenderAbstractViewport.of(box);
+  assert(() {
+    if (viewport != null) {
+      debugPrint('Please make sure you have a `ScrollView` in ancestor');
+      return false;
+    }
+    return true;
+  });
+  final Size? size = viewport?.paintBounds.size;
+  return size;
+}
 ```
 ### Item 相对 ViewPort 的滑动起始点的距离
 在 `RenderAbstractViewport` 的另一个方法 `getOffsetToReveal`，中，我们可以获得当前的 `RenderObject` 相对于这个 ViewPort 滑动的起始位置。
 
 ``` dart
 double getExposureOffset(BuildContext context) {
-    final RenderObject? box = context.findRenderObject();
-    final RenderAbstractViewport? viewport = RenderAbstractViewport.of(box);
+  final RenderObject? box = context.findRenderObject();
+  final RenderAbstractViewport? viewport = RenderAbstractViewport.of(box);
 
-    if (viewport == null || box == null || !box.attached) {
-      return 0.0;
-    }
-
-    // box 为当前 Item 的 RenderObject
-    // alignment 为 0 的时候获得距离起点的相对偏移量
-    // 为 1 的时候获得距离终点的相对偏移量。
-    final RevealedOffset offsetRevealToTop =
-        viewport.getOffsetToReveal(box, 0.0, rect: Rect.zero);
-    return offsetRevealToTop.offset;
+  if (viewport == null || box == null || !box.attached) {
+    return 0.0;
   }
+
+  // box 为当前 Item 的 RenderObject
+  // alignment 为 0 的时候获得距离起点的相对偏移量
+  // 为 1 的时候获得距离终点的相对偏移量。
+  final RevealedOffset offsetRevealToTop =
+      viewport.getOffsetToReveal(box, 0.0, rect: Rect.zero);
+  return offsetRevealToTop.offset;
+}
 ```
 
 ### 滑动距离
@@ -179,13 +182,13 @@ Scrollable Widget 将会向其其祖先通知有关滚动变化信息，而这�
 
 ``` dart
 Widget buildNotificationWidget(BuildContext context, Widget child) {
-    return NotificationListener<ScrollNotification>(
-      onNotification: (scrollNotification) {
-        // 这里就能获取到滚动信息
-      },
-      child: ScrollView,
-    );
-  }
+  return NotificationListener<ScrollNotification>(
+    onNotification: (scrollNotification) {
+      // 这里就能获取到滚动信息
+    },
+    child: ScrollView,
+  );
+}
 ```
 
 #### 解决信息共享问题
@@ -210,24 +213,24 @@ Scroll Notification 仅会向祖先节点发起 Notification 通知，也就是�
 
 ``` dart
 void _updateInheritance() {
-    assert(_lifecycleState == _ElementLifecycle.active);
-    _inheritedWidgets = _parent?._inheritedWidgets;
-  }
+  assert(_lifecycleState == _ElementLifecycle.active);
+  _inheritedWidgets = _parent?._inheritedWidgets;
+}
 ```
 
 而 `InheritedWidget` 创建的 Element 则会在 mount 的时候把自己给塞到这个 map 当中，这样就完成了自顶向下的数据共享了。
 
 ```
 @override
-  void _updateInheritance() {
-    assert(_lifecycleState == _ElementLifecycle.active);
-    final Map<Type, InheritedElement>? incomingWidgets = _parent?._inheritedWidgets;
-    if (incomingWidgets != null)
-      _inheritedWidgets = HashMap<Type, InheritedElement>.from(incomingWidgets);
-    else
-      _inheritedWidgets = HashMap<Type, InheritedElement>();
-    _inheritedWidgets![widget.runtimeType] = this;
-  }
+void _updateInheritance() {
+  assert(_lifecycleState == _ElementLifecycle.active);
+  final Map<Type, InheritedElement>? incomingWidgets = _parent?._inheritedWidgets;
+  if (incomingWidgets != null)
+    _inheritedWidgets = HashMap<Type, InheritedElement>.from(incomingWidgets);
+  else
+    _inheritedWidgets = HashMap<Type, InheritedElement>();
+  _inheritedWidgets![widget.runtimeType] = this;
+}
 ```
 
 基于此，我们就可以完成对于滑动埋点曝光的计算了，可喜可贺。
@@ -246,7 +249,10 @@ void _updateInheritance() {
 - 追踪 Item 何时离开可视范围：可以获取到曝光时长。
 - 支持所有 ScrollView：包括 `ListView`、`GridView`、`CustomScrollView` 等等。
 
-这个项目我会一直维护下去（毕竟自己也要用），如果你想了解该项目的最新进可以关注该项目的 [Github](https://github.com/Vadaski/flutter_exposure/tree/master)，或者有需要增加的功能需求，也欢迎通过[邮箱](xinlei966@gmail.com)与我联系～
+这个项目我会一直维护下去（毕竟自己也要用），
+如果你想了解该项目的最新进展，
+可以关注该项目的 [GitHub](https://github.com/Vadaski/flutter_exposure)，
+或者有需要增加的功能需求，也欢迎通过 [邮箱](mailto:xinlei966@gmail.com) 与我联系～
 
 Pub 地址：https://pub.flutter-io.cn/packages/flutter_exposure
 
@@ -255,6 +261,9 @@ Github 地址：https://github.com/Vadaski/flutter_exposure/tree/master
 邮箱：xinlei966@gmail.com
 
 ## 写在最后
-这个解决方案其实是在去年公司里就用到了，一直没有来得及开源，在这里也感谢[闲鱼技术](https://juejin.cn/post/6955304605190357005)提供的宝贵思路，最近凑了一些零零碎碎的时间把它给完成了，把趁着国庆第一天写完了这篇文章，希望大家能通过我的分享有一点点收获～
+这个解决方案其实是在去年公司里就用到了，一直没有来得及开源。
+在这里也感谢 [闲鱼技术](https://juejin.cn/post/6955304605190357005) 提供的宝贵思路，
+最近凑了一些零零碎碎的时间把它给完成了，把趁着国庆第一天写完了这篇文章，
+希望大家能通过我的分享有一点点收获～
 
 我是鑫磊，和你一起快乐学习 Flutter 的工程师，大家国庆快乐，我们之后再见👋

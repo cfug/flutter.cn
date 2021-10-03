@@ -1,6 +1,5 @@
-
 ---
-title: Flutter | 如何实现一个精准滑动埋点
+title: 实现一个精准滑动埋点
 toc: true
 ---
 
@@ -17,7 +16,7 @@ toc: true
 
 在 Flutter 中，我们通常会在 `initState` 这个生命周期上报曝光埋点，这在一般的使用场景下当然是没有问题的。然而在滑动场景下这个解决方案就不 work 了，我们来看看。
 
-![listview_track.gif](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d02c72f933f747e187524d7fa971b010~tplv-k3u1fbpfcp-watermark.image?)
+![listview_track.gif](https://files.flutter-io.cn/posts/community/tutorial/images/listview_track.gif)
 
 很明显，我们把本来没有展示的 widget 也给打印出来了。如果这样做，埋点上报不准确，将会给业务带来不可恢复的损失。
 
@@ -37,7 +36,7 @@ ListView.builder(
 ),
 ```
 
-![no_cache_extent.gif](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/673d32dda73f436ba9da39582a6ed261~tplv-k3u1fbpfcp-watermark.image?)
+![no_cache_extent.gif](https://files.flutter-io.cn/posts/community/tutorial/images/no_cache_extent.gif)
 
 好了，本文到此结束，你学会了吗。😏
 
@@ -58,7 +57,7 @@ ListView.builder(
 
 很容易能够想到和滑动的偏移量（Scroll Offset），以及 ViewPort 在滑动方向上的长度(ViewPort Length)，还有 Item 自身的信息，也就是当前 Item 距离滑动起始点的距离（Exposure Offset）相关。
 
-![简易关键变量.jpg](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e6a0a762eb9648fa8c0950399233d496~tplv-k3u1fbpfcp-watermark.image?)
+![简易关键变量.jpg](https://files.flutter-io.cn/posts/community/tutorial/images/simple_key_variable.jpg)
 
 想象一下滑动的样子，一个 Item 从 `ViewPort` 的右边滑入，进入 `ViewPort`，被用户看到，然后再从 `ViewPort` 的左边划出，这一系列过程。我们可以把这个过程抽象为下面的四个状态：
 - **Item 在 `ViewPort` 右侧不可视范围内**：(Scroll Offset + ViewPort Length < Exposure Offset)
@@ -80,7 +79,7 @@ ListView.builder(
 
 > 我们这里暂时认为 Item 完全划入 ViewPort 才算一次曝光。
 
-![关键变量.jpg](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6fd48bfea1d0481fafa39294d82931ca~tplv-k3u1fbpfcp-watermark.image?)
+![关键变量.jpg](https://files.flutter-io.cn/posts/community/tutorial/images/key_variable.jpg)
 
 - **Item 在 `ViewPort` 右侧不可视范围内**：(Scroll Offset + ViewPort Length < Exposure Offset)
 - **Item 进入 `ViewPort` 右侧**：（Scroll Offset + ViewPort Length > Exposure Offset）
@@ -104,7 +103,7 @@ ListView.builder(
 // 这里命名为曝光坑位的大小，对于不同滑动方向，我们需要用不同方向的长度。
 final exposurePitSize = (context.findRenderObject() as RenderBox).size;
 ```
-这里的 context 是我们想要判断是否曝光的 Item 的 context，如果你对这个概念还不太清楚，可以去看看这篇 [Flutter | 深入理解BuildContext](https://juejin.cn/post/6844903777565147150)。
+这里的 context 是我们想要判断是否曝光的 Item 的 context，如果你对这个概念还不太清楚，可以去看看这篇 [深入理解BuildContext](https://juejin.cn/post/6844903777565147150)。
 
 > 注意：不是每个 `Widget` 都会创建一个 `RenderObject`，只有 `RenderObjectWidget` 才会创建 `RenderObject`。 `ListView` 会默认帮每一个 Item 添加一个 `RepaintBoundary`，这个 `Widget` 是一个 `SingleChildRenderObjectWidget`，所以每一个 Item 其实都会有一个它所对应的 `RenderObject`。 
 
@@ -196,7 +195,7 @@ Widget buildNotificationWidget(BuildContext context, Widget child) {
 
 如果你敏锐的话，想必已经发现我们现在这样的设计根本没法在一个地方拿到全部信息。
 
-![数据获取位置不一致.jpg](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a9d1d0e8126f47e4ac9ea7bf9bb1f881~tplv-k3u1fbpfcp-watermark.image?)
+![数据获取位置不一致.jpg](https://files.flutter-io.cn/posts/community/tutorial/images/tree.jpg)
 
 Scroll Notification 仅会向祖先节点发起 Notification 通知，也就是说，我们在 Item 层级是拿不到的！
 

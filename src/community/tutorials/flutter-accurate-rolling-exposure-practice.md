@@ -21,7 +21,7 @@ toc: true
 很明显，我们把本来没有展示的 widget 也给打印出来了。如果这样做，埋点上报不准确，将会给业务带来不可恢复的损失。
 
 ## 🤯 ScrollView 加载机制
-为什么会出现这种情况呢？在查阅了源码之后，我们发现所有的 `ScrollView` 都是在一个可视区域 `viewport` 当中进行绘制，为了让滑动更加流畅，通常 `ScrollView` 都会在可视区域之外加载一部分，也就是 `cacheExtent`。落入该缓存区域的项目即使在屏幕上尚不可见，也会进行布局。这时候 `initState` 就被执行了。 `ListView` 作为 `ScrollView` 的子类同样也使用了这个机制。
+为什么会出现这种情况呢？在查阅了源码之后，我们发现所有的 `ScrollView` 都是在一个可视区域 `Viewport` 当中进行绘制，为了让滑动更加流畅，通常 `ScrollView` 都会在可视区域之外加载一部分，也就是 `cacheExtent`。落入该缓存区域的项目即使在屏幕上尚不可见，也会进行布局。这时候 `initState` 就被执行了。 `ListView` 作为 `ScrollView` 的子类同样也使用了这个机制。
 
 那么很自然我们能够想到一个最简单的解决方案：把预加载机制给禁用掉不就可以了嘛。
 
@@ -43,19 +43,22 @@ ListView.builder(
 ## 🤔 新的问题
 开个玩笑，相信大家很容易就能够联想到，这样做大概率会产生性能问题。在我们真实业务中，会考虑到支持的最差的设备性能，以及业务的复杂性，肯定不是这样简单的取消掉预加载就能够解决的。
 
-在当时做测试的时候，会发现如果去掉缓存机制，平均帧率会下降 5-10 帧左右，还是在比较好的一加手机上的测试结果，这当然是不能接受的。（更何况本身在 1.X 版本的Flutter 下 ListView 性能就有一些问题）
+在做测试的时候，会发现如果去掉缓存机制，平均帧率会下降 5-10 帧左右，
+还是在比较好的一加手机上的测试结果，这当然是不能接受的。
+（更何况本身在 1.x 版本 的 Flutter 下 ListView 性能就有一些问题。）
 
 所以我们想要的是一套 `Flutter` 上的高准确率的用户行为埋点方案，而且不要影响到 `ScrollView` 的性能。
 
 ## 🤨 破局
 想清楚了需求，就有了一半的思路。在我们查阅了业界现有的资料后，发现闲鱼技术已经分享了一个比较好的解题思路：[# 揭秘！一个高准确率的Flutter埋点框架如何设计](https://juejin.cn/post/6844903864479514631#comment)。
-奈何这个方案也没有开源的计划，那就只有自己来写一个把。这个问题应该如何解呢？
+奈何这个方案也没有开源的计划，那就只有自己来写一个吧。这个问题应该如何解呢？
 
 在前面我们提到过，每一个 `ScrollView` 都会有一个自己的 `ViewPort` 来决定自己的绘制范围，这个 `ViewPort` 最后会生成一个 `RenderObjectElement`，这样就可以单独渲染这个区域，把影响返回控制到最小。那么问题现在就变成了我们想要计算一个 Item 什么时候进入到 ViewPort 中。
 
-**一个复杂的问题需要把它抽象成更简单的问题然后逐步求解**，我们不妨先把 item 看成一个点，看看要计算一个 Item 是否在 ViewPort 内需要哪些信息。
+**一个复杂的问题需要把它抽象成更简单的问题然后逐步求解**，我们不妨先把 item 看成一个点，看看要计算一个 Item 是否在 Viewport 内需要哪些信息。
 
-很容易能够想到和滑动的偏移量（Scroll Offset），以及 ViewPort 在滑动方向上的长度(ViewPort Length)，还有 Item 自身的信息，也就是当前 Item 距离滑动起始点的距离（Exposure Offset）相关。
+很容易能够想到和滑动的偏移量 (Scroll Offset)，以及 Viewport 在滑动方向上的长度 (Viewport Length)，
+还有 item 自身的信息，也就是当前 item 距离滑动起始点的距离 (Exposure Offset) 相关。
 
 ![简易关键变量.jpg](https://files.flutter-io.cn/posts/community/tutorial/images/simple_key_variable.jpg)
 
@@ -204,7 +207,10 @@ Scroll Notification 仅会向祖先节点发起 Notification 通知，也就是�
 当然解法肯定有很多，共享状态的方法在状态管理中是一个常见的 Case，但是为了滑动埋点曝光就引入一个状态管理库似乎有些得不偿失，所以还不如使用 Flutter 最原始的 Inherit 机制来实现数据的共享。
 
 ##### 什么是 Inherit 机制
-要理解 Inherit 机制，首先你需要了解 Flutter 的三颗树，这个网上的解释文章已经有很多了，我就不再赘述，感兴趣的可以看看 [下路](https://juejin.cn/post/6921493845330886670) 的这篇 [Widget、Element、Render是如何形成树结构？](https://juejin.cn/post/6921493845330886670)。
+要理解 Inherit 机制，首先你需要了解 Flutter 的三棵树，
+这个网上的解释文章已经有很多了，我就不再赘述，
+感兴趣的可以看看 [迷鹿](https://juejin.cn/user/4309694831660711)
+的这篇 [Widget、Element、Render是如何形成树结构？](https://juejin.cn/post/6921493845330886670)。
 
 简单来说，Inherit 机制是一种能够在 Flutter 中自顶向下共享数据的方式，我们知道 Flutter 是通过树形结构来构建视图的，而其中的 `InheritedWidget` 则是能够让它的数据能够被所有子节点中的 Widget 访问到。
 
@@ -255,7 +261,7 @@ void _updateInheritance() {
 
 Pub 地址：https://pub.flutter-io.cn/packages/flutter_exposure
 
-Github 地址：https://github.com/Vadaski/flutter_exposure/tree/master
+Github 地址：https://github.com/Vadaski/flutter_exposure
 
 邮箱：xinlei966@gmail.com
 

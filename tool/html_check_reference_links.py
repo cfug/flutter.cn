@@ -2,7 +2,6 @@ import re
 import sys
 from pathlib import Path
 from pprint import pprint
-from subprocess import check_output
 from sys import argv
 
 from tqdm import tqdm

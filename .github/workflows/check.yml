@@ -12,7 +12,7 @@ jobs:
   check_reference_links:
     runs-on: ubuntu-latest
     steps:
-      # from build.yml
+      # copied from build.yml
       - uses: actions/checkout@v2
         with:
           submodules: "recursive"
@@ -29,5 +29,4 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: "3.x"
-      - run: pip install tqdm
       - run: python tool/html_check_reference_links.py _site https://flutter.cn/

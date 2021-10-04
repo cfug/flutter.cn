@@ -30,4 +30,4 @@ jobs:
         with:
           python-version: "3.x"
       - run: pip install tqdm
-      - run: python tool/html_check_reference_links.py .
+      - run: python tool/html_check_reference_links.py _site https://flutter.cn/

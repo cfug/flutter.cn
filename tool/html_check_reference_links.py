@@ -1,7 +1,6 @@
 import re
 import sys
 from pathlib import Path
-from pprint import pprint
 from sys import argv
 
 from tqdm import tqdm
@@ -39,8 +38,15 @@ def check_path(path):
 
 
 if __name__ == "__main__":
-    res = check_path(argv[1] if len(argv) == 2 else input())
-    print(f"{len(res)=}")
-    pprint(res)
+    res = check_path(argv[1] if len(argv) >= 2 else input())
+    prefix = argv[2] if len(argv) >= 3 else ""
+
+    for i, kv in enumerate(res.items()):
+        k, v = kv
+        print(i)
+        print(prefix + k)
+        print(*v, sep="\n")
+        print()
+
     if res:
         sys.exit(-1)

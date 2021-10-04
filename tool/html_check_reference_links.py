@@ -8,10 +8,6 @@ def check_path(path):
     bad_files = {}
 
     for file in Path(path).rglob("*.html"):
-        file: Path
-
-        filename = file.relative_to(path).as_posix()
-
         with file.open(encoding="utf8") as f:
             html = f.read()
 
@@ -28,7 +24,7 @@ def check_path(path):
 
         # https://github.github.com/gfm/#reference-link
         if m := re.findall(r"\[[^\[\]]+]\[[^\[\]]*]", html):
-            bad_files[filename] = m
+            bad_files[file.relative_to(path).as_posix()] = m
 
     return bad_files
 

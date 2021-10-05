@@ -227,9 +227,11 @@ to add a `Podfile` to your project.
 
 
 <ol markdown="1">
-<li markdown="1"><t>Add the following lines to your `Podfile`:</t> <t>在 `Podfile` 中添加下面代码：</t>
+<li markdown="1">
 
 Add the following lines to your `Podfile`:
+
+在 `Podfile` 中添加下面代码：
 
 <!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
@@ -239,9 +241,13 @@ load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 </li>
 
-<li markdown="1"><t>For each [Podfile target][] that needs to
-embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.</t> <t>每个需要集成 Flutter 的 [Podfile target][]，
-   执行 `install_all_flutter_pods(flutter_application_path)`：</t>
+<li markdown="1">
+
+For each [Podfile target][] that needs to
+embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
+
+每个需要集成 Flutter 的 [Podfile target][]，
+执行 `install_all_flutter_pods(flutter_application_path)`：
 
 <!--code-excerpt "MyApp/Podfile" title-->
 ```ruby

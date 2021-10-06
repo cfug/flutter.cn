@@ -101,7 +101,7 @@ you want to add padding, margins, borders, or background color,
 to name some of its capabilities.
 
 图上大部分应该和你预想的一样，但你可能会疑惑 containers（图上粉色显示的）是什么。
-[Container][] 是一个 widget，允许你自定义其子 widget。
+[`Container`][] 是一个 widget，允许你自定义其子 widget。
 举几个例子，如果要添加 padding、margin、边框或背景颜色，
 你就可以用上 `Container` 了。
 
@@ -1022,7 +1022,7 @@ You can change the device's background by placing the
 entire layout into a `Container` and changing its background
 color or image.
 
-许多布局都可以随意的用 [Container][]，它可以将使用了 padding 或者
+许多布局都可以随意的用 [`Container`][]，它可以将使用了 padding 或者
 增加了 borders/margins 的 widget 分开。
 你可以通过将整个布局放到一个 `Container` 中，
 并且改变它的背景色或者图片，来改变设备的背景。

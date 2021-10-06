@@ -132,7 +132,7 @@ Shams 为 Dash 指定了颜色的应用范围、尾巴的形状、一小簇头�
 
 ![The first Dash prototypes](/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes](/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
-<t>Introducing Dash at the January 2018 Dart Conference</t><t>在 2018 Dart 会议上介绍 Dash</t>:
+<t>Introducing Dash at the January 2018 Dart Conference:</t><t>在 2018 Dart 会议上介绍 Dash：</t>
 <iframe width="541" height="350" src="{{ site.youtube-site }}/embed/R5vIUjRZaZA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 While the manufacturing process was proceeding,
@@ -201,26 +201,37 @@ Dash 2.0 and 2.1
 
   Dash 的喙是直的。**请不要用弯的喙描绘 Dash。**
 
-* <t>We also have Mega-Dash, a life-sized mascot
-  who is currently resting in a locked-down Google office.</t>
-  <t>我们还有巨型 Dash，与真人大小相同。目前它正在谷歌的办公室静养。</t><br>
-![Mega-Dash in the office](/assets/images/dash/MegaDashChilling.png){:width="50%"}<br>
-  <t>Mega-Dash made her
+* We also have Mega-Dash, a life-sized mascot
+  who is currently resting in a locked-down Google office.
+  
+  我们还有巨型 Dash，与真人大小相同。目前它正在谷歌的办公室静养。
+
+  ![Mega-Dash in the office](/assets/images/dash/MegaDashChilling.png){:width="50%"}<br>
+
+  Mega-Dash made her
   first appearance at the [Flutter Interact][] event
-  in Brooklyn, New York, on December 11, 2019.</t>
-  <t>巨型 Dash 首次在 2019年 12 月 11 日纽约布鲁克林的
-  [Flutter Interact][] 活动中亮相。</t><br>
+  in Brooklyn, New York, on December 11, 2019.
+  
+  巨型 Dash 首次在 2019年 12 月 11 日纽约布鲁克林的
+  [Flutter Interact][] 活动中亮相。
+
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/EgBMGDtHZhE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-* <t>We also have a Dash puppet that Shams made from
-  one of the first plushies.</t>我们还有一个 Dash 布偶，
-  由 Shams 最早的毛绒玩具制成。</t>
-![Nilay and the Dash puppet](/assets/images/dash/NilayDashPuppet.png){:width="50%"}<br>
-  <t>A number of our YouTube videos feature the Dash puppet,
+* We also have a Dash puppet that Shams made from
+  one of the first plushies.
+  
+  我们还有一个 Dash 布偶，
+  由 Shams 最早的毛绒玩具制成。
+  
+  ![Nilay and the Dash puppet](/assets/images/dash/NilayDashPuppet.png){:width="50%"}<br>
+
+  A number of our YouTube videos feature the Dash puppet,
   voiced by Emily Fortuna, one of our early (and much loved)
-  Flutter Developer Advocates.</t>
-  <t>我们的许多 YouTube 视频都有 Dart 布偶的出镜，由我们早期（且深受大家喜爱）的
-  Flutter 开发倡导者 Emily Fortuna 配音。</t>
+  Flutter Developer Advocates.
+  
+  我们的许多 YouTube 视频都有 Dart 布偶的出镜，由我们早期（且深受大家喜爱）的
+  Flutter 开发倡导者 Emily Fortuna 配音。
+
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/dsiLVNDJ3t0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/oyy_1CjNdBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %}

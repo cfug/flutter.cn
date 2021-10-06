@@ -4,14 +4,29 @@ on:
   push:
   pull_request:
 
+env:
+  NODE_ENV: production
+  NODE_VERSION: 15
+
 jobs:
   check_reference_links:
     runs-on: ubuntu-latest
     steps:
+      # copied from build.yml
       - uses: actions/checkout@v2
-      - run: sudo apt install -y pandoc
+        with:
+          submodules: "recursive"
+      - name: Install Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Build
+        run: make build
+        env:
+          DISABLE_TESTS: 1
+
+      # check
       - uses: actions/setup-python@v2
         with:
           python-version: "3.x"
-      - run: pip install tqdm
-      - run: python tool/markdown_check_reference_links.py src
+      - run: python tool/html_check_reference_links.py _site https://flutter.cn/

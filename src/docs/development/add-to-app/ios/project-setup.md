@@ -159,6 +159,7 @@ There are two ways to embed Flutter in your existing application.
    用 Xcode 手动集成到你的应用中，并更新编译设置。
 
 {{site.alert.note}}
+
   Your app does not run on a simulator in Release mode because Flutter does not
   yet support outputting x86/x86_64 ahead-of-time (AOT) binaries for your Dart
   code. You can run in Debug mode on a simulator or a real device,
@@ -305,6 +306,7 @@ Debug 或 Release 的 [编译产物][build modes of Flutter]。
 
   `Flutter.framework` 是 Flutter engine 的框架，
   `App.framework` 是你的 Dart 代码的编译产物。
+
 {{site.alert.end}}
 
 Open `MyApp.xcworkspace` in Xcode.
@@ -390,6 +392,7 @@ some/path/MyApp/
 
   在 Xcode 11 中，你可以添加 `--xcframework --no-universal`
   参数来生成 [XCFrameworks][]，而不是使用通用的 framework。
+
 {{site.alert.end}}
 
 Embed and link the generated frameworks into your existing

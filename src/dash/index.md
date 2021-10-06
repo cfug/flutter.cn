@@ -132,7 +132,7 @@ Shams 为 Dash 指定了颜色的应用范围、尾巴的形状、一小簇头�
 
 ![The first Dash prototypes](/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes](/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
-<t>Introducing Dash at the January 2018 Dart Conference:</t><t>在 2018 Dart 会议上介绍 Dash:</t>
+<t>Introducing Dash at the January 2018 Dart Conference:</t><t>在 2018 Dart 会议上介绍 Dash：</t>
 <iframe width="541" height="350" src="{{ site.youtube-site }}/embed/R5vIUjRZaZA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 While the manufacturing process was proceeding,

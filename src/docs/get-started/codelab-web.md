@@ -1161,9 +1161,6 @@ the `AnimatedProgressIndicatorState` whenever
 `AnimatedProgressIndicatorState`。
 </li>
 
-[`didUpdateWidget`][] 方法会在 `AnimatedProgressIndicator` 变化时更新
-`AnimatedProgressIndicatorState`。
-
 <li markdown="1">Use the new `AnimatedProgressIndicator`.<br>
 Then, replace the `LinearProgressIndicator` in the `Form`
 with this new `AnimatedProgressIndicator`:

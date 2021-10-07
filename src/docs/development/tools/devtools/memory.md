@@ -9,22 +9,44 @@ keywords: 开发者工具,内存视图,Dart
 
 ## What is it?
 
+## 这是什么？
+
 Allocated Dart objects created using a class constructor (for
 example, by using `new MyClass()` or `MyClass()`) live in a
 portion of memory called the heap. The memory in the heap is
 managed by the Dart VM (virtual machine).
 
+使用类构造函数创建 Dart 对象（例如，使用 `new MyClass()` 或 `MyClass()`）
+被分配在称为 **堆** 的内存部分中。堆中的内存由 Dart VM（虚拟机）管理。
+
 ## DevTools memory page
+
+## DevTools 内存分析页面
 
 DevTools Memory page lets you peek at how an isolate is using
 memory at a given moment. 
 
+DevTools 中的内存分析页面可以让你观察在给定的时段内 isolate 是如何使用内存。
+
 Memory profiling in DevTools consists of 3 main functions:
+
+DevTools 中的内存分析包括 3 个主要功能：
+
 * Charting memory usage statistics and events
+  
+  绘制内存使用统计信息和事件图表
+  
 * Anaylsis to view all memory via a heap to detect memory issues and inspect objects
+
+  通过查看堆中的所有内存，来检测内存问题和检查对象
+
 * Allocations to monitor and track (stack trace) specific classes and objects when an allocation occurs
 
+  分配时监控和跟踪（堆栈跟踪）特定类和对象的分配
+
 ## Charting memory statistics and events
+
+## 绘制内存统计信息和事件图表
 
 At the top-level, when the memory tab is selected memory statistics from
 the VM are collected. These statistics are displayed in the two overview
@@ -36,7 +58,16 @@ user fired events (using the ```dart:developer``` package) are collected
 in the same timeline as the memory statistics. All of this collected
 statistics and events are displayed in charts see [Memory anatomy](#memory-anatomy).
 
+当选中顶部 tab 中的内存选项时，DevTools 将收集来自 VM 的内存统计数据。
+这些统计数据显示在两个概览图（Dart 内存以及 Android 特有）中，
+记录了一般内存的使用情况，例如使用的总堆、外部堆、最大堆容量、常驻集大小（RSS）。
+当你与应用程序交互时，会触发各种事件，例如内存 GC（垃圾回收）、Flutter 事件、
+用户触发的事件（使用 ```dart:developer``` 包）与内存统计数据会被记录在同一时间线中。
+所有这些收集的统计数据和事件都显示在图表中，请参见 [内存剖析](#memory-anatomy)。
+
 ## Analysis and snapshots
+
+## 分析和快照
 
 A Snapshot is a complete, the most complex and time consuming view of
 all objects in the Dart memory heap. Each time a snapshot is taken, an
@@ -48,7 +79,17 @@ assets or adjusting the cacheWidth/cacheHeight to decode an image to a
 smaller size reducing the memory usage of the ImageCache. The analysis
 catches issues like this see [Analysis tab](#analysis-tab).
 
+快照是 Dart 内存堆中所有对象最复杂和最耗时的完整视图。
+每次保存快照时，都会对收集的内存数据进行分析。
+该分析会尝试识别任何可能导致泄漏或导致应用程序崩溃的内存模式。
+例如，为缩略图大小的图片加载大型资源是低效的，
+可以通过加载较小的资源或调整 cacheWidth/cacheHeight，
+减小图片的解码大小，降低 ImageCache 的内存使用，以此提高内存使用率。
+该分析捕捉到问题可以在 [Analysis 选项]（#analysis-tab）查看。
+
 ## Allocations and tracking
+
+## 分配和跟踪
 
 Monitoring all allocations involes you directly interacting with DevTools
 and your application to isolate a short period of time that you are
@@ -57,6 +98,11 @@ were allocated, or tracking all the places in your code where a particular
 class is allocated. This information is available under the "Allocations"
 tab of Memory profiler and his a fairly fast with less overhead than using
 a snapshot.
+
+监控所有你直接与 DevTools 或你的应用程序交互时涉及到的内存分配，在你感兴趣的时间周期内，
+可以了解分配了多少对象、分配了多少字节，或者跟踪代码中特定类的所有分配位置。
+此信息可在 Memory profiler 的 **Allocations** 选项下查看，
+与使用快照相比，它的速度相当快，开销也更小。
 
 Monitoring allocations and resetting of accumulators, helps to analyze
 the accumulator counts (number of objects or bytes allocated) in a short
@@ -68,6 +114,11 @@ many may slow the running of your application. The VM records the stack
 trace at the time a class' constructor (allocation) is called. This can
 isolate the exact location in your code when/where memory is being allocated.
 See [Allocation tab](#allocation-tab).
+
+监控分配和重置累计数据，有助于在点击重置和监视跟踪之间的短时间内分析累计数据（分配的对象数或字节数）。
+如果你怀疑你的应用程序发生了泄漏内存或存在与内存分配相关的其他错误，累计数据可以帮助了解内存分配的速率。
+此外，跟踪几个特定类的能力，可能会减慢应用程序的运行。VM 在调用类的构造函数（分配）时记录堆栈跟踪。
+可以在分配内存时找到代码中的确切位置。请参阅 [Allocation 选项](#allocation-tab)。
 
 {{site.alert.note}}
   **Use [profile mode][] when running your app to analyze performance.**
@@ -448,21 +499,35 @@ dropdowns that control how memory data is displayed.
 
 ## Memory actions
 
+## 内存动作
+
 Below the memory charts (Event Timeline, Memory Overview and Android Overview
 charts) are interactive actions used to collect and analyze information about
 memory usage while using the application DevTools is connected to there are two tabs:
+
+内存图表（事件时间线、内存概览和 Android 概览图表）下方有两个 tab,
+分别用于分析和收集 DevTools 所连接到的应用程序的内存使用情况。
 
 ![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_two_tabs.png)
 
 ### Analysis tab
 
+### Analysis 选项
+
 The Analysis tab collects memory snapshots both user initiated and
 auto-collected by DevTools, when DevTools detects memory spikes.
 Each snapshot is analyzed and an analysis is created too.
 
+**分析选项** 会收集由用户手动保存和 DevTools 检测到内存峰值时自动保存的内存快照。
+每个快照都会被分析并生成分析结果。
+
 ### Analysis actions
 
+### Analysis 选项下的操作
+
 The actions available for Analysis are:
+
+analysis 选项下的操作包括：
 
 ![Screenshot of a memory actions](/assets/images/docs/tools/devtools/memory_analysis_actions.png)
 
@@ -471,25 +536,43 @@ Dart VM to collect the current state of memory.  The
 memory objects can be sorted by attributes such as class
 name, size, allocated instances (see [Snapshot classes](#snapshots)).
 
-**Treemap** If the Treemap switch is on the snapshot displays currently
+**Snapshot（快照）** 点击 Snapshot 按钮向 Dart VM 发出请求，以保存内存当前的状态。
+内存对象可以按属性排序，如类名、大小、分配的实例（参见 [快照类](#snapshots)）。
+
+**Treemap（树形图）** If the Treemap switch is on the snapshot displays currently
 active memory objects, the last snapshot, memory in a high-level
 view as a tree map. (TBD details).
+
+**Treemap** 如果 Treemap 开关打开，
+快照将以树形图的形式在高级视图中显示当前活动的对象、最后一个快照和内存。（详情待定）
 
 **Group By** Dropdown to select how data is grouped, which can either be by
 instance or by class name.
 
+**Group By（分组方式）** 下拉列表选择数据的分组方式，可以按实例或按类名分组。
+
 **Collapse All** Collapse all nodes in the tree table.
+
+**Collapse All（折叠全部）** 折叠树表中的所有节点。
 
 **Expand All** Expand all nodes in the tree table
 
+**Expand All（展开全部）** 展开树表中的所有节点。
+
 ### Analysis and Snapshots view
 
+### 分析和快照视图
+
 All Analyses and Snapshots are displayed in a Table Tree View:
+
+所有分析和快照都显示在树表视图中：
 
 ![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_table_tree_view.png)
 
 The snapshots are grouped by library and within library by class and
 each class will display the list of known instances for that class.
+
+快照按库分组，在库中按类分组，每个类将显示该类的已知实例列表。
 
 A snapshot is a complete view of all memory objects at a particular
 point in time.  Navigating, in the tree, to a class and it's instances
@@ -498,44 +581,76 @@ expanding the class will display all live instances (objects). Clicking on
 an instance, of a class, will bring up the memory inspector to the right-side
 of the table tree.
 
+快照是特定时间点上所有内存对象的完整视图。
+在树中导航到类及其实例（调用构造函数创建的实例）。
+如果实例存在，扩展类将显示所有活动实例（对象）。
+点击一个类的实例，将在树表的右侧显示内存的检查信息。
+
 ![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_navigate_inspect.png)
 
 ## Snapshots
+
+## 快照
 
 ![The Snapshot button](/assets/images/docs/tools/devtools/memory_snapshot.png)
 
 Clicking the **Snapshot** button shows the current state of the heap with regard
 to all active classes and their instances. 
 
+点击 **Snapshot（快照）** 按钮显示堆的所有活动类及其实例的当前状态。
+
 ![Screenshot of the Snapshot classes](/assets/images/docs/tools/devtools/memory_snapshot_tree.png)
 
 This pane shows classes allocated in the heap, all instances for a class,
 and the ability to inspect a particular instance.
 
+此窗口显示堆中分配的类、类的所有实例并且可以检查某个特定的实例的信息。
+
 In addition, a snapshot can automatically occur when DevTools notices a
 spike in memory used (growth of > 40%).
+
+此外，当 DevTools 检测到所用内存出现峰值（内存增长 > 40%）时，会自动生成快照。
 
 Every snapshot, manual or automatic, will generate an analysis of the snapshot
 e.g., groups image problems that might have occurred. In the future, other
 common Flutter coding issues e.g., Fonts, Files, JSON, etc. that could cause
 memory problems will be flagged.
 
+每个快照（手动或自动）都将生成快照的分析。例如，可能发生的组映像问题。
+将来，其他可能引起内存问题的常见 Flutter 编码问题（例如字体、文件、JSON 等）也会加入到分析中。
+
 <dl markdown="1">
-<dt markdown="1">**Tree View of Memory**</dt>
-<dd>The tree table view displays outstanding memory events (user
+<dt markdown="1">
+<p markdown="1">**Tree View of Memory**</p>
+<p markdown="1">**内存树视图**</p>
+</dt>
+<dd>
+<p markdown="1">The tree table view displays outstanding memory events (user
     requested snapshots, automatic snapshots, snapshot analyses,
-    memory allocation monitoring).
+    memory allocation monitoring).</p>
+<p markdown="1">树表视图显示关键的内存事件（用户请求的快照、自动快照、快照分析、内存分配监控）。</p>
 </dd>
-<dt markdown="1">**Memory Inspector**</dt>
-<dd>Display either the contents of an analysis, snapshot or
-    monitoring based on the currently selected row in the tree view.
+<dt markdown="1">
+<p markdown="1">**Memory Inspector**</p>
+<p markdown="1">**内存检查器**</p>
+</dt>
+<dd>
+<p markdown="1">Display either the contents of an analysis, snapshot or
+    monitoring based on the currently selected row in the tree view.</p>
+<p markdown="1">根据树状图中当前选定的行显示其分析、快照或监视的内容。</p>
 </dd>
 </dl>
 
 Snapshots have major tree nodes:
+快照具有主要的树节点：
+
 <dl markdown="1">
-<dt markdown="1">External</dt>
-<dd markdown="1">Memory that is not in the Dart heap but is still part
+<dt markdown="1">
+<p markdown="1">External</p>
+<p markdown="1">External（外部内存）</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Memory that is not in the Dart heap but is still part
     of the total memory footprint. Objects in external memory would be
     native objects (for example, from a memory read from a file,
     or a decoded image). The native objects are exposed to the Dart
@@ -544,12 +659,30 @@ Snapshots have major tree nodes:
     a finalizer, allowing Dart code to communicate with these native
     resources. Flutter has an embedder for Android and iOS.
     For more information, see [Dart on the Server][server] or
-    [Custom Flutter Engine Embedders][embedder].
+    [Custom Flutter Engine Embedders][embedder].</p>
+<p markdown="1"> 不在 Dart 堆中但仍然占用总内存一部分的内存。
+    外部内存中的对象可以是原生对象（例如，文件读取或者图片解码的所占用的内存）。
+    原生对象通过 Dart 嵌入层，从原生操作系统（如 Android、Linux、Windows、iOS）暴露给 Dart VM。
+    嵌入层使用 finalizer 创建一个 Dart 包装类，允许 Dart 代码与这些原生资源通信。
+    Flutter 有一个用于 Android 和 iOS 的嵌入层。
+    更多信息，参阅 [服务端应用 Dart][server] 或 [自定义 Flutter 引擎嵌入层][embedder]。</p>
 </dd>
-<dt markdown="1">Filtered</dt>
-<dd>Filter are the packages being filtered.</dd>
-<dt markdown="1">Packages</dt>
-<dd>User packages used by the application and Src - the empty Dart package.</dd>
+<dt markdown="1">
+<p markdown="1">Filtered</p>
+<p markdown="1">Filtered（筛选项）</p>
+</dt>
+<dd>
+<p markdown="1">Filter are the packages being filtered.</p>
+<p markdown="1">筛选项中包含了筛选过的包。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">Packages</p>
+<p markdown="1">Packages（包）</p>
+</dt>
+<dd>
+<p markdown="1">User packages used by the application and Src - the empty Dart package.</p>
+<p markdown="1">应用程序使用的用户包和 Src — 空的 Dart 包。</p>
+</dd>
 </dl>
 
 Under each of the above nodes are class nodes, an aggregate of the
@@ -558,19 +691,30 @@ list of class instances. and under each class are all the instances
 of a class. Clicking on an instance will inspect the contents of that
 instances (fields and values).
 
+上述每个节点下都是类节点，是分配给该类的对象的集合。
+点击类名将显示该类的所有实例。单击某个实例将显示其检查信息（字段和值）。
+
 ## Inspecting a class instance in a snapshot
+
+## 检查快照中的类实例
 
 Expanding a class displays the active instances for that class.
 Clicking on an particular instance displays the type and value of
 the fields for that instance.
 
+展开类将显示该类的活动实例。点击某个特定实例将显示该实例字段的类型和值。
+
 ![Screenshot of the inspecting an instance](/assets/images/docs/tools/devtools/memory_inspector.png)
 
 ## Analysis of a snapshot
 
+## 快照分析
+
 Every snapshot creates a corresponding Analyzed entry under the
 Analysis node (the Analyzed date/time corresponds to the matching
 Snapshot date/time).
+
+每个快照都会在分析节点下创建相应的分析内容（分析的时间对应快照的生成时间）。
 
 ![Screenshot of a Snapshot Analysis](/assets/images/docs/tools/devtools/memory_analysis.png)
 
@@ -578,10 +722,16 @@ Currently, Analysis looks for common problems with images e.g.,
 loading large files instead of scaled thumbnails, not using a
 ListBuilder to manage images in a list, etc.
 
+目前，分析查找图片的常见问题。 例如，加载大文件而不是缩放的缩略图，
+没使用 ListBuilder 管理列表中的图片等。
+
 The Analysis pulls all Image related classes and instances from
 a snapshot and organizes the data in one place instead of having
 to search for the all the classes and inspect the instances to
 understand what are just image related classes.
+
+该分析从快照中提取所有与图片相关的类和实例，并将数据组织在一个位置。
+这样我们不必搜索和了解哪些类与图片相关，并检查其实例。
 
 In the above Analysis the raw images are located in the Externals
 portion of memory _Int32List (or _Int64List for newer phones)
@@ -590,7 +740,13 @@ organizes the instances sizes into buckets.  Eleven images are
 images are greater than 50M.  For a grand total of over 500M of
 this app constitute images rendered as small images on a phone.
 
+在上图的分析中，原始图片位于外部内存的 _Int32List（或较新手机的 _Int64List）部分，根据实例大小分类到 Buckets 中。
+可以看出，图片大小为 10K-50K 的有 11 张，10M-50M 有 1 张，1M-10M 有 7 张，大于 50M 的有 4 张。
+这个应用程序中共有超过 500M 的图片在手机上渲染为小图。
+
 ## Allocation tab
+
+## Allocation 选项
 
 The Allocation tab allows monitoring the instances of all classes, reporting
 the number of objects allocated and number of bytes consumed by all objects.
@@ -600,10 +756,18 @@ equal to the initial totals at the time of the first monitor request. The
 accumulators can be reset, to zero, at any time such that the next monitor
 request will return the accumlated values since the last reset.
 
+**Allocation** 选项可以监控所有类的实例，报告分配的对象数和所有对象消耗的字节数。
+数字以绝对总数和累计总数显示。一开始，累计数据（对象数量和字节大小）等于第一次发起监控请求时的初始总数。
+可以随时将累计数据重置为零，这样下次监控请求将返回自上次重置以来的累计值。
+
 Additionally, a small set of classes can track the allocation of each instance
 of a class. The tracking captures a stack trace when the constructor was
 called. The overhead to track these allocations are expensive (slow) therefore
 tracking should be used sparingly.
+
+此外，一小组类可以跟踪类的每个实例的内存分配。
+调用构造函数时，监控器可以捕获到对应的堆栈。
+但跟踪这些分配性能代价很大（缓慢的），因此不要频繁使用跟踪。
 
 ### Allocation actions
 

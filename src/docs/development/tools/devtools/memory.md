@@ -132,9 +132,20 @@ See [Allocation tab](#allocation-tab).
   work can be computed and optimized ahead of time, while in [debug mode][]
   that same work might have to be computed at runtime,
   requiring more information.
+
+  对你正在运行的应用程序进行性能分析时，请使用 **[profile 模式][profile mode]**。
+  除非你的应用程序以 profile 模式运行，否则不能看做 release 版本的内存性能表现。
+  一般来说，在 debug、release 和 profile 模式之间，相对而言，内存的使用是相当准确的。
+  因为 profile 模式创建了 service isolate 来配置应用程序，可能会显示更高的绝对内存使用率。
+  此 isolate 在 release 模式下不存在。debug 模式下使用的绝对内存也可能高于 release 模式。
+  [release 模式][release mode] 可以提前运行和优化任务，而在 [debug 模式][debug mode] 中，
+  同样的任务必须实时运行，这需要更多信息。
+
 {{site.alert.end}}
 
 ## Memory anatomy
+
+## 内存剖析图
 
 A timeseries graph is used to visualize the state of the Flutter memory
 at successive intervals of time. Each data point on the chart
@@ -142,13 +153,23 @@ corresponds to the timestamp (x-axis) of measured quantities (y-axis)
 of the heap, for example, usage, capacity, external, garbage
 collection, and resident set size.
 
+时间序列图用于显示连续时间间隔的 Flutter 内存状态。
+图表上的每个数据点表示相应时间戳（x 轴）下堆的测量值（y 轴），
+例如，使用率、容量、外部内存、垃圾收集和常驻集大小。
+
 ![Screenshot of a memory anatomy page](/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
 
 ### Events Pane
 
+### 事件窗格
+
 The event timeline displays Dart VM and DevTools events
 on a shared timeline. These events can be snapshots (manual and auto),
 Dart VM GCs, user requested GCs, or monitor and accumulator reset actions.
+
+同一个时间轴上会显示 Dart VM 和 DevTools 事件。
+这些事件包含快照（手动和自动）、Dart VM 自动垃圾回收、手动垃圾回收
+或者监控和累计数据的重置操作。
 
 ![Screenshot of DevTools events](/assets/images/docs/tools/devtools/memory_eventtimeline.png)
 
@@ -159,63 +180,115 @@ markers in the Event timeline displays a hover card of the time when
 the event occurred. This may help identify when a memory leak might have
 occurred in the timeline (x-axis).
 
+此图表显示与内存图表时间线相关的 DevTools 事件
+（如手动垃圾回收、VM 垃圾回收、快照、监控分配 **跟踪** 和 **重置** 累计数据按钮单击）。
+点击事件时间线中的标记，将显示事件发生时间的悬浮窗。
+这可能有助于判断时间轴（x 轴）中何时发生内存泄漏。
+
 ![Screenshot of the event timeline legend](/assets/images/docs/tools/devtools/memory_eventtimeline_legend.png)
 
 This legend shows the symbol for each DevTools event and its meaning
 
+下面是图例中每个 DevTools 事件的符号及其含义
+
 <dl markdown="1">
-<dt markdown="1">**Snapshot**</dt>
+<dt markdown="1">
+<p markdown="1">**Snapshot**</p>
+<p markdown="1">**Snapshot（手动快照）**</p>
+</dt>
 ![User Snapshot](/assets/images/docs/tools/devtools/memory_eventtimeline_snapshot.png){:width="17px"}
-<dd markdown="1">User initiated snapshot&mdash;all memory
-                information collected and an analysis performed.
+<dd markdown="1">
+<p markdown="1">User initiated snapshot&mdash;all memory 
+information collected and an analysis performed.</p>
+<p markdown="1">用户主动保存的快照，
+可以收集所有内存信息并进行分析。</p>
 </dd>
-<dt markdown="1">**Auto-Snapshot**</dt>
+<dt markdown="1">
+<p markdown="1">**Auto-Snapshot**</p>
+<p markdown="1">**Auto-Snapshot（自动快照）**</p>
+</dt>
 ![Auto Snapshot](/assets/images/docs/tools/devtools/memory_eventtimeline_auto_snapshot.png){:width="18px"}
-<dd markdown="1">DevTools initiated a snapshot detecting
+<dd markdown="1">
+<p markdown="1"> DevTools initiated a snapshot detecting
                  that memory grow by 40% or more from previous
                  size.  This is used to quickly detect memory
                  spikes in your Flutter application for later
                  analysis (same information collected in a manual
-                 snapshot).
+                 snapshot).</p>
+<p markdown="1"> 当检测到内存比以前的大小增加了 40% 或更多时
+                 DevTools 会自动保存一个快照。
+                 可以用于快速检测 Flutter 应用程序中的内存峰值，
+                 以供后续分析（与手动快照中收集的信息相同）。</p>
 </dd>
-<dt markdown="1">**Track**</dt>
+<dt markdown="1">
+<p markdown="1">**Track**</p>
+<p markdown="1">**Track（跟踪）**</p>
+</dt>
 ![Monitor](/assets/images/docs/tools/devtools/memory_eventtimeline_monitor.png){:width="17px"}
-<dd markdown="1">Collects current state of all active classes
+<dd markdown="1">
+<p markdown="1"> Collects current state of all active classes
                  number of instances and byte size of all instances.
                  In addition, the deltas are the change in the
-                 accumulators since the last "Reset" button pressed.
+                 accumulators since the last "Reset" button pressed.</p>
+<p markdown="1"> 收集当前所有处于活动状态的类的状态实例数和所有实例的字节大小。
+                 此外，变化值是自上次按下 **Reset(重置)** 按钮以来累计数据的变化。</p>
 </dd>
-<dt markdown="1">**Reset**</dt>
+<dt markdown="1">
+<p markdown="1">**Reset**</p>
+<p markdown="1">**Reset（重置）**</p>
+</dt>
 ![Reset](/assets/images/docs/tools/devtools/memory_eventtimeline_reset_monitor.png){:width="18px"}
-<dd markdown="1">When both the instance and bytes accumulators
-                 were reset to zero.
+<dd markdown="1">
+<p markdown="1"> When both the instance and bytes accumulators
+                 were reset to zero.</p>
+<p markdown="1"> 实例和字节的累计数据都重置为零时。</p>
 </dd>
-<dt markdown="1">**User Initiated GC**</dt>
+<dt markdown="1">
+<p markdown="1">**User Initiated GC**</p>
+<p markdown="1">**User Initiated GC（用户手动垃圾回收）**</p>
+</dt>
 ![GC](/assets/images/docs/tools/devtools/memory_eventtimeline_gc.png){:width="18px"}
-<dd markdown="1">User initiated request to VM to to perform a
+<dd markdown="1">
+<p markdown="1"> User initiated request to VM to to perform a
                  garbage collection of memory (only a suggestion
-                 to the VM).
+                 to the VM).</p>
+<p markdown="1"> 用户向 VM 请求执行内存垃圾回收（仅向 VM 建议，不一定立刻执行）。</p>
 </dd>
-<dt markdown="1">**VM GC**</dt>
+<dt markdown="1">
+<p markdown="1">**VM GC**</p>
+<p markdown="1">**VM GC（VM 自动垃圾回收）**</p>
+</dt>
 ![VM GC](/assets/images/docs/tools/devtools/memory_eventtimeline_vmgc.png){:width="11px"}
-<dd markdown="1">GC (VM garbage collection) has occurred, frees
+<dd markdown="1">
+<p markdown="1"> GC (VM garbage collection) has occurred, frees
                  space no longer used. For more information on
                  how Dart performs garbage collection, see
-                 [Don't Fear the Garbage Collector][].
+                 [Don't Fear the Garbage Collector][].</p>
+<p markdown="1"> VM 自动执行垃圾回收，释放不再使用的空间。
+                 更多 Dart 是如何执行垃圾收集的信息，
+                 参阅 [不要要担心垃圾回收][Don't Fear the Garbage Collector]。</p>
 </dd>
-<dt markdown="1">**User and Flutter Event**</dt>
-<dd>Displayed as a triangle in the event pane.  The dark magenta
-    triangle "Multiple Flutter or User Events"
+<dt markdown="1">
+<p markdown="1">**User and Flutter Event**</p>
+<p markdown="1">**User and Flutter Event（用户和 Flutter 事件）**</p>
+</dt>
+<dd>
+<p markdown="1">Displayed as a triangle in the event pane.  The dark magenta
+    triangle "Multiple Flutter or User Events"</p>
+<p markdown="1">在事件窗格中显示为三角形。深色三角形表示「多个 Flutter 或用户事件」。</p>
 </dd>
 ![Aggregate Events](/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
-<dd>identifies more than one event was received at this timestamp.
-    The lighter magenta triangle "One Flutter or User Event" 
+<dd><p markdown="1">identifies more than one event was received at this timestamp.
+    The lighter magenta triangle "One Flutter or User Event"</p> 
+<dd><p markdown="1">标识在此时间戳接收的多个事件。浅色三角形表示「一次 Flutter 或用户事件」。</p> 
 </dd>
 ![Single Events](/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
-<dd>indicates only one event was received at this timestamp. To
+<dd><p markdown="1">indicates only one event was received at this timestamp. To
     view the events clicking on the triangle will display a hover
     card and expanding the events at the bottom of the hovercard
-    will display all events for that timestamp.
+    will display all events for that timestamp.</p>
+    <p markdown="1">表示在此时间戳处仅收到一个事件。要查看事件，单击三角形将显示悬浮窗，
+                    展开浮窗底部，将显示该时间戳的所有事件。</p>
 </dd>
 </dl>
 
@@ -224,7 +297,12 @@ and the [Android memory chart](#android-chart). The android-memory chart is
 specific to an Android app, and it shows Android ADB meminfo from an
 ADB app summary.
 
+事件窗格下方显示的是 [内存图表](#memory-overview-chart) 和 [Android 内存图表](#android-chart)。
+只有 Android 应用程序才会展示，它显示了 ADB 应用程序摘要中的 Android ADB 内存信息。
+
 ### Adding user custom events to the timeline
+
+### 添加自定义事件到时间线
 
 Sometimes it may be difficult to correlate the actions in your Flutter
 application code and the collected memory statistics/events charted in
@@ -499,7 +577,7 @@ dropdowns that control how memory data is displayed.
 
 ## Memory actions
 
-## 内存动作
+## 内存相关操作
 
 Below the memory charts (Event Timeline, Memory Overview and Android Overview
 charts) are interactive actions used to collect and analyze information about

@@ -16,8 +16,8 @@ example, by using `new MyClass()` or `MyClass()`) live in a
 portion of memory called the heap. The memory in the heap is
 managed by the Dart VM (virtual machine).
 
-使用类构造函数创建 Dart 对象（例如，使用 `new MyClass()` 或 `MyClass()`）
-被分配在称为 **堆** 的内存部分中。堆中的内存由 Dart VM（虚拟机）管理。
+使用类构造函数创建的 Dart 对象（例如，使用 `new MyClass()` 或 `MyClass()`）
+会被分配在称为 **堆** 的内存部分中。堆中的内存由 Dart VM（虚拟机）管理。
 
 ## DevTools memory page
 
@@ -34,7 +34,7 @@ DevTools 中的内存分析包括 3 个主要功能：
 
 * Charting memory usage statistics and events
   
-  绘制内存使用统计信息和事件图表
+  绘制内存使用统计数据和事件图表
   
 * Anaylsis to view all memory via a heap to detect memory issues and inspect objects
 

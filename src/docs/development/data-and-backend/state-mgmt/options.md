@@ -30,7 +30,7 @@ many of which have been contributed by the Flutter community:
 
 ## 总体概览
 
-Things to review before selecting an approach. 
+Things to review before selecting an approach.
 
 在选择一个具体内容前，您可以先查看以下几项。
 
@@ -38,21 +38,26 @@ Things to review before selecting an approach.
   which is the beginning of this very section
   (for those of you who arrived directly to this _Options_ page 
   and missed the previous pages)
-  
+
   [状态管理的介绍][Introduction to state management]。
   这是本篇内容的总起。（当您直接跳转到了该页面，但错过了
   其他页面时，可以先从这里开始阅读）
 
 * [Pragmatic State Management in Flutter][],
   a video from Google I/O 2019
-  
+
   [Flutter 实用状态管理 (Pragmatic State Management in Flutter)][Pragmatic State Management in Flutter]，
   来自 Google I/O 2019 的介绍视频。
 
 * [Flutter Architecture Samples][], by Brian Egan
-  
+
   [Flutter 架构实例 (Flutter Architecture Samples)][Flutter Architecture Samples]，
   Brian Egan 著。
+
+
+[Flutter Architecture Samples]: https://fluttersamples.com/
+[Introduction to state management]: /docs/development/data-and-backend/state-mgmt/intro
+[Pragmatic State Management in Flutter]: {{site.youtube-site}}/watch?v=d_m5csmrf7I
 
 ## Provider
 
@@ -61,21 +66,44 @@ A recommended approach.
 推荐的管理方式。
 
 * [Simple app state management][], the previous page in this section
-  
+
   [简易的应用状态管理 (Simple app state management)][Simple app state management]，
   这是本节内容的上篇。
 
 * [Provider package][]
-  
+
   [Provider 依赖包 (Provider package)][Provider package]
 
 * [You might not need Redux: The Flutter edition][], by Ryan Edge
-  
+
   [你可能并不需要 Redux：Flutter 专版 (You might not need Redux: The Flutter edition)][You might not need Redux: The Flutter edition]
 
 * [Making sense of all those Flutter Providers][]
-  
+
   [学习并理解 Flutter Providers (Making sense of all those Flutter Providers)][Making sense of all those Flutter Providers]
+
+
+[Making sense of all those Flutter Providers]: {{site.medium}}/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd?sk=7859a73fac0ca414a0e911b0322e8589
+[Provider package]: {{site.pub-pkg}}/provider
+[Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
+[You might not need Redux: The Flutter edition]: https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
+
+## Riverpod
+
+Riverpod, another good choice, is
+similar to Provider and is compile-safe and testable.
+Riverpod doesn't have a dependency on the Flutter SDK.
+
+Riverpod 是另一个不错的选择，
+它类似于 Provider，并且是编译安全和可测试的。
+Riverpod 不依赖于 Flutter SDK。
+
+* [Riverpod][] homepage
+* [Getting started with Riverpod][]
+
+
+[Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
+[Riverpod]: https://riverpod.dev/
 
 ## setState
 
@@ -84,12 +112,15 @@ The low-level approach to use for widget-specific, ephemeral state.
 适用于较小规模 widget 的暂时性状态的基础管理方法。
 
 * [Adding interactivity to your Flutter app][], a Flutter tutorial
-  
+
   [为你的 Flutter 应用添加交互 (Adding interactivity to your Flutter app)][Adding interactivity to your Flutter app]，一篇 Flutter 的教程。
 
 * [Basic state management in Google Flutter][], by Agung Surya
-  
+
   [Flutter 中的基础状态管理 (Basic state management in Google Flutter)][Basic state management in Google Flutter]，Agung Surya 著。
+
+[Adding interactivity to your Flutter app]: /docs/development/ui/interactive
+[Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 
 ## InheritedWidget &amp; InheritedModel
 
@@ -105,34 +136,41 @@ use `InheritedWidget`:
 
 以下讲师指导的视频 workshop 介绍了如何使用 `InheritedWidget`：
 
-<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/LFcGPS6cGrY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Other useful docs include:
 
 其他有用的文档包括：
 
 * [InheritedWidget docs][]
-  
+
   [InheritedWidget 文档 (InheritedWidget docs)][InheritedWidget docs]
 
 * [Managing Flutter Application State With InheritedWidgets][],
   by Hans Muller
-  
+
   [使用 InheritedWidgets 管理 Flutter 应用状态 (Managing Flutter Application State With InheritedWidgets)][Managing Flutter Application State With InheritedWidgets]，
   Hans Muller 著。
 
 * [Inheriting Widgets][], by Mehmet Fidanboylu
-  
+
   [继承 Widgets (Inheriting Widgets)][Inheriting Widgets]，
   Mehmet Fidanboyly 著。
 
 * [Using Flutter Inherited Widgets Effectively][], by Eric Windmill
-  
+
   [高效地使用 Flutter 继承 Widgets (Using Flutter Inherited Widgets Effectively)][Using Flutter Inherited Widgets Effectively]，Eric Windmill 著。
 
 * [Widget - State - Context - InheritedWidget][], by Didier Bolelens
-  
+
   [Widget - State - Context - InheritedWidget][]，Didier Bolelens 著。
+
+
+[InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
+[Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
+[Managing Flutter Application State With InheritedWidgets]: {{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
+[Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
+[Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 
 ## Redux
 
@@ -142,12 +180,12 @@ A state container approach familiar to many web developers.
 
 * [Animation Management with Redux and Flutter][],
   a video from DartConf 2018 [Accompanying article on Medium][]
-  
+
   [使用 Redux 在 Flutter 中管理动画 (Animation Management with Redux and Flutter)][Animation Management with Redux and Flutter]，来自 DartConf 2018 的视频，
   [以及 Medium 的配套文章 (Accompanying article on Medium)][Accompanying article on Medium]。
 
 * [Flutter Redux package][]
-  
+
   [Flutter Redux 依赖包][Flutter Redux package]
 
 * [Redux Saga Middleware Dart and Flutter][], by Bilal Uslu
@@ -197,9 +235,25 @@ A state container approach familiar to many web developers.
 
   [使用 Redux 更好地组织 Flutter 应用的代码以管理项目目标 (Redux and epics for better-organized code in Flutter apps)][Redux and epics for better-organized code in Flutter apps]，Nihad Delic 著。
 
+
+[Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
+[Animation Management with Redux and Flutter]: {{site.youtube-site}}/watch?v=9ZkLtr0Fbgk
+[Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux
+[Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
+[Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: {{site.youtube-site}}/watch?v=Wj216eSBBWs
+[Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
+[Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
+[Flutter meets Redux: The Redux way of managing Flutter applications state]: {{site.medium}}/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
+[Flutter Redux package]: {{site.pub-pkg}}/flutter_redux
+[Flutter + Redux&mdash;How to make a shopping list app]: https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65
+[Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
+[Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
+[Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}/redux_saga
+
 ## Fish-Redux
 
-Fish Redux is an assembled flutter application framework based on Redux state management. 
+Fish Redux is an assembled flutter application framework
+based on Redux state management.
 It is suitable for building medium and large applications.
 
 Fish Redux 是一个基于 Redux 状态管理的组合式 Flutter 应用框架，
@@ -213,11 +267,16 @@ Fish Redux 是一个基于 Redux 状态管理的组合式 Flutter 应用框架�
 
   [Fish-Redux-Source][]，工程代码
 
-* [Flutter-Movie][] - Non-trivial example demonstrating how to use Fish Redux,
-with more than 30 screens, graphql, payment api and media player.
+* [Flutter-Movie][], A non-trivial example demonstrating how
+  to use Fish Redux, with more than 30 screens, graphql,
+  payment api, and media player.
 
   [Flutter-Movie][] 展示如何使用 Fish Redux 的简单示例应用，
   包含 30 多个页面、graphql、支付 api 和媒体播放器等。
+
+
+[Fish-Redux-Library]: {{site.pub-pkg}}/fish_redux
+[Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
 
 ## BLoC / Rx
 
@@ -239,16 +298,31 @@ A family of stream/observable based patterns.
   by Didier Boelens
 
   [响应式编程 - 流 - BLoC - 用例 (Reactive Programming - Streams - BLoC - Practical Use Cases)][Reactive Programming - Streams - BLoC - Practical Use Cases]，
-  Didier Boelens 著。
+    Didier Boelens 著。
+
+
+[Architect your Flutter project using BLoC pattern]: {{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1
+[BloC Library]: https://felangel.github.io/bloc
+[Reactive Programming - Streams - BLoC - Practical Use Cases]: https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases
 
 ## GetIt
 
-A service locator based state management approach that doesn't need a `BuildContext`.
+A service locator based state management approach that
+doesn't need a `BuildContext`.
 
-* [GetIt package][], the service locator. It can also be used together with BloCs.
-* [GetIt Mixin package][], a mixin that completes `GetIt` to a full state management solution.
-* [GetIt Hooks package][], same as the mixin in case you already use `flutter_hooks`.
+* [GetIt package][], the service locator.
+  It can also be used together with BloCs.
+* [GetIt Mixin package][], a mixin that completes
+  `GetIt` to a full state management solution.
+* [GetIt Hooks package][], same as the mixin in
+  case you already use `flutter_hooks`.
 * [Flutter state management for minimalists][], by Suragch
+
+
+[Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
+[GetIt package]: {{site.pub-pkg}}/get_it
+[GetIt Hooks package]: {{site.pub-pkg}}/get_it_hooks
+[GetIt Mixin package]: {{site.pub-pkg}}/get_it_mixin
 
 ## MobX
 
@@ -257,34 +331,47 @@ A popular library based on observables and reactions.
 一个基于观察及响应的状态管理常用库。
 
 * [MobX.dart, Hassle free state-management for your Dart and Flutter apps][]
-  
+
   [MobX.dart 轻松管理你的 Dart 及 Flutter 应用状态 (MobX.dart, Hassle free state-management for your Dart and Flutter apps)][MobX.dart, Hassle free state-management for your Dart and Flutter apps]
 
 * [Getting started with MobX.dart][]
-  
+
   [开始使用 MobX.dart (Getting started with MobX.dart)][Getting started with MobX.dart]
 
 * [Flutter: State Management with Mobx][], a video by Paul Halliday
-  
+
   [Flutter：使用 MobX 进行状态管理 (Flutter: State Management with Mobx)][Flutter: State Management with Mobx]
+
+[Flutter: State Management with Mobx]: {{site.youtube-site}}/watch?v=p-MUBLOEkCs
+[Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
+[MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
 
 ## Flutter Commands
 
-Reactive state management that uses the Command Pattern and is based on `ValueNotifiers`. Best in combination with [GetIt](#getit), but can be used with `Provider` or other locators too.
+Reactive state management that uses the Command Pattern
+and is based on `ValueNotifiers`. Best in combination with
+[GetIt](#getit), but can be used with `Provider` or other
+locators too.
 
 基于 `ValueNotifiers` 的命令式的状态管理，能与 [GetIt](#getit) 完美结合使用，
 也可以与 `Provider` 或者其他 locators 配合使用。
 
-* [Flutter Command package][] 
+* [Flutter Command package][]
 * [RxCommand package][], 基于 `Stream` 的实现.
+
+
+[Flutter Command package]: {{site.pub-pkg}}/flutter_command
+[RxCommand package]: {{site.pub-pkg}}/rx_command
 
 ## Binder
 
-A state management package that uses `InheritedWidget` at its core. Inspired in part by recoil. This package promotes the separation of concerns.
+A state management package that uses `InheritedWidget`
+at its core. Inspired in part by recoil.
+This package promotes the separation of concerns.
 
 一个使用 `InheritedWidget` 作为核心实现的状态管理库。受到 recoil 的启发，该库提供了分治的解决方式。
 
-* [Binder package][] 
+* [Binder package][]
 
   [Binder 包][Binder package]
 
@@ -292,9 +379,15 @@ A state management package that uses `InheritedWidget` at its core. Inspired in 
 
   [Binder 样例][Binder examples]
 
-* [Binder snippets][], vscode snippets to be even more productive with Binder
+* [Binder snippets][], vscode snippets to be even more
+  productive with Binder
 
   [Binder snippets][] 是一个 vscode 插件，能够将代码拆分以获得更高的生产力
+
+
+[Binder examples]: {{site.github}}/letsar/binder/tree/main/examples
+[Binder package]: {{site.pub-pkg}}/binder
+[Binder snippets]: https://marketplace.visualstudio.com/items?itemName=romain-rastel.flutter-binder-snippets
 
 ## GetX
 
@@ -306,81 +399,47 @@ A simplified reactive state management solution.
 * [Complete GetX State Management][], a video by Tadas Petra
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
 
-## Riverpod
-
-An approach similar to Provider that is compile-safe and testable. It doesn't have a dependency on the Flutter SDK.
-
-一个编译安全，测试步骤简单的类似于 Provider 的解决方案。且它不依赖于 Flutter SDK。
-
-* [Riverpod][] homepage
-* [Getting started with Riverpod][]
+[Complete GetX State Management]: {{site.youtube-site}}/watch?v=CNpXbeI_slw
+[GetX package]: {{site.pub-pkg}}/get
+[GetX Flutter Firebase Auth Example]: {{site.medium}}/@jeffmcmorris/getx-flutter-firebase-auth-example-b383c1dd1de2
 
 ## states_rebuilder
 
-## states_rebuilder
-
-An approach that combines state management with a dependency injection solution
-and an integrated router. For more information, see the following info:
+An approach that combines state management with a
+dependency injection solution and an integrated router.
+For more information, see the following info:
 
 一种将状态管理与依赖注入解决方案和集成路由器相结合的方法。
 更多信息，请参阅以下信息：
 
 * [States Rebuilder][] project code
-  
+
   [States Rebuilder][] 项目代码
-  
-* [States Rebuilder Documentation][]
+
+* [States Rebuilder documentation][]
+
 
 [States Rebuilder]: {{site.github}}/GIfatahTH/states_rebuilder
-[States Rebuilder Documentation]: {{site.github}}/GIfatahTH/states_rebuilder/wiki
-[Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
-[Riverpod]: https://riverpod.dev/
-[Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
-[Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
-[Fish-Redux-Library]: {{site.pub-pkg}}/fish_redux
-[Adding interactivity to your Flutter app]: /docs/development/ui/interactive
-[accompanying article]: {{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381
-[Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
-[Animation Management with Redux and Flutter]: https://www.youtube.com/watch?v=9ZkLtr0Fbgk
-[Architect your Flutter project using BLoC pattern]: {{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1
-[Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux
-[Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
-[Flutter meets Redux: The Redux way of managing Flutter applications state]: https://medium.com/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
-[BloC Library]: https://felangel.github.io/bloc
-[Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
-[Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: https://www.youtube.com/watch?v=Wj216eSBBWs
-[Complete GetX State Management]: https://www.youtube.com/watch?v=CNpXbeI_slw
-[Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
-[Flutter Architecture Samples]: https://fluttersamples.com/
-[Flutter: State Management with Mobx]: https://www.youtube.com/watch?v=p-MUBLOEkCs
-[Flutter Redux package]: {{site.pub-pkg}}/flutter_redux
-[Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}/redux_saga
-[Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
-[Flutter + Redux&mdash;How to make a shopping list app]: https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65
-[Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
-[GetX Flutter Firebase Auth Example]: {{site.medium}}/@jeffmcmorris/getx-flutter-firebase-auth-example-b383c1dd1de2
-[InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
-[Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
-[Introduction to state management]: /docs/development/data-and-backend/state-mgmt/intro
-[Making sense of all those Flutter Providers]: {{site.medium}}/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd?sk=7859a73fac0ca414a0e911b0322e8589
-[Managing Flutter Application State With InheritedWidgets]: {{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
-[MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
-[Pragmatic State Management in Flutter]: https://www.youtube.com/watch?v=d_m5csmrf7I
-[Provider package]: {{site.pub-pkg}}/provider
-[GetX package]: {{site.pub-pkg}}/get
-[Reactive Programming - Streams - BLoC - Practical Use Cases]: https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases
-[Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
-[Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
-[Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
-[You might not need Redux: The Flutter edition]: https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
-[Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
-[GetIt package]: https://pub.dev/packages/get_it
-[GetIt Hooks package]: https://pub.dev/packages/get_it_hooks
-[GetIt Mixin package]: https://pub.dev/packages/get_it_mixin
-[Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
-[Flutter Command package]: https://pub.dev/packages/flutter_command
-[RxCommand package]: https://pub.dev/packages/rx_command
-[Binder package]: https://pub.dev/packages/binder
-[Binder examples]: https://github.com/letsar/binder/tree/main/examples
-[Binder snippets]: https://marketplace.visualstudio.com/items?itemName=romain-rastel.flutter-binder-snippets
+[States Rebuilder documentation]: {{site.github}}/GIfatahTH/states_rebuilder/wiki
+
+## Triple Pattern (Segmented State Pattern)
+
+Triple is a pattern for state management that uses `Streams` or `ValueNotifier`.
+This mechanism (nicknamed _triple_ because the stream always uses three
+values: `Error`, `Loading`, and `State`), is based on the
+[Segmented State pattern][].
+
+For more information, refer to the following resources:
+
+* [Triple documentation][]
+* [Flutter Triple package][]
+* [Triple Pattern: A new pattern for state management in Flutter][]
+  (blog post written in Portuguese but can be auto-translated)
+* [VIDEO: Flutter Triple Pattern by Kevlin Ossada][] (recorded in English)
+
+
+[Triple documentation]: https://triple.flutterando.com.br/
+[Flutter Triple package]: {{site.pub-pkg}}/flutter_triple
+[Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/
+[Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
+[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{site.youtube-site}}/watch?v=dXc3tR15AoA

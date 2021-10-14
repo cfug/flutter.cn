@@ -161,7 +161,7 @@ See [Creating responsive apps][].
 
 ### 我能使用 Flutter 插件么？
 
-Yes, several plugins have web support. 
+Yes, several plugins have web support.
 Find an updated list of plugins on [pub.dev][] using the web filter.
 You can also add web support to existing plugins or
 [write your own plugins][] for the web.
@@ -193,10 +193,6 @@ Some plugins require platform-specific imports, particularly if they use the
 file system, which is not accessible from the browser. To use these plugins
 in your app, see the [documentation for conditional imports][]
 on [dart.dev]({{site.dart-site}}).
-
-部分插件需要在特定平台导入库或者文件，尤其是当使用浏览器无法访问的文件系统时。
-若要在你的应用里使用这些插件，请参阅 Dart 文档：
-[选择性的导入][documentation for conditional imports]。
 
 ### How do I embed a Flutter web app in a web page?
 
@@ -280,7 +276,7 @@ See [Preparing a web app for release][]
 
 ### `Platform.is` API 现在可用吗？
 
-Not currently. 
+Not currently.
 
 目前还不行。
 

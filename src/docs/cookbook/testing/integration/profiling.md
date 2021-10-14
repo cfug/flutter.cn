@@ -6,25 +6,13 @@ description: 本篇将如何测量你的 Flutter 应用的性能。
 tags: cookbook, 实用教程, 测试
 keywords: 性能优化,卡顿,时间轴
 prev:
-  title: Handle scrolling
-  title: 列表滚动
-  path: /docs/cookbook/testing/integration/scrolling
+  title: An introduction to integration testing
+  path: /docs/cookbook/testing/integration/introduction
 next:
   title: An introduction to unit testing
   title: Flutter 集成测试介绍
   path: /docs/cookbook/testing/unit/introduction
 ---
-
-{{site.alert.note}}
-
-  The integration_test package is now the recommended way to write integration
-  tests. See the [Integration testing](/docs/testing/integration-tests/) page
-  for details.
-
-  集成测试（integration_test）包目前已经成为首推的编写集成测试的方式。
-  请参阅[集成测试](/docs/testing/integration-tests/)查看更多详细信息。
-
-{{site.alert.end}}
 
 When it comes to mobile apps, performance is critical to user experience.
 Users expect apps to have smooth scrolling and meaningful animations free of
@@ -58,23 +46,23 @@ This recipe uses the following steps:
 步骤：
 
 1. Write a test that scrolls through a list of items.
-  
+
    编写一个滚动列表的测试项目；
- 	 		
+
 1. Record the performance of the app.
-  
+
    记录应用程序的性能；
- 
+
 1. Save the results to disk.
-	 
+
    将结果保存到磁盘；
-  	
+
 1. Run the test.
-  
+
    运行测试；
-  	 
+
 1. Review the results.
-  
+
    检查结果。
 
 ### 1. Write a test that scrolls through a list of items
@@ -83,18 +71,18 @@ This recipe uses the following steps:
 
 In this recipe, record the performance of an app as it scrolls through a
 list of items. To focus on performance profiling, this recipe builds
-on the [Scrolling][] recipe in integration tests.
+on the [Scrolling][] recipe in widget tests.
 
 在这一章节，我们将记录当滚动列表条目时应用程序的性能。
 为了专注于性能分析，这一小节在
 [Scrolling in integration tests（列表滚动集成测试）][Scrolling]
 的基础上进行。
 
-Follow the instructions in that recipe to create an app, instrument the
-app, and write a test to verify that everything works as expected.
+Follow the instructions in that recipe to create an app and write a test to
+verify that everything works as expected.
 
-请按照基础章节的指南新建一个应用程序，配置应用程序，
-然后，编写一个测试程序。最终，确保应用程序按预期运行。
+请按照基础章节的指南新建一个应用程序，编写一个测试程序。
+最终，确保应用程序按预期运行。
 
 ### 2. Record the performance of the app
 
@@ -152,14 +140,14 @@ to review the results:
   1. Writing a json document on disk that summarizes the data contained
      within the `Timeline`. This summary includes information about the
      number of skipped frames, slowest build times, and more.
-     
-     将一个 json 文件写入磁盘，它包含了 `Timeline` 中包含的数据的摘要。 
+
+     将一个 json 文件写入磁盘，它包含了 `Timeline` 中包含的数据的摘要。
      此摘要包括掉帧数量，最慢构建时间等的信息。
-     
+
   2. Saving the complete `Timeline` as a json file on disk.
      This file can be opened with the Chrome browser's
      tracing tools found at [chrome://tracing][].
-     
+
      它可以将完整的 `Timeline` 以 json 文件的形式存储在磁盘上，
      可以使用 Chrome 浏览器的追踪工具打开此文件。
      追踪工具在这里: [chrome://tracing][]。
@@ -210,17 +198,17 @@ the project contains two files:
      the file with any text editor to review the information contained
      within.  With a more advanced setup, you could save a summary every
      time the test runs and create a graph of the results.
-     
+
      `scrolling_summary.timeline_summary.json` 包含摘要。
      可以使用任何文本编辑器打开它并查看其中包含的信息。
      通过更高级的设置，我们可以在每次测试时保存摘要并创建一个结果图。
-     
+
   2. `scrolling_timeline.timeline.json` contains the complete timeline data.
      Open the file using the Chrome browser's tracing tools found at
      [chrome://tracing][]. The tracing tools provide a
      convenient interface for inspecting the timeline data to discover
      the source of a performance issue.
-     
+
      `scrolling_timeline.timeline.json` 包含完整的时间轴数据。
      使用 Chorme 浏览器的追踪工具打开这个文件。
      追踪工具在这里：[chrome://tracing][]。
@@ -270,7 +258,7 @@ void main() {
     });
 
     tearDownAll(() async {
-      driver.close();
+      await driver.close();
     });
 
     test('verifies the list contains a specific item', () async {
@@ -308,7 +296,7 @@ void main() {
 
 [chrome://tracing]: chrome://tracing
 [`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
-[Scrolling]: /docs/cookbook/testing/integration/scrolling
+[Scrolling]: /docs/cookbook/testing/widget/scrolling
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
 [`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html

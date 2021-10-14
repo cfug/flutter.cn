@@ -277,6 +277,7 @@ Fish Redux 是一个基于 Redux 状态管理的组合式 Flutter 应用框架�
 
 [Fish-Redux-Library]: {{site.pub-pkg}}/fish_redux
 [Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
+[Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
 
 ## BLoC / Rx
 

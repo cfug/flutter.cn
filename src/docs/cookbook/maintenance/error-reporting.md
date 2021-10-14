@@ -173,7 +173,7 @@ await Sentry.captureException(exception, stackTrace: stackTrace);
 
 For more information, see the [Sentry API][] docs on pub.dev.
 
-完整的 API 可在 [pub.dev][] 上阅读。
+更多相关信息，请参阅 pub.dev 上的 [Sentry API][] 文档。
 
 ## Learn more
 

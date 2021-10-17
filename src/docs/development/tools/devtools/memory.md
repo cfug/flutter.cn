@@ -311,18 +311,31 @@ your own events can be injected into the Memory Profile timeline to
 help to understand how your application's memory usage is performing
 within the Dart/Flutter framework (heap).
 
+有时可能很难将 Flutter 应用程序代码中的操作与内存时间线图中绘制的内存数据或者事件关联起来。
+可以将自定义的事件发送到 **Memory Profile** 时间线中，来了解你的代码中发生了什么。
+这会帮助你了解应用程序在 Dart/Flutter 框架中的内存使用情况（堆）。
+
 Posting your own custom event(s) are done using the dart:developer package
 postEvent method. In particular, the event name must be prefixed with
 **DevTools.Event_** then your event name would be appended e.g.,
 **DevTools.Event_**_MyEventName_
 
+使用 dart:developer 包的 `postEvent` 方法发布你的自定义事件。
+需要注意的是，事件名称的前缀必须为 **DevTools.Event_**，然后附加事件的名称。
+例如 **DevTools.Event_**_MyEventName_ 。
+
 To use add the following import to your code:
+
+使用时需要在你的代码中添加下方的导入信息：
 
 ```
 import 'dart:developer' as developer;
 ```
 
 and a method to post custom event(s) to the Memory timeline:
+
+以及将自定义事件发布到内存时间线的方法：
+
 ```
   void devToolsPostEvent(String eventName, Map<String, Object> eventData) {
     developer.postEvent('DevTools.Event_$eventName', eventData);
@@ -333,6 +346,11 @@ Then to post an event from your code you would call the devToolsPostEvent
 e.g. In your function recordLoadedImage you could cause the 'MyImages'
 event to be posted to the Memory (event) timeline with the values method
 and param (the URL).
+
+要从代码中发布事件，可以调用 devToolsPostEvent。
+例如，在函数 recordLoadedImage 中，
+可以通过 method（recordLoadedImage）以及 param（URL）参数
+将 `MyImages` 事件发布到内存（事件）时间线。
 
 ```
   Widget recordLoadedImage(ImageChunkEvent imageChunkEvent, String imageUrl) {
@@ -351,17 +369,27 @@ hover card with the details of all events e.g., two custom events at
 the timestamp 04:36:21 with the event name 'MyFirstApp' and the two
 eventData entries method and param are displayed with their values: 
 
+点击事件窗格中的多事件三角形，将显示包含所有事件详细信息的悬浮窗，
+例如，在 04:36:21 时刻的两个自定义事件，事件名称为「MyFirstApp」，
+两个字段 method 和 param 显示事件的对应值：
+
 ![Hover Card Custom Events](/assets/images/docs/tools/devtools/memory_hover_events.png)
 
 Scrolling the events displays:
+
+滑动事件显示：
 
 ![Custom Events Details](/assets/images/docs/tools/devtools/memory_events_detail.png)
 
 ## Memory overview chart
 
+## 内存概览图
+
 A timeseries graph of collected memory statistics, to visualize
 the state of the Dart/Flutter heap and Dart/Flutter native memory
 over time.
+
+采集的内存数据的时间序列图，用于观察随时间变化的 Dart/Flutter 堆和本机内存的状态。
 
 The chart's x-axis is a timeline of events (timeseries). The data
 plotted in the y-axis all have a timestamp when the data was
@@ -370,17 +398,29 @@ used, external, RSS (resident set size), and GC (garbage collection))
 of the memory every 500 ms. This helps give a live appearance on
 the state of the memory as the application is running.
 
+图表的 x 轴是事件的时间线（时间序列）。在 y 轴上绘制的数据在收集数据时都有时间戳。
+换句话说，这会显示每隔 500 毫秒内存的状态（容量、已用内存、外部内存、常驻集大小和垃圾回收）。
+显示应用程序运行实时的内存状态。
+
 Clicking on the Legend button describes the collected measurements
 and symbols/colors used to display the data.
+
+点击图例按钮会显示采集的测量值和用于显示数据的符号或颜色。
 
 ![Screenshot of a memory anatomy page](/assets/images/docs/tools/devtools/memory_chart_anatomy.png)
 
 The **Memory Size Scale** Y axis scale automatically adjusts to the
 range of data collected in the current visible chart range.
 
+Y 轴上 **内存大小刻度** 会自动调整到当前图表收集的数据范围内。
+
 The quantities plotted on the y-axis are:
 
+y 轴上绘制的数据包含：
+
 **Dart/Flutter Heap** Objects (Dart/Flutter objects) in the heap.
+
+**Dart/Flutter Heap** 堆中的对象 (Dart/Flutter 对象)。
 
 **Dart/Flutter Native** Memory that is not in the Dart/Flutter heap but
   is still part of the total memory footprint. Objects in this
@@ -393,29 +433,52 @@ The quantities plotted on the y-axis are:
   For more information, see [Dart on the Server][server] or
   [Custom Flutter Engine Embedders][embedder].
 
+**Dart/Flutter Native** 不在 Dart/Flutter 堆中，但仍然占用总内存的一部分。
+该内存中存储了原生对象（例如，文件读取或者图片解码的所占用的内存）。
+原生对象通过 Dart 嵌入层，从原生操作系统（如 Android、Linux、Windows、iOS）暴露给 Dart VM。
+嵌入层使用 finalizer 创建一个 Dart 包装类，允许 Dart 代码与这些原生资源通信。
+Flutter 有一个用于 Android 和 iOS 的嵌入层。更多信息，
+参阅 [服务端应用 Dart][server] 或 [自定义 Flutter 引擎嵌入层][embedder]。
+
 **Timeline** The timestamps of all collected memory statistics
 and events at a particular point in time (timestamp).
+
+**Timeline（时间线）**  在特定时间点采集的所有内存统计数据和事件的时间戳（时间戳）。
 
 **Raster Cache** Size of the Flutter engine's raster cache layer(s)
 or picture(s) while performing the final rendering after compositing.
 See [Flutter Architectural Overview][architecture] and
 [DevTools Performance][performance].
 
+**Raster Cache（光栅缓存）** 合成后执行最终渲染时颤振引擎光栅缓存层或图片的光栅缓存大小。
+
 **Allocated** Current capacity of the heap is typically slightly
 larger than total size of all heap objects.
+
+**Allocated（已分配内存）** 堆当前的容量，通常略大于所有堆对象的总大小。
 
 **RSS - Resident Set Size** The resident set size displays the
 amount of memory for a process. It doesn't include memory that is
 swapped out. It includes memory from shared libraries that are
 loaded, as well as all stack and heap memory.
 
+**RSS - Resident Set Size（常驻集）** 常驻集大小显示进程的内存量。
+包含加载的共享库中的内存，以及所有堆栈和堆内存，不包含交互的内存。
+
 For more information, see [Dart VM internals][vm].
 
+有关更多信息，请参阅 [Dart 虚拟机结构][VM]。
+
 ### Hover card
+
+### 悬浮窗
 
 Clicking in a chart will display a vertical yellow line where the click
 occurred on the X-Axis (Timestamp), a hover card will be displayed with
 the information collected:
+
+点击图表会在 X 轴（时间戳）上显示一条垂直黄线，
+同时显示带有所收集信息的悬浮窗：
 
 ![Screenshot of the basic memory chart](/assets/images/docs/tools/devtools/memory_basic_chart.png)
 
@@ -423,17 +486,29 @@ the information collected:
 User Initiated GC, User Initiated Snapshot, Auto-Snapshot,
 Allocation Monitoring and, Reset of Accumulators.
 
+**Memory Events（内存事件）** 事件窗口中记录的内存事件，
+例如 VM 自动垃圾回收、用户启动的垃圾回收、用户保存的快照、自动快照、分配监控和重置累加数据。
+
 **Dart / Flutter Memory**
 Collected data Capacity, Used, External, RSS, Raster Cache
 (pictures/layers).
+
+**Dart / Flutter Memory**
+收集的数据容量、已用数据、外部数据、RSS、光栅缓存（图像/图层）。
 
 **Flutter and User Events**
 Extension events e.g., Flutter.ImageSizesForFrame, user
 custom events see [Events](#events-pane).
 
+**Flutter and User Events（Flutter 和自定义的事件）**
+扩展事件，例如 `Flutter.ImageSizesForFrame`，用户自定义事件。
+参阅 [事件](#events-pane)。
+
 Aggregate events, as the name implies, collects all the events nearest
 a particular timestamp (tick) and displays the events to the x-axis'
 closest tick.
+
+顾名思义，集合事件收集了最接近特定时间戳（tick）的所有事件，并将事件显示到 x 轴最近的位置。
 
 If more than one event, collected at this timestamp, a dark magenta
 triangle is displayed with the aggregate list of events. The aggregate
@@ -442,22 +517,38 @@ and displays the events to the X-Axis closest tick. Expanding the events
 will display the values for each event:
 ![Aggregate Events](/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
 
+如果此时间戳处收集了多个事件，则会显示一个深色三角形，包含事件集合的列表。
+集合事件收集了最接近特定时间戳（tick）的所有事件，并将事件显示到 x 轴最近的位置。
+展开将显示每个事件的更多信息：
+
 If only one event is collected, a lighter magenta triangle color is
 displayed with the single event values:
 ![Single Events](/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
+
+如果只收集了一个事件，则会显示一个浅色三角形，并显示单个事件信息：
 
 If the Android memory chart is displayed then the Android collect data
 will displayed between the "Dart / Flutter Memory" and the "Flutter and
 User Events" e.g.,
 
+如果显示 Android 内存图表，则 Android 部分采集的数据将显示在
+「Dart / Flutter 内存」和「Flutter 和自定义的事件」之间。例如：
+
 ![Hovercard of Android chart is visible](/assets/images/docs/tools/devtools/memory_android_hovercard.png)
 
 ### Android chart
+
+### Android 图表
 
 When connected to an Android app, DevTools collects Android's ADB
 (Android Debug Bridge) meminfo from an ADB app summary (polled every 500 ms).
 This meminfo section is the most interesting at a high-level.  If you were
 to collect this info from the ADB tool, this is what it would look like:
+
+当连接到 Android 应用程序时，DevTools 会从 ADB 连接的应用程序摘要（每 500 毫秒一次）
+收集 Android 的 ADB（Android 调试通道）内存信息。这部分内存信息非常有趣。
+如果你要从 ADB 工具中采集此信息，它将是这样的：
+
 ```
 > adb shell dumpsys meminfo io.flutter.demo.gallery -d
 
@@ -480,12 +571,19 @@ the application is running. The quantities plotted on the y-axis are
 the above values (Java Heap, Native Heap, Code size, Stack size,
 Graphics stack, System size and total).
 
+此图表是应用程序运行时 Android 内存状态的另一个时间序列图。
+上述值会被绘制到 y 轴上（Java 堆、本地堆、代码大小、堆栈大小、图形堆栈、系统大小和总计）。
+
 Clicking on a timestamp (x-position) will display all data points
 collected for that time period.
+
+点击时间戳（x 位置）将显示该时间段内收集的所有数据点。
 
 ![Screenshot of Android Memory Chart](/assets/images/docs/tools/devtools/memory_android.png)
 
 The hover card will display the values of all collected Android memory data.
+
+悬浮窗将显示所有采集到的 Android 内存数据。
 
 <dl markdown="1">
 <dt markdown="1">**Time**</dt>

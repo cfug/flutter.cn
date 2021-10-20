@@ -7,6 +7,7 @@ tags: cookbook, 实用教程, 测试
 keywords: 性能优化,卡顿,时间轴
 prev:
   title: An introduction to integration testing
+  title: 集成测试介绍
   path: /docs/cookbook/testing/integration/introduction
 next:
   title: An introduction to unit testing

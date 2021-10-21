@@ -545,9 +545,9 @@ When connected to an Android app, DevTools collects Android's ADB
 This meminfo section is the most interesting at a high-level.  If you were
 to collect this info from the ADB tool, this is what it would look like:
 
-当连接到 Android 应用程序时，DevTools 会从 ADB 连接的应用程序摘要（每 500 毫秒一次）
+当连接到 Android 应用程序时，DevTools 会从 ADB 连接的应用程序摘要中（每 500 毫秒一次）
 收集 Android 的 ADB（Android 调试通道）内存信息。这部分内存信息非常有趣。
-如果你要从 ADB 工具中采集此信息，它将是这样的：
+如果你从 ADB 工具中采集此信息，它将是这样的：
 
 ```
 > adb shell dumpsys meminfo io.flutter.demo.gallery -d
@@ -572,7 +572,7 @@ the above values (Java Heap, Native Heap, Code size, Stack size,
 Graphics stack, System size and total).
 
 此图表是应用程序运行时 Android 内存状态的另一个时间序列图。
-上述值会被绘制到 y 轴上（Java 堆、本地堆、代码大小、堆栈大小、图形堆栈、系统大小和总计）。
+上述值会被绘制到 y 轴上（Java 堆、原生堆、代码大小、堆栈大小、图形堆栈、系统大小和总大小）。
 
 Clicking on a timestamp (x-position) will display all data points
 collected for that time period.
@@ -586,91 +586,210 @@ The hover card will display the values of all collected Android memory data.
 悬浮窗将显示所有采集到的 Android 内存数据。
 
 <dl markdown="1">
-<dt markdown="1">**Time**</dt>
-<dd>The timestamp for the current data values collected -
-    see descriptions below.
+<dt markdown="1">
+<p markdown="1">**Time**</p>
+<p markdown="1">**Time（时间戳）**</p>
+</dt>
+<dd>
+<p markdown="1">The timestamp for the current data values collected -
+    see descriptions below.</p>
+<p markdown="1">内存数据的采集时刻 - 请参阅以下的说明。</p>
 </dd>
-<dt markdown="1">**Total**</dt>
-<dd>The total memory in use. Total memory is comprised of
+<dt markdown="1">
+<p markdown="1">**Total（总计大小）**</p>
+</dt>
+<dd>
+<p markdown="1">The total memory in use. Total memory is comprised of
     several different categories, all of which are plotted
-    along the y-axis. These categories are described below.
+    along the y-axis. These categories are described below.</p>
+<p markdown="1">已使用的总内存大小，由几类不同的内存组成，
+所有类别都沿着 y 轴绘制，如下所述。</p>
 </dd>
-<dt markdown="1">**Other**</dt>
-<dd>Other memory usage corresponds to the ‘Private Other’
+<dt markdown="1">
+<p markdown="1">**Other**</p>
+<p markdown="1">**Other（其他）**</p>
+</dt>
+<dd>
+<p markdown="1">Other memory usage corresponds to the ‘Private Other’
     field from ADB. This is memory used by the app that the
     system isn't sure how to categorize. Note: The Other trace
     is a combination of Other and System (shared and system
-    memory usage) - corresponds to ‘System’ field from ADB.
+    memory usage) - corresponds to ‘System’ field from ADB.</p>
+<p markdown="1">「其他」使用情况对应于 ADB 的「Private Other（其他私有）」部分，这是系统不确定如何分类的内存。
+注意：这一部分是「其他」和「系统」（共享和系统内存使用- 对应 ADB 的 System（系统）部分）的组合。</p>
+<dd>
 </dd>
-<dt markdown="1">**Code**</dt>
-<dd>Code memory usage corresponds to the ‘Code’ field from ADB.
+<dt markdown="1">
+<p markdown="1">**Code**</p>
+<p markdown="1">**Code（代码）**</p>
+</dt>
+<dd>
+<p markdown="1">Code memory usage corresponds to the ‘Code’ field from ADB.
 This is memory that your app uses for static code and resources,
 such as dex byte code, optimized or compiled dex code, .so libraries,
-and fonts.
+and fonts.</p>
+<p markdown="1">「代码」使用情况对应于 ADB 的 「Code（代码）」部分。
+这是应用程序中静态代码和资源的内存，
+如 dex 字节码、优化或编译的 dex 代码、.so 库和字体。</p>
 </dd>
-<dt markdown="1">**Native Heap**</dt>
-<dd>Native Heap usage corresponds to the ‘Native Heap’ field
+<dt markdown="1">
+<p markdown="1">**Native Heap**</p>
+<p markdown="1">**Native Heap（本地堆）**</p>
+</dt>
+<dd>
+<p markdown="1">Native Heap usage corresponds to the ‘Native Heap’ field
     from ADB. This is memory from objects allocated from C or
     C++ code. Even if you're not using C++ in your app, you might
     see some native memory used here because the Android framework
     uses native memory to handle various tasks on your behalf. Some
     examples of these tasks are handling image assets and other
-    graphics—even though the code you've written is in Java or Kotlin.
+    graphics—even though the code you've written is in Java or Kotlin.</p>
+<p markdown="1">「本地堆」使用情况对应于 ADB 中的 「Native Heap（本地堆）」部分。
+这是从 C 或 C++ 代码分配的对象的内存。即使你的应用程序中没有使用 C++，
+你也可以看到本地内存的使用，因为 Android 框架使用本地内存来处理各种任务。
+比如，用来处理图像资源和其他图形，即使你编写的代码是 Java 或 Kotlin。</p>
 </dd>
-<dt markdown="1">**Java Heap**</dt>
-<dd>Java Heap usage corresponds to the ‘Java Heap’ field from ADB.
-    This is memory from objects allocated from Java or Kotlin code.
+<dt markdown="1">
+<p markdown="1">**Java Heap**</p>
+<p markdown="1">**Java Heap（Java 堆）**</p>
+</dt>
+<dd>
+<p markdown="1">Java Heap usage corresponds to the ‘Java Heap’ field from ADB.
+    This is memory from objects allocated from Java or Kotlin code.</p>
+<p markdown="1">「Java 堆」使用情况对应于 ADB 的「Java Heap（Java 堆）」部分。
+这是 Java 或 Kotlin 代码分配的对象的内存。</p>
 </dd>
-<dt markdown="1">**Stack**</dt>
-<dd>Stack usage corresponds to the ‘Stack’ field from ADB. This is
+<dt markdown="1">
+<p markdown="1">**Stack**</p>
+<p markdown="1">**Stack（堆栈）**</p>
+</dt>
+<dd>
+<p markdown="1">Stack usage corresponds to the ‘Stack’ field from ADB. This is
 memory used by both native and Java stacks in your app. This usually
-relates to how many threads your app is running.
+relates to how many threads your app is running.</p>
+<p markdown="1">「堆栈」使用情况对应于 ADB 的 「Stack（堆栈）」部分。
+这是应用程序中本地和 Java 堆栈使用的内存。
+通常与应用程序正在运行的线程数有关。</p>
 </dd>
-<dt markdown="1">**Graphics**</dt>
-<dd>Graphics usage corresponds to the ‘Graphics’ field from ADB. This
+<dt markdown="1">
+<p markdown="1">**Graphics**</p>
+<p markdown="1">**Graphics（图形）**</p>
+</dt>
+<dd>
+<p markdown="1">Graphics usage corresponds to the ‘Graphics’ field from ADB. This
 is memory used for graphics buffer queues to display pixels on the screen,
 including GL surfaces, GL textures, etc. Note: This is memory shared with
-the CPU—not dedicated GPU memory.
+the CPU—not dedicated GPU memory.</p>
+<p markdown="1">「图形」使用情况对应于 ADB 的 「Graphics（图形）」部分。
+这是用于图形缓冲队列在屏幕上显示像素的内存，包括 GL 曲面、GL 纹理等。
+注意：这是与 CPU 共享的内存，而不是专用的 GPU 内存。</p>
 </dd>
 </dl>
 
 ## Memory controls
 
+## 内存控制
+
 At the top of the memory page, above the charts, are several buttons and
 dropdowns that control how memory data is displayed.
+
+在内存页面顶部的图表上方，有几个按钮和下拉列表，用于控制内存数据的显示方式。
 
 ![Screenshot of a memory controls](/assets/images/docs/tools/devtools/memory_controls.png){:width="100%"}
 
 <dl markdown="1">
-<dt markdown="1">**Pause**</dt>
-<dd>Pause the memory overview chart to allow inspecting
+<dt markdown="1">
+<p markdown="1">**Pause**</p>
+<p markdown="1">**Pause（暂停）**</p>
+</dt>
+<dd>
+<p markdown="1">Pause the memory overview chart to allow inspecting
     the currently plotted data. Incoming memory data is still received;
-    notice the Range selector continues to grow to the right.</dd>
-<dt markdown="1">**Resume**</dt>
-<dd>Resume the memory overview chart so that it is live, displaying the
-    current time and the latest memory statistics.</dd>
-<dt markdown="1">**Clear**</dt>
-<dd>Clear all collected data from the memory profiler.</dd>
-<dt markdown="1">**Display**</dt>
-<dd>The duration of the x-axis. For example, if this dropdown
+    notice the Range selector continues to grow to the right.</p>
+<p markdown="1">暂停内存概览图表的变化，可以检查已展示的数据，
+但仍会接收到传入的内存数据。注意，范围选择器会继续向右增长。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Resume**</p>
+<p markdown="1">**Resume（继续）**</p>
+</dt>
+<dd>
+<p markdown="1">Resume the memory overview chart so that it is live, displaying the
+    current time and the latest memory statistics.</p>
+<p markdown="1">恢复内存概览图表，使其处于活动状态，显示当前时间和最新内存统计数据。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Clear**</p>
+<p markdown="1">**Clear（清除）**</p>
+</dt>
+<dd>
+<p markdown="1">Clear all collected data from the memory profiler.</p>
+<p markdown="1">清除内存监控中收集的所有数据。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Display**</p>
+<p markdown="1">**Display（显示范围）**</p>
+</dt>
+<dd>
+<p markdown="1">The duration of the x-axis. For example, if this dropdown
     is set to "Display 5 minutes", memory data from the last
-    5 minutes will be displayed.</dd>
-<dt markdown="1">- Display 1 Minute</dt>
-<dt markdown="1">- Display 5 Minutes</dt>
-<dt markdown="1">- Display 10 Minutes</dt>
-<dt markdown="1">- Display All Minutes (slider disabled)</dt>
-<dt markdown="1">**Source**</dt>
-<dd>Source can be either "Live Feed", which pulls data from the
+    5 minutes will be displayed.</p>
+<p markdown="1">x 轴的显示区间。例如，将此下拉列表设置为「显示 5 分钟」，则显示最近 5 分钟的内存数据。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">- Display 1 Minute</p>
+<p markdown="1">- Display 1 Minute（显示最近 1 分钟）</p>
+</dt>
+<dt markdown="1">
+<p markdown="1">- Display 5 Minutes</p>
+<p markdown="1">- Display 5 Minute（显示最近 5 分钟）</p>
+</dt>
+<dt markdown="1">
+<p markdown="1">- Display 10 Minutes</p>
+<p markdown="1">- Display 10 Minute（显示最近 10 分钟）</p>
+</dt>
+<dt markdown="1">
+<p markdown="1">- Display All Minutes (slider disabled)</p>
+<p markdown="1">- Display All Minutes (slider disabled)（显示所有时间 - 禁用滑动）</p>
+</dt>
+<dt markdown="1">
+<p markdown="1">**Source**</p>
+<p markdown="1">**Source（数据来源）**</p>
+</dt>
+<dd>
+<p markdown="1">Source can be either "Live Feed", which pulls data from the
     connected Flutter app, or one of the available offline data
-    files, which are created by clicking "Export".</dd>
-<dt markdown="1">**Android Memory**</dt>
-<dd>Displays or hides the Android Memory Chart.</dd>
-<dt markdown="1">**GC**</dt>
-<dd>Initiates a garbage collection - compaction of the heap.</dd>
-<dt markdown="1">**Export**</dt>
-<dd>Saves collected data for Event Timeline, Memory Overview Chart
+    files, which are created by clicking "Export".</p>
+<p markdown="1">数据来源可以是「Live Feed」（从连接的 Flutter 应用程序中获取实时数据），
+也可以是通过点击「导出」创建的本地数据文件。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Android Memory**</p>
+<p markdown="1">**Android Memory（安卓内存）**</p>
+</dt>
+<dd>
+<p markdown="1">Displays or hides the Android Memory Chart.</p>
+<p markdown="1">显示或隐藏 Android 内存图表。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**GC**</p>
+<p markdown="1">**GC（垃圾回收）**</p>
+</dt>
+<dd>
+<p markdown="1">Initiates a garbage collection - compaction of the heap.</p>
+<p markdown="1">启动垃圾回收 - 压缩堆空间。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Export**</p>
+<p markdown="1">**Export（导出）**</p>
+</dt>
+<dd>
+<p markdown="1">Saves collected data for Event Timeline, Memory Overview Chart
     and Android Overview Chart. Files saved are displayed under the Source
-    dropdown. Selecting a file loads the offline data.</dd>
+    dropdown. Selecting a file loads the offline data.</p>
+<p markdown="1">为事件时间线、内存概览图和 Android 概览图保存已收集的数据。
+保存的文件显示在「Source（数据来源）」下拉列表中。选择文件将加载数据。</p>
+</dd>
 </dl>
 
 ## Memory actions

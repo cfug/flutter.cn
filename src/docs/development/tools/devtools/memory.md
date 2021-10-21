@@ -58,8 +58,8 @@ user fired events (using the ```dart:developer``` package) are collected
 in the same timeline as the memory statistics. All of this collected
 statistics and events are displayed in charts see [Memory anatomy](#memory-anatomy).
 
-当选中顶部 tab 中的内存选项时，DevTools 将收集来自 VM 的内存统计数据。
-这些统计数据显示在两个概览图（Dart 内存以及 Android 特有）中，
+当选中顶部 tab 中的 Memory（内存）选项时，DevTools 将收集来自 VM 的内存统计数据。
+这些统计数据显示在两个概览图（Dart 内存以及 Android 图表）中，
 记录了一般内存的使用情况，例如使用的总堆、外部堆、最大堆容量、常驻集大小（RSS）。
 当你与应用程序交互时，会触发各种事件，例如内存 GC（垃圾回收）、Flutter 事件、
 用户触发的事件（使用 ```dart:developer``` 包）与内存统计数据会被记录在同一时间线中。
@@ -81,11 +81,11 @@ catches issues like this see [Analysis tab](#analysis-tab).
 
 快照是 Dart 内存堆中所有对象最复杂和最耗时的完整视图。
 每次保存快照时，都会对收集的内存数据进行分析。
-该分析会尝试识别任何可能导致泄漏或导致应用程序崩溃的内存模式。
+该分析会尝试识别任何可能导致应用程序内存泄漏或崩溃的内存模式。
 例如，为缩略图大小的图片加载大型资源是低效的，
 可以通过加载较小的资源或调整 cacheWidth/cacheHeight，
 减小图片的解码大小，降低 ImageCache 的内存使用，以此提高内存使用率。
-该分析捕捉到问题可以在 [Analysis 选项]（#analysis-tab）查看。
+该分析捕捉到问题可以在 [Analysis 选项](#analysis-tab) 查看。
 
 ## Allocations and tracking
 
@@ -99,8 +99,8 @@ class is allocated. This information is available under the "Allocations"
 tab of Memory profiler and his a fairly fast with less overhead than using
 a snapshot.
 
-监控所有你直接与 DevTools 或你的应用程序交互时涉及到的内存分配，在你感兴趣的时间周期内，
-可以了解分配了多少对象、分配了多少字节，或者跟踪代码中特定类的所有分配位置。
+监控所有你直接与 DevTools 或应用程序交互时涉及到的内存分配，在你感兴趣的时间周期内，
+可以了解分配了多少对象、多少字节，或者跟踪代码中特定类的所有分配位置。
 此信息可在 Memory profiler 的 **Allocations** 选项下查看，
 与使用快照相比，它的速度相当快，开销也更小。
 
@@ -116,7 +116,7 @@ isolate the exact location in your code when/where memory is being allocated.
 See [Allocation tab](#allocation-tab).
 
 监控分配和重置累计数据，有助于在点击重置和监视跟踪之间的短时间内分析累计数据（分配的对象数或字节数）。
-如果你怀疑你的应用程序发生了泄漏内存或存在与内存分配相关的其他错误，累计数据可以帮助了解内存分配的速率。
+如果你怀疑你的应用程序发生了内存泄漏或存在与内存分配相关的其他错误，累计数据可以帮助你了解内存分配的速率。
 此外，跟踪几个特定类的能力，可能会减慢应用程序的运行。VM 在调用类的构造函数（分配）时记录堆栈跟踪。
 可以在分配内存时找到代码中的确切位置。请参阅 [Allocation 选项](#allocation-tab)。
 
@@ -420,7 +420,7 @@ y 轴上绘制的数据包含：
 
 **Dart/Flutter Heap** Objects (Dart/Flutter objects) in the heap.
 
-**Dart/Flutter Heap** 堆中的对象 (Dart/Flutter 对象)。
+**Dart/Flutter Heap（Dart/Flutter 堆）** 堆中的对象 (Dart/Flutter 对象)。
 
 **Dart/Flutter Native** Memory that is not in the Dart/Flutter heap but
   is still part of the total memory footprint. Objects in this
@@ -493,7 +493,7 @@ Allocation Monitoring and, Reset of Accumulators.
 Collected data Capacity, Used, External, RSS, Raster Cache
 (pictures/layers).
 
-**Dart / Flutter Memory**
+**Dart / Flutter Memory（Dart / Flutter 内存）**
 收集的数据容量、已用数据、外部数据、RSS、光栅缓存（图像/图层）。
 
 **Flutter and User Events**

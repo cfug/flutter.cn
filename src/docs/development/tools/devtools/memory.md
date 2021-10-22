@@ -101,7 +101,7 @@ a snapshot.
 
 监控所有你直接与 DevTools 或应用程序交互时涉及到的内存分配，在你感兴趣的时间周期内，
 可以了解分配了多少对象、多少字节，或者跟踪代码中特定类的所有分配位置。
-此信息可在 Memory profiler 的 **Allocations** 选项下查看，
+此信息可在 Memory profiler 的 **Allocations（分配）** 选项下查看，
 与使用快照相比，它的速度相当快，开销也更小。
 
 Monitoring allocations and resetting of accumulators, helps to analyze
@@ -487,7 +487,7 @@ User Initiated GC, User Initiated Snapshot, Auto-Snapshot,
 Allocation Monitoring and, Reset of Accumulators.
 
 **Memory Events（内存事件）** 事件窗口中记录的内存事件，
-例如 VM 自动垃圾回收、用户启动的垃圾回收、用户保存的快照、自动快照、分配监控和重置累加数据。
+例如虚拟机自动垃圾回收、用户启动的垃圾回收、用户保存的快照、自动快照、分配监控和重置累加数据。
 
 **Dart / Flutter Memory**
 Collected data Capacity, Used, External, RSS, Raster Cache
@@ -839,7 +839,7 @@ active memory objects, the last snapshot, memory in a high-level
 view as a tree map. (TBD details).
 
 **Treemap** 如果 Treemap 开关打开，
-快照将以树形图的形式在高级视图中显示当前活动的对象、最后一个快照和内存。（详情待定）
+快照将以树形图的形式在高级视图中显示当前存活的对象、最后一个快照和内存。（详情待定）
 
 **Group By** Dropdown to select how data is grouped, which can either be by
 instance or by class name.
@@ -892,7 +892,7 @@ of the table tree.
 Clicking the **Snapshot** button shows the current state of the heap with regard
 to all active classes and their instances. 
 
-点击 **Snapshot（快照）** 按钮显示堆的所有活动类及其实例的当前状态。
+点击 **Snapshot（快照）** 按钮显示堆的所有存活的类及其实例的当前状态。
 
 ![Screenshot of the Snapshot classes](/assets/images/docs/tools/devtools/memory_snapshot_tree.png)
 
@@ -964,7 +964,7 @@ Snapshots have major tree nodes:
 </dd>
 <dt markdown="1">
 <p markdown="1">Filtered</p>
-<p markdown="1">Filtered（筛选项）</p>
+<p markdown="1">Filtered（筛选）</p>
 </dt>
 <dd>
 <p markdown="1">Filter are the packages being filtered.</p>
@@ -997,7 +997,7 @@ Expanding a class displays the active instances for that class.
 Clicking on an particular instance displays the type and value of
 the fields for that instance.
 
-展开类将显示该类的活动实例。点击某个特定实例将显示该实例字段的类型和值。
+展开类将显示该类的存活的实例。点击某个特定实例将显示该实例字段的类型和值。
 
 ![Screenshot of the inspecting an instance](/assets/images/docs/tools/devtools/memory_inspector.png)
 
@@ -1069,75 +1069,155 @@ tracking should be used sparingly.
 ![Screenshot of a memory actions](/assets/images/docs/tools/devtools/memory_allocations_actions.png)
 
 <dl markdown="1">
-<dt markdown="1">**Track**</dt>
-<dd markdown="1">Records and monitors the number of instances
+<dt markdown="1">
+<p markdown="1">**Track**</p>
+<p markdown="1">**Track（跟踪）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1"> Records and monitors the number of instances
                  and size of all instances in bytes. Clicking
                  the "Track" button, a table will populate with
                  instance allocation data. For each instance in
                  the allocation table, The "Delta" column reflects
-                 the number of memory allocations since the last reset.
+                 the number of memory allocations since the last reset.</p>
+<p markdown="1"> 记录和监控所有实例的数量和大小（以字节为单位）。
+点击「Track（跟踪）」按钮，实例分配数据会显示在下方的表格中。对于表中的每个实例，
+「Delta（增加量）」列表示自上次重置数据以来内存的分配大小。</p>
 </dd>
-<dt markdown="1">**Reset**</dt>
-<dd>Resets the accumulator counts (Delta columns) for each
+<dt markdown="1">
+<p markdown="1">**Reset**</p>
+<p markdown="1">**Reset（重置）**</p>
+</dt>
+<dd>
+<p markdown="1">Resets the accumulator counts (Delta columns) for each
     instance in the allocation table.  The next time the "Monitor"
     button is pressed, the "Delta" columns displays the populate with
-    the new instances and sizes since the last reset.
+    the new instances and sizes since the last reset.</p>
+<p markdown="1">重置表中每个实例的累计数据（增加量列）。下次按下「Monitor（监控）」按钮时，
+增加量列将显示自上次重置以来新分配的实例和所占空间。</p>
 </dd>
-<dt markdown="1">**Search**</dt>
-<dd>The search field is enabled when the instance allocation data
+<dt markdown="1">
+<p markdown="1">**Search**</p>
+<p markdown="1">**Search（搜索）**</p>
+</dt>
+<dd>
+<p markdown="1">The search field is enabled when the instance allocation data
     exists. Typing, or selecting a name from the dropdown, will
-    navigate to that class name in the table.
+    navigate to that class name in the table.</p>
+<p markdown="1">搜索功能会存在实例分配数据时可用。
+输入或从下拉列表中选择名称将跳转到表中对应的类。</p>
 </dd>
-<dt markdown="1">**Filter**</dt>
-<dd>Display a dialog box of libraries and class names to display
-   (checked on).
+<dt markdown="1">
+<p markdown="1">**Filter**</p>
+<p markdown="1">**Filter（筛选）**</p>
+</dt>
+<dd>
+<p markdown="1">Display a dialog box of libraries and class names to display
+   (checked on).</p>
+<p markdown="1">弹出一个包含所有已展示的库和类名的对话框（已选中）。</p>
 </dd>
 </dl>
 
 ### Allocation view
 
+### 分配视图
+
 Allocations are displayed in a table view of each class available to
 the connected application:
+
+已连接的应用程序中所有可用的类的分配信息会显示表中：
 
 ![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_allocations_overview.png)
 
 Each row displays the class name the number of instances and bytes
 allocated with deltas (accumulators since last reset).
 
+每行显示类名、实例数和对应分配的增加（自上次重置以来的累计数据）的字节数。
+
 <dl markdown="1">
-<dt markdown="1">**Track with Stack Trace**</dt>
-<dd markdown="1">If enabled records the stack trace when the instance
-                 is created, class constructor called.
+<dt markdown="1">
+<p markdown="1">**Track with Stack Trace**</p>
+<p markdown="1">**Track with Stack Trace（堆栈跟踪）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">If enabled records the stack trace when the instance
+                 is created, class constructor called.</p>
+<p markdown="1">如果启用，则在调用类构造函数创建实例时记录堆栈。</p>
 </dd>
-<dt markdown="1">**Class Name**</dt>
-<dd markdown="1">Class allocations monitored.</dd>
-<dt markdown="1">**Total Instances**</dt>
-<dd markdown="1">Total number of active instances for the class.</dd>
-<dt markdown="1">**Delta Instances**</dt>
-<dd markdown="1">An accumulator of change in instance count controlled
+<dt markdown="1">
+<p markdown="1">**Class Name**</p>
+<p markdown="1">**Class Name（类名）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Class allocations monitored.</p>
+<p markdown="1">监控的类名</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Total Instances**</p>
+<p markdown="1">**Total Instances（实例总计数量）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Total number of active instances for the class.</p>
+<p markdown="1">类存活实例总数。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Delta Instances**</p>
+<p markdown="1">**Delta Instances（实例的增加数量）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1"> An accumulator of change in instance count controlled
                  by the Reset button. When Reset is pressed the accumulators
                  rest to zero then each time the Track button is pressed the
-                 current totals and deltas are updated.
+                 current totals and deltas are updated.</p>
+<p markdown="1">由重置按钮控制的实例累计数据。当按下「Reset（重置）」时，
+累计数据重置为零，然后每次按下「Track（跟踪）」按钮时，当前总计和增加数量都会更新。</p>
 </dd>
-<dt markdown="1">**Total Bytes**</dt>
-<dd markdown="1">Total number of bytes allocated of all instances for the class.</dd>
-<dt markdown="1">**Delta Bytes**</dt>
-<dd markdown="1">An accumulator of change in instance bytes created controlled
+<dt markdown="1">
+<p markdown="1">**Total Bytes**</p>
+<p markdown="1">**Total Bytes（总字节数）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Total number of bytes allocated of all instances for the class.</p>
+<p markdown="1">为类的所有实例分配的总字节数。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Delta Bytes**</p>
+<p markdown="1">**Delta Bytes（增加的字节数）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1"> An accumulator of change in instance bytes created controlled
                  by the Reset button. When Reset is pressed the accumulators
                  rest to zero then each time the Track button is pressed the
-                 current totals and deltas are updated.
+                 current totals and deltas are updated.</p>
+<p markdown="1">由重置按钮控制的实例字节变化累计数据。当按下「Reset（重置）」时，
+累计数据重置为零，然后每次按下「Track（跟踪）」按钮时，当前总计和增加数量都会更新。</p>
 </dd>
-<dt markdown="1">**Timestamp of Last Track**</dt>
-<dd markdown="1">The time when the Track button was pressed.</dd>
-<dt markdown="1">**Change Bubble**</dt>
-<dd markdown="1">Small bubble to indicate the changes collected have been
-                 collected and updated in the table.
+<dt markdown="1">
+<p markdown="1">**Timestamp of Last Track**</p>
+<p markdown="1">**Timestamp of Last Track（上一次启用跟踪的时间）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">The time when the Track button was pressed.</p>
+<p markdown="1">按下「Track（跟踪）」按钮的时间。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Change Bubble**</p>
+<p markdown="1">**Change Bubble（更改气泡）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1"> Small bubble to indicate the changes collected have been
+                 collected and updated in the table.</p>
+<p markdown="1">小气泡，表示已经在表中记录并更新的更改。</p>
 </dd>
 </dl>
 
 For more information see [Allocation Tracking](#allocation-tracking).
 
+更多信息，请参阅 [分配跟踪](#allocation-tracking)。
+
 ### Managing the objects and statistics in the heap (Monitor Allocations)
+
+### 管理堆中的对象和统计数据（分配监控）
 
 ![The Monitor Allocations button](/assets/images/docs/tools/devtools/memory_monitor_allocations.png)
 
@@ -1148,6 +1228,10 @@ allocated these accumulators can be reset, to zero, by user action
 (pressing the Reset Accumulators button).  The mechanism is useful
 to find memory leaks.
 
+点击「Track（跟踪）」按钮可以监控类分配的实例总数和字节总数。
+此外，为实例的分配维护两个累计数据（总计数量和增加数量），用户可以通过操作（按下重置按钮）重置为零。
+该机制对于查找内存泄漏非常有用。
+
 ![Reset Accumulators button](/assets/images/docs/tools/devtools/memory_reset.png)
 
 When the **Reset** button is pressed, the accumulators for all classes
@@ -1155,31 +1239,69 @@ resets to zero. When reset is occurs a "monitor reset" event to the
 Event Timeline.  Clicking the **Reset** button again resets both
 accumulators to zero.
 
+按下 **Reset（重置）** 按钮时，所有类别的累计数据都会重置为零。当发生重置时，
+事件时间线上会出现「监控重置」事件。再次点击 **Reset（重置）** 按钮将两个累计数据重置为零。
+
 <dl markdown="1">
-<dt markdown="1">**Classes**</dt>
-<dd markdown="1">Active classes in the heap.</dd>
-<dt markdown="1">**Instances column**</dt>
-<dd>Total active objects (instances) for all classes in the heap</dd>
-<dt markdown="1">**Delta column**</dt>
-<dd>Accumulator counts of all instances since last "Reset" was pressed.
-    Clicking the Reset button initializes the accumulated (Delta) instances
-    of a class. This is useful for finding memory leaks.
+<dt markdown="1">
+<p markdown="1">**Classes**</p>
+<p markdown="1">**Classes（类）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Active classes in the heap.</p>
+<p markdown="1">堆中的存活的类。</p>
 </dd>
-<dt markdown="1">**Bytes column**</dt>
-<dd>Total bytes consumed for all instances of a class in the heap.</dd>
-<dt markdown="1">**Delta column**</dt>
-<dd>Accumulator counts bytes allocated since last "Reset" was pressed.
+<dt markdown="1">
+<p markdown="1">**Instances column**</p>
+<p markdown="1">**Instances column（实例列）**</p>
+</dt>
+<dd>
+<p markdown="1">Total active objects (instances) for all classes in the heap</p>
+<p markdown="1">堆中所有类的存活对象（实例）总数</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Delta column**</p>
+<p markdown="1">**Delta column（数量增加列）**</p>
+</dt>
+<dd>
+<p markdown="1">Accumulator counts of all instances since last "Reset" was pressed.
+    Clicking the Reset button initializes the accumulated (Delta) instances
+    of a class. This is useful for finding memory leaks.</p>
+<p markdown="1">自上次按下「Reset（重置）」后所有实例的累计数量。
+点击重置按钮重置类实例的累计数量。这对于查找内存泄漏非常有用。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Bytes column**</p>
+<p markdown="1">**Bytes column（字节列）**</p>
+</dt>
+<dd>
+<p markdown="1">Total bytes consumed for all instances of a class in the heap.</p>
+<p markdown="1">堆中类的所有实例的总字节数。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Delta column**</p>
+<p markdown="1">**Delta column（字节增加列）**</p>
+</dt>
+<dd>
+<p markdown="1">Accumulator counts bytes allocated since last "Reset" was pressed.
     Clicking the Reset button initializes the accumulated (Delta) bytes for
-    all instances of a class. This is useful for finding memory leaks.
+    all instances of a class. This is useful for finding memory leaks.</p>
+<p markdown="1">自上次按下「Reset（重置）」后所有实例的累计字节数。
+点击重置按钮重置类实例的累计字节数。这对于查找内存泄漏非常有用。</p>
 </dd>
 </dl>
 
 ## Allocation tracking
 
+## 分配跟踪
+
 In addition to tracking the number of objects and bytes consumed
 for all instances of a class, a stack trace can be recorded when a
 class's constructor is called to help narrow where allocations might
 be astray. To do this enable the Track checkbox for a class e.g.,
+
+除了跟踪一个类的所有实例的对象数和字节数外，还可以在调用类的构造函数时记录堆栈，
+来帮助缩小分配可能出错的范围。为此，请选中类的跟踪复选框，例如：
 
 ![Enable Stack Trace Tracking](/assets/images/docs/tools/devtools/memory_enable_stacktrace.png)
 
@@ -1189,34 +1311,61 @@ update the count for the instances being tracked e.g., 118 in the
 below figure. Expanding the instances tracked will display all the
 instances and timestamp when each instance was created e.g.,
 
+与你的应用程序交互，然后当你想要查看实例分配时，再次按下「Track（跟踪）」按钮。
+这将更新正在跟踪的实例的数量，例如下图中的 118。
+展开跟踪的实例将显示所有实例以及创建每个实例的时间，例如：
+
 ![Class Tracking](/assets/images/docs/tools/devtools/memory_tracking.png)
 
 Selecting an instance will display the call stack at the time the
 class's constructor (allocated) was called e.g.,
 
+选择实例将显示调用类的构造函数（已分配）时的堆栈，例如：
+
 ![Call Stack](/assets/images/docs/tools/devtools/memory_tracking_callstack.png)
 
 ## Filtering, Searching and Auto-Complete
+
+## 筛选、搜索和自动补全
 
 Both the Analysis and Allocations tabs support searching and filtering
 Begin typing in the name of the class you'd like to find
 e.g., **Ob**_ectWithUniqueId_ will return a list that matches the characters
 typed so far. The first item in the list is highlighted.
 
+「Analysis（分析）」和「Allocations（分配）」选项都支持搜索和筛选。输入要查找的类的名称，
+例如，**Ob**_ectWithUniqueId_ 将返回与与输入字符匹配的列表。列表中的第一项高亮显示。
+
 Pressing a keystroke when auto-complete is visible:
 
+当自动补全可见时，按下按键：
+
 <dl markdown="1">
-<dt markdown="1">**ENTER**</dt>
-<dd markdown="1">Selects the highlighted line (GlobalObjectKey) and
+<dt markdown="1">
+<p markdown="1">**ENTER**</p>
+<p markdown="1">**ENTER**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1"> Selects the highlighted line (GlobalObjectKey) and
                  navigates to the row with that class name in
-                 the active tree table (Snapshot) or table (Allocations).
+                 the active tree table (Snapshot) or table (Allocations).</p>
+<p markdown="1"> 选择高亮显示的行（GlobalObjectKey）跳转到当前树表视图（快照）或表（分配）中该类名对应的行。</p>
 </dd>
-<dt markdown="1">**UP/DOWN arrows**</dt>
-<dd markdown="1">Rotates through the list of possible matches highlighting
-                 the next item in the list.
+<dt markdown="1">
+<p markdown="1">**UP/DOWN arrows**</p>
+<p markdown="1">**上/下箭头**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Rotates through the list of possible matches highlighting
+                 the next item in the list.</p>
+<p markdown="1">在可能匹配的列表中跳转，突出显示列表中的下一项。</p>
 </dd>
-<dt markdown="1">**ESCAPE**</dt>
-<dd markdown="1">Clears and cancels all searching.
+<dt markdown="1">
+<p markdown="1">**ESCAPE**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Clears and cancels all searching.</p>
+<p markdown="1">清除并取消所有搜索。</p>
 </dd>
 </dl>
 
@@ -1225,115 +1374,213 @@ Pressing a keystroke when auto-complete is visible:
 Typing more characters would narrow down the possible class names e.g., typing
 **Obje** displays:
 
+输入更多字符来缩小类名范围，例如键入 **Obje** 显示：
+
 ![Narrower Search](/assets/images/docs/tools/devtools/memory_search_2.png)
 
 Finally, typing **ObjectW** displays the exact match:
+
+最后，输入 **ObjectW** 显示精确匹配：
 
 ![Narrowed Search](/assets/images/docs/tools/devtools/memory_search_3.png)
 
 ### Filtering
 
+### 筛选
+
 Filtering is used to move libraries and classes from the main list (tables)
 to a Filter group to help reduce the number of classes visible that are
 less important while profiling memory.
 
+筛选用于将库和类从主列表（表）移动到筛选组，帮助减少在分析内存时不太重要的可见类的数量。
+
 ![Filtering](/assets/images/docs/tools/devtools/memory_filtering.png)
 
 <dl markdown="1">
-<dt markdown="1">**Hide Private Classes**</dt>
-<dd markdown="1">Class names prefix with an underscore.</dd>
-<dt markdown="1">**Hide Classes with No Instances**</dt>
-<dd markdown="1">Classes never constructed are filtered.</dd>
-<dt markdown="1">**Hide Libraries with No Instances**</dt>
-<dd markdown="1">All classes in a library never constructed
-                 the library is filtered.</dd>
-<dt markdown="1">**Hide Libraries or Packages**</dt>
-<dd markdown="1">List of all libraries used in your application
+<dt markdown="1">
+<p markdown="1">**Hide Private Classes**</p>
+<p markdown="1">**Hide Private Classes（隐藏私有类）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Class names prefix with an underscore.</p>
+<p markdown="1">前缀带有下划线类的类。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Hide Classes with No Instances**</p>
+<p markdown="1">**Hide Classes with No Instances（隐藏没有实例的类）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Classes never constructed are filtered.</p>
+<p markdown="1">从未构造的类将被过滤。</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Hide Libraries with No Instances**</p>
+<p markdown="1">**Hide Libraries with No Instances（隐藏没有实例的库）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1"> All classes in a library never constructed
+                 the library is filtered.</p>
+<p markdown="1">库中所有类都从未被实例化过，将会被隐藏</p>
+</dd>
+<dt markdown="1">
+<p markdown="1">**Hide Libraries or Packages**</p>
+<p markdown="1">**Hide Libraries or Packages（隐藏库或包）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1"> List of all libraries used in your application
                  are displayed. By default the libraries enabled
                  above are filtered out (dart:*, package:flutter*,
                  etc.). The libraries automatically filtered can
                  be enabled if you are interested in Dart core
-                 libraries and classes or the Flutter framework.
+                 libraries and classes or the Flutter framework.</p>
+<p markdown="1">显示应用程序中使用的所有库的列表。默认情况下启用，
+系统相关库将被过滤掉（例如：dart:*、package:flutter*）。
+如果你对 Dart 核心库和类或 Flutter 框架感兴趣，可以关闭自动过滤掉的库。</p>
 </dd>
 </dl>
 
 ### Setting
 
+### 设置
+
 The Memory profiler has a specific settings dialog:
+
+内存监控有一个特定的设置对话框：
 
 ![Settings](/assets/images/docs/tools/devtools/memory_settings.png)
 
 <dl markdown="1">
-<dt markdown="1">**Collect Android Memory Statistics using ADB**</dt>
-<dd markdown="1">By default if DevTools is connected to your
+<dt markdown="1">
+<p markdown="1">**Collect Android Memory Statistics using ADB**</p>
+<p markdown="1">**Collect Android Memory Statistics using ADB（使用 ADB 收集 Android 内存统计信息）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">By default if DevTools is connected to your
                  application via an Android device/emulator
                  then Android memory statistics are not collected.
                  Collecting with ADB can be expensive and may hide
-                 performance issues in your app.
+                 performance issues in your app.</p>
+<p markdown="1">默认情况下，如果 DevTools 通过 Android 设备 / 模拟器连接到应用程序，
+则不会收集 Android 内存统计信息。使用 ADB 收集开销很大，并且可能会隐藏应用程序中的性能问题。</p>
 </dd>
-<dt markdown="1">**Display Data in Units (B, K, MB, GB)**</dt>
-<dd markdown="1">By default data displayed in the hover card
+<dt markdown="1">
+<p markdown="1">**Display Data in Units (B, K, MB, GB)**</p>
+<p markdown="1">**Display Data in Units (B, K, MB, GB)（以单位（B、K、MB、GB）显示数据）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1"> By default data displayed in the hover card
                  are scaled using units instead of raw values.
                  Turning off this will display the raw numbers
-                 e.g., 125M would display as 125,235,712
+                 e.g., 125M would display as 125,235,712.</p>
+<p markdown="1">默认情况下，悬浮窗中显示的数据使用单位而不是原始值。
+关闭此选项将显示原始数字，例如 125M 将显示为 125235712。</p>
 </dd>
-<dt markdown="1">**Enable advanced memory settings**</dt>
-<dd markdown="1">If enabled, the GC button is displayed to
+<dt markdown="1">
+<p markdown="1">**Enable advanced memory settings**</p>
+<p markdown="1">**Enable advanced memory settings（启用高级内存设置）**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">If enabled, the GC button is displayed to
                  ask the VM to garbage collect memory (manually).
                  This manual GC is only a request to the VM. The
                  VM may decide to do no compaction, some compaction
-                 or complete compaction of the heap.
+                 or complete compaction of the heap.</p>
+<p markdown="1">如果启用，将显示 GC 按钮，请求虚拟机（手动）垃圾收集内存。
+此手动 GC 只是对虚拟机的请求。虚拟机可能不压缩、部分压缩或完全压缩堆。</p>
 </dd>
 </dl>
 
 ## Memory problem case study
+
+## 内存问题案例学习
+
 Memory leak study using large network images was added with step-by-step
 instructions on using DevTools Memory profiler, detecting the memory
 problem and fixing the problem, see [case study][case_study].
 
+使用大量网络图片导致内存泄漏的学习，以及有关使用 DevTools 内存分析器、
+检测内存问题和修复问题的分步说明，请参阅 [案例研究][case_study]。
+
 ## Glossary of VM terms
+
+## 虚拟机术语表
 
 Here are some computer science concepts that will help you better
 understand how your application uses memory.
 
+以下是一些计算机科学概念，它们将帮助你更好地理解应用程序如何使用内存。
+
 <dl markdown="1">
-<dt markdown="1">**Garbage collection (GC)**</dt>
-<dd>GC is the process of searching the
+<dt markdown="1">
+<p markdown="1">**Garbage collection (GC)**</p>
+<p markdown="1">**Garbage collection (垃圾回收)**</p>
+</dt>
+<dd>
+<p markdown="1">GC is the process of searching the
     heap to locate, and reclaim, regions of "dead" memory&mdash;memory
     that is no longer being used by an application. This process
     allows the memory to be re-used and minimizes the risk of an
     application running out of memory, causing it to crash. Garbage
     collection is performed automatically by the Dart VM. In DevTools,
     you can perform garbage collection on demand by clicking the
-    GC button.
+    GC button.</p>
+<p markdown="1">GC 是搜索堆以定位和回收应用程序不再使用的内存区域的过程。
+这个过程允许重新使用内存，将应用程序由于内存不足导致的崩溃风险降至最低。
+垃圾回收由 Dart 虚拟机自动执行。在 DevTools 中，你可以通过点击 GC 按钮按需执行垃圾回收。</p>
 </dd>
-<dt markdown="1">**Heap**</dt>
-<dd>Dart objects that are dynamically allocated live in a portion of
+<dt markdown="1">
+<p markdown="1">**Heap**</p>
+<p markdown="1">**Heap（堆）**</p>
+</dt>
+<dd>
+<p markdown="1">Dart objects that are dynamically allocated live in a portion of
     memory called the heap. An object allocated from the heap is freed
     (eligible for garbage collection) when nothing points to it,
     or when the application terminates. When nothing points to an
     object, it is considered to be dead. When an object is pointed
-    to by another object, it is live.
+    to by another object, it is live.</p>
+<p markdown="1">动态分配的 Dart 对象存在于称为堆的内存部分中。当没有任何对象指向它，
+或者当应用程序退出时。在堆中分配的对象将被回收（符合垃圾回收的条件）。
+当没有任何东西指向某个对象时，他不是存活的。当一个对象被另一个对象指向时，它是存活的。</p>
 </dd>
-<dt markdown="1">**Isolates**</dt>
-<dd markdown="1">Dart supports concurrent execution by way of isolates,
+<dt markdown="1">
+<p markdown="1">**Isolates**</p>
+</dt>
+<dd markdown="1">
+<p markdown="1">Dart supports concurrent execution by way of isolates,
     which you can think of processes without the overhead.
     Each isolate has its own memory and code that can't be
     affected by any other isolate. For more information,
-    see [The Event Loop and Dart][event-loop].
+    see [The Event Loop and Dart][event-loop].</p>
+<p markdown="1">Dart 通过 Isolates 的方式支持并发，你可以认为这样的过程没有开销。
+每个 Isolates 都有自己的内存和代码，不受任何其他 Isolates 的影响。
+更多信息，请参见 [事件循环和 Dart][event-loop]。</p>
 </dd>
-<dt markdown="1">**Memory leak**</dt>
-<dd>A memory leak occurs when an object is live
+<dt markdown="1">
+<p markdown="1">**Memory leak**</p>
+<p markdown="1">**Memory leak（内存泄漏）**</p>
+</dt>
+<dd>
+<p markdown="1">A memory leak occurs when an object is live
     (meaning that another object points to it), but it is not being
     used (so it shouldn't have any references from other objects).
     Such an object can't be garbage collected, so it takes up space
     in the heap and contributes to memory fragmentation.
     Memory leaks put unnecessary pressure on the VM and can be
-    difficult to debug.
+    difficult to debug.</p>
+<p markdown="1">当一个对象处于存活状态（意味着有其它对象指向它），
+但它没有被使用时（因此它不应该有来自其他任何对象的引用），就会发生内存泄漏。
+这样的对象不能被垃圾收集，因此它会占用堆中的空间并导致内存碎片。
+内存泄漏会给虚拟机带来不必要的压力，并且可能很难调试。</p>
 </dd>
-<dt markdown="1">**Virtual machine (VM)**</dt>
-<dd>The Dart virtual machine is a piece of
-    software that directly executes Dart code.
+<dt markdown="1">
+<p markdown="1">**Virtual machine (VM)**</p>
+<p markdown="1">**Virtual machine (虚拟机)**</p>
+</dt>
+<dd>
+<p markdown="1">The Dart virtual machine is a piece of
+    software that directly executes Dart code.</p>
+<p markdown="1">Dart 虚拟机是一种直接执行 Dart 代码的软件。</p>
 </dd>
 </dl>
 

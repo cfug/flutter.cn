@@ -7,6 +7,7 @@ tags: cookbook, 实用教程, 测试
 keywords: 点击测试,拖拽事件测试,文本输入测试
 prev:
   title: Handle scrolling
+  title: 处理滚动
   path: /docs/cookbook/testing/widget/scrolling
 ---
 

@@ -168,7 +168,7 @@ on a shared timeline. These events can be snapshots (manual and auto),
 Dart VM GCs, user requested GCs, or monitor and accumulator reset actions.
 
 同一个时间轴上会显示 Dart VM 和 DevTools 事件。
-这些事件包含快照（手动和自动）、Dart VM 自动垃圾回收、手动垃圾回收
+这些事件包含快照（手动和自动）、Dart VM 自动 GC、手动 GC
 或者监控和累计数据的重置操作。
 
 ![Screenshot of DevTools events](/assets/images/docs/tools/devtools/memory_eventtimeline.png)
@@ -181,7 +181,7 @@ the event occurred. This may help identify when a memory leak might have
 occurred in the timeline (x-axis).
 
 此图表显示与内存图表时间线相关的 DevTools 事件
-（如手动垃圾回收、VM 垃圾回收、快照、监控分配 **跟踪** 和 **重置** 累计数据按钮单击）。
+（如手动 GC、VM GC、快照、监控分配 **跟踪** 和 **重置** 累计数据按钮单击）。
 点击事件时间线中的标记，将显示事件发生时间的悬浮窗。
 这可能有助于判断时间轴（x 轴）中何时发生内存泄漏。
 
@@ -245,18 +245,18 @@ information collected and an analysis performed.</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**User Initiated GC**</p>
-<p markdown="1">**User Initiated GC（用户手动垃圾回收）**</p>
+<p markdown="1">**User Initiated GC（用户手动 GC）**</p>
 </dt>
 ![GC](/assets/images/docs/tools/devtools/memory_eventtimeline_gc.png){:width="18px"}
 <dd markdown="1">
 <p markdown="1"> User initiated request to VM to to perform a
                  garbage collection of memory (only a suggestion
                  to the VM).</p>
-<p markdown="1"> 用户向 VM 请求执行内存垃圾回收（仅向 VM 建议，不一定立刻执行）。</p>
+<p markdown="1"> 用户向 VM 请求执行内存 GC（仅向 VM 建议，不一定立刻执行）。</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**VM GC**</p>
-<p markdown="1">**VM GC（VM 自动垃圾回收）**</p>
+<p markdown="1">**VM GC（VM 自动 GC）**</p>
 </dt>
 ![VM GC](/assets/images/docs/tools/devtools/memory_eventtimeline_vmgc.png){:width="11px"}
 <dd markdown="1">
@@ -264,9 +264,9 @@ information collected and an analysis performed.</p>
                  space no longer used. For more information on
                  how Dart performs garbage collection, see
                  [Don't Fear the Garbage Collector][].</p>
-<p markdown="1"> VM 自动执行垃圾回收，释放不再使用的空间。
+<p markdown="1"> VM 自动执行 GC，释放不再使用的空间。
                  更多 Dart 是如何执行垃圾收集的信息，
-                 参阅 [不要要担心垃圾回收][Don't Fear the Garbage Collector]。</p>
+                 参阅 [不要要担心 GC][Don't Fear the Garbage Collector]。</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**User and Flutter Event**</p>
@@ -399,7 +399,7 @@ of the memory every 500 ms. This helps give a live appearance on
 the state of the memory as the application is running.
 
 图表的 x 轴是事件的时间线（时间序列）。在 y 轴上绘制的数据在收集数据时都有时间戳。
-换句话说，这会显示每隔 500 毫秒内存的状态（容量、已用内存、外部内存、常驻集大小和垃圾回收）。
+换句话说，这会显示每隔 500 毫秒内存的状态（容量、已用内存、外部内存、常驻集大小和 GC）。
 显示应用程序运行实时的内存状态。
 
 Clicking on the Legend button describes the collected measurements
@@ -487,7 +487,7 @@ User Initiated GC, User Initiated Snapshot, Auto-Snapshot,
 Allocation Monitoring and, Reset of Accumulators.
 
 **Memory Events（内存事件）** 事件窗口中记录的内存事件，
-例如虚拟机自动垃圾回收、用户启动的垃圾回收、用户保存的快照、自动快照、分配监控和重置累加数据。
+例如虚拟机自动 GC、用户启动的 GC、用户保存的快照、自动快照、分配监控和重置累加数据。
 
 **Dart / Flutter Memory**
 Collected data Capacity, Used, External, RSS, Raster Cache
@@ -1526,7 +1526,7 @@ understand how your application uses memory.
     GC button.</p>
 <p markdown="1">GC 是搜索堆以定位和回收应用程序不再使用的内存区域的过程。
 这个过程允许重新使用内存，将应用程序由于内存不足导致的崩溃风险降至最低。
-垃圾回收由 Dart 虚拟机自动执行。在 DevTools 中，你可以通过点击 GC 按钮按需执行垃圾回收。</p>
+GC 由 Dart VM 自动执行。在 DevTools 中，你可以通过点击 GC 按钮按需执行垃圾回收。</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**Heap**</p>
@@ -1540,7 +1540,7 @@ understand how your application uses memory.
     object, it is considered to be dead. When an object is pointed
     to by another object, it is live.</p>
 <p markdown="1">动态分配的 Dart 对象存在于称为堆的内存部分中。当没有任何对象指向它，
-或者当应用程序退出时。在堆中分配的对象将被回收（符合垃圾回收的条件）。
+或者当应用程序退出时。在堆中分配的对象将被回收（符合 GC 的条件）。
 当没有任何东西指向某个对象时，他不是存活的。当一个对象被另一个对象指向时，它是存活的。</p>
 </dd>
 <dt markdown="1">

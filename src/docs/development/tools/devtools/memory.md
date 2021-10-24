@@ -266,7 +266,7 @@ information collected and an analysis performed.</p>
                  [Don't Fear the Garbage Collector][].</p>
 <p markdown="1"> VM 自动执行 GC，释放不再使用的空间。
                  更多 Dart 是如何执行垃圾收集的信息，
-                 参阅 [不要要担心 GC][Don't Fear the Garbage Collector]。</p>
+                 参阅 [不要担心 GC][Don't Fear the Garbage Collector]。</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**User and Flutter Event**</p>
@@ -468,7 +468,7 @@ loaded, as well as all stack and heap memory.
 
 For more information, see [Dart VM internals][vm].
 
-有关更多信息，请参阅 [Dart 虚拟机结构][VM]。
+有关更多信息，请参阅 [Dart 虚拟机结构][vm]。
 
 ### Hover card
 

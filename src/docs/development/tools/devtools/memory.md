@@ -451,6 +451,7 @@ See [Flutter Architectural Overview][architecture] and
 [DevTools Performance][performance].
 
 **Raster Cache（光栅缓存）** 合成后执行最终渲染时颤振引擎光栅缓存层或图片的光栅缓存大小。
+详情参阅 [Flutter 架构概览][architecture] 和 [DevTools 性能视图][performance]。
 
 **Allocated** Current capacity of the heap is typically slightly
 larger than total size of all heap objects.

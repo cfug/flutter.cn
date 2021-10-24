@@ -17,7 +17,7 @@ portion of memory called the heap. The memory in the heap is
 managed by the Dart VM (virtual machine).
 
 使用类构造函数创建的 Dart 对象（例如，使用 `new MyClass()` 或 `MyClass()`）
-会被分配在称为 **堆** 的内存部分中。堆中的内存由 Dart VM（虚拟机）管理。
+会被分配在称为 **堆** 的内存区域中。堆中的内存由 Dart VM（虚拟机）管理。
 
 ## DevTools memory page
 
@@ -101,7 +101,7 @@ a snapshot.
 
 监控所有你直接与 DevTools 或应用程序交互时涉及到的内存分配，在你感兴趣的时间周期内，
 可以了解分配了多少对象、多少字节，或者跟踪代码中特定类的所有分配位置。
-此信息可在 Memory profiler 的 **Allocations（分配）** 选项下查看，
+此信息可在内存分析页面的 **Allocations（分配）** 选项下查看，
 与使用快照相比，它的速度相当快，开销也更小。
 
 Monitoring allocations and resetting of accumulators, helps to analyze
@@ -287,7 +287,7 @@ information collected and an analysis performed.</p>
     view the events clicking on the triangle will display a hover
     card and expanding the events at the bottom of the hovercard
     will display all events for that timestamp.</p>
-    <p markdown="1">表示在此时间戳处仅收到一个事件。要查看事件，单击三角形将显示悬浮窗，
+    <p markdown="1">表示在此时间戳处仅收到一个事件。要查看事件，点击三角形将显示悬浮窗，
                     展开浮窗底部，将显示该时间戳的所有事件。</p>
 </dd>
 </dl>
@@ -312,7 +312,7 @@ help to understand how your application's memory usage is performing
 within the Dart/Flutter framework (heap).
 
 有时可能很难将 Flutter 应用程序代码中的操作与内存时间线图中绘制的内存数据或者事件关联起来。
-可以将自定义的事件发送到 **Memory Profile** 时间线中，来了解你的代码中发生了什么。
+可以将自定义的事件发送到 **内存分析** 时间线中，来了解你的代码中发生了什么。
 这会帮助你了解应用程序在 Dart/Flutter 框架中的内存使用情况（堆）。
 
 Posting your own custom event(s) are done using the dart:developer package
@@ -433,7 +433,7 @@ y 轴上绘制的数据包含：
   For more information, see [Dart on the Server][server] or
   [Custom Flutter Engine Embedders][embedder].
 
-**Dart/Flutter Native** 不在 Dart/Flutter 堆中，但仍然占用总内存的一部分。
+**Dart/Flutter Native（Dart/Flutter 原生对象）** 不在 Dart/Flutter 堆中，但仍然占用总内存的一部分。
 该内存中存储了原生对象（例如，文件读取或者图片解码的所占用的内存）。
 原生对象通过 Dart 嵌入层，从原生操作系统（如 Android、Linux、Windows、iOS）暴露给 Dart VM。
 嵌入层使用 finalizer 创建一个 Dart 包装类，允许 Dart 代码与这些原生资源通信。
@@ -834,11 +834,11 @@ name, size, allocated instances (see [Snapshot classes](#snapshots)).
 **Snapshot（快照）** 点击 Snapshot 按钮向 Dart VM 发出请求，以保存内存当前的状态。
 内存对象可以按属性排序，如类名、大小、分配的实例（参见 [快照类](#snapshots)）。
 
-**Treemap（树形图）** If the Treemap switch is on the snapshot displays currently
+**Treemap** If the Treemap switch is on the snapshot displays currently
 active memory objects, the last snapshot, memory in a high-level
 view as a tree map. (TBD details).
 
-**Treemap** 如果 Treemap 开关打开，
+**Treemap（树形图）** 如果 Treemap 开关打开，
 快照将以树形图的形式在高级视图中显示当前存活的对象、最后一个快照和内存。（详情待定）
 
 **Group By** Dropdown to select how data is grouped, which can either be by

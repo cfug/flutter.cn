@@ -230,7 +230,7 @@ information collected and an analysis performed.</p>
                  number of instances and byte size of all instances.
                  In addition, the deltas are the change in the
                  accumulators since the last "Reset" button pressed.</p>
-<p markdown="1"> 收集当前所有处于活动状态的类的状态实例数和所有实例的字节大小。
+<p markdown="1"> 收集当前所有处于存活状态的类的状态实例数和所有实例的字节大小。
                  此外，变化值是自上次按下 **Reset(重置)** 按钮以来累计数据的变化。</p>
 </dd>
 <dt markdown="1">
@@ -716,7 +716,7 @@ dropdowns that control how memory data is displayed.
 <dd>
 <p markdown="1">Resume the memory overview chart so that it is live, displaying the
     current time and the latest memory statistics.</p>
-<p markdown="1">恢复内存概览图表，使其处于活动状态，显示当前时间和最新内存统计数据。</p>
+<p markdown="1">恢复内存概览图表，使其处于存活状态，显示当前时间和最新内存统计数据。</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**Clear**</p>
@@ -878,7 +878,7 @@ of the table tree.
 
 快照是特定时间点上所有内存对象的完整视图。
 在树中导航到类及其实例（调用构造函数创建的实例）。
-如果实例存在，扩展类将显示所有活动实例（对象）。
+如果实例存在，扩展类将显示所有存活实例（对象）。
 点击一个类的实例，将在树表的右侧显示内存的检查信息。
 
 ![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_navigate_inspect.png)
@@ -1541,7 +1541,7 @@ GC 由 Dart VM 自动执行。在 DevTools 中，你可以通过点击 GC 按钮
     to by another object, it is live.</p>
 <p markdown="1">动态分配的 Dart 对象存在于称为堆的内存部分中。当没有任何对象指向它，
 或者当应用程序退出时。在堆中分配的对象将被回收（符合 GC 的条件）。
-当没有任何东西指向某个对象时，他不是存活的。当一个对象被另一个对象指向时，它是存活的。</p>
+当没有任何东西指向某个对象时，他不在存活状态。当一个对象被另一个对象指向时，它是存活的。</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**Isolates**</p>

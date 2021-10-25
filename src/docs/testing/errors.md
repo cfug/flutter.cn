@@ -17,18 +17,29 @@ Flutter 框架可以捕获运行期间的错误，包括构建期间、布局期
 
 All errors caught by Flutter are routed to the
 [`FlutterError.onError`][] handler. By default,
-this calls [`FlutterError.dumpErrorToConsole`][],
-which, as you might guess, dumps the error to the device logs.
-When running from an IDE, the inspector overrides this so
-that errors can also be routed to the IDE's console,
-allowing you to inspect the
+this calls [`FlutterError.presentError`][],
+which dumps the error to the device logs.
+When running from an IDE, the inspector overrides this
+behavior so that errors can also be routed to the IDE's
+console, allowing you to inspect the
 objects mentioned in the message.
 
 所有 Flutter 的错误均会被回调方法 [`FlutterError.onError`][] 捕获。
-默认情况下，会调用 [`FlutterError.dumpErrorToConsole`][] 方法，
-正如方法名表示的那样，将错误转储到当前的设备日志中。
+默认情况下，会调用 [`FlutterError.presentError`][] 方法，
+并将错误转储到当前的设备日志中。
 当从 IDE 运行应用时，检查器重写了该方法，
 错误也被发送到 IDE 的控制台，可以在控制台中检查出错的对象。
+
+{{site.alert.note}}
+
+  Consider calling [`FlutterError.presentError`][]
+  from your custom error handler in order to see
+  the logs in the console as well.
+
+  考虑从自定义错误处理程序调用 [`FlutterError.presentError`][]
+  以查看控制台中的日志。
+
+{{site.alert.end}}
 
 When an error occurs during the build phase,
 the [`ErrorWidget.builder`][] callback is
@@ -68,7 +79,7 @@ to first get acquainted with each of the error types.
 
 ## Errors caught by Flutter
 
-## Flutter 导致的错误 
+## Flutter 导致的错误
 
 For example, to make your application quit immediately any time an
 error is caught by Flutter in release mode, you could use the
@@ -86,7 +97,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   FlutterError.onError = (FlutterErrorDetails details) {
-    FlutterError.dumpErrorToConsole(details);
+    FlutterError.presentError(details);
     if (kReleaseMode)
       exit(1);
   };
@@ -238,7 +249,7 @@ void main() {
     WidgetsFlutterBinding.ensureInitialized();
     await myErrorsHandler.initialize();
     FlutterError.onError = (FlutterErrorDetails details) {
-      FlutterError.dumpErrorToConsole(details);
+      FlutterError.presentError(details);
       myErrorsHandler.onError(details);
       exit(1);
     };
@@ -267,7 +278,7 @@ class MyApp extends StatelessWidget {
 
 [`ErrorWidget.builder`]: {{site.api}}/flutter/widgets/ErrorWidget/builder.html
 [`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
-[`FlutterError.dumpErrorToConsole`]: {{site.api}}/flutter/foundation/FlutterError/dumpErrorToConsole.html
+[`FlutterError.presentError`]: {{site.api}}/flutter/foundation/FlutterError/presentError.html
 [`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html
 [`MaterialApp.builder`]: {{site.api}}/flutter/material/MaterialApp/builder.html
 [reporting errors to a service]: /docs/cookbook/maintenance/error-reporting

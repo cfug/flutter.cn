@@ -10,9 +10,9 @@ prev:
   title: Widget 测试介绍
   path: /docs/cookbook/testing/widget/introduction
 next:
-  title: Tap, drag, and enter text
-  title: 点击、拖拽事件和文本输入
-  path: /docs/cookbook/testing/widget/tap-drag
+  title: Handle scrolling
+  title: 处理滚动
+  path: /docs/cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/finders/"?>

@@ -619,7 +619,6 @@ The hover card will display the values of all collected Android memory data.
     memory usage) - corresponds to ‘System’ field from ADB.</p>
 <p markdown="1">「其他」使用情况对应于 ADB 的「Private Other（其他私有）」部分，这是系统不确定如何分类的内存。
 注意：这一部分是「其他」和「系统」（共享和系统内存使用- 对应 ADB 的 System（系统）部分）的组合。</p>
-<dd>
 </dd>
 <dt markdown="1">
 <p markdown="1">**Code**</p>

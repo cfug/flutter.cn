@@ -278,9 +278,10 @@ information collected and an analysis performed.</p>
 <p markdown="1">在事件窗格中显示为三角形。深色三角形表示「多个 Flutter 或用户事件」。</p>
 </dd>
 ![Aggregate Events](/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
-<dd><p markdown="1">identifies more than one event was received at this timestamp.
-    The lighter magenta triangle "One Flutter or User Event"</p> 
-<dd><p markdown="1">标识在此时间戳接收的多个事件。浅色三角形表示「一次 Flutter 或用户事件」。</p> 
+<dd>
+<p markdown="1">identifies more than one event was received at this timestamp.
+    The lighter magenta triangle "One Flutter or User Event"</p>
+<p markdown="1">标识在此时间戳接收的多个事件。浅色三角形表示「一次 Flutter 或用户事件」。</p>
 </dd>
 ![Single Events](/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
 <dd><p markdown="1">indicates only one event was received at this timestamp. To

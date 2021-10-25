@@ -1342,10 +1342,7 @@ Pressing a keystroke when auto-complete is visible:
 当自动补全可见时，按下按键：
 
 <dl markdown="1">
-<dt markdown="1">
-<p markdown="1">**ENTER**</p>
-<p markdown="1">**ENTER**</p>
-</dt>
+<dt markdown="1">**ENTER**</dt>
 <dd markdown="1">
 <p markdown="1"> Selects the highlighted line (GlobalObjectKey) and
                  navigates to the row with that class name in
@@ -1361,9 +1358,7 @@ Pressing a keystroke when auto-complete is visible:
                  the next item in the list.</p>
 <p markdown="1">在可能匹配的列表中跳转，突出显示列表中的下一项。</p>
 </dd>
-<dt markdown="1">
-<p markdown="1">**ESCAPE**</p>
-</dt>
+<dt markdown="1">**ESCAPE**</dt>
 <dd markdown="1">
 <p markdown="1">Clears and cancels all searching.</p>
 <p markdown="1">清除并取消所有搜索。</p>
@@ -1544,9 +1539,7 @@ GC 由 Dart VM 自动执行。在 DevTools 中，你可以通过点击 GC 按钮
 或者当应用程序退出时。在堆中分配的对象将被回收（符合 GC 的条件）。
 当没有任何东西指向某个对象时，它不处于存活状态。当一个对象被另一个对象指向时，它是存活的。</p>
 </dd>
-<dt markdown="1">
-<p markdown="1">**Isolates**</p>
-</dt>
+<dt markdown="1">**Isolates**</dt>
 <dd markdown="1">
 <p markdown="1">Dart supports concurrent execution by way of isolates,
     which you can think of processes without the overhead.

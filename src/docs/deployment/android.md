@@ -70,7 +70,7 @@ This page covers the following topics:
 
 {{site.alert.note}}
 
-   Throughout this page, `[project]` refers to 
+   Throughout this page, `[project]` refers to
    the directory that your application is in. While following
    these instructions, substitute `[project]` with 
    your app's directory.
@@ -99,7 +99,7 @@ Alternatively, you can do it manually using the following steps:
 
 1. Review the [Material Design product
    icons][launchericons] guidelines for icon design.
-   
+
    查看 [Material Design Product Icons][launchericons] 指南中图标设计部分。
 
 1. In the `[project]/android/app/src/main/res/` directory,
@@ -107,7 +107,7 @@ Alternatively, you can do it manually using the following steps:
    [configuration qualifiers][].
    The default `mipmap-` folders demonstrate the correct
    naming convention.
-   
+
    在 `<app dir>/android/app/src/main/res/` 目录下，
    把我们的图标文件放在以 [配置限定符][configuration qualifiers] 命名的文件夹中。
    类似默认的 `mipmap-` 文件夹这样的命名方式。
@@ -117,14 +117,14 @@ Alternatively, you can do it manually using the following steps:
    attribute to reference icons from the previous
    step (for example,
    `<application android:icon="@mipmap/ic_launcher" ...`).
-   
+
    在 `AndroidManifest.xml` 中，更新 [`application`][applicationtag] 标签中的
    `android:icon` 属性来引用上一步骤中我们自己的图标文件
    (例如，`<application android:icon="@mipmap/ic_launcher" ...`)。
 
 1. To verify that the icon has been replaced,
    run your app and inspect the app icon in the Launcher.
-   
+
    用 `flutter run` 运行 app，检查启动程序中的 app 图标
    是否已经替换成我们自己的图标文件。
 
@@ -180,7 +180,7 @@ signature. Use the following instructions to sign your app.
 要想把 app 发布到 Play store，还需要给 app 一个数字签名。
 我们可以采用以下步骤来为 app 签名：
 
-On Android, there are two signing keys: deployment and upload. The end-users 
+On Android, there are two signing keys: deployment and upload. The end-users
 download the .apk signed with the 'deployment key'. An 'upload key' is used to 
 authenticate the .aab / .apk uploaded by developers onto the Play Store and is 
 re-signed with the deployment key once in the Play Store.
@@ -206,16 +206,16 @@ If not, create one by either:
 如果你已经有一个密钥库了，可以直接跳到下一步，
 如果还没有，需要参考下面的方式创建一个：
 
-* Following the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk) 
+* Following the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk)
 
   参考文档 [在 Android Studio 上为你的应用签名]({{site.android-dev}}/studio/publish/app-signing#sign-apk)。
-  
+
 * Running the following at the command line:
 
   在命令行窗口运行如下的命令：
 
     On Mac/Linux, use the following command:
-    
+
     在 macOS 或者 Linux 系统上，执行下面的代码：
 
     ```terminal
@@ -223,7 +223,7 @@ If not, create one by either:
     ```
 
     On Windows, use the following command:
-    
+
     在 Windows 系统上，执行下述代码：
 
     ```terminal
@@ -239,9 +239,9 @@ If not, create one by either:
     该命令将会把 `upload-keystore.jks` 文件储存在你的主文件夹中。
     如果你想要储存在其他地方，请通过指定 `-keystore` 传入参数。
     **注意，请保证这个文件的私有性，不要将它提交到公共的代码管理空间**。
-    
+
     {{site.alert.note}}
-    
+
     * The `keytool` command might not be in your path&mdash;it's
       part of Java, which is installed as part of
       Android Studio.  For the concrete path,
@@ -253,7 +253,7 @@ If not, create one by either:
       notation for the names. For example, on Mac/Linux
       use `Program\ Files`, and on Windows use
       `"Program Files"`.
-      
+
       `keytool` 可能不在我们的系统路径中。
       它是 Java 的一部分，在安装 Android Studio 的时候会被一起安装。
       运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，
@@ -261,14 +261,14 @@ If not, create one by either:
       如果文件路径包含空格，类似 `Program Files` 这样的，请使用平台允许的命名规则。
       例如，在 Mac/Linux 上使用 `Program\ Files`，而在 Windows 上可以使用
       `"Program Files"`。
-    
+
     * The `-storetype JKS` tag is only required for Java 9
       or newer. As of the Java 9 release,
       the keystore type defaults to PKS12.
-      
+
       只有 Java 9 或更高版本才需要 `-storetype JKS` 标签。
       从 Java 9 版本开始，keystore 类型默认为 PKS12。
-      
+
     {{site.alert.end}}
 
 ### Reference the keystore from the app
@@ -292,16 +292,16 @@ storeFile=<密钥库的位置，e.g. /Users/<用户名>/upload-keystore.jks>
 
   Keep the `key.properties` file private;
   don't check it into public source control.
-  
+
   （再次）请保证这个文件的私有性，不要将它提交到公共的代码管理空间。
-  
+
 {{site.alert.end}}
 
 ### Configure signing in gradle
 
 ### 在 gradle 中配置签名
 
-Configure gradle to use your upload key when building your app in release mode 
+Configure gradle to use your upload key when building your app in release mode
 by editing the `[project]/android/app/build.gradle` file.
 
 在以 release 模式下构建你的应用时，修改 `[project]/android/app/build.gradle`
@@ -377,10 +377,10 @@ Release builds of your app will now be signed automatically.
 
   You may need to run `flutter clean` after changing the gradle file.
   This prevents cached builds from affecting the signing process.
-  
+
   当你更改 gradle 文件后，也许需要运行一下 `flutter clean`。
   这将防止缓存的版本影响签名过程。
-  
+
 {{site.alert.end}}
 
 For more information on signing your app, see
@@ -510,9 +510,9 @@ flag to `flutter build apk` or `flutter build appbundle`.
 
   Obfuscation and minification can considerably extend compile time
   of the Android application.
-  
+
   混淆和压缩会大大地延长安卓应用程序的编译时间。
-  
+
 {{site.alert.end}}
 
 ## Reviewing the app manifest
@@ -524,14 +524,14 @@ Review the default [App Manifest][manifest] file,
 located in `[project]/android/app/src/main` and verify that the values
 are correct, especially the following:
 
-检查位于 `<app dir>/android/app/src/main` 的默认 [App Manifest][manifest] 
+检查位于 `<app dir>/android/app/src/main` 的默认 [App Manifest][manifest]
 文件 `AndroidManifest.xml`，并确认各个值都设置正确，特别是：
 
 `application`
 <br> Edit the `android:label` in the
-  [`application`][applicationtag] tag to reflect 
+  [`application`][applicationtag] tag to reflect
   the final name of the app.
-  
+
 `application`
 <br> 编辑 [`application`][applicationtag]
   标签中的 `android:label` 来设置 app 的最终名字。
@@ -542,9 +542,9 @@ are correct, especially the following:
   access. The standard template does not include this tag but allows
   Internet access during development to enable communication between
   Flutter tools and a running app.
-  
+
 `uses-permission`：
-<br> 如果你的代码需要互联网交互，请加入 `android.permission.INTERNET` 
+<br> 如果你的代码需要互联网交互，请加入 `android.permission.INTERNET`
   [权限标签][permissiontag]。
   标准开发模版里并未加入这个权限（但是 Flutter debug 模版加入了这个权限），
   加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信。
@@ -592,7 +592,7 @@ values in the `defaultConfig` block:
 中的 API 版本的部分。
 
 `buildToolsVersion`
-<br> Specify the version of Android SDK Build Tools that your app uses. 
+<br> Specify the version of Android SDK Build Tools that your app uses.
   Alternatively, you can use the Android Gradle Plugin in Android Studio,
   which will automatically import the minimum required Build Tools for your app
   without the need for this property.
@@ -613,9 +613,9 @@ the Play Store.
 当要发布到 Play Store 时，你有两种发布方式的选择：
 
 * App bundle (preferred)
-  
+
   App bundle (推荐）
-  
+
 * APK
 
 {{site.alert.note}}
@@ -623,11 +623,11 @@ the Play Store.
   The Google Play Store prefers the app bundle format.
   For more information, see [Android App Bundle][bundle] and
   [About Android App Bundles][bundle2].
-  
+
   Google Play Store 更推荐 app bundle 方式.
   更多信息可以参考 [Android App Bundle][bundle] and
   [About Android App Bundles][bundle2].
-  
+
 {{site.alert.end}}
 
 {{site.alert.warning}}
@@ -636,7 +636,7 @@ the Play Store.
   from developers indicating they are experiencing app
   crashes on certain devices on Android 6.0. If you are targeting
   Android 6.0, use the following steps:
-  
+
   最近，Flutter 团队收到了很多开发者的 [报告][crash-issue]，
   表示他们在 Android 6.0 的某些设备上遇到了应用崩溃的情况。
   如果你的目标 API 等级是 Android 6.0，请参考以下步骤：
@@ -657,9 +657,9 @@ the Play Store.
     的 `<application>` 标签里不包含 `android:extractNativeLibs=false`。
 
   For more information, see the [public issue][crash-issue].
-  
+
   更多内容，请参考这个 [错误报告][crash-issue]。
-  
+
 {{site.alert.end}}
 
 ### Build an app bundle
@@ -689,7 +689,7 @@ From the command line:
 
 1. Run `flutter build appbundle`<br>
    (Running `flutter build` defaults to a release build.)
-   
+
    运行 `flutter build appbundle`。
    (运行 `flutter build` 默认构建一个发布版本。)
 
@@ -704,7 +704,7 @@ runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
 (ARM 64-bit), and [x86-64][] (x86 64-bit).
 
 此 app bundle 会默认地包含为
-[armeabi-v7a][] (ARM 32-bit)、[arm64-v8a][] (ARM 64-bit) 
+[armeabi-v7a][] (ARM 32-bit)、[arm64-v8a][] (ARM 64-bit)
 以及 [x86-64][] (x86 64-bit) 编译的 Dart 和 Fluter 运行时代码。
 
 ### Test the app bundle
@@ -722,9 +722,9 @@ describes two.
 
 1. If you haven't done so already, download `bundletool` from the
    [GitHub repository][].
-   
+
    如果你还没准备好，可以从 [GitHub 仓库][GitHub repository] 下载 `bundletool`。
-   
+
 2. [Generate a set of APKs][apk-set] from your app bundle.
 
    从你的 app bundle [生成 APKs][apk-set]。
@@ -741,13 +741,13 @@ describes two.
    You can use the internal test track,
    or the alpha or beta channels to test the bundle before
    releasing it in production.
-   
+
    上传你的 bundle 到 Google Play 去测试它。
    或者在正式发布之前用 alpha 或 beta 频道去测试。
-   
+
 2. Follow [these steps to upload your bundle][upload-bundle]
    to the Play Store.
-   
+
    按照 [这些步骤把你的 bundle][upload-bundle] 上传到 Play Store。
 
 ### Build an APK
@@ -778,12 +778,12 @@ From the command line:
 使用如下命令：
 
 1. Enter `cd [project]`<br>
- 
+
    输入命令 `cd [project]`<br>
 
 1. Run `flutter build apk --split-per-abi`<br>
    (The `flutter build` command defaults to `--release`.)
-   
+
    运行 `flutter build apk --split-per-abi`<br>
    （`flutter build` 默认带有 `--release` 参数。）
 
@@ -940,7 +940,7 @@ Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
 Flutter does not currently support building for x86 Android
 (See [Issue 9253][]).
 
-当使用 release 模式构建你的应用程序时, 
+当使用 release 模式构建你的应用程序时,
 Flutter app 可以基于 [armeabi-v7a][] (ARM 32 位)、
 [arm64-v8a][] (ARM 64 位) 以及 [x86-64][] (x86 64 位) 被编译。
 Flutter 目前不支持 x86 Android (参考 [Issue 9253][]).

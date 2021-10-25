@@ -7,9 +7,9 @@ short-title: Introduction
 tags: cookbook, 实用教程, 测试
 keywords: 单元测试,test package,flutter_test,IDE
 prev:
-  title: Perform scrolling
-  title: 列表滚动
-  path: /docs/cookbook/testing/integration/scrolling
+  title: Performance profiling
+  title: 性能测试
+  path: /docs/cookbook/testing/integration/profiling
 next:
   title: Mock dependencies using Mockito
   title: 使用 Mockito 模拟依赖关系
@@ -37,29 +37,29 @@ using the following steps:
 本教程将会为大家演示 `test` package 的用法，内容如下：
 
   1. Add the `test` or `flutter_test` dependency.
-     
+
      将 `test` 或者 `flutter_test` 加入依赖；
 
   2. Create a test file.
-     
+
      创建测试文件；
 
   3. Create a class to test.
-     
+
      创建一个要测试的类；
-     
+
   4. Write a `test` for our class.
-     
+
      为创建的类写一个测试；
 
   5. Combine multiple tests in a `group`.
-     
+
      整合多个测试到一个 `group`；
 
   6. Run the tests.
-     
+
      执行测试。
-     
+
 
 For more information about the test package,
 see the [test package documentation][].
@@ -100,9 +100,9 @@ the tests themselves and lives inside the `test` folder.
 `counter.dart` 文件包含一个位于 `lib` 文件夹的待测试类，
 而位于 `test` 文件夹的 `counter_test.dart` 文件将包含测试本身。
 
-In general, test files should reside inside a `test` folder 
-located at the root of your Flutter application or package. 
-Test files should always end with `_test.dart`, 
+In general, test files should reside inside a `test` folder
+located at the root of your Flutter application or package.
+Test files should always end with `_test.dart`,
 this is the convention used by the test runner when searching for tests.
 
 通常测试文件应位于放置在 Flutter 应用或包的根目录下的 `test` 文件夹。
@@ -188,7 +188,7 @@ void main() {
 
 ## 5. 整合多个测试到一个 `group`
 
-If you have several tests that are related to one another, 
+If you have several tests that are related to one another,
 combine them using the `group` function provided by the `test` package.
 
 如果多个测试之间互相关联，
@@ -228,7 +228,7 @@ void main() {
 
 ## 6. 执行测试
 
-Now that you have a `Counter` class with tests in place, 
+Now that you have a `Counter` class with tests in place,
 you can run the tests.
 
 现在 `Counter` 类和它的测试都有了，开始执行测试！
@@ -253,14 +253,14 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
        打开文件 `counter_test.dart`
 
     2. Select the `Run` menu
-       
+
        选择菜单 `Run`
 
     3. Click the `Run 'tests in counter_test.dart'` option
 
        点击选项 `Run 'tests in counter_test.dart'`
 
-    4. *Alternatively, use the appropriate keyboard shortcut 
+    4. *Alternatively, use the appropriate keyboard shortcut
        for your platform.*
 
        *或者，也可以使用系统快捷键!*
@@ -279,7 +279,7 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
 
        点击选项 `Start Debugging`
 
-    4. *Alternatively, use the appropriate keyboard shortcut 
+    4. *Alternatively, use the appropriate keyboard shortcut
        for your platform.*
 
        *或者，也可以使用系统快捷键!*

@@ -11,6 +11,12 @@
       "**/node_modules/**"
     ],
     "redirects": [
+      { "regex": "^/(flutter(/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
+      { "regex": "^/(objcdoc(/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
+      { "regex": "^/(javadoc(/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
+      { "regex": "(?P<basename>.*)\\.html$", "destination": ":basename", "type": 301 },
+      { "regex": "(?P<basename>.*)\\.$", "destination": ":basename", "type": 301 },
+      { "source": "/images/catalog-widget-placeholder.png", "destination": "/assets/images/docs/catalog-widget-placeholder.png", "type": 301 },
       { "source": "/accessibility", "destination": "/docs/development/accessibility-and-localization/accessibility", "type": 301 },
       { "source": "/adaptations", "destination": "/docs/resources/platform-adaptations", "type": 301 },
       { "source": "/adaptive*", "destination": "/docs/development/ui/layout/adaptive-responsive", "type": 301 },
@@ -26,8 +32,11 @@
       { "source": "/codelabs", "destination": "/docs/codelabs", "type": 301 },
       { "source": "/cookbook", "destination": "/docs/cookbook", "type": 301 },
       { "source": "/cookbook/:rest*", "destination": "/docs/cookbook/:rest*", "type": 301 },
+      { "source": "/custom-deferred-components", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components#custom-implementations", "type": 301 },
       { "source": "/custom-fonts", "destination": "/docs/cookbook/design/fonts", "type": 301 },
       { "source": "/debugging", "destination": "/docs/testing/debugging", "type": 301 },
+      { "source": "/deferred-components", "destination": "/docs/perf/deferred-components", "type": 301 },
+      { "source": "/deferred-components-wiki", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components", "type": 301 },
       { "source": "/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/developing-packages", "destination": "/docs/development/packages-and-plugins/developing-packages", "type": 301 },
       { "source": "/devtools/:rest*", "destination": "/docs/development/tools/devtools/:rest*", "type": 301 },
@@ -79,6 +88,7 @@
       { "source": "/fastlane-cd", "destination": "/docs/deployment/cd#fastlane", "type": 301 },
       { "source": "/flutter-for-:platform*", "destination": "/docs/get-started/flutter-for/:platform*-devs", "type": 301 },
       { "source": "/formatting", "destination": "/docs/development/tools/formatting", "type": 301 },
+      { "source": "/fully-deferred-flutter", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components#fully-deferring-flutter-in-add-to-app", "type": 301 },
       { "source": "/gestures", "destination": "/docs/development/ui/advanced/gestures", "type": 301 },
       { "source": "/get-started", "destination": "/docs/get-started", "type": 301 },
       { "source": "/get-started/:rest*", "destination": "/docs/get-started/:rest*", "type": 301 },
@@ -93,6 +103,7 @@
       { "source": "/go/android-migration-summary", "destination": "https://docs.google.com/document/d/1wKspwf6LQu6uo32uQ9NcukfiKhLL4ButV9cwpjeb8QI", "type": 301 },
       { "source": "/go/android-splash-migration", "destination": "https://flutter.dev/docs/development/ui/advanced/splash-screen#migrating-from-manifest--activity-defined-custom-splash-screens", "type": 301 },
       { "source": "/go/android-plugin-migration", "destination": "https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration", "type": 301 },
+      { "source": "/go/android-plugin-migration.", "destination": "https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration", "type": 301 },
       { "source": "/go/android-project-migration", "destination": "https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects", "type": 301 },
       { "source": "/go/androidx-transition", "destination": "https://docs.google.com/document/d/1JnMxQinUeouuV5kcenoq03TsvLyn_xaHXIT_6c5b7nQ", "type": 301 },
       { "source": "/go/annotator-tree", "destination": "https://docs.google.com/document/d/1YtkdZSx1687Ipbff06qp3XglmJym3Wc9boY4I-bYs4A/edit", "type": 301 },
@@ -128,7 +139,9 @@
       { "source": "/go/deprecation-statustransitionwidget", "destination": "https://docs.google.com/document/d/1NdxSKSEKa-E9YDUAyONQVad1bAZdc8bqT4zGVjSBQPo/edit?usp=sharing&resourcekey=0-CkJogS7MIhfZeabrIAUPhQ", "type": 301 },
       { "source": "/go/deprecations-removed-after-1-22", "destination": "https://docs.google.com/spreadsheets/d/1kZOej-h4AiRW2Td3NUnVMSb8PYLB63mpj-oFYqb_4tc/edit?usp=sharing", "type": 301 },
       { "source": "/go/deprecations-removed-after-2-2", "destination": "https://docs.google.com/spreadsheets/d/18VuxojMGFKrFJCeilg3tErAtp23-_tp43XUioC_34To/edit?usp=sharing", "type": 301 },
+      { "source": "/go/deprecations-removed-after-2-5", "destination": "https://docs.google.com/spreadsheets/d/191-PZEOmlT7Xw6MDFFyf5HyneTaiCqI4OITtolbXD6c/edit?usp=sharing", "type": 301 },
       { "source": "/go/desktop-multi-window-support", "destination": "https://docs.google.com/document/d/11_4wntz_9IJTQOo_Qhp7QF4RfpIMTfVygtOTxQ4OGHY/edit", "type": 301 },
+      { "source": "/go/desktop-release-conductor", "destination": "https://docs.google.com/document/d/15AwPXNd5FvItAqM0wa2VK0tRrqtRTgM8vR5LQeT2Mag/edit?usp=sharing&resourcekey=0-yZ2FAN-wEKwKT-ymdisetA", "type": 301 },
       { "source": "/go/desktop-resize", "destination": "https://docs.google.com/document/d/1OTy-qCGdP7tYfrEKCNX9A24sgnx5vshfK6FupfniyxA", "type": 301 },
       { "source": "/go/desktop-resize-macos", "destination": "https://docs.google.com/document/d/1slGllp1Jhde7wkF6snqGhdrZwHV1VVmXeIF3f0t24JU/edit?usp=sharing", "type": 301 },
       { "source": "/go/developing-plugins", "destination": "/docs/development/packages-and-plugins/developing-packages#plugin", "type": 301 },
@@ -205,6 +218,7 @@
       { "source": "/go/overridable-text-actions", "destination": "https://docs.google.com/document/d/11vmEZTjB4_E4el1IjTo2VBI2d_fR7tjQWeCajsQc-q4/edit?usp=sharing", "type": 301 },
       { "source": "/go/performance-best-practices", "destination": "https://docs.google.com/document/d/16bd3HtkuvzAk0uizDGTT3aNtjI8Mfr0f6C3ZVrYYqvI", "type": 301 },
       { "source": "/go/platform-based-key-events", "destination": "https://docs.google.com/document/d/1FDuxxEh810XpY561SgeiyUR0gU2eVz5kRpCFI55ibec/edit", "type": 301 },
+      { "source": "/go/platform-channels-in-federated-plugins", "destination": "https://docs.google.com/document/d/1BSrDA_FjLU-3T0H774RocJ4IYyc0ytMl937rAimGJdg/edit?usp=sharing", "type": 301 },
       { "source": "/go/platform-interface-breaking-changes", "destination": "https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#heading=h.xabf9lffxrkb", "type": 301 },
       { "source": "/go/plugin-binding-review", "destination": "https://docs.google.com/document/d/1-9Si_ocFYh-Wa1qKV4PV2ocywKDYdiR_1yO3twPvrfM", "type": 301 },
       { "source": "/go/plugin-platforms", "destination": "/docs/development/packages-and-plugins/developing-packages#plugin-platforms", "type": 301 },
@@ -251,6 +265,7 @@
       { "source": "/go/text-selection-menu-modernization", "destination": "https://docs.google.com/document/d/1qSEvbgi3m-OvB_dUKch8LHOk-iyPFeLgCsXbK0bI2DA/edit", "type": 301 },
       { "source": "/go/text-selection-programatically", "destination": "https://docs.google.com/document/d/1NK4GJ0Wk5eJ3IUw_9oAtz1oYgZ-Sn-kAKHxTvsgr75o/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-selection-theme", "destination": "https://docs.google.com/document/d/1sCe7Y_lhREljtn6m0Uu_EycbS82zRvWnNtkfEwFX9W0", "type": 301 },
+      { "source": "/go/texttheme-m3", "destination": "https://docs.google.com/document/d/1y3K08vL9rMTsGmF_T65fXmWJbsPZohvaVB3T6JuqgjM/edit?resourcekey=0-Gnl-tX58L4yPdV3NgeXFBg", "type": 301 },
       { "source": "/go/tool-integration-test-support", "destination": "https://docs.google.com/document/d/1jMMZpRAiQC2XTUFnzFsBrWwMsf7KyMuCScYgrJQJOV0/edit?resourcekey=0-ne9HbH1hXCHcIglomNfwtw", "type": 301 },
       { "source": "/go/top-errors-analysis", "destination": "https://docs.google.com/document/d/1ZJ9t_uPeXqZnoDOIVes_Yu2BBxP42l99nSfHQPfswZw/edit?usp=sharing", "type": 301 },
       { "source": "/go/towards-improved-performance-tooling", "destination": "https://docs.google.com/document/d/1wSDNcG0ww2V6JX1EE8avilCwnOiRVy83zSCWt916O0o", "type": 301 },
@@ -281,7 +296,11 @@
       { "source": "/go/plugin-support-for-custom-embeddings", "destination": "https://docs.google.com/document/d/1AJTHdC20JhD3viR4JWTghagIztqL5jg_R9NFQmnwAMw/edit?usp=sharing&resourcekey=0-qAECjzHKB5tM47azrVnH1w", "type": 301 },
       { "source": "/go/text-editing-deltas", "destination": "https://docs.google.com/document/d/1PXNd_LwJudiUTnCM2AXRxbd98_p4BlFf6qFhEhv3wvs/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-editing-model", "destination": "https://docs.google.com/document/d/1lkpg4dfVZif9NJ_dDQ01QkwQC3OqzhUFahhjgv_rcbM/edit#", "type": 301 },
-
+      { "source": "/go/backdrop-filter-with-overlay-canvas", "destination": "https://docs.google.com/document/d/1t_offKOgkuVzvB3fqGTfcltovb-yxqV6tbuP1qIBqVI/edit?usp=sharing", "type": 301 },
+      { "source": "/go/os-adaptive-shortcut-activator", "destination": "https://docs.google.com/document/d/11NWj13MSDw1XQg4MpYIeqzcCFGuzQ_Cz7tYXW7fqzPY/edit?usp=sharing", "type": 301 },
+      { "source": "/go/android-startup-tracing", "destination": "https://docs.google.com/document/d/1I7jvRg3UmG7P84hdis-9A00fEr2Ntj-K7f_FbGLubGE/edit?usp=sharing", "type": 301 },
+      { "source": "/go/idle-gc-metrics", "destination": "https://docs.google.com/document/d/1QjLTDr2cTsmS3DGIWdw9WSgqBMKJkFXD7Q8acziGIIA/edit?usp=sharing", "type": 301 },
+      
       { "source": "/hot-reload", "destination": "/docs/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/docs/get-started/editor", "type": 301 },
       { "source": "/assets/images/docs/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/tools/android-studio/hot-reload.gif", "type": 301 },
@@ -344,5 +363,10 @@
         ]
       }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5000
+    }
   }
 }

@@ -6,9 +6,9 @@ description: 如何测试与用户交互的 widgets。
 tags: cookbook, 实用教程, 测试
 keywords: 点击测试,拖拽事件测试,文本输入测试
 prev:
-  title: Find widgets
-  title: 定位到目标 widgets
-  path: /docs/cookbook/testing/widget/finders
+  title: Handle scrolling
+  title: 处理滚动
+  path: /docs/cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/tap_drag/"?>
@@ -56,7 +56,7 @@ This recipe uses the following steps:
 ### 步骤
 
   1. Create a widget to test.
-     
+
      创建待测 Widget
 
   2. Enter text in the text field.
@@ -224,7 +224,7 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
   [Widget 测试介绍][Introduction to widget testing]
 
 * [Finding widgets in a widget test][]
-  
+
   [定位到目标 Widgets][Finding widgets in a widget test][
 
 {{site.alert.end}}

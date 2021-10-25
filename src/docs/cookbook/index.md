@@ -110,9 +110,7 @@ reference to help you build up an application.
 
 ### Integration
 - [集成测试介绍](/docs/cookbook/testing/integration/introduction)
-- [列表滚动](/docs/cookbook/testing/integration/scrolling)
 - [性能分析](/docs/cookbook/testing/integration/profiling)
-
 
 ### Unit
 - [单元测试介绍](/docs/cookbook/testing/unit/introduction)
@@ -122,6 +120,7 @@ reference to help you build up an application.
 ### Widget
 - [Widget 测试介绍](/docs/cookbook/testing/widget/introduction)
 - [定位到目标 widget](/docs/cookbook/testing/widget/finders)
+- [处理滚动](/docs/cookbook/testing/widget/scrolling)
 - [点击、拖拽事件和文本输入](/docs/cookbook/testing/widget/tap-drag)
 
 如果想看到更多的教程，可以参考我们的 [社区中文教程页面](/community/tutorials)。

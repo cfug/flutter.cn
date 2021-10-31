@@ -12,7 +12,7 @@ description: ThemeData 的 accentColor、accentColorBrightness、accentIconTheme
 The ThemeData [accentColor][], [accentColorBrightness][], [accentIconTheme][] and
 [accentTextTheme][] properties have been deprecated.
 
-主题信息 ThemeData 中的 [accentColor][],[accentColorBrightness][],[accentIconTheme][] 和
+主题信息 ThemeData 中的 [accentColor][]，[accentColorBrightness][]，[accentIconTheme][] 和
 [accentTextTheme][] 属性现已被弃用。 
 
 The [Material Design spec][] no longer specifies or uses an "accent"

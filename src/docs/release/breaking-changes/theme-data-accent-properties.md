@@ -72,7 +72,7 @@ The ThemeData accentColor, accentColorBrightness, accentIconTheme and
 accentTextTheme properties have been deprecated because the Material
 library no longer uses them.
 
-主题信息 ThemeData 中的 [accentColor][],[accentColorBrightness][],[accentIconTheme][] 和
+主题信息 ThemeData 中的 [accentColor][]、[accentColorBrightness][]、[accentIconTheme][] 和
 [accentTextTheme][] 属性现已被弃用，因为 Material 不再使用它们。
 
 ## Migration guide

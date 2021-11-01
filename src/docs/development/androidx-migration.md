@@ -202,7 +202,7 @@ Flutter 工具使用 Jetifier 将支持库中的 Flutter 插件自动迁移到 A
 
 ### 在迁移至 AndroidX 的过程中遇到了问题
 
-[Open an issue on GitHub]({{site.github}}/flutter/flutter/issues/new/choose)
+[Open an issue on GitHub]({{site.repo.flutter}}/issues/new/choose)
 and add `[androidx-migration]` to the title of the issue.
 
 [在 GitHub 上创建一个问题]({{site.github}}/flutter/flutter/issues/new/choose)

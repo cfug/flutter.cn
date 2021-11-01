@@ -64,27 +64,27 @@ To create a new Flutter project from the Flutter starter app template:
 
 使用 Futter 应用模板创建新的 Flutter 项目：
 
-1. In the IDE, click **Create New Project** from the **Welcome**
+ 1. In the IDE, click **New Project** from the **Welcome**
     window or **File > New > Project** from the main IDE window.
 
-   在 IDE 中，点击 **Welcome** 窗口，或者主窗口
-   **File > New > Project** 中的 **Create New Project**。
+    在 IDE 中，点击 **Welcome** 窗口，或者主窗口
+    **File > New > Project** 中的 **New Project**。
 
-1. Select **Flutter** in the menu, and click **Next**.
+ 1. Specify the **Flutter SDK path** and click **Next**.
 
-   在菜单中选择 **Flutter**，点击 **Next**。
+    在菜单中选择 **Flutter SDK path**，点击 **Next**。
 
-1. Enter your desired **Project name** and **Project location**.
+ 1. Enter your desired **Project name**, **Description** and **Project location**.
 
-   输入你的 **Project name** 和 **Project location**。
+    输入你的 **Project name**、**Description** 和 **Project location**。
 
-1. If you might publish this app, [set the company domain](#note).
+ 1. If you might publish this app, [set the company domain](#note).
 
-   如果打算发布此应用，需要 [设置公司域名](#note)。
+    如果打算发布此应用，需要 [设置公司域名](#note)。
 
-1. Click **Finish**.
+ 1. Click **Finish**.
 
-   点击 **Finish**。
+    点击 **Finish**。
 
 {{site.alert.secondary}}
 
@@ -435,7 +435,7 @@ build, but debug performance issues in a debug build.
 
 If you have additional tips we should share, [let us know][]!
 
-如果你有其他我们应该提供的代码提示建议，请 [告诉我们][]!
+如果你有其他我们应该提供的代码提示建议，请 [告诉我们][let us know]!
 
 ### Assists & quick fixes
 
@@ -780,8 +780,6 @@ When filing new issues, include the output of [`flutter doctor`][]。
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md
 [Flutter 插件 README]: {{site.repo.flutter}}-intellij/blob/master/README.md
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
-[“项目视图”]: {{site.android-dev}}/studio/projects/#ProjectView
-[let us know]: {{site.github}}/flutter/website/issues/new
-[告诉我们]: {{site.github}}/flutter/website/issues/new
+[let us know]: {{site.repo.this}}/issues/new
 [Running DevTools from Android Studio]: /docs/development/tools/devtools/android-studio
 [Timeline view]: /docs/development/tools/devtools/performance

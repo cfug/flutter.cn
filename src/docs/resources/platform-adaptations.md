@@ -759,11 +759,11 @@ Android 和 iOS 平台上，
 </div>
 
 
-[issue #8410]: {{site.github}}/flutter/flutter/issues/8410#issuecomment-468034023
+[issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
 [android.app.AlertDialog]: {{site.android-dev}}/reference/android/app/AlertDialog.html
 [`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
 [`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
-[default theme]: https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart
+[default theme]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart
 [Material/Cupertino adaptive widget problem definition]: http://bit.ly/flutter-adaptive-widget-problem
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html

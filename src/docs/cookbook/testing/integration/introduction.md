@@ -499,7 +499,9 @@ Will run the tests in the `chrome` browser in a window with dimensions 300 by 55
 
 [Download ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-[Download GeckoDriver]: https://github.com/mozilla/geckodriver/releases
+[Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
+[integration_test]: {{site.repo.flutter}}/tree/master/packages/integration_test
+[Integration testing]: /docs/testing/integration-tests
 [`SerializableFinders`]: {{site.api}}/flutter/flutter_driver/CommonFinders-class.html
 [`ValueKey`]: {{site.api}}/flutter/foundation/ValueKey-class.html

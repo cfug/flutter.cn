@@ -115,7 +115,7 @@ $ flutter pub upgrade
 
 To identify out-of-date package dependencies and get advice
 on how to update them, use the `outdated` command. For details, see
-the Dart [`pub outdated` documentation](https://dart.dev/tools/pub/cmd/pub-outdated).
+the Dart [`pub outdated` documentation]({{site.dart-site}}/tools/pub/cmd/pub-outdated).
 
 如果需要自动判断那些过时了的 package 依赖以及获取更新建议，
 现在你可以使用 `outdated` 命令。更多相关的信息，
@@ -140,7 +140,7 @@ we'd love to hear from you!
 除了订阅接收公告外我们很乐意听取您的意见！
 
 [Flutter SDK releases]: /docs/development/tools/sdk/releases
-[release channels]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
+[release channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [flutter-dev]: {{site.groups}}/forum/#!forum/flutter-dev
-[pubspec.yaml]: https://dart.dev/tools/pub/pubspec
+[pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec

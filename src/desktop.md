@@ -93,7 +93,7 @@ you must switch to the Flutter beta channel.
 您可以尝试 Flutter 桌面支持而无需切换到 Flutter 测试版构建渠道。
 但在下个稳定版本发布之前，这个快照不会有更新。
 
-[file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
+[file an issue]: {{site.repo.flutter}}/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
 
 ## Requirements
 
@@ -846,9 +846,16 @@ impact your distributable application.
 [macOS 的额外要求](#macos-specific-support)，了解 Entitlements、App Sandbox 和
 Hardened Runtime 是如何影响你打包的应用的。
 
-[distribute it through the macOS App Store]: https://developer.apple.com/macos/submit/
-[documentation on notarizing macOS Applications]: https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution
+[Build and release a macOS app][] provides a more detailed
+step-by-step walkthrough.
+
+[构建并发布一个 macOS 应用][Build and release a macOS app]
+对每个步骤进行了详细的说明。
+
+[distribute it through the macOS App Store]: {{site.apple-dev}}/macos/submit/
+[documentation on notarizing macOS Applications]:{{site.apple-dev}}/documentation/xcode/notarizing_macos_software_before_distribution
 [on distributing an application through the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
+[Build and release a macOS app]: /docs/deployment/macos
 
 ### Linux
 
@@ -1115,7 +1122,7 @@ see [Hardened Runtime][] on the Apple Developer site.
 
 有关这个话题的更多信息，参见 Apple Developer 网站上的 [Hardened Runtime][]。
 
-[Hardened Runtime]: https://developer.apple.com/documentation/security/hardened_runtime
+[Hardened Runtime]: {{site.apple-dev}}/documentation/security/hardened_runtime
 
 ## Plugin support
 
@@ -1232,7 +1239,7 @@ about endorsed plugins, see the following resources:
 [Federated Plugin proposal]: /go/federated-plugins
 [Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
 [How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
-[Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
+[Modern Flutter Plugin Development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a
 
 ## Samples and codelabs
 
@@ -1262,7 +1269,7 @@ Flutter Gallery [running web app][], [repo][flutter-gallery-repo]
   You can clone the project and run Gallery as a desktop app
   by following the instructions provided in the [README][].
 
-Flutter Gallery [线上运行的 Web 应用][flutter gallery cn]，[源代码仓库地址][flutter-gallery-repo]
+Flutter Gallery [线上运行的 Web 应用][running web app]，[源代码仓库地址][flutter-gallery-repo]
 <br> 一个托管在 GitHub 上案例项目，可以用来帮助开发人员评估和使用 Flutter。
   Gallery 的构成部分有：Material design widgets 的集合、
   behaviors 和用 Flutter 实现的 vignettes。
@@ -1290,11 +1297,9 @@ Flokk [官宣文章][gskinner-flokk-blogpost]，[源代码仓库地址][gskinner
 
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
-[running web app]: https://gallery.flutter.dev
-[flutter-gallery-repo]: {{site.github}}/flutter/gallery
-[README]: {{site.github}}/flutter/gallery#flutter-gallery
+[running web app]: {{site.gallery}}
+[flutter-gallery-repo]: {{site.repo.gallery}}
+[README]: {{site.repo.gallery}}#flutter-gallery
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
-[running web app]: https://flutter.github.io/gallery/#/
-[flutter gallery cn]: https://gallery.flutter.cn/#/
-[Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/index.html

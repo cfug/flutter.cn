@@ -193,7 +193,7 @@ see the [Sentry flutter example][] app.
 查看 [Sentry flutter example][] 示例应用，体验完整流程。
 
 
-[Sentry flutter example]: https://github.com/getsentry/sentry-dart/tree/main/flutter/example
+[Sentry flutter example]: {{site.github}}/getsentry/sentry-dart/tree/main/flutter/example
 [Create an account with Sentry]: https://sentry.io/signup/
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/

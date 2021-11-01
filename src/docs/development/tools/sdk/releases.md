@@ -73,7 +73,7 @@ please follow us on Weibo: [Flutter Community](https://weibo.com/u/6723427904)!
 每次版本发布我们也都会在微博上发布一条信息，欢迎关注
 [Flutter社区](https://weibo.com/u/6723427904) 微博账号！
 
-[Flutter Spring 2020 Update]: {{site.medium}}/flutter/flutter-spring-2020-update-f723d898d7af
+[Flutter Spring 2020 Update]: {{site.flutter-medium}}/flutter-spring-2020-update-f723d898d7af
 [Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles
 [GitHub repo]: {{site.repo.flutter}}

@@ -10,7 +10,7 @@ description: MouseTracker 不再依赖注释附件来执行安装退出检查，
 ## 概述
 
 Removed `MouseTracker`'s methods `attachAnnotation`,
-`detachAnnotation`, and q`isAnnotationAttached`.
+`detachAnnotation`, and `isAnnotationAttached`.
 
 `MouseTracker` 的方法 `attachAnnotation`、`detachAnnotation` 和 `isAnnotationAttached` 已被移除。
 

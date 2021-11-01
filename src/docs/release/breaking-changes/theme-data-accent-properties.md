@@ -12,7 +12,7 @@ description: ThemeData 的 accentColor、accentColorBrightness、accentIconTheme
 The ThemeData [accentColor][], [accentColorBrightness][], [accentIconTheme][] and
 [accentTextTheme][] properties have been deprecated.
 
-主题信息 ThemeData 中的 [accentColor][]，[accentColorBrightness][]，[accentIconTheme][] 和
+主题信息 ThemeData 中的 [accentColor][]、[accentColorBrightness][]、[accentIconTheme][] 和
 [accentTextTheme][] 属性现已被弃用。 
 
 The [Material Design spec][] no longer specifies or uses an "accent"
@@ -22,7 +22,7 @@ colors are derived from the overall theme's [color scheme][]. The
 `accentColor` and the [onSecondary color][] is used when a contrasting
 color is needed.
 
-[Material 设计说明][Material Design spec] 不再为 Material 组件指定或使用 `accent` 颜色。
+[Material 设计规范][Material Design spec] 不再为 Material 组件指定或使用「强调」色。
 组件的默认颜色来自整个主题的 [颜色方案][color scheme]。
 现在通常使用 `ColorScheme` 的 [secondary color][] 代替 `accentColor`，
 并且在需要对比色时使用 [onSecondary 属性][onSecondary color]。

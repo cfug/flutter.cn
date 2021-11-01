@@ -13,23 +13,23 @@ This page covers the following steps for getting started with web support:
 
 * Configure the `flutter` tool for web support.
 
-  配置 `flutter` 工具以支持 Web
+  配置 `flutter` 工具以支持 Web。
 
 * Create a new project with web support.
 
-  创建一个支持 web 的新项目
+  创建一个支持 web 的新项目。
 
 * Run a new project with web support.
 
-  在新工程中开启 Flutter Web
+  在新工程中开启 Flutter Web。
 
 * Build an app with web support.
 
-  创建一个支持 Web 运行的新应用
+  创建一个支持 Web 运行的新应用。
 
 * Add web support to an existing project.
 
-  对已有的应用添加 Web 支持
+  对已有的应用添加 Web 支持。
 
 ## Requirements
 
@@ -44,15 +44,13 @@ you need the following software:
 * Flutter SDK. See the
   [Flutter SDK][] installation instructions.
 
-  Flutter SDK，请查阅 [这个链接][Flutter SDK]
-  找到安装教程。
-  
+  Flutter SDK，请查阅 [这个链接][Flutter SDK] 找到安装教程。
+
 * [Chrome][]; debugging a web app requires
   the Chrome browser.
-  
-  [谷歌浏览器][Chrome-CN]，在调试
-  Web 应用时需要谷歌浏览器。
-  
+
+  [谷歌浏览器][Chrome]，在调试 Web 应用时需要谷歌浏览器。
+
 * Optional: An IDE that supports Flutter.
   You can install [Android Studio][], [IntelliJ IDEA][],
   or [Visual Studio Code][] and

@@ -981,7 +981,7 @@ example looks like this:
 
 应用于 [animate4][] 示例的 widget 树长这样：
 
-<img src='/assets/images/docs/'ui/AnimatedBuilder-WidgetTree.png''
+<img src="/assets/images/docs/ui/AnimatedBuilder-WidgetTree.png"
     alt="AnimatedBuilder widget tree" class="d-block mx-auto" width="160px">
 
 Starting from the bottom of the widget tree, the code for rendering

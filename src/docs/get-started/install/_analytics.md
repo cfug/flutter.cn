@@ -51,8 +51,8 @@
 
   [Google 的隐私权政策][Privacy Policy] 里详细描述了这些服务会如何控制这些数据。
 
-  [Google Terms of Service]: https://policies.google.cn/terms
-  [Privacy Policy]: https://policies.google.cn/privacy
-  [crash reports]: https://github.com/flutter/flutter/wiki/Flutter-CLI-crash-reporting
-  [`dart` tool]: https://dart.cn/tools/dart-tool
+  [Google Terms of Service]: https://policies.google.com/terms
+  [Privacy Policy]: https://policies.google.com/privacy
+  [crash reports]: {{site.repo.flutter}}/wiki/Flutter-CLI-crash-reporting
+  [`dart` tool]: {{site.dart-site}}/tools/dart-tool
 {{site.alert.end}}

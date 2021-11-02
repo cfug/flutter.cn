@@ -66,9 +66,10 @@ that are relevant to implicit animations.
 下列视频涵盖了所有与隐性动画相关的话题。
 
 {% comment %} Animation Basics with Implicit Animations {% endcomment %}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Custom Implicit Animations with Tween Animation Builder {% endcomment %}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6KiPEqzJIKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/6KiPEqzJIKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## The Boring Show
 
@@ -80,7 +81,8 @@ using implicit animations in a news aggregator app.
 下面这一集涉及在一个新闻聚合器应用中使用隐式动画。
 
 {% comment %} Implicitly animating the Hacker News app {% endcomment %}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8ehlWchLVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/8ehlWchLVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Widget of the Week videos
 
@@ -98,13 +100,13 @@ implicitly animated widgets:
 下列「每周 Widget」视频涉及了隐含动画 widget 有：
 
 {% comment %} Animated Opacity {% endcomment %}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QZAvjqOqiLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839306372&bvid=BV1W54y1U7ma&cid=225852916&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated Padding {% endcomment %}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PY2m0fhGNz4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839226956&bvid=BV1354y1U7gU&cid=223412850&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated Positioned {% endcomment %}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hC3s2YdtWt8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839111170&bvid=BV1T54y1D7hk&cid=220295763&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated switcher {% endcomment %}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2W7POjFb88g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=544022725&bvid=BV1dv4y1o7BG&cid=295191533&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 [`AnimatedContainer` sample]: /docs/cookbook/animation/animated-container

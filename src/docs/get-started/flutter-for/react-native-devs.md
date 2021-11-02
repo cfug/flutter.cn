@@ -3466,7 +3466,7 @@ Flutter widget 和通用的 widget 属性。
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`ScrollController`]: {{site.api}}/flutter/widgets/ScrollController-class.html
-[`shared_preferences`]: {{site.github}}/flutter/plugins/tree/master/packages/shared_preferences
+[`shared_preferences`]: {{site.repo.plugins}}/tree/master/packages/shared_preferences
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html

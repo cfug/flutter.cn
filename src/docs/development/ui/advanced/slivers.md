@@ -37,7 +37,7 @@ in Flutter, see the following resources:
     video that gives an overview of the
     `SliverAppBar` widget.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/R9C5KMJKluE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=586378022&bvid=BV19z4y1S7K7&cid=288732722&page=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </dd>
 
 <dt markdown="1"> **[SliverList and SliverGrid][]**
@@ -46,7 +46,7 @@ in Flutter, see the following resources:
     video that gives an overview of the `SliverList`
     and `SliverGrid` widgets.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ORiTTaVY6mM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=38437526&bvid=BV1Pt411v78y&cid=67565151&page=12" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </dd>
 
 <dt markdown="1"> **[Slivers explained - Making dynamic layouts][]**
@@ -55,7 +55,7 @@ in Flutter, see the following resources:
     where Ian Hickson, Flutter's Tech Lead, and Filip Hracek
     discuss the power of slivers.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Mz3kHQxBjGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=77325252&bvid=BV1EJ41197NB&cid=132272803&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </dd>
 </dl>
 
@@ -68,11 +68,11 @@ Here some links to relevant API docs:
 * [`SliverList`][]
 
 
-[SliverAppBar]: https://youtu.be/R9C5KMJKluE
+[SliverAppBar]: {{site.youtube-site}}/watch?v=R9C5KMJKluE
 [`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
 [`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
-[SliverList and SliverGrid]: https://youtu.be/ORiTTaVY6mM
+[SliverList and SliverGrid]: {{site.youtube-site}}/watch?v=ORiTTaVY6mM
 [`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
 [Slivers, DeMystified]: {{site.flutter-medium}}/slivers-demystified-6ff68ab0296f
-[Slivers explained - Making dynamic layouts]: https://www.youtube.com/watch?v=Mz3kHQxBjGg
-[The Boring Show]: https://www.youtube.com/playlist?list=PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK
+[Slivers explained - Making dynamic layouts]: {{site.youtube-site}}/watch?v=Mz3kHQxBjGg
+[The Boring Show]: {{site.youtube-site}}/playlist?list=PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK

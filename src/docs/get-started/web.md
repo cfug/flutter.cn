@@ -13,23 +13,23 @@ This page covers the following steps for getting started with web support:
 
 * Configure the `flutter` tool for web support.
 
-  配置 `flutter` 工具以支持 Web
+  配置 `flutter` 工具以支持 Web。
 
 * Create a new project with web support.
 
-  创建一个支持 web 的新项目
+  创建一个支持 web 的新项目。
 
 * Run a new project with web support.
 
-  在新工程中开启 Flutter Web
+  在新工程中开启 Flutter Web。
 
 * Build an app with web support.
 
-  创建一个支持 Web 运行的新应用
+  创建一个支持 Web 运行的新应用。
 
 * Add web support to an existing project.
 
-  对已有的应用添加 Web 支持
+  对已有的应用添加 Web 支持。
 
 ## Requirements
 
@@ -44,15 +44,13 @@ you need the following software:
 * Flutter SDK. See the
   [Flutter SDK][] installation instructions.
 
-  Flutter SDK，请查阅 [这个链接][Flutter SDK]
-  找到安装教程。
-  
+  Flutter SDK，请查阅 [这个链接][Flutter SDK] 找到安装教程。
+
 * [Chrome][]; debugging a web app requires
   the Chrome browser.
-  
-  [谷歌浏览器][Chrome-CN]，在调试
-  Web 应用时需要谷歌浏览器。
-  
+
+  [谷歌浏览器][Chrome]，在调试 Web 应用时需要谷歌浏览器。
+
 * Optional: An IDE that supports Flutter.
   You can install [Android Studio][], [IntelliJ IDEA][],
   or [Visual Studio Code][] and
@@ -67,6 +65,10 @@ you need the following software:
   并安装 [Flutter 和 Dart 插件的 IDE 插件][install the Flutter and Dart plugins]
   以获取编程语言支持和在 IDE 里进行编译、调试、运行、重新加载等功能。
   了解更多详细信息，请查看文档：[编辑器设定][setting up an editor]。
+
+[Android Studio]: https://developer.android.com/studio
+[IntelliJ IDEA]: https://www.jetbrains.com/idea/
+[Visual Studio Code]: https://code.visualstudio.com/
 
 For more information, see the [web FAQ][].
 
@@ -271,15 +273,10 @@ $ flutter create .
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [desktop support]: /desktop
 [development compiler]: {{site.dart-site}}/tools/dartdevc
-[file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [install the Flutter and Dart plugins]: /docs/get-started/editor
 [setting up an editor]: /docs/get-started/editor
 [web FAQ]: /docs/development/platform-integration/web
-[Chrome]: https://www.google.com/chrome/
-[Chrome-CN]: https://www.google.cn/chrome/
-[Flutter SDK]: https://flutter.dev/docs/get-started/install
-[Android Studio]: https://developer.android.com/studio
-[Android Studio CN]: https://developer.android.google.cn/studio
-[IntelliJ IDEA]: https://www.jetbrains.com/idea/
-[Visual Studio Code]: https://code.visualstudio.com/
+[Chrome]: https://www.google.cn/chrome/
+[Flutter SDK]: /docs/get-started/install
 [Web renderers]: /docs/development/tools/web-renderers

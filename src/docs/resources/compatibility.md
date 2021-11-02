@@ -93,8 +93,7 @@ migration guide.
 [记录在 Dart wiki 中]: {{site.github}}/dart-lang/sdk/blob/master/docs/process/breaking-changes.md
 
 [flutter/tests repository]: {{site.github}}/flutter/tests
-[flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
-
+[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [guides for migrating code]: /docs/release/breaking-changes
 
 [迁移代码指南]: /docs/release/breaking-changes

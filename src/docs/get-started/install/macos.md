@@ -85,6 +85,6 @@ Set up your preferred editor.
 编辑器设置。
 
 [Apple M1 processor]: https://www.apple.com/mac/m1
-[these supplementary notes]: https://github.com/flutter/flutter/wiki/Developing-with-Flutter-on-Apple-Silicon
-[Xcode]: https://developer.apple.com/xcode/
+[these supplementary notes]: {{site.repo.flutter}}/wiki/Developing-with-Flutter-on-Apple-Silicon
+[Xcode]: {{site.apple-dev}}/xcode/
 [install `git` separately]: https://git-scm.com/download/mac

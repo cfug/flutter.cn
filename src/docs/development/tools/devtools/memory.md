@@ -85,7 +85,7 @@ catches issues like this see [Analysis tab](#analysis-tab).
 例如，为缩略图大小的图片加载大型资源是低效的，
 可以通过加载较小的资源或调整 cacheWidth/cacheHeight，
 减小图片的解码大小，降低 ImageCache 的内存使用，以此提高内存使用率。
-该分析捕捉到问题可以在 [Analysis 选项](#analysis-tab) 查看。
+你可以在 [Analysis 选项](#analysis-tab) 中查看分析捕捉到的问题。
 
 ## Allocations and tracking
 
@@ -121,6 +121,7 @@ See [Allocation tab](#allocation-tab).
 可以在分配内存时找到代码中的确切位置。请参阅 [Allocation 选项](#allocation-tab)。
 
 {{site.alert.note}}
+
   **Use [profile mode][] when running your app to analyze performance.**
   Memory usage is not indicative of release performance unless your
   application is run in profile mode. In general, memory usage is
@@ -444,7 +445,7 @@ Flutter 有一个用于 Android 和 iOS 的嵌入层。更多信息，
 **Timeline** The timestamps of all collected memory statistics
 and events at a particular point in time (timestamp).
 
-**Timeline（时间线）**  在特定时间点采集的所有内存统计数据和事件的时间戳（时间戳）。
+**Timeline（时间线）** 在特定时间点采集的所有内存统计数据和事件的时间戳（时间戳）。
 
 **Raster Cache** Size of the Flutter engine's raster cache layer(s)
 or picture(s) while performing the final rendering after compositing.
@@ -520,7 +521,7 @@ will display the values for each event:
 ![Aggregate Events](/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
 
 如果此时间戳处收集了多个事件，则会显示一个深色三角形，包含事件集合的列表。
-集合事件收集了最接近特定时间戳（tick）的所有事件，并将事件显示到 x 轴最近的位置。
+集合事件收集了最接近特定时间戳 (tick) 的所有事件，并将事件显示到 x 轴最近的位置。
 展开将显示每个事件的更多信息：
 
 If only one event is collected, a lighter magenta triangle color is

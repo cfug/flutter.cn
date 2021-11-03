@@ -26,7 +26,7 @@ managed by the Dart VM (virtual machine).
 DevTools Memory page lets you peek at how an isolate is using
 memory at a given moment. 
 
-DevTools 中的内存分析页面可以让你观察在给定的时段内 isolate 是如何使用内存。
+你可以在 DevTools 中的内存分析页面观察在给定的时段内 isolate 在怎样使用内存。
 
 Memory profiling in DevTools consists of 3 main functions:
 
@@ -99,8 +99,8 @@ class is allocated. This information is available under the "Allocations"
 tab of Memory profiler and his a fairly fast with less overhead than using
 a snapshot.
 
-监控所有你直接与 DevTools 或应用程序交互时涉及到的内存分配，在你感兴趣的时间周期内，
-可以了解分配了多少对象、多少字节，或者跟踪代码中特定类的所有分配位置。
+在你感兴趣的时间周期内，监控所有直接与 DevTools 或应用程序交互时涉及到的内存分配。
+你可以了解分配了多少对象、多少字节，或者跟踪代码中特定类的所有分配位置。
 此信息可在内存分析页面的 **Allocations（分配）** 选项下查看，
 与使用快照相比，它的速度相当快，开销也更小。
 
@@ -116,7 +116,7 @@ isolate the exact location in your code when/where memory is being allocated.
 See [Allocation tab](#allocation-tab).
 
 监控分配和重置累计数据，有助于在点击重置和监视跟踪之间的短时间内分析累计数据（分配的对象数或字节数）。
-如果你怀疑你的应用程序发生了内存泄漏或存在与内存分配相关的其他错误，累计数据可以帮助你了解内存分配的速率。
+如果你怀疑应用程序发生了内存泄漏或存在与内存分配相关的其他错误，累计数据可以帮助你了解内存分配的速率。
 此外，跟踪几个特定类的能力，可能会减慢应用程序的运行。VM 在调用类的构造函数（分配）时记录堆栈跟踪。
 可以在分配内存时找到代码中的确切位置。请参阅 [Allocation 选项](#allocation-tab)。
 
@@ -134,7 +134,7 @@ See [Allocation tab](#allocation-tab).
   that same work might have to be computed at runtime,
   requiring more information.
 
-  对你正在运行的应用程序进行性能分析时，请使用 **[profile 模式][profile mode]**。
+  对正在运行的应用程序进行性能分析时，请使用 **[profile 模式][profile mode]**。
   除非你的应用程序以 profile 模式运行，否则不能看做 release 版本的内存性能表现。
   一般来说，在 debug、release 和 profile 模式之间，相对而言，内存的使用是相当准确的。
   因为 profile 模式创建了 service isolate 来配置应用程序，可能会显示更高的绝对内存使用率。
@@ -231,7 +231,7 @@ information collected and an analysis performed.</p>
                  number of instances and byte size of all instances.
                  In addition, the deltas are the change in the
                  accumulators since the last "Reset" button pressed.</p>
-<p markdown="1"> 收集当前所有处于存活状态的类的状态实例数和所有实例的字节大小。
+<p markdown="1"> 收集当前所有处于活动状态的类的状态实例数和所有实例的字节大小。
                  此外，变化值是自上次按下 **Reset(重置)** 按钮以来累计数据的变化。</p>
 </dd>
 <dt markdown="1">
@@ -314,7 +314,7 @@ help to understand how your application's memory usage is performing
 within the Dart/Flutter framework (heap).
 
 有时可能很难将 Flutter 应用程序代码中的操作与内存时间线图中绘制的内存数据或者事件关联起来。
-可以将自定义的事件发送到 **内存分析** 时间线中，来了解你的代码中发生了什么。
+你可以将自定义的事件发送到 **内存分析** 时间线中，来了解代码中发生了什么。
 这会帮助你了解应用程序在 Dart/Flutter 框架中的内存使用情况（堆）。
 
 Posting your own custom event(s) are done using the dart:developer package
@@ -328,7 +328,7 @@ postEvent method. In particular, the event name must be prefixed with
 
 To use add the following import to your code:
 
-使用时需要在你的代码中添加下方的导入信息：
+使用时你需要在代码中添加下方的导入信息：
 
 ```
 import 'dart:developer' as developer;
@@ -648,7 +648,7 @@ and fonts.</p>
     graphics—even though the code you've written is in Java or Kotlin.</p>
 <p markdown="1">「本地堆」使用情况对应于 ADB 中的 「Native Heap（本地堆）」部分。
 这是从 C 或 C++ 代码分配的对象的内存。即使你的应用程序中没有使用 C++，
-你也可以看到本地内存的使用，因为 Android 框架使用本地内存来处理各种任务。
+也可以看到本地内存的使用，因为 Android 框架使用本地内存来处理各种任务。
 比如，用来处理图像资源和其他图形，即使你编写的代码是 Java 或 Kotlin。</p>
 </dd>
 <dt markdown="1">
@@ -718,7 +718,7 @@ dropdowns that control how memory data is displayed.
 <dd>
 <p markdown="1">Resume the memory overview chart so that it is live, displaying the
     current time and the latest memory statistics.</p>
-<p markdown="1">恢复内存概览图表，使其处于存活状态，显示当前时间和最新内存统计数据。</p>
+<p markdown="1">恢复内存概览图表，使其处于活动状态，显示当前时间和最新内存统计数据。</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**Clear**</p>
@@ -841,7 +841,7 @@ active memory objects, the last snapshot, memory in a high-level
 view as a tree map. (TBD details).
 
 **Treemap（树形图）** 如果 Treemap 开关打开，
-快照将以树形图的形式在高级视图中显示当前存活的对象、最后一个快照和内存。（详情待定）
+快照将以树形图的形式在高级视图中显示当前活动的对象、最后一个快照和内存。（详情待定）
 
 **Group By** Dropdown to select how data is grouped, which can either be by
 instance or by class name.
@@ -880,7 +880,7 @@ of the table tree.
 
 快照是特定时间点上所有内存对象的完整视图。
 在树中导航到类及其实例（调用构造函数创建的实例）。
-如果实例存在，扩展类将显示所有存活实例（对象）。
+如果实例存在，扩展类将显示所有活动实例（对象）。
 点击一个类的实例，将在树表的右侧显示内存的检查信息。
 
 ![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_navigate_inspect.png)
@@ -894,7 +894,7 @@ of the table tree.
 Clicking the **Snapshot** button shows the current state of the heap with regard
 to all active classes and their instances. 
 
-点击 **Snapshot（快照）** 按钮显示堆的所有存活的类及其实例的当前状态。
+点击 **Snapshot（快照）** 按钮显示堆的所有活动的类及其实例的当前状态。
 
 ![Screenshot of the Snapshot classes](/assets/images/docs/tools/devtools/memory_snapshot_tree.png)
 
@@ -999,7 +999,7 @@ Expanding a class displays the active instances for that class.
 Clicking on an particular instance displays the type and value of
 the fields for that instance.
 
-展开类将显示该类的存活的实例。点击某个特定实例将显示该实例字段的类型和值。
+展开类将显示该类的活动的实例。点击某个特定实例将显示该实例字段的类型和值。
 
 ![Screenshot of the inspecting an instance](/assets/images/docs/tools/devtools/memory_inspector.png)
 
@@ -1160,7 +1160,7 @@ allocated with deltas (accumulators since last reset).
 </dt>
 <dd markdown="1">
 <p markdown="1">Total number of active instances for the class.</p>
-<p markdown="1">类存活实例总数。</p>
+<p markdown="1">类活动实例总数。</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**Delta Instances**</p>
@@ -1251,7 +1251,7 @@ accumulators to zero.
 </dt>
 <dd markdown="1">
 <p markdown="1">Active classes in the heap.</p>
-<p markdown="1">堆中的存活的类。</p>
+<p markdown="1">堆中的活动的类。</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**Instances column**</p>
@@ -1259,7 +1259,7 @@ accumulators to zero.
 </dt>
 <dd>
 <p markdown="1">Total active objects (instances) for all classes in the heap</p>
-<p markdown="1">堆中所有类的存活对象（实例）总数</p>
+<p markdown="1">堆中所有类的活动对象（实例）总数</p>
 </dd>
 <dt markdown="1">
 <p markdown="1">**Delta column**</p>
@@ -1313,7 +1313,7 @@ update the count for the instances being tracked e.g., 118 in the
 below figure. Expanding the instances tracked will display all the
 instances and timestamp when each instance was created e.g.,
 
-与你的应用程序交互，然后当你想要查看实例分配时，再次按下「Track（跟踪）」按钮。
+在你与应用程序交互，想要查看实例分配时，再次按下「Track（跟踪）」按钮。
 这将更新正在跟踪的实例的数量，例如下图中的 118。
 展开跟踪的实例将显示所有实例以及创建每个实例的时间，例如：
 

@@ -31,7 +31,6 @@ color is needed.
 
 ## 上下文
 
-
 This was a small part of the [Material Theme System Updates][] project.
 
 这是 [Material 主题系统升级][Material Theme System Updates] 项目的一部分。

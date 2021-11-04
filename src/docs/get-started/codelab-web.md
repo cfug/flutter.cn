@@ -1161,9 +1161,6 @@ the `AnimatedProgressIndicatorState` whenever
 `AnimatedProgressIndicatorState`。
 </li>
 
-[`didUpdateWidget`][] 方法会在 `AnimatedProgressIndicator` 变化时更新
-`AnimatedProgressIndicatorState`。
-
 <li markdown="1">Use the new `AnimatedProgressIndicator`.<br>
 Then, replace the `LinearProgressIndicator` in the `Form`
 with this new `AnimatedProgressIndicator`:
@@ -1457,7 +1454,7 @@ Dart DevTools, or Flutter animations, see the following:
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: /docs/get-started/test-drive
 [Dart DevTools]: /docs/development/tools/devtools/overview
-[DartPad]: https://dartpad.dev
+[DartPad]: {{site.dartpad}}
 [DevTools command line]: /docs/development/tools/devtools/cli
 [DevTools documentation]: /docs/development/tools/devtools
 [DevTools installed]: /docs/development/tools/devtools/overview#how-do-i-install-devtools
@@ -1469,7 +1466,7 @@ Dart DevTools, or Flutter animations, see the following:
 [Flutter SDK]: /docs/get-started/install
 [Implicit animations]: /docs/codelabs/implicit-animations
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
-[Material Design]: https://material.io/design/introduction/#
+[Material Design]: {{site.material}}/design/introduction/#
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: /docs/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/master/web

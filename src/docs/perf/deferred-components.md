@@ -102,22 +102,26 @@ dependencies {
 ```
 </li>
 
-<li markdown="1"><p markdown="1">If using the Google Play Store as the
+<li markdown="1">
+<p markdown="1">If using the Google Play Store as the
     distribution model for dynamic features,
     the app must support `SplitCompat` and provide an instance
     of a `PlayStoreDeferredComponentManager`.
     Both of these tasks can be accomplished by setting
     the `android:name` property on the application in
     `android/app/src/main/AndroidManifest.xml` to
-    `io.flutter.app.FlutterPlayStoreSplitApplication`:</p><p markdown="1">如果使用 Google Play 商店作为动态功能的分发模型，
+    `io.flutter.embedding.android.FlutterPlayStoreSplitApplication`:
+</p>
+<p markdown="1">如果使用 Google Play 商店作为动态功能的分发模型，
     应用程序必须支持 `SplitCompat` 并手动提供 `PlayStoreDeferredComponentManager` 的实例。
     这两个任务都可以通过设置 `android/app/src/main/AndroidManifest.xml` 中的 `android:name` 为
-    `io.flatter.app.flatterPlayStoreSplitApplication` 应用属性来完成：</p>
+    `io.flutter.embedding.android.FlutterPlayStoreSplitApplication` 应用属性来完成：
+</p>
 
 ```xml
 <manifest ...
   <application
-     android:name="io.flutter.app.FlutterPlayStoreSplitApplication"
+     android:name="io.flutter.embedding.android.FlutterPlayStoreSplitApplication"
         ...
   </application>
 </manifest>
@@ -783,11 +787,11 @@ Play store's delivery feature.
 [3.1]: #step-3.1
 [Android docs]: {{site.android-dev}}/guide/playcore/feature-delivery#declare_splitcompatapplication_in_the_manifest
 [`bundletool`]: {{site.android-dev}}/studio/command-line/bundletool
-[Deferred Components]: {{site.github}}/flutter/flutter/wiki/Deferred-Components
+[Deferred Components]: {{site.repo.flutter}}/wiki/Deferred-Components
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
-[Flutter Gallery’s lib/deferred_widget.dart]: {{site.github}}/flutter/gallery/blob/master/lib/deferred_widget.dart
-[Flutter wiki]: {{site.github}}/flutter/flutter/wiki
+[Flutter Gallery’s lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/master/lib/deferred_widget.dart
+[Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library
 [release or profile mode]: /docs/testing/build-modes

@@ -153,8 +153,8 @@ The Flutter framework emits timeline events as it works to build frames, draw
 scenes, and track other activity such as HTTP traffic. These events show up here
 in the Timeline. You can also send your own Timeline events via the
 dart:developer
-[Timeline](https://api.flutter.dev/flutter/dart-developer/Timeline-class.html)
-and [TimelineTask](https://api.flutter.dev/flutter/dart-developer/TimelineTask-class.html)
+[Timeline]({{site.api}}/flutter/dart-developer/Timeline-class.html)
+and [TimelineTask]({{site.api}}/flutter/dart-developer/TimelineTask-class.html)
 APIs.
 
 ![Screenshot of timeline events for a frame](/assets/images/docs/tools/devtools/performance-timeline-events-chart.png){:width="100%"}
@@ -190,7 +190,7 @@ DevTools 支持导入和导出时间线快照。单击 export 按钮 (帧渲染�
 要导入时间线快照，可以从任何页面拖放快照到 DevTools。
 提示 : DevTools 仅支持导入 DevTools 导出的源文件。
 
-[generate timeline events]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference
+[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [GPU graph]: /docs/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance
 [Import and export]: #import-and-export

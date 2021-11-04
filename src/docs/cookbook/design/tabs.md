@@ -35,7 +35,8 @@ Flutter 自带的 [Material 库][material library]
   [Building a Cupertino app with Flutter][] codelab.
   
   创建一个使用 tabs 布局、Cupertino 风格的 iOS 应用，
-  请参见这个 codelab: [使用 Flutter 构建 iOS 风格的应用][]。
+  请参见这个 codelab:
+  [使用 Flutter 构建 iOS 风格的应用][Building a Cupertino app with Flutter]。
   
 {{site.alert.end}}
 
@@ -218,8 +219,7 @@ class TabBarDemo extends StatelessWidget {
 
 
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
-[Building a Cupertino app with Flutter]: https://codelabs.developers.google.com/codelabs/flutter-cupertino
-[使用 Flutter 构建 iOS 风格的应用]: (https://codelabs.flutter.cn/codelabs/flutter-cupertino-cn/index.html)
+[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
 [`DefaultTabController`]: {{site.api}}/flutter/material/DefaultTabController-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html
 [`Tab`]: {{site.api}}/flutter/material/Tab-class.html

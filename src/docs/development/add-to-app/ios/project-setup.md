@@ -159,6 +159,7 @@ There are two ways to embed Flutter in your existing application.
    用 Xcode 手动集成到你的应用中，并更新编译设置。
 
 {{site.alert.note}}
+
   Your app does not run on a simulator in Release mode because Flutter does not
   yet support outputting x86/x86_64 ahead-of-time (AOT) binaries for your Dart
   code. You can run in Debug mode on a simulator or a real device,
@@ -227,9 +228,11 @@ to add a `Podfile` to your project.
 
 
 <ol markdown="1">
-<li markdown="1"><t>Add the following lines to your `Podfile`:</t> <t>在 `Podfile` 中添加下面代码：</t>
+<li markdown="1">
 
 Add the following lines to your `Podfile`:
+
+在 `Podfile` 中添加下面代码：
 
 <!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
@@ -239,9 +242,13 @@ load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 </li>
 
-<li markdown="1"><t>For each [Podfile target][] that needs to
-embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.</t> <t>每个需要集成 Flutter 的 [Podfile target][]，
-   执行 `install_all_flutter_pods(flutter_application_path)`：</t>
+<li markdown="1">
+
+For each [Podfile target][] that needs to
+embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
+
+每个需要集成 Flutter 的 [Podfile target][]，
+执行 `install_all_flutter_pods(flutter_application_path)`：
 
 <!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
@@ -299,6 +306,7 @@ Debug 或 Release 的 [编译产物][build modes of Flutter]。
 
   `Flutter.framework` 是 Flutter engine 的框架，
   `App.framework` 是你的 Dart 代码的编译产物。
+
 {{site.alert.end}}
 
 Open `MyApp.xcworkspace` in Xcode.
@@ -384,6 +392,7 @@ some/path/MyApp/
 
   在 Xcode 11 中，你可以添加 `--xcframework --no-universal`
   参数来生成 [XCFrameworks][]，而不是使用通用的 framework。
+
 {{site.alert.end}}
 
 Embed and link the generated frameworks into your existing
@@ -667,9 +676,9 @@ You can now [add a Flutter screen][] to your existing application.
 [Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
 [increases your app size]: /docs/resources/faq#how-big-is-the-flutter-engine
 [macOS system requirements for Flutter]: /docs/get-started/install/macos#system-requirements
-[On iOS 14 and higher]: https://developer.apple.com/news/?id=0oi77447
+[On iOS 14 and higher]: {{site.apple-dev}}/news/?id=0oi77447
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
-[static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
+[static or dynamic frameworks]: {{site.so}}/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [VS Code]: /docs/development/tools/vs-code
-[XCFrameworks]: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes
+[XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes
 [Xcode installed]: /docs/get-started/install/macos#install-xcode

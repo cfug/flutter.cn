@@ -161,7 +161,7 @@ See [Creating responsive apps][].
 
 ### 我能使用 Flutter 插件么？
 
-Yes, several plugins have web support. 
+Yes, several plugins have web support.
 Find an updated list of plugins on [pub.dev][] using the web filter.
 You can also add web support to existing plugins or
 [write your own plugins][] for the web.
@@ -195,7 +195,7 @@ in your app, see the [documentation for conditional imports][]
 on [dart.dev]({{site.dart-site}}).
 
 部分插件需要在特定平台导入库或者文件，尤其是当使用浏览器无法访问的文件系统时。
-若要在你的应用里使用这些插件，请参阅 Dart 文档：
+若要在你的应用里使用这些插件，请参阅 [dart.cn]({{site.dart-site}})：
 [选择性的导入][documentation for conditional imports]。
 
 ### How do I embed a Flutter web app in a web page?
@@ -280,7 +280,7 @@ See [Preparing a web app for release][]
 
 ### `Platform.is` API 现在可用吗？
 
-Not currently. 
+Not currently.
 
 目前还不行。
 
@@ -294,29 +294,27 @@ Flutter engineers routinely read and respond on Discord.
 请在 [Discord][] 平台的 **#web** 这个讨论板跟大家讨论，
 Flutter 团队的工程师会经常阅读和互动。
 
-[Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
+[Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
 [building a web app with Flutter]: /docs/get-started/web
-[Chrome DevTools]: https://developers.google.com/web/tools/chrome-devtools
-[Analyzing performance]: https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance
-[Chrome DevTools]: https://developers.google.cn/web/tools/chrome-devtools
+[Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
 [Creating responsive apps]: /docs/development/ui/layout/adaptive-responsive
 [Debugging]: /docs/development/tools/devtools/debugger
 [Discord]: https://discord.gg/N7Yshp4
-[file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: /docs/development/tools/devtools/overview
 [Flutter's production quality support for the web]: /web
-[Generating event timeline]: https://developers.google.cn/web/tools/chrome-devtools/evaluate-performance/performance-reference
+[Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
-[Issue 32248]: {{site.github}}/flutter/flutter/issues/32248
+[Issue 32248]: {{site.repo.flutter}}/issues/32248
 [Logging]: /docs/development/tools/devtools/logging
 [Preparing a web app for release]: /docs/deployment/web
 [Running Flutter inspector]: /docs/development/tools/devtools/inspector
-[Upgrading from package:flutter_web to the Flutter SDK]: {{site.github}}/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
+[Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /docs/testing#widget-tests
 [pub.dev]: {{site.pub}}/flutter/packages?platform=web
 [Web support for Flutter]: /web
-[write your own plugins]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
+[write your own plugins]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [run your web apps in any supported browser]: /docs/get-started/web#create-and-run
 [Integration testing]: /docs/testing/integration-tests#running-in-a-browser
 [internationalizing a Flutter mobile app]: /docs/resources/faq#how-do-i-do-internationalization-i18n-localization-l10n-and-accessibility-a11y-in-flutter

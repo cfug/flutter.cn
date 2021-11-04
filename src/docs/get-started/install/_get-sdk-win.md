@@ -48,6 +48,8 @@ You are now ready to run Flutter commands in the Flutter Console.
 
 现在你可以在控制台当中使用 Flutter 的命令了。
 
+[Flutter repo]: {{site.repo.flutter}}
+
 ### Update your path
 
 ### 更新 path 环境变量
@@ -146,6 +148,7 @@ verify that you’ve set everything up correctly.
 
 {% include_relative _analytics.md %}
 
-[Flutter repo]: {{site.github}}/flutter/flutter
+
+[Flutter repo]: {{site.repo.flutter}}
 [SDK releases]: /docs/development/tools/sdk/releases
 [Set up an editor]: /docs/get-started/editor?tab=androidstudio

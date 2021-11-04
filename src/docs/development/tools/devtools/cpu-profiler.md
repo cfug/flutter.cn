@@ -38,4 +38,4 @@ CPU 探测视图能够测量并记录你的 Dart 或 Flutter 应用的片段。
 
 {% include_relative _profiler.md %}
 
-[analyze performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/
+[analyze performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/

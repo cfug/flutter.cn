@@ -418,5 +418,5 @@ see the following articles written by community members:
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
-[video demo]: https://youtu.be/A6Sx0lBP8PI
+[video demo]: {{site.youtube-site}}/watch?v=A6Sx0lBP8PI
 [file a bug report]: https://goo.gle/flutter_web_issue

@@ -286,7 +286,7 @@ Android splash screen in the same positions on screen.
 {{site.alert.end}}
 
 Previously, Android Flutter apps would either set
-`io.flutter.embedding.android.SplashScreenDrawable` in thier application
+`io.flutter.embedding.android.SplashScreenDrawable` in their application
 manifest, or implement [`provideSplashScreen`][] within their Flutter Activity.
 This would be shown momentarily in between the time after the Android launch
 screen is shown and when Flutter has drawn the first frame. This is no longer
@@ -304,6 +304,6 @@ instead remove usage of these APIs.
 [Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
-[`provideSplashScreen`]: https://api.flutter.dev/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
-[must use an Xcode storyboard]: https://developer.apple.com/news/?id=03042020b
-[Human Interface Guidelines]: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/
+[`provideSplashScreen`]: {{site.api}}/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
+[must use an Xcode storyboard]: {{site.apple-dev}}/news/?id=03042020b
+[Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/

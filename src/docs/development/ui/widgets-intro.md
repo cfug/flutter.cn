@@ -77,8 +77,6 @@ which means the text "Hello, world" ends up centered on screen.
 The text direction needs to be specified in this instance;
 when the `MaterialApp` widget is used,
 this is taken care of for you, as demonstrated later.
-A `SafeArea` widget is also used to properly pad the text
-so it appears below the display on the top of the screen.
 
 `runApp()` 函数会持有传入的 [`Widget`][]，
 并且使它成为 widget 树中的根节点。

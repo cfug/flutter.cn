@@ -27,15 +27,14 @@ Flutter 使用了灵活的系统，它允许你调用相关平台的 API，
 
 {{site.alert.note}}
 
-  The information in this page is valid for most
-  plugins, except for any web plugin implemented
-  as a [federated plugin][]. Federated plugins
-  don't use platform channels.
-  
-  本页面的内容适用于大多数插件，
-  有个例外是我们称之为 [联合 (federated) 插件][federated plugin]，
-  一些 Web 插件的实现是通过联合插件的方式进行的，
-  这一类插件不使用平台通道。
+  The information in this page is valid for most platforms,
+  but platform-specific code for the web generally uses
+  [JS interoperability][] or the [`dart:html` library][] instead.
+
+  本页面的内容适用于大多数平台，
+  但 Web 插件的实现一般都是通过
+  [JS 交互][JS interoperability] 或者
+  [`dart:html` 库][`dart:html` library] 实现的。
 
 {{site.alert.end}}
 
@@ -1109,13 +1108,14 @@ DispatchQueue.main.async {
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
 [`cloud_firestore`]: {{site.github}}/FirebaseExtended/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
+[`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
 [defaultTargetPlatform]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [developing packages]: /docs/development/packages-and-plugins/developing-packages
 [plugins]: /docs/development/packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
-[`/examples/platform_channel/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
-[`/examples/platform_channel_swift/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel_swift
-[federated plugin]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
+[`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel
+[`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel_swift
+[JS interoperability]: {{site.dart-site}}/web/js-interop
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html

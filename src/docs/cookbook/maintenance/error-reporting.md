@@ -171,9 +171,9 @@ you can use the API to report errors to Sentry:
 await Sentry.captureException(exception, stackTrace: stackTrace);
 ```
 
-The complete API is available on [pub.dev][].
+For more information, see the [Sentry API][] docs on pub.dev.
 
-完整的 API 可在 [pub.dev][] 上阅读。
+更多相关信息，请参阅 pub.dev 上的 [Sentry API][] 文档。
 
 ## Learn more
 
@@ -193,10 +193,10 @@ see the [Sentry flutter example][] app.
 查看 [Sentry flutter example][] 示例应用，体验完整流程。
 
 
-[Sentry flutter example]: https://github.com/getsentry/sentry-dart/tree/main/flutter/example
+[Sentry flutter example]: {{site.github}}/getsentry/sentry-dart/tree/main/flutter/example
 [Create an account with Sentry]: https://sentry.io/signup/
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/
 [`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
-[pub.dev]: {{site.pub-pkg}}/documentation/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
+[Sentry API]: {{site.pub-api}}/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
 [Sentry's site]: https://docs.sentry.io/platforms/flutter/

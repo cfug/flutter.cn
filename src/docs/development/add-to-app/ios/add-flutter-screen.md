@@ -639,7 +639,7 @@ in any way you'd like, before presenting the Flutter UI using a
 [Navigation and routing]: /docs/development/ui/navigation
 [Navigator]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`NavigatorState`]: {{site.api}}/flutter/widgets/NavigatorState-class.html
-[`openURL`]: https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623112-application
+[`openURL`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623112-application
 [platform channels]: /docs/development/platform-integration/platform-channels
 [`popRoute()`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)popRoute
 [`pushRoute()`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)pushRoute:
@@ -648,4 +648,4 @@ in any way you'd like, before presenting the Flutter UI using a
 [`SystemNavigator.pop()`]: {{site.api}}/flutter/services/SystemNavigator/pop.html
 [tree-shaken]: https://en.wikipedia.org/wiki/Tree_shaking
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[`window.defaultRouteName`]: {{site.api}}/flutter/dart-ui/Window/defaultRouteName.html
+[`window.defaultRouteName`]: {{site.api}}/flutter/dart-ui/SingletonFlutterWindow/defaultRouteName.html

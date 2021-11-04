@@ -101,7 +101,7 @@ you want to add padding, margins, borders, or background color,
 to name some of its capabilities.
 
 图上大部分应该和你预想的一样，但你可能会疑惑 containers（图上粉色显示的）是什么。
-[Container][] 是一个 widget，允许你自定义其子 widget。
+[`Container`][] 是一个 widget，允许你自定义其子 widget。
 举几个例子，如果要添加 padding、margin、边框或背景颜色，
 你就可以用上 `Container` 了。
 
@@ -1022,7 +1022,7 @@ You can change the device's background by placing the
 entire layout into a `Container` and changing its background
 color or image.
 
-许多布局都可以随意的用 [Container][]，它可以将使用了 padding 或者
+许多布局都可以随意的用 [`Container`][]，它可以将使用了 padding 或者
 增加了 borders/margins 的 widget 分开。
 你可以通过将整个布局放到一个 `Container` 中，
 并且改变它的背景色或者图片，来改变设备的背景。
@@ -1720,21 +1720,19 @@ explain `Stateless` and `Stateful` widgets.
 解释了 Stateless 和 Stateful 的 widget。
 
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55832147&cid=97601562&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-[Flutter in Focus](https://www.youtube.com/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+[Flutter in Focus playlist]({{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
 
 Each episode of the
-[Widget of the Week series](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget of the Week series]({{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 focuses on a widget. Several of them includes layout widgets.
 
-[每周 widget 系列](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG) 的每一集都会关注一个 widget。其中会包含布局 widget。
+[每周 Widget 系列](https://www.bilibili.com/video/av55795672)
+的每一集都会介绍一个 widget。其中也包括一些布局的 widget。
 
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55795672&cid=97539385&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter Widget of the Week playlist](https://www.youtube.com/watch?v=yI-8QHpGIP4&index=5&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Flutter Widget of the Week playlist]({{site.youtube-site}}/watch?v=yI-8QHpGIP4&index=5&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 ## Other resources
 
@@ -1808,7 +1806,7 @@ The following resources might help when writing layout code.
 [Dealing with Box Constraints in Flutter]: /docs/development/ui/layout/box-constraints
 [Elevation]: {{site.material}}/design/environment/elevation.html
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
-[Flutter in Focus]: https://www.youtube.com/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus]: {{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [`GridView`]: {{api}}/widgets/GridView-class.html
 [`GridTile`]: {{api}}/material/GridTile-class.html
 [HTML/CSS Analogs in Flutter]: /docs/get-started/flutter-for/web-devs
@@ -1839,5 +1837,5 @@ The following resources might help when writing layout code.
 [Debugging layout issues visually]: /docs/development/tools/devtools/inspector#debugging-layout-issues-visually
 [Understanding constraints]: /docs/development/ui/layout/constraints
 [Using the Flutter inspector]: /docs/development/tools/devtools/inspector
-[Widget of the Week series]: https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
+[Widget of the Week series]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

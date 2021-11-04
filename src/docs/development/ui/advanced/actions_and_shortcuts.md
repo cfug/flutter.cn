@@ -84,10 +84,8 @@ for this. For example, here's the implementation of Flutter's simple
 [`CallbackShortcuts`][] widget (available on the dev branch) that takes a map of
 activators and executes callbacks for them:
 
-<!-- This should be skipped for analysis because it includes
-     ShortcutActivator, which isn't available on stable.
-     Once it is available on stable, the skip can be removed. --> 
-<!--skip-->
+
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (CallbackShortcuts)"?>
 ```dart
 class CallbackShortcuts extends StatelessWidget {
   const CallbackShortcuts({
@@ -200,8 +198,7 @@ you could make a `LoggingShortcutManager`:
 class LoggingShortcutManager extends ShortcutManager {
   @override
   KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event) {
-    final KeyEventResult result =
-        super.handleKeypress(context, event);
+    final KeyEventResult result = super.handleKeypress(context, event);
     if (result == KeyEventResult.handled) {
       print('Handled shortcut $event in $context');
     }
@@ -620,7 +617,7 @@ void main() => runApp(const MyApp());
 [`Action`]: {{site.api}}/flutter/widgets/Action-class.html
 [`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
 [`CallbackAction`]: {{site.api}}/flutter/widgets/CallbackAction-class.html
-[`CallbackShortcuts`]: http://master-api.flutter.dev/flutter/widgets/CallbackShortcuts-class.html
+[`CallbackShortcuts`]: {{site.master-api}}/flutter/widgets/CallbackShortcuts-class.html
 [`Intent`]: {{site.api}}/flutter/widgets/Intent-class.html
 [`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
 [Using Shortcuts Diagram]: /assets/images/docs/using_shortcuts.png

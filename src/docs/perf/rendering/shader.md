@@ -1,6 +1,6 @@
 ---
 title: Reduce shader compilation jank on mobile
-title: 在移动设备上减少着色器编译过程
+title: 在移动设备上减少着色器编译卡顿
 short-title: Shader jank
 short-title: 着色器卡顿
 description: What is shader jank and how to minimize it.
@@ -18,7 +18,7 @@ significant improvement.
 
 如果在你的手机应用中发现有些动画出现了卡顿，
 但仅仅会在第一次运行的时候会有这种情况，
-你可以通过 Skia 的着色器记录语言进行预热，
+那么你可以通过 Skia 的着色器语言进行着色器预热，
 带来颇见成效的改善。
 
 ![Side-by-side screenshots of janky mobile app next to non-janky app](/assets/images/docs/perf/render/shader-jank.gif)
@@ -31,8 +31,8 @@ If an app has janky animations during the first run,
 and later becomes smooth for the same animation,
 then it's very likely due to shader compilation jank.
 
-如果有应用存在首次运行的时候动画会卡顿，
-但在这之后都变得很流畅的现象，
+如果应用中一些动画在首次运行时出现卡顿，
+但同样的动画在之后变得流畅，
 那么这非常可能是由于着色器编译导致的卡顿。
 
 More technically, a shader is a piece of code that runs on
@@ -45,7 +45,7 @@ Therefore, a compilation could cause tens of frames to be missed,
 and drop the fps from 60 to 6. This is _compilation jank_.
 After the compilation is complete, the animation should be smooth.
 
-具体来说就是，着色器是运行在 GPU（图形处理单元）的一段代码。
+严格来说，着色器是运行在 GPU（图形处理单元）的一段代码。
 当首次使用着色器时，它需要在设备上进行编译。
 这个编译过程可能会消耗数百毫秒的时间，而要达到 60 fps 的流畅度，
 我们必须要在 16 毫秒以内绘制完一帧。
@@ -64,14 +64,14 @@ the following screenshot for an example timeline tracing.
 
 ## What do we mean by "first run"?
 
-## 如何定义“首次运行”？
+## 如何定义「首次运行」？
 
 On Android, "first run" means that the user might see
 jank the first time opening the app after a fresh
 installation. Subsequent runs should be fine.
 
 在 Android 上来说，
-”首次运行“ 意味着用户可能在新安装应用后，
+「首次运行」 意味着用户可能在新安装应用后，
 第一次打开应用的时候看到了卡顿。
 而之后运行都很正常。
 
@@ -80,7 +80,7 @@ jank when an animation first occurs every time
 the user opens the app from scratch.
 
 在 iOS 上来说，
-“首次运行”意味着用户可能在每次打开应用后，
+「首次运行」意味着用户可能在每次打开应用后，
 在动画首次加载时都会出现卡顿。
 
 ## How to use SkSL warmup
@@ -95,7 +95,7 @@ when an end-user first opens the app, thereby reducing the compilation
 jank in later animations. Use the following instructions to collect
 and package the SkSL shaders:
 
-在 1.20 发布的时候，Flutter 提供为应用开发者了一个命令行工具以收集
+在 1.20 发布的时候，Flutter 为应用开发者提供了一个命令行工具以收集
 终端用户在 SkSL（Skia 着色器语言）进行格式化处理中需要用到的着色器。
 SkSL 着色器可以被打包进应用，并提前进行预热（预编译），
 这样当终端用户第一次打开应用时，就能够减少动画的编译掉帧了。
@@ -196,10 +196,10 @@ those tests into a CI (continuous integration) system so the
 SkSLs are generated and tested automatically over the lifetime of an app.
 
 使用这样的 [集成测试][integration tests]，无论是代码发生改变，或者 Flutter 更新了，
-你都可以轻松获得可靠的 SkSLs。
-这些测试也被用于验证开启 SkSL 预热前后的性能变化上。
+你都可以轻松获得可靠的着色器缓存。
+这些测试也被用于验证开启着色器预热前后的性能变化上。
 更好的做法是，你可以把这些测试放进 CI（持续集成）系统上，
-这样就能在每次应用发布前自动生成并测试 SkSLs 了。
+这样就能在每次应用发布前自动生成并测试着色器缓存了。
 
 {{site.alert.note}}
 
@@ -207,7 +207,7 @@ SkSLs are generated and tested automatically over the lifetime of an app.
   tests. See the [Integration testing](/docs/testing/integration-tests/) page
   for details.
 
-  集成测试（integration_test）包，现在已经成为编写集成测试的首推包。
+  集成测试（integration_test）package，现在已经成为编写集成测试首推的 package。
   请在 [集成测试](/docs/testing/integration-tests/) 页面上查看详情。
 
 {{site.alert.end}}
@@ -219,10 +219,10 @@ For more details, see the [`flutter_gallery_sksl_warmup__transition_perf`][]
 and [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`][] tasks.
 
 就拿原始版本的 [Flutter Gallery][] 举例。
-我们让 CI 系统在每次 Flutter commit 后都生成 SkSLs，
+我们让 CI 系统在每次 Flutter commit 后都生成着色器缓存，
 并在 `transitions_perf_test.dart`][] 中验证性能。
 更多详细信息请查看 [Flutter Gallery sksl 预热过渡性能验证][`flutter_gallery_sksl_warmup__transition_perf`]，
-以及 [Flutter Gallery sksl 预热过渡在 iOS_32上的性能验证][`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]。
+以及 [Flutter Gallery sksl 预热过渡在 iOS_32 上的性能验证][`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]。
 
 The worst frame rasterization time is a nice metric from
 such integration tests to indicate the severity of shader
@@ -236,8 +236,8 @@ difference as illustrated in the beginning of this article.
 在这种这种集成测试中，
 最差的帧光栅化时间是一个很好的指标来衡量
 着色器编译卡顿的严重性。 
-例如，上述步骤减少了 Flutter gallery 应用的着色器编译
-jank 并减少它在 Moto G4 手机上的最坏的帧光栅化时间，从 ~90 ms 减少到 ~40 ms。 
+例如，上述步骤减少了 Flutter gallery 应用的着色器编译卡顿，
+并减少了它在 Moto G4 手机上的最差的帧光栅化时间，从 ~90 ms 减少到 ~40 ms。
 在 iPhone 4s 上，它从 ~300 ms 减少到 ~80 ms。 
 这种视觉差异如同本文开头所示一样。
 
@@ -299,7 +299,7 @@ jank 并减少它在 Moto G4 手机上的最坏的帧光栅化时间，从 ~90 m
     由于 Flutter 团队的实验室设备数量有限，
     我们目前没有足够的数据来支持跨设备有效性。 
     我们希望您向我们提供更多数据，以了解它如何
-    在大范围的生效&mdash;
+    在大范围的生效&mdash;&mdash;
     [`FrameTiming`][] 可用于计算 release 模式下的最差帧的光栅化时间； 
     最坏的帧光栅化时间是衡量着色器编译卡顿严重程度的一个很好的指标。
 
@@ -320,17 +320,17 @@ jank 并减少它在 Moto G4 手机上的最坏的帧光栅化时间，从 ~90 m
    along these lines if this is something that interests you. To get started, please
    see our [contribution guidelines].
 
-   **为什么不能创建一个“超级着色器”并只编译一次？**<br><br>
+   **为什么不能创建一个「超级着色器」并只编译一次？**<br><br>
    有人建议创建一个超大的着色器
    实现了 Skia 的所有功能，并在优化的同时使用该着色器
    定制正在编译的着色器。<br><br>
-   这类似于[海豚模拟器使用的解决方案][a solution used by the Dolphin Emulator]。<br><br>
+   这类似于 [海豚模拟器使用的解决方案][a solution used by the Dolphin Emulator]。<br><br>
    在实践中，我们相信为 Flutter（更具体地来说，是为 Skia）这样做将是不切实际的。
    这样的着色器会非常大，本质上在 GPU 上重新实现所有 Skia。
    这本身需要很长时间来编译，从而引入更多的卡顿；
    即使在编译时，它也不一定足够快以避免卡顿；
    它还可能会引入保真度问题（例如闪烁）
-   着色器和“超级着色器”之间因为优化后的精确渲染可能存在差异。<br><br>
+   着色器和「超级着色器」之间因为优化后的精确渲染可能存在差异。<br><br>
    Flutter 和 Skia 是开源的，如果这是你感兴趣的东西的话，
    我们希望看到沿着这些思路的概念被验证。
    要开始，请请参阅我们的 [贡献指南][contribution guidelines]。

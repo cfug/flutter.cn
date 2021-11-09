@@ -63,6 +63,7 @@ Flutter 中国社区的活跃壮大离不开每一位为社区贡献的人，在
 1. 感谢前 GDG 组织者，现郑州玩码科技负责人 @inferjay 帮助维护 flutter-io.cn / dartpad.cn 等域名和基建资源，感谢为谷歌活动构建 AI 体验馆报名系统的千跃优意 (Cheerue) 创始人大树，帮助维护 flutter.cn / dart.cn / material-io.cn 等域名和基建资源 (2019 至今)；
 1. 感谢 OpenWrite 团队开发出多平台文章同步系统 (2019)；
 1. 感谢上海交通大学 Linux 用户组的 Alex Chi (@skyzh) 组织并修复 SJTUG Flutter 镜像 (2020)。
+1. 感谢 [七牛云](https://sensors.qiniu.com/t/n9Q) 为中国镜像提供支持和赞助 (2021)。
 
 #### 特别感谢的社区名单
 1. 北京、上海、广州、深圳 GDG 社区；

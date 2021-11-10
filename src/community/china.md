@@ -118,13 +118,14 @@ Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其
 
 如下列表为目前在国内提供镜像的社区以及其镜像配置，
 由于镜像的实现方式有所不同，可能会导致数据的滞后等问题。
-我们制作了一个 [镜像可用性监控页面](https://mirrors.flutter-io.cn) 供参考。
+我们制作了一个 [镜像可用性监控页面](https://stats.uptimerobot.com/JZK3ZTql79) 供参考。
 
 ### Flutter 社区
 
 社区主镜像，采用多种方式同步 Flutter 开发者资源（推荐）。
 有任何镜像相关的问题，请与我们
-[反馈镜像问题](https://github.com/cfug/flutter.cn/issues)。
+[反馈镜像问题](https://github.com/cfug/flutter.cn/issues)，
+中国镜像存储由 [七牛云](https://sensors.qiniu.com/t/n9Q) 提供服务。
 
 ```terminal
 $ export PUB_HOSTED_URL=https://pub.flutter-io.cn

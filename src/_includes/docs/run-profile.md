@@ -24,7 +24,7 @@ build modes. For more details, see [Flutter's build modes][].
 比如热重载功能的启用，因此你可能要面临较差质量的动画效果。
 当你准备分析应用性能或要打包发布的时候，你可能需要 Flutter
 的 profile 或者 release 构建，相关文档，请查阅文档：
-[Flutter 的构建模式选择](/docs/testing/build-modes)。
+[Flutter 的构建模式选择]({{site.url}}/testing/build-modes)。
 
 {{site.alert.important}}
   
@@ -35,5 +35,5 @@ build modes. For more details, see [Flutter's build modes][].
   
 {{site.alert.end}}
 
-[Flutter's build modes]: /docs/testing/build-modes
+[Flutter's build modes]: {{site.url}}/testing/build-modes
 [Measuring your app's size]:  /docs/perf/app-size

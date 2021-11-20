@@ -125,11 +125,11 @@ you need the following software:
   如重构、允许、调试和重载桌面应用。详情请查看 [配置一个编辑器][setting up an editor]。
 
 [Android Studio]: {{site.android-dev}}/studio/install
-[Flutter SDK]: /docs/get-started/install
-[install the Flutter and Dart plugins]: /docs/get-started/editor
+[Flutter SDK]: {{site.url}}/get-started/install
+[install the Flutter and Dart plugins]: {{site.url}}/get-started/editor
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
-[setting up an editor]: /docs/get-started/editor
-[Visual Studio Code]: /docs/development/tools/vs-code
+[setting up an editor]: {{site.url}}/get-started/editor
+[Visual Studio Code]: {{site.url}}/development/tools/vs-code
 
 ### Additional Windows requirements
 
@@ -391,7 +391,7 @@ either in the IDE or from the command line.
 一旦配置好了桌面支持的环境，
 你可以通过 IDE 或命令行创建和运行桌面程序。
 
-[creating a new Flutter project]: /docs/get-started/test-drive
+[creating a new Flutter project]: {{site.url}}/get-started/test-drive
 
 #### Using an IDE
 
@@ -414,7 +414,7 @@ and run your application to see it launch on the desktop.
 **macOS (desktop)** 或 **linux (desktop)** 
 然后运行您的应用，就会看到应用在桌面启动。
 
-[web support]: /docs/get-started/web
+[web support]: {{site.url}}/get-started/web
 
 #### From the command line
 
@@ -855,7 +855,7 @@ step-by-step walkthrough.
 [distribute it through the macOS App Store]: {{site.apple-dev}}/macos/submit/
 [documentation on notarizing macOS Applications]:{{site.apple-dev}}/documentation/xcode/notarizing_macos_software_before_distribution
 [on distributing an application through the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
-[Build and release a macOS app]: /docs/deployment/macos
+[Build and release a macOS app]: {{site.url}}/deployment/macos
 
 ### Linux
 
@@ -921,7 +921,7 @@ on other ways to distribute a Linux desktop app.
 
 这些工具将不断进行完善，欢迎您持续关注 Linux 桌面应用的其他方式的更新信息。
 
-[Build and release a Linux application to the Snap Store]: /docs/deployment/linux
+[Build and release a Linux application to the Snap Store]: {{site.url}}/deployment/linux
 
 ## Add desktop support to an existing Flutter app
 
@@ -1172,7 +1172,7 @@ provide an interface to platform-specific services.)
 [`path_provider`]: {{site.pub}}/packages/path_provider
 [`shared_preferences`]: {{site.pub}}/packages/shared_preferences
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
-[using packages]: /docs/development/packages-and-plugins/using-packages
+[using packages]: {{site.url}}/development/packages-and-plugins/using-packages
 [windows packages]: {{site.pub}}/flutter/packages?platform=windows
 
 ### Writing a plugin
@@ -1235,9 +1235,9 @@ about endorsed plugins, see the following resources:
 
   [联合插件提议][Federated Plugin proposal]
 
-[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
+[Developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
 [Federated Plugin proposal]: /go/federated-plugins
-[Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
+[Federated plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#federated-plugins
 [How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a
 

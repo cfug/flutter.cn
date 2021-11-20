@@ -9,7 +9,7 @@ toc: true
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot7-release/announcing-1-7.png){:width="95%"}
 
-如果你已经安装，并使用默认稳定构建渠道 (stable channel) 的 Flutter，要升级到 1.7 版本，只需要运行 `flutter upgrade` 即可。同时，你可以在 [这个文档里](/docs/get-started/install) 查看如何新安装 Flutter。
+如果你已经安装，并使用默认稳定构建渠道 (stable channel) 的 Flutter，要升级到 1.7 版本，只需要运行 `flutter upgrade` 即可。同时，你可以在 [这个文档里]({{site.url}}/get-started/install) 查看如何新安装 Flutter。
 
 ## 支持 AndroidX
 
@@ -17,13 +17,13 @@ toc: true
 
 当创建 Flutter 项目的时候，你可以通过添加 `--androidx` 来确保生成的项目文件支持 AndroidX，
 更多关于将项目迁移到 AndroidX 的相关信息，
-请访问 [官方文档](/docs/development/androidx-migration#how-do-i-migrate-my-existing-app-plugin-or-host-editable-module-project-to-androidx) 上的说明。
+请访问 [官方文档]({{site.url}}/development/androidx-migration#how-do-i-migrate-my-existing-app-plugin-or-host-editable-module-project-to-androidx) 上的说明。
 我们也在积极努力为使用了 AndroidX 和 Android 混合库的应用带去 AndroidX 或 Jetifier 的支持，
 也会将其作为 add-to-app 的中的一项来支持，接下来的文章中会为大家带来更多相关的内容。
 
 ## 支持 Android App Bundles 和 64 位的 Android 应用
 
-从 2019 年 8 月 1 日开始，为了 target 到 Android Pie 版本，开发者们在 Google Play 上发布的应用 [必须支持 64 位架构](https://developer.android.google.cn/distribute/best-practices/develop/64-bit)。Flutter 一直都支持生成 64 位的 Android 应用，在 1.7 版本里，我们加入了对 [Android App Bundles](https://developer.android.google.cn/guide/app-bundle) 的支持，开发者们可以在一次提交里同时 target 到 64 位和 32 位。可通过阅读 [这篇文档](/docs/deployment/android) 了解到如何分别生成 32 位和 64 位到应用等更多内容。
+从 2019 年 8 月 1 日开始，为了 target 到 Android Pie 版本，开发者们在 Google Play 上发布的应用 [必须支持 64 位架构](https://developer.android.google.cn/distribute/best-practices/develop/64-bit)。Flutter 一直都支持生成 64 位的 Android 应用，在 1.7 版本里，我们加入了对 [Android App Bundles](https://developer.android.google.cn/guide/app-bundle) 的支持，开发者们可以在一次提交里同时 target 到 64 位和 32 位。可通过阅读 [这篇文档]({{site.url}}/deployment/android) 了解到如何分别生成 32 位和 64 位到应用等更多内容。
 
 ## 新一批的 widget 和框架的增强功能
 
@@ -37,9 +37,9 @@ RangeSlider widget 支持连续或者分散的效果
 
 [更新之后](https://github.com/flutter/flutter/pull/31275) 的 [SnackBar](https://github.com/flutter/flutter/pull/31275) 支持了最新的 Material 规范，文档里增加了许多 [样例代码](https://github.com/flutter/flutter/pull/34679) 。
 
-[Cupertino](/docs/development/ui/widgets/cupertino) 是用来构建精美的 iOS 体验的 widgets 库，我们对其进行了大量的更新。特别提出的是，我们提高了 [CupertinoPicker](https://github.com/flutter/flutter/pull/31464) 和  [CupertinoDateTimePicker](https://github.com/flutter/flutter/pull/31464) widget 的保真度，并增加了对非英语语言本地化的支持。
+[Cupertino]({{site.url}}/development/ui/widgets/cupertino) 是用来构建精美的 iOS 体验的 widgets 库，我们对其进行了大量的更新。特别提出的是，我们提高了 [CupertinoPicker](https://github.com/flutter/flutter/pull/31464) 和  [CupertinoDateTimePicker](https://github.com/flutter/flutter/pull/31464) widget 的保真度，并增加了对非英语语言本地化的支持。
 
-我们提升了 iOS 上的 [文本选择和编辑体验](/docs/resources/platform-adaptations#text-editing)。此外，我们新增了一个 [示例](https://github.com/flutter/samples/tree/master/platform_design)，关于如何使用同一份代码库，调整不同平台的操作体验和适配。
+我们提升了 iOS 上的 [文本选择和编辑体验]({{site.url}}/resources/platform-adaptations#text-editing)。此外，我们新增了一个 [示例](https://github.com/flutter/samples/tree/master/platform_design)，关于如何使用同一份代码库，调整不同平台的操作体验和适配。
 
 文本渲染有了很大的提升，支持了丰富的 [排版样式](https://api.flutter.dev/flutter/painting/TextStyle/fontFeatures.html)：包括数字表格式对齐、旧式风格数字 (tabular and old-style numbers)、斜线零 (slashed zeros)、样式集 (stylistic sets)，如这个示例应用截图所示：
 

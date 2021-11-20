@@ -17,12 +17,12 @@ Flutter website available at
 
 {% comment %}
 If you’d like to install Flutter using an [installation
-bundle](/docs/development/tools/sdk/releases),
+bundle]({{site.url}}/development/tools/sdk/releases),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
 {% endcomment %}
 
-如果你需要下载 [Flutter SDK 的独立打包文件](/docs/development/tools/sdk/releases)，
+如果你需要下载 [Flutter SDK 的独立打包文件]({{site.url}}/development/tools/sdk/releases)，
 你可以将下载链接前缀替换为你信任的镜像链接。
 
 * 原始链接:<br>
@@ -86,13 +86,13 @@ $ flutter doctor
 
 {% comment %}
 After these steps, you should be able to continue
-[setting up Flutter](/docs/get-started/editor) normally.
+[setting up Flutter]({{site.url}}/get-started/editor) normally.
 From here on, packages fetched by `flutter pub get` are
 downloaded from `flutter-io.cn` in any shell where `PUB_HOSTED_URL`
 and `FLUTTER_STORAGE_BASE_URL` are set.
 {% endcomment %}
 
-如上步骤设定之后，你可以继续进行 Flutter 安装的下一步：[编辑工具设定](/docs/get-started/editor)，
+如上步骤设定之后，你可以继续进行 Flutter 安装的下一步：[编辑工具设定]({{site.url}}/get-started/editor)，
 在这两个环境变量（`PUB_HOSTED_URL` 和 `FLUTTER_STORAGE_BASE_URL`）设定过后，
 未来通过命令 `flutter pub get` 获取 packages 的时候，网络请求将会通过
 `flutter-io.cn` 提供的镜像进行。

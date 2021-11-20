@@ -8,11 +8,11 @@ tags: cookbook, 实用教程, 测试
 keywords: 集成测试
 prev:
   title: Take a picture using the camera
-  path: /docs/cookbook/plugins/picture-using-camera
+  path: {{site.url}}/cookbook/plugins/picture-using-camera
 next:
   title: Handle scrolling
   title: 列表滚动
-  path: /docs/cookbook/testing/integration/scrolling
+  path: {{site.url}}/cookbook/testing/integration/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>

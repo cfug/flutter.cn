@@ -6,11 +6,11 @@ description: 如何实现一个网格列表。
 prev:
   title: Create a horizontal list
   title: 创建一个水平滑动的列表
-  path: /docs/cookbook/lists/horizontal-list
+  path: {{site.url}}/cookbook/lists/horizontal-list
 next:
   title: Create lists with different types of items
   title: 创建拥有不同列表项的列表
-  path: /docs/cookbook/lists/mixed-list
+  path: {{site.url}}/cookbook/lists/mixed-list
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

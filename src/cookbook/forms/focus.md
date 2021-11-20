@@ -8,11 +8,11 @@ keywords: Flutter输入框
 prev:
   title: Retrieve the value of a text field
   title: 获取文本框的输入值
-  path: /docs/cookbook/forms/retrieve-input
+  path: {{site.url}}/cookbook/forms/retrieve-input
 next:
   title: Add Material touch ripples
   title: 添加点按涟漪效果 (Material Design)
-  path: /docs/cookbook/gestures/ripples
+  path: {{site.url}}/cookbook/gestures/ripples
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

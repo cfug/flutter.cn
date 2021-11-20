@@ -8,11 +8,11 @@ keywords: KV,SharedPreferences
 prev:
   title: Read and write files
   title: 文件读写
-  path: /docs/cookbook/persistence/reading-writing-files
+  path: {{site.url}}/cookbook/persistence/reading-writing-files
 next:
   title: Play and pause a video
   title: 视频的播放和暂停
-  path: /docs/cookbook/plugins/play-video
+  path: {{site.url}}/cookbook/plugins/play-video
 ---
 
 <?code-excerpt path-base="cookbook/persistence/key_value/"?>

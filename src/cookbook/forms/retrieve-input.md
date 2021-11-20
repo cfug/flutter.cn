@@ -6,11 +6,11 @@ description: 如何获取文本框输入的文字
 prev:
   title: Create an expandable FAB
   title: 创建一个点击展开的 FAB
-  path: /docs/cookbook/effects/expandable-fab
+  path: {{site.url}}/cookbook/effects/expandable-fab
 next:
   title: Focus and text fields
   title: Text Field 上的焦点
-  path: /docs/cookbook/forms/focus
+  path: {{site.url}}/cookbook/forms/focus
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -21,7 +21,7 @@ js:
 {% comment %}
 prev:
   title: Handle changes to a text field
-  path: /docs/cookbook/forms/text-field-changes
+  path: {{site.url}}/cookbook/forms/text-field-changes
 {% endcomment %}
 
 In this recipe,

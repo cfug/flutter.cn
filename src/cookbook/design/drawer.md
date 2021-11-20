@@ -8,11 +8,11 @@ keywords: Material Design 效果, Tab效果
 prev:
   title: Fade a widget in and out
   title: Widget 的淡入淡出效果
-  path: /docs/cookbook/animation/opacity-animation
+  path: {{site.url}}/cookbook/animation/opacity-animation
 next:
   title: Displaying SnackBars
   title: 显示 SnackBars
-  path: /docs/cookbook/design/snackbars
+  path: {{site.url}}/cookbook/design/snackbars
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

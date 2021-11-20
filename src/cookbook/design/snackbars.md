@@ -10,11 +10,11 @@ keywords: Material Design 效果, SnackBar, 滑动删除
 prev:
   title: Add a drawer to a screen
   title: 在屏幕上添加一个 Drawer
-  path: /docs/cookbook/design/drawer
+  path: {{site.url}}/cookbook/design/drawer
 next:
   title: Export fonts from a package
   title: 以 package 的方式使用字体
-  path: /docs/cookbook/design/package-fonts
+  path: {{site.url}}/cookbook/design/package-fonts
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

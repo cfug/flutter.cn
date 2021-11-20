@@ -8,7 +8,7 @@ keywords: 页面切换效果,自定义路由
 next:
   title: Animate a widget using a physics simulation
   title: 在物理模拟器上构建动画
-  path: /docs/cookbook/animation/physics-simulation
+  path: {{site.url}}/cookbook/animation/physics-simulation
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

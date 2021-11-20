@@ -8,7 +8,7 @@ keywords: Flutter Windows,Flutter Linux,Flutter macOS,Flutter镜像,Flutter使�
 next:
   title: Set up an editor
   title: 编辑工具设定
-  path: /docs/get-started/editor
+  path: {{site.url}}/get-started/editor
 os-list: [Windows, macOS, Linux, "Chrome OS"]
 ---
 

@@ -8,11 +8,11 @@ keywords: 传参, 回传数据
 prev:
   title: Pass arguments to a named route
   title: 给特定的 route 传参
-  path: /docs/cookbook/navigation/navigate-with-arguments
+  path: {{site.url}}/cookbook/navigation/navigate-with-arguments
 next:
   title: Send data to a new screen
   title: 传递数据到新页面
-  path: /docs/cookbook/navigation/passing-data
+  path: {{site.url}}/cookbook/navigation/passing-data
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

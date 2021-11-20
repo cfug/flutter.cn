@@ -8,11 +8,11 @@ keywords:
 prev:
   title: Send data to the internet
   title: 发送网络数据
-  path: /docs/cookbook/networking/send-data
+  path: {{site.url}}/cookbook/networking/send-data
 next:
   title: Work with WebSockets
   title: 发起 WebSockets 请求
-  path: /docs/cookbook/networking/web-sockets
+  path: {{site.url}}/cookbook/networking/web-sockets
 ---
 
 <?code-excerpt path-base="cookbook/networking/update_data/"?>

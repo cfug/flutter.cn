@@ -8,11 +8,11 @@ keywords: Flutter播放视频
 prev:
   title: Store key-value data on disk
   title: 存储键值对数据
-  path: /docs/cookbook/persistence/key-value
+  path: {{site.url}}/cookbook/persistence/key-value
 next:
   title: Take a picture using the camera
   title: 使用 Camera 插件实现拍照功能
-  path: /docs/cookbook/plugins/picture-using-camera
+  path: {{site.url}}/cookbook/plugins/picture-using-camera
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>

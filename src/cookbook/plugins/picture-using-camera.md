@@ -8,11 +8,11 @@ keywords: Flutter使用相机,录像,相机预览
 prev:
   title: Play and pause a video
   title: 视频的播放和暂停
-  path: /docs/cookbook/plugins/play-video
+  path: {{site.url}}/cookbook/plugins/play-video
 next:
   title: An introduction to integration testing
   title: 集成测试介绍
-  path: /docs/cookbook/testing/integration/introduction
+  path: {{site.url}}/cookbook/testing/integration/introduction
 ---
 
 <?code-excerpt path-base="cookbook/plugins/picture_using_camera/"?>

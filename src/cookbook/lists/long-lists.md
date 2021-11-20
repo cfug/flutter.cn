@@ -8,11 +8,11 @@ keywords: 长列表,进阶,数据源
 prev:
   title: Place a floating app bar above a list
   title: 在列表顶部放置一个浮动的 app bar
-  path: /docs/cookbook/lists/floating-app-bar
+  path: {{site.url}}/cookbook/lists/floating-app-bar
 next:
   title: Report errors to a service
   title: 把报错信息通过服务上传
-  path: /docs/cookbook/maintenance/error-reporting
+  path: {{site.url}}/cookbook/maintenance/error-reporting
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

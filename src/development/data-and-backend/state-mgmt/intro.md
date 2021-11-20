@@ -7,7 +7,7 @@ keywords: 概览
 next:
   title: Start thinking declaratively
   title: 状态管理中的声明式编程思维
-  path: /docs/development/data-and-backend/state-mgmt/declarative
+  path: {{site.url}}/development/data-and-backend/state-mgmt/declarative
 ---
 
 _If you are already familiar with state management in reactive apps,

@@ -7,11 +7,11 @@ tags: cookbook, 实用教程, 动画效果
 keywords: Container,动画,渐变,背景颜色,隐式动画
 prev:
   title: Widget 的物理模拟动画效果
-  path: /docs/cookbook/animation/physics-simulation
+  path: {{site.url}}/cookbook/animation/physics-simulation
 next:
   title: Fade a Widget in and out
   title: Widget 的淡入淡出效果
-  path: /docs/cookbook/animation/opacity-animation
+  path: {{site.url}}/cookbook/animation/opacity-animation
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

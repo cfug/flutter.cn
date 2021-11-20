@@ -8,7 +8,7 @@ keywords: 点击测试,拖拽事件测试,文本输入测试
 prev:
   title: Handle scrolling
   title: 处理滚动
-  path: /docs/cookbook/testing/widget/scrolling
+  path: {{site.url}}/cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/tap_drag/"?>

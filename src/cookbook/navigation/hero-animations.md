@@ -8,11 +8,11 @@ keywords: 页面切换,动画效果
 prev:
   title: Report errors to a service
   title: 把报错信息通过服务上传
-  path: /docs/cookbook/maintenance/error-reporting
+  path: {{site.url}}/cookbook/maintenance/error-reporting
 next:
   title: Navigate to a new screen and back
   title: 导航到一个新页面和返回
-  path: /docs/cookbook/navigation/navigation-basics
+  path: {{site.url}}/cookbook/navigation/navigation-basics
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

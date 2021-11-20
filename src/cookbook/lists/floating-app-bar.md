@@ -8,11 +8,11 @@ keywords: 列表定制,顶部,搜索框,固定,隐藏搜索框
 prev:
   title: Create lists with different types of items
   title: 创建拥有不同列表项的列表
-  path: /docs/cookbook/lists/mixed-list
+  path: {{site.url}}/cookbook/lists/mixed-list
 next:
   title: Work with long lists
   title: 长列表的处理
-  path: /docs/cookbook/lists/long-lists
+  path: {{site.url}}/cookbook/lists/long-lists
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

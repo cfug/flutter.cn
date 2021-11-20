@@ -6,11 +6,11 @@ description: 如何使用 http 包获取网络数据。
 prev:
   title: Delete data on the internet
   title: 删除网络数据
-  path: /docs/cookbook/networking/delete-data
+  path: {{site.url}}/cookbook/networking/delete-data
 next:
   title: Make authenticated requests
   title: 发起认证的请求
-  path: /docs/cookbook/networking/authenticated-requests
+  path: {{site.url}}/cookbook/networking/authenticated-requests
 ---
 
 <?code-excerpt path-base="cookbook/networking/fetch_data/"?>

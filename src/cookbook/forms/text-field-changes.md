@@ -8,11 +8,11 @@ keywords: 文本框,传值
 prev:
   title: Create and style a text field
   title: 文本框的创建和设定
-  path: /docs/cookbook/forms/text-input
+  path: {{site.url}}/cookbook/forms/text-input
 next:
   title: Retrieve the value of a text field
   title: 获取文本框的输入值
-  path: /docs/cookbook/forms/retrieve-input
+  path: {{site.url}}/cookbook/forms/retrieve-input
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

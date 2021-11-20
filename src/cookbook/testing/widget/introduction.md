@@ -9,11 +9,11 @@ keywords: widget测试,Matcher使用
 prev:
   title: Mock dependencies using Mockito
   title: 使用 Mockito 模拟依赖关系
-  path: /docs/cookbook/testing/unit/mocking
+  path: {{site.url}}/cookbook/testing/unit/mocking
 next:
   title: Find widgets
   title: 定位到目标 widgets
-  path: /docs/cookbook/testing/widget/finders
+  path: {{site.url}}/cookbook/testing/widget/finders
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/introduction/"?>

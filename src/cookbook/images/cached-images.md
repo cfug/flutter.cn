@@ -8,11 +8,11 @@ keywords: Flutter使用图片,图片缓存,网络图片,API
 prev:
   title: Fade in images with a placeholder
   title: 占位符和网络图片淡入
-  path: /docs/cookbook/images/fading-in-images
+  path: {{site.url}}/cookbook/images/fading-in-images
 next:
   title: Use lists
   title: 基础列表
-  path: /docs/cookbook/lists/basic-list
+  path: {{site.url}}/cookbook/lists/basic-list
 ---
 
 In some cases, it's handy to cache images as they're downloaded from the

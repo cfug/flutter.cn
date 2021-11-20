@@ -8,11 +8,11 @@ keywords: 文件读写,临时文件夹,Documents目录
 prev:
   title: Persist data with SQLite
   title: 用 SQLite 做数据持久化
-  path: /docs/cookbook/persistence/sqlite
+  path: {{site.url}}/cookbook/persistence/sqlite
 next:
   title: Store key-value data on disk
   title: 存储键值对数据
-  path: /docs/cookbook/persistence/key-value
+  path: {{site.url}}/cookbook/persistence/key-value
 ---
 
 <?code-excerpt path-base="cookbook/persistence/reading_writing_files/"?>

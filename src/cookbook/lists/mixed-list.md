@@ -8,11 +8,11 @@ keywords: 列表进阶
 prev:
   title: Create a grid list
   title: 创建一个网格列表
-  path: /docs/cookbook/lists/grid-lists
+  path: {{site.url}}/cookbook/lists/grid-lists
 next:
   title: Place a floating app bar above a list
   title: 在列表顶部放置一个浮动的 app bar
-  path: /docs/cookbook/lists/floating-app-bar
+  path: {{site.url}}/cookbook/lists/floating-app-bar
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

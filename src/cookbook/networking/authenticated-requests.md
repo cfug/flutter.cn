@@ -8,11 +8,11 @@ keywords: HTTP 认证授权请求
 prev:
   title: Fetch data from the internet
   title: 获取网络数据
-  path: /docs/cookbook/networking/fetch-data
+  path: {{site.url}}/cookbook/networking/fetch-data
 next:
   title: Parse JSON in the background
   title: 在后台处理 JSON 数据解析
-  path: /docs/cookbook/networking/background-parsing
+  path: {{site.url}}/cookbook/networking/background-parsing
 ---
 
 <?code-excerpt path-base="cookbook/networking/authenticated_requests/"?>

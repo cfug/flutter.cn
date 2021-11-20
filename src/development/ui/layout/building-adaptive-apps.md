@@ -242,7 +242,7 @@ densities, you can easily adjust your UI:
 水平和垂直方向的密度默认都为 0.0，你可以将它设置为任意的正负值，
 这样就可以通过调整密度轻松地调整你的 UI：
 
-![Adaptive scaffold](/assets/images/docs/development/ui/layout/adaptive_scaffold.gif){:width="100%"}
+![Adaptive scaffold]({{site.url}}/assets/images/docs/development/ui/layout/adaptive_scaffold.gif){:width="100%"}
 
 To set a custom visual density, inject the density into
 your `MaterialApp` theme:
@@ -674,7 +674,7 @@ development of a responsive UI.
 在桌面上运行应用时，你可以在应用运行时轻易地改变窗口的大小，预览多种尺寸的布局。
 配上热重载，能极大程度地加快响应式开发的速度。
 
-![Adaptive scaffold 2](/assets/images/docs/development/ui/layout/adaptive_scaffold2.gif){:width="100%"}
+![Adaptive scaffold 2]({{site.url}}/assets/images/docs/development/ui/layout/adaptive_scaffold2.gif){:width="100%"}
 
 ### Solve touch first
 
@@ -1368,7 +1368,7 @@ vertical space in your main UI.
 在现代的桌面应用程序中，经常会有定制应用窗口的标题栏、添加 Logo 或者其他控制的需求，
 能节省界面对于垂直空间的占用。
 
-![Samples of title bars](/assets/images/docs/development/ui/layout/titlebar.png)
+![Samples of title bars]({{site.url}}/assets/images/docs/development/ui/layout/titlebar.png)
 
 This isn't supported directly in Flutter, but you can use the
 [`bits_dojo`][] package to disable the native title bars,
@@ -1518,9 +1518,9 @@ return Row(
 );
 ```
 
-![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image1.png)
+![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image1.png)
 
-![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image2.png)
+![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image2.png)
 
 #### Menu bar
 

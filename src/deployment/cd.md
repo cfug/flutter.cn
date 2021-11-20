@@ -97,40 +97,40 @@ Visit the [fastlane docs][fastlane] for more info.
  
    创建您的 Flutter 项目，准备就绪后，确保通过如下途径构建项目：
 
-    * ![Android](/assets/images/docs/cd/android.png) `flutter build appbundle`;
-    * ![iOS](/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`;
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
     
 1. Initialize the fastlane projects for each platform.
 
    初始化各平台的 fastlane 项目：
    
-    * ![Android](/assets/images/docs/cd/android.png) In your `[project]/android`
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) In your `[project]/android`
     directory, run `fastlane init`.
       
-      ![Android](/assets/images/docs/cd/android.png)：在 `[project]/android` 目录中，
+      ![Android]({{site.url}}/assets/images/docs/cd/android.png)：在 `[project]/android` 目录中，
       运行 `fastlane init` 命令。
     
-    * ![iOS](/assets/images/docs/cd/ios.png) In your `[project]/ios` directory,
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) In your `[project]/ios` directory,
     run `fastlane init`.
        
-      ![iOS](/assets/images/docs/cd/ios.png)：
+      ![iOS]({{site.url}}/assets/images/docs/cd/ios.png)：
       在 `[project]/ios` 目录下，运行 `fastlane init` 命令。
     
 1. Edit the `Appfile`s to ensure they have adequate metadata for your app.
    
    编辑 `Appfile` 以确保它有应用程序的基本数据配置：
 
-    * ![Android](/assets/images/docs/cd/android.png) Check that `package_name` in
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) Check that `package_name` in
     `[project]/android/fastlane/Appfile` matches your package name in AndroidManifest.xml.
     
-      ![Android](/assets/images/docs/cd/android.png) 检查在 `[project]/android/fastlane/Appfile` 
+      ![Android]({{site.url}}/assets/images/docs/cd/android.png) 检查在 `[project]/android/fastlane/Appfile` 
       文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
     
-    * ![iOS](/assets/images/docs/cd/ios.png) Check that `app_identifier` in
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) Check that `app_identifier` in
     `[project]/ios/fastlane/Appfile` also matches Info.plist's bundle identifier. Fill in
     `apple_id`, `itc_team_id`, `team_id` with your respective account info.
     
-      ![iOS](/assets/images/docs/cd/ios.png) 检查在 `[project]/ios/fastlane/Appfile` 中的
+      ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 检查在 `[project]/ios/fastlane/Appfile` 中的
       `app_identifier` 是否匹配 Info.plist 文件中的 bundle identifier。
       将相应的 `apple_id`、`itc_team_id` 和 `team_id` 输入进去。
     
@@ -138,22 +138,22 @@ Visit the [fastlane docs][fastlane] for more info.
 
    设置应用商店的本地登录凭据。
    
-    * ![Android](/assets/images/docs/cd/android.png) Follow the [Supply setup steps][]
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) Follow the [Supply setup steps][]
     and ensure that `fastlane supply init` successfully syncs data from your
     Play Store console. _Treat the .json file like your password and do not check
     it into any public source control repositories._
     
-      ![Android](/assets/images/docs/cd/android.png) 按照 [Supply setup steps][] 文档操作，
+      ![Android]({{site.url}}/assets/images/docs/cd/android.png) 按照 [Supply setup steps][] 文档操作，
       并且确保 `fastlane supply init` 成功同步了
       你在 Google Play 商店控制台中的数据。
       **.json 文件与密码一样重要，切勿将其公开在任何公共源代码控制存储库。**
     
-    * ![iOS](/assets/images/docs/cd/ios.png) Your iTunes Connect username is already
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) Your iTunes Connect username is already
     in your `Appfile`'s `apple_id` field. Set the `FASTLANE_PASSWORD` shell
     environment variable with your iTunes Connect password. Otherwise, you'll be
     prompted when uploading to iTunes/TestFlight.
     
-      ![iOS](//assets/images/docs/cd/ios.png)  iTunes Connect 用户名已经存在于您的
+      ![iOS]({{site.url}}//assets/images/docs/cd/ios.png)  iTunes Connect 用户名已经存在于您的
       `Appfile` 的 `apple_id` 字段中，
       你需要将你的 iTunes 密码设置到 `FASTLANE_PASSWORD` 这个环境变量里。
       否则，上传到 iTunes/TestFlight时会提示你。
@@ -162,15 +162,15 @@ Visit the [fastlane docs][fastlane] for more info.
 
    设置代码签名：
 
-    * ![Android](/assets/images/docs/cd/android.png) Follow the [Android app signing steps][].
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) Follow the [Android app signing steps][].
     
-      ![Android](/assets/images/docs/cd/android.png) 参考文档 [为应用签名][Android app signing steps]。
+      ![Android]({{site.url}}/assets/images/docs/cd/android.png) 参考文档 [为应用签名][Android app signing steps]。
 
-    * ![iOS](/assets/images/docs/cd/ios.png) On iOS, create and sign using a
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS, create and sign using a
       distribution certificate instead of a development certificate when you're
       ready to test and deploy using TestFlight or App Store.
     
-      ![iOS](/assets/images/docs/cd/ios.png) 在iOS上，
+      ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 在iOS上，
       当您准备使用 TestFlight 或 App Store 进行测试和部署时，
       使用分发证书而不是开发证书进行创建和签名。
       
@@ -188,27 +188,27 @@ Visit the [fastlane docs][fastlane] for more info.
 
    给每个不同的平台创建一个 `Fastfile` 脚本。
    
-    * ![Android](/assets/images/docs/cd/android.png) On Android, follow the
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) On Android, follow the
       [fastlane Android beta deployment guide][].
       Your edit could be as simple as adding a `lane` that calls
       `upload_to_play_store`.
       Set the `aab` argument to `../build/app/outputs/bundle/release/app-release.aab`
       to use the app bundle `flutter build` already built.
     
-      ![Android](/assets/images/docs/cd/android.png) 在 Android 上按照
+      ![Android]({{site.url}}/assets/images/docs/cd/android.png) 在 Android 上按照
       [fastlane Android beta deployment guide][] 指引操作。
       你可以简单的编辑一下文件，加一个名叫 `upload_to_play_store` 的 `lane`。
       为了使用 `flutter build` 命令编译 `aab`，
       要把 `apk` 参数设置为 `../build/app/outputs/bundle/release/app-release.aab`。
     
-    * ![iOS](/assets/images/docs/cd/ios.png) On iOS, follow the
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS, follow the
       [fastlane iOS beta deployment guide][].
       Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
       `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
       build is required since `flutter build` builds an .app rather than archiving
       .ipas for release.
     
-       ![iOS](/assets/images/docs/cd/ios.png) 在 iOS 上，按照
+       ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 在 iOS 上，按照
        [fastlane iOS beta 部署指南][fastlane iOS beta deployment guide] 指引操作。
        你可以简单编辑一下文件，加一个名叫 `build_ios_app` 的 `lane`，并且同时调用
        `export_method: 'app-store'` 和 `upload_to_testflight`。
@@ -227,8 +227,8 @@ process to a continuous integration (CI) system.
    
    构建发布模式的应用：
 
-    * ![Android](/assets/images/docs/cd/android.png) `flutter build appbundle`.
-    * ![iOS](/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`.
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
     
     No need to sign now since fastlane will sign when archiving.
     
@@ -238,9 +238,9 @@ process to a continuous integration (CI) system.
 
    在每个平台上运行 Fastfile 脚本。
    
-    * ![Android](/assets/images/docs/cd/android.png) `cd android` then
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `cd android` then
     `fastlane [name of the lane you created]`.
-    * ![iOS](/assets/images/docs/cd/ios.png) `cd ios` then
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `cd ios` then
     `fastlane [name of the lane you created]`.
 
 ### Cloud build and deploy setup
@@ -282,9 +282,9 @@ secrets in pull requests that you accept and merge.
 
    暂时性登录凭据。
    
-    * ![Android](/assets/images/docs/cd/android.png) On Android:
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) On Android:
     
-      ![Android](/assets/images/docs/cd/android.png 在 Android 上：
+      ![Android]({{site.url}}/assets/images/docs/cd/android.png 在 Android 上：
       
         * Remove the `json_key_file` field from `Appfile` and store the string
           content of the JSON in your CI system's encrypted variable. 
@@ -309,9 +309,9 @@ secrets in pull requests that you accept and merge.
           ```bash
           echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > [path to your upload keystore]
           ```
-     * ![iOS](/assets/images/docs/cd/ios.png) On iOS:
+     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS:
     
-       ![iOS](/assets/images/docs/cd/ios.png) 在 iOS 上:
+       ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 在 iOS 上:
       
         * Move the local environment variable `FASTLANE_PASSWORD` to use
         encrypted environment variables on the CI system.

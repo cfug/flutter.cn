@@ -993,7 +993,7 @@ where you add the following functionality:
 [an editor]: {{site.url}}/get-started/editor
 [Android]: install/macos#set-up-your-android-device
 [Android emulator]: install/macos#set-up-the-android-emulator
-[Building a web application with Flutter]: /web
+[Building a web application with Flutter]: {{site.url}}/web
 [DevTools]: {{site.url}}/development/tools/devtools
 [enabled web]: {{site.url}}/get-started/web
 [enforces privacy]: {{site.dart-site}}/guides/language/language-tour#libraries-and-visibility

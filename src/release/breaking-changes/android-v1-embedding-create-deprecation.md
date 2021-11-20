@@ -19,8 +19,8 @@ Plugins targeting the v1 Android embedding are encouraged
 to migrate following the instructions in
 [Supporting the new Android plugins APIs][].
 
-[Android Migration Summary]: /go/android-migration-summary
-[Upgrading pre 1.12 Android projects]: /go/android-project-migration
+[Android Migration Summary]: {{site.url}}/go/android-migration-summary
+[Upgrading pre 1.12 Android projects]: {{site.url}}/go/android-project-migration
 [Supporting the new Android plugins APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
 
 ## Context
@@ -77,7 +77,7 @@ as plugin developers create and publish v2 plugins.
 
 See the [migration guide][].
 
-[migration guide]: /go/android-project-migration
+[migration guide]: {{site.url}}/go/android-project-migration
 
 ## Timeline
 

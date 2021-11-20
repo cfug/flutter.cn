@@ -98,11 +98,11 @@ Dart 2.14 还包含一些较小的、已经 [提前宣布过的](https://github.
 
 我们已经弃用了 Dart VM 的原生扩展，这是我们从 Dart 代码调用原生代码的旧机制。Dart [FFI](https://dart.cn/guides/libraries/c-interop "FFI") (外部功能接口) 是我们当前用于这个用例的机制，我们正在积极 [发展](https://mp.weixin.qq.com/s/pmfJ3Q8wJ_fM0VTNWeaSqg) 它以使其功能更加强大且易于使用。
 
-我们在 3 月份的 [Dart 2.12](/posts/announcing-dart-2-12) 版本中推出了健全的空安全。空安全是 Dart 最新的主要生产力特性，旨在帮助你避免空值错误，这是一类通常难以发现的错误。
+我们在 3 月份的 [Dart 2.12]({{site.url}}/posts/announcing-dart-2-12) 版本中推出了健全的空安全。空安全是 Dart 最新的主要生产力特性，旨在帮助你避免空值错误，这是一类通常难以发现的错误。
 
 自从我们上次更新以来，我们看到现有 package 和应用程序的迁移取得了巨大的进展，以实现空安全 的健全检查优势。对于 pub.dev 上的 package，前 250 名的 package 中 100% 都已支持了空安全，前 1000 名中有 94% 都支持。这意味着更多的开发者可以用完全 [健全的空安全](https://dart.cn/null-safety/unsound-null-safety#sound-and-unsound-null-safety "健全的空安全") 来运行他们的应用。分析显示，56% 的 `flutter run` 命令以完全健全的方式执行。感谢生态系统中的所有开发者，感谢你们的迁移工作!
 
-包含上述变化的增强型 Dart SDK 已经可以在 Dart 2.14.1 和 [Flutter 2.5](/posts/whats-new-in-flutter-2-5) SDK 中使用。我们希望你会喜欢这些新的改进和功能。
+包含上述变化的增强型 Dart SDK 已经可以在 Dart 2.14.1 和 [Flutter 2.5]({{site.url}}/posts/whats-new-in-flutter-2-5) SDK 中使用。我们希望你会喜欢这些新的改进和功能。
 
 ## 感谢 Dart 社区
 

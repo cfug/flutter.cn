@@ -302,7 +302,7 @@ Flutter 团队的工程师会经常阅读和互动。
 [Discord]: https://discord.gg/N7Yshp4
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: {{site.url}}/development/tools/devtools/overview
-[Flutter's production quality support for the web]: /web
+[Flutter's production quality support for the web]: {{site.url}}/web
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
@@ -313,7 +313,7 @@ Flutter 团队的工程师会经常阅读和互动。
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: {{site.url}}/testing#widget-tests
 [pub.dev]: {{site.pub}}/flutter/packages?platform=web
-[Web support for Flutter]: /web
+[Web support for Flutter]: {{site.url}}/web
 [write your own plugins]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [run your web apps in any supported browser]: {{site.url}}/get-started/web#create-and-run
 [Integration testing]: {{site.url}}/testing/integration-tests#running-in-a-browser

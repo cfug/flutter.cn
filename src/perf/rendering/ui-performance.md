@@ -249,7 +249,7 @@ on the Flutter Gallery example:
 本节阐述如何打开性能图层并用其来分析应用中卡顿的原因。
 下面的截图展示了 Flutter Gallery 样例的性能图层：
 
-![Screenshot of overlay showing zero jank](/assets/images/docs/tools/devtools/performance-overlay-green.png)
+![Screenshot of overlay showing zero jank]({{site.url}}/assets/images/docs/tools/devtools/performance-overlay-green.png)
 
 <br>Performance overlay showing the raster thread (top),
 and UI thread (bottom).<br>The vertical green bars
@@ -303,7 +303,7 @@ the scene is too complicated to render quickly.
 而如果红色竖条是在 GPU 图表出现的，
 意味着场景太复杂导致无法快速渲染。
 
-![Screenshot of performance overlay showing jank with red bars](/assets/images/docs/tools/devtools/performance-overlay-jank.png)
+![Screenshot of performance overlay showing jank with red bars]({{site.url}}/assets/images/docs/tools/devtools/performance-overlay-jank.png)
 
 <br>The vertical red bars indicate that the current frame is
 expensive to both render and paint.<br>When both graphs

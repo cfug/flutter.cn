@@ -97,7 +97,7 @@ debug asserts verifying the framework's various invariants
 否则，分析的主要输出将会是用于验证框架中各种不变式的调试断言
 （查看 [debug 模式断言](#debug-mode-assertions)）。
 
-![GIF showing DevTools features](/assets/images/docs/tools/devtools/inspector.gif){:width="100%"}
+![GIF showing DevTools features]({{site.url}}/assets/images/docs/tools/devtools/inspector.gif){:width="100%"}
 
 For more information, see the
 [DevTools][] documentation.

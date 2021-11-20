@@ -54,7 +54,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
 {{site.alert.end}}
 
 [What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
-[What's new in Flutter 2 CN]: /posts/whats-new-in-flutter-2-0
+[What's new in Flutter 2 CN]: {{site.url}}/posts/whats-new-in-flutter-2-0
 
 {{site.alert.note}}
 
@@ -1236,7 +1236,7 @@ about endorsed plugins, see the following resources:
   [联合插件提议][Federated Plugin proposal]
 
 [Developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
-[Federated Plugin proposal]: /go/federated-plugins
+[Federated Plugin proposal]: {{site.url}}/go/federated-plugins
 [Federated plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#federated-plugins
 [How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a

@@ -17,7 +17,7 @@ Flutter. New design documents can be added by following the instructions in the
 这一系列设计文档都是由 Flutter 工程师编写的。
 你可以按照以下说明添加新的设计文档：[模板][template]。
 
-[template]: /go/template
+[template]: {{site.url}}/go/template
 
 <ul id="go-links">
 </ul>

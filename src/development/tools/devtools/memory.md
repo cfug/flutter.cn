@@ -158,7 +158,7 @@ collection, and resident set size.
 图表上的每个数据点表示相应时间戳（x 轴）下堆的测量值（y 轴），
 例如，使用率、容量、外部内存、垃圾收集和常驻集大小。
 
-![Screenshot of a memory anatomy page](/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
+![Screenshot of a memory anatomy page]({{site.url}}/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
 
 ### Events Pane
 
@@ -172,7 +172,7 @@ Dart VM GCs, user requested GCs, or monitor and accumulator reset actions.
 这些事件包含快照（手动和自动）、Dart VM 自动 GC、手动 GC
 或者监控和累计数据的重置操作。
 
-![Screenshot of DevTools events](/assets/images/docs/tools/devtools/memory_eventtimeline.png)
+![Screenshot of DevTools events]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline.png)
 
 This chart displays DevTools events (such as manual GC, VM GC,
 Snapshot, monitor Allocations **Track** and **Reset** of accumulators button
@@ -186,7 +186,7 @@ occurred in the timeline (x-axis).
 点击事件时间线中的标记，将显示事件发生时间的悬浮窗。
 这可能有助于判断时间轴（x 轴）中何时发生内存泄漏。
 
-![Screenshot of the event timeline legend](/assets/images/docs/tools/devtools/memory_eventtimeline_legend.png)
+![Screenshot of the event timeline legend]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_legend.png)
 
 This legend shows the symbol for each DevTools event and its meaning
 
@@ -197,7 +197,7 @@ This legend shows the symbol for each DevTools event and its meaning
 <p markdown="1">**Snapshot**</p>
 <p markdown="1">**Snapshot（手动快照）**</p>
 </dt>
-![User Snapshot](/assets/images/docs/tools/devtools/memory_eventtimeline_snapshot.png){:width="17px"}
+![User Snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_snapshot.png){:width="17px"}
 <dd markdown="1">
 <p markdown="1">User initiated snapshot&mdash;all memory 
 information collected and an analysis performed.</p>
@@ -208,7 +208,7 @@ information collected and an analysis performed.</p>
 <p markdown="1">**Auto-Snapshot**</p>
 <p markdown="1">**Auto-Snapshot（自动快照）**</p>
 </dt>
-![Auto Snapshot](/assets/images/docs/tools/devtools/memory_eventtimeline_auto_snapshot.png){:width="18px"}
+![Auto Snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_auto_snapshot.png){:width="18px"}
 <dd markdown="1">
 <p markdown="1"> DevTools initiated a snapshot detecting
                  that memory grow by 40% or more from previous
@@ -225,7 +225,7 @@ information collected and an analysis performed.</p>
 <p markdown="1">**Track**</p>
 <p markdown="1">**Track（跟踪）**</p>
 </dt>
-![Monitor](/assets/images/docs/tools/devtools/memory_eventtimeline_monitor.png){:width="17px"}
+![Monitor]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_monitor.png){:width="17px"}
 <dd markdown="1">
 <p markdown="1"> Collects current state of all active classes
                  number of instances and byte size of all instances.
@@ -238,7 +238,7 @@ information collected and an analysis performed.</p>
 <p markdown="1">**Reset**</p>
 <p markdown="1">**Reset（重置）**</p>
 </dt>
-![Reset](/assets/images/docs/tools/devtools/memory_eventtimeline_reset_monitor.png){:width="18px"}
+![Reset]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_reset_monitor.png){:width="18px"}
 <dd markdown="1">
 <p markdown="1"> When both the instance and bytes accumulators
                  were reset to zero.</p>
@@ -248,7 +248,7 @@ information collected and an analysis performed.</p>
 <p markdown="1">**User Initiated GC**</p>
 <p markdown="1">**User Initiated GC（用户手动 GC）**</p>
 </dt>
-![GC](/assets/images/docs/tools/devtools/memory_eventtimeline_gc.png){:width="18px"}
+![GC]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_gc.png){:width="18px"}
 <dd markdown="1">
 <p markdown="1"> User initiated request to VM to to perform a
                  garbage collection of memory (only a suggestion
@@ -259,7 +259,7 @@ information collected and an analysis performed.</p>
 <p markdown="1">**VM GC**</p>
 <p markdown="1">**VM GC（VM 自动 GC）**</p>
 </dt>
-![VM GC](/assets/images/docs/tools/devtools/memory_eventtimeline_vmgc.png){:width="11px"}
+![VM GC]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_vmgc.png){:width="11px"}
 <dd markdown="1">
 <p markdown="1"> GC (VM garbage collection) has occurred, frees
                  space no longer used. For more information on
@@ -278,13 +278,13 @@ information collected and an analysis performed.</p>
     triangle "Multiple Flutter or User Events"</p>
 <p markdown="1">在事件窗格中显示为三角形。深色三角形表示「多个 Flutter 或用户事件」。</p>
 </dd>
-![Aggregate Events](/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
+![Aggregate Events]({{site.url}}/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
 <dd>
 <p markdown="1">identifies more than one event was received at this timestamp.
     The lighter magenta triangle "One Flutter or User Event"</p>
 <p markdown="1">标识在此时间戳接收的多个事件。浅色三角形表示「一次 Flutter 或用户事件」。</p>
 </dd>
-![Single Events](/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
+![Single Events]({{site.url}}/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
 <dd><p markdown="1">indicates only one event was received at this timestamp. To
     view the events clicking on the triangle will display a hover
     card and expanding the events at the bottom of the hovercard
@@ -375,13 +375,13 @@ eventData entries method and param are displayed with their values:
 例如，在 04:36:21 时刻的两个自定义事件，事件名称为「MyFirstApp」，
 两个字段 method 和 param 显示事件的对应值：
 
-![Hover Card Custom Events](/assets/images/docs/tools/devtools/memory_hover_events.png)
+![Hover Card Custom Events]({{site.url}}/assets/images/docs/tools/devtools/memory_hover_events.png)
 
 Scrolling the events displays:
 
 滑动事件显示：
 
-![Custom Events Details](/assets/images/docs/tools/devtools/memory_events_detail.png)
+![Custom Events Details]({{site.url}}/assets/images/docs/tools/devtools/memory_events_detail.png)
 
 ## Memory overview chart
 
@@ -409,7 +409,7 @@ and symbols/colors used to display the data.
 
 点击图例按钮会显示采集的测量值和用于显示数据的符号或颜色。
 
-![Screenshot of a memory anatomy page](/assets/images/docs/tools/devtools/memory_chart_anatomy.png)
+![Screenshot of a memory anatomy page]({{site.url}}/assets/images/docs/tools/devtools/memory_chart_anatomy.png)
 
 The **Memory Size Scale** Y axis scale automatically adjusts to the
 range of data collected in the current visible chart range.
@@ -483,7 +483,7 @@ the information collected:
 点击图表会在 X 轴（时间戳）上显示一条垂直黄线，
 同时显示带有所收集信息的悬浮窗：
 
-![Screenshot of the basic memory chart](/assets/images/docs/tools/devtools/memory_basic_chart.png)
+![Screenshot of the basic memory chart]({{site.url}}/assets/images/docs/tools/devtools/memory_basic_chart.png)
 
 **Memory Events** Memory Events recorded in the Event Pane e.g., VM GC,
 User Initiated GC, User Initiated Snapshot, Auto-Snapshot,
@@ -518,7 +518,7 @@ triangle is displayed with the aggregate list of events. The aggregate
 vents collects all the events nearest a particular timestamp (tick)
 and displays the events to the X-Axis closest tick. Expanding the events
 will display the values for each event:
-![Aggregate Events](/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
+![Aggregate Events]({{site.url}}/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
 
 如果此时间戳处收集了多个事件，则会显示一个深色三角形，包含事件集合的列表。
 集合事件收集了最接近特定时间戳 (tick) 的所有事件，并将事件显示到 x 轴最近的位置。
@@ -526,7 +526,7 @@ will display the values for each event:
 
 If only one event is collected, a lighter magenta triangle color is
 displayed with the single event values:
-![Single Events](/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
+![Single Events]({{site.url}}/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
 
 如果只收集了一个事件，则会显示一个浅色三角形，并显示单个事件信息：
 
@@ -537,7 +537,7 @@ User Events" e.g.,
 如果显示 Android 内存图表，则 Android 部分采集的数据将显示在
 「Dart / Flutter 内存」和「Flutter 和自定义的事件」之间。例如：
 
-![Hovercard of Android chart is visible](/assets/images/docs/tools/devtools/memory_android_hovercard.png)
+![Hovercard of Android chart is visible]({{site.url}}/assets/images/docs/tools/devtools/memory_android_hovercard.png)
 
 ### Android chart
 
@@ -582,7 +582,7 @@ collected for that time period.
 
 点击时间戳（x 位置）将显示该时间段内收集的所有数据点。
 
-![Screenshot of Android Memory Chart](/assets/images/docs/tools/devtools/memory_android.png)
+![Screenshot of Android Memory Chart]({{site.url}}/assets/images/docs/tools/devtools/memory_android.png)
 
 The hover card will display the values of all collected Android memory data.
 
@@ -697,7 +697,7 @@ dropdowns that control how memory data is displayed.
 
 在内存页面顶部的图表上方，有几个按钮和下拉列表，用于控制内存数据的显示方式。
 
-![Screenshot of a memory controls](/assets/images/docs/tools/devtools/memory_controls.png){:width="100%"}
+![Screenshot of a memory controls]({{site.url}}/assets/images/docs/tools/devtools/memory_controls.png){:width="100%"}
 
 <dl markdown="1">
 <dt markdown="1">
@@ -805,7 +805,7 @@ memory usage while using the application DevTools is connected to there are two 
 内存图表（事件时间线、内存概览和 Android 概览图表）下方有两个 tab,
 分别用于分析和收集 DevTools 所连接到的应用程序的内存使用情况。
 
-![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_two_tabs.png)
+![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_two_tabs.png)
 
 ### Analysis tab
 
@@ -826,7 +826,7 @@ The actions available for Analysis are:
 
 analysis 选项下的操作包括：
 
-![Screenshot of a memory actions](/assets/images/docs/tools/devtools/memory_analysis_actions.png)
+![Screenshot of a memory actions]({{site.url}}/assets/images/docs/tools/devtools/memory_analysis_actions.png)
 
 **Snapshot** Clicking the Snapshot button makes a request to the
 Dart VM to collect the current state of memory.  The
@@ -864,7 +864,7 @@ All Analyses and Snapshots are displayed in a Table Tree View:
 
 所有分析和快照都显示在树表视图中：
 
-![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_table_tree_view.png)
+![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_table_tree_view.png)
 
 The snapshots are grouped by library and within library by class and
 each class will display the list of known instances for that class.
@@ -883,20 +883,20 @@ of the table tree.
 如果实例存在，扩展类将显示所有活动实例（对象）。
 点击一个类的实例，将在树表的右侧显示内存的检查信息。
 
-![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_navigate_inspect.png)
+![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_navigate_inspect.png)
 
 ## Snapshots
 
 ## 快照
 
-![The Snapshot button](/assets/images/docs/tools/devtools/memory_snapshot.png)
+![The Snapshot button]({{site.url}}/assets/images/docs/tools/devtools/memory_snapshot.png)
 
 Clicking the **Snapshot** button shows the current state of the heap with regard
 to all active classes and their instances. 
 
 点击 **Snapshot（快照）** 按钮显示堆的所有活动的类及其实例的当前状态。
 
-![Screenshot of the Snapshot classes](/assets/images/docs/tools/devtools/memory_snapshot_tree.png)
+![Screenshot of the Snapshot classes]({{site.url}}/assets/images/docs/tools/devtools/memory_snapshot_tree.png)
 
 This pane shows classes allocated in the heap, all instances for a class,
 and the ability to inspect a particular instance.
@@ -1001,7 +1001,7 @@ the fields for that instance.
 
 展开类将显示该类的活动的实例。点击某个特定实例将显示该实例字段的类型和值。
 
-![Screenshot of the inspecting an instance](/assets/images/docs/tools/devtools/memory_inspector.png)
+![Screenshot of the inspecting an instance]({{site.url}}/assets/images/docs/tools/devtools/memory_inspector.png)
 
 ## Analysis of a snapshot
 
@@ -1013,7 +1013,7 @@ Snapshot date/time).
 
 每个快照都会在分析节点下创建相应的分析内容（分析的时间对应快照的生成时间）。
 
-![Screenshot of a Snapshot Analysis](/assets/images/docs/tools/devtools/memory_analysis.png)
+![Screenshot of a Snapshot Analysis]({{site.url}}/assets/images/docs/tools/devtools/memory_analysis.png)
 
 Currently, Analysis looks for common problems with images e.g.,
 loading large files instead of scaled thumbnails, not using a
@@ -1068,7 +1068,7 @@ tracking should be used sparingly.
 
 ### Allocation actions
 
-![Screenshot of a memory actions](/assets/images/docs/tools/devtools/memory_allocations_actions.png)
+![Screenshot of a memory actions]({{site.url}}/assets/images/docs/tools/devtools/memory_allocations_actions.png)
 
 <dl markdown="1">
 <dt markdown="1">
@@ -1129,7 +1129,7 @@ the connected application:
 
 已连接的应用程序中所有可用的类的分配信息会显示表中：
 
-![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_allocations_overview.png)
+![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_allocations_overview.png)
 
 Each row displays the class name the number of instances and bytes
 allocated with deltas (accumulators since last reset).
@@ -1221,7 +1221,7 @@ For more information see [Allocation Tracking](#allocation-tracking).
 
 ### 管理堆中的对象和统计数据（分配监控）
 
-![The Monitor Allocations button](/assets/images/docs/tools/devtools/memory_monitor_allocations.png)
+![The Monitor Allocations button]({{site.url}}/assets/images/docs/tools/devtools/memory_monitor_allocations.png)
 
 Clicking the allocation **Track** button monitors the total
 number of instances and total number of bytes allocated for a class.
@@ -1234,7 +1234,7 @@ to find memory leaks.
 此外，为实例的分配维护两个累计数据（总计数量和增加数量），用户可以通过操作（按下重置按钮）重置为零。
 该机制对于查找内存泄漏非常有用。
 
-![Reset Accumulators button](/assets/images/docs/tools/devtools/memory_reset.png)
+![Reset Accumulators button]({{site.url}}/assets/images/docs/tools/devtools/memory_reset.png)
 
 When the **Reset** button is pressed, the accumulators for all classes
 resets to zero. When reset is occurs a "monitor reset" event to the
@@ -1305,7 +1305,7 @@ be astray. To do this enable the Track checkbox for a class e.g.,
 除了跟踪一个类的所有实例的对象数和字节数外，还可以在调用类的构造函数时记录堆栈，
 来帮助缩小分配可能出错的范围。为此，请选中类的跟踪复选框，例如：
 
-![Enable Stack Trace Tracking](/assets/images/docs/tools/devtools/memory_enable_stacktrace.png)
+![Enable Stack Trace Tracking]({{site.url}}/assets/images/docs/tools/devtools/memory_enable_stacktrace.png)
 
 Interact with your application then when you want to view the
 instances allocation press the "Track" button again. This will
@@ -1317,14 +1317,14 @@ instances and timestamp when each instance was created e.g.,
 这将更新正在跟踪的实例的数量，例如下图中的 118。
 展开跟踪的实例将显示所有实例以及创建每个实例的时间，例如：
 
-![Class Tracking](/assets/images/docs/tools/devtools/memory_tracking.png)
+![Class Tracking]({{site.url}}/assets/images/docs/tools/devtools/memory_tracking.png)
 
 Selecting an instance will display the call stack at the time the
 class's constructor (allocated) was called e.g.,
 
 选择实例将显示调用类的构造函数（已分配）时的堆栈，例如：
 
-![Call Stack](/assets/images/docs/tools/devtools/memory_tracking_callstack.png)
+![Call Stack]({{site.url}}/assets/images/docs/tools/devtools/memory_tracking_callstack.png)
 
 ## Filtering, Searching and Auto-Complete
 
@@ -1366,20 +1366,20 @@ Pressing a keystroke when auto-complete is visible:
 </dd>
 </dl>
 
-![Searching](/assets/images/docs/tools/devtools/memory_search_1.png)
+![Searching]({{site.url}}/assets/images/docs/tools/devtools/memory_search_1.png)
 
 Typing more characters would narrow down the possible class names e.g., typing
 **Obje** displays:
 
 输入更多字符来缩小类名范围，例如键入 **Obje** 显示：
 
-![Narrower Search](/assets/images/docs/tools/devtools/memory_search_2.png)
+![Narrower Search]({{site.url}}/assets/images/docs/tools/devtools/memory_search_2.png)
 
 Finally, typing **ObjectW** displays the exact match:
 
 最后，输入 **ObjectW** 显示精确匹配：
 
-![Narrowed Search](/assets/images/docs/tools/devtools/memory_search_3.png)
+![Narrowed Search]({{site.url}}/assets/images/docs/tools/devtools/memory_search_3.png)
 
 ### Filtering
 
@@ -1391,7 +1391,7 @@ less important while profiling memory.
 
 筛选用于将库和类从主列表（表）移动到筛选组，帮助减少在分析内存时不太重要的可见类的数量。
 
-![Filtering](/assets/images/docs/tools/devtools/memory_filtering.png)
+![Filtering]({{site.url}}/assets/images/docs/tools/devtools/memory_filtering.png)
 
 <dl markdown="1">
 <dt markdown="1">
@@ -1444,7 +1444,7 @@ The Memory profiler has a specific settings dialog:
 
 内存分析有一个特定的设置对话框：
 
-![Settings](/assets/images/docs/tools/devtools/memory_settings.png)
+![Settings]({{site.url}}/assets/images/docs/tools/devtools/memory_settings.png)
 
 <dl markdown="1">
 <dt markdown="1">

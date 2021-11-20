@@ -39,6 +39,6 @@ enter a product name, and select **Enter**.
 当对话框打开后，在顶部选择 **watchOS** 并且点击 **Watch App for iOS App**。
 然后，点击 **Next**，输入产品名，最后选择 **Enter**。
 
-![Adding an Apple Watch target](/assets/images/docs/AppleWatchTarget.png){:width="70%"}
+![Adding an Apple Watch target]({{site.url}}/assets/images/docs/AppleWatchTarget.png){:width="70%"}
 
 [Creating an iOS Bitcode enabled app]: {{site.repo.flutter}}/wiki/Creating-an-iOS-Bitcode-enabled-app-(experimental)

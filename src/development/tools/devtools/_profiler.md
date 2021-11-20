@@ -78,7 +78,7 @@ performance improvements.
 每一个堆栈帧的宽度代表 CPU 执行的时长。栈帧消耗 CPU 的时间越长，
 就越洽有可能是我们进行性能改进的好地方。
 
-![Screenshot of a flame chart](/assets/images/docs/tools/devtools/cpu_profiler_flame_chart.png){:width="100%"}
+![Screenshot of a flame chart]({{site.url}}/assets/images/docs/tools/devtools/cpu_profiler_flame_chart.png){:width="100%"}
 
 ### Call tree
 
@@ -104,7 +104,7 @@ meaning that a method can be expanded to show its _callees_.
 <dd markdown="1"><t>File path for the method call site.</t><t>方法所在的文件路径。</t></dd>
 </dl>
 
-![Screenshot of a call tree table](/assets/images/docs/tools/devtools/cpu_profiler_call_tree.png){:width="100%"}
+![Screenshot of a call tree table]({{site.url}}/assets/images/docs/tools/devtools/cpu_profiler_call_tree.png){:width="100%"}
 
 ### Bottom up
 
@@ -154,4 +154,4 @@ In this table, a method can be expanded to show its _callers_.
 <dd markdown="1"><t>File path for the method call site.</t><t>方法所在的文件路径。</t></dd>
 </dl>
 
-![Screenshot of a bottom up table](/assets/images/docs/tools/devtools/cpu_profiler_bottom_up.png){:width="100%"}
+![Screenshot of a bottom up table]({{site.url}}/assets/images/docs/tools/devtools/cpu_profiler_bottom_up.png){:width="100%"}

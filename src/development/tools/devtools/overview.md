@@ -15,7 +15,7 @@ for Dart and Flutter.
 开发工具是一套 Dart 和 Flutter 的性能调试工具。
 目前已经“行进”到 Beta 版本了，但仍在正在持续开发中。
 
-![Dart DevTools Screens](/assets/images/docs/tools/devtools/dart-devtools.gif){:width="100%"}
+![Dart DevTools Screens]({{site.url}}/assets/images/docs/tools/devtools/dart-devtools.gif){:width="100%"}
 
 ## What can I do with DevTools?
 

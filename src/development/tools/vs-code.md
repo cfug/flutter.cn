@@ -144,11 +144,11 @@ Flutter 扩展执行代码分析，它提供：
   (**View > Problems** or `Ctrl`+`Shift`+`M`
   (`Cmd`+`Shift`+`M` on macOS))
   Any analysis issues are shown in the Problems pane:<br>
-  ![Problems pane](/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
+  ![Problems pane]({{site.url}}/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
   
   查看所有当前代码问题（**View > Problems** 或 `Ctrl`+`Shift`+`M` (macOS 用 `Cmd`+`Shift`+`M`)）。
   所有问题分析都会在 Problems 面板展示：<br>
-  ![Problems pane](/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
+  ![Problems pane]({{site.url}}/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
 
 ## Running and debugging
 
@@ -259,11 +259,11 @@ Flutter 扩展会自动选择上次连接的设备。
  1. Click **Run > Start Without Debugging** in the
     main IDE window, or press `Ctrl`+`F5`.
     The status bar turns orange to show you are in a debug session.<br>
-    ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
+    ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
 
     在 IDE 主窗口点击 **Run > Start Without Debugging**，
     或者按 `Ctrl`+`F5`，状态栏变橙色说明你正处于调试模式。<br>
-    ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
+    ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
     
 ### Run app with breakpoints
 
@@ -376,14 +376,14 @@ version of the label.
 会添加一些额外的调试命令，包括：
 
 <dl markdown="1">
-<dt markdown="1"><t><b>Toggle Baseline Painting</b></t><t><b>切换 Baseline 绘制</b></t> ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}</dt>
+<dt markdown="1"><t><b>Toggle Baseline Painting</b></t><t><b>切换 Baseline 绘制</b></t> ![Baseline painting icon]({{site.url}}/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}</dt>
 <dd><p>Causes each RenderBox to paint a line at each of its baselines.</p><p>每个 RenderBox 在底部绘制一条线。</p></dd>
-<dt markdown="1"><t><b>Toggle Repaint Rainbow</b></t><t><b>切换重绘 Rainbow</b></t> ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}</dt>
+<dt markdown="1"><t><b>Toggle Repaint Rainbow</b></t><t><b>切换重绘 Rainbow</b></t> ![Repaint rainbow icon]({{site.url}}/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}</dt>
 <dd><p>Shows rotating colors on layers when repainting.</p><p>重新绘制时在图层上改变颜色。</p></dd>
-<dt markdown="1"><t><b>Toggle Slow Animations</b></t><t><b>切换慢模式横幅</b></t> ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}</dt>
+<dt markdown="1"><t><b>Toggle Slow Animations</b></t><t><b>切换慢模式横幅</b></t> ![Slow animations icon]({{site.url}}/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}</dt>
 <dd><t>Slows down animations to enable visual inspection.</t><t>减慢动画以启用视觉检查。</t>
 </dd>
-<dt markdown="1"><t><b>Toggle Debug Mode Banner</b></t> <t><b>切换 debug 模式横幅显示</b></t> ![Debug mode banner icon](/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:width="20px"}</dt>
+<dt markdown="1"><t><b>Toggle Debug Mode Banner</b></t> <t><b>切换 debug 模式横幅显示</b></t> ![Debug mode banner icon]({{site.url}}/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:width="20px"}</dt>
 <dd><p>Hides the debug mode banner even when running a debug build.</p><p>在运行调试构建时隐藏 debug 模式的横幅 (banner)。</p></dd>
 </dl>
 
@@ -428,7 +428,7 @@ keyboard shortcut `Ctrl`+`.` (`Cmd`+`.` on Mac), as illustrated here:
 或者使用快捷键 `Ctrl`+`.` (macOS 用 `Cmd`+`.`)，
 如图所示：
 
-![Code assists](/assets/images/docs/tools/vs-code/assists.png){:width="467px"}
+![Code assists]({{site.url}}/assets/images/docs/tools/vs-code/assists.png){:width="467px"}
 
 Quick fixes are similar,
 only they are shown with a piece of code has an error and they
@@ -486,7 +486,7 @@ and then selecting from the code completion window:
 代码片段可以用来加速输入通用类型代码段。
 通过输入前缀来调用，然后从代码完成窗口中选择：
 
-![Snippets](/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}
+![Snippets]({{site.url}}/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}
 
 The Flutter extension includes the following snippets:
 
@@ -615,4 +615,4 @@ When filing new issues, include [flutter doctor][] output.
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: {{site.url}}/development/tools/devtools/vscode
 [Set up an editor]: {{site.url}}/get-started/editor?tab=vscode
-[VS Code status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png
+[VS Code status bar]: {{site.url}}/assets/images/docs/tools/vs-code/device_status_bar.png

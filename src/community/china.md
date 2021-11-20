@@ -222,4 +222,4 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 
 如果在镜像使用中有任何问题，欢迎通过邮件与我们联系：cfug-dev@googlegroups.com。
 非常感谢所有帮助 Flutter 在国内维护社区基础设施建设资源的社区和公司，查看
-[详细致谢名单](/about)。
+[详细致谢名单]({{site.url}}/about)。

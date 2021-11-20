@@ -272,7 +272,7 @@ Other:
 [`FloatingActionButtonTheme`]: {{site.api}}/flutter/material/FloatingActionButtonTheme-class.html
 [`FloatingActionButtonThemeData`]: {{site.api}}/flutter/material/FloatingActionButtonThemeData-class.html
 [Material Design spec]: {{site.material}}/design/color
-[Material Theme System Updates]: /go/material-theme-system-updates
+[Material Theme System Updates]: {{site.url}}/go/material-theme-system-updates
 [secondary color]: {{site.api}}/flutter/material/ColorScheme/secondary.html
 [onSecondary color]: {{site.api}}/flutter/material/ColorScheme/onSecondary.html
 [PR #81336]: {{site.repo.flutter}}/pull/81336

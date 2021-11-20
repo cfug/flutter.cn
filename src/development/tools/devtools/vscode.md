@@ -40,14 +40,14 @@ VS Code command palette:
 
 一旦调试会话处于活跃且应用程序已开启，那么 VS Code 命令控制板中将会显示 **Dart: Open DevTools**：
 
-![Screenshot showing Open DevTools command](/assets/images/docs/tools/vs-code/vscode_command.png){:width="100%"}
+![Screenshot showing Open DevTools command]({{site.url}}/assets/images/docs/tools/vs-code/vscode_command.png){:width="100%"}
 
 The first time you run this (and subsequently when the DevTools package
 is updated), you are prompted to activate or upgrade DevTools.
 
 当你第一次运行时（以及未来更新开发工具包时），系统会提醒你激活或升级开发工具。
 
-![Screenshot showing Active DevTools command](/assets/images/docs/tools/vs-code/vscode_install_prompt.png){:width="100%"}
+![Screenshot showing Active DevTools command]({{site.url}}/assets/images/docs/tools/vs-code/vscode_install_prompt.png){:width="100%"}
 
 Clicking the **Open** button uses `pub global activate` to activate
 the DevTools package for you. Next, DevTools launches in your browser and
@@ -55,7 +55,7 @@ automatically connects to your debug session.
 
 接下来，开发工具将会在浏览器中启动，并自动连接至你的调试会话。
 
-![Screenshot showing DevTools in a browser](/assets/images/docs/tools/vs-code/vscode_show_in_browser.png){:width="100%"}
+![Screenshot showing DevTools in a browser]({{site.url}}/assets/images/docs/tools/vs-code/vscode_show_in_browser.png){:width="100%"}
 
 While DevTools is active, you'll see them in the status bar
 of VS Code. If you've closed the browser tab,
@@ -66,7 +66,7 @@ as there's still a suitable Dart/Flutter debugging session available.
 如果你已关闭浏览器选项卡，只要还有可用的 Dart/Flutter 调试会话，
 你也可以通过单击状态栏来重新启动浏览器。
 
-![Screenshot showing DevTools in the VS Code status bar](/assets/images/docs/tools/vs-code/vscode_status_bar.png){:width="100%"}
+![Screenshot showing DevTools in the VS Code status bar]({{site.url}}/assets/images/docs/tools/vs-code/vscode_status_bar.png){:width="100%"}
 
 [Dart extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code
 [Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter

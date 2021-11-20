@@ -1185,7 +1185,7 @@ Flutter Gallery [running app][], [repo][]
 [iOS simulator]: {{site.url}}/get-started/install/macos#set-up-the-ios-simulator
 [building layouts tutorial]: {{site.url}}/development/ui/layout/tutorial
 [building layouts tutorial (step 6)]: {{site.url}}/development/ui/layout/tutorial#step-6-final-touch
-[community]: /community
+[community]: {{site.url}}/community
 [Handle taps]: {{site.url}}/cookbook/gestures/handling-taps
 [`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
 [Libraries and visibility]: {{site.dart-site}}/guides/language/language-tour#libraries-and-visibility

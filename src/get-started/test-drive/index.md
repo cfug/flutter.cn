@@ -48,6 +48,6 @@ Select your development tool of choice for writing, building, and running Flutte
 
 
 [Install]: {{site.url}}/get-started/install
-[Main IntelliJ toolbar]: /assets/images/docs/tools/android-studio/main-toolbar.png
+[Main IntelliJ toolbar]: {{site.url}}/assets/images/docs/tools/android-studio/main-toolbar.png
 [Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
 [Material Components]: {{site.material}}/guidelines

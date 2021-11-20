@@ -40,7 +40,7 @@
 {{site.alert.end}}
 
 [What's new in Flutter 2.2]: {{site.flutter-medium}}/whats-new-in-flutter-2-2-fd00c65e2039
-[What's new in Flutter 2.2 CN]: /posts/whats-new-in-flutter-2-2
+[What's new in Flutter 2.2 CN]: {{site.url}}/posts/whats-new-in-flutter-2-2
 
 ### Additional Windows requirements
 
@@ -94,4 +94,4 @@ For more information, see [Desktop support for Flutter][]
 
 更多详情请查看 [Flutter 的桌面端支持][Desktop support for Flutter]
 
-[Desktop support for Flutter]: /desktop
+[Desktop support for Flutter]: {{site.url}}/desktop

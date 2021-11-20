@@ -45,7 +45,7 @@ Clicking the suggested fix performs the update.
 点击灯泡图标会显示将代码更新为新 API 的修复建议。
 点击建议的修复会执行 API 更新操作。
 
-![Screenshot showing suggested change in IntelliJ](/assets/images/docs/development/tools/flutter-fix-suggestion-intellij.png)<br>
+![Screenshot showing suggested change in IntelliJ]({{site.url}}/assets/images/docs/development/tools/flutter-fix-suggestion-intellij.png)<br>
 A sample quick-fix in IntelliJ
 
 在 IntelliJ 中使用 quick-fix 的一个案例。
@@ -86,7 +86,7 @@ You can do any of the following:
   （mac 上是 **Command+.**，其他平台是 **Control+.** ）。
   此操作会显示包括重构在内所有可执行操作的列表。
 
-![Screenshot showing suggested change in VS Code](/assets/images/docs/development/tools/flutter-fix-suggestion-vscode.png)<br>
+![Screenshot showing suggested change in VS Code]({{site.url}}/assets/images/docs/development/tools/flutter-fix-suggestion-vscode.png)<br>
 A sample code action in VS Code
 
 在 VS Code 中使用 code action 的一个案例。

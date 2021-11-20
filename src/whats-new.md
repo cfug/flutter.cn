@@ -144,8 +144,8 @@ publication since the last stable release:
 [DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
 [DartPad Workshop Authoring Guide]: {{site.github}}/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide
 [Deferred components]: {{site.url}}/perf/deferred-components
-[desktop]: /desktop
-[Embedded Support for Flutter]: /embedded
+[desktop]: {{site.url}}/desktop
+[Embedded Support for Flutter]: {{site.url}}/embedded
 [Embedding DartPad in your web page]: {{site.github}}/dart-lang/dart-pad/wiki/Embedding-Guide
 [Firebase for Flutter]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
 [Flutter and Dialogflow voice bots]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
@@ -154,7 +154,7 @@ publication since the last stable release:
 [Google I/O workshops page]: https://events.google.com/io/program/content?4=topic_flutter&5=type_workshop&lng=en
 [How It's Made: I/O Photo Booth]: {{site.flutter-medium}}/how-its-made-i-o-photo-booth-3b8355d35883
 [Inherited widgets]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
-[Inherited widgets DartPad]: /go/inheritedwidget-workshop
+[Inherited widgets DartPad]: {{site.url}}/go/inheritedwidget-workshop
 [Memory view page]: {{site.url}}/development/tools/devtools/memory
 [Null safety]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
 [Slivers]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
@@ -246,9 +246,9 @@ publication since the last stable release:
 [Creating responsive and adaptive apps]: {{site.url}}/development/ui/layout/adaptive-responsive
 [Dart sound null safety: technical preview 2]: {{site.flutter-medium}}/null-safety-flutter-tech-preview-cb5c98aba187
 [Deprecation Lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
-[Desktop support for Flutter]: /desktop
+[Desktop support for Flutter]: {{site.url}}/desktop
 [Devtools]: {{site.url}}/development/tools/devtools/overview
-[Flutter Ads]: /ads
+[Flutter Ads]: {{site.url}}/ads
 [Flutter 2 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-2.0.0
 [Flutter Fix]: {{site.url}}/development/tools/flutter-fix
 [Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
@@ -269,9 +269,9 @@ publication since the last stable release:
 [Updates on Flutter Testing]: {{site.flutter-medium}}/updates-on-flutter-testing-f54aa9f74c7e
 [Using multiple Flutter instances]: {{site.url}}/development/add-to-app/multiple-flutters
 [Web FAQ]: {{site.url}}/development/platform-integration/web
-[Web support for Flutter]: /web
+[Web support for Flutter]: {{site.url}}/web
 [What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
-[Who is Dash?]: /dash
+[Who is Dash?]: {{site.url}}/dash
 [write integration tests using the integration_test package]: {{site.url}}/testing/integration-tests
 
 ---
@@ -527,7 +527,7 @@ publication since the last stable release:
 [Announcing Flutter 1.20]: {{site.flutter-medium}}/announcing-flutter-1-20-2aaf68c89c75
 [Building performant Flutter widgets]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
 [codelabs landing]: {{site.url}}/codelabs
-[Desktop support]: /desktop
+[Desktop support]: {{site.url}}/desktop
 [dev-tools]: {{site.flutter-medium}}/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
 [Developing for iOS 14 beta]: {{site.url}}/development/ios-14
 [Enums with Extensions in Dart]: {{site.flutter-medium}}/enums-with-extensions-dart-460c42ea51f7
@@ -622,7 +622,7 @@ Other newness:
 [Announcing CodePen support for Flutter]: {{site.flutter-medium}}/announcing-codepen-support-for-flutter-bb346406fe50
 [Announcing Flutter 1.17]: {{site.flutter-medium}}/announcing-flutter-1-17-4182d8af7f8e
 [Custom implicit animations in Flutter…with TweenAnimationBuilder]: {{site.flutter-medium}}/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
-[Desktop]: /desktop
+[Desktop]: {{site.url}}/desktop
 [Developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
 [Developing plugin packages]: {{site.url}}/development/packages-and-plugins/developing-packages#federated-plugins
 [Directional animations with build-in explicit animations]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
@@ -757,7 +757,7 @@ Happy Fluttering!
 [Announcing Flutter 1.12: What a year!]: {{site.flutter-medium}}/announcing-flutter-1-12-what-a-year-22c256ba525d
 [app size]: {{site.url}}/perf/app-size#ios
 [building a web app with Flutter]: {{site.url}}/get-started/web
-[Desktop support for Flutter]: /desktop
+[Desktop support for Flutter]: {{site.url}}/desktop
 [Flutter: the first UI platform designed for ambient computing]: {{site.google-blog}}/2019/12/flutter-ui-ambient-computing.html?m=1
 [Flutter Favorite program]: {{site.url}}/development/packages-and-plugins/favorites
 [Flutter 1.12.13]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.12.13
@@ -766,7 +766,7 @@ Happy Fluttering!
 [Flutter Medium publication]: {{site.medium}}/flutter
 [Migrating your plugin to the new Android APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
 [implicit animations]: {{site.url}}/codelabs/implicit-animations
-[Web support for Flutter]: /web
+[Web support for Flutter]: {{site.url}}/web
 [Web support for Flutter goes beta]: {{site.flutter-medium}}/web-support-for-flutter-goes-beta-35b64a1217c0
 [write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 [Get started]: {{site.url}}/get-started/install
@@ -834,13 +834,13 @@ Happy Fluttering!
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
 [creating responsive apps]: {{site.url}}/development/ui/layout/adaptive-responsive
 [Flutter Medium publication]: {{site.medium}}/flutter
-[Flutter for web]: /web
+[Flutter for web]: {{site.url}}/web
 [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: {{site.google-blog}}/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
 [Improving Flutter's Error Messages]: {{site.flutter-medium}}/improving-flutters-error-messages-e098513cecf9
 [Performance view]: {{site.url}}/development/tools/devtools/performance
 [preparing a web app for release]: {{site.url}}/deployment/web
 [`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
-[Showcase]: /showcase
+[Showcase]: {{site.url}}/showcase
 [`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
 [ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
 [Try it out]: {{site.url}}/codelabs/layout-basics
@@ -1043,11 +1043,11 @@ If you have questions or comments about the revamped site,
 
 [a native debugger _and_ a Dart debugger to your app]: {{site.url}}/testing/oem-debuggers
 [Background Dart processes]: {{site.url}}/development/packages-and-plugins/background-processes
-[community]: /community
+[community]: {{site.url}}/community
 [file an issue]: {{site.repo.this}}/issues
 [Flutter's build modes]: {{site.url}}/testing/build-modes
-[front]: /
+[front]: {{site.url}}/
 [Inside Flutter]: {{site.url}}/resources/inside-flutter
-[showcase]: /showcase
+[showcase]: {{site.url}}/showcase
 [State management]: {{site.url}}/development/data-and-backend/state-mgmt
 [Technical videos]: {{site.url}}/resources/videos

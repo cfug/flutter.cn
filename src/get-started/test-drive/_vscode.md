@@ -114,6 +114,6 @@ contains a simple demo app that uses [Material Components][].
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
 [在 Flutter 设备中快速切换]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
 [安装]: {{site.url}}/get-started/install
-[status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png
+[status bar]: {{site.url}}/assets/images/docs/tools/vs-code/device_status_bar.png
 [trusted your computer]: {{site.url}}/get-started/install/macos#trust
 </div>

@@ -1827,7 +1827,7 @@ Apple 的 [规范][guidelines]。
 [`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
 [accessibility documentation]: {{site.url}}/development/accessibility-and-localization/accessibility
 [add-to-app]: {{site.url}}/development/add-to-app
-[ads]: /ads
+[ads]: {{site.url}}/ads
 [Android]: #run-android
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
@@ -1843,7 +1843,7 @@ Apple 的 [规范][guidelines]。
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Chip`]: {{site.api}}/flutter/material/Chip-class.html
 [`color`]: {{site.api}}/flutter/widgets/Icon/color.html
-[Community]: /community
+[Community]: {{site.url}}/community
 [`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
 [contribute to Flutter]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
 [Contributing Guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
@@ -1851,7 +1851,7 @@ Apple 的 [规范][guidelines]。
 [Dart]: {{site.dart-site}}/
 [Dart DevTools]: {{site.url}}/development/tools/devtools
 [Debugging with Flutter]: {{site.url}}/testing/debugging
-[desktop]: /desktop
+[desktop]: {{site.url}}/desktop
 [detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
 [Discord]: https://discord.gg/N7Yshp4
 [`Divider`]: {{site.api}}/flutter/material/Divider-class.html
@@ -1932,7 +1932,7 @@ Apple 的 [规范][guidelines]。
 [`Set`]: {{site.api}}/flutter/dart-core/Set-class.html
 [`showAboutDialog`]: {{site.api}}/flutter/material/showAboutDialog.html
 [`showLicensePage`]: {{site.api}}/flutter/material/showLicensePage.html
-[showcase]: /showcase
+[showcase]: {{site.url}}/showcase
 [{{site.email}}]: mailto:{{site.email}}
 [`size`]: {{site.api}}/flutter/widgets/Icon/size.html
 [Stack Overflow]: {{site.so}}/tags/flutter
@@ -1943,7 +1943,7 @@ Apple 的 [规范][guidelines]。
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`UserAccountsDrawerHeader`]: {{site.api}}/flutter/material/UserAccountsDrawerHeader-class.html
 [VS Code]: https://code.visualstudio.com/
-[web]: /web
+[web]: {{site.url}}/web
 [web instructions]: {{site.url}}/get-started/web
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: {{site.url}}/development/ui/widgets

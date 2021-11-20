@@ -505,4 +505,4 @@ You can follow the next steps in the [Adding a Flutter screen to an Android app]
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [local repository]: https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local
 [only supports]: {{site.url}}/resources/faq#what-devices-and-os-versions-does-flutter-run-on
-[Using Flutter in China]: /community/china
+[Using Flutter in China]: {{site.url}}/community/china

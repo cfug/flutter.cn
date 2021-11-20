@@ -58,7 +58,7 @@ you can start DevTools using one of the following:
   Flutter Inspector 里，在 **More Actions**
   的菜单中选择 **Open DevTools**。
 
-![screenshot of Open DevTools button](/assets/images/docs/tools/devtools/android_studio_open_devtools.png){:width="100%"}
+![screenshot of Open DevTools button]({{site.url}}/assets/images/docs/tools/devtools/android_studio_open_devtools.png){:width="100%"}
 
 ## Launch DevTools from an action
 

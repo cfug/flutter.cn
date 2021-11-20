@@ -33,7 +33,7 @@ resources.
   a new os_ might also be helpful.
 
 
-[community]: /community
+[community]: {{site.url}}/community
 [Discord]: https://discord.com/invite/N7Yshp4
 [Custom Flutter Engine Embedders]: {{site.repo.flutter}}/wiki/Custom-Flutter-Engine-Embedders
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview

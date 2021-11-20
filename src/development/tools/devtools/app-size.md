@@ -69,7 +69,7 @@ navigate to the "App Size" tab.
 
 如果 DevTools 已经连接到了一个正在运行的应用，点击 "App Size" 标签。
 
-![Screenshot of app size tab](/assets/images/docs/tools/devtools/app_size_tab.png)
+![Screenshot of app size tab]({{site.url}}/assets/images/docs/tools/devtools/app_size_tab.png)
 
 If DevTools is not connected to a running application, you can
 access the tool from the landing page that appears once you have launched
@@ -78,7 +78,7 @@ DevTools (see [installation instructions][]).
 如果 DevTools 未连接到应用，您可以从启动 DevTools 后出现的登录页访问该工具
 （查看[安装说明][installation instructions]）。
 
-![Screenshot of app size access on landing page](/assets/images/docs/tools/devtools/app_size_access_landing_page.png){:width="100%"}
+![Screenshot of app size access on landing page]({{site.url}}/assets/images/docs/tools/devtools/app_size_access_landing_page.png){:width="100%"}
 
 ## Analysis tab
 
@@ -96,7 +96,7 @@ application) using the dominator tree and call graph.
 并且可以使用 "dominator tree" 和 "call graph" 看到代码的属性数据
 （例如：为什么编译后的应用程序中包含一段代码）。
 
-![Screenshot of app size analysis](/assets/images/docs/tools/devtools/app_size_analysis.png){:width="100%"}
+![Screenshot of app size analysis]({{site.url}}/assets/images/docs/tools/devtools/app_size_analysis.png){:width="100%"}
 
 ### Loading a size file
 
@@ -109,7 +109,7 @@ file into the dialog, and click "Analyze Size".
 当您打开分析标签页时，您可以看到加载一个体积文件的使用说明。
 拖动一个尺寸文件到弹框中，并点击 "Analyze Size"。
 
-![Screenshot of app size analysis loading screen](/assets/images/docs/tools/devtools/app_size_load_analysis.png){:width="100%"}
+![Screenshot of app size analysis loading screen]({{site.url}}/assets/images/docs/tools/devtools/app_size_load_analysis.png){:width="100%"}
 
 See [Generating size files][] below for information on
 generating size files.
@@ -157,7 +157,7 @@ navigator at the top of the treemap.
 
 如果要后退或向上导航，请使用树映射顶部的面包屑导航。
 
-![Screenshot of treemap breadcrumb navigator](/assets/images/docs/tools/devtools/treemap_breadcrumbs.png){:width="100%"}
+![Screenshot of treemap breadcrumb navigator]({{site.url}}/assets/images/docs/tools/devtools/treemap_breadcrumbs.png){:width="100%"}
 
 ### Dominator tree and call graph
 
@@ -225,7 +225,7 @@ use the dominator tree to trace the package to its root source.
 例如，如果您正在分析应用程序的体积，并发现编译后的应用程序中包含意外的包，
 则可以使用支配树来跟踪包到其根源。
 
-![Screenshot of code size dominator tree](/assets/images/docs/tools/devtools/code_size_dominator_tree.png){:width="100%"}
+![Screenshot of code size dominator tree]({{site.url}}/assets/images/docs/tools/devtools/code_size_dominator_tree.png){:width="100%"}
 
 #### Using the call graph
 
@@ -274,7 +274,7 @@ fine-grained dependencies of between pieces of your code
 
 这些信息对于理解代码片段（包、库、类和函数）之间的细粒度依赖关系非常有用。
 
-![Screenshot of code size call graph](/assets/images/docs/tools/devtools/code_size_call_graph.png){:width="100%"}
+![Screenshot of code size call graph]({{site.url}}/assets/images/docs/tools/devtools/code_size_call_graph.png){:width="100%"}
 
 #### Should I use the dominator tree or the call graph?
 
@@ -327,7 +327,7 @@ diff 标签页让您可以比较体积信息的两个快照。
 例如，在更改代码之前和之后生成的体积文件。
 您可以使用树状图和表格可视化两个数据集之间的差异。
 
-![Screenshot of app size diff](/assets/images/docs/tools/devtools/app_size_diff.png){:width="100%"}
+![Screenshot of app size diff]({{site.url}}/assets/images/docs/tools/devtools/app_size_diff.png){:width="100%"}
 
 ### Loading size files
 
@@ -343,7 +343,7 @@ their respective dialogs, and click **Analyze Diff**.
 同样，这些文件需要从同一个应用程序生成。
 将这些文件拖放到各自的对话框中，然后单击 **Analyze Diff**。
 
-![Screenshot of app size diff loading screen](/assets/images/docs/tools/devtools/app_size_load_diff.png){:width="100%"}
+![Screenshot of app size diff loading screen]({{site.url}}/assets/images/docs/tools/devtools/app_size_load_diff.png){:width="100%"}
 
 See [Generating size files][] below for information
 on generating these files.

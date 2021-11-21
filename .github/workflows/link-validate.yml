@@ -3,10 +3,10 @@ name: Validate link references in built HTML
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   check_link_references:

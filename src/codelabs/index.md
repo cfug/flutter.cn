@@ -51,7 +51,7 @@ one of these codelabs:
   你将完成一个简单的移动应用程序，
   它将具有为一个创业公司生成建议的公司名称的功能。
   在本节中，你将使用一个 package 并使用它生成的随机文字对创建一个无限滚动的列表。
-  你也可以在 [codelab on flutter.dev][] 找到它。
+  你也可以在 [文档网站的 codelab 页面中][codelab on docs.flutter.dev] 找到它。
 
 * [Write your first Flutter app, part 2][]<br>
   Create a simple mobile app that generates proposed names

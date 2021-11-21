@@ -1086,6 +1086,8 @@ Key information:
   The hero's flight path still follows an arc,
   but the image's aspect ratio remains constant.
 
+  Hero 的飞行路线仍然是一个弧线，
+  但图像的长宽比将保持不变。
 
 [Animations in Flutter tutorial]: {{site.url}}/development/ui/animations/tutorial
 [basic_hero_animation]: {{site.repo.this}}/tree/master/examples/_animation/basic_hero_animation/

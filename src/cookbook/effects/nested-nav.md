@@ -1,12 +1,15 @@
 ---
 title: Create a nested navigation flow
+title: 创建一个嵌套导航
 description: How to implement a flow with nested navigation.
 prev:
   title: Create a download button
-  path:  /docs/cookbook/effects/download-button
+  title: 创建一个带进度条的下载按钮
+  path: {{site.url}}/cookbook/effects/download-button
 next:
   title: Create a photo filter carousel
-  path:  /docs/cookbook/effects/photo-filter-carousel
+  title: 创建一个照片滤镜选择器
+  path: {{site.url}}/cookbook/effects/photo-filter-carousel
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

@@ -1,12 +1,16 @@
 ---
 title: Create a download button
+title: 创建一个带进度条的下载按钮
 description: How to implement a download button.
+description: 如何实现一个下载按钮。
 prev:
   title: Work with tabs
-  path:  /docs/cookbook/design/tabs
+  title: 使用 tabs
+  path: {{site.url}}/cookbook/design/tabs
 next:
   title: Create a nested navigation flow
-  path:  /docs/cookbook/effects/nested-nav
+  title: 创建一个嵌套导航
+  path: {{site.url}}/cookbook/effects/nested-nav
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

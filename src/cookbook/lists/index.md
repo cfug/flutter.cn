@@ -1,5 +1,5 @@
 ---
-title: 列表相关 (Lists)
+title: Lists
 ---
 
 {% include docs/cookbook-group-index.md %}

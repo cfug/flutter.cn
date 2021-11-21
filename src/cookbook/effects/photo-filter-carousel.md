@@ -1,12 +1,16 @@
 ---
 title: Create a photo filter carousel
+title: 创建一个照片滤镜选择器
 description: How to implement a photo filter carousel.
+description: 学习如何实现一个照片滤镜的轮播选择器
 prev:
   title: Create a nested navigation flow
-  path:  /docs/cookbook/effects/nested-nav
+  title: 创建一个嵌套导航
+  path: {{site.url}}/cookbook/effects/nested-nav
 next:
   title: Create a scrolling parallax effect
-  path:  /docs/cookbook/effects/parallax-scrolling
+  title: 创建一个滚动视差效果
+  path: {{site.url}}/cookbook/effects/parallax-scrolling
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -189,7 +193,7 @@ class FilterItem extends StatelessWidget {
          padding: const EdgeInsets.all(8.0),
          child: ClipOval(
            child: Image.network(
-             'https://flutter.dev/docs/cookbook/img-files'
+             'https://docs.flutter.dev/cookbook/img-files'
              '/effects/instagram-buttons/millenial-texture.jpg',
              color: color.withOpacity(0.5),
              colorBlendMode: BlendMode.hardLight,
@@ -568,7 +572,7 @@ class _ExampleInstagramFilterSelectionState
       builder: (context, value, child) {
         final color = value as Color;
         return Image.network(
-          'https://flutter.dev/docs/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
+          'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
           color: color.withOpacity(0.5),
           colorBlendMode: BlendMode.color,
           fit: BoxFit.cover,
@@ -824,7 +828,7 @@ class FilterItem extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: ClipOval(
             child: Image.network(
-              'https://flutter.dev/docs/cookbook/img-files/effects/instagram-buttons/millenial-texture.jpg',
+              'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-texture.jpg',
               color: color.withOpacity(0.5),
               colorBlendMode: BlendMode.hardLight,
             ),

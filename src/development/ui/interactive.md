@@ -1154,7 +1154,7 @@ Flutter Gallery [running app][], [repo][]
 <br> This video includes information about state and
   stateless widgets.  Presented by Google engineer, Ian Hickson.
 
-[Flutter 的分层设计][Flutter's Layered Design] (视频)
+[Flutter 的分层设计][Flutter's Layered Design CN] (视频)
 <br> 此视频包含有关有状态和无状态 widget 的信息。
 由 Google 工程师 Ian Hickson 讲解。
 
@@ -1169,7 +1169,8 @@ Flutter Gallery [running app][], [repo][]
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: {{site.url}}/cookbook
-[Flutter's Layered Design]: https://www.bilibili.com/video/BV1b441157vV
+[Flutter's Layered Design CN]: https://www.bilibili.com/video/BV1b441157vV
+[Flutter's Layered Design]: {{site.youtube-site}}/watch?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`foundation` library]: {{site.api}}/flutter/foundation/foundation-library.html
@@ -1185,7 +1186,7 @@ Flutter Gallery [running app][], [repo][]
 [iOS simulator]: {{site.url}}/get-started/install/macos#set-up-the-ios-simulator
 [building layouts tutorial]: {{site.url}}/development/ui/layout/tutorial
 [building layouts tutorial (step 6)]: {{site.url}}/development/ui/layout/tutorial#step-6-final-touch
-[community]: {{site.url}}/community
+[community]: {{site.main-url}}/community
 [Handle taps]: {{site.url}}/cookbook/gestures/handling-taps
 [`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
 [Libraries and visibility]: {{site.dart-site}}/guides/language/language-tour#libraries-and-visibility

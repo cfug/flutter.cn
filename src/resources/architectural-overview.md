@@ -904,7 +904,7 @@ for `Container`, you can see that if the color is not null, it inserts a
 在这个过程中，`build()` 方法可能会在必要时，根据状态引入新的 widget。
 在上面的例子中，`Container` 的 `color` 和 `child` 就是典型的例子。
 我们可以查看 `Container` 的
-[源代码]({{site.github}}/flutter/flutter/blob/f7a6a7906be96d2288f5d63a5a54c515a6e987fe/packages/flutter/lib/src/widgets/container.dart#L433)，
+[源代码]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)，
 你会看到当 `color` 属性不为空时，`ColoredBox` 会被加入用于颜色布局。
 
 <!-- skip -->
@@ -1009,7 +1009,7 @@ The base class for every node in the render tree is
 defines an abstract model for layout and painting. This is extremely general: it
 does not commit to a fixed number of dimensions or even a Cartesian coordinate
 system (demonstrated by [this example of a polar coordinate
-system]({{site.dartpad}}/0f020197a5d4c980342d5c7d9e935cee)). Each
+system]({{site.dartpad}}/?id=0f020197a5d4c980342d5c7d9e935cee&null_safety=true)). Each
 `RenderObject` knows its parent, but knows little about its children other than
 how to _visit_ them and their constraints. This provides `RenderObject` with
 sufficient abstraction to be able to handle a variety of use cases.
@@ -1018,7 +1018,7 @@ sufficient abstraction to be able to handle a variety of use cases.
 [`RenderObject`]({{site.api}}/flutter/rendering/RenderObject-class.html)，
 该基类为布局和绘制定义了一个抽象模型。
 这是再平凡不过的事情：它并不总是一个固定的大小，甚至不遵循笛卡尔坐标规律
-（根据该 [极坐标系的示例](https://dartpad.cn/0f020197a5d4c980342d5c7d9e935cee) 所示）。
+（根据该 [极坐标系的示例]({{site.dartpad}}/?id=0f020197a5d4c980342d5c7d9e935cee&null_safety=true) 所示）。
 每一个 `RenderObject` 都了解其父节点的信息，
 但对于其子节点，除了如何 **访问** 和获得他们的布局约束，并没有更多的信息。
 这样的设计让 `RenderObject` 拥有高效的抽象能力，能够处理各种各样的使用场景。
@@ -1561,7 +1561,7 @@ relatively straightforward.
 
 Dart 语言存在之初就已经支持直接编译成 JavaScript，并且针对开发和生产目的对其工具链进行了优化。
 许多重要的应用已经使用 Dart 编译成的 JavaScript 在生产环境上运行，
-包括 [Google Ads 的广告商工具](https://ads.google.com/home/)。
+包括 [Google Ads 的广告商工具](https://ads.google.cn/home/)。
 由于 Flutter 框架是 Dart 编写的，将其编译成 JavaScript 相对而言更为简单。
 
 However, the Flutter engine, written in C++, is designed to interface with the

@@ -1,5 +1,5 @@
 ---
-title: 使用图片 (Images)
+title: Images
 ---
 
 {% include docs/cookbook-group-index.md %}

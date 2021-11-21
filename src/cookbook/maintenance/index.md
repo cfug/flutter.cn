@@ -1,5 +1,5 @@
 ---
-title: 维护 (Maintenance)
+title: Maintenance
 ---
 
 {% include docs/cookbook-group-index.md %}

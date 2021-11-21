@@ -1231,7 +1231,7 @@ We increased our support for web, moving it from the dev channel to the beta cha
 
 [42531](https://github.com/flutter/flutter/pull/42531) Print correct hostname when web server is launched
 
-[42676](https://github.com/flutter/flutter/pull/42676) [web] Update web runner message with flutter.dev/web
+[42676](https://github.com/flutter/flutter/pull/42676) [web] Update web runner message with docs.flutter.dev/web
 
 [42701](https://github.com/flutter/flutter/pull/42701) serve correct content type from debug server
 
@@ -1354,7 +1354,7 @@ We increased our support for web, moving it from the dev channel to the beta cha
 
 ## Desktop
 
-We are also moving macOS support from tech preview to alpha, enabling it in the dev channel. For more details,  please see [flutter.dev/desktop](https://github.com/flutter/flutter/wiki/Desktop-shells).
+We are also moving macOS support from tech preview to alpha, enabling it in the dev channel. For more details,  please see [docs.flutter.dev/desktop](https://github.com/flutter/flutter/wiki/Desktop-shells).
 
 [37901](https://github.com/flutter/flutter/pull/37901) [macos] Check for special keys before creating a logical key
 
@@ -2329,7 +2329,7 @@ In this update, the core engine continues to see many improvements, including a 
 
 ## Plugins
 
-We have made significant improvements in our plugins. We upgraded a set of plugins to support web development. Also, to support Add to App scenarios, we have a new set of APIs available for existing Android plugins to be upgraded to. If you are currently maintaining an Android plugin. We encourage you to check the [Migrating your plugin to the new APIs](http://flutter.dev/go/android-plugin-migration) documentation, and upgrade your plugins accordingly.
+We have made significant improvements in our plugins. We upgraded a set of plugins to support web development. Also, to support Add to App scenarios, we have a new set of APIs available for existing Android plugins to be upgraded to. If you are currently maintaining an Android plugin. We encourage you to check the [Migrating your plugin to the new APIs](http://docs.flutter.dev/go/android-plugin-migration) documentation, and upgrade your plugins accordingly.
 
 [1984](https://github.com/flutter/plugins/pull/1984) Remove Flutterfire plugins (moved to FirebaseExtended)
 
@@ -2379,7 +2379,7 @@ We added the ability to get id in the callback in the Android Alarm Manager plug
 
 #### Plugin: Android Intent
 
-We made several improvements in the Android Intent plugin including adding the ability to pass intent flags (contributed by a community member!), and upgrading it to the [new plugin API](https://github.com/flutter/website/blob/staging-add-to-app-do-not-delete-until-2020/src/docs/development/packages-and-plugins/plugin-api-migration.md).
+We made several improvements in the Android Intent plugin including adding the ability to pass intent flags (contributed by a community member!), and upgrading it to the [new plugin API](https://github.com/flutter/website/blob/staging-add-to-app-do-not-delete-until-2020/src/development/packages-and-plugins/plugin-api-migration.md).
 
 [2000](https://github.com/flutter/plugins/pull/2000) [android_intent] add flags option
 
@@ -2405,7 +2405,7 @@ General bug fix in the Battery plugin.
 
 #### Plugin: Camera
 
-We upgraded the Camera plugin to the [new plugin API](https://github.com/flutter/website/blob/staging-add-to-app-do-not-delete-until-2020/src/docs/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes.
+We upgraded the Camera plugin to the [new plugin API](https://github.com/flutter/website/blob/staging-add-to-app-do-not-delete-until-2020/src/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes.
 
 [2057](https://github.com/flutter/plugins/pull/2057) [Camera] Fixes NullPointerException
 
@@ -2551,7 +2551,7 @@ General bug fixes in the Shared Preferences plugin.
 
 #### Plugin: Url Launcher
 
-We upgraded the Url Launcher plugin to the [new plugin API](https://github.com/flutter/website/blob/staging-add-to-app-do-not-delete-until-2020/src/docs/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes. Meanwhile, we have converted the Url launcher into a federated plugin to help it scale more efficiently to multiple platforms. For more information, please refer to [Federated Plugin Implementation](https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#).
+We upgraded the Url Launcher plugin to the [new plugin API](https://github.com/flutter/website/blob/main/src/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes. Meanwhile, we have converted the Url launcher into a federated plugin to help it scale more efficiently to multiple platforms. For more information, please refer to [Federated Plugin Implementation](https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#).
 
 [2038](https://github.com/flutter/plugins/pull/2038) [url_launcher] Removed reference to rootViewController during initialization
 
@@ -2570,7 +2570,7 @@ We upgraded the Url Launcher plugin to the [new plugin API](https://github.com/f
 
 #### Plugin: Video Player
 
-We upgraded the Video Player plugin to the [new plugin API](https://github.com/flutter/website/blob/staging-add-to-app-do-not-delete-until-2020/src/docs/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes. Meanwhile, we have converted it into a federated plugin to help it scale more efficiently to multiple platforms. For more information, please refer to [Federated Plugin Implementation](https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#).
+We upgraded the Video Player plugin to the [new plugin API](https://github.com/flutter/website/blob/main/src/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes. Meanwhile, we have converted it into a federated plugin to help it scale more efficiently to multiple platforms. For more information, please refer to [Federated Plugin Implementation](https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#).
 
 [1813](https://github.com/flutter/plugins/pull/1813) [video-player] add support for content uris as urls
 
@@ -2587,7 +2587,7 @@ We upgraded the Video Player plugin to the [new plugin API](https://github.com/f
 
 #### Plugin: Webview Flutter
 
-We upgraded the Webview Flutter plugin to the [new plugin API](https://github.com/flutter/website/blob/staging-add-to-app-do-not-delete-until-2020/src/docs/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes.
+We upgraded the Webview Flutter plugin to the [new plugin API](https://github.com/flutter/website/blob/main/src/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes.
 
 [1996](https://github.com/flutter/plugins/pull/1996) [webview_flutter] Allow underscores anywhere for Javascript Channel name
 

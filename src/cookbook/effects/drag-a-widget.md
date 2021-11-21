@@ -1,12 +1,16 @@
 ---
 title: Drag a UI element
+title: 创建一个可拖放的 UI 组件
 description: How to implement a draggable UI element.
+description: 如何实现一个可拖放的 UI 组件。
 prev:
   title: Create gradient chat bubbles
-  path:  /docs/cookbook/effects/gradient-bubbles
+  title: 创建一个渐变色的对话气泡
+  path: {{site.url}}/cookbook/effects/gradient-bubbles
 next:
   title: Build a form with validation 
-  path:  /docs/cookbook/forms/validation
+  title: 构建一个有验证判断的表单
+  path: {{site.url}}/cookbook/forms/validation
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

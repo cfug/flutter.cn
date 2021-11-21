@@ -3026,20 +3026,16 @@ fragmentation. For more information, see the
 In Android, you use Firebase Cloud Messaging to setup push
 notifications for your app.
 
-在 Android 中，你会使用 Firebase Cloud Messaging 来为应用设置推送通知。
+在 Android 中，你可以使用 Firebase Cloud Messaging 来为应用设置推送通知。
 
 In Flutter, access this functionality using the
-[Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging)
-plugin.
-For more information on using the Firebase Cloud Messaging API, see the
-[`firebase_messaging`]({{site.pub}}/packages/firebase_messaging)
-plugin documentation.
+[Firebase Messaging][] plugin.
+For more information on using the Firebase Cloud Messaging API,
+see the [`firebase_messaging`][] plugin documentation.
 
-在 Flutter 中，则使用 
-[Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging) 
-插件实现此功能。想要获得更多关于使用 Firebase Cloud Messaging API 的信息，请查阅 
-[`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) 插件文档。
-
+在 Flutter 中，则使用 [Firebase Messaging][] 插件实现此功能。
+想要获得更多关于使用 Firebase Cloud Messaging API 的信息，
+请查阅 [`firebase_messaging`][] 插件文档。
 
 [Add Flutter to existing app]: {{site.url}}/development/add-to-app
 [Animation & Motion widgets]: {{site.url}}/development/ui/widgets/animation

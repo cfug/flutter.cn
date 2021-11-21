@@ -6,7 +6,7 @@ prev:
   path: {{site.url}}/cookbook/effects/photo-filter-carousel
 next:
   title: Create a shimmer loading effect
-  path:  /docs/cookbook/effects/shimmer-loading
+  path: {{site.url}}/cookbook/effects/shimmer-loading
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -886,7 +886,7 @@ class Location {
 }
 
 const urlPrefix =
-    'https://flutter.dev/docs/cookbook/img-files/effects/parallax';
+    'https://docs.flutter.dev/cookbook/img-files/effects/parallax';
 const locations = [
   Location(
     name: 'Mount Rushmore',

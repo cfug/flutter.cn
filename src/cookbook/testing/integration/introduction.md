@@ -4,15 +4,15 @@ title: 集成测试介绍
 description: Learn about integration testing in Flutter.
 description: 了解 Flutter 中的集成测试。
 short-title: Introduction
-tags: cookbook, 实用教程, 测试
-keywords: 集成测试
+short-title: 介绍
 prev:
   title: Take a picture using the camera
+  title: 调用设备相机拍照
   path: {{site.url}}/cookbook/plugins/picture-using-camera
 next:
-  title: Handle scrolling
-  title: 列表滚动
-  path: {{site.url}}/cookbook/testing/integration/scrolling
+  title: Performance profiling
+  title: 性能调试
+  path: {{site.url}}/cookbook/testing/integration/profiling
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>

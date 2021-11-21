@@ -1,5 +1,5 @@
 ---
-title: 持久化 (Persistence)
+title: Persistence
 ---
 
 {% include docs/cookbook-group-index.md %}

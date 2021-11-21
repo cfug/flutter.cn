@@ -143,6 +143,8 @@ user breakpoints are cleared.
 
 当 Flutter 应用执行热重载时，用户的断点会被清除。
 
+[Logging view]: {{site.url}}/development/tools/devtools/logging
+
 ## Other resources
 
 ## 其他资源
@@ -153,4 +155,3 @@ For more information on debugging and profiling, see the
 访问 [Debugging][] 页面来获取更多关于调试器和性能分析的信息。
 
 [Debugging]: {{site.url}}/testing/debugging
-[Logging view]: {{site.url}}/development/tools/devtools/logging

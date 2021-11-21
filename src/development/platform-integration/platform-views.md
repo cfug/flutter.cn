@@ -6,7 +6,7 @@ description: Learn how to host native Android and iOS views in your Flutter app 
 description: 学习如何在 Flutter 应用中使用集成平台视图托管您的原生 Android 和 iOS 视图。
 ---
 
-Platform views allow to embed native views in a Flutter app, so
+Platform views allow you to embed native views in a Flutter app, so
 you can apply transforms, clips, and opacity to the native view
 from Dart.
 

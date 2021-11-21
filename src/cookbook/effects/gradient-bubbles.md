@@ -1,12 +1,16 @@
 ---
 title: Create gradient chat bubbles
+title: 创建一个渐变色的对话气泡
 description: How to implement gradient chat bubbles.
+description: 如何实现一个带有渐变色的对话气泡
 prev:
   title: Create an expandable FAB
-  path:  /docs/cookbook/effects/expandable-fab
+  title: 创建一个点击展开的 FAB
+  path: {{site.url}}/cookbook/effects/expandable-fab
 next:
   title: Drag a UI element
-  path:  /docs/cookbook/effects/drag-a-widget
+  title: 创建一个可拖放的 UI 组件
+  path: {{site.url}}/cookbook/effects/drag-a-widget
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

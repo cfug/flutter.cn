@@ -2288,7 +2288,7 @@ displays a business card!
 你就要完成这个 codelab 了！如果你想要检验你刚学的知识，
 为何不讲这些结合起来，构建一个显示名片的 Flutter UI 呢！
 
-![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay1.png){:width="400px"}{:.text-center}
+ ![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay1.png){:width="400px"}{:.text-center}
 
 You'll break down Flutter's layout into parts,
 which is how you'd create a Flutter UI in the real world.
@@ -2304,7 +2304,7 @@ which is positioned to the left of the name and title.
 然后你将会在 `Column` 包裹一个含有 icon 的 `Row`，
 它将会被放在姓名和标题的左边。
 
-![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay2.png){:width="400px"}{:.text-center}
+ ![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay2.png){:width="400px"}{:.text-center}
 
 In [Part 2](#part-2), you'll wrap the `Row` in a `Column`,
 so the code contains a `Column` within a `Row` within a `Column`.
@@ -3835,7 +3835,7 @@ here are a few suggestions for resources worth exploring:
 
 You can download Flutter from the [install][] page. 
 
-你可以在 [install][] 页面中下载 Flutter。
+你可以在 [安装][install] 页面中下载 Flutter。
 
 [Building layouts]: {{site.url}}/development/ui/layout
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html

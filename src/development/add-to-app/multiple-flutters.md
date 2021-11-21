@@ -90,7 +90,7 @@ instance is independent and maintains its own internal navigation
 stack, UI, and application states. This simplifies the overall application code's
 responsibility for state keeping and improves modularity. More details on the
 scenarios motivating the usage of multiple Flutters can be found at
-[flutter.dev/go/multiple-flutters][].
+[docs.flutter.dev/go/multiple-flutters][].
 
 使用多个 Flutter 实例的优势在于，每一个实例互相独立，各自维护路由栈、UI 和应用状态。
 这简化了应用程序整体的状态保持考虑，并且进一步模块化。
@@ -185,7 +185,7 @@ on both Android and iOS on [GitHub][].
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [performance characteristics]: {{site.url}}/development/add-to-app/performance
-[flutter.dev/go/multiple-flutters]: {{site.url}}/go/multiple-flutters
+[docs.flutter.dev/go/multiple-flutters]: {{site.url}}/go/multiple-flutters
 [Issue 72009]: {{site.repo.flutter}}/issues/72009
 [Pigeon]: {{site.pub}}/packages/pigeon
 [platform channels]: {{site.url}}/development/platform-integration/platform-channels

@@ -204,9 +204,9 @@ Dash 2.0 and 2.1
 * We also have Mega-Dash, a life-sized mascot
   who is currently resting in a locked-down Google office.
   
-  我们还有巨型 Dash，与真人大小相同。目前它正在谷歌的办公室静养。
+  我们还有一个巨型的 Dash，与真人大小相同。目前它正在谷歌的办公室静养。
 
-  ![Mega-Dash in the office]({{site.url}}/assets/images/dash/MegaDashChilling.png){:width="50%"}<br>
+![Mega-Dash in the office]({{site.url}}/assets/images/dash/MegaDashChilling.png){:width="50%"}<br>
 
   Mega-Dash made her
   first appearance at the [Flutter Interact][] event
@@ -223,14 +223,14 @@ Dash 2.0 and 2.1
   我们还有一个 Dash 布偶，
   由 Shams 最早的毛绒玩具制成。
   
-  ![Nilay and the Dash puppet]({{site.url}}/assets/images/dash/NilayDashPuppet.png){:width="50%"}<br>
+![Nilay and the Dash puppet]({{site.url}}/assets/images/dash/NilayDashPuppet.png){:width="50%"}<br>
 
   A number of our YouTube videos feature the Dash puppet,
   voiced by Emily Fortuna, one of our early (and much loved)
   Flutter Developer Advocates.
   
   我们的许多 YouTube 视频都有 Dart 布偶的出镜，由我们早期（且深受大家喜爱）的
-  Flutter 开发倡导者 Emily Fortuna 配音。
+  Flutter 开发技术推广工程师 Emily Fortuna 配音。
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/dsiLVNDJ3t0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/oyy_1CjNdBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

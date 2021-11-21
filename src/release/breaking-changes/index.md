@@ -1,8 +1,8 @@
 ---
 title: Breaking changes
-title: 重要改动 (Breaking changes)
+title: 破坏性变更 (Breaking changes)
 description: A list of migration guides for breaking changes in Flutter.
-description: Flutter 里重要改动的迁移文档。
+description: Flutter 里破坏性变更的迁移文档。
 ---
 
 As described in the [breaking change policy][],
@@ -22,9 +22,11 @@ release, and listed in alphabetical order:
 
 ### 尚未推进到稳定版
 
-TBD
+* [Deprecated API removed after v2.5][]
 
-待定
+  [2.5 之后的版本将会废弃的 API][Deprecated API removed after v2.5]
+
+[Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
 
 
 ### Released in Flutter 2.5
@@ -36,7 +38,7 @@ TBD
 
 * [Deprecated API removed after v2.2][]
 
-  [v2.2 版本废弃的 API][Deprecated API removed after v2.2]
+  [v2.2 之后的版本将会废弃的 API][Deprecated API removed after v2.2]
 
 * [Change the enterText method to move the caret to the end of the input text][]
 
@@ -165,7 +167,7 @@ The following breaking change was reverted in release 2.2:
 [Dry layout support for RenderBox]: {{site.url}}/release/breaking-changes/renderbox-dry-layout
 [Eliminating nullOk Parameters]: {{site.url}}/release/breaking-changes/eliminating-nullok-parameters
 [Material Chip button semantics]: {{site.url}}/release/breaking-changes/material-chip-button-semantics
-[SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
+[SnackBars managed by the ScaffoldMessenger]: {{site.url}}/release/breaking-changes/scaffold-messenger
 [TextSelectionTheme migration]: {{site.url}}/release/breaking-changes/text-selection-theme
 [Use maxLengthEnforcement instead of maxLengthEnforced]: {{site.url}}/release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
 [Transition of platform channel test interfaces to flutter_test package]: {{site.url}}/release/breaking-changes/mock-platform-channels
@@ -244,7 +246,7 @@ The following breaking change was reverted in release 2.2:
 [Actions API revision]: {{site.url}}/release/breaking-changes/actions-api-revision
 [Adding TextInputClient.currentAutofillScope property]: {{site.url}}/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
 [New Buttons and Button Themes]: {{site.url}}/release/breaking-changes/buttons
-[Dialogs' Default BorderRadius]:/docs/release/breaking-changes/dialog-border-radius
+[Dialogs' Default BorderRadius]: {{site.url}}/release/breaking-changes/dialog-border-radius
 [More Strict Assertions in the Navigator and the Hero Controller Scope]: {{site.url}}/release/breaking-changes/hero-controller-scope
 [Reversing the dependency between the scheduler and services layer]: {{site.url}}/release/breaking-changes/services-scheduler-dependency-reversed
 [The RenderEditable needs to be laid out before hit testing]: {{site.url}}/release/breaking-changes/rendereditable-layout-before-hit-test

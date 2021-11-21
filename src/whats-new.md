@@ -451,7 +451,7 @@ publication since the last stable release:
     [介绍 Flutter Adobe XD 支持][Announcing Adobe XD support for Flutter]
 
   * [What are the important & difficult tasks for Flutter
-     devs? — Q1 2020 survey results][q1-2020]
+     devs? - Q1 2020 survey results][q1-2020]
 
     [对于 Flutter 开发者来说有哪些重要且困难的问题？ - 2020 第一季度调查结果][q1-2020]
 
@@ -840,7 +840,7 @@ Happy Fluttering!
 [Performance view]: {{site.url}}/development/tools/devtools/performance
 [preparing a web app for release]: {{site.url}}/deployment/web
 [`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
-[Showcase]: {{site.url}}/showcase
+[Showcase]: {{site.main-url}}/showcase
 [`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
 [ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
 [Try it out]: {{site.url}}/codelabs/layout-basics
@@ -1043,11 +1043,11 @@ If you have questions or comments about the revamped site,
 
 [a native debugger _and_ a Dart debugger to your app]: {{site.url}}/testing/oem-debuggers
 [Background Dart processes]: {{site.url}}/development/packages-and-plugins/background-processes
-[community]: {{site.url}}/community
+[community]: {{site.main-url}}/community
 [file an issue]: {{site.repo.this}}/issues
 [Flutter's build modes]: {{site.url}}/testing/build-modes
 [front]: {{site.url}}/
 [Inside Flutter]: {{site.url}}/resources/inside-flutter
-[showcase]: {{site.url}}/showcase
+[showcase]: {{site.main-url}}/showcase
 [State management]: {{site.url}}/development/data-and-backend/state-mgmt
 [Technical videos]: {{site.url}}/resources/videos

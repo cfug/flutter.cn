@@ -238,7 +238,7 @@ Picture.toImage now returns a `Future<Image>` instead. This permits image raster
 }
 ```
 
-However, your application may well be performing other asynchronous actions, and you should consider how you want to handle image processing in that light. For more on Dart's support for asynchronous programming and the Future class, see [https://www.dartlang.org/tutorials/language/futures.](https://www.dartlang.org/tutorials/language/futures.)
+However, your application may well be performing other asynchronous actions, and you should consider how you want to handle image processing in that light. For more on Dart's support for asynchronous programming and the Future class, see [https://www.dartlang.org/tutorials/language/futures.](https://www.dartlang.org/tutorials/language/futures)
 
 
 ### [#7567](https://github.com/flutter/engine/pull/7567) Rename FlutterResult in embedder.h

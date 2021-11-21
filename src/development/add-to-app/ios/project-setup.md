@@ -665,8 +665,6 @@ You can now [add a Flutter screen][] to your existing application.
 
 [add_to_app code samples]: {{site.github}}/flutter/samples/tree/master/add_to_app
 [add a Flutter screen]: {{site.url}}/development/add-to-app/ios/add-flutter-screen
-[macOS system requirements for Flutter]: {{site.url}}/get-started/install/macos#system-requirements
-[Xcode installed]: {{site.url}}/get-started/install/macos#install-xcode
 [Android Studio/IntelliJ]: {{site.url}}/development/tools/android-studio
 [build modes of Flutter]: {{site.url}}/testing/build-modes
 [embed the frameworks]: {{site.url}}/development/add-to-app/ios/project-setup#embed-the-frameworks

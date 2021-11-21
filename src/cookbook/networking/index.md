@@ -1,5 +1,5 @@
 ---
-title: 网络相关 (Networking)
+title: Networking
 ---
 
 {% include docs/cookbook-group-index.md %}

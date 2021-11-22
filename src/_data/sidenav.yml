@@ -247,7 +247,7 @@
             - title: App 包大小分析工具
               permalink: /docs/development/tools/devtools/app-size
         - title: Flutter SDK
-          permalink: /docs/development/tools/sdk
+          permalink: /development/tools/sdk
           children:
             - title: 概览
               permalink: /docs/development/tools/sdk/overview
@@ -320,10 +320,10 @@
       match-page-url-exactly: true
     - title: 应用大小
       permalink: /docs/perf/app-size
-    - title: Deferred components [NEW]
+    - title: 延迟加载组件 [新增]
       permalink: /docs/perf/deferred-components
 #    - title: Memory
-#      permalink: /docs/perf/memory
+#      permalink: /perf/memory
 #    - title: Power usage
 #      permalink: /docs/perf/power
     - title: 渲染性能
@@ -336,7 +336,7 @@
         permalink: /docs/perf/rendering/best-practices
       - title: 性能分析
         permalink: /docs/perf/rendering/ui-performance
-      - title: Reduce shader compilation jank
+      - title: 减少着色器卡顿
         permalink: /docs/perf/rendering/shader
     - title: 性能指标
       permalink: /docs/perf/metrics
@@ -403,7 +403,7 @@
   expanded: true
   children:
     - title: 了解 Dash
-      permalink: /dash
+      permalink: /docs/dash
     - title: Flutter Widget 目录
       permalink: /docs/reference/widgets
     - title: Flutter API 文档

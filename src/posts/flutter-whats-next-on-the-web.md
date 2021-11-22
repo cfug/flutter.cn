@@ -5,7 +5,7 @@ toc: true
 
 _我们的发布重点优先关注在性能、开发者体验以及 Web 集成上_
 
-2021 年 3 月 [Flutter Web 支持已进入稳定版](/posts/flutter-web-support-hits-the-stable-milestone)，那么，下一步是什么？
+2021 年 3 月 [Flutter Web 支持已进入稳定版]({{site.url}}/posts/flutter-web-support-hits-the-stable-milestone)，那么，下一步是什么？
 
 在我们对用户调研的研究中发现，有超过 10％ 的 Flutter 项目目标是发布到 Web 平台。因此，目前我们会专注于提升第一个 Web 稳定版的质量，并使更多开发者能够将 Flutter Web 应用投入到生产环境。
 
@@ -19,7 +19,7 @@ _我们的发布重点优先关注在性能、开发者体验以及 Web 集成�
 
 此前，Flutter 没有在 Web 上对从右到左 (RTL) 的语言 (如阿拉伯语和希伯来语) 提供完整的支持。虽然框架本身支持 RTL 文本，但 Web 引擎忽略了 LTR 和 RTL 之间的区别，从而产生了未定义的行为。
 
-近期发布的 [Flutter 2.5 稳定版](/posts/whats-new-in-flutter-2-5) 增加了对 RTL 的基础支持，Flutter Web 应用已经支持了 RTL 语言的所有主要场景。大部分与基础支持相关的问题已经得到了解决，并且我们正在计划修复剩余的问题。
+近期发布的 [Flutter 2.5 稳定版]({{site.url}}/posts/whats-new-in-flutter-2-5) 增加了对 RTL 的基础支持，Flutter Web 应用已经支持了 RTL 语言的所有主要场景。大部分与基础支持相关的问题已经得到了解决，并且我们正在计划修复剩余的问题。
 
 - [对文本编辑实现 RTL 支持](https://github.com/flutter/flutter/issues/32239) (已修复)
 - [Web 上的 RTL 文本渲染故障](https://github.com/flutter/flutter/issues/69396) (已修复)
@@ -102,7 +102,7 @@ Flutter 的生态系统包括了用于开发的功能，但目前仍然缺乏 We
 
 自最初的 Web 稳定版本发布以来，相机插件一直是呼声最高的插件之一；许多人发现，在将 Flutter 移动应用引入 Web 时，同步差距是一个主要的问题。
 
-在 [Flutter 2.5 稳定版](/posts/whats-new-in-flutter-2-5) ，我们提供了这个[插件](https://pub.dev/packages/camera_web)的早期版本，可以初始化相机，显示相机预览，并拍摄照片。我们收到反馈后将会对这个插件进行改进。
+在 [Flutter 2.5 稳定版]({{site.url}}/posts/whats-new-in-flutter-2-5) ，我们提供了这个[插件](https://pub.dev/packages/camera_web)的早期版本，可以初始化相机，显示相机预览，并拍摄照片。我们收到反馈后将会对这个插件进行改进。
 
 - 为 [Web 增加相机支持](https://github.com/flutter/flutter/issues/45297) (已修复，一些 PR 待定)。
 

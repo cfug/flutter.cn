@@ -5,13 +5,16 @@ toc: true
 
 文/ 杨加康，CFUG 社区成员，《Flutter 开发之旅从南到北》作者，小米工程师
 
-设计模式系列的前两篇，分别向大家介绍了一种 [创建性型模式 (单例模式)](/community/tutorials/singleton-pattern-in-flutter-n-dart)和一种 [行为型设计模式 (观察者模式)](/community/tutorials/observer-pattern-in-flutter-n-dart)，今天我们再来介绍一种结构型设计模式 —— 适配器模式。
+设计模式系列的前两篇，分别向大家介绍了一种
+[创建性型模式（单例模式）]({{site.main_url}}/community/tutorials/singleton-pattern-in-flutter-n-dart)
+和一种 [行为型设计模式（观察者模式）]({{site.main_url}}/community/tutorials/observer-pattern-in-flutter-n-dart)，
+今天我们再来介绍一种结构型设计模式 —— 适配器模式。
 
 **适配器模式** (Adapter Design Pattern)，顾名思义，这个模式就是用来做适配的，像一个「粘合剂」一样。
 
 > 适配器模式可以将不兼容的接口转换为可兼容的接口，让原本由于接口不兼容而不能一起工作的类黏合在一起，最终使他们可以一起工作。
 
-和 [观察者模式](/community/tutorials/observer-pattern-in-flutter-n-dart) 中的观察者与被观察者类似，适配器模式中担任主要角色是 **适配器 (Adapter)** 和 **被适配者 (Adaptee)**。一个比较典型的例子是，插座转接头可以被认为是一种适配器，可以把本身不兼容的接口，通过转接变得可以一起工作。
+和 [观察者模式]({{site.url}}/community/tutorials/observer-pattern-in-flutter-n-dart) 中的观察者与被观察者类似，适配器模式中担任主要角色是 **适配器 (Adapter)** 和 **被适配者 (Adaptee)**。一个比较典型的例子是，插座转接头可以被认为是一种适配器，可以把本身不兼容的接口，通过转接变得可以一起工作。
 
 ![适配器模式示意图，图源网络](https://files.flutter-io.cn/posts/community/tutorial/images/2021-09-05-002.jpeg)
 

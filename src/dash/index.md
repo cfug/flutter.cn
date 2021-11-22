@@ -9,7 +9,7 @@ This is Dash:
 
 这是 Dash：
 
-![Dash by herself](/assets/images/dash/Dash.png){:width="50%"}<br>
+![Dash by herself]({{site.url}}/assets/images/dash/Dash.png){:width="50%"}<br>
 
 Dash is the mascot for the Dart language and the Flutter framework.
 
@@ -25,9 +25,9 @@ Dash 是 Dart 语言和 Flutter 框架的吉祥物。
 
 {{site.alert.end}}
 
-![A sample of Dashatars](/assets/images/dash/Dashatars.png){:width="100%"}<br>
+![A sample of Dashatars]({{site.url}}/assets/images/dash/Dashatars.png){:width="100%"}<br>
 
-![GIF of Dash fainting created for Flutter Engage](/assets/images/dash/dash-fainting.gif)
+![GIF of Dash fainting created for Flutter Engage]({{site.url}}/assets/images/dash/dash-fainting.gif)
 
 [Dashatar]: https://dash.flutter.cn/
 
@@ -94,11 +94,11 @@ Here are some early mockups and one of the first prototypes:
 
 以下是最初的原型和一些早期的模型：
 
-![1st mockup made by Novicell.dk](/assets/images/dash/early-dash-sketches.png){:width="35%"} ![2nd mockup by Squishable.com](/assets/images/dash/early-dash-sketches2.jpg){:width="35%"}<br>
+![1st mockup made by Novicell.dk]({{site.url}}/assets/images/dash/early-dash-sketches.png){:width="35%"} ![2nd mockup by Squishable.com]({{site.url}}/assets/images/dash/early-dash-sketches2.jpg){:width="35%"}<br>
 
-![Prototype 1](/assets/images/dash/early-dash-sketches3.jpg){:width="35%"} ![Playing with embroidery ideas](/assets/images/dash/early-dash-sketches4.jpg){:width="35%"}<br>
+![Prototype 1]({{site.url}}/assets/images/dash/early-dash-sketches3.jpg){:width="35%"} ![Playing with embroidery ideas]({{site.url}}/assets/images/dash/early-dash-sketches4.jpg){:width="35%"}<br>
 
-![First prototype](/assets/images/dash/early-dash-sketches5.jpg){:width="50%"}<br>
+![First prototype]({{site.url}}/assets/images/dash/early-dash-sketches5.jpg){:width="50%"}<br>
 <t>The first prototype had uneven eyes</t><t>初版原型的单只眼睛并不是对称的</t>
 
 [event website]: https://events.dartlang.org/2018/dartconf/
@@ -113,7 +113,7 @@ The hummingbird represents that Dart is a speedy language.
 
 最初，蜂鸟用来作为展示和网页用途。使用蜂鸟代表 Dart 是一门速度极快的语言。
 
-![Early hummingbird drawing](/assets/images/dash/DartHummingbird.jpg){:width="35%"}<br>
+![Early hummingbird drawing]({{site.url}}/assets/images/dash/DartHummingbird.jpg){:width="35%"}<br>
 
 However, hummingbirds are pointed and angular
 and we wanted a cuddly plushy, so we chose a round
@@ -130,7 +130,7 @@ manufacturers who returned the prototypes some weeks later.
 Shams 为 Dash 指定了颜色的应用范围、尾巴的形状、一小簇头发、眼睛以及其他小细节。
 供应商将这些细则发给两个制造商后，他们在几周后送回了毛绒玩具的原型。
 
-![The first Dash prototypes](/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes](/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
+![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
 <t>Introducing Dash at the January 2018 Dart Conference:</t><t>在 2018 Dart 会议上介绍 Dash：</t>
 <iframe width="541" height="350" src="{{ site.youtube-site }}/embed/R5vIUjRZaZA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -158,10 +158,10 @@ so Dash is now the mascot for Flutter **and** Dart.
 Flutter 和 Dart 的演讲者都携带着 Dash 进行了演讲，
 所以 Dash 就成为了 **Flutter 和 Dart** 的吉祥物。
 
-![Dash 1.0](/assets/images/dash/dash-1.0.jpg){:width="35%"}<br>
+![Dash 1.0]({{site.url}}/assets/images/dash/dash-1.0.jpg){:width="35%"}<br>
 Dash 1.0
 
-![Piles of Dashes awaiting conference goers](/assets/images/dash/dash-conference-swag.jpg){:width="50%"}<br>
+![Piles of Dashes awaiting conference goers]({{site.url}}/assets/images/dash/dash-conference-swag.jpg){:width="50%"}<br>
 <t>Conference swag</t><t>会议上的 Dash</t>
 
 Since the creation of Dash 1.0, we've made two more versions.
@@ -178,10 +178,10 @@ Dash 2.0 对应了更新后的配色方案（移除了绿色）。
 Dash 2.1 尺寸更小，并且调整了更多配色。
 小尺寸的 Dash 更易运输，并且更适合放在娃娃机中！
 
-![Dash 2.0 and 2.1](/assets/images/dash/BigDashAndLittleDash.png){:width="50%"}<br>
+![Dash 2.0 and 2.1]({{site.url}}/assets/images/dash/BigDashAndLittleDash.png){:width="50%"}<br>
 Dash 2.0 and 2.1
 
-![Flutter Interact claw machine](/assets/images/dash/DashClawMachine.png){:width="50%"}<br>
+![Flutter Interact claw machine]({{site.url}}/assets/images/dash/DashClawMachine.png){:width="50%"}<br>
 
 ## Dash facts
 
@@ -204,9 +204,9 @@ Dash 2.0 and 2.1
 * We also have Mega-Dash, a life-sized mascot
   who is currently resting in a locked-down Google office.
   
-  我们还有巨型 Dash，与真人大小相同。目前它正在谷歌的办公室静养。
+  我们还有一个巨型的 Dash，与真人大小相同。目前它正在谷歌的办公室静养。
 
-  ![Mega-Dash in the office](/assets/images/dash/MegaDashChilling.png){:width="50%"}<br>
+![Mega-Dash in the office]({{site.url}}/assets/images/dash/MegaDashChilling.png){:width="50%"}<br>
 
   Mega-Dash made her
   first appearance at the [Flutter Interact][] event
@@ -223,14 +223,14 @@ Dash 2.0 and 2.1
   我们还有一个 Dash 布偶，
   由 Shams 最早的毛绒玩具制成。
   
-  ![Nilay and the Dash puppet](/assets/images/dash/NilayDashPuppet.png){:width="50%"}<br>
+![Nilay and the Dash puppet]({{site.url}}/assets/images/dash/NilayDashPuppet.png){:width="50%"}<br>
 
   A number of our YouTube videos feature the Dash puppet,
   voiced by Emily Fortuna, one of our early (and much loved)
   Flutter Developer Advocates.
   
   我们的许多 YouTube 视频都有 Dart 布偶的出镜，由我们早期（且深受大家喜爱）的
-  Flutter 开发倡导者 Emily Fortuna 配音。
+  Flutter 开发技术推广工程师 Emily Fortuna 配音。
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/dsiLVNDJ3t0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/oyy_1CjNdBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -238,10 +238,10 @@ Dash 2.0 and 2.1
 I haven't been able to figure out how to play the mp4 file...
 * Here is a sound recording of Dash's chirp, by Kathy Walrath,
   the Dart writer.
-![Dash's chirp](/assets/images/dash/DartDartDarrrrrrt.mp4){:width="50%"}<br>
+![Dash's chirp]({{site.url}}/assets/images/dash/DartDartDarrrrrrt.mp4){:width="50%"}<br>
 {% endcomment %}
 
-!["Born to Hot Reload" jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
+!["Born to Hot Reload" jacket]({{site.url}}/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
 
 [Flutter Interact]: {{site.developers}}/events/flutter-interact
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/

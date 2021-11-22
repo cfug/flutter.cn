@@ -4,7 +4,7 @@ FROM ruby:${RUBY_VERSION}-buster as dev
 
 ENV TZ=Asia/Shanghai
 
-ARG NODE_VERSION=15
+ARG NODE_VERSION=17
 ENV NODE_VERSION=$NODE_VERSION
 
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x -o node_setup.sh && \
@@ -31,6 +31,7 @@ ENV NODE_ENV=development
 COPY package.json package-lock.json ./
 RUN npm install -g npm firebase-tools superstatic
 RUN npm install
+RUN npm i re2
 
 COPY ./ ./
 
@@ -56,7 +57,7 @@ RUN if test -n "$FLUTTER_BRANCH" -a "$FLUTTER_BRANCH" != "stable" ; then \
     fi
 
 # Set up Flutter
-RUN flutter doctor --suppress-analytics --quiet
+RUN flutter doctor
 RUN flutter --version
 RUN dart pub get
 
@@ -65,9 +66,6 @@ EXPOSE 4002
 
 
 # -- Test target
-# NOTE that instead of have a script that tests all targets,
-# we could build a new docker container for each test and 
-# start clean
 FROM dev as test
 ARG DISABLE_TESTS
 ENV DISABLE_TESTS=$DISABLE_TESTS
@@ -90,6 +88,5 @@ RUN cd flutter && \
       git fetch origin stable && \
       git checkout stable && \
       git pull
-
 RUN flutter doctor
 RUN tool/translator/build.sh

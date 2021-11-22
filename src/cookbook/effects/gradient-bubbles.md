@@ -6,11 +6,11 @@ description: 如何实现一个带有渐变色的对话气泡
 prev:
   title: Create an expandable FAB
   title: 创建一个点击展开的 FAB
-  path: {{site.url}}/cookbook/effects/expandable-fab
+  path: /docs/cookbook/effects/expandable-fab
 next:
   title: Drag a UI element
   title: 创建一个可拖放的 UI 组件
-  path: {{site.url}}/cookbook/effects/drag-a-widget
+  path: /docs/cookbook/effects/drag-a-widget
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

@@ -8,11 +8,11 @@ keywords: 定位 widget,CommonFinders,flutter_test
 prev:
   title: An introduction to widget testing
   title: Widget 测试介绍
-  path: {{site.url}}/cookbook/testing/widget/introduction
+  path: /docs/cookbook/testing/widget/introduction
 next:
   title: Handle scrolling
   title: 处理滚动
-  path: {{site.url}}/cookbook/testing/widget/scrolling
+  path: /docs/cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/finders/"?>

@@ -8,11 +8,11 @@ keywords: 文本框, 验证
 prev:
   title: Work with tabs
   title: 使用 tabs
-  path: {{site.url}}/cookbook/design/tabs
+  path: /docs/cookbook/design/tabs
 next:
   title: Create and style a text field
   title: 文本框的创建和设定
-  path: {{site.url}}/cookbook/forms/text-input
+  path: /docs/cookbook/forms/text-input
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

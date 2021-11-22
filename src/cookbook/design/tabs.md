@@ -8,11 +8,11 @@ keywords: Material Design 效果, 标签页布局, tabs
 prev:
   title: Use themes to share colors and font styles
   title: 使用 Themes 统一颜色和字体风格
-  path: {{site.url}}/cookbook/design/themes
+  path: /docs/cookbook/design/themes
 next:
   title: Create a download button
   title: 创建一个下载按钮
-  path: {{site.url}}/cookbook/effects/download-button
+  path: /docs/cookbook/effects/download-button
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

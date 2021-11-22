@@ -8,11 +8,11 @@ keywords: 页面跳转
 prev:
   title: Navigate to a new screen and back
   title: 导航到一个新页面和返回
-  path: {{site.url}}/cookbook/navigation/navigation-basics
+  path: /docs/cookbook/navigation/navigation-basics
 next:
   title: Pass arguments to a named route
   title: 给特定的 route 传参
-  path: {{site.url}}/cookbook/navigation/navigate-with-arguments
+  path: /docs/cookbook/navigation/navigate-with-arguments
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

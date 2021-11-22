@@ -9,7 +9,7 @@ keywords: Flutter Windows,Flutter镜像,Windows开发Flutter,Windows开发环境
 next:
   title: Set up an editor
   title: 编辑工具设定
-  path: {{site.url}}/get-started/editor
+  path: /docs/get-started/editor
 ---
 
 {% assign os = 'windows' -%}

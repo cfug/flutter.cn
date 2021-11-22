@@ -8,11 +8,11 @@ keywords: 文本框,实现,Flutter搜索框
 prev:
   title: Build a form with validation
   title: 构建一个有验证判断的表单
-  path: {{site.url}}/cookbook/forms/validation
+  path: /docs/cookbook/forms/validation
 next:
   title: Handle changes to a text field
   title: 响应文本框内容的更改
-  path: {{site.url}}/cookbook/forms/text-field-changes
+  path: /docs/cookbook/forms/text-field-changes
 ---
 
 Text fields allow users to type text into an app.

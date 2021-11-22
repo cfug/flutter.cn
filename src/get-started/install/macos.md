@@ -9,7 +9,7 @@ keywords: Flutter macOS,Flutter镜像,macOS开发Flutter,macOS开发环境配置
 next:
   title: Set up an editor
   title: 编辑工具设定
-  path: {{site.url}}/get-started/editor
+  path: /docs/get-started/editor
 ---
 
 {% assign os = 'macos' -%}

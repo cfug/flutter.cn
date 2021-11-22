@@ -3,10 +3,10 @@ title: Create a scrolling parallax effect
 description: How to implement a scrolling parallax effect.
 prev:
   title: Create a photo filter carousel
-  path: {{site.url}}/cookbook/effects/photo-filter-carousel
+  path: /docs/cookbook/effects/photo-filter-carousel
 next:
   title: Create a shimmer loading effect
-  path: {{site.url}}/cookbook/effects/shimmer-loading
+  path: /docs/cookbook/effects/shimmer-loading
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

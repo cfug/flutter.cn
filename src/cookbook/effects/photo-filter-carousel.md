@@ -6,11 +6,11 @@ description: 学习如何实现一个照片滤镜的轮播选择器
 prev:
   title: Create a nested navigation flow
   title: 创建一个嵌套导航
-  path: {{site.url}}/cookbook/effects/nested-nav
+  path: /docs/cookbook/effects/nested-nav
 next:
   title: Create a scrolling parallax effect
   title: 创建一个滚动视差效果
-  path: {{site.url}}/cookbook/effects/parallax-scrolling
+  path: /docs/cookbook/effects/parallax-scrolling
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

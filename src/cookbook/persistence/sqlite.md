@@ -8,11 +8,11 @@ keywords: SQLite,数据库
 prev:
   title: Work with WebSockets
   title: 发起 WebSockets 请求
-  path: {{site.url}}/cookbook/networking/web-sockets
+  path: /docs/cookbook/networking/web-sockets
 next:
   title: Read and write files
   title: 文件读写
-  path: {{site.url}}/cookbook/persistence/reading-writing-files
+  path: /docs/cookbook/persistence/reading-writing-files
 ---
 
 <?code-excerpt path-base="cookbook/persistence/sqlite/"?>

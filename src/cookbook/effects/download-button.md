@@ -6,11 +6,11 @@ description: 如何实现一个下载按钮。
 prev:
   title: Work with tabs
   title: 使用 tabs
-  path: {{site.url}}/cookbook/design/tabs
+  path: /docs/cookbook/design/tabs
 next:
   title: Create a nested navigation flow
   title: 创建一个嵌套导航
-  path: {{site.url}}/cookbook/effects/nested-nav
+  path: /docs/cookbook/effects/nested-nav
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

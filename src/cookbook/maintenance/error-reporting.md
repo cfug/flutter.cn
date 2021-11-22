@@ -8,11 +8,11 @@ keywords: Flutter收集错误信息
 prev:
   title: Work with long lists
   title: 长列表的处理
-  path: {{site.url}}/cookbook/lists/long-lists
+  path: /docs/cookbook/lists/long-lists
 next:
   title: Animate a widget across screens
   title: 跨页面切换的动效 Widget (Hero animations)
-  path: {{site.url}}/cookbook/navigation/hero-animations
+  path: /docs/cookbook/navigation/hero-animations
 ---
 
 While one always tries to create apps that are free of bugs,

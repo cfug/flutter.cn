@@ -6,11 +6,11 @@ description: 如何实现一个交错效果的侧边栏菜单
 prev:
   title: Create a shimmer loading effect
   title: 创建一个微光加载效果
-  path: {{site.url}}/cookbook/effects/shimmer-loading
+  path: /docs/cookbook/effects/shimmer-loading
 next:
   title: Create a typing indicator
   title: 创建一个「正在输入」指示器效果
-  path: {{site.url}}/cookbook/effects/typing-indicator
+  path: /docs/cookbook/effects/typing-indicator
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

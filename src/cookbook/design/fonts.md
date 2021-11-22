@@ -10,11 +10,11 @@ keywords: Material Design 效果, 字体, 自定义字体, Flutter使用谷歌�
 prev:
   title: Update the UI based on orientation
   title: 根据屏幕方向更新界面
-  path: {{site.url}}/cookbook/design/orientation
+  path: /docs/cookbook/design/orientation
 next:
   title: Use themes to share colors and font styles
   title: 使用 Themes 统一颜色和字体风格
-  path: {{site.url}}/cookbook/design/themes
+  path: /docs/cookbook/design/themes
 ---
 
 Although Android and iOS offer high quality system fonts,

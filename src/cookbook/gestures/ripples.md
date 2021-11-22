@@ -8,11 +8,11 @@ keywords: 动画,涟漪效果
 prev:
   title: Retrieve the value of a text field
   title: 获取文本框的输入值
-  path: {{site.url}}/cookbook/forms/retrieve-input
+  path: /docs/cookbook/forms/retrieve-input
 next:
   title: Handle taps
   title: 捕获和处理点击动作
-  path: {{site.url}}/cookbook/gestures/handling-taps
+  path: /docs/cookbook/gestures/handling-taps
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -23,7 +23,7 @@ js:
 {% comment %}
 prev:
   title: Focus and text fields
-  path: {{site.url}}/cookbook/forms/focus
+  path: /docs/cookbook/forms/focus
 {% endcomment %}
 
 Widgets that follow the Material Design guidelines display

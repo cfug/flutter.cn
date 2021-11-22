@@ -6,11 +6,11 @@ description: 如何在 widget 测试中处理滚动。
 prev:
 title: Find widgets
 title: 定位到目标 widgets
-path: {{site.url}}/cookbook/testing/widget/finders
+path: /docs/cookbook/testing/widget/finders
 next:
 title: Tap, drag, and enter text
 title: 点击、拖拽事件和文本输入
-path: {{site.url}}/cookbook/testing/widget/tap-drag
+path: /docs/cookbook/testing/widget/tap-drag
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/scrolling/"?>

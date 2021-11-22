@@ -8,11 +8,11 @@ keywords: 列表定制,水平滑动列表
 prev:
   title: Use lists
   title: 基础列表
-  path: {{site.url}}/cookbook/lists/basic-list
+  path: /docs/cookbook/lists/basic-list
 next:
   title: Create a grid list
   title: 创建一个网格列表
-  path: {{site.url}}/cookbook/lists/grid-lists
+  path: /docs/cookbook/lists/grid-lists
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

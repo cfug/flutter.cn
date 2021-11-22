@@ -8,11 +8,11 @@ keywords:
 prev:
   title: Send data to a new screen
   title: 传递数据到新页面
-  path: {{site.url}}/cookbook/navigation/passing-data
+  path: /docs/cookbook/navigation/passing-data
 next:
   title: Fetch data from the internet
   title: 通过网络获取数据
-  path: {{site.url}}/cookbook/networking/fetch-data
+  path: /docs/cookbook/networking/fetch-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/delete_data/"?>

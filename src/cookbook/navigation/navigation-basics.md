@@ -8,11 +8,11 @@ keywords: 路由之间的切换
 prev:
   title: Animate a widget across screens
   title: 跨页面切换的动效 Widget (Hero animations)
-  path: {{site.url}}/cookbook/navigation/hero-animations
+  path: /docs/cookbook/navigation/hero-animations
 next:
   title: Navigate with named routes
   title: 导航到对应名称的 routes 里
-  path: {{site.url}}/cookbook/navigation/named-routes
+  path: /docs/cookbook/navigation/named-routes
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

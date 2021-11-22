@@ -10,15 +10,15 @@ keywords: Material Design 效果, Theme, 主题, 全局主题, 自定义
 prev:
   title: Update the UI based on orientation
   title: 根据屏幕方向更新界面
-  path: {{site.url}}/cookbook/design/orientation
+  path: /docs/cookbook/design/orientation
 next:
   title: Use custom fonts
   title: 使用自定义字体
-  path: {{site.url}}/cookbook/design/fonts
+  path: /docs/cookbook/design/fonts
 next:
   title: Work with tabs
   title: 使用 tabs
-  path: {{site.url}}/cookbook/design/tabs
+  path: /docs/cookbook/design/tabs
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

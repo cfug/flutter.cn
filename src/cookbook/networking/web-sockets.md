@@ -8,11 +8,11 @@ keywords: WebSockets
 prev:
   title: Update data over the internet
   title: 通过网络更新数据
-  path: {{site.url}}/cookbook/networking/update-data
+  path: /docs/cookbook/networking/update-data
 next:
   title: Persist data with SQLite
   title: 用 SQLite 做数据持久化
-  path: {{site.url}}/cookbook/persistence/sqlite
+  path: /docs/cookbook/persistence/sqlite
 ---
 
 <?code-excerpt path-base="cookbook/networking/web_sockets/"?>

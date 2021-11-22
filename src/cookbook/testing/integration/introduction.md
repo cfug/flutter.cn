@@ -8,11 +8,11 @@ short-title: 介绍
 prev:
   title: Take a picture using the camera
   title: 调用设备相机拍照
-  path: {{site.url}}/cookbook/plugins/picture-using-camera
+  path: /docs/cookbook/plugins/picture-using-camera
 next:
   title: Performance profiling
   title: 性能调试
-  path: {{site.url}}/cookbook/testing/integration/profiling
+  path: /docs/cookbook/testing/integration/profiling
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>

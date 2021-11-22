@@ -9,11 +9,11 @@ keywords: 单元测试,test package,flutter_test,IDE
 prev:
   title: Performance profiling
   title: 性能测试
-  path: {{site.url}}/cookbook/testing/integration/profiling
+  path: /docs/cookbook/testing/integration/profiling
 next:
   title: Mock dependencies using Mockito
   title: 使用 Mockito 模拟依赖关系
-  path: {{site.url}}/cookbook/testing/unit/mocking
+  path: /docs/cookbook/testing/unit/mocking
 ---
 
 How can you ensure that your app continues to work as you

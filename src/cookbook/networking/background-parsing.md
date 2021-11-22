@@ -8,11 +8,11 @@ keywords: json,后台任务,调度,fps,卡顿
 prev:
   title: Make authenticated requests
   title: 发起 HTTP 认证授权请求
-  path: {{site.url}}/cookbook/networking/authenticated-requests
+  path: /docs/cookbook/networking/authenticated-requests
 next:
   title: Send data to the internet
   title: 发送网络数据请求
-  path: {{site.url}}/cookbook/networking/send-data
+  path: /docs/cookbook/networking/send-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/background_parsing/"?>

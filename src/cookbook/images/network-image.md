@@ -8,11 +8,11 @@ keywords: 网络图片,使用gif
 prev:
   title: Implement swipe to dismiss
   title: 实现「滑动清除」效果
-  path: {{site.url}}/cookbook/gestures/dismissible
+  path: /docs/cookbook/gestures/dismissible
 next:
   title: Fade in images with a placeholder
   title: 占位符和网络图片淡入
-  path: {{site.url}}/cookbook/images/fading-in-images
+  path: /docs/cookbook/images/fading-in-images
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

@@ -8,11 +8,11 @@ keywords: 网络数据
 prev:
   title: Parse JSON in the background
   title: 在后台处理 JSON 数据解析
-  path: {{site.url}}/cookbook/networking/background-parsing
+  path: /docs/cookbook/networking/background-parsing
 next:
   title: Update data over the internet
   title: 通过网络更新数据
-  path: {{site.url}}/cookbook/networking/update-data
+  path: /docs/cookbook/networking/update-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/send_data/"?>

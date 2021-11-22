@@ -8,11 +8,11 @@ keywords: 交互,点击,拖动,snackbar
 prev:
   title: Add Material touch ripples
   title: 添加点按涟漪效果 (Material Design)
-  path: {{site.url}}/cookbook/gestures/ripples
+  path: /docs/cookbook/gestures/ripples
 next:
   title: Implement swipe to dismiss
   title: 实现「滑动清除」效果
-  path: {{site.url}}/cookbook/gestures/dismissible
+  path: /docs/cookbook/gestures/dismissible
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

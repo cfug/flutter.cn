@@ -6,11 +6,11 @@ description: 如何实现一个「正在输入」的指示器效果
 prev:
   title: Create a staggered menu animation
   title: 创建一个交错效果的侧边栏菜单
-  path: {{site.url}}/cookbook/effects/staggered-menu-animation
+  path: /docs/cookbook/effects/staggered-menu-animation
 next:
   title: Create an expandable FAB
   title: 创建一个点击展开的 FAB
-  path: {{site.url}}/cookbook/effects/expandable-fab
+  path: /docs/cookbook/effects/expandable-fab
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

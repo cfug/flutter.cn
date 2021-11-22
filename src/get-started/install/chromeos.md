@@ -9,7 +9,7 @@ keywords: Flutter ChromsOS,ChromeOS上安装Flutter,ChromeOS开发
 next:
   title: Set up an editor
   titie: 编辑工具设定
-  path: {{site.url}}/get-started/editor
+  path: /docs/get-started/editor
 ---
 
 {% assign os = 'linux' -%}

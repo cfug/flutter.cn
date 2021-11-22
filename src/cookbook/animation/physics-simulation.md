@@ -9,11 +9,11 @@ keywords: 物理动画效果,重力效果,交互
 prev:
   title: Animate a page route transition
   title: 为页面切换加入动画效果
-  path: {{site.url}}/cookbook/animation/page-route-animation
+  path: /docs/cookbook/animation/page-route-animation
 next:
   title: Animate the properties of a container
   title: Container 里的动画渐变效果
-  path: {{site.url}}/cookbook/animation/animated-container
+  path: /docs/cookbook/animation/animated-container
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

@@ -8,11 +8,11 @@ keywords: 传参,待办事项应用
 prev:
   title: Return data from a screen
   title: 从一个页面回传数据
-  path: {{site.url}}/cookbook/navigation/returning-data
+  path: /docs/cookbook/navigation/returning-data
 next:
   title: Delete data on the internet
   title: 删除网络数据
-  path: {{site.url}}/cookbook/networking/delete-data
+  path: /docs/cookbook/networking/delete-data
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

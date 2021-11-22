@@ -8,11 +8,11 @@ keywords: 淡入淡出效果,隐藏元素,用户体验
 prev:
   title: Animate the properties of a Container
   title: Container 里的动画渐变效果
-  path: {{site.url}}/cookbook/animation/animated-container
+  path: /docs/cookbook/animation/animated-container
 next:
   title: Add a Drawer to a screen
   title: 在屏幕上添加一个 Drawer
-  path: {{site.url}}/cookbook/design/drawer
+  path: /docs/cookbook/design/drawer
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

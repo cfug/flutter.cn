@@ -8,11 +8,11 @@ keywords: 性能优化,卡顿,时间轴
 prev:
   title: An introduction to integration testing
   title: 集成测试介绍
-  path: {{site.url}}/cookbook/testing/integration/introduction
+  path: /docs/cookbook/testing/integration/introduction
 next:
   title: An introduction to unit testing
   title: Flutter 集成测试介绍
-  path: {{site.url}}/cookbook/testing/unit/introduction
+  path: /docs/cookbook/testing/unit/introduction
 ---
 
 When it comes to mobile apps, performance is critical to user experience.

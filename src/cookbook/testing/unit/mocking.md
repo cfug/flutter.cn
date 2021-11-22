@@ -9,11 +9,11 @@ keywords: 依赖关系测试,Mockito,flaky test
 prev:
   title: An introduction to unit testing
   title: 单元测试介绍
-  path: {{site.url}}/cookbook/testing/unit/introduction
+  path: /docs/cookbook/testing/unit/introduction
 next:
   title: An introduction to widget testing
   title: Widget 测试介绍
-  path: {{site.url}}/cookbook/testing/widget/introduction
+  path: /docs/cookbook/testing/widget/introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/unit/mocking"?>

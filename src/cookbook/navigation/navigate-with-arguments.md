@@ -8,11 +8,11 @@ keywords: 参数传递,读取参数
 prev:
   title: Navigate with named routes
   title: 导航到对应名称的 routes 里
-  path: {{site.url}}/cookbook/navigation/named-routes
+  path: /docs/cookbook/navigation/named-routes
 next:
   title: Return data from a screen
   title: 从一个页面回传数据
-  path: {{site.url}}/cookbook/navigation/returning-data
+  path: /docs/cookbook/navigation/returning-data
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

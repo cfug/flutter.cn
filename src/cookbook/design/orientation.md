@@ -8,11 +8,11 @@ keywords: 屏幕切换,横屏模式,竖屏模式,自适应
 prev:
   title: Exporting fonts from a package
   title: 以 package 的方式使用字体
-  path: {{site.url}}/cookbook/design/package-fonts
+  path: /docs/cookbook/design/package-fonts
 next:
   title: Use custom fonts
   title: 使用自定义字体
-  path: {{site.url}}/cookbook/design/fonts
+  path: /docs/cookbook/design/fonts
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

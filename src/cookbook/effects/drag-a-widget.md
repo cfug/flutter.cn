@@ -6,11 +6,11 @@ description: 如何实现一个可拖放的 UI 组件。
 prev:
   title: Create gradient chat bubbles
   title: 创建一个渐变色的对话气泡
-  path: {{site.url}}/cookbook/effects/gradient-bubbles
+  path: /docs/cookbook/effects/gradient-bubbles
 next:
   title: Build a form with validation 
   title: 构建一个有验证判断的表单
-  path: {{site.url}}/cookbook/forms/validation
+  path: /docs/cookbook/forms/validation
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

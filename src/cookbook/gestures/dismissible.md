@@ -9,11 +9,11 @@ diff2html: true
 prev:
   title: Handle taps
   title: 捕获和处理点击动作
-  path: {{site.url}}/cookbook/gestures/handling-taps
+  path: /docs/cookbook/gestures/handling-taps
 next:
   title: Display images from the internet
   title: 显示网络上的远程图片
-  path: {{site.url}}/cookbook/images/network-image
+  path: /docs/cookbook/images/network-image
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

@@ -8,11 +8,11 @@ keywords: 交互,淡入淡出,占位符
 prev:
   title: Display images from the internet
   title: 显示网络上的远程图片
-  path: {{site.url}}/cookbook/images/network-image
+  path: /docs/cookbook/images/network-image
 next:
   title: Work with cached images
   title: 使用缓存图片
-  path: {{site.url}}/cookbook/images/cached-images
+  path: /docs/cookbook/images/cached-images
 ---
 
 When displaying images using the default `Image` widget,

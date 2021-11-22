@@ -94,4 +94,4 @@ For more information, see [Desktop support for Flutter][]
 
 更多详情请查看 [Flutter 的桌面端支持][Desktop support for Flutter]
 
-[Desktop support for Flutter]: {{site.url}}/desktop
+[Desktop support for Flutter]: {{site.main_url}}/desktop

@@ -1,6 +1,8 @@
 ---
 title: Testing Flutter apps
+title: 测试 Flutter 应用
 description: Learn more about the different types of testing and how to write them.
+description: 学习不同类型的测试以及如何编写它们。
 ---
 
 The more features your app has, the harder it is to test manually.

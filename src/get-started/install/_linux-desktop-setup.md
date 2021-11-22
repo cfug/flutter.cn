@@ -51,4 +51,4 @@ $ flutter config --enable-linux-desktop
 
 For more information, see [Desktop support for Flutter][]
 
-[Desktop support for Flutter]: {{site.url}}/desktop
+[Desktop support for Flutter]: {{site.main_url}}/desktop

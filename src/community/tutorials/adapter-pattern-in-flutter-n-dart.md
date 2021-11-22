@@ -5,7 +5,10 @@ toc: true
 
 文/ 杨加康，CFUG 社区成员，《Flutter 开发之旅从南到北》作者，小米工程师
 
-设计模式系列的前两篇，分别向大家介绍了一种 [创建性型模式 (单例模式)]({{site.url}}/community/tutorials/singleton-pattern-in-flutter-n-dart)和一种 [行为型设计模式 (观察者模式)]({{site.url}}/community/tutorials/observer-pattern-in-flutter-n-dart)，今天我们再来介绍一种结构型设计模式 —— 适配器模式。
+设计模式系列的前两篇，分别向大家介绍了一种
+[创建性型模式（单例模式）]({{site.main_url}}/community/tutorials/singleton-pattern-in-flutter-n-dart)
+和一种 [行为型设计模式（观察者模式）]({{site.main_url}}/community/tutorials/observer-pattern-in-flutter-n-dart)，
+今天我们再来介绍一种结构型设计模式 —— 适配器模式。
 
 **适配器模式** (Adapter Design Pattern)，顾名思义，这个模式就是用来做适配的，像一个「粘合剂」一样。
 

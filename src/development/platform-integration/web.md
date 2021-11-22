@@ -275,7 +275,7 @@ This isn’t any different than [internationalizing a Flutter mobile app][].
 
 See [Preparing a web app for release][].
 
-请参阅 [打包并发布到 Web 平台][Preparing a web app for release]
+请参阅 [打包并发布到 Web 平台][Preparing a web app for release]。
 
 ### Does `Platform.is` work on the web?
 
@@ -294,7 +294,6 @@ Flutter engineers routinely read and respond on Discord.
 
 请在 [Discord][] 平台的 **#web** 这个讨论板跟大家讨论，
 Flutter 团队的工程师会经常阅读和互动。
-
 
 [Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
 [building a web app with Flutter]: {{site.url}}/get-started/web

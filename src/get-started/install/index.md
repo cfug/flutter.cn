@@ -44,4 +44,4 @@ Select the operating system on which you are installing Flutter:
   [这篇文章][Using Flutter in China]，查看是否需要对网络环境进行特别设置。
 {{site.alert.end}}
 
-[Using Flutter in China]: {{site.url}}/community/china
+[Using Flutter in China]: {{site.main_url}}/community/china

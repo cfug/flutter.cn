@@ -29,6 +29,7 @@ keywords: 插件开发,Flutter插件教程
   [支持新的 Android 插件 API][Supporting the new Android plugins APIs]。
 
 {{site.note.end}}
+
 ## Package introduction
 
 ## Package 介绍
@@ -417,10 +418,17 @@ environment:
 
 #### Federated platform packages
 
+#### 联合平台 package
+
 A platform package uses the same format, but includes an `implements` entry
 indicating which app-facing package it is an implementation for. For example,
 a `hello_windows` plugin containing the Windows implementation for `hello`
 would have the following `flutter:` map:
+
+平台 package 有着同样的格式，但会包含 `implements` 入口，
+用于指明 package 实现的平台。
+例如，实现了 `hello` package 的 Windows 平台的 `hello_windows` 插件，
+会在 `flutter:` 映射下包含以下内容：
 
 ```yaml
 flutter:
@@ -433,11 +441,17 @@ flutter:
 
 #### Endorsed implementations
 
+#### 认可的实现
+
 An app facing package can endorse a platform package by adding a
 dependency on it, and including it as a `default_package` in the
 `platforms:` map. If the `hello` plugin above endorsed `hello_windows`,
 it would look like this:
 
+提供给 App 项目使用的 package
+可以通过在 `platform:` 映射下声明 `default_package`，
+认可一个平台实现插件。
+如果 `hello` 插件认可了 `hello_windows`，它看起来会是这样：
 
 ```yaml
 flutter:
@@ -458,6 +472,9 @@ dependencies:
 Note that as shown here, an app-facing package can have
 some platforms implementated within the package, and others in
 endorsed federated implementations.
+
+注意如上所示，面向 App 项目的 package 可能已经包含了某些平台的实现，
+同时也有认可的其他平台的实现。
 
 ### Step 1: Create the package
 
@@ -706,12 +723,21 @@ follow the provided instructions.
 
 ### Dart-only platform implementations
 
+### 仅 Dart 的平台实现
+
 Usually plugin implementations involve platform channels and a second language,
 as described above. In some cases, however, some platforms can be
 implemented entirely in Dart (for example, using [FFI][]). For a Dart-only
 platform implementation, replace the `pluginClass` in pubspec.yaml with
 a `dartPluginClass`. Here is the `hello_windows` example above modified for a
 Dart-only implementation:
+
+如先前描述，通常插件会使用第二种语言，实现对应平台的功能。
+然而，在某些场景下，部分平台可能会完全使用 Dart 进行实现（例如使用 [FFI][]）。
+若需要仅 Dart 的平台实现，你可以将 pubspec.yaml 里的
+`pluginClass` 替换为 `dartPluginClass`。
+下面是 `hello_windows` 示例替换为仅 Dart 实现的代码：
+
 ```yaml
 flutter:
   plugin:
@@ -727,6 +753,11 @@ subclass the `hello` plugin's Dart platform interface class with a
 This method will be called during startup, and can be used to register the
 Dart implementation:
 
+在这样的模式下，插件内不包含 Windows 的 C++ 代码，
+它将继承 `hello` 插件的 Dart 平台接口，使用包含静态 `registerWith()`
+方法的 `HelloPluginWindows` 类进行实现。
+该方法会在启动时调用，用于注册 Dart 实现：
+
 ```dart
 class HelloPluginWindows extends HelloPluginPlatform {
   /// Registers this class as the default instance of [HelloPluginPlatform].
@@ -737,6 +768,9 @@ class HelloPluginWindows extends HelloPluginPlatform {
 
 This is supported for Windows, macOS, and Linux starting in Flutter 2.5, and
 for Android and iOS starting in Flutter 2.8.
+
+从 Flutter 2.5 版本开始，此类插件可以用于 Windows、macOS 和 Linux 插件，
+Android 和 iOS 在 Flutter 2.8 版本后可用。
 
 ### Testing your plugin
 

@@ -18,7 +18,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    if: github.repository == 'flutter/website'
+    if: github.repository == 'cfug/flutter.cn'
     strategy:
       fail-fast: false
       matrix:

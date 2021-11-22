@@ -498,4 +498,4 @@ class DisplayPictureScreen extends StatelessWidget {
 [`path`]: {{site.pub-pkg}}/path
 [`path_provider`]: {{site.pub-pkg}}/path_provider
 [`takePicture()`]: {{site.pub}}/documentation/camera/latest/camera/CameraController/takePicture.html
-[`XFile`]:  {{site.pub}}/documentation/cross_file/latest/cross_file/XFile-class.html
+[`XFile`]: {{site.pub}}/documentation/cross_file/latest/cross_file/XFile-class.html

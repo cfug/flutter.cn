@@ -194,14 +194,14 @@ Android and iOS:
 第一步，查看以下工程集成指南
 
 <div class="card-deck mb-8">
-  <a class="card" href="/development/add-to-app/android/project-setup">
+  <a class="card" href="{{site.url}}/development/add-to-app/android/project-setup">
     <div class="card-body">
       <header class="card-title text-center m-0">
         Android
       </header>
     </div>
   </a>
-  <a class="card" href="/development/add-to-app/ios/project-setup">
+  <a class="card" href="{{site.url}}/development/add-to-app/ios/project-setup">
     <div class="card-body">
       <header class="card-title text-center m-0">
         iOS
@@ -220,14 +220,14 @@ see our API usage guides at the following links:
 将 Flutter 集成进您的工程后，可以查看以下 API 使用指南
 
 <div class="card-deck mb-8">
-  <a class="card" href="/development/add-to-app/android/add-flutter-screen">
+  <a class="card" href="{{site.url}}/development/add-to-app/android/add-flutter-screen">
     <div class="card-body">
       <header class="card-title text-center m-0">
         Android
       </header>
     </div>
   </a>
-  <a class="card" href="/development/add-to-app/ios/add-flutter-screen">
+  <a class="card" href="{{site.url}}/development/add-to-app/ios/add-flutter-screen">
     <div class="card-body">
       <header class="card-title text-center m-0">
         iOS

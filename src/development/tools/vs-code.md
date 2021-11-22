@@ -10,7 +10,7 @@ keywords: VS Code,IDE,配置,安装
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
   <li class="nav-item">
-    <a class="nav-link" href="/development/tools/android-studio" role="tab" aria-selected="false">Android Studio 和 IntelliJ</a>
+    <a class="nav-link" href="{{site.url}}/development/tools/android-studio" role="tab" aria-selected="false">Android Studio 和 IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link active" role="tab" aria-selected="true">VS Code</a>

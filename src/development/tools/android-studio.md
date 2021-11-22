@@ -12,7 +12,7 @@ keywords: Android Studio,IntelliJ,安装,检查更新,创建新项目
     <a class="nav-link active" role="tab" aria-selected="true">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/development/tools/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>
+    <a class="nav-link" href="{{site.url}}/development/tools/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>
   </li>
 </ul>
 

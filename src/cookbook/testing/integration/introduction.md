@@ -24,7 +24,7 @@ next:
   for details.
 
   集成测试（integration_test）包目前已经成为首推的编写集成测试的方式。
-  请参阅[集成测试]({{site.url}}/testing/integration-tests/)查看更多详细信息。
+  请参阅 [集成测试]({{site.url}}/testing/integration-tests/) 查看更多详细信息。
 
 {{site.alert.end}}
 

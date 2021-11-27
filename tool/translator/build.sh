@@ -25,10 +25,12 @@ npx nt inject '../../_site/*/index.html' -c /assets/translator/css/translator.cs
 
 npx nt mark '../../_site/*/index.html'
 
-npx nt inject '../../_site/docs/*.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
+npx nt inject '../../_site/index.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
 
-npx nt mark '../../_site/docs/*.html'
+npx nt mark '../../_site/*/index.html'
 
+#npx nt inject '../../_site/docs/*.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
+#npx nt mark '../../_site/docs/*.html'
 #npx nt inject '../../_site/**/*.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
 #npx nt mark '../../_site/**/*.html'
 

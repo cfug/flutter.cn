@@ -76,6 +76,8 @@ trap "cleanup" EXIT # original exit code is preserved
 
 unleash_robots
 
+node -e "console.log(require('superstatic').RE2mode())"
+
 # Attempt to launch the server.
 CMD="npx superstatic --port $SERVE_PORT"
 echo "=> $CMD"
@@ -83,7 +85,7 @@ $CMD > "./linkcheck-server.log" 2>&1 &
 SERVER_PID=$!
 echo "=> Server PID: $SERVER_PID"
 
-sleep 4
+sleep 10
 
 if [ ! kill -0 $SERVER_PID > /dev/null 2>&1 ]; then
   echo $'\nWARNING: Server command failed, server may already running.\n'
@@ -93,7 +95,7 @@ fi
 # Don't check for external links 
 CMD="dart run linkcheck $ARGS--skip-file ./tool/config/linkcheck-skip-list.txt :$SERVE_PORT"
 echo "=> $CMD"
-$CMD 2>&1 | tee "linkcheck.log"
+$CMD 2>&1 | tee "linkcheck-server.log"
 STATUS=$?
 
 # When checking external links, give linkcheck 
@@ -109,5 +111,5 @@ if [[ $FAILWARN ]]; then
   echo "=> Exiting with status: $STATUS"
   exit $STATUS
 else
-  grep -qe '^\s*0 errors' "linkcheck.log"
+  grep -qe '^\s*0 errors' "linkcheck-server.log"
 fi

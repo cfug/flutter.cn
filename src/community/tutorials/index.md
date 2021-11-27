@@ -27,7 +27,7 @@ Flutter 中文社区教程由社区的开发者投稿，
 ## Flutter 技术分享
 ### 性能相关
 
-[Flutter 上的内存泄漏监控](/community/tutorials/memory-leak-monitoring-on-flutter)
+[Flutter 上的内存泄漏监控]({{site.url}}/community/tutorials/memory-leak-monitoring-on-flutter)
 
 ### 路由和状态管理
 
@@ -36,20 +36,20 @@ Flutter 中文社区教程由社区的开发者投稿，
 
 ### 设计模式
 
-- [Flutter(able) 的单例模式](/community/tutorials/singleton-pattern-in-flutter-n-dart)
-- [流动的观察者模式](/community/tutorials/observer-pattern-in-flutter-n-dart)
-- [灵动的适配器模式](/community/tutorials/adapter-pattern-in-flutter-n-dart)
+- [Flutter(able) 的单例模式]({{site.url}}/community/tutorials/singleton-pattern-in-flutter-n-dart)
+- [流动的观察者模式]({{site.url}}/community/tutorials/observer-pattern-in-flutter-n-dart)
+- [灵动的适配器模式]({{site.url}}/community/tutorials/adapter-pattern-in-flutter-n-dart)
 
 ### 工程实践
 
-- [如何实现一个精准滑动埋点](/community/tutorials/flutter_accurate_rolling_exposure_practice)
+- [如何实现一个精准滑动埋点]({{site.url}}/community/tutorials/flutter_accurate_rolling_exposure_practice)
 
 ### Flutter x TensorFlow
 
-- [在 Flutter 中使用 TensorFlow Lite 插件实现文字分类](/community/tutorials/text-classification-using-tensorflow-lite-plugin-for-flutter)
+- [在 Flutter 中使用 TensorFlow Lite 插件实现文字分类]({{site.url}}/community/tutorials/text-classification-using-tensorflow-lite-plugin-for-flutter)
 
 ## Dart 技术分享
 
 ### Dart 语言
 
-- [深入理解 Function & Closure](/community/tutorials/deep-dive-into-dart-s-function-closure)
+- [深入理解 Function & Closure]({{site.url}}/community/tutorials/deep-dive-into-dart-s-function-closure)

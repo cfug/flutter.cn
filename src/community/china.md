@@ -17,12 +17,12 @@ Flutter website available at
 
 {% comment %}
 If you’d like to install Flutter using an [installation
-bundle](/docs/development/tools/sdk/releases),
+bundle]({{site.url}}/development/tools/sdk/releases),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
 {% endcomment %}
 
-如果你需要下载 [Flutter SDK 的独立打包文件](/docs/development/tools/sdk/releases)，
+如果你需要下载 [Flutter SDK 的独立打包文件]({{site.url}}/development/tools/sdk/releases)，
 你可以将下载链接前缀替换为你信任的镜像链接。
 
 * 原始链接:<br>
@@ -86,13 +86,13 @@ $ flutter doctor
 
 {% comment %}
 After these steps, you should be able to continue
-[setting up Flutter](/docs/get-started/editor) normally.
+[setting up Flutter]({{site.url}}/get-started/editor) normally.
 From here on, packages fetched by `flutter pub get` are
 downloaded from `flutter-io.cn` in any shell where `PUB_HOSTED_URL`
 and `FLUTTER_STORAGE_BASE_URL` are set.
 {% endcomment %}
 
-如上步骤设定之后，你可以继续进行 Flutter 安装的下一步：[编辑工具设定](/docs/get-started/editor)，
+如上步骤设定之后，你可以继续进行 Flutter 安装的下一步：[编辑工具设定]({{site.url}}/get-started/editor)，
 在这两个环境变量（`PUB_HOSTED_URL` 和 `FLUTTER_STORAGE_BASE_URL`）设定过后，
 未来通过命令 `flutter pub get` 获取 packages 的时候，网络请求将会通过
 `flutter-io.cn` 提供的镜像进行。
@@ -118,13 +118,14 @@ Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其
 
 如下列表为目前在国内提供镜像的社区以及其镜像配置，
 由于镜像的实现方式有所不同，可能会导致数据的滞后等问题。
-我们制作了一个 [镜像可用性监控页面](https://mirrors.flutter-io.cn) 供参考。
+我们制作了一个 [镜像可用性监控页面](https://stats.uptimerobot.com/JZK3ZTql79) 供参考。
 
 ### Flutter 社区
 
 社区主镜像，采用多种方式同步 Flutter 开发者资源（推荐）。
 有任何镜像相关的问题，请与我们
-[反馈镜像问题](https://github.com/cfug/flutter.cn/issues)。
+[反馈镜像问题](https://github.com/cfug/flutter.cn/issues)，
+中国镜像存储由 [七牛云](https://sensors.qiniu.com/t/n9Q) 提供服务。
 
 ```terminal
 $ export PUB_HOSTED_URL=https://pub.flutter-io.cn
@@ -221,4 +222,4 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 
 如果在镜像使用中有任何问题，欢迎通过邮件与我们联系：cfug-dev@googlegroups.com。
 非常感谢所有帮助 Flutter 在国内维护社区基础设施建设资源的社区和公司，查看
-[详细致谢名单](/about/docs-cn)。
+[详细致谢名单]({{site.url}}/about)。

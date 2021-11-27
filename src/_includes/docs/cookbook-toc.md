@@ -12,7 +12,7 @@
 
   {% assign items = dir.items | where_exp: "item", "item.title != dir_name" | sort: "title" %}
   {% for item in items %}
-  - [{{ item.title }}]({{ item.url }})
+  - [{{ item.title }}]({{ site.url }}{{ item.url }})
   {% endfor %}
 
 

@@ -127,7 +127,7 @@ minimal.
 We have dropped iOS8 support. For more information,
 see [go/rfc-ios8-deprecation] for details.
 
-我们已经放弃对 iOS8 的支持。
+我们已经放弃对 iOS 8 的支持。
 更多信息，请参阅 [go/rfc-ios8-deprecation]。
 
 [go/rfc-ios8-deprecation]: {{site.url}}/go/rfc-ios8-deprecation

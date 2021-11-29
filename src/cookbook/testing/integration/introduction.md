@@ -17,18 +17,6 @@ next:
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>
 
-{{site.alert.note}}
-
-  The integration_test package is now the recommended way to write integration
-  tests. See the [Integration testing]({{site.url}}/testing/integration-tests/) page
-  for details.
-
-  集成测试（integration_test）包目前已经成为首推的编写集成测试的方式。
-  请参阅 [集成测试]({{site.url}}/testing/integration-tests/) 查看更多详细信息。
-
-{{site.alert.end}}
-
-
 Unit tests and widget tests are handy for testing individual classes,
 functions, or widgets. However, they generally don't test how
 individual pieces work together as a whole, or capture the performance
@@ -39,29 +27,18 @@ Unit tests 和 Widget tests 在测试独立的类、函数或者组件时非常�
 然而，它们并不能够测试单独的模块形成的整体或者获取真实设备上应用运行状态。
 这些任务需要集成测试 (**integration tests**) 来处理。 
 
-Integration tests work as a pair: first, deploy an instrumented application
-to a real device or emulator and then "drive" the application from a
-separate test suite, checking to make sure everything is correct along
-the way.
+Integration tests are written using the [integration_test][] package, provided
+by the SDK. 
 
-集成测试是成对出现的：
-首先，发布一个可测试应用程序到真实设备或者模拟器，
-然后，利用独立的测试套件去驱动应用程序，检查一切是否完好可用。
-
-To create this test pair, use the [flutter_driver][] package.
-It provides tools to create instrumented apps and drive those apps
-from a test suite.
-
-为了创建这个测试对，可以使用 [flutter_driver][] 这个 package。
-这个 package 提供了创建可测试应用的工具并支持从测试套件驱动应用程序。
+集成测试由 SDK 直接提供支持，使用 [integration_test][] 这个 package 实现。
 
 In this recipe, learn how to test a counter app. It demonstrates
 how to setup integration tests, how to verify specific text is displayed
 by the app, how to tap specific widgets, and how to run integration tests.
 
-在这个章节中，我们将会学习如何去测试一个计数器应用程序，
+在这个章节中，我们将会学习如何去测试一个计数器应用，
 包括如何设置集成测试、
-如何验证指定文本能否在应用程序内正常显示、
+如何验证指定文本能否在应用内正常显示、
 如何模拟点击指定组件和如何运行集成测试。
 
 This recipe uses the following steps:
@@ -70,40 +47,36 @@ This recipe uses the following steps:
 
   1. Create an app to test.
 
-     创建一个应用程序用于测试
+     创建一个应用用于测试；
 
-  2. Add the `flutter_driver` dependency.
+  2. Add the `integration_test` dependency.
 
-     添加 `flutter_driver` 依赖
+     添加 `integration_test` 依赖
 
   3. Create the test files.
 
      创建测试文件
 
-  4. Instrument the app.
-
-     安装测试应用程序
-
-  5. Write the integration tests.
+  4. Write the integration tests.
 
      编写集成测试
      
-  6. Run the integration test.
+  5. Run the integration test.
 
      运行集成测试
 
 ### 1. Create an app to test
 
-### 1. 创建一个应用程序用于测试
+### 1. 创建一个应用用于测试
 
-First, create an app for testing. In this example, 
-test the counter app produced by the `flutter create` 
-command. This app allows a user to tap on a button 
+First, create an app for testing. In this example,
+test the counter app produced by the `flutter create`
+command. This app allows a user to tap on a button
 to increase a counter.
 
-首先，我们需要创建一个应用程序用于测试。
+首先，我们需要创建一个应用用于测试。
 在这个示例中，我们将会测试一个由 `flutter create` 命令创建的计数器应用。
-这个应用程序允许用户点击按钮增加计数。
+这个应用允许用户点击按钮增加计数。
 
 Furthermore, provide a [`ValueKey`][] to
 the `Text` and `FloatingActionButton` widgets.
@@ -187,315 +160,177 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-### 2. Add the `flutter_driver` dependency
+### 2. Add the `integration_test` dependency
 
-### 2. 添加 `flutter_driver` 依赖
+### 2. 添加 `integration_test` 依赖
 
-Next, use the `flutter_driver` package to write integration tests.
-Add the `flutter_driver` dependency to the `dev_dependencies` section of
-the app's `pubspec.yaml` file.
+Next, use the `integration_test`, `flutter_driver`, and `flutter_test` packages
+to write integration tests. Add these dependencies to the `dev_dependencies`
+section of the app's `pubspec.yaml` file, specifying the Flutter SDK as the
+location of the package.
 
-接着，我们需要用到 `flutter_driver` 包来编写集成测试。
-因此，我们需要把 `flutter_driver` 依赖添加到应用`pubspec.yaml` 文件的
+接着，我们需要用到 `integration_test`、`flutter_driver` 和 `flutter_test` 
+这三个 package 来编写集成测试，把这三个依赖添加到应用`pubspec.yaml` 文件的
 `dev_dependencies` 区域。
-
-Also add the `test` dependency in order to use actual test functions and
-assertions.
-
-同时，我们也需要添加 `test` 依赖去使用实际的测试函数和断言。
 
 ```yaml
 dev_dependencies:
-  flutter_driver:
+  integration_test:
     sdk: flutter
-  test: any
+  flutter_test:
+    sdk: flutter
 ```
 
 ### 3. Create the test files
 
 ### 3. 创建测试文件
 
-Unlike unit and widget tests, integration test suites do not run in the same
-process as the app being tested. Therefore, create two files that
-reside in the same directory. By convention, the directory is named
-`test_driver`.
+Create a new directory, `integration_test`, with an empty `app_test.dart` file:
 
-和 unit tests 以及 widget tests 不一样的是，
-集成测试套件并不会和待测应用运行在同一个进程内。
-因此，我们需要同一个文件夹下创建两份文件。
-为了方便，我们把文件夹命名为 `test_driver`。
-
-  1. The first file contains an "instrumented" version of the app.
-     The instrumentation allows you to "drive" the app and record
-     performance profiles from a test suite. This file can have any
-     name that makes sense. For this example, create a file called
-    `test_driver/app.dart`.
-
-     第一个文件包含了应用的 “待检测” 版本号。
-     这个检测允许我们利用测试套件驱动应用并记录运行概况。
-     这个文件可以被命名成任何名字。
-     在本例中，创建了文件，命名为 `test_driver/app.dart`。
-
-  2. The second file contains the test suite, which drives the app and
-     verifies that it works as expected. The test suite also records
-     performance profiles. The name of the test file must correspond
-     to the name of the file that contains the instrumented app,
-     with `_test` added at the end. Therefore,
-     create a second file called `test_driver/app_test.dart`.
-
-     第二个文件包含了测试套件，
-     用于驱动应用程序并验证应用的运行状况是否与预期一致。
-     测试套件也可以记录运行概况。这个测试文件的命名有严格要求，
-     必须是待测应用的名称并在名称尾部加上 `_test`。
-     因此，我们需要创建的第二个文件被命名成
-     `test_driver/app_test.dart`。
-
-This creates the following directory structure:
-
-以下是我们的文件结构：
+创建一个名为 `integration_test` 的新文件夹，
+并在文件夹中创建一个空的 `app_test.dart` 文件： 
 
 ```
 counter_app/
   lib/
     main.dart
-  test_driver/
-    app.dart
+  integration_test/
     app_test.dart
 ```
 
-### 4. Instrument the app
+### 4. Write the integration test
 
-### 4. 安装测试应用程序
+### 4. 编写集成测试文件
 
-Now, instrument the app. This involves two steps:
+Now you can write tests. This involves three steps:
 
-现在，我们可以安装测试应用测序。这包含了两个步骤：
+现在我们可以来写测试文件了，步骤如下列三项：
 
-  1. Enable the flutter driver extensions
+  1. Initialize `IntegrationTestWidgetsFlutterBinding`, a singleton service that
+     executes tests on a physical device.
 
-     让 flutter driver 的扩展可用
+     初始化一个单例 `IntegrationTestWidgetsFlutterBinding`，
+     这将用于在物理设备上执行测试；
 
-  2. Run the app
+  2. Interact and tests widgets using the `WidgetTester` class.
 
-     运行应用程序
-
-Add this code inside the 
-`test_driver/app.dart` file.
-
-我们会在 `test_driver/app.dart`
-文件中增加以下代码：
-
-<?code-excerpt "test_driver/app.dart"?>
-```dart
-import 'package:flutter_driver/driver_extension.dart';
-import 'package:introduction/main.dart' as app;
-
-void main() {
-  // This line enables the extension.
-  enableFlutterDriverExtension();
-
-  // Call the `main()` function of the app, or call `runApp` with
-  // any widget you are interested in testing.
-  app.main();
-}
-```
-
-### 5. Write the tests
-
-### 5. 编写集成测试文件
-
-Now that you have an instrumented app, you can write tests for it.
-This involves four steps:
-
-现在我们有了待测应用，我们可以为它编写测试文件了。这包含了四个步骤：
-
-  1. Create [`SerializableFinders`][]
-     to locate specific widgets.
- 
-     创建 [`SerializableFinders`][] 定位指定组件。
-
-  2. Connect to the app before our tests run in the `setUpAll()` function.
-
-     在 `setUpAll()` 函数中运行测试案例前，先与待测应用建立连接。
+     使用 `WidgetTester` 类测试并与 widget 发生交互；
 
   3. Test the important scenarios.
 
-     测试重要场景。
+     测试重要的应用场景。
 
-  4. Disconnect from the app in the `teardownAll()` function after the tests
-     complete.
-
-     完成测试后，在 `teardownAll()` 函数中与待测应用断开连接
-
-<?code-excerpt "test_driver/app_test.dart"?>
+<?code-excerpt "lib/integration_test/app_test.dart (IntegrationTest)"?>
 ```dart
-// Imports the Flutter Driver API.
-import 'package:flutter_driver/flutter_driver.dart';
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
+
+import 'package:introduction/main.dart' as app;
 
 void main() {
-  group('Counter App', () {
-    // First, define the Finders and use them to locate widgets from the
-    // test suite. Note: the Strings provided to the `byValueKey` method must
-    // be the same as the Strings we used for the Keys in step 1.
-    final counterTextFinder = find.byValueKey('counter');
-    final buttonFinder = find.byValueKey('increment');
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-    late FlutterDriver driver;
+  group('end-to-end test', () {
+    testWidgets('tap on the floating action button, verify counter',
+        (WidgetTester tester) async {
+      app.main();
+      await tester.pumpAndSettle();
 
-    // Connect to the Flutter driver before running any tests.
-    setUpAll(() async {
-      driver = await FlutterDriver.connect();
-    });
+      // Verify the counter starts at 0.
+      expect(find.text('0'), findsOneWidget);
 
-    // Close the connection to the driver after the tests have completed.
-    tearDownAll(() async {
-      driver.close();
-    });
+      // Finds the floating action button to tap on.
+      final Finder fab = find.byTooltip('Increment');
 
-    test('starts at 0', () async {
-      // Use the `driver.getText` method to verify the counter starts at 0.
-      expect(await driver.getText(counterTextFinder), "0");
-    });
+      // Emulate a tap on the floating action button.
+      await tester.tap(fab);
 
-    test('increments the counter', () async {
-      // First, tap the button.
-      await driver.tap(buttonFinder);
+      // Trigger a frame.
+      await tester.pumpAndSettle();
 
-      // Then, verify the counter text is incremented by 1.
-      expect(await driver.getText(counterTextFinder), "1");
-    });
-
-    test('increments the counter during animation', () async {
-      await driver.runUnsynchronized(() async {
-        // First, tap the button.
-        await driver.tap(buttonFinder);
-
-        // Then, verify the counter text is incremented by 1.
-        expect(await driver.getText(counterTextFinder), "1");
-      });
+      // Verify the counter increments by 1.
+      expect(find.text('1'), findsOneWidget);
     });
   });
 }
 ```
 
-By default, `flutter_driver` waits until there are no pending frames,
-and tests similar to the example above fail with a timeout if,
-for example, you have a continuous animation running.  In that case, wrap
-the driver actions in `runUnsynchronized` as follows:
+### 5. Run the integration test
 
-<?code-excerpt "test_driver/app_test.dart (Unsynchronized)"?>
+### 5. 运行集成测试
+
+The process of running the integration tests varies depending on the platform
+you are testing against. You can test against a mobile platform or the web.
+
+集成测试的运行情况会根据需要进行测试的平台不同而不尽相同，
+你可以针对移动平台或者 Web 平台进行测试。
+
+#### 5a. Mobile
+
+#### 5a. 移动平台
+
+To test on a real iOS / Android device, first connect the device and run the
+following command from the root of the project:
+
+在 iOS 或 Android 平台进行真机测试的时候，
+首先需要连接设备并在工程的根目录运行下面的命令：
+
+```shell
+flutter test integration_test/app_test.dart
+```
+
+Or, you can specify the directory to run all integration tests:
+
+或者你可以在指定目录下运行所有的集成测试：
+
+```shell
+flutter test integration_test
+```
+
+This command runs the app and integration tests on the target device. For more
+information, see the [Integration testing][] page.
+
+这个命令可以在目标设备上运行应用并执行集成测试，更多相关信息，
+请参阅文档：[集成测试][Integration testing] 页面。
+
+#### 5b. Web
+
+#### 5b. Web 平台
+
+To get started testing in a web browser, [Download ChromeDriver][].
+
+在网页浏览器里开始进行集成测试，首先要下载 [ChromeDriver][Download ChromeDriver]。
+
+Next, create a new directory named `test_driver` containing a new file
+named`integration_test.dart`:
+
+接下来，新建一个文件夹，命名为 `test_driver`，并包含一个新的文件，命名为
+`integration_test.dart`。
+
 ```dart
-test('increments the counter during animation', () async {
-  await driver.runUnsynchronized(() async {
-    // First, tap the button.
-    await driver.tap(buttonFinder);
+import 'package:integration_test/integration_test_driver.dart';
 
-    // Then, verify the counter text is incremented by 1.
-    expect(await driver.getText(counterTextFinder), "1");
-  });
-});
+Future<void> main() => integrationDriver();
 ```
 
-### 6. Run the tests
+Launch WebDriver, for example: 
 
-### 6. 运行集成测试
-
-Now that you have an instrumented app _and_ a test suite,
-run the tests. The process of running the integration
-tests varies depending on the platform you are testing
-against. You can test against a mobile platform or the web.
-
-我们有了待测应用**和**测试套件后，就可以运行测试了。
-可以只针对特定依赖的平台运行集成测试。
-你可以测试移动平台也可以测试 web。
-
-#### 6a. Mobile
-
-#### 6a. 移动平台
-
-To test on iOS or Android,
-launch an Android Emulator, iOS Simulator,
-or connect your computer to a real iOS / Android device.
-
-要测试 iOS 或者 Android，
-首先需要打开一个 Android 模拟器或者 iOS 模拟器，或者让你的电脑连接真机。
-
-Then, run the following command from the root of the project:
-
-接着，在项目的根文件夹下运行下面的命令：
+运行 WebDriver，执行命令比如：
 
 ```shell
-flutter drive --target=test_driver/app.dart
+chromedriver --port=4444
 ```
 
-This command performs the following:
+From the root of the project, run the following command:
 
-* Builds the `--target` app and installs
-  it on the emulator / device.
-* Launches the app.
-* Runs the `app_test.dart` test suite located
-  in `test_driver/` folder.
-
----
-
-这个指令的作用：
-
-  1. Builds the `--target` app and installs it on the emulator / device.
-
-     创建 `--target` 目标应用并且把它安装在模拟器或真机中
-
-  2. Launches the app.
-
-     启动应用程序
-
-  3. Runs the `app_test.dart` test suite located in `test_driver/` folder.
-
-     运行位于 `test_driver/` 文件夹下的 `app_test.dart` 测试套件
-
-#### 6b. Web
-
-To test for web,
-determine which browser you want to test against
-and download the corresponding web driver:
-
-要测试 web 应用，确定要针对哪个浏览器进行测试
-并下载相应的 Web 驱动程序：
-
-  * Chrome: [Download ChromeDriver][]
-  * Firefox: [Download GeckoDriver][]
-  * Safari: Safari can only be tested on a Mac;
-    the SafariDriver is already installed on Mac machines.
-
-    Safari：Safari 仅支持在 Mac 上进行测试；
-    Mac 中内已经置了它的驱动程序。
-
-  * Edge [Download EdgeDriver][]
-
-Launch the WebDriver, for example:
-
-打开 WebDriver，例如：
+在工程的根目录下，运行如下命令：
 
 ```shell
-./chromedriver --port=4444
+flutter drive \
+  --driver=test_driver/integration_test.dart \
+  --target=integration_test/app_test.dart \
+  -d web-server
 ```
-From the root of the project,
-run the following command:
-
-在项目根目录运行以下命令：
-
-```shell
-flutter drive --target=test_driver/app.dart --browser-name=[browser name] --release
-```
-
-To simulate different screen dimensions, you can use the `--browser-dimension` argument,
-for example:
-
-```shell
-flutter drive --target=test_driver/app.dart --browser-name=chrome --browser-dimension 300,550 --release
-```
-
-Will run the tests in the `chrome` browser in a window with dimensions 300 by 550.
 
 [Download ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/

@@ -133,7 +133,7 @@ both of these tasks for you. If you use
 you can skip to step 1.3.
 
 `io.flutter.app.FlutterPlayStoreSplitApplication` 已经为你完成了这两项任务。
-如果你使用了 `FlutterPlayStoreSplitApplication`，可以跳过步骤 1.3。
+如果你使用了 `FlutterPlayStoreSplitApplication`，可以跳转至步骤 1.3。
 
 If your Android application
 is large or complex, you might want to separately support

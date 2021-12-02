@@ -102,7 +102,8 @@ the hot reload command. The code updates and execution continues.
 {{site.alert.end}}
 
 ![Android Studio UI]({{site.url}}/assets/images/docs/development/tools/android-studio-run-controls.png){:width="100%"}<br>
-Controls for run, run debug, hot reload, and hot restart in Android Studio
+<p>Controls for run, run debug, hot reload, and hot restart in Android Studio</p>
+<p>Android Studio 中的运行、运行调试、热重载和热重启的控件位置</p>
 
 A code change has a visible effect only if the modified
 Dart code is run again after the change. Specifically,
@@ -143,7 +144,7 @@ too long.
 
 ### Compilation errors
 
-## 编译错误
+### 编译错误
 
 When a code change introduces a compilation error,
 hot reload generates an error message similar to:
@@ -258,7 +259,7 @@ versus a hot restart.
 
 ### Recent code change is included but app state is excluded
 
-## 代码发生更改但应用程序的状态没有改变
+### 代码发生更改但应用程序的状态没有改变
 
 In Dart, [static fields are lazily initialized][const-new].
 This means that the first time you run a Flutter app and a
@@ -351,8 +352,6 @@ but not for cases like the following:
 Dart VM 在一组更改需要完全重启才能生效时，会检测初始化程序更改和标志。
 在上面的示例中，大部分初始化工作都会触发标记机制，但不适用于以下情况：
 
-
-
 <!-- skip -->
 ```dart
 final bar = foo;
@@ -389,7 +388,7 @@ between the `const` and `final` keywords][const-new] in Dart.
 
 ### Recent UI change is excluded
 
-## 用户界面没有改变
+### 用户界面没有改变
 
 Even when a hot reload operation appears successful and generates no
 exceptions, some code changes might not be visible in the refreshed UI.
@@ -445,7 +444,8 @@ With a hot restart, the program starts from the beginning,
 executes the new version of `main()`,
 and builds a widget tree that displays the text `Hello`.
 
-完全重启后，程序会从头开始执行新的 `main()` 方法，并构建一个 widget 树来显示文本 `Hello`。
+完全重启后，程序会从头开始执行新的 `main()` 方法，
+并构建一个 widget 树来显示文本 `Hello`。
 
 However, if you hot reload the app after this change,
 `main()` and `initState()` are not re-executed,

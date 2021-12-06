@@ -21,9 +21,11 @@ Once you have snapd, you can
 [install Flutter using the Snap Store][],
 or at the command line:
 
-如果你已经有 snapd 了，那么你可以[通过 Snap 商店来安装 Flutter][install Flutter using the Snap Store]，或者通过以下命令安装：
+如果你已经有 snapd 了，那么你可以
+[通过 Snap 商店来安装 Flutter][install Flutter using the Snap Store]，
+或者通过以下命令安装：
 
-```sh
+```terminal
 $ sudo snap install flutter --classic
 ```
 
@@ -33,7 +35,7 @@ $ sudo snap install flutter --classic
   
   安装 snap 后，可以使用如下命令展示 Flutter SDK 路径：
 
-  ```sh
+  ```terminal
   $ flutter sdk-path
   ```
 {{site.alert.end}}

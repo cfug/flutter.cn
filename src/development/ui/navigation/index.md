@@ -12,7 +12,7 @@ and a more idiomatic declarative routing mechanism (which is similar to
 build methods as used with widgets), the `Router` widget.
 
 Flutter 有一个命令式路由机制，即 `Navigator` 组件，
-还有一个更为惯用的声明式路由机制（类似于 widget 中使用的 build 方法），即 `Route` 组件。
+还有一个更为惯用的声明式路由机制（类似于 widget 中使用的 build 方法），即 `Router` 组件。
 
 The two systems can be used together (indeed, the declarative system
 is built using the imperative system).

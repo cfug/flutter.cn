@@ -23,8 +23,8 @@ Typically, small applications are served well by just using the
 `Navigator` API, via the `MaterialApp` constructor's
 [`MaterialApp.routes`][] property.
 
-通常，只需通过 `MaterialApp` 构造函数中的 [`MaterialApp.routes`][] 属性使用 `Navigator` API，
-就可以很好地为小型应用程序提供服务。
+对于小型应用程序来说，通常只需通过 `MaterialApp` 构造函数中的
+[`MaterialApp.routes`][] 属性，加以使用 `Navigator` API，就可以很好地提供服务。
 
 To learn about `Navigator` and its imperative API, see the
 [Navigation recipes][] in the [Flutter cookbook][], and the
@@ -40,8 +40,9 @@ application and how to map the application state to the set of active
 pages, but is more expressive on the long run.
 
 通过 [`MaterialApp.router`] 构造函数，`Router` API 可以更好地为复杂应用程序服务。
-这需要更多的前期工作来描述如何解析应用程序的路由（link），
-以及如何将应用程序的状态映射到页面集合，但从长远来看更具表现力。
+它需要更多的前期工作来描述如何解析应用程序的复杂路由，
+以及如何将应用程序的状态映射到页面集合，
+但从长远的角度来看会使路由的控制更具表现力。
 
 To learn about `Router` and the declarative approach, see [Learning
 Flutter’s new navigation and routing system][], and the [`Router`][]

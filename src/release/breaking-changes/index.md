@@ -22,10 +22,15 @@ release, and listed in alphabetical order:
 
 ### 尚未推进到稳定版
 
+* [Required Kotlin version][]
+
+  [需要的 Kotlin 版本][Required Kotlin version]
+
 * [Deprecated API removed after v2.5][]
 
   [2.5 之后的版本将会废弃的 API][Deprecated API removed after v2.5]
 
+[Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
 
 

@@ -45,7 +45,7 @@ Which one to use depends on the use case. Let's take a look:
   某些平台交互（例如键盘处理和辅助功能）可能无法正常工作。
 
 * Hybrid composition requires Flutter 1.22
-  ([version 1.22.2][] is recommended).
+  ([version 1.22.2][] or higher is recommended).
   This mode appends the native `android.view.View`
   to the view hierarchy. Therefore, keyboard
   handling, and accessibility work out of the box.

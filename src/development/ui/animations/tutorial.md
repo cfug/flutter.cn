@@ -532,12 +532,7 @@ The changes from the non-animated example are highlighted:
 ```diff
 --- animate0/lib/main.dart
 +++ animate1/lib/main.dart
-@@ -1,3 +1,4 @@
-+import 'package:flutter/animation.dart';
- import 'package:flutter/material.dart';
-
- void main() => runApp(const LogoApp());
-@@ -9,16 +10,39 @@
+@@ -9,16 +9,39 @@
    _LogoAppState createState() => _LogoAppState();
  }
 
@@ -733,8 +728,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 ```diff
 --- animate1/lib/main.dart
 +++ animate2/lib/main.dart
-@@ -1,11 +1,29 @@
- import 'package:flutter/animation.dart';
+@@ -1,10 +1,28 @@
  import 'package:flutter/material.dart';
 
  void main() => runApp(const LogoApp());
@@ -763,7 +757,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
    @override
    _LogoAppState createState() => _LogoAppState();
  }
-@@ -16,32 +34,18 @@
+@@ -15,32 +33,18 @@
 
    @override
    void initState() {
@@ -879,7 +873,7 @@ at the beginning or the end. This creates a "breathing" effect:
 ```diff
 --- animate2/lib/main.dart
 +++ animate3/lib/main.dart
-@@ -36,7 +36,15 @@
+@@ -35,7 +35,15 @@
    void initState() {
      super.initState();
      controller =
@@ -1086,8 +1080,7 @@ in the bullet points above.
 ```diff
 --- animate2/lib/main.dart
 +++ animate4/lib/main.dart
-@@ -1,28 +1,48 @@
- import 'package:flutter/animation.dart';
+@@ -1,27 +1,47 @@
  import 'package:flutter/material.dart';
 
  void main() => runApp(const LogoApp());
@@ -1144,7 +1137,7 @@ in the bullet points above.
 
    @override
    _LogoAppState createState() => _LogoAppState();
-@@ -35,18 +55,23 @@
+@@ -34,18 +54,23 @@
    @override
    void initState() {
      super.initState();

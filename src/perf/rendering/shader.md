@@ -107,7 +107,7 @@ SkSL 着色器可以被打包进应用，并提前进行预热（预编译），
 
 ​    打开 `--cache-sksl` 运行你的应用以捕获 SkSL 中的着色器：
 
-```sh
+```terminal
 flutter run --profile --cache-sksl
 ```
 
@@ -117,7 +117,7 @@ If the same app has been previously run without `--cache-sksl`, then the
 如果这个相同的应用之前运行的时候没有使用 `--cache-sksl`，
 你需要加上 `--purge-persistent-cache` 标志：
 
-```sh
+```terminal
 flutter run --profile --cache-sksl --purge-persistent-cache
 ```
 
@@ -151,16 +151,16 @@ shader capturing. It also purges the SkSL shaders so use it *only* on the first
 ​    在下面的命令中选择合适的构建带有 SkSL 预热的应用：
 
 Android:
-```sh
+```terminal
 flutter build apk --bundle-sksl-path flutter_01.sksl.json
 ```
 or
-```sh
+```terminal
 flutter build appbundle --bundle-sksl-path flutter_01.sksl.json
 ```
 
 iOS:
-```sh
+```terminal
 flutter build ios --bundle-sksl-path flutter_01.sksl.json
 ```
 
@@ -184,7 +184,7 @@ For example:
 使用一个命令自动执行前三个步骤。
 例如：
 
-```sh
+```terminal
 flutter drive --profile --cache-sksl --write-sksl-on-exit flutter_01.sksl.json -t test_driver/app.dart
 ```
 

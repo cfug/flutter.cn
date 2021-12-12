@@ -9,6 +9,8 @@ tags: 平台集成
 keywords: Android,iOS,平台代码
 ---
 
+<?code-excerpt path-base="development/platform_integration"?>
+
 This guide describes how to write custom platform-specific code. Some
 platform-specific functionality is available through existing packages;
 see [using packages][].
@@ -39,8 +41,13 @@ Flutter 使用了灵活的系统，它允许你调用相关平台的 API，
 {{site.alert.end}}
 
 Flutter uses a flexible system that allows you to call
-platform-specific APIs whether available in Kotlin or
-Java code on Android, or in Swift or Objective-C code on iOS.
+platform-specific APIs in a language that works directly
+with those APIs:
+- Kotlin or Java on Android
+- Swift or Objective-C on iOS
+- C++ on Windows
+- Objective-C on macOS
+- C on Linux
 
 Flutter 使用了灵活系统，无论是在 Android 上
 的 Kotlin 还是 Java，亦或是 iOS 上的 Swift 或 Objective-C，
@@ -56,7 +63,7 @@ Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是�
 [发送结构化类型安全消息][sending structured typesafe messages]。
 
 * The Flutter portion of the app sends messages to its *host*,
-  the iOS or Android portion of the app, over a platform channel.
+  the non-Dart portion of the app, over a platform channel.
 
   应用程序中的 Flutter 部分通过平台通道向其宿主（应用程序中的 iOS 或 Android 部分）发送消息。
 
@@ -71,13 +78,13 @@ Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是�
 {{site.alert.note}}
 
   This guide addresses using the platform channel mechanism if you need
-  to use the platform's APIs or libraries in Java, Kotlin, Objective-C, or Swift.
-  But you can also write platform-specific Dart code in your Flutter app
-  by inspecting the [defaultTargetPlatform][] property.
+  to use the platform's APIs in a non-Dart languaage.  But you can also write
+  platform-specific Dart code
+  in your Flutter app by inspecting the [defaultTargetPlatform][] property.
   [Platform adaptations][] lists some platform-specific adaptations
   that Flutter automatically does for you in the framework.
 
-  如果你需要在 Java/Kotlin/Objective-C 或 Swift 中使用平台的 API
+  如果你需要在非 Dart 语言中使用平台的 API
   或库，本指南将使用平台通道机制。但你也可以通过检查 Flutter 应用程序中的
   [defaultTargetPlatform][] 属性来编写相关平台的 Dart 代码。
   [不同平台操作体验的差异和适配][Platform adaptations] 文档中列出了
@@ -161,22 +168,108 @@ The following table shows how Dart values are received on the
 platform side and vice versa:
 
 下表展示了如何在平台端接收 Dart 值，反之亦然：
+{% samplecode type-mappings %}
+{% sample Java %}
+| Dart                       | Java                |
+| -------------------------- | ------------------- |
+| null                       | null                |
+| bool                       | java.lang.Boolean   |
+| int                        | java.lang.Integer   |
+| int, if 32 bits not enough | java.lang.Long      |
+| double                     | java.lang.Double    |
+| String                     | java.lang.String    |
+| Uint8List                  | byte[]              |
+| Int32List                  | int[]               |
+| Int64List                  | long[]              |
+| Float32List                | float[]             |
+| Float64List                | double[]            |
+| List                       | java.util.ArrayList |
+| Map                        | java.util.HashMap   |
 
-| Dart                       | Java                | Kotlin      | Obj-C                                             | Swift                                   |
-| -------------------------- | ------------------- | ----------- | ---------------------------------------------- | --------------------------------------- |
-| null                       | null                | null        | nil (NSNull when nested)                       | nil                                     |
-| bool                       | java.lang.Boolean   | Boolean     | NSNumber numberWithBool:                       | NSNumber(value: Bool)                   |
-| int                        | java.lang.Integer   | Int         | NSNumber numberWithInt:                        | NSNumber(value: Int32)                  |
-| int, if 32 bits not enough | java.lang.Long      | Long        | NSNumber numberWithLong:                       | NSNumber(value: Int)                    |
-| double                     | java.lang.Double    | Double      | NSNumber numberWithDouble:                     | NSNumber(value: Double)                 |
-| String                     | java.lang.String    | String      | NSString                                       | String                                  |
-| Uint8List                  | byte[]              | ByteArray   | FlutterStandardTypedData typedDataWithBytes:   | FlutterStandardTypedData(bytes: Data)   |
-| Int32List                  | int[]               | IntArray    | FlutterStandardTypedData typedDataWithInt32:   | FlutterStandardTypedData(int32: Data)   |
-| Int64List                  | long[]              | LongArray   | FlutterStandardTypedData typedDataWithInt64:   | FlutterStandardTypedData(int64: Data)   |
-| Float32List                | float[]             | FloatArray  | FlutterStandardTypedData typedDataWithFloat32: | FlutterStandardTypedData(float32: Data) |
-| Float64List                | double[]            | DoubleArray | FlutterStandardTypedData typedDataWithFloat64: | FlutterStandardTypedData(float64: Data) |
-| List                       | java.util.ArrayList | List        | NSArray                                        | Array                                   |
-| Map                        | java.util.HashMap   | HashMap     | NSDictionary                                   | Dictionary                              |
+{% sample Kotlin %}
+| Dart                       | Kotlin      |
+| -------------------------- | ----------- |
+| null                       | null        |
+| bool                       | Boolean     |
+| int                        | Int         |
+| int, if 32 bits not enough | Long        |
+| double                     | Double      |
+| String                     | String      |
+| Uint8List                  | ByteArray   |
+| Int32List                  | IntArray    |
+| Int64List                  | LongArray   |
+| Float32List                | FloatArray  |
+| Float64List                | DoubleArray |
+| List                       | List        |
+| Map                        | HashMap     |
+
+{% sample Obj-C %}
+| Dart                       | Objective-C                                    |
+| -------------------------- | ---------------------------------------------- |
+| null                       | nil (NSNull when nested)                       |
+| bool                       | NSNumber numberWithBool:                       |
+| int                        | NSNumber numberWithInt:                        |
+| int, if 32 bits not enough | NSNumber numberWithLong:                       |
+| double                     | NSNumber numberWithDouble:                     |
+| String                     | NSString                                       |
+| Uint8List                  | FlutterStandardTypedData typedDataWithBytes:   |
+| Int32List                  | FlutterStandardTypedData typedDataWithInt32:   |
+| Int64List                  | FlutterStandardTypedData typedDataWithInt64:   |
+| Float32List                | FlutterStandardTypedData typedDataWithFloat32: |
+| Float64List                | FlutterStandardTypedData typedDataWithFloat64: |
+| List                       | NSArray                                        |
+| Map                        | NSDictionary                                   |
+
+{% sample Swift %}
+| Dart                       | Swift                                   |
+| -------------------------- | --------------------------------------- |
+| null                       | nil                                     |
+| bool                       | NSNumber(value: Bool)                   |
+| int                        | NSNumber(value: Int32)                  |
+| int, if 32 bits not enough | NSNumber(value: Int)                    |
+| double                     | NSNumber(value: Double)                 |
+| String                     | String                                  |
+| Uint8List                  | FlutterStandardTypedData(bytes: Data)   |
+| Int32List                  | FlutterStandardTypedData(int32: Data)   |
+| Int64List                  | FlutterStandardTypedData(int64: Data)   |
+| Float32List                | FlutterStandardTypedData(float32: Data) |
+| Float64List                | FlutterStandardTypedData(float64: Data) |
+| List                       | Array                                   |
+| Map                        | Dictionary                              |
+
+{% sample C++ %}
+| Dart                       | C++                                                      |
+| -------------------------- | -------------------------------------------------------- |
+| null                       | EncodableValue()                                         |
+| bool                       | EncodableValue(bool)                                     |
+| int                        | EncodableValue(int32_t)                                  |
+| int, if 32 bits not enough | EncodableValue(int64_t)                                  |
+| double                     | EncodableValue(double)                                   |
+| String                     | EncodableValue(std::string)                              |
+| Uint8List                  | EncodableValue(std::vector<uint8_t>)                     |
+| Int32List                  | EncodableValue(std::vector<int32_t>)                     |
+| Int64List                  | EncodableValue(std::vector<int64_t>)                     |
+| Float32List                | EncodableValue(std::vector<float>)                       |
+| Float64List                | EncodableValue(std::vector<double>)                      |
+| List                       | EncodableValue(std::vector<EncodableValue>)              |
+| Map                        | EncodableValue(std::map<EncodableValue, EncodableValue>) |
+
+{% sample C %}
+| Dart                       | C (GObject)               |
+| -------------------------- | ------------------------- |
+| null                       | FlValue()                 |
+| bool                       | FlValue(bool)             |
+| int                        | FlValue(int62_t)          |
+| double                     | FlValue(double)           |
+| String                     | FlValue(gchar*)           |
+| Uint8List                  | FlValue(uint8_t*)         |
+| Int32List                  | FlValue(int32_t*)         |
+| Int64List                  | FlValue(int64_t*)         |
+| Float32List                | FlValue(float*)           |
+| Float64List                | FlValue(double*)          |
+| List                       | FlValue(FlValue)          |
+| Map                        | FlValue(FlValue, FlValue) |
+{% endsamplecode %}
 
 ## Example: Calling platform-specific iOS and Android code using platform channels {#example}
 
@@ -261,18 +354,17 @@ prefix', for example: `samples.flutter.dev/battery`.
 一个应用中所使用的所有通道名称必须是唯一的；
 使用唯一的 **域前缀** 为通道名称添加前缀，比如：`samples.flutter.dev/battery`。
 
-<!-- skip -->
+<?code-excerpt "lib/platform_channels.dart (Import)"?>
 ```dart
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-...
+```
+<?code-excerpt "lib/platform_channels.dart (MyHomePageState)"?>
+```dart
 class _MyHomePageState extends State<MyHomePage> {
   static const platform = MethodChannel('samples.flutter.dev/battery');
-
   // Get battery level.
-}
 ```
 
 Next, invoke a method on the method channel, specifying the concrete method
@@ -290,24 +382,24 @@ inside `setState`.
 
 在 `setState` 中使用返回结果来更新 `_batteryLevel` 内的用户界面状态。
 
-<!-- skip -->
+<?code-excerpt "lib/platform_channels.dart (GetBattery)"?>
 ```dart
-  // Get battery level.
-  String _batteryLevel = 'Unknown battery level.';
+// Get battery level.
+String _batteryLevel = 'Unknown battery level.';
 
-  Future<void> _getBatteryLevel() async {
-    String batteryLevel;
-    try {
-      final int result = await platform.invokeMethod('getBatteryLevel');
-      batteryLevel = 'Battery level at $result % .';
-    } on PlatformException catch (e) {
-      batteryLevel = "Failed to get battery level: '${e.message}'.";
-    }
-
-    setState(() {
-      _batteryLevel = batteryLevel;
-    });
+Future<void> _getBatteryLevel() async {
+  String batteryLevel;
+  try {
+    final int result = await platform.invokeMethod('getBatteryLevel');
+    batteryLevel = 'Battery level at $result % .';
+  } on PlatformException catch (e) {
+    batteryLevel = "Failed to get battery level: '${e.message}'.";
   }
+
+  setState(() {
+    _batteryLevel = batteryLevel;
+  });
+}
 ```
 
 Finally, replace the `build` method from the template to contain a small user
@@ -317,25 +409,25 @@ and a button for refreshing the value.
 最后，将模板中的 `build` 方法替换为包含以字符串形式
 显示电池状态、并包含一个用于刷新该值的按钮的小型用户界面。
 
-<!-- skip -->
+<?code-excerpt "lib/platform_channels.dart (Build)"?>
 ```dart
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ElevatedButton(
-              child: Text('Get Battery Level'),
-              onPressed: _getBatteryLevel,
-            ),
-            Text(_batteryLevel),
-          ],
-        ),
+@override
+Widget build(BuildContext context) {
+  return Material(
+    child: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ElevatedButton(
+            child: const Text('Get Battery Level'),
+            onPressed: _getBatteryLevel,
+          ),
+          Text(_batteryLevel),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 ```
 
 ### Step 3: Add an Android platform-specific implementation
@@ -936,33 +1028,33 @@ languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
 
 **Pigeon file:**
 
-<!-- skip -->
+<?code-excerpt "lib/generated_pigeon.dart (Search)"?>
 ```dart
 import 'package:pigeon/pigeon.dart';
 
 class SearchRequest {
-  String query;
+  String query = '';
 }
 
 class SearchReply {
-  String result;
+  String result = '';
 }
 
 @HostApi()
 abstract class Api {
-  SearchReply search(SearchRequest request);
+  Future search(SearchRequest request);
 }
 ```
 
 **Dart usage:**
 
-<!-- skip -->
+<?code-excerpt "lib/use_pigeon.dart (UseApi)"?>
 ```dart
-import 'generated_pigeon.dart'
+import 'generated_pigeon.dart';
 
 void onClick() async {
   SearchRequest request = SearchRequest()..query = 'test';
-  Api api = Api();
+  Api api = SomeApi();
   SearchReply reply = await api.search(request);
   print('reply: ${reply.result}');
 }
@@ -1021,17 +1113,111 @@ types than the default types.
 
 ## 通道和平台线程
 
-Invoke all channel methods on the platform's main thread when writing code on
-the platform side. On Android, this thread is sometimes called the "main
-thread", but it is technically defined as [the UI thread][].
-Annotate methods that need to be run on the UI thread with `@UiThread`.
-On iOS, this thread is officially referred to as [the main thread][].
+When invoking channels on the platform side destined for Flutter, they need to
+be invoked on the platform's main thread. When invoking channels in Flutter
+destined for the platform side, they need to be invoked on the root Isolate. The
+platform side's handlers can execute on the platform's main thread or they can
+execute on a background thread if a Task Queue is used. The result of the
+platform side handlers can be invoked asynchronously and on any thread.
 
-在平台端编写代码时，请调用平台主线程上的所有通道方法。
-在 Android上，该线程有时称为「主线程」，
-但从技术上讲，它被称之为 [UI 线程][the UI thread]。
-用 `@UiThread` 注释需要在UI线程上运行的方法。
-在iOS上，此线程称为 [主线程][the main thread]。
+目标平台向 Flutter 发起 channel 调用的时候，需要在对应平台的主线程执行。
+同样的，在 Flutter 向目标平台发起 channel 调用的时候，需要在根 Isolate 中执行。
+对应平台侧的 handler 既可以在平台的主线程执行，也可以通过事件循环在后台执行。
+对应平台侧 handler 的返回值可以在任意线程异步执行。
+
+{{site.alert.note}}
+
+On Android, the platform's main thread is sometimes called
+the "main thread", but it is technically defined as [the UI thread][]. Annotate
+methods that need to be run on the UI thread with `@UiThread`. On iOS, this
+thread is officially referred to as [the main thread][].
+
+在 Android 平台上时，平台的 main 线程有时候被叫做主线程，
+但是它在技术上被看作 [UI 线程][the UI thread]。
+被 `@UiThread` 注解标记的方法需要在 UI 线程上执行。
+在 iOS 上，这个线程被官方标记为[主线程][the main thread]。
+
+### Executing channel handlers on background threads
+
+### 在后台线程中执行 channel 的 handlers
+
+In order for a channel's platform side handler to execute on a background
+thread, the Task Queue API has be used.  Currently this feature is only
+supported on iOS and Android.
+
+要在 channel 对应的平台侧的后台中执行 handler，需要使用 Task Queue API。
+当前该功能仅支持在 iOS 和 Android。
+
+In Java:
+
+对应的 Java 代码：
+
+```java
+@Override
+public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+  BinaryMessenger messenger = binding.getBinaryMessenger();
+  BinaryMessenger.TaskQueue taskQueue =
+      messenger.makeBackgroundTaskQueue();
+  channel =
+      new MethodChannel(
+          messenger,
+          "com.example.foo",
+          StandardMethodCodec.INSTANCE,
+          taskQueue);
+  channel.setMethodCallHandler(this);
+}
+```
+
+In Kotlin:
+
+Kotlin 版本：
+
+```kotlin
+override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+  val taskQueue =
+      flutterPluginBinding.binaryMessenger.makeBackgroundTaskQueue()
+  channel = MethodChannel(flutterPluginBinding.binaryMessenger,
+                          "com.example.foo",
+                          StandardMethodCodec.INSTANCE,
+                          taskQueue)
+  channel.setMethodCallHandler(this)
+}
+```
+
+In Swift:
+
+Swift 版本：
+
+```swift
+public static func register(with registrar: FlutterPluginRegistrar) {
+  let taskQueue = registrar.messenger.makeBackgroundTaskQueue()
+  let channel = FlutterMethodChannel(name: "com.example.foo",
+                                     binaryMessenger: registrar.messenger(),
+                                     codec: FlutterStandardMethodCodec.sharedInstance,
+                                     taskQueue: taskQueue)
+  let instance = MyPlugin()
+  registrar.addMethodCallDelegate(instance, channel: channel)
+}
+```
+
+In Objective-C:
+
+Objective-C 版本：
+
+```objc
++ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
+  NSObject<FlutterTaskQueue>* taskQueue =
+      [[registrar messenger] makeBackgroundTaskQueue];
+  FlutterMethodChannel* channel =
+      [FlutterMethodChannel methodChannelWithName:@"com.example.foo"
+                                  binaryMessenger:[registrar messenger]
+                                            codec:[FlutterStandardMethodCodec sharedInstance]
+                                        taskQueue:taskQueue];
+  MyPlugin* instance = [[MyPlugin alloc] init];
+  [registrar addMethodCallDelegate:instance channel:channel];
+}
+```
+
 
 ### Jumping to the UI thread in Android
 

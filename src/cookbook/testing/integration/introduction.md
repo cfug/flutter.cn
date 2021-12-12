@@ -275,7 +275,7 @@ following command from the root of the project:
 在 iOS 或 Android 平台进行真机测试的时候，
 首先需要连接设备并在工程的根目录运行下面的命令：
 
-```shell
+```terminal
 flutter test integration_test/app_test.dart
 ```
 
@@ -283,7 +283,7 @@ Or, you can specify the directory to run all integration tests:
 
 或者你可以在指定目录下运行所有的集成测试：
 
-```shell
+```terminal
 flutter test integration_test
 ```
 
@@ -317,7 +317,7 @@ Launch WebDriver, for example:
 
 运行 WebDriver，执行命令比如：
 
-```shell
+```terminal
 chromedriver --port=4444
 ```
 
@@ -325,7 +325,7 @@ From the root of the project, run the following command:
 
 在工程的根目录下，运行如下命令：
 
-```shell
+```terminal
 flutter drive \
   --driver=test_driver/integration_test.dart \
   --target=integration_test/app_test.dart \

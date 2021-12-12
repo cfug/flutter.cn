@@ -133,7 +133,7 @@ both of these tasks for you. If you use
 you can skip to step 1.3.
 
 `io.flutter.app.FlutterPlayStoreSplitApplication` 已经为你完成了这两项任务。
-如果你使用了 `FlutterPlayStoreSplitApplication`，可以跳过步骤 1.3。
+如果你使用了 `FlutterPlayStoreSplitApplication`，可以跳转至步骤 1.3。
 
 If your Android application
 is large or complex, you might want to separately support
@@ -379,7 +379,7 @@ components app:
 
 使用以下 `flutter` 命令构建延迟组件应用：
 
-```sh
+```terminal
 $ flutter build appbundle
 ```
 
@@ -733,9 +733,11 @@ To run the `.aab` file on a test device,
 download the bundletool jar executable from
 [github.com/google/bundletool/releases][] and run:
 
-要在测试设备上运行 `.aab` 文件，请从 [github.com/google/bundletool/releases][] 下载 bundletool jar 可执行文件，然后运行：
+要在测试设备上运行 `.aab` 文件，请从
+[github.com/google/bundletool/releases][] 下载
+bundletool jar 可执行文件，然后运行：
 
-```sh
+```terminal
 $ java -jar bundletool.jar build-apks --bundle=<your_app_project_dir>/build/app/outputs/bundle/release/app-release.aab --output=<your_temp_dir>/app.apks --local-testing
 
 $ java -jar bundletool.jar install-apks --apks=<your_temp_dir>/app.apks
@@ -757,9 +759,10 @@ installation of deferred components is emulated.
 Before running `build-apks` again,
 remove the existing app .apks file:
 
-再次运行 `build-apks` 之前，请删除已存在的 .apks 文件：
+再次运行 `build-apks` 之前，
+请删除已存在的 .apks 文件：
 
-```sh
+```terminal
 $ rm <your_temp_dir>/app.apks
 ```
 

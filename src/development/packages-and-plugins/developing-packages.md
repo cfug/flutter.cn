@@ -744,7 +744,7 @@ flutter:
     implements: hello
     platforms:
       windows:
-        dartPuginClass: HelloPluginWindows
+        dartPluginClass: HelloPluginWindows
 ```
 
 In this version you would have no C++ Windows code, and would instead

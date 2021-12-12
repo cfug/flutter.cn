@@ -7,6 +7,8 @@ tags: Packages,插件
 keywords: 迁移,Android平台,开发,新特性
 ---
 
+<?code-excerpt path-base="development/plugin_api_migration"?>
+
 {{site.alert.note}}
 
   You might be directed to this page if the framework detects that
@@ -340,7 +342,7 @@ but aren't required.
    为了测试添加了 v2 版本嵌入支持的 PR，我们将尝试测试一些插件的基础功能。
    这是一个确保插件正确注册到新的嵌入器的烟雾测试。例如：
 
-    <!-- skip -->
+    <?code-excerpt "lib/test.dart (Test)"?>
     ```dart
     import 'package:flutter_test/flutter_test.dart';
     import 'package:battery/battery.dart';
@@ -362,7 +364,7 @@ but aren't required.
    
    本地运行 e2e 测试。在终端中执行以下内容：
 
-    ```sh
+    ```terminal
     cd <plugin_name>/example
     flutter build apk
     cd android

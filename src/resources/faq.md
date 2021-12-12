@@ -1800,7 +1800,7 @@ Apple 的 [规范][guidelines]。
 [`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
 [accessibility documentation]: {{site.url}}/development/accessibility-and-localization/accessibility
 [add-to-app]: {{site.url}}/development/add-to-app
-[ads]: {{site.url}}/ads
+[ads]: {{site.main-url}}/monetization
 [Android]: #run-android
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer

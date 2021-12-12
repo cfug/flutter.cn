@@ -9,6 +9,8 @@ tags: 用户界面,Flutter UI,布局
 keywords: Flutter资源优化,添加图片
 ---
 
+<?code-excerpt path-base="ui/assets_and_images/lib"?>
+
 Flutter apps can include both code and _assets_
 (sometimes called resources). An asset is a file
 that is bundled and deployed with your app,
@@ -235,8 +237,8 @@ For example:
 在 Widget 上下文之外，或 AssetBundle 的句柄不可用时，你可以使用 `rootBundle` 
 直接加载这些 assets，例如：
 
+<?code-excerpt "main.dart (RootBundle)"?>
 ```dart
-import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 
 Future<String> loadAsset() async {
@@ -346,10 +348,9 @@ image from the asset declarations above:
 
 例如，你的应用程序可以从上面的资源声明中加载背景图片：
 
+<?code-excerpt "main.dart (BackgroundImage)"?>
 ```dart
-Widget build(BuildContext context) {
-  return Image(image: AssetImage('graphics/background.png'));
-}
+return const Image(image: AssetImage('graphics/background.png'));
 ```
 
 Anything using the default asset bundle inherits resolution
@@ -401,9 +402,9 @@ To load the image, use:
 
 然后加载 image, 使用：
 
-<!-- skip -->
+<?code-excerpt "main.dart (PackageImage)"?>
 ```dart
-AssetImage('icons/heart.png', package: 'my_icons')
+return const AssetImage('icons/heart.png', package: 'my_icons');
 ```
 
 Assets used by the package itself should also be fetched

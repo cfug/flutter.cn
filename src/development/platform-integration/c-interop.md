@@ -7,6 +7,8 @@ tags: 平台集成
 keywords: dartffi
 ---
 
+<?code-excerpt path-base="development/platform_integration"?>
+
 Flutter mobile can use the [dart:ffi][] library
 to call native C APIs. _FFI_ stands for
 [_foreign function interface._][FFI]
@@ -258,12 +260,13 @@ the native code. This step varies between iOS and Android:
 首先，您需要创建一个 `DynamicLibrary` 来处理本地代码。
 这一步在 iOS 和 Android 之间有所不同：
 
+<?code-excerpt "lib/c_interop.dart (DynamicLibrary)"?>
 ```dart
 import 'dart:ffi'; // For FFI
 import 'dart:io'; // For Platform.isX
 
 final DynamicLibrary nativeAddLib = Platform.isAndroid
-    ? DynamicLibrary.open("libnative_add.so")
+    ? DynamicLibrary.open('libnative_add.so')
     : DynamicLibrary.process();
 ```
 
@@ -281,10 +284,10 @@ you can resolve the `native_add` symbol:
 您可以通过使用库的句柄来解析 `native_add` 符号：
 
 <!-- skip -->
+<?code-excerpt "lib/c_interop.dart (NativeAdd)"?>
 ```dart
-final int Function(int x, int y) nativeAdd =
-  nativeAddLib
-    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>("native_add")
+final int Function(int x, int y) nativeAdd = nativeAddLib
+    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>('native_add')
     .asFunction();
 ```
 

@@ -7,6 +7,8 @@ tags: SDK,Flutter SDK
 keywords: 热重载,效率提升,widget渲染
 ---
 
+<?code-excerpt path-base="development/tools"?>
+
 Flutter's hot reload feature helps you quickly and
 easily experiment, build UIs, add features, and fix bugs.
 Hot reload works by injecting updated source code files into
@@ -181,17 +183,17 @@ changed to enumerated types.
 For example:
 
 Before the change:
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/before.dart (Enum)"?>
 ```dart
 enum Color {
   red,
   green,
-  blue
+  blue,
 }
 ```
 
 After the change:
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/after.dart (Enum)"?>
 ```dart
 class Color {
   Color(this.i, this.j);
@@ -213,7 +215,7 @@ Hot reload won't work when generic type declarations
 are modified.  For example, the following won't work:
 
 Before the change:
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/before.dart (Class)"?>
 ```dart
 class A<T> {
   T? i;
@@ -221,7 +223,7 @@ class A<T> {
 ```
 
 After the change:
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/after.dart (Class)"?>
 ```dart
 class A<T, V> {
   T? i;
@@ -278,13 +280,37 @@ For example, consider the following code:
 如果更改全局变量和静态字段的初始化语句，则需要完全重启以查看更改。
 例如，参考以下代码：
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/before.dart (SampleTable)"?>
 ```dart
 final sampleTable = [
-  Table("T1"),
-  Table("T2"),
-  Table("T3"),
-  Table("T4"),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text('T1')],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text('T2')],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text('T3')],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text('T4')],
+      )
+    ],
+  ),
 ];
 ```
 
@@ -292,13 +318,37 @@ After running the app, you make the following change:
 
 运行应用程序后，如果进行以下更改:
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/after.dart (SampleTable)"?>
 ```dart
 final sampleTable = [
-  Table("T1"),
-  Table("T2"),
-  Table("T3"),
-  Table("T10"),    // modified
+  Table(
+    children: const [
+      TableRow(
+        children: [Text('T1')],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text('T2')],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text('T3')],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text('T10')], // modified
+      )
+    ],
+  ),
 ];
 ```
 
@@ -310,7 +360,7 @@ Conversely, in the following example:
 
 相反，在下面示例中：
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/before.dart (Const)"?>
 ```dart
 const foo = 1;
 final bar = foo;
@@ -325,9 +375,9 @@ Then, you make the following change:
 
 第一次运行应用程序会打印 `1` 和 `1`。然后，如果您进行以下更改：
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/after.dart (Const)"?>
 ```dart
-const foo = 2;    // modified
+const foo = 2; // modified
 final bar = foo;
 void onClick() {
   print(foo);
@@ -352,7 +402,7 @@ but not for cases like the following:
 Dart VM 在一组更改需要完全重启才能生效时，会检测初始化程序更改和标志。
 在上面的示例中，大部分初始化工作都会触发标记机制，但不适用于以下情况：
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/after.dart (FinalFoo)"?>
 ```dart
 final bar = foo;
 ```
@@ -375,10 +425,24 @@ or:
 
 或者：
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/foo_const.dart (Const)"?>
 ```dart
-const bar = foo;    // Convert foo to a const...
-int get bar => foo;     // ...or provide a getter.
+const foo = 1;
+const bar = foo; // Convert foo to a const...
+void onClick() {
+  print(foo);
+  print(bar);
+}
+```
+
+<?code-excerpt "lib/hot-reload/getter.dart (Const)"?>
+```dart
+const foo = 1;
+int get bar => foo; // ...or provide a getter.
+void onClick() {
+  print(foo);
+  print(bar);
+}
 ```
 
 For more information, read about the [differences
@@ -413,6 +477,7 @@ For example, consider the following code:
 
 例如，参考以下代码：
 
+<?code-excerpt "lib/hot-reload/before.dart (Build)"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -421,6 +486,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(onTap: () => print('tapped'));
   }
@@ -431,12 +499,12 @@ After running this app, change the code as follows:
 
 运行应用程序后，你可能会像如下示例更改代码:
 
+<?code-excerpt "lib/hot-reload/after.dart (Main)"?>
 ```dart
 import 'package:flutter/widgets.dart';
 
 void main() {
-  runApp(const Center(
-      child: const Text('Hello', textDirection: TextDirection.ltr)));
+  runApp(const Center(child: Text('Hello', textDirection: TextDirection.ltr)));
 }
 ```
 

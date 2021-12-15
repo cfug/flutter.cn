@@ -7,7 +7,7 @@ the command line, as shown in [Get the Flutter SDK][].
 You'll probably want to update this variable permanently,
 so you can run `flutter` commands in any terminal session.
 
-与 [获取 Flutter SDk][Get the Flutter SDK] 中说的一样，你可以通过命令行更新当前窗口的环境变量。但你也许会想要让它一直生效，在任何终端中都可以运行 `flutter` 命令。
+与 [获取 Flutter SDK][Get the Flutter SDK] 中说的一样，你可以通过命令行更新当前窗口的环境变量。但你也许会想要让它一直生效，在任何终端中都可以运行 `flutter` 命令。
 
 The steps for modifying this variable permanently for
 all terminal sessions are machine-specific.
@@ -20,7 +20,8 @@ whenever you open a new window. For example:
  1. Determine the path of your clone of the Flutter SDK.
     You need this in Step 3.
 
-    检测你下载或者 git clone 的 Flutter SDK 的文件夹，你需要在第三步用到它。
+    找到通过压缩包下载解压或 `git clone` 命令检出的 Flutter SDK 的文件夹，
+    你需要在第三步用到它。
 
  2. Open (or create) the `rc` file for your shell.
     For example, Linux uses the Bash shell by default,
@@ -36,7 +37,7 @@ whenever you open a new window. For example:
     `[PATH_OF_FLUTTER_GIT_DIRECTORY]` to be
     the path of your clone of the Flutter git repo:
 
-    添加下面内容，并将 `[PATH_TO_FLUTTER_GIT_DIRECTORY]` 改到你 clone Flutter 的 git 仓库目录下。
+    并将下面命令行里 `[PATH_OF_FLUTTER_GIT_DIRECTORY]` 修改为你通过 `git clone` 命令检出的 Flutter 仓库目录地址，或者通过下载 Flutter SDK 压缩包解压之后的目录地址。
 
     ```terminal
     $ export PATH="$PATH:[PATH_OF_FLUTTER_GIT_DIRECTORY]/bin"

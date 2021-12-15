@@ -311,8 +311,8 @@
     - title: 集成测试
       permalink: /docs/testing/integration-tests
       match-page-url-exactly: true
-    - title: Migrating from flutter_driver
-      permalink: /testing/integration-tests/migration
+    - title: 从 flutter_driver 迁移
+      permalink: /docs/testing/integration-tests/migration
 
 - title: 性能优化
   permalink: /docs/perf

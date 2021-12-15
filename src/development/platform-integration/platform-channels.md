@@ -65,7 +65,7 @@ Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是�
 * The Flutter portion of the app sends messages to its *host*,
   the non-Dart portion of the app, over a platform channel.
 
-  应用程序中的 Flutter 部分通过平台通道向其宿主（应用程序中的 iOS 或 Android 部分）发送消息。
+  应用中的 Flutter 部分通过平台通道向其宿主 (非 Dart 部分) 发送消息。
 
 * The *host* listens on the platform channel, and receives the message.
   It then calls into any number of platform-specific APIs&mdash;using

@@ -45,7 +45,7 @@ Which one to use depends on the use case. Let's take a look:
   某些平台交互（例如键盘处理和辅助功能）可能无法正常工作。
 
 * Hybrid composition requires Flutter 1.22
-  ([version 1.22.2][] is recommended).
+  ([version 1.22.2][] or higher is recommended).
   This mode appends the native `android.view.View`
   to the view hierarchy. Therefore, keyboard
   handling, and accessibility work out of the box.
@@ -54,7 +54,7 @@ Which one to use depends on the use case. Let's take a look:
   Flutter UI. See [performance][] for more info.
 
   混合集成模式需要 Flutter 1.22
-  （推荐使用 [1.22.2 版本][version 1.22.2]）。
+  （推荐使用 [1.22.2 版本][version 1.22.2] 以及更高版本）。
   这种模式将原生的 `android.view.View` 附加到视图层次结构中。
   因此，键盘处理和无障碍功能是开箱即用的。
   在 Android 10 之前，此模式可能会大大降低 Flutter UI 的帧吞吐量 (FPS)。

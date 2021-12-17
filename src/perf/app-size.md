@@ -74,7 +74,7 @@ Produce an upload package for your application:
 
 生成你的应用的上传包：
 
-```shell
+```terminal
 flutter build appbundle
 ```
 

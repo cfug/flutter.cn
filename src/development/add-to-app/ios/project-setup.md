@@ -49,7 +49,7 @@ From the command line, run:
 
 在命令行中执行：
 
-```sh
+```terminal
 cd some/path/
 flutter create --template module my_flutter
 ```
@@ -347,7 +347,7 @@ frameworks to `some/path/MyApp/Flutter/`.
 
 下面的示例假设你想在 `some/path/MyApp/Flutter/` 目录下创建 frameworks：
 
-```sh
+```terminal
 flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
@@ -516,7 +516,7 @@ CocoaPods 的 podspec 文件分发。
 这将会生成一个 `Flutter.podspec` 文件而不再生成 Flutter.framework 引擎文件。
 如选项 B 中所说的那样，它将会生成 App.framework 和插件框架。
 
-```sh
+```terminal
 flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
 ```
 

@@ -230,22 +230,22 @@
               permalink: /docs/development/tools/devtools/cli
             - title: Flutter inspector 工具
               permalink: /docs/development/tools/devtools/inspector
-            - title: 时间线视图
-              permalink: /docs/development/tools/devtools/timeline
-            - title: 内存视图
-              permalink: /docs/development/tools/devtools/memory
             - title: 性能视图
               permalink: /docs/development/tools/devtools/performance
             - title: CPU 探测视图
               permalink: /docs/development/tools/devtools/cpu-profiler
+            - title: 内存视图
+              permalink: /docs/development/tools/devtools/memory
             - title: 网络视图
               permalink: /docs/development/tools/devtools/network
             - title: 调试器
               permalink: /docs/development/tools/devtools/debugger
             - title: 日志视图
               permalink: /docs/development/tools/devtools/logging
-            - title: App 包大小分析工具
+            - title: 应用大小分析工具
               permalink: /docs/development/tools/devtools/app-size
+            - title: 发行注记
+              permalink: /docs/development/tools/devtools/release-notes
         - title: Flutter SDK
           permalink: /development/tools/sdk
           children:

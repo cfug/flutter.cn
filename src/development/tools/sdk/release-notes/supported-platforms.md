@@ -37,6 +37,10 @@ As of release 2.5, Flutter supports the following platforms:
 |Windows | Windows 7 & above            | All     |
 |Windows | Windows 7 及以上              | 全部     |
 
+All channels include master, beta and stable channels. 
+
+**Please note - dev channel has been retired. Refer to this [blog](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181) for more information.**
+
 ## How we define a supported platform
 
 ## 我们如何定义一个已支持的平台
@@ -49,17 +53,15 @@ platforms on which Flutter runs:
 1. Supported Google-tested platforms,
    which are platforms the Flutter team at 
    Google tests in continuous integration at every commit. 
-   For these platforms, we also run post-commit  tests before 
-   rolling from the master channel to the dev channel.
    
-   支持谷歌测试平台，这些平台是谷歌 Flutter 团队在每次提交时集成测试的平台。
-   对于这些平台，在从 master 分支合并到 dev 通道之前，我们还会运行提交测试。
+   完全支持谷歌测试的平台，这些平台是谷歌 Flutter 团队在每次提交时集成测试的平台。
    
 1. Best effort platforms, supported community testing,
    which are platforms we believe we support through coding practices 
     and ad-hoc testing, but rely on the community for testing.
 
-   由社区测试尽力支持的平台，我们相信这些平台是通过编码实践和特别测试支持的，但依赖社区进行测试。
+   尽力支持社区的测试平台，我们相信这些平台是通过编码实践和特别测试支持的，
+   但依赖社区进行测试。
 
 1. Unsupported platforms, which are platforms that may work,
    but that the development team does not directly test or support.

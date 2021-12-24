@@ -17,6 +17,8 @@ next:
   path: /docs/cookbook/design/themes
 ---
 
+<?code-excerpt path-base="cookbook/design/fonts/"?>
+
 Although Android and iOS offer high quality system fonts,
 one of the most common requests from designers is for custom fonts.
 For example, you might have a custom-built font from a designer,
@@ -234,9 +236,9 @@ name declared in the `pubspec.yaml`.
 请将 `fontFamily` 设为应用（全局）`theme` 的属性的一部分。
 提供的 `fontFamily` 的值必须与 `pubspec.yaml` 中声明的名称相匹配。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (MaterialApp)"?>
 ```dart
-MaterialApp(
+return MaterialApp(
   title: 'Custom Fonts',
   // Set Raleway as the default app font.
   theme: ThemeData(fontFamily: 'Raleway'),
@@ -268,12 +270,12 @@ Once again, the `fontFamily` must match the `family` name declared in the
 在这个例子中，我们将在一个 `Text` Widget 上使用 RobotoMono 字体。
 同样的，这里的 fontFamily 的值必须与 pubspec.yaml 中声明的值相匹配。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Text)"?>
 ```dart
-Text(
+child: Text(
   'Roboto Mono sample',
   style: TextStyle(fontFamily: 'RobotoMono'),
-);
+),
 ```
 
 ### TextStyle
@@ -334,6 +336,7 @@ flutter:
 
 ### `main.dart`
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 

@@ -172,17 +172,13 @@ pass it to a specific `TextField` in the `build()` method.
 
 现在已经有了 `FocusNode`，我们可以将这个 `TextField` 传递给 `build()` 方法。
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (Build)"?>
 ```dart
-class _MyCustomFormState extends State<MyCustomForm> {
-  // Code to create the Focus node...
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      focusNode: myFocusNode,
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return TextField(
+    focusNode: myFocusNode,
+  );
 }
 ```
 
@@ -197,13 +193,13 @@ this task.
 最后，当用户点击 floating action button 时，我们将要聚焦文本框！
 为此我们将要使用 [`requestFocus()`][] 方法来完成此操作。
 
-<!-- skip -->
+<?code-excerpt "lib/step3.dart (FloatingActionButton)" replace="/^floatingActionButton\: //g"?>
 ```dart
 FloatingActionButton(
-  // When the button is pressed, give focus to the text field using
-  // myFocusNode.
+  // When the button is pressed,
+  // give focus to the text field using myFocusNode.
   onPressed: () => myFocusNode.requestFocus(),
-);
+),
 ```
 
 ## Interactive example

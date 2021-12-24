@@ -112,11 +112,12 @@ class _MyCustomFormState extends State<MyCustomForm> {
 Now that you have a `TextEditingController`, wire it up
 to a text field using the `controller` property:
 
-创建完 `TextEditingController`，就可以使用 `controller` 属性完成 text field 绑定。
+创建完 `TextEditingController`，
+就可以使用 `controller` 属性完成 text field 绑定。
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (TextFieldController)"?>
 ```dart
-TextField(
+return TextField(
   controller: myController,
 );
 ```
@@ -140,17 +141,17 @@ value of the text field when the user taps a floating action button.
 在下面的示例中，用户点击浮层按钮，
 将会触发弹出一个对话框，对话框获取并显示文本框的当前值。
 
-<!-- skip -->
+<?code-excerpt "lib/step3.dart (FloatingActionButton)" replace="/^floatingActionButton\: //g"?>
 ```dart
 FloatingActionButton(
-  // When the user presses the button, show an alert dialog containing the
-  // text that the user has entered into the text field.
+  // When the user presses the button, show an alert dialog containing
+  // the text that the user has entered into the text field.
   onPressed: () {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          // Retrieve the text the user has entered by using the
+          // Retrieve the text that the user has entered by using the
           // TextEditingController.
           content: Text(myController.text),
         );
@@ -158,8 +159,8 @@ FloatingActionButton(
     );
   },
   tooltip: 'Show me the value!',
-  child: Icon(Icons.text_fields),
-);
+  child: const Icon(Icons.text_fields),
+),
 ```
 
 ## Interactive example

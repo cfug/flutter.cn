@@ -60,9 +60,9 @@ For now, create a grid with two columns.
 我们需要使用一个在网格中显示项目的列表而非一个普通的列表。
 现在，我们将创建一个包含两个列的网格。
 
-<!-- skip -->
+<?code-excerpt "lib/partials.dart (GridViewCount)"?>
 ```dart
-GridView.count(
+return GridView.count(
   // A list with 2 columns
   crossAxisCount: 2,
   // ...
@@ -96,9 +96,9 @@ mode, or three columns in landscape mode.
 使用 `Orientation`，我们可以构建一个列表，
 在纵向模式下显示两列，在横向模式下显示三列。
 
-<!-- skip -->
+<?code-excerpt "lib/partials.dart (OrientationBuilder)"?>
 ```dart
-OrientationBuilder(
+body: OrientationBuilder(
   builder: (context, orientation) {
     return GridView.count(
       // Create a grid with 2 columns in portrait mode,
@@ -106,7 +106,7 @@ OrientationBuilder(
       crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
     );
   },
-);
+),
 ```
 
 {{site.alert.note}}

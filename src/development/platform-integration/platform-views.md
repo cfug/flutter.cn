@@ -6,6 +6,8 @@ description: Learn how to host native Android and iOS views in your Flutter app 
 description: 学习如何在 Flutter 应用中使用集成平台视图托管您的原生 Android 和 iOS 视图。
 ---
 
+<?code-excerpt path-base="development/platform_integration"?>
+
 Platform views allow you to embed native views in a Flutter app, so
 you can apply transforms, clips, and opacity to the native view
 from Dart.
@@ -101,14 +103,15 @@ do the following:
 <ol markdown="1">
 <li markdown="1">Add the following imports:
 
-   添加下面的导入：
+   添加下面的导入代码：
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_1.dart (Import)"?>
 ```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 ```
 </li>
 
@@ -116,13 +119,13 @@ import 'package:flutter/services.dart';
 
    实现 `build` 方法：
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_1.dart (HybridCompositionWidget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
-  final String viewType = '<platform-view-type>';
+  const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
-  final Map<String, dynamic> creationParams = <String, dynamic>{};
+  const Map<String, dynamic> creationParams = <String, dynamic>{};
 
   return PlatformViewLink(
     viewType: viewType,
@@ -140,10 +143,10 @@ Widget build(BuildContext context) {
         viewType: viewType,
         layoutDirection: TextDirection.ltr,
         creationParams: creationParams,
-        creationParamsCodec: StandardMessageCodec(),
+        creationParamsCodec: const StandardMessageCodec(),
         onFocus: () {
           params.onFocusChanged(true);
-        } ,
+        },
       )
         ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
         ..create();
@@ -173,11 +176,12 @@ do the following:
 <ol markdown="1">
 <li markdown="1">Add the following imports:
 
-   添加下面的导入：
+   添加下面的导入代码：
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_2.dart (Import)"?>
 ```dart
-import 'package:flutter/widget.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 ```
 </li>
 
@@ -185,11 +189,11 @@ import 'package:flutter/widget.dart';
 
    实现 `build` 方法：
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_2.dart (VirtualDisplayWidget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
-  final String viewType = 'hybrid-view-type';
+  const String viewType = 'hybrid-view-type';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
 
@@ -542,11 +546,12 @@ do the following in `native_view_example.dart`:
 <ol markdown="1">
 <li markdown="1">Add the following imports:
 
-   添加如下导入：
+   添加如下导入代码：
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_3.dart (Import)"?>
 ```dart
 import 'package:flutter/widgets.dart';
+import 'package:flutter/services.dart';
 ```
 </li>
 
@@ -554,11 +559,11 @@ import 'package:flutter/widgets.dart';
 
    实现 `build` 方法：
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
-  final String viewType = '<platform-view-type>';
+  const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
 
@@ -868,21 +873,21 @@ to detect the platform, and decide what widget to use:
 在 Dart 中实现 `build()` 方法时，您可以使用 [`defaultTargetPlatform`][] 
 来检测当前的平台，并且决定如何使用这个 widget：
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_3.dart (TogetherWidget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
-  final String viewType = '<platform-view-type>';
+  const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
 
   switch (defaultTargetPlatform) {
     case TargetPlatform.android:
-      // return widget on Android.
+    // return widget on Android.
     case TargetPlatform.iOS:
-      // return widget on iOS.
+    // return widget on iOS.
     default:
-      throw UnsupportedError("Unsupported platform view");
+      throw UnsupportedError('Unsupported platform view');
   }
 }
 ```

@@ -78,13 +78,16 @@ widgets don't overlap.
 就可以创建一个一致的视觉层次结构，
 并且可以确保其他重要的 widgets 不会被覆盖。
 
-<!-- skip -->
+<?code-excerpt "lib/partial.dart (Scaffold)"?>
 ```dart
-Scaffold(
-  appBar: AppBar(
-    title: Text('SnackBar Demo'),
+return MaterialApp(
+  title: 'SnackBar Demo',
+  home: Scaffold(
+    appBar: AppBar(
+      title: const Text('SnackBar Demo'),
+    ),
+    body: const SnackBarPage(),
   ),
-  body: SnackBarPage(), // Complete this code in the next step.
 );
 ```
 
@@ -98,9 +101,11 @@ First, create a `SnackBar`, then display it using `ScaffoldMessenger`.
 有了 `Scaffold`，我们就可以显示一个 `SnackBar` 了。
 首先，我们需要先创建一个 `SnackBar` ，然后使用 `ScaffoldMessenger` 来显示它。
 
-<!-- skip -->
+<?code-excerpt "lib/partial.dart (DisplaySnackBar)"?>
 ```dart
-final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
+const snackBar = SnackBar(
+  content: Text('Yay! A SnackBar!'),
+);
 
 // Find the ScaffoldMessenger in the widget tree
 // and use it to show a SnackBar.
@@ -127,10 +132,10 @@ an additional `action` to the `SnackBar` widget:
 
 这个例子里，我们在创建 `SnackBar` widget 的时候提供一个附加的 `action ` 参数。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (SnackBarAction)"?>
 ```dart
 final snackBar = SnackBar(
-  content: Text('Yay! A SnackBar!'),
+  content: const Text('Yay! A SnackBar!'),
   action: SnackBarAction(
     label: 'Undo',
     onPressed: () {

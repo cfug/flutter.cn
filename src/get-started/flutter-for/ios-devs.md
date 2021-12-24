@@ -1584,14 +1584,6 @@ which has sample code with and without the `intl` package.
 [Flutter 应用里的国际化][internationalization guide]，
 里面包含有使用和不使用 `intl` 库的示例代码。
 
-Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
-accessible from the native side, and vice versa, native assets and resources
-weren’t available to Flutter, as they lived in separate folders.
-
-注意在 Flutter 1.0 beta 2 之前，在 Flutter 里定义的资源是不能被原生代码访问的，
-反之亦然，而原生的资源也是不能在 Flutter 中使用，
-因为它们都被放在了独立的文件夹中。
-
 ### What is the equivalent of CocoaPods? How do I add dependencies?
 
 ### CocoaPods 相当于 Flutter 中的什么？如何添加依赖？

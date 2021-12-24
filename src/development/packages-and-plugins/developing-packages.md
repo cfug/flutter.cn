@@ -772,7 +772,9 @@ but currently a `pluginClass` is still required for those platforms. That
 requirement will be removed in a future version of Flutter.
 
 从 Flutter 2.5 版本开始，此类插件可以用于 Windows、macOS 和 Linux 插件，
-Android 和 iOS 在 Flutter 2.8 版本后可用。
+Android 和 iOS 在 Flutter 2.8 版本后可以使用
+`dartPluginClass`，但是这两个平台的 `pluginClass` 仍然需要保留。
+该限制会在未来的 Flutter 版本中移除。
 
 ### Testing your plugin
 

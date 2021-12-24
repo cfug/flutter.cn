@@ -87,7 +87,7 @@ Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是�
   本篇教程主要介绍如何在非 Dart 语言中，利用平台通道的机制调用平台 API。
   但是当你在 Flutter 应用里编写 Dart 代码时，你也可以通过判断 [defaultTargetPlatform][]，
   在不同的平台上执行对应的代码。
-  [不同平台操作体验的差异和适配][Platform adaptions] 文档中列举了部分
+  [不同平台操作体验的差异和适配][Platform adaptations] 文档中列举了部分
   Flutter 框架自动为你处理的平台适配行为。
 {{site.alert.end}}
 

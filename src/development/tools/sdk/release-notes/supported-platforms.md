@@ -43,6 +43,8 @@ All channels include master, beta and stable channels.
 
 **Please note - dev channel has been retired. Refer to this [blog](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181) for more information.**
 
+**请注意，dev 渠道已经弃用，详细信息请查阅 <a href="https://flutter.cn/posts/whats-new-in-flutter-2-8">Flutter 2.8 更新详解</a> 文章。**
+
 ## How we define a supported platform
 
 ## 我们如何定义一个已支持的平台

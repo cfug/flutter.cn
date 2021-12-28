@@ -32,7 +32,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   snapshot of desktop support on the `stable`
   channel, or you can keep up with the latest
   changes to desktop on the `beta` channel. For
-  Windows UWP you need to be on the `dev` channel.
+  Windows UWP you need to be on the `master` channel.
   
   **测试版发布!**
   本页涵盖的桌面支持，描述的是包括
@@ -42,7 +42,7 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   同时，Windows UWP 的 Alpha 版本仍在非常积极的开发中。
   你可以在 `stable` 渠道尝试这个 Beta 版的桌面支持，
   或者可以切换到使用 `beta` 渠道，使用最新的桌面版支持。
-  如果要跟进 Windows UWP 最新版，需要使用 `dev` 渠道。
+  如果要跟进 Windows UWP 最新版，需要使用 `master` 渠道。
 
   For more information, see the **Desktop**
   section in [What's new in Flutter 2][],
@@ -260,12 +260,12 @@ $ flutter config --enable-linux-desktop
 ```
 
 For Windows UWP desktop support perform the following commands to switch to
-the `dev` channel, upgrade Flutter, and enable UWP.
+the `master` channel, upgrade Flutter, and enable UWP.
 
 若想进行 UWP 桌面开发，请执行以下命令切换到 `dev` 分支、升级 Flutter 并启用 UWP 支持。
 
 ```terminal
-$ flutter channel dev
+$ flutter channel master
 $ flutter upgrade
 $ flutter config --enable-windows-uwp-desktop
 ```
@@ -454,10 +454,11 @@ $ flutter run -d linux
 
   **Alpha!**
   Flutter Windows UWP desktop support is an alpha release, 
-  available on the `dev` channel. 
+  available on the `master` channel. 
 
   **Alpha!**
-  Flutter 对 Windows UWP 桌面开发的支持仍然在 alpha 阶段，仅在 `dev` 渠道可用。
+  Flutter 对 Windows UWP 桌面开发的支持仍然在 alpha 阶段，
+  仅在 `master` 渠道可用。
 
 {{site.alert.end}}
 
@@ -472,7 +473,7 @@ Windows UWP C++ tools.
 
 To configure Flutter for Windows UWP development, 
 perform the following commands to switch to
-the `dev` channel, upgrade Flutter, and enable 
+the `master` channel, upgrade Flutter, and enable 
 Windows UWP desktop support.
 
 若想配置 Windows UWP 开发，
@@ -480,7 +481,7 @@ Windows UWP desktop support.
 并启用 Windows UWP 桌面开发支持。
 
 ```terminal
-PS C:\> flutter channel dev
+PS C:\> flutter channel master
 PS C:\> flutter upgrade
 PS C:\> flutter config --enable-windows-uwp-desktop
 ```

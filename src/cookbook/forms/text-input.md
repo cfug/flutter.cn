@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/forms/text-field-changes
 ---
 
+<?code-excerpt path-base="cookbook/forms/text_input/"?>
+
 Text fields allow users to type text into an app.
 They are used to build forms,
 send messages, create search experiences, and more.
@@ -49,14 +51,14 @@ set the `decoration` to null.
 可以将 [`InputDecoration`][] 应用到 `TextField` 的 [`decoration`][] 属性上。
 如果需要完全移除下划线和标签预留空间，可以将 `decoration` 属性设置为 null。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (TextField)" replace="/^child\: //g"?>
 ```dart
 TextField(
-  decoration: const InputDecoration(
+  decoration: InputDecoration(
     border: OutlineInputBorder(),
-    hintText: 'Enter a search term'
+    hintText: 'Enter a search term',
   ),
-);
+),
 ```
 
 To retrieve the value when it changes,
@@ -80,18 +82,19 @@ such as validation and integration with other
 如果需要对文本输入进行验证或者需要与其他表单组件 [`FormField`][] 交互联动，
 可以考虑使用 `TextFormField`。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (TextFormField)" replace="/^child\: //g"?>
 ```dart
 TextFormField(
   decoration: const InputDecoration(
     border: UnderlineInputBorder(),
-    labelText: 'Enter your username'
+    labelText: 'Enter your username',
   ),
-);
+),
 ```
 
 ## Interactive example
 
+<?code-excerpt "lib/main.dart" replace="/^child\: //g"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
@@ -116,7 +119,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyCustomForm extends StatelessWidget {
-  const MyCustomForm({ Key? key }) : super(key: key);
+  const MyCustomForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

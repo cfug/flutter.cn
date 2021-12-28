@@ -84,11 +84,11 @@ Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是�
   [Platform adaptations][] lists some platform-specific adaptations
   that Flutter automatically does for you in the framework.
 
-  如果你需要在非 Dart 语言中使用平台的 API
-  或库，本指南将使用平台通道机制。但你也可以通过检查 Flutter 应用程序中的
-  [defaultTargetPlatform][] 属性来编写相关平台的 Dart 代码。
-  [不同平台操作体验的差异和适配][Platform adaptations] 文档中列出了
-  Flutter 框架自动为你执行的一些相关平台适配。
+  本篇教程主要介绍如何在非 Dart 语言中，利用平台通道的机制调用平台 API。
+  但是当你在 Flutter 应用里编写 Dart 代码时，你也可以通过判断 [defaultTargetPlatform][]，
+  在不同的平台上执行对应的代码。
+  [不同平台操作体验的差异和适配][Platform adaptations] 文档中列举了部分
+  Flutter 框架自动为你处理的平台适配行为。
 {{site.alert.end}}
 
 ## Architectural overview: platform channels {#architecture}

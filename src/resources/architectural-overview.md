@@ -526,7 +526,7 @@ painting, positioning, and sizing. Specifically, Container is made up of the
 can see by reading its source code. A defining characteristic of Flutter is that
 you can drill down into the source for any widget and examine it. So, rather
 than subclassing `Container` to produce a customized effect, you can compose it
-and other simple widgets in novel ways, or just create a new widget using
+and other widgets in novel ways, or just create a new widget using
 `Container` as inspiration.
 
 例如，一个常用的 widget
@@ -872,9 +872,9 @@ Let’s take a look at some of these phases in greater detail.
 
 ### 构建：从 Widget 到 Element
 
-Consider this simple code fragment that demonstrates a simple widget hierarchy:
+Consider this code fragment that demonstrates a widget hierarchy:
 
-首先观察以下的代码片段，它代表了一个简单的 widget 结构：
+首先观察以下的代码片段，它代表了一个简单的 widget 层次结构：
 
 <?code-excerpt "lib/main.dart (Container2)"?>
 ```dart
@@ -892,7 +892,7 @@ Container(
 When Flutter needs to render this fragment, it calls the `build()` method, which
 returns a subtree of widgets that renders UI based on the current app state.
 During this process, the `build()` method can introduce new widgets, as
-necessary, based on its state. As a simple example, in the preceding code
+necessary, based on its state. As an example, in the preceding code
 fragment, `Container` has `color` and `child` properties. From looking at the
 [source
 code]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)
@@ -1271,7 +1271,7 @@ Flutter 提供了多种代码交互机制，无论你是在调用 Kotlin 或者 
 ### 平台通道
 
 For mobile and desktop apps, Flutter allows you to call into custom code through
-a _platform channel_, which is a simple mechanism for communicating between your
+a _platform channel_, which is a mechanism for communicating between your
 Dart code and the platform-specific code of your host app. By creating a common
 channel (encapsulating a name and a codec), you can send and receive messages
 between Dart and a platform component written in a language like Kotlin or
@@ -1289,7 +1289,7 @@ Dart 与使用 Kotlin 和 Swift 等语言编写的平台组件之间发送和接
 ![How platform channels allow Flutter to communicate with host
 code]({{site.url}}/assets/images/docs/arch-overview/platform-channels.png){:width="70%"}
 
-The following is a simple platform channel example of a Dart call to a receiving
+The following is a short platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
 
 下方的示例是在 Kotlin (Android) 或 Swift (iOS) 中处理 Dart 调用平台通道事件
@@ -1359,7 +1359,7 @@ Dart 也提供了 `dart:ffi` 库，一套直接绑定原生代码的机制。
 [js 包]({{site.pub}}/packages/js) 已经具有相同的用途。
 
 To use FFI, you create a `typedef` for each of the Dart and unmanaged method
-signatures, and instruct the Dart VM to map between them. As a simple example,
+signatures, and instruct the Dart VM to map between them. As an example,
 here’s a fragment of code to call the traditional Win32 `MessageBox()` API:
 
 若您需要使用 FFI，请为每一个 Dart 和未经管理的函数的签名创建一个 `typedef`，

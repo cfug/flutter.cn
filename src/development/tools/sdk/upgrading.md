@@ -55,6 +55,10 @@ Flutter 有 [4个发布渠道][release channels]，分别是
 我们推荐使用 **{{site.sdk.channel}}** 渠道
 除非你需要更加新的版本。
 
+**Please note** - **dev** channel has been deprecated. Refer to this [blog](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181) for more information.
+
+**请注意，dev 渠道已经弃用**，详细信息请查阅 <a href="https://flutter.cn/posts/whats-new-in-flutter-2-8">Flutter 2.8 更新详解</a> 文章。
+
 To view your current channel, use the following command:
 
 要查看你当前使用的哪个渠道，使用下面的命令：
@@ -73,7 +77,7 @@ For example:
 例如：
 
 ```terminal
-$ flutter channel dev
+$ flutter channel beta
 $ flutter upgrade
 ```
 

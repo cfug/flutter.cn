@@ -25,6 +25,10 @@ most stable Flutter builds. See [Flutter’s channels][] for details.
 Flutter 的 {{site.sdk.channel | capitalize }} channel 是相对稳定的发布版本，
 查阅这个文档了解更多：[Flutter 的构建（发布）渠道 channels][Flutter’s channels]。
 
+**Please note - dev channel has been deprecated. Refer to this [blog](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181) for more information.**
+
+**请注意，dev 渠道已经弃用，详细信息请查阅 <a href="https://flutter.cn/posts/whats-new-in-flutter-2-8">Flutter 2.8 更新详解</a> 文章。**
+
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
   <li class="nav-item">

@@ -1,3 +1,8 @@
+---
+title: Dart 2.15 现已发布
+toc: true
+---
+
 *作者 / Michael Thomsen, Dart & Flutter Product Manager, Google*
 
 我们已经正式发布了 Dart SDK 的 2.15 版本，该版本新增了可快速并发的工作器 isolate、新的构造函数拆分 (tear-off) 语言特性、经过改进的 dart:core 库枚举支持、package 发布者相关的新功能，等等。

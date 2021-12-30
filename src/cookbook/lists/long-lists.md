@@ -52,9 +52,9 @@ For this example, generate a list of 10,000 Strings using the
 
 在下面的例子，使用 [`List.generate`][] 构造函数生成包含 10,000 个字符串的集合。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Items)" replace="/^items: //g"?>
 ```dart
-final items = List<String>.generate(10000, (i) => "Item $i");
+List<String>.generate(10000, (i) => 'Item $i'),
 ```
 
 ## 2. Convert the data source into widgets

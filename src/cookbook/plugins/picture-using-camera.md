@@ -341,9 +341,9 @@ the previous step.
 因此，你需要提供一个 `File` 给 `Image.file` 构造函数。
 你能够通过传递你在上一步中创建的路径来创建一个 `File` 类的实例。
 
-<!-- skip -->
+<?code-excerpt "lib/image_file.dart (ImageFile)" replace="/^return\ //g"?>
 ```dart
-Image.file(File('path/to/my/picture.png'))
+Image.file(File('path/to/my/picture.png'));
 ```
 
 ## Complete example

@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/images/cached-images
 ---
 
+<?code-excerpt path-base="cookbook/images/fading_in_images"?>
+
 When displaying images using the default `Image` widget,
 you might notice they simply pop onto the screen as they're loaded.
 This might feel visually jarring to your users.
@@ -45,18 +47,19 @@ package for a simple transparent placeholder.
 
 本例将使用 [`transparent_image`][] 包来实现一个简单的透明占位符。
 
-<!-- skip -->
+<?code-excerpt "lib/memory_main.dart (MemoryNetwork)" replace="/^child\: //g"?>
 ```dart
 FadeInImage.memoryNetwork(
   placeholder: kTransparentImage,
   image: 'https://picsum.photos/250?image=9',
-);
+),
 ```
 
 ### Complete example
 
 ### 完整样例
 
+<?code-excerpt "lib/memory_main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -120,18 +123,19 @@ Then, use the [`FadeInImage.assetNetwork()`][] constructor:
 
 然后使用 [`FadeInImage.assetNetwork()`][] 构造函数：
 
-<!-- skip -->
+<?code-excerpt "lib/asset_main.dart (AssetNetwork)" replace="/^child\: //g"?>
 ```dart
 FadeInImage.assetNetwork(
   placeholder: 'assets/loading.gif',
   image: 'https://picsum.photos/250?image=9',
-);
+),
 ```
 
 ### Complete example
 
 ### 完整样例
 
+<?code-excerpt "lib/asset_main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 

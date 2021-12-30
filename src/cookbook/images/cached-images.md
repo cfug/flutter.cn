@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/lists/basic-list
 ---
 
+<?code-excerpt path-base="cookbook/images/cached_images"?>
+
 In some cases, it's handy to cache images as they're downloaded from the
 web, so they can be used offline. For this purpose,
 use the [`cached_network_image`][] package.
@@ -28,7 +30,7 @@ in as they're loaded.
 
 除了缓存，`cached_image_network` 包也支持占位符和加载后的图片淡入。
 
-<!-- skip -->
+<?code-excerpt "lib/simple.dart (SimpleCachedImage)" replace="/^return //g"?>
 ```dart
 CachedNetworkImage(
   imageUrl: 'https://picsum.photos/250?image=9',
@@ -45,19 +47,19 @@ placeholder. In this example, display a spinner while the image loads.
 `cached_network_image` 包允许任何 widget 充当占位符。
 在本例中，加载图片时会展示一个旋转加载的效果（spinner）作为占位符。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (CachedNetworkImage)" replace="/^child\: //g"?>
 ```dart
 CachedNetworkImage(
-  placeholder: (context, url) => CircularProgressIndicator(),
+  placeholder: (context, url) => const CircularProgressIndicator(),
   imageUrl: 'https://picsum.photos/250?image=9',
-);
+),
 ```
 
 ## Complete example
 
 ## 完整样例
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -82,8 +84,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: CachedNetworkImage(
             placeholder: (context, url) => const CircularProgressIndicator(),
-            imageUrl:
-                'https://picsum.photos/250?image=9',
+            imageUrl: 'https://picsum.photos/250?image=9',
           ),
         ),
       ),

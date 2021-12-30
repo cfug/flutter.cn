@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/lists/horizontal_list"?>
+
 You might want to create a list that scrolls
 horizontally rather than vertically.
 The [`ListView`][] widget supports horizontal lists.
@@ -32,7 +34,7 @@ Use the standard `ListView` constructor, passing in a horizontal
 通过指定 `scrollDirection` 的值为水平方向，
 来覆盖默认的竖直方向。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ListView)" replace="/^child\: //g"?>
 ```dart
 ListView(
   // This next line does the trick.
@@ -59,13 +61,14 @@ ListView(
       color: Colors.orange,
     ),
   ],
-)
+),
 ```
 
 ## Interactive example
 
 ## 交互式样例
 
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
@@ -88,6 +91,7 @@ class MyApp extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: 20.0),
           height: 200.0,
           child: ListView(
+            // This next line does the trick.
             scrollDirection: Axis.horizontal,
             children: <Widget>[
               Container(

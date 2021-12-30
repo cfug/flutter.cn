@@ -16,6 +16,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/lists/grid_lists"?>
+
 In some cases, you might want to display your items as a grid rather than
 a normal list of items that come one after the next.
 For this task, use the [`GridView`][] widget.
@@ -38,7 +40,7 @@ generate a list of 100 widgets that display their index in the list.
 在这个例子中，我们将创建一个包含有 100 个 widget 的 List，
 每个 Widget 将展示它在 List 中的索引。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (GridView)" replace="/^body\: //g"?>
 ```dart
 GridView.count(
   // Create a grid with 2 columns. If you change the scrollDirection to
@@ -53,21 +55,24 @@ GridView.count(
       ),
     );
   }),
-);
+),
 ```
 
 ## Interactive example
 
 ## 交互式样例
 
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     const title = 'Grid List';

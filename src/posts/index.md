@@ -43,5 +43,7 @@ title: 官方博客
 - [新版 Flutter 网站发布]({{site.main-url}}/posts/a-new-version-fluttercn-website-released)
 - [Flutter 2.8 正式发布]({{site.main-url}}/posts/announcing-flutter-2-8)
 - [Flutter 2.8 更新详解]({{site.main-url}}/posts/whats-new-in-flutter-2-8)
+- [适用于 Flutter 的 Google 移动广告 SDK 正式版现已发布]({{site.main-url}}/posts/announcing-general-availability-for-the-google-mobile-ads-sdk-for-flutter)
+- [Dart 2.15 现已发布]({{site.main-url}}/posts/announcing-dart-2-15)
 
 上述内容的刊登均以获得发布许可。

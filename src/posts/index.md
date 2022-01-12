@@ -46,4 +46,8 @@ title: 官方博客
 - [适用于 Flutter 的 Google 移动广告 SDK 正式版现已发布]({{site.main-url}}/posts/announcing-general-availability-for-the-google-mobile-ads-sdk-for-flutter)
 - [Dart 2.15 现已发布]({{site.main-url}}/posts/announcing-dart-2-15)
 
+## 2022 年
+
+- [2022 Flutter 产品路线图发布]({{site.main-url}}/posts/flutter-2022-roadmap)
+
 上述内容的刊登均以获得发布许可。

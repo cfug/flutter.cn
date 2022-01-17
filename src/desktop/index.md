@@ -27,17 +27,18 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   support is available as an alpha release. 
   The UWP variant is community supported. 
   
-  You can try a beta snapshot of desktop support on the 
-  `stable` channel, or you can keep up with the latest
-  changes to desktop on the `beta` channel. For
-  Windows UWP you need to be on the `master` channel.
-  
   **测试版发布!**
   本页涵盖的桌面支持，描述的是包括
   Windows（Win32）、macOS 和 Linux 的 Beta 版支持，
   Windows 的 UWP 支持目前处于 Alpha 版本。
   Beta 支持仍有较为明显的功能差距，包括无障碍功能的支持等。
   同时，Windows UWP 的 Alpha 版本仍在非常积极的开发中。
+
+  You can try a beta snapshot of desktop support on the 
+  `stable` channel, or you can keep up with the latest
+  changes to desktop on the `beta` channel. For
+  Windows UWP you need to be on the `master` channel.
+
   你可以在 `stable` 渠道尝试这个 Beta 版的桌面支持，
   或者可以切换到使用 `beta` 渠道，使用最新的桌面版支持。
   如果要跟进 Windows UWP 最新版，需要使用 `master` 渠道。
@@ -64,8 +65,8 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   "desktop:windows (win32)/windows (uwp)/macos/linux"
   (whichever platform is appropriate) in the title.
 
-  要能够编译桌面应用，您必须**在特定的平台**上
-  编译应用: 在 Windows 上构建 Windows 应用，在 macOS 上构建 macOS 应用，
+  要能够编译桌面应用，您必须 **在特定的平台** 上编译应用:
+  在 Windows 上构建 Windows 应用，在 macOS 上构建 macOS 应用，
   在 Linux 上构建 Linux 应用。
   如果您遇到了一个尚未被报告的问题，请 [创建一个 issue][file an issue]，
   其中标题包含 "desktop:windows (win32)/windows (uwp)/macos/linux" (所处的平台)。
@@ -105,7 +106,7 @@ you need the following software:
 * Flutter SDK. See the
   [Flutter SDK][] installation instructions.
   
-  Flutter SDK。查看 [Flutter SDK][] 安装说明。
+  Flutter SDK，查看 [Flutter SDK][] 安装说明。
   
 * Optional: An IDE that supports Flutter.
   You can install [Android Studio][], [IntelliJ IDEA][],

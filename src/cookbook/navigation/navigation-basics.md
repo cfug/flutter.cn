@@ -188,7 +188,9 @@ routes managed by the `Navigator`.
 To implement a return to the original route, update the `onPressed()`
 callback in the `SecondRoute` widget:
 
-=======
+实现返回第一个页面，更新 `SecondRoute` widget
+的 `onPressed()` 方法回调。
+
 <?code-excerpt "lib/main_step2.dart (SecondRouteOnPressed)"?>
 ```dart
 // 位于 SecondRoute widget (Within the SecondRoute widget)

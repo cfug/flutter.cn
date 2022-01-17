@@ -491,8 +491,8 @@ platforms that the plugin supports. Available platforms are: `android`, `ios`,
 `web`, `linux`, `macos`, and `windows`. If no platforms are specified, the
 resulting project doesn't support any platforms.
 
-我们已经开始加入并使用 `--platforms=` 这个命令行选项了，
-后面参数是用逗号分隔的列表，这个参数代表指定插件支持的平台。
+你可以使用 `--platforms=` 命令行选项指定插件支持的平台，
+后面参数是用逗号分隔的列表。
 可用的平台有：`android`、`ios`、`web`、`linux`、`macos` 和 `windows`。
 如果没有指定平台，则生成的项目不支持任何平台。
 

@@ -53,7 +53,6 @@ Flutter 2 以及以上的版本针对多 Flutter 实例进行了优化，
 额外增加的 Flutter 实例只会增加约 180K 的内存占用，
 这种「固定成本」的降低，可以帮助你更轻松的将 Flutter 加入到现有应用 (add-to-app)。
 
-
 {{site.alert.warning}}
 
   Memory usage is only fully optimized in AOT mode (in profile and release
@@ -140,7 +139,6 @@ or other planned work on enhancing multiple Flutter instances, see
 
 多个 Flutter 实例之间相互通讯可以通过 [平台通道][platform channels] 或者 [Pigeon][] 进行。
 可以在 [Issue 72009][] 里查阅我们关于多 Flutter 实例通讯和增强功能计划的路线图。
-
 
 ## Samples
 

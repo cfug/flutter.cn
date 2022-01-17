@@ -24,15 +24,8 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   This page covers desktop support,
   which is available as a beta release for
   Windows (Win32), macOS and Linux. The Windows UWP
-  support is available as an alpha release. Beta
-  support still has notable feature gaps,
-  including accessibility support. Meanwhile, the
-  Windows UWP alpha release is still in
-  very active development. You can try a beta
-  snapshot of desktop support on the `stable`
-  channel, or you can keep up with the latest
-  changes to desktop on the `beta` channel. For
-  Windows UWP you need to be on the `master` channel.
+  support is available as an alpha release. 
+  The UWP variant is community supported. 
   
   **测试版发布!**
   本页涵盖的桌面支持，描述的是包括
@@ -40,6 +33,12 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   Windows 的 UWP 支持目前处于 Alpha 版本。
   Beta 支持仍有较为明显的功能差距，包括无障碍功能的支持等。
   同时，Windows UWP 的 Alpha 版本仍在非常积极的开发中。
+
+  You can try a beta snapshot of desktop support on the 
+  `stable` channel, or you can keep up with the latest
+  changes to desktop on the `beta` channel. For
+  Windows UWP you need to be on the `master` channel.
+
   你可以在 `stable` 渠道尝试这个 Beta 版的桌面支持，
   或者可以切换到使用 `beta` 渠道，使用最新的桌面版支持。
   如果要跟进 Windows UWP 最新版，需要使用 `master` 渠道。
@@ -66,8 +65,8 @@ Flutter 的桌面支持也允许插件拓展&mdash;
   "desktop:windows (win32)/windows (uwp)/macos/linux"
   (whichever platform is appropriate) in the title.
 
-  要能够编译桌面应用，您必须**在特定的平台**上
-  编译应用: 在 Windows 上构建 Windows 应用，在 macOS 上构建 macOS 应用，
+  要能够编译桌面应用，您必须 **在特定的平台** 上编译应用:
+  在 Windows 上构建 Windows 应用，在 macOS 上构建 macOS 应用，
   在 Linux 上构建 Linux 应用。
   如果您遇到了一个尚未被报告的问题，请 [创建一个 issue][file an issue]，
   其中标题包含 "desktop:windows (win32)/windows (uwp)/macos/linux" (所处的平台)。
@@ -107,7 +106,7 @@ you need the following software:
 * Flutter SDK. See the
   [Flutter SDK][] installation instructions.
   
-  Flutter SDK。查看 [Flutter SDK][] 安装说明。
+  Flutter SDK，查看 [Flutter SDK][] 安装说明。
   
 * Optional: An IDE that supports Flutter.
   You can install [Android Studio][], [IntelliJ IDEA][],
@@ -140,19 +139,24 @@ you need the following in addition to the Flutter SDK:
 
 要开发 Windows 桌面程序，除了 Flutter SDK，您还需要做以下准备:
 
-* [Visual Studio 2019][] (not to be confused with
-  Visual Studio _Code_). For Win32 you need the
-  "Desktop development with C++" workload installed,
-  including all of its default components. For UWP
-  you need the "Universal Windows Platform development"
+* [Visual Studio 2022][] for Flutter 2.9 beta and newer,
+  [Visual Studio 2019][] for Flutter 2.8.1 and older.
+  Note, Visual Studio is different to Visual Studio _Code_.
+  For Win32 you need the "Desktop development with C++" 
+  workload installed, including all of its default components. 
+  For UWP you need the "Universal Windows Platform development"
   workload installed, with the optional UWP C++ tools.
 
-  [安装 Visual Studio 2019][Visual Studio 2019] (不要与 Visual Studio Code - VS Code 混淆)。
-  Win 32 开发，请选择 [「使用 C++ 的桌面开发」工作负载](https://docs.microsoft.com/zh-cn/cpp/build/vscpp-step-0-installation?view=msvc-160#step-4---choose-workloads)，
-  包括它所有的默认组件。
-  UWP 开发，需要选择「通用 Windows 平台开发」工作负载，以及可选的 UWP C++ 工具。
+  Flutter 2.9 Beta 和更新的版本使用 [Visual Studio 2022][]，
+  2.8.1 和之前的版本使用 [Visual Studio 2019][]
+  （请别把它与 Visual Studio **Code** 搞混了）
+  做 Win32 开发的话，你需要安装 “Desktop development with C++” 
+  工作负载，包括其所有默认组件。
+  如果是 UWP 开发的话，你需要安装 "Universal Windows Platform development"
+  工作负载，包括可选的 UWP C++ 工具。
 
-[Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
+[Visual Studio 2022]: https://visualstudio.microsoft.com/zh-hans/downloads/
+[Visual Studio 2019]: https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/
 
 ### Additional macOS requirements
 

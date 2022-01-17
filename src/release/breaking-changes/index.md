@@ -30,8 +30,13 @@ release, and listed in alphabetical order:
 
   [2.5 之后的版本将会废弃的 API][Deprecated API removed after v2.5]
 
+* [Raw images on Web uses correct origin and colors][]
+
+  [Web 平台的原始图像使用正确的来源和颜色][Raw images on Web uses correct origin and colors]
+
 [Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
+[Raw images on Web uses correct origin and colors]: {{site.url}}/release/breaking-changes/raw-images-on-web-uses-correct-origin-and-colors
 
 
 ### Released in Flutter 2.5

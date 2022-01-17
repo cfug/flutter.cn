@@ -253,12 +253,6 @@ the data it would have if it executed from scratch.
 The result might be different behavior after hot reload
 versus a hot restart.
 
-{{site.alert.note}}
-  As of Flutter 1.17, you can switch a widget
-  from a `StatefulWidget` to a `StatelessWidget`
-  (or the reverse), without requiring a hot restart.
-{{site.alert.end}}
-
 ### Recent code change is included but app state is excluded
 
 ### 代码发生更改但应用程序的状态没有改变

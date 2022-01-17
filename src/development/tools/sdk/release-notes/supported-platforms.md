@@ -11,9 +11,9 @@ description: Flutter 支持的平台以及版本号
 
 ## 已支持的平台
 
-As of release 2.5, Flutter supports the following platforms:
+As of the current release, Flutter supports the following platforms:
 
-2.5 版本之后，Flutter 支持以下平台：
+基于现有的稳定版本，Flutter 支持以下平台：
 
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
@@ -49,10 +49,9 @@ All channels include master, beta and stable channels.
 
 ## 我们如何定义一个已支持的平台
 
-As of Flutter 1.20, we define three tiers of support for the 
-platforms on which Flutter runs:
+We define three tiers of support for the platforms on which Flutter runs:
 
-从 Flutter 1.20 开始，我们为 Flutter 运行的平台定义了三层支撑：
+我们为 Flutter 运行的平台定义了三层支撑：
 
 1. Supported Google-tested platforms,
    which are platforms the Flutter team at 

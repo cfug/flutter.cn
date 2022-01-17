@@ -1609,24 +1609,6 @@ the `pubspec.yaml` file, and Flutter picks them up.
 资产位于任意文件夹中&mdash; Flutter 没有预定义的文件夹结构。
 在 `pubspec.yaml` 文件中声明资产(带有位置)，Flutter 就会得到它们。
 
-Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
-accessible from the native side, and vice versa, native assets and resources
-weren’t available to Flutter, as they lived in separate folders.
-
-注意，在 Flutter 1.0 beta 2 之前的版本中，Flutter 中定义的资产并不能从原生一侧访问，
-反之亦然，原生资产和资源对 Flutter 无效，就像他们被放在单独的文件夹中。
-
-As of Flutter beta 2, assets are stored in the native asset folder,
-and are accessed on the native side using Android's `AssetManager`:
-
-在 Flutter beta 2 版本中，资产都被存储在原生的资产文件夹中，
-并且可以通过 Android 的`资产管理器（AssetManager）` 从原生一侧被访问。
-
-As of Flutter beta 2, Flutter still cannot access native resources,
-nor it can access native assets.
-
-在 Flutter beta 2 版本中，Flutter 仍然不能访问原生资源，也不能访问原生资产。
-
 To add a new image asset called `my_icon.png` to our Flutter project,
 for example, and deciding that it should live in a folder we
 arbitrarily called `images`, you would put the base image (1.0x)
@@ -1886,7 +1868,7 @@ For more details on the meaning of these states, see the
 
 有关这些状态的含义的更多细节，可参考 [`AppLifecycleStatus` 文档][`AppLifecycleStatus` documentation]。
 
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 
 ## Layouts
 

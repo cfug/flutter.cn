@@ -41,16 +41,6 @@ exposes it through a Dart plugin named "native_add".
 在本示例中，您将创建一个实现 32 位的加法 C 函数，
 然后通过名为 "native_add" 的 Dart 插件暴露它。
 
-{{ site.alert.version-note }}
-
-  As of Dart 2.12.0 (included in Flutter 2.0 or later),
-  FFI has been marked as stable.
-
-  Dart 2.12.0 版本之后 (同时包含在 Flutter 2.0 和以后的版本里)，
-  FFI 已经作为稳定版本发布。
-
-{{ site.alert.end }}
-
 ### Dynamic vs static linking
 
 ### 动态链接 vs 静态链接

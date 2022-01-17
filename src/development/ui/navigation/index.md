@@ -37,7 +37,7 @@ More elaborate applications are usually better served by the `Router`
 API, via the [`MaterialApp.router`] constructor. This requires some
 more up-front work to describe how to parse deep links for your
 application and how to map the application state to the set of active
-pages, but is more expressive on the long run.
+pages, but is more expressive in the long run.
 
 通过 [`MaterialApp.router`] 构造函数，`Router` API 可以更好地为复杂应用程序服务。
 它需要更多的前期工作来描述如何解析应用程序的复杂路由，

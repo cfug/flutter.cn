@@ -4,24 +4,26 @@ description: Keep your code up to date with the help of the Flutter Fix feature.
 description: 使用 Flutter Fix 帮助您的应用跟进最新的 API 用法。
 ---
 
-The _Flutter Fix_ feature, introduced in Flutter 2,
-combines a Dart command-line tool with
-changes suggested by the Dart analyzer
-to automatically clean up deprecated APIs
-in your codebase.
+As Flutter continues to evolve, we provide a tool to help you clean up
+deprecated APIs from your codebase. The tool ships as part of Flutter, and
+suggests changes that you might want to make to your code. The tool is available
+from the command line, and is also integrated into the IDE plugins for Android
+Studio and Visual Studio Code. 
 
-Flutter 2 版本中引入的 **Flutter Fix** 功能将 Dart 命令行工具
-与 Dart analyzer 建议的更改相结合，用于自动清理代码库中已弃用的 API。
+随着 Flutter 的不断发展，我们提供了一个工具以帮助从代码库中清理已弃用的 API。
+该工具作为 Flutter 产品的一部分被提供，也会向你建议可能希望对代码进行的更改。
+该工具可通过命令行进行调用，
+也集成到了 Android Studio 和 Visual Studio Code 的 IDE 插件中。
 
-This feature has also been added to IDE
-plugins for Flutter (2.0) and Dart (2.12).
-Depending on the IDE, these automated
-updates are called _quick-fixes_ (IntelliJ,
-Android Studio, Eclipse) or _code actions_ (VS Code).
+{{site.alert.tip}}
 
-此功能已被添加到 Flutter (2.0) 和 Dart (2.12) 的 IDE 插件中。
-这种自动更新的功能在 IntelliJ、Android Studio 和 Eclipse 中被称为 **quick-fixes**，
-在 VS Code 中被称为 **code actions**。
+  These automated updates are called _quick-fixes_ in IntelliJ and Android
+  Studio, and _code actions_ in VS Code).
+
+  这种自动更新的功能在 IntelliJ、Android Studio 和 Eclipse 中被称为 **quick-fixes**，
+  在 VS Code 中被称为 **code actions**。
+
+{{site.alert.end}}
 
 ## Applying individual fixes
 

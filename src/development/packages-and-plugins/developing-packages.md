@@ -486,12 +486,13 @@ flag with `flutter create`.
 想要创建原生插件 package，
 请使用带有 `--template=plugin` 标志的 `flutter create` 命令。
 
-As of Flutter 1.20.0, Use the `--platforms=` option followed by a comma separated list to
-specify the platforms that the plugin supports. Available platforms are: `android`, `ios`, `web`, `linux`, `macos`, and `windows`.
-If no platforms are specified, the resulting project doesn't support any platforms.
+Use the `--platforms=` option followed by a comma separated list to specify the
+platforms that the plugin supports. Available platforms are: `android`, `ios`,
+`web`, `linux`, `macos`, and `windows`. If no platforms are specified, the
+resulting project doesn't support any platforms.
 
-从 Flutter 1.20.0 版本，我们开始使用 `--platforms=` 这个选项，
-后面参数是用逗号分隔的列表，这个参数代表指定插件支持的平台。
+你可以使用 `--platforms=` 命令行选项指定插件支持的平台，
+后面参数是用逗号分隔的列表。
 可用的平台有：`android`、`ios`、`web`、`linux`、`macos` 和 `windows`。
 如果没有指定平台，则生成的项目不支持任何平台。
 

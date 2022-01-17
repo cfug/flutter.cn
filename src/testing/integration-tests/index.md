@@ -6,7 +6,7 @@ description: 学习如何撰写集成测试
 tags: 测试,Flutter Test,集成测试
 ---
 
-This page describes how to use the `integration_test` package to run
+This page describes how to use the [`integration_test`][] package to run
 integration tests. Tests written using this package have the following
 properties:
  
@@ -18,14 +18,10 @@ properties:
   enabling tests to be written in a similar style as [widget tests][]
 
 {{site.alert.note}}
-  As of Flutter 2, the `integration_test` package
-  was moved into the Flutter SDK. Going forward,
-  use the [`integration_test`][] package docs,
-  rather than the docs on pub.dev. **Also,
-  make sure that you update your app's pubspec file
-  to include this package as one of your
-  `dev_dependencies`.** For an example,
-  see the [Project setup](#project-setup) section below.
+  The `integration_test` package is part of the Flutter SDK itself. 
+  To use it, make sure that you update your app's pubspec file
+  to include this package as one of your `dev_dependencies`. 
+  For an example, see the [Project setup](#project-setup) section below.
 {{site.alert.end}}
 
 ## Overview

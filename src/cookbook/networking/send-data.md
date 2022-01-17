@@ -41,7 +41,7 @@ dependencies:
 
 Import the `http` package.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Http)"?>
 ```dart
 import 'package:http/http.dart' as http;
 ```
@@ -60,7 +60,7 @@ by sending an album title to the
 [JSONPlaceholder][] using the
 [`http.post()`][] method.
 
-<!-- skip -->
+<?code-excerpt "lib/create_album.dart (CreateAlbum)"?>
 ```dart
 Future<http.Response> createAlbum(String title) {
   return http.post(

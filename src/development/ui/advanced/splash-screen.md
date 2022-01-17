@@ -277,22 +277,14 @@ Android splash screen in the same positions on screen.
 
 ### 迁移 Manifest 和 Activity 中自定义的闪屏
 
-{{site.alert.note}}
-
-  This is an upcoming change for Flutter 2.5.
-
-  该修改将随着 Flutter 2.5 一同发布。
-
-{{site.alert.end}}
-
 Previously, Android Flutter apps would either set
 `io.flutter.embedding.android.SplashScreenDrawable` in their application
 manifest, or implement [`provideSplashScreen`][] within their Flutter Activity.
 This would be shown momentarily in between the time after the Android launch
 screen is shown and when Flutter has drawn the first frame. This is no longer
-needed and is deprecated – Flutter now automatically keeps the Android launch
-screen displayed until Flutter has drawn the first frame. Developers should
-instead remove usage of these APIs.
+needed and is deprecated – in Flutter 2.5 and later, Flutter automatically keeps 
+the Android launch screen displayed until Flutter has drawn the first frame. 
+Developers should instead remove usage of these APIs.
 
 在 Flutter 2.5 之前，Flutter 的 Android 应用要么是在 manifest 中设置
 `io.flutter.embedding.android.SplashScreenDrawable`，

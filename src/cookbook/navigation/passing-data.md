@@ -111,7 +111,7 @@ final todos = List.generate(
 
 ### 用 `ListView` 显示待办事项列表
 
-<!-- skip -->
+<?code-excerpt "lib/main_todoscreen.dart (ListViewBuilder)" replace="/^body: //g;/;$//g"?>
 ```dart
 ListView.builder(
   itemCount: todos.length,
@@ -120,7 +120,7 @@ ListView.builder(
       title: Text(todos[index].title),
     );
   },
-);
+),
 ```
 
 So far, so good.

@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/navigation/navigation_basics"?>
+
 Most apps contain several screens for displaying different types of
 information.
 For example, an app might have a screen that displays products.
@@ -90,6 +92,7 @@ First, set up the visual structure:
 
 首先来编写界面布局代码：
 
+<?code-excerpt "lib/main_step1.dart (FirstSecondRoutes)"?>
 ```dart
 class FirstRoute extends StatelessWidget {
   const FirstRoute({Key? key}) : super(key: key);
@@ -98,11 +101,11 @@ class FirstRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Route'),
+        title: const Text('First Route'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Open route'),
+          child: const Text('Open route'),
           onPressed: () {
             // Navigate to second route when tapped.
           },
@@ -119,14 +122,14 @@ class SecondRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Route"),
+        title: const Text('Second Route'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             // Navigate back to first route when tapped.
           },
-          child: Text('Go back!'),
+          child: const Text('Go back!'),
         ),
       ),
     );
@@ -158,13 +161,13 @@ update the `onPressed()` callback:
 在 `FirstRoute` widget 的 `build()` 方法中，
 我们来修改  `onPressed()` 回调函数：
 
-<!-- skip -->
+<?code-excerpt "lib/main_step2.dart (FirstRouteOnPressed)"?>
 ```dart
 // 位于 FirstRoute widget (Within the `FirstRoute` widget)
 onPressed: () {
   Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => SecondRoute()),
+    MaterialPageRoute(builder: (context) => const SecondRoute()),
   );
 }
 ```
@@ -185,10 +188,8 @@ routes managed by the `Navigator`.
 To implement a return to the original route, update the `onPressed()`
 callback in the `SecondRoute` widget:
 
-我们来修改 `SecondRoute` widget 的 `onPressed()` 回调函数，
-实现返回第一个路由的功能：
-
-<!-- skip -->
+=======
+<?code-excerpt "lib/main_step2.dart (SecondRouteOnPressed)"?>
 ```dart
 // 位于 SecondRoute widget (Within the SecondRoute widget)
 onPressed: () {
@@ -200,6 +201,7 @@ onPressed: () {
 
 ## 交互式样例
 
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
@@ -241,7 +243,7 @@ class SecondRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Second Route"),
+        title: const Text('Second Route'),
       ),
       body: Center(
         child: ElevatedButton(

@@ -1868,7 +1868,7 @@ For more details on the meaning of these states, see the
 
 有关这些状态的含义的更多细节，可参考 [`AppLifecycleStatus` 文档][`AppLifecycleStatus` documentation]。
 
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 
 ## Layouts
 

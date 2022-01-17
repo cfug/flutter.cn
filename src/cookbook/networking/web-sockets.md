@@ -273,6 +273,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void dispose() {
     _channel.sink.close();
+    _controller.dispose();
     super.dispose();
   }
 }

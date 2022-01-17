@@ -3,18 +3,16 @@
 ## Windows 设置
 
 {{site.alert.warning}}
+
   **Beta (Win32) and Alpha (UWP)!**
   This area covers Windows desktop support,
-  which is available in beta release (Win32)
-  and alpha release (UWP).
-  
+  which is available in beta release (Win32).
+  and alpha release (UWP). The UWP variant is 
+  community supported.
+
   **Win32 的 Beta 支持和 UWP 的 Alpha 版支持**
   本页涵盖的桌面支持，描述的是对 Windows (Win32) 的 Beta 支持，
-  以及对 UWP 的 Alpha 支持。
-
-  The UWP variant is community supported.
-
-  Windows UWP 是由社区 (非官方) 提供支持的。
+  以及对 UWP 的 Alpha 支持。Windows UWP 是由社区 (非官方) 提供支持的。
 
   You can try a beta snapshot of Win32 desktop support
   on the stable channel, or you can keep up

@@ -80,7 +80,7 @@ $ flutter config --enable-windows-desktop
 For Windows UWP desktop support perform the following commands to switch to
 the `master` channel, upgrade Flutter, and enable UWP.
 
-Windows UWP 桌面支持需要先升级到 `dev` 发布渠道，然后启用 UWP。
+Windows UWP 桌面支持需要先升级到 `master` 发布渠道，然后启用 UWP。
 
 ```terminal
 $ flutter channel master

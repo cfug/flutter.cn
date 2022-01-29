@@ -49,5 +49,6 @@ title: 官方博客
 ## 2022 年
 
 - [2022 Flutter 产品路线图发布]({{site.main-url}}/posts/flutter-2022-roadmap)
+- [回顾 2021 Flutter 精彩时刻]({{site.main-url}}/posts/flutter-highlight-2021)
 
 上述内容的刊登均以获得发布许可。

@@ -338,11 +338,6 @@ where the Dart code lives.
   `uses-material-design: true` 会是一个明智之举，
   通过这个可以让您使用更多 Material 的特性，比如其预定义好的 [图标][Icons] 集。
 
-* The `main()` method uses arrow (`=>`) notation.
-  Use arrow notation for one-line functions or methods.
-
-  主函数（main）使用了 (`=>`) 符号，这是 Dart 中单行函数或方法的简写。
-
 * The app extends `StatelessWidget`, which makes the app itself a
   widget. In Flutter, almost everything is a widget, including
   alignment, padding, and layout.
@@ -391,15 +386,30 @@ You can find the `english_words` package,
 as well as many other open source packages, on [pub.dev][].
 
 你可以在 [pub.dev][] 上找到
-`english_words` 软件包以及其他许多开源软件包。
+`english_words` package 以及其他许多开源的 package。
 
- 1. The `pubspec.yaml` file manages the assets and dependencies
-    for a Flutter app. In `pubspec.yaml`, add `english_words`
-    (3.1.5 or higher) to the dependencies list:
+ 1. Add `english_words` package to your project as follows:
+
+    通过下面的命令将 `english_words` 这个 package 加入你的工程里：
+
+    ```terminal
+    $ flutter pub add english_words
+    Resolving dependencies...
+    + english_words 4.0.0
+      path 1.8.0 (1.8.1 available)
+      source_span 1.8.1 (1.8.2 available)
+      test_api 0.4.3 (0.4.9 available)
+    Downloading english_words 4.0.0...
+    Changed 1 dependency!
+    ```
+ 
+    The `pubspec.yaml` file manages the assets and dependencies
+    for a Flutter app. In `pubspec.yaml`, you will see
+    that the `english_words` dependency has been added:
     
-    `pubspec.yaml` 文件管理 Flutter 应用程序的 assets（资源，如图片、package等）。
-    在pubspec.yaml 中，将 english_words（3.1.5 或更高版本）添加到依赖项列表，
-    如下面高亮显示的行：
+    `pubspec.yaml` 文件管理着 Flutter 应用程序的
+    assets（资源，如图片、package 等）和依赖项。
+    你可以看到 `english_words` 这个依赖项已经添加：
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
     <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
@@ -626,6 +636,8 @@ a child inside the existing `MyApp` stateless widget.
 
   ```dart
 class RandomWords extends StatefulWidget {
+  const RandomWords({ Key? key }) : super(key: key);
+
   @override
   _RandomWordsState createState() => _RandomWordsState();
 }

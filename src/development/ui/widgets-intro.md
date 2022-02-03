@@ -53,7 +53,7 @@ function with a widget:
 创建一个最小的 Flutter 应用简单到仅需调用 [`runApp()`][] 方法并传入一个 widget 即可：
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-310px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-310px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 void main() {
@@ -165,7 +165,7 @@ Below are some simple widgets that combine these and other widgets:
 下面是一些简单的 widget，它们结合了上面提到的 widget 和一些其他的 widget：
 
 <?code-excerpt "lib/main_myappbar.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
@@ -332,7 +332,7 @@ Material 应用以 [`MaterialApp`][] widget 开始，
 但这是一个很好的做法。
 
 <?code-excerpt "lib/main_tutorial.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 void main() {
@@ -438,7 +438,7 @@ input gestures. See how that works by creating a simple button:
 构建交互式应用程序的第一步是检测输入手势，这里通过创建一个简单的按钮来了解其工作原理：
 
 <?code-excerpt "lib/main_mybutton.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -538,7 +538,7 @@ StatefulWidgets 是一种特殊的 widget，
 它使用了前面提到的 [`ElevatedButton`][]：
 
 <?code-excerpt "lib/main_counter.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
@@ -644,7 +644,7 @@ this works in practice:
 下面稍微复杂的示例显示了它在实践中的工作原理：
 
 <?code-excerpt "lib/main_counterdisplay.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class CounterDisplay extends StatelessWidget {
@@ -756,7 +756,7 @@ intended purchases. Start by defining the presentation class,
 首先定义一个用于展示的类，`ShoppingListItem`：
 
 <?code-excerpt "lib/main_shoppingitem.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class Product {
@@ -880,7 +880,7 @@ Here's an example parent widget that stores mutable state:
 这里有一个示例展示父组件是如何存储可变状态：
 
 <?code-excerpt "lib/main_shoppinglist.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class Product {

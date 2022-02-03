@@ -12,45 +12,31 @@ Flutter Web 应用支持两种基于 URL 的路由的配置方式：
 
 **Hash (default)**
 <br> Paths are read and written to the [hash fragment][].
-  For example, `flutterexample.dev/#/path/to/screen`.
-  
+For example, `flutterexample.dev/#/path/to/screen`.
+
+
 **Hash（默认）**
 <br> 路径使用 [# + 锚点标识符][hash fragment] 读写，
   例如：`flutterexample.dev/#/path/to/screen`。
 
 **Path**
-<br> Paths are read and written without a hash. For example,
-  `flutterexample.dev/path/to/screen`.
-  
+<br>  Paths are read and written without a hash. For example,
+`flutterexample.dev/path/to/screen`.
+
 **Path**
 <br> 路径使用非 # 读写，
   例如：`flutterexample.dev/path/to/screen`。
-  
-These are set using the [`setUrlStrategy`][] API with
-either a [`HashUrlStrategy`][] or [`PathUrlStrategy`][].
 
-使用 [`setUrlStrategy`][] API 设置
-[`HashUrlStrategy`][] 或者 [`PathUrlStrategy`][]。
-  
 ## Configuring the URL strategy
 
 ## 配置 URL 策略
 
-{{site.alert.note}}
+To configure Flutter to use the path instead, use the
+[setUrlStrategy][] function provided by the [flutter_web_plugins][] library in
+the SDK.
 
-  By default, Flutter uses the hash (`/#/`) location strategy.
-  These instructions are only required if you want to use
-  the URL path strategy.
-  
-  Flutter 默认使用 hash (`/#/`) 定位策略，
-  仅当你使用 URL 路径策略时，才需要这份说明。
-
-  Instead of using these setup instructions,
-  you can also use the [`url_strategy`][] package.
-  
-  你也可以尝试使用 [`url_strategy`][] package 来跳过此设置。
-  
-{{site.alert.end}}
+让 Flutter 使用 path 策略，请使用 [flutter_web_plugins][]
+库中提供的 [setUrlStrategy][] 方法。
 
 The `setUrlStrategy` API can only be called on the web.
 The following instructions show how to use a conditional
@@ -61,58 +47,111 @@ but not on other platforms.
 下方的内容将介绍如何在 Web 平台下（仅在 Web 平台可用）
 使用条件引入的方式来调用此方法。
 
-<ol markdown="1">
-<li markdown="1"><span>Include the `flutter_web_plugins` package and call the
-   [`setUrlStrategy`][] function before your app runs:</span><span>引入 `flutter_web_plugins` package，并在你的应用启动前调用 [`setUrlStrategy`][] 方法：</span>
+{{site.alert.note}}
 
-  ```yaml
-  dependencies:
-    flutter_web_plugins:
-      sdk: flutter
-  ```
-</li>
+By default, Flutter uses the hash (`/#/`) location strategy.
+These instructions are only required if you want to use
+the URL path strategy.
 
-<li markdown="1"><span>Create a `lib/configure_nonweb.dart` file with the
-   following code:</span><span>创建如下的 `lib/configure_nonweb.dart` 文件：</span>
+Flutter 默认使用 hash (`/#/`) 定位策略，
+仅当你使用 URL 路径策略时，才需要这份说明。
 
-  ```dart
-  void configureApp() {
-    // No-op.
-  }
-  ```
-</li>
+Instead of using these setup instructions,
+you can also use the [`url_strategy`][] package.
 
-<li markdown="1"><span>Create a `lib/configure_web.dart` file with the
-   following code:</span><span>创建如下的 `lib/configure_web.dart` 文件：</span>
+你也可以尝试使用 [`url_strategy`][] package 来跳过此设置。
 
-  <!--skip-->
-  ```dart
-  import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+{{site.alert.end}}
 
-  void configureApp() {
-    setUrlStrategy(PathUrlStrategy());
-  }
-  ```
-</li>
+## Web setup
 
-<li markdown="1"><div>Open `lib/main.dart` and conditionally import
-   `configure_web.dart` when the `html` package
-   is available, or `configure_nonweb.dart` when it isn't:</div><div>
-   打开 `lib/main.dart`，当 `html` 包可用时，使用条件引入的方式引入 `configure_web.dart`，
-   否则引入 `configure_nonweb.dart`：</div>
+## 设置 Web 平台
 
-  <!--skip-->
-  ```dart
-  import 'package:flutter/material.dart';
-  import 'configure_nonweb.dart' if (dart.library.html) 'configure_web.dart';
+First, add `flutter_web_plugins` to your `pubspec.yaml`:
 
-  void main() {
-    configureApp();
+首先，将插件 `flutter_web_plugins` 加入到工程的 `pubspec.yaml` 文件中:
+
+```yaml
+dependencies:
+  flutter_web_plugins:
+    sdk: flutter
+```
+
+Then call [setUrlStrategy][] before `runApp()`:
+
+在 `runApp()` 之前调用 [setUrlStrategy][]:
+
+```
+import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+
+void main() {
+  setUrlStrategy(PathUrlStrategy());
   runApp(MyApp());
-  }
-  ```
-</li>
-</ol>
+}
+```
+
+## Cross platform setup
+
+If your app is cross-platform, use Dart's conditional imports feature by
+creating three files:
+
+**url_strategy.dart**
+
+```
+export 'url_strategy_noop.dart' if (dart.library.html) 'url_strategy_web.dart';
+```
+
+**url_strategy_noop.dart**
+
+```
+void usePathUrlStrategy() {
+  // noop
+}
+```
+
+**url_strategy_web.dart**
+
+```
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+
+void usePathUrlStrategy() {
+  setUrlStrategy(PathUrlStrategy());
+}
+```
+
+Then, call `setPathUrlStrategy` before `runApp()`:
+
+**main.dart**
+
+```
+import 'package:flutter/material.dart';
+import 'url_strategy.dart';
+
+void main() {
+  usePathUrlStrategy();
+  runApp(MyApp());
+}
+```
+
+Using conditional imports ensures that the `flutter_web_plugins` library is only
+loaded when your app is running on the web.
+
+## Configuring your web server
+
+PathUrlStrategy uses the [History API][], which requires additional
+configuration for web servers.
+
+To configure your web server to support PathUrlStrategy, check your web server's
+documentation to rewrite requests to `index.html`.Check your web server's
+documentation for details on how to configure single-page apps.
+
+If you are using Firebase Hosting, choose the "Configure as a single-page app"
+option when initializing your project. For more information see Firebase's
+[Configure rewrites][] documentation.
+
+The local dev server created by running `flutter run -d chrome` is configured to
+handle any path gracefully and fallback to your app's `index.html` file.
 
 ## Hosting a Flutter app at a non-root location
 
@@ -133,3 +172,7 @@ this tag to `<base href="/flutter_app/">`.
 [`PathUrlStrategy`]: {{site.api}}/flutter/flutter_web_plugins/PathUrlStrategy-class.html
 [`setUrlStrategy`]: {{site.api}}/flutter/flutter_web_plugins/setUrlStrategy.html
 [`url_strategy`]: {{site.pub-pkg}}/url_strategy
+[setUrlStrategy]: https://api.flutter.dev/flutter/flutter_web_plugins/setUrlStrategy.html
+[flutter_web_plugins]: https://api.flutter.dev/flutter/flutter_web_plugins/flutter_web_plugins-library.html
+[History API]: https://developer.mozilla.org/en-US/docs/Web/API/History_API
+[Configure rewrites]: {{site.url}}/development/ui/navigation/url-strategies

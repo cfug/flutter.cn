@@ -16,6 +16,8 @@ next:
   path: /docs/cookbook/testing/unit/mocking
 ---
 
+<?code-excerpt path-base="cookbook/testing/unit/counter_app"?>
+
 How can you ensure that your app continues to work as you
 add more features or change existing functionality?
 By writing tests.
@@ -134,8 +136,7 @@ and decrementing a `value` starting at `0`.
 本例中，我们会在 `lib/counter.dart` 文件中创建一个 `Counter` 类。
 它负责增加或减少一个从 `0` 开始的 `value`。
 
-
-<!-- skip -->
+<?code-excerpt "lib/counter.dart"?>
 ```dart
 class Counter {
   int value = 0;
@@ -167,7 +168,7 @@ Both of these functions come from the `test` package.
 可通过执行顶级函数 `expect` 来检查结果正确与否。
 这两个函数都来自 `test` 这个 package。
 
-<!-- skip -->
+<?code-excerpt "test/counter_test.dart"?>
 ```dart
 // Import the test package and Counter class
 import 'package:test/test.dart';
@@ -194,7 +195,7 @@ combine them using the `group` function provided by the `test` package.
 如果多个测试之间互相关联，
 可以使用 `test` 这个 package 提供的 `group` 函数将他们整合到一起。
 
-<!-- skip -->
+<?code-excerpt "test/group.dart"?>
 ```dart
 import 'package:test/test.dart';
 import 'package:counter_app/counter.dart';

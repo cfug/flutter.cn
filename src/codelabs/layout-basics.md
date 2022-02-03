@@ -98,7 +98,7 @@ and `Column` lays out its widgets vertically.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -273,7 +273,7 @@ The `mainAxisSize` property has two possible values:
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -456,7 +456,7 @@ can position their children in that extra space.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -662,7 +662,7 @@ The `crossAxisAlignment` property has five possible values:
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -873,7 +873,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1047,7 +1047,7 @@ Future<void> main() async {
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1241,7 +1241,7 @@ wrap a widget and force the widget to fill extra space.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1387,7 +1387,7 @@ create empty space.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1546,7 +1546,7 @@ Future<void> main() async {
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1736,7 +1736,7 @@ can create space between widgets.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1891,7 +1891,7 @@ for different fonts, sizes, and colors.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2051,7 +2051,7 @@ Flutter 将会为 [Material][] 和 [Cupertino][]
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2201,7 +2201,7 @@ the following example uses an image from the network.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2374,7 +2374,7 @@ which are positioned below the contact information.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2559,7 +2559,7 @@ Future<void> main() async {
   ```
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2819,7 +2819,7 @@ Future<void> main() async {
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -3115,7 +3115,7 @@ Future<void> main() async {
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -3460,7 +3460,7 @@ Future<void> main() async {
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';

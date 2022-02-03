@@ -75,11 +75,11 @@ follow these steps:
     ```
 
  2. Make sure your simulator is using a 64-bit device
-    (iPhone 5s or later) by checking the settings in
-    the simulator's **Hardware > Device** menu.
+    (iPhone 5s or later).  You can check the device by viewing the settings in
+    the simulator's **Hardware > Device** or **File > Open Simulator** menus.
 
-    通过模拟器菜单中的 **Hardware > Device** 选项检查当前模拟器是否是 64 位机型
-    （iPhone 5S 或之后的机型）。
+    通过模拟器菜单中的 **Hardware > Device** 或者 **File > Open Simulator** 
+    选项检查当前模拟器是否是 64 位机型（iPhone 5S 或之后的机型）。
 
  3. Depending on your development machine's screen size,
     simulated high-screen-density iOS devices
@@ -92,8 +92,14 @@ follow these steps:
     in the **Window > Scale** menu.
 
     根据你当前开发机器的屏幕尺寸，
-    模拟器模拟出来的高密度屏幕的设备可能会占满你的屏幕，
-    你可以通过菜单中的 **Window > Scale** 选项来更改模拟器的缩放比例。
+    模拟器模拟出来的高密度屏幕的设备可能会溢出你的屏幕，
+    你可以调整模拟器的边角来拖动改变比例，
+    如果你的开发机分辨率很高的话，也可以通过菜单中的
+    **Window > Physical Size** or **Window > Pixel Accurate**
+    选项来更改模拟器的缩放比例。
+    * 如果你只用 Xcode 版本低于 9.1，调整模拟器比例的菜单选项应该是
+    **Window > Scale**。
+
 
 ### Create and run a simple Flutter app
 

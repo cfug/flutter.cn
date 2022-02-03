@@ -65,13 +65,13 @@ draw a green box on screen.
 
 首先是创建一个来淡入淡出的东西。在这个示例中，你将在屏幕上绘制一个绿色的方框。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g;/,$//g"?>
 ```dart
 Container(
   width: 200.0,
   height: 200.0,
   color: Colors.green,
-);
+)
 ```
 
 ## 2. Define a `StatefulWidget`
@@ -232,7 +232,7 @@ AnimatedOpacity(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

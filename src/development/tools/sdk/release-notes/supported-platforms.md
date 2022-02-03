@@ -90,7 +90,6 @@ We define three tiers of support for the platforms on which Flutter runs:
 |Android|Android SDK 21        |
 |Android|Android SDK 19        |
 |iOS    | 14-15                |
-|iOS    | 9.3.6                |
 |Web    | Chrome 84            |
 |Web    | Firefox 72.0         |
 |Web    | Safari / Catalina    |
@@ -111,10 +110,8 @@ minimal.
 
 |Platform|Version       |
 |--------|---------------|
-|平台    |版本              |
-|Android |Android SDK 22 |
+|平台     |版本 
 |Android |Android SDK 20 |
-|Android |Android SDK 19 |
 |Android |Android SDK 18 |
 |Android |Android SDK 17 |
 |Android |Android SDK 16 |
@@ -127,7 +124,7 @@ We have dropped iOS8 support. For more information,
 see [go/rfc-ios8-deprecation] for details.
 
 我们已经放弃对 iOS 8 的支持。
-更多信息，请参阅 [go/rfc-ios8-deprecation]。
+更多信息，请参阅我们 [对 iOS 8 放弃支持的提案文档](https://files.flutter-io.cn/flutter-design-docs/RFC_iOS_8_Deprecation(PUBLICLY_SHARED).pdf)。
 
 [go/rfc-ios8-deprecation]: {{site.url}}/go/rfc-ios8-deprecation
 

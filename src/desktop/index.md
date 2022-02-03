@@ -190,6 +190,7 @@ you need the following in addition to the Flutter SDK:
 * [GTK development headers][]
 * [Ninja build][]
 * [pkg-config][]
+* [liblzma-dev][] This might be necessary
 
 The easiest way to install the Flutter SDK along with these
 dependencies is by using [snapd][].
@@ -214,7 +215,7 @@ you might use the following command:
 如果您在使用的 Linux 发行版上无法使用 `snapd`，您可以使用下面的命令行:
 
 ```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
+$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
 ```
 
 [Clang]: https://clang.llvm.org/
@@ -223,6 +224,7 @@ $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [Ninja build]: https://ninja-build.org/
 [pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
+[liblzma-dev]: https://packages.debian.org/sid/liblzma-dev
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
 
@@ -556,6 +558,34 @@ the command line as follows:
 
 ```terminal
 PS C:\myapp> flutter run -d winuwp
+```
+
+### UWP plugins
+
+To add UWP support to a plugin, add a `supportedVariants`
+entry to the `windows` plugin section in `pubspec.yaml`:
+
+```yaml
+flutter:
+  plugin:
+    platforms:
+      windows:
+        pluginClass: YourClassHere
+        supportedVariants:
+          - win32
+          - uwp
+```
+
+The Win32 and UWP plugins share the same build. To
+use Win32-specific or UWP-specific code, use the
+`WINUWP` define that is automatically set:
+
+```c
+#ifdef WINUWP
+// UWP-specific code goes here.
+#else
+// Win32-specific code goes here.
+#endif
 ```
 
 ## Build a release app

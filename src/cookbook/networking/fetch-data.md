@@ -151,7 +151,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({
+  const Album({
     required this.userId,
     required this.id,
     required this.title,
@@ -343,8 +343,12 @@ it's not recommended to put an API call in a `build()` method.
 Flutter calls the `build()` method every time it needs
 to change anything in the view,
 and this happens surprisingly often.
-Leaving the `fetch` call in your `build()` method
-floods the API with unnecessary calls and slows down your app.
+The `fetchAlbum()` method, if placed inside `build()`, is repeatedly 
+called on each rebuild causing the app to slow down.
+
+Storing the `fetchAlbum()` result in a state variable ensures that
+the `Future` is executed only once and then cached for subsequent
+rebuilds.
 
 每当 Flutter 需要改变视图中的一些内容时（这个发生的频率非常高），
 就会调用 `build()` 方法。因此，如果你将数据请求置于 `build()` 内部，
@@ -459,7 +463,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({
+  const Album({
     required this.userId,
     required this.id,
     required this.title,

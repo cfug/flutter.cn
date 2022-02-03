@@ -126,7 +126,7 @@ body: OrientationBuilder(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
@@ -187,5 +187,5 @@ class OrientationList extends StatelessWidget {
 
 
 [Creating a grid list]: {{site.url}}/cookbook/lists/grid-lists
-[`Orientation`]: {{site.api}}/flutter/widgets/Orientation-class.html
+[`Orientation`]: {{site.api}}/flutter/widgets/Orientation.html
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html

@@ -199,7 +199,7 @@ Accomplish this task by:
 
      使用 `WidgetTester` 中的 [`enterText()`][] 方法
 
-<!-- skip -->
+<?code-excerpt "test/main_steps.dart (TestWidgetStep2)"?>
 ```dart
 testWidgets('Add and remove a todo', (WidgetTester tester) async {
   // Build the widget
@@ -256,7 +256,7 @@ This involves three steps:
 
     确保列表清单项展现在屏幕上
 
-<!-- skip -->
+<?code-excerpt "test/main_steps.dart (TestWidgetStep3)"?>
 ```dart
 testWidgets('Add and remove a todo', (WidgetTester tester) async {
   // Enter text code...
@@ -298,7 +298,7 @@ item removes it from the list. This involves three steps:
 
      确保上述清单项不会再出现在屏幕上
 
-<!-- skip -->
+<?code-excerpt "test/main_steps.dart (TestWidgetStep4)"?>
 ```dart
 testWidgets('Add and remove a todo', (WidgetTester tester) async {
   // Enter text and add the item...

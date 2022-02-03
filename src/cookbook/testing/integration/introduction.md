@@ -307,6 +307,7 @@ named`integration_test.dart`:
 接下来，新建一个文件夹，命名为 `test_driver`，并包含一个新的文件，命名为
 `integration_test.dart`。
 
+<?code-excerpt "lib/test_driver/integration_test.dart"?>
 ```dart
 import 'package:integration_test/integration_test_driver.dart';
 

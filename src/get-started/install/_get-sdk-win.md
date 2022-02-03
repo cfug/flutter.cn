@@ -9,12 +9,11 @@
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds, see the
-    [SDK releases][] page.
+    For other release channels, and older builds,
+    see the [SDK releases][] page.
 
     要查看其他发行通道和以往的版本，请参阅
     [SDK 版本列表][SDK releases] 页面。
-
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
     (for example, `C:\Users\<your-user-name>\Documents`).

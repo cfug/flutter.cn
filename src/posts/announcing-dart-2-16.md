@@ -11,7 +11,7 @@ Dart 2.16 正式版已于上周发布。尽管没有新的语言特性加入，�
 
 ![](https://devrel.andfun.cn/devrel/posts/2022/02/d7ae376ac7664.png)
 
-与 [Flutter 2.10](https://mp.weixin.qq.com/s/FgMu6-O_wMkwxp2yxiW2Ew) 一同发布的 Dart 2.16，仍然在将旧的命令行工具迁移到新的 dart 命令行工具中。这个版本中，`dartdoc`和 `dartanalyzer` 已被弃用，分别对应新的命令是 `dart doc` 和 `dart analyze`。`dartdoc`、`dartanalyzer` 和 `pub` 这三个命令计划在 Dart 2.17 中彻底移除。
+与 [Flutter 2.10](https://mp.weixin.qq.com/s/FgMu6-O_wMkwxp2yxiW2Ew) 一同发布的 Dart 2.16，仍然在将旧的命令行工具迁移到新的 dart 命令行工具。这个版本中，`dartdoc`和 `dartanalyzer` 已被弃用，分别对应新的命令是 `dart doc` 和 `dart analyze`。`dartdoc`、`dartanalyzer` 和 `pub` 这三个命令计划在 Dart 2.17 中彻底移除。
 
 | 历史命令                            | 替代的 dart 命令 | 弃用版本 | 停用版本 |
 |-------------------------------------|------------------|-------------|-----------------|
@@ -79,5 +79,5 @@ dependencies:
 ## 致谢
 - 原文: Dart 2.16: Improved tooling and platform handling
 - 链接: https://medium.com/dartlang/dart-2-16-improved-tooling-and-platform-handling-dd87abd6bad1
-- 翻译 / 审校: CFUG 团队 Alex、加康、迷路
+- 翻译 / 审校: CFUG 团队 Alex、加康、迷鹿
 - 制图: Lynn

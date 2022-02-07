@@ -52,5 +52,6 @@ title: 官方博客
 - [回顾 2021 Flutter 精彩时刻]({{site.main-url}}/posts/flutter-highlight-2021)
 - [Flutter Windows 桌面端支持进入稳定版]({{site.main-url}}/posts/announcing-flutter-for-windows)
 - [Flutter 2.10 更新详解]({{site.main-url}}/posts/whats-new-in-flutter-2-10)
+- [Dart 2.16 现已发布]({{site.main-url}}/posts/announcing-dart-2-16)
 
 上述内容的刊登均以获得发布许可。

@@ -477,7 +477,7 @@ does nothing.
 
 找到 `_SignUpFormState` 类的 `build()` 方法。
 这部分代码是用来构建注册按钮的。注意，按钮是如何定义：
-它是一个背景为蓝色， **Sign up** 文本为白色的 `FlatButton` 按钮，
+它是一个背景为蓝色， **Sign up** 文本为白色的 `TextButton` 按钮，
 当我们点击它时，并未执行任何操作。
 
 </li>

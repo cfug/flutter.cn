@@ -1,5 +1,10 @@
 {% if page.show_banner -%}
+  {% comment %}
+    For headings use <h3> elements.
+    Note that tabbed pages will NOT work correctly if no banner is present.
+    https://github.com/flutter/website/issues/3897
+  {% endcomment %}
   <div class="site-banner site-banner--default" role="alert">
-    敬请期待 Flutter Windows 桌面端支持的最新消息！
+    <a href="https://flutter.cn/posts/announcing-flutter-for-windows">Flutter for Windows 支持已进入稳定渠道！</a>
   </div>
 {% endif -%}

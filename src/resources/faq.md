@@ -109,8 +109,9 @@ and app development.
 Flutter is designed to support mobile apps that run
 on both Android and iOS, as well as interactive apps
 that you want to run on your web pages or on the desktop.
-(Note that desktop support is in beta, but a snapshot
-of the beta is available on the stable channel.)
+(Desktop support for Windows is now available
+on the stable channel; support for macOS and Linux is in beta,
+but a snapshot of the beta is also available on the stable channel.)
 
 Flutter 设计为了让移动应用能够运行在 Android 与 iOS，
 以及在 web 和桌面端运行可交互式的应用。
@@ -844,12 +845,12 @@ For more information, see [Hot reload][].
 ### 我能把 Flutter 应用部署到哪里？
 
 You can compile and deploy your Flutter app to iOS, Android,
-[web][], and [desktop][] (in beta). While more adventurous
-developers are already deploying Flutter desktop apps,
-you might want to wait for desktop support to migrate
-to the stable channel if you are uncomfortable living
-on the edge. (However, a snapshot of beta desktop support
-is available on the stable channel, so you can try it out.)
+[web][], and [desktop][] Windows support is stable,
+while macOS and Linux support are in beta.
+For more information about Windows support, see
+[Announcing Flutter for Windows][].
+
+[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 
 您可以将 Flutter 应用编译并部署到 iOS 和 Android 平台，
 亦可部署到 [web][] 平台，
@@ -905,11 +906,12 @@ For more details, check out the [web instructions][].
 
 ### 我能使用 Flutter 构建桌面应用吗？
 
-Yes, desktop support is in beta for Windows, macOS, and Linux,
-but a snapshot of the beta is available on the stable channel.)
+Yes, desktop support is in stable for Windows,
+and in beta for macOS and Linux,
+but a snapshot of the beta is available on the stable channel.
 The current progress is documented on the [Desktop][desktop] page.
 
-可以的，Windows、macOS 以及 Linux 的桌面端的支持目前处于 beta 阶段，
+可以，Windows 的支持已处于稳定阶段，macOS 以及 Linux 的支持处于 beta 阶段，
 但已经在 stable channel 上提供了一份 beta 版本的快照。
 当前的进度记录在 [桌面端支持][desktop] 页面上查看。
 

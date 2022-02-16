@@ -593,57 +593,67 @@ are correct, especially the following:
 
 ## 检查构建配置
 
-Review the default [Gradle build file][gradlebuild],
-`build.gradle`, located in `[project]/android/app` and
-verify the values are correct, especially the following
+Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in
+`[project]/android/app` and the `local.properties` file located in
+`[project]/android` to verify the values are correct, especially the following
 values in the `defaultConfig` block:
 
-检查位于 `<app dir>/android/app` 的默认 [Gradle 构建文件][gradlebuild]，
+检查位于 `[project]/android/app` 的默认 [Gradle 构建文件][gradlebuild]
+以及位于 `[project]/android` 的 `local.properties` 文件，
 并确认各个值都设置正确，特别是下面 `defaultConfig` 块中的值：
+
+#### In `build.gradle` file
+
+#### 在 `build.gradle` 文件中
 
 `applicationId`
 <br> Specify the final, unique (Application Id)[appid]
 
 `applicationId`
-<br> 指定最终的，唯一的（Application Id）[appid]。
+<br> 指定唯一的 [应用 id][appid]。
 
-`versionCode` & `versionName`
-<br> Specify the internal app version number,
-  and the version number display string. You can do this by setting
-  the `version` property in the pubspec.yaml file. Consult the version
-  information guidance in the [versions documentation][versions].
+`compileSdkVersion`
+<br> Specify the API level Gradle should use to compile your app. For more
+  information, see the module-level build section in the
+  [Gradle build file][gradlebuild].
 
-`versionCode` & `versionName`
-<br> 指定 app 的内部版本号，以及用于显示的版本号，
-这可以通过设置 pubspec.yaml 文件中 `version` 属性来做。
-具体可以参考 [版本文档][versions] 中的版本信息指南。
-
-`minSdkVersion`, `compilesdkVersion`, & `targetSdkVersion`
-<br> Specify the minimum API level,
-  the API level on which the app was compiled,
-  and the maximum API level on which the app is designed to run.
-  Consult the API level section in the [versions documentation][versions]
-  for details.
-
-`minSdkVersion`、`compilesdkVersion` 和 `targetSdkVersion`
-<br> 指定应用运行所需要的最低 API 级别 `minSdkVersion`、
-编译 API 级别 `compilesdkVersion` 以及目标 API 级别 `targetSdkVersion`。
-具体可以参考 Android 开发者网站上的 [版本文档][versions]
-中的 API 版本的部分。
+`compileSdkVersion`
+<br> 指定 Gradle 用于编译应用的 API 版本。具体可以参考
+[Gradle 构建文件][gradlebuild] 文档中模块级构建的部分。
 
 `buildToolsVersion`
-<br> Specify the version of Android SDK Build Tools that your app uses.
-  Alternatively, you can use the Android Gradle Plugin in Android Studio,
-  which will automatically import the minimum required Build Tools for your app
-  without the need for this property.
-  
-`buildToolsVersion`
-<br> 指定应用所需的 Android SDK 构建工具的版本，
-或者你可以在 Android Studio 里使用 Android Gradle 插件 (AGP)，
-它可以自动设置导入你应用所需的构建工具版本，
-这样就无需过多操心这个属性啦。
+<br> If you're using Android plugin for Gradle 3.0.0 or higher, your project
+  automatically uses the default version of the build tools that the
+  plugin specifies. Alternatively, you can specify a version of the build tools.
 
-## Building the app for release
+`buildToolsVersion`
+<br> 如果你正在使用高于 3.0.0 版本的 Android Gradle Plugin，
+  你的项目会自动使用 AGP 默认指定的构建工具版本。
+  你也可以手动指定构建工具的版本。
+
+#### In `local.properties` file
+
+#### 在 `local.properties` 文件中
+
+`flutter.versionCode` & `flutter.versionName`
+<br> Specify the internal app version number, and the version number display
+  string. You can do this by setting the `version` property in the pubspec.yaml
+  file. For more information, see the version information guidance in the
+  [versions documentation][versions].
+
+`flutter.versionCode` & `flutter.versionName`
+<br> 指定应用的内部版本以及展示的版本字符串。这些会在构建时同步
+  pubspec.yaml 文件的 `version` 部分。
+  具体可以参考 [版本文档][versions] 中版本信息的部分。
+
+`flutter.minSdkVersion` & `flutter.targetSdkVersion`
+<br> Specify the minimum API level and the target API level on which the app is
+  designed to run. For more information, see the API level section in the
+  [versions documentation][versions-minsdk].
+
+`flutter.minSdkVersion` & `flutter.targetSdkVersion`
+<br> 指定应用运行所需要的最低 API 级别以及目标 API 级别。
+  具体可以参考 [版本文档][versions-minsdk] 中的 API 版本的部分。
 
 ## 为发布构建应用程序
 
@@ -1063,4 +1073,5 @@ The resulting app bundle or APK files are located in
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 [versions]: {{site.android-dev}}/studio/publish/versioning
+[versions-minsdk]: {{site.android-dev}}/studio/publish/versioning#minsdkversion
 [x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64

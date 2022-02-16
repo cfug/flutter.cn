@@ -52,11 +52,11 @@ This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
-previous experience with Dart, mobile, or web programming.
+previous experience with Dart, mobile, desktop, or web programming.
 
 这是一个指引你完成第一个 Flutter 应用的手把手操作教程（我们也称之为是 codelab）。
 我们将会着手创建一个简单的 Flutter 应用，无需 Dart 语言、
-移动开发语言或 Web 开发经验，
+移动端开发、桌面端开发或 Web 开发经验，
 只需你具备面向对象语言开发基础即可（如变量，循环和条件语句）。
 
 This codelab is part 1 of a two-part codelab.
@@ -94,9 +94,9 @@ The animated GIF shows how the app works at the completion of part 1.
   <h4 class="no_toc">第一部分，我们将共同构建：</h4>
 
   * How to write a Flutter app that looks natural on iOS, Android,
-    and the web
-  
-    Flutter 如何在 Android、iOS 和 Web 里自动适应不同的 UI 体系
+    desktop (Windows, for example), and the web
+
+    Flutter 如何在 Android、iOS、桌面（例如 Windows）和 Web 里自动适应不同的 UI 体系
 
   * Basic structure of a Flutter app
 
@@ -165,9 +165,13 @@ The animated GIF shows how the app works at the completion of part 1.
     [Android 模拟器][Android emulator] (需要安装设置 Android Studio)。
  
   * A browser (Chrome is required for debugging)
-   
-    浏览器（如果需要 debug，则需要用 Chrome 浏览器）
-    
+
+    浏览器（如果需要 debug，则需要用 Chrome 浏览器）；
+
+  * As a [Windows][], [Linux][], or [macOS][] desktop application
+
+    以一个 [Windows][]、[Linux][] 或者 [macOS][] 桌面应用运行。
+
 {{site.alert.end}}
 
 Every Flutter app you
@@ -194,6 +198,20 @@ and [Write your first Flutter app on the web][codelab-web].
 当你想在其他浏览器测试时，请使用 web server。
 更多详细信息请查看 [使用 Flutter 构建 web 应用][Building a web application with Flutter]，
 以及 [编写你的第一个 Flutter web 应用程序][codelab-web]。
+
+Also, Flutter apps can compile for desktop.
+You should see your operating system listed
+in your IDE under **devices**, 
+for example: **Windows (desktop)**,
+or at the command line using `flutter devices`.
+For more information on building apps for desktop,
+see [Write a Flutter desktop application][].
+
+同时，Flutter 应用也可以编译到桌面端。
+你会在 IDE 的 **设备** 列表内或运行 `flutter devices`
+时看到其列举了你的操作系统，例如 **Windows (desktop)**，
+想了解更多关于构建桌面端应用的信息，参考
+[编写一个 Flutter 桌面应用][]。
 
 ## Step 1: Create the starter Flutter app
 
@@ -289,14 +307,14 @@ where the Dart code lives.
     {{site.alert.end}}
 
  2. Run the app [in the way your IDE describes][].
-    You should see either Android, iOS, or web output,
-    depending on your device.
+    You should see either Android, iOS, Windows, Linux, macOS,
+    or web output, depending on your device.
 
     [运行]({{site.url}}/get-started/test-drive#androidstudio) 你的工程项目，
     根据不同的操作系统，你会看到如下运行结果界面：
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
+      {% include docs/ios-windows-figure-pair.md image="hello-world.png" alt="Hello world app" %}
     {% endindent %}
 
     {{site.alert.tip}}
@@ -527,7 +545,7 @@ as well as many other open source packages, on [pub.dev][].
     这是因为单词对是在 build 方法内部生成的。每次 MaterialApp 需要渲染时或者在 Flutter Inspector 中切换平台时 build 都会运行。
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
+      {% include docs/ios-windows-figure-pair.md image="step2.png" alt="App at completion of second step" %}
     {% endindent %}
 
 ### Problems?
@@ -762,7 +780,7 @@ lazily, on demand.
     ```dart
       class _RandomWordsState extends State<RandomWords> {
         [!final _suggestions = <WordPair>[];!]
-        [!final _biggerFont = const TextStyle(fontSize: 18.0);!]
+        [!final _biggerFont = const TextStyle(fontSize: 18);!]
         // ···
       }
     ```
@@ -797,16 +815,19 @@ lazily, on demand.
     ```dart
       Widget _buildSuggestions() {
         return ListView.builder(
-            padding: const EdgeInsets.all(16.0),
-            itemBuilder: /*1*/ (context, i) {
-              if (i.isOdd) return const Divider(); /*2*/
+          padding: const EdgeInsets.all(16),
+          itemBuilder: /*1*/ (context, i) {
+            if (i.isOdd) {
+              return const Divider(); /*2*/
+            }
 
-              final index = i ~/ 2; /*3*/
-              if (index >= _suggestions.length) {
-                _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-              }
-              return _buildRow(_suggestions[index]);
-            });
+            final index = i ~/ 2; /*3*/
+            if (index >= _suggestions.length) {
+              _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+            }
+            return _buildRow(_suggestions[index]);
+          },
+        );
       }
     ```
 
@@ -899,7 +920,7 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -13,27 +13,50 @@
+    @@ -13,27 +13,53 @@
        const MyApp({Key? key}) : super(key: key);
 
        @override
@@ -923,20 +944,23 @@ lazily, on demand.
 
      class _RandomWordsState extends State<RandomWords> {
     +  final _suggestions = <WordPair>[];
-    +  final _biggerFont = const TextStyle(fontSize: 18.0);
+    +  final _biggerFont = const TextStyle(fontSize: 18);
     +
     +  Widget _buildSuggestions() {
     +    return ListView.builder(
-    +        padding: const EdgeInsets.all(16.0),
-    +        itemBuilder: /*1*/ (context, i) {
-    +          if (i.isOdd) return const Divider(); /*2*/
+    +      padding: const EdgeInsets.all(16),
+    +      itemBuilder: /*1*/ (context, i) {
+    +        if (i.isOdd) {
+    +          return const Divider(); /*2*/
+    +        }
     +
-    +          final index = i ~/ 2; /*3*/
-    +          if (index >= _suggestions.length) {
-    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-    +          }
-    +          return _buildRow(_suggestions[index]);
-    +        });
+    +        final index = i ~/ 2; /*3*/
+    +        if (index >= _suggestions.length) {
+    +          _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+    +        }
+    +        return _buildRow(_suggestions[index]);
+    +      },
+    +    );
     +  }
     +
     +  Widget _buildRow(WordPair pair) {
@@ -971,7 +995,7 @@ lazily, on demand.
     尽可能地向下滚动，你将继续看到新的单词对。
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
+      {% include docs/ios-windows-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
     {% endindent %}
 
 ### Problems?
@@ -1007,11 +1031,12 @@ Congratulations!
 
 祝贺你！
 
-You've written an interactive Flutter app that runs on both iOS and Android.
+You've written an interactive Flutter app that runs on iOS, Android, Windows and web.
 In this codelab, you've:
 
-你已经完成了一个可以同时运行在 iOS 和 Android 平台的 Flutter 应用！
-同时收获了如下内容：
+你已经完成了一个可以同时运行在
+iOS、Android、Windows 和 Web 平台的 Flutter 应用！
+同时学习了如下内容：
 
 * Created a Flutter app from the ground up.
   
@@ -1084,3 +1109,7 @@ where you add the following functionality:
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 [codelab-web]: {{site.url}}/get-started/codelab-web
+[Windows]: {{site.url}}/get-started/install/windows#windows-setup
+[Linux]: {{site.url}}/get-started/install/linux#linux-setup
+[macOS]: {{site.url}}/get-started/install/macos#macos-setup
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

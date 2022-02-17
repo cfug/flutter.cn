@@ -211,7 +211,7 @@ see [Write a Flutter desktop application][].
 你会在 IDE 的 **设备** 列表内或运行 `flutter devices`
 时看到其列举了你的操作系统，例如 **Windows (desktop)**，
 想了解更多关于构建桌面端应用的信息，参考
-[编写一个 Flutter 桌面应用][]。
+[编写一个 Flutter 桌面应用][Write a Flutter desktop application]。
 
 ## Step 1: Create the starter Flutter app
 

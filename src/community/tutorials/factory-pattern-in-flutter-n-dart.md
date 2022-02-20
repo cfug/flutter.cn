@@ -1,4 +1,3 @@
-## Flutter 设计模式从南到北 - 工厂模式家族
 ---
 title: 工厂模式家族
 toc: true

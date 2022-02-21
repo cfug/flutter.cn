@@ -35,6 +35,8 @@ Flutter 的桌面支持也允许插件拓展&mdash;
 
 ## Beta snapshot for macOS and Linux in stable channel
 
+## Stable 渠道包含了一份 Beta 渠道的桌面支持
+
 Windows support is now available on the stable channel!
 To make it easier to try out desktop support for
 macOS and Linux, a snapshot of Flutter's

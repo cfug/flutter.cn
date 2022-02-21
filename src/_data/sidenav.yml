@@ -48,7 +48,6 @@
 
 - title: 开发文档
   expanded: true
-  permalink: /docs/development
   children:
     - title: 用户界面
       permalink: /docs/development/ui
@@ -108,7 +107,6 @@
               permalink: /docs/development/ui/advanced/actions_and_shortcuts
             - title: Keyboard focus [NEW]
               permalink: /docs/development/ui/advanced/focus
-            - title: Gestures
             - title: 手势
               permalink: /docs/development/ui/advanced/gestures
             - title: 滑动效果 (Slivers)
@@ -118,10 +116,8 @@
         - title: 核心 Widget 目录
           permalink: /docs/development/ui/widgets
     - title: 数据调用和后端
-      permalink: /docs/development/data-and-backend
       children:
         - title: 状态 (State) 管理
-          permalink: /docs/development/data-and-backend/state-mgmt
           children:
             - title: 状态管理介绍
               permalink: /docs/development/data-and-backend/state-mgmt/intro
@@ -165,7 +161,7 @@
           permalink: /docs/development/platform-integration/platform-channels
         - title: 桌面端
           permalink: /desktop
-    - title: Packages (纯 Dart 和原生插件)
+    - title: Package 与 plugin (原生插件)
       permalink: /docs/development/packages-and-plugins
       children:
         - title: 使用 Packages

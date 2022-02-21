@@ -15,6 +15,8 @@ next:
   path: /docs/cookbook/navigation/hero-animations
 ---
 
+<?code-excerpt path-base="cookbook/maintenance/error_reporting/"?>
+
 While one always tries to create apps that are free of bugs,
 they're sure to crop up from time to time.
 Since buggy apps lead to unhappy users and customers,
@@ -122,7 +124,7 @@ Initialize the SDK to capture different unhandled errors automatically:
 
 初始化 SDK 来自动捕获不同的未处理的错误。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (InitializeSDK)"?>
 ```dart
 import 'package:flutter/widgets.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -130,7 +132,7 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 Future<void> main() async {
   await SentryFlutter.init(
     (options) => options.dsn = 'https://example@sentry.io/example',
-    appRunner: () => runApp(MyApp()),
+    appRunner: () => runApp(const MyApp()),
   );
 }
 ```
@@ -166,7 +168,7 @@ you can use the API to report errors to Sentry:
 除了自动初始化 Sentry SDK 来捕获和上报错误之外，
 你还可以通过 API 来报告错误：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (CaptureException)"?>
 ```dart
 await Sentry.captureException(exception, stackTrace: stackTrace);
 ```

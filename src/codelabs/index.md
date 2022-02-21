@@ -32,7 +32,7 @@ one of these codelabs:
 如果你刚开始学习 Flutter，
 我们推荐你学习下面的 Codelab 之一：
 
-* [Building your first Flutter app][] (workshop) **NEW!**<br>
+* [Building your first Flutter app][] (workshop)<br>
   An instructor-led version of our very popular
   "Write your first Flutter app, part 1" codelab
   (listed below).
@@ -114,29 +114,29 @@ one of these codelabs:
 
 ## 下一步
 
-* [Building scrolling experiences in Flutter][] (workshop) **NEW!**<br>
+* [Building scrolling experiences in Flutter][] (workshop)<br>
   Start with an app that performs simple, straightforward scrolling
   and enhance it to create fancy and custom scrolling effects
   by using slivers.
 
-  [在 Flutter 中构建滚动体验][Building scrolling experiences in Flutter] (workshop) **新!**<br>
+  [在 Flutter 中构建滚动体验][Building scrolling experiences in Flutter] (workshop)<br>
   从一个执行简单、直接滚动的应用程序入门，
   并通过使用 sliver 增强它以创建奇特的自定义滚动效果。
 
-* [Dart null safety in Action][] (workshop) **NEW!**<br>
+* [Dart null safety in Action][] (workshop)<br>
   An instructor-led workshop based on the [Null safety codelab][]
   on the dart.dev site.
 
-  [Dart 空安全实战][Dart null safety in Action] (workshop) **新!**<br>
+  [Dart 空安全实战][Dart null safety in Action] (workshop)<br>
   基于 dart.cn 站点上的 [空安全 codelab][Null safety codelab] 的讲师指导版 workshop。
 
-* [How to manage application states using inherited widgets][inherited-widget-ws] (workshop) **NEW!**<br>
+* [How to manage application states using inherited widgets][inherited-widget-ws] (workshop)<br>
   Learn how to manage the state of your app's data by
   using the `InheritedWidget` class, one of the
   [low-level state management][] classes provided
   by Flutter.
 
-  [如何使用 inherited widgets 管理应用程序状态][inherited-widget-ws] (workshop) **新!**<br>
+  [如何使用 inherited widgets 管理应用程序状态][inherited-widget-ws] (workshop)<br>
   了解如何使用 `InheritedWidget` 类
   （Flutter 提供的 [基础状态管理方案][low-level state management] 之一）
   管理应用数据的状态。
@@ -263,9 +263,13 @@ Learn how to use Flutter with other technologies.
 
 学习如何使用在 Flutter 中使用其他技术产品/平台：
 
-* [Adding WebView to your Flutter app][] **NEW!**<br>
+* [Adding WebView to your Flutter app][] **NEW**<br>
   With the WebView Flutter plugin you can add a WebView 
   widget to your Android or iOS Flutter app.
+
+  [为你的 Flutter 应用添加 WebView][Adding WebView to your Flutter app]<br>
+  使用 WebView Flutter 插件，你可以将 WebView widget
+  添加到你的 Android 或 iOS Flutter 应用程序中。
 
 * [Adding Google Maps to a Flutter app][]<br>
   Display a Google map in an app, retrieve data from a
@@ -307,11 +311,11 @@ Learn how to use Flutter with other technologies.
   [使用 Google 相册和 Flutter 构建照片共享应用][Build a Photo Sharing app with Google Photos and Flutter]<br>
   构建一个实地考察应用程序，允许你和旅行中的其他成员分享照片。
 
-* [Build voice bots for mobile with Dialogflow and Flutter][] (workshop) **NEW!**<br>
+* [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
 
-  [使用 Dialogflow 和 Flutter 为移动设备构建语音机器人][Build voice bots for mobile with Dialogflow and Flutter] (workshop) **新!**<br>
+  [使用 Dialogflow 和 Flutter 为移动设备构建语音机器人][Build voice bots for mobile with Dialogflow and Flutter] (workshop)<br>
   Dialogflow 和 Flutter codelab 的讲师指导版本（如下所列）。
 
 * [Build voice bots for Android with Dialogflow and Flutter][]<br>
@@ -426,13 +430,13 @@ iOS、Android、Web 和桌面端。
   然后将应用部署到 Firebase 上。最后使用 Flutter 插件
   启动应用以及显示隐私权政策。
 
-* [Write a Flutter desktop application][]<br>
+* [Write a Flutter desktop application][] **UPDATED FOR WINDOWS**<br>
   Build a Flutter desktop app that accesses GitHub APIs to retrieve your
   repositories, assigned issues, and pull requests. As part of this task,
   create and use plugins to interact with native APIs and desktop applications,
   and use code generation to build type-safe client libraries for GitHub's APIs.
 
-  [编写一个 Flutter 桌面应用][Write a Flutter desktop application]<br>
+  [编写一个 Flutter 桌面应用][Write a Flutter desktop application] **已为 Windows 更新**<br>
   构建一个 Flutter 桌面应用以通过 GitHub APIs 来检索你的代码仓库 (repo)，
   已分配的问题 (issue) 和拉取请求 (pull request)。
   本任务还有一部分内容，需要创建并使用插件，

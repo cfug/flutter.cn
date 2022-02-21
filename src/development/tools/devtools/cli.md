@@ -7,56 +7,31 @@ tags: Flutter开发工具
 keywords: 命令行,启动,开发者工具,DevTools
 ---
 
-## Install DevTools
+To run Dart DevTools from the CLI, you must have `dart` on your path. Then
+you can run the following command to launch DevTools:
 
-## 安装开发者工具
-
-If you have `dart` on your path,
-you can run the following command:
-
-如果在你的环境变量 `PATH` 中有 `dart`, 可以运行：
+要从命令行或终端运行 Dart DevTools，`dart` 必须要能在环境变量中找到。
+你可以执行以下命令启动 DevTools：
 
 ```
-dart pub global activate devtools
+dart devtools
 ```
 
-If you have `flutter` on your path,
-you can run the following:
+To upgrade DevTools, upgrade your Dart SDK. If a newer Dart SDK
+includes a newer version of DevTools, `dart devtools` will automatically
+launch this version. If `which dart` points to the Dart SDK included in
+your Flutter SDK, then DevTools will be upgraded when you upgrade your
+Flutter SDK to a newer version.
 
-如果在你的环境变量 `PATH` 中有 `flutter`, 可以运行：
+你可以通过升级 Dart SDK 来升级 DevTools。
+如果新的 Dart SDK 包括了新版本的 DevTools，`dart devtools` 命令会自动启动新的版本。
+如果 `which dart` 指向的是 Flutter SDK 中包含的 Dart SDK，那么 DevTools 会在
+Flutter SDK 更新时一并更新。
 
-```
-flutter pub global activate devtools
-```
+When you run DevTools from the command line, you should see output that
+looks something like:
 
-That command installs (or updates) DevTools on your machine.
-
-这个命令会在你的机器上安装（或升级）开发者工具。
-
-## Launch the DevTools application server
-
-## 启动开发者工具服务
-
-Next, run the local web server, which serves the DevTools
-application itself. To do that, run one of the following
-two commands:
-
-下一步，启动本地 web server 服务来运行开发者工具。
-运行下面两个命令中的一个。
-
-```
-dart pub global run devtools   # If you have `dart` on your path.
-```
-
-OR
-
-或者
-
-```
-flutter pub global run devtools   # If you have `flutter` on your path.
-```
-
-On the command line, you should see output that looks something like:
+在命令行或终端运行 DevTools 时，你会看到类似下方的输出：
 
 ```
 Serving DevTools at http://127.0.0.1:9100
@@ -64,7 +39,7 @@ Serving DevTools at http://127.0.0.1:9100
 
 ## Start an application to debug
 
-## 启动一个 app 来 debug
+## 启动一个应用进行 debug
 
 Next, start an app to connect to.
 This can be either a Flutter application

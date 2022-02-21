@@ -164,13 +164,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ### 2. 添加 `integration_test` 依赖
 
-Next, use the `integration_test`, `flutter_driver`, and `flutter_test` packages
+Next, use the `integration_test` and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
 section of the app's `pubspec.yaml` file, specifying the Flutter SDK as the
 location of the package.
 
-接着，我们需要用到 `integration_test`、`flutter_driver` 和 `flutter_test` 
-这三个 package 来编写集成测试，把这三个依赖添加到应用`pubspec.yaml` 文件的
+接着，我们需要用到 `integration_test` 和 `flutter_test` package
+来编写集成测试，把依赖添加到应用`pubspec.yaml` 文件的
 `dev_dependencies` 区域。
 
 ```yaml

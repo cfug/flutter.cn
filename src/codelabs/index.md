@@ -267,9 +267,9 @@ Learn how to use Flutter with other technologies.
   With the WebView Flutter plugin you can add a WebView 
   widget to your Android or iOS Flutter app.
 
-  [在 Flutter 应用中 WebView][Adding WebView to your Flutter app]<br>
-  在应用内集成 Flutter 的 WebView 插件，
-  将 WebView widget 添加至你的 Android 或 iOS 平台的 Flutter 应用。
+  [为你的 Flutter 应用添加 WebView][Adding WebView to your Flutter app]<br>
+  使用 WebView Flutter 插件，你可以将 WebView widget
+  添加到你的 Android 或 iOS Flutter 应用程序中。
 
 * [Adding Google Maps to a Flutter app][]<br>
   Display a Google map in an app, retrieve data from a

@@ -22,7 +22,7 @@ toc: true
 ```dart
 class SimpleFactory {
 
-  // 工厂方法
+  /// 工厂方法
   static Product createProduct(int type) {
     if (type == 1) {
       return ConcreteProduct1();
@@ -82,11 +82,12 @@ void main() {
 ```dart
 class Product {
   /// 工厂构造函数（修饰 create 构造函数）
-  factory Product.create(int type) {
-    if (type == 1)
-      return Product._concrete1();
-    if (type == 2)
+  factory Product.createFactory(int type) {
+    if (type == 1) {
+      return Product.product1;
+    } else if (type == 2) {
       return Product._concrete2();
+    }
     return Product._concrete();
   }
 
@@ -116,16 +117,17 @@ void main() {
 此外，工厂构造函数也并不要求我们每次都必须生成新的对象，
 我们也可以在类中预先定义一些对象供工厂构造函数使用，
 这样每次在使用同样的参数构建对象时，返回的会是同一个对象，
-在 **单例模式** 的章节中我们已经介绍过：
+在 [单例模式](https://mp.weixin.qq.com/s/hRvmbRcJlOj5iB1HqvUkog) 的章节中我们已经介绍过：
 
 ```dart
 class Product {
   /// 工厂构造函数
   factory Product.create(int type) {
-    if (type == 1)
+    if (type == 1) {
       return product1;
-    if (type == 2)
+    } else if (type == 2) {
       return product2();
+    }
     return Product._concrete();
   }
 
@@ -188,10 +190,10 @@ abstract class ProductFactory {
 具体使用方法如下：
 
 ```dart
-// 具体工厂
+/// 具体工厂
 class ProductFactory1 extends ProductFactory {
   
-  // 具体工厂方法1
+  /// 具体工厂方法1
   @override
   Product factoryMethod() {
     return ConcreteProduct1();
@@ -199,14 +201,14 @@ class ProductFactory1 extends ProductFactory {
 }
 
 class ProductFactory2 extends ProductFactory {
-  // 具体工厂方法2
+  /// 具体工厂方法2
   @override
   Product factoryMethod() {
     return ConcreteProduct2();
   }
 }
 
-// 使用
+/// 使用
 main() {
   ProductFactory product = ProductFactory1();
   product.dosomthing();	// ConcreteProduct1
@@ -236,7 +238,7 @@ abstract class DialogFacory {
 然后，针对 Android 和 iOS 两个平台，就可以创建两个不同样式的 Dialog 了：
 
 ```dart
-// Android 平台
+/// Android 平台
 class AndroidAlertDialog extends DialogFactory {
 
   @override
@@ -255,7 +257,7 @@ class AndroidAlertDialog extends DialogFactory {
     );
   }
 }
-// iOS 平台
+/// iOS 平台
 class IOSAlertDialog extends DialogFactory {
   
   @override
@@ -288,7 +290,7 @@ Future _showCustomDialog(BuildContext context) async {
 
 ### 抽象工厂
 
-抽象工厂模式，相较于 **简单工厂** 和 **工厂方法** 最大的不同是，这两种模式只生产一种对象，而抽象工厂**生产的是一系列对象**（对象族），而且生成的这一系列对象一定是存在某种联系的，比如 Apple 会生产 **手机**、**平板** 等多个产品，但它们又都是苹果这个品牌的。
+抽象工厂模式，相较于 **简单工厂** 和 **工厂方法** 最大的不同是：这两种模式只生产一种对象，而抽象工厂**生产的是一系列对象**（对象族），而且生成的这一系列对象一定存在某种联系。比如 Apple 会生产 **手机**、**平板** 等多个产品，这些产品都属于 Apple 这个品牌。
 
 如下面这个抽象的工厂类：
 
@@ -346,7 +348,7 @@ abstract class IWidgetsFactory {
 我们的应用通常需要针对各个平台展示不同风格的 widget。因此针对每一个平台，我们都可以实现对应的实现工厂，如下：
 
 ```dart
-// Material 风格组件工厂
+/// Material 风格组件工厂
 class MaterialWidgetsFactory extends IWidgetsFactory {
   @override
   Widget createButton(
@@ -362,10 +364,10 @@ class MaterialWidgetsFactory extends IWidgetsFactory {
     return AlertDialog(title: Text(title), content: Text(content));
   }
   
-  // ...
+  /// ...
 }
 
-// Cupertino 风格组件工厂
+/// Cupertino 风格组件工厂
 class CupertinoWidgetsFactory extends IWidgetsFactory {
   @override
   Widget createButton(

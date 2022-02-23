@@ -26,7 +26,8 @@ class SimpleFactory {
   static Product createProduct(int type) {
     if (type == 1) {
       return ConcreteProduct1();
-    } else if (type == 2) {
+    }
+    if (type == 2) {
       return ConcreteProduct2();
     }
     return ConcreteProduct();

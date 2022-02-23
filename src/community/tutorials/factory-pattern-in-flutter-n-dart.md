@@ -35,95 +35,102 @@ class SimpleFactory {
 }
 ```
 
-我们认为该方法要创建的对象同属一个 **Product** 类（抽象类），并通过参数 type 指定要创建具体的对象类型。因为 Dart 不支持 interface 关键词，而可以使用 abstract 定义接口，然后各个具体的类型实现它即可：
+我们认为该方法要创建的对象同属一个 **Product** 类（抽象类），并通过参数 type 指定要创建具体的对象类型。
+Dart 不支持 `interface` 关键词，但我们可以使用 `abstract` 以抽象类的方式定义接口，
+然后各个具体的类型继承实现它即可：
 
 ```dart
-// 抽象类
+/// 抽象类
 abstract class Product {
   String? name;
 }
 
-// 实现类
+/// 实现类
 class ConcreteProduct implements Product {
   @override
-  String? name = "";
+  String? name = 'ConcreteProduct';
 }
 
-// 实现类1
+/// 实现类1
 class ConcreteProduct1 implements Product {
   @override
-  String? name = "ConcreteProduct1";
-
+  String? name = 'ConcreteProduct1';
 }
 
-// 实现类2
+/// 实现类2
 class ConcreteProduct2 implements Product {
   @override
-  String? name = "ConcreteProduct2";
+  String? name = 'ConcreteProduct2';
 }
 ```
 
-这样，如果我们想要程序中需要该类对象时，只需要通过这个方法传入想要的类型即可，我们不必关心如何生产对象以及选择哪个对象的具体逻辑：
+当我们想要在代码中获取对应的类型对象时，只需要通过这个方法传入想要的类型值即可，
+我们不必关心生产如何被生产以及哪个对象被选择的具体逻辑：
 
 ```dart
-main() {
-  Product product = SimpleFactory.createProduct(1);
-  print(product.name);	// ConcreteProduct1
+void main() {
+  final Product product = SimpleFactory.createProduct(1);
+  print(product.name); // ConcreteProduct1
 }
 ```
 
-这就是简单工厂模式，说到这里，就不得不提到 dart 中特有的 **factory** 关键词了。
+这就是 **简单工厂模式**。
+说到这里，就不得不提到 Dart 中特有的 **factory** 关键词了。
 
 **factory 关键词** 可以用来修饰 Dart 类的构造函数，意为 **工厂构造函数**，它能够让 **类** 的构造函数天然具有工厂的功能，使用方式如下：
 
 ```dart
 class Product {
-
-  String? name;
-
-  // 工厂构造函数（修饰 create 构造函数）
+  /// 工厂构造函数（修饰 create 构造函数）
   factory Product.create(int type) {
-    if (type == 1) return Product._concrete1();
-    else if (true == 2) return Product._concrete2();
+    if (type == 1)
+      return Product._concrete1();
+    if (type == 2)
+      return Product._concrete2();
     return Product._concrete();
   }
 
-  // 命名构造函数
-  Product._concrete() {
-    name = "concrete";
-  }
+  /// 命名构造函数
+  Product._concrete() : name = 'concrete';
 
-  // 命名构造函数1
-  Product._concrete1() {
-    name = "concrete1";
-  }
+  /// 命名构造函数1
+  Product._concrete1() : name = 'concrete1';
 
-  // 命名构造函数2
-  Product._concrete2() {
-    name = "concrete2";
-  }
+  /// 命名构造函数2
+  Product._concrete2() : name = 'concrete2';
+
+  String name;
 }
 ```
 
-被 **factory** 修饰的构造函数只需要返回一个当前类对象实例，我们可以根据指定参数调用对应的其他构造函数返回对应的实例对象即可。
+**factory** 修饰的构造函数需要返回一个当前类的对象实例，
+我们可以根据参数调用对应的构造函数，返回对应的对象实例。
 
 ```dart
-main() {
+void main() {
   Product product = Product.createFactory(1);
-  print(product.name); 	// concrete1
+  print(product.name); // concrete1
 }
 ```
 
-此外，工厂构造函数也并不要求我们每次都必须生成新的对象，我们也可以在类中预先定义一些对象供工厂构造函数使用，这样每次同类型的对象就都只有一个，这在 单例模式 的章节我们就有介绍过了：
+此外，工厂构造函数也并不要求我们每次都必须生成新的对象，
+我们也可以在类中预先定义一些对象供工厂构造函数使用，
+这样每次在使用同样的参数构建对象时，返回的会是同一个对象，
+在 **单例模式** 的章节中我们已经介绍过：
 
 ```dart
-static Product product1 = Product._concrete1();
-static Product product2 = Product._concrete2();
-// 工厂构造函数
-factory Product.create(int type) {
-  if (type == 1) return product1;
-  else if (true == 2) return product2();
-  return Product._concrete();
+class Product {
+  /// 工厂构造函数
+  factory Product.create(int type) {
+    if (type == 1)
+      return product1;
+    if (type == 2)
+      return product2();
+    return Product._concrete();
+  }
+
+  static final Product product1 = Product._concrete1();
+  static final Product product2 = Product._concrete2();
 }
 ```
 
@@ -131,47 +138,54 @@ factory Product.create(int type) {
 
 ```dart
 class Product {
-  String? name;
   factory Product(int type) {
     return Product._concrete(); 
   }
+
+  String? name;
 }
 ```
 
-此时，工厂构造函数就会暴露一个缺点，就是使用者并不能直观的感觉他们用的就是工厂函数，如下，其使用方法和普通构造函数没有区别，但这个构造函数生产的实例相当于是一种单例：
+到这里为止，工厂构造函数的一个缺点已经凸显了出来，即使用者并不能直观的感觉到自己正在使用的是工厂函数。
+工厂构造函数的使用方法和普通构造函数没有区别，但这个构造函数生产的实例相当于是一种单例：
 
 ```dart
-main() {
+void main() {
   Product product = Product(1);
-  print(product.name);
+  print(product.name); // concrete1
 }
 ```
 
-这样，很容易造成使用者的困扰，因此，我们应当尽量使用特定的 **命名构造函数** 作为工厂构造函数（如上面示例中的 `createFactory`）。
+这样的用法很容易造成使用者的困扰，因此，我们应当尽量使用特定的
+**命名构造函数** 作为工厂构造函数（如上面示例中的 `createFactory`）。
 
 ### 工厂方法模式
 
-工厂方法模式同样也是我们编程中最常会用到的一种编程手段。
+工厂方法模式同样也是我们编程中最常用到的一种手段。
 
 ![抽象工厂 UML，图源：refactoring.guru](https://cdn.jsdelivr.net/gh/meandni/blogimg@main/img/2022-02-20-2022-02-20-1*yyGj6x9PNJLYiq4miG3mww.png)
 
-在简单工厂中，它主要服务的对象是客户，而 工厂方法 的使用者与工厂本身的类并不相干，而工厂方法模式主要服务自身的父类，如下这个 ProductFactory（类比 UML 中的 Creator）：
+在简单工厂中，它主要服务的对象是客户，而 **工厂方法** 的使用者与工厂本身的类并不相干，
+而工厂方法模式主要服务自身的父类，如下的 `ProductFactory`（类比 UML 中的 Creator）：
 
 ```dart
-// 抽象工厂
+/// 抽象工厂
 abstract class ProductFactory {
+  /// 抽象工厂方法
+  Product factoryMethod();
 
-  // 抽象工厂方法
-  abstract Product factoryMethod();
+  /// 业务代码
   void dosomthing() {
-    // 业务代码
     Product product = factoryMethod();
     print(product.name);
   }
 }
 ```
 
-在 ProductFactory 类中，工厂方法 **factoryMethod** 被申明为了抽象方法，每个子类都必须重写这个方法并返回对应不同的 Product 对象，在 dosomthing() 方法中就可以根据返回的对象做出不同的响应。具体使用方法如下：
+在 `ProductFactory` 类中，工厂方法 `factoryMethod` 是抽象方法，
+每个子类都必须重写这个方法并返回对应不同的 `Product` 对象，
+在 `dosomthing()` 方法被调用时，就可以根据返回的对象做出不同的响应。
+具体使用方法如下：
 
 ```dart
 // 具体工厂
@@ -274,7 +288,7 @@ Future _showCustomDialog(BuildContext context) async {
 
 ### 抽象工厂
 
-抽象工厂模式，相较于 **简单工厂** 和 **工厂方法** 最大的不同是，这两种模式只生产一种对象，而抽象工厂**生产的是一系列对象**（对象族），而且生成的这一系列对象一定是存在某种联系的，比如 Apple 会生产 **手机**、**平板** 等多个产品，但他们又都是苹果这个品牌的。
+抽象工厂模式，相较于 **简单工厂** 和 **工厂方法** 最大的不同是，这两种模式只生产一种对象，而抽象工厂**生产的是一系列对象**（对象族），而且生成的这一系列对象一定是存在某种联系的，比如 Apple 会生产 **手机**、**平板** 等多个产品，但它们又都是苹果这个品牌的。
 
 如下面这个抽象的工厂类：
 
@@ -314,7 +328,7 @@ class Apple extends ElectronicProductFactory {
 }
 ```
 
-同样地，对于 华为、小米 等电子产品厂商也可以使用相同的方式表示，这就是抽象工厂模式。
+同样地，对于华为、小米等电子产品厂商也可以使用相同的方式表示，这就是抽象工厂模式。
 
 在开发 Flutter 应用中，我们也可以充分利用抽象工厂模式做切合应用的适配，我们可以定义如下这个抽象工厂，用于生产 widget：
 
@@ -329,7 +343,7 @@ abstract class IWidgetsFactory {
 }
 ```
 
-我们的应用通常需要针对各个平台展示不同风格的 widget，因此针对每一个平台，我们都可以实现对应的实现工厂，如下：
+我们的应用通常需要针对各个平台展示不同风格的 widget。因此针对每一个平台，我们都可以实现对应的实现工厂，如下：
 
 ```dart
 // Material 风格组件工厂
@@ -355,7 +369,10 @@ class MaterialWidgetsFactory extends IWidgetsFactory {
 class CupertinoWidgetsFactory extends IWidgetsFactory {
   @override
   Widget createButton(
-      BuildContext context, VoidCallback? onPressed, String text) {
+    BuildContext context,
+    VoidCallback? onPressed,
+    String text,
+  ) {
     return CupertinoButton(
       child: Text(text),
       onPressed: onPressed,
@@ -374,7 +391,7 @@ class CupertinoWidgetsFactory extends IWidgetsFactory {
 }
 ```
 
-这样，在 Android 平台上我们使用 MaterialWidgetsFactory，在 iOS 平台上使用 CupertinoWidgetsFactory，就能使用对应平台的 Widget，想要适配更多平台是需要再继承 **IWidgetsFactory** 实现对应平台的工厂类即可。
+这样，在 Android 平台上我们使用 MaterialWidgetsFactory，在 iOS 平台上使用 CupertinoWidgetsFactory，就能使用对应平台的 Widget，想要适配更多平台只需要再继承 **IWidgetsFactory** 实现对应平台的工厂类即可。
 
 至此，我们可以发现，作为创建型模式，这三类工厂模式主要工作就是以不同的方式创建对象，但他们各有特点：简单工厂模式抽象的是 **生产对象**，工厂方法模式抽象的是 **类方法**，工厂方法模式抽象的则是 **生产对象的工厂**，如何使用就见仁见智了。
 

@@ -9,7 +9,7 @@ toc: true
 
 ![图源：https://media2.giphy.com/media/3ohjUKYWSqORcgIIsE/giphy.gif](https://files.flutter-io.cn/posts/community/tutorial/images/2022-02-20-1_X-eyz2eZZDho_bFBGBOWEA.gif)
 
-> 从形式上讲，工厂可以是一个返回我们想要对象的一个方法/函数，既可以作为构造函数的一种抽象。
+> 从形式上讲，工厂可以是一个返回我们想要对象的一个方法/函数，即可以作为构造函数的一种抽象。
 
 本文，就带大家使用 Dart 理解它们的各自的实现，以及它们之间的关系。
 

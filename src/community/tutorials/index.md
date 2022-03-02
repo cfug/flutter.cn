@@ -34,11 +34,12 @@ Flutter 中文社区教程由社区的开发者投稿，
 - [Flutter Navigator 2.0 指南与原理解析](https://flutter.cn/community/tutorials/understanding-navigator-v2)
 - [Flutter 状态管理：使用 MobX](https://flutter.cn/community/tutorials/flutter-state-management-with-mobx)
 
-### 设计模式
+### 设计模式 (专栏)
 
 - [Flutter(able) 的单例模式]({{site.url}}/community/tutorials/singleton-pattern-in-flutter-n-dart)
 - [流动的观察者模式]({{site.url}}/community/tutorials/observer-pattern-in-flutter-n-dart)
 - [灵动的适配器模式]({{site.url}}/community/tutorials/adapter-pattern-in-flutter-n-dart)
+- [工厂模式家族]({{site.url}}/community/tutorials/factory-pattern-in-flutter-n-dart)
 
 ### 工程实践
 

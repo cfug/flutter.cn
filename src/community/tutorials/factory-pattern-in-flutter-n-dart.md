@@ -15,7 +15,7 @@ toc: true
 
 ### 简单工厂 & factory 关键字
 
-**简单工厂模式** 不在 23 种 GOF 设计模式中，却是我们最常使用的一种编程方式。
+**简单工厂模式** 不在 23 种 GoF 设计模式中，却是我们最常使用的一种编程方式。
 其中主要涉及到一个特殊的方法，专门用来提供我们想要的实例对象（对象工厂），
 我们可以将这个方法放到一个单独的类 `SimpleFactory` 中，如下：
 
@@ -217,7 +217,7 @@ main() {
 
 在 Flutter 中，抽象方法有一个非常实用的应用场景。我们在使用 Flutter 开发多端应用时通常需要考虑到多平台的适配，即在多个平台中，同样的操作有时会产生不同的结果/样式，我们可以将这些不同结果/样式生成的逻辑放在工厂方法中。
 
-如下，我们定义一个 DialogFacory，用作生成不同样式 Dialog 的工厂：
+如下，我们定义一个 `DialogFacory`，用作生成不同样式 Dialog 的工厂：
 
 ```dart
 abstract class DialogFacory {
@@ -393,7 +393,7 @@ class CupertinoWidgetsFactory extends IWidgetsFactory {
 }
 ```
 
-这样，在 Android 平台上我们使用 MaterialWidgetsFactory，在 iOS 平台上使用 CupertinoWidgetsFactory，就能使用对应平台的 Widget，想要适配更多平台只需要再继承 **IWidgetsFactory** 实现对应平台的工厂类即可。
+这样，在 Android 平台上我们使用 `MaterialWidgetsFactory`，在 iOS 平台上使用 `CupertinoWidgetsFactory`，就能使用对应平台的 widget，想要适配更多平台只需要再继承 `IWidgetsFactory` 实现对应平台的工厂类即可。
 
 至此，我们可以发现，作为创建型模式，这三类工厂模式主要工作就是以不同的方式创建对象，但他们各有特点：简单工厂模式抽象的是 **生产对象**，工厂方法模式抽象的是 **类方法**，工厂方法模式抽象的则是 **生产对象的工厂**，如何使用就见仁见智了。
 

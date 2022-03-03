@@ -119,8 +119,8 @@ reusable pieces of UIs, prefer using a [`StatelessWidget`][] rather than
 a function.
 
 请尽可能的在 widget 上使用 `const` 构造函数，
-因为这将可以使得 Flutter 缩短大部分重建的时间。
-相较于使用函数，最好可以使用 [`StatelessWidget`][] 来创建可复用的 UI 代码片段。
+这将让 Flutter 的 widget 重建时间大幅缩短。
+在构建可复用的 UI 代码时，最好使用 [`StatelessWidget`][] 而不是函数。
 
 Also see:
 

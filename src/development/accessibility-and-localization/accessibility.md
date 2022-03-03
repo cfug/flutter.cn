@@ -127,10 +127,10 @@ we recommend using automated accessibility scanners:
 
        检查包含 Flutter 生成的 ARIA 属性的 HTML 树。
 
-    3. In Chrome, the "Elements" tab has a "Accessbility" sub-tab 
+    3. In Chrome, the "Elements" tab has a "Accessibility" sub-tab
        that can be used to inspect the data exported to semantics tree
 
-       在 Chrome 中，「Elements」选项卡中有一个「Accessbility」子选项卡，
+       在 Chrome 中，「Elements」选项卡中有一个「Accessibility」子选项卡，
        可用于检查导出到语义树的数据。
 
 ## Large fonts

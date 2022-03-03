@@ -14,69 +14,49 @@ Flutter's desktop support also extends to plugins&mdash;you
 can install existing plugins that support the Windows,
 macOS, or Linux platforms, or you can create your own.
 
-桌面支持可以让您的 Flutter 代码编译成 Windows、macOS 或 Linux 的原生桌面应用。
+桌面支持可以让你的 Flutter 代码编译成 Windows、macOS 或 Linux 的原生桌面应用。
 Flutter 的桌面支持也允许插件拓展&mdash;
-您可以使用已经支持了 Windows、macOS 或 Linux 平台的插件，或者创建您自己的插件来实现功能。
+你可以使用已经支持了 Windows、macOS 或 Linux 平台的插件，或者创建你自己的插件来实现功能。
 
 {{site.alert.note}}
 
-  **Windows support is live!**
-  For more information, see
-  [Announcing Flutter for Windows][],
-  a free article on Medium.
+  Windows is fully supported as a development target. For more information, see
+  [Announcing Flutter for Windows][]. 
 
-  **Windows 支持已正式进入稳定阶段！**
-  更多信息请参考
-  [用 Flutter 构建 Windows 桌面应用程序][Announcing Flutter for Windows]。
+  我们已经为使用 Flutter 开发 Windows 桌面应用程序提供了全力的支持，更多相关信息，
+  请阅读我们的文章
+  [Flutter for Windows 支持已进入稳定渠道](https://flutter.cn/posts/announcing-flutter-for-windows)。
+
+  macOS and Linux desktop app support is still beta-quality. Snapshots of their
+  support are available on the stable channel, but we recommend that you use the
+  beta channel for access to the latest features and bug fixes on those
+  platforms.
+
+  macOS 和 Linux 平台的桌面端支持目前仍处于 beta 质量阶段，
+  Flutter 稳定版渠道有针对这两个平台支持的一个快照版本，
+  如果你要针对这两个平台开发，建议切到 beta 发布渠道，
+  beta 渠道包含针对这些平台的最新功能和错误修复。
 
 {{site.alert.end}}
 
 [Announcing Flutter for Windows]: {{site.main-url}}/posts/announcing-flutter-for-windows
 
-## Beta snapshot for macOS and Linux in stable channel
-
-## Stable 渠道包含了一份 Beta 渠道的桌面支持
-
-Windows support is now available on the stable channel!
-To make it easier to try out desktop support for
-macOS and Linux, a snapshot of Flutter's
-desktop beta are also on the stable channel.
-This means that you can easily try desktop support
-without needing to switch to the Flutter beta channel.
-
-Windows 的支持已在稳定渠道中发布！
-为了让开发者更轻松尝试 Flutter 在 macOS 和 Linux 上的桌面支持，
-我们在稳定版构建渠道里打包了一份 Flutter 桌面支持的测试版构建渠道的快照。
-您可以尝试 Flutter 桌面支持而无需切换到 Flutter 测试版构建渠道。
-
-{{site.alert.note}}
-
-  To compile a desktop application, you must build it **on**
-  the targeted platform: build a Windows application on Windows,
-  a macOS application on macOS, and a Linux application on Linux.
-  If you experience a problem that hasn’t yet been reported,
-  please [file an issue][] and include
-  "desktop:windows win/macos/linux"
-  (whichever platform is appropriate) in the title.
-
-  要能够编译桌面应用，您必须 **在特定的平台** 上编译应用:
-  在 Windows 上构建 Windows 应用，在 macOS 上构建 macOS 应用，
-  在 Linux 上构建 Linux 应用。
-  如果您遇到了一个尚未被报告的问题，请 [创建一个 issue][file an issue]，
-  其中标题包含 "desktop:windows (win32)/windows (uwp)/macos/linux" (所处的平台)。
-
-{{site.alert.end}}
-
-[file an issue]: {{site.repo.flutter}}/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
-
 ## Requirements
 
 ## 要求
 
+To compile a desktop application, you must build it **on** the targeted
+platform: build a Windows application on Windows, a macOS application on macOS,
+and a Linux application on Linux.
+
+要能够编译桌面应用，你必须 **在特定的平台** 上编译应用:
+在 Windows 上构建 Windows 应用，在 macOS 上构建 macOS 应用，
+在 Linux 上构建 Linux 应用。
+
 To create a Flutter application with desktop support,
 you need the following software:
 
-要创建一个支持桌面的 Flutter 应用，您需要以下的软件：
+要创建一个支持桌面的 Flutter 应用，你需要以下的软件：
 
 * Flutter SDK. See the
   [Flutter SDK][] installation instructions.
@@ -92,10 +72,10 @@ you need the following software:
   within an editor. See [setting up an editor][]
   for more details.
 
-  可选项：一个支持 Flutter 的 IDE。您可以安装 [Android Studio][]、
+  可选项：一个支持 Flutter 的 IDE。你可以安装 [Android Studio][]、
   [IntelliJ IDEA][] 或 [Visual Studio Code][]，并且需要 
   [安装 Flutter 和 Dart 插件][install the Flutter and Dart plugins]。
-  这些插件可以使 IDE 支持 Dart 语言，也为您提供了一些工具，
+  这些插件可以使 IDE 支持 Dart 语言，也为你提供了一些工具，
   如重构、允许、调试和重载桌面应用。详情请查看 [配置一个编辑器][setting up an editor]。
 
 [Android Studio]: {{site.android-dev}}/studio/install
@@ -112,14 +92,15 @@ you need the following software:
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:
 
-要开发 Windows 桌面程序，除了 Flutter SDK，您还需要做以下准备:
+要开发 Windows 桌面程序，除了 Flutter SDK，你还需要做以下准备:
 
-* [Visual Studio 2022][] When installing Visual Studio
-  you need the "Desktop development with C++" workload installed
-  for building win, including all of its default components. 
+* [Visual Studio 2022][] When installing Visual Studio select the "Desktop
+  development with C++" workload, including all of its default components, to
+  install the necessary C++ toolchain and Windows SDK header files.
 
   [Visual Studio 2022][] 在安装 Visual Studio 时，
-  你需要选择「使用 C++ 的桌面开发」，包括其所有默认组件。
+  你需要选择「使用 C++ 的桌面开发」，包括其所有默认组件，
+  以安装必要的 C++ 工具链和 Windows SDK 的头文件。
 
 {{site.alert.note}}
 
@@ -138,7 +119,7 @@ you need the following in addition to the Flutter SDK:
 For macOS desktop development,
 you need the following in addition to the Flutter SDK:
 
-要开发 macOS 桌面程序，除了 Flutter SDK，您还需要做以下准备:
+要开发 macOS 桌面程序，除了 Flutter SDK，你还需要做以下准备:
 
 * [Xcode][]
 
@@ -156,7 +137,7 @@ you need the following in addition to the Flutter SDK:
 For Linux desktop development,
 you need the following in addition to the Flutter SDK:
 
-要开发 Linux 桌面程序，除了 Flutter SDK，您还需要做以下准备:
+要开发 Linux 桌面程序，除了 Flutter SDK，你还需要做以下准备:
 
 * [Clang][]
 * [CMake][]
@@ -165,7 +146,7 @@ you need the following in addition to the Flutter SDK:
 * [pkg-config][]
 * [liblzma-dev][] This dependency may be required
 
-The easiest way to install the Flutter SDK along with these
+One easy way to install the Flutter SDK along with the necessary
 dependencies is by using [snapd][].
 For more information, see [Installing snapd][].
 
@@ -175,17 +156,17 @@ For more information, see [Installing snapd][].
 Once you have `snapd`, you can install Flutter
 using the [Snap Store][], or at the command line:
 
-安装 snapd 后，您就可以使用 [Snap Store][] 安装 Flutter，
+安装 snapd 后，你就可以使用 [Snap Store][] 安装 Flutter，
 也可以在命令行进行安装:
 
 ```terminal
 $ sudo snap install flutter --classic
 ```
 
-If `snapd` is unavailable on the Linux distro you're using,
-you might use the following command:
+Alternatively, if you prefer not to use `snapd`,
+you can use the following command:
 
-如果您在使用的 Linux 发行版上无法使用 `snapd`，您可以使用下面的命令行:
+如果你在使用的 Linux 发行版上无法使用 `snapd`，你可以使用下面的命令行:
 
 ```terminal
 $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
@@ -208,137 +189,107 @@ $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-d
 You can use the following steps
 to create a new project with desktop support.
 
-您可以通过下列步骤，来创建一个支持桌面的新项目。
+你可以通过下列步骤，来创建一个支持桌面的新项目。
 
 ### Set up
 
 ### 配置
 
-At the command line, perform the following commands to
-make sure that you have the latest desktop support and that
-it's enabled. If you see "flutter: command not found",
-then make sure that you have installed the
-[Flutter SDK][] and that it’s in your path.
+On Windows, desktop support is enabled on Flutter 2.10 or higher. 
 
-在命令行中执行如下命令，来确保您使用了最新版可用的桌面支持。
-如果您看到 “flutter: command not found”，
-那么请确保您安装了 [Flutter SDK][]，并且配置在您的环境路径中。
+Windows 平台的稳定桌面端支持在 Flutter 2.10 或更高的版本中已启用。
 
-```terminal
-$ flutter config --enable-<platform>-desktop
-```
+On macOS and Linux, desktop support is disabled by default in the stable
+channel. You can manually enable it with one of these commands, depending on
+which platform you are running:
 
-Where _&lt;platform&gt;_ is `macos`, or `linux`:
+macOS 和 Linux 平台的桌面端在 Flutter 稳定版发布渠道默认是被禁用的，
+但你可以手动通过下面命令来开启：
 
-这里 **&lt;platform&gt;** 是 `windows`、`macos`、或 `linux`：
 
 ```terminal
 $ flutter config --enable-macos-desktop
 $ flutter config --enable-linux-desktop
 ```
 
-To ensure that desktop _is_ enabled,
-list the devices available.
-You should see something like the following
-(you'll see Windows, macOS, or Linux,
-depending on which platform you are running on):
-
-想要确保桌面端支持 **已成功启用**，可以列出可用的设备。
-您应该会看到如下的内容
-（您将看到 Windows、macOS 或 Linux，这取决于您运行的是哪个平台）：
-
-``` terminal
-$ flutter devices
-1 connected device:
-
-Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.18362.1082]
-macOS (desktop)   • macos   • darwin-x64  • macOS 11.2 20D64 darwin-x64
-Linux (desktop)   • linux   • linux-x64   • Linux
-```
-
-You might also run `flutter doctor` to see if there are
-any unresolved issues. It should look something like
-the following on Windows:
-
-您也可以运行 `flutter doctor` 来查看是否存在未解决的问题。
-在 Windows 上您可能会看到如下内容:
-
-```terminal
-PS C:\> flutter doctor
-Doctor summary (to see all details, run flutter doctor -v):
-[√] Flutter (Channel stable, 2.0.6, on Microsoft Windows [Version 10.0.19042.804], locale en-AU)
-[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
-[√] Chrome - develop for the web
-[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.9.5)
-[√] Android Studio (version 4.1.0)
-[√] VS Code (version 1.56.2)
-[√] Connected device (3 available)
-
-! No issues found!
-```
-
-On macOS, you might see something like the following:
-
-在 macOS 上，您可能会看到如下内容:
-
-```terminal
-$ flutter doctor
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel stable, 2.0.6, on macOS 11.3.1 20E241 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
-[✓] Xcode - develop for iOS and macOS
-[✓] Chrome - develop for the web
-[✓] Android Studio (version 4.0)
-[✓] VS Code (version 1.56.2)
-[✓] Connected device (3 available)
-
-• No issues found!
-```
-
-On Linux, you might see something like the following:
-
-在 Linux 上，您可能会看到如下内容:
-
-```terminal
-$ flutter doctor 
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel beta, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
-[✓] Chrome - develop for the web
-[✓] Linux toolchain - develop for Linux desktop
-[✓] Android Studio
-[✓] Connected device (2 available)
-```
-
-If `flutter doctor` finds problems for a platform that
-you don't want to develop for, you can ignore those warnings.
-You don't have to install Android Studio and the Android SDK,
-for example, if you're writing a Linux desktop app.
-
-如果 `flutter doctor` 发现一些问题，而问题与您需要支持的平台无关，
-您可以忽略这些警告。比如，如果您只是写 Linux 桌面程序，
-您不必安装 Android Studio 和 Android SDK。
-
-**After enabling desktop support, restart your IDE.**
-You should now see **windows (desktop)**,
-**macOS (desktop)**, or **linux (desktop)**
-in the device pulldown.
-
-**在开启桌面支持后，重启您的 IDE。**在设备下拉栏里，
-您应该可以看到 **windows (desktop)**、**macOS (desktop)** 或 
-**linux (desktop)**。
-
 {{site.alert.note}}
 
   You only need to execute
   `flutter config --enable-<platform>-desktop`
-  once.  You can always check the status of your configuration using
-  the no-argument `flutter config` command.
+  once. You can check the status of your configuration at any time by using
+  the command `flutter config` with no arguments.
 
-  您只需要执行一次  `flutter config --enable-<platform>-desktop`。
-  您之后可以使用不带参数的 `flutter config` 命令检查配置的状态。
+  桌面端平台启用的命令 `flutter config --enable-<platform>-desktop` 只需要执行一次即可。
+  你可以在任何时候通过 `flutter config` 命令来检查所有的配置内容。
 
 {{site.alert.end}}
+
+To test that desktop support is configured, use the `flutter devices` command to
+list the available targets. In addition to any mobile or web devices, you should
+see a row for the operating system you're running on, for example (on Windows):
+
+想要确保桌面端支持 **已成功启用**，可以列出可用的设备。
+你应该会看到如下的内容
+（你将看到 Windows、macOS 或 Linux，这取决于你运行的是哪个平台）：
+
+``` terminal
+C:\> flutter devices
+1 connected device:
+
+Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.22557.1]
+```
+
+You might also run `flutter doctor` to see if there are any unresolved issues.
+You should see a checkmark for each successfully configured area. It should look
+something like the following on Windows, with an entry for "develop for Windows":
+
+你也可以运行 `flutter doctor` 来查看是否存在未解决的问题。
+在 Windows 上你可能会看到如下内容:
+
+```terminal
+C:\> flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 2.10.1, on Microsoft Windows [Version 10.0.22557.1], locale en-US)
+[✓] Chrome - develop for the web
+[✓] Visual Studio - develop for Windows (Visual Studio Community 2022 17.0.5)
+[✓] VS Code (version 1.64.2)
+[✓] Connected device (3 available)
+[✓] HTTP Host Availability
+
+• No issues found!
+```
+
+On macOS, look for a line like this:
+
+在 macOS 上，你可能会看到如下内容:
+
+```terminal
+[✓] Xcode - develop for iOS and macOS
+```
+
+On Linux, look for a line like this:
+
+Linux 平台，你可能会看到如下内容：
+
+```terminal
+[✓] Linux toolchain - develop for Linux desktop
+```
+
+If `flutter doctor` finds problems or missing components for a platform that you
+don't want to develop for, you can ignore those warnings. Or you can disable the
+platform altogether using the `flutter config` command, for example:
+
+在执行 `flutter doctor` 命令时如果发现有不需要支持的平台的问题或者组件缺少报错等提示，
+你可以忽略这些警告，或者使用 `flutter config` 命令来禁用这个平台，比如：
+
+```terminal
+$ flutter config --no-enable-ios
+```
+
+After enabling desktop support, restart your IDE so that it can detect the new
+device.
+
+加入了桌面端支持之后，请重启你的 IDE，然后 IDE 就能检测到新的设备了。
 
 ### Create and run
 
@@ -368,7 +319,7 @@ After you've configured your environment to support
 desktop, make sure you restart the IDE if it was
 already running.
 
-在您配置好桌面支持的环境后，记得重启已经在运行的 IDE。
+在你配置好桌面支持的环境后，记得重启已经在运行的 IDE。
 
 Create a new application in your IDE and it automatically
 creates iOS, Android, web, and desktop versions of your app.
@@ -376,10 +327,10 @@ From the device pulldown, select **windows (desktop)**,
 **macOS (desktop)**, or **linux (desktop)**
 and run your application to see it launch on the desktop.
 
-在您的 IDE 中创建新应用时，它会自动创建 iOS、 Android 和应用的桌面版本。
+在你的 IDE 中创建新应用时，它会自动创建 iOS、 Android 和应用的桌面版本。
 从设备的下拉选项中，选择 **windows (desktop)**、
 **macOS (desktop)** 或 **linux (desktop)** 
-然后运行您的应用，就会看到应用在桌面启动。
+然后运行你的应用，就会看到应用在桌面启动。
 
 [web support]: {{site.url}}/get-started/web
 
@@ -392,7 +343,7 @@ To create a new application that includes desktop support
 substituting `myapp` with the name of your project:
 
 想要创建一个包含桌面支持的新应用（除了支持移动和 Web），请运行下面的命令，
-将 `myapp` 替换成您项目的名称：
+将 `myapp` 替换成你项目的名称：
 
 ```terminal
 $ flutter create myapp
@@ -402,10 +353,10 @@ To launch your application from the command line,
 enter one of the following commands from the top
 of the package:
 
-想要从命令行启动您的应用，可以在根目录执行以下命令之一：
+想要从命令行启动你的应用，可以在根目录执行以下命令之一：
 
 ```terminal
-PS C:\> flutter run -d windows
+C:\> flutter run -d windows
 $ flutter run -d macos
 $ flutter run -d linux
 ```
@@ -432,15 +383,7 @@ $ flutter build linux
 
 ## Distribution
 
-## 发布
-
-**We don't recommend releasing a desktop
-application until desktop support is stable,**
-however, here is some information that you
-might still find useful.
-
-**一般来说，在桌面支持稳定之前，我们不建议发布桌面应用。**
-不过，这里还有一些内容，可以帮助您在其他机器上使用当前构建进行测试。
+## 应用程序分发
 
 ### Windows
 
@@ -448,7 +391,7 @@ There are various approaches you can use for
 distributing your Windows application.
 Here are some options:
 
-你有多种方法发布你的 Windows 应用，以下是一些可以选择的方法：
+你有多种方法分发你的 Windows 应用程序，以下是一些可以选择的方法：
 
 * Use tooling to construct an MSIX installer
   (described in the next section)
@@ -500,13 +443,15 @@ cmake_policy(SET CMP0063 NEW)
 
 #### MSIX 打包
 
-[MSIX][], Microsoft Windows' application package format,
-provides a modern packaging experience to all Windows apps.
-This format can either be used to ship applications
-to Microsoft Windows' Apps store, or you can
-distribute application installers directly.
+#### MSIX 打包
 
-[MSIX][] 是 Microsoft Windows 的应用打包格式，
+[MSIX][], the new Windows application package format,
+provides a modern packaging format and installer.
+This format can either be used to ship applications
+to the Microsoft Store on Windows, or you can
+distribute app installers directly.
+
+[MSIX][] 是一种新型的 Microsoft Windows 的应用打包格式，
 它为所有 Windows 应用提供了现代化的打包体验。
 该格式可以用于向 Microsoft Windows 应用商店分发应用，
 也可以直接分发安装包。
@@ -523,7 +468,7 @@ see the [Desktop Photo Search][] sample.
 
 [MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
 [msix package]: {{site.pub}}/packages/msix
-[Desktop Photo Search]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
+[Desktop Photo Search]: {{site.github}}/flutter/samples/tree/master/desktop_photo_search
 
 ##### Create a self-signed .pfx certificate for local testing
 
@@ -618,8 +563,8 @@ The Flutter executable, `.exe`, can be found in your
 project under `build\windows\runner\<build mode>\`.
 In addition to that executable, you need the following:
 
-您可以在项目中的 `build\windows\runner\<build mode>\` 
-看到可执行文件。除了该可执行文件之外，您还需要以下内容:
+你可以在项目中的 `build\windows\runner\<build mode>\` 
+看到可执行文件。除了该可执行文件之外，你还需要以下内容:
 
 * From the same directory:
 
@@ -639,16 +584,15 @@ In addition to that executable, you need the following:
   to ensure that end users have the C++ redistributables.
   If you use the `application-local` option, you need to copy:
 
-  Visual C++ 发布包。您可以使用 Microsoft 站点上 
+  Visual C++ 发布包。你可以使用 Microsoft 站点上 
   [部署示例演练][deployment example walkthroughs] 所示的任何方法进行发布。
-  如果您使用 `application-local` 选项, 需要拷贝:
+  如果你使用 `application-local` 选项, 需要拷贝:
 
     * `msvcp140.dll`
     * `vcruntime140.dll`
     * `vcruntime140_1.dll`
   
-  These 3 files can be found in C:\Windows\System32 if installed on your PC.
-  Place the DLL files in the directory next to the executable
+    Place the DLL files in the directory next to the executable
   and the other DLLs, and bundle them together in a zip file.
   The resulting structure looks something like this:
 
@@ -678,7 +622,7 @@ add this folder to a Windows installer such as Inno Setup, WiX, etc.
 在这一点上，这将是相对简单的
 将此文件夹添加到 Windows 安装程序的方法，如 Inno 设置、WiX 等。
 
-[deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples?view=vs-2019
+[deployment example walkthroughs]: https://docs.microsoft.com/zh-cn/cpp/windows/deployment-examples
 
 ### macOS
 
@@ -746,7 +690,7 @@ The executable binary can be found in your project under
 executable binary in the `bundle` directory there are
 two directories:
 
-您可以在您的项目下的 `build/linux/<构建模式>/bundle/` 路径下找到可执行文件。
+你可以在你的项目下的 `build/linux/<构建模式>/bundle/` 路径下找到可执行文件。
 同时在 `bundle` 目录下还有两个文件夹：
 
  * `lib` contains the required `.so` library files
@@ -767,10 +711,10 @@ assuming you have a Flutter desktop application
 called `linux_desktop_test` you could inspect 
 the system libraries it depends upon as follows:
 
-除了这些文件之外，您的应用程序还依赖于针对您的应用程序进行编译的各种操作系统库。
-您可以通过对应用运行 `ldd` 来查看完整的列表。
-例如，假设您有一个名为 `linux_desktop_test` 的 Flutter 桌面应用，
-您可以通过以下步骤查看相关的系统依赖：
+除了这些文件之外，你的应用程序还依赖于针对你的应用程序进行编译的各种操作系统库。
+你可以通过对应用运行 `ldd` 来查看完整的列表。
+例如，假设你有一个名为 `linux_desktop_test` 的 Flutter 桌面应用，
+你可以通过以下步骤查看相关的系统依赖：
 
 ```
 $ flutter build linux --release
@@ -783,8 +727,8 @@ and make sure the Linux system you are installing
 it upon has all of the system libraries required.
 This may be as simple as:
 
-如果您需要打包发布您的应用，您需要打包 `bundle` 下的所有文件，
-并且确保您的 Linux 系统安装了所需的系统依赖。
+如果你需要打包发布你的应用，你需要打包 `bundle` 下的所有文件，
+并且确保你的 Linux 系统安装了所需的系统依赖。
 简单来说：
 
 ```
@@ -801,7 +745,7 @@ to the [Snap Store][], see
 As the tooling solidifies, stay tuned for updates
 on other ways to distribute a Linux desktop app.
 
-这些工具将不断进行完善，欢迎您持续关注 Linux 桌面应用的其他方式的更新信息。
+这些工具将不断进行完善，欢迎你持续关注 Linux 桌面应用的其他方式的更新信息。
 
 [Build and release a Linux application to the Snap Store]: {{site.url}}/deployment/linux
 
@@ -813,7 +757,7 @@ To add desktop support to an existing Flutter project,
 run the following command in a terminal from the
 root project directory:
 
-想为已有的 Flutter 项目添加桌面支持，您可以从项目根目录在控制台运行下面命令：
+想为已有的 Flutter 项目添加桌面支持，你可以从项目根目录在控制台运行下面命令：
 
 ```terminal
 $ flutter create --platforms=windows,macos,linux .
@@ -825,7 +769,7 @@ To add only specific desktop platforms,
 change the `platforms` list to include only
 the platform(s) you want to add.
 
-这将会在您的 Flutter 桌面项目中添加必要的已有文件和文件夹。
+这将会在你的 Flutter 桌面项目中添加必要的已有文件和文件夹。
 如果需要只添加特定平台桌面端的支持，修改 `platforms` 的值
 为你想要支持的平台即可。
 
@@ -849,7 +793,7 @@ capabilities or services on your macOS app,
 such as the following:
 
 macOS 构建时使用默认的签名进行配置，并且通过 App Sandbox 进行沙盒化。
-这意味着如果您想要在 macOS 应用中授予特定的权限或者服务，比如：
+这意味着如果你想要在 macOS 应用中授予特定的权限或者服务，比如：
 
 * Accessing the internet
 
@@ -866,8 +810,8 @@ macOS 构建时使用默认的签名进行配置，并且通过 App Sandbox 进�
 Then you must set up specific _entitlements_ in Xcode.
 The following section tells you how to do this.
 
-这时您必须在 Xcode 中设置特定的 **权限**。
-下面的章节会告诉您如何去做。
+这时你必须在 Xcode 中设置特定的 **权限**。
+下面的章节会告诉你如何去做。
 
 #### Setting up entitlements
 
@@ -882,7 +826,7 @@ as they're necessary for the `debug` and `profile`
 modes to function correctly.
 
 在 `macos/Runner/*.entitlements` 文件中完成管理沙盒的设置。
-当编辑这些文件时，您不应该删除原来的 `Runner-DebugProfile.entitlements` 
+当编辑这些文件时，你不应该删除原来的 `Runner-DebugProfile.entitlements` 
 中的条款（它们会支持传入网络连接和 JIT），因为 `debug` 和 `profile` 
 模式正常工作需要它们。
 
@@ -895,11 +839,11 @@ Either scenario causes issues. We recommend that you
 edit the files directly. Unless you have a very specific
 reason, you should always make identical changes to both files.
 
-如果您习惯通过 **Xcode capabilities UI** 来管理权限文件，请注意 
+如果你习惯通过 **Xcode capabilities UI** 来管理权限文件，请注意 
 capabilities 编辑器只更新两个文件中的一个，在某些情况下，
 它会创建一个全新的权限文件，并且切换项目，使其应用于所有配置。
-这些情况都会导致问题。我们建议您直接编辑这些文件。
-除非有非常特殊的原因，否则您应该始终对两个文件进行相同的更改。
+这些情况都会导致问题。我们建议你直接编辑这些文件。
+除非有非常特殊的原因，否则你应该始终对两个文件进行相同的更改。
 
 If you keep the App Sandbox enabled (which is required if you
 plan to distribute your application in the [App Store][]),
@@ -913,18 +857,18 @@ Another common entitlement is
 `com.apple.security.network.client`,
 which you must add if you make any network requests.
 
-如果您保持 App Sandbox 可用（如果您计划在 [App Store][] 上发布应用，这是必需的），
-当您添加某些插件或其他本地功能时，您需要管理应用的权限。例如，
+如果你保持 App Sandbox 可用（如果你计划在 [App Store][] 上发布应用，这是必需的），
+当你添加某些插件或其他本地功能时，你需要管理应用的权限。例如，
 使用 [`file_chooser`][] 插件需要添加 
 `com.apple.security.files.user-selected.read-only` 或 
 `com.apple.security.files.user-selected.read-write` 权限。
 另一个通常使用到的权限是 `com.apple.security.network.client`，
-如果您想要进行网络请求，那么必须添加它。
+如果你想要进行网络请求，那么必须添加它。
 
 Without the `com.apple.security.network.client` entitlement,
 for example, network requests fail with a message such as:
 
-假设您没有设置 `com.apple.security.network.client` 权限，
+假设你没有设置 `com.apple.security.network.client` 权限，
 网络请求将会失败，并显示如下消息：
 
 ```terminal
@@ -949,10 +893,10 @@ address = example.com, port = 443
   **重要:** `com.apple.security.network.server` 权限会允许进入的网络连接，
   默认情况下只在 `debug` 和 `profile` 构建时可用，
   会让 Flutter 工具和运行中的应用之间能够进行通信。
-  如果您需要在您的应用中允许传入的网络请求，
-  您也必须将 `com.apple.security.network.server` 
+  如果你需要在你的应用中允许传入的网络请求，
+  你也必须将 `com.apple.security.network.server` 
   权限添加到 `Runner-Release.entitlements`中。
-  否则，您的应用将在 debug 或 profile 测试时正常工作，
+  否则，你的应用将在 debug 或 profile 测试时正常工作，
   但在 release 构建时将失败。
 
 {{site.alert.end}}
@@ -978,10 +922,10 @@ This requires enabling the Hardened Runtime option.
 Once you have enabled it, you need a valid signing
 certificate in order to build.
 
-如果您选择在 App Store 以外的地方发布您的应用，
-您需要确认您的应用是否兼容 macOS 10.15 以上版本。
+如果你选择在 App Store 以外的地方发布你的应用，
+你需要确认你的应用是否兼容 macOS 10.15 以上版本。
 这需要启用 Hardened Runtime 选项。
-当您启用它后，构建应用时，您需要一个有效的签名证书。
+当你启用它后，构建应用时，你需要一个有效的签名证书。
 
 By default, the entitlements file allows JIT for
 debug builds but, as with App Sandbox, you may
@@ -994,7 +938,7 @@ For instance, microphone access would require both
 and `com.apple.security.device.microphone` (for App Sandbox).
 
 默认情况下，权利文件允许 JIT 进行 debug 模式构建，但是，与 App Sandbox 一样，
-您可能需要管理其他权限。如果你需要同时启用 App Sandbox 和 Hardened Runtime，
+你可能需要管理其他权限。如果你需要同时启用 App Sandbox 和 Hardened Runtime，
 你需要为同一资源添加多个权限。例如，麦克风访问需要这两个权限：
 `com.apple.security.device.audio-input`（对于 Hardened Runtime）和 
 `com.apple.security.device.microphone`（对于 App Sandbox）。
@@ -1024,7 +968,7 @@ Flutter automatically adds the necessary native code
 to your project, as with iOS or Android.
 
 想要使用支持桌面的插件，请遵循 [using packages][] 中的插件使用步骤。
-和 iOS 或 Android 一样，Flutter 会在您的项目里自动添加必要的本地代码。
+和 iOS 或 Android 一样，Flutter 会在你的项目里自动添加必要的本地代码。
 
 We recommend the following plugins,
 which have been updated to work for desktop apps:
@@ -1081,7 +1025,7 @@ endorsed federated plugin on pub.dev,
 so long as you coordinate this effort with the
 original plugin author.
 
-当您开始构建自己的插件时，您需要记住联合。联合是定义几个不同包的能力，
+当你开始构建自己的插件时，你需要记住联合。联合是定义几个不同包的能力，
 其中每个包都针对不同的平台，将它们合并到一个插件中，这样方便开发人员使用。
 比如，Windows 实现的 `url_launcher`，实际是通过 `url_launcher_windows` 完成的，
 但是 Flutter 开发者可以在 `pubspec.yaml` 中，
@@ -1133,14 +1077,14 @@ a desktop application that integrates the GitHub
 GraphQL API with your Flutter app.
 
 [构建一个 Flutter 桌面程序][Write a Flutter desktop application]
-<br> 这个 codelab 会引导您通过使用 Flutter，
+<br> 这个 codelab 会引导你通过使用 Flutter，
 来构建一个集成 GitHub GraphQL API 的桌面应用。
 
 You can run the following samples as desktop apps,
 as well as download and inspect the source code to
 learn more about Flutter desktop support.
 
-您可以运行下面的桌面应用案例，也可以下载并阅读源代码，
+你可以运行下面的桌面应用案例，也可以下载并阅读源代码，
 以了解更多关于 Flutter 桌面支持的信息。
 
 Flutter Gallery [running web app][], [repo][flutter-gallery-repo]
@@ -1178,10 +1122,10 @@ Flokk [官宣文章][gskinner-flokk-blogpost]，[源代码仓库地址][gskinner
   * [`url_launcher`][]
 
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
-[Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
+[Photo Search app]: {{site.repo.organization}}/samples/tree/master/desktop_photo_search
 [running web app]: {{site.gallery}}
 [flutter-gallery-repo]: {{site.repo.gallery}}
 [README]: {{site.repo.gallery}}#flutter-gallery
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/index.html
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

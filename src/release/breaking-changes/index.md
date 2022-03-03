@@ -22,27 +22,45 @@ release, and listed in alphabetical order:
 
 ### 尚未推进到稳定版
 
-* [Required Kotlin version][]
+* [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
 
-  [需要的 Kotlin 版本][Required Kotlin version]
+  [将 Chip 的 useDeleteButtonTooltip 迁移到 deleteButtonTooltipMessage][Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips]
+
+* [ThemeData's toggleableActiveColor property has been deprecated][]
+
+  [ThemeData 的 toggleableActiveColor 属性已被弃用][ThemeData's toggleableActiveColor property has been deprecated]
+
+[Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips]: {{site.url}}/release/breaking-changes/chip-usedeletebuttontooltip-migration
+[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
+
+### Released in Flutter 2.10
+
+### 已经在 Flutter 2.10 中发布
 
 * [Deprecated API removed after v2.5][]
 
   [2.5 之后的版本将会废弃的 API][Deprecated API removed after v2.5]
 
 * [Raw images on Web uses correct origin and colors][]
+
+  [Web 上的原始图像使用正确的来源和颜色][Raw images on Web uses correct origin and colors]
+
+* [Required Kotlin version][]
+
+  [构建 Flutter 应用的 Kotlin 版本应高于 1.5.31][Required Kotlin version]
+
 * [Scribble Text Input Client][]
 
-  [Web 平台的原始图像使用正确的来源和颜色][Raw images on Web uses correct origin and colors]
+  [Apple Pencil 随手写 TextInputClient 变动][Scribble Text Input Client]
 
-[Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
 [Raw images on Web uses correct origin and colors]: {{site.url}}/release/breaking-changes/raw-images-on-web-uses-correct-origin-and-colors
+[Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Scribble Text Input Client]: {{site.url}}/release/breaking-changes/scribble-text-input-client
-[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 
 
 ### Released in Flutter 2.5
+
 ### 已经在 Flutter 2.5 中发布
 
 * [Default drag scrolling devices][]

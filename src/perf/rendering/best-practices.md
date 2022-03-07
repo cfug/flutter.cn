@@ -113,6 +113,15 @@ when designing your app:
     [SlideTransition 代码][source code for `SlideTransition`]，
     以避免在动画过程中重建其后代 widget。
 
+Use `const` constructors on widgets as much as possible, since
+they allow Flutter to short-circuit most of the rebuild work. To create
+reusable pieces of UIs, prefer using a [`StatelessWidget`][] rather than
+a function.
+
+请尽可能的在 widget 上使用 `const` 构造函数，
+这将让 Flutter 的 widget 重建时间大幅缩短。
+在构建可复用的 UI 代码时，最好使用 [`StatelessWidget`][] 而不是函数。
+
 Also see:
 
 另请参考：
@@ -121,10 +130,19 @@ Also see:
 
   [`StatefulWidget`][] API 文档中的 [Performance considerations][] 部分。
 
+* [Widgets vs helper methods][], a video from the official Flutter YouTube 
+  channel that explains why widgets (especially widgets with `const` constructors)
+  are more performant than functions.
+
+  [使用新的 widget 还是 Helper 方法][Widgets vs helper methods]，
+  Flutter YouTube 频道上发布的一个视频，解释为什么使用 widget 是更好的做法。 
+
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
-[source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart
+[source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
+[Widgets vs helper methods]: {{site.youtube-site}}/watch?v=IOyq-eTRhvo
 
 ### Apply effects only when needed
 

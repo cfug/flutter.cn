@@ -29,6 +29,7 @@ and review the [Dart changelog][].
 你可以加入 [Dart Announce][] 邮件组或查看 [Dart 更新日志][Dart changelog]
 了解 Dart 的更新内容。
 
+[release notes]: {{site.url}}/development/tools/sdk/release-notes
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
 [Dart changelog]: https://github.com/dart-lang/sdk/blob/master/CHANGELOG.md

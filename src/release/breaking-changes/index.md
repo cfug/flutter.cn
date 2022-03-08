@@ -30,6 +30,8 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 2.10
 
+### 已经在 Flutter 2.10 中发布
+
 * [Deprecated API removed after v2.5][]
 * [Raw images on Web uses correct origin and colors][]
 * [Required Kotlin version][]

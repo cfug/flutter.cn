@@ -18,7 +18,7 @@ Flutter 可以以 framework 框架的形式添加到
 For examples, see the iOS directories in the [add_to_app code samples][].
 
 请参阅
-[add_to_app代码示例][add_to_app code samples] 的 iOS 目录。
+[add_to_app 代码示例][add_to_app code samples] 的 iOS 目录。
 
 ## System requirements
 
@@ -635,8 +635,10 @@ one of these plugins, you might see a compilation error like **Undefined symbols
 for architecture arm64** and you must exclude `arm64` from the simulator
 architectures in your host app.
 
-Flutter 目前暂未支持 `arm64` 的 iOS 模拟器。
-要在 Apple Silicon Mac 设备上运行你的宿主应用，请从模拟器支持架构中移除 `arm64`。
+在使用 Apple Silicon 芯片的 Mac 上 (M1)，宿主应用将针对 `arm64` 架构的模拟器编译。
+尽管 Flutter 支持 `arm64` 的 iOS 模拟器，但一些插件仍有可能未进行支持。
+当你在使用这些插件时，你会遇到 **Undefined symbols for architecture arm64** 的错误，
+此时你必须从模拟器支持架构中移除 `arm64`。
 
 In your host app target, find the **Excluded Architectures** (`EXCLUDED_ARCHS`) build setting.
 Click the right arrow disclosure indicator icon to expand the available build configurations.

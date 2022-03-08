@@ -200,7 +200,7 @@ use the options in the enhance tracing dropdown:
 
   Frame times may be negatively affected when these options are enabled.
 
-  启用选项后，帧构建时间可能会受到影响。
+  启用该选项后，帧构建时间可能会受到影响。
 
 {{site.alert.end}}
 

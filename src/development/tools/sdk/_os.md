@@ -14,7 +14,7 @@ Select from the following scrollable list:
 
 <div class="scrollable-table">
   <table id="downloads-{{id}}-{{channel}}" class="table table-striped">
-  <thead><tr><th>版本号</th><th>架构</th><th>Ref</th><th class="date">发布日期</th><th>Dart SDK</th></tr></thead>
+  <thead><tr><th>Flutter 版本</th><th>架构</th><th>Ref</th><th class="date">发布日期</th><th>Dart 版本</th></tr></thead>
   <tr class="loading"><td colspan="5">Loading...</td></tr>
   </table>
 </div>

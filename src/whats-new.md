@@ -9,8 +9,12 @@ keywords: 内容归档
 
 This page contains current and previous announcements of
 what's new on the Flutter website and blog.
+For details about what's new in the Flutter releases
+see the [release notes][] page.
 
 该归档包含了历史公告，以及网站上的更新内容。
+想要了解每个 Flutter 发布的版本更新内容，
+请查看 [发布说明][release notes] 页面。
 
 To stay on top of Flutter announcements,
 including breaking changes,
@@ -19,7 +23,16 @@ join the [flutter-announce][] Google group.
 要及时同步最新 Flutter 公告，包括重大变更 (breaking changes) 等，
 请加入 [flutter-announce][] 邮件组。
 
+For Dart, you can join the [Dart Announce][] Google group,
+and review the [Dart changelog][].
+
+你可以加入 [Dart Announce][] 邮件组或查看 [Dart 更新日志][Dart changelog]
+了解 Dart 的更新内容。
+
+[release notes]: {{site.url}}/development/tools/sdk/release-notes
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart changelog]: https://github.com/dart-lang/sdk/blob/master/CHANGELOG.md
 
 ## Feb 3, 2022, Windows Support: 2.10 release
 

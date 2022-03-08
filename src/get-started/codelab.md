@@ -780,12 +780,12 @@ lazily, on demand.
     ```dart
       class _RandomWordsState extends State<RandomWords> {
         [!final _suggestions = <WordPair>[];!]
-        [!final _biggerFont = const TextStyle(fontSize: 18);!]
+        [!final _biggerFont = const TextStyle(fontSize: 18.0);!]
         // ···
       }
     ```
 
-    Next, you'll add a `_buildSuggestions()` function to the
+    Next, you'll add a `ListView.builder` widget to the
     `_RandomWordsState` class. This method builds the
     `ListView` that displays the suggested word pairing.
 
@@ -807,28 +807,29 @@ lazily, on demand.
     每次建议的单词对都会让其递增两次，一次是 ListTile，另一次是 Divider。
     它用于创建一个在用户滚动时候无限增长的列表。
 
- 2. Add a `_buildSuggestions()` function to the `_RandomWordsState` class:
- 
-    向 `_RandomWordsState` 类添加 `_buildSuggestions()` 方法，内容如下：
+ 2. Add a `ListView.builder` widget to the `build` method of the `_RandomWordsState` class:
 
-    <?code-excerpt "lib/main.dart (_buildSuggestions)" title indent-by="2"?>
+    向 `_RandomWordsState` 类的 `build` 方法添加 `ListView.builder`，内容如下：
+
+    <?code-excerpt "lib/main.dart (itemBuilder)" title indent-by="2"?>
     ```dart
-      Widget _buildSuggestions() {
-        return ListView.builder(
-          padding: const EdgeInsets.all(16),
-          itemBuilder: /*1*/ (context, i) {
-            if (i.isOdd) {
-              return const Divider(); /*2*/
-            }
+      body: ListView.builder(
+        padding: const EdgeInsets.all(16.0),
+        itemBuilder: /*1*/ (context, i) {
+          if (i.isOdd) return const Divider(); /*2*/
 
-            final index = i ~/ 2; /*3*/
-            if (index >= _suggestions.length) {
-              _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-            }
-            return _buildRow(_suggestions[index]);
-          },
-        );
-      }
+          final index = i ~/ 2; /*3*/
+          if (index >= _suggestions.length) {
+            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+          }
+          return ListTile(
+            title: Text(
+              _suggestions[index].asPascalCase,
+              style: _biggerFont,
+            ),
+          );
+        },
+      ),
     ```
 
     {:.numbered-code-notes}
@@ -862,7 +863,7 @@ lazily, on demand.
         
         如果是建议列表中最后一个单词对，接着再生成 10 个单词对，然后添加到建议列表。
 
-    The `_buildSuggestions()` function calls `_buildRow()` once per
+    The `ListView.builder` widget creates a `ListTile` once per
     word pair. This function displays each new pair in a `ListTile`,
     which allows you to make the rows more attractive in the next step.
     
@@ -870,25 +871,23 @@ lazily, on demand.
     这个函数在 `ListTile` 中显示每个新词对，
     这使你在下一步中可以生成更漂亮的显示行，详见本 codelab 的第二部分。
 
- 3. Add a `_buildRow()` function to `_RandomWordsState`:
-    
-    在 `_RandomWordsState` 中添加 `_buildRow()` 函数 : 
+ 3. Add a `ListTile` in the `itemBuilder` body of the `ListView.builder` in `_RandomWordsState`:
 
-    <?code-excerpt "lib/main.dart (_buildRow)" title indent-by="2"?>
+    在 `_RandomWordsState` 中的 `itemBuilder` 里添加 `ListTile` 函数 :
+
+    <?code-excerpt "lib/main.dart (listTile)" title indent-by="2"?>
     ```dart
-      Widget _buildRow(WordPair pair) {
-        return ListTile(
-          title: Text(
-            pair.asPascalCase,
-            style: _biggerFont,
-          ),
-        );
-      }
+      return ListTile(
+        title: Text(
+          _suggestions[index].asPascalCase,
+          style: _biggerFont,
+        ),
+      );
     ```
 
  4. In the `_RandomWordsState` class, update the `build()` method to use
-    `_buildSuggestions()`, rather than directly calling the word
-    generation library.  ([`Scaffold`][]
+    the `ListView.builder`, rather than directly calling the word
+    generation library. ([`Scaffold`][]
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 
@@ -904,7 +903,23 @@ lazily, on demand.
         [!  appBar: AppBar(!]
         [!    title: const Text('Startup Name Generator'),!]
         [!  ),!]
-        [!  body: _buildSuggestions(),!]
+        [!  body: ListView.builder(!]
+        [!    padding: const EdgeInsets.all(16.0),!]
+        [!    itemBuilder: /*1*/ (context, i) {!]
+        [!      if (i.isOdd) return const Divider(); /*2*/!]
+
+        [!      final index = i ~/ 2; /*3*/!]
+        [!      if (index >= _suggestions.length) {!]
+        [!        _suggestions.addAll(generateWordPairs().take(10)); /*4*/!]
+        [!      }!]
+        [!      return ListTile(!]
+        [!        title: Text(!]
+        [!          _suggestions[index].asPascalCase,!]
+        [!          style: _biggerFont,!]
+        [!        ),!]
+        [!      );!]
+        [!    },!]
+        [!  ),!]
         [!);!]
       }
     ```
@@ -920,7 +935,7 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -13,27 +13,53 @@
+    @@ -13,27 +13,43 @@
        const MyApp({Key? key}) : super(key: key);
 
        @override
@@ -944,33 +959,7 @@ lazily, on demand.
 
      class _RandomWordsState extends State<RandomWords> {
     +  final _suggestions = <WordPair>[];
-    +  final _biggerFont = const TextStyle(fontSize: 18);
-    +
-    +  Widget _buildSuggestions() {
-    +    return ListView.builder(
-    +      padding: const EdgeInsets.all(16),
-    +      itemBuilder: /*1*/ (context, i) {
-    +        if (i.isOdd) {
-    +          return const Divider(); /*2*/
-    +        }
-    +
-    +        final index = i ~/ 2; /*3*/
-    +        if (index >= _suggestions.length) {
-    +          _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-    +        }
-    +        return _buildRow(_suggestions[index]);
-    +      },
-    +    );
-    +  }
-    +
-    +  Widget _buildRow(WordPair pair) {
-    +    return ListTile(
-    +      title: Text(
-    +        pair.asPascalCase,
-    +        style: _biggerFont,
-    +      ),
-    +    );
-    +  }
+    +  final _biggerFont = const TextStyle(fontSize: 18.0);
     +
        @override
        Widget build(BuildContext context) {
@@ -980,7 +969,23 @@ lazily, on demand.
     +      appBar: AppBar(
     +        title: const Text('Startup Name Generator'),
     +      ),
-    +      body: _buildSuggestions(),
+    +      body: ListView.builder(
+    +        padding: const EdgeInsets.all(16.0),
+    +        itemBuilder: /*1*/ (context, i) {
+    +          if (i.isOdd) return const Divider(); /*2*/
+    +
+    +          final index = i ~/ 2; /*3*/
+    +          if (index >= _suggestions.length) {
+    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+    +          }
+    +          return ListTile(
+    +            title: Text(
+    +              _suggestions[index].asPascalCase,
+    +              style: _biggerFont,
+    +            ),
+    +          );
+    +        },
+    +      ),
     +    );
        }
      }

@@ -122,9 +122,9 @@ For more information on profiling, see
 
 更多详细信息，请查看文档 [定位 GPU 图表中的问题][GPU graph]。
 
-### Jank
+### Jank (slow frame)
 
-### 丢帧 (Jank)
+### 卡顿 (Jank)
 
 The frame rendering chart shows jank with a red overlay.
 A frame is considered to be janky if it takes more than
@@ -143,6 +143,24 @@ For more information on how to analyze your app's performance,
 see [Flutter performance profiling][].
 
 更多关于性能分析信息，请查看文档：[Flutter 性能分析][Flutter performance profiling]。
+
+### Shader compilation
+
+### 着色器渲染
+
+Shader compilation occurs when a shader is first used in your Flutter
+app. Frames that perform shader compilation are marked in dark
+red:
+
+在 Flutter 应用中，着色器会在初次使用时发生渲染。参与了着色器编译的构建帧已标记为深红色：
+
+![Screenshot of shader compilation for a frame]({{site.url}}/assets/images/docs/tools/devtools/shader-compilation-frames-chart.png)
+
+For more information on how to reduce shader compilation jank, see [Reduce
+shader compilation jank on mobile][].
+
+想要了解更多关于如何减少着色器缓存卡顿的内容，阅读
+[在移动端减少着色器编译卡顿][Reduce shader compilation jank on mobile]。
 
 ## Timeline events chart
 
@@ -169,6 +187,67 @@ with the mouse wheel / trackpad
 You can click an event to view CPU profiling information in the CPU profiler
 below, described in the next section.
 
+## Enhance tracing 
+
+## 增强的追踪选项
+
+To view more detailed tracing in the timeline events chart,
+use the options in the enhance tracing dropdown:
+
+想要在时间线事件图表里查看更详细的追踪内容，请使用增强的追踪下拉控件里的选项：
+
+{{site.alert.note}}
+
+  Frame times may be negatively affected when these options are enabled.
+
+  启用该选项后，帧构建时间可能会受到影响。
+
+{{site.alert.end}}
+
+![Screenshot of enhance tracing dropdown]({{site.url}}/assets/images/docs/tools/devtools/enhance-tracing.png)
+
+To see the new timeline events,
+reproduce the activity in your app that you are interested in tracing,
+and then select a frame to inspect the timeline.
+
+你可以重复操作你想要追踪的行为来查看新的时间线事件，
+操作后可以在时间线中选择一个构建帧进行查看。
+
+### Track widget builds
+
+### 追踪 widget 的构建
+
+To see the build() method events in the timeline,
+enable the Track Widget Builds option.
+The name of the widget is shown in the timeline event.
+
+想要在时间线中查看 `build()` 方法的事件，启用 Track Widget Builds 选项。
+时间线中将出现 widget 对应名称的事件。
+
+![Screenshot of track widget builds]({{site.url}}/assets/images/docs/tools/devtools/track-widget-builds.png)
+
+### Track layouts
+
+### 追踪布局
+
+To see render object layout events in the timeline,
+enable the Track Layouts option:
+
+想要在时间线中查看 `RenderObject` 布局构建的事件，启用 Track Layouts 选项：
+
+![Screenshot of track layouts]({{site.url}}/assets/images/docs/tools/devtools/track-layouts.png)
+
+### Track paints
+
+### 追踪绘制
+
+To see render object paint events in the timeline,
+enable the Track Paints option:
+
+想要在时间线中查看 `RenderObject` 的绘制事件，启用 Track Paints 选项：
+
+![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
+
 ## Import and export
 
 ## 导入导出
@@ -187,4 +266,5 @@ DevTools 支持导入和导出时间线快照。单击 export 按钮 (帧渲染�
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [GPU graph]: {{site.url}}/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[Reduce shader compilation jank on mobile]: {{site.url}}/perf/rendering/shader
 [Import and export]: #import-and-export

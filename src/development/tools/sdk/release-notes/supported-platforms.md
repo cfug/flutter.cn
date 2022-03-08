@@ -132,16 +132,16 @@ see [go/rfc-ios8-deprecation] for details.
 
 ### 不受支持的平台
 
-|Platform|Version               |
-|--------|----------------------|
-|平台     |版本                   |
-|Android |Android SDK 15 & below|
-|Android |Android SDK 15 及以上  |
-|iOS     |iOS 8 & below         |
-|iOS     |iOS 8 及以上           |
-|Windows |Windows Vista & below |
-|Windows |Windows Vista 及以上   |
-|Windows |Any 32-bit platform   |
-|Windows |任何 32 位平台          |   
-|macOS   | Yosemite & below     |
-|macOS   | Yosemite 及以上       |
+|Platform|Version                |
+|--------|-----------------------|
+|平台     | 版本                    |
+|Android | Android SDK 18 & below|
+|Android | Android SDK 18 及以上    |
+|iOS     | iOS 8 & below         |
+|iOS     | iOS 8 及以上             |
+|Windows | Windows Vista & below |
+|Windows | Windows Vista 及以上     |
+|Windows | Any 32-bit platform   |
+|Windows | 任何 32 位平台             |   
+|macOS   | Yosemite & below      |
+|macOS   | Yosemite 及以上          |

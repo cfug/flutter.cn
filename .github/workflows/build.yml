@@ -33,7 +33,16 @@ jobs:
             channel: stable
             experimental: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          repository: 'chenglu/flutter-cn-commit'
+          path: '.site-misc'
+          token: ${{ secrets.CHENGLU_DEPLOY_KEY }}
+
+      - name: Manipulate docs
+        run: 'sh .site-misc/tool/docs_manipulate.sh'
+
+      - uses: actions/checkout@v3
       - name: Test
         run: make test
         env:
@@ -48,17 +57,28 @@ jobs:
       && github.ref == 'refs/heads/master'
       && github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: "recursive"
+
       - name: Install Node
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+
+      - uses: actions/checkout@v3
+        with:
+          repository: 'chenglu/flutter-cn-commit'
+          path: '.site-misc'
+          token: ${{ secrets.CHENGLU_DEPLOY_KEY }}
+
+      - name: Manipulate docs
+        run: 'sh .site-misc/tool/docs_manipulate.sh'
       - name: Build
         run: make build
         env:
           DISABLE_TESTS: 1
+
       - name: Deploy
         run: make deploy
         env:

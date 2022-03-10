@@ -16,4 +16,5 @@ rm assets/js/vendor
 rm docs/assets/js/vendor
 ln -s ../../../site-shared/src/_assets/vendor assets/js/vendor
 ln -s ../../../../site-shared/src/_assets/vendor docs/assets/js/vendor
+ls -al
 cd ..

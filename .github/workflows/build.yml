@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Manipulate docs
-        run: 'sh tool manipulate_docs.sh'
+        run: 'sh tool/manipulate_docs.sh'
       - name: Test
         run: make test
         env:

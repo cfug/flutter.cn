@@ -182,7 +182,6 @@ build-image:
 # those will be run on the Github action.
 # Usage: `DISABLE_TESTS=1 make build`
 build:
-	sh tool/manipulate_docs.sh
 	make clean
 	make build-image
 	docker run --rm -d --name ${BUILD_NAME} -t ${BUILD_TAG}:${BUILD_COMMIT}
@@ -218,4 +217,4 @@ purge:
 
 # Move around docs in order to customize path orders
 move-docs:
-    sh tool/move_docs.sh
+	sh tool/move_docs.sh

@@ -34,8 +34,8 @@ jobs:
             experimental: true
     steps:
       - uses: actions/checkout@v2
-      - name: Manipulate docs
-        run: 'sh tool/manipulate_docs.sh'
+      - name: Move docs
+        run: make move-docs
       - name: Test
         run: make test
         env:
@@ -57,8 +57,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: Manipulate docs
-        run: 'sh tool manipulate_docs.sh'
+      - name: Move docs
+        run: make move-docs
       - name: Build
         run: make build
         env:

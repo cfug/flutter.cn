@@ -1,4 +1,15 @@
 #!/usr/bin/bash -e
+DOCS=src/docs
+
+if [ -d "$DOCS" ]; then
+  echo "$DOCS already exist, Skip moving."
+  exit 0
+fi
+
+if [ -f "$DOCS" ]; then
+  echo "$DOCS already exist, Skip moving."
+  exit 0
+fi
 
 cd src
 mkdir docs

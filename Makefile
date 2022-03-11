@@ -5,7 +5,7 @@ include shared.env
 
 all: gen-env up down debug shell setup serve switch-channel test-channel \
 	refresh-code-excerpts check-code check-links test debug-test build \
-	build-image deploy stage clean reinstall purge
+	build-image deploy stage clean reinstall purge move-docs
 
 .DEFAULT_GOAL := up
 .PHONY: all
@@ -214,3 +214,7 @@ purge:
 	docker-compose down
 	docker rm -f $(docker ps -aq)
 	docker rmi flt-dev
+
+# Move around docs in order to customize path orders
+move-docs:
+	sh tool/move_docs.sh

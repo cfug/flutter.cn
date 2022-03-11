@@ -17,7 +17,6 @@ services:
     ports:
       - "4002:4002"
       - "35729:35729"
-      - "5500:5500"
     volumes:
       - ./:/app
       - site_bundle:/usr/local/bundle

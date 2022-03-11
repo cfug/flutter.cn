@@ -1,6 +1,6 @@
 [submodule "site-shared"]
 	path = site-shared
-	url = https://github.com/cfug/site-shared
+	url = https://github.com/dart-lang/site-shared
 	branch = main
 [submodule "flutter"]
 	path = flutter

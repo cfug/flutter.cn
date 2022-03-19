@@ -210,7 +210,7 @@ Follow the Xcode signing flow to provision your project:
       and creates and downloads a provisioning profile (if needed).
       
       当选择了一个团队之后，Xcode 会创建和下载一个 开发证书，
-      并在你的账户里为你的社保注册，
+      并在你的账户里为你的设备注册，
       并在需要的时候创建和下载一个配置文件。
 
       * To start your first iOS development project,

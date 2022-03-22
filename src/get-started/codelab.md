@@ -26,7 +26,7 @@ diff2html: true
 
   这篇 codelab 将带你初体验移动端 Flutter 应用开发。
   你也许更想尝试 [编写你的第一个 Flutter 网页应用][codelab-web]。
-  
+
   **Note that if you have [enabled web][],
   the completed app just works on all of these devices!**
 
@@ -37,6 +37,8 @@ diff2html: true
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:
 
+如果你更喜欢由讲师介绍的 codelab 版本，请查看以下的 workshop：
+
 <iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=846249495&bvid=BV1n54y1H7dZ&cid=354773704&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
@@ -44,7 +46,11 @@ check out the following workshop:
 <img src="/assets/images/docs/get-started/startup-namer-part-1.gif" alt="The app that you'll be building" class='site-image-right'>
 
 {%- comment %}
+
   Code highlights in this page are green, to match diff additions.
+
+  页面中的代码高亮是绿色的，用于展示 diff 的改动。
+
 {% endcomment -%}
 <style>pre .highlight { background-color: #dfd; }</style>
 
@@ -56,7 +62,7 @@ previous experience with Dart, mobile, desktop, or web programming.
 
 这是一个指引你完成第一个 Flutter 应用的手把手操作教程（我们也称之为是 codelab）。
 我们将会着手创建一个简单的 Flutter 应用，无需 Dart 语言、
-移动端开发、桌面端开发或 Web 开发经验，
+移动端开发、桌面端开发或 Web 开发的经验，
 只需你具备面向对象语言开发基础即可（如变量，循环和条件语句）。
 
 This codelab is part 1 of a two-part codelab.
@@ -247,9 +253,7 @@ where the Dart code lives.
     Replace with the following code, which displays
     "Hello World" in the center of the screen.
     
-    替换 lib/main.dart <br>
-    删除 lib/main.dart 中的所有代码，然后替换为下面的代码，它将在屏幕的中心显示"Hello World"。
-
+    删除 lib/main.dart 中的所有代码，然后替换为下面的代码，它将在屏幕的中心显示「Hello World」。
 
     <?code-excerpt "lib/main.dart" title?>
     ```dart
@@ -284,25 +288,26 @@ where the Dart code lives.
     ```
 
     {{site.alert.tip}}
-    
+
       When pasting code into your app, indentation can become skewed.
       You can fix this with the following Flutter tools:
-      
+
       在向你的工程项目中粘贴代码的时候，缩进可能会变形。
       你可以使用下面的 Flutter 工具修复此问题：
 
       * Android Studio and IntelliJ IDEA: Right-click the code and
         select **Reformat Code with dartfmt**.
-        
-        Android Studio 和 IntelliJ IDEA: 右键单击Dart代码，然后选择 **Reformat Code with dartfmt**
-        
+
+        Android Studio 和 IntelliJ IDEA: 右键单击 Dart 代码，
+        然后选择 **Reformat Code with dartfmt**。
+
       * VS Code: Right-click and select **Format Document**.
-      
-        VS Code: 右键单击并选择 Format Document.、
+
+        VS Code: 右键单击并选择 Format Document。
 
       * Terminal: Run `flutter format <filename>`.
-        
-        Terminal: 运行 `flutter format <filename>`
+
+        Terminal: 运行 `flutter format <filename>`。
 
     {{site.alert.end}}
 
@@ -318,20 +323,20 @@ where the Dart code lives.
     {% endindent %}
 
     {{site.alert.tip}}
-    
+
       The first time you run on a physical device,
       it can take a while to load.
       Afterward, you can use hot reload for quick updates.
       **Save** also performs a hot reload if the app is running.
       When running an app directly from the console using
       `flutter run`, enter `r` to perform hot reload.
-      
+
       第一次真机运行的时候可能会需要更多的等待时间，但是这是值得的，
       因为接下来你就可以使用热重载（hot reload）功能，
       真正的为下次运行时更新的预览**节省**更多时间。
       如果你是在终端窗口里通过 `flutter run` 运行应用的话，
       直接输入 `r` 进行热重载。
-      
+
     {{site.alert.end}}
 
 ### Observations
@@ -354,12 +359,13 @@ where the Dart code lives.
   Flutter 提供了丰富的 Material 风格的 widgets。
   在 `pubspec.yaml` 文件的 `flutter` 部分选择加入
   `uses-material-design: true` 会是一个明智之举，
-  通过这个可以让您使用更多 Material 的特性，比如其预定义好的 [图标][Icons] 集。
+  通过这个可以让您使用更多 Material 的特性，
+  比如其预定义好的 [图标][Icons] 集。
 
 * The app extends `StatelessWidget`, which makes the app itself a
   widget. In Flutter, almost everything is a widget, including
   alignment, padding, and layout.
-  
+
   该应用程序继承了 `StatelessWidget`，这将会使应用本身也成为一个 widget。
   在 Flutter 中，几乎所有都是 widget，
   包括对齐 (alignment)、填充 (padding) 和布局 (layout)。
@@ -388,7 +394,6 @@ where the Dart code lives.
   Center widget 又包含一个 `Text` 子 widget，
   Center widget 可以将其子 widget 树对齐到屏幕中心。
 
-  
 ## Step 2: Use an external package
 
 ## 第二步：使用外部 package
@@ -424,7 +429,7 @@ as well as many other open source packages, on [pub.dev][].
     The `pubspec.yaml` file manages the assets and dependencies
     for a Flutter app. In `pubspec.yaml`, you will see
     that the `english_words` dependency has been added:
-    
+
     `pubspec.yaml` 文件管理着 Flutter 应用程序的
     assets（资源，如图片、package 等）和依赖项。
     你可以看到 `english_words` 这个依赖项已经添加：
@@ -459,14 +464,14 @@ as well as many other open source packages, on [pub.dev][].
     Performing `Pub get` also auto-generates the `pubspec.lock`
     file with a list of all packages pulled into the project and
     their version numbers.
-    
+
     在执行 `Pub get` 命令时会自动生成一个名为 `pubspec.lock` 文件，
     这里包含了你依赖 packages 的名称和版本。
 
  3. In `lib/main.dart`, import the new package:
-    
+
     在 `lib/main.dart` 中引入，如下所示：
-    
+
     <?code-excerpt path-base="codelabs/startup_namer/step2_use_package"?>
     <?code-excerpt "lib/main.dart" title retain="/^import/" replace="/import.*?english.*/[!$&!]/g" indent-by="2"?>
     ```dart
@@ -477,13 +482,13 @@ as well as many other open source packages, on [pub.dev][].
     As you type, Android Studio gives you suggestions for libraries to import.
     It then renders the import string in gray, letting you know that the
     imported library is unused (so far).
-    
+
     在你输入时，Android Studio会为你提供有关库导入的建议。
     然后它将呈现灰色的导入字符串，让你知道导入的库截至目前尚未被使用。
 
  4. Use the English words package to generate the text instead of
     using the string "Hello World":
-    
+
     接下来，我们使用 English words 包生成文本来替换字符串"Hello World"：
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
@@ -520,16 +525,16 @@ as well as many other open source packages, on [pub.dev][].
     ```
 
     {{site.alert.note}}
-    
+
       "Pascal case" (also known as "upper camel case"),
       means that each word in the string, including the first one,
       begins with an uppercase letter. So, "uppercamelcase" becomes
       "UpperCamelCase".
-      
+
       「大驼峰式命名法」也称为 upper camel case 或 Pascal case，
       表示字符串中的每个单词（包括第一个单词）都以大写字母开头。
       所以，uppercamelcase 会变成 UpperCamelCase。
-      
+
     {{site.alert.end}}
 
  5. If the app is running, [hot reload][]
@@ -541,8 +546,11 @@ as well as many other open source packages, on [pub.dev][].
     or when toggling the Platform in Flutter Inspector.
 
     如果应用程序正在运行，请使用热重载按钮 <i class="material-icons align-bottom">offline_bolt</i>
-    更新正在运行的应用程序。每次单击热重载或保存项目时，都会在正在运行的应用程序中随机选择不同的单词对。
-    这是因为单词对是在 build 方法内部生成的。每次 MaterialApp 需要渲染时或者在 Flutter Inspector 中切换平台时 build 都会运行。
+    更新正在运行的应用程序。每次单击热重载或保存项目时，
+    都会在正在运行的应用程序中随机选择不同的单词对。
+    这是因为单词对是在 build 方法内部生成的。
+    每次 `MaterialApp` 需要渲染时或者在 Flutter Inspector
+    中切换平台时 build 都会运行。
 
     {% indent %}
       {% include docs/ios-windows-figure-pair.md image="step2.png" alt="App at completion of second step" %}
@@ -576,7 +584,7 @@ If needed, use the code at the following links to get back on track.
 State<em>less</em> widgets are immutable, meaning that their
 properties can’t change&mdash;all values are final.
 
-State<em>less</em> widgets 是不可变的，这意味着它们的属性不能改变
+**无** 状态的 widgets 是不可变的，这意味着它们的属性不能改变
 —— 所有的值都是 final。
 
 State<em>ful</em> widgets maintain state that might change
@@ -586,21 +594,22 @@ that creates an instance of 2) a `State` class. The `StatefulWidget`
 class is, itself, immutable and can be thrown away and regenerated,
 but the `State` class persists over the lifetime of the widget.
 
-State<em>ful</em> widgets 持有的状态可能在 widget 生命周期中发生变化，
-实现一个 stateful widget 至少需要两个类：
-1）一个 StatefulWidget 类；2）一个 State 类，StatefulWidget 类本身是不变的，
-但是 State 类在 widget 生命周期中始终存在。
+**有** 状态的 widgets 也是不可变的，
+但其持有的状态可能在 widget 生命周期中发生变化，
+实现一个有状态的 widget 至少需要两个类：
+1）一个 `StatefulWidget` 类；2）一个 `State` 类，`StatefulWidget` 类本身是不变的，
+但是 `State` 类在 widget 生命周期中始终存在。
 
 In this step, you’ll add a stateful widget, `RandomWords`, which creates
 its `State` class, `_RandomWordsState`. You'll then use `RandomWords` as
 a child inside the existing `MyApp` stateless widget.
 
-在这一步，你将添加一个 stateful widget（有状态的 widget）—— `RandomWords`，
+在这一步，你将添加一个有状态的 widget —— `RandomWords`，
 它会创建自己的状态类 —— `_RandomWordsState`，然后你需要将 `RandomWords`
 内嵌到已有的无状态的 `MyApp` widget。
 
 <ol markdown="1">
-<li markdown="1"> <p markdown="1">Create the boilerplate code for a stateful widget.<br>
+<li markdown="1"><p markdown="1">Create the boilerplate code for a stateful widget.<br>
   In `lib/main.dart`, position your cursor after all of the code,
   enter **Return** a couple times to start on a fresh line.
   In your IDE, start typing `stful`.
@@ -731,9 +740,8 @@ class _RandomWordsState extends State<RandomWords> {
 
   如果在热重载时看到需要您重启应用程序的警告，请考虑重新启动。
   该警告可能是误报，但重新启动您的应用程序可确保您的更改真实反映在应用程序的 UI 中。
-  
-{{site.alert.end}}
 
+{{site.alert.end}}
 
 ### Problems?
 {:.no_toc}
@@ -801,7 +809,7 @@ lazily, on demand.
     once for the ListTile, and once for the Divider.
     This model allows the suggested list to continue growing
     as the user scrolls.
-    
+
     `ListView` 类提供了一个名为 `itemBuilder` 的 builder 属性，这是一个工厂匿名回调函数，
     接受两个参数 `BuildContext` 和行迭代器 `i`。迭代器从 0 开始，每调用一次该函数 `i` 就会自增，
     每次建议的单词对都会让其递增两次，一次是 ListTile，另一次是 Divider。
@@ -833,40 +841,40 @@ lazily, on demand.
     ```
 
     {:.numbered-code-notes}
-    
+
      1. The `itemBuilder` callback is called once per suggested word pairing,
         and places each suggestion into a `ListTile` row. For even rows, the
         function adds a `ListTile` row for the word pairing. For odd rows, the
         function adds a `Divider` widget to visually separate the entries. Note
         that the divider might be difficult to see on smaller devices.
-        
+
         对于每个建议的单词对都会调用一次 `itemBuilder`，然后将单词对添加到 `ListTile` 行中。
         在偶数行，该函数会为单词对添加一个 `ListTile` row，
         在奇数行，该函数会添加一个分割线的 widget，来分隔相邻的词对。
-        注意，在小屏幕上，分割线看起来可能比较吃力。
-        
+        注意，在小屏幕上，分割线可能较难辨别。
+
      2. Add a one-pixel-high divider widget before each row in the `ListView`.
-     
+
         在 `ListView` 里的每一行之前，添加一个 1 像素高的分隔线 widget。
-     
+
      3. The expression `i ~/ 2` divides `i` by 2 and returns an integer result.
         For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2. This calculates the
         actual number of word pairings in the `ListView`, minus the divider
         widgets.
-        
+
         语法 `i ~/ 2` 表示 `i` 除以 2，但返回值是整型（向下取整），
         比如 i 为：1, 2, 3, 4, 5 时，结果为 0, 1, 1, 2, 2，
         这个可以计算出 `ListView` 中减去分隔线后的实际单词对数量。
-        
+
      4. If you've reached the end of the available word pairings,
         then generate 10 more and add them to the suggestions list.
-        
+
         如果是建议列表中最后一个单词对，接着再生成 10 个单词对，然后添加到建议列表。
 
     The `ListView.builder` widget creates a `ListTile` once per
     word pair. This function displays each new pair in a `ListTile`,
     which allows you to make the rows more attractive in the next step.
-    
+
     对于每一个单词对，`_buildSuggestions()` 都会调用一次 `_buildRow()`。
     这个函数在 `ListTile` 中显示每个新词对，
     这使你在下一步中可以生成更漂亮的显示行，详见本 codelab 的第二部分。
@@ -1044,17 +1052,17 @@ iOS、Android、Windows 和 Web 平台的 Flutter 应用！
 同时学习了如下内容：
 
 * Created a Flutter app from the ground up.
-  
+
   从零开始创建了一个 Flutter 应用；
 
 * Written Dart code.
 
   编写 Dart 代码；
-  
+
 * Leveraged an external, third-party library.
-  
+
   使用外部的第三方库（package）；
-  
+
 * Used hot reload for a faster development cycle.
 
   在开发过程中试用了热重载 (hot reload)；

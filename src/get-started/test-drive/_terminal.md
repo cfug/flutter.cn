@@ -2,7 +2,7 @@
 
 ## Create the app  {#create-app}
 
-## 创建应用程序
+## 创建应用程序 {#create-app}
 
 Use the `flutter create` command to create a new project:
 
@@ -17,6 +17,9 @@ It is also possible to pass other arguments to `flutter create`,
 such as the project name (*pubspec.yml*), the organization name,
 or to specify the programming language used for the native platform:
 
+你可以在运行 `flutter create` 时传递其他参数，例如项目名 (**pubspec.yaml**)、
+组织名或者指定原生平台使用的语言：
+
 ```terminal
 $ flutter create --project-name myapp --org dev.flutter --android-language java --ios-language objc myapp
 $ cd myapp
@@ -26,7 +29,7 @@ The command creates a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].
 
 该命令会创建一个名为 `myapp`，里面包含一个简单的示例程序，
-里面用到了 [Material 组件][Material Components]
+里面用到了 [Material 组件][Material Components]。
 
 {% include_relative _main-code-note.md %}
 

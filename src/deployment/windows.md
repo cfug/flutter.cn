@@ -38,7 +38,7 @@ required rights to the name exist. Once the name is reserved, the application
 will be provisioned for services such as push notifications, and it is possible
 to start adding add-ons.
 
-首先，有必要预约应用名称，并且确定有使用这个名字的权利。
+首先，有必要预约应用名称，并且确定有使用这个名称的权利。
 一旦名称确定可用，则该应用程序将可以提供推送通知等服务，并且可以开始添加扩展功能。
 
 Options such as pricing, availability, age ratings, and category have to be 

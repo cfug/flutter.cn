@@ -131,7 +131,7 @@ contained in the package) can be configured using the aforementioned package.
 For publishing, Codemagic uses the [Partner Center submission API][partnercenterapi]; thus,
 Codemagic requires [associating the Azure Active Directory and Partner Center accounts][azureadassociation].
 
-对于发布应用来说，Codemagic 使用 [合作伙伴中心提交API][partnercenterapi]；因此，Codemagic 需要 [关联 Azure Active Directory 和合作伙伴中心账户][azureadassociation]。
+对于发布应用来说，Codemagic 使用 [合作伙伴中心提交 API][partnercenterapi]；因此，Codemagic 需要 [关联 Azure Active Directory 和合作伙伴中心账户][azureadassociation]。
 
 ## Updating the app's version number
 ## 更新应用程序的版本号
@@ -204,7 +204,7 @@ package locally first is recommended.
 [Windows App Certification Kit][windowsappcertification] is a tool that is 
 included in the Windows Software Development Kit (SDK).
 
-[Windows应用认证工具包][windowsappcertification] 是一个包含在 Windows 软件开发工具包（SDK）中的工具。
+[Windows 应用认证工具包][windowsappcertification] 是一个包含在 Windows 软件开发工具包（SDK）中的工具。
 
 To validate the application:
 

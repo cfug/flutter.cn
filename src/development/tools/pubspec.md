@@ -12,7 +12,7 @@ description: "Describes the Flutter-only fields in the pubspec file."
 
   本页主要是针对编写 Flutter 应用程序的人。
   如果你写包或插件，（也许你想创建一个联合插件），
-  你应该查看[开发包和插件][]页面。
+  你应该查看 [开发包和插件][Developing packages and plugins] 页面。
 
 {{site.alert.end}}
 

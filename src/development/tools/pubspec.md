@@ -78,7 +78,7 @@ equivalent button in your IDE), it creates
 a pubspec for a basic Flutter app.
 
 当你用 `flutter create` 命令创建一个新项目时
-（或通过使用你的IDE中的相应按钮），
+（或通过使用你的 IDE 中的相应按钮），
 它会为一个基本的 Flutter 应用程序创建一个 pubspec。
 
 Here is an example of a Flutter project pubspec file.
@@ -140,7 +140,7 @@ Common types of assets include static data
 icons, and images (JPEG, WebP, GIF,
 animated WebP/GIF, PNG, BMP, and WBMP).
 
-常见的资产类型包括静态数据（例如，JSON文件）、配置文件、
+常见的资产类型包括静态数据（例如，JSON 文件）、配置文件、
 图标和图像（JPEG、WebP、GIF、动画 WebP/GIF、PNG、BMP 和 WBMP）。
 
 Besides listing the images that are included in the
@@ -179,7 +179,7 @@ see the [Use a custom font][] and
 [Export fonts from a package][] recipes in the
 [Flutter cookbook][].
 
-关于使用字体的例子，请参见 [Flutter 实用教程][Flutter cookbook] 中的 
+关于使用字体的例子，请参见 [Flutter 实用教程][Flutter cookbook] 中的
 [使用自定义字体][Use a custom font] 和 [从包中导出字体][Export fonts from a package] 教程。
 
 [Export fonts from a package]: {{site.url}}/cookbook/design/package-fonts

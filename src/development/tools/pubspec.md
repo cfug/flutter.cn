@@ -4,6 +4,7 @@ description: "Describes the Flutter-only fields in the pubspec file."
 ---
 
 {{site.alert.note}}
+
   This page is primarily aimed at folks who write
   Flutter apps. If you write packages or plugins, 
   (perhaps you want to create a federated plugin),
@@ -11,7 +12,7 @@ description: "Describes the Flutter-only fields in the pubspec file."
   [Developing packages and plugins][] page.
 
   本页主要是针对编写 Flutter 应用程序的人。
-  如果你写包或插件，（也许你想创建一个联合插件），
+  如果你写 packages 或插件，（也许你想创建一个联合插件），
   你应该查看 [开发包和插件][Developing packages and plugins] 页面。
 
 {{site.alert.end}}
@@ -43,8 +44,8 @@ testing or mocking packages), or particular
 constraints on the version of the Flutter SDK. 
 
 pubspec 文件指定了项目所需的依赖，
-如特定的包（及其版本）、字体或图像文件。
-它还指定了其他配置，如对开发者包的依赖（如测试或模拟包），
+如特定的 packages（及其版本）、字体或图像文件。
+它还指定了其他配置，如对开发者 packages 的依赖（如测试或模拟 packages），
 或对 Flutter SDK 版本的特殊限制。
 
 Fields common to both Dart and Flutter projects
@@ -57,6 +58,7 @@ Dart 和 Flutter 项目共有的字段在
 本页列出了 **Flutter 特定的** 字段 只对 Flutter 项目有效。
 
 {{site.alert.note}}
+
   The first time you build your project, it
   creates a `pubspec.lock` file that contains
   specific versions of the included packages.
@@ -64,7 +66,7 @@ Dart 和 Flutter 项目共有的字段在
   the next time the project is built.
 
   在你第一次构建你的项目时，它会创建一个 `pubspec.lock` 文件，
-  其中包含了所导入软件包的特定版本。
+  其中包含了所导入 packages 的特定版本。
   这可以确保你在下次构建项目时得到相同的版本。
 
 {{site.alert.end}}
@@ -140,8 +142,9 @@ Common types of assets include static data
 icons, and images (JPEG, WebP, GIF,
 animated WebP/GIF, PNG, BMP, and WBMP).
 
-常见的资产类型包括静态数据（例如，JSON 文件）、配置文件、
-图标和图像（JPEG、WebP、GIF、动画 WebP/GIF、PNG、BMP 和 WBMP）。
+常见的资产类型包括静态数据（例如，JSON 文件）、
+配置文件、图标和图像（JPEG、WebP、GIF、
+动画 WebP/GIF、PNG、BMP 和 WBMP）。
 
 Besides listing the images that are included in the
 app package, an image asset can also refer to one or more
@@ -153,9 +156,11 @@ dependencies, see the
 [asset images in package dependencies][]
 section in the same page.
 
-除了列出应用包中包含的图片，一个图片资产还可以引用一个或多个特定分辨率的 「变体」。
+除了列出应用 package 中包含的图片，
+一个图片资产还可以引用一个或多个特定分辨率的 「变体」。
 欲了解更多信息，请参阅 [资产和图像][Assets and images] 页面的 [分辨率相关][resolution aware] 部分。
-关于从包的依赖关系中添加资产的信息，见同一页的 [包依赖关系中的资产图像][asset images in package dependencies] 部分。
+关于从 package 的依赖关系中添加资产的信息，
+见同一页的 [package 依赖关系中的资产图像][asset images in package dependencies] 部分。
 
 [Assets and images]: {{site.url}}/development/ui/assets-and-images
 [asset images in package dependencies]: {{site.url}}/development/ui/assets-and-images#from-packages
@@ -171,7 +176,8 @@ each entry in the fonts section should have a
 and a `fonts` key with a list specifying the
 asset and other descriptors for the font.
 
-如上例所示，字体部分的每个条目都应该有一个包含字体家族名称的 `family` 键，
+如上例所示，字体部分的每个条目都应该有一个
+包含字体家族名称的 `family` 键，
 以及一个包含指定字体的资产和其他描述符的 `fonts` 键。
 
 For examples of using fonts
@@ -180,7 +186,7 @@ see the [Use a custom font][] and
 [Flutter cookbook][].
 
 关于使用字体的例子，请参见 [Flutter 实用教程][Flutter cookbook] 中的
-[使用自定义字体][Use a custom font] 和 [从包中导出字体][Export fonts from a package] 教程。
+[使用自定义字体][Use a custom font] 和 [从 package 中导出字体][Export fonts from a package] 教程。
 
 [Export fonts from a package]: {{site.url}}/cookbook/design/package-fonts
 [Flutter cookbook]: {{site.url}}/cookbook
@@ -193,7 +199,7 @@ see the [Use a custom font][] and
 For more information on packages, plugins,
 and pubspec files, see the following:
 
-要查看更多有关包、插件和 pubspec 的信息，
+要查看更多有关 packages、插件和 pubspec 的信息，
 请参考下面文档：
 
 * [Creating packages][] on dart.dev

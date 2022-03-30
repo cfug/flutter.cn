@@ -30,7 +30,7 @@ that _white space (tabs v spaces) matters_.
 当您创建一个新的 Flutter 项目时，会生成一个基本的 pubspec。
 它位于项目的根目录，包含 Dart 和 Flutter 工具需要了解的项目元数据。
 pubspec 是用 [YAML][] 写的，它具有可读性，
-但要注意 _缩进符号（制表符和空格）很重要_。
+但要注意 **缩进符号（制表符和空格）很重要**。
 
 [YAML]: https://yaml.org/
 
@@ -54,7 +54,7 @@ that are only valid for a Flutter project.
 
 Dart 和 Flutter 项目共有的字段在
 [dart.dev][] 的 [pubspec 文件][the pubspec file] 中描述。
-本页列出了 _Flutter特定的_ 字段 只对 Flutter 项目有效。
+本页列出了 **Flutter 特定的** 字段 只对 Flutter 项目有效。
 
 {{site.alert.note}}
   The first time you build your project, it

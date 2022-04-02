@@ -34,7 +34,7 @@ your development environment must meet these minimum requirements:
 - **Tools**: Flutter uses `git` for installation and upgrade. We recommend
   installing [Xcode][], which includes `git`, but you can also 
   [install `git` separately][]. 
-  
+
   **工具**：Flutter 使用 `git` 进行安装和升级，我们建议您安装包含了 `git` 的 Xcode，
   或者您也可以 [单独安装 `git`][install `git` separately]。
 

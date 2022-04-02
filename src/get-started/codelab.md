@@ -46,11 +46,7 @@ check out the following workshop:
 <img src="/assets/images/docs/get-started/startup-namer-part-1.gif" alt="The app that you'll be building" class='site-image-right'>
 
 {%- comment %}
-
   Code highlights in this page are green, to match diff additions.
-
-  页面中的代码高亮是绿色的，用于展示 diff 的改动。
-
 {% endcomment -%}
 <style>pre .highlight { background-color: #dfd; }</style>
 

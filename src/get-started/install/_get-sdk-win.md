@@ -14,10 +14,11 @@
 
     要查看其他发行通道和以往的版本，请参阅
     [SDK 版本列表][SDK releases] 页面。
+
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
     (for example, `C:\Users\<your-user-name>\Documents`).
-    
+
     将压缩包解压，然后把其中的 `flutter` 目录整个放在
     你想放置 Flutter SDK 的路径中（例如 `C:\src\flutter`）。
 
@@ -138,10 +139,10 @@ verify that you’ve set everything up correctly.
   If `flutter doctor` returns that either the Flutter plugin
   or Dart plugin of Android Studio are not installed, move
   on to [Set up an editor][] to resolve this issue.
-  
+
   如果 `flutter doctor` 提示 Android Studio 的
-  Flutter 或者 Dart 插件尚未安装，请移步文档 [编辑器设定][Set up an editor]
-  查阅如何解决这个问题。
+  Flutter 或者 Dart 插件尚未安装，请移步文档
+  [编辑器设定][Set up an editor] 查阅如何解决这个问题。
 
 {{site.alert.end}}
 

@@ -12,8 +12,8 @@ description: "Describes the Flutter-only fields in the pubspec file."
   [Developing packages and plugins][] page.
 
   本页主要是针对编写 Flutter 应用程序的人。
-  如果你写 packages 或插件，（也许你想创建一个联合插件），
-  你应该查看 [开发包和插件][Developing packages and plugins] 页面。
+  如果你写 package 或插件，（也许你想创建一个联合插件），
+  你应该查看 [开发 package 和插件][Developing packages and plugins] 页面。
 
 {{site.alert.end}}
 
@@ -44,8 +44,8 @@ testing or mocking packages), or particular
 constraints on the version of the Flutter SDK. 
 
 pubspec 文件指定了项目所需的依赖，
-如特定的 packages（及其版本）、字体或图像文件。
-它还指定了其他配置，如对开发者 packages 的依赖（如测试或模拟 packages），
+如特定的 package（及其版本）、字体或图像文件。
+它还指定了其他配置，如对开发者 package 的依赖（如测试或模拟 package），
 或对 Flutter SDK 版本的特殊限制。
 
 Fields common to both Dart and Flutter projects
@@ -66,7 +66,7 @@ Dart 和 Flutter 项目共有的字段在
   the next time the project is built.
 
   在你第一次构建你的项目时，它会创建一个 `pubspec.lock` 文件，
-  其中包含了所导入 packages 的特定版本。
+  其中包含了所导入 package 的特定版本。
   这可以确保你在下次构建项目时得到相同的版本。
 
 {{site.alert.end}}

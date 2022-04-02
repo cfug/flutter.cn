@@ -199,24 +199,24 @@ see the [Use a custom font][] and
 For more information on packages, plugins,
 and pubspec files, see the following:
 
-要查看更多有关 packages、插件和 pubspec 的信息，
+要查看更多有关 package、插件和 pubspec 的信息，
 请参考下面文档：
 
 * [Creating packages][] on dart.dev
 
-  [创建包][Creating packages] on dart.dev
+  [创建 package][Creating packages] on dart.dev
 
 * [Glossary of package terms][] on dart.dev
 
-  [包的术语表][Glossary of package terms] on dart.dev
+  [package 的术语表][Glossary of package terms] on dart.dev
   
 * [Package dependencies][] on dart.dev
   
-  [包的依赖][Package dependencies] on dart.dev
+  [package 的依赖][Package dependencies] on dart.dev
   
 * [Using packages][]
   
-  [使用包][Using packages]
+  [使用 package][Using packages]
 
 * [What not to commit][] on dart.dev
 

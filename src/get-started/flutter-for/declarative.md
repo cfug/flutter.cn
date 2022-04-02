@@ -27,9 +27,8 @@ setters when the UI changes.
 
 从 Win32 到 Web 再到 Android 和 iOS，
 框架通常使用一种命令式的编程风格来完成 UI 编程。
-这可能是你最熟悉的风格 &mdash; 
-你手动构建一个全功能的 UI 实例，
-比如一个 UIView 或其他类似的，
+这可能是你最熟悉的风格&mdash;&mdash;手动构建一个全功能的 UI 实例，
+比如一个 UIView 或其他类似的内容，
 在随后 UI 发生变化时，使用方法或 Setter 修改它。
 
 In order to lighten the burden on developers from having to program how to
@@ -42,9 +41,10 @@ Flutter 相反，让开发人员描述当前的 UI 状态，并将转换交给�
 
 This, however, requires a slight shift in thinking for how to manipulate UI.
 
-然而，这需要稍微改变下如何操作 UI 的思考方式
+然而，这需要稍微改变下如何操作 UI 的思考方式。
 
 ## How to change UI in a declarative framework
+
 ## 如何在命令式框架中修改 UI
 
 Consider a simplified example below:
@@ -81,10 +81,9 @@ a widget triggers a rebuild on itself (most commonly by calling `setState()`
 on StatefulWidgets in Flutter) and constructs a new Widget subtree.
 
 在声明式风格中，视图配置（如 Flutter 的 Widget ）是不可变的，
-它只是轻量的“蓝图”。要改变 UI，widget 会在自身上触发重建
-（在 Flutter 中最常见的方法是在 StatefulWidgets 组件上调用 `setState()`）
+它只是轻量的「蓝图」。要改变 UI，widget 会在自身上触发重建
+（在 Flutter 中最常见的方法是在 `StatefulWidget` 上调用 `setState()`）
 并构造一个新的 Widget 子树。
-
 
 <!-- skip -->
 ```dart
@@ -105,7 +104,7 @@ The Flutter framework handles the rest.
 
 在这里，当用户界面发生变化时，Flutter 不会修改旧的实例 `b`，
 而是构造新的 widget 实例。
-框架使用 RenderObjects 管理传统 UI 对象的职责（比如维护布局的状态）。
-RenderObjects 在帧之间保持不变，
-Flutter 的轻量级 widget 通知框架在状态之间修改 RenderObjects，
+框架使用 `RenderObject` 管理传统 UI 对象的职责（比如维护布局的状态）。
+`RenderObject` 在帧之间保持不变，
+Flutter 的轻量级 widget 通知框架在状态之间修改 `RenderObject`，
 Flutter 框架则处理其余部分。

@@ -50,6 +50,7 @@ for the subsequent submissions.
 这些选项在后续提交时将自动保留。
 
 ## Packaging and deployment
+
 ## 打包并部署
 
 In order to publish an application to Microsoft Store,
@@ -61,6 +62,7 @@ it first has to be packaged. The valid formats are **.msix**, **.msixbundle**,
 **.appxbundle**、**.appxupload** 和 **.xap**。
 
 ### Manual packaging and deployment
+
 ### 手动打包和部署
 
 Check out [MSIX packaging][msix packaging] to learn about packaging 
@@ -101,6 +103,7 @@ and uploading the created application package.
 这个步骤可以通过创建新的提交来完成，导航到 **Packages**，并上传创建的应用程序包。
 
 ### Continuous deployment
+
 ### 持续部署
 
 In addition to manually creating and deploying the package, 
@@ -113,12 +116,12 @@ the application to the Microsoft Store for the first time.
 
 #### Codemagic CI/CD
 
-#### Codemagic 持续集成/持续交付
+#### Codemagic 持续集成/持续部署 (CI/CD) 
 
 [Codemagic CI/CD][codemagic] uses the [`msix` pub package][msix package] to package 
 Flutter Windows Desktop applications. 
 
-[Codemagic 持续集成/持续交付][codemagic]
+[Codemagic 持续集成/持续部署 (CI/CD)][codemagic]
 使用 [Pub 上的 `msix` package][msix package]
 来打包 Flutter Windows 桌面应用程序。
 
@@ -138,6 +141,7 @@ Codemagic requires [associating the Azure Active Directory and Partner Center ac
 因此，Codemagic 需要 [关联 Azure Active Directory 和合作伙伴中心账户][azureadassociation]。
 
 ## Updating the app's version number
+
 ## 更新应用程序的版本号
 
 With Flutter Windows Desktop, the version number must be set during the 
@@ -160,6 +164,7 @@ releases. Take note to follow Microsoft's [versioning guidelines][windowspackage
 请注意遵循微软的 [版本指南][windowspackageversioning]。
 
 ## Add app icons
+
 ## 添加应用图标
 
 To update the icon of a Flutter Windows Desktop application before packaging:
@@ -199,6 +204,7 @@ All uploaded images are retained for subsequent submissions.
 所有上传的图片将被保留，以便于以后提交使用。
 
 ## Validating the application package
+
 ## 验证应用程序包
 
 Before publication to the Microsoft Store, validating the application

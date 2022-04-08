@@ -206,23 +206,23 @@ and pubspec files, see the following:
 
 * [Creating packages][] on dart.dev
 
-  [创建 package][Creating packages] on dart.dev
+  dart.dev 上介绍的 [创建 package][Creating packages]
 
 * [Glossary of package terms][] on dart.dev
 
-  [package 的术语表][Glossary of package terms] on dart.dev
+  dart.dev 上介绍的 [package 的术语表][Glossary of package terms]
   
 * [Package dependencies][] on dart.dev
   
-  [package 的依赖][Package dependencies] on dart.dev
+  dart.dev 上介绍的 [package 的依赖][Package dependencies]
   
 * [Using packages][]
   
-  [使用 package][Using packages]
+  dart.dev 上介绍的 [使用 package][Using packages]
 
 * [What not to commit][] on dart.dev
 
-  [避免提交的内容][What not to commit] on dart.dev
+  dart.dev 上介绍的 [避免提交的内容][What not to commit]
 
 [Creating packages]: {{site.dart-site}}/guides/libraries/create-library-packages
 [Developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages

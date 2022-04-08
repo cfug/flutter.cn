@@ -116,7 +116,7 @@ the application to the Microsoft Store for the first time.
 
 #### Codemagic CI/CD
 
-#### Codemagic 持续集成/持续部署 (CI/CD) 
+#### Codemagic 持续集成/持续部署 (CI/CD)
 
 [Codemagic CI/CD][codemagic] uses the [`msix` pub package][msix package] to package 
 Flutter Windows Desktop applications. 

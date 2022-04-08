@@ -12,8 +12,10 @@ existing RN knowledge to build mobile apps with Flutter. If you understand
 the fundamentals of the RN framework then you can use this document as a
 way to get started learning Flutter development.
 
-本文面向希望基于现有的 React Native 的知识结构使用 Flutter 开发移动端应用的开发者。
-如果你已经对 RN 的框架有所了解，那么你可以通过这个文档入门 Flutter 开发。
+本文面向希望基于现有的 React Native（下文统称 RN）的知识结构使用
+Flutter 开发移动端应用的开发者。
+如果你已经对 RN 的框架有所了解，
+那么你可以通过这个文档入门 Flutter 开发。
 
 This document can be used as a cookbook by jumping around and finding
 questions that are most relevant to your needs.
@@ -29,15 +31,15 @@ transpiles to native widgets, Flutter compiles all the way to native code.
 Flutter controls each pixel on the screen, which avoids performance problems
 caused by the need for a JavaScript bridge.
 
-和 React Native 一样，Flutter 使用 reactive 风格的视图。
+与 RN 一样，Flutter 使用响应式风格的界面编写方式。
 然而，RN 需要被转译为本地对应的 widget，
-而 Flutter 是直接编译成本地原生代码。
+而 Flutter 是直接编译成原生代码运行。
 Flutter 可以控制屏幕上的每一个像素，
-如此可以避免由于使用 JavaScript Bridge 导致的性能问题。
+由此可以避免使用 JavaScript Bridge 导致的性能问题。
 
 Dart is an easy language to learn and offers the following features:
 
-Dart 学习起来非常简单而且有如下特性：
+Dart 学习起来非常简单，包含如下特性：
 
 * Provides an open-source, scalable programming language for building web,
   server, and mobile apps.
@@ -127,9 +129,10 @@ the variable’s static type. Although types are mandatory,
 some type annotations are optional because
 Dart performs type inference.
 
-Dart 是类型安全的，
-它结合静态类型检查和运行时检查来保证变量的值总是和变量的静态类型相匹配。
-虽然类型是语法要求，有些类型标注也并不是必须要填的，因为 Dart 使用类型推断。
+Dart 是类型安全的，它会结合静态类型检查和运行时检查，
+来保证变量的值总是和变量的静态类型相匹配。
+虽然类型是语法要求，有些类型标注也并不是必须要填的，
+因为 Dart 使用类型推断。
 
 #### Creating and assigning variables
 
@@ -142,7 +145,7 @@ In JavaScript, variables cannot be typed.
 In [Dart][], variables must either be explicitly
 typed or the type system must infer the proper type automatically.
 
-在 [Dart][] 中，变量要么被显式定义类型，要么系统会自动判断变量的类型。
+在 [Dart][] 中，变量可以显式定义类型，或者类型系统自动判断变量的类型。
 
 ```js
 // JavaScript
@@ -171,14 +174,14 @@ For more information, see [Dart's Type System][].
 
 In JavaScript, uninitialized variables are `undefined`.
 
-在 JavaScript 中， 未初始化的变量是 `undefined`。
+在 JavaScript 中，未初始化的变量是 `undefined`。
 
 In Dart, uninitialized variables have an initial value of `null`.
 Because numbers are objects in Dart, even uninitialized variables with
 numeric types have the value `null`.
 
-在 Dart 中，未初始化的变量会有一个初始值 `null`。因为数字在 Dart 是对象，
-甚至未初始化的数字类型的变量也会是 `null`。
+在 Dart 中，未初始化的变量会有一个初始值 `null`。
+因为数字在 Dart 是对象，甚至未初始化的数字类型的变量也会是 `null`。
 
 ```js
 // JavaScript
@@ -195,7 +198,6 @@ int x; // == null
 Try it out in [DartPad][DartPadD].
 
 可以在这里查看效果 [DartPad][DartPadD]。
-
 
 For more information, see the documentation on
 [variables][].
@@ -278,8 +280,7 @@ Try it out in [DartPad][DartPadF].
 For more information, see the documentation on
 [functions][].
 
-如果想了解更多相关信息，请转向该页面
-[functions][]。
+如果想了解更多相关信息，可以参考 [函数][functions] 介绍。
 
 ### Asynchronous programming
 
@@ -291,8 +292,8 @@ Like JavaScript, Dart supports single-threaded execution. In JavaScript,
 the Promise object represents the eventual completion (or failure)
 of an asynchronous operation and its resulting value.
 
-和 JavaScript 类似，Dart 支持单线程。在 JavaScript 中，
-Promise 对象代表异步操作的完成或者失败。
+Dart 与 JavaScript 类似，同样是单线程模型。
+在 JavaScript 中，Promise 对象代表异步操作的完成或者失败。
 
 Dart uses [`Future`][] objects to handle this.
 
@@ -359,7 +360,7 @@ For more information, see the documentation on
 
 The `async` function declaration defines an asynchronous function.
 
-`async` 函数声明定义了一个异步函数。
+`async` 函数声明定义了一个异步执行的函数。
 
 In JavaScript, the `async` function returns a `Promise`.
 The `await` operator is used to wait for a `Promise`.
@@ -441,7 +442,7 @@ For more information, see the documentation for [async and await][].
 To create an app using React Native,
 you would run `create-react-native-app` from the command line.
 
-如果要使用 React Native 创建应用，
+如果要创建 RN 应用，
 你需要在命令行里运行 `create-react-native-app`。
 
 ```terminal
@@ -450,7 +451,7 @@ $ create-react-native-app <projectname>
 
 To create an app in Flutter, do one of the following:
 
-要在 Flutter 中创建应用，完成下面其中一项即可：
+要创建 Flutter 应用，完成下面其中一项即可：
 
 * Use an IDE with the Flutter and Dart plugins installed.
 
@@ -482,11 +483,11 @@ need to run a sample app on both Android and iOS devices.
 In React Native, you would run `npm run` or `yarn run` from the project
 directory.
 
-在 React Native, 你可以在项目文件夹中运行 `npm run` 或者 `yarn run`。
+你可以在 RN 的项目文件夹中运行 `npm run` 或者 `yarn run` 以运行应用。
 
 You can run Flutter apps in a couple of ways:
 
-你可以通过如下几个途径运行 Flutter 应用程序：
+而想运行 Flutter 应用，你可以通过如下几个途径进行操作：
 
 * Use the "run" option in an IDE with the Flutter and Dart plugins.
 
@@ -513,7 +514,7 @@ documentation.
 
 In React Native, you need to import each required component.
 
-在 React Native 中，你需要导入每一个所需的组件。
+在 RN 中，你需要导入每一个所需的组件。
 
 ```js
 //React Native
@@ -527,8 +528,9 @@ import the Cupertino library. To use a more basic widget set,
 import the Widgets library.
 Or, you can write your own widget library and import that.
 
-在 Flutter 中，如果要使用 Material Design 库里的 widget，
-导入 `material.dart` 包。如果要使用 iOS 风格的 widget，导入 Cupertino 库。
+在 Flutter 中，
+如果要使用 Material Design 库里的 widget，导入 `material.dart` package。
+如果要使用 iOS 风格的 widget，导入 Cupertino 库。
 如果要使用更加基本的 widget，导入 Widgets 库。
 或者，你可以实现自己的 widget 库并导入。
 
@@ -556,7 +558,7 @@ For more information, see the [Flutter Widget Catalog][].
 In React Native, the `HelloWorldApp` class extends `React.Component` and
 implements the render method by returning a view component.
 
-在 React Native，`HelloWorldApp` 继承自 `React.Component` 
+在 RN 里，`HelloWorldApp` 继承自 `React.Component` 
 并且通过返回 view 对象实现了 render 方法。
 
 ```js
@@ -590,8 +592,8 @@ The `Center` widget becomes the root of the widget tree and has one child,
 the `Text` widget.
 
 在 Flutter 中，你可以使用核心 widget 库中的
-`Center` 和 `Text` widget 创建对应的 "Hello world!" 应用程序。
-`Center` widget 是 widget 树中的根，而且只有 `Text` 一个子 widget。
+`Center` 和 `Text` widget 创建对应的「Hello world!」应用程序。
+`Center` widget 是 widget 树中的根节点，而且只有 `Text` 一个子 widget。
 
 <!-- skip -->
 ```dart
@@ -623,7 +625,8 @@ take advantage of Flutter's rich widget libraries to create a modern, polished
 app.
 
 现在大家已经明白了最基本的 Flutter 应用，
-接下来会告诉大家如何利用 Flutter 丰富的 widget 库来创建主流的华丽的应用程序。
+接下来会告诉大家如何利用 Flutter 丰富的
+widget 库来创建主流的华丽的应用程序。
 
 ### How do I use widgets and nest them to form a widget tree?
 
@@ -639,34 +642,35 @@ parent widget and inherits properties from its parent. Even the application
 object itself is a widget. There is no separate “application” object. Instead,
 the root widget serves this role.
 
-widget 是构建应用软件用户界面的基本元素。你可以将 widget 按照一定的层次组合，
-成为 widget 树。每个 widget 内嵌在父 widget 中，并且继承了父 widget 的属性。
-甚至应用程序本身就是一个 widget。并没有一个独立的应用程序对象。
-反而 root widget 充当了这个角色。
+Widget 是构建应用软件用户界面的基本元素。
+你可以将 widget 按照一定的层次组合，成为 widget 树。
+每个 widget 内嵌在父 widget 中，并且继承了父 widget 的属性，
+甚至应用程序本身就是一个 widget。
+并没有一个独立的应用程序对象。
+反而根 widget 充当了这个角色。
 
 A widget can define:
 
-一个 widget 可以定义：
+一个 widget 可以定义为：
 
 * A structural element—like a button or menu
 
-  一个结构化的元素&mdash;&mdash;类似按钮或者菜单
+  类似按钮或者菜单的结构化元素
 
 * A stylistic element—like a font or color scheme
 
-  一个风格化的元素&mdash;&mdash;类似字体或者颜色方案
+  类似字体或者颜色方案的风格化元素
 
 * An aspect of layout—like padding or alignment
 
-  布局元素&mdash;&mdash;类似填充区或者对齐元素
+  类似填充区或者对齐元素布局元素
 
 The following example shows the "Hello world!" app using widgets from the
 Material library. In this example, the widget tree is nested inside the
 `MaterialApp` root widget.
 
-下面的示例展示了使用 Material 库里 widget 实现的 "Hello world!" 应用程序。
+下面的示例展示了使用 Material 库里 widget 实现的「Hello world!」应用程序。
 在这个示例中，该 widget 树是包含在 `MaterialApp` root widget 里的。
-
 
 <!-- skip -->
 ```dart
@@ -696,8 +700,8 @@ class MyApp extends StatelessWidget {
 The following images show "Hello world!" built from Material Design widgets.
 You get more functionality for free than in the basic "Hello world!" app.
 
-下面的图片为大家展示了通过 Material Design widget 所实现的 "Hello world!" 应用。
-你可以获得比 "Hello world!" 应用更多的功能。
+下面的图片为大家展示了通过 Material Design widget 所实现的「Hello world!」应用。
+你可以获得比「Hello world!」应用更多的功能。
 
 {% include docs/android-ios-figure-pair.md image="react-native/hello-world.png" alt="Hello world app" %}
 
@@ -722,7 +726,7 @@ that stores state data and carries it over
 across tree rebuilds, so it's not lost.
 
 无状态 widget 和有状态 widget 之间的主要区别，
-是有状态 widget 包含一个 State 对象会缓存状态数据，
+是有状态 widget 包含一个 `State` 对象会缓存状态数据，
 并且 widget 树的重建也会携带该数据，因此状态不会丢失。
 
 In simple or basic apps it's easy to nest widgets,
@@ -747,7 +751,7 @@ or return properties and values of the selected elements.
 In the example below, the `CustomCard` class is defined
 and then used inside a parent class.
 
-在 React Native 中，你可以定义一个类来创建一个可复用的组件然后
+在 RN 中，你可以定义一个类来创建一个可复用的组件然后
 使用 `props` 方法来设置或者返回属性或者所选元素的值。
 在下面的示例中，`CustomCard` 类在父类中被定义和调用。
 
@@ -820,7 +824,7 @@ class uses Dart's curly brace syntax `{ }` to indicate named
 [optional parameters][].
 
 在之前的示例，`CustomCard` 类的构造函数使用 Dart 的
-曲括号 `{ }` 来表示 [可选参数][optional parameters]。
+花括号 `{ }` 来表示 [可选参数][optional parameters]。
 
 To require these fields, either remove the curly braces from the constructor, or
 add `@required` to the constructor.
@@ -831,7 +835,7 @@ add `@required` to the constructor.
 The following screenshots show an example of the reusable
 `CustomCard` class.
 
-下面的截图展示了可复用的 CustomCard 类的示例：
+下面的截图展示了可复用的 `CustomCard` 类的示例：
 
 {% include docs/android-ios-figure-pair.md image="react-native/custom-cards.png" alt="Custom cards" class="border" %}
 
@@ -861,7 +865,7 @@ In Flutter, the entry point file is
 `’projectname’/lib/main.dart` and execution
 starts from the `main` function.
 
-在 Flutter 中，入口文件是 `’projectname’/lib/main.dart`
+在 Flutter 中，入口文件是 `{项目目录}/lib/main.dart`
 而程序执行是从 `main` 函数开始的。
 
 ### How are files structured in a Flutter app?
@@ -896,7 +900,7 @@ You can customize it later, but this is where you start.
 
 ```
 ┬
-└ projectname
+└ 项目目录
   ┬
   ├ android      - 包含 Android 相关文件。
   ├ build        - 存储 iOS 和 Android 构建文件。
@@ -910,7 +914,7 @@ You can customize it later, but this is where you start.
                    你从这里开始写 Dart 代码
   ├ test         - 包含自动测试文件。
   └ pubspec.yaml - 包含 Flutter 应用程序的元数据。
-                   这个文件相当于 React Native 里的 package.json 文件。
+                   这个文件相当于 RN 里的 package.json 文件。
 ```
 
 ### Where do I put my resources and assets and how do I use them?
@@ -935,7 +939,7 @@ Flutter 应用程序可以包含下述几种资源类型：
 * Icons and images (JPEG, PNG, GIF, Animated GIF, WebP, Animated WebP, BMP,
   and WBMP)
 
-  图标和图片 (JPEG, PNG, GIF, Animated GIF, WebP, Animated WebP, BMP, and WBMP)
+  图标和图片（JPEG、PNG、GIF、WebP、BMP 和 WBMP）
 
 Flutter uses the `pubspec.yaml` file,
 located at the root of your project, to
@@ -978,12 +982,12 @@ choosing resolution-appropriate images for your app.
 构建进程会查询和这个文件相关的子文件夹路径，
 这些文件也会被包含在 asset bundle 中。
 当你为应用程序选择和屏幕显示分辨率相关的图片时，
-Flutter 会使用 asset variants。
+Flutter 会使用资源变体。
 
 In React Native, you would add a static image by placing the image file in a
 source code directory and referencing it.
 
-在 React Native，你可以在源码文件夹中通过添加文件来
+在 RN 中，你可以在源码文件夹中通过添加文件来
 增加一个静态图片并且在代码中引用它。
 
 ```js
@@ -993,7 +997,8 @@ source code directory and referencing it.
 In Flutter, add a static image to your app using the `AssetImage` class in a
 widget’s build method.
 
-在 Flutter 中，如果要增加静态图片的话就在 widget 的 build 方法中使用 `AssetImage` 类。
+在 Flutter 中，如果要展示静态资源图片，
+在 widget 的 build 方法中使用 `Image.asset` 构造即可。
 
 <!-- skip -->
 ```dart
@@ -1013,7 +1018,7 @@ In React Native, you would specify the `uri` in the
 `source` prop of the `Image` component and also provide the
 size if needed.
 
-在 React Native，你可以在 `Image` 的 `source` 属性中设置 `uri` 和所需的尺寸。
+在 RN 中，你可以在 `Image` 的 `source` 属性中设置 `uri` 和所需的尺寸。
 
 In Flutter, use the `Image.network` constructor to include
 an image from a URL.
@@ -1036,20 +1041,20 @@ Flutter and Dart ecosystems. This allows you to quickly build your app without
 having to develop everything from scratch. Packages that contain
 platform-specific code are known as package plugins.
 
-Flutter 支持使用开发者向 Flutter 和 Dart 生态系统贡献的代码包。
+Flutter 支持使用开发者向 Flutter 和 Dart 生态系统贡献的 package。
 这样可以使大量开发者快速构建应用程序而无需重复造车轮。
-而平台相关的代码包就被称为包插件。
+而平台相关的 package 就被称为插件。
 
 In React Native, you would use `yarn add {package-name}` or
 `npm install --save {package-name}` to install packages
 from the command line.
 
-在 React Native 中，你可以在命令行中运行 `yarn add {package-name}` 
+在 RN 中，你可以在命令行中运行 `yarn add {package-name}` 
 或者 `npm install --save {package-name}` 来安装代码包。
 
 In Flutter, install a package using the following instructions:
 
-在 Flutter 中，安装代码包需要按照如下的步骤：
+在 Flutter 中，安装 package 需要按照如下的步骤：
 
 1. Add the package name and version to the `pubspec.yaml` dependencies section.
 The example below shows how to add the `google_sign_in` Dart package to the
@@ -1078,7 +1083,7 @@ dependencies:
 
 3. Import the package into your app code as shown below:
 
-   向下面代码一样在程序中引用代码包：
+   向下面代码一样在程序中引用 package：
 
 <!-- skip -->
 ```dart
@@ -1088,14 +1093,15 @@ import 'package:google_sign_in/google_sign_in.dart';
 For more information, see [Using Packages][] and
 [Developing Packages & Plugins][].
 
-如果想了解更多相关信息，请参考 [在 Flutter 里使用 Packages][Using Packages] 和
+如果想了解更多相关信息，请参考
+[在 Flutter 里使用 Packages][Using Packages] 和
 [Flutter Packages 的开发和提交][Developing Packages & Plugins]。
 
-You can find many packages shared by Flutter developers in the [Flutter packages][] section of
-the [pub.dev][].
+You can find many packages shared by Flutter developers in the
+[Flutter packages][] section of the [pub.dev][].
 
-你可以找到很多 Flutter 开发者分享的代码包，
-就在 [Flutter packages][] 的 [pub.dev][]。
+你可以在 [Flutter packages][] 的 [pub.dev][]
+找到开发者们分享的 package。
 
 ## Flutter widgets
 
@@ -1137,7 +1143,7 @@ certain way, it’s often helpful to inspect the neighboring widgets.
 
 For more information, see the [Flutter Technical Overview][].
 
-如果想了解更多相关信息，请参考 [技术概览][Flutter Technical Overview]。
+如果想了解更多相关信息，请参考 [Flutter 技术概览][Flutter Technical Overview]。
 
 For more information about the core widgets from the `Widgets` package,
 see
@@ -1160,7 +1166,7 @@ see
 In React Native, `View` is a container that supports layout with `Flexbox`,
 style, touch handling, and accessibility controls.
 
-在 React Native 中， `View` 是支持 `Flexbox` 
+在 RN 中， `View` 是支持 `Flexbox` 
 布局、风格化、触摸事件处理和访问性控制的容器。
 
 In Flutter, you can use the core layout widgets in the `Widgets`
@@ -1183,8 +1189,7 @@ A `List` is a scrollable list of components arranged vertically.
 In React Native, `FlatList` or `SectionList` are used to render simple or
 sectioned lists.
 
-在 React Native 中，`FlatList` 或者 `SectionList`
-用于渲染简单的或者分组的列表。
+在 RN 中，`FlatList` 或者 `SectionList` 用于渲染简单的或者分组的列表。
 
 ```js
 // React Native
@@ -1227,7 +1232,7 @@ To learn how to implement an infinite scrolling list, see the
 [Write Your First Flutter App, Part 1][] codelab.
 
 如果要了解如何实现无限滑动列表，请参考
-[Write Your First Flutter App, Part 1][]
+[编写你的第一个 Flutter 应用 - 第一部分][Write Your First Flutter App, Part 1]
 的 codelab。
 
 ### How do I use a Canvas to draw or paint?
@@ -1236,7 +1241,7 @@ To learn how to implement an infinite scrolling list, see the
 
 In React Native, canvas components aren't present so third party libraries like `react-native-canvas` are used.
 
-在 React Native 中，canvas 组件是不可见的，
+在 RN 中，canvas 组件是不可见的，
 所以需要使用类似 `react-native-canvas` 这样的组件。
 
 ```js
@@ -1272,8 +1277,9 @@ and passes it to `CustomPaint`'s painter property.
 and `shouldRepaint()` methods.
 
 下面的示例代码展示了如何使用 `CustomPaint` 进行绘图。
-它实现了抽象类 CustomPainter，然后将它赋值给 `CustomPainter` 的 painter 属性。
-CustomPainter 子类必须实现 `paint` 和 `shouldRepaint` 方法。
+它实现了抽象类 `CustomPainter`，
+然后将它赋值给 `CustomPainter` 的 painter 属性。
+`CustomPainter` 子类必须实现 `paint` 和 `shouldRepaint` 方法。
 
 <!-- skip -->
 ```dart
@@ -1323,7 +1329,7 @@ to a specific component. For example, you could use the `style` prop on the
 components in a column, you would specify a prop such as:
 `flexDirection: “column”`.
 
-在 React Native 中，大多数布局需要通过向指定的组件传递属性参数进行设置。
+在 RN 中，大多数布局需要通过向指定的组件传递属性参数进行设置。
 比如，你可以使用 `View` 的 `style` 来设置 flexbox 属性。
 如果要整理一列的组件，你可以使用如下的属性设置：`flexDirection: “column”`。
 
@@ -1402,7 +1408,7 @@ For a complete list, see [Layout Widgets][].
 
 In React Native, components can be layered using `absolute` positioning.
 
-在 React Native 中，组件可以通过 `absolute` 划分层次。
+在 RN 中，组件可以通过 `absolute` 划分层次。
 
 Flutter uses the [`Stack`][]
 widget to arrange children widgets in layers.
@@ -1441,8 +1447,10 @@ The previous example uses `Stack` to overlay a Container (that displays its `Tex
 on a translucent black background) on top of a `CircleAvatar`. The Stack offsets
 the text using the alignment property and Alignment coordinates.
 
-上面的示例代码使用 `Stack` 将一个 Container （将 `Text` 显示在一个半透明的黑色背景上）
-覆盖在一个 `CircleAvatar` 上。Stack 使用对齐属性和 Alignment 坐标微调文本。
+上面的示例代码使用 `Stack` 将一个 Container
+（`Text` 显示在一个半透明的黑色背景上）
+覆盖在一个 `CircleAvatar` 上。
+Stack 使用对齐属性和 Alignment 坐标微调文本。
 
 {% include docs/android-ios-figure-pair.md image="react-native/stack.png" alt="Stack" class="border" %}
 
@@ -1461,7 +1469,7 @@ For more information, see the [`Stack`][] class documentation.
 In React Native, inline styling and `stylesheets.create` are used to style
 components.
 
-在 React Native 中，内联风格化和 `stylesheets.create` 可以用于设置组件的风格。
+在 RN 中，内联风格化和 `stylesheets.create` 可以用于设置组件的风格。
 
 ```js
 // React Native
@@ -1488,7 +1496,8 @@ style in multiple places, you can create a
 
 在 Flutter 中， `Text` widget 可以接受 `TextStyle` 作为它的风格化属性。
 如果你想在不同的场合使用相同的文本风格，
-你可以创建一个 [`TextStyle`][] 类，并且在多个 `Text` widget 中使用它。
+你可以创建一个 [`TextStyle`][] 类，
+并且在多个 `Text` widget 中使用它。
 
 <!-- skip -->
 ```dart
@@ -1521,8 +1530,7 @@ Center(
 
 React Native doesn't include support for icons so third party libraries are used.
 
-React Native 并不包含默认图标，所以需要使用第三方库。
-
+RN 并不包含默认图标，所以需要使用第三方库。
 
 In Flutter, importing the Material library also pulls in the
 rich set of [Material icons][] and [colors][].
@@ -1562,7 +1570,8 @@ add a dependency for `cupertino_icons` in your project's
 Flutter 的 [Cupertino (iOS-style)][] package
 为 iOS 设计语言提供高分辨率的 widget。
 要使用 `CupertinoIcons` 字体，
-在项目的 `pubspec.yaml` 文件中添加 `cupertino_icons` 的依赖即可。
+在项目的 `pubspec.yaml` 文件中添加
+`cupertino_icons` 的依赖即可。
 
 ```yaml
 name: my_awesome_application
@@ -1576,9 +1585,11 @@ the theme. Set the theme property in `MaterialApp` to the
 `ThemeData` object. The [`Colors`][] class provides colors
 from the Material Design [color palette][].
 
-要在全局范围内自定义组件的颜色和风格，使用 `ThemeData` 为不同的主题指定默认颜色。
+要在全局范围内自定义组件的颜色和风格，
+使用 `ThemeData` 为不同的主题指定默认颜色。
 在 `MaterialApp` 的主题属性中设置 `ThemeData` 对象。
-[`Colors`][] 类提供 Material Design [color palette][] 中所提供的颜色配置。
+[`Colors`][] 类提供 Material Design [color palette][]
+中所提供的颜色配置。
 
 The following example sets the primary swatch to `blue` and the text
 selection to `red`.
@@ -1933,7 +1944,7 @@ When deciding which approach to use, consider the following principles:
   mode of a checkbox, or the position of a slider, then the state is best managed
   by the parent widget.
 
-  如果状态信息是用户数据，比如 checkbox 是被勾选还是未被勾选，或者滑块的位置，
+  如果状态信息是用户数据，比如复选框是被勾选还是未被勾选，或者滑块的位置，
   那么父 widget 会很好的处理当前 widget 的状态。
 
 * If the state in question is user data,
@@ -1957,9 +1968,9 @@ object, and the framework calls `createState()` to build the widget. In this
 example, `createState()` creates an instance of `_MyStatefulWidgetState`, which
 is implemented in the next best practice.
 
-`MyStatefulWidget` 类管理它自身的状态&mdash;&mdash它继承自 `StatefulWidget`，
-重写了 `createState()` 方法。该方法创建了 State 对象，
-同时框架会调用 `createState()` 方法来构建 widget。
+`MyStatefulWidget` 类管理它自身的状态&mdash;&mdash
+它继承自 `StatefulWidget`，重写了 `createState()` 方法。
+该方法创建了 State 对象，同时框架会调用 `createState()` 方法来构建 widget。
 在这个例子中，`createState()` 方法创建了一个 
 `_MyStatefulWidgetState` 实例。下面的最佳实践中也实现了类似的方法。
 
@@ -2018,7 +2029,7 @@ In React Native, most components can be customized when they are
 created with different parameters or properties, called `props`.
 These parameters can be used in a child component using `this.props`.
 
-在 React Native 中，大多数组件都可以在创建的时候通过不同的参数或者属性来自定义，
+在 RN 中，大多数组件都可以在创建的时候通过不同的参数或者属性来自定义，
 叫做 `props`。这些参数可以在子组件中通过 `this.props` 进行调用。
 
 ```js
@@ -2109,7 +2120,7 @@ types: booleans, floats, ints, longs, and strings.
 
 如果你不需要在本地存储太多数据同时也不需要存储结构化数据，
 那么你可以使用 `shared_preferences`，通过它来读写一些原始数据类型键值对，
-数据类型包括 boolean、float、ints、longs 和 string。
+数据类型包括布尔、浮点、整数、长精度和字符串。
 
 ### How do I store persistent key-value pairs that are global to the app?
 
@@ -2119,8 +2130,8 @@ In React Native, you use the `setItem` and `getItem` functions of the
 `AsyncStorage` component to store and retrieve data that is persistent and
 global to the app.
 
-在 React Native，可以使用 `AsyncStorage` 中的 `setItem` 和 `getItem`
-函数来存储和读取应用程序中的全局数据。
+在 React Native，可以使用 `AsyncStorage` 中的
+`setItem` 和 `getItem` 函数来存储和读取应用程序中的全局数据。
 
 ```js
 // React Native
@@ -2145,8 +2156,8 @@ file then import the package in your Dart file.
 存储和访问应用程序内全局有效的键值对数据。
 `shared_preferences` 插件封装了 iOS 中的 `NSUserDefaults` 和
 Android 中的 `SharedPreferences` 来实现简单数据的持续存储。
-如果要使用该插件，可以在 `pubspec.yaml` 中添加依赖 `shared_preferences`，
-然后在 Dart 文件中引用包即可。
+如果要使用该插件，可以在 `pubspec.yaml` 中添加依赖
+`shared_preferences`，然后在 Dart 文件中引用包即可。
 
 ```yaml
 dependencies:
@@ -2171,10 +2182,11 @@ setter there is a corresponding getter method,
 for example, `getInt`, `getBool`, and `getString`.
 
 要实现持久数据存储，使用 `SharedPreferences` 类提供的 setter 方法即可。
-Setter 方法适用于多种原始类型数据，比如 `setInt`, `setBool`, 和 `setString`。
+Setter 方法适用于多种原始类型数据，
+比如 `setInt`、`setBool`、和 `setString`。
 要读取数据，使用 `SharedPreferences` 类中相应的 getter 方法。
 每一个 setter 方法都有对应的 getter 方法，
-比如，`getInt`, `getBool`, 和 `getString`。
+比如，`getInt`、`getBool` 和 `getString`。
 
 <!-- skip -->
 ```dart
@@ -2217,7 +2229,7 @@ In React Native, there are three main navigators:
 StackNavigator, TabNavigator, and DrawerNavigator.
 Each provides a way to configure and define the screens.
 
-在 React Native，有三种主要的导航 widget ：
+在 RN 中，有三种主要的导航 widget ：
 StackNavigator、TabNavigator 和 DrawerNavigator。
 每个都提供了配置和定义页面的方法。
 
@@ -2310,7 +2322,8 @@ the [`MaterialPageRoute`][] widget is a modal route that
 replaces the entire screen with a platform-adaptive
 transition. It takes a [`WidgetBuilder`][] as a required parameter.
 
-你可以使用 `Navigator` 中的 push 方法添加 [`Route`][] 到 navigator 的历史队列中，
+你可以使用 `Navigator` 中的 push 方法添加
+[`Route`][] 到 navigator 的历史队列中，
 其中包含 [`BuildContext`][] 并且可以切换到指定页面。
 在下面的例子中，[`MaterialPageRoute`][] widget 是一个模式化路径，
 可以将整个页面通过平台自适应切换方式进行切换。
@@ -2331,7 +2344,8 @@ for Flutter navigation: tabs and drawers.
 When there is insufficient space to support tabs, drawers
 provide a good alternative.
 
-在 Material Design 应用程序中，Flutter 的导航形式主要有两种：tab 和 drawer。
+在 Material Design 应用程序中，
+Flutter 的导航形式主要有两种：tab 和 drawer。
 如果没有足够的 widget 可以容纳 tab，drawer 就是个不错的选择。
 
 #### Tab navigation
@@ -2341,7 +2355,7 @@ provide a good alternative.
 In React Native, `createBottomTabNavigator` and `TabNavigation`  are used to
 show tabs and for tab navigation.
 
-在 React Native 中，`createBottomTabNavigator`
+在 RN 中，`createBottomTabNavigator`
 和 `TabNavigation` 用来显示 tab 和 tab 导航。
 
 ```js
@@ -2422,7 +2436,7 @@ classes to obtain a suitable `TickerProvider`.
 [`TickerProvider`][] 接口可以用于生成 [`Ticker`][] 对象。
 当有对象被触发通知后会用到 Tickers，
 不过它通常都是被 [`AnimationController`][] 间接调用。
-`AnimationControllers` 需要 `TickerProvider` 来获得对应的 `Ticker`。 
+`AnimationController` 需要 `TickerProvider` 来获得对应的 `Ticker`。 
 如果你通过 State 创建了一个 AnimationController，
 那么你就可以使用 [`TickerProviderStateMixin`][]
 或者 [`SingleTickerProviderStateMixin`][] 
@@ -2478,7 +2492,7 @@ class _NavigationHomePageState extends State<NavigationHomePage> with SingleTick
 In React Native, import the needed react-navigation packages and then use
 `createDrawerNavigator` and `DrawerNavigation`.
 
-在 React Native 中，导入所需的 react-navigation 包，
+在 RN 中，导入所需的 react-navigation 包，
 然后使用 `createDrawerNavigator` 和 `DrawerNavigation` 实现。
 
 ```js
@@ -2597,7 +2611,7 @@ Flutter 中的手势处理有两个独立的层。第一层是指针事件，
 In React Native, listeners are added to components using `PanResponder` or
 the `Touchable` components.
 
-在 React Native 中，使用 `PanResponder` 或者 `Touchable` 组件来添加监听器。
+在 RN 中，使用 `PanResponder` 或者 `Touchable` 组件来添加监听器。
 
 ```js
 // React Native
@@ -2714,7 +2728,7 @@ the `http` package provides the simplest way to fetch data from the internet.
 React Native provides the Fetch API for networking—you make a fetch request
 and then receive the response to get the data.
 
-React Native 提供 Fetch API 实现网络编程，
+RN 提供 Fetch API 实现网络编程，
 你可以发起请求，然后接收响应来获得数据。
 
 ```js
@@ -2734,7 +2748,7 @@ _getIPAddress = () => {
 Flutter uses the `http` package. To install the `http` package, add it to
 the dependencies section of our pubspec.yaml.
 
-Flutter 使用 `http` 包。如果要安装 `http` 包，
+Flutter 使用 `http` package。如果要安装 `http` package，
 将它添加到 pubspec.yaml 的 dependencies 部分。
 
 ```yaml
@@ -2798,7 +2812,7 @@ TextField 用于在应用程序中输入文本，这样就可以实现创建
 In React Native, to enter text you use a `TextInput` component to show a text
 input box and then use the callback to store the value in a variable.
 
-在 React Native 里，可以使用 `TextInput` 组件来输入文本，
+在 RN 里，可以使用 `TextInput` 组件来输入文本，
 它会显示一个输入框，然后通过回调函数来传递输入值。
 
 ```js
@@ -2825,7 +2839,8 @@ You can access the text in `TextField` by the `text` property of
 the controller.
 
 监听器读取文本和选项属性来获知用户所输入的内容。
-你可以通过 `TextField` 中的 `text` 属性获得用户输入的文本数据。
+你可以通过 `TextField` 中的 `text`
+属性获得用户输入的文本数据。
 
 <!-- skip -->
 ```dart
@@ -2922,7 +2937,7 @@ The following example shows how `Form.save()` and `formKey` (which is a
 `GlobalKey`) are used to save the form on submit.
 
 下面的示例代码展示了 `Form.save()` 和 `formKey`
-（这个实际上是 `GlobalKey`）如何被用于表单提交的。
+（使用 `GlobalKey`）如何被用于表单提交的。
 
 <!-- skip -->
 ```dart
@@ -2958,7 +2973,7 @@ This requires a separate implementation by declaring a specific platform.
 
 In React Native, the following implementation would be used:
 
-在 React Native 中，下面的实现代码会被用到：
+在 RN 中，下面的实现代码会被用到：
 
 ```js
 // React Native
@@ -3007,7 +3022,8 @@ observing executed lines of code, debugging memory leaks and memory
 fragmentation. For more information, see the
 [DevTools][] documentation.
 
-开发者工具包含了 profiling 构建、检查堆栈、检视 widget 树、诊断信息记录、调试、
+开发者工具包含了 profiling 构建、检查堆栈、
+检视 widget 树、诊断信息记录、调试、
 执行代码行观察、调试内存泄漏和内存碎片等。
 有关更多信息，请参阅 [DevTools][] 文档。
 
@@ -3029,7 +3045,7 @@ In React Native,
 the shortcut is ⌘R for the iOS Simulator and tapping R twice on
 Android emulators.
 
-在 React Native 中，iOS 模拟器对应的快捷键是 ⌘R，
+在 RN 中，iOS 模拟器对应的快捷键是 ⌘R，
 对应 Android 模拟器的快捷键是点击两次 R。
 
 In Flutter, If you are using IntelliJ IDE or Android Studio,
@@ -3052,7 +3068,8 @@ Terminal window.
 In React Native, the developer menu can be accessed by shaking your device: ⌘D
 for the iOS Simulator or ⌘M for Android emulator.
 
-在 React Native 中，开发者菜单可以通过摇动设备打开：对于 iOS 模拟器的快捷键是 ⌘D 而 Android 模拟器的快捷键是 ⌘M。
+在 RN 中，开发者菜单可以通过摇动设备打开：
+对于 iOS 模拟器的快捷键是 ⌘D 而 Android 模拟器的快捷键是 ⌘M。
 
 In Flutter, if you are using an IDE, you can use the IDE tools. If you start
 your application using `flutter run` you can also access the menu by typing `h`
@@ -3108,7 +3125,7 @@ Flutter SDK 含有很多 Material Design widget。
 
 In React Native, Animated APIs are used to create animations.
 
-在 React Native 中，动画 API 用于创建动画。
+在 RN 中，动画 API 用于创建动画。
 
 In Flutter, use the [`Animation`][]
 class and the [`AnimationController`][] class.
@@ -3179,11 +3196,13 @@ during a given duration. The animation controller generates a new value
 whenever the device running your app is ready to display a new frame.
 Typically, this rate is around 60 values per second.
 
-要在 Flutter 中实现相同的动画效果，创建一个 [`AnimationController`][] 对象，
-叫它 `controller`，并且指定时间间隔。在默认配置下，
-`AnimationController` 会在给定时间间隔线性的生成从 0.0 到 1.0 的数值。
-当你的程序可以显示新一帧画面的时候，AnimationController 会生成一个新的值。
-通常，这个频率在每秒 60 个值。
+要在 Flutter 中实现相同的动画效果，
+创建一个 [`AnimationController`][] 对象，
+叫它 `controller`，并且指定时间间隔。
+在默认配置下，`AnimationController`
+会在给定时间间隔线性地生成从 0.0 到 1.0 的数值。
+当你的程序可以显示新一帧画面的时候，`AnimationController` 会生成一个新的值。
+通常这个频率为每秒 60 次。
 
 When defining an `AnimationController`,
 you must pass in a `vsync` object.
@@ -3223,8 +3242,10 @@ controller such as `fling()` or `repeat()`.
 For this example, the [`FlutterLogo`][]
 widget is used inside the `FadeTransition` widget.
 
-要开始动画，使用 `controller.forward()`。其它的操作也可以使用控制器里的方法，
-比如 `fling()` 或者 `repeat()`。这个例子里，[`FlutterLogo`][] widget 
+要开始动画，使用 `controller.forward()`。
+其它的操作也可以使用控制器里的方法，
+比如 `fling()` 或者 `repeat()`。
+这个例子里，[`FlutterLogo`][] widget 
 被用于 `FadeTransition` widget 中。
 
 <!-- skip -->
@@ -3282,7 +3303,7 @@ class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
 In React Native, either the `PanResponder` or
 third-party libraries are used for swipe animation.
 
-在 React Native 中，无论  `PanResponder` 或者第三方库都可被用于滑动动画。
+在 RN 中，无论  `PanResponder` 或者第三方库都可被用于滑动动画。
 
 In Flutter, to add a swipe animation, use the
 [`Dismissible`][] widget and nest the child widgets.

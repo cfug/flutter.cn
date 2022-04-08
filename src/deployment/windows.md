@@ -20,13 +20,14 @@ a Flutter Windows Desktop app, it is necessary
 to confirm that it satisfies [Microsoft Store Policies][storepolicies].
 
 在开始发布 Flutter Windows 桌面应用程序之前，
-有必要确认其满足 [微软应用商店政策][storepolicies]。
+有必要确认你的应用满足 [微软应用商店政策][storepolicies]。
 
 Joining the [Microsoft Partner Network][microsoftpartner] is also required.
 
 加入 [微软合作伙伴网络][microsoftpartner] 也是必要的。
 
 ## Set up your application in the Partner Center
+
 ## 在合作伙伴中心申请应用
 
 Manage an application's life cycle in the [Microsoft Partner Center][microsoftpartner].
@@ -45,7 +46,8 @@ Options such as pricing, availability, age ratings, and category have to be
 configured together with the first submission and are automatically retained 
 for the subsequent submissions.
 
-比如价格、可用性、年龄等级和类别等选项必须在第一次提交时一并配置，这些选项在后续提交时将自动保留。
+类似于价格、可用性、年龄等级和类别等选项必须在第一次提交时一并配置，
+这些选项在后续提交时将自动保留。
 
 ## Packaging and deployment
 ## 打包并部署
@@ -54,9 +56,9 @@ In order to publish an application to Microsoft Store,
 it first has to be packaged. The valid formats are **.msix**, **.msixbundle**,
 **.msixupload**, **.appx**, **.appxbundle**, **.appxupload**, and **.xap**.
 
-为了将一个应用程序发布到微软商店，它首先必须被打包。
-有效的格式是 **.msix**，**.msixbundle**，**.msixupload**，**.appx**，
-**.appxbundle**，**.appxupload**，和 **.xap**。
+应用程序发布到微软商店前必须要打包。
+有效的格式是 **.msix**、**.msixbundle**、**.msixupload**、**.appx**、
+**.appxbundle**、**.appxupload** 和 **.xap**。
 
 ### Manual packaging and deployment
 ### 手动打包和部署
@@ -64,7 +66,7 @@ it first has to be packaged. The valid formats are **.msix**, **.msixbundle**,
 Check out [MSIX packaging][msix packaging] to learn about packaging 
 Flutter Windows Desktop applications.
 
-查看 [MSIX 打包][msix packaging]，学习如何打包  Flutter Windows 桌面应用程序。
+查看 [MSIX 打包][msix packaging]，学习如何打包 Flutter Windows 桌面应用程序。
 
 Note that each product has a unique identity, which the Store assigns.
 
@@ -74,8 +76,8 @@ If the package is being built manually, it is necessary to include its
 identity details manually during the packaging. The essential information
 can be retrieved from the Partner Center:
 
-如果应用包是手动构建的，在打包过程中必须手动包括其 ID 详情。
-基本信息可以从合作伙伴中心检索到。
+如果应用包是手动构建的，在打包过程中必须手动添加 ID 详情。
+这些基本信息可以从合作伙伴中心检索到。
 
 1. Navigate to the application in the Partner Center.
 
@@ -107,7 +109,7 @@ and deployment process using CI/CD tooling after having submitted
 the application to the Microsoft Store for the first time.
 
 除了手动创建和部署软件包外，在第一次提交应用程序到微软商店后，
-还可以使用 持续集成/持续交付 工具自动化构建，打包，版本管理，和部署应用程序。
+还可以使用持续集成/持续部署 (CI/CD) 工具自动化构建、打包、版本管理、和部署应用程序。
 
 #### Codemagic CI/CD
 
@@ -116,7 +118,8 @@ the application to the Microsoft Store for the first time.
 [Codemagic CI/CD][codemagic] uses the [`msix` pub package][msix package] to package 
 Flutter Windows Desktop applications. 
 
-[Codemagic 持续集成/持续交付][codemagic] 使用 [`msix` pub package][msix package]
+[Codemagic 持续集成/持续交付][codemagic]
+使用 [Pub 上的 `msix` package][msix package]
 来打包 Flutter Windows 桌面应用程序。
 
 For Flutter applications, either the [Codemagic Workflow Editor][cmworkfloweditor] or [codemagic.yaml][cmyaml] 
@@ -131,7 +134,8 @@ contained in the package) can be configured using the aforementioned package.
 For publishing, Codemagic uses the [Partner Center submission API][partnercenterapi]; thus,
 Codemagic requires [associating the Azure Active Directory and Partner Center accounts][azureadassociation].
 
-对于发布应用来说，Codemagic 使用 [合作伙伴中心提交 API][partnercenterapi]；因此，Codemagic 需要 [关联 Azure Active Directory 和合作伙伴中心账户][azureadassociation]。
+对于发布应用来说，Codemagic 使用 [合作伙伴中心提交 API][partnercenterapi]；
+因此，Codemagic 需要 [关联 Azure Active Directory 和合作伙伴中心账户][azureadassociation]。
 
 ## Updating the app's version number
 ## 更新应用程序的版本号
@@ -152,7 +156,8 @@ other than zero. Thus, the last number of the version must remain zero for all
 releases. Take note to follow Microsoft's [versioning guidelines][windowspackageversioning].
 
 请注意，应用程序不允许有一个修订版本号（第四段）不为零的版本。
-因此，在所有的版本中，版本的最后一个数字必须保持为零。请注意遵循微软的 [版本指南][windowspackageversioning]。
+因此，在所有的版本中，版本的最后一个数字必须保持为零。
+请注意遵循微软的 [版本指南][windowspackageversioning]。
 
 ## Add app icons
 ## 添加应用图标
@@ -216,7 +221,7 @@ To validate the application:
 
 2. Select the Flutter Windows Desktop package (**.msix**, **.msixbundle** etc).
 
-   选择 Flutter Windows 桌面应用程序包（**.msix**，**.msixbundle** 等）。
+   选择 Flutter Windows 桌面应用程序包（**.msix**、**.msixbundle** 等）。
 
 3. Choose a destination for the test report.
 

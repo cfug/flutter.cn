@@ -27,7 +27,7 @@ needs to know. The pubspec is written in
 [YAML][], which is human readable, but be aware
 that _white space (tabs v spaces) matters_.
 
-每个 Flutter 项目都包括一个 `pubspec.yaml` 文件，通常被称为 _pubspec_。
+每个 Flutter 项目都包含一个 `pubspec.yaml` 文件，通常被称为 **pubspec**。
 当您创建一个新的 Flutter 项目时，会生成一个基本的 pubspec。
 它位于项目的根目录，包含 Dart 和 Flutter 工具需要了解的项目元数据。
 pubspec 是用 [YAML][] 写的，它具有可读性，
@@ -55,7 +55,7 @@ that are only valid for a Flutter project.
 
 Dart 和 Flutter 项目共有的字段在
 [dart.dev][] 的 [pubspec 文件][the pubspec file] 中描述。
-本页列出了 **Flutter 特定的** 字段 只对 Flutter 项目有效。
+本页列出了只对 Flutter 项目有效的 **Flutter 特定的** 字段。
 
 {{site.alert.note}}
 
@@ -81,7 +81,7 @@ a pubspec for a basic Flutter app.
 
 当你用 `flutter create` 命令创建一个新项目时
 （或通过使用你的 IDE 中的相应按钮），
-它会为一个基本的 Flutter 应用程序创建一个 pubspec。
+它会为每一个 Flutter 应用程序创建 pubspec。
 
 Here is an example of a Flutter project pubspec file.
 The Flutter only fields are highlighted.
@@ -142,7 +142,7 @@ Common types of assets include static data
 icons, and images (JPEG, WebP, GIF,
 animated WebP/GIF, PNG, BMP, and WBMP).
 
-常见的资产类型包括静态数据（例如，JSON 文件）、
+常见的资产类型包括静态数据（例如 JSON 文件）、
 配置文件、图标和图像（JPEG、WebP、GIF、
 动画 WebP/GIF、PNG、BMP 和 WBMP）。
 
@@ -157,8 +157,9 @@ dependencies, see the
 section in the same page.
 
 除了列出应用 package 中包含的图片，
-一个图片资产还可以引用一个或多个特定分辨率的 「变体」。
-欲了解更多信息，请参阅 [资产和图像][Assets and images] 页面的 [分辨率相关][resolution aware] 部分。
+一个图片资产还可以引用一个或多个特定分辨率的「变体」。
+想要了解更多信息，请参阅 [资产和图像][Assets and images]
+页面的 [分辨率相关][resolution aware] 部分。
 关于从 package 的依赖关系中添加资产的信息，
 见同一页的 [package 依赖关系中的资产图像][asset images in package dependencies] 部分。
 
@@ -186,7 +187,8 @@ see the [Use a custom font][] and
 [Flutter cookbook][].
 
 关于使用字体的例子，请参见 [Flutter 实用教程][Flutter cookbook] 中的
-[使用自定义字体][Use a custom font] 和 [从 package 中导出字体][Export fonts from a package] 教程。
+[使用自定义字体][Use a custom font] 和
+[从 package 中导出字体][Export fonts from a package] 教程。
 
 [Export fonts from a package]: {{site.url}}/cookbook/design/package-fonts
 [Flutter cookbook]: {{site.url}}/cookbook

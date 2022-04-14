@@ -30,7 +30,7 @@ needs to know. The pubspec is written in
 that _white space (tabs v spaces) matters_.
 
 每个 Flutter 项目都包含一个 `pubspec.yaml` 文件，通常被称为 **pubspec**。
-当您创建一个新的 Flutter 项目时，会生成一个基本的 pubspec。
+当你创建一个新的 Flutter 项目时，会生成一个基本的 pubspec。
 它位于项目的根目录，包含 Dart 和 Flutter 工具需要了解的项目元数据。
 pubspec 是用 [YAML][] 写的，它具有可读性，
 但要注意 **缩进符号（制表符和空格）很重要**。

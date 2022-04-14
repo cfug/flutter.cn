@@ -8,7 +8,7 @@ description: "描述了 pubspec 文件中与 Flutter 相关的部分。"
 {{site.alert.note}}
 
   This page is primarily aimed at folks who write
-  Flutter apps. If you write packages or plugins, 
+  Flutter apps. If you write packages or plugins,
   (perhaps you want to create a federated plugin),
   you should check out the
   [Developing packages and plugins][] page.
@@ -40,10 +40,10 @@ pubspec 是用 [YAML][] 写的，它具有可读性，
 The pubspec file specifies dependencies
 that the project requires, such as particular packages
 (and their versions), fonts, or image files.
-It also specifies other requirements, such as 
+It also specifies other requirements, such as
 dependencies on developer packages (like
 testing or mocking packages), or particular
-constraints on the version of the Flutter SDK. 
+constraints on the version of the Flutter SDK.
 
 pubspec 文件指定了项目所需的依赖，
 如特定的 package（及其版本）、字体或图像文件。
@@ -134,17 +134,17 @@ dev_dependencies:
           [[highlight]]weight: 700[[/highlight]]
 {% endprettify %}
 </div>
- 
+
 ## Assets
 
-## 资产
+## 资源
 
 Common types of assets include static data
 (for example, JSON files), configuration files,
 icons, and images (JPEG, WebP, GIF,
 animated WebP/GIF, PNG, BMP, and WBMP).
 
-常见的资产类型包括静态数据（例如 JSON 文件）、
+常见的资源包括静态数据（例如 JSON 文件）、
 配置文件、图标和图像（JPEG、WebP、GIF、
 动画 WebP/GIF、PNG、BMP 和 WBMP）。
 
@@ -159,11 +159,11 @@ dependencies, see the
 section in the same page.
 
 除了列出应用 package 中包含的图片，
-一个图片资产还可以引用一个或多个特定分辨率的「变体」。
-想要了解更多信息，请参阅 [资产和图像][Assets and images]
+一个图片资源还可以引用一个或多个特定分辨率的「变体」。
+想要了解更多信息，请参阅 [资源和图像][Assets and images]
 页面的 [分辨率相关][resolution aware] 部分。
-关于从 package 的依赖关系中添加资产的信息，
-见同一页的 [package 依赖关系中的资产图像][asset images in package dependencies] 部分。
+关于从 package 的依赖关系中添加资源的信息，
+见同一页的 [package 依赖关系中的图片资源][asset images in package dependencies] 部分。
 
 [Assets and images]: {{site.url}}/development/ui/assets-and-images
 [asset images in package dependencies]: {{site.url}}/development/ui/assets-and-images#from-packages
@@ -181,7 +181,7 @@ asset and other descriptors for the font.
 
 如上例所示，字体部分的每个条目都应该有一个
 包含字体家族名称的 `family` 键，
-以及一个包含指定字体的资产和其他描述符的 `fonts` 键。
+以及一个包含指定字体的资源和其他描述符的 `fonts` 键。
 
 For examples of using fonts
 see the [Use a custom font][] and

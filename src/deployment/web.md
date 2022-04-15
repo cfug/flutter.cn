@@ -51,7 +51,7 @@ However, because web browsers are built to run untrusted code safely,
 there are certain limitations in what you can do with images compared
 to mobile and desktop platforms.
 
-Web 支持标准的 `Image` widge 来显示图片。 
+Web 支持标准的 `Image` widget 来显示图片。 
 但是，由于 Web 浏览器需要安全地运行不受信任的代码，
 因此与移动和桌面平台相比，图像处理方面存在某些限制。
 

@@ -14,20 +14,20 @@
 
   1. Select **Application**.
 
-     打开 **View > Command Palette**。
+     选择 **Application**。
 
   1. Create or select the parent directory for the new project folder.
 
-     打开 **View > Command Palette**。
+     新建或选择新项目将存放的上层目录。
 
   1. Enter a project name, such as `myapp`, and press **Enter**.
 
-     打开 **View > Command Palette**。
+     输入项目名称，例如 `myapp`，并点击 **Enter**。
 
   1. Wait for project creation to complete and the `main.dart`
      file to appear.
 
-     打开 **View > Command Palette**。
+     等待项目创建完成，并且 `main.dart` 文件展现在编辑器中。
 
 The above commands create a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].

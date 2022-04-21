@@ -808,12 +808,7 @@ First, register the intent filter for all intents in `AndroidManifest.xml`:
 ```xml
 <activity
   android:name=".MainActivity"
-  android:launch
-  
-  
-  
-  
-  Mode="singleTop"
+  android:launchMode="singleTop"
   android:theme="@style/LaunchTheme"
   android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection"
   android:hardwareAccelerated="true"

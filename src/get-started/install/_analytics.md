@@ -1,4 +1,5 @@
 {{site.alert.warning}}
+
   The Flutter tool may occasionally download resources from Google servers.
   By downloading or using the Flutter SDK you agree to the [Google Terms of Service][].
 
@@ -55,4 +56,5 @@
   [Privacy Policy]: https://policies.google.com/privacy
   [crash reports]: {{site.repo.flutter}}/wiki/Flutter-CLI-crash-reporting
   [`dart` tool]: {{site.dart-site}}/tools/dart-tool
+
 {{site.alert.end}}

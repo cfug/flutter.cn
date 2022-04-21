@@ -17,10 +17,11 @@ Make a change to app source,
 tell your IDE or command-line tool that you want to hot reload,
 and see the change in your simulator, emulator, or device.
 
-Flutter 通过 **热重载** 提供快速开发周期，该功能支持应用程序在运行状态下重载代码
-而无需重新启动应用程序或者丢失程序运行状态。
-修改一下代码，然后告诉IDE或者命令行工具你需要热重载，
-然后看一下模拟器或者设备上应用的变化
+Flutter 通过 **热重载** 提供快速开发周期，
+该功能支持应用程序在运行状态下重载代码，
+无需重新启动应用程序或者丢失程序运行状态。
+修改一下代码，然后告诉 IDE 或者命令行工具你需要热重载，
+然后看一下模拟器或者设备上应用的变化。
 
  1. Open `lib/main.dart`.
  

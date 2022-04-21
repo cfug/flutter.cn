@@ -51,7 +51,7 @@ that are most relevant to your needs.
 
 ### What is the equivalent of a View in Flutter?
 
-### 视图在 Flutter 中的对应概念是什么？
+### 视图 (View) 在 Flutter 中对应什么概念？
 
 {{site.alert.secondary}}
 
@@ -61,7 +61,7 @@ that are most relevant to your needs.
 
   响应式或者声明式的编程和传统的命令式风格有什么不同呢？
   作为对比，请查阅 [声明式 UI 介绍][Introduction to declarative UI]。
-  
+
 {{site.alert.end}}
 
 In Android, the `View` is the foundation of everything that shows up on the
@@ -73,10 +73,10 @@ acquainted with how Flutter works you can think of them as
 
 Android 中的 `View` 是显示在屏幕上的一切的基础。
 按钮、工具栏、输入框以及一切内容都是 `View`。
-而 Flutter 中 `View` 的大致对应物是 `Widget`。
+而 Flutter 中 `View` 的大致对应着 `Widget`。
 Widget 并非完全对应于 Android 中的 View，
 但是在你熟悉 Flutter 的工作原理的过程中
-可以把它们看做“声明和构建 UI 的方式”。
+可以把它们看做「声明和构建 UI 的方式」。
 
 However, these have a few differences to a `View`. To start, widgets have a
 different lifespan: they are immutable and only exist until they need to be
@@ -128,8 +128,9 @@ In Android, you update your views by directly mutating them. However,
 in Flutter, `Widget`s are immutable and are not updated directly,
 instead you have to work with the widget's state.
 
-在 Android 中，你可以直接操作更新 View。然而在 Flutter 中，
-`Widget` 是不可变的，无法被直接更新，你需要操作 Widget 的状态。
+在 Android 中，你可以直接操作更新 View。
+然而在 Flutter 中，`Widget` 是不可变的，
+无法被直接更新，你需要操作 Widget 的状态。
 
 This is where the concept of Stateful and Stateless widgets comes from. A
 `StatelessWidget` is just what it sounds like&mdash;a widget with no state
@@ -159,7 +160,7 @@ with `StatefulWidget` and tell the Flutter framework that the widget’s
 
 如果你想要根据 HTTP 请求返回的数据或者用户的交互来动态地更新界面，
 那么你就必须使用 `StatefulWidget`，
-并告诉 Flutter 框架 Widget 的`状态` (`State`) 更新了，
+并告诉 Flutter 框架 Widget 的 `状态` (`State`) 更新了，
 以便 Flutter 可以更新这个 Widget。
 
 The important thing to note here is at the core both stateless and stateful
@@ -168,22 +169,25 @@ widgets behave the same. They rebuild every frame, the difference is the
 and restores it.
 
 这里需要着重注意的是，无状态和有状态的 Widget 本质上是行为一致的。
-它们每一帧都会重建，不同之处在于 `StatefulWidget` 有一个跨帧存储
-和恢复状态数据的 `State` 对象。
+它们每一帧都会重建，不同之处在于 `StatefulWidget`
+有一个跨帧存储和恢复状态数据的 `State` 对象。
 
 If you are in doubt, then always remember this rule: if a widget changes
 (because of user interactions, for example) it’s stateful.
 However, if a widget reacts to change, the containing parent widget can
 still be stateless if it doesn't itself react to change.
 
-如果你有疑问，那么记住这条规则：如果一个 Widget 会变化（例如由于用户交互），它是有状态的。
-然而，如果一个 Widget 响应变化，它的父 Widget 只要本身不响应变化，就依然是无状态的。
+如果你有疑问，那么记住这条规则：
+如果一个 Widget 会变化（例如由于用户交互），它是有状态的。
+然而，如果一个 Widget 响应变化，
+它的父 Widget 只要本身不响应变化，就依然是无状态的。
 
 The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
 the `Text` widget you'll find that it subclasses `StatelessWidget`.
 
-下面的例子展示了如何使用 `StatelessWidget`。`Text` Widget 是一个普通的 `StatelessWidget`。
+下面的例子展示了如何使用 `StatelessWidget`。
+`Text` Widget 是一个普通的 `StatelessWidget`。
 如果你查看 `Text` Widget 的实现，你会发现它继承自 `StatelessWidget`。
 
 <!-- skip -->
@@ -197,18 +201,21 @@ Text(
 As you can see, the `Text` Widget has no state information associated with it,
 it renders what is passed in its constructors and nothing more.
 
-如上所示，这个 `Text` Widget 没有相关联的状态信息，它只渲染传入构造器的信息，仅此而已。
+如上所示，这个 `Text` Widget 没有相关联的状态信息，
+它只渲染传入构造器的信息，仅此而已。
 
 But, what if you want to make "I Like Flutter" change dynamically, for
 example when clicking a `FloatingActionButton`?
 
-但是，假如你想要动态地改变 "I Like Flutter"，例如当你点击一个 `FloatingActionButton` 的时候，
+但是，假如你想要动态地改变 "I Like Flutter"，
+例如当你点击一个 `FloatingActionButton` 的时候，
 该怎么办呢？
 
 To achieve this, wrap the `Text` widget in a `StatefulWidget` and
 update it when the user clicks the button.
 
-为了实现这个效果，将 `Text` Widget 嵌入一个 `StatefulWidget` 中，并在用户点击按钮的时候更新它。
+为了实现这个效果，将 `Text` Widget 嵌入一个 `StatefulWidget` 中，
+并在用户点击按钮的时候更新它。
 
 For example:
 
@@ -278,12 +285,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
 In Android, you write layouts in XML, but in Flutter you write your layouts
 with a widget tree.
 
-在 Android 中，你通过 XML 文件定义布局，但是在 Flutter 中，
-你是通过一个 widget 树来定义布局的。
+在 Android 中，你通过 XML 文件定义布局，
+但是在 Flutter 中，你要通过一个 widget 树来定义布局的。
 
 The following example shows how to display a simple widget with padding:
 
-以下示例展示了如何显示一个带有填充 (padding) 的简单 Widget：
+以下示例展示了如何显示一个带有间距的简单 Widget：
 
 <!-- skip -->
 ```dart
@@ -322,15 +329,18 @@ no direct equivalent to `addChild()`.  Instead,
 you can pass a function to the parent that returns a widget,
 and control that child's creation with a boolean flag.
 
-在 Android 中，你通过调用父 View 的 `addChild()` 或 `removeChild()` 方法动态地添加
-或者删除子 View。在 Flutter 中，由于 Widget 是不可变的，所以没有 `addChild()` 的直接
-对应的方法。不过，你可以给返回一个 Widget 的父 Widget 传入一个方法，并通过布尔标记值控制
-子 Widget 的创建。
+在 Android 中，你通过调用父 View 的 `addChild()`
+或 `removeChild()` 方法动态地添加或者删除子 View。
+在 Flutter 中，由于 Widget 是不可变的，
+所以没有 `addChild()` 的直接对应的方法。
+不过，你可以给返回一个 Widget 的父 Widget 传入一个方法，
+并通过布尔标记值控制子 Widget 的创建。
 
 For example, here is how you can toggle between two
 widgets when you click on a `FloatingActionButton`:
 
-例如，下面就是你可以如何在点击一个 `FloatingActionButton` 的时候在两个 Widget 之间切换。
+例如，下面就是你可以如何在点击一个
+`FloatingActionButton` 时在两个 Widget 之间切换。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -407,8 +417,10 @@ In Android, you either create animations using XML, or call the `animate()`
 method on a view. In Flutter, animate widgets using the animation
 library by wrapping widgets inside an animated widget.
 
-在 Android 中，你既可以通过 XML 文件定义动画，也可以调用 View 对象的 `animate()` 方法。
-在 Flutter 里，则使用动画库，通过将 Widget 嵌入一个动画 Widget 的方式实现 Widget 的动画效果。
+在 Android 中，你既可以通过 XML 文件定义动画，
+也可以调用 View 对象的 `animate()` 方法。
+在 Flutter 里，则使用动画库，通过将 Widget
+嵌入一个动画 Widget 的方式实现 Widget 的动画效果。
 
 In Flutter, use an `AnimationController` which is an `Animation<double>`
 that can pause, seek, stop and reverse the animation. It requires a `Ticker`
@@ -416,9 +428,11 @@ that signals when vsync happens, and produces a linear interpolation between
 0 and 1 on each frame while it's running. You then create one or more
 `Animation`s and attach them to the controller.
 
-Flutter 通过 `Animation<double>` 的子类 `AnimationController` 来暂停、播放、停止以及逆向
-播放动画。它需要一个 `Ticker` 在垂直同步 (vsync) 的时候发出信号，并且在运行的时候创建一个介于 
-0 和 1 之间的线性插值。然后你就可以创建一个或多个 `Animation`，并将它们绑定到控制器上。
+Flutter 通过 `Animation<double>` 的子类
+`AnimationController` 来暂停、播放、停止以及逆向播放动画。
+它需要一个 `Ticker` 在垂直同步 (vsync) 的时候发出信号，
+并且在运行的时候创建一个介于 0 和 1 之间的线性插值。
+然后你就可以创建一个或多个 `Animation`，并将它们绑定到控制器上。
 
 For example, you might use `CurvedAnimation` to implement an animation
 along an interpolated curve. In this sense, the controller
@@ -426,22 +440,23 @@ is the "master" source of the animation progress and the `CurvedAnimation`
 computes the curve that replaces the controller's default linear motion.
 Like widgets, animations in Flutter work with composition.
 
-例如，你可以使用 `CurvedAnimation` 来实现一个曲线插值的动画。在这种情况下，控制器决定了动画
-进度，`CurvedAnimation` 计算用于替换控制器默认线性动画的曲线值。和 Widget 一样，Flutter 中
-的动画效果也可以组合使用。
+例如，你可以使用 `CurvedAnimation` 来实现一个曲线插值的动画。
+在这种情况下，控制器决定了动画进度，
+`CurvedAnimation` 计算用于替换控制器默认线性动画的曲线值。
+与 Widget 一样，Flutter 中的动画效果也可以组合使用。
 
 When building the widget tree you assign the `Animation` to an animated
 property of a widget, such as the opacity of a `FadeTransition`, and tell the
 controller to start the animation.
 
-在构建 Widget 树的时候，你需要将 `Animation` 对象赋值给某个 Widget 的动画属性，例如
-`FadeTransition` 的不透明度属性，并让控制器开始动画。
+在构建 Widget 树的时候，你需要将 `Animation` 对象赋值给某个 Widget 的动画属性，
+例如`FadeTransition` 的不透明度属性，并让控制器开始动画。
 
 The following example shows how to write a `FadeTransition` that fades the
 widget into a logo when you press the `FloatingActionButton`:
 
-下面的例子展示了如何实现一个点击 `FloatingActionButton` 的时候将一个 Widget 渐变为一个图标
-的 `FadeTransition`：
+下面的例子展示了如何实现一个点击 `FloatingActionButton` 时
+将一个 Widget 渐变为一个图标的 `FadeTransition`：
 
 ```dart
 import 'package:flutter/material.dart';
@@ -519,7 +534,7 @@ For more information, see
 the [Animations tutorial][],
 and the [Animations overview][].
 
-获取更多内容，请查看 [动画 Widget][Animation & Motion widgets]，
+获取更多内容，请查看 [动画 Widget][Animation & Motion widgets]、
 [动画指南][Animations tutorial] 以及 [动画概览][Animations overview]。
 
 ### How do I use a Canvas to draw/paint?
@@ -531,21 +546,25 @@ to the screen. Flutter has a similar `Canvas` API as well, since it is based
 on the same low-level rendering engine, Skia. As a result, painting to a
 canvas in Flutter is a very familiar task for Android developers.
 
-在 Android 中，你可以使用 `Canvas` 和 `Drawable` 将图片和形状绘制到屏幕上。Flutter 也有一个
-类似于 `Canvas` 的 API，因为它基于相同的底层渲染引擎 Skia。因此，在 Flutter 中用画布 (canvas) 
+在 Android 中，你可以使用 `Canvas` 和 `Drawable` 将图片和形状绘制到屏幕上。
+Flutter 也有一个类似于 `Canvas` 的 API，
+因为它基于相同的底层渲染引擎 Skia。
+因此，在 Flutter 中用画布 (canvas) 
 进行绘制对于 Android 开发者来说是一件非常熟悉的工作。
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
 and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
-Flutter 有两个帮助你用画布 (canvas) 进行绘制的类：`CustomPaint` 和 `CustomPainter`，后者
-可以实现自定义的绘制算法。
+Flutter 有两个帮助你用画布 (canvas) 进行绘制的类：
+`CustomPaint` 和 `CustomPainter`，
+后者可以实现自定义的绘制算法。
 
 To learn how to implement a signature painter in Flutter,
 see Collin's answer on [Custom Paint][].
 
-如果想学习在 Flutter 中如何实现一个签名功能，可以查看 Collin 在 [Custom Paint][] 上的回答。
+如果想学习在 Flutter 中如何实现一个签名功能，
+可以查看 Collin 在 [Custom Paint][] 上的回答。
 
 ```dart
 import 'package:flutter/material.dart';
@@ -605,8 +624,8 @@ class SignaturePainter extends CustomPainter {
 In Android, you typically subclass `View`, or use a pre-existing view,
 to override and implement methods that achieve the desired behavior.
 
-在 Android 中，一般通过继承 `View` 类，或者使用已有的视图类，再覆写或实现可以达到
-特定效果的方法。
+在 Android 中，一般通过继承 `View` 类，
+或者使用已有的视图类，再重载或实现以达到特定效果的方法。
 
 In Flutter, build a custom widget by [composing][]
 smaller widgets (instead of extending them).
@@ -616,15 +635,18 @@ but you provide a different behavior&mdash;for example,
 custom layout logic.
 
 在 Flutter 中，通过 [组合][composing] 
-更小的 Widget 来创建自定义 Widget（而不是继承它们）。这和 Android 中实现一个自定义的 `ViewGroup` 
-有些类似，所有的构建 UI 的模块代码都在手边，不过由你提供不同的行为&mdash;例如，自定义布局 (layout) 逻辑。
+更小的 Widget 来创建自定义 Widget（而不是继承它们）。
+这和 Android 中实现一个自定义的 `ViewGroup` 有些类似，
+所有的构建 UI 的模块代码都已存在，
+不过由你提供不同的行为&mdash;例如，自定义布局 (layout) 逻辑。
 
 For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a `ElevatedButton` with
 a label, rather than by extending `ElevatedButton`:
 
-举例来说，你该如何创建一个在构造器接收标签参数的 `CustomButton`？你要组合 `RaisedButton` 和一个标签来创建
-自定义按钮，而不是继承 `RaisedButton`：
+举例来说，你该如何创建一个在构造器接收标签参数的 `CustomButton`？
+你要组合 `RaisedButton` 和一个标签来创建自定义按钮，
+而不是继承 `RaisedButton`：
 
 <!-- skip -->
 ```dart
@@ -659,6 +681,8 @@ Widget build(BuildContext context) {
 
 ## Intents
 
+## 意图 (Intents)
+
 ### What is the equivalent of an Intent in Flutter?
 
 ### `Intent` 在 Flutter 中的对应概念是什么？
@@ -668,15 +692,19 @@ Activities, and communicating with components. Flutter, on the other hand,
 does not have the concept of intents, although you can still start intents
 through native integrations (using [a plugin][]).
 
-在 Android 中，`Intent` 主要有两个使用场景：在 Activity 之前进行导航，以及组件间通信。
-Flutter 却没有 intent 这样的概念，但是你依然可以通过原生集成 ([插件]({{site.pub}}/packages/android_intent)) 来启动 intent。
+在 Android 中，`Intent` 主要有两个使用场景：
+在 Activity 之前进行导航，以及组件间通信。
+Flutter 却没有 intent 这样的概念，
+但是你依然可以通过原生集成 ([插件]({{site.pub}}/packages/android_intent))
+来启动 intent。
 
 Flutter doesn't really have a direct equivalent to activities and fragments;
 rather, in Flutter you navigate between screens, using a `Navigator` and
 `Route`s, all within the same `Activity`.
 
-Flutter 实际上并没有 Activity 和 Fragment 的对应概念。在 Flutter 中你需要使用 `Navigator` 和
- `Route` 在同一个 `Activity` 内的不同界面间进行跳转。
+Flutter 实际上并没有 Activity 和 Fragment 的对应概念。
+在 Flutter 中你需要使用 `Navigator` 和 `Route`
+在同一个 `Activity` 内的不同界面间进行跳转。
 
 A `Route` is an abstraction for a “screen” or “page” of an app, and a
 `Navigator` is a widget that manages routes. A route roughly maps to an
@@ -685,10 +713,11 @@ and pop routes to move from screen to screen. Navigators work like a stack
 on which you can `push()` new routes you want to navigate to, and from
 which you can `pop()` routes when you want to "go back".
 
-`Route` 是应用内屏幕和页面的抽象，`Navigator` 是管理路径 route 的工具。一个 route 对象大致对应于
-一个 `Activity`，但是它的含义是不一样的。Navigator 可以通过对 route 进行压栈和弹栈操作实现页面
-的跳转。Navigator 的工作原理和栈相似，你可以将想要跳转到的 route 压栈 (`push()`)，想要返回
-的时候将 route 弹栈 (`pop()`)。
+`Route` 是应用内屏幕和页面的抽象，`Navigator` 是管理路径 route 的工具。
+一个 route 对象大致对应于一个 `Activity`，但是它的含义是不一样的。
+Navigator 可以通过对 route 进行压栈和弹栈操作实现页面的跳转。
+Navigator 的工作原理和栈相似，你可以将想要跳转到的 route 压栈 (`push()`)，
+想要返回的时候将 route 出栈 (`pop()`)。
 
 In Android, you declare your activities inside the app's `AndroidManifest.xml`.
 
@@ -699,11 +728,11 @@ In Flutter, you have a couple options to navigate between pages:
 在 Flutter 中，你有多种不同的方式在页面间导航：
 
 * Specify a `Map` of route names. (MaterialApp)
-  
+
   定义一个 route 名字的 `Map`。(MaterialApp)
 
 * Directly navigate to a route. (WidgetApp)
-  
+
   直接导航到一个 route。(WidgetApp)
 
 The following example builds a Map.
@@ -726,7 +755,7 @@ void main() {
 
 Navigate to a route by `push`ing its name to the `Navigator`.
 
-通过将 route 名`压栈` (`push`) 到 `Navigator` 中来跳转到这个 route。
+通过路由名 **压栈** (`push`) 到 `Navigator` 中来跳转到这个 route。
 
 <!-- skip -->
 ```dart
@@ -738,7 +767,8 @@ as a Camera or File picker. For this, you would need to create a native platform
 integration (or use an [existing plugin][]).
 
 `Intent` 的另一种常见的使用场景是调用外部的组件，例如相机或文件选择器。
-对于这种情况，你需要创建一个原生平台插件（或者使用 [已有的插件][existing plugin]）。
+对于这种情况，你需要创建一个原生平台插件
+（或者使用 [已有的插件][existing plugin]）。
 
 To learn how to build a native platform integration,
 see [developing packages and plugins][].
@@ -759,14 +789,16 @@ The following example registers a text share intent filter on the native
 activity that runs our Flutter code, so other apps can share text with
 our Flutter app.
 
-下面的例子中，运行 Flutter 代码的原生 Activity 注册了一个文本分享的 intent 过滤器，这样
-其它应用就可以和 Flutter 应用分享文本了。
+下面的例子中，运行 Flutter 代码的原生 Activity
+注册了一个文本分享的 intent 过滤器，
+这样其它应用就可以和 Flutter 应用分享文本了。
 
 The basic flow implies that we first handle the shared text data on the
 Android native side (in our `Activity`), and then wait until Flutter requests
 for the data to provide it using a `MethodChannel`.
 
-从以上流程可以得知，我们首先在 Android 原生层面（在我们的 `Activity` 中）处理分享的文本数据，
+从以上流程可以得知，我们首先在 Android 原生层面
+（在我们的 `Activity` 中）处理分享的文本数据，
 然后 Flutter 再通过使用 `MethodChannel` 获取这个数据。
 
 First, register the intent filter for all intents in `AndroidManifest.xml`:
@@ -927,7 +959,7 @@ This is done by `await`ing on the `Future` returned by `push()`.
 For example, to start a location route that lets the user select
 their location, you could do the following:
 
-例如，要打开一个让用户选择位置的 route，你可以这样做：
+例如，要打开一个让用户选择位置的路由，你可以这样做：
 
 <!-- skip -->
 ```dart
@@ -937,7 +969,7 @@ Map coordinates = await Navigator.of(context).pushNamed('/location');
 And then, inside your location route, once the user has selected their location
 you can `pop` the stack with the result:
 
-然后，在你的位置 route 内，一旦用户选择了位置，你就可以弹栈 (`pop`) 并返回结果：
+然后，在你的位置的路由内，一旦用户选择了位置，你就可以出栈 (`pop`) 并返回结果：
 
 <!-- skip -->
 ```dart
@@ -963,7 +995,7 @@ Dart 有一个单线程执行的模型，同时也支持 `Isolate`
 （在另一个线程运行 Dart 代码的方法），它是一个事件循环和异步编程方式。
 除非你创建一个 `Isolate`，否则你的 Dart 代码会运行在主 UI 线程，
 并被一个事件循环所驱动。Flutter 的事件循环对应于 Android 里的
-主 `Looper`&mdash; 也即绑定到主线程上的 `Looper`。
+主 `Looper`&mdash;&mdash;也即绑定到主线程上的 `Looper`。
 
 Dart's single-threaded model doesn't mean you need to run everything as a
 blocking operation that causes the UI to freeze. Unlike Android, which
@@ -984,7 +1016,8 @@ Dart 的单线程模型并不意味着你需要以会导致 UI 冻结的
 For example, you can run network code without causing the UI to hang by
 using `async`/`await` and letting Dart do the heavy lifting:
 
-例如，你可以通过使用 `async`/`await` 来运行网络代码而且不会导致 UI 挂起，
+例如，你可以通过使用 `async`/`await`
+来运行网络代码而且不会导致 UI 挂起，
 同时让 Dart 来处理背后的繁重细节：
 
 <!-- skip -->
@@ -1096,8 +1129,8 @@ scheduler that works on background threads.
 
 在 Android 中，当你想要访问一个网络资源却又不想阻塞主线程并避免 ANR 的时候，
 你一般会将任务放到一个后台线程中运行。
-例如，你可以使用一个 `AsyncTask`、一个 `LiveData`、一个 `IntentService`、
-一个 `JobScheduler` 任务或者通过 RxJava 的管道用调度器将任务切换到后台线程中。
+例如，你可以使用 `AsyncTask`、`LiveData`、`IntentService`、`JobScheduler`
+任务或者通过 RxJava 的管道用调度器将任务切换到后台线程中。
 
 Since Flutter is single threaded and runs an event loop (like Node.js), you
 don't have to worry about thread management or spawning background threads. If
@@ -1152,8 +1185,9 @@ However, there are times when you might be processing a large amount of data and
 your UI hangs. In Flutter, use `Isolate`s to take advantage of
 multiple CPU cores to do long-running or computationally intensive tasks.
 
-然而，有时候你可能需要处理大量的数据并挂起你的 UI。在 Flutter 中，
-可以通过使用 `Isolate` 来利用多核处理器的优势执行耗时或计算密集的任务。
+然而，有时候你可能需要处理大量的数据并挂起你的 UI。
+在 Flutter 中，可以通过使用 `Isolate`
+来利用多核处理器的优势执行耗时或计算密集的任务。
 
 Isolates are separate execution threads that do not share any memory
 with the main execution memory heap. This means you can’t access variables from
@@ -1364,7 +1398,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 Making a network call in Flutter is easy when you use the popular
 [`http` package][].
 
-Flutter 中使用流行的 [`http` 包][`http` package] 进行网络请求是很简单的。
+Flutter 中使用流行的 [`http` package][] 进行网络请求是很简单的。
 
 While the http package doesn't have every feature found in OkHttp,
 it abstracts away much of the networking that you would normally implement
@@ -1376,7 +1410,7 @@ yourself, making it a simple way to make network calls.
 
 To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
-如果要使用 `http` 包，需要在 `pubspec.yaml` 文件中添加依赖：
+要使用 `http`，请在 `pubspec.yaml` 文件中添加依赖：
 
 ```yaml
 dependencies:
@@ -1533,9 +1567,10 @@ Flutter apps have only assets. All resources that would live
 in the `res/drawable-*` folders on Android,
 are placed in an assets folder for Flutter.
 
-虽然 Android 区分对待资源文件 (resources) 和资产文件 (assets)，但是 Flutter 应用只有资产文件 (assets)。
-所有原本在 Android 中应该放在 `res/drawable-*` 文件夹中的资源文件，在 Flutter 中都放在一个 
-assets 文件夹中。
+虽然 Android 区分对待资源文件 (resources) 和资产文件 (assets)，
+但是 Flutter 应用只有资产文件 (assets)。
+所有原本在 Android 中应该放在 `res/drawable-*` 文件夹中的资源文件，
+在 Flutter 中都放在一个 assets 文件夹中。
 
 Flutter follows a simple density-based format like iOS. Assets might be `1.0x`,
 `2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
@@ -1544,14 +1579,14 @@ The so-called [`devicePixelRatio`][]
 expresses the ratio of physical pixels in a single logical pixel.
 
 Flutter 遵循一个简单的类似 iOS 的密度相关的格式。
-文件可以是一倍 (`1.0x`)、两倍 (`2.0x`)、三倍 (`3.0x`) 或其它的任意倍数。
+文件可以是一倍 (`1x`)、两倍 (`2x`)、三倍 (`3x`) 或其它的任意倍数。
 Flutter 没有 `dp` 单位，但是有逻辑像素尺寸，基本和设备无关的像素尺寸是一样的。
 名称为 [`devicePixelRatio`][] 的尺寸表示在单一逻辑像素标准下设备物理像素的比例。
 
 The equivalent to Android's density buckets are:
 
-和 Android 的密度分类的对照表如下：
- 
+与 Android 的密度分类的对照表如下：
+
 Android density qualifier | Flutter pixel ratio
  --- | ---
 Android 密度修饰符 | Flutter 像素比例
@@ -1566,7 +1601,7 @@ Assets are located in any arbitrary folder&mdash;Flutter has no
 predefined folder structure. You declare the assets (with location) in
 the `pubspec.yaml` file, and Flutter picks them up.
 
-文件放置于任意文件夹中&mdash;Flutter 没有预先定义好的文件夹结构。
+文件放置于任意文件夹中&mdash;&mdash;Flutter 没有预先定义好的文件夹结构。
 你在 `pubspec.yaml` 文件中定义文件（包括位置信息），Flutter 负责找到它们。
 
 Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
@@ -1736,7 +1771,7 @@ a widget in Flutter. Use a `Navigator` to move between different `Route`s
 that represent different screens or pages, or maybe just different states or
 renderings of the same data.
 
-就如在 [Intents][] 部分所提，Flutter 中的界面都是以 `Widget` 表示的，
+就如在 [Intents][] 部分所提到的，Flutter 中的界面都是以 `Widget` 表示的，
 因为 Flutter 中一切皆为 Widget。你使用 `Navigator` 在表示不同屏幕或页面，
 或者仅仅是相同数据的不同状态和渲染的各个 `Route` 之间进行导航。
 
@@ -1750,9 +1785,10 @@ the `Application`. In Flutter, you have neither concept, but you can instead
 listen to lifecycle events by hooking into the `WidgetsBinding` observer and
 listening to the `didChangeAppLifecycleState()` change event.
 
-在 Android 中，你可以覆写 `Actvity` 的生命周期方法来监听其生命周期，也可以在 `Application` 上
-注册 `ActivityLifecycleCallbacks`。在 Flutter 中，这两种方法都没有，但是你可以通过绑定 
-`WidgetsBinding` 观察者并监听 `didChangeAppLifecycleState()` 的变化事件来监听生命周期。
+在 Android 中，你可以覆写 `Activity` 的生命周期方法来监听其生命周期，
+也可以在 `Application` 上注册 `ActivityLifecycleCallbacks`。
+在 Flutter 中，这两种方法都没有，但是你可以通过绑定 `WidgetsBinding`
+观察者并监听 `didChangeAppLifecycleState()` 的变化事件来监听生命周期。
 
 The observable lifecycle events are:
 
@@ -1765,7 +1801,7 @@ The observable lifecycle events are:
 
 * `detached` — The application is still hosted on a flutter engine but is detached from any host views.
 
-  `detached` — 应用依然保留 flutter engine，但是它会脱离全部宿主 view。
+  `detached` — 应用依然保留 flutter engine，但是全部宿主 view 均已脱离。
 
 * `paused` — The application is not currently visible to the user,
   not responding to user input, and running in the background.
@@ -1800,13 +1836,13 @@ If you need to observe the lifecycle to acquire or release any
 native resources, you should likely be doing it from the native side,
 at any rate.
 
-你可能已经注意到，只有一小部分的 Activity 生命周期事件是可用的；
+你可能已经注意到，只有一小部分的 Activity 生命周期事件是可用的，
 虽然 `FlutterActivity` 在内部捕获了几乎所有的 Activity 生命周期事件
 并将它们发送给 Flutter 引擎，但是它们大部分都向你屏蔽了。
 Flutter 为你管理引擎的启动和停止，
 在大部分情况下几乎没有理由要在 Flutter 一端监听 Activity 的生命周期。
 如果你需要通过监听生命周期来获取或释放原生的资源，
-你无论如何都应该在原生一端做这件事。
+无论如何都应该在原生端做这件事。
 
 Here's an example of how to observe the lifecycle status of the
 containing activity:
@@ -1878,7 +1914,7 @@ linearly&mdash;either horizontally or vertically.
 In Flutter, use the Row or Column
 widgets to achieve the same result.
 
-在 Android 中，LinearLayout 用于线性布局 widget 的&mdash;水平或者垂直。
+在 Android 中，LinearLayout 用于线性布局 widget 的&mdash;&mdash;水平或者垂直。
 在 Flutter 中，使用 Row 或者 Column Widget 来实现相同的效果。
 
 If you notice the two code samples are identical with the exception of the
@@ -1886,10 +1922,11 @@ If you notice the two code samples are identical with the exception of the
 exploited to develop rich layouts that can change overtime with the same
 children.
 
-如果你注意看的话，
-会发现下面的两段代码除了 `Row` 和 `Column` widget 以外是一模一样的。
-它们的孩子是一样的，
-而这个特性可以被充分利用来开发包含有相同的孩子但是会随时间改变的复杂布局。
+如果你注意看的话，会发现下面的两段代码除了
+`Row` 和 `Column` widget 以外是一模一样的。
+它们的子级是一样的，
+而这个特性可以被充分利用来开发包含有相同的子级，
+但是会随时间改变的复杂布局。
 
 <!-- skip -->
 ```dart
@@ -1928,7 +1965,8 @@ see the community-contributed Medium article
 [Flutter for Android Developers: How to design LinearLayout in Flutter][].
 
 如果想学习更多的构建线性布局的内容，请阅读社区贡献的 Medium 文章 
-[给 Android 开发者的 Flutter 指南：如何在 Flutter 中设计线性布局？][Flutter for Android Developers: How to design LinearLayout in Flutter]
+[给 Android 开发者的 Flutter 指南：如何在 Flutter 中设计线性布局]
+[Flutter for Android Developers: How to design LinearLayout in Flutter]。
 
 ### What is the equivalent of a RelativeLayout?
 
@@ -1959,8 +1997,8 @@ Collin 在 [StackOverflow][] 上的回答是一个在 Flutter 中构建相对布
 In Android, use a ScrollView to lay out your widgets&mdash;if the user's
 device has a smaller screen than your content, it scrolls.
 
-在 Android 中，使用 ScrollView 布局 widget&mdash;如果用户的设备屏幕
-比应用的内容区域小，用户可以滑动内容。
+在 Android 中，使用 ScrollView 布局 widget&mdash;&mdash;
+如果用户的设备屏幕比应用的内容区域小，用户可以滑动内容。
 
 In Flutter, the easiest way to do this is using the ListView widget.
 This might seem like overkill coming from Android,
@@ -2010,8 +2048,8 @@ android:configChanges="orientation|screenSize"
 In Android, you can attach onClick to views such as button by calling
 the method 'setOnClickListener'.
 
-在 Android 中，你可以通过调用 `setOnClickListener` 方法在按钮这样的 View 上
-添加点击监听器。
+在 Android 中，你可以通过调用 `setOnClickListener`
+方法在按钮这样的 View 上添加点击监听器。
 
 In Flutter there are two ways of adding touch listeners:
 
@@ -2085,7 +2123,7 @@ Using the GestureDetector, you can listen to a wide range of Gestures such as:
 
   * `onTap` - A tap has occurred.
    
-    `onTap` - 一个点击事件已经发生。
+    `onTap` - 一个已经发生的点击事件。
 
   * `onTapCancel` - The pointer that previously triggered the `onTapDown` won't
      cause a tap.
@@ -2201,7 +2239,7 @@ class _SampleAppState extends State<SampleApp> with SingleTickerProviderStateMix
 
 ## Listviews & adapters
 
-## Listviews 和 adapters
+## 列表视图和适配器
 
 ### What is the alternative to a ListView in Flutter?
 
@@ -2533,15 +2571,15 @@ Instead of creating a "ListView", create a
 `ListView.builder` that takes two key parameters: the
 initial length of the list, and an `ItemBuilder` function.
 
-不用创建一个 "ListView"，而是创建接收两个参数的 ListView.Builder，两个参数分别是
-列表的初始长度和一个 ItemBuilder 方法。
+不用创建一个 "ListView"，而是创建接收两个参数的 ListView.Builder，
+两个参数分别是列表的初始长度和一个 `ItemBuilder` 方法。
 
 The `ItemBuilder` function is similar to the `getView`
 function in an Android adapter; it takes a position,
 and returns the row you want rendered at that position.
 
-ItemBuilder 方法和 Android adapter 里的 `getView` 方法类似；它通过位置返回你期望在
-这个位置渲染的列表项。
+ItemBuilder 方法和 Android adapter 里的 `getView` 方法类似；
+它通过位置返回你期望在 这个位置渲染的列表项。
 
 Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead `.add`s to it.
@@ -2565,8 +2603,8 @@ pass it into the FontFamily param for your TextView.
 In Flutter, place the font file in a folder and reference it in the
 `pubspec.yaml` file, similar to how you import images.
 
-在 Flutter 中，将字体文件放入一个文件夹，并在 `pubspec.yaml` 文件中引用它，就
-和导入图片一样。
+在 Flutter 中，将字体文件放入一个文件夹，
+并在 `pubspec.yaml` 文件中引用它，和导入图片一样。
 
 ```yaml
 fonts:
@@ -2606,7 +2644,8 @@ Along with fonts, you can customize other styling elements on a `Text` widget.
 The style parameter of a `Text` widget takes a `TextStyle` object, where you can
 customize many parameters, such as:
 
-除了字体，你还可以自定义 `Text` Widget 的其它样式元素。`Text` Widget 的样式参数接收一个 `TextStyle` 对象，
+除了字体，你还可以自定义 `Text` Widget 的其它样式元素。
+`Text` Widget 的样式参数接收一个 `TextStyle` 对象，
 你可以在这个对象里自定义很多参数，例如：
 
 * color
@@ -2632,19 +2671,20 @@ For more information on using Forms, see
 [Retrieve the value of a text field][],
 from the [Flutter Cookbook][].
 
-如果需要更多使用表单的信息，请查看 [Flutter Cookbook][Flutter Cookbook] 中的 
+如果需要更多使用表单的信息，请查看
+[Flutter Cookbook][Flutter Cookbook] 中的 
 [检索一个文本字段的值][Retrieve the value of a text field]。
 
 ### What is the equivalent of a "hint" on an Input?
 
-### Input 的“提示” (hint) 的对应概念是什么？
+### Input 的「提示」 (hint) 的对应概念是什么？
 
 In Flutter, you can easily show a "hint" or a placeholder text for your input by
 adding an InputDecoration object to the decoration constructor parameter for
 the Text Widget.
 
 在 Flutter 中，你可以简单地通过向 Text Widget 构造器的 decoration 参数
-传入一个 InputDecoration 对象来为输入框展示一个“提示”或占位文本。
+传入一个 InputDecoration 对象来为输入框展示一个「提示」或占位文本。
 
 <!-- skip -->
 ```dart
@@ -2662,7 +2702,7 @@ body: Center(
 Just as you would with a "hint", pass an InputDecoration object
 to the decoration constructor for the Text widget.
 
-就像上面实现“提示”功能一样，像 Text Widget 构造方法的 decoration 参数传入
+就像上面实现「提示」功能一样，像 Text Widget 构造方法的 decoration 参数传入
 一个 InputDecoration 对象。
 
 However, you don't want to start off by showing an error.
@@ -2833,8 +2873,9 @@ If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
 [developing packages and plugins][] page.
 
-如果有 Flutter 官方或社区第三方插件没有涵盖的平台特定的功能，你可以根据 
-[开发包和插件][developing packages and plugins] 页面创建自己的插件。
+如果有 Flutter 官方或社区第三方插件没有涵盖的平台特定的功能，
+你可以参考 [开发包和插件][developing packages and plugins]
+文档创建自己的插件。
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result
@@ -2853,8 +2894,9 @@ If you use the NDK in your current Android application and want your Flutter
 application to take advantage of your native libraries then it's possible by
 building a custom plugin.
 
-如果你在现有的 Android 应用中使用 NDK，并且希望你的 Flutter 应用可以利用你的 native 库，
-这可以通过创建一个自定义插件实现。
+如果你在现有的 Android 应用中使用 NDK，
+并且希望你的 Flutter 应用可以利用你的 native 库，
+你可以通过创建一个自定义插件实现。
 
 Your custom plugin first talks to your Android app, where you call your
 `native` functions over JNI. Once a response is ready,
@@ -2894,7 +2936,7 @@ required for applications implementing Material Design.
 It builds upon a WidgetsApp by adding Material specific functionality.
 
 为了在应用中利用好 Material 组件，
-你可以在应用中声明一个顶层 Widget `MeterialApp` 作为入口。
+你可以在应用中声明一个顶层 Widget `MaterialApp` 作为入口。
 MaterialApp 是一个包装了一系列 Widget 的为你给予便利的 Widget，
 而这些 Widget 通常是实现 Material Design 的应用所必须的。
 它基于 WidgetsApp 并添加了 Material 相关的功能。
@@ -2997,13 +3039,15 @@ In Flutter, access this functionality using the
 
 ## Debugging
 
+## 调试
+
 ### What tools can I use to debug my app in Flutter?
 
-### 应该使用什么工具调试我的 Flutter 应用？
+### 我可以使用什么工具调试我的 Flutter 应用？
 
 Use the [DevTools][] suite for debugging Flutter or Dart apps.
 
-请使用 [开发者工具][DevTools] debug 你的 Flutter 和 Dart 应用。
+请使用 [开发者工具][DevTools] 调试你的 Flutter 和 Dart 应用。
 
 DevTools includes support for profiling, examining the heap,
 inspecting the widget tree, logging diagnostics, debugging,
@@ -3011,7 +3055,7 @@ observing executed lines of code, debugging memory leaks and memory
 fragmentation. For more information, see the
 [DevTools][] documentation.
 
-开发者工具包含了 profiling 构建、检查堆栈、检视 widget 树、诊断信息记录、调试、
+开发者工具包含了性能工具、检查堆栈、检视 widget 树、诊断信息记录、调试、
 执行代码行观察、调试内存泄漏和内存碎片等。
 有关更多信息，请参阅 [开发者工具][DevTools] 文档。
 

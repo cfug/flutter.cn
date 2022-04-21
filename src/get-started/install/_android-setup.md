@@ -2,7 +2,6 @@
 
 ## 设置 Android 开发环境
 
-
 {{site.alert.note}}
 
   Flutter relies on a full installation of Android Studio to supply

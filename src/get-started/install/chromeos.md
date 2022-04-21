@@ -30,12 +30,12 @@ must meet these minimum requirements:
 * **Disk Space**: 600 MB (does not include disk space for IDE/tools).
 
   **磁盘空间**：600 MB （不包括 IDE/tools 所占的空间）
-  
+
 * **Tools**: Flutter depends on these command-line
   tools being available in your environment.
-  
+
   **工具**：Flutter 需要环境中安装如下命令行工具
-  
+
   * `bash`
   * `curl`
   * `git` 2.x
@@ -44,6 +44,7 @@ must meet these minimum requirements:
   * `unzip`
   * `which`
   * `xz-utils`
+
 * **Shared libraries**: Flutter `test` command depends on
   this library being available in your environment.
 
@@ -51,7 +52,7 @@ must meet these minimum requirements:
 
   * `libGLU.so.1` - provided by mesa packages such as `libglu1-mesa` on
      Ubuntu/Debian
-    
+
     `libGLU.so.1` - 由 mesa 包提供，比如在 Ubuntu/Debian
     系统上对应的包是 `libglu1-mesa`
 
@@ -97,8 +98,9 @@ and select "Connect" to start the Flutter DevTools
 for your Android app.
 
 然后在你的 Chrome 浏览器里打开 URL: http://127.0.0.1:8000/#，
-上面最后一个 `flutter run` 命令会输出一个类似 `http://127.0.0.1:8080/auth_code=/`
-的 URL，使用这个 URL 并选择 "Connect" 来启动
+上面最后一个 `flutter run` 命令会输出一个类似
+`http://127.0.0.1:8080/auth_code=/` 的 URL，
+使用这个 URL 并选择「Connect」来启动
 适用于 Android 应用的 Flutter DevTools。
 
 #### Flutter Chrome OS lint analysis
@@ -160,7 +162,7 @@ but check back for instructions on how you can make
 this functionality work with your Chrome OS
 targeted Flutter app.
 
-目前该功能仍然处于开发阶段，不过你可以在未来返回
-来根据本文档的内容在 Chrome OS 上开发 Flutter 应用程序。
+目前该功能仍然处于开发阶段，不过你可以在未来根据本文档的内容
+在 Chrome OS 上开发 Flutter 应用程序。
 
 [Linux (Beta)]: https://support.google.com/chromebook/answer/9145439

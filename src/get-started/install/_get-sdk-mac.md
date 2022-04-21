@@ -2,7 +2,6 @@
 
 ## 获取 Flutter SDK {#get-sdk}
 
-
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
@@ -32,7 +31,7 @@
     $ cd ~/development
     $ unzip ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip
     ```
-    
+
  1. Add the `flutter` tool to your path:
 
     配置 `flutter` 的 PATH 环境变量：
@@ -48,7 +47,7 @@
 
     这个命令配置了 `PATH` 环境变量，且只会在你 **当前** 命令行窗口中生效。
     如果想让它永久生效，请查看 [更新 PATH 环境变量][Update your path]。
-    
+
 You are now ready to run Flutter commands!
 
 现在你可以愉快地运行 Flutter 的命令行啦！
@@ -57,7 +56,7 @@ You are now ready to run Flutter commands!
 
   To update an existing version of Flutter, see
   [Upgrading Flutter][].
-  
+
   如果想要升级当前的 Flutter 版本，可以查看 [升级 Flutter][Upgrading Flutter]。
 
 {{site.alert.end}}
@@ -119,7 +118,7 @@ to download the stable branch:
 
 你也可以不从归档，而是用 Git 直接下载。
 例如，可以运行下方的命令，以下载稳定分支的 SDK：
-    
+
 ```terminal
 $ git clone https://github.com/flutter/flutter.git -b stable
 ```

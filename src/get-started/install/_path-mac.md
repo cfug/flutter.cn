@@ -60,7 +60,7 @@ whenever you open a new window. For example:
     automatically source the file.
 
     运行 `source $HOME/.bash_profile` 来刷新当前命令行窗口。
- 
+
  5. Verify that the `flutter/bin` directory
     is now in your PATH by running:
 
@@ -69,8 +69,9 @@ whenever you open a new window. For example:
     ```terminal
     $ echo $PATH
     ```
+
     Verify that the `flutter` command is available by running:
-    
+
     验证 `flutter` 命令是否可用，可以执行下面的命令检测：
 
     ```terminal

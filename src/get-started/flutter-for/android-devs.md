@@ -808,7 +808,12 @@ First, register the intent filter for all intents in `AndroidManifest.xml`:
 ```xml
 <activity
   android:name=".MainActivity"
-  android:launchMode="singleTop"
+  android:launch
+  
+  
+  
+  
+  Mode="singleTop"
   android:theme="@style/LaunchTheme"
   android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection"
   android:hardwareAccelerated="true"
@@ -1585,8 +1590,8 @@ Flutter 没有 `dp` 单位，但是有逻辑像素尺寸，基本和设备无关
 
 The equivalent to Android's density buckets are:
 
-和 Android 的密度分类的对照表如下：
- 
+与 Android 的密度分类的对照表如下：
+
 Android density qualifier | Flutter pixel ratio
  --- | ---
 Android 密度修饰符 | Flutter 像素比例
@@ -2048,8 +2053,8 @@ android:configChanges="orientation|screenSize"
 In Android, you can attach onClick to views such as button by calling
 the method 'setOnClickListener'.
 
-在 Android 中，你可以通过调用 `setOnClickListener` 方法在按钮这样的 View 上
-添加点击监听器。
+在 Android 中，你可以通过调用 `setOnClickListener`
+方法在按钮这样的 View 上添加点击监听器。
 
 In Flutter there are two ways of adding touch listeners:
 
@@ -2239,7 +2244,7 @@ class _SampleAppState extends State<SampleApp> with SingleTickerProviderStateMix
 
 ## Listviews & adapters
 
-## Listviews 和 adapters
+## 列表视图和适配器
 
 ### What is the alternative to a ListView in Flutter?
 
@@ -3038,6 +3043,8 @@ In Flutter, access this functionality using the
 在 Flutter 中，使用 [SQFlite][] 插件实现此功能。
 
 ## Debugging
+
+## 调试
 
 ### What tools can I use to debug my app in Flutter?
 

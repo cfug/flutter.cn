@@ -770,7 +770,7 @@ To learn how to implement a signature painter in Flutter,
 see Collin's answer on [StackOverflow][].
 
 如果想学习在 Flutter 中如何实现一个签名功能，
-可以查看 Collin 在 [Custom Paint][] 上的回答。
+可以查看 Collin 在 [StackOverflow][] 上的回答。
 
 [StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
@@ -3319,7 +3319,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`][]
 plugin documentation.
 
-在 Flutter 中，则使用 [Firebase Messaging][] 插件实现此功能。
+在 Flutter 中，则使用 [`firebase_messaging`][] 插件实现此功能。
 想要获得更多关于使用 Firebase Cloud Messaging API 的信息，
 请查阅 [`firebase_messaging`][] 插件文档。
 

@@ -26,7 +26,7 @@ Flutter 应用在默认情况下就能保证拥有良好的性能，
 
 ## 一些基本的建议
 
-If you _are_ seeing janky (non smooth) animations, make
+If you see janky (non smooth) animations, make
 **sure** that you are profiling performance with an
 app built in _profile_ mode.
 The default Flutter build creates an app in _debug_ mode,
@@ -80,7 +80,7 @@ the first run of an animation? If so, see
 如果是这样的话，可以查看这个文档
 [减少过移动应用的着色器动画卡顿][Reduce shader animation jank on mobile]。
 
-[Reduce shader animation jank on mobile]: {{site.url}}/perf/rendering/shader
+[Reduce shader animation jank on mobile]: {{site.url}}/perf/shader
 
 ## Web-only advice
 
@@ -108,8 +108,8 @@ Flutter Gallery Web 应用性能时候总结的经验：
 
 [Building performant Flutter widgets]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
 [Flutter's build modes]: {{site.url}}/testing/build-modes
-[Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [images]: {{site.flutter-medium}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
-[Performance best practices]: {{site.url}}/perf/rendering/best-practices
+[Performance best practices]: {{site.url}}/perf/best-practices
 [shaking]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [Show performance data]: {{site.url}}/development/tools/android-studio#show-performance-data

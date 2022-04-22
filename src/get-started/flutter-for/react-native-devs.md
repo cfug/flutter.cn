@@ -87,9 +87,8 @@ entry point to the app.
 
 <!-- skip -->
 ```dart
-// Dart
-main() {
-}
+/// Dart
+void main() {}
 ```
 
 Try it out in [DartPad][DartPadA].
@@ -111,7 +110,7 @@ console.log('Hello world!');
 
 <!-- skip -->
 ```dart
-// Dart
+/// Dart
 print('Hello world!');
 ```
 
@@ -154,10 +153,10 @@ var name = 'JavaScript';
 
 <!-- skip -->
 ```dart
-// Dart
-String name = 'dart'; // Explicitly typed as a string.
-var otherName = 'Dart'; // Inferred string.
-// Both are acceptable in Dart.
+/// Dart
+/// Both variables are acceptable.
+String name = 'dart'; // Explicitly typed as a [String].
+var otherName = 'Dart'; // Inferred [String] type.
 ```
 
 Try it out in [DartPad][DartPadC].
@@ -183,6 +182,17 @@ numeric types have the value `null`.
 在 Dart 中，未初始化的变量会有一个初始值 `null`。
 因为数字在 Dart 是对象，甚至未初始化的数字类型的变量也会是 `null`。
 
+{{site.alert.note}}
+
+  As of 2.12, Dart supports [Sound Null Safety][],
+  all underlying types are non-nullable by default,
+  which must be initialized as a non-nullable value.
+
+  自 Dart 2.12 起，[健全的空安全][] 已完全支持，
+  所有的基础类型默认都为非空，在使用时必须要初始化为非空的值。
+
+{{site.alert.end}}
+
 ```js
 // JavaScript
 var name; // == undefined
@@ -191,8 +201,8 @@ var name; // == undefined
 <!-- skip -->
 ```dart
 // Dart
-var name; // == null
-int x; // == null
+var name; // == null; raises a linter warning
+int? x; // == null
 ```
 
 Try it out in [DartPad][DartPadD].
@@ -208,9 +218,11 @@ For more information, see the documentation on
 
 ### 检查 null 或者零值
 
-In JavaScript, values of 1 or any non-null objects are treated as true.
+In JavaScript, values of 1 or any non-null objects
+are treated as `true` when using the `==` comparison operator.
 
-在 JavaScript 中，1 或者任何非空对象都相当于 true。
+在 JavaScript 中，1 或者任何非空对象在使用
+`==` 比较操作符时都会被隐式转换为 `true`。
 
 ```js
 // JavaScript
@@ -230,7 +242,7 @@ In Dart, only the boolean value `true` is treated as true.
 
 <!-- skip -->
 ```dart
-// Dart
+/// Dart
 var myNull = null;
 if (myNull == null) {
   print('use "== null" to check null');
@@ -263,11 +275,8 @@ function fn() {
 
 <!-- skip -->
 ```dart
-// Dart
-fn() {
-  return true;
-}
-// can also be written as
+/// Dart
+/// You can explicitly define the return type.
 bool fn() {
   return true;
 }
@@ -326,13 +335,14 @@ main();
 
 <!-- skip -->
 ```dart
-// Dart
+/// Dart
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 class Example {
   Future<String> _getIPAddress() {
-    final url = new Uri.https('httpbin.org', '/ip');
+    final url = Uri.https('httpbin.org', '/ip');
     return http.get(url).then((response) {
       String ip = jsonDecode(response.body)['origin'];
       return ip;
@@ -340,8 +350,8 @@ class Example {
   }
 }
 
-main() {
-  final example = new Example();
+void main() {
+  final example = Example();
   example
       ._getIPAddress()
       .then((ip) => print(ip))
@@ -404,19 +414,24 @@ The `await` operator is used to wait for a `Future`.
 ```dart
 // Dart
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 class Example {
   Future<String> _getIPAddress() async {
-    final url = new Uri.https('httpbin.org', '/ip');
+    final url = Uri.https('httpbin.org', '/ip');
     final response = await http.get(url);
     String ip = jsonDecode(response.body)['origin'];
     return ip;
   }
 }
 
-main() async {
-  final example = new Example();
+/// An async function returns a `Future`.
+/// It can also return `void`, unless you use
+/// the `avoid_void_async` lint. In that case,
+/// return `Future<void>`.
+void main() async {
+  final example = Example();
   try {
     final ip = await example._getIPAddress();
     print(ip);
@@ -517,7 +532,7 @@ In React Native, you need to import each required component.
 在 RN 中，你需要导入每一个所需的组件。
 
 ```js
-//React Native
+// React Native
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 ```
@@ -536,14 +551,14 @@ Or, you can write your own widget library and import that.
 
 <!-- skip -->
 ```dart
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter/my_widgets.dart';
+import 'package:my_widgets/my_widgets.dart';
 ```
 
-Whichever widget package you import, Dart pulls in only the widgets that are
- used in your app.
+Whichever widget package you import,
+Dart pulls in only the widgets that are used in your app.
 
 无论你导入哪个库，Dart 仅仅引用你应用中用到的 widget。
 
@@ -597,12 +612,12 @@ the `Text` widget.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    Center(
+    const Center(
       child: Text(
         'Hello, world!',
         textDirection: TextDirection.ltr,
@@ -636,11 +651,13 @@ In Flutter, almost everything is a widget.
 
 在 Flutter 中，几乎任何元素都是 widget。
 
-Widgets are the basic building blocks of an app's user interface. You compose
-widgets into a hierarchy, called a widget tree. Each widget nests inside a
-parent widget and inherits properties from its parent. Even the application
-object itself is a widget. There is no separate “application” object. Instead,
-the root widget serves this role.
+Widgets are the basic building blocks of an app's user interface.
+You compose widgets into a hierarchy, called a widget tree.
+Each widget nests inside a parent widget
+and inherits properties from its parent.
+Even the application object itself is a widget.
+There is no separate “application” object.
+Instead, the root widget serves this role.
 
 Widget 是构建应用软件用户界面的基本元素。
 你可以将 widget 按照一定的层次组合，成为 widget 树。
@@ -674,21 +691,23 @@ Material library. In this example, the widget tree is nested inside the
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
  widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to Flutter'),
+          title: const Text('Welcome to Flutter'),
         ),
-        body: Center(
+        body: const Center(
           child: Text('Hello world'),
         ),
       ),
@@ -721,7 +740,7 @@ received, or user input.
 会基于接收到的数据或者用户输入的数据动态改变状态。
 
 The important difference between stateless and stateful
-widgets is that `StatefulWidgets` have a `State` object
+widgets is that `StatefulWidget`s have a `State` object
 that stores state data and carries it over
 across tree rebuilds, so it's not lost.
 
@@ -785,13 +804,16 @@ reusable widget as shown in the `build` function in the following example.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 class CustomCard extends StatelessWidget {
-  CustomCard({@required this.index, @required
-     this.onPress});
+  const CustomCard({
+    Key? key,
+    required this.index,
+    required this.onPress,
+  }) : super(key: key);
 
   final index;
-  final Function onPress;
+  final void Function() onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -801,22 +823,23 @@ class CustomCard extends StatelessWidget {
           Text('Card $index'),
           TextButton(
             child: const Text('Press'),
-            onPressed: this.onPress,
+            onPressed: onPress,
           ),
         ],
       )
     );
   }
 }
-    ...
-// Usage
-CustomCard(
-  index: index,
-  onPress: () {
-    print('Card $index');
-  },
-)
-    ...
+
+/// Usage
+Widget _buildCard() {
+  return CustomCard(
+    index: index,
+    onPress: () {
+      print('Card $index');
+    },
+  );
+}
 ```
 
 In the previous example, the constructor for the `CustomCard`
@@ -826,11 +849,11 @@ class uses Dart's curly brace syntax `{ }` to indicate named
 在之前的示例，`CustomCard` 类的构造函数使用 Dart 的
 花括号 `{ }` 来表示 [可选参数][optional parameters]。
 
-To require these fields, either remove the curly braces from the constructor, or
-add `@required` to the constructor.
+To require these fields, either remove the curly braces from
+the constructor, or add `required` to the constructor.
 
 如果将这些参数设定为必填参数，要么从构造函数中删掉曲括号，
-或者在构造函数中加上 `@required`。
+或者在构造函数中加上 `required`。
 
 The following screenshots show an example of the reusable
 `CustomCard` class.
@@ -857,12 +880,12 @@ It's autogenerated when you create a Flutter app.
 ```dart
 // Dart
 void main(){
- print('Hello, this is the main function.');
+  print('Hello, this is the main function.');
 }
 ```
 
 In Flutter, the entry point file is
-`’projectname’/lib/main.dart` and execution
+`{project_name}/lib/main.dart` and execution
 starts from the `main` function.
 
 在 Flutter 中，入口文件是 `{项目目录}/lib/main.dart`
@@ -881,7 +904,7 @@ You can customize it later, but this is where you start.
 
 ```
 ┬
-└ projectname
+└ project_name
   ┬
   ├ android      - Contains Android-specific files.
   ├ build        - Stores iOS and Android build files.
@@ -956,8 +979,8 @@ flutter:
 ```
 
 The `assets` subsection specifies files that should be included with the app.
-Each asset is identified by an explicit path relative to the `pubspec.yaml`
-file, where the asset file is located.
+Each asset is identified by an explicit path
+relative to the `pubspec.yaml` file, where the asset file is located.
 The order in which the assets are declared does not matter.
 The actual directory used (`assets` in this case) does not matter.
 However, while assets can be placed in any app directory, it's a
@@ -970,12 +993,14 @@ best practice to place them in the `assets` directory.
 但是， 由于资源可以放置于程序的任何目录，
 所以放在 `assets` 文件夹是比较好的。
 
-During a build, Flutter places assets into a special archive called the *asset
-bundle*, which apps read from at runtime. When an asset’s path is specified in
-the assets section of `pubspec.yaml`, the build process looks for any files with
-the same name in adjacent subdirectories. These files are also included in the
-asset bundle along with the specified asset. Flutter uses asset variants when
-choosing resolution-appropriate images for your app.
+During a build, Flutter places assets into a special archive
+called the *asset bundle*, which apps read from at runtime.
+When an asset’s path is specified in the assets' section of `pubspec.yaml`,
+the build process looks for any files
+with the same name in adjacent subdirectories.
+These files are also included in the asset bundle
+along with the specified asset. Flutter uses asset variants
+when choosing resolution-appropriate images for your app.
 
 在构建期间，Flutter 会将资源放到一个称为 *asset bundle* 的归档文件中，
 应用程序可以在运行时访问该文件。当一个资源在 `pubspec.yaml` 中被声明时，
@@ -984,8 +1009,8 @@ choosing resolution-appropriate images for your app.
 当你为应用程序选择和屏幕显示分辨率相关的图片时，
 Flutter 会使用资源变体。
 
-In React Native, you would add a static image by placing the image file in a
-source code directory and referencing it.
+In React Native, you would add a static image by placing the image file
+in a source code directory and referencing it.
 
 在 RN 中，你可以在源码文件夹中通过添加文件来
 增加一个静态图片并且在代码中引用它。
@@ -994,15 +1019,15 @@ source code directory and referencing it.
 <Image source={require('./my-icon.png')} />
 ```
 
-In Flutter, add a static image to your app using the `AssetImage` class in a
-widget’s build method.
+In Flutter, add a static image to your app
+using the `Image.asset` constructor in a widget’s build method.
 
 在 Flutter 中，如果要展示静态资源图片，
 在 widget 的 build 方法中使用 `Image.asset` 构造即可。
 
 <!-- skip -->
 ```dart
-image: AssetImage('assets/background.png'),
+Image.asset('assets/background.png')
 ```
 
 For more information, see [Adding Assets and Images in Flutter][].
@@ -1027,9 +1052,8 @@ an image from a URL.
 
 <!-- skip -->
 ```dart
-// Flutter
-body: Image.network(
-          'https://flutter.io/images/owl.jpg',
+/// Flutter
+Image.network('https://docs.flutter.dev/assets/images/docs/owl.jpg'),
 ```
 
 ### How do I install packages and package plugins?
@@ -1057,9 +1081,9 @@ In Flutter, install a package using the following instructions:
 在 Flutter 中，安装 package 需要按照如下的步骤：
 
 1. Add the package name and version to the `pubspec.yaml` dependencies section.
-The example below shows how to add the `google_sign_in` Dart package to the
-`pubspec.yaml` file. Check your spaces when working in the YAML file because
-**white space matters**!
+   The example below shows how to add the `google_sign_in` Dart package to the
+   `pubspec.yaml` file. Check your spaces when working in the YAML file because
+   **white space matters**!
 
    在 `pubspec.yaml` 的 dependencies 区域添加包名和版本。
    下面的例子向大家展示了如何将 `google_sign_in`
@@ -1120,8 +1144,9 @@ Specifically, the `Container` widget includes the `LimitedBox`,
 Rather than subclassing `Container` to produce a customized effect, you can
 compose these and other simple widgets in new and unique ways.
 
-Widget 常常通过很多小的、单一功能的 widget 组成，通过这样的封装往往能够实现很棒的效果。
-比如， Container widget 包含多种 widget，分别负责布局、绘图、位置变化和尺寸变化。
+Widget 常常通过很多小的、单一功能的 widget 组成，
+通过这样的封装往往能够实现很棒的效果。
+比如，`Container` widget 包含多种 widget，分别负责布局、绘图、位置变化和尺寸变化。
 准确的说，`Container` widget 包括 `LimitedBox`、`ConstrainedBox`、`Align`、
 `Padding`、`DecoratedBox` 和 `Transform` widget。
 与其继承 `Container` 来实现自定义效果，
@@ -1139,16 +1164,17 @@ certain way, it’s often helpful to inspect the neighboring widgets.
 如果要居中一个 widget，就把它封装到 `Center` widget 中，
 然后使用布局 widget 来进行对齐行、列和网格。
 这些布局 widget 并不可见。而他们的作用就是控制其它 widget 的布局。
-如果想搞清楚为什么一个 widget 会有这样的效果，有效的方法是研究它临近的 widget。
+如果想搞清楚为什么一个 widget 会有这样的效果，
+有效的方法是研究它临近的 widget。
 
 For more information, see the [Flutter Technical Overview][].
 
 如果想了解更多相关信息，请参考 [Flutter 技术概览][Flutter Technical Overview]。
 
 For more information about the core widgets from the `Widgets` package,
-see
-[Flutter Basic Widgets][], the [Flutter Widget Catalog][], or the
-[Flutter Widget Index][].
+see [Flutter Basic Widgets][],
+the [Flutter Widget Catalog][],
+or the [Flutter Widget Index][].
 
 如果想了解更多关于 Widgets 包中的核心 widget，
 请参考 [基础 Flutter Widgets][Flutter Basic Widgets]、
@@ -1214,14 +1240,12 @@ those children that are visible.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 var data = [ ... ];
 ListView.builder(
   itemCount: data.length,
-  itemBuilder: (context, int index) {
-    return Text(
-      data[index],
-    );
+  itemBuilder: (BuildContext context, int index) {
+    return Text(data[index]);
   },
 )
 ```
@@ -1239,7 +1263,8 @@ To learn how to implement an infinite scrolling list, see the
 
 ### 如何使用 Canvas 绘图？
 
-In React Native, canvas components aren't present so third party libraries like `react-native-canvas` are used.
+In React Native, canvas components aren't present
+so third party libraries like `react-native-canvas` are used.
 
 在 RN 中，canvas 组件是不可见的，
 所以需要使用类似 `react-native-canvas` 这样的组件。
@@ -1283,31 +1308,33 @@ and `shouldRepaint()` methods.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 class MyCanvasPainter extends CustomPainter {
+  const MyCanvasPainter();
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint paint = Paint();
-    paint.color = Colors.amber;
-    canvas.drawCircle(Offset(100.0, 200.0), 40.0, paint);
-    Paint paintRect = Paint();
-    paintRect.color = Colors.lightBlue;
-    Rect rect = Rect.fromPoints(Offset(150.0, 300.0), Offset(300.0, 400.0));
+    final Paint paint = Paint()..color = Colors.amber;
+    canvas.drawCircle(const Offset(100.0, 200.0), 40.0, paint);
+    final Paint paintRect = Paint()..color = Colors.lightBlue;
+    final Rect rect = Rect.fromPoints(
+      const Offset(150.0, 300.0),
+      const Offset(300.0, 400.0),
+    );
     canvas.drawRect(rect, paintRect);
   }
 
+  @override
   bool shouldRepaint(MyCanvasPainter oldDelegate) => false;
-  bool shouldRebuildSemantics(MyCanvasPainter oldDelegate) => false;
 }
-class _MyCanvasState extends State<MyCanvas> {
+
+class MyCanvasWidget extends StatelessWidget {
+  const MyCanvasWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomPaint(
-        painter: MyCanvasPainter(),
-      ),
+    return const Scaffold(
+      body: CustomPaint(painter: MyCanvasPainter()),
     );
   }
 }
@@ -1323,11 +1350,12 @@ class _MyCanvasState extends State<MyCanvas> {
 
 ### 如何使用 widget 来定义布局属性？
 
-In React Native, most of the layout can be done with the props that are passed
-to a specific component. For example, you could use the `style` prop on the
-`View` component in order to specify the flexbox properties. To arrange your
-components in a column, you would specify a prop such as:
-`flexDirection: “column”`.
+In React Native, most of the layout can be done with the props
+that are passed to a specific component.
+For example, you could use the `style` prop on the `View` component
+in order to specify the flexbox properties.
+To arrange your components in a column, you would specify a prop such as:
+`flexDirection: 'column'`.
 
 在 RN 中，大多数布局需要通过向指定的组件传递属性参数进行设置。
 比如，你可以使用 `View` 的 `style` 来设置 flexbox 属性。
@@ -1366,7 +1394,7 @@ layout and styling properties, and a
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 Center(
   child: Column(
     children: <Widget>[
@@ -1425,27 +1453,28 @@ This class is useful if you simply want to overlap several children widgets.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 Stack(
   alignment: const Alignment(0.6, 0.6),
   children: <Widget>[
     CircleAvatar(
       backgroundImage: NetworkImage(
-        'https://avatars3.githubusercontent.com/u/14101776?v=4'),
+        'https://avatars3.githubusercontent.com/u/14101776?v=4',
+      ),
     ),
     Container(
-      decoration: BoxDecoration(
-          color: Colors.black45,
-      ),
-      child: Text('Flutter'),
+      color: Colors.black45,
+      child: const Text('Flutter'),
     ),
   ],
 )
 ```
 
-The previous example uses `Stack` to overlay a Container (that displays its `Text`
-on a translucent black background) on top of a `CircleAvatar`. The Stack offsets
-the text using the alignment property and Alignment coordinates.
+The previous example uses `Stack` to overlay a Container
+(that displays its `Text` on a translucent black background)
+on top of a `CircleAvatar`.
+The Stack offsets the text using the alignment property
+and `Alignment` coordinates.
 
 上面的示例代码使用 `Stack` 将一个 Container
 （`Text` 显示在一个半透明的黑色背景上）
@@ -1466,8 +1495,8 @@ For more information, see the [`Stack`][] class documentation.
 
 ### 如何设置组件的风格？
 
-In React Native, inline styling and `stylesheets.create` are used to style
-components.
+In React Native, inline styling and `stylesheets.create`
+are used to style components.
 
 在 RN 中，内联风格化和 `stylesheets.create` 可以用于设置组件的风格。
 
@@ -1501,21 +1530,24 @@ style in multiple places, you can create a
 
 <!-- skip -->
 ```dart
-// Flutter
-var textStyle = TextStyle(fontSize: 32.0, color: Colors.cyan, fontWeight:
-   FontWeight.w600);
-	...
+/// Flutter
+const TextStyle textStyle = TextStyle(
+  color: Colors.cyan,
+  fontSize: 32.0,
+  fontWeight: FontWeight.w600,
+);
+
 Center(
   child: Column(
-    children: <Widget>[
-      Text(
-        'Sample text',
-        style: textStyle,
-      ),
+    children: const <Widget>[
+      Text('Sample text',style: textStyle),
       Padding(
         padding: EdgeInsets.all(20.0),
-        child: Icon(Icons.lightbulb_outline,
-          size: 48.0, color: Colors.redAccent)
+        child: Icon(
+          Icons.lightbulb_outline,
+          size: 48.0,
+          color: Colors.redAccent,
+        ),
       ),
     ],
   ),
@@ -1528,7 +1560,8 @@ Center(
 
 ### 我如何使用 `Icons` 和 `Colors` 呢？
 
-React Native doesn't include support for icons so third party libraries are used.
+React Native doesn't include support for icons
+so third party libraries are used.
 
 RN 并不包含默认图标，所以需要使用第三方库。
 
@@ -1558,7 +1591,8 @@ you should include this line.
 
 ```yaml
 name: my_awesome_application
-flutter: uses-material-design: true
+flutter:
+  uses-material-design: true
 ```
 
 Flutter's [Cupertino (iOS-style)][] package provides high
@@ -1580,9 +1614,10 @@ dependencies:
 ```
 
 To globally customize the colors and styles of components,
-use `ThemeData` to specify default colors for various aspects of
-the theme. Set the theme property in `MaterialApp` to the
-`ThemeData` object. The [`Colors`][] class provides colors
+use `ThemeData` to specify default colors
+for various aspects of the theme.
+Set the theme property in `MaterialApp` to the `ThemeData` object.
+The [`Colors`][] class provides colors
 from the Material Design [color palette][].
 
 要在全局范围内自定义组件的颜色和风格，
@@ -1591,14 +1626,16 @@ from the Material Design [color palette][].
 [`Colors`][] 类提供 Material Design [color palette][]
 中所提供的颜色配置。
 
-The following example sets the primary swatch to `blue` and the text
-selection to `red`.
+The following example sets the primary swatch to `blue`
+and the text selection to `red`.
 
 下面的示例代码将主色调设置为 `blue` 然后文本颜色设置为 `red`。
 
 <!-- skip -->
 ```dart
 class SampleApp extends StatelessWidget {
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -1607,7 +1644,7 @@ class SampleApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         textSelectionColor: Colors.red
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
@@ -1632,21 +1669,20 @@ class and passing it to the theme property in the
 
 <!-- skip -->
 ```dart
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.cyan,
-        brightness: Brightness.dark,
-      ),
-      home: StylingPage(),
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return MaterialApp(
+    theme: ThemeData(
+      primaryColor: Colors.cyan,
+      brightness: Brightness.dark,
+    ),
+    home: StylingPage(),
+  );
+}
 ```
 
-A `Theme` can be applied even without using the
-`MaterialApp` widget.  The [`Theme`][]
-widget takes a `ThemeData` in its `data` parameter
+A `Theme` can be applied even without using the `MaterialApp` widget.
+The [`Theme`][] widget takes a `ThemeData` in its `data` parameter
 and applies the `ThemeData` to all of its children widgets.
 
 `Theme` 可以在不使用 `MaterialApp` widget 的情况下使用。
@@ -1655,29 +1691,29 @@ and applies the `ThemeData` to all of its children widgets.
 
 <!-- skip -->
 ```dart
-  @override
-  Widget build(BuildContext context) {
-    return Theme(
-      data: ThemeData(
-        primaryColor: Colors.cyan,
-        brightness: brightness,
-      ),
-      child: Scaffold(
-         backgroundColor: Theme.of(context).primaryColor,
-              ...
-              ...
-      ),
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return Theme(
+    data: ThemeData(
+      primaryColor: Colors.cyan,
+      brightness: brightness,
+    ),
+    child: Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
+      //...
+    ),
+  );
+}
 ```
 
 ## State management
 
 ## 状态管理
 
-State is information that can be read synchronously when a
-widget is built or information that might change during the
-lifetime of a widget. To manage app state in Flutter,
+State is information that can be read synchronously
+when a widget is built or information
+that might change during the lifetime of a widget.
+To manage app state in Flutter,
 use a [`StatefulWidget`][] paired with a State object.
 
 当 widget 被创建或者在 widget 的生命周期中有信息发生改变时所产生的信息叫做状态。
@@ -1692,10 +1728,11 @@ see [State management][].
 
 ### The StatelessWidget
 
-### StatelessWidget widget 
+### 管理 StatelessWidget widget
 
-A `StatelessWidget` in Flutter is a widget that doesn't require a state
-change&mdash;it has no internal state to manage.
+A `StatelessWidget` in Flutter is a widget
+that doesn't require a state change&mdash;
+it has no internal state to manage.
 
 `StatelessWidget` 在 Flutter 中是一个不需要状态改变的 widget，它没有内部的状态。
 
@@ -1715,14 +1752,22 @@ of stateless widgets that subclass [`StatelessWidget`][].
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyStatelessWidget(text: 'StatelessWidget Example to show immutable data'));
+void main() => runApp(
+  const MyStatelessWidget(
+    text: 'StatelessWidget Example to show immutable data',
+  ),
+);
 
 class MyStatelessWidget extends StatelessWidget {
+  const MyStatelessWidget({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
   final String text;
-  MyStatelessWidget({Key key, this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -1813,7 +1858,11 @@ This method creates the state object that manages the widget's state,
 <!-- skip -->
 ```dart
 class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key key, this.title}) : super(key: key);
+  const MyStatefulWidget({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
   final String title;
 
   @override
@@ -1835,27 +1884,26 @@ This causes the framework to rebuild this widget in the UI.
 <!-- skip -->
 ```dart
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  bool showtext=true;
-  bool toggleState=true;
-  Timer t2;
+  bool showText = true;
+  bool toggleState = true;
+  Timer? t2;
 
   void toggleBlinkState(){
     setState((){
-      toggleState=!toggleState;
+      toggleState = !toggleState;
     });
-    var twenty = const Duration(milliseconds: 1000);
-    if(toggleState==false) {
-      t2 = Timer.periodic(twenty, (Timer t) {
+    if (!toggleState) {
+      t2 = Timer.periodic(const Duration(milliseconds: 1000), (Timer t) {
         toggleShowText();
       });
     } else {
-      t2.cancel();
+      t2?.cancel();
     }
   }
 
   void toggleShowText(){
     setState((){
-      showtext=!showtext;
+      showText = !showText;
     });
   }
 
@@ -1865,20 +1913,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Center(
         child: Column(
           children: <Widget>[
-            (showtext
-              ?(Text('This execution will be done before you can blink.'))
-              :(Container())
-            ),
+            if (showText)
+              const Text(
+                'This execution will be done before you can blink.',
+              ),
             Padding(
-              padding: EdgeInsets.only(top: 70.0),
+              padding: const EdgeInsets.only(top: 70.0),
               child: ElevatedButton(
                 onPressed: toggleBlinkState,
-                child: (toggleState
-                  ?( Text('Blink'))
-                  :(Text('Stop Blinking'))
-                )
-              )
-            )
+                child: toggleState
+                    ? const Text('Blink')
+                    : const Text('Stop Blinking'),
+              ),
+            ),
           ],
         ),
       ),
@@ -1895,9 +1942,10 @@ Here are a few things to consider when designing your widget.
 
 下面有一些设计原则供大家参考。
 
-1. Determine whether a widget should be a StatefulWidget or a StatelessWidget
+1. Determine whether a widget should be
+   a `StatefulWidget` or a `StatelessWidget`.
 
-   确定一个 widget 应该是 StatefulWidget 还是 StatelessWidget
+   确定一个 widget 应该是 `StatefulWidget` 还是 `StatelessWidget`。
 
 In Flutter, widgets are either Stateful or Stateless—depending on whether
 they depend on a state change.
@@ -1905,20 +1953,20 @@ they depend on a state change.
 在 Flutter 中， widget 要么是有状态的，要么是无状态的。
 这取决于 widget 是否依赖状态的改变。
 
-* If a widget changes—the user interacts with it or
-  a data feed interrupts the UI, then it’s Stateful.
+* If a widget changes&mdash;the user interacts with it or
+  a data feed interrupts the UI, then it’s *Stateful*.
 
   如果一个 widget 发生了改变，而它所处的用户界面或者数据中断了 UI，
-  那么该 widget 就是有状态的。
+  那么该 widget 就是 **有状态** 的。
 
-* If a widget is final or immutable, then it's Stateless.
+* If a widget is final or immutable, then it's *Stateless*.
 
   如果一个 widget 是 final 类型或者 immutable 类型的，
-  那么该 widget 是无状态的。
+  那么该 widget 是 **无状态** 的。
 
-2. Determine which object manages the widget’s state (for a StatefulWidget)
+2. Determine which object manages the widget's state (for a `StatefulWidget`).
 
-   确定哪个对象来控制 widget 的状态（针对 StatefulWidget）。
+   确定哪个对象来控制 widget 的状态（针对 `StatefulWidget`）。
 
 In Flutter, there are three primary ways to manage state:
 
@@ -1960,24 +2008,32 @@ When deciding which approach to use, consider the following principles:
 
 3. Subclass StatefulWidget and State.
 
-   继承 StatefulWidget 和 状态
+   继承 `StatefulWidget` 和 `State`。
 
-The `MyStatefulWidget` class manages its own state—it extends
-`StatefulWidget`, it overrides the `createState()` method to create the State
-object, and the framework calls `createState()` to build the widget. In this
-example, `createState()` creates an instance of `_MyStatefulWidgetState`, which
+The `MyStatefulWidget` class manages its own state&mdash;it extends
+`StatefulWidget`, it overrides the `createState()`
+method to create the `State` object,
+and the framework calls `createState()` to build the widget.
+In this example, `createState()` creates an instance of
+`_MyStatefulWidgetState`, which
 is implemented in the next best practice.
 
 `MyStatefulWidget` 类管理它自身的状态&mdash;&mdash
 它继承自 `StatefulWidget`，重写了 `createState()` 方法。
-该方法创建了 State 对象，同时框架会调用 `createState()` 方法来构建 widget。
+该方法创建了 `State` 对象，同时框架会调用
+`createState()` 方法来构建 widget。
 在这个例子中，`createState()` 方法创建了一个 
-`_MyStatefulWidgetState` 实例。下面的最佳实践中也实现了类似的方法。
+`_MyStatefulWidgetState` 实例。
+下面的最佳实践中也实现了类似的方法。
 
 <!-- skip -->
 ```dart
 class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key key, this.title}) : super(key: key);
+  const MyStatefulWidget({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
   final String title;
 
   @override
@@ -1985,10 +2041,9 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-
   @override
   Widget build(BuildContext context) {
-    ...
+    //...
   }
 }
 ```
@@ -2007,14 +2062,12 @@ build 方法添加到 widget 树中。
 ```dart
 class MyStatelessWidget extends StatelessWidget {
   // This widget is the root of your application.
+  const MyStatelessWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: MyStatefulWidget(title: 'State Change Demo'),
     );
   }
@@ -2076,12 +2129,16 @@ In Flutter, you assign a local variable or function marked
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 class CustomCard extends StatelessWidget {
+  const CustomCard({
+    Key? key,
+    required this.index,
+    required this.onPress,
+  }) : super(key: key);
 
-  CustomCard({@required this.index, @required this.onPress});
-  final index;
-  final Function onPress;
+  final int index;
+  final VoidCallback onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -2091,20 +2148,22 @@ class CustomCard extends StatelessWidget {
         Text('Card $index'),
         TextButton(
           child: const Text('Press'),
-          onPressed: this.onPress,
+          onPressed: onPress,
         ),
       ],
     ));
   }
 }
-    ...
-//Usage
-CustomCard(
-  index: index,
-  onPress: () {
-    print('Card $index');
-  },
-)
+
+/// Usage
+Widget _buildCard() {
+  return CustomCard(
+    index: index,
+    onPress: () {
+      print('Card $index');
+    },
+  );
+}
 ```
 
 {% include docs/android-ios-figure-pair.md image="react-native/modular.png" alt="Cards" class="border" %}
@@ -2113,7 +2172,7 @@ CustomCard(
 
 ## 本地存储
 
-If you don't need to store a lot of data and it doesn't require
+If you don't need to store a lot of data, and it doesn't require
 structure, you can use `shared_preferences` which allows you to
 read and write persistent key-value pairs of primitive data
 types: booleans, floats, ints, longs, and strings.
@@ -2126,9 +2185,9 @@ types: booleans, floats, ints, longs, and strings.
 
 ### 如何存储在应用程序中全局有效的键值对？
 
-In React Native, you use the `setItem` and `getItem` functions of the
-`AsyncStorage` component to store and retrieve data that is persistent and
-global to the app.
+In React Native, you use the `setItem` and `getItem` functions
+of the `AsyncStorage` component to store and retrieve data
+that is persistent and global to the app.
 
 在 React Native，可以使用 `AsyncStorage` 中的
 `setItem` 和 `getItem` 函数来存储和读取应用程序中的全局数据。
@@ -2163,12 +2222,12 @@ Android 中的 `SharedPreferences` 来实现简单数据的持续存储。
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^0.4.3
+  shared_preferences: ^2.0.13
 ```
 
 <!-- skip -->
 ```dart
-// Dart
+/// Flutter
 import 'package:shared_preferences/shared_preferences.dart';
 ```
 
@@ -2190,12 +2249,14 @@ Setter 方法适用于多种原始类型数据，
 
 <!-- skip -->
 ```dart
-SharedPreferences prefs = await SharedPreferences.getInstance();
-_counter = prefs.getInt('counter');
-prefs.setInt('counter', ++_counter);
-setState(() {
-  _counter = _counter;
-});
+Future<void> updateCounter() async {
+  final prefs = await SharedPreferences.getInstance();
+  _counter = prefs.getInt('counter');
+  await prefs.setInt('counter', ++_counter);
+  setState(() {
+    _counter = _counter;
+  });
+}
 ```
 
 ## Routing
@@ -2282,19 +2343,21 @@ The following example specifies named routes in the `MaterialApp` widget.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 class NavigationApp extends StatelessWidget {
   // This widget is the root of your application.
+  const NavigationApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-            ...
+      //...
       routes: <String, WidgetBuilder>{
-        '/a': (BuildContext context) => usualNavscreen(),
-        '/b': (BuildContext context) => drawerNavscreen(),
-      }
-            ...
-  );
+        '/a': (BuildContext context) => UsualNavScreen(),
+        '/b': (BuildContext context) => DrawerNavScreen(),
+      },
+      //...
+    );
   }
 }
 ```
@@ -2331,8 +2394,12 @@ transition. It takes a [`WidgetBuilder`][] as a required parameter.
 
 <!-- skip -->
 ```dart
-Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)
- => UsualNavscreen()));
+Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (BuildContext context) => UsualNavScreen(),
+  ),
+);
 ```
 
 ### How do I use tab navigation and drawer navigation?
@@ -2352,7 +2419,8 @@ Flutter 的导航形式主要有两种：tab 和 drawer。
 
 #### Tab 导航
 
-In React Native, `createBottomTabNavigator` and `TabNavigation`  are used to
+In React Native, `createBottomTabNavigator`
+and `TabNavigation` are used to
 show tabs and for tab navigation.
 
 在 RN 中，`createBottomTabNavigator`
@@ -2394,17 +2462,21 @@ Flutter 针对 drawer 和 tab 导航提供几种专用的 widget：
 
 <!-- skip -->
 ```dart
-// Flutter
-TabController controller=TabController(length: 2, vsync: this);
+/// Flutter
+class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
+  late TabController controller = TabController(length: 2, vsync: this);
 
-TabBar(
-  tabs: <Tab>[
-    Tab(icon: Icon(Icons.person),),
-    Tab(icon: Icon(Icons.email),),
-  ],
-  controller: controller,
-),
-
+  @override
+  Widget build(BuildContext context) {
+    return TabBar(
+      controller: controller,
+      tabs: <Tab>[
+        Tab(icon: Icon(Icons.person)),
+        Tab(icon: Icon(Icons.email)),
+      ],
+    );
+  }
+}
 ```
 
 A `TabController` is required to coordinate the tab selection
@@ -2426,7 +2498,7 @@ The [`TickerProvider`][] is an interface implemented
 by classes that can vend [`Ticker`][] objects.
 Tickers can be used by any object that must be notified whenever a
 frame triggers, but they're most commonly used indirectly via an
-[`AnimationController`][]. `AnimationControllers`
+[`AnimationController`][]. `AnimationController`s
 need a `TickerProvider` to obtain their `Ticker`.
 If you are creating an AnimationController from a State,
 then you can use the [`TickerProviderStateMixin`][]
@@ -2456,10 +2528,12 @@ children to the `TabBarView` widget along with the same `TabController`.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 
-class _NavigationHomePageState extends State<NavigationHomePage> with SingleTickerProviderStateMixin {
-  TabController controller=TabController(length: 2, vsync: this);
+class _NavigationHomePageState extends State<NavigationHomePage>
+    with SingleTickerProviderStateMixin {
+  late TabController controller = TabController(length: 2, vsync: this);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -2540,11 +2614,11 @@ widget provides the navigation on tap.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 Drawer(
-  child:ListTile(
-    leading: Icon(Icons.change_history),
-    title: Text('Screen2'),
+  child: ListTile(
+    leading: const Icon(Icons.change_history),
+    title: const Text('Screen2'),
     onTap: () {
       Navigator.of(context).pushNamed('/b');
     },
@@ -2564,23 +2638,21 @@ edge-swipe gesture to show the `Drawer`.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 @override
 Widget build(BuildContext context) {
   return Scaffold(
     drawer: Drawer(
       child: ListTile(
-        leading: Icon(Icons.change_history),
-        title: Text('Screen2'),
+        leading: const Icon(Icons.change_history),
+        title: const Text('Screen2'),
         onTap: () {
           Navigator.of(context).pushNamed('/b');
         },
       ),
       elevation: 20.0,
     ),
-    appBar: AppBar(
-      title: Text('Home'),
-    ),
+    appBar: AppBar(title: const Text('Home')),
     body: Container(),
   );
 }
@@ -2592,12 +2664,15 @@ Widget build(BuildContext context) {
 
 ## 手势检测和触摸事件处理
 
-To listen for and respond to gestures, Flutter supports taps, drags, and
-scaling. The gesture system in Flutter has two separate layers. The first layer
-includes raw pointer events, which describe the location and movement of
-pointers, (such as touches, mice, and styli movements), across the screen. The
-second layer includes gestures, which describe semantic actions that consist of
-one or more pointer movements.
+To listen for and respond to gestures,
+Flutter supports taps, drags, and scaling.
+The gesture system in Flutter has two separate layers.
+The first layer includes raw pointer events,
+which describe the location and movement of pointers,
+(such as touches, mice, and styli movements), across the screen.
+The second layer includes gestures,
+which describe semantic actions
+that consist of one or more pointer movements.
 
 Flutter 支持点击、拖拽和缩放手势来监听和相应手势操作。
 Flutter 中的手势处理有两个独立的层。第一层是指针事件，
@@ -2608,8 +2683,8 @@ Flutter 中的手势处理有两个独立的层。第一层是指针事件，
 
 ### 如何为 widget 添加点击或者按压的监听器？
 
-In React Native, listeners are added to components using `PanResponder` or
-the `Touchable` components.
+In React Native, listeners are added to components
+using `PanResponder` or the `Touchable` components.
 
 在 RN 中，使用 `PanResponder` 或者 `Touchable` 组件来添加监听器。
 
@@ -2661,9 +2736,10 @@ class App extends Component {
 }
 ```
 
-In Flutter, to add a click (or press) listener to a widget, use a button
-or a touchable widget that has an `onPress: field`. Or, add gesture detection
-to any widget by wrapping it in a [`GestureDetector`][].
+In Flutter, to add a click (or press) listener to a widget,
+use a button or a touchable widget that has an `onPress: field`.
+Or, add gesture detection to any widget by wrapping it
+in a [`GestureDetector`][].
 
 在 Flutter 中，要为 widget 添加点击或者按压监听器，
 使用带有 `onPress: field` 的按钮或者可触摸 widget 即可。
@@ -2671,17 +2747,15 @@ to any widget by wrapping it in a [`GestureDetector`][].
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 GestureDetector(
   child: Scaffold(
-    appBar: AppBar(
-      title: Text('Gestures'),
-    ),
+    appBar: AppBar(title: const Text('Gestures')),
     body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text('Tap, Long Press, Swipe Horizontally or Vertically '),
+          const Text('Tap, Long Press, Swipe Horizontally or Vertically'),
         ],
       )
     ),
@@ -2701,10 +2775,12 @@ GestureDetector(
 );
 ```
 
-For more information, including a list of Flutter `GestureDetector` callbacks,
+For more information, including a list of
+Flutter `GestureDetector` callbacks,
 see the [GestureDetector class][].
 
-如果想要了解更多详细内容，包括 Flutter 的 `GestureDetector` 回调函数的列表，
+如果想要了解更多详细内容，包括 Flutter 的
+`GestureDetector` 回调函数的列表，
 请查看页面 [GestureDetector 类][GestureDetector class]。
 
 [GestureDetector class]: {{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties
@@ -2745,8 +2821,8 @@ _getIPAddress = () => {
 };
 ```
 
-Flutter uses the `http` package. To install the `http` package, add it to
-the dependencies section of our pubspec.yaml.
+Flutter uses the `http` package. To install the `http` package,
+add it to the dependencies' section of our pubspec.yaml.
 
 Flutter 使用 `http` package。如果要安装 `http` package，
 将它添加到 pubspec.yaml 的 dependencies 部分。
@@ -2776,14 +2852,15 @@ GET, POST, PUT, and DELETE.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 final url = Uri.parse('https://httpbin.org/ip');
 final httpClient = HttpClient();
-_getIPAddress() async {
-  var request = await httpClient.getUrl(url);
-  var response = await request.close();
-  var responseBody = await response.transform(utf8.decoder).join();
-  String ip = jsonDecode(responseBody)['origin'];
+
+Future<void> getIPAddress() async {
+  final request = await httpClient.getUrl(url);
+  final response = await request.close();
+  final responseBody = await response.transform(utf8.decoder).join();
+  final String ip = jsonDecode(responseBody)['origin'];
   setState(() {
     _ipAddress = ip;
   });
@@ -2835,8 +2912,8 @@ the controller notifies its listeners.
 
 Listeners read the text and selection properties to
 learn what the user typed into the field.
-You can access the text in `TextField` by the `text` property of
-the controller.
+You can access the text in `TextField`
+by the `text` property of the controller.
 
 监听器读取文本和选项属性来获知用户所输入的内容。
 你可以通过 `TextField` 中的 `text`
@@ -2844,33 +2921,33 @@ the controller.
 
 <!-- skip -->
 ```dart
-// Flutter
+/// Flutter
 final TextEditingController _controller = TextEditingController();
-      ...
+
 TextField(
   controller: _controller,
-  decoration: InputDecoration(
-    hintText: 'Type something', labelText: 'Text Field '
+  decoration: const InputDecoration(
+    hintText: 'Type something',
+    labelText: 'Text Field',
   ),
 ),
 ElevatedButton(
-  child: Text('Submit'),
+  child: const Text('Submit'),
   onPressed: () {
     showDialog(
       context: context,
-        child: AlertDialog(
-          title: Text('Alert'),
-          content: Text('You typed ${_controller.text}'),
-        ),
-     );
-   },
- ),
-)
+      child: AlertDialog(
+        title: const Text('Alert'),
+        content: Text('You typed ${_controller.text}'),
+      ),
+    );
+  },
+),
 ```
 
 In this example, when a user clicks on the submit button an alert dialog
 displays the current text entered in the text field.
-This is achieved using an [`alertDialog`][]
+This is achieved using an [`AlertDialog`][]
 widget that displays the alert message, and the text from
 the `TextField` is accessed by the `text` property of the
 [`TextEditingController`][].
@@ -2910,15 +2987,15 @@ or pass a `GlobalKey` to the `Form` constructor and call
 ```dart
 final formKey = GlobalKey<FormState>();
 
-...
-
 Form(
-  key:formKey,
+  key: formKey,
   child: Column(
     children: <Widget>[
       TextFormField(
-        validator: (value) => !value.contains('@') ? 'Not a valid email.' : null,
-        onSaved: (val) => _email = val,
+        validator: (String value) => value.contains('@')
+            ? null
+            : 'Not a valid email.',
+        onSaved: (String val) => _email = val,
         decoration: const InputDecoration(
           hintText: 'Enter your email',
           labelText: 'Email',
@@ -2926,15 +3003,15 @@ Form(
       ),
       ElevatedButton(
         onPressed: _submit,
-        child: Text('Login'),
+        child: const Text('Login'),
       ),
     ],
   ),
 )
 ```
 
-The following example shows how `Form.save()` and `formKey` (which is a
-`GlobalKey`) are used to save the form on submit.
+The following example shows how `Form.save()` and `formKey`
+(which is a `GlobalKey`), are used to save the form on submit.
 
 下面的示例代码展示了 `Form.save()` 和 `formKey`
 （使用 `GlobalKey`）如何被用于表单提交的。
@@ -2948,7 +3025,7 @@ void _submit() {
     showDialog(
       context: context,
       child: AlertDialog(
-        title: Text('Alert'),
+        title: const Text('Alert'),
         content: Text('Email: $_email, password: $_password'),
       )
     );
@@ -2992,16 +3069,18 @@ In Flutter, use the following implementation:
 
 <!-- skip -->
 ```dart
-// Flutter
-if (Theme.of(context).platform == TargetPlatform.iOS) {
+/// Flutter
+final platform = Theme.of(context).platform;
+if (platform == TargetPlatform.iOS) {
   return 'iOS';
-} else if (Theme.of(context).platform == TargetPlatform.android) {
-  return 'android';
-} else if (Theme.of(context).platform == TargetPlatform.fuchsia) {
-  return 'fuchsia';
-} else {
-  return 'not recognised ';
 }
+if (platform == TargetPlatform.android) {
+  return 'android';
+}
+if (platform == TargetPlatform.fuchsia) {
+  return 'fuchsia';
+}
+return 'not recognized ';
 ```
 
 ## Debugging
@@ -3110,12 +3189,15 @@ in the terminal window, or type the following shortcuts:
 
 ## 动画
 
-Well-designed animation makes a UI feel intuitive, contributes to the look and
-feel of a polished app, and improves the user experience. Flutter’s animation
-support makes it easy to implement simple and complex animations. The Flutter
-SDK includes many Material Design widgets that include standard
-motion effects and you can easily customize these effects to personalize your
-app.
+Well-designed animation makes a UI feel intuitive,
+contributes to the look and feel of a polished app,
+and improves the user experience.
+Flutter’s animation support makes it easy
+to implement simple and complex animations.
+The Flutter SDK includes many Material Design widgets
+that include standard motion effects,
+and you can easily customize these effects
+to personalize your app.
 
 精美的动画效果会使得 UI 更加直观，可以提升整体视觉效果，
 使应用显得更加精致，从而提升用户体验。
@@ -3250,30 +3332,43 @@ widget is used inside the `FadeTransition` widget.
 
 <!-- skip -->
 ```dart
-
-// Flutter
+/// Flutter
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Center(child: LogoFade()));
+  runApp(const Center(child: LogoFade()));
 }
 
 class LogoFade extends StatefulWidget {
+  const LogoFade({Key? key}) : super(key: key);
+
   _LogoFadeState createState() => _LogoFadeState();
 }
 
-class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
-  Animation animation;
-  AnimationController controller;
+class _LogoFadeState extends State<LogoFade>
+    with SingleTickerProviderStateMixin {
+  late Animation animation;
+  late AnimationController controller;
 
-  initState() {
+  @override
+  void initState() {
     super.initState();
     controller = AnimationController(
-        duration: const Duration(milliseconds: 3000), vsync: this);
-    final CurvedAnimation curve =
-    CurvedAnimation(parent: controller, curve: Curves.easeIn);
+      duration: const Duration(milliseconds: 3000),
+      vsync: this,
+    );
+    final CurvedAnimation curve = CurvedAnimation(
+      parent: controller,
+      curve: Curves.easeIn,
+    );
     animation = Tween(begin: 0.0, end: 1.0).animate(curve);
     controller.forward();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   Widget build(BuildContext context) {
@@ -3285,11 +3380,6 @@ class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
         child: FlutterLogo(),
       ),
     );
-  }
-
-  dispose() {
-    controller.dispose();
-    super.dispose();
   }
 }
 ```
@@ -3313,15 +3403,15 @@ In Flutter, to add a swipe animation, use the
 
 <!-- skip -->
 ```dart
-child: Dismissible(
+Dismissible(
   key: key,
   onDismissed: (DismissDirection dir) {
     cards.removeLast();
   },
   child: Container(
-    ...
+    //...
   ),
-),
+)
 ```
 
 {% include docs/android-ios-figure-pair.md image="react-native/card-swipe.gif" alt="Card swipe" class="border" %}
@@ -3412,7 +3502,7 @@ Flutter widget 和通用的 widget 属性。
 
 [`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
 [Adding Assets and Images in Flutter]: {{site.url}}/development/ui/assets-and-images
-[`alertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
+[`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
@@ -3433,6 +3523,7 @@ Flutter widget 和通用的 widget 属性。
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [Dart]: {{site.dart-site}}/dart-2
 [Dart's Type System]: {{site.dart-site}}/guides/language/sound-dart
+[Sound Null Safety]: {{site.dart-site}}/null-safety
 [`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
 [DartPadA]: {{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1
 [DartPadB]: {{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5

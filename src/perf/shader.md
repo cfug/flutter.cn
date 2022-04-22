@@ -21,7 +21,7 @@ significant improvement.
 那么你可以通过 Skia 的着色器语言进行着色器预热，
 带来颇见成效的改善。
 
-![Side-by-side screenshots of janky mobile app next to non-janky app]({{site.url}}/assets/images/docs/perf/render/shader-jank.gif)
+![Side-by-side screenshots of janky mobile app next to non-janky app]({{site.url}}/assets/images/docs/perf/shader-jank.gif)
 
 ## What is shader compilation jank?
 
@@ -57,10 +57,12 @@ Definitive evidence for the presence of shader compilation jank is to see
 `GrGLProgramBuilder::finalize` in the tracing with `--trace-skia` enabled. See
 the following screenshot for an example timeline tracing.
 
-要获得更加确切的着色器编译卡顿存在的证据，你可以在 `--trace-skia` 开启时查看追踪文件中的 `GrGLProgramBuilder::finalize`。
+要获得更加确切的着色器编译卡顿存在的证据，
+你可以在 `--trace-skia` 开启时查看追踪文件中的
+`GrGLProgramBuilder::finalize`。
 下面的截图展示了一个 timeline 追踪的样例。
 
-![A tracing screenshot verifying jank]({{site.url}}/assets/images/docs/perf/render/tracing.png){:width="100%"}
+![A tracing screenshot verifying jank]({{site.url}}/assets/images/docs/perf/tracing.png){:width="100%"}
 
 ## What do we mean by "first run"?
 
@@ -246,7 +248,7 @@ difference as illustrated in the beginning of this article.
 [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
 [integration tests]: {{site.url}}/cookbook/testing/integration/introduction
 [`transitions_perf_test.dart`]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
-[limitations and considerations]: {{site.url}}/perf/rendering/shader#limitations-and-considerations
+[limitations and considerations]: {{site.url}}/perf/shader#limitations-and-considerations
 
 ## Frequently asked questions
 

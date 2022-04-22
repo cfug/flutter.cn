@@ -47,7 +47,7 @@ There is a list of [Frequently asked questions]({{site.url}}/perf/faq),
 so you can find out if the questions you have or the problems you're having 
 were already answered or encountered, and whether there are existing solutions. 
 (Alternatively, you can check the Flutter GitHub issue database using the
- [performance][performance] label.)
+[performance][performance] label.)
  
 这里有一个 [常见问题]({{site.url}}/perf/faq) 的列表，
 你可以查询你的问题是否出现过或者已经被解答，
@@ -62,10 +62,9 @@ database: "[perf: speed][speed]", "[perf: memory][memory]",
 最后，性能问题可以分为四类，对应 GitHub issue 里的四个标签：
 「[流畅度][speed]」、「[内存][memory]」、「[应用大小][size]」、和 「[功耗][energy]」。
 
-The rest of the content is organized using those four categories. (Note that
-these docs are in the process of being expanded.)
+The rest of the content is organized using those four categories.
 
-其它内容均已归纳到这四个类别中。（注意：这些文档正在扩展中。）
+其它内容均已归纳到这四个类别中。
 
 <!--
 Let's put "speed" (rendering) first as it's the most popular performance issue
@@ -83,7 +82,7 @@ evaluate and fix rendering issues.
 
 你的动画是否卡顿（不流畅）？学习如何评估和修复渲染问题。
 
-[Improving rendering performance]({{site.url}}/perf/rendering)
+[Improving rendering performance]({{site.url}}/perf/rendering-performance)
 
 [提高渲染性能]({{site.url}}/perf/rendering)
 
@@ -108,8 +107,8 @@ in some future pages.
 
 ## 应用大小
 
-How to measure your app's size. The smaller the size, the quicker it is to 
-download.
+How to measure your app's size. The smaller the size,
+the quicker it is to download.
 
 如何测量应用的体积。体积越小，下载就越快。
 

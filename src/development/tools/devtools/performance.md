@@ -248,6 +248,65 @@ enable the Track Paints option:
 
 ![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
 
+## More debugging options
+
+## 更多调试选项
+
+To diagnose performance problems related to rendering layers,
+toggle off a rendering layer.
+These options are enabled by default.
+
+想要诊断渲染图层相关的问题，请先关闭渲染层。
+下述的选项将会默认启动。
+
+To see the effects on your app's performance,
+reproduce the activity in your app.
+Then select the new frames in the frames chart
+to inspect the timeline events
+with the layers disabled.
+If Raster time has significantly decreased,
+excessive use of the effects you disabled might be contributing
+to the jank you saw in your app.
+
+想要查看你的应用的性能影响，请尝试以相同的操作重现性能问题。
+在渲染层关闭的情况下，于构建帧图表里选择一个新的构建帧，
+查看它的时间线细节。
+如果 Raster 线程的时间消耗有显著降低，
+那么你禁用的效果的滥用可能是导致卡顿的主要原因。
+
+**Render Clip layers**
+:  Disable this option  to check whether excessive use of clipping
+  is affecting performance.
+  If performance improves with this option disabled,
+  try to reduce the use of clipping effects in your app.
+
+**渲染裁剪的图层**
+: 禁用该选项来检查已使用的裁剪图层是否影响了性能。
+  如果禁用后性能有显著提升，请尝试减少你的应用中裁剪效果的使用。
+
+**Render Opacity layers**
+:  Disable this option to check whether
+   excessive use of opacity effects are affecting performance.
+   If performance improves with this option disabled,
+   try to reduce the use of opacity effects in your app.
+
+**渲染透明度图层**
+: 禁用该选项来检查已使用的透明度图层是否影响了性能。
+  如果禁用后性能有显著提升，请尝试减少你的应用中透明度效果的使用。
+
+**Render Physical Shape Layers**
+:  Disable this option to check whether excessive
+   use of physical modeling effects are affecting performance,
+  such as shadows or elevation.
+  If performance improves with this option disabled,
+  try to reduce the use of physical modeling effects in your app.
+
+**渲染物理形状图层**
+: 禁用该选项来检查已使用的物理形状图层是否影响了性能，例如阴影和背景特效。
+  如果禁用后性能有显著提升，请尝试减少你的应用中物理效果的使用。
+
+![Screenshot of more debugging options]({{site.url}}/assets/images/docs/tools/devtools/more-debugging-options.png)
+
 ## Import and export
 
 ## 导入导出
@@ -264,7 +323,7 @@ DevTools 支持导入和导出时间线快照。单击 export 按钮 (帧渲染�
 提示 : DevTools 仅支持导入 DevTools 导出的源文件。
 
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
-[GPU graph]: {{site.url}}/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
-[Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
-[Reduce shader compilation jank on mobile]: {{site.url}}/perf/rendering/shader
+[GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph
+[Flutter performance profiling]: {{site.url}}/perf/ui-performance
+[Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export

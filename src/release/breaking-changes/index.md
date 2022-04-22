@@ -22,9 +22,13 @@ release, and listed in alphabetical order:
 
 ### 尚未发布到稳定版
 
+* [Deprecated API removed after v2.10][]
+* [Page transitions replaced by ZoomPageTransitionsBuilder][]
 * [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
 
+[Deprecated API removed after v2.10]: {{site.url}}/release/breaking-changes/2-10-deprecations
+[Page transitions replaced by ZoomPageTransitionsBuilder]: {{site.url}}/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
 [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips]: {{site.url}}/release/breaking-changes/chip-usedeletebuttontooltip-migration
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 

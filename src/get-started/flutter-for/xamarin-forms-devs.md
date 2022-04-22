@@ -7,30 +7,29 @@ tags: Flutter教程,Flutter起步,Flutter入门
 keywords: Flutter Xamarin.Forms,Xamarin.Forms,Xamarin.Forms转Flutter
 ---
 
-This document is meant for Xamarin.Forms developers looking
-to apply their existing knowledge to build mobile apps with
-Flutter. If you understand the fundamentals of the
-Xamarin.Forms framework, then you can use this
-document as a jump start to Flutter development.
+This document is meant for Xamarin.Forms developers
+looking to apply their existing knowledge
+to build mobile apps with Flutter.
+If you understand the fundamentals of the Xamarin.Forms framework,
+then you can use this document as a jump start to Flutter development.
 
 本文档旨在帮助 Xamarin.Forms 开发者利用已有的知识去构建 Flutter 移动应用。
 如果你懂得 Xamarin.Forms 框架的基本原理，
 那么你就可以将本文档当作你开始 Flutter 开发的不错的起点。
 
-Your Android and iOS knowledge and skill set are valuable
-when building with Flutter, because Flutter relies on
-the native operating system configurations,
-similar to how you would configure your native
-Xamarin.Forms projects. The Flutter Frameworks
-is also similar to how you create a single UI,
+Your Android and iOS knowledge and skill set
+are valuable when building with Flutter,
+because Flutter relies on the native operating system configurations,
+similar to how you would configure your native Xamarin.Forms projects.
+The Flutter Frameworks is also similar to how you create a single UI,
 that is used on multiple platforms.
 
 你的 Android 和 iOS 知识以及技能组合在构建 Flutter 时都是有价值的，
 因为 Flutter 依赖的原生系统配置都与你配置 Xamarin.Forms 原生项目时一样。
 Flutter 框架在创建适用于多个平台的单一界面时，与 Xamarin.Forms 是类似的。
 
-This document can be used as a cookbook by
-that are most relevant to your needs.
+This document can be used as a cookbook by jumping around
+and finding questions that are most relevant to your needs.
 
 这篇文档可以用作随时查阅以及答疑解惑的专题手册。
 
@@ -60,7 +59,7 @@ In Flutter, the default main entry point is
 <!-- skip -->
 ```dart
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 ```
 
@@ -97,11 +96,17 @@ The following example shows `MyApp`, a simple application `Widget`.
 <!-- skip -->
 ```dart
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  /// This widget is the root of your application.
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Text("Hello World!", textDirection: TextDirection.ltr));
+    return const Center(
+      child: Text(
+        'Hello World!',
+        textDirection: TextDirection.ltr,
+      ),
+    );
   }
 }
 ```
@@ -110,12 +115,11 @@ class MyApp extends StatelessWidget {
 
 ### 如何创建一个页面？
 
-Xamarin.Forms has many different types of pages;
-`ContentPage` is the most common.  In Flutter,
-you specify an application widget that holds your root page.
-You can use a [`MaterialApp`][] widget,
-which supports [Material Design][], or you can use a
-[`CupertinoApp`][] widget, which supports an iOS-style app,
+Xamarin.Forms has many types of pages;
+`ContentPage` is the most common.
+In Flutter, you specify an application widget that holds your root page.
+You can use a [`MaterialApp`][] widget, which supports [Material Design][],
+or you can use a [`CupertinoApp`][] widget, which supports an iOS-style app,
 or you can use the lower level [`WidgetsApp`][],
 which you can customize in any way you want.
 
@@ -127,9 +131,8 @@ Xamarin.Forms 拥有一些不同类型的页面，`ContentPage` 是最为通用�
 
 The following code defines the home page, a stateful widget.
 In Flutter, all widgets are immutable,
-but two types of widgets are supported:
-stateful and stateless. Examples of a stateless widget
-are titles, icons, or images.
+but two types of widgets are supported: _Stateful_ and _Stateless_.
+Examples of a stateless widget are titles, icons, or images.
 
 接下来的代码定义了一个有状态的主页 widget。
 在 Flutter 中，所有 widget 都是不可变的，并且包含以下两种主要的 widget：
@@ -148,15 +151,13 @@ which holds its root page in the `home` property.
 <!-- skip -->
 ```dart
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application
+  /// This widget is the root of your application.
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -168,19 +169,19 @@ in which you create your state.
 
 在这里真正的首页是另一个创建了状态的 `Widget` (`MyHomePage`)。
 
-A stateful widget, such as MyHomePage below, consists of two parts.
-The first part, which is itself immutable, creates a State object
-that holds the state of the object. The State object persists over
+A _Stateful_ widget, such as `MyHomePage` below, consists of two parts.
+The first part, which is itself immutable, creates a `State` object
+that holds the state of the object. The `State` object persists over
 the life of the widget.
 
-一个有状态 widget，例如下面的 MyHomePage，包含两个部分。
+一个 **有状态的** widget，例如下面的 MyHomePage，包含两个部分。
 第一部分，是自身不变的 widget，创建一个状态对象来管理 widget 的状态。
 状态对象在 widget 的整个生命周期中持续存在。
 
 <!-- skip -->
 ```dart
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -193,9 +194,10 @@ The `State` object implements the `build()` method for the stateful widget.
 
 `State` 对象实现了有状态 widget 中的 `build()` 方法。
 
-When the state of the widget tree changes, call `setState()`, which triggers
-a build of that portion of the UI.  Make sure to call `setState()` only
-when necessary, and only on the part of the widget tree that has changed,
+When the state of the widget tree changes, call `setState()`,
+which triggers a build of that portion of the UI.
+Make sure to call `setState()` only when necessary,
+and only on the part of the widget tree that has changed,
 or it can result in poor UI performance.
 
 当 widget 树的状态发生了改变，将会调用 `setState()`
@@ -228,12 +230,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'You have pushed the button this many times:',
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
@@ -241,23 +243,23 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
 }
 ```
 
-In Flutter,
-the UI (also known as widget tree), is immutable, meaning you
-can't change its state once it's built. You change fields in your
-`State` class, then call `setState()` to rebuild the entire widget tree again.
+In Flutter, the UI (also known as widget tree), is immutable,
+meaning you can't change its state once it's built.
+You change fields in your `State` class, then call `setState()`
+to rebuild the entire widget tree again.
 
 在 Flutter 中的 UI（也就是 widget 树）是不可变的，
 意味着它一旦被构建，你就无法再改变它的状态。
 你可以修改 `State` 类中的字段，并再次调用 `setState` 来重新构建整个 widget 树。
 
-This way of generating UI is different than Xamarin.Forms,
+This way of generating UI is different from Xamarin.Forms,
 but there are many benefits to this approach.
 
 这样生成 UI 的方式不同于 Xamarin.Forms，但是却带来了更多好处。
@@ -272,7 +274,7 @@ but there are many benefits to this approach.
 
 {{site.alert.secondary}}
 
-  How is react-style, or _declarative_, programming different than the
+  How is react-style, or _declarative_, programming different from the
   traditional imperative style?
   For a comparison, see [Introduction to declarative
   UI][].
@@ -282,43 +284,41 @@ but there are many benefits to this approach.
 
 {{site.alert.end}}
 
-`ContentPage`, `TabbedPage`, `FlyoutPage` are all types of pages you
-might in a Xamarin.Forms application. These pages would then hold
-`Element`s to display the various controls. In Xamarin.Forms an `Entry`
-or `Button` are examples of an `Element`.
+`ContentPage`, `TabbedPage`, `FlyoutPage` are all types of pages
+you might use in a Xamarin.Forms application.
+These pages would then hold `Element`s to display the various controls.
+In Xamarin.Forms an `Entry` or `Button` are examples of an `Element`.
 
 `ContentPage`、`TabbedPage`、`FlyoutPage`
 就是你可以在 Xamarin.Forms 应用程序中使用的全部页面类型。
 这些页面会控制 `Element` 来显示各种控件。
 在 Xamarin.Forms 中，`Entry` 或者 `Button` 就是一个 `Element` 的示例。
 
-In Flutter, almost everything is a widget. A `Page`, called a `Route` in
-Flutter, is a widget.  Buttons, progress bars, and animation controllers
-are all widgets. When building a route, you create a widget tree.
+In Flutter, almost everything is a widget.
+A `Page`, called a `Route` in Flutter, is a widget.
+Buttons, progress bars, and animation controllers are all widgets.
+When building a route, you create a widget tree.
 
 在 Flutter 中，几乎所有东西都是 widget，
 在 Flutter 中被称作 `Route` 的一个 `Page`，也是一个 widget。
 按钮、进度条、动画控制器都是 widget。
 当构建一个路由时，就会创建一棵 widget 树。
 
-Flutter includes the [Material
-Components][]
-library. These are widgets that implement the
-[Material Design guidelines][]. Material Design is a
-flexible design system [optimized for all
-platforms][],
-including iOS.
+Flutter includes the [Material Components][] library.
+These are widgets that implement the [Material Design guidelines][].
+Material Design is a flexible design system
+[optimized for all platforms][], including iOS.
 
 Flutter 包含 [Material 组件][Material Components] 库。
 这些都是实现了 [Material Design 指南][Material Design guidelines] 的 widget。
-Material Design 是一个灵活的 [针对所有平台][optimized for all platforms]
+Material Design 是一个灵活的
+[针对所有平台][optimized for all platforms]
 的设计系统，包括 iOS。
 
-But Flutter is flexible and expressive enough to implement
-any design language. For example, on iOS,
-you can use the [Cupertino widgets][]
-to produce an interface that looks like
-[Apple's iOS design language][].
+But Flutter is flexible and expressive enough
+to implement any design language.
+For example, on iOS, you can use the [Cupertino widgets][]
+to produce an interface that looks like [Apple's iOS design language][].
 
 不过，Flutter 有足够灵活和自描述性 (expressive) 去实现任何设计语言。
 举个例子，在 iOS 上，你可以用 [Cupertino widgets][] 来生成一个看起来像
@@ -328,8 +328,9 @@ to produce an interface that looks like
 
 ### 如何更新 widget？
 
-In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has
-properties and methods. You update your `Element` by updating a property,
+In Xamarin.Forms, each `Page` or `Element` is a stateful class,
+that has properties and methods.
+You update your `Element` by updating a property,
 and this is propagated down to the native control.
 
 在 Xamarin.Forms 中，每一个 `Page` 或者 `Element` 都是一个有状态的类，
@@ -341,40 +342,44 @@ by changing a property, instead you have to work with the widget's state.
 在 Flutter 中，`widget` 是不可变的，你不可以直接地通过修改一个属性来更新它们，
 而是应该使用 widget 的状态。
 
-This is where the concept of Stateful vs Stateless widgets comes from. A
-`StatelessWidget` is just what it sounds like&mdash;a widget with no state
-information.
+This is where the concept of Stateful vs Stateless widgets comes from.
+A `StatelessWidget` is just what it sounds like&mdash;
+a widget with no state information.
 
 有状态 widget 和无状态 widget 的概念就是出自这里，
 `StatelessWidget` 顾名思义，就是一个没有状态信息的 widget。
 
 `StatelessWidgets` are useful when the part of the user interface
-you are describing does not depend on anything other than the configuration
-information in the object.
+you are describing doesn't depend on anything
+other than the configuration information in the object.
 
 当你在描绘用户界面的一个不依赖除对象中的配置信息之外任何东西的部分时，
 `StatelessWidget` 是有用的。
 
-For example, in Xamarin.Forms, this is similar to placing an `Image`
-with your logo. The logo is not going to change during runtime, so
-use a `StatelessWidget` in Flutter.
+For example, in Xamarin.Forms, this is similar
+to placing an `Image` with your logo.
+The logo is not going to change during runtime,
+so use a `StatelessWidget` in Flutter.
 
 举个例子，在 Xamarin.Forms 中，可以轻而易举地用你的 logo 替换一张 `Image`。
 这个 logo 将不会在运行过程中修改，所以在 Flutter 会使用 `StatelessWidget`。
 
 If you want to dynamically change the UI based on data received
-after making an HTTP call or user interaction then you have to work
-with `StatefulWidget` and tell the Flutter framework that the widget’s
-`State` has been updated so it can update that widget.
+after making an HTTP call or a user interaction,
+then you have to work with `StatefulWidget`
+and tell the Flutter framework that
+the widget’s `State` has been updated,
+so it can update that widget.
 
 如果你想基于进行了 HTTP 调用或者用户交互后接收到的数据来动态地修改 UI，
 你需要使用 `StatefulWidget` 并告诉 Flutter 框架这个 widget 的 `State`
 已经被更新了所以它可以更新那个 widget。
 
-The important thing to note here is at the core both stateless and stateful
-widgets behave the same. They rebuild every frame, the difference is the
-`StatefulWidget` has a `State` object that stores state data across frames
-and restores it.
+The important thing to note here is at the core
+both stateless and stateful widgets behave the same.
+They rebuild every frame, the difference is
+the `StatefulWidget` has a `State` object
+that stores state data across frames and restores it.
 
 这里要记下的重要内容是有状态和无状态 widget 的核心行为都是一样的。
 他们重建每个结构，不同的是 `StatefulWidget` 拥有一个
@@ -390,9 +395,10 @@ still be stateless if it doesn't itself react to change.
 相反，如果一个 widget 对修改作出反应，
 包含它的父 widget 如果本身没有对修改作出反应，它就是无状态的。
 
-The following example shows how to use a `StatelessWidget`. A common
-`StatelessWidget` is the `Text` widget. If you look at the implementation of
-the `Text` widget you'll find it subclasses `StatelessWidget`.
+The following example shows how to use a `StatelessWidget`.
+A common `StatelessWidget` is the `Text` widget.
+If you look at the implementation of the `Text` widget
+you'll find it subclasses `StatelessWidget`.
 
 接下来的示例展示了如何使用一个 `StatelessWidget`。
 一个常见的 `StatelessWidget` 是 `Text` widget。
@@ -400,7 +406,7 @@ the `Text` widget you'll find it subclasses `StatelessWidget`.
 
 <!-- skip -->
 ```dart
-Text(
+const Text(
   'I like Flutter!',
   style: TextStyle(fontWeight: FontWeight.bold),
 );
@@ -412,15 +418,15 @@ it renders what is passed in its constructors and nothing more.
 如你所见，`Text` widget 没有状态信息与它关联，
 它只渲染在它的构造函数中呈现的内容。
 
-But, what if you want to make "I Like Flutter" change dynamically, for
-example when clicking a `FloatingActionButton`?
+But, what if you want to make "I Like Flutter" change dynamically,
+for example, when clicking a `FloatingActionButton`?
 
 但是，如果你想动态地修改「I Like Flutter」呢？
 例如在点击一个 `FloatingActionButton` 时进行修改。
 
-To achieve this, wrap the `Text` widget in a `StatefulWidget` and
-update it when the user clicks the button, as shown in the following
-example:
+To achieve this, wrap the `Text` widget in a `StatefulWidget`
+and update it when the user clicks the button,
+as shown in the following example:
 
 为了实现这个目标，你需要将 `Text` widget 放到一个 `StatefulWidget` 中，
 并在用用户点击按钮时更新它，正如接下来的例子：
@@ -430,52 +436,49 @@ example:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
-  // This widget is the root of your application.
+  /// This widget is the root of your application.
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sample App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  const SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  // Default placeholder text
-  String textToShow = "I Like Flutter";
+  /// Default placeholder text
+  String textToShow = 'I Like Flutter';
 
   void _updateText() {
     setState(() {
       // Update the text
-      textToShow = "Flutter is Awesome!";
+      textToShow = 'Flutter is Awesome!';
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sample App"),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: Center(child: Text(textToShow)),
       floatingActionButton: FloatingActionButton(
         onPressed: _updateText,
         tooltip: 'Update Text',
-        child: Icon(Icons.update),
+        child: const Icon(Icons.update),
       ),
     );
   }
@@ -502,16 +505,14 @@ The following example shows how to display a simple widget with padding:
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: Text("Sample App"),
-    ),
+    appBar: AppBar(title: const Text('Sample App')),
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.only(left: 20.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 20.0, right: 30.0),
         ),
         onPressed: () {},
-        child: Text('Hello'),
+        child: const Text('Hello'),
       ),
     ),
   );
@@ -541,38 +542,37 @@ and control that child's creation with a boolean flag.
 
 在 Flutter 中，因为 widget 都是不可变的，所以没有直接对等的东西。
 但是你可以将一个构建 widget 的函数传递给父级，
-并用布尔标控制它的子 widget 的创建。
+并用布尔值控制它的子 widget 的创建。
 
-The following example shows how to toggle between two widgets when the user
-clicks the `FloatingActionButton`:
+The following example shows how to toggle between two widgets
+when the user clicks the `FloatingActionButton`:
 
 下面的示例展示当用户点击 `FloatingActionButton` 时，如何在两个 widget 之间切换。
 
 <!-- skip -->
 ```dart
 class SampleApp extends StatelessWidget {
-  // This widget is the root of your application.
+  /// This widget is the root of your application.
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sample App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  const SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  // Default value for toggle
+  /// Default value for toggle
   bool toggle = true;
   void _toggle() {
     setState(() {
@@ -580,30 +580,25 @@ class _SampleAppPageState extends State<SampleAppPage> {
     });
   }
 
-  _getToggleChild() {
+  Widget _getToggleChild() {
     if (toggle) {
-      return Text('Toggle One');
-    } else {
-      return CupertinoButton(
-        onPressed: () {},
-        child: Text('Toggle Two'),
-      );
+      return const Text('Toggle One');
     }
+    return CupertinoButton(
+      onPressed: () {},
+      child: const Text('Toggle Two'),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sample App"),
-      ),
-      body: Center(
-        child: _getToggleChild(),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
+      body: Center(child: _getToggleChild()),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggle,
         tooltip: 'Update Text',
-        child: Icon(Icons.update),
+        child: const Icon(Icons.update),
       ),
     );
   }
@@ -628,7 +623,7 @@ to perform the required animations.
 ```
 
 Then in code behind, or a behavior, this would fade in the image,
-over a 1 second period.
+over a 1-second period.
 
 在后面的代码或一个动作中，这个会在 1 秒内淡入这张图像。
 
@@ -636,13 +631,14 @@ over a 1 second period.
 myImage.FadeTo(0, 1000);
 ```
 
-In Flutter, you animate widgets using the animation library by wrapping
-widgets inside an animated widget. Use an `AnimationController`,
-which is an `Animation<double>` that can pause, seek, stop and reverse
-the animation. It requires a `Ticker` that signals when vsync happens,
-and produces a linear interpolation between 0 and 1 on each frame
-while it's running. You then create one or more
-`Animation`s and attach them to the controller.
+In Flutter, you animate widgets using the animation library
+by wrapping widgets inside an animated widget.
+Use an `AnimationController`, which is an `Animation<double>`
+that can pause, seek, stop and reverse the animation.
+It requires a `Ticker` that signals when vsync happens,
+and produces a linear interpolation between 0 and 1
+on each frame while it's running.
+You then create one or more`Animation`s and attach them to the controller.
 
 Flutter 通过 `Animation<double>` 的子类
 `AnimationController` 来暂停、播放、停止以及逆向播放动画。
@@ -650,10 +646,11 @@ Flutter 通过 `Animation<double>` 的子类
 并且在运行的时候创建一个介于 0 和 1 之间的线性插值。
 然后你就可以创建一个或多个 `Animation`，并将它们绑定到控制器上。
 
-For example, you might use `CurvedAnimation` to implement an animation
-along an interpolated curve. In this sense, the controller
-is the "master" source of the animation progress and the `CurvedAnimation`
-computes the curve that replaces the controller's default linear motion.
+For example, you might use `CurvedAnimation`
+to implement an animation along an interpolated curve.
+In this sense, the controller is the "master" source of the animation progress
+and the `CurvedAnimation` computes the curve
+that replaces the controller's default linear motion.
 Like widgets, animations in Flutter work with composition.
 
 例如，你可以使用 `CurvedAnimation` 来实现一个曲线插值的动画。
@@ -661,8 +658,9 @@ Like widgets, animations in Flutter work with composition.
 `CurvedAnimation` 计算用于替换控制器默认线性动画的曲线值。
 与 Widget 一样，Flutter 中的动画效果也可以组合使用。
 
-When building the widget tree, you assign the `Animation` to an animated
-property of a widget, such as the opacity of a `FadeTransition`,
+When building the widget tree, you assign the `Animation`
+to an animated property of a widget,
+such as the opacity of a `FadeTransition`,
 and tell the controller to start the animation.
 
 在构建 Widget 树的时候，你需要将 `Animation` 对象赋值给某个 Widget 的动画属性，
@@ -679,60 +677,64 @@ the widget into a logo when you press the `FloatingActionButton`:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(FadeAppTest());
+  runApp(const FadeAppTest());
 }
 
 class FadeAppTest extends StatelessWidget {
-  // This widget is the root of your application.
+  /// This widget is the root of your application.
+  const FadeAppTest({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Fade Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: MyFadeTest(title: 'Fade Demo'),
     );
   }
 }
 
 class MyFadeTest extends StatefulWidget {
-  MyFadeTest({Key key, this.title}) : super(key: key);
+  const MyFadeTest({Key? key, required this.title}) : super(key: key);
+
   final String title;
+
   @override
   _MyFadeTest createState() => _MyFadeTest();
 }
 
 class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
-  AnimationController controller;
-  CurvedAnimation curve;
+  late final AnimationController controller;
+  late final CurvedAnimation curve;
 
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
-    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    controller = AnimationController(
+      duration: const Duration(milliseconds: 2000),
+      vsync: this,
+    );
+    curve = CurvedAnimation(
+      parent: controller,
+      curve: Curves.easeIn,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Center(
-          child: Container(
-              child: FadeTransition(
-                  opacity: curve,
-                  child: FlutterLogo(
-                    size: 100.0,
-                  )))),
+        child: FadeTransition(
+          opacity: curve,
+          child: const FlutterLogo(size: 100.0),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
-        tooltip: 'Fade',
-        child: Icon(Icons.brush),
         onPressed: () {
           controller.forward();
         },
+        tooltip: 'Fade',
+        child: const Icon(Icons.brush),
       ),
     );
   }
@@ -749,7 +751,7 @@ the [Animations tutorial][], and the [Animations overview][].
 
 ### 如何在屏幕上绘图？
 
-Xamarin.Forms never had a built in way to draw directly on the screen.
+Xamarin.Forms never had a built-in way to draw directly on the screen.
 Many would use SkiaSharp, if they needed a custom image drawn. In Flutter,
 you have direct access to the Skia Canvas and can easily draw on screen.
 
@@ -778,48 +780,71 @@ see Collin's answer on [StackOverflow][].
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(home: DemoApp()));
+void main() {
+  runApp(const MaterialApp(home: DemoApp()));
+}
 
 class DemoApp extends StatelessWidget {
-  Widget build(BuildContext context) => Scaffold(body: Signature());
+  const DemoApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Scaffold(body: const Signature());
 }
 
 class Signature extends StatefulWidget {
+  const Signature({Key? key}) : super(key: key);
+
+  @override
   SignatureState createState() => SignatureState();
 }
 
 class SignatureState extends State<Signature> {
-  List<Offset> _points = <Offset>[];
+  List<Offset?> _points = <Offset?>[];
+
+  void _onPanUpdate(DragUpdateDetails details) {
+    setState(() {
+      final RenderBox referenceBox = context.findRenderObject() as RenderBox;
+      final Offset localPosition = referenceBox.globalToLocal(
+        details.globalPosition,
+      );
+      _points = List.from(_points)..add(localPosition);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onPanUpdate: (DragUpdateDetails details) {
-        setState(() {
-          RenderBox referenceBox = context.findRenderObject();
-          Offset localPosition =
-          referenceBox.globalToLocal(details.globalPosition);
-          _points = List.from(_points)..add(localPosition);
-        });
-      },
+      onPanUpdate: _onPanUpdate,
       onPanEnd: (DragEndDetails details) => _points.add(null),
-      child: CustomPaint(painter: SignaturePainter(_points), size: Size.infinite),
+      child: CustomPaint(
+        painter: SignaturePainter(_points),
+        size: Size.infinite,
+      ),
     );
   }
 }
 
 class SignaturePainter extends CustomPainter {
-  SignaturePainter(this.points);
-  final List<Offset> points;
+  const SignaturePainter(this.points);
+
+  final List<Offset?> points;
+
+  @override
   void paint(Canvas canvas, Size size) {
-    var paint = Paint()
+    final Paint paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 5.0;
     for (int i = 0; i < points.length - 1; i++) {
-      if (points[i] != null && points[i + 1] != null)
-        canvas.drawLine(points[i], points[i + 1], paint);
+      if (points[i] != null && points[i + 1] != null) {
+        canvas.drawLine(points[i]!, points[i + 1]!, paint);
+      }
     }
   }
-  bool shouldRepaint(SignaturePainter other) => other.points != points;
+
+  @override
+  bool shouldRepaint(SignaturePainter oldDelegate) =>
+      oldDelegate.points != points;
 }
 ```
 
@@ -849,17 +874,18 @@ implement methods that achieve the desired behavior.
 In Flutter, build a custom widget by
 [composing][]
 smaller widgets (instead of extending them).
-It is somewhat similar to implementing a custom control based off a
-`Grid` with numerous `VisualElement`s added in, while extending with
-custom logic.
+It is somewhat similar to implementing a custom control
+based off a `Grid` with numerous `VisualElement`s added in,
+while extending with custom logic.
 
 在 Flutter 中，通过 [组合][composing]
 更小的 Widget 来创建自定义 Widget（而不是继承它们）。
 这有点类似于基于 `Grid` 实现自定义控件，
 其中添加了大量 `VisualElement`，同时使用自定义逻辑进行扩展。
 
-For example, how do you build a `CustomButton` that takes a label in
-the constructor? Create a CustomButton that composes a `ElevatedButton`
+For example, how do you build a `CustomButton`
+that takes a label in the constructor?
+Create a CustomButton that composes a `ElevatedButton`
 with a label, rather than by extending `ElevatedButton`:
 
 举例来说，你该如何创建一个在构造器接收标签参数的 `CustomButton`？
@@ -869,13 +895,16 @@ with a label, rather than by extending `ElevatedButton`:
 <!-- skip -->
 ```dart
 class CustomButton extends StatelessWidget {
-  final String label;
+  const CustomButton(this.label, {Key? key}) : super(key: key);
 
-  CustomButton(this.label);
+  final String label;
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: () {}, child: Text(label));
+    return ElevatedButton(
+      onPressed: () {},
+      child: Text(label),
+    );
   }
 }
 ```
@@ -888,8 +917,8 @@ Then use `CustomButton`, just as you'd use any other Flutter widget:
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Center(
-    child: CustomButton("Hello"),
+  return const Center(
+    child: CustomButton('Hello'),
   );
 }
 ```
@@ -902,24 +931,27 @@ Widget build(BuildContext context) {
 
 ### 如何在页面之间导航？
 
-In Xamarin.Forms, the `NavigationPage` class provides a hierarchical
-navigation experience where the user is able to navigate through pages,
+In Xamarin.Forms, the `NavigationPage` class
+provides a hierarchical navigation experience
+where the user is able to navigate through pages,
 forwards and backwards.
 
 在 Xamarin.Forms 中，`NavigationPage` 类提供了一个
 阶级式的导航方式，让用户可以在页面之间来回进行跳转。
 
-Flutter has a similar implementation, using a `Navigator` and
-`Routes`. A `Route` is an abstraction for a `Page` of an app, and
-a `Navigator` is a [widget][] that manages routes.
+Flutter has a similar implementation,
+using a `Navigator` and `Routes`.
+A `Route` is an abstraction for a `Page` of an app,
+and a `Navigator` is a [widget][] that manages routes.
 
 Flutter 也有类似的实现，使用 `Navigator` 和 `Route`。
 `Route` 是应用程序里 `Page` 的抽象，
 而 `Navigator` 是用于管理路由的 [widget][]。
 
-A route dd maps to a `Page`. The navigator works in a similar way to the
-Xamarin.Forms `NavigationPage`, in that it can `push()` and `pop()` routes
-depending on whether you want to navigate to, or back from, a view.
+A route roughly maps to a `Page`.
+The navigator works in a similar way to the Xamarin.Forms `NavigationPage`,
+in that it can `push()` and `pop()` routes depending on
+whether you want to navigate to, or back from, a view.
 
 一个路由大致上映射到一个 `Page`。
 `Navigator` 的工作方式类似于 Xamarin.Forms 的 `NavigationPage`，
@@ -945,14 +977,16 @@ The following example builds a Map.
 <!-- skip -->
 ```dart
 void main() {
-  runApp(MaterialApp(
-    home: MyAppHome(), // becomes the route named '/'
-    routes: <String, WidgetBuilder> {
-      '/a': (BuildContext context) => MyPage(title: 'page A'),
-      '/b': (BuildContext context) => MyPage(title: 'page B'),
-      '/c': (BuildContext context) => MyPage(title: 'page C'),
-    },
-  ));
+  runApp(
+    MaterialApp(
+      home: const MyAppHome(), // becomes the route named '/'
+      routes: <String, WidgetBuilder> {
+        '/a': (BuildContext context) => const MyPage(title: 'page A'),
+        '/b': (BuildContext context) => const MyPage(title: 'page B'),
+        '/c': (BuildContext context) => const MyPage(title: 'page C'),
+      },
+    ),
+  );
 }
 ```
 
@@ -975,16 +1009,17 @@ This is done by awaiting on the `Future` returned by `push()`.
 而从堆栈弹出一个路由可以返回到前一个路由。
 这是通过 `await` 被 `push()` 返回的 `Future` 来完成的。
 
-`Async`/`await` is very similar to the .NET implementation and is
-explained in more detail in [Async UI][].
+`async`/`await` is very similar to the .NET implementation
+and is explained in more detail in [Async UI][].
 
 `async`/`await` 与 .NET 的实现非常类似，在 [Async UI][] 中有更详尽的解释。
 
-For example, to start a `location` route that lets the user select their
-location, you might do the following:
+For example, to start a `location` route
+that lets the user select their location,
+you might do the following:
 
-举个例子，想要让用户选择他们的定位的 `定位 (location` 路由，你需要以下步骤：
-)
+举个例子，想要让用户选择他们的定位的 `定位 (location)` 路由，你需要以下步骤：
+
 <!-- skip -->
 ```dart
 Map coordinates = await Navigator.of(context).pushNamed('/location');
@@ -997,24 +1032,22 @@ location, pop the stack with the result:
 
 <!-- skip -->
 ```dart
-Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
+Navigator.of(context).pop({'lat': 43.821757, 'long': -79.226392});
 ```
 
 ### How do I navigate to another app?
 
 ### 如何导航到其它应用程序？
 
-In Xamarin.Forms, to send the user to another application, you use a
-specific URI scheme, using `Device.OpenUrl("mailto://")`
+In Xamarin.Forms, to send the user to another application,
+you use a specific URI scheme, using `Device.OpenUrl("mailto://")`.
 
 在 Xamarin.Forms 中，需要用指定的 URI 协议并使用
 `Device.OpenUrl("mailto://")` 跳转到其它应用程序。
 
 To implement this functionality in Flutter,
-create a native platform integration,
-or use an [existing plugin][], such as
-[`url_launcher`][], available with
-many other packages on [pub.dev][].
+create a native platform integration, or use an [existing plugin][],
+such as[`url_launcher`][], available with many other packages on [pub.dev][].
 
 在 Flutter 里想要实现这个功能，需要创建原生平台的整合层，
 或者使用已经存在的 [插件][existing plugin]，例如
@@ -1028,20 +1061,23 @@ many other packages on [pub.dev][].
 
 ### 在 Flutter 中有什么是跟 Device.BeginOnMainThread() 方法是相等的？
 
-Dart has a single-threaded execution model, with support for `Isolate`s
-(a way to run Dart code on another thread), an event loop, and
-asynchronous programming. Unless you spawn an `Isolate`, your Dart code
-runs in the main UI thread and is driven by an event loop.
+Dart has a single-threaded execution model,
+with support for `Isolate`s (a way to run Dart codes on another thread),
+an event loop, and asynchronous programming.
+Unless you spawn an `Isolate`,
+your Dart code runs in the main UI thread
+and is driven by an event loop.
 
 Dart 有一个单线程执行的模型，同时也支持 `Isolate`
 （在另一个线程运行 Dart 代码的方法），它是一个事件循环和异步编程方式。
 除非你创建一个 `Isolate`，否则你的 Dart 代码会运行在主 UI 线程，
 并被一个事件循环所驱动。
 
-Dart's single-threaded model doesn't mean you need to run everything as a
-blocking operation that causes the UI to freeze. Much like Xamarin.Forms,
-you need to keep the UI thread free. You would use `async`/`await` to perform
-tasks, where you must wait for the response.
+Dart's single-threaded model doesn't mean you need to run everything
+as a blocking operation that causes the UI to freeze.
+Much like Xamarin.Forms, you need to keep the UI thread free.
+You would use `async`/`await` to perform tasks,
+where you must wait for the response.
 
 Dart 的单线程模型并不意味着你需要以会导致 UI 冻结的
 阻塞操作的方式来运行所有代码。
@@ -1050,8 +1086,8 @@ Dart 的单线程模型并不意味着你需要以会导致 UI 冻结的
 
 In Flutter, use the asynchronous facilities that the Dart language provides,
 also named `async`/`await`, to perform asynchronous work.
-This is very similar to C# and should be very easy to use for any
-Xamarin.Forms developer.
+This is very similar to C# and should be very easy to use
+for any Xamarin.Forms developer.
 
 在 Flutter 中，可以使用 Dart 语言提供的异步工具，
 例如 `async`/`await` 来执行异步任务。
@@ -1066,23 +1102,26 @@ using `async`/`await` and letting Dart do the heavy lifting:
 
 <!-- skip -->
 ```dart
-loadData() async {
-  String dataURL = "https://jsonplaceholder.typicode.com/posts";
-  http.Response response = await http.get(dataURL);
+Future<void> loadData() async {
+  final Uri dataURL = Uri.parse(
+    'https://jsonplaceholder.typicode.com/posts',
+  );
+  final http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = jsonDecode(response.body);
+    data = jsonDecode(response.body);
   });
 }
 ```
 
-Once the awaited network call is done, update the UI by calling `setState()`,
-which triggers a rebuild of the widget sub-tree and updates the data.
+Once the awaited network call is done,
+update the UI by calling `setState()`,
+which triggers a rebuild of the widget subtree and updates the data.
 
 一旦用 `await` 修饰的网络操作完成，再调用 `setState()` 更新 UI，
 这会触发 widget 子树的重建并更新数据。
 
-The following example loads data asynchronously and displays it
-in a `ListView`:
+The following example loads data asynchronously
+and displays it in a `ListView`:
 
 下面的例子展示了异步加载数据并将之展示在 `ListView` 内：
 
@@ -1094,31 +1133,30 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sample App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  const SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, dynamic>> data = <Map<String, dynamic>>[];
 
   @override
   void initState() {
@@ -1126,38 +1164,41 @@ class _SampleAppPageState extends State<SampleAppPage> {
     loadData();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Sample App"),
-      ),
-      body: ListView.builder(
-          itemCount: widgets.length,
-          itemBuilder: (BuildContext context, int position) {
-            return getRow(position);
-          }));
+  Future<void> loadData() async {
+    final Uri dataURL = Uri.parse(
+      'https://jsonplaceholder.typicode.com/posts',
+    );
+    final http.Response response = await http.get(dataURL);
+    setState(() {
+      data = jsonDecode(response.body);
+    });
   }
 
-  Widget getRow(int i) {
+  Widget getRow(int index) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
-      child: Text("Row ${widgets[i]["title"]}")
+      padding: const EdgeInsets.all(10.0),
+      child: Text('Row ${data[index]['title']}'),
     );
   }
 
-  loadData() async {
-    String dataURL = "https://jsonplaceholder.typicode.com/posts";
-    http.Response response = await http.get(dataURL);
-    setState(() {
-      widgets = jsonDecode(response.body);
-    });
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Sample App')),
+      body: ListView.builder(
+        itemCount: widgets.length,
+        itemBuilder: (BuildContext context, int index) {
+          return getRow(index);
+        },
+      ),
+    );
   }
 }
 ```
 
-Refer to the next section for more information on doing work in the
-background, and how Flutter differs from Android.
+Refer to the next section for more information
+on doing work in the background,
+and how Flutter differs from Android.
 
 参考下一节内容获取更多关于后台任务以及 Flutter 与 Android 的差异的信息。
 
@@ -1166,8 +1207,9 @@ background, and how Flutter differs from Android.
 ### 如何将工作转移到后台线程？
 
 Since Flutter is single threaded and runs an event loop,
-you don't have to worry about thread management or spawning
-background threads.  This is very similar to Xamarin.Forms.
+you don't have to worry about thread management
+or spawning background threads.
+This is very similar to Xamarin.Forms.
 If you're doing I/O-bound work, such as disk access or a network call,
 then you can safely use `async`/`await` and you're all set.
 
@@ -1177,10 +1219,11 @@ then you can safely use `async`/`await` and you're all set.
 那么你可以安全地使用 `async`/`await`，这样就一切就绪了。
 
 If, on the other hand, you need to do computationally intensive work
-that keeps the CPU busy, you want to move it to an `Isolate`
-to avoid blocking the event loop, like you would keep _any_ sort of
-work out of the main thread. This is similar to when you
-move things to a different thread via `Task.Run()` in Xamarin.Forms.
+that keeps the CPU busy,
+you want to move it to an `Isolate` to avoid blocking the event loop,
+like you would keep _any_ sort of work out of the main thread.
+This is similar to when you move things to a different
+thread via `Task.Run()` in Xamarin.Forms.
 
 另一方面，如果你需要执行消耗 CPU 的计算密集型工作，
 那么你可以将其转移到一个 `Isolate` 上以避免阻塞事件循环，
@@ -1195,11 +1238,13 @@ and `await` on long-running tasks inside the function:
 
 <!-- skip -->
 ```dart
-loadData() async {
-  String dataURL = "https://jsonplaceholder.typicode.com/posts";
-  http.Response response = await http.get(dataURL);
+Future<void> loadData() async {
+  final Uri dataURL = Uri.parse(
+    'https://jsonplaceholder.typicode.com/posts',
+  );
+  final http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = jsonDecode(response.body);
+    data = jsonDecode(response.body);
   });
 }
 ```
@@ -1209,76 +1254,76 @@ which are both I/O operations.
 
 这是你通常执行网络或数据库调用的方式，它们都属于 I/O 操作。
 
-However, there are times when you might be processing a large amount
-of data and your UI hangs. In Flutter, use `Isolate`s to take advantage of
-multiple CPU cores to do long-running or computationally intensive tasks.
+However, there are times when you might be processing
+a large amount of data and your UI hangs.
+In Flutter, use `Isolate`s to take advantage of multiple CPU cores
+to do long-running or computationally intensive tasks.
 
 然而，有时候你可能需要处理大量的数据并挂起你的 UI。
 在 Flutter 中，可以通过使用 `Isolate`
 来利用多核处理器的优势执行耗时或计算密集的任务。
 
-Isolates are separate execution threads that do not share any memory
-with the main execution memory heap. This is a difference between
-`Task.Run()`. This means you can’t access variables from the main thread,
+Isolates are separate execution threads that
+do not share any memory with the main execution memory heap.
+This is a difference between `Task.Run()`.
+This means you can’t access variables from the main thread,
 or update your UI by calling `setState()`.
 
 Isolate 是独立执行的线程，不会和主执行内存堆分享内存。
 这是与 `Task.Run()` 的区别。
 这意味着你无法访问主线程的变量，或者调用 `setState()` 更新 UI。
 
-The following example shows, in a simple isolate, how to share data back to
-the main thread to update the UI.
+The following example shows, in a simple isolate,
+how to share data back to the main thread to update the UI.
 
 下面的例子展示了一个简单的 Isolate 是如何
 将数据分享给主线程来更新 UI 的。
 
 <!-- skip -->
 ```dart
-loadData() async {
-  ReceivePort receivePort = ReceivePort();
+Future<void> loadData() async {
+  final ReceivePort receivePort = ReceivePort();
   await Isolate.spawn(dataLoader, receivePort.sendPort);
 
-  // The 'echo' isolate sends its SendPort as the first message.
-  SendPort sendPort = await receivePort.first;
-
-  List msg = await sendReceive(
+  // The 'echo' isolate sends its SendPort as the first message
+  final SendPort sendPort = await receivePort.first as SendPort;
+  final List<Map<String, dynamic>> msg = await sendReceive(
     sendPort,
-    "https://jsonplaceholder.typicode.com/posts",
+    'https://jsonplaceholder.typicode.com/posts',
   );
-
   setState(() {
-    widgets = msg;
+    data = msg;
   });
 }
 
-// The entry point for the isolate.
-static dataLoader(SendPort sendPort) async {
+// The entry point for the isolate
+static Future<void> dataLoader(SendPort sendPort) async {
   // Open the ReceivePort for incoming messages.
-  ReceivePort port = ReceivePort();
+  final ReceivePort port = ReceivePort();
 
   // Notify any other isolates what port this isolate listens to.
   sendPort.send(port.sendPort);
+  await for (final dynamic msg in port) {
+    final String url = msg[0] as String;
+    final SendPort replyTo = msg[1] as SendPort;
 
-  await for (var msg in port) {
-    String data = msg[0];
-    SendPort replyTo = msg[1];
-
-    String dataURL = data;
-    http.Response response = await http.get(dataURL);
+    final Uri dataURL = Uri.parse(url);
+    final http.Response response = await http.get(dataURL);
     // Lots of JSON to parse
-    replyTo.send(jsonDecode(response.body));
+    replyTo.send(jsonDecode(response.body) as List<Map<String, dynamic>>);
   }
 }
 
-Future sendReceive(SendPort port, msg) {
-  ReceivePort response = ReceivePort();
-  port.send([msg, response.sendPort]);
-  return response.first;
+Future<List<Map<String, dynamic>>> sendReceive(SendPort port, String msg) {
+  final ReceivePort response = ReceivePort();
+  port.send(<dynamic>[msg, response.sendPort]);
+  return response.first as Future<List<Map<String, dynamic>>>;
 }
 ```
 
-Here, `dataLoader()` is the `Isolate` that runs in its own separate
-execution thread.  In the isolate you can perform more CPU intensive
+Here, `dataLoader()` is the `Isolate` that runs in
+its own separate execution thread.
+In the isolate, you can perform more CPU intensive
 processing (parsing a big JSON, for example),
 or perform computationally intensive math,
 such as encryption or signal processing.
@@ -1292,40 +1337,40 @@ You can run the full example below:
 
 你可以运行下面这个完整的例子：
 
+<!-- skip -->
 ```dart
+import 'dart:async';
 import 'dart:convert';
+import 'dart:isolate';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:async';
-import 'dart:isolate';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sample App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  const SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, dynamic>> data = <Map<String, dynamic>>[];
 
   @override
   void initState() {
@@ -1333,88 +1378,80 @@ class _SampleAppPageState extends State<SampleAppPage> {
     loadData();
   }
 
-  showLoadingDialog() {
-    if (widgets.length == 0) {
-      return true;
-    }
+  bool get showLoadingDialog => data.isEmpty;
 
-    return false;
+  Future<void> loadData() async {
+    final ReceivePort receivePort = ReceivePort();
+    await Isolate.spawn(dataLoader, receivePort.sendPort);
+
+    // The 'echo' isolate sends its SendPort as the first message
+    final SendPort sendPort = await receivePort.first as SendPort;
+    final List<Map<String, dynamic>> msg = await sendReceive(
+      sendPort,
+      'https://jsonplaceholder.typicode.com/posts',
+    );
+    setState(() {
+      data = msg;
+    });
   }
 
-  getBody() {
-    if (showLoadingDialog()) {
+  // The entry point for the isolate
+  static Future<void> dataLoader(SendPort sendPort) async {
+    // Open the ReceivePort for incoming messages.
+    final ReceivePort port = ReceivePort();
+
+    // Notify any other isolates what port this isolate listens to.
+    sendPort.send(port.sendPort);
+    await for (final dynamic msg in port) {
+      final String url = msg[0] as String;
+      final SendPort replyTo = msg[1] as SendPort;
+
+      final Uri dataURL = Uri.parse(url);
+      final http.Response response = await http.get(dataURL);
+      // Lots of JSON to parse
+      replyTo.send(jsonDecode(response.body) as List<Map<String, dynamic>>);
+    }
+  }
+
+  Future<List<Map<String, dynamic>>> sendReceive(SendPort port, String msg) {
+    final ReceivePort response = ReceivePort();
+    port.send(<dynamic>[msg, response.sendPort]);
+    return response.first as Future<List<Map<String, dynamic>>>;
+  }
+
+  Widget getBody() {
+    if (showLoadingDialog) {
       return getProgressDialog();
-    } else {
-      return getListView();
     }
+    return getListView();
   }
 
-  getProgressDialog() {
-    return Center(child: CircularProgressIndicator());
+  Widget getProgressDialog() {
+    return const Center(child: CircularProgressIndicator());
+  }
+
+  ListView getListView() {
+    return ListView.builder(
+      itemCount: data.length,
+      itemBuilder: (BuildContext context, int index) {
+        return getRow(index);
+      },
+    );
+  }
+
+  Widget getRow(int index) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Text('Row ${data[index]['title']}'),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Sample App"),
-        ),
-        body: getBody());
-  }
-
-  ListView getListView() => ListView.builder(
-      itemCount: widgets.length,
-      itemBuilder: (BuildContext context, int position) {
-        return getRow(position);
-      });
-
-  Widget getRow(int i) {
-    return Padding(
-      padding: EdgeInsets.all(10.0),
-      child: Text("Row ${widgets[i]["title"]}"),
+      appBar: AppBar(title: const Text('Sample App')),
+      body: getBody(),
     );
-  }
-
-  loadData() async {
-    ReceivePort receivePort = ReceivePort();
-    await Isolate.spawn(dataLoader, receivePort.sendPort);
-
-    // The 'echo' isolate sends its SendPort as the first message.
-    SendPort sendPort = await receivePort.first;
-
-    List msg = await sendReceive(
-      sendPort,
-      "https://jsonplaceholder.typicode.com/posts",
-    );
-
-    setState(() {
-      widgets = msg;
-    });
-  }
-
-  // the entry point for the isolate
-  static dataLoader(SendPort sendPort) async {
-    // Open the ReceivePort for incoming messages.
-    ReceivePort port = ReceivePort();
-
-    // Notify any other isolates what port this isolate listens to.
-    sendPort.send(port.sendPort);
-
-    await for (var msg in port) {
-      String data = msg[0];
-      SendPort replyTo = msg[1];
-
-      String dataURL = data;
-      http.Response response = await http.get(dataURL);
-      // Lots of JSON to parse
-      replyTo.send(jsonDecode(response.body));
-    }
-  }
-
-  Future sendReceive(SendPort port, msg) {
-    ReceivePort response = ReceivePort();
-    port.send([msg, response.sendPort]);
-    return response.first;
   }
 }
 ```
@@ -1423,10 +1460,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### 如何发送一个网络请求？
 
-In Xamarin.Forms you would use `HttpClient`. Making a network call in Flutter
-is easy when you use the popular [`http` package][].
-This abstracts away a lot of the networking that you might normally
-implement yourself, making it simple to make network calls.
+In Xamarin.Forms you would use `HttpClient`.
+Making a network call in Flutter is easy
+when you use the popular [`http` package][].
+This abstracts away a lot of the networking
+that you might normally implement yourself,
+making it simple to make network calls.
 
 在 Xamarin.Forms 中，你可以使用 `HttpClient`。
 在 Flutter 中，你可以使用流行的
@@ -1440,29 +1479,25 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  ...
-  http: ^0.11.3+16
+  http: ^0.13.4
 ```
 
-To make a network request, call `await` on the `async` function `http.get()`:
+To make a network request,
+call `await` on the `async` function `http.get()`:
 
 如果要发起一个网络请求，
 在异步 (`async`) 方法 `http.get()` 上调用 `await` 即可：
 
 <!-- skip -->
 ```dart
-import 'dart:convert';
-
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-[...]
-  loadData() async {
-    String dataURL = "https://jsonplaceholder.typicode.com/posts";
-    http.Response response = await http.get(dataURL);
-    setState(() {
-      widgets = jsonDecode(response.body);
-    });
-  }
+Future<void> loadData() async {
+  final Uri dataURL = Uri.parse(
+    'https://jsonplaceholder.typicode.com/posts',
+  );
+  final http.Response response = await http.get(dataURL);
+  setState(() {
+    widgets = jsonDecode(response.body);
+  });
 }
 ```
 
@@ -1477,18 +1512,19 @@ either directly in XAML or through a 3rd party plugin such as AcrDialogs.
 可以直接在 XAML 中创建，也可以通过第三方插件创建，比如 AcrDialogs。
 
 In Flutter, use a `ProgressIndicator` widget.
-Show the progress programmatically by controlling when it's rendered
-through a boolean flag. Tell Flutter to update its state before your
-long-running task starts, and hide it after it ends.
+Show the progress programmatically by controlling
+when it's rendered through a boolean flag.
+Tell Flutter to update its state before your long-running task starts,
+and hide it after it ends.
 
 在 Flutter 中，我们使用 `ProgressIndicator` widget。
 通过代码逻辑使用一个布尔标记值控制进度条的渲染。
+告诉 Flutter 在长时间运行的任务开始之前更新状态，并在结束后将其隐藏。
 
-In the following example,
-the build function is separated into three different
-functions. If `showLoadingDialog()` is `true` (when `widgets.length == 0`),
-then render the `ProgressIndicator`. Otherwise, render the
-`ListView` with the data returned from a network call.
+In the example below, the build function is separated into three different
+functions. If `showLoadingDialog` is `true`
+(when `widgets.length == 0`), then render the `ProgressIndicator`.
+Otherwise, render the `ListView` with the data returned from a network call.
 
 在下面的例子中，build 方法被拆分成三个不同的方法。
 如果 `showLoadingDialog()` 返回 `true`（当 `widgets.length == 0`），
@@ -1496,37 +1532,38 @@ then render the `ProgressIndicator`. Otherwise, render the
 
 <!-- skip -->
 ```dart
+import 'dart:async';
 import 'dart:convert';
+import 'dart:isolate';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sample App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  const SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, dynamic>> data = <Map<String, dynamic>>[];
 
   @override
   void initState() {
@@ -1534,50 +1571,51 @@ class _SampleAppPageState extends State<SampleAppPage> {
     loadData();
   }
 
-  showLoadingDialog() {
-    return widgets.length == 0;
+  bool get showLoadingDialog => data.isEmpty;
+
+  Future<void> loadData() async {
+    final Uri dataURL = Uri.parse(
+      'https://jsonplaceholder.typicode.com/posts',
+    );
+    final http.Response response = await http.get(dataURL);
+    setState(() {
+      widgets = jsonDecode(response.body);
+    });
   }
 
-  getBody() {
-    if (showLoadingDialog()) {
+  Widget getBody() {
+    if (showLoadingDialog) {
       return getProgressDialog();
-    } else {
-      return getListView();
     }
+    return getListView();
   }
 
-  getProgressDialog() {
-    return Center(child: CircularProgressIndicator());
+  Widget getProgressDialog() {
+    return const Center(child: CircularProgressIndicator());
+  }
+
+  ListView getListView() {
+    return ListView.builder(
+      itemCount: data.length,
+      itemBuilder: (BuildContext context, int index) {
+        return getRow(index);
+      },
+    );
+  }
+
+  Widget getRow(int index) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Text('Row ${data[index]['title']}'),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Sample App"),
-        ),
-        body: getBody());
-  }
-
-  ListView getListView() => ListView.builder(
-      itemCount: widgets.length,
-      itemBuilder: (BuildContext context, int position) {
-        return getRow(position);
-      });
-
-  Widget getRow(int i) {
-    return Padding(
-      padding: EdgeInsets.all(10.0),
-      child: Text("Row ${widgets[i]["title"]}"),
+      appBar: AppBar(title: const Text('Sample App')),
+      body: getBody(),
     );
-  }
-
-  loadData() async {
-    String dataURL = "https://jsonplaceholder.typicode.com/posts";
-    http.Response response = await http.get(dataURL);
-    setState(() {
-      widgets = jsonDecode(response.body);
-    });
   }
 }
 ```
@@ -1591,17 +1629,18 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ### 在哪里放置分辨率相关的图片文件？
 
 Xamarin.Forms has no platform independent way of storing images,
-you had to place images in the iOS `xcasset` folder or on Android,
-in the various `drawable` folders.
+you had to place images in the iOS `xcasset` folder,
+or on Android in the various `drawable` folders.
 
 Xamarin.Forms 没有独立于平台的存储图像的方法，
 你必须放置图片在 iOS 的 `xcasset` 文件夹,
 或 Android 的 `drawable` 文件夹中。
 
 While Android and iOS treat resources and assets as distinct items,
-Flutter apps have only assets. All resources that would live in the
-`Resources/drawable-*` folders on Android, are placed in an assets
-folder for Flutter.
+Flutter apps have only assets.
+All resources that would live in the
+`Resources/drawable-*` folders on Android,
+are placed in an assets' folder for Flutter.
 
 Android 和 iOS 将资源 (resources) 和资产 (assets) 视为不同的项目，
 但是 Flutter 应用只有资产文件 (assets)。
@@ -1624,18 +1663,19 @@ The equivalent to Android's density buckets are:
 
 与 Android 的密度分类的对照表如下：
 
-Android density qualifier | Flutter pixel ratio
---------------------------|--------------------
-`ldpi`                    | `0.75x`
-`mdpi`                    | `1.0x`
-`hdpi`                    | `1.5x`
-`xhdpi`                   | `2.0x`
-`xxhdpi`                  | `3.0x`
-`xxxhdpi`                 | `4.0x`
+| Android density qualifier | Flutter pixel ratio |
+|---------------------------|---------------------|
+| `ldpi`                    | `0.75x`             |
+| `mdpi`                    | `1.0x`              |
+| `hdpi`                    | `1.5x`              |
+ | `xhdpi`                   | `2.0x`              |
+| `xxhdpi`                  | `3.0x`              |
+| `xxxhdpi`                 | `4.0x`              |
 
-Assets are located in any arbitrary folder&mdash;Flutter has no
-predefined folder structure. You declare the assets (with location) in
-the `pubspec.yaml` file, and Flutter picks them up.
+Assets are located in any arbitrary folder&mdash;
+Flutter has no predefined folder structure.
+You declare the assets (with location)
+in the `pubspec.yaml` file, and Flutter picks them up.
 
 文件放置于任意文件夹中&mdash;&mdash;Flutter 没有预先定义好的文件夹结构。
 你在 `pubspec.yaml` 文件中定义文件（包括位置信息），Flutter 负责找到它们。
@@ -1652,7 +1692,7 @@ called with the appropriate ratio multiplier:
 并将其它倍数的图片放入以特定倍数作为名称的子文件夹中：
 
 <!-- skip -->
-```dart
+```
 images/my_icon.png       // Base: 1.0x image
 images/2.0x/my_icon.png  // 2.0x image
 images/3.0x/my_icon.png  // 3.0x image
@@ -1667,16 +1707,19 @@ assets:
  - images/my_icon.jpeg
 ```
 
-You can then access your images using `AssetImage`:
+You can directly access your images in an `Image.asset` widget:
 
 然后你就可以使用 `AssetImage` 访问你的图片了：
 
 <!-- skip -->
 ```dart
-return AssetImage("images/a_dot_burr.jpeg");
+@override
+Widget build(BuildContext context) {
+  return Image.asset('images/my_icon.png');
+}
 ```
 
-or directly in an `Image` widget:
+or using `AssetImage`:
 
 或者通过 `Image` widget 直接访问：
 
@@ -1684,12 +1727,13 @@ or directly in an `Image` widget:
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Image.asset("images/my_image.png");
+  return const Image(
+    image: AssetImage('images/my_image.png'),
+  );
 }
 ```
 
-More detailed information can be found in
-[Adding assets and images][].
+More detailed information can be found in [Adding assets and images][].
 
 更多详尽的信息可以在 [在 Flutter 中添加资产和图像][Adding assets and images] 中找到。
 
@@ -1697,10 +1741,10 @@ More detailed information can be found in
 
 ### 字符串储存在哪里？如何处理本地化？
 
-Unlike .NET which has `resx` files, Flutter currently doesn't
-have a dedicated resources-like system for strings. At the moment,
-the best practice is to hold your copy text in a class as static
-fields and accessing them from there. For example:
+Unlike .NET which has `resx` files,
+Flutter doesn't currently have a dedicated system for handling strings.
+At the moment, the best practice is to declare your copy text
+in a class as static fields and access them from there. For example:
 
 与 .NET 拥有 `resx` 文件不同，
 Flutter 当下并没有一个特定的管理字符串的资源管理系统。
@@ -1710,11 +1754,11 @@ Flutter 当下并没有一个特定的管理字符串的资源管理系统。
 <!-- skip -->
 ```dart
 class Strings {
-  static String welcomeMessage = "Welcome To Flutter";
+  static const String welcomeMessage = 'Welcome To Flutter';
 }
 ```
 
-Then in your code, you can access your strings as such:
+You can access your strings as such:
 
 接着在你们的代码中，你可以这样访问你的字符串：
 
@@ -1723,9 +1767,10 @@ Then in your code, you can access your strings as such:
 Text(Strings.welcomeMessage)
 ```
 
-By default, Flutter only supports US English for its strings. If you need to
-add support for other languages, include the `flutter_localizations`
-package. You might also need to add Dart's [`intl`][]
+By default, Flutter only supports US English for its strings.
+If you need to add support for other languages,
+include the `flutter_localizations` package.
+You might also need to add Dart's [`intl`][]
 package to use i10n machinery, such as date/time formatting.
 
 默认情况下，Flutter 只支持美式英语的本地化字符串。
@@ -1735,14 +1780,14 @@ package to use i10n machinery, such as date/time formatting.
 
 ```yaml
 dependencies:
-  # ...
   flutter_localizations:
     sdk: flutter
-  intl: "^0.15.6"
+  intl: '^0.17.0'
 ```
 
 To use the `flutter_localizations` package,
-specify the `localizationsDelegates` and `supportedLocales` on the app widget:
+specify the `localizationsDelegates` and
+`supportedLocales` on the app widget:
 
 若你想使用 `flutter_localizations` package，
 指定应用的 `localizationsDelegates` 和
@@ -1753,29 +1798,28 @@ specify the `localizationsDelegates` and `supportedLocales` on the app widget:
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 MaterialApp(
- localizationsDelegates: const [
-   // Add app-specific localization delegate[s] here.
-   GlobalMaterialLocalizations.delegate,
-   GlobalWidgetsLocalizations.delegate,
- ],
- supportedLocales: const [
+  localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+    // Add app-specific localization delegate[s] here
+    GlobalMaterialLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ],
+  supportedLocales: const <Locale>[
     Locale('en', 'US'), // English
     Locale('he', 'IL'), // Hebrew
     // ... other locales the app supports
   ],
-  // ...
 )
 ```
 
 The delegates contain the actual localized values,
-while the `supportedLocales` defines which locales
-the app supports. The above example uses a `MaterialApp`,
-so it has both a `GlobalWidgetsLocalizations` for the base
-widgets localized values, and a `MaterialWidgetsLocalizations`
-for the Material widgets localizations.
-If you use `WidgetsApp` for your app, you don't
-need the latter. Note that these two delegates contain "default"
-values, but you'll need to provide one or more delegates
+while the `supportedLocales` defines which locales the app supports.
+The above example uses a `MaterialApp`,
+so it has both a `GlobalWidgetsLocalizations`
+for the base widgets localized values,
+and a `MaterialWidgetsLocalizations` for the Material widgets localizations.
+If you use `WidgetsApp` for your app, you don't need the latter.
+Note that these two delegates contain "default" values,
+but you'll need to provide one or more delegates
 for your own app's localizable copy,
 if you want those to be localized too.
 
@@ -1789,23 +1833,23 @@ if you want those to be localized too.
 但是如果你想要实现本地化，
 就必须在本地提供一个或多个 delegates 的实现副本。
 
-When initialized, the `WidgetsApp` (or `MaterialApp`) creates a
-[`Localizations`][]
-widget for you, with the delegates you specify.
-The current locale for the device is always accessible from the `Localizations`
-widget from the current context (in the form of a `Locale` object),
-or using the [`Window.locale`][].
+When initialized, the `WidgetsApp` (or `MaterialApp`)
+creates a [`Localizations`][] widget for you,
+with the delegates you specify.
+The current locale for the device is always accessible
+from the `Localizations` widget from the current context
+(in the form of a `Locale` object), or using the [`Window.locale`][].
 
 当初始化的时候，`WidgetsApp`（或 `MaterialApp`）会根据
 你提供的 delegates 创建一个 [`Localizations`][] widget。
 `Localizations` widget 可以随时从当前上下文中中获取设备所用的语言，
 也可以使用 [`Window.locale`][]。
 
-To access localized resources, use the `Localizations.of()` method to
-access a specific localizations class that is provided by a given delegate.
-Use the [`intl_translation`][] package to extract translatable
-copy to [arb][] files for translating,
-and importing them back into the app for using them with `intl`.
+To access localized resources, use the `Localizations.of()` method
+to access a specific localizations class that is provided by a given delegate.
+Use the [`intl_translation`][] package to extract translatable copy
+to [arb][] files for translating, and importing them back into the app
+for using them with `intl`.
 
 要使用本地化资源，使用 `Localizations.of()` 方法可以访问提供代理的特定本地化类。
 使用 [`intl_translation`][] 库解压翻译
@@ -1813,8 +1857,8 @@ and importing them back into the app for using them with `intl`.
 然后在应用中通过 `intl` 来引用它们。
 
 For further details on internationalization and localization in Flutter,
-see the [internationalization guide][],
-which has sample code with and without the `intl` package.
+see the [internationalization guide][], which has sample code
+with and without the `intl` package.
 
 关于 Flutter 中国际化和本地化的细节内容，请参看
 [Flutter 应用里的国际化][internationalization guide]，
@@ -1839,8 +1883,8 @@ Xamarin.Forms 中有一个 `csproj` 文件。
 
 ### Nuget 的等价物是什么？如何添加依赖项？
 
-In the .NET eco-system, native Xamarin projects and Xamarin.Forms
-projects had access to Nuget and the inbuilt package management system.
+In the .NET ecosystem, native Xamarin projects and Xamarin.Forms projects
+had access to Nuget and the built-in package management system.
 Flutter apps contain a native Android app, native iOS app and Flutter app.
 
 在 .NET 生态系统中，原生 Xamarin 项目和
@@ -1855,14 +1899,15 @@ In iOS, you add dependencies by adding to your `Podfile`.
 而在 iOS 中，你可以通过添加到 `Podfile` 来添加依赖项。
 
 Flutter uses Dart's own build system, and the Pub package manager.
-The tools delegate the building of the native Android and iOS wrapper
-apps to the respective build systems.
+The tools delegate the building of the native Android and iOS wrapper apps
+to the respective build systems.
 
 Flutter 使用 Dart 自己的构建系统和 Pub 包管理器。
 这些工具将原生 Android 和 iOS 封装应用程序的构建委托给各自的构建系统。
 
-In general, use `pubspec.yaml` to declare external dependencies to use in
-Flutter. A good place to find Flutter packages is on [pub.dev][].
+In general, use `pubspec.yaml` to declare
+external dependencies to use in Flutter.
+A good place to find Flutter packages is on [pub.dev][].
 
 通常你会在 Flutter 中使用 `pubspec.yaml` 来声明外部依赖。
 你可以通过 [pub.dev][] 来查找一些优秀的 Flutter 第三方包。
@@ -1875,10 +1920,11 @@ Flutter. A good place to find Flutter packages is on [pub.dev][].
 
 ### 如何侦听应用程序的生命周期事件？
 
-In Xamarin.Forms, you have an `Application` that contains `OnStart`,
-`OnResume` and `OnSleep`. In Flutter you can instead listen to similar
-lifecycle events by hooking into the `WidgetsBinding` observer and
-listening to the `didChangeAppLifecycleState()` change event.
+In Xamarin.Forms, you have an `Application`
+that contains `OnStart`, `OnResume` and `OnSleep`.
+In Flutter, you can instead listen to similar lifecycle events
+by hooking into the `WidgetsBinding` observer and listening to
+the `didChangeAppLifecycleState()` change event.
 
 在 Xamarin.Forms 中，你会有一个包含
 `OnStart`、`OnResume` 和 `OnSleep` 的 `Application`。
@@ -1892,36 +1938,35 @@ The observable lifecycle events are:
 可监听的生命周期事件有：
 
 **`inactive`**
-<br> The application is in an inactive state and is not receiving
-user input. This event only works on iOS, as there is no equivalent event on
-Android.
+: The application is in an inactive state and is not receiving user input.
+  This event is iOS only.
 
 **`inactive`**
-<br> 应用当前处于不活跃状态，不接收用户输入事件。
-这个事件只在 iOS 上有效，Android 中没有类似的状态。
+: 应用当前处于不活跃状态，不接收用户输入事件。
+  这个事件只在 iOS 上有效。
 
 **`paused`**
-<br> The application is not currently visible to
-the user, is not responding to user input, but is running in the background.
+: The application is not currently visible to the user,
+  is not responding to user input, but is running in the background.
 
 **`paused`**
-<br> 应用当前处于用户不可见状态，不接收用户输入事件，但仍在后台运行。
+: 应用当前处于用户不可见状态，不接收用户输入事件，但仍在后台运行。
 
 **`resumed`**
-<br> The application is visible and responding to user input.
+: The application is visible and responding to user input.
 
 **`resumed`**
-<br> 应用可见，也响应用户输入。
+: 应用可见，同时响应用户输入。
 
 **`suspending`**
-<br> The application is suspended momentarily. The iOS platform
-has no equivalent event.
+: The application is suspended momentarily.
+  This event is Android only.
 
 **`suspending`**
-<br> 应用被挂起，在 iOS 平台没有这一事件。
+: 应用被挂起。这个事件只在 Android 上有效。
 
-For more details on the meaning of these states, see the
-[`AppLifecycleStatus` documentation][].
+For more details on the meaning of these states,
+see the [`AppLifecycleStatus` documentation][].
 
 有关这些状态的含义的更多细节，可参考
 [`AppLifecycleStatus` 文档][`AppLifecycleStatus` documentation]。
@@ -1936,18 +1981,21 @@ For more details on the meaning of these states, see the
 
 ### 什么东西与 StackLayout 等效?
 
-In Xamarin.Forms you can create a `StackLayout` with an `Orientation` of
-horizontal or vertical.  Flutter has a similar approach,
+In Xamarin.Forms you can create a `StackLayout`
+with an `Orientation` of horizontal or vertical.
+Flutter has a similar approach,
 however you would use the `Row` or `Column` widgets.
 
 在 Xamarin.Forms 中，可以创建一个带水平或垂直方向
 `Orientation` 的 `StackLayout` 。
-Flutter 也有类似的方法，不过你将使用的是 `Row` 或 `Column` widget。
+Flutter 也有类似的方法，不过你将使用的是
+`Row` 或 `Column` widget。
 
-If you notice the two code samples are identical with the exception of the
-"Row" and "Column" widget. The children are the same and this feature can be
-exploited to develop rich layouts that can change overtime with the same
-children.
+If you notice the two code samples are identical
+except the `Row` and `Column` widget.
+The children are the same and this feature
+can be exploited to develop rich layouts
+that can change overtime with the same children.
 
 你可能会注意到除了 `Row` 和 `Column` widget 之外，这两个代码示例是相同的。
 这些子元素是相同的，可以利用这个特性开发丰富的布局，这些布局可以随着时间的推移而改变。
@@ -1958,7 +2006,7 @@ children.
 Widget build(BuildContext context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
+    children: const <Widget>[
       Text('Row One'),
       Text('Row Two'),
       Text('Row Three'),
@@ -1974,7 +2022,7 @@ Widget build(BuildContext context) {
 Widget build(BuildContext context) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
+    children: const <Widget>[
       Text('Column One'),
       Text('Column Two'),
       Text('Column Three'),
@@ -1999,25 +2047,28 @@ content exceeds its viewable space.
 
 <!-- skip -->
 ```dart
-  GridView.count(
-    // Create a grid with 2 columns. If you change the scrollDirection to
-    // horizontal, this would produce 2 rows.
-    crossAxisCount: 2,
-    // Generate 100 widgets that display their index in the List
-    children: List.generate(100, (index) {
+GridView.count(
+  // Create a grid with 2 columns. If you change the scrollDirection to
+  // horizontal, this would produce 2 rows.
+  crossAxisCount: 2,
+  // Generate 100 widgets that display their index in the list.
+  children: List<Widget>.generate(
+    100,
+    (int index) {
       return Center(
         child: Text(
           'Item $index',
-          style: Theme.of(context).textTheme.headline,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
       );
-    }),
-  );
+    },
+  ),
+);
 ```
 
-You might have used a `Grid` in Xamarin.Forms to implement widgets
-that overlay other widgets.
-In Flutter, you accomplish this with the `Stack` widget
+You might have used a `Grid` in Xamarin.Forms
+to implement widgets that overlay other widgets.
+In Flutter, you accomplish this with the `Stack` widget.
 
 你可能在 Xamarin.Forms 中使用 `Grid` 来实现覆盖其他 widget 的 widget。
 在 Flutter 中，你可以使用 `Stack` widget 来完成这一操作。
@@ -2028,12 +2079,20 @@ This sample creates two icons that overlap each other.
 
 <!-- skip -->
 ```dart
-child: Stack(
-  children: <Widget>[
-    Icon(Icons.add_box, size: 24.0, color: const Color.fromRGBO(0,0,0,1.0)),
+Stack(
+  children: const <Widget>[
+    Icon(
+      Icons.add_box,
+      size: 24.0,
+      color: Colors.black,
+    ),
     Positioned(
       left: 10.0,
-      child: Icon(Icons.add_circle, size: 24.0, color: const Color.fromRGBO(0,0,0,1.0)),
+      child: Icon(
+        Icons.add_circle,
+        size: 24.0,
+        color: Colors.black,
+      ),
     ),
   ],
 ),
@@ -2043,8 +2102,8 @@ child: Stack(
 
 ### 有什么等同于 ScrollView ？
 
-In Xamarin.Forms, a `ScrollView` wraps around a `VisualElement` and,
-if the content is larger than the device screen, it scrolls.
+In Xamarin.Forms, a `ScrollView` wraps around a `VisualElement`,
+and if the content is larger than the device screen, it scrolls.
 
 在 Xamarin.Forms 中，`ScrollView` 封装了 `VisualElement`，
 如果内容大于设备屏幕，它就会滚动。
@@ -2059,17 +2118,16 @@ You simply fill the Widget with the content that you want to be scrollable.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return SingleChildScrollView(
+  return const SingleChildScrollView(
     child: Text('Long Content'),
   );
 }
 ```
 
 If you have many items you want to wrap in a scroll,
-even of different `Widget` types, you might want
-to use a `ListView`. This might seem like overkill,
-but in Flutter this is far more optimized
-and less intensive than a Xamarin.Forms `ListView`,
+even of different `Widget` types, you might want to use a `ListView`.
+This might seem like overkill, but in Flutter this is
+far more optimized and less intensive than a Xamarin.Forms `ListView`,
 which is backing on to platform specific controls.
 
 如果你想在滚动条中包含许多项，即使是不同的`Widget`类型，
@@ -2083,7 +2141,7 @@ which is backing on to platform specific controls.
 @override
 Widget build(BuildContext context) {
   return ListView(
-    children: <Widget>[
+    children: const <Widget>[
       Text('Row One'),
       Text('Row Two'),
       Text('Row Three'),
@@ -2102,8 +2160,8 @@ Landscape transitions can be handled automatically by setting the
 
 通过在 AndroidManifest.xml 中设置 `configChanges` 属性，可以自动处理横向转换。
 
-```yaml
-android:configChanges="orientation|screenSize"
+```xml
+<activity android:configChanges="orientation|screenSize" />
 ```
 
 ## Gesture detection and touch event handling
@@ -2112,73 +2170,74 @@ android:configChanges="orientation|screenSize"
 
 ### How do I add GestureRecognizers to a widget in Flutter?
 
-### 如何在Flutter中向 widget 添加手势识别器?
+### 如何在 Flutter 中向 widget 添加手势识别器?
 
-In Xamarin.Forms, `Element`s might contain a click event you
-can attach to. Many elements also contain a `Command` that is
-tied to this event. Alternatively you would use the
-`TapGestureRecognizer`. In Flutter there are two very similar ways:
+In Xamarin.Forms, `Element`s might contain a click event you can attach to.
+Many elements also contain a `Command` that is tied to this event.
+Alternatively you would use the `TapGestureRecognizer`.
+In Flutter there are two very similar ways:
 
 在 Xamarin.Forms 中，`Element` 可能包含一个可供附加 (attach) 的单击事件。
 许多元素还包含一个与此事件关联的 `Command`。
 你也可以使用 `TapGestureRecognizer`。
 而在 Flutter 中有两种非常相似的方式：
 
- 1. If the widget supports event detection, pass a function to it and
-    handle it in the function. For example, the ElevatedButton has an
-    `onPressed` parameter:
+1. If the widget supports event detection, pass a function to it and
+   handle it in the function. For example, the ElevatedButton has an
+   `onPressed` parameter:
 
-    如果 Widget 支持事件监听，那么向它传入一个方法并在方法中处理事件。
-    例如，RaisedButton 有一个 `onPressed` 参数：
+   如果 Widget 支持事件监听，那么向它传入一个方法并在方法中处理事件。
+   例如，RaisedButton 有一个 `onPressed` 参数：
 
-    <!-- skip -->
-    ```dart
-    @override
-    Widget build(BuildContext context) {
-      return ElevatedButton(
-          onPressed: () {
-            print("click");
-          },
-          child: Text("Button"));
+   <!-- skip -->
+   ```dart
+   @override
+   Widget build(BuildContext context) {
+     return ElevatedButton(
+       onPressed: () {
+         print('click');
+       },
+       child: Text("Button"),
+     );
     }
-    ```
+   ```
 
- 2. If the widget doesn't support event detection, wrap the
-    widget in a GestureDetector and pass a function to the
-    `onTap` parameter.
+2. If the widget doesn't support event detection, wrap the
+   widget in a `GestureDetector` and pass a function
+   to the `onTap` parameter.
 
-    如果 Widget 不支持事件监听，将 Widget 包装进一个 GestureDetector 中
-    并向 `onTap` 参数传入一个方法。
+   如果 Widget 不支持事件监听，将 Widget 包装进一个 GestureDetector 中
+   并向 `onTap` 参数传入一个方法。
 
-    <!-- skip -->
-    ```dart
-    class SampleApp extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return Scaffold(
-            body: Center(
-          child: GestureDetector(
-            child: FlutterLogo(
-              size: 200.0,
-            ),
-            onTap: () {
-              print("tap");
-            },
-          ),
-        ));
-      }
-    }
-    ```
+   <!-- skip -->
+   ```dart
+   class SampleApp extends StatelessWidget {
+     const SampleApp({Key? key}) : super(key: key);
+
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold(
+         body: Center(
+           child: GestureDetector(
+             onTap: () {
+               print("tap");
+             },
+             child: const FlutterLogo(size: 200.0),
+           ),
+         ),
+       );
+     }
+   }
+   ```
 
 ### How do I handle other gestures on widgets?
 
 ### 我如何处理 widget 上的其他手势？
 
-In Xamarin.Forms you would add a `GestureRecognizer` to the
-`View`. You would normally be limited to `TapGestureRecognizer`,
+In Xamarin.Forms you would add a `GestureRecognizer` to the `View`.
+You would normally be limited to `TapGestureRecognizer`,
 `PinchGestureRecognizer`, `PanGestureRecognizer`, `SwipeGestureRecognizer`,
-`DragGestureRecognizer` and `DropGestureRecognizer`
-unless you built your own.
+`DragGestureRecognizer` and `DropGestureRecognizer` unless you built your own.
 
 在 Xamarin.Forms 中你可以在 `VisualElement`
 中添加一个 `GestureRecognizer`。
@@ -2187,8 +2246,8 @@ unless you built your own.
 `SwipeGestureRecognizer`、`DragGestureRecognizer` 和 `DropGestureRecognizer`，
 除非你构建了自己的实现。
 
-In Flutter, using the GestureDetector, you can listen to a wide
-range of Gestures such as:
+In Flutter, using the GestureDetector,
+you can listen to a wide range of Gestures such as:
 
 在 Flutter 中，使用手势检测器，你可以监听到各种各样的手势，比如:
 
@@ -2197,147 +2256,158 @@ range of Gestures such as:
   单击
 
 `onTapDown`
-<br> A pointer that might cause a tap
-     has contacted the screen at a particular location.
+: A pointer that might cause a tap
+  has contacted the screen at a particular location.
 
 `onTapDown`
-<br> 当指尖在特定位置与屏幕接触产生点击事件。
+: 当指尖在特定位置与屏幕接触产生点击事件。
 
 `onTapUp`
-<br> A pointer that triggers a tap
-     has stopped contacting the screen at a particular location.
+: A pointer that triggers a tap
+  has stopped contacting the screen at a particular location.
 
 `onTapUp`
-<br> 当指尖触发的点击事件已经停止在特定位置与屏幕接触。
+: 当指尖触发的点击事件已经停止在特定位置与屏幕接触。
 
 `onTap`
-<br> A tap has occurred.
+: A tap has occurred.
 
 `onTap`
-<br> 一个点击事件已经发生。
+: 一个点击事件已经发生。
 
 `onTapCancel`
-<br> The pointer that previously triggered the `onTapDown`
-     won't cause a tap.
+: The pointer that previously triggered the `onTapDown`
+  won't cause a tap.
 
 `onTapCancel`
-<br> 触发了 `onTapDown` 事件之后的指尖没有导致点击事件。
+: 触发了 `onTapDown` 事件之后的指尖没有导致点击事件。
 
 * Double tap
 
   双击
 
 `onDoubleTap`
-<br> The user tapped the screen at the same location twice
-     in quick succession.
+: The user tapped the screen at the same location twice
+  in quick succession.
 
 `onDoubleTap`
-<br> 用户在同一位置连续快速点击屏幕两次。
+: 用户在同一位置连续快速点击屏幕两次。
 
 * Long press
 
   长按
 
 `onLongPress`
-<br> A pointer has remained in contact with the screen
-     at the same location for a long period of time.
+: A pointer has remained in contact with the screen
+  at the same location for a long period of time.
 
 `onLongPress`
-<br> 指尖长时间保持与屏幕在同一位置的接触。
+: 指尖长时间保持与屏幕在同一位置的接触。
 
 * Vertical drag
 
   垂直拖动
 
 `onVerticalDragStart`
-<br> A pointer has contacted the screen and might begin to move vertically.
+: A pointer has contacted the screen and might begin to move vertically.
 
 `onVerticalDragStart`
-<br> 指尖与屏幕接触后，可能开始垂直移动。
+: 指尖与屏幕接触后，可能开始垂直移动。
 
 `onVerticalDragUpdate`
-<br> A pointer in contact with the screen
-     has moved further in the vertical direction.
+: A pointer in contact with the screen
+  has moved further in the vertical direction.
 
 `onVerticalDragUpdate`
-<br> 指尖与屏幕接触并在垂直方向上移动得更远。
+: 指尖与屏幕接触并在垂直方向上移动得更远。
 
 `onVerticalDragEnd`
-<br> A pointer that was previously in contact with the
-     screen and moving vertically is no longer in contact
-     with the screen and was moving at a specific velocity
-     when it stopped contacting the screen.
+: A pointer that was previously in contact with the
+  screen and moving vertically is no longer in contact
+  with the screen and was moving at a specific velocity
+  when it stopped contacting the screen.
 
 `onVerticalDragEnd`
-<br> 指尖在之前与屏幕接触并垂直移动，
-     当不再与屏幕接触时触发这个事件。
-     当它停止与屏幕接触时，它会以特定的速度移动。
+: 指尖在之前与屏幕接触并垂直移动，
+  当不再与屏幕接触时触发这个事件。
+  当它停止与屏幕接触时，它会以特定的速度移动。
 
 * Horizontal drag
 
   水平拖动
 
 `onHorizontalDragStart`
-<br> A pointer has contacted the screen and might begin to move horizontally.
+: A pointer has contacted the screen and might begin to move horizontally.
 
 `onHorizontalDragStart`
-<br> 指尖与屏幕接触，开始水平移动时触发。
+: 指尖与屏幕接触，开始水平移动时触发。
 
 `onHorizontalDragUpdate`
-<br> A pointer in contact with the screen
-     has moved further in the horizontal direction.
+: A pointer in contact with the screen
+  has moved further in the horizontal direction.
 
 `onHorizontalDragUpdate`
-<br> 指尖与屏幕接触并在水平方向上移动得更远。
+: 指尖与屏幕接触并在水平方向上移动得更远。
 
 `onHorizontalDragEnd`
-<br> A pointer that was previously in contact with the
-     screen and moving horizontally is no longer in contact
-     with the screen and was moving at a specific velocity
-     when it stopped contacting the screen.
+: A pointer that was previously in contact with the
+  screen and moving horizontally is no longer in contact
+  with the screen and was moving at a specific velocity
+  when it stopped contacting the screen.
 
 `onHorizontalDragEnd`
-<br> 指尖在之前与屏幕接触并水平移动，当不再与屏幕接触时会触发这个事件。
-     当它停止与屏幕接触时，
-     它正在以特定的速度移动。
+: 指尖在之前与屏幕接触并水平移动，当不再与屏幕接触时会触发这个事件。
+  当它停止与屏幕接触时，
+  它正在以特定的速度移动。
 
-The following example shows a `GestureDetector` that rotates the
-Flutter logo on a double tap:
+The following example shows a `GestureDetector`
+that rotates the Flutter logo on a double tap:
 
 下面的例子展示了一个实现了双击旋转 Flutter 标志的 `GestureDetector`：
 
 <!-- skip -->
 ```dart
-AnimationController controller;
-CurvedAnimation curve;
+class SampleAppPage extends StatefulWidget {
+  const SampleAppPage({Key? key}) : super(key: key);
 
-@override
-void initState() {
-  super.initState();
-  controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
-  curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+  @override
+  _SampleAppPageState createState() => _SampleAppPageState();
 }
 
-class SampleApp extends StatelessWidget {
+class _SampleAppPageState extends State<SampleAppPage>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController controller;
+  late final CurvedAnimation curve;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      duration: const Duration(milliseconds: 2000),
+      vsync: this,
+    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-          child: GestureDetector(
-            child: RotationTransition(
-                turns: curve,
-                child: FlutterLogo(
-                  size: 200.0,
-                )),
-            onDoubleTap: () {
-              if (controller.isCompleted) {
-                controller.reverse();
-              } else {
-                controller.forward();
-              }
-            },
+      body: Center(
+        child: GestureDetector(
+          onDoubleTap: () {
+            if (controller.isCompleted) {
+              controller.reverse();
+            } else {
+              controller.forward();
+            }
+          },
+          child: RotationTransition(
+            turns: curve,
+            child: const FlutterLogo(size: 200.0),
+          ),
         ),
-    ));
+      ),
+    );
   }
 }
 ```
@@ -2354,10 +2424,10 @@ The equivalent to a `ListView` in Flutter is … a `ListView`!
 
 在 Flutter 中与 `ListView` 等价的是……一个 `ListView`！
 
-In a Xamarin.Forms `ListView`,
-you create a `ViewCell` and possibly a `DataTemplateSelector`
-and pass it into the `ListView`, which renders each row with
-what your `DataTemplateSelector` or `ViewCell` returns.
+In a Xamarin.Forms `ListView`, you create a `ViewCell`
+and possibly a `DataTemplateSelector`and pass it into the `ListView`,
+which renders each row with what your
+`DataTemplateSelector` or `ViewCell` returns.
 However, you often have to make sure you turn on Cell Recycling
 otherwise you will run into memory issues and slow scrolling speeds.
 
@@ -2367,9 +2437,9 @@ otherwise you will run into memory issues and slow scrolling speeds.
 或者 `ViewCell` 的返回数据渲染每一行。
 但是，你通常必须确保打开单元格回收，否则会遇到内存问题和会使滚动速度变慢。
 
-Due to Flutter's immutable widget pattern, you pass a list of
-widgets to your `ListView`, and Flutter takes care of making sure
-that scrolling is fast and smooth.
+Due to Flutter's immutable widget pattern,
+you pass a list of widgets to your `ListView`,
+and Flutter takes care of making sure that scrolling is fast and smooth.
 
 由于 Flutter 中 widget 的不可变特性，
 你需要向 `ListView` 传递一个 widget 列表，
@@ -2380,47 +2450,41 @@ Flutter 会确保滚动快速而流畅。
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
-  // This widget is the root of your application.
+  /// This widget is the root of your application.
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sample App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SampleAppPage(),
     );
   }
 }
 
-class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+class SampleAppPage extends StatelessWidget {
+  const SampleAppPage({Key? key}) : super(key: key);
 
-  @override
-  _SampleAppPageState createState() => _SampleAppPageState();
-}
-
-class _SampleAppPageState extends State<SampleAppPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Sample App"),
+  List<Widget> _getListData() {
+    return List<Widget>.generate(
+      100,
+      (int index) => Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Text('Row $index'),
       ),
-      body: ListView(children: _getListData()),
     );
   }
 
-  _getListData() {
-    List<Widget> widgets = [];
-    for (int i = 0; i < 100; i++) {
-      widgets.add(Padding(padding: EdgeInsets.all(10.0), child: Text("Row $i")));
-    }
-    return widgets;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Sample App')),
+      body: ListView(children: _getListData()),
+    );
   }
 }
 ```
@@ -2429,9 +2493,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### 如何确定列表中被点击的元素？
 
-In Xamarin.Forms, the ListView has an `ItemTapped` method to find out
-which item was clicked. There are many other techniques you might have
-used such as checking when `SelectedItem` or `EventToCommand`
+In Xamarin.Forms, the ListView has an `ItemTapped` method
+to find out which item was clicked.
+There are many other techniques you might have used
+such as checking when `SelectedItem` or `EventToCommand`
 behaviors change.
 
 在 Xamarin.Forms 中，ListView 拥有一个
@@ -2448,54 +2513,51 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sample App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  const SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Sample App"),
+  List<Widget> _getListData() {
+    return List<Widget>.generate(
+      100,
+      (int index) => GestureDetector(
+        onTap: () {
+          print('Row $index tapped');
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Text('Row $index'),
+        ),
       ),
-      body: ListView(children: _getListData()),
     );
   }
 
-  _getListData() {
-    List<Widget> widgets = [];
-    for (int i = 0; i < 100; i++) {
-      widgets.add(GestureDetector(
-        child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Text("Row $i")),
-        onTap: () {
-          print('row tapped');
-        },
-      ));
-    }
-    return widgets;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Sample App')),
+      body: ListView(children: _getListData()),
+    );
   }
 }
 ```
@@ -2504,10 +2566,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### 如何动态更新 ListView ?
 
-In Xamarin.Forms, if you bound the `ItemsSource` property to
-an `ObservableCollection` you would just update the list in your
-ViewModel. Alternatively, you could assign a new `List` to the
-`ItemSource` property.
+In Xamarin.Forms, if you bound the
+`ItemsSource` property to an `ObservableCollection`,
+you would just update the list in your ViewModel.
+Alternatively, you could assign a new `List` to the `ItemSource` property.
 
 在 Xamarin.Forms 中，如果将 `ItemsSource` 属性绑定到一个
 `ObservableCollection`，就只需要更新视图模型中的列表。
@@ -2517,10 +2579,11 @@ In Flutter, things work a little differently.
 If you update the list of widgets inside a `setState()` method,
 you would quickly see that your data did not change visually.
 This is because when `setState()` is called,
-the Flutter rendering engine looks at the widget tree to see if
-anything has changed. When it gets to your
-`ListView`, it performs a `==` check, and determines that the two
-`ListView`s are the same. Nothing has changed, so no update is required.
+the Flutter rendering engine looks at the widget tree
+to see if anything has changed.
+When it gets to your `ListView`, it performs a `==` check,
+and determines that the two `ListView`s are the same.
+Nothing has changed, so no update is required.
 
 在 Flutter 中，情况略有不同。
 如果你在 `setState()` 中更新了 widget 列表，
@@ -2531,8 +2594,9 @@ Flutter 的渲染引擎回去检索 widget 树是否有改变。
 然后发现两个 `ListView` 是相等的。
 此时没有改变，也就不会进行更新。
 
-For a simple way to update your `ListView`, create a new `List` inside of
-`setState()`, and copy the data from the old list to the new list.
+For a simple way to update your `ListView`,
+create a new `List` inside of `setState()`,
+and copy the data from the old list to the new list.
 While this approach is simple, it is not recommended for large data sets,
 as shown in the next example.
 
@@ -2545,32 +2609,31 @@ as shown in the next example.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
-  // This widget is the root of your application.
+  /// This widget is the root of your application.
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sample App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  const SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List<Widget> widgets = [];
+  List<Widget> widgets = <Widget>[];
 
   @override
   void initState() {
@@ -2580,38 +2643,38 @@ class _SampleAppPageState extends State<SampleAppPage> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Sample App"),
+  Widget getRow(int index) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          widgets = List<Widget>.from(widgets);
+          widgets.add(getRow(widgets.length));
+          print('Row $index');
+        });
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Text('Row $index'),
       ),
-      body: ListView(children: widgets),
     );
   }
 
-  Widget getRow(int i) {
-    return GestureDetector(
-      child: Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Text("Row $i")),
-      onTap: () {
-        setState(() {
-          widgets = List.from(widgets);
-          widgets.add(getRow(widgets.length));
-          print('row $i');
-        });
-      },
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Sample App')),
+      body: ListView(children: widgets),
     );
   }
 }
 ```
 
-The recommended, efficient, and effective way to build a list uses a
-ListView.Builder. This method is great when you have a dynamic
-list or a list with very large amounts of data. This is essentially
-the equivalent of RecyclerView on Android, which automatically
-recycles list elements for you:
+The recommended, efficient, and effective way to build a list
+uses a `ListView.Builder`.
+This method is great when you have a dynamic list
+or a list with very large amounts of data.
+This is essentially the equivalent of RecyclerView on Android,
+which automatically recycles list elements for you:
 
 一个推荐的、高效且有效的方法就是使用 `ListView.Builder` 来构建列表。
 当你的数据量很大，且需要构建动态列表时，这个方法会非常好用。
@@ -2622,25 +2685,24 @@ recycles list elements for you:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
-  // This widget is the root of your application.
+  /// This widget is the root of your application.
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sample App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  const SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
@@ -2657,47 +2719,48 @@ class _SampleAppPageState extends State<SampleAppPage> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Sample App"),
-        ),
-        body: ListView.builder(
-            itemCount: widgets.length,
-            itemBuilder: (BuildContext context, int position) {
-              return getRow(position);
-            }));
-  }
-
-  Widget getRow(int i) {
+  Widget getRow(int index) {
     return GestureDetector(
-      child: Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Text("Row $i")),
       onTap: () {
         setState(() {
           widgets.add(getRow(widgets.length));
-          print('row $i');
+          print('Row $index');
         });
       },
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Text('Row $index'),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Sample App')),
+      body: ListView.builder(
+        itemCount: widgets.length,
+        itemBuilder: (BuildContext context, int index) {
+          return getRow(index);
+        },
+      ),
     );
   }
 }
 ```
 
-Instead of creating a "ListView", create a ListView.builder that
-takes two key parameters: the initial length of the list,
-and an ItemBuilder function.
+Instead of creating a `ListView`, create a `ListView.builder`
+that takes two key parameters: the initial length of the list,
+and an item builder function.
 
 与创建 `ListView` 不同，创建 `ListView.Builder` 需要两个关键参数：
-初始化列表长度和 `ItemBuilder` 函数。
+初始化列表长度和 item 构建函数。
 
-The ItemBuilder function is similar to the `getView` function in
-an Android adapter; it takes a position,
+The item builder function is similar to the `getView` function
+in an Android adapter; it takes a position,
 and returns the row you want rendered at that position.
 
-ItemBuilder 函数类似于 Android 适配器中的 `getView` 函数；
+Item 构建函数类似于 Android 适配器中的 `getView` 函数；
 它接受一个位置，并返回你希望的在该位置呈现的行。
 
 Finally, but most importantly, notice that the `onTap()` function
@@ -2722,8 +2785,8 @@ and [Write your first Flutter app, part 2][].
 
 ### 如何在文本 `Text` widget 上设置自定义字体?
 
-In Xamarin.Forms, you would have to add a custom font in each native
-project. Then, in your `Element` you would assign this font name
+In Xamarin.Forms, you would have to add a custom font in each native project.
+Then, in your `Element` you would assign this font name
 to the `FontFamily` attribute using `filename#fontname`
 and just `fontname` for iOS.
 
@@ -2731,18 +2794,18 @@ and just `fontname` for iOS.
 然后在你的 `Element` 中，你会使用 `filename#fontname`
 给 `FontFamily` 属性分配字体名，在 iOS 中使用 `fontname` 。
 
-In Flutter, place the font file in a folder and reference it in the
-`pubspec.yaml` file, similar to how you import images.
+In Flutter, place the font file in a folder and reference it
+in the `pubspec.yaml` file, similar to how you import images.
 
 在 Flutter 中，你可以将字体文件放在一个文件夹中，
 并在 `pubspec.yaml` 中引用它，这跟导入图像的方式类似。
 
 ```yaml
 fonts:
-   - family: MyCustomFont
-     fonts:
-       - asset: fonts/MyCustomFont.ttf
-       - style: italic
+  - family: MyCustomFont
+    fonts:
+      - asset: fonts/MyCustomFont.ttf
+      - style: italic
 ```
 
 Then assign the font to your `Text` widget:
@@ -2754,10 +2817,8 @@ Then assign the font to your `Text` widget:
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: Text("Sample App"),
-    ),
-    body: Center(
+    appBar: AppBar(title: const Text('Sample App')),
+    body: const Center(
       child: Text(
         'This is a custom font text',
         style: TextStyle(fontFamily: 'MyCustomFont'),
@@ -2803,15 +2864,16 @@ where you can customize many parameters, such as:
 ### 如何检索用户输入？
 
 Xamarin.Forms `element`s allow you to directly query the `element`
-to determine the state of any of its properties,
+to determine the state of its properties,
 or whether it's bound to a property in a `ViewModel`.
 
 Xamarin.Forms 的 `element` 允许你直接查询 `element` 来确定它的任何属性的状态，
 或者它被绑定到 `ViewModel` 中的属性。
 
 Retrieving information in Flutter is handled by specialized widgets
-and is different than how you are used to. If you have a `TextField`
-or a `TextFormField`, you can supply a [`TextEditingController`][]
+and is different from how you are used to.
+If you have a `TextField`or a `TextFormField`,
+you can supply a [`TextEditingController`][]
 to retrieve user input:
 
 在 Flutter 中检索信息是由专门的 widget 处理的，这是跟原来的习惯不同的。
@@ -2821,9 +2883,9 @@ to retrieve user input:
 <!-- skip -->
 ```dart
 class _MyFormState extends State<MyForm> {
-  // Create a text controller and use it to retrieve the current value
-  // of the TextField.
-  final myController = TextEditingController();
+  /// Create a text controller and use it to retrieve the current value
+  /// of the TextField.
+  final TextEditingController myController = TextEditingController();
 
   @override
   void dispose() {
@@ -2835,14 +2897,10 @@ class _MyFormState extends State<MyForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Retrieve Text Input'),
-      ),
+      appBar: AppBar(title: const Text('Retrieve Text Input')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: TextField(
-          controller: myController,
-        ),
+        child: TextField(controller: myController),
       ),
       floatingActionButton: FloatingActionButton(
         // When the user presses the button, show an alert dialog with the
@@ -2850,7 +2908,7 @@ class _MyFormState extends State<MyForm> {
         onPressed: () {
           return showDialog(
             context: context,
-            builder: (context) {
+            builder: (BuildContext context) {
               return AlertDialog(
                 // Retrieve the text that the user has entered using the
                 // TextEditingController.
@@ -2860,7 +2918,7 @@ class _MyFormState extends State<MyForm> {
           );
         },
         tooltip: 'Show me the value!',
-        child: Icon(Icons.text_fields),
+        child: const Icon(Icons.text_fields),
       ),
     );
   }
@@ -2889,19 +2947,19 @@ that you can assign a value to. For example:
 ```
 
 In Flutter, you can easily show a "hint" or a placeholder text
-for your input by adding an InputDecoration object to the
-decoration constructor parameter for the text widget.
+for your input by adding an `InputDecoration` object
+to the `decoration` constructor parameter for the text widget.
 
 在 Flutter 中，通过在文本 widget 的装饰器构造函数参数中添加
 `InputDecoration` 对象，可以轻松地为输入显示「提示」或占位符文本。
 
 <!-- skip -->
 ```dart
-body: Center(
+body: const Center(
   child: TextField(
-    decoration: InputDecoration(hintText: "This is a hint"),
-  )
-)
+    decoration: InputDecoration(hintText: 'This is a hint'),
+  ),
+),
 ```
 
 ### How do I show validation errors?
@@ -2932,39 +2990,49 @@ update the state, and pass a new `InputDecoration` object.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
-  // This widget is the root of your application.
+  /// This widget is the root of your application.
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Sample App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key key}) : super(key: key);
+  const SampleAppPage({Key? key}) : super(key: key);
 
   @override
   _SampleAppPageState createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  String _errorText;
+  String? _errorText;
+
+  String? _getErrorText() {
+    return _errorText;
+  }
+
+  bool isEmail(String em) {
+    const String emailRegexp =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|'
+        r'(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|'
+        r'(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    final RegExp regExp = RegExp(emailRegexp);
+    return regExp.hasMatch(em);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sample App"),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: Center(
         child: TextField(
           onSubmitted: (String text) {
@@ -2976,23 +3044,13 @@ class _SampleAppPageState extends State<SampleAppPage> {
               }
             });
           },
-          decoration: InputDecoration(hintText: "This is a hint", errorText: _getErrorText()),
+          decoration: InputDecoration(
+            hintText: 'This is a hint',
+            errorText: _getErrorText(),
+          ),
         ),
       ),
     );
-  }
-
-  _getErrorText() {
-    return _errorText;
-  }
-
-  bool isEmail(String em) {
-    String emailRegexp =
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-
-    RegExp regExp = RegExp(emailRegexp);
-
-    return regExp.hasMatch(em);
   }
 }
 ```
@@ -3012,10 +3070,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 Flutter doesn't run code directly on the underlying platform;
 rather, the Dart code that makes up a Flutter app is run natively
 on the device, "sidestepping" the SDK provided by the platform.
-That means, for example, when you perform a network request
-in Dart, it runs directly in the Dart context. You don't use the
-Android or iOS APIs you normally take advantage of when writing
-native apps. Your Flutter app is still hosted in a native app's
+That means, for example, when you perform a network request in Dart,
+it runs directly in the Dart context.
+You don't use the Android or iOS APIs
+you normally take advantage of when writing native apps.
+Your Flutter app is still hosted in a native app's
 `ViewController` or `Activity` as a view,
 but you don't have direct access to this, or the native framework.
 
@@ -3029,11 +3088,11 @@ Flutter 应用程序仍然作为视图驻留在原生应用程序的
 `ViewController` 或 `Activity` 中，但你不能直接访问这个或原生框架。
 
 This doesn't mean Flutter apps can't interact with those native APIs,
-or with any native code you have. Flutter provides
-[platform channels][] that communicate and exchange data with
-the `ViewController` or `Activity` that hosts your Flutter view.
-Platform channels are essentially an asynchronous messaging
-mechanism that bridges the Dart code with the host `ViewController`
+or with any native code you have. Flutter provides [platform channels][]
+that communicate and exchange data with the
+`ViewController` or `Activity` that hosts your Flutter view.
+Platform channels are essentially an asynchronous messaging mechanism
+that bridges the Dart code with the host `ViewController`
 or `Activity` and the iOS or Android framework it runs on.
 You can use platform channels to execute a method on the native side,
 or to retrieve some data from the device's sensors, for example.
@@ -3080,12 +3139,11 @@ Use the [`geolocator`][] community plugin.
 
 ### How do I access the camera?
 
-### 如何访问摄相机？
+### 如何访问照相机？
 
-The [`image_picker`][] plugin is popular
-for accessing the camera.
+The [`camera`][] plugin is popular for accessing the camera.
 
-[`image_picker`][] 插件被常用于相机功能的使用。
+[`camera`][] 插件被常用于相机功能的使用。
 
 ### How do I log in with Facebook?
 
@@ -3151,8 +3209,9 @@ that cover areas not directly covered by the first-party plugins.
 
 ### 如何构建自定义的原生集成？
 
-If there is platform-specific functionality that Flutter or its community
-plugins are missing, you can build your own following the
+If there is platform-specific functionality that Flutter
+or its community plugins are missing,
+you can build your own following the
 [developing packages and plugins][] page.
 
 如果有 Flutter 官方或社区第三方插件没有涵盖的平台特定的功能，
@@ -3177,31 +3236,31 @@ on Android or iOS.
 
 ### 如何对应用使用主题？
 
-Flutter comes with a beautiful, built-in implementation of Material
-Design, which handles much of the styling and theming needs that you would
-typically do.
+Flutter comes with a beautiful, built-in implementation of Material Design,
+which handles much of the styling and theming needs
+that you would typically do.
 
 Flutter 附带了一个内建的漂亮的 Material Design 实现，
 它处理了许多你通常会做的样式和主题需求。
 
-Xamarin.Forms does have a global `ResourceDictionary` where you can
-share styles across your app. Alternatively, there is Theme support
-currently in preview.
+Xamarin.Forms does have a global `ResourceDictionary`
+where you can share styles across your app.
+Alternatively, there is Theme support currently in preview.
 
 Xamarin.Forms 确实有一个全局的 `ResourceDictionary`，
 可以为你的应用程序共享样式。另外，预览版目前还支持主题。
 
-In Flutter you declare themes in the top level widget.
+In Flutter, you declare themes in the top level widget.
 
 在 Flutter 中，你可以在最顶级 widget 中声明主题。
 
 To take full advantage of Material Components in your app,
-you can declare a top level widget `MaterialApp` as the entry
-point to your application. `MaterialApp` is a convenience widget
-that wraps a number of widgets that are commonly required for
-applications implementing Material Design.
-It builds upon a `WidgetsApp` by
-adding Material-specific functionality.
+you can declare a top level widget `MaterialApp`
+as the entry point to your application.
+`MaterialApp` is a convenience widget
+that wraps a number of widgets that are commonly required
+for applications implementing Material Design.
+It builds upon a `WidgetsApp` by adding Material-specific functionality.
 
 为了在应用中利用好 Material 组件，
 你可以在应用中声明一个顶层 Widget `MaterialApp` 作为入口。
@@ -3228,15 +3287,18 @@ the primary swatch is set to blue and text selection color is red.
 <!-- skip -->
 ```dart
 class SampleApp extends StatelessWidget {
+  /// This widget is the root of your application.
+  const SampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        textSelectionColor: Colors.red
+        textSelectionColor: Colors.red,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
@@ -3292,9 +3354,9 @@ Use the [DevTools][] suite for debugging Flutter or Dart apps.
 
 DevTools includes support for profiling, examining the heap,
 inspecting the widget tree, logging diagnostics, debugging,
-observing executed lines of code, debugging memory leaks and memory
-fragmentation. For more information, see the
-[DevTools][] documentation.
+observing executed lines of code,
+debugging memory leaks and memory fragmentation.
+For more information, see the [DevTools][] documentation.
 
 开发者工具包含了性能工具、检查堆栈、检视 widget 树、诊断信息记录、调试、
 执行代码行观察、调试内存泄漏和内存碎片等。
@@ -3308,13 +3370,13 @@ fragmentation. For more information, see the
 
 ### 如何设置通知推送?
 
-In Android, you use Firebase Cloud Messaging to setup push
-notifications for your app.
+In Android, you use Firebase Cloud Messaging to setup
+push notifications for your app.
 
 在 Android 中，你可以使用 Firebase Cloud Messaging 来为应用设置推送通知。
 
 In Flutter, access this functionality using the
-[Firebase_Messaging][] plugin.
+[`firebase_messaging`][] plugin.
 For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`][]
 plugin documentation.
@@ -3343,14 +3405,13 @@ plugin documentation.
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
-[Firebase_Messaging]: {{site.pub}}/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter cookbook]: {{site.url}}/cookbook
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
 [`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
 [`geolocator`]: {{site.pub}}/packages/geolocator
+[`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http
-[`image_picker`]: {{site.pub}}/packages/image_picker
 [internationalization guide]: {{site.url}}/development/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub}}/packages/intl
 [`intl_translation`]: {{site.pub}}/packages/intl_translation

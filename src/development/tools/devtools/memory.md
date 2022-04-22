@@ -706,7 +706,7 @@ collected Android memory data.
    field from ADB. This is memory used by the app that the
    system isn't sure how to categorize. Note: The Other trace
    is a combination of Other and System (shared and system
-   memory usage), and corresponds to ‘System’ field from ADB.
+   memory usage), and corresponds to ‘System’ field from ADB.</p>
 <p>「其他」使用情况对应于 ADB 的「Private Other（其他私有）」部分，
    这是系统不确定如何分类的内存。
    注意：这一部分是「其他」和「系统」
@@ -1045,7 +1045,6 @@ with fonts, files, or JSON.
    monitoring based on the currently selected row in the tree view.</p>
 <p>根据树状图中当前选定的行显示其分析、快照或监视的内容。</p>
 </dd>
-</dd>
 </dl>
 
 Snapshots have major tree nodes:
@@ -1205,7 +1204,7 @@ You can perform the following Allocation actions:
                  the **Track** button populates a table with
                  instance allocation data. For each instance in
                  the allocation table, the **Delta** column reflects
-                 the number of memory allocations since the last reset.
+                 the number of memory allocations since the last reset.</p>
 <p markdown="1"> 记录和监控所有实例的数量和大小（以字节为单位）。
 点击「Track（跟踪）」按钮，实例分配数据会显示在下方的表格中。对于表中的每个实例，
 「Delta（增加量）」列表示自上次重置数据以来内存的分配大小。</p>
@@ -1233,7 +1232,6 @@ You can perform the following Allocation actions:
                 navigates to that class name in the table.</p>
 <p markdown="1">搜索功能会存在实例分配数据时可用。
 输入或从下拉列表中选择名称将跳转到表中对应的类。</p>
-</dd>
 </dd>
 <dt>
 <p markdown="1">**Filter**</p>

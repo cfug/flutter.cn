@@ -188,7 +188,7 @@ numeric types have the value `null`.
   all underlying types are non-nullable by default,
   which must be initialized as a non-nullable value.
 
-  自 Dart 2.12 起，[健全的空安全][] 已完全支持，
+  自 Dart 2.12 起，[健全的空安全][Sound Null Safety] 已完全支持，
   所有的基础类型默认都为非空，在使用时必须要初始化为非空的值。
 
 {{site.alert.end}}

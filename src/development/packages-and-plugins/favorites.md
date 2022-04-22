@@ -111,7 +111,7 @@ to bring any other issues to the attention of the committee,
 
 如果你想提名一个 package 或插件成为潜在的 Flutter Favorite，
 亦或是想提请其他需要引起注意的问题至委员会，
-请发送邮件至 [委员会主席][committee chair]。
+请发送邮件至 [委员会主席][send the committee]。
 
 ## Flutter Favorite usage guidelines
 

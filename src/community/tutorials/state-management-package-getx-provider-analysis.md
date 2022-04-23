@@ -6,11 +6,11 @@ toc: true
 
 文/ Nayuta
 
-状态管理一直是 flutter 开发中一个火热的话题。谈到状态管理框架，社区也有诸如有以 getx，provider 为代表的多种方案，它们有各自的优缺点。 面对这么多的选择，你可能会想。“我需要使用状态管理么？哪种框架更适合我？“  本文从作者的实际开发经验出发，分析状态管理解决的问题以及思路，希望能帮助你做出选择。
+状态管理一直是 Flutter 开发中一个火热的话题。谈到状态管理框架，社区也有诸如有以 getx，provider 为代表的多种方案，它们有各自的优缺点。 面对这么多的选择，你可能会想。“我需要使用状态管理么？哪种框架更适合我？“  本文从作者的实际开发经验出发，分析状态管理解决的问题以及思路，希望能帮助你做出选择。
 
 ## 一、为什么需要状态管理：解决声明式开发带来的问题
 
-首先，为什么 flutter 开发中需要状态管理？在我看来，是因为 flutter 采用 [**声明式** ](https://flutter.cn/docs/resources/architectural-overview#reactive-user-interfaces)构建带来的一系列问题。这是一种区别于传原生的方式，所以我们没有在原生开发中听到过状态管理。
+首先，为什么 Flutter 开发中需要状态管理？在我看来，是因为 Flutter 采用 [**声明式** ](https://flutter.cn/docs/resources/architectural-overview#reactive-user-interfaces)构建带来的一系列问题。这是一种区别于传原生的方式，所以我们没有在原生开发中听到过状态管理。
 
 ### 1.「声明式」 VS 「命令式」分析
 
@@ -25,13 +25,13 @@ Android 中可以这么实现：当右下角按钮点中时，拿到 TextView �
 
 <img src="https://files.flutter-io.cn/posts/community/tutorial/images/image-20220406184550463.png" alt="image-20220406184550463" style="zoom:50%;" />
 
-而在 flutter 中，我们只需要使变量增加之后调用 `setState((){})`即可。`setState` 会刷新整个页面，使的中间展示的值进行变更。
+而在 Flutter 中，我们只需要使变量增加之后调用 `setState((){})`即可。`setState` 会刷新整个页面，使的中间展示的值进行变更。
 
 <img src="https://files.flutter-io.cn/posts/community/tutorial/images/image-20220406185003242.png" alt="image-20220406185003242" style="zoom:50%;" />
 
-可以发现，flutter 中只对 `_counter` 属性进行了修改，并没有对 Text 组件进行任何的操作，整个界面随着状态的改变而改变。
+可以发现，Flutter 中只对 `_counter` 属性进行了修改，并没有对 Text 组件进行任何的操作，整个界面随着状态的改变而改变。
 
-所以在 flutter 中有这么一种说法，**UI = F ( State )** 。
+所以在 Flutter 中有这么一种说法，**UI = F ( State )** 。
 
 上面的例子中，state 就是 ``_counter`` 的值，调用 setState 驱动  `F (build 方法)` 生成新的 UI。
 
@@ -41,9 +41,9 @@ Android 中可以这么实现：当右下角按钮点中时，拿到 TextView �
 
 声明式开发最大的优点在我看来是：**让开发者摆脱组件的繁琐控制，聚焦于状态处理**。
 
-习惯 flutter 开发之后，回到原生平台开发，你会发现对于 View 的控制非常麻烦，尤其是多个组件之间相互关联时。
+习惯 Flutter 开发之后，回到原生平台开发，你会发现对于 View 的控制非常麻烦，尤其是多个组件之间相互关联时。
 
-而在 flutter 中我们只需要处理好状态即可（复杂度转移到了状态 -> UI 的映射，也就是 Widget 的构建）。
+而在 Flutter 中我们只需要处理好状态即可（复杂度转移到了状态 -> UI 的映射，也就是 Widget 的构建）。
 jetpack compose，swift 等技术的最新发展，也是在朝着「声明式」的方向前进。
 
 ### 3.  声明式开发带来的问题：状态管理解决的目标
@@ -84,7 +84,7 @@ jetpack compose，swift 等技术的最新发展，也是在朝着「声明式�
 
 ![image-20220416152955696](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416152955696.png)
 
-这也是 flutter 中几乎所有状态管理框架的解决思路，上面的 Presenter 你可以认为是 get 中的 `GetxController`、provider 中的 `ChangeNotifier`，bloc 中的 `Bloc`。值得一提的是，具体做法上 flutter 和原生 MVP 框架有所不同。
+这也是 Flutter 中几乎所有状态管理框架的解决思路，上面的 Presenter 你可以认为是 get 中的 `GetxController`、provider 中的 `ChangeNotifier`，bloc 中的 `Bloc`。值得一提的是，具体做法上 Flutter 和原生 MVP 框架有所不同。
 
 我们知道在经典 MVP 模式中，一般 View 和 Presenter 以接口定义自身行为（action），**相互持有接口进行调用** 。
 
@@ -130,7 +130,7 @@ getx：1、全局单例，任意位置可以存取 2、存在类型重复，内�
 
 ### 3. 高层级 setState 引起不必要刷新的问题
 
-最后就是我们提到的高层级 setState 引起不必要刷新的问题，flutter 通过采用观察者模式解决。
+最后就是我们提到的高层级 setState 引起不必要刷新的问题，Flutter 通过采用观察者模式解决。
 
 关键在于两步： 1、观察者去订阅被观察的对象；2、被观察的对象通知观察者。
 
@@ -180,4 +180,4 @@ getx 由于是全局单例存储，并且默认以 runtimeType 为 key，在一�
 
 其次，如果使用状态管理，那么 getx 和 provider 哪个更好？
 
-这两个框架各有优缺点，我认为如果你或者你的团队刚接触 flutter，使用 provider 能帮助你们更快理解 flutter 的核心机制。而如果已经对 flutter 的原理有了解，getx 丰富的功能，简洁的 API，则能帮助你很好的提高开发效率。
+这两个框架各有优缺点，我认为如果你或者你的团队刚接触 Flutter，使用 provider 能帮助你们更快理解 Flutter 的核心机制。而如果已经对 Flutter 的原理有了解，getx 丰富的功能，简洁的 API，则能帮助你很好的提高开发效率。

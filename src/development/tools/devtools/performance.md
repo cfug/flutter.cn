@@ -47,9 +47,9 @@ your application. It consists of three parts, each increasing in granularity.
   Cpu profiles are not indicative of release performance 
   unless your Flutter application is run in profile mode.
 
-   **对于 Flutter 应用程序，需要使用 profile 构建模式才能使用性能分析**
-   如果你希望你的 Flutter 应用程序性能与 Release 模式下相同
-   且希望使用性能分析工具，请使用 Profile 模式。
+  **对于 Flutter 应用程序，需要使用 profile 构建模式才能使用性能分析**
+  如果你希望你的 Flutter 应用程序性能与生产模式下相同
+  且希望使用性能分析工具，请使用性能模式。
 
 {{site.alert.end}}
 
@@ -83,7 +83,7 @@ UI 线程执行 Dart VM 中的 Dart 代码。
 当你创建或打开一个页面，
 UI 线程会创建一个图层树和一个轻量级的与设备无关的绘制指令集，
 并把图层树交给设备的 raster（栅格）线程进行渲染。
-**不要**阻塞这个线程。
+**不要** 阻塞这个线程。
 
 ### Raster
 
@@ -275,35 +275,35 @@ to the jank you saw in your app.
 那么你禁用的效果的滥用可能是导致卡顿的主要原因。
 
 **Render Clip layers**
-:  Disable this option  to check whether excessive use of clipping
-  is affecting performance.
-  If performance improves with this option disabled,
-  try to reduce the use of clipping effects in your app.
+<br> Disable this option  to check whether excessive use of clipping
+     is affecting performance.
+     If performance improves with this option disabled,
+     try to reduce the use of clipping effects in your app.
 
 **渲染裁剪的图层**
-: 禁用该选项来检查已使用的裁剪图层是否影响了性能。
-  如果禁用后性能有显著提升，请尝试减少你的应用中裁剪效果的使用。
+<br> 禁用该选项来检查已使用的裁剪图层是否影响了性能。
+     如果禁用后性能有显著提升，请尝试减少你的应用中裁剪效果的使用。
 
 **Render Opacity layers**
-:  Disable this option to check whether
-   excessive use of opacity effects are affecting performance.
-   If performance improves with this option disabled,
-   try to reduce the use of opacity effects in your app.
+<br> Disable this option to check whether
+     excessive use of opacity effects are affecting performance.
+     If performance improves with this option disabled,
+     try to reduce the use of opacity effects in your app.
 
 **渲染透明度图层**
-: 禁用该选项来检查已使用的透明度图层是否影响了性能。
-  如果禁用后性能有显著提升，请尝试减少你的应用中透明度效果的使用。
+<br> 禁用该选项来检查已使用的透明度图层是否影响了性能。
+     如果禁用后性能有显著提升，请尝试减少你的应用中透明度效果的使用。
 
 **Render Physical Shape Layers**
-:  Disable this option to check whether excessive
-   use of physical modeling effects are affecting performance,
-  such as shadows or elevation.
-  If performance improves with this option disabled,
-  try to reduce the use of physical modeling effects in your app.
+<br> Disable this option to check whether excessive
+     use of physical modeling effects are affecting performance,
+     such as shadows or elevation.
+     If performance improves with this option disabled,
+     try to reduce the use of physical modeling effects in your app.
 
 **渲染物理形状图层**
-: 禁用该选项来检查已使用的物理形状图层是否影响了性能，例如阴影和背景特效。
-  如果禁用后性能有显著提升，请尝试减少你的应用中物理效果的使用。
+<br> 禁用该选项来检查已使用的物理形状图层是否影响了性能，例如阴影和背景特效。
+     如果禁用后性能有显著提升，请尝试减少你的应用中物理效果的使用。
 
 ![Screenshot of more debugging options]({{site.url}}/assets/images/docs/tools/devtools/more-debugging-options.png)
 
@@ -318,9 +318,10 @@ performance page. To import a performance snapshot, you can drag and drop the
 snapshot into DevTools from any page. **Note that DevTools only
 supports importing files that were originally exported from DevTools.**
 
-DevTools 支持导入和导出时间线快照。单击 export 按钮 (帧渲染图表右上角) 下载当前时间线的快照。
+DevTools 支持导入和导出时间线快照。单击 export 按钮
+(帧渲染图表右上角) 下载当前时间线的快照。
 要导入时间线快照，可以从任何页面拖放快照到 DevTools。
-提示 : DevTools 仅支持导入 DevTools 导出的源文件。
+提示：DevTools 仅支持导入 DevTools 导出的源文件。
 
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph

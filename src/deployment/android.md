@@ -704,6 +704,8 @@ For more information, see the module-level build section in the [Gradle build fi
 
 ## Building the app for release
 
+## 构建生产版本应用程序
+
 You have two possible release formats when publishing to
 the Play Store.
 

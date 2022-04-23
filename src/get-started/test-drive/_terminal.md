@@ -56,14 +56,12 @@ contains a simple demo app that uses [Material Components][].
     $ flutter run
     ```
 
-{% capture save_changes -%}
-.
-
-1. Type <kbd>r</kbd> in the terminal window.
-
-   在命令行窗口输入 <kbd>r</kbd>
-
+{% capture save_changes -%}.
 {% endcapture %}
+
+ 1. Type <kbd>r</kbd> in the terminal window.
+
+    在命令行窗口输入 <kbd>r</kbd>
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 {% include docs/run-profile.md %}

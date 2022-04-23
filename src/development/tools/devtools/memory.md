@@ -476,13 +476,13 @@ The quantities plotted on the y-axis are as follows:
 y 轴上绘制的数据包含：
 
 **Dart/Flutter Heap**
-: Objects (Dart/Flutter objects) in the heap.
+<br> Objects (Dart/Flutter objects) in the heap.
 
 **Dart/Flutter Heap（Dart/Flutter 堆）**
-: 堆中的对象 (Dart/Flutter 对象)。
+<br> 堆中的对象 (Dart/Flutter 对象)。
 
 **Dart/Flutter Native**
-: Memory that is not in the Dart/Flutter heap but
+<br> Memory that is not in the Dart/Flutter heap but
   is still part of the total memory footprint.
   Objects in this memory would be native objects
   (for example, from a memory read from a file,
@@ -496,7 +496,7 @@ y 轴上绘制的数据包含：
   or [Custom Flutter Engine Embedders][embedder].
 
 **Dart/Flutter Native（Dart/Flutter 原生对象）**
-: 不在 Dart/Flutter 堆中，但仍然占用总内存的一部分。
+<br> 不在 Dart/Flutter 堆中，但仍然占用总内存的一部分。
   该内存中存储了原生对象（例如，文件读取或者图片解码的所占用的内存）。
   原生对象通过 Dart 嵌入层，从原生操作系统
   （如 Android、Linux、Windows、iOS）暴露给 Dart VM。
@@ -505,40 +505,40 @@ y 轴上绘制的数据包含：
   参阅 [服务端应用 Dart][server] 或 [自定义 Flutter 引擎嵌入层][embedder]。
 
 **Timeline**
-: The timestamps of all collected memory statistics
+<br> The timestamps of all collected memory statistics
   and events at a particular point in time (timestamp).
 
 **Timeline（时间线）**
-: 在特定时间点采集的所有内存统计数据和事件的时间戳（时间戳）。
+<br> 在特定时间点采集的所有内存统计数据和事件的时间戳（时间戳）。
 
 **Raster Cache**
-: The size of the Flutter engine's raster cache layer(s)
+<br> The size of the Flutter engine's raster cache layer(s)
   or picture(s), while performing the final rendering
   after compositing.  For more information,
   see [Flutter Architectural Overview][architecture]
   and [DevTools Performance][performance].
 
 **Raster Cache（光栅缓存）**
-: 合成后执行最终渲染时颤振引擎光栅缓存层或图片的光栅缓存大小。
+<br> 合成后执行最终渲染时颤振引擎光栅缓存层或图片的光栅缓存大小。
   详情参阅 [Flutter 架构概览][architecture]
   和 [DevTools 性能视图][performance]。
 
 **Allocated**
-: The current capacity of the heap is typically slightly
+<br> The current capacity of the heap is typically slightly
   larger than the total size of all heap objects.
 
 **Allocated（已分配内存）**
-: 堆当前的容量，通常略大于所有堆对象的总大小。
+<br> 堆当前的容量，通常略大于所有堆对象的总大小。
 
 **RSS - Resident Set Size**
-: The resident set size displays the
+<br> The resident set size displays the
   amount of memory for a process.
   It doesn't include memory that is swapped out.
   It includes memory from shared libraries that are
   loaded, as well as all stack and heap memory.
 
 **RSS - Resident Set Size（常驻集）**
-: 常驻集大小显示进程的内存量。
+<br> 常驻集大小显示进程的内存量。
   包含加载的共享库中的内存，以及所有堆栈和堆内存，不包含交互的内存。
 
 For more information, see [Dart VM internals][vm].
@@ -559,29 +559,29 @@ A hover card displays the collected information:
 ![Screenshot of the basic memory chart]({{site.url}}/assets/images/docs/tools/devtools/memory_basic_chart.png)
 
 **Memory Events**
-: Memory Events recorded in the Event Pane.
+<br> Memory Events recorded in the Event Pane.
   This includes VM GC, User Initiated GC,
   User Initiated Snapshot, Auto-Snapshot,
   Allocation Monitoring, and Reset of Accumulators
 
 **Memory Events（内存事件）** 事件窗口中记录的内存事件，
-: 例如虚拟机自动 GC、用户启动的 GC、用户保存的快照、自动快照、分配监控和重置累加数据。
+<br> 例如虚拟机自动 GC、用户启动的 GC、用户保存的快照、自动快照、分配监控和重置累加数据。
 
 **Dart / Flutter Memory**
-: Displays collected data Capacity, Used, External, RSS,
+<br> Displays collected data Capacity, Used, External, RSS,
   Raster Cache (pictures/layers)
 
 **Dart / Flutter Memory（Dart / Flutter 内存）**
-: 收集的数据容量、已用数据、外部数据、RSS、光栅缓存（图像/图层）。
+<br> 收集的数据容量、已用数据、外部数据、RSS、光栅缓存（图像/图层）。
 
 **Flutter and User Events**
-: Includes extension events,
+<br> Includes extension events,
   such as `Flutter.ImageSizesForFrame`,
   user custom events. For more information,
   see [Events](#events-pane).
 
 **Flutter and User Events（Flutter 和自定义的事件）**
-: 扩展事件，例如 `Flutter.ImageSizesForFrame`，
+<br> 扩展事件，例如 `Flutter.ImageSizesForFrame`，
   用户自定义事件。参阅 [事件](#events-pane)。
 
 Aggregate events, as the name implies,
@@ -925,44 +925,44 @@ analysis 选项下的操作包括：
 ![Screenshot of a memory actions]({{site.url}}/assets/images/docs/tools/devtools/memory_analysis_actions.png)
 
 **Snapshot**
-: Clicking the **Snapshot** button makes a request to the
+<br> Clicking the **Snapshot** button makes a request to the
   Dart VM to collect the current state of memory. The
   memory objects can be sorted by attributes, such as class
   name, size, and allocated instances.
   For more information, see [Snapshot classes](#snapshots)).
 
 **Snapshot（快照）**
-: 点击 Snapshot 按钮向 Dart VM 发出请求，以保存内存当前的状态。
+<br> 点击 Snapshot 按钮向 Dart VM 发出请求，以保存内存当前的状态。
   内存对象可以按属性排序，如类名、大小、分配的实例（参见 [快照类](#snapshots)）。
 
 **Treemap**
-: If the **Treemap** switch is on, the snapshot displays currently
+<br> If the **Treemap** switch is on, the snapshot displays currently
   active memory objects, the last snapshot, and memory in a high-level
   view as a tree map.
 
 **Treemap（树形图）**
-: 如果 Treemap 开关打开，
+<br> 如果 Treemap 开关打开，
   快照将以树形图的形式在高级视图中显示当前活动的对象、
   最后一个快照和内存。（详情待定）
 
 **Group By**
-: A dropdown to select how data is grouped, which can either be by
+<br> A dropdown to select how data is grouped, which can either be by
   instance or by class name.
 
 **Group By（分组方式）**
-: 下拉列表选择数据的分组方式，可以按实例或按类名分组。
+<br> 下拉列表选择数据的分组方式，可以按实例或按类名分组。
 
 **Collapse All**
-: Collapse all nodes in the tree table.
+<br> Collapse all nodes in the tree table.
 
 **Collapse All（折叠全部）**
-: 折叠树表中的所有节点。
+<br> 折叠树表中的所有节点。
 
 **Expand All**
-: Expand all nodes in the tree table.
+<br> Expand all nodes in the tree table.
 
 **Expand All（展开全部）**
-: 展开树表中的所有节点。
+<br> 展开树表中的所有节点。
 
 ### Analysis and snapshots
 

@@ -45,25 +45,52 @@ contains a simple demo app that uses [Material Components][].
 
  1. Locate the VS Code status bar (the blue bar at the bottom of the
     window):<br> ![status bar][]{:.mw-100.pt-1.pb-2}
+
+    定位到 VS Code 的状态栏（窗口底部的蓝色栏）：<br> ![status bar][]{:.mw-100.pt-1.pb-2}
+
  1. Select a device from the **Device Selector** area.
     For details, see [Quickly switching between Flutter devices][].
+
+    从 **Device Selector** 区域选择一个设备。
+    更多信息，参考 [快速切换用于 Flutter 的设备][Quickly switching between Flutter devices]。
+
     - If no device is available and you want to use a device simulator,
       click **No Devices** and launch a simulator.
 
-      {{site.alert.warning}}
-      You may not see **Start iOS Simulator** option when you click **No Devices** in VS Code. If you are on Mac then you may have to run following command in          terminal to launch a simulator.
-      ```
-      open -a simulator
-      ```
+      如果没有可用的设备，而同时你想使用模拟器，点击 **No Devices**
+      并点击 **Start iOS Simulator** 启动一个模拟器。
 
-      On Windows or Linux it is not possible to launch iOS simulator.
+      {{site.alert.warning}}
+
+        You may not see **Start iOS Simulator** option when you click **No Devices** in VS Code. If you are on Mac then you may have to run following command in          terminal to launch a simulator.
+
+        点击 VS Code 的 **No Devices** 时你可能不会看到 **Start iOS Simulator** 的选项。
+        如果你在使用 macOS，请在终端中执行以下命令：
+
+        ```
+        open -a simulator
+        ```
+
+        On Windows or Linux it is not possible to launch iOS simulator.
+
+        在 Windows 或 Linux 上你无法启动 iOS 模拟器。
+
       {{site.alert.end}}
 
     - To setup a real device, follow the device-specific instructions on the
       [Install][] page for your OS.
+
+      想要配置真机用于调试，请查看你正在使用的系统的对应
+      [安装][Install] 设备指导。
+
  1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
+
+    运行 **Run > Start Debugging** 或按下 <kbd>F5</kbd>。
+
  1. Wait for the app to launch &mdash; progress is printed
     in the **Debug Console** view.
+
+    等待应用启动&mdash;&mdash;启动进度会在 **Debug Console** 中展示。
 
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**

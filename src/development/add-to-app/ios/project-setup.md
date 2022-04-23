@@ -263,6 +263,8 @@ end
 
 In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
 
+在 `Podfile` 的 `post_install` 部分，调用 `flutter_post_install(installer)`。
+
 <!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
 post_install do |installer|
@@ -271,10 +273,17 @@ end
 ```
 
 {{site.alert.note}}
+
   The `flutter_post_install` method (recently added to Flutter),
   adds build settings to support native Apple Silicon `arm64` iOS simulators.
   Include the `if defined?(flutter_post_install)` check to ensure your `Podfile`
   is valid if you are running on older versions of Flutter that don't have this method.
+
+  `flutter_post_install` 方法（近期新增的）
+  增加了原生 Apple Silicon `arm64` iOS 模拟器的支持。
+  它包括 `if defined?(flutter_post_install)` 的检查以确保你的
+  `Podfile` 在旧版本的没有该方法的 Flutter 上也能正常运行。
+
 {{site.alert.end}}
 
 </li>

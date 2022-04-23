@@ -8,9 +8,6 @@ toc: true
 
 状态管理一直是 flutter 开发中一个火热的话题。谈到状态管理框架，社区也有诸如有以 getx，provider 为代表的多种方案，它们有各自的优缺点。 面对这么多的选择，你可能会想。“我需要使用状态管理么？哪种框架更适合我？“  本文从作者的实际开发经验出发，分析状态管理解决的问题以及思路，希望能帮助你做出选择。
 
-
-
-
 ## 一、为什么需要状态管理：解决声明式开发带来的问题
 
 首先，为什么 flutter 开发中需要状态管理？在我看来，是因为 flutter 采用 [**声明式** ](https://flutter.cn/docs/resources/architectural-overview#reactive-user-interfaces)构建带来的一系列问题。这是一种区别于传原生的方式，所以我们没有在原生开发中听到过状态管理。
@@ -49,7 +46,6 @@ Android 中可以这么实现：当右下角按钮点中时，拿到 TextView �
 而在 flutter 中我们只需要处理好状态即可（复杂度转移到了状态 -> UI 的映射，也就是 Widget 的构建）。
 jetpack compose，swift 等技术的最新发展，也是在朝着「声明式」的方向前进。
 
-
 ### 3.  声明式开发带来的问题：状态管理解决的目标
 
 没有使用状态管理，直接「声明式」开发的时候，遇到的问题总结有三个：
@@ -62,7 +58,6 @@ jetpack compose，swift 等技术的最新发展，也是在朝着「声明式�
 
 这个问题在原生上同样存在，后面也衍生了诸如 MVP 设计模式的思路去解决。
 
-
 > **难以跨组件（跨页面）访问数据**
 
 ![image-20220416152601484](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416152601484.png)
@@ -70,7 +65,6 @@ jetpack compose，swift 等技术的最新发展，也是在朝着「声明式�
 第二点在于跨组件交互，比如在 Widget 结构中，一个子组件想要展示父组件中的 name 字段，可能需要层层进行传递。
 
 或者要在两个页面之间共享筛选数据，并没有一个很优雅的机制去解决这种跨页面的数据访问。
-
 
 > **无法轻松的控制刷新范围（页面 setState 的变化会导致全局页面的变化）**
 
@@ -112,8 +106,6 @@ jetpack compose，swift 等技术的最新发展，也是在朝着「声明式�
 
 在一开始的例子中，我们可以通过 `context.findAncestorStateOfType` 一层一层的向上查找到需要的 Element 对象，获取 Widget 或者 State 后即可取出需要的变量。
 
-
-
 ![image-20220416154300160](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416154300160.png)
 
 provider 也是借助了这样的机制，完成了 View -> Presenter 的获取。通过 `Provider.of` 获取顶层 Provider 组件中的 Present 对象。显然，所有 Provider 以下的 Widget 节点，都可以通过自身的 context 访问到 Provider 中的 Presenter，很好的解决了跨组件的通信问题。
@@ -122,13 +114,9 @@ provider 也是借助了这样的机制，完成了 View -> Presenter 的获取�
 
 树机制很不错，但依赖于 context，这一点有时很让人抓狂。我们知道 Dart 是一种单线程的模型，所以不存在多线程下对于对象访问的竞争问题。基于此 getx 借助了一个全局单例的 Map 存储对象。通过依赖注入的方式，实现了对 Presenter 层的获取。这样在任意的类中都可以获取到 Presenter。
 
-
-
 ![image-20220416154732460](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416154732460.png)
 
 这个 Map 对应的 Key 是 `runtimeType + tag`，其中 tag 是一个可选参数，而 Value 对应 Object，也就是说我们可以存入任何类型的对象，并且在任意位置获取。
-
-
 
 ### 2. 难以跨组件（跨页面）访问数据
 
@@ -138,10 +126,7 @@ provider 也是借助了这样的机制，完成了 View -> Presenter 的获取�
 
 provider：1、依赖树机制，必须基于 context  2、提供了子组件访问上层的能力
 
-get：1、全局单例，任意位置可以存取 2、存在类型重复，内存回收问题
-
-
-
+getx：1、全局单例，任意位置可以存取 2、存在类型重复，内存回收问题
 
 ### 3. 高层级 setState 引起不必要刷新的问题
 
@@ -152,8 +137,6 @@ get：1、全局单例，任意位置可以存取 2、存在类型重复，内�
 系统也提供了 ValueNotifier 等组件实现：
 
 ![image-20220416231100104](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416231100104.png)
-
-
 
 了解到最基础的观察者模式后，看看不同框架中提供的组件：
 
@@ -166,8 +149,6 @@ get：1、全局单例，任意位置可以存取 2、存在类型重复，内�
 同样的功能，在 getx 中，只需要提前调用 `Get.put` 方法存储 Counter 对象，为 GetBuilder 组件指定 Counter 作为泛型。因为 getx 基于单例，所以 GetBuilder 可以直接通过泛型获取到存入的对象，并在 builder 方法中暴露。这样 Counter 便与组件建立了监听关系，之后 Counter 的变动，只会驱动以它作为泛型的 GetBuilder 组件更新。
 
 <img src="https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416225707295.png" alt="image-20220416225707295" style="zoom:50%;" />
-
-
 
 ***
 
@@ -182,8 +163,6 @@ get：1、全局单例，任意位置可以存取 2、存在类型重复，内�
 如图代码所示，当我们直接将 Provider 与组件嵌套于同一层级时，这时代码中的 `Provider.of(context)` 运行时抛出 **ProviderNotFoundException** 。因为此处我们使用的 context 是 MyApp，而他的 element 节点实际位于 MyApp 的下方，所以无法正确获取到 Provider 节点。这个问题可以有两种改法，如下方代码所示：
 
 ![image-20220416230755671](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416230755671.png)
-
-
 
 #### 2. getx 由于全局单例带来的问题
 

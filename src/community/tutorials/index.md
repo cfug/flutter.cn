@@ -52,6 +52,7 @@ Flutter 中文社区教程由社区的开发者投稿，投稿审核通过之后
 
 - [Flutter Navigator 2.0 指南与原理解析](https://flutter.cn/community/tutorials/understanding-navigator-v2)
 - [Flutter 状态管理：使用 MobX](https://flutter.cn/community/tutorials/flutter-state-management-with-mobx)
+- [Flutter 状态管理框架 provider getx 分析]({{site.url}}/community/tutorials/state-management-package-getx-provider-analysis)
 
 ### 设计模式 (专栏)
 

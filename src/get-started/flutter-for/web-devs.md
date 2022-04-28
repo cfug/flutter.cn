@@ -502,7 +502,7 @@ create a new [`Matrix4`][] identity object
 and use its `scale()` method to specify the scaling factor.
 
 对于沿 x 轴的简单缩放操作，新建一个 [`Matrix4`][] 对象
-并用它的 scale() 方法来指定缩放因系数。
+并用它的 `scale()` 方法来指定缩放因系数。
 
 When you scale a parent widget, its child widgets are scaled accordingly.
 

@@ -2424,7 +2424,7 @@ the primary swatch is set to blue and divider color is grey.
 定义所有子组件颜色和样式，可以直接传递
 `ThemeData` 对象给 `MaterialApp` widget。
 例如在下面的代码中，primary swatch 被设置为蓝色，
-而文本选中后的颜色被设置为红色。
+而分割线被被设置为灰色。
 
 ```dart
 class SampleApp extends StatelessWidget {

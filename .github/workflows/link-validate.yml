@@ -15,7 +15,7 @@ jobs:
   check_link_references:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748
+      - uses: actions/checkout@v3
         with:
           submodules: "recursive"
       - name: Build

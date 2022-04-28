@@ -952,7 +952,7 @@ in the center pane.
 设置断点。<br>
 现在你以前启动了开发者工具，在上面的蓝色工具栏中选择 **Debugger** 选项。
 在左下角出现调试面板，可以查看示例中使用的类库。
-选择 `signin/main.dart` 将在页面中间显示 Dart 代码。
+选择 `lib/main.dart` 将在页面中间显示 Dart 代码。
 
 {% indent %}
   ![Screenshot of the DevTools debugger]({{site.url}}/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}

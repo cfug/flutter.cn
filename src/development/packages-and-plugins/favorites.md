@@ -81,13 +81,13 @@ Flutter Favorite packages 通过以下指标来确认是否达到高质量标准
 
 ## Flutter 生态系统委员会
 
-The Flutter Ecosystem Committee (FEC) is comprised of Flutter
+The Flutter Ecosystem Committee is comprised of Flutter
 team members and Flutter community members spread
-across its ecosystem. 
+across its ecosystem.
 One of their jobs is to decide when a package
 has met the quality bar to become a Flutter Favorite.
 
-Flutter 生态系统委员会（FEC）由 Flutter 团队成员和社区成员组成并贯穿其生态系统。
+Flutter 生态系统委员会由 Flutter 团队成员和社区成员组成并贯穿其生态系统。
 他们的工作之一就是确定一个 package 是否满足成为 Flutter Favorite 的质量要求。
 
 The current committee members
@@ -98,22 +98,20 @@ are as follows:
 
 * Pooja Bhaumik
 * Hillel Coren
-* Thea Flowers
 * Simon Lightfoot
 * Lara Martín
-* Chris Sells (committee chair)
-* Michael Thomsen
+* John Ryan
 * Diego Velasquez
 * Kyle Wang
 
 If you'd like to nominate a package or plugin as a
 potential future Flutter Favorite, or would like
 to bring any other issues to the attention of the committee,
-send the [committee chair][] an email.
+[send the committee][] an email.
 
 如果你想提名一个 package 或插件成为潜在的 Flutter Favorite，
 亦或是想提请其他需要引起注意的问题至委员会，
-请发送邮件至 [委员会主席][committee chair]。
+请发送邮件至 [委员会主席][send the committee]。
 
 ## Flutter Favorite usage guidelines
 
@@ -220,7 +218,7 @@ You can see the complete list of
 
 你可以在 pub.dev 上看到完整的 [Flutter Favorite packages][] 列表。
 
-[committee chair]: mailto:csells@google.com
+[send the committee]: mailto:flutter-committee@googlegroups.com
 [Flutter Favorite packages]: {{site.pub}}/flutter/favorites
 [Overall package score]: {{site.pub}}/help
 [pubspec.yaml format]: {{site.url}}/development/packages-and-plugins/developing-packages#plugin-platforms

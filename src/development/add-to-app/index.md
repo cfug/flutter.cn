@@ -30,48 +30,19 @@ Flutter into your own app.
 
 仅需几步，你就可以将高效而富有表现力的 Flutter 引入您的应用。
 
-As of Flutter v1.12, add-to-app is supported for the basic scenario of
-integrating one full-screen Flutter instance at a time per app.
-It currently has the _**following limitations**_:
-
-在 Flutter v1.12 中，添加到现有应用的基本场景已被支持，
-每个应用在同一时间可以集成一个全屏幕的 Flutter 实例。
-目前仍有以下限制：
-
-* Packing multiple Flutter libraries into an
-  application isn't supported.
-
-  目前尚未支持将多个 Flutter 库打包到同一个应用中；
-  
-* Plugins used in add-to-app on Android should migrate
-  to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
-
-  在 Android 平台，使用了添加到现有应用 (add-to-app) 的插件需要迁移到
-  基于 [`FlutterPlugin`] 的 [Android 插件 API][Android plugin APIs]。
-  
-* Plugins that don't support `FlutterPlugin` might have unexpected
-  behaviors if they make assumptions that are untenable in add-to-app
-  (such as assuming that a Flutter `Activity` is always present).
-
-  一些不支持 `FlutterPlugin` 的插件可能会有不可预知的行为，比如产生错误的预判，
-  认为 Flutter `Activity` 一直处于活跃状态。
-  
-* As of v1.17, the Flutter module only supports AndroidX applications on Android.
-
-  从 1.17 开始，Flutter 模块仅支持 Android 平台中的 AndroidX 应用。
-
-As of Flutter v1.26, add-to-app experimentally supports adding multiple
-instances of Flutter engines, screens, or views into your app. This can
-help integration scenarios such as a hybrid navigation stack with mixed
+The `add-to-app` feature supports integrating multiple instances of any screen size.
+This can help scenarios such as a hybrid navigation stack with mixed
 native and Flutter screens, or a page with multiple partial-screen Flutter
-views. Having multiple Flutter instances allows each instance to maintain
+views.
+
+Add-to-app 支持将多个 Flutter 实例附加到任意大小的视图上。
+适用于混合栈应用在导航到原生页面和 Flutter 页面的情况，
+也适用于一个页面有原生视图和 Flutter 视图的情况等混合栈应用。
+
+Having multiple Flutter instances allows each instance to maintain
 independent application and UI state while using minimal
 memory resources. See more in the [multiple Flutters][] page.
 
-自 Flutter 1.26 版本开始，add-to-app 开始实验性的支持将多个
-Flutter 引擎 (engine)、页面 (screen) 或视图 (view) 添加到你的应用中。
-适用于混合栈应用在导航到原生页面和 Flutter 页面的情况，
-也适用于一个页面有原生视图和 Flutter 视图的情况等混合栈应用。
 多个 Flutter 实例会帮助每个实例保持独立的应用和 UI 状态，
 同时使用最少的内存资源。请多详细内容，请参考文档：
 [多个 Flutter 实例][multiple Flutters]。 
@@ -90,7 +61,7 @@ Flutter 引擎 (engine)、页面 (screen) 或视图 (view) 添加到你的应用
   Flutter SDK hook to your Gradle script.
 
   在 Gradle 脚本中添加一个自动构建并引入 Flutter 模块的 Flutter SDK 钩子。
-  
+
 * Build your Flutter module into a generic
   [Android Archive (AAR)][] for integration into your
   own build system and for better Jetifier interoperability
@@ -98,37 +69,29 @@ Flutter 引擎 (engine)、页面 (screen) 或视图 (view) 添加到你的应用
 
   将 Flutter 模块构建为通用的 [Android Archive (AAR)][Android Archive (AAR)]
   以便集成到您自己的构建系统中，并提高 Jetifier 与 AndroidX 的互操作性；
-  
+
 * [`FlutterEngine`][java-engine] API for starting and persisting
   your Flutter environment independently of attaching a
   [`FlutterActivity`][]/[`FlutterFragment`][] etc.
 
   [`FlutterEngine`][java-engine] API 用于启动并持续地为挂载 
   [`FlutterActivity`][] 或 [`FlutterFragment`][] 提供独立的 Flutter 环境；
-  
+
 * Android Studio Android/Flutter co-editing and module
   creation/import wizard.
 
   Android Studio 的 Android 与 Flutter 同时编辑，
   以及 Flutter module 创建与导入向导；
-  
+
 * Java and Kotlin host apps are supported.
 
   支持了 Java 和 Kotlin 为宿主的应用程序；
-  
+
 * Flutter modules can use [Flutter plugins][] to interact
-  with the platform. Android plugins should be
-  [migrated to the V2 plugins APIs][]
-  for best add-to-app correctness. As of Flutter v1.12,
-  most of the plugins [maintained by the Flutter team][]
-  as well as [FlutterFire][] have been migrated.
+  with the platform.
 
   Flutter 模块可以通过使用 [Flutter plugins][] 与平台进行交互。
-  Android 平台的 plugin 应该
-  [迁移至 V2 plugin API][migrated to the V2 plugins APIs] 以确保最佳的兼容性。
-  在 Flutter v1.12，大多数 [Flutter 团队维护][maintained by the Flutter team] 
-  的 plugin，以及 [FlutterFire][] 都已完成迁移；
-  
+
 * Support for Flutter debugging and stateful hot reload by
   using `flutter attach` from IDEs or the command line to
   connect to an app that contains Flutter.
@@ -236,6 +199,31 @@ see our API usage guides at the following links:
   </a>
 </div>
 
+## Limitations
+
+## 已知限制
+
+* Packing multiple Flutter libraries into an
+  application isn't supported.
+
+  不支持将多个 Flutter 库（Flutter 模块）同时打包进一个应用程序。
+
+* Plugins used in add-to-app on Android should migrate
+  to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
+
+  基于 Android add-to-app 的插件必须迁移至基于
+  [`FlutterPlugin`][] 的 [新版 Android 插件 API][Android plugin APIs]
+
+* Plugins that don't support `FlutterPlugin` might have unexpected
+  behaviors if they make assumptions that are untenable in add-to-app
+  (such as assuming that a Flutter `Activity` is always present).
+
+  不支持 `FlutterPlugin` 的插件如果在 add-to-app 进行一些不合理的假设
+  （例如假设 Flutter 的 `Activity` 始终存在），可能会出现意外行为。
+
+* On Android, the Flutter module only supports AndroidX applications.
+
+  Android 平台的 Flutter 模块仅支持适配了 AndroidX 的应用。
 
 [add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/add_to_app
 [Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library

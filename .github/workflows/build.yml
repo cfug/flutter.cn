@@ -59,6 +59,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - name: Move docs
         run: make move-docs
+      - name: Update path
+        run: echo "./node_modules/.bin/" >> $GITHUB_PATH
       - name: Build
         run: make build
         env:

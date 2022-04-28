@@ -53,7 +53,7 @@ You can use fastlane with the following tooling:
 * [Travis][]
 * [GitLab][]
 * [CircleCI][]
-    *　[Building and deploying Flutter apps with Fastlane][]
+    * [Building and deploying Flutter apps with Fastlane][]
 
 This guide shows how to set up fastlane and then integrate it with 
 your existing testing and continuous integration (CI) workflows. 
@@ -94,12 +94,12 @@ Visit the [fastlane docs][fastlane] for more info.
    创建一个名为 `FLUTTER_ROOT` 的环境变量，并将其设置为 Flutter SDK 的根目录。（这是为 iOS 部署的脚本所必需的。）
     
 1. Create your Flutter project, and when ready, make sure that your project builds via
- 
+
    创建您的 Flutter 项目，准备就绪后，确保通过如下途径构建项目：
 
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`;
-    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
-    
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ipa`.
+
 1. Initialize the fastlane projects for each platform.
 
    初始化各平台的 fastlane 项目：
@@ -203,16 +203,19 @@ Visit the [fastlane docs][fastlane] for more info.
     
     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS, follow the
       [fastlane iOS beta deployment guide][].
-      Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
-      `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
-      build is required since `flutter build` builds an .app rather than archiving
-      .ipas for release.
-    
-       ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 在 iOS 上，按照
-       [fastlane iOS beta 部署指南][fastlane iOS beta deployment guide] 指引操作。
-       你可以简单编辑一下文件，加一个名叫 `build_ios_app` 的 `lane`，并且同时调用
-       `export_method: 'app-store'` 和 `upload_to_testflight`。
-       在 iOS 上只有当要编译成 .app 的时候才会用到 `flutter build`，其他情况用不到。
+      You can specify the archive path to avoid rebuilding the project. For example:
+
+      ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 在 iOS 上，按照
+      [fastlane iOS beta 部署指南][fastlane iOS beta deployment guide] 指引操作。
+      你可以指定 archive 的路径以避免重复构建。例如：
+
+      ```ruby
+      build_app(
+        skip_build_archive: true,
+        archive_path: "../build/ios/archive/Runner.xcarchive",
+      )
+      upload_to_testflight
+      ```
 
 You're now ready to perform deployments locally or migrate the deployment
 process to a continuous integration (CI) system.
@@ -228,12 +231,8 @@ process to a continuous integration (CI) system.
    构建发布模式的应用：
 
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`.
-    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
-    
-    No need to sign now since fastlane will sign when archiving.
-    
-    这个时候不用签名，接下来 fastlane 会自动签名。
-    
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ipa`.
+
 1. Run the Fastfile script on each platform.
 
    在每个平台上运行 Fastfile 脚本。

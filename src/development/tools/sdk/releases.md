@@ -8,8 +8,6 @@ description: 所有 Flutter SDK 的版本列表，包括稳定版和主分支。
 tags: 下载,SDK下载,Flutter版本
 keywords: 构建渠道,Flutter SDK,SDK,中国镜像
 toc: false
-js:
-  - url: /assets/js/archive.js
 ---
 
 <style>

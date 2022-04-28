@@ -74,7 +74,7 @@ Want to learn more and perhaps contribute? Check out the
 如果你想了解更多信息或是想要参与贡献，欢迎查看我们的 [Dart 社区]({{site.dart-site}}/community)。
 
 [Asynchronous programming: futures, async, await]: {{site.dart-site}}/codelabs/async-await
-[Asynchronous programming: streams]: {{site.dart-site}}/tutorials/streams
+[Asynchronous programming: streams]: {{site.dart-site}}/tutorials/language/streams
 [Dart]: {{site.dart-site}}
 [Dart community]: {{site.dart-site}}/community
 [Dart is easy and fun to learn]: {{site.url}}/resources/faq#why-did-flutter-choose-to-use-dart

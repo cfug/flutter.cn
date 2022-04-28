@@ -528,10 +528,18 @@ flag to `flutter build apk` or `flutter build appbundle`.
 
 ## Enabling multidex support
 
+## 启用 multidex 支持
+
 When writing large apps or making use of large plugins, you may encounter
 Android's dex limit of 64k methods when targeting a minimum API of 20 or
 below. This may also be encountered when running debug versions of your app
 via `flutter run` that does not have shrinking enabled.
+
+当你在编写较大的应用或使用体量较大的插件时，
+你可能会在最低的 API 目标版本低于 20 时，
+遇到 Android 的 dex 的 64k 方法数限制问题。
+当 `flutter run` 以调试模式运行应用时，
+由于缩减机制没有运行，该问题也有可能发生。
 
 Flutter tool supports easily enabling multidex. The simplest way is to
 opt into multidex support when prompted. The tool detects multidex build errors
@@ -539,13 +547,26 @@ and will ask before making changes to your Android project. Opting in allows
 Flutter to automatically depend on `androidx.multidex:multidex` and use a
 generated `FlutterMultiDexApplication` as the project's application.
 
+Flutter 工具支持以便捷的方式启用 multidex 支持。
+当工具提示你需要支持时，跟随工具的指示进行调整，是最快的方式。
+Flutter 工具会检测 multidex 的构建错误，并提示你是否要更改 Android 项目。
+在同意的情况下，项目会自动依赖 `androidx.multidex:multidex`，
+并且让项目的 `Application` 继承于 `FlutterMultiDexApplication`。
+
 {{site.alert.note}}
+
   Multidex support is natively included when targeting min sdk 21+.
+
+  当目标 API 版本为 21+ 时，multidex 已默认支持。
+
 {{site.alert.end}}
 
 You might also choose to manually support multidex by following Android's guides
 and modifying your project's Android directory configuration. A
 [multidex keep file][multidex-keep] must be specified to include:
+
+你也可以根据 Android 的指南，手动配置你的 Android 项目以支持 multidex。
+请务必指定 [multidex keep 文件][multidex-keep] 以包含以下内容：
 
 ```
 io/flutter/embedding/engine/loader/FlutterLoader.class
@@ -554,6 +575,10 @@ io/flutter/util/PathUtils.class
 Also, include any other classes used in app startup.
 See the official [Android documentation][multidex-docs] for more detailed
 guidance on adding multidex support manually.
+
+同时也要包含所有在应用启动时加载的其他类。
+参考 [multidex 文档][multidex-docs]
+了解更详细的手动适配指南。
 
 ## Reviewing the app manifest
 
@@ -569,57 +594,86 @@ are correct, especially the following:
 
 `application`
 <br> Edit the `android:label` in the
-  [`application`][applicationtag] tag to reflect
-  the final name of the app.
+     [`application`][applicationtag] tag to reflect
+     the final name of the app.
 
 `application`
 <br> 编辑 [`application`][applicationtag]
-  标签中的 `android:label` 来设置 app 的最终名字。
+     标签中的 `android:label` 来设置 app 的最终名字。
 
 `uses-permission`
 <br> Add the `android.permission.INTERNET`
-  [permission][permissiontag] if your application code needs Internet
-  access. The standard template does not include this tag but allows
-  Internet access during development to enable communication between
-  Flutter tools and a running app.
+     [permission][permissiontag] if your application code needs Internet
+     access. The standard template does not include this tag but allows
+     Internet access during development to enable communication between
+     Flutter tools and a running app.
 
 `uses-permission`：
 <br> 如果你的代码需要互联网交互，请加入 `android.permission.INTERNET`
-  [权限标签][permissiontag]。
-  标准开发模版里并未加入这个权限（但是 Flutter debug 模版加入了这个权限），
-  加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信。
+     [权限标签][permissiontag]。
+     标准开发模版里并未加入这个权限（但是 Flutter debug 模版加入了这个权限），
+     加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信。
 
-## Reviewing the build configuration
+## Reviewing the Gradle build configuration
 
-## 检查构建配置
+## 检查 Gradle 构建配置
 
-Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in
-`[project]/android/app` and the `local.properties` file located in
-`[project]/android` to verify the values are correct, especially the following
-values in the `defaultConfig` block:
+Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in 
+`[project]/android/app` to verify the values are correct:
 
-检查位于 `[project]/android/app` 的默认 [Gradle 构建文件][gradlebuild]
-以及位于 `[project]/android` 的 `local.properties` 文件，
-并确认各个值都设置正确，特别是下面 `defaultConfig` 块中的值：
+检查位于 `[project]/android/app` 的
+默认 [Gradle 构建文件][gradlebuild] (`build.gradle`)
+并确认各个值都设置正确：
 
-#### In `build.gradle` file
+#### Under the `defaultConfig` block
 
-#### 在 `build.gradle` 文件中
+#### 在 `defaultConfig` 配置中
 
 `applicationId`
-<br> Specify the final, unique (Application Id)[appid]
+<br> Specify the final, unique [application ID][]
 
 `applicationId`
-<br> 指定唯一的 [应用 id][appid]。
+<br> 指定唯一的 [应用 ID][application ID]。
 
-`compileSdkVersion`
-<br> Specify the API level Gradle should use to compile your app. For more
-  information, see the module-level build section in the
-  [Gradle build file][gradlebuild].
+`minSdkVersion`
+<br> Specify the minimum API level on which the app is designed to run.
+     Defaults to `flutter.minSdkVersion`.
 
-`compileSdkVersion`
-<br> 指定 Gradle 用于编译应用的 API 版本。具体可以参考
-[Gradle 构建文件][gradlebuild] 文档中模块级构建的部分。
+`minSdkVersion`
+<br> 指定应用适配的最低 SDK 版本。
+     默认为 `flutter.minSdkVersion`。
+
+`targetSdkVersion`
+<br> Specify the target API level on which the app is designed to run.
+     Defaults to `flutter.targetSdkVersion`.
+
+`targetSdkVersion`
+<br> 指定应用适配的目标 SDK 版本。
+     默认为 `flutter.targetSdkVersion`。
+
+`versionCode`
+<br> A positive integer used as an internal version number. This number
+     is used only to determine whether one version is more recent than
+     another, with higher numbers indicating more recent versions.
+     This version isn't shown to users.
+
+`versionCode`
+<br> 用于内部版本号的正整数。
+     该数字仅用于比较两个版本间数字较大的为更新版本。
+     该版本不会对用户展示。
+
+`versionName`
+<br> A string used as the version number shown to users. This setting
+     be specified as a raw string or as a reference to a string resource.
+
+`versionName`
+<br> 向用户展示的版本号。
+     该字段必须设置为原始字符串或字符串资源的引用。
+
+`buildToolsVersion`
+<br> If you're using Android plugin for Gradle 3.0.0 or higher, your project
+     automatically uses the default version of the build tools that the
+     plugin specifies. Alternatively, you can specify a version of the build tools.
 
 `buildToolsVersion`
 <br> If you're using Android plugin for Gradle 3.0.0 or higher, your project
@@ -628,34 +682,29 @@ values in the `defaultConfig` block:
 
 `buildToolsVersion`
 <br> 如果你正在使用高于 3.0.0 版本的 Android Gradle Plugin，
-  你的项目会自动使用 AGP 默认指定的构建工具版本。
-  你也可以手动指定构建工具的版本。
+     你的项目会自动使用 AGP 默认指定的构建工具版本。
+     你也可以手动指定构建工具的版本。
 
-#### In `local.properties` file
+#### Under the `android` block
 
-#### 在 `local.properties` 文件中
+#### 在 `android` 配置中
 
-`flutter.versionCode` & `flutter.versionName`
-<br> Specify the internal app version number, and the version number display
-  string. You can do this by setting the `version` property in the pubspec.yaml
-  file. For more information, see the version information guidance in the
-  [versions documentation][versions].
+`compileSdkVersion`
+<br> Specify the API level Gradle should use to compile your app.
+     Defaults to `flutter.compileSdkVersion`.
 
-`flutter.versionCode` & `flutter.versionName`
-<br> 指定应用的内部版本以及展示的版本字符串。这些会在构建时同步
-  pubspec.yaml 文件的 `version` 部分。
-  具体可以参考 [版本文档][versions] 中版本信息的部分。
+`compileSdkVersion`
+<br> 指定 Gradle 用于编译应用的 API 版本。
+     默认为 `flutter.compileSdkVersion`。
 
-`flutter.minSdkVersion` & `flutter.targetSdkVersion`
-<br> Specify the minimum API level and the target API level on which the app is
-  designed to run. For more information, see the API level section in the
-  [versions documentation][versions-minsdk].
+For more information, see the module-level build section in the [Gradle build file][gradlebuild].
 
-`flutter.minSdkVersion` & `flutter.targetSdkVersion`
-<br> 指定应用运行所需要的最低 API 级别以及目标 API 级别。
-  具体可以参考 [版本文档][versions-minsdk] 中的 API 版本的部分。
+更多信息可以参考 [Gradle 构建文件][gradlebuild]
+文档中模块级构建的部分。
 
-## 为发布构建应用程序
+## Building the app for release
+
+## 构建生产版本应用程序
 
 You have two possible release formats when publishing to
 the Play Store.
@@ -1039,7 +1088,7 @@ The resulting app bundle or APK files are located in
 
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
-[appid]: {{site.android-dev}}/studio/build/application-id
+[application ID]: {{site.android-dev}}/studio/build/application-id
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a

@@ -15,27 +15,27 @@ As of the current release, Flutter supports the following platforms:
 
 基于现有的稳定版本，Flutter 支持以下平台：
 
-|Platform|Version                       |Channels |
-|--------|------------------------------|---------|
-|平台     |版本                           |渠道      |
-|Android | API 19 & above               | All     |
-|Android | API 19 及以上                 | 全部     |
-|iOS     | iOS 9 & above                | All     |
-|iOS     | iOS 9 及以上                  | 全部     |
-|Linux   | Debian 10 & above            | All     |
-|Linux   | Debian 10 及以上              | 全部     |
-|macOS   | El Capitan & above           | All     |
-|macOS   | El Capitan 及以上             | 全部     |
-|Web     | Chrome 84  & above           | All     |
-|Web     | Chrome 84  及以上             | 全部     |
-|Web     | Firefox 72.0 & above         | All     |
-|Web     | Firefox 72.0 及以上           | 全部     |
-|Web     | Safari on El Capitan & above | All     |
-|Web     | Safari on El Capitan 及以上   | 全部     |
-|Web     | Edge 1.2.0 & above           | All     |
-|Web     | Edge 1.2.0 及以上             | 全部     |
-|Windows | Windows 7 & above            | All     |
-|Windows | Windows 7 及以上              | 全部     |
+| Platform | Version                      | Channels |
+|----------|------------------------------|----------|
+| 平台       | 版本                           | 渠道       |
+| Android  | API 19 & above               | All      |
+| Android  | API 19 及以上                   | 全部       |
+| iOS      | iOS 9 & above                | All      |
+| iOS      | iOS 9 及以上                    | 全部       |
+| Linux    | Debian 10 & above            | All      |
+| Linux    | Debian 10 及以上                | 全部       |
+| macOS    | El Capitan & above           | All      |
+| macOS    | El Capitan 及以上               | 全部       |
+| Web      | Chrome 84  & above           | All      |
+| Web      | Chrome 84  及以上               | 全部       |
+| Web      | Firefox 72.0 & above         | All      |
+| Web      | Firefox 72.0 及以上             | 全部       |
+| Web      | Safari on El Capitan & above | All      |
+| Web      | Safari on El Capitan 及以上     | 全部       |
+| Web      | Edge 1.2.0 & above           | All      |
+| Web      | Edge 1.2.0 及以上               | 全部       |
+| Windows  | Windows 7 & above            | All      |
+| Windows  | Windows 7 及以上                | 全部       |
 
 All channels include master, beta and stable channels. 
 
@@ -75,28 +75,28 @@ We define three tiers of support for the platforms on which Flutter runs:
 
 ### 支持谷歌测试的平台
 
-|Platform|Version              |
-|-------|----------------------|
-|平台    |版本                   |
-|Android|Android SDK 30        |
-|Android|Android SDK 29        |
-|Android|Android SDK 28        |
-|Android|Android SDK 27        |
-|Android|Android SDK 26        |
-|Android|Android SDK 25        |
-|Android|Android SDK 24        |
-|Android|Android SDK 23        |
-|Android|Android SDK 22        |
-|Android|Android SDK 21        |
-|Android|Android SDK 19        |
-|iOS    | 14-15                |
-|Web    | Chrome 84            |
-|Web    | Firefox 72.0         |
-|Web    | Safari / Catalina    |
-|Web    | Edge 1.2.0           |
-|Windows| Windows 10           |
-|macOS  | El Capitan & greater |
-|Linux  | Debian 10            |
+| Platform | Version              |
+|----------|----------------------|
+| 平台       | 版本                   |
+| Android  | Android SDK 30       |
+| Android  | Android SDK 29       |
+| Android  | Android SDK 28       |
+| Android  | Android SDK 27       |
+| Android  | Android SDK 26       |
+| Android  | Android SDK 25       |
+| Android  | Android SDK 24       |
+| Android  | Android SDK 23       |
+| Android  | Android SDK 22       |
+| Android  | Android SDK 21       |
+| Android  | Android SDK 19       |
+| iOS      | 14-15                |
+| Web      | Chrome 84            |
+| Web      | Firefox 72.0         |
+| Web      | Safari / Catalina    |
+| Web      | Edge 1.2.0           |
+| Windows  | Windows 10           |
+| macOS    | El Capitan & greater |
+| Linux    | Debian 10            |
 
 Note that Android SDK 20 is covered by testing Android SDK 19, 
 as the differences between the two platform versions are
@@ -120,28 +120,23 @@ minimal.
 |Windows |Windows 7      |
 |Linux   |Debian & below |
 
-We have dropped iOS8 support. For more information,
-see [go/rfc-ios8-deprecation] for details.
-
-我们已经放弃对 iOS 8 的支持。
-更多信息，请参阅我们 [对 iOS 8 放弃支持的提案文档](https://files.flutter-io.cn/flutter-design-docs/RFC_iOS_8_Deprecation(PUBLICLY_SHARED).pdf)。
-
-[go/rfc-ios8-deprecation]: {{site.url}}/go/rfc-ios8-deprecation
-
 ### Unsupported platforms
 
 ### 不受支持的平台
 
-|Platform|Version                |
-|--------|-----------------------|
-|平台     | 版本                    |
-|Android | Android SDK 18 & below|
-|Android | Android SDK 18 及以上    |
-|iOS     | iOS 8 & below         |
-|iOS     | iOS 8 及以上             |
-|Windows | Windows Vista & below |
-|Windows | Windows Vista 及以上     |
-|Windows | Any 32-bit platform   |
-|Windows | 任何 32 位平台             |   
-|macOS   | Yosemite & below      |
-|macOS   | Yosemite 及以上          |
+| Platform | Version                                          |
+|----------|--------------------------------------------------|
+| 平台       | 版本                                               |
+| Android  | Android SDK 18 & below                           |
+| Android  | Android SDK 18 及以下                               |
+| iOS      | [iOS 8] & below and [`arm7v` 32-bit iOS]         |
+| iOS      | iOS 8 以下及 [`armv7` 32 位 iOS][`arm7v` 32-bit iOS] |
+| Windows  | Windows Vista & below                            |
+| Windows  | Windows Vista 及以下                                |
+| Windows  | Any 32-bit platform                              |
+| Windows  | 任何 32 位平台                                        |   
+| macOS    | Yosemite & below                                 |
+| macOS    | Yosemite 及以下                                     |
+
+[iOS 8]: {{site.url}}/go/rfc-ios8-deprecation
+[`arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported

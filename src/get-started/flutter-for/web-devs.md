@@ -8,17 +8,18 @@ keywords: Flutter Web,iOS,用Flutter开发iOS,Flutter网页版
 css-old: [two_column.css]
 ---
 
-This page is for users who are familiar with the HTML and CSS syntax for
-arranging components of an application's UI. It maps HTML/CSS code snippets to
-their Flutter/Dart code equivalents.
+This page is for users who are familiar with the HTML
+and CSS syntax for arranging components of an application's UI.
+It maps HTML/CSS code snippets to their Flutter/Dart code equivalents.
 
 本文是为那些熟悉用 HTML 与 CSS 语法来管理应用页面中元素的开发者准备的。
 本文会将 HTML/CSS 代码片段替换为等价的 Flutter/Dart 代码。
 
-One of the fundamental differences between designing a web
-layout and a Flutter layout, is learning how constraints work,
-and how widgets are sized and positioned. To learn more,
-see [Understanding constraints][].
+One of the fundamental differences between
+designing a web layout and a Flutter layout,
+is learning how constraints work,
+and how widgets are sized and positioned.
+To learn more, see [Understanding constraints][].
 
 在 Web 和 Flutter 的布局基础条件中，
 **布局限制、widget 的大小确定和定位** 是重要的区别之一。
@@ -39,12 +40,12 @@ The examples assume:
 
   ```css
   {
-    box-sizing: border-box;
+      box-sizing: border-box;
   }
   ```
-
-* In Flutter, the default styling of the "Lorem ipsum" text is defined by the
-  `bold24Roboto` variable as follows, to keep the syntax simple:
+* In Flutter, the default styling of the 'Lorem ipsum' text
+  is defined by the `bold24Roboto` variable as follows,
+  to keep the syntax simple:
 
   在 Flutter 中，为了保持语法简洁，
   "Lorem ipsum" 文本的默认样式由如下 `bold24Roboto` 变量定义：
@@ -53,13 +54,13 @@ The examples assume:
   TextStyle bold24Roboto = TextStyle(
     color: Colors.white,
     fontSize: 24,
-    fontWeight: FontWeight.w900,
+    fontWeight: FontWeight.bold,
   );
   ```
 
 {{site.alert.secondary}}
 
-  How is react-style, or _declarative_, programming different than the
+  How is react-style, or _declarative_, programming different from the
   traditional imperative style?
   For a comparison, see [Introduction to declarative
   UI][Introduction to declarative UI].
@@ -90,47 +91,47 @@ child of a
 CSS 所处理的字体样式、大小以及其他文本属性，
 都是一个 [`Text`][] widget 子元素 [`TextStyle`][] 中单独的属性。
 
-For text-align property in CSS that is used for aligning text, there is a textAlign property of a [`Text`][] widget.
+For text-align property in CSS that is used for aligning text,
+there is a textAlign property of a [`Text`][] widget.
 
 [`Text`][] widget 中的 textAlign 属性与 CSS 中的
 text-align 属性作用相同，用来控制文本的对齐方向。
 
-In both HTML and Flutter, child elements or widgets are anchored at
-the top left, by default.
+In both HTML and Flutter, child elements or widgets
+are anchored at the top left, by default.
 
 在 HTML 和 Flutter 中，子元素或者 widget 的位置都默认在左上方。
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-    Lorem ipsum
+<div class="grey-box">
+  Lorem ipsum
 </div>
 
-.greybox {
-      background-color: #e0e0e0; /* grey 300 */
-      width: 320px;
-      height: 240px;
-      [[highlight]]font: 900 24px Georgia;[[/highlight]]
-      [[highlight]]text-align: center;[[/highlight]]
-    }
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    [[highlight]]font: 900 24px Georgia;[[/highlight]]
+}
 {% endprettify %}
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-  var container = Container( // grey box
-    child: Text(
-      "Lorem ipsum",
-      [[highlight]]textAlign: TextAlign.center,[[/highlight]]
-      style: [[highlight]]TextStyle(
-        fontSize: 24,
-        fontWeight: FontWeight.w900,
-        fontFamily: "Georgia",
-      ),[[/highlight]]
-    ),
-    width: 320,
-    height: 240,
-    color: Colors.grey[300],
-  );
+final container = Container( // grey box
+  width: 320,
+  height: 240,
+  color: Colors.grey[300],
+  child: Text(
+    'Lorem ipsum',
+    style: [[highlight]]const TextStyle(
+      fontFamily: 'Georgia',
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+    ),[[/highlight]]
+    [[highlight]]textAlign: TextAlign.center,[[/highlight]]
+  ),
+);
 {% endprettify %}
 </div>
 
@@ -138,11 +139,14 @@ the top left, by default.
 
 ### 设置背景颜色
 
-In Flutter, you set the background color using the 
-`color` property or the `decoration` property of a [`Container`][]. However, you cannot
-supply both, since it would potentially result in the decoration drawing over
-the background color. The `color` property should be preferred when the background is a simple color.
-For other cases, such as gradients or images, use the `decoration` property.
+In Flutter, you set the background color using the `color` property
+or the `decoration` property of a [`Container`][].
+However, you cannot supply both, since it would potentially
+result in the decoration drawing over the background color.
+The `color` property should be preferred
+when the background is a simple color.
+For other cases, such as gradients or images,
+use the `decoration` property.
 
 在 Flutter 中，你可以通过 [`Container`][] 的
 `decoration` 或者 `color` 属性来设置背景颜色。
@@ -157,46 +161,46 @@ CSS 示例使用十六进制颜色，
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
+<div class="grey-box">
   Lorem ipsum
 </div>
 
-.greybox {
-      [[highlight]]background-color: #e0e0e0;[[/highlight]]  /* grey 300 */
-      width: 320px;
-      height: 240px;
-      font: 900 24px Roboto;
-    }
+.grey-box {
+    [[highlight]]background-color: #e0e0e0;[[/highlight]] /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+}
 {% endprettify %}
 </div>
 
 <div class="righthighlight">
 {% prettify dart %}
-  var container = Container( // grey box
-    child: Text(
-      "Lorem ipsum",
-      style: bold24Roboto,
-    ),
-    width: 320,
-    height: 240,
-    [[highlight]]color: Colors.grey[300],[[/highlight]]
-  );
+final container = Container( // grey box
+  width: 320,
+  height: 240,
+  [[highlight]]color: Colors.grey[300],[[/highlight]]
+  child: Text(
+    'Lorem ipsum',
+    style: bold24Roboto,
+  ),
+);
 {% endprettify %}
 </div>
 
 <div class="righthighlight">
 {% prettify dart %}
-  var container = Container( // grey box
-    child: Text(
-      "Lorem ipsum",
-      style: bold24Roboto,
-    ),
-    width: 320,
-    height: 240,
-    [[highlight]]decoration: BoxDecoration(
-      color: Colors.grey[300],
-    ),[[/highlight]]
-  );
+final container = Container( // grey box
+  width: 320,
+  height: 240,
+  [[highlight]]decoration: BoxDecoration(
+    color: Colors.grey[300],
+  ),[[/highlight]]
+  child: Text(
+    'Lorem ipsum',
+    style: bold24Roboto,
+  ),
+);
 {% endprettify %}
 </div>
 
@@ -218,34 +222,34 @@ behavior.
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
+<div class="grey-box">
   Lorem ipsum
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  [[highlight]]display: flex;
-  align-items: center;
-  justify-content: center; [[/highlight]]
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+    [[highlight]]display: flex;
+    align-items: center;
+    justify-content: center;[[/highlight]]
 }
 {% endprettify %}
 </div>
 
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
-  child:  [[highlight]]Center(
-    child: [[/highlight]] Text(
-      "Lorem ipsum",
-      style: bold24Roboto,
-    ),
-  ),
+final container = Container( // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
+  child: [[highlight]]Center(
+    child:[[/highlight]] Text(
+      'Lorem ipsum',
+      style: bold24Roboto,
+    ),
+  ),
 );
 {% endprettify %}
 </div>
@@ -254,13 +258,13 @@ var container = Container( // grey box
 
 ### 设置容器宽度
 
-To specify the width of a
-[`Container`][]
-widget, use its `width` property. This is a fixed width, unlike the
-CSS max-width property that adjusts the container width up to a maximum value.
-To mimic that effect in Flutter, use the `constraints` property of the
-Container. Create a new [`BoxConstraints`][]
-widget with a `minWidth` or `maxWidth`.
+To specify the width of a [`Container`][]
+widget, use its `width` property.
+This is a fixed width, unlike the CSS max-width property
+that adjusts the container width up to a maximum value.
+To mimic that effect in Flutter,
+use the `constraints` property of the Container.
+Create a new [`BoxConstraints`][] widget with a `minWidth` or `maxWidth`.
 
 要指定一个 [`Container`][] widget 的宽度，请使用它的 `width` 属性。
 与 CSS 中的 max-width 属性用于指定容器可调整的宽度最大值不同的是，
@@ -276,50 +280,50 @@ the child Container sizes itself to match the parent.
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     Lorem ipsum
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  [[highlight]]width: 320px; [[/highlight]]
-  height: 240px;
-  font: 900 24px Roboto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    [[highlight]]width: 320px;[[/highlight]]
+    height: 240px;
+    font: 900 24px Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redbox {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]width: 100%;
-  max-width: 240px; [[/highlight]]
+.red-box {
+    background-color: #ef5350; /* red 400 */
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]width: 100%;
+    max-width: 240px;[[/highlight]]
 }
 {% endprettify %}
 </div>
 
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
+final container = Container( // grey box
+  [[highlight]]width: 320,[[/highlight]]
+  height: 240,
+  color: Colors.grey[300],
   child: Center(
     child: Container( // red box
-      child: Text(
-        "Lorem ipsum",
-        style: bold24Roboto,
-      ),
+      [[highlight]]width: 240,[[/highlight]]// max-width is 240
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
       ),
-      padding: EdgeInsets.all(16),
-      [[highlight]]width: 240, [[/highlight]]//max-width is 240
+      child: Text(
+        'Lorem ipsum',
+        style: bold24Roboto,
+      ),
     ),
   ),
-  [[highlight]]width: 320, [[/highlight]]
-  height: 240,
-  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -328,8 +332,8 @@ var container = Container( // grey box
 
 ## 操控位置与大小
 
-The following examples show how to perform more complex operations on widget
-position, size, and background.
+The following examples show how to perform more complex operations
+on widget position, size, and background.
 
 以下示例将展示如何对 widget 的位置、大小以及背景进行更复杂的操作。
 
@@ -341,10 +345,9 @@ By default, widgets are positioned relative to their parent.
 
 默认情况下，widget 相对于其父元素定位。
 
-To specify an absolute position for a widget as x-y coordinates, nest it in a
-[`Positioned`][]
-widget that is, in turn, nested in a 
-[`Stack`][] widget.
+To specify an absolute position for a widget as x-y coordinates,
+nest it in a [`Positioned`][] widget that is,
+in turn, nested in a [`Stack`][] widget.
 
 想要通过 x-y 坐标指定一个 widget 的绝对位置，
 可以把它放在一个 [`Positioned`][] widget 中，
@@ -352,54 +355,54 @@ widget that is, in turn, nested in a
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     Lorem ipsum
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  [[highlight]]position: relative; [[/highlight]]
+.grey-box {
+    [[highlight]]position: relative;[[/highlight]]
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
 }
-.redbox {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]position: absolute;
-  top: 24px;
-  left: 24px; [[/highlight]]
+.red-box {
+    background-color: #ef5350; /* red 400 */
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]position: absolute;
+    top: 24px;
+    left: 24px;[[/highlight]]
 }
 {% endprettify %}
 </div>
 
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
-  [[highlight]]child: Stack(
-    children: [
-      Positioned( // red box
-        child: [[/highlight]] Container(
-          child: Text(
-            "Lorem ipsum",
-            style: bold24Roboto,
-          ),
-          decoration: BoxDecoration(
-            color: Colors.red[400],
-          ),
-          padding: EdgeInsets.all(16),
-        ),
-        [[highlight]]left: 24,
-        top: 24,
-      ),
-    ],
-  ), [[/highlight]]
+final container = Container( // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
+  [[highlight]]child: Stack(
+    children:[[/highlight]] [
+      Positioned( // red box
+        [[highlight]]left: 24,
+        top: 24,[[/highlight]]
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.red[400],
+          ),
+          child: Text(
+            'Lorem ipsum',
+            style: bold24Roboto,
+          ),
+        ),
+      ),
+    ],
+  ),
 );
 {% endprettify %}
 </div>
@@ -408,18 +411,19 @@ var container = Container( // grey box
 
 ### 旋转元素
 
-To rotate a widget, nest it in a
-[`Transform`][]
-widget. Use the Transform widget’s `alignment` and `origin` properties to
-specify the transform origin (fulcrum) in relative and absolute terms,
+To rotate a widget, nest it in a [`Transform`][] widget.
+Use the `Transform` widget’s `alignment` and `origin` properties
+to specify the transform origin (fulcrum) in relative and absolute terms,
 respectively.
 
 想要旋转一个 widget，请将它放在 [`Transform`][] widget 中。
 使用 `Transform` widget 的 `alignment` 和 `origin`
 属性分别来指定转换原点（支点）的相对和绝对位置信息。
 
-For a simple 2D rotation, in which the widget is rotated on the Z axis, create a new [`Matrix4`][] identity object and use
-its `rotateZ()` method to specify the rotation factor using radians (degrees × π / 180).
+For a simple 2D rotation, in which the widget is rotated on the Z axis,
+create a new [`Matrix4`][] identity object
+and use its `rotateZ()` method to specify the rotation factor
+using radians (degrees × π / 180).
 
 对于简单的 2D 旋转，例如在 Z 轴上旋转的，
 创建一个新的 [`Matrix4`][] 对象，
@@ -428,54 +432,54 @@ its `rotateZ()` method to specify the rotation factor using radians (degrees × 
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     Lorem ipsum
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redbox {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]transform: rotate(15deg); [[/highlight]]
+.red-box {
+    background-color: #ef5350; /* red 400 */
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]transform: rotate(15deg);[[/highlight]]
 }
 {% endprettify %}
 </div>
 
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // gray box
-  child: Center(
-    child:  [[highlight]]Transform(
-      child: [[/highlight]] Container( // red box
-        child: Text(
-          "Lorem ipsum",
-          style: bold24Roboto,
-          textAlign: TextAlign.center,
-        ),
-        decoration: BoxDecoration(
-          color: Colors.red[400],
-        ),
-        padding: EdgeInsets.all(16),
-      ),
-      [[highlight]]alignment: Alignment.center,
-      transform: Matrix4.identity()
-        ..rotateZ(15 * 3.1415927 / 180),
-    ), [[/highlight]]
-  ),
+final container = Container( // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
+  child: Center(
+    child: [[highlight]]Transform(
+      alignment: Alignment.center,
+      transform: Matrix4.identity()
+        ..rotateZ(15 * 3.1415927 / 180),
+      child:[[/highlight]] Container( // red box
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.red[400],
+        ),
+        child: Text(
+          'Lorem ipsum',
+          style: bold24Roboto,
+          textAlign: TextAlign.center,
+        ),
+      ),
+    ),
+  ),
 );
 {% endprettify %}
 </div>
@@ -484,75 +488,75 @@ var container = Container( // gray box
 
 ### 缩放元素
 
-To scale a widget up or down, nest it in a
-[`Transform`][]
-widget. Use the Transform widget’s `alignment` and `origin`
-properties to specify the transform origin (fulcrum) in relative or
-absolute terms, respectively.
+To scale a widget up or down, nest it in a [`Transform`][] widget.
+Use the Transform widget’s `alignment` and `origin` properties
+to specify the transform origin (fulcrum) in relative or absolute terms,
+respectively.
 
 想要缩放一个 widget，请同样将它放在一个 [`Transform`][] widget 中。
 使用 `Transform` widget 的 `alignment` 和 `origin`
 属性分别来指定缩放原点（支点）的相对和绝对信息。
 
-For a simple scaling operation along the x-axis, create a new
-[`Matrix4`][]
-identity object and use its scale() method to specify the scaling factor.
+For a simple scaling operation along the x-axis,
+create a new [`Matrix4`][] identity object
+and use its `scale()` method to specify the scaling factor.
 
 对于沿 x 轴的简单缩放操作，新建一个 [`Matrix4`][] 对象
-并用它的 scale() 方法来指定缩放因系数。
+并用它的 `scale()` 方法来指定缩放因系数。
 
 When you scale a parent widget, its child widgets are scaled accordingly.
 
 当你缩放一个父 widget 时，它的子 widget 也会相应被缩放。
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     Lorem ipsum
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redbox {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]transform: scale(1.5); [[/highlight]]
+.red-box {
+    background-color: #ef5350; /* red 400 */
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]transform: scale(1.5);[[/highlight]]
 }
 {% endprettify %}
 </div>
 
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // gray box
-  child: Center(
-    child:  [[highlight]]Transform(
-      child: [[/highlight]] Container( // red box
-        child: Text(
-          "Lorem ipsum",
-          style: bold24Roboto,
-          textAlign: TextAlign.center,
-        ),
-        decoration: BoxDecoration(
-          color: Colors.red[400],
-        ),
-        padding: EdgeInsets.all(16),
-      ),
-      [[highlight]]alignment: Alignment.center,
-      transform: Matrix4.identity()
-        ..scale(1.5),
-     ), [[/highlight]]
+final container = Container( // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
+  child: Center(
+    child: [[highlight]]Transform(
+      alignment: Alignment.center,
+      transform: Matrix4.identity()
+        ..scale(1.5),
+      child:[[/highlight]] Container( // red box
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.red[400],
+        ),
+        child: Text(
+          'Lorem ipsum',
+          style: bold24Roboto,
+          textAlign: TextAlign.center,
+        ),
+      ),
+    ),
+  ),
 );
 {% endprettify %}
 </div>
@@ -593,53 +597,53 @@ The gradient “angle” is based on the Alignment (x, y) values:
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     Lorem ipsum
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redbox {
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]background: linear-gradient(180deg, #ef5350, rgba(0, 0, 0, 0) 80%); [[/highlight]]
+.red-box {
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]background: linear-gradient(180deg, #ef5350, rgba(0, 0, 0, 0) 80%);[[/highlight]]
 }
 {% endprettify %}
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
-  child: Center(
-    child: Container( // red box
-      child: Text(
-        "Lorem ipsum",
-        style: bold24Roboto,
-      ),
-      [[highlight]]decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: const Alignment(0.0, -1.0),
-          end: const Alignment(0.0, 0.6),
-          colors: <Color>[
-            const Color(0xffef5350),
-            const Color(0x00ef5350)
-          ],
-        ),
-      ), [[/highlight]]
-      padding: EdgeInsets.all(16),
-    ),
-  ),
+final container = Container( // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
+  child: Center(
+    child: Container( // red box
+      [[highlight]]decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment(0.0, 0.6),
+          colors: <Color>[
+            Color(0xffef5350),
+            Color(0x00ef5350),
+          ],
+        ),
+      ),[[/highlight]]
+      padding: const EdgeInsets.all(16),
+      child: Text(
+        'Lorem ipsum',
+        style: bold24Roboto,
+      ),
+    ),
+  ),
 );
 {% endprettify %}
 </div>
@@ -650,53 +654,53 @@ var container = Container( // grey box
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     Lorem ipsum
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redbox {
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]background: linear-gradient(90deg, #ef5350, rgba(0, 0, 0, 0) 80%); [[/highlight]]
+.red-box {
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]background: linear-gradient(90deg, #ef5350, rgba(0, 0, 0, 0) 80%);[[/highlight]]
 }
 {% endprettify %}
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
-  child: Center(
-    child: Container( // red box
-      child: Text(
-        "Lorem ipsum",
-        style: bold24Roboto,
-      ),
-      [[highlight]]decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: const Alignment(-1.0, 0.0),
-          end: const Alignment(0.6, 0.0),
-          colors: <Color>[
-            const Color(0xffef5350),
-            const Color(0x00ef5350)
-          ],
-        ),
-      ), [[/highlight]]
-      padding: EdgeInsets.all(16),
-    ),
-  ),
+final container = Container( // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
+  child: Center(
+    child: Container( // red box
+      padding: const EdgeInsets.all(16),
+      [[highlight]]decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment(-1.0, 0.0),
+          end: Alignment(0.6, 0.0),
+          colors: <Color>[
+            Color(0xffef5350),
+            Color(0x00ef5350),
+          ],
+        ),
+      ),[[/highlight]]
+      child: Text(
+        'Lorem ipsum',
+        style: bold24Roboto,
+      ),
+    ),
+  ),
 );
 {% endprettify %}
 </div>
@@ -723,50 +727,50 @@ object that specifies the radius for rounding each corner.
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     Lorem ipsum
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* gray 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redbox {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]border-radius: 8px; [[/highlight]]
+.red-box {
+    background-color: #ef5350; /* red 400 */
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]border-radius: 8px;[[/highlight]]
 }
 {% endprettify %}
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
+final container = Container( // grey box
+  width: 320,
+  height: 240,
+  color: Colors.grey[300],
   child: Center(
     child: Container( // red circle
-      child: Text(
-        "Lorem ipsum",
-        style: bold24Roboto,
-      ),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
         [[highlight]]borderRadius: BorderRadius.all(
           const Radius.circular(8),
-        ), [[/highlight]]
+        ),[[/highlight]]
       ),
-      padding: EdgeInsets.all(16),
+      child: Text(
+        'Lorem ipsum',
+        style: bold24Roboto,
+      ),
     ),
   ),
-  width: 320,
-  height: 240,
-  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -782,8 +786,8 @@ with properties:
 在 CSS 中你可以通过 box-shadow 属性快速指定阴影偏移与模糊范围。
 本例展示了两个盒阴影的属性设置：
 
-*  `xOffset: 0px, yOffset: 2px, blur: 4px, color: black @80% alpha`
-*  `xOffset: 0px, yOffset: 06x, blur: 20px, color: black @50% alpha`
+* `xOffset: 0px, yOffset: 2px, blur: 4px, color: black @80% alpha`
+* `xOffset: 0px, yOffset: 06x, blur: 20px, color: black @50% alpha`
 
 In Flutter, each property and value is specified separately.
 Use the `boxShadow` property of `BoxDecoration` to create a list of
@@ -799,63 +803,63 @@ to customize the shadow depth, color, and so on.
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     Lorem ipsum
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redbox {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8),
+.red-box {
+    background-color: #ef5350; /* red 400 */
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8),
               0 6px 20px rgba(0, 0, 0, 0.5);[[/highlight]]
 }
 {% endprettify %}
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
-  child: Center(
-    child: Container( // red box
-      child: Text(
-        "Lorem ipsum",
-        style: bold24Roboto,
-      ),
-      decoration: BoxDecoration(
-        color: Colors.red[400],
-        [[highlight]]boxShadow: [
-          BoxShadow (
-            color: const Color(0xcc000000),
-            offset: Offset(0, 2),
-            blurRadius: 4,
-          ),
-          BoxShadow (
-            color: const Color(0x80000000),
-            offset: Offset(0, 6),
-            blurRadius: 20,
-          ),
-        ], [[/highlight]]
-      ),
-      padding: EdgeInsets.all(16),
-    ),
-  ),
+final container = Container( // grey box
   width: 320,
   height: 240,
+  margin: const EdgeInsets.only(bottom: 16),
   decoration: BoxDecoration(
     color: Colors.grey[300],
   ),
-  margin: EdgeInsets.only(bottom: 16),
+  child: Center(
+    child: Container( // red box
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.red[400],
+        [[highlight]]boxShadow: const <BoxShadow>[
+          BoxShadow(
+            color: Color(0xcc000000),
+            offset: Offset(0, 2),
+            blurRadius: 4,
+          ),
+          BoxShadow(
+            color: Color(0x80000000),
+            offset: Offset(0, 6),
+            blurRadius: 20,
+          ),
+        ],[[/highlight]]
+      ),
+      child: Text(
+        'Lorem ipsum',
+        style: bold24Roboto,
+      ),
+    ),
+  ),
 );
 {% endprettify %}
 </div>
@@ -872,9 +876,10 @@ Making a circle in CSS requires a workaround of applying a border-radius of
 用 CSS 生成圆可以用一个变通方案，
 即将矩形的四边 border-radius 均设成 50%。
 
-While this approach is supported with the `borderRadius` property of
-[`BoxDecoration`][], Flutter provides a `shape` property with
-[`BoxShape` enum][] for this purpose.
+While this approach is supported
+with the `borderRadius` property of [`BoxDecoration`][],
+Flutter provides a `shape` property
+with [`BoxShape` enum][] for this purpose.
 
 虽然 [`BoxDecoration`][] 的 `borderRadius` 属性支持这样设置，
 Flutter 提供了一个 `shape` 属性用于实现同样的目的，
@@ -882,54 +887,54 @@ Flutter 提供了一个 `shape` 属性用于实现同样的目的，
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redcircle">
+<div class="grey-box">
+  <div class="red-circle">
     Lorem ipsum
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* gray 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redcircle {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]text-align: center;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%; [[/highlight]]
+.red-circle {
+    background-color: #ef5350; /* red 400 */
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]text-align: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;[[/highlight]]
 }
 {% endprettify %}
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
-  child: Center(
-    child: Container( // red circle
-      child: Text(
-        "Lorem ipsum",
-        style: bold24Roboto,
-        [[highlight]]textAlign: TextAlign.center, [[/highlight]]
-      ),
-      decoration: BoxDecoration(
-        color: Colors.red[400],
-        [[highlight]]shape: BoxShape.circle, [[/highlight]]
-      ),
-      padding: EdgeInsets.all(16),
-      [[highlight]]width: 160,
-      height: 160, [[/highlight]]
-    ),
-  ),
+final container = Container( // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
+  child: Center(
+    child: Container( // red circle
+      decoration: BoxDecoration(
+        color: Colors.red[400],
+        [[highlight]]shape: BoxShape.circle,[[/highlight]]
+      ),
+      padding: const EdgeInsets.all(16),
+      [[highlight]]width: 160,
+      height: 160,[[/highlight]]
+      child: Text(
+        'Lorem ipsum',
+        style: bold24Roboto,
+        [[highlight]]textAlign: TextAlign.center,[[/highlight]]
+      ),
+    ),
+  ),
 );
 {% endprettify %}
 </div>
@@ -938,8 +943,9 @@ var container = Container( // grey box
 
 ## 操控文本
 
-The following examples show how to specify fonts and other text attributes. They
-also show how to transform text strings, customize spacing, and create excerpts.
+The following examples show how to specify fonts and other
+text attributes. They also show how to transform text strings,
+customize spacing, and create excerpts.
 
 以下示例展示了如何设置字体和其他文本属性。
 它们同时还展示了如何变换文本字符、自定义间距以及生成摘要。
@@ -948,9 +954,10 @@ also show how to transform text strings, customize spacing, and create excerpts.
 
 ### 文字间距调整
 
-In CSS you specify the amount of white space between each letter or word by
-giving a length value for the letter-spacing and word-spacing properties,
-respectively. The amount of space can be in px, pt, cm, em, etc.
+In CSS, you specify the amount of white space
+between each letter or word by giving a length value
+for the letter-spacing and word-spacing properties, respectively.
+The amount of space can be in px, pt, cm, em, etc.
 
 在 CSS 中你可以通过分别设置 letter-spacing 和 word-spacing 属性，
 来指定每个字母以及每个单词间的空白距离。
@@ -958,60 +965,60 @@ respectively. The amount of space can be in px, pt, cm, em, etc.
 
 In Flutter, you specify white space as logical pixels
 (negative values are allowed)
-for the `letterSpacing` and `wordSpacing` properties of a
-[`TextStyle`][] child of a `Text` widget.
+for the `letterSpacing` and `wordSpacing` properties
+of a [`TextStyle`][] child of a `Text` widget.
 
 在 Flutter 中，你可以将 `Text` widget 的 [`TextStyle`][] 属性中
 `letterSpacing` 与 `wordSpacing` 设置为逻辑像素（允许负值）。
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     Lorem ipsum
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redbox {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]letter-spacing: 4px; [[/highlight]]
+.red-box {
+    background-color: #ef5350; /* red 400 */
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]letter-spacing: 4px;[[/highlight]]
 }
 {% endprettify %}
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
+final container = Container( // grey box
+  width: 320,
+  height: 240,
+  color: Colors.grey[300],
   child: Center(
     child: Container( // red box
-      child: Text(
-        "Lorem ipsum",
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.red[400],
+      ),
+      child: const Text(
+        'Lorem ipsum',
         style: TextStyle(
           color: Colors.white,
           fontSize: 24,
           fontWeight: FontWeight.w900,
-          [[highlight]]letterSpacing: 4, [[/highlight]]
+          [[highlight]]letterSpacing: 4,[[/highlight]]
         ),
       ),
-      decoration: BoxDecoration(
-        color: Colors.red[400],
-      ),
-      padding: EdgeInsets.all(16),
     ),
   ),
-  width: 320,
-  height: 240,
-  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -1020,66 +1027,73 @@ var container = Container( // grey box
 
 ### 内联样式更改
 
-A [`Text`][] widget lets you display text with some
-formatting characteristics. To display text that uses
-multiple styles (in this example,
-a single word with emphasis), use a [`RichText`][]
-widget instead. Its `text` property can specify one or more
-[`TextSpan`][] widgets
-that can be individually styled.
+A [`Text`][] widget lets you display text
+with some formatting characteristics.
+To display text that uses multiple styles
+(in this example, a single word with emphasis),
+use a [`RichText`][] widget instead.
+Its `text` property can specify one or more
+[`TextSpan`][] objects that can be individually styled.
 
 一个 [`Text`][] widget 允许你展示同一类样式的文本。
 为了展现具有多种样式（本例中，是一个带重音的单词）的文本，
 你需要改用 [`RichText`][] widget。
 它的 `text` 属性可以设置一个或多个可单独设置样式的 [`TextSpan`][]。
 
-In the following example, "Lorem" is in a TextSpan widget with the default
-(inherited) text styling, and "ipsum" is in a separate TextSpan with custom
-styling.
+In the following example, "Lorem" is in a `TextSpan`
+with the default (inherited) text styling,
+and "ipsum" is in a separate `TextSpan` with custom styling.
 
 在接下来的示例中，「Lorem」位于 `TextSpan` 中，具有默认（继承）文本样式，
 「ipsum」位于具有自定义样式、单独的一个 `TextSpan` 中。
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     [[highlight]]Lorem <em>ipsum</em>[[/highlight]]
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  [[highlight]]font: 900 24px Roboto;[[/highlight]]
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    [[highlight]]font: 900 24px Roboto;[[/highlight]]
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redbox {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-  color: #ffffff;
+.red-box {
+    background-color: #ef5350; /* red 400 */
+    padding: 16px;
+    color: #ffffff;
 }
- [[highlight]].redbox em {
-  font: 300 48px Roboto;
-  font-style: italic;
-} [[/highlight]]
+[[highlight]].red-box em {
+    font: 300 48px Roboto;
+    font-style: italic;
+}[[/highlight]]
 {% endprettify %}
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
+final container = Container( // grey box
+  width: 320,
+  height: 240,
+  color: Colors.grey[300],
   child: Center(
     child: Container( // red box
-      child:  [[highlight]]RichText(
+      decoration: BoxDecoration(
+        color: Colors.red[400],
+      ),
+      padding: const EdgeInsets.all(16),
+      child: [[highlight]]RichText(
         text: TextSpan(
           style: bold24Roboto,
-          children: <TextSpan>[
-            TextSpan(text: "Lorem "),
+          children: const <TextSpan>[
+            TextSpan(text: 'Lorem '),
             TextSpan(
-              text: "ipsum",
+              text: 'ipsum',
               style: TextStyle(
                 fontWeight: FontWeight.w300,
                 fontStyle: FontStyle.italic,
@@ -1088,16 +1102,9 @@ var container = Container( // grey box
             ),
           ],
         ),
-      ), [[/highlight]]
-      decoration: BoxDecoration(
-        color: Colors.red[400],
-      ),
-      padding: EdgeInsets.all(16),
+      ),[[/highlight]]
     ),
   ),
-  width: 320,
-  height: 240,
-  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -1114,10 +1121,9 @@ than one line. Truncating after multiple lines requires some JavaScript code.
 在 HTML/CSS 中，摘录不能超过一行。
 在多行之后进行截断需要运行一些 JavaScript 代码。
 
-In Flutter, use the `maxLines` property of a
-[`Text`][]
-widget to specify the number of lines to include in the excerpt, and the
-`overflow` property for handling overflow text.
+In Flutter, use the `maxLines` property of a [`Text`][] widget
+to specify the number of lines to include in the excerpt,
+and the `overflow` property for handling overflow text.
 
 在 Flutter 中，你可以使用 [`Text`][] widget 的
 `maxLines` 属性来指定包含在摘要中的行数，
@@ -1125,51 +1131,51 @@ widget to specify the number of lines to include in the excerpt, and the
 
 <div class="lefthighlight">
 {% prettify css %}
-<div class="greybox">
-  <div class="redbox">
+<div class="grey-box">
+  <div class="red-box">
     Lorem ipsum dolor sit amet, consec etur
   </div>
 </div>
 
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  font: 900 24px Roboto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.grey-box {
+    background-color: #e0e0e0; /* grey 300 */
+    width: 320px;
+    height: 240px;
+    font: 900 24px Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.redbox {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-  color: #ffffff;
-  [[highlight]]overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; [[/highlight]]
+.red-box {
+    background-color: #ef5350; /* red 400 */
+    padding: 16px;
+    color: #ffffff;
+    [[highlight]]overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;[[/highlight]]
 }
 {% endprettify %}
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = Container( // grey box
-  child: Center(
-    child: Container( // red box
-      child: Text(
-        "Lorem ipsum dolor sit amet, consec etur",
-        style: bold24Roboto,
-        [[highlight]]overflow: TextOverflow.ellipsis,
-        maxLines: 1, [[/highlight]]
-      ),
-      decoration: BoxDecoration(
-        color: Colors.red[400],
-      ),
-      padding: EdgeInsets.all(16),
-    ),
-  ),
+final container = Container( // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
+  child: Center(
+    child: Container( // red box
+      decoration: BoxDecoration(
+        color: Colors.red[400],
+      ),
+      padding: const EdgeInsets.all(16),
+      child: Text(
+        'Lorem ipsum dolor sit amet, consec etur',
+        style: bold24Roboto,
+        [[highlight]]overflow: TextOverflow.ellipsis,
+        maxLines: 1,[[/highlight]]
+      ),
+    ),
+  ),
 );
 {% endprettify %}
 </div>

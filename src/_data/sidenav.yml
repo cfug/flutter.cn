@@ -318,26 +318,22 @@
     - title: 概览
       permalink: /docs/perf
       match-page-url-exactly: true
+    - title: 性能最佳实践
+      permalink: /perf/best-practices
     - title: 应用大小
       permalink: /docs/perf/app-size
-    - title: 延迟加载组件 [新增]
+    - title: 延迟加载组件
       permalink: /docs/perf/deferred-components
 #    - title: Memory
 #      permalink: /perf/memory
 #    - title: Power usage
-#      permalink: /docs/perf/power
+#      permalink: /perf/power
     - title: 渲染性能
-      permalink: /docs/perf/rendering
-      children:
-      - title: 概览
-        permalink: /docs/perf/rendering
-        match-page-url-exactly: true
-      - title: 性能最佳实践
-        permalink: /docs/perf/rendering/best-practices
-      - title: 性能分析
-        permalink: /docs/perf/rendering/ui-performance
-      - title: 减少着色器卡顿
-        permalink: /docs/perf/rendering/shader
+      permalink: /docs/perf/rendering-performance
+    - title: 性能分析
+      permalink: /docs/perf/ui-performance
+    - title: 减少着色器卡顿
+      permalink: /docs/perf/shader
     - title: 性能指标
       permalink: /docs/perf/metrics
     - title: 性能 FAQ

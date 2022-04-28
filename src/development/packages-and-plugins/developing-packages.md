@@ -128,11 +128,12 @@ package.
 
 ### 第一步：创建 package
 
-To create a Flutter package, use the `--template=package` flag
-with `flutter create`:
+To create a starter Flutter package,
+use the `--template=package` flag with `flutter create`:
 
-想要创建纯 Dart 库的 package，
-请使用带有 `--template=package` 标志的 `flutter create` 命令：
+想要创建初始的 Flutter package，
+请使用带有 `--template=package` 标志的
+`flutter create` 命令：
 
 ```terminal
 $ flutter create --template=package hello

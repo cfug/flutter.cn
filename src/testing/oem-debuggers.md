@@ -519,9 +519,9 @@ iOS, and Android:
 
   [开发者工具][DevTools] 里的 [Flutter inspector][]
 
-* [Performance Profiling]({{site.url}}/perf/rendering/ui-performance)
+* [Performance Profiling]({{site.url}}/perf/ui-performance)
 
-  [Flutter 性能分析]({{site.url}}/testing/ui-performance)
+  [Flutter 性能分析]({{site.url}}/perf/ui-performance)
 
 ### Android
 

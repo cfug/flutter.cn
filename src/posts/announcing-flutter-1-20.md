@@ -201,7 +201,7 @@ Pigeon 虽然处于预发布阶段，但已经足够成熟，我们已经将其�
 与往常一样，我们尽力将重要改动（breaking changes）的数量维持在较低水平。以下是 Flutter 1.20 版本中的重要改动列表。
 
 * [55336](https://github.com/flutter/flutter/pull/55336)：将 tabSemanticsLabel 添加到 CupertinoLocalizations - 迁移 [指南 PR](https://flutter.cn/docs/release/breaking-changes/cupertino-tab-bar-localizations)
-* [55977](https://github.com/flutter/flutter/pull/55977)：[将 clipBehavior 添加至具有 clipRect 的 widget](https://files.flutter-io.cn/sources/flutter-design-docs/Clip_Behavior.docx)
+* [55977](https://github.com/flutter/flutter/pull/55977)：[将 clipBehavior 添加至具有 clipRect 的 widget](https://files.flutter-io.cn/flutter-design-docs/Clip_Behavior.docx)
 * [55998](https://github.com/flutter/flutter/pull/55998)：[为 Navigator 的 TransitionDelegate 新加入了 isWaitingForExitingDecision 判断。](https://groups.google.com/forum/#!searchin/flutter-announce/55998%7Csort:date/flutter-announce/yoq2VGi94q8/8pTsRL28AQAJ)	
 * [56582](https://github.com/flutter/flutter/pull/56582)：[更新 Cupertino 中的 Tab 语义，使其与 Material 相同](https://flutter.cn/docs/release/breaking-changes/cupertino-tab-bar-localizations#migration-guide)
 * [57065](https://github.com/flutter/flutter/pull/57065)：移除 NestedScrollView 重叠管理条中被弃用的子参数	

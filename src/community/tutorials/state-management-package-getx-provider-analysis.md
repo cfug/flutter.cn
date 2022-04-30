@@ -33,7 +33,7 @@ Android 中可以这么实现：当右下角按钮点中时，
 
 ![image-20220406184550463](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220406184550463.png)
 
-而在 Flutter 中，我们只需要使变量增加之后调用 `setState((){})`即可。`setState` 会刷新整个页面，使的中间展示的值进行变更。
+而在 Flutter 中，我们只需要使变量增加之后调用 `setState((){})` 即可。`setState` 会刷新整个页面，使的中间展示的值进行变更。
 
 ![image-20220406185003242](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220406185003242.png)
 
@@ -49,16 +49,16 @@ Android 中可以这么实现：当右下角按钮点中时，
 
 声明式开发最大的优点在我看来是：**让开发者摆脱组件的繁琐控制，聚焦于状态处理**。
 
-习惯 Flutter 开发之后，回到原生平台开发，你会发现对于 View 的控制非常麻烦，尤其是多个组件之间相互关联时。
+习惯 Flutter 开发之后，回到原生平台开发，你会发现当多个组件之间相互关联时，对于 View 的控制非常麻烦。
 
 而在 Flutter 中我们只需要处理好状态即可（复杂度转移到了状态 -> UI 的映射，也就是 Widget 的构建）。
 Jetpack Compose，Swift 等技术的最新发展，也是在朝着「声明式」的方向前进。
 
-### 3.  声明式开发带来的问题：状态管理解决的目标
+### 3. 声明式开发带来的问题：状态管理解决的目标
 
 没有使用状态管理，直接「声明式」开发的时候，遇到的问题总结有三个：
 
-> **逻辑和页面 UI 耦合，导致无法复用/单元测试，修改混乱等**
+> **逻辑和页面 UI 耦合，导致无法复用/单元测试、修改混乱等**
 
 ![image-20220416153119414](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416153119414.png)
 

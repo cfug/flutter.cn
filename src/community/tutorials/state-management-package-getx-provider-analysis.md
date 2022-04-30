@@ -1,12 +1,12 @@
 ---
-title: Flutter 状态管理框架 Provider 和 GetX 解析
+Flutter 状态管理框架 Provider 和 Get 分析
 toc: true
 ---
 
 文/ Nayuta
 
 状态管理一直是 Flutter 开发中一个火热的话题。谈到状态管理框架，社区也有诸如有以
-[GetX](https://pub.flutter-io.cn/packages/get)、[Provider](https://pub.flutter-io.cn/packages/provider)
+[Get](https://pub.flutter-io.cn/packages/get)、[Provider](https://pub.flutter-io.cn/packages/provider)
 为代表的多种方案，它们有各自的优缺点。
 面对这么多的选择，你可能会想：「我需要使用状态管理么？哪种框架更适合我？」
 本文将从作者的实际开发经验出发，分析状态管理解决的问题以及思路，希望能帮助你做出选择。
@@ -15,7 +15,7 @@ toc: true
 
 首先，为什么 Flutter 开发中需要状态管理？
 在我看来，是因为 Flutter 采用
-[**声明式** ](https://flutter.cn/docs/resources/architectural-overview#reactive-user-interfaces) 构建带来的一系列问题。
+[**声明式**](https://flutter.cn/docs/resources/architectural-overview#reactive-user-interfaces) 构建带来的一系列问题。
 这是一种区别于传原生的方式，所以我们没有在原生开发中听到过状态管理。
 
 ### 1.「声明式」 VS 「命令式」分析
@@ -39,9 +39,9 @@ Android 中可以这么实现：当右下角按钮点中时，
 
 可以发现，Flutter 中只对 `_counter` 属性进行了修改，并没有对 Text 组件进行任何的操作，整个界面随着状态的改变而改变。
 
-所以在 Flutter 中有这么一种说法，**UI = F ( State )** 。
+所以在 Flutter 中有这么一种说法，**UI = F(State)** 。
 
-上面的例子中，state 就是 `_counter` 的值，调用 setState 驱动  `F (build 方法)` 生成新的 UI。
+上面的例子中，状态 (State) 就是 `_counter` 的值，调用 `setState` 驱动  `F（build 方法）` 生成新的 UI。
 
 那么声明式有哪些优点和不足呢？
 
@@ -86,9 +86,9 @@ Jetpack Compose，Swift 等技术的最新发展，也是在朝着「声明式�
 带来不必要的开销。
 
 在我看来，Flutter 中状态管理框架的核心在于这三个问题的解决思路，
-下面一起看看 Provider、GetX 是如何解决的。
+下面一起看看 Provider、Get 是如何解决的。
 
-****
+----
 
 ## 二、provider、get 状态管理框架设计分析
 
@@ -103,8 +103,8 @@ View 只负责视图的构建。
 ![image-20220416152955696](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416152955696.png)
 
 这也是 Flutter 中几乎所有状态管理框架的解决思路，
-上面的 Presenter 你可以认为是 GetX 中的 `GetxController`、
-Provider 中的 `ChangeNotifier`，bloc 中的 `Bloc`。
+上面的 Presenter 你可以认为是 Get 中的 `GetController`、
+Provider 中的 `ChangeNotifier` 或者 Bloc 中的 `Bloc`。
 值得一提的是，具体做法上 Flutter 和原生 MVP 框架有所不同。
 
 我们知道在经典 MVP 模式中，
@@ -125,8 +125,8 @@ Widget 可以确实可以直接持有 Presenter，
 这一点不同状态管理框架的解决思路不一样，从实现上他们可以分为两大类：
 
 一类通过 **Flutter 树机制** 解决，
-例如 Provider，另一类是 get 这种通过 **依赖注入** ，
-例如 GetX。
+例如 Provider；另一类是通过 **依赖注入**，
+例如 Get。
 
 #### 树机制处理 V -> P 的获取
 
@@ -156,15 +156,15 @@ provider 也是借助了这样的机制，完成了 View -> Presenter 的获取�
 
 树机制很不错，但依赖于 context，这一点有时很让人抓狂。
 我们知道 Dart 是一种单线程的模型，
-所以不存在多线程下对于对象访问的竞争问题。
-基于此 GetX 借助了一个全局单例的 Map 存储对象。
+所以不存在多线程下对于对象访问的竞态问题。
+基于此 Get 借助一个全局单例的 Map 存储对象。
 通过依赖注入的方式，实现了对 Presenter 层的获取。
 这样在任意的类中都可以获取到 Presenter。
 
 ![image-20220416154732460](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416154732460.png)
 
-这个 Map 对应的 Key 是 `runtimeType + tag`，
-其中 tag 是一个可选参数，而 Value 对应 Object，
+这个 Map 对应的 key 是 `runtimeType` + `tag`，
+其中 tag 是可选参数，而 value 对应 `Object`，
 也就是说我们可以存入任何类型的对象，并且在任意位置获取。
 
 ### 2. 难以跨组件（跨页面）访问数据
@@ -174,12 +174,12 @@ provider 也是借助了这样的机制，完成了 View -> Presenter 的获取�
 ![image-20220416154955957](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416154955957.png)
 
 Provider：
-1、依赖树机制，必须基于 context
-2、提供了子组件访问上层的能力
+* 依赖树机制，必须基于 context
+* 提供了子组件访问上层的能力
 
-GetX：
-1、全局单例，任意位置可以存取
-2、存在类型重复，内存回收问题
+Get：
+* 全局单例，任意位置可以存取
+* 存在类型重复，内存回收问题
 
 ### 3. 高层级 `setState` 引起不必要刷新的问题
 
@@ -205,16 +205,16 @@ Flutter 通过采用观察者模式解决。
 子节点通过 Consumer 即可获取实例，
 调用了 `increment` 方法之后，只有对应的 Text 组件进行变化。
 
-同样的功能，在 GetX 中，
+同样的功能，在 Get 中，
 只需要提前调用 `Get.put` 方法存储 `Counter` 对象，
 为 `GetBuilder` 组件指定 `Counter` 作为泛型。
-因为 GetX 基于单例，所以 `GetBuilder` 可以直接通过泛型获取到存入的对象，
+因为 Get 基于单例，所以 `GetBuilder` 可以直接通过泛型获取到存入的对象，
 并在 builder 方法中暴露。这样 `Counter` 便与组件建立了监听关系，
 之后 `Counter` 的变动，只会驱动以它作为泛型的 `GetBuilder` 组件更新。
 
 ![image-20220416225707295](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416225707295.png)
 
-***
+----
 
 ## 三、实践中的常见问题
 
@@ -227,38 +227,38 @@ Flutter 通过采用观察者模式解决。
 如图代码所示，当我们直接将 Provider 与组件嵌套于同一层级时，
 这时代码中的 `Provider.of(context)` 运行时抛出
 **`ProviderNotFoundException`**。
-因为此处我们使用的 context 是 MyApp，
-而他的 element 节点实际位于 MyApp 的下方，
-所以无法正确获取到 Provider 节点。
+因为此处我们使用的 context 来自于 MyApp，
+但 Provider 的 element 节点位于 MyApp 的下方，
+所以 `Provider.of(context)` 无法获取到 Provider 节点。
 这个问题可以有两种改法，如下方代码所示：
 
 ![image-20220416230755671](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416230755671.png)
 
-#### 2. GetX 由于全局单例带来的问题
+#### 2. Get 由于全局单例带来的问题
 
-GetX 由于是全局单例存储，并且默认以 `runtimeType` 为 key，
-在一些场景比如商品详情页之间跳转。
-由于不同的页面实例对应的是同一 Class 即 `runtimeType` 相同，
-这时需要加添加 tag（例如商品 id）避免 GetX 获取到其他页面的存储对象。
-同时注意全局单例存储一定要考虑到 Presenter 的回收，不然很有可能引起内存泄漏。
-使用 GetX 要么手动在页面 `dispose` 的时候做 `delete` 操作，
-要么完全 GetX 的系列组件，例如 `GetBuilder`，
-它会在 dispose 去做释放。
+正如前面提到 Get 通过全局单例，默认以 `runtimeType` 为 key 进行对象的存储，
+部分场景可能获取到的对象不符合预期，例如商品详情页之间跳转。
+由于不同的详情页实例对应的是同一 Class，即 `runtimeType` 相同。
+如果不添加 tag 参数，在某个页面调用 `Get.find` 会获取到其它页面已经存储过的对象。
+同时 Get 中一定要注意考虑到对象的回收，不然很有可能引起内存泄漏。
+要么手动在页面 `dispose` 的时候做 `delete` 操作，
+要么完全 Get 的系列组件，例如 `GetBuilder`，
+它会在 `dispose` 中释放。
 
 ![image-20220416234303617](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416234303617.png)
 
-***
+----
 
-## 四、Getx 与 Provider 优缺点总结
+## 四、Get 与 Provider 优缺点总结
 
 以上便是对状态管理以及框架的分析，看到这里你可能还会有些疑惑，到底是否需要使用状态管理？
 
 在我看来，框架是为了解决问题而存在。所以这取决于你是否也在经历一开始提出的那些问题。
 如果有，那么你可以尝试使用状态管理解决；如果没有，则没必要过度设计，为了使用而使用。
 
-其次，如果使用状态管理，那么 Getx 和 Provider 哪个更好？
+其次，如果使用状态管理，那么 Get 和 Provider 哪个更好？
 
 这两个框架各有优缺点，我认为如果你或者你的团队刚接触 Flutter，
 使用 Provider 能帮助你们更快理解 Flutter 的核心机制。
-而如果已经对 Flutter 的原理有了解，Getx 丰富的功能，简洁的 API，
+而如果已经对 Flutter 的原理有了解，Get 丰富的功能，简洁的 API，
 则能帮助你很好的提高开发效率。

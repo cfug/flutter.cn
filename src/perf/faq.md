@@ -97,7 +97,7 @@ about evaluating and debugging Flutter's performance.
     hash in the URL with a recent commit hash from
     [GitHub engine repository commits][].
 
-[binary size dashboard]: https://storage.googleapis.com/flutter_infra_release/flutter/241c87ad800beeab545ab867354d4683d5bfb6ce/android-arm-release/sizes/index.html
+[binary size dashboard]: https://storage.flutter-io.cn/flutter_infra_release/flutter/241c87ad800beeab545ab867354d4683d5bfb6ce/android-arm-release/sizes/index.html
 [GitHub engine repository commits]: {{site.github}}/flutter/engine/commits
 
 * How can I take a screenshot of an app that is running and export it

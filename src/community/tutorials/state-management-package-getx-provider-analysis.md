@@ -3,9 +3,7 @@ Flutter 状态管理框架 Provider 和 Get 分析
 toc: true
 ---
 
-文/ Nayuta
-
-
+文/ Nayuta，CFUG 社区
 
 状态管理一直是 Flutter 开发中一个火热的话题。谈到状态管理框架，社区也有诸如有以
 [Get](https://pub.flutter-io.cn/packages/get)、[Provider](https://pub.flutter-io.cn/packages/provider)
@@ -97,7 +95,7 @@ setState(() {
 ![](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416153119414.png)
 
 一开始业务不复杂的时候，所有的代码都直接写到 widget 中，随着业务迭代，
-文件越来越大，其他开发者很难直观的明白里面的业务逻辑。
+文件越来越大，其他开发者很难直观地明白里面的业务逻辑。
 并且一些通用逻辑，例如网络请求状态的处理、分页等，在不同的页面来回粘贴。
 
 这个问题在原生上同样存在，后面也衍生了诸如 MVP 设计模式的思路去解决。
@@ -110,13 +108,13 @@ setState(() {
 一个子组件想要展示父组件中的 `name` 字段，
 可能需要层层进行传递。
 
-抑或是要在两个页面之间共享筛选数据，
+又或者是要在两个页面之间共享筛选数据，
 并没有一个很优雅的机制去解决这种跨页面的数据访问。
 
 **3) 无法轻松的控制刷新范围 (页面 setState 的变化会导致全局页面的变化)**
 
 最后一个问题也是上面提到的优点，很多场景我们只是部分状态的修改，例如按钮的颜色。
-但是整个页面的 `setState` 会使的其他不需要变化的地方也进行重建，
+但是整个页面的 `setState` 会使得其他不需要变化的地方也进行重建，
 带来不必要的开销。
 
 ## Provider、Get 状态管理框架设计分析
@@ -193,7 +191,7 @@ abstract class BuildContext {
 `visitChildElements` 遍历子节点。
 
 在一开始的例子中，我们可以通过 `context.findAncestorStateOfType`
-一层一层的向上查找到需要的 Element 对象，
+一层一层地向上查找到需要的 Element 对象，
 获取 Widget 或者 State 后即可取出需要的变量。
 
 ![](https://files.flutter-io.cn/posts/community/tutorial/images/image-20220416154300160.png)
@@ -202,7 +200,7 @@ provider 也是借助了这样的机制，完成了 View -> Presenter 的获取�
 通过 `Provider.of` 获取顶层 Provider 组件中的 Present 对象。
 显然，所有 Provider 以下的 Widget 节点，
 都可以通过自身的 context 访问到 Provider 中的 Presenter，
-很好的解决了跨组件的通信问题。
+很好地解决了跨组件的通信问题。
 
 **2) 通过依赖注入的方式解决 V → P**
 
@@ -454,4 +452,4 @@ void dispose() {
 这两个框架各有优缺点，我认为如果你或者你的团队刚接触 Flutter，
 使用 Provider 能帮助你们更快理解 Flutter 的核心机制。
 而如果已经对 Flutter 的原理有了解，Get 丰富的功能和简洁的 API，
-则能帮助你很好的提高开发效率。
+则能帮助你很好地提高开发效率。

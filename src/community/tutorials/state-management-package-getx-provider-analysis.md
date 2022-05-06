@@ -1,5 +1,5 @@
 ---
-Flutter 状态管理框架 Provider 和 Get 分析
+title: Flutter 状态管理框架 Provider 和 Get 分析
 toc: true
 ---
 

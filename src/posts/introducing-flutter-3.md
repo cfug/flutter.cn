@@ -1,6 +1,10 @@
 ---
 title: Flutter 3 正式发布
 toc: true
+keywords: Flutter版本发布, Flutter正式版
+description: Flutter 3 加入了对 macOS 和 Linux 桌面端的稳定版支持！也包括 Firebase、生产力和性能相关的更新。
+image:
+    path: https://files.flutter-io.cn/posts/flutter-cn/2022/introducing-flutter-3/flutter3_hero.png
 ---
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2022/introducing-flutter-3/flutter3_hero.png)

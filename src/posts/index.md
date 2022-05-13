@@ -54,5 +54,6 @@ title: 官方博客
 - [Flutter 2.10 更新详解]({{site.main-url}}/posts/whats-new-in-flutter-2-10)
 - [Dart 2.16 现已发布]({{site.main-url}}/posts/announcing-dart-2-16)
 - [Dependabot 开始支持 pub package 版本检测]({{site.main-url}}/posts/pub-beta-support-for-dependabot-version-updates)
+- [Flutter 3 正式发布]({{site.main-url}}/posts/introducing-flutter-3)
 
 上述内容的刊登均以获得发布许可。

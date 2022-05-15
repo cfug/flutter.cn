@@ -139,7 +139,7 @@ Edge（在 Windows 上）将作为默认浏览器用于调试。
 ### 我可以在任意 IDE 中，构建、运行并发布 web 应用吗？
 
 You can select **Chrome** or **Edge** as the target device in
-Android Studio/IntelliJ and VS Code. 
+Android Studio/IntelliJ and VS Code.
 
 你可以在 Android Studio/IntelliJ 和 VS Code 里选择使用
 **Chrome** 或者 **Edge** 浏览器。

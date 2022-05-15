@@ -2,7 +2,7 @@
 
 ## Create the app {#create-app}
 
-## 创建应用程序 {#create-app}
+## 创建应用 {#create-app}
 
   1. Invoke **View > Command Palette**.
 
@@ -20,16 +20,16 @@
 
      新建或选择新项目将存放的上层目录。
 
-  1. Enter a project name, such as `myapp`, and press **Enter**.
+  1. Enter a project name, such as `my_app`, and press **Enter**.
 
-     输入项目名称，例如 `myapp`，并点击 **Enter**。
+     输入项目名称，例如 `my_app`，并点击 **Enter**。
 
   1. Wait for project creation to complete and the `main.dart`
      file to appear.
 
      等待项目创建完成，并且 `main.dart` 文件展现在编辑器中。
 
-The above commands create a Flutter project directory called `myapp` that
+The above commands create a Flutter project directory called `my_app` that
 contains a simple demo app that uses [Material Components][].
 
 该命令会创建一个名为 `myapp`，里面包含一个简单的示例程序，
@@ -43,10 +43,11 @@ contains a simple demo app that uses [Material Components][].
 
 ## Run the app
 
- 1. Locate the VS Code status bar (the blue bar at the bottom of the
-    window):<br> ![status bar][]{:.mw-100.pt-1.pb-2}
+ 1. Locate the VS Code status bar
+   (the blue bar at the bottom of the window):<br>
 
-    定位到 VS Code 的状态栏（窗口底部的蓝色栏）：<br> ![status bar][]{:.mw-100.pt-1.pb-2}
+    定位到 VS Code 的状态栏（窗口底部的蓝色栏）：<br> 
+    ![status bar][]{:.mw-100.pt-1.pb-2}
 
  1. Select a device from the **Device Selector** area.
     For details, see [Quickly switching between Flutter devices][].
@@ -54,31 +55,36 @@ contains a simple demo app that uses [Material Components][].
     从 **Device Selector** 区域选择一个设备。
     更多信息，参考 [快速切换用于 Flutter 的设备][Quickly switching between Flutter devices]。
 
-    - If no device is available and you want to use a device simulator,
-      click **No Devices** and launch a simulator.
+    - If no device is available, and you want to use a device simulator,
+      click **No Devices** and click
+      **Start iOS Simulator** to launch a simulator.
 
       如果没有可用的设备，而同时你想使用模拟器，点击 **No Devices**
       并点击 **Start iOS Simulator** 启动一个模拟器。
 
       {{site.alert.warning}}
 
-        You may not see **Start iOS Simulator** option when you click **No Devices** in VS Code. If you are on Mac then you may have to run following command in          terminal to launch a simulator.
+        You might not see **Start iOS Simulator** option
+        when you click **No Devices** in VS Code.
+        If you're on Mac, then you might have to run following command
+        in terminal to launch a simulator.
 
-        点击 VS Code 的 **No Devices** 时你可能不会看到 **Start iOS Simulator** 的选项。
+        点击 VS Code 的 **No Devices** 时，
+        你可能不会看到 **Start iOS Simulator** 的选项。
         如果你在使用 macOS，请在终端中执行以下命令：
 
-        ```
+        ```terminal
         open -a simulator
         ```
 
-        On Windows or Linux it is not possible to launch iOS simulator.
+        On Windows or Linux, it's not possible to launch an iOS simulator.
 
         在 Windows 或 Linux 上你无法启动 iOS 模拟器。
 
       {{site.alert.end}}
 
-    - To setup a real device, follow the device-specific instructions on the
-      [Install][] page for your OS.
+    - To setup a real device, follow the device-specific instructions
+      on the [Install][] page for your OS.
 
       想要配置真机用于调试，请查看你正在使用的系统的对应
       [安装][Install] 设备指导。
@@ -87,7 +93,7 @@ contains a simple demo app that uses [Material Components][].
 
     运行 **Run > Start Debugging** 或按下 <kbd>F5</kbd>。
 
- 1. Wait for the app to launch &mdash; progress is printed
+ 1. Wait for the app to launch&mdash;progress is printed
     in the **Debug Console** view.
 
     等待应用启动&mdash;&mdash;启动进度会在 **Debug Console** 中展示。

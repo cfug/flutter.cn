@@ -622,17 +622,6 @@ find . -name "Podfile" -execdir pod install \;
 </li>
 <li markdown="1">
 
-Enable the Flutter macOS option:
-
-启用 Flutter macOS 选项：
-
-```bash
-flutter config --enable-macos-desktop
-```
-
-</li>
-<li markdown="1">
-
 Build the Flutter macOS project:
 
 构建 Flutter macOS 项目：

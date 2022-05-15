@@ -18,29 +18,6 @@ macOS, or Linux platforms, or you can create your own.
 Flutter 的桌面支持也允许插件拓展&mdash;
 你可以使用已经支持了 Windows、macOS 或 Linux 平台的插件，或者创建你自己的插件来实现功能。
 
-{{site.alert.note}}
-
-  Windows is fully supported as a development target. For more information, see
-  [Announcing Flutter for Windows][].
-
-  我们已经为使用 Flutter 开发 Windows 桌面应用程序提供了全力的支持，更多相关信息，
-  请阅读我们的文章
-  [Flutter for Windows 支持已进入稳定渠道](https://flutter.cn/posts/announcing-flutter-for-windows)。
-
-  macOS and Linux desktop app support is still beta-quality. Snapshots of their
-  support are available on the stable channel, but we recommend that you use the
-  beta channel for access to the latest features and bug fixes on those
-  platforms.
-
-macOS 和 Linux 平台的桌面端支持目前仍处于 beta 质量阶段，
-Flutter 稳定版渠道有针对这两个平台支持的一个快照版本，
-如果你要针对这两个平台开发，建议切到 beta 发布渠道，
-beta 渠道包含针对这些平台的最新功能和错误修复。
-
-{{site.alert.end}}
-
-[Announcing Flutter for Windows]: {{site.main-url}}/posts/announcing-flutter-for-windows
-
 ## Requirements
 
 ## 要求
@@ -193,58 +170,20 @@ to create a new project with desktop support.
 
 ### Set up
 
-### 配置
+### 配置步骤
 
-On Windows, desktop support is enabled on Flutter 2.10 or higher.
+On Windows, desktop support is enabled on Flutter 2.10 or higher. On macOS and Linux, 
+desktop support is enabled on Flutter 3 or higher.
 
-Windows 平台的稳定桌面端支持在 Flutter 2.10 或更高的版本中已启用。
+Flutter 2.10 以及更高版本中加入了对 Windows 操作系统的桌面端支持。
+mac OS 和 Linux 的桌面端支持需要使用 Flutter 3 及更高版本。
 
-On macOS and Linux, desktop support is disabled by default in the stable
-channel. You can manually enable it with one of these commands, depending on
-which platform you are running:
-
-macOS 和 Linux 平台的桌面端在 Flutter 稳定版发布渠道默认是被禁用的，
-但你可以手动通过下面命令来开启：
-
-
-```terminal
-$ flutter config --enable-macos-desktop
-$ flutter config --enable-linux-desktop
-```
-
-{{site.alert.note}}
-
-  You only need to execute
-  `flutter config --enable-<platform>-desktop`
-  once. You can check the status of your configuration at any time by using
-  the command `flutter config` with no arguments.
-
-  桌面端平台启用的命令 `flutter config --enable-<platform>-desktop` 只需要执行一次即可。
-  你可以在任何时候通过 `flutter config` 命令来检查所有的配置内容。
-
-{{site.alert.end}}
-
-To test that desktop support is configured, use the `flutter devices` command to
-list the available targets. In addition to any mobile or web devices, you should
-see a row for the operating system you're running on, for example (on Windows):
-
-想要确保桌面端支持 **已成功启用**，可以列出可用的设备。
-你应该会看到如下的内容
-（你将看到 Windows、macOS 或 Linux，这取决于你运行的是哪个平台）：
-
-``` terminal
-C:\> flutter devices
-1 connected device:
-
-Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.22557.1]
-```
-
-You might also run `flutter doctor` to see if there are any unresolved issues.
+You might run `flutter doctor` to see if there are any unresolved issues.
 You should see a checkmark for each successfully configured area. It should look
 something like the following on Windows, with an entry for "develop for Windows":
 
 你也可以运行 `flutter doctor` 来查看是否存在未解决的问题。
-在 Windows 上你可能会看到如下内容:
+每一个成功的配置都有一个对勾，比如在 Windows 上你可能会看到如下内容:
 
 ```terminal
 C:\> flutter doctor
@@ -340,14 +279,14 @@ and run your application to see it launch on the desktop.
 
 To create a new application that includes desktop support
 (in addition to mobile and web support), run the following commands,
-substituting `myapp` with the name of your project:
+substituting `my_app` with the name of your project:
 
 想要创建一个包含桌面支持的新应用（除了支持移动和 Web），请运行下面的命令，
 将 `myapp` 替换成你项目的名称：
 
 ```terminal
-$ flutter create myapp
-$ cd myapp
+$ flutter create my_app
+$ cd my_app
 ```
 To launch your application from the command line,
 enter one of the following commands from the top
@@ -605,7 +544,7 @@ In addition to that executable, you need the following:
   Release
   │   flutter_windows.dll
   │   msvcp140.dll
-  │   myapp.exe
+  │   my_app.exe
   │   vcruntime140.dll
   │   vcruntime140_1.dll
   │
@@ -1125,7 +1064,7 @@ Flokk [官宣文章][gskinner-flokk-blogpost]，[源代码仓库地址][gskinner
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/desktop_photo_search
 [running web app]: {{site.gallery}}
 [flutter-gallery-repo]: {{site.repo.gallery}}
-[README]: {{site.repo.gallery}}#flutter-gallery
+[README]: {{site.repo.gallery}}#readme
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

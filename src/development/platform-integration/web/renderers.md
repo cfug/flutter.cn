@@ -22,13 +22,12 @@ This renderer has a smaller download size.
 <br> 使用 HTML，CSS，Canvas 和 SVG 元素来渲染，应用的大小相对较小。
 
 **CanvasKit renderer**
-<br> Uses Skia compiled to WebAssembly and rendered using WebGL. This renderer is
-fully consistent with Flutter mobile and desktop, has faster performance, and
-is less likely to have differences across browsers, but adds about 2MB in
-download size.
+<br> This renderer is fully consistent with Flutter mobile and desktop, has
+  faster performance with higher widget density, but adds about 2MB in
+  download size.
 
 **使用 CanvasKit 渲染**
-<br> 将 Skia 编译成 WebAssembly 格式，并使用 WebGL 渲染。应用在移动和桌面端保持一致，
+<br> 应用在移动和桌面端保持一致，
 有更好的性能，以及降低不同浏览器渲染效果不一致的风险。但是应用的大小会增加大约 2MB。
   
 ## Command line options
@@ -46,11 +45,11 @@ The `--web-renderer` command line option takes one of three values, `auto`,
   
   `auto`（默认）- 自动选择渲染器。移动端浏览器选择 HTML，桌面端浏览器选择 CanvasKit。
   
-* `html` - always use the HTML renderer. 
+* `html` - always use the HTML renderer
 
   `html` - 强制使用 HTML 渲染器。
 
-* `canvaskit` - always use the CanvasKit renderer. 
+* `canvaskit` - always use the CanvasKit renderer
 
   `canvaskit` - 强制使用 CanvasKit 渲染器。
 
@@ -119,7 +118,7 @@ Choose the `html` option if you are optimizing download size over performance on
 both desktop and mobile browsers.
 
 如果您在移动端和桌面端都更关心应用大小，请选择 `html` 选项。
-  
+
 Choose the `canvaskit` option if you are prioritizing performance and
 pixel-perfect consistency on both desktop and mobile browsers.
 

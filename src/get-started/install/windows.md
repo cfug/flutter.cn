@@ -31,6 +31,10 @@ your development environment must meet these minimum requirements:
 
   **磁盘空间**：除安装 IDE 和一些工具之外还应有至少 1.64 GB 的空间。
 
+- **Settings**: Developer Mode must be enabled on Windows 10/11.
+
+  **设置**: 必须在 Windows 10/11 上启用开发者模式。
+
 - **Tools**: Flutter depends on these tools being available in your environment.
 
   **工具**：要让 Flutter 在你的开发环境中正常使用，依赖于以下的工具：

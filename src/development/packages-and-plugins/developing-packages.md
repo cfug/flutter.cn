@@ -109,11 +109,19 @@ Package 包含以下几种类别：
   was extended to implement support for web,
   see the Medium article by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
-
+  
   一个较为具体的实现例子是 [`url_launcher`][] 插件 package。
   想了解如何使用 `url_launcher` package，以及它如何扩展 Web 的实现，
   请阅读 Medium 上由 Harry Terkelsen 撰写的文章
   [如何编写 Flutter Web 插件，第一部分][How to Write a Flutter Web Plugin, Part 1]。
+
+
+**FFI Plugin packages**
+<br> A specialized Dart package that contains an API written in
+  Dart code combined with one or more platform-specific
+
+**FFI 插件**
+<br> 用 Dart 语言编写，包含针对一个或多个特定平台编写。
 
 ## Developing Dart packages {#dart}
 
@@ -792,6 +800,100 @@ Android plugins APIs][].
 [支持新的 Android 的 API][Supporting the new Android plugins APIs]
 中关于 [测试你的插件][Testing your plugin] 这个小节。
 
+## Developing FFI plugin packages {#plugin-ffi}
+
+If you want to develop a package that calls into native APIs using
+[Dart's FFI][FFI], you need to develop a FFI plugin package.
+
+### Step 1: Create the package
+
+To create a starter FFI plugin package,
+use the `--template=plugin_ffi` flag with `flutter create`:
+
+```terminal
+$ flutter create --template=plugin_ffi hello
+```
+
+This creates a FFI plugin project in the `hello`
+folder with the following specialized content:
+
+**lib**: The Dart code that defines the API of the plugin, and which
+calls into the native code using `dart:ffi`.
+
+**src**: The native source code, and a `CmakeFile.txt` file for building
+that source code into a dynamic library.
+
+**platform folders** (`android`, `ios`, `windows`, etc.): The build files
+for building and bundling the native code library with the platform application.
+
+### Step 2: Buidling and bundling native code
+
+The `pubspec.yaml` specifies FFI plugins as follows:
+
+```yaml
+  plugin:
+    platforms:
+      some_platform:
+        ffiPlugin: true
+```
+
+This configuration invokes the native build for the various target platforms
+and bundles the binaries in Flutter applications using these FFI plugins.
+
+This can be combined with `dartPluginClass`, such as when FFI is used for the
+implementation of one platform in a federated plugin:
+
+```yaml
+  plugin:
+    implements: some_other_plugin
+    platforms:
+      some_platform:
+        dartPluginClass: SomeClass
+        ffiPlugin: true
+```
+
+A plugin can have both FFI and method channels:
+
+```yaml
+  plugin:
+    platforms:
+      some_platform:
+        pluginClass: SomeName
+        ffiPlugin: true
+```
+
+The native build systems that are invoked by FFI (and method channels) plugins are:
+
+* For Android: Gradle, which invokes the Android NDK for native builds.
+  * See the documentation in `android/build.gradle`.
+* For iOS and MacOS: Xcode, via CocoaPods.
+  * See the documentation in `ios/hello.podspec`.
+  * See the documentation in `macos/hello.podspec`.
+* For Linux and Windows: CMake.
+  * See the documentation in `linux/CMakeLists.txt`.
+  * See the documentation in `windows/CMakeLists.txt`.
+
+### Step 3: Binding to native code
+
+To use the native code, bindings in Dart are needed.
+
+To avoid writing these by hand, they are generated from the header file
+(`src/hello.h`) by [`package:ffigen`][].
+Regenerate the bindings by running:
+
+```terminal
+$  flutter pub run ffigen --config ffigen.yaml
+```
+
+### Step 4: Invoking native code
+
+Very short-running native functions can be directly invoked from any isolate.
+For an example, see `sum` in `lib/hello.dart`.
+
+Longer-running functions should be invoked on a [helper isolate][] to avoid
+dropping frames in Flutter applications.
+For an example, see `sumAsync` in `lib/hello.dart`.
+
 ## Adding documentation
 
 ## 添加文档
@@ -1156,11 +1258,13 @@ PENDING
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
 [Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
+[helper isolate]: {{site.dart-site}}/guides/language/concurrency#background-workers
 [How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: {{site.repo.flutter}}/issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
+[`package:ffigen`]: {{site.pub}}/packages/ffigen
 [platform channel]: {{site.url}}/development/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing

@@ -103,9 +103,9 @@
         - title: 用户界面 (UI) 进阶
           permalink: /docs/development/ui/advanced
           children:
-            - title: 使用 Actions 和 shortcuts [新增]
+            - title: 使用 Actions 和 shortcuts
               permalink: /docs/development/ui/advanced/actions_and_shortcuts
-            - title: Keyboard focus [NEW]
+            - title: 键盘焦点
               permalink: /docs/development/ui/advanced/focus
             - title: 手势
               permalink: /docs/development/ui/advanced/gestures
@@ -155,10 +155,17 @@
           permalink: /docs/development/platform-integration/c-interop
         - title: 托管 Android 和 iOS 原生视图
           permalink: /docs/development/platform-integration/platform-views
-        - title: Web 平台常见问题
-          permalink: /docs/development/platform-integration/web
         - title: 撰写双端平台代码 (插件编写实现)
           permalink: /docs/development/platform-integration/platform-channels
+        - title: Web 平台
+          permalink: /docs/development/platform-integration/web
+          children:
+            - title: Web 平台常见问题
+              permalink: /docs/development/platform-integration/web/faq
+            - title: Web 平台渲染器
+              permalink: /docs/development/platform-integration/web/renderers
+            - title: 自定义 Web 应用初始化 [新增]
+              permalink: /docs/development/platform-integration/web/initialization
         - title: 桌面端
           permalink: /desktop
     - title: Package 与 plugin (原生插件)
@@ -166,7 +173,11 @@
       children:
         - title: 使用 Packages
           permalink: /docs/development/packages-and-plugins/using-packages
-        - title: Package 的开发和提交
+        - title: Happy paths 项目 [新增]
+          permalink: /docs/development/packages-and-plugins/happy-paths
+        - title: Happy paths 推荐 [新增]
+          permalink: /docs/development/packages-and-plugins/happy-paths/recommended
+        - title: Package 和插件的开发和提交
           permalink: /docs/development/packages-and-plugins/developing-packages
         - title: Flutter Favorites 项目
           permalink: /docs/development/packages-and-plugins/favorites
@@ -174,8 +185,8 @@
           permalink: /docs/development/packages-and-plugins/background-processes
         - title: 升级 Android 插件
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
-        - title: 插件网站
-          permalink: https://pub.dev/flutter
+        - title: Package 和插件网站
+          permalink: https://pub.flutter-io.cn/flutter
     - title: 将 Flutter 添加到现有应用
       permalink: /docs/development/add-to-app
       children:
@@ -274,8 +285,6 @@
           permalink: /docs/development/tools/flutter-fix
         - title: 代码格式化
           permalink: /docs/development/tools/formatting
-        - title: Web 渲染
-          permalink: /docs/development/tools/web-renderers
     - title: 迁移说明
       permalink: /docs/development/androidx-migration
       children:
@@ -362,42 +371,42 @@
     - title: 持续部署
       permalink: /docs/deployment/cd
 
-- title: 资源列表
+- title: 开发者资源列表
   children:
-    - title: Dart 资源列表
-      permalink: /docs/resources/bootstrap-into-dart
-    - title: Flutter 兼容性策略
-      permalink: /docs/resources/compatibility
     - title: Flutter 架构概览
       permalink: /docs/resources/architectural-overview
+    - title: 相关书籍
+      permalink: /resources/books
+    - title: 兼容性策略
+      permalink: /docs/resources/compatibility
+    - title: 为 Flutter 做出贡献
+      permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+    - title: 有效提出 Bug
+      permalink: /docs/resources/bug-reports
+    - title: Dart 资源列表
+      permalink: /docs/resources/bootstrap-into-dart
+    - title: 规划文档
+      permalink: /docs/resources/design-docs
+    - title: 常见问题解答
+      permalink: /docs/resources/faq
+    - title: 休闲游戏工具包 [新增]
+      permalink: /docs/resources/games-toolkit
+    - title: 使用 Google 字体库
+      permalink: https://pub.flutter-io.cn/packages/google_fonts
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
-    - title: Google 文字库
-      permalink: https://pub.flutter-io.cn/packages/google_fonts
+    - title: 品牌资源
+      permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
     - title: 技术视频和在线资源
       permalink: /docs/resources/videos
+    - title: 官方博文
+      permalink: /posts
     - title: 社区中文教程
       permalink: /community/tutorials
-    - title: 书籍
-      permalink: /docs/resources/books
-    - title: 文章
-      permalink: /posts
-    # - title: Flutter developer communities # TODO
-    # - title: Flutter learning resources # TODO
-    - title: 常见问题解答
-      permalink: /docs/resources/faq
-    - title: 规划文档
-      permalink: /docs/resources/design-docs
-    - title: 有效提出 Bug
-      permalink: /docs/resources/bug-reports
-    - title: 为 Flutter 作出贡献
-      permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
-    - title: 品牌资源
-      permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
 
-- title: 参考资料
+- title: 更多资料
   expanded: true
   children:
     - title: 了解 Dash

@@ -784,14 +784,14 @@ lazily, on demand.
     ```dart
       class _RandomWordsState extends State<RandomWords> {
         [!final _suggestions = <WordPair>[];!]
-        [!final _biggerFont = const TextStyle(fontSize: 18.0);!]
+        [!final _biggerFont = const TextStyle(fontSize: 18);!]
         // ···
       }
     ```
 
-    Next, you'll add a `ListView.builder` widget to the
-    `_RandomWordsState` class. This method builds the
-    `ListView` that displays the suggested word pairing.
+    Next, you'll add a `ListView` widget to the
+    `_RandomWordsState` class with the `ListView.builder` constructor. 
+    This method creates the `ListView` that displays the suggested word pairing.
 
     接下来，我们将向 `_RandomWordsState` 类添加一个 `_buildSuggestions()` 方法，
     此方法构建显示建议单词对的 `ListView`。
@@ -811,13 +811,15 @@ lazily, on demand.
     每次建议的单词对都会让其递增两次，一次是 ListTile，另一次是 Divider。
     它用于创建一个在用户滚动时候无限增长的列表。
 
- 2. Add a `ListView.builder` widget to the `build` method of the `_RandomWordsState` class:
+ 2. Return a `ListView` widget from the `build` method
+    of the `_RandomWordsState` class using the `ListView.builder` constructor:
+ 
+    使用 `ListView.builder` 构造函数，从 `_RandomWordsState`
+    类的 `build` 方法中返回一个 `ListView` widget。
 
-    向 `_RandomWordsState` 类的 `build` 方法添加 `ListView.builder`，内容如下：
-
-    <?code-excerpt "lib/main.dart (itemBuilder)" title indent-by="2"?>
+    <?code-excerpt "lib/main.dart (itemBuilder)" title replace="/ListTile([\S\s]*?)\);/Text(_suggestions[index].asPascalCase);/g" indent-by="2"?>
     ```dart
-      body: ListView.builder(
+      return ListView.builder(
         padding: const EdgeInsets.all(16.0),
         itemBuilder: /*1*/ (context, i) {
           if (i.isOdd) return const Divider(); /*2*/
@@ -826,18 +828,11 @@ lazily, on demand.
           if (index >= _suggestions.length) {
             _suggestions.addAll(generateWordPairs().take(10)); /*4*/
           }
-          return ListTile(
-            title: Text(
-              _suggestions[index].asPascalCase,
-              style: _biggerFont,
-            ),
-          );
+          return Text(_suggestions[index].asPascalCase);
         },
-      ),
     ```
 
     {:.numbered-code-notes}
-
      1. The `itemBuilder` callback is called once per suggested word pairing,
         and places each suggestion into a `ListTile` row. For even rows, the
         function adds a `ListTile` row for the word pairing. For odd rows, the
@@ -867,17 +862,20 @@ lazily, on demand.
 
         如果是建议列表中最后一个单词对，接着再生成 10 个单词对，然后添加到建议列表。
 
-    The `ListView.builder` widget creates a `ListTile` once per
-    word pair. This function displays each new pair in a `ListTile`,
+    The `ListView.builder` constructor creates and displays
+    a `Text` widget once per word pairing. 
+    In the next step, you'll instead return each new pair as a `ListTile`,
     which allows you to make the rows more attractive in the next step.
 
-    对于每一个单词对，`_buildSuggestions()` 都会调用一次 `_buildRow()`。
-    这个函数在 `ListTile` 中显示每个新词对，
-    这使你在下一步中可以生成更漂亮的显示行，详见本 codelab 的第二部分。
+    `ListView.builder` 的构造函数会为每个单词对创建并显示一个 `Text` widget，
+    下一步里，你将可以为每个单词对返回一个 `ListTile` widget，这可以让每一行的显示更漂亮。
 
- 3. Add a `ListTile` in the `itemBuilder` body of the `ListView.builder` in `_RandomWordsState`:
+ 3. Replace the returned `Text` in the `itemBuilder` body
+    of the `ListView.builder` in `_RandomWordsState`
+    with a `ListTile` displaying the suggestion:
 
-    在 `_RandomWordsState` 中的 `itemBuilder` 里添加 `ListTile` 函数 :
+    在 `_RandomWordsState` 类的 `ListView.builder` 里的
+    `itemBuilder` 属性体里，将 `Text` 替换为 `ListTile` widget：
 
     <?code-excerpt "lib/main.dart (listTile)" title indent-by="2"?>
     ```dart
@@ -888,48 +886,45 @@ lazily, on demand.
         ),
       );
     ```
+    
+    A `ListTile` is a fixed height row that contains text
+    as well as leading or trailing icons or other widgets.
 
- 4. In the `_RandomWordsState` class, update the `build()` method to use
-    the `ListView.builder`, rather than directly calling the word
-    generation library. ([`Scaffold`][]
-    implements the basic Material Design visual layout.)
-    Replace the method body with the highlighted code:
+    `ListTile` 是包含了文本以及前后位图标 widget 的一行。
+
+ 4. Once complete, the `build()` method in the `_RandomWordsState` class
+    should match the following highlighted code:
 
     更新 `_RandomWordsState` 的 `build()` 方法以使用 _buildSuggestions()，
     而不是直接调用单词生成库，代码更改后如下：
-    （使用 [`Scaffold`][] 类实现基础的 Material Design 布局）
 
     <?code-excerpt "lib/main.dart (build)" title region="RWS-build" replace="/(\n  )(return.*|  .*|\);)/$1[!$2!]/g" indent-by="2"?>
     ```dart
       @override
       Widget build(BuildContext context) {
-        [!return Scaffold(!]
-        [!  appBar: AppBar(!]
-        [!    title: const Text('Startup Name Generator'),!]
-        [!  ),!]
-        [!  body: ListView.builder(!]
-        [!    padding: const EdgeInsets.all(16.0),!]
-        [!    itemBuilder: /*1*/ (context, i) {!]
-        [!      if (i.isOdd) return const Divider(); /*2*/!]
+        [!return ListView.builder(!]
+        [!  padding: const EdgeInsets.all(16.0),!]
+        [!  itemBuilder: /*1*/ (context, i) {!]
+        [!    if (i.isOdd) return const Divider(); /*2*/!]
 
-        [!      final index = i ~/ 2; /*3*/!]
-        [!      if (index >= _suggestions.length) {!]
-        [!        _suggestions.addAll(generateWordPairs().take(10)); /*4*/!]
-        [!      }!]
-        [!      return ListTile(!]
-        [!        title: Text(!]
-        [!          _suggestions[index].asPascalCase,!]
-        [!          style: _biggerFont,!]
-        [!        ),!]
-        [!      );!]
-        [!    },!]
-        [!  ),!]
+        [!    final index = i ~/ 2; /*3*/!]
+        [!    if (index >= _suggestions.length) {!]
+        [!      _suggestions.addAll(generateWordPairs().take(10)); /*4*/!]
+        [!    }!]
+        [!    return ListTile(!]
+        [!      title: Text(!]
+        [!        _suggestions[index].asPascalCase,!]
+        [!        style: _biggerFont,!]
+        [!      ),!]
+        [!    );!]
+        [!  },!]
         [!);!]
       }
     ```
 
- 5. In the `MyApp` class, update the `build()` method by changing the title,
-    and changing the home to be a `RandomWords` widget:
+ 5. To put it all together, update the displayed title of the app
+    by updating the `build()` method in the `MyApp` class
+    and changing the title of the `AppBar`:
 
     更新 `MyApp` 的 `build()` 方法，修改 `title` 的值来改变标题，
     修改 `home` 的值为 `RandomWords` widget。
@@ -939,57 +934,49 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -13,27 +13,43 @@
-       const MyApp({Key? key}) : super(key: key);
+    @@ -14,12 +14,12 @@
 
        @override
        Widget build(BuildContext context) {
-    -    return MaterialApp(
+         return MaterialApp(
     -      title: 'Welcome to Flutter',
-    -      home: Scaffold(
-    -        appBar: AppBar(
-    -          title: const Text('Welcome to Flutter'),
-    -        ),
-    -        body: const Center(
-    -          child: RandomWords(),
-    -        ),
-    -      ),
-    +    return const MaterialApp(
     +      title: 'Startup Name Generator',
-    +      home: RandomWords(),
-         );
+           home: Scaffold(
+             appBar: AppBar(
+    -          title: const Text('Welcome to Flutter'),
+    +          title: const Text('Startup Name Generator'),
+             ),
+             body: const Center(
+               child: RandomWords(),
+             ),
+    @@ -28,12 +28,30 @@
        }
      }
 
      class _RandomWordsState extends State<RandomWords> {
     +  final _suggestions = <WordPair>[];
-    +  final _biggerFont = const TextStyle(fontSize: 18.0);
+    +  final _biggerFont = const TextStyle(fontSize: 18);
     +
        @override
        Widget build(BuildContext context) {
     -    final wordPair = WordPair.random();
     -    return Text(wordPair.asPascalCase);
-    +    return Scaffold(
-    +      appBar: AppBar(
-    +        title: const Text('Startup Name Generator'),
-    +      ),
-    +      body: ListView.builder(
-    +        padding: const EdgeInsets.all(16.0),
-    +        itemBuilder: /*1*/ (context, i) {
-    +          if (i.isOdd) return const Divider(); /*2*/
+    +    return ListView.builder(
+    +      padding: const EdgeInsets.all(16.0),
+    +      itemBuilder: /*1*/ (context, i) {
+    +        if (i.isOdd) return const Divider(); /*2*/
     +
-    +          final index = i ~/ 2; /*3*/
-    +          if (index >= _suggestions.length) {
-    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-    +          }
-    +          return ListTile(
-    +            title: Text(
-    +              _suggestions[index].asPascalCase,
-    +              style: _biggerFont,
-    +            ),
-    +          );
-    +        },
-    +      ),
+    +        final index = i ~/ 2; /*3*/
+    +        if (index >= _suggestions.length) {
+    +          _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+    +        }
+    +        return ListTile(
+    +          title: Text(
+    +            _suggestions[index].asPascalCase,
+    +            style: _biggerFont,
+    +          ),
+    +        );
+    +      },
     +    );
        }
      }

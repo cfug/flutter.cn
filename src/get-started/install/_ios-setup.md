@@ -139,6 +139,8 @@ follow these steps:
 
 ### Deploy to iOS devices
 
+### 部署到 iOS 设备
+
 To deploy your Flutter app to a physical iOS device
 you'll need to set up physical device deployment in Xcode
 and an Apple Developer account. If your app is using Flutter plugins,
@@ -166,8 +168,17 @@ $ sudo gem install cocoapods
   The default version of Ruby requires `sudo` to install the CocoaPods gem.
   If you are using a Ruby Version manager, you may need to run without `sudo`.
 
-  Ruby的默认版本需要 root 权限 `sudo` 来安装 CocoaPods gem，
+  Ruby 的默认版本需要 root 权限 `sudo` 来安装 CocoaPods gem，
   如果你使用的是 Ruby Version 管理器，可能就无需 root 权限。
+
+  Additionally, if you are installing on an [Apple Silicon Mac][],
+  run the command:
+
+  除此之外，如果你是在 Apple 芯片的 Mac 上安装，则需要运行下面的命令：
+
+  ```terminal
+  $ sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
+  ```
 
 {{site.alert.end}}
 
@@ -281,3 +292,4 @@ or clicking the Run button in Xcode.
 [Trust Mac]: {{site.url}}/assets/images/docs/setup/trust-computer.png
 [web download]: {{site.apple-dev}}/xcode/
 [Xcode account add]: {{site.url}}/assets/images/docs/setup/xcode-account.png
+[Apple Silicon Mac]: https://support.apple.com/en-us/HT211814

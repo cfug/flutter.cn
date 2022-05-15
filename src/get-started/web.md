@@ -164,14 +164,14 @@ and run your app to see it launch in Chrome.
 
 To create a new app that includes web support
 (in addition to mobile support), run the following commands,
-substituting `myapp` with the name of your project:
+substituting `my_app` with the name of your project:
 
 运行以下命令创建支持 Web 平台的应用（包括移动端），
 你可以调整 `myapp` 为你的项目名称：
 
 ```terminal
-$ flutter create myapp
-$ cd myapp
+$ flutter create my_app
+$ cd my_app
 ```
 
 To serve your app from `localhost` in Chrome,

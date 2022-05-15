@@ -119,15 +119,13 @@ Then:
 
 然后：
 
-1. Select **Product > Archive** to produce a build archive.
+1. Run `flutter build ipa --export-method development`.
 
-   选择 **Product > Archive** 生成一个构建归档。
+   运行命令 `flutter build ipa --export-method development`。
 
-1. In the sidebar of the Xcode Organizer window, select your iOS app,
-   then select the build archive you just produced.
-   
-   在 Xcode Organizer 窗口的侧栏，选择你的 iOS 应用，然后选择你刚刚生成的构建归档。
-   
+1. Run `open build/ios/archive/*.xcarchive` to open the archive in Xcode.
+   运行命令 `open build/ios/archive/*.xcarchive` 打开 Xcode 生成的归档文件。
+
 1. Click **Distribute App**.
 
    点击 **Distribute App**。
@@ -336,7 +334,7 @@ Some other things you can do to make your app smaller are:
 [How big is the Flutter engine?]: {{site.url}}/resources/faq#how-big-is-the-flutter-engine
 [instructions]: {{site.url}}/deployment/ios
 [Xcode App Size Report]: {{site.apple-dev}}/documentation/xcode/reducing_your_app_s_size#3458589
-[iOS create build archive instructions]: {{site.url}}/deployment/ios#create-a-build-archive-with-xcode
+[iOS create build archive instructions]: {{site.url}}/deployment/ios#update-the-apps-build-and-version-numbers
 [Model ID / Hardware number]: https://en.wikipedia.org/wiki/List_of_iOS_devices#Models
 [Obfuscating Dart code]: {{site.url}}/deployment/obfuscate
 [Test drive]: {{site.url}}/get-started/test-drive

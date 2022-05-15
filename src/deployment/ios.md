@@ -267,43 +267,6 @@ and update the `MinimumOSVersion` value to match.
 你需要打开 Flutter app 的 `ios/Flutter/AppframeworkInfo.plist`
 文件并修改 `MinimumOSVersion` 值与之匹配。
 
-## Updating the app's version number
-
-## 更新应用版本号
-
-The default version number of the app is `1.0.0`.
-To update it, navigate to the `pubspec.yaml` file
-and update the following line:
-
-每个应用默认的初始版本号是 `1.0.0`。若要更新它，
-请转到 `pubspec.yaml` 文件并更新以下内容：
-
-`version: 1.0.0+1`
-
-The version number is three numbers separated by dots,
-such as `1.0.0` in the example above, followed by an optional
-build number such as `1` in the example above, separated by a `+`.
-
-版本号由三个点分隔的数字组成，例如上面样例中的 `1.0.0`。然后是可选的
-构建号，例如上面样例中的 `1`，以 `+` 分隔。
-
-Both the version and the build number may be overridden in Flutter's
-build by specifying `--build-name` and `--build-number`,
-respectively.
-
-版本号与构建号都可以在 Flutter 打包时分别使用
-`--build-name` 和 `--build-number` 重新指定。
-
-In iOS, `build-name` uses `CFBundleShortVersionString`
-while `build-number` uses `CFBundleVersion`.
-Read more about iOS versioning at [Core Foundation Keys][]
-on the Apple Developer's site.
-
-在 iOS 中，当 `build-number` 用作 `CFBundleVersion` 的时候，
-`build-name` 用作 `CFBundleShortVersionString`。
-阅读关于 iOS 版本控制的更多信息请参考
-Apple 开发者网站提供的 [Core Foundation Keys][]。
-
 ## Add an app icon
 
 ## 添加应用图标
@@ -330,36 +293,63 @@ app's icons:
 
    通过执行 `flutter run` 来验证你的图标是否已经被替换。
 
-## Create a build archive with Xcode
+## Create a build archive and upload to App Store Connect
 
-## 创建一个构建归档 (build archive)
-
-This step covers creating a build archive and uploading
-your build to App Store Connect.
-
-在这一步，你将创建一个构建归档，并上传到 App Store Connect。
+## 创建一个构建归档，并上传到 App Store Connect
 
 During development, you've been building, debugging, and testing
 with _debug_ builds. When you're ready to ship your app to users
 on the App Store or TestFlight, you need to prepare a _release_ build.
-At this point, you might consider [obfuscating your Dart code][]
-to make it more difficult to reverse engineer. Obfuscating
-your code involves adding a couple flags to your build command.
 
 在开发过程中，你将会使用 **debug** 模式来完成构建、调试并测试。
 当你准备好通过 App Store 或 TestFlight 交付你的 app 给用户时，
 你需要准备一个 **release** 构建。
-这时你也许想要 [混淆你的 Dart 代码][obfuscating your Dart code]
-以加大反编译难度。混淆你的代码需要在 build 的时候添加一些标志，
-并维护其他文件以消除反编译的堆栈跟踪。
 
-In Xcode, configure the app version and build:
+### Update the app's build and version numbers
 
-在 Xcode中，配置 app 的版本，并开始构建：
+### 更新应用的构建编号和版本号
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
+The default version number of the app is `1.0.0`.
+To update it, navigate to the `pubspec.yaml` file
+and update the following line:
 
-   在 Xcode 中，打开你应用 `ios` 目录中的 `Runner.xcworkspace`
+默认应用的版本号是 `1.0.0`，如果需要更新这个版本号，
+到 `pubspec.yaml` 文件中更新下面这一行：
+
+```yaml
+version: 1.0.0+1
+```
+The version number is three numbers separated by dots,
+such as `1.0.0` in the example above, followed by an optional
+build number such as `1` in the example above, separated by a `+`.
+
+版本号是由三个数字并用半角句号 (点) 隔开的，比如上面显示的 `1.0.0`。
+后面是一个可选的构建编号，比如这个例子中使用 `+` 隔开的数字 `1`。
+
+Both the version and the build number can be overridden in
+`flutter build ipa` by specifying `--build-name` and `--build-number`,
+respectively.
+
+构建名称和构建编号都可以通过在执行命令 `flutter build ipa`
+的时候通过通过 `--build-name` 和 `--build-number` 覆盖设定。
+
+In iOS, `build-name` uses `CFBundleShortVersionString`
+while `build-number` uses `CFBundleVersion`.
+Read more about iOS versioning at [Core Foundation Keys][]
+on the Apple Developer's site.
+
+在 iOS 中，`build-name` 对应 `CFBundleShortVersionString`、
+`build-number` 对应着 `CFBundleVersion`。
+了解更多关于 iOS 中的版本信息，请在 Apple 开发者文档网站查看
+[Core Foundation Keys][] 文档。
+
+You may also override the `pubspec.yaml` build name and number in Xcode:
+
+在 Xcode 中这样设定，也可以覆盖 `pubspec.yaml` 中的构建名称和构建编号：
+
+1. Open `Runner.xcworkspace` in your app's `ios` folder.
+
+   在 `ios` 文件夹中打开 `Runner.xcworkspace`。
 
 1. Select **Runner** in the Xcode project navigator, then select the
    **Runner** target in the settings view sidebar.
@@ -379,57 +369,95 @@ In Xcode, configure the app version and build:
    在 Identity 部分，更新 **Build** 标示为一个唯一的 Build 数字，
    用来在 App Store Connect 上追踪，每一个上传都需要一个独立的 Build 数字。
 
-Finally, create a build archive and upload it to App Store Connect:
+### Create an app bundle
+
+### 创建一个应用套装 (app bundle)
+
+Run `flutter build ipa` to produce an Xcode build archive (`.xcarchive` file)
+in your project's `build/ios/archive/` directory and an App Store app
+bundle (`.ipa` file) in `build/ios/ipa`.
+
+运行命令行 `flutter build ipa` 之后会在 `build/ios/archive` 文件夹下生成一个
+Xcode 构建归档 (`.xcarchive` 文档)，在 `build/ios/ipa` 文件夹下会生成一个
+App Store 销售套装文件 (`.ipa` 文件)。
+
+Consider adding the `--obfuscate` and `--split-debug-info` flags to
+[obfuscate your Dart code][] to make it more difficult
+to reverse engineer.
+
+可以考虑添加 `--obfuscate` 和 `--split-debug-info` 命令行标记来
+[混淆你的 Dart 代码][obfuscate your Dart code]，使得你的应用更难被反向工程。
+
+If you are not distributing to the App Store, you can optionally
+choose a different [export method][app_bundle_export_method] by
+adding the option `--export-method ad-hoc`,
+`--export-method development` or `--export-method enterprise`.
+
+如果你无需在 App Store 发布应用，你可以选择另一种不同的 [导出方法][app_bundle_export_method]，
+可以通过在命令行参数中加入 `--export-method ad-hoc`、`--export-method development`
+或者 `--export-method enterprise` 来做到。
+
+{{site.alert.note}}
+
+  On versions of Flutter where `flutter build ipa --export-method` is unavailable,
+  open `build/ios/archive/MyApp.xcarchive` and follow the instructions below
+  to validate and distribute the app from Xcode.
+
+  在命令 `flutter build ipa --export-method` 无法使用的 Flutter 版本里，
+  打开 `build/ios/archive/MyApp.xcarchive` 文件并按照下面的说明来验证和发布应用。
+{{site.alert.end}}
+
+### Upload the app bundle to App Store Connect
+
+### 上传应用套装到 App Store Connect
+
+Once the app bundle is created, upload it to
+[App Store Connect][appstoreconnect_login] by either:
 
 最后，创建一个构建归档并将其上传到 App Store Connect：
 
 <ol markdown="1">
 <li markdown="1">
 
-Run `flutter build ipa` to produce a build archive.
+Install and open the [Apple Transport macOS app][apple_transport_app].
+Drag and drop the `build/ios/ipa/*.ipa` app bundle into the app.
 
-运行 `flutter build ipa` 来生成一个构建归档
-
-{{site.alert.note}}
-
-  On versions of Flutter where `flutter build ipa`
-  is unavailable, open Xcode and select **Product > Archive**.
-  In the sidebar of the Xcode Organizer window, select your iOS app,
-  then select the build archive you just produced.
-
-  在无法使用命令 `flutter build ipa` 的 Flutter 版本里，
-  打开 Xcode 并选择 **Product > Archive**，在 Xcode Organizer 窗口的侧栏，
-  选择你的 iOS 应用，然后选择你刚生成的构建文档。
-  
-{{site.alert.end}}
+安装并打开 [Transporter macOS 应用][apple_transport_app]，
+将 `build/ios/ipa/*.ipa` 下的应用套装拖入 Transporter 应用中。
 
 </li>
+
 <li markdown="1">
 
-Open `build/ios/archive/MyApp.xcarchive` in Xcode.
+Or upload the app bundle from the command line by running:
+
+也可以在命令行执行下面的命令将应用套装上传：
+```bash
+xcrun altool --upload-app --type ios -f build/ios/ipa/*.ipa --apiKey your_api_key --apiIssuer your_issuer_id
+```
+Run `man altool` for details about how to authenticate with the App Store Connect API key.
+
+运行 `man altool` 命令了解如何使用 App Store Connect API 密钥进行认证。
+
+</li>
+
+<li markdown="1">
+
+Or open `build/ios/archive/MyApp.xcarchive` in Xcode.
 
 在 Xcode 中打开 `build/ios/archive/MyApp.xcarchive`。
-
-</li>
-<li markdown="1">
 
 Click the **Validate App** button. If any issues are reported,
 address them and produce another build. You can reuse the same
 build ID until you upload an archive.
 
-点击 **Validate...** 按钮。如果报告了任何问题，记录下他们并重新开始一个新的构建。
+点击 **Validate App** 按钮。如果报告了任何问题，记录下他们并重新开始一个新的构建。
 在你上传一个归档前，可以一直使用同一个 Build ID。
 
-</li>
-<li markdown="1">
-
 After the archive has been successfully validated, click
-**Distribute App**. You can follow the status of your build in the
-Activities tab of your app's details page on
-[App Store Connect][appstoreconnect_login].
+**Distribute App**.
 
-当这个归档校验成功以后，点击 **Upload to App Store...**。你可以在
-[App Store Connect][appstoreconnect_login] 中应用详情页面的 Activities 标签页查看你的构建状态。
+当这个归档校验成功以后，点击 **Distribute App**。
 
 {{site.alert.note}}
 
@@ -452,6 +480,13 @@ Activities tab of your app's details page on
 </li>
 </ol>
 
+You can follow the status of your build in the
+Activities tab of your app's details page on
+[App Store Connect][appstoreconnect_login].
+
+你可以在 [App Store Connect][appstoreconnect_login]
+中应用详情页面的 Activities 标签页查看你的构建状态。
+
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers
 on TestFlight. At this point you can choose whether to release
@@ -464,8 +499,7 @@ on TestFlight, or go ahead and release your app to the App Store.
 For more details, see
 [Upload an app to App Store Connect][distributionguide_upload].
 
-更多信息可以查看
-[上传一个 App 到 App Store Connect (Upload an app to App Store Connect)][distributionguide_upload]
+更多信息可以查看 [上传一个 App 到 App Store Connect][distributionguide_upload]
 
 ## Create a build archive with Codemagic CLI tools
 
@@ -799,9 +833,8 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
+[obfuscate your Dart code]: {{site.url}}/deployment/obfuscate
 [TestFlight]: {{site.apple-dev}}/testflight/
-
 [appreview_cn]: https://developer.apple.com/cn/app-store/review/
 [appstore_cn]: https://developer.apple.com/cn/app-store/submissions/
 [devprogram_cn]: https://developer.apple.com/cn/programs/
@@ -810,3 +843,5 @@ detailed overview of the process of releasing an app to the App Store.
 [appstoreconnect_guide_cn]: https://developer.apple.com/cn/support/app-store-connect/
 [appstoreconnect_guide_register_cn]: https://help.apple.com/app-store-connect/?lang=zh-cn/dev2cd126805
 [testflight_cn]: https://developer.apple.com/cn/testflight/
+[app_bundle_export_method]: https://help.apple.com/xcode/mac/current/#/dev31de635e5
+[apple_transport_app]: https://apps.apple.com/us/app/transporter/id1450874784

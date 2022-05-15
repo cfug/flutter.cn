@@ -331,7 +331,7 @@ Both the version and the build number can be overridden in
 respectively.
 
 构建名称和构建编号都可以通过在执行命令 `flutter build ipa`
-的时候通过通过 `--build-name` 和 `--build-number` 覆盖设定。
+的时候通过 `--build-name` 和 `--build-number` 覆盖设定。
 
 In iOS, `build-name` uses `CFBundleShortVersionString`
 while `build-number` uses `CFBundleVersion`.

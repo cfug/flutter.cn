@@ -109,7 +109,6 @@ Package 包含以下几种类别：
   was extended to implement support for web,
   see the Medium article by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
-  
   一个较为具体的实现例子是 [`url_launcher`][] 插件 package。
   想了解如何使用 `url_launcher` package，以及它如何扩展 Web 的实现，
   请阅读 Medium 上由 Harry Terkelsen 撰写的文章
@@ -121,7 +120,7 @@ Package 包含以下几种类别：
   Dart code combined with one or more platform-specific
 
 **FFI 插件**
-<br> 用 Dart 语言编写，包含针对一个或多个特定平台编写。
+<br> 用 Dart 语言编写针对一个或多个特定平台的 API。
 
 ## Developing Dart packages {#dart}
 

@@ -33,7 +33,7 @@ plugins and packages that can take your app to the next level.
 
 正在为自己的应用准备加入更多新功能吗？
 [Happy path 项目][Happy paths project] 了解一下？
-我们为有“选择困难症”的开发者们提供了一些“精选”的的插件和 package，
+我们为有「选择困难症」的开发者们提供了一些「精选」的插件和 package，
 帮助你的应用更上一层楼。
 
 [Happy paths project]: {{site.url}}/development/packages-and-plugins/happy-paths

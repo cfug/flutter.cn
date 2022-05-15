@@ -378,24 +378,26 @@ in your project's `build/ios/archive/` directory and an App Store app
 bundle (`.ipa` file) in `build/ios/ipa`.
 
 运行命令行 `flutter build ipa` 之后会在 `build/ios/archive` 文件夹下生成一个
-Xcode 构建归档 (`.xcarchive` 文档)，在 `build/ios/ipa` 文件夹下会生成一个
-App Store 销售套装文件 (`.ipa` 文件)。
+Xcode 构建归档（`.xcarchive` 文档），在 `build/ios/ipa` 文件夹下会生成一个
+App Store 销售套装文件（`.ipa` 文件）。
 
 Consider adding the `--obfuscate` and `--split-debug-info` flags to
 [obfuscate your Dart code][] to make it more difficult
 to reverse engineer.
 
 可以考虑添加 `--obfuscate` 和 `--split-debug-info` 命令行标记来
-[混淆你的 Dart 代码][obfuscate your Dart code]，使得你的应用更难被反向工程。
+[混淆你的 Dart 代码][obfuscate your Dart code]，
+使应用更难被逆向工程解析。
 
 If you are not distributing to the App Store, you can optionally
 choose a different [export method][app_bundle_export_method] by
 adding the option `--export-method ad-hoc`,
 `--export-method development` or `--export-method enterprise`.
 
-如果你无需在 App Store 发布应用，你可以选择另一种不同的 [导出方法][app_bundle_export_method]，
-可以通过在命令行参数中加入 `--export-method ad-hoc`、`--export-method development`
-或者 `--export-method enterprise` 来做到。
+你可以使用不同的 [应用导出方法][app_bundle_export_method]
+而非只能输出用于 App Store 发布的应用，可用的命令行参数有
+`--export-method ad-hoc`、`--export-method development`
+和 `--export-method enterprise`。
 
 {{site.alert.note}}
 
@@ -405,6 +407,7 @@ adding the option `--export-method ad-hoc`,
 
   在命令 `flutter build ipa --export-method` 无法使用的 Flutter 版本里，
   打开 `build/ios/archive/MyApp.xcarchive` 文件并按照下面的说明来验证和发布应用。
+
 {{site.alert.end}}
 
 ### Upload the app bundle to App Store Connect
@@ -414,7 +417,8 @@ adding the option `--export-method ad-hoc`,
 Once the app bundle is created, upload it to
 [App Store Connect][appstoreconnect_login] by either:
 
-最后，创建一个构建归档并将其上传到 App Store Connect：
+最后，创建一个构建归档并将其上传到
+[App Store Connect]([appstoreconnect_login])：
 
 <ol markdown="1">
 <li markdown="1">
@@ -499,7 +503,7 @@ on TestFlight, or go ahead and release your app to the App Store.
 For more details, see
 [Upload an app to App Store Connect][distributionguide_upload].
 
-更多信息可以查看 [上传一个 App 到 App Store Connect][distributionguide_upload]
+更多内容可参考 [上传 App 到 App Store Connect][distributionguide_upload]。
 
 ## Create a build archive with Codemagic CLI tools
 

@@ -1110,12 +1110,11 @@ Future<List<Map<String, dynamic>>> sendReceive(SendPort port, String msg) {
   port.send(<dynamic>[msg, response.sendPort]);
   return response.first as Future<List<Map<String, dynamic>>>;
 }
-
 ```
 
 Here, `dataLoader()` is the `Isolate` that runs in
 its own separate execution thread.
-In the isolate you can perform more CPU intensive
+In the isolate, you can perform more CPU intensive
 processing (parsing a big JSON, for example),
 or perform computationally intensive math,
 such as encryption or signal processing.
@@ -1622,7 +1621,7 @@ if you want those to be localized too.
 就必须在本地提供一个或多个 delegates 的实现副本。
 
 When initialized, the `WidgetsApp` (or `MaterialApp`)
-creates a[`Localizations`][] widget for you,
+creates a [`Localizations`][] widget for you,
 with the delegates you specify.
 The current locale for the device is always accessible
 from the `Localizations` widget from the current context

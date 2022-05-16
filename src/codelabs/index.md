@@ -22,6 +22,21 @@ Flutter workshops 与 codelabs 类似，
 workshop 链接也会提供给你相关的 YouTube 视频，
 该视频会告诉你在哪里可以找到相关的 DartPad 链接。
 
+{{site.alert.secondary}}
+
+  **New workshops for Google I/O!**
+  Our GDEs have created new Flutter workshops!
+  For more information, check out
+  the [Flutter community blog][].
+
+  **Google I/O 大会更新了一批新的 Flutter workshops**
+  来自全球的 Flutter GDE 们更新了一批新的 Flutter workshops，
+  更多信息，请参 [考这篇博文][Flutter community blog]。
+
+{{site.alert.end}}
+
+[Flutter community blog]: {{site.medium}}/@flutter_community/622b52f70173
+
 ## Good for beginners
 
 ## 适用于初级开发者
@@ -178,15 +193,22 @@ like layout and animations:
   visual effects for the widgets in your UI.
 
   [渐变动画][Implicit animations]<br>
-  使用 DartPad 学习如果创建渐变动画。
-  
+  使用 DartPad 学习如何创建渐变动画，并为你的界面加入动画效果。
+
 * [Building Beautiful Transitions with Material Motion for Flutter][]<br>
   Learn how to use the Material [animations][] package to
   add pre-built transitions to a Material app called Reply.
 
   [使用 Material Motion 为 Flutter 构建精美的过渡动画][Building Beautiful Transitions with Material Motion for Flutter-cn]<br>
-  了解如何使用 Material [animations] [] package 为名叫
+  了解如何使用 Material [animations] [] package 为名为
   Reply 的 Material 应用添加预构建的过渡。
+
+* [Take your Flutter app from boring to beautiful][] **NEW**<br>
+  Learn how to use some of the features in Material 3
+  to make your app more beautiful *and* more responsive.
+
+  [让你的 Flutter 应用从平淡到出彩][Take your Flutter app from boring to beautiful] **新增内容**<br>
+  学习如何使用 Material 3 的一些特性让你的应用更出彩并加强其响应式特性。
 
 * [MDC-101 Flutter: Material Components (MDC) Basics][]<br>
   Learn the basics of using Material Components by building
@@ -237,6 +259,11 @@ like layout and animations:
   platform that it is running on, be that Android, iOS, 
   the web, Windows, macOS, or Linux.
 
+  [使用 Flutter 构建自适应应用][Adaptive Apps in Flutter]<br>
+  了解如何使用 Flutter 构建一个可以运行在
+  Android、iOS、Web、Windows、macOS 和 Linux
+  上的自适应应用。
+
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
 [Basic Flutter layout concepts]: {{site.url}}/codelabs/layout-basics
@@ -248,6 +275,7 @@ like layout and animations:
 [MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
 [MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
 [MDC-104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
+[Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
 
 [Building Beautiful Transitions with Material Motion for Flutter-cn]: {{site.codelabs}}/codelabs/material-motion-flutter-cn
 [MDC-101 Flutter: Material Components (MDC) Basics-cn]: {{site.codelabs}}/codelabs/mdc-101-flutter-cn

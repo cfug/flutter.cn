@@ -33,7 +33,7 @@ jobs:
             channel: stable
             experimental: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: Move docs
         run: make move-docs
       - name: Test
@@ -50,7 +50,7 @@ jobs:
       && github.ref == 'refs/heads/master'
       && github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
         with:
           submodules: "recursive"
       - name: Install Node

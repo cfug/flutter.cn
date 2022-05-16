@@ -1284,7 +1284,7 @@ Flutter 内置了 `Scrollbar` widget，会根据当前所在的平台自适应�
 <?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
 ```dart
 return Scrollbar(
-  isAlwaysShown: DeviceType.isDesktop,
+  thumbVisibility: DeviceType.isDesktop,
   controller: _scrollController,
   child: GridView.count(
       controller: _scrollController,

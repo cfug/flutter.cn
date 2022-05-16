@@ -21,7 +21,7 @@ significant improvement.
 那么你可以通过 Skia 的着色器语言进行着色器预热，
 带来颇见成效的改善。
 
-![Side-by-side screenshots of janky mobile app next to non-janky app]({{site.url}}/assets/images/docs/perf/shader-jank.gif)
+![Side-by-side screenshots of janky mobile app next to non-janky app]({{site.url}}/assets/images/docs/perf/render/shader-jank.gif)
 
 ## What is shader compilation jank?
 
@@ -62,7 +62,7 @@ the following screenshot for an example timeline tracing.
 `GrGLProgramBuilder::finalize`。
 下面的截图展示了一个 timeline 追踪的样例。
 
-![A tracing screenshot verifying jank]({{site.url}}/assets/images/docs/perf/tracing.png){:width="100%"}
+![A tracing screenshot verifying jank]({{site.url}}/assets/images/docs/perf/render/tracing.png){:width="100%"}
 
 ## What do we mean by "first run"?
 

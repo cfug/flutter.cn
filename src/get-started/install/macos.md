@@ -40,14 +40,15 @@ your development environment must meet these minimum requirements:
 
 {{site.alert.important}}
 
-  If you're installing on a Mac with the latest [Apple M1 processor][],
-  you may find [these supplementary notes][] useful reading as we complete support
-  for the new Apple Silicon architecture.
+  If you're installing on an [Apple Silicon Mac][], you must also have the Rosetta
+  translation environment available, which you can install manually by running:
 
-  如果您要在装有最新 [Apple M1 处理器][Apple M1 processor] 的 Mac 上安装，
-  [这些补充说明][these supplementary notes] 可能对您很有用，
-  我们已经开始支持新的 Apple Silicon 架构。
+  如果你要在 [Apple 芯片的 Mac 电脑][]，你还需要安装 Rosetta 2 环境，
+  你可以通过手动运行下面的命令来安装：
 
+  ```terminal
+  $ sudo softwareupdate --install-rosetta --agree-to-license
+  ```
 {{site.alert.end}}
 
 {% include_relative _get-sdk-mac.md %}
@@ -81,7 +82,8 @@ Set up your preferred editor.
 
 编辑器设置。
 
-[Apple M1 processor]: https://www.apple.com/mac/m1
+[Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
+[Apple 芯片的 Mac 电脑]: https://support.apple.com/zh-cn/HT211814
 [these supplementary notes]: {{site.repo.flutter}}/wiki/Developing-with-Flutter-on-Apple-Silicon
 [Xcode]: {{site.apple-dev}}/xcode/
 [install `git` separately]: https://git-scm.com/download/mac

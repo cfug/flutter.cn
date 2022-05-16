@@ -114,6 +114,7 @@ Flutter supports the following font formats:
 
 Flutter 支持以下的字体格式：
 
+* `.ttc`
 * `.ttf`
 * `.otf`
 

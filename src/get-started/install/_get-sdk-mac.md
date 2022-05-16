@@ -7,12 +7,24 @@
 
     下载以下安装包来获取最新的 {{site.sdk.channel}} Flutter SDK：
 
-    [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
+    |Intel | | <span class="apple-silicon">Apple 芯片</span> |
+    |------| | ---------------|
+    |[(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary} | | [(loading...)](#){:.download-latest-link-{{os}}-arm64.apple-silicon.btn.btn-primary} |
 
+    <br>
     For other release channels, and older builds,
     see the [SDK releases][] page.
 
     想要获取到其他版本的安装包，请参阅 [SDK 版本列表][SDK releases] 页面。
+
+    <div class="apple-silicon">
+    {{site.alert.tip}}
+
+      To determine whether your Mac uses an Apple silicon processor, refer to [Mac computers with Apple silicon]{:target="_blank"} on apple.com
+
+      若要确定你的 Mac 是否是使用了 Apple 芯片处理器，请查阅苹果官网的说明页面: [搭载 Apple 芯片的 Mac 电脑][]。
+
+    {{site.alert.end}}</div>
 
  1. Extract the file in the desired location, for example:
 
@@ -156,3 +168,5 @@ For additional download options, see `flutter help precache`.
 [snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
 [Upgrading Flutter]: {{site.url}}/development/tools/sdk/upgrading
+[Mac computers with Apple silicon]: https://support.apple.com/en-us/HT211814
+[搭载 Apple 芯片的 Mac 电脑]: https://support.apple.com/zh-cn/HT211814

@@ -7,7 +7,7 @@ image:
     path: https://devrel.andfun.cn/devrel/posts/2022/05/3o1bOf.png
 ---
 
-字节跳动旗下运营着一系列成功的用户产品、企业应用以及服务，覆盖信息、教育、娱乐等不同领域。随着产品阵容的不断发展，传统的原生双平台开发已经难以满足团队更高效、更灵活、更精美，以及更多样的产品研发需求。Google 首次发布 Flutter 的时候，团队就果断决定用手上的 iOS 和 Android 应用来测试其跨平台开发能力，而 Flutter 也用不逊于原生框架的性能表现和极高的生产力迅速征服了团队成员们的心。[点击这里](https://www.bilibili.com/video/BV1xB4y197Tc/) 查看开发者故事视频。
+字节跳动旗下运营着一系列成功的用户产品、企业应用以及服务，覆盖信息、教育、娱乐等不同领域。随着产品阵容的不断发展，传统的原生双平台开发已经难以满足团队更高效、更灵活、更精美，以及更多样的产品研发需求。Google 首次发布 Flutter 的时候，团队就果断决定用手上的 iOS 和 Android 应用来测试其跨平台开发能力，而 Flutter 也用不逊于原生框架的性能表现和极高的生产力迅速征服了团队成员们的心。
 
 <iframe src="//player.bilibili.com/player.html?aid=596724784&bvid=BV1xB4y197Tc&cid=722160670&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="690" height="480"> </iframe>
 

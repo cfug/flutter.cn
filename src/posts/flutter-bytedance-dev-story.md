@@ -12,12 +12,8 @@ image:
 <iframe src="//player.bilibili.com/player.html?aid=596724784&bvid=BV1xB4y197Tc&cid=722160670&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="690" height="480"> </iframe>
 
 
-> *Flutter 拥有令人难以置信的超高效率，与原生双端开发相比，Flutter 为我们的团队节省了大约 1/3 的开发时间。*
->
->
->
->
->
+> Flutter 拥有令人难以置信的超高效率，与原生双端开发相比，Flutter 为我们的团队节省了大约 1/3 的开发时间。
+> 
 > —— 董岩, 字节跳动 Flutter Infra 团队负责人
 
 ## **多平台出击，拥抱更多机遇**
@@ -62,11 +58,7 @@ Flutter 对应用屏幕渲染的精确控制能力，让团队得以放开手脚
 
 ## **多平台开发战略核心**
 
-> *Flutter 是我们公司当下的多平台开发战略核心。我们从最初的几个应用开始，逐渐发展到现在的 90 多个应用，面向包括移动端、web 端、桌面端，以及嵌入式设备等多个平台。我们致力于推动 Flutter 在字节跳动的深度应用，并对核心框架作出贡献。*
->
->
->
->
+> Flutter 是我们公司当下的多平台开发战略核心。我们从最初的几个应用开始，逐渐发展到现在的 90 多个应用，面向包括移动端、web 端、桌面端，以及嵌入式设备等多个平台。我们致力于推动 Flutter 在字节跳动的深度应用，并对核心框架作出贡献。
 >
 > —— 王莹，字节跳动 Flutter Infra 引擎技术负责人
 

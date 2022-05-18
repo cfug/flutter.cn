@@ -56,5 +56,6 @@ title: 官方博客
 - [Dependabot 开始支持 pub package 版本检测]({{site.main-url}}/posts/pub-beta-support-for-dependabot-version-updates)
 - [Flutter 3 正式发布]({{site.main-url}}/posts/introducing-flutter-3)
 - [Dart 2.17 正式发布]({{site.main-url}}/posts/dart-2-17)
+- [字节跳动的多平台绽放秘诀：Flutter 开发者故事]({{site.main-url}}/posts/flutter-bytedance-dev-story)
 
 上述内容的刊登均以获得发布许可。

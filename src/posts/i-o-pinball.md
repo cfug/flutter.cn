@@ -24,7 +24,7 @@ image:
 通常来说应用屏幕在没有用户交互事件的时候都会保持视觉静止状态。游戏中则是相反的—— UI 会持续的渲染，而且游戏状态会不断变化。Flame 提供了一个 game widget，它内部管理了一个游戏循环，所以能恒定且高效地进行渲染。`Game` 类包含了游戏组件以及其逻辑的实现，然后被交给 widget 树中的 `GameWidget`。在 I/O 弹珠游戏中，游戏循环反映了弹珠在游戏场的位置以及状态，然后如果球与物体碰撞或跌出比赛则需要给出必要的反馈。
 
 
-```Dart
+```dart
 @override
 void update(double dt) {
   super.update(dt);
@@ -43,7 +43,7 @@ void update(double dt) {
 
 弹珠、弹射活塞、挡板以及 Chrome 小恐龙等等这些元素都是可活动的，这意味着它应该遵循真实世界的物理规则。而且弹珠也需要根据它在板子上的位置改变其大小。当弹珠滚到顶部时，它应该越来越小，以让它看着离用户更远。此外，重力还会让弹珠调整角度，让它能在斜坡上更快地落下。
 
-```Dart
+```dart
 /// Scales the ball's body and sprite according to its position on the board.
 class BallScalingBehavior extends Component with ParentIsA<Ball> {
   @override
@@ -70,7 +70,7 @@ final ballSprite = parent.descendants().whereType<SpriteComponent>();
 
 I/O 弹珠游戏很大程度依赖了 Flame 团队维护的 [forge2d](https://pub.flutter-io.cn/packages/forge2d "Flame 团队维护的 package: forge2d") package。这个 package 将开源的 [Box2D 物理引擎](https://box2d.org/ "Box2D 物理引擎官网") 移植到 Dart 中，以便可以轻松集成到 Flutter。我们使用 `forge2d` 增强游戏中的物理特性，例如物体（夹板）在游戏场上的之间的碰撞检测。使用 `forge2D` 能够我们监听夹板发生碰撞的时机。我们就可以在这里向夹板添加交互的回调，当两个物体发生碰撞的时候我们就能收到通知。例如，弹珠（它是圆形的）与弹簧（它是椭圆形的）接触时，我们就会增加它的得分。在这些回调中，我们可以清楚的设置接触开始和结束的位置，以便当两个物体相互接触时，会发生碰撞。
 
-```Dart
+```dart
 @override
 Body createBody() {
   final shape = CircleShape()..radius = size.x / 2;
@@ -92,7 +92,7 @@ Body createBody() {
 
 △ Sprite sheet 示例
 
-```Dart
+```dart
 final spriteSheet = gameRef.images.fromCache(
   Assets.images.android.spaceship.animatronic.keyName,
 );
@@ -122,7 +122,7 @@ I/O 弹球排行榜实时地显示世界各地玩家的最高分数，玩家还�
 
 ![](https://devrel.andfun.cn/devrel/posts/2022/05/PTfsgf.png)
 
-```Dart
+```dart
 /// Acquires top 10 [LeaderboardEntryData]s.
 Future<List<LeaderboardEntryData>> fetchTop10Leaderboard() async {
   try {
@@ -153,7 +153,7 @@ I/O 弹球游戏也适配了移动和桌面浏览器。在移动浏览器上，�
 
 ![](https://devrel.andfun.cn/devrel/posts/2022/05/BPnkOM.png)
 
-```Dart
+```dart
 /// {@template character_theme}
 /// Base class for creating character themes.
 ///
@@ -190,7 +190,7 @@ abstract class CharacterTheme extends Equatable {
 I/O 弹球的游戏状态是用 [flam_bloc](https://pub.dev/packages/flame_bloc "Flutter package: flam_bloc 页面") 这个 package 处理的，这是一个组合了 bloc 和 Flame 组件的 package。例如，我们使用 `flame_bloc` 来记录剩余的游戏回合数、游戏中获得的奖励以及当前的游戏分数。另外，在 wdget 树顶层有一个 widget，它包含加载页面的逻辑以及玩游戏的说明。我们还遵循 [行为型模式](http://baike.baidu.com/l/i4znnfCN "百度百科: 设计模式行为型模式") 来封装和隔离基于组件的游戏功能元素。例如，保险杠在被球击中时会发出声音，所以我们实现了 `BumperNoiseBehavior` 类来处理这个问题。
 
 
-```Dart
+```dart
 class BumperNoiseBehavior extends ContactBehavior {
   @override
   void beginContact(Object other, Contact contact) {

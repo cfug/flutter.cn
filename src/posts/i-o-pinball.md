@@ -37,7 +37,7 @@ void update(double dt) {
 
 ## 使用 2D 组件渲染 3D 空间
 
-在做 I/O 弹珠游戏的时候，其中遇到的一个挑战即是如何使用 2D 元素渲染一个 3D 的交互体验。组件需要知道在屏幕上渲染的前后顺序。例如，当小球发射到斜坡上时，他的顺序会向前，这样就会让它看起来出现在斜坡的顶部。
+在做 I/O 弹珠游戏的时候，其中遇到的一个挑战即是如何使用 2D 元素渲染一个 3D 的交互体验。组件需要知道在屏幕上渲染的前后顺序。例如，当小球发射到斜坡上时，它的顺序会向前，这样就会让它看起来出现在斜坡的顶部。
 
 ![](https://devrel.andfun.cn/devrel/posts/2022/05/Ko46wg.jpg)
 
@@ -68,7 +68,7 @@ final ballSprite = parent.descendants().whereType<SpriteComponent>();
 
 ## Forge 2D 的物理引擎
 
-I/O 弹珠游戏很大程度依赖了 Flame 团队维护的 [forge2d](https://pub.flutter-io.cn/packages/forge2d "Flame 团队维护的 package: forge2d") package。这个 package 将开源的 [Box2D 物理引擎](https://box2d.org/ "Box2D 物理引擎官网") 移植到 Dart 中，以便可以轻松集成到 Flutter。我们使用 `forge2d` 增强游戏中的物理特性，例如物体（夹板）在游戏场上的之间的碰撞检测。使用 `forge2D` 能够我们监听夹板发生碰撞的时机。我们就可以在这里向夹板添加交互的回调，当两个物体发生碰撞的时候我们就能收到通知。例如，弹珠（它是圆形的）与弹簧（它是椭圆形的）接触时，我们就会增加它的得分。在这些回调中，我们可以清楚的设置接触开始和结束的位置，以便当两个物体相互接触时，会发生碰撞。
+I/O 弹珠游戏很大程度依赖了 Flame 团队维护的 [forge2d](https://pub.flutter-io.cn/packages/forge2d "Flame 团队维护的 package: forge2d") package。这个 package 将开源的 [Box2D 物理引擎](https://box2d.org/ "Box2D 物理引擎官网") 移植到 Dart 中，以便可以轻松集成到 Flutter。我们使用 `forge2d` 增强游戏中的物理特性，例如物体（夹板）在游戏场上的之间的碰撞检测。使用 `forge2D` 能够我们监听夹板发生碰撞的时机。我们就可以在这里向夹板添加交互的回调，当两个物体发生碰撞的时候我们就能收到通知。例如，弹珠（它是圆形的）与弹簧（它是椭圆形的）接触时，我们就会增加它的得分。在这些回调中，我们可以清楚地设置接触开始和结束的位置，以便当两个物体相互接触时，会发生碰撞。
 
 ```dart
 @override

@@ -187,7 +187,7 @@ abstract class CharacterTheme extends Equatable {
 }
 ```
 
-I/O 弹球的游戏状态是用 [flam_bloc](https://pub.dev/packages/flame_bloc "Flutter package: flam_bloc 页面") 这个 package 处理的，这是一个组合了 bloc 和 Flame 组件的 package。例如，我们使用 `flame_bloc` 来记录剩余的游戏回合数、游戏中获得的奖励以及当前的游戏分数。另外，在 wdget 树顶层有一个 widget，它包含加载页面的逻辑以及玩游戏的说明。我们还遵循 [行为型模式](http://baike.baidu.com/l/i4znnfCN "百度百科: 设计模式行为型模式") 来封装和隔离基于组件的游戏功能元素。例如，保险杠在被球击中时会发出声音，所以我们实现了 `BumperNoiseBehavior` 类来处理这个问题。
+I/O 弹球的游戏状态是用 [flam_bloc](https://pub.flutter-io.cn/packages/flame_bloc "Flutter package: flam_bloc 页面") 这个 package 处理的，这是一个组合了 bloc 和 Flame 组件的 package。例如，我们使用 `flame_bloc` 来记录剩余的游戏回合数、游戏中获得的奖励以及当前的游戏分数。另外，在 wdget 树顶层有一个 widget，它包含加载页面的逻辑以及玩游戏的说明。我们还遵循 [行为型模式](http://baike.baidu.com/l/i4znnfCN "百度百科: 设计模式行为型模式") 来封装和隔离基于组件的游戏功能元素。例如，保险杠在被球击中时会发出声音，所以我们实现了 `BumperNoiseBehavior` 类来处理这个问题。
 
 
 ```dart
@@ -200,7 +200,7 @@ class BumperNoiseBehavior extends ContactBehavior {
 }
 ```
 
-代码库还包含全面的单元测试、组件测试和黄金测试。测试游戏会带来一些挑战，因为一个组件可能具有多个职责，使得它们很难单独地进行测试。最终我们定义了更好的隔离和测试组件的模式，并将其改进整合到 [flame_test](https://pub.dev/packages/flame_test "Flutter package: flame_test 页面") 这个 package 中。
+代码库还包含全面的单元测试、组件测试和黄金测试。测试游戏会带来一些挑战，因为一个组件可能具有多个职责，使得它们很难单独地进行测试。最终我们定义了更好的隔离和测试组件的模式，并将其改进整合到 [flame_test](https://pub.flutter-io.cn/packages/flame_test "Flutter package: flame_test 页面") 这个 package 中。
 
 ## 组件沙盒
 

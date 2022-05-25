@@ -59,5 +59,6 @@ title: 官方博客
 - [字节跳动的多平台绽放秘诀：Flutter 开发者故事]({{site.main-url}}/posts/flutter-bytedance-dev-story)
 - [Flutter 休闲游戏工具包发布]({{site.main-url}}/posts/announcing-the-flutter-casual-games-toolkit)
 - [使用 Flutter 与 Firebase 制作 I/O 弹珠游戏]({{site.main-url}}/posts/i-o-pinball)
+- [Flutter 3 更新详解]({{site.main-url}}/posts/whats-new-in-flutter-3)
 
 上述内容的刊登均以获得发布许可。

@@ -60,6 +60,5 @@ title: 官方博客
 - [Flutter 休闲游戏工具包发布]({{site.main-url}}/posts/announcing-the-flutter-casual-games-toolkit)
 - [使用 Flutter 与 Firebase 制作 I/O 弹珠游戏]({{site.main-url}}/posts/i-o-pinball)
 - [Flutter 3 更新详解]({{site.main-url}}/posts/whats-new-in-flutter-3)
-- [报名开启｜和你约定在 "Google 应用出海指南针"]({{site.main-url}}/posts/google-2022-soas-5)
 
 上述内容的刊登均以获得发布许可。

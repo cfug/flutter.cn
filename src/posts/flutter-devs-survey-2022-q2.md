@@ -4,7 +4,7 @@ toc: true
 keywords: 开发者调查
 description: 
 image:
-    path: https://devrel.andfun.cn/devrel/posts/2022/05/OUrZlq.png
+    path: https://devrel.andfun.cn/devrel/posts/2022/05/3b9459874d504.png
 ---
 
 2022 Google I/O 大会正式落下帷幕，Flutter 作为 14 个开发者产品和平台中的一款，
@@ -16,19 +16,19 @@ image:
 ![](https://devrel.andfun.cn/devrel/posts/2022/05/d2feb49b99930.png)
 
 [Flutter 3](https://flutter.cn/posts/introducing-flutter-3)
-和 [Dart 2.17](https://flutter.cn/posts/dart-2-17)
-的发布，让 Flutter 从移动端和 Web 端，正式来到了 **对桌面端的稳定支持**；
-Flutter 今年也延续了去年的“传统”，发布了一个结合了
-**Flutter 和 Firebase** 的 Web 应用
-「[I/O 弹球游戏](https://flutter.cn/posts/i-o-pinball)」，
-我们也看到社区的成员们玩儿的不亦乐乎，
+和 [Dart 2.17](https://flutter.cn/posts/dart-2-17) 的发布，
+让 Flutter 从移动端和 Web 端，正式来到了 **对桌面端的稳定支持**；
+Flutter 今年也延续了去年 I/O 的「传统」，
+发布了一个结合了 **Flutter 和 Firebase** 的 Web 应用
+[I/O 弹球游戏](https://flutter.cn/posts/i-o-pinball)」，
+我们也看到社区的成员们玩儿的不亦乐乎。
 伴随着和 Firebase 团队的深入合作，
 现在 **Flutter 已经正式成为 Firebase 官方支持的平台之一** 了。
-与此同时，除了可以应用开发上让开发者得心应手之外，
-Flutter 还拓展和探索了 **新的使用场景「休闲小游戏」**，
-这一类「游戏」有点类似「应用」，比如棋牌、消消乐等，从技术角度说，
-这类游戏拥有「应用」一样的设计和逻辑，并不像大型游戏应用一样需要投入大量资源，
-因此，这类**「休闲小游戏」非常值得应用开发者们尝试**。
+与此同时，除了在应用开发上能够让开发者得心应手之外，
+Flutter 还拓展和探索了 **新的使用场景——「休闲小游戏」**，
+这一类「游戏」有点类似「应用」，比如棋牌、消消乐等。
+从技术角度说，这类游戏拥有「应用」一样的设计和逻辑，并不像大型游戏应用一样需要投入大量资源，
+因此，**「休闲小游戏」非常值得应用开发者们尝试**。
 为此，Flutter 团队发布了
 [Flutter 休闲游戏工具包 (Casual Game Toolkit)](https://flutter.cn/posts/announcing-the-flutter-casual-games-toolkit)，
 帮助开发者拓展更多新的业务和方向。
@@ -54,6 +54,8 @@ Flutter 作为一个 **完全以开源的方式运作的产品**，
 的研究员持续跟进 Flutter 产品动态和反馈并完成，
 这是一个非常重要并非常高效的提交 Flutter 使用反馈的途径，
 **你的参与或转发都可以让产品变得更好**！
+
+![](https://devrel.andfun.cn/devrel/posts/2022/05/642e4e9acad35.png)
 
 同时，我们再次邀请开发者们参加
 [字节跳动 UME 插件开发竞赛](https://mp.weixin.qq.com/s/BwImT3xUKCCmxSPP4q40NA)（5 月 30 日截止作品提交），

@@ -316,7 +316,7 @@ widgets 的一个 column 列对象。
 <?code-excerpt "lib/main.dart (_buildButtonColumn)" title?>
 ```dart
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

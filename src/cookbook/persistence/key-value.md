@@ -97,7 +97,7 @@ Setter 方法做两件事：
 final prefs = await SharedPreferences.getInstance();
 
 // set value
-prefs.setInt('counter', counter);
+await prefs.setInt('counter', counter);
 ```
 
 ## 3. Read data
@@ -132,7 +132,7 @@ To delete data, use the `remove()` method.
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
-prefs.remove('counter');
+await prefs.remove('counter');
 ```
 
 ## Supported types
@@ -183,7 +183,7 @@ your test files:
 <?code-excerpt "lib/partial_excerpts.dart (Testing)"?>
 ```dart
 const MethodChannel('plugins.flutter.io/shared_preferences')
-    .setMockMethodCallHandler((MethodCall methodCall) async {
+    .setMockMethodCallHandler((methodCall) async {
   if (methodCall.method == 'getAll') {
     return <String, dynamic>{}; // set initial values here if desired
   }
@@ -203,7 +203,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of the application.
   @override
@@ -216,7 +216,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -234,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Loading counter value on start
-  void _loadCounter() async {
+  Future<void> _loadCounter() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0);
@@ -242,7 +242,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Incrementing counter after click
-  void _incrementCounter() async {
+  Future<void> _incrementCounter() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0) + 1;

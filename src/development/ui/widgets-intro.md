@@ -169,7 +169,7 @@ Below are some simple widgets that combine these and other widgets:
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  const MyAppBar({required this.title, Key? key}) : super(key: key);
+  const MyAppBar({required this.title, super.key});
 
   // Fields in a Widget subclass are always marked "final".
 
@@ -207,7 +207,7 @@ class MyAppBar extends StatelessWidget {
 }
 
 class MyScaffold extends StatelessWidget {
-  const MyScaffold({Key? key}) : super(key: key);
+  const MyScaffold({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -345,7 +345,7 @@ void main() {
 }
 
 class TutorialHome extends StatelessWidget {
-  const TutorialHome({Key? key}) : super(key: key);
+  const TutorialHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -442,7 +442,7 @@ input gestures. See how that works by creating a simple button:
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  const MyButton({Key? key}) : super(key: key);
+  const MyButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -548,7 +548,7 @@ class Counter extends StatefulWidget {
   // State. Fields in a Widget subclass are always marked
   // "final".
 
-  const Counter({Key? key}) : super(key: key);
+  const Counter({super.key});
 
   @override
   _CounterState createState() => _CounterState();
@@ -648,7 +648,7 @@ this works in practice:
 import 'package:flutter/material.dart';
 
 class CounterDisplay extends StatelessWidget {
-  const CounterDisplay({required this.count, Key? key}) : super(key: key);
+  const CounterDisplay({required this.count, super.key});
 
   final int count;
 
@@ -659,8 +659,7 @@ class CounterDisplay extends StatelessWidget {
 }
 
 class CounterIncrementor extends StatelessWidget {
-  const CounterIncrementor({required this.onPressed, Key? key})
-      : super(key: key);
+  const CounterIncrementor({required this.onPressed, super.key});
 
   final VoidCallback onPressed;
 
@@ -674,7 +673,7 @@ class CounterIncrementor extends StatelessWidget {
 }
 
 class Counter extends StatefulWidget {
-  const Counter({Key? key}) : super(key: key);
+  const Counter({super.key});
 
   @override
   _CounterState createState() => _CounterState();
@@ -941,7 +940,7 @@ class ShoppingListItem extends StatelessWidget {
 }
 
 class ShoppingList extends StatefulWidget {
-  const ShoppingList({required this.products, Key? key}) : super(key: key);
+  const ShoppingList({required this.products, super.key});
 
   final List<Product> products;
 
@@ -982,7 +981,7 @@ class _ShoppingListState extends State<ShoppingList> {
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
-        children: widget.products.map((Product product) {
+        children: widget.products.map((product) {
           return ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),

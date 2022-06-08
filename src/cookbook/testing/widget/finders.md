@@ -84,7 +84,7 @@ This is exactly what the `find.text()` method is for. It creates a
 
 <?code-excerpt "test/tests.dart (test1)"?>
 ```dart
-testWidgets('finds a Text widget', (WidgetTester tester) async {
+testWidgets('finds a Text widget', (tester) async {
   // Build an App with a Text widget that displays the letter 'H'.
   await tester.pumpWidget(const MaterialApp(
     home: Scaffold(
@@ -121,7 +121,7 @@ the widget in the test environment.
 
 <?code-excerpt "test/tests.dart (test2)"?>
 ```dart
-testWidgets('finds a widget using a Key', (WidgetTester tester) async {
+testWidgets('finds a widget using a Key', (tester) async {
   // Define the test key.
   const testKey = Key('K');
 
@@ -146,7 +146,7 @@ property and you want to ensure you're rendering the `child` widget.
 
 <?code-excerpt "test/tests.dart (test3)"?>
 ```dart
-testWidgets('finds a specific instance', (WidgetTester tester) async {
+testWidgets('finds a specific instance', (tester) async {
   const childWidget = Padding(padding: EdgeInsets.zero);
 
   // Provide the childWidget to the Container.
@@ -187,7 +187,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('finds a Text widget', (WidgetTester tester) async {
+  testWidgets('finds a Text widget', (tester) async {
     // Build an App with a Text widget that displays the letter 'H'.
     await tester.pumpWidget(const MaterialApp(
       home: Scaffold(
@@ -199,7 +199,7 @@ void main() {
     expect(find.text('H'), findsOneWidget);
   });
 
-  testWidgets('finds a widget using a Key', (WidgetTester tester) async {
+  testWidgets('finds a widget using a Key', (tester) async {
     // Define the test key.
     const testKey = Key('K');
 
@@ -210,7 +210,7 @@ void main() {
     expect(find.byKey(testKey), findsOneWidget);
   });
 
-  testWidgets('finds a specific instance', (WidgetTester tester) async {
+  testWidgets('finds a specific instance', (tester) async {
     const childWidget = Padding(padding: EdgeInsets.zero);
 
     // Provide the childWidget to the Container.

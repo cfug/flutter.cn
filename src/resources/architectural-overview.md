@@ -144,7 +144,7 @@ and compile toolchain.
 文本布局、文件及网络 IO、辅助功能支持、插件架构和 Dart 运行环境及编译环境的工具链。
 
 The engine is exposed to the Flutter framework through
-[`dart:ui`]({{site.github}}/flutter/engine/tree/master/lib/ui),
+[`dart:ui`]({{site.github}}/flutter/engine/tree/main/lib/ui),
 which wraps the underlying C++ code in Dart classes. This library
 exposes the lowest-level primitives, such as classes for driving input,
 graphics, and text rendering subsystems.
@@ -369,11 +369,12 @@ Widgets 通过布局组合形成一种层次结构关系。
 <?code-excerpt "lib/main.dart (Main)"?>
 ```dart
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -384,7 +385,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Builder(
-            builder: (BuildContext context) {
+            builder: (context) {
               return Column(
                 children: [
                   const Text('Hello World'),
@@ -1366,8 +1367,11 @@ here’s a fragment of code to call the traditional Win32 `MessageBox()` API:
 并且指示 Dart VM 为它们创建关联。
 下面这段代码片段是调用 Win32 的 `MessageBox()` API 的简单示例：
 
-<?code-excerpt "lib/main.dart (FFI)"?>
+<?code-excerpt "lib/ffi.dart (FFI)"?>
 ```dart
+import 'dart:ffi';
+import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
+
 typedef MessageBoxNative = Int32 Function(
   IntPtr hWnd,
   Pointer<Utf16> lpText,

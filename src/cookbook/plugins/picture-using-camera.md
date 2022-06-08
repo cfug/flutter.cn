@@ -178,9 +178,9 @@ To achieve this, please:
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({
-    Key? key,
+    super.key,
     required this.camera,
-  }) : super(key: key);
+  });
 
   final CameraDescription camera;
 
@@ -383,9 +383,9 @@ Future<void> main() async {
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({
-    Key? key,
+    super.key,
     required this.camera,
-  }) : super(key: key);
+  });
 
   final CameraDescription camera;
 
@@ -477,8 +477,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
 
-  const DisplayPictureScreen({Key? key, required this.imagePath})
-      : super(key: key);
+  const DisplayPictureScreen({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {

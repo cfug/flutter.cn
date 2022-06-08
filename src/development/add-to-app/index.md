@@ -225,7 +225,7 @@ see our API usage guides at the following links:
 
   Android 平台的 Flutter 模块仅支持适配了 AndroidX 的应用。
 
-[add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/add_to_app
+[add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/main/add_to_app
 [Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
 [Android plugin APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
 [Flutter plugins]: {{site.pub}}/flutter
@@ -237,6 +237,6 @@ see our API usage guides at the following links:
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
-[maintained by the Flutter team]: {{site.repo.plugins}}/tree/master/packages
+[maintained by the Flutter team]: {{site.repo.plugins}}/tree/main/packages
 [migrated to the V2 plugins APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
 [multiple Flutters]: {{site.url}}/development/add-to-app/multiple-flutters

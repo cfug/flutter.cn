@@ -555,9 +555,13 @@ Flutter 工具会检测 multidex 的构建错误，并提示你是否要更改 A
 
 {{site.alert.note}}
 
-  Multidex support is natively included when targeting min sdk 21+.
+  Multidex support is natively included when targeting Android SDK 21 or later.
+  However, it isn't recommended to target API 21+ purely to resolve the multidex issue
+  as this might inadvertently exclude users running older devices.
 
-  当目标 API 版本为 21+ 时，multidex 已默认支持。
+  在设定了目标 Android SDK 版本为 21 和以上时，其已经包含了 Multidex 的原生支持。
+  不过，我们不建议为了解决对 Multidex 的支持而将目标 SDK 设定为 21+，
+  这可能会无意中忽略掉那些运行着旧设备的用户。
 
 {{site.alert.end}}
 

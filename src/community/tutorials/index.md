@@ -79,3 +79,7 @@ Flutter 中文社区教程由社区的开发者投稿，投稿审核通过之后
 ### Dart 语言
 
 - [深入理解 Function & Closure]({{site.url}}/community/tutorials/deep-dive-into-dart-s-function-closure)
+
+### DartPad
+
+- [使用 DartPad 制作代码实践教程]({{site.url}}/community/tutorials/how-to-use-dartpad-workshop)

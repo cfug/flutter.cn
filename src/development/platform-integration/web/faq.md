@@ -74,13 +74,14 @@ consider separating your primary application experience—created in Flutter—f
 your landing page, marketing content, and help content—created using
 search-engine optimized HTML.
 
-一般情况下，Flutter Web 的目标是构建“动态化”应用。
+一般情况下，Flutter Web 的目标是构建「动态化」网页应用。
 Flutter 的 Web 端支持会优先考虑和确保性能、保真度和一致性。
-这意味着生成的网页页面可能不是搜索引擎“熟悉”的结构化页面。
+这意味着生成的网页页面可能不是搜索引擎「熟悉」的结构化页面。
 对于一些网页、文档内容，我们建议你使用 HTML 构建，
-就像我们为 [Flutter]({{site.main-url}}) 和 [Dart]({{site.dart-site}}) 官网所做的那样。
+就像我们为 [Flutter]({{site.main-url}}) 和
+[Dart]({{site.dart-site}}) 官网所做的那样。
 你还应该考虑将主要的类应用体验（使用 Flutter 构建的 Web 网页）
-与首页、营销内容以及帮助内容等（使用搜索引擎“熟悉”的 HTML 构建）
+与首页、营销内容以及帮助内容等（使用搜索引擎「熟悉」的 HTML 构建）
 进行分离，避免将它们混在一起。
 
 ### How do I file an issue about web support?
@@ -237,8 +238,7 @@ by using [web workers][],
 although no such support is built in.
 
 Flutter Web 没有内置并发的支持，
-但有可能可以通过使用 [web workers][]
-来解决这个问题。
+但你可以尝试通过 [web workers][] 来解决这个问题。
 
 ### How do I embed a Flutter web app in a web page?
 

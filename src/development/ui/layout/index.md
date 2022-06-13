@@ -486,7 +486,7 @@ axis runs horizontally.
 The [`MainAxisAlignment`][] and [`CrossAxisAlignment`][]
 enums offer a variety of constants for controlling alignment.
 
-[`MainAxisAlignment`][] 和 [`CrossAxisAlignment`][] 这两个类
+[`MainAxisAlignment`][] 和 [`CrossAxisAlignment`][] 这两个枚举
 提供了很多用于控制对齐的常量。
 
 {{site.alert.note}}

@@ -101,20 +101,7 @@ one of these codelabs:
   但如果你下载并配置好了 Android 以及 iOS 的工具，
   那么整个应用同样也能运行在 Android 以及 iOS 的设备上。
 
-* [Building beautiful UIs with Flutter][]<br>
-  A deeper "first dive" than "Write your first Flutter app."
-  Create a chat app that includes a simple animation,
-  and customizes the UI for iOS and Android. As part of
-  this codelab, learn how to use keyboard shortcuts in
-  Android Studio.
-
-  [使用 Flutter 创建精美的 UI][Building beautiful UIs with Flutter-cn]<br>
-  这将是一次“深入探索”，而不是 Flutter 的“入门级教程”。
-  在本篇 codelab 中，你将会编写一个聊天应用，
-  其中将包括简单的动画，以及在 iOS 和 Android 上自定义 UI 等内容。
-
-[Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
-[Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
+[Building your first Flutter app]: https://www.bilibili.com/video/BV1n54y1H7dZ
 [codelab on docs.flutter.dev]: {{site.url}}/get-started/codelab
 [Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2

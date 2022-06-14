@@ -60,6 +60,30 @@ see [Web support for Flutter][].
 有关如何在 Web 上使用 Flutter 的更多信息，参考文档：
 [Flutter 的 Web 支持][Web support for Flutter]。
 
+### Search Engine Optimization (SEO)
+
+### Flutter Web 应用的 SEO 优化
+
+In general, Flutter is geared towards dynamic application experiences. Flutter's
+web support is no exception. Flutter web prioritizes performance, fidelity, and
+consistency. This means application output does not align with what search
+engines need to properly index. For web content that is static or document-like,
+we recommend using HTML—just like we do on [flutter.dev]({{site.main-url}}),
+[dart.dev]({{site.dart-site}}), and [pub.dev]({{site.pub}}). You should also
+consider separating your primary application experience—created in Flutter—from
+your landing page, marketing content, and help content—created using
+search-engine optimized HTML.
+
+一般情况下，Flutter Web 的目标是构建「动态化」网页应用。
+Flutter 的 Web 端支持会优先考虑和确保性能、保真度和一致性。
+这意味着生成的网页页面可能不是搜索引擎「熟悉」的结构化页面。
+对于一些网页、文档内容，我们建议你使用 HTML 构建，
+就像我们为 [Flutter]({{site.main-url}}) 和
+[Dart]({{site.dart-site}}) 官网所做的那样。
+你还应该考虑将主要的类应用体验（使用 Flutter 构建的 Web 网页）
+与首页、营销内容以及帮助内容等（使用搜索引擎「熟悉」的 HTML 构建）
+进行分离，避免将它们混在一起。
+
 ### How do I file an issue about web support?
 
 ### 我应该如何提交 web 支持相关的 issue
@@ -199,6 +223,23 @@ on [dart.dev]({{site.dart-site}}).
 若要在你的应用里使用这些插件，请参阅 [dart.cn]({{site.dart-site}})：
 [选择性的导入][documentation for conditional imports]。
 
+### Does Flutter web support concurrency?
+
+### Flutter Web 是否支持并发？
+
+Dart's concurrency support via [isolates][]
+is not currently supported in Flutter web.
+
+Dart 通过 [isolates][] 机制实现并发，
+目前在 Web 中尚未支持。
+
+Flutter web apps can potentially work around this
+by using [web workers][],
+although no such support is built in.
+
+Flutter Web 没有内置并发的支持，
+但你可以尝试通过 [web workers][] 来解决这个问题。
+
 ### How do I embed a Flutter web app in a web page?
 
 ### 我该如何把一个 Flutter web 应用嵌入到一个网页中？
@@ -307,6 +348,7 @@ Flutter 团队的工程师会经常阅读和互动。
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
+[isolates]: {{site.dart-site}}/guides/language/concurrency
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
 [Logging]: {{site.url}}/development/tools/devtools/logging
 [Preparing a web app for release]: {{site.url}}/deployment/web
@@ -315,6 +357,7 @@ Flutter 团队的工程师会经常阅读和互动。
 [widget tests]: {{site.url}}/testing#widget-tests
 [pub.dev]: {{site.pub}}/flutter/packages?platform=web
 [Web support for Flutter]: {{site.url}}/web
+[web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 [write your own plugins]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [run your web apps in any supported browser]: {{site.url}}/get-started/web#create-and-run
 [Integration testing]: {{site.url}}/testing/integration-tests#running-in-a-browser

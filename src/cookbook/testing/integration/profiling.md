@@ -172,8 +172,8 @@ in the `test_driver` folder and add the following code:
 
 <?code-excerpt "test_driver/perf_driver.dart"?>
 ```dart
-import 'package:integration_test/integration_test_driver.dart';
 import 'package:flutter_driver/flutter_driver.dart' as driver;
+import 'package:integration_test/integration_test_driver.dart';
 
 Future<void> main() {
   return integrationDriver(
@@ -315,13 +315,12 @@ import 'package:integration_test/integration_test.dart';
 import 'package:scrolling/main.dart';
 
 void main() {
-  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized()
-      as IntegrationTestWidgetsFlutterBinding;
+  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Counter increments smoke test', (tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp(
-      items: List<String>.generate(10000, (i) => "Item $i"),
+      items: List<String>.generate(10000, (i) => 'Item $i'),
     ));
 
     final listFinder = find.byType(Scrollable);
@@ -346,8 +345,8 @@ void main() {
 
 <?code-excerpt "test_driver/perf_driver.dart"?>
 ```dart
-import 'package:integration_test/integration_test_driver.dart';
 import 'package:flutter_driver/flutter_driver.dart' as driver;
+import 'package:integration_test/integration_test_driver.dart';
 
 Future<void> main() {
   return integrationDriver(

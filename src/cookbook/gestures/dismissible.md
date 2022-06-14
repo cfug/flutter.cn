@@ -208,7 +208,7 @@ void main() {
 // MyApp是一个StatefulWidget。这样，我们就能够在列表项被移除的时候，更新Widget的状态。
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   MyAppState createState() {

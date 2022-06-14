@@ -40,12 +40,13 @@ your development environment must meet these minimum requirements:
 
 {{site.alert.important}}
 
-  If you're installing on an [Apple Silicon Mac][], you must also have the Rosetta
-  translation environment available, which you can install manually by running:
+  If you're installing on an [Apple Silicon Mac][], you must have the Rosetta
+  translation environment available for [some ancillary tools]. 
+  You can install this manually by running:
 
-  如果你要在 [Apple 芯片的 Mac 电脑][]，你还需要安装 Rosetta 2 环境，
+  如果你要在 [Apple 芯片的 Mac 电脑][] 上使用，你还需要安装
+  Rosetta 2 环境因为 [一些辅助工具][some ancillary tools] 仍然需要，
   你可以通过手动运行下面的命令来安装：
-
   ```terminal
   $ sudo softwareupdate --install-rosetta --agree-to-license
   ```
@@ -59,11 +60,11 @@ your development environment must meet these minimum requirements:
 
 ## 平台配置
 
-macOS supports developing Flutter apps in iOS, Android,
+macOS supports developing Flutter apps for iOS, Android, macOS itself 
 and the web. Complete at least one of the platform setup steps now,
 to be able to build and run your first Flutter app.
 
-macOS 可以允许开发 iOS、Android 和 Web 三个平台的 Flutter 应用，
+macOS 系统可以开发支持 iOS、Android、macOS 桌面以及 Web 的 Flutter 应用，
 你可以任选一个平台完成初始配置，以此来搭建并运行你的第一个 Flutter 应用。
 
 {% include_relative _ios-setup.md %}
@@ -84,6 +85,7 @@ Set up your preferred editor.
 
 [Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
 [Apple 芯片的 Mac 电脑]: https://support.apple.com/zh-cn/HT211814
+[some ancillary tools]: https://github.com/flutter/website/pull/7119#issuecomment-1124537969
 [these supplementary notes]: {{site.repo.flutter}}/wiki/Developing-with-Flutter-on-Apple-Silicon
 [Xcode]: {{site.apple-dev}}/xcode/
 [install `git` separately]: https://git-scm.com/download/mac

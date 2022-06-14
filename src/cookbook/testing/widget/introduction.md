@@ -126,10 +126,10 @@ create a widget that displays a `title` and `message`.
 ```dart
 class MyWidget extends StatelessWidget {
   const MyWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
-  }) : super(key: key);
+  });
 
   final String title;
   final String message;
@@ -178,7 +178,7 @@ void main() {
   // Define a test. The TestWidgets function also provides a WidgetTester
   // to work with. The WidgetTester allows you to build and interact
   // with widgets in the test environment.
-  testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
+  testWidgets('MyWidget has a title and message', (tester) async {
     // Test code goes here.
   });
 }
@@ -204,7 +204,7 @@ and "M" as the message.
 <?code-excerpt "test/main_step4_test.dart (main)"?>
 ```dart
 void main() {
-  testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
+  testWidgets('MyWidget has a title and message', (tester) async {
     // Create the widget by telling the tester to build it.
     await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
   });
@@ -298,7 +298,7 @@ For more information about `Finder` classes, see the
 <?code-excerpt "test/main_step5_test.dart (main)"?>
 ```dart
 void main() {
-  testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
+  testWidgets('MyWidget has a title and message', (tester) async {
     await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
 
     // Create the Finders.
@@ -332,7 +332,7 @@ For this purpose, use the [`findsOneWidget`][] `Matcher`.
 <?code-excerpt "test/main_step6_test.dart (main)"?>
 ```dart
 void main() {
-  testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
+  testWidgets('MyWidget has a title and message', (tester) async {
     await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
     final titleFinder = find.text('T');
     final messageFinder = find.text('M');
@@ -391,7 +391,7 @@ void main() {
   // Define a test. The TestWidgets function also provides a WidgetTester
   // to work with. The WidgetTester allows building and interacting
   // with widgets in the test environment.
-  testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
+  testWidgets('MyWidget has a title and message', (tester) async {
     // Create the widget by telling the tester to build it.
     await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
 
@@ -408,10 +408,10 @@ void main() {
 
 class MyWidget extends StatelessWidget {
   const MyWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
-  }) : super(key: key);
+  });
 
   final String title;
   final String message;

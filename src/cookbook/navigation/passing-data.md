@@ -154,7 +154,7 @@ This'll render the list on to the screen for you to get going!
 ```dart
 class TodosScreen extends StatelessWidget {
   // Requiring the list of todos.
-  const TodosScreen({Key? key, required this.todos}) : super(key: key);
+  const TodosScreen({super.key, required this.todos});
 
   final List<Todo> todos;
 
@@ -205,7 +205,7 @@ Then, build the UI using the given todo.
 ```dart
 class DetailScreen extends StatelessWidget {
   // In the constructor, require a Todo.
-  const DetailScreen({Key? key, required this.todo}) : super(key: key);
+  const DetailScreen({super.key, required this.todo});
 
   // Declare a field that holds the Todo.
   final Todo todo;
@@ -303,7 +303,7 @@ void main() {
 }
 
 class TodosScreen extends StatelessWidget {
-  const TodosScreen({Key? key, required this.todos}) : super(key: key);
+  const TodosScreen({super.key, required this.todos});
 
   final List<Todo> todos;
 
@@ -338,7 +338,7 @@ class TodosScreen extends StatelessWidget {
 
 class DetailScreen extends StatelessWidget {
   // In the constructor, require a Todo.
-  const DetailScreen({Key? key, required this.todo}) : super(key: key);
+  const DetailScreen({super.key, required this.todo});
 
   // Declare a field that holds the Todo.
   final Todo todo;
@@ -383,7 +383,7 @@ This method returns the current route with the arguments.
 <?code-excerpt "lib/main_routesettings.dart (DetailScreen)"?>
 ```dart
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  const DetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -478,7 +478,7 @@ void main() {
 }
 
 class TodosScreen extends StatelessWidget {
-  const TodosScreen({Key? key, required this.todos}) : super(key: key);
+  const TodosScreen({super.key, required this.todos});
 
   final List<Todo> todos;
 
@@ -517,7 +517,7 @@ class TodosScreen extends StatelessWidget {
 }
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  const DetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

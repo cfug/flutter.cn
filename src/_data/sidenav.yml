@@ -47,6 +47,7 @@
       permalink: /docs/reference/tutorials
 
 - title: 开发文档
+  permalink: /docs/development
   expanded: true
   children:
     - title: 用户界面
@@ -116,8 +117,10 @@
         - title: 核心 Widget 目录
           permalink: /docs/development/ui/widgets
     - title: 数据调用和后端
+      permalink: /docs/development/data-and-backend
       children:
-        - title: 状态 (State) 管理
+        - title: 状态管理
+          permalink: /docs/development/data-and-backend/state-mgmt
           children:
             - title: 状态管理介绍
               permalink: /docs/development/data-and-backend/state-mgmt/intro
@@ -167,7 +170,17 @@
             - title: 自定义 Web 应用初始化 [新增]
               permalink: /docs/development/platform-integration/web/initialization
         - title: 桌面端
-          permalink: /desktop
+          permalink: /docs/desktop
+          children:
+            - title: 概览
+              permalink: /docs/desktop
+              match-page-url-exactly: true
+            - title: Windows 桌面端软件开发
+              permalink: /docs/desktop/windows
+            - title: macOS 桌面端软件开发
+              permalink: /docs/desktop/macos
+            - title: Linux 桌面端软件开发
+              permalink: /docs/desktop/linux
     - title: Package 与 plugin (原生插件)
       permalink: /docs/development/packages-and-plugins
       children:
@@ -175,6 +188,7 @@
           permalink: /docs/development/packages-and-plugins/using-packages
         - title: Happy paths 项目 [新增]
           permalink: /docs/development/packages-and-plugins/happy-paths
+          match-page-url-exactly: true
         - title: Happy paths 推荐 [新增]
           permalink: /docs/development/packages-and-plugins/happy-paths/recommended
         - title: Package 和插件的开发和提交
@@ -183,7 +197,7 @@
           permalink: /docs/development/packages-and-plugins/favorites
         - title: 后台进程
           permalink: /docs/development/packages-and-plugins/background-processes
-        - title: 升级 Android 插件
+        - title: Package 和插件网站
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
         - title: Package 和插件网站
           permalink: https://pub.flutter-io.cn/flutter
@@ -328,7 +342,7 @@
       permalink: /docs/perf
       match-page-url-exactly: true
     - title: 性能最佳实践
-      permalink: /perf/best-practices
+      permalink: /docs/perf/best-practices
     - title: 应用大小
       permalink: /docs/perf/app-size
     - title: 延迟加载组件
@@ -373,6 +387,10 @@
 
 - title: 开发者资源列表
   children:
+    - title: 官方博文
+      permalink: /posts
+    - title: 社区中文教程
+      permalink: /community/tutorials
     - title: Flutter 架构概览
       permalink: /docs/resources/architectural-overview
     - title: 相关书籍
@@ -395,16 +413,12 @@
       permalink: https://pub.flutter-io.cn/packages/google_fonts
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
-    - title: 品牌资源
-      permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
+    - title: 官方品牌资源
+      permalink: https://flutter.cn/brand
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
     - title: 技术视频和在线资源
       permalink: /docs/resources/videos
-    - title: 官方博文
-      permalink: /posts
-    - title: 社区中文教程
-      permalink: /community/tutorials
 
 - title: 更多资料
   expanded: true

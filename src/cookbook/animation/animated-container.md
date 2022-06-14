@@ -95,7 +95,7 @@ can be updated when the user taps a button.
 <?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
 ```dart
 class AnimatedContainerApp extends StatefulWidget {
-  const AnimatedContainerApp({Key? key}) : super(key: key);
+  const AnimatedContainerApp({super.key});
 
   @override
   _AnimatedContainerAppState createState() => _AnimatedContainerAppState();
@@ -215,7 +215,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const AnimatedContainerApp());
 
 class AnimatedContainerApp extends StatefulWidget {
-  const AnimatedContainerApp({Key? key}) : super(key: key);
+  const AnimatedContainerApp({super.key});
 
   @override
   _AnimatedContainerAppState createState() => _AnimatedContainerAppState();

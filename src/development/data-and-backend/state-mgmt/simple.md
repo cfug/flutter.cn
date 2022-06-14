@@ -498,7 +498,7 @@ This is done through the `Consumer` widget.
 ```dart
 return [!Consumer!]<CartModel>(
   builder: (context, cart, child) {
-    return Text("Total price: ${cart.totalPrice}");
+    return Text('Total price: ${cart.totalPrice}');
   },
 );
 ```
@@ -552,7 +552,7 @@ return Consumer<CartModel>(
     children: [
       // Use SomeExpensiveWidget here, without rebuilding every time.
       if ([!child!] != null) [!child!],
-      Text("Total price: ${cart.totalPrice}"),
+      Text('Total price: ${cart.totalPrice}'),
     ],
   ),
   // Build the expensive widget here.
@@ -663,8 +663,8 @@ master these skills.
 试着自己用 `provider` 构建一个应用来掌握这些技能吧！
 
 
-[built with `provider`]: {{site.github}}/flutter/samples/tree/master/provider_counter
-[check out the example]: {{site.github}}/flutter/samples/tree/master/provider_shopper
+[built with `provider`]: {{site.github}}/flutter/samples/tree/main/provider_counter
+[check out the example]: {{site.github}}/flutter/samples/tree/main/provider_shopper
 [declarative UI programming]: {{site.url}}/development/data-and-backend/state-mgmt/declarative
 [ephemeral and app state]: {{site.url}}/development/data-and-backend/state-mgmt/ephemeral-vs-app
 [options page]: {{site.url}}/development/data-and-backend/state-mgmt/options

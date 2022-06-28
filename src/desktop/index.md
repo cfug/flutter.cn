@@ -133,7 +133,7 @@ For more information, see [Installing snapd][].
 Once you have `snapd`, you can install Flutter
 using the [Snap Store][], or at the command line:
 
-安装 snapd 后，你就可以使用 [Snap Store][] 安装 Flutter，
+安装 `snapd` 后，你就可以使用 [Snap Store][] 安装 Flutter，
 也可以在命令行进行安装:
 
 ```terminal
@@ -282,7 +282,7 @@ To create a new application that includes desktop support
 substituting `my_app` with the name of your project:
 
 想要创建一个包含桌面支持的新应用（除了支持移动和 Web），请运行下面的命令，
-将 `myapp` 替换成你项目的名称：
+将 `my_app` 替换成你项目的名称：
 
 ```terminal
 $ flutter create my_app

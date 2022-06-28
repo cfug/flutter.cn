@@ -14,7 +14,7 @@ diff2html: true
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 {% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
-{% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/dev/integration_tests/flutter_gallery/lib/demo {%- endcapture -%}
+{% capture demo -%} {{site.repo.gallery}}/tree/{{site.branch}}/lib/demos {%- endcapture -%}
 
 <?code-excerpt path-base=""?>
 
@@ -252,7 +252,7 @@ property for the home page.
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -302,7 +302,7 @@ For a non-Material app, you can add the `Center` widget to the app's
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -484,9 +484,9 @@ axis runs horizontally.
 </div>
 
 The [`MainAxisAlignment`][] and [`CrossAxisAlignment`][]
-classes offer a variety of constants for controlling alignment.
+enums offer a variety of constants for controlling alignment.
 
-[`MainAxisAlignment`][] 和 [`CrossAxisAlignment`][] 这两个类
+[`MainAxisAlignment`][] 和 [`CrossAxisAlignment`][] 这两个枚举
 提供了很多用于控制对齐的常量。
 
 {{site.alert.note}}
@@ -1321,11 +1321,11 @@ its render box.
   使用 `ListView` 展示特定颜色系列 
   [Material Design 调色板][Material Design palette] 中的 [`Colors`][]。
 
-  **Dart code:** [colors_demo.dart]({{demo}}/colors_demo.dart) from the
+  **Dart code:** [colors_demo.dart]({{demo}}/reference/colors_demo.dart) from the
   [Flutter Gallery][repo]
 
   **Dart 代码：** [Flutter Gallery][repo] 中的
-  [colors_demo.dart]({{demo}}/colors_demo.dart)
+  [colors_demo.dart]({{demo}}/reference/colors_demo.dart)。
   
 </div>
 </div>
@@ -1429,20 +1429,19 @@ widget 可以完全或者部分覆盖基础 widget。
 
 </div>
 <div class="col-lg-5" markdown="1">
-  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="mw-100" alt="An image with a grey gradient across the top">
+  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="mw-100" alt="An image with a icon overlaid on top">
   {:.text-center}
 
-  Uses `Stack` to overlay a gradient to the top of the image. The gradient
-  ensures that the toolbar's icons are distinct against the image.
+  Uses `Stack` to overlay an icon on top of an image.
 
   使用 `Stack` 将渐变叠加到图片的顶部，
   渐变可以将工具栏的图标和图片区分开来。
 
-  **Dart code:** [contacts_demo.dart]({{demo}}/contacts_demo.dart)
+  **Dart code:** [bottom_navigation_demo.dart]({{demo}}/material/bottom_navigation_demo.dart)
   from the [Flutter Gallery][repo]
 
   **Dart 代码：** [Flutter Gallery][repo] 中的
-  [contacts_demo.dart]({{demo}}/contacts_demo.dart)
+  [bottom_navigation_demo.dart]({{demo}}/material/bottom_navigation_demo.dart)。
 
 </div>
 </div>
@@ -1672,7 +1671,7 @@ and trailing icons. `ListTile` is most commonly used in
   <img src='/assets/images/docs/ui/layout/card.png' class="mw-100" alt="Card containing 3 ListTiles">
   {:.text-center}
 
-  A `Card` containing 3 `ListTiles`.
+  A `Card` containing 3 `ListTile`s.
 
   包含 3 个 `ListTiles` 的 `Card`。
 
@@ -1683,18 +1682,18 @@ and trailing icons. `ListTile` is most commonly used in
 </div>
 <div class="col-lg-6" markdown="1">
   <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' class="border mw-100" height="200px"
-      alt="3 ListTiles, each containing a pull-down button">
+      alt="4 ListTiles, each containing a leading avatar">
   {:.text-center}
 
-  Uses `ListTile` to list 3 drop down button types.<br>
+  Uses `ListTile` with leading widgets.<br>
 
-  使用 `ListTile` 列出 3 个下拉按钮类型。<br>
+  leading wiget 使用 `ListTile`。
 
-  **Dart code:** [buttons_demo.dart]({{demo}}/material/buttons_demo.dart)
+  **Dart code:** [list_demo.dart]({{demo}}/material/list_demo.dart)
   from the [Flutter Gallery][repo]
 
   **Dart 代码：** [Flutter Gallery][repo] 中的
-  [buttons_demo.dart]({{demo}}/material/buttons_demo.dart)
+  [list_demo.dart]({{demo}}/material/list_demo.dart)。
 
 </div>
 </div>
@@ -1801,7 +1800,7 @@ The following resources might help when writing layout code.
 [Common layout widgets]: #common-layout-widgets
 [`Colors`]: {{api}}/material/Colors-class.html
 [`Container`]: {{api}}/widgets/Container-class.html
-[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment-class.html
+[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
 [`DataTable`]: {{api}}/material/DataTable-class.html
 [Dealing with Box Constraints in Flutter]: {{site.url}}/development/ui/layout/box-constraints
 [Elevation]: {{site.material}}/design/environment/elevation.html
@@ -1816,16 +1815,16 @@ The following resources might help when writing layout code.
 [layout widgets]: {{site.url}}/development/ui/widgets/layout
 [`ListTile`]: {{api}}/material/ListTile-class.html
 [`ListView`]: {{api}}/widgets/ListView-class.html
-[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment-class.html
+[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
 [Material card]: {{site.material}}/design/components/cards.html
 [Material Design]: {{site.material}}/design
 [Material Design palette]: {{site.material}}/design/color
 [Material library]: {{api}}/material/material-library.html
 [pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
 [`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
-[repo]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
+[repo]: {{site.repo.gallery}}/tree/main
 [`Row`]: {{api}}/widgets/Row-class.html
-[running app]: https://flutter.github.io/gallery/#/
+[running app]: {{site.gallery}}
 [`Scaffold`]: {{api}}/material/Scaffold-class.html
 [`SizedBox`]: {{api}}/widgets/SizedBox-class.html
 [`Stack`]: {{api}}/widgets/Stack-class.html

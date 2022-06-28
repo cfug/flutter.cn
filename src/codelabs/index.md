@@ -22,6 +22,21 @@ Flutter workshops 与 codelabs 类似，
 workshop 链接也会提供给你相关的 YouTube 视频，
 该视频会告诉你在哪里可以找到相关的 DartPad 链接。
 
+{{site.alert.secondary}}
+
+  **New workshops for Google I/O!**
+  Our GDEs have created new Flutter workshops!
+  For more information, check out
+  the [Flutter community blog][].
+
+  **Google I/O 大会更新了一批新的 Flutter workshops**
+  来自全球的 Flutter GDE 们更新了一批新的 Flutter workshops，
+  更多信息，请参 [考这篇博文][Flutter community blog]。
+
+{{site.alert.end}}
+
+[Flutter community blog]: {{site.medium}}/@flutter_community/622b52f70173
+
 ## Good for beginners
 
 ## 适用于初级开发者
@@ -32,7 +47,7 @@ one of these codelabs:
 如果你刚开始学习 Flutter，
 我们推荐你学习下面的 Codelab 之一：
 
-* [Building your first Flutter app][] (workshop) **NEW!**<br>
+* [Building your first Flutter app][] (workshop)<br>
   An instructor-led version of our very popular
   "Write your first Flutter app, part 1" codelab
   (listed below).
@@ -86,20 +101,7 @@ one of these codelabs:
   但如果你下载并配置好了 Android 以及 iOS 的工具，
   那么整个应用同样也能运行在 Android 以及 iOS 的设备上。
 
-* [Building beautiful UIs with Flutter][]<br>
-  A deeper "first dive" than "Write your first Flutter app."
-  Create a chat app that includes a simple animation,
-  and customizes the UI for iOS and Android. As part of
-  this codelab, learn how to use keyboard shortcuts in
-  Android Studio.
-
-  [使用 Flutter 创建精美的 UI][Building beautiful UIs with Flutter-cn]<br>
-  这将是一次“深入探索”，而不是 Flutter 的“入门级教程”。
-  在本篇 codelab 中，你将会编写一个聊天应用，
-  其中将包括简单的动画，以及在 iOS 和 Android 上自定义 UI 等内容。
-
-[Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
-[Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
+[Building your first Flutter app]: https://www.bilibili.com/video/BV1n54y1H7dZ
 [codelab on docs.flutter.dev]: {{site.url}}/get-started/codelab
 [Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
@@ -114,29 +116,29 @@ one of these codelabs:
 
 ## 下一步
 
-* [Building scrolling experiences in Flutter][] (workshop) **NEW!**<br>
+* [Building scrolling experiences in Flutter][] (workshop)<br>
   Start with an app that performs simple, straightforward scrolling
   and enhance it to create fancy and custom scrolling effects
   by using slivers.
 
-  [在 Flutter 中构建滚动体验][Building scrolling experiences in Flutter] (workshop) **新!**<br>
+  [在 Flutter 中构建滚动体验][Building scrolling experiences in Flutter] (workshop)<br>
   从一个执行简单、直接滚动的应用程序入门，
   并通过使用 sliver 增强它以创建奇特的自定义滚动效果。
 
-* [Dart null safety in Action][] (workshop) **NEW!**<br>
+* [Dart null safety in Action][] (workshop)<br>
   An instructor-led workshop based on the [Null safety codelab][]
   on the dart.dev site.
 
-  [Dart 空安全实战][Dart null safety in Action] (workshop) **新!**<br>
+  [Dart 空安全实战][Dart null safety in Action] (workshop)<br>
   基于 dart.cn 站点上的 [空安全 codelab][Null safety codelab] 的讲师指导版 workshop。
 
-* [How to manage application states using inherited widgets][inherited-widget-ws] (workshop) **NEW!**<br>
+* [How to manage application states using inherited widgets][inherited-widget-ws] (workshop)<br>
   Learn how to manage the state of your app's data by
   using the `InheritedWidget` class, one of the
   [low-level state management][] classes provided
   by Flutter.
 
-  [如何使用 inherited widgets 管理应用程序状态][inherited-widget-ws] (workshop) **新!**<br>
+  [如何使用 inherited widgets 管理应用程序状态][inherited-widget-ws] (workshop)<br>
   了解如何使用 `InheritedWidget` 类
   （Flutter 提供的 [基础状态管理方案][low-level state management] 之一）
   管理应用数据的状态。
@@ -178,15 +180,22 @@ like layout and animations:
   visual effects for the widgets in your UI.
 
   [渐变动画][Implicit animations]<br>
-  使用 DartPad 学习如果创建渐变动画。
-  
+  使用 DartPad 学习如何创建渐变动画，并为你的界面加入动画效果。
+
 * [Building Beautiful Transitions with Material Motion for Flutter][]<br>
   Learn how to use the Material [animations][] package to
   add pre-built transitions to a Material app called Reply.
 
   [使用 Material Motion 为 Flutter 构建精美的过渡动画][Building Beautiful Transitions with Material Motion for Flutter-cn]<br>
-  了解如何使用 Material [animations] [] package 为名叫
+  了解如何使用 Material [animations] [] package 为名为
   Reply 的 Material 应用添加预构建的过渡。
+
+* [Take your Flutter app from boring to beautiful][] **NEW**<br>
+  Learn how to use some of the features in Material 3
+  to make your app more beautiful *and* more responsive.
+
+  [让你的 Flutter 应用从平淡到出彩][Take your Flutter app from boring to beautiful] **新增内容**<br>
+  学习如何使用 Material 3 的一些特性让你的应用更出彩并加强其响应式特性。
 
 * [MDC-101 Flutter: Material Components (MDC) Basics][]<br>
   Learn the basics of using Material Components by building
@@ -232,6 +241,17 @@ like layout and animations:
   本期我们将通过加入一个全屏（backdrop）样式的菜单，用于分类显示你的产品。
   至此我们就结束了这个电子商务应用的构建
 
+* [Adaptive Apps in Flutter][]<br>
+  Learn how to build a Flutter app that adapts to the 
+  platform that it is running on, be that Android, iOS, 
+  the web, Windows, macOS, or Linux.
+
+  [使用 Flutter 构建自适应应用][Adaptive Apps in Flutter]<br>
+  了解如何使用 Flutter 构建一个可以运行在
+  Android、iOS、Web、Windows、macOS 和 Linux
+  上的自适应应用。
+
+[Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
 [Basic Flutter layout concepts]: {{site.url}}/codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
@@ -242,6 +262,7 @@ like layout and animations:
 [MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
 [MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
 [MDC-104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
+[Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
 
 [Building Beautiful Transitions with Material Motion for Flutter-cn]: {{site.codelabs}}/codelabs/material-motion-flutter-cn
 [MDC-101 Flutter: Material Components (MDC) Basics-cn]: {{site.codelabs}}/codelabs/mdc-101-flutter-cn
@@ -256,6 +277,14 @@ like layout and animations:
 Learn how to use Flutter with other technologies.
 
 学习如何使用在 Flutter 中使用其他技术产品/平台：
+
+* [Adding WebView to your Flutter app][] **NEW**<br>
+  With the WebView Flutter plugin you can add a WebView 
+  widget to your Android or iOS Flutter app.
+
+  [为你的 Flutter 应用添加 WebView][Adding WebView to your Flutter app]<br>
+  使用 WebView Flutter 插件，你可以将 WebView widget
+  添加到你的 Android 或 iOS Flutter 应用程序中。
 
 * [Adding Google Maps to a Flutter app][]<br>
   Display a Google map in an app, retrieve data from a
@@ -297,11 +326,11 @@ Learn how to use Flutter with other technologies.
   [使用 Google 相册和 Flutter 构建照片共享应用][Build a Photo Sharing app with Google Photos and Flutter]<br>
   构建一个实地考察应用程序，允许你和旅行中的其他成员分享照片。
 
-* [Build voice bots for mobile with Dialogflow and Flutter][] (workshop) **NEW!**<br>
+* [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
 
-  [使用 Dialogflow 和 Flutter 为移动设备构建语音机器人][Build voice bots for mobile with Dialogflow and Flutter] (workshop) **新!**<br>
+  [使用 Dialogflow 和 Flutter 为移动设备构建语音机器人][Build voice bots for mobile with Dialogflow and Flutter] (workshop)<br>
   Dialogflow 和 Flutter codelab 的讲师指导版本（如下所列）。
 
 * [Build voice bots for Android with Dialogflow and Flutter][]<br>
@@ -314,7 +343,7 @@ Learn how to use Flutter with other technologies.
   学习如何构建可以回答有关 Dialogflow 工具的最常见问题的移动式常见问题解答机器人。
   终端用户可以通过移动设备的内置麦克风与文本界面交互或流式传输语音交互。
 
-* [Get to know Firebase for Flutter][firebase-ws] (workshop) **NEW!**<br>
+* [Get to know Firebase for Flutter][firebase-ws] (workshop)**NEW!**<br>
   An instructor-led version of our popular
   "Get to know Firebase for Flutter" codelab
   (listed below).
@@ -341,16 +370,17 @@ Learn how to use Flutter with other technologies.
   构建一个多平台的餐馆推荐应用，只需要一套 Dart 代码，
   就可以运行在 Android、iOS 和 Web 平台。
 
-[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
+[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
 [Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Build a Photo Sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
-[Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
+[Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
+[Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/learn/codelabs/firebase-get-to-know-flutter
-[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
+[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 
 ## Testing
 
@@ -415,13 +445,13 @@ iOS、Android、Web 和桌面端。
   然后将应用部署到 Firebase 上。最后使用 Flutter 插件
   启动应用以及显示隐私权政策。
 
-* [Write a Flutter desktop application][]<br>
+* [Write a Flutter desktop application][] **UPDATED FOR WINDOWS**<br>
   Build a Flutter desktop app that accesses GitHub APIs to retrieve your
   repositories, assigned issues, and pull requests. As part of this task,
   create and use plugins to interact with native APIs and desktop applications,
   and use code generation to build type-safe client libraries for GitHub's APIs.
 
-  [编写一个 Flutter 桌面应用][Write a Flutter desktop application]<br>
+  [编写一个 Flutter 桌面应用][Write a Flutter desktop application] **已为 Windows 更新**<br>
   构建一个 Flutter 桌面应用以通过 GitHub APIs 来检索你的代码仓库 (repo)，
   已分配的问题 (issue) 和拉取请求 (pull request)。
   本任务还有一部分内容，需要创建并使用插件，
@@ -429,10 +459,10 @@ iOS、Android、Web 和桌面端。
   并为 GitHub APIs 构建一个类型安全的客户端库。
 
 [Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
-[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin/
+[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
 [provider]: {{site.pub}}/packages/provider
-[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
+[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
 
 [Building a Cupertino app with Flutter-cn]: {{site.codelabs}}/codelabs/flutter-cupertino-cn
 [How to write a Flutter plugin-cn]: {{site.codelabs}}/codelabs/write-flutter-plugin-cn

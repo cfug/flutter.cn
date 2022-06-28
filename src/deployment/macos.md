@@ -336,10 +336,17 @@ In Xcode, configure the app version and build:
 
 在 Xcode 中，配置应用程序版本和内部版本：
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `macos` folder.
+1. Open `Runner.xcworkspace` in your app's `macos` folder. To do this from
+   the command line, run the following command from the base directory of your
+   application project.
 
-   在 Xcode 中，打开应用程序 `macos` 文件夹中的 `Runner.xcworkspace`。
-   
+   打开 `macos` 文件夹中的 `Runner.xcworkspace` 工程项目，若要在命令行中这样做
+   就切换到工程的文件夹下运行下面的命令:
+
+   ```console
+   open macos/Runner.xcworkspace
+   ```
+
 1. Select **Runner** in the Xcode project navigator, then select the
    **Runner** target in the settings view sidebar.
    
@@ -360,40 +367,37 @@ In Xcode, configure the app version and build:
 
 Finally, create a build archive and upload it to App Store Connect:
 
-最后，创建一个构建存档并将其上传到 App Store Connect：
+最后，创建一个构建归档并将其上传到 App Store Connect：
 
-<ol markdown="1">
-<li markdown="1">
+1. Create a release Archive of your application. From the base directory of
+   your application project, run the following.
 
-Open Xcode and select **Product > Archive**. Run `flutter build macos` to
-produce a build archive.
+   为你的应用创建一个发布归档，命令行切换到你的工程目录，
+   运行下面的命令：
 
-打开 Xcode 并选择 **Product（项目）> Archive（存档）**。运行 `flutter build macos` 生成构建存档。
+   ```console
+   flutter build macos
+   ```
+1. Open Xcode and select **Product > Archive** to open the archive created
+   in the previous step.
 
-</li>
-<li markdown="1">
+   打开 Xcode 并选择 **Product > Archive**，打开上个步骤生成的归档文件；
 
-Click the **Validate App** button. If any issues are reported,
-address them and produce another build. You can reuse the same
-build ID until you upload an archive.
+1. Click the **Validate App** button. If any issues are reported,
+   address them and produce another build. You can reuse the same
+   build ID until you upload an archive.
 
-点击 **验证应用程序** 按钮。如果报告了任何问题，
-请解决并再次构建。在上传存档之前，可以重用相同的构建 ID。
+   点击 **Validate App** 按钮。如果报告了任何问题，请尝试解决并再次构建。
+   在上传归档之前，可以重用相同的构建 ID。
 
-</li>
-<li markdown="1">
+1. After the archive has been successfully validated, click
+   **Distribute App**. You can follow the status of your build in the
+   Activities tab of your app's details page on
+   [App Store Connect][appstoreconnect_login].
 
-After the archive has been successfully validated, click
-**Distribute App**. You can follow the status of your build in the
-Activities tab of your app's details page on
-[App Store Connect][appstoreconnect_login].
-
-成功验证存档后，点击 **分发应用程序**。
-你可以在 [App Store Connect][appstoreconnect_login]
-上的应用程序详细信息页的活动标签下查看构建状态。
-
-</li>
-</ol>
+   成功验证归档后，点击 **Distribute App**。
+   你可以在 [App Store Connect][appstoreconnect_login]
+   上的应用程序详细信息页的活动标签下查看构建状态。
 
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers
@@ -613,17 +617,6 @@ Install CocoaPods dependencies:
 
 ```bash
 find . -name "Podfile" -execdir pod install \;
-```
-
-</li>
-<li markdown="1">
-
-Enable the Flutter macOS option:
-
-启用 Flutter macOS 选项：
-
-```bash
-flutter config --enable-macos-desktop
 ```
 
 </li>

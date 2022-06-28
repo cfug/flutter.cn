@@ -83,13 +83,13 @@ creates a `TabController` and makes it available to all descendant widgets.
 最简单的选择是使用 `DefaultTabController` widget，
 因为它能够创建出一个可供所有子 widgets 使用的 `TabController`。
 
-
-<!-- skip -->
+<?code-excerpt "lib/partials.dart (TabController)"?>
 ```dart
-DefaultTabController(
-  // The number of tabs / content sections to display.
-  length: 3,
-  child: // Complete this code in the next step.
+return MaterialApp(
+  home: DefaultTabController(
+    length: 3,
+    child: Scaffold(),
+  ),
 );
 ```
 
@@ -108,18 +108,20 @@ In this example, create a `TabBar` with three
 [`Tab`][] widget 的 `TabBar`（一个），
 并把它放置于 [`AppBar`][] widget 中。
 
-<!-- skip -->
+<?code-excerpt "lib/partials.dart (Tabs)"?>
 ```dart
-DefaultTabController(
-  length: 3,
-  child: Scaffold(
-    appBar: AppBar(
-      bottom: TabBar(
-        tabs: [
-          Tab(icon: Icon(Icons.directions_car)),
-          Tab(icon: Icon(Icons.directions_transit)),
-          Tab(icon: Icon(Icons.directions_bike)),
-        ],
+return MaterialApp(
+  home: DefaultTabController(
+    length: 3,
+    child: Scaffold(
+      appBar: AppBar(
+        bottom: const TabBar(
+          tabs: [
+            Tab(icon: Icon(Icons.directions_car)),
+            Tab(icon: Icon(Icons.directions_transit)),
+            Tab(icon: Icon(Icons.directions_bike)),
+          ],
+        ),
       ),
     ),
   ),
@@ -156,16 +158,15 @@ For this purpose, use the [`TabBarView`][] widget.
 
 {{site.alert.end}}
 
-
-<!-- skip -->
+<?code-excerpt "lib/main.dart (TabBarView)"?>
 ```dart
-TabBarView(
+body: const TabBarView(
   children: [
     Icon(Icons.directions_car),
     Icon(Icons.directions_transit),
     Icon(Icons.directions_bike),
   ],
-);
+),
 ```
 
 ## Interactive example
@@ -173,7 +174,7 @@ TabBarView(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
@@ -181,7 +182,7 @@ void main() {
 }
 
 class TabBarDemo extends StatelessWidget {
-  const TabBarDemo({Key? key}) : super(key: key);
+  const TabBarDemo({super.key});
 
   @override
   Widget build(BuildContext context) {

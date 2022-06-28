@@ -178,9 +178,9 @@ To achieve this, please:
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({
-    Key? key,
+    super.key,
     required this.camera,
-  }) : super(key: key);
+  });
 
   final CameraDescription camera;
 
@@ -341,9 +341,9 @@ the previous step.
 因此，你需要提供一个 `File` 给 `Image.file` 构造函数。
 你能够通过传递你在上一步中创建的路径来创建一个 `File` 类的实例。
 
-<!-- skip -->
+<?code-excerpt "lib/image_file.dart (ImageFile)" replace="/^return\ //g"?>
 ```dart
-Image.file(File('path/to/my/picture.png'))
+Image.file(File('path/to/my/picture.png'));
 ```
 
 ## Complete example
@@ -383,9 +383,9 @@ Future<void> main() async {
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({
-    Key? key,
+    super.key,
     required this.camera,
-  }) : super(key: key);
+  });
 
   final CameraDescription camera;
 
@@ -477,8 +477,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
 
-  const DisplayPictureScreen({Key? key, required this.imagePath})
-      : super(key: key);
+  const DisplayPictureScreen({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {

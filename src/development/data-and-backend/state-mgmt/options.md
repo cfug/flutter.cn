@@ -233,6 +233,10 @@ A state container approach familiar to many web developers.
 
 * [Redux and epics for better-organized code in Flutter apps][], by Nihad Delic
 
+  [使用 Redux 和 redux_epics 更好的管理 Flutter 代码][Redux and epics for better-organized code in Flutter apps]，Nihad Delic 著。
+
+* [Flutter_Redux_Gen - VS Code Plugin to generate boiler plate code][], by Balamurugan Muthusamy (BalaDhruv)
+
   [使用 Redux 更好地组织 Flutter 应用的代码以管理项目目标 (Redux and epics for better-organized code in Flutter apps)][Redux and epics for better-organized code in Flutter apps]，Nihad Delic 著。
 
 
@@ -249,7 +253,8 @@ A state container approach familiar to many web developers.
 [Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
 [Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
 [Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}/redux_saga
-
+[Flutter_Redux_Gen - VS Code Plugin to generate boiler plate code]: https://marketplace.visualstudio.com/items?itemName=BalaDhruv.flutter-redux-gen
+  
 ## Fish-Redux
 
 Fish Redux is an assembled flutter application framework

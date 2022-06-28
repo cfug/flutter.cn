@@ -78,7 +78,7 @@ we can use it to retrieve the text a user has typed into that text field.
 ```dart
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+  const MyCustomForm({super.key});
 
   @override
   _MyCustomFormState createState() => _MyCustomFormState();
@@ -112,11 +112,12 @@ class _MyCustomFormState extends State<MyCustomForm> {
 Now that you have a `TextEditingController`, wire it up
 to a text field using the `controller` property:
 
-创建完 `TextEditingController`，就可以使用 `controller` 属性完成 text field 绑定。
+创建完 `TextEditingController`，
+就可以使用 `controller` 属性完成 text field 绑定。
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (TextFieldController)"?>
 ```dart
-TextField(
+return TextField(
   controller: myController,
 );
 ```
@@ -140,17 +141,17 @@ value of the text field when the user taps a floating action button.
 在下面的示例中，用户点击浮层按钮，
 将会触发弹出一个对话框，对话框获取并显示文本框的当前值。
 
-<!-- skip -->
+<?code-excerpt "lib/step3.dart (FloatingActionButton)" replace="/^floatingActionButton\: //g"?>
 ```dart
 FloatingActionButton(
-  // When the user presses the button, show an alert dialog containing the
-  // text that the user has entered into the text field.
+  // When the user presses the button, show an alert dialog containing
+  // the text that the user has entered into the text field.
   onPressed: () {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          // Retrieve the text the user has entered by using the
+          // Retrieve the text that the user has entered by using the
           // TextEditingController.
           content: Text(myController.text),
         );
@@ -158,8 +159,8 @@ FloatingActionButton(
     );
   },
   tooltip: 'Show me the value!',
-  child: Icon(Icons.text_fields),
-);
+  child: const Icon(Icons.text_fields),
+),
 ```
 
 ## Interactive example
@@ -167,13 +168,13 @@ FloatingActionButton(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -186,7 +187,7 @@ class MyApp extends StatelessWidget {
 
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+  const MyCustomForm({super.key});
 
   @override
   _MyCustomFormState createState() => _MyCustomFormState();

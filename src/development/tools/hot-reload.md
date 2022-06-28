@@ -11,62 +11,61 @@ keywords: 热重载,效率提升,widget渲染
 
 Flutter's hot reload feature helps you quickly and
 easily experiment, build UIs, add features, and fix bugs.
-Hot reload works by injecting updated source code files into
-the running [Dart Virtual Machine (VM)][]. After the VM
-updates classes with the new versions of fields and functions,
+Hot reload works by injecting updated source code files
+into the running [Dart Virtual Machine (VM)][].
+After the VM updates classes with the new versions of fields and functions,
 the Flutter framework automatically rebuilds the widget tree,
 allowing you to quickly view the effects of your changes.
 
-Flutter 的热重载功能可帮助您在无需重新启动应用程序的情况下
+Flutter 的热重载功能可帮助你在无需重新启动应用程序的情况下
 快速、轻松地测试、构建用户界面、添加功能以及修复错误。
-通过将更新的源代码文件注入到正在运行的 
+通过将更新的源代码文件注入到正在运行的
 [Dart 虚拟机（VM）][Dart Virtual Machine (VM)] 来实现热重载。
 在虚拟机使用新的字段和函数更新类之后，
-Flutter 框架会自动重新构建 widget 树，以便您可以快速查看更改的效果。
+Flutter 框架会自动重新构建 widget 树，以便你可以快速查看更改的效果。
 
 ## How to perform a hot reload
 
-## 如何热重载：
+## 如何进行热重载
 
 To hot reload a Flutter app:
 
-热重载 Flutter 应用：
+想要热重载 Flutter 应用：
 
- 1. Run the app from a supported [Flutter editor][]
-    or a terminal window.
-    Either a physical or virtual device can be the target.
-    **Only Flutter apps in debug mode can be hot reloaded.**
-    
-    在支持 [Flutter 编辑器][Flutter editor] 
-    或终端窗口运行应用程序，物理机或虚拟器都可以。
-    **Flutter 应用程序只有在调试模式下才能被热重载。**
-    
-1.  Modify one of the Dart files in your project.
-    Most types of code changes can be hot reloaded;
-    for a list of changes that require a hot restart, see
-    [Special cases](#special-cases).
-    
-    修改项目中的一个Dart文件。
-    大多数类型的代码更改可以热重载；
-    一些需要重新启动应用程序的更改列表，
-    请参阅 [特别情况](#special-cases)。
-    
- 1. If you're working in an IDE/editor that supports Flutter's IDE tools,
-    select **Save All** (`cmd-s`/`ctrl-s`), or click the hot reload
-    button on the toolbar.
-    
-    如果您在支持 Flutter IDE 工具的 IDE /编辑器中工作，
-    请选择 **Save All** (`cmd-s`/`ctrl-s`)，或单击工具栏上的 Hot Reload 按钮。
+1. Run the app from a supported [Flutter editor][] or a terminal window.
+   Either a physical or virtual device can be the target.
+   **Only Flutter apps in debug mode can be hot reloaded.**
 
-    If you're running the app at the command line using `flutter run`,
-    enter `r` in the terminal window.
-    
-    如果您正在使用命令行 `flutter run` 运行应用程序，请在终端窗口输入 `r`。
+   在支持 [Flutter 编辑器][Flutter editor]
+   或终端窗口运行应用程序，物理机或虚拟器都可以。
+   **Flutter 应用程序只有在 DEBUG 模式下才能被热重载。**
+
+1. Modify one of the Dart files in your project.
+   Most types of code changes can be hot reloaded;
+   for a list of changes that require a hot restart,
+   see [Special cases](#special-cases).
+
+   修改项目中的一个 Dart 文件。
+   大多数类型的代码更改可以热重载，然而一些 [特别情况](#special-cases)
+   需要热重启应用程序以生效。
+
+1. If you're working in an IDE/editor that supports Flutter's IDE tools,
+   select **Save All** (`cmd-s`/`ctrl-s`),
+   or click the hot reload button on the toolbar.
+
+   如果你在支持 Flutter 的 IDE 或编辑器中工作，
+   请选择 **Save All** (`Command + S`/`Ctrl + S`)，
+   或单击工具栏上的 Hot Reload 按钮。
+
+   If you're running the app at the command line using `flutter run`,
+   enter `r` in the terminal window.
+
+   如果你正在使用命令行 `flutter run` 运行应用程序，请在终端窗口输入 `r`。
 
 After a successful hot reload operation,
 you'll see a message in the console similar to:
 
-成功执行热重载后，您将在控制台中看到类似于以下内容的消息：
+成功执行热重载后，你将在控制台中看到类似于以下内容的消息：
 
 ```
 Performing hot reload...
@@ -75,23 +74,36 @@ Reloaded 1 of 448 libraries in 978ms.
 
 The app updates to reflect your change,
 and the current state of the app is preserved.
-Your app continues to execute from where it was prior to running
-the hot reload command. The code updates and execution continues.
+Your app continues to execute from where it was prior
+to run the hot reload command.
+The code updates and execution continues.
 
-应用程序更新以反映您的更改，并且应用程序的当前状态将保留。
-您的应用程序将继续从之前运行热重载命令的位置开始执行。代码被更新并继续执行。
+应用程序将以你的更改进行更新，并保留应用程序当前的状态。
+你的应用程序将继续从之前运行热重载命令的位置开始执行。代码被更新并继续执行。
 
 {{site.alert.secondary}}
+
   **What is the difference between hot reload, hot restart,
-  and full restart?**<br>
+  and full restart?**
+
+  **热重载、热重启和完全重启之间有什么区别？**<br>
 
   * **Hot reload** loads code changes into the VM and re-builds
     the widget tree, preserving the app state;
-    it doesn’t rerun `main()` or `initState()`.
+    it doesn't rerun `main()` or `initState()`.
     (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
+
+    **热重载** 会将代码更改转入 VM，重建 widget 树并保持应用的状态，
+    整个过程不会重新运行 `main()` 或者 `initState()`。
+    （在 IDEA 中的快捷键是 `⌘\`，在 VSCode 中是 `⌃F5`）
+
   * **Hot restart** loads code changes into the VM,
     and restarts the Flutter app, losing the app state.
     (`⇧⌘\` in IntelliJ and Android Studio, `⇧⌘F5` in VSCode)
+
+    **热重启** 会将代码更改转入 VM，重启 Flutter 应用，不保留应用状态。
+    （在 IDEA 中的快捷键是 `⇧⌘\`，在 VSCode 中是 `⇧⌘F5`）
+
   * **Full restart** restarts the iOS, Android, or web app.
     This takes longer because it also recompiles the
     Java / Kotlin / ObjC / Swift code. On the web,
@@ -99,8 +111,16 @@ the hot reload command. The code updates and execution continues.
     There is no specific keyboard shortcut for this;
     you need to stop and start the run configuration.
 
+    **完全重启** 将会完全重新运行应用。
+    该进程较为耗时，因为它会重新编译原生部分代码。
+    在 Web 平台上，它同时会重启 Dart 开发编译器。
+    完全重启并没有既定的快捷键，你需要手动停止后重新运行。
+
   Flutter web currently supports hot restart but not
   hot reload.
+
+  Flutter web 目前仅支持热重启，不支持热重载。
+
 {{site.alert.end}}
 
 ![Android Studio UI]({{site.url}}/assets/images/docs/development/tools/android-studio-run-controls.png){:width="100%"}<br>
@@ -109,9 +129,9 @@ the hot reload command. The code updates and execution continues.
 
 A code change has a visible effect only if the modified
 Dart code is run again after the change. Specifically,
-a hot reload causes all of the existing widgets to rebuild.
-Only code involved in the rebuilding of the widgets is
-automatically re-executed. The `main()` and `initState()`
+a hot reload causes all the existing widgets to rebuild.
+Only code involved in the rebuilding of the widgets
+is automatically re-executed. The `main()` and `initState()`
 functions, for example, are not run again.
 
 只有修改后的 Dart 代码再次运行时，代码更改才会产生可见效果。
@@ -126,23 +146,21 @@ functions, for example, are not run again.
 The next sections describe specific scenarios that involve
 hot reload. In some cases, small changes to the Dart code
 enable you to continue using hot reload for your app.
-In other cases, a hot restart, or a full restart is
-needed.
+In other cases, a hot restart, or a full restart is needed.
 
 下面的部分会描述一些热重载的特别的情况。
-在某些情况下，对 Dart 代码的小改动将确保您能够继续使用热重载。
+在某些情况下，对 Dart 代码的小改动将确保你能够继续使用热重载。
 在其他情况下，需要热重启或完全重启。
 
 ### An app is killed
 
-### 应用被杀死
+### 应用被强制停止
 
 Hot reload can break when the app is killed.
-For example, if the app was in the background for
-too long.
+For example, if the app was in the background for too long.
 
-热重载会在应用被杀死之后断掉。
-比如一直在后台运行的应用（会被系统杀死）。
+热重载会在应用被强制停止之后断开连接。
+比如一直在后台运行的应用（会被系统强制停止）。
 
 ### Compilation errors
 
@@ -155,10 +173,10 @@ hot reload generates an error message similar to:
 
 ```nocode
 Hot reload was rejected:
-'/Users/obiwan/Library/Developer/CoreSimulator/Devices/AC94F0FF-16F7-46C8-B4BF-218B73C547AC/data/Containers/Data/Application/4F72B076-42AD-44A4-A7CF-57D9F93E895E/tmp/ios_testWIDYdS/ios_test/lib/main.dart': warning: line 16 pos 38: unbalanced '{' opens here
+'/path/to/project/lib/main.dart': warning: line 16 pos 38: unbalanced '{' opens here
   Widget build(BuildContext context) {
                                      ^
-'/Users/obiwan/Library/Developer/CoreSimulator/Devices/AC94F0FF-16F7-46C8-B4BF-218B73C547AC/data/Containers/Data/Application/4F72B076-42AD-44A4-A7CF-57D9F93E895E/tmp/ios_testWIDYdS/ios_test/lib/main.dart': error: line 33 pos 5: unbalanced ')'
+'/path/to/project/lib/main.dart': error: line 33 pos 5: unbalanced ')'
     );
     ^
 ```
@@ -170,19 +188,31 @@ specified lines of Dart code to keep using hot reload.
 
 ### CupertinoTabView's builder
 
-Hot reload won't apply changes made to a `builder`
-of a `CupertinoTabView`. For more information, see
-[Issue 43574][].
+Hot reload won't apply changes made to
+a `builder` of a `CupertinoTabView`.
+For more information, see [Issue 43574][].
+
+热重载对 `CupertinoTabView` 的 `builder` 不起作用。
+你可以查看 [Issue 43574][] 了解更多细节。
 
 ### Enumerated types
+
+### 枚举类型
 
 Hot reload doesn't work when enumerated types are
 changed to regular classes or regular classes are
 changed to enumerated types.
 
+在枚举类型与普通的类定义互相转换时，热重载无法生效。
+
 For example:
 
+例如：
+
 Before the change:
+
+更改前：
+
 <?code-excerpt "lib/hot-reload/before.dart (Enum)"?>
 ```dart
 enum Color {
@@ -193,6 +223,9 @@ enum Color {
 ```
 
 After the change:
+
+更改后：
+
 <?code-excerpt "lib/hot-reload/after.dart (Enum)"?>
 ```dart
 class Color {
@@ -209,12 +242,22 @@ class Color {
 Hot reload supports changing assets, for the most part.
 However, if you change fonts, you'll need to hot restart.
 
+热重载支持资源的变更的大部分场景。
+然而如果你改变了字体，你需要进行热重启。
+
 ### Generic types
 
+### 泛型
+
 Hot reload won't work when generic type declarations
-are modified.  For example, the following won't work:
+are modified. For example, the following won't work:
+
+在泛型发生改变时，热重载不会生效。下面的例子将不会有效果：
 
 Before the change:
+
+更改前：
+
 <?code-excerpt "lib/hot-reload/before.dart (Class)"?>
 ```dart
 class A<T> {
@@ -223,6 +266,9 @@ class A<T> {
 ```
 
 After the change:
+
+更改后：
+
 <?code-excerpt "lib/hot-reload/after.dart (Class)"?>
 ```dart
 class A<T, V> {
@@ -233,11 +279,18 @@ class A<T, V> {
 
 ### Native code
 
+### 原生代码
+
 If you've changed native code (such as Kotlin, Java, Swift,
 or Objective-C), you must perform a full restart (stop and
 restart the app) to see the changes take effect.
 
+如果你更改了原生代码（例如 Kotlin、Java、Swift 或 Objective-C），
+你必须要进行完全重启（停止后重新运行应用）才能让更改生效。
+
 ### Previous state is combined with new code
+
+### 新的代码与旧的状态结合
 
 Flutter's stateful hot reload preserves the state of your app.
 This approach enables you to view the effect of the most
@@ -247,17 +300,20 @@ you can modify and hot reload a page several levels down in
 the navigation hierarchy, without re-entering your login credentials.
 State is kept, which is usually the desired behavior.
 
+Flutter 有状态的热重载将保持你的应用的状态。
+这项特性让你能够在不丢失状态的情况下，预览代码作出的改动。
+例如，如果你的应用需要用户登录，你可以调整路由相关的内容重载几次，
+而不需要重新进入登录流程。过程中状态是保持的，一般与预期相符。
+
 If code changes affect the state of your app (or its dependencies),
-the data your app has to work with might not be fully consistent with
-the data it would have if it executed from scratch.
-The result might be different behavior after hot reload
+the data your app has to work with might not be fully consistent
+with the data it would have if it executed from scratch.
+The result might be different behavior after a hot reload
 versus a hot restart.
 
-{{site.alert.note}}
-  As of Flutter 1.17, you can switch a widget
-  from a `StatefulWidget` to a `StatelessWidget`
-  (or the reverse), without requiring a hot restart.
-{{site.alert.end}}
+如果代码改动会影响你的应用的状态（或应用的依赖），
+则应用里正在使用的数据可能与从一开始执行的数据不完全一致。
+热重载和热重启的结果可能不一致。
 
 ### Recent code change is included but app state is excluded
 
@@ -270,12 +326,17 @@ initializer was evaluated to.
 Global variables and static fields are treated as state,
 and are therefore not reinitialized during hot reload.
 
-在 Dart 中，[静态字段会被惰性初始化][const-new]。 这意味着第一次运行 Flutter 应用程序并读取静态字段时，
-会将静态字段的值设为其初始表达式的结果。全局变量和静态字段都被视为状态，因此在热重载期间不会重新初始化。
+在 Dart 中，[静态字段是延迟初始化的][const-new]。
+这意味着第一次运行 Flutter 应用程序并读取静态字段时，
+会将静态字段的值设为其初始表达式的结果。
+全局变量和静态字段都被视为状态，因此在热重载期间不会重新初始化。
 
 If you change initializers of global variables and static fields,
-a full restart is necessary to see the changes.
+a hot restart or restart the state where the initializers are hold
+is necessary to see the changes.
 For example, consider the following code:
+
+如果你改变了全局变量或静态字段的初始化内容，你需要重新
 
 如果更改全局变量和静态字段的初始化语句，则需要完全重启以查看更改。
 例如，参考以下代码：
@@ -373,7 +434,7 @@ void onClick() {
 Running the app for the first time prints `1` and `1`.
 Then, you make the following change:
 
-第一次运行应用程序会打印 `1` 和 `1`。然后，如果您进行以下更改：
+第一次运行应用程序会打印 `1` 和 `1`。然后，如果你进行以下更改：
 
 <?code-excerpt "lib/hot-reload/after.dart (Const)"?>
 ```dart
@@ -389,9 +450,9 @@ While changes to `const` field values are always hot reloaded,
 the static field initializer is not rerun. Conceptually,
 `const` fields are treated like aliases instead of state.
 
-热重载后，现在打印出 `2`和 `1`。虽然对 const 定义的字段值的更改始终会重新加载，
+虽然对 `const` 定义的字段值的更改始终会重新加载，
 但不会重新运行静态字段的初始化语句。
-从概念上讲，const 字段被视为别名而不是状态。
+从概念上讲，`const` 字段被视为别名而不是状态。
 
 The Dart VM detects initializer changes and flags when a set
 of changes needs a hot restart to take effect.
@@ -413,8 +474,8 @@ return the value, rather than using `final`.
 For example, either of the following solutions work:
 
 为了能够更改 `foo` 并在热重载后查看更改，
-应该将字段重新用 const 定义或使用 getter 来返回值，而不是使用 final。
-例如下面的解决方案应该都可以使用：
+应该将字段重新用 `const` 定义或使用 getter 来返回值，而不是使用 `final`。
+下面的解决方案均可使用：
 
 <!-- skip -->
 ```dart
@@ -448,7 +509,7 @@ void onClick() {
 For more information, read about the [differences
 between the `const` and `final` keywords][const-new] in Dart.
 
-了解更多 Dart 中关于 [const 和 final 关键字的区别][const-new].
+你可以阅读 Dart 中 [`const` 和 `final` 关键字的区别][const-new] 了解更多。
 
 ### Recent UI change is excluded
 
@@ -469,9 +530,10 @@ However, if the modified code won't be re-executed as a result
 of rebuilding the widget tree, then you won't
 see its effects after hot reload.
 
-作为一般规则，如果修改后的代码位于根 widget 的构建方法的下游，
-则热重载将按预期运行。但是，如果修改后的代码不会因重新构建 widget
-树而重新执行的话，那么在热重载后您将看不到它的效果。
+作为一般规则，如果修改后的代码位于根 widget 的
+`build()` 方法的下游，则热重载将按预期运行。
+但是，如果修改后的代码不会因重新构建 widget 树而重新执行的话，
+那么在热重载后你将看不到它更改后的效果。
 
 For example, consider the following code:
 
@@ -486,7 +548,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -512,7 +574,7 @@ With a hot restart, the program starts from the beginning,
 executes the new version of `main()`,
 and builds a widget tree that displays the text `Hello`.
 
-完全重启后，程序会从头开始执行新的 `main()` 方法，
+如果你进行了完全重启，程序会从头开始执行新的 `main()` 方法，
 并构建一个 widget 树来显示文本 `Hello`。
 
 However, if you hot reload the app after this change,
@@ -521,13 +583,14 @@ and the widget tree is rebuilt with the unchanged instance
 of `MyApp` as the root widget.
 This results in no visible change after hot reload.
 
-但是，如果您在更改后是通过热重载运行，`main()` 方法则不会重新执行，
+但是，如果你在更改后是通过热重载运行，
+`main()` 和 `initState()` 方法不会重新执行，
 并且会使用未修改的 `MyApp` 实例作为根 widget 树来构建新的 widget 树，
 热重载后结果没有变化。
 
 ## How it works
 
-## 如何实现
+## 热重载的原理
 
 When hot reload is invoked, the host machine looks
 at the edited code since the last compilation.
@@ -557,14 +620,15 @@ The source code from those libraries is compiled into
 The Dart VM re-loads all libraries from the new kernel file.
 So far no code is re-executed.
 
-Dart VM 重新加载新内核文件中的所有文件。到目前为止，没有重新执行代码。
+Dart VM 重新加载新内核文件中的所有文件。
+到这一步为止，没有重新执行任何代码。
 
 The hot reload mechanism then causes the Flutter framework
 to trigger a rebuild/re-layout/repaint of all existing
 widgets and render objects.
 
-然后，热重载机制使 Flutter 框架触发所有现有的
-widget 和渲染对象的重建/重新布局/重绘。
+最后，热重载机制在 Flutter 框架中触发所有现有的
+widget 和渲染对象的重建/重新布局/重绘 (reassemble)。
 
 [const-new]: https://news.dartlang.org/2012/06/const-static-final-oh-my.html
 [Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform

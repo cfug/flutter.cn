@@ -1,10 +1,10 @@
-import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:flutter/material.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   final String title;
 
@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
   // #docregion connect
   final _channel = WebSocketChannel.connect(
-    Uri.parse('wss://echo.websocket.org'),
+    Uri.parse('wss://echo.websocket.events'),
   );
   // #enddocregion connect
 
@@ -88,6 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // #docregion close
     _channel.sink.close();
     // #enddocregion close
+    _controller.dispose();
     super.dispose();
   }
 }

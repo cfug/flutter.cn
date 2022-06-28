@@ -584,11 +584,13 @@ Here the progress indicator causes its container to repaint:
 <?code-excerpt "lib/highlight_repaints.dart (EverythingRepaints)"?>
 ```dart
 class EverythingRepaintsPage extends StatelessWidget {
+  const EverythingRepaintsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Repaint Example')),
-      body: Center(
+      appBar: AppBar(title: const Text('Repaint Example')),
+      body: const Center(
         child: CircularProgressIndicator(),
       ),
     );
@@ -607,11 +609,13 @@ only that section of the screen to repaint:
 <?code-excerpt "lib/highlight_repaints.dart (AreaRepaints)"?>
 ```dart
 class AreaRepaintsPage extends StatelessWidget {
+  const AreaRepaintsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Repaint Example')),
-      body: Center(
+      appBar: AppBar(title: const Text('Repaint Example')),
+      body: const Center(
         child: RepaintBoundary(
           child: CircularProgressIndicator(),
         ),
@@ -695,6 +699,8 @@ parameters on the `Image` constructor:
 <?code-excerpt "lib/oversized_images.dart (ResizedImage)"?>
 ```dart
 class ResizedImage extends StatelessWidget {
+  const ResizedImage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Image.asset(
@@ -722,8 +728,6 @@ This property can also be set in code:
 
 <?code-excerpt "lib/oversized_images.dart (Toggle)"?>
 ```dart
-import 'package:flutter/painting.dart';
-
 void showOversizedImages() {
   debugInvertOversizedImages = true;
 }
@@ -835,10 +839,10 @@ of the Flutter inspector.
 [`FlexFit`]: {{site.api}}/flutter/widgets/FlexFit-class.html
 [`FlexParentData.fit`]: {{site.api}}/flutter/rendering/FlexParentData/fit.html
 [`FlexParentData.flex`]: {{site.api}}/flutter/rendering/FlexParentData/flex.html
-[Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [`mainAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/mainAxisAlignment.html
 [`mainAxisSize`]: {{site.api}}/flutter/widgets/Flex/mainAxisSize.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
-[the performance overlay]: {{site.url}}/perf/rendering/ui-performance#the-performance-overlay
+[the performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
 [Understanding constraints]: {{site.url}}/development/ui/layout/constraints

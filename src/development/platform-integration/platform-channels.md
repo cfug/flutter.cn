@@ -65,7 +65,7 @@ Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是�
 * The Flutter portion of the app sends messages to its *host*,
   the non-Dart portion of the app, over a platform channel.
 
-  应用程序中的 Flutter 部分通过平台通道向其宿主（应用程序中的 iOS 或 Android 部分）发送消息。
+  应用中的 Flutter 部分通过平台通道向其宿主 (非 Dart 部分) 发送消息。
 
 * The *host* listens on the platform channel, and receives the message.
   It then calls into any number of platform-specific APIs&mdash;using
@@ -78,17 +78,17 @@ Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是�
 {{site.alert.note}}
 
   This guide addresses using the platform channel mechanism if you need
-  to use the platform's APIs in a non-Dart languaage.
-  But you can also write platform-specific Dart code 
+  to use the platform's APIs in a non-Dart language.  But you can also write
+  platform-specific Dart code
   in your Flutter app by inspecting the [defaultTargetPlatform][] property.
   [Platform adaptations][] lists some platform-specific adaptations
   that Flutter automatically does for you in the framework.
 
-  如果你需要在非 Dart 语言中使用平台的 API
-  或库，本指南将使用平台通道机制。但你也可以通过检查 Flutter 应用程序中的
-  [defaultTargetPlatform][] 属性来编写相关平台的 Dart 代码。
-  [不同平台操作体验的差异和适配][Platform adaptations] 文档中列出了
-  Flutter 框架自动为你执行的一些相关平台适配。
+  本篇教程主要介绍如何在非 Dart 语言中，利用平台通道的机制调用平台 API。
+  但是当你在 Flutter 应用里编写 Dart 代码时，你也可以通过判断 [defaultTargetPlatform][]，
+  在不同的平台上执行对应的代码。
+  [不同平台操作体验的差异和适配][Platform adaptations] 文档中列举了部分
+  Flutter 框架自动为你处理的平台适配行为。
 {{site.alert.end}}
 
 ## Architectural overview: platform channels {#architecture}
@@ -168,7 +168,6 @@ The following table shows how Dart values are received on the
 platform side and vice versa:
 
 下表展示了如何在平台端接收 Dart 值，反之亦然：
-
 {% samplecode type-mappings %}
 {% sample Java %}
 | Dart                       | Java                |
@@ -478,6 +477,7 @@ class MainActivity: FlutterActivity() {
   private val CHANNEL = "samples.flutter.dev/battery"
 
   override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+    super.configureFlutterEngine(flutterEngine)
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
       // Note: this method is invoked on the main thread.
@@ -1053,7 +1053,7 @@ abstract class Api {
 ```dart
 import 'generated_pigeon.dart';
 
-void onClick() async {
+Future<void> onClick() async {
   SearchRequest request = SearchRequest()..query = 'test';
   Api api = SomeApi();
   SearchReply reply = await api.search(request);
@@ -1119,7 +1119,9 @@ be invoked on the platform's main thread. When invoking channels in Flutter
 destined for the platform side, they need to be invoked on the root Isolate. The
 platform side's handlers can execute on the platform's main thread or they can
 execute on a background thread if a Task Queue is used. The result of the
-platform side handlers can be invoked asynchronously and on any thread.
+platform side handlers can be invoked asynchronously and on any thread when the
+Task Queue API is available; otherwise, they must be invoked on the platform
+thread.
 
 目标平台向 Flutter 发起 channel 调用的时候，需要在对应平台的主线程执行。
 同样的，在 Flutter 向目标平台发起 channel 调用的时候，需要在根 Isolate 中执行。
@@ -1128,15 +1130,27 @@ platform side handlers can be invoked asynchronously and on any thread.
 
 {{site.alert.note}}
 
-On Android, the platform's main thread is sometimes called
-the "main thread", but it is technically defined as [the UI thread][]. Annotate
-methods that need to be run on the UI thread with `@UiThread`. On iOS, this
-thread is officially referred to as [the main thread][].
+  In release 2.10, the Task Queue API is available for Android. For iOS, it is
+  only available on the `master` channel.
 
-在 Android 平台上时，平台的 main 线程有时候被叫做主线程，
-但是它在技术上被看作 [UI 线程][the UI thread]。
-被 `@UiThread` 注解标记的方法需要在 UI 线程上执行。
-在 iOS 上，这个线程被官方标记为[主线程][the main thread]。
+  在 2.10 正式版中，Task Queue API 在 Android 上已经可以使用，
+  若要在 iOS 上使用，需要切换到 `master` 渠道。
+
+{{site.alert.end}}
+
+{{site.alert.note}}
+
+  On Android, the platform's main thread is sometimes called the "main thread",
+  but it is technically defined as [the UI thread][]. Annotate methods that need
+  to be run on the UI thread with `@UiThread`. On iOS, this thread is officially
+  referred to as [the main thread][].
+
+  在 Android 平台上时，平台的 main 线程有时候被叫做主线程，
+  但是它在技术上被看作 [UI 线程][the UI thread]。
+  被 `@UiThread` 注解标记的方法需要在 UI 线程上执行。
+  在 iOS 上，这个线程被官方标记为[主线程][the main thread]。
+
+{{site.alert.end}}
 
 ### Executing channel handlers on background threads
 
@@ -1189,6 +1203,15 @@ In Swift:
 
 Swift 版本：
 
+{{site.alert.note}}
+
+  In release 2.10, the Task Queue API is only available on the `master` channel
+  for iOS.
+
+  在 2.10 的发布中，若要在 iOS 上使用 Task Queue API，只能切换到 `master` 渠道。
+
+{{site.alert.end}}
+
 ```swift
 public static func register(with registrar: FlutterPluginRegistrar) {
   let taskQueue = registrar.messenger.makeBackgroundTaskQueue()
@@ -1205,6 +1228,15 @@ In Objective-C:
 
 Objective-C 版本：
 
+{{site.alert.note}}
+
+  In release 2.10, the Task Queue API is only available on the `master` channel
+  for iOS.
+
+  在 2.10 的发布中，若要在 iOS 上使用 Task Queue API，只能切换到 `master` 渠道。
+
+{{site.alert.end}}
+
 ```objc
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   NSObject<FlutterTaskQueue>* taskQueue =
@@ -1218,6 +1250,7 @@ Objective-C 版本：
   [registrar addMethodCallDelegate:instance channel:channel];
 }
 ```
+
 
 ### Jumping to the UI thread in Android
 
@@ -1299,8 +1332,8 @@ DispatchQueue.main.async {
 [developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
 [plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
-[`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel
-[`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel_swift
+[`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel
+[`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel_swift
 [JS interoperability]: {{site.dart-site}}/web/js-interop
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html

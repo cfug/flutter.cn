@@ -76,9 +76,9 @@ To keep it simple, generate a list of strings.
 在我们的例子中，我们需要 20 个样本项来实现列表。
 为简单起见，我们会生成一个字符串列表。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Items)"?>
 ```dart
-final items = List<String>.generate(20, (i) => "Item ${i + 1}");
+final items = List<String>.generate(20, (i) => 'Item ${i + 1}');
 ```
 
 ### Convert the data source into a list
@@ -195,7 +195,7 @@ provide a `background` parameter to the `Dismissible`.
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
@@ -208,7 +208,7 @@ void main() {
 // MyApp是一个StatefulWidget。这样，我们就能够在列表项被移除的时候，更新Widget的状态。
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   MyAppState createState() {

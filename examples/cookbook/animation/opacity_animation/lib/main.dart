@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
 // In this case, the widget takes a title, and creates a _MyHomePageState.
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   final String title;
 
@@ -49,11 +49,13 @@ class _MyHomePageState extends State<MyHomePage> {
           opacity: _visible ? 1.0 : 0.0,
           duration: const Duration(milliseconds: 500),
           // The green box must be a child of the AnimatedOpacity widget.
+          // #docregion Container
           child: Container(
             width: 200.0,
             height: 200.0,
             color: Colors.green,
           ),
+          // #enddocregion Container
         ),
         // #enddocregion AnimatedOpacity
       ),

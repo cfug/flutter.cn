@@ -47,9 +47,9 @@ your application. It consists of three parts, each increasing in granularity.
   Cpu profiles are not indicative of release performance 
   unless your Flutter application is run in profile mode.
 
-   **对于 Flutter 应用程序，需要使用 profile 构建模式才能使用性能分析**
-   如果你希望你的 Flutter 应用程序性能与 Release 模式下相同
-   且希望使用性能分析工具，请使用 Profile 模式。
+  **对于 Flutter 应用程序，需要使用 profile 构建模式才能使用性能分析**
+  如果你希望你的 Flutter 应用程序性能与生产模式下相同
+  且希望使用性能分析工具，请使用性能模式。
 
 {{site.alert.end}}
 
@@ -83,7 +83,7 @@ UI 线程执行 Dart VM 中的 Dart 代码。
 当你创建或打开一个页面，
 UI 线程会创建一个图层树和一个轻量级的与设备无关的绘制指令集，
 并把图层树交给设备的 raster（栅格）线程进行渲染。
-**不要**阻塞这个线程。
+**不要** 阻塞这个线程。
 
 ### Raster
 
@@ -122,9 +122,9 @@ For more information on profiling, see
 
 更多详细信息，请查看文档 [定位 GPU 图表中的问题][GPU graph]。
 
-### Jank
+### Jank (slow frame)
 
-### 丢帧 (Jank)
+### 卡顿 (Jank)
 
 The frame rendering chart shows jank with a red overlay.
 A frame is considered to be janky if it takes more than
@@ -143,6 +143,24 @@ For more information on how to analyze your app's performance,
 see [Flutter performance profiling][].
 
 更多关于性能分析信息，请查看文档：[Flutter 性能分析][Flutter performance profiling]。
+
+### Shader compilation
+
+### 着色器渲染
+
+Shader compilation occurs when a shader is first used in your Flutter
+app. Frames that perform shader compilation are marked in dark
+red:
+
+在 Flutter 应用中，着色器会在初次使用时发生渲染。参与了着色器编译的构建帧已标记为深红色：
+
+![Screenshot of shader compilation for a frame]({{site.url}}/assets/images/docs/tools/devtools/shader-compilation-frames-chart.png)
+
+For more information on how to reduce shader compilation jank, see [Reduce
+shader compilation jank on mobile][].
+
+想要了解更多关于如何减少着色器缓存卡顿的内容，阅读
+[在移动端减少着色器编译卡顿][Reduce shader compilation jank on mobile]。
 
 ## Timeline events chart
 
@@ -169,11 +187,125 @@ with the mouse wheel / trackpad
 You can click an event to view CPU profiling information in the CPU profiler
 below, described in the next section.
 
-火焰图表支持缩放和平移。上下滚动分别进行放大和缩小。
-你可以通过单击和拖拽图表或水平滚动的方式来移动它。
-在下一节的描述中，你会了解在 CPU 分析器中单击一个事件来查看 CPU 信息。
+## Enhance tracing 
 
-{% include_relative _profiler.md %}
+## 增强的追踪选项
+
+To view more detailed tracing in the timeline events chart,
+use the options in the enhance tracing dropdown:
+
+想要在时间线事件图表里查看更详细的追踪内容，请使用增强的追踪下拉控件里的选项：
+
+{{site.alert.note}}
+
+  Frame times may be negatively affected when these options are enabled.
+
+  启用该选项后，帧构建时间可能会受到影响。
+
+{{site.alert.end}}
+
+![Screenshot of enhance tracing dropdown]({{site.url}}/assets/images/docs/tools/devtools/enhance-tracing.png)
+
+To see the new timeline events,
+reproduce the activity in your app that you are interested in tracing,
+and then select a frame to inspect the timeline.
+
+你可以重复操作你想要追踪的行为来查看新的时间线事件，
+操作后可以在时间线中选择一个构建帧进行查看。
+
+### Track widget builds
+
+### 追踪 widget 的构建
+
+To see the build() method events in the timeline,
+enable the Track Widget Builds option.
+The name of the widget is shown in the timeline event.
+
+想要在时间线中查看 `build()` 方法的事件，启用 Track Widget Builds 选项。
+时间线中将出现 widget 对应名称的事件。
+
+![Screenshot of track widget builds]({{site.url}}/assets/images/docs/tools/devtools/track-widget-builds.png)
+
+### Track layouts
+
+### 追踪布局
+
+To see render object layout events in the timeline,
+enable the Track Layouts option:
+
+想要在时间线中查看 `RenderObject` 布局构建的事件，启用 Track Layouts 选项：
+
+![Screenshot of track layouts]({{site.url}}/assets/images/docs/tools/devtools/track-layouts.png)
+
+### Track paints
+
+### 追踪绘制
+
+To see render object paint events in the timeline,
+enable the Track Paints option:
+
+想要在时间线中查看 `RenderObject` 的绘制事件，启用 Track Paints 选项：
+
+![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
+
+## More debugging options
+
+## 更多调试选项
+
+To diagnose performance problems related to rendering layers,
+toggle off a rendering layer.
+These options are enabled by default.
+
+想要诊断渲染图层相关的问题，请先关闭渲染层。
+下述的选项将会默认启动。
+
+To see the effects on your app's performance,
+reproduce the activity in your app.
+Then select the new frames in the frames chart
+to inspect the timeline events
+with the layers disabled.
+If Raster time has significantly decreased,
+excessive use of the effects you disabled might be contributing
+to the jank you saw in your app.
+
+想要查看你的应用的性能影响，请尝试以相同的操作重现性能问题。
+在渲染层关闭的情况下，于构建帧图表里选择一个新的构建帧，
+查看它的时间线细节。
+如果 Raster 线程的时间消耗有显著降低，
+那么你禁用的效果的滥用可能是导致卡顿的主要原因。
+
+**Render Clip layers**
+<br> Disable this option  to check whether excessive use of clipping
+     is affecting performance.
+     If performance improves with this option disabled,
+     try to reduce the use of clipping effects in your app.
+
+**渲染裁剪的图层**
+<br> 禁用该选项来检查已使用的裁剪图层是否影响了性能。
+     如果禁用后性能有显著提升，请尝试减少你的应用中裁剪效果的使用。
+
+**Render Opacity layers**
+<br> Disable this option to check whether
+     excessive use of opacity effects are affecting performance.
+     If performance improves with this option disabled,
+     try to reduce the use of opacity effects in your app.
+
+**渲染透明度图层**
+<br> 禁用该选项来检查已使用的透明度图层是否影响了性能。
+     如果禁用后性能有显著提升，请尝试减少你的应用中透明度效果的使用。
+
+**Render Physical Shape Layers**
+<br> Disable this option to check whether excessive
+     use of physical modeling effects are affecting performance,
+     such as shadows or elevation.
+     If performance improves with this option disabled,
+     try to reduce the use of physical modeling effects in your app.
+
+**渲染物理形状图层**
+<br> 禁用该选项来检查已使用的物理形状图层是否影响了性能，例如阴影和背景特效。
+     如果禁用后性能有显著提升，请尝试减少你的应用中物理效果的使用。
+
+![Screenshot of more debugging options]({{site.url}}/assets/images/docs/tools/devtools/more-debugging-options.png)
 
 ## Import and export
 
@@ -186,11 +318,13 @@ performance page. To import a performance snapshot, you can drag and drop the
 snapshot into DevTools from any page. **Note that DevTools only
 supports importing files that were originally exported from DevTools.**
 
-DevTools 支持导入和导出时间线快照。单击 export 按钮 (帧渲染图表右上角) 下载当前时间线的快照。
+DevTools 支持导入和导出时间线快照。单击 export 按钮
+(帧渲染图表右上角) 下载当前时间线的快照。
 要导入时间线快照，可以从任何页面拖放快照到 DevTools。
-提示 : DevTools 仅支持导入 DevTools 导出的源文件。
+提示：DevTools 仅支持导入 DevTools 导出的源文件。
 
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
-[GPU graph]: {{site.url}}/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
-[Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph
+[Flutter performance profiling]: {{site.url}}/perf/ui-performance
+[Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export

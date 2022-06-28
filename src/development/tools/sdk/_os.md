@@ -1,5 +1,5 @@
 {% assign id =  include.os | downcase -%}
-{% assign channels =  'stable beta dev' | split: ' ' -%}
+{% assign channels =  'stable beta' | split: ' ' -%}
 
 <div id="{{id}}" class="tab-pane
   {%- if id == 'windows' %} active {% endif %}"
@@ -14,8 +14,8 @@ Select from the following scrollable list:
 
 <div class="scrollable-table">
   <table id="downloads-{{id}}-{{channel}}" class="table table-striped">
-  <thead><tr><th>版本</th><th>Ref</th><th class="date">发布日期</th></tr></thead>
-  <tr class="loading"><td colspan="3">Loading...</td></tr>
+  <thead><tr><th>Flutter 版本</th><th>架构</th><th>Ref</th><th class="date">发布日期</th><th>Dart 版本</th></tr></thead>
+  <tr class="loading"><td colspan="5">Loading...</td></tr>
   </table>
 </div>
 {% endfor -%}

@@ -95,7 +95,7 @@ can be updated when the user taps a button.
 <?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
 ```dart
 class AnimatedContainerApp extends StatefulWidget {
-  const AnimatedContainerApp({Key? key}) : super(key: key);
+  const AnimatedContainerApp({super.key});
 
   @override
   _AnimatedContainerAppState createState() => _AnimatedContainerAppState();
@@ -207,7 +207,7 @@ FloatingActionButton(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -215,7 +215,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const AnimatedContainerApp());
 
 class AnimatedContainerApp extends StatefulWidget {
-  const AnimatedContainerApp({Key? key}) : super(key: key);
+  const AnimatedContainerApp({super.key});
 
   @override
   _AnimatedContainerAppState createState() => _AnimatedContainerAppState();

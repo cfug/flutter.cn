@@ -5,7 +5,7 @@ include shared.env
 
 all: gen-env up down debug shell setup serve switch-channel test-channel \
 	refresh-code-excerpts check-code check-links test debug-test build \
-	build-image deploy stage clean reinstall purge
+	build-image deploy stage clean reinstall purge move-docs
 
 .DEFAULT_GOAL := up
 .PHONY: all
@@ -53,9 +53,10 @@ shell:
 # overcome inconsistent bugs with missing packages at runtime.
 setup:
 	make clean
-	docker-compose build site
-	docker-compose run --rm site bundle install
+	docker-compose build --no-cache site
 	docker-compose run --rm site npm install
+	docker-compose run --rm site bundle config set force_ruby_platform true
+	docker-compose run --rm site bundle install
 
 # Serve the Jekyll site with livereload and incremental builds
 # NOTE this is run inside of the container on `make up`
@@ -214,3 +215,7 @@ purge:
 	docker-compose down
 	docker rm -f $(docker ps -aq)
 	docker rmi flt-dev
+
+# Move around docs in order to customize path orders
+move-docs:
+	sh tool/move_docs.sh

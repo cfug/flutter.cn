@@ -41,7 +41,7 @@ about evaluating and debugging Flutter's performance.
 * My Flutter app looks janky or stutters. How do I fix it?
   * [Improving rendering performance][]
 
-[Improving rendering performance]: {{site.url}}/perf/rendering
+[Improving rendering performance]: {{site.url}}/perf/rendering-performance
 
 * What are some costly performance operations that I need
   to be careful with?
@@ -52,9 +52,8 @@ about evaluating and debugging Flutter's performance.
 
 [`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip-class.html
 [`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
-[Performance best practices]: {{site.url}}/flutter/dart-ui/ImageFilter-class.html
 [`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
-[Performance best practices]: {{site.url}}/perf/rendering/best-practices
+[Performance best practices]: {{site.url}}/perf/best-practices
 [`savelayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
 * How do I tell which widgets in my Flutter app are rebuilt
@@ -98,7 +97,7 @@ about evaluating and debugging Flutter's performance.
     hash in the URL with a recent commit hash from
     [GitHub engine repository commits][].
 
-[binary size dashboard]: https://storage.googleapis.com/flutter_infra_release/flutter/241c87ad800beeab545ab867354d4683d5bfb6ce/android-arm-release/sizes/index.html
+[binary size dashboard]: https://storage.flutter-io.cn/flutter_infra_release/flutter/241c87ad800beeab545ab867354d4683d5bfb6ce/android-arm-release/sizes/index.html
 [GitHub engine repository commits]: {{site.github}}/flutter/engine/commits
 
 * How can I take a screenshot of an app that is running and export it

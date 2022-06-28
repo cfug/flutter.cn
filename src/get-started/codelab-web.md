@@ -142,52 +142,31 @@ You'll start with a simple web app that we provide for you.
 
 <ol markdown="1">
 <li markdown="1">Enable web development.<br>
-At the command line, perform the following commands to
-make sure that you have the latest web support and that
-it's enabled. You only need to run `flutter config` once
-to enable Flutter support for web.
-If you see "flutter: command not found",
-then make sure that you have installed the
-[Flutter SDK][] and that it’s in your path.
-
 启用 Web 开发。<br>
-打开命令行，执行下面命令以确保你的 SDK 是最新的，并且开启了 Web 支持。
-你仅需要执行一次 `flutter config --enable-web` 来启用 Flutter 对 Web 开发的支持。
-如果运行命令出现 "flutter: command not found" 错误，
-说明你未安装 [Flutter SDK][] 或者未配置 Flutter 环境变量。
 
-```terminal
-$ flutter channel beta
-$ flutter upgrade
-$ flutter config --enable-web
-```
+At the command line, perform the following command to
+make sure that you have Flutter installed correctly. 
 
-If you have problems enabling web development,
-see [Building a web application with Flutter][].
-
-如果你在开启 Web 开发支持时遇到问题，请查看文档了解更多：
-[使用 Flutter 构建 Web 应用][Building a web application with Flutter]。
-
-</li>
-
-<li markdown="1">Run `flutter doctor`.<br>
-The `flutter doctor` command reports the status of the installation.
-You should see something like the following:
-
-命令行运行 `flutter doctor`。<br>
-`flutter doctor` 命令将会检测安装状态。
-你应该可以看到如下类似的内容:
+在命令行观察输出内容，你应该可以看到如下类似的内容，
+说明 Flutter 安装的没问题：
 
 ```terminal
 $ flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 2.8.1, on macOS 12.1 21C52 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 31.0.0)
+[✓] Xcode - develop for iOS and macOS (Xcode 13.2.1)
+[✓] Chrome - develop for the web
+[✓] Android Studio (version 2020.3)
+[✓] VS Code (version 1.63.2)
+[✓] Connected device (2 available)
 
-[✓] Flutter: is fully installed. (Channel dev, v1.9.5, on Mac OS X 10.14.6 18G87, locale en-US)
-[✗] Android toolchain - develop for Android devices: is not installed.
-[✗] Xcode - develop for iOS and macOS: is not installed.
-[✓] Chrome - develop for the web: is fully installed.
-[!] Android Studio: is not available. (not installed)
-[✓] Connected device: is fully installed. (1 available)
+• No issues found!
 ```
+
+If you see "flutter: command not found",
+then make sure that you have installed the
+[Flutter SDK][] and that it’s in your path.
 
 It's okay if the Android toolchain, Android Studio,
 and the Xcode tools are not installed,
@@ -211,53 +190,47 @@ You should see something like the following:
 
 ``` terminal
 $ flutter devices
-2 connected devices:
+1 connected device:
 
-Chrome     • chrome     • web-javascript • Google Chrome 78.0.3904.108
-Web Server • web-server • web-javascript • Flutter Tools
+Chrome (web) • chrome • web-javascript • Google Chrome 97.0.4692.99
 ```
 
-The **Chrome** device automatically starts Chrome.
+The **Chrome** device automatically starts Chrome and enables the use 
+of the Flutter DevTools tooling.
 
-**Chrome** 表示默认用 Chrome 启动。
-
-The **Web Server** starts a server that hosts the app
-so that you can load it from any browser.
-Use the Chrome device during development so that you can use DevTools,
-and the web server when you want to test on other browsers.
-
-
-**Web服务器** 将启动托管该应用程序的服务器，以便你可以从任何浏览器加载它。
-在开发时请使用 Chrome 进行调试，以使用 DevTools。当你想在其他浏览器测试时，请使用 web server。
-
+**Chrome** 浏览器会自动启动并启用 Flutter 开发者工具。
 </li>
 
 <li markdown="1"><t>The starting app is displayed in the following DartPad.</t><t>运行程序将在 DartPad 中显示。</t>
 
 <!-- skip -->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 {$ begin main.dart $}
 import 'package:flutter/material.dart';
 
-void main() => runApp(SignUpApp());
+void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
+  const SignUpApp();
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/': (context) => SignUpScreen(),
+        '/': (context) => const SignUpScreen(),
       },
     );
   }
 }
 
 class SignUpScreen extends StatelessWidget {
+  const SignUpScreen();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      body: Center(
+      body: const Center(
         child: SizedBox(
           width: 400,
           child: Card(
@@ -270,6 +243,8 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class SignUpForm extends StatefulWidget {
+  const SignUpForm();
+  
   @override
   _SignUpFormState createState() => _SignUpFormState();
 }
@@ -293,24 +268,24 @@ class _SignUpFormState extends State<SignUpForm> {
               .textTheme
               .headline4),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _firstNameTextController,
-              decoration: InputDecoration(hintText: 'First name'),
+              decoration: const InputDecoration(hintText: 'First name'),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _lastNameTextController,
-              decoration: InputDecoration(hintText: 'Last name'),
+              decoration: const InputDecoration(hintText: 'Last name'),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _usernameTextController,
-              decoration: InputDecoration(hintText: 'Username'),
+              decoration: const InputDecoration(hintText: 'Username'),
             ),
           ),
           TextButton(
@@ -323,7 +298,7 @@ class _SignUpFormState extends State<SignUpForm> {
               }),
             ),
             onPressed: null,
-            child: Text('Sign up'),
+            child: const Text('Sign up'),
           ),
         ],
       ),
@@ -472,6 +447,8 @@ add the following class definition for the
 
 ```dart
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -500,7 +477,7 @@ does nothing.
 
 找到 `_SignUpFormState` 类的 `build()` 方法。
 这部分代码是用来构建注册按钮的。注意，按钮是如何定义：
-它是一个背景为蓝色， **Sign up** 文本为白色的 `FlatButton` 按钮，
+它是一个背景为蓝色， **Sign up** 文本为白色的 `TextButton` 按钮，
 当我们点击它时，并未执行任何操作。
 
 </li>
@@ -585,6 +562,15 @@ You get that behavior for free.
 
   `_showWelcomeScreen()` 函数被当成回调函数在 `build()` 方法中被调用。
   在 Dart 中你会经常使用回调函数，在这里意味着“点击按钮时调用该方法”。
+
+* The `const` keyword in front of the constructor is very
+  important. When Flutter encounters a constant widget, it
+  short-circuits most of the rebuilding work under the hood 
+  making the rendering more efficient.
+
+  构造函数前面的 `const` 关键字至关重要，
+  当 Flutter 遇到一个静态 widget 时，
+  它就会缩短引擎下的大部分重建工作，从而提高渲染效率。
 
 * Flutter has only one `Navigator` object.
   This widget manages Flutter’s screens
@@ -960,13 +946,13 @@ Now that you have DevTools running,
 select the **Debugger** tab in the blue bar along the top.
 The debugger pane appears and, in the lower left,
 see a list of libraries used in the example.
-Select `signin/main.dart` to display your Dart code
+Select `lib/main.dart` to display your Dart code
 in the center pane.
 
 设置断点。<br>
 现在你以前启动了开发者工具，在上面的蓝色工具栏中选择 **Debugger** 选项。
 在左下角出现调试面板，可以查看示例中使用的类库。
-选择 `signin/main.dart` 将在页面中间显示 Dart 代码。
+选择 `lib/main.dart` 将在页面中间显示 Dart 代码。
 
 {% indent %}
   ![Screenshot of the DevTools debugger]({{site.url}}/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}
@@ -1093,7 +1079,7 @@ At the bottom of the file, add this widget:
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
-  AnimatedProgressIndicator({
+  const AnimatedProgressIndicator({
     required this.value,
   });
 
@@ -1109,6 +1095,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   late Animation<Color?> _colorAnimation;
   late Animation<double> _curveAnimation;
 
+  @override
   void initState() {
     super.initState();
     _controller = AnimationController(
@@ -1205,24 +1192,28 @@ the animation works, and that clicking the
 ### 完整的示例
 
 <!-- skip -->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
-void main() => runApp(SignUpApp());
+void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
+  const SignUpApp();
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/': (context) => SignUpScreen(),
-        '/welcome': (context) => WelcomeScreen(),
+        '/': (context) => const SignUpScreen(),
+        '/welcome': (context) => const WelcomeScreen(),
       },
     );
   }
 }
 
 class SignUpScreen extends StatelessWidget {
+  const SignUpScreen();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1240,6 +1231,8 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1295,24 +1288,24 @@ class _SignUpFormState extends State<SignUpForm> {
           AnimatedProgressIndicator(value: _formProgress),
           Text('Sign up', style: Theme.of(context).textTheme.headline4),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _firstNameTextController,
-              decoration: InputDecoration(hintText: 'First name'),
+              decoration: const InputDecoration(hintText: 'First name'),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _lastNameTextController,
-              decoration: InputDecoration(hintText: 'Last name'),
+              decoration: const InputDecoration(hintText: 'Last name'),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _usernameTextController,
-              decoration: InputDecoration(hintText: 'Username'),
+              decoration: const InputDecoration(hintText: 'Username'),
             ),
           ),
           TextButton(
@@ -1325,7 +1318,7 @@ class _SignUpFormState extends State<SignUpForm> {
               }),
             ),
             onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
-            child: Text('Sign up'),
+            child: const Text('Sign up'),
           ),
         ],
       ),
@@ -1336,7 +1329,7 @@ class _SignUpFormState extends State<SignUpForm> {
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
-  AnimatedProgressIndicator({
+  const AnimatedProgressIndicator({
     required this.value,
   });
 
@@ -1352,10 +1345,13 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   late Animation<Color?> _colorAnimation;
   late Animation<double> _curveAnimation;
 
+  @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: Duration(milliseconds: 1200), vsync: this);
+      duration: const Duration(milliseconds: 1200), 
+      vsync: this,
+    );
 
     final colorTween = TweenSequence([
       TweenSequenceItem(
@@ -1376,6 +1372,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     _curveAnimation = _controller.drive(CurveTween(curve: Curves.easeIn));
   }
 
+  @override
   void didUpdateWidget(oldWidget) {
     super.didUpdateWidget(oldWidget);
     _controller.animateTo(widget.value);
@@ -1469,6 +1466,6 @@ Dart DevTools, or Flutter animations, see the following:
 [Material Design]: {{site.material}}/design/introduction/#
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: {{site.url}}/development/tools/devtools/vscode
-[Web samples]: {{site.github}}/flutter/samples/tree/master/web
+[Web samples]: {{site.github}}/flutter/samples/tree/main/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
 [writing your first Flutter app on mobile]: {{site.url}}/get-started/codelab

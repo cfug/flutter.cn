@@ -288,7 +288,7 @@ which you'll implement in the next step.
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
 ```dart
 class FavoriteWidget extends StatefulWidget {
-  const FavoriteWidget({Key? key}) : super(key: key);
+  const FavoriteWidget({super.key});
 
   @override
   _FavoriteWidgetState createState() => _FavoriteWidgetState();
@@ -456,7 +456,7 @@ In the same location, create the stateful widget:
 +++ layout/lakes/interactive/lib/main.dart
 @@ -10,2 +5,2 @@
  class MyApp extends StatelessWidget {
-   const MyApp({Key? key}) : super(key: key);
+   const MyApp({super.key});
 @@ -40,11 +35,7 @@
                ],
              ),
@@ -664,7 +664,7 @@ import 'package:flutter/material.dart';
 //------------------------- TapboxA ----------------------------------
 
 class TapboxA extends StatefulWidget {
-  const TapboxA({Key? key}) : super(key: key);
+  const TapboxA({super.key});
 
   @override
   _TapboxAState createState() => _TapboxAState();
@@ -703,7 +703,7 @@ class _TapboxAState extends State<TapboxA> {
 //------------------------- MyApp ----------------------------------
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -788,7 +788,7 @@ import 'package:flutter/material.dart';
 //------------------------ ParentWidget --------------------------------
 
 class ParentWidget extends StatefulWidget {
-  const ParentWidget({Key? key}) : super(key: key);
+  const ParentWidget({super.key});
 
   @override
   _ParentWidgetState createState() => _ParentWidgetState();
@@ -818,10 +818,10 @@ class _ParentWidgetState extends State<ParentWidget> {
 
 class TapboxB extends StatelessWidget {
   const TapboxB({
-    Key? key,
+    super.key,
     this.active = false,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -935,7 +935,7 @@ import 'package:flutter/material.dart';
 //---------------------------- ParentWidget ----------------------------
 
 class ParentWidget extends StatefulWidget {
-  const ParentWidget({Key? key}) : super(key: key);
+  const ParentWidget({super.key});
 
   @override
   _ParentWidgetState createState() => _ParentWidgetState();
@@ -965,10 +965,10 @@ class _ParentWidgetState extends State<ParentWidget> {
 
 class TapboxC extends StatefulWidget {
   const TapboxC({
-    Key? key,
+    super.key,
     this.active = false,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final bool active;
   final ValueChanged<bool> onChanged;

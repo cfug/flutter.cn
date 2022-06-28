@@ -2,12 +2,14 @@ name: key_value
 description: Key value
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.17.0-0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.0.5
+  flutter_test:
+    sdk: flutter
 
 dev_dependencies:
   flutter_lints: ^1.0.3

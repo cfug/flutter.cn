@@ -18,6 +18,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/images/network_image"?>
+
 Displaying images is fundamental for most mobile apps.
 Flutter provides the [`Image`][] widget to
 display different types of images.
@@ -30,9 +32,9 @@ To work with images from a URL, use the
 
 使用 [`Image.network()`][] 构造函数来处理来自 URL 的图片。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ImageNetwork)" replace="/^body\: //g"?>
 ```dart
-Image.network('https://picsum.photos/250?image=9')
+Image.network('https://picsum.photos/250?image=9'),
 ```
 
 ## Bonus: animated gifs
@@ -44,9 +46,10 @@ It supports animated gifs.
 
 `Image` widget 令人兴奋的特性之一：提供了开箱即用的 gif 动画支持！
 
-<!-- skip -->
+<?code-excerpt "lib/gif.dart (Gif)" replace="/^return\ //g"?>
 ```dart
-Image.network('https://github.com/flutter/plugins/raw/master/packages/video_player/video_player/doc/demo_ipod.gif?raw=true');
+Image.network(
+    'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif');
 ```
 
 ## Placeholders and caching
@@ -74,13 +77,14 @@ the following recipes:
 
 ## 交互式样例
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -116,7 +116,7 @@ This method returns the current route with the arguments.
 // A Widget that extracts the necessary arguments from
 // the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
-  const ExtractArgumentsScreen({Key? key}) : super(key: key);
+  const ExtractArgumentsScreen({super.key});
 
   static const routeName = '/extractArguments';
 
@@ -263,13 +263,13 @@ MaterialApp(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -318,7 +318,7 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -381,7 +381,7 @@ class HomeScreen extends StatelessWidget {
 // A Widget that extracts the necessary arguments from
 // the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
-  const ExtractArgumentsScreen({Key? key}) : super(key: key);
+  const ExtractArgumentsScreen({super.key});
 
   static const routeName = '/extractArguments';
 
@@ -417,10 +417,10 @@ class PassArgumentsScreen extends StatelessWidget {
   // The arguments are extracted by the onGenerateRoute
   // function provided to the MaterialApp widget.
   const PassArgumentsScreen({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

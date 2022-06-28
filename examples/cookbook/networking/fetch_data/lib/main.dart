@@ -2,7 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+// #docregion Http
 import 'package:http/http.dart' as http;
+// #enddocregion Http
 
 // #docregion fetchAlbum
 Future<Album> fetchAlbum() async {
@@ -27,7 +29,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({
+  const Album({
     required this.userId,
     required this.id,
     required this.title,
@@ -46,7 +48,7 @@ class Album {
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   _MyAppState createState() => _MyAppState();

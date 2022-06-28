@@ -86,10 +86,11 @@ Make sure to import the packages in the file you'll be working in.
 
 确保你已将 packages 导入要使用的文件中。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (imports)"?>
 ```dart
 import 'dart:async';
 
+import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 ```
@@ -114,7 +115,7 @@ class Dog {
   final String name;
   final int age;
 
-  Dog({
+  const Dog({
     required this.id,
     required this.name,
     required this.age,
@@ -249,7 +250,7 @@ class Dog {
   final String name;
   final int age;
 
-  Dog({
+  const Dog({
     required this.id,
     required this.name,
     required this.age,
@@ -296,7 +297,7 @@ Future<void> insertDog(Dog dog) async {
 <?code-excerpt "lib/main.dart (fido)"?>
 ```dart
 // Create a Dog and add it to the dogs table
-var fido = Dog(
+var fido = const Dog(
   id: 0,
   name: 'Fido',
   age: 35,
@@ -484,7 +485,6 @@ To run the example:
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
-
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -575,7 +575,7 @@ void main() async {
   }
 
   // Create a Dog and add it to the dogs table
-  var fido = Dog(
+  var fido = const Dog(
     id: 0,
     name: 'Fido',
     age: 35,
@@ -608,7 +608,7 @@ class Dog {
   final String name;
   final int age;
 
-  Dog({
+  const Dog({
     required this.id,
     required this.name,
     required this.age,

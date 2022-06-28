@@ -10,7 +10,7 @@ class Todo {
 // #docregion TodosScreen
 class TodosScreen extends StatelessWidget {
   // Requiring the list of todos.
-  const TodosScreen({Key? key, required this.todos}) : super(key: key);
+  const TodosScreen({super.key, required this.todos});
 
   final List<Todo> todos;
 
@@ -21,6 +21,7 @@ class TodosScreen extends StatelessWidget {
         title: const Text('Todos'),
       ),
       //passing in the ListView.builder
+      // #docregion ListViewBuilder
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
@@ -29,6 +30,7 @@ class TodosScreen extends StatelessWidget {
           );
         },
       ),
+      // #enddocregion ListViewBuilder
     );
   }
 }

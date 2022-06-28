@@ -91,13 +91,13 @@ in-memory. Then, persist the data to disk.
 Setter 方法做两件事：
 首先，同步更新 key-value 到内存中，然后保存到磁盘中。
 
-<!-- skip -->
+<?code-excerpt "lib/partial_excerpts.dart (Step2)"?>
 ```dart
 // obtain shared preferences
 final prefs = await SharedPreferences.getInstance();
 
 // set value
-prefs.setInt('counter', counter);
+await prefs.setInt('counter', counter);
 ```
 
 ## 3. Read data
@@ -112,7 +112,7 @@ For example, you can use the `getInt`, `getBool`, and `getString` methods.
 对于每一个 setter 方法都有对应的 getter 方法。
 例如，你可以使用 `getInt`、`getBool` 和 `getString` 方法。
 
-<!-- skip -->
+<?code-excerpt "lib/partial_excerpts.dart (Step3)"?>
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -128,11 +128,11 @@ To delete data, use the `remove()` method.
 
 使用 `remove()` 方法删除数据。
 
-<!-- skip -->
+<?code-excerpt "lib/partial_excerpts.dart (Step4)"?>
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
-prefs.remove('counter');
+await prefs.remove('counter');
 ```
 
 ## Supported types
@@ -180,15 +180,15 @@ your test files:
 在你的测试中，你可以通过在测试文件的 `setupAll()` 方法中添加运行以下代码，
 对 `SharedPreferences` 的值进行初始：
 
-<!-- skip -->
+<?code-excerpt "lib/partial_excerpts.dart (Testing)"?>
 ```dart
 const MethodChannel('plugins.flutter.io/shared_preferences')
-  .setMockMethodCallHandler((MethodCall methodCall) async {
-    if (methodCall.method == 'getAll') {
-      return <String, dynamic>{}; // set initial values here if desired
-    }
-    return null;
-  });
+    .setMockMethodCallHandler((methodCall) async {
+  if (methodCall.method == 'getAll') {
+    return <String, dynamic>{}; // set initial values here if desired
+  }
+  return null;
+});
 ```
 
 ## Complete example
@@ -203,7 +203,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of the application.
   @override
@@ -216,7 +216,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -234,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Loading counter value on start
-  void _loadCounter() async {
+  Future<void> _loadCounter() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0);
@@ -242,7 +242,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Incrementing counter after click
-  void _incrementCounter() async {
+  Future<void> _incrementCounter() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0) + 1;

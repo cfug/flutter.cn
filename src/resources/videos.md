@@ -6,8 +6,10 @@ description: 开发 Flutter 应用时的技术学习视频与在线课程。
 tags: Flutter参考资料
 keywords: Flutter视频资料,Flutter学习,Flutter社区视频
 ---
-These Flutter videos, produced both internally at Google and by the
-Flutter community, might help if you are a visual learner.
+
+These Flutter videos, produced both internally
+at Google and by the Flutter community,
+might help if you are a visual learner.
 
 如果你是一个视觉型学习者 (visual learner)，
 那么这些由 Google 或者社区（非 Google 官方）制作的 Flutter 的视频可能会对你有所帮助。
@@ -30,6 +32,16 @@ Here are some of the series offered on the
 如下是一些 [flutterdev YouTube channel][] 的系列视频。
 
 [flutterdev YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
+
+### Flutter at Google I/O 2022
+
+Google I/O 2022 is over, but you can still catch
+the great Flutter content!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w_ezWG1yKQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Flutter at Google I/O playlist][]
+
+[Flutter at Google I/O playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1kHjuHoFGBLCxjy4h2WOcP
 
 ### Flutter Engage 2021
 
@@ -122,6 +134,20 @@ Introducing the Boring Flutter show<br>
 
 [The Boring Flutter show playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl
 
+### Learning to Fly
+
+Follow along with Khanh’s journey as she builds her first Flutter app. 
+From ideation down to the moments of confusion,
+learn alongside her as she asks important questions like: 
+“What is the best way to build out a theme? How to approach using fonts?” 
+And more!
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/CkcvVZZEsJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Building my first Flutter app | Learning to Fly<br>
+[Learning to Fly playlist][]
+
+[Learning to Fly playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU3X18pAQWLyCJaa79RpqWnn
+
 ## Conference talks
 
 ## 会议讲座
@@ -177,6 +203,7 @@ To include your course, [submit a PR][]:
   [Flutter & Dart - 完全指南，2021 年版本][Flutter & Dart - the Complete Guide, 2021 edition]
 
 * [Flutter Crash Course][] by Nick Manning
+* [Flutter leicht gemacht 2022 - Zero to Mastery!][] by Max Berktold
 
   [Flutter 速成课][Flutter Crash Course], 由 Nick Manning (社区) 录制。
 
@@ -184,4 +211,5 @@ To include your course, [submit a PR][]:
 [Flutter & Dart - the Complete Guide, 2021 edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
+[Flutter leicht gemacht 2022 - Zero to Mastery!]: https://www.udemy.com/course/dart-flutter-leicht-gemacht/
 [submit a PR]: {{site.repo.this}}/pulls

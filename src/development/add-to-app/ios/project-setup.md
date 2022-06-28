@@ -18,7 +18,7 @@ Flutter 可以以 framework 框架的形式添加到
 For examples, see the iOS directories in the [add_to_app code samples][].
 
 请参阅
-[add_to_app代码示例][add_to_app code samples] 的 iOS 目录。
+[add_to_app 代码示例][add_to_app code samples] 的 iOS 目录。
 
 ## System requirements
 
@@ -256,6 +256,35 @@ target 'MyApp' do
   install_all_flutter_pods(flutter_application_path)
 end
 ```
+
+</li>
+
+<li markdown="1">
+
+In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
+
+在 `Podfile` 的 `post_install` 部分，调用 `flutter_post_install(installer)`。
+
+<!--code-excerpt "MyApp/Podfile" title-->
+```ruby
+post_install do |installer|
+  flutter_post_install(installer) if defined?(flutter_post_install)
+end
+```
+
+{{site.alert.note}}
+
+  The `flutter_post_install` method (recently added to Flutter),
+  adds build settings to support native Apple Silicon `arm64` iOS simulators.
+  Include the `if defined?(flutter_post_install)` check to ensure your `Podfile`
+  is valid if you are running on older versions of Flutter that don't have this method.
+
+  `flutter_post_install` 方法（近期新增的）
+  增加了原生 Apple Silicon `arm64` iOS 模拟器的支持。
+  它包括 `if defined?(flutter_post_install)` 的检查以确保你的
+  `Podfile` 在旧版本的没有该方法的 Flutter 上也能正常运行。
+
+{{site.alert.end}}
 
 </li>
 
@@ -629,11 +658,16 @@ for local network permission. The permission can also be allowed by enabling
 
 ## Apple Silicon (`arm64` Macs)
 
-Flutter does not yet support `arm64` iOS simulators. To run your host app on an Apple Silicon
-Mac, exclude `arm64` from the simulator architectures.
+On an Apple Silicon (M1) Mac, the host app builds for an `arm64` simulator.
+While Flutter supports `arm64` simulators, some plugins might not. If you use
+one of these plugins, you might see a compilation error like **Undefined symbols
+for architecture arm64** and you must exclude `arm64` from the simulator
+architectures in your host app.
 
-Flutter 目前暂未支持 `arm64` 的 iOS 模拟器。
-要在 Apple Silicon Mac 设备上运行你的宿主应用，请从模拟器支持架构中移除 `arm64`。
+在使用 Apple Silicon 芯片的 Mac 上 (M1)，宿主应用将针对 `arm64` 架构的模拟器编译。
+尽管 Flutter 支持 `arm64` 的 iOS 模拟器，但一些插件仍有可能未进行支持。
+当你在使用这些插件时，你会遇到 **Undefined symbols for architecture arm64** 的错误，
+此时你必须从模拟器支持架构中移除 `arm64`。
 
 In your host app target, find the **Excluded Architectures** (`EXCLUDED_ARCHS`) build setting.
 Click the right arrow disclosure indicator icon to expand the available build configurations.
@@ -663,7 +697,7 @@ You can now [add a Flutter screen][] to your existing application.
 
 你现在可以 [添加一个 Flutter 页面][add a Flutter screen] 到你的既有应用中。
 
-[add_to_app code samples]: {{site.github}}/flutter/samples/tree/master/add_to_app
+[add_to_app code samples]: {{site.github}}/flutter/samples/tree/main/add_to_app
 [add a Flutter screen]: {{site.url}}/development/add-to-app/ios/add-flutter-screen
 [Android Studio/IntelliJ]: {{site.url}}/development/tools/android-studio
 [build modes of Flutter]: {{site.url}}/testing/build-modes

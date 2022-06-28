@@ -5,7 +5,7 @@
 <html lang="zh">
   <head>
     <meta charset="utf-8" />
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <link rel="icon" href="/assets/images/cn/flutter-icon.png" />
     <link rel="apple-touch-icon" href="/assets/images/cn/flutter-320px.png" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -48,13 +48,13 @@
     {% endif %}
 
     {% assign desc = page.description %}
-    {% assign og_image = page.image | default: layout.image | default: site.default_share_image %}
+    {% assign og_image_path = page.image.path | default: layout.image.path | default: site.default_share_image %}
 
     <meta name="description" content="{{desc}}">
     <meta name="keywords" content="{% if page.tags %}{{page.tags}}, {% endif %}{{page.keywords}}">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@flutterchina>
+    <meta name="twitter:site" content="@flutterchina">
 
     <meta property="og:title" content="{{page.title}}">
     <meta property="og:url" content="{{page_url | absolute_url}}">
@@ -62,14 +62,14 @@
     <meta property="og:image" content="{{og_image_path | absolute_url}}">
 
     {% unless page.strip_fonts == true %}
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.cn">
+      <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
+      <link href="https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
 
-      <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.cn/css?family=Google+Sans:400,500" rel="stylesheet">
+      <link href="https://fonts.googleapis.cn/css?family=Roboto:300,400,500" rel="stylesheet">
+      <link href="https://fonts.googleapis.cn/css?family=Roboto+Mono:400,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.cn/css?family=Material+Icons" rel="stylesheet">
       <script 
         src="https://cdn.staticfile.org/font-awesome/5.15.1/js/all.js" 
         data-auto-replace-svg="nest">
@@ -90,6 +90,8 @@
 
   </head>
   <body {% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
+
+    <!-- {% include cookie-notice.html %} -->
   
     <!-- {% if jekyll.environment == "production" %}
       <noscript>
@@ -111,10 +113,11 @@
       {% include footer.html %}
     {% endif %}
     
-    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.js"></script>
-    <script src="https://cdn.staticfile.org/bootstrap/4.6.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.staticfile.org/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" integrity="sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.staticfile.org/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.staticfile.org/clipboard.js/2.0.0/clipboard.min.js" integrity="sha512-hPzAQ7RgUQ/jsM6VWPWBpv2btjd9HWvEm8WIwAngYpMuaoMpihN6ROj8cRFUeYnV0vTYHepksRyzzskrhoL5Zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdn.staticfile.org/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     
     <script src="{{ '/assets/js/vendor/code-prettify/prettify.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/vendor/code-prettify/lang-css.js' | append: cache_bust }}"></script>

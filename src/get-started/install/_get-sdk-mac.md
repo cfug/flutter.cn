@@ -2,18 +2,29 @@
 
 ## 获取 Flutter SDK {#get-sdk}
 
-
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
     下载以下安装包来获取最新的 {{site.sdk.channel}} Flutter SDK：
 
-    [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
+    |Intel | | <span class="apple-silicon">Apple 芯片</span> |
+    |------| | ---------------|
+    |[(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary} | | [(loading...)](#){:.download-latest-link-{{os}}-arm64.apple-silicon.btn.btn-primary} |
 
+    <br>
     For other release channels, and older builds,
     see the [SDK releases][] page.
 
     想要获取到其他版本的安装包，请参阅 [SDK 版本列表][SDK releases] 页面。
+
+    <div class="apple-silicon">
+    {{site.alert.tip}}
+
+      To determine whether your Mac uses an Apple silicon processor, refer to [Mac computers with Apple silicon]{:target="_blank"} on apple.com
+
+      若要确定你的 Mac 是否是使用了 Apple 芯片处理器，请查阅苹果官网的说明页面: [搭载 Apple 芯片的 Mac 电脑][]。
+
+    {{site.alert.end}}</div>
 
  1. Extract the file in the desired location, for example:
 
@@ -32,7 +43,7 @@
     $ cd ~/development
     $ unzip ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip
     ```
-    
+
  1. Add the `flutter` tool to your path:
 
     配置 `flutter` 的 PATH 环境变量：
@@ -48,7 +59,7 @@
 
     这个命令配置了 `PATH` 环境变量，且只会在你 **当前** 命令行窗口中生效。
     如果想让它永久生效，请查看 [更新 PATH 环境变量][Update your path]。
-    
+
 You are now ready to run Flutter commands!
 
 现在你可以愉快地运行 Flutter 的命令行啦！
@@ -57,7 +68,7 @@ You are now ready to run Flutter commands!
 
   To update an existing version of Flutter, see
   [Upgrading Flutter][].
-  
+
   如果想要升级当前的 Flutter 版本，可以查看 [升级 Flutter][Upgrading Flutter]。
 
 {{site.alert.end}}
@@ -119,7 +130,7 @@ to download the stable branch:
 
 你也可以不从归档，而是用 Git 直接下载。
 例如，可以运行下方的命令，以下载稳定分支的 SDK：
-    
+
 ```terminal
 $ git clone https://github.com/flutter/flutter.git -b stable
 ```
@@ -157,3 +168,5 @@ For additional download options, see `flutter help precache`.
 [snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
 [Upgrading Flutter]: {{site.url}}/development/tools/sdk/upgrading
+[Mac computers with Apple silicon]: https://support.apple.com/en-us/HT211814
+[搭载 Apple 芯片的 Mac 电脑]: https://support.apple.com/zh-cn/HT211814

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(const LogoApp());
 
 class AnimatedLogo extends AnimatedWidget {
-  const AnimatedLogo({Key? key, required Animation<double> animation})
-      : super(key: key, listenable: animation);
+  const AnimatedLogo({super.key, required Animation<double> animation})
+      : super(listenable: animation);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class AnimatedLogo extends AnimatedWidget {
 }
 
 class LogoApp extends StatefulWidget {
-  const LogoApp({Key? key}) : super(key: key);
+  const LogoApp({super.key});
 
   @override
   _LogoAppState createState() => _LogoAppState();
@@ -47,7 +47,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
         }
       })
       // #docregion print-state
-      ..addStatusListener((state) => print('$state'));
+      ..addStatusListener((status) => print('$status'));
     controller.forward();
   }
   // #enddocregion print-state

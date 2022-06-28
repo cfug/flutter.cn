@@ -1,6 +1,6 @@
 ## Get the Flutter SDK {#get-sdk}
 
-## 获取 Flutter SDK{#get-sdk}
+## 获取 Flutter SDK {#get-sdk}
 
 On Linux, you have two ways you can install Flutter.
 
@@ -32,12 +32,13 @@ $ sudo snap install flutter --classic
 {{site.alert.note}}
 
   Once the snap is installed, you can use the following command to display your Flutter SDK path:
-  
+
   安装 snap 后，可以使用如下命令展示 Flutter SDK 路径：
 
   ```terminal
   $ flutter sdk-path
   ```
+
 {{site.alert.end}}
 
 ### Install Flutter manually
@@ -85,22 +86,23 @@ install Flutter using the following steps.
     Instead, get the source code from the [Flutter repo][]
     on GitHub with the following command:
 
-    如果你不想安装安装包的补丁，你可以跳过步骤 1 或 步骤 2，直接获取 Github 上 [Flutter 仓库][Flutter repo] 的源码并执行以下命令：
-    
+    如果你不想安装安装包的补丁，你可以跳过步骤 1 或 步骤 2，
+    直接获取 Github 上 [Flutter 仓库][Flutter repo] 的源码并执行以下命令：
+
     ```terminal
     $ git clone https://github.com/flutter/flutter.git
     ```
-    
+
     You can also change branches or tags as needed.
     For example, to get just the stable version:
 
     你也可以按你的需要切换分支或者tag。
     例如，你可以使用 stable 版本的分支：
-    
+
     ```terminal
     $ git clone https://github.com/flutter/flutter.git -b stable
     ```
-    
+
  1. Add the `flutter` tool to your path:
 
     将 `flutter` 工具添加到环境变量中：
@@ -154,7 +156,6 @@ You are now ready to run Flutter commands!
 
 {{site.alert.end}}
 
-
 ### Run flutter doctor
 
 ### 运行 flutter doctor
@@ -162,7 +163,8 @@ You are now ready to run Flutter commands!
 Run the following command to see if there are any dependencies you need to
 install to complete the setup (for verbose output, add the `-v` flag):
 
-运行以下命令以查看是否还有缺失的依赖需要安装，你需要安装这些依赖以完成设置（要看到详细输出，请添加 `-v` 标识）：
+运行以下命令以查看是否还有缺失的依赖需要安装，
+你需要安装这些依赖以完成设置（要看到详细输出，请添加 `-v` 标识）：
 
 ```terminal
 $ flutter doctor

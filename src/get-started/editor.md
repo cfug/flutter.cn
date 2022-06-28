@@ -61,21 +61,21 @@ Android Studio offers a complete, integrated IDE experience for Flutter.
 
 Android Studio 为 Flutter 提供了一个完整的集成开发环境。
 
-* [Android Studio][], version 3.0 or later
+* [Android Studio][], version 2020.3.1 (Arctic Fox) or later
 
-  [Android Studio](https://developer.android.google.cn/studio)，3.0 或之后的版本
+  [Android Studio](https://developer.android.google.cn/studio)，2020.3.1 (Arctic Fox) 或之后的版本
 
 Alternatively, you can also use IntelliJ:
 
 同时, 你也可以使用 IntelliJ：
 
-* [IntelliJ IDEA Community][], version 2017.1 or later
+* [IntelliJ IDEA Community][], version 2021.2 or later
 
-  [IntelliJ IDEA Community][]， 2017.1 或之后的版本
+  [IntelliJ IDEA Community][]，2021.2 或之后的版本
 
-* [IntelliJ IDEA Ultimate][], version 2017.1 or later
+* [IntelliJ IDEA Ultimate][], version 2021.2 or later
 
-  [IntelliJ IDEA Ultimate][]， 2017.1 或之后的版本
+  [IntelliJ IDEA Ultimate][]，2021.2 或之后的版本
 
 ## Install the Flutter and Dart plugins
 
@@ -138,7 +138,7 @@ Use the following instructions for Linux or Windows:
 
 ## 安装 VS Code
 
-VS Code is a light-weight editor with Flutter app execution and debug support.
+VS Code is a lightweight editor with complete Flutter app execution and debug support.
 
 VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
@@ -156,21 +156,21 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
  1. Invoke **View > Command Palette...**.
 
-    打开 **查看 > 命令面板…**。
+    打开 **View > Command Palette...**。
 
  1. Type "install", and select **Extensions: Install Extensions**.
 
-    输入 "install"，然后选择 **扩展: 安装扩展**。
+    输入「install」，然后选择 **Extensions: Install Extensions**。
 
  1. Type "flutter" in the extensions search field, select **Flutter** in the list,
     and click **Install**. This also installs the required Dart plugin.
 
-    在扩展搜索输入框中输入 "flutter"，然后在列表中选择 **Flutter** 并单击 **安装**。
+    在扩展搜索输入框中输入「flutter」，然后在列表中选择 **Flutter** 并单击 **Install**。
     此过程中会自动安装必需的 Dart 插件。
 
  1. Click **Reload to Activate** to reload VS Code.
 
-    点击 **重新加载** 以重新启动 VS Code。
+    点击 **Reload to Activate** 以重新启动 VS Code。
 
 ## Validate your setup with the Flutter Doctor
 
@@ -178,7 +178,7 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
  1. Invoke **View > Command Palette...**.
 
-    打开 **查看 > 命令面板…**。
+    打开 **View > Command Palette...**。
 
  1. Type "doctor", and select the **Flutter: Run Flutter Doctor**.
 
@@ -186,7 +186,7 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
  1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
 
-    打开 **输出 (OUTPUT)** 面板查看是否有错误，
+    打开 **OUTPUT** 面板查看是否有错误，
     确保在不同的输出选项 (Output Options) 的下拉列表中选择了 Flutter。
 
 </div>

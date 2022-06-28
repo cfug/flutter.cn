@@ -9,8 +9,12 @@ keywords: 内容归档
 
 This page contains current and previous announcements of
 what's new on the Flutter website and blog.
+For details about what's new in the Flutter releases
+see the [release notes][] page.
 
 该归档包含了历史公告，以及网站上的更新内容。
+想要了解每个 Flutter 发布的版本更新内容，
+请查看 [发布说明][release notes] 页面。
 
 To stay on top of Flutter announcements,
 including breaking changes,
@@ -19,7 +23,128 @@ join the [flutter-announce][] Google group.
 要及时同步最新 Flutter 公告，包括重大变更 (breaking changes) 等，
 请加入 [flutter-announce][] 邮件组。
 
+For Dart, you can join the [Dart Announce][] Google group,
+and review the [Dart changelog][].
+
+你可以加入 [Dart Announce][] 邮件组或查看 [Dart 更新日志][Dart changelog]
+了解 Dart 的更新内容。
+
+[release notes]: {{site.url}}/development/tools/sdk/release-notes
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
+
+## May 11, 2022, Google I/O Edition: Flutter 3 release
+
+Flutter 3 is live!!! For more information, see
+[Introducing Flutter 3][], [What's new in Flutter 3][],
+and [Dart 2.17: Productivity and integration][]
+(free articles on Medium),
+and the [Flutter 3 release notes][].
+
+[Dart 2.17: Productivity and integration]: {{site.medium}}/dartlang/dart-2-17-b216bfc80c5d
+[Flutter 3 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-3.0.0
+[Introducing Flutter 3]: {{site.medium}}/flutter/introducing-flutter-3-5eb69151622f
+[What's new in Flutter 3]: {{site.medium}}/flutter/whats-new-in-flutter-3-8c74a5bc32d0
+
+**Docs updated or added since the 2.10 release**
+
+* We have launched the Casual Games Toolkit
+  to help you build games with Flutter.
+  Learn more on the [Games page][] and the
+  [Games doc page][].
+* Are you struggling to level up as a Flutter
+  developer? We have created the Happy paths
+  project to help. Learn more on the 
+  [Happy paths page][].
+* Are you a web developer who would like more
+  control over your app's launch process?
+  Check out the new page,
+  [Customizing web app initialization][],
+  which has been added to the newly updated
+  and collected web docs under
+  `/development/platform-integration/web`.
+* Flutter 3 supports Apple Silicon processors.
+  We've updated the [macOS install page][]
+  to offer an Apple Silicon download button.
+* In Flutter 3, the macOS and Linux platforms
+  have reached stable, in addition to Windows.
+  You can now develop your app to run on any
+  or all of these platforms. As a result,
+  the [Desktop][] (and related) pages are updated.
+* The [Performance best practices][] page has
+  largely been rewritten and moved to be more visible.
+  The changes include additional advice on avoiding jank,
+  including how to minimize layout passes caused
+  by intrinsics, and techniques to minimize
+  calls to `saveLayer()`.
+* Firebase's Flutter docs have been overhauled.
+  Check out the newly updated
+  [Flutter Firebase get started guide][].
+* The [dart.dev][] site has its own [what's new][dart-whats-new]
+  page, but one new page of note is the guide,
+  [Learning Dart as a JavaScript developer][js-to-dart].
+  Stay tuned for similar articles on Swift and C#.
+
+[Customizing web app initialization]: {{site.url}}/development/platform-integration/web/initialization
+[dart-whats-new]: {{site.dart-site}}/guides/whats-new
+[dart.dev]: {{site.dart-site}}
+[Desktop]: {{site.url}}/desktop
+[Flutter Firebase get started guide]: https://firebase.google.com/docs/flutter/setup
+[Games page]: {{site.main-url}}/games
+[Games doc page]: {{site.url}}/resources/games-toolkit
+[Happy paths page]: {{site.url}}/development/packages-and-plugins/happy-paths
+[js-to-dart]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
+[macOS install page]: {{site.url}}/get-started/install/macos
+
+**Codelabs and workshops**
+
+We have a new codelab since the last stable release:
+
+* [Take your Flutter app from boring to beautiful][]
+  Learn how to use features in Material 3 to make your
+  more beautiful *and* more responsive.
+
+Also, check out the workshops written by our GDEs
+and available on the [Flutter community blog][].
+
+[Flutter community blog]: {{site.medium}}/@flutter_community/622b52f70173
+[Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
+
+**Videos**
+
+Google I/O 2022 is over, but you can still check out
+the Flutter-specific updates and talks from Google I/O
+on the [videos] page.
+
+[videos]: {{site.url}}/resources/videos
+
+---
+
+## Feb 3, 2022, Windows Support: 2.10 release
+
+Desktop support for Microsoft Windows
+(a central feature of the 2.10 release) is live!
+For more information, see
+[Announcing Flutter for Windows][]
+and [What's new in Flutter 2.10][],
+free articles on Medium.
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/g-0B_Vfc9qM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
+[What's new in Flutter 2.10]: {{site.flutter-medium}}/whats-new-in-flutter-2-10-5aafb0314b12
+
+---
+
+## December 8, 2021: 2.8 release
+
+Flutter 2.8 is live! For details, see
+[Announcing Flutter 2.8][] and
+[What's new in Flutter 2.8][].
+
+[Announcing Flutter 2.8]: {{site.flutter-medium}}/announcing-flutter-2-8-31d2cb7e19f5
+[What's new in Flutter 2.8]: {{site.flutter-medium}}/whats-new-in-flutter-2-8-d085b763d181
 
 ## September 8, 2021: 2.5 release
 
@@ -546,7 +671,7 @@ publication since the last stable release:
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 [q1-2020]: {{site.flutter-medium}}/what-are-the-important-difficult-tasks-for-flutter-devs-q1-2020-survey-results-a5ef2305429b
-[Reducing shader compilation jank on mobile]: {{site.url}}/perf/rendering/shader
+[Reducing shader compilation jank on mobile]: {{site.url}}/perf/shader
 [shaking]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [Two Months of #FlutterGoodNewsWednesday]: {{site.flutter-medium}}/two-months-of-fluttergoodnewswednesday-a12e60bab782
 [ubuntu]: {{site.flutter-medium}}/announcing-flutter-linux-alpha-with-canonical-19eb824590a9
@@ -928,8 +1053,8 @@ Flutter 1.7 版本的更新同时加入了 [`RangeSlider`][] 这个 widget，
 [Flutter Medium Publication]: {{site.flutter-medium}}
 [Flutter's build modes]: {{site.url}}/testing/build-modes
 [Material RangeSlider in Flutter]: {{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d
-[Performance best practices]: {{site.url}}/perf/rendering/best-practices
-[Performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[Performance best practices]: {{site.url}}/perf/best-practices
+[Performance profiling]: {{site.url}}/perf/ui-performance
 [Preparing an Android app for release]: {{site.url}}/deployment/android
 [`RangeSlider`]: {{site.api}}/flutter/material/RangeSlider-class.html
 [Simple app state management]: {{site.url}}/development/data-and-backend/state-mgmt/simple
@@ -998,7 +1123,7 @@ If you have questions or comments about any of these docs,
 [ephemeral vs app state]: {{site.url}}/development/data-and-backend/state-mgmt/ephemeral-vs-app
 [file an issue]: {{site.repo.this}}/issues
 [introduction]: {{site.url}}/development/data-and-backend/state-mgmt/intro
-[Performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[Performance profiling]: {{site.url}}/perf/ui-performance
 [1.2.1 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.2.1
 [simple app state management]: {{site.url}}/development/data-and-backend/state-mgmt/simple
 [state management advice]: {{site.url}}/development/data-and-backend/state-mgmt/intro

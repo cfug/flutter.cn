@@ -151,6 +151,7 @@ The following instructions outline the steps for supporting the new API:
             android:theme="@style/LaunchTheme"
    android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale"
             android:hardwareAccelerated="true"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
@@ -179,7 +180,6 @@ The following instructions outline the steps for supporting the new API:
     package io.flutter.plugins.batteryexample;
 
     import android.os.Bundle;
-    import dev.flutter.plugins.e2e.E2EPlugin;
     import io.flutter.app.FlutterActivity;
     import io.flutter.plugins.battery.BatteryPlugin;
 
@@ -188,7 +188,6 @@ The following instructions outline the steps for supporting the new API:
       protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         BatteryPlugin.registerWith(registrarFor("io.flutter.plugins.battery.BatteryPlugin"));
-        E2EPlugin.registerWith(registrarFor("dev.flutter.plugins.e2e.E2EPlugin"));
       }
     }
     ```
@@ -218,6 +217,7 @@ The following instructions outline the steps for supporting the new API:
         android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale"
         android:hardwareAccelerated="true"
+        android:exported="true"
         android:windowSoftInputMode="adjustResize">
     </activity>
     ```
@@ -270,7 +270,6 @@ but aren't required.
     package io.flutter.plugins.firebase.core;
 
     import androidx.test.rule.ActivityTestRule;
-    import dev.flutter.plugins.e2e.FlutterRunner;
     import io.flutter.plugins.firebasecoreexample.MainActivity;
     import org.junit.Rule;
     import org.junit.runner.RunWith;
@@ -287,7 +286,6 @@ but aren't required.
     package io.flutter.plugins.firebase.core;
 
     import androidx.test.rule.ActivityTestRule;
-    import dev.flutter.plugins.e2e.FlutterRunner;
     import io.flutter.plugins.firebasecoreexample.EmbeddingV1Activity;
     import org.junit.Rule;
     import org.junit.runner.RunWith;
@@ -300,7 +298,7 @@ but aren't required.
     }
     ```
 
-1. Add `e2e` and `flutter_driver` dev_dependencies to
+1. Add `integration_test` and `flutter_driver` dev_dependencies to
    `<plugin_name>/pubspec.yaml` and
    `<plugin_name>/example/pubspec.yaml`.
    
@@ -310,7 +308,8 @@ but aren't required.
 
     <!--code-excerpt "pubspec.yaml" title-->
     ```yaml
-    e2e: ^0.2.1
+    integration_test:
+      sdk: flutter
     flutter_driver:
       sdk: flutter
     ```
@@ -328,11 +327,11 @@ but aren't required.
     <!--code-excerpt "pubspec.yaml" title-->
     ```yaml
     environment:
-      sdk: ">=2.0.0-dev.28.0 <3.0.0"
-      flutter: ">=1.12.13+hotfix.6"
+      sdk: ">=2.16.1 <3.0.0"
+      flutter: ">=1.17.0"
     ```
 
-1. Create a simple test in `<plugin_name>/test/<plugin_name>_e2e.dart`.
+1. Create a simple test in `<plugin_name>/test/<plugin_name>_test.dart`.
    For the purpose of testing the PR that adds the v2 embedding support,
    we're trying to test some very basic functionality of the plugin.
    This is a smoke test to ensure that the plugin properly registers
@@ -345,13 +344,12 @@ but aren't required.
     <?code-excerpt "lib/test.dart (Test)"?>
     ```dart
     import 'package:flutter_test/flutter_test.dart';
-    import 'package:battery/battery.dart';
-    import 'package:e2e/e2e.dart';
+    import 'package:integration_test/integration_test.dart';
 
     void main() {
-      E2EWidgetsFlutterBinding.ensureInitialized();
+      IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-      testWidgets('Can get battery level', (WidgetTester tester) async {
+      testWidgets('Can get battery level', (tester) async {
         final Battery battery = Battery();
         final int batteryLevel = await battery.batteryLevel;
         expect(batteryLevel, isNotNull);
@@ -359,16 +357,13 @@ but aren't required.
     }
     ```
 
-1. Test run the e2e tests locally. In a terminal,
+1. Test run the `integration_test` tests locally. In a terminal,
    do the following:
    
    本地运行 e2e 测试。在终端中执行以下内容：
 
     ```terminal
-    cd <plugin_name>/example
-    flutter build apk
-    cd android
-    ./gradlew app:connectedAndroidTest -Ptarget=`pwd`/../../test/<plugin_name>_e2e.dart
+    flutter test integration_test/app_test.dart
     ```
 
 ## Basic plugin
@@ -498,7 +493,7 @@ a non-UI configuration.
 
 [`ActivityAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/activity/ActivityAware.html
 [Basic plugin]: #basic-plugin
-[battery package]: {{site.repo.plugins}}/tree/master/packages/battery
+[battery package]: {{site.repo.plugins}}/tree/main/packages/battery
 [Flutter plugins]: {{site.pub}}/flutter/packages
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html

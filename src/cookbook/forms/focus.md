@@ -128,7 +128,7 @@ a `FocusNode` instance inside the `initState()` method of a
 ```dart
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+  const MyCustomForm({super.key});
 
   @override
   _MyCustomFormState createState() => _MyCustomFormState();
@@ -172,17 +172,13 @@ pass it to a specific `TextField` in the `build()` method.
 
 现在已经有了 `FocusNode`，我们可以将这个 `TextField` 传递给 `build()` 方法。
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (Build)"?>
 ```dart
-class _MyCustomFormState extends State<MyCustomForm> {
-  // Code to create the Focus node...
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      focusNode: myFocusNode,
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return TextField(
+    focusNode: myFocusNode,
+  );
 }
 ```
 
@@ -197,13 +193,13 @@ this task.
 最后，当用户点击 floating action button 时，我们将要聚焦文本框！
 为此我们将要使用 [`requestFocus()`][] 方法来完成此操作。
 
-<!-- skip -->
+<?code-excerpt "lib/step3.dart (FloatingActionButton)" replace="/^floatingActionButton\: //g"?>
 ```dart
 FloatingActionButton(
-  // When the button is pressed, give focus to the text field using
-  // myFocusNode.
+  // When the button is pressed,
+  // give focus to the text field using myFocusNode.
   onPressed: () => myFocusNode.requestFocus(),
-);
+),
 ```
 
 ## Interactive example
@@ -211,13 +207,13 @@ FloatingActionButton(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -230,7 +226,7 @@ class MyApp extends StatelessWidget {
 
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+  const MyCustomForm({super.key});
 
   @override
   _MyCustomFormState createState() => _MyCustomFormState();

@@ -7,7 +7,9 @@ the command line, as shown in [Get the Flutter SDK][].
 You'll probably want to update this variable permanently,
 so you can run `flutter` commands in any terminal session.
 
-与 [获取 Flutter SDk][Get the Flutter SDK] 中说的一样，你可以通过命令行更新当前窗口的环境变量。但你也许会想要让它一直生效，在任何终端中都可以运行 `flutter` 命令。
+与 [获取 Flutter SDK][Get the Flutter SDK] 中说的一样，
+你可以通过命令行更新当前窗口的环境变量。
+但你也许会想要让它一直生效，在任何终端中都可以运行 `flutter` 命令。
 
 The steps for modifying this variable permanently for
 all terminal sessions are machine-specific.
@@ -20,7 +22,8 @@ whenever you open a new window. For example:
  1. Determine the path of your clone of the Flutter SDK.
     You need this in Step 3.
 
-    检测你下载或者 git clone 的 Flutter SDK 的文件夹，你需要在第三步用到它。
+    找到通过压缩包下载解压或 `git clone` 命令检出的 Flutter SDK 的文件夹，
+    你需要在第三步用到它。
 
  2. Open (or create) the `rc` file for your shell.
     For example, Linux uses the Bash shell by default,
@@ -36,7 +39,9 @@ whenever you open a new window. For example:
     `[PATH_OF_FLUTTER_GIT_DIRECTORY]` to be
     the path of your clone of the Flutter git repo:
 
-    添加下面内容，并将 `[PATH_TO_FLUTTER_GIT_DIRECTORY]` 改到你 clone Flutter 的 git 仓库目录下。
+    并将下面命令行里 `[PATH_OF_FLUTTER_GIT_DIRECTORY]`
+    修改为你通过 `git clone` 命令检出的 Flutter 仓库目录地址，
+    或者通过下载 Flutter SDK 压缩包解压之后的目录地址。
 
     ```terminal
     $ export PATH="$PATH:[PATH_OF_FLUTTER_GIT_DIRECTORY]/bin"
@@ -57,9 +62,10 @@ whenever you open a new window. For example:
     ```terminal
     $ echo $PATH
     ```
+
     Verify that the `flutter` command is available by running:
 
-    通过运行以下命令验证 `flutter` 命令：
+    通过运行以下命令验证 `flutter` 命令是否可用：
 
     ```terminal
     $ which flutter
@@ -76,8 +82,8 @@ the path when using the above directions. When this occurs,
 you can change the environment variables file directly.
 These instructions require administrator privileges:
 
-在某些情况下，你的分发可能无法长期获取使用上面提到的环境变量。
-发生这种情况时，你可以直接更改环境变量文件。但这需要管理员权限：
+在某些情况下，你的分发可能不会一直使用上面提到的环境变量。
+在这种情况下，你可以直接更改环境变量文件。但这需要管理员权限：
 
    1. Determine the path of your clone of the Flutter SDK.
 
@@ -91,6 +97,7 @@ These instructions require administrator privileges:
         ```terminal
         $ sudo nano /etc/profile
         ```
+
    3. Update the PATH string with the location of your
       Flutter SDK directory.
 
@@ -123,7 +130,7 @@ see [this StackExchange question][bash].
 For information on setting the path in Z shell,
 see [this StackOverflow question][zsh].
 
-更多关于如何在 Bash 中配置环境变量的信息请查看[这条 StackExchange 提问][bash]。
+更多关于如何在 Bash 中配置环境变量的信息请查看 [这条 StackExchange 提问][bash]。
 更多关于如何在 Z shell 中配置环境变量的信息请查看 [这条 StackExchange 提问][zsh]。
 
 

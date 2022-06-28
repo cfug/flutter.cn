@@ -75,11 +75,11 @@ follow these steps:
     ```
 
  2. Make sure your simulator is using a 64-bit device
-    (iPhone 5s or later) by checking the settings in
-    the simulator's **Hardware > Device** menu.
+    (iPhone 5s or later).  You can check the device by viewing the settings in
+    the simulator's **Hardware > Device** or **File > Open Simulator** menus.
 
-    通过模拟器菜单中的 **Hardware > Device** 选项检查当前模拟器是否是 64 位机型
-    （iPhone 5S 或之后的机型）。
+    通过模拟器菜单中的 **Hardware > Device** 或者 **File > Open Simulator** 
+    选项检查当前模拟器是否是 64 位机型（iPhone 5S 或之后的机型）。
 
  3. Depending on your development machine's screen size,
     simulated high-screen-density iOS devices
@@ -92,8 +92,13 @@ follow these steps:
     in the **Window > Scale** menu.
 
     根据你当前开发机器的屏幕尺寸，
-    模拟器模拟出来的高密度屏幕的设备可能会占满你的屏幕，
-    你可以通过菜单中的 **Window > Scale** 选项来更改模拟器的缩放比例。
+    模拟器模拟出来的高密度屏幕的设备可能会溢出你的屏幕，
+    你可以调整模拟器的边角来拖动改变比例，
+    如果你的开发机分辨率很高的话，也可以通过菜单中的
+    **Window > Physical Size** or **Window > Pixel Accurate**
+    选项来更改模拟器的缩放比例。
+    * 如果你只用 Xcode 版本低于 9.1，调整模拟器比例的菜单选项应该是
+    **Window > Scale**。
 
 ### Create and run a simple Flutter app
 
@@ -134,6 +139,8 @@ follow these steps:
 
 ### Deploy to iOS devices
 
+### 部署到 iOS 设备
+
 To deploy your Flutter app to a physical iOS device
 you'll need to set up physical device deployment in Xcode
 and an Apple Developer account. If your app is using Flutter plugins,
@@ -160,10 +167,19 @@ $ sudo gem install cocoapods
 
   The default version of Ruby requires `sudo` to install the CocoaPods gem.
   If you are using a Ruby Version manager, you may need to run without `sudo`.
-  
-  Ruby的默认版本需要 root 权限 `sudo` 来安装 CocoaPods gem，
+
+  Ruby 的默认版本需要 root 权限 `sudo` 来安装 CocoaPods gem，
   如果你使用的是 Ruby Version 管理器，可能就无需 root 权限。
-  
+
+  Additionally, if you are installing on an [Apple Silicon Mac][],
+  run the command:
+
+  除此之外，如果你是在 Apple 芯片的 Mac 上安装，则需要运行下面的命令：
+
+  ```terminal
+  $ sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
+  ```
+
 {{site.alert.end}}
 
 </li>
@@ -181,7 +197,7 @@ Follow the Xcode signing flow to provision your project:
 
       通过在命令行中于你当前 Flutter 项目目录下运行
       `open ios/Runner.xcworkspace` 命令来打开默认的 Xcode 工程。
-      
+
    1. Select the device you intend to deploy to in the device
       drop-down menu next to the run button.
 
@@ -190,7 +206,7 @@ Follow the Xcode signing flow to provision your project:
    1. Select the `Runner` project in the left navigation panel.
 
       在左侧的导航面板中选择 `Runner` 项目；
-     
+
    1. In the `Runner` target settings page,
       make sure your Development Team is selected
       under **Signing & Capabilities > Team**.
@@ -202,9 +218,9 @@ Follow the Xcode signing flow to provision your project:
       Xcode creates and downloads a Development Certificate,
       registers your device with your account,
       and creates and downloads a provisioning profile (if needed).
-      
-      当选择了一个团队之后，Xcode 会创建和下载一个 开发证书，
-      并在你的账户里为你的社保注册，
+
+      当选择了一个团队之后，Xcode 会创建和下载一个开发证书，
+      并在你的账户里为你的设备注册，
       并在需要的时候创建和下载一个配置文件。
 
       * To start your first iOS development project,
@@ -215,7 +231,7 @@ Follow the Xcode signing flow to provision your project:
         distribute your app to the App Store.
         For details about membership types,
         see [Choosing a Membership][].
-        
+
         在开始你的第一个 iOS 项目开发之前，
         你需要先在 Xcode 中登陆你的 Apple 开发者账号
         ![Xcode account add][]{:.mw-100}
@@ -229,7 +245,7 @@ Follow the Xcode signing flow to provision your project:
         Development Certificate on that device.
         Select `Trust` in the dialog prompt when
         first connecting the iOS device to your Mac.
-        
+
         当你第一次将设备连接到开发机用于开发时，
         你需要分别在 Mac 和开发机上进行信任设备的操作。
         当你第一次连接时，会有个弹窗，点击 `Trust` 即可。
@@ -241,7 +257,7 @@ Follow the Xcode signing flow to provision your project:
         and trust your Certificate.
         For first time users, you may need to select
         **General > Profiles > Device Management** instead.
-        
+
         然后在 iOS 开发机上进入 Settings 应用，
         选择 **General > Device Management** 然后信任相应的证书。
         对于首次打开的用户，请选择 
@@ -249,10 +265,10 @@ Follow the Xcode signing flow to provision your project:
 
       * If automatic signing fails in Xcode, verify that the project's
         **General > Identity > Bundle Identifier** value is unique.
-        
+
         如果 Xcode 的自动签名失败了，你可以检查以下项目中
         **General > Identity > Bundle Identifier** 里的值是否是唯一的。
-        
+
         ![Check the app's Bundle ID][]{:.mw-100}
 
 </li>
@@ -276,3 +292,4 @@ or clicking the Run button in Xcode.
 [Trust Mac]: {{site.url}}/assets/images/docs/setup/trust-computer.png
 [web download]: {{site.apple-dev}}/xcode/
 [Xcode account add]: {{site.url}}/assets/images/docs/setup/xcode-account.png
+[Apple Silicon Mac]: https://support.apple.com/en-us/HT211814

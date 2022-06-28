@@ -771,7 +771,7 @@ Android 和 iOS 平台上，
 [overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
 [overscrolls]: {{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html
 [`PageRoute.fullscreenDialog`]: {{site.api}}/flutter/widgets/PageRoute-class.html
-[platform_design code samples]: {{site.github}}/flutter/samples/tree/master/platform_design
+[platform_design code samples]: {{site.github}}/flutter/samples/tree/main/platform_design
 [`Icons.adaptive`]: {{site.api}}/flutter/material/PlatformAdaptiveIcons-class.html
 [slides and clip-reveals up]: {{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html
 [slides up and fades in]: {{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html

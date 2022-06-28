@@ -10,6 +10,9 @@ on:
   schedule:
     - cron: "0 0 * * 0"
 
+# Declare default permissions as read only.
+permissions: read-all
+
 env:
   NODE_ENV: production
   NODE_VERSION: 17
@@ -23,9 +26,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "Dev channel"
-            channel: dev
-            experimental: true
           - name: "Beta channel"
             channel: beta
             experimental: true
@@ -33,7 +33,9 @@ jobs:
             channel: stable
             experimental: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+      - name: Move docs
+        run: make move-docs
       - name: Test
         run: make test
         env:
@@ -42,19 +44,25 @@ jobs:
 
   deploy:
     needs: test
+    concurrency: 
+      group: prod-deploy-group
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'push'
       && github.ref == 'refs/heads/master'
       && github.repository == 'cfug/flutter.cn'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
         with:
           submodules: "recursive"
       - name: Install Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - name: Move docs
+        run: make move-docs
+      - name: Update path
+        run: echo "./node_modules/.bin/" >> $GITHUB_PATH
       - name: Build
         run: make build
         env:

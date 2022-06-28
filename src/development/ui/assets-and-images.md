@@ -458,7 +458,25 @@ flutter:
 The `lib/` is implied,
 so it should not be included in the asset path.
 
- `lib/` 是隐含的，所以它不应该包含在资源路径中。
+`lib/` 是隐含的，所以它不应该包含在资源路径中。
+
+If you are developing a package, to load an asset within the package, specify it in the 'pubspec.yaml' of the package:
+
+如果你正在开发 package，想要从 package 中加载资源，首先要在 pubspec.yaml 中定义：
+
+```yaml
+flutter:
+  assets:
+    - assets/images/
+```
+
+To load the image within your package, use:
+
+在 package 中加载图片，按以下方式：
+
+```dart
+return const AssetImage('packages/fancy_backgrounds/backgrounds/background1.png');
+```
 
 ## Sharing assets with the underlying platform
 

@@ -94,7 +94,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +106,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -164,13 +164,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ### 2. 添加 `integration_test` 依赖
 
-Next, use the `integration_test`, `flutter_driver`, and `flutter_test` packages
+Next, use the `integration_test` and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
 section of the app's `pubspec.yaml` file, specifying the Flutter SDK as the
 location of the package.
 
-接着，我们需要用到 `integration_test`、`flutter_driver` 和 `flutter_test` 
-这三个 package 来编写集成测试，把这三个依赖添加到应用`pubspec.yaml` 文件的
+接着，我们需要用到 `integration_test` 和 `flutter_test` package
+来编写集成测试，把依赖添加到应用`pubspec.yaml` 文件的
 `dev_dependencies` 区域。
 
 ```yaml
@@ -225,14 +225,14 @@ Now you can write tests. This involves three steps:
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
-import 'package:introduction/main.dart' as app;
+import '../main.dart' as app;
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   group('end-to-end test', () {
     testWidgets('tap on the floating action button, verify counter',
-        (WidgetTester tester) async {
+        (tester) async {
       app.main();
       await tester.pumpAndSettle();
 
@@ -307,6 +307,7 @@ named`integration_test.dart`:
 接下来，新建一个文件夹，命名为 `test_driver`，并包含一个新的文件，命名为
 `integration_test.dart`。
 
+<?code-excerpt "lib/test_driver/integration_test.dart"?>
 ```dart
 import 'package:integration_test/integration_test_driver.dart';
 
@@ -336,7 +337,7 @@ flutter drive \
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 [Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
-[integration_test]: {{site.repo.flutter}}/tree/master/packages/integration_test
+[integration_test]: {{site.repo.flutter}}/tree/main/packages/integration_test
 [Integration testing]: {{site.url}}/testing/integration-tests
 [`SerializableFinders`]: {{site.api}}/flutter/flutter_driver/CommonFinders-class.html
 [`ValueKey`]: {{site.api}}/flutter/foundation/ValueKey-class.html

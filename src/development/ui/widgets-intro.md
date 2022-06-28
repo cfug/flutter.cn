@@ -53,7 +53,7 @@ function with a widget:
 创建一个最小的 Flutter 应用简单到仅需调用 [`runApp()`][] 方法并传入一个 widget 即可：
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-310px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-310px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 void main() {
@@ -165,11 +165,11 @@ Below are some simple widgets that combine these and other widgets:
 下面是一些简单的 widget，它们结合了上面提到的 widget 和一些其他的 widget：
 
 <?code-excerpt "lib/main_myappbar.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  const MyAppBar({required this.title, Key? key}) : super(key: key);
+  const MyAppBar({required this.title, super.key});
 
   // Fields in a Widget subclass are always marked "final".
 
@@ -207,7 +207,7 @@ class MyAppBar extends StatelessWidget {
 }
 
 class MyScaffold extends StatelessWidget {
-  const MyScaffold({Key? key}) : super(key: key);
+  const MyScaffold({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -332,7 +332,7 @@ Material 应用以 [`MaterialApp`][] widget 开始，
 但这是一个很好的做法。
 
 <?code-excerpt "lib/main_tutorial.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 void main() {
@@ -345,7 +345,7 @@ void main() {
 }
 
 class TutorialHome extends StatelessWidget {
-  const TutorialHome({Key? key}) : super(key: key);
+  const TutorialHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -438,11 +438,11 @@ input gestures. See how that works by creating a simple button:
 构建交互式应用程序的第一步是检测输入手势，这里通过创建一个简单的按钮来了解其工作原理：
 
 <?code-excerpt "lib/main_mybutton.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  const MyButton({Key? key}) : super(key: key);
+  const MyButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -538,7 +538,7 @@ StatefulWidgets 是一种特殊的 widget，
 它使用了前面提到的 [`ElevatedButton`][]：
 
 <?code-excerpt "lib/main_counter.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
@@ -548,7 +548,7 @@ class Counter extends StatefulWidget {
   // State. Fields in a Widget subclass are always marked
   // "final".
 
-  const Counter({Key? key}) : super(key: key);
+  const Counter({super.key});
 
   @override
   _CounterState createState() => _CounterState();
@@ -644,11 +644,11 @@ this works in practice:
 下面稍微复杂的示例显示了它在实践中的工作原理：
 
 <?code-excerpt "lib/main_counterdisplay.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class CounterDisplay extends StatelessWidget {
-  const CounterDisplay({required this.count, Key? key}) : super(key: key);
+  const CounterDisplay({required this.count, super.key});
 
   final int count;
 
@@ -659,8 +659,7 @@ class CounterDisplay extends StatelessWidget {
 }
 
 class CounterIncrementor extends StatelessWidget {
-  const CounterIncrementor({required this.onPressed, Key? key})
-      : super(key: key);
+  const CounterIncrementor({required this.onPressed, super.key});
 
   final VoidCallback onPressed;
 
@@ -674,7 +673,7 @@ class CounterIncrementor extends StatelessWidget {
 }
 
 class Counter extends StatefulWidget {
-  const Counter({Key? key}) : super(key: key);
+  const Counter({super.key});
 
   @override
   _CounterState createState() => _CounterState();
@@ -756,7 +755,7 @@ intended purchases. Start by defining the presentation class,
 首先定义一个用于展示的类，`ShoppingListItem`：
 
 <?code-excerpt "lib/main_shoppingitem.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class Product {
@@ -880,7 +879,7 @@ Here's an example parent widget that stores mutable state:
 这里有一个示例展示父组件是如何存储可变状态：
 
 <?code-excerpt "lib/main_shoppinglist.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
 class Product {
@@ -941,7 +940,7 @@ class ShoppingListItem extends StatelessWidget {
 }
 
 class ShoppingList extends StatefulWidget {
-  const ShoppingList({required this.products, Key? key}) : super(key: key);
+  const ShoppingList({required this.products, super.key});
 
   final List<Product> products;
 
@@ -982,7 +981,7 @@ class _ShoppingListState extends State<ShoppingList> {
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
-        children: widget.products.map((Product product) {
+        children: widget.products.map((product) {
           return ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),

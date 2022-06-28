@@ -5,7 +5,7 @@ import 'package:video_player/video_player.dart';
 
 // #docregion VideoPlayerScreen
 class VideoPlayerScreen extends StatefulWidget {
-  const VideoPlayerScreen({Key? key}) : super(key: key);
+  const VideoPlayerScreen({super.key});
 
   @override
   _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
@@ -17,6 +17,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   void initState() {
+    super.initState();
+
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
@@ -25,8 +27,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     );
 
     _initializeVideoPlayerFuture = _controller.initialize();
-
-    super.initState();
   }
 
   @override

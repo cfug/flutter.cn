@@ -402,7 +402,7 @@ from a vertical to a horizontal layout when the user isn’t on a handset:
 ```dart
 bool isHandset = MediaQuery.of(context).size.width < 600;
 return Flex(
-    children: [Text("Foo"), Text("Bar"), Text("Baz")],
+    children: [Text('Foo'), Text('Bar'), Text('Baz')],
     direction: isHandset ? Axis.vertical : Axis.horizontal);
 ```
 
@@ -451,12 +451,12 @@ The previous example could be rewritten using `LayoutBuilder`:
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (LayoutBuilder)"?>
 ```dart
 Widget foo = LayoutBuilder(
-    builder: (BuildContext context, BoxConstraints constraints) {
+    builder: (context, constraints) {
   bool useVerticalLayout = constraints.maxWidth < 400.0;
   return Flex(
     children: [
-      Text("Hello"),
-      Text("World"),
+      Text('Hello'),
+      Text('World'),
     ],
     direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
   );
@@ -806,8 +806,9 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
     return FocusableActionDetector(
       onFocusChange: (value) => setState(() => _hasFocus = value),
       actions: <Type, Action<Intent>>{
-        ActivateIntent: CallbackAction<Intent>(onInvoke: (Intent intent) {
-          print("Enter or Space was pressed!");
+        ActivateIntent: CallbackAction<Intent>(onInvoke: (intent) {
+          print('Enter or Space was pressed!');
+          return null;
         }),
       },
       child: Stack(
@@ -910,7 +911,7 @@ already has a focus node, you can wrap it in a
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (FocusNode node, RawKeyEvent event) {
+      onKey: (node, event) {
         if (event is RawKeyDownEvent) {
           print(event.logicalKey);
         }
@@ -952,7 +953,7 @@ Widget build(BuildContext context) {
       // Bind intents to an actual method in your code
       actions: <Type, Action<Intent>>{
         CreateNewItemIntent: CallbackAction<CreateNewItemIntent>(
-            onInvoke: (CreateNewItemIntent intent) => _createNewItem()),
+            onInvoke: (intent) => _createNewItem()),
       },
       // Your sub-tree must be wrapped in a focusNode, so it can take focus.
       child: Focus(
@@ -1097,7 +1098,7 @@ rollover and hover effects:
 return MouseRegion(
   onEnter: (_) => setState(() => _isMouseOver = true),
   onExit: (_) => setState(() => _isMouseOver = false),
-  onHover: (PointerHoverEvent e) => print(e.localPosition),
+  onHover: (e) => print(e.localPosition),
   child: Container(
     height: 500,
     color: _isMouseOver ? Colors.blue : Colors.black,
@@ -1283,7 +1284,7 @@ Flutter 内置了 `Scrollbar` widget，会根据当前所在的平台自适应�
 <?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
 ```dart
 return Scrollbar(
-  isAlwaysShown: DeviceType.isDesktop,
+  thumbVisibility: DeviceType.isDesktop,
   controller: _scrollController,
   child: GridView.count(
       controller: _scrollController,
@@ -1560,10 +1561,10 @@ return Row(
       textDirection: btnDirection,
       children: [
         DialogButton(
-            label: "Cancel",
+            label: 'Cancel',
             onPressed: () => Navigator.pop(context, false)),
         DialogButton(
-            label: "Ok", onPressed: () => Navigator.pop(context, true)),
+            label: 'Ok', onPressed: () => Navigator.pop(context, true)),
       ],
     ),
   ],

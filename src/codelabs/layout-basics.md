@@ -98,7 +98,7 @@ and `Column` lays out its widgets vertically.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -138,11 +138,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -168,7 +168,7 @@ Future<void> main() async {
 
   final columns = controller.widgetList(find.byType(Column));
 
-  if (columns.length == 0) {
+  if (columns.isEmpty) {
     _result(false, ['The Row contains three BlueBox widgets and lays them out horizontally.']);
     return;
   }
@@ -273,7 +273,7 @@ The `mainAxisSize` property has two possible values:
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -314,11 +314,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -342,7 +342,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find Row!']);
     return;
   }
@@ -456,7 +456,7 @@ can position their children in that extra space.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -497,11 +497,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -524,7 +524,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -662,7 +662,7 @@ The `crossAxisAlignment` property has five possible values:
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -718,11 +718,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -746,7 +746,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -873,7 +873,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -921,11 +921,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -949,7 +949,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -1047,7 +1047,7 @@ Future<void> main() async {
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1095,11 +1095,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -1123,7 +1123,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -1241,7 +1241,7 @@ wrap a widget and force the widget to fill extra space.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1281,11 +1281,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -1309,7 +1309,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -1387,7 +1387,7 @@ create empty space.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1431,11 +1431,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -1459,7 +1459,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -1546,7 +1546,7 @@ Future<void> main() async {
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1587,11 +1587,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -1615,7 +1615,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -1736,7 +1736,7 @@ can create space between widgets.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1777,11 +1777,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -1805,7 +1805,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -1891,7 +1891,7 @@ for different fonts, sizes, and colors.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1940,11 +1940,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -1968,7 +1968,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -2051,7 +2051,7 @@ Flutter 将会为 [Material][] 和 [Cupertino][]
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2086,11 +2086,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -2114,7 +2114,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -2184,14 +2184,14 @@ the following example uses an image from the network.
   In this example, `Image.network` contains a non-working URL.
 
   **1.** Click the **Run** button.
-  
+
          点击 **运行** 按钮
 
   **2.** Change the non-working URL to the actual URL:
-         `https://raw.githubusercontent.com/flutter/website/master/examples/layout/sizing/images/pic1.jpg`
-  
+
          将那个无法访问的 URL 更换成可以访问的 URL:
-         `https://raw.githubusercontent.com/flutter/website/master/examples/layout/sizing/images/pic1.jpg`
+
+  `https://raw.githubusercontent.com/flutter/website/main/examples/layout/sizing/images/pic1.jpg`
 
   **3.** Then change `pic1.jpg` to `pic2.jpg` or `pic3.jpg`,
          and run again.
@@ -2201,7 +2201,7 @@ the following example uses an image from the network.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2226,11 +2226,11 @@ class MyApp extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Container(
-        color: Color(0xffeeeeee),
+        color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
             child: MyWidget(),
-            color: Color(0xffcccccc),
+            color: const Color(0xffcccccc),
           ),
         ),
       ),
@@ -2254,7 +2254,7 @@ Future<void> main() async {
 
   final rows = controller.widgetList(find.byType(Row));
 
-  if (rows.length == 0) {
+  if (rows.isEmpty) {
     _result(false, ['Couldn\'t find a Row!']);
     return;
   }
@@ -2374,7 +2374,7 @@ which are positioned below the contact information.
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2403,7 +2403,7 @@ class MyWidget extends StatelessWidget {
           'Flutter McFlutter', 
           style: Theme.of(context).textTheme.headline5,
         ),
-        Text('Experienced App Developer'),
+        const Text('Experienced App Developer'),
       ],
     );
   }
@@ -2416,8 +2416,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xffeeeeee),
-        textTheme: TextTheme(
+        scaffoldBackgroundColor: const Color(0xffeeeeee),
+        textTheme: const TextTheme(
           bodyText2: TextStyle(
             fontSize: 16,
           ),
@@ -2429,9 +2429,9 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: Container(
               decoration: BoxDecoration(
-                color: Color(0xffffffff),
+                color: const Color(0xffffffff),
                 border: Border.all(),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 10,
                     color: Color(0x80000000),
@@ -2559,7 +2559,7 @@ Future<void> main() async {
   ```
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2576,7 +2576,7 @@ class MyWidget extends StatelessWidget {
           'Flutter McFlutter',
           style: Theme.of(context).textTheme.headline5,
         ),
-        Text('Experienced App Developer'),
+        const Text('Experienced App Developer'),
       ],
     );
   }
@@ -2592,8 +2592,8 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Icon(Icons.account_circle, size: 50),
         ),
         Column(
@@ -2604,7 +2604,7 @@ class MyWidget extends StatelessWidget {
               'Flutter McFlutter',
               style: Theme.of(context).textTheme.headline5,
             ),
-            Text('Experienced App Developer'),
+            const Text('Experienced App Developer'),
           ],
         ),
       ],
@@ -2619,8 +2619,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xffeeeeee),
-        textTheme: TextTheme(
+        scaffoldBackgroundColor: const Color(0xffeeeeee),
+        textTheme: const TextTheme(
           bodyText2: TextStyle(
             fontSize: 16,
           ),
@@ -2632,9 +2632,9 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: Container(
               decoration: BoxDecoration(
-                color: Color(0xffffffff),
+                color: const Color(0xffffffff),
                 border: Border.all(),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 10,
                     color: Color(0x80000000),
@@ -2819,7 +2819,7 @@ Future<void> main() async {
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2830,8 +2830,8 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Icon(Icons.account_circle, size: 50),
         ),
         Column(
@@ -2842,7 +2842,7 @@ class MyWidget extends StatelessWidget {
               'Flutter McFlutter',
               style: Theme.of(context).textTheme.headline5,
             ),
-            Text('Experienced App Developer'),
+            const Text('Experienced App Developer'),
           ],
         ),
       ],
@@ -2864,8 +2864,8 @@ class MyWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Icon(Icons.account_circle, size: 50),
             ),
             Column(
@@ -2876,14 +2876,14 @@ class MyWidget extends StatelessWidget {
                   'Flutter McFlutter',
                   style: Theme.of(context).textTheme.headline5,
                 ),
-                Text('Experienced App Developer'),
+                const Text('Experienced App Developer'),
               ],
             ),
           ],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Row(),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Row(),
       ],
     );
@@ -2897,8 +2897,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xffeeeeee),
-        textTheme: TextTheme(
+        scaffoldBackgroundColor: const Color(0xffeeeeee),
+        textTheme: const TextTheme(
           bodyText2: TextStyle(
             fontSize: 16,
           ),
@@ -2910,9 +2910,9 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: Container(
               decoration: BoxDecoration(
-                color: Color(0xffffffff),
+                color: const Color(0xffffffff),
                 border: Border.all(),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 10,
                     color: Color(0x80000000),
@@ -3115,7 +3115,7 @@ Future<void> main() async {
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -3130,7 +3130,7 @@ class MyWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Padding(
+            const Padding(
               padding: const EdgeInsets.all(8.0),
               child: Icon(Icons.account_circle, size: 50),
             ),
@@ -3142,18 +3142,18 @@ class MyWidget extends StatelessWidget {
                   'Flutter McFlutter',
                   style: Theme.of(context).textTheme.headline5,
                 ),
-                Text('Experienced App Developer'),
+                const Text('Experienced App Developer'),
               ],
             ),
           ],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Row(
-          children: [],
+          children: const [],
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Row(
-          children: [],
+          children: const [],
         ),
       ],
     );
@@ -3174,8 +3174,8 @@ class MyWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Icon(Icons.account_circle, size: 50),
             ),
             Column(
@@ -3186,15 +3186,15 @@ class MyWidget extends StatelessWidget {
                   'Flutter McFlutter',
                   style: Theme.of(context).textTheme.headline5,
                 ),
-                Text('Experienced App Developer'),
+                const Text('Experienced App Developer'),
               ],
             ),
           ],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Text(
               '123 Main Street',
             ),
@@ -3203,9 +3203,9 @@ class MyWidget extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Row(
-          children: [],
+          children: const [],
         ),
       ],
     );
@@ -3219,8 +3219,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xffeeeeee),
-        textTheme: TextTheme(
+        scaffoldBackgroundColor: const Color(0xffeeeeee),
+        textTheme: const TextTheme(
           bodyText2: TextStyle(
             fontSize: 16,
           ),
@@ -3232,9 +3232,9 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: Container(
               decoration: BoxDecoration(
-                color: Color(0xffffffff),
+                color: const Color(0xffffffff),
                 border: Border.all(),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 10,
                     color: Color(0x80000000),
@@ -3460,7 +3460,7 @@ Future<void> main() async {
 {{site.alert.end}}
 
 <!-- skip -->
-```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -3475,8 +3475,8 @@ class MyWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Icon(Icons.account_circle, size: 50),
             ),
             Column(
@@ -3487,22 +3487,22 @@ class MyWidget extends StatelessWidget {
                   'Flutter McFlutter',
                   style: Theme.of(context).textTheme.headline5,
                 ),
-                Text('Experienced App Developer'),
+                const Text('Experienced App Developer'),
               ],
             ),
           ],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Text('123 Main Street'),
             Text('415-555-0198'),
           ],
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Row(
-          children: [],
+          children: const [],
         ),
       ],
     );
@@ -3523,8 +3523,8 @@ class MyWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Icon(Icons.account_circle, size: 50),
             ),
             Column(
@@ -3535,15 +3535,15 @@ class MyWidget extends StatelessWidget {
                   'Flutter McFlutter',
                   style: Theme.of(context).textTheme.headline5,
                 ),
-                Text('Experienced App Developer'),
+                const Text('Experienced App Developer'),
               ],
             ),
           ],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Text(
               '123 Main Street',
             ),
@@ -3552,10 +3552,10 @@ class MyWidget extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
+          children: const [
             Icon(Icons.accessibility),
             Icon(Icons.timer),
             Icon(Icons.phone_android),
@@ -3574,8 +3574,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xffeeeeee),
-        textTheme: TextTheme(
+        scaffoldBackgroundColor: const Color(0xffeeeeee),
+        textTheme: const TextTheme(
           bodyText2: TextStyle(
             fontSize: 16,
           ),
@@ -3587,9 +3587,9 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: Container(
               decoration: BoxDecoration(
-                color: Color(0xffffffff),
+                color: const Color(0xffffffff),
                 border: Border.all(),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 10,
                     color: Color(0x80000000),
@@ -3841,7 +3841,7 @@ You can download Flutter from the [install][] page.
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new
 [Flutter's YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
-[GitHub]: {{site.repo.this}}/tree/master/examples/layout/sizing/images
+[GitHub]: {{site.repo.this}}/tree/{{site.branch}}/examples/layout/sizing/images
 [install]: {{site.url}}/get-started/install
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html
 [Material Color palette]: {{site.api}}/flutter/material/Colors-class.html

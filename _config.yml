@@ -1,4 +1,4 @@
-title: Flutter 中文文档 | Flutter 中文开发者网站
+title: Flutter 中文文档 - Flutter 中文开发者网站 - Flutter
 url: https://flutter.cn/docs
 main-url: https://flutter.cn
 email: flutter-dev@googlegroups.com
@@ -18,6 +18,7 @@ repo:
   samples: https://github.com/flutter/samples
   plugins: https://github.com/flutter/plugins
   gallery: https://github.com/flutter/gallery
+  engine: https://github.com/flutter/engine
 dart:
   api: https://api.dart.cn
   sdk:

@@ -104,14 +104,13 @@ that you provide to the `Scaffold` widget.
 的 `CustomScrollView`。
 另外你需要删除你之前可能设置在 `Scaffold` 组件上的 app bar！
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (CustomScrollView)" replace="/^return //g"?>
 ```dart
 Scaffold(
   // No appBar property provided, only the body.
   body: CustomScrollView(
-    // Add the app bar and list of items as slivers in the next steps.
-    slivers: <Widget>[]
-  ),
+      // Add the app bar and list of items as slivers in the next steps.
+      slivers: <Widget>[]),
 );
 ```
 
@@ -242,13 +241,13 @@ SliverList(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

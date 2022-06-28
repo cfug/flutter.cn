@@ -45,15 +45,20 @@ and then run `flutter upgrade`.
 
 ## 切换 Flutter 发布渠道
 
-Flutter has four [release channels][]:
-**stable**, **beta**, **dev**, and **master**.
+Flutter has three [release channels][]:
+**stable**, **beta** and **master**.
+
+{{site.alert.info}}
+  The `dev` channel was retired as of Flutter 2.8.
+{{site.alert.end}}
+
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
-Flutter 有 [4个发布渠道][release channels]，分别是
-**stable**, **beta**, **dev**, 和 **master**。
+Flutter 有 [3 个发布渠道][release channels]，分别是
+**stable**、**beta** 和 **master**。
 我们推荐使用 **{{site.sdk.channel}}** 渠道
-除非你需要更加新的版本。
+除非你需要体验最新更新的 Flutter 特性。
 
 To view your current channel, use the following command:
 
@@ -73,7 +78,7 @@ For example:
 例如：
 
 ```terminal
-$ flutter channel dev
+$ flutter channel beta
 $ flutter upgrade
 ```
 

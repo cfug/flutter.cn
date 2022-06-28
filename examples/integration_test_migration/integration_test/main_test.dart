@@ -6,7 +6,7 @@ import 'package:integration_test_migration/main.dart';
 void main() {
   // #docregion Test1
   testWidgets('do not select any item, verify please select text is displayed',
-      (WidgetTester tester) async {
+      (tester) async {
     // load the PlantsApp widget
     await tester.pumpWidget(const PlantsApp());
 
@@ -22,8 +22,7 @@ void main() {
   // #enddocregion Test1
 
   // #docregion Test2
-  testWidgets('tap on the first item (Alder), verify selected',
-      (WidgetTester tester) async {
+  testWidgets('tap on the first item (Alder), verify selected', (tester) async {
     await tester.pumpWidget(const PlantsApp());
 
     // wait for data to load
@@ -49,7 +48,7 @@ void main() {
 
   // #docregion Test3
   testWidgets('scroll, tap on the last item (Zedoary), verify selected',
-      (WidgetTester tester) async {
+      (tester) async {
     await tester.pumpWidget(const PlantsApp());
 
     // wait for data to load

@@ -6,7 +6,7 @@ description: 学习如何撰写集成测试
 tags: 测试,Flutter Test,集成测试
 ---
 
-This page describes how to use the `integration_test` package to run
+This page describes how to use the [`integration_test`][] package to run
 integration tests. Tests written using this package have the following
 properties:
  
@@ -18,14 +18,10 @@ properties:
   enabling tests to be written in a similar style as [widget tests][]
 
 {{site.alert.note}}
-  As of Flutter 2, the `integration_test` package
-  was moved into the Flutter SDK. Going forward,
-  use the [`integration_test`][] package docs,
-  rather than the docs on pub.dev. **Also,
-  make sure that you update your app's pubspec file
-  to include this package as one of your
-  `dev_dependencies`.** For an example,
-  see the [Project setup](#project-setup) section below.
+  The `integration_test` package is part of the Flutter SDK itself. 
+  To use it, make sure that you update your app's pubspec file
+  to include this package as one of your `dev_dependencies`. 
+  For an example, see the [Project setup](#project-setup) section below.
 {{site.alert.end}}
 
 ## Overview
@@ -251,16 +247,16 @@ See the [iOS Device Testing][] section in the README
 for instructions on how to upload the .zip file
 from the command line.
 
-[Android Device Testing]: {{site.repo.flutter}}/tree/master/packages/integration_test#android-device-testing
+[Android Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#android-device-testing
 [Download and install ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Firebase Console]: http://console.firebase.google.com/
 [Firebase Test Lab]: {{site.firebase}}/docs/test-lab
-[Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/master/packages/integration_test#firebase-test-lab
+[Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/main/packages/integration_test#firebase-test-lab
 [Firebase TestLab iOS instructions]: {{site.firebase}}/docs/test-lab/ios/firebase-console
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
-[`integration_test`]: {{site.repo.flutter}}/tree/master/packages/integration_test#integration_test
-[integration_test usage]: {{site.repo.flutter}}/tree/master/packages/integration_test#usage
-[iOS Device Testing]: {{site.repo.flutter}}/tree/master/packages/integration_test#ios-device-testing
+[`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
+[integration_test usage]: {{site.repo.flutter}}/tree/main/packages/integration_test#usage
+[iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
 [Migrating from flutter_drive]: {{site.url}}/testing/integration-tests/migration
 [Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
 [widget tests]: {{site.url}}/testing#widget-tests

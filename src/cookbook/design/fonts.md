@@ -17,6 +17,8 @@ next:
   path: /docs/cookbook/design/themes
 ---
 
+<?code-excerpt path-base="cookbook/design/fonts/"?>
+
 Although Android and iOS offer high quality system fonts,
 one of the most common requests from designers is for custom fonts.
 For example, you might have a custom-built font from a designer,
@@ -112,6 +114,7 @@ Flutter supports the following font formats:
 
 Flutter 支持以下的字体格式：
 
+* `.ttc`
 * `.ttf`
 * `.otf`
 
@@ -171,15 +174,14 @@ outline weights and styles:
 
   * The `weight` property specifies the weight of the outlines in
     the file as an integer multiple of 100, between 100 and 900.
-    These values correspond to the [`FontWeight`][]
-    and can be used in the [`fontWeight`][] property of a
-    [`TextStyle`][] object. For example, if you want to use
-    the `RobotoMono-Bold` font defined above, you would set `fontWeight`
-    to `FontWeight.w700` in your `TextStyle`.
+    These values correspond to the [`FontWeight`][] and can be used in the
+    [`fontWeight`][fontWeight property] property of a [`TextStyle`][] object. 
+    For example, if you want to use the `RobotoMono-Bold` font defined above, 
+    you would set `fontWeight` to `FontWeight.w700` in your `TextStyle`.
 
     `weight` 属性指定了文件中字体轮廓的字重为 100 的整数倍，
     并且范围在 100 和 900 之间。
-    这些值对应 [`FontWeight`][] 并能够在 [`TextStyle`][] 
+    这些值对应 [`FontWeight`][fontWeight property] 并能够在 [`TextStyle`][] 
     对象的 [`fontWeight`][] 属性上使用。
     例如，如果你想使用上面定义的 `RobotoMono-Bold` 字体，
     你可以在 `TextStyle` 中将 `fontWeight` 设置为 `FontWeight.w700`。
@@ -194,14 +196,14 @@ outline weights and styles:
     即使其 `weight` 设置为了 100。
 
   * The `style` property specifies whether the outlines in the file are
-    `italic` or `normal`. These values correspond to the
-    [`FontStyle`][] and can be used in the [`fontStyle`][] property of a
-    [`TextStyle`][] object. For example, if you want to use
-    the `Raleway-Italic` font defined above, you would set `fontStyle`
-    to `FontStyle.italic` in your `TextStyle`.
+    `italic` or `normal`. 
+    These values correspond to the [`FontStyle`][] and can be used in the
+    [`fontStyle`][fontStyle property] property of a [`TextStyle`][] object. 
+    For example, if you want to use the `Raleway-Italic` font defined above, 
+    you would set `fontStyle` to `FontStyle.italic` in your `TextStyle`.
 
     `style` 属性指定文件中字体的轮廓是否为 `italic` 或 `normal`。
-    这些值对应 [`FontStyle`][] 并能够在 [`TextStyle`][]
+    这些值对应 [`FontStyle`][fontStyle property] 并能够在 [`TextStyle`][]
     对象的 [`fontStyle`][] 属性上使用。例如，如果你想使用上面定义的 
     `Raleway-Italic` 字体，你可以在 `TextStyle` 中
     将 `fontStyle` 设置为 `FontStyle.italic`。
@@ -234,9 +236,9 @@ name declared in the `pubspec.yaml`.
 请将 `fontFamily` 设为应用（全局）`theme` 的属性的一部分。
 提供的 `fontFamily` 的值必须与 `pubspec.yaml` 中声明的名称相匹配。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (MaterialApp)"?>
 ```dart
-MaterialApp(
+return MaterialApp(
   title: 'Custom Fonts',
   // Set Raleway as the default app font.
   theme: ThemeData(fontFamily: 'Raleway'),
@@ -268,12 +270,12 @@ Once again, the `fontFamily` must match the `family` name declared in the
 在这个例子中，我们将在一个 `Text` Widget 上使用 RobotoMono 字体。
 同样的，这里的 fontFamily 的值必须与 pubspec.yaml 中声明的值相匹配。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Text)"?>
 ```dart
-Text(
+child: Text(
   'Roboto Mono sample',
   style: TextStyle(fontFamily: 'RobotoMono'),
-);
+),
 ```
 
 ### TextStyle
@@ -334,13 +336,14 @@ flutter:
 
 ### `main.dart`
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -354,7 +357,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -378,9 +381,9 @@ class MyHomePage extends StatelessWidget {
 
 [Export fonts from a package]: {{site.url}}/cookbook/design/package-fonts
 [`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
-[`fontStyle`]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
-[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html
-[`fontWeight`]: {{site.api}}/flutter/painting/TextStyle/fontWeight.html
+[fontStyle property]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
+[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle.html
+[fontWeight property]: {{site.api}}/flutter/painting/TextStyle/fontWeight.html
 [`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
 [Google Fonts]: https://fonts.google.com
 [google_fonts]: {{site.pub-pkg}}/google_fonts

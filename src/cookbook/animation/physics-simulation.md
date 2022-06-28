@@ -72,7 +72,7 @@ void main() {
 }
 
 class PhysicsCardDragDemo extends StatelessWidget {
-  const PhysicsCardDragDemo({Key? key}) : super(key: key);
+  const PhysicsCardDragDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +88,7 @@ class PhysicsCardDragDemo extends StatelessWidget {
 }
 
 class DraggableCard extends StatefulWidget {
-  const DraggableCard({required this.child, Key? key}) : super(key: key);
+  const DraggableCard({required this.child, super.key});
 
   final Widget child;
 
@@ -430,7 +430,7 @@ onPanEnd: (details) {
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
@@ -439,7 +439,7 @@ void main() {
 }
 
 class PhysicsCardDragDemo extends StatelessWidget {
-  const PhysicsCardDragDemo({Key? key}) : super(key: key);
+  const PhysicsCardDragDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -457,7 +457,7 @@ class PhysicsCardDragDemo extends StatelessWidget {
 /// A draggable card that moves back to [Alignment.center] when it's
 /// released.
 class DraggableCard extends StatefulWidget {
-  const DraggableCard({required this.child, Key? key}) : super(key: key);
+  const DraggableCard({required this.child, super.key});
 
   final Widget child;
 

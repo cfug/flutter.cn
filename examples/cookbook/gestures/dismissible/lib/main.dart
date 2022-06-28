@@ -7,7 +7,7 @@ void main() {
 // MyApp is a StatefulWidget. This allows updating the state of the
 // widget when an item is removed.
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   MyAppState createState() {
@@ -16,7 +16,9 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
+  // #docregion Items
   final items = List<String>.generate(20, (i) => 'Item ${i + 1}');
+  // #enddocregion Items
 
   @override
   Widget build(BuildContext context) {

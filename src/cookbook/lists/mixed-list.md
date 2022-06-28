@@ -173,7 +173,7 @@ ListView.builder(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
@@ -192,7 +192,7 @@ void main() {
 class MyApp extends StatelessWidget {
   final List<ListItem> items;
 
-  const MyApp({Key? key, required this.items}) : super(key: key);
+  const MyApp({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {

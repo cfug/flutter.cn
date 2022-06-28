@@ -1,5 +1,11 @@
 {% if page.show_banner -%}
+  {% comment %}
+    For headings use <h3> elements.
+    Note that tabbed pages will NOT work correctly if no banner is present.
+    https://github.com/flutter/website/issues/3897
+  {% endcomment %}
   <div class="site-banner site-banner--default" role="alert">
-      Flutter 2.8 <a href=https://flutter.cn/posts/announcing-flutter-2-8>正式发布</a>！
+    <a href="https://flutter.cn/posts/announcing-the-flutter-casual-games-toolkit">Flutter 休闲游戏工具包发布</a>，
+    查看我们是如何构建 <a href="https://flutter.cn/posts/i-o-pinball">Flutter 弹珠游戏</a> 的。
   </div>
 {% endif -%}

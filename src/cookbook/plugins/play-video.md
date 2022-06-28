@@ -192,7 +192,7 @@ To create and initialize the `VideoPlayerController` do the following:
 <?code-excerpt "lib/main_step3.dart (VideoPlayerScreen)"?>
 ```dart
 class VideoPlayerScreen extends StatefulWidget {
-  const VideoPlayerScreen({Key? key}) : super(key: key);
+  const VideoPlayerScreen({super.key});
 
   @override
   _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
@@ -204,6 +204,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   void initState() {
+    super.initState();
+
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
@@ -212,8 +214,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     );
 
     _initializeVideoPlayerFuture = _controller.initialize();
-
-    super.initState();
   }
 
   @override
@@ -351,7 +351,7 @@ import 'package:video_player/video_player.dart';
 void main() => runApp(const VideoPlayerApp());
 
 class VideoPlayerApp extends StatelessWidget {
-  const VideoPlayerApp({Key? key}) : super(key: key);
+  const VideoPlayerApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -363,7 +363,7 @@ class VideoPlayerApp extends StatelessWidget {
 }
 
 class VideoPlayerScreen extends StatefulWidget {
-  const VideoPlayerScreen({Key? key}) : super(key: key);
+  const VideoPlayerScreen({super.key});
 
   @override
   _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
@@ -375,6 +375,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   void initState() {
+    super.initState();
+
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
@@ -387,8 +389,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
     // Use the controller to loop the video.
     _controller.setLooping(true);
-
-    super.initState();
   }
 
   @override

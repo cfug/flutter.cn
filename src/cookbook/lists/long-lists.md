@@ -52,9 +52,9 @@ For this example, generate a list of 10,000 Strings using the
 
 在下面的例子，使用 [`List.generate`][] 构造函数生成包含 10,000 个字符串的集合。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Items)" replace="/^items: //g"?>
 ```dart
-final items = List<String>.generate(10000, (i) => "Item $i");
+List<String>.generate(10000, (i) => 'Item $i'),
 ```
 
 ## 2. Convert the data source into widgets
@@ -88,7 +88,7 @@ ListView.builder(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
@@ -102,7 +102,7 @@ void main() {
 class MyApp extends StatelessWidget {
   final List<String> items;
 
-  const MyApp({Key? key, required this.items}) : super(key: key);
+  const MyApp({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {

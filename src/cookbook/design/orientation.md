@@ -60,9 +60,9 @@ For now, create a grid with two columns.
 我们需要使用一个在网格中显示项目的列表而非一个普通的列表。
 现在，我们将创建一个包含两个列的网格。
 
-<!-- skip -->
+<?code-excerpt "lib/partials.dart (GridViewCount)"?>
 ```dart
-GridView.count(
+return GridView.count(
   // A list with 2 columns
   crossAxisCount: 2,
   // ...
@@ -96,9 +96,9 @@ mode, or three columns in landscape mode.
 使用 `Orientation`，我们可以构建一个列表，
 在纵向模式下显示两列，在横向模式下显示三列。
 
-<!-- skip -->
+<?code-excerpt "lib/partials.dart (OrientationBuilder)"?>
 ```dart
-OrientationBuilder(
+body: OrientationBuilder(
   builder: (context, orientation) {
     return GridView.count(
       // Create a grid with 2 columns in portrait mode,
@@ -106,7 +106,7 @@ OrientationBuilder(
       crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
     );
   },
-);
+),
 ```
 
 {{site.alert.note}}
@@ -126,7 +126,7 @@ OrientationBuilder(
 ## 交互式样例
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
@@ -134,7 +134,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -152,7 +152,7 @@ class MyApp extends StatelessWidget {
 class OrientationList extends StatelessWidget {
   final String title;
 
-  const OrientationList({Key? key, required this.title}) : super(key: key);
+  const OrientationList({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -187,5 +187,5 @@ class OrientationList extends StatelessWidget {
 
 
 [Creating a grid list]: {{site.url}}/cookbook/lists/grid-lists
-[`Orientation`]: {{site.api}}/flutter/widgets/Orientation-class.html
+[`Orientation`]: {{site.api}}/flutter/widgets/Orientation.html
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html

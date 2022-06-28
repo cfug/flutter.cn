@@ -21,6 +21,9 @@ Color randomColor() {
 }
 
 class AnimatedContainerDemo extends StatefulWidget {
+  const AnimatedContainerDemo({super.key});
+
+  @override
   _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
 }
 
@@ -65,7 +68,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
               ),
             ),
             ElevatedButton(
-              child: Text('change'),
+              child: const Text('change'),
               onPressed: () => change(),
             ),
           ],
@@ -76,9 +79,11 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: AnimatedContainerDemo(),
     );
@@ -87,6 +92,6 @@ class MyApp extends StatelessWidget {
 
 void main() {
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }

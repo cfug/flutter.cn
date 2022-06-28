@@ -1,37 +1,31 @@
 ## Linux setup
 
-{{site.alert.warning}}
-  **Beta!**
-  This area covers desktop support,
-  which is available as a beta release.
-  Beta support still has notable feature gaps,
-  including accessibility support.
-  You can try a beta snapshot of desktop support
-  on the stable channel, or you can keep up
-  with the latest changes to desktop on the
-  beta channel.
-  For more information, see the **Desktop**
-  section in [What's new in Flutter 2][],
-  a free article on Medium.
-{{site.alert.end}}
-
-[What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
+## Linux 安装
 
 ### Additional Linux requirements
 
+### 其他 Linux 需要的内容
+
 For Linux desktop development,
 you need the following in addition to the Flutter SDK:
+
+对于开发 Linux 桌面端应用来说，除了 Flutter SDK 以外你还需要以下内容：
 
 * [Clang][]
 * [CMake][]
 * [GTK development headers][]
 * [Ninja build][]
 * [pkg-config][]
+* [liblzma-dev][] This might be necessary
+
+  [liblzma-dev][] 可能是必需的
 
 Run the following command
 
+运行以下命令进行安装：
+
 ```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
+$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
 ```
 
 [Clang]: https://clang.llvm.org/
@@ -40,15 +34,4 @@ $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [Ninja build]: https://ninja-build.org/
 [pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
-
-### Enable desktop support
-
-At the command line, perform the following command to enable desktop support
-
-```terminal
-$ flutter config --enable-linux-desktop
-```
-
-For more information, see [Desktop support for Flutter][]
-
-[Desktop support for Flutter]: {{site.main_url}}/desktop
+[liblzma-dev]: https://packages.debian.org/sid/liblzma-dev

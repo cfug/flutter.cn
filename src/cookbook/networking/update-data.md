@@ -44,7 +44,7 @@ dependencies:
 
 Import the `http` package.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Http)"?>
 ```dart
 import 'package:http/http.dart' as http;
 ```
@@ -102,7 +102,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({required this.id, required this.title});
+  const Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -314,7 +314,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({required this.id, required this.title});
+  const Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -329,7 +329,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   _MyAppState createState() {

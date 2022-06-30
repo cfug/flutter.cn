@@ -20,11 +20,11 @@ you can also see all the widgets in the [widget index][].
 {% for section in categories %}
     <div class="card">
         <div class="card-body">
-            <a href="{{site.url}}{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
+            <a href="{{site.main-url}}{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
             <p class="card-text">{{section.description}}</p>
         </div>
         <div class="card-footer card-footer--transparent">
-            <a href="{{site.url}}{{page.url}}{{section.id}}">查看</a>
+            <a href="{{site.main-url}}{{page.url}}{{section.id}}">查看</a>
         </div>
     </div>
 {% endfor %}

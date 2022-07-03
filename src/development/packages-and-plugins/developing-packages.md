@@ -11,18 +11,20 @@ keywords: 插件开发,Flutter插件教程
 
 {{site.note.alert}}
 
-  The plugin API has been updated and now supports [federated plugins][] that
-  enable separation of different platform implementations. You can also now
-  indicate [which platforms a plugin][supported-platforms] supports, for example
-  web and macOS.
+  The plugin API supports [federated plugins][] that
+  enable separation of different platform implementations.
+  You can also now indicate
+  [which platforms a plugin][supported-platforms]
+  supports, for example web and macOS.
 
   插件 API 现已支持 [联合插件][federated plugins]，从而分离在不同平台上的实现。
   你可以指定 [哪些平台有插件][supported-platforms] 支持，例如 Web 和 macOS。
 
-  Eventually, the old plugin APIs will be deprecated. In the short term, you
-  will see a warning when the framework detects that you are using an old-style
-  plugin. For information on how to upgrade your plugin, see [Supporting the new
-  Android plugins APIs][].  
+  Eventually, the old plugin APIs will be deprecated.
+  In the short term, you will see a warning when the
+  framework detects that you are using an old-style
+  plugin. For information on how to upgrade your plugin,
+  see [Supporting the new Android plugins APIs][]. 
 
   旧的插件 API 会在将来被废弃。如果在短期内你仍在使用旧版本的插件 API，你会看到警告。
   想了解更多关于升级 Android 插件的内容，请阅读
@@ -34,8 +36,8 @@ keywords: 插件开发,Flutter插件教程
 
 ## Package 介绍
 
-Packages enable the creation of modular code that can be shared easily. A
-minimal package consists of the following:
+Packages enable the creation of modular code that can be shared easily.
+A minimal package consists of the following:
 
 通过使用 package（的模式）可以创建易于共享的模块化代码。
 一个最基本的 package 由以下内容构成：
@@ -96,8 +98,9 @@ Package 包含以下几种类别：
 <br> 使用 Dart 编写的，按需使用 Java 或 Kotlin、Objective-C
   或 Swift 分别在 Android 和/或 iOS 平台实现的 package。
 
-  Plugin packages can be written for Android (using Kotlin or Java), iOS (using
-  Swift or Objective-C), web, macOS, Windows, or Linux, or any combination
+  Plugin packages can be written for Android
+  (using Kotlin or Java), iOS (using Swift or Objective-C),
+  web, macOS, Windows, or Linux, or any combination
   thereof.
 
   插件 package 可以针对 Android（使用 Kotlin 或 Java）、
@@ -121,6 +124,11 @@ Package 包含以下几种类别：
 
 **FFI 插件**
 <br> 用 Dart 语言编写针对一个或多个特定平台的 API。
+
+**FFI Plugin packages**
+: A specialized Dart package that contains an API written in
+  Dart code combined with one or more platform-specific
+  implementations that use [Dart FFI][FFI].
 
 ## Developing Dart packages {#dart}
 
@@ -245,8 +253,9 @@ see the [Dart library package][] documentation.
 
 ## 开发原生插件类型的 packages {#plugin}
 
-If you want to develop a package that calls into platform-specific APIs, you
-need to develop a plugin package.
+If you want to develop a package that calls into
+platform-specific APIs,
+you need to develop a plugin package.
 
 如果想要开发一个调用特定平台 API 的 package，你需要开发一个原生插件 packgae。
 
@@ -259,11 +268,13 @@ The API is connected to the platform-specific implementation(s) using a
 
 ### 联合插件
 
-Federated plugins are a way of splitting support for different platforms into
-separate packages. So, a federated plugin can use one package for iOS, another
-for Android, another for web, and yet another for a car (as an example of an IoT
-device). Among other benefits, this approach allows a domain expert to extend an
-existing plugin to work for the platform they know best.
+Federated plugins are a way of splitting support for
+different platforms into separate packages.
+So, a federated plugin can use one package for iOS,
+another for Android, another for web,
+and yet another for a car (as an example of an IoT device).
+Among other benefits, this approach allows a domain expert
+to extend an existing plugin to work for the platform they know best.
 
 Federated plugins (联合插件) 是一种将对不同平台的支持分为单独的软件包。
 所以，联合插件能够使用针对 iOS、Android、Web 甚至是针对汽车
@@ -369,9 +380,12 @@ implemented, see the Medium article by Harry Terkelsen,
 
 ### 指定一个插件支持的平台 {#plugin-platforms}
 
-Plugins can specify the platforms they support by adding keys to the `platforms`
-map in the `pubspec.yaml` file. For example, the following pubspec file shows
-the `flutter:` map for the `hello` plugin, which supports only iOS and Android:
+Plugins can specify the platforms they support by
+adding keys to the `platforms` map in the
+`pubspec.yaml` file. For example,
+the following pubspec file shows the
+`flutter:` map for the `hello` plugin,
+which supports only iOS and Android:
 
 插件可以通过向 `pubspec.yaml` 中的 `platforms` map 
 添加 keys 来指定其支持的平台。
@@ -395,9 +409,11 @@ environment:
   flutter: ">=1.12.0"
 ```
 
-When adding plugin implementations for more platforms, the `platforms` map
-should be updated accordingly. For example, here's the map in the pubspec file
-for the `hello` plugin, when updated to add support for macOS and web:
+When adding plugin implementations for more platforms,
+the `platforms` map should be updated accordingly.
+For example, here's the map in the pubspec file
+for the `hello` plugin,
+when updated to add support for macOS and web:
 
 当为更多平台添加插件实现时，应相应地更新 `platforms` map，
 例如这是支持 Android、iOS、macOS 和 web 的 `hello` 插件的 map：
@@ -428,9 +444,11 @@ environment:
 
 #### 联合平台 package
 
-A platform package uses the same format, but includes an `implements` entry
-indicating which app-facing package it is an implementation for. For example,
-a `hello_windows` plugin containing the Windows implementation for `hello`
+A platform package uses the same format,
+but includes an `implements` entry indicating
+which app-facing package it implements. For example,
+a `hello_windows` plugin containing the Windows
+implementation for `hello`
 would have the following `flutter:` map:
 
 平台 package 有着同样的格式，但会包含 `implements` 入口，
@@ -454,7 +472,7 @@ flutter:
 An app facing package can endorse a platform package by adding a
 dependency on it, and including it as a `default_package` in the
 `platforms:` map. If the `hello` plugin above endorsed `hello_windows`,
-it would look like this:
+it would look as follows:
 
 提供给 App 项目使用的 package
 可以通过在 `platform:` 映射下声明 `default_package`，
@@ -478,8 +496,8 @@ dependencies:
 ```
 
 Note that as shown here, an app-facing package can have
-some platforms implementated within the package, and others in
-endorsed federated implementations.
+some platforms implementated within the package,
+and others in endorsed federated implementations.
 
 注意如上所示，面向 App 项目的 package 可能已经包含了某些平台的实现，
 同时也有认可的其他平台的实现。
@@ -494,9 +512,11 @@ flag with `flutter create`.
 想要创建原生插件 package，
 请使用带有 `--template=plugin` 标志的 `flutter create` 命令。
 
-Use the `--platforms=` option followed by a comma separated list to specify the
-platforms that the plugin supports. Available platforms are: `android`, `ios`,
-`web`, `linux`, `macos`, and `windows`. If no platforms are specified, the
+Use the `--platforms=` option followed by a
+comma-separated list to specify the platforms
+that the plugin supports. Available platforms are:
+`android`, `ios`, `web`, `linux`, `macos`, and `windows`.
+If no platforms are specified, the
 resulting project doesn't support any platforms.
 
 你可以使用 `--platforms=` 命令行选项指定插件支持的平台，
@@ -512,8 +532,9 @@ generated plugin code.
 使用 `--org` 选项，以反向域名表示法来指定你的组织。
 该值用于生成的 Android 及 iOS 代码。
 
-Use the `-a` option to specify the language for android or the `-i` option to
-specify the language for ios. Please choose **one** of the following:
+Use the `-a` option to specify the language for android
+or the `-i` option to specify the language for ios.
+Please choose **one** of the following:
 
 使用 `-a` 选项指定 Android 的语言，或使用 `-i` 选项指定 iOS 的语言。 
 请选择以下 **任一项**：
@@ -712,7 +733,8 @@ interface package.
 
 ### 为现有的插件项目加入平台的支持
 
-To add support for specific platforms to an existing plugin project, run `flutter create` with
+To add support for specific platforms to an
+existing plugin project, run `flutter create` with
 the `--template=plugin` flag again in the project directory.
 For example, to add web support in an existing plugin, run:
 
@@ -724,8 +746,8 @@ For example, to add web support in an existing plugin, run:
 $ flutter create --template=plugin --platforms=web .
 ```
 
-If this command displays a message about updating the `pubspec.yaml` file,
-follow the provided instructions.
+If this command displays a message about updating the
+`pubspec.yaml` file, follow the provided instructions.
 
 如果这个命令返回了一个关于需要更新 `pubspec.yaml` 文件的提醒，
 请按照提示的说明进行操作。
@@ -734,11 +756,13 @@ follow the provided instructions.
 
 ### 仅 Dart 的平台实现
 
-Usually plugin implementations involve platform channels and a second language,
-as described above. In some cases, however, some platforms can be
-implemented entirely in Dart (for example, using [FFI][]). For a Dart-only
-platform implementation, replace the `pluginClass` in pubspec.yaml with
-a `dartPluginClass`. Here is the `hello_windows` example above modified for a
+Usually plugin implementations involve platform channels
+and a second language, as described above.
+In some cases, however, some platforms can be
+implemented entirely in Dart (for example, using [FFI][]).
+For a Dart-only platform implementation,
+replace the `pluginClass` in pubspec.yaml with a `dartPluginClass`.
+Here is the `hello_windows` example above modified for a
 Dart-only implementation:
 
 如先前描述，通常插件会使用第二种语言，实现对应平台的功能。
@@ -758,9 +782,9 @@ flutter:
 
 In this version you would have no C++ Windows code, and would instead
 subclass the `hello` plugin's Dart platform interface class with a
-`HelloPluginWindows` class that includes a static `registerWith()` method.
-This method will be called during startup, and can be used to register the
-Dart implementation:
+`HelloPluginWindows` class that includes a static
+`registerWith()` method.  This method is called during startup,
+and can be used to register the Dart implementation:
 
 在这样的模式下，插件内不包含 Windows 的 C++ 代码，
 它将继承 `hello` 插件的 Dart 平台接口，使用包含静态 `registerWith()`
@@ -775,10 +799,14 @@ class HelloPluginWindows extends HelloPluginPlatform {
   }
 ```
 
-This is supported for Windows, macOS, and Linux starting in Flutter 2.5.
-`dartPluginClass` is supported for Android and iOS starting in Flutter 2.8,
-but currently a `pluginClass` is still required for those platforms. That
-requirement will be removed in a future version of Flutter.
+This is supported for Windows, macOS,
+and Linux starting in Flutter 2.5.
+`dartPluginClass` is supported for
+Android and iOS starting in Flutter 2.8,
+but currently a `pluginClass` is still
+required for those platforms.
+That requirement will be removed
+in a future version of Flutter.
 
 从 Flutter 2.5 版本开始，此类插件可以用于 Windows、macOS 和 Linux 插件，
 Android 和 iOS 在 Flutter 2.8 版本后可以使用
@@ -789,10 +817,11 @@ Android 和 iOS 在 Flutter 2.8 版本后可以使用
 
 ### 测试你的插件
 
-We encourage you test your plugin with automated tests, to ensure that
-functionality does not regress as you make changes to your code. For more
-information, see [Testing your plugin][], a section in [Supporting the new
-Android plugins APIs][].
+We encourage you test your plugin with automated tests,
+to ensure that functionality does not regress
+as you make changes to your code. For more information,
+see [Testing your plugin][],
+a section in [Supporting the new Android plugins APIs][].
 
 我们鼓励您使用自动化测试来测试您的插件，以确保代码在修改时候功能保持完整。
 更多信息，请参见文档
@@ -977,21 +1006,23 @@ For tips on how to write API documentation, see
 
 ### 将许可证添加到 LICENSE 文件中
 
-Individual licenses inside each LICENSE file should
-be separated by 80 hyphens on their own on a line.
+Individual licenses inside each LICENSE file
+should be separated by 80 hyphens
+on their own on a line.
 
 每个 LICENSE 文件中的各个许可证应由 80 个短线字符组成的线段进行分割。
 
-If a LICENSE file contains more than one component license,
-then each component license must start with the names of the
+If a LICENSE file contains more than one
+component license, then each component
+license must start with the names of the
 packages to which the component license applies,
-with each package name on its own line, and the
-list of package names separated from the actual
-license text by a blank line.
-(The packages need not match the names of the pub package.
-For example, a package might itself contain code from
-multiple third-party sources, and might need to include
-a license for each one.)
+with each package name on its own line,
+and the list of package names separated from
+the actual license text by a blank line.
+(The packages need not match the names of
+the pub package. For example, a package might itself contain
+code from multiple third-party sources,
+and might need to include a license for each one.)
 
 如果 LICENSE 文件中包含多个组件许可证，那么每个组件许可证必须以其所在 package
 的名称开始，每个 package 名称单独一行显示，并且 package
@@ -1268,10 +1299,10 @@ PENDING
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
-[Supporting the new Android plugins APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
+[Supporting the new Android plugins APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[Testing your plugin]: {{site.url}}/development/packages-and-plugins/plugin-api-migration#testing-your-plugin
+[Testing your plugin]: {{site.url}}/development/package-integration/android/plugin-api-migration#testing-your-plugin
 [unit tests]: {{site.url}}/testing#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c

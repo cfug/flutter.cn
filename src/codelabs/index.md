@@ -12,15 +12,27 @@ Flutter 的 codelabs 是一份为新手准备的入门指南。一些 codelabs �
 DartPad&mdash;上，这意味着你不需要下载任何东西就能够轻松学习。
 
 Flutter workshops are similar to the codelabs,
-but are instructor led and always use DartPad. The
-provided workshop link takes you to the relevant YouTube
-video, which tells you where to find the associated
-DartPad link.
+but are instructor led and always use DartPad.
+The provided workshop link takes you to the relevant YouTube video,
+which tells you where to find the associated DartPad link.
 
 Flutter workshops 与 codelabs 类似，
 但由讲师指导并始终使用 DartPad。
 workshop 链接也会提供给你相关的 YouTube 视频，
 该视频会告诉你在哪里可以找到相关的 DartPad 链接。
+
+{{site.alert.secondary}}
+
+  You might want to check out the workshops
+  created by our Google Developer Experts (GDEs).
+  You can find them on the [Flutter community blog][].
+
+  你也许会想要看看 Google 开发者专家们 (GDEs) 的 workshop。
+  你可以在 [Flutter 社区博客][Flutter community blog] 中查看它们。
+
+{{site.alert.end}}
+
+[Flutter community blog]: {{site.medium}}/flutter-community/dartpad-workshops-from-flutter-gdes-622b52f70173
 
 {{site.alert.secondary}}
 

@@ -45,9 +45,9 @@ contains a simple demo app that uses [Material Components][].
     如果应用未显示，请在 [安装][Install] 页面里，
     根据你的操作系统按照设备相关说明进行操作。
 
-    ```terminal
-    $ flutter devices
-    ```
+   ```terminal
+   $ flutter devices
+   ```
 
  1. Run the app with the following command:
 

@@ -171,8 +171,8 @@ Both of these functions come from the `test` package.
 <?code-excerpt "test/counter_test.dart"?>
 ```dart
 // Import the test package and Counter class
-import 'package:test/test.dart';
 import 'package:counter_app/counter.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('Counter value should be incremented', () {
@@ -197,8 +197,8 @@ combine them using the `group` function provided by the `test` package.
 
 <?code-excerpt "test/group.dart"?>
 ```dart
-import 'package:test/test.dart';
 import 'package:counter_app/counter.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('Counter', () {

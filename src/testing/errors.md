@@ -7,6 +7,8 @@ tags: Flutter测试
 keywords: Flutter处理错误,Flutter错误报告,FlutterError
 ---
 
+<?code-excerpt path-base="testing/errors"?>
+
 The Flutter framework catches errors that occur during callbacks
 triggered by the framework itself, including errors encountered
 during the build, layout, and paint phases. Errors that don't occur
@@ -88,7 +90,7 @@ following handler:
 例如，如果你想在 release 模式下发生错误时立刻关闭应用，
 可以使用下面的回调方法:
 
-<!-- skip -->
+<?code-excerpt "lib/quit_immediate.dart (Main)"?>
 ```dart
 import 'dart:io';
 
@@ -98,8 +100,7 @@ import 'package:flutter/material.dart';
 void main() {
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);
-    if (kReleaseMode)
-      exit(1);
+    if (kReleaseMode) exit(1);
   };
   runApp(MyApp());
 }
@@ -132,20 +133,19 @@ the builder fails to build a widget, use [`MaterialApp.builder`][].
 定义一个自定义的 error widget，以当 builder 构建 widget 失败时显示，
 请使用 [`MaterialApp.builder`][]。
 
-<!-- skip -->
+<?code-excerpt "lib/excerpts.dart (CustomError)"?>s
 ```dart
 class MyApp extends StatelessWidget {
-...
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      ...
-      builder: (BuildContext context, Widget widget) {
+      builder: (BuildContext context, Widget? widget) {
         Widget error = Text('...rendering error...');
         if (widget is Scaffold || widget is Navigator)
           error = Scaffold(body: Center(child: error));
         ErrorWidget.builder = (FlutterErrorDetails errorDetails) => error;
-        return widget;
+        if (widget != null) return widget;
+        throw ('widget is null');
       },
     );
   }
@@ -163,15 +163,15 @@ For example:
 假设一个 `onPressed` 回调调用了异步方法，例如 `MethodChannel.invokeMethod`
 （或者其他 plugin 的方法）：
 
-<!-- skip -->
+<?code-excerpt "lib/excerpts.dart (OnPressed)" replace="/return //g;/\;//g"?>
 ```dart
 OutlinedButton(
   child: Text('Click me!'),
   onPressed: () async {
-    final channel = const MethodChannel('crashy-custom-channel');
-    await channel.invokeMethod('blah');
+    final channel = const MethodChannel('crashy-custom-channel')
+    await channel.invokeMethod('blah')
   },
-),
+)
 ```
 
 If `invokeMethod` throws an error, it won't be forwarded to `FlutterError.onError`.
@@ -184,12 +184,12 @@ To catch such an error, use [`runZonedGuarded`][].
 
 如果你想捕获这样的错误，请使用 [`runZonedGuarded`][]。
 
-<!-- skip -->
+<?code-excerpt "lib/excerpts.dart (CatchError)" replace="/MyBackend myBackend = MyBackend\(\);\n//g"?>
 ```dart
 import 'dart:async';
 
 void main() {
-  runZonedGuarded(() {
+    runZonedGuarded(() {
     runApp(MyApp());
   }, (Object error, StackTrace stack) {
     myBackend.sendError(error, stack);
@@ -207,13 +207,15 @@ manually to perform some initialization before calling `runApp` (e.g.
 （例如 `Firebase.initializeApp()`），则必须在 `runZonedGuarded` 中调用
 `WidgetsFlutterBinding.ensureInitialized()`：
 
-<!-- skip -->
+<?code-excerpt "lib/run_zoned_guarded.dart (Initialize)"?>
 ```dart
 runZonedGuarded(() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
-}
+}, (Object error, StackTrace stack) {
+  myBackend.sendError(error, stack);
+});
 ```
 
 {{site.alert.note}}
@@ -237,11 +239,10 @@ your errors handling on next code snippet:
 如果你想在异常抛出时退出应用，并在 build 错误时展示自定义的 ErrorWidget，
 你可以在下面的代码片段的基础上定制你的处理：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Main)"?>
 ```dart
+import 'dart:async';
 import 'dart:io';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -250,7 +251,7 @@ void main() {
     await myErrorsHandler.initialize();
     FlutterError.onError = (FlutterErrorDetails details) {
       FlutterError.presentError(details);
-      myErrorsHandler.onError(details);
+      myErrorsHandler.onErrorDetails(details);
       exit(1);
     };
     runApp(MyApp());
@@ -264,12 +265,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      builder: (BuildContext context, Widget widget) {
+      builder: (BuildContext context, Widget? widget) {
         Widget error = Text('...rendering error...');
         if (widget is Scaffold || widget is Navigator)
           error = Scaffold(body: Center(child: error));
         ErrorWidget.builder = (FlutterErrorDetails errorDetails) => error;
-        return widget;
+        if (widget != null) return widget;
+        throw ('widget is null');
       },
     );
   }

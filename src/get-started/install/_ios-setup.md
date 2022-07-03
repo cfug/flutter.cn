@@ -166,7 +166,7 @@ $ sudo gem install cocoapods
 {{site.alert.note}}
 
   The default version of Ruby requires `sudo` to install the CocoaPods gem.
-  If you are using a Ruby Version manager, you may need to run without `sudo`.
+  If you are using a Ruby Version manager, you might need to run without `sudo`.
 
   Ruby 的默认版本需要 root 权限 `sudo` 来安装 CocoaPods gem，
   如果你使用的是 Ruby Version 管理器，可能就无需 root 权限。

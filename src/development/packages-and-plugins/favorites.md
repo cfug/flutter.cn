@@ -24,17 +24,20 @@ own evaluation of packages and plugins for your project.
 You can see the complete list of
 [Flutter Favorite packages][] on pub.dev.
 
-你可以在 pub.dev 上看到完整的 [Flutter Favorite packages][] 列表。
+{{site.alert.note}}
 
-Looking to add more functionality to your app?
-The [Happy paths project][] guides you with
-opinionated recommendations for 
-plugins and packages that can take your app to the next level.
+  Looking to add more functionality to your app?
+  The [Happy paths project][] guides you with
+  opinionated recommendations for 
+  plugins and packages that can take your app
+  to the next level.
 
-正在为自己的应用准备加入更多新功能吗？
-[Happy path 项目][Happy paths project] 了解一下？
-我们为有「选择困难症」的开发者们提供了一些「精选」的插件和 package，
-帮助你的应用更上一层楼。
+  正在为自己的应用准备加入更多新功能吗？
+  [Happy path 项目][Happy paths project] 了解一下？
+  我们为有「选择困难症」的开发者们提供了一些「精选」的插件和 package，
+  帮助你的应用更上一层楼。
+
+{{site.alert.end}}
 
 [Happy paths project]: {{site.url}}/development/packages-and-plugins/happy-paths
 
@@ -145,7 +148,8 @@ Flutter Favorite packages 会由 Flutter 团队在 pub.dev 上标注。
   Flutter Favorite package 的作者可以将 Flutter Favorite 徽标放置在 package 的 GitHub README 中，
   pub.dev 上 package 主页的 **Overview** 处，以及社交媒体上与该 package 相关的帖子中。
   
-* We encourage you to use the **#FlutterFavorite** hashtag in social media.
+* We encourage you to use the **#FlutterFavorite**
+  hashtag in social media.
 
   我们鼓励你在社交媒体上使用 **#FlutterFavorite** 标签。
   
@@ -165,16 +169,17 @@ Flutter Favorite packages 会由 Flutter 团队在 pub.dev 上标注。
   假定一个 Flutter Favorite package 失去了它的 Flutter Favorite 标记，作者将收到通知。
   届时，作者必须立即删除所有受影响的 packages 所使用「Flutter Favorite」和「Flutter Favorite 徽标」。
   
-* Don’t alter, distort, or modify the Flutter Favorite logo in any way,
-  including displaying the logo with color variations or unapproved
-  visual elements.
+* Don’t alter, distort,
+  or modify the Flutter Favorite logo in any way,
+  including displaying the logo with color variations
+  or unapproved visual elements.
   
   不得以任何方式改变、歪曲或修改 Flutter Favorite 的徽标，
   包括通过颜色变换或未经批准的视觉元素来展示该徽标。
   
-* Don’t display the Flutter Favorite logo in a manner that is misleading,
-  unfair, defamatory, infringing, libelous, disparaging,
-  obscene, or otherwise objectionable to Google.
+* Don’t display the Flutter Favorite logo in a manner that
+  is misleading, unfair, defamatory, infringing, libelous,
+  disparaging, obscene, or otherwise objectionable to Google.
 
   不得以误导的方式展示 Flutter Favorite 的徽标，
   即以误导、不平等、诽谤、侵权、中伤、贬低、淫秽或其他令谷歌反感的方式展示来 Flutter Favorite 徽标。

@@ -310,8 +310,7 @@ using the following command line flag in profile and release modes:
 您可以通过在配置文件和发布模式下
 使用以下命令行标志可视化为你的 Web 应用程序创建的语义节点来调试无障碍：
 
-`$ flutter run -d chrome --profile \
- --dart-define=FLUTTER_WEB_DEBUG_SHOW_SEMANTICS=true`
+`$ flutter run -d chrome --profile --dart-define=FLUTTER_WEB_DEBUG_SHOW_SE  MANTICS=true`
  
 With the flag activated, the semantic nodes appear on top of the widgets;
 you can verify that the semantic elements are placed where they should be.

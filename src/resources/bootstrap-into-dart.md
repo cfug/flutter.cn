@@ -47,6 +47,11 @@ you to learn, too.
 了解两种语言之间相似之处，以及一些普通的 JavaScript 中
 不存在的概念和习惯用法。
 
+[Learning Dart as a JavaScript developer][]
+: Use your JavaScript knowledge to get up and running quickly with Dart.
+  Learn about the key similarities and differences between the languages
+  as well as concepts and conventions not present in vanilla JavaScript.
+
 [Intro to Dart for Java Developers][] codelab
 <br> Use your Java knowledge to get up and running quickly with Dart.
   Learn about classes, constructors, parameters,

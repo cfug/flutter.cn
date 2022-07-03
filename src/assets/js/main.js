@@ -4,7 +4,7 @@ $(function () {
   initVideoModal();
   initCarousel();
   initSnackbar();
-  // initCookieNotice();
+  initCookieNotice();
 
   addCopyCodeButtonsEverywhere(); // Must be before tooltip activation.
   $('[data-toggle="tooltip"]').tooltip();
@@ -207,22 +207,22 @@ function addCopyCodeButtonsEverywhere() {
  * Activate the cookie notice footer
  * @returns null
  */
-// function initCookieNotice() {
-//   const notice = document.getElementById('cookie-notice');
-//   const agreeBtn = document.getElementById('cookie-consent');
-//   const cookieKey = 'cookie-consent';
-//   const cookieConsentValue = 'true'
-//   const activeClass = 'show';
+function initCookieNotice() {
+  const notice = document.getElementById('cookie-notice');
+  const agreeBtn = document.getElementById('cookie-consent');
+  const cookieKey = 'cookie-consent';
+  const cookieConsentValue = 'true'
+  const activeClass = 'show';
 
-//   if (Cookies.get(cookieKey) === cookieConsentValue) {
-//     return;
-//   }
+  if (Cookies.get(cookieKey) === cookieConsentValue) {
+    return;
+  }
 
-//   notice.classList.add(activeClass);
+  notice.classList.add(activeClass);
 
-//   agreeBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     Cookies.set(cookieKey, cookieConsentValue, {sameSite: 'strict', expires: 30});
-//     notice.classList.remove(activeClass);
-//   });
-// }
+  agreeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    Cookies.set(cookieKey, cookieConsentValue, {sameSite: 'strict', expires: 30});
+    notice.classList.remove(activeClass);
+  });
+}

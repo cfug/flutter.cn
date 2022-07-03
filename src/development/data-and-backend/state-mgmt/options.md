@@ -232,6 +232,7 @@ A state container approach familiar to many web developers.
   [当 Flutter 遇见 Redux：以 Redux 的风格管理 Flutter 应用的状态 (Flutter meets Redux: The Redux way of managing Flutter applications state)][Flutter meets Redux: The Redux way of managing Flutter applications state]，Amir Ghezelbash 著。
 
 * [Redux and epics for better-organized code in Flutter apps][], by Nihad Delic
+* [Flutter_Redux_Gen - VS Code Plugin to generate boiler plate code][], by Balamurugan Muthusamy (BalaDhruv)
 
   [使用 Redux 和 redux_epics 更好的管理 Flutter 代码][Redux and epics for better-organized code in Flutter apps]，Nihad Delic 著。
 

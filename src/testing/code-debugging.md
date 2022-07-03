@@ -7,6 +7,8 @@ tags: Flutter测试
 keywords: Flutter调试,Flutter加log,Flutter输出
 ---
 
+<?code-excerpt path-base="testing/code_debugging"?>
+
 This doc describes debugging features that you can enable in code.
 For a full list of debugging and profiling tools, see the
 [Debugging][] page.
@@ -39,7 +41,7 @@ or by importing `dart:io` and invoking methods on
 通常，我们使用 `print()` 语句或者通过引入 `dart:io` 
 并且调用 `stderr` 与 `stdout` 中的方法。如下：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (stderr)"?>
 ```dart
 stderr.writeln('print me');
 ```
@@ -62,7 +64,7 @@ Here's an example:
 另一种应用日志输出的方式是使用 `dart:developer` 中的 [`log()`][] 方法。
 通过这种方式，您可以在输出日志中包含更精细化的信息。如下面这个示例：
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (log)"?>
 ```dart
 import 'dart:developer' as developer;
 
@@ -84,13 +86,13 @@ error parameter.
 通常，在调用 `log()` 时也会使用命名参数 `error:`，
 您可以通过 JSON 编码想要传入的对象，并将编码后的字符串传给 error 参数。
 
-<!-- skip -->
+<?code-excerpt "lib/app_data.dart (PassAppData)"?>
 ```dart
 import 'dart:convert';
 import 'dart:developer' as developer;
 
 void main() {
-  var myCustomObject = ...;
+  var myCustomObject = MyCustomObject();
 
   developer.log(
     'log me',
@@ -138,7 +140,7 @@ certain condition is true, as in the following example:
 `debugger()` 语句有一个可选参数 `when`，
 用来指定该断点触发的特定条件，如下这个示例：
 
-<!-- skip -->
+<?code-excerpt "lib/debugger.dart"?>
 ```dart
 import 'dart:developer';
 
@@ -189,6 +191,7 @@ For example, the following application:
 
 如下面这个应用：
 
+<?code-excerpt "lib/dump_app.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -871,13 +874,13 @@ entry point. See an example in the following code:
 并且当其为 true 时，会影响界面上所有的绘制。
 最简单的方式是在程序顶部入口 `void main()`中设置它，如下案例代码所示：
 
-<!-- skip -->
+<?code-excerpt "lib/debug_flags.dart (debugPaintSizeEnabled)"?>
 ```dart
 //add import to rendering library
 import 'package:flutter/rendering.dart';
 
 void main() {
-  debugPaintSizeEnabled=true;
+  debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
 ```
@@ -1073,13 +1076,15 @@ code you want to measure such as:
 这类似于在 Android 上使用 [systrace][]，您可以使用 `dart:developer` 包中的 
 [Timeline][] 类提供的一些静态方法包裹您想测量的代码，比如:
 
-<!-- skip -->
+<?code-excerpt "lib/perf_trace.dart"?>
 ```dart
 import 'dart:developer';
 
-Timeline.startSync('interesting function');
-// iWonderHowLongThisTakes();
-Timeline.finishSync();
+void main() {
+  Timeline.startSync('interesting function');
+  // iWonderHowLongThisTakes();
+  Timeline.finishSync();
+}
 ```
 
 Then open your app's Observatory's timeline page, check the 'Dart'
@@ -1124,8 +1129,10 @@ constructor:
 在 [`MaterialApp`][]、[`CupertinoApp`][]或 [`WidgetsApp`][] 构造函数中，
 将 `showPerformanceOverlay` 属性设置为 `true` 即可。
 
-<!-- skip -->
+<?code-excerpt "lib/performance_overlay.dart (PerfOverlay)" replace="/showPerformanceOverlay: true,/[[highlight]]$&[[\/highlight]]/g"?>
 {% prettify dart %}
+import 'package:flutter/material.dart';
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

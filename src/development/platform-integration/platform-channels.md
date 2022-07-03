@@ -19,13 +19,7 @@ see [using packages][].
 某些平台相关功能可通过已有的软件包获得，具体细节可查看：
 [在 Flutter 里使用 Packages][using packages]。
 
-Flutter uses a flexible system that allows you to call
-platform-specific APIs whether available in Kotlin or
-Java code on Android, or in Swift or Objective-C code on iOS.
-
-Flutter 使用了灵活的系统，它允许你调用相关平台的 API，
-无论是 Android 中的 Java 或 Kotlin 代码，
-还是 iOS 中的 Objective-C 或 Swift 代码。
+[using packages]: {{site.url}}/development/packages-and-plugins/using-packages
 
 {{site.alert.note}}
 
@@ -43,20 +37,24 @@ Flutter 使用了灵活的系统，它允许你调用相关平台的 API，
 Flutter uses a flexible system that allows you to call
 platform-specific APIs in a language that works directly
 with those APIs:
+
+Flutter 使用了灵活的系统，它允许你调用相关平台的 API，
+无论是 Android 中的 Java 或 Kotlin 代码，
+还是 iOS 中的 Objective-C 或 Swift 代码。
+
+
 - Kotlin or Java on Android
 - Swift or Objective-C on iOS
 - C++ on Windows
 - Objective-C on macOS
 - C on Linux
 
-Flutter 使用了灵活系统，无论是在 Android 上
-的 Kotlin 还是 Java，亦或是 iOS 上的 Swift 或 Objective-C，
-它都允许你调用平台特定 API。
-
-Flutter's builtin platform-specific API support does not rely on code
-generation, but rather on a flexible message passing style.  Alternatively, the
-package [Pigeon][] can be used for [sending structured typesafe messages][] via
-code generation:
+Flutter's builtin platform-specific API support
+doesn't rely on code generation,
+but rather on a flexible message passing style.
+Alternatively, you can use the [Pigeon][pigeon]
+package for [sending structured typesafe messages][]
+with code generation:
 
 Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是灵活的依赖于传递消息格式。
 或者，你也可以使用 [Pigeon][] 这个 package，通过生成代码来
@@ -67,29 +65,37 @@ Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是�
 
   应用中的 Flutter 部分通过平台通道向其宿主 (非 Dart 部分) 发送消息。
 
-* The *host* listens on the platform channel, and receives the message.
+* The Flutter portion of the app sends messages to its _host_,
+  the non-Dart portion of the app, over a platform channel.
+
+* The _host_ listens on the platform channel, and receives the message.
   It then calls into any number of platform-specific APIs&mdash;using
   the native programming language&mdash;and sends a response back to the
-  *client*, the Flutter portion of the app.
+  _client_, the Flutter portion of the app.
 
   **宿主**监听平台通道并接收消息。然后，它使用原生编程语言来调用任意数量的相关平台
   API，并将响应发送回**客户端**（即应用程序中的 Flutter 部分）。
 
 {{site.alert.note}}
 
-  This guide addresses using the platform channel mechanism if you need
-  to use the platform's APIs in a non-Dart language.  But you can also write
-  platform-specific Dart code
-  in your Flutter app by inspecting the [defaultTargetPlatform][] property.
-  [Platform adaptations][] lists some platform-specific adaptations
-  that Flutter automatically does for you in the framework.
+  This guide addresses using the platform channel mechanism
+  if you need to use the platform's APIs in a non-Dart language.
+  But you can also write platform-specific Dart code
+  in your Flutter app by inspecting the
+  [`defaultTargetPlatform`][] property.
+  [Platform adaptations][] lists some
+  platform-specific adaptations that Flutter
+  automatically performs for you in the framework.
 
   本篇教程主要介绍如何在非 Dart 语言中，利用平台通道的机制调用平台 API。
-  但是当你在 Flutter 应用里编写 Dart 代码时，你也可以通过判断 [defaultTargetPlatform][]，
+  但是当你在 Flutter 应用里编写 Dart 代码时，你也可以通过判断 [defaultTargetPlatform][`defaultTargetPlatform`]，
   在不同的平台上执行对应的代码。
   [不同平台操作体验的差异和适配][Platform adaptations] 文档中列举了部分
   Flutter 框架自动为你处理的平台适配行为。
 {{site.alert.end}}
+
+[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
+[pigeon]: {{site.pub-pkg}}/pigeon
 
 ## Architectural overview: platform channels {#architecture}
 
@@ -139,7 +145,7 @@ iOS 系统使用 [`MethodChanneliOS`][] 来
 
   If desired, method calls can also be sent in the reverse direction,
   with the platform acting as client to methods implemented in Dart.
-  A concrete example of this is the [`quick_actions`][] plugin.
+  For a concrete example, check out the [`quick_actions`][] plugin.
 
   如果需要，方法调用也可以反向发送，
   由平台充当客户端来调用 Dart 实现的方法。
@@ -168,6 +174,7 @@ The following table shows how Dart values are received on the
 platform side and vice versa:
 
 下表展示了如何在平台端接收 Dart 值，反之亦然：
+
 {% samplecode type-mappings %}
 {% sample Java %}
 | Dart                       | Java                |
@@ -275,20 +282,23 @@ platform side and vice versa:
 
 ## 示例: 通过平台通道调用平台的 iOS 和 Android 代码 {#example}
 
-The following code demonstrates how to call a platform-specific API
-to retrieve and display the current battery level.
-It uses the Android `BatteryManager` API,
-and the iOS `device.batteryLevel` API, via a single platform message,
+The following code demonstrates how to call
+a platform-specific API to retrieve and display
+the current battery level.  It uses the Android
+`BatteryManager` API, and the iOS
+`device.batteryLevel` API, with a single platform message,
 `getBatteryLevel()`.
 
 以下代码演示了如何调用平台相关 API 来检索并显示当前的电池电量。
 它通过平台消息 `getBatteryLevel()`
 来调用 Android 的 `BatteryManager` API 及 iOS 的 `device.batteryLevel` API。
 
-The example adds the platform-specific code inside the main app itself.
-If you want to reuse the platform-specific code for multiple apps,
+The example adds the platform-specific code inside
+the main app itself.  If you want to reuse the
+platform-specific code for multiple apps,
 the project creation step is slightly different
-(see [developing packages][plugins]), but the platform channel code
+(see [developing packages][plugins]),
+but the platform channel code
 is still written in the same way.
 
 该示例在主应用程序中添加平台相关代码。
@@ -297,16 +307,23 @@ is still written in the same way.
 （查看 [Flutter Packages 的开发和提交][plugins]），
 但平台通道代码仍以相同方式编写。
 
-*Note*: The full, runnable source-code for this example is available in
-[`/examples/platform_channel/`][] for Android with Java and
-iOS with Objective-C. For iOS with Swift,
-see [`/examples/platform_channel_swift/`][].
+{{site.alert.note}}
+
+  The full, runnable source-code for this example is
+  available in [`/examples/platform_channel/`][]
+  for Android with Java and iOS with Objective-C.
+  For iOS with Swift,
+  see [`/examples/platform_channel_swift/`][].
+
+  可在 [`/examples/platform_channel/`][] 中获得使用 Java 实现的
+  Android 及使用 Objective-C 实现的 iOS 的该示例完整可运行的代码。
+  对于用 Swift 实现的 iOS 代码，
+  请参阅 [`/examples/platform_channel_swift/`][]。
+
+{{site.alert.end}}
 
 **注意**：
-可在 [`/examples/platform_channel/`][] 中获得使用 Java 实现的
-Android 及使用 Objective-C 实现的 iOS 的该示例完整可运行的代码。
-对于用 Swift 实现的 iOS 代码，
-请参阅 [`/examples/platform_channel_swift/`][]。
+
 
 ### Step 1: Create a new app project {#example-project}
 
@@ -367,11 +384,13 @@ class _MyHomePageState extends State<MyHomePage> {
   // Get battery level.
 ```
 
-Next, invoke a method on the method channel, specifying the concrete method
-to call using the String identifier `getBatteryLevel`.
-The call might fail&mdash;for example if the platform does not support the
-platform API (such as when running in a simulator), so wrap the
-`invokeMethod` call in a try-catch statement.
+Next, invoke a method on the method channel,
+specifying the concrete method to call using
+the `String` identifier `getBatteryLevel`.
+The call might fail&mdash;for example,
+if the platform doesn't support the
+platform API (such as when running in a simulator),
+so wrap the `invokeMethod` call in a try-catch statement.
 
 接下来，在方法通道上调用方法（指定通过 String 标识符 `getBatteryLevel`
 调用的具体方法）。调用可能会失败&mdash;比如，如果平台不支持此平台
@@ -454,8 +473,7 @@ Start by opening the Android host portion of your Flutter app in Android Studio:
    导航到包含 Flutter 应用的目录，然后选择其中的 **android** 文件夹。点击 **OK**。
 
 1. Open the file `MainActivity.kt` located in the **kotlin** folder in the
-   Project view. (Note: If editing with Android Studio 2.3,
-   note that the **kotlin** folder is shown as if named **java**.)
+   Project view.
 
    在项目视图中打开 **kotlin** 文件夹下的 `MainActivity.kt` 文件（注意：如果使用
    Android Studio 2.3 进行编辑，请注意 **kotlin** 目录的显示名称为 **java**）。
@@ -480,7 +498,7 @@ class MainActivity: FlutterActivity() {
     super.configureFlutterEngine(flutterEngine)
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
-      // Note: this method is invoked on the main thread.
+      // This method is invoked on the main thread.
       // TODO
     }
   }
@@ -547,7 +565,7 @@ Remove the following code:
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
-      // Note: this method is invoked on the main thread.
+      // This method is invoked on the main thread.
       // TODO
     }
 ```
@@ -558,7 +576,7 @@ And replace with the following:
 <!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
-      // Note: this method is invoked on the main thread.
+      // This method is invoked on the main thread.
       call, result ->
       if (call.method == "getBatteryLevel") {
         val batteryLevel = getBatteryLevel()
@@ -621,7 +639,7 @@ public class MainActivity extends FlutterActivity {
     new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
         .setMethodCallHandler(
           (call, result) -> {
-            // Note: this method is invoked on the main thread.
+            // This method is invoked on the main thread.
             // TODO
           }
         );
@@ -691,7 +709,7 @@ Remove the following code:
 <!--code-excerpt "MainActivity.java" title-->
 ```java
           (call, result) -> {
-            // Note: this method is invoked on the main thread.
+            // This method is invoked on the main thread.
             // TODO
           }
 ```
@@ -702,7 +720,7 @@ And replace with the following:
 <!--code-excerpt "MainActivity.java" title-->
 ```java
           (call, result) -> {
-            // Note: this method is invoked on the main thread.
+            // This method is invoked on the main thread.
             if (call.method.equals("getBatteryLevel")) {
               int batteryLevel = getBatteryLevel();
 
@@ -780,7 +798,7 @@ as was used on the Flutter client side.
                                           binaryMessenger:controller.binaryMessenger];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
-    // Note: this method is invoked on the UI thread.
+    // This method is invoked on the UI thread.
     // TODO
   }];
 
@@ -829,7 +847,7 @@ the `result` argument. If an unknown method is called, report that instead.
 ```objectivec
 __weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
-  // Note: this method is invoked on the UI thread.
+  // This method is invoked on the UI thread.
   if ([@"getBatteryLevel" isEqualToString:call.method]) {
     int batteryLevel = [weakSelf getBatteryLevel];
 
@@ -1114,14 +1132,16 @@ types than the default types.
 
 ## 通道和平台线程
 
-When invoking channels on the platform side destined for Flutter, they need to
-be invoked on the platform's main thread. When invoking channels in Flutter
-destined for the platform side, they need to be invoked on the root Isolate. The
-platform side's handlers can execute on the platform's main thread or they can
-execute on a background thread if a Task Queue is used. The result of the
-platform side handlers can be invoked asynchronously and on any thread when the
-Task Queue API is available; otherwise, they must be invoked on the platform
-thread.
+When invoking channels on the platform side destined
+for Flutter, invoke them on the platform's main thread.
+When invoking channels in Flutter destined
+for the platform side, invoke on the root `Isolate`.
+The platform side's handlers can execute
+on the platform's main thread or they can execute on
+a background thread if using a Task Queue.
+You can invoke the platform side handlers asynchronously
+and on any thread when the Task Queue API is available;
+otherwise, they must be invoked on the platform thread.
 
 目标平台向 Flutter 发起 channel 调用的时候，需要在对应平台的主线程执行。
 同样的，在 Flutter 向目标平台发起 channel 调用的时候，需要在根 Isolate 中执行。
@@ -1251,7 +1271,6 @@ Objective-C 版本：
 }
 ```
 
-
 ### Jumping to the UI thread in Android
 
 ### 跳转到 Android 中的 UI 线程
@@ -1295,9 +1314,11 @@ Handler(Looper.getMainLooper()).post {
 
 ### 跳转到 iOS 中的主线程
 
-To comply with channel's main thread requirement, you may need to jump from a
-background thread to iOS's main thread to execute a channel method. In iOS this
-is accomplished by executing a [block][] on the main [dispatch queue][]:
+To comply with channel's main thread requirement,
+you might need to jump from a background thread to
+iOS's main thread to execute a channel method.
+Youc an accomplish this in iOS by executing a
+[block][] on the main [dispatch queue][]:
 
 为了符合通道跳转到 iOS 主线程的要求，
 您可能需要从后台线程跳转到 iOS 的主线程来执行通道方法。
@@ -1328,7 +1349,6 @@ DispatchQueue.main.async {
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
 [`cloud_firestore`]: {{site.github}}/FirebaseExtended/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
-[defaultTargetPlatform]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
 [plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
@@ -1347,7 +1367,4 @@ DispatchQueue.main.async {
 [`StringCodec`]: {{site.api}}/flutter/services/StringCodec-class.html
 [the main thread]: {{site.apple-dev}}/documentation/uikit?language=objc
 [the UI thread]: {{site.android-dev}}/guide/components/processes-and-threads#Threads
-[using packages]: {{site.url}}/development/packages-and-plugins/using-packages
-[Pigeon]: {{site.pub-pkg}}/pigeon
-[Pigeon pub.dev page]: {{site.pub-pkg}}/pigeon
 [sending structured typesafe messages]: #pigeon

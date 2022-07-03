@@ -7,19 +7,21 @@ tags: Packages,插件
 keywords: isolate,多线程,调度器
 ---
 
-Have you ever wanted to execute Dart code in the background—even if
-your app wasn’t the currently active app? Perhaps you wanted to implement
-a process that watches the time, or that catches camera movement.
+Have you ever wanted to execute Dart code in the
+background—even if your app wasn’t the currently active app?
+Perhaps you wanted to implement a process that watches the time,
+or that catches camera movement.
 In Flutter, you can execute Dart code in the background.
 
 当你的应用被切换到后台时，是否仍希望它在后台可以执行一些业务逻辑？
 在 Flutter 里，你可以在应用被切换到后台时执行一些代码逻辑。
 
-The mechanism for this feature involves setting up an isolate. _Isolates_
-are Dart’s model for multithreading, though an isolate differs from a
-conventional thread in that it doesn’t share memory with the main program.
-You’ll set up your isolate for background execution using callbacks and
-a callback dispatcher.
+The mechanism for this feature involves setting up an isolate.
+_Isolates_ are Dart’s model for multithreading,
+though an isolate differs from a conventional thread
+in that it doesn’t share memory with the main program.
+You’ll set up your isolate for background execution using
+callbacks and a callback dispatcher.
 
 这个功能的机制主要是设置一个 isolate。**isolate** 是 Dart 中的多线程模型，
 不过其与传统线程的不同之处在于它不与主进程共享内存。

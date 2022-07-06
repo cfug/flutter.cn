@@ -88,6 +88,19 @@ or run `flutter test --help` in your terminal.
 单元测试通常不会读写磁盘，将数据渲染到屏幕，也不会从运行测试进程的外部去接收用户的操作。
 你可以在终端执行 `flutter test --help` 命令获得更多有关单元测试的帮助：
 
+{{site.alert.note}}
+
+  If you're writing unit tests for code that
+  uses plugins, see
+  [Plugins in Flutter tests][].
+
+  如果你在为 plugin 编写单元测试，
+  请查看[如何测试 Flutter Plugin][Plugins in Flutter tests]。
+
+{{site.alert.end}}
+
+[Plugins in Flutter tests]: {{site.url}}/development/packages-and-plugins/plugin-testing
+
 ### Recipes
 
 ### 更多信息

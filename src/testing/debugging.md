@@ -7,6 +7,8 @@ tags: Flutter测试
 keywords: Flutter调试工具,Flutter开发者工具,Flutter性能调试,Flutter打断点
 ---
 
+<?code-excerpt path-base="testing/debugging"?>
+
 There's a wide variety of tools and features to help debug
 Flutter applications. Here are some of the available tools:
 
@@ -405,7 +407,7 @@ flutter/.travis.yml, or flutter/.cirrus.yml, respectively.
 
 ### 被标记为 const 的相同 Widget 应被视为同一对象，然而却并没有
 
-In debug mode, you may find that two `const` widgets that should to all
+In debug mode, you might find that two `const` widgets that should to all
 appearances be equal (because of Dart's constant deduplication) are not.
 
 在 debug 模式下，（由于 Dart 的常量去重策略）你也许会发现两个 `const` 的 widget 长得并不完全一样。
@@ -414,9 +416,10 @@ For example, this code should print 1:
 
 例如，下面的代码应该打印 1：
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (Syntax)"?>
 ```dart
-print(<Widget>{ // this is the syntax for a Set<Widget> literal
+print(<Widget>{
+  // this is the syntax for a Set<Widget> literal
   const SizedBox(),
   const SizedBox(),
 }.length);
@@ -434,11 +437,11 @@ time, so the code is effectively:
 然而，在 debug 模式下它却打印了 2。这是由于 Flutter tool 在编译期向 Widget 的构造器注入了源位置，
 所以下面的代码有效：
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (SyntaxExplain)"?>
 ```dart
 print(<Widget>{
-  const SizedBox(location: Location(file: 'foo.dart', line: 12)),
-  const SizedBox(location: Location(file: 'foo.dart', line: 13)),
+  const SizedBox(/* location: Location(file: 'foo.dart', line: 12) */),
+  const SizedBox(/* location: Location(file: 'foo.dart', line: 13) */),
 }.length);
 ```
 

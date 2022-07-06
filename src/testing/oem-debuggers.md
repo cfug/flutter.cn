@@ -9,9 +9,10 @@ tags: Flutter调试器
 keywords: Flutter处理错误,平台的调试器,Flutter调试,Flutter构建模式
 ---
 
-If you are exclusively writing Flutter apps with Dart code and not using
-platform-specific libraries, or otherwise accessing platform-specific
-features, you can debug your code using your IDE's debugger.
+If you are exclusively writing Flutter apps with
+Dart code and not using platform-specific libraries,
+or otherwise accessing platform-specific features,
+you can debug your code using your IDE's debugger.
 Only the first section of this guide, Debugging Dart code,
 is relevant for you.
 
@@ -19,11 +20,14 @@ is relevant for you.
 你可以使用 IDE 的调试器调试你的代码。
 只有这篇指南的第一部分「调试 Dart 代码」对你有用。
 
-If you're writing a platform-specific plugin or using platform-specific
-libraries written in Swift, ObjectiveC, Java, or Kotlin, you can debug
-that portion of your code using Xcode (for iOS) or Android Gradle
-(for Android).  This guide shows you how you can connect _two_
-debuggers to your Dart app, one for Dart, and one for the OEM code.
+If you're writing a platform-specific plugin or
+using platform-specific libraries written in Swift,
+ObjectiveC, Java, or Kotlin, you can debug
+that portion of your code using Xcode (for iOS)
+or Android Gradle (for Android).
+This guide shows you how you can connect _two_
+debuggers to your Dart app, one for Dart,
+and one for the OEM code.
 
 如果你正在开发特定于平台的的插件或者使用由
 Swift、ObjectiveC、Java 或 Kotlin 语言编写的特定于平台的库，
@@ -34,18 +38,20 @@ Swift、ObjectiveC、Java 或 Kotlin 语言编写的特定于平台的库，
 
 ## 调试 Dart 代码
 
-Use your IDE for standard Dart debugging. These instructions describe Android
-Studio, but you can use your preferred IDE with the Flutter and Dart
-plugins installed and configured.
+Use your IDE for standard Dart debugging.
+These instructions describe Android Studio,
+but you can use your preferred IDE with the
+Flutter and Dart plugins installed and configured.
 
 你可以使用 IDE 进行一般的 Dart 调试。以下内容针对 Android Studio 进行说明，
 但你也可以使用你喜欢的安装并配置好 Flutter 和 Dart 插件的编辑器来进行调试。
 
 {{site.alert.tip}}
 
-  Connect to a physical device when debugging, rather than an emulator or
-  simulator, which don't support profile mode. For more information, see
-  [Flutter's modes][].
+  Connect to a physical device when debugging,
+  rather than an emulator or simulator,
+  which don't support profile mode.
+  For more information, see [Flutter's modes][].
 
   推荐连接到真机进行调试，而不是使用不支持 profie 构建模式的仿真器或模拟器。
   更多信息参考 [Flutter 的构建模式][Flutter's modes]。
@@ -56,12 +62,14 @@ plugins installed and configured.
 
 ### Dart 调试器
 
-* Open your project in Android Studio. If you don't have a project yet,
-  create one using the instructions in [Test drive]({{site.url}}/get-started/test-drive).
+* Open your project in Android Studio.
+  If you don't have a project yet,
+  create one using the instructions in [Test drive][].
 
-  使用 Android Studio 打开你的项目。如果你还没有项目，根据 [开发体验初探]({{site.url}}/get-started/test-drive) 中的说明创建一个。
+  使用 Android Studio 打开你的项目。如果你还没有项目，根据 [开发体验初探][Test drive] 中的说明创建一个。
 
-* Simultaneously bring up the Debug pane and run the app in the Console
+* Simultaneously bring up the Debug pane and
+  run the app in the Console
   view by clicking the bug icon
   (<img src='/assets/images/docs/testing/debugging/oem/debug-run.png' alt='Debug-run icon'>).
 
@@ -69,8 +77,8 @@ plugins installed and configured.
   同时打开调试面板并在控制台中运行应用。
 
   The first time you launch the app is the slowest.
-  You should see the Debug pane appear at the bottom of the window that
-  looks something like the following:
+  You should see the Debug pane appear at the bottom
+  of the window that looks something like the following:
 
   首次运行应用是最慢的，你会发现窗口底部的调试面板看起来会像这样：
 
@@ -88,8 +96,9 @@ plugins installed and configured.
 
   在 `counter++` 这一行上添加断点。
 
-* In the app, click the **+** button (FloatingActionButton,
-  or FAB, for short) to increment the counter. The app pauses.
+* In the app, click the **+** button
+  (FloatingActionButton, or FAB, for short)
+  to increment the counter. The app pauses.
 
   在应用里，点击 **+** 按钮
   （FloatingActionButton，或者简称 FAB）来增加数字，应用会暂停。
@@ -120,10 +129,14 @@ The **5: Debug** button toggles display of the debug pane.
 以及像使用其他调试器一样来使用 Dart 调试器。
 **5: Debug** 按钮切换调试面板的显示。
 
+[Test drive]: {{site.url}}/get-started/test-drive
+
 ### Flutter inspector
 
-There are two other features provided by the Flutter plugin that you might
-find useful. The Flutter inspector is a tool for visualizing and exploring
+There are two other features provided by the
+Flutter plugin that you might find useful.
+The Flutter inspector is a tool for
+visualizing and exploring
 the Flutter widget tree and helps you:
 
 Flutter 插件提供了另外两个可能给你提供帮助的功能。
@@ -138,7 +151,8 @@ Flutter inspector 是一个用来可视化以及查看 Flutter widget 树的工�
 
   诊断布局问题
 
-Toggle display of the inspector using the vertical button to the
+Toggle display of the inspector using the
+vertical button to the
 right of the Android Studio window.
 
 你可以使用 Android Studio 窗口右侧的垂直按钮切换检查器的显示。
@@ -271,8 +285,7 @@ two debuggers to your app: 1) the Dart debugger and,
   创建一个基本的 Flutter 应用。
 
 * Replace `lib/main.dart` with the following example code from the
-[`url_launcher`]({{site.pub}}/packages/url_launcher)
-package:
+  [`url_launcher`][] package:
 
   替换 `lib/main.dart` 为来自 
   [`url_launcher`]({{site.pub}}/packages/url_launcher) 包的以下示例代码：
@@ -399,6 +412,8 @@ dev_dependencies:
     sdk: flutter
 ```
 
+[`url_launcher`]: {{site.pub}}/packages/url_launcher
+
 * Click the debug icon
   (<img src='/assets/images/docs/testing/debugging/oem/debug-run.png' alt='Debug-run icon'>)
   to simultaneously bring up the Debug pane and launch the app.
@@ -510,18 +525,18 @@ iOS, and Android:
 
 ### Flutter
 
-* [Debugging Flutter apps]({{site.url}}/testing/debugging)
+* [Debugging Flutter apps][]
  
-  [调试 Flutter 应用]({{site.url}}/testing/debugging)
+  [调试 Flutter 应用][Debugging Flutter apps]
 
 * [Flutter inspector][], as well as the general
   [DevTools][] docs.
 
   [开发者工具][DevTools] 里的 [Flutter inspector][]
 
-* [Performance Profiling]({{site.url}}/perf/ui-performance)
+* [Performance Profiling][]
 
-  [Flutter 性能分析]({{site.url}}/perf/ui-performance)
+  [Flutter 性能分析][Performance profiling]
 
 ### Android
 

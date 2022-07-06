@@ -18,7 +18,7 @@
 
 {{site.alert.end}}
 
-[Announcing Flutter for Windows]: {{site.main-url}}/posts/announcing-flutter-for-windows
+[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 
 ### Additional Windows requirements
 
@@ -48,5 +48,5 @@ For more information, see [Desktop support for Flutter][]
 
 更多详情请查看 [Flutter 的桌面端支持][Desktop support for Flutter]。
 
-[Desktop support for Flutter]: {{site.main_url}}/desktop
+[Desktop support for Flutter]: {{site.url}}/desktop
 [Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/

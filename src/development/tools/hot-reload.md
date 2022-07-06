@@ -317,16 +317,14 @@ versus a hot restart.
 
 ### Recent code change is included but app state is excluded
 
-### 代码发生更改但应用程序的状态没有改变
-
-In Dart, [static fields are lazily initialized][const-new].
+In Dart, [static fields are lazily initialized][static-variables].
 This means that the first time you run a Flutter app and a
-static field is read, it is set to whatever value its
+static field is read, it's set to whatever value its
 initializer was evaluated to.
 Global variables and static fields are treated as state,
 and are therefore not reinitialized during hot reload.
 
-在 Dart 中，[静态字段是延迟初始化的][const-new]。
+在 Dart 中，[静态字段是延迟初始化的][static-variables]。
 这意味着第一次运行 Flutter 应用程序并读取静态字段时，
 会将静态字段的值设为其初始表达式的结果。
 全局变量和静态字段都被视为状态，因此在热重载期间不会重新初始化。
@@ -630,7 +628,8 @@ widgets and render objects.
 最后，热重载机制在 Flutter 框架中触发所有现有的
 widget 和渲染对象的重建/重新布局/重绘 (reassemble)。
 
-[const-new]: https://news.dartlang.org/2012/06/const-static-final-oh-my.html
+[static-variables]: {{site.dart-site}}/guides/language/language-tour#static-variables
+[const-new]: {{site.dart-site}}/guides/language/language-tour#final-and-const
 [Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform
 [Flutter editor]: {{site.url}}/get-started/editor
 [Issue 43574]: {{site.repo.flutter}}/issues/43574

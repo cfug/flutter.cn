@@ -158,7 +158,7 @@ to review the results:
 
   2. Saving the complete `Timeline` as a json file on disk.
      This file can be opened with the Chrome browser's
-     tracing tools found at [chrome://tracing][].
+     tracing tools found at `chrome://tracing`.
 
      它可以将完整的 `Timeline` 以 json 文件的形式存储在磁盘上，
      可以使用 Chrome 浏览器的追踪工具打开此文件。
@@ -265,7 +265,7 @@ the project contains two files:
 
   2. `scrolling_timeline.timeline.json` contains the complete timeline data.
      Open the file using the Chrome browser's tracing tools found at
-     [chrome://tracing][]. The tracing tools provide a
+     `chrome://tracing`. The tracing tools provide a
      convenient interface for inspecting the timeline data to discover
      the source of a performance issue.
 
@@ -375,7 +375,6 @@ Future<void> main() {
 ```
 
 
-[chrome://tracing]: chrome://tracing
 [`IntegrationTestWidgetsFlutterBinding`]: {{site.api}}/flutter/package-integration_test_integration_test/IntegrationTestWidgetsFlutterBinding-class.html
 [Scrolling]: {{site.url}}/cookbook/testing/widget/scrolling
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html

@@ -95,7 +95,7 @@ or run `flutter test --help` in your terminal.
   [Plugins in Flutter tests][].
 
   如果你在为 plugin 编写单元测试，
-  请查看[如何测试 Flutter Plugin][Plugins in Flutter tests]。
+  请查看 [如何测试 Flutter Plugin][Plugins in Flutter tests]。
 
 {{site.alert.end}}
 

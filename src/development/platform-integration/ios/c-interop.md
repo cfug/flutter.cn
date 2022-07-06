@@ -28,7 +28,10 @@ Flutter 移动版可以使用 [dart:ffi][] 库来调用本地的 C API。
   [Binding to native macOS code using dart:ffi][macos-ffi].
   This feature is not yet supported for web plugins.
 
-  
+  本文描述的是在 iOS 应用中使用 `dart:ffi` 库。
+  你可以阅读 [在 Android 中使用 dart:ffi 调用本地代码][android-ffi]
+  或 [在 macOS 中使用 dart:ffi 调用本地代码][macos-ffi]。
+  Web 插件暂不支持调用本地代码。
 
 {{site.alert.end}}
 
@@ -46,7 +49,7 @@ and loading iOS native code within a Flutter plugin or app.
 
 您必须首先确保本地代码已加载，并且其符号对 Dart 可见，
 然后才能在库或程序使用 FFI 库绑定本地代码。
-本页主要介绍如何在 Flutter 插件或应用程序中编译、打包和加载本地代码。
+本页主要介绍如何在 Flutter 插件或应用程序中编译、打包和加载 iOS 原生代码。
 
 This tutorial demonstrates how to bundle C/C++
 sources in a Flutter plugin and bind to them using
@@ -473,9 +476,9 @@ use the following instructions.
 1. Run `flutter build macos` to build a self-contained release
    version of your app.
 
-[Flutter macOS Desktop]: {{site.url}}/desktop
-
    运行 `flutter build macos` 去构建一个自包含的 release 版本的应用。
+
+[Flutter macOS Desktop]: {{site.url}}/desktop
 
 #### Open-source third-party library
 
@@ -546,7 +549,7 @@ in binary form, use the following instructions:
 
 ## Stripping iOS symbols
 
-### 删除的 iOS 符号
+## 精简 iOS 符号表
 
 When creating a release archive (IPA),
 the symbols are stripped by Xcode.

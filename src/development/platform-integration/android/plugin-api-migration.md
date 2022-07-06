@@ -58,7 +58,7 @@ a plugin that uses the new APIs, see the
 可能会产生意外的行为。
 Flutter 开发团队提供的大部分 [Flutter 插件][Flutter plugins] 已经完成了迁移。
 （了解如何成为 [认证的发布者][verified publisher]）
-作为参考， [battery package][] 已经迁移到新版 API 。
+作为参考， [battery plus package][] 已经迁移到新版 API 。
 
 ## Upgrade steps
 

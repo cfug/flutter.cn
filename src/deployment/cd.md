@@ -424,7 +424,7 @@ testing, and distributing apps and frameworks for Apple platforms.
 
 * Be enrolled in the [Apple Developer Program][].
 
-  加入 [Apple 开发者计划][Apple Developer Program]
+  加入 [Apple 开发者计划][Apple Developer Program]。
 
 ### Custom build script
 
@@ -436,8 +436,8 @@ of [predefined environment variables][], such as `$CI_WORKSPACE`, which is the
 location of your cloned repository.
 
 Xcode Cloud 可以识别 [自定义的构建脚本][custom build scripts] 用于在特定阶段执行额外的任务。
-同时它还包含了一系列[预定义的环境变量][predefined environment variables]，例如
-用于你 clone 仓库地址的 `$CI_WORKSPACE`。
+同时它还包含了一系列 [预定义的环境变量][predefined environment variables]，
+例如用于你 clone 仓库地址的 `$CI_WORKSPACE`。
 
 {{site.alert.note}}
 
@@ -445,8 +445,8 @@ Xcode Cloud 可以识别 [自定义的构建脚本][custom build scripts] 用于
   part of macOS and Xcode&mdash;for example, Python&mdash;and additionally Homebrew to
   support installing third-party dependencies and tools.
 
-  Xcode Cloud 使用的临时构建环境工具是 macOS 和 Xcode&mdash; 的一部分：
-  例如，Python&mdash; 另外还有 Homebrew 以支持安装第三方依赖项和工具。
+  Xcode Cloud 使用的临时构建环境工具是 macOS 和 Xcode 的一部分（例如 Python），
+  另外还有 Homebrew 以支持安装第三方依赖项和工具。
 
 {{site.alert.end}}
 
@@ -458,7 +458,7 @@ Leverage the post-clone custom build script that runs after
 Xcode Cloud clones your Git repository using the following instructions:
 
 利用 post-clone 运行的自定义构建脚本
-Xcode Cloud 按照以下说明克隆您的 Git 仓库：
+Xcode Cloud 按照以下说明克隆你的 Git 仓库：
 
 Create a file at `ios/ci_scripts/ci_post_clone.sh` and add the content below.
 
@@ -493,7 +493,7 @@ exit 0
 
 This file should be added to your git repository and marked as executable.
 
-该文件需要加入 git 仓库管理，并标记为可执行的。
+该文件需要加入 git 仓库管理，并给予可执行权限。
 
 ```terminal
 $ git add --chmod=+x ios/ci_scripts/ci_post_clone.sh
@@ -551,9 +551,9 @@ trigger your workflow after you've made changes to your flutter packages, or
 modified either the Dart or iOS source files within the `lib\` and `ios\`
 directories.
 
-对于你应用的 iOS 变体，你通常会希望 Xcode Cloud 
-在对 flutter packages 进行更改后修改了 `lib\` 和 `ios\` 中的Dart或iOS源文件目录之后，
-触发您的工作流。
+对于你应用的 iOS 变体，你通常会希望 Xcode Cloud 在对你的
+Flutter packages 修改了 `lib\` 中的 Dart 或 `ios\` 中的 iOS 源文件目录之后，
+触发你的工作流。
 
 This can be achieved by using the following Files and Folders conditions:
 
@@ -563,22 +563,23 @@ This can be achieved by using the following Files and Folders conditions:
 
 ### Next build number
 
-### 下次构建的 build number
+### 下次构建的构建版本数字
 
 Xcode Cloud defaults the build number for new workflows to `1` and increments
 it per successful build. If you're using an existing app with a higher build
 number, you'll need to configure Xcode Cloud to use the correct build number
 for it's builds by simply specifying the `Next Build Number` in your iteration.
 
-Xcode Cloud 对于新的工作流来说默认的 build number 是 `1`，
+Xcode Cloud 对于新的工作流来说默认的构建版本数字是 `1`，
 然后在每次成功构建后递增。如果你已经在一个已有应用中，
-使用了一个更高的 build number，你需要配置 Xcode Cloud 使用正确的 build number，
+使用了一个更高的构建版本数字，你需要配置 Xcode Cloud 使用正确的构建版本数字，
 只需要简单通过指定 `Next Build Number` 用于迭代即可。
 
 Check out [Setting the next build number for Xcode Cloud builds][] for more
 information.
 
-你可以在 [设置 Xcode Cloud 构建下一次的 build number][Setting the next build number for Xcode Cloud builds] 查看更多信息。
+你可以在 [设置 Xcode Cloud 构建下一次的构建版本数字][Setting the next build number for Xcode Cloud builds]
+查看更多信息。
 
 [Android app signing steps]: {{site.url}}/deployment/android#signing-the-app
 [Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/

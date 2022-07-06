@@ -29,12 +29,15 @@ workshop 链接也会提供给你相关的 YouTube 视频，
   You can find them on the [Flutter community blog][].
 
   **Google I/O 大会更新了一批新的 Flutter workshops**
-  你也许想要看看咱们的 Google 开发者专家(GDEs)的 workshops。
-  可以在 [Flutter 社区博客][Flutter community blog] 中找到它们。
+  或许你想要看看由 Google 开发者专家 (GDE) 编写的代码实践教程 (workshop)。
+  你可以在 [Flutter 社区博客][Flutter community blog] 中找到它们。
+  或者查看 [社区教程][] 中的文章了解如何《[使用 DartPad 制作代码实践][]》。
 
 {{site.alert.end}}
 
 [Flutter community blog]: {{site.medium}}/flutter-community/dartpad-workshops-from-flutter-gdes-622b52f70173
+[社区教程]: {{site.main-url}}/community/tutorials/
+[使用 DartPad 制作代码实践]: {{site.main-url}}/community/tutorials/how-to-use-dartpad-workshop
 
 ## Good for beginners
 

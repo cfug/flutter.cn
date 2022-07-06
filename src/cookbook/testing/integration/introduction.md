@@ -316,7 +316,7 @@ Future<void> main() => integrationDriver();
 
 Launch `chromedriver` as follows: 
 
-运行 WebDriver，执行命令比如：
+运行 `chromedriver`，执行如下命令：
 
 ```terminal
 chromedriver --port=4444
@@ -335,6 +335,9 @@ flutter drive \
 
 For a headless testing experience, you can also run `flutter drive` 
 with `web-server` as the target device identifier as follows:
+
+如需 Headless 测试体验，你同样可以运行 `flutter drive` 命令，
+并加入 `web-server` 作为目标设备，参考如下命令：
 
 ```terminal
 flutter drive \

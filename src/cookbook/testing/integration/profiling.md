@@ -162,7 +162,7 @@ to review the results:
 
      它可以将完整的 `Timeline` 以 json 文件的形式存储在磁盘上，
      可以使用 Chrome 浏览器的追踪工具打开此文件。
-     追踪工具在这里: [chrome://tracing][]。
+     追踪工具在这里: `chrome://tracing`。
 
 To capture the results, create a file named `perf_driver.dart`
 in the `test_driver` folder and add the following code:
@@ -271,7 +271,7 @@ the project contains two files:
 
      `scrolling_timeline.timeline.json` 包含完整的时间轴数据。
      使用 Chorme 浏览器的追踪工具打开这个文件。
-     追踪工具在这里：[chrome://tracing][]。
+     追踪工具在这里：`chrome://tracing`。
      追踪工具提供了一个便捷的用户界面，用以检测时间轴数据并发现其中导致性能问题的源头。
 
 #### Summary example

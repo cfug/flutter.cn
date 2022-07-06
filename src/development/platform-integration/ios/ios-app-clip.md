@@ -8,8 +8,8 @@ description: 如何为您的 Flutter 工程加入 iOS 14 的 App Clip。
 {{site.alert.important}}
 
   This experimental preview currently exceeds the 10MB
-  uncompressed IPA payload
-  size limit and cannot be used in production ([#71098][]).
+  uncompressed IPA payload size limit and cannot be
+  used in production ([#71098][]).
 
   目前该实验测试版本会突破 10MB 的未压缩 IPA 有效负载的大小限制，
   请勿在生产环境中使用([#71098][])。
@@ -22,12 +22,6 @@ existing Flutter project or [add-to-app][] project.
 
 这个指南介绍了如何手动添加另一个使用 Flutter 来渲染的 iOS App Clip target, 
 并将它集成到您现有的 Flutter 项目或 [add-to-app][] 项目。
-
-If you are interested in automatically integrating an App Clip into your iOS
-app, see feature request [#65451][].
-
-如果您有兴趣将 App Clip 自动集成到 iOS 应用中，
-请参阅功能请求 [#65451][].
 
 [#71098]: {{site.repo.flutter}}/issues/71098
 [add-to-app]: {{site.url}}/development/add-to-app
@@ -588,10 +582,10 @@ To test launching an App Clip from the beginning,
 also consult Apple's doc on
 [Testing Your App Clip's Launch Experience][testing].
 
-[testing]: {{site.apple-dev}}/documentation/app_clips/testing_your_app_clip_s_launch_experience
-
 要从头测试 App Clip 的启动，您也可以查看苹果公司的文档
- [测试您的 App Clip 的启动体验][Testing Your App Clip's Launch Experience]。
+[测试您的 App Clip 的启动体验][testing]。
+
+[testing]: {{site.apple-dev}}/documentation/app_clips/testing_your_app_clip_s_launch_experience
 
 ## Debugging, hot reload
 

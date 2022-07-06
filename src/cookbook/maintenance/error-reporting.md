@@ -38,7 +38,8 @@ service, such as [Bugsnag][], Fabric, [Rollbar][], or Sentry.
 
 如何确定用户遇到 bug 的频率呢？
 解决方案是：当异常发生时，生成一份日志，日志中包含发生的异常及相关的堆栈信息。
-随后，可以将日志发送到异常监控报警平台，比如 Sentry、Fabric 或者 Rollbar。
+随后，可以将日志发送到异常监控报警平台，比如
+[Bugsnag][]、Fabric、[Rollbar][] 或者 Sentry。
 
 The error tracking service aggregates all of the crashes your users
 experience and groups them together. This allows you to know how often your

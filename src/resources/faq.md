@@ -112,8 +112,6 @@ that you want to run on your web pages or on the desktop.
 
 Flutter 设计为了让移动应用能够运行在 Android 与 iOS，
 以及在 web 和桌面端运行可交互式的应用。
-（请注意，桌面版支持目前已进入 beta 版本，
-但你还可以在 stable channel 中获取的 beta 版本的快照）
 
 Apps that need to deliver highly branded designs
 are particularly well suited for Flutter.
@@ -370,7 +368,7 @@ dependency injection and service location, such as [injectable][],
 
 我们并没有提供相关解决方案，
 但是这里有许多包提供了依赖注入或服务定位的能力，
-例如 [injectable][]、[get_it][] 和 [kiwi][]。
+例如 [injectable][]、[get_it][]、[kiwi][] 和 [riverpod][]。
 
 ## Technology
 
@@ -845,11 +843,7 @@ You can compile and deploy your Flutter app to iOS, Android,
 [web][], and [desktop][].
 
 您可以将 Flutter 应用编译并部署到 iOS 和 Android 平台，
-亦可部署到 [web][] 平台，
-当然还有 [桌面端][desktop]（目前处于 beta 阶段）。
-一些比较激进的开发者已经部署了 Flutter 桌面应用，
-如果你觉得当前还不想要那么冒险，你也许想要等桌面支持合并到 stable channel。
-（然而 我们已经将 beta 版桌面支持的快照发布在了 stable channel，供你们尝鲜。）
+亦可部署到 [web][] 平台以及 [桌面端][desktop]。
 
 ### What devices and OS versions does Flutter run on?
 
@@ -901,9 +895,8 @@ For more details, check out the [web instructions][].
 Yes, desktop support is in stable for Windows,
 macOS, and Linux.
 
-可以，Windows 的支持已处于稳定阶段，macOS 以及 Linux 的支持处于 beta 阶段，
-但已经在 stable channel 上提供了一份 beta 版本的快照。
-当前的进度记录在 [桌面端支持][desktop] 页面上查看。
+可以，Flutter 的桌面端稳定版支持已经适用于
+Windows、macOS 和 Linux 啦。
 
 ### Can I use Flutter inside of my existing native app?
 

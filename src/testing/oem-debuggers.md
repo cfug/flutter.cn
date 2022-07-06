@@ -538,6 +538,9 @@ iOS, and Android:
 
   [Flutter 性能分析][Performance profiling]
 
+[Debugging Flutter apps]: {{site.url}}/testing/debugging
+[Performance profiling]: {{site.url}}/perf/ui-performance
+
 ### Android
 
 You can find the following debugging resources on

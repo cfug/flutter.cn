@@ -11,16 +11,28 @@ is the [Microsoft Store][microsoftstore].
 This guide provides a step-by-step walkthrough
 of packaging and deploying a Flutter app in this way.
 
+发布 Windows 桌面应用程序的便捷方法是将其发布至
+[微软应用商店][microsoftstore]，本指南提供了
+将 Flutter 应用发布到 [微软应用商店][microsoftstore]
+的分步操作指南。
+
 {{site.alert.note}}
+
   You are not required to publish Windows apps through the
   Microsoft Store, particularly if you prefer more control
   over the distribution experience or don't want to deal
   with the certification process. The Microsoft documentation
   includes more information about traditional installation
   approaches, including [Windows Installer][msidocs].
+
+  通过微软应用商店发布 Windows 桌面应用程序并非必选项，
+  尤其是当你希望掌握更多对发布体验方面的控制权，
+  亦或是你不想处理认证过程。
+  微软提供的文档包括了关于使用 [Windows Installer][msidocs]
+  进行传统安装的更多内容。
+  
 {{site.alert.end}}
 
-本指南提供了将 Flutter 应用发布到 [微软应用商店][microsoftstore] 的分步操作指南。
 
 ## Preliminaries
 
@@ -36,7 +48,7 @@ first confirm that it satisfies [Microsoft Store Policies][storepolicies].
 Also, you must join the
 [Microsoft Partner Network][microsoftpartner] to be able to submit apps.
 
-要提交应用的话加入 [微软合作伙伴网络][microsoftpartner] 也是必要的。
+提交应用前加入 [微软合作伙伴网络][microsoftpartner] 也是必要的。
 
 ## Set up your application in the Partner Center
 
@@ -101,7 +113,7 @@ can be retrieved from the Partner Center:
 
 1. In the Partner Center, navigate to the application.
 
-   在合作伙伴中心中 d，导航到应用程序。
+   在合作伙伴中心中，导航到应用程序。
 
 2. Select **Product management**.
 
@@ -136,7 +148,8 @@ the application to the Microsoft Store for the first time.
 
 #### Codemagic 持续集成/持续部署 (CI/CD)
 
-[Codemagic CI/CD][codemagic] uses the [`msix` pub package][msix package] to package 
+[Codemagic CI/CD][codemagic] uses the
+[`msix` pub package][msix package] to package 
 Flutter Windows Desktop applications. 
 
 [Codemagic 持续集成/持续部署 (CI/CD)][codemagic]
@@ -156,6 +169,7 @@ can be configured using this package.
 对于 Flutter 应用程序，无论是 [Codemagic Workflow Editor][cmworkfloweditor] 还是 [codemagic.yaml][cmyaml]
 都可以用来打包应用程序并部署到微软合作伙伴中心。
 其他选项（如软件包中包含的功能列表和语言资源）可以使用上述的软件包进行配置。
+
 For publishing, Codemagic uses the
 [Partner Center submission API][partnercenterapi];
 so, Codemagic requires

@@ -37,7 +37,7 @@ Flutter 支持的平台列表如下：
 |Web     | Edge 1.2.0 & above           | All     |
 |Web     | Edge 1.2.0 及更高的版本        | 所有     |
 |Windows | Windows 7 & above, 64-bit    | All     |
-|Windows | Windows 7 及更高的版本, 64-bit | 所有     |
+|Windows | 64 位 Windows 7 及更高的版本   | 所有     |
 
 All channels include master, beta,
 and stable channels. 
@@ -134,12 +134,13 @@ between the two platform versions are minimal.
 |iOS     |[iOS 8][] & below and [`arm7v` 32-bit iOS][]|
 |iOS     |[iOS 8][] 及更低的版本 and [`armv7` 架构的 32 位 iOS][`arm7v` 32-bit iOS] 系统|
 |Linux   |Any 32-bit platform                         |
-|Linux   |任意 32-bit 平台                             |
+|Linux   |任何 32 位的平台                              |
 |Windows |Windows Vista & below                       |
 |Windows |Windows Vista 及更低的版本                    |
 |Windows |Any 32-bit platform                         |
+|Windows |任何 32 位的平台                              |
 |macOS   |Yosemite & below                            |
-|macOS   |Yosemite & 及更低的版本                       |
+|macOS   |Yosemite 及更低的版本                         |
 
 [iOS 8]: {{site.url}}/go/rfc-ios8-deprecation
 [`arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported

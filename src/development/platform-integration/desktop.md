@@ -100,7 +100,7 @@ you need the following in addition to the Flutter SDK:
 
 要开发 Windows 桌面程序，除了 Flutter SDK，你还需要做以下准备:
 
-* [[Visual Studio 2022][] When installing Visual Studio,
+* [Visual Studio 2022][] When installing Visual Studio,
   select the "Desktop development with C++" workload,
   including all of its default components,
   to install the necessary C++ toolchain and
@@ -263,6 +263,8 @@ $ flutter config --no-enable-ios
 ```
 
 Other available flags:
+
+其他可用的参数：
 
 * `--no-enable-windows`
 * `--no-enable-linux`

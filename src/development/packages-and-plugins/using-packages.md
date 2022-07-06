@@ -132,9 +132,10 @@ on [Android plugins][], [iOS plugins][], [web plugins][],
 or any combination thereof.
 
 在 pub.dev 网站上同时可以过滤出适合
-[Android][Android plugins]、[iOS][iOS plugins] 或
-[Web][web plugins] 的插件，也可以通过复选框，
-过滤出组合结果（适配一个或者多个平台）。
+[Android][Android plugins]、[iOS][iOS plugins]、
+[Web][web plugins]、[Linux][Linux plugins]、
+[Windows][Windows plugins] 或 [macOS][macOS plugins]
+的插件，也可以通过复选框，过滤出组合结果（适配一个或者多个平台）。
 
 ### Adding a package dependency to an app
 

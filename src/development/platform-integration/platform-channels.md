@@ -20,14 +20,6 @@ see [using packages][].
 某些平台相关功能可通过已有的软件包获得，具体细节可查看：
 [在 Flutter 里使用 Packages][using packages]。
 
-Flutter uses a flexible system that allows you to call
-platform-specific APIs whether available in Kotlin or
-Java code on Android, or in Swift or Objective-C code on iOS.
-
-Flutter 使用了灵活的系统，它允许你调用相关平台的 API，
-无论是 Android 中的 Java 或 Kotlin 代码，
-还是 iOS 中的 Objective-C 或 Swift 代码。
-
 [using packages]: {{site.url}}/development/packages-and-plugins/using-packages
 
 {{site.alert.note}}
@@ -46,11 +38,29 @@ Flutter 使用了灵活的系统，它允许你调用相关平台的 API，
 Flutter uses a flexible system that allows you to call
 platform-specific APIs in a language that works directly
 with those APIs:
+
+Flutter 构建了一个灵活的系统，
+你可以调用各种相关平台的 API，具体如下所示：
+
 - Kotlin or Java on Android
+  
+  Android 中的 Java 或 Kotlin API
+
 - Swift or Objective-C on iOS
+
+  iOS 中的 Objective-C 或 Swift API
+
 - C++ on Windows
+
+  Windows 操作系统中的 C++ API
+
 - Objective-C on macOS
+
+  macOS 系统中的 Objective-C
+
 - C on Linux
+
+  Linux 操作系统中的 C
 
 Flutter 使用了灵活系统，无论是在 Android 上
 的 Kotlin 还是 Java，亦或是 iOS 上的 Swift 或 Objective-C，
@@ -80,18 +90,21 @@ Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是�
 
 {{site.alert.note}}
 
-  This guide addresses using the platform channel mechanism if you need
-  to use the platform's APIs in a non-Dart language.  But you can also write
-  platform-specific Dart code
-  in your Flutter app by inspecting the [defaultTargetPlatform][] property.
-  [Platform adaptations][] lists some platform-specific adaptations
-  that Flutter automatically does for you in the framework.
+  This guide addresses using the platform channel mechanism
+  if you need to use the platform's APIs in a non-Dart language.
+  But you can also write platform-specific Dart code
+  in your Flutter app by inspecting the
+  [`defaultTargetPlatform`][] property.
+  [Platform adaptations][] lists some
+  platform-specific adaptations that Flutter
+  automatically performs for you in the framework.
 
   本篇教程主要介绍如何在非 Dart 语言中，利用平台通道的机制调用平台 API。
-  但是当你在 Flutter 应用里编写 Dart 代码时，你也可以通过判断 [defaultTargetPlatform][]，
+  但是当你在 Flutter 应用里编写 Dart 代码时，你也可以通过判断 [`defaultTargetPlatform`][]，
   在不同的平台上执行对应的代码。
   [不同平台操作体验的差异和适配][Platform adaptations] 文档中列举了部分
   Flutter 框架自动为你处理的平台适配行为。
+  
 {{site.alert.end}}
 
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
@@ -132,8 +145,8 @@ messages that correspond to method calls. On the platform side,
 `MethodChannel` on Android ([`MethodChannelAndroid`][]) and
 `FlutterMethodChannel` on iOS ([`MethodChanneliOS`][])
 enable receiving method calls and sending back a
-result. These classes allow you to develop a platform plugin with very little
-'boilerplate' code.
+result. These classes allow you to develop a platform plugin 
+with very little 'boilerplate' code.
 
 客户端做方法调用的时候 [`MethodChannel`][] 会负责响应，
 从平台一侧来讲，Android 系统上使用 [`MethodChannelAndroid`][]、
@@ -174,6 +187,7 @@ The following table shows how Dart values are received on the
 platform side and vice versa:
 
 下表展示了如何在平台端接收 Dart 值，反之亦然：
+
 {% samplecode type-mappings %}
 {% sample Java %}
 | Dart                       | Java                |
@@ -279,20 +293,25 @@ platform side and vice versa:
 
 ## Example: Calling platform-specific Android, iOS, and Windows code using platform channels {#example}
 
-## 示例: 通过平台通道调用平台的 iOS 和 Android 代码 {#example}
+## 示例: 通过平台通道调用平台的 iOS、Android 和 Windows 代码 {#example}
 
-The following code demonstrates how to call a platform-specific API
-to retrieve and display the current battery level.
-It uses the Android `BatteryManager` API,
-and the iOS `device.batteryLevel` API, via a single platform message,
-`getBatteryLevel()`.
+The following code demonstrates how to call
+a platform-specific API to retrieve and display
+the current battery level.  It uses the Android
+`BatteryManager` API, the iOS
+`device.batteryLevel` API, and the Windows
+`GetSystemPowerStatus` API with a single
+platform message, `getBatteryLevel()`.
 
 以下代码演示了如何调用平台相关 API 来检索并显示当前的电池电量。
 它通过平台消息 `getBatteryLevel()`
-来调用 Android 的 `BatteryManager` API 及 iOS 的 `device.batteryLevel` API。
+来调用 Android 的 `BatteryManager` API、
+iOS 的 `device.batteryLevel` API、
+以及 indows 上的 `GetSystemPowerStatus`。
 
-The example adds the platform-specific code inside the main app itself.
-If you want to reuse the platform-specific code for multiple apps,
+The example adds the platform-specific code inside
+the main app itself.  If you want to reuse the
+platform-specific code for multiple apps,
 the project creation step is slightly different
 (see [developing packages][plugins]),
 but the platform channel code
@@ -313,15 +332,12 @@ is still written in the same way.
   For iOS with Swift,
   see [`/examples/platform_channel_swift/`][].
 
-  
   可在 [`/examples/platform_channel/`][] 中获得使用 Java 实现的
   Android 及使用 Objective-C 实现的 iOS 的该示例完整可运行的代码。
   对于用 Swift 实现的 iOS 代码，
   请参阅 [`/examples/platform_channel_swift/`][]。
 
 {{site.alert.end}}
-
-
 
 ### Step 1: Create a new app project {#example-project}
 
@@ -360,8 +376,9 @@ platform method that returns the battery level.
 
 首先，构建通道。在返回电池电量的单一平台方法中使用 `MethodChannel`。
 
-The client and host sides of a channel are connected through a channel name
-passed in the channel constructor. All channel names used in a single app must
+The client and host sides of a channel are connected through
+a channel name passed in the channel constructor.
+All channel names used in a single app must
 be unique; prefix the channel name with a unique 'domain
 prefix', for example: `samples.flutter.dev/battery`.
 
@@ -382,11 +399,13 @@ class _MyHomePageState extends State<MyHomePage> {
   // Get battery level.
 ```
 
-Next, invoke a method on the method channel, specifying the concrete method
-to call using the String identifier `getBatteryLevel`.
-The call might fail&mdash;for example if the platform does not support the
-platform API (such as when running in a simulator), so wrap the
-`invokeMethod` call in a try-catch statement.
+Next, invoke a method on the method channel,
+specifying the concrete method to call using
+the `String` identifier `getBatteryLevel`.
+The call might fail&mdash;for example,
+if the platform doesn't support the
+platform API (such as when running in a simulator),
+so wrap the `invokeMethod` call in a try-catch statement.
 
 接下来，在方法通道上调用方法（指定通过 String 标识符 `getBatteryLevel`
 调用的具体方法）。调用可能会失败&mdash;比如，如果平台不支持此平台
@@ -417,9 +436,9 @@ Future<void> _getBatteryLevel() async {
 }
 ```
 
-Finally, replace the `build` method from the template to contain a small user
-interface that displays the battery state in a string,
-and a button for refreshing the value.
+Finally, replace the `build` method from the template to
+contain a small user interface that displays the battery
+state in a string, and a button for refreshing the value.
 
 最后，将模板中的 `build` 方法替换为包含以字符串形式
 显示电池状态、并包含一个用于刷新该值的按钮的小型用户界面。
@@ -451,7 +470,8 @@ Widget build(BuildContext context) {
 
 {% samplecode android-channel %}
 {% sample Kotlin %}
-Start by opening the Android host portion of your Flutter app in Android Studio:
+Start by opening the Android host portion of your Flutter app
+in Android Studio:
 
 首先在 Android Studio 中打开 Flutter 应用的 Android 宿主部分：
 
@@ -471,8 +491,7 @@ Start by opening the Android host portion of your Flutter app in Android Studio:
 1. Open the file `MainActivity.kt` located in the **kotlin** folder in the
    Project view.
 
-   在项目视图中打开 **kotlin** 文件夹下的 `MainActivity.kt` 文件（注意：如果使用
-   Android Studio 2.3 进行编辑，请注意 **kotlin** 目录的显示名称为 **java**）。
+   在项目视图中打开 **kotlin** 文件夹下的 `MainActivity.kt` 文件。
 
 Inside the `configureFlutterEngine()` method, create a `MethodChannel` and call
 `setMethodCallHandler()`. Make sure to use the same channel name as
@@ -480,6 +499,7 @@ was used on the Flutter client side.
 
 在 `configureFlutterEngine()` 方法中创建一个 `MethodChannel` 并调用
 `setMethodCallHandler()`。确保使用的通道名称与 Flutter 客户端使用的一致。
+
 <!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 import androidx.annotation.NonNull
@@ -511,6 +531,7 @@ Android 应用中编写的代码完全相同。
 First, add the needed imports at the top of the file:
 
 首先在文件头部添加所需的依赖：
+
 <!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 import android.content.Context
@@ -526,6 +547,7 @@ Next, add the following method in the `MainActivity` class,
 below the `configureFlutterEngine()` method:
 
 然后在 `MainActivity` 类中的 `configureFlutterEngine()` 方法下方添加以下新方法：
+
 <!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
   private fun getBatteryLevel(): Int {
@@ -542,9 +564,10 @@ below the `configureFlutterEngine()` method:
   }
 ```
 
-Finally, complete the `setMethodCallHandler()` method added earlier. You need to
-handle a single platform method, `getBatteryLevel()`, so test for that in the
-`call` argument. The implementation of this platform method calls the
+Finally, complete the `setMethodCallHandler()` method added earlier.
+You need to handle a single platform method, `getBatteryLevel()`,
+so test for that in the `call` argument.
+The implementation of this platform method calls the
 Android code written in the previous step, and returns a response for both
 the success and error cases using the `result` argument.
 If an unknown method is called, report that instead.
@@ -557,6 +580,7 @@ If an unknown method is called, report that instead.
 Remove the following code:
 
 删除以下代码：
+
 <!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
@@ -569,6 +593,7 @@ Remove the following code:
 And replace with the following:
 
 并替换成以下内容：
+
 <!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
@@ -589,7 +614,8 @@ And replace with the following:
 ```
 
 {% sample Java %}
-Start by opening the Android host portion of your Flutter app in Android Studio:
+Start by opening the Android host portion of your Flutter app
+in Android Studio:
 
 首先在 Android Studio 中打开 Flutter 应用的 Android 宿主部分：
 
@@ -653,6 +679,7 @@ would write in a native Android app.
 First, add the needed imports at the top of the file:
 
 首先在文件头部添加所需的依赖：
+
 <!--code-excerpt "MainActivity.java" title-->
 ```java
 import android.content.ContextWrapper;
@@ -668,6 +695,7 @@ Then add the following as a new method in the activity class,
 below the `configureFlutterEngine()` method:
 
 然后在 Activity 类中的 `onCreate()` 方法下方添加以下新方法：
+
 <!--code-excerpt "MainActivity.java" title-->
 ```java
   private int getBatteryLevel() {
@@ -702,6 +730,7 @@ If an unknown method is called, report that instead.
 Remove the following code:
 
 移除以下代码：
+
 <!--code-excerpt "MainActivity.java" title-->
 ```java
           (call, result) -> {
@@ -713,6 +742,7 @@ Remove the following code:
 And replace with the following:
 
 并替换成以下内容：
+
 <!--code-excerpt "MainActivity.java" title-->
 ```java
           (call, result) -> {
@@ -730,7 +760,6 @@ And replace with the following:
             }
           }
 ```
-
 {% endsamplecode %}
 
 You should now be able to run the app on Android. If using the Android
@@ -740,16 +769,49 @@ accessible from the **...** button in the toolbar.
 现在你应该可以在 Android 中运行该应用。如果使用了 Android
 模拟器，请在**扩展控件**面板中设置电池电量，可从工具栏中的 **...** 按钮访问。
 
-### Step 4a: Add an iOS platform-specific implementation
+### Step 4: Add an iOS platform-specific implementation
 
-### 步骤 4a：添加 iOS 平台的实现
+### 步骤 4：添加 iOS 平台的实现
+
+{% samplecode ios-channel %}
+{% sample Swift %}
+Start by opening the iOS host portion of your Flutter app in Xcode:
+
+首先在 Xcode 中打开 Flutter 应用的 iOS 宿主部分：
+
+1. Start Xcode.
+
+   启动 Xcode
+
+1. Select the menu item **File > Open...**.
+
+   选择菜单项 **File > Open...**
+
+1. Navigate to the directory holding your Flutter app, and select the **ios**
+folder inside it. Click **OK**.
+
+   导航到包含 Flutter 应用的目录，然后选择其中的 **ios** 文件夹。点击 **OK**。
+
+Add support for Swift in the standard template setup that uses Objective-C:
+
+在使用 Objective-C 的标准模板设置中添加对 Swift 的支持：
+
+1. **Expand Runner > Runner** in the Project navigator.
+
+   在项目导航中展开 **Expand Runner > Runner**。
+
+1. Open the file `AppDelegate.swift` located under **Runner > Runner**
+   in the Project navigator.
+   
+   打开项目导航 `Runner > Runner` 下的 `AppDelegate.swift` 文件。
 
 Override the `application:didFinishLaunchingWithOptions:` function and create
 a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery`:
 
-重写 `application:didFinishLaunchingWithOptions:` 方法
-然后创建一个 `FlutterMethodChannel` 绑定到 `samples.flutter.dev/battery` 名称的 channel：
+重写 `application:didFinishLaunchingWithOptions:` 方法，
+然后创建一个 `FlutterMethodChannel` 绑定到名字为
+`samples.flutter.dev/battery` 名称的 channel：
 
 <!--code-excerpt "AppDelegate.swift" title-->
 ```swift
@@ -781,10 +843,9 @@ would write in a native iOS app.
 然后，添加 iOS Swift 代码，使用电池相关的 API 获取电量。
 这里的代码和你写原生 iOS 代码别无二致。
 
+Add the following as a new method at the bottom of `AppDelegate.swift`:
 
-Start by opening the iOS host portion of the Flutter app in Xcode:
-
-首先在 Xcode 中打开 Flutter 应用的 iOS 宿主部分：
+在 `AppDelegate.swift` 末尾添加以下新的方法：
 
 <!--code-excerpt "AppDelegate.swift" title-->
 ```swift
@@ -801,9 +862,18 @@ private func receiveBatteryLevel(result: FlutterResult) {
 }
 ```
 
-1. Start Xcode.
+Finally, complete the `setMethodCallHandler()` method added earlier.
+You need to handle a single platform method, `getBatteryLevel()`,
+so test for that in the `call` argument.
+The implementation of this platform method calls
+the iOS code written in the previous step. If an unknown method
+is called, report that instead.
 
-   启动 Xcode
+最后，完成前面添加的 `setMethodCallHandler()` 方法。
+你需要处理单个平台方法 `getBatteryLevel()`，
+所以在参数 `call` 中对其进行验证。
+该平台方法的实现是调用上一步编写的 iOS 代码。
+如果调用了未知方法，则报告该方法。
 
 <!--code-excerpt "AppDelegate.swift" title-->
 ```swift
@@ -818,13 +888,22 @@ batteryChannel.setMethodCallHandler({
 })
 ```
 
+{% sample Objective-C %}
+Start by opening the iOS host portion of the Flutter app in Xcode:
+
+首先在 Xcode 中打开 Flutter 应用的 iOS 宿主部分：
+
+1. Start Xcode.
+
+   启动 Xcode
+
 1. Select the menu item **File > Open...**.
 
    选择菜单项 **File > Open...**
 
-1. Navigate to the directory holding your Flutter app, and select the **ios**
-folder inside it. Click **OK**.
-
+1. Navigate to the directory holding your Flutter app,
+   and select the **ios** folder inside it. Click **OK**.
+   
    导航到包含 Flutter 应用的目录，然后选择其中的 **ios** 文件夹。点击 **OK**。
 
 1. Make sure the Xcode projects builds without errors.
@@ -833,15 +912,17 @@ folder inside it. Click **OK**.
 
 1. Open the file `AppDelegate.m`, located under **Runner > Runner**
    in the Project navigator.
-
+   
    打开项目导航 **Runner > Runner** 下的 `AppDelegate.m` 文件。
 
 Create a `FlutterMethodChannel` and add a handler inside the `application
-didFinishLaunchingWithOptions:` method. Make sure to use the same channel name
+didFinishLaunchingWithOptions:` method.
+Make sure to use the same channel name
 as was used on the Flutter client side.
 
-在 `application didFinishLaunchingWithOptions:` 方法中创建一个 `FlutterMethodChannel`
-并添加一个处理程序。确保使用的通道名称与 Flutter 客户端使用的一致。
+在 `application didFinishLaunchingWithOptions:` 方法中
+创建一个 `FlutterMethodChannel` 并添加一个处理程序。
+确保使用的通道名称与 Flutter 客户端使用的一致。
 
 <!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
@@ -870,8 +951,8 @@ Next, add the iOS ObjectiveC code that uses the iOS battery APIs to
 retrieve the battery level. This code is exactly the same as you
 would write in a native iOS app.
 
-接下来添加使用 iOS battery API 来检索电池电量的 iOS Objective-C 代码。该代码与你在原生
-iOS 应用中编写的代码完全相同。
+接下来添加使用 iOS battery API 来检索电池电量的 iOS Objective-C 代码。
+该代码与你在原生 iOS 应用中编写的代码完全相同。
 
 Add the following method in the `AppDelegate` class, just before `@end`:
 
@@ -922,138 +1003,6 @@ __weak typeof(self) weakSelf = self;
   }
 }];
 ```
-
-You should now be able to run the app on iOS. If using the iOS Simulator,
-note that it does not support battery APIs,
-and the app displays 'battery info unavailable'.
-
-现在你应该可以在 iOS 中运行该应用。如果使用了 iOS 模拟器，注意它并不支持
-battery API，并且应用会显示 'battery info unavailable'。
-
-### Step 4b: Add an iOS platform-specific implementation using Swift {#example-swift}
-
-### 步骤 4b：使用 Swift 添加 iOS 平台的实现 {#example-swift}
-
-*Note*: The following steps are similar to step 4a,
-only using Swift rather than Objective-C.
-
-**注意**：以下步骤与 4a 类似，唯一的区别是使用了 Swift 而非 Objective-C。
-
-This step assumes that you created your project in [step 1.](#example-project)
-using the `-i swift` option.
-
-此步骤假设你在第一步中使用 `-i swift` 选项创建了项目。
-
-{% sample Swift %}
-Start by opening the iOS host portion of your Flutter app in Xcode:
-
-首先在 Xcode 中打开 Flutter 应用的 iOS 宿主部分：
-
-1. Start Xcode.
-
-   启动 Xcode
-
-1. Select the menu item **File > Open...**.
-
-   选择菜单项 **File > Open...**
-
-1. Navigate to the directory holding your Flutter app, and select the **ios**
-folder inside it. Click **OK**.
-
-   导航到包含 Flutter 应用的目录，然后选择其中的 **ios** 文件夹。点击 **OK**。
-
-Add support for Swift in the standard template setup that uses Objective-C:
-
-在使用 Objective-C 的标准模板设置中添加对 Swift 的支持：
-
-1. **Expand Runner > Runner** in the Project navigator.
-
-   在项目导航中展开 **Expand Runner > Runner**。
-
-1. Open the file `AppDelegate.swift` located under **Runner > Runner**
-   in the Project navigator.
-
-   打开项目导航 `Runner > Runner` 下的 `AppDelegate.swift` 文件。
-
-Override the `application:didFinishLaunchingWithOptions:` function and create
-a `FlutterMethodChannel` tied to the channel name
-`samples.flutter.dev/battery`:
-
-重写 `application:didFinishLaunchingWithOptions:` 方法并创建一个绑定了通道名称
-`samples.flutter.dev/battery` 的 `FlutterMethodChannel`：
-
-<!--code-excerpt "AppDelegate.swift" title-->
-```swift
-@UIApplicationMain
-@objc class AppDelegate: FlutterAppDelegate {
-  override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
-    let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
-                                              binaryMessenger: controller.binaryMessenger)
-    batteryChannel.setMethodCallHandler({
-      (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
-      // Note: this method is invoked on the UI thread.
-      // Handle battery messages.
-    })
-
-    GeneratedPluginRegistrant.register(with: self)
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-  }
-}
-```
-
-Next, add the iOS Swift code that uses the iOS battery APIs to retrieve
-the battery level. This code is exactly the same as you
-would write in a native iOS app.
-
-接下来添加使用 iOS battery API 来检索电池电量的 iOS Swift 代码。该代码与你在原生
-iOS 应用中编写的代码完全相同。
-
-Add the following as a new method at the bottom of `AppDelegate.swift`:
-
-在 `AppDelegate.swift` 末尾添加以下新方法：
-
-<!--code-excerpt "AppDelegate.swift" title-->
-```swift
-private func receiveBatteryLevel(result: FlutterResult) {
-  let device = UIDevice.current
-  device.isBatteryMonitoringEnabled = true
-  if device.batteryState == UIDevice.BatteryState.unknown {
-    result(FlutterError(code: "UNAVAILABLE",
-                        message: "Battery info unavailable",
-                        details: nil))
-  } else {
-    result(Int(device.batteryLevel * 100))
-  }
-}
-```
-
-Finally, complete the `setMethodCallHandler()` method added earlier. You need
-to handle a single platform method, `getBatteryLevel()`, so test for that in
-the `call` argument. The implementation of this platform method calls
-the iOS code written in the previous step. If an unknown method
-is called, report that instead.
-
-最后，完成前面添加的 `setMethodCallHandler()` 方法。
-你需要处理单个平台方法 `getBatteryLevel()`，所以在参数 `call` 中对其进行验证。
-该平台方法的实现是调用上一步编写的 iOS 代码。
-如果调用了未知方法，则报告该方法。
-
-<!--code-excerpt "AppDelegate.swift" title-->
-```swift
-batteryChannel.setMethodCallHandler({
-  [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
-  // Note: this method is invoked on the UI thread.
-  guard call.method == "getBatteryLevel" else {
-    result(FlutterMethodNotImplemented)
-    return
-  }
-  self?.receiveBatteryLevel(result: result)
-})
-```
 {% endsamplecode %}
 
 You should now be able to run the app on iOS.
@@ -1061,8 +1010,9 @@ If using the iOS Simulator,
 note that it doesn't support battery APIs,
 and the app displays 'Battery level not available'.
 
-现在你应该可以在 iOS 中运行该应用。如果使用了 iOS 模拟器，注意它并不支持
-battery API，并且应用会显示 'battery info unavailable'。
+现在你应该可以在 iOS 中运行该应用。
+如果使用了 iOS 模拟器（注意它并不支持 battery API），
+应用则会显示 'battery info unavailable'。
 
 ### Step 5: Add a Windows platform-specific implementation
 
@@ -1083,7 +1033,7 @@ Start by opening the Windows host portion of your Flutter app in Visual Studio:
 
 1. Select **Open a project or solution**.
 
-  选择 **Open a project or solution**
+   选择 **Open a project or solution**
 
 1. Navigate to the directory holding your Flutter app, then into the **build**
    folder, then the **windows** folder, then select the `batterylevel.sln` file.
@@ -1224,7 +1174,8 @@ If your device doesn't have a battery,
 it displays 'Battery level not available'.
 
 你现在应该可以在 Windows 上运行应用了。
-如果你的设备没电了，它会提示 'Battery level not available'。
+如果你的设备没有电池的话，
+它会提示 'Battery level not available'。
 
 ## Typesafe platform channels via Pigeon {#pigeon}
 
@@ -1279,6 +1230,8 @@ and Swift (with Objective-C interop).
 ### Pigeon 样例
 
 **Pigeon file:**
+  
+**Pigeon 文件:**
 
 <?code-excerpt "lib/generated_pigeon.dart (Search)"?>
 ```dart
@@ -1299,6 +1252,8 @@ abstract class Api {
 ```
 
 **Dart usage:**
+  
+**Dart 用法:**
 
 <?code-excerpt "lib/use_pigeon.dart (UseApi)"?>
 ```dart

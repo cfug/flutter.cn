@@ -5,5 +5,5 @@
       | sort: 'title' %}
 
 {% for recipe in recipes %}
-- [{{ recipe.title }}]({{ site.url }}{{ recipe.url }})
+- [{{ recipe.title }}]({{ site.main-url }}{{ recipe.url }})
 {% endfor %}

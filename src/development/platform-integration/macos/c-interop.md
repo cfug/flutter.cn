@@ -29,7 +29,7 @@ Flutter 移动版可以使用 [dart:ffi][] 库来调用本地的 C API。
 
   本文描述的是在 macOS 桌面端应用程序中使用 `dart:ffi` 库。
   你可以阅读 [在 Android 中使用 dart:ffi 调用本地代码][android-ffi]
-  或 [在 macOS 中使用 dart:ffi 调用本地代码][macos-ffi]。
+  或 [在 iOS 中使用 dart:ffi 调用本地代码][ios-ffi]。
   Web 插件暂不支持调用本地代码。
 
 {{site.alert.end}}

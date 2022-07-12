@@ -6,6 +6,14 @@ description: Learn how to host native Android and iOS views in your Flutter app 
 description: 学习如何在 Flutter 应用中使用集成平台视图托管您的原生 Android 和 iOS 视图。
 ---
 
+本页面内容已根据平台分为几个页面，并将在后期移除，请根据需要导航至不同平台：
+- [托管您的原生 Android 视图][Hosting native Android views]
+- [托管您的原生 iOS 视图][Hosting native iOS views]
+
+[Hosting native Android views]: {{site.url}}/development/platform-integration/android/platform-views
+[Hosting native iOS views]: {{site.url}}/development/platform-integration/ios/platform-views
+
+{% comment %}
 <?code-excerpt path-base="development/platform_integration"?>
 
 Platform views allow you to embed native views in a Flutter app, so
@@ -993,3 +1001,5 @@ For more information, see:
 [`TextureLayer`]: {{site.api}}/flutter/rendering/TextureLayer-class.html
 [`TextureRegistry`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html
 [version 1.22.2]: {{site.repo.flutter}}/wiki/Hotfixes-to-the-Stable-Channel#1222--october-16-2020
+
+{% endcomment %}

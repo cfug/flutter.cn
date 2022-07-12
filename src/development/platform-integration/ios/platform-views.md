@@ -1,7 +1,10 @@
 ---
 title: Hosting native iOS views in your Flutter app with Platform Views
+title: "在 Flutter 应用中使用集成平台视图托管您的原生 iOS 视图"
 short-title: iOS platform-views
+short-title: iOS 平台视图
 description: Learn how to host native iOS views in your Flutter app with Platform Views.
+description: 学习如何在 Flutter 应用中使用集成平台视图托管您的原生  iOS 视图。
 ---
 
 <?code-excerpt path-base="development/platform_integration"?>
@@ -10,16 +13,28 @@ Platform views allow you to embed native views in a Flutter app,
 so you can apply transforms, clips, and opacity to the native view
 from Dart.
 
+集成平台视图 (后称为平台视图) 允许将原生视图嵌入到 Flutter 应用中，
+所以您可以通过 Dart 将变换、裁剪和不透明度等效果应用到原生视图。
+
 This allows you, for example, to use the native
 Google Maps from the Android and iOS SDKs
 directly inside your Flutter app.
 
+例如，这使您可以通过使用平台视图直接在 Flutter 应用内部
+使用 Android 和 iOS SDK 中的 Google Maps。
+
 {{site.alert.note}}
+
   This page discusses how to host your own native views
   within a Flutter app.
   If you'd like to embed native Android views
   in your Flutter app,
   see [Hosting native Android views][].
+
+  本篇文档讨论了如何在您的 Flutter 应用中托管您的原生视图。
+  如果你想了解如何嵌入到 iOS 视图中，阅读这篇文档：
+  [在 Flutter 应用中使用集成平台视图托管您的原生 Android 视图][Hosting native Android views]。
+
 {{site.alert.end}}
 
 [Hosting native Android views]: {{site.url}}/development/platform-integration/android/platform-views
@@ -29,20 +44,36 @@ iOS only uses Hybrid composition,
 which means that the native
 `UIView` is appended to the view hierarchy.
 
+iOS 只支持混合集成模式，
+这意味着原生的 `UIView` 会被加入视图层级中。
+
 To create a platform view on iOS,
 use the following instructions:
 
+要在 iOS 中创建平台视图，需要如下步骤：
+
 ### On the Dart side
+
+### 在 Dart 端
 
 On the Dart side, create a `Widget`
 and add the following build implementation,
 as shown in the following steps.
 
+在 Dart 端，创建一个 `Widget`
+并添加如下的实现，具体如下：
+
 In your Dart file, for example
 do the following in `native_view_example.dart`:
 
+在 Dart 文件中，例如 `native_view_example.dart`，
+请执行下列操作：
+
 <ol markdown="1">
-<li markdown="1">Add the following imports:
+<li markdown="1">
+Add the following imports:
+
+添加如下导入代码：
 
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (Import)"?>
 ```dart
@@ -90,7 +121,10 @@ class TogetherWidget extends StatelessWidget {
 ```
 </li>
 
-<li markdown="1">Implement a `build()` method:
+<li markdown="1">
+Implement a `build()` method:
+
+实现 `build()` 方法：
 
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
 ```dart
@@ -114,11 +148,17 @@ Widget build(BuildContext context) {
 For more information, see the API docs for:
 [`UIKitView`][].
 
+更多信息，请查看 API 文档：[`UIKitView`][]。
+
 [`UIKitView`]: {{site.api}}/flutter/widgets/UiKitView-class.html
 
 ### On the platform side
 
+### 在平台端
+
 On the platform side, you use the either Swift or Objective-C:
+
+在平台端，您可以使用 Swift 或是 Objective-C：
 
 {% samplecode ios-platform-views %}
 {% sample Swift %}
@@ -127,6 +167,10 @@ Implement the factory and the platform view.
 The `FLNativeViewFactory` creates the platform view,
 and the platform view provides a reference to the `UIView`.
 For example, `FLNativeView.swift`:
+
+实现工厂和平台视图。
+`FLNativeViewFactory` 创建一个关联了 `UIView` 的平台视图。
+举个例子，`FLNativeView.swift`：
 
 ```swift
 import Flutter
@@ -187,8 +231,14 @@ class FLNativeView: NSObject, FlutterPlatformView {
 Finally, register the platform view.
 This can be done in an app or a plugin.
 
+最后，注册这个平台视图。
+这一步可以在应用中，也可以在插件中。
+
 For app registration,
 modify the App's `AppDelegate.swift`:
+
+要在应用中进行注册，修改应用中的
+`AppDelegate.swift`:
 
 ```swift
 import Flutter
@@ -217,6 +267,9 @@ For plugin registration,
 modify the plugin's main file
 (for example, `FLPlugin.swift`):
 
+要在插件中进行注册，修改插件的主类
+(例如 `FLPlugin.swift`):
+
 ```swift
 import Flutter
 import UIKit
@@ -233,6 +286,9 @@ class FLPlugin: NSObject, FlutterPlugin {
 
 Add the headers for the factory and the platform view.
 For example, `FLNativeView.h`:
+
+在工厂类和平台视图的文件头部添加以下内容。
+用 `FLNativeView.h` 举例：
 
 ```objc
 #import <Flutter/Flutter.h>
@@ -256,6 +312,10 @@ Implement the factory and the platform view.
 The `FLNativeViewFactory` creates the platform view,
 and the platform view provides a reference to the
 `UIView`. For example, `FLNativeView.m`:
+
+实现工厂类和平台视图。
+`FLNativeViewFactory` 创建一个关联了 `UIView` 的平台视图。
+用 `FLNativeView.m` 举例：
 
 ```objc
 #import "FLNativeView.h"
@@ -307,8 +367,14 @@ and the platform view provides a reference to the
 Finally, register the platform view.
 This can be done in an app or a plugin.
 
+最后，注册这个平台视图。
+这一步可以在应用中，也可以在插件中。
+
 For app registration,
 modify the App's `AppDelegate.m`:
+
+要在应用中进行注册，
+修改应用中的 `AppDelegate.m`：
 
 ```objc
 #import "AppDelegate.h"
@@ -339,6 +405,9 @@ For plugin registration,
 modify the main plugin file
 (for example, `FLPlugin.m`):
 
+要在插件中进行注册，修改插件主文件
+(例如 `FLPlugin.m`):
+
 ```objc
 #import <Flutter/Flutter.h>
 #import "FLNativeView.h"
@@ -361,6 +430,8 @@ modify the main plugin file
 
 For more information, see the API docs for:
 
+更多信息，请查看 API 文档：
+
 * [`FlutterPlatformViewFactory`][]
 * [`FlutterPlatformView`][]
 * [`PlatformView`][]
@@ -371,9 +442,15 @@ For more information, see the API docs for:
 
 ## Putting it together
 
+## 整合起来
+
 When implementing the `build()` method in Dart,
 you can use [`defaultTargetPlatform`][]
 to detect the platform, and decide what widget to use:
+
+在 Dart 中实现 `build()` 方法时，
+您可以使用 [`defaultTargetPlatform`][] 
+来检测当前的平台，并且决定如何使用这个 widget：
 
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (TogetherWidget)"?>
 ```dart

@@ -4,13 +4,13 @@
 
 Platform views in Flutter come with performance trade-offs.
 
-在 Flutter 中使用平台视图时，性能会有所折衷。
+在 Flutter 中使用平台视图时，性能会有所取舍。
 
 For example, in a typical Flutter app, the Flutter UI is composed
 on a dedicated raster thread. This allows Flutter apps to be fast,
 as the main platform thread is rarely blocked.
 
-例如，在典型的 Flutter 应用中，Flutter UI 是在专用栅格线程上组成的。
+例如，在典型的 Flutter 应用中，Flutter 的 UI 是专门在 raster 线程上合成的。
 由于平台的主线程很少被阻塞，因此 Flutter 应用程序可以快速运行。
 
 While a platform view is rendered with Hybrid composition,

@@ -38,7 +38,8 @@ any web server.
 并使用 Dart 的优化过的 JavaScript 编译器将 Flutter 核心与框架，
 同你的应用程序一起编译成一个可以部署到任何 Web 服务器的简化源文件。
 
-While you can do a lot on the web, Flutter’s web support is most valuable in the
+While you can do a lot on the web,
+Flutter’s web support is most valuable in the
 following scenarios:
 
 **A [Progressive Web Application][] built with Flutter**

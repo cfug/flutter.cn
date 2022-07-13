@@ -9,7 +9,7 @@ keywords: Flutter Desktop, Flutter 桌面版
 ---
 
 Flutter provides support for compiling
- a native Windows, macOS, or Linux desktop app.
+a native Windows, macOS, or Linux desktop app.
 Flutter's desktop support also extends to plugins&mdash;you
 can install existing plugins that support the Windows,
 macOS, or Linux platforms, or you can create your own.
@@ -18,12 +18,41 @@ macOS, or Linux platforms, or you can create your own.
 Flutter 的桌面支持也允许插件拓展&mdash;
 你可以使用已经支持了 Windows、macOS 或 Linux 平台的插件，或者创建你自己的插件来实现功能。
 
+{{site.alert.note}}
+
+  This page covers developing apps for all desktop
+  platforms. Once you've read this, you can dive into
+  specific platform information at the following links:
+
+  本页面包含了所有桌面平台的应用开发内容。
+  你阅读之后可以在以下链接中深入查看特定平台的内容。
+
+  * [Building Windows apps with Flutter][]
+
+    [通过 Flutter 开发 Windows 应用][Building Windows apps with Flutter]
+
+  * [Building macOS apps with Flutter][]
+
+    [通过 Flutter 开发 macOS 应用][Building Windows apps with Flutter]
+
+  * [Building Linux apps with Flutter][]
+
+    [通过 Flutter 开发 Linux 应用][Building Windows apps with Flutter]
+
+{{site.alert.end}}
+
+[Building Windows apps with Flutter]: {{site.url}}/development/platform-integration/windows/building
+[Building macOS apps with Flutter]: {{site.url}}/development/platform-integration/macos/building
+[Building Linux apps with Flutter]: {{site.url}}/development/platform-integration/linux/building
+
 ## Requirements
 
 ## 要求
 
-To compile a desktop application, you must build it **on** the targeted
-platform: build a Windows application on Windows, a macOS application on macOS,
+To compile a desktop application,
+you must build it **on** the targeted
+platform: build a Windows application on Windows,
+a macOS application on macOS,
 and a Linux application on Linux.
 
 要能够编译桌面应用，你必须 **在特定的平台** 上编译应用:
@@ -71,9 +100,11 @@ you need the following in addition to the Flutter SDK:
 
 要开发 Windows 桌面程序，除了 Flutter SDK，你还需要做以下准备:
 
-* [Visual Studio 2022][] When installing Visual Studio select the "Desktop
-  development with C++" workload, including all of its default components, to
-  install the necessary C++ toolchain and Windows SDK header files.
+* [Visual Studio 2022][] When installing Visual Studio,
+  select the "Desktop development with C++" workload,
+  including all of its default components,
+  to install the necessary C++ toolchain and
+  Windows SDK header files.
 
   [Visual Studio 2022][] 在安装 Visual Studio 时，
   你需要选择「使用 C++ 的桌面开发」，包括其所有默认组件，
@@ -172,15 +203,19 @@ to create a new project with desktop support.
 
 ### 配置步骤
 
-On Windows, desktop support is enabled on Flutter 2.10 or higher.
-On macOS and Linux, desktop support is enabled on Flutter 3 or higher.
+On Windows, desktop support is enabled on
+Flutter 2.10 or higher. On macOS and Linux,
+desktop support is enabled on Flutter 3 or higher.
 
 Flutter 2.10 以及更高版本中加入了对 Windows 操作系统的桌面端支持。
 mac OS 和 Linux 的桌面端支持需要使用 Flutter 3 及更高版本。
 
-You might run `flutter doctor` to see if there are any unresolved issues.
-You should see a checkmark for each successfully configured area. It should look
-something like the following on Windows, with an entry for "develop for Windows":
+You might run `flutter doctor` to see if
+there are any unresolved issues.
+You should see a checkmark for each successfully
+configured area. It should look something like
+the following on Windows,
+with an entry for "develop for Windows":
 
 你也可以运行 `flutter doctor` 来查看是否存在未解决的问题。
 每一个成功的配置都有一个对勾，比如在 Windows 上你可能会看到如下内容:
@@ -214,9 +249,11 @@ Linux 平台，你可能会看到如下内容：
 [✓] Linux toolchain - develop for Linux desktop
 ```
 
-If `flutter doctor` finds problems or missing components for a platform that you
-don't want to develop for, you can ignore those warnings. Or you can disable the
-platform altogether using the `flutter config` command, for example:
+If `flutter doctor` finds problems or missing components
+for a platform that you don't want to develop for,
+you can ignore those warnings. Or you can disable the
+platform altogether using the `flutter config` command,
+for example:
 
 在执行 `flutter doctor` 命令时如果发现有不需要支持的平台的问题或者组件缺少报错等提示，
 你可以忽略这些警告，或者使用 `flutter config` 命令来禁用这个平台，比如：
@@ -225,8 +262,18 @@ platform altogether using the `flutter config` command, for example:
 $ flutter config --no-enable-ios
 ```
 
-After enabling desktop support, restart your IDE so that it can detect the new
-device.
+Other available flags:
+
+其他可用的参数：
+
+* `--no-enable-windows`
+* `--no-enable-linux`
+* `--no-enable-web`
+* `--no-enable-android`
+* `--no-enable-ios`
+
+After enabling desktop support,
+restart your IDE so that it can detect the new device.
 
 加入了桌面端支持之后，请重启你的 IDE，然后 IDE 就能检测到新的设备了。
 

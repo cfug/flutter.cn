@@ -128,12 +128,14 @@ Pub.dev 上的 [Flutter Favorites][] 页面列出了一系列编写应用时
 
 You can also browse the packages on pub.dev by filtering
 on [Android plugins][], [iOS plugins][], [web plugins][],
+[Linux plugins][], [Windows plugins][], [macOS plugins][],
 or any combination thereof.
 
 在 pub.dev 网站上同时可以过滤出适合
-[Android][Android plugins]、[iOS][iOS plugins] 或
-[Web][web plugins] 的插件，也可以通过复选框，
-过滤出组合结果（适配一个或者多个平台）。
+[Android][Android plugins]、[iOS][iOS plugins]、
+[Web][web plugins]、[Linux][Linux plugins]、
+[Windows][Windows plugins] 或 [macOS][macOS plugins]
+的插件，也可以通过复选框，过滤出组合结果（适配一个或者多个平台）。
 
 ### Adding a package dependency to an app
 
@@ -694,7 +696,9 @@ To use this plugin:
 [`http`]: {{site.url}}/cookbook/networking/fetch-data
 [Installing tab]: {{site.pub-pkg}}/css_colors/install
 [iOS plugins]: {{site.pub}}/flutter/packages?platform=ios
+[Linux plugins]: {{site.pub-pkg}}?q=platform%3Alinux
 [lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
+[macOS plugins]: {{site.pub-pkg}}?q=platform%3Amacos
 [Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
 [package versioning guide]: {{site.dart-site}}/tools/pub/versioning
 [pub.dev]: {{site.pub}}
@@ -702,3 +706,4 @@ To use this plugin:
 [`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
 [version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
 [web plugins]: {{site.pub}}/flutter/packages?platform=web
+[Windows plugins]: {{site.pub-pkg}}?q=platform%3Awindows

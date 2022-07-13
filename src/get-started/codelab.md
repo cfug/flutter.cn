@@ -41,7 +41,7 @@ check out the following workshop:
 
 <iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=846249495&bvid=BV1n54y1H7dZ&cid=354773704&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-{% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
+{% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/main' -%}
 
 <img src="/assets/images/docs/get-started/startup-namer-part-1.gif" alt="The app that you'll be building" class='site-image-right'>
 
@@ -203,7 +203,7 @@ and [Write your first Flutter app on the web][codelab-web].
 
 Also, Flutter apps can compile for desktop.
 You should see your operating system listed
-in your IDE under **devices**, 
+in your IDE under **devices**,
 for example: **Windows (desktop)**,
 or at the command line using `flutter devices`.
 For more information on building apps for desktop,
@@ -346,7 +346,7 @@ where the Dart code lives.
   that is standard on mobile and the web.
   Flutter offers a rich set of Material widgets.  
   It's a good idea to have a `uses-material-design: true` entry
-  in the `flutter` section of your `pubspec.yaml` file. 
+  in the `flutter` section of your `pubspec.yaml` file.
   This will allow you to use more features of Material,
   such as their set of predefined [Icons][].
 
@@ -421,7 +421,7 @@ as well as many other open source packages, on [pub.dev][].
     Downloading english_words 4.0.0...
     Changed 1 dependency!
     ```
- 
+
     The `pubspec.yaml` file manages the assets and dependencies
     for a Flutter app. In `pubspec.yaml`, you will see
     that the `english_words` dependency has been added:
@@ -435,7 +435,7 @@ as well as many other open source packages, on [pub.dev][].
     ```diff
     --- step1_base/pubspec.yaml
     +++ step2_use_package/pubspec.yaml
-    @@ -9,4 +9,5 @@
+    @@ -23,4 +23,5 @@
      dependencies:
        flutter:
          sdk: flutter
@@ -789,8 +789,8 @@ lazily, on demand.
       }
     ```
 
-    Next, you'll add a `ListView` widget to the
-    `_RandomWordsState` class with the `ListView.builder` constructor. 
+ 2. Next, you'll add a `ListView` widget to the
+    `_RandomWordsState` class with the `ListView.builder` constructor.
     This method creates the `ListView` that displays the suggested word pairing.
 
     接下来，我们将向 `_RandomWordsState` 类添加一个 `_buildSuggestions()` 方法，
@@ -830,6 +830,7 @@ lazily, on demand.
           }
           return Text(_suggestions[index].asPascalCase);
         },
+      );
     ```
 
     {:.numbered-code-notes}
@@ -863,7 +864,7 @@ lazily, on demand.
         如果是建议列表中最后一个单词对，接着再生成 10 个单词对，然后添加到建议列表。
 
     The `ListView.builder` constructor creates and displays
-    a `Text` widget once per word pairing. 
+    a `Text` widget once per word pairing.
     In the next step, you'll instead return each new pair as a `ListTile`,
     which allows you to make the rows more attractive in the next step.
 
@@ -886,7 +887,7 @@ lazily, on demand.
         ),
       );
     ```
-    
+
     A `ListTile` is a fixed height row that contains text
     as well as leading or trailing icons or other widgets.
 

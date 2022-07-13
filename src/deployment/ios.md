@@ -145,8 +145,8 @@ Next, you'll register your app on App Store Connect:
 
    在基础信息部分，选择你在前一步注册的套装 ID。
 
-For a detailed overview,
-see [Add an app to your account][appstoreconnect_guide_register].
+For a detailed overview, see
+[Add an app to your account][appstoreconnect_guide_register].
 
 想要获取更多信息，可以看这个帮助页面 [添加 App 至您的帐户][appstoreconnect_guide_register_cn]。
 

@@ -12,10 +12,9 @@ Flutter 的 codelabs 是一份为新手准备的入门指南。一些 codelabs �
 DartPad&mdash;上，这意味着你不需要下载任何东西就能够轻松学习。
 
 Flutter workshops are similar to the codelabs,
-but are instructor led and always use DartPad. The
-provided workshop link takes you to the relevant YouTube
-video, which tells you where to find the associated
-DartPad link.
+but are instructor led and always use DartPad.
+The provided workshop link takes you to the relevant YouTube video,
+which tells you where to find the associated DartPad link.
 
 Flutter workshops 与 codelabs 类似，
 但由讲师指导并始终使用 DartPad。
@@ -25,17 +24,20 @@ workshop 链接也会提供给你相关的 YouTube 视频，
 {{site.alert.secondary}}
 
   **New workshops for Google I/O!**
-  Our GDEs have created new Flutter workshops!
-  For more information, check out
-  the [Flutter community blog][].
+  You might want to check out the workshops
+  created by our Google Developer Experts (GDEs).
+  You can find them on the [Flutter community blog][].
 
   **Google I/O 大会更新了一批新的 Flutter workshops**
-  来自全球的 Flutter GDE 们更新了一批新的 Flutter workshops，
-  更多信息，请参 [考这篇博文][Flutter community blog]。
+  或许你想要看看由 Google 开发者专家 (GDE) 编写的代码实践教程 (workshop)。
+  你可以在 [Flutter 社区博客][Flutter community blog] 中找到它们。
+  或者查看 [社区教程][] 中的文章了解如何《[使用 DartPad 制作代码实践][]》。
 
 {{site.alert.end}}
 
-[Flutter community blog]: {{site.medium}}/@flutter_community/622b52f70173
+[Flutter community blog]: {{site.medium}}/flutter-community/dartpad-workshops-from-flutter-gdes-622b52f70173
+[社区教程]: {{site.main-url}}/community/tutorials/
+[使用 DartPad 制作代码实践]: {{site.main-url}}/community/tutorials/how-to-use-dartpad-workshop
 
 ## Good for beginners
 
@@ -190,7 +192,7 @@ like layout and animations:
   了解如何使用 Material [animations] [] package 为名为
   Reply 的 Material 应用添加预构建的过渡。
 
-* [Take your Flutter app from boring to beautiful][] **NEW**<br>
+* [Take your Flutter app from boring to beautiful][]<br>
   Learn how to use some of the features in Material 3
   to make your app more beautiful *and* more responsive.
 

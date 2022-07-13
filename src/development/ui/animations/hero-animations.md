@@ -252,26 +252,6 @@ Hero 动画需要使用两个 [`Hero`][] widgets 来实现：
 一个用来在原页面中描述 widget，另一个在目标页面中描述 widget。
 从用户角度来说，hero 似乎是分享的，只有程序员需要了解实施细节。
 
-{{site.alert.secondary}}
-
-  **Note about dialogs:**
-
-  **有关对话框的注意事项：**  
-
-  Heroes fly from one `PageRoute` to another. Dialogs
-  (displayed with `showDialog()`, for example), use `PopupRoute`s,
-  which are not `PageRoute`s.  At least for now,
-  you can't animate a hero to a `Dialog`.
-  For further developments (and a possible workaround),
-  [watch this issue][].
-
-  Heroes 从一个页面飞至另一个。对话框（例如，显示 `showDialog()`），
-  使用 `PopupRoutes`，而不是 `PageRoutes`。
-  至少现在不是，您无法在对话框中使用 hero 动画。更多内容（和可能的替代方法），
-  [请参考这里][watch this issue]。
-
-{{site.alert.end}}
-
 Hero animation code has the following structure:
 
 Hero 动画代码有如下结构：

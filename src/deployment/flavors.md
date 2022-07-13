@@ -9,6 +9,15 @@ tags: 发布应用,跨平台,双端
 keywords: 配置flavor
 ---
 
+{% comment %}
+Eventually, we should actually include instructions,
+but by platform and we can then move the platform-specific
+instructions to /development/platform-integration/macos
+or ios or android, etc.
+sz: Yes, I've already asked Shamira (who will be working
+on the new docs), to plan for multiple pages.
+{% endcomment %}
+
 Do you need to set up product flavors for different development
 environments or release types?
 The community has written some articles and packages you might find useful.
@@ -20,11 +29,12 @@ These articles address flavors for both iOS and Android.
 * [Creating flavors of a Flutter app][]
 * [Flavoring Flutter][]
 * [Flutter Ready to Go][]
-* [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor][]
+* [Build flavors in Flutter (Android and iOS)
+  with different Firebase projects per flavor][]
 * [Flutter 1.17 — no more Flavors, no more iOS Schemas.
-   Command argument that changes everything][]
+  Command argument that changes everything][]
 * [Multi-environment Flutter Projects with Flavors][]
-   (including support for web, Firebase and FlutterFire CLI)
+  (including support for web, Firebase and FlutterFire CLI)
 
 The following packages are listed alphabetically:
 

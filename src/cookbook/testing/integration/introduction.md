@@ -302,7 +302,7 @@ To get started testing in a web browser, [Download ChromeDriver][].
 在网页浏览器里开始进行集成测试，首先要下载 [ChromeDriver][Download ChromeDriver]。
 
 Next, create a new directory named `test_driver` containing a new file
-named`integration_test.dart`:
+named `integration_test.dart`:
 
 接下来，新建一个文件夹，命名为 `test_driver`，并包含一个新的文件，命名为
 `integration_test.dart`。
@@ -314,9 +314,9 @@ import 'package:integration_test/integration_test_driver.dart';
 Future<void> main() => integrationDriver();
 ```
 
-Launch WebDriver, for example: 
+Launch `chromedriver` as follows: 
 
-运行 WebDriver，执行命令比如：
+运行 `chromedriver`，执行如下命令：
 
 ```terminal
 chromedriver --port=4444
@@ -325,6 +325,19 @@ chromedriver --port=4444
 From the root of the project, run the following command:
 
 在工程的根目录下，运行如下命令：
+
+```terminal
+flutter drive \
+  --driver=test_driver/integration_test.dart \
+  --target=integration_test/app_test.dart \
+  -d chrome
+```
+
+For a headless testing experience, you can also run `flutter drive` 
+with `web-server` as the target device identifier as follows:
+
+如需 Headless 测试体验，你同样可以运行 `flutter drive` 命令，
+并加入 `web-server` 作为目标设备，参考如下命令：
 
 ```terminal
 flutter drive \

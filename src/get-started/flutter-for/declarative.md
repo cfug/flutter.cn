@@ -9,6 +9,8 @@ tags: Flutter教程,Flutter起步,Flutter入门
 keywords: 概览,声明式编程,响应式编程,UI框架
 ---
 
+<?code-excerpt path-base="get-started/flutter-for/declarative"?>
+
 _This introduction describes the conceptual difference between the
 declarative style used by Flutter, and the imperative style used by
 many other UI frameworks._
@@ -85,13 +87,13 @@ on StatefulWidgets in Flutter) and constructs a new Widget subtree.
 （在 Flutter 中最常见的方法是在 `StatefulWidget` 上调用 `setState()`）
 并构造一个新的 Widget 子树。
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (declarative)"?>
 ```dart
 // Declarative style
 return ViewB(
   color: red,
-  child: ViewC(...),
-)
+  child: const ViewC(),
+);
 ```
 
 Here, rather than mutating an old instance `b` when the UI changes,

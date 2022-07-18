@@ -5,6 +5,8 @@ description: How to create deferred components for improved download performance
 description: 如何使用延迟组件来提高下载性能
 ---
 
+<?code-excerpt path-base="perf/deferred_components"?>
+
 ## Introduction
 
 ## 简介
@@ -149,11 +151,12 @@ To support `SplitCompat`, there are three methods
 要支持 `SplitCompat`，有三种方法（详见 [Android docs][]），其中任何一种都是有效的：
 
 <ul markdown="1">
-<li markdown="1"><p markdown="1">Make your application class extend
-    `SplitCompatApplication`:</p><p markdown="1">让你的 application 类继承 `SplitCompatApplication`：</p>
+<li markdown="1">Make your application class extend
+    `SplitCompatApplication`:
 
-<!-- skip -->
-```dart
+    让你的 application 类继承 `SplitCompatApplication`：
+
+```java
 public class MyApplication extends SplitCompatApplication {
     ...
 }
@@ -163,8 +166,7 @@ public class MyApplication extends SplitCompatApplication {
 <li markdown="1"><p markdown="1">Call `SplitCompat.install(this);`
     in the `attachBaseContext()` method:</p><p markdown="1">在 `attachBaseContext()` 中调用 `SplitCompat.install(this);`：</p>
 
-<!-- skip -->
-```dart
+```java
 @Override
 protected void attachBaseContext(Context base) {
     super.attachBaseContext(base);
@@ -198,8 +200,7 @@ to your app initialization:
 嵌入层依赖注入的 `DeferredComponentManager` 实例来处理延迟组件的安装请求。
 通过在应用程序的初始流程中添加以下代码，将 `PlayStoreDeferredComponentManager` 添加到 Flutter 嵌入层中：
 
-<!-- skip -->
-```dart
+```java
 import io.flutter.embedding.engine.dynamicfeatures.PlayStoreDeferredComponentManager;
 import io.flutter.FlutterInjector;
 ... 
@@ -263,18 +264,18 @@ guarding usages of deferred code behind `loadLibrary()`
     for the purposes of this guide,
     create a simple box as a stand-in.
     To create a simple blue box widget,
-    create `box.dart` with the following contents:</p><p markdown="1">创建新的 Dart 库。例如，创建一个可以在运行时下载的 `DeferredBox` widget。
+    create `box.dart` with the following contents:</p>
+    <p markdown="1">创建新的 Dart 库。例如，创建一个可以在运行时下载的 `DeferredBox` widget。
     这个 widget 可以是任意复杂的，本指南使用以下内容创建了一个简单的框。</p>
     
-<!-- skip -->
+<?code-excerpt "lib/box.dart"?>
 ```dart
 // box.dart
-
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 /// A simple blue 30x30 box.
 class DeferredBox extends StatelessWidget {
-  DeferredBox() {}
+  const DeferredBox({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -304,19 +305,20 @@ class DeferredBox extends StatelessWidget {
     当 `Future` 完成时，会返回 `DeferredBox`。
     `SomeWidget` 便可在应用程序中正常使用，在成功加载之前不会尝试访问延迟的 Dart 代码。</p>
     
-<!-- skip -->
+<?code-excerpt "lib/use_deferred_box.dart"?>
 ```dart
+import 'package:flutter/material.dart';
 import 'box.dart' deferred as box;
 
-// ...
-
 class SomeWidget extends StatefulWidget {
+  const SomeWidget({super.key});
+
   @override
-  _SomeWidgetState createState() => _SomeWidgetState();
+  State<SomeWidget> createState() => _SomeWidgetState();
 }
 
 class _SomeWidgetState extends State<SomeWidget> {
-  Future<void> _libraryFuture;
+  late Future<void> _libraryFuture;
 
   @override
   void initState() {
@@ -328,19 +330,18 @@ class _SomeWidgetState extends State<SomeWidget> {
   Widget build(BuildContext context) {
     return FutureBuilder<void>(
       future: _libraryFuture,
-      builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+      builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasError) {
             return Text('Error: ${snapshot.error}');
           }
           return box.DeferredBox();
         }
-        return CircularProgressIndicator();
+        return const CircularProgressIndicator();
       },
     );
   }
 }
-// ...
 ```
 
 The `loadLibrary()` function returns a `Future<void>`

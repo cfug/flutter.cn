@@ -503,7 +503,7 @@ class ExampleCupertinoDownloadButton extends StatefulWidget {
   const ExampleCupertinoDownloadButton({super.key});
 
   @override
-  _ExampleCupertinoDownloadButtonState createState() =>
+  State<ExampleCupertinoDownloadButton> createState() =>
       _ExampleCupertinoDownloadButtonState();
 }
 

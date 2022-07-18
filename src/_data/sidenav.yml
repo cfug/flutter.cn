@@ -106,7 +106,7 @@
           children:
             - title: 使用 Actions 和 shortcuts
               permalink: /docs/development/ui/advanced/actions_and_shortcuts
-            - title: 键盘焦点
+            - title: 键盘焦点系统
               permalink: /docs/development/ui/advanced/focus
             - title: 手势
               permalink: /docs/development/ui/advanced/gestures
@@ -290,7 +290,7 @@
                 - title: 1.5.4
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
                 - title: 1.2.1
-                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1.md
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1
         - title: Pubspec 文件的 Flutter 部分
           permalink: /docs/development/tools/pubspec
         - title: 热重载 (Hot reload)

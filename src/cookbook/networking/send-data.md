@@ -292,7 +292,7 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  _MyAppState createState() {
+  State<MyApp> createState() {
     return _MyAppState();
   }
 }

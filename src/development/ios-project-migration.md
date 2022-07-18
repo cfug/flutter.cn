@@ -24,7 +24,7 @@ iOS devices and simulators:][errors]
 
 你需要一台安装了 Xcode 的 Mac 来开发 iOS 的 Flutter 应用。
 Xcode 11.4 变更了很多库的链接和集成方式，你可能会在
-[iOS 真机和模拟器之前切换时遇到一下两个错误][errors]：
+[iOS 真机和模拟器之间切换时遇到以下两个错误][errors]：
 
 ```
 Building for iOS, but the linked and embedded framework 'App.framework' was built for iOS Simulator.
@@ -119,7 +119,7 @@ add `$(inherited) -framework Flutter`.
   to improve compilation time. Flutter projects created after v1.15.4 will not
   contain this line.
 
-  如果你的项目使用了 Flutter 插件，你可以删除从 `ios/Podfile` 中
+  如果你的项目使用了 Flutter 插件，你可以从 `ios/Podfile` 中
   删除 `install! 'cocoapods', :disable_input_output_paths => true`
   来改善构建时间。
   自 Flutter 1.15.4 版本以后创建的项目不会包含这一行。

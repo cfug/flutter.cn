@@ -759,7 +759,7 @@ Here is the `hello_windows` example above modified for a
 Dart-only implementation:
 
 如先前描述，通常插件会使用第二种语言，实现对应平台的功能。
-然而，在某些场景下，部分平台可能会完全使用 Dart 进行实现（例如使用 [FFI][]）。
+然而，在某些场景下，部分平台可能会完全使用 Dart 进行实现（例如使用 FFI）。
 若需要仅 Dart 的平台实现，你可以将 pubspec.yaml 里的
 `pluginClass` 替换为 `dartPluginClass`。
 下面是 `hello_windows` 示例替换为仅 Dart 实现的代码：

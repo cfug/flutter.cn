@@ -740,11 +740,20 @@ In many cases, non-web platform implementations only use the
 platform-specific implementation language, as shown above. However,
 platform implementations can also use platform-specific Dart as well.
 
+在很多场景中，非 web 平台的实现仅仅使用了上述的平台特定语言。
+然而，Dart 也是平台特定的语言之一。
+
 {{site.alert.note}}
+
   The examples below only apply to non-web platforms. Web
   plugin implementations are always written in Dart, and use
   `pluginClass` and `fileName` for their Dart implementations
   as shown above.
+
+  下方的例子仅适用于非 web 平台。
+  Web 平台的插件是用 Dart 编写的，
+  通过 `pluginClass` 和 `fileName` 来指定实现。
+
 {{site.alert.end}}
 
 #### Dart-only platform implementations

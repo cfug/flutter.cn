@@ -32,7 +32,7 @@ Additionally, the [WorkManager] plugin enables persistent background processing
 that keeps tasks scheduled through app restarts and system reboots. 
 
 此外，[WorkManager][] 插件可以实现持久化的后台进程，
-应用重启和系统重启之后还可以继续执行计划过任务。
+应用和系统重启之后还可以继续执行计划任务。
 
 For more information and a geofencing example that uses background
 execution of Dart code, see the Medium article by Ben Konyi,

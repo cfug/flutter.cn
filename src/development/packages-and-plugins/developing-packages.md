@@ -809,9 +809,16 @@ Platform implementations can also use both Dart and a platform-specific
 language. For example, a plugin could use a different platform channel
 for each platform so that the channels can be customized per platform.
 
+平台实现可能同时会使用 Dart 以及某个特定平台的语言。
+例如，plugin 可能会在不同平台使用不同的 platform channel，
+这样 channel 就可以根据不同平台进行定制。
+
 A hybrid implementation uses both of the registration systems
 described above. Here is the `hello_windows` example above modified for a
 hybrid implementation:
+
+就和之前说的那样，混合实现将会使用多种注册方式。
+这里有一个使用混合实现的 `hello_windows` 样例:
 
 ```yaml
 flutter:
@@ -826,6 +833,9 @@ flutter:
 The Dart `HelloPluginWindows` class would use the `registerWith()`
 shown above for Dart-only implementations, while the C++ `HelloPlugin`
 class would be the same as in a C++-only implementation.
+
+Dart 类 `HelloPluginWindows` 会使用 `registerWith()` 方法做纯 Dart 的实现，
+`HelloPlugin` 类则用来做纯 C++ 代码的实现。
 
 ### Testing your plugin
 

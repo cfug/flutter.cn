@@ -28,7 +28,7 @@ callbacks and a callback dispatcher.
 你可以使用回调和回调调度器来设置 isolate，
 从而使应用被切换进后台时仍能执行一些业务。
 
-Additionally, the [WorkManager] plugin enables persistent background processing 
+Additionally, the [WorkManager][] plugin enables persistent background processing 
 that keeps tasks scheduled through app restarts and system reboots. 
 
 此外，[WorkManager][] 插件可以实现持久化的后台进程，

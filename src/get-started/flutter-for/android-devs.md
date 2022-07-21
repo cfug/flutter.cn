@@ -1224,7 +1224,7 @@ Isolates are true to their name, and cannot share memory
 
 `Isolate` 是独立执行的线程，不会和主执行内存堆分享内存。
 这意味着你无法访问主线程的变量，或者调用 `setState()` 更新 UI。
-不同于 Android isolate 如其名所示，
+与 Android 中线程的概念不同，isolate 如其名所示，
 它们无法分享内存（例如通过静态变量的形式）。
 
 The following example shows, in a simple isolate, how to share data back to

@@ -166,30 +166,25 @@ Navigate to your target's settings in Xcode:
 
 在 Xcode 中跳转到你的目标设置：
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
+1. Open the default Xcode workspace in your project by running
+   `open ios/Runner.xcworkspace` in a terminal window from your
+   Flutter project directory.
 
-   在 Xcode 中，打开你的 App 的 `ios` 目录中的 `Runner.xcworkspace`
+   在 Flutter 工程目录下运行命令 `open ios/Runner.xcworkspace`
+   打开默认的 Xcode workspace。
 
-1. To view your app's settings, select the **Runner** project in the Xcode
-   project navigator. Then, in the main view sidebar, select the **Runner**
-   target.
+1. To view your app's settings, select the **Runner** target in the
+   Xcode navigator.
 
-   想要看你的 app 设置，在 Xcode 的项目导航栏中选择 **Runner**
-
-1. Select the **General** tab.
-
-   选择 **General** tab
+   想要看你的 app 设置，在 Xcode 的项目导航栏中选择 **Runner**。
 
 Verify the most important settings.
 
 接下来，你需要验证最重要的配置：
 
-In the **Identity** section:
+In the **Identity** section of the **General** tab:
 
-在 **Identity** 部分：
-
-`Display Name`
-<br> The display name of your app.
+选择 **General** 标签页，在 **Identity** 部分：
 
 `Display Name`
 <br> The display name of your app.
@@ -203,7 +198,7 @@ In the **Identity** section:
 `Bundle Identifier`
 <br> 在 App Store Connect 注册的 App ID。
 
-In the **Signing & Capabilities** section:
+In the **Signing & Capabilities** tab:
 
 在 **Signing & Capabilities** 部分：
 
@@ -227,9 +222,9 @@ In the **Signing & Capabilities** section:
 <br> 选择关联到你注册的 Apple 开发者账户的团队。
 如果需要，选择 **Add Account...**, 然后更新选项。
 
-In the **Build Settings** section:
+In the **Deployment** section of the **Build Settings** tab:
 
-在 **Build Settings** 部分：
+在 **Build Settings** 标签页的 **Deployment** 部分：
 
 `iOS Deployment Target`
 <br> The minimum iOS version that your app supports.
@@ -245,7 +240,7 @@ Objective-C 或 Swift 代码，请将这里一并设置为相应所需的最高�
 The **General** tab of your project settings should resemble
 the following:
 
-你项目的 **General** tab 应该看起来像是这样的：
+你项目的 **General** 标签页应该看起来像是这样的：
 
 ![Xcode Project Settings]({{site.url}}/assets/images/docs/releaseguide/xcode_settings.png){:width="100%"}
 

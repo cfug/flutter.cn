@@ -12,6 +12,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="get-started/codelab_web"?>
+
 {{site.alert.tip}}
 
   This codelab walks you through writing your first Flutter
@@ -203,7 +205,7 @@ of the Flutter DevTools tooling.
 
 <li markdown="1"><t>The starting app is displayed in the following DartPad.</t><t>运行程序将在 DartPad 中显示。</t>
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart" replace="/\/\* //g;/ \*\///g;/_ignore_for_file/ignore_for_file/g"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 {$ begin main.dart $}
 import 'package:flutter/material.dart';
@@ -212,7 +214,7 @@ void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
   const SignUpApp();
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -225,7 +227,7 @@ class SignUpApp extends StatelessWidget {
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -244,7 +246,7 @@ class SignUpScreen extends StatelessWidget {
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm();
-  
+
   @override
   _SignUpFormState createState() => _SignUpFormState();
 }
@@ -263,10 +265,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
-          Text('Sign up', style: Theme
-              .of(context)
-              .textTheme
-              .headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headline4),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
@@ -290,11 +289,17 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.white;
+              foregroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+              backgroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.blue;
               }),
             ),
             onPressed: null,
@@ -308,7 +313,7 @@ class _SignUpFormState extends State<SignUpForm> {
 {$ end main.dart $}
 {$ begin test.dart $}
 // Avoid warning on "double _formProgress = 0;"
-// ignore_for_file: prefer_final_fields
+//ignore_for_file: prefer_final_fields
 {$ end test.dart $}
 ```
 
@@ -445,10 +450,11 @@ add the following class definition for the
 首先，在 `lib/main.dart` 文件中，在 `SignUpScreen` 类后面
 添加下面 `WelcomeScreen` widget 的定义类：
 
+<?code-excerpt "lib/step1.dart (WelcomeScreen)"?>
 ```dart
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -493,7 +499,7 @@ Change `onPressed: null` to the following:
 
 将 `onPressed: null` 改为以下内容：
 
-<!-- skip -->
+<?code-excerpt "lib/step1.dart (onPressed)"?>
 ```dart
 onPressed: _showWelcomeScreen,
 ```
@@ -510,7 +516,7 @@ add the following function:
 （未定义 `_showWelcomeScreen`）。
 在 `build()` 方法上方添加下面的方法：
 
-<!-- skip -->
+<?code-excerpt "lib/step1.dart (showWelcomeScreen)"?>
 ```dart
 void _showWelcomeScreen() {
   Navigator.of(context).pushNamed('/welcome');
@@ -527,9 +533,9 @@ add the following route below `'/'`:
 为新的页面添加跳转路由。在 `SignUpApp` 类的 `build()` 方法中，
 在 `'/'` 下面添加如下路由：
 
-<!-- skip -->
+<?code-excerpt "lib/step1.dart (WelcomeRoute)"?>
 ```dart
-'/welcome': (context) => WelcomeScreen(),
+'/welcome': (context) => const WelcomeScreen(),
 ```
 </li>
 
@@ -631,9 +637,8 @@ In the `_SignUpFormState` class, add a new method called
 添加一个用于更新进度 `_formProgress` 属性的方法。
 在 `_SignUpFormState` 类，添加一个名为 `_updateFormProgress()` 的新方法：
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (updateFormProgress)"?>
 ```dart
-...
 void _updateFormProgress() {
   var progress = 0.0;
   final controllers = [
@@ -652,7 +657,6 @@ void _updateFormProgress() {
     _formProgress = progress;
   });
 }
-...
 ```
 
 This method updates the `_formProgress` field based on the
@@ -668,18 +672,16 @@ In the `build()` method of the `_SignUpFormState` class,
 add a callback to the `Form` widget's `onChanged` argument.
 Add the code below marked as NEW:
 
-表单改变时调用 `_updateFormProgress()` 方法。<br>
+表单改变时调用 `_updateFormProgress` 方法。<br>
 在 `_SignUpFormState` 类的 `build()` 方法中，
 为 `Form` widget 的 `onChanged` 参数添加回调函数。
-添加的代码如下所示：
+注意注释为 NEW 的那行新添加的代码：
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (onChanged)"?>
 ```dart
-...
 return Form(
-  onChanged: _updateFormProgress,  // NEW
+  onChanged: _updateFormProgress, // NEW
   child: Column(
-...
 ```
 </li>
 
@@ -694,23 +696,27 @@ screen only when the form is completely filled in:
 点击 **Sign up** 按钮跳转到欢迎页面吗？
 现在，将它改成只有完成表单输入时才可以点击按钮跳转到欢迎页面。
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (onPressed)"?>
 ```dart
-...
 TextButton(
   style: ButtonStyle(
-    foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-      return states.contains(MaterialState.disabled) ? null : Colors.white;
+    foregroundColor: MaterialStateProperty.resolveWith(
+        (Set<MaterialState> states) {
+      return states.contains(MaterialState.disabled)
+          ? null
+          : Colors.white;
     }),
-    backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-      return states.contains(MaterialState.disabled) ? null : Colors.blue;
+    backgroundColor: MaterialStateProperty.resolveWith(
+        (Set<MaterialState> states) {
+      return states.contains(MaterialState.disabled)
+          ? null
+          : Colors.blue;
     }),
   ),
-  onPressed: _formProgress == 1 ? _showWelcomeScreen : null, // UPDATED
-  child: Text('Sign up'),
+  onPressed:
+      _formProgress == 1 ? _showWelcomeScreen : null, // UPDATED
+  child: const Text('Sign up'),
 ),
-...
-
 ```
 </li>
 
@@ -790,9 +796,9 @@ but becomes enabled when all three text fields contain
 
   最后一步显示欢迎页面的 Dart 语法如下所示:
 
-  <!-- skip -->
+  <?code-excerpt "lib/step2.dart (ternary)" replace="/, \/\/ UPDATED//g"?>
   ```dart
-  onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
+  _formProgress == 1 ? _showWelcomeScreen : null
   ```
   This is a Dart conditional assignment and has the syntax:
   `condition ? expression1 : expression2`.
@@ -966,13 +972,13 @@ scroll down to where `progress` is updated:
 设置断点。<br>
 在 Dart 代码中，向下拉找到被修改的 `progress`，如下所示：
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (forLoop)"?>
 ```dart
-    for (final controller in controllers) {
-      if (controller.value.text.isNotEmpty) {
-        progress += 1 / controllers.length;
-      }
-    }
+for (final controller in controllers) {
+  if (controller.value.text.isNotEmpty) {
+    progress += 1 / controllers.length;
+  }
+}
 ```
 
 Place a breakpoint on the line with the for loop by clicking to the
@@ -1074,7 +1080,7 @@ At the bottom of the file, add this widget:
 添加进度条动画效果 (`AnimatedProgressIndicator`)<br>
 在文件的下面，添加下面的 widget：
 
-<!--skip-->
+<?code-excerpt "lib/step3.dart (AnimatedProgressIndicator)"?>
 ```dart
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
@@ -1156,16 +1162,14 @@ with this new `AnimatedProgressIndicator`:
 然后，使用新的 `AnimatedProgressIndicator` widget 替换表单中的 `LinearProgressIndicator`
  widget，如下所示：
 
-<!--skip-->
+<?code-excerpt "lib/step3.dart (UseAnimatedProgressIndicator)"?>
 ```dart
-...
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          AnimatedProgressIndicator(value: _formProgress), // NEW
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
-          Padding(
-...
+child: Column(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    AnimatedProgressIndicator(value: _formProgress), // NEW
+    Text('Sign up', style: Theme.of(context).textTheme.headline4),
+    Padding(
 ```
 
 This widget uses an `AnimatedBuilder` to animate the
@@ -1191,7 +1195,7 @@ the animation works, and that clicking the
 
 ### 完整的示例
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
@@ -1199,7 +1203,7 @@ void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
   const SignUpApp();
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -1213,7 +1217,7 @@ class SignUpApp extends StatelessWidget {
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1232,7 +1236,7 @@ class SignUpScreen extends StatelessWidget {
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1310,11 +1314,17 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.white;
+              foregroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+              backgroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.blue;
               }),
             ),
             onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
@@ -1349,7 +1359,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 1200), 
+      duration: const Duration(milliseconds: 1200),
       vsync: this,
     );
 

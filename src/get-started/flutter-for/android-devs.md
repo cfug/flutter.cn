@@ -7,6 +7,8 @@ tags: Flutter教程,Flutter起步,Flutter入门
 keywords: Flutter Android,安卓,用Flutter开发Android
 ---
 
+<?code-excerpt path-base="get-started/flutter-for/android_devs"?>
+
 This document is meant for Android developers looking to apply their
 existing Android knowledge to build mobile apps with Flutter.
 If you understand the fundamentals of the Android framework then you
@@ -190,7 +192,7 @@ the `Text` widget you'll find that it subclasses `StatelessWidget`.
 `Text` Widget 是一个普通的 `StatelessWidget`。
 如果你查看 `Text` Widget 的实现，你会发现它继承自 `StatelessWidget`。
 
-<!-- skip -->
+<?code-excerpt "lib/text_widget.dart (TextWidget)" replace="/return const //g"?>
 ```dart
 Text(
   'I like Flutter!',
@@ -221,15 +223,16 @@ For example:
 
 例如：
 
-<!-- skip -->
+<?code-excerpt "lib/text_widget.dart (StatefulWidget)"?>
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -238,16 +241,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -265,13 +268,13 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: Center(child: Text(textToShow)),
       floatingActionButton: FloatingActionButton(
         onPressed: _updateText,
         tooltip: 'Update Text',
-        child: Icon(Icons.update),
+        child: const Icon(Icons.update),
       ),
     );
   }
@@ -290,27 +293,27 @@ with a widget tree.
 
 The following example shows how to display a simple widget with padding:
 
-以下示例展示了如何显示一个带有间距的简单 Widget：
+以下示例展示了如何显示一个带有间距的简单 widget：
 
-<!-- skip -->
+<?code-excerpt "lib/layout.dart (SimpleWidget)"?>
 ```dart
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Sample App'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.only(left: 20.0, right: 30.0),
-          ),
-          onPressed: () {},
-          child: Text('Hello'),
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('Sample App'),
+    ),
+    body: Center(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.only(left: 20.0, right: 30.0),
         ),
+        onPressed: () {},
+        child: const Text('Hello'),
       ),
-    );
-  }
+    ),
+  );
+}
 ```
 
 You can view some of the layouts that Flutter has to offer in the
@@ -340,16 +343,19 @@ For example, here is how you can toggle between two
 widgets when you click on a `FloatingActionButton`:
 
 例如，下面就是你可以如何在点击一个
-`FloatingActionButton` 时在两个 Widget 之间切换。
+`FloatingActionButton` 时在两个 widget 之间切换。
 
+<?code-excerpt "lib/layout.dart (ToggleWidget)"?>
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -358,16 +364,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -381,11 +387,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget _getToggleChild() {
     if (toggle) {
-      return Text('Toggle One');
+      return const Text('Toggle One');
     } else {
       return ElevatedButton(
         onPressed: () {},
-        child: Text('Toggle Two'),
+        child: const Text('Toggle Two'),
       );
     }
   }
@@ -394,7 +400,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: Center(
         child: _getToggleChild(),
@@ -402,7 +408,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _toggle,
         tooltip: 'Update Text',
-        child: Icon(Icons.update),
+        child: const Icon(Icons.update),
       ),
     );
   }
@@ -458,14 +464,16 @@ widget into a logo when you press the `FloatingActionButton`:
 下面的例子展示了如何实现一个点击 `FloatingActionButton` 时
 将一个 Widget 渐变为一个图标的 `FadeTransition`：
 
+<?code-excerpt "lib/animation.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(FadeAppTest());
+  runApp(const FadeAppTest());
 }
 
 class FadeAppTest extends StatelessWidget {
+  const FadeAppTest({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -474,16 +482,17 @@ class FadeAppTest extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyFadeTest(title: 'Fade Demo'),
+      home: const MyFadeTest(title: 'Fade Demo'),
     );
   }
 }
 
 class MyFadeTest extends StatefulWidget {
-  MyFadeTest({Key? key, required this.title}) : super(key: key);
+  const MyFadeTest({super.key, required this.title});
+
   final String title;
   @override
-  _MyFadeTest createState() => _MyFadeTest();
+  State<MyFadeTest> createState() => _MyFadeTest();
 }
 
 class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
@@ -512,7 +521,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       body: Center(
         child: FadeTransition(
           opacity: curve,
-          child: FlutterLogo(
+          child: const FlutterLogo(
             size: 100.0,
           ),
         ),
@@ -522,7 +531,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
         onPressed: () {
           controller.forward();
         },
-        child: Icon(Icons.brush),
+        child: const Icon(Icons.brush),
       ),
     );
   }
@@ -566,31 +575,40 @@ see Collin's answer on [Custom Paint][].
 如果想学习在 Flutter 中如何实现一个签名功能，
 可以查看 Collin 在 [Custom Paint][] 上的回答。
 
+<?code-excerpt "lib/canvas.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(home: DemoApp()));
+void main() => runApp(const MaterialApp(home: DemoApp()));
 
 class DemoApp extends StatelessWidget {
-  Widget build(BuildContext context) => Scaffold(body: Signature());
+  const DemoApp({super.key});
+
+  @override
+  Widget build(BuildContext context) => const Scaffold(body: Signature());
 }
 
 class Signature extends StatefulWidget {
+  const Signature({super.key});
+
+  @override
   SignatureState createState() => SignatureState();
 }
 
 class SignatureState extends State<Signature> {
   List<Offset?> _points = <Offset>[];
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onPanUpdate: (DragUpdateDetails details) {
+      onPanUpdate: (details) {
         setState(() {
           RenderBox? referenceBox = context.findRenderObject() as RenderBox;
-          Offset localPosition = referenceBox.globalToLocal(details.globalPosition);
+          Offset localPosition =
+              referenceBox.globalToLocal(details.globalPosition);
           _points = List.from(_points)..add(localPosition);
         });
       },
-      onPanEnd: (DragEndDetails details) => _points.add(null),
+      onPanEnd: (details) => _points.add(null),
       child: CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
@@ -602,18 +620,22 @@ class SignatureState extends State<Signature> {
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
   final List<Offset?> points;
+  @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 5.0;
     for (int i = 0; i < points.length - 1; i++) {
-      if (points[i] != null && points[i + 1] != null)
+      if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
+      }
     }
   }
 
-  bool shouldRepaint(SignaturePainter other) => other.points != points;
+  @override
+  bool shouldRepaint(SignaturePainter oldDelegate) =>
+      oldDelegate.points != points;
 }
 ```
 
@@ -645,15 +667,15 @@ the constructor? Create a CustomButton that composes a `ElevatedButton` with
 a label, rather than by extending `ElevatedButton`:
 
 举例来说，你该如何创建一个在构造器接收标签参数的 `CustomButton`？
-你要组合 `RaisedButton` 和一个标签来创建自定义按钮，
-而不是继承 `RaisedButton`：
+你要组合 `ElevatedButton` 和一个标签来创建自定义按钮，
+而不是继承 `ElevatedButton`：
 
-<!-- skip -->
+<?code-excerpt "lib/custom.dart (CustomButton)"?>
 ```dart
 class CustomButton extends StatelessWidget {
   final String label;
 
-  CustomButton(this.label);
+  const CustomButton(this.label, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -669,12 +691,12 @@ Then use `CustomButton`, just as you'd use any other Flutter widget:
 
 然后就像使用其它 Flutter Widget 一样使用 `CustomButton`：
 
-<!-- skip -->
+<?code-excerpt "lib/custom.dart (UseCustomButton)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Center(
-    child: CustomButton("Hello"),
+  return const Center(
+    child: CustomButton('Hello'),
   );
 }
 ```
@@ -739,17 +761,17 @@ The following example builds a Map.
 
 下面的例子创建了一个 Map。
 
-<!-- skip -->
+<?code-excerpt "lib/intent.dart (Map)"?>
 ```dart
 void main() {
- runApp(MaterialApp(
-   home: MyAppHome(), // Becomes the route named '/'.
-   routes: <String, WidgetBuilder> {
-     '/a': (BuildContext context) => MyPage(title: 'page A'),
-     '/b': (BuildContext context) => MyPage(title: 'page B'),
-     '/c': (BuildContext context) => MyPage(title: 'page C'),
-   },
- ));
+  runApp(MaterialApp(
+    home: const MyAppHome(), // Becomes the route named '/'.
+    routes: <String, WidgetBuilder>{
+      '/a': (context) => const MyPage(title: 'page A'),
+      '/b': (context) => const MyPage(title: 'page B'),
+      '/c': (context) => const MyPage(title: 'page C'),
+    },
+  ));
 }
 ```
 
@@ -757,7 +779,7 @@ Navigate to a route by `push`ing its name to the `Navigator`.
 
 通过路由名 **压栈** (`push`) 到 `Navigator` 中来跳转到这个 route。
 
-<!-- skip -->
+<?code-excerpt "lib/intent.dart (Push)"?>
 ```dart
 Navigator.of(context).pushNamed('/b');
 ```
@@ -887,18 +909,20 @@ public class MainActivity extends FlutterActivity {
 Finally, request the data from the Flutter side
 when the widget is rendered:
 
-最后，当 Widget 渲染的时候，从 Flutter 这端请求数据：
+最后，当 widget 渲染的时候，从 Flutter 这端请求数据：
 
-<!-- skip -->
+<?code-excerpt "lib/request_data.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -907,16 +931,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -934,7 +958,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return Scaffold(body: Center(child: Text(dataShared)));
   }
 
-  void getSharedText() async {
+  Future<void> getSharedText() async {
     var sharedData = await platform.invokeMethod('getSharedText');
     if (sharedData != null) {
       setState(() {
@@ -961,9 +985,9 @@ their location, you could do the following:
 
 例如，要打开一个让用户选择位置的路由，你可以这样做：
 
-<!-- skip -->
+<?code-excerpt "lib/intent.dart (PushAwait)"?>
 ```dart
-Map coordinates = await Navigator.of(context).pushNamed('/location');
+Object? coordinates = await Navigator.of(context).pushNamed('/location');
 ```
 
 And then, inside your location route, once the user has selected their location
@@ -971,9 +995,9 @@ you can `pop` the stack with the result:
 
 然后，在你的位置的路由内，一旦用户选择了位置，你就可以出栈 (`pop`) 并返回结果：
 
-<!-- skip -->
+<?code-excerpt "lib/intent.dart (Pop)"?>
 ```dart
-Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
+Navigator.of(context).pop({'lat': 43.821757, 'long': -79.226392});
 ```
 
 ## Async UI
@@ -1020,7 +1044,7 @@ using `async`/`await` and letting Dart do the heavy lifting:
 来运行网络代码而且不会导致 UI 挂起，
 同时让 Dart 来处理背后的繁重细节：
 
-<!-- skip -->
+<?code-excerpt "lib/async.dart (loadData)"?>
 ```dart
 Future<void> loadData() async {
   var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
@@ -1041,6 +1065,7 @@ The following example loads data asynchronously and displays it in a `ListView`:
 
 下面的例子展示了异步加载数据并将之展示在 `ListView` 内：
 
+<?code-excerpt "lib/async.dart"?>
 ```dart
 import 'dart:convert';
 
@@ -1048,10 +1073,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -1059,16 +1085,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -1084,11 +1110,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView.builder(
         itemCount: widgets.length,
-        itemBuilder: (BuildContext context, int position) {
+        itemBuilder: (context, position) {
           return getRow(position);
         },
       ),
@@ -1097,7 +1123,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1154,7 +1180,7 @@ and `await` on long-running tasks inside the function:
 对于和 I/O 绑定的任务，将方法声明为 `async` 方法，
 并在方法内 `await` 一个长时间运行的任务：
 
-<!-- skip -->
+<?code-excerpt "lib/async.dart (loadData)"?>
 ```dart
 Future<void> loadData() async {
   var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
@@ -1196,18 +1222,18 @@ Unlike Android threads,
 Isolates are true to their name, and cannot share memory
 (in the form of static fields, for example).
 
-Isolate 是独立执行的线程，不会和主执行内存堆分享内存。
+`Isolate` 是独立执行的线程，不会和主执行内存堆分享内存。
 这意味着你无法访问主线程的变量，或者调用 `setState()` 更新 UI。
-不同于 Android 中的线程，Isolate 如其名所示，
+与 Android 中线程的概念不同，isolate 如其名所示，
 它们无法分享内存（例如通过静态变量的形式）。
 
 The following example shows, in a simple isolate, how to share data back to
 the main thread to update the UI.
 
-下面的例子展示了一个简单的 Isolate 是如何
+下面的例子展示了一个简单的 isolate 是如何
 将数据分享给主线程来更新 UI 的。
 
-<!-- skip -->
+<?code-excerpt "lib/isolates.dart (loadData)"?>
 ```dart
 Future<void> loadData() async {
   ReceivePort receivePort = ReceivePort();
@@ -1218,7 +1244,7 @@ Future<void> loadData() async {
 
   List msg = await sendReceive(
     sendPort,
-    "https://jsonplaceholder.typicode.com/posts",
+    'https://jsonplaceholder.typicode.com/posts',
   );
 
   setState(() {
@@ -1239,7 +1265,7 @@ static Future<void> dataLoader(SendPort sendPort) async {
     SendPort replyTo = msg[1];
 
     String dataURL = data;
-    http.Response response = await http.get(dataURL);
+    http.Response response = await http.get(Uri.parse(dataURL));
     // Lots of JSON to parse
     replyTo.send(jsonDecode(response.body));
   }
@@ -1267,6 +1293,7 @@ You can run the full example below:
 
 你可以运行下面这个完整的例子：
 
+<?code-excerpt "lib/isolates.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:convert';
@@ -1276,10 +1303,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -1287,16 +1316,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -1318,14 +1347,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Widget getProgressDialog() {
-    return Center(child: CircularProgressIndicator());
+    return const Center(child: CircularProgressIndicator());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: getBody(),
     );
@@ -1334,7 +1363,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   ListView getListView() {
     return ListView.builder(
       itemCount: widgets.length,
-      itemBuilder: (BuildContext context, int position) {
+      itemBuilder: (context, position) {
         return getRow(position);
       },
     );
@@ -1342,7 +1371,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1377,7 +1406,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       SendPort replyTo = msg[1];
 
       String dataURL = data;
-      http.Response response = await http.get(dataURL);
+      http.Response response = await http.get(Uri.parse(dataURL));
       // Lots of JSON to parse
       replyTo.send(jsonDecode(response.body));
     }
@@ -1423,19 +1452,15 @@ To make a network call, call `await` on the `async` function `http.get()`:
 如果要发起一个网络请求，
 在异步 (`async`) 方法 `http.get()` 上调用 `await` 即可：
 
-<!-- skip -->
+<?code-excerpt "lib/network.dart"?>
 ```dart
-import 'dart:convert';
-
+import 'dart:developer' as developer;
 import 'package:http/http.dart' as http;
-// ...
 
 Future<void> loadData() async {
   var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   http.Response response = await http.get(dataURL);
-  setState(() {
-    widgets = jsonDecode(response.body);
-  });
+  developer.log(response.body);
 }
 ```
 
@@ -1466,6 +1491,7 @@ then render the `ProgressIndicator`. Otherwise, render the
 如果 `showLoadingDialog()` 返回 `true`（当 `widgets.length == 0`），
 渲染 `ProgressIndicator`。否则，在 `ListView` 里渲染网络请求返回的数据。
 
+<?code-excerpt "lib/progress.dart"?>
 ```dart
 import 'dart:convert';
 
@@ -1473,10 +1499,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -1484,16 +1512,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -1515,14 +1543,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Widget getProgressDialog() {
-    return Center(child: CircularProgressIndicator());
+    return const Center(child: CircularProgressIndicator());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: getBody(),
     );
@@ -1531,7 +1559,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   ListView getListView() {
     return ListView.builder(
       itemCount: widgets.length,
-      itemBuilder: (BuildContext context, int position) {
+      itemBuilder: (context, position) {
         return getRow(position);
       },
     );
@@ -1539,7 +1567,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1659,16 +1687,16 @@ You can then access your images using `AssetImage`:
 
 然后你就可以使用 `AssetImage` 访问你的图片了：
 
-<!-- skip -->
+<?code-excerpt "lib/images.dart (AssetImage)"?>
 ```dart
-AssetImage('images/my_icon.jpeg');
+AssetImage('images/my_icon.jpeg')
 ```
 
 or directly in an `Image` widget:
 
 或者通过 `Image` widget 直接访问：
 
-<!-- skip -->
+<?code-excerpt "lib/images.dart (Imageasset)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1688,7 +1716,7 @@ Flutter 当下并没有一个特定的管理字符串的资源管理系统。
 目前来讲，最好的办法是将字符串作为静态域存放在类中，
 并通过类访问它们。例如：
 
-<!-- skip -->
+<?code-excerpt "lib/string_examples.dart (Strings)"?>
 ```dart
 class Strings {
   static String welcomeMessage = 'Welcome To Flutter';
@@ -1699,9 +1727,9 @@ Then in your code, you can access your strings as such:
 
 接着在你们的代码中，你可以这样访问你的字符串：
 
-<!-- skip -->
+<?code-excerpt "lib/string_examples.dart (AccessString)"?>
 ```dart
-Text(Strings.welcomeMessage)
+Text(Strings.welcomeMessage);
 ```
 
 Flutter has basic support for accessibility on Android,
@@ -1849,17 +1877,20 @@ containing activity:
 
 下面的例子展示了如何监听容器 Activity 的生命周期状态：
 
-<!-- skip -->
+<?code-excerpt "lib/lifecycle.dart"?>
 ```dart
 import 'package:flutter/widgets.dart';
 
 class LifecycleWatcher extends StatefulWidget {
+  const LifecycleWatcher({super.key});
+
   @override
-  _LifecycleWatcherState createState() => _LifecycleWatcherState();
+  State<LifecycleWatcher> createState() => _LifecycleWatcherState();
 }
 
-class _LifecycleWatcherState extends State<LifecycleWatcher> with WidgetsBindingObserver {
-  AppLifecycleState _lastLifecycleState;
+class _LifecycleWatcherState extends State<LifecycleWatcher>
+    with WidgetsBindingObserver {
+  AppLifecycleState? _lastLifecycleState;
 
   @override
   void initState() {
@@ -1883,7 +1914,7 @@ class _LifecycleWatcherState extends State<LifecycleWatcher> with WidgetsBinding
   @override
   Widget build(BuildContext context) {
     if (_lastLifecycleState == null) {
-      return Text(
+      return const Text(
         'This widget has not observed any lifecycle changes.',
         textDirection: TextDirection.ltr,
       );
@@ -1897,7 +1928,7 @@ class _LifecycleWatcherState extends State<LifecycleWatcher> with WidgetsBinding
 }
 
 void main() {
-  runApp(Center(child: LifecycleWatcher()));
+  runApp(const Center(child: LifecycleWatcher()));
 }
 ```
 
@@ -1928,29 +1959,29 @@ children.
 而这个特性可以被充分利用来开发包含有相同的子级，
 但是会随时间改变的复杂布局。
 
-<!-- skip -->
+<?code-excerpt "lib/layout.dart (Row)"?>
 ```dart
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text('Row One'),
-        Text('Row Two'),
-        Text('Row Three'),
-        Text('Row Four'),
-      ],
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: const <Widget>[
+      Text('Row One'),
+      Text('Row Two'),
+      Text('Row Three'),
+      Text('Row Four'),
+    ],
+  );
+}
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/layout.dart (Column)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
+    children: const <Widget>[
       Text('Column One'),
       Text('Column Two'),
       Text('Column Three'),
@@ -2010,19 +2041,19 @@ both a ScrollView and an Android ListView.
 但是 Flutter 中 ListView widget 既是一个 ScrollView，
 也是一个 Android 中的 ListView。
 
-<!-- skip -->
+<?code-excerpt "lib/layout.dart (ListView)"?>
 ```dart
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        Text('Row One'),
-        Text('Row Two'),
-        Text('Row Three'),
-        Text('Row Four'),
-      ],
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return ListView(
+    children: const <Widget>[
+      Text('Row One'),
+      Text('Row Two'),
+      Text('Row Three'),
+      Text('Row Four'),
+    ],
+  );
+}
 ```
 
 ### How do I handle landscape transitions in Flutter?
@@ -2061,18 +2092,18 @@ In Flutter there are two ways of adding touch listeners:
     如果 Widget 支持事件监听，那么向它传入一个方法并在方法中处理事件。
     例如，RaisedButton 有一个 `onPressed` 参数：
 
-    <!-- skip -->
-    ```dart
-    @override
-    Widget build(BuildContext context) {
-      return ElevatedButton(
-        onPressed: () {
-          print('click');
-        },
-        child: Text('Button'),
-      );
-    }
-    ```
+  <?code-excerpt "lib/events.dart (onPressed)"?>
+  ```dart
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        developer.log('click');
+      },
+      child: const Text('Button'),
+    );
+  }
+  ```
 
  2. If the Widget doesn't support event detection, wrap the
     widget in a GestureDetector and pass a function to the `onTap` parameter.
@@ -2080,26 +2111,28 @@ In Flutter there are two ways of adding touch listeners:
     如果 Widget 不支持事件监听，将 Widget 包装进一个 GestureDetector 中
     并向 `onTap` 参数传入一个方法。
 
-    <!-- skip -->
-    ```dart
-    class SampleApp extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return Scaffold(
-          body: Center(
-            child: GestureDetector(
-              onTap: () {
-                print('tap');
-              },
-              child: FlutterLogo(
-                size: 200.0,
-              ),
+  <?code-excerpt "lib/events.dart (onTap)"?>
+  ```dart
+  class SampleTapApp extends StatelessWidget {
+    const SampleTapApp({super.key});
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        body: Center(
+          child: GestureDetector(
+            onTap: () {
+              developer.log('tap');
+            },
+            child: const FlutterLogo(
+              size: 200.0,
             ),
           ),
-        );
-      }
+        ),
+      );
     }
-    ```
+  }
+  ```
 
 ### How do I handle other gestures on widgets?
 
@@ -2188,17 +2221,20 @@ that rotates the Flutter logo on a double tap:
 
 下面的例子展示了一个实现了双击旋转 Flutter 标志的 `GestureDetector`：
 
-<!-- skip -->
+<?code-excerpt "lib/events.dart (SampleApp)"?>
 ```dart
-AnimationController controller;
-CurvedAnimation curve;
-
 class SampleApp extends StatefulWidget {
+  const SampleApp({super.key});
+
   @override
-  _SampleAppState createState() => _SampleAppState();
+  State<SampleApp> createState() => _SampleAppState();
 }
 
-class _SampleAppState extends State<SampleApp> with SingleTickerProviderStateMixin {
+class _SampleAppState extends State<SampleApp>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late CurvedAnimation curve;
+
   @override
   void initState() {
     super.initState();
@@ -2226,7 +2262,7 @@ class _SampleAppState extends State<SampleApp> with SingleTickerProviderStateMix
           },
           child: RotationTransition(
             turns: curve,
-            child: FlutterLogo(
+            child: const FlutterLogo(
               size: 200.0,
             ),
           ),
@@ -2265,15 +2301,16 @@ that scrolling is fast and smooth.
 因为 Flutter widget 不可变的特点，你需要向 ListView 传入一组 widget，
 Flutter 会保证滑动的快速顺畅。
 
-<!-- skip -->
+<?code-excerpt "lib/listview.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -2282,16 +2319,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -2299,7 +2336,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView(children: _getListData()),
     );
@@ -2309,7 +2346,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Text('Row $i'),
       ));
     }
@@ -2329,14 +2366,18 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 在 Android 中，ListView 有一个可以帮助你定位哪个列表项被点击了的方法 `onItemClickListener`。
 在 Flutter 中，则使用传入 widget 的触摸监听。
 
+<?code-excerpt "lib/list_item_tapped.dart"?>
 ```dart
+import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -2345,16 +2386,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -2362,7 +2403,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView(children: _getListData()),
     );
@@ -2374,10 +2415,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
       widgets.add(
         GestureDetector(
           onTap: () {
-            print('row tapped');
+            developer.log('row tapped');
           },
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: Text('Row $i'),
           ),
         ),
@@ -2419,14 +2460,18 @@ as shown in the next example.
 在 `setState()` 里创建一个新的 `List`，并将数据从旧列表拷贝到新列表。
 虽然这个方法很简单，就如下面例子所示，但是并不推荐在大数据集的时候使用。
 
+<?code-excerpt "lib/listview_dynamic.dart"?>
 ```dart
+import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -2435,16 +2480,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -2462,7 +2507,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView(children: widgets),
     );
@@ -2474,11 +2519,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
         setState(() {
           widgets = List.from(widgets);
           widgets.add(getRow(widgets.length));
-          print('row $i');
+          developer.log('row $i');
         });
       },
       child: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Text('Row $i'),
       ),
     );
@@ -2496,14 +2541,18 @@ recycles list elements for you:
 动态列表或者拥有大量数据的列表。这基本上就是 Android 里的 RecyclerView，会为你
 自动回收列表项：
 
+<?code-excerpt "lib/listview_builder.dart"?>
 ```dart
+import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -2512,16 +2561,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -2539,11 +2588,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView.builder(
         itemCount: widgets.length,
-        itemBuilder: (BuildContext context, int position) {
+        itemBuilder: (context, position) {
           return getRow(position);
         },
       ),
@@ -2555,11 +2604,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
       onTap: () {
         setState(() {
           widgets.add(getRow(widgets.length));
-          print('row $i');
+          developer.log('row $i');
         });
       },
       child: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Text('Row $i'),
       ),
     );
@@ -2618,15 +2667,15 @@ Then assign the font to your `Text` widget:
 
 然后将字体赋值给你的 `Text` Widget：
 
-<!-- skip -->
+<?code-excerpt "lib/text.dart (CustomFont)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      title: Text('Sample App'),
+      title: const Text('Sample App'),
     ),
-    body: Center(
+    body: const Center(
       child: Text(
         'This is a custom font text',
         style: TextStyle(fontFamily: 'MyCustomFont'),
@@ -2686,12 +2735,12 @@ the Text Widget.
 在 Flutter 中，你可以简单地通过向 Text Widget 构造器的 decoration 参数
 传入一个 InputDecoration 对象来为输入框展示一个「提示」或占位文本。
 
-<!-- skip -->
+<?code-excerpt "lib/form.dart (InputHint)" replace="/return const //g;/;//g"?>
 ```dart
-body: Center(
+Center(
   child: TextField(
     decoration: InputDecoration(hintText: 'This is a hint'),
-  )
+  ),
 )
 ```
 
@@ -2712,14 +2761,16 @@ update the state, and pass a new `InputDecoration` object.
 然而，你并不想一开始就显示错误信息。相反，当用户输入了无效的信息后，
 更新状态并传入一个新的 `InputDecoration` 对象。
 
+<?code-excerpt "lib/validation_errors.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -2728,30 +2779,30 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  String _errorText;
+  String? _errorText;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: Center(
         child: TextField(
-          onSubmitted: (String text) {
+          onSubmitted: (text) {
             setState(() {
               if (!isEmail(text)) {
                 _errorText = 'Error: This is not an email';
@@ -2769,13 +2820,15 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 
-  String _getErrorText() {
+  String? _getErrorText() {
     return _errorText;
   }
 
   bool isEmail(String em) {
     String emailRegexp =
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|'
+        r'(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|'
+        r'(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 
     RegExp regExp = RegExp(emailRegexp);
 
@@ -2955,18 +3008,23 @@ the primary swatch is set to blue and text selection color is red.
 给 `MaterialApp` Widget 传入一个 `ThemeData` 对象即可。
 例如，在下面的代码中，主色调设置为蓝色，文本选中颜色设置为红色。
 
-<!-- skip -->
+<?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
+import 'package:flutter/material.dart';
+
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.red),
+        textSelectionTheme:
+            const TextSelectionThemeData(selectionColor: Colors.red),
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
@@ -2994,15 +3052,16 @@ Shared Preferences and NSUserDefaults (the iOS equivalent).
 在 Flutter 中，使用 [Shared_Preferences 插件][Shared_Preferences plugin] 实现此功能。
 这个插件同时包装了 Shared Preferences 和 NSUserDefaults（iOS 平台对应 API）的功能。
 
-<!-- skip -->
+<?code-excerpt "lib/shared_prefs.dart"?>
 ```dart
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Scaffold(
         body: Center(
           child: ElevatedButton(
@@ -3015,11 +3074,10 @@ void main() {
   );
 }
 
-void _incrementCounter() async {
+Future<void> _incrementCounter() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   int counter = (prefs.getInt('counter') ?? 0) + 1;
-  print('Pressed $counter times.');
-  prefs.setInt('counter', counter);
+  await prefs.setInt('counter', counter);
 }
 ```
 

@@ -291,7 +291,7 @@ class FavoriteWidget extends StatefulWidget {
   const FavoriteWidget({super.key});
 
   @override
-  _FavoriteWidgetState createState() => _FavoriteWidgetState();
+  State<FavoriteWidget> createState() => _FavoriteWidgetState();
 }
 ```
 
@@ -667,7 +667,7 @@ class TapboxA extends StatefulWidget {
   const TapboxA({super.key});
 
   @override
-  _TapboxAState createState() => _TapboxAState();
+  State<TapboxA> createState() => _TapboxAState();
 }
 
 class _TapboxAState extends State<TapboxA> {
@@ -684,16 +684,16 @@ class _TapboxAState extends State<TapboxA> {
     return GestureDetector(
       onTap: _handleTap,
       child: Container(
+        width: 200.0,
+        height: 200.0,
+        decoration: BoxDecoration(
+          color: _active ? Colors.lightGreen[700] : Colors.grey[600],
+        ),
         child: Center(
           child: Text(
             _active ? 'Active' : 'Inactive',
             style: const TextStyle(fontSize: 32.0, color: Colors.white),
           ),
-        ),
-        width: 200.0,
-        height: 200.0,
-        decoration: BoxDecoration(
-          color: _active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
     );
@@ -791,7 +791,7 @@ class ParentWidget extends StatefulWidget {
   const ParentWidget({super.key});
 
   @override
-  _ParentWidgetState createState() => _ParentWidgetState();
+  State<ParentWidget> createState() => _ParentWidgetState();
 }
 
 class _ParentWidgetState extends State<ParentWidget> {
@@ -835,16 +835,16 @@ class TapboxB extends StatelessWidget {
     return GestureDetector(
       onTap: _handleTap,
       child: Container(
+        width: 200.0,
+        height: 200.0,
+        decoration: BoxDecoration(
+          color: active ? Colors.lightGreen[700] : Colors.grey[600],
+        ),
         child: Center(
           child: Text(
             active ? 'Active' : 'Inactive',
             style: const TextStyle(fontSize: 32.0, color: Colors.white),
           ),
-        ),
-        width: 200.0,
-        height: 200.0,
-        decoration: BoxDecoration(
-          color: active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
     );
@@ -938,7 +938,7 @@ class ParentWidget extends StatefulWidget {
   const ParentWidget({super.key});
 
   @override
-  _ParentWidgetState createState() => _ParentWidgetState();
+  State<ParentWidget> createState() => _ParentWidgetState();
 }
 
 class _ParentWidgetState extends State<ParentWidget> {
@@ -974,7 +974,7 @@ class TapboxC extends StatefulWidget {
   final ValueChanged<bool> onChanged;
 
   @override
-  _TapboxCState createState() => _TapboxCState();
+  State<TapboxC> createState() => _TapboxCState();
 }
 
 class _TapboxCState extends State<TapboxC> {
@@ -1012,10 +1012,6 @@ class _TapboxCState extends State<TapboxC> {
       onTap: _handleTap,
       onTapCancel: _handleTapCancel,
       child: Container(
-        child: Center(
-          child: Text(widget.active ? 'Active' : 'Inactive',
-              style: const TextStyle(fontSize: 32.0, color: Colors.white)),
-        ),
         width: 200.0,
         height: 200.0,
         decoration: BoxDecoration(
@@ -1026,6 +1022,10 @@ class _TapboxCState extends State<TapboxC> {
                   width: 10.0,
                 )
               : null,
+        ),
+        child: Center(
+          child: Text(widget.active ? 'Active' : 'Inactive',
+              style: const TextStyle(fontSize: 32.0, color: Colors.white)),
         ),
       ),
     );

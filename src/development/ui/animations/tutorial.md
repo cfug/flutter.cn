@@ -490,7 +490,7 @@ class LogoApp extends StatefulWidget {
   const LogoApp({super.key});
 
   @override
-  _LogoAppState createState() => _LogoAppState();
+  State<LogoApp> createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> {
@@ -533,7 +533,7 @@ The changes from the non-animated example are highlighted:
 --- animate0/lib/main.dart
 +++ animate1/lib/main.dart
 @@ -9,16 +9,39 @@
-   _LogoAppState createState() => _LogoAppState();
+   State<LogoApp> createState() => _LogoAppState();
  }
 
 -class _LogoAppState extends State<LogoApp> {
@@ -755,7 +755,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
    const LogoApp({super.key});
 
    @override
-   _LogoAppState createState() => _LogoAppState();
+   State<LogoApp> createState() => _LogoAppState();
  }
 @@ -15,32 +33,18 @@
 
@@ -1035,7 +1035,8 @@ in the render tree.
 <?code-excerpt "animate4/lib/main.dart (GrowTransition)"?>
 ```dart
 class GrowTransition extends StatelessWidget {
-  const GrowTransition({required this.child, required this.animation, super.key});
+  const GrowTransition(
+      {required this.child, required this.animation, super.key});
 
   final Widget child;
   final Animation<double> animation;
@@ -1079,7 +1080,7 @@ in the bullet points above.
 ```diff
 --- animate2/lib/main.dart
 +++ animate4/lib/main.dart
-@@ -1,27 +1,46 @@
+@@ -1,27 +1,47 @@
  import 'package:flutter/material.dart';
 
  void main() => runApp(const LogoApp());
@@ -1101,7 +1102,8 @@ in the bullet points above.
 +}
 +
 +class GrowTransition extends StatelessWidget {
-+  const GrowTransition({required this.child, required this.animation, super.key});
++  const GrowTransition(
++      {required this.child, required this.animation, super.key});
 +
 +  final Widget child;
 +  final Animation<double> animation;
@@ -1134,8 +1136,8 @@ in the bullet points above.
    const LogoApp({super.key});
 
    @override
-   _LogoAppState createState() => _LogoAppState();
-@@ -34,18 +53,23 @@
+   State<LogoApp> createState() => _LogoAppState();
+@@ -34,18 +54,23 @@
    @override
    void initState() {
      super.initState();
@@ -1149,8 +1151,8 @@ in the bullet points above.
 -  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
 +  Widget build(BuildContext context) {
 +    return GrowTransition(
-+      child: const LogoWidget(),
 +      animation: animation,
++      child: const LogoWidget(),
 +    );
 +  }
 
@@ -1275,7 +1277,7 @@ class LogoApp extends StatefulWidget {
   const LogoApp({super.key});
 
   @override
-  _LogoAppState createState() => _LogoAppState();
+  State<LogoApp> createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {

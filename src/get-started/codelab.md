@@ -657,20 +657,21 @@ a child inside the existing `MyApp` stateless widget.
   在本实验的第 2 部分中，用户可以通过点击心形图标，添加或删除列表中收藏的单词对。<br><br>
   这两个类现在都如下所示：</p>
 
+<?code-excerpt "lib/main.dart (RandomWordsWidget)" replace="/final wordPair = WordPair.random\(\);\n *return Text\(wordPair.asPascalCase\);/return Container();/g" indent-by="2"?>
   ```dart
-class RandomWords extends StatefulWidget {
-  const RandomWords({ Key? key }) : super(key: key);
+  class RandomWords extends StatefulWidget {
+    const RandomWords({super.key});
 
-  @override
-  State<RandomWords> createState() => _RandomWordsState();
-}
-
-class _RandomWordsState extends State<RandomWords> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
+    @override
+    State<RandomWords> createState() => _RandomWordsState();
   }
-}
+
+  class _RandomWordsState extends State<RandomWords> {
+    @override
+    Widget build(BuildContext context) {
+      return Container();
+    }
+  }
   ```
 </li>
 
@@ -950,18 +951,20 @@ lazily, on demand.
              body: const Center(
                child: RandomWords(),
              ),
-    @@ -28,12 +28,30 @@
+    @@ -27,18 +27,36 @@
+         );
        }
      }
 
-     class _RandomWordsState extends State<RandomWords> {
+    -class RandomWords extends StatefulWidget {
+    -  const RandomWords({super.key});
+    +class _RandomWordsState extends State<RandomWords> {
     +  final _suggestions = <WordPair>[];
     +  final _biggerFont = const TextStyle(fontSize: 18);
-    +
+
        @override
-       Widget build(BuildContext context) {
-    -    final wordPair = WordPair.random();
-    -    return Text(wordPair.asPascalCase);
+    -  State<RandomWords> createState() => _RandomWordsState();
+    +  Widget build(BuildContext context) {
     +    return ListView.builder(
     +      padding: const EdgeInsets.all(16.0),
     +      itemBuilder: /*1*/ (context, i) {
@@ -979,10 +982,20 @@ lazily, on demand.
     +        );
     +      },
     +    );
-       }
+    +  }
      }
 
-     class RandomWords extends StatefulWidget {
+    -class _RandomWordsState extends State<RandomWords> {
+    +class RandomWords extends StatefulWidget {
+    +  const RandomWords({super.key});
+    +
+       @override
+    -  Widget build(BuildContext context) {
+    -    final wordPair = WordPair.random();
+    -    return Text(wordPair.asPascalCase);
+    -  }
+    +  State<RandomWords> createState() => _RandomWordsState();
+     }
     ```
 
  6. Restart the app. You should see a list of word pairings no matter how far

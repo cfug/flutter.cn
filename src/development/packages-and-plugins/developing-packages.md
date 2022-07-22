@@ -118,9 +118,11 @@ Package 包含以下几种类别：
 **FFI Plugin packages**
 <br> A specialized Dart package that contains an API written in
   Dart code combined with one or more platform-specific
+  implementations that use Dart FFI([Android][Android], [iOS][iOS], [macOS][macOS]).
 
 **FFI 插件**
-<br> 用 Dart 语言编写针对一个或多个特定平台的 API。
+<br> 用 Dart 语言编写针对一个或多个特定平台的 API，
+使用 Dart FFI ([Android][Android]、[iOS][iOS]、[macOS][macOS])。
 
 ## Developing Dart packages {#dart}
 
@@ -730,19 +732,43 @@ follow the provided instructions.
 如果这个命令返回了一个关于需要更新 `pubspec.yaml` 文件的提醒，
 请按照提示的说明进行操作。
 
-### Dart-only platform implementations
+### Dart platform implementations
 
-### 仅 Dart 的平台实现
+### Dart 的平台实现
 
-Usually plugin implementations involve platform channels and a second language,
-as described above. In some cases, however, some platforms can be
-implemented entirely in Dart (for example, using [FFI][]). For a Dart-only
-platform implementation, replace the `pluginClass` in pubspec.yaml with
-a `dartPluginClass`. Here is the `hello_windows` example above modified for a
+In many cases, non-web platform implementations only use the
+platform-specific implementation language, as shown above. However,
+platform implementations can also use platform-specific Dart as well.
+
+在很多场景中，非 web 平台的实现仅仅使用了上述的平台特定语言。
+然而，Dart 也是平台特定的语言之一。
+
+{{site.alert.note}}
+
+  The examples below only apply to non-web platforms. Web
+  plugin implementations are always written in Dart, and use
+  `pluginClass` and `fileName` for their Dart implementations
+  as shown above.
+
+  下方的例子仅适用于非 web 平台。
+  Web 平台的插件是用 Dart 编写的，
+  通过 `pluginClass` 和 `fileName` 来指定实现。
+
+{{site.alert.end}}
+
+#### Dart-only platform implementations
+
+#### 纯 Dart 平台的实现
+
+In some cases, some platforms can be
+implemented entirely in Dart (for example, using FFI).
+For a Dart-only platform implementation on a platform other than web,
+replace the `pluginClass` in pubspec.yaml with a `dartPluginClass`.
+Here is the `hello_windows` example above modified for a
 Dart-only implementation:
 
 如先前描述，通常插件会使用第二种语言，实现对应平台的功能。
-然而，在某些场景下，部分平台可能会完全使用 Dart 进行实现（例如使用 [FFI][]）。
+然而，在某些场景下，部分平台可能会完全使用 Dart 进行实现（例如使用 FFI）。
 若需要仅 Dart 的平台实现，你可以将 pubspec.yaml 里的
 `pluginClass` 替换为 `dartPluginClass`。
 下面是 `hello_windows` 示例替换为仅 Dart 实现的代码：
@@ -775,15 +801,41 @@ class HelloPluginWindows extends HelloPluginPlatform {
   }
 ```
 
-This is supported for Windows, macOS, and Linux starting in Flutter 2.5.
-`dartPluginClass` is supported for Android and iOS starting in Flutter 2.8,
-but currently a `pluginClass` is still required for those platforms. That
-requirement will be removed in a future version of Flutter.
+#### Hybrid platform implementations
 
-从 Flutter 2.5 版本开始，此类插件可以用于 Windows、macOS 和 Linux 插件，
-Android 和 iOS 在 Flutter 2.8 版本后可以使用
-`dartPluginClass`，但是这两个平台的 `pluginClass` 仍然需要保留。
-该限制会在未来的 Flutter 版本中移除。
+#### 混合平台的实现
+
+Platform implementations can also use both Dart and a platform-specific
+language. For example, a plugin could use a different platform channel
+for each platform so that the channels can be customized per platform.
+
+平台实现可能同时会使用 Dart 以及某个特定平台的语言。
+例如，plugin 可能会在不同平台使用不同的 platform channel，
+这样 channel 就可以根据不同平台进行定制。
+
+A hybrid implementation uses both of the registration systems
+described above. Here is the `hello_windows` example above modified for a
+hybrid implementation:
+
+就和之前说的那样，混合实现将会使用多种注册方式。
+这里有一个使用混合实现的 `hello_windows` 样例:
+
+```yaml
+flutter:
+  plugin:
+    implements: hello
+    platforms:
+      windows:
+        dartPluginClass: HelloPluginWindows
+        pluginClass: HelloPlugin
+```
+
+The Dart `HelloPluginWindows` class would use the `registerWith()`
+shown above for Dart-only implementations, while the C++ `HelloPlugin`
+class would be the same as in a C++-only implementation.
+
+Dart 类 `HelloPluginWindows` 会使用 `registerWith()` 方法做纯 Dart 的实现，
+`HelloPlugin` 类则用来做纯 C++ 代码的实现。
 
 ### Testing your plugin
 
@@ -802,7 +854,7 @@ Android plugins APIs][].
 ## Developing FFI plugin packages {#plugin-ffi}
 
 If you want to develop a package that calls into native APIs using
-[Dart's FFI][FFI], you need to develop a FFI plugin package.
+Dart's FFI, you need to develop an FFI plugin package.
 
 ### Step 1: Create the package
 
@@ -1251,7 +1303,9 @@ PENDING
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
-[FFI]: {{site.url}}/development/platform-integration/c-interop
+[Android]: {{site.url}}/development/platform-integration/android/c-interop
+[iOS]: {{site.url}}/development/platform-integration/ios/c-interop
+[macOS]: {{site.url}}/development/platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
 [Flutter editor]: {{site.url}}/get-started/editor
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
@@ -1271,7 +1325,7 @@ PENDING
 [Supporting the new Android plugins APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[Testing your plugin]: {{site.url}}/development/packages-and-plugins/plugin-api-migration#testing-your-plugin
+[Testing your plugin]: {{site.url}}/development/platform-integration/android/plugin-api-migration#testing-your-plugin
 [unit tests]: {{site.url}}/testing#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c

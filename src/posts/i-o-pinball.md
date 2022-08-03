@@ -266,5 +266,5 @@ class BumperNoiseBehavior extends ContactBehavior {
 也可以在 [GitHub repo](https://github.com/flutter/pinball "弹球游戏源代码仓库") 访问并学习项目的开源代码。
 
 ---
-[原文][https://medium.com/flutter/i-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d]，
-本地化：CFUG 团队，[中文链接][https://flutter.cn/posts/i-o-pinball]。
+[原文](https://medium.com/flutter/i-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d)，
+本地化：CFUG 团队，[中文链接](https://flutter.cn/posts/i-o-pinball)。

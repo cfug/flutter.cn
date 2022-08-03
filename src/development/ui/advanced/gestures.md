@@ -251,6 +251,8 @@ To listen to gestures from the widgets layer, use a
 
 从组件层监听手势，需要用到 [`GestureDetector`][]。
 
+<iframe class="full-width" src="{{site.youtube-site}}/embed/WhVXkCFPmK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 If you're using Material Components,
 many of those widgets already respond to taps or gestures.
 For example, [`IconButton`][] and [`TextButton`][]

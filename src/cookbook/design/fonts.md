@@ -37,6 +37,7 @@ or perhaps you downloaded a font from [Google Fonts][].
   查看 [google_fonts][] 库，
   你将可以直接访问 1000 个以上的开源字体。
 
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/8Vzv2CdbEY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {{site.alert.end}}
 
 {{site.alert.note}}

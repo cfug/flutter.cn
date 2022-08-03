@@ -8,6 +8,8 @@ description: Flutter 破坏性改动的迁移文档。
 As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
+To be notified about future breaking changes,
+join the groups [Flutter announce][] and [Dart announce][].
 
 正如 [破坏性改动策略][breaking change policy] 中描述的，
 我们会不定期地发布关于破坏性改动的迁移指南。
@@ -18,15 +20,21 @@ release, and listed in alphabetical order:
 以下是可用的迁移指南，
 它们按发行版本分类并按字母顺序排列。
 
+[breaking change policy]: {{site.url}}/resources/compatibility
+[Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
+
 ### Not yet released to stable
 
 ### 尚未发布到稳定版
 
 * [Default PrimaryScrollController on Desktop][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
+* [iOS FlutterViewController splashScreenView made nullable][]
 
 [Default PrimaryScrollController on Desktop]: {{site.url}}/release/breaking-changes/primary-scroll-controller-desktop
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
+[iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
 
 ### Released in Flutter 3
 
@@ -38,6 +46,7 @@ release, and listed in alphabetical order:
 [Deprecated API removed after v2.10]: {{site.url}}/release/breaking-changes/2-10-deprecations
 [Page transitions replaced by ZoomPageTransitionsBuilder]: {{site.url}}/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
 [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips]: {{site.url}}/release/breaking-changes/chip-usedeletebuttontooltip-migration
+
 ### Released in Flutter 2.10
 
 ### 已经在 Flutter 2.10 中发布
@@ -198,7 +207,6 @@ The following breaking change was reverted in release 2.2:
 
 [Adding 'linux' and 'windows' to TargetPlatform enum]: {{site.url}}/release/breaking-changes/target-platform-linux-windows
 [Annotations return local position relative to object]: {{site.url}}/release/breaking-changes/annotations-return-local-position-relative-to-object
-[breaking change policy]: {{site.url}}/resources/compatibility
 [Container color optimization]: {{site.url}}/release/breaking-changes/container-color
 [CupertinoTabBar requires Localizations parent]: {{site.url}}/release/breaking-changes/cupertino-tab-bar-localizations
 [Generic type of ParentDataWidget changed to ParentData]: {{site.url}}/release/breaking-changes/parent-data-widget-generic-type

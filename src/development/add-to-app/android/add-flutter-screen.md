@@ -390,9 +390,13 @@ the display of Flutter content.
 
 #### Initial route with a cached engine
 
+#### 为缓存的 FlutterEngine 设置初始路由
+
 {% include_relative _initial-route-cached-engine.md %}
 
 ## Add a translucent Flutter screen
+
+## 添加一个透明主题的 FlutterActivity
 
 <img src='/assets/images/docs/development/add-to-app/android/add-flutter-screen/add-single-flutter-screen-transparent_header.png'
 class="mw-100" alt="Add Flutter Screen With Translucency Header">

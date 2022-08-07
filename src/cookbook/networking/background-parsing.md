@@ -256,7 +256,7 @@ such as a `Future` or `http.Response` between isolates.
 As an alternate solution, check out the [`worker_manager`][] or
 [`workmanager`][] packages for background processing.
 
-与此同时，后台进程还有另一种解决方案是使用
+与此同时，后台进程的其他解决方案是使用
 [`worker_manager`][] 或 [`workmanager`][] package。
 
 [`worker_manager`]:  {{site.pub}}/packages/worker_manager

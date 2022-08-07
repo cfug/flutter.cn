@@ -29,6 +29,8 @@ to fundamental actions, such as tapping and dragging.
 怎么响应用户的点击，拖动等操作行为呢？
 ——使用 [`GestureDetector`][] Widget。
 
+<iframe class="full-width" src="{{site.youtube-site}}/embed/WhVXkCFPmK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 This recipe shows how to make a custom button that shows
 a snackbar when tapped with the following steps:
 

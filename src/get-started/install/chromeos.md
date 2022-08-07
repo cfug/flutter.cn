@@ -84,7 +84,7 @@ that will work:
 下面这个示例讲解了如何在可用端口上启动 Flutter DevTools:
 
 ```terminal
-$ flutter pub global run devtools -p 8000
+$ flutter pub global run devtools --port 8000
 $ cd path/to/your/app
 $ flutter run --observatory-port=8080
 ```

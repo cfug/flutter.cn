@@ -253,6 +253,15 @@ such as a `Future` or `http.Response` between isolates.
 当你试图传递更复杂的对象时，你可能会遇到错误，
 例如在 isolates 之间的 `Future` 或者 `http.Response`。
 
+As an alternate solution, check out the [`worker_manager`][] or
+[`workmanager`][] packages for background processing.
+
+与此同时，后台进程的其他解决方案是使用
+[`worker_manager`][] 或 [`workmanager`][] package。
+
+[`worker_manager`]:  {{site.pub}}/packages/worker_manager
+[`workmanager`]: {{site.pub}}/packages/workmanager
+
 ## Complete example
 
 ## 完整样例

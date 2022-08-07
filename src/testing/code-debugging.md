@@ -197,13 +197,15 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: AppHome(),
     ),
   );
 }
 
 class AppHome extends StatelessWidget {
+  const AppHome({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -212,7 +214,7 @@ class AppHome extends StatelessWidget {
           onPressed: () {
             debugDumpApp();
           },
-          child: Text('Dump App'),
+          child: const Text('Dump App'),
         ),
       ),
     );
@@ -881,7 +883,7 @@ import 'package:flutter/rendering.dart';
 
 void main() {
   debugPaintSizeEnabled = true;
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 ```
 
@@ -1134,6 +1136,8 @@ constructor:
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -1142,7 +1146,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'My Awesome App'),
+      home: const MyHomePage(title: 'My Awesome App'),
     );
   }
 }

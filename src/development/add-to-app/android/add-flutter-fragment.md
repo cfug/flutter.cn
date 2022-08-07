@@ -456,6 +456,7 @@ val flutterFragment = FlutterFragment.withNewEngine()
 {% endsamplecode %}
 
 {{site.alert.note}}
+
   `FlutterFragment`'s initial route property has no effect when a pre-warmed
   `FlutterEngine` is used because the pre-warmed `FlutterEngine` already
   chose an initial route. The initial route can be chosen explicitly when
@@ -512,6 +513,7 @@ not included in the `dartEntrypoint` `String` name.
 需要注意的是，括号 `()` 不包含在 `dartEntrypoint` 的 `String` 类型的参数中。
 
 {{site.alert.note}}
+
   `FlutterFragment`'s Dart entrypoint property has no effect
   when a pre-warmed `FlutterEngine` is used because the
   pre-warmed `FlutterEngine` already executed a Dart entrypoint.
@@ -609,6 +611,7 @@ Flutter supports translucency in a `FlutterFragment`.
 因此，Flutter 支持 `FlutterFragment` 半透明。
 
 {{site.alert.note}}
+
   Both `SurfaceView` and `TextureView` support transparency.
   However, when a `SurfaceView` is instructed to render with
   transparency, it positions itself at a higher z-index than
@@ -757,6 +760,7 @@ surrounding `Activity`.
 默认值为 `true`，此时允许 Flutter 和 Flutter 插件与 `Activity` 交互。
 
 {{site.alert.note}}
+
   Some plugins may expect or require an `Activity` reference.
   Ensure that none of your plugins require an `Activity`
   before you disable access.

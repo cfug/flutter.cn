@@ -87,7 +87,7 @@ On **iOS**:
   in the same direction as in iOS.
 
   iOS 的 [`Navigator.push()`][] API 提供了 iOS 上的
-  Show 转场动画（也被成为 Push 转场动画），
+  Show 转场动画（也被称为 Push 转场动画），
   即根据语言的方向设置，执行一种从后到前的滚动动画效果。
   在显示新页面的时候，原来的页面也会沿着相同的方向进行视差滚动。
 
@@ -99,7 +99,7 @@ On **iOS**:
   当显示一个页面，且 [`PageRoute.fullscreenDialog`][] 是 true 的时候，
   iOS 提供了另外一种自下而上的动画效果。
   这个动画通常被用在展示全屏模态页，
-  也被成为 iOS 上的 Present 转场动画或 Modal 转场动画。
+  也被称为 iOS 上的 Present 转场动画或 Modal 转场动画。
 
 
 <div class="container">

@@ -18,7 +18,7 @@ including banner (inline and overlay),
 interstitial, rewarded video, native ads,
 and adaptive banner.
 
-Flutter 广告支持功能可以通过 [Google Mobile Ads SDK for Flutter (Beta)][plugin] 插件获得，这款插件可以与 AdMob 和 AdManager 一起使用。
+Flutter 广告支持功能可以通过 [Google Mobile Ads SDK for Flutter][plugin] 插件获得，这款插件可以与 AdMob 和 AdManager 一起使用。
 这款插件还支持多种广告格式，其中包括横幅广告（内嵌和叠加），插页式广告，奖励视频广告，原生广告和自适应横幅广告。
 
 ![Pic showing different types of ads]({{site.url}}/assets/images/ads/GoogleMobileAdTypes.png){:width="100%"}
@@ -27,7 +27,7 @@ The following video tutorial,
 [Monetizing apps with Flutter][],
 shows how to get started with Ads:
 
-以下的视频教程，[通过 Flutter 应用获利][]，展示了如何开始使用广告功能。
+以下的视频教程，[通过 Flutter 应用获利][Monetizing apps with Flutter]，展示了如何开始使用广告功能。
 
 <iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=289460171&bvid=BV1Vf4y147Er&cid=305747760&page=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 
@@ -61,7 +61,7 @@ The following resources can help you get started:
 * If you experience any problems with the beta release,
   please [file an issue][].
 
-  如果你在测试版本中遇到任何问题，请 [提出问题][] 。
+  如果你在测试版本中遇到任何问题，请 [提出问题][file an issue] 。
 
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter#0
 [Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
@@ -69,6 +69,3 @@ The following resources can help you get started:
 [file an issue]: {{site.github}}/googleads/googleads-mobile-flutter/issues
 [Monetizing apps with Flutter]: {{site.youtube-site}}/watch?v=m0d_pbgeeG8&feature=youtu.be
 [plugin]: {{site.pub-pkg}}/google_mobile_ads
-[通过 Flutter 应用获利]: {{site.youtube-site}}/watch?v=m0d_pbgeeG8&feature=youtu.be
-[提出问题]: {{site.github}}/googleads/googleads-mobile-flutter/issues
-

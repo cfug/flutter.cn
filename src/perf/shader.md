@@ -150,7 +150,7 @@ shader capturing. It also purges the SkSL shaders so use it *only* on the first
 <li markdown="1"> Build the app with SkSL warm-up using the following,
     as appropriate:
 
-​    在下面的命令中选择合适的构建带有 SkSL 预热的应用：
+    在下面的命令中选择合适的构建带有 SkSL 预热的应用：
 
 Android:
 ```terminal
@@ -354,16 +354,24 @@ difference as illustrated in the beginning of this article.
 ## 将要做的事
 
 On both Android and iOS, shader warm-up has a few drawbacks:
-1. The size of the deployed app is larger because it contains the bundled shaders.
-2. App startup latency is longer because the bundled shaders need to be precompiled.
-3. Most importantly, we are not happy with the developer experience of shader
-warm-up. In particular we view the process of performing training runs, and reasoning
-about the trade-offs imposed by (1) and (2) to be too onerous.
 
 在 Android 和 iOS 上，着色器预热有一些缺点：
-1. 交付的应用包体积增加了，因为它包含了一些绑定的着色器。
-2. 应用启动等待时间变长，因为这些绑定的着色器需要进行编译。
-3. 最重要的是，我们对着色器预热的开发体验很不满意。
+
+1. The size of the deployed app is larger because it contains the bundled shaders.
+
+   交付的应用包体积增加了，因为它包含了一些绑定的着色器。
+
+2. App startup latency is longer because the bundled shaders need to be precompiled.
+
+   应用启动等待时间变长，因为这些绑定的着色器需要进行编译。
+
+3. Most importantly, we are not happy with the developer experience of shader warm-up.
+
+   最重要的是，我们对着色器预热的开发体验很不满意。
+
+In particular we view the process of performing training runs, and reasoning
+about the trade-offs imposed by (1) and (2) to be too onerous.
+
 特别是我们发现由于 (1) 和 (2) 导致执行训练运行和推理的过程的权衡过于繁重。
 
 Therefore, we are [continuing to investigate][] approaches to shader compilation jank, and

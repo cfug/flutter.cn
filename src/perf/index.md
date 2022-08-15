@@ -84,7 +84,7 @@ evaluate and fix rendering issues.
 
 [Improving rendering performance]({{site.url}}/perf/rendering-performance)
 
-[提高渲染性能]({{site.url}}/perf/rendering)
+[提高渲染性能]({{site.url}}/perf/rendering-performance)
 
 {% comment %}
 Do your apps take a long time to open? We'll also cover the startup speed issue

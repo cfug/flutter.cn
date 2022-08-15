@@ -8,7 +8,7 @@ description: 学习如何将广告加入您的 Flutter 应用中。
 Monetizing apps by using ads has been one of
 the most popular requests for many Flutter developers.
 
-通过使用广告获利是众多 Flutter 开发者最流行的需求之一。
+在 Flutter 开发中，通过广告获利是开发者们非常热门的需求之一。
 
 Flutter ads support is available through the
 [Google Mobile Ads SDK for Flutter (Beta)][plugin],

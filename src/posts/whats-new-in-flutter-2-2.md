@@ -340,7 +340,8 @@ class HomePage extends StatelessWidget {
 * 最终将着色器编译为机器码的操作仍然与帧工作负载同步发生，但这好过在帧渲染时段内执行所有着色器生成和编译操作。
 * 最终生成的机器码会在应用首次运行后得到缓存，直到设备被重新启动。
 
-如果您希望在自己的应用中使用此新功能，可以参考 [Flutter 官方文档](https://flutter.cn/docs/perf/rendering/shader#how-to-use-sksl-warmup) 上的说明进行操作。
+如果您希望在自己的应用中使用此新功能，可以参考
+[Flutter 官方文档](https://flutter.cn/docs/perf/shader#how-to-use-sksl-warmup) 上的说明进行操作。
 
 我们将持续改进此实现方案。在 Android 和 iOS 上，它目前有几个缺点:
 

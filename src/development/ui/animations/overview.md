@@ -251,9 +251,6 @@ A `Ticker` can be started and stopped. When started, it returns a
 一个 `Ticker` 可以被启动和停止，启动时，
 它会返回一个 `Future`，这个 `Future` 在 `Ticker` 停止时会被改为完成状态。
 
-一个 `Ticker` 可以被启动和停止，启动时，
-它会返回一个 `Future`，这个 `Future` 在 `Ticker` 停止时会被改为完成状态。
-
 Each tick, the `Ticker` provides the callback with the
 duration since the first tick after it was started. 
 

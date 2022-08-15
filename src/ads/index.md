@@ -60,9 +60,8 @@ The following resources can help you get started:
   and native inline ads to a Flutter app][] codelab.
 
   想要了解如何实现内嵌横幅广告和本地广告，可以查阅
-  [添加 AdMob 的横幅和信息流广告到 Flutter 应用中][
-  Adding AdMob banner and native inline ads to a Flutter app][]
-  的代码实验室。
+  [添加 AdMob 的横幅和信息流广告到 Flutter 应用中][Adding AdMob banner and native inline ads to a Flutter app]
+  的 Codelabs 教程。
 
 * If you experience any problems with the beta release,
   please [file an issue][].

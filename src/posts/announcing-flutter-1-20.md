@@ -30,7 +30,8 @@ Flutter 团队一直在寻找缩减应用大小和延迟的新方法。对于大
 
 △ 使用和不使用 SkSL 预热的动画
 
-如果 Flutter 应用在首次运行时的动画出现卡顿，那么 Skia Shading Language 着色器将在应用构建中提供预编译，将速度提高 2 倍以上。如果您想使用此高级功能，请参见 flutter 文档中的 [SkSL 预热页面](https://flutter.cn/docs/perf/rendering/shader)。
+如果 Flutter 应用在首次运行时的动画出现卡顿，那么 Skia Shading Language 着色器将在应用构建中提供预编译，将速度提高 2 倍以上。
+如果您想使用此高级功能，请参见 flutter 文档中的 [SkSL 预热页面](https://flutter.cn/docs/perf/shader)。
 
 最后，在针对桌面环境的优化中，我们进一步完善了对鼠标的支持。在此版本，我们 [重构了鼠标点击测试系统](https://github.com/flutter/flutter/pull/59883)，带来了许多曾因性能问题受阻的架构优势。在基于 web 的微型基准测试中，重构使性能提高了多达 15 倍！这意味着，您可以在保证性能的前提下，获得更好、更一致、更准确的点击测试结果：实现双赢！
 

@@ -101,9 +101,11 @@ Coming from another platform? Check out Flutter for:
 
 ### Videos
 
-### 视频
+### 视频资源
 
-We also have some helpful videos on our [Flutter YouTube channel][]! In particular, check out the [Flutter in Focus series][], and learn about other series on our [videos][] page.
+We also have some helpful videos on our [Flutter YouTube channel][]!
+In particular, check out the [Flutter in Focus series][],
+and learn about other series on our [videos][] page.
 
 我们在 YouTube 上有一个 [视频频道][Flutter YouTube channel]，欢迎订阅！
 更多视频和播放列表介绍，以及社区制作的视频教程，
@@ -113,33 +115,25 @@ We also have some helpful videos on our [Flutter YouTube channel][]! In particul
 也可以关注 [“Flutter 社区”的哔哩哔哩账号](https://space.bilibili.com/344928717)
 了解更多来自社区的内容更新。
 
-First up, why use Flutter? What makes it different than other app frameworks?
+Learn Flutter basics in [How do I make my first Flutter app?][]
 
-首先你需要知道，为何我们要使用 Flutter？ 是什么让它与众不同？
+在这个视频《如何构建第一个 Flutter 应用》里，了解基础的 Flutter 知识：
 
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=68736077&cid=119126400&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><br>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/xWV71C2kp38" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 
-How is Flutter different for app development?<br/>
-
-视频名称：使用 Flutter 开发应用与其他有何不同<br/>
-
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794948&cid=97538589&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
-
-Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
-
-FiF 系列视频：十分钟以内学会一个 Flutter 特性<br>
-
-
-In Flutter, "everything is a widget"! If you want to better understand
-the two kinds of widgets, Stateless and Stateful, see the following videos,
+In Flutter, "everything is a widget"! To better understand
+the two kinds of widgets, `Stateless` and `Stateful`, see 
+[What is State?][]
 
 Flutter 里 “所有的事物都是 widget”，
-如果你想更好了解有状态和无状态的 widget，
-请查看下面两支视频了解更多：
+如果你想更好了解有状态 `Stateful`
+和无状态 `Stateless` 的 widget，
+请参阅下面的视频《什么是状态》了解更多。
 
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/QlwiL_yLh6E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55832147&cid=97601562&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[How do I make my first Flutter app?]: {{site.youtube-site}}/watch?v=xWV71C2kp38
+[What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
 
 ## Want to skill up?
 

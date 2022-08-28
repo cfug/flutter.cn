@@ -408,9 +408,9 @@ The initial display of Flutter content requires some wait time,
 even if a pre-warmed `FlutterEngine` is used.
 To help improve the user experience around
 this brief waiting period, Flutter supports the
-display of a splash screen until Flutter renders
-its first frame. For instructions about how to show a splash screen,
-see the [splash screen guide][].
+display of a splash screen (also known as "launch screen") until Flutter
+renders its first frame. For instructions about how to show a launch
+screen, see the [splash screen guide][].
 
 即使使用了预热的 `FlutterEngine`，第一次展示 Flutter 的内容仍然需要一些时间。
 为了更进一步提升用户体验，Flutter 支持在第一帧渲染完成之前展示闪屏页。

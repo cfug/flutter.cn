@@ -7,16 +7,52 @@ description: The platforms that Flutter supports by platform version.
 description: Flutter 支持的平台以及版本号
 ---
 
+## Support Tiers
+
+## 支持级别
+
+We define three tiers of support for the platforms on
+which Flutter runs:
+
+我们为 Flutter 的平台支持定义了三个级别：
+
+1. Google-tested platforms
+   are automatically tested at every commit
+   by continuous integration testing.
+
+   谷歌公司级别的 (Google-tested) 平台，
+   这些平台“归属”在整个公司级别的产品测试体系下、
+   Flutter 团队每次提交时都会进行集成测试的平台。
+
+1. Best-effort platforms, supported through community
+   testing, are platforms we believe we support through
+   coding practices and ad-hoc testing,
+   but rely on the community for testing.
+
+   尽力支持的平台，
+   由社区维护的测试平台，我们相信这些平台是
+   通过了编码实践和特别测试支持的，
+   但依赖社区（非官方）进行测试。
+
+1. Unsupported platforms, which are platforms that
+   might work, but that the development team
+   doesn't directly test or support.
+
+   不受支持的平台，
+   这些平台可能是可以正常工作的，
+   但开发团队不会直接测试或提供支持。
+   
 ## Supported platforms
 
 ## 已支持的平台
 
 As of the current release,
-Flutter supports the following platforms:
+Flutter supports the following platforms as part of Google-tested and best-effort platform tier:
 
-Flutter 3 稳定版正式发布之后，
-Flutter 支持的平台列表如下：
+截止目前的稳定版发布，
+Flutter 支持下列谷歌级别和尽力支持的平台：
 
+<div class="table-wrapper" markdown="1">
 |Platform|Version                       |Channels |
 |平台     | 版本                         | Flutter 版本发布渠道 |
 |--------|------------------------------|---------|
@@ -38,70 +74,41 @@ Flutter 支持的平台列表如下：
 |Web     | Edge 1.2.0 及更高的版本        | 所有     |
 |Windows | Windows 7 & above, 64-bit    | All     |
 |Windows | 64 位 Windows 7 及更高的版本   | 所有     |
+{:.table.table-striped}
+</div>
 
 All channels include master, beta,
-and stable channels. 
+and stable channels.
 
 Flutter 版本发布渠道中的「所有」渠道，
 包括 master、beta 和 stable 发布渠道。
 
-## How we define a supported platform
+### Google-tested platforms
 
-## 我们如何定义一个已支持的平台
+## 谷歌公司级别的平台
 
-We define three tiers of support for the platforms on
-which Flutter runs:
-
-我们为 Flutter 的平台支持定义了三个等级：
-
-1. Supported Google-tested platforms,
-   which are platforms the Flutter team at 
-   Google tests in continuous integration at every commit. 
-
-   **完全支持** 谷歌公司级别的平台，
-   这些平台“归属”在整个公司级别的产品测试体系下、
-   Flutter 团队每次提交时都会进行集成测试的平台。
-
-1. Best effort platforms, supported through community
-   testing, are platforms we believe we support through
-   coding practices and ad-hoc testing,
-   but rely on the community for testing.
-
-   **尽力支持** 由社区维护的测试平台，
-   我们相信这些平台是通过编码实践和特别测试支持的，
-   但依赖社区（非官方）进行测试。
-
-1. Unsupported platforms, which are platforms that
-   might work, but that the development team
-   doesn't directly test or support.
-
-   **不受支持** 的平台，
-   这些平台可能是可以正常工作的，
-   但开发团队不会直接测试或提供支持。
-
-### Supported Google-tested platforms
-
-### 完全支持的平台
-
+<div class="table-wrapper" markdown="1">
 |Platform|Version               |
 |平台    |版本                   |
 |--------|----------------------|
-|Android |Android SDK 21–30     |
-|Android |Android SDK 19        |
+|Android |Android SDK 19–30*    |
 |iOS     |14-15                 |
 |Linux   |Debian 10             |
-|macOS   |El Capitan & greater  |
+|Linux   |Ubuntu 18.04 LTS      |
+|macOS   |Monterey (12) & above |
 |Web     |Chrome 84             |
 |Web     |Firefox 72.0          |
 |Web     |Safari / Catalina     |
 |Web     |Edge 1.2.0            |
 |Windows |Windows 10            |
+{:.table.table-striped}
+</div>
 
-Note that Android SDK 20 is covered by
-testing Android SDK 19, as the differences
-between the two platform versions are minimal.
+\* Passing tests on Android SDK 19 also confers a passing result on SDK 20.
+  This is because Android SDK 20 has additional support for Android Wear,
+  but otherwise no new or deprecated API.
 
-请注意，Android SDK 19 的测试涵盖了 Android SDK 20，
+\* 请注意，Android SDK 19 的测试涵盖了 Android SDK 20，
 因为两个版本之间的差异很小。
 请注意，Android SDK 19 的测试涵盖了 Android SDK 20，
 因为两个版本之间的差异很小。
@@ -110,22 +117,34 @@ between the two platform versions are minimal.
 
 ### 尽力支持的平台
 
+<div class="table-wrapper" markdown="1">
 |Platform|Version             |
 |--------|--------------------|
-|Android |Android SDK 20      |
 |Android |Android SDK 16–18   |
-|Android |Android SDK 17      |
-|Android |Android SDK 16      |
-|iOS     |iOS 9-13            |
+|iOS     |iOS 9-13*           |
+|Linux   |Debian 11           |
 |Linux   |Debian 9 & below    |
 |Linux   |Debian 9 以及更低的版本|
+|Linux   |Ubuntu 20.04        |
+|Linux   |Ubuntu 22.04 (Aspirational Google-tested platform)        |
+|Linux   |Ubuntu 22.04 (有望成为 Google-tested 的平台)                 |
+|macOS   |El Capitan (10.11) - Big Sur (11)   |
+|Windows |Windows 11 (Aspirational Google-tested platform)          |
+|Windows |Windows 11 (有望成为 Google-tested 的平台)          |
 |Windows |Windows 8           |
 |Windows |Windows 7           |
+{:.table.table-striped}
+</div>
+
+\* Flutter 3.0 is the last stable release with iOS 9 and 10 best-effort support.
+
+\* Flutter 3.0 将会是支持 iOS 9 和 iOS 10 
 
 ### Unsupported platforms
 
 ### 不受支持的平台
 
+<div class="table-wrapper" markdown="1">
 |Platform|Version                                     |
 |平台     |版本                                         |
 |--------|--------------------------------------------|
@@ -141,6 +160,7 @@ between the two platform versions are minimal.
 |Windows |任何 32 位的平台                              |
 |macOS   |Yosemite & below                            |
 |macOS   |Yosemite 及更低的版本                         |
-
+{:.table.table-striped}
+</div>
 [iOS 8]: {{site.url}}/go/rfc-ios8-deprecation
 [`arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported

@@ -304,7 +304,7 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
    }
    ```
 
-6. Now, run your app so that codegen takes place. You should see generated files in
+6. Now, run `flutter gen-l10n` so that codegen takes place. You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
    
    要测试本地化工具，可以运行您的应用程序。

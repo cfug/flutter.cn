@@ -51,7 +51,11 @@ plugin with the [`dart:io`][] library.
      从文件读取数据
      
 
+{{site.alert.note}}
+To learn more, watch this Package of the Week video on the path_provider package:
+
 <iframe class="full-width" src="{{site.youtube-site}}/embed/Ci4t-NkOY3I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
 
 ## 1. Find the correct local path
 

@@ -235,108 +235,107 @@ possibly occurred in the timeline (x-axis).
 The following legend shows the symbol for each
 DevTools event and its meaning:
 
-下面是图例中每个 DevTools 事件的符号及其含义
+下面是图例中每个 DevTools 事件的符号及其含义:
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**Snapshot**</p>
-<p markdown="1">**手动快照**</p>
-</dt>
+**Snapshot**  
+
+**Snapshot (手动快照)**
 ![User snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_snapshot.png){:width="17px"}
-<dd>
-<p markdown="1">User initiated snapshot&mdash;all memory
-                information is collected and an analysis is performed.</p>
-<p markdown="1">用户主动保存的快照，可以收集所有内存信息并进行分析。</p>
-</dd>
-<dt>
-<p markdown="1">**Auto-Snapshot**</p>
-<p markdown="1">**自动快照**</p>
-</dt>
+
+User initiated snapshot&mdash;all memory
+information is collected and an analysis is performed.
+
+用户主动保存的快照，可以收集所有内存信息并进行分析。
+
+**Auto-Snapshot**  
+
+**Auto-Snapshot (自动快照)**
 ![Auto snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_auto_snapshot.png){:width="18px"}
-<dd>
-<p markdown="1">DevTools initiated a snapshot after detecting
-                that memory has grown by 40% or more from its
-                last measurement. This can help to quickly detect
-                memory spikes in your Flutter application for later
-                analysis, and is the same information collected
-                in a manual snapshot.</p>
-<p markdown="1">当检测到内存比以前的大小增加了 40% 或更多时
-                DevTools 会自动保存一个快照。
-                可以用于快速检测 Flutter 应用程序中的内存峰值，
-                以供后续分析，它与手动快照中记录的内容一致。</p>
-</dd>
-<dt>
-<p markdown="1">**Track**</p>
-<p markdown="1">**跟踪**</p>
-</dt>
+
+DevTools initiated a snapshot after detecting
+that memory has grown by 40% or more from its
+last measurement. This can help to quickly detect
+memory spikes in your Flutter application for later
+analysis, and is the same information collected
+in a manual snapshot.
+
+当检测到内存比以前的大小增加了 40% 或更多时
+DevTools 会自动保存一个快照。
+可以用于快速检测 Flutter 应用程序中的内存峰值，
+以供后续分析，它与手动快照中记录的内容一致。
+
+**Track**  
+
+**Track (跟踪)**
 ![Monitor]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_monitor.png){:width="17px"}
-<dd>
-<p markdown="1">Collects the current state of all active classes, the
-                number of instances, and the byte size of all instances.
-                In addition, the deltas indicate the change in the
-                accumulators since the last **Reset**.</p>
-<p markdown="1">收集当前所有处于活动状态的类的状态实例数和所有实例的字节大小。
-                此外，变化值是自上次按下 **Reset(重置)** 按钮以来累计数据的变化。</p>
-</dd>
-<dt>
-<p markdown="1">**Reset**</p>
-<p markdown="1">**重置**</p>
-</dt>
+
+Collects the current state of all active classes, the
+number of instances, and the byte size of all instances.
+In addition, the deltas indicate the change in the
+accumulators since the last **Reset**.
+
+收集当前所有处于活动状态的类的状态实例数和所有实例的字节大小。
+此外，变化值是自上次按下 **Reset (重置)** 按钮以来累计数据的变化。
+
+**Reset**  
+
+**Reset (重置)**
 ![Reset]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_reset_monitor.png){:width="18px"}
-<dd>
-<p markdown="1">When both the instance and byte accumulators
-                were reset to zero.</p>
-<p markdown="1">实例和字节的累计数据都重置为零时。</p>
-</dd>
-<dt>
-<p markdown="1">**User Initiated GC**</p>
-<p markdown="1">**用户手动 GC**</p>
-</dt>
+
+When both the instance and byte accumulators
+were reset to zero.
+
+实例和字节的累计数据都重置为零时。
+
+**User Initiated GC**  
+
+**User Initiated GC (用户手动 GC)**
 ![GC]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_gc.png){:width="18px"}
-<dd>
-<p markdown="1">User initiated request to the VM to perform a
-                garbage collection on memory. This is not a guarantee
-                that GC occured&mdash;it's only a request.</p>
-<p markdown="1">用户向 VM 请求执行内存 GC。仅向 VM 申请，不一定立刻执行。</p>
-</dd>
-<dt>
-<p markdown="1">**VM GC**</p>
-<p markdown="1">**VM 自动 GC**</p>
-</dt>
+
+User initiated request to the VM to perform a
+garbage collection on memory. This is not a guarantee
+that GC occured&mdash;it's only a request.
+
+用户向 VM 请求执行内存 GC。仅向 VM 申请，不一定立刻执行。
+
+**VM GC**  
+
+**VM GC (VM 自动 GC)**  
 ![VM GC]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_vmgc.png){:width="11px"}
-<dd>
-<p markdown="1">GC (VM garbage collection) has occurred and has freed
-                up space that is no longer used. For more information on
-                how Dart performs garbage collection, see
-                [Don't Fear the Garbage Collector][].</p>
-<p markdown="1">VM 自动执行 GC，释放不再使用的空间。
-                更多 Dart 是如何执行垃圾收集的信息，
-                参阅 [不要担心 GC][Don't Fear the Garbage Collector]。</p>
-</dd>
-<dt>
-<p markdown="1">**User and Flutter Event**</p>
-<p markdown="1">**用户和 Flutter 事件**</p>
-</dt>
-<dd>
-<p>The dark magenta triangle displayed in the event pane indicates
-   that "Multiple Flutter or User Events" occurred at this timestamp.</p>
-<p>深色三角形表示「多个 Flutter 或用户事件」。</p>
-</dd>
+
+GC (VM garbage collection) has occurred and has freed
+up space that is no longer used. For more information on
+how Dart performs garbage collection, see
+[Don't Fear the Garbage Collector][].
+
+VM 自动执行 GC，释放不再使用的空间。
+更多 Dart 是如何执行垃圾收集的信息，
+参阅 [不要担心 GC][Don't Fear the Garbage Collector]。
+
+**User and Flutter Event**  
+
+**User and Flutter Event (用户和 Flutter 事件)**
+
+The dark magenta triangle displayed in the event pane indicates
+that "Multiple Flutter or User Events" occurred at this timestamp.
+
+深色三角形表示在这个时间点的「多个 Flutter 或用户事件」。
+
 ![Aggregate Events]({{site.url}}/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
-<dd>
-<p>The lighter magenta triangle indicates that
-   "One Flutter or User Event" occurred at this timestamp.</p>
-<p>浅色三角形表示「一次 Flutter 或用户事件」。</p>
-</dd>
+
+The lighter magenta triangle indicates that
+"One Flutter or User Event" occurred at this timestamp.
+
+浅色三角形表示在这个时间点的「一次 Flutter 或用户事件」。
+
 ![Single Events]({{site.url}}/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
-<dd>
-<p>To view the events, click on the triangle to display a hover card.
-   Expand the events at the bottom of the hover card
-   to display all events for that timestamp.</p>
-<p>表示在此时间戳处仅收到一个事件。要查看事件，点击三角形将显示悬浮窗，
-   展开浮窗底部，将显示该时间戳的所有事件。</p>
-</dd>
-</dl>
+
+To view the events, click on the triangle to display a hover card.
+Expand the events at the bottom of the hover card
+to display all events for that timestamp.
+
+表示在此时间戳处仅收到一个事件。要查看事件，点击三角形将显示悬浮窗，
+展开浮窗底部，将显示该时间戳的所有事件。
 
 Displayed below the events pane is the [memory chart](#memory-overview-chart)
 and the [Android memory chart](#android-chart). The android-memory chart is
@@ -676,111 +675,90 @@ collected Android memory data.
 
 悬浮窗将显示所有采集到的 Android 内存数据。
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**Time**</p>
-<p markdown="1">**时间戳**</p>
-</dt>
-<dd>
-<p>The timestamp for the current data values
-    collected&mdash;see descriptions below.</p>
-<p>内存数据的采集时刻&mdash;&mdash;请参阅以下的说明。</p>
-</dd>
-<dt>
-<p markdown="1">**Total**</p>
-<p markdown="1">**总计大小**</p>
-</dt>
-<dd>
-<p markdown="1">The total memory in use. Total memory is comprised of
-    several different categories, all of which are plotted
-    along the y-axis. These categories are described below.</p>
-<p markdown="1">已使用的总内存大小，由几类不同的内存组成，
-所有类别都沿着 y 轴绘制，如下所述。</p>
-</dd>
-<dt>
-<p markdown="1">**Other**</p>
-<p markdown="1">**其他**</p>
-</dt>
-<dd>
-<p>Other memory usage corresponds to the ‘Private Other’
-   field from ADB. This is memory used by the app that the
-   system isn't sure how to categorize. Note: The Other trace
-   is a combination of Other and System (shared and system
-   memory usage), and corresponds to ‘System’ field from ADB.</p>
-<p>「其他」使用情况对应于 ADB 的「Private Other（其他私有）」部分，
-   这是系统不确定如何分类的内存。
-   注意：这一部分是「其他」和「系统」
-  （共享和系统内存使用- 对应 ADB 的 System（系统）部分）
-   的组合。</p>
-</dd>
-<dt>
-<p markdown="1">**Code**</p>
-<p markdown="1">**代码**</p>
-</dt>
-<dd>
-<p>Code memory usage corresponds to the ‘Code’ field from ADB.
-   This is memory that your app uses for static
-   code and resources, such as dex byte code,
-   optimized or compiled dex code, .so libraries, and fonts.</p>
-<p>「代码」使用情况对应于 ADB 的 「Code（代码）」部分。
-   这是应用程序中静态代码和资源的内存，
-   如 dex 字节码、优化或编译的 dex 代码、.so 库和字体。</p>
-</dd>
-<dt>
-<p markdown="1">**Native Heap**</p>
-<p markdown="1">**本地堆内存**</p>
-</dt>
-<dd>
-<p>Native Heap usage corresponds to the ‘Native Heap’ field
-   from ADB. This is memory from objects allocated from C or
-   C++ code. Even if you're not using C++ in your app, you might
-   see some native memory used here because the Android framework
-   uses native memory to handle various tasks on your behalf. Some
-   examples of these tasks are handling image assets and other
-   graphics&mdash;even though the code you've written is in Java or Kotlin.</p>
-<p>「本地堆」使用情况对应于 ADB 中的 「Native Heap（本地堆）」部分。
-   这是从 C 或 C++ 代码分配的对象的内存。即使你的应用程序中没有使用 C++，
-   也可以看到本地内存的使用，因为 Android 框架使用本地内存来处理各种任务。
-   比如，用来处理图像资源和其他图形，即使你编写的代码是 Java 或 Kotlin。</p>
-</dd>
-<dt>
-<p markdown="1">**Java Heap**</p>
-<p markdown="1">**Java 堆内存**</p>
-</dt>
-<dd>
-<p markdown="1">Java Heap usage corresponds to the ‘Java Heap’ field from ADB.
-    This is memory from objects allocated from Java or Kotlin code.</p>
-<p markdown="1">「Java 堆」使用情况对应于 ADB 的「Java Heap（Java 堆）」部分。
-这是 Java 或 Kotlin 代码分配的对象的内存。</p>
-</dd>
-<dt>
-<p markdown="1">**Stack**</p>
-<p markdown="1">**堆栈**</p>
-</dt>
-<dd>
-<p>Stack usage corresponds to the ‘Stack’ field from ADB.
-   This is memory used by both native and Java stacks
-   in your app and usually relates to how many threads
-   your app is running.</p>
-<p>「堆栈」使用情况对应于 ADB 的 「Stack（堆栈）」部分。
-   这是应用程序中本地和 Java 堆栈使用的内存。
-   通常与应用程序正在运行的线程数有关。</p>
-</dd>
-<dt>
-<p markdown="1">**Graphics**</p>
-<p markdown="1">**图形**</p>
-</dt>
-<dd>
-<p>Graphics usage corresponds to the ‘Graphics’ field from ADB.
-   This is memory used for graphics buffer queues to
-   display pixels on the screen, including GL surfaces,
-   GL textures, and so on. Note: This is memory shared
-   with the CPU&mdash;not dedicated GPU memory.</p>
-<p>「图形」使用情况对应于 ADB 的 「Graphics（图形）」部分。
-   这是用于图形缓冲队列在屏幕上显示像素的内存，包括 GL 曲面、GL 纹理等。
-   注意：这是与 CPU 共享的内存，而不是专用的 GPU 内存。</p>
-</dd>
-</dl>
+**Time**  
+The timestamp for the current data values
+collected&mdash;see descriptions below.
+
+**Time (时间戳)**
+内存数据的采集时刻&mdash;&mdash;请参阅以下的说明。
+
+**Total**  
+The total memory in use. Total memory is comprised of
+several different categories, all of which are plotted
+along the y-axis. These categories are described below.
+
+**Total (总计大小)**
+已使用的总内存大小，由几类不同的内存组成，
+所有类别都沿着 y 轴绘制，如下所述。
+
+**Other**  
+Other memory usage corresponds to the ‘Private Other’
+field from ADB. This is memory used by the app that the
+system isn't sure how to categorize. Note: The Other trace
+is a combination of Other and System (shared and system
+memory usage), and corresponds to ‘System’ field from ADB.
+
+**其他 (Other)**
+「其他」使用情况对应于 ADB 的「Private Other（其他私有）」部分，
+这是系统不确定如何分类的内存。
+注意：这一部分是「其他」和「系统」
+（共享和系统内存使用- 对应 ADB 的 System（系统）部分）的组合。
+
+**Code**  
+Code memory usage corresponds to the ‘Code’ field from ADB.
+This is memory that your app uses for static
+code and resources, such as dex byte code,
+
+**Code (代码)**
+「代码」使用情况对应于 ADB 的 「Code（代码）」部分。
+这是应用程序中静态代码和资源的内存，
+如 dex 字节码、优化或编译的 dex 代码、.so 库和字体。
+
+**Native Heap**  
+Native Heap usage corresponds to the ‘Native Heap’ field
+from ADB. This is memory from objects allocated from C or
+C++ code. Even if you're not using C++ in your app, you might
+see some native memory used here because the Android framework
+uses native memory to handle various tasks on your behalf. Some
+examples of these tasks are handling image assets and other
+graphics&mdash;even though the code you've written is in Java or Kotlin.
+
+**Native Heap (本地堆内存)**
+「本地堆」使用情况对应于 ADB 中的 「Native Heap（本地堆）」部分。
+这是从 C 或 C++ 代码分配的对象的内存。即使你的应用程序中没有使用 C++，
+也可以看到本地内存的使用，因为 Android 框架使用本地内存来处理各种任务。
+比如，用来处理图像资源和其他图形，即使你编写的代码是 Java 或 Kotlin。
+
+**Java Heap**  
+Java Heap usage corresponds to the ‘Java Heap’ field from ADB.
+This is memory from objects allocated from Java or Kotlin code.
+
+**Java Heap (Java 堆内存)**
+「Java 堆」使用情况对应于 ADB 的「Java Heap（Java 堆）」部分。
+这是 Java 或 Kotlin 代码分配的对象的内存。
+
+**Stack**  
+Stack usage corresponds to the ‘Stack’ field from ADB.
+This is memory used by both native and Java stacks
+in your app and usually relates to how many threads
+your app is running.
+
+**Stack (堆栈)**
+「堆栈」使用情况对应于 ADB 的 「Stack（堆栈）」部分。
+这是应用程序中本地和 Java 堆栈使用的内存。
+通常与应用程序正在运行的线程数有关。
+
+**Graphics**  
+Graphics usage corresponds to the ‘Graphics’ field from ADB.
+This is memory used for graphics buffer queues to
+display pixels on the screen, including GL surfaces,
+GL textures, and so on. Note: This is memory shared
+with the CPU&mdash;not dedicated GPU memory.
+
+**Graphics (图形)**
+「图形」使用情况对应于 ADB 的 「Graphics（图形）」部分。
+这是用于图形缓冲队列在屏幕上显示像素的内存，包括 GL 曲面、GL 纹理等。
+注意：这是与 CPU 共享的内存，而不是专用的 GPU 内存。
 
 ## Memory controls
 
@@ -794,100 +772,83 @@ how memory data is displayed:
 
 ![Screenshot of a memory controls]({{site.url}}/assets/images/docs/tools/devtools/memory_controls.png){:width="100%"}
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**Pause**</p>
-<p markdown="1">**暂停**</p>
-</dt>
-<dd>
-<p>Pauses the memory overview chart to allow inspecting
-   the currently plotted data. Incoming memory data is still received;
-   notice the Range selector continues to grow to the right.</p>
-<p>暂停内存概览图表的变化，可以检查已展示的数据，
-   但仍会接收到传入的内存数据。注意，范围选择器会继续向右增长。</p>
-</dd>
-<dt>
-<p markdown="1">**Resume**</p>
-<p markdown="1">**恢复**</p>
-</dt>
-<dd>
-<p>Resumes the memory overview chart so that it's live, displaying the
-   current time and the latest memory statistics.</p>
-<p>恢复内存概览图表，使其处于活动状态，显示当前时间和最新内存统计数据。</p>
-</dd>
-<dt>
-<p markdown="1">**Clear**</p>
-<p markdown="1">**清除**</p>
-</dt>
-<dd>
-<p>Clears all collected data from the memory profiler.</p>
-<p>清除内存监控中收集的所有数据。</p>
-</dd>
-<dt>
-<p markdown="1">**Display**</p>
-<p markdown="1">**显示范围**</p>
-</dt>
-<dd>
-<p>The duration of the x-axis. For example, if this dropdown
-   is set to "Display 5 minutes", memory data from the last
-   5 minutes is displayed.</p>
-<p>x 轴的显示区间。例如，将此下拉列表设置为「显示 5 分钟」，则显示最近 5 分钟的内存数据。</p>
-</dd>
-<dt>
-<p>- Display 1 Minute</p>
-<p>- 显示最近 1 分钟</p>
-</dt>
-<dt>
-<p>- Display 5 Minutes</p>
-<p>- 显示最近 5 分钟</p>
-</dt>
-<dt>
-<p>- Display 10 Minutes</p>
-<p>- Display 10 Minute（显示最近 10 分钟）</p>
-</dt>
-<dt>
-<p>- Display All Minutes (slider disabled)</p>
-<p>- Display All Minutes (slider disabled)（显示所有时间 - 禁用滑动）</p>
-</dt>
-<dt>
-<p markdown="1">**Source**</p>
-<p markdown="1">**数据来源**</p>
-</dt>
-<dd>
-<p>Source can be either **Live Feed**, which pulls data from the
-   connected Flutter app, or one of the available offline data
-   files, which are created by clicking **Export**.</p>
-<p>数据来源可以是 **Live Feed** （从连接的 Flutter 应用程序中获取实时数据），
-   也可以是通过点击 **导出** 创建的本地数据文件。</p>
-</dd>
-<dt>
-<p markdown="1">**Android Memory**</p>
-<p markdown="1">**Android 内存**</p>
-</dt>
-<dd>
-<p>Displays or hides the Android Memory Chart.</p>
-<p>显示或隐藏 Android 内存图表。</p>
-</dd>
-<dt>
-<p markdown="1">**GC**</p>
-<p markdown="1">**垃圾回收**</p>
-</dt>
-<dd>
-<p>Initiates a garbage collection&mdash;a compaction of the heap.</p>
-<p>启动垃圾回收&mdash;&mdash;压缩堆空间。</p>
-</dd>
-<dt>
-<p markdown="1">**Export**</p>
-<p markdown="1">**导出**</p>
-</dt>
-<dd>
-<p>Saves collected data for the Event Timeline, Memory Overview Chart,
-   and Android Overview Chart. Files saved are displayed under the
-   **Source** dropdown. Selecting a file loads the offline data.</p>
-<p>为事件时间线、内存概览图和 Android 概览图保存已收集的数据。
-   保存的文件显示在「Source（数据来源）」下拉列表中。选择文件将加载数据。</p>
-</dd>
-</dl>
+**Pause**  
+Pauses the memory overview chart to allow inspecting
+the currently plotted data. Incoming memory data is still received;
+notice the Range selector continues to grow to the right.
+
+**Pause (暂停)**
+暂停内存概览图表的变化，可以检查已展示的数据，
+但仍会接收到传入的内存数据。注意，范围选择器会继续向右增长。
+
+**Resume**  
+Resumes the memory overview chart so that it's live, displaying the
+current time and the latest memory statistics.
+
+**Resume (恢复)**
+恢复内存概览图表，使其处于活动状态，
+显示当前时间和最新内存统计数据。
+
+**Clear**
+Clears all collected data from the memory profiler.
+
+**Clear (清除)**
+清除内存监控中收集的所有数据。
+
+**Display**
+The duration of the x-axis. For example, if this dropdown
+is set to "Display 5 minutes", memory data from the last
+5 minutes is displayed.
+
+**Display (显示范围)**
+x 轴的显示区间。例如，将此下拉列表设置为「显示 5 分钟」，
+则显示最近 5 分钟的内存数据。
+
+\- Display 1 Minute  
+
+   显示最近 1 分钟
+
+\- Display 5 Minutes  
+
+   显示最近 5 分钟
+
+\- Display 10 Minutes  
+
+   显示最近 10 分钟
+
+\- Display All Minutes (slider disabled)
+
+   显示所有时间 - 禁用滑动
+
+**Source**  
+Source can be either **Live Feed**, which pulls data from the
+connected Flutter app, or one of the available offline data
+files, which are created by clicking **Export**.
+
+**数据来源 (Source)**
+数据来源可以是 **Live Feed**（从连接的 Flutter 应用程序中获取实时数据），
+也可以是通过点击 **导出** 创建的本地数据文件。
+
+**Android Memory**  
+Displays or hides the Android Memory Chart.
+
+**Android Memory (Android 内存)**
+显示或隐藏 Android 内存图表。
+
+**GC**  
+Initiates a garbage collection&mdash;a compaction of the heap.
+
+**GC (垃圾回收)**
+启动垃圾回收&mdash;&mdash;压缩堆空间。
+
+**Export**  
+Saves collected data for the Event Timeline, Memory Overview Chart,
+and Android Overview Chart. Files saved are displayed under the
+**Source** dropdown. Selecting a file loads the offline data.
+
+**Export (导出)**
+为事件时间线、内存概览图和 Android 概览图保存已收集的数据。
+保存的文件显示在「Source（数据来源）」下拉列表中。选择文件将加载数据。
 
 ## Memory actions
 
@@ -1023,75 +984,60 @@ common Flutter coding issues will be flagged, such as problems
 with fonts, files, or JSON.
 
 每个快照（手动或自动）都将生成快照的分析。例如，可能发生的组映像问题。
-将来，其他可能引起内存问题的常见 Flutter 编码问题（例如字体、文件、JSON 等）也会加入到分析中。
+将来，其他可能引起内存问题的常见 Flutter 编码问题
+（例如字体、文件、JSON 等）也会加入到分析中。
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**Tree View of Memory**</p>
-<p markdown="1">**内存树视图**</p>
-</dt>
-<dd>
-<p>The tree table view displays outstanding memory events (user
-   requested snapshots, automatic snapshots, snapshot analyses,
-   memory allocation monitoring).</p>
-<p>树表视图显示关键的内存事件（用户请求的快照、自动快照、快照分析、内存分配监控）。</p>
-</dd>
-<dt>
-<p markdown="1">**Memory Inspector**</p>
-<p markdown="1">**内存检查器**</p>
-</dt>
-<dd>
-<p>Displays either the contents of an analysis, snapshot, or
-   monitoring based on the currently selected row in the tree view.</p>
-<p>根据树状图中当前选定的行显示其分析、快照或监视的内容。</p>
-</dd>
-</dl>
+**Tree View of Memory**  
+The tree table view displays outstanding memory events (user
+requested snapshots, automatic snapshots, snapshot analyses,
+memory allocation monitoring).
+
+**Tree View of Memory (内存树视图)**
+树表视图显示关键的内存事件（用户请求的快照、自动快照、快照分析、内存分配监控）。
+
+**Memory Inspector**  
+Displays either the contents of an analysis, snapshot, or
+monitoring based on the currently selected row in the tree view.
+
+**Memory Inspector (内存检查器)**
+根据树状图中当前选定的行显示其分析、快照或监视的内容。
 
 Snapshots have major tree nodes:
 
 快照具有主要的树节点：
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**External**</p>
-<p markdown="1">**外部内存**</p>
-</dt>
-<dd>
-<p markdown="1">Memory that is not in the Dart heap but is still part
-    of the total memory footprint. Objects in external memory would be
-    native objects (for example, from a memory read from a file,
-    or a decoded image). The native objects are exposed to the Dart
-    VM from the native OS (such as Android, Linux, Windows, iOS)
-    using a Dart embedder. The embedder creates a Dart wrapper with
-    a finalizer, allowing Dart code to communicate with these native
-    resources. Flutter has an embedder for Android and iOS.
-    For more information, see [Dart on the Server][server] or
-    [Custom Flutter Engine Embedders][embedder].</p>
-<p markdown="1">不在 Dart 堆中的内存但仍然占用总内存一部分的内存。
-    外部内存中的对象可以是原生对象（例如，文件读取或者图片解码的所占用的内存）。
-    原生对象通过 Dart 嵌入层，从原生操作系统（如 Android、Linux、Windows、iOS）暴露给 Dart VM。
-    嵌入层使用 finalizer 创建一个 Dart 包装类，允许 Dart 代码与这些原生资源通信。
-    Flutter 有一个用于 Android 和 iOS 的嵌入层。
-    更多信息，参阅 [服务端应用 Dart][server] 或 [自定义 Flutter 引擎嵌入层][embedder]。</p>
-</dd>
-<dt>
-<p markdown="1">**Filtered**</p>
-<p markdown="1">**筛选**</p>
-</dt>
-<dd>
-<p>Filter are the packages being filtered.</p>
-<p>筛选项中包含了筛选过的 package。</p>
-</dd>
-<dt>
-<p markdown="1">**Packages**</p>
-<p markdown="1">**Packages（包）**</p>
-</dt>
-<dd>
-<p>User packages used by the application and
-    Src&mdash;the empty Dart package.</p>
-<p>应用程序使用的用户包和 Src&mdash;&mdash;空的 Dart package。</p>
-</dd>
-</dl>
+**External**  
+Memory that is not in the Dart heap but is still part
+of the total memory footprint. Objects in external memory would be
+native objects (for example, from a memory read from a file,
+or a decoded image). The native objects are exposed to the Dart
+VM from the native OS (such as Android, Linux, Windows, iOS)
+using a Dart embedder. The embedder creates a Dart wrapper with
+a finalizer, allowing Dart code to communicate with these native
+resources. Flutter has an embedder for Android and iOS.
+For more information, see [Dart on the Server][server] or
+[Custom Flutter Engine Embedders][embedder].
+
+**External (外部内存)**
+不在 Dart 堆中的内存但仍然占用总内存一部分的内存。
+外部内存中的对象可以是原生对象（例如，文件读取或者图片解码的所占用的内存）。
+原生对象通过 Dart 嵌入层，从原生操作系统（如 Android、Linux、Windows、iOS）暴露给 Dart VM。
+嵌入层使用 finalizer 创建一个 Dart 包装类，允许 Dart 代码与这些原生资源通信。
+Flutter 有一个用于 Android 和 iOS 的嵌入层。
+更多信息，参阅 [服务端应用 Dart][server] 或 [自定义 Flutter 引擎嵌入层][embedder]。
+
+**Filtered**  
+Displays the packages being filtered.
+
+**Filtered (筛选)**
+筛选项中包含了筛选过的 package。
+
+**Packages**  
+User packages used by the application and
+Src&mdash;the empty Dart package.
+
+**Packages**  
+应用使用的用户 package 和 Src&mdash;&mdash;空的 Dart package。
 
 Under each node are class nodes, an aggregate of the
 objects allocated to this class.
@@ -1189,60 +1135,53 @@ therefore tracking should be used sparingly.
 
 ### Allocation actions
 
+### 内存分配操作
+
 You can perform the following Allocation actions:
+
+你可以进行如下的内存分配操作:
 
 ![Screenshot of a memory actions]({{site.url}}/assets/images/docs/tools/devtools/memory_allocations_actions.png){:width="100%"}
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**Track**</p>
-<p markdown="1">**跟踪**</p>
-</dt>
-<dd>
-<p markdown="1"> Records and monitors the number of instances
-                 and size of all instances in bytes. Clicking
-                 the **Track** button populates a table with
-                 instance allocation data. For each instance in
-                 the allocation table, the **Delta** column reflects
-                 the number of memory allocations since the last reset.</p>
-<p markdown="1"> 记录和监控所有实例的数量和大小（以字节为单位）。
+**Track**  
+Records and monitors the number of instances
+and size of all instances in bytes. Clicking
+the **Track** button populates a table with
+instance allocation data. For each instance in
+the allocation table, the **Delta** column reflects
+the number of memory allocations since the last reset.
+
+**Track (跟踪)**
+记录和监控所有实例的数量和大小（以字节为单位）。
 点击「Track（跟踪）」按钮，实例分配数据会显示在下方的表格中。对于表中的每个实例，
-「Delta（增加量）」列表示自上次重置数据以来内存的分配大小。</p>
-</dd>
-<dt>
-<p markdown="1">**Reset**</p>
-<p markdown="1">**重置**</p>
-</dt>
-<dd>
-<p markdown="1">Resets the accumulator counts (**Delta** columns) for each
-                instance in the allocation table. The next time the **Monitor**
-                button is pressed, the **Delta** columns populate with
-                the new instances and sizes since the last reset.</p>
-<p markdown="1">重置表中每个实例的累计数据（增加量列）。
+「Delta（增加量）」列表示自上次重置数据以来内存的分配大小。
+
+**Reset**  
+Resets the accumulator counts (**Delta** columns) for each
+instance in the allocation table. The next time the **Monitor**
+button is pressed, the **Delta** columns populate with
+the new instances and sizes since the last reset.
+
+**Reset (重置)**
+重置表中每个实例的累计数据（增加量列）。
 下次按下 **Monitor（监控）** 按钮时，
-增加量列将显示自上次重置以来新分配的实例和所占空间。</p>
-</dd>
-<dt>
-<p markdown="1">**Search**</p>
-<p markdown="1">**搜索**</p>
-</dt>
-<dd>
-<p markdown="1">The **Search** field is enabled when the instance allocation data
-                exists. Typing, or selecting a name from the dropdown,
-                navigates to that class name in the table.</p>
-<p markdown="1">搜索功能会存在实例分配数据时可用。
-输入或从下拉列表中选择名称将跳转到表中对应的类。</p>
-</dd>
-<dt>
-<p markdown="1">**Filter**</p>
-<p markdown="1">**筛选**</p>
-</dt>
-<dd>
-<p markdown="1">When clicked, displays a dialog box listing libraries and class names
-                that you can select.</p>
-<p markdown="1">点击时弹出一个包含所有已展示的库和类名的对话框。</p>
-</dd>
-</dl>
+增加量列将显示自上次重置以来新分配的实例和所占空间。
+
+**Search**  
+The **Search** field is enabled when the instance allocation data
+exists. Typing, or selecting a name from the dropdown,
+navigates to that class name in the table.
+
+**Search (搜索)**
+搜索功能 **Search** 会存在实例分配数据时可用。
+输入或从下拉列表中选择名称将跳转到表中对应的类。
+
+**Filter**  
+When clicked, displays a dialog box listing libraries and class names
+that you can select.
+
+**Filter (筛选)**
+点击时弹出一个包含所有已展示的库和类名的对话框。
 
 ### Allocation view
 
@@ -1260,85 +1199,66 @@ allocated, with deltas for each (the count since the last reset).
 
 每行显示类名、实例数和对应分配的增加（自上次重置以来的累计数据）的字节数。
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**Track with Stack Trace**</p>
-<p markdown="1">**堆栈跟踪**</p>
-</dt>
-<dd>
-<p markdown="1">If enabled, records the stack trace when the instance
-                is created (when the class constructor is called).</p>
-<p markdown="1">如果启用，则在调用类构造函数创建实例时记录堆栈。</p>
-</dd>
-<dt>
-<p markdown="1">**Class Name**</p>
-<p markdown="1">**类名**</p>
-</dt>
-<dd>
-<p markdown="1">Class allocations monitored.</p>
-<p markdown="1">监控的类名</p>
-</dd>
-<dt>
-<p markdown="1">**Total Instances**</p>
-<p markdown="1">**实例总计数量**</p>
-</dt>
-<dd>
-<p markdown="1">Total number of active instances for the class.</p>
-<p markdown="1">类活动实例总数。</p>
-</dd>
-<dt>
-<p markdown="1">**Delta Instances**</p>
-<p markdown="1">**实例的增加数量**</p>
-</dt>
-<dd>
-<p markdown="1">An accumulator indicating a change to the instance count.
-                When **Reset** is pressed, the accumulators reset to zero;
-                then each time the **Track** button is pressed,
-                the data in the table is updated.</p>
-<p markdown="1">由重置按钮控制的实例累计数据。
+**Track with Stack Trace**  
+If enabled, records the stack trace when the instance
+is created (when the class constructor is called).
+
+**Track with Stack Trace (堆栈跟踪)**
+如果启用，则在调用类构造函数创建实例时记录堆栈。
+
+**Class Name**  
+Class allocations monitored.
+
+**Class Name (类名)**
+监控的类名
+
+**Total Instances**  
+Total number of active instances for the class.
+
+**Total Instances (实例总计数量)**
+类活动实例总数。
+
+**Delta Instances**  
+An accumulator indicating a change to the instance count.
+When **Reset** is pressed, the accumulators reset to zero;
+then each time the **Track** button is pressed,
+the data in the table is updated.
+
+**Delta Instances (实例的增加数量)**
+由重置按钮控制的实例累计数据。
 当按下 **Reset（重置）** 时，累计数据重置为零，
-然后每次按下 **Track（跟踪）** 按钮时，当前总计和增加数量都会更新。</p>
-</dd>
-<dt>
-<p markdown="1">**Total Bytes**</p>
-<p markdown="1">**总字节数**</p>
-</dt>
-<dd>
-<p markdown="1">Total number of bytes allocated to all instances of the class.</p>
-<p markdown="1">为类的所有实例分配的总字节数。</p>
-</dd>
-<dt>
-<p markdown="1">**Delta Bytes**</p>
-<p markdown="1">**增加的字节数**</p>
-</dt>
-<dd>
-<p markdown="1">An accumulator indicating a change to the number of
-                instance bytes created. When **Reset** is pressed,
-                the accumulators reset to zero; then each time the
-                **Track** button is pressed, the data in the table
-                is updated.</p>
-<p markdown="1">由重置按钮控制的实例字节变化累计数据。
+然后每次按下 **Track（跟踪）** 按钮时，当前总计和增加数量都会更新。
+
+**Total Bytes**  
+Total number of bytes allocated to all instances of the class.
+
+**总字节数 (Total Bytes)**
+为类的所有实例分配的总字节数。
+
+**Delta Bytes**  
+An accumulator indicating a change to the number of
+instance bytes created. When **Reset** is pressed,
+the accumulators reset to zero; then each time the
+**Track** button is pressed, the data in the table
+is updated.
+
+**Delta Bytes (增加的字节数)**
+由重置按钮控制的实例字节变化累计数据。
 当按下 **Reset（重置）** 时，累计数据重置为零，
-然后每次按下 **Track（跟踪）** 按钮时，当前总计和增加数量都会更新。</p>
-</dd>
-<dt>
-<p markdown="1">**Timestamp of Last Track**</p>
-<p markdown="1">**上一次启用跟踪的时间**</p>
-</dt>
-<dd>
-<p markdown="1">The timestamp when the **Track** button was pressed.</p>
-<p markdown="1">按下 **Track（跟踪）** 按钮的时间。</p>
-</dd>
-<dt>
-<p markdown="1">**Change Bubble**</p>
-<p markdown="1">**更改气泡**</p>
-</dt>
-<dd>
-<p markdown="1">A small bubble indicating that data in the table has
-                 been updated.</p>
-<p markdown="1">小气泡，表示已经在表中记录并更新的更改。</p>
-</dd>
-</dl>
+然后每次按下 **Track（跟踪）** 按钮时，当前总计和增加数量都会更新。
+
+**Timestamp of Last Track**  
+The timestamp when the **Track** button was pressed.
+
+**Timestamp of Last Track (上一次启用跟踪的时间)**
+按下 **Track（跟踪）** 按钮的时间。
+
+**Change Bubble**  
+A small bubble indicating that data in the table has
+been updated.
+
+**Change Bubble (更改气泡)**
+小气泡，表示已经在表中记录并更新的更改。
 
 For more information, see [Allocation tracking](#allocation-tracking).
 
@@ -1377,54 +1297,41 @@ accumulators to zero.
 按下 **Reset（重置）** 按钮时，所有类别的累计数据都会重置为零。当发生重置时，
 事件时间线上会出现「监控重置」事件。再次点击 **Reset（重置）** 按钮将两个累计数据重置为零。
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**Classes**</p>
-<p markdown="1">**类**</p>
-</dt>
-<dd>
-<p>Active classes in the heap.</p>
-<p>堆中的活动的类。</p>
-</dd>
-<dt>
-<p markdown="1">**Instances column**</p>
-<p markdown="1">**实例列**</p>
-</dt>
-<dd>
-<p>Total active objects (instances) for all classes in the heap.</p>
-<p>堆中所有类的活动对象（实例）总数</p>
-</dd>
-<dt>
-<p markdown="1">**Delta column**</p>
-<p markdown="1">**数量增加列**</p>
-</dt>
-<dd>
-<p>Total number of instances since last **Reset** was pressed.
-   Clicking the **Reset** button initializes the accumulated
-   (Delta) instances of a class. This is useful for finding memory leaks.</p>
-<p>自上次按下「Reset（重置）」后所有实例的累计数量。
-点击重置按钮重置类实例的累计数量。这对于查找内存泄漏非常有用。</p>
-</dd>
-<dt>
-<p markdown="1">**Bytes column**</p>
-<p markdown="1">**字节列**</p>
-</dt>
-<dd>
-<p>Total bytes consumed for all instances of a class in the heap.</p>
-<p>堆中类的所有实例的总字节数。</p>
-</dd>
-<dt>
-<p markdown="1">**Bytes delta column**</p>
-<p markdown="1">**字节增加列**</p>
-</dt>
-<dd>
-<p>The number of bytes allocated since the **Reset** was last pressed.
-   Clicking the **Reset** button initializes the accumulated (Delta) bytes for
-   all instances of a class. This is useful for finding memory leaks.</p>
-<p>自上次按下「Reset（重置）」后所有实例的累计字节数。
-点击重置按钮重置类实例的累计字节数。这对于查找内存泄漏非常有用。</p>
-</dd>
-</dl>
+**Classes**  
+Active classes in the heap.
+
+**Classes (类)**
+堆中的活动的类。
+
+**Instances column**  
+Total active objects (instances) for all classes in the heap.
+
+**Instances column (实例列)**
+堆中所有类的活动对象（实例）总数。
+
+**Delta column**  
+Total number of instances since last **Reset** was pressed.
+Clicking the **Reset** button initializes the accumulated
+(Delta) instances of a class. This is useful for finding memory leaks.
+
+**Delta column (数量增加列)**
+自上次按下「Reset（重置）」后所有实例的累计数量。
+点击重置按钮重置类实例的累计数量。这对于查找内存泄漏非常有用。
+
+**Bytes column**  
+Total bytes consumed for all instances of a class in the heap.
+
+**Bytes column (字节列)**
+堆中类的所有实例的总字节数。
+
+**Delta column**  
+The number of bytes allocated since the **Reset** was last pressed.
+Clicking the **Reset** button initializes the accumulated (Delta) bytes for
+all instances of a class. This is useful for finding memory leaks.
+
+**Delta column (字节增加列)**
+自上次按下「Reset（重置）」后所有实例的累计字节数。
+点击重置按钮重置类实例的累计字节数。这对于查找内存泄漏非常有用。
 
 ## Allocation tracking
 
@@ -1437,7 +1344,7 @@ might have gone astray.
 To do this, enable the **Track** checkbox for a class. For example:
 
 除了跟踪一个类的所有实例的对象数和字节数外，还可以在调用类的构造函数时记录堆栈，
-来帮助缩小分配可能出错的范围。为此，请选中类的跟踪复选框，例如：
+来帮助缩小分配可能出错的范围。为此，请选中类的跟踪 (**Track**) 复选框，例如：
 
 ![Enable Stack Trace Tracking]({{site.url}}/assets/images/docs/tools/devtools/memory_enable_stacktrace.png){:width="100%"}
 
@@ -1468,41 +1375,35 @@ class's constructor was called and the instance was allocated:
 
 Both the **Analysis** and **Allocations** tabs support
 searching and filtering. Begin typing name of the class
-you'd like to find (for example, **Ob**_ectWithUniqueId_)
+you'd like to find (for example, `ObjectWithUniqueId`)
 to display a list that matches the characters
 typed so far. The first item in the list is highlighted:
 
 「Analysis（分析）」和「Allocations（分配）」选项都支持搜索和筛选。
-输入要查找的类的名称，例如，**Ob**_ectWithUniqueId_
+输入要查找的类的名称，例如，`ObjectWithUniqueId`
 将返回与与输入字符匹配的列表。列表中的第一项高亮显示。
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**ENTER**</p>
-<p markdown="1">**回车键**</p>
-</dt>
-<dd>
-<p markdown="1">Selects the highlighted line (GlobalObjectKey) and
-                navigates to the row with that class name in the
-                active **Snapshot** table or the **Allocations** table.</p>
-<p markdown="1">选择高亮显示的行（GlobalObjectKey）
-跳转到当前树表视图 **快照** 或表 **分配** 中该类名对应的行。</p>
-</dd>
-<dt>
-<p markdown="1">**UP/DOWN arrows**</p>
-<p markdown="1">**上/下箭头**</p>
-</dt>
-<dd>
-<p>Rotates through the list of possible matches highlighting
-   the next item in the list.</p>
-<p>在可能匹配的列表中跳转，突出显示列表中的下一项。</p>
-</dd>
-<dt>**ESCAPE**</dt>
-<dd>
-<p>Clears and cancels all searching.</p>
-<p>清除并取消所有搜索。</p>
-</dd>
-</dl>
+**ENTER**  
+Selects the highlighted line (GlobalObjectKey) and
+navigates to the row with that class name in the
+active **Snapshot** table or the **Allocations** table.
+
+**回车键**
+选择高亮显示的行（GlobalObjectKey）
+跳转到当前树表视图 **快照** 或表 **分配** 中该类名对应的行。
+
+**UP/DOWN arrows**  
+Rotates through the list of possible matches highlighting
+the next item in the list.
+
+**上/下箭头**
+在可能匹配的列表中跳转，突出显示列表中的下一项。
+
+**ESCAPE**  
+Clears and cancels all searching.
+
+**ESC 键**
+清除并取消所有搜索。
 
 ![Searching]({{site.url}}/assets/images/docs/tools/devtools/memory_search_1.png)
 
@@ -1531,49 +1432,38 @@ less important while profiling memory:
 
 ![Filtering]({{site.url}}/assets/images/docs/tools/devtools/memory_filtering.png){:width="100%"}
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**Hide Private Classes**</p>
-<p markdown="1">**隐藏私有类**</p>
-</dt>
-<dd>
-<p>Class names prefix with an underscore.</p>
-<p>前缀带有下划线类的类。</p>
-</dd>
-<dt>
-<p markdown="1">**Hide Classes with No Instances**</p>
-<p markdown="1">**隐藏没有实例的类**</p>
-</dt>
-<dd>
-<p>Classes never constructed are filtered.</p>
-<p>从未构造的类将被过滤。</p>
-</dd>
-<dt>
-<p markdown="1">**Hide Libraries with No Instances**</p>
-<p markdown="1">**隐藏没有实例的库**</p>
-</dt>
-<dd>
-<p> All classes in a library never constructed
-    the library is filtered.</p>
-<p>库中所有类都从未被实例化过，将会被隐藏</p>
-</dd>
-<dt>
-<p markdown="1">**Hide Libraries or Packages**</p>
-<p markdown="1">隐藏库或包 package**</p>
-</dt>
-<dd>
-<p markdown="1">List of all libraries used in your application
-                are displayed. By default the libraries enabled
-                above are filtered out (for example, dart:*,
-                package:flutter*, and so on).
-                The libraries filtered out can
-                be enabled if you are interested in Dart core
-                libraries and classes or the Flutter framework.</p>
-<p markdown="1">显示应用程序中使用的所有库的列表。默认情况下启用，
-系统相关库将被过滤掉（例如：dart:*、package:flutter*）。
-如果你对 Dart 核心库和类或 Flutter 框架感兴趣，可以关闭自动过滤掉的库。</p>
-</dd>
-</dl>
+**Hide Private Classes**  
+Class names prefix with an underscore.
+
+**Hide Private Classes (隐藏私有类)**
+前缀带有下划线类的类。
+
+**Hide Classes with No Instances**  
+Classes never constructed are filtered.
+
+**Hide Classes with No Instances (隐藏没有实例的类)**
+从未构造的类将被过滤。
+
+**Hide Libraries with No Instances**  
+All classes in a library never constructed
+the library is filtered.
+
+**Hide Libraries with No Instances (隐藏没有实例的库)**  
+库中所有类都从未被实例化过，将会被隐藏
+
+**Hide Libraries or Packages**  
+List of all libraries used in your application
+are displayed. By default the libraries enabled
+above are filtered out (for example, dart:*,
+package:flutter*, and so on).
+The libraries filtered out can
+be enabled if you are interested in Dart core
+libraries and classes or the Flutter framework.
+
+**Hide Libraries or Packages (隐藏库或 package)**
+显示应用程序中使用的所有库的列表。默认情况下启用，
+系统相关库将被过滤掉（例如：`dart:*`、`package:flutter*`）。
+如果你对 Dart 核心库和类或 Flutter 框架感兴趣，可以关闭自动过滤掉的库。
 
 ### Setting
 
@@ -1585,48 +1475,39 @@ The Memory profiler has its own settings dialog:
 
 ![Settings]({{site.url}}/assets/images/docs/tools/devtools/memory_settings.png){:width="100%"}
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**Collect Android Memory Statistics using ADB**</p>
-<p markdown="1">**使用 ADB 收集 Android 内存统计信息**</p>
-</dt>
-<dd>
-<p markdown="1">By default, if DevTools is connected to your
-                application through an Android device or emulator,
-                Android memory statistics are not collected.
-                Collecting with ADB can be expensive and might hide
-                performance issues in your app.</p>
-<p markdown="1">默认情况下，
-如果 DevTools 通过 Android 设备或模拟器连接到应用程序，
+**Collect Android Memory Statistics using ADB**  
+By default, if DevTools is connected to your
+application through an Android device or emulator,
+Android memory statistics are not collected.
+Collecting with ADB can be expensive and might hide
+performance issues in your app.
+
+**使用 ADB 收集 Android 内存统计信息**
+默认情况下，如果 DevTools 通过 Android 设备或模拟器连接到应用，
 则不会收集 Android 内存统计信息。
-使用 ADB 收集开销很大，并且可能会隐藏应用程序中的性能问题。</p>
-</dd>
-<dt>
-<p markdown="1">**Display Data in Units (B, K, MB, GB)**</p>
-<p markdown="1">**以单位（B、K、MB、GB）显示数据**</p>
-</dt>
-<dd>
-<p markdown="1">By default, data displayed in the hover card
-                is scaled using units instead of raw values.
-                Turning this off displays the raw numbers.
-                For example, 125M displays as 125,235,712</p>
-<p markdown="1">默认情况下，悬浮窗中显示的数据使用单位而不是原始值。
-关闭此选项将显示原始数字，例如 125M 将显示为 125235712。</p>
-</dd>
-<dt>
-<p markdown="1">**Enable advanced memory settings**</p>
-<p markdown="1">**启用高级内存设置**</p>
-</dt>
-<dd>
-<p markdown="1">If enabled, the GC button is available to
-                ask the VM to garbage collect memory (manually).
-                This manual GC is only a request to the VM. The
-                VM might decide to do no compaction, some compaction,
-                or complete compaction of the heap.</p>
-<p markdown="1">如果启用，将显示 GC 按钮，请求虚拟机（手动）垃圾收集内存。
-此手动 GC 只是对虚拟机的请求。虚拟机可能不压缩、部分压缩或完全压缩堆。</p>
-</dd>
-</dl>
+使用 ADB 收集开销很大，并且可能会隐藏应用程序中的性能问题。
+
+**Display Data in Units (B, K, MB, GB)**  
+By default, data displayed in the hover card
+is scaled using units instead of raw values.
+Turning this off displays the raw numbers.
+For example, 125M displays as 125,235,712
+
+**以单位（B、K、MB、GB）显示数据**
+默认情况下，悬浮窗中显示的数据使用单位而不是原始值。
+关闭此选项将显示原始数字，例如 125M 将显示为 125,235,712。
+
+**Enable advanced memory settings**  
+If enabled, the GC button is available to
+ask the VM to garbage collect memory (manually).
+This manual GC is only a request to the VM. The
+VM might decide to do no compaction, some compaction,
+or complete compaction of the heap.
+
+**启用高级内存设置**
+如果启用，将显示 GC 按钮，请求虚拟机（手动）垃圾收集内存。
+此手动 GC 只是对虚拟机的请求。
+虚拟机可能不压缩、部分压缩或完全压缩堆。
 
 ## Memory problem case study
 
@@ -1648,80 +1529,72 @@ see the [memory leak case study][case_study].
 The following computer science terms will help you better
 understand how your application uses memory.
 
-以下是一些计算机科学概念，它们将帮助你更好地理解应用程序如何使用内存。
+以下是一些计算机科学概念，
+它们将帮助你更好地理解应用程序如何使用内存。
 
-<dl markdown="1">
-<dt>
-<p markdown="1">**Garbage collection (GC)**</p>
-<p markdown="1">**垃圾回收**</p>
-</dt>
-<dd>
-<p markdown="1">GC is the process of searching the
-    heap to locate, and reclaim, regions of "dead" memory&mdash;memory
-    that is no longer being used by an application. This process
-    allows the memory to be re-used and minimizes the risk of an
-    application running out of memory, causing it to crash. Garbage
-    collection is performed automatically by the Dart VM. In DevTools,
-    you can perform garbage collection on demand by clicking the
-    GC button.</p>
-<p markdown="1">GC 是搜索堆以定位和回收应用程序不再使用的内存区域的过程。
+**Garbage collection (GC)**  
+GC is the process of searching the
+heap to locate, and reclaim, regions of "dead" memory&mdash;memory
+that is no longer being used by an application. This process
+allows the memory to be re-used and minimizes the risk of an
+application running out of memory, causing it to crash. Garbage
+collection is performed automatically by the Dart VM. In DevTools,
+you can perform garbage collection on demand by clicking the
+GC button.
+
+**垃圾回收 (GC)**
+GC 是搜索堆以定位和回收应用程序不再使用的内存区域的过程。
 这个过程允许重新使用内存，将应用程序由于内存不足导致的崩溃风险降至最低。
-GC 由 Dart VM 自动执行。在 DevTools 中，你可以通过点击 GC 按钮按需执行垃圾回收。</p>
-</dd>
-<dt>
-<p markdown="1">**Heap**</p>
-<p markdown="1">**堆**</p>
-</dt>
-<dd>
-<p>Dart objects that are dynamically allocated live in a portion of
-   memory called _the heap_. An object allocated from the heap is freed
-   (eligible for garbage collection) when nothing points to it,
-   or when the application terminates. When nothing points to an
-   object, it is considered to be dead. When an object is pointed
-   to by another object, it is live.</p>
-<p>动态分配的 Dart 对象存在于称为堆的内存部分中。当没有任何对象指向它，
+GC 由 Dart VM 自动执行。在 DevTools 中，
+你可以通过点击 GC 按钮按需执行垃圾回收。
+
+**Heap**  
+Dart objects that are dynamically allocated live in a portion of
+memory called _the heap_. An object allocated from the heap is freed
+(eligible for garbage collection) when nothing points to it,
+or when the application terminates. When nothing points to an
+object, it is considered to be dead. When an object is pointed
+to by another object, it is live.
+
+**堆**
+动态分配的 Dart 对象存在于称为堆的内存部分中。当没有任何对象指向它，
 或者当应用程序退出时。在堆中分配的对象将被回收（符合 GC 的条件）。
 当没有任何东西指向某个对象时，它不处于存活状态。
-当一个对象被另一个对象指向时，它是存活的。</p>
-</dd>
-<dt>**Isolates**</dt>
-<dd>
-<p markdown="1">Dart supports concurrent execution by way of isolates,
-    which you can think of processes without the overhead.
-    Each isolate has its own memory and code that can't be
-    affected by any other isolate. For more information,
-    see [The Event Loop and Dart][event-loop].</p>
-<p markdown="1">Dart 通过 Isolates 的方式支持并发，你可以认为这样的过程没有开销。
+当一个对象被另一个对象指向时，它是存活的。
+
+**Isolates**  
+Dart supports concurrent execution by way of isolates,
+which you can think of processes without the overhead.
+Each isolate has its own memory and code that can't be
+affected by any other isolate. For more information,
+see [The Event Loop and Dart][event-loop].
+
+**Isolates**  
+Dart 通过 Isolates 的方式支持并发，你可以认为这样的过程没有开销。
 每个 Isolates 都有自己的内存和代码，不受任何其他 Isolates 的影响。
-更多信息，请参见 [事件循环和 Dart][event-loop]。</p>
-</dd>
-<dt>
-<p markdown="1">**Memory leak**</p>
-<p markdown="1">**内存泄漏**</p>
-</dt>
-<dd>
-<p markdown="1">A memory leak occurs when an object is live
-    (meaning that another object points to it), but it is not being
-    used (so it shouldn't have any references from other objects).
-    Such an object can't be garbage collected, so it takes up space
-    in the heap and contributes to memory fragmentation.
-    Memory leaks put unnecessary pressure on the VM and can be
-    difficult to debug.</p>
-<p markdown="1">当一个对象处于存活状态（意味着有其它对象指向它），
+更多信息，请参见 [事件循环和 Dart][event-loop]。
+
+**Memory leak** 
+A memory leak occurs when an object is live
+(meaning that another object points to it), but it is not being
+used (so it shouldn't have any references from other objects).
+Such an object can't be garbage collected, so it takes up space
+in the heap and contributes to memory fragmentation.
+Memory leaks put unnecessary pressure on the VM and can be
+difficult to debug.
+
+**内存泄漏**
+当一个对象处于存活状态（意味着有其它对象指向它），
 但它没有被使用时（因此它不应该有来自其他任何对象的引用），就会发生内存泄漏。
 这样的对象不能被垃圾收集，因此它会占用堆中的空间并导致内存碎片。
-内存泄漏会给虚拟机带来不必要的压力，并且可能很难调试。</p>
-</dd>
-<dt>
-<p markdown="1">**Virtual machine (VM)**</p>
-<p markdown="1">**VM 虚拟机**</p>
-</dt>
-<dd>
-<p markdown="1">The Dart virtual machine is a piece of
-    software that directly executes Dart code.</p>
-<p markdown="1">Dart 虚拟机是一种直接执行 Dart 代码的软件。</p>
-</dd>
-</dl>
+内存泄漏会给虚拟机带来不必要的压力，并且可能很难调试。
+
+**Virtual machine (VM)**  
+The Dart virtual machine is a piece of
+software that directly executes Dart code.
+
+**VM 虚拟机**
+Dart 虚拟机是一种直接执行 Dart 代码的软件。
 
 [architecture]: {{site.url}}/resources/architectural-overview
 [performance]: {{site.url}}/development/tools/devtools/performance

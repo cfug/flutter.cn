@@ -24,7 +24,14 @@ use the [`cached_network_image`][] package.
 在一些情况下，缓存从网络下载的图片用于离线显示是十分方便的，
 你需要引入 [`cached_network_image`][] 这个 package 来实现这项功能。
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/fnHr_rsQwDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.note}}
+
+  To learn more, watch this short Package of the Week video on the cached_network_image package:
+
+  了解更多，请参考下方「每周 Widget」的里关于 cached_network_image 的短视频：
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/fnHr_rsQwDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
 
 In addition to caching, the `cached_network_image`
 package also supports placeholders and fading images

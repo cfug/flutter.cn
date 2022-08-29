@@ -115,6 +115,7 @@ or extending the parent theme.
   了解更多，请参考下方「每周 Widget」的里关于 Theme 的短视频：
 
   <iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 {{site.alert.end}}
 
 ### Creating unique `ThemeData`

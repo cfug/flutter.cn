@@ -138,7 +138,7 @@ Flutter 版本发布渠道中的「所有」渠道，
 
 \* Flutter 3.0 is the last stable release with iOS 9 and 10 best-effort support.
 
-\* Flutter 3.0 将会是支持 iOS 9 和 iOS 10 
+\* Flutter 3.0 将会是尽力支持 iOS 9 和 iOS 10 的最后一个版本。
 
 ### Unsupported platforms
 

@@ -27,12 +27,13 @@ appropriately on iOS and Android.
 
 {{site.alert.note}}
 
-    For more information on implementing splash screens
-    on web and desktop platforms, see the
-    [Customizing web app initialization guide][].
+  For more information on implementing splash screens
+  on web and desktop platforms, see the
+  [Customizing web app initialization guide][].
 
-    有关在 Web 和桌面平台上实现启动画面 (闪屏页) 的更多信息，请参阅 
-    [自定义 Web 应用程序初始化指南][Customizing web app initialization guide]。
+  有关在 Web 和桌面平台上实现启动画面 (闪屏页) 的更多信息，请参阅 
+  [自定义 Web 应用程序初始化指南][Customizing web app initialization guide]。
+
 {{site.alert.end}}
 
 ## iOS launch screen
@@ -81,12 +82,12 @@ Apple 在 [人机接口指南][Human Interface Guidelines]
 
 {{site.alert.warning}}
 
-    If you are experiencing a crash from implementing a splash screen, you
-    might need to migrate your code. See detailed instructions in the
-    [Deprecated Splash Screen API Migration guide][].
+  If you are experiencing a crash from implementing a splash screen, you
+  might need to migrate your code. See detailed instructions in the
+  [Deprecated Splash Screen API Migration guide][].
 
-    如果你在实现闪屏页的时候遇到崩溃的情况，你可能需要迁移一下代码了。
-    请在 [这个文档][Deprecated Splash Screen API Migration guide] 里了解更多。
+  如果你在实现闪屏页的时候遇到崩溃的情况，你可能需要迁移一下代码了。
+  请在 [这个文档][Deprecated Splash Screen API Migration guide] 里了解更多。
 
 {{site.alert.end}}
 

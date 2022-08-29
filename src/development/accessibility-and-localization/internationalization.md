@@ -307,7 +307,7 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
 6. Now, run `flutter gen-l10n` so that codegen takes place. You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
    
-   要测试本地化工具，可以运行您的应用程序。
+   运行 `flutter gen-l10n` 命令，
    您将在 `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n` 中看到生成的文件。
 
 7. Add the import statement on `app_localizations.dart` and `AppLocalizations.delegate`

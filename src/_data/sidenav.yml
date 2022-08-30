@@ -150,16 +150,48 @@
       children:
         - title: 已支持的平台
           permalink: /docs/development/tools/sdk/release-notes/supported-platforms
-        - title: 添加 iOS App Clip 支持
-          permalink: /docs/development/platform-integration/ios-app-clip
-        - title: Apple Watch 支持
-          permalink: /docs/development/platform-integration/apple-watch
-        - title: C 语言代码集成及调用
-          permalink: /docs/development/platform-integration/c-interop
-        - title: 托管 Android 和 iOS 原生视图
-          permalink: /docs/development/platform-integration/platform-views
+        - title: 构建桌面端应用
+          permalink: /docs/development/platform-integration/desktop
         - title: 撰写双端平台代码 (插件编写实现)
           permalink: /docs/development/platform-integration/platform-channels
+        - title: Android 平台
+          permalink: /docs/development/platform-integration/android
+          children:
+            - title: C 语言代码集成及调用
+              permalink: /docs/development/platform-integration/android/c-interop
+            - title: 托管 Android 原生视图
+              permalink: /docs/development/platform-integration/android/platform-views
+            - title: Android 插件升级和迁移
+              permalink: /docs/development/platform-integration/android/plugin-api-migration
+            - title: 迁移到 AndroidX
+              permalink: /docs/development/platform-integration/android/androidx-migration
+            - title: 已弃用的闪屏页 API 迁移
+              permalink: /docs/development/platform-integration/android/splash-screen-migration
+        - title: iOS 平台
+          permalink: /docs/development/platform-integration/ios
+          children:
+            - title: 添加 iOS App Clip 支持
+              permalink: /docs/development/platform-integration/ios/ios-app-clip
+            - title: Apple Watch 支持
+              permalink: /docs/development/platform-integration/ios/apple-watch
+            - title: C 语言代码集成及调用
+              permalink: /docs/development/platform-integration/ios/c-interop
+            - title: 托管 iOS 原生视图
+              permalink: /docs/development/platform-integration/ios/platform-views
+            - title: iOS 平台调试
+              permalink: /docs/development/platform-integration/ios/ios-debugging
+        - title: Linux 操作系统
+          permalink: /docs/development/platform-integration/linux
+          children:
+            - title: 构建 Linux 桌面软件
+              permalink: /docs/development/platform-integration/linux/building
+        - title: macOS 操作系统
+          permalink: /docs/development/platform-integration/macos
+          children:
+            - title: 构建 macOS 应用
+              permalink: /docs/development/platform-integration/macos/building
+            - title: C 语言代码集成及调用
+              permalink: /docs/development/platform-integration/macos/c-interop
         - title: Web 平台
           permalink: /docs/development/platform-integration/web
           children:
@@ -167,38 +199,31 @@
               permalink: /docs/development/platform-integration/web/faq
             - title: Web 平台渲染器
               permalink: /docs/development/platform-integration/web/renderers
-            - title: 自定义 Web 应用初始化 [新增]
+            - title: 自定义 Web 应用初始化
               permalink: /docs/development/platform-integration/web/initialization
-        - title: 桌面端
-          permalink: /docs/desktop
+        - title: Windows 操作系统
+          permalink: /docs/development/platform-integration/windows
           children:
-            - title: 概览
-              permalink: /docs/desktop
-              match-page-url-exactly: true
-            - title: Windows 桌面端软件开发
-              permalink: /docs/desktop/windows
-            - title: macOS 桌面端软件开发
-              permalink: /docs/desktop/macos
-            - title: Linux 桌面端软件开发
-              permalink: /docs/desktop/linux
+            - title: 构建 Windows 桌面软件
+              permalink: /docs/development/platform-integration/windows/building
     - title: Package 与 plugin (原生插件)
       permalink: /docs/development/packages-and-plugins
       children:
-        - title: 使用 Packages
-          permalink: /docs/development/packages-and-plugins/using-packages
-        - title: Happy paths 项目 [新增]
-          permalink: /docs/development/packages-and-plugins/happy-paths
-          match-page-url-exactly: true
-        - title: Happy paths 推荐 [新增]
-          permalink: /docs/development/packages-and-plugins/happy-paths/recommended
+        - title: 后台进程
+          permalink: /docs/development/packages-and-plugins/background-processes
         - title: Package 和插件的开发和提交
           permalink: /docs/development/packages-and-plugins/developing-packages
         - title: Flutter Favorites 项目
           permalink: /docs/development/packages-and-plugins/favorites
-        - title: 后台进程
-          permalink: /docs/development/packages-and-plugins/background-processes
-        - title: Package 和插件网站
-          permalink: /docs/development/packages-and-plugins/plugin-api-migration
+        - title: Happy paths 项目
+          permalink: /docs/development/packages-and-plugins/happy-paths
+          match-page-url-exactly: true
+        - title: Happy paths 推荐
+          permalink: /docs/development/packages-and-plugins/happy-paths/recommended
+        - title: Plugins in Flutter tests  **NEW**
+          permalink: /docs/development/packages-and-plugins/plugins-in-tests
+        - title: 使用 Packages
+          permalink: /docs/development/packages-and-plugins/using-packages
         - title: Package 和插件网站
           permalink: https://pub.flutter-io.cn/flutter
     - title: 将 Flutter 添加到现有应用
@@ -270,7 +295,7 @@
             - title: 发行注记
               permalink: /docs/development/tools/devtools/release-notes
         - title: Flutter SDK
-          permalink: /development/tools/sdk
+          permalink: /docs/development/tools/sdk
           children:
             - title: 概览
               permalink: /docs/development/tools/sdk/overview
@@ -299,17 +324,6 @@
           permalink: /docs/development/tools/flutter-fix
         - title: 代码格式化
           permalink: /docs/development/tools/formatting
-    - title: 迁移说明
-      permalink: /docs/development/androidx-migration
-      children:
-        - title: 迁移到 AndroidX
-          permalink: /docs/development/androidx-migration
-        - title: 升级 Android plugin
-          permalink: /docs/development/packages-and-plugins/plugin-api-migration
-        - title: iOS 14 支持
-          permalink: /docs/development/ios-14
-        - title: Xcode 迁移
-          permalink: /docs/development/ios-project-migration
 
 - title: 测试和调试
   permalink: /docs/testing

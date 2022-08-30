@@ -23,9 +23,9 @@ Flutter UI 由平台线程完成，与其他线程一起竞争，
 
 Prior to Android 10, Hybrid composition copied each Flutter frame
 out of the graphic memory into main memory, and then copied it back
-to a GPU texture. In Android 10 or above, the graphics memory is
-copied twice. As this copy happens per frame, the performance of
-the entire Flutter UI may be impacted.
+to a GPU texture. As this copy happens per frame, the performance of
+the entire Flutter UI might be impacted. In Android 10 or above, the
+graphics memory is copied once.
 
 在 Android 10 之前，
 混合集成模式将每个 Flutter 帧从显存中复制到主内存中，
@@ -64,7 +64,9 @@ For more information, see:
 * [`TextureLayer`][]
 * [`TextureRegistry`][]
 * [`FlutterTextureRegistry`][]
+* [`FlutterImageView`][]
 
+[`FlutterImageView`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterImageView.html
 [`FlutterTextureRegistry`]: {{site.api}}/objcdoc/Protocols/FlutterTextureRegistry.html
 [`TextureLayer`]: {{site.api}}/flutter/rendering/TextureLayer-class.html
 [`TextureRegistry`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html

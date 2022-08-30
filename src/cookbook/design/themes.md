@@ -108,7 +108,15 @@ or extending the parent theme.
 有以下两种方式：定义一个独立的 `ThemeData`，或者从父级 Theme 扩展。
 下面为你分别介绍。
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.note}}
+
+  To learn more, watch this short Widget of the Week video on the Theme widget:
+
+  了解更多，请参考下方「每周 Widget」的里关于 Theme 的短视频：
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+{{site.alert.end}}
 
 ### Creating unique `ThemeData`
 

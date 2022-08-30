@@ -519,8 +519,8 @@ target '<name of your App Clip target>'
 ```
 
 At the top of the file,
-also uncomment `platform :ios, '9.0'` and set the
-version to the lowest of the 2 target's iOS
+also uncomment `platform :ios, '11.0'` and set the
+version to the lowest of the two target's iOS
 Deployment Target.
 
 在文件的开始，需要把 `platform :ios, '9.0'` 的注释解除，

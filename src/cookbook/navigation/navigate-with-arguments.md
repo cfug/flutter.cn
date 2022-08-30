@@ -31,6 +31,15 @@ pass information about the user to that route.
 在某些情况下，你可能还希望能够传递参数给特定路由。
 例如，你希望导航到 `/user` 路由并携带上用户信息。
 
+{{site.alert.note}}
+  Named routes are no longer recommended for most
+  applications. For more information, see
+  [Limitations][] in the [navigation overview][] page.
+{{site.alert.note}}
+
+[Limitations]: {{site.url}}/development/ui/navigation#limitations
+[navigation overview]: {{site.url}}/development/ui/navigation
+
 You can accomplish this task using the `arguments` parameter of the
 [`Navigator.pushNamed()`][] method. Extract the arguments using the
 [`ModalRoute.of()`][] method or inside an [`onGenerateRoute()`][]

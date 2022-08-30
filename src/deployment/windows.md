@@ -183,13 +183,13 @@ and Partner Center accounts][azureadassociation].
 
 ## 更新应用程序的版本号
 
-With Flutter Windows desktop,
+For apps published to the Microsoft Store,
 the version number must be set during the
-packaging process and can not be set using
-the `pubspec.yaml` or command line arguments.
+packaging process.
 
-对于 Flutter Windows 桌面版来说，版本号必须在打包过程中设置，
-不能通过 `pubspec.yaml` 或命令行参数设置。
+对于发布到 Microsoft Store 的 Flutter 桌面版应用，
+版本号必须在打包过程中设置，而不能通过
+`pubspec.yaml` 或命令行参数设置。
 
 The default version number of the app is `1.0.0.0`.
 
@@ -197,22 +197,50 @@ The default version number of the app is `1.0.0.0`.
 
 {{site.alert.note}}
 
-  Applications are not allowed to have a
+  Microsoft Store apps are not allowed to have a
   Version with a revision number other than zero.
   Therefore, the last number of the version must
   remain zero for all releases.
   Ensure that you follow Microsoft's
   [versioning guidelines][windowspackageversioning].
 
-  请注意，应用程序不允许有一个修订版本号（第四段）不为零的版本。
+  请注意，Microsoft Store 的应用程序不允许出现
+  有一个修订版本号（第四段）不为零的版本。
   因此，在所有的版本中，版本的最后一个数字必须保持为零。
   请注意遵循微软的 [版本指南][windowspackageversioning]。 
 
 {{site.alert.end}}
 
-请注意，应用程序不允许有一个修订版本号（第四段）不为零的版本。
-因此，在所有的版本中，版本的最后一个数字必须保持为零。
-请注意遵循微软的 [版本指南][windowspackageversioning]。
+For apps not published to the Microsoft Store, you
+can set the app's executable's file and product versions.
+The executable's default file version is `1.0.0.1`,
+and its default product version is `1.0.0+1`. To update these,
+navigate to the `pubspec.yaml` file and update the
+following line:
+
+```yaml
+version: 1.0.0+1
+```
+
+The build name is three numbers separated by dots,
+followed by an optional build number that is separated
+by a `+`. In the example above, the build name is `1.0.0`
+and the build number is `1`.
+
+The build name becomes the first three numbers of the
+file and product versions, while the build number becomes
+the fourth number of the file and product versions.
+
+Both the build name and number can be overridden in
+`flutter build windows` by specifying `--build-name` and
+`--build-number`, respectively.
+
+{{site.alert.note}}
+  Flutter projects created before Flutter 3.3
+  need to be updated to set the executable's version
+  information. For more information,
+  refer to the [version migration guide][].
+{{site.alert.end}}
 
 ## Add app icons
 
@@ -309,3 +337,4 @@ even if the certification passes.
 [visualstudiosubmission]: https://docs.microsoft.com/windows/msix/package/packaging-uwp-apps#automate-store-submissions
 [windowspackageversioning]: https://docs.microsoft.com/windows/uwp/publish/package-version-numbering
 [windowsappcertification]: https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit
+[version migration guide]: {{site.url}}/development/platform-integration/windows/version-migration

@@ -58,8 +58,8 @@ Flutter 支持下列谷歌级别和尽力支持的平台：
 |--------|------------------------------|---------|
 |Android | API 16 (Android 4.1) & above | All     |
 |Android | API 16 (Android 4.1) 及更高的版本 | 所有    |
-|iOS     | iOS 9 & above                | All     |
-|iOS     | iOS 9 及更高的版本             | 所有     |
+|iOS     | iOS 11 & above                | All     |
+|iOS     | iOS 11 及更高的版本             | 所有     |
 |Linux   | Debian, 64-bit               | All     |
 |Linux   | Debian, 64-bit               | 所有     |
 |macOS   | El Capitan (10.11) & above   | All     |
@@ -119,14 +119,14 @@ Flutter 版本发布渠道中的「所有」渠道，
 |Platform|Version             |
 |--------|--------------------|
 |Android |Android SDK 16–18   |
-|iOS     |iOS 9-13*           |
+|iOS     |iOS 11-13           |
 |Linux   |Debian 11           |
 |Linux   |Debian 9 & below    |
 |Linux   |Debian 9 以及更低的版本|
 |Linux   |Ubuntu 20.04        |
 |Linux   |Ubuntu 22.04 (Aspirational Google-tested platform)        |
 |Linux   |Ubuntu 22.04 (有望成为 Google-tested 的平台)                 |
-|macOS   |El Capitan (10.11) - Big Sur (11)   |
+|macOS   |El Capitan (10.11) - Big Sur (11)*   |
 |Windows |Windows 11 (Aspirational Google-tested platform)          |
 |Windows |Windows 11 (有望成为 Google-tested 的平台)          |
 |Windows |Windows 8           |
@@ -134,9 +134,9 @@ Flutter 版本发布渠道中的「所有」渠道，
 {:.table.table-striped}
 </div>
 
-\* Flutter 3.0 is the last stable release with iOS 9 and 10 best-effort support.
+\* Flutter 3.3 is the last stable release with macOS 10.11 and 10.12 best-effort support.
 
-\* Flutter 3.0 将会是尽力支持 iOS 9 和 iOS 10 的最后一个版本。
+\* Flutter 3.3 将会是尽力支持 macOS 10.11 和 10.12 的最后一个版本。
 
 ### Unsupported platforms
 
@@ -147,9 +147,9 @@ Flutter 版本发布渠道中的「所有」渠道，
 |平台     |版本                                         |
 |--------|--------------------------------------------|
 |Android |Android SDK 15 & below                      |
-|Android |Android SDK 18 及更低的版本                   |
-|iOS     |[iOS 8][] & below and [`arm7v` 32-bit iOS][]|
-|iOS     |[iOS 8][] 及更低的版本 and [`armv7` 架构的 32 位 iOS][`arm7v` 32-bit iOS] 系统|
+|Android |Android SDK 15 及更低的版本                   |
+|iOS     |[iOS 10 & below and `arm7v` 32-bit iOS][]|
+|iOS     |[iOS 10 及更低的版本 `armv7` 架构的 32 位 iOS 系统][iOS 10 & below and `arm7v` 32-bit iOS]|
 |Linux   |Any 32-bit platform                         |
 |Linux   |任何 32 位的平台                              |
 |Windows |Windows Vista & below                       |
@@ -160,5 +160,5 @@ Flutter 版本发布渠道中的「所有」渠道，
 |macOS   |Yosemite 及更低的版本                         |
 {:.table.table-striped}
 </div>
-[iOS 8]: {{site.url}}/go/rfc-ios8-deprecation
-[`arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported
+
+[iOS 10 & below and `arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported

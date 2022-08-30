@@ -206,7 +206,9 @@
           children:
             - title: 构建 Windows 桌面软件
               permalink: /docs/development/platform-integration/windows/building
-    - title: Package 与 plugin (原生插件)
+            - title: 版本信息迁移
+              permalink: /docs/development/platform-integration/windows/version-migration
+    - title: Package 和插件
       permalink: /docs/development/packages-and-plugins
       children:
         - title: 后台进程

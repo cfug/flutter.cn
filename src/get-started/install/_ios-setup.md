@@ -87,9 +87,6 @@ follow these steps:
     simulator and drag it to change the scale. You can also
     use the **Window > Physical Size** or **Window > Pixel Accurate**
     options if your computer's resolution is high enough.
-    * If you are using a version of Xcode older
-    than 9.1, you should instead set the device scale
-    in the **Window > Scale** menu.
 
     根据你当前开发机器的屏幕尺寸，
     模拟器模拟出来的高密度屏幕的设备可能会溢出你的屏幕，
@@ -141,16 +138,41 @@ follow these steps:
 
 ### 部署到 iOS 设备
 
-To deploy your Flutter app to a physical iOS device
+To deploy your Flutter app to a physical iPhone or iPad
 you'll need to set up physical device deployment in Xcode
 and an Apple Developer account. If your app is using Flutter plugins,
 you will also need the third-party CocoaPods dependency manager.
 
-如果你想把 Flutter 应用部署到 iOS 的真机上，
+如果你想把 Flutter 应用部署到  iPhone 或 iPad 上，
 你还需要一些别的工具和一个 Apple 开发者账号。
 另外，你还需要在 Xcode 上针对你的机器做一些设置。
 
 <ol markdown="1">
+
+<li markdown="1">
+
+<a name="trust"></a>
+The first time you use an attached physical device for iOS
+development, you need to trust both your Mac and the
+Development Certificate on that device.
+On iOS 16 and higher you must also enable [Developer Mode][].
+
+Select **Trust** in the dialog prompt when
+first connecting the iOS device to your Mac.
+
+![Trust Mac][]{:.mw-100}
+
+Then, go to the Settings app on the iOS device,
+select **General > Device Management**
+and trust your Certificate.
+For first time users, you might need to select
+**General > Profiles > Device Management** instead.
+On iOS 16 and higher, navigate back to the top level
+of the Settings app, select **Privacy & Security > Developer Mode**,
+and toggle Developer Mode on.
+
+</li>
+
 <li markdown="1">
 
 You can skip this step if your apps do not depend on
@@ -239,30 +261,6 @@ Follow the Xcode signing flow to provision your project:
         如果想将应用上架 App Store，你需要加入 Apple Developer Program，
         你可以在 [Choosing a Membership][] 页面中查看详细的说明。
 
-      <a name="trust"></a>
-      * The first time you use an attached physical device for iOS
-        development, you need to trust both your Mac and the
-        Development Certificate on that device.
-        Select `Trust` in the dialog prompt when
-        first connecting the iOS device to your Mac.
-
-        当你第一次将设备连接到开发机用于开发时，
-        你需要分别在 Mac 和开发机上进行信任设备的操作。
-        当你第一次连接时，会有个弹窗，点击 `Trust` 即可。
-
-        ![Trust Mac][]{:.mw-100}
-
-        Then, go to the Settings app on the iOS device,
-        select **General > Device Management**
-        and trust your Certificate.
-        For first time users, you may need to select
-        **General > Profiles > Device Management** instead.
-
-        然后在 iOS 开发机上进入 Settings 应用，
-        选择 **General > Device Management** 然后信任相应的证书。
-        对于首次打开的用户，请选择 
-        **General > Profiles > Device Management**。
-
       * If automatic signing fails in Xcode, verify that the project's
         **General > Identity > Bundle Identifier** value is unique.
 
@@ -293,3 +291,4 @@ or clicking the Run button in Xcode.
 [web download]: {{site.apple-dev}}/xcode/
 [Xcode account add]: {{site.url}}/assets/images/docs/setup/xcode-account.png
 [Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
+[Developer Mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device

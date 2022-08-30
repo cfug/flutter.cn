@@ -103,8 +103,6 @@ between the two platform versions are minimal.
 
 请注意，Android SDK 19 的测试涵盖了 Android SDK 20，
 因为两个版本之间的差异很小。
-请注意，Android SDK 19 的测试涵盖了 Android SDK 20，
-因为两个版本之间的差异很小。
 
 ### Best-effort platforms
 

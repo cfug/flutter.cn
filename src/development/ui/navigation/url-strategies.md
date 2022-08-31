@@ -36,7 +36,7 @@ To configure Flutter to use the path instead, use the
 in the SDK:
 
 让 Flutter 使用 path 策略，请使用 [flutter_web_plugins][]
-库中提供的 [setUrlStrategy][] 方法。
+库中提供的 [`setUrlStrategy`][] 方法。
 
 ```dart
 import 'package:flutter_web_plugins/url_strategy.dart';

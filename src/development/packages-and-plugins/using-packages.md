@@ -281,10 +281,6 @@ but an Android-specific library like `guava`,
 the dependency override declaration must be added to
 Gradle build logic instead.
 
-如果依赖冲突项不是 package 自身，
-而是如 `guava` 这样特定于 Android 的库，
-那么依赖的覆盖声明必须添加到 Gradle 的构建逻辑中。
-
 如果依赖冲突项不是 package 自身，而是如 `guava` 这样特定于 Android 的库，
 那么依赖的覆盖声明必须添加到 Gradle 的构建逻辑中。
 

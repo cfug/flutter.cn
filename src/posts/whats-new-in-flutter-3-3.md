@@ -50,7 +50,7 @@ Flutter 3.3 优化了针对触控板的支持。Flutter 不仅提供了更丰富
 
 ### 随手写功能
 
-感谢来自社区成员 [fbcouch](https://github.com/fbcouch)输入。这项功能已默认在 `CupertinoTextField`、`TextField` 和 `EditableText` 上启用。只需要将 Flutter 升级到 3.3 就可以为你的用户带来这项新功能。
+感谢来自社区成员 [fbcouch](https://github.com/fbcouch) 的出彩贡献。Flutter 现在支持在 iPadOS 上使用 Apple Pencil 进行 [随手写](http://support.apple.com/zh-cn/guide/ipad/ipad355ab2a7/ipados) 输入。这项功能已默认在 `CupertinoTextField`、`TextField` 和 `EditableText` 上启用。只需要将 Flutter 升级到 3.3 就可以为你的用户带来这项新功能。
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2022/whats-new-in-flutter-3-3/image7.gif)
 

@@ -13,7 +13,8 @@ The Flutter framework catches errors that occur during callbacks
 triggered by the framework itself, including errors encountered
 during the build, layout, and paint phases. Errors that don't occur
 within Flutter's callbacks can't be caught by the framework,
-but you can handle them by setting up a [`Zone`][].
+but you can handle them by setting up a error handler on the
+[`PlatformDispatcher`][].
 
 Flutter 框架可以捕获运行期间的错误，包括构建期间、布局期间和绘制期间。
 
@@ -56,8 +57,8 @@ and in release mode this shows a gray background.
 release 模式下会展示一个灰色背景的空白页面。
 
 When errors occur without a Flutter callback on the call stack,
-they are handled by the `Zone` where they occur. By default,
-a `Zone` only prints errors and does nothing else.
+they are handled by the `PlatformDispatcher`'s error callback. By default,
+this only prints errors and does nothing else.
 
 如果在调用堆栈上没有 Flutter 回调的情况下发生错误，
 它们由发生区域的 `Zone` 处理。
@@ -117,7 +118,7 @@ void main() {
 {{site.alert.end}}
 
 This handler can also be used to report errors to a logging service.
-For more details, see our cookbook chapter for 
+For more details, see our cookbook chapter for
 [reporting errors to a service][].
 
 这个回调方法也可以上报错误到日志服务平台。更多信息可以查看文档
@@ -178,58 +179,29 @@ OutlinedButton(
 ```
 
 If `invokeMethod` throws an error, it won't be forwarded to `FlutterError.onError`.
-Instead, it's forwarded to the `Zone` where `runApp` was run.
+Instead, it's forwarded to the `PlatformDispatcher`.
 
 如果 `invokeMethod` 抛出了错误，它不会传递至 `FlutterError.onError`，
 而是直接进入 `runApp` 的 `Zone`。
 
-To catch such an error, use [`runZonedGuarded`][].
+To catch such an error, use [`PlatformDispatcher.instance.onError`][].
 
-如果你想捕获这样的错误，请使用 [`runZonedGuarded`][]。
+如果你想捕获这样的错误，请使用 [`PlatformDispatcher.instance.onError`][]。
 
-<?code-excerpt "lib/excerpts.dart (CatchError)" replace="/MyBackend myBackend = MyBackend\(\);\n//g"?>
+<?code-excerpt "lib/excerpts.dart (CatchError)"?>
 ```dart
-import 'dart:async';
+import 'package:flutter/material.dart';
+import 'dart:ui';
 
 void main() {
-    runZonedGuarded(() {
-    runApp(const MyApp());
-  }, (error, stack) {
+  MyBackend myBackend = MyBackend();
+  PlatformDispatcher.instance.onError = (error, stack) {
     myBackend.sendError(error, stack);
-  });
+    return true;
+  };
+  runApp(const MyApp());
 }
 ```
-
-Note that if in your app you call `WidgetsFlutterBinding.ensureInitialized()`
-manually to perform some initialization before calling `runApp` (e.g.
-`Firebase.initializeApp()`), you **must** call
-`WidgetsFlutterBinding.ensureInitialized()` inside `runZonedGuarded`:
-
-请注意，如果你的应用在 `runApp` 中调用了
-`WidgetsFlutterBinding.ensureInitialized()` 方法来进行一些初始化操作
-（例如 `Firebase.initializeApp()`），则必须在 `runZonedGuarded` 中调用
-`WidgetsFlutterBinding.ensureInitialized()`：
-
-<?code-excerpt "lib/run_zoned_guarded.dart (Initialize)"?>
-```dart
-runZonedGuarded(() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(const MyApp());
-}, (error, stack) {
-  myBackend.sendError(error, stack);
-});
-```
-
-{{site.alert.note}}
-
-    Error handling wouldn't work if `WidgetsFlutterBinding.ensureInitialized()`
-    was called from the outside.
-
-    如果 `WidgetsFlutterBinding.ensureInitialized()` 在外部调用，
-    错误将不会被捕获到。
-
-{{site.alert.end}}
 
 ## Handling all types of errors
 
@@ -244,24 +216,20 @@ your errors handling on next code snippet:
 
 <?code-excerpt "lib/main.dart (Main)"?>
 ```dart
-import 'dart:async';
-import 'dart:io';
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
-void main() {
-  runZonedGuarded(() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await myErrorsHandler.initialize();
-    FlutterError.onError = (details) {
-      FlutterError.presentError(details);
-      myErrorsHandler.onErrorDetails(details);
-      exit(1);
-    };
-    runApp(const MyApp());
-  }, (error, stack) {
+Future<void> main() async {
+  await myErrorsHandler.initialize();
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    myErrorsHandler.onErrorDetails(details);
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
     myErrorsHandler.onError(error, stack);
-    exit(1);
-  });
+    return true;
+  };
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -290,5 +258,5 @@ class MyApp extends StatelessWidget {
 [`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html
 [`MaterialApp.builder`]: {{site.api}}/flutter/material/MaterialApp/builder.html
 [reporting errors to a service]: {{site.url}}/cookbook/maintenance/error-reporting
-[`runZonedGuarded`]: {{site.api}}/flutter/dart-async/runZonedGuarded.html
-[`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
+[`PlatformDispatcher.instance.onError`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/onError.html
+[`PlatformDispatcher`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher-class.html

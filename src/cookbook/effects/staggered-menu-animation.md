@@ -119,7 +119,7 @@ class _MenuState extends State<Menu> {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
-            primary: Colors.blue,
+            backgroundColor: Colors.blue,
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
           ),
           onPressed: () {},
@@ -359,7 +359,7 @@ Widget _buildGetStartedButton() {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
-            primary: Colors.blue,
+            backgroundColor: Colors.blue,
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
           ),
           onPressed: () {},
@@ -682,7 +682,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: const StadiumBorder(),
-              primary: Colors.blue,
+              backgroundColor: Colors.blue,
               padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
             ),
             onPressed: () {},

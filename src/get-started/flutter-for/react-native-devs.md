@@ -2357,6 +2357,20 @@ The following example specifies named routes in the `MaterialApp` widget.
 或者在页面切换的时候进行构建，比如 hero 动画。
 下面的例子在 `MaterialApp` widget 中指定了页面切换路径。
 
+{{site.alert.note}}
+
+  Named routes are no longer recommended for most
+  applications. For more information, see
+  [Limitations][] in the [navigation overview][] page.
+
+  针对大多数的应用情况，我们不再推荐使用命名的路由 (Named routes)，
+  了解更多信息，请参考导航概览中的 [受限情况][Limitations] 部分。
+
+{{site.alert.note}}
+
+[Limitations]: {{site.url}}/development/ui/navigation#limitations
+[navigation overview]: {{site.url}}/development/ui/navigation
+
 <?code-excerpt "lib/navigation.dart (Navigator)"?>
 ```dart
 class NavigationApp extends StatelessWidget {

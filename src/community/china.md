@@ -195,15 +195,18 @@ $ export FLUTTER_STORAGE_BASE_URL=http://mirrors.cnnic.cn/flutter
 mirrors.tencentyun.com，使用内网流量不占用公网流量。
 有任何镜像问题，请通过邮件 (mirrors@tencent.com) 向腾讯云开源镜像站反馈。
 
-**已知问题**：Flutter Storage 已经从 `flutter_infra` 调整为 `flutter_infra_release`，
-腾讯云开源镜像并未对此做调整，可能会在更新的 Flutter 版本里无法请求到完整数据 (2021/6/8)。
+**已知问题**：
+- Flutter Storage 已经从 `flutter_infra` 调整为 `flutter_infra_release`，
+  腾讯云开源镜像并未对此做调整，可能会在更新的 Flutter 版本里无法请求到完整数据 (2021/6/8)。 
+- 根据反馈 ([#1135](https://github.com/cfug/flutter.cn/issues/1135))，
+  腾讯云对 CIPD 的支持尚不确定是否完整。
 
 ```terminal
 $ export PUB_HOSTED_URL=https://mirrors.cloud.tencent.com/dart-pub
 $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 ```
 
-### 已知问题
+### 其他已知问题
 
 - 所有 Flutter 镜像目前均不支持/也不应支持上传 packages 到 pub.dev 网站。
   这个过程通常需要登陆谷歌账号，而这将是一个无法绕开且复杂的挑战。

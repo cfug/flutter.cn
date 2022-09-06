@@ -1149,7 +1149,7 @@ more likely to achieve the status of a Flutter Favorite),
 consider including the following items:
 
 发布你的 package 之前，确保检查了这几个文件：`pubspec.yaml`、`README.md` 和
-`CHANGELOG.md`，确保它们完整且争取，另外，为了提高 package 的可用性，
+`CHANGELOG.md`，确保它们完整且正确，另外，为了提高 package 的可用性，
 可以考虑加入如下的内容：
 
 * Diverse code usage 

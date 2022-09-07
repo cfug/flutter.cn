@@ -4,7 +4,7 @@ toc: true
 keywords: Flutter 3.3, Flutter Vikings, Wonderous, Impeller
 description: Flutter 3.3 正式发布，这个版本这个版本专注于完善和性能改进，以加强 Flutter 3 发布以来的新特性。
 image:
-    path: https://devrel.andfun.cn/devrel/posts/2022/05/TCPW12.png
+    path: https://devrel.andfun.cn/devrel/posts/2022/09/ubVHzF.jpg
 ---
 
 Flutter 团队及社区成员们在美丽的城市挪威奥斯陆向您发来问候，我们正在此参加社区举办的 Flutter Vikings 活动，这是一个为期两天的开发技术交流盛会，虽然线下门票已经售罄，但您还可以通过在线方式查看本次会议。本周，我们也有很多更新要分享给各位开发者们。

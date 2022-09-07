@@ -61,5 +61,7 @@ title: 官方博客
 - [使用 Flutter 与 Firebase 制作 I/O 弹珠游戏]({{site.main-url}}/posts/i-o-pinball)
 - [Flutter 3 更新详解]({{site.main-url}}/posts/whats-new-in-flutter-3)
 - [参与 2022 第二季度 Flutter 开发者调查]({{site.main-url}}/posts/flutter-devs-survey-2022-q2)
+- [Flutter 3.3 正式发布]({{site.main-url}}/posts/whats-new-in-flutter-3-3)
+- [祝福 Eric 的下一段旅程 | Flutter 3.3 现已发布]({{site.main-url}}/posts/announcing-flutter-3-3-at-flutter-vikings)
 
 上述内容的刊登均以获得发布许可。

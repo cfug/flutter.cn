@@ -62,6 +62,7 @@ title: 官方博客
 - [Flutter 3 更新详解]({{site.main-url}}/posts/whats-new-in-flutter-3)
 - [参与 2022 第二季度 Flutter 开发者调查]({{site.main-url}}/posts/flutter-devs-survey-2022-q2)
 - [Flutter 3.3 正式发布]({{site.main-url}}/posts/whats-new-in-flutter-3-3)
-- [祝福 Eric 的下一段旅程 | Flutter 3.3 现已发布]({{site.main-url}}/posts/announcing-flutter-3-3-at-flutter-vikings)
+- [祝福 Eric 的下一段旅程，Flutter 3.3 现已发布]({{site.main-url}}/posts/announcing-flutter-3-3-at-flutter-vikings)
+- [Dart 2.18 现已发布]({{site.main-url}}/posts/dart-2-18)
 
 上述内容的刊登均以获得发布许可。

@@ -435,7 +435,7 @@ as well as many other open source packages, on [pub.dev][].
     ```diff
     --- step1_base/pubspec.yaml
     +++ step2_use_package/pubspec.yaml
-    @@ -23,4 +23,5 @@
+    @@ -25,4 +25,5 @@
      dependencies:
        flutter:
          sdk: flutter

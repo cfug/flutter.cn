@@ -87,12 +87,12 @@ reference to help you build up an application.
 
 
 ## Networking
-- [删除网络数据]({{site.url}}/cookbook/networking/delete-data)
 - [获取网络数据]({{site.url}}/cookbook/networking/fetch-data)
 - [发起 HTTP 认证授权请求]({{site.url}}/cookbook/networking/authenticated-requests)
 - [在后台处理 JSON 数据解析]({{site.url}}/cookbook/networking/background-parsing)
 - [发送网络数据]({{site.url}}/cookbook/networking/send-data)
 - [更新网络数据]({{site.url}}/cookbook/networking/update-data)
+- [删除网络数据]({{site.url}}/cookbook/networking/delete-data)
 - [发起 WebSockets 请求]({{site.url}}/cookbook/networking/web-sockets)
 
 

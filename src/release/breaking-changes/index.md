@@ -31,14 +31,18 @@ release, and listed in alphabetical order:
 * [iOS FlutterViewController splashScreenView made nullable][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
 
-
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
 
 ### Released in Flutter 3.3
-* [Default PrimaryScrollController on Desktop][]
 
+* [Adding ImageProvider.loadBuffer][]
+* [Default PrimaryScrollController on Desktop][]
+* [Trackpad gestures can trigger GestureRecognizer][]
+
+[Adding ImageProvider.loadBuffer]: {{site.url}}/release/breaking-changes/image-provider-load-buffer
 [Default PrimaryScrollController on Desktop]: {{site.url}}/release/breaking-changes/primary-scroll-controller-desktop
+[Trackpad gestures can trigger GestureRecognizer]: {{site.url}}/release/breaking-changes/trackpad-gestures
 
 ### Released in Flutter 3
 

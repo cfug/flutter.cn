@@ -371,13 +371,13 @@
       permalink: /docs/perf/rendering-performance
     - title: 性能分析
       permalink: /docs/perf/ui-performance
-    - title: 减少着色器卡顿
+    - title: 着色器编译时卡顿
       permalink: /docs/perf/shader
     - title: 性能指标
       permalink: /docs/perf/metrics
-    - title: 性能 FAQ
+    - title: 性能常见问题和回答
       permalink: /docs/perf/faq
-    - title: Appendix
+    - title: 附录
       permalink: /docs/perf/appendix
 
 - title: 打包部署

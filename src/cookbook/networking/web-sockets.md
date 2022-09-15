@@ -26,7 +26,7 @@ without polling.
 `WebSockets` 可以以非轮询的方式与服务器进行双向通信。
 
 In this example, connect to a
-[test server provided by websocket.org][].
+[test WebSocket server sponsored by Lob.com][].
 The server sends back the same message you send to it.
 
 在这里，你可以连接一个 
@@ -284,6 +284,6 @@ class _MyHomePageState extends State<MyHomePage> {
 [`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html
 [`StreamBuilder`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
 [`StreamSink`]: {{site.api}}/flutter/dart-async/StreamSink-class.html
-[test server provided by websocket.org]: http://www.websocket.org/echo.html
+[test WebSocket server sponsored by Lob.com]: https://www.lob.com/blog/websocket-org-is-down-here-is-an-alternative
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`web_socket_channel`]: {{site.pub-pkg}}/web_socket_channel

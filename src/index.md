@@ -115,25 +115,35 @@ and learn about other series on our [videos][] page.
 也可以关注 [“Flutter 社区”的哔哩哔哩账号](https://space.bilibili.com/344928717)
 了解更多来自社区的内容更新。
 
-Learn Flutter basics in [How do I make my first Flutter app?][]
+Check out the Introducing Flutter series. Learn Flutter basics like [how do I make my first Flutter app?][] In Flutter, "everything is a widget"! Learn more about `Stateless` and `Stateful` widgets in [What is State?][]
 
-在这个视频《如何构建第一个 Flutter 应用》里，了解基础的 Flutter 知识：
+请查看下述 Flutter 入门系列视频，通过 [构建第一个 Flutter 应用][] 学习 Flutter 基础内容，Flutter 里 “所有的事物都是 widget”，如果你想更好了解有状态 `Stateful` 和无状态 `Stateless` 的 widget，查看视频 [什么是状态][]？
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/xWV71C2kp38" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-
-In Flutter, "everything is a widget"! To better understand
-the two kinds of widgets, `Stateless` and `Stateful`, see 
-[What is State?][]
-
-Flutter 里 “所有的事物都是 widget”，
-如果你想更好了解有状态 `Stateful`
-和无状态 `Stateless` 的 widget，
-请参阅下面的视频《什么是状态》了解更多。
-
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/QlwiL_yLh6E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="card-deck card-deck--responsive">
+    <div class="video-card">
+        <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="//player.bilibili.com/player.html?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+    <div class="video-card">
+        <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="//player.bilibili.com/player.html?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+</div>
 
 [How do I make my first Flutter app?]: {{site.youtube-site}}/watch?v=xWV71C2kp38
 [What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
+[构建第一个 Flutter 应用]: https://www.bilibili.com/video/BV1Se4y1Z74p
+[什么是状态]: https://www.bilibili.com/video/BV14G4y167Tu
+
+
+
+<div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <h4>Only have 60 seconds? Learn how to build and deploy a Flutter App!</h4>
+
+  <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/ZnufaryH43s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Want to skill up?
 
@@ -148,6 +158,36 @@ check out the [Boring Flutter Show][] video series:
 
 <iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Boring Flutter Show 系列视频][Boring Flutter Show]
+
+{% comment %}
+Dive deeper into how Flutter works under the hood! Learn [why you write standalone widgets instead of using helper methods][] or [what is “BuildContext” and how is it used][]?
+
+<div class="card-deck card-deck--responsive">
+    <div class="video-card">
+        <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/IOyq-eTRhvo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+    <div class="video-card">
+        <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/rIaaH87z1-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+</div>
+
+[why you write standalone widgets instead of using helper methods]: {{site.youtube-site}}/IOyq-eTRhvo
+[what is “BuildContext” and how is it used]: {{site.youtube-site}}/rIaaH87z1-g
+
+To learn about all of the Flutter video series, see our [videos][] page.
+
+We release new videos every week on the Flutter YouTube channel.
+
+<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/c/flutterdev">Explore more Flutter videos</a>
+
+#TODO: 这一部分内容提及的视频尚未上传 Bilibili，上传之后再做替换。
+{% endcomment %}
+
+
 
 You might also find these docs useful:
 

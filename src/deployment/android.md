@@ -58,7 +58,7 @@ This page covers the following topics:
 
 * [Building the app for release](#building-the-app-for-release)
 
-  [为发布构建应用程序](#building-the-app-for-release)
+  [为发布构建应用](#building-the-app-for-release)
 
 * [Publishing to the Google Play Store](#publishing-to-the-google-play-store)
 
@@ -70,7 +70,7 @@ This page covers the following topics:
 
 * [Android release FAQ](#android-release-faq)
 
-  [安卓发布常见问题](#android-release-faq)
+  [Android 发布常见问题](#android-release-faq)
 
 {{site.alert.note}}
 
@@ -80,9 +80,9 @@ This page covers the following topics:
    your app's directory.
 
    在整个页面中，`[project]` 是指
-   您的应用程序所处的目录。同时关注
+   您的应用所处的目录。同时关注
    这些说明，替换 `[project]` 为
-   您的应用程序的目录。
+   您的应用的目录。
 
 {{site.alert.end}}
 
@@ -522,7 +522,7 @@ flag to `flutter build apk` or `flutter build appbundle`.
   Obfuscation and minification can considerably extend compile time
   of the Android application.
 
-  混淆和压缩会大大地延长安卓应用程序的编译时间。
+  混淆和压缩会大大地延长 Android 应用的编译时间。
 
 {{site.alert.end}}
 
@@ -708,7 +708,7 @@ For more information, see the module-level build section in the [Gradle build fi
 
 ## Building the app for release
 
-## 构建生产版本应用程序
+## 构建生产版本应用
 
 You have two possible release formats when publishing to
 the Play Store.
@@ -975,27 +975,22 @@ see [Version your app][] in the Android documentation.
 `build-name` 将作为 `versionName` 使用。
 更多信息请参考 Android 文档中的 [为你的应用添加版本][Version your app]。
 
-After updating the version number in the pubspec file,
-run `flutter pub get` from the top of the project, or
-use the **Pub get** button in your IDE. This updates
-the `versionName` and `versionCode` in the `local.properties` file,
-which are later updated in the `build.gradle` file when you
-rebuild the Flutter app.
+When you rebuild the app for Android, any updates in the version number
+from the pubspec file will update the `versionName` and `versionCode` 
+in the `local.properties` file.
 
-在更新完 pubspec 文件中的版本号之后，
-在项目根目录下运行 `flutter pub get`，
-或者使用 IDE 中的 **Pub get** 按钮。
-这将会更新 `local.properties` 文件中的 `versionName` 和 `versionCode`，
-之后它会在你构建 Flutter 应用的时候更新 `build.gradle`。
+当重新构建 Android 应用后，任何在 pubspec 文件所做的版本号更新，
+都将会更新 `local.properties` 文件中的
+`versionName` 和 `versionCode`。
 
 ## Android release FAQ
 
-## Android发布常见问题
+## Android 发布常见问题
 
 Here are some commonly asked questions about deployment for
 Android apps.
 
-这里是一些关于安卓应用程序发布的常见问题。
+这里是一些关于 Android 应用发布的常见问题。
 
 ### When should I build app bundles versus APKs?
 
@@ -1008,8 +1003,8 @@ your application by means other than the Play Store,
 an APK may be your only option.
 
 Google Play Store 相对于 APKs 更建议你发布 app bundles，
-因为那样应用程序会更有效率地交付给你的用户。
-但是，如果你想将应用程序发布到其他的应用商店，APK可能是唯一选项。
+因为那样应用会更有效率地交付给你的用户。
+但是，如果你想将应用发布到其他的应用商店，APK可能是唯一选项。
 
 ### What is a fat APK?
 
@@ -1028,7 +1023,7 @@ as described in [build an APK](#build-an-apk) using the
 一个 [fat APK][] 是一个包含了支持多个 ABI 架构的 APK 文件。
 这样做的好处是单个 APK 可以运行在多个架构上，因此
 具有更广泛的兼容性。但同时缺点就是文件体积会比较大，
-导致用户在安装你的应用程序时会下载和储存更多的字节。
+导致用户在安装你的应用时会下载和储存更多的字节。
 当构建 APK 而不是 app bundles 时强烈建议分开构建 APK，
 如 [build an APK](#build-an-apk) 所描述的那样，
 使用 `--split-per-abi` 指令。
@@ -1043,7 +1038,7 @@ Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
 Flutter does not currently support building for x86 Android
 (See [Issue 9253][]).
 
-当使用 release 模式构建你的应用程序时,
+当使用 release 模式构建你的应用时,
 Flutter app 可以基于 [armeabi-v7a][] (ARM 32 位)、
 [arm64-v8a][] (ARM 64 位) 以及 [x86-64][] (x86 64 位) 被编译。
 Flutter 目前不支持 x86 Android (参考 [Issue 9253][]).

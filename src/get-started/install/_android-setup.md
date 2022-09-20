@@ -89,7 +89,7 @@ follow these steps:
 根据以下步骤来将 Flutter 应用运行或测试于你的 Android 模拟器上：
 
  1. Enable
-    [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration)
+    [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)
     on your machine.
 
     激活机器上的 

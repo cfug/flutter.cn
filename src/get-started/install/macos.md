@@ -48,7 +48,7 @@ your development environment must meet these minimum requirements:
   Rosetta 2 环境因为 [一些辅助工具][some ancillary tools] 仍然需要，
   你可以通过手动运行下面的命令来安装：
   ```terminal
-  $ sudo softwareupdate --install-rosetta --agree-to-license
+$ sudo softwareupdate --install-rosetta --agree-to-license
   ```
 {{site.alert.end}}
 

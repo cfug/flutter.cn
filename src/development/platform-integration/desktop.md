@@ -100,13 +100,15 @@ you need the following in addition to the Flutter SDK:
 
 要开发 Windows 桌面程序，除了 Flutter SDK，你还需要做以下准备:
 
-* [Visual Studio 2022][] When installing Visual Studio,
+* [Visual Studio 2022][] or [Visual Studio Build Tools 2022][]
+  When installing Visual Studio or only the Build Tools,
   select the "Desktop development with C++" workload,
   including all of its default components,
   to install the necessary C++ toolchain and
   Windows SDK header files.
 
-  [Visual Studio 2022][] 在安装 Visual Studio 时，
+  [Visual Studio 2022][] 或 [Visual Studio 2022 生成工具][Visual Studio Build Tools 2022]
+  在选择安装 Visual Studio 时或只安装生成工具的时候，
   你需要选择「使用 C++ 的桌面开发」，包括其所有默认组件，
   以安装必要的 C++ 工具链和 Windows SDK 的头文件。
 
@@ -119,6 +121,7 @@ you need the following in addition to the Flutter SDK:
 {{site.alert.end}}
 
 [Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/
+[Visual Studio Build Tools 2022]: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022
 
 ### Additional macOS requirements
 

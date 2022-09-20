@@ -99,7 +99,7 @@ or run `flutter test --help` in your terminal.
 
 {{site.alert.end}}
 
-[Plugins in Flutter tests]: {{site.url}}/development/packages-and-plugins/plugin-testing
+[Plugins in Flutter tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
 
 ### Recipes
 

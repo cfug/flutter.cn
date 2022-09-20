@@ -435,7 +435,7 @@ as well as many other open source packages, on [pub.dev][].
     ```diff
     --- step1_base/pubspec.yaml
     +++ step2_use_package/pubspec.yaml
-    @@ -23,4 +23,5 @@
+    @@ -25,4 +25,5 @@
      dependencies:
        flutter:
          sdk: flutter
@@ -835,7 +835,7 @@ lazily, on demand.
     ```
 
     {:.numbered-code-notes}
-     1. The `itemBuilder` callback is called once per suggested word pairing,
+     1. The `itemBuilder` callback is called once per row,
         and places each suggestion into a `ListTile` row. For even rows, the
         function adds a `ListTile` row for the word pairing. For odd rows, the
         function adds a `Divider` widget to visually separate the entries. Note

@@ -1,4 +1,4 @@
-<div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
+<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
 ## Create the app {#create-app}
 
@@ -43,26 +43,26 @@ contains a simple demo app that uses [Material Components][].
 
 ## Run the app
 
- 1. Locate the VS Code status bar
+1. Locate the VS Code status bar
    (the blue bar at the bottom of the window):<br>
 
-    定位到 VS Code 的状态栏（窗口底部的蓝色栏）：<br> 
+   定位到 VS Code 的状态栏（窗口底部的蓝色栏）：<br> 
     ![status bar][]{:.mw-100.pt-1.pb-2}
 
- 1. Select a device from the **Device Selector** area.
-    For details, see [Quickly switching between Flutter devices][].
+1. Select a device from the **Device Selector** area.
+   For details, see [Quickly switching between Flutter devices][].
 
-    从 **Device Selector** 区域选择一个设备。
-    更多信息，参考 [快速切换用于 Flutter 的设备][Quickly switching between Flutter devices]。
+   从 **Device Selector** 区域选择一个设备。
+   更多信息，参考 [快速切换用于 Flutter 的设备][Quickly switching between Flutter devices]。
 
-    - If no device is available, and you want to use a device simulator,
-      click **No Devices** and click
-      **Start iOS Simulator** to launch a simulator.
+   - If no device is available, and you want to use a device simulator,
+     click **No Devices** and click
+     **Start iOS Simulator** to launch a simulator.
 
-      如果没有可用的设备，而同时你想使用模拟器，点击 **No Devices**
-      并点击 **Start iOS Simulator** 启动一个模拟器。
+     如果没有可用的设备，而同时你想使用模拟器，点击 **No Devices**
+     并点击 **Start iOS Simulator** 启动一个模拟器。
 
-      {{site.alert.warning}}
+     {{site.alert.warning}}
 
         You might not see **Start iOS Simulator** option
         when you click **No Devices** in VS Code.
@@ -89,14 +89,14 @@ contains a simple demo app that uses [Material Components][].
       想要配置真机用于调试，请查看你正在使用的系统的对应
       [安装][Install] 设备指导。
 
- 1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
+1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
 
-    运行 **Run > Start Debugging** 或按下 <kbd>F5</kbd>。
+   运行 **Run > Start Debugging** 或按下 <kbd>F5</kbd>。
 
- 1. Wait for the app to launch&mdash;progress is printed
-    in the **Debug Console** view.
+1. Wait for the app to launch&mdash;progress is printed
+   in the **Debug Console** view.
 
-    等待应用启动&mdash;&mdash;启动进度会在 **Debug Console** 中展示。
+   等待应用启动&mdash;&mdash;启动进度会在 **Debug Console** 中展示。
 
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**

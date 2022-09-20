@@ -38,10 +38,10 @@ that's OK, skip ahead to the [next step: Test drive][].
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="true">Android Studio and IntelliJ</a>
+    <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="false">Visual Studio Code</a>
+    <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio 和 IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="emacs-tab" href="#emacs" role="tab" aria-controls="emacs" aria-selected="false">Emacs</a>
@@ -50,8 +50,65 @@ that's OK, skip ahead to the [next step: Test drive][].
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
+<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
-<div class="tab-pane active" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
+## Install VS Code
+
+## 安装 VS Code
+
+VS Code is a lightweight editor with complete Flutter app execution and debug support.
+
+VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
+
+* [VS Code][], latest stable version
+
+  [VS Code][]，最新稳定版本
+
+## Install the Flutter and Dart plugins
+
+## 安装 Flutter 和 Dart 插件
+
+ 1. Start VS Code.
+
+    打开 VS Code。
+
+ 1. Invoke **View > Command Palette...**.
+
+    打开 **View > Command Palette...**。
+
+ 1. Type "install", and select **Extensions: Install Extensions**.
+
+    输入「install」，然后选择 **Extensions: Install Extensions**。
+
+ 1. Type "flutter" in the extensions search field, select **Flutter** in the list,
+    and click **Install**. This also installs the required Dart plugin.
+
+    在扩展搜索输入框中输入「flutter」，然后在列表中选择 **Flutter** 并单击 **Install**。
+    此过程中会自动安装必需的 Dart 插件。
+
+ 1. Click **Reload to Activate** to reload VS Code.
+
+    点击 **Reload to Activate** 以重新启动 VS Code。
+
+## Validate your setup with the Flutter Doctor
+
+## 通过 Flutter Doctor 命令验证是否安装成功
+
+ 1. Invoke **View > Command Palette...**.
+
+    打开 **View > Command Palette...**。
+
+ 1. Type "doctor", and select the **Flutter: Run Flutter Doctor**.
+
+    输入 "doctor"，选择 **Flutter: Run Flutter Doctor**。
+
+ 1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
+
+    打开 **OUTPUT** 面板查看是否有错误，
+    确保在不同的输出选项 (Output Options) 的下拉列表中选择了 Flutter。
+
+</div>
+<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
 
 ## Install Android Studio
 
@@ -130,64 +187,6 @@ Use the following instructions for Linux or Windows:
 
       选择 **Marketplace (扩展商店)**，选择 Flutter plugin
       然后点击 **Install (安装)**。
-
-</div>
-<div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
-
-## Install VS Code
-
-## 安装 VS Code
-
-VS Code is a lightweight editor with complete Flutter app execution and debug support.
-
-VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
-
-* [VS Code][], latest stable version
-
-  [VS Code][]，最新稳定版本
-
-## Install the Flutter and Dart plugins
-
-## 安装 Flutter 和 Dart 插件
-
- 1. Start VS Code.
-
-    打开 VS Code。
-
- 1. Invoke **View > Command Palette...**.
-
-    打开 **View > Command Palette...**。
-
- 1. Type "install", and select **Extensions: Install Extensions**.
-
-    输入「install」，然后选择 **Extensions: Install Extensions**。
-
- 1. Type "flutter" in the extensions search field, select **Flutter** in the list,
-    and click **Install**. This also installs the required Dart plugin.
-
-    在扩展搜索输入框中输入「flutter」，然后在列表中选择 **Flutter** 并单击 **Install**。
-    此过程中会自动安装必需的 Dart 插件。
-
- 1. Click **Reload to Activate** to reload VS Code.
-
-    点击 **Reload to Activate** 以重新启动 VS Code。
-
-## Validate your setup with the Flutter Doctor
-
-## 通过 Flutter Doctor 命令验证是否安装成功
-
- 1. Invoke **View > Command Palette...**.
-
-    打开 **View > Command Palette...**。
-
- 1. Type "doctor", and select the **Flutter: Run Flutter Doctor**.
-
-    输入 "doctor"，选择 **Flutter: Run Flutter Doctor**。
-
- 1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
-
-    打开 **OUTPUT** 面板查看是否有错误，
-    确保在不同的输出选项 (Output Options) 的下拉列表中选择了 Flutter。
 
 </div>
 <div class="tab-pane" id="emacs" role="tabpanel" aria-labelledby="emacs-tab" markdown="1">

@@ -263,9 +263,35 @@ the starting value for `opacity` to zero:
              Text('Type: Owl'),
 ```
 
-#### 3. Set up a trigger for the animation, and choose an end value
+#### 3. Set the duration of the animation
 
-#### 3. 为动画设置一个触发器，并选择一个结束值
+#### 3. 为动画设置一个时长
+
+In addition to an `opacity` parameter, `AnimatedOpacity` requires a
+[duration] to use for its animation. For this example,
+you can start with 2 seconds:
+
+除了 `opacity` 参数以外，`AnimatedOpacity` 还需要为动画设置 [duration][]。
+在下面的例子中，动画会以两秒的时长运行：
+
+<?code-excerpt "opacity{3,4}/lib/main.dart"?>
+```diff
+--- opacity3/lib/main.dart
++++ opacity4/lib/main.dart
+@@ -28,7 +28,7 @@
+           ),
+           onPressed: () => {}),
+       AnimatedOpacity(
+-        duration: const Duration(seconds: 3),
++        duration: const Duration(seconds: 2),
+         opacity: opacity,
+         child: Column(
+           children: const [
+```
+
+#### 4. Set up a trigger for the animation, and choose an end value
+
+#### 4. 为动画设置一个触发器，并选择一个结束值
 
 Configure the animation to trigger when the user clicks the **Show details**
 button. To do this, change `opacity` state using the `onPressed()` handler for
@@ -312,32 +338,6 @@ to set `opacity` to 1:
   `AnimatedOpacity` widget 会自行处理动画过程中的一切。
 
 {{site.alert.end}}
-
-#### 4. Set the duration of the animation
-
-#### 4. 为动画设置时长
-
-In addition to an `opacity` parameter, `AnimatedOpacity` requires a
-[duration] to use for its animation. For this example,
-you can start with 2 seconds:
-
-除了 `opacity` 参数，`AnimatedOpacity` 还需要 [duration][] 参数确定动画时长。
-在下面的示例中，您可以设置淡入时长为 2 秒： 
-
-<?code-excerpt "opacity{3,4}/lib/main.dart"?>
-```diff
---- opacity3/lib/main.dart
-+++ opacity4/lib/main.dart
-@@ -28,7 +28,7 @@
-           ),
-           onPressed: () => {}),
-       AnimatedOpacity(
--        duration: const Duration(seconds: 3),
-+        duration: const Duration(seconds: 2),
-         opacity: opacity,
-         child: Column(
-           children: const [
-```
 
 ### Fade-in (complete)
 

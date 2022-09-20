@@ -265,9 +265,14 @@ the starting value for `opacity` to zero:
 
 #### 3. Set the duration of the animation
 
+#### 3. 为动画设置一个时长
+
 In addition to an `opacity` parameter, `AnimatedOpacity` requires a
 [duration] to use for its animation. For this example,
 you can start with 2 seconds:
+
+除了 `opacity` 参数以外，`AnimatedOpacity` 还需要为动画设置 [duration][]。
+在下面的例子中，动画会以两秒的时长运行：
 
 <?code-excerpt "opacity{3,4}/lib/main.dart"?>
 ```diff
@@ -286,7 +291,7 @@ you can start with 2 seconds:
 
 #### 4. Set up a trigger for the animation, and choose an end value
 
-#### 3. 为动画设置一个触发器，并选择一个结束值
+#### 4. 为动画设置一个触发器，并选择一个结束值
 
 Configure the animation to trigger when the user clicks the **Show details**
 button. To do this, change `opacity` state using the `onPressed()` handler for

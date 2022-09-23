@@ -302,7 +302,7 @@ void main() {
 
 ## 5. Run the tests
 
-### 5. 执行测试
+## 5. 执行测试
 
 Now that you have a `fetchAlbum()` function with tests in place,
 run the tests.
@@ -324,7 +324,7 @@ instructions in the [Introduction to unit testing][] recipe.
 
 ## 完整的样例
 
-##### lib/main.dart
+##### `lib/main.dart`
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
@@ -415,7 +415,7 @@ class _MyAppState extends State<MyApp> {
 }
 ```
 
-##### test/fetch_album_test.dart
+##### `test/fetch_album_test.dart`
 
 <?code-excerpt "test/fetch_album_test.dart"?>
 ```dart
@@ -462,7 +462,7 @@ void main() {
 
 ## Summary
 
-### 总结
+## 总结
 
 In this example, you've learned how to use Mockito to test functions or classes
 that depend on web services or databases. This is only a short introduction to

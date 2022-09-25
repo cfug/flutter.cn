@@ -591,19 +591,19 @@ The `crossAxisAlignment` property has five possible values:
 <br> Positions children near the start of the cross axis. (Top for `Row`, Left for `Column`)
 
 `CrossAxisAlignment.start`
-<br> 将其 children 横轴顶部对齐。 (顶部是 `Row`，左侧是 `Column` )
+<br> 将其 children 横轴顶部对齐。 (`Row` 的顶部，`Column` 的左侧)
 
 `CrossAxisAlignment.end`
 <br> Positions children near the end of the cross axis. (Bottom for `Row`, Right for `Column`)
 
 `CrossAxisAlignment.end`
-<br> 将其 children 横轴底部对齐。 (底部是 `Row`，右侧是 `Column` )
+<br> 将其 children 横轴底部对齐。 (`Row` 的底部，`Column` 的右侧)
 
 `CrossAxisAlignment.center`
 <br> Positions children at the middle of the cross axis. (Middle for `Row`, Center for `Column`)
 
 `CrossAxisAlignment.center`
-<br> 将其 children 横轴中心对齐。 (中间是 `Row`，中心是 `Column` )
+<br> 将其 children 横轴中心对齐。 (`Row` 的中间，`Column` 的中间)
 
 `CrossAxisAlignment.stretch`
 <br> Stretches children across the cross axis. 

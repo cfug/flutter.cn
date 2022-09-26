@@ -74,5 +74,5 @@ Here some links to relevant API docs:
 [SliverList and SliverGrid]: {{site.youtube-site}}/watch?v=ORiTTaVY6mM
 [`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
 [Slivers, DeMystified]: {{site.flutter-medium}}/slivers-demystified-6ff68ab0296f
-[Slivers explained - Making dynamic layouts]: {{site.youtube-site}}/watch?v=Mz3kHQxBjGg
+[Slivers explained - Making dynamic layouts]: https://www.bilibili.com/video/BV1EJ41197NB/
 [The Boring Show]: {{site.youtube-site}}/playlist?list=PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK

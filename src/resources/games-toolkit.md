@@ -111,7 +111,7 @@ Are you ready? To get started:
 [direct-discord]: https://discord.com/login?redirect_to=%2Fchannels%2F420324994703163402%2F964110538986651658
 [game-discord]: https://discord.com/invite/WY5NwwjBQz
 [game-template]: {{site.github}}/flutter/samples/tree/main/game_template
-[game-video]: {{site.youtube-site}}/watch?v=zGgeBNiRy-8&t=3s
+[game-video]: https://www.bilibili.com/video/BV12Y4y1z7m9/
 
 ## Video games
 

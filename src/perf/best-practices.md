@@ -367,7 +367,7 @@ If you are wondering why 60fps leads to a smooth visual experience,
 check out the video [Why 60fps?][]
 
 [profile mode]: {{site.url}}/testing/build-modes#profile
-[Why 60fps?]: {{site.youtube-site}}/watch?v=CaMTIgxCSqU
+[Why 60fps?]: https://www.bilibili.com/video/BV1b441157sA/
 
 ## Pitfalls
 

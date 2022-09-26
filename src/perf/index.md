@@ -7,12 +7,12 @@ tags: Flutter性能
 keywords: 性能评估,包体积,内存占用
 ---
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/PKGguGUwSYE" 
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=243695231&bvid=BV1zv411B7gY&cid=207457008&page=1" 
 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
 picture-in-picture" allowfullscreen></iframe>
 [Flutter performance basics]({{site.youtube-site}}/watch?v=PKGguGUwSYE)
 
-[Flutter 性能入门](https://www.youtube.com/watch?v=PKGguGUwSYE)
+[Flutter 性能入门](https://www.bilibili.com/video/BV1zv411B7gY/)
 
 What is performance? Why is performance important? How do I improve performance?
 

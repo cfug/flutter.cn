@@ -17,9 +17,11 @@
 
    输入项目名称（例如 `my_app`）。
 
-4. Select **Application** as the project type. Then click **Next**.
+4. Select **Application** as the project type.
+   Then click **Next**.
 
-   选择 **Application** 的项目类型。完成后选择 **Next**。
+   选择 **Application** 的项目类型，
+   完成后选择 **Next**。
 
 5. Click **Finish**.
 
@@ -31,8 +33,9 @@
 
 {% include_relative _package-name.md  %}
 
-The above commands create a Flutter project directory called `my_app` that
-contains a simple demo app that uses [Material Components][].
+The above commands create a Flutter project directory
+called `my_app` that contains a simple demo app that
+uses [Material Components][].
 
 上述步骤会创建名为 `my_app` 的 Flutter 项目的文件夹，
 它是一个使用了 [Material 组件][Material Components] 的简单 demo。
@@ -76,6 +79,4 @@ contains a simple demo app that uses [Material Components][].
 
 [trusted your computer]: {{site.url}}/get-started/install/macos#trust
 </div>
-
-
 

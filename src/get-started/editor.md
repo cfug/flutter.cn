@@ -16,8 +16,9 @@ next:
 toc: false
 ---
 
-You can build apps with Flutter using any text editor combined with our
-command-line tools. However, we recommend using one of our editor
+You can build apps with Flutter using any text editor
+combined with Flutter's command-line tools.
+However, we recommend using one of our editor
 plugins for an even better experience.
 These plugins provide you with code completion, syntax
 highlighting, widget editing assists, run & debug support, and more.
@@ -26,11 +27,12 @@ highlighting, widget editing assists, run & debug support, and more.
 然而，我们推荐使用我们的编辑器插件以获取更好的开发体验。这些插件提供了代码补全、
 代码高亮、widget 辅助编辑的功能，以及为项目的运行和调试提供支持等。
 
-Follow the steps below to add an editor plugin for Android Studio,
-IntelliJ, VS Code, or Emacs. If you want to use a different editor,
+Use the following steps to add an editor plugin for VS Code,
+Android Studio, IntelliJ, or Emacs.
+If you want to use a different editor,
 that's OK, skip ahead to the [next step: Test drive][].
 
-参考以下步骤为 Android Studio、IntelliJ 或者 VS Code 添加编辑器插件。
+参考以下步骤为 VS Code、Android Studio、IntelliJ 或者 Emacs 添加编辑器插件。
 如果你想使用其他的编辑器，请直接打开
 [下一节: 开发体验初探][next step: Test drive]，
 来查看使用其他文本编辑器配合命令行工具来创建和运行 Flutter 应用。
@@ -56,7 +58,8 @@ that's OK, skip ahead to the [next step: Test drive][].
 
 ## 安装 VS Code
 
-VS Code is a lightweight editor with complete Flutter app execution and debug support.
+VS Code is a lightweight editor with complete Flutter
+app execution and debug support.
 
 VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
@@ -76,12 +79,15 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
     打开 **View > Command Palette...**。
 
- 1. Type "install", and select **Extensions: Install Extensions**.
+ 1. Type "install", and select
+    **Extensions: Install Extensions**.
 
-    输入「install」，然后选择 **Extensions: Install Extensions**。
+    输入「install」，然后选择
+    **Extensions: Install Extensions**。
 
- 1. Type "flutter" in the extensions search field, select **Flutter** in the list,
-    and click **Install**. This also installs the required Dart plugin.
+ 1. Type "flutter" in the extensions search field,
+    select **Flutter** in the list, and click **Install**.
+    This also installs the required Dart plugin.
 
     在扩展搜索输入框中输入「flutter」，然后在列表中选择 **Flutter** 并单击 **Install**。
     此过程中会自动安装必需的 Dart 插件。
@@ -98,14 +104,19 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
     打开 **View > Command Palette...**。
 
- 1. Type "doctor", and select the **Flutter: Run Flutter Doctor**.
+ 1. Type "doctor", and select the
+    **Flutter: Run Flutter Doctor**.
 
-    输入 "doctor"，选择 **Flutter: Run Flutter Doctor**。
+    输入 "doctor"，选择
+    **Flutter: Run Flutter Doctor**。
 
- 1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
+ 1. Review the output in the **OUTPUT** pane for any issues.
+    Make sure to select Flutter from the dropdown
+    in the different Output Options.
 
     打开 **OUTPUT** 面板查看是否有错误，
-    确保在不同的输出选项 (Output Options) 的下拉列表中选择了 Flutter。
+    确保在不同的输出选项 (Output Options) 
+    的下拉列表中选择了 Flutter。
 
 </div>
 <div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
@@ -114,7 +125,8 @@ VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
 
 ## 安装 Android Studio
 
-Android Studio offers a complete, integrated IDE experience for Flutter.
+Android Studio offers a complete,
+integrated IDE experience for Flutter.
 
 Android Studio 为 Flutter 提供了一个完整的集成开发环境。
 
@@ -205,11 +217,12 @@ Emacs 是一个轻量级的编辑器，支持 Flutter 和 Dart。
 
 ## Install the lsp-dart package
 
-## 安装 lsp-dart 包
+## 安装 lsp-dart 这个 package
 
-For information on how to install and use the package, see the [lsp-dart documentation][].
+For information on how to install and use the package,
+see the [lsp-dart documentation][].
 
-关于如何安装和使用 lsp-dart 包，可以查看
+关于如何安装和使用 lsp-dart 这个 package，可以查看
 [lsp-dart 文档][lsp-dart documentation]。
 
 </div>

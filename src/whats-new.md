@@ -178,7 +178,7 @@ For more information, see
 and [What's new in Flutter 2.10][],
 free articles on Medium.
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/g-0B_Vfc9qM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=640083866&bvid=BV1eY4y1s7wu&cid=556773536&page=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 [What's new in Flutter 2.10]: {{site.flutter-medium}}/whats-new-in-flutter-2-10-5aafb0314b12
@@ -313,24 +313,24 @@ publication since the last stable release:
 [Announcing Flutter 2.2]: {{site.flutter-medium}}/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
 [Building adaptive apps]: {{site.url}}/development/ui/layout/building-adaptive-apps
 [Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
-[Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
+[Building your first Flutter app]: https://www.bilibili.com/video/BV1n54y1H7dZ/
 [DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
 [DartPad Workshop Authoring Guide]: {{site.github}}/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide
 [Deferred components]: {{site.url}}/perf/deferred-components
 [desktop]: {{site.url}}/desktop
 [Embedded Support for Flutter]: {{site.url}}/embedded
 [Embedding DartPad in your web page]: {{site.github}}/dart-lang/dart-pad/wiki/Embedding-Guide
-[Firebase for Flutter]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
-[Flutter and Dialogflow voice bots]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
+[Firebase for Flutter]: https://www.bilibili.com/video/BV14b4y1o7Wn/
+[Flutter and Dialogflow voice bots]: https://www.bilibili.com/video/BV1pX4y1A7SH/
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter#0
 [Google APIs]: {{site.url}}/development/data-and-backend/google-apis
 [Google I/O workshops page]: https://events.google.com/io/program/content?4=topic_flutter&5=type_workshop&lng=en
 [How It's Made: I/O Photo Booth]: {{site.flutter-medium}}/how-its-made-i-o-photo-booth-3b8355d35883
-[Inherited widgets]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
+[Inherited widgets]: https://www.bilibili.com/video/BV1Wv411W7yF/
 [Inherited widgets DartPad]: {{site.url}}/go/inheritedwidget-workshop
 [Memory view page]: {{site.url}}/development/tools/devtools/memory
-[Null safety]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
-[Slivers]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
+[Null safety]: https://www.bilibili.com/video/BV1tK4y1u76N/
+[Slivers]: https://www.bilibili.com/video/BV11f4y187gV/
 [Q1 2021 survey]: {{site.flutter-medium}}/which-factors-affected-users-decisions-to-adopt-flutter-q1-2021-user-survey-results-563e61fc68c9
 [What's New in Flutter 2.2]: {{site.flutter-medium}}/whats-new-in-flutter-2-2-fd00c65e2039
 

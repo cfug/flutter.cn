@@ -43,7 +43,7 @@ apps, but they fall into three major categories:
 
   [平台行为习惯与规范](#idioms-and-norms)
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/RCdeSKVt7LI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=421723399&bvid=BV1i3411878z&cid=442392038&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.

@@ -56,7 +56,7 @@ Check out the Flutter Engage 2021 highlights reel:
 
 查看 Flutter Engage 2021 主要亮点：
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/IdrCyS7EF8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=760318790&bvid=BV1g64y117Jo&cid=330239820&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Watch recordings of the sessions on the Flutter YouTube channel:
 
@@ -125,10 +125,10 @@ This series features Flutter programmers coding,
 unscripted and in real time. Mistakes, solutions
 (some of them correct), and snazzy intro music included.
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&bvid=BV18441157SS&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Introducing the Boring Flutter show<br>
 
-介绍 The Boring Flutter Show<br>
+ The Boring Flutter Show 视频播放列表介绍<br>
 
 [The Boring Flutter show playlist][]
 

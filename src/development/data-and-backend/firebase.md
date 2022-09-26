@@ -76,8 +76,8 @@ videos that you might find useful. Here are a few:
 [codelab2]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 [FlutterFire]: {{site.flutterfire}}
 [started]: {{site.flutterfire}}/docs/overview
-[video]: {{site.youtube-site}}/watch?v=DqJ_KjFzL9I&t=38s
+[video]: https://www.bilibili.com/video/BV184411575K/
 [video2]: {{site.youtube-site}}/watch?v=OlcYP6UXlm8
 [video3]: {{site.youtube-site}}/watch?v=u_Lyx8KJWpg
 [video4]: {{site.youtube-site}}/watch?v=13-jNF984C0
-[workshop]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
+[workshop]: https://www.bilibili.com/video/BV14b4y1o7Wn/

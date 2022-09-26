@@ -830,7 +830,7 @@ of the Flutter inspector.
 [common problems when debugging]: {{site.url}}/testing/debugging#common-problems
 [core building block]: {{site.url}}/development/ui/widgets-intro
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
-[DartConf 2018 talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
+[DartConf 2018 talk]: https://www.bilibili.com/video/BV1h4411575y/
 [debug mode]: {{site.url}}/testing/build-modes#debug
 [Debugging Flutter apps]: {{site.url}}/testing/debugging
 [DevTools written in Flutter]: {{site.url}}/development/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter

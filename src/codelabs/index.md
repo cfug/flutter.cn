@@ -145,8 +145,8 @@ one of these codelabs:
   （Flutter 提供的 [基础状态管理方案][low-level state management] 之一）
   管理应用数据的状态。
 
-[Dart null safety in Action]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
-[inherited-widget-ws]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
+[Dart null safety in Action]: https://www.bilibili.com/video/BV1tK4y1u76N/
+[inherited-widget-ws]: https://www.bilibili.com/video/BV1Wv411W7yF/
 [low-level state management]: {{site.url}}/development/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
 [Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
 
@@ -257,7 +257,7 @@ like layout and animations:
 [animations]: {{site.pub}}/packages/animations
 [Basic Flutter layout concepts]: {{site.url}}/codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
-[Building scrolling experiences in Flutter]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
+[Building scrolling experiences in Flutter]: https://www.bilibili.com/video/BV11f4y187gV/
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: {{site.url}}/codelabs/implicit-animations
 [MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
@@ -378,7 +378,7 @@ Learn how to use Flutter with other technologies.
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Build a Photo Sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
-[Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
+[Build voice bots for mobile with Dialogflow and Flutter]: https://www.bilibili.com/video/BV1pX4y1A7SH/
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/learn/codelabs/firebase-get-to-know-flutter

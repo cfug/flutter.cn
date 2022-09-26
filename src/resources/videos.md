@@ -60,7 +60,7 @@ Check out the Flutter Engage 2021 highlights reel:
 
 Watch recordings of the sessions on the Flutter YouTube channel:
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/zSbsIiluixw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=459378178&bvid=BV125411N7AU&cid=305744087&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Keynote<br>
 [Flutter Engage 2021 playlist][]
 

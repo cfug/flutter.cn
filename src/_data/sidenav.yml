@@ -206,6 +206,8 @@
           children:
             - title: 构建 Windows 桌面软件
               permalink: /docs/development/platform-integration/windows/building
+            - title: 事件循环迁移
+              permalink: /docs/development/platform-integration/windows/run-loop-migration
             - title: 版本信息迁移
               permalink: /docs/development/platform-integration/windows/version-migration
     - title: Package 和插件

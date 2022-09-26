@@ -50,8 +50,8 @@ check out the following workshop:
 {% endcomment -%}
 <style>pre .highlight { background-color: #dfd; }</style>
 
-This is a guide to creating your first Flutter app. If you
-are familiar with object-oriented code and basic programming
+This is a guide to creating your first Flutter app.
+If you are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
 previous experience with Dart, mobile, desktop, or web programming.
@@ -140,14 +140,10 @@ The animated GIF shows how the app works at the completion of part 1.
   
   You need two pieces of software to complete this lab: the
   [Flutter SDK][] and [an editor][].
-  This codelab assumes Android Studio,
-  but you can use your preferred editor.
-  
+
   你需要安装两部分内容来完成本次实验：
   [Flutter SDK 安装][Flutter SDK] 和 
   [编辑器 (editor)][an editor] 设置。
-  本 codelab 里，我们以 macOS 环境下的 Android Studio 以做演示，
-  但你可以选用更顺手的配置。
 
   You can run this codelab by using any of the following devices:
   
@@ -170,11 +166,15 @@ The animated GIF shows how the app works at the completion of part 1.
 
     浏览器（如果需要 debug，则需要用 Chrome 浏览器）；
 
-  * As a [Windows][], [Linux][], or [macOS][] desktop application
+  * A [Windows][], [Linux][], or [macOS][] desktop application
 
-    以一个 [Windows][]、[Linux][] 或者 [macOS][] 桌面应用运行。
-
+    [Windows][]、[Linux][] 或 [macOS][] 桌面端系统。
 {{site.alert.end}}
+
+[Android]: {{site.url}}/get-started/install/macos#set-up-your-android-device
+[Android emulator]: {{site.url}}/get-started/install/macos#set-up-the-android-emulator
+[iOS]: {{site.url}}/get-started/install/macos#deploy-to-ios-devices
+[iOS simulator]: {{site.url}}/get-started/install/macos#set-up-the-ios-simulator
 
 Every Flutter app you
 create also compiles for the web. In your IDE under
@@ -286,21 +286,20 @@ where the Dart code lives.
     {{site.alert.tip}}
 
       When pasting code into your app, indentation can become skewed.
-      You can fix this with the following Flutter tools:
+      You can fix this with the following formatting tool:
 
       在向你的工程项目中粘贴代码的时候，缩进可能会变形。
       你可以使用下面的 Flutter 工具修复此问题：
+
+      * VS Code: Right-click and select **Format Document**.
+
+        VS Code: 右键单击并选择 Format Document。
 
       * Android Studio and IntelliJ IDEA: Right-click the code and
         select **Reformat Code with dartfmt**.
 
         Android Studio 和 IntelliJ IDEA: 右键单击 Dart 代码，
         然后选择 **Reformat Code with dartfmt**。
-
-      * VS Code: Right-click and select **Format Document**.
-
-        VS Code: 右键单击并选择 Format Document。
-
       * Terminal: Run `flutter format <filename>`.
 
         Terminal: 运行 `flutter format <filename>`。
@@ -309,7 +308,7 @@ where the Dart code lives.
 
  2. Run the app [in the way your IDE describes][].
     You should see either Android, iOS, Windows, Linux, macOS,
-    or web output, depending on your device.
+    or web output, depending on your chosen device.
 
     [运行]({{site.url}}/get-started/test-drive#androidstudio) 你的工程项目，
     根据不同的操作系统，你会看到如下运行结果界面：
@@ -347,8 +346,8 @@ where the Dart code lives.
   Flutter offers a rich set of Material widgets.  
   It's a good idea to have a `uses-material-design: true` entry
   in the `flutter` section of your `pubspec.yaml` file.
-  This will allow you to use more features of Material,
-  such as their set of predefined [Icons][].
+  This allows you to use more features of Material,
+  such as its set of predefined [Icons][].
 
   本示例创建了一个具有 Material Design 风格的应用，
   [Material][] 是一种移动端和网页端通用的视觉设计语言，
@@ -359,8 +358,8 @@ where the Dart code lives.
   比如其预定义好的 [图标][Icons] 集。
 
 * The app extends `StatelessWidget`, which makes the app itself a
-  widget. In Flutter, almost everything is a widget, including
-  alignment, padding, and layout.
+  widget. In Flutter, almost everything is a widget,
+  including alignment, padding, and layout.
 
   该应用程序继承了 `StatelessWidget`，这将会使应用本身也成为一个 widget。
   在 Flutter 中，几乎所有都是 widget，
@@ -368,8 +367,8 @@ where the Dart code lives.
 
 * The `Scaffold` widget, from the Material library,
   provides a default app bar, and a body property that
-  holds the widget tree for the home screen. The widget subtree
-  can be quite complex.
+  holds the widget tree for the home screen.
+  The widget subtree can be quite complex.
 
   `Scaffold` 是 Material 库中提供的一个 widget，
   它提供了默认的导航栏、标题和包含主屏幕 widget 树的 body 属性。
@@ -407,62 +406,92 @@ as well as many other open source packages, on [pub.dev][].
 你可以在 [pub.dev][] 上找到
 `english_words` package 以及其他许多开源的 package。
 
- 1. Add `english_words` package to your project as follows:
+The `pubspec.yaml` file manages the assets and dependencies
+for a Flutter app.
 
-    通过下面的命令将 `english_words` 这个 package 加入你的工程里：
+`pubspec.yaml` 文件管理着 Flutter 工程中的所有资源和依赖。
 
-    ```terminal
-    $ flutter pub add english_words
-    Resolving dependencies...
-    + english_words 4.0.0
-      path 1.8.0 (1.8.1 available)
-      source_span 1.8.1 (1.8.2 available)
-      test_api 0.4.3 (0.4.9 available)
-    Downloading english_words 4.0.0...
-    Changed 1 dependency!
-    ```
+ 1. Add the `english_words` package to your project as follows:
 
-    The `pubspec.yaml` file manages the assets and dependencies
-    for a Flutter app. In `pubspec.yaml`, you will see
-    that the `english_words` dependency has been added:
+    通过下面的方式将 `english_words` 这个 package 加入你的工程里：
 
-    `pubspec.yaml` 文件管理着 Flutter 应用程序的
-    assets（资源，如图片、package 等）和依赖项。
-    你可以看到 `english_words` 这个依赖项已经添加：
+    In your IDE, add the line `english_words 4.0.0`
+    just after the `cupertino_icons 1.0.4` line 
+    and save the file.
 
-    <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
-    ```diff
-    --- step1_base/pubspec.yaml
-    +++ step2_use_package/pubspec.yaml
-    @@ -25,4 +25,5 @@
-     dependencies:
-       flutter:
-         sdk: flutter
-       cupertino_icons: ^1.0.2
-    +  english_words: ^4.0.0
-    ```
+    在你的 IDE 中，将 `english_words 4.0.0` 加到
+    `cupertino_icons 1.0.4` 后面，然后保存文件。
 
- 2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
+    Saving the file causes the dependencies to be
+    fetched. The equivalent command-line prompt is
+    the following:
+
+    文件保存后就会触发依赖的获取，这等同于执行下面的命令:
+
+```terminal
+$ `flutter pub add english_words`
+```
+
+The output will look something like the following:
+
+输出的结果会类似下面这些:
+
+```terminal
+Resolving dependencies...
+These packages are no longer being depended on:
++ english_words 4.0.0
+Downloading english_words 4.0.0...
+
+Changed 1 dependency!
+```
+
+Fetching the dependencies also auto-generates the `pubspec.lock`
+file with a list of all packages pulled into the project and
+their version numbers.
+
+依赖关系的获取也会自动生成 `pubspec.lock` 文件，
+这个文件包含所有加入项目的 package 和版本号信息。
+
+The `pubspec.yaml` file manages the assets and dependencies
+for a Flutter app. In `pubspec.yaml`, you will see
+that the `english_words` dependency has been added:
+
+`pubspec.yaml` 文件管理着 Flutter 工程中的所有资源和依赖。
+在这个文件中，现在你会观察到 `english_words` 这个依赖已经添加:
+    
+<?code-excerpt path-base="codelabs/startup_namer"?>
+<?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
+```diff
+--- step1_base/pubspec.yaml
++++ step2_use_package/pubspec.yaml
+@@ -25,4 +25,5 @@
+ dependencies:
+   flutter:
+     sdk: flutter
+   cupertino_icons: ^1.0.2
++  english_words: ^4.0.0
+```
+
+ 2. While viewing the `pubspec.yaml` file in your IDE's editor view,
     click **Pub get**. This pulls the package into
-    your project. You should see the following in the console:
+    your project. The equivalent command-line prompt is as follows:
 
     在 Android Studio 的编辑器视图中查看 `pubspec.yaml` 文件时，
     点击 **Pub get** 会将依赖包安装到你的项目。
     你应该会在控制台中看到以下内容：
 
-    ```terminal
-    $ flutter pub get
-    Running "flutter pub get" in startup_namer...
-    Process finished with exit code 0
-    ```
+```terminal
+$ `flutter pub get`
+```
 
-    Performing `Pub get` also auto-generates the `pubspec.lock`
-    file with a list of all packages pulled into the project and
-    their version numbers.
+The output will look something like the following:
 
-    在执行 `Pub get` 命令时会自动生成一个名为 `pubspec.lock` 文件，
-    这里包含了你依赖 packages 的名称和版本。
+会大约输出下面类似的内容:
+
+```terminal
+Running "flutter pub get" in startup_namer...
+Process finished with exit code 0
+```
 
  3. In `lib/main.dart`, import the new package:
 
@@ -475,7 +504,7 @@ as well as many other open source packages, on [pub.dev][].
       import 'package:flutter/material.dart';
     ```
 
-    As you type, Android Studio gives you suggestions for libraries to import.
+    As you type, the IDE gives you suggestions for libraries to import.
     It then renders the import string in gray, letting you know that the
     imported library is unused (so far).
 
@@ -596,12 +625,14 @@ but the `State` class persists over the lifetime of the widget.
 1）一个 `StatefulWidget` 类；2）一个 `State` 类，`StatefulWidget` 类本身是不变的，
 但是 `State` 类在 widget 生命周期中始终存在。
 
-In this step, you’ll add a stateful widget, `RandomWords`, which creates
-its `State` class, `_RandomWordsState`. You'll then use `RandomWords` as
+In this step, you’ll add a stateful widget, `RandomWords`,
+which creates its `State` class, `_RandomWordsState`.
+You'll then use `RandomWords` as
 a child inside the existing `MyApp` stateless widget.
 
 在这一步，你将添加一个有状态的 widget —— `RandomWords`，
-它会创建自己的状态类 —— `_RandomWordsState`，然后你需要将 `RandomWords`
+它会创建自己的状态类 —— `_RandomWordsState`，
+然后你需要将 `RandomWords`
 内嵌到已有的无状态的 `MyApp` widget。
 
 <ol markdown="1">
@@ -1096,8 +1127,6 @@ where you add the following functionality:
   修改应用的主题，变成一个白色系的应用。
 
 [an editor]: {{site.url}}/get-started/editor
-[Android]: install/macos#set-up-your-android-device
-[Android emulator]: install/macos#set-up-the-android-emulator
 [Building a web application with Flutter]: {{site.url}}/web
 [DevTools]: {{site.url}}/development/tools/devtools
 [enabled web]: {{site.url}}/get-started/web
@@ -1109,8 +1138,6 @@ where you add the following functionality:
 [hot reload]: {{site.url}}/get-started/test-drive
 [in the way your IDE describes]: {{site.url}}/get-started/test-drive
 [Icons]: https://fonts.google.com/icons
-[iOS]: install/macos#deploy-to-ios-devices
-[iOS simulator]: install/macos#set-up-the-ios-simulator
 [Material]: {{site.material}}/guidelines
 [Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2

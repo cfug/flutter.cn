@@ -116,16 +116,6 @@ The animated GIF shows how the app works at the completion of this lab.
 
     [文本编辑器 或 IDE][editor]
 
-  For a web-only codelab,
-  we recommend either [IntelliJ IDEA or VS Code][editor].
-  Android Studio and Xcode aren’t required.
-  You can also use a text editor, if you prefer.
-
-  对于该 Web 应用的教程，
-  我们更推荐使用 [IntelliJ IDEA 或 VS Code][editor] 。
-  你不必使用 Android Studio 和 Xcode。
-  当然如果你愿意的话，也可以使用文本编辑器。
-
   While developing, run your web app in Chrome
   so you can debug with Dart DevTools.
 
@@ -155,13 +145,15 @@ make sure that you have Flutter installed correctly.
 ```terminal
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel stable, 2.8.1, on macOS 12.1 21C52 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 31.0.0)
-[✓] Xcode - develop for iOS and macOS (Xcode 13.2.1)
+[✓] Flutter (Channel master, 3.4.0-19.0.pre.254, on macOS 12.6 21G115
+    darwin-arm64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+[✓] Xcode - develop for iOS and macOS (Xcode 14.0)
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 2020.3)
-[✓] VS Code (version 1.63.2)
-[✓] Connected device (2 available)
+[✓] Android Studio (version 2021.2)
+[✓] VS Code (version 1.71.1)
+[✓] Connected device (4 available)
+[✓] HTTP Host Availability
 
 • No issues found!
 ```
@@ -170,14 +162,19 @@ If you see "flutter: command not found",
 then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
+如果你看到提示是 "flutter: command not found"，
+那么就需要确保 [Flutter SDK][] 已经正确地安装，
+并且在环境变量中做好了配置。
+
 It's okay if the Android toolchain, Android Studio,
-and the Xcode tools are not installed,
+and the Xcode tools aren't installed,
 since the app is intended for the web only.
 If you later want this app to work on mobile,
-you will need to do additional installation and setup.
+you'll need to do additional installation and setup.
 
-如上所示，显示我们缺少 Android 工具、Android Studio 和 Xcode，如果我们只用于 Web 开发，
-这些都不是必要的。后续如果你想用于移动端开发，你将需要安装配置这些工具。
+如上所示，显示我们缺少 Android 工具、Android Studio 和 Xcode，
+如果我们只用于 Web 开发，这些都不是必要的。
+后续如果你想用于移动端开发，你将需要安装配置这些工具。
 
 </li>
 
@@ -192,9 +189,17 @@ You should see something like the following:
 
 ``` terminal
 $ flutter devices
-1 connected device:
+4 connected devices:
 
-Chrome (web) • chrome • web-javascript • Google Chrome 97.0.4692.99
+sdk gphone64 arm64 (mobile) • emulator-5554                        •
+android-arm64  • Android 13 (API 33) (emulator)
+iPhone 14 Pro Max (mobile)  • 45A72BE1-2D4E-4202-9BB3-D6AE2601BEF8 • ios
+• com.apple.CoreSimulator.SimRuntime.iOS-16-0 (simulator)
+macOS (desktop)             • macos                                •
+darwin-arm64   • macOS 12.6 21G115 darwin-arm64
+Chrome (web)                • chrome                               •
+web-javascript • Google Chrome 105.0.5195.125
+
 ```
 
 The **Chrome** device automatically starts Chrome and enables the use 

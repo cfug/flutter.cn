@@ -1164,13 +1164,11 @@ final container = Container(
 
 ### 生成文本摘要
 
-An excerpt displays the initial line(s) of text in a paragraph, and handles the
-overflow text, often using an ellipsis. In HTML/CSS an excerpt can be no longer
-than one line. Truncating after multiple lines requires some JavaScript code.
+An excerpt displays the initial line(s) of text in a paragraph,
+and handles the overflow text, often using an ellipsis.
 
-一个摘要会展示一个段落中文本的初始行内容，并常用省略号处理溢出的文本内容。
-在 HTML/CSS 中，摘录不能超过一行。
-在多行之后进行截断需要运行一些 JavaScript 代码。
+一个摘要会展示一个段落中文本的初始行内容，
+并常用省略号处理溢出的文本内容。
 
 In Flutter, use the `maxLines` property of a [`Text`][] widget
 to specify the number of lines to include in the excerpt,
@@ -1202,8 +1200,9 @@ and the `overflow` property for handling overflow text.
     padding: 16px;
     color: #ffffff;
     [[highlight]]overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;[[/highlight]]
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;[[/highlight]]
 }
 {% endprettify %}
 </div>

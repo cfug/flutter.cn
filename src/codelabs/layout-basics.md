@@ -591,26 +591,26 @@ The `crossAxisAlignment` property has five possible values:
 <br> Positions children near the start of the cross axis. (Top for `Row`, Left for `Column`)
 
 `CrossAxisAlignment.start`
-<br> 将 children 放置在交叉轴的靠前位置。 (`Row` 的顶部，`Column` 的左侧)
+<br> 将 children 放置在交叉轴的靠前位置 (即:`Row` 布局的顶部，`Column` 布局的左侧)。
 
 `CrossAxisAlignment.end`
 <br> Positions children near the end of the cross axis. (Bottom for `Row`, Right for `Column`)
 
 `CrossAxisAlignment.end`
-<br> 将 children 放置在交叉轴的靠后位置。 (`Row` 的底部，`Column` 的右侧)
+<br> 将 children 放置在交叉轴的靠后位置 (即:`Row` 布局的底部，`Column` 布局的右侧)。
 
 `CrossAxisAlignment.center`
 <br> Positions children at the middle of the cross axis. (Middle for `Row`, Center for `Column`)
 
 `CrossAxisAlignment.center`
-<br> 将 children 放置在交叉轴的中心位置。 (`Row` 的中间，`Column` 的中间)
+<br> 将 children 放置在交叉轴的中心位置 (即:`Row` 布局和 `Column` 布局的中间)。
 
 `CrossAxisAlignment.stretch`
 <br> Stretches children across the cross axis. 
   (Top-to-bottom for `Row`, left-to-right for `Column`)
 
 `CrossAxisAlignment.stretch`
-<br>沿横轴延伸 children。 (在 `Row` 中是从顶至底，`Column` 则是从左至右 )
+<br> 讲 children 放置在纵轴延伸 (即: `Row` 布局是从顶至底，`Column` 布局是从左至右 )。
 
 `CrossAxisAlignment.baseline`
 <br> Aligns children by their character baselines.

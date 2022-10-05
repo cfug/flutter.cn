@@ -760,7 +760,8 @@ Whether you ship with bitcode or not,
 the increased size of the release framework is
 stripped out during the final steps of the build.
 These steps happen after archiving your app and
-shipping it to the store.
+shipping it to the store. Note bitcode has been deprecated
+and will be removed from Flutter in a future release.
 
 Release 模式下引擎二进制产物将包含 LLVM 的中间语言表示 (bitcode)。
 Xcode 将使用 bitcode 为 App Store

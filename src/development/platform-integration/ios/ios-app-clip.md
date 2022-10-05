@@ -35,15 +35,6 @@ existing Flutter project or [add-to-app][] project.
 
 {{site.alert.end}}
 
-{{site.alert.warning}}
-
-  CocoaPods version 1.10.0.beta.1 or higher is required
-  to run Flutter apps with plugins.
-
-  运行带有插件的 Flutter 应用程序需要 CocoaPods 1.10.0.beta.1 或更高版本。
-
-{{site.alert.end}}
-
 To see a working sample, see the [App Clip sample][] on GitHub.
 
 要查看完整可用的示例，请参阅 GitHub 上的 [App Clip 示例][App Clip sample]。
@@ -462,7 +453,8 @@ into the App Clip bundle.
 ## Step 8 - Disable Bitcode
 
 In the App Clip target's **Build Settings** tab,
-set the **Enable Bitcode** setting to No.
+set the **Enable Bitcode** setting to No. On Xcode 14
+and higher bitcode has been deprecated and this step is unnecessary.
 
 在 App Clip target 的 `Build Settings` 选项卡中，
 将 `Enable Bitcode` 设置设置为 No。

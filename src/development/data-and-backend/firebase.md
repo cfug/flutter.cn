@@ -31,15 +31,11 @@ Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下
 * [Get to know Firebase for Flutter][workshop] video workshop
   based on the codelab
 
-  基于 workshop [了解如何在 Flutter 中使用 Firebase][workshop]
+  (基于 workshop) [了解如何在 Flutter 中使用 Firebase][workshop]
 
 * [Get to know Firebase for Flutter][codelab1] codelab
 
-  基于 codelab [了解如何在 Flutter 中使用 Firebase][codelab1]
-
-* [Multi Platform Firebase Flutter][codelab2]
-
-  [在多平台下的 Firebase Futter][codelab2]
+  (基于 codelab) [了解如何在 Flutter 中使用 Firebase][codelab1]
 
 * [Use Firebase to host your Flutter app on the web][article]
 
@@ -73,7 +69,6 @@ videos that you might find useful. Here are a few:
 [article]: {{site.flutter-medium}}/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
-[codelab2]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 [FlutterFire]: {{site.flutterfire}}
 [started]: {{site.flutterfire}}/docs/overview
 [video]: https://www.bilibili.com/video/BV184411575K/

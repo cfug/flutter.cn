@@ -771,6 +771,7 @@ bitcode 部分仅包含 **bitcode marker**，因此更能代表引擎的真实�
 无论你是否使用 bitcode，
 release 模式下增加的包大小都会在应用归档且发布到应用商店后，
 在构建的最终步骤里被移除。
+请注意 bitcode 已经被废弃，并即将在未来的 Flutter 正式版本中被移除。
 
 Of course, we recommend that you measure your own app.
 To do that, see [Measuring your app's size][].

@@ -4,7 +4,7 @@ toc: true
 keywords: Cocoon, SLSA2
 description: 
 image:
-    path: https://devrel.andfun.cn/devrel/posts/2022/10/99938ae2c6677.png
+    path: https://devrel.andfun.cn/devrel/posts/2022/10/c4f9568a65b61.jpg
 ---
 
 文/ Jesse Seales, Dart 和 Flutter 安全工作组工程师

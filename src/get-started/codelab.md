@@ -415,11 +415,11 @@ for a Flutter app.
 
     通过下面的方式将 `english_words` 这个 package 加入你的工程里：
 
-    In your IDE, add the line `english_words 4.0.0`
+    In your IDE, add the line `english_words: ^4.0.0`
     just after the `cupertino_icons 1.0.4` line 
     and save the file.
 
-    在你的 IDE 中，将 `english_words 4.0.0` 加到
+    在你的 IDE 中，将 `english_words: ^4.0.0` 加到
     `cupertino_icons 1.0.4` 后面，然后保存文件。
 
     Saving the file causes the dependencies to be

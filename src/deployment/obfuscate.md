@@ -51,7 +51,7 @@ channels.)
 For example:
 
 ```terminal
-flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
+$ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
 ```
 
 Once you've obfuscated your binary, save
@@ -67,7 +67,7 @@ For detailed information on these flags, run
 the help command for your specific target, for example:
 
 ```terminal
-flutter build apk -h
+$ flutter build apk -h
 ```
 
 If these flags are not listed in the output,
@@ -87,7 +87,7 @@ use the following steps to make it human readable:
    For example:
 
 ```terminal
-flutter symbolize -i <stack trace file> -d out/android/app.android-arm64.symbols
+$ flutter symbolize -i <stack trace file> -d out/android/app.android-arm64.symbols
 ```
 
    For more information on the `symbolize` command,

@@ -361,16 +361,6 @@ Learn how to use Flutter with other technologies.
   [在 Flutter 里使用 Firebase][Get to know Firebase for Flutter]<br>
   学习如何在 Flutter 里使用 Firebase 实时数据库的功能，
   以及如何使用事物 (transaction) 同时更新不同设备里的信息。
-  
-* [Multi-platform Firestore Flutter][]<br>
-  Build a multi-platform restaurant recommendation app
-  powered by Flutter and Cloud Firestore.
-  The finished app runs on Android, iOS, and web,
-  from a single Dart codebase.
-  
-  [使用 Cloud Firestore 和 Flutter 构建一个多平台应用][Multi-platform Firestore Flutter]<br>
-  构建一个多平台的餐馆推荐应用，只需要一套 Dart 代码，
-  就可以运行在 Android、iOS 和 Web 平台。
 
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
 [Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
@@ -382,7 +372,6 @@ Learn how to use Flutter with other technologies.
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/learn/codelabs/firebase-get-to-know-flutter
-[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 
 ## Testing
 

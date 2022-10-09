@@ -53,18 +53,6 @@ Flutter 2 以及以上的版本针对多 Flutter 实例进行了优化，
 额外增加的 Flutter 实例只会增加约 180K 的内存占用，
 这种「固定成本」的降低，可以帮助你更轻松的将 Flutter 加入到现有应用 (add-to-app)。
 
-{{site.alert.warning}}
-
-  Memory usage is only fully optimized in AOT mode (in profile and release
-  builds). Some memory redundancy will still be present in JIT mode (in debug
-  builds). This is tracked in [issue 74520][].
-
-  多 Flutter 实例的内存占用优化适用于 AOT 模式下 (profile 模式或者 release 模式)。
-  在 JIT 模式下 (比如 debug 调试)，一些内存冗余仍会存在。
-  可以跟踪 [issue 74520][] 了解更多。
-
-{{site.alert.end}}
-
 ## Components
 
 ## 组件
@@ -162,4 +150,3 @@ on both Android and iOS on [GitHub][].
 [platform channels]: {{site.url}}/development/platform-integration/platform-channels
 [Android API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/engine/FlutterEngineGroup.java
 [iOS API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/darwin/ios/framework/Headers/FlutterEngineGroup.h
-[issue 74520]: https://github.com/flutter/flutter/issues/74520

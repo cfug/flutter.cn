@@ -582,12 +582,12 @@ There are two ways of running the code generator.
 
 #### 一次性代码生成
 
-By running `flutter pub run build_runner build` in the project root,
+By running `flutter pub run build_runner build --delete-conflicting-outputs` in the project root,
 you generate JSON serialization code for your models whenever they are needed.
 This triggers a one-time build that goes through the source files, picks the
 relevant ones, and generates the necessary serialization code for them.
 
-通过在项目根目录运行 `flutter pub run build_runner build`，
+通过在项目根目录运行命令 `flutter pub run build_runner build --delete-conflicting-outputs`，
 你可以在任何需要的时候为你的模型生成 JSON 序列化数据代码。
 这会触发一次构建，遍历源文件，选择相关的文件，然后为它们生成必须的序列化数据代码。
 
@@ -603,7 +603,7 @@ build manually every time you make changes in your model classes.
 A _watcher_ makes our source code generation process more convenient. It
 watches changes in our project files and automatically builds the necessary
 files when needed. Start the watcher by running
-`flutter pub run build_runner watch` in the project root.
+`flutter pub run build_runner watch --delete-conflicting-outputs` in the project root.
 
 **监听器** 让我们的源代码生成过程更加方便。
 它会监听我们项目中的文件变化，并且会在需要的时候自动构建必要的文件。
@@ -711,7 +711,9 @@ class User {
 }
 ```
 
-Running `flutter pub run build_runner build` in the terminal creates
+Running 
+`flutter pub run build_runner build --delete-conflicting-outputs`
+in the terminal creates
 the `*.g.dart` file, but the private `_$UserToJson()` function
 looks something like the following:
 

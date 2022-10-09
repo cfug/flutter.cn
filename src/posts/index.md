@@ -65,5 +65,6 @@ title: 官方博客
 - [祝福 Eric 的下一段旅程，Flutter 3.3 现已发布]({{site.main-url}}/posts/announcing-flutter-3-3-at-flutter-vikings)
 - [Dart 2.18 现已发布]({{site.main-url}}/posts/dart-2-18)
 - [新渲染引擎、自定义设计和高质量用户体验的样例应用 Wonderous 现已开源]({{site.main-url}}/posts/wonderous-explore-the-world-with-flutter)
+- [Flutter Cocoon 已达到 SLSA 2 级标准的要求]({{site.main-url}}/posts/flutter-slsa-progress)
 
 上述内容的刊登均以获得发布许可。

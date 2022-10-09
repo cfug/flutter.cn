@@ -269,8 +269,9 @@ Other available flags:
 
 其他可用的参数：
 
-* `--no-enable-windows`
-* `--no-enable-linux`
+* `--no-enable-windows-desktop`
+* `--no-enable-linux-desktop`
+* `--no-enable-macos-desktop`
 * `--no-enable-web`
 * `--no-enable-android`
 * `--no-enable-ios`

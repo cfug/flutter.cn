@@ -45,8 +45,6 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
 
 Versions older than the latest stable version may still work,
 but are not recommended for Flutter development.
-Using old versions of Xcode to target bitcode is not
-supported, and is likely not to work.
 
 旧版本可能也能够正常工作，但是不建议在 Flutter 开发环境中使用。
 旧版本的 Xcode 不支持定位代码，还可能无法正常工作。

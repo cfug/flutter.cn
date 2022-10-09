@@ -139,10 +139,6 @@ Then:
 
    在 **App Thinning** 中，选择「all compatible device variants」。
 
-1. Select **Rebuild from Bitcode** (available if bitcode is enabled on your project).
-
-   选择 **Rebuild from Bitcode**（如果你的项目启用了 bitcode）。
-
 1. Select **Strip Swift symbols**.
 
    选择 **Strip Swift symbols**。
@@ -151,7 +147,7 @@ Sign and export the IPA. The exported directory contains
 `App Thinning Size Report.txt` with details about your projected
 application size on different devices and versions of iOS.
 
-签名并导出 IPA 包。导出目录中有一个「App Thinning Size Report.txt」文件，
+签名并导出 IPA 包，导出目录中有一个 `App Thinning Size Report.txt` 文件，
 其中记录了在不同设备和 iOS 版本上预估的应用程序大小的详细信息。
 
 The App Size Report for the default demo app in Flutter 1.17 shows:

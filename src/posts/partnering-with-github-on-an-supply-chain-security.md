@@ -4,7 +4,7 @@ toc: true
 keywords: GitHub, Dart, 供应链安全
 description: 通过 Dart 和 GitHub 团队的共同努力，自 10 月 7 日起，GitHub 的 Advisory Database (安全咨询数据库)、Dependency Graph (依赖项关系图) 和 Dependabot (依赖更新机器人) 开始支持 Dart 开发者生态，这也意味着 GitHub 为 Dart 和 Flutter 应用的供应链安全提供了全面支持。
 image:
-    path: https://devrel.andfun.cn/devrel/posts/2022/10/18646812c0ce1.jpg
+    path: https://devrel.andfun.cn/devrel/posts/2022/10/39fdff31f85d9.png
 ---
 
 文/ Michael Thomsen，Dart 产品经理

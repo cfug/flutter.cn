@@ -66,5 +66,6 @@ title: 官方博客
 - [Dart 2.18 现已发布]({{site.main-url}}/posts/dart-2-18)
 - [新渲染引擎、自定义设计和高质量用户体验的样例应用 Wonderous 现已开源]({{site.main-url}}/posts/wonderous-explore-the-world-with-flutter)
 - [Flutter Cocoon 已达到 SLSA 2 级标准的要求]({{site.main-url}}/posts/flutter-slsa-progress)
+- [GitHub 供应链安全已支持 Dart 开发者生态]({{site.main-url}}/posts/partnering-with-github-on-an-supply-chain-security)
 
 上述内容的刊登均以获得发布许可。

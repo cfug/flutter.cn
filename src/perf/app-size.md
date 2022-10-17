@@ -254,17 +254,12 @@ native library is further broken down by package for quick analysis.
 编译后的 Dart 原生库会按包进一步拆分，以便快速分析。
 
 {{site.alert.warning}}
-
-  This tool on iOS creates a .app rather than an IPA. It also contains bitcode
-  which drastically increases the .framework file sizes in the .app.
-  
-  在 iOS 上，该工具会创建一个 .app，而不是一个 IPA 包。
-  .app 同样包含了导致 .framework 文件大小急剧增大的 bitcode。
-
-  Use this tool to evaluate the relative size of the .app's content. To get
+  This tool on iOS creates a .app rather than an IPA. Use this tool to
+  evaluate the relative size of the .app's content. To get
   a closer estimate of the download size, reference the
   [Estimating total size](#estimating-total-size) section above.
-  
+
+  在 iOS 上，该工具会创建一个 .app 文件，而不是一个 IPA 包文件。
   使用该工具可以评估 .app 内容的相对大小。为了获取更准确的下载大小的估算值，
   请参考上面的 [估算总大小](#estimating-total-size) 一节。
   

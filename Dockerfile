@@ -123,15 +123,20 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true
 RUN BUNDLE_WITHOUT="test development" bundle install --jobs=4 --retry=2
 
-# RUN bundle install
-# RUN cd flutter && \
-#       git fetch && \
-#       git remote set-branches origin stable && \
-#       git fetch origin stable && \
-#       git checkout stable && \
-#       git pull
-# RUN flutter doctor
-RUN tool/translator/build.sh
+# ENV NODE_ENV=production
+# COPY package.json package-lock.json ./
+# RUN npm ci
+
+COPY ./ ./
+
+# RUN echo $'User-agent: *\nAllow: /' > src/robots.txt
+
+# ARG BUILD_CONFIGS=_config.yml
+# ENV BUILD_CONFIGS=$BUILD_CONFIGS
+# RUN bundle exec jekyll build --config $BUILD_CONFIGS
+
+RUN ["tool/translator/build.sh"]
+# CMD ["tool/translator/build.sh"]
 
 FROM build as checklinks
 

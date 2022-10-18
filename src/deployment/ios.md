@@ -413,7 +413,7 @@ Once the app bundle is created, upload it to
 [App Store Connect][appstoreconnect_login] by either:
 
 最后，创建一个构建归档并将其上传到
-[App Store Connect]([appstoreconnect_login])：
+[App Store Connect][appstoreconnect_login]：
 
 <ol markdown="1">
 <li markdown="1">

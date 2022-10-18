@@ -172,8 +172,6 @@
           children:
             - title: 添加 iOS App Clip 支持
               permalink: /docs/development/platform-integration/ios/ios-app-clip
-            - title: Apple Watch 支持
-              permalink: /docs/development/platform-integration/ios/apple-watch
             - title: C 语言代码集成及调用
               permalink: /docs/development/platform-integration/ios/c-interop
             - title: 托管 iOS 原生视图

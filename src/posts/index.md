@@ -67,5 +67,6 @@ title: 官方博客
 - [新渲染引擎、自定义设计和高质量用户体验的样例应用 Wonderous 现已开源]({{site.main-url}}/posts/wonderous-explore-the-world-with-flutter)
 - [Flutter Cocoon 已达到 SLSA 2 级标准的要求]({{site.main-url}}/posts/flutter-slsa-progress)
 - [GitHub 供应链安全已支持 Dart 开发者生态]({{site.main-url}}/posts/partnering-with-github-on-an-supply-chain-security)
+- [了解 Flutter 开发者们的 IDE 使用情况]({{site.main-url}}/posts/studying-developers-usage-of-ides-for-flutter-development)
 
 上述内容的刊登均以获得发布许可。

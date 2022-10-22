@@ -15,7 +15,7 @@ npx nt inject '../../_site/!(about|community|disclaimer|posts|tutorials)/**/!(*_
 npx nt mark '../../_site/!(about|community|disclaimer|posts|tutorials)/**/!(*_cn).html'  --mono
 npx nt inject '../../_site/*/index.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
 npx nt mark '../../_site/*/index.html'  --mono
-# npx nt inject '../../_site/index.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
-# npx nt mark '../../_site/index.html' --mono
+npx nt inject '../../_site/index.html' -c /assets/translator/css/translator.css -s /assets/translator/js/translator.js -m ./url-map.json -t ./text-map.json
+npx nt mark '../../_site/index.html' --mono
 npx gulp remove-space
 cd -

@@ -136,8 +136,7 @@ COPY ./ ./
 # RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
 RUN ["tool/translator/build.sh"]
-# CMD ["tool/translator/build.sh"]
 
 FROM build as checklinks
 
-# CMD ["tool/check-links.sh"]
+CMD ["tool/check-links.sh"]

@@ -39,7 +39,6 @@ if [[ -z "$emulator_status" ]]; then
 else 
   echo "Emulator is running in background"
 fi
-[CN Server] Remove Firebase hosting link check.
 
 SKIP_FILE="./tool/config/linkcheck-skip-list.txt"
 

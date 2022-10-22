@@ -55,18 +55,8 @@ jobs:
           submodules: recursive
       - name: Build site and check links
         run: make build
-      - name: Install Node for Firebase install
-        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516
-        with:
-          node-version: ${{ env.NODE_VERSION }}
       - name: Move docs
         run: make move-docs
-      - name: Update path
-        run: echo "./node_modules/.bin/" >> $GITHUB_PATH
-      - name: Build
-        run: make build
-        env:
-          DISABLE_TESTS: 1
       - name: Deploy
         run: make deploy
         env:

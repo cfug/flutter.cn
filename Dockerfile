@@ -129,11 +129,11 @@ RUN npm ci
 
 COPY ./ ./
 
-RUN echo $'User-agent: *\nAllow: /' > src/robots.txt
+# RUN echo $'User-agent: *\nAllow: /' > src/robots.txt
 
-ARG BUILD_CONFIGS=_config.yml
-ENV BUILD_CONFIGS=$BUILD_CONFIGS
-RUN bundle exec jekyll build --config $BUILD_CONFIGS
+# ARG BUILD_CONFIGS=_config.yml
+# ENV BUILD_CONFIGS=$BUILD_CONFIGS
+# RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
 RUN ["tool/translator/build.sh"]
 

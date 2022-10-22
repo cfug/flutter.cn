@@ -140,4 +140,4 @@ RUN ["tool/translator/build.sh"]
 
 FROM build as checklinks
 
-CMD ["tool/check-links.sh"]
+# CMD ["tool/check-links.sh"]

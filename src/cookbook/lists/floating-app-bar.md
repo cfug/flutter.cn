@@ -230,7 +230,7 @@ SliverList(
     // The builder function returns a ListTile with a title that
     // displays the index of the current item.
     (context, index) => ListTile(title: Text('Item #$index')),
-    // 展示 1000 个列表项（Builds 1000 ListTiles）
+    // Builds 1000 ListTiles
     childCount: 1000,
   ),
 )

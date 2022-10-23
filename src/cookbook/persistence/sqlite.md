@@ -442,7 +442,7 @@ clause to limit the records being deleted.
 <?code-excerpt "lib/main.dart (deleteDog)"?>
 ```dart
 Future<void> deleteDog(int id) async {
-  // Get a reference to the database (获得数据库引用)
+  // Get a reference to the database.
   final db = await database;
 
   // Remove the Dog from the database.
@@ -497,11 +497,8 @@ void main() async {
     // Set the path to the database. Note: Using the `join` function from the
     // `path` package is best practice to ensure the path is correctly
     // constructed for each platform.
-    // 设置数据库的路径。注意：使用 `path` 包中的 `join` 方法是
-    // 确保在多平台上路径都正确的最佳实践。
     join(await getDatabasesPath(), 'doggie_database.db'),
     // When the database is first created, create a table to store dogs.
-    // 当数据库第一次被创建的时候，创建一个数据表，用以存储狗狗们的数据。
     onCreate: (db, version) {
       // Run the CREATE TABLE statement on the database.
       return db.execute(
@@ -510,7 +507,6 @@ void main() async {
     },
     // Set the version. This executes the onCreate function and provides a
     // path to perform database upgrades and downgrades.
-    // 设置版本。 它将执行 onCreate 方法，同时提供数据库升级和降级的路径。
     version: 1,
   );
 
@@ -537,7 +533,8 @@ void main() async {
 
     // Query the table for all The Dogs.
     final List<Map<String, dynamic>> maps = await db.query('dogs');
-    // Convert the List<Map<String, dynamic> into a List<Dog> (将 List<Map<String, dynamic> 转换成 List<Dog> 数据类型)
+
+    // Convert the List<Map<String, dynamic> into a List<Dog>.
     return List.generate(maps.length, (i) {
       return Dog(
         id: maps[i]['id'],
@@ -548,9 +545,10 @@ void main() async {
   }
 
   Future<void> updateDog(Dog dog) async {
-    // Get a reference to the database (获得数据库引用)
+    // Get a reference to the database.
     final db = await database;
-    // Update the given Dog (修改给定的狗狗的数据)
+
+    // Update the given Dog.
     await db.update(
       'dogs',
       dog.toMap(),
@@ -562,9 +560,10 @@ void main() async {
   }
 
   Future<void> deleteDog(int id) async {
-    // Get a reference to the database (获得数据库引用)
+    // Get a reference to the database.
     final db = await database;
-    // Remove the Dog from the database (将狗狗从数据库移除)
+
+    // Remove the Dog from the database.
     await db.delete(
       'dogs',
       // Use a `where` clause to delete a specific dog.
@@ -599,7 +598,8 @@ void main() async {
 
   // Delete Fido from the database.
   await deleteDog(fido.id);
-  // Print the list of dogs (empty) [打印一个列表的狗狗们 (这里已经空了)]
+
+  // Print the list of dogs (empty).
   print(await dogs());
 }
 
@@ -626,7 +626,6 @@ class Dog {
 
   // Implement toString to make it easier to see information about
   // each dog when using the print statement.
-  // 重写 toString 方法，以便使用 print 方法查看每个狗狗信息的时候能更清晰。
   @override
   String toString() {
     return 'Dog{id: $id, name: $name, age: $age}';

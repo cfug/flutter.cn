@@ -163,7 +163,7 @@ update the `onPressed()` callback:
 
 <?code-excerpt "lib/main_step2.dart (FirstRouteOnPressed)"?>
 ```dart
-// 位于 FirstRoute widget (Within the `FirstRoute` widget)
+// Within the `FirstRoute` widget
 onPressed: () {
   Navigator.push(
     context,
@@ -193,7 +193,7 @@ callback in the `SecondRoute` widget:
 
 <?code-excerpt "lib/main_step2.dart (SecondRouteOnPressed)"?>
 ```dart
-// 位于 SecondRoute widget (Within the SecondRoute widget)
+// Within the SecondRoute widget
 onPressed: () {
   Navigator.pop(context);
 }

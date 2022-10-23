@@ -703,7 +703,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
- widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(

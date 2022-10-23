@@ -172,7 +172,7 @@ class SelectionScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  // 在这里返回 "Yep" (Pop here with "Yep"...)
+                  // Pop here with "Yep"...
                 },
                 child: const Text('Yep!'),
               ),
@@ -272,7 +272,6 @@ Future<void> _navigateAndDisplaySelection(BuildContext context) async {
 
   // After the Selection Screen returns a result, hide any previous snackbars
   // and show the new result.
-  // 等选择界面返回结果，先隐藏之前的 snackbars，结果显示在新的 snackbars 里  (After the Selection Screen returns a result, hide any previous snackbars and show the new result!)
   ScaffoldMessenger.of(context)
     ..removeCurrentSnackBar()
     ..showSnackBar(SnackBar(content: Text('$result')));

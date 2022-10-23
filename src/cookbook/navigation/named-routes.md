@@ -162,10 +162,6 @@ MaterialApp(
   title: 'Named Routes Demo',
   // Start the app with the "/" named route. In this case, the app starts
   // on the FirstScreen widget.
-  
-  // 使用“/”命名路由来启动应用（Start the app with the "/" named route. In our case, the app will start）
-  // 在这里，应用将从 FirstScreen Widget 启动（on the FirstScreen Widget）
-  
   initialRoute: '/',
   routes: {
     // When navigating to the "/" route, build the FirstScreen widget.
@@ -208,10 +204,8 @@ RegEx removes the trailing comma
 <?code-excerpt "lib/main.dart (PushNamed)" replace="/,$//g"?>
 ```dart
 // Within the `FirstScreen` widget
-// 在 `FirstScreen` Widget中（Within the `FirstScreen` Widget）
 onPressed: () {
   // Navigate to the second screen using a named route.
-  // 使用命名路由跳转到第二个界面（Navigate to the second screen using a named route）
   Navigator.pushNamed(context, '/second');
 }
 ```
@@ -232,13 +226,9 @@ RegEx removes the trailing comma
 <?code-excerpt "lib/main.dart (Pop)" replace="/,$//g"?>
 ```dart
 // Within the SecondScreen widget
-// 在 SecondScreen Widget 中（Within the SecondScreen Widget）
 onPressed: () {
   // Navigate back to the first screen by popping the current route
   // off the stack.
-  
-  // 通过从堆栈弹出当前路由（Navigate back to the first screen by popping the current route）
-  // 来返回到第一个界面（off the stack）
   Navigator.pop(context);
 }
 ```
@@ -282,7 +272,6 @@ class FirstScreen extends StatelessWidget {
           // Within the `FirstScreen` widget
           onPressed: () {
             // Navigate to the second screen using a named route.
-            // 使用命名路由跳转到第二个界面（Navigate to the second screen using a named route）
             Navigator.pushNamed(context, '/second');
           },
           child: const Text('Launch screen'),
@@ -307,8 +296,6 @@ class SecondScreen extends StatelessWidget {
           onPressed: () {
             // Navigate back to the first screen by popping the current route
             // off the stack.
-            // 通过从堆栈弹出当前路由（Navigate back to the first screen by popping the current route）
-            // 来返回到第一个界面（off the stack）
             Navigator.pop(context);
           },
           child: const Text('Go back!'),

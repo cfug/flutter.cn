@@ -58,14 +58,12 @@ a snackbar when tapped with the following steps:
 // The GestureDetector wraps the button.
 GestureDetector(
   // When the child is tapped, show a snackbar.
-  // 当它的子元素被点击，显示一个 snackbar 
   onTap: () {
     const snackBar = SnackBar(content: Text('Tap'));
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   },
   // The custom button
-  // 这个是我们的自定义按钮
   child: Container(
     padding: const EdgeInsets.all(12.0),
     decoration: BoxDecoration(

@@ -194,13 +194,15 @@
           permalink: /docs/development/platform-integration/web
           children:
             - title: Web 平台常见问题
-              permalink: /docs/development/platform-integration/web/faq
+              permalink: /development/platform-integration/web/faq
             - title: Web 平台渲染器
-              permalink: /docs/development/platform-integration/web/renderers
+              permalink: /development/platform-integration/web/renderers
             - title: 自定义 Web 应用初始化
-              permalink: /docs/development/platform-integration/web/initialization
+              permalink: /development/platform-integration/web/initialization
+            - title: 在网页里显示图片
+              permalink: /development/platform-integration/web/web-images
         - title: Windows 操作系统
-          permalink: /docs/development/platform-integration/windows
+          permalink: /development/platform-integration/windows
           children:
             - title: 构建 Windows 桌面软件
               permalink: /docs/development/platform-integration/windows/building

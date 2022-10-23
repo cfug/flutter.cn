@@ -321,13 +321,6 @@ Learn how to use Flutter with other technologies.
   扩展一个使用 Dash 吉祥物作为货币的简单游戏应用程序，
   以提供三种类型的应用程序内购买：消耗品、非消耗品和订阅。
 
-* [Build a Photo Sharing app with Google Photos and Flutter][]<br>
-  Build a field trip app that allows you and other
-  members of the trip to share photos.
-
-  [使用 Google 相册和 Flutter 构建照片共享应用][Build a Photo Sharing app with Google Photos and Flutter]<br>
-  构建一个实地考察应用程序，允许你和旅行中的其他成员分享照片。
-
 * [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
@@ -366,7 +359,6 @@ Learn how to use Flutter with other technologies.
 [Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
-[Build a Photo Sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: https://www.bilibili.com/video/BV1pX4y1A7SH/
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview

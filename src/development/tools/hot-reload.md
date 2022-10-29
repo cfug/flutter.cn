@@ -235,16 +235,6 @@ class Color {
 }
 ```
 
-### Changing fonts
-
-### 字体修改
-
-Hot reload supports changing assets, for the most part.
-However, if you change fonts, you'll need to hot restart.
-
-热重载支持资源的变更的大部分场景。
-然而如果你改变了字体，你需要进行热重启。
-
 ### Generic types
 
 ### 泛型

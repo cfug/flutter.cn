@@ -151,10 +151,8 @@ To support `SplitCompat`, there are three methods
 要支持 `SplitCompat`，有三种方法（详见 [Android docs][]），其中任何一种都是有效的：
 
 <ul markdown="1">
-<li markdown="1">Make your application class extend
-    `SplitCompatApplication`:
-
-    让你的 application 类继承 `SplitCompatApplication`：
+<li markdown="1"><p markdown="1">Make your application class extend
+    `SplitCompatApplication`:</p><p markdown="1">让你的 application 类继承 `SplitCompatApplication`：</p>
 
 ```java
 public class MyApplication extends SplitCompatApplication {

@@ -203,7 +203,8 @@ To include your course, [submit a PR][]:
   [Flutter & Dart - 完全指南，2021 年版本][Flutter & Dart - the Complete Guide, 2021 edition]
 
 * [Flutter Crash Course][] by Nick Manning
-* [Flutter leicht gemacht 2022 - Zero to Mastery!][] by Max Berktold
+* [Flutter leicht gemacht 2022 - Zero to Mastery!][] by Max Berktold (German)
+* [Flutter Zero to Hero][] by Veli Bacik (Turkish)
 
   [Flutter 速成课][Flutter Crash Course], 由 Nick Manning (社区) 录制。
 
@@ -212,4 +213,5 @@ To include your course, [submit a PR][]:
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
 [Flutter leicht gemacht 2022 - Zero to Mastery!]: https://www.udemy.com/course/dart-flutter-leicht-gemacht/
+[Flutter Zero to Hero]: {{site.youtube-site}}/watch?v=lpvuM9lo3HU&list=PL1k5oWAuBhgXdw1BbxVGxxWRmkGB1C11l
 [submit a PR]: {{site.repo.this}}/pulls

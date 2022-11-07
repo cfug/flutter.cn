@@ -22,7 +22,7 @@ Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下
 
 * The [Firebase plugins][] page
 
-  [Flutter 插件页面][Firebase plugins]
+  [Firebase 插件][Firebase plugins] 页面
 
 * [Getting started with Firebase and Flutter][started]
 

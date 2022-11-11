@@ -61,7 +61,7 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
     或其任意组合的平台编写。
     比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
 
-  <iframe width="560" height="315" src="https:////player.bilibili.com/player.html?aid=639052744&bvid=BV1dY4y1r7xD&cid=721085079&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=639052744&bvid=BV1dY4y1r7xD&cid=721085079&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {{site.alert.end}}
 
@@ -151,7 +151,8 @@ To add the package, `css_colors`, to an app:
    * Open the `pubspec.yaml` file located inside the app folder,
      and add `css_colors:` under `dependencies`.
 
-     打开应用文件夹下的 `pubspec.yaml` 文件，然后在 `pubspec.yaml` 下添加 `css_colors:`。
+     打开应用文件夹下的 `pubspec.yaml` 文件，
+     然后在 `pubspec.yaml` 下添加 `css_colors:`。
 
 1. Install it
 
@@ -178,6 +179,7 @@ To add the package, `css_colors`, to an app:
 1. Import it
 
    导入
+   
    * Add a corresponding `import` statement in the Dart code.
 
      在 Dart 代码中添加相关的 `import` 语句。
@@ -192,12 +194,65 @@ To add the package, `css_colors`, to an app:
      Hot reload and hot restart only update the Dart code,
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
-
+     
      如果 package 内有特定平台的代码（Android 的 Java/Kotlin,
      iOS 的 Swift/Objective-C），代码必须内置到你的应用内。
      热重载和热重启只对 package 的 Dart 代码执行此操作，
      所以你需要完全重启应用以避免使用 package 时
      出现 `MissingPluginException` 错误。
+     
+### Adding a package dependency to an app using `flutter pub add`
+
+### 使用命令 `flutter pub add` 添加一个 package 依赖
+
+To add the package, `css_colors`, to an app:
+
+将 `css_colors` 这个 package 添加到工程中：
+
+1. Issue the command while being inside the project directory
+
+   在项目根目录执行命令
+
+   * `flutter pub add css_colors`
+
+1. Import it
+
+   导入
+
+   * Add a corresponding `import` statement in the Dart code.
+   
+     在 Dart 代码中添加相应的 `import` 语句
+
+1. Stop and restart the app, if necessary
+
+   如果有必要，停止并重启应用
+
+   * If the package brings platform-specific code
+     (Kotlin/Java for Android, Swift/Objective-C for iOS),
+     that code must be built into your app.
+     Hot reload and hot restart only update the Dart code,
+     so a full restart of the app might be required to avoid
+     errors like `MissingPluginException` when using the package.
+     
+     如果 package 内有特定平台的代码（Android 的 Java/Kotlin,
+     iOS 的 Swift/Objective-C），代码必须内置到你的应用内。
+     热重载和热重启只对 package 的 Dart 代码执行此操作，
+     所以你需要完全重启应用以避免使用 package 时
+     出现 `MissingPluginException` 错误。
+     
+### Removing a package dependency to an app using `flutter pub remove`
+
+### 使用 `flutter pub remove` 命令移除一个 package 依赖
+
+To remove the package, `css_colors`, to an app:
+
+要将 package 'css_colors' 从工程中移除：
+
+1. Issue the command while being inside the project directory
+
+   在项目根目录执行命令
+
+   * `flutter pub remove css_colors`
 
 The [Installing tab][],
 available on any package page on pub.dev,
@@ -209,7 +264,8 @@ is a handy reference for these steps.
 For a complete example,
 see the [css_colors example][] below.
 
-完整示例，参阅下面的 [css_colors 示例][css_colors example] 。
+完整示例，参阅下面的
+[css_colors 示例][css_colors example] 。
 
 ### Conflict resolution
 

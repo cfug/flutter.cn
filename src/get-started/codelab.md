@@ -504,9 +504,9 @@ Process finished with exit code 0
       import 'package:flutter/material.dart';
     ```
 
-    As you type, the IDE gives you suggestions for libraries to import.
-    It then renders the import string in gray, letting you know that the
-    imported library is unused (so far).
+    Your IDE might provide suggestions for libraries to import
+    as you type. Some IDEs render the import string in gray to let
+    you know that the imported library is unused (so far).
 
     在你输入时，Android Studio会为你提供有关库导入的建议。
     然后它将呈现灰色的导入字符串，让你知道导入的库截至目前尚未被使用。

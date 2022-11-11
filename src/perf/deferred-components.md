@@ -262,8 +262,8 @@ guarding usages of deferred code behind `loadLibrary()`
     for the purposes of this guide,
     create a simple box as a stand-in.
     To create a simple blue box widget,
-    create `box.dart` with the following contents:</p>
-    <p markdown="1">创建新的 Dart 库。例如，创建一个可以在运行时下载的 `DeferredBox` widget。
+    create `box.dart` with the following contents:</p><p markdown="1">创建新的 Dart 库。
+    例如，创建一个可以在运行时下载的 `DeferredBox` widget。
     这个 widget 可以是任意复杂的，本指南使用以下内容创建了一个简单的框。</p>
     
 <?code-excerpt "lib/box.dart"?>

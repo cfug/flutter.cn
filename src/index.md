@@ -120,7 +120,7 @@ In Flutter, "everything is a widget"!
 Learn more about `Stateless` and `Stateful`
 widgets in [What is State?][]
 
-我们在 YouTube 上有一个 [视频频道][Flutter YouTube channel]，欢迎订阅！
+我们在 YouTube 上有一个 [Flutter 频道](https://www.youtube.com/c/flutterdev)，欢迎订阅！
 更多视频和播放列表介绍，以及社区制作的视频教程，
 可以查看我们的 [Flutter 技术视频资源][videos] 页面。
 同时，你可以关注 [“Google中国”的哔哩哔哩账号](https://space.bilibili.com/64169458)

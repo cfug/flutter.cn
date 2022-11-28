@@ -39,13 +39,13 @@
             {% include shared/sidenav-level-1.html nav=site.data.sidenav %}
           </div>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" 
+            <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
                href="{{site.main-url}}/multi-platform" 
                role="button" data-toggle="dropdown" 
                aria-haspopup="true" aria-expanded="false">
                多平台
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="platform-navbar-dropdown">
               <a class="dropdown-item" href="{{site.main-url}}/multi-platform/mobile">移动平台</a>
               <a class="dropdown-item" href="{{site.main-url}}/multi-platform/web">Web 平台</a>
               <a class="dropdown-item" href="{{site.main-url}}/multi-platform/desktop">桌面平台</a>
@@ -53,26 +53,26 @@
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" 
+            <a class="nav-link dropdown-toggle" id="dev-navbar-dropdown"
                href="{{site.main-url}}/development"
                role="button" data-toggle="dropdown" 
                aria-haspopup="true" aria-expanded="false">
                开发
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="dev-navbar-dropdown">
               <a class="dropdown-item" href="{{site.main-url}}/learn">学习资源</a>
               <a class="dropdown-item" href="{{site.pub}}/flutter/favorites" target="_blank">推荐插件</a>
               <a class="dropdown-item" href="{{site.pub}}/" target="_blank">使用 Package</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" 
+            <a class="nav-link dropdown-toggle" id="ecosystem-navbar-dropdown"
                href="{{site.main-url}}/ecosystem"
                role="button" data-toggle="dropdown" 
                aria-haspopup="true" aria-expanded="false">
                生态
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="ecosystem-navbar-dropdown">
               <a class="dropdown-item" href="{{site.main-url}}/community">社区</a>
               <!-- <a class="dropdown-item" href="{{site.main-url}}/events">Events</a> -->
               <a class="dropdown-item" href="{{site.main-url}}/monetization">盈利</a>
@@ -87,13 +87,13 @@
 
           <li class="nav-item dropdown docs-item">
             <a class="nav-link dropdown-toggle{% if route == '/' %} active{% endif %}"
-               id="navbarDropdown" 
+               id="docs-navbar-dropdown"
                href="/"
                role="button" data-toggle="dropdown" 
                aria-haspopup="true" aria-expanded="false">
                文档
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="docs-navbar-dropdown">
               <a class="dropdown-item {% if route == '/' %} active{% endif %}"
                  href="/posts">最新更新</a>
               <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"

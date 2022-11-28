@@ -294,7 +294,7 @@ to the jank you saw in your app.
 <br> 禁用该选项来检查已使用的透明度图层是否影响了性能。
      如果禁用后性能有显著提升，请尝试减少你的应用中透明度效果的使用。
 
-**Render Physical Shape Layers**
+**Render Physical Shape layers**
 <br> Disable this option to check whether excessive
      use of physical modeling effects are affecting performance,
      such as shadows or elevation.

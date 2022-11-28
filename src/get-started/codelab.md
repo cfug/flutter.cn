@@ -93,32 +93,29 @@ The animated GIF shows how the app works at the completion of part 1.
 
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
-  <h4 class="no_toc">第一部分，我们将共同构建：</h4>
+  <h4 class="no_toc">第一部分，我们将共同学习：</h4>
 
   * How to write a Flutter app that looks natural on iOS, Android,
-    desktop (Windows, for example), and the web
+    desktop (Windows, for example), and the web.
 
-    Flutter 如何在 Android、iOS、桌面（例如 Windows）和 Web 里自动适应不同的 UI 体系
+    如何在 iOS、Android、桌面端和 Web 端构建具有自然体验的 Flutter 应用。
 
-  * Basic structure of a Flutter app
+  * How to use a Flutter app with screen readers (<a href="#talkback">TalkBack</a> and <a href="#talkback">VoiceOver</a>). These  
+    technologies enable visually impaired users to get spoken feedback about app contents.
 
-    Flutter 工程/项目的基本结构
-  
-  * Finding and using packages to extend functionality
- 
-    查找和使用 packages 来扩展功能
+    如果使用屏幕阅读器来使用 Flutter 应用。这一类屏幕阅读器技术可以保障视觉障碍用户“听”到应用。
 
-  * Using hot reload for a quicker development cycle
-   
-    使用热重载 (hot reload) 加快开发周期
+  * How to structure a Flutter app.
 
-  * How to implement a stateful widget
-  
-    如何实现有状态的 widget
+    如何去设计一个 Flutter 应用的架构
 
-  * How to create an infinite, lazily loaded list
+  * How to find and use packages to extend functionality.
 
-    如何创建一个无限的、延迟加载的列表
+    如何查找和使用 package 来扩展应用功能
+
+  * How to use hot reload for a quicker development cycle.
+
+    如何使用热重载来加快开发周期
 
   In [part 2][] of this codelab, you'll add interactivity,
   modify the app's theme, and add the ability to navigate
@@ -154,6 +151,10 @@ The animated GIF shows how the app works at the completion of part 1.
     
     开启开发者模式 (developer mode) 的 [Android][] 和 / 或 [iOS][] 真机；
 
+  * Screen reader enabled on the physical device (<a href="#talkback">TalkBack</a> on Android, <a href="#talkback">VoiceOver</a> on iPhone)
+
+    在物理设备上启用了屏幕阅读器 (Android 上的 <a href="#talkback">TalkBack</a> 和 iPhone 上的 <a href="#talkback">VoiceOver</a>)
+    
   * The [iOS simulator][] (requires installing Xcode tools)
     
     [iOS 模拟器][iOS simulator] (需要安装 Xcode 工具)；
@@ -162,13 +163,14 @@ The animated GIF shows how the app works at the completion of part 1.
     
     [Android 模拟器][Android emulator] (需要安装设置 Android Studio)。
  
-  * A browser (Chrome is required for debugging)
+  * A browser (Debugging requires the Chrome browser)
 
     浏览器（如果需要 debug，则需要用 Chrome 浏览器）；
 
   * A [Windows][], [Linux][], or [macOS][] desktop application
 
     [Windows][]、[Linux][] 或 [macOS][] 桌面端系统。
+
 {{site.alert.end}}
 
 [Android]: {{site.url}}/get-started/install/macos#set-up-your-android-device
@@ -389,6 +391,13 @@ where the Dart code lives.
   Center widget 又包含一个 `Text` 子 widget，
   Center widget 可以将其子 widget 树对齐到屏幕中心。
 
+{{site.alert.note}}
+      The app creates a semantic tree for screen readers. 
+      Each node in the tree corresponds to one or several 
+      widgets. These nodes can be <a href="https://api.flutter.dev/flutter/widgets/Semantics-class.html">customized</a>
+      to tell screen readers how to behave with the node. 
+{{site.alert.end}} 
+
 ## Step 2: Use an external package
 
 ## 第二步：使用外部 package
@@ -438,7 +447,6 @@ The output will look something like the following:
 
 ```terminal
 Resolving dependencies...
-These packages are no longer being depended on:
 + english_words 4.0.0
 Downloading english_words 4.0.0...
 
@@ -562,6 +570,11 @@ Process finished with exit code 0
 
     {{site.alert.end}}
 
+    {{site.alert.important}}
+    Using upper camel case also helps screen readers identify the individual words in the compound word and provides a better 
+    experience to visually impaired users.
+    {{site.alert.end}}
+
  5. If the app is running, [hot reload][]
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
@@ -580,6 +593,55 @@ Process finished with exit code 0
     {% indent %}
       {% include docs/ios-windows-figure-pair.md image="step2.png" alt="App at completion of second step" %}
     {% endindent %}
+
+    **You can try the app with a screen reader.
+    To turn on the screen reader on your device, complete the following steps:** 
+
+    {% comment %} Nav tabs {% endcomment -%}
+    <ul class="nav nav-tabs" id="editor-setup" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="talkback-tab" href="#talkback" role="tab" aria-controls="talkback" aria-selected="true">TalkBack on Android</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="voiceover-tab" href="#voiceover" role="tab" aria-controls="voiceover" aria-selected="false">VoiceOver on iPhone</a>
+      </li>
+    </ul>
+
+    {% comment %} Tab panes {% endcomment -%}
+    <div class="tab-content">
+    
+    <div class="tab-pane active" id="talkback" role="tabpanel" aria-labelledby="talkback-tab" markdown="1">
+
+    <!-- **Turn on TalkBack on your Android phone to try the app with a screen reader** -->
+
+    1. On your device, open Settings. 
+    2. Select Accessibility and then TalkBack.
+    3. Turn 'Use TalkBack' on or off.
+    4. Select Ok.
+
+    To learn how to find and customize Android's accessibility features, view this video.
+
+    <iframe width="560" height="315" src="{{site.youtube-site}}/embed/FQyj_XTl01w" title="Customize accessibility features on Pixel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+    </div>
+
+    <div class="tab-pane" id="voiceover" role="tabpanel" aria-labelledby="voiceover-tab" markdown="1">
+
+
+    <!-- **Turn on VoiceOver on your iPhone to try the app with a screen reader** -->
+
+    1. On your device, open **Settings > Accessibility > VoiceOver**
+    2. Turn the VoiceOver setting on or off    
+
+    To learn how to find and customize iOS accessibility features, view this video.
+
+
+    <iframe width="560" height="315" src="{{site.youtube-site}}/embed/qDm7GiKra28" title="How to navigate your iPhone or iPad with VoiceOver" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+    </div>
+    </div>{% comment %} End: Tab panes. {% endcomment -%}  
 
 ### Problems?
 {:.no_toc}
@@ -1065,6 +1127,11 @@ If needed, use the code at the following link to get back on track.
 ## 下一步
 {:.no_toc}
 
+<container class="site-image-right">
+<iframe width="auto" height="502" src="{{site.youtube-site}}/embed/TSb8fjmKY1I" title="FOO040 talkback flutter app draft2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  The app from part 2 on TalkBack screen reader
+</container>
+
 {% include docs/app-figure.md class="site-image-right" img-class="border"
     image="get-started/startup-namer.gif" caption="The app from part 2" %}
 
@@ -1103,6 +1170,10 @@ iOS、Android、Windows 和 Web 平台的 Flutter 应用！
 
   创建了一个懒加载的，无限滚动的列表。
 
+* Learned about basic accessibility terms such as screen readers.
+
+  了解基本的辅助功能术语，例如屏幕阅读器。
+
 If you would like to extend this app, proceed to
 [part 2][] on the
 [Google Developers Codelabs][] site,
@@ -1125,6 +1196,15 @@ where you add the following functionality:
 * Modify the theme color, making an all-white app.
 
   修改应用的主题，变成一个白色系的应用。
+
+## Explore the Flutter SDK
+
+## 了解 Flutter SDK 的更多内容
+
+* <a href="https://docs.flutter.dev/get-started/flutter-for/react-native-devs">Flutter for React Native developers</a>
+* <a href="https://docs.flutter.dev/development/accessibility-and-localization/accessibility//#testing-accessibility-on-mobile">Testing accessibility in Flutter mobile apps</a>
+* <a href="https://docs.flutter.dev/development/ui/layout">Building layouts with Flutter</a>
+* <a href="https://flutter.dev/docs/development/ui/widgets-intro">Introduction to widgets</a>
 
 [an editor]: {{site.url}}/get-started/editor
 [Building a web application with Flutter]: {{site.url}}/web

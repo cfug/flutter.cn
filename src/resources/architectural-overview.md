@@ -1244,9 +1244,6 @@ platform-specific notes:
   rendered using
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md), a
   library that translates OpenGL API calls to the DirectX 11 equivalents.
-  Efforts are currently underway to also offer a Windows embedder using the UWP
-  app model, as well as to replace ANGLE with a more direct path to the GPU via
-  DirectX 12.
 
   在 Windows 上，Flutter 的宿主是一个传统的 Win32 应用，内容是通过一个将 OpenGL API
   调用转换成 DirectX 11 的等价调用的库

@@ -26,17 +26,13 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
   {% endif %}
 {% endfor -%}
 
-<a name="latest-release"></a>
-
-## What's new on this site
-
-## 网站更新
-
-To see changes to the site since our last release,
-see [What's new][].
+**To see changes to the site since our last release,
+see [What's new][].**
 
 查看最近网站更新的内容，请查阅
 [文档网站更新内容归档][What's new]。
+
+[What's new]: {{site.url}}/whats-new
 
 ## New to Flutter?
 
@@ -49,12 +45,14 @@ here are some next steps.
 你可以从 [安装和环境配置][Get Started] 开始，
 也可以上手试试看 [第一个 Flutter 应用的开发][Write your first Flutter app]。
 
+[Write your first Flutter app]: {{site.url}}/get-started/codelab
+
 ### Docs
 
 ### 文档
 
 Coming from another platform? Check out Flutter for:
-[Android][], [iOS][], [Web][], [React Native][] and
+[Android][], [iOS][], [web][], [React Native][], and
 [Xamarin.Forms][] developers.
 
 看我们为各种已经有相关平台开发经验的开发者准备的文档：
@@ -81,10 +79,10 @@ Coming from another platform? Check out Flutter for:
 <br> 一旦你理解了 Constraints flow up. Sizes flow down. Parents set positions
 这个思路之后，就能更好帮助你了解 Flutter 的布局模型。
 
-[Adding interactivity to your Flutter app][]
+[Adding interactivity to your Flutter app][interactivity]
 <br> Learn how to add a stateful widget to your app.
 
-[为你的 Flutter 应用加入交互体验][Adding interactivity to your Flutter app]
+[为你的 Flutter 应用加入交互体验][interactivity]
 <br> 在 app 里使用有状态的 widget。
 
 [A tour of the Flutter widget framework][]
@@ -99,23 +97,36 @@ Coming from another platform? Check out Flutter for:
 [常见问题][FAQ]
 <br> 常见问题解答
 
+[A tour of the Flutter widget framework]: {{site.url}}/development/ui/widgets-intro
+[Android]: {{site.url}}/get-started/flutter-for/android-devs
+[Building layouts]: {{site.url}}/development/ui/layout
+[FAQ]: {{site.url}}/resources/faq
+[Get started]: {{site.url}}/get-started/install
+[interactivity]: {{site.url}}/development/ui/interactive
+[iOS]: {{site.url}}/get-started/flutter-for/ios-devs
+[React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
+[Understanding constraints]: {{site.url}}/development/ui/layout/constraints
+[web]: {{site.url}}/get-started/flutter-for/web-devs
+[Xamarin.Forms]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs
+
 ### Videos
 
 ### 视频资源
 
-We also have some helpful videos on our [Flutter YouTube channel][]!
-In particular, check out the [Flutter in Focus series][],
-and learn about other series on our [videos][] page.
+Check out the Introducing Flutter series.
+Learn Flutter basics like
+[how do I make my first Flutter app?][first-app]
+In Flutter, "everything is a widget"!
+Learn more about `Stateless` and `Stateful`
+widgets in [What is State?][]
 
-我们在 YouTube 上有一个 [视频频道][Flutter YouTube channel]，欢迎订阅！
+我们在 YouTube 上有一个 [Flutter 频道](https://www.youtube.com/c/flutterdev)，欢迎订阅！
 更多视频和播放列表介绍，以及社区制作的视频教程，
 可以查看我们的 [Flutter 技术视频资源][videos] 页面。
 同时，你可以关注 [“Google中国”的哔哩哔哩账号](https://space.bilibili.com/64169458)
 了解更多更全面的谷歌技术中文内容，
 也可以关注 [“Flutter 社区”的哔哩哔哩账号](https://space.bilibili.com/344928717)
 了解更多来自社区的内容更新。
-
-Check out the Introducing Flutter series. Learn Flutter basics like [how do I make my first Flutter app?][] In Flutter, "everything is a widget"! Learn more about `Stateless` and `Stateful` widgets in [What is State?][]
 
 请查看下述 Flutter 入门系列视频，通过 [构建第一个 Flutter 应用][] 学习 Flutter 基础内容，Flutter 里 “所有的事物都是 widget”，如果你想更好了解有状态 `Stateful` 和无状态 `Stateless` 的 widget，查看视频 [什么是状态][]？
 
@@ -132,16 +143,17 @@ Check out the Introducing Flutter series. Learn Flutter basics like [how do I ma
     </div>
 </div>
 
-[How do I make my first Flutter app?]: {{site.youtube-site}}/watch?v=xWV71C2kp38
+[first-app]: {{site.youtube-site}}/watch?v=xWV71C2kp38
 [What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
 [构建第一个 Flutter 应用]: https://www.bilibili.com/video/BV1Se4y1Z74p
 [什么是状态]: https://www.bilibili.com/video/BV14G4y167Tu
 
+{:.text-center}
+#### Only have 60 seconds? Learn how to build and deploy a Flutter App!
 
+#### 一分钟！快速学习构建和部署 Flutter 应用
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <h4>Only have 60 seconds? Learn how to build and deploy a Flutter App!</h4>
-
   <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/ZnufaryH43s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
@@ -149,18 +161,14 @@ Check out the Introducing Flutter series. Learn Flutter basics like [how do I ma
 
 ## 提升内容
 
-If you learn best by watching engineers write code,
-make mistakes, and fix them,
-check out the [Boring Flutter Show][] video series:
+Dive deeper into how Flutter works under the hood!
+Learn [why you write standalone widgets instead of
+using helper methods][standalone-widgets] or
+[what is "BuildContext" and how is it used][buildcontext]?
 
-如果你想看工程师们在线写代码、写 bug、修 bug，请关注
-[Boring Flutter Show 系列视频][Boring Flutter Show]。
-
-<iframe style="max-width: 100%" width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Boring Flutter Show 系列视频][Boring Flutter Show]
-
-{% comment %}
-Dive deeper into how Flutter works under the hood! Learn [why you write standalone widgets instead of using helper methods][] or [what is “BuildContext” and how is it used][]?
+深入了解 Flutter 的工作原理，
+了解为什么要编写独立的 widget 而不是使用 help 方法，
+以及 BuildContext 是什么，以及如何使用：
 
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
@@ -175,70 +183,23 @@ Dive deeper into how Flutter works under the hood! Learn [why you write standalo
     </div>
 </div>
 
-[why you write standalone widgets instead of using helper methods]: {{site.youtube-site}}/watch?v=IOyq-eTRhvo   
-[what is “BuildContext” and how is it used]: {{site.youtube-site}}/watch?v=rIaaH87z1-g
+[standalone-widgets]: {{site.youtube-site}}/watch?v=IOyq-eTRhvo   
+[buildcontext]: {{site.youtube-site}}/watch?v=rIaaH87z1-g
 
-To learn about all of the Flutter video series, see our [videos][] page.
+To learn about all of the Flutter video series,
+see our [videos][] page.
 
-We release new videos every week on the Flutter YouTube channel.
+了解更多 Flutter 的视频系列内容，可以查看 [视频学习资源][videos] 页面。
 
-<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/c/flutterdev">Explore more Flutter videos</a>
+We release new videos almost every week on the Flutter YouTube channel:
 
-#TODO: 这一部分内容提及的视频尚未上传 Bilibili，上传之后再做替换。
-{% endcomment %}
+我们每周都会在 Flutter 的 YouTube 频道更新视频，欢迎关注:
 
+<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/c/flutterdev">Flutter 的 YouTube 频道</a>
 
-
-You might also find these docs useful:
-
-下列文档可能也会对你有所帮助：
-
-* [Using packages][]
-
-  [在 Flutter 里使用 Packages][Using packages]
-
-* [Adding assets and images][]
-
-  [添加资源和图片][Adding assets and images]
-
-* [Navigation and routing][]
-
-  [路由和导航][Navigation and routing]
-
-* [State management][]
-
-  [状态 (State) 管理介绍][State management]
-
-* [Animations][]
-
-  [动画效果介绍][Animations]
-
-The documentation on this site reflects the latest stable release of Flutter.
+**The documentation on this site reflects the
+latest stable release of Flutter.**
 
 本网站的文档基于 Flutter 最新的稳定版。
 
-[A tour of the Flutter widget framework]: {{site.url}}/development/ui/widgets-intro
-[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
-[Adding interactivity to your Flutter app]: {{site.url}}/development/ui/interactive
-[Android]: {{site.url}}/get-started/flutter-for/android-devs
-[Animations]: {{site.url}}/development/ui/animations
-[Boring Flutter Show]: {{site.youtube-site}}/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
-[Boring Flutter Show playlist]: {{site.youtube-site}}/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
-[Building layouts]: {{site.url}}/development/ui/layout
-[FAQ]: {{site.url}}/resources/faq
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Flutter in Focus]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
-[Flutter in Focus series]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
-[Flutter YouTube channel]: {{site.social.youtube}}
-[Get started]: {{site.url}}/get-started/install
-[iOS]: {{site.url}}/get-started/flutter-for/ios-devs
-[Navigation and routing]: {{site.url}}/development/ui/navigation
-[React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
-[State management]: {{site.url}}/development/data-and-backend/state-mgmt/intro
-[Understanding constraints]: {{site.url}}/development/ui/layout/constraints
-[Using packages]: {{site.url}}/development/packages-and-plugins/using-packages
 [videos]: {{site.url}}/resources/videos
-[Web]: {{site.url}}/get-started/flutter-for/web-devs
-[What's new]: {{site.url}}/whats-new
-[Write your first Flutter app]: {{site.url}}/get-started/codelab
-[Xamarin.Forms]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs

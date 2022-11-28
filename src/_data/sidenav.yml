@@ -170,6 +170,8 @@
         - title: iOS 平台
           permalink: /docs/development/platform-integration/ios
           children:
+            - title: 使用 Apple 的系统库
+              permalink: /docs/development/platform-integration/ios/apple-frameworks
             - title: 添加 iOS App Clip 支持
               permalink: /docs/development/platform-integration/ios/ios-app-clip
             - title: C 语言代码集成及调用

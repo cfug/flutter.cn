@@ -7,20 +7,6 @@ tags: 平台集成
 keywords: Flutter网页版,常见问题
 ---
 
-### Is the web version of Flutter ready for production?
-
-### Web 版本的 Flutter 是否已经准备好投入生产环境中了呢？
-
-Flutter's web support is now available on the stable channel,
-offering an app-centric framework that
-builds on the power of the modern web platform.
-Find out more details about
-[Flutter's production quality support for the web][].
-
-Flutter 网页端的支持正式在稳定版渠道发布，提供了以应用为中心的框架，
-框架以现代 Web 平台的功能为基础，如果希望了解更多，请查看文章
-[Flutter Web 支持现已进入稳定版](https://zhuanlan.zhihu.com/p/355976725)。
-
 ### What scenarios are ideal for Flutter on the web?
 
 ### 在 Web 平台使用 Flutter 的场景有哪些？
@@ -83,16 +69,6 @@ Flutter 的 Web 端支持会优先考虑和确保性能、保真度和一致性�
 你还应该考虑将主要的类应用体验（使用 Flutter 构建的 Web 网页）
 与首页、营销内容以及帮助内容等（使用搜索引擎「熟悉」的 HTML 构建）
 进行分离，避免将它们混在一起。
-
-### How do I file an issue about web support?
-
-### 我应该如何提交 web 支持相关的 issue
-
-You can [file an issue][] on the main Flutter repo.
-Make sure that "web" is included in the title.
-
-你可以在 Flutter 主仓库中 [发起一个 issue][file an issue]。
-请确保标题中包含了 "web" 关键字。
 
 ### How do I create an app that also runs on the web?
 
@@ -181,19 +157,6 @@ option for all channels.
 See [Creating responsive apps][].
 
 请参阅 [创建响应式应用][Creating responsive apps]。
-
-### Can I use Flutter plugins?
-
-### 我能使用 Flutter 插件么？
-
-Yes, several plugins have web support.
-Find an updated list of plugins on [pub.dev][] using the web filter.
-You can also add web support to existing plugins or
-[write your own plugins][] for the web.
-
-是的，目前有很多插件已经支持了 web。
-在 [pub.dev][] 上使用 web 过滤以找到更新的插件清单。
-你也可以为已有的或者 [你自己编写的 plugin][write your own plugins] 添加 web 支持。
 
 ### Can I use `dart:io` with a web app?
 
@@ -304,12 +267,6 @@ running integration tests in a browser, see the [Integration testing][] page.
 使用常规的 [widget tests][]，了解更多关于如何在浏览器里使用集成测试，请查看
 [集成测试][Integration testing] 文档页面。
 
-### How do I internationalize a web app?
-
-This isn’t any different than [internationalizing a Flutter mobile app][].
-
-与 [Flutter 移动应用的国际化][internationalizing a Flutter mobile app] 无差别。
-
 ### How do I deploy a web app?
 
 ### 我该如何部署 Web 应用？
@@ -326,25 +283,13 @@ Not currently.
 
 目前还不行。
 
-### How can I compare notes with others who are playing with this feature?
-
-### 如何跟其他使用者交流？
-
-Check out the **#web** discussion channel on [Discord][].
-Flutter engineers routinely read and respond on Discord.
-
-请在 [Discord][] 平台的 **#web** 这个讨论板跟大家讨论，
-Flutter 团队的工程师会经常阅读和互动。
-
 [Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
 [building a web app with Flutter]: {{site.url}}/get-started/web
 [Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
 [Creating responsive apps]: {{site.url}}/development/ui/layout/adaptive-responsive
 [Debugging]: {{site.url}}/development/tools/devtools/debugger
-[Discord]: https://discord.gg/N7Yshp4
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: {{site.url}}/development/tools/devtools/overview
-[Flutter's production quality support for the web]: {{site.url}}/web
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
@@ -355,11 +300,8 @@ Flutter 团队的工程师会经常阅读和互动。
 [Running Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: {{site.url}}/testing#widget-tests
-[pub.dev]: {{site.pub}}/flutter/packages?platform=web
 [Web support for Flutter]: {{site.url}}/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
-[write your own plugins]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [run your web apps in any supported browser]: {{site.url}}/get-started/web#create-and-run
 [Integration testing]: {{site.url}}/testing/integration-tests#running-in-a-browser
-[internationalizing a Flutter mobile app]: {{site.url}}/resources/faq#how-do-i-do-internationalization-i18n-localization-l10n-and-accessibility-a11y-in-flutter
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files

@@ -84,7 +84,7 @@ declared doesn't matter. The actual directory name used
 (`assets` in first example or `directory` in the above
 example) doesn't matter.
 
-该 `assets` 部分的 `flutter` 部分需要指定包含在应用程序中的文件。
+该`yaml`中`flutter`部分下的`assets` 部分需要指定包含在应用程序中的文件。
 每个资源都通过相对于 `pubspec.yaml` 文件所在位置的路径进行标识。
 资源的声明顺序是无关紧要的。
 资源的实际目录可以是任意文件夹（在第一个样例中是 `assets`，其他的是 `directory`）

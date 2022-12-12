@@ -73,7 +73,7 @@ flutter:
 
 ### Asset bundling
 
-### 资源打包
+### Asset bundling (应用打包资源)
 
 The `assets` subsection of the `flutter` section
 specifies files that should be included with the app.
@@ -84,7 +84,7 @@ declared doesn't matter. The actual directory name used
 (`assets` in first example or `directory` in the above
 example) doesn't matter.
 
-该`yaml`中`flutter`部分下的`assets` 部分需要指定包含在应用程序中的文件。
+`yaml` 文件 `flutter` 下面的 `assets` 部分指定了需要包含在应用中的文件。
 每个资源都通过相对于 `pubspec.yaml` 文件所在位置的路径进行标识。
 资源的声明顺序是无关紧要的。
 资源的实际目录可以是任意文件夹（在第一个样例中是 `assets`，其他的是 `directory`）
@@ -94,7 +94,7 @@ archive called the _asset bundle_ that apps read
 from at runtime.
 
 在一次构建中，Flutter 将 assets 放到 **asset bundle**
-的特殊归档中，以便应用程序在运行时读取它们。
+的特殊归档中，以便应用在运行时读取它们。
 
 ### Asset variants
 

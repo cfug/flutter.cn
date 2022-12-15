@@ -110,6 +110,8 @@
               permalink: /docs/development/ui/advanced/focus
             - title: 手势
               permalink: /docs/development/ui/advanced/gestures
+            - title: Shaders
+              permalink: /docs/development/ui/advanced/shaders
             - title: 滑动效果 (Slivers)
               permalink: /docs/development/ui/advanced/slivers
             - title: 闪屏页
@@ -427,14 +429,14 @@
       permalink: /docs/resources/design-docs
     - title: 常见问题解答
       permalink: /docs/resources/faq
-    - title: 休闲游戏工具包 [新增]
-      permalink: /docs/resources/games-toolkit
+    - title: 休闲游戏工具包
+      permalink: /resources/games-toolkit
     - title: 使用 Google 字体库
       permalink: https://pub.flutter-io.cn/packages/google_fonts
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
     - title: 官方品牌资源
-      permalink: https://flutter.cn/brand
+      permalink: https://flutter.dev/brand
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
     - title: 技术视频和在线资源

@@ -57,9 +57,9 @@ This resulted in the following issues:
 The previous approach listed the title and content
 widgets consecutively in a `Column` widget.
 
-在改动前，可以使用下面的方法在 `Column` widget 中连续地列出标题和内容 widget。
+在改动前，可以使用下面的方法在 `Column` widget
+中连续地列出标题和内容 widget。
 
-<!-- skip -->
 ```dart
 Column(
   mainAxisSize: MainAxisSize.min,
@@ -101,7 +101,6 @@ and exposing the button bar at the bottom of the dialog.
 作为同一个可滚动的模块的一部分，
 按钮栏将显示在对话框底部。
 
-<!-- skip -->
 ```dart
 Column(
   mainAxisSize: MainAxisSize.min,
@@ -200,7 +199,6 @@ Code before migration:
 
 迁移前的代码：
 
-<!-- skip -->
 ```dart
 AlertDialog(
   title: Text(
@@ -221,7 +219,6 @@ Code after migration:
 
 迁移后的代码：
 
-<!-- skip -->
 ```dart
 AlertDialog(
   title: Text('Very, very large title', textScaleFactor: 5),

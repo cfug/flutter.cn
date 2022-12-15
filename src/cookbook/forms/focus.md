@@ -58,7 +58,6 @@ use the `autofocus` property.
 
 为了在文本框可见时将其聚焦，我们可以使用 `autofocus` 属性。
 
-<!-- skip -->
 ```dart
 TextField(
   autofocus: true,

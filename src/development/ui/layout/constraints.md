@@ -2350,7 +2350,6 @@ following:
 如果你到 Flutter 的 `box.dart` 文件中搜索
 `BoxConstraints` 构造器，你会发现以下内容：
 
-<!-- skip -->
 ```dart
 BoxConstraints.tight(Size size)
    : minWidth = size.width,
@@ -2380,7 +2379,6 @@ both equal to **zero**:
 但是让允许其子 widget 获得比它更小的任意大小。
 换句话来说，宽松约束的最小宽度/高度为 **0**。
 
-<!-- skip -->
 ```dart
 BoxConstraints.loose(Size size)
    : minWidth = 0.0,

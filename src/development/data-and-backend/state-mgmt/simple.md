@@ -121,7 +121,7 @@ framework instead of letting it help you.
 并没有类似 `MyCart.updateWith(somethingNew)` 的简单调用方法。
 换言之，你很难通过外部调用方法修改一个 widget。
 即便你自己实现了这样的模式，那也是和整个框架不相兼容。
-<!-- skip -->
+
 ```dart
 // BAD: DO NOT DO THIS
 void myTapHandler() {
@@ -136,7 +136,6 @@ with the following in the `MyCart` widget:
 
 即使你实现了上面的代码，也得处理 `MyCart` widget 中的代码：
 
-<!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
 Widget build(BuildContext context) {

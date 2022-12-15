@@ -113,7 +113,6 @@ Code before migration:
 
 迁移前的代码：
 
-<!-- skip -->
 ```dart
 class MyMouseRegion extends SingleChildRenderObjectWidget {
   const MyMouseRegion({this.onHoverChange});
@@ -141,7 +140,6 @@ Code after migration:
 
 迁移后的代码：
 
-<!-- skip -->
 ```dart
 class MyMouseRegion extends SingleChildRenderObjectWidget {
   const MyMouseRegion({this.onHoverChange});

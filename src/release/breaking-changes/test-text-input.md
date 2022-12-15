@@ -66,9 +66,9 @@ Code before migration:
 In a `widgetsTest`, before actually changing text on a
 text editing widget, this call might have succeeded:
 
-`widgetsTest` 里，在实际更改文本编辑 widget 上的文本之前，此调用可能已成功：
+`widgetsTest` 里，在实际更改文本编辑 widget 上的文本之前，
+此调用可能已成功：
 
-<!-- skip -->
 ```dart
     expect(tester.testTextInput.editingState['text'], isEmpty);
 ```
@@ -82,7 +82,6 @@ following to assert that the state hasn't been modified yet:
 
 要么完全删除该调用，要么考虑使用以下声明来确认状态尚未被修改：
 
-<!-- skip -->
 ```dart
     expect(tester.testTextInput.editingState, isNull);
 ```

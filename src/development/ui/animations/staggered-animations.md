@@ -294,7 +294,6 @@ See [`Curves`][] for other available pre-defined animation curves.
 它创建了一个 [`CurvedAnimation`][], 指定一个 eased curve。
 其他更多的预定的动画曲线请看 [`Curves`][]。
 
-<!-- skip -->
 {% prettify dart %}
 width = Tween<double>(
   begin: 50.0,

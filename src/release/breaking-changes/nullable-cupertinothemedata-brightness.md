@@ -35,7 +35,6 @@ was implemented as a getter:
 
 此前 [`CupertinoThemeData.brightness`][] 由 getter 实现:
 
-<!-- skip -->
 ```dart
 Brightness get brightness => _brightness ?? Brightness.light;
 final Brightness _brightness;
@@ -45,7 +44,6 @@ It is now a stored property:
 
 现在它是一个存储类型：
 
-<!-- skip -->
 ```dart
 final Brightness brightness;
 ```
@@ -67,11 +65,9 @@ With this change, it is now possible to override
 `CupertinoThemeData.brightness` in a `CupertinoThemeData`
 subclass to change the brightness override. For example:
 
-在此更改后，
-现在可以在 `CupertinoThemeData` 子类中覆盖 `CupertinoThemeData.brightness` 值来改变亮度。
-例如：
+在此更改后，现在可以在 `CupertinoThemeData` 子类中覆盖
+`CupertinoThemeData.brightness` 值来改变亮度，例如：
 
-<!-- skip -->
 ```dart
 class AwaysDarkCupertinoThemeData extends CupertinoThemeData {
   Brightness brightness => Brightness.dark;

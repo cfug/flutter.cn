@@ -303,7 +303,6 @@ use the following instructions:
     使用 [`DynamicLibrary.open`][] 加载库。
     示例：加载 OpenGL ES (v3)：
 
-    <!-- skip -->
     ```dart
     DynamicLibrary.open('libGLES_v3.so');
     ```

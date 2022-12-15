@@ -83,7 +83,6 @@ Code before migration:
 
 迁移前代码：
 
-<!-- skip -->
 ```dart
 class FooState extends State<Foo> {
   String buttonLabel = 'Click Me';
@@ -104,7 +103,6 @@ Code after migration:
 
 迁移后代码：
 
-<!-- skip -->
 ```dart
 class FooState extends State<Foo> {
   String buttonLabel = 'Click Me';

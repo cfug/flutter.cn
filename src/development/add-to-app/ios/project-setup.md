@@ -9,16 +9,49 @@ tags: Flutter混合工程,add2app
 keywords: iOS,项目集成
 ---
 
-Flutter can be incrementally added into your existing iOS
-application as embedded frameworks.
+Flutter UI components can be incrementally added into your existing iOS
+application as embedded frameworks. There are a few ways to embed Flutter 
+in your existing application.
 
-Flutter 可以以 framework 框架的形式添加到
-你的既有 iOS 应用中。
+Flutter UI 组件可以渐进式地内嵌到你现有的 iOS 应用中，下面是几种方法：
 
-For examples, see the iOS directories in the [add_to_app code samples][].
+1. **Use the CocoaPods dependency manager and installed Flutter SDK.**
+  In this case, the `flutter_module` is compiled from
+  the source each time the app is built. (Recommended.)
 
-请参阅
-[add_to_app 代码示例][add_to_app code samples] 的 iOS 目录。
+  **使用 CocoaPods 依赖管理器安装 Flutter SDK**
+  使用这种方法，每次构建应用的时候都会从源代码中编译 `flutter_module`。(推荐)
+
+1. **Create frameworks for the Flutter engine, your compiled Dart code,
+  and all Flutter plugins.** Here, you manually embed the frameworks,
+  and update your existing application's build settings in Xcode.
+  This can be useful for teams that don't want to require every developer
+  to have the Flutter SDK and Cocoapods installed locally.
+
+  **创建一个框架，把 Flutter 引擎、已编译的 Dart 代码和所有 Flutter 插件都放进去**
+  这种方式你可以手动嵌入这个框架，并在 Xcode 中更改现有的应用的构建设置。
+  如果不想要求开发团队的每一位成员都在本地安装 Flutter SDK 和 Cocoapods，
+  这种方式比较适用。
+
+1. **Create frameworks for your compiled Dart code,
+  and all Flutter plugins. Use CocoaPods for the Flutter engine.** 
+  With this option, embed the frameworks for your application
+  and the plugins in Xcode, but distribute the
+  Flutter engine as a CocoaPods podspec.
+  This is similar to the second option, but it provides
+  an alternative to distributing the large Flutter.xcframework.
+
+  **为已编译的 Dart 代码和所有 Flutter 插件创建一个框架，对 Flutter 引擎使用 CocoaPods 来管理**
+  这种方式是将应用内容和插件作为内嵌的框架，但将 Flutter 引擎作为 CocoaPods podspec 分发。
+  这有点类似第二种方式，但是它为分发大型的 Flutter.xcframework 文件提供了替代方案。
+
+For examples using an app built with UIKit, 
+see the iOS directories in the [add_to_app code samples][]. 
+For an example using SwiftUI, see the iOS directory in [News Feed App][].
+
+例如使用 UIKit 构建的应用，请参阅
+[add_to_app 代码示例][add_to_app code samples] 中 iOS 这个目录。
+有关使用 SwiftUI 的示例，请参阅 [News Feed App][] 中的 iOS 目录。
 
 ## System requirements
 
@@ -33,17 +66,19 @@ version 1.10 or later.
 
 你的开发环境必须满足
 [Flutter 对 macOS 系统的版本要求][macOS system requirements for Flutter]
-并 [已经安装 Xcode][Xcode installed]，Flutter 支持 iOS 8.0 及以上。
+并 [已经安装 Xcode][Xcode installed]，Flutter 支持 iOS 11 及以上。
 此外，你还需要 1.10 或以上版本的 [CocoaPods][]
 
 ## Create a Flutter module
 
 ## 创建 Flutter module
 
-To embed Flutter into your existing application,
+To embed Flutter into your existing application, 
+using any of the methods mentioned above, 
 first create a Flutter module.
 
-为了将 Flutter 集成到你的既有应用里，第一步要创建一个 Flutter module。
+为了将 Flutter 集成到你的既有应用里，
+参考上面的任意方法先创建一个 Flutter module。
 
 From the command line, run:
 
@@ -55,7 +90,14 @@ flutter create --template module my_flutter
 ```
 
 A Flutter module project is created at `some/path/my_flutter/`.
-From that directory, you can run the same `flutter`
+If you are using the first method mentioned above, 
+the module should be created in the same parent directory 
+as your existing iOS app. 
+
+Flutter module 会创建在 `some/path/my_flutter/` 目录。
+如果你使用上述第一种方法，则应在与现有 iOS 应用工程的父目录中创建这个 Flutter module。
+
+From the Flutter module directory, you can run the same `flutter`
 commands you would in any other Flutter project,
 like `flutter run --debug` or `flutter build ios`.
 You can also run the module in
@@ -66,22 +108,21 @@ embedded in your existing application,
 which is useful for incrementally
 testing the Flutter-only parts of your code.
 
-Flutter module 会创建在 `some/path/my_flutter/` 目录。
 在这个目录中，你可以像在其它 Flutter 项目中一样，执行 `flutter` 命令。
 比如 `flutter run --debug` 或者 `flutter build ios`。
 同样，你也可以通过 [Android Studio/IntelliJ][] 或者 [VS Code][]
-中的 Flutter 和 Dart 插件运行这个模块，在集成到现有应用前，
+中的 Flutter 和 Dart 插件运行这个 module，在集成到现有应用前，
 这个项目在 Flutter module 中包含了一个单视图的示例代码，
 对 Flutter 侧代码的测试会有帮助。
 
 ### Module organization
 
-### 模块组织
+### Module 的目录结构
 
 The `my_flutter` module directory structure is similar to a
 normal Flutter application:
 
-在 `my_flutter` 模块，目录结构和普通 Flutter 应用类似：
+在 `my_flutter` module 里，目录结构和普通 Flutter 应用类似：
 
 ```text
 my_flutter/
@@ -142,41 +183,27 @@ embedding the module into your existing application with CocoaPods.
 
 ## 在你的既有应用中集成 Flutter module
 
-There are two ways to embed Flutter in your existing application.
+After you have developed your Flutter module,
+you can embed it using the methods described at the top of the page.
 
-这里有两种方式可以将 Flutter 集成到你的既有应用中。
-
-1. Use the CocoaPods dependency manager and installed Flutter SDK.
-   (Recommended.)
-
-   使用 CocoaPods 依赖管理和已安装的 Flutter SDK 。（推荐）
-
-1. Create frameworks for the Flutter engine, your compiled Dart code,
-   and all Flutter plugins. Manually embed the frameworks,
-   and update your existing application's build settings in Xcode.
-
-   把 Flutter engine 、你的 dart 代码和所有 Flutter plugin 编译成 framework 。
-   用 Xcode 手动集成到你的应用中，并更新编译设置。
+开发完成你的 Flutter module后，
+你就能使用页面顶部描述的方法将其嵌入到应用中去了。
 
 {{site.alert.note}}
 
-  Your app does not run on a simulator in Release mode because Flutter does not
-  yet support outputting x86/x86_64 ahead-of-time (AOT) binaries for your Dart
-  code. You can run in Debug mode on a simulator or a real device,
-  and Release on a real device.
+  You can run in Debug mode on a simulator or a real device,
+  and Release on a real device. Learn more about
+  [Flutter's build modes][build modes of Flutter]
 
-  你的应用将不能在模拟器上运行 Release 模式，
-  因为 Flutter 还不支持将 Dart 代码编译成
-  x86/x86_64 ahead-of-time (AOT) 模式的二进制文件。
   你可以在模拟机和真机上运行 Debug 模式，
-  在真机上运行 Release 模式。
+  在真机上运行 Release 模式，了解更多，
+  请查看文档 [Flutter 的构建模式][build modes of Flutter]。
 
-  To run your app on a simulator follow the instructions
-  in the bottom of section [embed the frameworks][].
+  To leverage Flutter debugging functionality 
+  such as hot reload, see  [Debugging your add-to-app module][].
 
-  要在模拟器上运行您的应用，请按照本节底部的
-  [嵌入框架][embed the frameworks]说明进行操作。
-
+  若要尝试 Flutter 调试里类似热重载等功能，请参阅文档
+  [调试你的 add-to-app 模块][Debugging your add-to-app module]。
 {{site.alert.end}}
 
 Using Flutter [increases your app size][].
@@ -189,6 +216,7 @@ Using Flutter [increases your app size][].
 
 This method requires every developer working on your
 project to have a locally installed version of the Flutter SDK.
+The Flutter module is compiled from source each time the app is built.
 Simply build your application in Xcode to automatically
 run the script to embed your Dart and plugin code.
 This allows rapid iteration with the most up-to-date
@@ -219,9 +247,10 @@ some/path/
 ```
 
 If your existing application (`MyApp`) doesn't
-already have a Podfile, follow the
-[CocoaPods getting started guide][]
-to add a `Podfile` to your project.
+already have a Podfile, run `pod init` in the  
+`MyApp` directory to create one. 
+You can find more details on using 
+CocoaPods in the [CocoaPods getting started guide][].
 
 如果你的应用（`MyApp`）还没有 Podfile，
 根据 [CocoaPods getting started guide][] 来在项目中添加 `Podfile`。
@@ -274,12 +303,12 @@ end
 
 {{site.alert.note}}
 
-  The `flutter_post_install` method (recently added to Flutter),
+  The `flutter_post_install` method (added in Flutter 3.1.0),
   adds build settings to support native Apple Silicon `arm64` iOS simulators.
   Include the `if defined?(flutter_post_install)` check to ensure your `Podfile`
   is valid if you are running on older versions of Flutter that don't have this method.
 
-  `flutter_post_install` 方法（近期新增的）
+  `flutter_post_install` 方法（Flutter 3.1.0 中新增的）
   增加了原生 Apple Silicon `arm64` iOS 模拟器的支持。
   它包括 `if defined?(flutter_post_install)` 的检查以确保你的
   `Podfile` 在旧版本的没有该方法的 Flutter 上也能正常运行。
@@ -362,15 +391,6 @@ every time you make code changes in your Flutter module.
 但是每当你在 Flutter module 中改变了代码，
 都必须运行 `flutter build ios-framework`。
 
-If you're using the previous
-[Embed with CocoaPods and Flutter tools][] method,
-you can skip these instructions.
-
-
-如果你使用前面的
-[使用 CocoaPods 和 Flutter SDK 集成][Embed with CocoaPods and Flutter tools]，
-你可以跳过本步骤。
-
 The following example assumes that you want to generate the
 frameworks to `some/path/MyApp/Flutter/`.
 
@@ -424,7 +444,7 @@ some/path/MyApp/
 
 {{site.alert.end}}
 
-Embed and link the generated frameworks into your existing
+Link and embed the generated frameworks into your existing
 application in Xcode.  There are multiple ways to do
 this&mdash;use the method that is best for your project.
 
@@ -457,6 +477,22 @@ Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`)
 
 {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
 
+{{site.alert.tip}}
+
+  To use the simulator, you will need to 
+  embed the Debug version of the Flutter frameworks in your
+  Debug build configuration. To do this 
+  you can use `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)`
+  in the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`)
+  build setting. This embeds the Release frameworks in the Release configuration, 
+  and the Debug frameworks in the Debug Configuration.
+  
+  You must also open `MyApp.xcodeproj/project.pbxproj` (from Finder) 
+  and replace `path = Flutter/Release/example.xcframework;`
+  with `path = "Flutter/$(CONFIGURATION)/example.xcframework";`
+  for all added frameworks. (Note the added `"`.)
+{{site.alert.end}}
+
 #### Embed the frameworks
 
 ### 内嵌框架
@@ -483,12 +519,14 @@ into your app to be loaded at runtime.
 
 {{site.alert.end}}
 
-For example, you can drag the framework
-(except for `FlutterPluginRegistrant` and any other
-static frameworks) from your application's Frameworks group
-into your target's **Build Settings > Build Phases >
-Embed Frameworks**.
-Then, select **Embed & Sign** from the drop-down list.
+After linking the frameworks, you should see them in the 
+**Frameworks, Libraries, and Embedded Content**
+section of your target's **General** settings. 
+To embed the dynamic frameworks
+select **Embed & Sign**. 
+
+They will then appear under **Embed Frameworks** within 
+**Build Phases** as follows: 
 
 例如，你可以从应用框架组中拖拽框架
 （除了 FlutterPluginRegistrant 以及其他的静态框架）
@@ -500,32 +538,6 @@ Then, select **Embed & Sign** from the drop-down list.
 You should now be able to build the project in Xcode using `⌘B`.
 
 你现在可以在 Xcode中使用 `⌘B` 编译项目。
-
-{{site.alert.tip}}
-
-  To embed the Debug version of the Flutter frameworks in your
-  Debug build configuration and the Release version in your
-  Release configuration, in your `MyApp.xcodeproj/project.pbxproj`,
-  try replacing `path = Flutter/Release/example.xcframework;`
-  with `path = "Flutter/$(CONFIGURATION)/example.xcframework";`
-  for all added frameworks. (Note the added `"`.)
-
-  如果你想在 Debug 编译配置下使用 Debug 版本的 Flutter frameworks，
-  在 Release 编译配置下使用 Release 版本的 Flutter frameworks，
-  在 `MyApp.xcodeproj/project.pbxproj` 文件中，
-  尝试在所有 Flutter 相关 frameworks 上使用
-  `path = "Flutter/$(CONFIGURATION)/example.framework";`
-  替换 `path = Flutter/Release/example.framework;`
-  （注意添加引号 `"`）。
-
-  You must also add `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)`
-  to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`)
-  build setting.
-
-  你也必须在 **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`)
-  编译设置中使用 `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)`。
-
-{{site.alert.end}}
 
 ### Option C - Embed application and plugin frameworks in Xcode and Flutter framework with CocoaPods
 
@@ -544,6 +556,12 @@ as described in Option B.
 CocoaPods 的 podspec 文件分发。
 这将会生成一个 `Flutter.podspec` 文件而不再生成 Flutter.framework 引擎文件。
 如选项 B 中所说的那样，它将会生成 App.framework 和插件框架。
+
+To generate the `Flutter.podspec` and frameworks, run the following 
+from the command line in the root of your Flutter module:
+
+要生成 `Flutter.podspec` 和框架，
+命令行切换到 Flutter module 根目录，然后运行以下命令：
 
 ```terminal
 flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
@@ -581,7 +599,7 @@ pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec
   `flutter attach` and `Release` when you're ready to ship.
 {{site.alert.end}}
 
-Embed and link the generated App.xcframework,
+Link and embed the generated App.xcframework,
 FlutterPluginRegistrant.xcframework,
 and any plugin frameworks into your existing application
 as described in Option B.
@@ -714,3 +732,5 @@ You can now [add a Flutter screen][] to your existing application.
 [VS Code]: {{site.url}}/development/tools/vs-code
 [XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes
 [Xcode installed]: {{site.url}}/get-started/install/macos#install-xcode
+[News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
+[Debugging your add-to-app module]: {{site.url}}/development/add-to-app/debugging/

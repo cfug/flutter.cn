@@ -73,7 +73,6 @@ Code before migration:
 
 迁移前代码：
 
-<!-- skip -->
 ```dart
 class FrogSize extends ParentDataWidget<FrogJar> {
   FrogSize({
@@ -110,7 +109,6 @@ Code after migration:
 
 迁移后代码：
 
-<!-- skip -->
 ```dart
 class FrogSize extends ParentDataWidget<FrogJarParentData> { // FrogJar changed to FrogJarParentData
   FrogSize({

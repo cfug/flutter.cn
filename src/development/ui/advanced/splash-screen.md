@@ -239,6 +239,22 @@ Android S.
 请先查看 [Android 闪屏页面][Android Splash Screens]
 了解如何在 Android S 上配置闪屏页。
 
+As of Android S, you must use the new splash screen API in your `styles.xml` file.
+Consider creating an alternate resource file for Android 12 and higher.
+Also make sure that your background image is in line with the icon guidelines,
+see [Android Splash Screens][] for more details.
+
+从 Android S 开始，你必须在你的 `styles.xml` 文件中使用新的闪屏 API 了。
+你需要考虑为 Android 12 和更高版本创建一个备用的资源文件，还要确保你的背景图片符合图标指南。
+查看文档 [Android 闪屏页面][Android Splash Screens] 了解更多。
+
+```xml
+<style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+    <item name="android:windowSplashScreenBackground">@color/bgColor</item>
+    <item name="android:windowSplashScreenAnimatedIcon">@drawable/launch_background</item>
+</style>
+```
+
 Make sure neither `io.flutter.embedding.android.SplashScreenDrawable` is set in
 your manifest, nor is `provideSplashScreen` implemented, as these APIs are
 deprecated. Doing so will cause the Android launch screen to fade smoothly into

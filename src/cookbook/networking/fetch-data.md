@@ -74,7 +74,6 @@ import 'package:http/http.dart' as http;
 Additionally, in your AndroidManifest.xml file, 
 add the Internet permission.
 
-<!-- skip -->
 ```xml
 <!-- Required to fetch data from the internet. -->
 <uses-permission android:name="android.permission.INTERNET" />

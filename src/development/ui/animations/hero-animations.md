@@ -1056,7 +1056,6 @@ Key information:
 
   代码如下：
 
-  <!-- skip -->
   {% prettify dart %}
   static RectTween _createRectTween(Rect begin, Rect end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);

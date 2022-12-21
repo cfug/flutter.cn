@@ -105,7 +105,6 @@ Add the following permission to the `AndroidManifest.xml` file just after the
 `AndroidManifest.xml` 文件的路径是
 `<project root>/android/app/src/main/AndroidManifest.xml`
 
-<!-- skip -->
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application ...>
@@ -126,7 +125,6 @@ For iOS, add the following to the `Info.plist` file found at
 针对 iOS，你需要在 `<project root>/ios/Runner/Info.plist`
 路径下的 `Info.plist` 文件中加入如下配置。
 
-<!-- skip -->
 ```xml
 <key>NSAppTransportSecurity</key>
 <dict>

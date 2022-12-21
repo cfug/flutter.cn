@@ -34,7 +34,6 @@ Prior to this change, the `ServiceBinding` had to be defined before the
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class FooBinding extends BindingBase with ServicesBinding, SchedulerBinding {
  // ...
@@ -43,7 +42,6 @@ class FooBinding extends BindingBase with ServicesBinding, SchedulerBinding {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class FooBinding extends BindingBase with SchedulerBinding, ServicesBinding {
  // ...

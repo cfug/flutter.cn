@@ -99,7 +99,6 @@ Code before migration:
 
 迁移前的代码：
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(accentColor: myColor),
@@ -111,7 +110,6 @@ Code after migration:
 
 迁移后的代码：
 
-<!-- skip -->
 ```dart
 final ThemeData theme = ThemeData();
 MaterialApp(
@@ -142,7 +140,6 @@ Code before migration:
 
 迁移前的代码：
 
-<!-- skip -->
 ```dart
 Color myColor = Theme.of(context).accentColor;
 ```
@@ -151,7 +148,6 @@ Code after migration:
 
 迁移后的代码：
 
-<!-- skip -->
 ```dart
 Color myColor = Theme.of(context).colorScheme.secondary;
 ```
@@ -183,7 +179,6 @@ Code before migration:
 
 迁移前的代码：
 
-<!-- skip -->
 ```dart
 TextStyle style = Theme.of(context).accentTextTheme.headline1;
 ```
@@ -192,7 +187,6 @@ Code after migration:
 
 迁移后的代码：
 
-<!-- skip -->
 ```dart
 final ThemeData theme = Theme.of(context);
 TextStyle style = theme.textTheme.headline1.copyWith(

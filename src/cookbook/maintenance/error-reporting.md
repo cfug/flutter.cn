@@ -143,7 +143,6 @@ Alternatively, you can pass the DSN to Flutter using the `dart-define` tag:
 
 另外，你也可以使用 `dart-define` 标记将 DSN 传递给 Flutter。
 
-<!-- skip -->
 ```sh
 --dart-define SENTRY_DSN=https://example@sentry.io/example
 ```

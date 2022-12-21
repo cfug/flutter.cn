@@ -690,7 +690,6 @@ with the data it needs:
 与其他类相同，你可以通过 widget 的构造函数来初始化数据，
 如此一来 `build()` 方法可以确保子 widget 使用其所需的数据进行实例化：
 
-<!-- skip -->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -720,7 +719,6 @@ Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 现在，当 `ExamWidget` 或 `GradeWidget` 对象需要获取 `StudentState` 的数据时，
 可以直接使用以下方式：
 
-<!-- skip -->
 ```dart
 final studentState = StudentState.of(context);
 ```
@@ -908,7 +906,6 @@ for `Container`, you can see that if the color is not null, it inserts a
 [源代码]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)，
 你会看到当 `color` 属性不为空时，`ColoredBox` 会被加入用于颜色布局。
 
-<!-- skip -->
 ```dart
 if (color != null)
   current = ColoredBox(color: color!, child: current);
@@ -1458,7 +1455,6 @@ on a platform test. As an example, from the
 例如在 [google_maps_flutter]({{site.pub}}/packages/google_maps_flutter)
 插件中：
 
-<!-- skip -->
 ```dart
 if (defaultTargetPlatform == TargetPlatform.android) {
   return AndroidView(

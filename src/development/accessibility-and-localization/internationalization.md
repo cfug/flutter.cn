@@ -699,7 +699,6 @@ They can be retrieved with `Localizations.of()`:
 类提供的一个 `LocalizationDelegate` 方法创建的，
 它们可以通过 `Localizations.of` 方法获得。
 
-<!-- skip -->
 ```dart
 Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 ```
@@ -710,7 +709,6 @@ so the `MaterialLocalizations` class provides a convenient shorthand:
 因为这个特定的 `Localizations.of()` 表达式经常使用，
 所以 `MaterialLocalizations` 类提供了一个快捷访问：
 
-<!-- skip -->
 ```dart
 static MaterialLocalizations of(BuildContext context) {
   return Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
@@ -726,6 +724,7 @@ tooltip: MaterialLocalizations.of(context).backButtonTooltip,
 <a name="defining-class"></a>
 ### Defining a class for the app's localized resources
 
+<a name="defining-class"></a>
 ### 为 app 的本地化资源定义一个类
 
 Putting together an internationalized Flutter app usually

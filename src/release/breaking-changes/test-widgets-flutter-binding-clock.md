@@ -22,7 +22,6 @@ This can affect user code which grabs the clock from a
 that expects a `Clock` from `package:quiver`,
 for example some code like this:
 
-<!-- skip -->
 ```dart
 testWidgets('some test', (WidgetTester tester) {
   someApiThatWantsAQuiverClock(tester.binding.clock);
@@ -47,7 +46,6 @@ tearoff to the `Clock` constructor:
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 testWidgets('some test', (WidgetTester tester) {
   someApiThatWantsAQuiverClock(tester.binding.clock);
@@ -56,7 +54,6 @@ testWidgets('some test', (WidgetTester tester) {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 testWidgets('some test', (WidgetTester tester) {
   someApiThatWantsAQuiverClock(Clock(tester.binding.clock.now));
@@ -86,7 +83,6 @@ by passing a tearoff of the `now` method from either type of clock:
 
 Calling code before migration:
 
-<!-- skip -->
 ```dart
 testWidgets('some test', (WidgetTester tester) {
   someApiThatWantsAQuiverClock(tester.binding.clock);
@@ -95,7 +91,6 @@ testWidgets('some test', (WidgetTester tester) {
 
 Calling code after migration:
 
-<!-- skip -->
 ```dart
 testWidgets('some test', (WidgetTester tester) {
   modifiedApiThatTakesANowFunction(tester.binding.clock.now);

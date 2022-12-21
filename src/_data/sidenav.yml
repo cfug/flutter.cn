@@ -110,6 +110,8 @@
               permalink: /docs/development/ui/advanced/focus
             - title: 手势
               permalink: /docs/development/ui/advanced/gestures
+            - title: Shaders
+              permalink: /docs/development/ui/advanced/shaders
             - title: 滑动效果 (Slivers)
               permalink: /docs/development/ui/advanced/slivers
             - title: 闪屏页
@@ -226,7 +228,7 @@
           match-page-url-exactly: true
         - title: Happy paths 推荐
           permalink: /docs/development/packages-and-plugins/happy-paths/recommended
-        - title: Plugins in Flutter tests  **NEW**
+        - title: Flutter 测试插件 [新增]
           permalink: /docs/development/packages-and-plugins/plugins-in-tests
         - title: 使用 Packages
           permalink: /docs/development/packages-and-plugins/using-packages
@@ -427,7 +429,7 @@
       permalink: /docs/resources/design-docs
     - title: 常见问题解答
       permalink: /docs/resources/faq
-    - title: 休闲游戏工具包 [新增]
+    - title: 休闲游戏工具包
       permalink: /docs/resources/games-toolkit
     - title: 使用 Google 字体库
       permalink: https://pub.flutter-io.cn/packages/google_fonts

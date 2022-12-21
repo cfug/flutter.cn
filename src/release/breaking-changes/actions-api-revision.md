@@ -95,7 +95,6 @@ outdated use of the Actions API might be the cause of the problem. The specifics
 of the error might differ, and there may be other failures caused by these
 changes.
 
-<!-- skip -->
 ```
 error: MyActionDispatcher.invokeAction' ('bool Function(Action<Intent>, Intent, {FocusNode focusNode})') isn't a valid override of 'ActionDispatcher.invokeAction' ('Object Function(Action<Intent>, Intent, [BuildContext])'). (invalid_override at [main] lib/main.dart:74)
 
@@ -128,7 +127,6 @@ and `SelectAction`, do the following:
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class MyWidget extends StatelessWidget {
   // ...
@@ -151,7 +149,6 @@ class MyWidget extends StatelessWidget {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class MyWidget extends StatelessWidget {
   // ...
@@ -181,7 +178,6 @@ argument of the `Actions` widget.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class MyAction extends Action {
   MyAction() : super(key);
@@ -216,7 +212,6 @@ class MyWidget extends StatelessWidget {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // You may need to create new Intent subclasses if you used
 // a bare LocalKey before.
@@ -270,7 +265,6 @@ depending on how the action is invoked.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class MyIntent extends Intent {
   const MyIntent({this.argument});
@@ -296,7 +290,6 @@ class MyAction extends Action {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class MyIntent extends Intent {
   const MyIntent({this.argument});

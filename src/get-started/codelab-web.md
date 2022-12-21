@@ -787,7 +787,6 @@ but becomes enabled when all three text fields contain
   请注意, `_updateFormProgress` 是通过传递一个函数调用 `setState()` 。
   这种被称为匿名函数,语法如下所示:
 
-  <!-- skip -->
   ```dart
   methodName(() {...});
   ```

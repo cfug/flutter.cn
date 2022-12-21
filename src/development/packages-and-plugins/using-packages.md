@@ -511,7 +511,21 @@ additional dependency options are available:
   dependencies:
     plugin1:
       git:
-        url: git://github.com/flutter/plugin1.git
+        url: https://github.com/flutter/plugin1.git
+  ```
+
+**Git dependency using SSH**
+<br> If the repository is private and you can connect to it using SSH,
+  depend on the package by using the repo's SSH url:
+
+**通过 SSH 依赖 Git package**
+<br> 如果你需要通过 SSH 连接私有的仓库，你可以用 SSH 链接依赖对应的 package：
+
+  ```yaml
+  dependencies:
+    plugin1:
+      git:
+        url: git@github.com:flutter/plugin1.git
   ```
 
 **Git dependency on a package in a folder**
@@ -528,7 +542,7 @@ additional dependency options are available:
   dependencies:
     package1:
       git:
-        url: git://github.com/flutter/packages.git
+        url: https://github.com/flutter/packages.git
         path: packages/package1
   ```
 

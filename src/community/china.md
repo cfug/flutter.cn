@@ -6,7 +6,7 @@ description: 如果你需要在中国网络环境下使用 Flutter，请查阅�
 toc: true
 ---
 
-{% assign path = 'flutter_infra_release/releases/stable/windows/flutter_windows_v1.0.0-stable.zip' -%}
+{% assign path = 'flutter_infra_release/releases/stable/windows/flutter_windows_3.3.0-stable.zip' -%}
 {% comment %}
 The Flutter community has made a Simplified Chinese version of the
 Flutter website available at
@@ -16,8 +16,8 @@ Flutter website available at
 欢迎你来到由中国 Flutter 社区维护的中文 Flutter 资源网站：[https://flutter.cn](https://flutter.cn)
 
 {% comment %}
-If you’d like to install Flutter using an [installation
-bundle]({{site.url}}/development/tools/sdk/releases),
+If you’d like to install Flutter using an 
+[installation bundle]({{site.url}}/development/tools/sdk/releases),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
 {% endcomment %}
@@ -67,7 +67,7 @@ you need to set two environment variables, `PUB_HOSTED_URL` and
 然后再运行 Flutter 命令行工具。
 
 {% comment %}
-Taking MacOS or Linux as an example, here are the first few steps in
+Taking macOS or Linux as an example, here are the first few steps in
 the setup process for using a mirror site. Run the following in a Bash
 shell from the directory where you wish to store your local Flutter clone:
 {% endcomment %}
@@ -144,8 +144,8 @@ $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 [Pub 镜像安装帮助](https://mirrors.sjtug.sjtu.edu.cn/docs/dart-pub)。
 
 ```terminal
-$ export PUB_HOSTED_URL=https://mirrors.sjtug.sjtu.edu.cn/dart-pub
-$ export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
+$ export PUB_HOSTED_URL=https://mirror.sjtu.edu.cn/dart-pub
+$ export FLUTTER_STORAGE_BASE_URL=https://mirror.sjtu.edu.cn
 ```
 
 ### 清华大学 TUNA 协会

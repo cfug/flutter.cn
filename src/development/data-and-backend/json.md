@@ -509,7 +509,6 @@ you can use the `@JsonKey` annotation with a name parameter:
 并且你想要在你的模型里使用 **小驼峰** 的命名方式，
 你可以使用带有一个 name 参数的 `@JsonKey` 注解。
 
-<!-- skip -->
 ```dart
 /// Tell json_serializable that "registration_date_millis" should be
 /// mapped to this property.
@@ -537,7 +536,6 @@ Other commonly used `@JsonKey` annotations include:
 服务端的数据有时无法确认，所以在客户端很有必要进行数据校验和保护。
 其他常见的 `@JsonKey` 声明方法包括：
 
-<!-- skip -->
 ```dart
 /// Tell json_serializable to use "defaultValue" if the JSON doesn't
 /// contain this key or if the value is `null`.
@@ -720,7 +718,6 @@ looks something like the following:
 在终端中运行 `flutter pub run build_runner build` 创建 `*.g.dart`文件，
 但私有函数 `_$UserToJson()` 看起来会像下面这样：
 
-<!-- skip -->
 ```dart
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'name': instance.name,

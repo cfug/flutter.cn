@@ -97,7 +97,6 @@ and `Column` lays out its widgets vertically.
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -272,7 +271,6 @@ The `mainAxisSize` property has two possible values:
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -455,7 +453,6 @@ can position their children in that extra space.
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -661,7 +658,6 @@ The `crossAxisAlignment` property has five possible values:
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -872,7 +868,6 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1030,7 +1025,6 @@ Future<void> main() async {
   当 `flex` 属性互相比较时，它们的 `flex` 值的比率决定了 `Flexible` widget
   自身所占剩余空间的比例。
 
-  <!-- skip -->
   ```dart
   remainingSpace * (flex / totalOfAllFlexValues)
   ```
@@ -1046,7 +1040,6 @@ Future<void> main() async {
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1230,7 +1223,6 @@ wrap a widget and force the widget to fill extra space.
 
   For example:
 
-  <!-- skip -->
   ```dart
   Expanded(child: BlueBox(),),
   ```
@@ -1240,7 +1232,6 @@ wrap a widget and force the widget to fill extra space.
          选择 **Format** 按钮格式化代码，然后再次运行。
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1386,7 +1377,6 @@ create empty space.
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1545,7 +1535,6 @@ Future<void> main() async {
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1735,7 +1724,6 @@ can create space between widgets.
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1890,7 +1878,6 @@ for different fonts, sizes, and colors.
        
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -2050,7 +2037,6 @@ Flutter 将会为 [Material][] 和 [Cupertino][]
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -2200,7 +2186,6 @@ the following example uses an image from the network.
          
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -2373,7 +2358,6 @@ which are positioned below the contact information.
   `crossAxisAlignment` 设为 `CrossAxisAlignment.start`。
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -2545,7 +2529,6 @@ Future<void> main() async {
   </li>
 </ul>
 
-  <!-- skip -->
   ```dart
      Row(
        children: [
@@ -2558,7 +2541,6 @@ Future<void> main() async {
      );
   ```
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -2802,7 +2784,6 @@ Future<void> main() async {
   `Column` widget 的列表格式应该如下一样，
   联系信息和图标显示在名称和头衔下方：
 
-  <!-- skip -->
   ```dart
 
      ],
@@ -2818,7 +2799,6 @@ Future<void> main() async {
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -3114,7 +3094,6 @@ Future<void> main() async {
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -3459,7 +3438,6 @@ Future<void> main() async {
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';

@@ -288,6 +288,24 @@ app's icons:
 
    通过执行 `flutter run` 来验证你的图标是否已经被替换。
 
+## Add a launch image
+
+## 添加启动图
+
+Similar to the app icon, you may also want to replace the placeholder launch image: 
+
+与应用图标类似，你可以通过下面的方法替换占位的启动图:
+
+1. In the Xcode project navigator, select `Assets.xcassets` in the
+   `Runner` folder. Update the placeholder launch image with your own launch image. 
+
+   在 Xcode 的工程导航中选择 `Runner` 文件夹下的 `Assets.xcassets`，
+   然后将自己的启动图替换掉占位启动图即可。
+
+1. Verify the new launch image by hot restarting your app. (Don't use `hot reload`.)
+
+   重新启动你的应用来验证是否替换成功，不要使用热重载。
+
 ## Create a build archive and upload to App Store Connect
 
 ## 创建一个构建归档，并上传到 App Store Connect

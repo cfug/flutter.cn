@@ -211,9 +211,13 @@ To include your course, [submit a PR][]:
   [Dart 和 Flutter 从入门到精通][Flutter leicht gemacht 2022 - Zero to Mastery!]，由社区成员 Max Berktold 录制（德语）
   
 * [Flutter Zero to Hero][] by Veli Bacik (Turkish)
-* [Dart & Flutter - Zero to Mastery 2023 + Clean Architecture][] by Max Berktold & Max Steffen
 
   [Flutter 入门到精通][Flutter Zero to Hero]，由社区成员 Veli Bacik 录制 (土耳其语)
+
+* [Dart & Flutter - Zero to Mastery 2023 + Clean Architecture][] by Max Berktold & Max Steffen
+
+  [Dart & Flutter - 从零到精通 2023 + Clean Architecture][Dart & Flutter - Zero to Mastery 2023 + Clean Architecture]，
+  由社区成员 Max Berktold 和 Max Steffen 录制
 
 
 [Flutter & Dart - the Complete Guide, 2021 edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/

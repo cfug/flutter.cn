@@ -225,7 +225,8 @@ version of your Flutter module without running additional
 commands outside of Xcode.
 
 这个方法需要你的项目的所有开发者，都在本地安装 Flutter SDK。
-只需要在 Xcode 中编译应用，就可以自动运行脚本来集成 dart 代码和 plugin。
+你的工程在每次构建的的时候，都将会从源码里编译 Flutter 模块。
+只需要在 Xcode 中编译应用，就可以自动运行脚本来集成 Dart 代码和插件。
 这个方法允许你使用 Flutter module 中的最新代码快速迭代开发，
 而无需在 Xcode 以外执行额外的命令。
 

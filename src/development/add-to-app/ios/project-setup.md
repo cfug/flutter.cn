@@ -186,7 +186,7 @@ embedding the module into your existing application with CocoaPods.
 After you have developed your Flutter module,
 you can embed it using the methods described at the top of the page.
 
-开发完成你的 Flutter module后，
+在你的 module 开发完成后，
 你就能使用页面顶部描述的方法将其嵌入到应用中去了。
 
 {{site.alert.note}}
@@ -204,6 +204,7 @@ you can embed it using the methods described at the top of the page.
 
   若要尝试 Flutter 调试里类似热重载等功能，请参阅文档
   [调试你的 add-to-app 模块][Debugging your add-to-app module]。
+
 {{site.alert.end}}
 
 Using Flutter [increases your app size][].
@@ -252,8 +253,10 @@ already have a Podfile, run `pod init` in the
 You can find more details on using 
 CocoaPods in the [CocoaPods getting started guide][].
 
-如果你的应用（`MyApp`）还没有 Podfile，
-根据 [CocoaPods getting started guide][] 来在项目中添加 `Podfile`。
+如果你的应用下（`MyApp`）还没有 Podfile，
+请运行 `pod init` 来创建一个。
+你可以在 [CocoaPods 起步指南][CocoaPods getting started guide]
+中了解更多。
 
 
 <ol markdown="1">
@@ -486,11 +489,22 @@ Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`)
   in the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`)
   build setting. This embeds the Release frameworks in the Release configuration, 
   and the Debug frameworks in the Debug Configuration.
+
+  若你需要使用模拟器，你需要在你的 Debug 构建配置中嵌入 Debug 环境的 Flutter framework。 
+  此时你应该在 **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`) 构建设置中使用
+  `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)`。
+  它会让不同环境的 Flutter framework 对应地嵌入到不同模式。
   
   You must also open `MyApp.xcodeproj/project.pbxproj` (from Finder) 
   and replace `path = Flutter/Release/example.xcframework;`
   with `path = "Flutter/$(CONFIGURATION)/example.xcframework";`
   for all added frameworks. (Note the added `"`.)
+
+  你需要打开 `MyApp.xcodeproj/project.pbxproj`（从访达中打开）
+  将 `path = Flutter/Release/example.xcframework;` 替换为
+  `path = "Flutter/$(CONFIGURATION)/example.xcframework";`
+  来添加所有的 framework（注意增加的 `"` 双引号）。
+
 {{site.alert.end}}
 
 #### Embed the frameworks

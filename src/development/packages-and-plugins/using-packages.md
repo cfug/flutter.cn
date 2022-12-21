@@ -515,8 +515,11 @@ additional dependency options are available:
   ```
 
 **Git dependency using SSH**
-: If the repository is private and you can connect to it using SSH,
+<br> If the repository is private and you can connect to it using SSH,
   depend on the package by using the repo's SSH url:
+
+**通过 SSH 依赖 Git package**
+<br> 如果你需要通过 SSH 连接私有的仓库，你可以用 SSH 链接依赖对应的 package：
 
   ```yaml
   dependencies:

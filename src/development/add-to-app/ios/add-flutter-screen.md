@@ -74,7 +74,7 @@ trade-offs of pre-warming an engine.
 
 Where you create a `FlutterEngine` depends on your host app.
 
-创建 `FlutterEngine` 取决于你的宿主应用。
+在哪创建 `FlutterEngine` 取决于你要用的宿主类型。
 
 {% samplecode engine %}
 

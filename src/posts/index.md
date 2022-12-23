@@ -68,5 +68,6 @@ title: 官方博客
 - [Flutter Cocoon 已达到 SLSA 2 级标准的要求]({{site.main-url}}/posts/flutter-slsa-progress)
 - [GitHub 供应链安全已支持 Dart 开发者生态]({{site.main-url}}/posts/partnering-with-github-on-an-supply-chain-security)
 - [了解 Flutter 开发者们的 IDE 使用情况]({{site.main-url}}/posts/studying-developers-usage-of-ides-for-flutter-development)
+- [1 月 25 日见｜Flutter Forward 活动日程表正式发布！]({{site.main-url}}/posts/flutter-forward-2023)
 
 上述内容的刊登均以获得发布许可。

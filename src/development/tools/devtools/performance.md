@@ -21,9 +21,11 @@ keywords: 开发者工具,性能视图,Dart,性能优化
 
 ## Basic performance concepts
 
-### What is the Performance view?
+## 基础的性能概念
 
-## 它是什么?
+## What is the Performance view?
+
+## 性能视图是什么?
 
 The performance view offers timing and performance information for activity in
 your application. It consists of three parts, each increasing in granularity.

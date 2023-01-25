@@ -17,6 +17,17 @@ It maps HTML/CSS code snippets to their Flutter/Dart code equivalents.
 本文是为那些熟悉用 HTML 与 CSS 语法来管理应用页面中元素的开发者准备的。
 本文会将 HTML/CSS 代码片段替换为等价的 Flutter/Dart 代码。
 
+Flutter is a framework for building cross-platform applications
+that uses the Dart programming language.
+To understand some differences between programming with Dart
+and programming with Javascript, 
+see [Learning Dart as a JavaScript Developer][].
+
+Flutter 是一个用于构建跨平台应用的框架，它使用 Dart 编程语言。
+要了解 Dart 编程语言与 Javascript 编程语言的异同，
+请参考文档
+[给 JavaSript 开发者的 Dart 编程语言指南][Learning Dart as a JavaScript Developer]。
+
 One of the fundamental differences between
 designing a web layout and a Flutter layout,
 is learning how constraints work,
@@ -1245,6 +1256,7 @@ final container = Container(
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
+[Learning Dart as a JavaScript Developer]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
 [`Matrix4`]: {{site.api}}/flutter/vector_math_64/Matrix4-class.html
 [`Positioned`]: {{site.api}}/flutter/widgets/Positioned-class.html
 [`RichText`]: {{site.api}}/flutter/widgets/RichText-class.html

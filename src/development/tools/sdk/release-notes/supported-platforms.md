@@ -157,8 +157,6 @@ best-effort support.
 |Windows |Windows Vista 及更低的版本                    |
 |Windows |Any 32-bit platform                         |
 |Windows |任何 32 位的平台                              |
-|macOS   |Yosemite & below                            |
-|macOS   |Yosemite 及更低的版本                         |
 {:.table.table-striped}
 </div>
 

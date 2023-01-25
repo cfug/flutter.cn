@@ -2789,8 +2789,7 @@ doesn't recreate the list anymore, but instead adds to it.
 而是用 `.add` 添加给它的。
 
 For more information, see
-[Write your first Flutter app, part 1][]
-and [Write your first Flutter app, part 2][].
+[Your first Flutter app][first_codelab] codelab.
 
 更多信息，请访问
 [编写你的第一个 Flutter 应用程序，第 1 部分][Write your first Flutter app, part 1]
@@ -3461,6 +3460,5 @@ plugin documentation.
 [widget]: {{site.url}}/resources/architectural-overview#widgets
 [widget catalog]: {{site.url}}/development/ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
-[Write your first Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-[Write your first Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[first_codelab]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [write your own]: {{site.url}}/development/packages-and-plugins/developing-packages

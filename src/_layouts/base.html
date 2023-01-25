@@ -10,13 +10,13 @@
     <link rel="apple-touch-icon" href="/assets/images/cn/flutter-320px.png" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
-    {% unless page.strip_fonts == true %}
+    {% unless page.strip_fonts == true -%}
      <link rel="preconnect" href="https://fonts.googleapis.cn" />
      <link rel="preload" href="https://cdn.staticfile.org/font-awesome/5.15.1/js/all.min.js" as="script" />
      <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
-    {% endunless %}
+    {% endunless -%}
 
-    {% if jekyll.environment == "production" %}
+    {% if jekyll.environment == "production" -%}
       <!-- <meta name="google-site-verification" content="{{ site.google_site_verification }}" /> -->
       <!-- <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -52,8 +52,8 @@
       </script>
     {% endif %}
 
-    {% assign desc = page.description %}
-    {% assign og_image_path = page.image.path | default: layout.image.path | default: site.default_share_image %}
+    {% assign desc = page.description -%}
+    {% assign og_image_path = page.image.path | default: layout.image.path | default: site.default_share_image -%}
 
     <meta name="description" content="{{desc}}">
     <meta name="keywords" content="{% if page.tags %}{{page.tags}}, {% endif %}{{page.keywords}}">
@@ -66,41 +66,31 @@
     <meta property="og:description" content="{{desc}}">
     <meta property="og:image" content="{{og_image_path | absolute_url}}">
 
-    {% unless page.strip_fonts == true %}
-<!--  <link rel="preconnect" href="https://fonts.googleapis.cn">
-      <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
-      <link href="https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+    {% unless page.strip_fonts == true -%}
+    <link rel="preconnect" href="https://files.flutter-io.cn">
+    <link href="https://files.flutter-io.cn/fonts/flutter/fonts.css" rel="stylesheet">
+    <link href="https://files.flutter-io.cn/fonts/material-icons/material-design-icons-no-codepoints.min.css" rel="stylesheet">
+    <script
+      src="https://cdn.staticfile.org/font-awesome/5.15.1/js/all.min.js"
+      data-auto-replace-svg="nest">
+    </script>
+    {% endunless -%}
 
-      <link href="https://fonts.googleapis.cn/css?family=Google+Sans:400,500" rel="stylesheet">
-      <link href="https://fonts.googleapis.cn/css?family=Roboto:300,400,500" rel="stylesheet">
-      <link href="https://fonts.googleapis.cn/css?family=Roboto+Mono:400,700" rel="stylesheet">
-      <link href="https://fonts.googleapis.cn/css?family=Material+Icons" rel="stylesheet"> -->
-      <link rel="preconnect" href="https://files.flutter-io.cn">
-      <link href="https://files.flutter-io.cn/fonts/flutter/fonts.css" rel="stylesheet">
-      <link href="https://files.flutter-io.cn/fonts/material-icons/material-design-icons-no-codepoints.min.css" rel="stylesheet">
-    
-      <script 
-        src="https://cdn.staticfile.org/font-awesome/5.15.1/js/all.min.js" 
-        data-auto-replace-svg="nest">
-      </script>
-    {% endunless %}
-
-    {% include head-diff2html.html %}
+    {% include shared/head-diff2html.html -%}
  
     <script>
       window.__CALLBACKS = [];
     </script>
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | append: cache_bust }}">
-    {% for css in page.css %}
-      {% assign asset_path = '/assets/css/{{css}}' %}
+    {% for css in page.css -%}
+      {% assign asset_path = '/assets/css/{{css}}' -%}
       <link rel="stylesheet" href="{{ asset_path | append: cache_bust }}">
-    {% endfor %}
-
+    {% endfor -%}
   </head>
-  <body {% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
+  <body{% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
 
-    <!-- {% include cookie-notice.html %} -->
+    <!-- {% include_cached cookie-notice.html %} -->
   
     <!-- {% if jekyll.environment == "production" %}
       <noscript>
@@ -114,12 +104,15 @@
     <div id="overlay-under-drawer"></div>
 
     {% include header.html %}
-    {% include banner.html %}
+
+    {% if page.show_banner -%}
+      {% include_cached banner.html %}
+    {% endif -%}
 
     {{ content }}
 
     {% if page.show_footer %}
-      {% include footer.html %}
+      {% include_cached footer.html %}
     {% endif %}
     
     <script src="https://cdn.staticfile.org/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -136,7 +129,7 @@
     <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
     
-    {% for script in page.js %}
+    {% for script in page.js -%}
       <script src="{{ script.url | default: js }}" {% if script.defer %}defer{% endif %}></script>
     {% endfor %}
 

@@ -170,7 +170,7 @@ Click the **Run** button to run the example:
 #### 1. 选择要进行动画的 widget 属性
 
 To create a fade-in effect, you can animate the `opacity` property using the
-`AnimatedOpacity` widget. Change the `Container` widget to an
+`AnimatedOpacity` widget. Change the `Column` widget to an
 `AnimatedOpacity` widget:
 
 想要创建淡入效果，您可以使用 `AnimatedOpacity` widget 对 `opacity` 属性进行动画。
@@ -787,7 +787,7 @@ here are some suggestions for where to go next:
 [linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [list of common implicitly animated widgets]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [list of curve constants]: {{site.api}}/flutter/animation/Curves-class.html
-[make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1/
+[make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
 [shape-shifting complete]: #shape-shifting-complete
 [Shape-shifting effect]: #example-shape-shifting-effect

@@ -19,7 +19,9 @@ keywords: 开发者工具,性能视图,Dart,性能优化
 
 {{site.alert.end}}
 
-## What is it?
+## Basic performance concepts
+
+### What is the Performance view?
 
 ## 它是什么?
 
@@ -40,32 +42,43 @@ your application. It consists of three parts, each increasing in granularity.
 
   CPU 监控
 
-{{site.alert.note}}
-
-  **If you are running a Flutter application, 
-  use a profile build to analyze performance.**
-  Cpu profiles are not indicative of release performance 
-  unless your Flutter application is run in profile mode.
-
-  **对于 Flutter 应用程序，需要使用 profile 构建模式才能使用性能分析**
-  如果你希望你的 Flutter 应用程序性能与生产模式下相同
-  且希望使用性能分析工具，请使用性能模式。
-
+{{site.alert.secondary}}
+  **Use a [profile build][] of your application to analyze performance.**
+  Frame rendering times aren't indicative of release performance
+  when running in debug mode. Run your app in profile mode,
+  which still preserves useful debugging information.
 {{site.alert.end}}
+
+[profile build]: {{site.url}}/testing/build-modes#profile
+
+The performance view also supports importing and exporting of
+data snapshots. For more information,
+check out the [Import and export][] section.
+
+### What is a frame in Flutter?
+
+Flutter is designed to render its UI at 60 frames per second
+(fps), or 120 fps on devices capable of 120Hz updates.
+Each render is called a _frame_.
+This means that, approximately every 16ms, the UI updates
+to reflect animations or other changes to the UI. A frame
+that takes longer than 16ms to render causes jank 
+(jerky motion) on the display device.
 
 ## Flutter frames chart
 
-This chart contains Flutter frame information for your application. Each bar set
-in the chart represents a single Flutter frame. The bars are color-coded to
-highlight the different portions of work that occur when rendering a Flutter
-frame: work from the UI thread and work from the raster thread (previously known
+This chart contains Flutter frame information for your application.
+Each bar set in the chart represents a single Flutter frame.
+The bars are color-coded to highlight the different portions
+of work that occur when rendering a Flutter frame: work from
+the UI thread and work from the raster thread (previously known
 as the GPU thread).
 
 ![Screenshot from a performance snapshot]({{site.url}}/assets/images/docs/tools/devtools/performance-flutter-frames-chart.png){:width="100%"}
 
 Selecting a bar from this chart centers the flame chart below on the timeline
-events corresponding to the selected Flutter frame. The events are highlighted
-with blue brackets.
+events corresponding to the selected Flutter frame.
+The events are highlighted with blue brackets.
 
 ![Screenshot from a timeline recording]({{site.url}}/assets/images/docs/tools/devtools/performance-timeline-events-chart-selected-frame.png){:width="100%"}
 
@@ -117,7 +130,7 @@ and clips or shadows in specific situations.
 在一些特定的情形下，多个对象的透明度重叠、剪切或阴影，
 有可能会导致不必要的 `saveLayer()` 的调用。
 
-For more information on profiling, see
+For more information on profiling, check out
 [Identifying problems in the GPU graph][GPU graph].
 
 更多详细信息，请查看文档 [定位 GPU 图表中的问题][GPU graph]。
@@ -140,11 +153,13 @@ experience UI jank or dropped frames.
 如果没有达到这个目标，你会发现 UI 不流畅或丢帧。
 
 For more information on how to analyze your app's performance,
-see [Flutter performance profiling][].
+check out [Flutter performance profiling][].
 
 更多关于性能分析信息，请查看文档：[Flutter 性能分析][Flutter performance profiling]。
 
 ### Shader compilation
+
+### 着色器渲染
 
 ### 着色器渲染
 
@@ -156,8 +171,8 @@ red:
 
 ![Screenshot of shader compilation for a frame]({{site.url}}/assets/images/docs/tools/devtools/shader-compilation-frames-chart.png)
 
-For more information on how to reduce shader compilation jank, see [Reduce
-shader compilation jank on mobile][].
+For more information on how to reduce shader compilation jank,
+check out [Reduce shader compilation jank on mobile][].
 
 想要了解更多关于如何减少着色器缓存卡顿的内容，阅读
 [在移动端减少着色器编译卡顿][Reduce shader compilation jank on mobile]。
@@ -167,21 +182,23 @@ shader compilation jank on mobile][].
 ## 时间线事件表
 
 The timeline events chart shows all event tracing from your application.
-The Flutter framework emits timeline events as it works to build frames, draw
-scenes, and track other activity such as HTTP traffic. These events show up here
-in the Timeline. You can also send your own Timeline events via the
-dart:developer
-[Timeline]({{site.api}}/flutter/dart-developer/Timeline-class.html)
-and [TimelineTask]({{site.api}}/flutter/dart-developer/TimelineTask-class.html)
+The Flutter framework emits timeline events as it works to build frames,
+draw scenes, and track other activity such as HTTP traffic.
+These events show up here in the Timeline.
+You can also send your own Timeline events using the dart:developer
+[`Timeline`]({{site.api}}/flutter/dart-developer/Timeline-class.html)
+and [`TimelineTask`]({{site.api}}/flutter/dart-developer/TimelineTask-class.html)
 APIs.
 
 ![Screenshot of timeline events for a frame]({{site.url}}/assets/images/docs/tools/devtools/performance-timeline-events-chart.png){:width="100%"}
 
 The flame chart supports zooming and panning:
+
 * To zoom, scroll up and down with the mouse wheel / trackpad
-* To pan horizontally, either click and drag the chart or scroll horizontally
-with the mouse wheel / trackpad
-* To pan vertically, either click and drag the chart or use **alt + scroll**
+* To pan horizontally, either click and drag the chart or
+  scroll horizontally with the mouse wheel / trackpad
+* To pan vertically, either click and drag the chart or use
+  **alt + scroll**
 * The WASD keys also work for controlling zoom and horizontal scroll position
 
 You can click an event to view CPU profiling information in the CPU profiler
@@ -198,7 +215,7 @@ use the options in the enhance tracing dropdown:
 
 {{site.alert.note}}
 
-  Frame times may be negatively affected when these options are enabled.
+  Frame times might be negatively affected when these options are enabled.
 
   启用该选项后，帧构建时间可能会受到影响。
 
@@ -206,8 +223,8 @@ use the options in the enhance tracing dropdown:
 
 ![Screenshot of enhance tracing dropdown]({{site.url}}/assets/images/docs/tools/devtools/enhance-tracing.png)
 
-To see the new timeline events,
-reproduce the activity in your app that you are interested in tracing,
+To see the new timeline events, reproduce the activity
+in your app that you are interested in tracing,
 and then select a frame to inspect the timeline.
 
 你可以重复操作你想要追踪的行为来查看新的时间线事件，
@@ -217,11 +234,11 @@ and then select a frame to inspect the timeline.
 
 ### 追踪 widget 的构建
 
-To see the build() method events in the timeline,
-enable the Track Widget Builds option.
+To see the `build()` method events in the timeline,
+enable the **Track Widget Builds** option.
 The name of the widget is shown in the timeline event.
 
-想要在时间线中查看 `build()` 方法的事件，启用 Track Widget Builds 选项。
+想要在时间线中查看 `build()` 方法的事件，启用 **Track Widget Builds** 选项，
 时间线中将出现 widget 对应名称的事件。
 
 ![Screenshot of track widget builds]({{site.url}}/assets/images/docs/tools/devtools/track-widget-builds.png)
@@ -231,7 +248,7 @@ The name of the widget is shown in the timeline event.
 ### 追踪布局
 
 To see render object layout events in the timeline,
-enable the Track Layouts option:
+enable the **Track Layouts** option:
 
 想要在时间线中查看 `RenderObject` 布局构建的事件，启用 Track Layouts 选项：
 
@@ -242,9 +259,10 @@ enable the Track Layouts option:
 ### 追踪绘制
 
 To see render object paint events in the timeline,
-enable the Track Paints option:
+enable the **Track Paints** option:
 
-想要在时间线中查看 `RenderObject` 的绘制事件，启用 Track Paints 选项：
+想要在时间线中查看 `RenderObject` 的绘制事件，
+启用 **Track Paints** 选项：
 
 ![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
 
@@ -275,10 +293,10 @@ to the jank you saw in your app.
 那么你禁用的效果的滥用可能是导致卡顿的主要原因。
 
 **Render Clip layers**
-<br> Disable this option  to check whether excessive use of clipping
-     is affecting performance.
-     If performance improves with this option disabled,
-     try to reduce the use of clipping effects in your app.
+<br> Disable this option to check whether excessive use of clipping
+  is affecting performance.
+  If performance improves with this option disabled,
+  try to reduce the use of clipping effects in your app.
 
 **渲染裁剪的图层**
 <br> 禁用该选项来检查已使用的裁剪图层是否影响了性能。
@@ -296,10 +314,10 @@ to the jank you saw in your app.
 
 **Render Physical Shape layers**
 <br> Disable this option to check whether excessive
-     use of physical modeling effects are affecting performance,
-     such as shadows or elevation.
-     If performance improves with this option disabled,
-     try to reduce the use of physical modeling effects in your app.
+  use of physical modeling effects are affecting performance,
+  such as shadows or elevation.
+  If performance improves with this option disabled,
+  try to reduce the use of physical modeling effects in your app.
 
 **渲染物理形状图层**
 <br> 禁用该选项来检查已使用的物理形状图层是否影响了性能，例如阴影和背景特效。

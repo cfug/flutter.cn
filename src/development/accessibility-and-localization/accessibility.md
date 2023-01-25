@@ -190,8 +190,58 @@ impaired users to get spoken feedback about the contents of the screen
 and interact with the UI via gestures on mobile and keyboard shortcuts on desktop. 
 Turn on VoiceOver or TalkBack on your mobile device and navigate around your app.
 
-对于移动设备，读屏器（[TalkBack][]、[VoiceOver][]）可以使视障用户能够获得有关屏幕内容的语音反馈，并通过移动设备上的手势和桌面上的键盘快捷键与 UI 进行交互。
+在移动设备上，读屏器（[TalkBack][]、[VoiceOver][]）可以使视障用户能够获得有关屏幕内容的语音反馈，
+并通过移动设备上的手势和桌面上的键盘快捷键与 UI 进行交互。
 在你的移动设备上打开 VoiceOver 或 TalkBack 并浏览你的应用程序。
+
+**To turn on the screen reader on your device, complete the following steps:**
+
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="editor-setup" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="talkback-tab" href="#talkback" role="tab" aria-controls="talkback" aria-selected="true">TalkBack on Android</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="voiceover-tab" href="#voiceover" role="tab" aria-controls="voiceover" aria-selected="false">VoiceOver on iPhone</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="browsers-tab" href="#browsers" role="tab" aria-controls="browsers" aria-selected="false">Browsers</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="desktop-tab" href="#desktop" role="tab" aria-controls="desktop" aria-selected="false">Desktop</a>
+    </li>
+</ul>
+
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+
+<div class="tab-pane active" id="talkback" role="tabpanel" aria-labelledby="talkback-tab" markdown="1">
+
+1. On your device, open **Settings**.
+2. Select **Accessibility** and then **TalkBack**.
+3. Turn 'Use TalkBack' on or off.
+4. Select Ok.
+
+To learn how to find and customize Android's accessibility features, view this video.
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/FQyj_XTl01w" title="Customize accessibility features on Pixel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="tab-pane" id="voiceover" role="tabpanel" aria-labelledby="voiceover-tab" markdown="1">
+
+1. On your device, open **Settings > Accessibility > VoiceOver**
+2. Turn the VoiceOver setting on or off
+
+To learn how to find and customize iOS accessibility features, view this video.
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/qDm7GiKra28" title="How to navigate your iPhone or iPad with VoiceOver" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="tab-pane" id="browsers" role="tabpanel" aria-labelledby="browsers-tab" markdown="1">
 
 For web, the following screen readers are currently supported:
 
@@ -211,16 +261,42 @@ Desktop Browsers:
 * MacOS - VoiceOver
 * Windows - JAWs & NVDA
 
-Screen Readers users on web will need to toggle 
+Screen Readers users on web will need to toggle
 "Enable accessibility" button to build the semantics tree.
-Users can skip this step if you programmatically auto-enable 
-accessibility for your app using this API: 
+Users can skip this step if you programmatically auto-enable
+accessibility for your app using this API:
 
 Web 上的读屏器用户需要点击「启用辅助功能」按钮来构建语义树。
 如果你使用下面这个 API 以编程方式为你的应用程序自动启用辅助功能，
 则用户可以跳过此步骤：
 
 `RendererBinding.instance.setSemanticsEnabled(true)`
+
+</div>
+
+<div class="tab-pane" id="desktop" role="tabpanel" aria-labelledby="desktop-tab" markdown="1">
+
+Windows comes with a screen reader called Narrator
+but some developers recommend using the more popular
+NVDA screen reader. Learn about using NVDA to test
+Windows apps [here](https://get-evinced.com/blog/screen-readers-101-for-front-end-developers-windows/).
+
+On a Mac, you can use the desktop version of VoiceOver,
+which is included in macOS.
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/5R-6WvAihms" title="Screen Reader Basics: VoiceOver -- A11ycasts #07" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+On Linux, a popular screen reader is called Orca.
+It comes pre-installed with some distributions
+and is available on package repositories such as `apt`.
+Learn about using Orca
+[here](https://www.a11yproject.com/posts/getting-started-with-orca/).
+
+</div>
+</div>{% comment %} End: Tab panes. {% endcomment -%}
+
+<br/>
 
 Check out this [video demo][] to see 
 Victor Tsaran, who leads the Accessibility program for Material Design, 
@@ -307,33 +383,40 @@ Test your app using Flutter's
 This API checks if your app's UI meets Flutter's accessibility recommendations.
 These cover recommendations for text contrast, target size, and target labels.
 
-The following example shows how to use the Guideline API on Startup Name Generator.
-You created this app as part of the <a href="https://docs.flutter.dev/get-started/codelab/?tab=talkback">codelab</a> 
-on how to create your first Flutter app.
-Each list tile on the app's main screen serves as a tappable target
-with text represented in 18 point. You can add Guideline API tests
-in `test/widget_test.dart` of your app directory.
+The following example shows how to use the Guideline API on Name Generator.
+You created this app as part of the
+[Write your first Flutter app]({{site.url}}/get-started/codelab) codelab.
+Each button on the app's main screen serves as a tappable target
+with text represented in 18 point.
 
-<?code-excerpt path-base="codelabs/startup_namer/step3_stateful_widget"?>
-<?code-excerpt "test/widget_test.dart (a11yAPI)" indent-by="2"?>
+<?code-excerpt path-base="codelabs/namer/step_08"?>
+<?code-excerpt "test/a11y_test.dart (insideTest)" indent-by="2"?>
 ```dart
   final SemanticsHandle handle = tester.ensureSemantics();
-  await tester.pumpWidget(const MaterialApp(home: MyApp()));
+  await tester.pumpWidget(MyApp());
 
-  // Checks that tappable nodes have a minimum size of 48 by 48 pixels for android.
+  // Checks that tappable nodes have a minimum size of 48 by 48 pixels
+  // for Android.
   await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
 
-  // Checks that tappable nodes have a minimum size of 44 by 44 pixels for iOS.
+  // Checks that tappable nodes have a minimum size of 44 by 44 pixels
+  // for iOS.
   await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
 
   // Checks that touch targets with a tap or long press action are labeled.
   await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
 
   // Checks whether semantic nodes meet the minimum text contrast levels.
-  // The recommended text contrast is 3:1 for larger text (18 point and above regular)
+  // The recommended text contrast is 3:1 for larger text
+  // (18 point and above regular).
   await expectLater(tester, meetsGuideline(textContrastGuideline));
   handle.dispose();
 ```
+
+You can add Guideline API tests
+in `test/widget_test.dart` of your app directory, or as a separate test
+file (such as `test/a11y_test.dart` in the case of the Name Generator).
+
 
 ## Testing accessibility on web
 

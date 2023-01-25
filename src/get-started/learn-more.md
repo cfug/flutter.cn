@@ -43,9 +43,13 @@ Learn more about the Flutter framework from the following pages:
 
   [为 Java 开发人员准备的 Dart 教程][From Java to Dart]
 
-* [Flutter for iOS developers][]
+* [Flutter for SwiftUI developers][]
 
-  [给 iOS 开发者的 Flutter 指南][Flutter for iOS developers]
+  [给 SwiftUI 开发者的 Flutter 指南][Flutter for SwiftUI developers]
+
+* [Flutter for UIKit developers][]
+
+  [给 UIKit 开发者的 Flutter 指南][Flutter for UIKit developers]
 
 * [Flutter for React Native developers][]
 
@@ -101,7 +105,8 @@ Happy Fluttering!
 [Flutter API Docs]: {{site.api}}
 [Flutter cookbook]: {{site.url}}/cookbook
 [Flutter for Android developers]: {{site.url}}/get-started/flutter-for/android-devs
-[Flutter for iOS developers]: {{site.url}}/get-started/flutter-for/ios-devs
+[Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
+[Flutter for UIKit developers]: {{site.url}}/get-started/flutter-for/uikit-devs
 [Flutter for React Native developers]: {{site.url}}/get-started/flutter-for/react-native-devs
 [Flutter samples]: https://flutter.github.io/samples
 [Flutter for web developers]: {{site.url}}/get-started/flutter-for/web-devs

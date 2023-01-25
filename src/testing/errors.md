@@ -13,7 +13,7 @@ The Flutter framework catches errors that occur during callbacks
 triggered by the framework itself, including errors encountered
 during the build, layout, and paint phases. Errors that don't occur
 within Flutter's callbacks can't be caught by the framework,
-but you can handle them by setting up a error handler on the
+but you can handle them by setting up an error handler on the
 [`PlatformDispatcher`][].
 
 Flutter 框架可以捕获运行期间的错误，包括构建期间、布局期间和绘制期间。

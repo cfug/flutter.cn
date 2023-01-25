@@ -480,8 +480,8 @@ dependencies:
 ```
 
 Note that as shown here, an app-facing package can have
-some platforms implementated within the package, and others in
-endorsed federated implementations.
+some platforms implemented within the package,
+and others in endorsed federated implementations.
 
 注意如上所示，面向 App 项目的 package 可能已经包含了某些平台的实现，
 同时也有认可的其他平台的实现。

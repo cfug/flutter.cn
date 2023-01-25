@@ -16,8 +16,10 @@
       children:
         - title: 给 Android 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/android-devs
-        - title: 给 iOS 开发者的 Flutter 指南
-          permalink: /docs/get-started/flutter-for/ios-devs
+        - title: 给 iOS SwiftUI 开发者的 Flutter 指南
+          permalink: /docs/get-started/flutter-for/swiftui-devs
+        - title: 给 iOS UIKit 开发者的 Flutter 指南
+          permalink: /docs/get-started/flutter-for/uikit-devs
         - title: 给 React Native 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/react-native-devs
         - title: 给 Web 开发者的 Flutter 指南
@@ -27,7 +29,7 @@
         - title: 声明式 UI 介绍
           permalink: /docs/get-started/flutter-for/declarative
     - title: Dart 语言概览
-      permalink: https://dart.cn/overview
+      permalink: https://dart.dev/overview
     - title: 构建一个 Web 应用
       permalink: /docs/get-started/web
 
@@ -116,6 +118,8 @@
               permalink: /docs/development/ui/advanced/slivers
             - title: 闪屏页
               permalink: /docs/development/ui/advanced/splash-screen
+        - title: Material 3 更新
+          permalink: /docs/development/ui/material3-updates
         - title: 核心 Widget 目录
           permalink: /docs/development/ui/widgets
     - title: 数据调用和后端
@@ -435,6 +439,8 @@
       permalink: https://pub.flutter-io.cn/packages/google_fonts
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
+    - title: Flutter 和 Swift 的并发模式对比
+      permalink: /docs/resources/dart-swift-concurrency
     - title: 官方品牌资源
       permalink: https://flutter.cn/brand
     - title: 平台行为差异和适配

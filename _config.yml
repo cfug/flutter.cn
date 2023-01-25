@@ -58,8 +58,12 @@ youtube-site: https://youtube.com
 ########### Jekyll ###########
 
 source: src
+strict_front_matter: true
 permalink: pretty
 exclude: []
+liquid:
+  error_mode: strict
+  strict_filters: true
 sass:
   sass_dir: _sass
   cache: false
@@ -69,6 +73,8 @@ sass:
 
 plugins:
   - jekyll-toc
+  - jekyll-include-cache
+
 toc:
   min_level: 2
   max_level: 4

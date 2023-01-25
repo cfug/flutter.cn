@@ -291,9 +291,11 @@ image named `my_icon.png`:
 主资源默认对应于 1.0 倍的分辨率图片。比如下面的图片 `my_icon.png`：
 
 ```text
-.../my_icon.png
-.../2.0x/my_icon.png
-.../3.0x/my_icon.png
+.../my_icon.png       (mdpi baseline)
+.../1.5x/my_icon.png  (hdpi)
+.../2.0x/my_icon.png  (xhdpi)
+.../3.0x/my_icon.png  (xxhdpi)
+.../4.0x/my_icon.png  (xxxhdpi)
 ```
 
 On devices with a device pixel ratio of 1.8, the asset
@@ -784,7 +786,7 @@ For more details, see
 [`ios_platform_images`]: {{site.pub}}/packages/ios_platform_images
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
 [`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
-[`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String
+[`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String)
 [package]: {{site.url}}/development/packages-and-plugins/using-packages
 [`pathForResource:ofType:`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410989-pathforresource
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html

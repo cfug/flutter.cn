@@ -9,6 +9,14 @@ keywords: Flutter优秀插件推荐项目
 
 ![The Flutter Favorite program logo]({{site.url}}/assets/images/docs/development/packages-and-plugins/FlutterFavoriteLogo.png){:width="20%"}
 
+{{site.alert.note}}
+  Due to limited staffing resources,
+  we are pausing the
+  Flutter Favorites and Happy Path programs.
+  We will update (and possibly combine)
+  these programs as soon as possible.
+{{site.alert.end}}
+
 The aim of the **Flutter Favorite** program is to identify
 packages and plugins that you should first consider when
 building your app.

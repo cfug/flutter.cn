@@ -31,7 +31,7 @@ Here are some of the series offered on the
 
 如下是一些 [flutterdev YouTube channel][] 的系列视频。
 
-[flutterdev YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
+[flutterdev YouTube channel]: {{site.social.youtube}}
 
 ### Flutter at Google I/O 2022
 

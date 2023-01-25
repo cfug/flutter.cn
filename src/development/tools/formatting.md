@@ -82,13 +82,13 @@ To automatically format code whenever you save a file, set the
 ## 使用 'flutter' 命令自动格式化代码
 
 You can also automatically format code in the command line interface
-(CLI) using the `flutter format` command:
+(CLI) using the `dart format` command:
 
 我们也可以在命令行界面（CLI）中使用 `flutter format` 命令，
 进行代码的自动格式化。
 
 ```terminal
-$ flutter format path1 path2 ...
+$ dart format path1 path2 ...
 ```
 
 ## Using trailing commas

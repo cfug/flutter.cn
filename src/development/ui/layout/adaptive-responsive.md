@@ -223,7 +223,7 @@ in collaboration with gskinner and the Flutter team:
 想要尝试精美的自适应应用，可以下载由 gskinner 和 Flutter
 团队共建的剪贴板应用 Flutter Folio：
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/yytBENOnF0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/yytBENOnF0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The [Folio source code][] is also available on GitHub.
 Learn more on the [gskinner blog][].

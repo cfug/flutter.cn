@@ -1262,12 +1262,11 @@ return ListView.builder(
 
 {% include docs/android-ios-figure-pair.md image="react-native/flatlist.gif" alt="Flat list" class="border" %}
 
-To learn how to implement an infinite scrolling list, see the
-[Write Your First Flutter App, Part 1][] codelab.
+To learn how to implement an infinite scrolling list, see the official
+[`infinite_list`][infinite_list] sample.
 
-如果要了解如何实现无限滑动列表，请参考
-[编写你的第一个 Flutter 应用 - 第一部分][Write Your First Flutter App, Part 1]
-的 codelab。
+如果要了解如何实现无限滑动列表，
+请参考 [`infinite_list`][infinite_list] 示例应用。
 
 ### How do I use a Canvas to draw or paint?
 
@@ -3545,7 +3544,7 @@ Flutter widget 和通用的 widget 属性。
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [async and await]: {{site.dart-site}}/guides/language/language-tour#asynchrony-support
-[`Axis`]: {{site.api}}/flutter/painting/Axis-class.html
+[`Axis`]: {{site.api}}/flutter/painting/Axis.html
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [color palette]: {{site.material}}/design/color
@@ -3629,7 +3628,7 @@ Flutter widget 和通用的 widget 属性。
 [`TabBarView`]: {{site.api}}/flutter/material/TabBarView-class.html
 [`TabController`]: {{site.api}}/flutter/material/TabController-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign-class.html
+[`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
@@ -3644,4 +3643,4 @@ Flutter widget 和通用的 widget 属性。
 [Using Packages]: {{site.url}}/development/packages-and-plugins/using-packages
 [variables]: {{site.dart-site}}/guides/language/language-tour#variables
 [`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
-[Write Your First Flutter App, Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[infinite_list]: {{site.repo.samples}}/tree/main/infinite_list

@@ -7,7 +7,7 @@
   Do _not_ test the performance of your app with debug and
   hot reload enabled.
   
-  **请勿**在调试模式和热重载功能开启的情况下做性能测试。
+  **请勿** 在调试模式和热重载功能开启的情况下做性能测试。
   
 {{site.alert.end}}
 

@@ -39,7 +39,7 @@ directly inside your Flutter app.
 [Hosting native iOS views]: {{site.url}}/development/platform-integration/ios/platform-views
 
 Flutter supports two modes:
-Virtual displays and Hybrid composition.
+Hybrid composition and virtual displays.
 
 Flutter 支持两种集成模式：虚拟显示模式 (Virtual displays)
 和混合集成模式 (Hybrid composition) 。
@@ -49,29 +49,29 @@ Let's take a look:
 
 我们应根据具体情况来决定使用哪种模式。让我们来看看：
 
-* Virtual displays render the `android.view.View`
-  instance to a texture, so it's not embedded within
-  the Android Activity's view hierachy.
-  Certain platform interactions such as keyboard handling
-  and accessibility features might not work.
-
-  虚拟显示模式会将 `android.view.View` 实例渲染为纹理，
-  因此它不会嵌入到 Android Activity 的视图层次结构中。
-  某些平台交互（例如键盘处理和辅助功能）可能无法正常工作。
-
-* Hybrid composition appends the native `android.view.View`
-  to the view hierarchy. Therefore, keyboard
-  handling, and accessibility work out of the box.
+* [Hybrid composition](#hybrid-composition)
+  appends the native `android.view.View` to the view hierarchy. 
+  Therefore, keyboard handling, and accessibility work out of the box.
   Prior to Android 10, this mode might significantly
-  reduce the frame throughput (FPS) of the
-  Flutter UI. See [performance][] for more info.
+  reduce the frame throughput (FPS) of the Flutter UI.
+  For more context, see [Performance](#performance).
 
-  混合集成模式会将原生的 `android.view.View` 附加到视图层次结构中。
+  [混合集成模式](#hybrid-composition)
+  会将原生的 `android.view.View` 附加到视图层次结构中。
   因此，键盘处理和无障碍功能是开箱即用的。
   在 Android 10 之前，此模式可能会大大降低 Flutter UI 的帧吞吐量 (FPS)。
   有关更多信息，请参见 [性能][performance] 小节。
 
-[performance]: #performance
+* [Virtual displays](#virtual-display)
+  render the `android.view.View` instance to a texture, 
+  so it's not embedded within the Android Activity's view hierarchy.
+  Certain platform interactions such as keyboard handling
+  and accessibility features might not work.
+
+  [虚拟显示模式](#virtual-display) 
+  会将 `android.view.View` 实例渲染为纹理，
+  因此它不会嵌入到 Android Activity 的视图层次结构中。
+  某些平台交互（例如键盘处理和辅助功能）可能无法正常工作。
 
 To create a platform view on Android,
 use the following steps:
@@ -83,7 +83,7 @@ use the following steps:
 ### 在 Dart 中进行的处理
 
 On the Dart side, create a `Widget`
-and add the following build implementation:
+and add one of the following build implementations.
 
 在 Dart 端，创建一个 `Widget`
 然后添加如下的实现，具体如下：
@@ -103,6 +103,10 @@ and add the following build implementation:
 
 [plugin migration guide]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 
+#### Hybrid composition
+
+#### 混合集成模式
+
 In your Dart file,
 for example `native_view_example.dart`,
 use the following instructions:
@@ -110,64 +114,58 @@ use the following instructions:
 在 Dart 文件中，例如 `native_view_example.dart`，
 请执行下列操作：
 
-<ol markdown="1">
-<li markdown="1">
-Add the following imports:
+1. Add the following imports:
 
-添加下面的导入代码：
+   添加下面的导入代码：
+   
+   <?code-excerpt "lib/platform_views/native_view_example_1.dart (Import)"?>
+   ```dart
+   import 'package:flutter/foundation.dart';
+   import 'package:flutter/gestures.dart';
+   import 'package:flutter/material.dart';
+   import 'package:flutter/rendering.dart';
+   import 'package:flutter/services.dart';
+   ```  
+    
+2. Implement a `build()` method:
 
-<?code-excerpt "lib/platform_views/native_view_example_1.dart (Import)"?>
-```dart
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
-```
-</li>
+   实现一个 `build()` 方法：
+  
+   <?code-excerpt "lib/platform_views/native_view_example_1.dart (HybridCompositionWidget)"?>
+   ```dart
+   Widget build(BuildContext context) {
+     // This is used in the platform side to register the view.
+     const String viewType = '<platform-view-type>';
+     // Pass parameters to the platform side.
+     const Map<String, dynamic> creationParams = <String, dynamic>{};
 
-<li markdown="1">
-Implement a `build()` method:
-
-实现 `build()` 方法：
-
-<?code-excerpt "lib/platform_views/native_view_example_1.dart (HybridCompositionWidget)"?>
-```dart
-Widget build(BuildContext context) {
-  // This is used in the platform side to register the view.
-  const String viewType = '<platform-view-type>';
-  // Pass parameters to the platform side.
-  const Map<String, dynamic> creationParams = <String, dynamic>{};
-
-  return PlatformViewLink(
-    viewType: viewType,
-    surfaceFactory:
-        (context, controller) {
-      return AndroidViewSurface(
-        controller: controller as AndroidViewController,
-        gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
-        hitTestBehavior: PlatformViewHitTestBehavior.opaque,
-      );
-    },
-    onCreatePlatformView: (params) {
-      return PlatformViewsService.initSurfaceAndroidView(
-        id: params.id,
-        viewType: viewType,
-        layoutDirection: TextDirection.ltr,
-        creationParams: creationParams,
-        creationParamsCodec: const StandardMessageCodec(),
-        onFocus: () {
-          params.onFocusChanged(true);
-        },
-      )
-        ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
-        ..create();
-    },
-  );
-}
-```
-</li>
-</ol>
+     return PlatformViewLink(
+       viewType: viewType,
+       surfaceFactory:
+           (context, controller) {
+         return AndroidViewSurface(
+           controller: controller as AndroidViewController,
+           gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
+           hitTestBehavior: PlatformViewHitTestBehavior.opaque,
+         );
+       },
+       onCreatePlatformView: (params) {
+         return PlatformViewsService.initSurfaceAndroidView(
+           id: params.id,
+           viewType: viewType,
+           layoutDirection: TextDirection.ltr,
+           creationParams: creationParams,
+           creationParamsCodec: const StandardMessageCodec(),
+           onFocus: () {
+             params.onFocusChanged(true);
+           },
+         )
+           ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
+           ..create();
+       },
+     );
+   }
+   ```
 
 For more information, see the API docs for:
 
@@ -181,7 +179,7 @@ For more information, see the API docs for:
 [`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
 [`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
 
-#### Virtual Display
+#### Virtual display
 
 #### 虚拟显示模式 (Virtual Display)
 
@@ -192,42 +190,36 @@ use the following instructions:
 在 Dart 文件中，例如 `native_view_example.dart`，
 请执行下列操作：
 
-<ol markdown="1">
-<li markdown="1">
-Add the following imports:
+1. Add the following imports:
 
-添加下面的导入代码：
+   添加下面的导入代码：
+   
+   <?code-excerpt "lib/platform_views/native_view_example_2.dart (Import)"?>
+   ```dart
+   import 'package:flutter/material.dart';
+   import 'package:flutter/services.dart';
+   ```
 
-<?code-excerpt "lib/platform_views/native_view_example_2.dart (Import)"?>
-```dart
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-```
-</li>
+2. Implement a `build()` method:
 
-<li markdown="1">
-Implement a `build()` method:
+   实现一个 `build()` 方法：
 
-实现 `build()` 方法：
+   <?code-excerpt "lib/platform_views/native_view_example_2.dart (VirtualDisplayWidget)"?>
+   ```dart
+   Widget build(BuildContext context) {
+     // This is used in the platform side to register the view.
+     const String viewType = '<platform-view-type>';
+     // Pass parameters to the platform side.
+     final Map<String, dynamic> creationParams = <String, dynamic>{};
 
-<?code-excerpt "lib/platform_views/native_view_example_2.dart (VirtualDisplayWidget)"?>
-```dart
-Widget build(BuildContext context) {
-  // This is used in the platform side to register the view.
-  const String viewType = '<platform-view-type>';
-  // Pass parameters to the platform side.
-  final Map<String, dynamic> creationParams = <String, dynamic>{};
-
-  return AndroidView(
-    viewType: viewType,
-    layoutDirection: TextDirection.ltr,
-    creationParams: creationParams,
-    creationParamsCodec: const StandardMessageCodec(),
-  );
-}
-```
-</li>
-</ol>
+     return AndroidView(
+       viewType: viewType,
+       layoutDirection: TextDirection.ltr,
+       creationParams: creationParams,
+       creationParamsCodec: const StandardMessageCodec(),
+     );
+   }
+   ```
 
 For more information, see the API docs for:
 
@@ -256,8 +248,8 @@ In your native code, implement the following:
 在您的原生代码中，实现如下方法：
 
 Extend `io.flutter.plugin.platform.PlatformView`
-to provide a reference to the `android.view.View`,
-For example, `NativeView.kt`:
+to provide a reference to the `android.view.View`
+(for example, `NativeView.kt`):
 
 继承 `io.flutter.plugin.platform.PlatformView`
 以提供对 `android.view.View` 的引用，
@@ -291,8 +283,8 @@ internal class NativeView(context: Context, id: Int, creationParams: Map<String?
 ```
 
 Create a factory class that creates an instance of the
-`NativeView` created earlier,
-for example, `NativeViewFactory.kt`:
+`NativeView` created earlier
+(for example, `NativeViewFactory.kt`):
 
 创建一个用来创建 `NativeView` 的实例的工厂类，
 参考 `NativeViewFactory.kt`：
@@ -374,8 +366,8 @@ In your native code, implement the following:
 在您的原生代码中，实现如下方法：
 
 Extend `io.flutter.plugin.platform.PlatformView`
-to provide a reference to the `android.view.View`,
-For example, `NativeView.java`:
+to provide a reference to the `android.view.View`
+(for example, `NativeView.java`):
 
 继承 `io.flutter.plugin.platform.PlatformView`
 以提供对 `android.view.View` 的引用，
@@ -415,8 +407,8 @@ class NativeView implements PlatformView {
 ```
 
 Create a factory class that creates an
-instance of the `NativeView` created earlier,
-for example, `NativeViewFactory.java`:
+instance of the `NativeView` created earlier
+(for example, `NativeViewFactory.java`):
 
 创建一个用来创建 `NativeView` 的实例的工厂类，
 参考 `NativeViewFactory.java`：
@@ -528,8 +520,8 @@ to require one of the minimal Android SDK versions:
 ```gradle
 android {
     defaultConfig {
-        minSdkVersion 19 // if using Hybrid composition.
-        minSdkVersion 20 // if using Virtual display.
+        minSdkVersion 19 // if using hybrid composition
+        minSdkVersion 20 // if using virtual display.
     }
 }
 ```

@@ -161,15 +161,11 @@ Flutter 扩展执行代码分析，它提供：
   有多种方式能够调试你的应用
 
   * Using [DevTools][], a suite of debugging and profiling
-    tools that run in a browser. DevTools replaces the previous
-    browser-based profiling tool, Observatory, and includes
-    functionality previously only available to Android Studio
-    and IntelliJ, such as the Flutter inspector.
+    tools that run in a browser. 
 
     使用 [DevTools][]，它是一个运行在浏览器中的
-    调试以及性能测试工具集。DevTools 取代了前一代基于浏览器的性能测试工具 Observatory，
-    它包含了以前仅适用于 Android Studio 和 IntelliJ 的功能，例如 Flutter inspector。
-
+    调试以及性能测试工具集。
+    
   * Using VS Code's built-in debugging features,
     such as setting breakpoints.
 

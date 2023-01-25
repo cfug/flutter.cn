@@ -174,7 +174,7 @@ To create a fade-in effect, you can animate the `opacity` property using the
 `AnimatedOpacity` widget:
 
 想要创建淡入效果，您可以使用 `AnimatedOpacity` widget 对 `opacity` 属性进行动画。
-将 `Container` widget 换成 `AnimatedOpacity` widget：
+将 `Column` widget 换成 `AnimatedOpacity` widget：
 
 <?code-excerpt "opacity{1,2}/lib/main.dart"?>
 ```diff

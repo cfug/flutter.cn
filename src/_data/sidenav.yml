@@ -29,7 +29,7 @@
         - title: 声明式 UI 介绍
           permalink: /docs/get-started/flutter-for/declarative
     - title: Dart 语言概览
-      permalink: https://dart.dev/overview
+      permalink: https://dart.cn/overview
     - title: 构建一个 Web 应用
       permalink: /docs/get-started/web
 

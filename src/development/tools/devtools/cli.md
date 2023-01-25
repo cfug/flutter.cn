@@ -62,43 +62,46 @@ message in your terminal that looks like the following:
 当 app 启动后，你会在命令行中看到如下内容：
 
 ```
-An Observatory debugger and profiler on iPhone X is available
-at: http://127.0.0.1:50976/Swm0bjIe0ks=/
+An Observatory debugger and profiler on macOS is available at:
+http://127.0.0.1:52129/QjqebSY4lQ8=/
+The Flutter DevTools debugger and profiler on macOS is available at:
+http://127.0.0.1:9100?uri=http://127.0.0.1:52129/QjqebSY4lQ8=/
 ```
 
-Keep note of this URL,
-as you will use it to connect your app to DevTools.
+Open the DevTools instance connected to your app
+by opening the second link in Chrome.
 
-记下这个 URL ，待会儿你可以使用它来连接 app 和开发者工具。
+在 Chrome 浏览器中打开第二个链接，
+启动链接到你应用的开发者工具实例。
 
-## Open DevTools and connect to the target app
+This URL contains a security token, 
+so it's different for each run of your app. 
+This means that if you stop your application and re-run it, 
+you need to connect to DevTools again with the new URL.
 
-## 打开开发者工具并且连接到目标 app
+这个链接包含一个安全认证的 token，
+所以每次启动你的 app 时，链接都会改变。
+这意味着如果重启 app 后，
+你需要用新的 URL 链接来连接开发者工具。
 
-Once it's set up, using DevTools is as simple as opening a
-Chrome browser window and navigating to `http://localhost:9100`.
+## Connect to a new app instance
 
-上述完成后，使用开发者工具就会很简单，
-只需打开 chrome 并访问 `http://localhost:9100`。
+## 链接到一个新的应用实例
 
-Once DevTools opens, you should see a connect dialog:
+If your app stops running
+or you opened DevTools manually,
+you should see a **Connect** dialog:
 
-当这个网页打开后，你会看到一个链接对话框：
+如果应用已经停止运行，或者你是手动打开的开发者工具，
+你应该可以看到一个 **Connect** 对话框。
 
-![Screenshot of a logging view]({{site.url}}/assets/images/docs/tools/devtools/connect_dialog.png){:width="100%"}
+![Screenshot of the DevTools connect dialog]({{site.url}}/assets/images/docs/tools/devtools/connect_dialog.png){:width="100%"}
 
-Paste the URL you got from running your app (in this example,
-`http://127.0.0.1:50976/Swm0bjIe0ks=/`) into the connect dialog
-to connect your app to DevTools.
+You can manually connect DevTools to a new app instance
+by copying the Observatory link you got from running your app,
+such as `http://127.0.0.1:52129/QjqebSY4lQ8=/`
+and pasting it into the connect dialog.
 
-将从启动 app 时获得的 URL 链接
-（在这个例子里是 `http://127.0.0.1:50976/Swm0bjIe0ks=/` ）
-复制到这个链接对话框中来把你的 app 和开发者工具链接起来。
-
-This URL contains a security token, so it's different
-for each run of your app. This means that if you stop your
-application and re-run it, you need to connect to DevTools
-with the new URL.
-
-这个链接包含一个秘钥 token，所以每次启动你的 app 时，链接都会改变。
-这意味着如果重启 app 后，你需要用新的 URL 链接来连接开发者工具。
+你可以将 Observatory 链接贴入到输入框中，
+手动将开发者工具链接到新的应用实例中去，
+类似: `http://127.0.0.1:52129/QjqebSY4lQ8=/`。

@@ -10,21 +10,21 @@ keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
 
 {% for card in site.data.docs_cards -%}
-  {% capture index0Modulo3 %}{{ forloop.index0 | modulo:3 }}{% endcapture %}
-  {% capture indexModulo3 %}{{ forloop.index | modulo:3 }}{% endcapture %}
-  {% if index0Modulo3 == '0' %}
+  {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
+  {% capture indexModulo3 -%}{{ forloop.index | modulo:3 }}{% endcapture -%}
+  {% if index0Modulo3 == '0' -%}
   <div class="card-deck mb-4">
-  {% endif %}
+  {% endif -%}
     <a class="card" href="{{card.url}}">
       <div class="card-body">
         <header class="card-title">{{card.name}}</header>
         <p class="card-text">{{card.description}}</p>
       </div>
     </a>
-  {% if indexModulo3 == '0' %}
+  {% if indexModulo3 == '0' -%}
   </div>
-  {% endif %}
-{% endfor -%}
+  {% endif -%}
+{% endfor %}
 
 **To see changes to the site since our last release,
 see [What's new][].**
@@ -52,12 +52,13 @@ here are some next steps.
 ### 文档
 
 Coming from another platform? Check out Flutter for:
-[Android][], [iOS][], [web][], [React Native][], and
+[Android][], [SwiftUI][], [UIKit][], [React Native][], and
 [Xamarin.Forms][] developers.
 
 看我们为各种已经有相关平台开发经验的开发者准备的文档：
 - [给 Android 开发者的 Flutter 指南][Android]
-- [给 iOS 开发者的 Flutter 指南][iOS]
+- [给 iOS SwiftUI 开发者的 Flutter 指南][SwiftUI]
+- [给 iOS UIKit 开发者的 Flutter 指南][UIKit]
 - [给 React Native 开发者的 Flutter 指南][React Native]
 - [给 Web 开发者的 Flutter 指南][Web]
 - [给 Xamarin.Forms 开发者的 Flutter 指南][Xamarin.Forms]
@@ -103,7 +104,8 @@ Coming from another platform? Check out Flutter for:
 [FAQ]: {{site.url}}/resources/faq
 [Get started]: {{site.url}}/get-started/install
 [interactivity]: {{site.url}}/development/ui/interactive
-[iOS]: {{site.url}}/get-started/flutter-for/ios-devs
+[SwiftUI]: {{site.url}}/get-started/flutter-for/swiftui-devs
+[UIKit]: {{site.url}}/get-started/flutter-for/uikit-devs
 [React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
 [Understanding constraints]: {{site.url}}/development/ui/layout/constraints
 [web]: {{site.url}}/get-started/flutter-for/web-devs
@@ -195,7 +197,7 @@ We release new videos almost every week on the Flutter YouTube channel:
 
 我们每周都会在 Flutter 的 YouTube 频道更新视频，欢迎关注:
 
-<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/c/flutterdev">Flutter 的 YouTube 频道</a>
+<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
 
 **The documentation on this site reflects the
 latest stable release of Flutter.**

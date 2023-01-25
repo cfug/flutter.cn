@@ -13,7 +13,7 @@ as the main platform thread is rarely blocked.
 例如，在典型的 Flutter 应用中，Flutter 的 UI 是专门在 raster 线程上合成的。
 由于平台的主线程很少被阻塞，因此 Flutter 应用程序可以快速运行。
 
-While a platform view is rendered with Hybrid composition,
+While a platform view is rendered with hybrid composition,
 the Flutter UI is composed from the platform thread,
 which competes with other tasks like handling OS or plugin messages.
 
@@ -21,11 +21,11 @@ which competes with other tasks like handling OS or plugin messages.
 Flutter UI 由平台线程完成，与其他线程一起竞争，
 例如：处理系统或插件消息等任务。
 
-Prior to Android 10, Hybrid composition copied each Flutter frame
+Prior to Android 10, hybrid composition copied each Flutter frame
 out of the graphic memory into main memory, and then copied it back
 to a GPU texture. As this copy happens per frame, the performance of
 the entire Flutter UI might be impacted. In Android 10 or above, the
-graphics memory is copied once.
+graphics memory is copied only once.
 
 在 Android 10 之前，
 混合集成模式将每个 Flutter 帧从显存中复制到主内存中，

@@ -68,31 +68,40 @@ then do the following:
 确保你已经 [安装和配置][set up] 好了你的环境，
 然后做如下步骤：
 
- 1. [Create a basic "Hello World" Flutter app][hello-world].
+<?code-excerpt path-base="layout/base"?>
 
-    [创建一个简单的 Flutter app ——"Hello World"][hello-world]。
+ 1. [Create a new Flutter app][new-flutter-app].
 
- 2. Change the app bar title and the app title as follows:
+    [创建一个新的 Flutter 应用][new-flutter-app]
 
-    按照如下方法修改 app 标题栏的标题以及 app 的标题：
+ 2. Replace the contents in `lib/main.dart` with the following code:
 
-    <?code-excerpt "layout/base/lib/{main_starter,main}.dart"?>
-    ```diff
-    --- layout/base/lib/main_starter.dart
-    +++ layout/base/lib/main.dart
-    @@ -12,10 +12,10 @@
-       @override
-       Widget build(BuildContext context) {
-         return MaterialApp(
-    -      title: 'Welcome to Flutter',
-    +      title: 'Flutter layout demo',
-           home: Scaffold(
-             appBar: AppBar(
-    -          title: const Text('Welcome to Flutter'),
-    +          title: const Text('Flutter layout demo'),
-             ),
-             body: const Center(
-               child: Text('Hello World'),
+    用下面的代码来替换你的 `lib/main.dart` 文件:
+
+    <?code-excerpt "lib/main.dart (all)" title?>
+    ```dart
+    import 'package:flutter/material.dart';
+
+    void main() => runApp(const MyApp());
+
+    class MyApp extends StatelessWidget {
+      const MyApp({super.key});
+
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          title: 'Flutter layout demo',
+          home: Scaffold(
+            appBar: AppBar(
+              title: const Text('Flutter layout demo'),
+            ),
+            body: const Center(
+              child: Text('Hello World'),
+            ),
+          ),
+        );
+      }
+    }
     ```
 
 ## Step 1: Diagram the layout
@@ -616,7 +625,7 @@ You can add interactivity to this layout by following
 [automatic reformatting support]: {{site.url}}/development/tools/formatting
 [available online]: https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=
 [Flutter's approach to layout]: {{site.url}}/development/ui/layout
-[hello-world]: {{site.url}}/get-started/codelab#step-1-create-the-starter-flutter-app
+[new-flutter-app]: {{site.url}}/get-started/test-drive
 [images]: {{examples}}/layout/lakes/step6/images
 [`lake.jpg`]: {{rawExFile}}/layout/lakes/step5/images/lake.jpg
 [`lib/main.dart`]: {{examples}}/layout/lakes/step2/lib/main.dart

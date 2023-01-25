@@ -1417,7 +1417,7 @@ vertical space in your main UI.
 在现代的桌面应用程序中，经常会有定制应用窗口的标题栏、添加 Logo 或者其他控制的需求，
 能节省界面对于垂直空间的占用。
 
-![Samples of title bars]({{site.url}}/assets/images/docs/development/ui/layout/titlebar.png)
+![Samples of title bars]({{site.url}}/assets/images/docs/development/ui/layout/titlebar.png){:width="100%"}
 
 This isn't supported directly in Flutter, but you can use the
 [`bits_dojo`][] package to disable the native title bars,
@@ -1571,9 +1571,9 @@ return Row(
 );
 ```
 
-![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image1.png)
+![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image1.png){:width="75%"}
 
-![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image2.png)
+![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image2.png){:width="90%"}
 
 #### Menu bar
 

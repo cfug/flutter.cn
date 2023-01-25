@@ -102,6 +102,7 @@ or run `flutter test --help` in your terminal.
 [Plugins in Flutter tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
 
 ### Recipes
+{:.no_toc}
 
 ### 更多信息
 
@@ -132,6 +133,7 @@ an implementation much simpler than a full-blown UI system.
 但是，就像单元测试一样，widget 测试环境实现上比成熟的 UI 系统简单得多。
 
 ### Recipes
+{:.no_toc}
 
 ### 更多信息
 
@@ -166,6 +168,7 @@ testing page][].
 更多关于如何编写集成测试的相关信息，请参阅[集成测试文档][integration testing page]。
 
 ### Recipes
+{:.no_toc}
 
 ### 更多信息
 
@@ -218,7 +221,7 @@ integration services, see the following:
 [code coverage]: https://en.wikipedia.org/wiki/Code_coverage
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
 [Continuous delivery using fastlane with Flutter]: {{site.url}}/deployment/cd#fastlane
-[Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
+[Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/en/getting-started/getting-started-with-flutter-apps
 [How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing
 [mocked out]: {{site.url}}/cookbook/testing/unit/mocking
 [Test Flutter apps on Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/#testing-the-flutter-app

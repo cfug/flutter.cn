@@ -351,7 +351,7 @@ RenderObject.
 当您选择一个固定大小的 widget 而不是弹性 widget 时，它的布局信息将显示在布局浏览器中。
 你可以看到所选 widget 及其最近的上一级 RenderObject 的大小、约束和填充信息。
 
-![The Layout Explorer fixed size tool]({{site.url}}/assets/images/docs/tools/devtools/layout_explorer_fixed_layout.png)
+![The Layout Explorer fixed size tool]({{site.url}}/assets/images/docs/tools/devtools/layout_explorer_fixed_layout.png){:width="100%"}
 
 ## Visual debugging
 
@@ -763,7 +763,7 @@ widget's properties, render object, and children.
 
 从树的详细信息中，你可以获取有关 widget 的属性、渲染对象和子节点等有用信息。
 
-![The Details Tree view]({{site.url}}/assets/images/docs/tools/devtools/details_tree.png)
+![The Details Tree view]({{site.url}}/assets/images/docs/tools/devtools/details_tree.png){:width="100%"}
 
 
 ## Track widget creation
@@ -836,7 +836,7 @@ of the Flutter inspector.
 [DevTools written in Flutter]: {{site.url}}/development/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter
 [`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
 [flex layouts]: {{site.api}}/flutter/widgets/Flex-class.html
-[`FlexFit`]: {{site.api}}/flutter/widgets/FlexFit-class.html
+[`FlexFit`]: {{site.api}}/flutter/rendering/FlexFit.html
 [`FlexParentData.fit`]: {{site.api}}/flutter/rendering/FlexParentData/fit.html
 [`FlexParentData.flex`]: {{site.api}}/flutter/rendering/FlexParentData/flex.html
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance

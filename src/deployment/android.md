@@ -52,9 +52,9 @@ This page covers the following topics:
 
   [检查 app manifest 文件](#reviewing-the-app-manifest)
 
-* [Reviewing the build configuration](#reviewing-the-build-configuration)
+* [Reviewing the build configuration](#reviewing-the-gradle-build-configuration)
 
-  [检查构建配置](#reviewing-the-build-configuration)
+  [检查构建配置](#reviewing-the-gradle-build-configuration)
 
 * [Building the app for release](#building-the-app-for-release)
 
@@ -724,13 +724,11 @@ the Play Store.
 {{site.alert.note}}
 
   The Google Play Store prefers the app bundle format.
-  For more information, see [Android App Bundle][bundle] and
-  [About Android App Bundles][bundle2].
+  For more information, see [About Android App Bundles][bundle].
 
-  Google Play Store 更推荐 app bundle 方式.
-  更多信息可以参考 [Android App Bundle][bundle] and
-  [About Android App Bundles][bundle2].
-
+  Google Play 更推荐使用 app bundle 格式的应用，
+  更多信息可以参考 [Android App Bundle][bundle]。
+  
 {{site.alert.end}}
 
 {{site.alert.warning}}
@@ -1091,8 +1089,7 @@ The resulting app bundle or APK files are located in
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
-[bundle]: {{site.android-dev}}/platform/technology/app-bundle
-[bundle2]: {{site.android-dev}}/guide/app-bundle
+[bundle]: {{site.android-dev}}/guide/app-bundle
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [crash-issue]: https://issuetracker.google.com/issues/147096055
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
@@ -1108,7 +1105,7 @@ The resulting app bundle or APK files are located in
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
-[multidex-keep]: {{site.android-dev}}/studio/build/multidex#multidexkeepfile-property
+[multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
 [obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [official Play Store documentation Zh Lang]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=zh_CN

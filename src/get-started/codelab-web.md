@@ -16,17 +16,19 @@ js:
 
 {{site.alert.tip}}
 
-  This codelab walks you through writing your first Flutter
-  app on the web. You might prefer to try
-  [writing your first Flutter app on mobile][].
-  **Note that if you have downloaded and configured
-  Android and iOS tooling,
-  the completed app just works on all of these devices!**
+  This codelab walks you through writing
+  your first Flutter app on the web, specifically. 
+  You might prefer to try
+  [another codelab][first_flutter_codelab] 
+  that takes a more generic approach.
+  Note that the codelab on this page
+  does work on mobile and desktop
+  once you download and configure the appropriate tooling.
 
   这个 codelab 将引导你初步体验 Flutter 网页应用开发。
-  当然你可能更想去尝试 [编写你的第一个 Flutter 移动应用][writing your first Flutter app on mobile]。
-  **请注意，如果你已经下载和配置了 Android 和 iOS 开发工具，完整的应用只可以在这些设备上使用!**
-
+  当然你可能更想去尝试 [编写你的第一个 Flutter 应用][first_flutter_codelab]。
+  需要注意的是，在一切工具顺利安装的基础上，
+  本页面上的 codelab 将可以在移动端和桌面端的网页浏览器里运行。
 {{site.alert.end}}
 
 <img src="/assets/images/docs/get-started/sign-up.gif" alt="The web app that you'll be building" class='site-image-right'>
@@ -253,7 +255,7 @@ class SignUpForm extends StatefulWidget {
   const SignUpForm();
 
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
@@ -1095,7 +1097,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   });
 
   @override
-  State<StatefulWidget> createState() {
+  State<AnimatedProgressIndicator> createState() {
     return _AnimatedProgressIndicatorState();
   }
 }
@@ -1254,7 +1256,7 @@ class WelcomeScreen extends StatelessWidget {
 
 class SignUpForm extends StatefulWidget {
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
@@ -1349,7 +1351,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   });
 
   @override
-  State<StatefulWidget> createState() {
+  State<AnimatedProgressIndicator> createState() {
     return _AnimatedProgressIndicatorState();
   }
 }
@@ -1483,4 +1485,4 @@ Dart DevTools, or Flutter animations, see the following:
 [VS Code]: {{site.url}}/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/main/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
-[writing your first Flutter app on mobile]: {{site.url}}/get-started/codelab
+[first_flutter_codelab]: {{site.url}}/get-started/codelab

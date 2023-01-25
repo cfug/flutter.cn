@@ -136,16 +136,13 @@ $ flutter pub outdated
 
 We publish breaking change announcements to the
 [Flutter announcements mailing list][flutter-announce].
-You can also ask questions on the [Flutter dev mailing list][flutter-dev].
 Aside from subscribing to receive announcements,
 we'd love to hear from you!
 
 我们将在 [Flutter 通知邮件列表][flutter-announce] 上发布重大更改的公告。
-你也可以在 [Flutter 开发邮件列表][flutter-dev] 上提问！
 除了订阅接收公告外我们很乐意听取您的意见！
 
 [Flutter SDK releases]: {{site.url}}/development/tools/sdk/releases
 [release channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[flutter-dev]: {{site.groups}}/forum/#!forum/flutter-dev
 [pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec

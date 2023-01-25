@@ -189,13 +189,10 @@ Dart 插件的代码分析，可以做到：
   * Using [DevTools][], a suite of debugging and profiling
     tools that run in a browser
     _and include the Flutter inspector_.
-    DevTools replaces the previous browser-based profiling
-    tool, Observatory.
 
     使用 [开发者工具 (DevTools)][DevTools], 
     运行在浏览器里的一系列调试和分析工具，
-    **也包括 Flutter inspector**，开发者工具替代了之前的
-    Observatory 分析工具。
+    **也包括 Flutter inspector**。
     
   * Using Android Studio's (or IntelliJ's) built-in debugging
     features, such as the ability to set breakpoints.

@@ -244,8 +244,8 @@ Dart 特别注重简单性和可学习性，因此在增加新功能时，我们
 
 最后就是空安全的迁移，请即刻着手迁移，与我们共同构建和体验拥有健全空安全特性的 Dart 编程语言！
 
->>> **原文链接**: [Dart 官方博客](https://medium.com/dartlang/dart-2-18-f4b3101f146c)
->>>
->>> **本地化**: CFUG 团队: @chenglu、@Vadaski、@MeandNi、@Realank
->>>
->>> **中文链接**: [flutter.cn/posts/dart-2-18](https://flutter.cn/posts/dart-2-18)
+> **原文链接**: [Dart 官方博客](https://medium.com/dartlang/dart-2-18-f4b3101f146c)
+>
+> **本地化**: CFUG 团队: @chenglu、@Vadaski、@MeandNi、@Realank
+>
+> **中文链接**: [flutter.cn/posts/dart-2-18](https://flutter.cn/posts/dart-2-18)

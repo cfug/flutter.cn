@@ -184,10 +184,10 @@ Google Flutter 团队非常感谢社区中的每一位成员们为了让 Flutter
 
 ---
 
->>> **原文链接**: 
->>>
->>>https://medium.com/flutter/whats-new-in-flutter-3-3-893c7b9af1ff
->>>
->>> **本地化**: CFUG 团队: @AlexV525、@chenglu、@Vadaski、@Nayuta403
->>>
->>> **中文链接**: https://flutter.cn/posts/whats-new-in-flutter-3-3
+> **原文链接**: 
+>
+> https://medium.com/flutter/whats-new-in-flutter-3-3-893c7b9af1ff
+>
+> **本地化**: CFUG 团队: @AlexV525、@chenglu、@Vadaski、@Nayuta403
+>
+> **中文链接**: https://flutter.cn/posts/whats-new-in-flutter-3-3

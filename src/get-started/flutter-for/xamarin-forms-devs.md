@@ -2791,9 +2791,8 @@ doesn't recreate the list anymore, but instead adds to it.
 For more information, see
 [Your first Flutter app][first_codelab] codelab.
 
-更多信息，请访问
-[编写你的第一个 Flutter 应用程序，第 1 部分][Write your first Flutter app, part 1]
-和 [编写你的第一个 Flutter 应用程序，第 2 部分][Write your first Flutter app, part 2]。
+更多信息，请访问 codelab: 
+[编写你的第一个 Flutter 应用][first_codelab]。
 
 ## Working with text
 

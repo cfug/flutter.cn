@@ -60,7 +60,7 @@ Let's take a look:
   会将原生的 `android.view.View` 附加到视图层次结构中。
   因此，键盘处理和无障碍功能是开箱即用的。
   在 Android 10 之前，此模式可能会大大降低 Flutter UI 的帧吞吐量 (FPS)。
-  有关更多信息，请参见 [性能][performance] 小节。
+  有关更多信息，请参见 [性能](#performance) 小节。
 
 * [Virtual displays](#virtual-display)
   render the `android.view.View` instance to a texture, 

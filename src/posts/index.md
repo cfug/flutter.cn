@@ -70,4 +70,9 @@ title: 官方博客
 - [了解 Flutter 开发者们的 IDE 使用情况]({{site.main-url}}/posts/studying-developers-usage-of-ides-for-flutter-development)
 - [1 月 25 日见｜Flutter Forward 活动日程表正式发布！]({{site.main-url}}/posts/flutter-forward-2023)
 
+## 2023 年
+- [大年初四，Flutter Forward 中国社区直播活动与你不见不散]({{site.main-url}}/posts/flutter-forward-china-live)
+- [Flutter 这一年：2022 亮点时刻，文末领取 Flutter 红包封面！]({{site.main-url}}/posts/flutter-2022-highlight-moment)
+
+
 上述内容的刊登均以获得发布许可。

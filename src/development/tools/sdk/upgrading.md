@@ -140,7 +140,6 @@ Aside from subscribing to receive announcements,
 we'd love to hear from you!
 
 我们将在 [Flutter 通知邮件列表][flutter-announce] 上发布重大更改的公告。
-你也可以在 [Flutter 开发邮件列表][flutter-dev] 上提问！
 除了订阅接收公告外我们很乐意听取您的意见！
 
 [Flutter SDK releases]: {{site.url}}/development/tools/sdk/releases

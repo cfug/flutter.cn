@@ -68,7 +68,7 @@ Flutter 团队很高兴能 [在稳定版渠道上](https://github.com/flutter/en
 
 Impeller 的进展飞速离不开社区贡献者的支持。尤其是 [ColdPaleLight](https://github.com/ColdPaleLight)、[guoguo338](https://github.com/guoguo338)、[JsouLiang](https://github.com/JsouLiang) 以及 [magicianA](https://github.com/magicianA) 这些开发者，在此次发布版本的 Impeller 的 291 次提交中有 31 次 (>12%) 是他们提交的。非常感谢他们的帮助！
 
-我们也在 Impeller 的 Vulkan 支持 (旧设备会回落到 OpenGL) 上有一定的进展，但是 Android Impeller 尚未准备好进行公开预览。我们会在未来的发布中分享更多正在积极进行的 Impeller 开发进程，包括桌面和 Web 平台的支持。
+我们也在继续推进 Vulkan 作为 Impller 的渲染后端 (在一些老的设备上会降级到 OpenGL)，但是 Android Impeller 尚未准备好进行公开预览。我们会在未来的发布中分享更多正在积极进行的 Impeller 开发进程，包括桌面和 Web 平台的支持。
 
 若你感兴趣，可以关注 GitHub 上的 [Impeller 项目板](https://github.com/orgs/flutter/projects/21) 来跟进开发进度。
 
@@ -226,11 +226,11 @@ Bitcode 在 Flutter 应用中默认是关闭的，所以这也不应该会影响
 - 应用在图片的多路过滤器上
 - 应用在自定义着色器上
 
-一个例子是，Flutter 框架現已使用这个 API 以优化 Android 上的页面切换动画的性能，几乎减少了的帧光栅化一半的时间，减少掉帧，并允许动画达到 90/120fps 在支持这些刷新率的机器上。
+一个例子是，Flutter 框架现已使用这个 API 以优化 Android 上的页面切换动画的性能，几乎减少了帧光栅化一半的时间且减少了卡顿，而且在支持这些刷新率的机器上动画可以达到 90 / 120 FPS。
 
 ## 自定义着色器支持的改进
 
-本次发行版包含了许多关于 Flutter 对自定义着色器片段的优化支持。Flutter SDK 現已内置了一个着色器编译器，能够将 `pubspec.yaml` 文件中列出的 GSGL 着色器编译为目标平台的正确的平台特定对应的格式。此外，自定义着色器能够在开发阶段方便的执行 hot reload。自定义着色器目前已经在 iOS 上对 Skia 以及 Impeller 都支持了。
+本次发行版包含了许多关于 Flutter 对自定义着色器片段的优化支持。Flutter SDK 现已内置了一个着色器编译器，能够将 `pubspec.yaml` 文件中列出的 GSGL 着色器编译为目标平台的正确的平台特定对应的格式。此外，自定义着色器能够在开发阶段方便的执行 hot reload。自定义着色器目前已经在 iOS 上对 Skia 以及 Impeller 都支持了。
 
 我们为社区中分享的样例感到印象深刻，期待能够未来能有更多关于 Flutter 中的自定义着色器的创意。
 

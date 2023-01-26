@@ -94,10 +94,10 @@ Impeller 的进展飞速离不开社区贡献者的支持。尤其是 [ColdPaleL
 
 除了以上的新功能，本次更新还有其他的问题修复和优化改进，包括查看器 (Inspector)、网络记录器的 CPU 记录器的问题修复。你可以查看下面的 DevTools 更新日志了解更多细节。
 
--   [Flutter DevTools 2.17.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.17.0)
--   [Flutter DevTools 2.18.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.18.0)
--   [Flutter DevTools 2.19.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.19.0)
--   [Flutter DevTools 2.20.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.20.0)
+- [Flutter DevTools 2.17.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.17.0)
+- [Flutter DevTools 2.18.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.18.0)
+- [Flutter DevTools 2.19.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.19.0)
+- [Flutter DevTools 2.20.0 发行注记](https://flutter.cn/docs/development/tools/devtools/release-notes/release-notes-2.20.0)
 
 ## 自定义上下文菜单
 
@@ -144,19 +144,13 @@ Flutter 对国际化的支持已经焕然一新！我们对 `gen-l10n` 进行了
 
 更多内容可以了解已经更新的 [Flutter 应用里的国际化](https://flutter.cn/docs/development/accessibility-and-localization/internationalization) 文档。
 
-## Global selection improvements
-
 ## 全局的选择优化
 
 `SelectionArea` 现在已支持键盘操作。你可以通过键盘快捷键 `Shift+→` 等快捷键进行选择。
 
-## Background isolates
-
 ## 后台 isolate
 
 现在 [平台通道](https://flutter.cn/docs/development/platform-integration/platform-channels) 可以在 [任意 isolate](https://flutter.cn/docs/development/packages-and-plugins/background-processes) 中进行调用。先前平台通道只能在主 isolate 中进行调用。优化后会让插件和混合开发调用 isolate 和宿主平台代码更加简单。更多内容可以阅读 [撰写平台代码](https://flutter.cn/docs/development/platform-integration/platform-channels) 文档以及 [介绍后台 isolate 通道](https://medium.com/flutter/introducing-background-isolate-channels-7a299609cad8) 文章。
-
-## Text magnifier
 
 ## 文本放大镜
 
@@ -228,9 +222,9 @@ Bitcode 在 Flutter 应用中默认是关闭的，所以这也不应该会影响
 
 新的 `toImageSync` API 支持的例子：
 
--   快速捕捉一张昂贵的栅格化图片，以便跨多帧重复使用。
--   应用在图片的多路过滤器上
--   应用在自定义着色器上
+- 快速捕捉一张昂贵的栅格化图片，以便跨多帧重复使用。
+- 应用在图片的多路过滤器上
+- 应用在自定义着色器上
 
 一个例子是，Flutter 框架現已使用这个 API 以优化 Android 上的页面切换动画的性能，几乎减少了的帧光栅化一半的时间，减少掉帧，并允许动画达到 90/120fps 在支持这些刷新率的机器上。
 

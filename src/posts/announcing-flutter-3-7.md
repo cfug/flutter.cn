@@ -68,7 +68,7 @@ Flutter 团队很高兴能 [在稳定版渠道上](https://github.com/flutter/en
 
 Impeller 的进展飞速离不开社区贡献者的支持。尤其是 [ColdPaleLight](https://github.com/ColdPaleLight)、[guoguo338](https://github.com/guoguo338)、[JsouLiang](https://github.com/JsouLiang) 以及 [magicianA](https://github.com/magicianA) 这些开发者，在此次发布版本的 Impeller 的 291 次提交中有 31 次 (>12%) 是他们提交的。非常感谢他们的帮助！
 
-我们也在 Impeller 的 Vulkan 支持 (旧设备会回落到 OpenGL) 上有一定的进展，但是 Android Impeller 尚未准备好进行公开预览。我们会在未来的发布中分享更多正在积极进行的 Impeller 开发进程，包括桌面和 Web 平台的支持。
+我们也在继续推进 Vulkan 作为 Impller 的渲染后端 (在一些老的设备上会降级到 OpenGL)，但是 Android Impeller 尚未准备好进行公开预览。我们会在未来的发布中分享更多正在积极进行的 Impeller 开发进程，包括桌面和 Web 平台的支持。
 
 若你感兴趣，可以关注 GitHub 上的 [Impeller 项目板](https://github.com/orgs/flutter/projects/21) 来跟进开发进度。
 

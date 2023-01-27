@@ -218,6 +218,8 @@
               permalink: /docs/development/platform-integration/windows/run-loop-migration
             - title: 版本信息迁移
               permalink: /docs/development/platform-integration/windows/version-migration
+            - title: 暗色模式迁移
+              permalink: /docs/development/platform-integration/windows/dark-mode-migration
     - title: Package 和插件
       permalink: /docs/development/packages-and-plugins
       children:
@@ -445,6 +447,8 @@
       permalink: https://flutter.cn/brand
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
+    - title: 安全误报 [新增]
+      permalink: /docs/resources/security-false-positives
     - title: 技术视频和在线资源
       permalink: /docs/resources/videos
 

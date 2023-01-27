@@ -77,33 +77,54 @@ To override the web renderer at runtime:
 
 * Build the app with the `auto` option.
 
-  使用 auto 选项构建应用。
+  使用 `auto` 选项构建应用。
 
-* Insert a `<script>` tag  in `web/index.html` file before the `main.dart.js`
-  script.
- 
-  在 `web/index.html` 文件的 `main.dart.js` 前插入 `<script>` 标签。
+* Prepare a configuration object with the `renderer` property set to
+  `"canvaskit"` or `"html"`.
 
-* Set `window.flutterWebRenderer` to `"canvaskit"` or `"html"`:
+  准备一个 `renderer` 属性设定为 `"canvaskit"` 或 `"html"` 的配置对象。
 
-  配置 `window.flutterWebRenderer` 为 `"canvaskit"` 或者 `"html"`：
+* Pass that object to the `engineInitializer.initializeEngine(configuration);`
+  method on your [Flutter Web app initialization][web-app-init].
 
-```html
-  <script type="text/javascript">
-    let useHtml = // ...
-    if(useHtml) {
-      window.flutterWebRenderer = "html";
-    } else {
-      window.flutterWebRenderer = "canvaskit";
+  将这个对象在 [Flutter Web 应用初始化][web-app-init] 的时候传给 
+  `engineInitializer.initializeEngine(configuration);` 方法。
+
+```javascript
+let useHtml = // ...
+_flutter.loader.loadEntrypoint({
+  onEntrypointLoaded: async function(engineInitializer) {
+    // Run-time engine configuration
+    let config = {
+      renderer: useHtml ? "html" : "canvaskit",
     }
-  </script>
-  <script src="main.dart.js" type="application/javascript"></script>
+    let appRunner = await engineInitializer.initializeEngine(config);
+
+    await appRunner.runApp();
+  }
+});
 ```
 
 The web renderer can't be changed after the Flutter engine startup process
 begins in `main.dart.js`.
 
 Flutter engine 启动之后无法再在 `main.dart.js` 更换 web 渲染器。
+
+{{site.alert.note}}
+
+  As of **Flutter 3.7.0**,  setting a `window.flutterWebRenderer`
+  (an approach used in previous releases) displays a
+  **deprecation notice** in the JS console. For more information,
+  check out [Customizing web app initialization][web-app-init].
+
+  从 **Flutter 3.7.0** 开始，设置 `window.flutterWebRenderer`（以前版本中使用的一种方法）
+  会在 JS 控制台中显示 **弃用通知**。
+  有关详细信息，请查看 [自定义 Web 应用程序初始化][web-app-init]。
+  
+{{site.alert.end}}
+
+[web-app-init]: {{site.url}}/development/platform-integration/web/initialization
+
 
 ## Choosing which option to use
 

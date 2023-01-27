@@ -450,22 +450,9 @@ into the App Clip bundle.
 
 这将确保您的 Flutter 应用程序和引擎嵌入到 App Clip bundle 中。
 
-## Step 8 - Disable Bitcode
+## Step 8 - Integrate plugins
 
-In the App Clip target's **Build Settings** tab,
-set the **Enable Bitcode** setting to No. On Xcode 14
-and higher bitcode has been deprecated and this step is unnecessary.
-
-在 App Clip target 的 `Build Settings` 选项卡中，
-将 `Enable Bitcode` 设置设置为 No。
-
-{% include docs/app-figure.md
-image="development/platform-integration/ios-app-clip/bitcode.png"
-%}
-
-## Step 9 - Integrate plugins
-
-## Step 9 - 整合插件
+## Step 8 - 整合插件
 
 {{site.alert.warning}}
 
@@ -476,7 +463,7 @@ image="development/platform-integration/ios-app-clip/bitcode.png"
   
 {{site.alert.end}}
 
-**9.1**
+**8.1**
 
 Open the `Podfile` for your Flutter project
 or add-to-app host project.
@@ -542,7 +529,7 @@ target '<name of your App Clip target>'
 end
 ```
 
-**9.2**
+**8.2**
 
 From the command line,
 enter your Flutter project directory

@@ -108,38 +108,50 @@ properties, and include a package called
 `flutter_localizations`. As of January 2023,
 this package supports 79 languages.
 
-To begin, start by creating a new Flutter application in a directory of your choice with
-the `flutter create` command.
-
-<?code-excerpt "gen_l10n_example/lib/examples.txt (Create)"?>
-```
-flutter create <name_of_flutter_app>
-```
-
 默认情况下，Flutter 只提供美式英语的本地化。
 如果想要添加其他语言，你的应用必须指定额外的
 `MaterialApp` 或者 `CupertinoApp` 属性并且
 添加一个名为 `flutter_localizations` 的 package。
-截至到 2020 年 11 月份，这个 package 已经支持大约 78 种语言。
+截至到 2023 年 1 月份，这个 package 已经支持大约 79 种语言。
 
-To use flutter_localizations,
-add the package as a dependency to your `pubspec.yaml` file, as well as the `intl` package:
+To begin, start by creating a new Flutter application in a directory of your choice with
+the `flutter create` command.
 
-想要使用 flutter_localizations 的话，
-你需要在 `pubspec.yaml` 文件中添加它作为依赖：
+若要开始使用，在 Flutter 工程文件夹下执行 `flutter create` 命令:
+
+```terminal
+$ flutter create <name_of_flutter_app>
+```
+
+To use `flutter_localizations`,
+add the package as a dependency to your `pubspec.yaml` file, 
+as well as the `intl` package:
+
+想要使用 `flutter_localizations` 的话，
+你需要在 `pubspec.yaml` 文件中添加它和 `intl` 作为依赖：
+
+```terminal
+$ flutter pub add flutter_localizations --sdk=flutter
+$ flutter pub add intl:any
+```
+
+This results in a `pubspec.yml` with the following entries:
+
+最终的 `pubspec.yaml` 文件中形如：
 
 <?code-excerpt "gen_l10n_example/pubspec.yaml (FlutterLocalizations)"?>
 ```yaml
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations: # Add this line
-    sdk: flutter         # Add this line
-  intl: ^0.17.0 # Add this line
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 ```
 
-Next, run `pub get packages`, then import the `flutter_localizations` library and specify
-`localizationsDelegates` and `supportedLocales` for `MaterialApp`:
+Then import the `flutter_localizations` library and specify
+`localizationsDelegates` and `supportedLocales` for
+your `MaterialApp` or `CupertinoApp`:
 
 下一步，先运行 `pub get packages`，然后引入 flutter_localizations 库，
 然后为 MaterialApp 指定 `localizationsDelegates` 和 `supportedLocales`：
@@ -232,7 +244,7 @@ needs to be localized to a different locale than the locale configured for your 
 To observe this behavior, add a call to `Localizations.override`
 and a simple `CalendarDatePicker`:
 
-<?code-excerpt "gen_l10n_example/lib/examples.txt (CalendarDatePicker)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (CalendarDatePicker)"?>
 ```dart
 Widget build(BuildContext context) {
   return Scaffold(
@@ -241,7 +253,7 @@ Widget build(BuildContext context) {
     ),
     body: Center(
       child: Column(
-       mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           // Add the following code
           Localizations.override(
@@ -251,7 +263,7 @@ Widget build(BuildContext context) {
             // Alternatively, you can create a new widget and Localizations.override
             // will pass the updated BuildContext to the new widget.
             child: Builder(
-              builder: (BuildContext context) {
+              builder: (context) {
                 // A toy example for an internationalized Material widget.
                 return CalendarDatePicker(
                   initialDate: DateTime.now(),
@@ -270,6 +282,8 @@ Widget build(BuildContext context) {
 ```
 Hot reload the app and observe that the `CalendarDatePicker` widget re-renders in Spanish.
 
+应用热重载后，你将能够发现 `CalendarDatePicker` widget 显示为西班牙语了。
+
 <a name="adding-localized-messages"></a>
 ### Adding your own localized messages
 
@@ -279,29 +293,21 @@ Once the `flutter_localizations` package is added, use the
 following instructions to add localized text to your application.
 
 引入 `flutter_localizations` package 后，
-请按照以下说明将本地化的文本添加到您的应用程序。
+请按照以下说明将本地化的文本添加到您的应用。
 
-1. Add the `intl` package to the `pubspec.yaml` file:
+1. Add the `intl` package as a dependency,
+   using the version pinned by `flutter_localizations` with `any`:
 
-   将 `intl` package 添加到 `pubspec.yaml` 文件中：
+   将 `intl` package 添加为依赖，
+   使用 `any` 作为 `flutter_localizations` 的版本值:
 
-{% comment %}
-RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: flutter"
-{% endcomment %}
-   <?code-excerpt "gen_l10n_example/pubspec.yaml (Intl)" replace="/(?<!0) # Add this line//g" ?>
-   ```yaml
-   dependencies:
-     flutter:
-       sdk: flutter
-     flutter_localizations:
-       sdk: flutter
-     intl: ^0.17.0 # Add this line
+   ```terminal
+   $ flutter pub add intl:any
    ```
 
-2. Also, in the `pubspec.yaml` file, enable the `generate`
-   flag. This is added to the section of the pubspec that is
-   specific to Flutter, and usually comes later in the pubspec
-   file.
+2. Then in the `pubspec.yaml` file, enable the `generate` flag. 
+   This is added to the section of the pubspec that is specific to Flutter, 
+   and usually comes later in the pubspec file.
 
    另外，在 `pubspec.yaml` 文件中，启用 `generate` 标志。
    该设置项添加在 pubspec 中 Flutter 部分，
@@ -314,9 +320,9 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
      generate: true # Add this line
    ```
 
-3. Add a new yaml file to the root directory of the Flutter
-   project called `l10n.yaml` with the following content:
-   
+3. Add a new yaml file to the root directory of the Flutter project 
+   called `l10n.yaml` with the following content:
+
    在 Flutter 项目的根目录中添加一个新的 yaml 文件，
    命名为 `l10n.yaml`，其内容如下：
 
@@ -351,7 +357,7 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
    }
    ```
 
-5. Next, add an `app_es.arb` file in the same directory for
+5. Next, add an `app_es.arb` file in the same directory with a
    Spanish translation of the same message:
    
    接下来，在同一目录中添加一个 `app_es.arb` 文件，
@@ -412,7 +418,7 @@ RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: fl
    `localizationsDelegates` 和 `supportedLocales` 列表，
    而无需手动提供它们。
 
-   <?code-excerpt "gen_l10n_example/lib/examples.txt (MaterialAppExample)"?>
+   <?code-excerpt "gen_l10n_example/lib/examples.dart (MaterialAppExample)"?>
    ```dart
    const MaterialApp(
      title: 'Localizations Sample App',
@@ -462,8 +468,7 @@ string into [`MaterialApp.onGenerateTitle`][]:
 <?code-excerpt "intl_example/lib/main.dart (MaterialAppTitleExample)"?>
 ```dart
 return MaterialApp(
-  onGenerateTitle: (context) =>
-      DemoLocalizations.of(context).title,
+  onGenerateTitle: (context) => DemoLocalizations.of(context).title,
 ```
 
 ### Placeholders, plurals, and selects
@@ -554,26 +559,26 @@ The following example defines a message that pluralizes the word, "wombat":
 {% endraw %}
 
 Using a plural method is easy enough, just pass it the item count parameter:
-<?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/'He|hello|ombat/" replace="/\[/[\n    .../g"?>
+<?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/John|he|she|they|pronoun/" replace="/\[/[\n    .../g"?>
 ```dart
 // Examples of internationalized strings.
 return Column(
   children: <Widget>[
     ...
-    // Returns 'he'
-    Text(AppLocalizations.of(context)!.pronoun('male')),
-    // Returns 'she'
-    Text(AppLocalizations.of(context)!.pronoun('female')),
-    // Returns 'they'
-    Text(AppLocalizations.of(context)!.pronoun('other')),
+    // Returns 'no wombats'
+    Text(AppLocalizations.of(context)!.nWombats(0)),
+    // Returns '1 wombat'
+    Text(AppLocalizations.of(context)!.nWombats(1)),
+    // Returns '5 wombats'
+    Text(AppLocalizations.of(context)!.nWombats(5)),
   ],
 );
 ```
 
 
 Similar to plurals, you can also choose a value based on a `String` placeholder.
-This is most often used to support gendered languages. The syntax is
-<?code-excerpt "gen_l10n_example/lib/examples.txt (SelectSyntax)"?>
+This is most often used to support gendered languages. The syntax is:
+
 ```json
 "{selectPlaceholder, select, case{message} ... other{messageOther}}"
 ```
@@ -691,6 +696,9 @@ In the following example, the `DateTime` value that appears in the `helloWorldOn
 
 In an app where the locale is US English, the following expression would produce  “7/10/1996”. In a Russian locale, it would produce “10.07.1996”.
 
+在语言环境为英语(美国)的应用中，以下表达式将会是 7/10/1996，
+在俄罗斯语言环境中，它将是 10.07.1996。
+
 ```dart
 AppLocalizations.of(context).helloWorldOn(DateTime.utc(1996, 7, 10))
 ```
@@ -782,7 +790,7 @@ locales should include:
 为了让 `CN`、`TW` 和 `HK` 能够更充分地表示到每个中文变体，
 构建应用时，设定支持的语言列表可以参考如下代码：
 
-<?code-excerpt "gen_l10n_example/lib/examples.txt (SupportedLocales)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
 ```dart
 supportedLocales: [
   Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
@@ -876,9 +884,10 @@ widget 定义了它的子节点的语言环境和依赖的本地化的资源。
 You can always lookup an app's current locale with
 `Localizations.localeOf()`:
 
-你可以通过调用 `Localizations.localeOf()` 方法来查看 app 当前的语言环境。 
+你可以通过调用 `Localizations.localeOf()`
+方法来查看 app 当前的语言环境:
 
-<?code-excerpt "gen_l10n_example/lib/examples.txt (MyLocale)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (MyLocale)"?>
 ```dart
 Locale myLocale = Localizations.localeOf(context);
 ```
@@ -905,7 +914,7 @@ method can provide a [`localeResolutionCallback`][].
 For example, to have your app unconditionally accept
 whatever locale the user selects:
 
-<?code-excerpt "gen_l10n_example/lib/examples.txt (LocaleResolution)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (LocaleResolution)"?>
 ```dart
 MaterialApp(
   localeResolutionCallback: (
@@ -1487,7 +1496,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     在 app 的根目录，使用 `lib/main.dart` 生成 `l10n/intl_messages.arb`：
 
     ```terminal
-    $ flutter pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
+    $ dart run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
     ```
 
     The `intl_messages.arb` file is a JSON format map with one entry for
@@ -1510,7 +1519,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     以及 `intl_messages_all.dart` 文件，它引入了所有的信息文件。
 
     ```terminal
-    $ flutter pub run intl_translation:generate_from_arb \
+    $ dart run intl_translation:generate_from_arb \
         --output-dir=lib/l10n --no-use-deferred-loading \
         lib/main.dart lib/l10n/intl_*.arb
     ```
@@ -1523,7 +1532,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     列出的 `.arb` 文件是由 `intl_translation:extract_to_arb` 命令生成的。
 
     ```terminal
-    $ flutter pub run intl_translation:generate_from_arb \
+    $ dart run intl_translation:generate_from_arb \
         --output-dir=lib/l10n --no-use-deferred-loading \
         lib/main.dart \
         lib/l10n/intl_en.arb lib/l10n/intl_fr.arb lib/l10n/intl_messages.arb

@@ -82,7 +82,7 @@ class HeadingItem implements ListItem {
   Widget buildTitle(BuildContext context) {
     return Text(
       heading,
-      style: Theme.of(context).textTheme.headline5,
+      style: Theme.of(context).textTheme.headlineSmall,
     );
   }
 
@@ -242,7 +242,7 @@ class HeadingItem implements ListItem {
   Widget buildTitle(BuildContext context) {
     return Text(
       heading,
-      style: Theme.of(context).textTheme.headline5,
+      style: Theme.of(context).textTheme.headlineSmall,
     );
   }
 

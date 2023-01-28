@@ -743,6 +743,7 @@ compression less efficient (see the
 [iOS App Store Specific Considerations][]
 section of Apple’s [QA1795][]).
 
+<<<<<<< HEAD
 在 iOS 平台上，跟据 App Store Connect 的数据，
 同一应用的发布 IPA 在 iPhone X 上的下载文件体积为 10.9 MB。
 IPA 比 APK 大，主要是因为 Apple 加密了 IPA 中的二进制文件，
@@ -762,6 +763,15 @@ stripped out during the final steps of the build.
 These steps happen after archiving your app and
 shipping it to the store. Note bitcode has been deprecated
 and will be removed from Flutter in a future release.
+=======
+{{site.alert.note}}
+  The release engine binary used to include LLVM IR (bitcode).
+  However, Apple [deprecated bitcode in Xcode 14][] and removed support,
+  so it has been removed from the Flutter 3.7 release.
+{{site.alert.end}}
+
+[deprecated bitcode in Xcode 14]: {{site.apple-dev}}/documentation/xcode-release-notes/xcode-14-release-notes
+>>>>>>> 4dbd3b8b2010ddec7bcd30bd25c61ed53d338446
 
 Release 模式下引擎二进制产物将包含 LLVM 的中间语言表示 (bitcode)。
 Xcode 将使用 bitcode 为 App Store

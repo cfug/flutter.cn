@@ -44,7 +44,7 @@ workshop 链接也会提供给你相关的 YouTube 视频，
 ## 适用于初级开发者
 
 If you're new to Flutter, we recommend starting with
-one of these codelabs:
+one of the following codelabs:
 
 如果你刚开始学习 Flutter，
 我们推荐你学习下面的 Codelab 之一：
@@ -65,6 +65,8 @@ TODO(filiph): add the video for the new codelab when ready
   Create a simple app that automatically generates cool-sounding names,
   such as "newstay", "lightstream", "mainbrake", or "graypine".
   This app is responsive and runs on mobile, desktop, and web.
+  (This also replaces the previous "write your first Flutter app"
+  for mobile, part 1 and part 2 codelabs.)
 
   [你的第一个 Flutter 应用][Your first Flutter app]<br>
   创建一个简单的应用，来自动生成很酷的名字，比如:
@@ -178,7 +180,7 @@ like layout and animations:
 
 * [Take your Flutter app from boring to beautiful][]<br>
   Learn how to use some of the features in Material 3
-  to make your app more beautiful *and* more responsive.
+  to make your app more beautiful _and_ more responsive.
 
   [让你的 Flutter 应用从平淡到出彩][Take your Flutter app from boring to beautiful] **新增内容**<br>
   学习如何使用 Material 3 的一些特性让你的应用更出彩并加强其响应式特性。
@@ -229,7 +231,7 @@ like layout and animations:
 
 * [Adaptive Apps in Flutter][]<br>
   Learn how to build a Flutter app that adapts to the 
-  platform that it is running on, be that Android, iOS, 
+  platform that it's running on, be that Android, iOS, 
   the web, Windows, macOS, or Linux.
 
   [使用 Flutter 构建自适应应用][Adaptive Apps in Flutter]<br>
@@ -264,20 +266,14 @@ Learn how to use Flutter with other technologies.
 
 学习如何使用在 Flutter 中使用其他技术产品/平台：
 
-* [Adding WebView to your Flutter app][] **NEW**<br>
-  With the WebView Flutter plugin you can add a WebView 
-  widget to your Android or iOS Flutter app.
+{% comment %}
+  Once we get at least 3 codelabs on a specific topic,
+  add a subheader for that topic.
+{% endcomment %}
 
-  [为你的 Flutter 应用添加 WebView][Adding WebView to your Flutter app]<br>
-  使用 WebView Flutter 插件，你可以将 WebView widget
-  添加到你的 Android 或 iOS Flutter 应用程序中。
+### Monetizing Flutter
 
-* [Adding Google Maps to a Flutter app][]<br>
-  Display a Google map in an app, retrieve data from a
-  web service, and display the data as markers on the map.
-
-  [在 Flutter 应用中添加谷歌地图][Adding Google Maps to a Flutter app]<br>
-  在应用里显示谷歌地图，接收网络传回的数据，在地图上显示一个标示。
+### 使用 Flutter 盈利
 
 * [Adding AdMob Ads to a Flutter app][]<br>
   Learn how to add an AdMob banner, an interstitial ad,
@@ -305,6 +301,82 @@ Learn how to use Flutter with other technologies.
   扩展一个使用 Dash 吉祥物作为货币的简单游戏应用程序，
   以提供三种类型的应用程序内购买：消耗品、非消耗品和订阅。
 
+[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
+[Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
+[Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
+
+### Flutter and Firebase
+
+### Flutter 和 Firebase 结合
+
+* [Add a user authentication flow to a Flutter app using FirebaseUI][]<br>
+  Learn how to add Firebase authentication to a Flutter app
+  with only a few lines of code.
+
+* [Get to know Firebase for Flutter][firebase-ws] (workshop)<br>
+  An instructor-led version of our popular
+  "Get to know Firebase for Flutter" codelab
+  (listed below).
+
+  [在 Flutter 里使用 Firebase][firebase-ws] (workshop)<br>
+  我们广受欢迎的「在 Flutter 里使用 Firebase」codelab 的讲师指导版本（如下所列）。
+
+* [Get to know Firebase for Flutter][]<br>
+  Build an event RSVP and guestbook chat app on both Android
+  and iOS using Flutter, authenticating users with Firebase
+  Authentication, and sync data using Cloud Firestore.
+
+  [在 Flutter 里使用 Firebase][Get to know Firebase for Flutter]<br>
+  学习如何在 Flutter 里使用 Firebase 实时数据库的功能，
+  以及如何使用事物 (transaction) 同时更新不同设备里的信息。
+
+* [Local development for your Flutter apps using the Firebase Emulator Suite][]<br>
+  Learn how to use the Firebase Emulator Suite when
+  developing with Flutter. You will also learn to use
+  the Auth and Firestore emulators.
+
+[Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
+[firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
+[Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter
+[Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
+
+### Flutter and TensorFlow
+
+### Flutter 和 TensorFlow 结合
+
+* [Create a custom text-classification model with TensorFlow Lite Model Maker][]<br>
+
+* [Create a Flutter app to classify texts with TensorFlow][]<br>
+  Learn how to run a text-classification inference from a Flutter
+  app with TensorFlow Serving through REST and gRPC.
+
+* [Train a comment-spam detection model with TensorFlow Lite Model Maker][]<br>
+  Learn how to install the TensorFlow Lite Model Maker with Colab,
+  How to use a data loader, and how to build a model.
+
+[Create a custom text-classification model with TensorFlow Lite Model Maker]: {{site.developers}}/codelabs/classify-text-update-tensorflow-serving
+[Create a Flutter app to classify texts with TensorFlow]: {{site.developers}}/codelabs/classify-texts-flutter-tensorflow-serving
+[Train a comment-spam detection model with TensorFlow Lite Model Maker]: {{site.developers}}/codelabs/classify-text-tensorflow-serving
+
+### Flutter and other technologies
+
+### Flutter 和其他技术结合
+
+* [Adding Google Maps to a Flutter app][]<br>
+  Display a Google map in an app, retrieve data from a
+  web service, and display the data as markers on the map.
+
+  [在 Flutter 应用中添加谷歌地图][Adding Google Maps to a Flutter app]<br>
+  在应用里显示谷歌地图，接收网络传回的数据，在地图上显示一个标示。
+
+* [Adding WebView to your Flutter app][]<br>
+  With the WebView Flutter plugin you can add a WebView 
+  widget to your Android or iOS Flutter app.
+
+  [为你的 Flutter 应用添加 WebView][Adding WebView to your Flutter app]<br>
+  使用 WebView Flutter 插件，你可以将 WebView widget
+  添加到你的 Android 或 iOS Flutter 应用程序中。
+
 * [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
@@ -322,32 +394,22 @@ Learn how to use Flutter with other technologies.
   学习如何构建可以回答有关 Dialogflow 工具的最常见问题的移动式常见问题解答机器人。
   终端用户可以通过移动设备的内置麦克风与文本界面交互或流式传输语音交互。
 
-* [Get to know Firebase for Flutter][firebase-ws] (workshop)**NEW!**<br>
-  An instructor-led version of our popular
-  "Get to know Firebase for Flutter" codelab
-  (listed below).
+* [Building a game with Flutter and Flame][]<br> **NEW**
+  Learn how to create a platform game (featuring
+  Dash or Sparky), using the Flame package.
 
-  [在 Flutter 里使用 Firebase][firebase-ws] (workshop) **新!**<br>
-  我们广受欢迎的「在 Flutter 里使用 Firebase」codelab 的讲师指导版本（如下所列）。
+* [Using FFI in a Flutter plugin][]<br> **NEW**
+  Learn how to use Dart's FFI (foreign function interface)
+  library, ffigen, allowing you to leverage
+  existing native libraries that provide a
+  C interface.
 
-* [Get to know Firebase for Flutter][]<br>
-  Build an event RSVP and guestbook chat app on both Android
-  and iOS using Flutter, authenticating users with Firebase
-  Authentication and sync data using Cloud Firestore.
-
-  [在 Flutter 里使用 Firebase][Get to know Firebase for Flutter]<br>
-  学习如何在 Flutter 里使用 Firebase 实时数据库的功能，
-  以及如何使用事物 (transaction) 同时更新不同设备里的信息。
-
-[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
-[Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
-[Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
+[Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: https://www.bilibili.com/video/BV1pX4y1A7SH/
-[Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
-[firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
-[Get to know Firebase for Flutter]: {{site.firebase}}/learn/codelabs/firebase-get-to-know-flutter
+[Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
+[Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 
 ## Testing
 
@@ -374,7 +436,7 @@ Learn how to test your Flutter application.
 ## 撰写平台特别的代码
 
 Learn how to write code that's targeted for specific platforms,
-like iOS, Android, the web, and the desktop.
+like iOS, Android, desktop, or the web.
 
 学习如何撰写在特定的平台运行的代码，比如
 iOS、Android、Web 和桌面端。
@@ -412,13 +474,15 @@ iOS、Android、Web 和桌面端。
   然后将应用部署到 Firebase 上。最后使用 Flutter 插件
   启动应用以及显示隐私权政策。
 
-* [Write a Flutter desktop application][] **UPDATED FOR WINDOWS**<br>
-  Build a Flutter desktop app that accesses GitHub APIs to retrieve your
-  repositories, assigned issues, and pull requests. As part of this task,
+* [Write a Flutter desktop application][]<br>
+  Build a Flutter desktop app (Windows, Linux, or macOS)
+  that accesses GitHub APIs to retrieve your repositories,
+  assigned issues, and pull requests. As part of this task,
   create and use plugins to interact with native APIs and desktop applications,
   and use code generation to build type-safe client libraries for GitHub's APIs.
 
-  [编写一个 Flutter 桌面应用][Write a Flutter desktop application] **已为 Windows 更新**<br>
+  [编写一个 Flutter 桌面应用][Write a Flutter desktop application] <br>
+  构建一个 Flutter 桌面端应用，适用于 Windows、Linux 和 macOS。
   构建一个 Flutter 桌面应用以通过 GitHub APIs 来检索你的代码仓库 (repo)，
   已分配的问题 (issue) 和拉取请求 (pull request)。
   本任务还有一部分内容，需要创建并使用插件，

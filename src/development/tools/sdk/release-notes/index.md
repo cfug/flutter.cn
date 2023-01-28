@@ -15,6 +15,9 @@ releases to the stable channel.
   [Hotfixes to the Stable Channel][] on the Flutter wiki.
 {{site.alert.end}}
 
+* 3.7.0
+  * [3.7.0 announcement][]
+  * [3.7.0 release notes & change log][]
 * 3.3.0
   * [3.3.0 announcement][]
   * [3.3.0 release notes & change log][]
@@ -51,6 +54,8 @@ releases to the stable channel.
 * Earlier
   * [Archived release notes][]
 
+[3.7.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-7-38cbea71133c
+[3.7.0 release notes & change log]: {{site.url}}/development/tools/sdk/release-notes/release-notes-3.7.0
 [3.3.0 announcement]: {{site.flutter-medium}}/announcing-flutter-3-3-at-flutter-vikings-6f213e068793
 [3.3.0 release notes & change log]: {{site.url}}/development/tools/sdk/release-notes/release-notes-3.3.0
 [3.0.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-8c74a5bc32d0

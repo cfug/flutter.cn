@@ -42,6 +42,23 @@ jobs:
         run: make test FLUTTER_TEST_BRANCH=${{ matrix.branch }}
         continue-on-error: ${{ matrix.experimental }}
 
+  test_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+        with:
+          submodules: recursive
+      - name: Move docs
+        run: make move-docs
+      - name: Build site and check links
+        run: make build
+      - name: Install Node for Firebase install
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools@11.16.0
+
   deploy:
     needs: test
     runs-on: ubuntu-latest

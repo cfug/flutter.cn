@@ -18,8 +18,6 @@ mkdir docs
 mv -- */ docs/
 # Move all markdown files to /docs.
 mv *.md docs/
-# Copy the index.md out of docs.
-cp docs/index.md index.md
 
 # Move out all directories start with _.
 mv docs/_* ./

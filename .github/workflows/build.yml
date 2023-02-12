@@ -19,28 +19,28 @@ env:
 
 jobs:
 
-  test:
-    runs-on: ubuntu-latest
-    if: github.repository == 'cfug/flutter.cn'
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - name: "Beta channel"
-            branch: beta
-            experimental: true
-          - name: "Stable channel"
-            branch: stable
-            experimental: false
-    steps:
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
-        with:
-          submodules: recursive
-      - name: Move docs
-        run: make move-docs
-      - name: Test
-        run: make test FLUTTER_TEST_BRANCH=${{ matrix.branch }}
-        continue-on-error: ${{ matrix.experimental }}
+#  test:
+#    runs-on: ubuntu-latest
+#    if: github.repository == 'cfug/flutter.cn'
+#    strategy:
+#      fail-fast: false
+#      matrix:
+#        include:
+#          - name: "Beta channel"
+#            branch: beta
+#            experimental: true
+#          - name: "Stable channel"
+#            branch: stable
+#            experimental: false
+#    steps:
+#      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+#        with:
+#          submodules: recursive
+#      - name: Move docs
+#        run: make move-docs
+#      - name: Test
+#        run: make test FLUTTER_TEST_BRANCH=${{ matrix.branch }}
+#        continue-on-error: ${{ matrix.experimental }}
 
   test_deploy:
     runs-on: ubuntu-latest

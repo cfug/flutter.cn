@@ -108,7 +108,7 @@ EXPOSE 4002
 # Firebase emulator port
 # Airplay runs on :5000 by default now
 EXPOSE 5502
-EXPOSE 5500
+
 
 
 # ============== BUILD PROD JEKYLL SITE ==============

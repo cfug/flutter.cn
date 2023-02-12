@@ -33,6 +33,7 @@ clean_up() {
 }
 
 echo "Starting Firebase emulator async..."
+cd _site
 npx firebase emulators:start \
   --only hosting \
   --project default > /dev/null 2>&1 &
@@ -47,6 +48,7 @@ else
   echo "Emulator is running in background"
 fi
 
+cd ../
 SKIP_FILE="./tool/config/linkcheck-skip-list.txt"
 
 # Will naturally print all output to stdout for visibility

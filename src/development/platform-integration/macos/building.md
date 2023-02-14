@@ -89,7 +89,7 @@ section below to understand how entitlements,
 the App Sandbox, and the Hardened Runtime
 impact your distributable application.
 
-在 Xcode 中，请参考苹果官网指南 [在分发前对 macOS 软件进行公证][documentation on notarizing macOS Applications] 或 [使用 App Store 分发应用程序][on distributing an application through the App Store]。
+在 Xcode 中开发，请参考苹果官网指南 [在分发前对 macOS 软件进行公证][documentation on notarizing macOS Applications] 或 [使用 App Store 分发应用程序][on distributing an application through the App Store]。
 此外，您还应该阅读本文下方的 [macOS 支持章节](#entitlements-and-the-app-sandbox)，以了解授权机制、沙盒和强化版运行时如何影响可分发的应用程序。
 
 [Build and release a macOS app][] provides a more detailed

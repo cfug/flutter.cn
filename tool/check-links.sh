@@ -50,4 +50,4 @@ fi
 SKIP_FILE="./tool/config/linkcheck-skip-list.txt"
 
 # Will naturally print all output to stdout for visibility
-dart run linkcheck http://localhost/:$EMULATOR_PORT/docs/ --skip-file $SKIP_FILE
+dart run linkcheck http://localhost:$EMULATOR_PORT/docs/ --skip-file $SKIP_FILE

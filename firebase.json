@@ -39,7 +39,7 @@
       { "source": "/desktop/windows", "destination": "/development/platform-integration/windows/building", "type": 301 },
       { "source": "/desktop/macos", "destination": "/development/platform-integration/macos/building", "type": 301 },
       { "source": "/desktop/linux", "destination": "/development/platform-integration/linux/building", "type": 301 },
-      { "source": "/perf/rendering/*", "destination": "/perf", "type": 301 },
+      { "source": "/docs/perf/rendering/*", "destination": "/docs/perf", "type": 301 },
       { "source": "/developing-packages", "destination": "/development/packages-and-plugins/developing-packages", "type": 301 },
       { "source": "/development/ios-14", "destination": "/development/platform-integration/ios/ios-debugging", "type": 301 },
       { "source": "/development/ios-project-migration", "destination": "/development/platform-integration/ios", "type": 301 },

@@ -33,9 +33,10 @@ clean_up() {
 }
 
 echo "Starting emulator async..."
-npx serve $EMULATOR_PORT > /dev/null &
+cd _site
+serve $EMULATOR_PORT > /dev/null &
 
-sleep 3 # wait a few just in case
+sleep 5 # wait a few just in case
 
 SKIP_FILE="./tool/config/linkcheck-skip-list.txt"
 

@@ -34,7 +34,7 @@ clean_up() {
 
 echo "Starting emulator async..."
 cd _site
-serve $EMULATOR_PORT > /dev/null &
+ruby -run -e httpd . -p$EMULATOR_PORT > /dev/null &
 
 sleep 5 # wait a few just in case
 

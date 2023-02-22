@@ -33,7 +33,7 @@ clean_up() {
 }
 
 echo "Starting emulator async..."
-npx serve $EMULATOR_PORT > /dev/null
+npx serve $EMULATOR_PORT > /dev/null &
 
 sleep 3 # wait a few just in case
 

@@ -15,13 +15,13 @@
       { "regex": "^\/(flutter(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "^\/(objcdoc(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "^\/(javadoc(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
+      { "regex": "(?P<name>.*)\\.html$", "destination": ":name", "type": 301 },
+      { "regex": "(?P<name>.*)\\.$", "destination": ":name", "type": 301 },
 
       { "source": "/ads", "destination": "https://flutter.dev/monetization", "type": 301 },
       { "source": "/community", "destination": "https://flutter.dev/community", "type": 301 },
       { "source": "/showcase", "destination": "https://flutter.dev/showcase", "type": 301 },
       { "source": "/support", "destination": "https://flutter.dev/community", "type": 301 },
-      
-
       { "source": "/accessibility", "destination": "/development/accessibility-and-localization/accessibility", "type": 301 },
       { "source": "/adaptations", "destination": "/resources/platform-adaptations", "type": 301 },
       { "source": "/adaptive*", "destination": "/development/ui/layout/adaptive-responsive", "type": 301 },
@@ -39,7 +39,7 @@
       { "source": "/desktop/windows", "destination": "/development/platform-integration/windows/building", "type": 301 },
       { "source": "/desktop/macos", "destination": "/development/platform-integration/macos/building", "type": 301 },
       { "source": "/desktop/linux", "destination": "/development/platform-integration/linux/building", "type": 301 },
-      { "source": "/docs/perf/rendering/*", "destination": "/docs/perf", "type": 301 },
+      { "source": "/perf/rendering/*", "destination": "/perf", "type": 301 },
       { "source": "/developing-packages", "destination": "/development/packages-and-plugins/developing-packages", "type": 301 },
       { "source": "/development/ios-14", "destination": "/development/platform-integration/ios/ios-debugging", "type": 301 },
       { "source": "/development/ios-project-migration", "destination": "/development/platform-integration/ios", "type": 301 },

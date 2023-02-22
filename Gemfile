@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'jekyll', '4.3.2'
 gem 'jekyll-sass-converter', '~> 2.2.0'
 gem 'webrick'
+gem 'serve'
 
 # Used for custom _plugins
 gem 'activesupport', '~> 7.0.4'

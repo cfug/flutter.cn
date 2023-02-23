@@ -53,7 +53,7 @@
     {% endif %}
 
     {% assign desc = page.description -%}
-    {% unless desc and desc != '' -%}
+    {% unless page.url contains '/posts' or page.url contains '/community' or desc and desc != '' -%}
       {% assign error = page.url | append: ' must have a description specified!' -%}
       {{ error | throw_error }}
     {% endunless %}

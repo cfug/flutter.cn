@@ -343,8 +343,20 @@ DevTools 支持导入和导出时间线快照。单击 export 按钮
 要导入时间线快照，可以从任何页面拖放快照到 DevTools。
 提示：DevTools 仅支持导入 DevTools 导出的源文件。
 
+## Other resources
+
+## 其他资源
+
+To learn how to monitor an app's performance and
+detect jank using DevTools, check out a guided
+[Performance View tutorial][performance-tutorial].
+
+想要学习如何使用 DevTools 监控应用的性能和检测卡顿，
+可以阅读 [性能视图教程][performance-tutorial]。
+
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export
+[performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230

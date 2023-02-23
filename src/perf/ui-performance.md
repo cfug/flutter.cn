@@ -153,23 +153,37 @@ profiling tools.
 Flutter 的分析模式和发布模式的编译和运行基本相同。
 例如，分析模式为分析工具提供了追踪信息。
 
+{{site.alert.note}}
+
+  DevTools can't connect to a Flutter web app running
+  in profile mode. Use Chrome DevTools to
+  [generate timeline events][] for a web app.
+
+  DevTools 无法连接到以性能模式运行的 Flutter 应用。
+  你需要使用 Chrome 的 DevTools 来为 Flutter Web 应用
+  [生成时间线事件][generate timeline events]。
+
+{{site.alert.end}}
+
+[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
+
+
 Launch the app in profile mode as follows:
 
 使用分析模式运行应用的方法：
 
-- In Android Studio and IntelliJ, use the
-  **Run > Flutter Run main.dart in Profile Mode** menu item.
-  
-  在 Android Studio 和 IntelliJ 使用
-  **Run > Flutter Run main.dart in Profile Mode** 选项
-  
 - In VS Code, open your `launch.json` file, and set the
   `flutterMode` property to `profile`
   (when done profiling, change it back to `release` or `debug`):
-  
+
   在 VS Code 中，打开 `launch.json` 文件，
   设置 `flutterMode` 属性为 `profile`（当分析完成后，改回 `release` 或者 `debug`）：
 
+- In Android Studio and IntelliJ, use the
+  **Run > Flutter Run main.dart in Profile Mode** menu item.
+
+  在 Android Studio 和 IntelliJ 使用
+  **Run > Flutter Run main.dart in Profile Mode** 选项
 
   ```json
   "configurations": [
@@ -181,6 +195,7 @@ Launch the app in profile mode as follows:
     }
   ]
   ```
+
 - From the command line, use the `--profile` flag:
 
   命令行使用 `--profile` 参数运行

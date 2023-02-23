@@ -10,7 +10,7 @@ keywords: 网络请求
 ## Cross-platform http networking
 
 The [`http`][] package provides the simplest way to issue http requests. This
-package is supported on Android, iOS, and the web.
+package is supported on Android, iOS, macOS, Windows, Linux and the web.
 
 ## Platform notes
 

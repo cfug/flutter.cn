@@ -1370,21 +1370,26 @@ and Swift (with Objective-C interop).
   
 **Pigeon 文件:**
 
-<?code-excerpt "lib/generated_pigeon.dart (Search)"?>
+<?code-excerpt "lib/pigeon_source.dart (Search)"?>
 ```dart
 import 'package:pigeon/pigeon.dart';
 
 class SearchRequest {
-  String query = '';
+  final String query;
+
+  SearchRequest({required this.query});
 }
 
 class SearchReply {
-  String result = '';
+  final String result;
+
+  SearchReply({required this.result});
 }
 
 @HostApi()
 abstract class Api {
-  Future search(SearchRequest request);
+  @async
+  SearchReply search(SearchRequest request);
 }
 ```
 
@@ -1397,7 +1402,7 @@ abstract class Api {
 import 'generated_pigeon.dart';
 
 Future<void> onClick() async {
-  SearchRequest request = SearchRequest()..query = 'test';
+  SearchRequest request = SearchRequest(query: 'test');
   Api api = SomeApi();
   SearchReply reply = await api.search(request);
   print('reply: ${reply.result}');

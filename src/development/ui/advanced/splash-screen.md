@@ -1,12 +1,12 @@
 ---
 title: Adding a splash screen to your mobile app
-title: 向应用添加闪屏页
+title: 向应用添加启动页（闪屏页）
 short-title: Splash screens
-short-title: 闪屏页
+short-title: 启动页（闪屏页）
 description: Learn how to add a splash screen to your mobile app.
-description: 了解如何向你的应用添加一个闪屏页。
+description: 了解如何向你的应用添加一个启动页。
 tags: 用户界面,Flutter UI
-keywords: 闪屏页,启动页,Loading图,应用商店
+keywords: 启动页,闪屏页,Loading图,应用商店
 ---
 
 <img src='/assets/images/docs/development/ui/splash-screen/android-splash-screen/splash-screens_header.png'
@@ -28,7 +28,7 @@ appropriately on iOS and Android.
 {{site.alert.note}}
 
   For more information on implementing splash screens
-  on web and desktop platforms, see the
+  on web and desktop platforms, check out the
   [Customizing web app initialization guide][].
 
   有关在 Web 和桌面平台上实现启动画面 (闪屏页) 的更多信息，请参阅 
@@ -50,9 +50,8 @@ provide the app's launch screen.
 
 The default Flutter template includes an Xcode
 storyboard named `LaunchScreen.storyboard`
-that can be customized as you see fit with
-your own assets. By default,
-the storyboard displays a blank image,
+that can be customized your own assets.
+By default, the storyboard displays a blank image,
 but you can change this. To do so,
 open the Flutter app's Xcode project
 by typing `open ios/Runner.xcworkspace`
@@ -107,7 +106,7 @@ initializes.
   which is displayed until the framework draws the first frame.
   This launch screen can act as both an Android launch screen and an
   Android splash screen via customization, and thus, is referred to
-  as both terms. For example of such customization, see the
+  as both terms. For example of such customization, check out the
   [Android splash screen sample app][].
 
   从 Flutter 2.5 开始，启动屏幕和闪屏页已经被合并。
@@ -115,7 +114,7 @@ initializes.
   它会一直显示到框架绘制的第一帧。
 
   If, prior to 2.5, you used `flutter create` to create an app,
-  and you run the app on 2.5 or later, it can cause the app to crash.
+  and you run the app on 2.5 or later, the app might app crash.
   For more info, see the [Deprecated Splash Screen API Migration guide][].
 
   如果在 2.5 版本之前使用 `flutter create` 命令创建了应用，
@@ -233,16 +232,18 @@ while the app initializes.
 
 ### Android S
 
-See [Android Splash Screens][] first on how to configure your launch screen on
-Android S.
+To configure your launch screen on Android S,
+check out [Android Splash Screens][].
 
 请先查看 [Android 闪屏页面][Android Splash Screens]
 了解如何在 Android S 上配置闪屏页。
 
-As of Android S, you must use the new splash screen API in your `styles.xml` file.
+As of Android S, you must use the new splash screen
+API in your `styles.xml` file.
 Consider creating an alternate resource file for Android 12 and higher.
-Also make sure that your background image is in line with the icon guidelines,
-see [Android Splash Screens][] for more details.
+Also make sure that your background image is in line with
+the icon guidelines;
+check out [Android Splash Screens][] for more details.
 
 从 Android S 开始，你必须在你的 `styles.xml` 文件中使用新的闪屏 API 了。
 你需要考虑为 Android 12 和更高版本创建一个备用的资源文件，还要确保你的背景图片符合图标指南。
@@ -255,20 +256,25 @@ see [Android Splash Screens][] for more details.
 </style>
 ```
 
-Make sure neither `io.flutter.embedding.android.SplashScreenDrawable` is set in
-your manifest, nor is `provideSplashScreen` implemented, as these APIs are
-deprecated. Doing so will cause the Android launch screen to fade smoothly into
-the Flutter when the app is launched and you may experience a crash.
+Make sure that
+`io.flutter.embedding.android.SplashScreenDrawable` is
+**not** set in your manifest, and that `provideSplashScreen`
+is **not** implemented, as these APIs are deprecated.
+Doing so causes the Android launch screen to fade smoothly
+into the Flutter when the
+app is launched and the app might crash.
 
 确保 `io.flutter.embedding.android.SplashScreenDrawable`
 未在 manifest 中设置，且 `provideSplashScreen` 也没有具体实现，
 这些 API 已被废弃。
 如此一来 Android 的闪屏页可以在应用启动时平滑过渡到 Flutter。
 
-Some apps may want to continue showing the last frame of the Android launch
-screen in Flutter. For example, this preserves the illusion of a single frame
-while additional loading continues in Dart. To achieve this, the following
-Android APIs may be helpful:
+Some apps might want to continue showing the last frame of
+the Android launch screen in Flutter. For example,
+this preserves the illusion of a single frame
+while additional loading continues in Dart.
+To achieve this, the following
+Android APIs might be helpful:
 
 某些应用可能希望在 Flutter 中继续显示 Android 闪屏页的最后一帧。
 例如，保持一帧的展示，同时 Dart 继续加载其他内容。
@@ -304,6 +310,7 @@ public class MainActivity extends FlutterActivity {
     }
 }
 ```
+
 {% sample Kotlin %}
 <!--code-excerpt "MainActivity.kt" title-->
 ```kotlin
@@ -329,9 +336,11 @@ class MainActivity : FlutterActivity() {
 ```
 {% endsamplecode %}
 
-Then, you can reimplement the first frame in Flutter that shows elements of your
-Android launch screen in the same positions on screen.
-For an example of this, see the [Android splash screen sample app][].
+Then, you can reimplement the first frame in Flutter
+that shows elements of your Android launch screen in
+the same positions on screen.
+For an example of this, check out the
+[Android splash screen sample app][].
 
 然后你可以重新实现 Flutter 的第一帧，将元素摆放在与 Android 闪屏页相同的位置。
 关于这个的示例，请参考 [Android 闪屏页示例应用][Android splash screen sample app]。

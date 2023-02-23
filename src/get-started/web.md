@@ -259,12 +259,12 @@ For more information, see
 To add web support to an existing project
 created using a previous version of Flutter,
 run the following command
-from your project's directory:
+from your project's top-level directory:
 
 要为现有的项目添加 Web 支持，请在项目的根目录下运行：
 
 ```terminal
-$ flutter create .
+$ flutter create --platforms web .
 ```
 
 [Build and release a web app]: {{site.url}}/deployment/web

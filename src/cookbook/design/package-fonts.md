@@ -143,7 +143,6 @@ child: Text(
   'Using the Raleway font from the awesome_package',
   style: TextStyle(
     fontFamily: 'Raleway',
-    package: 'awesome_package',
   ),
 ),
 ```
@@ -220,7 +219,6 @@ class MyHomePage extends StatelessWidget {
           'Using the Raleway font from the awesome_package',
           style: TextStyle(
             fontFamily: 'Raleway',
-            package: 'awesome_package',
           ),
         ),
       ),

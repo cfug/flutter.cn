@@ -406,9 +406,23 @@ For more information, see [App Size Documentation][].
 可以导入 `build/apk-code-size-analysis_01.json` 文件到体积分析工具。
 更多信息，可以查看 [应用体积尺寸文档][App Size Documentation]。
 
+## Other resources
+
+## 其他资源
+
+To learn how to perform a step-by-step size analysis of
+the Wonderous App using DevTools, check out the
+[App Size Tool tutorial][app-size-tutorial]. Various strategies
+to reduce an app's size are also discussed.
+
+若你想要了解对应用（例如 Wonderous）进行包体积分析的详细步骤，
+可以阅读 [应用体积工具介绍][app-size-tutorial]。
+教程内也讨论了多种减少包体积的方法。
+
 [Using the treemap]: #using-the-treemap
 [Generating size files]: #generating-size-files
 [Analysis tab]: #analysis-tab
 [Diff tab]: #diff-tab
 [installation instructions]: {{site.url}}/development/tools/devtools/overview#install-devtools
 [App Size Documentation]: {{site.url}}/perf/app-size#breaking-down-the-size
+[app-size-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-app-size-tool-part-3-of-8-9be6e9ec42a2

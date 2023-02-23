@@ -232,11 +232,19 @@ Profile mode for a web app means that:
 
 * The build is _not_ minified but tree shaking has been performed.
  
-  资源文件没有被压缩，但是整体性能已经优化 
+  资源文件没有被压缩，但是整体性能已经优化。
 
 * The app is compiled with the [dart2js][] compiler.
- 
-  这个 Web 应用通过 [dart2js][] 编译器构建 
+
+  这个 Web 应用通过 [dart2js][] 编译器构建。
+
+* DevTools can't connect to a Flutter web app running
+  in profile mode. Use Chrome DevTools to
+  [generate timeline events][] for a web app.
+
+  DevTool 无法连接至以性能模式运行的 Flutter Web 应用。
+  你需要用 Chrome 的 DevTools 来为 Web 应用
+  [生成时间线事件][generate timeline events]。
 
 Your IDE supports this mode. Android Studio, for example,
 provides a **Run > Profile...** menu option.
@@ -265,5 +273,6 @@ For more information on the build modes, see
 [DevTools]: {{site.url}}/development/tools/devtools
 [Flutter wiki]: {{site.repo.flutter}}/wiki/Flutter's-modes
 [Flutter's build modes]: {{site.repo.flutter}}/wiki/Flutter%27s-modes
+[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [hot reload]: {{site.url}}/development/tools/hot-reload
 [iOS]: {{site.url}}/deployment/ios

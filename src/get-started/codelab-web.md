@@ -397,7 +397,7 @@ From your IDE, editor, or at the command line,
   你可以通过文档
   [声明式 UI 介绍][Introduction to declarative UI] 了解到更多的信息。
 
-* The app’s UI adheres [Material Design][],
+* The app’s UI adheres to [Material Design][],
   a visual design language that runs on any device or platform.
   You can customize the Material Design widgets,
   but if you prefer something else,

@@ -75,6 +75,6 @@ title: 官方博客
 - [Flutter 这一年：2022 亮点时刻，文末领取 Flutter 红包封面！]({{site.main-url}}/posts/flutter-2022-highlight-moment)
 - [Flutter 3.7 正式发布]({{site.main-url}}/posts/announcing-flutter-3-7)
 - [借助 Flutter 跨平台特性连接 10 亿玩家 Flutter 开发者故事]({{site.main-url}}/posts/flutter-pubg-mobile-dev-story)
-
+- [与 Flutter 共创未来 Flutter Forward 活动精彩回顾]({{site.main-url}}/posts/flutter-forward-2023-recap)
 
 上述内容的刊登均以获得发布许可。

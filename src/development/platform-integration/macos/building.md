@@ -229,8 +229,8 @@ For more information on these topics,
 see [App Sandbox][] and [Entitlements][]
 on the Apple Developer site.
 
-你可以阅读 Apple 开发者官网的 [应用沙盒][App Sandbox] 和 [授权][Entitlements] 文档，
-以获取关于此章节的更多信息。
+你可以阅读 Apple 开发者官网的 [应用沙盒][App Sandbox] 和
+[授权][Entitlements] 文档，以获取关于此章节的更多信息。
 
 [App Sandbox]: {{site.apple-dev}}/documentation/security/app_sandbox
 [App Store]: {{site.apple-dev}}/app-store/submissions/

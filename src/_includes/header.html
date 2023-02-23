@@ -94,14 +94,14 @@
                文档
             </a>
             <div class="dropdown-menu" aria-labelledby="docs-navbar-dropdown">
-              <a class="dropdown-item {% if route == '/' %} active{% endif %}"
+              <a class="dropdown-item {% if route contains '/posts' %} active{% endif %}"
                  href="/posts">最新更新</a>
               <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"
                  href="/get-started/editor">IDE 集成</a>
               <a class="dropdown-item {% if route contains '/development/tools/hot-reload' %} active{% endif %}"
                  href="/development/tools/hot-reload">热重载</a>
-              <a class="dropdown-item {% if route contains '/perf/rendering/ui-performance' %} active{% endif %}"
-                 href="/docs/perf/rendering/ui-performance">性能分析</a>
+              <a class="dropdown-item {% if route contains '/perf/ui-performance' %} active{% endif %}"
+                 href="/docs/perf/ui-performance">性能分析</a>
               <a class="dropdown-item {% if route contains '/get-started/install' %} active{% endif %}"
                  href="/docs/get-started/install">安装 Flutter</a>
               <a class="dropdown-item {% if route contains '/development/tools/devtools' %} active{% endif %}"

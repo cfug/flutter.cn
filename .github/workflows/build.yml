@@ -18,7 +18,6 @@ env:
   NODE_VERSION: 18
 
 jobs:
-
   test:
     runs-on: ubuntu-latest
     if: github.repository == 'cfug/flutter.cn'
@@ -53,10 +52,10 @@ jobs:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
         with:
           submodules: recursive
-      - name: Build site and check links
-        run: make build
       - name: Move docs
         run: make move-docs
+      - name: Build site and check links
+        run: make build
       - name: Install Node for Firebase install
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
         with:

@@ -18,7 +18,7 @@ Flutter 是一个界面工具包，它让应用开发者只需编写一套代码
 
 事实证明 Flutter 深受欢迎: 迄今为止已有超过 70 万款使用 Flutter 打造的应用上架。Flutter 的使用者中既有 [志存高远的小型初创公司](https://flutter.dev/showcase/so-vegan "志存高远的小型初创公司")，也不乏 [有关键需求的大型成熟企业](https://flutter.dev/showcase/credit-agricole "有关键需求的大型成熟企业")。Flutter 的价值还让 Google 内部团队受益，[Google 课堂](https://edu.google.com/workspace-for-education/classroom/ "Google 课堂") 等团队借助 Flutter 为移动和 Web 用户提供优质解决方案。我们还在其他开发者工具中添加了对 Flutter 的支持，这些工具包括 [Google Ads](https://developers.google.cn/admob/flutter/quick-start "Google Ads")、[Google Maps](https://codelabs.developers.google.com/codelabs/google-maps-in-flutter#0 "Google Maps")、[Google Pay](https://pub.flutter-io.cn/packages/pay "Google Pay")，当然还有 [Firebase](https://firebase.google.cn/docs/flutter/setup?platform=ios)。
 
-<video controls width="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/02/RKj6GN.mp4" poster=""></video>
+<video controls width="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/02/RKj6GN.mp4" poster="https://devrel.andfun.cn/devrel/posts/2023/02/UdtebS.jpg"></video>
 
 △ Google 课堂与 Flutter
 
@@ -50,7 +50,7 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 除了提供流畅的界面，在某些情况下，Impeller 还可以显著提高性能。下面这个视频中的 demo 就完美诠释了这一点。左侧是一个使用 SVG 剪切构建的万花筒应用，该应用使用了当前的默认渲染器。向下滚动页面时，渲染所用时间会超过每帧的预算，导致性能下降、帧率跌至 7-10 fps。右侧是同一个应用，但采用了 Impeller，能以 60 fps 的帧率流畅渲染。
 
-<video controls width="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/02/cLx9Wq.mp4" poster=""></video>
+<video controls width="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/02/cLx9Wq.mp4" poster="https://devrel.andfun.cn/devrel/posts/2023/02/qPCYaj.jpg"></video>
 
 △ 万花筒应用示例，展示了使用 Impeller 可提高图形性能
 
@@ -112,7 +112,7 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 当然，我们也在着力提升 Flutter 的开发者体验。继去年我们 [在 I/O 大会上宣布推出的](https://flutter.cn/posts/announcing-the-flutter-casual-games-toolkit "Flutter 休闲游戏工具包发布") 休闲游戏工具包大获成功之后，我们发布了 [**新闻工具包** 的第一个版本](https://medium.com/flutter/announcing-the-flutter-news-toolkit-180a0d32c012 "新闻工具包的第一个版本")，这将加速新闻发布商和其他内容提供方的移动应用开发，让他们无需从头开始设计应用就能触达移动端用户。它包含了打造以新闻报道为中心的应用所需的一切功能，包括导航和搜索、身份验证、广告植入、通知、档案和订阅，同时纳入了根据 Google 新闻计划的研究成果确定的最佳实践。我们要分享三个使用该工具包构建应用的非洲早期采纳者的故事，他们分别是摩洛哥最著名的新闻网站之一 [Hespress](https://www.hespress.com/ "摩洛哥最著名的新闻网站之一 Hespress")、尼日利亚的热门体育网站 [Bold Sports](https://boldsportsng.com/ "尼日利亚的热门体育网站 Bold Sports") 以及肯尼亚历史最悠久的报纸 [《The Standard》](https://www.standardmedia.co.ke/ "肯尼亚历史最悠久的报纸 《The Standard》")。
 
-<video controls wdith="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/02/yHWQPt.mp4" poster=""></video>
+<video controls wdith="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/02/yHWQPt.mp4" poster="https://devrel.andfun.cn/devrel/posts/2023/02/2xmwUE.jpg"></video>
 
 △ 观看三个非洲新闻发布商的故事，了解他们作为 Google 新闻工具包早期采纳者的体验。
 
@@ -128,6 +128,6 @@ Flutter 的第一个版本提供了用于构建 Android 和 iOS 移动应用的�
 
 最后，很高兴借此机会来到肯尼亚，领略了当地开发者的企业家精神和才华。非洲的 Flutter 社区充满活力；仅肯尼亚的 Flutter 用户群组就有超过 1,000 名开发者。我们很高兴 Flutter 能够为非洲的开发者带来新的机遇，让他们可以参与到快速增长的应用经济中。Klasha 就是诠释这一前景的优秀案例。这家公司借助 Flutter 快速进入市场，并解决了本地用户的问题。下面的视频介绍了他们使用 Flutter 的体验:
 
-<video controls wdith="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/02/a4nD2R.mp4" poster=""></video>
+<video controls wdith="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/02/a4nD2R.mp4" poster="https://devrel.andfun.cn/devrel/posts/2023/02/DrP6nP.jpg"></video>
 
 △ Klasha ([https://klasha.com/](https://klasha.com/ "Klasha")) 的故事以及他们使用 Flutter 的体验。Klasha 是一家科技初创公司，其宗旨是让非洲消费者能够顺畅地买到世界各地的商品。

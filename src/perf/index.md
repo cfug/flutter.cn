@@ -66,13 +66,10 @@ The rest of the content is organized using those four categories.
 
 其它内容均已归纳到这四个类别中。
 
-<!--
+{% comment %}
 Let's put "speed" (rendering) first as it's the most popular performance issue
 category.
-
-让我们把「流畅度」（渲染）放在第一位，因为它是最受欢迎的性能问题。
-
--->
+{% endcomment -%}
 ## Speed
 
 ## 流畅度
@@ -89,11 +86,11 @@ evaluate and fix rendering issues.
 {% comment %}
 Do your apps take a long time to open? We'll also cover the startup speed issue
 in some future pages.
+{% endcomment -%}
 
-你的应用需要很长时间打开吗？我们将在未来的一些文章中讨论启动速度问题。
+{% comment %}
 
-{% endcomment %}
-
+TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
 
 ## Memory
 
@@ -101,7 +98,9 @@ in some future pages.
 
 [Using memory wisely]({{site.url}}/perf/memory)
 
-[明智地使用内存]({{site.url}}/perf/memory)
+[正确地管理内存]({{site.url}}/perf/memory)
+
+{% endcomment -%}
 
 ## App size
 
@@ -118,6 +117,7 @@ the quicker it is to download.
 
 {% comment %}
 
+TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
 
 ## Energy
 
@@ -131,7 +131,7 @@ How to ensure a longer battery life when running your app.
 
 [节省电量]({{site.url}}/perf/power)
 
-{% endcomment %}
+{% endcomment -%}
 
 [Measuring your app's size]: {{site.url}}/perf/app-size
 

@@ -151,7 +151,7 @@ widgets in [What is State?][]
 [什么是状态]: https://www.bilibili.com/video/BV14G4y167Tu
 
 {:.text-center}
-#### Only have 60 seconds? Learn how to build and deploy a Flutter App!
+<b>Only have 60 seconds? Learn how to build and deploy a Flutter App!</b>
 
 #### 一分钟！快速学习构建和部署 Flutter 应用
 

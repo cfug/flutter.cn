@@ -825,6 +825,12 @@ of the Flutter inspector.
 有关 Flutter inspector 常用功能的演示，请参考 [DartConf 2018 talk][]
 中基于 IntelliJ 上的演示。
 
+To learn how to visually debug layout issues
+using DevTools, check out a guided
+[Flutter Inspector tutorial][inspector-tutorial].
+
+想要学习如何使用 DevTools 以可视化的方式调试布局问题，
+可以阅读 [Flutter 布局检查器教程][inspector-tutorial]。
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [common problems when debugging]: {{site.url}}/testing/debugging#common-problems
@@ -846,3 +852,4 @@ of the Flutter inspector.
 [`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
 [the performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
 [Understanding constraints]: {{site.url}}/development/ui/layout/constraints
+[inspector-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7

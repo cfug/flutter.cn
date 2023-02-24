@@ -29,10 +29,10 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
 
   **Packages**
   <br> At a minimum, a Dart package is a directory
-    containing a pubspec file. Additionally,
+    containing a `pubspec.yaml` file. Additionally,
     a package can contain dependencies
     (listed in the pubspec), Dart libraries, apps,
-    resources, tests, images, and examples.
+    resources, tests, images, fonts, and examples.
     The [pub.dev][] site lists many packages—developed by Google engineers
     and generous members of the Flutter and Dart community—
     that you can use in your app.
@@ -40,7 +40,7 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
   **Packages**
   <br> Dart package 最低要求是包含一个 `pubspec.yaml` 文件。
     此外，一个 package 可以包含依赖关系 (在 `pubspec.yaml` 文件里声明)、
-    Dart 库、应用、资源、测试、图片和例子等。
+    Dart 库、应用、资源、字体、测试、图片和例子等。
     [pub.dev][] 上列出了很多 package，由 Google 工程师和
     Flutter 和 Dart 社区的开发者开发和发布，你可以用在自己的应用里。
 
@@ -67,27 +67,36 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
 
 Existing packages enable many use cases—for example,
 making network requests ([`http`][]),
-custom navigation/route handling ([`fluro`][]),
+navigation/route handling ([`go_router`][]),
 integration with device APIs
 ([`url_launcher`][] and [`battery`][]),
 and using third-party platform SDKs like Firebase
 ([FlutterFire][]).
 
 现有的 package 支持许多使用场景，例如，网络请求 ([`http`][])，
-自定义导航/路由处理 ([`fluro`][])，集成设备 API（如 ([`url_launcher`][] 和
+自定义导航/路由处理 ([`go_router`][])，集成设备 API（如 ([`url_launcher`][] 和
 [`battery`][]，以及使用第三方平台的 SDK（如 Firebase 的 ([FlutterFire][])。
 
 To write a new package, see [developing packages][].
-
-如果你正打算开发新的 package，请参阅
-[Flutter Packages 的开发和提交][developing packages]。
-
-To add assets, images or fonts,
+To add assets, images, or fonts,
 whether stored in files or packages,
 see [Adding assets and images][].
 
+如果你正打算开发新的 package，请参阅
+[Flutter Packages 的开发和提交][developing packages]。
 如果你想添加资源、图片或字体，无论是存储在文件中还是 package 中，
 请参阅 [添加资源和图片][Adding assets and images] 这篇文档。
+
+[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
+[`battery`]: {{site.pub-pkg}}/battery
+[developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
+[FlutterFire]: {{site.github}}/firebase/flutterfire
+
+
+[`go_router`]: {{site.pub-pkg}}/go_router
+[`http`]: {{site.url}}/cookbook/networking/fetch-data
+[pub.dev]: {{site.pub}}
+[`url_launcher`]: {{site.pub-pkg}}/url_launcher
 
 ## Using packages
 
@@ -127,15 +136,24 @@ Pub.dev 上的 [Flutter Favorites][] 页面列出了一系列编写应用时
 查看 [Flutter Favorites 项目][Flutter Favorites program] 页面。
 
 You can also browse the packages on pub.dev by filtering
-on [Android plugins][], [iOS plugins][], [web plugins][],
-[Linux plugins][], [Windows plugins][], [macOS plugins][],
+on [Android][], [iOS][], [web][],
+[Linux][], [Windows][], [macOS][],
 or any combination thereof.
 
-在 pub.dev 网站上同时可以过滤出适合
-[Android][Android plugins]、[iOS][iOS plugins]、
-[Web][web plugins]、[Linux][Linux plugins]、
-[Windows][Windows plugins] 或 [macOS][macOS plugins]
-的插件，也可以通过复选框，过滤出组合结果（适配一个或者多个平台）。
+在 pub.dev 网站上你可以同时过滤出适合
+[Android][]、[iOS][]、[Web][web]、[Linux][]、
+[Windows][] 或 [macOS][] 的插件，
+你也可以通过复选框，过滤出组合结果（适配一个或者多个平台）。
+
+[Android]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aandroid
+[Flutter Favorites]: {{site.pub}}/flutter/favorites
+[Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
+[Flutter landing page]: {{site.pub}}/flutter
+[Linux]: {{site.pub-pkgs}}?q=sdk%3Aflutter+platform%3Alinux
+[iOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aios
+[macOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Amacos
+[web]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aweb
+[Windows]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Awindows
 
 ### Adding a package dependency to an app
 
@@ -159,23 +177,23 @@ To add the package, `css_colors`, to an app:
    安装
 
    * From the terminal: Run `flutter pub get`<br/>
-     
+
      在命令行中运行：`flutter pub get`<br/>
 
    **OR**
-   
+
    **或者**
+
+   * From VS Code: Click **Get Packages** located in right side of the action
+     ribbon at the top of `pubspec.yaml` indicated by the Download icon.
+
+     在 VS Code 中点击位于 `pubspec.yaml` 文件顶部操作功能区右侧的 **Get Packages**
 
    * From Android Studio/IntelliJ: Click **Packages get** in the action
      ribbon at the top of `pubspec.yaml`.
-     
+
      在 Android Studio/IntelliJ 中点击 `pubspec.yaml` 文件顶部操作功能区的 **Packages get**
 
-   * From VS Code: Click **Get Packages** located in right side of the action
-     ribbon at the top of `pubspec.yaml`.
-
-     在 VS Code 中点击位于 `pubspec.yaml` 文件顶部操作功能区右侧的 **Get Packages**
-    
 1. Import it
 
    导入
@@ -265,7 +283,10 @@ For a complete example,
 see the [css_colors example][] below.
 
 完整示例，参阅下面的
-[css_colors 示例][css_colors example] 。
+[css_colors 示例][css_colors example]。
+
+[css_colors example]: #css-example
+[Installing tab]: {{site.pub-pkg}}/css_colors/install
 
 ### Conflict resolution
 
@@ -354,13 +375,14 @@ configurations.all {
 }
 ```
 
-CocoaPods does not currently offer dependency
+CocoaPods doesn't currently offer dependency
 override functionality.
 
 CocoaPods 目前尚不提供依赖项覆盖功能。
 
 [CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
-[Gradle modules]: https://docs.gradle.org/current/userguide/introduction_dependency_management.html
+[Gradle modules]: https://docs.gradle.org/current/userguide/declaring_dependencies.html
+[version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
 
 ## Developing new packages
 
@@ -371,6 +393,8 @@ you can [write a custom package][].
 
 如果某个 package 不适用于你的特定需求，
 你可以 [开发新的自定义 package][write a custom package]。
+
+[write a custom package]: {{site.url}}/development/packages-and-plugins/developing-packages
 
 ## Managing package dependencies and versions
 
@@ -397,16 +421,11 @@ well as a list of all prior versions
 （例如，参阅 [`url_launcher`][] package）以及所有先前版本的列表：
 [url_launcher 版本列表][`url_launcher` versions]。
 
-When a package is added to `pubspec.yaml`,
-the shorthand form `plugin1:` means that any
-version of the plugin1 package can be used.
 To ensure that the app doesn't break when a
 package is updated,
 specify a version range using one of the
 following formats:
 
-当使用简写形式 `plugin1:` 将 package 添加到 `pubspec.yaml` 时，
-表明 plugin1 package 的任何版本都可以被使用。
 为了确保在更新 package 的时候你的应用不会崩溃，
 我们建议使用以下格式之一来指定版本范围：
 
@@ -434,12 +453,18 @@ see the [package versioning guide][].
 
 了解更详细的信息，参阅 [Pub 版本管理指南][package versioning guide]。
 
+[*caret syntax*]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
+[package versioning guide]: {{site.dart-site}}/tools/pub/versioning
+[`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
+
 ### Updating package dependencies
 
 ### 更新 package 依赖
 
 When running `flutter pub get` (**Packages get** in IntelliJ
 or Android Studio) for the first time after adding a package,
+When running `flutter pub get` 
+for the first time after adding a package,
 Flutter saves the concrete package version found in the `pubspec.lock`
 [lockfile][]. This ensures that you get the same version again
 if you, or another developer on your team, run `flutter pub get`.
@@ -453,7 +478,6 @@ Flutter 将会保存在 `pubspec.lock` [lockfile][] 中找到的具体 package �
 To upgrade to a new version of the package,
 for example to use new features in that package,
 run `flutter pub upgrade`
-(**Upgrade dependencies** in IntelliJ or Android Studio)
 to retrieve the highest available version of the package
 that is allowed by the version constraint specified in
 `pubspec.yaml`.
@@ -462,18 +486,19 @@ Note that this is a different command from
 which both update Flutter itself.
 
 如果你想升级到 package 的最新版本，比如使用 package 的最新特性，
-请运行 `flutter packages upgrade`
-（IntelliJ 或 Android Studio 的 **Upgrade dependencies** 功能）。
+请运行 `flutter pub upgrade`。
 这将检索你在 `pubspec.yaml` 文件中指定的版本约束所允许的最高可用版本。
 请注意，`flutter upgrade` 与 `flutter update-packages` 是两个
 不同的命令，但它们都会更新 Flutter。
+
+[lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
 
 ### Dependencies on unpublished packages
 
 ### 依赖未发布的 package
 
 Packages can be used even when not published on pub.dev.
-For private plugins, or for packages not ready for publishing,
+For private packages, or for packages not ready for publishing,
 additional dependency options are available:
 
 即使未在 Pub site 上发布，也可以使用 package。
@@ -481,11 +506,12 @@ additional dependency options are available:
 或者尚未准备好发布的 package，可以使用其他依赖选项。
 
 **Path dependency**
-<br> A Flutter app can depend on a plugin via a file system
+<br> A Flutter app can depend on a package via a file system
   `path:` dependency. The path can be either relative or absolute.
-  Relative paths are evaluated relative to the directory containing `pubspec.yaml`.
-  For example, to depend on a plugin `plugin1` located in a directory
-  next to the app, use the following syntax:
+  Relative paths are evaluated relative to the directory
+  containing `pubspec.yaml`. For example, to depend on a
+  package, packageA, located in a directory next to the app,
+  use the following syntax:
 
 **Path 依赖**
 <br> Flutter 应用可以通过文件系统 `path:` 依赖而依赖于插件。
@@ -493,9 +519,10 @@ additional dependency options are available:
   例如，要依赖位于应用相邻目录中的插件 `plugin1`，可以使用以下语法：
 
   ```yaml
-  dependencies:
-    plugin1:
-      path: ../plugin1/
+    dependencies:
+    packageA:
+      path: ../packageA/
+  
   ```
 
 **Git dependency**
@@ -508,10 +535,10 @@ additional dependency options are available:
   如果 package 位于仓库的根目录，可以使用以下语法：
   
   ```yaml
-  dependencies:
-    plugin1:
-      git:
-        url: https://github.com/flutter/plugin1.git
+    dependencies:
+      packageA:
+        git:
+          url: https://github.com/flutter/packageA.git
   ```
 
 **Git dependency using SSH**
@@ -522,15 +549,15 @@ additional dependency options are available:
 <br> 如果你需要通过 SSH 连接私有的仓库，你可以用 SSH 链接依赖对应的 package：
 
   ```yaml
-  dependencies:
-    plugin1:
-      git:
-        url: git@github.com:flutter/plugin1.git
+    dependencies:
+      packageA:
+        git:
+          url: git@github.com:flutter/packageA.git
   ```
 
 **Git dependency on a package in a folder**
 <br> Pub assumes the package is located in
-  the root of the Git repository. If that is not
+  the root of the Git repository. If that isn't
   the case, specify the location with the `path` argument.
   For example:
 
@@ -540,10 +567,10 @@ additional dependency options are available:
   
   ```yaml
   dependencies:
-    package1:
+    packageA:
       git:
         url: https://github.com/flutter/packages.git
-        path: packages/package1
+        path: packages/packageA
   ```
 
   Finally, use the `ref` argument to pin the dependency to a
@@ -552,6 +579,8 @@ additional dependency options are available:
 
   最后，你可以使用 `ref` 参数将依赖固定到 git 特定的 commit、branch 或者 tag。
   更多详细信息，请参阅 [Package dependencies][]。
+
+[Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
 
 ## Examples
 
@@ -602,8 +631,7 @@ To use this package:
    ```
 
 1. Run `flutter pub get` in the terminal,
-   or click **Packages get** in
-   IntelliJ or Android Studio.
+   or click **Get Packages** in VS Code.
 
    在命令行中运行 `flutter packages get`，
    或者点击 Intellij 中的 **Packages get**
@@ -642,6 +670,9 @@ To use this package:
     }
     ```
 
+
+[`css_colors`]: {{site.pub-pkg}}/css_colors
+
 1. Run the app. The app's background should now be orange.
 
    运行应用。当你点击 'Show Flutter homepage' 时，你将看到手机默认浏览器打开并出现 Flutter 主页。
@@ -652,7 +683,8 @@ To use this package:
 
 The [`url_launcher`][] plugin package enables opening
 the default browser on the mobile platform to display
-a given URL, and is supported on Android, iOS, web, and macos.
+a given URL, and is supported on Android, iOS, web,
+Windows, Linux, and macos.
 This package is a special Dart package called a
 _plugin package_ (or _plugin_),
 which includes platform-specific code.
@@ -681,8 +713,7 @@ To use this plugin:
    ```
 
 1. Run `flutter pub get` in the terminal,
-   or click **Packages get** in
-   IntelliJ or Android Studio.
+   or click **Get Packages get** in VS Code.
 
    在命令行中运行 `flutter packages get`，或者
    点击 Intellij 或 Android Studio 中的 **Packages get**；
@@ -743,33 +774,3 @@ To use this plugin:
    当你点击 **Show Flutter homepage** 时，
    你将看到手机默认浏览器打开并出现 Flutter 主页。
 
-
-[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
-[Android plugins]: {{site.pub}}/flutter/packages?platform=android
-[`battery`]: {{site.pub-pkg}}/battery
-[*caret syntax*]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
-[CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
-[`css_colors`]: {{site.pub-pkg}}/css_colors
-[css_colors example]: #css-example
-[write a custom package]: {{site.url}}/development/packages-and-plugins/developing-packages
-[developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
-[`fluro`]: {{site.pub-pkg}}/fluro
-[Flutter Favorites]: {{site.pub}}/flutter/favorites
-[Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
-[Flutter landing page]: {{site.pub}}/flutter
-[FlutterFire]: {{site.repo.plugins}}/blob/master/FlutterFire.md
-[Gradle modules]: https://docs.gradle.org/current/userguide/declaring_dependencies.html
-[`http`]: {{site.url}}/cookbook/networking/fetch-data
-[Installing tab]: {{site.pub-pkg}}/css_colors/install
-[iOS plugins]: {{site.pub}}/flutter/packages?platform=ios
-[Linux plugins]: {{site.pub-pkg}}?q=platform%3Alinux
-[lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
-[macOS plugins]: {{site.pub-pkg}}?q=platform%3Amacos
-[Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
-[package versioning guide]: {{site.dart-site}}/tools/pub/versioning
-[pub.dev]: {{site.pub}}
-[`url_launcher`]: {{site.pub-pkg}}/url_launcher
-[`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
-[version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
-[web plugins]: {{site.pub}}/flutter/packages?platform=web
-[Windows plugins]: {{site.pub-pkg}}?q=platform%3Awindows

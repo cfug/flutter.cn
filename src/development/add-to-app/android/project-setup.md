@@ -231,21 +231,13 @@ module an embeddable Android library.
   To avoid Dex merging issues, `flutter.androidPackage` should not be identical to your host app's package name
 {{site.alert.end}}
 
-{{site.alert.note}}
+### Java 11 requirement
 
-  To avoid Dex merging issues, `flutter.androidPackage` should not be identical to your host app's package name
+### 引入 Java 11
 
-  要避免 Dex 合并冲突问题，**请勿**将你的宿主工程名设为 `flutter.androidPackage`。
+The Flutter Android engine uses Java 11 features.
 
-{{site.alert.end}}
-
-### Java 8 requirement
-
-### 引入 Java 8
-
-The Flutter Android engine uses Java 8 features.
-
-Flutter Android 引擎需要使用到 Java 8 中的新特性。
+Flutter Android 引擎需要使用到 Java 11 中的新特性。
 
 Before attempting to connect your Flutter module project
 to your host Android app, ensure that your host Android
@@ -263,8 +255,8 @@ block, such as:
 android {
   //...
   compileOptions {
-    sourceCompatibility 1.8
-    targetCompatibility 1.8
+    sourceCompatibility 11
+    targetCompatibility 11
   }
 }
 ```

@@ -26,37 +26,14 @@ where time might be better spent on code behavior rather than code style.
 
 如果没有统一的代码样式，当进行代码审查的时候，
 可能会为了一些样式的问题而进行争论从而浪费时间。
-代码审查最好把时间花在代码的行为上，
-而不是代码的样式上。
-
-## Automatically formatting code in Android Studio and IntelliJ
-
-## 在 Android Studio / IntelliJ 中自动格式化代码
-
-Install the `Dart` plugin (see [Editor setup]({{site.url}}/get-started/editor))
-to get automatic formatting of code in Android Studio and IntelliJ.
-To automatically format your code in the current source code window,
-use `Cmd+Alt+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
-Android Studio and IntelliJ also provides a check box named `Format code on save` on
-the Flutter page in Preferences (on Mac) or Settings (on Windows and Linux)
-which will format the current file automatically when you save it.
-
-在 Android Studio / IntelliJ 中安装 `Dart` 插件
-（见章节 [编辑工具设定]({{site.url}}/get-started/editor))
-来进行代码的自动格式化。
-在当前代码窗口中格式化代码的方法是，
-在 Windows 和 Linux 系统里使用 `Ctrl+Alt+L`，
-在 Mac 系统里使用 `Cmd+Alt+L`。
-Android Studio 和 IntelliJ 为 Flutter 页面提供了一个选项，
-即“在保存的时候格式化代码”—— `Format code on save`，
-要开启这个，可以在 Windows 和 Linux 下选择设置、在 Mac 下选择偏好设置。
-这样在每次保存代码的时候就会自动格式化当前文件。
+代码审查最好把时间花在代码的行为上，而不是代码的样式上。
 
 ## Automatically formatting code in VS Code
 
 ## 在 VS Code 中自动格式化代码
 
-Install the `Flutter` extension (see [Editor setup]({{site.url}}/get-started/editor))
+Install the `Flutter` extension (see
+[Editor setup]({{site.url}}/get-started/editor))
 to get automatic formatting of code in VS Code.
 
 在 VS Code 中安装 `Flutter` 扩展
@@ -77,14 +54,37 @@ To automatically format code whenever you save a file, set the
 将 `editor.formatOnSave` 设置成 `true`，
 可以在保存文件的时候自动进行代码格式化。
 
-## Automatically formatting code with the 'flutter' command
+## Automatically formatting code in Android Studio and IntelliJ
 
-## 使用 'flutter' 命令自动格式化代码
+Install the `Dart` plugin (see
+[Editor setup]({{site.url}}/get-started/editor))
+to get automatic formatting of code in Android Studio and IntelliJ.
+To automatically format your code in the current source code window,
+use `Cmd+Alt+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
+Android Studio and IntelliJ also provide a check box named
+**Format code on save** on the Flutter page in Preferences
+(on Mac) or Settings (on Windows and Linux)
+which formats the current file automatically when you save it.
+
+在 Android Studio / IntelliJ 中安装 `Dart` 插件
+（见章节 [编辑工具设定]({{site.url}}/get-started/editor))
+来进行代码的自动格式化。
+在当前代码窗口中格式化代码的方法是，
+在 Windows 和 Linux 系统里使用 `Ctrl+Alt+L`，
+在 Mac 系统里使用 `Cmd+Alt+L`。
+Android Studio 和 IntelliJ 为 Flutter 页面提供了一个选项，
+即“在保存的时候格式化代码”—— `Format code on save`，
+要开启这个，可以在 Windows 和 Linux 下选择设置、在 Mac 下选择偏好设置。
+这样在每次保存代码的时候就会自动格式化当前文件。
+
+## Automatically formatting code with the `dart` command
+
+## 使用 `dart` 命令自动格式化代码
 
 You can also automatically format code in the command line interface
 (CLI) using the `dart format` command:
 
-我们也可以在命令行界面（CLI）中使用 `flutter format` 命令，
+我们也可以在命令行界面（CLI）中使用 `dart format` 命令，
 进行代码的自动格式化。
 
 ```terminal

@@ -343,12 +343,12 @@ Flutter 提供了很多种不同的构建模式运行你的应用，
 
 Flutter offers a best-in-class developer cycle enabling you
 to see the effect of your changes almost instantly with the
-_Stateful Hot Reload_ feature. See
-[Using hot reload](hot-reload) for details.
+_Stateful Hot Reload_ feature.
+To learn more, check out [Hot reload][].
 
-Flutter 提供一流的开发周期，通过 **Stateful Hot Reload** 
+Flutter 为开发者提供了一流的开发体验，通过 **有状态的热重载** 
 特性使你在几乎修改代码的同时就能看到变化。
-详情请看 [使用热重载](hot-reload)。
+详情请看 [使用热重载][Hot reload]。
 
 ## Advanced debugging
 
@@ -602,6 +602,7 @@ When filing new issues, include [flutter doctor][] output.
 [flutter doctor]: {{site.url}}/resources/bug-reports/#provide-some-flutter-diagnostics
 [Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
 [Flutter's build modes]: {{site.url}}/testing/build-modes
+[Hot reload]: {{site.url}}/development/tools/hot-reload
 [let us know]: {{site.repo.this}}/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: {{site.url}}/development/tools/devtools/vscode

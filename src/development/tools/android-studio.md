@@ -298,10 +298,10 @@ Flutter-specific buttons on the right-hand side of the toolbar.
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the _Stateful Hot Reload_ feature.
-See [Hot reload](hot-reload) for details.
+To learn more, check out [Hot reload][].
 
 Flutter 有效加快开发周期。使用 **热重载** 功能，你可以在修改源码后，几乎马上看到效果。
-详细信息请查阅 [使用热重载](hot-reload)。
+详细信息请查阅 [使用热重载][Hot reload]。
 
 ### Show performance data
 
@@ -470,7 +470,7 @@ widget, for example if you want to wrap a widget in a `Row` or `Column`.
 当你有一个 widget 需要嵌套在其他 widget 时，可以使用该功能。
 例如，需要将 widget 嵌套在 `Row` 或 `Column` 中。
 
-####  Wrap widget list with new widget assist
+#### Wrap widget list with new widget assist
 
 ####  Widget 列表嵌套辅助
 
@@ -772,4 +772,5 @@ When filing new issues, include the output of [`flutter doctor`][].
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
 [let us know]: {{site.repo.this}}/issues/new
 [Running DevTools from Android Studio]: {{site.url}}/development/tools/devtools/android-studio
+[Hot reload]: {{site.url}}/development/tools/hot-reload
 [Timeline view]: {{site.url}}/development/tools/devtools/performance

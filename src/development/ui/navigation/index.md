@@ -1,8 +1,8 @@
 ---
 title: Navigation and routing
 title: 路由和导航
-Description: Overview of Flutter's navigation and routing features
-Description: Flutter路由和导航的概览。
+description: Overview of Flutter's navigation and routing features
+description: Flutter路由和导航的概览。
 tags: 用户界面,Flutter UI,布局
 keywords: 路由和导航
 ---

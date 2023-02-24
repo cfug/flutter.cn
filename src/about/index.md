@@ -2,6 +2,7 @@
 title: About the CN Translation
 title: 关于 Flutter 文档中文版
 toc: true
+description: 关于 Flutter 文档中文版
 ---
 
 Flutter 的魅力之一是开源开放，Flutter 由 Google 主导，与全球的开发者共同协作。

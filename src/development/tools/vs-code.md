@@ -346,9 +346,9 @@ to see the effect of your changes almost instantly with the
 _Stateful Hot Reload_ feature.
 To learn more, check out [Hot reload][].
 
-Flutter 提供一流的开发周期，通过 **Stateful Hot Reload** 
+Flutter 为开发者提供了一流的开发体验，通过 **有状态的热重载** 
 特性使你在几乎修改代码的同时就能看到变化。
-详情请看 [使用热重载](hot-reload)。
+详情请看 [使用热重载][Hot reload]。
 
 ## Advanced debugging
 

@@ -33,7 +33,7 @@ clean_up() {
 }
 
 echo "Starting emulator async..."
-ruby -run -e httpd --port=$EMULATOR_PORT _site > /dev/null &
+python3 -m http.server --directory=_site $EMULATOR_PORT > /dev/null &
 
 sleep 5 # wait a few just in case
 

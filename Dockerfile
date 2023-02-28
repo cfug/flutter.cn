@@ -66,10 +66,6 @@ RUN apt-get update -q && apt-get install -yq --no-install-recommends \
       nodejs \
     && rm -rf /var/lib/apt/lists/*
 
-# Install global Firebase CLI
-RUN npm install -g firebase-tools@11.16.0
-
-
 
 # ============== FLUTTER CODE TESTS ==============
 FROM flutter AS tests

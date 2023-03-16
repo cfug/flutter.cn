@@ -13,7 +13,7 @@ prev:
   path: /docs/get-started/test-drive
 next:
   title: Learn more
-  path: /get-started/learn-more
+  path: /docs/get-started/learn-more
 ---
 
 You are now ready to start the “First Flutter app” codelab.

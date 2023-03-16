@@ -22,7 +22,7 @@ Flutter app to the [App Store][appstore] and [TestFlight][].
 Xcode is required to build and release your app. You
 must use a device running macOS to follow this guide.
 
-构建和发布一个 macOS 应用需要使用 Xcode，
+构建和发布一个 iOS 应用需要使用 Xcode，
 你必须要有一个运行着 macOS 系统的设备来学习本指南文档。
 
 Before beginning the process of releasing your app,

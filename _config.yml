@@ -100,23 +100,23 @@ defaults:
     values:
       toc: true
   - scope:
-      path: 'cookbook'
+      path: 'docs/cookbook/'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'development'
+      path: 'docs/development'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'development/ui/widgets'
+      path: 'docs/development/ui/widgets'
     values:
       toc: false
   - scope:
-      path: 'get-started'
+      path: 'docs/get-started'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'get-started/flutter-for'
+      path: 'docs/get-started/flutter-for'
     values:
       show_breadcrumbs: false
 

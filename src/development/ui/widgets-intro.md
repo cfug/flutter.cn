@@ -637,8 +637,8 @@ The common parent that redirects this flow is the `State`.
 The following slightly more complex example shows how
 this works in practice:
 
-在 Flutter 中，widget 通过回调得到状态改变的通知，
-同时当前状态通知给其他 widget 用于显示。
+在 Flutter 中，变化通知通过回调的方式沿着 widget 层级“向上”流动，
+同时当前状态”向下”流动至负责展示的无状态 widget。
 重定向这一流程的共同父级是 `State`，
 下面稍微复杂的示例显示了它在实践中的工作原理：
 

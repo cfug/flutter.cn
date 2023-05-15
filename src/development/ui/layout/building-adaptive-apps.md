@@ -227,10 +227,6 @@ for example, by making a button larger
 Flutter 的 `VisualDensity` 类可以让你快速地调整整个应用的视图密度，
 比如在可触控设备上放大一个按钮（使其更容易被点击）。
 
-不同的设备会提供不同级别的显示密度，使得操作的命中区域也要随之变化。
-Flutter 的 `VisualDensity` 类可以让你快速地调整整个应用的视图密度，
-比如在可触控设备上放大一个按钮（使其更容易被点击）。
-
 When you change the `VisualDensity` for your `MaterialApp`,
 `MaterialComponents` that support it animate their densities
 to match. By default, both horizontal and vertical densities

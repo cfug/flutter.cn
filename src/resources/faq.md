@@ -1234,6 +1234,8 @@ to running Flutter on Chromebooks]
 
 ### Is Flutter ABI compatible?
 
+### Flutter 是否提供 ABI 支持？
+
 Flutter and Dart do not offer application binary interface (ABI)
 compatibility. Offering ABI compatability is not a current
 goal for Flutter or Dart.

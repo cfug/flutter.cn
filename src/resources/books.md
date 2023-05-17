@@ -13,8 +13,12 @@ If you find another one that we should add,
 [file an issue][] and (optionally)
 submit a PR ([sample][]) to add it yourself.
 
-[file an issue]: {{site.repo.this}}/issues/new
-[sample]: {{site.repo.this}}/pull/6019
+这里收集了关于 Flutter 的书籍，按照字母顺序排列。
+如果您发现其他我们应该添加的书籍，
+您可以 [提出 issue][file an issue] 并且（可选）[提交 PR](sample)，以便添加书籍。
+
+[file an issue]: {{site.repo.this}}/issues/new/choose
+[sample]: {{site.repo.this}}/pulls
 
 {% for book in site.data.books -%}
 * [{{book.title}}]({{book.link}})
@@ -22,6 +26,9 @@ submit a PR ([sample][]) to add it yourself.
 
 <p>
   The following sections have more information about each book.
+</p>
+<p>
+  以下是每本书籍的介绍
 </p>
 
 {% for book in site.data.books %}

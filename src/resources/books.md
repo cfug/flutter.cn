@@ -15,7 +15,7 @@ submit a PR ([sample][]) to add it yourself.
 
 这里收集了关于 Flutter 的书籍，按照字母顺序排列。
 如果您发现其他我们应该添加的书籍，
-您可以 [提出 issue][file an issue] 并且（可选）[提交 PR](sample)，以便添加书籍。
+您可以 [提出 issue][file an issue] 并且（可选）[提交 PR][sample]，以便添加书籍。
 
 [file an issue]: {{site.repo.this}}/issues/new/choose
 [sample]: {{site.repo.this}}/pulls

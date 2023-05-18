@@ -27,7 +27,7 @@ js:
   [Limitations][] in the [navigation overview][] page.
 
   针对大多数的应用情况，我们不再推荐使用命名的路由 (Named routes)，
-  了解更多信息，请参考[导航概览][navigation overview]中的 [受限情况][Limitations] 部分。
+  了解更多信息，请参考 [导航概览][navigation overview] 中的 [受限情况][Limitations] 部分。
 
 {{site.alert.end}}
 

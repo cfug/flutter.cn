@@ -680,11 +680,6 @@ Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in
      plugin specifies. Alternatively, you can specify a version of the build tools.
 
 `buildToolsVersion`
-<br> If you're using Android plugin for Gradle 3.0.0 or higher, your project
-  automatically uses the default version of the build tools that the
-  plugin specifies. Alternatively, you can specify a version of the build tools.
-
-`buildToolsVersion`
 <br> 如果你正在使用高于 3.0.0 版本的 Android Gradle Plugin，
      你的项目会自动使用 AGP 默认指定的构建工具版本。
      你也可以手动指定构建工具的版本。
@@ -1046,6 +1041,8 @@ Flutter 目前不支持 x86 Android (参考 [Issue 9253][]).
 ### 如何为一个使用 `flutter build appbundle` 创建的 app bundle 签名？
 
 See [Signing the app](#signing-the-app).
+
+请查看 [创建一个密钥库](#signing-the-app)。
 
 ### How do I build a release from within Android Studio?
 

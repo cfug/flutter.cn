@@ -249,7 +249,7 @@ applications, see [Flutter performance profiling][].
 
 ## Measuring app startup time
 
-### 测量应用启动时间
+## 测量应用启动时间
 
 To gather detailed information about the time it takes for your
 Flutter app to start, you can run the `flutter run` command
@@ -302,7 +302,7 @@ For example:
 
 ## Tracing Dart code
 
-### 跟踪 Dart 代码性能
+## 跟踪 Dart 代码性能
 
 To perform a performance trace,
 you can use the DevTools [Timeline view][].

@@ -213,7 +213,7 @@ flutter test integration_test
 First, [Download and install ChromeDriver][]
 and run it on port 4444:
 
-首先，[下载并安装 ChromeDriver][Download and install ChromeDriver] 并在 4444 端口运行：
+首先，[下载安装 ChromeDriver][Download and install ChromeDriver] 并在 4444 端口运行：
 
 ```
 chromedriver --port=4444
@@ -222,7 +222,7 @@ chromedriver --port=4444
 To run tests with `flutter drive`, create a new directory containing a new file,
 `test_driver/integration_test.dart`:
 
-为了用 `flutter drive` 进行测试，请创建一个新的目录，
+为了使用 `flutter drive` 进行测试，请创建一个新的目录，
 其中包含一个新的文件 `test_driver/integration_test.dart`：
 
 <?code-excerpt "test_driver/integration_test.dart"?>

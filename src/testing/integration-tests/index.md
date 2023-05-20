@@ -27,7 +27,7 @@ properties:
   能够通过 [Firebase Test Lab][] 在各种设备上进行自动化测试。
 
 * Compatibility with [flutter_test][] APIs,
-  enabling tests to be written in a similar style as 
+  enabling tests to be written in a similar style as [widget tests][] 
 
   兼容 [flutter_test][] API，
   能够使用类似 [widget 测试][widget tests] 的风格进行编写。
@@ -36,7 +36,7 @@ properties:
 
   The `integration_test` package is part of the Flutter SDK itself. 
   To use it, make sure that you update your app's pubspec file
-  to include this package as one of your . 
+  to include this package as one of your `dev_dependencies`. 
   For an example, see the [Project setup](#project-setup) section below.
 
   Flutter SDK 本身自带 `integration_test` 包。

@@ -169,7 +169,7 @@ For more information, check out:
   are more performant than functions.
 
   [Widget 与 helper 方法][Widgets vs helper methods]，
-  Flutter YouTube 频道上发布的一个视频，解释为什么使用 widget 是更好的做法。
+  Flutter 关于为什么使用 widget 是更好的做法的解析视频。
   （特别是使用 `const` 构造的 widget）
 
 [`flutter_lints`]: {{site.pub-pkg}}/flutter_lints
@@ -692,7 +692,7 @@ your app's performance.
   使用 `AnimatedBuilder` 时，请避免在不依赖于动画的 widget 的构造方法中构建 widget 树，
   不然，动画的每次变动都会重建这个 widget 树，
   应当将这部分子树作为 child 传递给 `AnimatedBuilder`，从而只构建一次。
-  更多内容，请参阅 [Performance optimizations][Performance optimizations]。
+  更多内容，请参阅 [Performance optimizations][]。
 
 * Avoid clipping in an animation.
   If possible, pre-clip the image before animating it.
@@ -730,7 +730,6 @@ your app's performance.
   即使在这种情况下，最好还要缓存 widget，
   因为哪怕有一次对 `operator ==` 进行覆盖也会导致全面性能的下降，
   编译器也会因此不再认为调用总是静态的。
-
 
 ## Resources
 

@@ -666,7 +666,7 @@ the plugin provides a link to a relevant tip.
 The following behaviors might negatively impact
 your app's performance.
 
-以下行为可能会对您应用的性能产生负面影响。
+以下行为可能会对你应用的性能产生负面影响。
 
 * Avoid using the `Opacity` widget,
   and particularly avoid it in an animation.

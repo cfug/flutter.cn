@@ -724,7 +724,7 @@ your app's performance.
   避免在 `Widget` 对象上重写 `operator ==`。
   虽然这看起来有助于避免不必要的重建，
   但在实践中，它实际上损害了性能，因为这是 O(N²) 的行为。
-  只有叶子 widget（没有子 widget） 是个例外，
+  只有 leaf widget（没有子的 widget） 是个例外，
   在这种特殊的情况下，比较 widget 的属性可能比重建 widget 更加有效，
   也能更少改变 widget 的配置。
   即使在这种情况下，最好还要缓存 widget，

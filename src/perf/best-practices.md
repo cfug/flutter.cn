@@ -143,7 +143,7 @@ Here are some things to keep in mind when designing your UI:
 
     请尽可能地在 widget 上使用 `const` 构造函数，
     这将让 Flutter 的 widget 重建时间大幅缩短。
-    要自动提醒使用 `const`，请启用 [`flutter_lints`][] 包中推荐的 lints。
+    要自动提醒使用 `const`，请启用 [`flutter_lints`][] package 中推荐的 lints。
     了解更多信息，请查看 [`flutter_lints` 迁移指南][`flutter_lints` migration guide].
 
   * To create reusable pieces of UIs,
@@ -195,7 +195,7 @@ Perhaps your app is calling `saveLayer()` more than necessary;
 excessive calls to `saveLayer()` can cause jank.
 
 一些 Flutter 代码调用了性能代价很大的 `saveLayer()` 方法来实现 UI 中的各种视觉效果。
-你使用的其他 widget 或者包可能会在幕后调用它。
+你使用的其他 widget 或者 package 可能会在幕后调用它。
 也许你的应用程序会大量调用 `saveLayer()`；
 过多调用 `saveLayer()` 会导致卡顿。
 
@@ -298,10 +298,10 @@ TBD: It would be nice if we could link to an example.
   eliminated? If not, you might need to find another
   package, or write your own.
 
-  如果这些调用不是来自你的包，
-  请联系包的所有者并询问为什么需要使用这些调用。
+  如果这些调用不是来自你的 package，
+  请联系 package 的所有者并询问为什么需要使用这些调用。
   能否减少或消除它们？
-  如果不能，你可能需要寻找其他作者的包，或自己编写。
+  如果不能，你可能需要寻找其他作者的 package，或自己编写。
 
 {{site.alert.secondary}}
 
@@ -310,8 +310,8 @@ TBD: It would be nice if we could link to an example.
   for when `saveLayer` might be necessary for your package,
   how it might be avoided, and when it can't be avoided.
 
-  **包的所有者请注意:**
-  最好的做法是在文档中说明你的包什么时候会用到 `saveLayer`，
+  **package 的所有者请注意:**
+  最好的做法是在文档中说明你的 package 什么时候会用到 `saveLayer`，
   如何避免它，以及什么时候无法避免。
 
 {{site.alert.end}}

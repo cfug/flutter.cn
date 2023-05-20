@@ -12,8 +12,8 @@ This page describes how to use the [`integration_test`][] package to run
 integration tests. Tests written using this package have the following
 properties:
 
-本篇描述了如何使用 [`integration_test`][] 包来运行集成测试。
-使用该包编写的测试具有以下特性：
+本篇描述了如何使用 [`integration_test`][] package 来运行集成测试。
+使用该 package 编写的测试具有以下特性：
  
 * Compatibility with the `flutter drive` command,
   for running tests on a physical device or emulator.
@@ -39,7 +39,7 @@ properties:
   to include this package as one of your `dev_dependencies`. 
   For an example, see the [Project setup](#project-setup) section below.
 
-  Flutter SDK 本身自带 `integration_test` 包。
+  Flutter SDK 本身自带 `integration_test` package。
   要使用它，请确保你的应用程序 pubspec 文件 `dev_dependencies` 中引入了它。
   请查看 [项目设置](#project-setup) 的示例。
 
@@ -82,11 +82,11 @@ the host machine is also the target device.)
 
 **integration_test**
 
-**integration_test 包**
+**integration_test package**
 
 Tests written with the `integration_test` package can:
 
-用 `integration_test` 包编写的测试可以：
+用 `integration_test` package 编写的测试可以：
  
 1. Run directly on the target device, allowing you to test on
    multiple Android or iOS devices using Firebase Test Lab.
@@ -284,7 +284,7 @@ and iOS targets.
 Follow the instructions in the [Android Device Testing][]
 section of the README.
 
-请遵循 `integration_test` 包 README 中的 [Android Device Testing][] 进行设置。
+请遵循 `integration_test` README 中的 [Android Device Testing][] 进行设置。
 
 ### iOS setup
 
@@ -293,7 +293,7 @@ section of the README.
 Follow the instructions in the [iOS Device Testing][]
 section of the README.
 
-请遵循 `integration_test` 包 README 中的 [iOS Device Testing][] 进行设置。
+请遵循 `integration_test` README 中的 [iOS Device Testing][] 进行设置。
 
 ### Test Lab project setup
 
@@ -372,7 +372,7 @@ See the [Firebase Test Lab section of the README][]
 for instructions on uploading the APKs from the command line.
 
 关于通过指令上传 APK 的说明，
-请查看 `integration_test` 包 README 中的 [Firebase Test Lab][Firebase Test Lab section of the README]。
+请查看 `integration_test` README 中的 [Firebase Test Lab][Firebase Test Lab section of the README]。
 
 ### Uploading Xcode tests
 
@@ -394,7 +394,7 @@ for instructions on how to upload the .zip file
 from the command line.
 
 关于如何通过指令上传 .zip 文件的说明，
-请查看 `integration_test` 包 README 中的 [iOS Device Testing][]。
+请查看 `integration_test` README 中的 [iOS Device Testing][]。
 
 [Android Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#android-device-testing
 [Download and install ChromeDriver]: https://chromedriver.chromium.org/downloads

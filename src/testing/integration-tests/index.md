@@ -156,7 +156,7 @@ void main() {
   be reported correctly.
 
   注意：你只能使用 `testWidgets` 来声明你的测试，
-  否则错误将不会被正确报告。
+  否则错误将无法正确抛出。
 
 {{site.alert.end}}
 

@@ -20,11 +20,21 @@ which is in preview
 (behind a flag) for iOS.
 (It's not yet available on Android.)
 
+如果你的移动应用程序上的动画只在首次运行时卡顿，
+很可能是着色器编译引起的。
+Flutter 对着色器编译卡顿的长期解决方案是 [Impeller][]，
+目前正处于预览阶段，在 iOS 上通过启用特定标志来使用
+（Android 正处于开发阶段，尚不可用）。
+
 Before continuing with the instructions below,
 please try Impeller on iOS, and let us know
 in a [GitHub issue][] if it doesn't address your issue.
 Impeller on Android is being actively developed,
 but is not yet in developer preview.
+
+在继续下面的说明之前，请在 iOS 上尝试使用 Impeller，
+如果它没有解决你的问题，请在 [GitHub issue][] 中告诉我们。
+Android 正在积极开发中，但还没有进入开发者预览阶段。
 
 [Impeller]: {{site.repo.flutter}}/wiki/Impeller
 [GitHub issue]: {{site.github}}/orgs/flutter/projects/21
@@ -40,19 +50,38 @@ will work on only a small subset of devices,
 and will likely make jank worse on the other devices,
 or even create rendering errors.
 
+在我们努力让 Impeller 为生产做好准备的时候，
+你可以尝试将预编译的着色器与 iOS 应用绑定在一起来减轻着色器编译的卡顿。
+不幸的是，由于预编译的着色器是针对设备或特定 GPU 进行优化的，
+所以这种方法在 Android 上效果不佳。
+Android 的硬件生态系统非常庞大，
+因此与应用程序绑定的特定 GPU 预编译着色器只能在一小部分设备上运行，
+而且很可能会加剧其他设备上的卡顿问题，甚至引发渲染错误。
+
 Also, please note that we aren't planning to make
 improvements to the developer experience for creating
 precompiled shaders described below. Instead,
 we are focusing our energies on the more robust
 solution to this problem that Impeller offers.
 
+另外，请注意，我们并不打算改进下面描述的创建预编译着色器。
+相反，为了真正解决这个问题，
+我们将主要精力集中在 Impeller 提供的更强大的解决方案上。
+
 ## What is shader compilation jank?
+
+## 什么是着色器编译卡顿？
 
 A shader is a piece of code that runs on a GPU (graphics processing unit). When
 the Skia graphics backend that Flutter uses for rendering sees a new sequence
 of draw commands for the first time, it sometimes generates and compiles a
 custom GPU shader for that sequence of commands. This allows that sequence and
 potentially similar sequences to render as fast as possible.
+
+着色器是在 GPU（图形处理单元）上运行的代码。
+当 Flutter 渲染的 Skia 图形后端首次看到新的绘制命令序列时，
+它有时会生成和编译一个自定义的 GPU 着色器用于该命令序列。
+使得该序列和潜在类似的序列能够尽可能快地渲染。
 
 Unfortunately, Skia's shader generation and compilation happen in sequence with
 the frame workload. The compilation could cost up to a few hundred milliseconds
@@ -61,10 +90,19 @@ whereas a smooth frame needs to be drawn within 16 milliseconds for a 60 fps
 to be missed, and drop the fps from 60 to 6. This is _compilation jank_. After
 the compilation is complete, the animation should be smooth.
 
+然而不幸的是，Skia 着色器生成和编译的过程与帧的工作是依次进行的。
+编译过程可能需要几百毫秒的时间，而对于 60 帧/秒 (frame-per-second) 的显示来说，
+一个流畅的帧必须在 16 毫秒内绘制完成。因此，编译过程可能导致数十帧被丢失，
+使帧数从 60 降到 6。这就是所谓的 **编译卡顿** 。编译完成之后，动画应该会变得流畅。
+
 On the other hand, Impeller generates and compiles all necessary shaders when
 we build the Flutter Engine. Therefore apps running on Impeller already have
 all the shaders they need, and the shaders can be used without introducing jank
 into animations.
+
+另一方面，Impeller 在我们构建 Flutter 引擎时已经生成并编译了所有必要的着色器。
+因此，在 Impeller 上运行的应用程序已经拥有了它们所需的所有着色器，
+并且这些着色器不会在动画中引起卡顿。
 
 Definitive evidence for the presence of shader compilation jank is to see
 `GrGLProgramBuilder::finalize` in the tracing with `--trace-skia` enabled. See
@@ -222,7 +260,7 @@ and [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`][] tasks.
 
 就拿原始版本的 [Flutter Gallery][] 举例。
 我们让 CI 系统在每次 Flutter commit 后都生成着色器缓存，
-并在 `transitions_perf_test.dart`][] 中验证性能。
+并在 [`transitions_perf_test.dart`][] 中验证性能。
 更多详细信息请查看 [Flutter Gallery sksl 预热过渡性能验证][`flutter_gallery_sksl_warmup__transition_perf`]，
 以及 [Flutter Gallery sksl 预热过渡在 iOS_32 上的性能验证][`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]。
 

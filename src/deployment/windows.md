@@ -218,6 +218,12 @@ and its default product version is `1.0.0+1`. To update these,
 navigate to the `pubspec.yaml` file and update the
 following line:
 
+对于还没有发布到 Microsoft Store 的应用程序，
+你可以设置应用程序的可执行程序和产品的版本。
+可执行程序的默认版本是 `1.0.0.1`，
+产品的默认版本是 `1.0.0+1`。
+要设置这些内容，请找到 `pubspec.yaml` 并更新这一行：
+
 ```yaml
 version: 1.0.0+1
 ```
@@ -227,19 +233,33 @@ followed by an optional build number that is separated
 by a `+`. In the example above, the build name is `1.0.0`
 and the build number is `1`.
 
+构建版本名称是三个点隔开的数字，
+后面是一个可选的构建编号，用 `+` 隔开。
+在上面的例子中，构建版本名称是 `1.0.0`，构建编号是 `1`。
+
 The build name becomes the first three numbers of the
 file and product versions, while the build number becomes
 the fourth number of the file and product versions.
+
+可执行程序和产品的版本：由构建版本名称（前三个数字）和构建编号（第四个数字）组成。
 
 Both the build name and number can be overridden in
 `flutter build windows` by specifying `--build-name` and
 `--build-number`, respectively.
 
+在 `flutter build windows` 时，
+可以通过 `--build-name` 和 `--build-number` 分别指定构建版本名称和构建编号。
+
 {{site.alert.note}}
+
   Flutter projects created before Flutter 3.3
   need to be updated to set the executable's version
   information. For more information,
   refer to the [version migration guide][].
+
+  在 Flutter 3.3 版本之前创建的 Flutter 项目需要更新后才能设置可执行程序的版本信息。
+  更多信息，请查看 [版本信息迁移指南][version migration guide]。
+
 {{site.alert.end}}
 
 ## Add app icons

@@ -304,7 +304,7 @@ see the [Material Design guide][].
 你可以查看 [`VisualDensity`][] API 文档了解更多支持视觉密度的组件。
 若想了解视觉密度的通用原则，请查看 [Material Design 指南][Material Design guide]。
 
-[Material Design guide]: {{site.material}}/design/layout/applying-density.html#usage
+[Material Design guide]: {{site.material2}}/design/layout/applying-density.html#usage
 [`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
 
 ### Contextual layout
@@ -1695,13 +1695,17 @@ Here are some resources to get you started:
 
 你可以从下列的资源开始学习：
 
-* [Material guidelines on responsive UI layout][]
+* [Material guidelines on applying layout][]
 
   [Material 响应式界面布局指南][Material guidelines on responsive UI layout]
 
 * [Material design for large screens][]
 
   [大屏设备的 Material Design][Material design for large screens]
+
+* [Material guidelines on canonical layouts][]
+
+  [Material 规范中的典型布局][Material guidelines on canonical layouts]
 
 * [Build high quality apps (Android)][]
 
@@ -1724,9 +1728,10 @@ Here are some resources to get you started:
   [屏幕大小和分界点][Machine sizes and breakpoints (Microsoft)]
 
 [Build high quality apps (Android)]: {{site.android-dev}}/quality
+[Material guidelines on applying layout]: {{site.material}}/foundations/layout/applying-layout/window-size-classes
+[Material guidelines on canonical layouts]: {{site.material}}/foundations/layout/canonical-layouts/overview
 [Human interface guidelines (Apple)]: {{site.apple-dev}}/design/human-interface-guidelines/
-[Material design for large screens]: {{site.material}}/blog/material-design-for-large-screens
-[Machine sizes and breakpoints (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design
-[Material guidelines on responsive UI layout]: {{site.material}}/archive/guidelines/layout/responsive-ui.html
+[Material design for large screens]: {{site.material2}}/blog/material-design-for-large-screens
+[Machine sizes and breakpoints (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-desig
 [Responsive design techniques (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/responsive-design
 [UI design do's and don'ts (Apple)]: {{site.apple-dev}}/design/tips/

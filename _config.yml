@@ -1,7 +1,7 @@
 title: Flutter 中文文档 - Flutter 中文开发者网站 - Flutter
 url: https://flutter.cn/docs
 main-url: https://flutter.cn
-email: flutter-dev@googlegroups.com
+email: cfug-dev@googlegroups.com
 
 google_analytics_id: UA-122680122-1
 # google_site_verification: HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4
@@ -12,7 +12,7 @@ default_share_image: /assets/images/cn/flutter-cn-logo.png
 github_username: cfug
 branch: master
 repo:
-  organization: https://github.com/cfug
+  organization: https://github.com/flutter
   this: https://github.com/cfug/flutter.cn
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
@@ -33,14 +33,15 @@ dart-site: https://dart.cn
 news: https://news.dartlang.org
 api: https://api.flutter-io.cn
 master-api: https://master-api.flutter-io.cn
-pub: https://pub.flutter-io.cn
-pub-api: https://pub.flutter-io.cn/documentation
-pub-pkg: https://pub.flutter-io.cn/packages
+pub: https://pub-web.flutter-io.cn
+pub-api: https://pub-web.flutter-io.cn/documentation
+pub-pkg: https://pub-web.flutter-io.cn/packages
 flutter-medium: https://medium.com/flutter
 medium: https://medium.com
 dartpad: https://dartpad.cn
 gallery: https://gallery.flutter.cn
-material: https://material-io.cn
+material: https://m3.material.io
+material2: https://m2.material.io
 so: https://stackoverflow.com
 github: https://github.com
 flutter-assets: https://flutter.github.io/assets-for-api-docs/assets

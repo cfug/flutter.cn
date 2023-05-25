@@ -60,23 +60,61 @@ You can create a new project in one of several ways.
 
 ### 创建新项目
 
-To create a new Flutter project from the Flutter starter app template:
+Creating a new Flutter project from the Flutter starter app template
+differs between Android Studio and IntelliJ.
 
-使用 Futter 应用模板创建新的 Flutter 项目：
+从 Flutter 起始应用模板创建新 Flutter 项目在
+Android Studio 和 IntelliJ 中有所不同。
 
- 1. In the IDE, click **New Project** from the **Welcome**
-    window or **File > New > Project** from the main IDE window.
+**In Android Studio:**
 
-    在 IDE 中，点击 **Welcome** 窗口，或者主窗口
-    **File > New > Project** 中的 **New Project**。
+**在 Android Studio 中：**
+
+ 1. In the IDE, click **New Flutter Project** from the **Welcome** window or
+    **File > New > New Flutter Project** from the main IDE window.
+
+    在 IDE 中，点击 **Welcome** 窗口中的 **New Flutter Project**，或者主窗口中的
 
  1. Specify the **Flutter SDK path** and click **Next**.
 
-    在菜单中选择 **Flutter SDK path**，点击 **Next**。
+    指定 **Flutter SDK path**，点击 **Next**。
 
- 1. Enter your desired **Project name**, **Description** and **Project location**.
+ 1. Enter your desired **Project name**, 
+    **Description**, and **Project location**.
 
-    输入你的 **Project name**、**Description** 和 **Project location**。
+    输入你想要的 **Project name**，**Description**
+    和 **Project location**。
+
+ 1. If you might publish this app, [set the company domain](#note).
+
+    如果打算发布此应用，需要 [设置公司域名](#note)。
+
+ 1. Click **Finish**.
+
+    点击 **Finish**。
+
+**In IntelliJ:**
+
+**在 IntelliJ 中：**
+
+ 1. In the IDE, click **New Project** from the **Welcome** window or
+    **File > New > Project** from the main IDE window.
+
+    在 IDE 中，点击 **Welcome** 窗口中的 **New Project**，或者主窗口中的
+    **File > New > Project**。
+
+ 1. Select **Flutter** from the **Generators** list in the left panel
+
+    在左侧面板的 **Generators** 列表中选择 **Flutter**。
+
+ 1. Specify the **Flutter SDK path** and click **Next**.
+
+    指定 **Flutter SDK path**，点击 **Next**。
+
+ 1. Enter your desired **Project name**,
+    **Description**, and **Project location**.
+
+    输入你想要的 **Project name**，**Description**
 
  1. If you might publish this app, [set the company domain](#note).
 
@@ -106,21 +144,28 @@ To create a new Flutter project from the Flutter starter app template:
 
 {{site.alert.end}}
 
-### Creating a new project from existing source code
+### Opening a project from existing source code
 
 ### 从现有源码创建新项目
 
-To create a new Flutter project containing existing Flutter source code
-files:
+To open an existing Flutter project:
 
-创建包含现有 Flutter 源码的新 Flutter 项目：
+打开现有的 Flutter 项目：
 
- 1. In the IDE, click **Create New Project** from the
-    **Welcome** window or **File > New > Project**
-    from the main IDE window.
+ 1. In the IDE, click **Open** from the **Welcome** window, or
+    **File > Open** from the main IDE window. 
 
-    在 IDE 中，点击 **Welcome** 窗口，或者主窗口
-    **File > New > Project** 中的 **Create New Project**。
+    在 IDE 中，点击 **Welcome** 窗口中的 **Open**，或者主窗口中的
+    **File > Open**。
+
+ 1. Browse to the directory holding your existing
+    Flutter source code files.
+
+    浏览到现有 Flutter 源码的文件目录。
+
+ 1. Click **Open**.
+
+    点击 **Open**。
 
     {{site.alert.important}}
 
@@ -130,20 +175,6 @@ files:
       对于 Flutter 项目，请 **不要** 使用 **New > Project from existing sources**。
 
     {{site.alert.end}}
-
- 1. Select **Flutter** in the menu, and click **Next**.
-
-    在菜单中选择 **Flutter**，点击 **Next**。
-
- 1. Under **Project location** enter, or browse to,
-    the directory holding your
-    existing Flutter source code files.
-
-    在 **Project location** 下，输入或选择现有 Flutter 源码的文件目录。
-
- 1. Click **Finish**.
-
-    点击 **Finish**。
 
 ## Editing code and viewing issues
 

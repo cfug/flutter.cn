@@ -49,19 +49,17 @@ This recipe uses the following steps:
 The [`http`][] package provides the
 simplest way to fetch data from the internet.
 
-[`http`][] 包为我们提供了获取网络数据最简单的方法。
+[`http`][] package 为我们提供了
+获取网络数据最简单的方法。
 
-To install the `http` package, add it to the
-dependencies section of the `pubspec.yaml` file.
-You can find the latest version of the
-[`http` package][] the pub.dev.
+To add the `http` package as a dependency,
+run `flutter pub add`:
 
-安装 `http` 包之前，你必须先把它添加到 `pubspec.yaml` 的依赖区域。
-你可以在 [pub.dev 找到 http 包的最新版本][`http` package]。
+要将 `http` 包添加到依赖中，
+运行 `flutter pub add` 命令：
 
-```yaml
-dependencies:
-  http: <latest_version>
+```terminal
+$ flutter pub add http
 ```
 
 Import the http package.

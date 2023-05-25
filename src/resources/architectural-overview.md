@@ -527,7 +527,7 @@ implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of bo
 [iOS Switch
 control]({{site.apple-dev}}/design/human-interface-guidelines/ios/controls/switches/)
 and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
-[Android equivalent]({{site.material}}/develop/android/components/switches).
+[Android equivalent]({{site.material}}/components/switch).
 
 Flutter 拥有其自己的 UI 控制实现，而不是由系统自带的方法进行托管：
 例如，

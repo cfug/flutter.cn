@@ -19,9 +19,9 @@ Google authentication.
 本页面描述了如何通过 Google 身份验证，使用这些 API 和终端用户数据交互。
 
 Examples of user-data APIs include
-[Calendar]({{site.pub-api}}/googleapis/latest/calendar.v3/calendar.v3-library.html),
-[Gmail]({{site.pub-api}}/googleapis/latest/gmail.v1/gmail.v1-library.html), and
-[YouTube]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html).
+[Calendar]({{site.pub-api}}/googleapis/latest/calendar_v3/calendar_v3-library.html),
+[Gmail]({{site.pub-api}}/googleapis/latest/gmail_v1/gmail_v1-library.html), and
+[YouTube]({{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html).
 
 用户数据 API 的例子包括 [Calendar]({{site.pub-api}}/googleapis/latest/calendar.v3/calendar.v3-library.html)、
 [Gmail]({{site.pub-api}}/googleapis/latest/gmail.v1/gmail.v1-library.html) 
@@ -81,17 +81,17 @@ To use Google APIs, follow these steps.
 ## 1. 选择所需的 API
 
 The documentation for [package:googleapis]({{site.pub-api}}/googleapis) lists
-each API as a separate Dart library – in a `name.version` format. Let's look at
-[`youtube.v3`]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html)
+each API as a separate Dart library – in a `name_version` format. Let's look at
+[`youtube_v3`]({{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html)
 as an example.
 
-文档 [package:googleapis]({{site.pub-api}}/googleapis) 采用 `name.version` 的形式，
+文档 [package:googleapis]({{site.pub-api}}/googleapis) 采用 `name_version` 的形式，
 列举了每一个可以单独作为 Dart 库的 API。
-一起看看 [`youtube.v3`]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html) 这个例子。
+一起看看 [`youtube_v3`]({{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html)这个例子。
 
 Each library may provide many types, but there is one _root_ class that ends in
 `Api`. For YouTube, it's
-[`YouTubeApi`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html).
+[`YouTubeApi`]({{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html).
 
 每一个库都可以提供多种类型，但是一定会有一个以 `Api` 结尾的 **根** 类。
 在 YouTube 中，根类就是 [`YouTubeApi`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html)。
@@ -99,10 +99,10 @@ Each library may provide many types, but there is one _root_ class that ends in
 Not only is the `Api` class the one you need to instantiate – see step 3 – but
 it also exposes the scopes that represent the permissions needed to use the API.
 Look under the
-[Constants section]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html#constants)
+[Constants section]({{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html#constants)
 of the `YouTubeApi` class and you'll see the available scopes. To request access
 to simply read (but not write) an end-users YouTube data, use the
-[`youtubeReadonlyScope`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi/youtubeReadonlyScope-constant.html)
+[`youtubeReadonlyScope`]({{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi/youtubeReadonlyScope-constant.html)
 when authenticating the user.
 
 `Api` 类不仅是你需要初始化的类——详见步骤 3 ——它还暴露了使用该 API 所需权限的作用域。

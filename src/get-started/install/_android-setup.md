@@ -173,16 +173,6 @@ you have installed the tools listed above.
 在使用 Flutter 前，你必须同意 Android SDK 平台的协议。
 你可以在安装完上述工具后执行这一步。
 
- 1. Make sure that you have a version of Java 11 installed and that your 
-    `JAVA_HOME` environment variable is set to the JDK's folder.
-
-    确保你安装了 Java 11，并且正确设置了 `JAVA_HOME` 环境变量到 JDK 目录。
-
-    Android Studio versions 2.2 and higher come with a JDK, so this should
-    already be done.
-
-    高于 2.2 版本的 Android Studio 自带了 JDK，所以应无需手动操作。
-
  1. Open an elevated console window and run the following command to begin
     signing licenses.
 

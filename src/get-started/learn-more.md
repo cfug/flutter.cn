@@ -38,11 +38,7 @@ Learn more about the Flutter framework from the following pages:
 * [Flutter for Android developers][]
 
   [给 Android 开发者的 Flutter 指南][Flutter for Android developers]
-
-* [From Java to Dart][] codelab
-
-  [为 Java 开发人员准备的 Dart 教程][From Java to Dart]
-
+  
 * [Flutter for SwiftUI developers][]
 
   [给 SwiftUI 开发者的 Flutter 指南][Flutter for SwiftUI developers]
@@ -111,7 +107,6 @@ Happy Fluttering!
 [Flutter samples]: https://flutter.github.io/samples
 [Flutter for web developers]: {{site.url}}/get-started/flutter-for/web-devs
 [Flutter for Xamarin.Forms developers]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs
-[From Java to Dart]: {{site.codelabs}}/codelabs/from-java-to-dart
 [Introduction to widgets]: {{site.url}}/ui/widgets-intro
 [mailing list]: mailto:{{site.email}}
 [Udacity online Flutter training]: https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905

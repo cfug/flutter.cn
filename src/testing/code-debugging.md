@@ -1298,9 +1298,9 @@ effect by using a [`GridPaper`][] widget directly.
 在非 Material 应用中，您可以通过直接使用 [`GridPaper`][] widget 来达到类似的效果。
 
 [`GridPaper`]: {{site.api}}/flutter/widgets/GridPaper-class.html
-[Material Design]: {{site.material}}/design/introduction
+[Material Design]: {{site.material}}/styles
 [`MaterialApp` constructor]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
-[Material Design baseline grid]: {{site.material}}/design/layout/spacing-methods.html#baseline
+[Material Design baseline grid]: {{site.material}}/foundations/layout/understanding-layout/spacing
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html

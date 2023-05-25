@@ -12,7 +12,6 @@
       permalink: /docs/get-started/learn-more
     - divider
     - title: 拥有其他平台开发经验？
-      expanded: true
       children:
         - title: 给 Android 开发者的 Flutter 指南
           permalink: /docs/get-started/flutter-for/android-devs
@@ -30,8 +29,22 @@
           permalink: /docs/get-started/flutter-for/declarative
     - title: Dart 语言概览
       permalink: https://dart.cn/overview
-    - title: 构建一个 Web 应用
-      permalink: /docs/get-started/web
+
+- title: 保持版本更新
+
+  permalink: /docs/release
+  children:
+    - title: 版本升级
+      permalink: /docs/release/upgrade
+    - title: SDK 版本列表
+      permalink: /docs/release/archive
+    - divider
+    - title: 最近更新
+      permalink: /docs/release/whats-new
+    - title: 版本发行注记
+      permalink: /docs/release/release-notes
+    - title: 破坏性改动
+      permalink: /docs/release/breaking-changes
 
 - title: 教程和样例代码
   children:
@@ -48,304 +61,267 @@
     - title: 实践教程
       permalink: /docs/reference/tutorials
 
-- title: 开发文档
-  permalink: /docs/development
-  expanded: true
+- divider
+
+- title: 用户界面
+  permalink: /docs/ui
   children:
-    - title: 用户界面
-      permalink: /docs/development/ui
+    - title: Widgets 介绍
+      permalink: /docs/ui/widgets-intro
+    - title: 布局构建
+      permalink: /docs/ui/layout
       children:
-        - title: Widgets 介绍
-          permalink: /docs/development/ui/widgets-intro
-        - title: 布局构建
-          permalink: /docs/development/ui/layout
-          children:
-            - title: Flutter 中的布局
-              permalink: /docs/development/ui/layout
-              match-page-url-exactly: true
-            - title: 布局构建教程
-              permalink: /docs/development/ui/layout/tutorial
-            - title: 创建响应式和自适应的应用
-              permalink: /docs/development/ui/layout/adaptive-responsive
-            - title: 构建自适应应用
-              permalink: /docs/development/ui/layout/building-adaptive-apps
-            - title: 理解布局约束
-              permalink: /docs/development/ui/layout/constraints
-            - title: 边界约束 (Box constraints)
-              permalink: /docs/development/ui/layout/box-constraints
-        - title: 添加互动
-          permalink: /docs/development/ui/interactive
-        - title: 资源和图片
-          permalink: /docs/development/ui/assets-and-images
-        - title: Material 设计
-          permalink: /docs/development/ui/material
-        - title: 路由和导航
-          permalink: /docs/development/ui/navigation
-          children:
-            - title: 路由和导航
-              permalink: /docs/development/ui/navigation
-              match-page-url-exactly: true
-            - title: 深层链接
-              permalink: /docs/development/ui/navigation/deep-linking
-            - title: 配置 Web 应用的 URL 策略
-              permalink: /docs/development/ui/navigation/url-strategies
-        - title: 动画效果
-          permalink: /docs/development/ui/animations
-          children:
-            - title: 介绍
-              permalink: /docs/development/ui/animations
-              match-page-url-exactly: true
-            - title: 概览
-              permalink: /docs/development/ui/animations/overview
-            - title: 教程
-              permalink: /docs/development/ui/animations/tutorial
-            - title: 隐式动画
-              permalink: /docs/development/ui/animations/implicit-animations
-            - title: 主动画 (Hero animations)
-              permalink: /docs/development/ui/animations/hero-animations
-            - title: 交织动画 (Staggered animations)
-              permalink: /docs/development/ui/animations/staggered-animations
-        - title: 用户界面 (UI) 进阶
-          permalink: /docs/development/ui/advanced
-          children:
-            - title: 使用 Actions 和 shortcuts
-              permalink: /docs/development/ui/advanced/actions_and_shortcuts
-            - title: 字体和文本
-              permalink: /docs/development/ui/advanced/typography
-            - title: 键盘焦点系统
-              permalink: /docs/development/ui/advanced/focus
-            - title: 手势
-              permalink: /docs/development/ui/advanced/gestures
-            - title: 着色器 (Shaders)
-              permalink: /docs/development/ui/advanced/shaders
-            - title: 滑动效果 (Slivers)
-              permalink: /docs/development/ui/advanced/slivers
-            - title: 启动页（闪屏页）
-              permalink: /docs/development/ui/advanced/splash-screen
-        - title: 核心 Widget 目录
-          permalink: /docs/development/ui/widgets
-    - title: 数据调用和后端
-      permalink: /docs/development/data-and-backend
-      children:
-        - title: 状态管理
-          permalink: /docs/development/data-and-backend/state-mgmt
-          children:
-            - title: 状态管理介绍
-              permalink: /docs/development/data-and-backend/state-mgmt/intro
-            - title: 声明式的编程思维
-              permalink: /docs/development/data-and-backend/state-mgmt/declarative
-            - title: 短时 (ephemeral) 和应用 (app) 状态
-              permalink: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
-            - title: 简单的共享 (app) 状态管理
-              permalink: /docs/development/data-and-backend/state-mgmt/simple
-            - title: 状态管理参考
-              permalink: /docs/development/data-and-backend/state-mgmt/options
-        - title: 网络与 http
-          permalink: /docs/development/data-and-backend/networking
-        - title: JSON 和序列化数据
-          permalink: /docs/development/data-and-backend/json
-        - title: 使用 Firebase
-          permalink: /docs/development/data-and-backend/firebase
-    - title: 应用的无障碍和国际化 # TODO: use: Accessibility & localization
-      permalink: /docs/development/accessibility-and-localization
-      children:
-        - title: 无障碍
-          permalink: /docs/development/accessibility-and-localization/accessibility
-        - title: 国际化
-          permalink: /docs/development/accessibility-and-localization/internationalization
-    - title: 平台集成
-      permalink: /docs/development/platform-integration
-      children:
-        - title: 已支持的平台
-          permalink: /docs/development/tools/sdk/release-notes/supported-platforms
-        - title: 构建桌面端应用
-          permalink: /docs/development/platform-integration/desktop
-        - title: 撰写双端平台代码 (插件编写实现)
-          permalink: /docs/development/platform-integration/platform-channels
-        - title: Android 平台
-          permalink: /docs/development/platform-integration/android
-          children:
-            - title: C 语言代码集成及调用
-              permalink: /docs/development/platform-integration/android/c-interop
-            - title: 托管 Android 原生视图
-              permalink: /docs/development/platform-integration/android/platform-views
-            - title: Android 插件升级和迁移
-              permalink: /docs/development/platform-integration/android/plugin-api-migration
-            - title: 迁移到 AndroidX
-              permalink: /docs/development/platform-integration/android/androidx-migration
-            - title: 已弃用的闪屏页 API 迁移
-              permalink: /docs/development/platform-integration/android/splash-screen-migration
-        - title: iOS 平台
-          permalink: /docs/development/platform-integration/ios
-          children:
-            - title: 使用 Apple 的系统库
-              permalink: /docs/development/platform-integration/ios/apple-frameworks
-            - title: 添加 iOS App Clip 支持
-              permalink: /docs/development/platform-integration/ios/ios-app-clip
-            - title: C 语言代码集成及调用
-              permalink: /docs/development/platform-integration/ios/c-interop
-            - title: 托管 iOS 原生视图
-              permalink: /docs/development/platform-integration/ios/platform-views
-            - title: iOS 平台调试
-              permalink: /docs/development/platform-integration/ios/ios-debugging
-        - title: Linux 操作系统
-          permalink: /docs/development/platform-integration/linux
-          children:
-            - title: 构建 Linux 桌面软件
-              permalink: /docs/development/platform-integration/linux/building
-        - title: macOS 操作系统
-          permalink: /docs/development/platform-integration/macos
-          children:
-            - title: 构建 macOS 应用
-              permalink: /docs/development/platform-integration/macos/building
-            - title: C 语言代码集成及调用
-              permalink: /docs/development/platform-integration/macos/c-interop
-        - title: Web 平台
-          permalink: /docs/development/platform-integration/web
-          children:
-            - title: Web 平台常见问题
-              permalink: /docs/development/platform-integration/web/faq
-            - title: Web 平台渲染器
-              permalink: /docs/development/platform-integration/web/renderers
-            - title: 自定义 Web 应用初始化
-              permalink: /docs/development/platform-integration/web/initialization
-            - title: 在网页里显示图片
-              permalink: /docs/development/platform-integration/web/web-images
-        - title: Windows 操作系统
-          permalink: /docs/development/platform-integration/windows
-          children:
-            - title: 构建 Windows 桌面软件
-              permalink: /docs/development/platform-integration/windows/building
-            - title: 事件循环迁移
-              permalink: /docs/development/platform-integration/windows/run-loop-migration
-            - title: 版本信息迁移
-              permalink: /docs/development/platform-integration/windows/version-migration
-            - title: 暗色模式迁移
-              permalink: /docs/development/platform-integration/windows/dark-mode-migration
-    - title: Package 和插件
-      permalink: /docs/development/packages-and-plugins
-      children:
-        - title: 后台进程
-          permalink: /docs/development/packages-and-plugins/background-processes
-        - title: Package 和插件的开发和提交
-          permalink: /docs/development/packages-and-plugins/developing-packages
-        - title: Flutter Favorites 项目
-          permalink: /docs/development/packages-and-plugins/favorites
-        - title: Happy paths 项目
-          permalink: /docs/development/packages-and-plugins/happy-paths
+        - title: Flutter 中的布局
+          permalink: /docs/ui/layout
           match-page-url-exactly: true
-        - title: Happy paths 推荐
-          permalink: /docs/development/packages-and-plugins/happy-paths/recommended
-        - title: Flutter 测试插件 [新增]
-          permalink: /docs/development/packages-and-plugins/plugins-in-tests
-        - title: 使用 Packages
-          permalink: /docs/development/packages-and-plugins/using-packages
-        - title: Package 和插件网站
-          permalink: https://pub.flutter-io.cn/flutter
-    - title: 将 Flutter 添加到现有应用
-      permalink: /docs/development/add-to-app
+        - title: 布局构建教程
+          permalink: /docs/ui/layout/tutorial
+        - title: 创建响应式和自适应的应用
+          permalink: /docs/ui/layout/adaptive-responsive
+        - title: 构建自适应应用
+          permalink: /docs/ui/layout/building-adaptive-apps
+        - title: 理解布局约束
+          permalink: /docs/ui/layout/constraints
+        - title: 边界约束
+          permalink: /docs/ui/layout/box-constraints
+    - title: 添加互动
+      permalink: /docs/ui/interactive
+    - title: 资源和图片
+      permalink: /docs/ui/assets-and-images
+    - title: Material Design
+      permalink: /docs/ui/material
+    - title: 路由和导航
+      permalink: /docs/ui/navigation
       children:
-      - title: 介绍
-        permalink: /docs/development/add-to-app
-        match-page-url-exactly: true
-      - title: 将 Flutter 添加到现有 Android 应用
-        permalink: /docs/development/add-to-app/android
-        children:
-          - title: 设置项目
-            permalink: /docs/development/add-to-app/android/project-setup
-          - title: 添加单个 Flutter 页面
-            permalink: /docs/development/add-to-app/android/add-flutter-screen
-          - title: 添加一个 Flutter Fragment
-            permalink: /docs/development/add-to-app/android/add-flutter-fragment
-          - title: 添加 Flutter 视图
-            permalink: /docs/development/add-to-app/android/add-flutter-view
-          - title: Plugin 初始化
-            permalink: /docs/development/add-to-app/android/plugin-setup
-      - title: 将 Flutter 添加到现有 iOS 应用
-        permalink: /docs/development/add-to-app/ios
-        children:
-          - title: 设置项目
-            permalink: /docs/development/add-to-app/ios/project-setup
-          - title: 添加单个 Flutter 页面
-            permalink: /docs/development/add-to-app/ios/add-flutter-screen
-      - title: 调试及热重载
-        permalink: /docs/development/add-to-app/debugging
-      - title: 加载顺序和性能
-        permalink: /docs/development/add-to-app/performance
-      - title: 多个 Flutter 实例
-        permalink: /docs/development/add-to-app/multiple-flutters
-    - title: 开发工具
-      permalink: /docs/development/tools
+        - title: 路由和导航
+          permalink: /docs/ui/navigation
+          match-page-url-exactly: true
+        - title: 深层链接
+          permalink: /docs/ui/navigation/deep-linking
+        - title: 配置 URL 策略
+          permalink: /docs/ui/navigation/url-strategies
+    - title: 动画效果
+      permalink: /docs/ui/animations
       children:
-        - title: Android Studio 或 IntelliJ 系列
-          permalink: /docs/development/tools/android-studio
-        - title: Visual Studio Code
-          permalink: /docs/development/tools/vs-code
-        - title: 开发者工具
-          permalink: /docs/development/tools/devtools
-          children:
-            - title: 概览
-              permalink: /docs/development/tools/devtools/overview
-            - title: 在 Android Studio 或 IntelliJ 上使用
-              permalink: /docs/development/tools/devtools/android-studio
-            - title: 在 VS Code 上使用
-              permalink: /docs/development/tools/devtools/vscode
-            - title: 在命令行工具中使用
-              permalink: /docs/development/tools/devtools/cli
-            - title: Flutter inspector 工具
-              permalink: /docs/development/tools/devtools/inspector
-            - title: 性能视图
-              permalink: /docs/development/tools/devtools/performance
-            - title: CPU 探测视图
-              permalink: /docs/development/tools/devtools/cpu-profiler
-            - title: 内存视图
-              permalink: /docs/development/tools/devtools/memory
-            - title: 网络视图
-              permalink: /docs/development/tools/devtools/network
-            - title: 调试器
-              permalink: /docs/development/tools/devtools/debugger
-            - title: 日志视图
-              permalink: /docs/development/tools/devtools/logging
-            - title: 应用大小分析工具
-              permalink: /docs/development/tools/devtools/app-size
-            - title: 发行注记
-              permalink: /docs/development/tools/devtools/release-notes
-        - title: Flutter SDK
-          permalink: /docs/development/tools/sdk
-          children:
-            - title: 概览
-              permalink: /docs/development/tools/sdk/overview
-            - title: 版本升级
-              permalink: /docs/development/tools/sdk/upgrading
-            - title: 版本列表
-              permalink: /docs/development/tools/sdk/releases
-            - title: 重要改动 (Breaking changes)
-              permalink: /docs/release/breaking-changes
-            - title: 版本说明
-              permalink: /docs/development/tools/sdk/release-notes
-              children:
-                - title: 1.9.1
-                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.9.1
-                - title: 1.7.8
-                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.7.8
-                - title: 1.5.4
-                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
-                - title: 1.2.1
-                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1
-        - title: Pubspec 文件的 Flutter 部分
-          permalink: /docs/development/tools/pubspec
-        - title: 热重载 (Hot reload)
-          permalink: /docs/development/tools/hot-reload
-        - title: Flutter Fix
-          permalink: /docs/development/tools/flutter-fix
-        - title: 代码格式化
-          permalink: /docs/development/tools/formatting
+        - title: 介绍
+          permalink: /docs/ui/animations
+          match-page-url-exactly: true
+        - title: 概览
+          permalink: /docs/ui/animations/overview
+        - title: 教程
+          permalink: /docs/ui/animations/tutorial
+        - title: 隐式动画
+          permalink: /docs/ui/animations/implicit-animations
+        - title: 主动画 (Hero)
+          permalink: /docs/ui/animations/hero-animations
+        - title: 交织动画 (Staggered)
+          permalink: /docs/ui/animations/staggered-animations
+    - title: 用户界面进阶内容
+      permalink: /docs/ui/advanced
+      children:
+        - title: 使用 Actions 和 shortcuts
+          permalink: /docs/ui/advanced/actions_and_shortcuts
+        - title: 字体和文本
+          permalink: /docs/ui/advanced/typography
+        - title: 键盘焦点系统
+          permalink: /docs/ui/advanced/focus
+        - title: 手势
+          permalink: /docs/ui/advanced/gestures
+        - title: 着色器 (Shaders)
+          permalink: /docs/ui/advanced/shaders
+        - title: 滑动效果 (Slivers)
+          permalink: /docs/ui/advanced/slivers
+    - title: Widget 目录
+      permalink: /docs/ui/widgets
+
+- title: 数据调用和后端
+  permalink: /docs/data-and-backend
+  children:
+    - title: 状态管理
+      permalink: /docs/data-and-backend/state-mgmt
+      children:
+        - title: 状态管理介绍
+          permalink: /docs/data-and-backend/state-mgmt/intro
+        - title: 声明式的编程思维
+          permalink: /docs/data-and-backend/state-mgmt/declarative
+        - title: 短时 (ephemeral) 和共享 (app) 状态
+          permalink: /docs/data-and-backend/state-mgmt/ephemeral-vs-app
+        - title: 简单的共享 (app) 状态管理
+          permalink: /docs/data-and-backend/state-mgmt/simple
+        - title: 状态管理参考
+          permalink: /docs/data-and-backend/state-mgmt/options
+    - title: 网络与 http
+      permalink: /docs/data-and-backend/networking
+    - title: JSON 和序列化数据
+      permalink: /docs/data-and-backend/json
+    - title: 使用 Firebase
+      permalink: /docs/data-and-backend/firebase
+    - title: 使用 Google APIs
+      permalink: /docs/data-and-backend/google-apis
+
+- title: 应用的无障碍和国际化
+  permalink: /docs/accessibility-and-localization
+  children:
+    - title: 无障碍
+      permalink: /docs/accessibility-and-localization/accessibility
+    - title: 国际化
+      permalink: /docs/accessibility-and-localization/internationalization
+
+- title: 平台集成
+  permalink: /docs/platform-integration
+  children:
+    - title: 已支持的平台
+      permalink: /docs/reference/supported-platforms
+    - title: 构建桌面端应用
+      permalink: /docs/platform-integration/desktop
+    - title: 撰写双端平台代码 (插件编写实现)
+      permalink: /docs/platform-integration/platform-channels
+    - title: Android 平台
+      permalink: /docs/platform-integration/android
+      children:
+        - title: 在 Android 中添加一个闪屏页
+          permalink: /docs/platform-integration/android/splash-screen
+        - title: C 语言代码集成及调用
+          permalink: /docs/platform-integration/android/c-interop
+        - title: 托管 Android 原生视图
+          permalink: /docs/platform-integration/android/platform-views
+        - title: 在 Android 上恢复状态
+          permalink: /docs/platform-integration/android/restore-state-android
+        - title: 构建适合 Chrome OS 的 Android 应用
+          permalink: /docs/platform-integration/android/chromeos
+    - title: iOS 平台
+      permalink: /docs/platform-integration/ios
+      children:
+        - title: 使用 Apple 的系统库
+          permalink: /docs/platform-integration/ios/apple-frameworks
+        - title: 在 iOS 中添加一个闪屏页
+          permalink: /docs/platform-integration/ios/splash-screen
+        - title: 添加 iOS App Clip 支持
+          permalink: /docs/platform-integration/ios/ios-app-clip
+        - title: 添加 iOS App 扩展
+          permalink: /docs/platform-integration/ios/app-extensions
+        - title: C 语言代码集成及调用
+          permalink: /docs/platform-integration/ios/c-interop
+        - title: 托管 iOS 原生视图
+          permalink: /docs/platform-integration/ios/platform-views
+        - title: iOS 平台调试
+          permalink: /docs/platform-integration/ios/ios-debugging
+        - title: 在 Android 上恢复状态
+          permalink: /docs/platform-integration/ios/restore-state-ios
+    - title: Linux 操作系统平台
+      permalink: /docs/platform-integration/linux
+      children:
+        - title: 构建 Linux 桌面软件
+          permalink: /docs/platform-integration/linux/building
+    - title: macOS 操作系统平台
+      permalink: /docs/platform-integration/macos
+      children:
+        - title: 构建 macOS 应用
+          permalink: /docs/platform-integration/macos/building
+        - title: C 语言代码集成及调用
+          permalink: /docs/platform-integration/macos/c-interop
+    - title: Web 平台
+      permalink: /docs/platform-integration/web
+      children:
+        - title: 构建一个 Web 应用
+          permalink: /docs/platform-integration/web/building
+        - title: Web 平台常见问题
+          permalink: /docs/platform-integration/web/faq
+        - title: Web 平台渲染器
+          permalink: /docs/platform-integration/web/renderers
+        - title: 自定义 Web 应用初始化
+          permalink: /docs/platform-integration/web/initialization
+        - title: 在网页里显示图片
+          permalink: /docs/platform-integration/web/web-images
+    - title: Windows 操作系统平台
+      permalink: /docs/platform-integration/windows
+      children:
+        - title: 构建 Windows 桌面软件
+          permalink: /docs/platform-integration/windows/building
+        - title: 事件循环迁移
+          permalink: /docs/platform-integration/windows/run-loop-migration
+        - title: 版本信息迁移
+          permalink: /docs/platform-integration/windows/version-migration
+        - title: 暗色模式迁移
+          permalink: /docs/platform-integration/windows/dark-mode-migration
+
+- title: Package 和插件
+  permalink: /docs/packages-and-plugins
+  children:
+    - title: 后台进程
+      permalink: /docs/packages-and-plugins/background-processes
+    - title: Package 和插件的开发和提交
+      permalink: /docs/packages-and-plugins/developing-packages
+    - title: Flutter Favorites 项目
+      permalink: /docs/packages-and-plugins/favorites
+    - title: Happy paths 项目
+      permalink: /docs/packages-and-plugins/happy-paths
+      match-page-url-exactly: true
+    - title: Happy paths 推荐
+      permalink: /docs/packages-and-plugins/happy-paths/recommended
+    - title: Flutter 测试插件
+      permalink: /docs/packages-and-plugins/plugins-in-tests
+    - title: 使用 Packages
+      permalink: /docs/packages-and-plugins/using-packages
+    - title: Package 和插件网站
+      permalink: https://pub-web.flutter-io.cn/flutter
+
+- title: 开发工具
+  permalink: /docs/tools
+  children:
+    - title: Android Studio 或 IntelliJ 系列 IDE
+      permalink: /docs/tools/android-studio
+    - title: VS Code
+      permalink: /docs/tools/vs-code
+    - title: 开发者工具
+      permalink: /docs/tools/devtools
+      children:
+        - title: 概览
+          permalink: /docs/tools/devtools/overview
+        - title: 在 Android Studio 或 IntelliJ 中使用
+          permalink: /docs/tools/devtools/android-studio
+        - title: 在 VS Code 中使用
+          permalink: /docs/tools/devtools/vscode
+        - title: 在命令行工具中使用
+          permalink: /docs/tools/devtools/cli
+        - title: Flutter inspector 工具
+          permalink: /docs/tools/devtools/inspector
+        - title: 性能视图
+          permalink: /docs/tools/devtools/performance
+        - title: CPU 探测视图
+          permalink: /docs/tools/devtools/cpu-profiler
+        - title: 内存视图
+          permalink: /docs/tools/devtools/memory
+        - title: 调试终端视图
+          permalink: /docs/tools/devtools/console
+        - title: 网络视图
+          permalink: /docs/tools/devtools/network
+        - title: 调试器
+          permalink: /docs/tools/devtools/debugger
+        - title: 日志视图
+          permalink: /docs/tools/devtools/logging
+        - title: 应用大小分析工具
+          permalink: /docs/tools/devtools/app-size
+        - title: 发行注记
+          permalink: /docs/tools/devtools/release-notes
+    - title: Flutter SDK
+      permalink: /docs/tools/sdk
+    - title: Pubspec 文件
+      permalink: /docs/tools/pubspec
+    - title: 热重载
+      permalink: /docs/tools/hot-reload
+    - title: Flutter Fix
+      permalink: /docs/tools/flutter-fix
+    - title: 代码格式化
+      permalink: /docs/tools/formatting
 
 - title: 测试和调试
   permalink: /docs/testing
   children:
     - title: 调试工具
       permalink: /docs/testing/debugging
+    - title: 插件测试
+      permalink: /docs/testing/testing-plugins
     - title: 以编程方式调试应用
       permalink: /docs/testing/code-debugging
     - title: 使用原生的调试器
@@ -362,8 +338,6 @@
     - title: 集成测试
       permalink: /docs/testing/integration-tests
       match-page-url-exactly: true
-    - title: 从 flutter_driver 迁移
-      permalink: /docs/testing/integration-tests/migration
 
 - title: 性能优化
   permalink: /docs/perf
@@ -371,6 +345,8 @@
     - title: 概览
       permalink: /docs/perf
       match-page-url-exactly: true
+    - title: 使用 Impeller **新增**
+      permalink: /docs/perf/impeller
     - title: 性能最佳实践
       permalink: /docs/perf/best-practices
     - title: 应用大小
@@ -378,9 +354,9 @@
     - title: 延迟加载组件
       permalink: /docs/perf/deferred-components
 #    - title: Memory
-#      permalink: /perf/memory
+#      permalink: /docs/perf/memory
 #    - title: Power usage
-#      permalink: /perf/power
+#      permalink: /docs/perf/power
     - title: 渲染性能
       permalink: /docs/perf/rendering-performance
     - title: 性能分析
@@ -395,6 +371,7 @@
       permalink: /docs/perf/appendix
 
 - title: 打包部署
+  permalink: /docs/deployment
   children:
     - title: 混淆 Dart 代码
       permalink: /docs/deployment/obfuscate
@@ -415,6 +392,41 @@
     - title: 持续部署
       permalink: /docs/deployment/cd
 
+- title: 将 Flutter 添加到现有应用
+  permalink: /docs/add-to-app
+  children:
+    - title: 介绍
+      permalink: /docs/add-to-app
+      match-page-url-exactly: true
+    - title: 将 Flutter 添加到现有 Android 应用
+      permalink: /docs/add-to-app/android
+      children:
+        - title: 工程设定
+          permalink: /docs/add-to-app/android/project-setup
+        - title: 添加单个 Flutter 页面
+          permalink: /docs/add-to-app/android/add-flutter-screen
+        - title: 添加一个 Flutter Fragment
+          permalink: /docs/add-to-app/android/add-flutter-fragment
+        - title: 添加 Flutter 视图
+          permalink: /docs/add-to-app/android/add-flutter-view
+        - title: Plugin 初始化
+          permalink: /docs/add-to-app/android/plugin-setup
+    - title: 将 Flutter 添加到现有 iOS 应用
+      permalink: /docs/add-to-app/ios
+      children:
+        - title: 工程设定
+          permalink: /docs/add-to-app/ios/project-setup
+        - title: 添加单个 Flutter 页面
+          permalink: /docs/add-to-app/ios/add-flutter-screen
+    - title: 调试及热重载
+      permalink: /docs/add-to-app/debugging
+    - title: 加载顺序和性能
+      permalink: /docs/add-to-app/performance
+    - title: 多个 Flutter 实例
+      permalink: /docs/add-to-app/multiple-flutters
+
+- divider
+
 - title: 开发者资源列表
   children:
     - title: 官方博文
@@ -429,7 +441,7 @@
       permalink: /docs/resources/compatibility
     - title: 为 Flutter 做出贡献
       permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
-    - title: 有效提出 Bug
+    - title: 提出 Bug
       permalink: /docs/resources/bug-reports
     - title: Dart 资源列表
       permalink: /docs/resources/bootstrap-into-dart
@@ -449,8 +461,6 @@
       permalink: https://flutter.cn/brand
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
-    - title: 安全误报 [新增]
-      permalink: /docs/resources/security-false-positives
     - title: 技术视频和在线资源
       permalink: /docs/resources/videos
 
@@ -462,8 +472,10 @@
     - title: Flutter Widget 目录
       permalink: /docs/reference/widgets
     - title: Flutter API 文档
-      permalink: https://api.flutter-io.cn
+      permalink: https://api.flutter.dev
     - title: flutter 命令行文档
       permalink: /docs/reference/flutter-cli
+    - title: 安全误报
+      permalink: /docs/reference/security-false-positives
     - title: Package 网站
-      permalink: https://pub.flutter-io.cn/flutter
+      permalink: https://pub-web.flutter-io.cn/flutter

@@ -13,7 +13,7 @@
 
     <br>
     For other release channels, and older builds,
-    see the [SDK releases][] page.
+    check out the [SDK archive][].
 
     想要获取到其他版本的安装包，请参阅 [SDK 版本列表][SDK releases] 页面。
 
@@ -163,10 +163,10 @@ For additional download options, see `flutter help precache`.
 
 [Flutter repo]: {{site.repo.flutter}}
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[SDK releases]: {{site.url}}/development/tools/sdk/releases
+[SDK archive]: {{site.url}}/release/archive
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
-[Upgrading Flutter]: {{site.url}}/development/tools/sdk/upgrading
+[Upgrading Flutter]: {{site.url}}/release/upgrade
 [Mac computers with Apple silicon]: https://support.apple.com/en-us/HT211814
 [搭载 Apple 芯片的 Mac 电脑]: https://support.apple.com/zh-cn/HT211814

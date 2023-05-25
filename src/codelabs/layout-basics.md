@@ -10,6 +10,7 @@ js:
 - defer: true
   url: https://dartpad.cn/inject_embed.dart.js
 ---
+
 Welcome to the Flutter layout codelab,
 where you learn how to build a Flutter UI without
 downloading and installing Flutter or Dart!
@@ -18,22 +19,7 @@ downloading and installing Flutter or Dart!
 你将在这里学到如何构建 Flutter UI，
 更棒的是这一切都不需要安装 Flutter 或者 Dart！
 
-{{site.alert.important}}
-
-  This codelab covers basic Flutter layout concepts using an
-  experimental code editor called DartPad.
-  DartPad hasn't been fully tested on all browsers.
-  If you experience any difficulties while using DartPad
-  on a specific browser, please create a [DartPad issue][]
-  and specify which browser you're using in the issue title.
-
-  这个 codelab 涵盖了 Flutter 的基本布局概念，
-  并且将会使用一个叫做 DartPad 的实验性代码编辑器。
-  DartPad 并没有在所有浏览器上进行严格测试，
-  如果你在任何特定浏览器上使用 DartPad 遇到了问题，
-  请创建一个 [DartPad issue][] 并指明是哪个浏览器。
-
-{{site.alert.end}}
+{% include docs/dartpad-troubleshooting.md %}
 
 Flutter is different from other frameworks because its UI
 is built in code, not (for example) in an XML file or similar.
@@ -2337,12 +2323,11 @@ which are positioned below the contact information.
 
 <ul markdown="1">
   <li markdown="1">
-  
-  <t>The first `Text` widget has the name `Flutter McFlutter` and
-  the `style` property set to `Theme.of(context).textTheme.headline5`. </t>
-  <t>第一个 `Text` widget 有一个叫做 `Flutter McFlutter` 的名字，
-  并将其 `style` 属性设为 `Theme.of(context).textTheme.headline5`。</t>
-  
+  The first `Text` widget has the name `Flutter McFlutter` and
+  the `style` property set to `Theme.of(context).textTheme.headlineSmall`.
+
+  第一个 `Text` widget 有一个叫做 `Flutter McFlutter` 的名字，
+  并将其 `style` 属性设为 `Theme.of(context).textTheme.headlineSmall`。
   </li>
   <li markdown="1">
   <t>The second `Text` widget contains the title `Experienced Developer`.</t>
@@ -2385,7 +2370,7 @@ class MyWidget extends StatelessWidget {
       children: [
         Text(
           'Flutter McFlutter', 
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const Text('Experienced App Developer'),
       ],
@@ -2402,7 +2387,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2486,7 +2471,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline5" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2540,6 +2525,7 @@ Future<void> main() async {
       ],
      );
   ```
+{{site.alert.end}}
 
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
@@ -2556,7 +2542,7 @@ class MyWidget extends StatelessWidget {
       children: [
         Text(
           'Flutter McFlutter',
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const Text('Experienced App Developer'),
       ],
@@ -2584,7 +2570,7 @@ class MyWidget extends StatelessWidget {
           children: [
             Text(
               'Flutter McFlutter',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const Text('Experienced App Developer'),
           ],
@@ -2603,7 +2589,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2727,7 +2713,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2820,7 +2806,7 @@ class MyWidget extends StatelessWidget {
           children: [
             Text(
               'Flutter McFlutter',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const Text('Experienced App Developer'),
           ],
@@ -2854,7 +2840,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -2879,7 +2865,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -3035,7 +3021,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -3119,7 +3105,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -3163,7 +3149,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -3200,7 +3186,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -3356,7 +3342,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -3463,7 +3449,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -3511,7 +3497,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -3554,7 +3540,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -3710,7 +3696,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -3815,7 +3801,7 @@ You can download Flutter from the [install][] page.
 
 你可以在 [安装][install] 页面中下载 Flutter。
 
-[Building layouts]: {{site.url}}/development/ui/layout
+[Building layouts]: {{site.url}}/ui/layout
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new
 [Flutter's YouTube channel]: {{site.social.youtube}}

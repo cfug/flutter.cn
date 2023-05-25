@@ -8,9 +8,9 @@ prev:
   title: 创建一个渐变色的对话气泡
   path: /docs/cookbook/effects/gradient-bubbles
 next:
-  title: Build a form with validation 
+  title: Build a form with validation
   title: 构建一个有验证判断的表单
-  path: /docs/cookbook/forms/validation
+  path: /cookbook/forms/validation
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

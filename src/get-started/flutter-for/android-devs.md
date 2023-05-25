@@ -1963,9 +1963,9 @@ children.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Row(
+  return const Row(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: const <Widget>[
+    children: <Widget>[
       Text('Row One'),
       Text('Row Two'),
       Text('Row Three'),
@@ -1979,9 +1979,9 @@ Widget build(BuildContext context) {
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Column(
+  return const Column(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: const <Widget>[
+    children: <Widget>[
       Text('Column One'),
       Text('Column Two'),
       Text('Column Three'),
@@ -3139,19 +3139,19 @@ see the [`firebase_messaging`][] plugin documentation.
 想要获得更多关于使用 Firebase Cloud Messaging API 的信息，
 请查阅 [`firebase_messaging`][] 插件文档。
 
-[Add Flutter to existing app]: {{site.url}}/development/add-to-app
-[Animation & Motion widgets]: {{site.url}}/development/ui/widgets/animation
-[Animations tutorial]: {{site.url}}/development/ui/animations/tutorial
-[Animations overview]: {{site.url}}/development/ui/animations
+[Add Flutter to existing app]: {{site.url}}/add-to-app
+[Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
+[Animations tutorial]: {{site.url}}/ui/animations/tutorial
+[Animations overview]: {{site.url}}/ui/animations
 [`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources/
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: {{site.url}}/resources/architectural-overview#composition
-[Cupertino widgets]: {{site.url}}/development/ui/widgets/cupertino
+[Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
 [Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
-[developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
+[developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
-[DevTools]: {{site.url}}/development/tools/devtools
+[DevTools]: {{site.url}}/tools/devtools
 [existing plugin]: {{site.pub}}/flutter/
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
 [`firebase_admob`]: {{site.pub}}/packages/firebase_admob
@@ -3181,4 +3181,4 @@ see the [`firebase_messaging`][] plugin documentation.
 [Shared_Preferences plugin]: {{site.pub}}/packages/shared_preferences
 [SQFlite]: {{site.pub}}/packages/sqflite
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
-[widget catalog]: {{site.url}}/development/ui/widgets/layout
+[widget catalog]: {{site.url}}/ui/widgets/layout

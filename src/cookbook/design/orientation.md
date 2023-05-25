@@ -10,7 +10,7 @@ prev:
   title: 以 package 的方式使用字体
   path: /docs/cookbook/design/package-fonts
 next:
-  title: Use custom fonts
+  title: Use a custom font
   title: 使用自定义字体
   path: /docs/cookbook/design/fonts
 js:

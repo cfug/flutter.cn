@@ -16,6 +16,19 @@ For a full list of debugging and profiling tools, see the
 这篇文章描述了如何在代码中启用调试功能。
 如果想了解整个调试和分析工具，可参见 [Debugging][] 页面.
 
+{{site.alert.note}}
+
+  If you are looking for a way to use GDB to remotely debug the
+  Flutter engine running within an Android app process,
+  check out [`flutter_gdb`][].
+
+  如果你想要使用 GDB 来远程调试运行在 Android 应用进程中的 Flutter 引擎，
+  可以参考文档 [`flutter_gdb`][]。
+
+{{site.alert.end}}
+
+[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
+
 ## Logging
 
 ## 日志输出
@@ -805,6 +818,101 @@ used to reduce how much needs to be repainted.
 `RepaintBoundary` widget 在 render 树中创建了一个 `RenderRepaintBoundary`，
 并在 layer 树中创建了一个新的层。这可以用来减少需要重绘的次数。
 
+### Focus tree
+
+### Focus 树
+
+To debug a focus or shortcut issue, you can dump the focus tree
+using [`debugDumpFocusTree()`][].
+
+要调试焦点或快捷键问题，可以使用 [`debugDumpFocusTree()`][] 方法转储 focus 树。
+
+For example:
+
+例如：
+
+```
+I/flutter : FocusManager#6fb59
+I/flutter :  │ primaryFocus: FocusScopeNode#3c26f(_ModalScopeState<dynamic>
+I/flutter :  │   Focus Scope [PRIMARY FOCUS])
+I/flutter :  │ primaryFocusCreator: FocusScope ← PrimaryScrollController ←
+I/flutter :  │   _ActionsScope ← Actions ← Builder ← PageStorage ← Offstage ←
+I/flutter :  │   _ModalScopeStatus ← UnmanagedRestorationScope ←
+I/flutter :  │   RestorationScope ← AnimatedBuilder ←
+I/flutter :  │   _ModalScope<dynamic>-[LabeledGlobalKey<_ModalScopeState<dynamic>>#f36a2]
+I/flutter :  │   ← Semantics ← _RenderTheaterMarker ← _EffectiveTickerMode ←
+I/flutter :  │   TickerMode ←
+I/flutter :  │   _OverlayEntryWidget-[LabeledGlobalKey<_OverlayEntryWidgetState>#2e2a3]
+I/flutter :  │   ← _Theater ← Overlay-[LabeledGlobalKey<OverlayState>#89fc1] ←
+I/flutter :  │   UnmanagedRestorationScope ← ⋯
+I/flutter :  │
+I/flutter :  └─rootScope: FocusScopeNode#95ff1(Root Focus Scope [IN FOCUS PATH])
+I/flutter :    │ IN FOCUS PATH
+I/flutter :    │ focusedChildren: FocusScopeNode#001cc(Navigator Scope [IN FOCUS
+I/flutter :    │   PATH])
+I/flutter :    │
+I/flutter :    └─Child 1: FocusNode#79786([IN FOCUS PATH])
+I/flutter :      │ context: Focus
+I/flutter :      │ NOT FOCUSABLE
+I/flutter :      │ IN FOCUS PATH
+I/flutter :      │
+I/flutter :      └─Child 1: FocusNode#15aec(Shortcuts [IN FOCUS PATH])
+I/flutter :        │ context: Focus
+I/flutter :        │ NOT FOCUSABLE
+I/flutter :        │ IN FOCUS PATH
+I/flutter :        │
+I/flutter :        └─Child 1: FocusNode#3514b(Shortcuts [IN FOCUS PATH])
+I/flutter :          │ context: Focus
+I/flutter :          │ NOT FOCUSABLE
+I/flutter :          │ IN FOCUS PATH
+I/flutter :          │
+I/flutter :          └─Child 1: _FocusTraversalGroupNode#0ccda(FocusTraversalGroup [IN FOCUS PATH])
+I/flutter :            │ context: Focus
+I/flutter :            │ NOT FOCUSABLE
+I/flutter :            │ IN FOCUS PATH
+I/flutter :            │
+I/flutter :            └─Child 1: FocusNode#e2413(Shortcuts [IN FOCUS PATH])
+I/flutter :              │ context: Focus
+I/flutter :              │ NOT FOCUSABLE
+I/flutter :              │ IN FOCUS PATH
+I/flutter :              │
+I/flutter :              └─Child 1: FocusScopeNode#001cc(Navigator Scope [IN FOCUS PATH])
+I/flutter :                │ context: FocusScope
+I/flutter :                │ IN FOCUS PATH
+I/flutter :                │ focusedChildren: FocusScopeNode#3c26f(_ModalScopeState<dynamic>
+I/flutter :                │   Focus Scope [PRIMARY FOCUS])
+I/flutter :                │
+I/flutter :                └─Child 1: _FocusTraversalGroupNode#1d456(FocusTraversalGroup [IN FOCUS PATH])
+I/flutter :                  │ context: Focus
+I/flutter :                  │ NOT FOCUSABLE
+I/flutter :                  │ IN FOCUS PATH
+I/flutter :                  │
+I/flutter :                  └─Child 1: FocusNode#3635f(Navigator [IN FOCUS PATH])
+I/flutter :                    │ context: Focus
+I/flutter :                    │ IN FOCUS PATH
+I/flutter :                    │
+I/flutter :                    └─Child 1: FocusScopeNode#3c26f(_ModalScopeState<dynamic> Focus Scope [PRIMARY FOCUS])
+I/flutter :                        context: FocusScope
+I/flutter :                        PRIMARY FOCUS
+```
+
+The focused node is labeled `PRIMARY FOCUS`. Ancestors of the focus nodes are
+labeled `IN FOCUS PATH`.
+
+聚焦的节点标记为 `PRIMARY FOCUS`。聚焦节点的祖先标记为 `IN FOCUS PATH`。
+
+If your app uses the [`Focus`][] widget, you can use the [`debugLabel`][]
+property to make it easier to find its focus node in the tree.
+
+如果您的应用使用 [`Focus`][] widget，
+可以使用 [`debugLabel`][] 属性来更容易地在树中找到它的 focus 节点。
+
+You can also use the [`debugFocusChanges`][] boolean flag to enable
+extensive logging when the focus changes.
+
+你也可以使用布尔类型标记 [`debugFocusChanges`][]
+在 focus 改变时启用详细的日志记录。
+
 ### Semantics tree
 
 ### Semantics 树
@@ -1201,6 +1309,8 @@ effect by using a [`GridPaper`][] widget directly.
 [systrace]: {{site.android-dev}}/studio/profile/systrace
 [Timeline]: {{site.dart.api}}/stable/dart-developer/Timeline-class.html
 [`timeDilation`]: {{site.api}}/flutter/scheduler/timeDilation.html
+[`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
+[`debugLabel`]: {{site.api}}/flutter/widgets/Focus/debugLabel.html
 [`debugPrintMarkNeedsLayoutStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html
 [`debugPrintMarkNeedsPaintStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html
 [`debugRepaintRainbowEnabled`]: {{site.api}}/flutter/rendering/debugRepaintRainbowEnabled.html
@@ -1211,9 +1321,11 @@ effect by using a [`GridPaper`][] widget directly.
 [`debugPrintScheduleFrameStacks`]: {{site.api}}/flutter/scheduler/debugPrintScheduleFrameStacks.html
 [`debugPrintBeginFrameBanner`]: {{site.api}}/flutter/scheduler/debugPrintBeginFrameBanner.html
 [`debugPrintEndFrameBanner`]: {{site.api}}/flutter/scheduler/debugPrintEndFrameBanner.html
+[`debugFocusChanges`]: {{site.api}}/flutter/widgets/debugFocusChanges.html
 [`debugDumpSemanticsTree()`]: {{site.api}}/flutter/rendering/debugDumpSemanticsTree.html
 [`debugDumpRenderTree()`]: {{site.api}}/flutter/rendering/debugDumpRenderTree.html
 [`debugDumpLayerTree()`]: {{site.api}}/flutter/rendering/debugDumpLayerTree.html
+[`debugDumpFocusTree()`]: {{site.api}}/flutter/widgets/debugDumpFocusTree.html
 [`debugDumpApp()`]: {{site.api}}/flutter/widgets/debugDumpApp.html
 [`debugPrint()`]: {{site.api}}/flutter/foundation/debugPrint.html
 [`RenderParagraph`]: {{site.api}}/flutter/rendering/RenderParagraph-class.html
@@ -1233,14 +1345,14 @@ effect by using a [`GridPaper`][] widget directly.
 [profile mode]: {{site.url}}/testing/build-modes#profile
 [debug mode]: {{site.url}}/testing/build-modes#debug
 [release mode]: {{site.url}}/testing/build-modes#release
-[DevTools]: {{site.url}}/development/tools/devtools
-[Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
-[Logging view]: {{site.url}}/development/tools/devtools/logging
+[DevTools]: {{site.url}}/tools/devtools
+[Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[Logging view]: {{site.url}}/tools/devtools/logging
 [Flutter enabled IDE/editor]: {{site.url}}/get-started/editor
 [`log()`]: {{site.api}}/flutter/dart-developer/log.html
-[Timeline events chart]: {{site.url}}/development/tools/devtools/performance#timeline-events-chart
-[Debugger]: {{site.url}}/development/tools/devtools/debugger
-[Inspector view]: {{site.url}}/development/tools/devtools/inspector
+[Timeline events chart]: {{site.url}}/tools/devtools/performance#timeline-events-chart
+[Debugger]: {{site.url}}/tools/devtools/debugger
+[Inspector view]: {{site.url}}/tools/devtools/inspector
 [The performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
 [Profiling Flutter performance]: {{site.url}}/perf/ui-performance
 [Debugging]: {{site.url}}/testing/debugging

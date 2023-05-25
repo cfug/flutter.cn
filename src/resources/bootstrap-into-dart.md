@@ -92,5 +92,5 @@ Want to learn more and perhaps contribute? Check out the
 [`File`]: {{site.api}}/flutter/dart-io/File-class.html
 [Learning Dart as a JavaScript developer]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
 [Intro to Dart for Java Developers]: {{site.codelabs}}/codelabs/from-java-to-dart
-[Language tour]: {{site.dart-site}}/guides/language/language-tour
+[Language tour]: {{site.dart-site}}/language
 [Library tour]: {{site.dart-site}}/guides/libraries/library-tour

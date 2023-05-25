@@ -59,7 +59,7 @@ install Flutter using the following steps.
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds,
-    see the [SDK releases][] page.
+    check out the [SDK archive][].
 
     对于其他发布频道以及更久的构建版本，
     请查看 [SDK 发布][SDK releases] 页面。
@@ -82,28 +82,6 @@ install Flutter using the following steps.
     $ tar xf ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.tar.xz
     ```
     
-    If you don't want to install a fixed version of the installation bundle, 
-    you can skip steps 1 and 2. 
-    Instead, get the source code from the [Flutter repo][]
-    on GitHub with the following command:
-
-    如果你不想安装安装包的补丁，你可以跳过步骤 1 或 步骤 2，
-    直接获取 Github 上 [Flutter 仓库][Flutter repo] 的源码并执行以下命令：
-
-    ```terminal
-    $ git clone https://github.com/flutter/flutter.git
-    ```
-
-    You can also change branches or tags as needed.
-    For example, to get just the stable version:
-
-    你也可以按你的需要切换分支或者tag。
-    例如，你可以使用 stable 版本的分支：
-
-    ```terminal
-    $ git clone https://github.com/flutter/flutter.git -b stable
-    ```
-
  1. Add the `flutter` tool to your path:
 
     将 `flutter` 工具添加到环境变量中：
@@ -207,6 +185,6 @@ command again to verify that you’ve set everything up correctly.
 [Flutter repo]: {{site.repo.flutter}}
 [install Flutter using the Snap Store]: https://snapcraft.io/flutter
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[SDK releases]: {{site.url}}/development/tools/sdk/releases
+[SDK archive]: {{site.url}}/release/archive
 [Update your path]: #update-your-path
-[Upgrading Flutter]: {{site.url}}/development/tools/sdk/upgrading
+[Upgrading Flutter]: {{site.url}}/release/upgrade

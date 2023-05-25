@@ -67,8 +67,6 @@ your development environment must meet these minimum requirements:
 
 {% include_relative _linux-desktop-setup.md %}
 
-{% include_relative _web-setup.md %}
-
 ## Next step
 
 ## 下一步

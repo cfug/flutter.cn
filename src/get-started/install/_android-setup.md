@@ -34,7 +34,7 @@
 
  1. Run `flutter doctor` to confirm that Flutter has located
     your installation of Android Studio. If Flutter cannot locate it,
-    run `flutter config --android-studio-dir <directory>` to set the
+    run `flutter config --android-studio-dir=<directory>` to set the
     directory that Android Studio is installed to.
 
     运行 `flutter doctor` 确保 Flutter 已经定位到了你的 Android Studio 的安装位置。
@@ -57,7 +57,14 @@ you need an Android device running Android 4.1 (API level 16) or higher.
 
     在设备上打开 **Developer options** 和 **USB debugging** 选项，
     你可以在 [Android documentation]({{site.android-dev}}/studio/debug/dev-options) 上查看更详细的方法介绍。
- 
+
+ 1. [Optional] To leverage wireless debugging, enable **Wireless debugging** 
+    on your device. Detailed instructions are available in the 
+    [Android documentation]({{site.android-dev}}/studio/run/device#wireless).
+
+    [可选] 要使用无线调试，启用设备上的 **Wireless debugging**。
+    详细的操作步骤在 [Android 文档]({{site.android-dev}}/studio/run/device#wireless) 里有。
+
  1. Windows-only: Install the [Google USB
     Driver]({{site.android-dev}}/studio/run/win-usb).
 
@@ -76,8 +83,10 @@ you need an Android device running Android 4.1 (API level 16) or higher.
     of the Android SDK, you must set the `ANDROID_SDK_ROOT` environment
     variable to that installation directory.
 
-    在命令行中，使用 `flutter devices`
-    命令来确保 Flutter 能够识别出你所连接的 Android 设备。
+    在终端中，运行 `flutter devices` 命令来确认 Flutter 是否识别到你连接的 Android 设备。
+    默认情况下，Flutter 会使用你的 `adb` 工具所在的 Android SDK 版本。
+    如果你希望 Flutter 使用不同的 Android SDK 安装版本，
+    你必须设置 `ANDROID_SDK_ROOT` 环境变量到那个安装目录。
 
 ### Set up the Android emulator
 
@@ -95,11 +104,11 @@ follow these steps:
     激活机器上的 
     [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration) 选项。
  
- 1. Launch **Android Studio**, click the **AVD Manager**
-    icon, and select **Create Virtual Device...**
+ 1. Launch **Android Studio**, click the **Device Manager**
+    icon, and select **Create Device** under **Virtual** tab...
 
-    打开 **Android Studio**，点击 **AVD Manager** 按钮，
-    选择 **Create Virtual Device...**
+    打开 **Android Studio**，点击 **Device Manager** 按钮，
+    在 **Virtual** 这个标签页下选择 **Create Device**
 
      * In older versions of Android Studio, you should instead
     launch **Android Studio > Tools > Android > AVD Manager** and select
@@ -112,10 +121,11 @@ follow these steps:
        （只有在 Android 项目中才会显示 **Android** 子选项。）
 
      * If you do not have a project open, you can choose 
-    **Configure > AVD Manager** and select **Create Virtual Device...**
+    **3-Dot Menu / More Actions > Virtual Device Manager** and select **Create Device...**
 
        如果你以及还没打开某个项目，你可以选择
-       **Configure > AVD Manager** 然后选择 **Create Virtual Device** 选项
+       **3-Dot Menu / More Actions > Virtual Device Manager** 
+       然后选择 **Create Device** 选项
 
  1. Choose a device definition and select **Next**.
 

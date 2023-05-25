@@ -10,10 +10,10 @@
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds,
-    see the [SDK releases][] page.
+    heck out the [SDK archive][].
 
     要查看其他发行通道和以往的版本，请参阅
-    [SDK 版本列表][SDK releases] 页面。
+    [SDK 版本列表][SDK archive] 页面。
 
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
@@ -39,19 +39,6 @@
   请勿将 Flutter 安装在需要高权限的文件夹内，例如 `C:\Program Files\`。
 
 {{site.alert.end}}
-
-If you don't want to install a fixed version of the installation 
-bundle, you can skip steps 1 and 2. Instead, get the source code 
-from the [Flutter repo][] on 
-GitHub, and change branches or tags as needed. For example:
-
-如果你不想安装指定版本的安装包。可以忽略步骤 1 和 2。
-从 GitHub 上的 [Flutter repo][] 获取源代码，
-并根据需要，切换到指定的分支或标签。例如：
-
-```batchfile
-C:\src>git clone https://github.com/flutter/flutter.git -b stable
-```
 
 You are now ready to run Flutter commands in the Flutter Console.
 
@@ -159,5 +146,5 @@ verify that you’ve set everything up correctly.
 
 
 [Flutter repo]: {{site.repo.flutter}}
-[SDK releases]: {{site.url}}/development/tools/sdk/releases
+[SDK archive]: {{site.url}}/release/archive
 [Set up an editor]: {{site.url}}/get-started/editor?tab=androidstudio

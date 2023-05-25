@@ -580,6 +580,8 @@ NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 To access `icons/heart.png` from your Swift app you
 would do the following:
 
+要在 Swift 应用程序中访问 `icons/heart.png`：
+
 ```swift
 let key = controller.lookupKey(forAsset: "icons/heart.png")
 let mainBundle = Bundle.main
@@ -589,7 +591,8 @@ let path = mainBundle.path(forResource: key, ofType: nil)
 For a more complete example, see the implementation of the
 Flutter [`video_player` plugin][] on pub.dev.
 
-这有一个更完整的实例可以理解 Flutter 的应用：[`video_player` plugin][]。
+这有一个更完整的实例可以理解 Flutter 的应用：
+[`video_player` plugin][]。
 
 The [`ios_platform_images`][] plugin on pub.dev wraps
 up this logic in a convenient category. You fetch
@@ -618,6 +621,11 @@ you might have images hosted in iOS that you
 want to use in Flutter. To accomplish
 that, use the [`ios_platform_images`][] plugin
 available on pub.dev.
+
+当你在 iOS 应用程序中添加 Flutter 时，
+你可能希望在 Flutter 中使用 iOS 中的图片。
+为了实现这一点，
+可以使用 pub.dev 上的 [`ios_platform_images`][] 插件。
 
 ## Platform assets
 
@@ -739,7 +747,7 @@ For more details, see
 [Adding a splash screen to your Android app][].
 
 更多详细信息，请查看
-[在 Android 应用中添加闪屏页与启动页][Adding a splash screen to your mobile app]。
+[在 Android 应用中添加闪屏页与启动页][Adding a splash screen to your Android app]。
 
 #### iOS
 
@@ -774,7 +782,7 @@ For more details, see
 [Adding a splash screen to your iOS app][].
 
 更多详细信息，请查看 
-[在 Android 应用中添加闪屏页与启动页][Adding a splash screen to your mobile app]。
+[在 iOS 应用中添加闪屏页与启动页][Adding a splash screen to your iOS app]。
 
 [add-to-app]: {{site.url}}/add-to-app/ios
 [Adding a splash screen to your Android app]: {{site.url}}/platform-integration/android/splash-screen

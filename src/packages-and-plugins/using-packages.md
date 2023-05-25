@@ -166,6 +166,7 @@ To add the package, `css_colors`, to an app:
 1. Depend on it
 
    添加依赖
+
    * Open the `pubspec.yaml` file located inside the app folder,
      and add `css_colors:` under `dependencies`.
 

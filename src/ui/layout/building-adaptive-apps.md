@@ -1697,7 +1697,7 @@ Here are some resources to get you started:
 
 * [Material guidelines on applying layout][]
 
-  [Material 响应式界面布局指南][Material guidelines on responsive UI layout]
+  [Material 响应式界面布局指南][Material guidelines on applying layout]
 
 * [Material design for large screens][]
 

@@ -851,8 +851,8 @@ class UseCard extends StatelessWidget {
 In the previous example, the constructor for the `CustomCard`
 class uses Dart's curly brace syntax `{ }` to indicate [named parameters][].
 
-在之前的示例，`CustomCard` 类的构造函数使用 Dart 的
-花括号 `{ }` 来表示 [可选参数][optional parameters]。
+在之前的示例中，`CustomCard` 类的构造函数使用 Dart 的
+花括号 `{ }` 来表示 [已命名参数][named parameters]。
 
 To require these fields, either remove the curly braces from
 the constructor, or add `required` to the constructor.

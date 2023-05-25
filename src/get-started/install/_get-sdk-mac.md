@@ -15,7 +15,7 @@
     For other release channels, and older builds,
     check out the [SDK archive][].
 
-    想要获取到其他版本的安装包，请参阅 [SDK 版本列表][SDK releases] 页面。
+    想要获取到其他版本的安装包，请参阅 [SDK 版本列表][SDK archive] 页面。
 
     <div class="apple-silicon">
     {{site.alert.tip}}

@@ -62,7 +62,8 @@ You might also check out [Introducing Dart 3][].
   add-to-app module guide.
   You can debug your iOS or Android app on a physical device over Wi-Fi.
 
-  在 add-to-app 模块指南中新增了 iOS 或 Android 的 [无线调试][] 部分。
+  在 add-to-app 模块指南中新增了 iOS 或 Android 的
+  [无线调试][wireless debugging] 部分。
   你可以通过 Wi-Fi 调试你的 iOS 或 Android 应用。
 
 * Updated the [Material Widget Catalog][] to cover Material 3.

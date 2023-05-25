@@ -74,7 +74,7 @@ See the [VS Code][], [Android Studio/IntelliJ][], or
 [command line][] pages for installation instructions.
 
 请参考 [VS Code][], [Android Studio/IntelliJ][], 或者
-[命令行][] 页面来安装开发工具。
+[命令行][command line] 页面来安装开发工具。
 
 ## Troubleshooting some standard issues
 
@@ -95,7 +95,8 @@ See the [VS Code][], [Android Studio/IntelliJ][], or
   1. To detect which code impacts concrete late frames,
      start at [Performance > Timeline][].
 
-     从 [性能 > 时间轴][] 开始，检测哪些代码影响了具体的延迟帧。
+     从 [性能 > 时间轴][Performance > Timeline] 开始，
+     检测哪些代码影响了具体的延迟帧。
 
   2. To learn which code takes the most CPU time in
      the background, use the [CPU profiler][].

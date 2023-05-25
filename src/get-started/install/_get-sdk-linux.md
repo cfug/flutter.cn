@@ -62,7 +62,7 @@ install Flutter using the following steps.
     check out the [SDK archive][].
 
     对于其他发布频道以及更久的构建版本，
-    请查看 [SDK 发布][SDK releases] 页面。
+    请查看 [SDK 发布][SDK archive] 页面。
 
  1. Extract the file in the desired location, for example:
 

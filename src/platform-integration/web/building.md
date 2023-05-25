@@ -154,7 +154,7 @@ From the device pulldown, select **Chrome (web)**
 and run your app to see it launch in Chrome.
 
 在 IDE 中创建新应用时，会自动包含 iOS、Android 和 Web 支持。
-（如果你启用了 [桌面平台支持][desktop support]，也会一并支持。）
+（如果你启用了 [桌面平台支持][desktop]，也会一并支持。）
 在设备下拉列表里，选择 **Chrome (web)** 运行你的应用，
 它会在 Chrome 中启动。
 

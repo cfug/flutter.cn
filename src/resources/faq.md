@@ -908,9 +908,6 @@ Windows、macOS 和 Linux 啦。
 Yes, learn more in the [add-to-app][] section of our website.
 
 是的，你可以在我们网上内的 [混合应用][add-to-app] 章节中学习。
-同时，请留意添加
-[多个 Flutter 页面或 view][multiple Flutter screens or views]
-体验版已经上线了。
 
 See the integration documentation in the
 [add-to-app][] section of our website.

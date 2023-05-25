@@ -74,8 +74,8 @@ and using third-party platform SDKs like Firebase
 ([FlutterFire][]).
 
 现有的 package 支持许多使用场景，例如，网络请求 ([`http`][])，
-自定义导航/路由处理 ([`go_router`][])，集成设备 API（如 ([`url_launcher`][] 和
-[`battery`][]，以及使用第三方平台的 SDK（如 Firebase 的 ([FlutterFire][])。
+自定义导航/路由处理 ([`go_router`][])，集成设备 API（如 [`url_launcher`][] 和
+[`battery_plus`][]，以及使用第三方平台的 SDK（如 Firebase 的 ([FlutterFire][])。
 
 To write a new package, see [developing packages][].
 To add assets, images, or fonts,

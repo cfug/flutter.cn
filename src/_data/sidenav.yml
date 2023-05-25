@@ -120,7 +120,7 @@
       permalink: /docs/ui/advanced
       children:
         - title: 使用 Actions 和 shortcuts
-          permalink: /docs/ui/advanced/actions_and_shortcuts
+          permalink: /docs/ui/advanced/actions-and-shortcuts
         - title: 字体和文本
           permalink: /docs/ui/advanced/typography
         - title: 键盘焦点系统

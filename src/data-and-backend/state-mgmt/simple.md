@@ -8,11 +8,11 @@ keywords: provider状态管理
 prev:
   title: Ephemeral versus app state
   title: 局部状态和全局应用状态
-  path: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
+  path: /docs/data-and-backend/state-mgmt/ephemeral-vs-app
 next:
   title: List of approaches
   title: 状态管理的方法列表
-  path: /docs/development/data-and-backend/state-mgmt/options
+  path: /docs/data-and-backend/state-mgmt/options
 ---
 
 <?code-excerpt path-base="state_mgmt/simple/"?>

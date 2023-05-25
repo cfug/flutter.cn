@@ -26,7 +26,7 @@ see [Learning Dart as a JavaScript Developer][].
 Flutter 是一个用于构建跨平台应用的框架，它使用 Dart 编程语言。
 要了解 Dart 编程语言与 Javascript 编程语言的异同，
 请参考文档
-[给 JavaSript 开发者的 Dart 编程语言指南][Learning Dart as a JavaScript Developer]。
+[给 JavaScript 开发者的 Dart 编程语言指南][Learning Dart as a JavaScript Developer]。
 
 One of the fundamental differences between
 designing a web layout and a Flutter layout,

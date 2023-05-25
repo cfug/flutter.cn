@@ -916,12 +916,6 @@ in any way you'd like, before presenting the Flutter UI using a
 通过 [撰写双端平台代码][platform channels]，
 你可以在 `FlutterViewController` 展示 Flutter UI 之前，
 自由地选择你喜欢的，推入数据和准备 Flutter 环境的方式。
-The previous example only illustrates a few ways to customize
-how a Flutter instance is initiated. Using [platform channels][],
-you're free to push data or prepare your Flutter environment
-in any way you'd like, before presenting the Flutter UI using a
-`FlutterViewController`.
-
 
 [`FlutterEngine`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html

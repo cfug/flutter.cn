@@ -42,7 +42,7 @@ you to learn, too.
   Learn about the key similarities and differences between the languages
   as well as concepts and conventions not present in vanilla JavaScript.
 
-[Learning Dart as a JavaScript developer][]
+[给 JavaScript 开发者的 Dart 编程语言指南][Learning Dart as a JavaScript developer]
 <br> 借助现有的 JavaScript 知识，快速掌握并运行 Dart 编程语言。
 了解两种语言之间相似之处，以及一些普通的 JavaScript 中
 不存在的概念和习惯用法。

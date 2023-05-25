@@ -124,6 +124,7 @@ Then:
    运行命令 `flutter build ipa --export-method development`。
 
 1. Run `open build/ios/archive/*.xcarchive` to open the archive in Xcode.
+
    运行命令 `open build/ios/archive/*.xcarchive` 打开 Xcode 生成的归档文件。
 
 1. Click **Distribute App**.

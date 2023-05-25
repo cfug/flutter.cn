@@ -284,7 +284,7 @@ the auto-generated "example" app (`example/lib/main.dart`):
 
 ### Platform library
 
-#### 平台库
+### 平台库
 
 To link against a platform library,
 use the following instructions:

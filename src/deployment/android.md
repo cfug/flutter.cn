@@ -1030,6 +1030,8 @@ Flutter 目前不支持 x86 Android (参考 [Issue 9253][]).
 
 See [Signing the app](#signing-the-app).
 
+请查看 [创建一个密钥库](#signing-the-app)。
+
 ### How do I build a release from within Android Studio?
 
 ### 如何使用 Android Studio 构建一个发布？

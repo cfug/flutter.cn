@@ -93,6 +93,8 @@ Flutter 的 UI 设计为每秒渲染 60 帧（fps），或者在支持 120Hz 更
 
 ## Flutter frames chart
 
+## Flutter 帧图表
+
 This chart contains Flutter frame information for your application.
 Each bar set in the chart represents a single Flutter frame.
 The bars are color-coded to highlight the different portions
@@ -100,13 +102,25 @@ of work that occur when rendering a Flutter frame: work from
 the UI thread and work from the raster thread (previously known
 as the GPU thread).
 
+此图表包含了应用的帧信息。
+图表中每组条形图代表每一帧。
+这些条形图以颜色区分渲染帧时进行的不同工作：
+UI 线程和光栅线程（以前称为 GPU 线程）。
+
 This chart contains Flutter frame timing information for your
 application. Each pair of bars in the chart represents a single
 Flutter frame. Selecting a frame from this chart updates the data
-that is displayed below in the [Frame analysis](#frame-analysis) tab
-or the [Timeline events](#timeline-events) tab.
-(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats)
+that is displayed below in the [Frame analysis](#frame-analysis-tab) tab
+or the [Timeline events](#timeline-events-tab) tab.
+(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats-tab)
 is a standalone feature without data per frame).
+
+此图表在时间线上显示应用的帧信息。
+图表中每组条形图代表每一帧。
+从图表选中一帧，
+就会更新下面 [帧分析](#frame-analysis-tab) 标签页
+或 [时间线事件][#timeline-events-tab] 标签页中显示的数据。
+（从 [DevTools 2.23.1][] 开始，[光栅统计](#raster-stats-tab) 是一个独立的功能，没有每帧的数据）。
 
 [DevTools 2.23.1]: {{site.url}}/tools/devtools/release-notes/release-notes-2.23.1
 
@@ -116,12 +130,20 @@ click the pause button to the right of the chart.
 This chart can be collapsed to provide more viewing space
 for data below by clicking the **Flutter frames** button above the chart. 
 
+在应用程序运行过程中绘制新的帧时，会更新 Flutter 帧图表。
+点击图表右侧的暂停按钮就可以暂停图表的更新，
+点击图表上方的 **Flutter frames** 按钮，
+可以将此图表折叠起来，为下面的数据提供更多的观察空间。
+
 ![Screenshot of a Flutter frames chart]({{site.url}}/assets/images/docs/tools/devtools/flutter-frames-chart.png)
 
 The pair of bars representing each Flutter frame are color-coded
 to highlight the different portions of work that occur when rendering
 a Flutter frame: work from the UI thread and work from the raster thread
 (previously known as the GPU thread).
+
+每一组条形图以颜色区分，突出显示渲染每一帧时进行的不同工作：
+来自 UI 线程和光栅线程（以前称为 GPU 线程）的工作。
 
 ### UI
 
@@ -136,12 +158,12 @@ UI 线程执行 Dart VM 中的 Dart 代码。
 它包括你的应用程序和 Flutter 框架的所有代码。
 当你创建或打开一个页面，
 UI 线程会创建一个图层树和一个轻量级的与设备无关的绘制指令集，
-并把图层树交给设备的 raster（栅格）线程进行渲染。
+并把图层树交给设备的光栅线程进行渲染。
 **不要** 阻塞这个线程。
 
 ### Raster
 
-### 栅格线程
+### 光栅线程 (Raster)
 
 The raster thread (previously known as the GPU thread) executes 
 graphics code from the Flutter Engine.
@@ -154,11 +176,12 @@ Skia, the graphics library, runs on this thread.
 
 [Impeller]: {{site.url}}/perf/impeller
 
-栅格化线程（也就是我们之前知道的 GPU 线程）执行 Flutter 引擎中图形相关的代码。
+光栅线程（也就是我们之前知道的 GPU 线程）执行 Flutter 引擎中图形相关的代码。
 这个线程通过与 GPU (图形处理单元) 通信，获取图形树并显示它。
-你不能直接访问 Raster 线程或它的数据，但如果这个线程较慢，
+你不能直接访问光栅线程或它的数据，但如果这个线程较慢，
 那它肯定是由你的 Dart 代码引起的。
-图形化库 Skia 运行在这个线程上，有时候也称它为光栅线程。
+图形化库 Skia 运行在这个线程上。
+[Impeller][]（目前处于预览阶段）也将运行在这个线程上。
 
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the raster thread. In this case, you
@@ -168,7 +191,7 @@ difficult for the GPU. They might involve unnecessary calls to
 `saveLayer()`, intersecting opacities with multiple objects,
 and clips or shadows in specific situations.
 
-有时候一个页面的图形层树比较容易构建但 raster 线程的渲染却比较昂贵。
+有时候一个页面的图形层树比较容易构建但光栅线程的渲染却比较昂贵。
 在这种情形下，你需要找出导致渲染变慢的代码。
 为 GPU 设定特定多种类型的 workload 是相当困难的。
 在一些特定的情形下，多个对象的透明度重叠、剪切或阴影，
@@ -205,8 +228,6 @@ check out [Flutter performance profiling][].
 
 ### 着色器渲染
 
-### 着色器渲染
-
 Shader compilation occurs when a shader is first used in your Flutter
 app. Frames that perform shader compilation are marked in dark
 red:
@@ -223,6 +244,8 @@ check out [Reduce shader compilation jank on mobile][].
 
 ## Frame analysis tab
 
+## 帧分析标签页
+
 Selecting a janky frame (slow, colored in red)
 from the Flutter frames chart above shows debugging hints
 in the Frame analysis tab. These hints help you diagnose
@@ -238,11 +261,19 @@ that we have detected that might have contributed to the slow frame time.
 
 ## Raster stats tab
 
+## 光栅统计标签页
+
 {{site.alert.note}}
+
   For best results, this tool should be used with
   the Impeller rendering engine. When using Skia,
   the raster stats reported might be inconsistent
   due to the timing of when shaders are compiled.
+
+  为了获得最佳的效果，该工具应该和 Impeller 渲染引擎一起使用。
+  当使用 Skia 时，由于着色器编译的时间不同，
+  光栅统计报告的数据可能会存在差异。
+
 {{site.alert.end}}
 
 If you have Flutter frames that are janking with
@@ -250,16 +281,33 @@ slow raster thread times, this tool might be able
 to help you diagnose the source of the slow performance.
 To generate raster stats:
 
+如果帧的卡顿来自光栅线程，
+这个工具也许能够帮助你诊断性能缓慢的原因。
+生成光栅统计的步骤：
+
 1. Navigate to the screen in your app where you are seeing
    raster thread jank.
+
+   在应用程序中导航到你看见光栅线程卡顿的画面。
+
 2. Click **Take Snapshot**.
+
+   点击 **Take Snapshot** 生成快照。
+
 3. View different layers and their respective rendering times.
+
+   查看不同图层和它们各自的渲染时间。
 
 If you see an expensive layer, find the Dart code in your app
 that is producing this layer and investigate further.
 You can make changes to your code, hot reload,
 and take new snapshots to see if the performance of a layer
 was improved by your change.
+
+如果你看到一个图层特别耗时，请找到应用程序中产生这个图层的 Dart 代码
+并一步调查原因。
+你可以对代码进行修改、热重载和生成新的快照，
+看看图层的性能是否因你的修改而得到改善。
 
 ![Screenshot of the raster stats tab]({{site.url}}/assets/images/docs/tools/devtools/raster-stats-tab.png)
 
@@ -274,21 +322,35 @@ and garbage collection. These events show up here in the Timeline.
 You can also send your own Timeline events using the dart:developer
 [`Timeline`][] and [`TimelineTask`][] APIs.
 
+时间线事件图表显示了应用程序的所有事件追踪。
+Flutter 底层框架在构建帧、绘制场景和
+跟踪其他活动（如 HTTP 请求时间和垃圾回收）时，会发出时间线事件。
+这些事件会在时间线中显示出来。
+你也可以使用 dart:developer [`Timeline`][] 和 [`TimelineTask`][] API 发送
+你自己的时间线事件。
+
 [`Timeline`]: {{site.api}}/flutter/dart-developer/Timeline-class.html
 [`TimelineTask`]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html
 
 ![Screenshot of a timeline events tab]({{site.url}}/assets/images/docs/tools/devtools/timeline-events-tab.png)
+
 For help with navigating and using the trace viewer,
 click the **?** button at the top right of the timeline
 events tab bar. To refresh the timeline with new events from
 your application, click the refresh button
 (also in the upper right corner of the tab controls).
 
+关于导航和使用跟踪查看器的帮助，
+请点击时间线事件标签栏右上方的 **?** 按钮。
+要使用应用程序中的新事件，请单击刷新按钮（也位于选项卡的右上角）。
+
 ## Advanced debugging tools
+
+## 高级调试工具
 
 ### Enhance tracing 
 
-## 增强的追踪选项
+### 增强的追踪选项
 
 To view more detailed tracing in the timeline events chart,
 use the options in the enhance tracing dropdown:
@@ -371,7 +433,7 @@ to the jank you saw in your app.
 想要查看你的应用的性能影响，请尝试以相同的操作重现性能问题。
 在渲染层关闭的情况下，于构建帧图表里选择一个新的构建帧，
 查看它的时间线细节。
-如果 Raster 线程的时间消耗有显著降低，
+如果光栅线程的时间消耗有显著降低，
 那么你禁用的效果的滥用可能是导致卡顿的主要原因。
 
 **Render Clip layers**

@@ -267,7 +267,7 @@ For apps published to the Microsoft Store,
 the version number must be set during the
 packaging process.
 
-对于发布到 Microsoft Store 的 Flutter 桌面版应用，
+对于发布到微软商店的 Flutter 桌面版应用，
 版本号必须在打包过程中设置，而不能通过
 `pubspec.yaml` 或命令行参数设置。
 
@@ -284,7 +284,7 @@ The default version number of the app is `1.0.0.0`.
   Ensure that you follow Microsoft's
   [versioning guidelines][windowspackageversioning].
 
-  请注意，Microsoft Store 的应用程序不允许出现
+  请注意，微软商店的应用程序不允许出现
   有一个修订版本号（第四段）不为零的版本。
   因此，在所有的版本中，版本的最后一个数字必须保持为零。
   请注意遵循微软的 [版本指南][windowspackageversioning]。 
@@ -298,7 +298,7 @@ and its default product version is `1.0.0+1`. To update these,
 navigate to the `pubspec.yaml` file and update the
 following line:
 
-对于还没有发布到 Microsoft Store 的应用程序，
+对于还没有发布到微软商店的应用程序，
 你可以设置应用程序的可执行程序和产品的版本。
 可执行程序的默认版本是 `1.0.0.1`，
 产品的默认版本是 `1.0.0+1`。

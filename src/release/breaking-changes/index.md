@@ -8,11 +8,28 @@ description: Flutter 破坏性改动的迁移文档。
 As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
+
 To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
 
 正如 [破坏性改动策略][breaking change policy] 中描述的，
 我们会不定期地发布关于破坏性改动的迁移指南。
+
+When facing Dart errors after upgrading Flutter,
+consider using the [`dart fix`][] command
+to automatically migrate your code.
+Not every breaking change is supported in this way,
+but many are.
+
+当你在升级 Flutter 后遇到 Dart 错误时，
+可以考虑使用 [`dart fix`][] 命令自动迁移你的代码。
+并非所有的破坏性改动都支持这种方式，但很多都是支持的。
+
+To avoid being broken by future versions of Flutter,
+consider submitting your tests to our [test registry][].
+
+为了避免被未来的 Flutter 版本破坏，
+可以考虑将你的测试提交到我们的 [测试注册表][test registry]。
 
 The following guides are available. They are sorted by
 release, and listed in alphabetical order:
@@ -23,27 +40,52 @@ release, and listed in alphabetical order:
 [breaking change policy]: {{site.url}}/resources/compatibility
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
+[`dart fix`]: {{site.url}}/tools/flutter-fix
+[test registry]: https://github.com/flutter/tests
 
-{% comment %}
-Uncomment this anchor when there are more items that aren't yet released.
 ### Not yet released to stable
-{% endcomment %}
 
+* [Moved ReorderableListView's localized strings][]  from material to widgets localizations
+* [Removed `ignoringSemantics`][] properties
+* [Deprecated `RouteInformation.location`][] and its related APIs
+
+[Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
+[Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
+[Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
+
+### Released in Flutter 3.10
+
+* [Dart 3 changes in Flutter v3.10 and later][]
+* [Deprecated API removed after v3.7][]
+* [Insert content text input client][]
+* [Deprecated the window singleton][]
+* [Resolve the Android Java Gradle error][]
+* [Require one data variant for `ClipboardData` constructor][]
+* ["Zone mismatch" message][]
+
+[Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}/resources/dart-3-migration
+[Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
+[Insert Content Text Input Client]: {{site.url}}/release/breaking-changes/insert-content-text-input-client
+[Deprecated the window singleton]: {{site.url}}/release/breaking-changes/window-singleton
+[Resolve the Android Java Gradle error]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
+[Require one data variant for `ClipboardData` constructor]: {{site.url}}/release/breaking-changes/clipboard-data-required
+["Zone mismatch" message]: {{site.url}}/release/breaking-changes/zone-errors
 
 ### Released in Flutter 3.7
 
-### 尚未发布到稳定版
+### 在 Flutter 3.7 中发布
 
+* [Deprecated API removed after v3.3][]
+* [Replaced parameters for customizing context menus with a generic widget builder][]
+* [iOS FlutterViewController splashScreenView made nullable][]
 * [Migrate `of` to non-nullable return values, and add `maybeOf`][]
 * [Removed RouteSettings.copyWith][]
-* [Deprecated API removed after v3.3][]
-* [iOS FlutterViewController splashScreenView made nullable][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
 
-
+[Replaced parameters for customizing context menus with a generic widget builder]: {{site.url}}/release/breaking-changes/context-menus
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
-[Migrate `of` to non-nullable return values, and add `maybeOf`]: {{site.url}}/docs/release/breaking-changes/supplemental-maybeOf-migration
+[Migrate `of` to non-nullable return values, and add `maybeOf`]: {{site.url}}/release/breaking-changes/supplemental-maybeOf-migration
 [Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 
@@ -60,9 +102,8 @@ Uncomment this anchor when there are more items that aren't yet released.
 ### Released in Flutter 3
 
 * [Deprecated API removed after v2.10][]
-* [Page transitions replaced by ZoomPageTransitionsBuilder][]
 * [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
-
+* [Page transitions replaced by ZoomPageTransitionsBuilder][]
 
 [Deprecated API removed after v2.10]: {{site.url}}/release/breaking-changes/2-10-deprecations
 [Page transitions replaced by ZoomPageTransitionsBuilder]: {{site.url}}/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
@@ -146,8 +187,8 @@ The following breaking change was reverted in release 2.2:
 * [Material Chip button semantics][]
 * [SnackBars managed by the ScaffoldMessenger][]
 * [TextSelectionTheme migration][]
-* [Use maxLengthEnforcement instead of maxLengthEnforced][]
 * [Transition of platform channel test interfaces to flutter_test package][]
+* [Use maxLengthEnforcement instead of maxLengthEnforced][]
 
 [Added BuildContext parameter to TextEditingController.buildTextSpan]: {{site.url}}/release/breaking-changes/buildtextspan-buildcontext
 [Android ActivityControlSurface attachToActivity signature change]: {{site.url}}/release/breaking-changes/android-activity-control-surface-attach

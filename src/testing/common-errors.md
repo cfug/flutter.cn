@@ -95,9 +95,9 @@ wrap the `Column` in an `Expanded` widget:
 
 <?code-excerpt "lib/renderflex_overflow.dart (Fix)"?>
 ```dart
-return Row(
+return const Row(
   children: [
-    const Icon(Icons.message),
+    Icon(Icons.message),
     Expanded(
       child: Column(
           // code omitted
@@ -121,7 +121,7 @@ The resources linked below provide further information about this error.
 
 *   [Flexible (Flutter Widget of the Week)]({{site.youtube-site}}/watch?v=CI7x0mAZiY0)
 *   [How to debug layout issues with the Flutter Inspector]({{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b)
-*   [Understanding constraints]({{site.url}}/development/ui/layout/constraints)
+*   [Understanding constraints]({{site.url}}/ui/layout/constraints)
 
 
 ## ‘RenderBox was not laid out’
@@ -145,7 +145,7 @@ be solved by providing more information to Flutter about how you’d like to
 constrain the widgets in question. You can learn more about how constraints work
 in Flutter on the page [Understanding constraints][]. 
 
-[Understanding constraints]: {{site.url}}/development/ui/layout/constraints
+[Understanding constraints]: {{site.url}}/ui/layout/constraints
 
 The `RenderBox was not laid out` error is often caused by one of two other errors:
 
@@ -245,7 +245,7 @@ Widget build(BuildContext context) {
 The resources linked below provide further information about this error.
 
 *   [How to debug layout issues with the Flutter Inspector]({{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#1de2)
-*   [Understanding constraints]({{site.url}}/development/ui/layout/constraints)
+*   [Understanding constraints]({{site.url}}/ui/layout/constraints)
 
 
 ## ‘An InputDecorator...cannot have an unbounded width’
@@ -282,8 +282,8 @@ Widget build(BuildContext context) {
       appBar: AppBar(
         title: const Text('Unbounded Width of the TextField'),
       ),
-      body: Row(
-        children: const [
+      body: const Row(
+        children: [
           TextField(),
         ],
       ),
@@ -398,9 +398,9 @@ Widget build(BuildContext context) {
         );
       });
 
-  return Center(
+  return const Center(
     child: Column(
-      children: const <Widget>[
+      children: <Widget>[
         Text('Show Material Dialog'),
       ],
     ),
@@ -461,6 +461,6 @@ To learn more about how to debug errors, especially layout errors in Flutter,
 check out the following resources: 
 
 *   [How to debug layout issues with the Flutter Inspector]({{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db)
-*   [Understanding constraints]({{site.url}}/development/ui/layout/constraints)
-*   [Dealing with box constraints]({{site.url}}/development/ui/layout/box-constraints)
+*   [Understanding constraints]({{site.url}}/ui/layout/constraints)
+*   [Dealing with box constraints]({{site.url}}/ui/layout/box-constraints)
 *   [Flutter architectural overview]({{site.url}}/resources/architectural-overview#layout-and-rendering)

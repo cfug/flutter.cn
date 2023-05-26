@@ -331,6 +331,19 @@ Where `<name>_test.dart` is the file created in the
 
 上面指令中的 `<name>_test.dart` 是在刚才 **项目设置** 创建的文件。
 
+{{site.alert.note}}
+
+  To use `--dart-define` with `gradlew`, you must `base64` encode
+  all parameters, and pass them to gradle in a comma separated list:
+
+  要在 `gradlew` 中使用 `--dart-define`，你必须对所有参数进行 `base64` 编码，
+  并将它们作为逗号分隔的列表传递给 gradle：
+
+  ```bash
+  ./gradlew project:task -Pdart-defines="{base64(key=value)},[...]"
+  ```
+{{site.alert.end}}
+
 Drag the "debug" APK from
 `<flutter_project_directory>/build/app/outputs/apk/debug`
 into the **Android Robo Test** target on the web page.
@@ -406,6 +419,6 @@ from the command line.
 [`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
 [integration_test usage]: {{site.repo.flutter}}/tree/main/packages/integration_test#usage
 [iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
-[Migrating from flutter_drive]: {{site.url}}/testing/integration-tests/migration
+[Migrating from flutter_drive]: {{site.url}}/release/breaking-changes/flutter-driver-migration
 [Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
 [widget tests]: {{site.url}}/testing#widget-tests

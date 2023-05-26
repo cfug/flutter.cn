@@ -82,8 +82,11 @@ reference to help you build up an application.
 - [导航到一个新页面和返回]({{site.url}}/cookbook/navigation/navigation-basics)
 - [导航到对应名称的 routes 里]({{site.url}}/cookbook/navigation/named-routes)
 - [给特定的 route 传参]({{site.url}}/cookbook/navigation/navigate-with-arguments)
+- [Set up app links for Android]({{site.url}}/cookbook/navigation/set-up-app-links)
+- [Set up universal links for iOS]({{site.url}}/cookbook/navigation/set-up-universal-links)
 - [从一个页面回传数据]({{site.url}}/cookbook/navigation/returning-data)
 - [传递数据到新页面]({{site.url}}/cookbook/navigation/passing-data)
+
 
 
 ## Networking

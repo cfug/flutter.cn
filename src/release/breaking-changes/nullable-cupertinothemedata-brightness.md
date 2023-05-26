@@ -69,7 +69,7 @@ subclass to change the brightness override. For example:
 `CupertinoThemeData.brightness` 值来改变亮度，例如：
 
 ```dart
-class AwaysDarkCupertinoThemeData extends CupertinoThemeData {
+class AlwaysDarkCupertinoThemeData extends CupertinoThemeData {
   Brightness brightness => Brightness.dark;
 }
 ```

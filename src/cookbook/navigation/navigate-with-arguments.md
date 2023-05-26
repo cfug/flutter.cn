@@ -10,9 +10,9 @@ prev:
   title: 导航到对应名称的 routes 里
   path: /docs/cookbook/navigation/named-routes
 next:
-  title: Return data from a screen
-  title: 从一个页面回传数据
-  path: /docs/cookbook/navigation/returning-data
+  title: Set up app links for Android
+  title: 为 Android 设定应用链接
+  path: /docs/cookbook/navigation/set-up-app-links
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -42,8 +42,8 @@ pass information about the user to that route.
 
 {{site.alert.end}}
 
-[Limitations]: {{site.url}}/development/ui/navigation#limitations
-[navigation overview]: {{site.url}}/development/ui/navigation
+[Limitations]: {{site.url}}/ui/navigation#limitations
+[navigation overview]: {{site.url}}/ui/navigation
 
 You can accomplish this task using the `arguments` parameter of the
 [`Navigator.pushNamed()`][] method. Extract the arguments using the

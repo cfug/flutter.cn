@@ -47,10 +47,11 @@ you need the following in addition to the Flutter SDK:
 
 {{site.alert.end}}
 
-For more information, see [Desktop support for Flutter][]
+For more information, see [Building Windows apps][].
 
-更多详情请查看 [Flutter 的桌面端支持][Desktop support for Flutter]。
+更多详情请查看
+[构建基于 Flutter 的 Windows 应用程序][Building Windows apps]。
 
-[Desktop support for Flutter]: {{site.url}}/development/platform-integration/desktop
+[Building Windows apps]: {{site.url}}/platform-integration/windows/building
 [Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/
 [Visual Studio Build Tools 2022]: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022

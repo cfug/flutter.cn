@@ -6,9 +6,9 @@ description: 如何创建一个能够验证输入内容的表单。
 tags: cookbook, 实用教程, 表格交互
 keywords: 文本框, 验证
 prev:
-  title: Work with tabs
-  title: 使用 tabs
-  path: /docs/cookbook/design/tabs
+  title: Drag a UI element
+  title: 拖拽一个 UI 组建
+  path: /docs/cookbook/effects/drag-a-widget
 next:
   title: Create and style a text field
   title: 文本框的创建和设定
@@ -100,7 +100,7 @@ class MyCustomFormState extends State<MyCustomForm> {
     // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
-      child: Column(
+      child: const Column(
         children: <Widget>[
           // Add TextFormFields and ElevatedButton here.
         ],

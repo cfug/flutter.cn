@@ -193,11 +193,10 @@ In the **Deployment info** section:
 在 **Deployment info（部署信息）** 部分：
 
 `Deployment Target`
-<br> The minimum macOS version that your app supports. Flutter supports macOS 10.11 and later.
+<br> The minimum macOS version that your app supports. Flutter supports macOS 10.14 and later.
 
 `Deployment Target（部署目标）`
-<br> 应用程序支持的最低 macOS 版本。Flutter 支持 macOS 10.11 及更高版本。
-
+<br> 应用程序支持的最低 macOS 版本。Flutter 支持 macOS 10.14 及更高版本。
 
 In the **Signing & Capabilities** section:
 

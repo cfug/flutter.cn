@@ -14,6 +14,19 @@ picture-in-picture" allowfullscreen></iframe>
 
 [Flutter 性能入门](https://www.bilibili.com/video/BV1zv411B7gY/)
 
+{{site.alert.note}}
+
+  If your app has a performance issue and you are
+  trying to debug it, check out the DevTool's page
+  on [Using the Performance view][].
+
+  如果你的应用程序存在性能问题，并且你正在尝试进行调试，
+  可以查看 DevTools 的页面 [使用性能视图][Using the Performance view]。
+
+{{site.alert.end}}
+
+[Using the Performance view]: {{site.url}}/tools/devtools/performance
+
 What is performance? Why is performance important? How do I improve performance?
 
 什么是性能？为什么性能很重要？如何才能提升性能？
@@ -26,18 +39,22 @@ that you have about performance.
 我们的目标是回答这三个问题（主要是第三个）以及任何与之相关的话题。
 如果你有任何关于性能方面的问题，本文档可以作为解决你疑惑的起点。
 
-The answers to the first two questions are mostly philosophical, and not as 
-helpful to many developers who visit this page with specific
-performance issues that need to be solved. Therefore, the answers to those 
+我们的目标是回答这三个问题（主要是第三个）以及任何与之相关的话题。
+如果你有任何关于性能方面的问题，本文档可以作为解决你疑惑的起点。
+
+The answers to the first two questions are mostly philosophical,
+and not as helpful to many developers who visit this page with specific
+performance issues that need to be solved.
 questions are in the [appendix]({{site.url}}/perf/appendix).
 
 前两个问题的答案比较哲学，对于正在阅读这篇文章的开发者而言，当他们需要解决特定的性能问题时，并没有什么帮助。
 所以，我们将它们放在了 [附录]({{site.url}}/perf/appendix)。
 
 To improve performance, you first need metrics: some measurable numbers to
-verify the problems and improvements. In the [metrics]({{site.url}}/perf/metrics) 
-page, you'll see which metrics are currently used, and which tools and APIs 
-are available to get the metrics.
+verify the problems and improvements.
+In the [metrics]({{site.url}}/perf/metrics) page,
+you'll see which metrics are currently used,
+and which tools and APIs are available to get the metrics.
 
 为了提升性能，首先你需要一些可以量化的指标来验证问题和性能的提升。
 在 [指标]({{site.url}}/perf/metrics) 页面，你可以看到一些现有的指标，

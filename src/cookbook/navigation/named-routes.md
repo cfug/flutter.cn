@@ -31,8 +31,8 @@ js:
 
 {{site.alert.end}}
 
-[Limitations]: {{site.url}}/development/ui/navigation#limitations
-[navigation overview]: {{site.url}}/development/ui/navigation
+[Limitations]: {{site.url}}/ui/navigation#limitations
+[navigation overview]: {{site.url}}/ui/navigation
 
 In the [Navigate to a new screen and back][] recipe,
 you learned how to navigate to a new screen by creating a new route and

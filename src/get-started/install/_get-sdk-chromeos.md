@@ -1,68 +1,26 @@
-{% if os == 'linux' -%}
-  {% assign unzip = 'tar xf' -%}
-  {% assign file_ext = '.tar.xz' -%}
-{% else -%}
-  {% assign unzip = 'unzip' -%}
-  {% assign file_ext = '.zip' -%}
-{% endif -%}
-
 ## Get the Flutter SDK {#get-sdk}
+
 
 ## 获取 Flutter SDK {#get-sdk}
 
- 1. Download the following installation bundle to get the latest
-    {{site.sdk.channel}} release of the Flutter SDK:
+ 1. Install the core development tools needed for Flutter:
 
-    下载下面的安装包以获得最新的 Flutter SDK 的 {{site.sdk.channel}}发布包。
-
-    [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
-
-    For other release channels, and older builds,
-    see the [SDK releases][] page.
-
-    对于其他发布频道，以及更早的版本，
-    请查看 [SDK 发布][SDK releases] 页面。
-
- 1. In the Files app, drag-and-drop the downloaded file from "Downloads"
-    to "Linux Files" to access Flutter from your Linux container.
-
-    在文件管理应用中，将下载好的文件从 "Downloads" 拖拽到 "Linux Files" 中，以便能够从 Linux container 中访问到 Flutter。
-
- 1. Extract the file in the desired location, for example:
-
-    将文件解压到合适的地方，例如：
-
-    {% comment %}
-      Our JS also updates the filename in this template, but it doesn't include the terminal formatting:
-
-      {% prettify shell %}
-      $ cd ~/development
-      $ {{unzip}} ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}[[/end]]
-      {% endprettify %}
-    {% endcomment -%}
+    安装 Flutter 所需的核心开发工具：
 
     ```terminal
-    $ cd ~/development
-    $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
+    $ sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev
     ```
 
-    If you don't want to install a fixed version of the installation bundle, 
-    you can skip steps 1 and 2. 
-    Instead, get the source code from the [Flutter repo][]
-    on GitHub with the following command:
+    This downloads the compiler toolchain needed
+    to compile apps for ChromeOS.
 
-    如果你不想安装安装包的补丁，你可以跳过步骤 1 或 步骤 2，
-    直接获取 Github 上 [Flutter 仓库][Flutter repo] 的源码并执行以下命令：
+    这会下载用于编译 ChromeOS 应用所需的编译器工具链。
 
-    ```terminal
-    $ git clone https://github.com/flutter/flutter.git
-    ```
+ 1. Download Flutter from the [Flutter repo][]
+    on GitHub with the following command in your home directory:
 
-    You can also change branches or tags as needed.
-    For example, to get just the stable version:
-
-    你也可以按你的需要切换分支或者tag。
-    例如，你可以使用 stable 版本的分支：
+    从 GitHub 的 [Flutter repo][] 下载 Flutter，
+    在你的主目录使用以下命令：
 
     ```terminal
     $ git clone https://github.com/flutter/flutter.git -b stable
@@ -73,53 +31,13 @@
     将 `flutter` 工具添加到环境变量中：
 
     ```terminal
-    $ export PATH="$PATH:`pwd`/flutter/bin"
+    $ echo PATH="$PATH:`pwd`/flutter/bin" >> ~/.profile
+    $ source ~/.profile
     ```
-
-    This command sets your `PATH` variable for the
-    _current_ terminal window only.
-    To permanently add Flutter to your path, see
-    [Update your path][].
-
-    用这个命令添加 `PATH` 仅在当前的命令行视窗生效。
-    要将 Flutter 永久添加到环境变量中，请参阅
-    [更新环境变量值][Update your path]。
-
- 1. Optionally, pre-download development binaries:
-
-    可选步骤，提前下载二进制开发文件：
-
-    The `flutter` tool downloads platform-specific development binaries as
-    needed. For scenarios where pre-downloading these artifacts is preferable
-    (for example, in hermetic build environments,
-    or with intermittent network availability), iOS
-    and Android binaries can be downloaded ahead of time by running:
-
-    `flutter` 工具将下载所需的平台特殊开发二进制文件。
-    对于预下载这些工件更好的做法是（例如，在系统构建环境中，
-    网络可能出现不通畅的问题），通过运行下面命令提前下载 iOS
-    和 Android 的二进制文件：
-
-    ```terminal
-    $ flutter precache
-    ```
-
-    For additional download options, see `flutter help precache`.
-
-    对于这些可选的下载项，请参考 `flutter help precache`。
 
 You are now ready to run Flutter commands!
 
-你现在可以运行 Flutter 命令了！
-
-{{site.alert.note}}
-
-  To update an existing version of Flutter, see
-  [Upgrading Flutter][].
-
-  要更新已有 Flutter版本，请参阅 [升级你的 Flutter][Upgrading Flutter]。
-
-{{site.alert.end}}
+你现在已经准备好运行 Flutter 命令了！
 
 ### Run flutter doctor
 
@@ -150,10 +68,9 @@ For example:
 
 <pre>
 [-] Android toolchain - develop for Android devices
-    • Android SDK at /Users/obiwan/Library/Android/sdk
-    <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
-    • Try re-installing or updating your Android SDK,
-      visit {{site.url}}/setup/#android-setup for detailed instructions.
+    <strong>✗ Unable to locate Android SDK.
+    Install Android Studio from:
+    https://developer.android.com/studio/index.html</strong>
 </pre>
 
 The following sections describe how to perform these tasks and finish the setup
@@ -170,9 +87,3 @@ command again to verify that you’ve set everything up correctly.
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}
-[Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[SDK releases]: {{site.url}}/development/tools/sdk/releases
-[Snap Store]: https://snapcraft.io/store
-[snapd]: https://snapcraft.io/flutter
-[Update your path]: #update-your-path
-[Upgrading Flutter]: {{site.url}}/development/tools/sdk/upgrading

@@ -126,12 +126,17 @@ Here are some things to keep in mind when designing your UI:
     the [source code for `SlideTransition`][],
     which uses this principle to avoid rebuilding its
     descendents when animating.
+    ("Same instance" is evaluated using `operator ==`,
+    but see the pitfalls section at the end of this page
+    for advice on when to avoid overriding `operator ==`.)
 
     当重新遇到与前一帧相同的子 widget 实例时，将停止遍历。
     这种技术在框架内部大量使用，用于优化动画不影响子树的动画。
     请参阅 [`TransitionBuilder`][] 模式和遵循此原则的 
     [SlideTransition 代码][source code for `SlideTransition`]，
     以避免在动画过程中重建其后代 widget。
+    （“相同的实例”是使用 `operator ==` 进行评估的，
+    但是请参阅本页面末尾的陷阱部分，了解有关何时避免覆盖 `operator ==` 的建议。）
 
   * Use `const` constructors on widgets as much as possible,
     since they allow Flutter to short-circuit most
@@ -245,9 +250,10 @@ switch in the [DevTools Performance view][].
 
 你如何才能知道应用程序调用 `saveLayer()` 的频率，直接还是间接调用？
 `saveLayer()` 方法会触发 [DevTools timeline][] 上的一个事件；
-通过检查 [DevTools 性能视图 (DevTools Performance view)][DevTools Performance view] 中的 `PerformanceOverlayLayer.checkerboardOffscreenLayers` 来了解何时在使用 `saveLayer`。
+通过检查 [DevTools 性能视图 (DevTools Performance view)][DevTools Performance view] 
+中的 `PerformanceOverlayLayer.checkerboardOffscreenLayers` 来了解何时在使用 `saveLayer`。
 
-[DevTools timeline]: {{site.url}}/development/tools/devtools/performance#timeline-events-chart
+[DevTools timeline]: {{site.url}}/tools/devtools/performance#timeline-events-chart
 
 #### Minimizing calls to saveLayer
 
@@ -577,10 +583,10 @@ section in the [Flutter architectural overview][].
 请查看 [Flutter 架构概览][Flutter architectural overview] 中的 [布局和渲染][layout and rendering]。
 
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
-[how layout and constraints work]: {{site.url}}/development/ui/layout/constraints
+[how layout and constraints work]: {{site.url}}/ui/layout/constraints
 [layout and rendering]: {{site.url}}/resources/architectural-overview#layout-and-rendering
-[stack trace]: {{site.url}}/development/tools/devtools/cpu-profiler#flame-chart
-[Track layouts option]: {{site.url}}/development/tools/devtools/performance#track-layouts
+[stack trace]: {{site.url}}/tools/devtools/cpu-profiler#flame-chart
+[Track layouts option]: {{site.url}}/tools/devtools/performance#track-layouts
 
 ---
 
@@ -703,6 +709,20 @@ your app's performance.
   of children (such as `Column()` or `ListView()`)
   if most of the children are not visible
   on screen to avoid the build cost.
+  
+* Avoid overriding `operator ==` on `Widget` objects.
+  While it may seem like it would help by avoiding unnecessary rebuilds,
+  in practice it hurts performance because it results in O(N²) behavior.
+  The only exception to this rule is leaf widgets (widgets with no children),
+  in the specific case where comparing the properties of the widget
+  is likely to be significantly more efficient than rebuilding the widget
+  and where the widget will rarely change configuration.
+  Even in such cases,
+  it is generally preferable to rely on caching the widgets,
+  because even one override of `operator ==`
+  can result in across-the-board performance degradation
+  as the compiler can no longer assume that the call is always static.
+
 
   如果大多数 children widget 在屏幕上不可见，
   请避免使用返回具体列表的构造函数
@@ -759,7 +779,7 @@ For more performance info, check out the following resources:
 
 [Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
-[DevTools Performance view]: {{site.url}}/development/tools/devtools/performance
+[DevTools Performance view]: {{site.url}}/tools/devtools/performance
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html

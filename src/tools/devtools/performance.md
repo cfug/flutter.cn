@@ -118,9 +118,9 @@ is a standalone feature without data per frame).
 此图表在时间线上显示应用的帧信息。
 图表中每组条形图代表每一帧。
 从图表选中一帧，
-就会更新下面 [帧分析](#frame-analysis-tab) 标签页
+就会更新下面 [帧分析][#frame-analysis-tab] 标签页
 或 [时间线事件][#timeline-events-tab] 标签页中显示的数据。
-（从 [DevTools 2.23.1][] 开始，[光栅统计](#raster-stats-tab) 是一个独立的功能，没有每帧的数据）。
+（从 [DevTools 2.23.1][] 开始，[光栅统计][#raster-stats-tab] 是一个独立的功能，没有每帧的数据）。
 
 [DevTools 2.23.1]: {{site.url}}/tools/devtools/release-notes/release-notes-2.23.1
 

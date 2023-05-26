@@ -10,4 +10,4 @@
 
 {{site.alert.end}}
 
-[Using the Performance view]: {{site.url}}/development/tools/devtools/performance
+[Using the Performance view]: {{site.url}}/tools/devtools/performance

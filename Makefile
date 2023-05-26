@@ -4,7 +4,7 @@
 
 all: gen-env up down debug shell setup serve emulate test debug-tests \
 		 stop-tests build-image build build-image-and-check-links debug-build \ 
-		 deploy stage clean reinstall purge
+		 deploy stage-channel stage-local clean reinstall purge
 
 .DEFAULT_GOAL := up
 .PHONY: all

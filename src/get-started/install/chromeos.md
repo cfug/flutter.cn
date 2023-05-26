@@ -1,9 +1,9 @@
 ---
-title: Chrome OS install
-title: 在 Chrome OS 上安装和配置 Flutter 开发环境
-description: How to install on Chrome OS.
-description: 如何在 Chrome OS 上安装 Flutter。
-short-title: Chrome OS
+title: ChromeOS install
+title: 在 ChromeOS 上安装和配置 Flutter 开发环境
+description: How to install on ChromeOS.
+description: 如何在 ChromeOS 上安装 Flutter。
+short-title: ChromeOS
 tags: Flutter安装,Flutter环境搭建
 keywords: Flutter ChromsOS,ChromeOS上安装Flutter,ChromeOS开发
 next:
@@ -18,47 +18,25 @@ next:
 
 ## 系统要求
 
-To install and run Flutter, your development environment
-must meet these minimum requirements:
+To install and run Flutter on a Chromebook, your machine
+must have [Linux][] enabled from the **Developers** tab of Settings.
 
-要安装并运行 Flutter，你的开发环境必须满足如下最低配置要求：
+要在 Chromebook 上安装并运行 Flutter，
+你的设备必须在设置的 **开发者** 选项卡中启用内置的 [Linux][] 环境。
 
-* **Operating Systems**: Chrome OS (64-bit) with [Linux (Beta)][] turned on
+The amount of disk space required varies
+depending on which target platforms you enable.
+We recommend that you increase the disk size for the
+Linux environment from the default of 10GB to 32GB or larger,
+to accommodate Android Studio and other tooling.
 
-  **操作系统**：64 位的 Chrome OS 系统（需开启 [Linux (Beta)][] 功能）
-
-* **Disk Space**: 600 MB (does not include disk space for IDE/tools).
-
-  **磁盘空间**：600 MB （不包括 IDE/tools 所占的空间）
-
-* **Tools**: Flutter depends on these command-line
-  tools being available in your environment.
-
-  **工具**：Flutter 需要环境中安装如下命令行工具
-
-  * `bash`
-  * `curl`
-  * `git` 2.x
-  * `mkdir`
-  * `rm`
-  * `unzip`
-  * `which`
-  * `xz-utils`
-
-* **Shared libraries**: Flutter `test` command depends on
-  this library being available in your environment.
-
-  **共享库**：Flutter 的 `test` 命令依赖下面的库
-
-  * `libGLU.so.1` - provided by mesa packages such as `libglu1-mesa` on
-     Ubuntu/Debian
-
-    `libGLU.so.1` - 由 mesa 包提供，比如在 Ubuntu/Debian
-    系统上对应的包是 `libglu1-mesa`
+所需的磁盘空间大小会根据你启用的目标平台而变化。
+我们建议你将 Linux 环境的磁盘大小从默认的 10GB 增大到 32GB 或更大，
+以容纳 Android Studio 和其他工具。
 
 {% include_relative _get-sdk-chromeos.md %}
 
-{% include_relative _path-linux-chromeos.md %}
+{% include_relative _chrome-setup-chromeos.md %}
 
 {% include_relative _android-setup-chromeos.md %}
 
@@ -68,101 +46,5 @@ must meet these minimum requirements:
 
 Set up your preferred editor.
 
-编辑器设置。
-
-## Flutter & Chrome OS tips & tricks
-
-## Flutter 和 Chrome OS 的小技巧
-
-For the current versions of Chrome OS, only certain ports from
-Crostini are exposed to the rest of the environments.
-Here’s an example of how to launch
-Flutter DevTools for an Android app with ports
-that will work:
-
-对于当前版本的 Chrome OS，只有 Crostini 的几个端口对环境开放。
-下面这个示例讲解了如何在可用端口上启动 Flutter DevTools:
-
-```terminal
-$ flutter pub global run devtools --port 8000
-$ cd path/to/your/app
-$ flutter run --observatory-port=8080
-```
-
-Then, navigate to http://127.0.0.1:8000/#
-in your Chrome browser and enter the URL to your
-application. The last `flutter run` command you
-just ran should output a URL similar to the format
-of `http://127.0.0.1:8080/auth_code=/`. Use this URL
-and select "Connect" to start the Flutter DevTools
-for your Android app.
-
-然后在你的 Chrome 浏览器里打开 URL: http://127.0.0.1:8000/#，
-上面最后一个 `flutter run` 命令会输出一个类似
-`http://127.0.0.1:8080/auth_code=/` 的 URL，
-使用这个 URL 并选择「Connect」来启动
-适用于 Android 应用的 Flutter DevTools。
-
-#### Flutter Chrome OS lint analysis
-
-#### Chrome OS 上的 Flutter lint 分析
-
-The Flutter team is adding Chrome OS specific
-Lint Analysis checks that are available to make
-sure that the app that you're building is going
-to work well on Chrome OS. It looks for things
-like required hardware in your Android Manifest
-that aren’t available on Chrome OS devices,
-permissions that imply requests for unsupported
-hardware, as well as other properties or code
-that would bring a lesser experience on these devices.
-
-Flutter 团队在 Chrome OS 中添加了 Lint Analysis 检查，
-用于保证所构建的应用程序在 Chrome OS 上运行正常。
-它会检查在 AndroidManifest 里是否存在所需的硬件是 Chrome OS 设备上所不支持的，
-是否向不支持的硬件请求了权限，以及是否存在会降低体验效果的代码。
-
-To activate these,
-you need to create a new analysis_options.yaml file to include these options.
-
-要启用上述的功能特性，你需要创建一个新的或者更新你现有的
-analysis_options.yaml 文件，使其包含如下选项：
-
-(If you have an existing analysis_options.yaml file, you can update it)
-
-（如果你已经有一个 analysis_options.yaml，直接更新它的内容即可）
-
-```yaml
-include: package:flutter/analysis_options_user.yaml
-analyzer:
- optional-checks:
-   chrome-os-manifest-checks
-```
-
-To run these from the command line, use the following command:
-
-从命令行运行下面的内容：
-
-```terminal
-$ flutter analyze
-```
-
-Sample output for this command might look like:
-
-运行后的输出如下：
-
-```terminal
-Analyzing ...
-warning • This hardware feature is not supported on Chrome OS •
-android/app/src/main/AndroidManifest.xml:4:33 • unsupported_chrome_os_hardware
-```
-
-This functionality is still under development,
-but check back for instructions on how you can make
-this functionality work with your Chrome OS
-targeted Flutter app.
-
-目前该功能仍然处于开发阶段，不过你可以在未来根据本文档的内容
-在 Chrome OS 上开发 Flutter 应用程序。
-
 [Linux (Beta)]: https://support.google.com/chromebook/answer/9145439
+[Linux]: https://support.google.com/chromebook/answer/9145439

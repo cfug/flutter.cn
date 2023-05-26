@@ -6,9 +6,9 @@ description: 如何从新页面返回数据。
 tags: cookbook, 实用教程, 路由
 keywords: 传参, 回传数据
 prev:
-  title: Pass arguments to a named route
-  title: 给特定的 route 传参
-  path: /docs/cookbook/navigation/navigate-with-arguments
+  title: Set up universal links for iOS
+  title: 为 iOS 设定通用链接
+  path: /docs/cookbook/navigation/set-up-universal-links
 next:
   title: Send data to a new screen
   title: 传递数据到新页面

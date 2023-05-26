@@ -17,7 +17,7 @@
     </ul>
     {% endif -%}
 
-    <p>更多 widget 请查看 <a href="/docs/development/ui/widgets">核心 widget 目录</a>。</p>
+    <p>更多 widget 请查看 <a href="{{site.url}}/ui/widgets">核心 widget 目录</a>。</p>
 
     {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.categories contains include.category" -%}
 
@@ -63,5 +63,5 @@
     {% endfor -%}
     {% endif -%}
 
-    <p>更多 widget 请查看 <a href="/docs/development/ui/widgets">核心 widget 目录</a>。</p>
+    <p>更多 widget 请查看 <a href="{{site.url}}/ui/widgets">核心 widget 目录</a>。</p>
 </div>

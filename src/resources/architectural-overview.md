@@ -527,7 +527,7 @@ implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of bo
 [iOS Switch
 control]({{site.apple-dev}}/design/human-interface-guidelines/ios/controls/switches/)
 and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
-[Android equivalent]({{site.material}}/develop/android/components/switches).
+[Android equivalent]({{site.material}}/components/switch).
 
 Flutter 拥有其自己的 UI 控制实现，而不是由系统自带的方法进行托管：
 例如，
@@ -1026,7 +1026,7 @@ case<sup><a href="#a2">2</a></sup>:
 diagram]({{site.url}}/assets/images/docs/arch-overview/widgets.png){:width="35%"}
 
 This explains why, when you examine the tree through a debug tool such as the
-[Flutter inspector]({{site.url}}/development/tools/devtools/inspector), part of the
+[Flutter inspector]({{site.url}}/tools/devtools/inspector), part of the
 Dart DevTools, you might see a structure that is considerably deeper than what
 is in your original code.
 
@@ -1109,7 +1109,7 @@ The base class for every node in the render tree is
 defines an abstract model for layout and painting. This is extremely general: it
 does not commit to a fixed number of dimensions or even a Cartesian coordinate
 system (demonstrated by [this example of a polar coordinate
-system]({{site.dartpad}}/?id=0f020197a5d4c980342d5c7d9e935cee&null_safety=true)). Each
+system]({{site.dartpad}}/596b1d6331e3b9d7b00420085fab3e27)). Each
 `RenderObject` knows its parent, but knows little about its children other than
 how to _visit_ them and their constraints. This provides `RenderObject` with
 sufficient abstraction to be able to handle a variety of use cases.
@@ -1118,7 +1118,7 @@ sufficient abstraction to be able to handle a variety of use cases.
 [`RenderObject`]({{site.api}}/flutter/rendering/RenderObject-class.html)，
 该基类为布局和绘制定义了一个抽象模型。
 这是再平凡不过的事情：它并不总是一个固定的大小，甚至不遵循笛卡尔坐标规律
-（根据该 [极坐标系的示例]({{site.dartpad}}/?id=0f020197a5d4c980342d5c7d9e935cee&null_safety=true) 所示）。
+（根据该 [极坐标系的示例]({{site.dartpad}}/596b1d6331e3b9d7b00420085fab3e27) 所示）。
 每一个 `RenderObject` 都了解其父节点的信息，
 但对于其子节点，除了如何 **访问** 和获得他们的布局约束，并没有更多的信息。
 这样的设计让 `RenderObject` 拥有高效的抽象能力，能够处理各种各样的使用场景。
@@ -1230,7 +1230,7 @@ Widget build(BuildContext context) {
 
 More information about the constraint and layout system, along with worked
 examples, can be found in the [Understanding
-constraints]({{site.url}}/development/ui/layout/constraints) topic.
+constraints]({{site.url}}/ui/layout/constraints) topic.
 
 更多有关约束和布局系统的信息，及可参考的例子，可以在
 [深入理解 Flutter 布局约束]({{site.url}}/development/ui/layout/constraints)
@@ -1634,7 +1634,7 @@ Flutter 引擎需要一段短暂的时间做初始化，用于加载 Flutter 的
 
 More information about how Flutter is loaded into an existing Android or iOS app
 can be found at the [Load sequence, performance and memory
-topic]({{site.url}}/development/add-to-app/performance).
+topic]({{site.url}}/add-to-app/performance).
 
 更多将 Flutter 集成至现有的 Android 和 iOS 应用的内容，可在
 [控制加载顺序，优化性能与内存]({{site.url}}/development/add-to-app/performance)
@@ -1711,8 +1711,9 @@ for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js), Dart’s
 highly-optimized production JavaScript compiler is used, packaging the Flutter
 core and framework along with your application into a minified source file that
 can be deployed to any web server. Code can be offered in a single file or split
-into multiple files through [deferred
-imports]({{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library).
+into multiple files through [deferred imports][].
+
+[deferred imports]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
 
 在进行开发时，Web 版本的 Flutter 使用支持增量编译的编译器
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc) 进行编译，

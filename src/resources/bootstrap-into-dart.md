@@ -47,18 +47,11 @@ you to learn, too.
 了解两种语言之间相似之处，以及一些普通的 JavaScript 中
 不存在的概念和习惯用法。
 
-[Intro to Dart for Java Developers][] codelab
-<br> Use your Java knowledge to get up and running quickly with Dart.
-  Learn about classes, constructors, parameters,
-  and interfaces with examples from the Java Tutorial.
-
-[给 Java 开发者的 Dart 入门代码实验室]({{site.codelabs}}/codelabs/from-java-to-dart-cn/index.html)
-<br> 使用你的 Java 知识来快速上手 Dart。你可以在这个 Java 指南中学习关于类、构造器、参数和接口的相关案例。
-
 [Effective Dart][]
-<br> Guides for style, authoring documentation, usage, and more.
+<br> Guides for style, authoring documentation, usage,
+  and more.
 
-[高效 Dart 指南]({{site.dart-site}}/guides/language/effective-dart)
+[高效 Dart 指南][Effective Dart]
 <br> 在这个指南中你可以查阅关于样式、写作文档、用法等内容
 
 [Asynchronous programming: futures, async, await][]
@@ -91,6 +84,5 @@ Want to learn more and perhaps contribute? Check out the
 [Effective Dart]: {{site.dart-site}}/guides/language/effective-dart
 [`File`]: {{site.api}}/flutter/dart-io/File-class.html
 [Learning Dart as a JavaScript developer]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
-[Intro to Dart for Java Developers]: {{site.codelabs}}/codelabs/from-java-to-dart
-[Language tour]: {{site.dart-site}}/guides/language/language-tour
+[Language tour]: {{site.dart-site}}/language
 [Library tour]: {{site.dart-site}}/guides/libraries/library-tour

@@ -23,9 +23,11 @@ your development environment must meet these minimum requirements:
 
 想要安装并运行 Flutter，你的开发环境需要最低满足以下要求：
 
-- **Operating Systems**: macOS
+想要安装并运行 Flutter，你的开发环境需要最低满足以下要求：
 
-  **操作系统**：macOS
+- **Operating Systems**: macOS, version 10.14 (Mojave) or later.
+
+  **操作系统**：macOS，需要 10.14 (Mojave) 以及以上版本的操作系统
 
 - **Disk Space**: 2.8 GB (does not include disk space for IDE/tools).
 
@@ -72,8 +74,6 @@ macOS 系统可以开发支持 iOS、Android、macOS 桌面以及 Web 的 Flutte
 {% include_relative _android-setup.md %}
 
 {% include_relative _macos-desktop-setup.md %}
-
-{% include_relative _web-setup.md %}
 
 ## Next step
 

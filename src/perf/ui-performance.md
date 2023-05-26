@@ -236,8 +236,8 @@ Once your app is running in profile mode,
 一旦你的应用程序在分析模式下运行，
 即 [运行 DevTools][launch DevTools]。
 
-[launch DevTools]: {{site.url}}/development/tools/devtools
-[Timeline view]: {{site.url}}/development/tools/devtools/performance
+[launch DevTools]: {{site.url}}/tools/devtools
+[Timeline view]: {{site.url}}/tools/devtools/performance
 
 ## The performance overlay
 
@@ -467,7 +467,7 @@ Flutter 插件提供的 Flutter inspector，
 只需单击 **Performance Overlay** 按钮，
 即可在正在运行的应用程序上切换图层。
 
-[Inspector view]: {{site.url}}/development/tools/devtools/inspector
+[Inspector view]: {{site.url}}/tools/devtools/inspector
 
 #### From the command line
 
@@ -722,7 +722,7 @@ For details on how to do this, see [Show performance data][].
 
 [Show performance data]: {{site.url}}/development/tools/android-studio#show-performance-data
 
-[Show performance data]: {{site.url}}/development/tools/android-studio#show-performance-data
+[Show performance data]: {{site.url}}/tools/android-studio#show-performance-data
 
 ## Benchmarking
 
@@ -805,10 +805,10 @@ Flutter's tools and debugging in Flutter:
   和 [dart:developer][] 这个 package。
 
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
-[devtools]: {{site.url}}/development/tools/devtools
+[devtools]: {{site.url}}/tools/devtools
 [Flutter API]: {{site.api}}
-[Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
-[Flutter inspector talk]: https://www.bilibili.com/video/BV1h4411575y/
+[Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[Flutter inspector talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [video]: https://www.bilibili.com/video/BV1t54y1m7Qr/
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf

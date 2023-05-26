@@ -31,15 +31,11 @@ This recipe uses the following steps:
 
 ## 1. Add the `http` package
 
-To install the `http` package,
-add it to the dependencies section
-of the `pubspec.yaml` file.
-You can find the latest version of the
-[`http` package][] on pub.dev.
+To add the `http` package as a dependency,
+run `flutter pub add`:
 
-```yaml
-dependencies:
-  http: <latest_version>
+```terminal
+$ flutter pub add http
 ```
 
 Import the `http` package.
@@ -413,6 +409,6 @@ class _MyAppState extends State<MyApp> {
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
-[JSON and serialization]: {{site.url}}/development/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/json
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

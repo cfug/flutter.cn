@@ -136,7 +136,7 @@ Alternatively, you can do it manually using the following steps:
 
 ## 启用 Material 组件
 
-If your app uses [Platform Views][], you may want to enable
+If your app uses [Platform Views][], you might want to enable
 Material Components by following the steps described in the
 [Getting Started guide for Android][].
 
@@ -202,7 +202,8 @@ Android 中有两种签名密钥: 部署和上传。
 上传密钥是给予部署密钥重新签名的密钥，上载 Play 商店时候需要用到。
 
 * It's highly recommended to use the automatic cloud managed signing for
-  the deployment key. For more information, see the [official Play Store documentation][].
+  the deployment key. For more information,
+  check out the [official Play Store documentation][].
 
   严重推荐你选择云托管的方式来管理部署密钥，更多相关信息，
   请参阅官方文档 [使用 Play 应用签名功能][official Play Store documentation Zh Lang]。
@@ -296,7 +297,7 @@ that contains a reference to your keystore:
 storePassword=<上一步骤中的密码>
 keyPassword=<上一步骤中的密码>
 keyAlias=upload
-storeFile=<密钥库的位置，e.g. /Users/<用户名>/upload-keystore.jks>
+storeFile=<密钥库的位置，例如: /Users/<user name>/upload-keystore.jks or C:\\Users\\<user name>\\upload-keystore.jks>
 ```
 
 {{site.alert.note}}
@@ -385,8 +386,7 @@ Release builds of your app will now be signed automatically.
 现在我们 app 的发布版本就会被自动签名了。
 
 {{site.alert.note}}
-
-  You may need to run `flutter clean` after changing the gradle file.
+  You might need to run `flutter clean` after changing the gradle file.
   This prevents cached builds from affecting the signing process.
 
   当你更改 gradle 文件后，也许需要运行一下 `flutter clean`。
@@ -394,7 +394,7 @@ Release builds of your app will now be signed automatically.
 
 {{site.alert.end}}
 
-For more information on signing your app, see
+For more information on signing your app, check out
 [Sign your app][] on developer.android.com.
 
 有关应用签名的更多信息，请查看 developer.android.com 的
@@ -530,10 +530,10 @@ flag to `flutter build apk` or `flutter build appbundle`.
 
 ## 启用 multidex 支持
 
-When writing large apps or making use of large plugins, you may encounter
-Android's dex limit of 64k methods when targeting a minimum API of 20 or
-below. This may also be encountered when running debug versions of your app
-via `flutter run` that does not have shrinking enabled.
+When writing large apps or making use of large plugins,
+you might encounter Android's dex limit of 64k methods
+when targeting a minimum API of 20 or below.
+This might also be encountered when running debug versions of your app
 
 当你在编写较大的应用或使用体量较大的插件时，
 你可能会在最低的 API 目标版本低于 20 时，
@@ -543,9 +543,25 @@ via `flutter run` that does not have shrinking enabled.
 
 Flutter tool supports easily enabling multidex. The simplest way is to
 opt into multidex support when prompted. The tool detects multidex build errors
-and will ask before making changes to your Android project. Opting in allows
-Flutter to automatically depend on `androidx.multidex:multidex` and use a
-generated `FlutterMultiDexApplication` as the project's application.
+and asks before making changes to your Android project.
+Opting in allows Flutter to automatically depend on
+`androidx.multidex:multidex` and use a generated
+`FlutterMultiDexApplication` as the project's application.
+
+When you try to build and run your app with the **Run** and **Debug**
+options in your IDE, your build might fail with the following message:
+
+<img src='/assets/images/docs/deployment/android/ide-build-failure-multidex.png' width="100%" alt='screenshot of build failure because Multidex support is required'>
+
+To enable multidex from the command line,
+run `flutter run --debug` and select an Android device:
+
+<img src='/assets/images/docs/deployment/android/cli-select-device.png' width="100%" alt='screenshot of selecting an Android device'>
+
+When prompted, enter `y`.
+The Flutter tool enables multidex support and retries the build:
+
+<img src='/assets/images/docs/deployment/android/cli-multidex-added-build.png' width="100%" alt='screenshot of a successful build after adding multidex'>
 
 Flutter 工具支持以便捷的方式启用 multidex 支持。
 当工具提示你需要支持时，跟随工具的指示进行调整，是最快的方式。
@@ -555,8 +571,9 @@ Flutter 工具会检测 multidex 的构建错误，并提示你是否要更改 A
 
 {{site.alert.note}}
 
-  Multidex support is natively included when targeting Android SDK 21 or later.
-  However, it isn't recommended to target API 21+ purely to resolve the multidex issue
+  Multidex support is natively included when targeting
+  Android SDK 21 or later. However, we don't recommend
+  targeting API 21+ purely to resolve the multidex issue
   as this might inadvertently exclude users running older devices.
 
   在设定了目标 Android SDK 版本为 21 和以上时，其已经包含了 Multidex 的原生支持。
@@ -566,8 +583,8 @@ Flutter 工具会检测 multidex 的构建错误，并提示你是否要更改 A
 {{site.alert.end}}
 
 You might also choose to manually support multidex by following Android's guides
-and modifying your project's Android directory configuration. A
-[multidex keep file][multidex-keep] must be specified to include:
+and modifying your project's Android directory configuration.
+A [multidex keep file][multidex-keep] must be specified to include:
 
 你也可以根据 Android 的指南，手动配置你的 Android 项目以支持 multidex。
 请务必指定 [multidex keep 文件][multidex-keep] 以包含以下内容：
@@ -577,8 +594,8 @@ io/flutter/embedding/engine/loader/FlutterLoader.class
 io/flutter/util/PathUtils.class
 ```
 Also, include any other classes used in app startup.
-See the official [Android documentation][multidex-docs] for more detailed
-guidance on adding multidex support manually.
+For more detailed guidance on adding multidex support manually,
+check out the official [Android documentation][multidex-docs].
 
 同时也要包含所有在应用启动时加载的其他类。
 参考 [multidex 文档][multidex-docs]
@@ -590,8 +607,8 @@ guidance on adding multidex support manually.
 
 Review the default [App Manifest][manifest] file,
 `AndroidManifest.xml`,
-located in `[project]/android/app/src/main` and verify that the values
-are correct, especially the following:
+located in `[project]/android/app/src/main` and
+verify that the values are correct, especially the following:
 
 检查位于 `<app dir>/android/app/src/main` 的默认 [App Manifest][manifest]
 文件 `AndroidManifest.xml`，并确认各个值都设置正确，特别是：
@@ -607,23 +624,23 @@ are correct, especially the following:
 
 `uses-permission`
 <br> Add the `android.permission.INTERNET`
-     [permission][permissiontag] if your application code needs Internet
-     access. The standard template does not include this tag but allows
-     Internet access during development to enable communication between
-     Flutter tools and a running app.
+  [permission][permissiontag] if your application code needs Internet
+  access. The standard template doesn't include this tag but allows
+  Internet access during development to enable communication between
+  Flutter tools and a running app.
 
-`uses-permission`：
-<br> 如果你的代码需要互联网交互，请加入 `android.permission.INTERNET`
-     [权限标签][permissiontag]。
-     标准开发模版里并未加入这个权限（但是 Flutter debug 模版加入了这个权限），
-     加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信。
+`uses-permission`
+<br>
+  如果你的代码需要互联网交互，请加入 `android.permission.INTERNET`
+  [权限标签][permissiontag]。
+  标准开发模版里并未加入这个权限（但是 Flutter debug 模版加入了这个权限），
+  加入这个权限是为了允许 Flutter 工具和正在运行的 app 之间的通信。
 
 ## Reviewing the Gradle build configuration
 
-## 检查 Gradle 构建配置
-
-Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in 
-`[project]/android/app` to verify the values are correct:
+Review the default [Gradle build file][gradlebuild]
+(`build.gradle`, located in `[project]/android/app`),
+to verify that the values are correct.
 
 检查位于 `[project]/android/app` 的
 默认 [Gradle 构建文件][gradlebuild] (`build.gradle`)
@@ -667,22 +684,24 @@ Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in
      该版本不会对用户展示。
 
 `versionName`
-<br> A string used as the version number shown to users. This setting
-     be specified as a raw string or as a reference to a string resource.
+<br> A string used as the version number shown to users.
+  This setting can be specified as a raw string or as
+  a reference to a string resource.
 
 `versionName`
 <br> 向用户展示的版本号。
-     该字段必须设置为原始字符串或字符串资源的引用。
+  该字段必须设置为原始字符串或字符串资源的引用。
 
 `buildToolsVersion`
-<br> If you're using Android plugin for Gradle 3.0.0 or higher, your project
-     automatically uses the default version of the build tools that the
-     plugin specifies. Alternatively, you can specify a version of the build tools.
+<br> If you're using Android plugin for Gradle 3.0.0 or higher,
+  your project automatically uses the default version of the
+  build tools that the plugin specifies. Alternatively,
+  you can specify a version of the build tools.
 
 `buildToolsVersion`
 <br> 如果你正在使用高于 3.0.0 版本的 Android Gradle Plugin，
-     你的项目会自动使用 AGP 默认指定的构建工具版本。
-     你也可以手动指定构建工具的版本。
+  你的项目会自动使用 AGP 默认指定的构建工具版本。
+  你也可以手动指定构建工具的版本。
 
 #### Under the `android` block
 
@@ -696,7 +715,8 @@ Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in
 <br> 指定 Gradle 用于编译应用的 API 版本。
      默认为 `flutter.compileSdkVersion`。
 
-For more information, see the module-level build section in the [Gradle build file][gradlebuild].
+For more information, check out the module-level build
+section in the [Gradle build file][gradlebuild].
 
 更多信息可以参考 [Gradle 构建文件][gradlebuild]
 文档中模块级构建的部分。
@@ -719,43 +739,11 @@ the Play Store.
 {{site.alert.note}}
 
   The Google Play Store prefers the app bundle format.
-  For more information, see [About Android App Bundles][bundle].
+  For more information, check out
+  [About Android App Bundles][bundle].
 
   Google Play 更推荐使用 app bundle 格式的应用，
   更多信息可以参考 [Android App Bundle][bundle]。
-  
-{{site.alert.end}}
-
-{{site.alert.warning}}
-
-  Recently, the Flutter team has received [several reports][crash-issue]
-  from developers indicating they are experiencing app
-  crashes on certain devices on Android 6.0. If you are targeting
-  Android 6.0, use the following steps:
-
-  最近，Flutter 团队收到了很多开发者的 [报告][crash-issue]，
-  表示他们在 Android 6.0 的某些设备上遇到了应用崩溃的情况。
-  如果你的目标 API 等级是 Android 6.0，请参考以下步骤：
-
-  * If you build an App Bundle
-    Edit `android/gradle.properties` and add the flag:
-    `android.bundle.enableUncompressedNativeLibs=false`.
-
-    如果以 App Bundle 构建发布，编辑 `android/gradle.properties` 文件，
-    添加一行属性 `android.bundle.enableUncompressedNativeLibs=false`；
-
-  * If you build an APK
-    Make sure `android/app/src/AndroidManifest.xml`
-    doesn't set `android:extractNativeLibs=false`
-    in the `<application>` tag.
-
-    如果以 APK 构建发布，需要确保清单文件 `android/app/src/AndroidManifest.xml`
-    的 `<application>` 标签里不包含 `android:extractNativeLibs=false`。
-
-  For more information, see the [public issue][crash-issue].
-
-  更多内容，请参考这个 [错误报告][crash-issue]。
-
 {{site.alert.end}}
 
 ### Build an app bundle
@@ -929,7 +917,7 @@ From the command line:
 ## 发布到 Google Play Store
 
 For detailed instructions on publishing your app to the Google Play Store,
-see the [Google Play launch][play] documentation.
+check out the [Google Play launch][play] documentation.
 
 要了解如何发布一个 app 到 Google Play Store，
 可以参考 [Google Play 发布文档][play]。
@@ -954,7 +942,7 @@ build number such as `1` in the example above, separated by a `+`.
 版本号由三个点分隔的数字组成，例如上面样例中的 `1.0.0`。然后是可选的
 构建号，例如上面样例中的 `1`，以 `+` 分隔。
 
-Both the version and the build number may be overridden in Flutter's
+Both the version and the build number can be overridden in Flutter's
 build by specifying `--build-name` and `--build-number`, respectively.
 
 版本号与构建号都可以在 Flutter 打包时分别使用
@@ -962,7 +950,7 @@ build by specifying `--build-name` and `--build-number`, respectively.
 
 In Android, `build-name` is used as `versionName` while
 `build-number` used as `versionCode`. For more information,
-see [Version your app][] in the Android documentation.
+check out [Version your app][] in the Android documentation.
 
 在 Android 中，`build-number` 被用作 `versionCode`，
 `build-name` 将作为 `versionName` 使用。
@@ -993,7 +981,7 @@ The Google Play Store recommends that you deploy app bundles
 over APKs because they allow a more efficient delivery of the
 application to your users. However, if you’re distributing
 your application by means other than the Play Store,
-an APK may be your only option.
+an APK might be your only option.
 
 Google Play Store 相对于 APKs 更建议你发布 app bundles，
 因为那样应用会更有效率地交付给你的用户。
@@ -1092,13 +1080,13 @@ The resulting app bundle or APK files are located in
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Flutter wiki]: {{site.repo.flutter}}/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
-[Getting Started guide for Android]: {{site.material}}/develop/android/docs/getting-started
+[Getting Started guide for Android]: {{site.material}}/develop/android/mdc-android
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
-[launchericons]: {{site.material}}/design/iconography/
+[launchericons]: {{site.material}}/styles/icons
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
@@ -1107,7 +1095,7 @@ The resulting app bundle or APK files are located in
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [official Play Store documentation Zh Lang]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=zh_CN
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
-[Platform Views]: {{site.url}}/development/platform-integration/platform-views
+[Platform Views]: {{site.url}}/platform-integration/android/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
 [R8]: {{site.android-dev}}/studio/build/shrink-code

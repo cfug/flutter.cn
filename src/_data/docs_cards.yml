@@ -3,7 +3,7 @@
   url: /docs/get-started/install
 - name: Widget 目录
   description: 查看和了解 Flutter SDK 内置的 Widgets 合集。
-  url: /docs/development/ui/widgets
+  url: /docs/ui/widgets
 - name: API 文档
   description: Flutter 框架的 API 文档。
   url: https://api.flutter-io.cn

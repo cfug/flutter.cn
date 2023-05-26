@@ -12,7 +12,7 @@ $ sudo apt install default-jre
 $ sudo apt install default-jdk
 ```
 
-### Install the Android SDK's
+### Install the Android SDKs
 
 ### 安装 Android SDK
 
@@ -22,13 +22,13 @@ select the “Command Line Tools only” option.
 下载 [Android SDK tools][]，
 然后勾选 “Command Line Tools only” 选项。
 
-Drag and drop the downloaded zip into your Linux Files folder through the 
-Chrome OS Files app. This moves it to the home directory, notated as
-$TOOLS_PATH going forward (`~/`).
+Drag and drop the downloaded zip into your Linux Files folder through the
+ChromeOS Files app. This moves the file to the home directory,
+and is referred to as $TOOLS_PATH going forward (`~/`).
 
-通过 Chrome OS Files 应用程序将下载的 zip 文件拖到 Linux Files 文件夹。
-本操作会将该文件添加到家目录下，
-相对路径用 $TOOLS_PATH 表示家目录下的目录（`~/`）。
+通过 ChromeOS 文件应用，
+把下载好的 zip 文件拖放到你的 Linux 文件文件夹中。
+这个操作会把文件移动到主目录，接下来会被称为 $TOOLS_PATH（`~/`）。
 
 Unzip the tools and then add it to your path.
 

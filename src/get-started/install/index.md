@@ -1,15 +1,15 @@
 ---
 title: Install
 title: 安装和环境配置
-description: Install Flutter and get started. Downloads available for Windows, macOS, Linux, and Chrome OS operating systems.
-description: Flutter安装和上手起步教程, 下载 Windows、macOS、Linux 和 Chrome OS 系统的 Flutter SDK。
+description: Install Flutter and get started. Downloads available for Windows, macOS, Linux, and ChromeOS operating systems.
+description: Flutter安装和上手起步教程, 下载 Windows、macOS、Linux 和 ChromeOS 系统的 Flutter SDK。
 tags: Flutter安装,Flutter环境搭建
 keywords: Flutter Windows,Flutter Linux,Flutter macOS,Flutter镜像,Flutter使用教程
 next:
   title: Set up an editor
   title: 编辑工具设定
   path: /docs/get-started/editor
-os-list: [Windows, macOS, Linux, "Chrome OS"]
+os-list: [Windows, macOS, Linux, ChromeOS]
 ---
 
 Select the operating system on which you are installing Flutter:
@@ -18,13 +18,15 @@ Select the operating system on which you are installing Flutter:
 
 <div class="card-deck mb-8">
 {% for os in page.os-list %}
-  <a class="card" id="install-{{os | remove: ' ' | downcase}}" href="/docs/get-started/install/{{os | remove: ' ' | downcase}}">
+  <a class="card" id="install-{{os | remove: ' ' | downcase}}" href="{{site.url}}/get-started/install/{{os | remove: ' ' | downcase}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
           {% assign icon = os | downcase -%}
           {% if icon == 'macos' -%}
             <i class="fab fa-apple"></i>
+          {% elsif icon == 'chromeos' -%}
+            <i class="fab fa-chrome"></i>
           {% else -%}
             <i class="fab fa-{{icon}}"></i>
           {% endif -%}

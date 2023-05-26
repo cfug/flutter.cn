@@ -1463,17 +1463,17 @@ Dart DevTools, or Flutter animations, see the following:
 * [Web samples][]
 
 
-[Android Studio and IntelliJ]: {{site.url}}/development/tools/devtools/android-studio
-[Animation docs]: {{site.url}}/development/ui/animations
+[Android Studio and IntelliJ]: {{site.url}}/tools/devtools/android-studio
+[Animation docs]: {{site.url}}/ui/animations
 [Building a form with validation]: {{site.url}}/cookbook/forms/validation
-[Building a web application with Flutter]: {{site.url}}/get-started/web
+[Building a web application with Flutter]: {{site.url}}/platform-integration/web/building
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: {{site.url}}/get-started/test-drive
-[Dart DevTools]: {{site.url}}/development/tools/devtools/overview
+[Dart DevTools]: {{site.url}}/tools/devtools/overview
 [DartPad]: {{site.dartpad}}
-[DevTools command line]: {{site.url}}/development/tools/devtools/cli
-[DevTools documentation]: {{site.url}}/development/tools/devtools
-[DevTools installed]: {{site.url}}/development/tools/devtools/overview#how-do-i-install-devtools
+[DevTools command line]: {{site.url}}/tools/devtools/cli
+[DevTools documentation]: {{site.url}}/tools/devtools
+[DevTools installed]: {{site.url}}/tools/devtools/overview#how-do-i-install-devtools
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [`didUpdateWidget`]: {{site.api}}/flutter/widgets/State/didUpdateWidget.html
 [editor]: {{site.url}}/get-started/editor
@@ -1482,9 +1482,9 @@ Dart DevTools, or Flutter animations, see the following:
 [Flutter SDK]: {{site.url}}/get-started/install
 [Implicit animations]: {{site.url}}/codelabs/implicit-animations
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
-[Material Design]: {{site.material}}/design/introduction/#
+[Material Design]: {{site.material}}/get-started
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
-[VS Code]: {{site.url}}/development/tools/devtools/vscode
+[VS Code]: {{site.url}}/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/main/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
 [first_flutter_codelab]: {{site.url}}/get-started/codelab

@@ -34,7 +34,8 @@ How can you determine how often your users experiences bugs?
 Whenever an error occurs, create a report containing the
 error that occurred and the associated stacktrace.
 You can then send the report to an error tracking
-service, such as [Bugsnag][], Fabric, [Firebase Crashlytics][], [Rollbar][], or Sentry.
+service, such as [Bugsnag][], [Datadog][], Fabric, 
+[Firebase Crashlytics][], [Rollbar][], or Sentry.
 
 如何确定用户遇到 bug 的频率呢？
 解决方案是：当异常发生时，生成一份日志，日志中包含发生的异常及相关的堆栈信息。
@@ -199,6 +200,7 @@ see the [Sentry flutter example][] app.
 [Sentry flutter example]: {{site.github}}/getsentry/sentry-dart/tree/main/flutter/example
 [Create an account with Sentry]: https://sentry.io/signup/
 [Bugsnag]: https://www.bugsnag.com/platforms/flutter
+[Datadog]: https://docs.datadoghq.com/real_user_monitoring/flutter/
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/
 [`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter

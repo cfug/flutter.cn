@@ -34,6 +34,20 @@ Swift、ObjectiveC、Java 或 Kotlin 语言编写的特定于平台的库，
 你可以使用 Xcode（用于 iOS）或者 Android Gradle（用于 Android）调试这部分代码。
 本指南介绍如何将用于 Dart 和用于原生代码的 *两个* 调试器连接到你的 Dart 应用。
 
+{{site.alert.note}}
+
+  If you are looking for a way to use GDB to remotely debug the
+  Flutter engine running within an Android app process,
+  check out [`flutter_gdb`][].
+
+  如果你正在寻找一种方法来使用 GDB 远程调试
+  运行在 Android 应用进程中的 Flutter 引擎，
+  请查看文档 [`flutter_gdb`][]。
+  
+{{site.alert.end}}
+
+[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
+
 ## Debugging Dart code
 
 ## 调试 Dart 代码
@@ -574,7 +588,7 @@ You can find the following debugging resources on
 [Debugging]: {{site.apple-dev}}/support/debugging/
 [developer.android.com]: {{site.android-dev}}
 [developer.apple.com]: {{site.apple-dev}}
-[DevTools]: {{site.url}}/development/tools/devtools
-[Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
+[DevTools]: {{site.url}}/tools/devtools
+[Flutter inspector]: {{site.url}}/tools/devtools/inspector
 [Flutter's modes]: {{site.url}}/testing/build-modes
 [Instruments Help]: https://help.apple.com/instruments/mac/current/

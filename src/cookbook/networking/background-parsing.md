@@ -74,9 +74,14 @@ requests, such as fetching data from a JSON endpoint.
 首先，在你的项目中添加 [`http`][] 这个 package，
 `http` package 会让网络请求变的像从 JSON 端点获取数据一样简单。
 
-```yaml
-dependencies:
-  http: <latest_version>
+To add the `http` package as a dependency,
+run `flutter pub add`:
+
+要将 `http` package 添加为依赖项，
+请运行 `flutter pub add`：
+
+```terminal
+$ flutter pub add http
 ```
 
 ## 2. Make a network request

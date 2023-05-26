@@ -1,19 +1,13 @@
 {{site.alert.note}}
-
-  As of Flutter's 1.19.0 dev release, the Flutter SDK
-  contains the `dart` command alongside the `flutter`
-  command so that you can more easily run Dart
-  command-line programs. Downloading the Flutter SDK
-  also downloads the compatible version of Dart,
-  but if you've downloaded the Dart SDK separately,
+  Downloading the Flutter SDK
+  also downloads a compatible version of Dart.
+  If you've downloaded the Dart SDK separately,
   make sure that the Flutter version of `dart` is
   first in your path, as the two versions might not be compatible.
   The following command tells you whether the `flutter` and `dart`
   commands originate from the same `bin` directory and are
   therefore compatible.
 
-  自 1.19.0 dev 版开始，`dart` 命令就直接包含在 Flutter SDK 里了，
-  这样可以更轻松的运行 Dart 命令行应用。
   下载 Flutter SDK 的时候也将同时包含兼容版本的 Dart SDK，
   但是如果你已经单独的下载了 Dart SDK，需要请你确保
   Flutter SDK 里包含的 `dart` 在 `PATH` 环境变量里靠前的位置，

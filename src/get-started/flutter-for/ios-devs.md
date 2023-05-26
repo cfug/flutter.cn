@@ -635,7 +635,7 @@ class SignatureState extends State<Signature> {
       },
       onPanEnd: (details) => _points.add(null),
       child:
-      CustomPaint(
+          CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
       ),

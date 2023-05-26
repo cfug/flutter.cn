@@ -179,6 +179,86 @@ and Partner Center accounts][azureadassociation].
 对于发布应用来说，Codemagic 使用 [合作伙伴中心提交 API][partnercenterapi]；
 因此，Codemagic 需要 [关联 Azure Active Directory 和合作伙伴中心账户][azureadassociation]。
 
+#### GitHub Actions CI/CD
+
+#### 使用 GitHub Actions CI/CD
+
+GitHub Actions can use the
+[Microsoft Dev Store CLI](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview)
+to package applications into an MSIX and publish them to the Microsoft Store.
+The [setup-msstore-cli](https://github.com/microsoft/setup-msstore-cli)
+GitHub Action installs the cli so that the Action can use it for packaging
+and publishing.
+
+GitHub Actions 可以使用 
+[Microsoft Dev Store CLI](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview) 
+将应用程序打包为 MSIX 并将其发布到 Microsoft Store。
+[setup-msstore-cli](https://github.com/microsoft/setup-msstore-cli)
+GitHub Action 安装了 cli，这样 Action 就可以用它进行打包和发布。
+
+As packaging the MSIX uses the
+[`msix` pub package][msix package], the project's `pubspec.yaml`
+must contain an appropriate `msix_config` node.
+
+由于 MSIX 的打包使用 [`msix` pub package][msix package]，
+所以项目的 `pubspec.yaml` 必须包含一个合适的 `msix_config` 节点。
+
+You must create an Azure AD directory from the Dev Center with
+[global administrator permission](https://azure.microsoft.com/documentation/articles/active-directory-assign-admin-roles/).
+
+你必须从 Dev Center 创建一个具有
+[全局管理员权限](https://azure.microsoft.com/documentation/articles/active-directory-assign-admin-roles/)
+的 Azure AD 目录。
+
+The GitHub Action requires environment secrets from the partner center.
+`AZURE_AD_TENANT_ID`, `AZURE_AD_ClIENT_ID`, and `AZURE_AD_CLIENT_SECRET`
+are visible on the Dev Center following the instructions for the
+[Windows Store Publish Action](https://github.com/marketplace/actions/windows-store-publish#obtaining-your-credentials).
+You also need the `SELLER_ID` secret, which can be found in the Dev Center
+under **Account Settings** > **Organization Profile** > **Legal Info**.
+
+GitHub Action 需要从合作伙伴中心获取环境秘钥。
+`AZURE_AD_TENANT_ID`，`AZURE_AD_ClIENT_ID` 和 `AZURE_AD_CLIENT_SECRET`
+在遵循 [Windows Store Publish Action](https://github.com/marketplace/actions/windows-store-publish#obtaining-your-credentials)
+的说明后，可以在 Dev Center 上看到。
+您还需要 `SELLER_ID` 秘钥，
+可以在 Dev Center 的 **帐户设置** > **组织简介** > **法律信息** 下找到。
+
+The application must already be present in the Microsoft Dev Center with at
+least one complete submission, and `msstore init` must be run once within
+the repository before the Action can be performed. Once complete, running
+[`msstore package .`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/package-command)
+and
+[`msstore publish`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/publish-command)
+in a GitHub Action packages the
+application into an MSIX and uploads it to a new submission on the dev center.
+
+应用程序必须已经在 Microsoft Dev Center 上有至少一个完整的提交，
+且必须在仓库中运行一次 `msstore init`，Action 才能执行。
+完成后，在 GitHub Action 中运行 [`msstore package`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/package-command)
+和 [`msstore publish`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/publish-command)
+将应用程序打包为 MSIX 并将其上传到 dev center 的一个新提交上。
+
+An example Action YAML file for continuous deployment can be found
+[in the Flutter Gallery](https://github.com/flutter/gallery/blob/main/.github/workflows/release_deploy_windows.yml).
+The steps necessary for MSIX publishing are excerpted below:
+
+可以在 [Flutter Gallery](https://github.com/flutter/gallery/blob/main/.github/workflows/release_deploy_windows.yml)
+中找到一个用于持续部署的 Action YAML 文件示例。下面摘录了进行 MSIX 发布所需的步骤:
+
+```
+      - uses: microsoft/setup-msstore-cli@v1
+
+      - name: Configure the Microsoft Store CLI
+        run: msstore reconfigure --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} --clientId ${{ secrets.AZURE_AD_ClIENT_ID }} --clientSecret ${{ secrets.AZURE_AD_CLIENT_SECRET }} --sellerId ${{ secrets.SELLER_ID }}
+
+      - name: Create MSIX
+        run: msstore package .
+
+      - name: Publish MSIX to the Microsoft Store
+        run: msstore publish -v
+```
+
 ## Updating the app's version number
 
 ## 更新应用程序的版本号
@@ -350,11 +430,11 @@ even if the certification passes.
 [msidocs]: https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal
 [microsoftpartner]: https://partner.microsoft.com/
 [msix package]: {{site.pub}}/packages/msix
-[msix packaging]: {{site.url}}/development/platform-integration/windows/building#msix-packaging
+[msix packaging]: {{site.url}}/platform-integration/windows/building#msix-packaging
 [partnercenterapi]: https://docs.microsoft.com/azure/marketplace/azure-app-apis
 [storepolicies]: https://docs.microsoft.com/windows/uwp/publish/store-policies/
 [visualstudiopackaging]: https://docs.microsoft.com/windows/msix/package/packaging-uwp-apps
 [visualstudiosubmission]: https://docs.microsoft.com/windows/msix/package/packaging-uwp-apps#automate-store-submissions
 [windowspackageversioning]: https://docs.microsoft.com/windows/uwp/publish/package-version-numbering
 [windowsappcertification]: https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit
-[version migration guide]: {{site.url}}/development/platform-integration/windows/version-migration
+[version migration guide]: {{site.url}}/platform-integration/windows/version-migration

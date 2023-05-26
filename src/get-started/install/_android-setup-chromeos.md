@@ -1,4 +1,4 @@
-## Android setup
+## Configuring Android app support
 
 ## Android 设置
 
@@ -17,18 +17,27 @@
 
 ### 安装 Android Studio
 
- 1. Download and install [Android Studio]({{site.android-dev}}/studio).
+ 1. Download and install [Android Studio]({{site.android-dev}}/studio/install#chrome-os).
 
-    下载并安装 [Android Studio]({{site.android-dev}}/studio)。
+    下载并安装 [Android Studio]({{site.android-dev}}/studio/install#chrome-os)。
 
  1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
-    This installs the latest Android SDK, Android SDK Command-line Tools,
-    and Android SDK Build-Tools, which are required by Flutter
-    when developing for Android.
+    This installs the latest Android SDK, platform tools and build tooling
+    that are required by Flutter when developing for Android.
 
     启动 Android Studio，并前往 'Android Studio Setup Wizard'，
     这将会帮你安装最新版本的 Android SDK，Android SDK 命令行工具，
     以及 Android SDK 构建工具，等一系列你在构建 Android 应用时会需要用到的组件。
+
+ 1. From the welcome dialog, choose **More Actions -> SDK Manager**.
+    From the SDK Tools tab, select
+    **Android SDK Command-line Tools (latest)**
+    to install additional necessary tooling.
+
+    从欢迎对话框中，选择 **More Actions -> SDK Manager**。
+    在 SDK 工具标签页中，选择
+    **Android SDK Command-line Tools (latest)**
+    来安装额外的必要工具。
 
  1. Accept Android licenses.
 
@@ -38,11 +47,21 @@
 $ flutter doctor --android-licenses
 ```
 
+### Deploy to your Chromebook
+
+To deploy apps directly to your Chromebook, you need to do the following:
+
+ 1. [Enable ADB][] in Settings. Note that this requires you to reboot your
+    device once.
+ 1. In the Terminal, run `flutter devices`. If prompted, authorize access to
+    the Android container. Verify that `flutter devices` lists your ChromeOS
+    device as a recognized device.
+
 ### Set up your Android device
 
 ### 设置你的 Android 设备
 
-To prepare to run and test your Flutter app on an Android device,
+To prepare to run and test your Flutter app on an attached device,
 you need an Android device running Android 4.1 (API level 16) or higher.
 
 在 Android 设备上运行或测试你的 Flutter 之前，
@@ -58,7 +77,7 @@ you need an Android device running Android 4.1 (API level 16) or higher.
  1. Using a USB cable, plug your phone into your computer. On your Chromebook,
     you may see a notification for "USB device detected". Click on "Connect
     to Linux" If prompted on your Android device, authorize your computer
-    to access your device. 
+    to access your device.
 
     通过 USB 数据线连接你的手机与电脑。
     在 Chromebook 上，你可能会看到 "USB device detected"（USB 设备已连接）的通知。
@@ -76,27 +95,5 @@ you need an Android device running Android 4.1 (API level 16) or higher.
     默认情况下，flutter 使用基于 `adb` 工具的 Android SDK 版本。
     如果你想要 Flutter 运行并安装在不同的 Android SDK 中的话，
     你必须将 `ANDROID_SDK_ROOT` 环境变量设置为该 SDK 的安装目录。
-
-### Deploy to your Chromebook
-
-### 在 Chromebook 上部署
-
-With the latest version of Chrome OS, you no longer need to put your
-device into developer mode to push apps to your Chrome OS device.
-
-在最新版本的 Chrome OS 中，你不再需要将设备置为开发者模式，就可以将你的应用部署到 Chrome OS 设备中。
-
- 1. [Enable ADB][] in Settings. Note that this will require you to reboot your
-    device once. 
-
-    在设置中[开启 ADB][Enable ADB]。注意，这将会需要你重启一次电脑。
-
- 1. In the Terminal, run `flutter devices`. If prompted, authorize access to
-    the Android container. Verify that `flutter devices` lists your Chrome
-    OS device as a recognized device.
-
-    在终端中运行 `flutter devices`。如果出现提示，请授权访问
-    安卓容器。通过 `flutter devices` 验证是否列出了您的 Chrome
-    操作系统设备作为识别的设备。
 
 [Enable ADB]: https://support.google.com/chromebook/answer/9770692

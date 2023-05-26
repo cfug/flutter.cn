@@ -21,7 +21,7 @@ specialized FAQs:
 * [Web FAQ][]
 * [Performance FAQ][]
 
-[Web FAQ]: {{site.url}}/development/platform-integration/web
+[Web FAQ]: {{site.url}}/platform-integration/web/faq
 [Performance FAQ]: {{site.url}}/perf/faq
 
 ### What is Flutter?
@@ -743,7 +743,6 @@ compression less efficient (see the
 [iOS App Store Specific Considerations][]
 section of Apple’s [QA1795][]).
 
-<<<<<<< HEAD
 在 iOS 平台上，跟据 App Store Connect 的数据，
 同一应用的发布 IPA 在 iPhone X 上的下载文件体积为 10.9 MB。
 IPA 比 APK 大，主要是因为 Apple 加密了 IPA 中的二进制文件，
@@ -751,27 +750,19 @@ IPA 比 APK 大，主要是因为 Apple 加密了 IPA 中的二进制文件，
 （可以查看 [iOS App Store Specific Considerations][]
 中 [QA1795][] 关于加密的部分）
 
-The release engine binary includes LLVM IR (bitcode).
-Xcode uses this bitcode to produce a final binary for
-the App Store containing the latest compiler
-optimizations and features. The profile and debug
-frameworks contain only a _bitcode marker_, and are
-more representative of the engine's actual binary size.
-Whether you ship with bitcode or not,
-the increased size of the release framework is
-stripped out during the final steps of the build.
-These steps happen after archiving your app and
-shipping it to the store. Note bitcode has been deprecated
-and will be removed from Flutter in a future release.
-=======
 {{site.alert.note}}
+
   The release engine binary used to include LLVM IR (bitcode).
   However, Apple [deprecated bitcode in Xcode 14][] and removed support,
   so it has been removed from the Flutter 3.7 release.
+
+  发布版本的引擎二进制文件曾经包含 LLVM IR（bitcode）。
+  但是，Apple 已在 [Xcode 14 中废弃][deprecated bitcode in Xcode 14]
+  并移除了对 bitcode 的支持，因此，
+  我们也在 Flutter 3.7 版本中移除了 bitcode。
 {{site.alert.end}}
 
 [deprecated bitcode in Xcode 14]: {{site.apple-dev}}/documentation/xcode-release-notes/xcode-14-release-notes
->>>>>>> 4dbd3b8b2010ddec7bcd30bd25c61ed53d338446
 
 Release 模式下引擎二进制产物将包含 LLVM 的中间语言表示 (bitcode)。
 Xcode 将使用 bitcode 为 App Store
@@ -915,13 +906,8 @@ Windows、macOS 和 Linux 啦。
 ### 我能在我现有的原生应用里使用 Flutter 吗？
 
 Yes, learn more in the [add-to-app][] section of our website.
-Also, note that experimental support for adding
-[multiple Flutter screens or views][] is available.
 
 是的，你可以在我们网上内的 [混合应用][add-to-app] 章节中学习。
-同时，请留意添加
-[多个 Flutter 页面或 view][multiple Flutter screens or views]
-体验版已经上线了。
 
 See the integration documentation in the
 [add-to-app][] section of our website.
@@ -1797,13 +1783,13 @@ apps built with Flutter should follow Apple's
 Apple 的 [规范][guidelines]。
 
 [`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
-[accessibility documentation]: {{site.url}}/development/accessibility-and-localization/accessibility
-[add-to-app]: {{site.url}}/development/add-to-app
+[accessibility documentation]: {{site.url}}/accessibility-and-localization/accessibility
+[add-to-app]: {{site.url}}/add-to-app
 [ads]: {{site.main-url}}/monetization
 [Android]: #run-android
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
-[Android Studio/IntelliJ]: {{site.url}}/development/tools/android-studio
+[Android Studio/IntelliJ]: {{site.url}}/tools/android-studio
 [`AnimatedDefaultTextStyle`]: {{site.api}}/flutter/widgets/AnimatedDefaultTextStyle-class.html
 [`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/AnimatedPhysicalModel-class.html
 [apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
@@ -1811,7 +1797,7 @@ Apple 的 [规范][guidelines]。
 [architectural overview]: {{site.url}}/resources/architectural-overview
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
-[catalog of Flutter's widgets]: {{site.url}}/development/ui/widgets
+[catalog of Flutter's widgets]: {{site.url}}/ui/widgets
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Chip`]: {{site.api}}/flutter/material/Chip-class.html
 [`color`]: {{site.api}}/flutter/widgets/Icon/color.html
@@ -1821,9 +1807,9 @@ Apple 的 [规范][guidelines]。
 [Contributing Guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
 [CodePen]: https://codepen.io/topic/flutter
 [Dart]: {{site.dart-site}}/
-[Dart DevTools]: {{site.url}}/development/tools/devtools
+[Dart DevTools]: {{site.url}}/tools/devtools
 [Debugging with Flutter]: {{site.url}}/testing/debugging
-[desktop]: {{site.url}}/desktop
+[desktop]: {{site.url}}/platform-integration/desktop
 [detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
 [Discord]: https://discord.gg/N7Yshp4
 [`Divider`]: {{site.api}}/flutter/material/Divider-class.html
@@ -1834,14 +1820,14 @@ Apple 的 [规范][guidelines]。
 [example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
 [example project]: {{site.repo.flutter}}/tree/main/examples/platform_channel
 [Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[Flutter DevTools]: {{site.url}}/development/tools/devtools/overview
+[Flutter DevTools]: {{site.url}}/tools/devtools/overview
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [Flutter 1.0]: {{site.google-blog}}/2018/12/flutter-10-googles-portable-ui-toolkit.html
 [Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
 [flutter_view]: {{site.repo.flutter}}/tree/main/examples/flutter_view
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3
-[gesture system]: {{site.url}}/development/ui/advanced/gestures
+[gesture system]: {{site.url}}/ui/advanced/gestures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [get_it]: {{site.pub}}/packages/get_it
 [GitHub]: {{site.repo.flutter}}
@@ -1850,7 +1836,7 @@ Apple 的 [规范][guidelines]。
 [Hamilton for Android]: https://play.google.com/store/apps/details?id=com.hamilton.app
 [Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
 [hot reload]: #hot-reload
-[Hot reload]: {{site.url}}/development/tools/hot-reload
+[Hot reload]: {{site.url}}/tools/hot-reload
 [`icon`]: {{site.api}}/flutter/widgets/Icon/icon.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`IconTheme`]: {{site.api}}/flutter/widgets/IconTheme-class.html
@@ -1861,14 +1847,14 @@ Apple 的 [规范][guidelines]。
 [iOS instructions]: {{site.url}}/deployment/ios
 [install]: {{site.url}}/get-started/install
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
-[internationalization tutorial]: {{site.url}}/development/accessibility-and-localization/internationalization
-[is easy]: {{site.url}}/development/packages-and-plugins/using-packages
+[internationalization tutorial]: {{site.url}}/accessibility-and-localization/internationalization
+[is easy]: {{site.url}}/packages-and-plugins/using-packages
 [issue #9253]: {{site.repo.flutter}}/issues/9253
 [issue #14821]: {{site.repo.flutter}}/issues/14821
 [issue tracker]: {{site.repo.flutter}}/issues
 [issues related to running Flutter on Chromebooks]: {{site.repo.flutter}}/labels/platform-arc
 [`Iterable`]: {{site.api}}/flutter/dart-core/Iterable-class.html
-[JSON tutorial]: {{site.url}}/development/data-and-backend/json
+[JSON tutorial]: {{site.url}}/data-and-backend/json
 [kiwi]: {{site.pub}}/packages/kiwi
 [license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
 [`LicenseRegistry`]: {{site.api}}/flutter/foundation/LicenseRegistry-class.html
@@ -1880,14 +1866,13 @@ Apple 的 [规范][guidelines]。
 [MDC-103 Flutter: Material Theming]: {{site.codelabs}}/codelabs/mdc-103-flutter/index.html?index=..%2F..index#0
 [Measuring your app's size]: {{site.url}}/perf/app-size
 [minimal Flutter app]: {{site.repo.flutter}}/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
-[multiple Flutter screens or views]: {{site.url}}/development/add-to-app/multiple-flutters
 [`NotificationListener`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
 [one of the top design ideas of the decade]: https://www.fastcompany.com/90442092/the-14-most-important-design-ideas-of-the-decade-according-to-the-experts
 [only one license]: {{site.repo.flutter}}/blob/master/LICENSE
 [package ecosystem]: {{site.pub}}/flutter
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
-[platform and third-party APIs]: {{site.url}}/development/platform-integration/platform-channels
-[platform channels]: {{site.url}}/development/platform-integration/platform-channels
+[platform and third-party APIs]: {{site.url}}/platform-integration/platform-channels
+[platform channels]: {{site.url}}/platform-integration/platform-channels
 [platform_view]: {{site.repo.flutter}}/tree/main/examples/platform_view
 [popped]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [pub.dev]: {{site.pub}}
@@ -1915,9 +1900,9 @@ Apple 的 [规范][guidelines]。
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`UserAccountsDrawerHeader`]: {{site.api}}/flutter/material/UserAccountsDrawerHeader-class.html
 [VS Code]: https://code.visualstudio.com/
-[web]: {{site.url}}/web
-[web instructions]: {{site.url}}/get-started/web
+[web]: {{site.url}}/platform-integration/web
+[web instructions]: {{site.url}}/platform-integration/web/building
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
-[widgets]: {{site.url}}/development/ui/widgets
-[supported platforms]: {{site.url}}/development/tools/sdk/release-notes/supported-platforms
+[widgets]: {{site.url}}/ui/widgets
+[supported platforms]: {{site.url}}/reference/supported-platforms
 [riverpod]: {{site.pub}}/packages/riverpod

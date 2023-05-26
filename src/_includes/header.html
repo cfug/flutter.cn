@@ -54,7 +54,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="dev-navbar-dropdown"
-               href="{{site.main-url}}/development"
+               href="{{site.main-url}}/"
                role="button" data-toggle="dropdown" 
                aria-haspopup="true" aria-expanded="false">
                开发
@@ -94,18 +94,18 @@
                文档
             </a>
             <div class="dropdown-menu" aria-labelledby="docs-navbar-dropdown">
-              <a class="dropdown-item {% if route contains '/posts' %} active{% endif %}"
+              <a class="dropdown-item {% if route == '/posts' %} active{% endif %}"
                  href="/posts">最新更新</a>
               <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"
                  href="/get-started/editor">IDE 集成</a>
-              <a class="dropdown-item {% if route contains '/development/tools/hot-reload' %} active{% endif %}"
-                 href="/development/tools/hot-reload">热重载</a>
+              <a class="dropdown-item {% if route contains '/tools/hot-reload' %} active{% endif %}"
+                 href="/tools/hot-reload">热重载</a>
               <a class="dropdown-item {% if route contains '/perf/ui-performance' %} active{% endif %}"
                  href="/docs/perf/ui-performance">性能分析</a>
               <a class="dropdown-item {% if route contains '/get-started/install' %} active{% endif %}"
                  href="/docs/get-started/install">安装 Flutter</a>
-              <a class="dropdown-item {% if route contains '/development/tools/devtools' %} active{% endif %}"
-                 href="/docs/development/tools/devtools/overview">开发者工具</a>
+              <a class="dropdown-item {% if route contains '/tools/devtools' %} active{% endif %}"
+                 href="/tools/devtools/overview">开发者工具</a>
               <a class="dropdown-item {% if route contains '/cookbook' %} active{% endif %}"
                  href="/docs/cookbook">实用教程</a>
               <a class="dropdown-item {% if route contains '/reference/tutorials' %} active{% endif %}"
@@ -124,23 +124,29 @@
     </div>
     <div class="site-header__social navbar-nav flex-row">
       <a 
-        class="nav-item nav-link" 
+        class="nav-item nav-link nav-icon"
         href="{{site.social.twitter}}" 
         aria-label="Twitter">
         <i class="fab fa-twitter fa-lg"></i>
       </a>
       <a 
-        class="nav-item nav-link" 
+        class="nav-item nav-link nav-icon"
         href="{{site.social.youtube}}" 
         aria-label="YouTube">
         <i class="fab fa-youtube fa-lg"></i>
-    </a>
+      </a>
+      <a
+        class="nav-item nav-link nav-icon"
+        href="{{site.flutter-medium}}"
+        aria-label="Medium blog">
+        <i class="fab fa-medium fa-lg"></i>
+      </a>
       <a 
-        class="nav-item nav-link" 
+        class="nav-item nav-link nav-icon"
         href="{{site.repo.organization}}" 
         aria-label="GitHub">
         <i class="fab fa-github fa-lg"></i>
-    </a>
+      </a>
     </div>
     {% if page.show-nav-get-started-button -%}
       <a 

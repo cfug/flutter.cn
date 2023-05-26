@@ -49,17 +49,13 @@ one of the following codelabs:
 如果你刚开始学习 Flutter，
 我们推荐你学习下面的 Codelab 之一：
 
-{% comment %}
-TODO(filiph): add the video for the new codelab when ready
-
 * [Building your first Flutter app][] (workshop)<br>
   An instructor-led version of our very popular
-  "Write your first Flutter app, part 1" codelab
+  "Write your first Flutter app" codelab
   (listed below).
 
   [构建你的第一个 Flutter App][Building your first Flutter app] (workshop) **新!**<br>
   我们非常受欢迎的「编写你的第一个 Flutter App，第一部分」 codelab（如下所列）的讲师指导版。
-{% endcomment %}
 
 * [Your first Flutter app][]<br>
   Create a simple app that automatically generates cool-sounding names,
@@ -91,7 +87,7 @@ TODO(filiph): add the video for the new codelab when ready
   但如果你下载并配置好了 Android 以及 iOS 的工具，
   那么整个应用同样也能运行在 Android 以及 iOS 的设备上。
 
-[Building your first Flutter app]: https://www.bilibili.com/video/BV1n54y1H7dZ
+[Building your first Flutter app]: {{site.youtube-site}}/watch?v=8sAyPDLorek
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 
@@ -103,6 +99,15 @@ TODO(filiph): add the video for the new codelab when ready
 ## Next steps
 
 ## 下一步
+
+* [Records and Patterns in Dart 3][]<br> **NEW**
+  Discover Dart 3's new records and patterns features.
+  Learn how you can use them in a Flutter app to help you
+  write more readable and maintainable Dart code.
+
+  [Dart 3 中的 Records 和 Patterns][Records and Patterns in Dart 3]<br> **新!**
+  了解 Dart 3 中的新 records 和 patterns 特性。
+  学习如何在 Flutter 应用中使用它们来帮助你编写更易读、更易维护的 Dart 代码。
 
 * [Building scrolling experiences in Flutter][] (workshop)<br>
   Start with an app that performs simple, straightforward scrolling
@@ -131,9 +136,10 @@ TODO(filiph): add the video for the new codelab when ready
   （Flutter 提供的 [基础状态管理方案][low-level state management] 之一）
   管理应用数据的状态。
 
+[Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
 [Dart null safety in Action]: https://www.bilibili.com/video/BV1tK4y1u76N/
 [inherited-widget-ws]: https://www.bilibili.com/video/BV1Wv411W7yF/
-[low-level state management]: {{site.url}}/development/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
+[low-level state management]: {{site.url}}/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
 [Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
 
 ## Designing a Flutter UI
@@ -239,6 +245,18 @@ like layout and animations:
   Android、iOS、Web、Windows、macOS 和 Linux
   上的自适应应用。
 
+* [Building next generation UIs in Flutter][]<br> **NEW**
+  Learn how to build a Flutter app that uses the power of `flutter_animate`,
+  fragment shaders, and particle fields. You will craft a user interface that
+  evokes those science fiction movies and TV shows we all love
+  watching when we aren't coding.
+
+  [在 Flutter 中构建下一代 UI][Building next generation UIs in Flutter] **新增内容**<br>
+  了解如何构建一个使用 `flutter_animate`、片段着色器和粒子场的 Flutter 应用。
+  你将构建一个用户界面，它会唤起我们在不编码时都喜欢看的科幻电影和电视节目。
+
+
+[Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
 [Basic Flutter layout concepts]: {{site.url}}/codelabs/layout-basics
@@ -394,15 +412,21 @@ Learn how to use Flutter with other technologies.
   学习如何构建可以回答有关 Dialogflow 工具的最常见问题的移动式常见问题解答机器人。
   终端用户可以通过移动设备的内置麦克风与文本界面交互或流式传输语音交互。
 
-* [Building a game with Flutter and Flame][]<br> **NEW**
+* [Building a game with Flutter and Flame][]<br> 
   Learn how to create a platform game (featuring
   Dash or Sparky), using the Flame package.
 
-* [Using FFI in a Flutter plugin][]<br> **NEW**
+* [Using FFI in a Flutter plugin][]<br> 
   Learn how to use Dart's FFI (foreign function interface)
   library, ffigen, allowing you to leverage
   existing native libraries that provide a
   C interface.
+
+* [Create haikus about Google products with the PaLM API and Flutter][]<br> **NEW**
+  Learn how to build an app that uses the PaLM API to 
+  generate haikus based on Google product names. The 
+  PaLM API gives you access to Google's 
+  state-of-the-art large language models. 
 
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
@@ -410,6 +434,7 @@ Learn how to use Flutter with other technologies.
 [Build voice bots for mobile with Dialogflow and Flutter]: https://www.bilibili.com/video/BV1pX4y1A7SH/
 [Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
+[Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
 
 ## Testing
 

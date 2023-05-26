@@ -32,7 +32,7 @@ see [What's new][].**
 查看最近网站更新的内容，请查阅
 [文档网站更新内容归档][What's new]。
 
-[What's new]: {{site.url}}/whats-new
+[What's new]: {{site.url}}/release/whats-new
 
 ## New to Flutter?
 
@@ -98,16 +98,16 @@ Coming from another platform? Check out Flutter for:
 [常见问题][FAQ]
 <br> 常见问题解答
 
-[A tour of the Flutter widget framework]: {{site.url}}/development/ui/widgets-intro
+[A tour of the Flutter widget framework]: {{site.url}}/ui/widgets-intro
 [Android]: {{site.url}}/get-started/flutter-for/android-devs
-[Building layouts]: {{site.url}}/development/ui/layout
+[Building layouts]: {{site.url}}/ui/layout
 [FAQ]: {{site.url}}/resources/faq
 [Get started]: {{site.url}}/get-started/install
-[interactivity]: {{site.url}}/development/ui/interactive
+[interactivity]: {{site.url}}/ui/interactive
 [SwiftUI]: {{site.url}}/get-started/flutter-for/swiftui-devs
 [UIKit]: {{site.url}}/get-started/flutter-for/uikit-devs
 [React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
-[Understanding constraints]: {{site.url}}/development/ui/layout/constraints
+[Understanding constraints]: {{site.url}}/ui/layout/constraints
 [web]: {{site.url}}/get-started/flutter-for/web-devs
 [Xamarin.Forms]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs
 

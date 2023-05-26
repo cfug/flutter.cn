@@ -34,7 +34,7 @@ but is not yet in developer preview.
 
 在继续下面的说明之前，请在 iOS 上尝试使用 Impeller，
 如果它没有解决你的问题，请在 [GitHub issue][] 中告诉我们。
-Android 正在积极开发中，但还没有进入开发者预览阶段。
+Impeller 的 Android 部分正在积极开发中，但还没有进入开发者预览阶段。
 
 [Impeller]: {{site.repo.flutter}}/wiki/Impeller
 [GitHub issue]: {{site.github}}/orgs/flutter/projects/21

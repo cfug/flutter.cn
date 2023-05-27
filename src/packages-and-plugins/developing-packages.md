@@ -88,6 +88,7 @@ Package 包含以下几种类别：
   was extended to implement support for web,
   see the Medium article by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
+
   一个较为具体的实现例子是 [`url_launcher`][] 插件 package。
   想了解如何使用 `url_launcher` package，以及它如何扩展 Web 的实现，
   请阅读 Medium 上由 Harry Terkelsen 撰写的文章
@@ -1034,8 +1035,13 @@ FFI 插件在 Flutter 3.0 中引入，如果你的目标是较早版本的 Flutt
 
 ### Step 1: Create the package
 
+### 第 1 步：创建 package
+
 To create a starter FFI plugin package,
 use the `--template=plugin_ffi` flag with `flutter create`:
+
+要创建 FFI 插件，
+请在 `flutter create` 指令中使用 `--template=plugin_ffi` 标志：
 
 ```terminal
 $ flutter create --template=plugin_ffi hello
@@ -1044,18 +1050,32 @@ $ flutter create --template=plugin_ffi hello
 This creates a FFI plugin project in the `hello`
 folder with the following specialized content:
 
+上面的指令执行完成后，会在 `hello` 文件夹中创建一个 FFI 插件项目，
+主要结构说明如下：
+
 **lib**: The Dart code that defines the API of the plugin, and which
 calls into the native code using `dart:ffi`.
 
-**src**: The native source code, and a `CmakeFile.txt` file for building
+**lib**：定义插件 API 的 Dart 代码，使用 `dart:ffi` 调用本地原生代码。
+
+**src**: The native source code, and a `CMakeLists.txt` file for building
 that source code into a dynamic library.
+
+**src**：本地原生源代码，以及一个用于将源代码构建为动态库的 `CMakeLists.txt` 文件。
 
 **platform folders** (`android`, `ios`, `windows`, etc.): The build files
 for building and bundling the native code library with the platform application.
 
+**平台文件夹**（`android`、`ios`、`windows` 等等）：
+用于构建本地原生代码库并与不同平台应用程序绑定。
+
 ### Step 2: Building and bundling native code
 
+### 第 2 步：构建和绑定本地原生代码
+
 The `pubspec.yaml` specifies FFI plugins as follows:
+
+`pubspec.yaml` 中指定 FFI 插件的平台如下：
 
 ```yaml
   plugin:
@@ -1067,8 +1087,14 @@ The `pubspec.yaml` specifies FFI plugins as follows:
 This configuration invokes the native build for the various target platforms
 and bundles the binaries in Flutter applications using these FFI plugins.
 
+上面这种配置调用了各个目标平台的本地原生构建，
+并使 FFI 插件将二进制文件绑定在 Flutter 应用程序中。
+
 This can be combined with `dartPluginClass`, such as when FFI is used for the
 implementation of one platform in a federated plugin:
+
+这可以与 `dartPluginClass` 结合使用，
+例如实现 FFI 被用于联合插件中的一个平台：
 
 ```yaml
   plugin:
@@ -1081,6 +1107,8 @@ implementation of one platform in a federated plugin:
 
 A plugin can have both FFI and method channels:
 
+一个插件可以同时实现 FFI 和 方法通道 (method channel)：
+
 ```yaml
   plugin:
     platforms:
@@ -1091,22 +1119,54 @@ A plugin can have both FFI and method channels:
 
 The native build systems that are invoked by FFI (and method channels) plugins are:
 
+被 FFI（和方法通道）插件调用的本地原生构建系统是：
+
 * For Android: Gradle, which invokes the Android NDK for native builds.
+
+  Android：是 Gradle，它调用 Android NDK 进行本地原生构建。
+
   * See the documentation in `android/build.gradle`.
+
+    请查看 `android/build.gradle` 中的文档。
+
 * For iOS and MacOS: Xcode, via CocoaPods.
+
+  iOS 和 MacOS：是 Xcode，通过 CocoaPods 进行本地原生构建。
+
   * See the documentation in `ios/hello.podspec`.
+
+    请查看 `ios/hello.podspec` 中的文档。
+
   * See the documentation in `macos/hello.podspec`.
+
+    请查看 `macos/hello.podspec` 中的文档。
+
 * For Linux and Windows: CMake.
+
+  Linux 和 Windows：是 CMake 进行本地原生构建。
+
   * See the documentation in `linux/CMakeLists.txt`.
+
+    请查看 `linux/CMakeLists.txt` 中的文档。
+
   * See the documentation in `windows/CMakeLists.txt`.
+
+    请查看 `windows/CMakeLists.txt` 中的文档。
 
 ### Step 3: Binding to native code
 
+### 第 3 步：绑定本地原生代码
+
 To use the native code, bindings in Dart are needed.
+
+为了使用本地原生代码，需要在 Dart 中进行绑定。
 
 To avoid writing these by hand, they are generated from the header file
 (`src/hello.h`) by [`package:ffigen`][].
 Regenerate the bindings by running:
+
+为了避免手工编写，它们由头文件 (`src/hello.h`) 中的 [`package:ffigen`][] 生成。
+运行以下指令重新生成绑定：
 
 ```terminal
 $  flutter pub run ffigen --config ffigen.yaml
@@ -1114,12 +1174,21 @@ $  flutter pub run ffigen --config ffigen.yaml
 
 ### Step 4: Invoking native code
 
+### 第 4 步：调用本地原生代码
+
 Very short-running native functions can be directly invoked from any isolate.
 For an example, see `sum` in `lib/hello.dart`.
+
+运行时间很短的本地原生函数可以在任何 isolate 中直接调用。
+例如，请查看 `lib/hello.dart` 中的 `sum`。
 
 Longer-running functions should be invoked on a [helper isolate][] to avoid
 dropping frames in Flutter applications.
 For an example, see `sumAsync` in `lib/hello.dart`.
+
+运行时间较长的本地原生函数应在 [helper isolate][] 上调用，
+以避免在 Flutter 应用程序中掉帧。
+例如，请查看 `lib/hello.dart` 中的 `sumAsync`。
 
 ## Adding documentation
 
@@ -1158,7 +1227,6 @@ For example, see the docs for [`device_info`][].
 
 当你提交一个 package 时，会自动生成 API 文档并将其提交到 
 pub.flutter-io.cn/documentation，示例请参见 [`device_info`][] 文档。
-
 
 If you wish to generate API documentation locally on
 your development machine, use the following commands:

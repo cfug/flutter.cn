@@ -645,7 +645,7 @@ to add [debugging functionalities such as hot-reload and DevTools][]
 via `flutter attach`.
 
 在 iOS 14 及更高的版本中，
-可以在应用程序的 Debug 版本中启用 Dart 多播 DNS 服务 (Dart multicast DNS service)，
+可以在应用程序的 Debug 版本中启用 Dart 的 多播 DNS 服务 (multicast DNS service)，
 通过 `flutter attach` 添加 
 [调试功能，如热重载和 DevTools][debugging functionalities such as hot-reload and DevTools]。
 

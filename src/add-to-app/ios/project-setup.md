@@ -16,34 +16,34 @@ in your existing application.
 Flutter UI 组件可以渐进式地内嵌到你现有的 iOS 应用中，下面是几种方法：
 
 1. **Use the CocoaPods dependency manager and installed Flutter SDK.**
-  In this case, the `flutter_module` is compiled from
-  the source each time the app is built. (Recommended.)
+   In this case, the `flutter_module` is compiled from
+   the source each time the app is built. (Recommended.)
 
-  **使用 CocoaPods 依赖管理器安装 Flutter SDK**
-  使用这种方法，每次构建应用的时候都会从源代码中编译 `flutter_module`。(推荐)
+   **使用 CocoaPods 依赖管理器安装 Flutter SDK**
+   使用这种方法，每次构建应用的时候都会从源代码中编译 `flutter_module`。(推荐)
 
 1. **Create frameworks for the Flutter engine, your compiled Dart code,
-  and all Flutter plugins.** Here, you manually embed the frameworks,
-  and update your existing application's build settings in Xcode.
-  This can be useful for teams that don't want to require every developer
-  to have the Flutter SDK and Cocoapods installed locally.
+   and all Flutter plugins.** Here, you manually embed the frameworks,
+   and update your existing application's build settings in Xcode.
+   This can be useful for teams that don't want to require every developer
+   to have the Flutter SDK and Cocoapods installed locally.
 
-  **创建一个框架，把 Flutter 引擎、已编译的 Dart 代码和所有 Flutter 插件都放进去**
-  这种方式你可以手动嵌入这个框架，并在 Xcode 中更改现有的应用的构建设置。
-  如果不想要求开发团队的每一位成员都在本地安装 Flutter SDK 和 Cocoapods，
-  这种方式比较适用。
+   **创建一个框架，把 Flutter 引擎、已编译的 Dart 代码和所有 Flutter 插件都放进去**
+   这种方式你可以手动嵌入这个框架，并在 Xcode 中更改现有的应用的构建设置。
+   如果不想要求开发团队的每一位成员都在本地安装 Flutter SDK 和 Cocoapods，
+   这种方式比较适用。
 
 1. **Create frameworks for your compiled Dart code,
-  and all Flutter plugins. Use CocoaPods for the Flutter engine.** 
-  With this option, embed the frameworks for your application
-  and the plugins in Xcode, but distribute the
-  Flutter engine as a CocoaPods podspec.
-  This is similar to the second option, but it provides
-  an alternative to distributing the large Flutter.xcframework.
+   and all Flutter plugins. Use CocoaPods for the Flutter engine.** 
+   With this option, embed the frameworks for your application
+   and the plugins in Xcode, but distribute the
+   Flutter engine as a CocoaPods podspec.
+   This is similar to the second option, but it provides
+   an alternative to distributing the large Flutter.xcframework.
 
-  **为已编译的 Dart 代码和所有 Flutter 插件创建一个框架，对 Flutter 引擎使用 CocoaPods 来管理**
-  这种方式是将应用内容和插件作为内嵌的框架，但将 Flutter 引擎作为 CocoaPods podspec 分发。
-  这有点类似第二种方式，但是它为分发大型的 Flutter.xcframework 文件提供了替代方案。
+   **为已编译的 Dart 代码和所有 Flutter 插件创建一个框架，对 Flutter 引擎使用 CocoaPods 来管理**
+   这种方式是将应用内容和插件作为内嵌的框架，但将 Flutter 引擎作为 CocoaPods podspec 分发。
+   这有点类似第二种方式，但是它为分发大型的 Flutter.xcframework 文件提供了替代方案。
 
 For examples using an app built with UIKit, 
 see the iOS directories in the [add_to_app code samples][]. 
@@ -540,13 +540,16 @@ section of your target's **General** settings.
 To embed the dynamic frameworks
 select **Embed & Sign**. 
 
-They will then appear under **Embed Frameworks** within 
-**Build Phases** as follows: 
-
 例如，你可以从应用框架组中拖拽框架
 （除了 FlutterPluginRegistrant 以及其他的静态框架）
 到你的目标 ' build settings > Build Phases > Embed Frameworks。
 然后从下拉菜单中选择 “Embed & Sign”。
+
+They will then appear under **Embed Frameworks** within 
+**Build Phases** as follows: 
+
+之后它们将出现在 **Build Phases** 中的 **Embed Frameworks** 内，
+如下所示：
 
 {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
 
@@ -604,14 +607,23 @@ some/path/MyApp/
 
 Host apps using CocoaPods can add Flutter to their Podfile:
 
+使用 CocoaPods 的宿主应用程序可以将 Flutter 添加到 Podfile 中：
+
 <!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
 {{site.alert.note}}
+
   You must hard code the `[build mode]` value.
   For example, use `Debug` if you need to use
   `flutter attach` and `Release` when you're ready to ship.
+
+  你必须选择相应的构建模式进行硬编码，
+  将构建模式的值写在上面指令中的 `[build mode]` 位置。 
+  例如，你需要 `flutter attach` 的时候，应该使用 `Debug`，
+  在你准备发布版本的时候，应该使用 `Release`。
+
 {{site.alert.end}}
 
 Link and embed the generated App.xcframework,
@@ -619,15 +631,32 @@ FlutterPluginRegistrant.xcframework,
 and any plugin frameworks into your existing application
 as described in Option B.
 
+如选项 B 所述，将生成的 App.xcframework、
+FlutterPluginRegistrant.xcframework 以及
+任何插件框架，链接并嵌入到你现有的应用程序中。
+
 ## Local Network Privacy Permissions
+
+## 本地网络隐私权限
+
 On iOS 14 and higher, enable the Dart multicast DNS
 service in the Debug version of your app
-to add [debugging functionalities such as hot-reload and
-DevTools][] via `flutter attach`.
+to add [debugging functionalities such as hot-reload and DevTools][] 
+via `flutter attach`.
+
+在 iOS 14 及更高的版本中，
+可以在应用程序的 Debug 版本中启用 Dart 多播 DNS 服务 (Dart multicast DNS service)，
+通过 `flutter attach` 添加 
+[调试功能，如热重载和 DevTools][debugging functionalities such as hot-reload and DevTools]。
 
 {{site.alert.warning}}
+
   This service must not be enabled in the **Release**
   version of your app, or you may experience App Store rejections.
+
+  不可以在应用程序的 **Release** 版本中启用这项服务，
+  否则你很有可能被 App Store 拒绝上架。
+
 {{site.alert.end}}
 
 One way to do this is to maintain a separate copy of your app's Info.plist per
@@ -635,23 +664,38 @@ build configuration. The following instructions assume
 the default **Debug** and **Release**.
 Adjust the names as needed depending on your app's build configurations.
 
+还有一种方式是将每种不同的构建配置，单独创建对应配置的 Info.plist。
+下面的说明假定默认为 **调试版本 (Debug)** 和 **发布版本 (Release)**。
+根据应用程序构建配置的需要调整名称。
+
 <ol markdown="1">
 <li markdown="1">
 
 Rename your app's **Info.plist** to **Info-Debug.plist**.
 Make a copy of it called **Info-Release.plist** and add it to your Xcode project.
 
+将应用程序中的 **Info.plist** 重命名为 **Info-Debug.plist**，
+再复制一个相同的文件并重命名为 **Info-Release.plist**，
+最后将 **Info-Debug.plist**、**Info-Release.plist** 添加到 Xcode 项目中。
+
 {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/info-plists.png" alt="Info-Debug.plist and Info-Release.plist in Xcode" %}
 
 </li>
 
 <li markdown="1">
+
 In **Info-Debug.plist** _only_ add the key `NSBonjourServices`
 and set the value to an array with the string `_dartobservatory._tcp`.
 Note Xcode will display this as "Bonjour services".
 
+在 **Info-Debug.plist** 中 **只** 添加 key `NSBonjourServices`，
+并将它的值设置为数组 (Array)，然后在该数组中添加 `_dartobservatory._tcp` 字符串 (String)。
+
 Optionally, add the key `NSLocalNetworkUsageDescription` set to your
 desired customized permission dialog text.
+
+可以选择添加 key `NSLocalNetworkUsageDescription`，
+并设置为你自定义的权限提示对话框文本。
 
 {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/debug-plist.png" alt="Info-Debug.plist with additional keys" %}
 
@@ -662,15 +706,24 @@ desired customized permission dialog text.
 In your target's build settings, change the **Info.plist File**
 (`INFOPLIST_FILE`) setting path from `path/to/Info.plist` to `path/to/Info-$(CONFIGURATION).plist`.
 
+在 target 构建设置中，将 **Info.plist File** (`INFOPLIST_FILE`) 设置路径
+从 `path/to/Info.plist` 改为 `path/to/Info-$(CONFIGURATION).plist`。
+
 {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/set-plist-build-setting.png" alt="Set INFOPLIST_FILE build setting" %}
 
 This will resolve to the path **Info-Debug.plist** in **Debug** and
 **Info-Release.plist** in **Release**.
 
+这个设置将会在 **Debug** 时，使用 **Info-Debug.plist** 的配置，
+在 **Release** 时，使用 **Info-Release.plist** 的配置。
+
 {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/plist-build-setting.png" alt="Resolved INFOPLIST_FILE build setting" %}
 
 Alternatively, you can explicitly set the **Debug** path to **Info-Debug.plist**
 and the **Release** path to **Info-Release.plist**.
+
+又或者，你可以明确地将 **Debug** 的路径设置为 **Info-Debug.plist**，
+将 **Release** 的路径设置为 **Info-Release.plist**。
 
 </li>
 
@@ -679,11 +732,18 @@ and the **Release** path to **Info-Release.plist**.
 If the **Info-Release.plist** copy is in your target's **Build Settings > Build Phases > Copy Bundle**
 Resources build phase, remove it.
 
+如果 **Info-Release.plist** 在 target 中 **Build Settings > Build Phases > Copy Bundle Resources** 
+的时候，请删除它。
+
 {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/copy-bundle.png" alt="Copy Bundle build phase" %}
 
 The first Flutter screen loaded by your Debug app will now prompt
 for local network permission. The permission can also be allowed by enabling
 **Settings > Privacy > Local Network > Your App**.
+
+现在 Debug 应用程序会在 Flutter 启动时提示本地网络权限。
+也可以通过打开 **设置 > 隐私与安全性 > 本地网络 > 你的应用程序** 来允许该权限。
+
 {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/network-permission.png" alt="Local network permission dialog" %}
 
 </li>

@@ -473,7 +473,7 @@ these trees be separate:
 Flutter 中 `RenderObject` 树和 `Element` (Widget) 树是同构的
 （严格来说，`RenderObject` 树是 `Element` 树的子集）。
 显然，可以简化这些树合并成一棵树。
-但并没有这样做，因为在实践中，将这些树分开有许多好处：
+但在 Flutter 中我们并没有这样做，因为在实践中，将这些树分开有许多好处：
 
 * **Performance.** When the layout changes, only the relevant parts of
   the layout tree need to be walked. Due to composition, the element

@@ -462,20 +462,33 @@ composition, these optimizations have a substantial effect on performance.
 
 ### Separation of the Element and RenderObject trees
 
+### Element 树和 RenderObject 树的分离
+
 The `RenderObject` and `Element` (Widget) trees in Flutter are isomorphic
 (strictly speaking, the `RenderObject` tree is a subset of the `Element`
 tree). An obvious simplification would be to combine these trees into
 one tree. However, in practice there are a number of benefits to having
 these trees be separate:
 
+Flutter 中 `RenderObject` 树和 `Element` (Widget) 树是同构的
+（严格来说，`RenderObject` 树是 `Element` 树的子集）。
+显然，可以简化这些树合并成一棵树。
+但并没有这样做，因为在实践中，将这些树分开有许多好处：
+
 * **Performance.** When the layout changes, only the relevant parts of
   the layout tree need to be walked. Due to composition, the element
   tree frequently has many additional nodes that would have to be skipped.
+
+  **性能。** 当布局改变时，只需要遍历布局相关的树。
+  由于组合 widget 的原因，Element 树通常具有许多必须跳过的额外节点。
 
 * **Clarity.** The clearer separation of concerns allows the widget
   protocol and the render object protocol to each be specialized to
   their specific needs, simplifying the API surface and thus lowering
   the risk of bugs and the testing burden.
+
+  **清晰。** 更清晰的分离，使得 Widget 协议和 RenderObject 协议
+  能够各自专注特定的需求，简化了 API，从而降低 bug 风险和测试负担。
 
 * **Type safety.** The render object tree can be more type safe since it
   can guarantee at runtime that children will be of the appropriate type
@@ -485,6 +498,13 @@ these trees be separate:
   model could be used in both a box layout and a sliver layout), and thus
   in the element tree, verifying the type of render objects would require
   a tree walk.
+
+  **类型安全。** 渲染 RenderObject 树会更安全，
+  因为它可以在运行时保证子节点有合适的类型
+  （例如，每个坐标系都有自己的 RenderObject 类型）。
+  组合 widget 可以不考虑布局时使用的坐标系
+  （例如，同一个 widget 可以分别在盒子布局和 sliver 布局中使用），
+  因此在 Element 树中，验证 RenderObject 的类型需要将树遍历。
 
 ## Infinite scrolling
 

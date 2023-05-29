@@ -17,6 +17,14 @@ animation types. Many widgets, especially [Material widgets][],
 come with the standard motion effects defined in their design spec,
 but it's also possible to customize these effects.
 
+精心设计的动画会使 UI 更生动，
+有助于提升应用程序更精巧的外观和感觉，
+从而改善用户体验。
+Flutter 让各种动画效果的实现变得容易。
+在许多 widget 中，特别是 [Material widgets][]，
+它们都自带其设计规范中定义的标准动画效果，
+当然，你也可以定制这些效果。
+
 ## Choosing an approach
 
 ## 选择一种实现方式
@@ -345,9 +353,15 @@ Learn more about Flutter animations at the following links:
 
 * [Animation samples][] from the [Sample app catalog][].
 
+  [示例应用目录][Sample app catalog] 中的 [动画示例][Animation samples]
+
 * [Animation recipes][] from the Flutter cookbook.
 
+  Flutter 实用教程 (Cookbook) 中的 [动画教程][Animation recipes]
+
 * [Animation videos][] from the Flutter YouTube channel.
+
+  Flutter 视频频道中 [动画相关的视频][Animation videos]
 
 * [Animations: overview][]<br>
   A look at some of the major classes in the
@@ -367,6 +381,8 @@ Learn more about Flutter animations at the following links:
   The animation API for the Flutter framework. This link
   takes you to a technical overview page for the library.
 
+  [Flutter API 文档][Flutter API documentation] 中的 [动画库][animation library]<br>
+  Flutter 的动画 API。此链接将带你进入动画库的概述页。
 
 [Animate a widget using a physics simulation]: {{site.url}}/cookbook/animation/physics-simulation
 [`AnimatedList` example]: https://flutter.github.io/samples/animations.html

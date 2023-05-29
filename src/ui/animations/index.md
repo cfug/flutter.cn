@@ -18,10 +18,10 @@ come with the standard motion effects defined in their design spec,
 but it's also possible to customize these effects.
 
 精心设计的动画会使 UI 更生动，
-有助于提升应用程序更精巧的外观和感觉，
+它有助于提升应用程序更精巧的外观和感觉，
 从而改善用户体验。
 Flutter 让各种动画效果的实现变得容易。
-在许多 widget 中，特别是 [Material widgets][]，
+在许多 widget 特别是 [Material widgets][] 中，
 它们都自带其设计规范中定义的标准动画效果，
 当然，你也可以定制这些效果。
 

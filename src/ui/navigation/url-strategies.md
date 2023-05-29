@@ -49,19 +49,34 @@ void main() {
 
 ## Configuring your web server
 
+## 配置 web 服务器
+
 PathUrlStrategy uses the [History API][], which requires additional
 configuration for web servers.
+
+PathUrlStrategy 使用的是 [History API][]，
+这需要 Web 服务器额外进行配置。
 
 To configure your web server to support PathUrlStrategy, check your web server's
 documentation to rewrite requests to `index.html`.Check your web server's
 documentation for details on how to configure single-page apps.
 
+为了 Web 服务器支持 PathUrlStrategy，
+需要查看 Web 服务器文档，重写对 `index.html` 的请求。
+更多信息请查看 Web 服务器文档，了解如何配置单页应用程序的细节。
+
 If you are using Firebase Hosting, choose the "Configure as a single-page app"
 option when initializing your project. For more information see Firebase's
 [Configure rewrites][] documentation.
 
+如果你使用 Firebase Hosting 托管，在初始化项目时选择 "配置单页应用" 选项。
+更多信息请查看 Firebase 中的 [配置重写][Configure rewrites]。
+
 The local dev server created by running `flutter run -d chrome` is configured to
 handle any path gracefully and fallback to your app's `index.html` file.
+
+最后，运行 `flutter run -d chrome` 创建并运行本地开发服务器，
+这些配置会优雅地处理所有路径并回退到应用程序的 `index.html` 文件。
 
 ## Hosting a Flutter app at a non-root location
 

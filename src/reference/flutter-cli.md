@@ -61,9 +61,8 @@ The following table shows which commands you can use with the `flutter` tool:
 下表列举了你可以使用的 `Flutter` 命令：
 
 |---------+--------------------------------+-----------------------------------|
-| Command | Example of use                 | More information                  |
-|---------|--------------------------------|-----------------------------------|
-|  命令   |  示例                           |  描述                             |
+| <t>Command</t><t>命令</t> | <t>Example of use</t><t>示例</t> | <t>More information</t><t>描述</t> |
+|---------------------------|---------------------------------|------------------------------------|
 | analyze | `flutter analyze -d <DEVICE_ID>`     | Analyzes the project's Dart source code.<br>Use instead of [`dart analyze`][]. |
 | analyze | `flutter analyze -d <DEVICE_ID>`     | 分析项目的 Dart 源码。<br>该命令用来替代 [`dart analyze`][]。 |
 | assemble | `flutter assemble -o <DIRECTORY>` | Assemble and build flutter resources. |

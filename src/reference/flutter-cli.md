@@ -2,20 +2,20 @@
 title: "flutter: The Flutter command-line tool"
 title: Flutter 命令行文档
 description: "The reference page for using 'flutter' in a terminal window."
-description: 在终端中使用 Flutter 命令的指南。
+description: 在终端中使用 "flutter" 命令的指南。
 ---
 
 The `flutter` command-line tool is how developers (or IDEs on behalf of
 developers) interact with Flutter. For Dart related commands,
 you can use the [`dart`][] command-line tool.
 
-开发者（或 IDE）可以使用 `Flutter` 命令行工具与 Flutter 的相关功能进行交互。
+开发者（或 IDE）可以使用 `flutter` 命令行工具与 Flutter 的相关功能进行交互。
 对于 Dart 相关的命令，你可以使用 [`dart`][] 命令行工具。
 
 Here's how you might use the `flutter` tool to create, analyze, test, and run an
 app:
 
-以下命令让你可以使用 `Flutter` 命令行工具来创建、分析、测试以及运行一个应用程序：
+以下命令让你可以使用 `flutter` 命令行工具来创建、分析、测试以及运行一个应用程序：
 
 ```terminal
 $ flutter create my_app
@@ -27,7 +27,7 @@ $ flutter run lib/main.dart
 
 To run [`pub`][`dart pub`] commands using the `flutter` tool:
 
-使用 `Flutter` 命令行工具运行 [`pub`][`dart pub`] 相关命令：
+使用 `flutter` 命令行工具运行 [`pub`][`dart pub`] 相关命令：
 
 ```terminal
 $ flutter pub get
@@ -37,7 +37,7 @@ $ flutter pub upgrade
 
 To view all commands that `flutter` supports:
 
-查看 `Flutter` 所有支持的命令：
+查看 `flutter` 所有支持的命令：
 
 ```terminal
 $ flutter --help --verbose
@@ -54,11 +54,11 @@ $ flutter --version
 
 ## `flutter` commands
 
-## `Flutter` 命令
+## `flutter` 命令
 
 The following table shows which commands you can use with the `flutter` tool:
 
-下表列举了你可以使用的 `Flutter` 命令：
+下表列举了你可以使用的 `flutter` 命令：
 
 |---------+--------------------------------+-----------------------------------|
 | <t>Command</t><t>命令</t> | <t>Example of use</t><t>示例</t> | <t>More information</t><t>描述</t> |
@@ -122,7 +122,7 @@ or follow the links in the **More information** column.
 You can also get details on `pub` commands — for example,
 `flutter help pub outdated`.
 
-对于 Flutter 命令的其他帮助信息，请输入 `flutter help <command>` 获取，
+对于 flutter 命令的其他帮助信息，请输入 `flutter help <command>` 获取，
 或根据上面表格 **描述** 栏内的链接，获取对应命令的相关信息。
 你还可以获取关于 `pub` 命令的帮助信息 —— 例如，
 `flutter help pub outdated`。

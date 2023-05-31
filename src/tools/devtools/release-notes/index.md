@@ -10,7 +10,7 @@ description: Flutter 和 Dart DevTools 的发行注记
 This page links to announcements and release notes for
 Flutter and Dart DevTools
 
-本篇链接到 Flutter 和 Dart DevTools 的公告和发行注记
+本篇链接的是 Flutter 和 Dart DevTools 的公告和发行注记
 
 * [2.23.1 release notes][]
 * [2.22.2 release notes][]

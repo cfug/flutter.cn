@@ -208,8 +208,8 @@ holds the _state_ objects associated with stateful widgets.
 
 Flutter 使用类似于布局的次线性算法来构建 widget。widget 构建完成后，
 它们将被保留了用户页面逻辑结构的 **element 树** 保存。
-Element 树是非常有必要的，这是因为 widget 自身是**不可变的**，
-这意味着（其他情况除外），它们无法记住父（或子）节点与其他 widget 的关系。
+Element 树是必要的，因为 widget 自身是**不可变的**，
+这意味着（其他情况除外）它们无法记住与其他 widget 的父或子关系。
 Element 还保存了与 Stateful widget 相关联的 **state** 对象。
 
 In response to user input (or other stimuli), an element can become dirty,

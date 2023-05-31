@@ -24,7 +24,7 @@ We appreciate your effort in sending us as much feedback as possible.
 * To report a Flutter crash or bug,
   [create an issue in the flutter/flutter project][Flutter issue].
 
-  报告 Flutter 的崩溃或 Bug，
+  报告 Flutter 的崩溃或 bug，
   [请在 flutter/flutter 项目中提出 issue][Flutter issue]。
 
 * To report a problem with the website,

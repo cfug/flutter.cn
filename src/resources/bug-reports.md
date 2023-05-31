@@ -67,7 +67,7 @@ the reproduction into a separate repository and link it.
 
 ## Provide some Flutter diagnostics
 
-## 提供一些 Flutter 的诊断方法
+## 提供一些 Flutter 的诊断
 
 * Run `flutter doctor -v` in your project directory and paste
   the results into the GitHub issue:

@@ -9,11 +9,14 @@ As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
 
+正如 [破坏性改动策略][breaking change policy] 中描述的，
+我们会不定期地发布关于破坏性改动的迁移指南。
+
 To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
 
-正如 [破坏性改动策略][breaking change policy] 中描述的，
-我们会不定期地发布关于破坏性改动的迁移指南。
+你可以加入 [Flutter announce][] 和 [Dart announce][]，
+以获得关于未来破坏性改动的通知。
 
 When facing Dart errors after upgrading Flutter,
 consider using the [`dart fix`][] command
@@ -45,6 +48,8 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+### 尚未发布到稳定渠道
+
 * [Moved ReorderableListView's localized strings][]  from material to widgets localizations
 * [Removed `ignoringSemantics`][] properties
 * [Deprecated `RouteInformation.location`][] and its related APIs
@@ -54,6 +59,8 @@ release, and listed in alphabetical order:
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 
 ### Released in Flutter 3.10
+
+### 在 Flutter 3.10 中发布
 
 * [Dart 3 changes in Flutter v3.10 and later][]
 * [Deprecated API removed after v3.7][]
@@ -91,6 +98,8 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 3.3
 
+### 在 Flutter 3.3 中发布
+
 * [Adding ImageProvider.loadBuffer][]
 * [Default PrimaryScrollController on Desktop][]
 * [Trackpad gestures can trigger GestureRecognizer][]
@@ -100,6 +109,8 @@ release, and listed in alphabetical order:
 [Trackpad gestures can trigger GestureRecognizer]: {{site.url}}/release/breaking-changes/trackpad-gestures
 
 ### Released in Flutter 3
+
+### 在 Flutter 3 中发布
 
 * [Deprecated API removed after v2.10][]
 * [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
@@ -111,7 +122,7 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 2.10
 
-### 已经在 Flutter 2.10 中发布
+### 在 Flutter 2.10 中发布
 
 * [Deprecated API removed after v2.5][]
 * [Raw images on Web uses correct origin and colors][]
@@ -125,7 +136,7 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 2.5
 
-### 已经在 Flutter 2.5 中发布
+### 在 Flutter 2.5 中发布
 
 * [Default drag scrolling devices][]
 * [Deprecated API removed after v2.2][]
@@ -167,7 +178,7 @@ The following breaking change was reverted in release 2.2:
 
 ### Released in Flutter 2.2
 
-### 发布于 Flutter 2.2
+### 在 Flutter 2.2 中发布
 
 * [Default Scrollbars on Desktop][]
 
@@ -175,7 +186,7 @@ The following breaking change was reverted in release 2.2:
 
 ### Released in Flutter 2
 
-### 发布于 Flutter 2
+### 在 Flutter 2 中发布
 
 * [Added BuildContext parameter to TextEditingController.buildTextSpan][]
 * [Android ActivityControlSurface attachToActivity signature change][]
@@ -205,7 +216,7 @@ The following breaking change was reverted in release 2.2:
 
 ### Released in Flutter 1.22
 
-### 发布于 Flutter 1.22
+### 在 Flutter 1.22 中发布
 
 * [Android v1 embedding app and plugin creation deprecation][]
 * [Cupertino icons 1.0.0][]
@@ -217,7 +228,7 @@ The following breaking change was reverted in release 2.2:
 
 ### Released in Flutter 1.20
 
-### 发布于 Flutter 1.20
+### 在 Flutter 1.20 中发布
 
 * [Actions API revision][]
 * [Adding TextInputClient.currentAutofillScope property][]
@@ -247,7 +258,7 @@ The following breaking change was reverted in release 2.2:
 
 ### Released in Flutter 1.17
 
-### 发布于 Flutter 1.17
+### 在 Flutter 1.17 中发布
 
 * [Adding 'linux' and 'windows' to TargetPlatform enum][]
 * [Annotations return local position relative to object][]

@@ -125,8 +125,9 @@ about evaluating and debugging Flutter's performance.
     and you'll visually see which widgets rebuild
     visually in your IDE.
 
-    如果你使用 IntelliJ，就可以看到这些数据的 GUI 视图。
-    选择 **show widget rebuild information**，
+    如果你使用 IntelliJ，就可以看见这些数据的 GUI 视图。
+    在 IntelliJ 的 Flutter Performance 工具中
+    勾选 **Track widget rebuilds** 或 **show widget rebuild information**，
     你就能直观地看见哪些 widget 进行了重建。
 
 [`debugProfileBuildsEnabled`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html

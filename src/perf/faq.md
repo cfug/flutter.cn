@@ -122,13 +122,12 @@ about evaluating and debugging Flutter's performance.
 
   * If you use IntelliJ, a GUI view of this data is available.
     Select **Track widget rebuilds**,
-    and you'll visually see which widgets rebuild
-    visually in your IDE.
+    and your IDE displays which the widgets rebuild.
 
     如果你使用 IntelliJ，就可以看见这些数据的 GUI 视图。
     在 IntelliJ 的 Flutter Performance 工具中
     勾选 **Track widget rebuilds**，
-    你就能直观地看见哪些 widget 进行了重建。
+    你就能在 IDE 中直观地看见哪些 widget 进行了重建。
 
 [`debugProfileBuildsEnabled`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
 [debug.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/debug.dart

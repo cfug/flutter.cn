@@ -146,7 +146,7 @@ For detailed information on these flags, run
 the help command for your specific target, for example:
 
 关于这些标志的详细信息，
-请运行特定目标类型的帮助命令，
+请运行特定构建目标类型的帮助命令，
 例如：
 
 ```terminal
@@ -167,7 +167,7 @@ To debug a stack trace created by an obfuscated app,
 use the following steps to make it human readable:
 
 如果你需要调试被混淆的应用程序创建的堆栈跟踪，
-请使用以下步骤将其解析为人类可读的内容：
+请遵循以下步骤将其解析为人类可读的内容：
 
 1. Find the matching symbols file.
    For example, a crash from an Android arm64

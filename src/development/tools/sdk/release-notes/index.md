@@ -17,7 +17,7 @@ releases to the stable channel.
   For information about bug-fix releases, see
   [Hotfixes to the Stable Channel][] on the Flutter wiki.
 
-  关于 bug 修复版本的信息，
+  有关于专门用于问题修复的发行版本的内容，
   请查阅 Flutter wiki 上的 [Hotfixes to the Stable Channel][]。
 
 {{site.alert.end}}

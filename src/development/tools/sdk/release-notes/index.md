@@ -1,18 +1,25 @@
 ---
 title: Flutter release notes
-title: Flutter 发行说明
+title: Flutter 发行注记
 short-title: Release notes
-short-title: 发行说明
+short-title: 发行注记
 description: Release notes for Flutter for prior releases.
-description: Flutter 先前版本的发行说明。 
+description: Flutter 先前版本的发行注记。 
 ---
 
 This page links to announcements and release notes for
 releases to the stable channel.
 
+本篇链接的是发布稳定渠道的公告和发行注记。
+
 {{site.alert.note}}
+
   For information about bug-fix releases, see
   [Hotfixes to the Stable Channel][] on the Flutter wiki.
+
+  有关于专门用于问题修复的发行版本的内容，
+  请查阅 Flutter wiki 上的 [Hotfixes to the Stable Channel][]。
+
 {{site.alert.end}}
 
 * 3.7.0

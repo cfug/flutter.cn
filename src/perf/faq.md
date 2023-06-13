@@ -70,7 +70,7 @@ about evaluating and debugging Flutter's performance.
 * My Flutter app looks janky or stutters. How do I fix it?
 
   我的 Flutter 应用程序很卡顿，性能很糟糕。
-  我怎么样才能修复这些问题？
+  怎么样才能修复这些问题？
 
   * [Improving rendering performance][]
 

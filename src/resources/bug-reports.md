@@ -115,8 +115,8 @@ the reproduction into a separate repository and link it.
 Follow these steps only if your issue is related to the
 `flutter` tool.
 
-只有当你的问题与 `flutter` 工具相关时，
-才遵循以下步骤。
+当你遇到的问题与 `flutter` 工具相关时，
+你才需要遵循以下步骤。
 
 * All Flutter commands accept the `--verbose` flag.
   If attached to the issue, the output from this command

@@ -33,11 +33,11 @@ Flutter 的桌面支持也允许插件拓展&mdash;
 
   * [Building macOS apps with Flutter][]
 
-    [通过 Flutter 开发 macOS 应用][Building Windows apps with Flutter]
+    [通过 Flutter 开发 macOS 应用][Building macOS apps with Flutter]
 
   * [Building Linux apps with Flutter][]
 
-    [通过 Flutter 开发 Linux 应用][Building Windows apps with Flutter]
+    [通过 Flutter 开发 Linux 应用][Building Linux apps with Flutter]
 
 {{site.alert.end}}
 

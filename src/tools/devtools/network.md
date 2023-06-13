@@ -21,7 +21,8 @@ keywords: 开发者工具,网络视图,Dart
 The network view allows you to inspect HTTP, HTTPS, and web socket traffic from
 your Dart or Flutter application.
 
-网络视图允许你检查来自 Dart 或 Flutter 应用程序的 HTTP、HTTPS 和 web socket 的网络流量情况。
+你可以通过网络视图检查来自 Dart 或 Flutter 应用程序的
+HTTP、HTTPS 和 web socket 的网络流量情况。
 
 ![Screenshot of the network screen]({{site.url}}/assets/images/docs/tools/devtools/network_screenshot.png){:width="100%"}
 

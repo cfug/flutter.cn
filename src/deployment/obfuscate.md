@@ -28,7 +28,7 @@ to reverse engineer your proprietary app.
 **Flutter's code obfuscation works
 only on a [release build][].**
 
-**Flutter 的代码混淆功能仅在 [release build][] 生效。**
+**Flutter 的代码混淆功能仅在 [生产构建][release build] 上生效。**
 
 [Code obfuscation]: https://en.wikipedia.org/wiki/Obfuscation_(software)
 [release build]: {{site.url}}/testing/build-modes#release
@@ -42,7 +42,7 @@ encrypt resources nor does it protect against
 reverse engineering.
 It only renames symbols with more obscure names.
 
-请注意，混淆你的代码并**不会**加密资源，
+请注意，混淆你的代码并 **不会** 加密资源，
 也不能防止逆向工程。
 它只是用更晦涩的名称重命名这些符号。
 

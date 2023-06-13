@@ -11,20 +11,21 @@ The Flutter SDK has the packages and command-line tools that you need to develop
 Flutter apps across platforms. To get the Flutter SDK, see [Install][].
 
 Flutter SDK 拥有你在 Flutter 跨平台应用程序所需的 package 和命令行工具。
-请 [安装][Install] Flutter SDK。
+请前往 [安装][Install] 页面了解如何安装 Flutter SDK。
 
 ## What's in the Flutter SDK
 
 ## Flutter SDK 中的内容
 
 The following is available through the Flutter SDK:
-以下是 Flutter SDK 提供的：
+
+以下是 Flutter SDK 提供的内容：
 
 * [Dart SDK][]
 * Heavily optimized, mobile-first 2D rendering engine with
   excellent support for text
 
-  深度优化针对移动应用的 2D 渲染引擎，具备出色的文字支持功能
+  针对移动应用深度优化的 2D 渲染引擎，具备出色的文字支持功能
 
 * Modern react-style framework
 
@@ -32,7 +33,7 @@ The following is available through the Flutter SDK:
 
 * Rich set of widgets implementing Material Design and iOS styles
 
-  丰富的 widget，实现了 Material Design 风格及 iOS 风格
+  Material Design 风格及 iOS 风格丰富的 widget 组件
 
 * APIs for unit and integration tests
 
@@ -48,12 +49,12 @@ The following is available through the Flutter SDK:
 
 * [Dart DevTools][] for testing, debugging, and profiling your app
 
-  [Dart DevTools][] 用于测试、调试和分析你的应用程序
+  用于测试、调试和分析你的应用程序的 [Dart DevTools][]
 
 * `flutter` and `dart` command-line tools for creating, building, testing,
   and compiling your apps
 
-  `flutter` 和 `dart` 命令行工具，用于创建、构建、测试和编译你的应用程序
+  `flutter` 和 `dart` 命令行工具，用于创建、开发、测试和编译你的应用程序
 
 Note: For more information about the Flutter SDK, see its
 [README file][].
@@ -68,7 +69,7 @@ Note: For more information about the Flutter SDK, see its
 The [`flutter` CLI tool][] (`flutter/bin/flutter`) is how developers
 (or IDEs on behalf of developers) interact with Flutter.
 
-开发者（或 IDE）可以使用 [`flutter` CLI 工具][`flutter` CLI tool] (`flutter/bin/flutter`) 
+开发者（或使用的 IDE）使用 [`flutter` CLI 工具][`flutter` CLI tool] (`flutter/bin/flutter`)
 与 Flutter 的相关功能进行交互。
 
 ## `dart` command-line tool

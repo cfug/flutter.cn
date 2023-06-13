@@ -12,7 +12,7 @@ Flutter debugging functionalities such as hot-reload
 and DevTools.
 
 由于 [iOS 14 或更高版本中本地网络权限][local network permissions in iOS 14 or later] 
-的安全性，你必须同意以下权限对话框来启用 Flutter 调试功能，
+的安全限制，你必须在以下权限的对话框中允许权限来启用 Flutter 调试功能，
 如热重载和 DevTools。
 
 ![Screenshot of "allow network connections" dialog]({{site.url}}/assets/images/docs/development/device-connect.png)

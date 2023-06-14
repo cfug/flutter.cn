@@ -747,6 +747,9 @@ on TestFlight, or go ahead and release your app to the App Store.
 to internal and external testers. This optional step
 covers releasing your build on TestFlight.
 
+[TestFlight][] 允许开发者将他们的应用程序推送给内部和外部测试人员进行测试使用，
+开发者同时可以在 TestFlight 上发布应用。
+
 1. Navigate to the TestFlight tab of your app's application
    details page on [App Store Connect][appstoreconnect_login].
 

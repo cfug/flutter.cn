@@ -50,7 +50,7 @@ toc: true
 
 如果前两步都没有发现问题的话，可以使用我分享的分帧渲染的思路，也可以减少 UI 和 Raster 线程的绘制耗时。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=247451014&bvid=BV1wv411h7Ni&cid=318242333&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=247451014&bvid=BV1wv411h7Ni&cid=318242333&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 回到引擎层面上，UC 这边做的一些优化也会以 PR 的形式回馈到社区，大家可以关注我们的进展。
 

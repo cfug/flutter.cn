@@ -101,13 +101,13 @@ implicitly animated widgets:
 下列「每周 Widget」视频涉及了隐含动画 widget 有：
 
 {% comment %} Animated Opacity {% endcomment %}
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839306372&bvid=BV1W54y1U7ma&cid=225852916&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839306372&bvid=BV1W54y1U7ma&cid=225852916&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated Padding {% endcomment %}
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839226956&bvid=BV1354y1U7gU&cid=223412850&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839226956&bvid=BV1354y1U7gU&cid=223412850&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated Positioned {% endcomment %}
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839111170&bvid=BV1T54y1D7hk&cid=220295763&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839111170&bvid=BV1T54y1D7hk&cid=220295763&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %} Animated switcher {% endcomment %}
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=544022725&bvid=BV1dv4y1o7BG&cid=295191533&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=544022725&bvid=BV1dv4y1o7BG&cid=295191533&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 [`AnimatedContainer` sample]: {{site.url}}/cookbook/animation/animated-container

@@ -84,6 +84,6 @@ Smart Display 操作系统或许是 Flutter 目前已运行的最常见嵌入式
 
 我们在此宣布获胜者，您可前往 flutter.dev/create 查看获胜名单。祝贺总冠军 Zebiao Hu，其将荣获价值超过 1 万美元的全加载式 iMac Pro！
 
-<iframe src="//player.bilibili.com/player.html?aid=52416421&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=52416421&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 Flutter 不再只是一个移动框架，更是一个多平台框架，可帮助您触及任何地方的用户。我们迫不及待地看到您利用 Flutter 在 Web、桌面、移动及其他平台上构建的内容！

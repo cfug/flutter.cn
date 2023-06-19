@@ -11,7 +11,7 @@ image:
 
 在 PUBG MOBILE 中，玩家们被空投到一个荒岛上，孤身奋战或与队友合作，努力与对手周旋，幸存到最后赢得胜利。想要在这个游戏里 "吃鸡"，玩家的敏捷反应和大局意识都很重要——而对负责开发游戏内社区模块的团队来说，这两点正好也是他们成功的秘诀。
 
-<iframe width="690" height="480" src="//player.bilibili.com/player.html?aid=393503978&bvid=BV1sd4y1H7G7&cid=985504987&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="690" height="480" src="//player.bilibili.com/player.html?aid=393503978&bvid=BV1sd4y1H7G7&cid=985504987&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 △ PUBG MOBILE 如何连接 10 亿玩家 | Flutter 开发者故事
     

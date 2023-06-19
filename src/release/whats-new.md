@@ -479,7 +479,7 @@ For more information, see
 and [What's new in Flutter 2.10][],
 free articles on Medium.
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=640083866&bvid=BV1eY4y1s7wu&cid=556773536&page=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=640083866&bvid=BV1eY4y1s7wu&cid=556773536&page=1&autoplay=false" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 [What's new in Flutter 2.10]: {{site.flutter-medium}}/whats-new-in-flutter-2-10-5aafb0314b12

@@ -80,7 +80,7 @@ RangeSlider widget 支持连续或者分散的效果
 
 之前我们提到过 [Reflectly](https://www.forbes.com/sites/heatherfarmbrough/2018/05/01/reflectly-wants-to-be-an-adidas-of-the-mind/#572291294204)，它是一个丹麦的公司，他们在 iOS 和 Android 平台开发了非常有吸引力的应用程序。他们的应用程序被美国 iPhone 应用商店评为当日最佳应用。这也证明了 Flutter 的真正潜力远远超过实现体验流畅的应用（同时可以帮助开发者获得成功）。
 
-<iframe src="//player.bilibili.com/player.html?aid=56686514&cid=99031924&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=56686514&cid=99031924&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315"> </iframe>
 
 在柏林的  [WeAreDevelopers](https://events.wearedevelopers.com/) 大会中，[BMW 发布了他们基于 Flutter 的应用](https://youtu.be/80pRyn7fZRk?t=1234)，目前已经在开发中。下面这段描述来自 Guy Duncan，他是 BMW 集团互联公司的 CTO：
 

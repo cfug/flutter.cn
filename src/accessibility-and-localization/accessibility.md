@@ -374,7 +374,7 @@ widgets to offer a dramatically more accessible experience.
 Flutter 内置的 widget，
 以提供更加便捷的体验。
 
-<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=630361140&bvid=BV1N84y1c7hW&cid=331074861&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=630361140&bvid=BV1N84y1c7hW&cid=331074861&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Testing accessibility on mobile
 

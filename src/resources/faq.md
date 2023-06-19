@@ -224,36 +224,36 @@ Flutter 包括了：
 * Heavily optimized, mobile-first 2D rendering engine
   with excellent support for text
 
-  高度优化的针对移动应用的 2D 渲染引擎，更具备出色的文字支持功能
+  针对移动应用深度优化的 2D 渲染引擎，具备出色的文字支持功能
 
 * Modern react-style framework
 
-  现代化的 react 风格框架
+  现代响应式风格框架
 
 * Rich set of widgets implementing Material Design and iOS-style
 
-  丰富的 widgets，很好的实现了 Material Design 风格及 iOS 风格。
+  Material Design 风格及 iOS 风格丰富的 widget 组件
 
 * APIs for unit and integration tests
 
-  用于单元和集成测试的 API
+  用于单元测试和集成测试的 API
 
 * Interop and plugin APIs to connect to the system and 3rd-party SDKs
 
-  用于连接系统和第三方 SDK 的互操作及插件 API
+  原生平台交互性和插件 API 可以连接系统及第三方 SDK
 
 * Headless test runner for running tests on Windows, Linux, and Mac
 
-  无界面 (headless) 测试运行器，用于在 Windows、Linux 和 Mac 上运行测试
+  Headless 测试运行器，用于在 Windows、Linux 和 Mac 上运行测试
   
 * [Dart DevTools][] for testing, debugging, and profiling your app
  
-  [Dart DevTools][] 用以测试、调试和分析你的应用  
+  用于测试、调试和分析你的应用程序的 [Dart DevTools][]  
 
 * Command-line tools for creating, building, testing, and
   compiling your apps
 
-  命令行工具，用于创建、构建、测试和编译应用
+  命令行工具，用于创建、开发、测试和编译你的应用程序
 
 ### Does Flutter work with any editors or IDEs?
 

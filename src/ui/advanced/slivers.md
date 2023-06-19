@@ -33,7 +33,7 @@ check out the following video about using slivers:
 For more information on implementing fancy scrolling effects
 in Flutter, see the following resources:
 
-关于在 Flutter 中实现酷炫的滚动效果的更多信息，
+关于在 Flutter 中实现出色的滚动效果的更多信息，
 请参阅以下资源：
 
 <dl markdown="1">

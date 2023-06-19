@@ -20,7 +20,7 @@ Sliver 是可滚动区域的一部分，你可以定义它以特殊的方式工�
 For a free, instructor-led video workshop that also uses DartPad,
 check out the following video about using slivers:
 
-这里有一个免费的指导视频，
+这里是一个免费的指导视频，
 由讲师使用 DartPad Workshop 进行指导，
 请观看以下关于使用 sliver 的视频：
 

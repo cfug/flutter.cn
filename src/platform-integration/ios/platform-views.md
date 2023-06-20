@@ -32,7 +32,7 @@ directly inside your Flutter app.
   see [Hosting native Android views][].
 
   本篇文档讨论了如何在您的 Flutter 应用中托管您的 iOS 原生视图。
-  如果你想了解如何嵌入到 iOS 视图中，阅读这篇文档：
+  如果你想了解如何嵌入到 Android 视图中，阅读这篇文档：
   [在 Flutter 应用中使用集成平台视图托管您的原生 Android 视图][Hosting native Android views]。
 
 {{site.alert.end}}

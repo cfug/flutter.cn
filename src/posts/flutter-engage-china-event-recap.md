@@ -11,37 +11,37 @@ toc: true
 
 ### **Flutter 2 更新介绍**
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=799947271&bvid=BV1ky4y1b7Uw&cid=318228906&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=799947271&bvid=BV1ky4y1b7Uw&cid=318228906&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 [Flutter 2](https://flutter.cn/posts/announcing-flutter-2) 的发布带来了许多振奋人心的内容。视频中，Google Flutter 团队的产品经理樊舟颖 (Zoey) 和我们一起回顾了发布的重点更新，包括 Flutter 2 和 Dart 2.12 中的新增功能，以及 Flutter 开发者是如何使用 Flutter 的。
 
 ### **使用多个轻型引擎**
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=929917417&bvid=BV1PK4y1m7Xq&cid=318238224&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=929917417&bvid=BV1PK4y1m7Xq&cid=318238224&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 Google Flutter 移动端团队负责人于潇介绍了如何使用 Flutter 2 里的新 API 来创造多个实例的 Flutter 引擎。使用多个 Flutter 引擎可以帮助使用混合栈的 Flutter 代码保持封装性。也可以用来实现低内存消耗的多卡片 Flutter 界面。
 
 ### **解析混合集成 PlatformViews**
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=289929869&bvid=BV1of4y1x7yP&cid=318240613&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=289929869&bvid=BV1of4y1x7yP&cid=318240613&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 混合集成 PlatformViews 帮助了 Flutter 实现嵌入 Android 和 iOS UI。很多非常流行的 Plugins 都使用了混合集成 PlatformViews，比如 google_maps_flutter, webview_flutter，以及最近刚进入测试阶段的 google_mobile_ads。Google Flutter 团队的软件工程师杨天航 (Chris) 在视频中介绍了解析混合集成 PlatformViews 在引擎层的实现方法。请点击下方视频链接了解更多详细信息。
 
 ### **UC Flutter 基础建设深度优化**
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=247451014&bvid=BV1wv411h7Ni&cid=318242333&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=247451014&bvid=BV1wv411h7Ni&cid=318242333&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 随着阿里巴巴集团的 Flutter 应用体量越来越大，业务面临的体验和性能问题也越来越复杂。来自阿里巴巴 UC 客户端研发团队的刘森森分享了 UC 团队在 Flutter 实践中遇到的痛点问题，以及在引擎层和应用层的实际解决方案。请点击下方视频链接了解更多详细信息。
 
 ### **字节跳动 Flutter 业务大规模落地及技术演进**
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=417458713&bvid=BV1yV411n7jz&cid=318243424&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=417458713&bvid=BV1yV411n7jz&cid=318243424&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 来自字节跳动的 Flutter 技术负责人袁辉辉在视频中介绍了 Flutter 业务的大规模落地 (字节跳动已有超过 60 个 App 选择使用 Flutter)，以及 ByteFlutter 的技术演进和在嵌入式设备的应用。同时，袁辉辉也分享了字节跳动在技术开源和生态共建的后续规划和思考。请点击下方视频链接了解更多详细信息。
 
 ### **Flutter 社区开发者分享**
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=204905442&bvid=BV1hh411D7mV&cid=318244827&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=204905442&bvid=BV1hh411D7mV&cid=318244827&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 Google Flutter 团队产品经理 Zoey 邀请了三位来自 Flutter 社区的开发者刘彦博 (Flutter GDE)、王鑫磊、李承峻 (Alex) 进行圆桌讨论，分享 Flutter 的开发经验和对社区建设的思考。请点击下方视频链接了解更多详细信息。
 

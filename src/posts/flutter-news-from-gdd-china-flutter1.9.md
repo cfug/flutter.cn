@@ -83,7 +83,7 @@ ToggleButtons widget 可将同一行的多个 ToggleButton widget 组合到一�
 Flutter 惊人的成长速度和采用率让我们倍感欣慰。在 Google 内部，有超过 20 个项目正在稳步推进中，凝集着数千位工程师的辛勤付出，其中有部分项目已成功落地，其余的则尚在开发阶段。在本周的 Google 开发者大会上，我们已经与大家分享了全球互联网巨头腾讯的成功经验，介绍了腾讯是如何把 Flutter 灵活地运用到越来越多的产品中，欢迎收看下方视频，了解更多。
 Bilibili 视频链接 https://www.bilibili.com/video/av67230699/
 
-<iframe src="//player.bilibili.com/player.html?aid=67230699&cid=116573649&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=67230699&cid=116573649&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 现在，让我们插个轻松的话题，邀请您参加一个有趣的小游戏。请找到您手边的 Google Assistant 设备，然后对它说 “OK Google. Talk to Flutter Widget Quiz.” (OK Google, [为我接通 Flutter Widget 问答挑战赛](https://assistant.google.com/services/a/uid/000000f3a4034e91))。十分感谢 Flutter 社区对这份小测试的倾情贡献，期待各位小伙伴的精彩表现:
 

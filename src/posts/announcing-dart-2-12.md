@@ -9,7 +9,7 @@ toc: true
 
 Dart 2.12 现已发布，其中包含 [健全的空安全](https://dart.cn/null-safety) 和 [Dart FFI](https://dart.cn/guides/libraries/c-interop) 的稳定版。空安全是我们最新主打的一项生产力强化功能，意在帮助您规避空值错误，以前这种错误通常很难被发现，您可以观看下面这支视频了解详情。FFI 则是一种互操作机制，支持调用以 C 语言编写的既有代码，例如调用 Windows [Win32 API](https://pub.flutter-io.cn/packages/win32)。欢迎大家即刻开始使用 Dart 2.12。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=415467484&bvid=BV1GV411Y7sW&cid=262014735&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=415467484&bvid=BV1GV411Y7sW&cid=262014735&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ## **Dart 平台的独特功能**
 

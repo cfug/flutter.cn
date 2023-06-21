@@ -125,7 +125,7 @@ use `InheritedWidget`:
 
 以下讲师指导的视频 workshop 介绍了如何使用 `InheritedWidget`：
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1&autoplay=false" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Other useful docs include:
 

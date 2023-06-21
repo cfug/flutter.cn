@@ -104,7 +104,7 @@ Each one-minute video highlights a Flutter widget.
 
 每周一分钟，为你种草一个 Flutter widget！
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?bvid=BV15441157cc&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Introducing widget of the week<br>
 [Flutter widget of the week playlist][]
 
@@ -123,7 +123,7 @@ This series features Flutter programmers coding,
 unscripted and in real time. Mistakes, solutions
 (some of them correct), and snazzy intro music included.
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&bvid=BV18441157SS&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&bvid=BV18441157SS&cid=97573460&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Introducing the Boring Flutter show<br>
 
  The Boring Flutter Show 视频播放列表介绍<br>

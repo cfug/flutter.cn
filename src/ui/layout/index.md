@@ -1717,7 +1717,7 @@ explain `Stateless` and `Stateful` widgets.
 下面的视频是 [Flutter in Focus][] 系列的一部分，
 解释了 Stateless 和 Stateful 的 widget。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Flutter in Focus playlist]({{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
@@ -1729,7 +1729,7 @@ focuses on a widget. Several of them includes layout widgets.
 [每周 Widget 系列](https://www.bilibili.com/video/av55795672)
 的每一集都会介绍一个 widget。其中也包括一些布局的 widget。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55795672&cid=97539385&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55795672&cid=97539385&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Flutter Widget of the Week playlist]({{site.youtube-site}}/watch?v=yI-8QHpGIP4&index=5&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 ## Other resources

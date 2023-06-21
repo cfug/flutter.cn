@@ -35,7 +35,7 @@ the Cupertino package.
 在开始本文档之前，建议先浏览一下这个 15 分钟的视频，
 了解一下 Cupertino package 是什么吧：
 
-<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=55647852&bvid=BV1B4411V79J&cid=97286350&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=55647852&bvid=BV1B4411V79J&cid=97286350&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Your iOS knowledge and skill set
 are highly valuable when building with Flutter,

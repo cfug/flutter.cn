@@ -61,7 +61,7 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
     或其任意组合的平台编写。
     比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
 
-  <iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=639052744&bvid=BV1dY4y1r7xD&cid=721085079&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://player.bilibili.com/player.html?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {{site.alert.end}}
 

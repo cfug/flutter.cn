@@ -9,27 +9,27 @@ toc: true
 
 除了主题演讲之外，谷歌的各个技术产品团队也发布了六个实战类的教程合集，包括为初级开发者准备的构建第一个 Flutter 应用、Dart 空安全实战以及使用 Dialogflow 构建一个语音聊天机器人应用，适合中高级开发者的实战教程，如使用 Inherited Widgets 做状态管理、在 Flutter 中构建滚动体验以及在 Flutter 中使用 Firebase，我们已经将这些视频通过社区账号发布，请点击下面链接到 Bilibili 中观看：
 
-<iframe src="//player.bilibili.com/player.html?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 △ 使用 Inherited Widgets 来管理应用状态
 
-<iframe src="//player.bilibili.com/player.html?aid=291195426&bvid=BV11f4y187gV&cid=354814353&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=291195426&bvid=BV11f4y187gV&cid=354814353&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 △ 在 Flutter 里构建滑动体验
 
-<iframe src="//player.bilibili.com/player.html?aid=846249495&bvid=BV1n54y1H7dZ&cid=354773704&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=846249495&bvid=BV1n54y1H7dZ&cid=354773704&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 △ 构建你的第一个 Flutter 应用
 
-<iframe src="//player.bilibili.com/player.html?aid=716190926&bvid=BV1pX4y1A7SH&cid=355145231&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=716190926&bvid=BV1pX4y1A7SH&cid=355145231&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 △ 使用 Dialogflow 和 Flutter 构建语音聊天机器人应用
 
-<iframe src="//player.bilibili.com/player.html?aid=888693780&bvid=BV1tK4y1u76N&cid=354814166&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=888693780&bvid=BV1tK4y1u76N&cid=354814166&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 △ Dart 的健全空安全实战
 
-<iframe src="//player.bilibili.com/player.html?aid=631219825&bvid=BV14b4y1o7Wn&cid=355066643&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=631219825&bvid=BV14b4y1o7Wn&cid=355066643&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 △ 在 Flutter 中使用 Firebase
 

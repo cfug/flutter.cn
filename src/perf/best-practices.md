@@ -723,7 +723,6 @@ your app's performance.
   can result in across-the-board performance degradation
   as the compiler can no longer assume that the call is always static.
 
-
   如果大多数 children widget 在屏幕上不可见，
   请避免使用返回具体列表的构造函数
   （例如 `Column()` 或 `ListView()`），以避免构建成本。

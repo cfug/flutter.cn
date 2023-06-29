@@ -10,7 +10,7 @@ description: 如何将现有的 Flutter 项目迁移到 AndroidX。
   You might be directed to this page if Flutter detects
   that your project doesn't use AndroidX.
 
-  如果 Flutter 检测导你的项目没有使用 AndroidX，
+  如果 Flutter 检测到你的项目未使用 AndroidX，
   可能会提示引导你查看此页面。
 
 {{site.alert.end}}

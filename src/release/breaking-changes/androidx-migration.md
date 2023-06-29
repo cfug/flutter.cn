@@ -54,7 +54,7 @@ you can download the latest version from the
 
 2. Select **Open an existing Android Studio Project**.
 
-   选中 **Open an existing Android Studio Project**。
+   选择 **Open an existing Android Studio Project**。
 
 3. Open the `android` directory within your app.
 

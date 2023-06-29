@@ -78,9 +78,9 @@ you can download the latest version from the
    Lastly, save the zip file in your location of preference.
 
    在继续之前，如果你被要求对项目进行备份，
-   请选中 **Backup project as Zip file**，
+   请勾选 **Backup project as Zip file**，
    然后点击 **Migrate**。
-   最后，将 zip 文件保存在你喜欢的位置。
+   最后，将 zip 文件保存在你期望的位置。
 
   <img
       width="500"
@@ -160,7 +160,7 @@ If your module contains an `android` directory instead,
 then follow the steps in previous section.
 
 如果你的模块包含 `android` 目录，
-那么请按照上一节的步骤操作。
+那么请按照上面相关章节的步骤操作。
 
 ### How do I know if my project is using AndroidX?
 
@@ -179,7 +179,7 @@ mustn't depend on any [old build artifact][] or
 [old Support Library class][].
 
 在此 Flutter 版本（1.12.13 版本）之前创建的项目
-不能依赖任何 [旧构建工件][old build artifact] 和 
+不能依赖于任何 [旧构建工件][old build artifact] 和 
 [旧支持库类][old Support Library class]。
 
 [old build artifact]: {{site.android-dev}}/jetpack/androidx/migrate/artifact-mappings

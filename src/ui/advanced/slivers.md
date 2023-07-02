@@ -13,55 +13,88 @@ can define to behave in a special way.
 You can use slivers to achieve custom scrolling effects,
 such as elastic scrolling.
 
+Sliver 是可滚动区域的一部分，你可以定义它以特殊的方式工作。
+你可以使用 sliver 实现自定义滚动效果，
+比如弹性滚动。
+
 For a free, instructor-led video workshop that also uses DartPad,
 check out the following video about using slivers:
 
-<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=291195426&bvid=BV11f4y187gV&cid=354814353&page=1" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+以下是一个关于使用 sliver 的免费指导视频，
+由讲师使用 DartPad Workshop 进行指导，
+请观看视频：
+
+<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=291195426&bvid=BV11f4y187gV&cid=354814353&page=1&autoplay=false" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Resources
+
+## 资源
 
 For more information on implementing fancy scrolling effects
 in Flutter, see the following resources:
 
+关于在 Flutter 中实现出色的滚动效果的更多信息，
+请参阅以下资源：
+
 <dl markdown="1">
 <dt markdown="1"> **[Slivers, Demystified][]**
 </dt>
-<dd markdown="1">A free article on Medium that
+<dd markdown="1">
+<p markdown="1">A free article on Medium that
     explains how to implement custom scrolling
-    using the sliver classes.
+    using the sliver classes.</p>
+<p markdown="1">一篇 Medium 上的免费文章，
+介绍了如何使用 sliver 组件类实现自定义滚动。</p>
 </dd>
 
 <dt markdown="1"> **[SliverAppBar][]**
 </dt>
-<dd markdown="1">A one-minute Widget-of-the-week
+<dd markdown="1">
+<p markdown="1">A one-minute Widget-of-the-week
     video that gives an overview of the
-    `SliverAppBar` widget.
+    `SliverAppBar` widget.</p>
+<p markdown="1">一段一分钟的「每周 Flutter Widgets」视频，
+概述了 `SliverAppBar` widget。</p>
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=586378022&bvid=BV19z4y1S7K7&cid=288732722&page=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=586378022&bvid=BV19z4y1S7K7&cid=288732722&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </dd>
 
-<dt markdown="1"> **[SliverList and SliverGrid][]**
+<dt markdown="1">
+<p markdown="1">**[SliverList and SliverGrid][]**</p>
+<p markdown="1">**[SliverList 和 SliverGrid][SliverList and SliverGrid]**</p>
 </dt>
-<dd markdown="1">A one-minute Widget-of-the-week
+<dd markdown="1">
+<p markdown="1">A one-minute Widget-of-the-week
     video that gives an overview of the `SliverList`
-    and `SliverGrid` widgets.
+    and `SliverGrid` widgets.</p>
+<p markdown="1">一段一分钟的「每周 Flutter Widgets」视频，
+概述了 `SliverList` 和 `SliverGrid` widget。</p>
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=38437526&bvid=BV1Pt411v78y&cid=67565151&page=12" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=38437526&bvid=BV1Pt411v78y&cid=67565151&page=12&autoplay=false" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </dd>
 
-<dt markdown="1"> **[Slivers explained - Making dynamic layouts][]**
+<dt markdown="1">
+<p markdown="1">**[Slivers explained - Making dynamic layouts][]**</p>
+<p markdown="1">**[Slivers explained - 动态布局][Slivers explained - Making dynamic layouts]**</p>
 </dt>
-<dd markdown="1">A 50-minute episode of [The Boring Show][]
+<dd markdown="1">
+<p markdown="1">A 50-minute episode of [The Boring Show][]
     where Ian Hickson, Flutter's Tech Lead, and Filip Hracek
-    discuss the power of slivers.
+    discuss the power of slivers.</p>
+<p markdown="1">一集 50 分钟的 [The Boring Show][] 视频，
+Flutter 的技术负责人 Ian Hickson 和 Filip Hracek 讨论了 sliver 的能力。</p>
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=77325252&bvid=BV1EJ41197NB&cid=132272803&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=77325252&bvid=BV1EJ41197NB&cid=132272803&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </dd>
 </dl>
 
 ## API docs
 
+## API 文档
+
 Here some links to relevant API docs:
+
+这里有一些相关 API 文档的链接：
 
 * [`SliverAppBar`][]
 * [`SliverGrid`][]

@@ -213,8 +213,8 @@ As a result, as more plugins migrate to AndroidX,
 plugins depending on Android core libraries are likely
 to cause build failures.
 
-你的应用程序也许会继续工作。
-然而，一般不建议将 AndroidX 和支持工件结合起来使用，
+你的应用程序也许能继续使用。
+然而，一般不建议将 AndroidX 和 Android Support 结合使用，
 因为它可能导致依赖冲突或其他类型的 Gradle 故障。
 因此，随着越来越多的插件迁移到 AndroidX，
 依赖于 Android 核心库的插件可能会导致构建失败。

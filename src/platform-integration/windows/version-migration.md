@@ -60,7 +60,6 @@ Your project can be updated using these steps:
 
    运行 `flutter build windows` 指令，验证应用程序的构建情况
 
-
 {{site.alert.note}}
 
   Follow the [run loop migration guide][] if the build fails

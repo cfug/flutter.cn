@@ -1,8 +1,8 @@
 ---
 title: Migrate a Windows project to set version information
-title: 迁移 Windows 项目以设置版本信息
+title: 迁移 Windows 项目以支持设置版本信息
 description: How to update a Windows project to set version information
-description: 如何迁移 Windows 项目以设置版本信息
+description: 如何迁移 Windows 项目以支持设置版本信息
 ---
 
 Flutter 3.3 added support for setting the Windows app's version from
@@ -12,7 +12,7 @@ build arguments. For more information, refer to the
 
 Flutter 3.3 新增了一项功能支持，
 你可以通过 `pubspec.yaml` 文件或者
-使用 `--build-name` 和 `--build-number` 构建参数
+使用 `--build-name` 和 `--build-number` 指令构建参数
 来设置 Windows 应用程序的版本。
 更多信息，请参阅 [构建和发布为 Windows 应用][Build and release a Windows app] 文档。
 
@@ -66,7 +66,7 @@ Your project can be updated using these steps:
   with the following error message:
 
   如果构建失败并显示以下报错信息，
-  请遵循 [Windows 事件循环迁移指南][run loop migration guide]：
+  请遵循 [Windows 事件循环迁移指南][run loop migration guide] 来解决问题：
 
   ```
   flutter_window.obj : error LNK2019: unresolved external symbol "public: void __cdecl RunLoop::RegisterFlutterInstance(class flutter::FlutterEngine *)" (?RegisterFlutterInstance@RunLoop@@QEAAXPEAVFlutterEngine@flutter@@@Z) referenced in function "protected: virtual bool __cdecl FlutterWindow::OnCreate(void)" (?OnCreate@FlutterWindow@@MEAA_NXZ)

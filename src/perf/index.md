@@ -39,9 +39,6 @@ that you have about performance.
 我们的目标是回答这三个问题（主要是第三个）以及任何与之相关的话题。
 如果你有任何关于性能方面的问题，本文档可以作为解决你疑惑的起点。
 
-我们的目标是回答这三个问题（主要是第三个）以及任何与之相关的话题。
-如果你有任何关于性能方面的问题，本文档可以作为解决你疑惑的起点。
-
 The answers to the first two questions are mostly philosophical,
 and not as helpful to many developers who visit this page with specific
 performance issues that need to be solved.

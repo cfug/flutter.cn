@@ -16,17 +16,17 @@ in your existing application.
 Flutter UI 组件可以渐进式地内嵌到你现有的 iOS 应用中，下面是几种方法：
 
 1. **Use the CocoaPods dependency manager and installed Flutter SDK.**
-   In this case, the `flutter_module` is compiled from
-   the source each time the app is built. (Recommended.)
+  In this case, the `flutter_module` is compiled from
+  the source each time the app is built. (Recommended.)
 
    **使用 CocoaPods 依赖管理器安装 Flutter SDK**
    使用这种方法，每次构建应用的时候都会从源代码中编译 `flutter_module`。(推荐)
 
 1. **Create frameworks for the Flutter engine, your compiled Dart code,
-   and all Flutter plugins.** Here, you manually embed the frameworks,
-   and update your existing application's build settings in Xcode.
-   This can be useful for teams that don't want to require every developer
-   to have the Flutter SDK and Cocoapods installed locally.
+  and all Flutter plugins.** Here, you manually embed the frameworks,
+  and update your existing application's build settings in Xcode.
+  This can be useful for teams that don't want to require every developer
+  to have the Flutter SDK and Cocoapods installed locally.
 
    **创建一个框架，把 Flutter 引擎、已编译的 Dart 代码和所有 Flutter 插件都放进去**
    这种方式你可以手动嵌入这个框架，并在 Xcode 中更改现有的应用的构建设置。
@@ -34,12 +34,12 @@ Flutter UI 组件可以渐进式地内嵌到你现有的 iOS 应用中，下面�
    这种方式比较适用。
 
 1. **Create frameworks for your compiled Dart code,
-   and all Flutter plugins. Use CocoaPods for the Flutter engine.** 
-   With this option, embed the frameworks for your application
-   and the plugins in Xcode, but distribute the
-   Flutter engine as a CocoaPods podspec.
-   This is similar to the second option, but it provides
-   an alternative to distributing the large Flutter.xcframework.
+  and all Flutter plugins. Use CocoaPods for the Flutter engine.** 
+  With this option, embed the frameworks for your application
+  and the plugins in Xcode, but distribute the
+  Flutter engine as a CocoaPods podspec.
+  This is similar to the second option, but it provides
+  an alternative to distributing the large Flutter.xcframework.
 
    **为已编译的 Dart 代码和所有 Flutter 插件创建一个框架，对 Flutter 引擎使用 CocoaPods 来管理**
    这种方式是将应用内容和插件作为内嵌的框架，但将 Flutter 引擎作为 CocoaPods podspec 分发。
@@ -160,8 +160,8 @@ embedding the module into your existing application with CocoaPods.
   Add custom iOS code to your own existing application's
   project or to a plugin, not to the module's `.ios/`
   directory. Changes made in your module's `.ios/`
-  directory do not appear in your existing iOS project
-  using the module, and may be overwritten by Flutter.
+  directory don't appear in your existing iOS project
+  using the module, and might be overwritten by Flutter.
 
   iOS 代码要添加到你的既有应用或者 Flutter plugin中，
   而不是 Flutter module 的 `.ios/` 目录下。
@@ -233,7 +233,7 @@ commands outside of Xcode.
 The following example assumes that your existing
 application and the Flutter module are in sibling
 directories. If you have a different directory structure,
-you may need to adjust the relative paths.
+you might need to adjust the relative paths.
 
 下面的示例假设你的既有应用和 Flutter module 在相邻目录。
 如果你有不同的目录结构，需要适配到对应的路径。
@@ -267,7 +267,7 @@ Add the following lines to your `Podfile`:
 
 在 `Podfile` 中添加下面代码：
 
-<!--code-excerpt "MyApp/Podfile" title-->
+<?code-excerpt title="MyApp/Podfile"?>
 ```ruby
 flutter_application_path = '../my_flutter'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
@@ -283,7 +283,7 @@ embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
 每个需要集成 Flutter 的 [Podfile target][]，
 执行 `install_all_flutter_pods(flutter_application_path)`：
 
-<!--code-excerpt "MyApp/Podfile" title-->
+<?code-excerpt title="MyApp/Podfile"?>
 ```ruby
 target 'MyApp' do
   install_all_flutter_pods(flutter_application_path)
@@ -298,7 +298,7 @@ In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
 
 在 `Podfile` 的 `post_install` 部分，调用 `flutter_post_install(installer)`。
 
-<!--code-excerpt "MyApp/Podfile" title-->
+<?code-excerpt title="MyApp/Podfile"?>
 ```ruby
 post_install do |installer|
   flutter_post_install(installer) if defined?(flutter_post_install)
@@ -382,7 +382,7 @@ You can now build the project using `⌘B`.
 
 Alternatively, you can generate the necessary frameworks
 and embed them in your application by manually editing
-your existing Xcode project. You may do this if members of your
+your existing Xcode project. You might do this if members of your
 team can't locally install Flutter SDK and CocoaPods,
 or if you don't want to use CocoaPods
 as a dependency manager in your existing applications.
@@ -434,17 +434,6 @@ some/path/MyApp/
   始终使用相同目录下的 `Flutter.framework` 和 `App.framework`。
   混合使用不同目录（例如 `Profile/Flutter.framework`
   以及 `Debug/App.framework`）将会导致运行失败。
-
-{{site.alert.end}}
-
-{{site.alert.tip}}
-
-  With Xcode 11 installed, you can generate
-  [XCFrameworks][] instead of universal frameworks by adding
-  the flags `--xcframework --no-universal`.
-
-  在 Xcode 11 中，你可以添加 `--xcframework --no-universal`
-  参数来生成 [XCFrameworks][]，而不是使用通用的 framework。
 
 {{site.alert.end}}
 
@@ -609,10 +598,11 @@ Host apps using CocoaPods can add Flutter to their Podfile:
 
 使用 CocoaPods 的宿主应用程序可以将 Flutter 添加到 Podfile 中：
 
-<!--code-excerpt "MyApp/Podfile" title-->
+<?code-excerpt title="MyApp/Podfile"?>
 ```ruby
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
+
 {{site.alert.note}}
 
   You must hard code the `[build mode]` value.
@@ -641,8 +631,8 @@ FlutterPluginRegistrant.xcframework 以及
 
 On iOS 14 and higher, enable the Dart multicast DNS
 service in the Debug version of your app
-to add [debugging functionalities such as hot-reload and DevTools][] 
-via `flutter attach`.
+to add [debugging functionalities such as hot-reload and
+DevTools][] via `flutter attach`.
 
 在 iOS 14 及更高的版本中，
 可以在应用程序的 Debug 版本中启用 Dart 的 多播 DNS 服务 (multicast DNS service)，
@@ -652,7 +642,7 @@ via `flutter attach`.
 {{site.alert.warning}}
 
   This service must not be enabled in the **Release**
-  version of your app, or you may experience App Store rejections.
+  version of your app, or you might experience App Store rejections.
 
   不可以在应用程序的 **Release** 版本中启用这项服务，
   否则你很有可能被 App Store 拒绝上架。
@@ -685,11 +675,11 @@ Make a copy of it called **Info-Release.plist** and add it to your Xcode project
 <li markdown="1">
 
 In **Info-Debug.plist** _only_ add the key `NSBonjourServices`
-and set the value to an array with the string `_dartobservatory._tcp`.
+and set the value to an array with the string `_dartVmService._tcp`.
 Note Xcode will display this as "Bonjour services".
 
 在 **Info-Debug.plist** 中 **只** 添加 key `NSBonjourServices`，
-并将它的值设置为数组 (Array)，然后在该数组中添加 `_dartobservatory._tcp` 字符串 (String)。
+并将它的值设置为数组 (Array)，然后在该数组中添加 `_dartVmService._tcp` 字符串 (String)。
 
 Optionally, add the key `NSLocalNetworkUsageDescription` set to your
 desired customized permission dialog text.

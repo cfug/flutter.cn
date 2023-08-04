@@ -6,14 +6,6 @@ description: 如何实现滑动取消或清除效果。
 tags: cookbook, 实用教程, 手势
 keywords: 滑动清除
 diff2html: true
-prev:
-  title: Handle taps
-  title: 捕获和处理点击动作
-  path: /docs/cookbook/gestures/handling-taps
-next:
-  title: Display images from the internet
-  title: 显示网络上的远程图片
-  path: /docs/cookbook/images/network-image
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

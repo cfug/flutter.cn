@@ -104,179 +104,77 @@ API documentation is available from the Dart dev channel:
 Dart dev 频道中的 API 已经可用：
 [Dart API 参考文档][Dart API reference documentation].
 
+On Android, only dynamic libraries are supported
+(because the main executable is the JVM,
+which we don't link to statically).
+
+在 Android 平台只有动态库可以使用
+（因为在 JVM 环境无法静态链接）。
+
 [Dart API reference documentation]: {{site.dart.api}}/dev/
 [`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
 [`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
 [`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
 
-## Step 1: Create a plugin
+## Create an FFI plugin
 
-## 步骤 1：创建插件
+## 创建 FFI 插件
 
-If you already have a plugin, skip this step.
-
-如果你已经有一个插件，跳过这步。
-
-To create a plugin called "native_add",
+To create an FFI plugin called "native_add",
 do the following:
 
 如果要创建一个名为 "native_add" 的插件，
 你需要这么做：
 
 ```terminal
-$ flutter create --platforms=android,ios --template=plugin native_add
+$ flutter create --platforms=android,ios,macos,windows,linux --template=plugin_ffi native_add
 $ cd native_add
 ```
 
-{{ site.alert.note }}
+{{site.alert.note}}
 
-  You can exclude platforms from --platforms that you don't want
+  You can exclude platforms from `--platforms` that you don't want
   to build to. However, you need to include the platform of 
   the device you are testing on.
 
-  你可以使用 --platforms 来排除你不需要的平台。
+  你可以使用 `--platforms` 来排除你不需要的平台。
   但是，你仍需要包含测试设备所需的平台。
 
-{{ site.alert.end }}
+{{site.alert.end}}
 
-## Step 2: Add C/C++ sources
+This will create a plugin with C/C++ sources in `native_add/src`.
+These sources are built by the native build files in the various
+os build folders.
 
-## 步骤 2：添加 C/C++ 源码
-
-You need to inform the Android build system about
-the native code so the code can be compiled
-and linked appropriately into the final application.
-
-你需要让 Android 和 iOS 构建系统知道本地代码的存在，
-以便代码可以被编译并链接到最终的应用程序中。
-
-You can add Android-specific sources
-to the `android` folder and modify `CMakeLists.txt`
-appropriately.
-Also, Gradle allows you to point to the `ios` folder,
-if that helps, but it's not required to use the same
-sources for both iOS and Android;
-
-你可以将特定于 Android 的源代码添加到 `android` 文件夹
-并修改 `CMakeLists.txt` 文件。
-同时，你可以在 Gradle 中指向 `ios` 文件夹，这样的话就
-可以为 iOS 和 Android 设定不同的资源。
+C/C++ 源代码会被创建至 `native_add/src`。
+这些源代码在不同平台构建时会生成在不同平台的构建文件夹。
 
 The FFI library can only bind against C symbols,
-so in C++ these symbols must be marked `extern C`.
+so in C++ these symbols are marked `extern "C"`.
+
 You should also add attributes to indicate that the
 symbols are referenced from Dart,
 to prevent the linker from discarding the symbols
 during link-time optimization.
+`__attribute__((visibility("default"))) __attribute__((used))`.
 
 FFI 库只能与 C 符号绑定，因此在 C++ 中，
 这些符号添加 `extern C` 标记。
 还应该添加属性来表明符号是需要被 Dart 引用的，
 以防止链接器在优化链接时会丢弃符号。
+`__attribute__((visibility("default"))) __attribute__((used))`.
 
-On Android, you need to create a `CMakeLists.txt` file
-to define how the sources should be compiled and point
-Gradle to it. From the root of your project directory,
-use the following instructions:
+On Android, the `native_add/android/build.gradle` links the code.
 
-在 Android 中，你需要创建一个 `CMakeLists.txt` 
-文件用来定义如何编译源文件，同时告诉 Gradle 如何去定位它们。
-在项目根目录下，运行如下代码：
+在 Android 上 `native_add/android/build.gradle` 负责关联这些代码。
 
-```bash
-cat > android/CMakeLists.txt << EOF
-cmake_minimum_required(VERSION 3.4.1)  # for example
+The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
-add_library( native_add
+原生代码会从 `lib/native_add_bindings_generated.dart` 被 Dart 调用。
 
-             # Sets the library as a shared library.
-             SHARED
+The bindings are generated with [package:ffigen](https://pub.dev/packages/ffigen).
 
-             # Provides a relative path to your source file(s).
-             ../ios/Classes/native_add.cpp )
-EOF
-```
-
-Finally, add an `externalNativeBuild` section to
-`android/build.gradle`. For example:
-
-最后，添加一个 `externalNativeBuild` 到你的
-`android/build.gradle` 文件中。示例如下：
-
-```nocode
-android {
-  // ...
-  externalNativeBuild {
-    // Encapsulates your CMake build configurations.
-    cmake {
-      // Provides a relative path to your CMake build script.
-      path "CMakeLists.txt"
-    }
-  }
-  // ...
-}
-```
-
-## Step 3: Load the code using the FFI library
-
-## 步骤 3：在 FFI 库中读取代码
-
-In this example, you can add the following code to
-`lib/native_add.dart`. However the location of the
-Dart binding code is not important.
-
-在示例中，你需要添加如下的代码到 `lib/native_add.dart`。
-但是，Dart 在何处进行代码绑定并不重要。
-
-First, you must create a `DynamicLibrary` handle to
-the native code. The following example shows
-how to create a handle for an iOS app OR an Android app:
-
-首先，你需要创建一个 `DynamicLibrary` 来处理本地代码。
-下面的例子为你展示了如何在 iOS 和 Android 上操作：
-
-<?code-excerpt "lib/c_interop.dart (DynamicLibrary)"?>
-```dart
-import 'dart:ffi'; // For FFI
-import 'dart:io'; // For Platform.isX
-
-final DynamicLibrary nativeAddLib = Platform.isAndroid
-    ? DynamicLibrary.open('libnative_add.so')
-    : DynamicLibrary.process();
-```
-
-Note that on Android the native library is named
-in `CMakeLists.txt` (see above),
-but on iOS it takes the plugin's name.
-
-请注意，在 Android 上，
-本地库的名称是定义在 `CMakeLists.txt` 中的（见上文），
-但在 iOS 上，它将使用插件的名称。
-
-With a handle to the enclosing library,
-you can resolve the `native_add` symbol:
-
-你可以通过使用库的句柄来解析 `native_add` 符号：
-
-<?code-excerpt "lib/c_interop.dart (NativeAdd)"?>
-```dart
-final int Function(int x, int y) nativeAdd = nativeAddLib
-    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>('native_add')
-    .asFunction();
-```
-
-Finally, you can call it. To demonstrate this within
-the auto-generated "example" app (`example/lib/main.dart`):
-
-现在，你可以调用它了。在自动生成的 "example" 项目
-（`example/lib/main.dart`）中演示它。
-
-```nocode
-// Inside of _MyAppState.build:
-        body: Center(
-          child: Text('1 + 2 == ${nativeAdd(1, 2)}'),
-        ),
-```
+代码由 [package:ffigen](https://pub.flutter-io.cn/packages/ffigen) 生成。
 
 ## Other use cases
 
@@ -432,3 +330,4 @@ in the following way.
 
 [Android guidelines]: {{site.android-dev}}/topic/performance/reduce-apk-size#extract-false
 
+{% include docs/resource-links/ffi-video-resources.md %}

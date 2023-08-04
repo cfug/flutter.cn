@@ -5,14 +5,6 @@ description: How to use the shared_preferences package to store key-value data.
 description: 如何使用 shared_preferences 包来存储 key-value 数据。
 tags: cookbook, 实用教程, 持久化
 keywords: KV,SharedPreferences
-prev:
-  title: Read and write files
-  title: 文件读写
-  path: /docs/cookbook/persistence/reading-writing-files
-next:
-  title: Play and pause a video
-  title: 视频的播放和暂停
-  path: /docs/cookbook/plugins/play-video
 ---
 
 <?code-excerpt path-base="cookbook/persistence/key_value/"?>
@@ -44,15 +36,15 @@ This recipe uses the following steps:
 
      添加依赖
 
-  2. Save Data.
+  2. Save data.
 
      保存数据
 
-  3. Read Data.
+  3. Read data.
 
      读取数据
 
-  4. Remove Data.
+  4. Remove data.
 
      移除数据
 
@@ -66,17 +58,17 @@ This recipe uses the following steps:
 
 ## 1. 添加依赖
 
-Before starting, add the [`shared_preferences`][]
-plugin to the `pubspec.yaml` file:
+Before starting, add the [`shared_preferences`][] package as a dependency.
 
-在开始之前，你需要在 `pubspec.yaml` 
-文件中添加 [`shared_preferences`][] 插件：
+在开始之前，你需要添加 [`shared_preferences`][] 为依赖：
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  shared_preferences: "<newest version>"
+To add the `shared_preferences` package as a dependency,
+run `flutter pub add`:
+
+运行 `flutter pub add` 将 `shared_preferences` 添加为依赖：
+
+```terminal
+$ flutter pub add shared_preferences
 ```
 
 ## 2. Save data
@@ -91,8 +83,8 @@ various primitive types, such as `setInt`, `setBool`, and `setString`.
 Setter方法可用于各种基本数据类型，
 例如 `setInt`、`setBool` 和 `setString`。
 
-Setter methods do two things: First, synchronously update the key-value pair
-in-memory. Then, persist the data to disk.
+Setter methods do two things: First, synchronously update the
+key-value pair in-memory. Then, persist the data to disk.
 
 Setter 方法做两件事：
 首先，同步更新 key-value 到内存中，然后保存到磁盘中。

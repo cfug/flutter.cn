@@ -6,7 +6,7 @@
   url: /docs/ui/widgets
 - name: API 文档
   description: Flutter 框架的 API 文档。
-  url: https://api.flutter-io.cn
+  url: https://api.flutter-io.cn/
 - name: 实用教程 (Cookbook)
   description: 官方实用教程合集，帮助你解决编写 Flutter 应用中的常见问题。
   url: /docs/cookbook

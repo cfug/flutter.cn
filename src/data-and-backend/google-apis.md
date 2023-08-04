@@ -209,7 +209,7 @@ var httpClient = (await _googleSignIn.authenticatedClient())!;
 ```
 
 This [`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) instance
-includes the nessesary credentials when invoking Google API classes.
+includes the necessary credentials when invoking Google API classes.
 
 [`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) 实例
 包含了调用 Google API 类时所需的凭证。

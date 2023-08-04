@@ -5,14 +5,6 @@ description: How to handle tapping and dragging.
 description: 如何处理点击和拖拽。
 tags: cookbook, 实用教程, 手势操作
 keywords: 交互,点击,拖动,snackbar
-prev:
-  title: Add Material touch ripples
-  title: 添加点按涟漪效果 (Material Design)
-  path: /docs/cookbook/gestures/ripples
-next:
-  title: Implement swipe to dismiss
-  title: 实现「滑动清除」效果
-  path: /docs/cookbook/gestures/dismissible
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -65,10 +57,10 @@ GestureDetector(
   },
   // The custom button
   child: Container(
-    padding: const EdgeInsets.all(12.0),
+    padding: const EdgeInsets.all(12),
     decoration: BoxDecoration(
       color: Colors.lightBlue,
-      borderRadius: BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(8),
     ),
     child: const Text('My Button'),
   ),
@@ -151,10 +143,10 @@ class MyButton extends StatelessWidget {
       },
       // The custom button
       child: Container(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: Colors.lightBlue,
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(8),
         ),
         child: const Text('My Button'),
       ),

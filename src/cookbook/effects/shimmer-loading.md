@@ -3,14 +3,6 @@ title: Create a shimmer loading effect
 title: 创建一个微光加载效果
 description: How to implement a shimmer loading effect.
 description: 如何实现一个微光加载效果
-prev:
-  title: Create a scrolling parallax effect
-  title: 创建一个滚动视差效果
-  path: /docs/cookbook/effects/parallax-scrolling
-next:
-  title: Create a staggered menu animation
-  title: 创建一个交错效果的侧边栏菜单
-  path: /docs/cookbook/effects/staggered-menu-animation
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -173,7 +165,7 @@ class CardListItem extends StatelessWidget {
       );
     } else {
       return const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
+        padding: EdgeInsets.symmetric(horizontal: 8),
         child: Text(
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do '
           'eiusmod tempor incididunt ut labore et dolore magna aliqua.',

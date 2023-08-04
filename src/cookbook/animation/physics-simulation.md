@@ -6,14 +6,6 @@ diff2html: true
 description: 如何实现物理动画。
 tags: cookbook, 实用教程, 动画效果
 keywords: 物理动画效果,重力效果,交互
-prev:
-  title: Animate a page route transition
-  title: 为页面切换加入动画效果
-  path: /docs/cookbook/animation/page-route-animation
-next:
-  title: Animate the properties of a container
-  title: Container 里的动画渐变效果
-  path: /docs/cookbook/animation/animated-container
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -552,7 +544,7 @@ class _DraggableCardState extends State<DraggableCard>
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/animation-physics-card-drag.gif" alt="样例展示了一个能够被拖动并自动滑回中心的 widget" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/animation-physics-card-drag.gif" alt="Demo showing a widget being dragged and snapped back to the center" class="site-mobile-screenshot" />
 </noscript>
 
 [Align]: {{site.api}}/flutter/widgets/Align-class.html

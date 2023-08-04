@@ -129,19 +129,27 @@ Flutter 代码可以通过嵌入层，以模块方式集成到现有的应用中
 Flutter 本身包含了各个常见平台的嵌入层，同时也
 [存在一些其他的嵌入层](https://hover.build/blog/one-year-in/)。
 
-At the core of Flutter is the **Flutter engine**, which is mostly written in C++
-and supports the primitives necessary to support all Flutter applications. The
-engine is responsible for rasterizing composited scenes whenever a new frame
-needs to be painted. It provides the low-level implementation of Flutter's core
-API, including graphics (through [Skia](https://skia.org/)), text layout, file
-and network I/O, accessibility support, plugin architecture, and a Dart runtime
+At the core of Flutter is the **Flutter engine**,
+which is mostly written in C++ and supports
+the primitives necessary to support all Flutter applications.
+The engine is responsible for rasterizing composited scenes
+whenever a new frame needs to be painted.
+It provides the low-level implementation of Flutter's core API,
+including graphics (through [Impeller] on iOS and coming to Android,
+and [Skia][] on other platforms) text layout,
+file and network I/O, accessibility support,
+plugin architecture, and a Dart runtime
 and compile toolchain.
 
 **Flutter 引擎** 毫无疑问是 Flutter 的核心，
 它主要使用 C++ 编写，并提供了 Flutter 应用所需的原语。
 当需要绘制新一帧的内容时，引擎将负责对需要合成的场景进行栅格化。
-它提供了 Flutter 核心 API 的底层实现，包括图形（通过 [Skia](https://skia.org/)）、
+它提供了 Flutter 核心 API 的底层实现，包括图形
+（在 iOS 和 Android 上通过 [Impeller][]，在其他平台上通过 [Skia][]）、
 文本布局、文件及网络 IO、辅助功能支持、插件架构和 Dart 运行环境及编译环境的工具链。
+
+[Skia]: https://skia.org
+[Impeller]: {{site.url}}/perf/impeller
 
 The engine is exposed to the Flutter framework through
 [`dart:ui`]({{site.github}}/flutter/engine/tree/main/lib/ui),
@@ -279,9 +287,9 @@ pieces of a Flutter app.
 
   由应用开发者进行管理。
 
-**Framework** ([source code]({{site.github}}/flutter/flutter/tree/master/packages/flutter/lib))
+**Framework** ([source code]({{site.github}}/flutter/flutter/tree/main/packages/flutter/lib))
 
-**框架**（[源代码]({{site.github}}/flutter/flutter/tree/master/packages/flutter/lib)）
+**框架**（[源代码]({{site.github}}/flutter/flutter/tree/main/packages/flutter/lib)）
 
 * Provides higher-level API to build high-quality apps
   (for example, widgets, hit-testing, gesture detection,
@@ -352,21 +360,22 @@ pieces of a Flutter app.
 
 ## 响应式用户界面
 
-On the surface, Flutter is [a reactive, pseudo-declarative UI
-framework]({{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use),
+On the surface, Flutter is [a reactive, declarative UI framework][faq],
 in which the developer provides a mapping from application state to interface
 state, and the framework takes on the task of updating the interface at runtime
-when the application state changes. This model is inspired by [work that came
-from Facebook for their own React
-framework]({{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo),
+when the application state changes. This model is inspired by
+[work that came from Facebook for their own React framework][fb],
 which includes a rethinking of many traditional design principles.
 
 粗略一看，Flutter 是
-[一个响应式的且伪声明式的 UI 框架]({{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use)，
+[一个响应式的且伪声明式的 UI 框架][faq]，
 开发者负责提供应用状态与界面状态之间的映射，框架则在运行时将应用状态的更改更新到界面上。
 这样的模型架构的灵感来自
-[Facebook 自己的 React 框架]({{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo)
+[Facebook 自己的 React 框架][fb]
 ，其中包含了对传统设计理念的再度解构。
+
+[faq]: {{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use
+[fb]: {{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
 
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
@@ -524,16 +533,17 @@ efficiently updates the user interface.
 Flutter has its own implementations of each UI control, rather than deferring to
 those provided by the system: for example, there is a pure [Dart
 implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of both the
-[iOS Switch
-control]({{site.apple-dev}}/design/human-interface-guidelines/ios/controls/switches/)
+[iOS Toggle
+control]({{site.apple-dev}}/design/human-interface-guidelines/toggles)
 and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
 [Android equivalent]({{site.material}}/components/switch).
 
 Flutter 拥有其自己的 UI 控制实现，而不是由系统自带的方法进行托管：
 例如，
-[iOS 的 Switch 控件](https://developer.apple.com/design/human-interface-guidelines/ios/controls/switches/)
-和 [Android 的选择控件](https://material.io/develop/android/components/switches)
-均有一个纯 [Dart 实现]({{site.api}}/flutter/material/Switch-class.html)。
+[iOS 的 Toggle 控件]({{site.apple-dev}}/design/human-interface-guidelines/toggles)
+有一个 [对应的 widget]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html)，
+[Android 的选择控件]({{site.material}}/components/switch)
+有一个 [对应的 widget]({{site.api}}/flutter/material/Switch-class.html)。
 
 This approach provides several benefits:
 
@@ -776,7 +786,7 @@ existing state objects when appropriate.
 并不需要通过子级关系保持其状态。
 框架也会在合适的时间，复用已存在的状态对象。
 
-### State management Available
+### State management
 
 ### 状态管理
 
@@ -908,25 +918,30 @@ offer comparable performance to single-platform frameworks?
 
 你可能思考过：既然 Flutter 是一个跨平台的框架，那么它如何提供与原生平台框架相当的性能？
 
-It’s useful to start by thinking about how traditional Android apps work. When
-drawing, you first call the Java code of the Android framework. The Android
-system libraries provide the components responsible for drawing themselves to a
-Canvas object, which Android can then render with [Skia](https://skia.org/), a
-graphics engine written in C/C++ that calls the CPU or GPU to complete the
-drawing on the device.
+It’s useful to start by thinking about how traditional
+Android apps work. When drawing,
+you first call the Java code of the Android framework.
+The Android system libraries provide the components
+responsible for drawing themselves to a `Canvas` object,
+which Android can then render with [Skia][],
+a graphics engine written in C/C++ that calls the
+CPU or GPU to complete the drawing on the device.
 
 让我们从安卓原生应用的角度开始思考。
 当你在编写绘制的内容时，你需要调用 Android 框架的 Java 代码。
 Android 的系统库提供了可以将自身绘制到 Canvas 对象的组件，
-接下来 Android 就可以使用由 C/C++ 编写的 [Skia](https://skia.org/) 图像引擎，
+接下来 Android 就可以使用由 C/C++ 编写的 [Skia][] 图像引擎，
 调用 CPU 和 GPU 完成在设备上的绘制。
 
-Cross-platform frameworks _typically_ work by creating an abstraction layer over
-the underlying native Android and iOS UI libraries, attempting to smooth out the
-inconsistencies of each platform representation. App code is often written in an
-interpreted language like JavaScript, which must in turn interact with the
-Java-based Android or Objective-C-based iOS system libraries to display UI. All
-this adds overhead that can be significant, particularly where there is a lot of
+Cross-platform frameworks _typically_ work by creating
+an abstraction layer over the underlying native
+Android and iOS UI libraries, attempting to smooth out the
+inconsistencies of each platform representation.
+App code is often written in an interpreted language like JavaScript,
+which must in turn interact with the Java-based
+Android or Objective-C-based iOS system libraries to display UI.
+All this adds overhead that can be significant,
+particularly where there is a lot of
 interaction between the UI and the app logic.
 
 **通常来说**，跨平台框架都会在 Android 和 iOS 的 UI 底层库上创建一层抽象，
@@ -936,20 +951,34 @@ interaction between the UI and the app logic.
 最终显示 UI 界面。
 所有的流程都增加了显著的开销，在 UI 和应用逻辑有繁杂的交互时更为如此。
 
-By contrast, Flutter minimizes those abstractions, bypassing the system UI
-widget libraries in favor of its own widget set. The Dart code that paints
-Flutter’s visuals is compiled into native code, which uses Skia for rendering.
-Flutter also embeds its own copy of Skia as part of the engine, allowing the
-developer to upgrade their app to stay updated with the latest performance
-improvements even if the phone hasn’t been updated with a new Android version.
-The same is true for Flutter on other native platforms, such as iOS, Windows, or
-macOS.
+By contrast, Flutter minimizes those abstractions,
+bypassing the system UI widget libraries in favor
+of its own widget set. The Dart code that paints
+Flutter’s visuals is compiled into native code,
+which uses Skia (or, in future, Impeller) for rendering.
+Flutter also embeds its own copy of Skia as part of the engine,
+allowing the developer to upgrade their app to stay
+updated with the latest performance improvements
+even if the phone hasn’t been updated with a new Android version.
+The same is true for Flutter on other native platforms,
+such as Windows or macOS.
 
 相比之下，Flutter 通过绕过系统 UI 组件库，使用自己的 widget 内容集，削减了抽象层的开销。
 用于绘制 Flutter 图像内容的 Dart 代码被编译为机器码，并使用 Skia 进行渲染。
-Flutter 同时也嵌入了自己的 Skia 副本，
+Flutter 同时也嵌入了自己的 Skia 副本（未来会迁移到 Impeller），
 让开发者能在设备未更新到最新的系统时，
 也能跟进升级自己的应用，保证稳定性并提升性能。
+
+{{site.alert.note}}
+
+  Flutter 3.10 set Impeller as the default
+  rendering engine on iOS. It's in preview
+  for Android behind a flag.
+
+  Flutter 3.10 默认启用 Impeller。
+  Android 可以通过标志启用。
+
+{{site.alert.end}}
 
 ### From user input to the GPU
 
@@ -1274,7 +1303,7 @@ itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
 unique concerns of that platform. The engine is platform-agnostic, presenting a
 [stable ABI (Application Binary
-Interface)]({{site.github}}/flutter/engine/blob/master/shell/platform/embedder/embedder.h)
+Interface)]({{site.github}}/flutter/engine/blob/main/shell/platform/embedder/embedder.h)
 that provides a _platform embedder_ with a way to set up and use Flutter.
 
 我们都知道，Flutter 的界面构建、布局、合成和绘制全都由 Flutter 自己完成，
@@ -1663,16 +1692,22 @@ Dart 语言存在之初就已经支持直接编译成 JavaScript，并且针对�
 包括 [Google Ads 的广告商工具](https://ads.google.cn/home/)。
 由于 Flutter 框架是 Dart 编写的，将其编译成 JavaScript 相对而言更为简单。
 
-However, the Flutter engine, written in C++, is designed to interface with the
-underlying operating system rather than a web browser. A different approach is
-therefore required. On the web, Flutter provides a reimplementation of the
-engine on top of standard browser APIs. We currently have two options for
-rendering Flutter content on the web: HTML and WebGL. In HTML mode, Flutter uses
-HTML, CSS, Canvas, and SVG. To render to WebGL, Flutter uses a version of Skia
+However, the Flutter engine, written in C++,
+is designed to interface with the
+underlying operating system rather than a web browser.
+A different approach is therefore required.
+On the web, Flutter provides a reimplementation of the
+engine on top of standard browser APIs.
+We currently have two options for
+rendering Flutter content on the web: HTML and WebGL.
+In HTML mode, Flutter uses HTML, CSS, Canvas, and SVG.
+To render to WebGL, Flutter uses a version of Skia
 compiled to WebAssembly called
-[CanvasKit](https://skia.org/user/modules/canvaskit). While HTML mode offers the
-best code size characteristics, CanvasKit provides the fastest path to the
-browser's graphics stack, and offers somewhat higher graphical fidelity with the
+[CanvasKit](https://skia.org/user/modules/canvaskit).
+While HTML mode offers the best code size characteristics,
+`CanvasKit` provides the fastest path to the
+browser's graphics stack,
+and offers somewhat higher graphical fidelity with the
 native mobile targets<sup><a href="#a5">5</a></sup>.
 
 然而，使用 C++ 编写的 Flutter 引擎是为了与底层操作系统进行交互的，而不是 Web 浏览器。

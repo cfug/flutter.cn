@@ -1,7 +1,8 @@
 ---
 title: Continuous delivery with Flutter
 title: Flutter 里的持续部署
-description: How to automate continuous building and releasing of your Flutter app.
+description: >
+  How to automate continuous building and releasing of your Flutter app.
 description: 如何自动的持续编译构建和发布你的 Flutter 应用。
 tags: CI/CD,持续部署,发布应用
 keywords: fastlane
@@ -41,19 +42,19 @@ You can use fastlane with the following tooling:
 你可以通过下面的工具使用 fastlane：
 
 * [GitHub Actions][]
-    * Example: Flutter Gallery's [Github Actions workflows][]
+  * Example: Flutter Gallery's [Github Actions workflows][]
 
-      样例：Flutter Galley 的 [GitHub Actions 工作流][Github Actions workflows]
-    
-    * Example: [Github Action in Flutter Project][]
+    样例：Flutter Galley 的 [GitHub Actions 工作流][Github Actions workflows]
 
-      样例：[适用于 Flutter 项目的 GitHub Actions][Github Action in Flutter Project]
+  * Example: [Github Action in Flutter Project][]
+
+    样例：[适用于 Flutter 项目的 GitHub Actions][Github Action in Flutter Project]
 
 * [Cirrus][]
 * [Travis][]
 * [GitLab][]
 * [CircleCI][]
-    * [Building and deploying Flutter apps with Fastlane][]
+   * [Building and deploying Flutter apps with Fastlane][]
 
 This guide shows how to set up fastlane and then integrate it with 
 your existing testing and continuous integration (CI) workflows. 
@@ -97,110 +98,110 @@ Visit the [fastlane docs][fastlane] for more info.
 
    创建您的 Flutter 项目，准备就绪后，确保通过如下途径构建项目：
 
-    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`;
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`; and
     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ipa`.
 
 1. Initialize the fastlane projects for each platform.
 
    初始化各平台的 fastlane 项目：
-   
+
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) In your `[project]/android`
     directory, run `fastlane init`.
-      
+
       ![Android]({{site.url}}/assets/images/docs/cd/android.png)：在 `[project]/android` 目录中，
       运行 `fastlane init` 命令。
-    
+
     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) In your `[project]/ios` directory,
     run `fastlane init`.
-       
+
       ![iOS]({{site.url}}/assets/images/docs/cd/ios.png)：
       在 `[project]/ios` 目录下，运行 `fastlane init` 命令。
-    
+
 1. Edit the `Appfile`s to ensure they have adequate metadata for your app.
-   
+
    编辑 `Appfile` 以确保它有应用程序的基本数据配置：
 
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) Check that `package_name` in
     `[project]/android/fastlane/Appfile` matches your package name in AndroidManifest.xml.
-    
+
       ![Android]({{site.url}}/assets/images/docs/cd/android.png) 检查在 `[project]/android/fastlane/Appfile` 
       文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
-    
+
     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) Check that `app_identifier` in
     `[project]/ios/fastlane/Appfile` also matches Info.plist's bundle identifier. Fill in
     `apple_id`, `itc_team_id`, `team_id` with your respective account info.
-    
+
       ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 检查在 `[project]/ios/fastlane/Appfile` 中的
       `app_identifier` 是否匹配 Info.plist 文件中的 bundle identifier。
       将相应的 `apple_id`、`itc_team_id` 和 `team_id` 输入进去。
-    
+
 1. Set up your local login credentials for the stores.
 
    设置应用商店的本地登录凭据。
-   
+
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) Follow the [Supply setup steps][]
     and ensure that `fastlane supply init` successfully syncs data from your
     Play Store console. _Treat the .json file like your password and do not check
     it into any public source control repositories._
-    
+
       ![Android]({{site.url}}/assets/images/docs/cd/android.png) 按照 [Supply setup steps][] 文档操作，
       并且确保 `fastlane supply init` 成功同步了
       你在 Google Play 商店控制台中的数据。
       **.json 文件与密码一样重要，切勿将其公开在任何公共源代码控制存储库。**
-    
+
     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) Your iTunes Connect username is already
     in your `Appfile`'s `apple_id` field. Set the `FASTLANE_PASSWORD` shell
     environment variable with your iTunes Connect password. Otherwise, you'll be
     prompted when uploading to iTunes/TestFlight.
-    
+
       ![iOS]({{site.url}}//assets/images/docs/cd/ios.png)  iTunes Connect 用户名已经存在于您的
       `Appfile` 的 `apple_id` 字段中，
       你需要将你的 iTunes 密码设置到 `FASTLANE_PASSWORD` 这个环境变量里。
       否则，上传到 iTunes/TestFlight时会提示你。
-    
+
 1. Set up code signing.
 
    设置代码签名：
 
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) Follow the [Android app signing steps][].
-    
+
       ![Android]({{site.url}}/assets/images/docs/cd/android.png) 参考文档 [为应用签名][Android app signing steps]。
 
     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS, create and sign using a
       distribution certificate instead of a development certificate when you're
       ready to test and deploy using TestFlight or App Store.
-    
+
       ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 在iOS上，
       当您准备使用 TestFlight 或 App Store 进行测试和部署时，
       使用分发证书而不是开发证书进行创建和签名。
-      
+
         * Create and download a distribution certificate in your
           [Apple Developer Account console][].
-        
+
           在 [Apple Developer Account console][] 创建并下载一个分发证书。
-        
+
         * `open [project]/ios/Runner.xcworkspace/` and select the distribution
-        certificate in your target's settings pane.
-        
+          certificate in your target's settings pane.
+
           打开 `[project]/ios/Runner.xcworkspace/` 在你的项目设置里选择一个分发证书。
-          
+
 1. Create a `Fastfile` script for each platform.
 
    给每个不同的平台创建一个 `Fastfile` 脚本。
-   
+
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) On Android, follow the
       [fastlane Android beta deployment guide][].
       Your edit could be as simple as adding a `lane` that calls
       `upload_to_play_store`.
       Set the `aab` argument to `../build/app/outputs/bundle/release/app-release.aab`
       to use the app bundle `flutter build` already built.
-    
+
       ![Android]({{site.url}}/assets/images/docs/cd/android.png) 在 Android 上按照
       [fastlane Android beta deployment guide][] 指引操作。
       你可以简单的编辑一下文件，加一个名叫 `upload_to_play_store` 的 `lane`。
       为了使用 `flutter build` 命令编译 `aab`，
       要把 `apk` 参数设置为 `../build/app/outputs/bundle/release/app-release.aab`。
-    
+
     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS, follow the
       [fastlane iOS beta deployment guide][].
       You can specify the archive path to avoid rebuilding the project. For example:
@@ -227,7 +228,7 @@ process to a continuous integration (CI) system.
 ### 在本地运行部署
 
 1. Build the release mode app.
-   
+
    构建发布模式的应用：
 
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`.
@@ -236,7 +237,7 @@ process to a continuous integration (CI) system.
 1. Run the Fastfile script on each platform.
 
    在每个平台上运行 Fastfile 脚本。
-   
+
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `cd android` then
     `fastlane [name of the lane you created]`.
     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `cd ios` then
@@ -280,15 +281,15 @@ secrets in pull requests that you accept and merge.
 1. Make login credentials ephemeral.
 
    暂时性登录凭据。
-   
+
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) On Android:
-    
+
       ![Android]({{site.url}}/assets/images/docs/cd/android.png 在 Android 上：
-      
+
         * Remove the `json_key_file` field from `Appfile` and store the string
           content of the JSON in your CI system's encrypted variable. 
           Read the environment variable directly in your `Fastfile`.
-          
+
           从 `Appfile` 中删除 `json_key_file` 并将其存储在 CI 系统的加密变量里。
           从 `Fastfile` 中直接读取这些环境变量。
 
@@ -301,51 +302,53 @@ secrets in pull requests that you accept and merge.
         * Serialize your upload key (for example, using base64) and save it as
           an encrypted environment variable. You can deserialize it on your CI
           system during the install phase with
-          
+
           序列化您的上传密钥（例如，使用 base64）并将其另存为加密环境变量。
           可以可以在安装阶段在 CI 系统上对其进行反序列化
-          
+
           ```bash
           echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > [path to your upload keystore]
           ```
-     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS:
-    
-       ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 在 iOS 上:
-      
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS:
+
+      ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 在 iOS 上:
+
         * Move the local environment variable `FASTLANE_PASSWORD` to use
-        encrypted environment variables on the CI system.
-        
+          encrypted environment variables on the CI system.
+
           将本地环境变量 `FASTLANE_PASSWORD` 转而使用 CI 系统的加密的环境变量。
-        
-        * The CI system needs access to your distribution certificate. fastlane's
-        [Match][] system is
-        recommended to synchronize your certificates across machines.
-        
+
+        * The CI system needs access to your distribution certificate.
+          fastlane's [Match][] system is
+          recommended to synchronize your certificates across machines.
+
           CI 系统需要有权限拿到你的分发证书。建议使用fastlane 的 [Match][] 系统在不同的机器上同步你的证书。
 
 2. It's recommended to use a Gemfile instead of using an indeterministic
-`gem install fastlane` on the CI system each time to ensure the fastlane
-dependencies are stable and reproducible between local and cloud machines. However, this step is optional.
-   
+   `gem install fastlane` on the CI system each time to ensure the fastlane
+   dependencies are stable and reproducible between local and cloud machines.
+   However, this step is optional.
+
    建议每次使用 Gemfile 而不是 `gem install fastlane` 以避免其在 CI 系统上使用的不确定性 ，
    以确保 fastlane 依赖关系在本地和云计算机之间稳定且可重现。但是，此步骤是可选的。
 
     * In both your `[project]/android` and `[project]/ios` folders, create a
-    `Gemfile` containing the following content:
-    
+      `Gemfile` containing the following content:
+
       在 `[project]/android` 和 `[project]/ios` 文件夹中，创建一个 `Gemfile` 包含以下内容：
-      
-      ```
-      source "https://rubygems.org"
-      gem "fastlane"
-      ```
+
+        ```
+        source "https://rubygems.org"
+
+        gem "fastlane"
+        ```
     * In both directories, run `bundle update` and check both `Gemfile` and
-    `Gemfile.lock` into source control.
-    
+      `Gemfile.lock` into source control.
+
       在两个目录中，运行 `bundle update` 并将两者的 `Gemfile` 和 `Gemfile.lock` 文件纳入源代码管理。
-      
+
     * When running locally, use `bundle exec fastlane` instead of `fastlane`.
-    
+
       当你在本地运行的时候,请使用 `bundle exec fastlane` 而不是 `fastlane`。
 
 3. Create the CI test script such as `.travis.yml` or `.cirrus.yml` in your
@@ -375,7 +378,7 @@ dependencies are stable and reproducible between local and cloud machines. Howev
            在 `[project]/android` 或 `[project]/ios` 目录下分别运行 `bundle install`命令。
 
          * Make sure the Flutter SDK is available and set in `PATH`.
-         
+
            确保 Flutter SDK 已经正确了设置在了 `PATH` 环境变量中。
 
          * For Android, ensure the Android SDK is available and the `ANDROID_SDK_ROOT`
@@ -383,9 +386,9 @@ dependencies are stable and reproducible between local and cloud machines. Howev
 
            在 Android 平台上，请确保已经设置正确的 `ANDROID_SDK_ROOT` 环境变量。
 
-         * For iOS, you may have to specify a dependency on Xcode (for example
-           `osx_image: xcode9.2`).
-           
+         * For iOS, you might have to specify a dependency on Xcode
+           (for example, `osx_image: xcode9.2`).
+
            在 iOS 平台上，你需要为 Xcode 指定依赖 (比如: `osx_image: xcode9.2`)
 
     * In the script phase of the CI task:
@@ -395,16 +398,16 @@ dependencies are stable and reproducible between local and cloud machines. Howev
          * Run `flutter build appbundle` or
            `flutter build ios --release --no-codesign`,
            depending on the platform.
-         
+
            根据平台的不同可以运行 `flutter build appbundle` 或者
            `flutter build ios --release --no-codesign`。
    
-         * `cd android` or `cd ios`.
-         
+         * `cd android` or `cd ios`
+
            然后执行 `cd android` 或 `cd ios` 命令。
-           
-         * `bundle exec fastlane [name of the lane]`.
-         
+
+         * `bundle exec fastlane [name of the lane]`
+
            最后执行 `bundle exec fastlane [name of the lane]` 命令。
 
 ## Xcode Cloud

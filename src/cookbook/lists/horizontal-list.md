@@ -5,14 +5,6 @@ description: How to implement a horizontal list.
 description: 如何实现一个水平列表。
 tags: cookbook, 实用教程, 列表相关
 keywords: 列表定制,水平滑动列表
-prev:
-  title: Use lists
-  title: 基础列表
-  path: /docs/cookbook/lists/basic-list
-next:
-  title: Create a grid list
-  title: 创建一个网格列表
-  path: /docs/cookbook/lists/grid-lists
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -41,23 +33,23 @@ ListView(
   scrollDirection: Axis.horizontal,
   children: <Widget>[
     Container(
-      width: 160.0,
+      width: 160,
       color: Colors.red,
     ),
     Container(
-      width: 160.0,
+      width: 160,
       color: Colors.blue,
     ),
     Container(
-      width: 160.0,
+      width: 160,
       color: Colors.green,
     ),
     Container(
-      width: 160.0,
+      width: 160,
       color: Colors.yellow,
     ),
     Container(
-      width: 160.0,
+      width: 160,
       color: Colors.orange,
     ),
   ],
@@ -88,30 +80,30 @@ class MyApp extends StatelessWidget {
           title: const Text(title),
         ),
         body: Container(
-          margin: const EdgeInsets.symmetric(vertical: 20.0),
-          height: 200.0,
+          margin: const EdgeInsets.symmetric(vertical: 20),
+          height: 200,
           child: ListView(
             // This next line does the trick.
             scrollDirection: Axis.horizontal,
             children: <Widget>[
               Container(
-                width: 160.0,
+                width: 160,
                 color: Colors.red,
               ),
               Container(
-                width: 160.0,
+                width: 160,
                 color: Colors.blue,
               ),
               Container(
-                width: 160.0,
+                width: 160,
                 color: Colors.green,
               ),
               Container(
-                width: 160.0,
+                width: 160,
                 color: Colors.yellow,
               ),
               Container(
-                width: 160.0,
+                width: 160,
                 color: Colors.orange,
               ),
             ],

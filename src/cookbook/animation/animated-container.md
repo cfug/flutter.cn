@@ -5,13 +5,6 @@ description: How to animate properties of a container using implicit animations.
 description: 如何通过控制 container 的属性以使用隐式动画。
 tags: cookbook, 实用教程, 动画效果
 keywords: Container,动画,渐变,背景颜色,隐式动画
-prev:
-  title: Widget 的物理模拟动画效果
-  path: /docs/cookbook/animation/physics-simulation
-next:
-  title: Fade a Widget in and out
-  title: Widget 的淡入淡出效果
-  path: /docs/cookbook/animation/opacity-animation
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -164,7 +157,7 @@ inside a call to `setState()`.
 当用户点击按钮时，将会调用 `setState`
 去刷新它的宽度、高度、背景颜色和边框半径等属性。
 
-A real app typicallyA real app typically transitions between fixed values (for example,
+A real app typically transitions between fixed values (for example,
 from a grey to a green background). For this app,
 generate new values each time the user taps the button.
 

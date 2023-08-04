@@ -61,7 +61,7 @@ It only renames symbols with more obscure names.
 ## 支持的构建目标
 
 The following build targets
-support the obfuscation process 
+support the obfuscation process
 described on this page:
 
 以下构建目标支持本篇介绍的混淆过程：
@@ -95,7 +95,7 @@ described on this page:
 [Build and release a web app]: {{site.url}}/deployment/web
 [minified]: https://en.wikipedia.org/wiki/Minification_(programming)
 
-## Obfuscating your app
+## Obfuscate your app
 
 ## 混淆你的应用程序
 
@@ -159,7 +159,7 @@ run `flutter --version` to check your version of Flutter.
 如果输出中没有列出这些标志，
 请运行 `flutter --version` 命令，检查你的 Flutter 版本。
 
-## Reading an obfuscated stack trace
+## Read an obfuscated stack trace
 
 ## 读取混淆的堆栈跟踪
 
@@ -194,6 +194,25 @@ use the following steps to make it human readable:
    关于 `symbolize` 命令的更多信息，
    请运行 `flutter symbolize -h` 命令。
 
+## Read an obfuscated name
+
+To make the name that an app obfuscated human readable,
+use the following steps:
+
+1. To save the name obfuscation map at app build time,
+   use `--extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>`.
+   For example:
+
+   ```terminal
+   $ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory> --extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>
+   ```
+
+1. To recover the name, use the generated obfuscation map.
+   The obfuscation map is a flat JSON array with pairs of
+   original names and obfuscated names. For example,
+   `["MaterialApp", "ex", "Scaffold", "ey"]`, where `ex`
+   is the obfuscated name of `MaterialApp`.
+
 ## Caveat
 
 ## 注意事项
@@ -216,3 +235,5 @@ eventually be an obfuscated binary.
 ```dart
 expect(foo.runtimeType.toString(), equals('Foo'));
 ```
+
+* Enum names are not obfuscated currently.

@@ -93,8 +93,6 @@ The following table shows which commands you can use with the `flutter` tool:
 | drive | `flutter drive` | 运行当前项目的 Flutter 测试。 |
 | emulators | `flutter emulators` | List, launch and create emulators. |
 | emulators | `flutter emulators` | 列出、启动或创建模拟器。 |
-| format  | `flutter format <DIRECTORY|DART_FILE>` | Formats Flutter source code.<br>Deprecated, instead use [`dart format`][]. |
-| format（已废弃） | `flutter format <DIRECTORY|DART_FILE>` | 格式化 Flutter 源码。<br>该命令已废弃，新版请使用 [`dart format`][]。 |
 | gen-l10n | `flutter gen-l10n <DIRECTORY>` | Generate localizations for the Flutter project. |
 | gen-l10n | `flutter gen-l10n <DIRECTORY>` | 为 Flutter 项目生成 l10n 本地化。 |
 | install | `flutter install -d <DEVICE_ID>` | Install a Flutter app on an attached device. |

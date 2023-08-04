@@ -1,20 +1,10 @@
 ---
 title: Use a custom font
 title: 使用自定义字体
-short-title: Custom fonts
-short-title: 自定义字体
 description: How to use custom fonts.
 description: 学习如何在 Flutter 里使用自定义字体
 tags: cookbook, 实用教程, 设计
 keywords: Material Design 效果, 字体, 自定义字体, Flutter使用谷歌字体
-prev:
-  title: Update the UI based on orientation
-  title: 根据屏幕方向更新界面
-  path: /docs/cookbook/design/orientation
-next:
-  title: Use themes to share colors and font styles
-  title: 使用 Themes 统一颜色和字体风格
-  path: /docs/cookbook/design/themes
 ---
 
 <?code-excerpt path-base="cookbook/design/fonts/"?>
@@ -61,25 +51,21 @@ Flutter 可以很方便的使用自定义字体，不仅能够将其用于整个
 还可以用在某个单独的 widget 中。
 请参照下面的步骤使用自定义字体：
 
-## Directions
+  1. Import the font files.
 
-## 步骤
+     导入字体文件。
 
-  1. Import the font files
+  2. Declare the font in the pubspec.
 
-     导入字体文件
+     在 `pubspec.yaml` 中声明字体。
 
-  2. Declare the font in the `pubspec.yaml`
+  3. Set a font as the default.
 
-     在 `pubspec.yaml` 中声明字体
+     设置默认字体。
 
-  3. Set a font as the default
-
-     设置默认字体
-
-  4. Use a font in a specific widget
+  4. Use a font in a specific widget.
   
-     将字体用于特定 widget
+     将字体用于特定 widget。
 
 ## 1. Import the font files
 

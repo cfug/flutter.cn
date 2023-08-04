@@ -1,19 +1,12 @@
 ---
 title: Mock dependencies using Mockito
 title: 使用 Mockito 模拟依赖关系
-description: Use the Mockito package to mimic the behavior of services for testing.
+description: >
+  Use the Mockito package to mimic the behavior of services for testing.
 description: 使用 Mockito package 在测试中模拟服务端行为。
 short-title: Mocking
 tags: cookbook, 实用教程, 测试
 keywords: 依赖关系测试,Mockito,flaky test
-prev:
-  title: An introduction to unit testing
-  title: 单元测试介绍
-  path: /docs/cookbook/testing/unit/introduction
-next:
-  title: An introduction to widget testing
-  title: Widget 测试介绍
-  path: /docs/cookbook/testing/widget/introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/unit/mocking"?>
@@ -112,14 +105,12 @@ in the `dev_dependencies` section.
 感谢代码生成，`mockito: 5.0.0` 已经支持了 Dart 的空安全。
 要运行所需的代码生成工具，请将 `build_runner` 依赖添加到 `dev_dependencies` 项目下。
 
-```yaml
-dependencies:
-  http: <newest_version>
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  mockito: <newest_version>
-  build_runner: <newest_version>
+To add the dependencies, run `flutter pub add`:
+
+运行 `flutter pub add` 添加依赖：
+
+```terminal
+$ flutter pub add http dev:mockito dev:build_runner
 ```
 
 ## 2. Create a function to test
@@ -183,10 +174,12 @@ directly with `fetchAlbum(http.Client())`. `http.Client()` creates a default
 ## 3. 创建一个模拟了 http.Client 的测试文件
 
 Next, create a test file.
+
+接下来，创建一个测试文件。
+
 Following the advice in the [Introduction to unit testing][] recipe,
 create a file called `fetch_album_test.dart` in the root `test` folder.
 
-接下来，创建一个测试文件。
 遵循 [单元测试介绍][Introduction to unit testing] 章节的建议，
 我们在根目录下的 `test` 文件夹中创建一个名字为 `fetch_post_test.dart` 的文件。
 
@@ -324,7 +317,7 @@ instructions in the [Introduction to unit testing][] recipe.
 
 ## 完整的样例
 
-##### `lib/main.dart`
+##### lib/main.dart
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
@@ -415,7 +408,7 @@ class _MyAppState extends State<MyApp> {
 }
 ```
 
-##### `test/fetch_album_test.dart`
+##### test/fetch_album_test.dart
 
 <?code-excerpt "test/fetch_album_test.dart"?>
 ```dart

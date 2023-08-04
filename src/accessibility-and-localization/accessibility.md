@@ -185,10 +185,12 @@ Flutter 应用程序，和使用 iOS 辅助功能设置中选择的最大字体
 
 ## 读屏器
 
-For mobile, screen readers ([TalkBack][], [VoiceOver][]) enable visually
-impaired users to get spoken feedback about the contents of the screen 
-and interact with the UI via gestures on mobile and keyboard shortcuts on desktop. 
-Turn on VoiceOver or TalkBack on your mobile device and navigate around your app.
+For mobile, screen readers ([TalkBack][], [VoiceOver][])
+enable visually impaired users to get spoken feedback about
+the contents of the screen and interact with the UI by using
+gestures on mobile and keyboard shortcuts on desktop. 
+Turn on VoiceOver or TalkBack on your mobile device and
+navigate around your app.
 
 在移动设备上，读屏器（[TalkBack][]、[VoiceOver][]）可以使视障用户能够获得有关屏幕内容的语音反馈，
 并通过移动设备上的手势和桌面上的键盘快捷键与 UI 进行交互。
@@ -222,7 +224,8 @@ Turn on VoiceOver or TalkBack on your mobile device and navigate around your app
 3. Turn 'Use TalkBack' on or off.
 4. Select Ok.
 
-To learn how to find and customize Android's accessibility features, view this video.
+To learn how to find and customize Android's
+accessibility features, view the following video.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/FQyj_XTl01w" title="Customize accessibility features on Pixel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
@@ -234,7 +237,8 @@ To learn how to find and customize Android's accessibility features, view this v
 1. On your device, open **Settings > Accessibility > VoiceOver**
 2. Turn the VoiceOver setting on or off
 
-To learn how to find and customize iOS accessibility features, view this video.
+To learn how to find and customize iOS
+accessibility features, view the following video.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/qDm7GiKra28" title="How to navigate your iPhone or iPad with VoiceOver" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
@@ -247,21 +251,21 @@ For web, the following screen readers are currently supported:
 
 对于 Web，目前支持以下屏幕阅读器：
 
-Mobile Browsers:
+Mobile browsers:
 
 移动浏览器：
 
 * iOS - VoiceOver
 * Android - TalkBack
 
-Desktop Browsers:
+Desktop browsers:
 
 桌面浏览器：
 
 * MacOS - VoiceOver
 * Windows - JAWs & NVDA
 
-Screen Readers users on web will need to toggle
+Screen readers users on web must toggle the
 "Enable accessibility" button to build the semantics tree.
 Users can skip this step if you programmatically auto-enable
 accessibility for your app using this API:
@@ -270,7 +274,9 @@ Web 上的读屏器用户需要点击「启用辅助功能」按钮来构建语�
 如果你使用下面这个 API 以编程方式为你的应用程序自动启用辅助功能，
 则用户可以跳过此步骤：
 
-`RendererBinding.instance.setSemanticsEnabled(true)`
+```dart
+SemanticsBinding.instance.ensureSemantics();
+```
 
 </div>
 
@@ -278,8 +284,11 @@ Web 上的读屏器用户需要点击「启用辅助功能」按钮来构建语�
 
 Windows comes with a screen reader called Narrator
 but some developers recommend using the more popular
-NVDA screen reader. Learn about using NVDA to test
-Windows apps [here](https://get-evinced.com/blog/screen-readers-101-for-front-end-developers-windows/).
+NVDA screen reader. To learn about using NVDA to test
+Windows apps, check out
+[Screen Readers 101 For Front-End Developers (Windows)][nvda].
+
+[nvda]: https://get-evinced.com/blog/screen-readers-101-for-front-end-developers-windows
 
 On a Mac, you can use the desktop version of VoiceOver,
 which is included in macOS.
@@ -290,15 +299,17 @@ which is included in macOS.
 On Linux, a popular screen reader is called Orca.
 It comes pre-installed with some distributions
 and is available on package repositories such as `apt`.
-Learn about using Orca
-[here](https://www.a11yproject.com/posts/getting-started-with-orca/).
+To learn about using Orca, check out
+[Getting started with Orca screen reader on Gnome desktop][orca].
+
+[orca]: https://www.a11yproject.com/posts/getting-started-with-orca
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
 
 <br/>
 
-Check out this [video demo][] to see 
+Check out the following [video demo][] to see 
 Victor Tsaran, who leads the Accessibility program for Material Design, 
 using VoiceOver with the Flutter Gallery web app.
 
@@ -307,12 +318,28 @@ using VoiceOver with the Flutter Gallery web app.
 并在 Flutter Gallery Web 应用程序中使用了 VoiceOver。
 
 Flutter's standard widgets generate an accessibility tree automatically. 
-However, if your app needs something different, it can be customized 
-using the [`Semantics` widget][].
+However, if your app needs something different,
+it can be customized using the [`Semantics` widget][].
 
 Flutter 的标准 widget 会自动生成无障碍树。
-但是，如果你的应用需要不同的东西，则可以使用 
+但是，如果你的应用需要不同的东西，则可以使用
 [语义 小部件][`Semantics` widget] 来自定义您应用程序的无障碍体验。
+
+When there is text in your app that should be voiced
+with a specific voice, inform the screen reader
+which voice to use by calling [`TextSpan.locale`][].
+Note that `MaterialApp.locale` and `Localizations.override`
+don't affect which voice the screen reader uses.
+Usually, the screen reader uses the system voice
+except where you explicitly set it with `TextSpan.locale`.
+
+当你的应用中的某段文字需要以特定的语言进行播报时，
+可以通过 [`TextSpan.locale`][] 来通知屏幕阅读器对应的语言。
+请注意 `MaterialApp.locale` 和 `Localizations.override`
+并不会影响屏幕阅读器对语言的选择。
+通常来说，除非你设置了 `TextSpan.locale`，否则屏幕阅读器都会使用系统语言。
+
+[`TextSpan.locale`]: {{site.api}}/flutter/painting/TextSpan/locale.html
 
 ## Sufficient contrast
 
@@ -510,24 +537,23 @@ large scale factors for text size and display scaling.
 
   **比例系数**。 文本大小和显示比例的用户界面应保持清晰易用。
 
-## More information
+## Learn more
 
 ## 更多信息
 
-For more information, particularly about how to configure
-the semantics tree,
-see the following articles written by community members:
+To learn more about Flutter and accessibility, check out
+the following articles written by community members:
 
 如果你希望了解更多，尤其是如何配置 semantics tree，
 请查看如下社区成员贡献的文章：
 
 * [A deep dive into Flutter's accessibility widgets][]
 * [Semantics in Flutter][]
+* [Flutter: Crafting a great experience for screen readers][]
 
-
-[辅助扫描程序]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
 [CRPD]: https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-9-accessibility.html
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
+[Flutter: Crafting a great experience for screen readers]: https://blog.gskinner.com/archives/2022/09/flutter-crafting-a-great-experience-for-screen-readers.html
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
 [**Large fonts**]: #large-fonts
 [**Screen readers**]: #screen-readers

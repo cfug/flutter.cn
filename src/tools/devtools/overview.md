@@ -132,7 +132,7 @@ Flutter 可能会利用这个机会来收集创建的对象，而不会影响性
 
 [CPU profiler]: {{site.url}}/tools/devtools/cpu-profiler
 [Performance]: {{site.url}}/perf
-[Performance > Timeline]: {{site.url}}/tools/devtools/performance#timeline-events-chart 
+[Performance > Timeline]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 [UI frames]: {{site.url}}/perf/ui-performance
 
 

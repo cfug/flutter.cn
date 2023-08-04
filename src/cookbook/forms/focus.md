@@ -5,14 +5,6 @@ description: How focus works with text fields.
 description: 文本框的聚焦是如何工作的。
 tags: cookbook, 实用教程, 表格交互
 keywords: Flutter输入框
-prev:
-  title: Retrieve the value of a text field
-  title: 获取文本框的输入值
-  path: /docs/cookbook/forms/retrieve-input
-next:
-  title: Add Material touch ripples
-  title: 添加点按涟漪效果 (Material Design)
-  path: /docs/cookbook/gestures/ripples
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -85,10 +77,6 @@ presses a button using the following steps:
 在这个例子中，我们将看到在用户按下按钮后如何聚焦文本框。
 在实际开发中，您还可能需要聚焦特定的文本框以响应 api 调用或错误校验。
 
-### Directions
-
-### 步骤
-
   1. Create a `FocusNode`.
 
      创建一个 `FocusNode`
@@ -97,7 +85,7 @@ presses a button using the following steps:
 
      将 `FocusNode` 传递给 `TextField`   
 
-  3. Focus the `TextField` when a button is tapped.
+  3. Give focus to the `TextField` when a button is tapped.
 
      通过点击按钮聚焦 `TextField`
 
@@ -260,7 +248,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
         title: const Text('Text Field Focus'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             // The first text field is focused on as soon as the app starts.

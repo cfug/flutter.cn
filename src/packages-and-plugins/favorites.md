@@ -9,14 +9,6 @@ keywords: Flutter优秀插件推荐项目
 
 ![The Flutter Favorite program logo]({{site.url}}/assets/images/docs/development/packages-and-plugins/FlutterFavoriteLogo.png){:width="20%"}
 
-{{site.alert.note}}
-  Due to limited staffing resources,
-  we are pausing the
-  Flutter Favorites and Happy Path programs.
-  We will update (and possibly combine)
-  these programs as soon as possible.
-{{site.alert.end}}
-
 The aim of the **Flutter Favorite** program is to identify
 packages and plugins that you should first consider when
 building your app.
@@ -127,7 +119,7 @@ are as follows:
 * Lara Martín
 * John Ryan
 * Diego Velasquez
-* Kyle Wang
+* Ander Dobo
 
 If you'd like to nominate a package or plugin as a
 potential future Flutter Favorite, or would like
@@ -150,7 +142,7 @@ you must adhere to the following guidelines:
 Flutter Favorite packages 会由 Flutter 团队在 pub.dev 上标注。
 如果你拥有一个 package 被标注未 Flutter Favorite，那么你必须遵守以下准则：
 
-* Flutter Favorite package authors may place the Flutter Favorite
+* Flutter Favorite package authors can place the Flutter Favorite
   logo in the package’s GitHub README, on the package’s
   pub.dev **Overview** tab,
   and on social media as related to posts about that package.
@@ -216,11 +208,11 @@ which might include the following:
 随着 Flutter 生态系统的发展。我们将着眼于扩大指标设置，
 其中可能包括以下内容。
 
-* Use of the new [pubspec.yaml format][] that clearly
-  indicates which platforms are supported.
+* Use of the [pubspec.yaml format][] that clearly
+  indicates which platforms a plugin supports.
 
   使用全新的 [pubspec.yaml 格式][pubspec.yaml format]来明确指出其支持哪些平台。
-  
+
 * Support for the latest stable version of Flutter.
 
   支持 Flutter 的最新稳定版本。
@@ -244,6 +236,7 @@ You can see the complete list of
 [Flutter Favorite packages][] on pub.dev.
 
 你可以在 pub.dev 上看到完整的 [Flutter Favorite packages][] 列表。
+
 
 [send the committee]: mailto:flutter-committee@googlegroups.com
 [Flutter Favorite packages]: {{site.pub}}/flutter/favorites

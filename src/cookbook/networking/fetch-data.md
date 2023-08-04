@@ -3,14 +3,6 @@ title: Fetch data from the internet
 title: 获取网络数据
 description: How to fetch data over the internet using the http package.
 description: 如何使用 http 包获取网络数据。
-prev:
-  title: Delete data on the internet
-  title: 删除网络数据
-  path: /docs/cookbook/networking/delete-data
-next:
-  title: Make authenticated requests
-  title: 发起认证的请求
-  path: /docs/cookbook/networking/authenticated-requests
 ---
 
 <?code-excerpt path-base="cookbook/networking/fetch_data/"?>
@@ -351,65 +343,6 @@ rebuilds.
 就会调用 `build()` 方法。因此，如果你将数据请求置于 `build()` 内部，
 就会造成大量的无效调用，同时还会拖慢应用程序的速度。
 
-Here are some better options so it only hits the API when the page is
-initially loaded.
-
-关于如何在页面初始化的时候，只调用 API，下面有一些更好的选择。
-
-### Pass it into a `StatelessWidget`
-
-### 传入 `StatelessWidget`
-
-With this strategy, the parent widget is responsible for calling the fetch
-method, storing its result, and then passing it to your widget.
-
-使用这种策略的话，相当于父组件负责调用数据获取方法，
-存储结果并传入你的组件中。
-
-<!-- skip -->
-```dart
-class MyApp extends StatelessWidget {
-  final Future<Post> post;
-
-  MyApp({Key key, this.post}) : super(key: key);
-```
-
-You can see a working example of this in the complete example below.
-
-你可以在下面看到一个关于这种策略的完整代码示例。
-
-### Call it in the lifecycle of a `StatefulWidget`'s state
-
-### 在 `StatefulWidget` 状态的生命周期中调用
-
-If your widget is stateful, call the fetch method in either the
-[`initState()`][] or [`didChangeDependencies()`][] methods.
-
-如果你的组件是有状态的，你可以在
-[`initState()`][] 或者 [`didChangeDependencies()`][] 方法中调用 fetch 方法。
-
-The `initState()` method is called exactly once and then never again.
-If you want to have the option of reloading the API in response to an
-[`InheritedWidget`][] changing, put the call into the 
-`didChangeDependencies()` method. See [`State`][] for more details.
-
-`initState()` 只会被调用一次而且再也不会被调用。
-如果你需要在 [`InheritedWidget`][] 改变的时候可以重新载入的话，
-可以把数据调用放在 `didChangeDependencies()` 方法中。
-想了解更多详细内容请查看 [`State`][] 文档。
-
-<!-- skip -->
-```dart
-class _MyAppState extends State<MyApp> {
-  Future<Post> post;
-
-  @override
-  void initState() {
-    super.initState();
-    post = fetchPost();
-  }
-```
-
 ## Testing
 
 ## 测试
@@ -537,5 +470,5 @@ class _MyAppState extends State<MyApp> {
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
-[JSON and serialization]: {{site.url}}/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

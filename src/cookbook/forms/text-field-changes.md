@@ -5,14 +5,6 @@ description: How to detect changes to a text field.
 description: 如何检测文本框内容的更改。
 tags: cookbook, 实用教程, 表格交互
 keywords: 文本框,传值
-prev:
-  title: Create and style a text field
-  title: 文本框的创建和设定
-  path: /docs/cookbook/forms/text-input
-next:
-  title: Retrieve the value of a text field
-  title: 获取文本框的输入值
-  path: /docs/cookbook/forms/retrieve-input
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -296,7 +288,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
         title: const Text('Retrieve Text Input'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             TextField(

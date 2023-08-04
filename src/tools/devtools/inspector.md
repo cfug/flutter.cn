@@ -23,7 +23,7 @@ keywords: Flutter inspector,widget 树
 
 The Flutter widget inspector is a powerful tool for visualizing and
 exploring Flutter widget trees. The Flutter framework uses widgets
-as the [core building block][] for anything from controls
+as the core building block for anything from controls
 (such as text, buttons, and toggles),
 to layout (such as centering, padding, rows, and columns).
 The inspector helps you visualize and explore Flutter widget
@@ -830,7 +830,6 @@ using DevTools, check out a guided
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [common problems when debugging]: {{site.url}}/testing/debugging#common-problems
-[core building block]: {{site.url}}/ui/widgets-intro
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
 [DartConf 2018 talk]: https://www.bilibili.com/video/BV1h4411575y/
 [debug mode]: {{site.url}}/testing/build-modes#debug

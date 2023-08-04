@@ -24,9 +24,9 @@ questions that are most relevant to your needs.
 
 本文可以当做查询手册使用，里面涉及到的问题基本上可以满足需求。
 
-## Introduction to Dart for JavaScript Developers
+## Introduction to Dart for JavaScript Developers (ES6)
 
-## 针对 JavaScript 开发者的 Dart 介绍
+## 针对 JavaScript (ES6) 开发者的 Dart 介绍
 
 Like React Native, Flutter uses reactive-style views. However, while RN
 transpiles to native widgets, Flutter compiles all the way to native code.
@@ -151,7 +151,7 @@ typed or the type system must infer the proper type automatically.
 
 ```js
 // JavaScript
-var name = 'JavaScript';
+let name = 'JavaScript';
 ```
 
 <?code-excerpt "lib/main.dart (Variables)"?>
@@ -198,7 +198,7 @@ numeric types have the value `null`.
 
 ```js
 // JavaScript
-var name; // == undefined
+let name; // == undefined
 ```
 
 <?code-excerpt "lib/main.dart (Null)"?>
@@ -229,11 +229,11 @@ are treated as `true` when using the `==` comparison operator.
 
 ```js
 // JavaScript
-var myNull = null;
+let myNull = null;
 if (!myNull) {
   console.log('null is treated as false');
 }
-var zero = 0;
+let zero = 0;
 if (!zero) {
   console.log('0 is treated as false');
 }
@@ -581,15 +581,13 @@ implements the render method by returning a view component.
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello world!</Text>
-      </View>
-    );
-  }
-}
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Hello world!</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -599,6 +597,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+
+export default App;
 ```
 
 In Flutter, you can create an identical "Hello world!" app using the
@@ -776,19 +776,17 @@ and then used inside a parent class.
 
 ```js
 // React Native
-class CustomCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text> Card {this.props.index} </Text>
-        <Button
-          title="Press"
-          onPress={() => this.props.onPress(this.props.index)}
-        />
-      </View>
-    );
-  }
-}
+const CustomCard = ({ index, onPress }) => {
+  return (
+    <View>
+      <Text> Card {index} </Text>
+      <Button
+        title="Press"
+        onPress={() => onPress(index)}
+      />
+    </View>
+  );
+};
 
 // Usage
 <CustomCard onPress={this.onPress} index={item.key} />
@@ -1022,6 +1020,12 @@ in a source code directory and referencing it.
 
 ```js
 <Image source={require('./my-icon.png')} />
+// OR
+<Image
+  source={%raw%}{{
+    url: 'https://reactnative.dev/img/tiny_logo.png'
+  }}{%endraw%}
+/>
 ```
 
 In Flutter, add a static image to your app
@@ -1084,21 +1088,12 @@ In Flutter, install a package using the following instructions:
 
 在 Flutter 中，安装 package 需要按照如下的步骤：
 
-1. Add the package name and version to the `pubspec.yaml` dependencies section.
-   The example below shows how to add the `google_sign_in` Dart package to the
-   `pubspec.yaml` file. Check your spaces when working in the YAML file because
-   **white space matters**!
+1. To add the `google_sign_in` package as a dependency, run `flutter pub add`:
 
-   在 `pubspec.yaml` 的 dependencies 区域添加包名和版本。
-   下面的例子向大家展示了如何将 `google_sign_in`
-   的 Dart package 添加到 `pubspec.yaml` 中。
-   一定要检查一下 YAML 文件中的空格，因为 **空格很重要**!
+   运行 `flutter pub add` 将 `google_sign_in` 添加为依赖：
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  google_sign_in: ^3.0.3
+```terminal
+$ flutter pub add google_sign_in
 ```
 
 2. Install the package from the command line by using `flutter pub get`.
@@ -1126,9 +1121,9 @@ For more information, see [Using Packages][] and
 [Flutter Packages 的开发和提交][Developing Packages & Plugins]。
 
 You can find many packages shared by Flutter developers in the
-[Flutter packages][] section of the [pub.dev][].
+[Flutter packages][] section of [pub.dev][].
 
-你可以在 [Flutter packages][] 的 [pub.dev][]
+你可以在 [pub.dev][] 的 [Flutter packages][]
 找到开发者们分享的 package。
 
 ## Flutter widgets
@@ -1276,16 +1271,16 @@ so third party libraries like `react-native-canvas` are used.
 
 ```js
 // React Native
-handleCanvas = canvas => {
-  const ctx = canvas.getContext('2d');
-  ctx.fillStyle = 'skyblue';
-  ctx.beginPath();
-  ctx.arc(75, 75, 50, 0, 2 * Math.PI);
-  ctx.fillRect(150, 100, 300, 300);
-  ctx.stroke();
-};
+const CanvasComp = () => {
+  const handleCanvas = (canvas) => {
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'skyblue';
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, 2 * Math.PI);
+    ctx.fillRect(150, 100, 300, 300);
+    ctx.stroke();
+  };
 
-render() {
   return (
     <View>
       <Canvas ref={this.handleCanvas} />
@@ -1319,11 +1314,11 @@ class MyCanvasPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()..color = Colors.amber;
-    canvas.drawCircle(const Offset(100.0, 200.0), 40.0, paint);
+    canvas.drawCircle(const Offset(100, 200), 40, paint);
     final Paint paintRect = Paint()..color = Colors.lightBlue;
     final Rect rect = Rect.fromPoints(
-      const Offset(150.0, 300.0),
-      const Offset(300.0, 400.0),
+      const Offset(150, 300),
+      const Offset(300, 400),
     );
     canvas.drawRect(rect, paintRect);
   }
@@ -1405,18 +1400,18 @@ Widget build(BuildContext context) {
       children: <Widget>[
         Container(
           color: Colors.red,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
         Container(
           color: Colors.blue,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
         Container(
           color: Colors.green,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
       ],
     ),
@@ -1538,7 +1533,7 @@ style in multiple places, you can create a
 ```dart
 const TextStyle textStyle = TextStyle(
   color: Colors.cyan,
-  fontSize: 32.0,
+  fontSize: 32,
   fontWeight: FontWeight.w600,
 );
 
@@ -1547,10 +1542,10 @@ return const Center(
     children: <Widget>[
       Text('Sample text', style: textStyle),
       Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20),
         child: Icon(
           Icons.lightbulb_outline,
-          size: 48.0,
+          size: 48,
           color: Colors.redAccent,
         ),
       ),
@@ -1922,7 +1917,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 'This execution will be done before you can blink.',
               ),
             Padding(
-              padding: const EdgeInsets.only(top: 70.0),
+              padding: const EdgeInsets.only(top: 70),
               child: ElevatedButton(
                 onPressed: toggleBlinkState,
                 child: toggleState
@@ -2003,6 +1998,8 @@ When deciding which approach to use, consider the following principles:
   for example the checked or unchecked mode of a checkbox,
   or the position of a slider, then the state is best managed
   by the parent widget.
+* If the state in question is aesthetic, for example an animation,
+  then the widget itself best manages the state.
 
   如果状态是和外观效果相关的，比如动画，那么 widget 自己会处理状态的变化。
 
@@ -2090,38 +2087,34 @@ These parameters can be used in a child component using `this.props`.
 
 ```js
 // React Native
-class CustomCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text> Card {this.props.index} </Text>
-        <Button
-          title='Press'
-          onPress={() => this.props.onPress(this.props.index)}
-        />
-      </View>
-    );
-  }
-}
-class App extends React.Component {
+const CustomCard = ({ index, onPress }) => {
+  return (
+    <View>
+      <Text> Card {index} </Text>
+      <Button
+        title='Press'
+        onPress={() => onPress(index)}
+      />
+    </View>
+  );
+};
 
-  onPress = index => {
+const App = () => {
+  const onPress = (index) => {
     console.log('Card ', index);
   };
 
-  render() {
-    return (
-      <View>
-        <FlatList
-          data={[ ... ]}
-          renderItem={({ item }) => (
-            <CustomCard onPress={this.onPress} index={item.key} />
-          )}
-        />
-      </View>
-    );
-  }
-}
+  return (
+    <View>
+      <FlatList
+        data={[ /* ... */ ]}
+        renderItem={({ item }) => (
+          <CustomCard onPress={onPress} index={item.key} />
+        )}
+      />
+    </View>
+  );
+};
 ```
 
 In Flutter, you assign a local variable or function marked
@@ -2204,10 +2197,12 @@ that is persistent and global to the app.
 
 ```js
 // React Native
+const [counter, setCounter] = useState(0)
+...
 await AsyncStorage.setItem( 'counterkey', json.stringify(++this.state.counter));
 AsyncStorage.getItem('counterkey').then(value => {
   if (value != null) {
-    this.setState({ counter: value });
+    setCounter(value);
   }
 });
 ```
@@ -2217,22 +2212,18 @@ store and retrieve key-value data that is persistent and global
 to the app. The `shared_preferences` plugin wraps
 `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
-To use the plugin,
-add `shared_preferences` as a dependency in the `pubspec.yaml`
-file then import the package in your Dart file.
 
 在 Flutter 中，使用 [`shared_preferences`][] 插件来
 存储和访问应用程序内全局有效的键值对数据。
 `shared_preferences` 插件封装了 iOS 中的 `NSUserDefaults` 和
 Android 中的 `SharedPreferences` 来实现简单数据的持续存储。
-如果要使用该插件，可以在 `pubspec.yaml` 中添加依赖
-`shared_preferences`，然后在 Dart 文件中引用包即可。
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  shared_preferences: ^2.0.13
+To add the `shared_preferences` package as a dependency, run `flutter pub add`:
+
+运行 `flutter pub add` 将 `shared_preferences` 添加为依赖：
+
+```terminal
+$ flutter pub add shared_preferences
 ```
 
 <?code-excerpt "lib/examples.dart (SharedPrefs)"?>
@@ -2361,7 +2352,7 @@ The following example specifies named routes in the `MaterialApp` widget.
   针对大多数的应用情况，我们不再推荐使用命名的路由 (Named routes)，
   了解更多信息，请参考导航概览中的 [受限情况][Limitations] 部分。
 
-{{site.alert.note}}
+{{site.alert.end}}
 
 [Limitations]: {{site.url}}/ui/navigation#limitations
 [navigation overview]: {{site.url}}/ui/navigation
@@ -2460,29 +2451,35 @@ const MyApp = TabNavigator(
 );
 ```
 
-Flutter provides several specialized widgets for drawer and tab navigation:
+Flutter provides several specialized widgets for drawer and
+tab navigation:
 
 Flutter 针对 drawer 和 tab 导航提供几种专用的 widget：
 
-* [`TabController`][]&mdash;Coordinates
-  the tab selection between a TabBar and a TabBarView.
+[`TabController`][]
+<br> Coordinates the tab selection between a `TabBar`
+  and a `TabBarView`.
 
-  [`TabController`][]&mdash;&mdash;将 tab 与 TabBar 和 TabBarView 结合起来使用。
+[`TabController`][]
+<br> 将 tab 与 TabBar 和 TabBarView 结合起来使用。
 
-* [`TabBar`][]&mdash;Displays
-  a horizontal row of tabs.
+[`TabBar`][]
+<br> Displays a horizontal row of tabs.
 
-  [`TabBar`][]&mdash;&mdash;水平显示一行 tab。
+[`TabBar`][]
+<br> 水平显示一行 tab。
 
-* [`Tab`][]&mdash;Creates
-  a material design TabBar tab.
+[`Tab`][]
+<br> Creates a material design TabBar tab.
 
-  [`Tab`][]&mdash;&mdash;创建一个 material design 风格的 TabBar 中的 tab。
+[`Tab`][]
+<br> 创建一个 material design 风格的 TabBar 中的 tab。
 
-* [`TabBarView`][]&mdash;Displays
-  the widget that corresponds to the currently selected tab.
+[`TabBarView`][]
+<br> Displays the widget that corresponds to the currently selected tab.
 
-  [`TabBarView`][]&mdash;&mdash;显示目前所选 tab 所对应的 widget。
+[`TabBarView`][]
+<br> 显示目前所选 tab 所对应的 widget。
 
 <?code-excerpt "lib/navigation.dart (TabNav)"?>
 ```dart
@@ -2501,6 +2498,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   }
 }
 ```
+
 
 A `TabController` is required to coordinate the tab selection
 between a `TabBar` and a `TabBarView`.
@@ -2637,7 +2635,7 @@ widget provides the navigation on tap.
 @override
 Widget build(BuildContext context) {
   return Drawer(
-    elevation: 20.0,
+    elevation: 20,
     child: ListTile(
       leading: const Icon(Icons.change_history),
       title: const Text('Screen2'),
@@ -2664,7 +2662,7 @@ edge-swipe gesture to show the `Drawer`.
 Widget build(BuildContext context) {
   return Scaffold(
     drawer: Drawer(
-      elevation: 20.0,
+      elevation: 20,
       child: ListTile(
         leading: const Icon(Icons.change_history),
         title: const Text('Screen2'),
@@ -2731,10 +2729,11 @@ a single gesture, [`PanResponder`][] is used.
 
 ```js
 // React Native
-class App extends Component {
+const App = () => {
+  const panResponderRef = useRef(null);
 
-  componentWillMount() {
-    this._panResponder = PanResponder.create({
+  useEffect(() => {
+    panResponderRef.current = PanResponder.create({
       onMoveShouldSetPanResponder: (event, gestureState) =>
         !!getDirection(gestureState),
       onPanResponderMove: (event, gestureState) => true,
@@ -2743,18 +2742,16 @@ class App extends Component {
       },
       onPanResponderTerminationRequest: (event, gestureState) => true
     });
-  }
+  }, []);
 
-  render() {
-    return (
-      <View style={styles.container} {...this._panResponder.panHandlers}>
-        <View style={styles.center}>
-          <Text>Swipe Horizontally or Vertically</Text>
-        </View>
+  return (
+    <View style={styles.container} {...panResponderRef.current.panHandlers}>
+      <View style={styles.center}>
+        <Text>Swipe Horizontally or Vertically</Text>
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 ```
 
 In Flutter, to add a click (or press) listener to a widget,
@@ -2831,11 +2828,13 @@ RN 提供 Fetch API 实现网络编程，
 
 ```js
 // React Native
-_getIPAddress = () => {
+const [ipAddress, setIpAddress] = useState('')
+
+const _getIPAddress = () => {
   fetch('https://httpbin.org/ip')
     .then(response => response.json())
     .then(responseJson => {
-      this.setState({ _ipAddress: responseJson.origin });
+      setIpAddress(responseJson.origin);
     })
     .catch(error => {
       console.error(error);
@@ -2843,17 +2842,16 @@ _getIPAddress = () => {
 };
 ```
 
-Flutter uses the `http` package. To install the `http` package,
-add it to the dependencies' section of our pubspec.yaml.
+Flutter uses the `http` package. 
 
-Flutter 使用 `http` package。如果要安装 `http` package，
-将它添加到 pubspec.yaml 的 dependencies 部分。
+Flutter 使用 `http` package。
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  http: <latest_version>
+To add the `http` package as a dependency, run `flutter pub add`:
+
+运行 `flutter pub add` 将 `http` 添加为依赖：
+
+```terminal
+$ flutter pub add http
 ```
 
 Flutter uses the [`dart:io`][] core HTTP support client.
@@ -2915,10 +2913,12 @@ input box and then use the callback to store the value in a variable.
 
 ```js
 // React Native
+const [password, setPassword] = useState('')
+...
 <TextInput
   placeholder="Enter your Password"
-  onChangeText={password => this.setState({ password })}
- />
+  onChangeText={password => setPassword(password)}
+/>
 <Button title="Submit" onPress={this.validate} />
 ```
 
@@ -3138,6 +3138,11 @@ fragmentation. For more information, see the
 执行代码行观察、调试内存泄漏和内存碎片等。
 有关更多信息，请参阅 [DevTools][] 文档。
 
+If you're using an IDE,
+you can debug your application using the IDE's debugger.
+
+如果你在用 IDE 进行编辑，你可以使用 IDE 的调试器调试你的应用。
+
 ### How do I perform a hot reload?
 
 ### 如何进行热重载？
@@ -3277,24 +3282,22 @@ and then, `start()` is called to start the animation.
 
 ```js
 // React Native
-class FadeInView extends React.Component {
-  state = {
-    fadeAnim: new Animated.Value(0) // Initial value for opacity: 0
-  };
-  componentDidMount() {
-    Animated.timing(this.state.fadeAnim, {
+const FadeInView = ({ style, children }) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 10000
     }).start();
-  }
-  render() {
-    return (
-      <Animated.View style={%raw%}{{...this.props.style, opacity: this.state.fadeAnim }}{%endraw%} >
-        {this.props.children}
-      </Animated.View>
-    );
-  }
-}
+  }, []);
+
+  return (
+    <Animated.View style={%raw%}{{ ...style, opacity: fadeAnim }}{%endraw%}>
+      {children}
+    </Animated.View>
+  );
+};
     ...
 <FadeInView>
   <Text> Fading in </Text>
@@ -3408,8 +3411,8 @@ class _LogoFadeState extends State<LogoFade>
     return FadeTransition(
       opacity: animation,
       child: const SizedBox(
-        height: 300.0,
-        width: 300.0,
+        height: 300,
+        width: 300,
         child: FlutterLogo(),
       ),
     );
@@ -3534,7 +3537,7 @@ Flutter widget 和通用的 widget 属性。
 
 
 [`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
-[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets-and-images
+[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets/assets-and-images
 [`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html

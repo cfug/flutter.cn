@@ -5,14 +5,6 @@ description: How to display images from the internet.
 description: 如何显示网络上的图片。
 tags: cookbook, 实用教程, 使用图片
 keywords: 网络图片,使用gif
-prev:
-  title: Implement swipe to dismiss
-  title: 实现「滑动清除」效果
-  path: /docs/cookbook/gestures/dismissible
-next:
-  title: Fade in images with a placeholder
-  title: 占位符和网络图片淡入
-  path: /docs/cookbook/images/fading-in-images
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

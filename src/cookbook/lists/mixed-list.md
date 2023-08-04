@@ -5,14 +5,6 @@ description: How to implement a list that contains different types of assets.
 description: 如何实现一个包含不同类型资源的列表。
 tags: cookbook, 实用教程, 列表相关
 keywords: 列表进阶
-prev:
-  title: Create a grid list
-  title: 创建一个网格列表
-  path: /docs/cookbook/lists/grid-lists
-next:
-  title: Place a floating app bar above a list
-  title: 在列表顶部放置一个浮动的 app bar
-  path: /docs/cookbook/lists/floating-app-bar
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

@@ -10,15 +10,22 @@ toc: false
 
 Here's a collection of books about Flutter, in alphabetical order.
 If you find another one that we should add,
-[file an issue][] and (optionally)
+[file an issue][] and (feel free to)
 submit a PR ([sample][]) to add it yourself.
+Also, check the Flutter version that the book
+was written under. See the [what's new][]
+page to view Flutter's latest release.
 
 这里收集了关于 Flutter 的书籍，按照字母顺序排列。
 如果你发现其他我们应该添加的书籍，
-你可以 [提出 issue][file an issue] 并且（可选）[提交 PR][sample]，以便添加书籍。
+你可以 [提出 issue][file an issue]
+并且（可选）[提交 PR][sample]，以便添加书籍。
+同时，你可能需要确认书籍撰写时基于的 Flutter 版本。
+你可以在 Flutter 最新发布页面看到 [版本更新内容][what's new]。
 
-[file an issue]: {{site.repo.this}}/issues/new/choose
-[sample]: {{site.repo.this}}/pulls
+[file an issue]: {{site.repo.this}}/issues/new
+[sample]: {{site.repo.this}}/pull/6019
+[what's new]: {{site.url}}/release/whats-new
 
 {% for book in site.data.books -%}
 * [{{book.title}}]({{book.link}})

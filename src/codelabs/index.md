@@ -489,8 +489,8 @@ iOS、Android、Web 和桌面端。
 
 * [Using a plugin with a Flutter web app][]<br>
   Finish an app that reports the number of stars on a GitHub repository.
-  use Dart DevTools to do some simple debugging, and
-  Host your app on Firebase and, finally, use a Flutter plugin to
+  Use Dart DevTools to do some simple debugging, and
+  host your app on Firebase and, finally, use a Flutter plugin to
   launch the app and open the hosted privacy policy.
 
   [在 Flutter Web 应用使用插件][Using a plugin with a Flutter web app]<br>

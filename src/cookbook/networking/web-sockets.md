@@ -1,18 +1,10 @@
 ---
-title: Work with WebSockets
-title: 发起 WebSockets 请求
+title: Communicate with WebSockets
+title: 使用 WebSockets 进行通信
 description: How to connect to a web socket.
 description: 如何建立 web socket 连接。
 tags: cookbook, 实用教程, 网络请求
 keywords: WebSockets
-prev:
-  title: Update data over the internet
-  title: 通过网络更新数据
-  path: /docs/cookbook/networking/update-data
-next:
-  title: Persist data with SQLite
-  title: 用 SQLite 做数据持久化
-  path: /docs/cookbook/persistence/sqlite
 ---
 
 <?code-excerpt path-base="cookbook/networking/web_sockets/"?>
@@ -236,7 +228,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

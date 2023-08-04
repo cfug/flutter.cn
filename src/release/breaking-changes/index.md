@@ -1,9 +1,12 @@
 ---
-title: Breaking changes
-title: 破坏性改动 (Breaking changes)
+title: Breaking changes and migration guides
+title: 破坏性改动 (Breaking changes) 及迁移指南
+short-title: Breaking changes
 description: A list of migration guides for breaking changes in Flutter.
 description: Flutter 破坏性改动的迁移文档。
 ---
+
+<!-- 请勿翻译该文档。 -->
 
 As described in the [breaking change policy][],
 on occasion we publish guides
@@ -29,7 +32,7 @@ but many are.
 并非所有的破坏性改动都支持这种方式，但很多都是支持的。
 
 To avoid being broken by future versions of Flutter,
-consider submitting your tests to our [test registry][].
+consider submitting your tests to our [test registry].
 
 为了避免被未来的 Flutter 版本破坏，
 可以考虑将你的测试提交到我们的 [测试注册表][test registry]。
@@ -40,7 +43,7 @@ release, and listed in alphabetical order:
 以下是可用的迁移指南，
 它们按发行版本分类并按字母顺序排列。
 
-[breaking change policy]: {{site.url}}/resources/compatibility
+[breaking change policy]: {{site.url}}/release/compatibility-policy
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
 [`dart fix`]: {{site.url}}/tools/flutter-fix
@@ -48,19 +51,25 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-### 尚未发布到稳定渠道
-
+* [Added AppLifecycleState.hidden][] enum value
+* [Deprecated API removed after v3.10][]
 * [Moved ReorderableListView's localized strings][]  from material to widgets localizations
 * [Removed `ignoringSemantics`][] properties
 * [Deprecated `RouteInformation.location`][] and its related APIs
+* [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
+* [Updated EditableText scroll into view behavior][]
+* [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 
+[Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
+[Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
+[Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
+[Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
+[Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 
 ### Released in Flutter 3.10
-
-### 在 Flutter 3.10 中发布
 
 * [Dart 3 changes in Flutter v3.10 and later][]
 * [Deprecated API removed after v3.7][]
@@ -80,14 +89,13 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 3.7
 
-### 在 Flutter 3.7 中发布
-
 * [Deprecated API removed after v3.3][]
 * [Replaced parameters for customizing context menus with a generic widget builder][]
 * [iOS FlutterViewController splashScreenView made nullable][]
 * [Migrate `of` to non-nullable return values, and add `maybeOf`][]
 * [Removed RouteSettings.copyWith][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
+* [Migrate a Windows project to support dark title bars][]
 
 [Replaced parameters for customizing context menus with a generic widget builder]: {{site.url}}/release/breaking-changes/context-menus
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
@@ -95,22 +103,21 @@ release, and listed in alphabetical order:
 [Migrate `of` to non-nullable return values, and add `maybeOf`]: {{site.url}}/release/breaking-changes/supplemental-maybeOf-migration
 [Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
+[Migrate a Windows project to support dark title bars]: {{site.url}}/release/breaking-changes/windows-dark-mode
 
 ### Released in Flutter 3.3
-
-### 在 Flutter 3.3 中发布
 
 * [Adding ImageProvider.loadBuffer][]
 * [Default PrimaryScrollController on Desktop][]
 * [Trackpad gestures can trigger GestureRecognizer][]
+* [Migrate a Windows project to set version information][]
 
 [Adding ImageProvider.loadBuffer]: {{site.url}}/release/breaking-changes/image-provider-load-buffer
 [Default PrimaryScrollController on Desktop]: {{site.url}}/release/breaking-changes/primary-scroll-controller-desktop
 [Trackpad gestures can trigger GestureRecognizer]: {{site.url}}/release/breaking-changes/trackpad-gestures
+[Migrate a Windows project to set version information]: {{site.url}}/release/breaking-changes/windows-version-information
 
 ### Released in Flutter 3
-
-### 在 Flutter 3 中发布
 
 * [Deprecated API removed after v2.10][]
 * [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
@@ -121,8 +128,6 @@ release, and listed in alphabetical order:
 [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips]: {{site.url}}/release/breaking-changes/chip-usedeletebuttontooltip-migration
 
 ### Released in Flutter 2.10
-
-### 在 Flutter 2.10 中发布
 
 * [Deprecated API removed after v2.5][]
 * [Raw images on Web uses correct origin and colors][]
@@ -136,17 +141,16 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 2.5
 
-### 在 Flutter 2.5 中发布
-
 * [Default drag scrolling devices][]
 * [Deprecated API removed after v2.2][]
 * [Change the enterText method to move the caret to the end of the input text][]
-* [GestureRecognizer Cleanup][]
+* [GestureRecognizer cleanup][]
 * [Introducing package:flutter_lints][]
 * [Replace AnimationSheetBuilder.display with collate][]
 * [ThemeData's accent properties have been deprecated][]
 * [Transition of platform channel test interfaces to flutter_test package][]
 * [Using HTML slots to render platform views in the web][]
+* [Migrate a Windows project to the idiomatic run loop][]
 
 [Change the enterText method to move the caret to the end of the input text]: {{site.url}}/release/breaking-changes/enterText-trailing-caret
 [Default drag scrolling devices]: {{site.url}}/release/breaking-changes/default-scroll-behavior-drag
@@ -157,36 +161,25 @@ release, and listed in alphabetical order:
 [ThemeData's accent properties have been deprecated]: {{site.url}}/release/breaking-changes/theme-data-accent-properties
 [Transition of platform channel test interfaces to flutter_test package]: {{site.url}}/release/breaking-changes/mock-platform-channels
 [Using HTML slots to render platform views in the web]: {{site.url}}/release/breaking-changes/platform-views-using-html-slots-web
+[Migrate a Windows project to the idiomatic run loop]: {{site.url}}/release/breaking-changes/windows-run-loop
 
 ### Reverted change in 2.2
 
-### 在 2.2 版本中回退的改动
-
 The following breaking change was reverted in release 2.2:
 
-以下重要改动在 Flutter 2.2 中已被回退。
-
-<b>[Network Policy on iOS and Android][]</b>
-<br/>  Introduced in version: 2.0.0<br>
+<b>[Network Policy on iOS and Android][]</b><br>
+:  Introduced in version: 2.0.0<br>
    Reverted in version:   2.2.0 (proposed)
-   
-<b>[iOS 端和 Android 端的网络策略][Network Policy on iOS and Android]</b>
-<br/> 引入版本：2.0.0<br>
-      回退版本：2.2.0（建议）
 
 [Network Policy on iOS and Android]: {{site.url}}/release/breaking-changes/network-policy-ios-android
 
 ### Released in Flutter 2.2
-
-### 在 Flutter 2.2 中发布
 
 * [Default Scrollbars on Desktop][]
 
 [Default Scrollbars on Desktop]: {{site.url}}/release/breaking-changes/default-desktop-scrollbars
 
 ### Released in Flutter 2
-
-### 在 Flutter 2 中发布
 
 * [Added BuildContext parameter to TextEditingController.buildTextSpan][]
 * [Android ActivityControlSurface attachToActivity signature change][]
@@ -216,19 +209,16 @@ The following breaking change was reverted in release 2.2:
 
 ### Released in Flutter 1.22
 
-### 在 Flutter 1.22 中发布
-
 * [Android v1 embedding app and plugin creation deprecation][]
 * [Cupertino icons 1.0.0][]
 * [The new Form, FormField auto-validation API][]
+
 
 [Android v1 embedding app and plugin creation deprecation]: {{site.url}}/release/breaking-changes/android-v1-embedding-create-deprecation
 [Cupertino icons 1.0.0]: {{site.url}}/release/breaking-changes/cupertino-icons-1.0.0
 [The new Form, FormField auto-validation API]: {{site.url}}/release/breaking-changes/form-field-autovalidation-api
 
 ### Released in Flutter 1.20
-
-### 在 Flutter 1.20 中发布
 
 * [Actions API revision][]
 * [Adding TextInputClient.currentAutofillScope property][]
@@ -258,8 +248,6 @@ The following breaking change was reverted in release 2.2:
 
 ### Released in Flutter 1.17
 
-### 在 Flutter 1.17 中发布
-
 * [Adding 'linux' and 'windows' to TargetPlatform enum][]
 * [Annotations return local position relative to object][]
 * [Container color optimization][]
@@ -272,7 +260,7 @@ The following breaking change was reverted in release 2.2:
 * [Nullable CupertinoTheme.brightness][]
 * [Rebuild optimization for OverlayEntries and Routes][]
 * [Scrollable AlertDialog][]
-* [TestTextInput state reset][] 
+* [TestTextInput state reset][]
 * [TextInputClient currentTextEditingValue][]
 * [The forgetChild() method must call super][]
 * [The Route and Navigator refactoring][]

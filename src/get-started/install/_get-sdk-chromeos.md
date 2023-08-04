@@ -1,7 +1,8 @@
 ## Get the Flutter SDK {#get-sdk}
 
-
 ## 获取 Flutter SDK {#get-sdk}
+
+{% include docs/china-notice.md %}
 
  1. Install the core development tools needed for Flutter:
 

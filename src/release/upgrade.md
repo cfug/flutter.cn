@@ -81,7 +81,7 @@ Flutter 有两个发布渠道：**stable** 和 **beta**。
 We recommend the **stable** channel for new users
 and for production app releases.
 The team updates this channel about every three months.
-The channel may receive occasional hot fixes
+The channel might receive occasional hot fixes
 for high-severity or high-impact issues.
 
 我们推荐新用户和生产环境使用 **stable** 渠道。
@@ -247,5 +247,5 @@ $ flutter pub outdated
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec
 [test registry]: https://github.com/flutter/tests
-[contribute to Flutter]: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+[contribute to Flutter]: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
 [migration guides]: {{site.url}}/release/breaking-changes

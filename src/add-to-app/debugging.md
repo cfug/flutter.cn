@@ -1,5 +1,5 @@
 ---
-title: Debugging your add-to-app module
+title: Debug your add-to-app module
 title: 在混合开发模式下进行调试
 short-title: Debugging
 short-title: 调试应用
@@ -8,10 +8,6 @@ description: 如何在使用 Flutter module 的混合应用运行调试以及热
 tags: Flutter混合工程,add2app
 keywords: 工程调试,VS Code
 ---
-
-## Debugging your add-to-app module
-
-## 调试混合开发的模块
 
 Once you've integrated the Flutter module to your project and used Flutter's
 platform APIs to run the Flutter engine and/or UI,
@@ -30,7 +26,7 @@ However, Flutter is now powering the UI in places where you're showing a
 
 ### 调试
 
-You may be used to having your suite of favorite Flutter debugging tools
+You might be used to having your suite of favorite Flutter debugging tools
 available to you automatically when running `flutter run` or an equivalent
 command from an IDE. But you can also use all your Flutter
 [debugging functionalities][] such as hot reload, performance
@@ -72,25 +68,8 @@ Run `flutter attach` or `flutter attach -d deviceId` to attach from the terminal
 
 #### VS Code
 
-Select the correct device using the status bar in VS Code, then run the **Flutter: Attach to Flutter on Device** command from the command palette.
-
-在 VS Code 中的状态栏中选择待调试的设备，
-然后在命令面板运行 **Flutter: Attach to Flutter on Device** 命令。
-
-{% include docs/app-figure.md image="development/add-to-app/debugging/vscode-attach.png" caption="flutter attach via VS Code" %}
-
-Alternatively, create a `.vscode/launch.json` file in your Flutter module project to enable attaching using the **Run > Start Debugging** command or `F5`:
-
-或者，在你的 Flutter 模块下创建一个 `.vscode/launch.json` 文件，
-使用 **Run > Start Debugging** 命令或按下 `F5`。
-
-```js
-{
-  name: "Flutter: Attach",
-  request: "attach",
-  type: "dart",
-}
-```
+{% include docs/debug/debug-flow-ios.md %}
+{% include docs/debug/vscode-flutter-attach-json.md %}
 
 #### IntelliJ / Android Studio
 
@@ -100,23 +79,21 @@ Select the device on which the Flutter module runs so `flutter attach` filters f
 
 {% include docs/app-figure.md image="development/add-to-app/debugging/intellij-attach.png" caption="flutter attach via IntelliJ" %}
 
-
 [debugging functionalities]: {{site.url}}/testing/debugging
 
 ### Wireless debugging
 
-You can debug your app wirelessly on an iOS or Android device 
+You can debug your app wirelessly on an iOS or Android device
 using `flutter attach`.
-
 
 #### iOS
 
-On iOS, you must follow the steps below: 
+On iOS, you must follow the steps below:
 
 <ol markdown="1">
 <li markdown="1">
 
-Ensure that your device is wirelessly connected to Xcode 
+Ensure that your device is wirelessly connected to Xcode
 as described in the [iOS setup guide][].
 
 </li>
@@ -127,7 +104,7 @@ Open **Xcode > Product > Scheme > Edit Scheme**
 </li>
 <li markdown="1">
 
-Select the **Arguments** tab 
+Select the **Arguments** tab
 
 </li>
 <li markdown="1">

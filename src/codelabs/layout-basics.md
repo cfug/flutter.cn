@@ -23,7 +23,7 @@ downloading and installing Flutter or Dart!
 
 Flutter is different from other frameworks because its UI
 is built in code, not (for example) in an XML file or similar.
-widgets are the basic building blocks of a Flutter UI.
+Widgets are the basic building blocks of a Flutter UI.
 As you progress through this codelab,
 you'll learn that almost everything in Flutter is a widget.
 A widget is an immutable object that describes a specific part of a UI.
@@ -51,7 +51,7 @@ widget 是一个不会改变的对象，它是 UI 中一个特定部分的描述
 ## Row 和 Column 类
 
 `Row` and `Column` are classes that contain and lay out widgets.
-widgets inside of a `Row` or `Column` are called *children*,
+Widgets inside of a `Row` or `Column` are called *children*,
 and `Row` and `Column` are referred to as *parents*.
 `Row` lays out its widgets horizontally,
 and `Column` lays out its widgets vertically.
@@ -68,18 +68,17 @@ and `Column` lays out its widgets vertically.
 {:.no_toc}
 
 {{site.alert.secondary}}
+{:.no_toc}
+  The following example displays the differences between
+  a `Row` and `Column`.
 
-  The following example displays the differences between a `Row` and `Column`.
+  **1.** Click the **Run** button.
 
-  下面的样例将会显示 `Row` 和 `Column` 的区别。
+  **1.** 点击 **运行** 按钮。
 
-1. Click the **Run** button.
+  **2.** In the code, change the `Row` to a `Column`, and run again.
 
-   点击 **运行** 按钮。
-
-2. In the code, change the `Row` to a `Column`, and run again.
-
-   在这段代码中，将 `Row` 改为 `Column` 并再次运行。
+  **2.** 在这段代码中，将 `Row` 改为 `Column` 并再次运行。
 
 {{site.alert.end}}
 
@@ -179,7 +178,7 @@ Future<void> main() async {
 
 ## 轴大小和对齐方式
 
-So far, the `BlueBox` widgets have been squished together 
+So far, the `BlueBox` widgets have been squished together
 (either to the left or at the top of the UI Output).
 You can change how the `BlueBox` widgets are spaced
 out using the axis size and alignment properties.
@@ -240,20 +239,21 @@ The `mainAxisSize` property has two possible values:
 {:.no_toc}
 
 {{site.alert.secondary}}
+{:.no_toc}
 
   The following example explicitly sets `mainAxisSize`
   to its default value, `MainAxisSize.max`.
 
   下面的样例将会特别指定 `mainAxisSize` 为其默认值 `MainAxisSize.max`。
 
-1. Click the **Run** button. 
+  **1.** Click the **Run** button.
 
-   点击 **运行** 按钮。
+  **1.** 点击 **运行** 按钮。
 
-1. Change `MainAxisSize.max` to `MainAxisSize.min`,
-   and run again.
+  **2.** Change `MainAxisSize.max` to `MainAxisSize.min`,
+         and run again.
 
-   将 `MainAxisSize.max` 改为 `MainAxisSize.min`，并再次运行。 
+  **2.** 将 `MainAxisSize.max` 改为 `MainAxisSize.min`，并再次运行。 
 
 {{site.alert.end}}
 
@@ -403,7 +403,7 @@ can position their children in that extra space.
 
 `MainAxisAlignment.spaceAround`
 <br> Similar to `MainAxisAlignment.spaceEvenly`,
-  but reduces half of the space before the first
+  but reduces the space before the first
   child and after the last child
   to half of the width between the children.
 
@@ -427,15 +427,14 @@ can position their children in that extra space.
   下面的样例将特别指定 `mainAxisAlignment` 为其默认值，
   `MainAxisAlignment.start`。
 
-1. Click the **Run** button.
+  **1.** Click the **Run** button.
 
-   点击**运行**按钮。
+  **1.** 点击**运行**按钮。
 
-1. Change `MainAxisAlignment.start` to
-   `MainAxisAlignment.end`, and run again.
+  **2.** Change `MainAxisAlignment.start` to
+         `MainAxisAlignment.end`, and run again.
 
-   将 `MainAxisAlignment.start` 改为 `MainAxisAlignment.end`，
-   然后再次运行。
+  **2.** 将 `MainAxisAlignment.start` 改为 `MainAxisAlignment.end`，然后再次运行。
 
 {{site.alert.end}}
 
@@ -558,7 +557,7 @@ Future<void> main() async {
 
 ### crossAxisAlignment 属性
 
-The `crossAxisAlignment` property determines 
+The `crossAxisAlignment` property determines
 how `Row` and `Column` can position their children
 on their cross axes.
 A `Row`'s cross axis is vertical,
@@ -632,14 +631,13 @@ The `crossAxisAlignment` property has five possible values:
   `MainAxisAlignment.spaceAround`，`Row` 现在包含一个比
   “BlueBox” widget 更高的 `BiggerBlueBox` widget。
 
-1. Click the **Run** button.
+  **1.** Click the **Run** button.
 
-   点击**运行**按钮
+  **1.** 点击**运行**按钮
 
-1. Change `CrossAxisAlignment.center` to
-   `CrossAxisAlignment.start`, and run again.
-
-   将 `CrossAxisAlignment.center` 改为 
+  **2.** Change `CrossAxisAlignment.center` to
+         `CrossAxisAlignment.start`, and run again.
+  **2.** 将 `CrossAxisAlignment.center` 改为 
    `CrossAxisAlignment.start`，并再次运行。
 
 {{site.alert.end}}
@@ -762,7 +760,7 @@ Future<void> main() async {
 {{site.alert.tip}}
 
   Before moving to the next section,
-  change `CrossAxisAlignment.start` to another value. 
+  change `CrossAxisAlignment.start` to another value.
 
   在阅读下一个小节之前，将 `CrossAxisAlignment.start` 改为其他值试试。
 
@@ -805,7 +803,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 `flex`
 <br> 将自身的 `flex` 因子与其他的比较，以决定自身占剩余空间的比例。
 
-`fit` 
+`fit`
 <br> Determines whether a `Flexible` widget
   fills all of its extra space.
 
@@ -829,11 +827,11 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   <br> The widget's preferred size is used. (Default)
 
   `FlexFit.loose`
-  <br> 使用 widget 的自身作为首选大小。 (默认情况下 )
+  <br> 使用 widget 的自身作为首选大小。 (默认情况下)
 
   `FlexFit.tight`
   <br> Forces the widget to fill all of its extra space.
-  
+
   `FlexFit.tight`
   <br> 强制 widget 充满所有剩余空间。
 
@@ -843,14 +841,14 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   在这个样例中，改变 `fit` 属性使 `Flexible` widgets
   能够填充剩余空间。
 
-1. Click the **Run** button.
+  **1.** Click the **Run** button.
 
-   点击**运行**按钮
+  **1.** 点击**运行**按钮
 
-1. Change both `fit` values to `FlexFit.tight`, 
-   and run again.
+  **2.** Change both `fit` values to `FlexFit.tight`,
+         and run again.
 
-   将所有 `fit` 的值设为 `FlexFit.tight`，并再次运行。
+  **2.** 将所有 `fit` 的值设为 `FlexFit.tight`，并再次运行。
 
 {{site.alert.end}}
 
@@ -1003,11 +1001,11 @@ Future<void> main() async {
   两个 `Flexible` widgets 包裹的 `BlueBox` widget。
   `Flexible` widgets 包含了 `flex` 属性，并将其值设为 1。 (默认值 )
 
-  When `flex` properties are compared against one another, 
-  the ratio between their `flex` values determines 
+  When `flex` properties are compared against one another,
+  the ratio between their `flex` values determines
   what fraction of the total remaining space each
   `Flexible` widget receives.
-  
+
   当 `flex` 属性互相比较时，它们的 `flex` 值的比率决定了 `Flexible` widget
   自身所占剩余空间的比例。
 
@@ -1182,7 +1180,7 @@ wrap a widget and force the widget to fill extra space.
   这样，你就可以调整子 widget 的间距同时保持其相对于父 widget  的大小。
   `Expanded`改变子窗口小部件的约束， 所以它会填补全部空白空间。
 
-{{site.alert.end}} 
+{{site.alert.end}}
 
 #### Example: Filling extra space
 {:.no_toc}
@@ -1339,27 +1337,28 @@ create empty space.
 如果它没有包裹 widget，
 它可以使用`height`和`width`属性创造空的空间。
 
-#### Example: Resizing a widget 
+#### Example: Resizing a widget
 {:.no_toc}
 
 #### 样例：调整一个 widget
 {:.no_toc}
 
 {{site.alert.secondary}}
+
   The following example wraps the middle `BlueBox` widget inside of a
   `SizedBox` widget and sets the `BlueBox`'s width to 100 logical pixels.
 
   下面的样例使用 `SizedBox` widget 包裹了中间的 `BlueBox` widget，
   并将 `BlueBox` 的宽度设为 100 逻辑像素。
 
-1. Click the **Run** button.
+  **1.** Click the **Run** button.
 
-   点击**运行**按钮
+  **1.** 点击**运行**按钮
 
-1. Add a `height` property equal to 100 logical pixels
-   inside the `SizedBox` widget, and run again. 
+  **2.** Add a `height` property equal to 100 logical pixels
+         inside the `SizedBox` widget, and run again.
 
-   将 `SizedBox` widget 中的 `height` 设为 100 逻辑像素，并重新运行。
+  **2.** 将 `SizedBox` widget 中的 `height` 设为 100 逻辑像素，并重新运行。
 
 {{site.alert.end}}
 
@@ -1490,7 +1489,7 @@ Future<void> main() async {
 {$ end test.dart $}
 ```
 
-#### Example: Creating space 
+#### Example: Creating space
 {:.no_toc}
 
 #### 样例：创建空间
@@ -1507,17 +1506,16 @@ Future<void> main() async {
   其中 第一个和第二个 `BlueBox` widget 包裹 `SizedBox`。
   `SizedBox` widget 的 `width` 设为 50 逻辑像素。
 
-1. Click the **Run** button.
+  **1.** Click the **Run** button.
 
-   点击**运行**按钮
+  **1.** 点击**运行**按钮
 
-1. Create more space by adding another
-   `SizedBox` widget (25 logical pixels wide) 
-   between the second and third `BlueBox` widgets,
-   and run again.
-
-   通过在第二个和第三个 `BlueBox` widget 之间
-   添加另一个 `SizedBox` widget (宽 25 逻辑像素)以创建更多空间。 
+  **2.** Create more space by adding another
+         `SizedBox` widget (25 logical pixels wide)
+         between the second and third `BlueBox` widgets,
+         and run again.
+  **2.** 通过在第二个和第三个 `BlueBox` widget 之间添加另一个
+  `SizedBox` widget (宽 25 逻辑像素) 以创建更多空间。 
 
 {{site.alert.end}}
 
@@ -1676,12 +1674,11 @@ can create space between widgets.
   Use `Spacer` when you want to create space using a `flex` property.
   Use `SizedBox` when you want to create space
   using a specific number of logical pixels.
-
   **SizedBox 和 Spacer 有何不同？**
   如果你想用 `flex` 属性创建一段空间，请使用 `Spacer`。
   如果你想创建一个拥有特定逻辑像素值的空间，请使用 `SizedBox`。
 
-{{site.alert.end}} 
+{{site.alert.end}}
 
 #### Example: Creating more space
 {:.no_toc}
@@ -1698,15 +1695,15 @@ can create space between widgets.
   下面的样例使用 `flex` 值为 1 的 `Spacer` widget，
   分隔最初的两个 `BlueBox` widget。
 
-1. Click the **Run** button.
+  **1.** Click the **Run** button.
 
-   点击**运行**按钮
+  **1.** 点击**运行**按钮
 
-1. Add another `Spacer` widget (also with a `flex` value of 1)
-   between the second and third `BlueBox` widgets.
+  **2.** Add another `Spacer` widget (also with a `flex` value of 1)
+         between the second and third `BlueBox` widgets.
 
-   在第二个和第三个 `BlueBox` widget 之间添加另一个 `Spacer` widget。 (flex 值仍然为 1 )
-
+  **2.** 在第二个和第三个 `BlueBox` widget 之间添加另一个 `Spacer` widget。
+      (flex 值仍然为 1)
 
 {{site.alert.end}}
 
@@ -1852,16 +1849,16 @@ for different fonts, sizes, and colors.
   下面的样例将会显示三次"Hey!"，但是使用不同的字体和不同颜色。
   特别指定 `Row` 的 `crossAxisAlignment` 和 `textBaseline` 属性。
 
-1. Click the **Run** button. 
+  **1.** Click the **Run** button.
 
-   点击**运行**按钮
+  **1.** 点击**运行**按钮
 
-1. Change `CrossAxisAlignment.center` to
-   `CrossAxisAlignment.baseline`, and run again.
+  **2.** Change `CrossAxisAlignment.center` to
+         `CrossAxisAlignment.baseline`, and run again.
 
-   将 `CrossAxisAlignment.center` 改为 `CrossAxisAlignment.baseline`，
+  **2.** 将 `CrossAxisAlignment.center` 改为 `CrossAxisAlignment.baseline`，
    然后再次运行。
-       
+
 {{site.alert.end}}
 
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
@@ -2004,21 +2001,21 @@ Flutter 将会为 [Material][] 和 [Cupertino][]
   下面的样例显示了来自 [Material Icon library][] 
   的红蓝 `Icons.widget` widget。
 
-1. Click the **Run** button. 
+  **1.** Click the **Run** button.
 
-   点击 **运行** 按钮
+  **1.** 点击 **运行** 按钮
 
-1. Add another `Icon` from the 
-   [Material Icon library][]
-   with a size of 50.
+  **2.** Add another `Icon` from the
+         [Material Icon library][]
+         with a size of 50.
 
-   添加另一个来自 [Material Icon library][]
+  **2.** 添加另一个来自 [Material Icon library][]
    的 `Icon` 并将其大小设为 50。
 
-1. Give the `Icon` a color of `Colors.amber` from the 
-   [Material Color palette][], and run again.  
+  **3.** Give the `Icon` a color of `Colors.amber` from the
+         [Material Color palette][], and run again.
 
-   给 `Icon` 设置一个来自 [Material Color palette][] 的
+  **3.** 给 `Icon` 设置一个来自 [Material Color palette][] 的
    `Colors.amber` 颜色，然后再次运行。
 
 {{site.alert.end}}
@@ -2157,19 +2154,19 @@ the following example uses an image from the network.
 
   **1.** Click the **Run** button.
 
-         点击 **运行** 按钮
+  **1.** 点击 **运行** 按钮
 
   **2.** Change the non-working URL to the actual URL:
 
-         将那个无法访问的 URL 更换成可以访问的 URL:
+  **2.** 将那个无法访问的 URL 更换成可以访问的 URL:
 
   `https://raw.githubusercontent.com/flutter/website/main/examples/layout/sizing/images/pic1.jpg`
 
   **3.** Then change `pic1.jpg` to `pic2.jpg` or `pic3.jpg`,
          and run again.
-         
-         然后将 `pic3.jpg` 改为 `pic1.jpg` 或 `pic2.jpg`，然后重新运行。
-         
+
+  **3.** 然后将 `pic3.jpg` 改为 `pic1.jpg` 或 `pic2.jpg`，然后重新运行。
+
 {{site.alert.end}}
 
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
@@ -2250,7 +2247,7 @@ Future<void> main() async {
 
 ## 综合练习
 
-You're almost at the end of this codelab. 
+You're almost at the end of this codelab.
 If you'd like to test your knowledge of the
 techniques that you've learned, why not apply
 those skills into building a Flutter UI that
@@ -2259,7 +2256,7 @@ displays a business card!
 你就要完成这个 codelab 了！如果你想要检验你刚学的知识，
 为何不讲这些结合起来，构建一个显示名片的 Flutter UI 呢！
 
-![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay1.png){:width="400px"}{:.text-center}
+ ![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay1.png){:width="400px"}{:.text-center}
 
 You'll break down Flutter's layout into parts,
 which is how you'd create a Flutter UI in the real world.
@@ -2275,7 +2272,7 @@ which is positioned to the left of the name and title.
 然后你将会在 `Column` 包裹一个含有 icon 的 `Row`，
 它将会被放在姓名和标题的左边。
 
-![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay2.png){:width="400px"}{:.text-center}
+ ![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay2.png){:width="400px"}{:.text-center}
 
 In [Part 2](#part-2), you'll wrap the `Row` in a `Column`,
 so the code contains a `Column` within a `Row` within a `Column`.
@@ -2291,7 +2288,7 @@ so it's displayed below the name, title, and icon.
 所以它看起来不错。最后，您将添加联系信息到最外面的`Column`的 children 中，
 所以它将显示在名称，标题和图标下方。
 
-![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay3.png){:width="400px"}{:.text-center}
+ ![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay3.png){:width="400px"}{:.text-center}
 
 In [Part 3](#part-3), you'll finish building
 the business card display by adding four more icons,
@@ -2300,7 +2297,7 @@ which are positioned below the contact information.
 在[第三部分](#part-3)，你将会完成添加了更多图标的名片，
 它们会被放在联系信息的下方。
 
-![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay4.png){:width="400px"}{:.text-center}
+ ![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay4.png){:width="400px"}{:.text-center}
 
 ### Part 1
 {:.no_toc}
@@ -2330,17 +2327,19 @@ which are positioned below the contact information.
   并将其 `style` 属性设为 `Theme.of(context).textTheme.headlineSmall`。
   </li>
   <li markdown="1">
-  <t>The second `Text` widget contains the title `Experienced Developer`.</t>
-  <t>第二个 `Text` widget 包含了标题 `Experienced Developer`。</t>
+  The second `Text` widget contains the title `Experienced App Developer`.
+
+  第二个 `Text` widget 包含了标题 `Experienced Developer`。
   </li>
 </ul>
- 
-  For the `Column`, 
-  set `mainAxisSize` to `MainAxisSize.min` 
-  and `crossAxisAlignment` to `CrossAxisAlignment.start`.  
+
+  For the `Column`,
+  set `mainAxisSize` to `MainAxisSize.min`
+  and `crossAxisAlignment` to `CrossAxisAlignment.start`.
 
   对于这个 `Column`，将其 `mainAxisSize` 设为 `MainAxisSize.min`，
   `crossAxisAlignment` 设为 `CrossAxisAlignment.start`。
+
 {{site.alert.end}}
 
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
@@ -2394,7 +2393,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: Center(
             child: Container(
               decoration: BoxDecoration(
@@ -2407,7 +2406,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: MyWidget(),
             ),
           ),
@@ -2495,22 +2494,26 @@ Future<void> main() async {
 
 <ul markdown="1">
   <li markdown="1">
-  <t>An `Icon` widget set to `Icons.account_circle`
-  and with a size of 50 pixels.</t>
-  <t>将一个 `Icon` widget 设为 `Icons.account_circle`，
-  并设为 50 像素大小。</t>
+  An `Icon` widget set to `Icons.account_circle`
+  and with a size of 50 pixels.
 
+  将一个 `Icon` widget 设为 `Icons.account_circle`，
+  并设为 50 像素大小。
   </li>
   <li markdown="1">
-  <t>A `Padding` widget that creates a space of 8
-  pixels around the `Icon` widget. 
+  A `Padding` widget that creates a space of 8
+  pixels around the `Icon` widget.
+
+  在 `Icon` widget外包裹一个 `Padding` widget 以在其周围创建 8 像素的空间。
+
   To do this, you can specify `const EdgeInsets.all(8.0)`
   for the `padding` property.
-  The `Row` should look like this: </t>
-  <t>在 `Icon` widget外包裹一个 `Padding` widget 以在其周围创建 8 像素的空间。
-  为了完成这个，你可以指定其 `padding` 属性为 `const EdgeInsets.all(8.0)`。
-  这个 `Row` 看上去会像这样：</t>
 
+  为了完成这个，你可以指定其 `padding` 属性为 `const EdgeInsets.all(8.0)`。
+
+  The `Row` should look like this:
+
+  这个 `Row` 看上去会像这样：
   </li>
 </ul>
 
@@ -2518,7 +2521,7 @@ Future<void> main() async {
      Row(
        children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: Icon(Icons.account_circle, size: 50),
         ),
         Column( ... ), // <--- The Column you first implemented
@@ -2561,7 +2564,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         const Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8),
           child: Icon(Icons.account_circle, size: 50),
         ),
         Column(
@@ -2596,7 +2599,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: Center(
             child: Container(
               decoration: BoxDecoration(
@@ -2761,9 +2764,9 @@ Future<void> main() async {
   * A second empty `Row` where you'll add
     four icons (Part 3).
 
-    第二个空的 `Row`，你将会添加四个图标。 (第三部分 )
+    第二个空的 `Row`，你将会添加四个图标。 (第三部分)
 
-  The `Column`'s list of widgets should be formatted as follows, 
+  The `Column`'s list of widgets should be formatted as follows,
   so the contact information and icons are displayed below the
   name and title:
   
@@ -3058,16 +3061,20 @@ Future<void> main() async {
 
 {{site.alert.secondary}}
 
-  Enter two `Text` widgets inside the first empty `Row`:
-  
+  Enter two `Text` widgets inside the first empty `Row` :
+
   在第一个空的 `Row` 中，添加两个 `Text` widget。
 
 <ul markdown="1">
-  <li markdown="1">  
-  <t>The first `Text` widget contains the address `123 Main Street`.</t><t>第一个 `Text` widget 包含了 `123 Main Street` 的地址。</t>
+  <li markdown="1">
+  The first `Text` widget contains the address `123 Main Street`.
+
+  第一个 `Text` widget 包含了 `123 Main Street` 的地址。
   </li>
   <li markdown="1">
-  <t>The second `Text` widget contains the phone number `(415) 555-0198`.</t><t>第二个 `Text` widget 包含了电话号`(415) 555-0198`。</t>
+  The second `Text` widget contains the phone number `(415) 555-0198`.
+
+  第二个 `Text` widget 包含了电话号 `(415) 555-0198`。
   </li>
 </ul>
 
@@ -3406,11 +3413,12 @@ Future<void> main() async {
 {:.no_toc}
 
 {{site.alert.secondary}}
+
   Enter the following `Icon` widgets inside the second empty `Row`:
 
   在第二个空的 `Row` 中添加以下四个 `Icon` widget。
 
-  * `Icons.accessibility` 
+  * `Icons.accessibility`
   * `Icons.timer`
   * `Icons.phone_android`
   * `Icons.phone_iphone`
@@ -3781,7 +3789,7 @@ here are a few suggestions for resources worth exploring:
 如果你想要了解关于 Flutter 的更多信息，这里有些值得探索的资源要推荐给你：
 
 * Learn more about layouts in Flutter by
-  visiting the [Building layouts][] page. 
+  visiting the [Building layouts][] page.
 
   在 [Building layouts][] 页面中学习关于 Flutter 的布局。
 
@@ -3797,9 +3805,12 @@ here are a few suggestions for resources worth exploring:
   访问 [Flutter's YouTube channel][]，你将能够观看大量
   专注于独立的 widget 以及开发者如何构建应用的视频。
 
-You can download Flutter from the [install][] page. 
+You can download Flutter from the [install][] page.
 
 你可以在 [安装][install] 页面中下载 Flutter。
+
+
+
 
 [Building layouts]: {{site.url}}/ui/layout
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html

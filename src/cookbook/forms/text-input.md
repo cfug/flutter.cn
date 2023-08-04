@@ -5,14 +5,9 @@ description: How to implement a text field.
 description: 如何实现一个文本框。
 tags: cookbook, 实用教程, 表格交互
 keywords: 文本框,实现,Flutter搜索框
-prev:
-  title: Build a form with validation
-  title: 构建一个有验证判断的表单
-  path: /docs/cookbook/forms/validation
-next:
-  title: Handle changes to a text field
-  title: 响应文本框内容的更改
-  path: /docs/cookbook/forms/text-field-changes
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/text_input/"?>

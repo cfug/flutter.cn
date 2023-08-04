@@ -160,7 +160,7 @@ For more information, see [Using the Dart analyzer][].
 
 ## 日志
 
-Another useful debugging tool is logging. 
+Another useful debugging tool is logging.
 You set logging up [programmatically][logging]
 then view the output in the DevTools
 [logging view][], or in the console.
@@ -380,11 +380,11 @@ prefer to use the debug flags directly, see
 
 ## 常见问题
 
-The following is a problem that some have encountered on macOS.
+The following is a problem that some have encountered on MacOS.
 
 下面是一些在 macOS 上遇到的问题。
 
-### "Too many open files" exception (macOS)
+### "Too many open files" exception (MacOS)
 
 ### "句柄数超出系统限制" 异常 (macOS)
 
@@ -506,9 +506,9 @@ You might find the following docs useful:
 
   [Flutter 性能分析][Flutter performance profiling]
 
-* [Using an OEM debugger][]
+* [Use a native debugger][]
 
-  [使用原生的调试器][Using an OEM debugger]
+  [使用原生的调试器][Use a native debugger]
 
 * [Flutter's modes][]
 
@@ -539,7 +539,7 @@ You might find the following docs useful:
 [Flutter's modes]: {{site.url}}/testing/build-modes
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [Performance best practices]: {{site.url}}/perf/best-practices
-[Using an OEM debugger]: {{site.url}}/testing/oem-debuggers
+[Use a native debugger]: {{site.url}}/testing/native-debugging
 
 [The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 
@@ -567,4 +567,4 @@ You might find the following docs useful:
 
 [WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
 [widget_inspector.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart
-[kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/master/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart
+[kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/main/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart

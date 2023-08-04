@@ -84,7 +84,7 @@ about evaluating and debugging Flutter's performance.
   有哪些特别消耗性能的操作是我需要注意的？
 
   * [`Opacity`][], [`Clip.antiAliasWithSaveLayer`][],
-    or anything that triggers [`saveLayer`][]
+     or anything that triggers [`saveLayer`][]
 
     [`Opacity`][]、[`Clip.antiAliasWithSaveLayer`][] 
     或任何能触发 [`saveLayer`][] 的操作。
@@ -124,7 +124,7 @@ about evaluating and debugging Flutter's performance.
     Select **Track widget rebuilds**,
     and your IDE displays which the widgets rebuild.
 
-    如果你使用 IntelliJ，就可以看见这些数据的 GUI 视图。
+    如果你使用 IntelliJ，就可以看见这些数据的视图。
     在 IntelliJ 的 Flutter Performance 工具中
     勾选 **Track widget rebuilds**，
     你就能在 IDE 中直观地看见哪些 widget 进行了重建。

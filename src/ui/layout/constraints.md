@@ -13,17 +13,18 @@ js:
 
 <?code-excerpt path-base="layout/constraints/"?>
 
+<img src='/assets/images/docs/ui/layout/article-hero-image.png'
+     class="mw-100" alt="Hero image from the article">
+
 {{site.alert.note}}
-  To better understand how Flutter implements layout
-  constraints, check out the following 5-minute video:
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/jckqXR5CrPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <p>Decoding Flutter: Unbounded height and width</p>
+  If you are experiencing specific layout errors,
+  you might check out [Common Flutter errors][].
 {{site.alert.end}}
 
-<img src='/assets/images/docs/ui/layout/article-hero-image.png' class="mw-100" alt="Hero image from the article">
+[Common Flutter errors]: {{site.url}}/testing/common-errors
 
 When someone learning Flutter asks you why some widget
-with `width:100` isn't 100 pixels wide,
+with `width: 100` isn't 100 pixels wide,
 the default answer is to tell them to put that widget
 inside of a `Center`, right?
 
@@ -165,16 +166,17 @@ The negotiation goes something like this:
 
 ## 限制
 
-As a result of the layout rule mentioned above,
-Flutter’s layout engine has a few important limitations:
+Flutter's layout engine is designed to be a one-pass process.
+This means that Flutter lays out its widgets very efficiently,
+but does result in a few limitations:
 
-正如上述所介绍的布局规则中所说的那样，
-Flutter 的布局引擎有一些重要限制：
+Flutter 的布局引擎的设计初衷是可以一次性完成整个布局的构建。
+这使得它非常高效，但同时会有一些限制：
 
 * A widget can decide its own size only within the
   constraints given to it by its parent.
-  This means a widget usually **can't have any
-  size it wants**.
+  This means a widget usually
+  **can't have any size it wants**.
 
   一个 widget 仅在其父级给其约束的情况下才能决定自身的大小。
   这意味着 widget 通常情况下 **不能任意获得其想要的大小**。
@@ -202,7 +204,65 @@ Flutter 的布局引擎有一些重要限制：
   如果子级想要拥有和父级不同的大小，然而父级没有足够的空间对其进行布局的话，
   子级的设置的大小可能会不生效。
   **这时请明确指定它的对齐方式**
-  
+
+In Flutter, widgets are rendered by their underlying
+[`RenderBox`][] objects. Many boxes in Flutter,
+especially those that just take a single child,
+pass their constraint on to their children.
+
+在 Flutter 世界中，widget 是由它们的 [`RenderBox`][] 对象进行实际渲染的。
+大部分特别是只有一个子节点的 box 会直接将限制传递下去。
+
+Generally, there are three kinds of boxes,
+in terms of how they handle their constraints:
+
+总的来说，box 分成以下几类，它们有不同的处理大小限制的方式：
+
+* Those that try to be as big as possible.
+  For example, the boxes used by [`Center`][] and
+  [`ListView`][].
+
+  尽可能地撑满。例如 [`Center`][] 和 [`ListView`][] 使用的 box。
+
+* Those that try to be the same size as their children.
+  For example, the boxes used by [`Transform`][] and
+  [`Opacity`][].
+
+  尽可能地保持与子节点一致。例如 [`Transform`][] 和 [`Opacity`][] 使用的 box。
+
+* Those that try to be a particular size.
+  For example, the boxes used by [`Image`][] and
+  [`Text`][].
+
+  尽可能地布局为指定大小。例如 [`Image`][] 和 [`Text`][] 使用的 box。
+
+Some widgets, for example [`Container`][],
+vary from type to type based on their constructor arguments.
+The [`Container`][] constructor defaults
+to trying to be as big as possible, but if you give it a `width`,
+for instance, it tries to honor that and be that particular size.
+
+像 [`Container`][] 这样的 widget 会根据不同的参数进行不同的布局。
+[`Container`][] 的默认构造会让其尽可能地撑满大小限制，
+但如果你设置了 `width`，它就会尽可能地遵照你设置的大小。
+
+Others, for example [`Row`][] and [`Column`][] (flex boxes)
+vary based on the constraints they are given,
+as described in the [Flex](#flex) section.
+
+其他像 [`Row`][] 和 [`Column`][]（Flex 系列）这样的 widget
+会根据它们的限制进行不同的布局。在 [Flex](#flex) 小节中有更详细的描述。
+
+[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
+[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
+[`Image`]: {{site.api}}/flutter/dart-ui/Image-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
+[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+[`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
+
 ## Examples
 
 ## 样例
@@ -349,7 +409,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                             Container(
                               width: 58,
                               padding:
-                                  const EdgeInsets.only(left: 4.0, right: 4.0),
+                                  const EdgeInsets.only(left: 4, right: 4),
                               child: button(i + 1),
                             ),
                         ],
@@ -363,7 +423,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                       child: SingleChildScrollView(
                         key: ValueKey(count),
                         child: Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10),
                           child: Column(
                             children: [
                               Center(child: Text(code)),
@@ -635,7 +695,7 @@ class Example8 extends Example {
   @override
   final code = 'Center(\n'
       '   child: Container(color: red\n'
-      '      padding: const EdgeInsets.all(20.0),\n'
+      '      padding: const EdgeInsets.all(20),\n'
       '      child: Container(color: green, width: 30, height: 30)))';
   @override
   final String explanation =
@@ -647,7 +707,7 @@ class Example8 extends Example {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20),
         color: red,
         child: Container(color: green, width: 30, height: 30),
       ),
@@ -847,8 +907,8 @@ class Example15 extends Example {
 
   @override
   final code = 'OverflowBox(\n'
-      '   minWidth: 0.0,'
-      '   minHeight: 0.0,'
+      '   minWidth: 0,'
+      '   minHeight: 0,'
       '   maxWidth: double.infinity,'
       '   maxHeight: double.infinity,'
       '   child: Container(color: red, width: 4000, height: 50));';
@@ -865,8 +925,8 @@ class Example15 extends Example {
   @override
   Widget build(BuildContext context) {
     return OverflowBox(
-      minWidth: 0.0,
-      minHeight: 0.0,
+      minWidth: 0,
+      minHeight: 0,
       maxWidth: double.infinity,
       maxHeight: double.infinity,
       child: Container(color: red, width: 4000, height: 50),
@@ -1046,7 +1106,7 @@ class Example22 extends Example {
   @override
   final code = 'FittedBox(\n'
       '   child: Container(\n'
-      '      height: 20.0, width: double.infinity));';
+      '      height: 20, width: double.infinity));';
   @override
   final String explanation =
       'FittedBox can only scale a widget that is BOUNDED (has non-infinite width and height).'
@@ -1056,7 +1116,7 @@ class Example22 extends Example {
   Widget build(BuildContext context) {
     return FittedBox(
       child: Container(
-        height: 20.0,
+        height: 20,
         width: double.infinity,
         color: Colors.red,
       ),
@@ -1351,6 +1411,8 @@ The examples are explained in the following sections.
 
 以下各节将介绍这些示例。
 
+[this GitHub repo]: {{site.github}}/marcglasberg/flutter_layout_article
+
 ### Example 1
 
 ### 样例 1
@@ -1506,14 +1568,13 @@ But why does the `Container` decide that?
 Simply because that’s a design decision by those who
 created the `Container` widget. It could have been
 created differently, and you have to read the
-[`Container` documentation][] to understand how it
-behaves, depending on the circumstances.
+[`Container`][] API documentation to understand
+how it behaves, depending on the circumstances.
 
 但是，为什么 `Container` 做出了这个决定？
 非常简单，因为这个决定是由 `Container` widget 的创建者决定的。
 可能会因创造者而异，而且你还得阅读 
-[`Container` 文档][`Container` documentation]
-来理解不同场景下它的行为。
+[`Container`][] API 文档来理解不同场景下它的行为。
 
 ### Example 7
 
@@ -1569,7 +1630,7 @@ entirely covers the red `Container`.
 ```dart
 Center(
   child: Container(
-    padding: const EdgeInsets.all(20.0),
+    padding: const EdgeInsets.all(20),
     color: red,
     child: Container(color: green, width: 30, height: 30),
   ),
@@ -1787,8 +1848,8 @@ the much dreaded "overflow warning".
 <?code-excerpt "lib/main.dart (Example15)" replace="/(return |;)//g"?>
 ```dart
 OverflowBox(
-  minWidth: 0.0,
-  minHeight: 0.0,
+  minWidth: 0,
+  minHeight: 0,
   maxWidth: double.infinity,
   maxHeight: double.infinity,
   child: Container(color: red, width: 4000, height: 50),
@@ -2016,7 +2077,7 @@ and breaks the line so that it fits the screen.
 ```dart
 FittedBox(
   child: Container(
-    height: 20.0,
+    height: 20,
     width: double.infinity,
     color: Colors.red,
   ),
@@ -2320,27 +2381,19 @@ as the `Scaffold` itself, you can wrap its child with
 如果你想要 `Scaffold` 的子级变得和 `Scaffold` 本身一样大的话，
 你可以将这个子级外包裹一个 `SizedBox.expand`。
 
-{{site.alert.note}}
+## Tight vs loose constraints
 
-  When a widget tells its child that it must be of
-  a certain size, we say the widget supplies _tight_
-  constraints to its child.
-
-  当一个 widget 告诉它的子级必须变成某个大小的时候，
-  我们通常称这个 widget 对其子级使用 **严格约束（tight）**。
-
-{{site.alert.end}}
-
-
-## Tight vs. loose constraints
-
-## 严格约束（Tight） vs 宽松约束（loose）
+## 严格约束 (Tight) 与 宽松约束 (loose)
 
 It’s very common to hear that some constraint is
-"tight" or "loose", so it’s worth knowing what that means.
+"tight" or "loose", so what does that mean?
 
 以后你经常会听到一些约束为严格约束或宽松约束，
 你花点时间来弄明白它们是值得的。
+
+### Tight constraints
+
+### 严格约束 (Tight)
 
 A _tight_ constraint offers a single possibility,
 an exact size. In other words, a tight constraint
@@ -2350,9 +2403,28 @@ and has its maximum height equal to its minimum height.
 严格约束给你了一种获得确切大小的选择。
 换句话来说就是，它的最大/最小宽度是一致的，高度也一样。
 
+An example of this is the `App` widget,
+which is contained by the [`RenderView`][] class:
+the box used by the child returned by the
+application's [`build`][] function is given a constraint
+that forces it to exactly fill the application's content area
+(typically, the entire screen).
+
+如果把 [`RenderView`][] 包含的 `App` widget 作为一个例子来看：
+[`build`][] 方法返回的子节点的 box 拥有上层节点传递的限制，
+它会撑满应用的整个内容区域（即整个屏幕）。
+
+Another example: if you nest a bunch of boxes inside
+each other at the root of your application's render tree,
+they'll all exactly fit in each other,
+forced by the box's tight constraints.
+
+另一个例子：如果你从根节点嵌套多个 box，
+它们会依次完全撑满，遵守严格约束。
+
 If you go to Flutter’s `box.dart` file and search for
-the `BoxConstraints` constructors, you'll find the
-following:
+the `BoxConstraints` constructors,
+you'll find the following:
 
 如果你到 Flutter 的 `box.dart` 文件中搜索
 `BoxConstraints` 构造器，你会发现以下内容：
@@ -2365,10 +2437,10 @@ BoxConstraints.tight(Size size)
      maxHeight = size.height;
 ```
 
-If you revisit [Example 2](#example-2) above,
-it tells us that the screen forces the red
-`Container` to be exactly the same size as the screen.
-The screen does that, of course, by passing tight
+If you revisit [Example 2](#example-2),
+the screen forces the red `Container` to be
+exactly the same size as the screen.
+The screen achieves that, of course, by passing tight
 constraints to the `Container`.
 
 如果你重新阅读 [样例 2](#example-2)，
@@ -2376,39 +2448,105 @@ constraints to the `Container`.
 为何屏幕能够做到这一点，
 原因就是给 `Container` 传递了严格约束。
 
-A _loose_ constraint, on the other hand,
-sets the **maximum** width and height, but lets the widget
-be as small as it wants. In other words,
-a loose constraint has a **minimum** width and height
-both equal to **zero**:
+### Loose constraints
 
-一个 **宽松** 约束，换句话来说就是设置了最大宽度/高度，
-但是让允许其子 widget 获得比它更小的任意大小。
-换句话来说，宽松约束的最小宽度/高度为 **0**。
+### 宽松约束 (loose)
 
-```dart
-BoxConstraints.loose(Size size)
-   : minWidth = 0.0,
-     maxWidth = size.width,
-     minHeight = 0.0,
-     maxHeight = size.height;
-```
+A _loose_ constraint is one that has a minimum
+of zero and a maximum non-zero.
 
-If you revisit [Example 3](#example-3), it tells us that the
-`Center` lets the red `Container` be smaller,
-but not bigger than the screen. The `Center` does that,
-of course, by passing loose constraints to the `Container`.
-Ultimately, the `Center`'s very purpose is to transform
-the tight constraints it got from its parent
+**宽松** 约束的最小宽度/高度为 **0**。
+
+Some boxes _loosen_ the incoming constraints,
+meaning the maximum is maintained but the
+minimum is removed, so the widget can have
+a **minimum** width and height both equal to **zero**.
+
+Ultimately, `Center`'s purpose is to transform
+the tight constraints it received from its parent
 (the screen) to loose constraints for its child
 (the `Container`).
+
+总的来说，`Center` 起的作用就是从其父级（屏幕）那里获得的严格约束，
+为其子级（`Container`）转换为宽松约束。
+
+If you revisit [Example 3](#example-3), 
+the `Center` allows the red `Container` to be smaller,
+but not bigger than the screen.
 
 如果你访问 [样例 3](#example-3)，
 它将会告诉我们 `Center` 让红色的 `Container` 变得更小，
 但是不能超出屏幕。`Center` 能够做到这一点的原因就在于
 给 `Container` 的是一个宽松约束。
-总的来说，`Center` 起的作用就是从其父级（屏幕）那里获得的严格约束，
-为其子级（`Container`）转换为宽松约束。
+
+[`build`]: {{site.api}}/flutter/widgets/State/build.html
+[`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
+
+<a id="unbounded"></a>
+## Unbounded constraints
+
+{{site.alert.note}}
+  You might be directed here if the framework
+  detects a problem involving box constraints.
+  The `Flex` section below might also apply.
+{{site.alert.end}}
+
+In certain situations,
+a box's constraint is _unbounded_, or infinite.
+This means that either the maximum width or
+the maximum height is set to [`double.infinity`][].
+
+A box that tries to be as big as possible won't
+function usefully when given an unbounded constraint and,
+in debug mode, throws an exception.
+
+The most common case where a render box ends up
+with an unbounded constraint is within a flex box
+([`Row`][] or [`Column`][]),
+and **within a scrollable region**
+(such as [`ListView`][] and other [`ScrollView`][] subclasses).
+
+[`ListView`][], for example,
+tries to expand to fit the space available
+in its cross-direction
+(perhaps it's a vertically-scrolling block and
+tries to be as wide as its parent).
+If you nest a vertically scrolling [`ListView`][]
+inside a horizontally scrolling `ListView`,
+the inner list tries to be as wide as possible,
+which is infinitely wide,
+since the outer one is scrollable in that direction.
+
+The next section describes the error you might
+encounter with unbounded constraints in a `Flex` widget.
+
+## Flex
+
+A flex box ([`Row`][] and [`Column`][]) behaves
+differently depending on whether its
+constraint is bounded or unbounded in
+its primary direction.
+
+A flex box with a bounded constraint in its
+primary direction tries to be as big as possible.
+
+A flex box with an unbounded constraint
+in its primary direction tries to fit its children
+in that space. Each child's `flex` value must be
+set to zero, meaning that you can't use
+[`Expanded`][] when the flex box is inside
+another flex box or a scrollable;
+otherwise it throws an exception.
+
+The _cross_ direction
+(width for [`Column`][] or height for [`Row`][]),
+must _never_ be unbounded,
+or it can't reasonably align its children.
+
+[`double.infinity`]: {{site.api}}/flutter/dart-core/double/infinity-constant.html
+[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
+[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
+[`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
 
 ## Learning the layout rules for specific widgets
 
@@ -2419,7 +2557,7 @@ Knowing the general layout rule is necessary, but it’s not enough.
 掌握通用布局是非常重要的，但这还不够。
 
 Each widget has a lot of freedom when applying the general rule,
-so there is no way of knowing what it will do by just reading
+so there is no way of knowing how it behaves by just reading
 the widget’s name.
 
 应用一般规则时，每个 widget 都具有很大的自由度，
@@ -2442,7 +2580,7 @@ of your IDE.
 布局源代码通常很复杂，因此阅读文档是更好的选择。
 但是当你在研究布局源代码时，可以使用 IDE 的导航功能轻松找到它。
 
-Here is an example:
+Here's an example:
 
 下面是一个例子：
 
@@ -2481,19 +2619,21 @@ Here is an example:
 <img src='/assets/images/docs/ui/layout/layout-final.png' class="mw-100" alt="A goodbye layout">
 
 
+
 ---
 
-Article by Marcelo Glasberg
+Original article by Marcelo Glasberg
 
 本文作者：Marcelo Glasberg
 
 Marcelo originally published this content as
-[Flutter: The Advanced Layout Rule Even Beginners Must Know][]
+[Flutter: The Advanced Layout Rule Even Beginners Must Know][article]
 on Medium. We loved it and asked that he allow us to publish
 in on docs.flutter.dev, to which he graciously agreed. Thanks, Marcelo!
 You can find Marcelo on [GitHub][] and [pub.dev][].
 
-Marcelo Glasberg 最初在 Medium 发表 [Flutter: The Advanced Layout Rule Even Beginners Must Know][] 本文。
+Marcelo 最初在 Medium 发表
+[Flutter: The Advanced Layout Rule Even Beginners Must Know][article] 本文。
 我们十分喜欢这篇文章，在征得他的允许后发布在 flutter.dev。再次感谢你，Marcelo!
 你可以找到 [GitHub][] 以及 [pub.dev][] 找到 Marcelo。
 
@@ -2502,10 +2642,25 @@ header image at the top of the article.
 
 同时，还要感谢 [Simon Lightfoot][] 创造了本文的标题图片。
 
-[`Container` documentation]: {{site.api}}/flutter/widgets/Container-class.html
-[DartPad instance]: {{site.dartpad}}/60174a95879612e500203084a0588f94
-[Flutter: The Advanced Layout Rule Even Beginners Must Know]: {{site.medium}}/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
+[article]: {{site.medium}}/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
 [GitHub]: {{site.github}}/marcglasberg
 [pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages
 [Simon Lightfoot]: {{site.github}}/slightfoot
-[this GitHub repo]: {{site.github}}/marcglasberg/flutter_layout_article
+
+{{site.alert.note}}
+
+  To better understand how Flutter implements layout
+  constraints, check out the following 5-minute video:
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jckqXR5CrPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <p>Decoding Flutter: Unbounded height and width</p>
+
+  想要更好的了解 Flutter 如何实现布局限制，
+  你可以观看这段 5 分钟的视频：
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jckqXR5CrPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+  Decoding Flutter: Unbounded height and width
+
+  解构 Flutter：不受限制的高度和宽度
+
+{{site.alert.end}}
+

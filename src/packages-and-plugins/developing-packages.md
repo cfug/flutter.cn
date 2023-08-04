@@ -13,8 +13,8 @@ keywords: 插件开发,Flutter插件教程
 
 ## Package 介绍
 
-Packages enable the creation of modular code that can be shared easily. A
-minimal package consists of the following:
+Packages enable the creation of modular code that can be shared easily.
+A minimal package consists of the following:
 
 通过使用 package（的模式）可以创建易于共享的模块化代码。
 一个最基本的 package 由以下内容构成：
@@ -277,7 +277,7 @@ A federated plugin requires the following packages:
   除非它们带有一些终端用户需要的特殊平台功能，否则它们不会包含在应用中。
 
 **platform interface package**
-<br> The package that glues the app-facing packing
+<br> The package that glues the app-facing package
   to the platform package(s). This package declares an
   interface that any platform package must implement to
   support the app-facing package. Having a single package
@@ -369,12 +369,6 @@ flutter:
         pluginClass: HelloPlugin
       ios:
         pluginClass: HelloPlugin
-
-environment:
-  sdk: ">=2.1.0 <3.0.0"
-  # Flutter versions prior to 1.12 did not support the
-  # flutter.plugin.platforms map.
-  flutter: ">=1.12.0"
 ```
 
 When adding plugin implementations for more platforms, the `platforms` map
@@ -398,12 +392,6 @@ flutter:
       web:
         pluginClass: HelloPlugin
         fileName: hello_web.dart
-
-environment:
-  sdk: ">=2.1.0 <3.0.0"
-  # Flutter versions prior to 1.12 did not support the
-  # flutter.plugin.platforms map.
-  flutter: ">=1.12.0"
 ```
 
 #### Federated platform packages
@@ -500,7 +488,7 @@ environment:
   flutter: ">=3.7.0"
 ```
 
-When `sharedDawninSource` is enabled, instead of
+When `sharedDarwinSource` is enabled, instead of
 an `ios` directory for iOS and a `macos` directory
 for macOS, both platforms use a shared `darwin`
 directory for all code and resources. When enabling
@@ -510,7 +498,7 @@ also need to update the podspec file to set the
 dependencies and deployment targets for both platforms,
 for example:
 
-当 `sharedDawninSource` 启用时，
+当 `sharedDarwinSource` 启用时，
 iOS 的 `ios` 目录和 macOS 的 `macos` 目录将被共享的 `darwin` 目录取代，
 此目录包含所有的代码和资源。启用此选项后，
 你需要将任何现有的 `ios` 和 `macos` 文件移动到共享目录。
@@ -533,9 +521,11 @@ flag with `flutter create`.
 想要创建原生插件 package，
 请使用带有 `--template=plugin` 标志的 `flutter create` 命令。
 
-Use the `--platforms=` option followed by a comma separated list to specify the
-platforms that the plugin supports. Available platforms are: `android`, `ios`,
-`web`, `linux`, `macos`, and `windows`. If no platforms are specified, the
+Use the `--platforms=` option followed by a
+comma-separated list to specify the platforms
+that the plugin supports. Available platforms are:
+`android`, `ios`, `web`, `linux`, `macos`, and `windows`.
+If no platforms are specified, the
 resulting project doesn't support any platforms.
 
 你可以使用 `--platforms=` 命令行选项指定插件支持的平台，
@@ -551,10 +541,11 @@ generated plugin code.
 使用 `--org` 选项，以反向域名表示法来指定你的组织。
 该值用于生成的 Android 及 iOS 代码。
 
-Use the `-a` option to specify the language for android or the `-i` option to
-specify the language for ios. Please choose **one** of the following:
+Use the `-a` option to specify the language for android
+or the `-i` option to specify the language for ios.
+Please choose **one** of the following:
 
-使用 `-a` 选项指定 Android 的语言，或使用 `-i` 选项指定 iOS 的语言。 
+使用 `-a` 选项指定 Android 的语言，或使用 `-i` 选项指定 iOS 的语言。
 请选择以下 **任一项**：
 
 ```terminal
@@ -658,8 +649,8 @@ Then use the following steps:
 1. Launch Android Studio.
 
    启动 Android Studio；
-   
-1. Select **Open an existing Android Studio Project** 
+
+1. Select **Open an existing Android Studio Project**
    in the **Welcome to Android Studio** dialog,
    or select **File > Open** from the menu,
    and select the `hello/example/android/build.gradle` file.
@@ -842,9 +833,37 @@ You can run the example app by pressing the run (&#9654;) button.
 
 你可以点击运行 &#9654; 按钮来运行示例程序。
 
-#### Step 2d: Connect the API and the platform code
+#### Step 2f: Add Windows platform code (.h+.cpp)
 
 #### 步骤 2d：关联 API 和平台代码
+
+We recommend you edit the Windows code using Visual Studio.
+
+Before editing the Windows platform code in Visual Studio,
+first make sure that the code has been built at least once
+(in other words, run the example app from your IDE/editor,
+or in a terminal execute
+`cd hello/example; flutter build windows`).
+
+Then use the following steps:
+
+1. Launch Visual Studio.
+1. Select **Open a project or solution**, and select the
+   `hello/example/build/windows/hello_example.sln` file.
+
+The Windows platform code for your plugin is located in
+`hello_plugin/Source Files` and `hello_plugin/Header Files` in
+the Solution Explorer.
+
+You can run the example app by right-clicking `hello_example` in
+the Solution Explorer and selecting **Set as Startup Project**,
+then pressing the run (&#9654;) button. **Important:** After
+making changes to plugin code, you must select
+**Build > Build Solution** before running again, otherwise
+an outdated copy of the built plugin will be run instead
+of the latest version containing your changes.
+
+#### Step 2g: Connect the API and the platform code
 
 Finally, you need to connect the API written in Dart code with
 the platform-specific implementations.
@@ -859,7 +878,8 @@ interface package.
 
 ### 为现有的插件项目加入平台的支持
 
-To add support for specific platforms to an existing plugin project, run `flutter create` with
+To add support for specific platforms to an
+existing plugin project, run `flutter create` with
 the `--template=plugin` flag again in the project directory.
 For example, to add web support in an existing plugin, run:
 
@@ -871,8 +891,8 @@ For example, to add web support in an existing plugin, run:
 $ flutter create --template=plugin --platforms=web .
 ```
 
-If this command displays a message about updating the `pubspec.yaml` file,
-follow the provided instructions.
+If this command displays a message about updating the
+`pubspec.yaml` file, follow the provided instructions.
 
 如果这个命令返回了一个关于需要更新 `pubspec.yaml` 文件的提醒，
 请按照提示的说明进行操作。
@@ -929,9 +949,9 @@ flutter:
 
 In this version you would have no C++ Windows code, and would instead
 subclass the `hello` plugin's Dart platform interface class with a
-`HelloPluginWindows` class that includes a static `registerWith()` method.
-This method will be called during startup, and can be used to register the
-Dart implementation:
+`HelloPluginWindows` class that includes a static
+`registerWith()` method.  This method is called during startup,
+and can be used to register the Dart implementation:
 
 在这样的模式下，插件内不包含 Windows 的 C++ 代码，
 它将继承 `hello` 插件的 Dart 平台接口，使用包含静态 `registerWith()`
@@ -1002,7 +1022,7 @@ check out [Flutter in plugin tests][].
 要了解更多关于测试你的插件的信息，请查阅 [测试插件][Testing plugins]。
 如果你正在为你的 Flutter 应用编写测试，并且插件导致崩溃，请查看 [在插件测试中的 Flutter][Flutter in plugin tests]。
 
-[Flutter in plugin tests]: {{site.url}}/packages-and-plugins/plugins-in-tests
+[Flutter in plugin tests]: {{site.url}}/testing/plugins-in-tests
 [Testing plugins]: {{site.url}}/testing/testing-plugins
 
 ## Developing FFI plugin packages {#plugin-ffi}
@@ -1047,24 +1067,25 @@ use the `--template=plugin_ffi` flag with `flutter create`:
 $ flutter create --template=plugin_ffi hello
 ```
 
-This creates a FFI plugin project in the `hello`
+This creates an FFI plugin project in the `hello`
 folder with the following specialized content:
 
 上面的指令执行完成后，会在 `hello` 文件夹中创建一个 FFI 插件项目，
 主要结构说明如下：
 
-**lib**: The Dart code that defines the API of the plugin, and which
-calls into the native code using `dart:ffi`.
+**lib**: The Dart code that defines the API of the plugin,
+  and which calls into the native code using `dart:ffi`.
 
 **lib**：定义插件 API 的 Dart 代码，使用 `dart:ffi` 调用本地原生代码。
 
-**src**: The native source code, and a `CMakeLists.txt` file for building
-that source code into a dynamic library.
+**src**: The native source code, and a `CMakeLists.txt`
+  file for building that source code into a dynamic library.
 
 **src**：本地原生源代码，以及一个用于将源代码构建为动态库的 `CMakeLists.txt` 文件。
 
-**platform folders** (`android`, `ios`, `windows`, etc.): The build files
-for building and bundling the native code library with the platform application.
+**platform folders** (`android`, `ios`, `windows`, etc.): The
+  build files for building and bundling the native code
+  library with the platform application.
 
 **平台文件夹**（`android`、`ios`、`windows` 等等）：
 用于构建本地原生代码库并与不同平台应用程序绑定。
@@ -1084,13 +1105,15 @@ The `pubspec.yaml` specifies FFI plugins as follows:
         ffiPlugin: true
 ```
 
-This configuration invokes the native build for the various target platforms
-and bundles the binaries in Flutter applications using these FFI plugins.
+This configuration invokes the native build
+for the various target platforms and bundles
+the binaries in Flutter applications using these FFI plugins.
 
 上面这种配置调用了各个目标平台的本地原生构建，
 并使 FFI 插件将二进制文件绑定在 Flutter 应用程序中。
 
-This can be combined with `dartPluginClass`, such as when FFI is used for the
+This can be combined with `dartPluginClass`,
+such as when FFI is used for the
 implementation of one platform in a federated plugin:
 
 这可以与 `dartPluginClass` 结合使用，
@@ -1117,7 +1140,8 @@ A plugin can have both FFI and method channels:
         ffiPlugin: true
 ```
 
-The native build systems that are invoked by FFI (and method channels) plugins are:
+The native build systems that are invoked by FFI
+(and method channels) plugins are:
 
 被 FFI（和方法通道）插件调用的本地原生构建系统是：
 
@@ -1129,7 +1153,7 @@ The native build systems that are invoked by FFI (and method channels) plugins a
 
     请查看 `android/build.gradle` 中的文档。
 
-* For iOS and MacOS: Xcode, via CocoaPods.
+* For iOS and macOS: Xcode, via CocoaPods.
 
   iOS 和 MacOS：是 Xcode，通过 CocoaPods 进行本地原生构建。
 
@@ -1163,7 +1187,7 @@ To use the native code, bindings in Dart are needed.
 
 To avoid writing these by hand, they are generated from the header file
 (`src/hello.h`) by [`package:ffigen`][].
-Regenerate the bindings by running:
+Regenerate the bindings by running the following:
 
 为了避免手工编写，它们由头文件 (`src/hello.h`) 中的 [`package:ffigen`][] 生成。
 运行以下指令重新生成绑定：
@@ -1176,14 +1200,16 @@ $  flutter pub run ffigen --config ffigen.yaml
 
 ### 第 4 步：调用本地原生代码
 
-Very short-running native functions can be directly invoked from any isolate.
+Very short-running native functions can be directly
+invoked from any isolate.
 For an example, see `sum` in `lib/hello.dart`.
 
 运行时间很短的本地原生函数可以在任何 isolate 中直接调用。
 例如，请查看 `lib/hello.dart` 中的 `sum`。
 
-Longer-running functions should be invoked on a [helper isolate][] to avoid
-dropping frames in Flutter applications.
+Longer-running functions should be invoked on a
+[helper isolate][] to avoid dropping frames in
+Flutter applications.
 For an example, see `sumAsync` in `lib/hello.dart`.
 
 运行时间较长的本地原生函数应在 [helper isolate][] 上调用，
@@ -1273,21 +1299,23 @@ For tips on how to write API documentation, see
 
 ### 将许可证添加到 LICENSE 文件中
 
-Individual licenses inside each LICENSE file should
-be separated by 80 hyphens on their own on a line.
+Individual licenses inside each LICENSE file
+should be separated by 80 hyphens
+on their own on a line.
 
 每个 LICENSE 文件中的各个许可证应由 80 个短线字符组成的线段进行分割。
 
-If a LICENSE file contains more than one component license,
-then each component license must start with the names of the
+If a LICENSE file contains more than one
+component license, then each component
+license must start with the names of the
 packages to which the component license applies,
-with each package name on its own line, and the
-list of package names separated from the actual
-license text by a blank line.
-(The packages need not match the names of the pub package.
-For example, a package might itself contain code from
-multiple third-party sources, and might need to include
-a license for each one.)
+with each package name on its own line,
+and the list of package names separated from
+the actual license text by a blank line.
+(The packages need not match the names of
+the pub package. For example, a package might itself contain
+code from multiple third-party sources,
+and might need to include a license for each one.)
 
 如果 LICENSE 文件中包含多个组件许可证，那么每个组件许可证必须以其所在 package
 的名称开始，每个 package 名称单独一行显示，并且 package
@@ -1386,10 +1414,10 @@ consider including the following items:
 `CHANGELOG.md`，确保它们完整且正确，另外，为了提高 package 的可用性，
 可以考虑加入如下的内容：
 
-* Diverse code usage 
+* Diverse code usage examples
 
   代码的示例用法
-  
+
 * Screenshots, animated gifs, or videos
 
   屏幕截图，GIF 动画或者视频
@@ -1568,6 +1596,6 @@ PENDING
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[unit tests]: {{site.url}}/testing#unit-tests
+[unit tests]: {{site.url}}/testing/overview#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c

@@ -5,14 +5,6 @@ description: How to implement named routes for navigating between screens.
 description: 如何实现用于导航的命名路由。
 tags: cookbook, 实用教程, 路由
 keywords: 页面跳转
-prev:
-  title: Navigate to a new screen and back
-  title: 导航到一个新页面和返回
-  path: /docs/cookbook/navigation/navigation-basics
-next:
-  title: Pass arguments to a named route
-  title: 给特定的 route 传参
-  path: /docs/cookbook/navigation/navigate-with-arguments
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

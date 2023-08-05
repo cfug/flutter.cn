@@ -152,6 +152,8 @@ C/C++ 源代码会被创建至 `native_add/src`。
 The FFI library can only bind against C symbols,
 so in C++ these symbols are marked `extern "C"`.
 
+FFI 库只能绑定 C 语言的符号，所以 C++ 语言的符号会被标记为 `extern "C"`。
+
 You should also add attributes to indicate that the
 symbols are referenced from Dart,
 to prevent the linker from discarding the symbols

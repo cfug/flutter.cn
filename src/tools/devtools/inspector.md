@@ -30,8 +30,8 @@ The inspector helps you visualize and explore Flutter widget
 trees, and can be used for the following:
 
 Flutter widget inspector 是一个强大的工具，用于可视化和查看 widget 树。
-Flutter 框架层使用 widgets 作为 [核心构建模块][core building block]
-来处理从控件（例如文本、按钮和切换等）到布局（例如居中、填充、行和列等）的所有内容。
+Flutter 框架层使用 widgets 作为核心构建模块来处理从控件
+（例如文本、按钮和切换等）到布局（例如居中、填充、行和列等）的所有内容。
 Flutter inspector 不仅可以帮助你可视化查看 Flutter widget 树，还有其他的作用：
 
 * understanding existing layouts

@@ -1129,7 +1129,7 @@ to your app.
 [Handling gestures][]
 <br> How to create a button and make it respond to input.
 
-[处理手势][Handling gestures]，[widgets 介绍][Introduction to widgets] 文档中一部分
+[处理手势][Handling gestures]
 <br> 如何创建一个按钮并使其响应用户动作。
 
 [Gestures in Flutter][]

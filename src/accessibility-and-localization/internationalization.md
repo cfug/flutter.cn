@@ -1181,7 +1181,7 @@ localized resources](#alternative-class) section
 describes [an example][] that doesn't depend on the `intl` package.
 
 这个示例是基于 [`intl`][] package 提供的 API 和 工具开发的，
-[app 本地化资源的替代方法][#alternative-class]
+[app 本地化资源的替代方法](#alternative-class)
 里面讲解了一个不依赖于 intl package 的 [示例][an example]。
 
 The `DemoLocalizations` class defined below
@@ -1242,7 +1242,7 @@ In this case that would just be the `DemoLocalizations` class.
 基于 `intl` package 的类引入了一个生成好的信息目录，
 它提供了 `initializeMessage()` 方法和 `Intl.message()` 方法的
 每个语言环境的备份存储。
-[`intl` 工具][`intl` tool] 通过分析包含 `Intl.message()`
+[`intl` 工具](#dart-tools) 通过分析包含 `Intl.message()`
 调用类的源码生成这个信息目录。在当前情况下，
 就是 DemoLocalizations 的类（包含了 `Intl.message()` 调用）。
 

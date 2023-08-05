@@ -1235,7 +1235,7 @@ iOS and Android. For more information, see the free Medium article
 
 可以，你可以在 iOS 和 Android 后台进程中运行 Dart 代码。
 有关更多信息，你可以查看在 Medium 上的文章：
-[使用 Flutter 插件和 Geofencing 在后台运行 Dart 代码][Executing Dart in the Background with Flutter Plugins and Geofencing]。
+[使用 Flutter 插件和 Geofencing 在后台运行 Dart 代码][backgnd]。
 
 [backgnd]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 
@@ -1469,9 +1469,8 @@ Flutter 是一个多范式的编程环境。过去几十年中许多编程技术
   从而实现更复杂的效果。
   绝大多数 Flutter widget 都是用这种方法构建的。
   比如 Material [`TextButton`][] 类是基于
-  [`MaterialButton`][] 类构建的，
-  而这个类则是由 [`IconTheme`][]、[`InkWell`][]、[`Padding`][]、
-  [`Center`][]、[`Material`][]、[`AnimatedDefaultTextStyle`][]
+  [`IconTheme`][]、[`InkWell`][]、[`Padding`][]、[`Center`][]、
+  [`Material`][]、[`AnimatedDefaultTextStyle`][]
   以及 [`ConstrainedBox`][] 组合而成的。
   而 [`InkWell`][] 则是由 [`GestureDetector`][] 组成，
   [`Material`][] 则是由
@@ -1767,7 +1766,7 @@ If you're interested in contributing code, you can start
 by reading our [Contributing guide][], and check out our
 list of [easy starter issues][].
 
-如果您打算为 Flutter 贡献代码，请先阅读 [代码贡献指南][Contributing gide]，
+如果您打算为 Flutter 贡献代码，请先阅读 [代码贡献指南][Contributing guide]，
 然后从 [简单待修复问题][easy starter issues] 列表中寻找力所能及的问题开始入手。
 
 Finally, you can connect with helpful Flutter communities.

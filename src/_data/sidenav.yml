@@ -616,8 +616,6 @@
       permalink: /docs/resources/bug-reports
     - title: 为 Flutter 做出贡献
       permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
-    - title: 设计文档
-      permalink: /docs/resources/design-docs
     - header: 工具包
     - title: 休闲游戏工具包
       permalink: /docs/resources/games-toolkit

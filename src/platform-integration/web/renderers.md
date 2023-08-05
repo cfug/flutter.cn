@@ -15,21 +15,21 @@ your needs. The two renderers are:
 你可以选择两种不同的渲染器来运行和构建 Web 应用。下文介绍两种渲染器以及它们的适用场景。
 
 **HTML renderer**
-<br> Uses a combination of HTML elements, CSS, Canvas elements, and SVG elements.
-This renderer has a smaller download size.
+<br> This renderer, which has a smaller download size than the CanvasKit renderer, uses a combination of
+  HTML elements, CSS, Canvas elements, and SVG elements.
 
 **使用 HTML 渲染**
-<br> 使用 HTML，CSS，Canvas 和 SVG 元素来渲染，应用的大小相对较小。
+<br> 使用 HTML，CSS，Canvas 和 SVG 元素来渲染，应用的大小相对 CanvasKit 较小。
 
 **CanvasKit renderer**
-<br> This renderer is fully consistent with Flutter mobile and desktop, has
-  faster performance with higher widget density, but adds about 2MB in
-  download size.
+<br> This renderer is fully consistent with Flutter mobile and desktop, has faster
+  performance with higher widget density, but adds about 1.5MB in download size.
+  [CanvasKit][canvaskit] uses WebGL to render Skia paint commands.
 
 **使用 CanvasKit 渲染**
 <br> 应用在移动和桌面端保持一致，
-有更好的性能，以及降低不同浏览器渲染效果不一致的风险。但是应用的大小会增加大约 2MB。
-  
+  有更好的性能，以及降低不同浏览器渲染效果不一致的风险。但是应用的大小会增加大约 2MB。
+
 ## Command line options
 
 ## 命令行参数
@@ -57,8 +57,11 @@ This flag can be used with the `run` or `build` subcommands. For example:
 
 此选项适用于 `run` 和 `build` 命令。例如：
 
-```
+```terminal
 flutter run -d chrome --web-renderer html
+```
+
+```terminal
 flutter build web --web-renderer canvaskit
 ```
 
@@ -85,24 +88,33 @@ To override the web renderer at runtime:
   准备一个 `renderer` 属性设定为 `"canvaskit"` 或 `"html"` 的配置对象。
 
 * Pass that object to the `engineInitializer.initializeEngine(configuration);`
-  method on your [Flutter Web app initialization][web-app-init].
+  method in the [Flutter Web app initialization][web-app-init] script.
 
   将这个对象在 [Flutter Web 应用初始化][web-app-init] 的时候传给 
   `engineInitializer.initializeEngine(configuration);` 方法。
 
-```javascript
-let useHtml = // ...
-_flutter.loader.loadEntrypoint({
-  onEntrypointLoaded: async function(engineInitializer) {
-    // Run-time engine configuration
-    let config = {
-      renderer: useHtml ? "html" : "canvaskit",
-    }
-    let appRunner = await engineInitializer.initializeEngine(config);
+```html
+<body>
+  <script>
+    let useHtml = true;
 
-    await appRunner.runApp();
-  }
-});
+    window.addEventListener('load', function(ev) {
+    _flutter.loader.loadEntrypoint({
+      serviceWorker: {
+        serviceWorkerVersion: serviceWorkerVersion,
+      },
+      onEntrypointLoaded: function(engineInitializer) {
+        let config = {
+          renderer: useHtml ? "html" : "canvaskit",
+        };
+        engineInitializer.initializeEngine(config).then(function(appRunner) {
+          appRunner.runApp();
+        });
+      }
+    });
+  });
+  </script>
+</body>
 ```
 
 The web renderer can't be changed after the Flutter engine startup process
@@ -122,9 +134,6 @@ Flutter engine 启动之后无法再在 `main.dart.js` 更换 web 渲染器。
   有关详细信息，请查看 [自定义 Web 应用程序初始化][web-app-init]。
   
 {{site.alert.end}}
-
-[web-app-init]: {{site.url}}/platform-integration/web/initialization
-
 
 ## Choosing which option to use
 
@@ -173,7 +182,7 @@ Build your app in release mode, using just the CanvasKit renderer:
 flutter build web --web-renderer canvaskit --release
 ```
 
-Run your app in profile mode using the HTML renderer:
+Run  your app in profile mode using the HTML renderer:
 
 使用 HTML 渲染器构建应用（发布模式）：
 
@@ -181,4 +190,6 @@ Run your app in profile mode using the HTML renderer:
 flutter run -d chrome --web-renderer html --profile
 ```
 
+[canvaskit]: https://skia.org/docs/user/modules/canvaskit/
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[web-app-init]: {{site.url}}/platform-integration/web/initialization

@@ -3,18 +3,19 @@
 ### 更新你的环境变量
 
 You can update your PATH variable for the current session at
-the command line, as shown in [Get the Flutter SDK][].
-You'll probably want to update this variable permanently,
-so you can run `flutter` commands in any terminal session.
+the command line, as shown in step 3 of [Get the Flutter SDK][].
+To update this variable permanently so you can run
+`flutter` commands in _any_ terminal session,
+use the following instructions.
 
 与 [获取 Flutter SDK][Get the Flutter SDK] 中说的一样，
 你可以通过命令行更新当前窗口的环境变量。
 但你也许会想要让它一直生效，在任何终端中都可以运行 `flutter` 命令。
 
-The steps for modifying this variable permanently for
-all terminal sessions are machine-specific.
-Typically you add a line to a file that is executed
-whenever you open a new window. For example:
+The steps for modifying the `PATH` variable
+_all_ subsequent terminal sessions are machine-specific.
+Typically, you add a line to a shell script file that
+executes whenever you open a new window. For example:
 
 下面是更改环境变量的详细步骤，这将会对所有终端生效，且仅在该机器上生效。
 通常，每当你打开一个新的窗口，都会将一行添加到执行的文件。例如：
@@ -35,9 +36,9 @@ whenever you open a new window. For example:
     例如，Linux 默认使用 Bash shell，所以编辑 `$HOME/.bashrc` 文件。
     如果你使用不同的 shell，那么在你电脑上的文件路径以及文件名必须不同。
 
- 3. Add the following line and change
-    `[PATH_OF_FLUTTER_GIT_DIRECTORY]` to be
-    the path of your clone of the Flutter git repo:
+ 3. Add the following line, changing the
+    `[PATH_OF_FLUTTER_GIT_DIRECTORY]` to
+    the path of your copy of the Flutter SDK:
 
     并将下面命令行里 `[PATH_OF_FLUTTER_GIT_DIRECTORY]`
     修改为你通过 `git clone` 命令检出的 Flutter 仓库目录地址，
@@ -73,12 +74,12 @@ whenever you open a new window. For example:
 
 {% include docs/dart-tool.md %}
 
-### Update path directly
+### Update the path directly
 
 ### 直接更新环境变量
 
-In some cases, your distribution may not permanently acquire
-the path when using the above directions. When this occurs,
+In some cases, your distribution might not permanently acquire
+the path when using the previous directions. When this occurs,
 you can change the environment variables file directly.
 These instructions require administrator privileges:
 

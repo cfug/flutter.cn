@@ -5,14 +5,6 @@ description: How to return data from a new screen.
 description: 如何从新页面返回数据。
 tags: cookbook, 实用教程, 路由
 keywords: 传参, 回传数据
-prev:
-  title: Set up universal links for iOS
-  title: 为 iOS 设定通用链接
-  path: /docs/cookbook/navigation/set-up-universal-links
-next:
-  title: Send data to a new screen
-  title: 传递数据到新页面
-  path: /docs/cookbook/navigation/passing-data
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -169,7 +161,7 @@ class SelectionScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 onPressed: () {
                   // Pop here with "Yep"...
@@ -178,7 +170,7 @@ class SelectionScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 onPressed: () {
                   // Pop here with "Nope"...
@@ -365,7 +357,7 @@ class SelectionScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 onPressed: () {
                   // Close the screen and return "Yep!" as the result.
@@ -375,7 +367,7 @@ class SelectionScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 onPressed: () {
                   // Close the screen and return "Nope." as the result.

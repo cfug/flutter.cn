@@ -1,12 +1,6 @@
 ---
 title: Create a scrolling parallax effect
 description: How to implement a scrolling parallax effect.
-prev:
-  title: Create a photo filter carousel
-  path: /docs/cookbook/effects/photo-filter-carousel
-next:
-  title: Create a shimmer loading effect
-  path: /docs/cookbook/effects/shimmer-loading
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -110,9 +104,11 @@ class LocationListItem extends StatelessWidget {
   }
 
   Widget _buildParallaxBackground(BuildContext context) {
-    return Image.network(
-      imageUrl,
-      fit: BoxFit.cover,
+    return Positioned.fill(
+      child: Image.network(
+        imageUrl,
+        fit: BoxFit.cover,
+      ),
     );
   }
 

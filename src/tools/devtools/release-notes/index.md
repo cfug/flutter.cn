@@ -12,6 +12,8 @@ Flutter and Dart DevTools
 
 本篇链接的是 Flutter 和 Dart DevTools 的公告和发行注记。
 
+* [2.25.0 release notes][]
+* [2.24.0 release notes][]
 * [2.23.1 release notes][]
 * [2.22.2 release notes][]
 * [2.21.1 release notes][]
@@ -30,6 +32,8 @@ Flutter and Dart DevTools
 * [2.8.0 release notes][]
 * [2.7.0 release notes][]
 
+[2.25.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.25.0
+[2.24.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.24.0
 [2.23.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.23.1
 [2.22.2 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.22.2
 [2.21.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.21.1

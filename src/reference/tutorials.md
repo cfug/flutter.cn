@@ -25,7 +25,7 @@ Choose from the following:
   [Flutter 布局构建教程]({{site.url}}/ui/layout/tutorial)
   <br> 使用 Flutter 构建基础的布局，领会基本布局机制。你可以通过截图示例构建应用的布局结构。
 
-* [Adding interactivity to your Flutter app]({{site.url}}/ui/interactive)
+* [Adding interactivity to your Flutter app]({{site.url}}/ui/interactivity)
 <br> You'll extend the simple layout app created in
   "Building Layouts in Flutter" to make an icon tappable.
   Different ways of managing a widget's state are also discussed.

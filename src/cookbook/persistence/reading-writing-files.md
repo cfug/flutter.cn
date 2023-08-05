@@ -5,34 +5,26 @@ description: How to read from and write to files on disk.
 description: 如何读写硬盘上的文件。
 tags: cookbook, 实用教程, 持久化
 keywords: 文件读写,临时文件夹,Documents目录
-prev:
-  title: Persist data with SQLite
-  title: 用 SQLite 做数据持久化
-  path: /docs/cookbook/persistence/sqlite
-next:
-  title: Store key-value data on disk
-  title: 存储键值对数据
-  path: /docs/cookbook/persistence/key-value
 ---
 
 <?code-excerpt path-base="cookbook/persistence/reading_writing_files/"?>
 
 In some cases, you need to read and write files to disk.
-For example, you may need to persist data across app launches,
+For example, you might need to persist data across app launches,
 or download data from the internet and save it for later offline use.
 
 磁盘文件的读写操作可能会相对方便地实现某些业务场景。
 它常见于应用启动期间产生的持久化数据，或者从网络下载数据供离线使用。
 
-To save files to disk, combine the [`path_provider`][]
-plugin with the [`dart:io`][] library.
+To save files to disk on mobile or desktop apps,
+combine the [`path_provider`][] plugin with the [`dart:io`][] library.
 
-为了将文件保存到磁盘，你需要结合使用
-[`dart:io`][] 库中的 [`path_provider`][] 这个 package。
+为了将文件保存到磁盘，你需要结合使用 [`dart:io`][]
+和 [`path_provider`][] 这个 package。
 
-## Directions
+This recipe uses the following steps:
 
-## 步骤
+参考以下步骤：
 
   1. Find the correct local path.
   
@@ -51,10 +43,23 @@ plugin with the [`dart:io`][] library.
      从文件读取数据
      
 
-{{site.alert.note}}
-To learn more, watch this Package of the Week video on the path_provider package:
+To learn more, watch this Package of the Week video
+on the `path_provider` package:
+
+你可以观看每周 package 视频来了解更多关于 `path_provider` 的内容：
 
 <iframe class="full-width" src="{{site.youtube-site}}/embed/Ci4t-NkOY3I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+{{site.alert.note}}
+
+  This recipe doesn't work with web apps at this time.
+  To follow the discussion on this issue,
+  check out `flutter/flutter` [issue #45296]({{site.github}}/flutter/flutter/issues/45296).
+
+  该方法目前在 Web 平台上不可用。
+  若你想跟踪讨论，请访问 `flutter/flutter`
+  [issue #45296]({{site.github}}/flutter/flutter/issues/45296)。
+
 {{site.alert.end}}
 
 ## 1. Find the correct local path

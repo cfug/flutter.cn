@@ -250,10 +250,10 @@ switch in the [DevTools Performance view][].
 
 你如何才能知道应用程序调用 `saveLayer()` 的频率，直接还是间接调用？
 `saveLayer()` 方法会触发 [DevTools timeline][] 上的一个事件；
-通过检查 [DevTools 性能视图 (DevTools Performance view)][DevTools Performance view] 
+通过检查 [DevTools 性能视图 (DevTools Performance view)][DevTools Performance view]
 中的 `PerformanceOverlayLayer.checkerboardOffscreenLayers` 来了解何时在使用 `saveLayer`。
 
-[DevTools timeline]: {{site.url}}/tools/devtools/performance#timeline-events-chart
+[DevTools timeline]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 
 #### Minimizing calls to saveLayer
 
@@ -711,7 +711,7 @@ your app's performance.
   on screen to avoid the build cost.
   
 * Avoid overriding `operator ==` on `Widget` objects.
-  While it may seem like it would help by avoiding unnecessary rebuilds,
+  While it might seem like it would help by avoiding unnecessary rebuilds,
   in practice it hurts performance because it results in O(N²) behavior.
   The only exception to this rule is leaf widgets (widgets with no children),
   in the specific case where comparing the properties of the widget

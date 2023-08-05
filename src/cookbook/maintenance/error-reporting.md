@@ -3,16 +3,6 @@ title: Report errors to a service
 title: 把报错信息通过服务上传
 description: How to keep track of errors that users encounter.
 description: 如何持续收集报错信息。
-tags: cookbook, 实用教程
-keywords: Flutter收集错误信息
-prev:
-  title: Work with long lists
-  title: 长列表的处理
-  path: /docs/cookbook/lists/long-lists
-next:
-  title: Animate a widget across screens
-  title: 跨页面切换的动效 Widget (Hero animations)
-  path: /docs/cookbook/navigation/hero-animations
 ---
 
 <?code-excerpt path-base="cookbook/maintenance/error_reporting/"?>
@@ -114,9 +104,13 @@ error reports to the Sentry error tracking service.
 这个 package 能更方便的将错误报告发送给
 Sentry 的错误追踪系统。
 
-```yaml
-dependencies:
-  sentry_flutter: <latest_version>
+To add the `sentry_flutter` package as a dependency,
+run `flutter pub add`:
+
+运行 `flutter pub add` 将 `sentry_flutter` 添加为依赖：
+
+```terminal
+$ flutter pub add sentry_flutter
 ```
 
 ## 3. Initialize the Sentry SDK
@@ -159,7 +153,7 @@ This includes Swift, Objective-C, C, and C++ on iOS, and Java, Kotlin, C, and C+
 这包括 iOS 上的 Swift、Objective-C、C 和 C++，
 以及 Android 上的 Java、Kotlin、C 和 C++。
 
-## 4. Capture errors programatically
+## 4. Capture errors programmatically
 
 ## 4. 捕获并上报异常
 

@@ -5,10 +5,6 @@ description: How to animate from one page to another.
 description: 如何在页面过渡之间使用动画。
 tags: cookbook, 实用教程, 动画效果
 keywords: 页面切换效果,自定义路由
-next:
-  title: Animate a widget using a physics simulation
-  title: 在物理模拟器上构建动画
-  path: /docs/cookbook/animation/physics-simulation
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -396,7 +392,7 @@ class Page2 extends StatelessWidget {
 }
 ```
 <noscript>
-  <img src="/assets/images/docs/cookbook/page-route-animation.gif" alt="样例展示了一个自底向上的路由转换动画" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/page-route-animation.gif" alt="Demo showing a custom page route transition animating up from the bottom of the screen" class="site-mobile-screenshot" />
 </noscript>
 
 

@@ -47,7 +47,7 @@ you can find packages and tutorials listed on the [options page][].
 [状态 (State) 管理参考][options page]
 中找到相关的 package 和教程。
 
-## Our example
+## Our example 
 
 ## 示例
 
@@ -205,7 +205,7 @@ what to show for any given `contents`. When that changes, the old
 当内容发生改变的时候，旧的 `MyCart` widget 就会消失，
 完全被新的 widget 替代。
 
-<img src='/assets/images/docs/development/data-and-backend/state-mgmt/simple-widget-tree-with-cart.png' width="100%" alt="和上面的空间树一样，不过我们在 MyApp 的旁边显示一个 'cart' 标记。这里有两个箭头。一个从 MyListItems 指向 'cart'，另一个从 'cart' 指向 MyCart">
+<img src='/assets/images/docs/development/data-and-backend/state-mgmt/simple-widget-tree-with-cart.png' width="100%" alt="Same widget tree as above, but now we show a small 'cart' badge next to MyApp, and there are two arrows here. One comes from one of the MyListItems to the 'cart', and another one goes from the 'cart' to the MyCart widget.">
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1ErMyaX4fwfbIW9ABuPAlHELLGMsU6cdxPDFz_elsS9k/edit?zx=j42inp8903pt
@@ -293,20 +293,12 @@ don't forget to add the dependency on it to your `pubspec.yaml`.
 在使用 `provider` 之前，请不要忘记在
 `pubspec.yaml` 文件里加入依赖。
 
-```yaml
-name: my_name
-description: Blah blah blah.
+To add the `provider` package as a dependency, run `flutter pub add`:
 
-# ...
+运行 `flutter pub add` 将 `provider` 添加为依赖：
 
-dependencies:
-  flutter:
-    sdk: flutter
-
-  provider: ^6.0.0
-
-dev_dependencies:
-  # ...
+```terminal
+$ flutter pub add provider
 ```
 
 Now you can `import 'package:provider/provider.dart';`
@@ -393,7 +385,7 @@ model itself and its business logic.
 当模型发生改变并且需要更新 UI 的时候可以调用该方法。
 而剩下的代码就是 `CartModel` 和它本身的业务逻辑。
 
-`ChangeNotifier` is part of `flutter:foundation` and doesn't depend on 
+`ChangeNotifier` is part of `flutter:foundation` and doesn't depend on
 any higher-level classes in Flutter. It's easily testable (you don't even need
 to use [widget testing][] for it). For example,
 here's a simple unit test of `CartModel`:
@@ -670,4 +662,4 @@ master these skills.
 [declarative UI programming]: {{site.url}}/data-and-backend/state-mgmt/declarative
 [ephemeral and app state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
 [options page]: {{site.url}}/data-and-backend/state-mgmt/options
-[widget testing]: {{site.url}}/testing#widget-tests
+[widget testing]: {{site.url}}/testing/overview#widget-tests

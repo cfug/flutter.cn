@@ -83,6 +83,10 @@ release schedules across the entire customer base.
 并在单个代码库中打造的多个平台的应用程序。
 Flutter 加速了跨平台下开发以及同步发布进程的开发进度。
 
+
+[CodePen]: https://codepen.io/topic/flutter
+[one of the top design ideas of the decade]: https://www.fastcompany.com/90442092/the-14-most-important-design-ideas-of-the-decade-according-to-the-experts
+
 ### How much development experience do I need to use Flutter?
 
 ### 我需要拥有怎样的开发经验才能使用 Flutter？
@@ -131,11 +135,8 @@ Flutter 的 [软件包生态][package ecosystem] 支持绝大多数硬件
 （包括摄像头、GPS、网络以及储存）以及服务
 （例如支付、云储存、验证以及 [广告][ads]）。
 
-You can build full-featured apps with Flutter, including
-camera, geolocation, network, storage, 3rd-party SDKs, and more.
-
-Flutter 可以构建功能齐全的应用，
-包括使用摄像头、地理位置、网络、存储、第三方 SDK 等。
+[ads]: {{site.main-url}}/monetization
+[package ecosystem]: {{site.pub}}/flutter
 
 ### Who makes Flutter?
 
@@ -158,6 +159,8 @@ of these apps, visit the [showcase][].
 
 Google 内部和外部的开发者使用 Flutter 为 Android 和 iOS 构建精美的原生应用。
 您可以访问 [案例页面][showcase] 来了解一些知名的开发者 / 组织。
+
+[showcase]: {{site.main-url}}/showcase
 
 ### What makes Flutter unique?
 
@@ -188,18 +191,22 @@ Flutter 与其它工具的不同之处还在于，它只有一层简洁的 C/C++
 这种语言使得开发者可以轻松地进行阅读、更改、替换或删除。
 这些特性都为开发者提供了巨大的系统控制权限，同时显著降低了访问大多数系统功能的门槛。
 
+[Dart]: {{site.dart-site}}/
+
 ### Should I build my next production app with Flutter?
 
 ### 我需要使用 Flutter 来构建我的下一个应用吗？
 
-[Flutter 1.0][] was launched on Dec 4th, 2018 and
-[Flutter 2][] on March 3rd, 2021.
-Since its launch, over 400,000 apps have shipped using
+[Flutter 1][] was launched on Dec 4th, 2018,
+[Flutter 2][] on March 3rd, 2021, and
+[Flutter 3][] on May 10th, 2023.
+As of May 2023, over _one million_ apps have shipped using
 Flutter to many hundreds of millions of devices.
-See some sample apps in the [showcase][].
+Check out some sample apps in the [showcase][].
 
-[Flutter 1.0][] 已于 2018 年 12 月推出，
-[Flutter 2][] 在 2021 年 3 月 3 日发布。
+[Flutter 1][] 于 2018 年 12 月推出，
+[Flutter 2][] 于 2021 年 3 月 3 日发布，
+[Flutter 3][] 于 2023 年 5 月 10 日发布。
 至今为止，成千上万使用了 Flutter 的应用已经被安装到了数亿台设备中。
 请通过成功 [案例页面][showcase] 了解知名开发者们的成果。
 
@@ -208,6 +215,10 @@ cadence that improve stability and performance
 and address commonly-requested user features.
 
 Flutter 进行了高质量的持续交付更新，优化了稳定性、性能以及一些常见的用户需求。
+
+[Flutter 1]: {{site.google-blog}}/2018/12/flutter-10-googles-portable-ui-toolkit.html
+[Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
+[Flutter 3]: {{site.google-blog}}/flutter/introducing-flutter-3-5eb69151622f
 
 ## What does Flutter provide?
 
@@ -245,24 +256,27 @@ Flutter 包括了：
 * Headless test runner for running tests on Windows, Linux, and Mac
 
   Headless 测试运行器，用于在 Windows、Linux 和 Mac 上运行测试
-  
-* [Dart DevTools][] for testing, debugging, and profiling your app
- 
-  用于测试、调试和分析你的应用程序的 [Dart DevTools][]  
+
+* [Flutter DevTools][] (also called Dart DevTools)
+  for testing, debugging, and profiling your app
+
+  用于测试、调试和分析你的应用程序的 [Flutter DevTools][]  
 
 * Command-line tools for creating, building, testing, and
   compiling your apps
 
   命令行工具，用于创建、开发、测试和编译你的应用程序
 
+[Dart DevTools]: {{site.url}}/tools/devtools
+
 ### Does Flutter work with any editors or IDEs?
 
 ### 用 Flutter 开发时可以使用哪些编辑器或 IDE？
 
-We provide plugins for [Android Studio][],
-[IntelliJ IDEA][], and [VS Code][]. See
-[editor configuration][] for setup details,
-and [Android Studio/IntelliJ][] and [VS Code][]
+We provide plugins for [VS Code][],
+[Android Studio][], and [IntelliJ IDEA][].
+See [editor configuration][] for setup details,
+and [VS Code][] and [Android Studio/IntelliJ][]
 for tips on how to use the plugins.
 
 可以通过插件的方式使用
@@ -270,20 +284,20 @@ for tips on how to use the plugins.
 开发 Flutter 应用。请参阅 [边界配置][editor configuration] 以了解如何初始化，
 以及 [Android Studio/IntelliJ][] 和 [VS Code][] 如何使用 plugin 的小提示。
 
-See [editor configuration][] for setup details,
-and [Android Studio/IntelliJ][] and [VS Code][]
-for tips on how to use the plugins.
-
-有关设置的详细信息，请参阅 
-[编辑器配置文档][editor configuration]，
-以及使用 [Android Studio/IntelliJ][] 和 [VS Code][] 插件的小提示。
-
 Alternatively, you can use the `flutter` command
 from a terminal, along with one
 of the many editors that support [editing Dart][].
 
 您也可以在命令行中使用 `flutter` 命令，
 并配合能编辑 [Dart 语言的编辑器][editing Dart] 进行开发。
+
+
+[Android Studio]: {{site.android-dev}}/studio
+[Android Studio/IntelliJ]: {{site.url}}/tools/android-studio
+[editing Dart]: {{site.dart-site}}/tools
+[editor configuration]: {{site.url}}/get-started/editor
+[IntelliJ IDEA]: https://www.jetbrains.com/idea/
+[VS Code]: https://code.visualstudio.com/
 
 ### Does Flutter come with a framework?
 
@@ -315,18 +329,22 @@ widgets, or customize the existing widgets.
 布局和主题。当然，这些 Widget 只是一个起点。
 Flutter 的设计目的就是，让您轻松创建自己的 Widget，或是定制现有的 Widget。
 
+[widgets]: {{site.url}}/ui/widgets
+
 ### Does Flutter support Material Design?
 
 ### Flutter 支持 Material Design 吗？
 
 Yes! The Flutter and Material teams collaborate closely,
-and Material is fully supported. A number of examples
-of this are shown in the [MDC-103 Flutter:
-Material Theming][] codelab.
+and Material is fully supported. For more information,
+check out the Material 2 and Material 3 widgets
+in the [widget catalog][].
 
 是的，Flutter 和 Material 团队密切合作，完全支持 Material Theming。
-你可以通过 codelab 了解 Material 组件 (MDC) 主题定制：
-[MDC-103 Flutter: Material Theming][]。
+你可以通过 [widget 目录][widget catalog]
+了解支持 Material 2 和 3 的 widget。
+
+[widget catalog]: {{site.url}}/ui/widgets/material
 
 ### Does Flutter come with a testing framework?
 
@@ -345,6 +363,9 @@ and we measure our [test coverage][] on every commit.
 我们使用自己的测试功能来测试我们的 SDK，
 每次提交代码前我们都会测量提交的 [测试覆盖率][test coverage]。
 
+[test coverage]: https://coveralls.io/github/flutter/flutter?branch=master
+[testing with Flutter]: {{site.url}}/testing/overview
+
 ### Does Flutter come with debugging tools?
 
 ### Flutter 是否附带调试工具？
@@ -357,18 +378,28 @@ Flutter 本身附带了 [调试工具][Flutter DevTools]（也称为 Dart DevToo
 你可以在 [调试 Flutter][Debugging with Flutter]
 和 [Flutter DevTools][] 文档中了解更多信息。
 
+
+[Debugging with Flutter]: {{site.url}}/testing/debugging
+[Flutter DevTools]: {{site.url}}/tools/devtools/overview
+
 ### Does Flutter come with a dependency injection framework?
 
 ### Flutter 是否带有依赖注入 (dependency injection) 的框架？
 
 We don't ship with an opinionated solution,
 but there are a variety of packages that offer
-dependency injection and service location, such as [injectable][],
-[get_it][], [kiwi][], and [riverpod][].
+dependency injection and service location,
+such as [injectable][], [get_it][], [kiwi][], and [riverpod][].
 
 我们并没有提供相关解决方案，
 但是这里有许多包提供了依赖注入或服务定位的能力，
 例如 [injectable][]、[get_it][]、[kiwi][] 和 [riverpod][]。
+
+
+[get_it]: {{site.pub}}/packages/get_it
+[injectable]: {{site.pub}}/packages/injectable
+[kiwi]: {{site.pub}}/packages/kiwi
+[riverpod]: {{site.pub}}/packages/riverpod
 
 ## Technology
 
@@ -378,15 +409,22 @@ dependency injection and service location, such as [injectable][],
 
 ### Flutter 是使用什么技术构建的？
 
-Flutter is built with C, C++, Dart, and Skia
-(a 2D rendering engine). See this [architecture diagram][]
+Flutter is built with C, C++, Dart,
+Skia (a 2D rendering engine),
+and [Impeller][] (the default rendering engine on iOS).
+See this [architecture diagram][]
 for a better picture of the main components.
 For a more detailed description of the layered architecture
-of Flutter, read the [architectural overview].
+of Flutter, read the [architectural overview][].
 
-Flutter 使用 C、C++、Dart 和 Skia (2D 渲染引擎) 构建。
+Flutter 使用 C、C++、Dart、Skia (2D 渲染引擎)
+以及 [Impeller][] (iOS 默认的渲染引擎) 构建。
 您可以参阅下面这张 [架构图][architecture diagram] 来理解其主要构建。
 若您需要了解 Flutter 的分层架构，请阅读 [架构概览][architectural overview]。
+
+[architectural overview]: {{site.url}}/resources/architectural-overview
+[architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
+[Impeller]: {{site.url}}/perf/impeller
 
 ### How does Flutter run my code on Android? {#run-android}
 
@@ -434,18 +472,32 @@ The Dart code (both the SDK's and yours)
 are ahead-of-time (AOT) compiled into a native, ARM library.
 That library is included in a "runner" iOS project,
 and the whole thing is built into an `.ipa`.
-When launched, the app loads the Flutter library. Any rendering,
-input or event handling, and so on,
+When launched, the app loads the Flutter library.
+Any rendering, input or event handling, and so on,
 are delegated to the compiled Flutter and app code.
 This is similar to the way many game engines work.
 
-引擎的 C 和 C++ 代码使用 LLVM 编译。Dart 代码 (SDK 的和您的) 
+引擎的 C 和 C++ 代码使用 LLVM 编译。Dart 代码 (SDK 的和您的)
 都是预先 (ahead-of-time, AOT) 编译成本地 ARM 库。
 这些库被包含在一个 iOS "runner" 项目中，
 然后整套内容被编译成一个 `.ipa`。当应用启动时，
 它会加载 Flutter 库。任何渲染、输入或事件处理等都会
 代理给编译好的 Flutter 和应用代码。
 这个工作机制与很多游戏引擎颇为相似。
+
+During debug mode, Flutter uses a virtual machine (VM)
+to run its code in order to enable stateful hot reload,
+a feature that lets you make changes to your
+running code without recompilation. You'll see
+a "debug" banner in the top right-hand corner of
+your app when running in this mode, to remind you that
+performance is not characteristic of the finished release app.
+
+在 debug 模式下，Flutter 使用虚拟环境 (VM) 来运行代码，
+使其可以保持状态并且可以热重载，
+这个功能让你可以在无需重新编译的前提下立刻看到新代码生效的结果。
+在 debug 模式下，你会看到右上角有一个 "debug" 的横幅条，
+它会提醒你 debug 模式下的性能并不代表 release 模式的性能。
 
 ### Does Flutter use my operating system's built-in platform widgets?
 
@@ -510,6 +562,10 @@ we also aim to help lower app development and maintenance costs.
 （无论您的 UI 在每个移动平台上都各有不同还是基本一致），
 也有助于帮助您降低应用开发和维护成本。
 
+
+[catalog of Flutter's widgets]: {{site.url}}/ui/widgets
+[gesture system]: {{site.url}}/ui/interactivity/gestures
+
 ### What happens when my mobile OS updates and introduces new widgets?
 
 ### 我的移动 OS 更新并加入新的 widget 时会怎么样？
@@ -517,8 +573,8 @@ we also aim to help lower app development and maintenance costs.
 The Flutter team watches the adoption and demand for new mobile
 widgets from iOS and Android, and aims to work with the community
 to build support for new widgets. This work might come in the form
-of lower-level framework features, new composable widgets, or new
-widget implementations.
+of lower-level framework features, new composable widgets,
+or new widget implementations.
 
 Flutter 团队密切关注来自 iOS 和 Android 的 widget 使用和需求情况，
 且会与社区合作，对新的 widget 提供构建支持。
@@ -682,9 +738,13 @@ _Fast allocation_
 
 **快速内存分配**
 <br> Flutter 框架使用的函数式流程，
-  很大程度上依赖于下层的内存分配器高效地对小型的、短生命周期的内容进行内存分配。
-  这个流程是使用支持这种分配机制的语言进行开发的，
-  在缺少这个机制的语言中无法有效运作。
+很大程度上依赖于下层的内存分配器高效地对小型的、短生命周期的内容进行内存分配。
+这个流程是使用支持这种分配机制的语言进行开发的，
+在缺少这个机制的语言中无法有效运作。
+
+### Can Flutter run any Dart code?
+
+### Flutter 可以运行任意的 Dart 代码吗？
 
 Flutter can run Dart code that doesn't directly or
 transitively import `dart:mirrors` or `dart:html`.
@@ -760,25 +820,32 @@ IPA 比 APK 大，主要是因为 Apple 加密了 IPA 中的二进制文件，
   但是，Apple 已在 [Xcode 14 中废弃][deprecated bitcode in Xcode 14]
   并移除了对 bitcode 的支持，因此，
   我们也在 Flutter 3.7 版本中移除了 bitcode。
+
 {{site.alert.end}}
-
-[deprecated bitcode in Xcode 14]: {{site.apple-dev}}/documentation/xcode-release-notes/xcode-14-release-notes
-
-Release 模式下引擎二进制产物将包含 LLVM 的中间语言表示 (bitcode)。
-Xcode 将使用 bitcode 为 App Store
-生成最终包含了最新的编译器优化和功能的二进制文件。
-Profile 和 Debug 模式下的 Framework 中，
-bitcode 部分仅包含 **bitcode marker**，因此更能代表引擎的真实大小。
-无论你是否使用 bitcode，
-release 模式下增加的包大小都会在应用归档且发布到应用商店后，
-在构建的最终步骤里被移除。
-请注意 bitcode 已经被废弃，并即将在未来的 Flutter 正式版本中被移除。
 
 Of course, we recommend that you measure your own app.
 To do that, see [Measuring your app's size][].
 
 当然，您的实际情况可能跟我们所说的有所不同，我们建议您测量自己的应用的体积。
 想要测量应用体积，请查看 [测量你的应用体积][Measuring your app's size]。
+
+
+[apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
+[built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
+[deprecated bitcode in Xcode 14]: {{site.apple-dev}}/documentation/xcode-release-notes/xcode-14-release-notes
+[iOS App Store Specific Considerations]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
+[Measuring your app's size]: {{site.url}}/perf/app-size
+[minimal Flutter app]: {{site.repo.flutter}}/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
+[QA1795]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html
+
+### How does Flutter define a pixel?
+
+Flutter uses logical pixels,
+and often refers to them merely as "pixels".
+Flutter's [`devicePixelRatio`][] expresses the ratio
+between physical pixels and logical CSS pixels. 
+
+[`devicePixelRatio`]: {{site.api}}/flutter/dart-html/Window/devicePixelRatio.html
 
 ## Capabilities
 
@@ -790,7 +857,7 @@ To do that, see [Measuring your app's size][].
 
 You can expect excellent performance. Flutter is
 designed to help developers easily achieve a constant 60fps.
-Flutter apps run via natively compiled code&mdash;no
+Flutter apps run using natively compiled code&mdash;no
 interpreters are involved.
 This means that Flutter apps start quickly.
 
@@ -809,7 +876,7 @@ sub-second reload times, on a device or an emulator/simulator.
 Flutter 使用的是热重载式的开发操作周期。
 您在实机或者模拟器上都能实现亚秒级的修改和更新速度。
 
-Flutter's hot reload is _stateful_, which means the app state
+Flutter's hot reload is _stateful_ so the app state
 is retained after a reload. This means you can quickly iterate
 on a screen deeply nested in your app, without starting
 from the home screen after every reload.
@@ -838,6 +905,9 @@ For more information, see [Hot reload][].
 
 更多关于热重载的详细信息，请查看文档：[使用热重载][Hot reload]。
 
+
+[Hot reload]: {{site.url}}/tools/hot-reload
+
 ### Where can I deploy my Flutter app?
 
 ### 我能把 Flutter 应用部署到哪里？
@@ -847,6 +917,10 @@ You can compile and deploy your Flutter app to iOS, Android,
 
 您可以将 Flutter 应用编译并部署到 iOS 和 Android 平台，
 亦可部署到 [web][] 平台以及 [桌面端][desktop]。
+
+
+[desktop]: {{site.url}}/platform-integration/desktop
+[web]: {{site.url}}/platform-integration/web
 
 ### What devices and OS versions does Flutter run on?
 
@@ -879,17 +953,22 @@ You can compile and deploy your Flutter app to iOS, Android,
   我们支持在不同的平台上开发 Flutter 应用，
   请参阅 [不同操作系统下安装 Flutter 的方法文档][install] 了解更多。
 
+
+[install]: {{site.url}}/get-started/install
+[supported platforms]: {{site.url}}/reference/supported-platforms
+
 ### Does Flutter run on the web?
 
 ### Flutter 能在 Web 上运行吗？
 
 Yes, web support is available in the stable channel.
-You can compile existing Flutter code to work on the web.
 For more details, check out the [web instructions][].
 
 可以的，目前 stable channel 已经支持 web 平台了。
 你可以将已有的 Flutter 代码编译在 web 运行。
 更多详细信息，请参阅 [Web 介绍][web instructions]。
+
+[web instructions]: {{site.url}}/platform-integration/web/building
 
 ### Can I use Flutter to build desktop apps?
 
@@ -909,10 +988,7 @@ Yes, learn more in the [add-to-app][] section of our website.
 
 是的，你可以在我们网上内的 [混合应用][add-to-app] 章节中学习。
 
-See the integration documentation in the
-[add-to-app][] section of our website.
-
-请参考 [这个文档][add-to-app]，查看如何将 Flutter 加入现有的项目。
+[add-to-app]: {{site.url}}/add-to-app
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -947,6 +1023,11 @@ abstractions that are a best fit for their project.
 [自己的平台][platform and third-party APIs] 与第三方 API 的整合方案。
 开发者可以根据需要公开尽可能多 (或者尽可能少) 的平台 API，
 并构建最适合其项目的抽象层。
+
+
+[is easy]: {{site.url}}/packages-and-plugins/using-packages
+[platform and third-party APIs]: {{site.url}}/platform-integration/platform-channels
+[ready-made packages]: {{site.pub}}/flutter/
 
 ### Can I extend and customize the bundled widgets?
 
@@ -1049,7 +1130,7 @@ across mobile platforms.
 Yes, Flutter supports calling into the platform,
 including integrating with Java or Kotlin code on Android,
 and ObjectiveC or Swift code on iOS.
-This is enabled via a flexible message passing style
+This is enabled by a flexible message passing style
 where a Flutter app might send and receive messages
 to the mobile platform using a [`BasicMessageChannel`][].
 
@@ -1069,6 +1150,11 @@ iOS and Android.
 
 你也可以通过这个 [示例项目][example project]，
 学习如何使用平台通道访问 iOS 和 Android 上的电池状态信息。
+
+
+[`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
+[example project]: {{site.repo.flutter}}/tree/main/examples/platform_channel
+[platform channels]: {{site.url}}/platform-integration/platform-channels
 
 ### Does Flutter come with a reflection / mirrors system?
 
@@ -1116,6 +1202,10 @@ Learn more about a11y in the
 
 关于可访问性 / 无障碍使用，请查看文档：[无障碍][accessibility documentation]。
 
+
+[accessibility documentation]: {{site.url}}/accessibility-and-localization/accessibility
+[internationalization tutorial]: {{site.url}}/accessibility-and-localization/internationalization
+
 ### How do I write parallel and/or concurrent apps for Flutter?
 
 ### 我如何为 Flutter 开发并行 (parallel) 和/或并发 (concurrent) 应用？
@@ -1133,19 +1223,23 @@ Check out an [example of using isolates with Flutter][].
 
 你可以点击链接查看 [在 Flutter 中使用 isolate 的示例][example of using isolates with Flutter]。
 
-### Can I run Dart code in the background of an Flutter app?
+[example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
+
+### Can I run Dart code in the background of a Flutter app?
 
 ### 我能在 Flutter 应用后台运行 Dart 代码吗？
 
 Yes, you can run Dart code in a background process on both
-iOS and Android  For more information, see the free Medium article
-[Executing Dart in the Background with Flutter Plugins and Geofencing][].
+iOS and Android. For more information, see the free Medium article
+[Executing Dart in the Background with Flutter Plugins and Geofencing][backgnd].
 
 可以，你可以在 iOS 和 Android 后台进程中运行 Dart 代码。
 有关更多信息，你可以查看在 Medium 上的文章：
-[使用 Flutter 插件和 Geofencing 在后台运行 Dart 代码][Executing Dart in the Background with Flutter Plugins and Geofencing]。
+[使用 Flutter 插件和 Geofencing 在后台运行 Dart 代码][backgnd]。
 
-### Can I use JSON/XML/<wbr>protobuffers, etc. with Flutter?
+[backgnd]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+
+### Can I use JSON/XML/<wbr>protobuffers (and so on) with Flutter?
 
 ### 我在 Flutter 里能使用 JSON/XML/protobuffers 等内容吗？
 
@@ -1162,11 +1256,14 @@ check out the [JSON tutorial][].
 有关在 Flutter 中使用 JSON 的详细介绍，你可以查看
 [使用 JSON 的教程][JSON tutorial]。
 
+[JSON tutorial]: {{site.url}}/data-and-backend/serialization/json
+[pub.dev]: {{site.pub}}
+
 ### Can I build 3D (OpenGL) apps with Flutter?
 
 ### 我能用 Flutter 构建 3D (OpenGL) 应用吗？
 
-Today we don't support for 3D via OpenGL ES or similar.
+Today we don't support 3D using OpenGL ES or similar.
 We have long-term plans to expose an optimized 3D API,
 but right now we're focused on 2D.
 
@@ -1177,7 +1274,7 @@ but right now we're focused on 2D.
 
 ### 我的 APK 或 IPA 为什么这么大？
 
-Usually, assets including images, sound files, fonts, etc,
+Usually, assets including images, sound files, fonts, and so on,
 are the bulk of an APK or IPA. Various tools in the
 Android and iOS ecosystems can help you understand
 what's inside of your APK or IPA.
@@ -1203,6 +1300,10 @@ Also, check out [Measuring your app's size][].
 以及 [打包和发布到 iOS 平台][release build of your iOS app]。
 同时，查看 [测量你的应用体积][Measuring your app's size]。
 
+
+[release build of your Android app]: {{site.url}}/deployment/android
+[release build of your iOS app]: {{site.url}}/deployment/ios
+
 ### Do Flutter apps run on Chromebooks?
 
 ### Flutter 应用能在 Chromebook 上运行吗？
@@ -1218,11 +1319,13 @@ Chromebooks][].
 to running Flutter on Chromebooks]
 来获得相关信息。
 
+[issues related to running Flutter on Chromebooks]: {{site.repo.flutter}}/labels/platform-arc
+
 ### Is Flutter ABI compatible?
 
 ### Flutter 是否提供 ABI 支持？
 
-Flutter and Dart do not offer application binary interface (ABI)
+Flutter and Dart don't offer application binary interface (ABI)
 compatibility. Offering ABI compatability is not a current
 goal for Flutter or Dart.
 
@@ -1250,6 +1353,8 @@ subclassing `StatefulWidget`. You can read a more
 [关于 State.build 的讨论][detailed discussion
 on the API docs for `State.build`]。
 
+[detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
+
 ### Where is Flutter's markup language? Why doesn't Flutter have a markup syntax?
 
 ### Flutter 怎么没有标记语言 (markup language) 和语法？
@@ -1269,7 +1374,7 @@ customized widgets with bespoke behaviors.
 我们发现将 UI 交给代码来动态构建会带来更多的灵活性。
 比如，我们发现固化的标记语言系统很难表达一个从视觉到行为都完全定制的 widget。
 
-We have also found that our "code-first" better allows
+We have also found that our "code-first" approach better allows
 for features like hot reload and dynamic environment adaptations.
 
 另外，“代码优先”的开发也使得热重载以及动态环境适配等特性能更好地得以实现。
@@ -1287,7 +1392,8 @@ including interpreting markup and turning it into widgets.
 
 ### 我的应用运行时在右上角有一个 Debug 的标识，为什么？
 
-By default `flutter run` command uses the debug build configuration.
+By default, the `flutter run` command uses the
+debug build configuration.
 
 默认情况下，flutter run 指令会使用 debug 编译配置。
 
@@ -1313,13 +1419,21 @@ Debug 编译配置也会检查所有的断言 (assert)，这会帮助您在开�
 
 If your IDE uses the Flutter plugin,
 you can launch the app in profile or release mode.
+For VS Code, use the **Run > Start debugging**
+or **Run > Run without debugging** menu entries.
 For IntelliJ, use the menu entries
 **Run > Flutter Run in Profile Mode** or **Release Mode**.
 
-如果您在使用 Flutter 的 IntelliJ 插件，
-您可以在 profile 或者 release 模式下启动应用，
-只需要在菜单里选择 **Run > Flutter run in Profile Mode** 或者
-**Release Mode** 即可。
+如果您在使用 Flutter 的 IDE 插件，
+您就可以在 profile 或者 release 模式下启动应用，
+对于 VS Code 而言，你可以使用 **Run > Start debugging** 或者
+**Run > Run without debugging** 菜单选项。
+对于 IntelliJ 而言，你可以使用 **Run > Flutter run in Profile Mode** 或者
+**Release Mode** 菜单选项。
+
+[Android]: #run-android
+[hot reload]: #hot-reload
+[iOS]: #run-ios
 
 ### What programming paradigm does Flutter's framework use?
 
@@ -1355,9 +1469,8 @@ Flutter 是一个多范式的编程环境。过去几十年中许多编程技术
   从而实现更复杂的效果。
   绝大多数 Flutter widget 都是用这种方法构建的。
   比如 Material [`TextButton`][] 类是基于
-  [`MaterialButton`][] 类构建的，
-  而这个类则是由 [`IconTheme`][]、[`InkWell`][]、[`Padding`][]、
-  [`Center`][]、[`Material`][]、[`AnimatedDefaultTextStyle`][]
+  [`IconTheme`][]、[`InkWell`][]、[`Padding`][]、[`Center`][]、
+  [`Material`][]、[`AnimatedDefaultTextStyle`][]
   以及 [`ConstrainedBox`][] 组合而成的。
   而 [`InkWell`][] 则是由 [`GestureDetector`][] 组成，
   [`Material`][] 则是由
@@ -1463,7 +1576,7 @@ Flutter 是一个多范式的编程环境。过去几十年中许多编程技术
   lower-level widgets by the widget's build method, and
   changes made in the lower widgets (for example,
   in response to user input) propagate back up the tree
-  via event handlers. Aspects of both functional-reactive and
+  using event handlers. Aspects of both functional-reactive and
   imperative-reactive are present in the framework,
   depending on the needs of the widgets. Widgets with build
   methods that consist of just an expression describing how
@@ -1564,6 +1677,43 @@ Flutter 是一个多范式的编程环境。过去几十年中许多编程技术
   子元素最终选择一个能满足上面所有约束条件的最终尺寸。
   这种做法也使得 Flutter 能不依赖太多输入的情况下快速完成一个全新的布局。
 
+
+[`AnimatedDefaultTextStyle`]: {{site.api}}/flutter/widgets/AnimatedDefaultTextStyle-class.html
+[`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/AnimatedPhysicalModel-class.html
+[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
+[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
+[`color`]: {{site.api}}/flutter/widgets/Icon/color.html
+[`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
+[`Divider`]: {{site.api}}/flutter/material/Divider-class.html
+[`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
+[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
+[`icon`]: {{site.api}}/flutter/widgets/Icon/icon.html
+[`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
+[`IconTheme`]: {{site.api}}/flutter/widgets/IconTheme-class.html
+[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`Iterable`]: {{site.api}}/flutter/dart-core/Iterable-class.html
+[`List`]: {{site.api}}/flutter/dart-core/List-class.html
+[`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
+[`Map`]: {{site.api}}/flutter/dart-core/Map-class.html
+[`Material`]: {{site.api}}/flutter/material/Material-class.html
+[`NotificationListener`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
+[`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
+[popped]: {{site.api}}/flutter/widgets/Navigator/pop.html
+[`Rect`]: {{site.api}}/flutter/dart-ui/Rect-class.html
+[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
+[`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
+[`Route`]: {{site.api}}/flutter/widgets/Route-class.html
+[`ScrollPhysics`]: {{site.api}}/flutter/widgets/ScrollPhysics-class.html
+[`Set`]: {{site.api}}/flutter/dart-core/Set-class.html
+[`size`]: {{site.api}}/flutter/widgets/Icon/size.html
+[`State`]: {{site.api}}/flutter/widgets/State-class.html
+[`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
+[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
+[`UserAccountsDrawerHeader`]: {{site.api}}/flutter/material/UserAccountsDrawerHeader-class.html
+[`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
+
 ## Project
 
 ## 工程管理
@@ -1587,6 +1737,13 @@ For more information, see our [Community][] page.
 请使用我们的官方邮件地址 [{{site.email}}][]
 或在 [Discord][] 上向我们提问。 
 
+
+[Community]: {{site.main-url}}/community
+[Discord]: https://discord.gg/N7Yshp4
+[issue tracker]: {{site.repo.flutter}}/issues
+[{{site.email}}]: mailto:{{site.email}}
+[Stack Overflow]: {{site.so}}/tags/flutter
+
 ### How do I get involved?
 
 ### 我如何投入到 Flutter 开发社区？
@@ -1606,17 +1763,20 @@ using Flutter and what you'd like to do with it.
 告诉我们您是如何使用 Flutter 的，以及打算用 Flutter 开发什么。
 
 If you're interested in contributing code, you can start
-by reading our [Contributing Guide][] and check out our
+by reading our [Contributing guide][], and check out our
 list of [easy starter issues][].
 
-如果您打算为 Flutter 贡献代码，请先阅读 [代码贡献指南][Contributing Guide]，
+如果您打算为 Flutter 贡献代码，请先阅读 [代码贡献指南][Contributing guide]，
 然后从 [简单待修复问题][easy starter issues] 列表中寻找力所能及的问题开始入手。
 
 Finally, you can connect with helpful Flutter communities.
-For more information, see our [Community][] page.
+For more information, see the [Community][] page.
 
 最后，您可以与各个 Flutter 社区保持联系，
 更多相关信息，请查阅我们的 [社区][Community] 页面。
+
+[Contributing guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
+[easy starter issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
 
 ### Is Flutter open source?
 
@@ -1626,6 +1786,8 @@ Yes, Flutter is open source technology.
 You can find the project on [GitHub][].
 
 是的，Flutter 是开源的。您可以在 [GitHub][] 上获取到它。
+
+[GitHub]: {{site.repo.flutter}}
 
 ### Which software license(s) apply to Flutter and its dependencies?
 
@@ -1651,6 +1813,9 @@ In addition, any Dart packages you use might have their
 own license requirements.
 
 另外，您使用的其他 Dart 代码包可能有其独有的许可协议。
+
+[license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
+[only one license]: {{site.repo.flutter}}/blob/master/LICENSE
 
 ### How can I determine the licenses my Flutter application needs to show?
 
@@ -1678,6 +1843,13 @@ There's an API to find the list of licenses you need to show:
   对于更加定制的场合，您可以使用
   [`LicenseRegistry`][] 获得原始的许可内容。
 
+
+[`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
+[`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
+[`LicenseRegistry`]: {{site.api}}/flutter/foundation/LicenseRegistry-class.html
+[`showAboutDialog`]: {{site.api}}/flutter/material/showAboutDialog.html
+[`showLicensePage`]: {{site.api}}/flutter/material/showLicensePage.html
+
 ### Who works on Flutter?
 
 ### 目前有哪些人在开发 Flutter？
@@ -1694,11 +1866,13 @@ we encourage you to join the community and
 如果您喜欢 Flutter 的话，我们希望您加入开发者社区并
 [做出贡献][contribute to Flutter]！
 
+[contribute to Flutter]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
+
 ### What are Flutter's guiding principles?
 
 ### Flutter 有哪些指导原则？
 
-We believe that:
+We believe the following:
 
 我们相信：
 
@@ -1782,127 +1956,6 @@ apps built with Flutter should follow Apple's
 任何提交到 Apple store 的 Flutter 应用都应该遵守
 Apple 的 [规范][guidelines]。
 
-[`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
-[accessibility documentation]: {{site.url}}/accessibility-and-localization/accessibility
-[add-to-app]: {{site.url}}/add-to-app
-[ads]: {{site.main-url}}/monetization
-[Android]: #run-android
-[Android Studio]: {{site.android-dev}}/studio
-[Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
-[Android Studio/IntelliJ]: {{site.url}}/tools/android-studio
-[`AnimatedDefaultTextStyle`]: {{site.api}}/flutter/widgets/AnimatedDefaultTextStyle-class.html
-[`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/AnimatedPhysicalModel-class.html
-[apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
-[architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
-[architectural overview]: {{site.url}}/resources/architectural-overview
-[`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
-[built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
-[catalog of Flutter's widgets]: {{site.url}}/ui/widgets
-[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
-[`color`]: {{site.api}}/flutter/widgets/Icon/color.html
-[Community]: {{site.main-url}}/community
-[`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
-[contribute to Flutter]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
-[Contributing Guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
-[CodePen]: https://codepen.io/topic/flutter
-[Dart]: {{site.dart-site}}/
-[Dart DevTools]: {{site.url}}/tools/devtools
-[Debugging with Flutter]: {{site.url}}/testing/debugging
-[desktop]: {{site.url}}/platform-integration/desktop
-[detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
-[Discord]: https://discord.gg/N7Yshp4
-[`Divider`]: {{site.api}}/flutter/material/Divider-class.html
-[`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
-[easy starter issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
-[editing Dart]: {{site.dart-site}}/tools
-[editor configuration]: {{site.url}}/get-started/editor
-[example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
-[example project]: {{site.repo.flutter}}/tree/main/examples/platform_channel
-[Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[Flutter DevTools]: {{site.url}}/tools/devtools/overview
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[Flutter 1.0]: {{site.google-blog}}/2018/12/flutter-10-googles-portable-ui-toolkit.html
-[Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
-[flutter_view]: {{site.repo.flutter}}/tree/main/examples/flutter_view
-[`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
-[Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3
-[gesture system]: {{site.url}}/ui/advanced/gestures
-[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[get_it]: {{site.pub}}/packages/get_it
-[GitHub]: {{site.repo.flutter}}
-[`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
 [guidelines]: {{site.apple-dev}}/app-store/review/guidelines/
-[Hamilton for Android]: https://play.google.com/store/apps/details?id=com.hamilton.app
 [Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
-[hot reload]: #hot-reload
-[Hot reload]: {{site.url}}/tools/hot-reload
-[`icon`]: {{site.api}}/flutter/widgets/Icon/icon.html
-[`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
-[`IconTheme`]: {{site.api}}/flutter/widgets/IconTheme-class.html
-[injectable]: {{site.pub}}/packages/injectable
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[iOS]: #run-ios
-[iOS App Store Specific Considerations]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
-[iOS instructions]: {{site.url}}/deployment/ios
-[install]: {{site.url}}/get-started/install
-[IntelliJ IDEA]: https://www.jetbrains.com/idea/
-[internationalization tutorial]: {{site.url}}/accessibility-and-localization/internationalization
-[is easy]: {{site.url}}/packages-and-plugins/using-packages
-[issue #9253]: {{site.repo.flutter}}/issues/9253
-[issue #14821]: {{site.repo.flutter}}/issues/14821
-[issue tracker]: {{site.repo.flutter}}/issues
-[issues related to running Flutter on Chromebooks]: {{site.repo.flutter}}/labels/platform-arc
-[`Iterable`]: {{site.api}}/flutter/dart-core/Iterable-class.html
-[JSON tutorial]: {{site.url}}/data-and-backend/json
-[kiwi]: {{site.pub}}/packages/kiwi
-[license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
-[`LicenseRegistry`]: {{site.api}}/flutter/foundation/LicenseRegistry-class.html
-[`List`]: {{site.api}}/flutter/dart-core/List-class.html
-[`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
-[`Map`]: {{site.api}}/flutter/dart-core/Map-class.html
-[`Material`]: {{site.api}}/flutter/material/Material-class.html
-[`MaterialButton`]: {{site.api}}/flutter/material/MaterialButton-class.html
-[MDC-103 Flutter: Material Theming]: {{site.codelabs}}/codelabs/mdc-103-flutter/index.html?index=..%2F..index#0
-[Measuring your app's size]: {{site.url}}/perf/app-size
-[minimal Flutter app]: {{site.repo.flutter}}/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
-[`NotificationListener`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
-[one of the top design ideas of the decade]: https://www.fastcompany.com/90442092/the-14-most-important-design-ideas-of-the-decade-according-to-the-experts
-[only one license]: {{site.repo.flutter}}/blob/master/LICENSE
-[package ecosystem]: {{site.pub}}/flutter
-[`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
-[platform and third-party APIs]: {{site.url}}/platform-integration/platform-channels
-[platform channels]: {{site.url}}/platform-integration/platform-channels
-[platform_view]: {{site.repo.flutter}}/tree/main/examples/platform_view
-[popped]: {{site.api}}/flutter/widgets/Navigator/pop.html
-[pub.dev]: {{site.pub}}
-[QA1795]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html
-[ready-made packages]: {{site.pub}}/flutter/
-[`Rect`]: {{site.api}}/flutter/dart-ui/Rect-class.html
 [Reflectly]: https://apps.apple.com/us/app/reflectly-journal-ai-diary/id1241229134
-[release build of your Android app]: {{site.url}}/deployment/android
-[release build of your iOS app]: {{site.url}}/deployment/ios
-[`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
-[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
-[`Route`]: {{site.api}}/flutter/widgets/Route-class.html
-[`ScrollPhysics`]: {{site.api}}/flutter/widgets/ScrollPhysics-class.html
-[`Set`]: {{site.api}}/flutter/dart-core/Set-class.html
-[`showAboutDialog`]: {{site.api}}/flutter/material/showAboutDialog.html
-[`showLicensePage`]: {{site.api}}/flutter/material/showLicensePage.html
-[showcase]: {{site.main-url}}/showcase
-[{{site.email}}]: mailto:{{site.email}}
-[`size`]: {{site.api}}/flutter/widgets/Icon/size.html
-[Stack Overflow]: {{site.so}}/tags/flutter
-[`State`]: {{site.api}}/flutter/widgets/State-class.html
-[`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
-[test coverage]: https://coveralls.io/github/flutter/flutter?branch=master
-[testing with Flutter]: {{site.url}}/testing
-[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
-[`UserAccountsDrawerHeader`]: {{site.api}}/flutter/material/UserAccountsDrawerHeader-class.html
-[VS Code]: https://code.visualstudio.com/
-[web]: {{site.url}}/platform-integration/web
-[web instructions]: {{site.url}}/platform-integration/web/building
-[`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
-[widgets]: {{site.url}}/ui/widgets
-[supported platforms]: {{site.url}}/reference/supported-platforms
-[riverpod]: {{site.pub}}/packages/riverpod

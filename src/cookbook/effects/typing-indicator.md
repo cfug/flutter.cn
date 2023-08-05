@@ -3,14 +3,6 @@ title: Create a typing indicator
 title: 创建一个「正在输入」指示器效果
 description: How to implement a typing indicator.
 description: 如何实现一个「正在输入」的指示器效果
-prev:
-  title: Create a staggered menu animation
-  title: 创建一个交错效果的侧边栏菜单
-  path: /docs/cookbook/effects/staggered-menu-animation
-next:
-  title: Create an expandable FAB
-  title: 创建一个点击展开的 FAB
-  path: /docs/cookbook/effects/expandable-fab
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -714,12 +706,12 @@ class _ExampleIsTypingState extends State<ExampleIsTyping> {
         children: [
           Expanded(
             child: ListView.builder(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8),
               itemCount: 25,
               reverse: true,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.only(left: 100.0),
+                  padding: const EdgeInsets.only(left: 100),
                   child: FakeMessage(isBig: index.isOdd),
                 );
               },
@@ -1080,10 +1072,10 @@ class FakeMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
-      height: isBig ? 128.0 : 36.0,
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+      height: isBig ? 128 : 36,
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
         color: Colors.grey.shade300,
       ),
     );

@@ -35,7 +35,6 @@ Flutter 移动版可以使用 [dart:ffi][] 库来调用本地的 C API。
 
 {{site.alert.end}}
 
-
 [android-ffi]: {{site.url}}/platform-integration/android/c-interop
 [macos-ffi]: {{site.url}}/platform-integration/macos/c-interop
 [dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
@@ -106,163 +105,67 @@ Dart dev 频道中的 API 已经可用：
 
 [Dart API reference documentation]: {{site.dart.api}}/dev/
 
-## Step 1: Create a plugin
+## Create an FFI plugin
 
-## 步骤 1：创建插件
+## 创建 FFI 插件
 
-If you already have a plugin, skip this step.
-
-如果你已经有一个插件，跳过这步。
-
-To create a plugin called "native_add",
+To create an FFI plugin called "native_add",
 do the following:
 
 如果要创建一个名为 "native_add" 的插件，
 你需要这么做：
 
 ```terminal
-$ flutter create --platforms=android,ios --template=plugin native_add
+$ flutter create --platforms=android,ios,macos,windows,linux --template=plugin_ffi native_add
 $ cd native_add
 ```
 
-{{ site.alert.note }}
+{{site.alert.note}}
 
-  You can exclude platforms from `--platforms` that you don't want
-  to build to. However, you need to include the platform of 
-  the device you are testing on.
+You can exclude platforms from `--platforms` that you don't want
+to build to. However, you need to include the platform of
+the device you are testing on.
 
-  你可以使用 `--platforms` 来排除你不需要的平台。
-  但是，你仍需要包含测试设备所需的平台。
+你可以使用 `--platforms` 来排除你不需要的平台。
+但是，你仍需要包含测试设备所需的平台。
 
-{{ site.alert.end }}
+{{site.alert.end}}
 
-## Step 2: Add C/C++ sources
+This will create a plugin with C/C++ sources in `native_add/src`.
+These sources are built by the native build files in the various
+os build folders.
 
-## 步骤 2：添加 C/C++ 源码
-
-You need to inform both the Android and iOS build
-systems about the native code so the code can be compiled
-and linked appropriately into the final application.
-
-你需要让 Android 和 iOS 构建系统知道本地代码的存在，
-以便代码可以被编译并链接到最终的应用程序中。
-
-You add the sources to the `ios` folder,
-because CocoaPods doesn't allow including sources
-above the `podspec` file.
-
-你可以将源代码添加到 `ios` 文件夹，
-因为 CocoaPods 不允许源码处于比 podspec 文件更高的目录层级，
-但是 Gradle 允许你指向 `ios` 文件夹。
+C/C++ 源代码会被创建至 `native_add/src`。
+这些源代码在不同平台构建时会生成在不同平台的构建文件夹。
 
 The FFI library can only bind against C symbols,
-so in C++ these symbols must be marked `extern C`.
+so in C++ these symbols are marked `extern "C"`.
+
+FFI 库只能绑定 C 语言的符号，所以 C++ 语言的符号会被标记为 `extern "C"`。
+
 You should also add attributes to indicate that the
 symbols are referenced from Dart,
 to prevent the linker from discarding the symbols
 during link-time optimization.
+`__attribute__((visibility("default"))) __attribute__((used))`.
 
 FFI 库只能与 C 符号绑定，因此在 C++ 中，
 这些符号添加 `extern C` 标记。
 还应该添加属性来表明符号是需要被 Dart 引用的，
 以防止链接器在优化链接时会丢弃符号。
+`__attribute__((visibility("default"))) __attribute__((used))`.
 
-For example,
-to create a C++ file named `ios/Classes/native_add.cpp`,
-use the following instructions. (Note that the template
-has already created this file for you.) Start from the
-root directory of your project:
+On iOS, the `native_add/ios/native_add.podspec` links the code.
 
-作为示例，创建一个 C++ 文件，
-路径为：`ios/Classes/native_add.cpp`。
-（请注意，模板已经为你创建了此文件。）
-在项目的根目录下中执行以下命令：
+在 iOS 上 `native_add/android/build.gradle` 负责关联这些代码。
 
-```bash
-cat > ios/Classes/native_add.cpp << EOF
-#include <stdint.h>
+The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
-extern "C" __attribute__((visibility("default"))) __attribute__((used))
-int32_t native_add(int32_t x, int32_t y) {
-    return x + y;
-}
-EOF
-```
+原生代码会从 `lib/native_add_bindings_generated.dart` 被 Dart 调用。
 
-On iOS, you need to tell Xcode to statically link the file:
+The bindings are generated with [package:ffigen](https://pub.dev/packages/ffigen).
 
-在 iOS 中，你需要告诉 Xcode 如何静态链接这个文件：
-
- 1. In Xcode, open `Runner.xcworkspace`.
-
-    在 Xcode 中，打开 `Runner.xcworkspace`。
-
- 2. Add the C/C++/Objective-C/Swift
-    source files to the Xcode project.
-
-    添加 C/C++/Objective-C/Swift 源码文件到 Xcode 工程中。
-
-## Step 3: Load the code using the FFI library
-
-## 步骤 3：在 FFI 库中读取代码
-
-In this example, you can add the following code to
-`lib/native_add.dart`. However the location of the
-Dart binding code isn't important.
-
-在示例中，你需要添加如下的代码到 `lib/native_add.dart`。
-但是，Dart 在何处进行代码绑定并不重要。
-
-First, you must create a `DynamicLibrary` handle to
-the native code. The following example shows
-how to create a handle for an iOS app OR an Android app:
-
-首先，你需要创建一个 `DynamicLibrary` 来处理本地代码。
-这一步在 iOS 和 Android 之间有所不同：
-
-<?code-excerpt "lib/c_interop.dart (DynamicLibrary)"?>
-```dart
-import 'dart:ffi'; // For FFI
-import 'dart:io'; // For Platform.isX
-
-final DynamicLibrary nativeAddLib = Platform.isAndroid
-    ? DynamicLibrary.open('libnative_add.so')
-    : DynamicLibrary.process();
-```
-
-Note that on Android the native library is named
-in `CMakeLists.txt`,
-but on iOS it takes the plugin's name.
-
-请注意，在 Android 上，
-本地库的名称是定义在 `CMakeLists.txt` 中的（见上文），
-但在 iOS 上，它将使用插件的名称。
-
-With a handle to the enclosing library,
-you can resolve the `native_add` symbol:
-
-你可以通过使用库的句柄来解析 `native_add` 符号：
-
-<?code-excerpt "lib/c_interop.dart (NativeAdd)"?>
-```dart
-final int Function(int x, int y) nativeAdd = nativeAddLib
-    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>('native_add')
-    .asFunction();
-```
-
-Finally, you can call it. To demonstrate this within
-the auto-generated "example" app (`example/lib/main.dart`):
-
-现在，你可以调用它了。
-在自动生成的 example 项目
-（`example/lib/main.dart`）中演示它。
-
-```nocode
-// Inside of _MyAppState.build:
-        body: Center(
-          child: Text('1 + 2 == ${nativeAdd(1, 2)}'),
-        ),
-```
+代码由 [package:ffigen](https://pub.flutter-io.cn/packages/ffigen) 生成。
 
 ## Other use cases
 
@@ -350,12 +253,12 @@ use the following instructions:
 
     在 Xcode 中，打开 `Runner.xcworkspace`。
 
- 1. Add the C/C++/Objective-C/Swift
+ 2. Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
 
     添加 C/C++/Objective-C/Swift 源码到 Xcode 工程中。
 
- 1. Add the following prefix to the
+ 3. Add the following prefix to the
     exported symbol declarations to ensure they
     are visible to Dart:
 
@@ -387,12 +290,12 @@ use the following instructions:
 
    如果存在已进行签名的 `Framework` 文件，请打开 `Runner.xcworkspace`。
 
-2. Add the framework file to the **Embedded Binaries**
+1. Add the framework file to the **Embedded Binaries**
    section.
 
    添加 framework 文件到 **Embedded Binaries** 区域中。
 
-3. Also add it to the **Linked Frameworks & Libraries**
+1. Also add it to the **Linked Frameworks & Libraries**
    section of the target in Xcode.
    
    同时将其添加到 Xcode 中目标的
@@ -442,7 +345,7 @@ in binary form, use the following instructions:
 
    在你的插件目录打开 `ios/<myproject>.podspec`。
 
-2. Add a `vendored_frameworks` field.
+1. Add a `vendored_frameworks` field.
    See the [CocoaPods example][].
 
    添加 `vendored_frameworks` 字段。
@@ -482,3 +385,4 @@ the symbols are stripped by Xcode.
 
    将 **All Symbols** 修改为 **Non-Global Symbols**。
 
+{% include docs/resource-links/ffi-video-resources.md %}

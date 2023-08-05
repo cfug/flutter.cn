@@ -30,7 +30,7 @@ many of which have been contributed by the Flutter community:
 
 ## 总体概览
 
-Things to review before selecting an approach.
+Things to review before selecting an approach. 
 
 在选择一个具体内容前，您可以先查看以下几项。
 
@@ -75,9 +75,8 @@ Things to review before selecting an approach.
 
 ## Riverpod
 
-Riverpod, another good choice, is
-similar to Provider and is compile-safe and testable.
-Riverpod doesn't have a dependency on the Flutter SDK.
+Riverpod works in a similar fashion to Provider.
+It offers compile safety and testing without depending on the Flutter SDK.
 
 Riverpod 是另一个不错的选择，
 它类似于 Provider，并且是编译安全和可测试的。
@@ -98,17 +97,17 @@ Riverpod 不依赖于 Flutter SDK。
 
 The low-level approach to use for widget-specific, ephemeral state.
 
-适用于较小规模 widget 的暂时性状态的基础管理方法。
-
 * [Adding interactivity to your Flutter app][], a Flutter tutorial
 
-  [为你的 Flutter 应用添加交互 (Adding interactivity to your Flutter app)][Adding interactivity to your Flutter app]，一篇 Flutter 的教程。
+  [为你的 Flutter 应用添加交互 (Adding interactivity to your Flutter app)][Adding interactivity to your Flutter app]，
+  一篇 Flutter 的教程。
 
 * [Basic state management in Google Flutter][], by Agung Surya
 
-  [Flutter 中的基础状态管理 (Basic state management in Google Flutter)][Basic state management in Google Flutter]，Agung Surya 著。
+  [Flutter 中的基础状态管理 (Basic state management in Google Flutter)][Basic state management in Google Flutter]，
+  Agung Surya 著。
 
-[Adding interactivity to your Flutter app]: {{site.url}}/ui/interactive
+[Adding interactivity to your Flutter app]: {{site.url}}/ui/interactivity
 [Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 
 ## InheritedWidget &amp; InheritedModel
@@ -247,7 +246,7 @@ A state container approach familiar to many web developers.
 ## Fish-Redux
 
 Fish Redux is an assembled flutter application framework
-based on Redux state management.
+based on Redux state management. 
 It is suitable for building medium and large applications.
 
 Fish Redux 是一个基于 Redux 状态管理的组合式 Flutter 应用框架，
@@ -356,8 +355,8 @@ locators too.
 基于 `ValueNotifiers` 的命令式的状态管理，能与 [GetIt](#getit) 完美结合使用，
 也可以与 `Provider` 或者其他 locators 配合使用。
 
-* [Flutter Command package][]
-* [RxCommand package][], 基于 `Stream` 的实现.
+* [Flutter Command package][] 
+* [RxCommand package][], `Stream` based implementation.
 
 
 [Flutter Command package]: {{site.pub-pkg}}/flutter_command
@@ -454,19 +453,18 @@ A simple but powerful state management solution inspired by SolidJS.
 [solidart package]: {{site.pub-pkg}}/solidart
 [flutter_solidart package]: {{site.pub-pkg}}/flutter_solidart
 
-## flutter_reactive_widget
+## flutter_reactive_value
 
-An ultra-low-boilerplate solution for state management,
-flutter_reactive_widget defines
-`ReactiveWidget` and `ReactiveValue`. Any read of a `ReactiveValue`'s
-value within a `ReactiveWidget` definition automatically causes the
-`ReactiveWidget` to listen for changes on the `ReactiveValue`.
+The `flutter_reactive_value` library might offer the least complex solution for state
+management in Flutter. It might help Flutter newcomers add reactivity to their UI,
+without the complexity of the mechanisms described before.
+The `flutter_reactive_value` library defines the `reactiveValue(BuildContext)`
+extension method on `ValueNotifier`. This extension allows a `Widget` to
+fetch the current value of the `ValueNotifier` and 
+subscribe the `Widget` to changes in the value of the `ValueNotifier`.
+If the value of the `ValueNotifier` changes, `Widget` rebuilds.
 
-Also includes a definition for `PersistentReactiveValue`, a subclass
-of `ReactiveValue` whose latest value persists, surviving app
-restarts.
+* [`flutter_reactive_value`][] source and documentation
 
-* [`flutter_reactive_widget`][] source and documentation
-
-[`flutter_reactive_widget`]: {{site.github}}/lukehutch/flutter_reactive_widget
+[`flutter_reactive_value`]: {{site.github}}/lukehutch/flutter_reactive_value
 

@@ -3,14 +3,6 @@ title: Create a staggered menu animation
 title: 创建一个交错效果的侧边栏菜单
 description: How to implement a staggered menu animation.
 description: 如何实现一个交错效果的侧边栏菜单
-prev:
-  title: Create a shimmer loading effect
-  title: 创建一个微光加载效果
-  path: /docs/cookbook/effects/shimmer-loading
-next:
-  title: Create a typing indicator
-  title: 创建一个「正在输入」指示器效果
-  path: /docs/cookbook/effects/typing-indicator
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -96,7 +88,7 @@ class _MenuState extends State<Menu> {
     for (var i = 0; i < _menuTitles.length; ++i) {
       listItems.add(
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
@@ -115,7 +107,7 @@ class _MenuState extends State<Menu> {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
@@ -312,7 +304,7 @@ List<Widget> _buildListItems() {
           );
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
@@ -339,7 +331,7 @@ Widget _buildGetStartedButton() {
   return SizedBox(
     width: double.infinity,
     child: Padding(
-      padding: const EdgeInsets.all(24.0),
+      padding: const EdgeInsets.all(24),
       child: AnimatedBuilder(
         animation: _staggeredController,
         builder: (context, child) {
@@ -642,7 +634,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             );
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
             child: Text(
               _menuTitles[i],
               textAlign: TextAlign.left,
@@ -662,7 +654,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24),
         child: AnimatedBuilder(
           animation: _staggeredController,
           builder: (context, child) {

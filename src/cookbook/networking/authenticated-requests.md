@@ -5,14 +5,6 @@ description: How to fetch authorized data from a web service.
 description: 如何从 web 服务中获取授权信息。
 tags: cookbook, 实用教程, 网络请求
 keywords: HTTP 认证授权请求
-prev:
-  title: Fetch data from the internet
-  title: 获取网络数据
-  path: /docs/cookbook/networking/fetch-data
-next:
-  title: Parse JSON in the background
-  title: 在后台处理 JSON 数据解析
-  path: /docs/cookbook/networking/background-parsing
 ---
 
 <?code-excerpt path-base="cookbook/networking/authenticated_requests/"?>

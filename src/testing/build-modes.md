@@ -45,11 +45,20 @@ A quick summary for when to use which mode is as follows:
 
   发布应用的时候，需要选择使用 [release](#release) 构建模式。
 
-The rest of the page goes into more detail about these modes.
-For information on headless testing, see the [Flutter wiki][].
+The rest of the page details these modes.
 
-下文详细解释了每种模式以及何时使用它，获得更多信息，或者了解无头模式的测试，
-请参考 [Flutter wiki][] 文档。
+下文详细解释了每种模式以及何时使用它。
+
+* To learn about headless testing, see the [Flutter wiki][].
+
+  参考 [Flutter wiki][] 了解如何使用不可见模式。
+
+* To learn how to detect the build mode, see the
+[Check for Debug/Release Mode in Flutter Apps] blog post.
+
+  参考 [Flutter 应用的 Debug/Release 模式][Check for Debug/Release Mode in Flutter Apps] 文章。
+
+[Check for Debug/Release Mode in Flutter Apps]: https://retroportalstudio.medium.com/check-for-debug-release-mode-in-flutter-apps-d8d545f20da3
 
 ## Debug
 
@@ -86,7 +95,7 @@ Debug mode for a web app means that:
 
 在 Web 平台下的调试模式意味着：
 
-* The build is _not_ minified and tree shaking has _not_ been 
+* The build is _not_ minified and tree shaking has _not_ been
   performed.
 
   本次构建 **没有** 最小化资源并且整个构建 **没有** 优化性能。

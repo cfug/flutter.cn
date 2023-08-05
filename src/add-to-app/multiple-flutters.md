@@ -1,9 +1,11 @@
 ---
 title: Multiple Flutter screens or views
 title: 多个 Flutter 页面或视图
-short-title: Adding multiple Flutters
+short-title: Add multiple Flutters
 short-title: 添加多个 Flutter 引擎
-description: How to integrate multiple instances of Flutter engine, screens or views to your application.
+description: >
+  How to integrate multiple instances of 
+  Flutter engine, screens, or views to your application.
 description: 如何将多个 Flutter 引擎 (engine)、页面 (screen) 或视图 (view) 添加到你的应用中（实验性）。
 ---
 
@@ -11,9 +13,11 @@ description: 如何将多个 Flutter 引擎 (engine)、页面 (screen) 或视图
 
 ## 使用场景
 
-If you're integrating Flutter into an existing app, or gradually migrating an
-existing app to use Flutter, you may find yourself wanting to add multiple
-Flutter instances to the same project. In particular, this can be useful in the
+If you're integrating Flutter into an existing app,
+or gradually migrating an existing app to use Flutter,
+you might find yourself wanting to add multiple
+Flutter instances to the same project.
+In particular, this can be useful in the
 following scenarios:
 
 如果你正在将 Flutter 集成到现有应用，或者正在将原生应用逐渐迁移到使用 Flutter，
@@ -37,7 +41,7 @@ instance is independent and maintains its own internal navigation
 stack, UI, and application states. This simplifies the overall application code's
 responsibility for state keeping and improves modularity. More details on the
 scenarios motivating the usage of multiple Flutters can be found at
-[docs.flutter.dev/go/multiple-flutters][].
+[flutter.dev/go/multiple-flutters][].
 
 使用多个 Flutter 实例的优势在于，每一个实例互相独立，各自维护路由栈、UI 和应用状态。
 这简化了应用程序整体的状态保持考虑，并且进一步模块化。
@@ -122,7 +126,7 @@ rendering latency and lower memory footprint.
 
 Communication between Flutter instances is handled using [platform channels][]
 (or [Pigeon][]) through the host platform. To see our roadmap on communication,
-or other planned work on enhancing multiple Flutter instances, see 
+or other planned work on enhancing multiple Flutter instances, check out
 [Issue 72009][].
 
 多个 Flutter 实例之间相互通讯可以通过 [平台通道][platform channels] 或者 [Pigeon][] 进行。
@@ -144,7 +148,7 @@ on both Android and iOS on [GitHub][].
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [performance characteristics]: {{site.url}}/add-to-app/performance
-[docs.flutter.dev/go/multiple-flutters]: {{site.url}}/go/multiple-flutters
+[flutter.dev/go/multiple-flutters]: {{site.url}}/go/multiple-flutters
 [Issue 72009]: {{site.repo.flutter}}/issues/72009
 [Pigeon]: {{site.pub}}/packages/pigeon
 [platform channels]: {{site.url}}/platform-integration/platform-channels

@@ -5,14 +5,6 @@ description: How to work with cached images.
 description: 如何操作缓存的图片。
 tags: cookbook, 实用教程, 使用图片
 keywords: Flutter使用图片,图片缓存,网络图片,API
-prev:
-  title: Fade in images with a placeholder
-  title: 占位符和网络图片淡入
-  path: /docs/cookbook/images/fading-in-images
-next:
-  title: Use lists
-  title: 基础列表
-  path: /docs/cookbook/lists/basic-list
 ---
 
 <?code-excerpt path-base="cookbook/images/cached_images"?>

@@ -1,7 +1,9 @@
 ---
 title: Code formatting
 title: 代码格式化
-description: Flutter's code formatter formats your code along recommended style guidelines.
+description: >
+    Flutter's code formatter formats your code
+    following recommended style guidelines.
 description: Flutter 的代码格式化工具以及推荐的代码格式。
 tags: SDK,Flutter SDK
 keywords: 代码格式化,dartfmt,代码审查,code review
@@ -116,10 +118,14 @@ Here is an example of automatically formatted code *with* trailing commas:
 
 自动格式化的时候，末尾处 **加入** 逗号的例子：
 
+![Automatically formatted code with trailing commas]({{site.url}}/assets/images/docs/tools/android-studio/trailing-comma-with.png){:width="100%"}
+
 ![末尾处有逗号进行代码自动格式化的情况 (Automatically formatted code with trailing commas)]({{site.url}}/assets/images/docs/tools/android-studio/trailing-comma-with.png){:width="100%"}
 
 And the same code automatically formatted code *without* trailing commas:
 
 同样的代码在进行自动格式化的时候，末尾处没有逗号的例子：
+
+![Automatically formatted code without trailing commas]({{site.url}}/assets/images/docs/tools/android-studio/trailing-comma-without.png){:width="100%"}
 
 ![末尾处没有逗号进行代码自动格式化的情况 (Automatically formatted code without trailing commas)]({{site.url}}/assets/images/docs/tools/android-studio/trailing-comma-without.png){:width="100%"}

@@ -3,16 +3,6 @@ title: Add a drawer to a screen
 title: 在屏幕上添加一个 drawer
 description: How to implement a Material Drawer.
 description: 如何实现一个 Material 风格的 Drawer。
-tags: cookbook, 实用教程, 设计
-keywords: Material Design 效果, Tab效果
-prev:
-  title: Fade a widget in and out
-  title: Widget 的淡入淡出效果
-  path: /docs/cookbook/animation/opacity-animation
-next:
-  title: Displaying SnackBars
-  title: 显示 SnackBars
-  path: /docs/cookbook/design/snackbars
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -36,25 +26,21 @@ This recipe uses the following steps:
 来创建一个具有 Material Design 风格的 Drawer 布局。
 请参见如下的步骤：
 
-## Directions
+  1. Create a `Scaffold`.
 
-## 步骤
+     创建一个 `Scaffold`。
 
-  1. Create a `Scaffold`
+  2. Add a drawer.
 
-     创建一个 `Scaffold`
+     添加一个 drawer。
 
-  2. Add a drawer
+  3. Populate the drawer with items.
 
-     添加一个 drawer
+     向 drawer 中添加内容。
 
-  3. Populate the drawer with items
+  4. Close the drawer programmatically.
 
-     向 drawer 中添加内容
-
-  4. Close the drawer programmatically
-
-     通过编程关闭 drawer
+     通过代码关闭 drawer。
 
 ## 1. Create a `Scaffold`
 
@@ -178,7 +164,7 @@ stack. Therefore, to close the drawer, call `Navigator.pop(context)`.
 当用户打开 Drawer 时，Flutter 会将 drawer widget 覆盖在当前的导航堆栈上。
 因此，要关闭 drawer，我们可以通过调用 `Navigator.pop(context)` 来实现。
 
-<?code-excerpt "lib/main.dart (CloseDrawer)"?>
+<?code-excerpt "lib/drawer.dart (CloseDrawer)"?>
 ```dart
 ListTile(
   title: const Text('Item 1'),
@@ -194,6 +180,25 @@ ListTile(
 ## Interactive example
 
 ## 交互式样例
+
+This example shows a [`Drawer`][] as it is used within a [`Scaffold`][] widget.
+The [`Drawer`][] has three [`ListTile`][] items.
+The `_onItemTapped` function changes the selected item's index
+and displays the corresponding text in the center of the `Scaffold`.
+
+该示例展示了如何在 [`Scaffold`][] 中使用 [`Drawer`][]。
+[`Drawer`][] 中包含三个 [`ListTile`][]。
+`_onItemTapped` 方法会改变当前选中的元素，并在 `Scaffold` 中央展示对应的文字。
+
+{{site.alert.note}}
+
+  For more information on implementing navigation,
+  check out the [Navigation][] section of the cookbook.
+
+  想要了解更多关于如何实现导航的信息，
+  查阅 [导航][Navigation] 文档。
+
+{{site.alert.end}}
 
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
@@ -215,17 +220,46 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
 
   @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Business',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: School',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: const Center(
-        child: Text('My Page!'),
+      appBar: AppBar(title: Text(widget.title)),
+      body: Center(
+        child: _widgetOptions[_selectedIndex],
       ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
@@ -242,19 +276,31 @@ class MyHomePage extends StatelessWidget {
               child: Text('Drawer Header'),
             ),
             ListTile(
-              title: const Text('Item 1'),
+              title: const Text('Home'),
+              selected: _selectedIndex == 0,
               onTap: () {
                 // Update the state of the app
-                // ...
+                _onItemTapped(0);
                 // Then close the drawer
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: const Text('Item 2'),
+              title: const Text('Business'),
+              selected: _selectedIndex == 1,
               onTap: () {
                 // Update the state of the app
-                // ...
+                _onItemTapped(1);
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('School'),
+              selected: _selectedIndex == 2,
+              onTap: () {
+                // Update the state of the app
+                _onItemTapped(2);
                 // Then close the drawer
                 Navigator.pop(context);
               },
@@ -280,3 +326,4 @@ class MyHomePage extends StatelessWidget {
 [material library]: {{site.api}}/flutter/material/material-library.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[Navigation]: {{site.url}}/cookbook#navigation

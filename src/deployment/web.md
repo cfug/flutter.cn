@@ -22,6 +22,18 @@ of your app and covers the following topics:
 
 本页面会帮助你构建 **release** 版本的应用，其囊括了如下主题：
 
+* [Building the app for release](#building-the-app-for-release)
+
+  [构建正式版本的应用](#building-the-app-for-release)
+
+* [Deploying to the web](#deploying-to-the-web)
+
+  [部署应用到 Web](#deploying-to-the-web)
+
+* [Deploying to Firebase Hosting](#deploying-to-firebase-hosting)
+
+  [部署到 Firebase 主机](#deploying-to-firebase-hosting)
+
 * [Handling images on the web](#handling-images-on-the-web)
 
   [处理 Web 中的图片](#handling-images-on-the-web)
@@ -33,74 +45,6 @@ of your app and covers the following topics:
 * [Minification](#minification)
 
   [压缩](#minification)
-
-* [Building the app for release](#building-the-app-for-release)
-
-  [构建用于发布的应用](#building-the-app-for-release)
-
-* [Deploying to the web](#deploying-to-the-web)
-
-  [发布到 Web 上](#deploying-to-the-web)
-
-## Handling images on the web
-
-## 处理 Web 中的图片
-
-The web supports the standard `Image` widget to display images.
-However, because web browsers are built to run untrusted code safely,
-there are certain limitations in what you can do with images compared
-to mobile and desktop platforms.
-
-Web 支持标准的 `Image` widget 来显示图片。 
-但是，由于 Web 浏览器需要安全地运行不受信任的代码，
-因此与移动和桌面平台相比，图像处理方面存在某些限制。
-
-For more information, see [Displaying images on the web][].
-
-更多信息，请参阅 [在 Web 中展示图片][Displaying images on the web].
-
-## Choosing a web renderer
-
-## 选择 Web 渲染器
-
-By default, the `flutter build` and `flutter run` commands
-use the `auto` choice for the web renderer. This means that
-your app runs with the HTML renderer on mobile browsers and
-CanvasKit on desktop browsers. This is our recommended combination
-to optimize for the characteristics of each platform.
-
-默认情况下，`flutter build` 和 `flutter run` 命令对 Web 渲染器使用 `auto` 参数。 
-这意味着您的应用程序在移动浏览器上会与 HTML 渲染器一起运行，
-而在桌面浏览器上与 CanvasKit 一起运行。
-这是我们推荐的组合方式，能够针对每个平台特性优化。
-
-For more information, see [Web renderers][].
-
-更多信息，请参阅 [Web 渲染器][Web renderers].
-
-## Minification
-
-## 混淆并压缩代码
-
-Minification is handled for you when you
-create a release build.
-
-当你创建了一个 release 版本时，便已经压缩了代码。
-
-A debug build of a web app is not minified and
-tree shaking has not been performed.
-
-Debug 模式构建的 Web 应用没有被压缩，且 Tree-shaking 没有执行。
-
-A profile build is not minified and tree shaking
-has been performed.
-
-Profile 模式构建的 Web 应用没有被压缩，但 Tree-shaking 执行了。
-
-A release build is both minified and tree shaking
-has been performed.
-
-Release 模式构建的 Web 应用被压缩了，并且 Tree-shaking 执行了。
 
 ## Building the app for release
 
@@ -171,6 +115,96 @@ to view the release version of your app.
 [dhttpd][] package），然后打开 /build/web 目录。
 在浏览器中访问 `localhost:8000`（前文用 Python 启动的服务器）
 以查看应用程序的 release 版本。
+
+## Deploying to the web
+
+When you are ready to deploy your app,
+upload the release bundle
+to Firebase, the cloud, or a similar service.
+Here are a few possibilities, but there are
+many others:
+
+* [Firebase Hosting][]
+* [GitHub Pages][]
+* [Google Cloud Hosting][]
+
+## Deploying to Firebase Hosting
+You can use the Firebase CLI to build and release your Flutter app with Firebase
+Hosting.
+
+### Before you begin
+To get started, [install or update][install-firebase-cli] the Firebase CLI:
+
+```
+npm install -g firebase-tools
+```
+
+### Initialize Firebase
+
+1. Enable the web frameworks preview to the [Firebase framework-aware CLI][]:
+
+    ```
+    firebase experiments:enable webframeworks
+    ```
+
+2. In an empty directory or an existing Flutter project, run the initialization
+command:
+
+    ```
+    firebase init hosting
+    ```
+
+3. Answer `yes` when asked if you want to use a web framework.
+
+4. If you're in an empty directory,
+    you'll be asked to choose your web framework. Choose `Flutter Web`.
+
+5. Choose your hosting source directory; this could be an existing flutter app.
+
+6. Select a region to host your files.
+
+7. Choose whether to set up automatic builds and deploys with GitHub.
+
+8. Deploy the app to Firebase Hosting:
+
+    ```terminal
+    firebase deploy
+    ```
+
+    Running this command automatically runs `flutter build web --release`,
+    so you don't have to build your app in a separate step.
+
+To learn more, visit the official [Firebase Hosting][] documentation for
+Flutter on the web.
+
+## Handling images on the web
+
+The web supports the standard `Image` widget to display images.
+By design, web browsers run untrusted code without harming the host computer.
+This limits what you can do with images compared to mobile and desktop platforms.
+
+For more information, see [Displaying images on the web][].
+
+## Choosing a web renderer
+
+By default, the `flutter build` and `flutter run` commands
+use the `auto` choice for the web renderer. This means that
+your app runs with the HTML renderer on mobile browsers and
+CanvasKit on desktop browsers. We recommend this combination
+to optimize for the characteristics of each platform.
+
+For more information, see [Web renderers][].
+
+## Minification
+
+Minification is handled for you when you
+create a release build.
+
+| Type of web app build | Code minified? | Tree shaking performed? |
+|-----------------------|----------------|-------------------------|
+| debug                 | No             | No                      |
+| profile               | No             | Yes                     |
+| release               | Yes            | Yes                     |
 
 ## Embedding a Flutter app into an HTML page
 
@@ -243,21 +277,6 @@ with the location of your HTML page:
 <iframe src="URL"></iframe>
 ```
 
-## Deploying to the web
-
-## 部署到 Web 端
-
-When you are ready to deploy your app,
-upload the release bundle
-to Firebase, the cloud, or a similar service.
-Here are a few possibilities, but there are
-many others:
-
-等你准备好部署应用时，将 release 包上传到 Firebase、云或者是类似服务上：
-
-* [Firebase Hosting][]
-* [GitHub Pages][]
-* [Google Cloud Hosting][]
 
 ## PWA Support
 
@@ -281,7 +300,9 @@ so please [give us feedback][] if you see something that doesn’t look right.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: {{site.url}}/platform-integration/web/web-images
-[Firebase Hosting]: {{site.firebase}}/docs/hosting
+[Firebase Hosting]: {{site.firebase}}/docs/hosting/frameworks/flutter
+[Firebase framework-aware CLI]: {{site.firebase}}/docs/hosting/frameworks/frameworks-overview
+[install-firebase-cli]: https://firebase.google.com/docs/cli#install_the_firebase_cli
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/web-hosting

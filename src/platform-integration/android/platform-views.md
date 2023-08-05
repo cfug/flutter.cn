@@ -245,6 +245,7 @@ package dev.flutter.example
 
 import android.content.Context
 import android.graphics.Color
+import android.view.View
 import android.widget.TextView
 import io.flutter.plugin.platform.PlatformView
 
@@ -277,7 +278,6 @@ Create a factory class that creates an instance of the
 package dev.flutter.example
 
 import android.content.Context
-import android.view.View
 import io.flutter.plugin.common.StandardMessageCodec
 import io.flutter.plugin.platform.PlatformView
 import io.flutter.plugin.platform.PlatformViewFactory
@@ -311,10 +311,12 @@ import io.flutter.embedding.engine.FlutterEngine
 
 class MainActivity : FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        super.configureFlutterEngine(flutterEngine)
         flutterEngine
                 .platformViewsController
                 .registry
-                .registerViewFactory("<platform-view-type>", NativeViewFactory())
+                .registerViewFactory("<platform-view-type>", 
+                                      NativeViewFactory())
     }
 }
 ```

@@ -87,7 +87,7 @@ see [Adding assets and images][].
 如果你想添加资源、图片或字体，无论是存储在文件中还是 package 中，
 请参阅 [添加资源和图片][Adding assets and images] 这篇文档。
 
-[Adding assets and images]: {{site.url}}/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
 [developing packages]: {{site.url}}/packages-and-plugins/developing-packages
 [FlutterFire]: {{site.github}}/firebase/flutterfire

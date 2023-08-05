@@ -31,7 +31,7 @@ HTTP、HTTPS 和 web socket 的网络流量情况。
 ## 如何使用
 
 Network traffic should be recording by default when you open the Network page.
-If it is not, click the **Resume** button in the upper left to
+If it is not, click the **Record network traffic** button in the upper left to
 begin polling.
 
 当你打开网络页时，网络流量应该是默认记录的。
@@ -123,5 +123,5 @@ causes poor app performance.
 请查阅 [网络视图教程][network-tutorial]。
 该教程还使用网络视图来识别导致应用程序性能不佳的网络活动。
 
-[timeline]: {{site.url}}/tools/devtools/performance#timeline-events-chart
+[timeline]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 [network-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-network-view-part-4-of-8-afce2463687c

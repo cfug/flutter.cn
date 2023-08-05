@@ -2,14 +2,7 @@
 title: Create a nested navigation flow
 title: 创建一个嵌套导航
 description: How to implement a flow with nested navigation.
-prev:
-  title: Create a download button
-  title: 创建一个带进度条的下载按钮
-  path: /docs/cookbook/effects/download-button
-next:
-  title: Create a photo filter carousel
-  title: 创建一个照片滤镜选择器
-  path: /docs/cookbook/effects/photo-filter-carousel
+description: 如何实现嵌套的导航
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -595,7 +588,7 @@ class SelectDevicePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -666,7 +659,7 @@ class _WaitingPageState extends State<WaitingPage> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -694,7 +687,7 @@ class FinishedPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -764,7 +757,7 @@ class HomeScreen extends StatelessWidget {
       appBar: _buildAppBar(context),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

@@ -7,12 +7,10 @@ short-title: Introduction
 short-title: 介绍
 prev:
   title: Take a picture using the camera
-  title: 调用设备相机拍照
-  path: /docs/cookbook/plugins/picture-using-camera
+  path: /cookbook/plugins/picture-using-camera
 next:
   title: Performance profiling
-  title: 性能调试
-  path: /docs/cookbook/testing/integration/profiling
+  path: /cookbook/testing/integration/profiling
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>
@@ -47,23 +45,23 @@ This recipe uses the following steps:
 
   1. Create an app to test.
 
-     创建一个应用用于测试；
+     创建一个应用用于测试。
 
   2. Add the `integration_test` dependency.
 
-     添加 `integration_test` 依赖
+     添加 `integration_test` 依赖。
 
   3. Create the test files.
 
-     创建测试文件
+     创建测试文件。
 
-  4. Write the integration tests.
+  4. Write the integration test.
 
-     编写集成测试
-     
+     编写集成测试。
+
   5. Run the integration test.
 
-     运行集成测试
+     运行集成测试。
 
 ### 1. Create an app to test
 
@@ -77,15 +75,6 @@ to increase a counter.
 首先，我们需要创建一个应用用于测试。
 在这个示例中，我们将会测试一个由 `flutter create` 命令创建的计数器应用。
 这个应用允许用户点击按钮增加计数。
-
-Furthermore, provide a [`ValueKey`][] to
-the `Text` and `FloatingActionButton` widgets.
-This allows identifying and interacting with these
-specific widgets inside the test suite.
-
-此外，我们将会给 `Text` 组件和 `FloatingActionButton`
-组件增加 [`ValueKey`][] 属性。
-通过这个我们将可以在测试套件中标识特定组件并进行交互。
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
@@ -220,12 +209,11 @@ Now you can write tests. This involves three steps:
 
      测试重要的应用场景。
 
-<?code-excerpt "lib/integration_test/app_test.dart (IntegrationTest)"?>
+<?code-excerpt "integration_test/app_test.dart (IntegrationTest)"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-
-import 'package:counter_app/main.dart' as app;
+import 'package:introduction/main.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -233,8 +221,8 @@ void main() {
   group('end-to-end test', () {
     testWidgets('tap on the floating action button, verify counter',
         (tester) async {
-      app.main();
-      await tester.pumpAndSettle();
+      // Load app widget.
+      await tester.pumpWidget(const MyApp());
 
       // Verify the counter starts at 0.
       expect(find.text('0'), findsOneWidget);
@@ -297,6 +285,21 @@ information, see the [Integration testing][] page.
 
 #### 5b. Web 平台
 
+<!--
+TODO(ryjohn): Add back after other WebDriver versions are supported:
+https://github.com/flutter/flutter/issues/90158
+
+To test for web,
+determine which browser you want to test against
+and download the corresponding web driver:
+
+  * Chrome: [Download ChromeDriver][]
+  * Firefox: [Download GeckoDriver][]
+  * Safari: Safari can only be tested on a Mac;
+    the SafariDriver is already installed on Mac machines.
+  * Edge [Download EdgeDriver][]
+-->
+
 To get started testing in a web browser, [Download ChromeDriver][].
 
 在网页浏览器里开始进行集成测试，首先要下载 [ChromeDriver][Download ChromeDriver]。
@@ -307,7 +310,7 @@ named `integration_test.dart`:
 接下来，新建一个文件夹，命名为 `test_driver`，并包含一个新的文件，命名为
 `integration_test.dart`。
 
-<?code-excerpt "lib/test_driver/integration_test.dart"?>
+<?code-excerpt "test_driver/integration_test.dart"?>
 ```dart
 import 'package:integration_test/integration_test_driver.dart';
 

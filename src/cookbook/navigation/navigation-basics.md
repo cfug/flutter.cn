@@ -5,14 +5,6 @@ description: How to navigate between routes.
 description: 如何在路由之间进行导航。
 tags: cookbook, 实用教程, 路由
 keywords: 路由之间的切换
-prev:
-  title: Animate a widget across screens
-  title: 跨页面切换的动效 Widget (Hero animations)
-  path: /docs/cookbook/navigation/hero-animations
-next:
-  title: Navigate with named routes
-  title: 导航到对应名称的 routes 里
-  path: /docs/cookbook/navigation/named-routes
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

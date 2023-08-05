@@ -6,14 +6,6 @@ description: 如何编写单元测试。
 short-title: Introduction
 tags: cookbook, 实用教程, 测试
 keywords: 单元测试,test package,flutter_test,IDE
-prev:
-  title: Performance profiling
-  title: 性能测试
-  path: /docs/cookbook/testing/integration/profiling
-next:
-  title: Mock dependencies using Mockito
-  title: 使用 Mockito 模拟依赖关系
-  path: /docs/cookbook/testing/unit/mocking
 ---
 
 <?code-excerpt path-base="cookbook/testing/unit/counter_app"?>
@@ -69,9 +61,9 @@ see the [test package documentation][].
 关于 package 测试的更多内容，
 可移步至 [test package 的文档][test package documentation]。
 
-## 1. Add the `test` or `flutter_test` dependency
+## 1. Add the test dependency
 
-## 1. 添加测试依赖 —— 将 `test` 或者 `flutter_test` 加入依赖文件
+## 1. 添加测试依赖
 
 The `test` package provides the core functionality for 
 writing tests in Dart. This is the best approach when
@@ -82,9 +74,13 @@ Test package 提供了编写测试所需要的核心功能。
 当我们写的 package 需要被 web、服务端和 Flutter app 使用时，
 这是最佳的方式。
 
-```yaml
-dev_dependencies:
-  test: <latest_version>
+To add the `test` package as a dev dependency,
+run `flutter pub add`:
+
+运行 `flutter pub add` 将 `test` 添加为依赖：
+
+```terminal
+$ flutter pub add dev:test
 ```
 
 ## 2. Create a test file

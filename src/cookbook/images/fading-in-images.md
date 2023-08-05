@@ -5,14 +5,6 @@ description: How to fade images into view.
 description: 如何淡入占位符和网络图片。
 tags: cookbook, 实用教程, 使用图片
 keywords: 交互,淡入淡出,占位符
-prev:
-  title: Display images from the internet
-  title: 显示网络上的远程图片
-  path: /docs/cookbook/images/network-image
-next:
-  title: Work with cached images
-  title: 使用缓存图片
-  path: /docs/cookbook/images/cached-images
 ---
 
 <?code-excerpt path-base="cookbook/images/fading_in_images"?>
@@ -170,7 +162,7 @@ class MyApp extends StatelessWidget {
 ![Asset fade-in]({{site.url}}/assets/images/docs/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
 
 
-[Adding assets and images]: {{site.url}}/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
 [`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
 [`transparent_image`]: {{site.pub-pkg}}/transparent_image

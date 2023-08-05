@@ -63,7 +63,8 @@ steps to take, and tools that can help.
     in the [Debugging][] page.
 
     分析 Dart 代码中的性能问题，
-    可以参考 [调试 Flutter 应用][] 页下的 [跟踪 Dart 代码性能][]。
+    可以参考 [调试 Flutter 应用][Debugging] 页下的
+    [跟踪 Dart 代码性能][Tracing Dart code]。
 
 {{site.alert.end}}
 
@@ -102,7 +103,7 @@ _You should consider checking performance
 on the slowest device that your users might reasonably use._
 
 几乎全部的 Flutter 应用性能调试都应该在真实的 Android 或者
-iOS 设备上以 [分析模式][] 进行。
+iOS 设备上以 [分析模式][profile mode] 进行。
 通常来说，调试模式或者是模拟器上运行的应用的性能指标和发布模式的表现并不相同。
 **应该考虑在用户使用的最慢的设备上检查性能。**
 
@@ -195,10 +196,16 @@ Launch the app in profile mode as follows:
     }
   ]
   ```
+* In Android Studio and IntelliJ, use the
+  **Run > Flutter Run main.dart in Profile Mode** menu item.
 
-- From the command line, use the `--profile` flag:
+  在 Android Studio 和 IntelliJ 中，你可以使用菜单项里的
+  **Run > Flutter Run main.dart in Profile Mode** 运行；
 
-  命令行使用 `--profile` 参数运行
+* From the command line, use the `--profile` flag:
+
+  命令行使用 `--profile` 参数运行：
+
 
   ```terminal
   $ flutter run --profile
@@ -388,12 +395,14 @@ Flutter 使用多个线程来完成其必要的工作，图层中仅展示了其
     it by talking to the GPU (graphic processing unit).
     You cannot directly access the raster thread or its data but,
     if this thread is slow, it's a result of something you've done
-    in the Dart code. Skia, the graphics library, runs on this thread.
+    in the Dart code. Skia and Impeller, the graphics libraries,
+    run on this thread.
     Shown in the top row of the performance overlay.
     This thread was previously known as the "GPU thread" because it
-    rasterizes for the GPU. But it is running on the CPU. We renamed it
-    to "raster thread" because many developers wrongly (but understandably)
-    assumed the thread runs on the GPU unit.</p>
+    rasterizes for the GPU. But it is running on the CPU.
+    We renamed it to "raster thread" because many developers wrongly
+    (but understandably)
+    assumed the thread runs on the GPU unit.
 <p markdown="1">raster 线程拿到 layer tree，并将它交给 GPU（图形处理单元）。
     你无法直接与 GPU 线程或其数据通信，
     但如果该线程变慢，一定是开发者 Dart 代码中的某处导致的。
@@ -454,7 +463,7 @@ You can toggle display of the performance overlay as follows:
 
 #### 使用 Flutter inspector
 
-The easiest way to enable the PerformanceOverlay widget is 
+The easiest way to enable the PerformanceOverlay widget is
 from the Flutter inspector, which is available in the
 [Inspector view][] in [DevTools][]. Simply click the
 **Performance Overlay** button to toggle the overlay
@@ -711,16 +720,10 @@ Widget rebuild profiler 可以帮助调试和修复这些问题引起的 bug。
 
 You can view the widget rebuilt counts for the current screen and
 frame in the Flutter plugin for Android Studio and IntelliJ.
-For details on how to do this, see [Show performance data][].
+For details on how to do this, see [Show performance data][]
 
 可以检视 widget inspector 中当前屏幕和帧下的 widget 重建数量。
-了解细节，可以参考
-[在 Android Studio 或类 IntelliJ 里开发 Flutter 应用][] 中的
-[显示性能数据][Show performance data]。
-
-[Show performance data]: {{site.url}}/development/tools/android-studio#show-performance-data
-
-[Show performance data]: {{site.url}}/development/tools/android-studio#show-performance-data
+了解细节，可以参考 [显示性能数据][Show performance data]。
 
 [Show performance data]: {{site.url}}/tools/android-studio#show-performance-data
 
@@ -758,20 +761,17 @@ regression is introduced that adversely affects performance.
 
 追踪这些评分可以在回归测试中了解对性能的不利影响。
 
-For more information, see [Integration testing][],
-a section in [Testing Flutter apps][].
+For more information, check out [Integration testing][].
 
-了解更多，请参考 [测试 Flutter 应用][Integration testing] 中的
-[集成测试][Testing Flutter apps] 一节。
+了解更多，请参考 [测试 Flutter 应用][Integration testing]。
 
-[Integration testing]: {{site.url}}/testing#integration-tests
-[Testing Flutter apps]: {{site.url}}/testing
+[Integration testing]: {{site.url}}/testing/integration-tests
 
 ## Other resources
 
 ## 更多资源
 
-The following resources provide more information on using
+The following resources provide测试 Flutter 应用 more information on using
 Flutter's tools and debugging in Flutter:
 
 以下链接提供了关于 Flutter 工具的使用和 Flutter 调试的更多信息：
@@ -812,11 +812,3 @@ Flutter's tools and debugging in Flutter:
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [video]: https://www.bilibili.com/video/BV1t54y1m7Qr/
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
-[跟踪 Dart 代码性能]: {{site.url}}/testing/debugging#tracing-dart-code
-[调试 Flutter 应用]: {{site.url}}/testing/debugging
-[Flutter 的构建模式选择]: {{site.url}}/testing/build-modes
-[分析模式]: {{site.url}}/testing/build-modes#profile
-[集成测试]: {{site.url}}/testing#integration-tests
-[显示性能数据]: {{site.url}}/development/tools/android-studio#show-performance-data
-[在 Android Studio 或类 IntelliJ 里开发 Flutter 应用]: {{site.url}}/development/tools/android-studio
-[测试 Flutter 应用]: {{site.url}}/testing

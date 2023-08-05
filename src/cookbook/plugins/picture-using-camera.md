@@ -5,14 +5,6 @@ description: How to use a camera plugin on mobile.
 description: 如何在移动设备上使用 camera 插件。
 tags: cookbook, 实用教程, 原生插件
 keywords: Flutter使用相机,录像,相机预览
-prev:
-  title: Play and pause a video
-  title: 视频的播放和暂停
-  path: /docs/cookbook/plugins/play-video
-next:
-  title: An introduction to integration testing
-  title: 集成测试介绍
-  path: /docs/cookbook/testing/integration/introduction
 ---
 
 <?code-excerpt path-base="cookbook/plugins/picture_using_camera/"?>
@@ -28,7 +20,7 @@ and take photos or videos.
 `camera` 插件提供了一系列可用的相机，
 并使用特定的相机展示相机预览、拍照、录视频。
 
-This recipe demonstrates how to use the `camera` plugin to display a preview, 
+This recipe demonstrates how to use the `camera` plugin to display a preview,
 take a photo, and display it using the following steps:
 
 这个章节将会讲解如何使用 `camera` 插件去
@@ -88,14 +80,14 @@ To complete this recipe, you need to add three dependencies to your app:
 [`path`][]
 <br> 创建适配任何平台的路径
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  camera:
-  path_provider:
-  path:
+To add the packages as dependencies, run `flutter pub add`:
+
+运行 `flutter pub add` 将其添加为依赖：
+
+```terminal
+$ flutter pub add camera path_provider path
 ```
+
 {{site.alert.tip}}
 
   - For android, You must update `minSdkVersion` to 21 (or higher).
@@ -297,7 +289,7 @@ Taking a picture requires 2 steps:
 
   1. Ensure that the camera is initialized.
   2. Use the controller to take a picture and ensure that it returns a `Future<XFile>`.
-  
+
 It is good practice to wrap these operations in a `try / catch` block in order
 to handle any errors that might occur.
 
@@ -501,4 +493,4 @@ class DisplayPictureScreen extends StatelessWidget {
 [`path`]: {{site.pub-pkg}}/path
 [`path_provider`]: {{site.pub-pkg}}/path_provider
 [`takePicture()`]: {{site.pub}}/documentation/camera/latest/camera/CameraController/takePicture.html
-[`XFile`]: {{site.pub}}/documentation/cross_file/latest/cross_file/XFile-class.html
+[`XFile`]:  {{site.pub}}/documentation/cross_file/latest/cross_file/XFile-class.html

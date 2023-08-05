@@ -248,8 +248,8 @@ header in the `firebase.json` file.
 
 If the image server cannot be configured to allow CORS
 requests from your application,
-you may still be able to load images by proxying the requests
-through another server. This requires that the
+you might still be able to load images by proxying
+the requests through another server. This requires that the
 intermediate server has sufficient access to load the images.
 
 如果无法从你的应用层面去配置图片服务器的 CORS，
@@ -291,7 +291,7 @@ Flutter 支持在应用中使用 [`HtmlElementView`][17] 嵌入 HTML。
 「Web 中的 Flutter 渲染器」一节中提到的限制。
 
 [As of today][20], using too many HTML elements
-with the CanvasKit renderer may hurt performance.
+with the CanvasKit renderer might hurt performance.
 If images interleave non-image content Flutter needs to
 create extra WebGL contexts between the `<img>` elements.
 If your application needs to display a lot of images
@@ -316,7 +316,7 @@ Flutter 需要在 `<img>` 元素之间创建额外的 WebGL 上下文。
 [9]: {{site.api}}/flutter/dart-ui/Codec/getNextFrame.html
 [10]: {{site.api}}/flutter/dart-ui/Scene/toImage.html
 [11]: {{site.api}}/flutter/dart-ui/Image-class.html
-[12]: {{site.url}}/ui/assets-and-images
+[12]: {{site.url}}/ui/assets/assets-and-images
 [13]: {{site.api}}/flutter/widgets/Image/Image.memory.html
 [14]: {{site.api}}/flutter/widgets/Image/Image.asset.html
 [15]: {{site.api}}/flutter/widgets/Image/Image.network.html

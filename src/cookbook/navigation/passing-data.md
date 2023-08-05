@@ -5,14 +5,6 @@ description: How to pass data to a new route.
 description: 如何向新路由传递数据。
 tags: cookbook, 实用教程, 路由
 keywords: 传参,待办事项应用
-prev:
-  title: Return data from a screen
-  title: 从一个页面回传数据
-  path: /docs/cookbook/navigation/returning-data
-next:
-  title: Delete data on the internet
-  title: 删除网络数据
-  path: /docs/cookbook/networking/delete-data
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -28,7 +20,7 @@ the item that's been tapped.
 在开发的过程中，我们经常需要在跳转到新页面的时候，
 能同时传递一些数据。比如，传递用户点击的元素信息。
 
-Remember: Screens are Just widgets.
+Remember: Screens are just widgets.
 In this example, create a list of todos.
 When a todo is tapped, navigate to a new screen (widget) that
 displays information about the todo.
@@ -37,10 +29,6 @@ This recipe uses the following steps:
 还记得么，全屏的界面也只是 widget。在这个例子中，我们会创建一个待办事项列表，
 当某个事项被点击的时候，会跳转到新的一屏 (widget)，
 在新的一屏显示待办事项的详细信息。
-
-## Directions
-
-## 步骤
 
   1. Define a todo class.
 
@@ -218,7 +206,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Text(todo.description),
       ),
     );
@@ -351,7 +339,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Text(todo.description),
       ),
     );
@@ -371,10 +359,7 @@ Repeat the first two steps.
 
 ### 创建一个详情页以提取参数
 
-Next, create a detail screen that extracts and displays
-the title and description from the `Todo`. 
-To access the `Todo`, use the `ModalRoute.of()` method.
-This method returns the current route with the arguments.
+Next, create a detail screen that extracts and displays the title and description from the `Todo`. To access the `Todo`, use the [`ModalRoute.of()`][] method. This method returns the current route with the arguments.
 
 接下来，创建一个详情页用于提取并显示来自 `Todo` 页面的标题和描述信息。
 为了访问 `Todo` 页面，请使用 `ModalRoute.of()` 方法。
@@ -395,7 +380,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Text(todo.description),
       ),
     );
@@ -529,7 +514,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Text(todo.description),
       ),
     );

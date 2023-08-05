@@ -1,5 +1,5 @@
 ---
-title: Adding a Flutter screen to an iOS app
+title: Add a Flutter screen to an iOS app
 title: 在 iOS 应用中添加 Flutter 页面
 short-title: Add a Flutter screen
 short-title: 添加 Flutter 页面
@@ -35,7 +35,7 @@ To launch a Flutter screen from an existing iOS, you start a
   给 Flutter 传递 UIKit 的输入事件，并展示被 `FlutterEngine` 渲染的每一帧画面。
 {{site.alert.end}}
 
-The `FlutterEngine` may have the same lifespan as your
+The `FlutterEngine` might have the same lifespan as your
 `FlutterViewController` or outlive your `FlutterViewController`.
 
 `FlutterEngine` 的寿命可能与 `FlutterViewController` 相同，也可能超过 `FlutterViewController`。
@@ -86,8 +86,7 @@ We then pass this `FlutterEngine` into a `ContentView` using the
 在这个例子中，我们在 SwiftUI 的 `ObservableObject` 中创建了一个 `FlutterEngine` 对象。
 然后我们使用 `environmentObject()` 属性将这个 `FlutterEngine` 传递给了 `ContentView`。
 
- **In `MyApp.swift`:**
- <!--code-excerpt "MyApp.swift" title-->
+ <?code-excerpt title="MyApp.swift"?>
  ```swift
 import SwiftUI
 import Flutter
@@ -124,9 +123,7 @@ the app delegate.
 这个例子中，我们在应用启动时的 App Delegate 中创建了一个 `FlutterEngine`
 并作为属性暴露给外界。
 
-**In `AppDelegate.swift`:**
-
-<!--code-excerpt "AppDelegate.swift" title-->
+<?code-excerpt title="AppDelegate.swift"?>
 ```swift
 import UIKit
 import Flutter
@@ -151,17 +148,14 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 In this example, we create a `FlutterEngine` 
 object inside a SwiftUI `ObservableObject`. 
 We then pass this `FlutterEngine` into a 
-`ContentView` using the `environmentObject()` property. 
+`ContentView` using the `environmentObject()` property.
 
 在这个例子中，我们在 SwiftUI 的 `ObservableObject`
 中创建了一个 `FlutterEngine` 对象。
 然后我们使用 `environmentObject()` 属性将这个
 `FlutterEngine` 传递给 `ContentView`。
 
-**In `AppDelegate.h`:**
-
-**在 `AppDelegate.h`:**
-<!--code-excerpt "AppDelegate.h" title-->
+<?code-excerpt title="AppDelegate.h"?>
 ```objectivec
 @import UIKit;
 @import Flutter;
@@ -171,10 +165,7 @@ We then pass this `FlutterEngine` into a
 @end
 ```
 
-**In `AppDelegate.m`:**
-
-**在 `AppDelegate.m`:**
-<!--code-excerpt "AppDelegate.m" title-->
+<?code-excerpt title="AppDelegate.m"?>
 ```objectivec
 // The following library connects plugins with iOS platform code to this app.
 #import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
@@ -216,7 +207,7 @@ as an `EnvironmentObject` via `flutterDependencies`.
 `FlutterEngine` 作为参数，`FlutterEngine` 通过
 `flutterDependencies` 作为 `EnvironmentObject` 传入。
 
-<!--code-excerpt "ContentView.swift" title-->
+<?code-excerpt title="ContentView.swift"?>
 ```swift
 import SwiftUI
 import Flutter
@@ -265,7 +256,7 @@ created in the `AppDelegate`.
 `FlutterViewController` 使用在 `AppDelegate`
 中创建的 Flutter 引擎 (`FlutterEngine`)。
 
-<!--code-excerpt "ViewController.swift" title-->
+<?code-excerpt title="ViewController.swift"?>
 ```swift
 import UIKit
 import Flutter
@@ -303,7 +294,7 @@ created in the `AppDelegate`.
 `FlutterViewController` 会使用在 `AppDelegate`
 中创建的 `FlutterEngine` 实例。
 
-<!--code-excerpt "ViewController.m" title-->
+<?code-excerpt title="ViewController.m"?>
 ```objectivec
 @import Flutter;
 #import "AppDelegate.h"
@@ -419,7 +410,7 @@ func openFlutterApp() {
 }
 ```
 {% sample UIKit-Swift %}
-<!--code-excerpt "ViewController.swift" title-->
+<?code-excerpt title="ViewController.swift"?>
 ```swift
 // Existing code omitted.
 func showFlutter() {
@@ -428,7 +419,7 @@ func showFlutter() {
 }
 ```
 {% sample UIKit-ObjC %}
-<!--code-excerpt "ViewController.m" title-->
+<?code-excerpt title="ViewController.m"?>
 ```objectivec
 // Existing code omitted.
 - (void)showFlutter {
@@ -563,7 +554,7 @@ func openFlutterApp() {
 If your app delegate can't directly make `FlutterAppDelegate` a subclass,
 make your app delegate implement the `FlutterAppLifeCycleProvider`
 protocol in order to make sure your plugins receive the necessary callbacks.
-Otherwise, plugins that depend on these events may have undefined behavior.
+Otherwise, plugins that depend on these events might have undefined behavior.
 
 如果你的 app delegate 不能直接继承 `FlutterAppDelegate`，
 让你的 app delegate 实现 `FlutterAppLifeCycleProvider` 协议，
@@ -576,6 +567,7 @@ For instance:
 
 {% samplecode app-delegate %}
 {% sample Swift %}
+<?code-excerpt title="AppDelegate.swift"?>
 ```swift
 import Foundation
 import Flutter
@@ -635,7 +627,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FlutterAppLifeCycleProvid
 ```
 
 {% sample Objective-C %}
-<!--code-excerpt "AppDelegate.h" title-->
+<?code-excerpt title="AppDelegate.h"?>
 ```objectivec
 @import Flutter;
 @import UIKit;
@@ -653,7 +645,7 @@ The implementation should delegate mostly to a
 在具体实现中，应该最大化地委托给
 `FlutterPluginAppLifeCycleDelegate`：
 
-<!--code-excerpt "AppDelegate.m" title-->
+<?code-excerpt title="AppDelegate.m"?>
 ```objectivec
 @interface AppDelegate ()
 @property (nonatomic, strong) FlutterPluginAppLifeCycleDelegate* lifeCycleDelegate;
@@ -819,12 +811,10 @@ in `lib/other_file.dart` instead of `main()` in `lib/main.dart`:
 
 {% samplecode entrypoint-library %}
 {% sample Swift %}
-<!--code-excerpt "Swift" title-->
 ```swift
 flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
 ```
 {% sample Objective-C %}
-<!--code-excerpt "Objective-C" title-->
 ```objectivec
 [flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
 ```
@@ -842,14 +832,13 @@ when constructing the engine.
 
 {% samplecode initial-route %}
 {% sample Swift %}
-<!--code-excerpt "Creating engine" title-->
 ```swift
-let flutterEngine = FlutterEngine(name: "my flutter engine")
-flutterEngine.navigationChannel.invokeMethod("setInitialRoute", arguments:"/onboarding")
-flutterEngine.run()
+let flutterEngine = FlutterEngine()
+// FlutterDefaultDartEntrypoint is the same as nil, which will run main().
+engine.run(
+  withEntrypoint: "main", initialRoute: "/onboarding")
 ```
 {% sample Objective-C %}
-<!--code-excerpt "Creating engine" title-->
 ```objectivec
 FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
 // FlutterDefaultDartEntrypoint is the same as nil, which will run main().
@@ -864,15 +853,18 @@ to `"/onboarding"` instead of `"/"`.
 这段代码使用 `"/onboarding"` 取代 `"/"`，
 作为你的 `dart:ui` 的 [`window.defaultRouteName`]({{site.api}}/flutter/dart-ui/Window/defaultRouteName.html)
 
+Alternatively, to construct a FlutterViewController directly without pre-warming
+a FlutterEngine:
+
+你也可以直接构造 FlutterViewController 而不用提前初始化 FlutterEngine：
+
 {% samplecode initial-route-without-pre-warming %}
 {% sample Swift %}
-<!--code-excerpt "Creating view controller" title-->
 ```swift
 let flutterViewController = FlutterViewController(
       project: nil, initialRoute: "/onboarding", nibName: nil, bundle: nil)
 ```
 {% sample Objective-C %}
-<!--code-excerpt "Creating view controller" title-->
 ```objectivec
 FlutterViewController* flutterViewController =
       [[FlutterViewController alloc] initWithProject:nil

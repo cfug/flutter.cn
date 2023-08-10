@@ -14,7 +14,7 @@ keywords: 网络请求
 The [`http`][] package provides the simplest way to issue http requests. This
 package is supported on Android, iOS, macOS, Windows, Linux and the web.
 
-`http`包提供了简单易用的提交http请求的接口，它被多种平台广泛支持，例如Android, iOS, macOS, Windows, Linux以及Web。
+[`http`][]包提供了简单易用的提交http请求的接口，它被多种平台广泛支持，例如Android, iOS, macOS, Windows, Linux以及Web。
 
 ## Platform notes
 

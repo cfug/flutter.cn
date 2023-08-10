@@ -16,41 +16,39 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
     通过 [直接下载][web download] 或者通过 [Mac App Store][]
     来安装最新稳定版 Xcode；
 
- 1. Configure the Xcode command-line tools to use the
-    newly-installed version of Xcode by
-    running the following from the command line:
+ 1. To configure the Xcode command-line tools to use the
+    installed version, run the following commands.
 
     配置 Xcode 命令行工具以使用新安装的 Xcode 版本。
     从命令行中运行以下命令：
 
     ```terminal
-    $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+    $ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
     $ sudo xcodebuild -runFirstLaunch
     ```
 
-    This is the correct path for most cases,
-    when you want to use the latest version of Xcode.
-    If you need to use a different version,
-    specify that path instead.
+    To use the latest version of Xcode, use this path.
+    If you need to use a different version, specify that path instead.
 
     当你安装了最新版本的 Xcode，大部分情况下，上面的路径都是一样的。
     但如果你安装了不同版本的 Xcode，你可能要更改一下上述命令中的路径。
 
-1. Make sure the Xcode license agreement is signed by
-    either opening Xcode once and confirming or running
-    `sudo xcodebuild -license` from the command line.
- 
-    运行一次 Xcode 或者通过输入命令 `sudo xcodebuild -license`
-    来确保已经同意 Xcode 的许可协议。
+ 1. Sign the Xcode license agreement.
+    To sign the SLA, either open Xcode once and confirm or run:
 
-Versions older than the latest stable version may still work,
+    同意 Xcode 的许可协议。运行一次 Xcode 或者通过输入命令来确保已经同意许可协议。
+
+    ```terminal
+    $ sudo xcodebuild --license
+    ```
+
+Versions older than the latest stable version might still work,
 but are not recommended for Flutter development.
 
 旧版本可能也能够正常工作，但是不建议在 Flutter 开发环境中使用。
 旧版本的 Xcode 不支持定位代码，还可能无法正常工作。
 
-With Xcode, you’ll be able to run Flutter apps on
-an iOS device or on the simulator.
+With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 
 安装了 Xcode 之后，你就可以在 iOS 真机或者模拟器上运行 Flutter 应用了。
 
@@ -59,162 +57,343 @@ an iOS device or on the simulator.
 ### 配置 iOS 模拟器
 
 To prepare to run and test your Flutter app on the iOS simulator,
-follow these steps:
+follow this procedure.
 
 如果想要在 iOS 模拟器中运行和测试 Flutter 应用，按照以下步骤即可：
 
- 1. On your Mac, find the Simulator via Spotlight or
-    by using the following command:
-
-    在你的 Mac 中，通过 Spotlight 或者以下命令来运行模拟器：
+ 1. To start the Simulator, run the following command:
 
     ```terminal
     $ open -a Simulator
     ```
 
- 2. Make sure your simulator is using a 64-bit device
-    (iPhone 5s or later).  You can check the device by viewing the settings in
-    the simulator's **Hardware > Device** or **File > Open Simulator** menus.
+ 2. Set your Simulator to use a 64-bit device (iPhone 5s or later).
 
-    通过模拟器菜单中的 **Hardware > Device** 或者 **File > Open Simulator** 
-    选项检查当前模拟器是否是 64 位机型（iPhone 5S 或之后的机型）。
+    - From Xcode, choose a simulator device type. Go to
+      **Product** <span aria-label="and then">></span>
+      **Destination** <span aria-label="and then">></span>
+      Choose your target device.
 
- 3. Depending on your development machine's screen size,
-    simulated high-screen-density iOS devices
-    might overflow your screen. Grab the corner of the
-    simulator and drag it to change the scale. You can also
-    use the **Window > Physical Size** or **Window > Pixel Accurate**
-    options if your computer's resolution is high enough.
+    - From the Simulator app, go to
+      **File** <span aria-label="and then">></span>
+      **Open Simulator** <span aria-label="and then">></span>
+      Choose your target iOS device
 
-    根据你当前开发机器的屏幕尺寸，
-    模拟器模拟出来的高密度屏幕的设备可能会溢出你的屏幕，
-    你可以调整模拟器的边角来拖动改变比例，
-    如果你的开发机分辨率很高的话，也可以通过菜单中的
-    **Window > Physical Size** or **Window > Pixel Accurate**
-    选项来更改模拟器的缩放比例。
-    * 如果你只用 Xcode 版本低于 9.1，调整模拟器比例的菜单选项应该是
-    **Window > Scale**。
+    - To check the device version in the Simulator,
+      open the **Settings** app <span aria-label="and then">></span>
+      **General** <span aria-label="and then">></span>
+      **About**.
 
-### Create and run a simple Flutter app
+ 3. The simulated high-screen density iOS devices might overflow your screen.
+    If that appears true on your Mac, change the presented size in the
+    Simulator app
 
-### 创建并运行一个简单的 Flutter 应用
+    - To display the Simulator at a small size, go to
+      **Window** <span aria-label="and then">></span>
+      **Physical Size** or<br>press <kbd>Command</kbd> + <kbd>1</kbd>.
 
-To create your first Flutter app and test your setup,
-follow these steps:
+    - To display the Simulator at a moderate size, go to
+      **Window** <span aria-label="and then">></span>
+      **Point Accurate** or<br>press <kbd>Command</kbd> + <kbd>2</kbd>.
 
-通过以下步骤来创建你的第一个 Flutter 应用并进行测试：
+    - To display the Simulator at an HD representation, go to
+      **Window** <span aria-label="and then">></span>
+      **Pixel Accurate** or<br>press <kbd>Command</kbd> + <kbd>3</kbd>.
+      _The Simulator defaults to this size._
 
- 1. Create a new Flutter app by running the following from the
-    command line:
+    - The Simulator defaults to **Fit Screen**.
+      If you need to return to that size, go to
+      **Window** <span aria-label="and then">></span>
+      **Fit Screen** or press <kbd>Command</kbd> + <kbd>4</kbd>.
 
-    通过运行以下命令来创建一个新的 Flutter 应用：
- 
-    ```terminal
-    $ flutter create my_app
-    ```
+### Deploy to physical iOS devices
 
- 2. A `my_app` directory is created, containing Flutter's starter app.
-    Enter this directory:
+To deploy your Flutter app to a physical iPhone or iPad,
+you need to do the following:
 
-    上述命令创建了一个 `my_app` 的目录，
-    包含了 Flutter 初始的应用模版，切换路径到这个目录内：
- 
-    ```terminal
-    $ cd my_app
-    ```
+- Create an [Apple Developer][] account.
+- Set up physical device deployment in Xcode.
+- Create a development provisioning profile to self-sign certificates.
+- Install the third-party CocoaPods dependency manager
+  if your app uses Flutter plugins.
 
- 3. To launch the app in the Simulator,
-    ensure that the Simulator is running and enter:
+#### Create your Apple ID and Apple Developer account
 
-    确保模拟器已经处于运行状态，输入以下命令来启动应用：
+To test deploying to a physical iOS device, you need an Apple ID.
 
-    ```terminal
-    $ flutter run
-    ```
+To distribute your app to the App Store,
+you must enroll in the Apple Developer Program.
 
-### Deploy to iOS devices
+If you only need to test deploying your app,
+complete the first step and move on to the next section.
 
-### 部署到 iOS 设备
+1. If you don't have an [Apple ID][], create one.
 
-To deploy your Flutter app to a physical iPhone or iPad
-you'll need to set up physical device deployment in Xcode
-and an Apple Developer account. If your app is using Flutter plugins,
-you will also need the third-party CocoaPods dependency manager.
+1. If you haven't enrolled in the [Apple Developer][] program, enroll now.
 
-如果你想把 Flutter 应用部署到  iPhone 或 iPad 上，
-你还需要一些别的工具和一个 Apple 开发者账号。
-另外，你还需要在 Xcode 上针对你的机器做一些设置。
+   To learn more about membership types,
+   check out [Choosing a Membership][].
 
-<ol markdown="1">
-<li markdown="1">
-<a name="connect"></a>
-To set up physical device deployment in Xcode, 
-connect your device to the USB port on your 
-computer. 
-</li>
-<li markdown="1">
-<a name="wireless"></a>
-[Optional] To leverage wireless debugging, ensure that 
-your device is on the same network as your computer 
-and that the device has a set passcode.  
+[Apple ID]: https://support.apple.com/en-us/HT204316
 
-While the device is attached, open **Xcode > Window > Devices and Simulators**. 
-Select your phone, and check **Connect via Network.** 
-For more details, check out 
-[Apple's documentation on pairing a wireless device with Xcode][].
+#### Attach your physical iOS device to your Mac {#attach}
 
-Once the network icon appears next to the device name, 
-you can unplug your device from USB. 
+Configure your physical iOS device to connect to Xcode.
 
-Sometimes it takes longer to find network devices. 
-If you don't see your device listed when using `flutter run`, 
-try extending the timeout: `flutter run --device-timeout 10`.
+1. Attach your iOS device to the USB port on your Mac.
 
-For additional help troubleshooting, 
-check out [Apple's Developer Forums][]. For setting up 
-wireless debugging with `flutter attach`, 
-checkout [Debugging your add-to-app module][].
-</li>
-<li markdown="1">
+1. On first connecting your iOS device to your Mac,
+   your iOS device displays the **Trust this computer?** dialog.
 
-<a name="trust"></a>
-The first time you use an attached physical device for iOS
-development, you need to trust both your Mac and the
-Development Certificate on that device.
-On iOS 16 and higher you must also enable [Developer Mode][].
+1. Click **Trust**.
 
-Select **Trust** in the dialog prompt when
-first connecting the iOS device to your Mac.
+   ![Trust Mac][]{:.mw-100}
 
-![Trust Mac][]{:.mw-100}
+1. When prompted, unlock your iOS device.
 
-Then, go to the Settings app on the iOS device,
-select **General > Device Management**
-and trust your Certificate.
-For first time users, you might need to select
-**General > Profiles > Device Management** instead.
-On iOS 16 and higher, navigate back to the top level
-of the Settings app, select **Privacy & Security > Developer Mode**,
-and toggle Developer Mode on.
+#### Enable Developer Mode on iOS 16 or later
+{:.no_toc}
 
-</li>
+Starting with iOS 16, Apple requires you to enable **[Developer Mode][]**
+to protect against malicious software.
+Enable Developer Mode before deploying to a device running iOS 16 or later.
 
-<li markdown="1">
+1. Tap on **Settings** <span aria-label="and then">></span>
+   **Privacy & Security** <span aria-label="and then">></span>
+   **Developer Mode**.
 
-You can skip this step if your apps do not depend on
-[Flutter plugins][] with native iOS code.
-[Install and set up CocoaPods][] by running the following commands:
+1. Tap to toggle **Developer Mode** to **On**.
 
-如果你的应用不依赖 [Flutter plugins][] 与原生 iOS 代码交互，你可以跳过这一步。
-通过运行以下命令 [安装和设置CocoaPods][Install and set up CocoaPods]。
+1. Tap **Restart**.
+
+1. After the iOS device restarts, unlock your iOS device.
+
+1. When the **Turn on Developer Mode?** dialog appears, tap **Turn On**.
+
+   The dialog explains that Developer Mode requires reducing the security
+   of the iOS device.
+
+1. Unlock your iOS device.
+
+1. Go to **Privacy & Security** <span aria-label="and then">></span>
+    **Developer Mode**.
+
+1. Tap to toggle **Developer Mode** to on.
+   iOS displays a prompt to restart your device.
+
+1. Click **Restart**.
+
+1. After your device restarts and you unlock your device,
+   iOS asks if you want to **Turn On Developer Mode?**
+   Tap **Turn On**.
+
+1. Unlock your iOS device.
+
+#### Enable developer code signing certificates
+
+To deploy to a physical iOS device, you need to establish trust with your
+Mac and the iOS device.
+This requires you to load signed developer certificates to your iOS device.
+To sign an app in Xcode,
+you need to create a development provisioning profile.
+
+Follow the Xcode signing flow to provision your project.
+
+1. Open Xcode.
+
+1. Sign in to Xcode with your Apple ID.
+
+   {: type="a"}
+   1. Go to **Xcode** <span aria-label="and then">></span>
+      **Settings...*
+   1. Click **Accounts**.
+   1. Click **+**.
+   1. Select **Apple ID** and click **Continue**.
+   1. When prompted, enter your **Apple ID** and **Password**.
+   1. Close the **Settings** dialog.
+
+   Development and testing supports any Apple ID.
+
+1. Go to **File** <span aria-label="and then">></span> **Open...**
+
+   You can also press <kbd>Command</kbd> + <kbd>O</kbd>.
+
+1. Navigate to your Flutter project directory.
+
+1. Open the default Xcode workspace in your project: `ios/Runner.xcworkspace`.
+
+1. Select the physical iOS device you intend to deploy to in the device
+   drop-down menu to the right of the run button.
+
+   It should appear under the **iOS devices** heading.
+
+1. In the left navigation panel under **Targets**, select **Runner**.
+
+1. In the **Runner** settings pane, click **Signing & Capabilities**.
+
+1. Select **All** at the top.
+
+1. Select **Automatically manage signing**.
+
+1. Select a team from the **Team** dropdown menu.
+
+   Teams are created in the **App Store Connect** section of your
+   [Apple Developer Account][] page.
+   If you have not created a team, you can choose a _personal team_.
+
+   The **Team** dropdown displays that option as **Your Name (Personal Team)**.
+
+   ![Xcode account add][]{:.mw-100}
+
+   After you select a team, Xcode performs the following tasks:
+
+   {: type="a"}
+   1. Creates and downloads a Development Certificate
+   1. Registers your device with your account,
+   1. Creates and downloads a provisioning profile if needed
+
+If automatic signing fails in Xcode, verify that the project's
+**General** <span aria-label="and then">></span>
+**Identity** <span aria-label="and then">></span>
+**Bundle Identifier** value is unique.
+
+![Check the app's Bundle ID][]{:.mw-100}
+
+#### Enable trust of your Mac and iOS device {#trust}
+
+When you attach your physical iOS device for the first time,
+enable trust for both your Mac and the Development Certificate
+on the iOS device.
+
+##### Agree to trust your Mac
+
+You should enabled trust of your Mac on your iOS device when
+you [attached the device to your Mac](#attach).
+
+##### Enable developer certificate for your iOS devices
+
+Enabling certificates varies in different versions of iOS.
+
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="ios-versions" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link" id="ios14-tab" href="#ios14" role="tab" aria-controls="ios14" aria-selected="true">iOS 14</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="ios15-tab" href="#ios15" role="tab" aria-controls="ios15" aria-selected="false">iOS 15</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" id="ios16-tab" href="#ios16" role="tab" aria-controls="ios16" aria-selected="false">iOS 16</a>
+    </li>
+</ul>
+
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+
+<div class="tab-pane" id="ios14" role="tabpanel" aria-labelledby="ios14-tab" markdown="1">
+
+1. Open the **Settings** app on the iOS device.
+
+1. Tap on **General** <span aria-label="and then">></span>
+   **Profiles & Device Management**.
+
+1. Tap to toggle your Certificate to **Enable**
+
+</div>
+
+<div class="tab-pane" id="ios15" role="tabpanel" aria-labelledby="ios15-tab" markdown="1">
+
+1. Open the **Settings** app on the iOS device.
+
+1. Tap on **General** <span aria-label="and then">></span>
+    **VPN & Device Management**.
+
+1. Tap to toggle your Certificate to **Enable**.
+
+</div>
+
+<div class="tab-pane active" id="ios16" role="tabpanel" aria-labelledby="ios16-tab" markdown="1">
+
+1. Open the **Settings** app on the iOS device.
+
+1. Tap on **General** <span aria-label="and then">></span>
+    **VPN and Device Management**.
+
+1. Under the **Developer App** heading, you should find your certificate.
+
+1. Tap your Certificate.
+
+1. Tap **Trust "\<certificate\>"**.
+
+1. When the dialog displays, tap **Trust**.
+
+</div>
+</div>{% comment %} End: Tab panes. {% endcomment -%}
+
+If prompted, enter your Mac password into the
+**codesign wants to access key...** dialog and tap **Always Allow**.
+
+#### Optional deployment procedures
+
+You can skip these procedures. They enable additional debugging features.
+
+##### Set up wireless debugging on your iOS device
+
+Follow this procedure to debug your device using a Wi-Fi connection.
+
+To use wireless debugging:
+
+- Connect your iOS device to the same network as your macOS device.
+- Set a passcode for your iOS device.
+
+After you connect your iOS device to your Mac:
+
+1. Open **Xcode**.
+
+1. Go to **Window** <span aria-label="and then">></span>
+   **Devices and Simulators**.
+
+   You can also press <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>2</kbd>.
+
+1. Select your iOS device.
+
+1. Select **Connect via Network**.
+
+1. Once the network icon appears next to the device name,
+   unplug your iOS device from your Mac.
+
+If you don't see your device listed when using `flutter run`,
+extend the timeout. The timeout defaults to 10 seconds.
+To extend the timeout, change the value to an integer greater than 10.
+
+```terminal
+flutter run --device-timeout 60
+```
+
+###### Learn more about wireless debugging
+
+- To learn more, check out
+  [Apple's documentation on pairing a wireless device with Xcode][].
+- To troubleshoot, check out [Apple's Developer Forums][].
+- To learn how to configure wireless debugging with `flutter attach`,
+  check out [Debugging your add-to-app module][].
+
+
+##### Install CocoaPods
+
+Follow this procedure if your apps depend on [Flutter plugins][]
+with native iOS code.
+
+To [Install and set up CocoaPods][], run the following commands:
 
 ```terminal
 $ sudo gem install cocoapods
 ```
+
 {{site.alert.note}}
 
   The default version of Ruby requires `sudo` to install the CocoaPods gem.
-  If you are using a Ruby Version manager, you may need to run without `sudo`.
+  If you are using a Ruby Version manager, you might need to run without `sudo`.
 
   Ruby 的默认版本需要 root 权限 `sudo` 来安装 CocoaPods gem，
   如果你使用的是 Ruby Version 管理器，可能就无需 root 权限。
@@ -230,84 +409,6 @@ $ sudo gem install cocoapods
 
 {{site.alert.end}}
 
-</li>
-
-<li markdown="1">
-
-Follow the Xcode signing flow to provision your project:
-
-按照下面 Xcode 签名流程来配置你的项目:
-
-   {: type="a"}
-   1. Open the default Xcode workspace in your project by
-      running `open ios/Runner.xcworkspace` in a terminal
-      window from your Flutter project directory.
-
-      通过在命令行中于你当前 Flutter 项目目录下运行
-      `open ios/Runner.xcworkspace` 命令来打开默认的 Xcode 工程。
-
-   1. Select the device you intend to deploy to in the device
-      drop-down menu next to the run button.
-
-      在运行按钮的下拉列表里选择你想要部署到的设备；
-
-   1. Select the `Runner` project in the left navigation panel.
-
-      在左侧的导航面板中选择 `Runner` 项目；
-
-   1. In the `Runner` target settings page,
-      make sure your Development Team is selected
-      under **Signing & Capabilities > Team**.
-
-      在 `Runner` 项目的设置页面，请确保勾选你的开发团队。
-      在不同的 Xcode 版本里，这一部分的操作界面不同：
-
-      When you select a team,
-      Xcode creates and downloads a Development Certificate,
-      registers your device with your account,
-      and creates and downloads a provisioning profile (if needed).
-
-      当选择了一个团队之后，Xcode 会创建和下载一个开发证书，
-      并在你的账户里为你的设备注册，
-      并在需要的时候创建和下载一个配置文件。
-
-      * To start your first iOS development project,
-        you might need to sign into
-        Xcode with your Apple ID. ![Xcode account add][]{:.mw-100}
-        Development and testing is supported for any Apple ID.
-        Enrolling in the Apple Developer Program is required to
-        distribute your app to the App Store.
-        For details about membership types,
-        see [Choosing a Membership][].
-
-        在开始你的第一个 iOS 项目开发之前，
-        你需要先在 Xcode 中登陆你的 Apple 开发者账号
-        ![Xcode account add][]{:.mw-100}
-        任何 Apple ID 都可以进行开发和测试。
-        如果想将应用上架 App Store，你需要加入 Apple Developer Program，
-        你可以在 [Choosing a Membership][] 页面中查看详细的说明。
-
-      * If automatic signing fails in Xcode, verify that the project's
-        **General > Identity > Bundle Identifier** value is unique.
-
-        如果 Xcode 的自动签名失败了，你可以检查以下项目中
-        **General > Identity > Bundle Identifier** 里的值是否是唯一的。
-
-        ![Check the app's Bundle ID][]{:.mw-100}
-
-</li>
-
-<li markdown="1">
-
-Start your app by running `flutter run`
-or clicking the Run button in Xcode.
-
-执行 `flutter run` 命令，或者在 Xcode 里点击运行，
-来运行你的应用。
-
-</li>
-</ol>
-
 [Check the app's Bundle ID]: {{site.url}}/assets/images/docs/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: {{site.apple-dev}}/support/compare-memberships
 [Mac App Store]: https://itunes.apple.com/us/app/xcode/id497799835
@@ -317,7 +418,9 @@ or clicking the Run button in Xcode.
 [web download]: {{site.apple-dev}}/xcode/
 [Xcode account add]: {{site.url}}/assets/images/docs/setup/xcode-account.png
 [Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
-[Developer Mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device
+[Developer Mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Apple's Developer Forums]: {{site.apple-dev}}/forums/
 [Debugging your add-to-app module]: {{site.url}}/add-to-app/debugging/#wireless-debugging
 [Apple's documentation on pairing a wireless device with Xcode]: https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad
+[Apple Developer]: {{site.apple-dev}}/programs/
+[Apple Developer Account]: {{site.apple-dev}}/account

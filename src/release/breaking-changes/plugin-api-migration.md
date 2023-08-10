@@ -123,7 +123,7 @@ The following instructions outline the steps for supporting the new API:
    更多信息请查看 [Upgrading pre 1.12 Android projects][] 。
    如果您的插件类尚不存在，则必须添加一个公有构造函数。例如：
 
-   <!--code-excerpt "MainActivity.java" title-->
+   <?code-excerpt title="MainActivity.java"?>
    ```java
     package io.flutter.plugins.firebasecoreexample;
 
@@ -146,7 +146,7 @@ The following instructions outline the steps for supporting the new API:
    `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`
    以使用 `io.flutter.embedding.android.FlutterActivity`。例如：
 
-    <!--code-excerpt "AndroidManifest.xml" title-->
+    <?code-excerpt title="AndroidManifest.xml"?>
     ```xml
      <activity android:name="io.flutter.embedding.android.FlutterActivity"
             android:theme="@style/LaunchTheme"
@@ -176,7 +176,7 @@ The following instructions outline the steps for supporting the new API:
    `EmbeddingV1Activity.java` 文件，使用 v1 版本嵌入以
    持续测试您的项目对 v1 版本嵌入的兼容性。例如：
 
-    <!--code-excerpt "EmbeddingV1Activity.java" title-->
+    <?code-excerpt title="EmbeddingV1Activity.java"?>
     ```java
     package io.flutter.plugins.batteryexample;
 
@@ -211,7 +211,7 @@ The following instructions outline the steps for supporting the new API:
    添加至 `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` 文件。
    例如：
 
-    <!--code-excerpt "AndroidManifest.xml" title-->
+    <?code-excerpt title="AndroidManifest.xml"?>
     ```xml
     <activity
         android:name=".EmbeddingV1Activity"
@@ -238,7 +238,7 @@ but aren't required.
    替换 `<plugin_name>/example/android/app/build.gradle` 文件中
    `android.support.test` 的引用为 `androidx.test` ：
 
-    <!--code-excerpt "build.gradle" title-->
+    <?code-excerpt title="build.gradle"?>
     ```groovy
     defaultConfig {
       ...
@@ -247,7 +247,7 @@ but aren't required.
     }
     ```
 
-    <!--code-excerpt "build.gradle" title-->
+    <?code-excerpt title="build.gradle"?>
     ```groovy
     dependencies {
     ...
@@ -266,7 +266,7 @@ but aren't required.
    路径下添加针对 `MainActivity` 和 `EmbeddingV1Activity` 的测试文件，
    并且您需要创建该目录。例如：
 
-    <!--code-excerpt "MainActivityTest.java" title-->
+    <?code-excerpt title="MainActivityTest.java"?>
     ```java
     package io.flutter.plugins.firebase.core;
 
@@ -282,7 +282,7 @@ but aren't required.
     }
     ```
 
-    <!--code-excerpt "EmbeddingV1ActivityTest.java" title-->
+    <?code-excerpt title="EmbeddingV1ActivityTest.java"?>
     ```java
     package io.flutter.plugins.firebase.core;
 
@@ -307,7 +307,7 @@ but aren't required.
    `<plugin_name>/example/pubspec.yaml` 中的
    dev_dependencies 下添加 `e2e` 和 `flutter_driver`。
 
-    <!--code-excerpt "pubspec.yaml" title-->
+    <?code-excerpt title="pubspec.yaml"?>
     ```yaml
     integration_test:
       sdk: flutter
@@ -325,7 +325,7 @@ but aren't required.
    所有已迁移的插件都将会设置最低版本为我们保证支持的最低版本
    1.12.13+hotfix.6。例如：
 
-    <!--code-excerpt "pubspec.yaml" title-->
+    <?code-excerpt title="pubspec.yaml"?>
     ```yaml
     environment:
       sdk: ">=2.16.1 <3.0.0"
@@ -475,7 +475,7 @@ a number of its callbacks through the provided `ActivityPluginBinding`.
 您可以通过提供的 `ActivityPluginBinding` 获取到 `Activity` 及一些回调。
 
 Since `Activity`s can be destroyed during configuration changes,
-you must cleanup any references to the given `Activity` in
+you must clean up any references to the given `Activity` in
 `onDetachedFromActivityForConfigChanges()`,
 and then re-establish those references in
 `onReattachedToActivityForConfigChanges()`.

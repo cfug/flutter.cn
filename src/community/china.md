@@ -39,23 +39,24 @@ package repository in China. Instructions are below.
 设置方式如下：
 
 {{site.alert.important}}
-
 {% comment %}
   Use mirror sites only if you _trust_ the provider.
   The Flutter team cannot verify their reliability or security.
-{% endcomment %}  
-  使用任意镜像网站的时候，你必须确保你 **信任** 你的镜像提供者。
+{% endcomment %}
+  无论你在使用哪个镜像网站，你都必须确保你 **信任** 你的镜像提供者。
   Flutter 团队无法确保他们的安全性。
-  
 {{site.alert.end}}
+
 {% comment %}
 ## Configuring Flutter to use a mirror site
 {% endcomment %}
+
 ## 为 Flutter 设定镜像配置
 
 {% comment %}
-If you’re installing or using Flutter in China, it may be helpful to use
-a trustworthy local mirror site that hosts Flutter’s dependencies.
+If you’re installing or using Flutter in China,
+it might be helpful to use a trustworthy local
+mirror site that hosts Flutter’s dependencies.
 To instruct the Flutter tool to use an alternate storage location,
 you need to set two environment variables, `PUB_HOSTED_URL` and
 `FLUTTER_STORAGE_BASE_URL`, before running the `flutter` command.

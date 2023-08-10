@@ -10,7 +10,7 @@ keywords: 崩溃提交,禁用统计
 If you have not opted-out of Flutter's analytics and crash reporting,
 when a `flutter` command crashes it attempts to send a crash report
 to Google in order to help Google contribute improvements to Flutter
-over time. A crash report may contain the following information:
+over time. A crash report might contain the following information:
 
 如果您未禁用 Flutter 的分析和崩溃报告，当一条 `flutter` 命令崩溃时，
 分析工具会尝试向 Google 发送一份崩溃报告，用于帮助 Google 逐步改进 Flutter。

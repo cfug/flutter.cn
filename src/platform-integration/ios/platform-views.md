@@ -32,7 +32,7 @@ directly inside your Flutter app.
   see [Hosting native Android views][].
 
   本篇文档讨论了如何在您的 Flutter 应用中托管您的 iOS 原生视图。
-  如果你想了解如何嵌入到 iOS 视图中，阅读这篇文档：
+  如果你想了解如何嵌入到 Android 视图中，阅读这篇文档：
   [在 Flutter 应用中使用集成平台视图托管您的原生 Android 视图][Hosting native Android views]。
 
 {{site.alert.end}}
@@ -57,21 +57,20 @@ use the following instructions:
 ### 在 Dart 端
 
 On the Dart side, create a `Widget`
-and add the following build implementation,
+and add the build implementation,
 as shown in the following steps.
 
 在 Dart 端，创建一个 `Widget`
 并添加如下的实现，具体如下：
 
-In your Dart file, for example
-do the following in `native_view_example.dart`:
+In the Dart widget file, make changes similar to those 
+shown in `native_view_example.dart`:
 
 在 Dart 文件中，例如 `native_view_example.dart`，
 请执行下列操作：
 
 <ol markdown="1">
-<li markdown="1">
-Add the following imports:
+<li markdown="1">Add the following imports:
 
 添加如下导入代码：
 
@@ -82,8 +81,7 @@ import 'package:flutter/services.dart';
 ```
 </li>
 
-<li markdown="1">
-Implement a `build()` method:
+<li markdown="1">Implement a `build()` method:
 
 实现 `build()` 方法：
 
@@ -117,7 +115,7 @@ For more information, see the API docs for:
 
 ### 在平台端
 
-On the platform side, you use the either Swift or Objective-C:
+On the platform side, use either Swift or Objective-C:
 
 在平台端，您可以使用 Swift 或是 Objective-C：
 
@@ -155,6 +153,11 @@ class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
             viewIdentifier: viewId,
             arguments: args,
             binaryMessenger: messenger)
+    }
+
+    /// Implementing this method is only necessary when the `arguments` in `createWithFrame` is not `nil`.
+    public func createArgsCodec() -> FlutterMessageCodec & NSObjectProtocol {
+          return FlutterStandardMessageCodec.sharedInstance()
     }
 }
 
@@ -245,10 +248,10 @@ class FLPlugin: NSObject, FlutterPlugin {
 
 {% sample Objective-C %}
 
-Add the headers for the factory and the platform view.
-For example, `FLNativeView.h`:
+In Objective-C, add the headers for the factory and the platform view.
+For example, as shown in `FLNativeView.h`:
 
-在工厂类和平台视图的文件头部添加以下内容。
+使用 Objective-C 时，你需要在工厂类和平台视图的文件头部添加以下内容。
 用 `FLNativeView.h` 举例：
 
 ```objc
@@ -300,6 +303,11 @@ and the platform view provides a reference to the
                               viewIdentifier:viewId
                                    arguments:args
                              binaryMessenger:_messenger];
+}
+
+/// Implementing this method is only necessary when the `arguments` in `createWithFrame` is not `nil`.
+- (NSObject<FlutterMessageCodec>*)createArgsCodec {
+    return [FlutterStandardMessageCodec sharedInstance];
 }
 
 @end
@@ -407,7 +415,7 @@ For more information, see the API docs for:
 
 When implementing the `build()` method in Dart,
 you can use [`defaultTargetPlatform`][]
-to detect the platform, and decide what widget to use:
+to detect the platform, and decide which widget to use:
 
 在 Dart 中实现 `build()` 方法时，
 您可以使用 [`defaultTargetPlatform`][] 
@@ -432,7 +440,41 @@ Widget build(BuildContext context) {
 }
 ```
 
-[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
+## Performance
+Platform views in Flutter come with performance trade-offs.
 
-{% include docs/platform-view-perf.md %}
+For example, in a typical Flutter app, the Flutter UI is 
+composed on a dedicated raster thread. 
+This allows Flutter apps to be fast, 
+as the main platform thread is rarely blocked.
+
+When a platform view is rendered with hybrid composition, 
+the Flutter UI is composed from the platform thread. 
+The platform thread competes with other tasks 
+like handling OS or plugin messages.
+
+When an iOS PlatformView is on screen, the screen refresh rate is 
+capped at 80fps to avoid rendering janks.
+
+For complex cases, there are some techniques that can be used 
+to mitigate performance issues.
+
+For example, you could use a placeholder texture while an 
+animation is happening in Dart. 
+In other words, if an animation is slow while a platform view is rendered, 
+then consider taking a screenshot of the native view and rendering it as a texture.
+
+## Composition limitations
+There are some limitations when composing iOS Platform Views.
+
+- The [`ShaderMask`][] and [`ColorFiltered`][] widgets are not supported.
+- The [`BackdropFilter`][] widget is supported, 
+but there are some limitations on how it can be used. 
+For more details, check out the [iOS Platform View Backdrop Filter Blur design doc][design-doc].
+
+[`ShaderMask`]: {{site.api}}/flutter/foundation/ShaderMask.html
+[`ColorFiltered`]: {{site.api}}/flutter/foundation/ColorFiltered.html
+[`BackdropFilter`]: {{site.api}}/flutter/foundation/BackdropFilter.html
+[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
+[design-doc]: {{site.main-url}}/go/ios-platformview-backdrop-filter-blur
 

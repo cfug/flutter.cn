@@ -1,20 +1,10 @@
 ---
-title: Using Themes to share colors and font styles
+title: Use themes to share colors and font styles
 title: 使用 Themes 统一颜色和字体风格
 short-title: Themes
-short-title: Themes
+short-title: 主题
 description: How to share colors and font styles throughout an app using Themes.
 description: 学习如何使用 Themes 统一颜色和字体风格。
-tags: cookbook, 实用教程, 设计
-keywords: Material Design 效果, Theme, 主题, 全局主题, 自定义
-prev:
-  title: Use a custom font
-  title: 使用自定义字体
-  path: /docs/cookbook/design/fonts
-next:
-  title: Work with tabs
-  title: 使用 tabs
-  path: /docs/cookbook/design/tabs
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -73,9 +63,9 @@ MaterialApp(
     // Define the default `TextTheme`. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
     textTheme: const TextTheme(
-      displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-      titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-      bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+      displayLarge: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+      titleLarge: TextStyle(fontSize: 36, fontStyle: FontStyle.italic),
+      bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Hind'),
     ),
   ),
   home: const MyHomePage(
@@ -229,9 +219,9 @@ class MyApp extends StatelessWidget {
         // Define the default `TextTheme`. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: const TextTheme(
-          displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-          bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+          displayLarge: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+          titleLarge: TextStyle(fontSize: 36, fontStyle: FontStyle.italic),
+          bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Hind'),
         ),
       ),
       home: const MyHomePage(

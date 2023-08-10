@@ -8,7 +8,7 @@ description: "描述了 pubspec 文件中与 Flutter 相关的部分。"
 {{site.alert.note}}
 
   This page is primarily aimed at folks who write
-  Flutter apps. If you write packages or plugins,
+  Flutter apps. If you write packages or plugins, 
   (perhaps you want to create a federated plugin),
   you should check out the
   [Developing packages and plugins][] page.
@@ -40,10 +40,10 @@ pubspec 是用 [YAML][] 写的，它具有可读性，
 The pubspec file specifies dependencies
 that the project requires, such as particular packages
 (and their versions), fonts, or image files.
-It also specifies other requirements, such as
+It also specifies other requirements, such as 
 dependencies on developer packages (like
 testing or mocking packages), or particular
-constraints on the version of the Flutter SDK.
+constraints on the version of the Flutter SDK. 
 
 pubspec 文件指定了项目所需的依赖，
 如特定的 package（及其版本）、字体或图像文件。
@@ -100,7 +100,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   [[highlight]]flutter:[[/highlight]]       # Required for every Flutter project
@@ -113,6 +113,8 @@ dependencies:
 dev_dependencies:
   [[highlight]]flutter_test:[[/highlight]]
     [[highlight]]sdk: flutter[[/highlight]] # Required for a Flutter project that includes tests
+
+  [[highlight]]flutter_lints: ^2.0.0[[/highlight]] # Contains a set of recommended lints for Flutter code
 
 [[highlight]]flutter:[[/highlight]]
 
@@ -167,9 +169,9 @@ section in the same page.
 关于从 package 的依赖关系中添加资源的信息，
 见同一页的 [package 依赖关系中的图片资源][asset images in package dependencies] 部分。
 
-[Assets and images]: {{site.url}}/ui/assets-and-images
-[asset images in package dependencies]: {{site.url}}/ui/assets-and-images#from-packages
-[resolution aware]: {{site.url}}/ui/assets-and-images#resolution-aware
+[Assets and images]: {{site.url}}/ui/assets/assets-and-images
+[asset images in package dependencies]: {{site.url}}/ui/assets/assets-and-images#from-packages
+[resolution aware]: {{site.url}}/ui/assets/assets-and-images#resolution-aware
 
 ## Fonts
 

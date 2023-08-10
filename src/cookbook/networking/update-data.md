@@ -4,15 +4,6 @@ title: 更新网络数据
 description: How to use the http package to update data over the internet.
 description: 如何使用 http 这个 package 来更新远程服务器的数据。
 tags: cookbook, 实用教程, 网络请求
-keywords: 
-prev:
-  title: Send data to the internet
-  title: 发送网络数据
-  path: /docs/cookbook/networking/send-data
-next:
-  title: Work with WebSockets
-  title: 发起 WebSockets 请求
-  path: /docs/cookbook/networking/web-sockets
 ---
 
 <?code-excerpt path-base="cookbook/networking/update_data/"?>
@@ -199,7 +190,7 @@ Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: <Widget>[
     Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: TextField(
         controller: _controller,
         decoration: const InputDecoration(hintText: 'Enter Title'),
@@ -356,7 +347,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Container(
           alignment: Alignment.center,
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: FutureBuilder<Album>(
             future: _futureAlbum,
             builder: (context, snapshot) {
@@ -409,6 +400,6 @@ class _MyAppState extends State<MyApp> {
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
-[JSON and serialization]: {{site.url}}/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

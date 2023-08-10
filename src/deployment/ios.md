@@ -292,17 +292,20 @@ app's icons:
 
 ## 添加启动图
 
-Similar to the app icon, you may also want to replace the placeholder launch image: 
+Similar to the app icon,
+you can also replace the placeholder launch image: 
 
 与应用图标类似，你可以通过下面的方法替换占位的启动图:
 
-1. In the Xcode project navigator, select `Assets.xcassets` in the
-   `Runner` folder. Update the placeholder launch image with your own launch image. 
+1. In the Xcode project navigator,
+   select `Assets.xcassets` in the `Runner` folder.
+   Update the placeholder launch image with your own launch image. 
 
    在 Xcode 的工程导航中选择 `Runner` 文件夹下的 `Assets.xcassets`，
    然后将自己的启动图替换掉占位启动图即可。
 
-1. Verify the new launch image by hot restarting your app. (Don't use `hot reload`.)
+1. Verify the new launch image by hot restarting your app.
+   (Don't use `hot reload`.)
 
    重新启动你的应用来验证是否替换成功，不要使用热重载。
 
@@ -356,7 +359,7 @@ on the Apple Developer's site.
 了解更多关于 iOS 中的版本信息，请在 Apple 开发者文档网站查看
 [Core Foundation Keys][] 文档。
 
-You may also override the `pubspec.yaml` build name and number in Xcode:
+You can also override the `pubspec.yaml` build name and number in Xcode:
 
 在 Xcode 中这样设定，也可以覆盖 `pubspec.yaml` 中的构建名称和构建编号：
 
@@ -422,6 +425,7 @@ adding the option `--export-method ad-hoc`,
   打开 `build/ios/archive/MyApp.xcarchive` 文件并按照下面的说明来验证和发布应用。
 
 {{site.alert.end}}
+
 
 ### Upload the app bundle to App Store Connect
 
@@ -832,7 +836,7 @@ detailed overview of the process of releasing an app to the App Store.
 提供了详细的发布应用到 App Store 过程的内容。
 
 
-[appicon]: {{site.apple-dev}}/ios/human-interface-guidelines/icons-and-images/app-icon/
+[appicon]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons/
 [appreview]: {{site.apple-dev}}/app-store/review/
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: {{site.apple-dev}}/app-store/submissions/

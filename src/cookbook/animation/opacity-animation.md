@@ -5,14 +5,6 @@ description: How to fade a widget in and out.
 description: 如何淡入淡出一个 widget。
 tags: cookbook, 实用教程, 动画效果
 keywords: 淡入淡出效果,隐藏元素,用户体验
-prev:
-  title: Animate the properties of a Container
-  title: Container 里的动画渐变效果
-  path: /docs/cookbook/animation/animated-container
-next:
-  title: Add a Drawer to a screen
-  title: 在屏幕上添加一个 Drawer
-  path: /docs/cookbook/design/drawer
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -36,25 +28,21 @@ animations. This recipe uses the following steps:
 在 Flutter 中，你可以使用 [`AnimatedOpacity`][] widget 来完成这个效果，
 请参见下面的步骤：
 
-## Directions
+  1. Create a box to fade in and out.
 
-## 步骤
+     创建一个用来淡入淡出的方框。
 
-  1. Show a box to fade in and out
+  2. Define a `StatefulWidget`.
 
-     创建一个用来淡入淡出的方框
-  
-  2. Define a `StatefulWidget`
-  
-     定义一个 `StatefulWidget`
-  
-  3. Display a button that toggles the visibility
-  
+     定义一个 `StatefulWidget`。
+
+  3. Display a button that toggles the visibility.
+
      显示一个用于切换可见状态的按钮
 
-  4. Fade the box in and out
+  4. Fade the box in and out.
 
-     淡入淡出方框
+     淡入淡出方框。
 
 ## 1. Create a box to fade in and out
 
@@ -68,8 +56,8 @@ draw a green box on screen.
 <?code-excerpt "lib/main.dart (Container)" replace="/^child: //g;/,$//g"?>
 ```dart
 Container(
-  width: 200.0,
-  height: 200.0,
+  width: 200,
+  height: 200,
   color: Colors.green,
 )
 ```
@@ -207,7 +195,7 @@ The `AnimatedOpacity` widget requires three arguments:
 
     `duration`：代表这个动画需要持续多长时间。
 
-  * `child`: The widget to animate. In our case, the green box.
+  * `child`: The widget to animate. In this case, the green box.
 
     `child`：需要进行动画的小部件。在这个例子中就是那个绿色的方框。
 
@@ -220,8 +208,8 @@ AnimatedOpacity(
   duration: const Duration(milliseconds: 500),
   // The green box must be a child of the AnimatedOpacity widget.
   child: Container(
-    width: 200.0,
-    height: 200.0,
+    width: 200,
+    height: 200,
     color: Colors.green,
   ),
 )
@@ -284,8 +272,8 @@ class _MyHomePageState extends State<MyHomePage> {
           duration: const Duration(milliseconds: 500),
           // The green box must be a child of the AnimatedOpacity widget.
           child: Container(
-            width: 200.0,
-            height: 200.0,
+            width: 200,
+            height: 200,
             color: Colors.green,
           ),
         ),
@@ -307,7 +295,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/fade-in-out.gif" alt="一个淡入淡出的例子" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/fade-in-out.gif" alt="Fade In and Out Demo" class="site-mobile-screenshot" />
 </noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html

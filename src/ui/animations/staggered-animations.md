@@ -1,5 +1,5 @@
 ---
-title: Staggered Animations
+title: Staggered animations
 title: 交织动画
 description: How to write a staggered animation in Flutter.
 description: 如何在 Flutter 中编写一个交织动画。
@@ -66,9 +66,10 @@ This guide shows how to build a staggered animation in Flutter.
   
   <h4 class="no_toc">例子</h4>
 
-  This guide explains the basic_staggered_animation example. You can also
-  refer to a more complex example, staggered_pic_selection.
-  
+  This guide explains the basic_staggered_animation example.
+  You can also refer to a more complex example,
+  staggered_pic_selection.
+
   本指南主要介绍 basic_staggered_animation 示例，您也可参考更复杂的例子：staggered_pic_selection。
 
   [basic_staggered_animation][]
@@ -115,7 +116,7 @@ basic_staggered_animation:
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
-    src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1"
+    src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1&autoplay=false"
     frameborder="0" allowfullscreen>
   </iframe>
 </div>
@@ -175,34 +176,32 @@ After running forward, the animation runs in reverse.
 
   * All of the animations are driven by the same
     [`AnimationController`][].
-    
+
     所有的动画都是由相同同样的 [`AnimationController`][] 驱动。
-    
+
   * Regardless of how long the animation lasts in real time,
     the controller's values must be between 0.0 and 1.0, inclusive.
-    
+
     无论动画在真实时间中播放多长时间，控制器的值必须在 0.0 和 1.0 之间，包括 0.0 和 1.0。
-    
-  * Each animation has an
-    [`Interval`][]
+
+  * Each animation has an [`Interval`][]
     between 0.0 and 1.0, inclusive.
-    
+
     每个动画都有一个 [`Interval`][]，
     值必须在 0.0 和 1.0 之间，包括 0.0 和 1.0。
-    
+
   * For each property that animates in an interval, create a
-    [`Tween`][].
-    The `Tween` specifies the start and end values for that property.
-    
+    [`Tween`][]. The `Tween` specifies the start and end
+    values for that property.
+
     对于每一个间隔内产生动画的属性，创建一个 [`Tween`][]。
     `Tween` 可以指定该属性的开始值和结束值。 
-    
-  * The `Tween` produces an
-    [`Animation`][]
+
+  * The `Tween` produces an [`Animation`][]
     object that is managed by the controller.
-    
+
     `Tween` 产生一个由控制器管理的 [`Animation`][] 对象。
-    
+
 {{site.alert.end}}
 
 {% comment %}
@@ -255,10 +254,11 @@ To set up the animation:
 
 设置这个动画：
 
-* Create an `AnimationController` that manages all of the `Animations`.
-  
+* Create an `AnimationController` that manages all of the
+  `Animations`.
+
   创建一个 `AnimationController` 管理所有的 `Animations`。
-  
+
 * Create a `Tween` for each property being animated.
 
   为每一个有动画的属性创建一个 Tween 
@@ -283,14 +283,11 @@ the new animation's value changes, triggering the UI to update.
 当控制动画的值发生变化时，新动画的值也随之变化值更改，触发 UI 更新。
 
 The following code creates a tween for the `width` property.
+It builds a [`CurvedAnimation`][],
+specifying an eased curve. See [`Curves`][] for
+other available pre-defined animation curves.
 
 下面的代码为 `width` 属性创建了一个 tween。
-
-It builds a
-[`CurvedAnimation`][],
-specifying an eased curve.
-See [`Curves`][] for other available pre-defined animation curves.
-
 它创建了一个 [`CurvedAnimation`][], 指定一个 eased curve。
 其他更多的预定的动画曲线请看 [`Curves`][]。
 
@@ -319,10 +316,10 @@ using `BorderRadius.circular()`.
 
 下面的代码为 `borderRadius` 属性创建一个 tween（控制矩形的圆角半径），使用 `BorderRadius.circular()`。
 
-{% prettify dart %}
+```dart
 borderRadius = BorderRadiusTween(
-  begin: BorderRadius.circular(4.0),
-  end: BorderRadius.circular(75.0),
+  begin: BorderRadius.circular(4),
+  end: BorderRadius.circular(75),
 ).animate(
   CurvedAnimation(
     parent: controller,
@@ -332,7 +329,7 @@ borderRadius = BorderRadiusTween(
     ),
   ),
 ),
-{% endprettify %}
+```
 
 ### Complete staggered animation
 

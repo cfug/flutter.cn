@@ -51,6 +51,12 @@ Flutter Forward.
 Flutter Forward 相关的视频请查阅 Flutter 社区的 bilibili 频道
 [合集](https://space.bilibili.com/344928717/channel/collectiondetail?sid=1052446&ctype=0)。
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hpgkrUPRBjc?start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+17 Days of Flutter!<br>
+[Get ready for Flutter Forward playlist][]
+
+[Get ready for Flutter Forward playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU3PUEaM4yYXqvFMEwOluBNl
+
 ### Learning to Fly
 
 {{site.alert.note}}
@@ -104,7 +110,7 @@ Each one-minute video highlights a Flutter widget.
 
 每周一分钟，为你种草一个 Flutter widget！
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?bvid=BV15441157cc&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Introducing widget of the week<br>
 [Flutter widget of the week playlist][]
 
@@ -117,13 +123,19 @@ each of these videos highlights a Flutter package.
 
 你是否有几分钟时间，让我们用这些视频为你介绍一些精选 Flutter package。
 
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/QFcFEpFmNJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+`flutter_slidable` package
+[Flutter package of the week playlist][]
+
+[Flutter package of the week playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1quF6ny8oFHJ2gBdrYN_AK
+
 ### The Boring Flutter show
 
 This series features Flutter programmers coding,
 unscripted and in real time. Mistakes, solutions
 (some of them correct), and snazzy intro music included.
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&bvid=BV18441157SS&cid=97573460&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55815727&bvid=BV18441157SS&cid=97573460&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Introducing the Boring Flutter show<br>
 
  The Boring Flutter Show 视频播放列表介绍<br>
@@ -181,11 +193,11 @@ Introducing Flutter in focus<br>
 
 ## 会议讲座
 
-Here are a some recent Flutter talks given at various conferences.
+Here are a some Flutter talks given at various conferences.
 
-以下是各种会议上最近的一些Flutter会谈。
+以下是各种会议上的一些 Flutter 会谈。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55833267&cid=97603337&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55833267&cid=97603337&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Conference talks playlist][]
 
 [Conference talks playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1UJ0OEpANodVMVm1GeE7Ti
@@ -201,7 +213,7 @@ millions of downloads.
 视频展示了艾比路工作室 (Abbey Road Studio)、汉密尔顿 (Hamilton) 和阿里巴巴 (Alibaba)
 等开发者 / 公司如何使用 Flutter 开发出百万级别下载量，引人注目的应用程序。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55812033&cid=97567456&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55812033&cid=97567456&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Flutter developer stories playlist][]
 
 [Flutter developer stories playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759
@@ -223,13 +235,13 @@ To include your course, [submit a PR][]:
 这些课程按照字幕排序。
 若想要加入你的课程，请 [提交一个 PR][submit a PR]。
 
+* [Flutter & Dart - The Complete Guide, 2023 Edition][]
+
+  [Flutter & Dart - 完全指南，2023 年版本][Flutter & Dart - The Complete Guide, 2023 Edition]
+
 * [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
 
   [2021 年 Flutter 开发 Dart 训练营]，由 App Brewery 录制。
-
-* [Flutter & Dart - the Complete Guide, 2021 edition][]
-
-  [Flutter & Dart - 完全指南，2021 年版本][Flutter & Dart - the Complete Guide, 2021 edition]
 
 * [Flutter Crash Course][] by Nick Manning
 
@@ -243,16 +255,27 @@ To include your course, [submit a PR][]:
 
   [Flutter 入门到精通][Flutter Zero to Hero]，由社区成员 Veli Bacik 录制 (土耳其语)
 
+* [Flutter Bootcamp][] by Rubens de Melo (Portuguese)
+
+  [Flutter 训练营][Flutter Bootcamp]，由 Rubens de Melo (葡萄牙语)
+
+* [Flutter para iniciantes][] by Rubens de Melo (Portuguese)
+
+  [适合初学者的 Flutter 教程][Flutter para iniciantes]，由 Rubens de Melo (葡萄牙语)
+
 * [Dart & Flutter - Zero to Mastery 2023 + Clean Architecture][] by Max Berktold & Max Steffen
 
   [Dart & Flutter - 从零到精通 2023 + Clean Architecture][Dart & Flutter - Zero to Mastery 2023 + Clean Architecture]，
   由社区成员 Max Berktold 和 Max Steffen 录制
 
 
-[Flutter & Dart - the Complete Guide, 2021 edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
+[Flutter & Dart - The Complete Guide, 2023 Edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
 [Flutter leicht gemacht 2022 - Zero to Mastery!]: https://www.udemy.com/course/dart-flutter-leicht-gemacht/
 [Flutter Zero to Hero]: {{site.youtube-site}}/watch?v=lpvuM9lo3HU&list=PL1k5oWAuBhgXdw1BbxVGxxWRmkGB1C11l
+[Flutter Bootcamp]: https://flutterbootcamp.com.br
+[Flutter para iniciantes]: {{site.youtube-site}}/playlist?list=PLS4cqF1_X2syzBpkoSwtmKoREgnp1MhTn
 [Dart & Flutter - Zero to Mastery 2023 + Clean Architecture]: https://www.udemy.com/course/flutter-made-easy-zero-to-mastery/?referralCode=CCBFCD16CC71F359EE3C
 [submit a PR]: {{site.repo.this}}/pulls
+

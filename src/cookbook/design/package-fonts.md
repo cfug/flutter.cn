@@ -5,14 +5,6 @@ description: How to export fonts from a package.
 description: 如何从 package 中导出字体。
 tags: cookbook, 实用教程, 设计
 keywords: Flutter使用字体,字体打包,开放字体,谷歌字体
-prev:
-  title: Display a snackbar
-  title: 显示 SnackBar
-  path: /docs/cookbook/design/snackbars
-next:
-  title: Update the UI based on orientation
-  title: 根据屏幕方向更新界面
-  path: /docs/cookbook/design/orientation
 ---
 
 <?code-excerpt path-base="cookbook/design/package_fonts"?>
@@ -92,9 +84,13 @@ updating the `pubspec.yaml` in the *app's* root directory.
 
 ### 将 package 添加到应用中
 
-```yaml
-dependencies:
-  awesome_package: <latest_version>
+To add the `awesome_package` package as a dependency,
+run `flutter pub add`:
+
+运行 `flutter pub add` 将 `awesome_package` 添加为依赖。
+
+```terminal
+$ flutter pub add awesome_package
 ```
 
 ### Declare the font assets

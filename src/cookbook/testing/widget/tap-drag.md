@@ -5,10 +5,6 @@ description: How to test widgets for user interaction.
 description: 如何测试与用户交互的 widgets。
 tags: cookbook, 实用教程, 测试
 keywords: 点击测试,拖拽事件测试,文本输入测试
-prev:
-  title: Handle scrolling
-  title: 处理滚动
-  path: /docs/cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/tap_drag/"?>
@@ -304,7 +300,7 @@ testWidgets('Add and remove a todo', (tester) async {
   // Enter text and add the item...
 
   // Swipe the item to dismiss it.
-  await tester.drag(find.byType(Dismissible), const Offset(500.0, 0.0));
+  await tester.drag(find.byType(Dismissible), const Offset(500, 0));
 
   // Build the widget until the dismiss animation ends.
   await tester.pumpAndSettle();
@@ -341,7 +337,7 @@ void main() {
     expect(find.text('hi'), findsOneWidget);
 
     // Swipe the item to dismiss it.
-    await tester.drag(find.byType(Dismissible), const Offset(500.0, 0.0));
+    await tester.drag(find.byType(Dismissible), const Offset(500, 0));
 
     // Build the widget until the dismiss animation ends.
     await tester.pumpAndSettle();

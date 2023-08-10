@@ -74,22 +74,24 @@ you need an Android device running Android 4.1 (API level 16) or higher.
     在你的设备上启动**开发者选项**以及 **USB 调试**工具。
     详细步骤请查看 [Android 文档]({{site.android-dev}}/studio/debug/dev-options)。
 
- 1. Using a USB cable, plug your phone into your computer. On your Chromebook,
-    you may see a notification for "USB device detected". Click on "Connect
-    to Linux" If prompted on your Android device, authorize your computer
-    to access your device.
+ 1. Using a USB cable, plug your phone into your computer.
+    On your Chromebook, you might see a notification for
+    "USB device detected". Click on "Connect to Linux".
+    If prompted on your Android device,
+    authorize your computer to access your device.
 
     通过 USB 数据线连接你的手机与电脑。
     在 Chromebook 上，你可能会看到 "USB device detected"（USB 设备已连接）的通知。
     如果你的 Android 设备上出现点击 "Connect to Linux"（连接到 Linux）的提示，
     请授权计算机访问你的设备。
 
- 1. In the terminal, run the `flutter devices` command to verify that
-    Flutter recognizes your connected Android device.  By default,
-    Flutter uses the version of the Android SDK where your `adb`
-    tool is based. If you want Flutter to use a different installation
-    of the Android SDK, you must set the `ANDROID_SDK_ROOT` environment
-    variable to that installation directory.
+ 1. In the terminal, run the `flutter devices` command to verify
+    that Flutter recognizes your connected Android device.
+    By default, Flutter uses the version of the
+    Android SDK where your `adb` tool is based.
+    If you want Flutter to use a different installation
+    of the Android SDK, you must set the `ANDROID_SDK_ROOT`
+    environment variable to that installation directory.
 
     在命令行运行 `flutter devices` 命令以验证 Flutter 能够识别你的 Android 设备连接。
     默认情况下，flutter 使用基于 `adb` 工具的 Android SDK 版本。

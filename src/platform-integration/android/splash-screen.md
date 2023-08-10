@@ -65,7 +65,7 @@ initializes.
   例如，要查看这种定制的例子，请查看 [Android 闪屏示例应用][Android splash screen sample app]。
   
   If, prior to 2.5, you used `flutter create` to create an app,
-  and you run the app on 2.5 or later, the app might app crash.
+  and you run the app on 2.5 or later, the app might crash.
   For more info, see the [Deprecated Splash Screen API Migration guide][].
 
   如果在 2.5 版本之前使用 `flutter create` 命令创建了应用，
@@ -229,7 +229,7 @@ Android APIs might be helpful:
 
 {% samplecode android-splash-alignment %}
 {% sample Java %}
-<!--code-excerpt "MainActivity.java" title-->
+<?code-excerpt title="MainActivity.java"?>
 ```java
 import android.os.Build;
 import android.os.Bundle;
@@ -259,7 +259,7 @@ public class MainActivity extends FlutterActivity {
 ```
 
 {% sample Kotlin %}
-<!--code-excerpt "MainActivity.kt" title-->
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
 import android.os.Build
 import android.os.Bundle

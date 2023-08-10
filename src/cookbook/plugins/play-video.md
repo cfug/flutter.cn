@@ -5,14 +5,6 @@ description: How to use the video_player plugin.
 description: 如何使用 video_player 插件。
 tags: cookbook, 实用教程, 原生插件
 keywords: Flutter播放视频
-prev:
-  title: Store key-value data on disk
-  title: 存储键值对数据
-  path: /docs/cookbook/persistence/key-value
-next:
-  title: Take a picture using the camera
-  title: 使用 Camera 插件实现拍照功能
-  path: /docs/cookbook/plugins/picture-using-camera
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>
@@ -26,6 +18,17 @@ stored on the file system, as an asset, or from the internet.
 在任何应用开发中，视频播放都是一项常见任务，Flutter 应用也不例外。
 为了支持视频播放，Flutter 团队提供了 [`video_player`][] 插件。
 你可以使用 `video_player` 插件播放存储在本地文件系统中的视频或者网络视频。
+
+{{site.alert.warning}}
+
+  At this time,
+  the `video_player` plugin doesn't work with any desktop platform.
+  To learn more, check out the [`video_player`][] package.
+
+  目前 `video_player` 插件不支持桌面端。
+  你可以查看 [`video_player`][] package 了解更多。
+
+{{site.alert.end}}
 
 On iOS, the `video_player` plugin makes use of
 [`AVPlayer`][] to handle playback. On Android,
@@ -70,16 +73,17 @@ the following steps:
 ## 1. 添加 `video_player` 依赖
 
 This recipe depends on one Flutter plugin: `video_player`. First, add this
-dependency to your `pubspec.yaml`.
+dependency to your project.
 
 这个章节基于一个 Flutter 插件： `video_player`。
-首先，添加依赖到 `pubspec.yaml` 中：
+首先，添加依赖到 `pubspec.yaml` 中。
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  video_player:
+To add the `video_player` package as a dev dependency, run `flutter pub add`:
+
+运行 `flutter pub add` 将 `video_player` 添加为依赖：
+
+```terminal
+$ flutter pub add video_player
 ```
 
 ## 2. Add permissions to your app
@@ -119,8 +123,8 @@ Add the following permission to the `AndroidManifest.xml` file just after the
 
 ### iOS 配置
 
-For iOS, add the following to the `Info.plist` file found at 
-`<project root>/ios/Runner/Info.plist`. 
+For iOS, add the following to the `Info.plist` file found at
+`<project root>/ios/Runner/Info.plist`.
 
 针对 iOS，你需要在 `<project root>/ios/Runner/Info.plist`
 路径下的 `Info.plist` 文件中加入如下配置。
@@ -135,9 +139,9 @@ For iOS, add the following to the `Info.plist` file found at
 
 {{site.alert.warning}}
 
-  The `video_player` plugin doesn't work on iOS simulators.
-  You must test videos on real iOS devices.
-  
+  The `video_player` plugin can only play asset videos in iOS simulators.
+  You must test network-hosted videos on physical iOS devices.
+
   `video_player` 插件在 iOS 模拟器上不能使用，必须要在 iOS 真机上进行测试。
 
 {{site.alert.end}}
@@ -166,7 +170,7 @@ To create and initialize the `VideoPlayerController` do the following:
 
 创建和初始化 `VideoPlayerController` 时，请遵循以下步骤：
 
-  1. Create a `StatefulWidget` with a companion `State` class 
+  1. Create a `StatefulWidget` with a companion `State` class
 
      创建一个 `StatefulWidget` 组件和 `State` 类
 
@@ -207,8 +211,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+      ),
     );
 
     _initializeVideoPlayerFuture = _controller.initialize();
@@ -378,8 +384,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+      ),
     );
 
     // Initialize the controller and store the Future for later use.

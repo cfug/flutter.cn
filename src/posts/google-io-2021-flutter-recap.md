@@ -7,7 +7,7 @@ toc: true
 
 Flutter 在今年的 Google I/O 上发布了许多重磅更新，欢迎大家和我们一起了解其中不容错过的 7 大亮点:
 
-<iframe src="//player.bilibili.com/player.html?aid=248872169&bvid=BV13v411H7WM&cid=358828490&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=248872169&bvid=BV13v411H7WM&cid=358828490&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 △ Flutter 不容错过的 7 大亮点
 
@@ -15,7 +15,7 @@ Flutter 在今年的 Google I/O 上发布了许多重磅更新，欢迎大家和
 
 首先自然是全新的稳定版 Flutter 2.2。在这个最新的版本中，我们专注于提升 Flutter 的质量和效率，欢迎阅读 [这篇文章](https://flutter.cn/posts/announcing-flutter-2-2)，或者通过下面的视频了解 Flutter 2.2 的更新一览:
 
-<iframe src="//player.bilibili.com/player.html?aid=760628765&bvid=BV1R64y1C7hz&cid=341865682&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=760628765&bvid=BV1R64y1C7hz&cid=341865682&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 △ Flutter 更新一览
 

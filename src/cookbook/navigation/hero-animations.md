@@ -5,14 +5,6 @@ description: How to animate a widget from one screen to another
 description: 如何让一个 widget 跨页面进行动画。
 tags: cookbook, 实用教程, 导航
 keywords: 页面切换,动画效果
-prev:
-  title: Report errors to a service
-  title: 把报错信息通过服务上传
-  path: /docs/cookbook/maintenance/error-reporting
-next:
-  title: Navigate to a new screen and back
-  title: 导航到一个新页面和返回
-  path: /docs/cookbook/navigation/navigation-basics
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

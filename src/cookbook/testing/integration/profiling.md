@@ -5,21 +5,13 @@ description: How to profile performance for a Flutter app.
 description: 本篇将如何测量你的 Flutter 应用的性能。
 tags: cookbook, 实用教程, 测试
 keywords: 性能优化,卡顿,时间轴
-prev:
-  title: An introduction to integration testing
-  title: 集成测试介绍
-  path: /docs/cookbook/testing/integration/introduction
-next:
-  title: An introduction to unit testing
-  title: Flutter 集成测试介绍
-  path: /docs/cookbook/testing/unit/introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/profiling/"?>
 
 When it comes to mobile apps, performance is critical to user experience.
 Users expect apps to have smooth scrolling and meaningful animations free of
-stuttering or skipped frames, known as "jank". How to ensure that your app
+stuttering or skipped frames, known as "jank." How to ensure that your app
 is free of jank on a wide variety of devices?
 
 性能移动应用用户来说相当重要，用户希望应用程序有流畅的滚动和优雅的动画，
@@ -48,25 +40,25 @@ This recipe uses the following steps:
 
 步骤：
 
-1. Write a test that scrolls through a list of items.
+  1. Write a test that scrolls through a list of items.
 
-   编写一个滚动列表的测试项目；
+     编写一个滚动列表的测试项目；
 
-1. Record the performance of the app.
+  2. Record the performance of the app.
 
-   记录应用程序的性能；
+     记录应用程序的性能；
 
-1. Save the results to disk.
+  3. Save the results to disk.
 
-   将结果保存到磁盘；
+     将结果保存到磁盘；
 
-1. Run the test.
+  4. Run the test.
 
-   运行测试；
+     运行测试；
 
-1. Review the results.
+  5. Review the results.
 
-   检查结果。
+     检查结果。
 
 ### 1. Write a test that scrolls through a list of items
 

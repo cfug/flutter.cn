@@ -113,7 +113,7 @@ the parent must set tight constraints.
 A constraint becomes tight when its constraint's minimum size value
 equals its maximum size value.
 
-In **SwiftUI**, views may expand to the available space or
+In **SwiftUI**, views might expand to the available space or
 limit their size to that of its content.
 **Flutter** widgets behave in similar manner.
 
@@ -568,7 +568,7 @@ class HomePage extends StatelessWidget {
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          mainAxisExtent: 40.0,
+          mainAxisExtent: 40,
         ),
         itemCount: widgets.length,
         itemBuilder: (context, index) => widgets[index],
@@ -857,7 +857,7 @@ with two classes that help you draw:
         final Paint paint = Paint()
           ..color = Colors.black
           ..strokeCap = StrokeCap.round
-          ..strokeWidth = 5.0;
+          ..strokeWidth = 5;
         for (int i = 0; i < points.length - 1; i++) {
           if (points[i] != null && points[i + 1] != null) {
             canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -1378,7 +1378,7 @@ To review a complete walkthrough, check out the [video_player example][].
 [Wonderous]: https://flutter.gskinner.com/wonderous/?utm_source=flutterdocs&utm_medium=docs&utm_campaign=iosdevs
 [video_player]: {{site.pub-pkg}}/video_player
 [video_player example]: {{site.pub-pkg}}/video_player/example
-[Creating responsive and adaptive apps]: {{site.url}}/ui/layout/adaptive-responsive
+[Creating responsive and adaptive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html

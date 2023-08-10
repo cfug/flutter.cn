@@ -5,14 +5,6 @@ description: How to use the Finder classes for testing widgets.
 description: 如何在 widget 测试中使用 Finder 类。
 tags: cookbook, 实用教程, 测试
 keywords: 定位 widget,CommonFinders,flutter_test
-prev:
-  title: An introduction to widget testing
-  title: Widget 测试介绍
-  path: /docs/cookbook/testing/widget/introduction
-next:
-  title: Handle scrolling
-  title: 处理滚动
-  path: /docs/cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/finders/"?>

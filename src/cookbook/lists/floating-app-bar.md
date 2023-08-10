@@ -5,14 +5,6 @@ description: How to place a floating app bar above a list.
 description: 如何在列表顶部放置一个浮动的 app bar。
 tags: cookbook, 实用教程, 列表相关
 keywords: 列表定制,顶部,搜索框,固定,隐藏搜索框
-prev:
-  title: Create lists with different types of items
-  title: 创建拥有不同列表项的列表
-  path: /docs/cookbook/lists/mixed-list
-next:
-  title: Work with long lists
-  title: 长列表的处理
-  path: /docs/cookbook/lists/long-lists
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -41,19 +33,15 @@ that scrolls offscreen as you scroll through a
 list of items contained inside the `CustomScrollView`.
 
 把 app bar 从 `Scaffold` 组件挪到一个 [`CustomScrollView`][] 里，
-可以让你创建一个随着你滑动 `CustomScrollView` 
+可以让你创建一个随着你滑动 `CustomScrollView`
 里列表的同时在屏幕外自动随之滚动的 app bar。
 
-This recipe demonstrates how to use a `CustomScrollView` to display a list of 
+This recipe demonstrates how to use a `CustomScrollView` to display a list of
 items with an app bar on top that scrolls offscreen as the user scrolls
 down the list using the following steps:
 
 下面这篇教程将介绍如何通过 `CustomScrollView` 
 来生成一个带有随着用户滑动列表同时会在屏幕外随之滚动的 app bar 的列表。
-
-### Directions
-
-### 步骤
 
   1. Create a `CustomScrollView`.
 
@@ -96,7 +84,7 @@ In fact, the `ListView` and `GridView` widgets use the `SliverList` and
 实际上，`ListView` 和 `GridView` 组件底层
 使用的就是 `SliverList` 和 `SliverGrid`。
 
-For this example, create a `CustomScrollView` that contains a 
+For this example, create a `CustomScrollView` that contains a
 `SliverAppBar` and a `SliverList`. In addition, remove any app bars
 that you provide to the `Scaffold` widget.
 

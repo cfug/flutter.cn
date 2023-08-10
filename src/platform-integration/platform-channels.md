@@ -42,45 +42,43 @@ with those APIs:
 Flutter 构建了一个灵活的系统，
 你可以调用各种相关平台的 API，具体如下所示：
 
-- Kotlin or Java on Android
+* Kotlin or Java on Android
   
   Android 中的 Java 或 Kotlin API
 
-- Swift or Objective-C on iOS
+* Swift or Objective-C on iOS
 
   iOS 中的 Objective-C 或 Swift API
 
-- C++ on Windows
+* C++ on Windows
 
   Windows 操作系统中的 C++ API
 
-- Objective-C on macOS
+* Objective-C on macOS
 
   macOS 系统中的 Objective-C
 
-- C on Linux
+* C on Linux
 
   Linux 操作系统中的 C
 
-Flutter 使用了灵活系统，无论是在 Android 上
-的 Kotlin 还是 Java，亦或是 iOS 上的 Swift 或 Objective-C，
-它都允许你调用平台特定 API。
-
-Flutter's builtin platform-specific API support does not rely on code
-generation, but rather on a flexible message passing style.  Alternatively, the
-package [Pigeon][] can be used for [sending structured typesafe messages][] via
-code generation:
+Flutter's builtin platform-specific API support
+doesn't rely on code generation,
+but rather on a flexible message passing style.
+Alternatively, you can use the [Pigeon][pigeon]
+package for [sending structured typesafe messages][]
+with code generation:
 
 Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是灵活的依赖于传递消息格式。
 或者，你也可以使用 [Pigeon][] 这个 package，通过生成代码来
 [发送结构化类型安全消息][sending structured typesafe messages]。
 
-* The Flutter portion of the app sends messages to its *host*,
+* The Flutter portion of the app sends messages to its _host_,
   the non-Dart portion of the app, over a platform channel.
 
   应用中的 Flutter 部分通过平台通道向其宿主 (非 Dart 部分) 发送消息。
 
-* The *host* listens on the platform channel, and receives the message.
+* The _host_ listens on the platform channel, and receives the message.
   It then calls into any number of platform-specific APIs&mdash;using
   the native programming language&mdash;and sends a response back to the
   _client_, the Flutter portion of the app.
@@ -127,8 +125,8 @@ to ensure the user interface remains responsive.
 
 消息和响应以异步的形式进行传递，以确保用户界面能够保持响应。
 
-{{site.alert.note}} 
-  
+{{site.alert.note}}
+
   Even though Flutter sends messages to and from Dart asynchronously,
   whenever you invoke a channel method, you must invoke that method on the
   platform's main thread. See the [section on threading][]
@@ -145,7 +143,7 @@ messages that correspond to method calls. On the platform side,
 `MethodChannel` on Android ([`MethodChannelAndroid`][]) and
 `FlutterMethodChannel` on iOS ([`MethodChanneliOS`][])
 enable receiving method calls and sending back a
-result. These classes allow you to develop a platform plugin 
+result. These classes allow you to develop a platform plugin
 with very little 'boilerplate' code.
 
 客户端做方法调用的时候 [`MethodChannel`][] 会负责响应，
@@ -352,7 +350,7 @@ Start by creating a new app:
 
   在终端中运行：`flutter create batterylevel`
 
-By default our template supports writing Android code using Kotlin,
+By default, our template supports writing Android code using Kotlin,
 or iOS code using Swift. To use Java or Objective-C,
 use the `-i` and/or `-a` flags:
 
@@ -501,7 +499,7 @@ was used on the Flutter client side.
 在 `configureFlutterEngine()` 方法中创建一个 `MethodChannel` 并调用
 `setMethodCallHandler()`。确保使用的通道名称与 Flutter 客户端使用的一致。
 
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt title="MyActivity.kt"?>
 ```kotlin
 import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterActivity
@@ -533,7 +531,7 @@ First, add the needed imports at the top of the file:
 
 首先在文件头部添加所需的依赖：
 
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt title="MyActivity.kt"?>
 ```kotlin
 import android.content.Context
 import android.content.ContextWrapper
@@ -549,7 +547,7 @@ below the `configureFlutterEngine()` method:
 
 然后在 `MainActivity` 类中的 `configureFlutterEngine()` 方法下方添加以下新方法：
 
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt title="MyActivity.kt"?>
 ```kotlin
   private fun getBatteryLevel(): Int {
     val batteryLevel: Int
@@ -582,7 +580,7 @@ Remove the following code:
 
 删除以下代码：
 
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt title="MyActivity.kt"?>
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
@@ -595,7 +593,7 @@ And replace with the following:
 
 并替换成以下内容：
 
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt title="MyActivity.kt"?>
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       // This method is invoked on the main thread.
@@ -646,7 +644,7 @@ Flutter client side.
 接下来，在 `configureFlutterEngine()` 方法中创建一个 `MethodChannel` 并设置一个
 `MethodCallHandler`。确保使用的通道名称与 Flutter 客户端使用的一致。
 
-<!--code-excerpt "MainActivity.java" title-->
+<?code-excerpt title="MainActivity.java"?>
 ```java
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity;
@@ -681,7 +679,7 @@ First, add the needed imports at the top of the file:
 
 首先在文件头部添加所需的依赖：
 
-<!--code-excerpt "MainActivity.java" title-->
+<?code-excerpt title="MainActivity.java"?>
 ```java
 import android.content.ContextWrapper;
 import android.content.Intent;
@@ -697,7 +695,7 @@ below the `configureFlutterEngine()` method:
 
 然后在 Activity 类中的 `onCreate()` 方法下方添加以下新方法：
 
-<!--code-excerpt "MainActivity.java" title-->
+<?code-excerpt title="MainActivity.java"?>
 ```java
   private int getBatteryLevel() {
     int batteryLevel = -1;
@@ -732,7 +730,7 @@ Remove the following code:
 
 移除以下代码：
 
-<!--code-excerpt "MainActivity.java" title-->
+<?code-excerpt title="MainActivity.java"?>
 ```java
           (call, result) -> {
             // This method is invoked on the main thread.
@@ -744,7 +742,7 @@ And replace with the following:
 
 并替换成以下内容：
 
-<!--code-excerpt "MainActivity.java" title-->
+<?code-excerpt title="MainActivity.java"?>
 ```java
           (call, result) -> {
             // This method is invoked on the main thread.
@@ -814,7 +812,7 @@ a `FlutterMethodChannel` tied to the channel name
 然后创建一个 `FlutterMethodChannel` 绑定到名字为
 `samples.flutter.dev/battery` 名称的 channel：
 
-<!--code-excerpt "AppDelegate.swift" title-->
+<?code-excerpt title="AppDelegate.swift"?>
 ```swift
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -848,7 +846,7 @@ Add the following as a new method at the bottom of `AppDelegate.swift`:
 
 在 `AppDelegate.swift` 末尾添加以下新的方法：
 
-<!--code-excerpt "AppDelegate.swift" title-->
+<?code-excerpt title="AppDelegate.swift"?>
 ```swift
 private func receiveBatteryLevel(result: FlutterResult) {
   let device = UIDevice.current
@@ -876,7 +874,7 @@ is called, report that instead.
 该平台方法的实现是调用上一步编写的 iOS 代码。
 如果调用了未知方法，则报告该方法。
 
-<!--code-excerpt "AppDelegate.swift" title-->
+<?code-excerpt title="AppDelegate.swift"?>
 ```swift
 batteryChannel.setMethodCallHandler({
   [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
@@ -925,7 +923,7 @@ as was used on the Flutter client side.
 创建一个 `FlutterMethodChannel` 并添加一个处理程序。
 确保使用的通道名称与 Flutter 客户端使用的一致。
 
-<!--code-excerpt "AppDelegate.m" title-->
+<?code-excerpt title="AppDelegate.m"?>
 ```objectivec
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
@@ -959,7 +957,7 @@ Add the following method in the `AppDelegate` class, just before `@end`:
 
 在 `AppDelegate` 类中的 `@end` 之前添加以下方法：
 
-<!--code-excerpt "AppDelegate.m" title-->
+<?code-excerpt title="AppDelegate.m"?>
 ```objectivec
 - (int)getBatteryLevel {
   UIDevice* device = UIDevice.currentDevice;
@@ -984,7 +982,7 @@ the `result` argument. If an unknown method is called, report that instead.
 该平台方法的实现是调用上一步编写的 iOS 代码，并使用 `result` 参数来返回成功
 和错误情况下的响应。如果调用了未知方法，则报告该方法。
 
-<!--code-excerpt "AppDelegate.m" title-->
+<?code-excerpt title="AppDelegate.m"?>
 ```objectivec
 __weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
@@ -1060,7 +1058,7 @@ after `#include "flutter_window.h"`:
 
 首先，在文件的最顶部添加必要的引用，在 `#include "flutter_window.h"` 下面写上就行：
 
-<!--code-excerpt "flutter_window.cpp" title-->
+<?code-excerpt title="flutter_window.cpp"?>
 ```cpp
 #include <flutter/event_channel.h>
 #include <flutter/event_sink.h>
@@ -1079,7 +1077,7 @@ a `flutter::MethodChannel` tied to the channel name
 编辑 `FlutterWindow::OnCreate` 方法，然后创建一个 `flutter::MethodChannel`
 绑定 `samples.flutter.dev/battery` 名字：
 
-<!--code-excerpt "flutter_window.cpp" title-->
+<?code-excerpt title="flutter_window.cpp"?>
 ```cpp
 bool FlutterWindow::OnCreate() {
   // ...
@@ -1111,7 +1109,7 @@ Add the following as a new function at the top of
 
 在 `flutter_window.cpp` 顶部添加下面的新方法，在 `#include` 下面添加：
 
-<!--code-excerpt "flutter_window.cpp" title-->
+<?code-excerpt title="flutter_window.cpp"?>
 ```cpp
 static int GetBatteryLevel() {
   SYSTEM_POWER_STATUS status;
@@ -1139,7 +1137,7 @@ Remove the following code:
 
 移除下面的代码：
 
-<!--code-excerpt "flutter_window.cpp" title-->
+<?code-excerpt title="flutter_window.cpp"?>
 ```cpp
   channel.SetMethodCallHandler(
       [](const flutter::MethodCall<>& call,
@@ -1152,7 +1150,7 @@ And replace with the following:
 
 然后替换为这个：
 
-<!--code-excerpt "flutter_window.cpp" title-->
+<?code-excerpt title="flutter_window.cpp"?>
 ```cpp
   channel.SetMethodCallHandler(
       [](const flutter::MethodCall<>& call,
@@ -1195,7 +1193,7 @@ Add the Swift implementation of the platform channel method:
 First, add the necessary import to the top of the file, just after
 `import FlutterMacOS`:
 
-<!--code-excerpt "MainFlutterWindow.swift" title-->
+<?code-excerpt title="MainFlutterWindow.swift"?>
 ```swift
 import IOKit.ps
 ```
@@ -1203,7 +1201,7 @@ import IOKit.ps
 Create a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery` in the `awakeFromNib` method:
 
-<!--code-excerpt "MainFlutterWindow.swift" title-->
+<?code-excerpt title="MainFlutterWindow.swift"?>
 ```swift
   override func awakeFromNib() {
     // ...
@@ -1230,7 +1228,7 @@ would write in a native macOS app.
 
 Add the following as a new method at the bottom of `MainFlutterWindow.swift`:
 
-<!--code-excerpt "MainFlutterWindow.swift" title-->
+<?code-excerpt title="MainFlutterWindow.swift"?>
 ```swift
 private func getBatteryLevel() -> Int? {
   let info = IOPSCopyPowerSourcesInfo().takeRetainedValue()
@@ -1253,7 +1251,7 @@ The implementation of this platform method calls
 the macOS code written in the previous step. If an unknown method
 is called, report that instead.
 
-<!--code-excerpt "MainFlutterWindow.swift" title-->
+<?code-excerpt title="MainFlutterWindow.swift"?>
 ```swift
 batteryChannel.setMethodCallHandler { (call, result) in
   switch call.method {
@@ -1301,7 +1299,7 @@ of your choice. The instructions below are for Visual Studio Code with the
 First, add the necessary includes to the top of the file, just
 after `#include <flutter_linux/flutter_linux.h`:
 
-<!--code-excerpt "my_application.cc" title-->
+<?code-excerpt title="my_application.cc"?>
 ```c
 #include <math.h>
 #include <upower.h>
@@ -1309,7 +1307,7 @@ after `#include <flutter_linux/flutter_linux.h`:
 
 Add an `FlMethodChannel` to the `_MyApplication` struct:
 
-<!--code-excerpt "my_application.cc" title-->
+<?code-excerpt title="my_application.cc"?>
 ```c
 struct _MyApplication {
   GtkApplication parent_instance;
@@ -1320,7 +1318,7 @@ struct _MyApplication {
 
 Make sure to clean it up in `my_application_dispose`:
 
-<!--code-excerpt "my_application.cc" title-->
+<?code-excerpt title="my_application.cc"?>
 ```c
 static void my_application_dispose(GObject* object) {
   MyApplication* self = MY_APPLICATION(object);
@@ -1335,7 +1333,7 @@ Edit the `my_application_activate` method and initialize
 `samples.flutter.dev/battery`, just after the call to
 `fl_register_plugins`:
 
-<!--code-excerpt "my_application.cc" title-->
+<?code-excerpt title="my_application.cc"?>
 ```c
 static void my_application_activate(GApplication* application) {
   // ...
@@ -1359,7 +1357,7 @@ you would write in a native Linux application.
 Add the following as a new function at the top of
 `my_application.cc` just after the `G_DEFINE_TYPE` line:
 
-<!--code-excerpt "my_application.cc" title-->
+<?code-excerpt title="my_application.cc"?>
 ```c
 static FlMethodResponse* get_battery_level() {
   // Find the first available battery and report that.
@@ -1390,7 +1388,7 @@ is called, report that instead.
   
 Add the following code after the `get_battery_level` function:
 
-<!--code-excerpt "flutter_window.cpp" title-->
+<?code-excerpt title="flutter_window.cpp"?>
 ```c
 static void battery_method_call_handler(FlMethodChannel* channel,
                                         FlMethodCall* method_call,
@@ -1417,7 +1415,7 @@ it displays 'Battery level not available'.
 如果你的设备没有电池的话，
 它会提示 'Battery level not available'。
 
-## Typesafe platform channels via Pigeon {#pigeon}
+## Typesafe platform channels using Pigeon {#pigeon}
 
 ## 通过 Pigeon 获得类型安全的通道 {#pigeon}
 
@@ -1562,7 +1560,7 @@ types than the default types.
 您还可以在 [`cloud_firestore`][] 插件中查看自定义编解码器的示例，
 该插件可以序列化和反序列化比默认类型更多的类型。
 
-## Channels and Platform Threading
+## Channels and platform threading
 
 ## 通道和平台线程
 
@@ -1580,16 +1578,6 @@ and on any thread.
 同样的，在 Flutter 向目标平台发起 channel 调用的时候，需要在根 `Isolate` 中执行。
 对应平台侧的 handler 既可以在平台的主线程执行，也可以通过事件循环在后台执行。
 对应平台侧 handler 的返回值可以在任意线程异步执行。
-
-{{site.alert.note}}
-
-  In release 2.10, the Task Queue API is available for Android. For iOS, it is
-  only available on the `master` channel.
-
-  在 2.10 正式版中，Task Queue API 在 Android 上已经可以使用，
-  若要在 iOS 上使用，需要切换到 `master` 渠道。
-
-{{site.alert.end}}
 
 {{site.alert.note}}
 

@@ -3,14 +3,6 @@ title: Create a grid list
 title: 创建一个网格列表
 description: How to implement a grid list.
 description: 如何实现一个网格列表。
-prev:
-  title: Create a horizontal list
-  title: 创建一个水平滑动的列表
-  path: /docs/cookbook/lists/horizontal-list
-next:
-  title: Create lists with different types of items
-  title: 创建拥有不同列表项的列表
-  path: /docs/cookbook/lists/mixed-list
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -33,7 +25,7 @@ because it allows you to specify how many rows or columns you'd like.
 就是通过使用 [`GridView.count()`][] 构造方法，
 因为它允许我们指定有多少行多少列。
 
-To visualize how `GridView` works, 
+To visualize how `GridView` works,
 generate a list of 100 widgets that display their index in the list.
 
 为了帮助我们想象 `GridView` 是如何工作的，

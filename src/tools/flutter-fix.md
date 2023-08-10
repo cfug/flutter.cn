@@ -1,5 +1,5 @@
 ---
-title: Flutter Fix
+title: Flutter fix
 description: Keep your code up to date with the help of the Flutter Fix feature.
 description: 使用 Flutter Fix 帮助您的应用跟进最新的 API 用法。
 ---
@@ -8,7 +8,7 @@ As Flutter continues to evolve, we provide a tool to help you clean up
 deprecated APIs from your codebase. The tool ships as part of Flutter, and
 suggests changes that you might want to make to your code. The tool is available
 from the command line, and is also integrated into the IDE plugins for Android
-Studio and Visual Studio Code. 
+Studio and Visual Studio Code.
 
 随着 Flutter 的不断发展，我们提供了一个工具以帮助从代码库中清理已弃用的 API。
 该工具作为 Flutter 产品的一部分被提供，也会向你建议可能希望对代码进行的更改。

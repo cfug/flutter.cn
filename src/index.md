@@ -86,24 +86,17 @@ Coming from another platform? Check out Flutter for:
 [为你的 Flutter 应用加入交互体验][interactivity]
 <br> 在 app 里使用有状态的 widget。
 
-[A tour of the Flutter widget framework][]
-<br> Learn more about Flutter's react-style framework.
-
-[Widgets 介绍][A tour of the Flutter widget framework]
-<br> 学习 Flutter 响应式框架的核心。
-
 [FAQ][]
 <br> Get the answers to frequently asked questions.
 
 [常见问题][FAQ]
 <br> 常见问题解答
 
-[A tour of the Flutter widget framework]: {{site.url}}/ui/widgets-intro
 [Android]: {{site.url}}/get-started/flutter-for/android-devs
 [Building layouts]: {{site.url}}/ui/layout
 [FAQ]: {{site.url}}/resources/faq
 [Get started]: {{site.url}}/get-started/install
-[interactivity]: {{site.url}}/ui/interactive
+[interactivity]: {{site.url}}/ui/interactivity
 [SwiftUI]: {{site.url}}/get-started/flutter-for/swiftui-devs
 [UIKit]: {{site.url}}/get-started/flutter-for/uikit-devs
 [React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
@@ -135,12 +128,12 @@ widgets in [What is State?][]
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="//player.bilibili.com/player.html?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="//player.bilibili.com/player.html?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="//player.bilibili.com/player.html?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="//player.bilibili.com/player.html?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>
     </div>
 </div>

@@ -54,7 +54,7 @@ You might want to watch this one-minute video introducing the Hero widget:
 
 下面的一分钟视频介绍了 Hero widget：
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794187&cid=97537277&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794187&cid=97537277&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -100,8 +100,7 @@ during flight.
 
   **术语：**  
 
-  A [_Route_][] describes a page or screen
-  in a Flutter app.
+  A [_Route_][] describes a page or screen in a Flutter app.
 
   在 Flutter app 中，[**Route**][_Route_] 用来描述一个页面。
 
@@ -130,10 +129,11 @@ usually landing at a different location and with a different size.
 
 一个 **标准 hero 动画** 使 hero 从一页飞至新页面，通常以不同大小到达不同的目的地。
 
-The following video (recorded at slow speed) shows a typical example. 
-Tapping the flippers in the center of the route flies them to the 
-upper left corner of a new, blue route, at a smaller size. 
-Tapping the flippers in the blue route (orusing the device's back-to-previous-route gesture) flies the flippers back to
+The following video (recorded at slow speed) shows a typical example.
+Tapping the flippers in the center of the route flies them to the
+upper left corner of a new, blue route, at a smaller size.
+Tapping the flippers in the blue route (or using the device's
+back-to-previous-route gesture) flies the flippers back to
 the original route.
 
 下面的视频（慢放）演示了一个典型示例。点击页面中间的 flippers，
@@ -143,7 +143,7 @@ the original route.
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
-    src="//player.bilibili.com/player.html?aid=55796337&cid=97541029&page=3"
+    src="//player.bilibili.com/player.html?aid=55796337&cid=97541029&page=3&autoplay=false"
     frameborder="0" allowfullscreen>
   </iframe>
 </div>
@@ -173,7 +173,7 @@ the original route, displayed with a circular shape.
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
-    src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1"
+    src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1&autoplay=false"
     frameborder="0" allowfullscreen>
   </iframe>
 </div>
@@ -234,8 +234,8 @@ how Flutter performs a hero animation.
 
   **术语：**
 
-  If the concept of tweens or tweening is new to you, see the
-  [Animations in Flutter tutorial][].
+  If the concept of tweens or tweening is new to you,
+  see the [Animations in Flutter tutorial][].
 
   如果您不了解 tween 或者 tweening 的概念，请参考教程
   [在 Flutter 应用里实现动画效果][Animations in Flutter tutorial]。
@@ -315,11 +315,11 @@ transition from one route to another.
 下面将介绍 Flutter 如何执行一个页面到另一页面的过渡。
 
 <img src='/assets/images/docs/ui/animations/hero-transition-0.png'
-    alt="在过渡之前 source hero 出现在原页面中"
+    alt="Before the transition the source hero appears in the source route"
     class="mw-100">
 
-Before transition, the source hero waits in the source 
-route's widget tree. The destination route does not yet exist, 
+Before transition, the source hero waits in the source
+route's widget tree. The destination route does not yet exist,
 and the overlay is empty.
 
 过渡前，source hero 在原页面的 widget 树中等待。
@@ -328,10 +328,10 @@ and the overlay is empty.
 ---
 
 <img src='/assets/images/docs/ui/animations/hero-transition-1.png'
-    alt="过渡开始"
+    alt="The transition begins"
     class="mw-100">
 
-Pushing a route to the `Navigator` triggers the animation. 
+Pushing a route to the `Navigator` triggers the animation.
 At t=0.0, Flutter does the following:
 
 推送一个页面到 Navigator 来触发动画。t=0.0 时，Flutter 执行如下动作：
@@ -360,7 +360,7 @@ At t=0.0, Flutter does the following:
 ---
 
 <img src='/assets/images/docs/ui/animations/hero-transition-2.png'
-    alt="The hero flies in the overlay to its final position and size (hero 飞入图层到达其最终位置和大小)"
+    alt="The hero flies in the overlay to its final position and size"
     class="mw-100">
 
 As the hero flies, its rectangular bounds are animated using
@@ -382,7 +382,7 @@ hero 飞翔时，它的矩形边界使用 Hero 的
 ---
 
 <img src='/assets/images/docs/ui/animations/hero-transition-3.png'
-    alt="When the transition is complete, the hero is moved from the overlay to the destination route (当过渡完成时，hero 从图层移动到目的页面)"
+    alt="When the transition is complete, the hero is moved from the overlay to the destination route"
     class="mw-100">
 
 When the flight completes:
@@ -464,13 +464,13 @@ implement hero animations:
 
   <h4 class="no_toc">要点</h4>
 
-  * Specify a route using `MaterialPageRoute`, `CupertinoPageRoute`, or
-    build a custom route using
-    `PageRouteBuilder`. The examples in this section use MaterialPageRoute.
-    
+  * Specify a route using `MaterialPageRoute`, `CupertinoPageRoute`,
+    or build a custom route using `PageRouteBuilder`.
+    The examples in this section use MaterialPageRoute.
+
     使用 MaterialPageRoute，CupertinoPageRoute 指定页面，
     或使用 PageRouteBuilder 创建自定义页面。本章节示例使用的时 MaterialPageRoute。
-  
+
   * Change the size of the image at the end of the transition by
     wrapping the destination's image in a `SizedBox`.
     
@@ -555,6 +555,8 @@ To run the example:
   可以使用 `timeDilation` 属性来减缓过渡。
 
 ### PhotoHero class
+
+### PhotoHero 类
 
 ### PhotoHero 类
 
@@ -673,7 +675,7 @@ class HeroAnimation extends StatelessWidget {
                   body: Container(
                     // The blue background emphasizes that it's a new route.
                     color: Colors.lightBlueAccent,
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16),
                     alignment: Alignment.topLeft,
                     [[highlight]]child: PhotoHero([[/highlight]]
                       photo: 'images/flippers-alpha.png',
@@ -814,7 +816,7 @@ provided example to your needs.** The heavy lifting is done for you.
 
 
   [radial_hero_animation_animate<wbr>_rectclip][]
-  <br> Extends radial_hero_animaton by also animating the size of the
+  <br> Extends radial_hero_animation by also animating the size of the
     rectangular clip. This more advanced example,
     provided for your reference, isn't described in this guide.
     
@@ -941,8 +943,8 @@ Key information:
 
   `Inkwell` 捕捉点击动作。调用函数将 `onTap()` 函数传递给 Photo 的构造函数。
 
-* During flight, the `InkWell` draws its splash on its 
-  first Material ancestor.
+* During flight, the `InkWell` draws its splash on its first
+  Material ancestor.
 
   飞翔过程中，InkWell 的飞溅效果会出现在它第一个 Material 祖先上。
 
@@ -1026,8 +1028,8 @@ Key information:
 
   hero 包裹 `RadialExpansion` widget。
 
-- As the hero flies, its size changes and, 
-  because it constrains its child's size, 
+- As the hero flies, its size changes and,
+  because it constrains its child's size,
   the `RadialExpansion` widget changes size to match.
   
   hero 飞翔时会改变大小，因为它限制了 child 的大小，

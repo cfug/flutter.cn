@@ -39,11 +39,11 @@ membership options in Apple's
 ## 在 App Store Connect 上注册你的应用程序
 
 Manage your app's life cycle on
-[App Store Connect][appstoreconnect] (formerly iTunes Connect).
+[App Store Connect][appstoreconnect_login] (formerly iTunes Connect).
 You define your app name and description, add screenshots,
 set pricing, and manage releases to the App Store and TestFlight.
 
-在 [App Store Connect][appstoreconnect]（以前叫 iTunes Connect）上管理应用程序的生命周期。
+在 [App Store Connect][appstoreconnect_login]（以前叫 iTunes Connect）上管理应用程序的生命周期。
 你可以定义应用程序的名称和描述、添加屏幕截图、
 设置定价以及管理应用程序商店和 TestFlight 的发布。
 
@@ -268,7 +268,7 @@ build number such as `1` in the example above, separated by a `+`.
 版本号是三个用点分隔的数字，如上面示例中的 `1.0.0`，
 后面用 `+` 分隔的是可选的内部版本号，如上面示例中的 `1`。
 
-Both the version and the build number may be overridden in Flutter's
+Both the version and the build number can be overridden in Flutter's
 build by specifying `--build-name` and `--build-number`,
 respectively.
 
@@ -506,7 +506,7 @@ app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
 ```
 
 Where `cert_key` is either your exported Mac App Distribution certificate private key
-or a new private key which automatically generates a new certificate.
+or a new private key which automatically generates a new certificate. 
 
 上面代码里的 `cert_key` 是你已导出的或者新生成的
 Mac App Distribution 证书私钥。
@@ -587,7 +587,7 @@ keychain add-certificates
 </li>
 <li markdown="1">
 
-Update the Xcode project settings to use fetched code signing profiles:
+Update the Xcode project settings to use fetched code signing profiles: 
 
 更新 Xcode 项目设置以使用获取的代码签名配置文件：
 
@@ -756,8 +756,8 @@ detailed overview of the process of releasing an app to the App Store.
 [codemagic_cli_tools]: {{site.github}}/codemagic-ci-cd/cli-tools
 [codesigning_guide]: {{site.apple-dev}}/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [Core Foundation Keys]: {{site.apple-dev}}/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-[devportal_appids]: {{site.apple-dev}}/account/ios/identifier/bundle
-[devportal_certificates]: {{site.apple-dev}}/account/resources/certificates
+[devportal_appids]: {{site.apple-dev}}/account/resources/identifiers/list
+[devportal_certificates]: {{site.apple-dev}}/account/resources/certificates/list
 [devprogram]: {{site.apple-dev}}/programs/
 [devprogram_membership]: {{site.apple-dev}}/support/compare-memberships/
 [distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57

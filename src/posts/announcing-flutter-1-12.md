@@ -164,7 +164,7 @@ Golden 图像指的是一个主图像文件，它是 widget、state、应用或�
 
 拥有这样一群了不起的开发者，真是 Flutter 社区的一大幸事。您们让全体 Flutter 团队成员深感骄傲！
 
-<iframe src="//player.bilibili.com/player.html?aid=86761188&cid=148257761&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=86761188&cid=148257761&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315"> </iframe>
 
 **Flutter Favorite 代码包**
 

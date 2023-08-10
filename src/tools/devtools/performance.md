@@ -110,9 +110,9 @@ UI 线程和光栅线程（以前称为 GPU 线程）。
 This chart contains Flutter frame timing information for your
 application. Each pair of bars in the chart represents a single
 Flutter frame. Selecting a frame from this chart updates the data
-that is displayed below in the [Frame analysis](#frame-analysis-tab) tab
-or the [Timeline events](#timeline-events-tab) tab.
-(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats-tab)
+that is displayed below in the [Frame analysis](#frame-analysis) tab
+or the [Timeline events](#timeline-events) tab.
+(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats)
 is a standalone feature without data per frame).
 
 此图表在时间线上显示应用的帧信息。
@@ -165,14 +165,15 @@ UI 线程会创建一个图层树和一个轻量级的与设备无关的绘制�
 
 ### 光栅线程 (Raster)
 
-The raster thread (previously known as the GPU thread) executes 
-graphics code from the Flutter Engine.
+The raster thread (previously known as the GPU thread)
+executes graphics code from the Flutter Engine.
 This thread takes the layer tree and displays it by talking to
-the GPU (graphic processing unit). You cannot directly access
-the raster thread or its data, but if this thread is slow, it's a
-result of something you've done in the Dart code.
+the GPU (graphic processing unit). You can't directly access
+the raster thread or its data, but if this thread is slow,
+it's a result of something you've done in the Dart code.
 Skia, the graphics library, runs on this thread.
-[Impeller][] (currently in preview) will also use this thread.
+[Impeller][] (in the stable channel for iOS)
+also uses this thread.
 
 [Impeller]: {{site.url}}/perf/impeller
 

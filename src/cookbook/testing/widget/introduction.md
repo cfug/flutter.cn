@@ -6,14 +6,6 @@ description: 了解更多 Flutter 的 widget 测试。
 short-title: Introduction
 tags: cookbook, 实用教程, 测试
 keywords: widget测试,Matcher使用
-prev:
-  title: Mock dependencies using Mockito
-  title: 使用 Mockito 模拟依赖关系
-  path: /docs/cookbook/testing/unit/mocking
-next:
-  title: Find widgets
-  title: 定位到目标 widgets
-  path: /docs/cookbook/testing/widget/finders
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/introduction/"?>

@@ -21,7 +21,7 @@ import from the `rendering` package.
 
 Since [`MouseTracker`][] turned out to be more connected to
 `rendering` than `gestures`, we have moved it and its
-related code to `rendering`. 
+related code to `rendering`.
 
 ## Description of change
 
@@ -34,12 +34,12 @@ file have been moved without keeping backward compatibility.
 If you see error of "Undefined class" or "Undefined name" of
 the following symbols:
 
-  * [`MouseDetectorAnnotationFinder`][]
-  * [`MouseTracker`][]
-  * [`MouseTrackerAnnotation`][]
-  * [`PointerEnterEventListener`][]
-  * [`PointerExitEventListener`][]
-  * [`PointerHoverEventListener`][]
+* [`MouseDetectorAnnotationFinder`][]
+* [`MouseTracker`][]
+* [`MouseTrackerAnnotation`][]
+* [`PointerEnterEventListener`][]
+* [`PointerExitEventListener`][]
+* [`PointerHoverEventListener`][]
 
 You should add the following import:
 
@@ -55,6 +55,7 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`MouseDetectorAnnotationFinder`][]
 * [`MouseTracker`][]
 * [`MouseTrackerAnnotation`][]
@@ -63,10 +64,12 @@ API documentation:
 * [`PointerHoverEventListener`][]
 
 Relevant issues:
+
 * [Transform mouse events to the local coordinate system][]
 * [Move annotations to a separate tree][]
 
 Relevant PR:
+
 * [Move mouse_tracking.dart to rendering][]
 
 [Move annotations to a separate tree]: {{site.repo.flutter}}/issues/49568

@@ -5,14 +5,6 @@ description: How to pass arguments to a named route.
 description: 如何向命名路由传参。
 tags: cookbook, 实用教程, 路由
 keywords: 参数传递,读取参数
-prev:
-  title: Navigate with named routes
-  title: 导航到对应名称的 routes 里
-  path: /docs/cookbook/navigation/named-routes
-next:
-  title: Set up app links for Android
-  title: 为 Android 设定应用链接
-  path: /docs/cookbook/navigation/set-up-app-links
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

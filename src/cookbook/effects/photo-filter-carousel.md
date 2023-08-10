@@ -3,14 +3,6 @@ title: Create a photo filter carousel
 title: 创建一个照片滤镜选择器
 description: How to implement a photo filter carousel.
 description: 学习如何实现一个照片滤镜的轮播选择器
-prev:
-  title: Create a nested navigation flow
-  title: 创建一个嵌套导航
-  path: /docs/cookbook/effects/nested-nav
-next:
-  title: Create a scrolling parallax effect
-  title: 创建一个滚动视差效果
-  path: /docs/cookbook/effects/parallax-scrolling
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -140,7 +132,7 @@ class _FilterSelectorState extends State<FilterSelector> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.fromBorderSide(
-                BorderSide(width: 6.0, color: Colors.white),
+                BorderSide(width: 6, color: Colors.white),
               ),
             ),
           ),
@@ -192,7 +184,7 @@ class FilterItem extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1.0,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: ClipOval(
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files'
@@ -602,7 +594,7 @@ class FilterSelector extends StatefulWidget {
     super.key,
     required this.filters,
     required this.onFilterChanged,
-    this.padding = const EdgeInsets.symmetric(vertical: 24.0),
+    this.padding = const EdgeInsets.symmetric(vertical: 24),
   });
 
   final List<Color> filters;
@@ -741,7 +733,7 @@ class _FilterSelectorState extends State<FilterSelector> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.fromBorderSide(
-                BorderSide(width: 6.0, color: Colors.white),
+                BorderSide(width: 6, color: Colors.white),
               ),
             ),
           ),
@@ -832,7 +824,7 @@ class FilterItem extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1.0,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: ClipOval(
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-texture.jpg',

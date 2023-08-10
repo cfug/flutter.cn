@@ -54,7 +54,7 @@ You might also check out [Introducing Dart 3][].
 [3.10 release notes]: {{site.url}}/release/release-notes/release-notes-3.10.0
 [Introducing Dart 3]: {{site.medium}}/dartlang/announcing-dart-3-53f065a10635
 
-### Docs updated or added since the 3.7 release
+**Docs updated or added since the 3.7 release**
 
 ### 3.7 发布以来更新或新增的文档
 
@@ -112,7 +112,7 @@ You might also check out [Introducing Dart 3][].
 [WebAssembly support]: {{site.url}}/platform-integration/web/wasm
 [adding iOS app extensions]: {{site.url}}/platform-integration/ios/app-extensions
 [testing Flutter plugins]: {{site.url}}/testing/testing-plugins
-[fonts and typography]: {{site.url}}/ui/advanced/typography
+[fonts and typography]: {{site.url}}/ui/design/text/typography
 [Android]: {{site.url}}/platform-integration/android/restore-state-android
 [iOS]: {{site.url}}/platform-integration/ios/restore-state-ios
 [sharing iOS and macOS plugin implementations]: {{site.url}}/packages-and-plugins/developing-packages#shared-ios-and-macos-implementations
@@ -123,7 +123,7 @@ You might also check out [Introducing Dart 3][].
 [Anatomy of an app]: {{site.url}}/resources/architectural-overview#anatomy-of-an-app
 [SDK archive page]: {{site.url}}/release/archive
 
-#### Codelabs
+**Codelabs**
 
 The following codelabs have been published since Flutter 3.7:
 
@@ -145,7 +145,7 @@ The following codelabs have been published since Flutter 3.7:
 [Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
 
-#### Articles
+**Articles**
 
 The Flutter team published the following articles on the [Flutter Medium][]
 publication since Flutter 3.7:
@@ -171,7 +171,7 @@ and [Introducing Dart 3 alpha][].
 [Introducing Dart 3 alpha]: {{site.medium}}/dartlang/dart-3-alpha-f1458fb9d232
 [What's next for Flutter]: {{site.flutter-medium}}/whats-next-for-flutter-b94ce089f49c
 
-### Docs updated or added since the 3.3 release
+**Docs updated or added since the 3.3 release**
 
 * You can now pass configuration
   information to the engine in the `initializeEngine`
@@ -256,7 +256,7 @@ and [Introducing Dart 3 alpha][].
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
 [Security false positives]: {{site.url}}/reference/security-false-positives
 [Using the memory view]: {{site.url}}/tools/devtools/memory
-[Writing and using fragment shaders]: {{site.url}}/ui/advanced/shaders
+[Writing and using fragment shaders]: {{site.url}}/ui/design/graphics/fragment-shaders
 [Writing custom platform-specific code]: {{site.url}}/platform-integration/platform-channels
 
 **Codelabs and workshops**
@@ -479,7 +479,7 @@ For more information, see
 and [What's new in Flutter 2.10][],
 free articles on Medium.
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=640083866&bvid=BV1eY4y1s7wu&cid=556773536&page=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=640083866&bvid=BV1eY4y1s7wu&cid=556773536&page=1&autoplay=false" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 [What's new in Flutter 2.10]: {{site.flutter-medium}}/whats-new-in-flutter-2-10-5aafb0314b12
@@ -534,7 +534,7 @@ publication since the last stable release:
 [Improving Platform Channel Performance in Flutter]: {{site.flutter-medium}}/improving-platform-channel-performance-in-flutter-e5b4e5df04af
 [Raster thread performance optimization tips]: {{site.flutter-medium}}/raster-thread-performance-optimization-tips-e949b9dbcf06
 [README]: {{site.repo.this}}/#flutter-website
-[Using Actions and Shortcuts]: {{site.url}}/ui/advanced/actions_and_shortcuts
+[Using Actions and Shortcuts]: {{site.url}}/ui/interactivity/actions-and-shortcuts
 [What can we do to better improve Flutter?]: {{site.flutter-medium}}/what-can-we-do-better-to-improve-flutter-q2-2021-user-survey-results-1037fb8f057b
 [Writing a good code sample]: {{site.flutter-medium}}/writing-a-good-code-sample-323358edd9f3
 
@@ -612,7 +612,7 @@ publication since the last stable release:
 
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Announcing Flutter 2.2]: {{site.flutter-medium}}/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
-[Building adaptive apps]: {{site.url}}/ui/layout/building-adaptive-apps
+[Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 [Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Building your first Flutter app]: https://www.bilibili.com/video/BV1n54y1H7dZ/
 [DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
@@ -724,7 +724,7 @@ publication since the last stable release:
 [Announcing Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
 [comp]: {{site.flutter-medium}}/providing-operating-system-compatibility-on-a-large-scale-374cc2fb0dad
 [Configuring the URL strategy on the web]: {{site.url}}/ui/navigation/url-strategies
-[Creating responsive and adaptive apps]: {{site.url}}/ui/layout/adaptive-responsive
+[Creating responsive and adaptive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [Dart sound null safety: technical preview 2]: {{site.flutter-medium}}/null-safety-flutter-tech-preview-cb5c98aba187
 [Deprecation Lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [Desktop support for Flutter]: {{site.url}}/platform-integration/desktop
@@ -1068,7 +1068,7 @@ Docs added and updated since the last announcement include:
   (Moved from the wiki and updated as of 1.16.2.)
 * Added a page on using Xcode 11.4 and how to manually update
   your project. The tooling, which automatically updates your
-  configuration when possible, may direct you to this page
+  configuration when possible, might direct you to this page
   if it detects that it's needed.
 * Added a page on
   [Managing plugins and dependencies in add-to-app][add2app]
@@ -1313,7 +1313,7 @@ Happy Fluttering!
 [building a web application]: {{site.url}}/platform-integration/web/building
 [`ColorFiltered`]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
-[creating responsive apps]: {{site.url}}/ui/layout/adaptive-responsive
+[creating responsive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [Flutter Medium publication]: {{site.medium}}/flutter
 [Flutter for web]: {{site.url}}/platform-integration/web
 [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: {{site.google-blog}}/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1

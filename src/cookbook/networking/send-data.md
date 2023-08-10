@@ -5,14 +5,6 @@ description: How to use the http package to send data over the internet.
 description: 如何通过 http 包发送网络数据。
 tags: cookbook, 实用教程, 网络请求
 keywords: 网络数据
-prev:
-  title: Parse JSON in the background
-  title: 在后台处理 JSON 数据解析
-  path: /docs/cookbook/networking/background-parsing
-next:
-  title: Update data over the internet
-  title: 通过网络更新数据
-  path: /docs/cookbook/networking/update-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/send_data/"?>
@@ -323,7 +315,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Container(
           alignment: Alignment.center,
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: (_futureAlbum == null) ? buildColumn() : buildFutureBuilder(),
         ),
       ),
@@ -380,5 +372,5 @@ class _MyAppState extends State<MyApp> {
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
-[JSON and serialization]: {{site.url}}/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

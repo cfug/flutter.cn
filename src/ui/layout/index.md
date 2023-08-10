@@ -39,11 +39,13 @@ diff2html: true
 
 {{site.alert.end}}
 
-The core of Flutter's layout mechanism is widgets. In Flutter, almost
-everything is a widget&mdash;even layout models are widgets.
-The images, icons, and text that you see in a Flutter app  are all widgets.
-But things you don't see are also widgets, such as the rows, columns,
-and grids that arrange, constrain, and align the visible widgets.
+The core of Flutter's layout mechanism is widgets.
+In Flutter, almost everything is a widget&mdash;even
+layout models are widgets. The images, icons,
+and text that you see in a Flutter app are all widgets.
+But things you don't see are also widgets,
+such as the rows, columns, and grids that arrange,
+constrain, and align the visible widgets.
 
 Flutter 布局的核心机制是 widgets。
 在 Flutter 中，几乎所有东西都是 widget —— 甚至布局模型都是 widgets。
@@ -236,6 +238,10 @@ displays the widget.
 大多数 widgets 都有一个 [`build()`][] 方法，
 在 app 的 `build()` 方法中实例化和返回一个 widget 会让它显示出来。
 
+#### Material apps
+
+#### 基于 Material 的应用
+
 For a `Material` app, you can use a [`Scaffold`][] widget;
 it provides a default banner, background color,
 and has API for adding drawers, snack bars, and bottom sheets.
@@ -381,9 +387,9 @@ and a `Column` widget to arrange widgets vertically.
 
     `Row` 和 `Column` 是两种最常用的布局模式。
 
-   * `Row` and `Column` each take a list of child widgets.
+  * `Row` and `Column` each take a list of child widgets.
 
-     `Row` 和 `Column` 每个都有一个子 widgets 列表。
+    `Row` 和 `Column` 每个都有一个子 widgets 列表。
 
   * A child widget can itself be a `Row`, `Column`,
     or other complex widget.
@@ -1227,7 +1233,7 @@ it automatically scrolls.
   可以通过为每个 [`GridTile`][] 设置 `footer` 属性来创建标题。
 
   **Dart code:** [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
-  from the [Flutter Gallery][repo]。
+  from the [Flutter Gallery][repo]
 
   **Dart 代码：** [Flutter Gallery][repo] 中的
   [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
@@ -1717,7 +1723,7 @@ explain `Stateless` and `Stateful` widgets.
 下面的视频是 [Flutter in Focus][] 系列的一部分，
 解释了 Stateless 和 Stateful 的 widget。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Flutter in Focus playlist]({{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
@@ -1729,7 +1735,7 @@ focuses on a widget. Several of them includes layout widgets.
 [每周 Widget 系列](https://www.bilibili.com/video/av55795672)
 的每一集都会介绍一个 widget。其中也包括一些布局的 widget。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55795672&cid=97539385&page=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55795672&cid=97539385&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Flutter Widget of the Week playlist]({{site.youtube-site}}/watch?v=yI-8QHpGIP4&index=5&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 ## Other resources
@@ -1740,54 +1746,49 @@ The following resources might help when writing layout code.
 
 当写布局代码时，下面的资源可能会帮助到你。
 
-* [Layout tutorial][]<br>
-  Learn how to build a layout.
+* [Layout tutorial][]
+<br> Learn how to build a layout.
   
-  [Layout 教程][Layout tutorial])<br>
-  学习如何构建布局。
+  [Layout 教程][Layout tutorial]
+<br> 学习如何构建布局。
 
-* [Widget catalog][]<br>
-  Describes many of the widgets available in Flutter.
+* [Widget catalog][]
+<br> Describes many of the widgets available in Flutter.
   
   [核心 Widget 目录][Widget catalog]<br>
   描述了 Flutter 中很多可用的 widget。
 
-* [HTML/CSS Analogs in Flutter][]<br>
-  For those familiar with web programming, this page maps HTML/CSS functionality
-  to Flutter features.
+* [HTML/CSS Analogs in Flutter][]
+<br> For those familiar with web programming,
+  this page maps HTML/CSS functionality to Flutter features.
 
-  [给 Web 开发者的 Flutter 指南][HTML/CSS Analogs in Flutter]<br>
-  对那些熟悉 web 开发的人来说，这页将 HTML/CSS 的功能映射到 Flutter 特性上。
+  [给 Web 开发者的 Flutter 指南][HTML/CSS Analogs in Flutter]
+<br> 对那些熟悉 web 开发的人来说，这页将 HTML/CSS 的功能映射到 Flutter 特性上。
 
-* Flutter Gallery [running app][], [repo][]<br>
-  Demo app showcasing many Material Design widgets and other Flutter features.
+* Flutter Gallery [running app][], [repo][]
+<br> Demo app showcasing many Material Design widgets and other
+  Flutter features.
+
+  Flutter Gallery [应用][running app]和 [代码仓库][repo]
+<br> Demo app 展示了很多 Material Design widget 和其他的 Flutter 特性。
+
+* [API reference docs][]
+<br> Reference documentation for all of the Flutter libraries.
   
-  Flutter Gallery [应用][running app]和 [代码仓库][repo]<br>
-  Demo app 展示了很多 Material Design widget 和其他的 Flutter 特性。
+  [Flutter API 文档][API reference docs]
+<br> 所有 Flutter 库的参考文档。
 
-* [API reference docs][]<br>
-  Reference documentation for all of the Flutter libraries.
-  
-  [Flutter API 文档][API reference docs]<br>
-  所有 Flutter 库的参考文档。
+* [Adding assets and images][]
+<br> Explains how to add images and other assets to your app's package.
 
-* [Dealing with Box Constraints in Flutter][]<br>
-  Discusses how widgets are constrained by their render boxes.
-  
-  [处理边界约束 (Box constraints) 的问题][Dealing with Box Constraints in Flutter]<br>
-  讨论 widget 是如何受渲染框限制的。
+  [在 Flutter 中添加资源和图片][Adding assets and images]
+<br> 解释在你的 app 中如何添加图片和其他资源。
 
-* [Adding assets and images][]<br>
-  Explains how to add images and other assets to your app's package.
+* [Zero to One with Flutter][]
+<br> One person's experience writing his first Flutter app.
 
-  [在 Flutter 中添加资源和图片][Adding assets and images]<br>
-  解释在你的 app 中如何添加图片和其他资源。
-
-* [Zero to One with Flutter][]<br>
-  One person's experience writing his first Flutter app.
-  
-  [Flutter 从 0 到 1][Zero to One with Flutter]<br>
-  一位开发者第一次写 Flutter app 的经验分享文章。
+  [Flutter 从 0 到 1][Zero to One with Flutter]
+<br> 一位开发者第一次写 Flutter app 的经验分享文章。
 
 
 [Adding assets and images]: {{site.url}}/ui/assets-and-images
@@ -1801,7 +1802,6 @@ The following resources might help when writing layout code.
 [`Container`]: {{api}}/widgets/Container-class.html
 [`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
 [`DataTable`]: {{api}}/material/DataTable-class.html
-[Dealing with Box Constraints in Flutter]: {{site.url}}/ui/layout/box-constraints
 [Elevation]: {{site.material}}/styles/elevation
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
 [Flutter in Focus]: {{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2

@@ -71,7 +71,7 @@ experiences into these websites.
 For a glimpse into how to migrate your mobile app to web, see
 the following video:
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=246950294&bvid=BV1Jv411h7x6&cid=305745348&page=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=246950294&bvid=BV1Jv411h7x6&cid=305745348&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <a name="web"></a>
 ## Resources
@@ -133,7 +133,7 @@ The following resources can help you get started:
 
 
 [Building a web application with Flutter]: {{site.url}}/platform-integration/web/building
-[Creating responsive apps]: {{site.url}}/ui/layout/adaptive-responsive
+[Creating responsive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
 [Flutter Gallery]: {{site.gallery}}

@@ -7,7 +7,7 @@ tags: Flutter性能
 keywords: 性能评估,包体积,内存占用
 ---
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=243695231&bvid=BV1zv411B7gY&cid=207457008&page=1" 
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=243695231&bvid=BV1zv411B7gY&cid=207457008&page=1&autoplay=false" 
 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
 picture-in-picture" allowfullscreen></iframe>
 [Flutter performance basics]({{site.youtube-site}}/watch?v=PKGguGUwSYE)
@@ -35,9 +35,6 @@ Our goal is to answer those three questions (mainly the third one), and
 anything related to them. This document should serve as the single entry 
 point or the root node of a tree of resources that addresses any questions 
 that you have about performance.
-
-我们的目标是回答这三个问题（主要是第三个）以及任何与之相关的话题。
-如果你有任何关于性能方面的问题，本文档可以作为解决你疑惑的起点。
 
 我们的目标是回答这三个问题（主要是第三个）以及任何与之相关的话题。
 如果你有任何关于性能方面的问题，本文档可以作为解决你疑惑的起点。

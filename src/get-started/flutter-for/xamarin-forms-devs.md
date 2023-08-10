@@ -44,6 +44,7 @@ and finding questions that are most relevant to your needs.
 ### app 是如何运行的？
 
 For each platform in Xamarin.Forms,
+you call the `LoadApplication` method,
 which creates a new application and starts your app.
 
 对于 Xamarin.Forms 里的每个平台，你可以调用 `LoadApplication` 方法，
@@ -130,6 +131,10 @@ Xamarin.Forms 拥有一些不同类型的页面，`ContentPage` 是最为通用�
 你可以使用一个 [`MaterialApp`][] widget，它支持 [Material Design][]；
 你也可以使用 [`CupertinoApp`][] widget，它能用来创建 iOS 风格的应用；
 或者你也可以使用更底层的 [`WidgetsApp`][]，可供你随心所欲地定制。
+
+[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 
 The following code defines the home page, a stateful widget.
 In Flutter, all widgets are immutable,
@@ -278,8 +283,7 @@ but there are many benefits to this approach.
 
   How is react-style, or _declarative_, programming different from the
   traditional imperative style?
-  For a comparison, see [Introduction to declarative
-  UI][].
+  For a comparison, see [Introduction to declarative UI][].
 
   响应式或者 **声明式** 的编程和传统的命令式风格有什么不同呢？
   作为对比，请查阅 [声明式 UI 介绍][Introduction to declarative UI]。
@@ -511,7 +515,7 @@ Widget build(BuildContext context) {
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 20, right: 30),
         ),
         onPressed: () {},
         child: const Text('Hello'),
@@ -729,7 +733,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       body: Center(
         child: FadeTransition(
           opacity: curve,
-          child: const FlutterLogo(size: 100.0),
+          child: const FlutterLogo(size: 100),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -755,8 +759,9 @@ the [Animations tutorial][], and the [Animations overview][].
 ### 如何在屏幕上绘图？
 
 Xamarin.Forms never had a built-in way to draw directly on the screen.
-Many would use SkiaSharp, if they needed a custom image drawn. In Flutter,
-you have direct access to the Skia Canvas and can easily draw on screen.
+Many would use SkiaSharp, if they needed a custom image drawn.
+In Flutter, you have direct access to the Skia Canvas
+and can easily draw on screen.
 
 Xamarin.Forms 从来没有任何内置的方法来直接在屏幕上绘图。
 如果他们需要一个自定义图像绘制，大多数使用 SkiaSharp。
@@ -772,12 +777,13 @@ Flutter 有两个帮助你用画布 (canvas) 进行绘制的类：
 后者可以实现自定义的绘制算法。
 
 To learn how to implement a signature painter in Flutter,
-see Collin's answer on [StackOverflow][].
+see Collin's answer on [Custom Paint][].
 
 如果想学习在 Flutter 中如何实现一个签名功能，
-可以查看 Collin 在 [StackOverflow][] 上的回答。
+可以查看 Collin 的回答 [Custom Paint][]。
 
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+
 
 <?code-excerpt "lib/draw.dart"?>
 ```dart
@@ -837,7 +843,7 @@ class SignaturePainter extends CustomPainter {
     final Paint paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -874,8 +880,7 @@ implement methods that achieve the desired behavior.
 在 Xamarin.Forms 中，通常派生 `VisualElement`
 或使用一个已有的 `VisualElement` ，来重写和实现所需行为的方法。
 
-In Flutter, build a custom widget by
-[composing][]
+In Flutter, build a custom widget by [composing][]
 smaller widgets (instead of extending them).
 It is somewhat similar to implementing a custom control
 based off a `Grid` with numerous `VisualElement`s added in,
@@ -965,17 +970,17 @@ To navigate between pages, you have a couple options:
 
 你有多种不同的方式在页面间导航：
 
-* Specify a `Map` of route names. (MaterialApp)
+* Specify a `Map` of route names. (`MaterialApp`)
 
   定义一个 route 名字的 `Map`。(MaterialApp)
 
-* Directly navigate to a route. (WidgetApp)
+* Directly navigate to a route. (`WidgetsApp`)
 
   直接导航到一个 route。(WidgetApp)
 
-The following example builds a Map.
+The following example builds a `Map`.
 
-接下来构建一个映射的示例。
+接下来构建一个 `Map` 映射的示例。
 
 <?code-excerpt "lib/navigation.dart (Main)"?>
 ```dart
@@ -1179,7 +1184,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -1444,7 +1449,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -1482,7 +1487,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  http: ^0.13.4
+  http: ^1.0.0
 ```
 
 To make a network request,
@@ -1607,7 +1612,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -1653,7 +1658,7 @@ Flutter follows a simple density-based format like iOS.
 Assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
 Flutter doesn't have `dp`s but there are logical pixels,
 which are basically the same as device-independent pixels.
-The so-called [`devicePixelRatio`][] expresses the ratio
+Flutter's [`devicePixelRatio`][] expresses the ratio
 of physical pixels in a single logical pixel.
 
 Flutter 遵循一个简单的类似 iOS 的密度相关的格式。
@@ -1945,33 +1950,33 @@ The observable lifecycle events are:
 
 可监听的生命周期事件有：
 
-**`inactive`**
-: The application is in an inactive state and is not receiving user input.
+`inactive`
+<br> The application is in an inactive state and is not receiving user input.
   This event is iOS only.
 
 **`inactive`**
-: 应用当前处于不活跃状态，不接收用户输入事件。
+<br> 应用当前处于不活跃状态，不接收用户输入事件。
   这个事件只在 iOS 上有效。
 
-**`paused`**
-: The application is not currently visible to the user,
+`paused`
+<br> The application is not currently visible to the user,
   is not responding to user input, but is running in the background.
 
 **`paused`**
-: 应用当前处于用户不可见状态，不接收用户输入事件，但仍在后台运行。
+<br> 应用当前处于用户不可见状态，不接收用户输入事件，但仍在后台运行。
+
+`resumed`
+<br> The application is visible and responding to user input.
 
 **`resumed`**
-: The application is visible and responding to user input.
+<br> 应用可见，同时响应用户输入。
 
-**`resumed`**
-: 应用可见，同时响应用户输入。
-
-**`suspending`**
-: The application is suspended momentarily.
+`suspending`
+<br> The application is suspended momentarily.
   This event is Android only.
 
 **`suspending`**
-: 应用被挂起。这个事件只在 Android 上有效。
+<br> 应用被挂起。这个事件只在 Android 上有效。
 
 For more details on the meaning of these states,
 see the [`AppLifecycleStatus` documentation][].
@@ -2097,14 +2102,14 @@ Widget build(BuildContext context) {
     children: <Widget>[
       Icon(
         Icons.add_box,
-        size: 24.0,
+        size: 24,
         color: Colors.black,
       ),
       Positioned(
-        left: 10.0,
+        left: 10,
         child: Icon(
           Icons.add_circle,
-          size: 24.0,
+          size: 24,
           color: Colors.black,
         ),
       ),
@@ -2237,7 +2242,7 @@ In Flutter there are two very similar ways:
              onTap: () {
                developer.log('tap');
              },
-             child: const FlutterLogo(size: 200.0),
+             child: const FlutterLogo(size: 200),
            ),
          ),
        );
@@ -2419,7 +2424,7 @@ class _RotatingFlutterDetectorState extends State<RotatingFlutterDetector>
           },
           child: RotationTransition(
             turns: curve,
-            child: const FlutterLogo(size: 200.0),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       ),
@@ -2489,7 +2494,7 @@ class SampleAppPage extends StatelessWidget {
     return List<Widget>.generate(
       100,
       (index) => Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $index'),
       ),
     );
@@ -2562,7 +2567,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
           developer.log('Row $index tapped');
         },
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10),
           child: Text('Row $index'),
         ),
       ),
@@ -2671,7 +2676,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $index'),
       ),
     );
@@ -2747,7 +2752,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $index'),
       ),
     );
@@ -2925,7 +2930,7 @@ class _MyFormState extends State<MyForm> {
     return Scaffold(
       appBar: AppBar(title: const Text('Retrieve Text Input')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: TextField(controller: myController),
       ),
       floatingActionButton: FloatingActionButton(
@@ -3184,42 +3189,45 @@ Facebook 登录功能。
 
 ### 如何使用 Firebase 特性？
 
-Most Firebase functions are covered by
-[first party plugins][].
+Most Firebase functions are covered by [first party plugins][].
 These plugins are first-party integrations, maintained by the Flutter team:
 
 [官方插件][first party plugins] 提供了 Firebase 的大多数功能。
 这些插件都是由 Flutter 团队维护的官方集成插件：
 
-* [`firebase_admob`][] for Firebase AdMob
+ * [`firebase_admob`][] for Firebase AdMob
 
-  [`firebase_admob`][] 提供 Firebase AdMob 功能
+   [`firebase_admob`][] 提供 Firebase AdMob 功能
 
-* [`firebase_analytics`][] for Firebase Analytics
+ * [`firebase_analytics`][] for Firebase Analytics
 
-  [`firebase_analytics`][] 提供 Firebase Analytics 功能
+   [`firebase_analytics`][] 提供 Firebase Analytics 功能
 
-* [`firebase_auth`][] for Firebase Auth
+ * [`firebase_auth`][] for Firebase Auth
 
-  [`firebase_auth`][] 提供 Firebase Auth 功能
+   [`firebase_auth`][] 提供 Firebase Auth 功能
 
-* [`firebase_database`][] for Firebase RTDB
+ * [`firebase_database`][] for Firebase RTDB
 
-  [`firebase_database`][] 提供 Firebase RTDB 功能
+   [`firebase_database`][] 提供 Firebase RTDB 功能
 
-* [`firebase_storage`][] for Firebase Cloud Storage
+ * [`firebase_storage`][] for Firebase Cloud Storage
 
-  [`firebase_storage`][] 提供 Firebase Cloud Storage 功能
+   [`firebase_storage`][] 提供 Firebase Cloud Storage 功能
 
-* [`firebase_messaging`][] for Firebase Messaging (FCM)
+ * [`firebase_messaging`][] for Firebase Messaging (FCM)
 
-  [`firebase_messaging`][] 提供 Firebase Messaging (FCM) 功能
+   [`firebase_messaging`][] 提供 Firebase Messaging (FCM) 功能
 
-* [`flutter_firebase_ui`][] for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
+ * [`flutter_firebase_ui`][] for quick Firebase Auth integrations
+   (Facebook, Google, Twitter and email)
 
-  [`flutter_firebase_ui`][] 提供快速的 Firebase Auth 集成功能 (Facebook, Google, Twitter 和 email)
+   [`flutter_firebase_ui`][] 提供快速的 Firebase Auth 集成功能
+   (Facebook, Google, Twitter 和 email)
 
-* [`cloud_firestore`][] for Firebase Cloud Firestore
+ * [`cloud_firestore`][] for Firebase Cloud Firestore
+
+   [`cloud_firestore`][] 提供 Firebase Cloud Firestore 功能
 
   [`cloud_firestore`][] 提供 Firebase Cloud Firestore 功能
 
@@ -3403,14 +3411,13 @@ push notifications for your app.
 In Flutter, access this functionality using the
 [`firebase_messaging`][] plugin.
 For more information on using the Firebase Cloud Messaging API, see the
-[`firebase_messaging`][]
-plugin documentation.
+[`firebase_messaging`][] plugin documentation.
 
 在 Flutter 中，则使用 [`firebase_messaging`][] 插件实现此功能。
 想要获得更多关于使用 Firebase Cloud Messaging API 的信息，
 请查阅 [`firebase_messaging`][] 插件文档。
 
-[Adding assets and images]: {{site.url}}/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
 [Animations overview]: {{site.url}}/ui/animations
 [Animations tutorial]: {{site.url}}/ui/animations/tutorial

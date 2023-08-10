@@ -5,14 +5,6 @@ description: How to implement a list.
 description: 如何实现列表。
 tags: cookbook, 实用教程, 列表相关
 keywords: 基础列表
-prev:
-  title: Work with cached images
-  title: 使用缓存图片
-  path: /docs/cookbook/images/cached-images
-next:
-  title: Create a horizontal list
-  title: 创建一个水平滑动的列表
-  path: /docs/cookbook/lists/horizontal-list
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js

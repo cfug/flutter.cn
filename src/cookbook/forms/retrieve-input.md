@@ -3,14 +3,6 @@ title: Retrieve the value of a text field
 title: 获取文本框的输入值
 description: How to retrieve text from a text field.
 description: 如何获取文本框输入的文字
-prev:
-  title: Create an expandable FAB
-  title: 创建一个点击展开的 FAB
-  path: /docs/cookbook/effects/expandable-fab
-next:
-  title: Focus and text fields
-  title: Text Field 上的焦点
-  path: /docs/cookbook/forms/focus
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -18,21 +10,11 @@ js:
 
 <?code-excerpt path-base="cookbook/forms/retrieve_input"?>
 
-{% comment %}
-prev:
-  title: Handle changes to a text field
-  path: /docs/cookbook/forms/text-field-changes
-{% endcomment %}
-
 In this recipe,
 learn how to retrieve the text a user has entered into a text field
 using the following steps:
 
 这个章节讲解的是如何获取文本框的输入值。
-
-## Directions
-
-## 步骤
 
   1. Create a `TextEditingController`.
      
@@ -214,7 +196,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
         title: const Text('Retrieve Text Input'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: TextField(
           controller: myController,
         ),
@@ -243,7 +225,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/retrieve-input.gif" alt="获取文本输入示例" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/retrieve-input.gif" alt="Retrieve Text Input Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

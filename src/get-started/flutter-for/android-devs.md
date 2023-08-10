@@ -42,8 +42,8 @@ Flutter 是一种全新的构建移动界面的方式，
 但是它有一套和 Android（以及 iOS）进行非 UI 任务通信的插件系统。
 如果你是一名 Android 专家，你就不必重新学习所有知识才能使用 Flutter。
 
-This document can be used as a cookbook by jumping around and finding questions
-that are most relevant to your needs.
+This document can be used as a cookbook by jumping around and
+finding questions that are most relevant to your needs.
 
 这篇文档可以用作随时查阅以及答疑解惑的专题手册。
 
@@ -134,9 +134,9 @@ instead you have to work with the widget's state.
 然而在 Flutter 中，`Widget` 是不可变的，
 无法被直接更新，你需要操作 Widget 的状态。
 
-This is where the concept of Stateful and Stateless widgets comes from. A
-`StatelessWidget` is just what it sounds like&mdash;a widget with no state
-information.
+This is where the concept of `Stateful` and `Stateless` widgets comes from.
+A `StatelessWidget` is just what it sounds like&mdash;a
+widget with no state information.
 
 这就是有状态 (Stateful) 和无状态 (Stateless) Widget 概念的来源。
 `StatelessWidget` 如其字面意思&mdash;没有状态信息的 Widget。
@@ -306,7 +306,7 @@ Widget build(BuildContext context) {
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 20, right: 30),
         ),
         onPressed: () {},
         child: const Text('Hello'),
@@ -522,7 +522,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
         child: FadeTransition(
           opacity: curve,
           child: const FlutterLogo(
-            size: 100.0,
+            size: 100,
           ),
         ),
       ),
@@ -550,10 +550,12 @@ and the [Animations overview][].
 
 ### 如何使用 Canvas 进行绘制？
 
-In Android, you would use the `Canvas` and `Drawable`s to draw images and shapes
-to the screen. Flutter has a similar `Canvas` API as well, since it is based
-on the same low-level rendering engine, Skia. As a result, painting to a
-canvas in Flutter is a very familiar task for Android developers.
+In Android, you would use the `Canvas` and `Drawable`
+to draw images and shapes to the screen.
+Flutter has a similar `Canvas` API as well,
+since it's based on the same low-level rendering engine, Skia.
+As a result, painting to a canvas in Flutter
+is a very familiar task for Android developers.
 
 在 Android 中，你可以使用 `Canvas` 和 `Drawable` 将图片和形状绘制到屏幕上。
 Flutter 也有一个类似于 `Canvas` 的 API，
@@ -562,8 +564,8 @@ Flutter 也有一个类似于 `Canvas` 的 API，
 进行绘制对于 Android 开发者来说是一件非常熟悉的工作。
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
-and `CustomPainter`, the latter of which implements your algorithm to draw to
-the canvas.
+and `CustomPainter`,
+the latter of which implements your algorithm to draw to the canvas.
 
 Flutter 有两个帮助你用画布 (canvas) 进行绘制的类：
 `CustomPaint` 和 `CustomPainter`，
@@ -625,7 +627,7 @@ class SignaturePainter extends CustomPainter {
     var paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -638,6 +640,8 @@ class SignaturePainter extends CustomPainter {
       oldDelegate.points != points;
 }
 ```
+
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 ### How do I build custom widgets?
 
@@ -749,11 +753,11 @@ In Flutter, you have a couple options to navigate between pages:
 
 在 Flutter 中，你有多种不同的方式在页面间导航：
 
-* Specify a `Map` of route names. (MaterialApp)
+* Specify a `Map` of route names. (using `MaterialApp`)
 
   定义一个 route 名字的 `Map`。(MaterialApp)
 
-* Directly navigate to a route. (WidgetApp)
+* Directly navigate to a route. (using `WidgetsApp`)
 
   直接导航到一个 route。(WidgetApp)
 
@@ -1123,7 +1127,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1371,7 +1375,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1422,10 +1426,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### What is the equivalent of OkHttp on Flutter?
 
-### OkHttp 在 Flutter 中的对应物是什么？
+### OkHttp 在 Flutter 中对应什么库？
 
-Making a network call in Flutter is easy when you use the popular
-[`http` package][].
+Making a network call in Flutter is easy when you use the
+popular [`http` package][].
 
 Flutter 中使用流行的 [`http` package][] 进行网络请求是很简单的。
 
@@ -1437,14 +1441,12 @@ yourself, making it a simple way to make network calls.
 但是它抽象了很多通常你会自己实现的网络功能，
 这使其本身在执行网络请求时简单易用。
 
-To use the `http` package, add it to your dependencies in `pubspec.yaml`:
+To add the `http` package as a dependency, run `flutter pub add`:
 
 要使用 `http`，请在 `pubspec.yaml` 文件中添加依赖：
 
-```yaml
-dependencies:
-  ...
-  http: ^0.11.3+16
+```terminal
+$ flutter pub add http
 ```
 
 To make a network call, call `await` on the `async` function `http.get()`:
@@ -1567,7 +1569,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1600,11 +1602,12 @@ are placed in an assets folder for Flutter.
 所有原本在 Android 中应该放在 `res/drawable-*` 文件夹中的资源文件，
 在 Flutter 中都放在一个 assets 文件夹中。
 
-Flutter follows a simple density-based format like iOS. Assets might be `1.0x`,
-`2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
-are logical pixels, which are basically the same as device-independent pixels.
-The so-called [`devicePixelRatio`][]
-expresses the ratio of physical pixels in a single logical pixel.
+Flutter follows a simple density-based format like iOS.
+Assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
+Flutter doesn't have `dp`s but there are logical pixels,
+which are basically the same as device-independent pixels.
+Flutter's [`devicePixelRatio`][] expresses the ratio
+of physical pixels in a single logical pixel.
 
 Flutter 遵循一个简单的类似 iOS 的密度相关的格式。
 文件可以是一倍 (`1x`)、两倍 (`2x`)、三倍 (`3x`) 或其它的任意倍数。
@@ -1615,7 +1618,7 @@ The equivalent to Android's density buckets are:
 
 与 Android 的密度分类的对照表如下：
 
-Android density qualifier | Flutter pixel ratio
+ Android density qualifier | Flutter pixel ratio
  --- | ---
 Android 密度修饰符 | Flutter 像素比例
  `ldpi` | `0.75x`
@@ -1625,36 +1628,27 @@ Android 密度修饰符 | Flutter 像素比例
  `xxhdpi` | `3.0x`
  `xxxhdpi` | `4.0x`
 
-Assets are located in any arbitrary folder&mdash;Flutter has no
-predefined folder structure. You declare the assets (with location) in
+Assets are located in any arbitrary folder&mdash;Flutter
+has no predefined folder structure.
+You declare the assets (with location) in
 the `pubspec.yaml` file, and Flutter picks them up.
 
 文件放置于任意文件夹中&mdash;&mdash;Flutter 没有预先定义好的文件夹结构。
 你在 `pubspec.yaml` 文件中定义文件（包括位置信息），Flutter 负责找到它们。
 
-Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
-accessible from the native side, and vice versa, native assets and resources
-weren’t available to Flutter, as they lived in separate folders.
+Assets stored in the native asset folder are
+accessed on the native side using Android's `AssetManager`:
 
-需要注意的是，在 Flutter 1.0 beta 2 之前，
-在 Flutter 中定义的文件不能被原生端访问，反之亦然。
-原生端定义的资产文件 (assets) 和资源文件 (resources) 也无法被 Flutter 访问，
-因为它们是放置于不同的文件夹中的。
-
-As of Flutter beta 2, assets are stored in the native asset folder,
-and are accessed on the native side using Android's `AssetManager`:
-
-至于 Flutter beta 2，文件是放置于原生端的 asset 文件夹中，
+文件放置于原生端的 asset 文件夹中，
 所以可以被原生端的 `AssetManager` 访问：
 
 ```kotlin
 val flutterAssetStream = assetManager.open("flutter_assets/assets/my_flutter_asset.png")
 ```
 
-As of Flutter beta 2, Flutter still cannot access native resources,
-nor it can access native assets.
+Flutter can't access native resources or assets.
 
-然而对于 Flutter beta 2，Flutter 依然无法访问原生资源文件 (resources)，
+Flutter 依然无法访问原生资源文件 (resources)，
 也无法访问原生资产文件 (assets)。
 
 To add a new image asset called `my_icon.png` to our Flutter project,
@@ -1737,9 +1731,8 @@ though this feature is a work in progress.
 
 Flutter 在 Android 上提供无障碍的基本支持，但是这个功能当下仍在开发。
 
-Flutter developers are encouraged to use the [intl
-package][] for internationalization and
-localization.
+Flutter developers are encouraged to use the
+[intl package][] for internationalization and localization.
 
 我们鼓励 Flutter 开发者使用 [intl 包][intl package] 进行国际化和本地化。
 
@@ -1755,9 +1748,10 @@ wrapper apps to the respective build systems.
 在 Android 中，你在 Gradle 构建脚本中添加依赖。Flutter 使用 Dart 自己的构建系统以及 Pub 包管理器。
 构建工具会将原生 Android 和 iOS 壳应用的构建代理给对应的构建系统。
 
-While there are Gradle files under the `android` folder in your Flutter project,
-only use these if you are adding native dependencies needed for
-per-platform integration. In general, use `pubspec.yaml` to declare
+While there are Gradle files under the `android` folder in your
+Flutter project, only use these if you are adding native
+dependencies needed for per-platform integration.
+In general, use `pubspec.yaml` to declare
 external dependencies to use in Flutter.
 A good place to find Flutter packages is [pub.dev][].
 
@@ -1793,11 +1787,11 @@ see the community-contributed Medium article,
 [给 Android 开发者的 Flutter 指南：如何在 Flutter 中设计一个 Activity 界面]
 [Flutter for Android Developers: How to design Activity UI in Flutter]。
 
-As mentioned in the [Intents][]
-section, screens in Flutter are represented by `Widget`s since everything is
-a widget in Flutter. Use a `Navigator` to move between different `Route`s
-that represent different screens or pages, or maybe just different states or
-renderings of the same data.
+As mentioned in the [Intents][] section,
+screens in Flutter are represented by `Widget`s since everything is
+a widget in Flutter. Use a `Navigator` to move between different
+`Route`s that represent different screens or pages,
+or perhaps different states or renderings of the same data.
 
 就如在 [Intents][] 部分所提到的，Flutter 中的界面都是以 `Widget` 表示的，
 因为 Flutter 中一切皆为 Widget。你使用 `Navigator` 在表示不同屏幕或页面，
@@ -1822,14 +1816,14 @@ The observable lifecycle events are:
 
 可以被观察的生命周期事件有：
 
+* `detached` — The application is still hosted on a flutter engine but is detached from any host views.
+
+  `detached` — 应用依然保留 flutter engine，但是全部宿主 view 均已脱离。
+
 * `inactive` — The application is in an inactive state and is not receiving user
   input.
 
   `inactive` — 应用处于非活跃状态并且不接收用户输入。
-
-* `detached` — The application is still hosted on a flutter engine but is detached from any host views.
-
-  `detached` — 应用依然保留 flutter engine，但是全部宿主 view 均已脱离。
 
 * `paused` — The application is not currently visible to the user,
   not responding to user input, and running in the background.
@@ -1844,8 +1838,6 @@ The observable lifecycle events are:
   `resumed` — 应用对用户可见并且可以响应用户的输入。
   这个事件对应于 Android 中的 `onPostResume()`；
 
-  `suspending` — 应用暂时被挂起。这个事件对应于 Android 中的 `onStop`；
-  iOS 上由于没有对应的事件，因此不会触发此事件。
 
 For more details on the meaning of these states, see the
 [`AppLifecycleStatus` documentation][].
@@ -2125,7 +2117,7 @@ In Flutter there are two ways of adding touch listeners:
               developer.log('tap');
             },
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -2263,7 +2255,7 @@ class _SampleAppState extends State<SampleApp>
           child: RotationTransition(
             turns: curve,
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -2346,7 +2338,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ));
     }
@@ -2359,7 +2351,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### 如何知道点击了哪个列表项？
 
-In Android, the ListView has a method to find out which item was clicked
+In Android, the ListView has a method to find out which item was clicked,
 'onItemClickListener'.
 In Flutter, use the touch handling provided by the passed-in widgets.
 
@@ -2418,7 +2410,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
             developer.log('row tapped');
           },
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10),
             child: Text('Row $i'),
           ),
         ),
@@ -2523,7 +2515,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -2608,7 +2600,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -2716,12 +2708,12 @@ customize many parameters, such as:
 
 ## 表单输入
 
-For more information on using Forms, see
-[Retrieve the value of a text field][],
-from the [Flutter Cookbook][].
+For more information on using Forms,
+see [Retrieve the value of a text field][],
+from the [Flutter cookbook][].
 
 如果需要更多使用表单的信息，请查看
-[Flutter Cookbook][Flutter Cookbook] 中的 
+[Flutter Cookbook][Flutter Cookbook] 中的
 [检索一个文本字段的值][Retrieve the value of a text field]。
 
 ### What is the equivalent of a "hint" on an Input?
@@ -2875,7 +2867,8 @@ Facebook 登录功能。
 
 Most Firebase functions are covered by
 [first party plugins][].
-These plugins are first-party integrations, maintained by the Flutter team:
+These plugins are first-party integrations,
+maintained by the Flutter team:
 
 [官方插件][first party plugins] 提供了 Firebase 的大多数功能。
 这些插件都是由 Flutter 团队维护的官方集成插件：
@@ -2901,29 +2894,32 @@ These plugins are first-party integrations, maintained by the Flutter team:
    [`firebase_storage`][] 提供 Firebase Cloud Storage 功能
 
  * [`firebase_messaging`][] for Firebase Messaging (FCM)
-  
+
    [`firebase_messaging`][] 提供 Firebase Messaging (FCM) 功能
 
- * [`flutter_firebase_ui`][] for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
-  
+ * [`flutter_firebase_ui`][] for quick Firebase Auth integrations
+   (Facebook, Google, Twitter and email)
+
    [`flutter_firebase_ui`][] 提供快速的 Firebase Auth 集成功能 (Facebook, Google, Twitter 和 email)
 
  * [`cloud_firestore`][] for Firebase Cloud Firestore
   
    [`cloud_firestore`][] 提供 Firebase Cloud Firestore 功能
 
-You can also find some third-party Firebase plugins on Pub that cover areas
-not directly covered by the first-party plugins.
+You can also find some third-party Firebase plugins on
+pub.dev that cover areas not directly covered by the
+first-party plugins.
 
-你可以在 [Pub](https://pub.flutter-io.cn/flutter) 网站上查找一些官方插件
+你可以在 [Pub](https://pub.flutter-io.cn) 网站上查找一些官方插件
 没有直接支持的功能的第三方 Firebase 插件。
 
 ### How do I build my own custom native integrations?
 
 ### 如何创建自己的自定义原生集成插件？
 
-If there is platform-specific functionality that Flutter or its community
-Plugins are missing, you can build your own following the
+If there is platform-specific functionality that Flutter
+or its community Plugins are missing,
+you can build your own following the
 [developing packages and plugins][] page.
 
 如果有 Flutter 官方或社区第三方插件没有涵盖的平台特定的功能，
@@ -3148,7 +3144,6 @@ see the [`firebase_messaging`][] plugin documentation.
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: {{site.url}}/resources/architectural-overview#composition
 [Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
-[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 [developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [DevTools]: {{site.url}}/tools/devtools

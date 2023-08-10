@@ -5,17 +5,21 @@ description: How to use SQLite to store and retrieve data.
 description: 如何使用 SQLite 做数据持久化。
 tags: cookbook, 实用教程, 持久化
 keywords: SQLite,数据库
-prev:
-  title: Work with WebSockets
-  title: 发起 WebSockets 请求
-  path: /docs/cookbook/networking/web-sockets
-next:
-  title: Read and write files
-  title: 文件读写
-  path: /docs/cookbook/persistence/reading-writing-files
 ---
 
 <?code-excerpt path-base="cookbook/persistence/sqlite/"?>
+
+{{site.alert.note}}
+
+  This guide uses the [sqflite package][].
+  This package only supports apps that run on macOS, iOS, or Android.
+
+  本示例使用了 [sqflite package][]。
+  该 package 仅支持 macOS、iOS 和 Android。
+
+{{site.alert.end}}
+
+[sqflite package]: {{site.pub-pkg}}/sqflite
 
 If you are writing an app that needs to persist and query large amounts of data on
 the local device, consider using a database instead of a local file or
@@ -45,41 +49,65 @@ completing this recipe.
 
 This recipe uses the following steps:
 
-步骤：
+总共有以下的步骤：
 
-1. 添加依赖
-1. 定义 `Dog（狗）` 数据模型；
-1. 打开数据库；
-1. 创建 `dogs` 数据表；
-1. 将一条 `Dog` 数据插入数据库；
-1. 查询所有狗狗的数据；
-1. 更新（修改）一条 `Dog` 的数据；
-1. 删除一条 `Dog` 的数据。
+  1. Add the dependencies.
+
+     添加依赖；
+
+  2. Define the `Dog` data model.
+
+     定义 `Dog (狗)` 数据模型；
+
+  3. Open the database.
+
+     打开数据库；
+
+  4. Create the `dogs` table.
+
+     创建 `dogs` 数据表；
+
+  5. Insert a `Dog` into the database.
+
+     将一条 `Dog` 数据插入数据库；
+
+  6. Retrieve the list of dogs.
+
+     查询所有狗狗的数据；
+
+  7. Update a `Dog` in the database.
+
+     更新（修改）一条 `Dog` 的数据；
+
+  7. Delete a `Dog` from the database.
+
+     删除一条 `Dog` 的数据。
 
 ## 1. Add the dependencies
 
 ## 1. 添加依赖
 
-To work with SQLite databases, import the `sqflite` and `path` packages. 
+To work with SQLite databases, import the `sqflite` and `path` packages.
 
 为了使用 SQLite 数据库，首先需要导入 `sqflite` 和 `path` 这两个 package。
 
   * The `sqflite` package provides classes and functions to
-    interact with a SQLite database. 
-    
+    interact with a SQLite database.
+
     `sqflite` 提供了丰富的类和方法，以便你能便捷实用 SQLite 数据库。
-    
+
   * The `path` package provides functions to
     define the location for storing the database on disk.
-    
+
     `path` 提供了大量方法，以便你能正确的定义数据库在磁盘上的存储位置。
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  sqflite:
-  path:
+To add the packages as a dependency,
+run `flutter pub add`:
+
+运行 `flutter pub add` 将其添加为依赖：
+
+```terminal
+$ flutter pub add sqflite path
 ```
 
 Make sure to import the packages in the file you'll be working in.
@@ -127,7 +155,7 @@ class Dog {
 
 ## 3. 打开数据库
 
-Before reading and writing data to the database, open a connection 
+Before reading and writing data to the database, open a connection
 to the database. This involves two steps:
 
 在你准备读写数据库的数据之前，你要先打开这个数据库。
@@ -225,7 +253,7 @@ final database = openDatabase(
 
 ## 5. 插入一条狗狗的数据
 
-Now that you have a database with a table suitable for storing information 
+Now that you have a database with a table suitable for storing information
 about various dogs, it's time to read and write data.
 
 现在你已经准备好了一个数据库用于存储各种狗狗的信息数据，现在开始读写数据咯。
@@ -420,6 +448,7 @@ print(await dogs()); // Prints Fido with age 42.
   
 {{site.alert.end}}
 
+
 ## 8. Delete a `Dog` from the database
 
 ## 8. 删除一条 `Dog` 的数据
@@ -464,21 +493,21 @@ To run the example:
 
 运行示例需要以下几步：
 
-1. Create a new Flutter project.
-   
-   创建一个新的 Flutter 工程；
-  	 
-2. Add the `sqflite` and `path` packages to your `pubspec.yaml`.
-   
-   将 `sqflite` 和 `path` 包添加到 `pubspec.yaml` 文件里；
-  
-3. Paste the following code into a new file called `lib/db_test.dart`.
-  
-   将以下代码粘贴在 `lib/db_test.dart` 文件里（若无则新建，若有则覆盖）；
-  
-4. Run the code with `flutter run lib/db_test.dart`.
-  
-   运行 `flutter run lib/db_test.dart`。
+  1. Create a new Flutter project.
+
+     创建一个新的 Flutter 工程；
+
+  2. Add the `sqflite` and `path` packages to your `pubspec.yaml`.
+
+     将 `sqflite` 和 `path` 包添加到 `pubspec.yaml` 文件里；
+
+  3. Paste the following code into a new file called `lib/db_test.dart`.
+
+     将以下代码粘贴在 `lib/db_test.dart` 文件里（若无则新建，若有则覆盖）；
+
+  4. Run the code with `flutter run lib/db_test.dart`.
+
+     运行 `flutter run lib/db_test.dart`。
 
 <?code-excerpt "lib/main.dart"?>
 ```dart

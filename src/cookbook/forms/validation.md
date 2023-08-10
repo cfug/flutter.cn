@@ -5,14 +5,6 @@ description: How to build a form that validates input.
 description: 如何创建一个能够验证输入内容的表单。
 tags: cookbook, 实用教程, 表格交互
 keywords: 文本框, 验证
-prev:
-  title: Drag a UI element
-  title: 拖拽一个 UI 组建
-  path: /docs/cookbook/effects/drag-a-widget
-next:
-  title: Create and style a text field
-  title: 文本框的创建和设定
-  path: /docs/cookbook/forms/text-input
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -297,7 +289,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             },
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            padding: const EdgeInsets.symmetric(vertical: 16),
             child: ElevatedButton(
               onPressed: () {
                 // Validate returns true if the form is valid, or false otherwise.
@@ -323,7 +315,13 @@ class MyCustomFormState extends State<MyCustomForm> {
   <img src="/assets/images/docs/cookbook/form-validation.gif" alt="表单验证示例" class="site-mobile-screenshot" />
 </noscript>
 
+To learn how to retrieve these values, check out the
+[Retrieve the value of a text field][] recipe.
 
+想要了解更多关于如何获取这些值的内容，你可以参考
+[获取文本输入框的值][Retrieve the value of a text field] 部分。
+
+[Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`Form.of()`]: {{site.api}}/flutter/widgets/Form/of.html
 [`FormState`]: {{site.api}}/flutter/widgets/FormState-class.html

@@ -1,9 +1,9 @@
 ---
 title: Build and release an Android app
 title: 构建和发布为 Android 应用
-short-title: Android
 description: How to prepare for and release an Android app to the Play store.
 description: 如何打包把 App 发布到 Play 商店。
+short-title: Android
 tags: 发布, Android
 keywords: 上传Google商店,发布Flutter应用
 ---
@@ -226,20 +226,23 @@ If not, create one by either:
 
   在命令行窗口运行如下的命令：
 
-    On Mac/Linux, use the following command:
+    On macOS or Linux, use the following command:
 
     在 macOS 或者 Linux 系统上，执行下面的代码：
 
     ```terminal
-    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
+            -keysize 2048 -validity 10000 -alias upload
     ```
 
-    On Windows, use the following command:
+    On Windows, use the following command in PowerShell:
 
-    在 Windows 系统上，执行下述代码：
+    在 Windows 系统上，在 PoweShell 内执行以下代码：
 
-    ```terminal
-    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    ```powershell
+    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
+            -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
+            -alias upload
     ```
 
     This command stores the `upload-keystore.jks` file in your home
@@ -288,24 +291,34 @@ If not, create one by either:
 ### 从 app 中引用密钥库
 
 Create a file named `[project]/android/key.properties`
-that contains a reference to your keystore:
+that contains a reference to your keystore.
+Don't include the angle brackets (`< >`).
+They indicate that the text serves as a placeholder for your values.
 
 创建一个名为 `[project]/android/key.properties` 的文件，
-它包含了密钥库位置的定义：
+它包含了密钥库位置的定义。
+在替换内容时请去除 `< >` 括号：
 
-```
-storePassword=<上一步骤中的密码>
-keyPassword=<上一步骤中的密码>
+```properties
+storePassword=<password-from-previous-step>
+keyPassword=<password-from-previous-step>
 keyAlias=upload
-storeFile=<密钥库的位置，例如: /Users/<user name>/upload-keystore.jks or C:\\Users\\<user name>\\upload-keystore.jks>
+storeFile=<keystore-file-location>
 ```
 
-{{site.alert.note}}
+The `storeFile` might be located at
+`/Users/<user name>/upload-keystore.jks` on macOS
+or `C:\\Users\\<user name>\\upload-keystore.jks` on Windows.
+
+`storeFile` 密钥路径在 macOS 上类似于 `/Users/<user name>/upload-keystore.jks`，
+在 Windows 上类似于 `C:\\Users\\<user name>\\upload-keystore.jks`。
+
+{{site.alert.warning}}
 
   Keep the `key.properties` file private;
   don't check it into public source control.
 
-  （再次）请保证这个文件的私有性，不要将它提交到公共的代码管理空间。
+（再次）请保证这个文件的私有性，不要将它提交到公共的代码管理空间。
 
 {{site.alert.end}}
 
@@ -999,7 +1012,7 @@ causing users to download and store more bytes when installing
 your application. When building APKs instead of app bundles,
 it is strongly recommended to build split APKs,
 as described in [build an APK](#build-an-apk) using the
-`--split-per-abi` .
+`--split-per-abi` flag.
 
 一个 [fat APK][] 是一个包含了支持多个 ABI 架构的 APK 文件。
 这样做的好处是单个 APK 可以运行在多个架构上，因此
@@ -1016,13 +1029,12 @@ as described in [build an APK](#build-an-apk) using the
 When building your application in release mode,
 Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
 [arm64-v8a][] (ARM 64-bit), and [x86-64][] (x86 64-bit).
-Flutter does not currently support building for x86 Android
-(See [Issue 9253][]).
+Flutter supports building for x86 Android through ARM emulation.
 
 当使用 release 模式构建你的应用时,
 Flutter app 可以基于 [armeabi-v7a][] (ARM 32 位)、
 [arm64-v8a][] (ARM 64 位) 以及 [x86-64][] (x86 64 位) 被编译。
-Flutter 目前不支持 x86 Android (参考 [Issue 9253][]).
+Flutter 目前支持通过 ARM 模拟 x86 Android。
 
 ### How do I sign the app bundle created by `flutter build appbundle`?
 

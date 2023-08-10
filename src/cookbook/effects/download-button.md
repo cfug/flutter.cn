@@ -2,15 +2,6 @@
 title: Create a download button
 title: 创建一个带进度条的下载按钮
 description: How to implement a download button.
-description: 如何实现一个下载按钮。
-prev:
-  title: Work with tabs
-  title: 使用 tabs
-  path: /docs/cookbook/design/tabs
-next:
-  title: Create a nested navigation flow
-  title: 创建一个嵌套导航
-  path: /docs/cookbook/effects/nested-nav
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -194,7 +185,7 @@ class ButtonShapeWidget extends StatelessWidget {
     if (isDownloading || isFetching) {
       shape = ShapeDecoration(
         shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0.0),
+        color: Colors.white.withOpacity(0),
       );
     }
 
@@ -260,7 +251,7 @@ class ButtonShapeWidget extends StatelessWidget {
     if (isDownloading || isFetching) {
       shape = ShapeDecoration(
         shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0.0),
+        color: Colors.white.withOpacity(0),
       );
     }
 
@@ -412,7 +403,7 @@ class DownloadButton extends StatelessWidget {
   const DownloadButton({
     super.key,
     required this.status,
-    this.downloadProgress = 0.0,
+    this.downloadProgress = 0,
     required this.onDownload,
     required this.onCancel,
     required this.onOpen,

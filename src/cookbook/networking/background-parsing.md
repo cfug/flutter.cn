@@ -5,14 +5,6 @@ description: How to perform a task in the background.
 description: 如何在后台执行任务。
 tags: cookbook, 实用教程, 网络请求
 keywords: json,后台任务,调度,fps,卡顿
-prev:
-  title: Make authenticated requests
-  title: 发起 HTTP 认证授权请求
-  path: /docs/cookbook/networking/authenticated-requests
-next:
-  title: Send data to the internet
-  title: 发送网络数据请求
-  path: /docs/cookbook/networking/send-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/background_parsing/"?>
@@ -27,15 +19,17 @@ Dart 应用通常只会在单线程中处理它们的工作。
 这种模式不但简化了代码而且速度也够快，
 基本不会出现像动画卡顿以及性能不足这种「不靠谱」的问题。
 
-However, you might need to perform an expensive computation, such as parsing a
-very large JSON document. If this work takes more than 16 milliseconds,
+However, you might need to perform an expensive computation,
+such as parsing a very large JSON document.
+If this work takes more than 16 milliseconds,
 your users experience jank.
 
 但是，当你需要进行一个非常复杂的计算时，例如解析一个巨大的 JSON 文档。
 如果这项工作耗时超过了 16 毫秒，那么你的用户就会感受到掉帧。
 
-To avoid jank, you need to perform expensive computations like this in the
-background. On Android, this means scheduling work on a different thread.
+To avoid jank, you need to perform expensive computations
+like this in the background.
+On Android, this means scheduling work on a different thread.
 In Flutter, you can use a separate [Isolate][].
 This recipe uses the following steps:
 

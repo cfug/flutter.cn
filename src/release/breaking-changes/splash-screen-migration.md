@@ -39,7 +39,7 @@ prior to the 2.5 release.
    as a `Drawable`. For example:
 
    在应用程序的 `FlutterActivity` 中找到 `provideSplashScreen()` 方法的实现并 **将其删除**。
-   该方法的实现应该包括了将应用程序的自定义闪屏页构建成一个 `Drawable`。
+   该方法应该包括了将应用程序的自定义闪屏页构建成一个 `Drawable` 的实现。
    例如：
 
    ```java

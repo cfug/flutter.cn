@@ -16,7 +16,7 @@ until it draws the first frame.
 
 在 Flutter 2.5 版本之前，Flutter 应用程序可以通过定义 manifest 文件 (`AndroidManifest.xml`) 
 中的元数据，或在其 [`FlutterActivity`][] 中实现 [`provideSplashScreen`][]，
-再或者可以两者兼顾使用，来添加闪屏页。
+再或者两者兼顾使用，来添加闪屏页。
 闪屏页会在 Android 启动页显示后，Flutter 首帧绘制前短暂显示。
 从 Flutter 2.5 版本起，这种方式已被弃用。
 Flutter 现在会自动保持显示 Android 启动页，直至首帧绘制。

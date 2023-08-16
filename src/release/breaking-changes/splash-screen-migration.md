@@ -1,6 +1,6 @@
 ---
 title: Deprecated Splash Screen API Migration
-title: 已弃用的闪屏页 API 迁移
+title: 从已弃用的闪屏页 API 迁移
 description: How to migrate from Manifest/Activity defined splash screen.
 description: 如何将 Manifest/Activity 定义的闪屏页进行迁移。
 ---
@@ -26,8 +26,8 @@ launch screen for your application, follow the steps that correspond
 to how your application's custom splash screen was defined
 prior to the 2.5 release.
 
-从自定义的闪屏页迁移到只用自定义应用程序的启动页，
-请按照 Flutter 2.5 版本之前自定义应用程序闪屏页的相应步骤进行操作。
+请按照 Flutter 2.5 版本之前自定义应用程序闪屏页相应的操作步骤，
+将自定义的闪屏页迁移到只用自定义应用程序的启动页。
 
 **Custom splash screen defined in [`FlutterActivity`][]**
 

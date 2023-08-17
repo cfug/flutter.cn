@@ -22,23 +22,23 @@ The initialization process is split into the following stages:
 初始化过程分为以下阶段：
 
 **Loading the entrypoint script**
-: Fetches the `main.dart.js` script and initializes the service worker.
+<br>Fetches the `main.dart.js` script and initializes the service worker.
 
 **加载入口脚本**
-：获取 `main.dart.js` 脚本并初始化 service worker。
+<br>获取 `main.dart.js` 脚本并初始化 service worker。
 
 **Initializing the Flutter engine**
-: Initializes Flutter's web engine by downloading required resources
-  such as assets, fonts, and CanvasKit.
+<br>Initializes Flutter's web engine by downloading required resources 
+such as assets, fonts, and CanvasKit.
 
 **初始化 Flutter 引擎**
-：通过下载所需资源（如静态资源、字体和 CanvasKit）来初始化 Flutter web 引擎。
+<br>通过下载所需资源（如静态资源、字体和 CanvasKit）来初始化 Flutter web 引擎。
 
 **Running the app**
-: Prepares the DOM for your Flutter app and runs it.
+<br>Prepares the DOM for your Flutter app and runs it.
 
 **运行应用程序**
-：为 Flutter 应用程序准备 DOM 并运行。
+<br>为 Flutter 应用程序准备 DOM 并运行。
 
 This page shows how to customize the behavior
 at each stage of the initialization process.

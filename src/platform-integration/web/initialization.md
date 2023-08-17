@@ -25,7 +25,7 @@ The initialization process is split into the following stages:
 : Fetches the `main.dart.js` script and initializes the service worker.
 
 **加载入口脚本**
-：获取 `main.dart.js` 脚本并初始化 service worker.
+：获取 `main.dart.js` 脚本并初始化 service worker。
 
 **Initializing the Flutter engine**
 : Initializes Flutter's web engine by downloading required resources
@@ -168,7 +168,7 @@ The `serviceWorker` JavaScript object accepts the following properties:
 |`serviceWorkerUrl`| The URL of the Service Worker JS file. The `serviceWorkerVersion` is appended to the URL. Defaults to `"flutter_service_worker.js?v="` |`String`|
 |`serviceWorkerUrl`| Service Worker JS 文件的 URL。`serviceWorkerVersion` 会附加到 URL 中。默认为 `"flutter_service_worker.js?v="`。 |`String`|
 |`serviceWorkerVersion`| Pass *the `serviceWorkerVersion` variable* set by the build process in your **`index.html`** file. |`String`|
-|`serviceWorkerVersion`| 在 **`index.html`** 文件中传递由构建过程设置的 *`serviceWorkerVersion` 变量*。 |`String`|
+|`serviceWorkerVersion`| 构建过程会赋值 *`serviceWorkerVersion` 变量* 并在 **`index.html`** 中运用。 |`String`|
 |`timeoutMillis`| The timeout value for the service worker load. Defaults to `4000`. |`Number`|
 |`timeoutMillis`| service worker 负载的超时时间（毫秒）。默认为 `4000`。 |`Number`|
 {:.table}
@@ -206,7 +206,7 @@ You can add any of the following optional parameters:
 |`canvasKitMaximumSurfaces`| The maximum number of overlay surfaces that the CanvasKit renderer can use. |`double`|
 |`canvasKitMaximumSurfaces`| CanvasKit 渲染器可使用的最大覆盖层数。 |`double`|
 |`debugShowSemanticNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging).  |`bool`|
-|`debugShowSemanticNodes`| 如果为 `true`，Flutter 会在屏幕上明显呈现语义树（用于调试）。 |`bool`|
+|`debugShowSemanticNodes`| 如果为 `true`，Flutter 会在屏幕上明显呈现 semantics 语义树（用于调试）。 |`bool`|
 |`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`hostElement`| 用于 Flutter 渲染应用程序的 HTML 元素。未设置时，Flutter web 会占据整个页面。 |`HtmlElement`|
 |`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"html"`. |`String`|

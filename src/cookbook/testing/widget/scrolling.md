@@ -49,7 +49,7 @@ This recipe uses the following steps:
 
 ### 1. Create an app with a list of items
 
-### 1、创建带有项目列表的应用程序
+### 1、创建带有列表的应用程序
 
 This recipe builds an app that shows a long list of items.
 To keep this recipe focused on testing, use the app created in the
@@ -138,7 +138,7 @@ in a list, or that a particular widget is rendered on all devices,
 the `scrollUntilVisible()` method trepeatedly scrolls through
 a list of items until it finds what it's looking for.
 
-`scrollUntilVisible()` 方法只会缓慢地滚动项目列表，直到找到指定的内容。
+`scrollUntilVisible()` 方法只会缓慢地滚动列表，直到找到指定的内容。
 它不会假定你知道列表中所有项目的高度，
 也不会假定指定的 widget 会在所有设备上渲染。
 

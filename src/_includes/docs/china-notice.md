@@ -3,4 +3,4 @@
   请参考文档 [在中国网络环境下使用 Flutter][Using Flutter in China]。
 {{site.alert.end}}
 
-[Using Flutter in China]: https://flutter.cn/community/china
+[Using Flutter in China]: {{site.main-url}}/community/china

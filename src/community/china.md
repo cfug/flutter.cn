@@ -210,7 +210,7 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 ### 其他已知问题
 
 - 所有 Flutter 镜像目前均不支持/也不应支持上传 packages 到 pub.dev 网站。
-  这个过程通常需要登陆谷歌账号，而这将是一个无法绕开且复杂的挑战。
+  这个过程通常需要登录谷歌账号，而这将是一个无法绕开且复杂的挑战。
 - [上海大学的镜像](https://mirrornews.shuosc.org/p/6d7146f9.html) 
   暂时只允许校内访问，故暂未展示，感谢上海大学 Linux 用户组的同学。
 - 腾讯云开源镜像站使用 TUNA 开源脚本制作，每天同步一次，

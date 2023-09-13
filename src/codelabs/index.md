@@ -82,7 +82,7 @@ one of the following codelabs:
   [编写你的第一个 Flutter web 应用][Write your first Flutter app on the web]<br>
   在 DartPad 中实现一个简单的 web 应用（无需下载任何东西！），
   它将会展示一个具有三个文本输入框的注册界面。
-  当用户填完输入框，一个进度条动画将会展示在登陆区域的顶部。
+  当用户填完输入框，一个进度条动画将会展示在登录区域的顶部。
   这篇 codelab 是为 web 量身定做的，
   但如果你下载并配置好了 Android 以及 iOS 的工具，
   那么整个应用同样也能运行在 Android 以及 iOS 的设备上。
@@ -201,7 +201,7 @@ like layout and animations:
   [MDC Flutter 教程 1：Material 组件基础][MDC-101 Flutter: Material Components (MDC) Basics-cn]<br>
   学习使用 Material 核心组件构建一个简单的应用。
   我们最终会构建一个售卖衣服和家居的电子商务应用 － Shrine，
-  本节将从一个简单的登陆页面开始帮助你在 Flutter 上使用 Material 组件。
+  本节将从一个简单的登录页面开始帮助你在 Flutter 上使用 Material 组件。
 
 * [MDC-102 Flutter: Material Structure and Layout][]<br>
   Learn how to use Material for structure and layout in Flutter.

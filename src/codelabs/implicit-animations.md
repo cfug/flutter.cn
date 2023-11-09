@@ -359,7 +359,7 @@ different types (`double` and `Color`).
 **The example begins with no animation code**.
 It starts with a [Material App][] home screen that contains:
 
-下面的示例将展示如何使用 [AnimatedContainer][] widget
+下面的示例将展示如何使用 [`AnimatedContainer`][] widget
 让多个不同类型（`double` 和 `Color`）的属性
 （`margin`、`borderRadius` 和 `color`）同时进行动画变换。
 **这个示例开始没有动画效果**&mdash;
@@ -399,7 +399,8 @@ After completing each step, you can also run the
 
 这部分包含在 [形状变化初始代码][shape-shifting starter code] 中
 添加一个隐式动画的一系列步骤。
-完成这些步骤后，您还可以运行 [形状变化完成代码][shape-shifting complete]，
+完成这些步骤后，您还可以运行
+[形状变化示例][complete shape-shifting example]，
 该代码已经实现了淡入效果。
 
 The [shape-shifting starter code][] assigns
@@ -621,7 +622,8 @@ the [complete shape-shifting example][].
 The animation changes when you pass the
 [`easeInOutBack`][] constant for `curve`,
 
-在 [形状变化完成代码][shape-shifting complete] 中添加一个 `curve` 参数，
+在 [形状变化示例][complete shape-shifting example]
+中添加一个 `curve` 参数，
 然后当您将常量 [`easeInOutBack`][] 传递给 `curve` 时，
 观察动画的变化：
 
@@ -666,12 +668,12 @@ By showing additional capabilities of implicit animations,
 the [complete shape-shifting example][] builds upon
 [fade-in complete][] example.
 
-[形状变化完成代码][shape-shifting complete] 示例
+[形状变化示例][complete shape-shifting example]
 对 `margin`、`borderRadius` 和 `color` 属性值进行了动画变换。
 注意：`AnimatedContainer` 可以对它的任意属性进行动画改变，
 包括那些您没有使用的属性，比如 `padding`、`transform`，
 甚至是 `child` 和 `alignment`!
-这个 [形状变化完成代码][shape-shifting complete] 的示例
+这个 [形状变化示例][complete shape-shifting example]
 建立在 [渐变完成代码][fade-in complete] 的基础上，
 展现出隐式动画的额外功能。
 

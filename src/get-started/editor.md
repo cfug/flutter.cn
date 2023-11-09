@@ -75,6 +75,24 @@ Flutter apps.
 [VS Code][] 是一个可以运行和调试 Flutter 的编辑器。
 安装 Flutter 插件后，你可以编译、部署及调试 Flutter 应用。
 
+To install the latest version of VS Code,
+follow Microsoft's instructions for the relevant platform:
+
+请参考 Microsoft 针对不同平台的安装指引来安装最新版本的 VS Code：
+
+- [Install on macOS][]
+- [Install on Windows][]
+- [Install on Linux][]
+
+[VS Code]: https://code.visualstudio.com/
+[Install on macOS]: https://code.visualstudio.com/docs/setup/mac
+[Install on Windows]: https://code.visualstudio.com/docs/setup/windows
+[Install on Linux]: https://code.visualstudio.com/docs/setup/linux
+
+## Install the VS Code Flutter extension
+
+## 安装 VS Code 的 Flutter 扩展
+
 1. Start **VS Code**.
 
    打开 **VS Code**。

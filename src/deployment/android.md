@@ -206,7 +206,7 @@ Android uses two signing keys: _upload_ and _app signing_.
 To create your app signing key, use Play App Signing
 as described in the [official Play Store documentation][].
 
-请参考 [Play Store 的官方文档][Play Store documentation]
+请参考 [Play Store 的官方文档][official Play Store documentation]
 来创建你的应用签名。
 
 To sign your app, use the following instructions.

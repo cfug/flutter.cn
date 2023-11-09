@@ -9,7 +9,7 @@
   "author": "Zhicheng WANG<asnowwolf@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@awesome-fe/translate": "1.1.19",
+    "@awesome-fe/translate": "1.7.4",
     "gulp": "^4.0.2",
     "gulp-replace": "^1.0.0"
   }

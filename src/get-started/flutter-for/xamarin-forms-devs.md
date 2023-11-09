@@ -374,7 +374,7 @@ If you want to dynamically change the UI based on data received
 after making an HTTP call or a user interaction,
 then you have to work with `StatefulWidget`
 and tell the Flutter framework that
-the widget’s `State` has been updated,
+the widget's `State` has been updated,
 so it can update that widget.
 
 如果你想基于进行了 HTTP 调用或者用户交互后接收到的数据来动态地修改 UI，
@@ -392,7 +392,7 @@ that stores state data across frames and restores it.
 `State` 对象来跨结构储存状态数据和恢复它。
 
 If you are in doubt, then always remember this rule: if a widget changes
-(because of user interactions, for example) it’s stateful.
+(because of user interactions, for example) it's stateful.
 However, if a widget reacts to change, the containing parent widget can
 still be stateless if it doesn't itself react to change.
 
@@ -1033,7 +1033,7 @@ you might do the following:
 Object? coordinates = await Navigator.of(context).pushNamed('/location');
 ```
 
-And then, inside your ‘location’ route, once the user has selected their
+And then, inside your 'location' route, once the user has selected their
 location, pop the stack with the result:
 
 然后，在你的「定位」路由里，用户选择他们的定位后，通过 `pop()` 路由堆栈来返回结果。
@@ -1274,7 +1274,7 @@ to do long-running or computationally intensive tasks.
 Isolates are separate execution threads that
 do not share any memory with the main execution memory heap.
 This is a difference between `Task.Run()`.
-This means you can’t access variables from the main thread,
+This means you can't access variables from the main thread,
 or update your UI by calling `setState()`.
 
 Isolate 是独立执行的线程，不会和主执行内存堆分享内存。
@@ -1487,7 +1487,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  http: ^1.0.0
+  http: ^1.1.0
 ```
 
 To make a network request,
@@ -3195,11 +3195,11 @@ These plugins are first-party integrations, maintained by the Flutter team:
 [官方插件][first party plugins] 提供了 Firebase 的大多数功能。
 这些插件都是由 Flutter 团队维护的官方集成插件：
 
- * [`firebase_admob`][] for Firebase AdMob
+ * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
 
-   [`firebase_admob`][] 提供 Firebase AdMob 功能
+   [`google_mobile_ads`][] 提供 Google Mobile Ads 功能
 
- * [`firebase_analytics`][] for Firebase Analytics
+  * [`firebase_analytics`][] for Firebase Analytics
 
    [`firebase_analytics`][] 提供 Firebase Analytics 功能
 
@@ -3310,7 +3310,7 @@ but is not as rich as `MaterialApp`.
 To customize the colors and styles of any child components,
 pass a `ThemeData` object to the `MaterialApp` widget.
 For example, in the following code,
-the primary swatch is set to blue and text selection color is red.
+the color scheme from seed is set to deepPurple and text selection color is red.
 
 如果要自定义任意子组件的颜色或者样式，
 给 `MaterialApp` Widget 传入一个 `ThemeData` 对象即可。
@@ -3327,7 +3327,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         textSelectionTheme:
             const TextSelectionThemeData(selectionColor: Colors.red),
       ),
@@ -3431,7 +3431,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
 [DevTools]: {{site.url}}/tools/devtools/overview
 [existing plugin]: {{site.pub}}/flutter
-[`firebase_admob`]: {{site.pub}}/packages/firebase_admob
+[`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
 [`firebase_auth`]: {{site.pub}}/packages/firebase_auth
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
@@ -3444,7 +3444,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http
-[internationalization guide]: {{site.url}}/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 [`intl`]: {{site.pub}}/packages/intl
 [`intl_translation`]: {{site.pub}}/packages/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative

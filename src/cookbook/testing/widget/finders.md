@@ -74,7 +74,7 @@ This is exactly what the `find.text()` method is for. It creates a
 这正是 `find.text()` 的用途。它会创建一个 `Finder`
 来寻找显示特定文本 `String` 的 widget。
 
-<?code-excerpt "test/tests.dart (test1)"?>
+<?code-excerpt "test/finders_test.dart (test1)"?>
 ```dart
 testWidgets('finds a Text widget', (tester) async {
   // Build an App with a Text widget that displays the letter 'H'.
@@ -111,7 +111,7 @@ the widget in the test environment.
 这样我们就可以唯一识别特定的 widget，
 在测试环境中更容易查找 widget。
 
-<?code-excerpt "test/tests.dart (test2)"?>
+<?code-excerpt "test/finders_test.dart (test2)"?>
 ```dart
 testWidgets('finds a widget using a Key', (tester) async {
   // Define the test key.
@@ -136,7 +136,7 @@ property and you want to ensure you're rendering the `child` widget.
 最后，我们有时会需要查找 widget 的具体实例。
 比如，当创建含有 `child` 属性的 widget 并需要确保渲染 `child` widget。
 
-<?code-excerpt "test/tests.dart (test3)"?>
+<?code-excerpt "test/finders_test.dart (test3)"?>
 ```dart
 testWidgets('finds a specific instance', (tester) async {
   const childWidget = Padding(padding: EdgeInsets.zero);
@@ -173,7 +173,7 @@ to review all available methods.
 
 ### 完整样例
 
-<?code-excerpt "test/tests.dart"?>
+<?code-excerpt "test/finders_test.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -10,7 +10,7 @@ keywords: 交织动画
 ---
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   * A staggered animation consists of sequential or overlapping
     animations.
@@ -156,7 +156,7 @@ After running forward, the animation runs in reverse.
 {{site.alert.secondary}}
 
   **New to Flutter?**
-  This page assumes you know how to create a layout using Flutter’s
+  This page assumes you know how to create a layout using Flutter's
   widgets.  For more information, see [Building Layouts in Flutter][].
   
   **刚接触Flutter？**
@@ -246,9 +246,7 @@ You might notice the following characteristics:
   
   填充和高度的变化发生在相同的时间间隔内，但它们不必这么做。
 
-<img src='/assets/images/docs/ui/animations/StaggeredAnimationIntervals.png'
-    alt="Diagram showing the interval specified for each motion"
-    class="mw-100">
+![Diagram showing the interval specified for each motion]({{site.url}}/assets/images/docs/ui/animations/StaggeredAnimationIntervals.png)
 
 To set up the animation:
 
@@ -291,20 +289,21 @@ other available pre-defined animation curves.
 它创建了一个 [`CurvedAnimation`][], 指定一个 eased curve。
 其他更多的预定的动画曲线请看 [`Curves`][]。
 
-{% prettify dart %}
+```dart
 width = Tween<double>(
   begin: 50.0,
   end: 150.0,
 ).animate(
   CurvedAnimation(
     parent: controller,
-    curve: Interval(
-      0.125, 0.250,
+    curve: const Interval(
+      0.125,
+      0.250,
       curve: Curves.ease,
     ),
   ),
 ),
-{% endprettify %}
+```
 
 The `begin` and `end` values don't have to be doubles.
 
@@ -323,8 +322,9 @@ borderRadius = BorderRadiusTween(
 ).animate(
   CurvedAnimation(
     parent: controller,
-    curve: Interval(
-      0.375, 0.500,
+    curve: const Interval(
+      0.375,
+      0.500,
       curve: Curves.ease,
     ),
   ),
@@ -382,43 +382,43 @@ resulting in a call to `_buildAnimation()`.
 
 
 {% prettify dart %}
-[[highlight]]class StaggerAnimation extends StatelessWidget[[/highlight]] {
-  StaggerAnimation({ Key key, this.controller }) :
+[!class StaggerAnimation extends StatelessWidget!] {
+  StaggerAnimation({super.key, required this.controller}) :
 
     // Each animation defined here transforms its value during the subset
     // of the controller's duration defined by the animation's interval.
     // For example the opacity animation transforms its value during
     // the first 10% of the controller's duration.
 
-    [[highlight]]opacity = Tween<double>[[/highlight]](
+    [!opacity = Tween<double>!](
       begin: 0.0,
       end: 1.0,
     ).animate(
       CurvedAnimation(
         parent: controller,
-        curve: Interval(
-          0.0, 0.100,
+        curve: const Interval(
+          0.0,
+          0.100,
           curve: Curves.ease,
         ),
       ),
     ),
 
     // ... Other tween definitions ...
+    );
 
-    super(key: key);
-
-  [[highlight]]final AnimationController controller;[[/highlight]]
-  [[highlight]]final Animation<double> opacity;[[/highlight]]
-  [[highlight]]final Animation<double> width;[[/highlight]]
-  [[highlight]]final Animation<double> height;[[/highlight]]
-  [[highlight]]final Animation<EdgeInsets> padding;[[/highlight]]
-  [[highlight]]final Animation<BorderRadius> borderRadius;[[/highlight]]
-  [[highlight]]final Animation<Color> color;[[/highlight]]
+  [!final AnimationController controller;!]
+  [!final Animation<double> opacity;!]
+  [!final Animation<double> width;!]
+  [!final Animation<double> height;!]
+  [!final Animation<EdgeInsets> padding;!]
+  [!final Animation<BorderRadius?> borderRadius;!]
+  [!final Animation<Color?> color;!]
 
   // This function is called each time the controller "ticks" a new frame.
   // When it runs, all of the animation's values will have been
   // updated to reflect the controller's current value.
-  [[highlight]]Widget _buildAnimation(BuildContext context, Widget child)[[/highlight]] {
+  [!Widget _buildAnimation(BuildContext context, Widget? child)!] {
     return Container(
       padding: padding.value,
       alignment: Alignment.bottomCenter,
@@ -430,8 +430,8 @@ resulting in a call to `_buildAnimation()`.
           decoration: BoxDecoration(
             color: color.value,
             border: Border.all(
-              color: Colors.indigo[300],
-              width: 3.0,
+              color: Colors.indigo[300]!,
+              width: 3,
             ),
             borderRadius: borderRadius.value,
           ),
@@ -441,9 +441,9 @@ resulting in a call to `_buildAnimation()`.
   }
 
   @override
-  [[highlight]]Widget build(BuildContext context)[[/highlight]] {
-    return [[highlight]]AnimatedBuilder[[/highlight]](
-      [[highlight]]builder: _buildAnimation[[/highlight]],
+  [!Widget build(BuildContext context)!] {
+    return [!AnimatedBuilder!](
+      [!builder: _buildAnimation!],
       animation: controller,
     );
   }
@@ -465,13 +465,14 @@ The animation runs forward, then backward.
 当在屏幕上检测到一个点击时，动画开始。动画向前运行，然后向后运行。
 
 {% prettify dart %}
-[[highlight]]class StaggerDemo extends StatefulWidget[[/highlight]] {
+[!class StaggerDemo extends StatefulWidget!] {
   @override
-  _StaggerDemoState createState() => _StaggerDemoState();
+  State<StaggerDemo> createState() => _StaggerDemoState();
 }
 
-class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin {
-  AnimationController _controller;
+class _StaggerDemoState extends State<StaggerDemo>
+    with TickerProviderStateMixin {
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -479,23 +480,23 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
 
     _controller = AnimationController(
       duration: const Duration(milliseconds: 2000),
-      vsync: this
+      vsync: this,
     );
   }
 
   // ...Boilerplate...
 
-  [[highlight]]Future<void> _playAnimation() async[[/highlight]] {
+  [!Future<void> _playAnimation() async!] {
     try {
-      [[highlight]]await _controller.forward().orCancel;[[/highlight]]
-      [[highlight]]await _controller.reverse().orCancel;[[/highlight]]
+      [!await _controller.forward().orCancel;!]
+      [!await _controller.reverse().orCancel;!]
     } on TickerCanceled {
-      // the animation got canceled, probably because it was disposed of
+      // The animation got canceled, probably because it was disposed of.
     }
   }
 
   @override
-  [[highlight]]Widget build(BuildContext context)[[/highlight]] {
+  [!Widget build(BuildContext context)!] {
     timeDilation = 10.0; // 1.0 is normal animation speed.
     return Scaffold(
       appBar: AppBar(
@@ -508,17 +509,15 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
         },
         child: Center(
           child: Container(
-            width: 300.0,
-            height: 300.0,
+            width: 300,
+            height: 300,
             decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.1),
               border: Border.all(
                 color:  Colors.black.withOpacity(0.5),
               ),
             ),
-            child: StaggerAnimation(
-              controller: _controller.view
-            ),
+            child: StaggerAnimation(controller: _controller.view),
           ),
         ),
       ),
@@ -526,16 +525,6 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
   }
 }
 {% endprettify %}
-
-{% comment %}
-Package not yet vetted.
-
-## Other resources
-
-* For an alternate approach to sequence animation,
-  see the [flutter_sequence_animation][]
-  package on [pub.dev][].
-{% endcomment %}
 
 
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html

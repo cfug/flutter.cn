@@ -16,26 +16,39 @@ next:
 toc: false
 ---
 
-You can build apps with Flutter using any text editor
+You can build apps with Flutter using any text editor or
+integrated development environment (IDE)
 combined with Flutter's command-line tools.
-However, we recommend using one of our editor
-plugins for an even better experience.
-These plugins provide you with code completion, syntax
-highlighting, widget editing assists, run & debug support, and more.
+The Flutter team recommends using an editor that supports
+a Flutter extension or plugin, like VS Code and Android Studio.
+These plugins provide code completion, syntax highlighting,
+widget editing assists, run & debug support, and more.
 
 你可以使用任意文本编辑器，结合我们的命令行工具来开发 Flutter 应用。
-然而，我们推荐使用我们的编辑器插件以获取更好的开发体验。这些插件提供了代码补全、
-代码高亮、widget 辅助编辑的功能，以及为项目的运行和调试提供支持等。
+Flutter 团队推荐使用支持 Flutter 插件的编辑器，以获取更好的开发体验。
+这些插件提供了代码补全、代码高亮、widget 辅助编辑的功能，
+以及为项目的运行和调试提供支持等。
 
-Use the following steps to add an editor plugin for VS Code,
-Android Studio, IntelliJ, or Emacs.
-If you want to use a different editor,
-that's OK, skip ahead to the [next step: Test drive][].
+You can add a supported plugin for Visual Studio Code,
+Android Studio, or IntelliJ IDEA Community, Educational,
+and Ultimate editions.
+The [Flutter plugin][] _only_ works with
+Android Studio and the listed editions of IntelliJ IDEA.
 
-参考以下步骤为 VS Code、Android Studio、IntelliJ 或者 Emacs 添加编辑器插件。
-如果你想使用其他的编辑器，请直接打开
-[下一节: 开发体验初探][next step: Test drive]，
-来查看使用其他文本编辑器配合命令行工具来创建和运行 Flutter 应用。
+(The [Dart plugin][] supports eight additional JetBrains IDEs.)
+
+[Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
+[Dart plugin]: https://plugins.jetbrains.com/plugin/6351-dart
+
+Follow these procedures to add the Flutter plugin to VS Code,
+Android Studio, or IntelliJ.
+
+参考以下步骤为 VS Code、Android Studio 或者 IntelliJ 添加编辑器插件。
+
+If you choose another IDE, skip ahead to the [next step: Test drive][].
+
+如果你想使用其他的编辑器，请前往
+[下一节: 开发体验初探][next step: Test drive]。
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -43,10 +56,7 @@ that's OK, skip ahead to the [next step: Test drive][].
     <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio 和 IntelliJ</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="emacs-tab" href="#emacs" role="tab" aria-controls="emacs" aria-selected="false">Emacs</a>
+    <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio and IntelliJ</a>
   </li>
 </ul>
 
@@ -58,95 +68,89 @@ that's OK, skip ahead to the [next step: Test drive][].
 
 ## 安装 VS Code
 
-VS Code is a lightweight editor with complete Flutter
-app execution and debug support.
+[VS Code][] is a code editor to build and debug apps.
+With the Flutter extension installed, you can compile, deploy, and debug
+Flutter apps.
 
-VS Code 是一个可以运行和调试 Flutter 的轻量级编辑器。
+[VS Code][] 是一个可以运行和调试 Flutter 的编辑器。
+安装 Flutter 插件后，你可以编译、部署及调试 Flutter 应用。
 
-* [VS Code][], latest stable version
+1. Start **VS Code**.
 
-  [VS Code][]，最新稳定版本
+   打开 **VS Code**。
 
-## Install the Flutter and Dart plugins
+1. Open a browser and go to the [Flutter extension][] page
+   on the Visual Studio Marketplace.
 
-## 安装 Flutter 和 Dart 插件
+   打开浏览器，访问市场的 [Flutter 插件][Flutter extension] 页面。
 
- 1. Start VS Code.
+1. Click **Install**.
+   Installing the Flutter extension also installs the Dart extension.
 
-    打开 VS Code。
+   点击 **Install**，安装 Flutter 与 Dart 依赖。
 
- 1. Invoke **View > Command Palette...**.
+[Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
 
-    打开 **View > Command Palette...**。
+## Validate your VS Code setup
 
- 1. Type "install", and select
-    **Extensions: Install Extensions**.
+1. Go to **View** <span aria-label="and then">></span> **Output**.
 
-    输入「install」，然后选择
-    **Extensions: Install Extensions**。
+   打开 **View** <span aria-label="and then">></span> **Output**。
 
- 1. Type "flutter" in the extensions search field,
-    select **Flutter** in the list, and click **Install**.
-    This also installs the required Dart plugin.
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>U</kbd>.
 
-    在扩展搜索输入框中输入「flutter」，然后在列表中选择 **Flutter** 并单击 **Install**。
-    此过程中会自动安装必需的 Dart 插件。
+   你也可以按下 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>U</kbd>。
 
- 1. Click **Reload to Activate** to reload VS Code.
+1. In the dropdown on the upper right of the **Output** panel,
+   select **flutter (flutter)**.
 
-    点击 **Reload to Activate** 以重新启动 VS Code。
+   在 **Output** 面板右上角的下拉菜单中选择 **flutter (flutter)**。
 
-## Validate your setup with the Flutter Doctor
+1. Go to **View** <span aria-label="and then">></span>
+   **Command Palette...**.
 
-## 通过 Flutter Doctor 命令验证是否安装成功
+   打开 **View** <span aria-label="and then">></span> **Command Palette...**。
 
- 1. Invoke **View > Command Palette...**.
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>P</kbd>.
 
-    打开 **View > Command Palette...**。
+   你也可以按下 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>P</kbd>。
 
- 1. Type "doctor", and select the
-    **Flutter: Run Flutter Doctor**.
+1. Type `doctor`.
 
-    输入 "doctor"，选择
-    **Flutter: Run Flutter Doctor**。
+   输入 "doctor"。
 
- 1. Review the output in the **OUTPUT** pane for any issues.
-    Make sure to select Flutter from the dropdown
-    in the different Output Options.
+1. Select the **Flutter: Run Flutter Doctor**.
+   Flutter Doctor runs and its response displays in the **Output** panel.
 
-    打开 **OUTPUT** 面板查看是否有错误，
-    确保在不同的输出选项 (Output Options) 
-    的下拉列表中选择了 Flutter。
+   选择 **Flutter: Run Flutter Doctor**。
+   输出结果会显示在 **Output** 面板中。
 
 </div>
 <div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
 
-## Install Android Studio
+## Install Android Studio or IntelliJ IDEA
 
-## 安装 Android Studio
+## 安装 Android Studio 或 IntelliJ IDEA
 
-Android Studio offers a complete,
-integrated IDE experience for Flutter.
+Android Studio and IntelliJ IDEA offer a complete,
+IDE experience once you install the Flutter plugin.
 
-Android Studio 为 Flutter 提供了一个完整的集成开发环境。
+Android Studio 和 IntelliJ IDEA
+为 Flutter 提供了一个完整的集成开发环境。
 
-* [Android Studio][], version 2020.3.1 (Arctic Fox) or later
+To install the latest version of the following IDEs, follow their instructions:
 
-  [Android Studio](https://developer.android.google.cn/studio)，2020.3.1 (Arctic Fox) 或之后的版本
+你可以按照以下指引安装对应 IDE 的最新版本：
 
-Alternatively, you can also use IntelliJ:
+- [Android Studio][]
+- [IntelliJ IDEA Community][]
+- [IntelliJ IDEA Ultimate][]
 
-同时, 你也可以使用 IntelliJ：
-
-* [IntelliJ IDEA Community][], version 2021.2 or later
-
-  [IntelliJ IDEA Community][]，2021.2 或之后的版本
-
-* [IntelliJ IDEA Ultimate][], version 2021.2 or later
-
-  [IntelliJ IDEA Ultimate][]，2021.2 或之后的版本
-
-## Install the Flutter and Dart plugins
+## Install the Flutter plugin
 
 ## 安装 Flutter 和 Dart 插件
 
@@ -154,33 +158,56 @@ The installation instructions vary by platform.
 
 请参考下面不同平台的安装指南：
 
-### Mac
+### macOS
 
-Use the following instructions for macos:
+Use the following instructions for macOS:
 
 安装过程如下：
 
- 1.  Start Android Studio.
-    
-     打开 Android Studio。
+1. Start Android Studio or IntelliJ.
 
- 1. Open plugin preferences (**Preferences > Plugins** as of
-     v3.6.3.0 or later).
+   打开 Android Studio 或 IntelliJ。
 
-    打开插件设置（在 v3.6.3.0 以上的系统打开 **Preferences > Plugins**）。
+1. From the macOS menu bar, go to **Android Studio** (or **IntelliJ**)
+   <span aria-label="and then">></span> **Settings...**.
 
- 1. Select the Flutter plugin and
-     click **Install**.
+   从 macOS 的菜单栏中打开插件设置。
 
-    然后选择 Flutter 插件并点击 **安装**。
+   You can also press <kbd>Cmd</kbd> + <kbd>,</kbd>.
 
- 1. Click **Yes** when prompted to install the Dart plugin.
+   你也可以按下 <kbd>Cmd</kbd> + <kbd>,</kbd>。
 
-    当弹出安装 Dart 插件提示时，点击 **Yes**。
+   The **Preferences** dialog opens.
 
- 1. Click **Restart** when prompted.
+   **Preferences** 弹窗会打开。
 
-    当弹出重新启动提示时，点击 **Restart**。
+1. From the list at the left, select **Plugins**.
+
+   在左侧列表中选择 **Plugins**。
+
+1. From the top of this panel, select **Marketplace**.
+
+   在面板的上方选择 **Marketplace**。
+
+1. Type `flutter` in the plugins search field.
+
+   在搜索框中输入 `flutter`。
+
+1. Select the **Flutter** plugin.
+
+   选择 **Flutter** 插件。
+
+1. Click **Install**.
+
+   点击 **Install** 安装。
+
+1. Click **Yes** when prompted to install the plugin.
+
+   提示安装时点击确认。如果提示同时安装 Dart 插件也点击确认。
+
+1. Click **Restart** when prompted.
+
+   当弹出重新启动提示时，点击 **Restart**。
 
 ### Linux or Windows
 
@@ -190,49 +217,53 @@ Use the following instructions for Linux or Windows:
 
 参考使用下面介绍的步骤：
 
-   1. Open plugin preferences (**File > Settings > Plugins**).
+1. Go to **File** <span aria-label="and then">></span>
+   **Settings**.
 
-      打开插件偏好设置 (位于 **File > Settings > Plugins**)
+   打开 **File** <span aria-label="and then">></span>
+   **Settings**。
 
-   1. Select **Marketplace**,  select the Flutter plugin and click
-      **Install**.
+   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+   <kbd>S</kbd>.
 
-      选择 **Marketplace (扩展商店)**，选择 Flutter plugin
-      然后点击 **Install (安装)**。
+   你也可以按下 <kbd>Cmd</kbd> + <kbd>,</kbd>。
 
-</div>
-<div class="tab-pane" id="emacs" role="tabpanel" aria-labelledby="emacs-tab" markdown="1">
+   The **Preferences** dialog opens.
 
-## Install Emacs
+   **Preferences** 弹窗会打开。
 
-## 安装 Emacs 编辑器
+1. From the list at the left, select **Plugins**.
 
-Emacs is a lightweight editor with support for Flutter and Dart.
+   在左侧列表中选择 **Plugins**。
 
-Emacs 是一个轻量级的编辑器，支持 Flutter 和 Dart。
+1. From the top of this panel, select **Marketplace**.
 
-* [Emacs][], latest stable version
+   在面板的上方选择 **Marketplace**。
 
-  最新版本的 [Emacs][] 编辑器。
+1. Type `flutter` in the plugins search field.
 
-## Install the lsp-dart package
+   在搜索框中输入 `flutter`。
 
-## 安装 lsp-dart 这个 package
+1. Select the **Flutter** plugin.
 
-For information on how to install and use the package,
-see the [lsp-dart documentation][].
+   选择 **Flutter** 插件。
 
-关于如何安装和使用 lsp-dart 这个 package，可以查看
-[lsp-dart 文档][lsp-dart documentation]。
+1. Click **Install**.
+
+   点击 **Install** 安装。
+
+1. Click **Yes** when prompted to install the plugin.
+
+   提示安装时点击确认。如果提示同时安装 Dart 插件也点击确认。
+
+1. Click **Restart** when prompted.
+
+   当弹出重新启动提示时，点击 **Restart**。
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
 
-
-[Android Studio]: {{site.android-dev}}/studio
+[Android Studio]: {{site.android-dev}}/studio/install
 [IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
 [IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
 [next step: Test drive]: {{site.url}}/get-started/test-drive
-[VS Code]: https://code.visualstudio.com/
-[Emacs]: https://www.gnu.org/software/emacs/download.html
-[lsp-dart documentation]: https://emacs-lsp.github.io/lsp-dart/

@@ -132,7 +132,7 @@ For example:
 The following sections describe how to perform these tasks and
 finish the setup process. Once you have installed any missing
 dependencies, you can run the `flutter doctor` command again to
-verify that you’ve set everything up correctly.
+verify that you've set everything up correctly.
 
 下面的章节介绍了对缺失的内容进行配置的方法。
 每当您安装了任何一个的依赖项，

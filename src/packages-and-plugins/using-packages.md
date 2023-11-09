@@ -748,7 +748,7 @@ To use this plugin:
     class DemoPage extends StatelessWidget {
       const DemoPage({super.key});
 
-      launchURL() {
+      void launchURL() {
         launchUrl(p.toUri('https://flutter.dev'));
       }
 

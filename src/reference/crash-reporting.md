@@ -12,14 +12,14 @@ when a `flutter` command crashes it attempts to send a crash report
 to Google in order to help Google contribute improvements to Flutter
 over time. A crash report might contain the following information:
 
-如果您未禁用 Flutter 的分析和崩溃报告，当一条 `flutter` 命令崩溃时，
+如果你未禁用 Flutter 的分析和崩溃报告，当一条 `flutter` 命令崩溃时，
 分析工具会尝试向 Google 发送一份崩溃报告，用于帮助 Google 逐步改进 Flutter。
 
 一份崩溃报告可能包含以下信息：
 
 * The name and version of your local operating system.
 
-  您本地操作系统的名称和版本。
+  你本地操作系统的名称和版本。
     
 * The version of Flutter.
 
@@ -34,7 +34,7 @@ over time. A crash report might contain the following information:
   the Flutter CLI's own code and contains no references to your application 
   code.
   
-  崩溃生成的堆栈跟踪信息，包含了对 Flutter CLI 代码的引用，但是不包含对您应用本身代码的引用。
+  崩溃生成的堆栈跟踪信息，包含了对 Flutter CLI 代码的引用，但是不包含对你应用本身代码的引用。
   
 * A client ID: a constant and unique number generated for the
   computer where Flutter is installed.
@@ -53,28 +53,43 @@ Google handles all data reported by this tool in accordance with the
 Google 会根据 [Google 隐私政策][Google Privacy Policy]
 处理此工具报告的所有数据。
 
+You may review the recently reported data in the 
+`.dart-tool/dart-flutter-telemetry.log` file.
+In macOS or Linux, this log is located in the home directory (`~/`).
+In Windows, this log is located in the Roaming AppData directory in Windows (`%APPDATA%`). 
+
+你可以查看 `.dart-tool/dart-flutter-telemetry.log`
+文件来回顾近期报告的数据日志。
+在 macOS 或 Linux 上，日志文件保存在用户文件夹 (`~/`) 中。
+在 Windows 上，日志文件保存在 `AppData/Roaming` (`%APPDATA%/Roaming`) 文件夹中。
+
 ## Disabling analytics reporting
 
 ## 禁用分析报告
 
-You can opt out of anonymous crash reporting and feature
-usage statistics from Flutter by running the following command:
+To opt out of anonymous crash reporting and feature
+usage statistics, run the following command:
 
-您可以通过运行以下命令，禁用 Flutter 提供的匿名崩溃报告和功能使用统计：
+你可以通过运行以下命令，禁用 Flutter 提供的匿名崩溃报告和功能使用统计：
 
 ```terminal
-$ flutter config --no-analytics
+$ flutter --disable-telemetry
 ```
 
-If you opt out of analytics, an opt-out event will be sent,
-and then no further information will be sent by that
-installation of Flutter. 
+If you opt out of analytics, Flutter sends an opt-out event.
+This Flutter installation neither sends nor stores any further information. 
 
-如果您选择禁用分析工具，分析工具会发送一个禁用事件，在此之后 Flutter 将不会上报更多信息。
+如果你选择禁用分析工具，分析工具会发送一个禁用事件，在此之后 Flutter 将不会上报更多信息。
+
+To opt into analytics, run the following command: 
+
+```terminal
+$ flutter --enable-telemetry
+```
 
 To display the current setting, you can run the following command:
 
-您可以运行以下命令来显示当前设置：
+你可以运行以下命令来显示当前设置：
 
 ```terminal
 $ flutter config

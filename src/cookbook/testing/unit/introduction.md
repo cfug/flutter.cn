@@ -110,7 +110,7 @@ When you're finished, the folder structure should look like this:
 
 创建完成后，文件目录结构如下：
 
-```
+```nocode
 counter_app/
   lib/
     counter.dart
@@ -185,11 +185,14 @@ void main() {
 
 ## 5. 整合多个测试到一个 `group`
 
-If you have several tests that are related to one another,
-combine them using the `group` function provided by the `test` package.
+If you want to run a series of related tests,
+use the `flutter_test` package [`group`][] function to categorize the tests.
+Once put into a group, you can call `flutter test` on all tests in
+that group with one command.
 
-如果多个测试之间互相关联，
-可以使用 `test` 这个 package 提供的 `group` 函数将他们整合到一起。
+如果你想运行多个有关联或者一个系列的测试，
+可以使用 `test` package 提供的 [`group`][] 函数将他们整合到一起。
+你可以用 `flutter test` 运行同一个组的所有测试。
 
 <?code-excerpt "test/group.dart"?>
 ```dart
@@ -197,7 +200,7 @@ import 'package:counter_app/counter.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Counter', () {
+  group('Test start, increment, decrement', () {
     test('value should start at 0', () {
       expect(Counter().value, 0);
     });
@@ -242,66 +245,65 @@ IntelliJ 和 VSCode 的 Flutter 插件支持执行测试。
 用这种方式执行测试是最好的，因为它可以提供最快的反馈闭环，
 而且还支持断点调试。
 
+- **IntelliJ**
 
-  * **IntelliJ**
+  1. Open the `counter_test.dart` file
 
-    1. Open the `counter_test.dart` file
+     打开文件 `counter_test.dart`
 
-       打开文件 `counter_test.dart`
+  1. Go to **Run** > **Run 'tests in counter_test.dart'**.
+     You can also press the appropriate keyboard shortcut for your platform.
 
-    2. Select the `Run` menu
+     前往 **Run** > **Run 'tests in counter_test.dart'**。
+     你也可以用键盘快捷键运行测试。
 
-       选择菜单 `Run`
+- **VSCode**
 
-    3. Click the `Run 'tests in counter_test.dart'` option
+  1. Open the `counter_test.dart` file
 
-       点击选项 `Run 'tests in counter_test.dart'`
+     打开文件 `counter_test.dart`
 
-    4. *Alternatively, use the appropriate keyboard shortcut
-       for your platform.*
+  1. Go to **Run** > **Start Debugging**.
+     You can also press the appropriate keyboard shortcut for your platform.
 
-       *或者，也可以使用系统快捷键!*
-
-  * **VSCode**
-
-    1. Open the `counter_test.dart` file
-
-       打开文件 `counter_test.dart`
-
-    2. Select the `Run` menu
-
-       在菜单里选择 `Run`
-
-    3. Click the `Start Debugging` option
-
-       点击选项 `Start Debugging`
-
-    4. *Alternatively, use the appropriate keyboard shortcut
-       for your platform.*
-
-       *或者，也可以使用系统快捷键!*
+     前往 **Run** > **Start Debugging**。
+     你也可以用键盘快捷键运行测试。
 
 ### Run tests in a terminal
 
 ### 在终端执行测试
 
-You can also use a terminal to run the tests by executing the following
-command from the root of the project:
+To run the all tests from the terminal,
+run the following command from the root of the project:
 
-我们也可以打开终端，在工程根目录输入以下命令来执行测试：
+你也可以打开终端，在工程根目录输入以下命令来执行所有测试：
 
-```
+```terminal
 flutter test test/counter_test.dart
 ```
 
-For more options regarding unit tests, you can execute this command:
+To run all tests you put into one `group`,
+run the following command from the root of the project:
+
+你可以运行以下命令执行所以放在指定 `group` 里的测试：
+
+```terminal
+flutter test --plain-name "Test start, increment, decrement"
+```
+
+This example uses the `group` created in **section 5**.
+
+该例子使用的是在 **第 5 小节** 创建的 `group`。
+
+To learn more about unit tests, you can execute this command:
 
 你可以执行下面的命令获得更多有关单元测试的帮助：
 
-```
+```terminal
 flutter test --help
 ```
 
+[`group`]: {{site.api}}/flutter/flutter_test/group.html
 [`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [`test`]: {{site.pub-pkg}}/test
 [test package documentation]: {{site.pub}}/packages/test

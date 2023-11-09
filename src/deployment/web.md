@@ -293,7 +293,7 @@ PWA; the settings signaling that your Flutter app is a PWA are provided by
 该文件可以在 `web` 目录中使用 `Flutter create` 命令生成。
 
 PWA support remains a work in progress,
-so please [give us feedback][] if you see something that doesn’t look right.
+so please [give us feedback][] if you see something that doesn't look right.
 
 对 PWA 的支持仍在进行中，因此，如果您发现不正确的地方，
 欢迎 [给予我们反馈][give us feedback]。

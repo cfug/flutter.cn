@@ -18,7 +18,7 @@ diff2html: true
 <style>dl, dd { margin-bottom: 0; }</style>
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   <h4 class="no_toc">你将会学习到</h4>
 
@@ -514,7 +514,7 @@ leaving only the image. Add the image file to the example:
   ```diff
   --- step4/pubspec.yaml
   +++ step5/pubspec.yaml
-  @@ -18,3 +18,5 @@
+  @@ -19,3 +19,5 @@
 
    flutter:
      uses-material-design: true

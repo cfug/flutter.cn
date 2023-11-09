@@ -297,7 +297,8 @@ Create a new [`BoxConstraints`][] widget with a `minWidth` or `maxWidth`.
 要在 Flutter 中模拟该效果，可以使用 Container 的 `constraints` 属性。
 新建一个带有 `minWidth` 和 `maxWidth` 属性的 [`BoxConstraints`][] widget。
 
-For nested Containers, if the parent’s width is less than the child’s width,
+
+For nested Containers, if the parent's width is less than the child's width,
 the child Container sizes itself to match the parent.
 
 对嵌套的 Container 来说，如果其父元素宽度小于子元素宽度，
@@ -446,7 +447,7 @@ final container = Container(
 ### 旋转元素
 
 To rotate a widget, nest it in a [`Transform`][] widget.
-Use the `Transform` widget’s `alignment` and `origin` properties
+Use the `Transform` widget's `alignment` and `origin` properties
 to specify the transform origin (fulcrum) in relative and absolute terms,
 respectively.
 
@@ -525,7 +526,7 @@ final container = Container(
 ### 缩放元素
 
 To scale a widget up or down, nest it in a [`Transform`][] widget.
-Use the Transform widget’s `alignment` and `origin` properties
+Use the Transform widget's `alignment` and `origin` properties
 to specify the transform origin (fulcrum) in relative or absolute terms,
 respectively.
 
@@ -603,19 +604,17 @@ final container = Container(
 
 ### 应用线性变换
 
-To apply a linear gradient to a widget's background, nest it in a
-[`Container`][]
-widget.  Then use the Container widget’s `decoration` property to create a
-[`BoxDecoration`][]
-object, and use BoxDecoration's `gradient` property to transform the
-background
-fill.
+To apply a linear gradient to a widget's background,
+nest it in a [`Container`][] widget.
+Then use the `Container` widget's `decoration` property to create a
+[`BoxDecoration`][] object, and use `BoxDecoration`'s `gradient`
+property to transform the background fill.
 
 想要将线性颜色渐变在 widget 的背景上应用，请将它嵌套在一个 [`Container`][] widget 中。
 接着将一个 [`BoxDecoration`][] 对象传递至 `Container` 的 `decoration`，
 然后使用 `BoxDecoration` 的 `gradient` 属性来变换背景填充内容。
 
-The gradient “angle” is based on the Alignment (x, y) values:
+The gradient "angle" is based on the Alignment (x, y) values:
 
 变换「角度」基于 `Alignment (x, y)` 取值来定：
 

@@ -7,7 +7,7 @@ tags: Web平台
 keywords: Flutter web, web跨端
 ---
 
-Flutter’s web support delivers the same experiences on the web as on mobile.
+Flutter's web support delivers the same experiences on the web as on mobile.
 Building on the portability of Dart, the power of the web platform and the
 flexibility of the Flutter framework, you can now build apps for iOS, Android,
 and the browser from the same codebase. You can compile existing Flutter code
@@ -45,15 +45,15 @@ any web server.
 同你的应用程序一起编译成一个可以部署到任何 Web 服务器的简化源文件。
 
 While you can do a lot on the web,
-Flutter’s web support is most valuable in the
+Flutter's web support is most valuable in the
 following scenarios:
 
 **A [Progressive Web Application][] built with Flutter**
-: Flutter delivers high-quality PWAs that are integrated with a user’s
+: Flutter delivers high-quality PWAs that are integrated with a user's
   environment, including installation, offline support, and tailored UX.
 
 **Single Page Application**
-: Flutter’s web support enables complex standalone web apps that are rich with
+: Flutter's web support enables complex standalone web apps that are rich with
   graphics and interactive content to reach end users on a wide variety of
   devices.
 
@@ -73,7 +73,7 @@ the following video:
 
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=246950294&bvid=BV1Jv411h7x6&cid=305745348&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<a name="web"></a>
+<a id="web"></a>
 ## Resources
 
 ## 关于 web 支持的说明

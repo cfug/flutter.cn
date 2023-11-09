@@ -787,7 +787,7 @@ the widget becomes the `Flexible` widget's child
 and is considered *flexible*.
 After inflexible widgets are laid out,
 the widgets are resized according to their
-`flex` and `fit` properties.:
+`flex` and `fit` properties:
 
 `Flexible` widget 包裹一个 widget 让这个 widget 变得可以调整大小。
 当 `Flexible` widget 包裹 widget 时，

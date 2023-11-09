@@ -32,7 +32,7 @@ social:
 dart-site: https://dart.cn
 news: https://news.dartlang.org
 api: https://api.flutter-io.cn
-master-api: https://master-api.flutter-io.cn
+master-api: https://main-api.flutter-io.cn
 pub: https://pub-web.flutter-io.cn
 pub-api: https://pub-web.flutter-io.cn/documentation
 pub-pkg: https://pub-web.flutter-io.cn/packages

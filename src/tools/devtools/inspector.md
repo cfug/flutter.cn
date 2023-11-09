@@ -324,7 +324,7 @@ Supported values:
 
 Layout Explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
-factor of a flex widget’s child can be any int.
+factor of a flex widget's child can be any int.
 
 布局浏览器支持设置 7 种弹性因子（null、0、1、2、3、4、5），
 但从技术上讲，弹性 widget 子级的弹性因子可以是任何整数。
@@ -371,7 +371,7 @@ Flutter Inspector 提供了多种以可视化方式调试应用的方式。
 When enabled, this option runs animations 5 times slower for easier visual
 inspection.
 This can be useful if you want to carefully observe and tweak an animation that
-doesn’t look quite right.
+doesn't look quite right.
 
 启用时，动画将以约五分之一的原有速度运行，方便对视觉效果进行检查。
 当你想要仔细地观察并调试看起来不正常的动画时，这个选项会非常有用。
@@ -442,7 +442,7 @@ void showLayoutGuidelines() {
 #### RenderBox
 
 Widgets that draw to the screen create a [render box][], the 
-building blocks of Flutter layouts. They’re shown with a bright blue border:
+building blocks of Flutter layouts. They're shown with a bright blue border:
 
 绘制在屏幕上的 widgets 会创建一个 [RenderBox][render box]，
 它是 Flutter 布局的基础构建。
@@ -456,7 +456,7 @@ building blocks of Flutter layouts. They’re shown with a bright blue border:
 
 Alignments are shown with yellow arrows. These arrows show the vertical
 and horizontal offsets of a widget relative to its parent.
-For example, this button’s icon is shown as being centered by the four arrows:
+For example, this button's icon is shown as being centered by the four arrows:
 
 对齐方式将以黄色箭头展示。
 这些箭头会显示出垂直和竖屏方向上 widget 相对其父布局的偏移。
@@ -687,11 +687,11 @@ Images are deemed too large if they use at least 128KB more than required.
 #### 调整图片
 
 Wherever possible, the best way to fix this problem is resizing
-the image asset file so it’s smaller.
+the image asset file so it's smaller.
 
 在可能的情况下，最好的办法是调整图片资源的大小，让它变得更小。
 
-If this isn’t possible, you can use the `cacheHeight` and `cacheWidth`
+If this isn't possible, you can use the `cacheHeight` and `cacheWidth`
 parameters on the `Image` constructor:
 
 如果该方法不可行，你可以使用 `Image` 构造里的

@@ -1185,15 +1185,19 @@ To use the native code, bindings in Dart are needed.
 
 为了使用本地原生代码，需要在 Dart 中进行绑定。
 
-To avoid writing these by hand, they are generated from the header file
+To avoid writing these by hand,
+they are generated from the header file
 (`src/hello.h`) by [`package:ffigen`][].
+Reference the [ffigen docs][] for information
+on how to install this package.
+
 Regenerate the bindings by running the following:
 
 为了避免手工编写，它们由头文件 (`src/hello.h`) 中的 [`package:ffigen`][] 生成。
 运行以下指令重新生成绑定：
 
 ```terminal
-$  flutter pub run ffigen --config ffigen.yaml
+$  dart run ffigen --config ffigen.yaml
 ```
 
 ### Step 4: Invoking native code
@@ -1575,6 +1579,7 @@ PENDING
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
+[ffigen docs]: {{site.pub-pkg}}/ffigen/install
 [Android]: {{site.url}}/platform-integration/android/c-interop
 [iOS]: {{site.url}}/platform-integration/ios/c-interop
 [macOS]: {{site.url}}/platform-integration/macos/c-interop

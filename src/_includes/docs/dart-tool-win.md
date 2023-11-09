@@ -1,10 +1,7 @@
 {{site.alert.note}}
-
-  As of Flutter's 1.19.0 dev release, the Flutter SDK
-  contains the `dart` command alongside the `flutter`
-  command so that you can more easily run Dart
-  command-line programs. Downloading the Flutter SDK
-  also downloads the compatible version of Dart,
+  The Flutter SDK contains the `dart` command alongside the `flutter` command 
+  so that you can more easily run Dart command-line programs. 
+  Downloading the Flutter SDK also downloads the compatible version of Dart,
   but if you've downloaded the Dart SDK separately,
   make sure that the Flutter version of `dart` is
   first in your path, as the two versions might not be compatible.
@@ -12,7 +9,7 @@
   commands originate from the same `bin` directory and are
   therefore compatible.
 
-  自 Flutter 1.19.0 dev 版本开始，Flutter SDK 在 `flutter` 命令脚本的同级目录下增加了 `dart` 命令，
+  Flutter SDK 在 `flutter` 命令脚本的同级目录下增加了 `dart` 命令，
   你可以更方便地运行 Dart 命令行程序。
   下载 Flutter SDK 时也会下载对应版本的 Dart SDK，但如果你单独下载了 Dart SDK，
   请确保 Flutter SDK 内的 `dart` 在你的环境变量中排在首位，因为单独的 SDK 可能并不兼容 Flutter SDK。
@@ -66,5 +63,4 @@
 
 {{site.alert.end}}
 
-
-[dart tool]: {{site.dart-site}}/tools/dart-vm
+[dart tool]: {{site.dart-site}}/tools/dart-tool

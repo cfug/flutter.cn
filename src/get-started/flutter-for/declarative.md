@@ -22,7 +22,7 @@ many other UI frameworks._
 ## 为什么是声明式 UI？
 
 Frameworks from Win32 to web to Android and iOS typically use an imperative
-style of UI programming. This might be the style you’re most familiar
+style of UI programming. This might be the style you're most familiar
 with&mdash;where you manually construct a full-functioned UI entity,
 such as a UIView or equivalent, and later mutate it using methods and
 setters when the UI changes.
@@ -55,7 +55,7 @@ Consider a simplified example below:
 
 <img src="/assets/images/docs/declarativeUIchanges.png" alt="View B (contained by view A) morphs from containing two views, c1 and c2, to containing only view c3">
 
-In the imperative style, you would typically go to ViewB’s owner
+In the imperative style, you would typically go to ViewB's owner
 and retrieve the instance `b` using selectors or with `findViewById` or similar,
 and invoke mutations on it (and implicitly invalidate it). For example:
 
@@ -77,7 +77,7 @@ ViewB since the source of truth for the UI might outlive instance `b` itself.
 由于 UI 真实的来源可能比实例 `b` 本身的存活周期更长，
 你可能还需要在 ViewB 的构造函数中复制此配置。
 
-In the declarative style, view configurations (such as Flutter’s Widgets)
+In the declarative style, view configurations (such as Flutter's Widgets)
 are immutable and are only lightweight "blueprints". To change the UI,
 a widget triggers a rebuild on itself (most commonly by calling `setState()`
 on StatefulWidgets in Flutter) and constructs a new Widget subtree.
@@ -100,7 +100,7 @@ Here, rather than mutating an old instance `b` when the UI changes,
 Flutter constructs new Widget instances. The framework manages many of the
 responsibilities of a traditional UI object (such as maintaining the
 state of the layout) behind the scenes with RenderObjects.
-RenderObjects persist between frames and Flutter’s lightweight Widgets
+RenderObjects persist between frames and Flutter's lightweight Widgets
 tell the framework to mutate the RenderObjects between states.
 The Flutter framework handles the rest.
 

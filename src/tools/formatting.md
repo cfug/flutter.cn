@@ -43,7 +43,7 @@ to get automatic formatting of code in VS Code.
 
 To automatically format the code in the current source code window,
 right-click in the code window and select `Format Document`.
-You can add a keyboard shortcut to this VS Code Preferences.
+You can add a keyboard shortcut to this VS Code **Preferences**.
 
 格式化当前窗口中代码的方法是先在代码窗口中单击右键，
 然后选择 `Format Document` 选项即可。
@@ -61,36 +61,46 @@ To automatically format code whenever you save a file, set the
 Install the `Dart` plugin (see
 [Editor setup]({{site.url}}/get-started/editor))
 to get automatic formatting of code in Android Studio and IntelliJ.
-To automatically format your code in the current source code window,
-use `Cmd+Option+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
-Android Studio and IntelliJ also provide a check box named
-**Format code on save** on the Flutter page in Preferences
-(on Mac) or Settings (on Windows and Linux)
-which formats the current file automatically when you save it.
+To format your code in the current source code window:
 
 在 Android Studio / IntelliJ 中安装 `Dart` 插件
 （见章节 [编辑工具设定]({{site.url}}/get-started/editor))
 来进行代码的自动格式化。
-在当前代码窗口中格式化代码的方法是，
-在 Windows 和 Linux 系统里使用 `Ctrl+Alt+L`，
-在 Mac 系统里使用 `Cmd+Alt+L`。
+在当前代码窗口中格式化代码的方法是：
+
+* In macOS,
+  press <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>L</kbd>.
+
+  在 Mac 系统里使用 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>L</kbd>。
+
+* In Windows and Linux,
+  press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd>.
+
+  在 Windows 和 Linux 系统里使用
+  <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd>。
+
+Android Studio and IntelliJ also provide a checkbox named
+**Format code on save** on the Flutter page in **Preferences**
+on macOS or **Settings** on Windows and Linux.
+This option corrects formatting in the current file when you save it.
+
 Android Studio 和 IntelliJ 为 Flutter 页面提供了一个选项，
 即“在保存的时候格式化代码”—— `Format code on save`，
-要开启这个，可以在 Windows 和 Linux 下选择设置、在 Mac 下选择偏好设置。
+要开启这个，可以在 Windows 和 Linux 下选择设置、在 macOS 下选择偏好设置。
 这样在每次保存代码的时候就会自动格式化当前文件。
 
 ## Automatically formatting code with the `dart` command
 
 ## 使用 `dart` 命令自动格式化代码
 
-You can also automatically format code in the command line interface
-(CLI) using the `dart format` command:
+To correct code formatting in the command line interface (CLI),
+run the `dart format` command:
 
 我们也可以在命令行界面（CLI）中使用 `dart format` 命令，
 进行代码的自动格式化。
 
 ```terminal
-$ dart format path1 path2 ...
+$ dart format path1 path2 [...]
 ```
 
 ## Using trailing commas

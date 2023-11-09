@@ -230,7 +230,7 @@ to access it.
 ## 读取状态
 
 When a user clicks on one of the items in the catalog,
-it’s added to the cart. But since the cart lives above `MyListItem`,
+it's added to the cart. But since the cart lives above `MyListItem`,
 how do we do that?
 
 当用户点击类别页面中的一个元素，它会被添加到购物车里。

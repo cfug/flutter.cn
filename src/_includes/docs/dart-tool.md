@@ -51,4 +51,4 @@
 
 {{site.alert.end}}
 
-[dart tool]: {{site.dart-site}}/tools/dart-vm
+[dart tool]: {{site.dart-site}}/tools/dart-tool

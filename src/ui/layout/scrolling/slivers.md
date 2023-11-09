@@ -92,9 +92,10 @@ Flutter 的技术负责人 Ian Hickson 和 Filip Hracek 讨论了 sliver 的能�
 
 ## API 文档
 
-Here some links to relevant API docs:
+To learn more about the available sliver APIs,
+check out these related API docs:
 
-这里有一些相关 API 文档的链接：
+参阅以下 Sliver 相关 API 文档了解更多：
 
 * [`CustomScrollView`][]
 * [`SliverAppBar`][]
@@ -102,7 +103,7 @@ Here some links to relevant API docs:
 * [`SliverList`][]
 
 
-[`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html`
+[`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
 [sliver-app-bar-video]: {{site.youtube-site}}/watch?v=R9C5KMJKluE
 [`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
 [`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html

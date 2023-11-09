@@ -47,7 +47,7 @@ apps, but they fall into three major categories:
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.
-If you’d like to see how these concepts come together,
+If you'd like to see how these concepts come together,
 check out the [Flokk][] and [Folio][] examples that
 were built using the concepts described here.
 
@@ -155,7 +155,7 @@ Flutter 中最有用的部分布局 widgets 包括：
   在布局过程中使用代理方法对多个子级进行定位。
 
 * [`Flow`][]&mdash;Similar to `CustomMultiChildLayout`,
-  but more efficient because it’s performed during the
+  but more efficient because it's performed during the
   paint phase rather than the layout phase.
 
   [`Flow`][]&mdash;&mdash;相对于 `CustomMultiChildLayout`
@@ -293,7 +293,7 @@ and it should work in most contexts.
 无单位的设计让它可以处理通用情况，
 能在大部分的场景下使用。
 
-It’s worth noting that the Material Components generally
+It's worth noting that the Material Components generally
 use a value of around 4 logical pixels for each
 visual density unit. For more information about the
 supported components, see [`VisualDensity`][] API.
@@ -354,10 +354,10 @@ to determine the device type:
 ScreenType getFormFactor(BuildContext context) {
   // Use .shortestSide to detect device type regardless of orientation
   double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > FormFactor.desktop) return ScreenType.Desktop;
-  if (deviceWidth > FormFactor.tablet) return ScreenType.Tablet;
-  if (deviceWidth > FormFactor.handset) return ScreenType.Handset;
-  return ScreenType.Watch;
+  if (deviceWidth > FormFactor.desktop) return ScreenType.desktop;
+  if (deviceWidth > FormFactor.tablet) return ScreenType.tablet;
+  if (deviceWidth > FormFactor.handset) return ScreenType.handset;
+  return ScreenType.watch;
 }
 ```
 
@@ -368,14 +368,14 @@ and define it in terms of small to large:
 
 <?code-excerpt "lib/global/device_size.dart (ScreenSize)"?>
 ```dart
-enum ScreenSize { Small, Normal, Large, ExtraLarge }
+enum ScreenSize { small, normal, large, extraLarge }
 
 ScreenSize getSize(BuildContext context) {
   double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > 900) return ScreenSize.ExtraLarge;
-  if (deviceWidth > 600) return ScreenSize.Large;
-  if (deviceWidth > 300) return ScreenSize.Normal;
-  return ScreenSize.Small;
+  if (deviceWidth > 900) return ScreenSize.extraLarge;
+  if (deviceWidth > 600) return ScreenSize.large;
+  if (deviceWidth > 300) return ScreenSize.normal;
+  return ScreenSize.small;
 }
 ```
  
@@ -389,7 +389,7 @@ defined on a global basis.
 
 You can also use screen-based breakpoints to reflow your
 top-level widget trees. For example, you could switch
-from a vertical to a horizontal layout when the user isn’t on a handset:
+from a vertical to a horizontal layout when the user isn't on a handset:
 
 你也可以利用分界点重新组织顶层的 widget 结构。
 例如，你可以判断用户是否使用手持设备，来切换垂直或水平的布局：
@@ -398,8 +398,9 @@ from a vertical to a horizontal layout when the user isn’t on a handset:
 ```dart
 bool isHandset = MediaQuery.of(context).size.width < 600;
 return Flex(
-    children: [Text('Foo'), Text('Bar'), Text('Baz')],
-    direction: isHandset ? Axis.vertical : Axis.horizontal);
+  direction: isHandset ? Axis.vertical : Axis.horizontal,
+  children: const [Text('Foo'), Text('Bar'), Text('Baz')],
+);
 ```
 
 In another widget,
@@ -422,7 +423,7 @@ Widget foo = Row(
 
 Even though checking total screen size is great for
 full-screen pages or making global layout decisions,
-it’s often not ideal for nested subviews.
+it's often not ideal for nested subviews.
 Often, subviews have their own internal breakpoints
 and care only about the space that they have available to render.
 
@@ -446,15 +447,14 @@ The previous example could be rewritten using `LayoutBuilder`:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (LayoutBuilder)"?>
 ```dart
-Widget foo = LayoutBuilder(
-    builder: (context, constraints) {
+Widget foo = LayoutBuilder(builder: (context, constraints) {
   bool useVerticalLayout = constraints.maxWidth < 400;
   return Flex(
-    children: [
+    direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
+    children: const [
       Text('Hello'),
       Text('World'),
     ],
-    direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
   );
 });
 ```
@@ -471,17 +471,17 @@ and adapt its layout to whatever space is provided.
 #### 设备细分
 
 There are times when you want to make layout decisions
-based on the actual platform you’re running on,
+based on the actual platform you're running on,
 regardless of size. For example, when building a
 custom title bar, you might need to check the operating
 system type and tweak the layout of your title bar, so
-it doesn’t get covered by the native window buttons. 
+it doesn't get covered by the native window buttons. 
 
 有时你可能需要根据实际运行的平台进行布局处理，而不是基于大小。
 例如，在构建自定义的标题栏时，
 你可能需要判断设备的平台来处理布局，以防被原生窗口的按钮遮挡。
 
-To determine which combination of platforms you’re on,
+To determine which combination of platforms you're on,
 you can use the [`Platform`][] API along with the `kIsWeb` value:
 
 想判断应用当前所处的平台，你可以使用 [`Platform`][] API 和 `kIsWeb` 组合进行判断：
@@ -497,7 +497,7 @@ bool get isMobileDeviceOrWeb => kIsWeb || isMobileDevice;
 bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
 ```
 
-The `Platform` API can’t be accessed from web builds without 
+The `Platform` API can't be accessed from web builds without 
 throwing an exception, because the `dart.io` package isn't
 supported on the web target. As a result, this code checks 
 for web first, and because of short-circuiting,
@@ -512,7 +512,7 @@ Dart never calls `Platform` on web targets.
 
 ### 使用单一来源控制样式
 
-You’ll probably find it easier to maintain your views
+You'll probably find it easier to maintain your views
 if you create a single source of truth for styling values
 like padding, spacing, corner shape, font sizes, and so on.
 This can be done easily with some helper classes:
@@ -537,16 +537,18 @@ class Fonts {
 }
 
 class TextStyles {
-  static const TextStyle raleway = const TextStyle(
+  static const TextStyle raleway = TextStyle(
     fontFamily: Fonts.raleway,
   );
   static TextStyle buttonText1 =
-      TextStyle(fontWeight: FontWeight.bold, fontSize: 14);
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 14);
   static TextStyle buttonText2 =
-      TextStyle(fontWeight: FontWeight.normal, fontSize: 11);
-  static TextStyle h1 = TextStyle(fontWeight: FontWeight.bold, fontSize: 22);
-  static TextStyle h2 = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
-  static late TextStyle body1 = raleway.copyWith(color: Color(0xFF42A5F5));
+      const TextStyle(fontWeight: FontWeight.normal, fontSize: 11);
+  static TextStyle h1 =
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 22);
+  static TextStyle h2 =
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+  static TextStyle body1 = raleway.copyWith(color: const Color(0xFF42A5F5));
   // etc
 }
 ```
@@ -558,7 +560,7 @@ These constants can then be used in place of hard-coded numeric values:
 <?code-excerpt "lib/global/device_type.dart (UseConstants)"?>
 ```dart
 return Padding(
-  padding: EdgeInsets.all(Insets.small),
+  padding: const EdgeInsets.all(Insets.small),
   child: Text('Hello!', style: TextStyles.body1),
 );
 ```
@@ -610,7 +612,7 @@ this way are:
 Like most rules, there are exceptions:
 one-off values that are used nowhere else in the app.
 There is little point in cluttering up the styling rules
-with these values, but it’s worth considering if they
+with these values, but it's worth considering if they
 should be derived from an existing value (for example,
 `padding + 1.0`). You should also watch for reuse or duplication
 of the same semantic values. Those values should likely be
@@ -627,7 +629,7 @@ added to the global styling ruleset.
 
 Beyond screen size, you should also spend time
 considering the unique strengths and weaknesses
-of different form factors. It isn’t always ideal
+of different form factors. It isn't always ideal
 for your multiplatform app to offer identical
 functionality everywhere. Consider whether it makes
 sense to focus on specific capabilities,
@@ -649,7 +651,7 @@ for a tablet or desktop UI.
 而另一方面，在平板和桌面界面上专注于组织和操作产出的内容。
 
 Another example is leveraging the web's extremely low barrier
-for sharing. If you’re deploying a web app,
+for sharing. If you're deploying a web app,
 decide which deep links to support,
 and design your navigation routes with those in mind.
 
@@ -719,7 +721,7 @@ and work to reflect that in your app.
 
 ## 输入
 
-Of course, it isn’t enough to just adapt how your app looks,
+Of course, it isn't enough to just adapt how your app looks,
 you also have to support varying user inputs.
 The mouse and keyboard introduce input types beyond those
 found on a touch device—like scroll wheel, right-click,
@@ -751,10 +753,11 @@ customize how your UI reacts to the scroll wheel.
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (PointerScroll)"?>
 ```dart
 return Listener(
-    onPointerSignal: (event) {
-      if (event is PointerScrollEvent) print(event.scrollDelta.dy);
-    },
-    child: ListView());
+  onPointerSignal: (event) {
+    if (event is PointerScrollEvent) print(event.scrollDelta.dy);
+  },
+  child: ListView(),
+);
 ```
 
 [`Listener`]: {{site.api}}/flutter/widgets/Listener-class.html
@@ -810,15 +813,16 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          FlutterLogo(size: 100),
+          const FlutterLogo(size: 100),
           // Position focus in the negative margin for a cool effect
           if (_hasFocus)
             Positioned(
-                left: -4,
-                top: -4,
-                bottom: -4,
-                right: -4,
-                child: _roundedBorder())
+              left: -4,
+              top: -4,
+              bottom: -4,
+              right: -4,
+              child: _roundedBorder(),
+            )
         ],
       ),
     );
@@ -861,7 +865,7 @@ return Column(children: [
 
 Flutter has several built-in ways to traverse widgets and groups,
 defaulting to the `ReadingOrderTraversalPolicy` class.
-This class usually works well, but it’s possible to modify this
+This class usually works well, but it's possible to modify this
 using another predefined `TraversalPolicy` class or by creating
 a custom policy.
 
@@ -878,7 +882,7 @@ Flutter 有几种内置的方法对 widget 和组别进行遍历，默认使用�
 
 In addition to tab traversal, desktop and web users are accustomed
 to having various keyboard shortcuts bound to specific actions.
-Whether it’s the `Delete` key for quick deletions or
+Whether it's the `Delete` key for quick deletions or
 `Control+N` for a new document, be sure to consider the different
 accelerators your users expect. The keyboard is a powerful
 input tool, so try to squeeze as much efficiency from it as you can.
@@ -914,8 +918,8 @@ already has a focus node, you can wrap it in a
         return KeyEventResult.ignored;
       },
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 400),
-        child: TextField(
+        constraints: const BoxConstraints(maxWidth: 400),
+        child: const TextField(
           decoration: InputDecoration(
             border: OutlineInputBorder(),
           ),
@@ -926,7 +930,7 @@ already has a focus node, you can wrap it in a
 }
 ```
 
-If you’d like to apply a set of keyboard shortcuts to a
+If you'd like to apply a set of keyboard shortcuts to a
 large section of the tree, you can use the [`Shortcuts`][] widget:
 
 如果你想将一组键盘快捷键应用到更大范围的 widget，你可以使用 [`Shortcuts`][] widget：
@@ -941,7 +945,7 @@ class CreateNewItemIntent extends Intent {
 Widget build(BuildContext context) {
   return Shortcuts(
     // Bind intents to key combinations
-    shortcuts: <ShortcutActivator, Intent>{
+    shortcuts: const <ShortcutActivator, Intent>{
       SingleActivator(LogicalKeyboardKey.keyN, control: true):
           CreateNewItemIntent(),
     },
@@ -949,7 +953,8 @@ Widget build(BuildContext context) {
       // Bind intents to an actual method in your code
       actions: <Type, Action<Intent>>{
         CreateNewItemIntent: CallbackAction<CreateNewItemIntent>(
-            onInvoke: (intent) => _createNewItem()),
+          onInvoke: (intent) => _createNewItem(),
+        ),
       },
       // Your sub-tree must be wrapped in a focusNode, so it can take focus.
       child: Focus(
@@ -980,6 +985,7 @@ is easy with [`RawKeyboard`][]:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RawKeyboard)"?>
 ```dart
+@override
 void initState() {
   super.initState();
   RawKeyboard.instance.addListener(_handleKey);
@@ -1030,11 +1036,11 @@ void _handleKey(event) {
 
 One note of caution when using the static listener,
 is that you often need to disable it when the user
-is typing in a field or when the widget it’s associated with
+is typing in a field or when the widget it's associated with
 is hidden from view.
 Unlike with `Shortcuts` or `RawKeyboardListener`,
 this is your responsibility to manage. This can be especially
-important when you’re binding a Delete/Backspace accelerator for
+important when you're binding a Delete/Backspace accelerator for
 `Delete`, but then have child `TextFields` that the user
 might be typing in.
 
@@ -1051,7 +1057,7 @@ might be typing in.
 
 ### 鼠标进入、移出和悬停事件
 
-On desktop, it’s common to change the mouse cursor
+On desktop, it's common to change the mouse cursor
 to indicate the functionality about the content the
 mouse is hovering over. For example, you usually see
 a hand cursor when you hover over a button,
@@ -1165,7 +1171,7 @@ without any compromises.
 另一种思考方式，是向自己提问：「该平台的用户要想完成这个操作，需要什么样的交互？」
 接着开始设想如何在应用内正常且无妥协地实现它。
 
-This can be difficult if you aren’t a regular user of the platform.
+This can be difficult if you aren't a regular user of the platform.
 You might be unaware of the specific idioms and can easily miss
 them completely. For example, a lifetime Android user is
 likely unaware of platform conventions on iOS,
@@ -1212,7 +1218,7 @@ on a regular basis.
 
 {{site.alert.secondary}}
 
-  **Important**: Advocates don’t need to be developers or
+  **Important**: Advocates don't need to be developers or
   even full-time team members. They can be designers,
   stakeholders, or external testers that are provided
   with regular builds. 
@@ -1283,11 +1289,12 @@ return Scrollbar(
   thumbVisibility: DeviceType.isDesktop,
   controller: _scrollController,
   child: GridView.count(
-      controller: _scrollController,
-      padding: EdgeInsets.all(Insets.extraLarge),
-      childAspectRatio: 1,
-      crossAxisCount: colCount,
-      children: listChildren),
+    controller: _scrollController,
+    padding: const EdgeInsets.all(Insets.extraLarge),
+    childAspectRatio: 1,
+    crossAxisCount: colCount,
+    children: listChildren,
+  ),
 );
 ```
 
@@ -1322,10 +1329,12 @@ static bool get isMultiSelectModifierDown {
   bool isDown = false;
   if (Platform.isMacOS) {
     isDown = isKeyDown(
-        {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight});
+      {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight},
+    );
   } else {
     isDown = isKeyDown(
-        {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight});
+      {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight},
+    );
   }
   return isDown;
 }
@@ -1380,7 +1389,7 @@ Luckily, this is easy to support with the [`SelectableText`][] widget:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (SelectableText)"?>
 ```dart
-return SelectableText('Select me!');
+return const SelectableText('Select me!');
 ```
 
 To support rich text, then use `TextSpan`: 
@@ -1389,7 +1398,7 @@ To support rich text, then use `TextSpan`:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RichTextSpan)"?>
 ```dart
-return SelectableText.rich(
+return const SelectableText.rich(
   TextSpan(
     children: [
       TextSpan(text: 'Hello'),
@@ -1405,7 +1414,7 @@ return SelectableText.rich(
 
 #### 标题栏
 
-On modern desktop applications, it’s common to customize
+On modern desktop applications, it's common to customize
 the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
 vertical space in your main UI. 
@@ -1439,7 +1448,7 @@ to different sections of the app.
 
 On desktop, there are several interactions that
 manifest as a widget shown in an overlay,
-but with differences in how they’re triggered, dismissed,
+but with differences in how they're triggered, dismissed,
 and positioned:
 
 在桌面平台上，通常有几种在叠加层中显示的交互组件，它们各自有不同的触发、关闭和定位方式：
@@ -1464,7 +1473,7 @@ and positioned:
 * **Popup panel (also known as flyout)**&mdash;Similar to a tooltip,
   a popup panel is usually anchored to a widget.
   The main difference is that panels are most often
-  shown on a tap event, and they usually don’t hide
+  shown on a tap event, and they usually don't hide
   themselves when the cursor leaves.
   Instead, panels are typically dismissed by clicking
   outside the panel or by pressing a **Close** or **Submit** button.
@@ -1515,7 +1524,7 @@ they are essential for mouse users. These users expect
 to right-click things, edit content in place,
 and hover for more information. Failing to meet those expectations
 can lead to disappointed users, or at least,
-a feeling that something isn’t quite right.
+a feeling that something isn't quite right.
 
 尽管这些控制对于触控用户来说只是一种增强，但对于桌面用户而言，它们是必不可少的。
 桌面用户会期望能够右键点击其中一些内容，当场进行编辑，悬浮时查看更多信息。
@@ -1535,7 +1544,7 @@ a feeling that something isn’t quite right.
 On Windows, when presenting a row of buttons,
 the confirmation button is placed at the start of
 the row (left side). On all other platforms,
-it’s the opposite. The confirmation button is
+it's the opposite. The confirmation button is
 placed at the end of the row (right side). 
 
 在 Windows 上展示一行按钮时，确认按钮会在一行的起始位置（左侧）。
@@ -1552,15 +1561,18 @@ TextDirection btnDirection =
     DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
 return Row(
   children: [
-    Spacer(),
+    const Spacer(),
     Row(
       textDirection: btnDirection,
       children: [
         DialogButton(
-            label: 'Cancel',
-            onPressed: () => Navigator.pop(context, false)),
+          label: 'Cancel',
+          onPressed: () => Navigator.pop(context, false),
+        ),
         DialogButton(
-            label: 'Ok', onPressed: () => Navigator.pop(context, true)),
+          label: 'Ok',
+          onPressed: () => Navigator.pop(context, true),
+        ),
       ],
     ),
   ],
@@ -1577,23 +1589,23 @@ return Row(
 
 Another common pattern on desktop apps is the menu bar.
 On Windows and Linux, this menu lives as part of the Chrome title bar,
-whereas on macOS, it’s located along the top of the primary screen. 
+whereas on macOS, it's located along the top of the primary screen. 
 
 桌面平台有另一种常见的内容：菜单栏。
 在 Windows 和 Linux 上，Chrome 的菜单栏整合在标题栏内，
 而在 macOS 上，菜单栏在主屏幕的顶部。
 
 Currently, you can specify custom menu bar entries using
-a prototype plugin, but it’s expected that this functionality will
+a prototype plugin, but it's expected that this functionality will
 eventually be integrated into the main SDK.
 
 目前你可以使用一个原型插件来指定菜单栏的入口，
 我们希望这个功能最终能合并到 SDK 中。
 
-It’s worth mentioning that on Windows and Linux,
-you can’t combine a custom title bar with a menu bar.
+It's worth mentioning that on Windows and Linux,
+you can't combine a custom title bar with a menu bar.
 When you create a custom title bar,
-you’re replacing the native one completely,
+you're replacing the native one completely,
 which means you also lose the integrated native menu bar.
 
 值得一提的是，在 Windows 和 Linux 上，你无法将自定义的标题栏与菜单栏整合在一起。
@@ -1634,7 +1646,7 @@ are both sharing a single finger for input.
 Mouse users have more input options. They can use a wheel
 or scrollbar to scroll, which generally eliminates the need
 for dedicated drag handles. If you look at the macOS
-Finder or Windows Explorer, you’ll see that they work
+Finder or Windows Explorer, you'll see that they work
 this way: you just select an item and start dragging.
 
 鼠标用户有着不止一种输入方式。他们可以使用滚轮和滑动条进行滑动，
@@ -1675,7 +1687,7 @@ are:
 
 ### 自身做到熟悉基本的可用性原则
 
-Of course, this page doesn’t constitute an exhaustive list
+Of course, this page doesn't constitute an exhaustive list
 of the things you might consider. The more operating systems,
 form factors, and input devices you support,
 the more difficult it becomes to spec out every permutation in design. 

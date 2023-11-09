@@ -17,7 +17,7 @@ $ sudo apt install default-jdk
 ### 安装 Android SDK
 
 Download the [Android SDK tools][] and
-select the “Command Line Tools only” option.
+select the "Command Line Tools only" option.
 
 下载 [Android SDK tools][]，
 然后勾选 “Command Line Tools only” 选项。

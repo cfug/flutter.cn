@@ -471,8 +471,11 @@ Create a file at `ios/ci_scripts/ci_post_clone.sh` and add the content below.
 ```sh
 #!/bin/sh
 
+# Fail this script if any subcommand fails.
+set -e
+
 # The default execution directory of this script is the ci_scripts directory.
-cd $CI_WORKSPACE # change working directory to the root of your cloned repo.
+cd $CI_PRIMARY_REPOSITORY_PATH # change working directory to the root of your cloned repo.
 
 # Install Flutter using git.
 git clone https://github.com/flutter/flutter.git --depth 1 -b stable $HOME/flutter
@@ -545,7 +548,7 @@ To create a new workflow in Xcode, use the following instructions:
 #### 变更分支
 
 By default Xcode suggests the Branch Changes condition that starts a new build
-for every change to your Git repository’s default branch.
+for every change to your Git repository's default branch.
 
 默认 Xcode 建议每次分支变更后都为你仓库的默认分支开始一个全新的构建。
 

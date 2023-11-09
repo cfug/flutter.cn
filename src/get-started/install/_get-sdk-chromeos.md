@@ -80,7 +80,7 @@ process.
 上面的部分描述了如何执行这些任务，并完成设置流程。
 
 Once you have installed any missing dependencies, run the `flutter doctor`
-command again to verify that you’ve set everything up correctly.
+command again to verify that you've set everything up correctly.
 
 当你已经安装了全部缺失的依赖之后，请再次运行 `flutter doctor` 命令，
 以验证你是否是真的全部正确设置完毕了。

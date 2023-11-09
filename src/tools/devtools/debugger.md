@@ -45,8 +45,9 @@ entry-point for your app loaded in the debugger.
 当你打开调试器标签页时，你应该会看到你的应用入口点的源码已经加载到了调试器中。
 
 In order to browse around more of your application sources, click **Libraries**
-(top right) or use the hot key command `⌘ + P` / `ctrl + P`. This will open the
-libraries window and allow you to search for other source files.
+(top right) or press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>P</kbd>.
+This opens the libraries window and allows you
+to search for other source files.
 
 为了浏览更多的应用源码，点击 **Libraries**（右上角）或者使用快捷键 `⌘ + P` / `ctrl + P`。
 这会打开库窗口并允许你搜索其他源文件。

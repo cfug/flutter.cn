@@ -16,7 +16,8 @@ diff2html: true
 <?code-excerpt path-base="animation"?>
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+
+  <h4 class="no_toc">What you'll learn</h4>
 
   <h4 class="no_toc">本章内容</h4>
 
@@ -31,10 +32,11 @@ diff2html: true
   
 {{site.alert.end}}
 
-This tutorial shows you how to build explicit animations in Flutter. After
-introducing some of the essential concepts, classes, and methods in the
-animation library, it walks you through 5 animation examples. The examples build
-on each other, introducing you to different aspects of the animation library.
+This tutorial shows you how to build explicit animations in Flutter.
+After introducing some of the essential concepts, classes,
+and methods in the animation library, it walks you through 5
+animation examples. The examples build on each other,
+introducing you to different aspects of the animation library.
 
 本教程将讲解如何在 Flutter 中构建显式动画。
 我们先来介绍一些动画库中的基本概念，类和方法，
@@ -53,24 +55,26 @@ Flutter SDK 也内置了显式动画，比如
 这些简单的动画可以通过设置起点和终点来触发。
 它们比下面介绍的显式动画更容易实现。
 
-<a name="concepts"></a>
+<a id="concepts"></a>
 ## Essential animation concepts and classes
 
 ## 基本动画概念和类
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What's the point?</h4>
 
   <h4 class="no_toc">重点是什么？</h4>
 
   * [`Animation`][], a core class in Flutter's animation library,
     interpolates the values used to guide an animation.
-    
+
     [`Animation`][]，Flutter 动画库中的核心类，
     插入用于指导动画的值。
-    
-  * An `Animation` object knows the current state of an animation (for example,
-    whether it's started, stopped, or moving forward or in reverse),
+
+    * An `Animation` object knows the current state of an animation
+    (for example, whether it's started, stopped,
+    or moving forward or in reverse),
     but doesn't know anything about what appears onscreen.
     
     `Animation` 对象知道动画目前的状态
@@ -85,15 +89,18 @@ Flutter SDK 也内置了显式动画，比如
     [`CurvedAnimation`][] 定义进程为非线性曲线。
     
   * A [`Tween`][] interpolates between the range of data as used by the
-    object being animated. For example, a `Tween` might define an interpolation
+    object being animated.
+    For example, a `Tween` might define an interpolation
     from red to blue, or from 0 to 255.
-    
+
     [`Tween`][] 为动画对象插入一个范围值。
     例如，`Tween` 可以定义插入值由红到蓝，或从 0 到 255。
-  
-  * Use Listeners and StatusListeners to monitor animation state changes.
-  
-    使用 Listeners 和 StatusListeners 监视动画状态变化。
+
+  * Use `Listener`s and `StatusListener`s to monitor
+    animation state changes.
+
+    使用 `Listener` 和 `StatusListener` 监视动画状态变化。
+
 {{site.alert.end}}
 
 The animation system in Flutter is based on typed
@@ -109,8 +116,7 @@ Widgets 既可以通过读取当前值和监听状态变化直接
 合并动画到 build 函数，也可以作为传递给其他 widgets
 的更精细动画的基础。
 
-<a name="animation-class"></a>
-
+<a id="animation-class"></a>
 ### Animation<wbr>\<double>
 
 In Flutter, an `Animation` object knows nothing about what
@@ -194,8 +200,8 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
 `CurvedAnimation` and `AnimationController` (described in the next section)
 are both of type `Animation<double>`, so you can pass them interchangeably.
-The `CurvedAnimation` wraps the object it’s modifying&mdash;you
-don’t subclass `AnimationController` to implement a curve.
+The `CurvedAnimation` wraps the object it's modifying&mdash;you
+don't subclass `AnimationController` to implement a curve.
 
 `CurvedAnimation` 和 `AnimationController`（下面将会详细说明）
 都是 `Animation<double>` 类型，所以可以互换使用。
@@ -322,7 +328,7 @@ tween = Tween<double>(begin: -200, end: 0);
 A `Tween` is a stateless object that takes only `begin` and `end`.
 The sole job of a `Tween` is to define a mapping from an
 input range to an output range. The input range is commonly
-0.0 to 1.0, but that’s not a requirement.
+0.0 to 1.0, but that's not a requirement.
 
 `Tween` 是无状态的对象，只有 `begin` 和 `end`。
 `Tween` 的这种单一用途用来定义从输入范围到输出范围的映射。
@@ -551,7 +557,7 @@ The changes from the non-animated example are highlighted:
 +    animation = Tween<double>(begin: 0, end: 300).animate(controller)
 +      ..addListener(() {
 +        setState(() {
-+          // The state that has changed here is the animation object’s value.
++          // The state that has changed here is the animation object's value.
 +        });
 +      });
 +    controller.forward();
@@ -600,7 +606,7 @@ discarded to prevent memory leaks.
 当 `State` 对象销毁时要清除控制器以防止内存溢出。
 
 With these few changes,
-you’ve created your first animation in Flutter!
+you've created your first animation in Flutter!
 
 经过这些小改动，你成功创建了第一个 Flutter 动画。
 
@@ -770,7 +776,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 -    animation = Tween<double>(begin: 0, end: 300).animate(controller)
 -      ..addListener(() {
 -        setState(() {
--          // The state that has changed here is the animation object’s value.
+-          // The state that has changed here is the animation object's value.
 -        });
 -      });
 +    animation = Tween<double>(begin: 0, end: 300).animate(controller);
@@ -801,8 +807,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 
 **源代码：** [animate2][]
 
-<a name="monitoring"></a>
-
+<a id="monitoring"></a>
 ### Monitoring the progress of the animation
 
 ### 监控动画过程
@@ -826,7 +831,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 
 {{site.alert.end}}
 
-It’s often helpful to know when an animation changes state,
+It's often helpful to know when an animation changes state,
 such as finishing, moving forward, or reversing.
 You can get notifications for this with `addStatusListener()`.
 The following code modifies the previous example so that

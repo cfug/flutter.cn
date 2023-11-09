@@ -90,7 +90,7 @@ Riverpod 不依赖于 Flutter SDK。
 
   [开始上手使用 Riverpod][Getting started with Riverpod]
 
-[Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
+[Getting started with Riverpod]: https://riverpod.dev/docs/introduction/getting_started
 [Riverpod]: https://riverpod.dev/
 
 ## setState

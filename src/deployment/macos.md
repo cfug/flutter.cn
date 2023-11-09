@@ -680,15 +680,46 @@ keychain use-login
 </li>
 </ol>
 
+## Release your app on TestFlight
+
+## 将你的应用发布到 TestFlight
+
+[TestFlight][] allows developers to push their apps
+to internal and external testers. This optional step
+covers releasing your build on TestFlight.
+
+[TestFlight][] 允许开发者将其应用推送给内部和外部的测试人员。
+以下步骤将指导你如何将你的应用在 TestFlight 分发给测试人员。
+
+1. Navigate to the TestFlight tab of your app's application
+   details page on [App Store Connect][appstoreconnect_login].
+
+   在 [App Store Connect][appstoreconnect_login] 中，
+   前往你的应用详情的 TestFlight 标签。
+
+1. Select **Internal Testing** in the sidebar.
+
+   在侧边栏中选择 **Internal Testing**。
+
+1. Select the build to publish to testers, then click **Save**.
+
+   选择需要发布给测试人员的构建版本，点击 **保存**。
+
+1. Add the email addresses of any internal testers.
+   You can add additional internal users in the **Users and Roles**
+   page of App Store Connect,
+   available from the dropdown menu at the top of the page.
+
+   添加测试人员的电子邮件。
+   你可以在 **Users and Roles** 配置测试人员，该选项在页面顶部的下拉菜单中。
+
 ## Distribute to registered devices
 
 ## 分发到已注册的设备
 
-[TestFlight][] is not available for distributing macOS apps
-to internal and external testers. See [distribution guide][distributionguide_macos] 
+See [distribution guide][distributionguide_macos] 
 to prepare an archive for distribution to designated Mac computers.
 
-[TestFlight][] 不可用于向内部和外部的测试人员分发 macOS 应用。
 请参阅 [分发指南][distributionguide_macos]，
 准备一个归档文件，以便分发到指定的 Mac 设备。
 

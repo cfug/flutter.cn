@@ -5,6 +5,9 @@ description: How to use the video_player plugin.
 description: 如何使用 video_player 插件。
 tags: cookbook, 实用教程, 原生插件
 keywords: Flutter播放视频
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>
@@ -72,13 +75,13 @@ the following steps:
 
 ## 1. 添加 `video_player` 依赖
 
-This recipe depends on one Flutter plugin: `video_player`. First, add this
-dependency to your project.
+This recipe depends on one Flutter plugin: `video_player`. 
+First, add this dependency to your project.
 
 这个章节基于一个 Flutter 插件： `video_player`。
 首先，添加依赖到 `pubspec.yaml` 中。
 
-To add the `video_player` package as a dev dependency, run `flutter pub add`:
+To add the `video_player` package as a dependency, run `flutter pub add`:
 
 运行 `flutter pub add` 将 `video_player` 添加为依赖：
 
@@ -346,7 +349,7 @@ FloatingActionButton(
 ## 完整样例
 
 <?code-excerpt "lib/main.dart"?>
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'dart:async';
 
 import 'package:flutter/material.dart';

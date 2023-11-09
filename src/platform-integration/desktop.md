@@ -152,12 +152,7 @@ you need the following in addition to the Flutter SDK:
 
 要开发 Linux 桌面程序，除了 Flutter SDK，你还需要做以下准备:
 
-* [Clang][]
-* [CMake][]
-* [GTK development headers][]
-* [Ninja build][]
-* [pkg-config][]
-* [liblzma-dev][] This dependency might be required
+{% include docs/linux-requirements-list.md %}
 
 One easy way to install the Flutter SDK along with the necessary
 dependencies is by using [snapd][].
@@ -181,18 +176,10 @@ you can use the following command:
 
 如果你在使用的 Linux 发行版上无法使用 `snapd`，你可以使用下面的命令行:
 
-```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
-```
+{% include docs/linux-requirements-command.md %}
 
-[Clang]: https://clang.llvm.org/
-[CMake]: https://cmake.org/
-[GTK development headers]: https://developer.gnome.org/gtk3/3.2/gtk-getting-started.html
-[Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[Ninja build]: https://ninja-build.org/
-[pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
-[liblzma-dev]: https://packages.debian.org/sid/liblzma-dev
 [Snap Store]: https://snapcraft.io/store
+[Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [snapd]: https://snapcraft.io/flutter
 
 ## Create a new project
@@ -355,8 +342,8 @@ $ flutter run -d linux
 ```
 
 {{site.alert.note}}
-If you do not supply the `-d` flag, `flutter run` lists
-the available targets to choose from.
+  If you do not supply the `-d` flag, `flutter run` lists
+  the available targets to choose from.
 {{site.alert.end}}
 
 ## Build a release app
@@ -420,7 +407,7 @@ Flutter 会像在其他平台中一样的操作，
 ### 编写一个插件
 
 When you start building your own plugins,
-you’ll want to keep federation in mind.
+you'll want to keep federation in mind.
 Federation is the ability to define several
 different packages, each targeted at a
 different set of platforms, brought together

@@ -100,7 +100,7 @@ one of the following codelabs:
 
 ## 下一步
 
-* [Records and Patterns in Dart 3][]<br> **NEW**
+* [Records and Patterns in Dart 3][]<br>
   Discover Dart 3's new records and patterns features.
   Learn how you can use them in a Flutter app to help you
   write more readable and maintainable Dart code.
@@ -245,13 +245,13 @@ like layout and animations:
   Android、iOS、Web、Windows、macOS 和 Linux
   上的自适应应用。
 
-* [Building next generation UIs in Flutter][]<br> **NEW**
+* [Building next generation UIs in Flutter][]<br>
   Learn how to build a Flutter app that uses the power of `flutter_animate`,
   fragment shaders, and particle fields. You will craft a user interface that
   evokes those science fiction movies and TV shows we all love
   watching when we aren't coding.
 
-  [在 Flutter 中构建下一代 UI][Building next generation UIs in Flutter] **新增内容**<br>
+  [在 Flutter 中构建下一代 UI][Building next generation UIs in Flutter]<br>
   了解如何构建一个使用 `flutter_animate`、片段着色器和粒子场的 Flutter 应用。
   你将构建一个用户界面，它会唤起我们在不编码时都喜欢看的科幻电影和电视节目。
 
@@ -422,7 +422,7 @@ Learn how to use Flutter with other technologies.
   existing native libraries that provide a
   C interface.
 
-* [Create haikus about Google products with the PaLM API and Flutter][]<br> **NEW**
+* [Create haikus about Google products with the PaLM API and Flutter][]<br>
   Learn how to build an app that uses the PaLM API to 
   generate haikus based on Google product names. The 
   PaLM API gives you access to Google's 
@@ -514,7 +514,17 @@ iOS、Android、Web 和桌面端。
   让原生 API 和桌面应用进行交互，
   并为 GitHub APIs 构建一个类型安全的客户端库。
 
+* [Adding a Home Screen widget to your Flutter app][home-screen]<br> **NEW**
+  Learn how to add a Home Screen widget to your Flutter app
+  on iOS. This applies to your home screen, lock screen, or the
+  today view.
+
+  [为你的 Flutter 应用添加首页小部件][home-screen]<br>
+  学习如何通过你的 Flutter 应用添加一个首页小部件。
+  小部件会展示在首页、锁屏页以及今日预览中。
+
 [Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
+[home-screen]:   {{site.codelabs}}/flutter-home-screen-widgets
 [How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
 [provider]: {{site.pub}}/packages/provider
 [Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher

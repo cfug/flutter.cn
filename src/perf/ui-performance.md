@@ -12,8 +12,9 @@ keywords: 性能分析,性能调试工具,开发者工具,60fps,120fps,profile m
 {% include docs/performance.md %}
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
-  
+
+  <h4 class="no_toc">What you'll learn</h4>
+
   <h4 class="no_toc">你将学到</h4>
 
   * Flutter aims to provide 60 frames per second (fps) performance,
@@ -113,14 +114,14 @@ iOS 设备上以 [分析模式][profile mode] 进行。
   
   <h4 class="no_toc" markdown="1">**为什么应该在真机上运行：**</h4>
 
-* Simulators and emulators don’t use the same hardware, so their
+* Simulators and emulators don't use the same hardware, so their
   performance characteristics are different&mdash;some operations are
   faster on simulators than real devices, and some are slower.
-  
+
   各种模拟器使用的硬件并不相同，因此性能也不同&mdash;模拟器上的
   一些操作会比真机快，而另一些操作则会比真机慢。
-  
-* Debug mode enables additional checks (such as asserts) that don’t run
+
+* Debug mode enables additional checks (such as asserts) that don't run
   in profile or release builds, and these checks can be expensive.
   
   调试模式相比分析模式或者发布编译来说，
@@ -129,7 +130,7 @@ iOS 设备上以 [分析模式][profile mode] 进行。
 * Debug mode also executes code in a different way than release mode.
   The debug build compiles the Dart code "just in time" (JIT) as the
   app runs, but profile and release builds are pre-compiled to native
-  instructions (also called “ahead of time”, or AOT) before the app is
+  instructions (also called "ahead of time", or AOT) before the app is
   loaded onto the device. JIT can cause the app to pause for JIT
   compilation, which itself can cause jank.
   
@@ -144,7 +145,7 @@ iOS 设备上以 [分析模式][profile mode] 进行。
 
 ### 在分析模式运行
 
-Flutter’s profile mode compiles and launches your application
+Flutter's profile mode compiles and launches your application
 almost identically to release mode, but with just enough additional
 functionality to allow debugging performance problems.
 For example, profile mode provides tracing information to the
@@ -173,18 +174,12 @@ Launch the app in profile mode as follows:
 
 使用分析模式运行应用的方法：
 
-- In VS Code, open your `launch.json` file, and set the
+* In VS Code, open your `launch.json` file, and set the
   `flutterMode` property to `profile`
   (when done profiling, change it back to `release` or `debug`):
 
   在 VS Code 中，打开 `launch.json` 文件，
   设置 `flutterMode` 属性为 `profile`（当分析完成后，改回 `release` 或者 `debug`）：
-
-- In Android Studio and IntelliJ, use the
-  **Run > Flutter Run main.dart in Profile Mode** menu item.
-
-  在 Android Studio 和 IntelliJ 使用
-  **Run > Flutter Run main.dart in Profile Mode** 选项
 
   ```json
   "configurations": [
@@ -199,13 +194,12 @@ Launch the app in profile mode as follows:
 * In Android Studio and IntelliJ, use the
   **Run > Flutter Run main.dart in Profile Mode** menu item.
 
-  在 Android Studio 和 IntelliJ 中，你可以使用菜单项里的
-  **Run > Flutter Run main.dart in Profile Mode** 运行；
+  在 Android Studio 和 IntelliJ 使用
+  **Run > Flutter Run main.dart in Profile Mode** 选项。
 
 * From the command line, use the `--profile` flag:
 
   命令行使用 `--profile` 参数运行：
-
 
   ```terminal
   $ flutter run --profile
@@ -253,7 +247,7 @@ Once your app is running in profile mode,
 The performance overlay displays statistics in two graphs
 that show where time is being spent in your app. If the UI
 is janky (skipping frames), these graphs help you figure out why.
-The graphs display on top of your running app, but they aren’t
+The graphs display on top of your running app, but they aren't
 drawn like a normal widget&mdash;the Flutter engine itself
 paints the overlay and only minimally impacts performance.
 Each graph represents the last 300 frames for that thread.
@@ -521,7 +515,7 @@ also shows red.
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the raster thread. When this happens,
 the UI graph has no red, but the GPU graph shows red.
-In this case, you’ll need to figure out what your code is doing
+In this case, you'll need to figure out what your code is doing
 that is causing rendering code to be slow. Specific kinds of workloads
 are more difficult for the GPU. They might involve unnecessary calls
 to [`saveLayer`][], intersecting opacities with multiple objects,
@@ -569,9 +563,9 @@ manipulated, a [`RepaintBoundary`][] might help.
 #### 检查屏幕之外的视图
 
 The [`saveLayer`][] method is one of the most expensive methods in
-the Flutter framework. It’s useful when applying post-processing
+the Flutter framework. It's useful when applying post-processing
 to the scene, but it can slow your app and should be avoided if
-you don’t need it.  Even if you don’t call `saveLayer` explicitly,
+you don't need it.  Even if you don't call `saveLayer` explicitly,
 implicit calls might happen on your behalf. You can check whether
 your scene is using `saveLayer` with the
 [`PerformanceOverlayLayer.checkerboardOffscreenLayers`][] switch.
@@ -683,7 +677,7 @@ At this point, disable the graphs and checkerboardOffScreenLayers.]
 Run the app and look for images rendered with a randomly colored
 checkerboard, indicating that the image is cached.
 As you interact with the scene, the checkerboarded images
-should remain constant&mdash;you don’t want to see flickering,
+should remain constant&mdash;you don't want to see flickering,
 which would indicate that the cached image is being re-cached.
 
 运行应用来查看使用随机颜色网格渲染的图像，标识被缓存的图像。
@@ -731,7 +725,7 @@ For details on how to do this, see [Show performance data][]
 
 ## 评分
 
-You can measure and track your app’s performance by writing
+You can measure and track your app's performance by writing
 benchmark tests. The Flutter Driver library provides support
 for benchmarking. Using this integration test framework,
 you can generate metrics to track the following:
@@ -771,7 +765,7 @@ For more information, check out [Integration testing][].
 
 ## 更多资源
 
-The following resources provide测试 Flutter 应用 more information on using
+The following resources provide more information on using
 Flutter's tools and debugging in Flutter:
 
 以下链接提供了关于 Flutter 工具的使用和 Flutter 调试的更多信息：

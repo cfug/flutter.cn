@@ -29,7 +29,7 @@
         - title: 声明式 UI 介绍
           permalink: /docs/get-started/flutter-for/declarative
         - title: Flutter 对比 Swift 的并发
-          permalink: /docs/resources/dart-swift-concurrency
+          permalink: /get-started/flutter-for/dart-swift-concurrency
     - title: Dart 语言概览
       permalink: https://dart.cn/overview
 
@@ -65,6 +65,8 @@
 - header: 用户界面
 - title: 介绍
   permalink: /docs/ui
+- title: Widget 目录
+  permalink: /docs/ui/widgets
 - title: 布局构建
   permalink: /docs/ui/layout
   children:
@@ -84,6 +86,8 @@
           permalink: /docs/cookbook/lists/grid-lists
         - title: 构建包含不同类型元素的列表
           permalink: /docs/cookbook/lists/mixed-list
+        - title: 构建元素之间包含间隔的列表
+          permalink: /docs/cookbook/lists/spaced-items
         - title: 处理长列表
           permalink: /docs/cookbook/lists/long-lists
     - title: 滚动
@@ -112,20 +116,10 @@
 - title: 设计 & 主题
   permalink: /docs/ui/design
   children:
+    - title: 共享主题样式
+      permalink: /docs/cookbook/design/themes
     - title: Material 设计
       permalink: /docs/ui/design/material
-      children:
-        - title: 概览
-          permalink: /docs/ui/design/material
-          match-page-url-exactly: true
-        - title: 利用主题来共享样式
-          permalink: /docs/cookbook/design/themes
-        - title: 添加抽屉
-          permalink: /docs/cookbook/design/drawer
-        - title: 显式提示栏
-          permalink: /docs/cookbook/design/snackbars
-        - title: 在应用中添加 tab
-          permalink: /docs/cookbook/design/tabs
     - title: 文字
       permalink: /docs/ui/design/text
       children:
@@ -135,6 +129,8 @@
           permalink: /docs/cookbook/design/fonts
         - title: 将字体从 package 中对外暴露
           permalink: /docs/cookbook/design/package-fonts
+        - title: Google 字体 package
+          permalink: https://pub.flutter-io.cn/packages/google_fonts
       # Consider renaming this 'Custom drawing & graphics'
       # once more docs are added
     - title: 自定义图形
@@ -176,7 +172,9 @@
           permalink: /docs/cookbook/forms/focus
         - title: 构建具有校验功能的表单
           permalink: /docs/cookbook/forms/validation
-    - title: 实现快捷方式
+    - title: 展示 SnackBar
+      permalink: /docs/cookbook/design/snackbars
+    - title: 实现快捷方式和捷径
       permalink: /docs/ui/interactivity/actions-and-shortcuts
     - title: 管理键盘焦点
       permalink: /docs/ui/interactivity/focus
@@ -199,12 +197,16 @@
     - title: 概览
       permalink: /docs/ui/navigation
       match-page-url-exactly: true
+    - title: 添加 Tab 到应用中
+      permalink: /docs/cookbook/design/tabs
     - title: 导航至新页面并返回
       permalink: /docs/cookbook/navigation/navigation-basics
     - title: 传递数据到新页面
       permalink: /docs/cookbook/navigation/passing-data
     - title: 从新页面返回数据
       permalink: /docs/cookbook/navigation/returning-data
+    - title: 在页面上添加抽屉
+      permalink: /docs/cookbook/design/drawer
     - title: 设置 Deeplink
       permalink: /docs/ui/navigation/deep-linking
     - title: 设置 Android Deeplink
@@ -241,8 +243,16 @@
     - title: API 概览
       permalink: /docs/ui/animations/overview
 
+- title: 应用的无障碍和国际化
+  permalink: /docs/accessibility-and-localization
+  children:
+    - title: 无障碍
+      permalink: /docs/accessibility-and-localization/accessibility
+    - title: 国际化
+      permalink: /docs/accessibility-and-localization/internationalization
+
 - divider
-- header: 开发
+- header: 界面以外的开发
 
 - title: 数据调用和后端
   permalink: /docs/data-and-backend
@@ -299,14 +309,6 @@
     - title: Google APIs
       permalink: /docs/data-and-backend/google-apis
 
-- title: 应用的无障碍和国际化
-  permalink: /docs/accessibility-and-localization
-  children:
-    - title: 无障碍
-      permalink: /docs/accessibility-and-localization/accessibility
-    - title: 国际化
-      permalink: /docs/accessibility-and-localization/internationalization
-
 - title: 平台集成
   permalink: /docs/platform-integration
   children:
@@ -316,6 +318,8 @@
       permalink: /docs/platform-integration/desktop
     - title: 撰写平台代码 (插件编写实现)
       permalink: /docs/platform-integration/platform-channels
+    - title: 自动化平台适配
+      permalink: /docs/platform-integration/platform-adaptations
     - title: Android 平台
       permalink: /docs/platform-integration/android
       children:
@@ -387,12 +391,10 @@
     - title: 开发 Package 和插件
       permalink: /docs/packages-and-plugins/developing-packages
     - divider
-    - title: Happy paths 项目
-      permalink: /docs/packages-and-plugins/happy-paths
     - title: Flutter Favorites 项目
       permalink: /docs/packages-and-plugins/favorites
-    - title: Package 和插件网站
-      permalink: https://pub.dev/flutter
+    - title: Package 仓库
+      permalink: https://pub.flutter-io.cn/flutter
 
 - title: 测试和调试
   permalink: /docs/testing
@@ -453,7 +455,7 @@
     - title: 概览
       permalink: /docs/perf
       match-page-url-exactly: true
-    - title: 使用 Impeller **新增**
+    - title: 使用 Impeller
       permalink: /docs/perf/impeller
     - title: 性能最佳实践
       permalink: /docs/perf/best-practices
@@ -469,6 +471,8 @@
       permalink: /docs/perf/rendering-performance
     - title: 性能分析
       permalink: /docs/perf/ui-performance
+    - title: Web 性能分析
+      permalink: /docs/perf/web-performance
     - title: 着色器编译时卡顿
       permalink: /docs/perf/shader
     - title: 性能指标
@@ -594,40 +598,33 @@
       permalink: /docs/testing/build-modes
     - title: 热重载
       permalink: /docs/tools/hot-reload
-    - title: 平台行为差异和适配
-      permalink: /docs/resources/platform-adaptations
 
 - title: 开发者资源列表
   permalink: /docs/resources
   children:
     - header: 学习
-    - title: 官方博文
-      permalink: /posts
-    - title: 社区中文教程
-      permalink: /community/tutorials
+    - title: 常见问题解答
+      permalink: /docs/resources/faq
     - title: 相关书籍
       permalink: /docs/resources/books
-    - title: 技术视频和在线资源
+    - title: 相关视频
       permalink: /docs/resources/videos
-    - title: Dart 资源列表
+    - title: 相关课程
+      permalink: /docs/resources/courses
+    - title: 学习 Dart
       permalink: /docs/resources/bootstrap-into-dart
     - header: 贡献
     - title: 提出 Bug
       permalink: /docs/resources/bug-reports
     - title: 为 Flutter 做出贡献
       permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+    - title: 设计文档
+      permalink: /docs/resources/design-docs
     - header: 工具包
     - title: 休闲游戏工具包
       permalink: /docs/resources/games-toolkit
     - title: 新闻内容工具包
       permalink: /docs/resources/news-toolkit
-    - header: 常见
-    - title: 常见问题解答
-      permalink: /docs/resources/faq
-    - title: 使用 Google 字体库
-      permalink: https://pub.flutter-io.cn/packages/google_fonts
-    - title: 官方品牌资源
-      permalink: https://flutter.cn/brand
 
 - title: 更多资料
   permalink: /docs/reference
@@ -635,13 +632,9 @@
   children:
     - title: 了解 Dash
       permalink: /docs/dash
-    - title: Flutter Widget 目录
-      permalink: /docs/ui/widgets
     - title: Flutter Widget 列表
-      permalink: /reference/widgets
+      permalink: /docs/reference/widgets
     - title: Flutter API 文档
-      permalink: https://api.flutter.dev
-    - title: flutter 命令行文档
+      permalink: https://api.flutter-io.cn
+    - title: Flutter 命令行文档
       permalink: /docs/reference/flutter-cli
-    - title: 安全误报
-      permalink: /docs/reference/security-false-positives

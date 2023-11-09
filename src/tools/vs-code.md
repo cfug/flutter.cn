@@ -39,22 +39,22 @@ updates are available.
 扩展的更新会定期发布。
 默认情况下，当有可用的更新时 VS Code 会自动更新扩展。
 
-To install updates manually:
+To install updates yourself:
 
 手动安装更新：
 
- 1. Click the **Extensions** button in the Side Bar.
+1. Click **Extensions** in the Side Bar.
 
-    点击侧边栏的 **Extensions** 按钮。
+   点击侧边栏的 **Extensions** 按钮。
 
- 1. If the Flutter extension is shown with an available update,
-    click the update button and then the reload button.
-    
-    如果 Flutter 扩展显示有可用更新，点击更新按钮，然后重载。
+1. If the Flutter extension has an available update,
+   click **Update** and then **Reload**.
 
- 1. Restart VS Code.
+   如果 Flutter 扩展显示有可用更新，点击更新按钮，然后重载。
 
-    重启 VS Code。
+1. Restart VS Code.
+
+   重启 VS Code。
 
 ## Creating projects
 
@@ -73,26 +73,45 @@ starter app template:
 
 通过 Flutter 入门应用模板新建 Flutter 项目：
 
- 1. Open the Command Palette
-    (`Ctrl`+`Shift`+`P` (`Cmd`+`Shift`+`P` on macOS)).
+1. Go to **View** <span aria-label="and then">></span>
+   **Command Palette...**.
 
-    打开命令面板（`Ctrl`+`Shift`+`P` （macOS 用 `Cmd`+`Shift`+`P`））。
+   打开 **View** <span aria-label="and then">></span>
+   **Command Palette...**。
 
- 1. Select the **Flutter: New Project** command and press `Enter`.
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>P</kbd>.
 
-    选择 **Flutter: New Project** 命令然后按 `Enter`。
+   你也可以按下 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>P</kbd>。
 
- 1. Select **Application** and press `Enter`.
+1. Type `flutter`.
 
-    选择 **Application** 然后按 `Enter`。
+   输入 `flutter`。
 
- 1. Select a **Project location**.
+1. Select the **Flutter: New Project**.
 
-    选择 **项目地址**。
+   选择 **Flutter: New Project** 命令。
 
- 1. Enter your desired **Project name**.
+1. Press <kbd>Enter</kbd>.
 
-    输入你想要的 **项目名**。
+   按下 <kbd>Enter</kbd>。
+
+1. Select **Application**.
+
+   选择 **Application**。
+
+1. Press <kbd>Enter</kbd>.
+
+   按下 <kbd>Enter</kbd>。
+
+1. Select a **Project location**.
+
+   选择 **项目地址**。
+
+1. Enter your desired **Project name**.
+
+   输入你想要的 **项目名**。
 
 ### Opening a project from existing source code
 
@@ -100,55 +119,70 @@ starter app template:
 
 To open an existing Flutter project:
 
-打开现有 Flutter 项目：
+1. Go to **File** <span aria-label="and then">></span> **Open**.
 
- 1. Click **File > Open** from the main IDE window.
- 
-    在 IDE 主窗口点击 **File > Open**。
- 
- 1. Browse to the directory holding your existing
-    Flutter source code files.
- 
-    选择存放现有 Flutter 源代码文件的目录。
-  
- 1. Click **Open**.
- 
-    点击 **Open**。
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>O</kbd>
+
+1. Browse to the directory holding your existing
+   Flutter source code files.
+1. Click **Open**.
 
 ## Editing code and viewing issues
 
 ## 编写代码及查看问题
 
-The Flutter extension performs code analysis that
-enables the following:
+The Flutter extension performs code analysis.
+The code analysis can:
 
 Flutter 扩展执行代码分析，它提供：
 
-* Syntax highlighting
+- Highlight language syntax
 
   语法高亮。
-  
-* Code completions based on rich type analysis
+
+- Complete code based on rich type analysis
 
   基于丰富输入分析的代码补全。
-  
-* Navigating to type declarations
-  (**Go to Definition** or `F12`),
-  and finding type usages
-  (**Find All References** or `Shift`+`F12`)
-  
+
+- Navigate to type declarations
+
   导航到类型声明（**Go to Definition** 或 `F12`）
-  和查找类型引用（**Find All References** 或 `Shift`+`F12`）。
-  
-* Viewing all current source code problems
-  (**View > Problems** or `Ctrl`+`Shift`+`M`
-  (`Cmd`+`Shift`+`M` on macOS))
-  Any analysis issues are shown in the Problems pane:<br>
-  ![Problems pane]({{site.url}}/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
-  
-  查看所有当前代码问题（**View > Problems** 或 `Ctrl`+`Shift`+`M` (macOS 用 `Cmd`+`Shift`+`M`)）。
-  所有问题分析都会在 Problems 面板展示：<br>
-  ![Problems pane]({{site.url}}/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
+
+  - Go to **Go** <span aria-label="and then">></span> **Go to Definition**.
+
+    前往 **Go** <span aria-label="and then">></span> **Go to Definition**。
+
+  - You can also press <kbd>F12</kbd>.
+
+    你也可以按下 <kbd>F12</kbd>。
+
+- Find type usages.
+
+  查找类型引用
+
+  - Press <kbd>Shift</kbd> + <kbd>F12</kbd>.
+
+    按下 <kbd>Shift</kbd> + <kbd>F12</kbd>。
+
+- View all current source code problems.
+
+  查看所有当前代码问题
+
+  - Go to **View** <span aria-label="and then">></span> **Problems**.
+
+    前往 **View** <span aria-label="and then">></span> **Problems**。
+
+  - You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+    <kbd>Shift</kbd> + <kbd>M</kbd>.
+
+    你也可以按下 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+    <kbd>Shift</kbd> + <kbd>M</kbd>。
+
+  - The Problems pane displays any analysis issues:<br>
+    ![Problems pane]({{site.url}}/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
+
+    所有问题分析都会在 Problems 面板展示：<br>
+    ![Problems pane]({{site.url}}/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
 
 ## Running and debugging
 
@@ -160,13 +194,13 @@ Flutter 扩展执行代码分析，它提供：
 
   有多种方式能够调试你的应用
 
-  * Using [DevTools][], a suite of debugging and profiling
-    tools that run in a browser. 
+  - Using [DevTools][], a suite of debugging and profiling
+    tools that run in a browser.
 
     使用 [DevTools][]，它是一个运行在浏览器中的
     调试以及性能测试工具集。
-    
-  * Using VS Code's built-in debugging features,
+
+    - Using VS Code's built-in debugging features,
     such as setting breakpoints.
 
     使用 VS Code 的内置调试功能，例如设置断点。
@@ -181,7 +215,7 @@ Flutter 扩展执行代码分析，它提供：
 {{site.alert.end}}
 
 Start debugging by clicking **Run > Start Debugging**
-from the main IDE window, or press `F5`.
+from the main IDE window, or press <kbd>F5</kbd>.
 
 在 IDE 主窗口点击 **Run > Start Debugging** 或按 `F5` 开启调试。
 
@@ -202,7 +236,7 @@ device name (or the message **No Devices**):<br>
 
 {{site.alert.note}}
 
-  * If you do not see a Flutter version number or device info,
+  - If you do not see a Flutter version number or device info,
     your project might not have been detected as a Flutter project.
     Ensure that the folder that contains your `pubspec.yaml` is
     inside a VS Code **Workspace Folder**.
@@ -211,12 +245,12 @@ device name (or the message **No Devices**):<br>
     你的项目可能不被识别为一个 Flutter 项目。
     请确认 VS Code **Workspace Folder** 的目录中是否含有 `pubspec.yaml`。
 
-  * If the status bar reads **No Devices**, Flutter has not been
+  - If the status bar reads **No Devices**, Flutter has not been
     able to discover any connected iOS or Android devices or simulators.
     You need to connect a device, or start a simulator or emulator,
     to proceed.
 
-    如果状态栏显示 **无设备** 表明 Flutter 
+    如果状态栏显示 **无设备** 表明 Flutter
     没有发现任何已连接的 IOS、Android 或者模拟器。
     你需要连接设备或者启动模拟器。
 
@@ -252,43 +286,46 @@ Flutter 扩展会自动选择上次连接的设备。
 
 ### 无断点运行
 
- 1. Click **Run > Start Without Debugging** in the
-    main IDE window, or press `Ctrl`+`F5`.
+Go to **Run** > **Start Without Debugging**.
 
-    在 IDE 主窗口点击 **Run > Start Without Debugging**，
-    或者按 `Ctrl`+`F5`，状态栏变橙色说明你正处于调试模式。<br>
-    ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
-    
+在 IDE 主窗口点击 **Run > Start Without Debugging**。
+
+You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>.
+
+或者按 <kbd>Ctrl</kbd> + <kbd>F5</kbd>。
+
 ### Run app with breakpoints
 
 ### 断点运行
 
- 1. If desired, set breakpoints in your source code.
+1. If desired, set breakpoints in your source code.
 
-    如果需要，在源代码中设置断点。
+   如果需要，在源代码中设置断点。
 
- 1. Click **Run > Start Debugging** in the main IDE window,
-    or press `F5`. The status bar turns orange to show you are in a debug session.<br>
-    ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
+1. Click **Run** <span aria-label="and then">></span> **Start Debugging**.
+   You can also press <kbd>F5</kbd>.
+   The status bar turns orange to show you are in a debug session.<br>
+   ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
 
-    在 IDE 主窗口点击 **Run > Start Debugging** 或按 `F5`。
+   在 IDE 主窗口点击 **Run > Start Debugging** 或按 `F5`。
+   ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
 
-    * The left **Debug Sidebar** shows stack frames and variables.
+   - The left **Debug Sidebar** shows stack frames and variables.
 
-      左侧的**调试侧边栏**显示堆栈帧和变量。
+     左侧的**调试侧边栏**显示堆栈帧和变量。
 
-    * The bottom **Debug Console** pane shows detailed logging output.
+   - The bottom **Debug Console** pane shows detailed logging output.
 
-      底部的**调试控制台**面板显示输出的日志详情。
+     底部的**调试控制台**面板显示输出的日志详情。
 
-    * Debugging is based on a default launch configuration.
-      To customize, click the cog at the top of the
-      **Debug Sidebar** to create a `launch.json` file.
-      You can then modify the values.
+   - Debugging is based on a default launch configuration.
+     To customize, click the cog at the top of the
+     **Debug Sidebar** to create a `launch.json` file.
+     You can then modify the values.
 
-      调试基于默认的配置。
-      也可以通过点击**调试侧边栏**顶部的齿轮创建 `launch.json` 文件自定义调试。
-      你可以修改里面的值。
+     调试基于默认的配置。
+     也可以通过点击**调试侧边栏**顶部的齿轮创建 `launch.json` 文件自定义调试。
+     你可以修改里面的值。
 
 ### Run app in debug, profile, or release mode
 
@@ -300,41 +337,59 @@ You can read more about them in [Flutter's build modes][].
 Flutter 提供了很多种不同的构建模式运行你的应用，
 更多内容请参考文档 [Flutter 的构建模式][Flutter's build modes]。
 
- 1. Open the `launch.json` file in VS Code.
-    
-    打开 VS Code 里的 `launch.json` 文件
+1. Open the `launch.json` file in VS Code.
 
-    If you do not have a `launch.json` file, go to 
-    the **Run** view in VS Code and click **create a launch.json file**.
-    
-    如果你没有 `launch.json` 文件，请到 VS Code 的 **Run** 视图，
-    点击 **create a launch.json file** 创建。
-    
- 1. In the `configurations` section, change the `flutterMode` property to 
- the build mode you want to target. 
+   打开 VS Code 里的 `launch.json` 文件
 
-    在 `configurations` 部分，修改 `flutterMode` 属性值为你想要的构建模式即可。
-    
-     * For example, if you want to run in debug mode, 
-     your `launch.json` might look like this: 
-     
-       举个例子，如果你希望在调试模式下运行，
-       你的 `launch.json` 文件应该类似下面这样：
-       
-     ```json
-      "configurations": [
-       {
-         "name": "Flutter",
-         "request": "launch",
-         "type": "dart",
-         "flutterMode": "debug"
-       }
-     ]
-     ```
- 1. Run the app through the **Run** view. 
- 
-    在 **Run** 视图里运行你的应用。
+   If you don't have a `launch.json` file:
 
+   如果你没有 `launch.json` 文件。
+
+   {: type="a"}
+   1. Go to **View** <span aria-label="and then">></span> **Run**.
+
+      前往 **View** <span aria-label="and then">></span> **Run**。
+
+      You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+      <kbd>Shift</kbd> + <kbd>D</kbd>
+
+      你也可以按下 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+      <kbd>Shift</kbd> + <kbd>D</kbd>。
+
+      The **Run and Debug** panel displays.
+
+      **Run and Debug** 面板会展示。
+
+   1. Click **create a launch.json file**.
+
+      点击 **create a launch.json file** 创建。
+
+1. In the `configurations` section,
+   change the `flutterMode` property to
+   the build mode you want to target.
+
+   在 `configurations` 部分，修改 `flutterMode` 属性值为你想要的构建模式即可。
+
+   For example, if you want to run in debug mode,
+   your `launch.json` might look like this:
+
+   举个例子，如果你希望在调试模式下运行，
+   你的 `launch.json` 文件应该类似下面这样：
+
+    ```json
+    "configurations": [
+      {
+        "name": "Flutter",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug"
+      }
+    ]
+    ```
+
+1. Run the app through the **Run** panel.
+
+   通过 **Run** 面板运行你的应用。
 
 ## Fast edit and refresh development cycle
 
@@ -414,8 +469,7 @@ If you have additional tips we should share, [let us know][]!
 Assists are code changes related to a certain code identifier.
 A number of these are available when the cursor is placed on a
 Flutter widget identifier, as indicated by the yellow lightbulb icon.
-The assist can be invoked by clicking the lightbulb, or by using the
-keyboard shortcut `Ctrl`+`.` (`Cmd`+`.` on Mac), as illustrated here:
+To invoke the assist, click the lightbulb as shown in the following screenshot:
 
 代码辅助功能是特定代码标识符相关的代码修改。
 当光标放在 Flutter widget 上时，黄色灯泡图标会指示可用的修改，
@@ -424,6 +478,8 @@ keyboard shortcut `Ctrl`+`.` (`Cmd`+`.` on Mac), as illustrated here:
 如图所示：
 
 ![Code assists]({{site.url}}/assets/images/docs/tools/vs-code/assists.png){:width="467px"}
+
+You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>.</kbd>
 
 Quick fixes are similar,
 only they are shown with a piece of code has an error and they
@@ -477,26 +533,24 @@ can assist in correcting it.
 Snippets can be used to speed up entering typical code structures.
 They are invoked by typing their prefix,
 and then selecting from the code completion window:
+![Snippets]({{site.url}}/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}-
+-he Flutter extension includes the following -nippets:
 
 代码片段可以用来加速输入通用类型代码段。
 通过输入前缀来调用，然后从代码完成窗口中选择：
+![Snippets]({{site.url}}/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}-
+-he Flutter extension includes the following -nippets:
 
-![Snippets]({{site.url}}/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}
-
-The Flutter extension includes the following snippets:
-
-Flutter 扩展包含以下片段：
-
-* Prefix `stless`: Create a new subclass of `StatelessWidget`.
+- Prefix `stless`: Create a new subclass of -StatelessWidget`.
 
   前缀 `stless`：创建一个 `StatelessWidget` 子类。
-  
-* Prefix `stful`: Create a new subclass of `StatefulWidget`
+
+- Prefix `stful`: Create a new subclass of `StatefulWidget`
   and its associated State subclass.
-  
+
   前缀 `stful`：创建一个 `StatefulWidget` 子类，并且和 State 子类关联。
-  
-* Prefix `stanim`: Create a new subclass of `StatefulWidget`,
+
+- Prefix `stanim`: Create a new subclass of `StatefulWidget`,
   and its associated State subclass including a field initialized
   with an `AnimationController`.
   
@@ -513,13 +567,16 @@ You can also define custom snippets by executing
 ### 键盘快捷键
 
 **Hot reload**
-<br> During a debug session, clicking the **Hot Reload** button on the
-  **Debug Toolbar**, or pressing `Ctrl`+`F5`
-  (`Cmd`+`F5` on macOS) performs a hot reload.
+<br> To perform a hot reload during a debug session,
+  click **Hot Reload** on the **Debug Toolbar**.
 
-**热重载**
-<br> 调试期间，在 **调试工具栏** 点击 **热重载 (Hot Reload)** 按钮，
-  或者按 `Ctrl`+`F5`（macOS 用 `Cmd`+`F5`）执行热重载。
+<br> 调试期间，在 **调试工具栏** 点击 **热重载 (Hot Reload)** 按钮。
+
+  You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>
+  (<kbd>Cmd</kbd> + <kbd>F5</kbd>  on macOS).
+
+  你也可以按下 <kbd>Ctrl</kbd> + <kbd>F5</kbd>
+  （macOS 为 <kbd>Cmd</kbd> + <kbd>F5</kbd>）。
 
   Keyboard mappings can be changed by executing the
   **Open Keyboard Shortcuts** command from the [Command Palette][].
@@ -541,26 +598,31 @@ A few types of code changes cannot be hot reloaded though:
 不仅包括添加新类，还包括添加方法和字段到已有的类中。
 但有些类型的代码是无法被热重载的：
 
-* Global variable initializers
+- Global variable initializers
 
   全部变量的初始化
 
-* Static field initializers
+- Static field initializers
 
   静态变量的初始化
 
-* The `main()` method of the app
+- The `main()` method of the app
 
   应用的 `main()` 方法
 
-For these changes, fully restart your application without
-having to end your debugging session. To perform a hot restart,
-run the **Flutter: Hot Restart** command from the [Command Palette][],
-or press `Ctrl`+`Shift`+`F5`(`Cmd`+`Shift`+`F5` on macOS).
+For these changes, restart your app without
+ending your debugging session. To perform a hot restart,
+run the **Flutter: Hot Restart** command from the [Command Palette][].
 
 对于这些更改，你无需结束调试过程而直接热重启 (hot restart) 你的应用。
-要执行热重启，执行 [命令面板][Command Palette] 的 **Flutter：热重启**命令，
-或者按 ``Ctrl`+`Shift`+`F5 (在 macOS 上使用 `Cmd`+`Shift`+`F5`)。
+要执行热重启，执行 [命令面板][Command Palette] 的 **Flutter：Hot Restart** 命令，
+
+You can also press
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd>
+or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd> on macOS.
+
+你也可以按下 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd>
+（在 macOS 上使用 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd>）。
 
 ## Troubleshooting
 
@@ -572,22 +634,23 @@ or press `Ctrl`+`Shift`+`F5`(`Cmd`+`Shift`+`F5` on macOS).
 
 All known bugs are tracked in the issue tracker:
 [Dart and Flutter extensions GitHub issue tracker][issue tracker].
+We welcome feedback,
+both on bugs/issues and feature requests.
 
 所有已知 bug 在这个 issue 列表中记录：
 [Dart 和 Flutter 扩展 GitHub issue 追踪][issue tracker]。
+我们非常欢迎 bugs/issues 和特性请求的反馈。
 
-We welcome feedback,
-both on bugs/issues and feature requests.
 Prior to filing new issues:
 
-我们非常欢迎 bugs/issues 和特性请求的反馈。在提交新 issue 之前：
+在提交新 issue 之前：
 
-* Do a quick search in the issue trackers to see if the
+- Do a quick search in the issue trackers to see if the
   issue is already tracked.
-  
+
   在 issue 列表中查找看该问题是否已被记录。
-  
-* Make sure you are [up to date](#updating) with the most recent
+
+- Make sure you are [up to date](#updating) with the most recent
   version of the plugin.
 
   确保你已经 [更新](#updating) 最新版本插件。

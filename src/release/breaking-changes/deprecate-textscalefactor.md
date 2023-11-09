@@ -1,6 +1,8 @@
 ---
 title: Deprecate textScaleFactor in favor of TextScaler
-description: The new class, `TextScaler`, replaces the `textScaleFactor` scalar in preparation for Android 14 nonlinear text scaling support.
+description: >
+  The new class, `TextScaler`, replaces the `textScaleFactor` scalar in
+  preparation for Android 14 nonlinear text scaling support.
 ---
 
 ## Summary
@@ -253,12 +255,12 @@ runApp(
 );
 ```
 This trick uses the deprecated `textScaleFactor` API and will stop working once
-it is removed from the Flutter API.
+it's removed from the Flutter API.
 
 ## Timeline
 
 Landed in version: 3.13.0-4.0.pre<br>
-In stable release: not yet
+In stable release: not yet (Not in 3.13)
 
 ## References
 
@@ -280,11 +282,11 @@ Relevant PRs:
 
 
 [Android 14 nonlinear font scaling]: https://developer.android.com/about/versions/14/features#non-linear-font-scaling
-[`TextScaler`]: {{site.master-api}}/flutter/painting/TextScaler-class.html
-[`MediaQuery.textScalerOf`]: {{site.master-api}}/flutter/widgets/MediaQuery/textScalerOf.html
-[`MediaQuery.maybeTextScalerOf`]: {{site.master-api}}/flutter/widgets/MediaQuery/maybeTextScalerOf.html
-[`MediaQuery.withNoTextScaling`]: {{site.master-api}}/flutter/widgets/MediaQuery/withNoTextScaling.html
-[`MediaQuery.withClampedTextScaling`]: {{site.master-api}}/flutter/widgets/MediaQuery/withClampedTextScaling.html
+[`TextScaler`]: {{site.main-api}}/flutter/painting/TextScaler-class.html
+[`MediaQuery.textScalerOf`]: {{site.main-api}}/flutter/widgets/MediaQuery/textScalerOf.html
+[`MediaQuery.maybeTextScalerOf`]: {{site.main-api}}/flutter/widgets/MediaQuery/maybeTextScalerOf.html
+[`MediaQuery.withNoTextScaling`]: {{site.main-api}}/flutter/widgets/MediaQuery/withNoTextScaling.html
+[`MediaQuery.withClampedTextScaling`]: {{site.main-api}}/flutter/widgets/MediaQuery/withClampedTextScaling.html
 
 [New font scaling system (Issue 116231)]: {{site.repo.flutter}}/issues/116231
 [Replaces `textScaleFactor` with `TextScaler`]: {{site.repo.flutter}}/pull/128522

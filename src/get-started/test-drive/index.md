@@ -16,15 +16,43 @@ next:
 toc: false
 ---
 
-This page describes how to create a new Flutter app from templates, run it,
-and experience "hot reload" after you make changes to the app.
+This page describes the following tasks:
 
-本页面讲解如何通过模板实现一个 Flutter 应用，
-执行并且在修改程序之后触发“热重载 (hot reload)”功能。
+本篇文章讲解以下内容：
 
-Select your development tool of choice for writing, building, and running Flutter apps.
+1. How to create a new Flutter app from templates.
 
-选择你用于编写、编译、执行 Flutter 应用的开发环境吧。
+   如何基于模板创建新的 Flutter 应用。
+
+1. How to run the created Flutter app.
+
+   如何运行创建好的 Flutter 应用。
+
+1. How to use "hot reload" after you make changes to the app.
+
+   如何在应用中使用「热重载」应用你的更改。
+
+Details for these tasks depend on the integrated development environment
+(IDE) you use.
+
+这些任务的细节会根据你使用的 IDE 的不同有所变化。
+
+The first two options listed rely on the Flutter plugin for
+the respective IDE.
+Visual Studio Code, Android Studio, and IntelliJ IDEA Community,
+Educational, and Ultimate editions support Flutter development
+through plugins.
+
+前两个任务依赖于 IDE 上的 Flutter 插件。
+Visual Studio Code、Android Studio、以及 IntelliJ IDEA 的
+Community、Educational 和 Ultimate 版本都通过插件支持 Flutter 开发。
+
+The third option explains how to use an editor of your choice and
+the terminal to run the commands.
+
+第三个任务向你解释了如何用你使用的编辑器或者终端来运行命令。
+
+Select your preferred IDE for Flutter apps.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -45,9 +73,3 @@ Select your development tool of choice for writing, building, and running Flutte
   {% include_relative _androidstudio.md %}
   {% include_relative _terminal.md %}
 </div>
-
-
-[Install]: {{site.url}}/get-started/install
-[Main IntelliJ toolbar]: {{site.url}}/assets/images/docs/tools/android-studio/main-toolbar.png
-[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
-[Material Components]: {{site.material}}/components

@@ -9,16 +9,19 @@ keywords: 开发者工具,性能视图,Dart,性能优化
 
 {{site.alert.note}}
 
-  The performance view works with Flutter mobile, Flutter desktop,
-  Use [Chrome DevTools][] to debug performance for a Dart or
-  Flutter web app.
+  The DevTools performance view works for Flutter mobile and desktop apps.
+  For web apps, Flutter adds timeline events to the
+  performance panel of Chrome DevTools instead. 
+  To learn about profiling web apps, check out [Debugging web performance][].
 
   性能视图可用于 Flutter 移动端、Flutter 桌面端、Dart 和 Flutter 网页端应用。
-  使用 [Chrome DevTools][] 来调试 Dart 或 Flutter 网页应用的性能。
-  
+  Flutter 会在 Chrome DevTools 中添加时间线事件。
+  若你想了解如何分析 Flutter 网页应用的性能，请参阅
+  [调试 Web 应用性能][Debugging web performance]。
+
 {{site.alert.end}}
 
-[Chrome DevTools]: https://developer.chrome.com/docs/devtools/
+[Debugging web performance]: {{site.url}}/perf/web-performance
 
 The performance page can help you diagnose performance
 problems and UI jank in your application.
@@ -110,9 +113,9 @@ UI 线程和光栅线程（以前称为 GPU 线程）。
 This chart contains Flutter frame timing information for your
 application. Each pair of bars in the chart represents a single
 Flutter frame. Selecting a frame from this chart updates the data
-that is displayed below in the [Frame analysis](#frame-analysis) tab
-or the [Timeline events](#timeline-events) tab.
-(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats)
+that is displayed below in the [Frame analysis](#frame-analysis-tab) tab
+or the [Timeline events](#timeline-events-tab) tab.
+(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats-tab)
 is a standalone feature without data per frame).
 
 此图表在时间线上显示应用的帧信息。

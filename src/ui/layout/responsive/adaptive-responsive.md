@@ -245,11 +245,11 @@ in the following resources:
   [不同平台操作体验的差异和适配][Platform-specific behaviors and adaptations]，
   站内的另一篇文档。
 
-* [Designing truly adaptive user interfaces][] a blog post and video
-  by Aloïs Deniel, presented at this year's FlutterViking conference.
+* [Designing truly adaptive user interfaces][] a blog post and video by
+  Aloïs Deniel, presented at the Flutter Vikings 2020 conference.
 
   [设计真正能够自适应的用户交互][Designing truly adaptive user interfaces]，
-  由 Aloïs Deniel 在今年的 FlutterViking 会议上发布的文章和视频。
+  由 Aloïs Deniel 在 2020 年的 FlutterViking 会议上发布的文章和视频。
 
 * The [Flutter gallery app][] ([repo][]) has been written as an
   adaptive app.
@@ -261,9 +261,9 @@ in the following resources:
 [Adaptive layouts, part 2]: {{site.youtube-site}}/watch?v=eikOZzfc0l4&t=11s
 [Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 
-[Designing truly adaptive user interfaces]: https://aloisdeniel.com/#/posts/adaptative-ui
+[Designing truly adaptive user interfaces]: https://www.aloisdeniel.com/blog/designing-truly-adaptative-user-interfaces
 [Flutter gallery app]: {{site.gallery}}
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
-[Platform-specific behaviors and adaptations]: {{site.url}}/resources/platform-adaptations
+[Platform-specific behaviors and adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [repo]: {{site.repo.gallery}}

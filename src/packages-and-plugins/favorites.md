@@ -28,20 +28,14 @@ You can see the complete list of
 
 {{site.alert.note}}
 
-  Looking to add more functionality to your app?
-  The [Happy paths project][] guides you with
-  opinionated recommendations for 
-  plugins and packages that can take your app
-  to the next level.
+  If you came here looking for the Happy Paths recommendations,
+  we have discontinued that project in favor of Flutter Favorites.
 
-  正在为自己的应用准备加入更多新功能吗？
-  [Happy path 项目][Happy paths project] 了解一下？
-  我们为有「选择困难症」的开发者们提供了一些「精选」的插件和 package，
-  帮助你的应用更上一层楼。
+  如果你正在寻求 Happy Paths 的推荐，
+  请参考 Flutter Favorite 项目。
+  我们已不再继续 Happy Path 项目。
 
 {{site.alert.end}}
-
-[Happy paths project]: {{site.url}}/packages-and-plugins/happy-paths
 
 ## Metrics
 
@@ -55,41 +49,41 @@ Flutter Favorite packages 通过以下指标来确认是否达到高质量标准
 * [Overall package score][]
 
   Package 的 [整体分数][Overall package score]
-  
+
 * **Permissive license**,
   including (but not limited to)
   Apache, Artistic, BSD, CC BY, MIT, MS-PL and W3C
-  
+
   **宽松许可证**,
   包括但不限于
   Apache、Artistic、BSD、CC BY、MIT、MS-PL 和 W3C
-  
+
 * GitHub **version tag** matches the current version from
   pub.dev, so you can see exactly what source is in the package
-  
+
   GitHub **版本标签**与从 pub.dev 获取的当前版本匹配，
   以便你可以准确地看到 packages 的源码
-  
+
 * Feature **completeness**&mdash;and not marked as incomplete
-  (for example, with labels like “beta” or “under construction”)
-  
+  (for example, with labels like "beta" or "under construction")
+
   特性 **完整** ——并且没有被标记为不完整
   （例如带着 「beta」 或 「under construction」 标签)
-  
+
 * [Verified publisher][]
 
   成为 [已验证发布者][Verified publisher]
-  
+
 * General **usability** when it comes to the overview,
   docs, sample/example code, and API quality
-  
+
   当其涉及到概述、文档、样本/示例代码和 API 质量时，
   具备一般 **可用性**
-  
+
 * Good **runtime behavior** in terms of CPU and memory usage
 
   在 CPU 和内存占用方面，具有优异的 **运行时行为**
-  
+
 * High quality **dependencies**
 
   高质量 **依赖项**
@@ -143,7 +137,7 @@ Flutter Favorite packages 会由 Flutter 团队在 pub.dev 上标注。
 如果你拥有一个 package 被标注未 Flutter Favorite，那么你必须遵守以下准则：
 
 * Flutter Favorite package authors can place the Flutter Favorite
-  logo in the package’s GitHub README, on the package’s
+  logo in the package's GitHub README, on the package's
   pub.dev **Overview** tab,
   and on social media as related to posts about that package.
   
@@ -165,21 +159,21 @@ Flutter Favorite packages 会由 Flutter 团队在 pub.dev 上标注。
 * If a Flutter Favorite package loses its Flutter Favorite status,
   the author will be notified,
   at which point the author must immediately remove all uses
-  of “Flutter Favorite” and the Flutter Favorite logo from
+  of "Flutter Favorite" and the Flutter Favorite logo from
   the affected package.
-  
+
   假定一个 Flutter Favorite package 失去了它的 Flutter Favorite 标记，作者将收到通知。
   届时，作者必须立即删除所有受影响的 packages 所使用「Flutter Favorite」和「Flutter Favorite 徽标」。
-  
-* Don’t alter, distort,
+
+* Don't alter, distort,
   or modify the Flutter Favorite logo in any way,
   including displaying the logo with color variations
   or unapproved visual elements.
-  
+
   不得以任何方式改变、歪曲或修改 Flutter Favorite 的徽标，
   包括通过颜色变换或未经批准的视觉元素来展示该徽标。
-  
-* Don’t display the Flutter Favorite logo in a manner that
+
+* Don't display the Flutter Favorite logo in a manner that
   is misleading, unfair, defamatory, infringing, libelous,
   disparaging, obscene, or otherwise objectionable to Google.
 
@@ -202,7 +196,7 @@ such as tools, consulting firms, and prolific Flutter contributors.
 如工具、咨询公司和高产的 Flutter 贡献者，也可以从 Flutter Favorite 计划中获益。
 
 As the Flutter ecosystem grows,
-we’ll be looking at expanding the set of metrics,
+we'll be looking at expanding the set of metrics,
 which might include the following:
 
 随着 Flutter 生态系统的发展。我们将着眼于扩大指标设置，

@@ -97,7 +97,7 @@ class MyApp extends StatelessWidget {
 ## 从本地存储加载占位符
 
 You can also consider using local assets for placeholders.
-First, add the asset to the project’s `pubspec.yaml` file
+First, add the asset to the project's `pubspec.yaml` file
 (for more details, see [Adding assets and images][]):
 
 也可以考虑使用本地资源作为占位符。

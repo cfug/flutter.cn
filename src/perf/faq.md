@@ -143,7 +143,7 @@ about evaluating and debugging Flutter's performance.
 
 [Get the display refresh rate]: {{site.repo.flutter}}/wiki/Engine-specific-Service-Protocol-extensions#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
 
-* How to solve my app’s poor animations caused by an expensive
+* How to solve my app's poor animations caused by an expensive
   Dart async function call that is blocking the UI thread?
 
   如何解决我的应用程序因高消耗的 Dart 异步函数调用
@@ -158,7 +158,7 @@ about evaluating and debugging Flutter's performance.
 [`compute()`]: {{site.api}}/flutter/foundation/compute-constant.html
 [Parse JSON in the background]: {{site.url}}/cookbook/networking/background-parsing
 
-* How do I determine my Flutter app’s package size that a
+* How do I determine my Flutter app's package size that a
   user will download?
 
   我如何确定用户下载的 Flutter 应用程序包的体积？
@@ -197,7 +197,7 @@ about evaluating and debugging Flutter's performance.
 
     注意，一个查看截图的已知问题：
 
-    * [Issue 21237][]: Doesn’t record images in real devices.
+    * [Issue 21237][]: Doesn't record images in real devices.
 
       [Issue 21237][]: 无法在真机中截图。
 

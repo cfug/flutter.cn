@@ -36,7 +36,7 @@
       <div class="site-header__sheet">
         <ul class="navbar-nav">
           <div class="site-sidebar site-sidebar--header d-md-none">
-            {% include_cached sidenav-level-1.html nav=site.data.sidenav page_url_path=route %}
+            {% include sidenav-level-1.html nav=site.data.sidenav page_url_path=route base_id="header" %}
           </div>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
@@ -78,7 +78,7 @@
             <div class="dropdown-menu" aria-labelledby="ecosystem-navbar-dropdown">
               <a class="dropdown-item" href="{{site.main-url}}/community">社区</a>
               <!-- <a class="dropdown-item" href="{{site.main-url}}/events">Events</a> -->
-              <a class="dropdown-item" href="{{site.main-url}}/monetization">盈利</a>
+              <a class="dropdown-item" href="{{site.main-url}}/culture">文化</a>
             </div>
           </li>
           <li class="nav-item">

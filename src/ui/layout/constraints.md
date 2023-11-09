@@ -45,7 +45,7 @@ why that `Column` is overflowing, or what
 为什么 `Column` 又溢出边界，亦或是 `IntrinsicWidth` 应该做什么。
 
 Instead, first tell them that Flutter layout is very different
-from HTML layout (which is probably where they’re coming from),
+from HTML layout (which is probably where they're coming from),
 and then make them memorize the following rule:
 
 其实我们首先应该做的，是告诉他们 Flutter 的布局方式与 HTML 的布局差异相当大
@@ -59,7 +59,7 @@ and then make them memorize the following rule:
   </t>
 </font></center>
 
-Flutter layout can’t really be understood without knowing
+Flutter layout can't really be understood without knowing
 this rule, so Flutter developers should learn it early on.
 
 如果我们在开发时无法熟练运用这条规则，在布局时就不能完全理解其原理，
@@ -157,7 +157,7 @@ The negotiation goes something like this:
 **Widget**: "很好。我的第一个子级将被放在 `x: 5` & `y: 5` 的位置，
    而我的第二个子级将在 `x: 80` & `y: 25` 的位置。"
 
-**Widget**: "Hey parent, I’ve decided that my size is going to be `300`
+**Widget**: "Hey parent, I've decided that my size is going to be `300`
    pixels wide, and `60` pixels tall."
 
 **Widget**: "嘿，我的父级，我决定我的大小为 `300` 像素宽度，`60` 像素高度。"
@@ -181,15 +181,15 @@ Flutter 的布局引擎的设计初衷是可以一次性完成整个布局的构
   一个 widget 仅在其父级给其约束的情况下才能决定自身的大小。
   这意味着 widget 通常情况下 **不能任意获得其想要的大小**。
 
-* A widget **can’t know and doesn’t decide its own position
-  in the screen**, since it’s the widget’s parent who decides
+* A widget **can't know and doesn't decide its own position
+  in the screen**, since it's the widget's parent who decides
   the position of the widget.
 
   一个 widget **无法知道，也不需要决定其在屏幕中的位置**。
   因为它的位置是由其父级决定的。
 
-* Since the parent’s size and position, in its turn,
-  also depends on its own parent, it’s impossible to
+* Since the parent's size and position, in its turn,
+  also depends on its own parent, it's impossible to
   precisely define the size and position of any widget
   without taking into consideration the tree as a whole.
 
@@ -408,8 +408,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                           for (int i = 0; i < widget.examples.length; i++)
                             Container(
                               width: 58,
-                              padding:
-                                  const EdgeInsets.only(left: 4, right: 4),
+                              padding: const EdgeInsets.only(left: 4, right: 4),
                               child: button(i + 1),
                             ),
                         ],
@@ -1445,7 +1444,7 @@ Container(width: 100, height: 100, color: red)
 ```
 
 The red `Container` wants to be 100 × 100,
-but it can’t, because the screen forces it to be
+but it can't, because the screen forces it to be
 exactly the same size as the screen.
 
 红色的 `Container` 想要变成 100 x 100 的大小，
@@ -1529,7 +1528,7 @@ same size as the screen, so the `Center` fills the screen.
 
 The `Center` tells the `Container` that it can be any size it wants,
 but not bigger than the screen. The `Container` wants to be
-of infinite size, but since it can’t be bigger than the screen,
+of infinite size, but since it can't be bigger than the screen,
 it just fills the screen.
 
 然后 `Center` 告诉 `Container` 可以变成任意大小，但是不能超出屏幕。
@@ -1565,7 +1564,7 @@ so it fills the whole screen.
 所以它充满了整个屏幕。
 
 But why does the `Container` decide that?
-Simply because that’s a design decision by those who
+Simply because that's a design decision by those who
 created the `Container` widget. It could have been
 created differently, and you have to read the
 [`Container`][] API documentation to understand
@@ -1784,8 +1783,8 @@ constraints from its `constraints` parameter onto its child.
 `ConstrainedBox` 将 `constraints` 参数带来的约束附加到其子对象上。
 
 The `Container` must be between 70 and 150 pixels.
-It wants to have 100 pixels, and that’s the size it has,
-since that’s between 70 and 150.
+It wants to have 100 pixels, and that's the size it has,
+since that's between 70 and 150.
 
 `Container` 必须介于 70 到 150 像素之间。
 虽然它希望自己有 100 个像素大小，
@@ -1864,8 +1863,8 @@ be any size it wants.
 并且 `OverflowBox` 允许其子容器设置为任意大小。
 
 `OverflowBox` is similar to `UnconstrainedBox`;
-the difference is that it won’t display any warnings
-if the child doesn’t fit the space.
+the difference is that it won't display any warnings
+if the child doesn't fit the space.
 
 `OverflowBox` 与 `UnconstrainedBox` 类似，但不同的是，
 如果其子级超出该空间，它将不会显示任何警告。
@@ -1891,7 +1890,7 @@ UnconstrainedBox(
 )
 ```
 
-This won’t render anything, and you'll see an error in the console.
+This won't render anything, and you'll see an error in the console.
 
 这将不会渲染任何东西，而且你能在控制台看到错误信息。
 
@@ -1901,7 +1900,7 @@ however its child is a `Container` with infinite size.
 `UnconstrainedBox` 让它的子级决定成为任何大小，
 但是其子级是一个具有无限大小的 `Container`。
 
-Flutter can’t render infinite sizes, so it throws an error with
+Flutter can't render infinite sizes, so it throws an error with
 the following message: `BoxConstraints forces an infinite width.`
 
 Flutter 无法渲染无限大的东西，所以它抛出以下错误：
@@ -1927,7 +1926,7 @@ UnconstrainedBox(
 )
 ```
 
-Here you won’t get an error anymore,
+Here you won't get an error anymore,
 because when the `LimitedBox` is given an
 infinite size by the `UnconstrainedBox`;
 it passes a maximum width of 100 down to its child.
@@ -2086,7 +2085,7 @@ FittedBox(
 
 `FittedBox` can only scale a widget that is bounded
 (has non-infinite width and height). Otherwise,
-it won’t render anything,
+it won't render anything,
 and you'll see an error in the console.
 
 `FittedBox` 只能在有限制的宽高中
@@ -2114,7 +2113,7 @@ as the screen.
 
 屏幕强制 `Row` 变得和屏幕一样大，所以 `Row` 充满屏幕。
 
-Just like an `UnconstrainedBox`, the `Row` won’t
+Just like an `UnconstrainedBox`, the `Row` won't
 impose any constraints onto its children,
 and instead lets them be any size they want.
 The `Row` then puts them side-by-side,
@@ -2149,8 +2148,8 @@ Row(
 )
 ```
 
-Since `Row` won’t impose any constraints onto its children,
-it’s quite possible that the children might be too big to fit
+Since `Row` won't impose any constraints onto its children,
+it's quite possible that the children might be too big to fit
 the available width of the `Row`. In this case, just like an
 `UnconstrainedBox`, the `Row` displays the "overflow warning".
 
@@ -2199,7 +2198,7 @@ the original child to have the `Expanded`'s width.
 来计算其该有的宽度。
 
 In other words, once you use `Expanded`,
-the original child’s width becomes irrelevant, and is ignored.
+the original child's width becomes irrelevant, and is ignored.
 
 换句话说，一旦你使用 `Expanded`，
 子级自身的宽度就变得无关紧要，直接会被忽略掉。
@@ -2299,9 +2298,9 @@ when sizing themselves.
 
 {{site.alert.note}}
 
-  This means that it’s impossible to expand `Row` children
+  This means that it's impossible to expand `Row` children
   proportionally to their sizes. The `Row` either uses
-  the exact child’s width, or ignores it completely
+  the exact child's width, or ignores it completely
   when you use `Expanded` or `Flexible`.
 
   这意味着，`Row` 要么使用子级的宽度，
@@ -2385,7 +2384,7 @@ as the `Scaffold` itself, you can wrap its child with
 
 ## 严格约束 (Tight) 与 宽松约束 (loose)
 
-It’s very common to hear that some constraint is
+It's very common to hear that some constraint is
 "tight" or "loose", so what does that mean?
 
 以后你经常会听到一些约束为严格约束或宽松约束，
@@ -2422,7 +2421,7 @@ forced by the box's tight constraints.
 另一个例子：如果你从根节点嵌套多个 box，
 它们会依次完全撑满，遵守严格约束。
 
-If you go to Flutter’s `box.dart` file and search for
+If you go to Flutter's `box.dart` file and search for
 the `BoxConstraints` constructors,
 you'll find the following:
 
@@ -2552,27 +2551,27 @@ or it can't reasonably align its children.
 
 ## 了解如何为特定 widget 制定布局规则
 
-Knowing the general layout rule is necessary, but it’s not enough.
+Knowing the general layout rule is necessary, but it's not enough.
 
 掌握通用布局是非常重要的，但这还不够。
 
 Each widget has a lot of freedom when applying the general rule,
 so there is no way of knowing how it behaves by just reading
-the widget’s name.
+the widget's name.
 
 应用一般规则时，每个 widget 都具有很大的自由度，
 所以没有办法只看 widget 的名称就知道可能它长什么样。
 
-If you try to guess, you’ll probably guess wrong.
-You can’t know exactly how a widget behaves unless
-you’ve read its documentation, or studied its source-code.
+If you try to guess, you'll probably guess wrong.
+You can't know exactly how a widget behaves unless
+you've read its documentation, or studied its source-code.
 
 如果你尝试推测，可能就会猜错。
 除非你已阅读 widget 的文档或研究了其源代码，
 否则你无法确切知道 widget 的行为。
 
 The layout source-code is usually complex,
-so it’s probably better to just read the documentation.
+so it's probably better to just read the documentation.
 However, if you decide to study the layout source-code,
 you can easily find it by using the navigating capabilities
 of your IDE.
@@ -2587,7 +2586,7 @@ Here's an example:
 * Find a `Column` in your code and navigate to its
   source code. To do this, use `command+B` (macOS)
   or `control+B` (Windows/Linux) in Android Studio or IntelliJ.
-  You’ll be taken to the `basic.dart` file.
+  You'll be taken to the `basic.dart` file.
   Since `Column` extends `Flex`, navigate to the `Flex`
   source code (also in `basic.dart`).
 

@@ -2,36 +2,17 @@
 
 ## Linux 安装
 
-### Additional Linux requirements
+### Linux prerequisites
 
-### 其他 Linux 需要的内容
+### Linux 准备工作
 
-For Linux desktop development,
-you need the following in addition to the Flutter SDK:
+To develop Linux desktop apps with Flutter, you need the following tools:
 
-对于开发 Linux 桌面端应用来说，除了 Flutter SDK 以外你还需要以下内容：
+对于开发 Linux 桌面端应用来说，你需要以下工具：
 
-* [Clang][]
-* [CMake][]
-* [GTK development headers][]
-* [Ninja build][]
-* [pkg-config][]
-* [liblzma-dev][] This might be necessary
+{% include docs/linux-requirements-list.md %}
 
-  [liblzma-dev][] 可能是必需的
+To install each of the tools, run the following command:
 
-Run the following command
+{% include docs/linux-requirements-command.md %}
 
-运行以下命令进行安装：
-
-```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
-```
-
-[Clang]: https://clang.llvm.org/
-[CMake]: https://cmake.org/
-[GTK development headers]: https://developer.gnome.org/gtk3/3.2/gtk-getting-started.html
-[Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[Ninja build]: https://ninja-build.org/
-[pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
-[liblzma-dev]: https://packages.debian.org/sid/liblzma-dev

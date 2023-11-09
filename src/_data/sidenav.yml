@@ -244,12 +244,12 @@
       permalink: /docs/ui/animations/overview
 
 - title: 应用的无障碍和国际化
-  permalink: /docs/accessibility-and-localization
+  permalink: /docs/ui/accessibility-and-internationalization
   children:
     - title: 无障碍
-      permalink: /docs/accessibility-and-localization/accessibility
+      permalink: /docs/ui/accessibility-and-internationalization/accessibility
     - title: 国际化
-      permalink: /docs/accessibility-and-localization/internationalization
+      permalink: /docs/ui/accessibility-and-internationalization/internationalization
 
 - divider
 - header: 界面以外的开发
@@ -619,7 +619,7 @@
     - title: 为 Flutter 做出贡献
       permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
     - title: 设计文档
-      permalink: /docs/resources/design-docs
+      permalink: https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22design+doc%22
     - header: 工具包
     - title: 休闲游戏工具包
       permalink: /docs/resources/games-toolkit

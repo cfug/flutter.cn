@@ -450,8 +450,7 @@ Flutter 内置的 widget，
 
 ## 测试移动设备的无障碍
 
-Test your app using Flutter's
-[Accessibility Guideline API][].
+Test your app using Flutter's [Accessibility Guideline API][].
 This API checks if your app's UI meets Flutter's accessibility recommendations.
 These cover recommendations for text contrast, target size, and target labels.
 

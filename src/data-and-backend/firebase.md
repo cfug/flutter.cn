@@ -64,7 +64,7 @@ videos that you might find useful. Here are a few:
 
 * [Flutter: Firebase Tutorial Part 1 - Auth and Sign in][video4] (video)
 
-  [Flutter: Firebase 教程第一部分|验证与登陆][video4]（视频）
+  [Flutter: Firebase 教程第一部分|验证与登录][video4]（视频）
 
 [article]: {{site.flutter-medium}}/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e

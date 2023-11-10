@@ -242,9 +242,9 @@ static const FirebaseOptions web = FirebaseOptions(
 
 ### Firebase 用户界面
 
-大多数用户都有身份验证的流程，包括但不仅限于通过邮箱和密码或者第三方账号登陆等。使用 Firebase 身份认证 (Authentication) 服务，你就可以完成创建新用户、邮箱认证、重置密码，甚至是短信两步验证、使用手机号码登录、将多个账号合并为一个账号等功能。直到今天，开发者们仍需要自行来完成这些逻辑和 UI。
+大多数用户都有身份验证的流程，包括但不仅限于通过邮箱和密码或者第三方账号登录等。使用 Firebase 身份认证 (Authentication) 服务，你就可以完成创建新用户、邮箱认证、重置密码，甚至是短信两步验证、使用手机号码登录、将多个账号合并为一个账号等功能。直到今天，开发者们仍需要自行来完成这些逻辑和 UI。
 
-今天我们很希望大家尝试一个新的 package，名为 [flutterfire_ui](https://pub.dev/packages/flutterfire_ui)。这个 package 可以用少量的代码构建一个基本的身份验证体验，例如，在 Firebase 项目中设置了使用邮箱和 Google 账号登陆:
+今天我们很希望大家尝试一个新的 package，名为 [flutterfire_ui](https://pub.dev/packages/flutterfire_ui)。这个 package 可以用少量的代码构建一个基本的身份验证体验，例如，在 Firebase 项目中设置了使用邮箱和 Google 账号登录:
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2021/whats-new-in-flutter-2-8/firebase-console-auth-page.png)
 
@@ -297,7 +297,7 @@ class AuthenticationGate extends StatelessWidget {
 }
 ```
 
-这段代码将首先初始化 Firebase，然后会发现用户尚未登陆进而显示登录界面，`SigninScreen` widget 配置了邮件和 Google 账号登陆，代码里还使用了 `firebase_auth` package 来监测用户的身份验证状态，因此一旦用户登录完成，你就可以显示接下来的应用内容。使用这个代码片段，你将可以在所有 Firebase 支持的平台上完成身份验证功能。
+这段代码将首先初始化 Firebase，然后会发现用户尚未登录进而显示登录界面，`SigninScreen` widget 配置了邮件和 Google 账号登录，代码里还使用了 `firebase_auth` package 来监测用户的身份验证状态，因此一旦用户登录完成，你就可以显示接下来的应用内容。使用这个代码片段，你将可以在所有 Firebase 支持的平台上完成身份验证功能。
 
 再加入一些其他配置的话，你还可以添加一些图像和自定义文本 (详情见 [本文档](https://firebase.flutter.dev/docs/ui/overview))，从而为你提供更全面的用户身份验证体验: 
 
@@ -307,7 +307,7 @@ class AuthenticationGate extends StatelessWidget {
 
 ![](https://files.flutter-io.cn/posts/flutter-cn/2021/whats-new-in-flutter-2-8/flutterfire_ui-auth-desktop-browser.png)
 
-用户可以使用邮箱地址和密码直接完成登陆，如果他们选择使用通过谷歌身份验证登陆，不论是在移动端、Web 端还是桌面端，则将会看到常见的 Google 身份验证流程。如果用户还没有账户，他们可以点击注册按钮进入注册流程。用户登陆之后就会有电子邮件验证、密码重置、登出以及社交账户绑定功能。通过电子邮件和密码的身份验证适用于所有平台，并支持使用 Google、Facebook 和 Twitter 账号登陆，以及在 iOS 系统上支持通过 Apple ID 登陆。`flutterfire_ui` 的身份认证支持多种场景和导航方案以及自定义和本地化选项等。查看 [FlutterFire UI 的文档](https://firebase.flutter.dev/docs/ui/overview/) 了解更多。
+用户可以使用邮箱地址和密码直接完成登录，如果他们选择使用通过谷歌身份验证登录，不论是在移动端、Web 端还是桌面端，则将会看到常见的 Google 身份验证流程。如果用户还没有账户，他们可以点击注册按钮进入注册流程。用户登录之后就会有电子邮件验证、密码重置、登出以及社交账户绑定功能。通过电子邮件和密码的身份验证适用于所有平台，并支持使用 Google、Facebook 和 Twitter 账号登录，以及在 iOS 系统上支持通过 Apple ID 登录。`flutterfire_ui` 的身份认证支持多种场景和导航方案以及自定义和本地化选项等。查看 [FlutterFire UI 的文档](https://firebase.flutter.dev/docs/ui/overview/) 了解更多。
 
 此外，身份认证不是 `flutterfire_ui` 唯一支持的 Flutter UI 的相关功能。它还可以向用户展示一个来自 Firebase 数据查询并无限滚动的数据列表，这个版本也包含了一个 `FirestoreListView` 可以使用: 
 

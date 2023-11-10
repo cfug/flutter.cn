@@ -14,7 +14,7 @@ prev:
 next:
   title: Learn more
   title: 了解更多
-  path: /get-started/learn-more
+  path: /docs/get-started/learn-more
 toc: false
 ---
 

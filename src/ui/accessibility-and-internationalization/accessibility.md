@@ -499,7 +499,7 @@ file (such as `test/a11y_test.dart` in the case of the Name Generator).
 你可以在应用程序目录的 `test/widget_test.dart` 中添加 Guideline API 测试，
 也可以将其作为单独的测试文件（如名称生成器中的 `test/a11y_test.dart`）。
 
-[Accessibility Guideline API]: https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html
+[Accessibility Guideline API]: {{site.api}}/flutter/flutter_test/AccessibilityGuideline-class.html
 
 ## Testing accessibility on web
 

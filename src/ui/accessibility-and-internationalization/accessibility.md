@@ -459,7 +459,7 @@ These cover recommendations for text contrast, target size, and target labels.
 该 API 可以检查应用程序的用户界面是否符合 Flutter 的无障碍建议。
 这些建议包括文字对比度、目标尺寸和目标标签。
 
-[Accessibility Guideline API](https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html)
+[Accessibility Guideline API]: https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html
 
 The following example shows how to use the Guideline API on Name Generator.
 You created this app as part of the

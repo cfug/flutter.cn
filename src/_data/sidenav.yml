@@ -243,7 +243,7 @@
     - title: API 概览
       permalink: /docs/ui/animations/overview
 
-- title: 应用的无障碍和国际化
+- title: 无障碍 & 国际化
   permalink: /docs/ui/accessibility-and-internationalization
   children:
     - title: 无障碍

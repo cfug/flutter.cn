@@ -98,7 +98,7 @@ we recommend using automated accessibility scanners:
     1. In Xcode, select
        **Xcode > Open Developer Tools > Accessibility Inspector**
 
-       在  Xcode 选择 **Xcode > 开发者工具 > 辅助检查器**
+       在 Xcode 选择 **Xcode > 开发者工具 > 辅助检查器**
 
     1. In the Accessibility Inspector,
        select **Inspection > Enable Point to Inspect**,
@@ -112,8 +112,8 @@ we recommend using automated accessibility scanners:
        select **Audit** in the toolbar, and then
        select **Run Audit** to get a report of potential issues
 
-       在辅助检查器中，选择工具栏中的**审核**，
-       然后选择**运行音频”**来获取潜在问题的报告
+       在辅助检查器中，选择工具栏中的 **审核**，
+       然后选择 **运行音频** 来获取潜在问题的报告
  
   * For web:
 
@@ -198,6 +198,8 @@ navigate around your app.
 
 **To turn on the screen reader on your device, complete the following steps:**
 
+**请通过以下步骤，在设备上打开读屏器：**
+
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
     <li class="nav-item">
@@ -220,12 +222,26 @@ navigate around your app.
 <div class="tab-pane active" id="talkback" role="tabpanel" aria-labelledby="talkback-tab" markdown="1">
 
 1. On your device, open **Settings**.
+
+   打开设备上的 **设置**。
+
 2. Select **Accessibility** and then **TalkBack**.
+
+   选择 **辅助功能/无障碍** > **TalkBack**。
+
 3. Turn 'Use TalkBack' on or off.
+
+   打开或关闭 **TalkBack**。
+
 4. Select Ok.
+
+   选择完成。
 
 To learn how to find and customize Android's
 accessibility features, view the following video.
+
+请观看以下视频，
+了解如何查找和自定义 Android 的辅助功能/无障碍。
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/FQyj_XTl01w" title="Customize accessibility features on Pixel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
@@ -235,10 +251,18 @@ accessibility features, view the following video.
 <div class="tab-pane" id="voiceover" role="tabpanel" aria-labelledby="voiceover-tab" markdown="1">
 
 1. On your device, open **Settings > Accessibility > VoiceOver**
+
+   打开设备上的 **设置 > 辅助功能 > 旁白 (VoiceOver)**
+
 2. Turn the VoiceOver setting on or off
+
+   打开或关闭 **旁白 (VoiceOver)** 的设置
 
 To learn how to find and customize iOS
 accessibility features, view the following video.
+
+请观看以下视频，
+了解如何查找和自定义 iOS 的辅助功能。
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/qDm7GiKra28" title="How to navigate your iPhone or iPad with VoiceOver" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
@@ -294,10 +318,17 @@ NVDA screen reader. To learn about using NVDA to test
 Windows apps, check out
 [Screen Readers 101 For Front-End Developers (Windows)][nvda].
 
+在 Windows 上，你可以使用自带的讲述人 (Narrator) 屏幕阅读器，
+但一些开发者建议使用更受欢迎的 NVDA 屏幕阅读器。
+想要了解如何使用 NVDA 测试 Windows 应用程序，
+请查阅 [Screen Readers 101 For Front-End Developers (Windows)][nvda]。
+
 [nvda]: https://get-evinced.com/blog/screen-readers-101-for-front-end-developers-windows
 
 On a Mac, you can use the desktop version of VoiceOver,
 which is included in macOS.
+
+在 Mac 上，你可以使用 macOS 自带的桌面版旁白 (VoiceOver)。
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/5R-6WvAihms" title="Screen Reader Basics: VoiceOver -- A11ycasts #07" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
@@ -307,6 +338,12 @@ It comes pre-installed with some distributions
 and is available on package repositories such as `apt`.
 To learn about using Orca, check out
 [Getting started with Orca screen reader on Gnome desktop][orca].
+
+在 Linux 上，有一种流行的屏幕阅读器，名为 Orca。
+它预装在一些发行版中，
+也可以在 package 仓库（如 `apt`）中找到。
+想要了解如何使用 Orca，
+请查阅 [Getting started with Orca screen reader on Gnome desktop][orca]。
 
 [orca]: https://www.a11yproject.com/posts/getting-started-with-orca
 
@@ -411,16 +448,28 @@ Flutter 内置的 widget，
 
 ## Testing accessibility on mobile
 
+## 测试移动设备的无障碍
+
 Test your app using Flutter's
-<a href="https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html">Accessibility Guideline API</a>.
+[Accessibility Guideline API][].
 This API checks if your app's UI meets Flutter's accessibility recommendations.
 These cover recommendations for text contrast, target size, and target labels.
+
+使用 Flutter 的 [Accessibility Guideline API][] 测试你的应用程序。
+该 API 可以检查应用程序的用户界面是否符合 Flutter 的无障碍建议。
+这些建议包括文字对比度、目标尺寸和目标标签。
+
+[Accessibility Guideline API](https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html)
 
 The following example shows how to use the Guideline API on Name Generator.
 You created this app as part of the
 [Write your first Flutter app]({{site.url}}/get-started/codelab) codelab.
 Each button on the app's main screen serves as a tappable target
 with text represented in 18 point.
+
+下面的示例展示了如何在名称生成器中使用 Guideline API。
+这个应用程序是 [构建你的第一个 Flutter 应用]({{site.url}}/get-started/codelab) codelab 中的内容。
+应用程序主屏幕上的每个按钮（文字为 18 像素）都是一个可点击的目标。
 
 <?code-excerpt path-base="codelabs/namer/step_08"?>
 <?code-excerpt "test/a11y_test.dart (insideTest)" indent-by="2"?>
@@ -450,6 +499,8 @@ You can add Guideline API tests
 in `test/widget_test.dart` of your app directory, or as a separate test
 file (such as `test/a11y_test.dart` in the case of the Name Generator).
 
+你可以在应用程序目录的 `test/widget_test.dart` 中添加 Guideline API 测试，
+也可以将其作为单独的测试文件（如名称生成器中的 `test/a11y_test.dart`）。
 
 ## Testing accessibility on web
 

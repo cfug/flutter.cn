@@ -1,8 +1,9 @@
 ---
-title: Videos and online courses
-title: 学习 Flutter 的视频列表与在线课程
-description: Available videos and online courses on various aspects of developing in Flutter.
-description: 开发 Flutter 应用时的技术学习视频与在线课程。
+title: Videos
+title: 学习 Flutter 的视频列表
+description: >
+  Available videos on various aspects of developing in Flutter.
+description: 开发 Flutter 应用时的技术学习视频。
 tags: Flutter参考资料
 keywords: Flutter视频资料,Flutter学习,Flutter社区视频
 ---
@@ -68,7 +69,7 @@ Flutter Forward 相关的视频请查阅 Flutter 社区的 bilibili 频道
 
 [Season 2]: {{site.youtube-site}}/watch?v=ILTx1Wa33Z0
 
-Follow along with Khanh’s journey as she learns Flutter.
+Follow along with Khanh's journey as she learns Flutter.
 From ideation down to the moments of confusion,
 learn alongside her as she asks important questions like: 
 "What is the best way to build out a theme? How to approach using fonts?"
@@ -217,65 +218,3 @@ millions of downloads.
 [Flutter developer stories playlist][]
 
 [Flutter developer stories playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759
-
-[Flutter: 开发者成功故事播放列表][Flutter developer stories playlist]
-
-## Online courses
-
-## 在线课程
-
-Learn how to build Flutter apps with these video courses.
-Before signing up for a course, verify that it includes
-up-to-date information, such as null safe Dart code.
-These courses are listed alphabetically.
-To include your course, [submit a PR][]:
-
-通过这些免费的课程学习如何构建 Flutter 应用。
-在注册课程之前，请验证它的内容是否及时更新，例如 Dart 的空安全代码等。
-这些课程按照字幕排序。
-若想要加入你的课程，请 [提交一个 PR][submit a PR]。
-
-* [Flutter & Dart - The Complete Guide, 2023 Edition][]
-
-  [Flutter & Dart - 完全指南，2023 年版本][Flutter & Dart - The Complete Guide, 2023 Edition]
-
-* [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
-
-  [2021 年 Flutter 开发 Dart 训练营]，由 App Brewery 录制。
-
-* [Flutter Crash Course][] by Nick Manning
-
-  [Flutter 速成课][Flutter Crash Course], 由 Nick Manning (社区) 录制。
-
-* [Flutter leicht gemacht 2022 - Zero to Mastery!][] by Max Berktold (German)
-
-  [Dart 和 Flutter 从入门到精通][Flutter leicht gemacht 2022 - Zero to Mastery!]，由社区成员 Max Berktold 录制（德语）
-  
-* [Flutter Zero to Hero][] by Veli Bacik (Turkish)
-
-  [Flutter 入门到精通][Flutter Zero to Hero]，由社区成员 Veli Bacik 录制 (土耳其语)
-
-* [Flutter Bootcamp][] by Rubens de Melo (Portuguese)
-
-  [Flutter 训练营][Flutter Bootcamp]，由 Rubens de Melo (葡萄牙语)
-
-* [Flutter para iniciantes][] by Rubens de Melo (Portuguese)
-
-  [适合初学者的 Flutter 教程][Flutter para iniciantes]，由 Rubens de Melo (葡萄牙语)
-
-* [Dart & Flutter - Zero to Mastery 2023 + Clean Architecture][] by Max Berktold & Max Steffen
-
-  [Dart & Flutter - 从零到精通 2023 + Clean Architecture][Dart & Flutter - Zero to Mastery 2023 + Clean Architecture]，
-  由社区成员 Max Berktold 和 Max Steffen 录制
-
-
-[Flutter & Dart - The Complete Guide, 2023 Edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
-[The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
-[Flutter Crash Course]: https://fluttercrashcourse.com/
-[Flutter leicht gemacht 2022 - Zero to Mastery!]: https://www.udemy.com/course/dart-flutter-leicht-gemacht/
-[Flutter Zero to Hero]: {{site.youtube-site}}/watch?v=lpvuM9lo3HU&list=PL1k5oWAuBhgXdw1BbxVGxxWRmkGB1C11l
-[Flutter Bootcamp]: https://flutterbootcamp.com.br
-[Flutter para iniciantes]: {{site.youtube-site}}/playlist?list=PLS4cqF1_X2syzBpkoSwtmKoREgnp1MhTn
-[Dart & Flutter - Zero to Mastery 2023 + Clean Architecture]: https://www.udemy.com/course/flutter-made-easy-zero-to-mastery/?referralCode=CCBFCD16CC71F359EE3C
-[submit a PR]: {{site.repo.this}}/pulls
-

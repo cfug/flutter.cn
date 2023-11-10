@@ -45,6 +45,11 @@ You can test full working examples on DartPad or view them on GitHub.
 
 ## Overview
 
+As an introduction, watch the following video.
+It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
+
+<iframe class="full-width" src="{{site.youtube-site}}/embed/ceMsPBbcEGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Flutter and SwiftUI code describes how the UI looks and works.
 Developers call this type of code a _declarative framework_.
 
@@ -104,7 +109,7 @@ SwiftUI nests Views while Flutter nests Widgets.
       its constraints.
 
 Flutter differs from SwiftUI because the parent component can override
-the child’s desired size. The widget cannot have any size it wants.
+the child's desired size. The widget cannot have any size it wants.
 It also cannot know or decide its position on screen as its parent
 makes that decision.
 
@@ -145,7 +150,7 @@ see [Understanding constraints][].
 
 ### Design system
 
-Because Flutter targets multiple platforms, your app doesn’t need
+Because Flutter targets multiple platforms, your app doesn't need
 to conform to any design system.
 Though this guide features [Material][] widgets,
 your Flutter app can use many different design systems:
@@ -153,7 +158,7 @@ your Flutter app can use many different design systems:
 - Custom Material widgets
 - Community built widgets
 - Your own custom widgets
-- [Cupertino widgets][] that follow Apple’s Human Interface Guidelines
+- [Cupertino widgets][] that follow Apple's Human Interface Guidelines
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -216,7 +221,7 @@ void main() {
 
 `App` is a widget. The build method describes the part of the
 user interface it represents.
-It’s common to begin your app with a [`WidgetApp`][] class,
+It's common to begin your app with a [`WidgetApp`][] class,
 like [`CupertinoApp`][].
 
 <nav class="navbar bg-primary">
@@ -280,8 +285,8 @@ class HomePage extends StatelessWidget {
 
 Note how Flutter uses the [`Center`][] widget.
 SwiftUI renders a view's contents in its center by default.
-That’s not always the case with Flutter.
-`Scaffold` doesn’t render its `body` widget at the center of the screen.
+That's not always the case with Flutter.
+`Scaffold` doesn't render its `body` widget at the center of the screen.
 To center the text, wrap it in a `Center` widget.
 To learn about different widgets and their default behaviors, check out
 the [Widget catalog][].
@@ -679,7 +684,7 @@ Implement a stateful widget with the following two classes:
 - a subclass of `State`
 
 The `State` object stores the widget's state.
-To change a widget’s state, call `setState()` from the `State` subclass
+To change a widget's state, call `setState()` from the `State` subclass
 to tell the framework to redraw the widget.
 
 The following example shows a part of a counter app:
@@ -746,7 +751,7 @@ animation.
 
 {:.include-lang}
 ```swift
-Button(“Tap me!”){
+Button("Tap me!"){
    angle += 45
 }
 .rotationEffect(.degrees(angle))
@@ -1350,10 +1355,10 @@ To review a complete walkthrough, check out the [video_player example][].
 [Add Flutter to existing app]: {{site.url}}/add-to-app
 [Animations overview]: {{site.url}}/ui/animations
 [Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
-[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
 [Navigation and routing]: {{site.url}}/ui/navigation
 [Material]: {{site.material}}/develop/flutter/
-[Platform adaptations]: {{site.url}}/resources/platform-adaptations
+[Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 [widget catalog]: {{site.url}}/ui/widgets/layout
 [Understanding constraints]: {{site.url}}/ui/layout/constraints

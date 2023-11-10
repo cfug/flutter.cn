@@ -60,15 +60,16 @@ high-end user experiences. Fast Company described
 Flutter as [one of the top design ideas of the decade][] for
 its ability to turn concepts into production code
 without the compromises imposed by typical frameworks.
-It also acts as a productive prototyping tool,
-with [CodePen][] support for sharing your ideas with others.
+It also acts as a productive prototyping tool
+with drag-and-drop tools like [FlutterFlow][]
+and web-based IDEs like [Zapp!][].
 
 对于设计师来说，Flutter 提供了一个能够实现高保真度用户体验的画布。
 Fast 公司评价 Flutter 是
 [一个设计灵感的源泉][one of the top design ideas of the decade]，
 提供了将概念转换为生产代码的能力，却没有典型的框架强加的妥协。
 Flutter 同时也是一个能提高生产力的原型工具，
-可以通过 [CodePen][] 与他人分享你的创意。
+例如可拖入文件加载的 [FlutterFlow][] 和基于 Web 的 IDE [Zapp!][]。
 
 For engineering managers and businesses,
 Flutter allows the unification of app
@@ -83,8 +84,8 @@ release schedules across the entire customer base.
 并在单个代码库中打造的多个平台的应用程序。
 Flutter 加速了跨平台下开发以及同步发布进程的开发进度。
 
-
-[CodePen]: https://codepen.io/topic/flutter
+[FlutterFlow]: https://flutterflow.io/
+[Zapp!]: https://zapp.run/
 [one of the top design ideas of the decade]: https://www.fastcompany.com/90442092/the-14-most-important-design-ideas-of-the-decade-according-to-the-experts
 
 ### How much development experience do I need to use Flutter?
@@ -664,7 +665,7 @@ high performance, but now the language does because the Dart team
 built it for Flutter. Similarly, the Dart VM has
 previously been optimized for throughput but the
 team is now optimizing the VM for latency, which is more
-important for Flutter’s workload.
+important for Flutter's workload.
 
 此外，我们还有幸与 Dart 社区展开了密切合作，Dart 社区积极投入资源改进 Dart，以便在 Flutter 中更易使用。例如，当我们采用 Dart 时，该语言还没有用于生成原生二进制文件的 AOT 工具链，这些工具有助于实现稳定的高性能表现，但在 Dart 团队为 Flutter 构建了这些工具后，这个缺失已经不复存在了。同样，Dart VM 之前是针对吞吐量进行的优化，但团队现在正在针对延迟进行优化，这对于解决 Flutter 的工作负载更为重要。
 
@@ -796,12 +797,12 @@ which is also [built into Android Studio][].
 内置的 [apkanalyzer][] 实测得出。
 
 On iOS, a release IPA of the same app has a download
-size of 10.9 MB on an iPhone X, as reported by Apple’s
+size of 10.9 MB on an iPhone X, as reported by Apple's
 App Store Connect. The IPA is larger than the APK mainly
 because Apple encrypts binaries within the IPA, making the
 compression less efficient (see the
 [iOS App Store Specific Considerations][]
-section of Apple’s [QA1795][]).
+section of Apple's [QA1795][]).
 
 在 iOS 平台上，跟据 App Store Connect 的数据，
 同一应用的发布 IPA 在 iPhone X 上的下载文件体积为 10.9 MB。
@@ -1203,8 +1204,8 @@ Learn more about a11y in the
 关于可访问性 / 无障碍使用，请查看文档：[无障碍][accessibility documentation]。
 
 
-[accessibility documentation]: {{site.url}}/accessibility-and-localization/accessibility
-[internationalization tutorial]: {{site.url}}/accessibility-and-localization/internationalization
+[accessibility documentation]: {{site.url}}/ui/accessibility-and-internationalization/accessibility
+[internationalization tutorial]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 

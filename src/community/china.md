@@ -7,27 +7,37 @@ toc: true
 ---
 
 {% assign path = 'flutter_infra_release/releases/stable/windows/flutter_windows_3.3.0-stable.zip' -%}
+
 {% comment %}
-The Flutter community has made a Simplified Chinese version of the
-Flutter website available at
-[https://flutter.cn](https://flutter.cn).
+The Flutter community has made a Simplified Chinese version
+of the Flutter website available at
+[https://flutter.cn](https://flutter.cn),
+maintained by [The China Flutter User Group (CFUG)][].
 {% endcomment %}
 
-欢迎你来到由中国 Flutter 社区维护的中文 Flutter 资源网站：[https://flutter.cn](https://flutter.cn)
+欢迎你来到由中国 Flutter 社区维护的中文 Flutter 资源网站。
 
-{% comment %}
-If you’d like to install Flutter using an 
+If you'd like to install Flutter using an 
 [installation bundle]({{site.url}}/release/archive),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
+
+如果你需要下载
+[Flutter SDK 的独立打包文件]({{site.url}}/development/tools/sdk/releases)，
+你可以将下载链接前缀替换为镜像链接：
+
+{% comment %}
+* Original URL:<br>
+  [`https://storage.googleapis.com/{{path}}`](https://storage.googleapis.com/{{path}})
+
+* Mirrored URL:<br>
+  [`https://storage.flutter-io.cn/{{path}}`](https://storage.flutter-io.cn/{{path}})
 {% endcomment %}
 
-如果你需要下载 [Flutter SDK 的独立打包文件]({{site.url}}/development/tools/sdk/releases)，
-你可以将下载链接前缀替换为你信任的镜像链接。
-
-* 原始链接:<br>
+* 原始链接：<br>
   [`https://storage.googleapis.com/{{path}}`](https://storage.googleapis.com/{{path}})
-* 镜像之后的链接:<br>
+
+* 镜像之后的链接：<br>
   [`https://storage.flutter-io.cn/{{path}}`](https://storage.flutter-io.cn/{{path}})
 
 {% comment %}
@@ -35,17 +45,15 @@ You must also set two environment variables to upgrade Flutter and use the pub
 package repository in China. Instructions are below.
 {% endcomment %}
 
-同时为了正常升级 Flutter 和通过 pub package 命令获取 packages，你需要设置如下两个环境变量，
-设置方式如下：
+同时为了正常升级 Flutter 和通过 pub 命令获取 packages，
+你需要设置如下两个环境变量，设置方式如下：
 
-{{site.alert.important}}
 {% comment %}
+{{site.alert.important}}
   Use mirror sites only if you _trust_ the provider.
   The Flutter team cannot verify their reliability or security.
-{% endcomment %}
-  无论你在使用哪个镜像网站，你都必须确保你 **信任** 你的镜像提供者。
-  Flutter 团队无法确保他们的安全性。
 {{site.alert.end}}
+{% endcomment %}
 
 {% comment %}
 ## Configuring Flutter to use a mirror site
@@ -54,9 +62,9 @@ package repository in China. Instructions are below.
 ## 为 Flutter 设定镜像配置
 
 {% comment %}
-If you’re installing or using Flutter in China,
+If you're installing or using Flutter in China,
 it might be helpful to use a trustworthy local
-mirror site that hosts Flutter’s dependencies.
+mirror site that hosts Flutter's dependencies.
 To instruct the Flutter tool to use an alternate storage location,
 you need to set two environment variables, `PUB_HOSTED_URL` and
 `FLUTTER_STORAGE_BASE_URL`, before running the `flutter` command.
@@ -100,20 +108,35 @@ and `FLUTTER_STORAGE_BASE_URL` are set.
 
 {% comment %}
 The `flutter-io.cn` server is a provisional mirror for Flutter
-dependencies and packages maintained by [GDG China]().
+dependencies and packages maintained by [The China Flutter User Group (CFUG)][].
 The Flutter team cannot guarantee long-term availability of this service.
-You’re free to use other mirrors if they become available. If you’re
-interested in setting up your own mirror in China, contact
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
+You're free to use other mirrors if they become available.
+If you're interested in setting up your own mirror in China,
+contact [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 for assistance.
 {% endcomment %}
 
-`flutter-io.cn` 所提供的镜像由中国的 Flutter 开发者社区提供和维护，
-Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其他可信的机构提供的镜像服务。
+`flutter-io.cn` 所提供的镜像由
+[Flutter 中文社区][The China Flutter User Group (CFUG)]
+提供和维护，Flutter 团队无法保证其的长期稳定运作，你也可以自由使用其他可信的机构提供的镜像服务。
+
+{% comment %}
+If you're running into issues that only occur when using the `flutter-io.cn` server,
+consider reporting the issue to
+[the issue tracker (镜像问题)](https://github.com/cfug/flutter.cn/issues/new/choose).
+{% endcomment %}
 
 {% comment %}
 ## Community-run mirror sites
 {% endcomment %}
+
+{% comment %}
+* Shanghai Jiao Tong University Linux User Group
+  * `FLUTTER_STORAGE_BASE_URL`: [https://mirror.sjtu.edu.cn/](https://mirror.sjtu.edu.cn)
+  * `PUB_HOSTED_URL`: [https://mirror.sjtu.edu.cn/dart-pub/](https://mirror.sjtu.edu.cn/dart-pub)
+{% endcomment %}
+
+[The China Flutter User Group (CFUG)]: https://github.com/cfug
 
 ## 社区运行的镜像站点
 

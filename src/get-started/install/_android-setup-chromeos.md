@@ -62,7 +62,7 @@ To deploy apps directly to your Chromebook, you need to do the following:
 ### 设置你的 Android 设备
 
 To prepare to run and test your Flutter app on an attached device,
-you need an Android device running Android 4.1 (API level 16) or higher.
+you need an Android device running Android 5.0 (API level 21) or higher.
 
 在 Android 设备上运行或测试你的 Flutter 之前，
 需要确保 Android 设备运行在 4.1（API 级别 16）或者更高的版本。

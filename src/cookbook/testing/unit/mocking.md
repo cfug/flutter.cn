@@ -156,7 +156,7 @@ Future<Album> fetchAlbum(http.Client client) async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -217,7 +217,7 @@ void main() {
 Next, generate the mocks running the following command:
 
 ```terminal
-$ flutter pub run build_runner build
+$ dart run build_runner build
 ```
 
 ## 4. Write a test for each condition
@@ -334,7 +334,7 @@ Future<Album> fetchAlbum(http.Client client) async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -351,9 +351,9 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
+      userId: json['userId'] as int,
+      id: json['id'] as int,
+      title: json['title'] as String,
     );
   }
 }
@@ -381,7 +381,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Fetch Data Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
         appBar: AppBar(

@@ -65,97 +65,132 @@ android {
 
 {{site.alert.end}}
 
-## Using Android Studio
+## Integrate your Flutter module
 
-## 使用 Android Studio
+## 集成 Flutter 模块
 
-The Android Studio IDE is a convenient way of integrating
-your Flutter module automatically. With Android Studio,
-you can co-edit both your Android code and your Flutter code
-in the same project. You can also continue to use your normal
-IntelliJ Flutter plugin functionalities such as Dart code
-completion, hot reload, and widget inspector.
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="add-to-app-android" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="with-android-studio-tab" href="#with-android-studio" role="tab" aria-controls="with-android-studio" aria-selected="true">使用 Android Studio</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="without-android-studio-tab" href="#without-android-studio" role="tab" aria-controls="without-android-studio" aria-selected="false">不使用 Android Studio</a>
+    </li>
+</ul>
 
-直接使用 Android Studio 是在现有应用中自动集成 Flutter 模块比较便捷的方法。 
-在 Android Studio 中，你可以在一个项目中同时编写 Android 代码和 Flutter 代码，
-还可以继续使用各种常用的 IntelliJ Flutter 插件功能，
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+
+<div class="tab-pane active" id="with-android-studio" role="tabpanel" aria-labelledby="with-android-studio-tab" markdown="1">
+
+### Integrate with Android Studio
+{:.no_toc}
+
+## 使用 Android Studio 集成
+
+The Android Studio IDE can help integrate your Flutter module.
+Using Android Studio, you can edit both your Android and Flutter code
+in the same IDE.
+
+直接使用 Android Studio 是在现有应用中自动集成 Flutter 模块比较便捷的方法。
+在 Android Studio 中，你可以在一个项目中同时编写 Android 代码和 Flutter 代码。
+
+You can also use IntelliJ Flutter plugin functionality like
+Dart code completion, hot reload, and widget inspector.
+
+你还可以继续使用各种常用的 IntelliJ Flutter 插件功能，
 例如 Dart 代码自动补全、热重载和 widget 检查器等。
 
-Add-to-app flows with Android Studio are only supported on
-Android Studio 3.6 with version 42+ of the [Flutter plugin][]
-for IntelliJ. The Android Studio integration also only
-supports integrating using a source code Gradle subproject,
-rather than using AARs. See below for more details on
-the distinction.
+Android Studio supports add-to-app flows on Android Studio 2022.2 or later
+with the [Flutter plugin][] for IntelliJ.
+To build your app, the Android Studio plugin configures your
+Android project to add your Flutter module as a dependency.
 
-只有在 Android Studio 3.6 及以上的版本，配合 42 以上版本的
-IntelliJ [Flutter 插件][Flutter plugin] 才能直接通过 Android Studio 执行集成流程，
-并且，Android Studio 目前仅支持以 Gradle 子项目源码的方式集成，而不能以 AAR 方式集成。
-有关这两种方式的区别及更多详细信息，请参见下文。
+在 Android Studio 2022.2 及以上的版本，配合
+IntelliJ [Flutter 插件][Flutter plugin]
+就可以直接通过 Android Studio 执行集成流程。
+Android Studio 需要将你的 Flutter 模块作为依赖。
 
-Using the **File > New > New Module...** menu in
-Android Studio in your existing Android project,
-you can either create a new Flutter module to integrate,
-or select an existing Flutter module that was created previously.
+1. Open your Android project in Android Studio.
 
-在 Android Studio 打开现有的 Android 项目并点击菜单按钮 **File > New > New Module...** ，
-这样就可以创建出一个可以集成的新 Flutter 模块，或者选择导入已有的 Flutter 模块。
+   在 Android Studio 中打开你的 Android 项目。
 
-{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-new-module.png" %}
+1. Go to **File** > **New** > **New Project...**.
+    The **New Project** dialog displays.
 
-If you create a new module, you can use a wizard to
-select the module name, location, and so on.
+   前往 **File** > **New** > **New Project...**，
+   此时 **New Project** 弹窗会显示。
 
-如果你想创建一个新的 Flutter 模块，则可以直接在向导窗口中填写模块名称、路径等信息。
+1. Click **Flutter**.
 
-{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-wizard.png" %}
+   选择 **Flutter。
 
-The Android Studio plugin automatically configures your
-Android project to add your Flutter module as a dependency,
-and your app is ready to build.
+1. If asked to provide your **Flutter SDK path**, do so and click **Next**.
 
-此时，Android Studio 插件就会自动为这个 Android 项目
-配置添加 Flutter 模块作为依赖项，这时集成应用就已准备好进行下一步的构建。
+   填写你的 **Flutter SDK path** 并点击 **Next** 继续。
 
-{{site.alert.note}}
+1. Complete the configuration of your Flutter module.
 
-  To see the changes that were automatically made to your
-  Android project by the IDE plugin, consider using
-  source control for your Android project before performing
-  any steps. A local diff shows the changes.
+   完成你的 Flutter 模块配置。
 
-  如果要查看 IDE 插件自动对 Android 项目做了哪些更改，
-  可以在执行具体步骤之前对 Android 项目使用代码版本控制，
-  便可以使用本地 diff 查看更改内容的具体信息。
+    * If you have an existing project:
 
-{{site.alert.end}}
+      如果你的项目是已有的：
+
+        {: type="a"}
+        1. To choose an existing project, click **...**
+           to the right of the **Project location** box.
+
+           点击 **Project location** 右侧的 **...** 选择现有的项目。
+
+        1. Navigate to your Flutter project directory.
+
+           前往你的 Flutter 项目的目录所在位置。
+
+        1. Click **Open**.
+
+           点击 **打开**。
+
+    * If you need to create a new Flutter project:
+
+      如果你需要创建一个新的 Flutter 项目：
+
+        {: type="a"}
+        1. Complete the configuration dialog.
+
+           完成配置弹窗的内容。
+
+        1. In the **Project type** menu, select **Module**.
+
+           在 **Project type** 菜单中，选择 **Module**。
+
+1. Click **Finish**.
+
+   点击完成。
 
 {{site.alert.tip}}
 
-  By default, your project's Project pane is probably
-  showing the 'Android' view. If you can't see your new
-  Flutter files in the Project pane, ensure that
-  your Project pane is set to display 'Project Files',
-  which shows all files without filtering.
+  By default, your project's Project pane might show the 'Android' view.
+  If you can't see your new Flutter files in the Project pane,
+  set your Project pane to display **Project Files**.
+  This shows all files without filtering.
 
   默认情况下，项目的 Project 窗口中可能会显示的是 “Android” 视图，
   如果在 Project 窗口中看不到新创建的 Flutter 文件，
-  可以将 Project 窗口设置为显示 “Project Files”，
+  可以将 Project 窗口设置为显示 **Project Files**，
   这时就会显示所有未过滤的文件。
 
 {{site.alert.end}}
 
-Your app now includes the Flutter module as a dependency.
-You can jump to the [Adding a Flutter screen to an Android app][]
-to follow the next steps.
+</div>
 
-现在，应用程序已经包含了 Flutter 模块作为依赖项，
-你可以跳转至
-[向 Android 应用中添加 Flutter 页面][Adding a Flutter screen to an Android app] 执行后续步骤。
+<div class="tab-pane" id="without-android-studio" role="tabpanel" aria-labelledby="without-android-studio-tab" markdown="1">
 
-## Manual integration
+### Integrate without Android Studio
+{:.no_toc}
 
-## 手动集成
+## 不使用 Android Studio 进行集成
 
 To integrate a Flutter module with an existing Android app
 manually, without using Flutter's Android Studio plugin,
@@ -164,7 +199,8 @@ follow these steps:
 如果想要在不使用 Flutter 的 Android Studio 插件的情况下
 手动将 Flutter 模块与现有的 Android 应用集成，可以参考以下步骤：
 
-### Create a Flutter module
+#### Create a Flutter module
+{:.no_toc}
 
 ### 创建 Flutter 模块
 
@@ -223,72 +259,95 @@ module an embeddable Android library.
 
 {{site.alert.note}}
 
-  To avoid Dex merging issues, `flutter.androidPackage` should not be identical to your host app's package name.
-  
-  为了避免 Dex 合并出现问题，`flutter.androidPackage` 不应与应用的包名相同。
+  To avoid Dex merging issues, `flutter.androidPackage` should
+  not be identical to your host app's package name.
+
+  为了避免 Dex 的合并问题，`flutter.androidPackage` 不要使用与宿主应用一样的包名。
+
 {{site.alert.end}}
 
-{{site.alert.note}}
-  To avoid Dex merging issues, `flutter.androidPackage` should not be identical to your host app's package name
-{{site.alert.end}}
+#### Java version requirement
+{:.no_toc}
 
-### Java 11 requirement
+### Java 版本要求
 
-### 引入 Java 11
+Flutter requires your project to declare compatibility with Java 11 or later.
 
-The Flutter Android engine uses Java 11 features.
-
-Flutter Android 引擎需要使用到 Java 11 中的新特性。
+Flutter 需要使用 Java 11 的特性。
 
 Before attempting to connect your Flutter module project
 to your host Android app, ensure that your host Android
 app declares the following source compatibility within your
-app's `build.gradle` file, under the `android { }`
-block, such as:
+app's `build.gradle` file, under the `android { }` block.
 
 在尝试将 Flutter 模块项目集成到宿主 Android 应用之前，
-请先确保宿主 Android 应用的 build.gradle 文件的  `android { }` 块中
-声明了以下源兼容性，例如：
+请先确保宿主 Android 应用的 build.gradle 文件的
+`android { }` 块中声明了以下源兼容性。
 
 <?code-excerpt title="MyApp/app/build.gradle"?>
 ```gradle
 android {
   //...
   compileOptions {
-    sourceCompatibility 11
-    targetCompatibility 11
+    sourceCompatibility 11 # The minimum value
+    targetCompatibility 11 # The minimum value
   }
 }
 ```
 
-### Add the Flutter module as a dependency
+</div>
+</div>
+{% comment %} End: Tab panes. {% endcomment -%}
+
+## Add the Flutter module as a dependency
 
 ### 将 Flutter module 作为依赖项
 
-Next, add the Flutter module as a dependency of your
-existing app in Gradle. There are two ways to achieve this.
-The AAR mechanism creates generic Android AARs as
-intermediaries that packages your Flutter module.
-This is good when your downstream app builders don't
-want to have the Flutter SDK installed. But,
-it adds one more build step if you build frequently.
+Add the Flutter module as a dependency of your
+existing app in Gradle. You can achieve this in two ways.
 
-接下来，将 Flutter 模块添加为 Gradle 中宿主应用程序的依赖项。
-主要有两种方法实现。 AAR 机制可以为每个 Flutter 模块
-创建 Android AAR 作为依赖媒介。当你的宿主应用程序开发者
-不想安装 Flutter SDK 时，这是一个很好方案，但是，如果你想要经常编译，
-那么每次都需要重新编译一次，该步骤不可避免。
+主要有两种方法将 Flutter 模块添加为 Gradle 中宿主应用程序的依赖项。
 
-The source code subproject mechanism is a convenient
-one-click build process, but requires the Flutter SDK.
-This is the mechanism used by the Android Studio IDE plugin.
+1. **Android archive**
+    The AAR mechanism creates generic Android AARs as
+    intermediaries that packages your Flutter module.
+    This is good when your downstream app builders don't
+    want to have the Flutter SDK installed. But,
+    it adds one more build step if you build frequently.
 
-直接将 Flutter 模块的源码作为子项目的依赖机制是一种便捷的一键式构建方案，
-但此时需要另外安装 Flutter SDK，这是目前 Android Studio IDE 插件使用的机制。
+   **AAR 集成**
+    AAR 机制可以为每个 Flutter 模块创建 Android AAR 作为依赖媒介。
+    当你的宿主应用程序开发者不想安装 Flutter SDK 时，这是一个很好方案。
+    但是每次修改都需要重新编译。
 
-#### Option A - Depend on the Android Archive (AAR)
+1. **Module source code**
+    The source code subproject mechanism is a convenient
+    one-click build process, but requires the Flutter SDK.
+    This is the mechanism used by the Android Studio IDE plugin.
 
-#### 方案 A - 依赖 Android Archive (AAR)
+   **模块源码集成**
+    直接将 Flutter 模块的源码作为子项目的依赖机制是一种便捷的一键式构建方案，
+    但此时需要另外安装 Flutter SDK，这是目前 Android Studio IDE 插件使用的机制。
+
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="add-to-app-android-deps" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="android-archive-tab" href="#android-archive" role="tab" aria-controls="android-archive" aria-selected="true">AAR 集成</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="module-source-tab" href="#module-source" role="tab" aria-controls="module-source" aria-selected="false">模块源码集成</a>
+    </li>
+</ul>
+
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+
+<div class="tab-pane active" id="android-archive" role="tabpanel" aria-labelledby="android-archive-tab" markdown="1">
+
+### Depend on the Android Archive (AAR)
+{:.no_toc}
+
+### 依赖 Android Archive (AAR)
 
 This option packages your Flutter library as a generic local
 Maven repository composed of AARs and POMs artifacts.
@@ -320,8 +379,8 @@ More specifically, this command creates
 (by default all debug/profile/release modes)
 a [local repository][], with the following files:
 
-详细地说，该命令应用于创建（默认情况下创建 debug/profile/release 所有模式）本地存储库，
-主要包含以下文件：
+详细地说，该命令应用于创建（debug/profile/release 所有模式）
+[本地仓库][local repository]，主要包含以下文件：
 
 ```nocode
 build/host/outputs/repo
@@ -400,19 +459,18 @@ dependencies {
   你也可以直接点击 Android Studio 菜单中的 `Build > Flutter > Build AAR` 
   为 Flutter 模块构建 AAR。
 
-{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
+  {% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
+
 {{site.alert.end}}
 
-  Your app now includes the Flutter module as a dependency.
-  You can follow the next steps in the
-  [Adding a Flutter screen to an Android app][].
+</div>
 
-你的应用程序现在添加了 Flutter 模块作为依赖项，下面，
-你可以按照 [向 Android 应用中添加 Flutter 页面][Adding a Flutter screen to an Android app] 中的后续步骤继续操作。
+<div class="tab-pane" id="module-source" role="tabpanel" aria-labelledby="module-source-tab" markdown="1">
 
-#### Option B - Depend on the module's source code
+### Depend on the module's source code
+{:.no_toc}
 
-#### 方案 B - 依赖模块的源码
+### 依赖模块的源码
 
 This option enables a one-step build for both your
 Android project and Flutter project. This option is
@@ -429,13 +487,15 @@ Flutter SDK to build the host app.
   By default, the host app provides the `:app` Gradle project.
   To change the name of this project, set
   `flutter.hostAppProjectName` in the Flutter module's
-  `gradle.properties` file. Finally, include this project
-  in the host app's `settings.gradle` file mentioned below.
+  `gradle.properties` file.
+  Include this project in the host app's `settings.gradle` file.
 
   默认情况下，宿主应用程序已经提供了 Gradle 项目 `:app`。 
-  要更改该项目的名称，可以在 Flutter 模块的 `gradle.properties` 文件中
-  设置 `flutter.hostAppProjectName`。最后，将该项目添加到
-  下面提到的宿主应用的 settings.gradle 文件中。
+  要更改该项目的名称，可以在 Flutter 模块的
+  `gradle.properties` 文件中
+  设置 `flutter.hostAppProjectName`。
+  将该项目添加到下面提到的宿主应用的
+  `settings.gradle` 文件中。
 
 {{site.alert.end}}
 
@@ -451,14 +511,10 @@ exist in the same directory
 include ':app'                                    // assumed existing content
 setBinding(new Binding([gradle: this]))                                // new
 evaluate(new File(                                                     // new
-  settingsDir.parentFile,                                              // new
-  'flutter_module/.android/include_flutter.groovy'                         // new
+    settingsDir.parentFile,                                            // new
+    'flutter_module/.android/include_flutter.groovy'                   // new
 ))                                                                     // new
 ```
-
-Assuming `my_flutter` is a sibling to `MyApp`.
-
-假设 `my_flutter` 和 `MyApp` 是同级目录。
 
 The binding and script evaluation allows the Flutter
 module to `include` itself (as `:flutter`) and any
@@ -478,18 +534,23 @@ module from your app:
 <?code-excerpt title="MyApp/app/build.gradle"?>
 ```groovy
 dependencies {
-  implementation project(':flutter')
+    implementation project(':flutter')
 }
 ```
 
+</div>
+</div>
+{% comment %} End: Tab panes. {% endcomment -%}
+
 Your app now includes the Flutter module as a dependency.
-You can follow the next steps in the [Adding a Flutter screen to an Android app][].
 
 此时，你的应用程序已将 Flutter 模块添加为依赖项，
-下面，你可以按照 
-[向 Android 应用中添加 Flutter 页面][Adding a Flutter screen to an Android app] 
-中的后续步骤继续操作。
 
+Continue to the [Adding a Flutter screen to an Android app][] guide.
+
+接下来你可以按照
+[向 Android 应用中添加 Flutter 页面][Adding a Flutter screen to an Android app]
+继续进一步的集成。
 
 [`abiFilters`]: https://developer.android.com/reference/tools/gradle-api/4.2/com/android/build/api/dsl/Ndk#abiFilters:kotlin.collections.MutableSet
 [Adding a Flutter screen to an Android app]: {{site.url}}/add-to-app/android/add-flutter-screen

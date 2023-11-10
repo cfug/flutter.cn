@@ -8,7 +8,6 @@ tags: Flutter参考资料
 keywords: 实践教程
 ---
 
-
 The **Flutter tutorials** teach you how to use the Flutter framework to
 build mobile applications for iOS and Android.
 
@@ -44,7 +43,7 @@ Choose from the following:
   <br> 了解和使用 Flutter 动画的基础类 (controllers, Animatable, curves, listeners, builders)，
   通过几个不同角度帮助你了解 Flutter 的动画 API。
 
-* [Internationalizing Flutter apps]({{site.url}}/accessibility-and-localization/internationalization)
+* [Internationalizing Flutter apps]({{site.url}}/ui/accessibility-and-internationalization/internationalization)
 <br> Learn how to internationalize your Flutter application. A guide through
   the widgets and classes that enable apps to display their
   content using the user's language and formatting conventions.

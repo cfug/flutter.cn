@@ -95,12 +95,12 @@ The Flutter only fields are highlighted.
 name: <project name>
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: none
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.1.0 <4.0.0'
 
 dependencies:
   [[highlight]]flutter:[[/highlight]]       # Required for every Flutter project
@@ -114,7 +114,7 @@ dev_dependencies:
   [[highlight]]flutter_test:[[/highlight]]
     [[highlight]]sdk: flutter[[/highlight]] # Required for a Flutter project that includes tests
 
-  [[highlight]]flutter_lints: ^2.0.0[[/highlight]] # Contains a set of recommended lints for Flutter code
+  [[highlight]]flutter_lints: ^3.0.0[[/highlight]] # Contains a set of recommended lints for Flutter code
 
 [[highlight]]flutter:[[/highlight]]
 

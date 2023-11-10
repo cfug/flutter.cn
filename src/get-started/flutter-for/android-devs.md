@@ -82,7 +82,7 @@ Widget 并非完全对应于 Android 中的 View，
 
 However, these have a few differences to a `View`. To start, widgets have a
 different lifespan: they are immutable and only exist until they need to be
-changed. Whenever widgets or their state change, Flutter’s framework creates
+changed. Whenever widgets or their state change, Flutter's framework creates
 a new tree of widget instances. In comparison, an Android view is drawn once
 and does not redraw until `invalidate` is called.
 
@@ -94,7 +94,7 @@ Flutter 框架都会创建一个新的 widget 树的实例。
 对比来看，一个 Android View 只会绘制一次，
 除非调用 `invalidate` 才会重绘。
 
-Flutter’s widgets are lightweight, in part due to their immutability.
+Flutter's widgets are lightweight, in part due to their immutability.
 Because they aren't views themselves, and aren't directly drawing anything,
 but rather are a description of the UI and its semantics that get "inflated"
 into actual view objects under the hood.
@@ -157,7 +157,7 @@ so use a `StatelessWidget` in Flutter.
 
 If you want to dynamically change the UI based on data received
 after making an HTTP call or user interaction then you have to work
-with `StatefulWidget` and tell the Flutter framework that the widget’s
+with `StatefulWidget` and tell the Flutter framework that the widget's
 `State` has been updated so it can update that widget.
 
 如果你想要根据 HTTP 请求返回的数据或者用户的交互来动态地更新界面，
@@ -175,7 +175,7 @@ and restores it.
 有一个跨帧存储和恢复状态数据的 `State` 对象。
 
 If you are in doubt, then always remember this rule: if a widget changes
-(because of user interactions, for example) it’s stateful.
+(because of user interactions, for example) it's stateful.
 However, if a widget reacts to change, the containing parent widget can
 still be stateless if it doesn't itself react to change.
 
@@ -239,7 +239,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -362,7 +362,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -480,7 +480,7 @@ class FadeAppTest extends StatelessWidget {
     return MaterialApp(
       title: 'Fade Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyFadeTest(title: 'Fade Demo'),
     );
@@ -732,7 +732,7 @@ Flutter 实际上并没有 Activity 和 Fragment 的对应概念。
 在 Flutter 中你需要使用 `Navigator` 和 `Route`
 在同一个 `Activity` 内的不同界面间进行跳转。
 
-A `Route` is an abstraction for a “screen” or “page” of an app, and a
+A `Route` is an abstraction for a "screen" or "page" of an app, and a
 `Navigator` is a widget that manages routes. A route roughly maps to an
 `Activity`, but it does not carry the same meaning. A navigator can push
 and pop routes to move from screen to screen. Navigators work like a stack
@@ -933,7 +933,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample Shared App Handler',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -1087,7 +1087,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -1220,7 +1220,7 @@ multiple CPU cores to do long-running or computationally intensive tasks.
 来利用多核处理器的优势执行耗时或计算密集的任务。
 
 Isolates are separate execution threads that do not share any memory
-with the main execution memory heap. This means you can’t access variables from
+with the main execution memory heap. This means you can't access variables from
 the main thread, or update your UI by calling `setState()`.
 Unlike Android threads,
 Isolates are true to their name, and cannot share memory
@@ -1318,7 +1318,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -1512,7 +1512,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -2309,7 +2309,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -2376,7 +2376,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -2470,7 +2470,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -2551,7 +2551,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -2769,7 +2769,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -2873,9 +2873,9 @@ maintained by the Flutter team:
 [官方插件][first party plugins] 提供了 Firebase 的大多数功能。
 这些插件都是由 Flutter 团队维护的官方集成插件：
 
- * [`firebase_admob`][] for Firebase AdMob
-  
-   [`firebase_admob`][] 提供 Firebase AdMob 功能
+ * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
+
+   [`google_mobile_ads`][] 提供 Google Mobile Ads 功能
 
  * [`firebase_analytics`][] for Firebase Analytics
 
@@ -2998,11 +2998,11 @@ same functionality, but is not as rich as `MaterialApp`.
 
 To customize the colors and styles of any child components, pass a
 `ThemeData` object to the `MaterialApp` widget. For example, in the code below,
-the primary swatch is set to blue and text selection color is red.
+the color scheme from seed is set to deepPurple and text selection color is red.
 
 如果要自定义任意子组件的颜色或者样式，
 给 `MaterialApp` Widget 传入一个 `ThemeData` 对象即可。
-例如，在下面的代码中，主色调设置为蓝色，文本选中颜色设置为红色。
+例如，在下面的代码中，主色调设置为深紫色，文本选中颜色设置为红色。
 
 <?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
@@ -3016,7 +3016,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         textSelectionTheme:
             const TextSelectionThemeData(selectionColor: Colors.red),
       ),
@@ -3149,7 +3149,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [DevTools]: {{site.url}}/tools/devtools
 [existing plugin]: {{site.pub}}/flutter/
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
-[`firebase_admob`]: {{site.pub}}/packages/firebase_admob
+[`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
 [`firebase_auth`]: {{site.pub}}/packages/firebase_auth
 [`firebase_database`]: {{site.pub}}/packages/firebase_database

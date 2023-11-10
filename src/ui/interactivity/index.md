@@ -14,7 +14,7 @@ diff2html: true
 
 {{site.alert.secondary}}
 
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   <h4 class="no_toc">你会学到什么</h4>
 
@@ -240,7 +240,7 @@ install), you are good to go!
 [iOS 模拟器][iOS simulator] 或者 [Android 模拟器][Android emulator]
 （Flutter 安装部分介绍过），你就可以开始了！
 
-<a name="step-1"></a>
+<a id="step-1"></a>
 ### Step 1: Decide which object manages the widget's state
 
 ### Step 1: 决定哪个对象管理 widget 的状态
@@ -266,7 +266,7 @@ and how state might be managed, in [Managing state][].
 你可以在 [状态管理][Managing state] 中了解更多
 关于 widget 和状态的分离以及如何管理状态的信息。
 
-<a name="step-2"></a>
+<a id="step-2"></a>
 ### Step 2: Subclass StatefulWidget
 
 ### Step 2: 创建 StatefulWidget 的子类
@@ -312,7 +312,7 @@ class FavoriteWidget extends StatefulWidget {
 
 {{site.alert.end}}
 
-<a name="step-3"></a>
+<a id="step-3"></a>
 ### Step 3: Subclass State
 
 ### Step 3: 创建 State 的子类
@@ -402,7 +402,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 The `_toggleFavorite()` method, which is called when the
 `IconButton` is pressed, calls `setState()`.
 Calling `setState()` is critical, because this
-tells the framework that the widget’s state has
+tells the framework that the widget's state has
 changed and that the widget should be redrawn.
 The function argument to `setState()` toggles the
 UI between these two states:
@@ -436,7 +436,7 @@ void _toggleFavorite() {
 }
 ```
 
-<a name="step-4"></a>
+<a id="step-4"></a>
 ### Step 4: Plug the stateful widget into the widget tree
 
 ### Step 4: 将有 stateful widget 插入 widget 树中
@@ -612,7 +612,7 @@ on the `Container`.
 
 这些示例使用 [`GestureDetector`][] 捕获 `Container` 上的用户动作。
 
-<a name="self-managed"></a>
+<a id="self-managed"></a>
 ### The widget manages its own state
 
 ### widget 管理自己的状态
@@ -725,7 +725,7 @@ class MyApp extends StatelessWidget {
 
 <hr>
 
-<a name="parent-managed"></a>
+<a id="parent-managed"></a>
 ### The parent widget manages the widget's state
 
 ### 父 widget 管理 widget 的 state
@@ -855,7 +855,7 @@ class TapboxB extends StatelessWidget {
 
 <hr>
 
-<a name="mix-and-match"></a>
+<a id="mix-and-match"></a>
 ### A mix-and-match approach
 
 ### 混搭管理

@@ -24,7 +24,7 @@ you can search the marketplace for the Flutter plugin.
 
 ## 开始调试一个应用
 
-To open DevTools, you first need to run a Flutter app. 
+To open DevTools, you first need to run a Flutter app.
 This can be accomplished by opening a Flutter project,
 ensuring that you have a device connected,
 and clicking the **Run** or **Debug** toolbar buttons.
@@ -46,13 +46,13 @@ you can start DevTools using one of the following:
 * Select the **Open DevTools** toolbar action in the Run view.
 
   运行界面下，在工具栏选择 **Open DevTools**（启动调试工具）。
-  
+
 * Select the **Open DevTools** toolbar action in the Debug view.
   (if debugging)
-  
+
   调试界面下，在工具栏选择 **Open DevTools**。
-  
-* Select the **Open DevTools** action from the **More Actions** 
+
+* Select the **Open DevTools** action from the **More Actions**
   menu in the Flutter Inspector view.
 
   Flutter Inspector 里，在 **More Actions**
@@ -66,13 +66,15 @@ you can start DevTools using one of the following:
 
 You can also open DevTools from an IntelliJ action.
 Open the **Find Action...** dialog
-(on a Mac, press `Command+Shift+A)`, and search for the
-**Open DevTools** action. When you select that action,
+(on macOS, press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>,
+and search for the **Open DevTools** action.
+When you select that action,
 DevTools is installed (if it isn't already), the DevTools server
 launches, and a browser instance opens pointing to the DevTools app.
 
 你同样可以在 IntelliJ 中运行调试工具，
-先开启 **Find Action...** 对话框（Mac 上可以同时按下 'Command+Shift+A')，
+先开启 **Find Action...** 对话框
+（macOS 上可以同时按下 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>)，
 然后查找 **Open DevTools** 选项。
 在调试工具已安装的前提下，相关服务会启动，同时打开指向待调试应用的浏览器实例。
 

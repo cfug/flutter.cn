@@ -1,12 +1,21 @@
 name: 文档或页面问题
 description: 协助改进 flutter.cn 的页面内容
-title: '[Page issue] {请替换为页面 url}'
+title: '[页面问题] {请替换为页面 url}'
 labels: ['E: 页面问题']
 body:
   - type: markdown
     attributes:
       value: |
-          > 发现了错误的拼写或内容？你可以点击页面上的小铅笔图标查看页面源代码，也可以完整填写这个 issue。
+        发现了内容错误？你或许可以尝试修复它！
+
+        1. 点击页面标题右侧的页面图标（BUG 图标左侧），跳转到对应的 GitHub 页面。
+        1. 点击源代码右上方的铅笔图标，进入修改。
+        1. 修复页面错误。
+        1. 点击 **Commit changes...**。
+        1. 写明提交信息和描述。
+        1. 点击 **Propose changes**。
+
+        如果你希望由维护者来修复问题，请填写完整该问题表单。
   - type: input
     id: page-url
     attributes:
@@ -17,28 +26,41 @@ body:
   - type: input
     id: page-source
     attributes:
-      label: 页面源地址
-      placeholder: （通过页面上报问题链接时会自动填充）
+      label: 页面源代码地址
+      placeholder: 指向页面的源代码问题出处
     validations:
       required: false
   - type: textarea
     id: problem
     attributes:
       label: 描述问题
-      placeholder: 清晰且简要地描述问题。
+      placeholder: 清晰且简要地描述你认为出现的问题
     validations:
       required: true
   - type: textarea
     id: fix
     attributes:
       label: 期望如何修复
-      placeholder: 清晰且简要地描述你希望我们如何调整相关内容。
+      placeholder: 清晰且简要地描述你希望我们如何调整相关内容
     validations:
       required: false
   - type: textarea
     id: additional-info
     attributes:
       label: 附加信息
-      placeholder: 任何你认为我们需要知道的额外信息。
+      placeholder: |
+        请提供任何你认为我们需要知道的额外信息，例如：
+
+        * 问题何时出现的？频率如何？
+        * 你正在使用的浏览器、系统平台？
+        * 任何你认为会影响到问题的因素？
     validations:
       required: false
+  - type: checkboxes
+    id: volunteer
+    attributes:
+      label: 我希望能自己修复这个问题
+      description: 让我们知道你是否愿意自己修复这个问题
+      options:
+        - label: 我将自己尝试修复这个问题
+          required: false

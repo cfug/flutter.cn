@@ -126,8 +126,7 @@ use the following instructions:
 
      return PlatformViewLink(
        viewType: viewType,
-       surfaceFactory:
-           (context, controller) {
+       surfaceFactory: (context, controller) {
          return AndroidViewSurface(
            controller: controller as AndroidViewController,
            gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
@@ -511,6 +510,16 @@ android {
     }
 }
 ```
+
+#### Manual view invalidation
+
+Certain Android Views do not invalidate themselves when their content changes.
+Some example views include `SurfaceView` and `SurfaceTexture`.
+When your Platform View includes these views you are required to
+manually invalidate the view after they have been drawn to
+(or more specifically: after the swap chain is flipped).
+Manual view invalidation is done by calling `invalidate` on the View 
+or one of its parent views.
 
 [`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 

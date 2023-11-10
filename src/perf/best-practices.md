@@ -384,21 +384,22 @@ Here are some tips you might find to be useful:
 
 * To implement fading in an image, consider using the
   [`FadeInImage`][] widget, which applies a gradual
-  opacity using the GPU’s fragment shader.
+  opacity using the GPU's fragment shader.
   For more information, check out the [`Opacity`][] docs.
 
   要在图像中实现淡入淡出，请考虑使用 [`FadeInImage`][] widget，
   该 widget 使用 GPU 的片段着色器应用渐变不透明度。
   了解更多详情，请查看 [`Opacity`][] 文档。
 
-* **Clipping** doesn’t call `saveLayer()` (unless
+* **Clipping** doesn't call `saveLayer()` (unless
   explicitly requested with `Clip.antiAliasWithSaveLayer`),
-  so these operations aren’t as expensive as `Opacity`,
+  so these operations aren't as expensive as `Opacity`,
   but clipping is still costly, so use with caution.
   By default, clipping is disabled (`Clip.none`),
   so you must explicitly enable it when needed.
 
-  **Clipping** 不会调用 `saveLayer()`（除非明确使用 `Clip.antiAliasWithSaveLayer`），
+  **Clipping** 不会调用 `saveLayer()`
+  （除非明确使用 `Clip.antiAliasWithSaveLayer`），
   因此这些操作没有 `Opacity` 那么耗时，但仍然很耗时，所以请谨慎使用。
 
 * To create a rectangle with rounded corners,
@@ -609,7 +610,7 @@ for a total of 16ms or less.
 
 If your frames are rendering in well under
 16ms total in [profile mode][],
-you likely don’t have to worry about performance
+you likely don't have to worry about performance
 even if some performance pitfalls apply,
 but you should still aim to build and
 render a frame as fast as possible. Why?
@@ -630,7 +631,7 @@ render a frame as fast as possible. Why?
   可能在你当前测试设备上运行良好，但请考虑在应用所支持的最低端设备上的情况。
 
 * As 120fps devices become more widely available,
-  you’ll want to render frames in under 8ms (total)
+  you'll want to render frames in under 8ms (total)
   in order to provide the smoothest experience.
 
   当 120fps 的设备普及之后，便需要在 8ms 之内完成每一帧的渲染来保证流畅平滑的体验。
@@ -648,7 +649,7 @@ check out the video [Why 60fps?][]
 
 ## 陷阱
 
-If you need to tune your app’s performance,
+If you need to tune your app's performance,
 or perhaps the UI isn't as smooth as you expect,
 the [DevTools Performance view][] can help!
 
@@ -687,7 +688,7 @@ your app's performance.
 
 * When using an `AnimatedBuilder`,
   avoid putting a subtree in the builder
-  function that builds widgets that don’t
+  function that builds widgets that don't
   depend on the animation. This subtree is
   rebuilt for every tick of the animation.
   Instead, build that part of the subtree

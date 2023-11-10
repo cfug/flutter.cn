@@ -202,48 +202,48 @@ Dash 2.0 and 2.1
   Dash 的喙是直的。**请不要用弯的喙描绘 Dash。**
 
 * We also have Mega-Dash, a life-sized mascot
-  who is currently resting in a locked-down Google office.
-  
+  who is currently resting in a Google office.
+
   我们还有一个巨型的 Dash，与真人大小相同。目前它正在谷歌的办公室静养。
 
-![Mega-Dash in the office]({{site.url}}/assets/images/dash/MegaDashChilling.png){:width="50%"}<br>
-
+  ![Mega-Dash in the office]({{site.url}}/assets/images/dash/MegaDashChilling.png){:width="50%"}
+  
   Mega-Dash made her
   first appearance at the [Flutter Interact][] event
   in Brooklyn, New York, on December 11, 2019.
-  
+
   巨型 Dash 首次在 2019年 12 月 11 日纽约布鲁克林的
   [Flutter Interact][] 活动中亮相。
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/EgBMGDtHZhE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+  <iframe width="560" height="315" src="{{site.youtube-site}}/embed/EgBMGDtHZhE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
-  
+
   我们还有一个 Dash 布偶，
   由 Shams 最早的毛绒玩具制成。
-  
-![Nilay and the Dash puppet]({{site.url}}/assets/images/dash/NilayDashPuppet.png){:width="50%"}<br>
 
-  A number of our YouTube videos feature the Dash puppet,
-  voiced by Emily Fortuna, one of our early (and much loved)
-  Flutter Developer Advocates.
+  ![Nilay and the Dash puppet]({{site.url}}/assets/images/dash/NilayDashPuppet.png){:width="50%"}
   
+  A number of our YouTube videos feature the Dash puppet,
+  voiced by Emily Fortuna, one of the early (and much loved)
+  Flutter Developer Advocates.
+
   我们的许多 YouTube 视频都有 Dart 布偶的出镜，由我们早期（且深受大家喜爱）的
   Flutter 开发技术推广工程师 Emily Fortuna 配音。
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/dsiLVNDJ3t0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/oyy_1CjNdBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="{{site.youtube-site}}/embed/dsiLVNDJ3t0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="{{site.youtube-site}}/embed/oyy_1CjNdBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %}
 I haven't been able to figure out how to play the mp4 file...
 * Here is a sound recording of Dash's chirp, by Kathy Walrath,
   the Dart writer.
 ![Dash's chirp]({{site.url}}/assets/images/dash/DartDartDarrrrrrt.mp4){:width="50%"}<br>
 {% endcomment %}
-
+<br>
 !["Born to Hot Reload" jacket]({{site.url}}/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
 
-[Flutter Interact]: {{site.developers}}/events/flutter-interact
+[Flutter Interact]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/
 
 {% comment %}

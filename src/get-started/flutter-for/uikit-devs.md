@@ -41,10 +41,15 @@ To learn how, see [Platform adaptations][].
   check out [Add Flutter to existing app][].
 {{site.alert.end}}
 
-This document can be used as a cookbook by jumping around
-and finding questions that are most relevant to your needs.
+Use this guide as a cookbook.
+Jump around and find questions that address your most relevant needs.
 
 ## Overview
+
+As an introduction, watch the following video.
+It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
+
+<iframe class="full-width" src="{{site.youtube-site}}/embed/ceMsPBbcEGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Views vs. Widgets
 
@@ -69,12 +74,12 @@ However, these have a few differences to a `UIView`.
 To start, widgets have a different lifespan: they are immutable
 and only exist until they need to be changed.
 Whenever widgets or their state change,
-Flutter’s framework creates a new tree of widget instances.
+Flutter's framework creates a new tree of widget instances.
 In comparison, a UIKit view is not recreated when it changes,
 but rather it's a mutable entity that is drawn once
 and doesn't redraw until it is invalidated using `setNeedsDisplay()`.
 
-Furthermore, unlike `UIView`, Flutter’s widgets are lightweight,
+Furthermore, unlike `UIView`, Flutter's widgets are lightweight,
 in part due to their immutability.
 Because they aren't views themselves,
 and aren't directly drawing anything,
@@ -97,7 +102,7 @@ to produce an interface that looks like
 
 To update your views in UIKit, you directly mutate them.
 In Flutter, widgets are immutable and not updated directly.
-Instead, you have to manipulate the widget’s state.
+Instead, you have to manipulate the widget's state.
 
 This is where the concept of Stateful vs Stateless widgets
 comes in. A `StatelessWidget` is just what it sounds
@@ -114,7 +119,7 @@ use a `StatelessWidget` in Flutter.
 If you want to dynamically change the UI based on data received
 after making an HTTP call, use a `StatefulWidget`.
 After the HTTP call has completed, tell the Flutter framework
-that the widget’s `State` is updated, so it can update the UI.
+that the widget's `State` is updated, so it can update the UI.
 
 The important difference between stateless and
 stateful widgets is that `StatefulWidget`s have a `State` object
@@ -124,10 +129,10 @@ so it's not lost.
 If you are in doubt, remember this rule:
 if a widget changes outside of the `build` method
 (because of runtime user interactions, for example),
-it’s stateful.
+it's stateful.
 If the widget never changes, once built, it's stateless.
 However, even if a widget is stateful, the containing parent widget
-can still be stateless if it isn’t itself reacting to those changes
+can still be stateless if it isn't itself reacting to those changes
 (or other inputs).
 
 The following example shows how to use a `StatelessWidget`.
@@ -557,7 +562,7 @@ to display.
 
 Flutter has a similar implementation,
 using a `Navigator` and `Routes`.
-A `Route` is an abstraction for a “screen” or “page” of an app,
+A `Route` is an abstraction for a "screen" or "page" of an app,
 and a `Navigator` is a [widget][]
 that manages routes. A route roughly maps to a
 `UIViewController`. The navigator works in a similar way to the iOS
@@ -734,7 +739,7 @@ with and without the `intl` package.
 ### Managing dependencies
 
 In iOS, you add dependencies with CocoaPods by adding to your `Podfile`.
-Flutter uses Dart’s build system and the Pub package manager
+Flutter uses Dart's build system and the Pub package manager
 to handle dependencies. The tools delegate the building of the
 native Android and iOS wrapper apps to the
 respective build systems.
@@ -810,7 +815,7 @@ In UIKit, these views have delegate methods
 for deciding the number of rows,
 the cell for each index path, and the size of the cells.
 
-Due to Flutter’s immutable widget pattern,
+Due to Flutter's immutable widget pattern,
 you pass a list of widgets to your `ListView`,
 and Flutter takes care of making sure that
 scrolling is fast and smooth.
@@ -1352,7 +1357,7 @@ but is not as rich as `MaterialApp`.
 To customize the colors and styles of any child components,
 pass a `ThemeData` object to the `MaterialApp` widget.
 For example, in the code below,
-the primary swatch is set to blue and divider color is grey.
+the color scheme from seed is set to deepPurple and divider color is grey.
 
 <?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
@@ -1366,7 +1371,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         dividerColor: Colors.grey,
       ),
       home: const SampleAppPage(),
@@ -1685,7 +1690,7 @@ with support for `Isolate`s
 an event loop, and asynchronous programming.
 Unless you spawn an `Isolate`,
 your Dart code runs in the main UI thread and is
-driven by an event loop. Flutter’s event loop is
+driven by an event loop. Flutter's event loop is
 equivalent to the iOS main loop&mdash;that is,
 the `Looper` that is attached to the main thread.
 
@@ -1829,7 +1834,7 @@ computationally intensive tasks.
 
 Isolates are separate execution threads that do not share
 any memory with the main execution memory heap.
-This means you can’t access variables from the main thread,
+This means you can't access variables from the main thread,
 or update your UI by calling `setState()`.
 Isolates are true to their name, and cannot share memory
 (in the form of static fields, for example).
@@ -2165,11 +2170,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter
-[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
 [Flutter cookbook]: {{site.url}}/cookbook
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[internationalization guide]: {{site.url}}/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
@@ -2178,7 +2183,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Material Components]: {{site.material}}/develop/flutter/
 [Material Design guidelines]: {{site.material}}/styles/
 [optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
-[Platform adaptations]: {{site.url}}/resources/platform-adaptations
+[Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [platform channel]: {{site.url}}/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}/flutter/packages
 [Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input

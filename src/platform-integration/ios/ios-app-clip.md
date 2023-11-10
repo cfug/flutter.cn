@@ -116,7 +116,7 @@ activate the new scheme for the new target.
 {% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/activate-scheme.png" %}
 
-<a name="step-3"></a>
+<a id="step-3"></a>
 ## Step 3 - Remove unneeded files
 
 ## 步骤 3 - 移除不需要的文件

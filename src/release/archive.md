@@ -19,13 +19,18 @@ toc: false
 
 The {{site.sdk.channel | capitalize }} channel contains the
 most stable Flutter builds.
-To learn more, check out [Flutter’s channels][].
+To learn more, check out [Flutter's channels][].
+
+Flutter 的 {{site.sdk.channel | capitalize }} channel 是相对稳定的发布版本，
+查阅这个文档了解更多：[Flutter 的构建（发布）渠道 channels][Flutter's channels]。
 
 {% include docs/china-notice.md %}
 
 To learn what's new in the major Flutter releases,
 check out the [release notes][] page.
 
+你可以查看 [版本更新日志][release notes] 了解
+Flutter 主要更新的内容。
 
 {{site.alert.secondary}}
   **A note on provenance**: [provenance](https://slsa.dev/provenance)
@@ -40,9 +45,6 @@ check out the [release notes][] page.
   curl [provenance URL] | jq -r .payload | base64 -d | jq
   ```
 {{site.alert.end}}
-
-Flutter 的 {{site.sdk.channel | capitalize }} channel 是相对稳定的发布版本，
-查阅这个文档了解更多：[Flutter 的构建（发布）渠道 channels][Flutter’s channels]。
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="os-archive-tabs" role="tablist">
@@ -73,7 +75,7 @@ and then triggering a download of the SDK dependencies:
 
 我们并没有对 master channel 的提供打包下载，
 不过，你可以通过 `git clone` 我们在 
-[Github 上 repo]({{site.repo.flutter}}) 的 master 分支来使用。
+[Github 上 repo][GitHub repo] 的 master 分支来使用。
 
 ```terminal
 $ git clone -b master https://github.com/flutter/flutter.git
@@ -89,9 +91,11 @@ see [Installation bundles][].
 We will post a Weibo message with each Flutter releases and the merged PR,
 please follow us on Weibo: [Flutter Community](https://weibo.com/u/6723427904)!
 
-每次新版本发布以及 Flutter 主 repo 有新 PR 合并的时候，我们会在社区微博上发布一条信息，欢迎关注
-[Flutter社区](https://weibo.com/u/6723427904) 微博账号！
+每次新版本发布以及 Flutter 主 repo 有新 PR 合并的时候，
+我们会在社区微博上发布一条信息，欢迎关注
+[Flutter 社区](https://weibo.com/u/6723427904) 微博账号！
 
-[Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
+[Flutter's channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [release notes]: {{site.url}}/release/release-notes
+[GitHub repo]: {{site.repo.flutter}}
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles

@@ -20,8 +20,8 @@ Flutter 支持构建在运行时下载额外 Dart 代码和静态资源的应用
 这可以减少安装应用程序 apk 的大小，并在用户需要时下载功能和静态资源。
 
 We refer to each uniquely downloadable bundle of Dart
-libraries and assets as a “deferred component”.
-This is achieved by using Dart’s deferred imports,
+libraries and assets as a "deferred component".
+This is achieved by using Dart's deferred imports,
 which can be compiled into split AOT shared libraries.
 
 我们将每个独立的可下载的 Dart 库和静态资源称为「延迟组件」。
@@ -31,7 +31,7 @@ which can be compiled into split AOT shared libraries.
 {{site.alert.note}}
 
   This feature is currently only available on Android,
-  taking advantage of Android and Google Play Stores’
+  taking advantage of Android and Google Play Stores'
   [dynamic feature modules][] to deliver the
   deferred components packaged as Android modules.
   Deferred code does not impact other platforms,
@@ -89,7 +89,7 @@ Android app for deferred loading.
 ### 步骤 1：依赖项和初始项目设置
 
 <ol markdown="1">
-<li markdown="1"><p markdown="1">Add Play Core to the Android app’s
+<li markdown="1"><p markdown="1">Add Play Core to the Android app's
     build.gradle dependencies.
     In `android/app/build.gradle` add the following:</p><p markdown="1">将 Play Core 添加到 Android 应用程序的 build.gradle 依赖项中。
     在 `android/app/build.gradle` 中添加以下内容：</p>
@@ -211,7 +211,7 @@ FlutterInjector.setInstance(new FlutterInjector.Builder()
 </li>
     
 <li markdown="1"><p markdown="1">Opt into deferred components by adding
-    the `deferred-components` entry to the app’s `pubspec.yaml`
+    the `deferred-components` entry to the app's `pubspec.yaml`
     under the `flutter` entry:</p><p markdown="1">通过将 `deferred-components` 依赖添加到应用程序的 `pubspec.yaml` 中的 `flutter` 下，并选择延迟组件：</p>
 
   ```yaml
@@ -242,7 +242,7 @@ FlutterInjector.setInstance(new FlutterInjector.Builder()
 ### 步骤 2：实现延迟加载的 Dart 库
 
 Next, implement deferred loaded Dart libraries in your
-app’s Dart code. The implementation does not need
+app's Dart code. The implementation does not need
 to be feature complete yet. The example in the
 rest of this page adds a new simple deferred widget
 as a placeholder. You can also convert existing code
@@ -362,9 +362,11 @@ trigger a pre-load to help mask the loading time.
 也可以提前调用 `loadLibrary()` 函数进行预加载，以帮助屏蔽加载时间。
 
 You can find another example of deferred import loading in
-[Flutter Gallery’s lib/deferred_widget.dart][].
+[Flutter Gallery's lib/deferred_widget.dart][].
 
-你可以在 [Flutter Gallery’s lib/deferred_widget.dart][] 中找到其他延迟加载组件的示例。
+你可以在
+[Flutter Gallery 的 lib/deferred_widget.dart 文件][Flutter Gallery's lib/deferred_widget.dart]
+中找到其他延迟加载组件的示例。
 
 </li>
 </ol>
@@ -411,7 +413,7 @@ any issues and guides you through suggested changes to fix them.
 {{site.alert.end}}
 
 <ol markdown="1">
-<li markdown="1"><a name="step-3.1"></a>
+<li markdown="1"><a id="step-3.1"></a>
 <p markdown="1">The
     `flutter build appbundle` command
     runs the validator and attempts to build the app with
@@ -498,7 +500,7 @@ The validator also checks for the following in the
     Contains a meta-data entry that encodes
     the mapping between loading units and component name the
     loading unit is associated with. This mapping is used by the
-    embedder to convert Dart’s internal loading unit id
+    embedder to convert Dart's internal loading unit id
     to the name of a deferred component to install. For example:</p><p markdown="1">包含一个 meta-data 键值对，对加载单元与其关联的组件名称之间的映射进行编码。
     嵌入程序使用此映射将 Dart 的内部加载单元 id 转换为要安装的延迟组件的名称。例如：</p>
     
@@ -530,7 +532,7 @@ validator passes.
     `<projectDir>/build/android_deferred_components_setup_files` directory.
     It is recommended that the changes be applied by
     copying and overwriting the same files in the
-    project’s `android` directory. Before overwriting,
+    project's `android` directory. Before overwriting,
     the current project state should be committed to
     source control and the recommended changes should be
     reviewed to be appropriate. The tool won't make any
@@ -541,11 +543,11 @@ validator passes.
     该工具不会自动更改 `android` 目录。</p>
 </li>
 
-<li markdown="1"><a name="step-3.3"></a>
+<li markdown="1"><a id="step-3.3"></a>
 <p markdown="1">Once the available
     loading units are generated and logged in
     `<projectDirectory>/deferred_components_loading_units.yaml`,
-    it is possible to fully configure the pubspec’s
+    it is possible to fully configure the pubspec's
     `deferred-components` section so that the loading units
     are assigned to deferred components as desired.
     To continue with the box example, the generated
@@ -560,9 +562,9 @@ loading-units:
       - package:MyAppName/box.Dart
 ```
 
-The loading unit id (‘2’ in this case) is used
+The loading unit id ('2' in this case) is used
 internally by Dart, and can be ignored.
-The base loading unit (id ‘1’) is not listed
+The base loading unit (id '1') is not listed
 and contains everything not explicitly contained
 in another loading unit.
 
@@ -742,7 +744,7 @@ $ java -jar bundletool.jar build-apks --bundle=<your_app_project_dir>/build/app/
 $ java -jar bundletool.jar install-apks --apks=<your_temp_dir>/app.apks
 ```
 
-Where `<your_app_project_dir>` is the path to your app’s
+Where `<your_app_project_dir>` is the path to your app's
 project directory and `<your_temp_dir>` is any temporary
 directory used to store the outputs of bundletool.
 This unpacks your `.aab` file into an `.apks` file and
@@ -792,7 +794,7 @@ Play store's delivery feature.
 [Deferred Components]: {{site.repo.flutter}}/wiki/Deferred-Components
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
-[Flutter Gallery’s lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/main/lib/deferred_widget.dart
+[Flutter Gallery's lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/main/lib/deferred_widget.dart
 [Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library

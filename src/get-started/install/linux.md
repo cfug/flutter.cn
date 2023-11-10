@@ -1,8 +1,8 @@
 ---
-title: Linux install
+title: Linux Installation Guide
 title: 在 Linux 操作系统上安装和配置 Flutter 开发环境
-description: How to install on Linux.
-description: 如何在 Linux 上安装 Flutter。
+description: Learn how to install Flutter on Linux.
+description: 学习如何在 Linux 上安装 Flutter。
 short-title: Linux
 tags: Flutter安装,Flutter环境搭建
 keywords: Flutter Linux,Flutter macOS,Flutter镜像,Linux开发Flutter
@@ -19,22 +19,21 @@ next:
 ## 系统配置要求
 
 To install and run Flutter,
-your development environment must meet these minimum requirements:
+your Linux development environment needs to meet these minimum requirements:
 
 要想安装和运行 Flutter，你的开发环境至少应该满足如下的需求：
 
-- **Operating Systems**: Linux (64-bit)
+- **Operating System**: Linux (64-bit)
 
   **操作系统**: Linux (64 位)
 
-- **Disk Space**: 600 MB (does not include disk space for IDE/tools).
+- **Disk Space**: At least 1.6 GB (excluding disk space for IDE/tools).
 
-  **磁盘空间**: 600MB (不包含安装 IDE 和其他工具的空间)
+  **磁盘空间**: 1.6 GB (不包含安装 IDE 和其他工具的空间)
 
-- **Tools**: Flutter depends on these command-line tools being available
-  in your environment.
- 
-  **命令工具**: Flutter 需要你的开发环境中已经配置了以下命令行工具。
+- **Tools**: Flutter relies on these command-line tools:
+
+  **命令工具**: Flutter 需要以下命令行工具：
 
   - `bash`
   - `curl`
@@ -47,17 +46,14 @@ your development environment must meet these minimum requirements:
   - `xz-utils`
   - `zip`
 
-- **Shared libraries**: Flutter `test` command depends on this library
-  being available in your environment.
+- **Shared libraries**: To utilize the `flutter test` command,
+  your environment needs the library `libGLU.so.1`.
+  The `mesa` packages provide this library:
+  `libglu1-mesa` on Ubuntu/Debian and `mesa-libGLU` on Fedora.
 
-  **公用库**: Flutter 的 `test` 命令需要你的系统安装或存在如下的公用库。
-
-  - `libGLU.so.1` - provided by mesa packages such as `libglu1-mesa` on
-     Ubuntu/Debian and `mesa-libGLU` on Fedora.
-
-    `libGLU.so.1` - 由 mesa 套件 (packages) 提供，
-    比如 Ubuntu/Debian 系统下的 `libglu1-mesa`，
-    以及 Fedora 系统下的 `mesa-libGLU`。
+  **公用库**: Flutter 的 `test` 命令需要 `libGLU.so.1` 库。
+  `mesa` 套件已经包含了这个库：
+  在 Ubuntu/Debian 上是 `libglu1-mesa`，在 Fedora 上是 `mesa-libGLU`。
 
 {% include_relative _get-sdk-linux.md %}
 

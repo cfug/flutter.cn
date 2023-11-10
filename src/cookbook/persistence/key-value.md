@@ -1,8 +1,9 @@
 ---
 title: Store key-value data on disk
 title: 存储键值对数据
-description: How to use the shared_preferences package to store key-value data.
-description: 如何使用 shared_preferences 包来存储 key-value 数据。
+description: >-
+  Learn how to use the shared_preferences package to store key-value data.
+description: 学习如何使用 shared_preferences 包来存储键值对数据。
 tags: cookbook, 实用教程, 持久化
 keywords: KV,SharedPreferences
 ---
@@ -15,18 +16,13 @@ to save, you can use the [`shared_preferences`][] plugin.
 如果你要存储的键值集合相对较少，
 则可以用 [`shared_preferences`][] 插件。
 
-Normally,
-you would have to write native platform integrations for storing
-data on both iOS and Android. Fortunately,
-the [`shared_preferences`][] plugin can be used to persist
-key-value data on disk. The shared preferences plugin
-wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
-providing a persistent store for simple data.
+Normally, you would have to
+write native platform integrations for storing data on each platform.
+Fortunately, the [`shared_preferences`][] plugin can be used to
+persist key-value data to disk on each platform Flutter supports.
 
 通常你需要在两个平台用原生的方式存储数据。
 幸运的是 [`shared_preferences`] 插件可以把 key-value 保存到磁盘中。
-它通过封装 iOS 上的 `NSUserDefaults` 和 Android
-上的 `SharedPreferences` 为简单数据提供持久化存储。
 
 This recipe uses the following steps:
 
@@ -49,9 +45,10 @@ This recipe uses the following steps:
      移除数据
 
 {{site.alert.note}}
-  To learn more, watch this short Package of the Week video on the shared_preferences package:
+  To learn more, watch this short Package of the Week video
+  on the `shared_preferences` package:
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/sa_U0jffQII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/sa_U0jffQII" title="YouTube video player - shared_preferences (Package of the Week)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 {{site.alert.end}}
 
 ## 1. Add the dependency
@@ -84,17 +81,17 @@ Setter方法可用于各种基本数据类型，
 例如 `setInt`、`setBool` 和 `setString`。
 
 Setter methods do two things: First, synchronously update the
-key-value pair in-memory. Then, persist the data to disk.
+key-value pair in memory. Then, persist the data to disk.
 
 Setter 方法做两件事：
 首先，同步更新 key-value 到内存中，然后保存到磁盘中。
 
 <?code-excerpt "lib/partial_excerpts.dart (Step2)"?>
 ```dart
-// obtain shared preferences
+// Load and obtain the shared preferences for this app.
 final prefs = await SharedPreferences.getInstance();
 
-// set value
+// Save the counter value to persistent storage under the 'counter' key.
 await prefs.setInt('counter', counter);
 ```
 
@@ -114,9 +111,13 @@ For example, you can use the `getInt`, `getBool`, and `getString` methods.
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
-// Try reading data from the counter key. If it doesn't exist, return 0.
+// Try reading the counter value from persistent storage.
+// If not present, null is returned, so default to 0.
 final counter = prefs.getInt('counter') ?? 0;
 ```
+
+Note that the getter methods throw an exception if the persisted value
+has a different type than the getter method expects.
 
 ## 4. Remove data
 
@@ -130,6 +131,7 @@ To delete data, use the `remove()` method.
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
+// Remove the counter key-value pair from persistent storage.
 await prefs.remove('counter');
 ```
 
@@ -137,57 +139,49 @@ await prefs.remove('counter');
 
 ## 支持类型
 
-Although key-value storage is easy and convenient to use,
-it has limitations:
+Although the key-value storage provided by `shared_preferences` is
+easy and convenient to use, it has limitations:
 
-虽然使用 key-value 存储非常简单方便，
+虽然使用 `shared_preferences` 提供的键值对存储非常简单方便，
 但是它也有以下局限性：
 
-* Only primitive types can be used: `int`, `double`, `bool`, `string`,
-  and `stringList`.
-  
-  只能用于基本数据类型： `int`、`double`、`bool`、`string` 和 `stringList`。
-  
-* It's not designed to store a lot of data.
+* Only primitive types can be used: `int`, `double`, `bool`, `String`,
+  and `List<String>`.
 
-  不适用于大量数据的存储。
+  只能用于基本数据类型： `int`、`double`、`bool`、`string` 和 `List<String>`。
 
-For more information about shared preferences on Android,
-see the [shared preferences documentation][]
-on the Android developers website.
+* It's not designed to store large amounts of data.
 
-关于 Android 平台上 Shared Preferences 的更多信息，
-请前往 Android 开发者网站上查看
-[Shared preferences 文档][shared preferences documentation] 。
+  不是为存储大量数据而设计的。
+
+* There is no guarantee that data will be persisted across app restarts.
+
+  不能确保应用重启后数据仍然存在。
 
 ## Testing support
 
 ## 测试支持
 
-It's a good idea to test code that persists data using
-`shared_preferences`. You can do this by mocking out the
-`MethodChannel` used by the `shared_preferences` library.
+It's a good idea to test code that persists data using `shared_preferences`.
+To enable this, the package provides an
+in-memory mock implementation of the preference store.
 
-使用 `shared_preferences` 存储数据来测试代码是一个不错的思路。
-为此，你需要模拟出 `shared_preferences` 库的 `MethodChannel` 方法。
+使用 `shared_preferences` 来存储测试代码的数据是一个不错的思路。
+为此，你需要使用 package 自带的基于内存的模拟持久化存储。
 
-Populate `SharedPreferences` with initial values in your tests
-by running the following code in a `setupAll()` method in
-your test files:
+To set up your tests to use the mock implementation,
+call the `setMockInitialValues` static method in
+a `setUpAll()` method in your test files.
+Pass in a map of key-value pairs to use as the initial values.
 
-在你的测试中，你可以通过在测试文件的 `setupAll()` 方法中添加运行以下代码，
-对 `SharedPreferences` 的值进行初始：
+在你的测试中，你可以通过在测试文件的 `setupAll()` 方法中
+调用 `setMockInitialValues` 静态方法来使用对应的模拟存储。
+同时你还可以设定初始值：
 
-<?code-excerpt "lib/partial_excerpts.dart (Testing)"?>
+<?code-excerpt "test/prefs_test.dart (setup)"?>
 ```dart
-TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-    .setMockMethodCallHandler(
-        const MethodChannel('plugins.flutter.io/shared_preferences'),
-        (methodCall) async {
-  if (methodCall.method == 'getAll') {
-    return <String, dynamic>{}; // set initial values here if desired
-  }
-  return null;
+SharedPreferences.setMockInitialValues(<String, Object>{
+  'counter': 2,
 });
 ```
 
@@ -205,7 +199,6 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -233,15 +226,17 @@ class _MyHomePageState extends State<MyHomePage> {
     _loadCounter();
   }
 
-  //Loading counter value on start
+  /// Load the initial counter value from persistent storage on start,
+  /// or fallback to 0 if it doesn't exist.
   Future<void> _loadCounter() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _counter = (prefs.getInt('counter') ?? 0);
+      _counter = prefs.getInt('counter') ?? 0;
     });
   }
 
-  //Incrementing counter after click
+  /// After a click, increment the counter state and
+  /// asynchronously save it to persistent storage.
   Future<void> _incrementCounter() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -261,7 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'You have pushed the button this many times:',
+              'You have pushed the button this many times: ',
             ),
             Text(
               '$_counter',
@@ -274,7 +269,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
@@ -282,4 +277,3 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
-[shared preferences documentation]: {{site.android-dev}}/training/data-storage/shared-preferences

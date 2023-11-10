@@ -181,110 +181,115 @@ To find out the latest version, visit [Google Maven][].
 +<style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 ```
 
-## Signing the app
+<a id="signing-the-app"></a>
+## Sign the app
 
+<a id="signing-the-app"></a>
 ## 为 app 签名
 
-To publish on the Play Store, you need to give your app a digital
-signature. Use the following instructions to sign your app.
+To publish on the Play Store, you need to
+sign your app with a digital certificate.
 
-要想把 app 发布到 Play store，还需要给 app 一个数字签名。
-我们可以采用以下步骤来为 app 签名：
+Android uses two signing keys: _upload_ and _app signing_.
 
-On Android, there are two signing keys: deployment and upload. The end-users
-download the .apk signed with the 'deployment key'. An 'upload key' is used to 
-authenticate the .aab / .apk uploaded by developers onto the Play Store and is 
-re-signed with the deployment key once in the Play Store.
+发布 Play Store 的 Android 应用需要两个签名：**上传签名** 和 **应用签名**。
 
-Android 中有两种签名密钥: 部署和上传。
-终端用户下载到的 .apk 文件是被部署密钥签名过的文件，
-上传密钥用于验证开发者上载到 Play 商店的 .aab 或 .apk 文件。
-上传密钥是给予部署密钥重新签名的密钥，上载 Play 商店时候需要用到。
+* Developers upload an `.aab` or `.apk` file signed with
+  an _upload key_ to the Play Store.
 
-* It's highly recommended to use the automatic cloud managed signing for
-  the deployment key. For more information,
-  check out the [official Play Store documentation][].
+  开发者上传到 Play Store 的 `.aab` 或 `.apk` 需要有上传签名。
 
-  严重推荐你选择云托管的方式来管理部署密钥，更多相关信息，
-  请参阅官方文档 [使用 Play 应用签名功能][official Play Store documentation Zh Lang]。
+* The end-users download the `.apk` file signed with an _app signing key_.
+
+  终端用户下载的 `.apk` 文件需要有 **应用签名**。
+
+To create your app signing key, use Play App Signing
+as described in the [official Play Store documentation][].
+
+请参考 [Play Store 的官方文档][official Play Store documentation]
+来创建你的应用签名。
+
+To sign your app, use the following instructions.
+
+参考以下步骤对你的应用进行签名。
 
 ### Create an upload keystore
 
 ### 创建一个用于上传的密钥库
 
 If you have an existing keystore, skip to the next step.
-If not, create one by either:
+If not, create one using one of the following methods:
 
 如果你已经有一个密钥库了，可以直接跳到下一步，
 如果还没有，需要参考下面的方式创建一个：
 
-* Following the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk)
+1. Follow the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#generate-key)
 
-  参考文档 [在 Android Studio 上为你的应用签名]({{site.android-dev}}/studio/publish/app-signing#sign-apk)。
+   参考文档 [在 Android Studio 上为你的应用签名]({{site.android-dev}}/studio/publish/app-signing#sign-apk)。
 
-* Running the following at the command line:
+1. Run the following command at the command line:
 
-  在命令行窗口运行如下的命令：
+   在命令行窗口运行如下的命令：
 
-    On macOS or Linux, use the following command:
+   On macOS or Linux, use the following command:
 
-    在 macOS 或者 Linux 系统上，执行下面的代码：
+   在 macOS 或者 Linux 系统上，执行下面的代码：
 
-    ```terminal
-    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
-            -keysize 2048 -validity 10000 -alias upload
-    ```
+   ```terminal
+   keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
+           -keysize 2048 -validity 10000 -alias upload
+   ```
 
-    On Windows, use the following command in PowerShell:
+   On Windows, use the following command in PowerShell:
 
-    在 Windows 系统上，在 PoweShell 内执行以下代码：
+   在 Windows 系统上，在 PoweShell 内执行以下代码：
 
-    ```powershell
-    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
-            -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
-            -alias upload
-    ```
+   ```powershell
+   keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
+           -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
+           -alias upload
+   ```
 
-    This command stores the `upload-keystore.jks` file in your home
-    directory. If you want to store it elsewhere, change
-    the argument you pass to the `-keystore` parameter.
-    **However, keep the `keystore` file private;
-    don't check it into public source control!**
-    
-    该命令将会把 `upload-keystore.jks` 文件储存在你的主文件夹中。
-    如果你想要储存在其他地方，请通过指定 `-keystore` 传入参数。
-    **注意，请保证这个文件的私有性，不要将它提交到公共的代码管理空间**。
+   This command stores the `upload-keystore.jks` file in your home
+   directory. If you want to store it elsewhere, change
+   the argument you pass to the `-keystore` parameter.
+   **However, keep the `keystore` file private;
+   don't check it into public source control!**
 
-    {{site.alert.note}}
+   该命令将会把 `upload-keystore.jks` 文件储存在你的主文件夹中。
+   如果你想要储存在其他地方，请通过指定 `-keystore` 传入参数。
+   **注意，请保证这个文件的私有性，不要将它提交到公共的代码管理空间**。
 
-    * The `keytool` command might not be in your path&mdash;it's
-      part of Java, which is installed as part of
-      Android Studio.  For the concrete path,
-      run `flutter doctor -v` and locate the path printed after
-      'Java binary at:'. Then use that fully qualified path
-      replacing `java` (at the end) with `keytool`.
-      If your path includes space-separated names,
-      such as `Program Files`, use platform-appropriate
-      notation for the names. For example, on Mac/Linux
-      use `Program\ Files`, and on Windows use
-      `"Program Files"`.
+   {{site.alert.note}}
 
-      `keytool` 可能不在我们的系统路径中。
-      它是 Java 的一部分，在安装 Android Studio 的时候会被一起安装。
-      运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，
-      然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。
-      如果文件路径包含空格，类似 `Program Files` 这样的，请使用平台允许的命名规则。
-      例如，在 Mac/Linux 上使用 `Program\ Files`，而在 Windows 上可以使用
-      `"Program Files"`。
+     * The `keytool` command might not be in your path&mdash;it's
+       part of Java, which is installed as part of
+       Android Studio.  For the concrete path,
+       run `flutter doctor -v` and locate the path printed after
+       'Java binary at:'. Then use that fully qualified path
+       replacing `java` (at the end) with `keytool`.
+       If your path includes space-separated names,
+       such as `Program Files`, use platform-appropriate
+       notation for the names. For example, on Mac/Linux
+       use `Program\ Files`, and on Windows use
+       `"Program Files"`.
 
-    * The `-storetype JKS` tag is only required for Java 9
-      or newer. As of the Java 9 release,
-      the keystore type defaults to PKS12.
+       `keytool` 可能不在我们的系统路径中。
+       它是 Java 的一部分，在安装 Android Studio 的时候会被一起安装。
+       运行 `flutter doctor -v`，'Java binary at:' 之后打印出来的就是它的路径，
+       然后用 `java` 来替换以上命令中的 `keytool`，并加上 `keytool` 的完整路径即可。
+       如果文件路径包含空格，类似 `Program Files` 这样的，请使用平台允许的命名规则。
+       例如，在 Mac/Linux 上使用 `Program\ Files`，而在 Windows 上可以使用
+       `"Program Files"`。
 
-      只有 Java 9 或更高版本才需要 `-storetype JKS` 标签。
-      从 Java 9 版本开始，keystore 类型默认为 PKS12。
+      * The `-storetype JKS` tag is only required for Java 9
+       or newer. As of the Java 9 release,
+       the keystore type defaults to PKS12.
 
-    {{site.alert.end}}
+       只有 Java 9 或更高版本才需要 `-storetype JKS` 标签。
+       从 Java 9 版本开始，keystore 类型默认为 PKS12。
+
+   {{site.alert.end}}
 
 ### Reference the keystore from the app
 
@@ -413,110 +418,6 @@ For more information on signing your app, check out
 有关应用签名的更多信息，请查看 developer.android.com 的
 [为您的应用设置签名][Sign your app]。
 
-{% comment %}
-下面这部分内容已经在新的文档更新中被删除，待确认，
-以及需要确认为什么木有 diff 出来这部分文档。
-
-## Enabling Proguard
-
-## 启用混淆器
-
-By default, Flutter does not obfuscate or minify the Android host.
-If you intend to use third-party Java, Kotlin, or Android libraries,
-you might want to reduce the size of the APK or protect that code from
-reverse engineering.
-
-默认情况下，Flutter 不会做混淆或者压缩 Android host 的工作。
-如果 app 使用了第三方的 Java 或者 Android 库，
-我们会希望减小 APK 的大小，或者保护代码不被反编译出来。
-
-For information on obfuscating Dart code, see [Obfuscating Dart
-Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)
-in the [Flutter wiki]({{site.github}}/flutter/flutter/wiki).
-
-要了解混淆 Dart 代码的相关信息，可以参考 [Flutter wiki]({{site.github}}/flutter/flutter/wiki)
-上的 [Obfuscating Dart Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)。
-
-### Step 1 - Configure Proguard
-
-### 步骤　1 - 配置 Proguard
-
-Create a `/android/app/proguard-rules.pro` file and
-add the rules listed below.
-
-创建 `/android/app/proguard-rules.pro` 文件并添加下面的规则：
-
-```
-## Flutter wrapper
--keep class io.flutter.app.** { *; }
--keep class io.flutter.plugin.**  { *; }
--keep class io.flutter.util.**  { *; }
--keep class io.flutter.view.**  { *; }
--keep class io.flutter.**  { *; }
--keep class io.flutter.plugins.**  { *; }
--dontwarn io.flutter.embedding.**
-```
-
-This configuration only protects Flutter engine libraries.
-Any additional libraries (for example, Firebase) require adding
-their own rules.
-
-以上这样的配置只是对 Flutter 引擎库做保护。
-如果想要保护其他的库（例如，Firebase），需要为它们添加自己的规则。
-
-
-### Step 2 - Enable obfuscation and/or minification
-
-### 步骤　2 - 启用混淆以及/或压缩
-
-Open the `/android/app/build.gradle` file and locate the `buildTypes`
-definition. Inside the `release` configuration section,
-set the `minifiyEnabled` and `useProguard` flags to true.
-You must also point Proguard to the file you created in step 1:
-
-在 `/android/app/build.gradle` 文件找到 `buildTypes` 的定义。
-在 `release` 配置中设置 `minifiyEnabled` 和 `useProguard` 为 true。
-另外我们必须再设置 Proguard 指向步骤 1 中我们创建的文件。
-
-
-```
-android {
-
-    ...
-
-    buildTypes {
-
-        release {
-
-            signingConfig signingConfigs.release
-
-            minifyEnabled true
-            useProguard true
-
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
-        }
-    }
-}
-```
-
-{{site.alert.note}}
-
-  You may need to run `flutter clean` after changing the gradle file.
-  This prevents cached builds from affecting the signing process.
-
-  当你更改 gradle 文件后也许需要运行一下 `flutter clean`。
-  这将防止缓存的版本影响签名过程。
-
-{{site.alert.end}}
-
-For more information on signing your app, see
-[Sign your app][] on developer.android.com.
-
-有关应用签名的更多信息，请查看 developer.android.com 的[为您的应用设置签名][Sign your app]。
-
-{% endcomment %}
-
 ## Shrinking your code with R8
 
 ## 使用 R8 压缩你的代码
@@ -547,6 +448,7 @@ When writing large apps or making use of large plugins,
 you might encounter Android's dex limit of 64k methods
 when targeting a minimum API of 20 or below.
 This might also be encountered when running debug versions of your app
+using `flutter run` that does not have shrinking enabled.
 
 当你在编写较大的应用或使用体量较大的插件时，
 你可能会在最低的 API 目标版本低于 20 时，
@@ -606,6 +508,7 @@ A [multidex keep file][multidex-keep] must be specified to include:
 io/flutter/embedding/engine/loader/FlutterLoader.class
 io/flutter/util/PathUtils.class
 ```
+
 Also, include any other classes used in app startup.
 For more detailed guidance on adding multidex support manually,
 check out the official [Android documentation][multidex-docs].
@@ -618,12 +521,11 @@ check out the official [Android documentation][multidex-docs].
 
 ## 检查 app manifest 文件
 
-Review the default [App Manifest][manifest] file,
-`AndroidManifest.xml`,
-located in `[project]/android/app/src/main` and
-verify that the values are correct, especially the following:
+Review the default [App Manifest][manifest] file, `AndroidManifest.xml`.
+This file is located in `[project]/android/app/src/main`.
+Verify the following values:
 
-检查位于 `<app dir>/android/app/src/main` 的默认 [App Manifest][manifest]
+检查位于 `[project]/android/app/src/main` 的默认 [App Manifest][manifest]
 文件 `AndroidManifest.xml`，并确认各个值都设置正确，特别是：
 
 `application`
@@ -664,37 +566,37 @@ to verify that the values are correct.
 #### 在 `defaultConfig` 配置中
 
 `applicationId`
-<br> Specify the final, unique [application ID][]
+<br> Specify the final, unique [application ID][].
 
 `applicationId`
 <br> 指定唯一的 [应用 ID][application ID]。
 
 `minSdkVersion`
-<br> Specify the minimum API level on which the app is designed to run.
-     Defaults to `flutter.minSdkVersion`.
+<br> Specify the [minimum API level][] on which you designed the app to run.
+  Defaults to `flutter.minSdkVersion`.
 
 `minSdkVersion`
-<br> 指定应用适配的最低 SDK 版本。
-     默认为 `flutter.minSdkVersion`。
+<br> 指定应用适配的 [最低 SDK API 版本][minimum API level]。
+  默认为 `flutter.minSdkVersion`。
 
 `targetSdkVersion`
-<br> Specify the target API level on which the app is designed to run.
-     Defaults to `flutter.targetSdkVersion`.
+<br> Specify the target API level on which on which you designed the app to run.
+  Defaults to `flutter.targetSdkVersion`.
 
 `targetSdkVersion`
 <br> 指定应用适配的目标 SDK 版本。
-     默认为 `flutter.targetSdkVersion`。
+  默认为 `flutter.targetSdkVersion`。
 
 `versionCode`
-<br> A positive integer used as an internal version number. This number
-     is used only to determine whether one version is more recent than
-     another, with higher numbers indicating more recent versions.
-     This version isn't shown to users.
+<br> A positive integer used as an [internal version number][].
+  This number is used only to determine whether one version is more recent
+  than another, with higher numbers indicating more recent versions.
+  This version isn't shown to users.
 
 `versionCode`
-<br> 用于内部版本号的正整数。
-     该数字仅用于比较两个版本间数字较大的为更新版本。
-     该版本不会对用户展示。
+<br> 用于 [内部版本号][internal version number] 的正整数。
+  该数字仅用于比较两个版本间数字较大的为更新版本。
+  该版本不会对用户展示。
 
 `versionName`
 <br> A string used as the version number shown to users.
@@ -706,15 +608,13 @@ to verify that the values are correct.
   该字段必须设置为原始字符串或字符串资源的引用。
 
 `buildToolsVersion`
-<br> If you're using Android plugin for Gradle 3.0.0 or higher,
-  your project automatically uses the default version of the
-  build tools that the plugin specifies. Alternatively,
-  you can specify a version of the build tools.
+: The Gradle plugin specifies the default version of the
+  build tools that your project uses.
+  You can use this option to specify a different version of the build tools.
 
 `buildToolsVersion`
-<br> 如果你正在使用高于 3.0.0 版本的 Android Gradle Plugin，
-  你的项目会自动使用 AGP 默认指定的构建工具版本。
-  你也可以手动指定构建工具的版本。
+<br> 指定你的项目使用的构建工具的版本。
+  你也可以手动指定不同的构建工具的版本。
 
 #### Under the `android` block
 
@@ -722,11 +622,11 @@ to verify that the values are correct.
 
 `compileSdkVersion`
 <br> Specify the API level Gradle should use to compile your app.
-     Defaults to `flutter.compileSdkVersion`.
+  Defaults to `flutter.compileSdkVersion`.
 
 `compileSdkVersion`
 <br> 指定 Gradle 用于编译应用的 API 版本。
-     默认为 `flutter.compileSdkVersion`。
+  默认为 `flutter.compileSdkVersion`。
 
 For more information, check out the module-level build
 section in the [Gradle build file][gradlebuild].
@@ -808,8 +708,8 @@ runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
 
 ### 测试 app bundle
 
-An app bundle can be tested in multiple ways&mdash;this section
-describes two.
+An app bundle can be tested in multiple ways.
+This section describes two.
 
 一个 app bundle 可以用多种方法测试，这里介绍两种。
 
@@ -860,8 +760,7 @@ APK for each target ABI (Application Binary Interface).
 这种情况下，要为各种目标
 ABI (Application Binary Interface) 分别构建发布的 APK 文件。
 
-If you completed the signing steps,
-the APK will be signed.
+If you completed the signing steps, the APK will be signed.
 At this point, you might consider [obfuscating your Dart code][]
 to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
@@ -874,11 +773,12 @@ From the command line:
 
 使用如下命令：
 
-1. Enter `cd [project]`<br>
+1. Enter `cd [project]`.
 
-   输入命令 `cd [project]`<br>
+   输入命令 `cd [project]`。
 
-1. Run `flutter build apk --split-per-abi`<br>
+1. Run `flutter build apk --split-per-abi`.
+
    (The `flutter build` command defaults to `--release`.)
 
    运行 `flutter build apk --split-per-abi`<br>
@@ -992,7 +892,7 @@ Android apps.
 
 The Google Play Store recommends that you deploy app bundles
 over APKs because they allow a more efficient delivery of the
-application to your users. However, if you’re distributing
+application to your users. However, if you're distributing
 your application by means other than the Play Store,
 an APK might be your only option.
 
@@ -1049,7 +949,7 @@ See [Signing the app](#signing-the-app).
 ### 如何使用 Android Studio 构建一个发布？
 
 In Android Studio, open the existing `android/`
-folder under your app’s folder. Then,
+folder under your app's folder. Then,
 select **build.gradle (Module: app)** in the project panel:
 
 在Android Studio中, 打开你的 app 文件夹下的 `android/`
@@ -1088,19 +988,16 @@ The resulting app bundle or APK files are located in
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
 [bundle]: {{site.android-dev}}/guide/app-bundle
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
-[crash-issue]: https://issuetracker.google.com/issues/147096055
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
-[Flutter wiki]: {{site.repo.flutter}}/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
 [Getting Started guide for Android]: {{site.material}}/develop/android/mdc-android
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
-[Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
+[internal version number]: {{site.android-dev}}/studio/publish/versioning
 [launchericons]: {{site.material}}/styles/icons
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[minimum API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
 [multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
 [obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
@@ -1108,12 +1005,9 @@ The resulting app bundle or APK files are located in
 [official Play Store documentation Zh Lang]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=zh_CN
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [Platform Views]: {{site.url}}/platform-integration/android/platform-views
-[play]: {{site.android-dev}}/distribute/googleplay/start
-[plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
+[play]: {{site.android-dev}}/distribute
 [R8]: {{site.android-dev}}/studio/build/shrink-code
 [Sign your app]: https://developer.android.com/studio/publish/app-signing.html#generate-key
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
-[versions]: {{site.android-dev}}/studio/publish/versioning
-[versions-minsdk]: {{site.android-dev}}/studio/publish/versioning#minsdkversion
 [x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64

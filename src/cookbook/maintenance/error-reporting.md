@@ -24,7 +24,7 @@ How can you determine how often your users experiences bugs?
 Whenever an error occurs, create a report containing the
 error that occurred and the associated stacktrace.
 You can then send the report to an error tracking
-service, such as [Bugsnag][], [Datadog][], Fabric, 
+service, such as [Bugsnag][], [Datadog][],
 [Firebase Crashlytics][], [Rollbar][], or Sentry.
 
 如何确定用户遇到 bug 的频率呢？

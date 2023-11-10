@@ -34,13 +34,22 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
     但如果你安装了不同版本的 Xcode，你可能要更改一下上述命令中的路径。
 
  1. Sign the Xcode license agreement.
-    To sign the SLA, either open Xcode once and confirm or run:
+    To sign the SLA, either:
 
-    同意 Xcode 的许可协议。运行一次 Xcode 或者通过输入命令来确保已经同意许可协议。
+    同意 Xcode 的许可协议：
 
-    ```terminal
-    $ sudo xcodebuild --license
-    ```
+    {: type="a"}
+    1. Open Xcode and confirm.
+
+       运行一次 Xcode。
+
+    1. Open the Terminal and run:
+
+       在终端输入命令并运行：
+
+       ```terminal
+       $ sudo xcodebuild -license
+       ```
 
 Versions older than the latest stable version might still work,
 but are not recommended for Flutter development.
@@ -61,13 +70,24 @@ follow this procedure.
 
 如果想要在 iOS 模拟器中运行和测试 Flutter 应用，按照以下步骤即可：
 
+ 1. If using Xcode 15 or greater, download and install the iOS Simulator 
+    by running the following command:
+
+    ```terminal
+    $ xcodebuild -downloadPlatform iOS
+    ```
+
+    If you want to use a different method of downloading and installing the 
+    iOS Simulator, check out 
+    [Apple's documentation on installing Simulators][] for more options.
+
  1. To start the Simulator, run the following command:
 
     ```terminal
     $ open -a Simulator
     ```
 
- 2. Set your Simulator to use a 64-bit device (iPhone 5s or later).
+ 1. Set your Simulator to use a 64-bit device (iPhone 5s or later).
 
     - From Xcode, choose a simulator device type. Go to
       **Product** <span aria-label="and then">></span>
@@ -84,27 +104,27 @@ follow this procedure.
       **General** <span aria-label="and then">></span>
       **About**.
 
- 3. The simulated high-screen density iOS devices might overflow your screen.
+ 1. The simulated high-screen density iOS devices might overflow your screen.
     If that appears true on your Mac, change the presented size in the
     Simulator app
 
     - To display the Simulator at a small size, go to
       **Window** <span aria-label="and then">></span>
-      **Physical Size** or<br>press <kbd>Command</kbd> + <kbd>1</kbd>.
+      **Physical Size** or<br>press <kbd>Cmd</kbd> + <kbd>1</kbd>.
 
     - To display the Simulator at a moderate size, go to
       **Window** <span aria-label="and then">></span>
-      **Point Accurate** or<br>press <kbd>Command</kbd> + <kbd>2</kbd>.
+      **Point Accurate** or<br>press <kbd>Cmd</kbd> + <kbd>2</kbd>.
 
     - To display the Simulator at an HD representation, go to
       **Window** <span aria-label="and then">></span>
-      **Pixel Accurate** or<br>press <kbd>Command</kbd> + <kbd>3</kbd>.
+      **Pixel Accurate** or<br>press <kbd>Cmd</kbd> + <kbd>3</kbd>.
       _The Simulator defaults to this size._
 
     - The Simulator defaults to **Fit Screen**.
       If you need to return to that size, go to
       **Window** <span aria-label="and then">></span>
-      **Fit Screen** or press <kbd>Command</kbd> + <kbd>4</kbd>.
+      **Fit Screen** or press <kbd>Cmd</kbd> + <kbd>4</kbd>.
 
 ### Deploy to physical iOS devices
 
@@ -216,7 +236,7 @@ Follow the Xcode signing flow to provision your project.
 
 1. Go to **File** <span aria-label="and then">></span> **Open...**
 
-   You can also press <kbd>Command</kbd> + <kbd>O</kbd>.
+   You can also press <kbd>Cmd</kbd> + <kbd>O</kbd>.
 
 1. Navigate to your Flutter project directory.
 
@@ -283,7 +303,7 @@ Enabling certificates varies in different versions of iOS.
         <a class="nav-link" id="ios15-tab" href="#ios15" role="tab" aria-controls="ios15" aria-selected="false">iOS 15</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" id="ios16-tab" href="#ios16" role="tab" aria-controls="ios16" aria-selected="false">iOS 16</a>
+        <a class="nav-link active" id="ios16-tab" href="#ios16" role="tab" aria-controls="ios16" aria-selected="false">iOS 16 or later</a>
     </li>
 </ul>
 
@@ -317,7 +337,7 @@ Enabling certificates varies in different versions of iOS.
 1. Open the **Settings** app on the iOS device.
 
 1. Tap on **General** <span aria-label="and then">></span>
-    **VPN and Device Management**.
+    **VPN & Device Management**.
 
 1. Under the **Developer App** heading, you should find your certificate.
 
@@ -353,7 +373,7 @@ After you connect your iOS device to your Mac:
 1. Go to **Window** <span aria-label="and then">></span>
    **Devices and Simulators**.
 
-   You can also press <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>2</kbd>.
+   You can also press <kbd>Shift</kbd> + <kbd>Cmd</kbd> + <kbd>2</kbd>.
 
 1. Select your iOS device.
 
@@ -424,3 +444,4 @@ $ sudo gem install cocoapods
 [Apple's documentation on pairing a wireless device with Xcode]: https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad
 [Apple Developer]: {{site.apple-dev}}/programs/
 [Apple Developer Account]: {{site.apple-dev}}/account
+[Apple's documentation on installing Simulators]: {{site.apple-dev}}/documentation/xcode/installing-additional-simulator-runtimes

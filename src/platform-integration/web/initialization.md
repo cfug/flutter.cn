@@ -130,7 +130,7 @@ app runner 只有一个 `runApp()` 方法，它用于运行 Flutter 应用程序
 ## 自定义 web 应用程序的初始化
 
 In this section,
-learn how to customize each stage of your app’s initialization.
+learn how to customize each stage of your app's initialization.
 
 在本节中，
 了解如何自定义应用程序初始化的各个阶段。
@@ -151,7 +151,7 @@ The `loadEntrypoint` method accepts these parameters:
 |`entrypointUrl`| Flutter 应用程序入口的 URL。默认为 `"main.dart.js"`。 |`String`|
 |`onEntrypointLoaded`| The function called when the engine is ready to be initialized. Receives an `engineInitializer` object as its only parameter. |`Function`|
 |`onEntrypointLoaded`| 当引擎准备初始化时调用的函数。该函数的唯一参数是一个 `engineInitializer` 对象。  |`Function`|
-|`serviceWorker`| The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker won’t be used.) |`Object`|
+|`serviceWorker`| The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker won't be used.) |`Object`|
 |`serviceWorker`| `flutter_service_worker.js` 加载器的配置。（如果未设置，则不会使用 service worker）。 |`Object`|
 {:.table}
 

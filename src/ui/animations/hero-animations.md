@@ -10,7 +10,7 @@ keywords: 共享元素过渡,补间动画
 
 {{site.alert.secondary}}
 
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   <h4 class="no_toc">你将会在这里学到：</h4>
 
@@ -86,7 +86,7 @@ during flight.
   **刚接触 Flutter？**
 
   This page assumes you know how to create a layout
-  using Flutter’s widgets. For more information, see
+  using Flutter's widgets. For more information, see
   [Building Layouts in Flutter][].
 
   这部分假定您已经了解如何使用 Flutter 的 widget 创建布局。
@@ -191,7 +191,7 @@ how Flutter performs a hero animation.
 请阅读 [hero 动画基本结构](#basic-structure) 来学习如何构建 hero 动画代码，
 以及 [幕后](#behind-the-scenes) 来了解 Flutter 如何显示一个 hero 动画。
 
-<a name="basic-structure"></a>
+<a id="basic-structure"></a>
 ## Basic structure of a hero animation
 
 ## hero 动画基本结构
@@ -207,11 +207,11 @@ how Flutter performs a hero animation.
 
     在不同页面分别使用两个 hero widgets，同时使用配对的标签来实现动画。
 
-  * The Navigator manages a stack containing the app’s routes.
+  * The Navigator manages a stack containing the app's routes.
 
     Navigator 管理含有 app 页面的堆栈。
 
-  * Pushing a route on or popping a route from the Navigator’s stack
+  * Pushing a route on or popping a route from the Navigator's stack
     triggers the animation.
 
     推送一个页面或弹出一个 Navigator 堆栈中的页面会触发动画。
@@ -245,7 +245,7 @@ how Flutter performs a hero animation.
 Hero animations are implemented using two [`Hero`][]
 widgets: one describing the widget in the source route,
 and another describing the widget in the destination route.
-From the user’s point of view, the hero appears to be shared, and
+From the user's point of view, the hero appears to be shared, and
 only the programmer needs to understand this implementation detail.
 
 Hero 动画需要使用两个 [`Hero`][] widgets 来实现：
@@ -314,9 +314,7 @@ transition from one route to another.
 
 下面将介绍 Flutter 如何执行一个页面到另一页面的过渡。
 
-<img src='/assets/images/docs/ui/animations/hero-transition-0.png'
-    alt="Before the transition the source hero appears in the source route"
-    class="mw-100">
+![Before the transition the source hero appears in the source route]({{site.url}}/assets/images/docs/ui/animations/hero-transition-0.png)
 
 Before transition, the source hero waits in the source
 route's widget tree. The destination route does not yet exist,
@@ -327,12 +325,10 @@ and the overlay is empty.
 
 ---
 
-<img src='/assets/images/docs/ui/animations/hero-transition-1.png'
-    alt="The transition begins"
-    class="mw-100">
+![The transition begins]({{site.url}}/assets/images/docs/ui/animations/hero-transition-1.png)
 
 Pushing a route to the `Navigator` triggers the animation.
-At t=0.0, Flutter does the following:
+At `t=0.0`, Flutter does the following:
 
 推送一个页面到 Navigator 来触发动画。t=0.0 时，Flutter 执行如下动作：
 
@@ -359,9 +355,7 @@ At t=0.0, Flutter does the following:
 
 ---
 
-<img src='/assets/images/docs/ui/animations/hero-transition-2.png'
-    alt="The hero flies in the overlay to its final position and size"
-    class="mw-100">
+![The hero flies in the overlay to its final position and size]({{site.url}}/assets/images/docs/ui/animations/hero-transition-2.png)
 
 As the hero flies, its rectangular bounds are animated using
 [Tween&lt;Rect&gt;][], specified in Hero's
@@ -381,9 +375,7 @@ hero 飞翔时，它的矩形边界使用 Hero 的
 
 ---
 
-<img src='/assets/images/docs/ui/animations/hero-transition-3.png'
-    alt="When the transition is complete, the hero is moved from the overlay to the destination route"
-    class="mw-100">
+![When the transition is complete, the hero is moved from the overlay to the destination route]({{site.url}}/assets/images/docs/ui/animations/hero-transition-3.png)
 
 When the flight completes:
 
@@ -433,12 +425,12 @@ implement hero animations:
 
 [`Inkwell`][]
 <br> Specifies what happens when tapping the hero.
-  The InkWell's `onTap()` method builds the new route and pushes it
-  to the Navigator's stack.
+  The `InkWell`'s `onTap()` method builds the
+  new route and pushes it to the `Navigator`'s stack.
 
 [`Inkwell`][]
 <br> 指定点击 hero 时发生什么。
-  InkWell 的 `onTap()` 方法可以创建新页面并推送至 Navigator 的堆栈。
+  `InkWell` 的 `onTap()` 方法可以创建新页面并推送至 `Navigator` 的堆栈。
 
 [`Navigator`][]
 <br> The Navigator manages a stack of routes. Pushing a route on or
@@ -483,8 +475,7 @@ implement hero animations:
     
 {{site.alert.end}}
 
-<a name="standard-hero-animation-code"></a>
-
+<a id="standard-hero-animation-code"></a>
 {{site.alert.secondary}}
 
   **Standard hero animation code**
@@ -539,16 +530,16 @@ To run the example:
 
 运行示例：
 
-* Tap on the home route’s photo to fly the image to a new route
+* Tap on the home route's photo to fly the image to a new route
   showing the same photo at a different location and scale.
-  
+
   点击主页的图片使图像飞至新页面并在不同位置以不同规格显示相同图片。
 
 * Return to the previous route by tapping the image, or by using the
-  device’s back-to-the-previous-route gesture.
-  
+  device's back-to-the-previous-route gesture.
+
   点击图像或使用设备的回到前页手势返回之前页面。
-  
+
 * You can slow the transition further using the `timeDilation`
   property.
   
@@ -558,32 +549,36 @@ To run the example:
 
 ### PhotoHero 类
 
-### PhotoHero 类
-
-The custom PhotoHero class maintains the hero, 
-and its size, image, and behavior when tapped. 
+The custom PhotoHero class maintains the hero,
+and its size, image, and behavior when tapped.
 The PhotoHero builds the following widget tree:
 
 自定义的 PhotoHero 类保留了 hero 以及其大小，图像，和点击时的动作。PhotoHero 创建如下 widget 树：
 
-<div class="text-center mb-4">
-  <img src='/assets/images/docs/ui/animations/photohero-class.png'
-      alt="PhotoHero class widget tree"
-      class="mw-100">
+<div class="text-center mb-4" markdown="1">
+
+  ![PhotoHero class widget tree]({{site.url}}/assets/images/docs/ui/animations/photohero-class.png)    
+
 </div>
 
 Here's the code:
 
 代码如下：
 
-{% prettify dart %}
+```dart
 class PhotoHero extends StatelessWidget {
-  const PhotoHero({ Key key, this.photo, this.onTap, this.width }) : super(key: key);
+  const PhotoHero({
+    super.key,
+    required this.photo,
+    this.onTap,
+    required this.width,
+  });
 
   final String photo;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final double width;
 
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
@@ -603,7 +598,7 @@ class PhotoHero extends StatelessWidget {
     );
   }
 }
-{% endprettify %}
+```
 
 Key information:
 
@@ -654,34 +649,36 @@ Here's the code:
 
 {% prettify dart %}
 class HeroAnimation extends StatelessWidget {
+  const HeroAnimation({super.key});
+
   Widget build(BuildContext context) {
-    [[highlight]]timeDilation = 5.0; // 1.0 means normal animation speed.[[/highlight]]
+    [!timeDilation = 5.0; // 1.0 means normal animation speed.!]
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Basic Hero Animation'),
       ),
       body: Center(
-        [[highlight]]child: PhotoHero([[/highlight]]
+        [!child: PhotoHero(!]
           photo: 'images/flippers-alpha.png',
           width: 300.0,
-          [[highlight]]onTap: ()[[/highlight]] {
-            [[highlight]]Navigator.of(context).push(MaterialPageRoute<void>([[/highlight]]
-              [[highlight]]builder: (BuildContext context)[[/highlight]] {
+          [!onTap: ()!] {
+            [!Navigator.of(context).push(MaterialPageRoute<void>(!]
+              [!builder: (context)!] {
                 return Scaffold(
                   appBar: AppBar(
                     title: const Text('Flippers Page'),
                   ),
                   body: Container(
-                    // The blue background emphasizes that it's a new route.
+                    // Set background to blue to emphasize that it's a new route.
                     color: Colors.lightBlueAccent,
                     padding: const EdgeInsets.all(16),
                     alignment: Alignment.topLeft,
-                    [[highlight]]child: PhotoHero([[/highlight]]
+                    [!child: PhotoHero(!]
                       photo: 'images/flippers-alpha.png',
                       width: 100.0,
-                      [[highlight]]onTap: ()[[/highlight]] {
-                        [[highlight]]Navigator.of(context).pop();[[/highlight]]
+                      [!onTap: ()!] {
+                        [!Navigator.of(context).pop();!]
                       },
                     ),
                   ),
@@ -702,7 +699,7 @@ Key information:
 
 * When the user taps the `InkWell` containing the source hero,
   the code creates the destination route using `MaterialPageRoute`.
-  Pushing the destination route to the `Navigator`’s stack triggers
+  Pushing the destination route to the `Navigator`'s stack triggers
   the animation.
   
   当用户点击含有 source hero 的 `InkWell` 时，代码使用 `MaterialPageRoute` 
@@ -714,7 +711,7 @@ Key information:
   `Container` 将 `PhotoHero` 置于目标页面左上角，AppBar 的下方。
   
 * The `onTap()` method for the destination `PhotoHero`
-  pops the `Navigator`’s stack, triggering the animation
+  pops the `Navigator`'s stack, triggering the animation
   that flies the `Hero` back to the original route.
   
   目标页 `PhotoHero` 的 `onTap()` 函数会弹出 `Navigator` 的堆栈，触发动画 Hero 飞回至原页面。
@@ -784,7 +781,7 @@ provided example to your needs.** The heavy lifting is done for you.
 这个动画看起来复杂，但是您可以**根据自身需要自定义范例**。
 艰巨的工作已为您完成。
 
-<a name="radial-hero-animation-code"></a>
+<a id="radial-hero-animation-code"></a>
 {{site.alert.secondary}}
 
   **Radial hero animation code**
@@ -852,9 +849,7 @@ The following diagram shows the clipped image at the beginning
 
 下面的图表显示了在动画起始（`t = 0.0`）和结束（`t = 1.0`）时的剪裁图像。
 
-<img src='/assets/images/docs/ui/animations/radial-hero-animation.png'
-    alt="Radial transformation from beginning to end"
-    class="mw-100">
+![Radial transformation from beginning to end]({{site.url}}/assets/images/docs/ui/animations/radial-hero-animation.png)
 
 The blue gradient (representing the image), indicates where the clip
 shapes intersect. At the beginning of the transition,
@@ -892,7 +887,7 @@ To run the example:
   使图像变成位于新页面中间的一个较大的正方形，且覆盖原页面。
 
 * Return to the previous route by tapping the image, or by using the
-  device’s back-to-the-previous-route gesture.
+  device's back-to-the-previous-route gesture.
 
   点击图片或使用设备的返回手势，返回之前页面。
 
@@ -911,22 +906,22 @@ Photo 类创建保存图像的 widget 树：
 
 {% prettify dart %}
 class Photo extends StatelessWidget {
-  Photo({ Key key, this.photo, this.color, this.onTap }) : super(key: key);
+  const Photo({super.key, required this.photo, this.color, this.onTap});
 
   final String photo;
-  final Color color;
+  final Color? color;
   final VoidCallback onTap;
 
   Widget build(BuildContext context) {
-    return [[highlight]]Material([[/highlight]]
+    return [!Material(!]
       // Slightly opaque color appears where the image has transparency.
-      [[highlight]]color: Theme.of(context).primaryColor.withOpacity(0.25),[[/highlight]]
-      child: [[highlight]]InkWell([[/highlight]]
-        onTap: [[highlight]]onTap,[[/highlight]]
-        child: [[highlight]]Image.asset([[/highlight]]
-            photo,
-            fit: BoxFit.contain,
-          )
+      [!color: Theme.of(context).primaryColor.withOpacity(0.25),!]
+      child: [!InkWell(!]
+        onTap: [!onTap,!]
+        child: [!Image.asset(!]
+          photo,
+          fit: BoxFit.contain,
+        ),
       ),
     );
   }
@@ -937,7 +932,7 @@ Key information:
 
 重要信息：
 
-* The `Inkwell` captures the tap gesture.
+* The `InkWell` captures the tap gesture.
   The calling function passes the `onTap()` function to the
   `Photo`'s constructor.
 
@@ -981,9 +976,10 @@ To do this, it builds the following widget tree:
 
 为此，它建立了如下 widget 树：
 
-<div class="text-center mb-4">
-  <img src='/assets/images/docs/ui/animations/radial-expansion-class.png'
-      alt="RadialExpansion widget tree" class="mw-100">
+<div class="text-center mb-4" markdown="1">
+
+  ![RadialExpansion widget tree]({{site.url}}/assets/images/docs/ui/animations/radial-expansion-class.png)    
+
 </div>
 
 Here's the code:
@@ -992,12 +988,11 @@ Here's the code:
 
 {% prettify dart %}
 class RadialExpansion extends StatelessWidget {
-  RadialExpansion({
-    Key key,
-    this.maxRadius,
+  const RadialExpansion({
+    super.key,
+    required this.maxRadius,
     this.child,
-  }) : [[highlight]]clipRectSize = 2.0 * (maxRadius / math.sqrt2),[[/highlight]]
-       super(key: key);
+  }) : [!clipRectSize = 2.0 * (maxRadius / math.sqrt2);!]
 
   final double maxRadius;
   final clipRectSize;
@@ -1005,13 +1000,13 @@ class RadialExpansion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return [[highlight]]ClipOval([[/highlight]]
-      child: [[highlight]]Center([[/highlight]]
-        child: [[highlight]]SizedBox([[/highlight]]
+    return [!ClipOval(!]
+      child: [!Center(!]
+        child: [!SizedBox(!]
           width: clipRectSize,
           height: clipRectSize,
-          child: [[highlight]]ClipRect([[/highlight]]
-            child: [[highlight]]child,[[/highlight]]  // Photo
+          child: [!ClipRect(!]
+            child: [!child,!] // Photo
           ),
         ),
       ),
@@ -1058,11 +1053,11 @@ Key information:
 
   代码如下：
 
-  {% prettify dart %}
-  static RectTween _createRectTween(Rect begin, Rect end) {
+  ```dart
+  static RectTween _createRectTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
   }
-  {% endprettify %}
+  ```
 
   The hero's flight path still follows an arc,
   but the image's aspect ratio remains constant.
@@ -1081,7 +1076,7 @@ Key information:
 [`debugPaintSizeEnabled`]: {{site.url}}/testing/code-debugging#debug-flags-layout
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/hero_animation/
-[`Inkwell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
 [Material Design motion spec]: {{site.material2}}/design/motion/understanding-motion.html#principles
 [`MaterialRectArcTween`]: {{site.api}}/flutter/material/MaterialRectArcTween-class.html
 [`MaterialRectCenterArcTween`]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html

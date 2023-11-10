@@ -181,8 +181,7 @@ approach is covered in more detail in the
 还是有一些库提供了基于代码生成的方便使用的 API，
 这个方法的更多细节在 [代码生成库][code generation libraries] 部分。
 
-<a name="manual-encoding"></a>
-
+<a id="manual-encoding"></a>
 ## Serializing JSON manually using dart:convert
 
 ## 使用 dart:convert 手动序列化 JSON 数据
@@ -226,7 +225,7 @@ you'll see that you can decode the JSON by calling the
 
 <?code-excerpt "lib/manual/main.dart (manual)"?>
 ```dart
-Map<String, dynamic> user = jsonDecode(jsonString);
+final user = jsonDecode(jsonString) as Map<String, dynamic>;
 
 print('Howdy, ${user['name']}!');
 print('We sent the verification link to ${user['email']}.');
@@ -291,8 +290,8 @@ class User {
   User(this.name, this.email);
 
   User.fromJson(Map<String, dynamic> json)
-      : name = json['name'],
-        email = json['email'];
+      : name = json['name'] as String,
+        email = json['email'] as String;
 
   Map<String, dynamic> toJson() => {
         'name': name,
@@ -309,8 +308,8 @@ itself. With this new approach, you can decode a user easily.
 
 <?code-excerpt "lib/manual/main.dart (fromJson)"?>
 ```dart
-Map<String, dynamic> userMap = jsonDecode(jsonString);
-var user = User.fromJson(userMap);
+final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
+final user = User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');
@@ -371,8 +370,7 @@ and decoding for you.  Luckily, there is!
 如果有一些东西可以帮你处理 JSON 编码和解码就好了。
 幸运的是，已经有了！
 
-<a name="code-generation"></a>
-
+<a id="code-generation"></a>
 ## Serializing JSON using code generation libraries
 
 ## 使用代码生成库序列化 JSON 数据
@@ -573,12 +571,12 @@ There are two ways of running the code generator.
 
 #### 一次性代码生成
 
-By running `flutter pub run build_runner build --delete-conflicting-outputs` in the project root,
+By running `dart run build_runner build --delete-conflicting-outputs` in the project root,
 you generate JSON serialization code for your models whenever they are needed.
 This triggers a one-time build that goes through the source files, picks the
 relevant ones, and generates the necessary serialization code for them.
 
-通过在项目根目录运行命令 `flutter pub run build_runner build --delete-conflicting-outputs`，
+通过在项目根目录运行命令 `dart run build_runner build --delete-conflicting-outputs`，
 你可以在任何需要的时候为你的模型生成 JSON 序列化数据代码。
 这会触发一次构建，遍历源文件，选择相关的文件，然后为它们生成必须的序列化数据代码。
 
@@ -594,11 +592,11 @@ build manually every time you make changes in your model classes.
 A _watcher_ makes our source code generation process more convenient. It
 watches changes in our project files and automatically builds the necessary
 files when needed. Start the watcher by running
-`flutter pub run build_runner watch --delete-conflicting-outputs` in the project root.
+`dart run build_runner watch --delete-conflicting-outputs` in the project root.
 
 **监听器** 让我们的源代码生成过程更加方便。
 它会监听我们项目中的文件变化，并且会在需要的时候自动构建必要的文件。
-你可以在项目根目录运行 `flutter pub run build_runner watch` 启动监听。
+你可以在项目根目录运行 `dart run build_runner watch --delete-conflicting-outputs` 启动监听。
 
 It is safe to start the watcher once and leave it running in the background.
 
@@ -616,8 +614,8 @@ you do not have actually to make any changes to our previous code.
 
 <?code-excerpt "lib/serializable/main.dart (fromJson)"?>
 ```dart
-Map<String, dynamic> userMap = jsonDecode(jsonString);
-var user = User.fromJson(userMap);
+final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
+final user = User.fromJson(userMap);
 ```
 The same goes for encoding. The calling API is the same as before.
 
@@ -703,12 +701,12 @@ class User {
 ```
 
 Running 
-`flutter pub run build_runner build --delete-conflicting-outputs`
+`dart run build_runner build --delete-conflicting-outputs`
 in the terminal creates
 the `*.g.dart` file, but the private `_$UserToJson()` function
 looks something like the following:
 
-在终端中运行 `flutter pub run build_runner build` 创建 `*.g.dart`文件，
+在终端中运行 `dart run build_runner build --delete-conflicting-outputs` 创建 `*.g.dart`文件，
 但私有函数 `_$UserToJson()` 看起来会像下面这样：
 
 ```dart

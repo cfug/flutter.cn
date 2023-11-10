@@ -36,7 +36,7 @@ Impeller has the following objectives:
   You can author shaders once and convert them to backend-specific
   formats as necessary.
 * **Leverages modern graphics APIs**:
-  Impeller uses, but doesn’t depend on, features available in
+  Impeller uses, but doesn't depend on, features available in
   modern APIs like Metal and Vulkan.
 * **Leverages concurrency**:
   Impeller can distribute single-frame workloads across multiple
@@ -73,6 +73,45 @@ Prefix the issue title with `[Impeller]` and
 include a small reproducible test case.
 
 [file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
+
+### macOS
+
+Impeller is available for macOS in preview as of the 
+Flutter 3.13 stable release.
+
+* To _enable_ Impeller on macOS when debugging,
+  pass `--enable-impeller` to the `flutter run` command.
+
+  ```terminal
+  $ flutter run --enable-impeller
+  ```
+
+* To _enable_ Impeller on macOS when deploying your app,
+  add the following tags under the top-level `<dict>` tag in your
+  app's `Info.plist` file.
+
+  ```xml
+    <key>FLTEnableImpeller</key>
+    <true />
+  ```
+
+The team continues to improve macOS support.
+If you encounter performance or fidelity issues
+with Impeller on macOS, file an issue in the [GitHub tracker][file-issue].
+Prefix the issue title with `[Impeller]` and
+include a small reproducible test case.
+
+Please include the following information when 
+submitting an issue for Impeller on macOS:
+
+- The device you are running on, including the chip information.
+- Screenshots or recordings of any visible issues.
+- An [export of the performance trace][].
+  Zip the file and attach it to the GitHub issue.
+
+
+[file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
+[export of the performance trace]:{{site.url}}/tools/devtools/performance#import-and-export
 
 ### Android
 

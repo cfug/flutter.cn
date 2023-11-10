@@ -1,140 +1,80 @@
 ### Update your path
 
-### 更新你的环境变量
+Independent of how you installed Flutter,
+you need to add the Flutter SDK to your `PATH`.
+You can add Flutter to your `PATH` either for the current session
+or for all sessions going forward.
 
-You can update your PATH variable for the current session at
-the command line, as shown in step 3 of [Get the Flutter SDK][].
-To update this variable permanently so you can run
-`flutter` commands in _any_ terminal session,
-use the following instructions.
+{% include docs/dart-tool.md %}
 
-与 [获取 Flutter SDK][Get the Flutter SDK] 中说的一样，
-你可以通过命令行更新当前窗口的环境变量。
-但你也许会想要让它一直生效，在任何终端中都可以运行 `flutter` 命令。
+#### Update your path for the current session only
 
-The steps for modifying the `PATH` variable
-_all_ subsequent terminal sessions are machine-specific.
-Typically, you add a line to a shell script file that
-executes whenever you open a new window. For example:
+To update your `PATH` variable for the current session,
+enter this command in your terminal:
 
-下面是更改环境变量的详细步骤，这将会对所有终端生效，且仅在该机器上生效。
-通常，每当你打开一个新的窗口，都会将一行添加到执行的文件。例如：
+```terminal
+$ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
+```
 
- 1. Determine the path of your clone of the Flutter SDK.
-    You need this in Step 3.
+In this command,
+replace `[PATH_TO_FLUTTER_GIT_DIRECTORY]`
+with the path to your Flutter SDK install.
 
-    找到通过压缩包下载解压或 `git clone` 命令检出的 Flutter SDK 的文件夹，
-    你需要在第三步用到它。
+#### Update your path for all future sessions
 
- 2. Open (or create) the `rc` file for your shell.
-    For example, Linux uses the Bash shell by default,
-    so edit `$HOME/.bashrc`.
-    If you are using a different shell, the file path
-    and filename will be different on your machine.
+To add Flutter to your `PATH` for _any_ terminal session, 
+follow these steps:
 
-    在你的 shell 中打开（或者创建）`rc` 文件。
-    例如，Linux 默认使用 Bash shell，所以编辑 `$HOME/.bashrc` 文件。
-    如果你使用不同的 shell，那么在你电脑上的文件路径以及文件名必须不同。
-
- 3. Add the following line, changing the
-    `[PATH_OF_FLUTTER_GIT_DIRECTORY]` to
-    the path of your copy of the Flutter SDK:
-
-    并将下面命令行里 `[PATH_OF_FLUTTER_GIT_DIRECTORY]`
-    修改为你通过 `git clone` 命令检出的 Flutter 仓库目录地址，
-    或者通过下载 Flutter SDK 压缩包解压之后的目录地址。
+1. Find your Flutter SDK installation path.
 
     ```terminal
-    $ export PATH="$PATH:[PATH_OF_FLUTTER_GIT_DIRECTORY]/bin"
+    $ find / -type d -wholename "flutter/bin" 2>/dev/null
     ```
 
- 4. Run `source $HOME/.<rc file>`
-    to refresh the current window,
-    or open a new terminal window to
-    automatically source the file.
+    Response should resemble:
 
-    运行 `source $HOME/.<rc file>` 刷新当前窗口或者打开一个新的终端窗口就会自动更新这个文件。
+    ```terminal
+    /usr/<example>dev/flutter/bin
+    ```
 
- 5. Verify that the `flutter/bin` directory
-    is now in your PATH by running:
+2. Append the following line to your `rc` shell file
+   Linux reads the `rc` shell "resource" file each
+   time it opens a terminal.
 
-    通过运行以下命令验证 `flutter/bin` 确实加到环境变量中了：
-
+   Replace `<path_to_flutter_directory>` with your Flutter path
+   
+    ```terminal
+    $ echo 'export PATH="$PATH:<path_to_flutter_directory>/flutter/bin"' >> $HOME/.bashrc
+    ```
+    
+3. Reload the current shell profile.
+   
+    ```terminal
+    source $HOME/.<rc file>
+    ```
+    
+4. Verify that the `flutter/bin` directory exists in your `PATH`.
+   
     ```terminal
     $ echo $PATH
     ```
-
-    Verify that the `flutter` command is available by running:
-
-    通过运行以下命令验证 `flutter` 命令是否可用：
-
+    
+    Response should resemble:
+   
+    ```terminal
+    /usr/<example>/dev/flutter/bin:/usr/local/git/git-google/bin:/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:
+    ```
+    
+5. Verify that you can now use the `flutter` command.
+   
     ```terminal
     $ which flutter
     ```
 
+    Response should resemble:
+   
+    ```
+	  /usr/<example>/dev/flutter/bin/flutter
+	  ```
+
 {% include docs/dart-tool.md %}
-
-### Update the path directly
-
-### 直接更新环境变量
-
-In some cases, your distribution might not permanently acquire
-the path when using the previous directions. When this occurs,
-you can change the environment variables file directly.
-These instructions require administrator privileges:
-
-在某些情况下，你的分发可能不会一直使用上面提到的环境变量。
-在这种情况下，你可以直接更改环境变量文件。但这需要管理员权限：
-
-   1. Determine the path of your clone of the Flutter SDK.
-
-      找到你存放 Flutter SDK 的路径。
-
-   2. Locate the `etc` directory at the root of the system,
-      and open the `profile` file with root privileges.
-
-      定位系统根目录下的 `etc` 文件夹，然后用 root 权限打开 `profile` 文件。
-
-        ```terminal
-        $ sudo nano /etc/profile
-        ```
-
-   3. Update the PATH string with the location of your
-      Flutter SDK directory.
-
-      更新 Flutter SDK 文件夹所在路径的字符串。
-
-      ```shell
-      if [ "`id -u`" -eq 0 ]; then
-         PATH="..."
-      else
-         PATH="/usr/local/bin:...:[PATH_OF_FLUTTER_GIT_DIRECTORY]/bin"
-      fi
-      export PATH
-      ```
-
-   4. End the current session or reboot your system.
-
-      结束当前会话并重启系统。
-
-   5. Once you start a new session, verify that the
-      `flutter` command is available by running:
-
-      当你重新启动了新会话，请确认 `flutter` 命令已经可以执行：
-
-      ```terminal
-      $ which flutter
-      ```
-
-For more details on setting the path in Bash,
-see [this StackExchange question][bash].
-For information on setting the path in Z shell,
-see [this StackOverflow question][zsh].
-
-更多关于如何在 Bash 中配置环境变量的信息请查看 [这条 StackExchange 提问][bash]。
-更多关于如何在 Z shell 中配置环境变量的信息请查看 [这条 StackExchange 提问][zsh]。
-
-
-[Get the Flutter SDK]: #get-sdk
-[bash]: https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
-[zsh]: {{site.so}}/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh

@@ -45,16 +45,25 @@ Whenever the text changes, the callback is invoked.
 最简单的方法是给 [`TextField`][] 绑定 [`onChanged()`][] 回调。
 每当文本内容改变时，回调函数会被触发。
 
-In this example, print the current value of the text field to the
-console every time the text changes.
+In this example, print the current value and length of the text field 
+to the console every time the text changes.
 
 在下面的示例中，每次 text 的值改变，会在控制台中打印出当前文本框的值。
+
+It's important to use [characters][] when dealing with user input,
+as text may contain complex characters.
+This ensures that every character is counted correctly
+as they appear to the user.
+
+在处理用户的输入内容时，很重要的一点是要使用 [characters][]，
+因为用户的输入内容可能会包含复杂的字符。
+characters 会保证每一个显示到用户字符都被计数到。
 
 <?code-excerpt "lib/main.dart (TextField1)"?>
 ```dart
 TextField(
   onChanged: (text) {
-    print('First text field: $text');
+    print('First text field: $text (${text.characters.length})');
   },
 ),
 ```
@@ -180,7 +189,8 @@ out the current value of the text field.
 <?code-excerpt "lib/main.dart (printLatestValue)"?>
 ```dart
 void _printLatestValue() {
-  print('Second text field: ${myController.text}');
+  final text = myController.text;
+  print('Second text field: $text (${text.characters.length})');
 }
 ```
 
@@ -278,7 +288,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
   }
 
   void _printLatestValue() {
-    print('Second text field: ${myController.text}');
+    final text = myController.text;
+    print('Second text field: $text (${text.characters.length})');
   }
 
   @override
@@ -293,7 +304,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
           children: [
             TextField(
               onChanged: (text) {
-                print('First text field: $text');
+                print('First text field: $text (${text.characters.length})');
               },
             ),
             TextField(
@@ -307,10 +318,10 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-
 [`addListener()`]: {{site.api}}/flutter/foundation/ChangeNotifier/addListener.html
 [`controller`]: {{site.api}}/flutter/material/TextField/controller.html
 [`onChanged()`]: {{site.api}}/flutter/material/TextField/onChanged.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
+[characters]: {{site.pub}}/packages/characters

@@ -125,7 +125,7 @@ and finish the setup process.
 
 Once you have installed any missing dependencies,
 run the `flutter doctor` command again
-to verify that you’ve set everything up correctly.
+to verify that you've set everything up correctly.
 
 ### Downloading straight from GitHub instead of using an archive
 
@@ -178,7 +178,6 @@ For additional download options, check out `flutter help precache`.
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}
-[Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: {{site.url}}/release/archive
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter

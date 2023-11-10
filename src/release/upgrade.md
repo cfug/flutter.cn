@@ -149,7 +149,7 @@ it is more likely to contain serious regressions.
 我们不推荐使用这个渠道，因为它更有可能包含严重的回归问题。
 
 The latest documentation for the **master** branch
-is at: <https://master-api.flutter.dev>
+is at: <https://main-api.flutter.dev>
 
 **master** 分支的最新文档在： <https://master-api.flutter-io.cn>。
 

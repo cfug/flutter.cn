@@ -68,11 +68,11 @@ that a route name is intended for the setup flow without
 recognizing all the individual pages associated with 
 the setup flow.
 
-The top-level `Navigator` isn’t responsible for identifying
+The top-level `Navigator` isn't responsible for identifying
 individual setup flow pages. Therefore, your top-level
 `Navigator` needs to parse the incoming route name to
 identify the setup flow prefix. Needing to parse the route name 
-means that you can’t use the `routes` property of your top-level
+means that you can't use the `routes` property of your top-level
 `Navigator`. Instead, you must provide a function for the
 `onGenerateRoute` property.
 
@@ -143,7 +143,7 @@ The setup flow displays a persistent app bar
 that appears across all pages.
 
 Return a `Scaffold` widget from your `SetupFlow`
-widget’s `build()` method, 
+widget's `build()` method, 
 and include the desired `AppBar` widget.
 
 <?code-excerpt "lib/setupflow2.dart (SetupFlow2)"?>
@@ -252,7 +252,7 @@ the navigation stack, not the setup flow.
 
 ## Generate nested routes
 
-The setup flow’s job is to display the appropriate
+The setup flow's job is to display the appropriate
 page within the flow.
 
 Add a `Navigator` widget to `SetupFlow`,
@@ -297,23 +297,19 @@ Route _onGenerateRoute(RouteSettings settings) {
         message: 'Searching for nearby bulb...',
         onWaitComplete: _onDiscoveryComplete,
       );
-      break;
     case routeDeviceSetupSelectDevicePage:
       page = SelectDevicePage(
         onDeviceSelected: _onDeviceSelected,
       );
-      break;
     case routeDeviceSetupConnectingPage:
       page = WaitingPage(
         message: 'Connecting...',
         onWaitComplete: _onConnectionEstablished,
       );
-      break;
     case routeDeviceSetupFinishedPage:
       page = FinishedPage(
         onFinishPressed: _exitSetup,
       );
-      break;
   }
 
   return MaterialPageRoute<dynamic>(
@@ -328,7 +324,7 @@ Route _onGenerateRoute(RouteSettings settings) {
 The `_onGenerateRoute` function works the same as
 for a top-level `Navigator`. A `RouteSettings`
 object is passed into the function,
-which includes the route’s `name`.
+which includes the route's `name`.
 Based on that route name,
 one of four flow pages is returned.
 
@@ -350,7 +346,7 @@ callback is invoked. The setup flow recognizes that,
 when a device is selected, the connecting page 
 should be shown. Therefore, in `_onDeviceSelected`,
 the `_navigatorKey` instructs the nested `Navigator`
-to navigate to the `”connecting”` page.
+to navigate to the `"connecting"` page.
 
 The `connecting` page works the same way as the
 `find_devices` page. The `connecting` page waits
@@ -537,23 +533,19 @@ class SetupFlowState extends State<SetupFlow> {
           message: 'Searching for nearby bulb...',
           onWaitComplete: _onDiscoveryComplete,
         );
-        break;
       case routeDeviceSetupSelectDevicePage:
         page = SelectDevicePage(
           onDeviceSelected: _onDeviceSelected,
         );
-        break;
       case routeDeviceSetupConnectingPage:
         page = WaitingPage(
           message: 'Connecting...',
           onWaitComplete: _onConnectionEstablished,
         );
-        break;
       case routeDeviceSetupFinishedPage:
         page = FinishedPage(
           onFinishPressed: _exitSetup,
         );
-        break;
     }
 
     return MaterialPageRoute<dynamic>(

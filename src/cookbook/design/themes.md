@@ -12,60 +12,106 @@ js:
 
 <?code-excerpt path-base="cookbook/design/themes"?>
 
+{{site.alert.note}}
+
+  This recipe uses Flutter's support for [Material 3][] and
+  the [google_fonts][] package.
+
+  本文内容使用了 Flutter 的 [Material 3][]
+  以及 [google_fonts][] package 的支持。
+
+{{site.alert.end}}
+
+[Material 3]: {{site.url}}/ui/design/material
+[google_fonts]: {{site.pub-pkg}}/google_fonts
+
 To share colors and font styles throughout an app, use themes.
-You can either define app-wide themes, or use `Theme` widgets
-that define the colors and font styles for a particular part
-of the application. In fact,
-app-wide themes are just `Theme` widgets created at
-the root of an app by the `MaterialApp`.
 
-通过定义 `Theme`，我们可以更好地复用颜色和字体样式，
-从而让整个 app 的设计看起来更一致。
-全局 Theme 会在整个 app 范围内生效，而局部 Theme 只作用于特定元素。
-其实所谓的全局 Theme 和局部 Theme 的区别只在于，
-全局 Theme 定义在了 app 的 root 处而已。
-而 `MaterialApp` 已经事先为你预设了一个全局的 `Theme` Widget。
+你可以使用主题来全局应用颜色和文字样式。
 
-After defining a Theme, use it within your own widgets. Flutter's
-Material widgets also use your Theme to set the background
-colors and font styles for AppBars, Buttons, Checkboxes, and more.
+You can define app-wide themes.
+You can extend a theme to change a theme style for one component.
+Each theme defines the colors, type style, and other parameters
+applicable for the type of Material component.
 
-在定义一个 `Theme` 之后，我们可以让它在指定的 widgets
-（包括 Flutter 自带的 Material widgets，
-例如 AppBars、Buttons、Checkboxes 等等）中生效。
+你可以定义应用全局的主题。
+你也可以为某一个组件单独继承一个特定的主题。
+每个主题都可以各自定义颜色、文字样式和其他 Material 配置参数。
 
-## Creating an app theme
+Flutter applies styling in the following order:
 
-## 定义一个全局 theme
+Flutter 会按以下顺序应用样式：
 
-To share a Theme across an entire app, provide a
-[`ThemeData`][] to the `MaterialApp` constructor.
+1. Styles applied to the specific widget.
+
+   针对特定 widget 的样式。
+
+1. Themes that override the immediate parent theme.
+
+   重载的继承主题的样式。
+
+1. Main theme for the entire app.
+
+   应用的总体样式。
+
+After you define a `Theme`, use it within your own widgets.
+Flutter's Material widgets use your theme to set the background
+colors and font styles for app bars, buttons, checkboxes, and more.
+
+在定义一个 `Theme` 之后，我们可以让它在指定的 widgets，
+包括 Flutter 自带的 Material widgets，例如
+AppBars、Buttons、Checkboxes 等 widget 中生效。
+
+## Create an app theme
+
+To share a `Theme` across your entire app, set the `theme` property
+to your `MaterialApp` constructor.
+This property takes a [`ThemeData`][] instance.
 
 全局 Theme 会影响整个 app 的颜色和字体样式。
 只需要向 `MaterialApp` 构造器传入 [`ThemeData`][] 即可。
 
-If no `theme` is provided, Flutter creates a default theme for you.
+To enable Material 3, set the [`useMaterial3`][] property
+to `true` in the `ThemeData` constructor.
 
-如果没有放置 `Theme`，Flutter 将会使用预设的样式。
+要使用 Material 3，设置 `ThemeData` 中的
+[`useMaterial3`][] 属性为 `true` 即可。
+
+If you don't specify a theme in the constructor,
+Flutter creates a default theme for you.
+
+如果没有手动配置主题，Flutter 将会使用预设的样式。
+
+[`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
 <?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
 ```dart
 MaterialApp(
   title: appName,
   theme: ThemeData(
-    // Define the default brightness and colors.
-    brightness: Brightness.dark,
-    primaryColor: Colors.lightBlue[800],
+    useMaterial3: true,
 
-    // Define the default font family.
-    fontFamily: 'Georgia',
+    // Define the default brightness and colors.
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.purple,
+      // ···
+      brightness: Brightness.dark,
+    ),
 
     // Define the default `TextTheme`. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
-    textTheme: const TextTheme(
-      displayLarge: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-      titleLarge: TextStyle(fontSize: 36, fontStyle: FontStyle.italic),
-      bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Hind'),
+    textTheme: TextTheme(
+      displayLarge: const TextStyle(
+        fontSize: 72,
+        fontWeight: FontWeight.bold,
+      ),
+      // ···
+      titleLarge: GoogleFonts.oswald(
+        fontSize: 30,
+        fontStyle: FontStyle.italic,
+      ),
+      bodyMedium: GoogleFonts.merriweather(),
+      displaySmall: GoogleFonts.pacifico(),
     ),
   ),
   home: const MyHomePage(
@@ -74,52 +120,105 @@ MaterialApp(
 );
 ```
 
-See the [`ThemeData`][] documentation to see all of
-the colors and fonts you can define.
+Most instances of `ThemeData` set values for the following two properties. These properties affect the entire app.
 
-在 [ThemeData]({{site.api}}/flutter/material/ThemeData-class.html) 查看所有可自定义的颜色和字体样式。
+大部分 `ThemeData` 实例会设置以下两个属性。它们会影响大部分样式属性。
 
-## Themes for part of an application
+1. [`colorScheme`][] defines the colors.
 
-## 定义一个局部 Theme
+   [`colorScheme`][] 定义了颜色。
 
-To override the app-wide theme in part of an application,
-wrap a section of the app in a `Theme` widget.
+1. [`textTheme`][] defines text styling.
 
-如果我们只想对局部进行样式修改，可以创建一个 `Theme` Widget。
+   [`textTheme`][] 定义了文字样式。
 
-There are two ways to approach this: creating a unique `ThemeData`,
-or extending the parent theme.
+[`colorScheme`]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
+[`textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
 
-有以下两种方式：定义一个独立的 `ThemeData`，或者从父级 Theme 扩展。
-下面为你分别介绍。
+To learn what colors, fonts, and other properties, you can define,
+check out the [`ThemeData`][] documentation.
 
-{{site.alert.note}}
+你可以在 [`ThemeData`][] 文档中查看所有可自定义的颜色和字体样式。
 
-  To learn more, watch this short Widget of the Week video on the Theme widget:
+## Apply a theme
 
-  了解更多，请参考下方「每周 Widget」的里关于 Theme 的短视频：
+## 应用指定的主题
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+To apply your new theme, use the `Theme.of(context)` method 
+when specifying a widget's styling properties.
+These can include, but are not limited to, `style` and `color`.
 
-{{site.alert.end}}
+要想应用你的主题，使用 `Theme.of(context)` 方法来指定 widget 的样式属性。
+其包括但不限于样式和颜色。
 
-### Creating unique `ThemeData`
+The `Theme.of(context)` method looks up the widget tree and retrieves
+the nearest `Theme` in the tree.
+If you have a standalone `Theme`, that's applied.
+If not, Flutter applies the app's theme.
 
-### 定义一个独立的 `ThemeData`
+`Theme.of(context)` 会查询 widget 树，并返回其中最近的 `Theme`。
+所以他会优先返回我们之前定义过的一个独立的 `Theme`，
+如果找不到，它会返回全局主题。
 
-If you don't want to inherit any application colors or font styles,
-create a `ThemeData()` instance and pass that to the `Theme` widget.
+In the following example, the `Container` constructor uses this technique to set its `color`.
+
+在下面的例子中，`Container` 的颜色使用的就是指定主题（上层）的颜色。
+
+<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
+```dart
+Container(
+  padding: const EdgeInsets.symmetric(
+    horizontal: 12,
+    vertical: 12,
+  ),
+  color: Theme.of(context).colorScheme.primary,
+  child: Text(
+    'Text with a background color',
+    // ···
+    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+          color: Theme.of(context).colorScheme.onPrimary,
+        ),
+  ),
+),
+```
+
+## Override a theme
+
+To override the overall theme in part of an app,
+wrap that section of the app in a `Theme` widget.
+
+你可以用 `Theme` widget 嵌套想要改变主题的部分以进行主题重载。
+
+You can override a theme in two ways:
+
+以下是两种重载主题的方法：
+
+1. Create a unique `ThemeData` instance.
+
+   构造一个不一样的 `ThemeData` 实例。
+
+2. Extend the parent theme.
+
+   继承上层主题。
+
+### Set a unique `ThemeData` instance
+
+If you want a component of your app to ignore the overall theme,
+create a `ThemeData` instance.
+Pass that instance to the `Theme` widget.
 
 如果不想从任何全局 Theme 继承样式，
-我们可以创建一个 `ThemeData()` 实例，然后把它传给 `Theme` widget：
+我们可以创建一个 `ThemeData()` 实例，
+然后把它传给 `Theme` widget：
 
-<?code-excerpt "lib/theme.dart (Theme)"?>
+<?code-excerpt "lib/main.dart (Theme)"?>
 ```dart
 Theme(
-  // Create a unique theme with `ThemeData`
+  // Create a unique theme with `ThemeData`.
   data: ThemeData(
-    splashColor: Colors.yellow,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.pink,
+    ),
   ),
   child: FloatingActionButton(
     onPressed: () {},
@@ -128,22 +227,24 @@ Theme(
 );
 ```
 
-### Extending the parent theme
+### Extend the parent theme
 
-### 从父级 Theme 扩展
+Instead of overriding everything, consider extending the parent theme.
+To extend a theme, use the [`copyWith()`][] method.
 
-Rather than overriding everything, it often makes sense to extend the parent
-theme. You can handle this by using the [`copyWith()`][] method.
+相比从头开始定义一套样式，从上层 Theme 扩展可能更常规一些，
+使用 [`copyWith()`][] 方法即可。
 
-相比从头开始定义一套样式，从父级 Theme 扩展可能更常规一些，使用 
-[`copyWith()`][] 方法即可。
-
-<?code-excerpt "lib/theme.dart (ThemeCopyWith)"?>
+<?code-excerpt "lib/main.dart (ThemeCopyWith)"?>
 ```dart
 Theme(
-  // Find and extend the parent theme using `copyWith`. See the next
-  // section for more info on `Theme.of`.
-  data: Theme.of(context).copyWith(splashColor: Colors.yellow),
+  // Find and extend the parent theme using `copyWith`.
+  // To learn more, check out the section on `Theme.of`.
+  data: Theme.of(context).copyWith(
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.pink,
+    ),
+  ),
   child: const FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
@@ -151,49 +252,26 @@ Theme(
 );
 ```
 
-## Using a Theme
+## Watch a video on `Theme`
 
-## 使用定义好的 Theme
+## 观看 `Theme` 的相关视频
 
-Now that you've defined a theme, use it within the widgets' `build()`
-methods by using the `Theme.of(context)` method.
+To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
-现在我们定义好了一个 theme，接下来我们该使用它了！
-在我们 widget 的 `build` 方法中调用 `Theme.of(context)` 函数，
-可以让这些主题样式生效。
+想要了解更多，你可以观看 Widget of the Week 中关于 `Theme` 的短视频：
 
-The `Theme.of(context)` method looks up the widget tree and returns
-the nearest `Theme` in the tree. If you have a standalone
-`Theme` defined above your widget, that's returned.
-If not, the app's theme is returned.
+<iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-`Theme.of(context)` 会查询 widget 树，并返回其中最近的 `Theme`。
-所以他会优先返回我们之前定义过的一个独立的 `Theme`，
-如果找不到，它会返回全局 theme。
-
-In fact, the `FloatingActionButton` uses this technique to find the
-`accentColor`.
-
-实际上，`FloatingActionButton` 就是使用这种方式来定义自己的 `accentColor` 的。
-
-<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
-```dart
-Container(
-  color: Theme.of(context).colorScheme.secondary,
-  child: Text(
-    'Text with a background color',
-    style: Theme.of(context).textTheme.titleLarge,
-  ),
-),
-```
-
-## Interactive example
+## Try an interactive example
 
 ## 交互式样例
 
-<?code-excerpt "lib/main.dart"?>
+<?code-excerpt "lib/main.dart (FullApp)"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
+// Include the Google Fonts package to provide more text format options
+// https://pub.dev/packages/google_fonts
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -209,19 +287,34 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appName,
       theme: ThemeData(
-        // Define the default brightness and colors.
-        brightness: Brightness.dark,
-        primaryColor: Colors.lightBlue[800],
+        useMaterial3: true,
 
-        // Define the default font family.
-        fontFamily: 'Georgia',
+        // Define the default brightness and colors.
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.purple,
+          // TRY THIS: Change to "Brightness.light"
+          //           and see that all colors change
+          //           to better contrast a light background.
+          brightness: Brightness.dark,
+        ),
 
         // Define the default `TextTheme`. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-          titleLarge: TextStyle(fontSize: 36, fontStyle: FontStyle.italic),
-          bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Hind'),
+        textTheme: TextTheme(
+          displayLarge: const TextStyle(
+            fontSize: 72,
+            fontWeight: FontWeight.bold,
+          ),
+          // TRY THIS: Change one of the GoogleFonts
+          //           to "lato", "poppins", or "lora".
+          //           The title uses "titleLarge"
+          //           and the middle text uses "bodyMedium".
+          titleLarge: GoogleFonts.oswald(
+            fontSize: 30,
+            fontStyle: FontStyle.italic,
+          ),
+          bodyMedium: GoogleFonts.merriweather(),
+          displaySmall: GoogleFonts.pacifico(),
         ),
       ),
       home: const MyHomePage(
@@ -240,19 +333,39 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.onSecondary,
+                )),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
       body: Center(
         child: Container(
-          color: Theme.of(context).colorScheme.secondary,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 12,
+            vertical: 12,
+          ),
+          color: Theme.of(context).colorScheme.primary,
           child: Text(
             'Text with a background color',
-            style: Theme.of(context).textTheme.titleLarge,
+            // TRY THIS: Change the Text value
+            //           or change the Theme.of(context).textTheme
+            //           to "displayLarge" or "displaySmall".
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
           ),
         ),
       ),
       floatingActionButton: Theme(
-        data: Theme.of(context).copyWith(splashColor: Colors.yellow),
+        data: Theme.of(context).copyWith(
+          // TRY THIS: Change the seedColor to "Colors.red" or
+          //           "Colors.blue".
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.pink,
+            brightness: Brightness.dark,
+          ),
+        ),
         child: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),
@@ -270,3 +383,4 @@ class MyHomePage extends StatelessWidget {
 
 [`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`Theme`]: {{site.api}}/flutter/material/Theme-class.html

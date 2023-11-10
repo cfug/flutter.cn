@@ -167,13 +167,13 @@ For example:
 假设一个 `onPressed` 回调调用了异步方法，例如 `MethodChannel.invokeMethod`
 （或者其他 plugin 的方法）：
 
-<?code-excerpt "lib/excerpts.dart (OnPressed)" replace="/return //g;/\;//g"?>
+<?code-excerpt "lib/excerpts.dart (OnPressed)" replace="/return //g;/;$//g"?>
 ```dart
 OutlinedButton(
   child: const Text('Click me!'),
   onPressed: () async {
-    const channel = MethodChannel('crashy-custom-channel')
-    await channel.invokeMethod('blah')
+    const channel = MethodChannel('crashy-custom-channel');
+    await channel.invokeMethod('blah');
   },
 )
 ```

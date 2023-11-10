@@ -17,6 +17,12 @@ for Dart and Flutter.
 
 ![Dart DevTools Screens]({{site.url}}/assets/images/docs/tools/devtools/dart-devtools.gif){:width="100%"}
 
+For a video introduction to DevTools, check out
+the following deep dive and use case walkthrough:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_EYk-E29edo" title="YouTube video player - Dive in to DevTools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[Dive in to DevTools](https://www.youtube.com/watch?v=_EYk-E29edo)
+
 ## What can I do with DevTools?
 
 ## 我可以用开发工具来做什么？
@@ -65,7 +71,7 @@ your existing IDE or command-line based development workflow.
 
 我们希望您将开发工具与现有的 IDE 或基于命令行的开发流程结合起来使用。
 
-<a name="install-devtools"></a>
+<a id="install-devtools"></a>
 ## How do I install DevTools?
 
 ## 如何安装开发工具？

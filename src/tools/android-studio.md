@@ -26,7 +26,9 @@ instructions to install the Dart and Flutter plugins.
 
 按照 [编辑工具设定]({{site.url}}/get-started/editor?tab=androidstudio)，安装 Dart 和 Flutter 插件。
 
-### Updating the plugins<a name="updating"/>
+### Updating the plugins {#updating}
+
+### 更新插件 {#updating}
 
 ### 更新插件
 

@@ -8,7 +8,7 @@ keywords: isolate,多线程,调度器
 ---
 
 Have you ever wanted to execute Dart code in the
-background—even if your app wasn’t the currently active app?
+background—even if your app wasn't the currently active app?
 Perhaps you wanted to implement a process that watches the time,
 or that catches camera movement.
 In Flutter, you can execute Dart code in the background.
@@ -17,10 +17,10 @@ In Flutter, you can execute Dart code in the background.
 在 Flutter 里，你可以在应用被切换到后台时执行一些代码逻辑。
 
 The mechanism for this feature involves setting up an isolate.
-_Isolates_ are Dart’s model for multithreading,
+_Isolates_ are Dart's model for multithreading,
 though an isolate differs from a conventional thread
-in that it doesn’t share memory with the main program.
-You’ll set up your isolate for background execution using
+in that it doesn't share memory with the main program.
+You'll set up your isolate for background execution using
 callbacks and a callback dispatcher.
 
 这个功能的机制主要是设置一个 isolate。**isolate** 是 Dart 中的多线程模型，
@@ -38,7 +38,7 @@ For more information and a geofencing example that uses background
 execution of Dart code, see the Medium article by Ben Konyi,
 [Executing Dart in the Background with Flutter Plugins and
 Geofencing][background-processes].  At the end of this article,
-you’ll find links to example code, and relevant documentation for Dart,
+you'll find links to example code, and relevant documentation for Dart,
 iOS, and Android.
 
 有关在后台进程中使用 Dart 代码的 geofencing 案例，
@@ -47,12 +47,5 @@ iOS, and Android.
 在这篇文章的最后，你可以找到示例代码的链接，
 以及相关的 Dart、iOS 和 Android 文档。
  
-See the [Happy paths recommendations][] for more information 
-on background processing. 
-
-查看 [Happy path 推荐][Happy paths recommendations]
-页面内容了解更多关于后台任务的信息。
-
 [background-processes]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[Happy paths recommendations]: {{site.url}}/packages-and-plugins/happy-paths/recommended#background-processing-
 [WorkManager]: {{site.pub-pkg}}/workmanager 

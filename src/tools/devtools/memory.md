@@ -8,7 +8,7 @@ keywords: 开发者工具,内存视图,Dart
 ---
 
 The memory view provides insights into details
-of the application’s memory allocation and
+of the application's memory allocation and
 tools to detect and debug specific issues.
 
 {{site.alert.note}}
@@ -20,7 +20,7 @@ check out the [DevTools overview]({{site.url}}/tools/devtools/overview).
 
 To better understand the insights found on this page,
 the first section explains how Dart manages memory.
-If you already understand Dart’s memory management,
+If you already understand Dart's memory management,
 you can skip to the [Memory view guide](#memory-view-guide).
 
 ## Reasons to use the memory view
@@ -61,13 +61,13 @@ If, at some moment of the application run,
 the root object stops referencing an allocated object,
 the object becomes _unreachable_,
 which is a signal for the garbage collector (GC)
-to deallocate the object’s memory.
+to deallocate the object's memory.
 
 #### Retaining path
 
 The sequence of references from root to an object
 is called the object's _retaining_ path,
-as it retains the object’s memory from the garbage collection.
+as it retains the object's memory from the garbage collection.
 One object can have many retaining paths.
 Objects with at least one retaining path are
 called _reachable_ objects.
@@ -122,7 +122,7 @@ The **retained size** of the root object includes
 all reachable Dart objects.
 
 In the following example, the size of `myHugeInstance`
-isn't part of the parent’s or child’s shallow sizes,
+isn't part of the parent's or child's shallow sizes,
 but is part of their retained sizes:
 
 ```dart
@@ -161,7 +161,7 @@ still need to watch objects to have leak-free lifecycle.
 #### Why can't the garbage collector prevent all leaks?
 
 While the garbage collector takes care of all
-unreachable objects, it’s the responsibility
+unreachable objects, it's the responsibility
 of the application to ensure that unneeded objects
 are no longer reachable (referenced from the root).
 
@@ -178,7 +178,7 @@ One hard-to-catch leak pattern relates to using closures.
 In the following code, a reference to the
 designed-to-be short-living `myHugeObject` is implicitly
 stored in the closure context and passed to `setHandler`.
-As a result, `myHugeObject` won’t be garbage collected
+As a result, `myHugeObject` won't be garbage collected
 as long as `handler` is reachable.
 
 ```dart
@@ -211,7 +211,7 @@ Widget build(BuildContext context) {
 The following code is not leak prone,
 because:
 
-1. The closure doesn’t use the large and short-living `context` object.
+1. The closure doesn't use the large and short-living `context` object.
 2. The `theme` object (used instead) is long-living. It is created once and
 shared between `BuildContext` instances.
 
@@ -229,7 +229,7 @@ Widget build(BuildContext context) {
 #### General rule for `BuildContext`
 
 In general, use the following rule for a
-`BuildContext`: if the closure doesn’t outlive
+`BuildContext`: if the closure doesn't outlive
 the widget, it's ok to pass the context to the closure.
 
 Stateful widgets require extra attention.
@@ -238,7 +238,7 @@ widget state][interactive],
 where the widget is short living,
 and the state is long living. The build context,
 owned by the widget, should never be referenced
-from the state’s fields, as the state won't be garbage
+from the state's fields, as the state won't be garbage
 collected together with the widget, and can significantly outlive it.
 
 [interactive]: {{site.url}}/ui/interactivity#creating-a-stateful-widget
@@ -276,10 +276,10 @@ has the following features:
   memory type.
 
 [**Diff Snapshots** tab](#diff-snapshots-tab)
-: Detect and investigate a feature’s memory management issues.
+: Detect and investigate a feature's memory management issues.
 
 [**Trace Instances** tab](#trace-instances-tab)
-: Investigate a feature’s memory management for
+: Investigate a feature's memory management for
   a specified set of classes.
 
 ### Expandable chart
@@ -301,10 +301,10 @@ garbage collection, and resident set size are captured.
 
 The memory overview chart is a timeseries graph
 of collected memory statistics. It visually presents
-the state of the Dart or Flutter heap and Dart’s
-or Flutter’s native memory over time.
+the state of the Dart or Flutter heap and Dart's
+or Flutter's native memory over time.
 
-The chart’s x-axis is a timeline of events (timeseries).
+The chart's x-axis is a timeline of events (timeseries).
 The data plotted in the y-axis all has a timestamp of
 when the data was collected. In other words,
 it shows the polled state (capacity, used, external,
@@ -348,7 +348,7 @@ The quantities plotted on the y-axis are as follows:
   and events at a particular point in time (timestamp).
 
 **Raster Cache**
-: The size of the Flutter engine’s raster cache
+: The size of the Flutter engine's raster cache
   layer(s) or picture(s), while performing the
   final rendering after compositing.
   For more information, see the
@@ -362,7 +362,7 @@ The quantities plotted on the y-axis are as follows:
 **RSS - Resident Set Size**
 : The resident set size displays the amount of memory
   for a process.
-  It doesn’t include memory that is swapped out.
+  It doesn't include memory that is swapped out.
   It includes memory from shared libraries that are
   loaded, as well as all stack and heap memory.
   For more information, see [Dart VM internals][].
@@ -387,7 +387,7 @@ Toggle **Refresh on GC**, to see allocation in real time.
 
 ### Diff Snapshots tab
 
-Use the **Diff Snapshots** tab to investigate a feature’s
+Use the **Diff Snapshots** tab to investigate a feature's
 memory management. Follow the guidance on the tab
 to take snapshots before and after interaction
 with the application, and diff the snapshots:

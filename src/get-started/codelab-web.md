@@ -37,7 +37,7 @@ This is a guide to creating your first Flutter **web** app.
 If you are familiar with object-oriented programming,
 and concepts such as variables, loops, and conditionals,
 you can complete this tutorial.
-You don’t need previous experience with Dart,
+You don't need previous experience with Dart,
 mobile, or web programming.
 
 本教程可以帮助你你完成第一个 Flutter Web 应用，
@@ -50,7 +50,7 @@ mobile, or web programming.
 ## 内容概览
 {:.no_toc}
 
-You’ll implement a simple web app that displays a sign in screen.
+You'll implement a simple web app that displays a sign in screen.
 The screen contains three text fields:  first name,
 last name, and username. As the user fills out the fields,
 a progress bar animates along the top of the sign in area.
@@ -73,7 +73,7 @@ The animated GIF shows how the app works at the completion of this lab.
 
 {{site.alert.secondary}}
 
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   <h4 class="no_toc">你将学到以下内容：</h4>
 
@@ -114,7 +114,7 @@ The animated GIF shows how the app works at the completion of this lab.
 
     [Chrome 浏览器][Chrome browser]
 
-  * [Text editor 或 IDE][editor]
+  * [Text editor or IDE][editor]
 
     [文本编辑器 或 IDE][editor]
 
@@ -162,7 +162,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 
 If you see "flutter: command not found",
 then make sure that you have installed the
-[Flutter SDK][] and that it’s in your path.
+[Flutter SDK][] and that it's in your path.
 
 如果你看到提示是 "flutter: command not found"，
 那么就需要确保 [Flutter SDK][] 已经正确地安装，
@@ -220,7 +220,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
-  const SignUpApp();
+  const SignUpApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -233,7 +233,7 @@ class SignUpApp extends StatelessWidget {
 }
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen();
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -252,7 +252,7 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm();
+  const SignUpForm({super.key});
 
   @override
   State<SignUpForm> createState() => _SignUpFormState();
@@ -296,14 +296,12 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
+              foregroundColor: MaterialStateProperty.resolveWith((states) {
                 return states.contains(MaterialState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
+              backgroundColor: MaterialStateProperty.resolveWith((states) {
                 return states.contains(MaterialState.disabled)
                     ? null
                     : Colors.blue;
@@ -397,7 +395,7 @@ From your IDE, editor, or at the command line,
   你可以通过文档
   [声明式 UI 介绍][Introduction to declarative UI] 了解到更多的信息。
 
-* The app’s UI adheres to [Material Design][],
+* The app's UI adheres to [Material Design][],
   a visual design language that runs on any device or platform.
   You can customize the Material Design widgets,
   but if you prefer something else,
@@ -412,7 +410,7 @@ From your IDE, editor, or at the command line,
 
 * In Flutter, almost everything is a [Widget][].
   Even the app itself is a widget.
-  The app’s UI can be described as a widget tree.
+  The app's UI can be described as a widget tree.
 
   在 Flutter 的世界，万物皆 [Widget][]，甚至连应用本身都是 widget。
   应用的 UI 可以看作为 widget 树。
@@ -425,7 +423,7 @@ The `SignUpForm` class is a stateful widget.
 This simply means that the widget stores information
 that can change, such as user input, or data from a feed.
 Since widgets themselves are immutable
-(can’t be modified once created),
+(can't be modified once created),
 Flutter stores state information in a companion class,
 called the `State` class. In this lab,
 all of your edits will be made to the private
@@ -460,14 +458,16 @@ add the following class definition for the
 <?code-excerpt "lib/step1.dart (WelcomeScreen)"?>
 ```dart
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen();
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child:
-            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium),
+        child: Text(
+          'Welcome!',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
       ),
     );
   }
@@ -485,7 +485,7 @@ and create a method to display it.
 `_SignUpFormState` class. This is the part of the code
 that builds the SignUp button.
 Notice how the button is defined:
-It’s a `TextButton` with a blue background,
+It's a `TextButton` with a blue background,
 white text that says **Sign up** and, when pressed,
 does nothing.
 
@@ -572,7 +572,7 @@ You get that behavior for free.
 * The `_showWelcomeScreen()` function is used in the `build()`
   method as a callback function. Callback functions are often
   used in Dart code and, in this case, this means
-  “call this method when the button is pressed”.
+  "call this method when the button is pressed".
 
   `_showWelcomeScreen()` 函数被当成回调函数在 `build()` 方法中被调用。
   在 Dart 中你会经常使用回调函数，在这里意味着“点击按钮时调用该方法”。
@@ -587,18 +587,18 @@ You get that behavior for free.
   它就会缩短引擎下的大部分重建工作，从而提高渲染效率。
 
 * Flutter has only one `Navigator` object.
-  This widget manages Flutter’s screens
+  This widget manages Flutter's screens
   (also called _routes_ or _pages_) inside a stack.
   The screen at the top of the stack is the view that
   is currently displayed. Pushing a new screen to this
   stack switches the display to that new screen.
   This is why the `_showWelcomeScreen` function pushes
-  the `WelcomeScreen` onto the Navigator’s stack.
+  the `WelcomeScreen` onto the Navigator's stack.
   The user clicks the button and, voila,
   the welcome screen appears. Likewise,
   calling `pop()` on the `Navigator` returns to the
-  previous screen. Because Flutter’s navigation is
-  integrated into the browser’s navigation,
+  previous screen. Because Flutter's navigation is
+  integrated into the browser's navigation,
   this happens implicitly when clicking the browser's
   back arrow button.
 
@@ -620,8 +620,8 @@ You get that behavior for free.
 
 This sign in screen has three fields.
 Next, you will enable the ability to track the
-user’s progress on filling in the form fields,
-and update the app’s UI when the form is complete.
+user's progress on filling in the form fields,
+and update the app's UI when the form is complete.
 
 在这个页面有三个文本框。
 下一步，我们将实现监听用户输入表单的进度，
@@ -708,14 +708,12 @@ screen only when the form is completely filled in:
 ```dart
 TextButton(
   style: ButtonStyle(
-    foregroundColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) {
+    foregroundColor: MaterialStateProperty.resolveWith((states) {
       return states.contains(MaterialState.disabled)
           ? null
           : Colors.white;
     }),
-    backgroundColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) {
+    backgroundColor: MaterialStateProperty.resolveWith((states) {
       return states.contains(MaterialState.disabled)
           ? null
           : Colors.blue;
@@ -746,7 +744,7 @@ but becomes enabled when all three text fields contain
 ### 观察和分析
 {:.no_toc}
 
-* Calling a widget’s `setState()` method tells Flutter that the
+* Calling a widget's `setState()` method tells Flutter that the
   widget needs to be updated on screen.
   The framework then disposes of the previous immutable widget
   (and its children), creates a new one
@@ -822,16 +820,16 @@ but becomes enabled when all three text fields contain
 ## 第 2.5 步：启动 Dart 开发者工具
 
 How do you debug a Flutter web app?
-It’s not too different from debugging any Flutter app.
+It's not too different from debugging any Flutter app.
 You want to use [Dart DevTools][]!
 (Not to be confused with Chrome DevTools.)
 
 如何调试 Flutter Web 应用？所有的 Flutter 应用调试方法没有很大的区别。
 你应该使用 [Dart DevTools][]！（不要和 Chrome 开发者工具搞混淆了）
 
-Our app currently has no bugs, but let’s check it out anyway.
+Our app currently has no bugs, but let's check it out anyway.
 The following instructions for launching DevTools applies to any workflow,
-but there is a short cut if you’re using IntelliJ.
+but there is a short cut if you're using IntelliJ.
 See the tip at the end of this section for more information.
 
 虽然我们的应用现在没有 bug ，但是我们依然来验证一下。
@@ -841,7 +839,7 @@ See the tip at the end of this section for more information.
 
 <ol markdown="1">
 <li markdown="1">Run the app.<br>
-If your app isn’t currently running, launch it.
+If your app isn't currently running, launch it.
 Select the **Chrome** device from the pull down
 and launch it from your IDE or,
 from the command line, use `flutter run -d chrome`,
@@ -1046,8 +1044,8 @@ see the [DevTools documentation][].
 
 ## 第3步：为输入进度添加动画效果
 
-It’s time to add animation! In this final step,
-you’ll create the animation for the
+It's time to add animation! In this final step,
+you'll create the animation for the
 `LinearProgressIndicator` at the top of the sign in
 area. The animation has the following behavior:
 
@@ -1094,6 +1092,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
   const AnimatedProgressIndicator({
+    super.key,
     required this.value,
   });
 
@@ -1113,7 +1112,9 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: Duration(milliseconds: 1200), vsync: this);
+      duration: const Duration(milliseconds: 1200),
+      vsync: this,
+    );
 
     final colorTween = TweenSequence([
       TweenSequenceItem(
@@ -1210,7 +1211,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
-  const SignUpApp();
+  const SignUpApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -1224,13 +1225,13 @@ class SignUpApp extends StatelessWidget {
 }
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen();
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      body: Center(
+      body: const Center(
         child: SizedBox(
           width: 400,
           child: Card(
@@ -1243,20 +1244,24 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen();
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child:
-            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium),
+        child: Text(
+          'Welcome!',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
       ),
     );
   }
 }
 
 class SignUpForm extends StatefulWidget {
+  const SignUpForm({super.key});
+
   @override
   State<SignUpForm> createState() => _SignUpFormState();
 }
@@ -1323,14 +1328,12 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
+              foregroundColor: MaterialStateProperty.resolveWith((states) {
                 return states.contains(MaterialState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
+              backgroundColor: MaterialStateProperty.resolveWith((states) {
                 return states.contains(MaterialState.disabled)
                     ? null
                     : Colors.blue;
@@ -1349,6 +1352,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
   const AnimatedProgressIndicator({
+    super.key,
     required this.value,
   });
 
@@ -1441,7 +1445,7 @@ You have created your first web app using Flutter!
 恭喜！
 你已经使用 Flutter 创建了第一个 Web 应用！
 
-If you’d like to continue playing with this example,
+If you'd like to continue playing with this example,
 perhaps you could add form validation.
 For advice on how to do this,
 see the [Building a form with validation][]

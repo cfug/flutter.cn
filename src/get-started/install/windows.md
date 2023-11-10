@@ -21,19 +21,13 @@ next:
 To install and run Flutter,
 your development environment must meet these minimum requirements:
 
-要想安装和运行 Flutter，你的开发环境至少应该满足如下的需求：
-
-- **Operating Systems**: Windows 10 or later (64-bit), x86-64 based
+- **Operating Systems**: Windows 10 or later (64-bit), x86-64 based.
 
   **操作系统**：Windows 10 或更高的版本（基于 x86-64 的 64 位操作系统）。
 
-- **Disk Space**: 1.64 GB (does not include disk space for IDE/tools).
+- **Disk Space**: 2.5 GB (does not include disk space for IDE/tools).
 
-  **磁盘空间**：除安装 IDE 和一些工具之外还应有至少 1.64 GB 的空间。
-
-- **Settings**: Developer Mode must be enabled on Windows 10/11.
-
-  **设置**: 必须在 Windows 10/11 上启用开发者模式。
+  **磁盘空间**：除安装 IDE 和一些工具之外还应有至少 2.5 GB 的空间。
 
 - **Tools**: Flutter depends on these tools being available in your environment.
 

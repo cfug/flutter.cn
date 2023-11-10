@@ -32,7 +32,7 @@ Apple's [App Review Guidelines][appreview].
 在开始发布你的 app 的进程之前，
 确保你已经看过了 Apple 的 [App Store 审核指南][appreview_cn]。
 
-In order to publish your app to the App Store,
+To publish your app to the App Store,
 you must first enroll in the
 [Apple Developer Program][devprogram].
 You can read more about the various
@@ -43,6 +43,20 @@ membership options in Apple's
 你需要注册 [Apple Developer Program][devprogram_cn]。
 你可以在苹果的 [选择会员资格(开发者类型)][devprogram_membership_cn]
 中查看到关于多种不同会员类型的选择。
+
+## Video overview
+
+## 视频教程
+
+For those who prefer video over text,
+the following video covers the same material as this guide.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+如果你想观看视频而非文字介绍，
+以下这个视频会指导你如何进行准备工作。
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[Release an iOS app with Flutter in 7 steps](https://www.youtube.com/watch?v=iE2bpP56QKc)
 
 ## Register your app on App Store Connect
 

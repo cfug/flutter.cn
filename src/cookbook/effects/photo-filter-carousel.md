@@ -1,8 +1,8 @@
 ---
 title: Create a photo filter carousel
 title: 创建一个照片滤镜选择器
-description: How to implement a photo filter carousel.
-description: 学习如何实现一个照片滤镜的轮播选择器
+description: How to implement a photo filter carousel in Flutter.
+description: 学习如何通过 Flutter 实现一个照片滤镜的轮播选择器
 js:
   - defer: true
     url: https://dartpad.cn/inject_embed.dart.js
@@ -31,7 +31,7 @@ behind the available filters, which helps the contrast
 between the filters and any photo that you choose.
 
 Create a new stateful widget called
-`FilterSelector` that you’ll use to 
+`FilterSelector` that you'll use to 
 implement the selector.
 
 <?code-excerpt "lib/excerpt1.dart (FilterSelector)"?>
@@ -148,11 +148,11 @@ depends on the size of an individual filter in the carousel
 called `itemSize`. The `itemSize` depends on the available width.
 Therefore, a `LayoutBuilder` widget is used to determine the
 available space, and then you calculate the size of an 
-individual filter’s `itemSize`.
+individual filter's `itemSize`.
 
 The selector ring includes an `IgnorePointer` widget
 because when carousel interactivity is added,
-the selector ring shouldn’t interfere with 
+the selector ring shouldn't interfere with 
 tap and drag events.
 
 ## Create a filter carousel item
@@ -188,7 +188,7 @@ class FilterItem extends StatelessWidget {
           child: ClipOval(
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files'
-              '/effects/instagram-buttons/millenial-texture.jpg',
+              '/effects/instagram-buttons/millennial-texture.jpg',
               color: color.withOpacity(0.5),
               colorBlendMode: BlendMode.hardLight,
             ),
@@ -298,12 +298,12 @@ and the `FilterItem` widgets need to shrink and
 fade as they move farther from the center of the screen.
 
 The solution to both of these issues is to introduce
-a `PageViewController`. The `PageViewController`’s
+a `PageViewController`. The `PageViewController`'s
 `viewportFraction` property is used to display 
 multiple `FilterItem` widgets on the screen at
 the same time. Rebuilding each `FilterItem` widget
 as the `PageViewController` changes allows you to 
-change each `FilterItem` widget’s size and opacity
+change each `FilterItem` widget's size and opacity
 as the user scrolls.
 
 Create a `PageViewController` and connect it to the
@@ -421,7 +421,7 @@ Widget _buildCarousel(double itemSize) {
             builder: (context, child) {
               if (!_controller.hasClients ||
                   !_controller.position.hasContentDimensions) {
-                // The PageViewController isn’t connected to the
+                // The PageViewController isn't connected to the
                 // PageView widget yet. Return an empty box.
                 return const SizedBox();
               }
@@ -571,7 +571,8 @@ class _ExampleInstagramFilterSelectionState
       valueListenable: _filterColor,
       builder: (context, color, child) {
         return Image.network(
-          'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
+          'https://docs.flutter.dev/cookbook/img-files'
+          '/effects/instagram-buttons/millennial-dude.jpg',
           color: color.withOpacity(0.5),
           colorBlendMode: BlendMode.color,
           fit: BoxFit.cover,
@@ -827,7 +828,8 @@ class FilterItem extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           child: ClipOval(
             child: Image.network(
-              'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-texture.jpg',
+              'https://docs.flutter.dev/cookbook/img-files'
+              '/effects/instagram-buttons/millennial-texture.jpg',
               color: color.withOpacity(0.5),
               colorBlendMode: BlendMode.hardLight,
             ),

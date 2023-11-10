@@ -40,7 +40,7 @@ more frequently than the Android platform.
 ### 如何将我现有的应用程序、插件或可编辑的模块项目迁移到 AndroidX？
 
 _You will need Android Studio 3.2 or higher.
-If you don’t have it installed,
+If you don't have it installed,
 you can download the latest version from the
 [Android Studio][] site_.
 
@@ -62,7 +62,7 @@ you can download the latest version from the
 
 4. Wait until the project has been synced successfully.
    (This happens automatically once you open the project,
-   but if it doesn’t, select **Sync Project with Gradle Files**
+   but if it doesn't, select **Sync Project with Gradle Files**
    from the **File** menu).
 
    等待项目同步成功。
@@ -200,7 +200,7 @@ android.useAndroidX=true
 android.enableJetifier=true
 ```
 
-### What if I don’t migrate my app or module to AndroidX?
+### What if I don't migrate my app or module to AndroidX?
 
 ### 如果我不将应用程序或模块迁移到 AndroidX 会怎么样？
 
@@ -226,7 +226,7 @@ to cause build failures.
 The Flutter tool uses Jetifier to automatically
 migrate Flutter plugins using the Support Library
 to AndroidX, so you can use the same plugins even
-if they haven’t been migrated to AndroidX yet.
+if they haven't been migrated to AndroidX yet.
 
 Flutter 工具通过 Jetifier 将
 使用支持库的 Flutter 插件自动迁移到 AndroidX，

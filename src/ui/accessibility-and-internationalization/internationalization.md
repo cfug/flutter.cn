@@ -1837,7 +1837,7 @@ check out the following examples.
 * [`intl_example`][]<br>
   uses APIs and tools provided by the [`intl`][] package.
 
-  [`intl` 示例][]<br>
+  [`intl` 示例][`intl_example`]<br>
   利用 [`intl`][] package 实现国际化的示例。
 
 If Dart's `intl` package is new to you,

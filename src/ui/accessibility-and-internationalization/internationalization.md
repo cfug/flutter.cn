@@ -1834,11 +1834,11 @@ check out the following examples.
   [最简示例][`minimal`]<br>
   最简展示了如果以最简单的方式实现国际化。
 
-* [`intl_example`]<br>
+* [`intl_example`][]<br>
   uses APIs and tools provided by the [`intl`][] package.
 
-  [`intl` 示例]<br>
-  利用 [`intl`][] 包实现国际化的示例。
+  [`intl` 示例][`intl_example`]<br>
+  利用 [`intl`][] package 实现国际化的示例。
 
 If Dart's `intl` package is new to you,
 check out [Using the Dart intl tools](#dart-tools).

@@ -10,7 +10,7 @@ default_share_image: /assets/images/cn/flutter-cn-logo.png
 
 
 github_username: cfug
-branch: master
+branch: main
 repo:
   organization: https://github.com/flutter
   this: https://github.com/cfug/flutter.cn

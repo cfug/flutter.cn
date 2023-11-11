@@ -3,6 +3,7 @@ title: Internationalizing Flutter apps
 title: Flutter 应用里的国际化
 short-title: i18n
 description: How to internationalize your Flutter app.
+description: 如何实现 Flutter 应用程序的国际化。
 tags: Flutter开发
 keywords: 国际化
 ---
@@ -176,7 +177,7 @@ widget 应当与本地化信息保持同步，并具有正确的从左到右或�
 Try switching the target platform's locale to
 Spanish (`es`) and the messages should be localized.
 
-你可以尝试将目标平台的语言环境切换为西班牙语（`es`），
+你可以尝试将目标平台的语言环境切换为西班牙语 (`es`)，
 然后应该可以发现信息已经被本地化了。
 
 Apps based on `WidgetsApp` are similar except that the
@@ -339,7 +340,7 @@ complete the following instructions:
    * Put the [App Resource Bundle][] (`.arb`) input files in
      `${FLUTTER_PROJECT}/lib/l10n`.
 
-     将 [应用资源包][App Resource Bundle][] (`.arb`)
+     将 [应用资源包][App Resource Bundle] (`.arb`)
      的输入路径指定为 `${FLUTTER_PROJECT}/lib/l10n`。
 
      The `.arb` provide localization resources for your app. 
@@ -492,10 +493,18 @@ return MaterialApp(
 
 ### Placeholders, plurals, and selects
 
+### 占位符、复数和选项
+
 {{site.alert.tip}}
+
   When using VS Code, add the [arb-editor extension][].
   This extension adds syntax highlighting, snippets, 
   diagnostics, and quick fixes to help edit `.arb` template files.
+
+  使用 VS Code 时，添加 [arb-editor 扩展][arb-editor extension] 。
+  该扩展可增添语法高亮显示、片段、诊断和快速修复功能，
+  以辅助编辑 `.arb` 模板文件。
+
 {{site.alert.end}}
 
 [arb-editor extension]: https://marketplace.visualstudio.com/items?itemName=Google.arb-editor
@@ -508,6 +517,12 @@ becomes a positional parameter in the generated method in the
 `AppLocalizations` code. Define a placeholder name by wrapping
 it in curly braces as follows:
 
+你还可以使用特殊语法在信息中包含应用程序的值，
+该语法使用 _占位符_ 生成方法（并非 getter）。
+占位符必须是有效的 Dart 标识符名称，
+它将成为 `AppLocalizations` 代码中生成方法的位置参数。
+用大括号定义占位符名称，如下所示：
+
 ```json
 "{placeholderName}"
 ```
@@ -516,6 +531,10 @@ Define each placeholder in the `placeholders` object
 in the app's `.arb` file. For example,
 to define a hello message with a `userName` parameter,
 add the following to `lib/l10n/app_en.arb`:
+
+在应用程序 `.arb` 文件内的 `placeholders` 对象中定义每个占位符。
+例如，需要定义带有 `userName` 参数的 hello 信息，
+请在 `lib/l10n/app_en.arb` 中添加以下内容：
 
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="5" take="10" replace="/},$/}/g"?>
 ```json
@@ -537,7 +556,15 @@ and the method accepts a parameter of type `String`;
 the `hello` method returns a string.
 Regenerate the `AppLocalizations` file.
 
+此代码段为 `AppLocalizations.of(context)` 对象
+添加了一个 `hello` 方法调用，
+该方法接收一个 `String` 类型的参数；
+`hello` 方法返回一个字符串。
+重新生成 `AppLocalizations` 文件。
+
 Replace the code passed into `Builder` with the following:
+
+将 `Builder` 中的代码替换为以下代码：
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/wombat|Wombats|he'|they|pronoun/"?>
 ```dart
@@ -565,6 +592,18 @@ be  "most people" or "many people", or "a crowd".
 Only the more general `messageOther` field is required.
 The following example shows what options are available:
 
+你还可以使用数字占位符来指定多个值。
+不同的语言有不同的单词复数化形式。
+该语法还支持指定单词的复数化形式。
+一个 _复数化_ 信息必须包含一个 `num` 参数，
+指明在不同情况下该单词的复数化形式。
+例如，英语将「person」复数为「people」，但这还不够。
+`message0` 的复数可能是「no people」或「zero people」。
+`messageFew` 的复数可能是「several people」、「some people」或「a few people」。
+`messageMany` 的复数可能是「most people」、「many people」或「a crowd」。
+只有更通用的 `messageOther` 字段是必填的。
+下面的示例显示了可用的选项：
+
 ```json
 "{countPlaceholder, plural, =0{message0} =1{message1} =2{message2} few{messageFew} many{messageMany} other{messageOther}}"
 ```
@@ -574,8 +613,14 @@ The previous expression is replaced by the message variation
 of the `countPlaceholder`.
 Only the `messageOther` field is required.
 
+前面的表达式由 `countPlaceholder` 值相对应的信息变量
+（`message0`、`message1`、...）所替代。
+只有 `messageOther` 字段是必填的。
+
 The following example defines a message that pluralizes
 the word, "wombat":
+
+下面的示例定义了「袋熊」复数化的信息：
 
 {% raw %}
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="15" take="10" replace="/},$/}/g"?>
@@ -594,6 +639,8 @@ the word, "wombat":
 {% endraw %}
 
 Use a plural method by passing in the `count` parameter:
+
+通过传递 `count` 参数来使用复数方法：
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/John|he|she|they|pronoun/" replace="/\[/[\n    .../g"?>
 ```dart
@@ -616,12 +663,20 @@ you can also choose a value based on a `String` placeholder.
 This is most often used to support gendered languages.
 The syntax is as follows:
 
+与复数类似，
+你也可以根据 `String` 占位符选择一个值。
+这通常用于性别。
+语法如下：
+
 ```json
 "{selectPlaceholder, select, case{message} ... other{messageOther}}"
 ```
 
 The next example defines a message that
 selects a pronoun based on gender:
+
+下面的示例定义了一条信息，
+该信息根据性别选择代词：
 
 {% raw %}
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="25" take="9" replace="/},$/}/g"?>
@@ -640,6 +695,9 @@ selects a pronoun based on gender:
 
 Use this feature by
 passing the gender string as a parameter:
+
+将性别字符串作为参数传递，
+即可使用该功能：
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/'He|hello|ombat/" replace="/\[/[\n    .../g"?>
 ```dart
@@ -662,6 +720,11 @@ comparison between the parameter and the actual
 value is case-sensitive.
 That is, `AppLocalizations.of(context)!.pronoun("Male")`
 defaults to the "other" case, and returns "they".
+
+请记住，在使用 `select` 语句时，
+参数和实际值之间的比较是区分大小写的。
+也就是说，`AppLocalizations.of(context)!.pronoun("Male")` 
+默认为「other」，并返回「they」。
 
 ### Escaping syntax
 
@@ -707,6 +770,8 @@ The resulting string is as follows:
 
 ### Messages with numbers and currencies
 
+### 包含数字和货币的信息
+
 Numbers, including those that represent currency values,
 are displayed very differently in different locales. 
 The localizations generation tool in
@@ -715,11 +780,21 @@ The localizations generation tool in
 class in the `intl` package to format
 numbers based on the locale and the desired format.
 
+数字，包括那些代表货币价值的数字，
+在不同的本地化环境中显示的方式大相径庭。
+在 `flutter_localizations` 中的本地化生成工具
+使用了 `intl` package 中的 
+[`NumberFormat`]({{site.api}}/flutter/intl/NumberFormat-class.html) 
+类，根据本地化和所需的格式来格式化数字。
+
 The `int`, `double`, and `number` types can use any of the
 following `NumberFormat` constructors:
 
+`int`、`double` 和 `number` 类型可以使用
+以下任何一个 `NumberFormat` 构造函数：
+
 <div class="table-wrapper" markdown="1">
-| Message "format" value      | Output for 1200000 |
+| <t>Message "format" value</t><t>信息「格式」值</t> | <t>Output for 1200000</t><t>输出为 1200000</t> |
 | --------------------------- | ------------------ |
 | `compact`                   | "1.2M"             |
 | `compactCurrency`*          | "$1.2M"            |
@@ -742,6 +817,11 @@ For example, to specify the optional `decimalDigits`
 parameter for `compactCurrency`,
 make the following changes to the `lib/l10n/app_en.arg` file:
 
+表中带星<sup>(*)</sup>的 `NumberFormat` 构造函数提供了可选的命名参数。
+这些参数可以指定为 placeholders 中 `optionalParameters` 对象的值。
+例如，要为 `compactCurrency` 指定可选的 `decimalDigits` 参数，
+请对 `lib/l10n/app_en.arg` 文件进行以下更改：
+
 {% raw %}
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="34" take="13" replace="/},$/}/g"?>
 ```json
@@ -763,17 +843,31 @@ make the following changes to the `lib/l10n/app_en.arg` file:
 
 ### Messages with dates
 
+### 带日期的信息
+
 Dates strings are formatted in many different ways
 depending both the locale and the app's needs.  
 
+日期字符串的格式有很多种，
+取决于地区和应用程序的需求。
+
 Placeholder values with type `DateTime` are formatted with
 [`DateFormat`][] in the `intl` package.
+
+`DateTime` 类型的占位符使用 `intl` package 中的 
+[`DateFormat`][] 格式化。
 
 There are 41 format variations,
 identified by the names of their `DateFormat` factory constructors.
 In the following example, the `DateTime` value
 that appears in the `helloWorldOn` message is
 formatted with `DateFormat.yMd`:
+
+格式变体共有 41 种，
+由 `DateFormat` factory 构造函数的名称标识。
+在下面的示例种，
+出现在 `helloWorldOn` 信息中的 `DateTime` 值
+是用 `DateFormat.yMd` 进行的格式化：
 
 ```json
 "helloWorldOn": "Hello World on {date}",
@@ -792,7 +886,7 @@ In an app where the locale is US English,
 the following expression would produce  "7/9/1959".
 In a Russian locale, it would produce "9.07.1959".
 
-在语言环境为英语(美国)的应用中，以下表达式将会是 7/9/1959，
+在语言环境为英语（美国）的应用中，以下表达式将会是 7/9/1959，
 在俄罗斯语言环境中，它将是 9.07.1959。
 
 ```dart
@@ -987,10 +1081,16 @@ Locale myLocale = Localizations.localeOf(context);
 <a id="specifying-supportedlocales"></a>
 ### Specifying the app's supported&shy;Locales parameter
 
+### 指定应用程序 supported­Locales 参数
+
 Although the `flutter_localizations` library currently supports
 113 languages and language variants, only English language translations
 are available by default. It's up to the developer to decide exactly
 which languages to support.
+
+尽管 `flutter_localizations` 库目前支持 113 种语言和语言变体，
+但默认情况下仅提供英语译文。
+具体支持哪些语言由开发人员决定。
 
 The `MaterialApp` [`supportedLocales`][]
 parameter limits locale changes. When the user changes the locale
@@ -1001,10 +1101,23 @@ then the first supported locale with a matching [`languageCode`][]
 is used. If that fails, then the first element of the
 `supportedLocales` list is used.
 
+`MaterialApp` 的 [`supportedLocales`][] 参数限制了本地化设置的更改。
+当用户更改设备上的语言设置时，
+只有在 [`supportedLocales`][] 参数列表中包含了用户更改的本地化语言设置的情况下，
+应用程序的 `Localizations` widget 才会生效。
+如果找不到与设备本地化完全匹配的语言，
+则会使用与 [`languageCode`][] 匹配的第一个受支持的语言。
+如果仍然找不到，
+则使用 `supportedLocales` 列表中的第一个元素。
+
 An app that wants to use a different "locale resolution"
 method can provide a [`localeResolutionCallback`][].
 For example, to have your app unconditionally accept
 whatever locale the user selects:
+
+如果应用程序希望使用不同的「本地化解析」方法，
+可以提供 [`localeResolutionCallback`][]。
+例如，应用程序可以无条件接受用户选择的任何语言：
 
 <?code-excerpt "gen_l10n_example/lib/examples.dart (LocaleResolution)"?>
 ```dart
@@ -1024,37 +1137,73 @@ MaterialApp(
 
 ### Configuring the l10n.yaml file
 
+### 配置 l10n.yaml 文件
+
 The `l10n.yaml` file allows you to configure the `gen-l10n` tool
 to specify the following:
 
+通过 `l10n.yaml` 文件，
+你可以配置 `gen-l10n` 工具，
+指定以下内容：
+
 * where all the input files are located
+
+  所有输入文件的位置
+
 * where all the output files should be created
+
+  所有输出文件的创建位置
+
 * what Dart class name to give your localizations delegate
+
+  为本地化委托赋予自定义的 Dart 类名
 
 For a full list of options, either run `flutter gen-l10n --help`
 at the command line or refer to the following table:
 
+获取完整的选项列表，
+可在命令行中运行 `flutter gen-l10n --help` 
+或参考下表内容：
+
 <div class="table-wrapper" markdown="1">
-| Option                              | Description |
+| <t>Option</t><t>可选项</t>           | <t>Description</t><t>说明</t> |
 | ------------------------------------| ------------------ |
 | `arb-dir`                           | The directory where the template and translated arb files are located. The default is `lib/l10n`. |
+| `arb-dir`                           | 模板和翻译 arb 文件所在的目录。 默认为 `lib/l10n`。 |
 | `output-dir`                        | The directory where the generated localization classes are written. This option is only relevant if you want to generate the localizations code somewhere else in the Flutter project. You also need to set the `synthetic-package` flag to false.<br /><br />The app must import the file specified in the `output-localization-file` option from this directory. If unspecified, this defaults to the same directory as the input directory specified in `arb-dir`. |
+| `output-dir`                        | 生成本地化类的目录。 只有当你想在 Flutter 项目的其他位置生成本地化代码时，才需要使用此选项。 你还需要将 `synthetic-package` 标志设为 false。<br /><br /> 应用程序必须从该目录导入 `output-localization-file` 选项中指定的文件。 如果未指定，则默认与 `arb-dir` 中指定的输入目录相同。 |
 | `template-arb-file`                 | The template arb file that is used as the basis for generating the Dart localization and messages files. The default is `app_en.arb`. |
+| `template-arb-file`                 | 用于生成 Dart 本地化和信息文件的 arb 模板文件。 默认为 `app_en.arb`。 |
 | `output-localization-file`          | The filename for the output localization and localizations delegate classes. The default is `app_localizations.dart`. |
+| `output-localization-file`          | 输出本地化和本地化委托类的文件名。 默认为 `app_localizations.dart`。 |
 | `untranslated-messages-file`        | The location of a file that describes the localization messages haven't been translated yet. Using this option creates a JSON file at the target location, in the following format: <br /> <br />`"locale": ["message_1", "message_2" ... "message_n"]`<br /><br /> If this option is not specified, a summary of the messages that haven't been translated are printed on the command line. |
+| `untranslated-messages-file`        | 描述尚未翻译的本地化信息的文件位置。 使用该选项会在目标位置创建一个 JSON 文件，格式如下：<br /><br /> `"locale": ["message_1", "message_2" ... "message_n"]` <br /><br /> 如果未指定此选项，则会在命令行中打印尚未翻译的信息摘要。 |
 | `output-class`                      | The Dart class name to use for the output localization and localizations delegate classes. The default is `AppLocalizations`. |
+| `output-class`                      | 用于输出本地化和本地化委托类的 Dart 类名。 默认为 `AppLocalizations`。 |
 | `preferred-supported-locales`       | The list of preferred supported locales for the application. By default, the tool generates the supported locales list in alphabetical order. Use this flag to default to a different locale.<br /><br />For example, pass in `[ en_US ]` to default to American English if a device supports it. |
+| `preferred-supported-locales`       | 应用程序首选支持的本地语言列表。 默认情况下，工具会按字母顺序生成支持的本地语言列表。 使用此标记可默认为不同的本地语言。 <br /><br /> 例如，设备支持美式英语，则输入 `[ en_US ]` 默认为美式英语。 |
 | `header`                            | The header to prepend to the generated Dart localizations files. This option takes in a string.<br /><br />For example, pass in `"/// All localized files."` to prepend this string to the generated Dart file.<br /><br />Alternatively, check out the `header-file` option to pass in a text file for longer headers. |
+| `header`                            | 在生成的 Dart 本地化文件中预置头文件。 该选项包含一个字符串。 <br /><br /> 例如，输入 `"/// All localized files."`，就会在生成的 Dart 文件中预置这个字符串。 <br /><br /> 或者，还可以使用 `header-file` 选项来传递一个文本文件，以获得更长的头文件。 |
 | `header-file`                       | The header to prepend to the generated Dart localizations files. The value of this option is the name of the file that contains the header text that is inserted at the top of each generated Dart file. <br /><br /> Alternatively, check out the `header` option to pass in a string for a simpler header.<br /><br />This file should be placed in the directory specified in `arb-dir`. |
+| `header-file`                       | 在生成的 Dart 本地化文件中预置头文件。 该选项的值是包含头文件文本的文件名，头文件文本将插入每个生成的 Dart 文件的顶部。 <br /><br /> 或者，还可以使用 `header` 选项来传递一个字符串，以获得更简单的头文件。 <br /><br /> 该文件应放在 `arb-dir` 中指定的目录下。 |
 | `[no-]use-deferred-loading`         | Specifies whether to generate the Dart localization file with locales imported as deferred, allowing for lazy loading of each locale in Flutter web.<br /><br />This can reduce a web app's initial startup time by decreasing the size of the JavaScript bundle. When this flag is set to true, the messages for a particular locale are only downloaded and loaded by the Flutter app as they are needed. For projects with a lot of different locales and many localization strings, it can improve performance to defer loading. For projects with a small number of locales, the difference is negligible, and might slow down the start up compared to bundling the localizations with the rest of the application.<br /><br />Note that this flag doesn't affect other platforms such as mobile or desktop. |
+| `[no-]use-deferred-loading`         | 指定是否将生成的 Dart 本地化文件延迟导入，以便在 Flutter web 中对每个本地化进行懒加载。 <br /><br /> 这可以减少 JavaScript 程序的大小，从而缩短 web 应用的初始启动时间。 当此标记设置为 true 时，Flutter 应用程序只会在需要时下载和加载特定语言的信息。 对于具有大量不同本地化字符串的项目，延迟加载可以提高性能。 对于本地化字符串数量较少的项目，两者之间的差异可以忽略不计，但是将本地化字符串与应用程序的其他部分捆绑在一起相比，可能会降低启动速度。 <br /><br /> 请注意，此标记不会影响移动或桌面等其他平台。 |
 | `gen-inputs-and-outputs-list`      | When specified, the tool generates a JSON file containing the tool's inputs and outputs, named `gen_l10n_inputs_and_outputs.json`.<br /><br />This can be useful for keeping track of which files of the Flutter project were used when generating the latest set of localizations.  For example, the Flutter tool's build system uses this file to keep track of when to call gen_l10n during hot reload.<br /><br />The value of this option is the directory where the JSON file is generated.  When null, the JSON file won't be generated. |
+| `gen-inputs-and-outputs-list`      | 指定后，工具会生成一个 JSON 文件，其中包含工具的输入和输出的内容，文件名为 `gen_l10n_inputs_and_outputs.json`。 <br /><br /> 这对于追踪生成最新的本地化时使用了 Flutter 项目中的哪些文件非常有用。 例如，Flutter 工具的构建系统会使用此文件来追踪在热重载期间何时调用 gen_l10n。 <br /><br /> 该选项的值是生成 JSON 文件的目录。 如果为空，则不会生成 JSON 文件。 |
 | `synthetic-package`                 | Determines  whether the generated output files are generated as a synthetic package or at a specified directory in the Flutter project. This flag is `true` by default. When `synthetic-package` is set to `false`, it generates the localizations files in the directory specified by `arb-dir` by default. If `output-dir` is specified, files are generated there. |
+| `synthetic-package`                 | 决定生成的输出文件是作为 synthetic package 还是在 Flutter 项目中指定的目录下生成。 该标志默认为 `true`。  `synthetic-package` 设置为 `false` 时，默认会在 `arb-dir` 指定的目录下生成本地化文件。 如果指定了 `output-dir` 目录，则会在该目录下生成文件。 |
 | `project-dir`                       | When specified, the tool uses the path passed into this option as the directory of the root Flutter project.<br /><br />When null, the relative path to the present working directory is used. |
+| `project-dir`                       | 指定后，工具将使用此选项中传递的路径作为 Flutter 项目的根目录。 <br /><br /> 如果为空，则使用当前工作目录的相对路径。 |
 | `[no-]required-resource-attributes` | Requires all resource ids to contain a corresponding resource attribute.<br /><br />By default, simple messages won't require metadata, but it's highly recommended as this provides context for the meaning of a message to readers.<br /><br />Resource attributes are still required for plural messages. |
+| `[no-]required-resource-attributes` | 要求所有资源 ID 包含相应的资源属性。 <br /><br /> 默认情况下，简单信息不需要元数据，但强烈建议使用元素据，因为它能为读者提供信息含义的上下文。 <br /><br /> 复数信息仍然需要资源属性。 |
 | `[no-]nullable-getter`              | Specifies whether the localizations class getter is nullable.<br /><br />By default, this value is true so that `Localizations.of(context)` returns a nullable value for backwards compatibility. If this value is false, then a null check is performed on the returned value of `Localizations.of(context)`, removing the need for null checking in user code. |
+| `[no-]nullable-getter`              | 指定本地化类 getter 是否可为空。 <br /><br /> 默认情况下，该值为 true，这样 `Localizations.of(context)` 就会返回一个可归零的值，以实现向下兼容。 如果该值为 false，则会对 `Localizations.of(context)` 返回的值进行空值检查，从而无需在用户代码中进行空值检查。 |
 | `[no-]format`                       | When specified, the `dart format` command is run after generating the localization files. |
+| `[no-]format`                       | 指定后，将在生成本地化文件后运行 `dart format` 指令。 |
 | `use-escaping`                      | Specifies whether to enable the use of single quotes as escaping syntax. |
+| `use-escaping`                      | 指定是否启用单引号作为转义语法。 |
 | `[no-]suppress-warnings`            | When specified, all warnings are suppressed. |
+| `[no-]suppress-warnings`            | 指定后，将不会进行警告。 |
 {:.table.table-striped}
 </div>
 
@@ -1069,7 +1218,7 @@ messages, the following content would be helpful.
 Otherwise, you can skip this section.
 
 本节涵盖了 Flutter 中本地化工作的技术细节，
-如果你计划使用自定的一套本地化消息，下面的内容会很有帮助。
+如果你计划使用自定的一套本地化信息，下面的内容会很有帮助。
 反之则可以跳过本节。
 
 <a id="loading-and-retrieving"></a>
@@ -1168,7 +1317,6 @@ tooltip: MaterialLocalizations.of(context).backButtonTooltip,
 <a id="defining-class"></a>
 ### Defining a class for the app's localized resources
 
-<a name="defining-class"></a>
 ### 为 app 的本地化资源定义一个类
 
 Putting together an internationalized Flutter app usually

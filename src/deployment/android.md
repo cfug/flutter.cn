@@ -190,9 +190,12 @@ To find out the latest version, visit [Google Maven][].
 To publish on the Play Store, you need to
 sign your app with a digital certificate.
 
+为了将你的应用发布到 Play 商店，
+你需要给你的应用进行数字签名。
+
 Android uses two signing keys: _upload_ and _app signing_.
 
-发布 Play Store 的 Android 应用需要两个签名：**上传签名** 和 **应用签名**。
+Android 应用需要两个签名：**上传签名** 和 **应用签名**。
 
 * Developers upload an `.aab` or `.apk` file signed with
   an _upload key_ to the Play Store.

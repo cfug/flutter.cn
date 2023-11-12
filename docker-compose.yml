@@ -2,10 +2,10 @@ version: "3.9"
 services:
 
   site:
-    image: flt-dev
+    image: flt-cn-build
     build:
       context: .
-      target: dev
+      target: build
     command: ["make", "serve"]
     env_file: .env
     environment:

@@ -1,5 +1,8 @@
 FROM ruby:3.2.2-slim-bookworm@sha256:adc7f93df5b83c8627b3fadcc974ce452ef9999603f65f637e32b8acec096ae1 AS base
 
+# Configure Debian mirrors.
+COPY ./sources-tuna.list /etc/apt/sources.list
+
 ENV TZ=Asia/Shanghai
 RUN apt-get update && apt-get install -yq --no-install-recommends \
       apt-transport-https \
@@ -32,8 +35,15 @@ ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/flutter/bin:$PATH"
 
+#ENV http_proxy="http://192.168.0.10:8764"
+#ENV https_proxy="http://192.168.0.10:8764"
+ENV no_proxy="localhost,127.0.*,172.0.*,*mirror*,*.cn"
+
 RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch --filter=tree:0 https://github.com/flutter/flutter /flutter/
 VOLUME /flutter
+
+ENV PUB_HOSTED_URL="https://pub.flutter-io.cn"
+ENV FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
@@ -54,6 +64,8 @@ RUN mkdir -p /etc/apt/keyrings \
     && apt-get install nodejs -yq \
     && npm install -g npm # Ensure latest npm
 
+RUN npm config set registry https://registry.npmmirror.com
+
 # Install global Firebase CLI
 RUN npm install -g firebase-tools@12.7.0
 
@@ -70,6 +82,9 @@ ENTRYPOINT ["tool/test.sh"]
 
 # ============== DEV / JEKYLL SETUP ==============
 FROM node AS dev
+
+RUN gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
+RUN bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
 
 ENV JEKYLL_ENV=development
 RUN gem install bundler
@@ -115,7 +130,7 @@ COPY ./ ./
 # ENV BUILD_CONFIGS=$BUILD_CONFIGS
 # RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
-RUN ["tool/translator/build.sh"]
+RUN tool/move_docs.sh; tool/translator/build.sh
 
 FROM build as checklinks
 

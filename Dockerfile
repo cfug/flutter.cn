@@ -1,7 +1,13 @@
 FROM ruby:3.2.2-slim-bookworm@sha256:adc7f93df5b83c8627b3fadcc974ce452ef9999603f65f637e32b8acec096ae1 AS base
 
+SHELL ["/usr/bin/bash", "-c"]
+
 # Configure Debian mirrors.
-COPY ./sources-tuna.list /etc/apt/sources.list
+RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources
+
+#ENV http_proxy="http://192.168.0.10:8764"
+#ENV https_proxy="http://192.168.0.10:8764"
+ENV no_proxy="localhost,127.0.*,172.0.*,192.168.*,*.cn"
 
 ENV TZ=Asia/Shanghai
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -35,10 +41,6 @@ ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/flutter/bin:$PATH"
 
-#ENV http_proxy="http://192.168.0.10:8764"
-#ENV https_proxy="http://192.168.0.10:8764"
-ENV no_proxy="localhost,127.0.*,172.0.*,*mirror*,*.cn"
-
 RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch --filter=tree:0 https://github.com/flutter/flutter /flutter/
 VOLUME /flutter
 
@@ -63,8 +65,6 @@ RUN mkdir -p /etc/apt/keyrings \
     && apt-get update -yq \
     && apt-get install nodejs -yq \
     && npm install -g npm # Ensure latest npm
-
-RUN npm config set registry https://registry.npmmirror.com
 
 # Install global Firebase CLI
 RUN npm install -g firebase-tools@12.7.0

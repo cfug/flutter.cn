@@ -1,7 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
-set -x
-set -e
+npm install
 
 bundle exec jekyll build --config _config.yml
 

@@ -16,7 +16,7 @@ services:
       - "35730:35730"
       - "5502:5502"
     volumes:
-      - ./:/app
+      - /app
       - site_bundle:/usr/local/bundle
 
 volumes:

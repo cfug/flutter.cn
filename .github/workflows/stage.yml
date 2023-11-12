@@ -27,11 +27,11 @@ jobs:
           github.repository == 'cfug/flutter.cn' &&
           github.event.pull_request.head.repo.full_name == github.repository &&
           github.event.pull_request.user.login != 'dependabot[bot]' }}
-        uses: chenglu/action-hosting-deploy@main
+        uses: cfug/doc-site-preview-in-pr@v0.1
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.SERVICE_KEY }}
-          expires: 14d # 7 or 14 days?
+          expires: 14d
           projectId: flutter-cn-docs-prod
           showDetailedUrls: true
           fileExtensionFilter: "md, html"

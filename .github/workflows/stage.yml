@@ -28,8 +28,8 @@ jobs:
           github.event.pull_request.user.login != 'dependabot[bot]' }}
         uses: cfug/doc-site-preview-in-pr@main
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_CN_DOCS_PROD }}
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_CN_DOCS_PROD }}'
           expires: 14d
           projectId: flutter-cn-docs-prod
           showDetailedUrls: true

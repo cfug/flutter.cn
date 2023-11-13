@@ -5,7 +5,7 @@ services:
     image: flt-cn-build
     build:
       context: .
-      target: build
+      target: dev-build
     command: ["make", "serve"]
     env_file: .env
     environment:

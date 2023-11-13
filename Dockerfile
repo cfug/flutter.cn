@@ -95,7 +95,7 @@ RUN bundle install
 # Install Node deps
 ENV NODE_ENV=development
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci
 
 COPY ./ ./
 
@@ -107,7 +107,12 @@ EXPOSE 4002
 # Airplay runs on :5000 by default now
 EXPOSE 5502
 
+RUN tool/move_docs.sh
 
+# ============== BUILD DEV JEKYLL SITE ==============
+FROM dev as dev-build
+
+RUN tool/move_docs.sh; tool/translator/build.sh
 
 # ============== BUILD PROD JEKYLL SITE ==============
 FROM node AS build
@@ -132,6 +137,6 @@ COPY ./ ./
 
 RUN tool/move_docs.sh; tool/translator/build.sh
 
-FROM build as checklinks
+FROM build AS checklinks
 
 CMD ["tool/check-links.sh"]

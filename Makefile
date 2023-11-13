@@ -74,7 +74,8 @@ serve:
 		--livereload \
 		--livereload_port 37530 \
 		--incremental \
-		--trace
+		--trace \
+		--skip-initial-build
 
 # Test hosting locally with FB emulator
 emulate:
@@ -149,7 +150,7 @@ build:
 # is used inside the Github action.
 # Usage: `make deploy`
 deploy:
-	sh tool/translator/deploy-cn.sh
+	bash tool/translator/deploy-cn.sh
 
 # =================== Utility Commands ==================
 
@@ -170,4 +171,4 @@ purge:
 
 # Move around docs in order to customize path orders
 move-docs:
-	sh tool/move_docs.sh
+	bash tool/move_docs.sh

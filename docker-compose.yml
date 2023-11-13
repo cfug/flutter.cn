@@ -2,10 +2,10 @@ version: "3.9"
 services:
 
   site:
-    image: flt-dev
+    image: flt-cn-build
     build:
       context: .
-      target: dev
+      target: dev-build
     command: ["make", "serve"]
     env_file: .env
     environment:
@@ -16,7 +16,7 @@ services:
       - "35730:35730"
       - "5502:5502"
     volumes:
-      - ./:/app
+      - /app
       - site_bundle:/usr/local/bundle
 
 volumes:

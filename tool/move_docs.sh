@@ -1,4 +1,4 @@
-#!/usr/bin/bash -e
+#!/usr/bin/bash
 DOCS=src/docs
 
 if [ -d "$DOCS" ]; then
@@ -15,12 +15,15 @@ cd src
 mkdir docs
 
 # Move all directories to /docs.
-mv -- */ docs/
+for folder in */; do
+  if [[ $folder != "docs/" && $folder != _* ]]; then
+    echo "Moving folder $folder to docs/$folder..."
+    mv "$folder" docs/
+  fi
+done
 # Move all markdown files to /docs.
-mv *.md docs/
+mv ./*.md docs/
 
-# Move out all directories start with _.
-mv docs/_* ./
 # Move out CN site directories.
 mv docs/about ./
 mv docs/community ./

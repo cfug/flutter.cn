@@ -21,6 +21,9 @@ next:
 To install and run Flutter,
 your development environment must meet these minimum requirements:
 
+为了安装和运行 Flutter，
+你的开发环境必须至少满足以下要求：
+
 - **Operating Systems**: Windows 10 or later (64-bit), x86-64 based.
 
   **操作系统**：Windows 10 或更高的版本（基于 x86-64 的 64 位操作系统）。

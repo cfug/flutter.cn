@@ -1,5 +1,14 @@
 FROM ruby:3.2.2-slim-bookworm@sha256:adc7f93df5b83c8627b3fadcc974ce452ef9999603f65f637e32b8acec096ae1 AS base
 
+SHELL ["/usr/bin/bash", "-c"]
+
+# Configure Debian mirrors.
+RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources
+
+#ENV http_proxy="http://192.168.0.10:8764"
+#ENV https_proxy="http://192.168.0.10:8764"
+ENV no_proxy="localhost,127.0.*,172.0.*,192.168.*,*.cn"
+
 ENV TZ=Asia/Shanghai
 RUN apt-get update && apt-get install -yq --no-install-recommends \
       apt-transport-https \
@@ -34,6 +43,9 @@ ENV PATH="/flutter/bin:$PATH"
 
 RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch --filter=tree:0 https://github.com/flutter/flutter /flutter/
 VOLUME /flutter
+
+#ENV PUB_HOSTED_URL="https://pub.flutter-io.cn"
+#ENV FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
@@ -71,6 +83,9 @@ ENTRYPOINT ["tool/test.sh"]
 # ============== DEV / JEKYLL SETUP ==============
 FROM node AS dev
 
+#RUN gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
+#RUN bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
+
 ENV JEKYLL_ENV=development
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
@@ -80,7 +95,7 @@ RUN bundle install
 # Install Node deps
 ENV NODE_ENV=development
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci
 
 COPY ./ ./
 
@@ -92,7 +107,12 @@ EXPOSE 4002
 # Airplay runs on :5000 by default now
 EXPOSE 5502
 
+RUN tool/move_docs.sh
 
+# ============== BUILD DEV JEKYLL SITE ==============
+FROM dev as dev-build
+
+RUN tool/move_docs.sh; tool/translator/build.sh
 
 # ============== BUILD PROD JEKYLL SITE ==============
 FROM node AS build
@@ -115,8 +135,8 @@ COPY ./ ./
 # ENV BUILD_CONFIGS=$BUILD_CONFIGS
 # RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
-RUN ["tool/translator/build.sh"]
+RUN tool/move_docs.sh; tool/translator/build.sh
 
-FROM build as checklinks
+FROM build AS checklinks
 
 CMD ["tool/check-links.sh"]

@@ -53,8 +53,6 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           submodules: recursive
-      - name: Move docs
-        run: make move-docs
       - name: Build site and check links
         run: make build
 #      - name: Install Node for Firebase install

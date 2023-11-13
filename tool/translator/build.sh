@@ -1,9 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
-set -x
-set -e
+npm install
 
-bundle exec jekyll build --config _config.yml
+if [[ $JEKYLL_ENV == 'development' ]]; then
+  bundle exec jekyll build --config _config.yml,_config_dev.yml
+else
+  bundle exec jekyll build --config _config.yml
+fi
 
 cp -r tool/translator/assets/* _site/assets/
 cp tool/translator/robots.txt _site

@@ -25,6 +25,7 @@ jobs:
       - name: Stage site on Firebase
         if: ${{
           github.repository == 'cfug/flutter.cn' &&
+          github.event.pull_request.head.repo.full_name == github.repository &&
           github.event.pull_request.user.login != 'dependabot[bot]' }}
         uses: cfug/doc-site-preview-in-pr@main
         with:

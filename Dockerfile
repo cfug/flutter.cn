@@ -44,8 +44,8 @@ ENV PATH="/flutter/bin:$PATH"
 RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch --filter=tree:0 https://github.com/flutter/flutter /flutter/
 VOLUME /flutter
 
-ENV PUB_HOSTED_URL="https://pub.flutter-io.cn"
-ENV FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
+#ENV PUB_HOSTED_URL="https://pub.flutter-io.cn"
+#ENV FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
@@ -83,8 +83,8 @@ ENTRYPOINT ["tool/test.sh"]
 # ============== DEV / JEKYLL SETUP ==============
 FROM node AS dev
 
-RUN gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
-RUN bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
+#RUN gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
+#RUN bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
 
 ENV JEKYLL_ENV=development
 RUN gem install bundler

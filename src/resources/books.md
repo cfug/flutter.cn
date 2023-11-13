@@ -35,7 +35,7 @@ page to view Flutter's latest release.
   The following sections have more information about each book.
 </p>
 <p>
-  以下是每本书籍的介绍
+  以下是每本书籍的介绍：
 </p>
 
 {% for book in site.data.books %}

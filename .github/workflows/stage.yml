@@ -26,7 +26,7 @@ jobs:
         if: ${{
           github.repository == 'cfug/flutter.cn' &&
           github.event.pull_request.user.login != 'dependabot[bot]' }}
-        uses: cfug/doc-site-preview-in-pr@v0.1
+        uses: cfug/doc-site-preview-in-pr@main
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_CN_DOCS_PROD }}

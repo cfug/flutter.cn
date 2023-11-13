@@ -1,0 +1,38 @@
+name: Check links and stage
+
+on:
+  pull_request:
+    branches:
+      - main
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  stage:
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    if: ${{ github.ref != 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - name: Build site and check links
+        run: make move-docs & make build
+      - name: Stage site on Firebase
+        if: ${{
+          github.repository == 'cfug/flutter.cn' &&
+          github.event.pull_request.user.login != 'dependabot[bot]' }}
+        uses: cfug/doc-site-preview-in-pr@main
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTER_CN_DOCS_PROD }}'
+          expires: 14d
+          projectId: flutter-cn-docs-prod
+          showDetailedUrls: true
+          fileExtensionFilter: "md, html"
+          originalPath: "src/"
+          replacedPath: "docs/"

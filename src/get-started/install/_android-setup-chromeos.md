@@ -49,13 +49,25 @@ $ flutter doctor --android-licenses
 
 ### Deploy to your Chromebook
 
+### 部署到 Chromebook
+
 To deploy apps directly to your Chromebook, you need to do the following:
+
+要在 Chromebook 上直接部署应用程序，需要执行以下操作：
 
  1. [Enable ADB][] in Settings. Note that this requires you to reboot your
     device once.
+
+    在设置中 [启用 ADB][Enable ADB]。
+    请注意，这需要你重启一次设备。
+
  1. In the Terminal, run `flutter devices`. If prompted, authorize access to
     the Android container. Verify that `flutter devices` lists your ChromeOS
     device as a recognized device.
+
+    在终端运行 `flutter devices`。如果出现提示，
+    请授权访问 Android 容器。
+    验证 `flutter devices` 是否将 ChromeOS 设备列为可识别设备。
 
 ### Set up your Android device
 

@@ -46,5 +46,7 @@ to accommodate Android Studio and other tooling.
 
 Set up your preferred editor.
 
+编辑器设置。
+
 [Linux (Beta)]: https://support.google.com/chromebook/answer/9145439
 [Linux]: https://support.google.com/chromebook/answer/9145439

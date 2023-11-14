@@ -14,5 +14,7 @@ To develop Linux desktop apps with Flutter, you need the following tools:
 
 To install each of the tools, run the following command:
 
+请运行以下指令，安装每个工具：
+
 {% include docs/linux-requirements-command.md %}
 

@@ -505,7 +505,7 @@ Enabling certificates varies in different versions of iOS.
 
 1. Open the **Settings** app on the iOS device.
 
-   打开 iOS 设备上的 **Settings**。
+   打开 iOS 设备上的 **设置**。
 
 1. Tap on **General** <span aria-label="and then">></span>
    **Profiles & Device Management**.

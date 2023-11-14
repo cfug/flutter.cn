@@ -26,7 +26,7 @@ After you install `snapd`, [install Flutter from the Snap Store][] or
 run the following command:
 
 安装 snapd 后，你可以
-[通过 Snap 商店来安装 Flutter][install Flutter from the Snap Store，
+[通过 Snap 商店来安装 Flutter][install Flutter from the Snap Store]，
 或者通过以下命令安装：
 
 ```terminal
@@ -93,6 +93,8 @@ If you aren't using `snapd`, follow these steps to install Flutter.
    [更新您的路径][Update your path]。
 
 1. (Optional) Pre-download development binaries:
+
+   （可选）预下载开发二进制文件：
 
     ```terminal
     $ flutter precache

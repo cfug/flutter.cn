@@ -338,7 +338,7 @@ Follow the Xcode signing flow to provision your project.
 
 1. Sign in to Xcode with your Apple ID.
 
-   使用 Apple ID 登陆 Xcode。
+   使用 Apple ID 登录 Xcode。
 
    {: type="a"}
    1. Go to **Xcode** <span aria-label="and then">></span>

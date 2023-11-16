@@ -1,18 +1,18 @@
-- group: 'China Flutter User Group'
+- group: 'Flutter 社区 (CFUG)'
   mirror: 'flutter-io.cn'
   urls:
     pubhosted: 'https://pub.flutter-io.cn'
     flutterstorage: 'https://storage.flutter-io.cn'
     issues: 'https://github.com/cfug/flutter.cn/issues/new/choose'
     group: https://github.com/cfug
-- group: 'Shanghai Jiao Tong University *nix User Group'
+- group: '上海交通大学 *nix 用户组'
   mirror: 'mirror.sjtu.edu.cn'
   urls:
     pubhosted: 'https://mirror.sjtu.edu.cn/flutter-infra'
     flutterstorage: 'https://mirror.sjtu.edu.cn'
     issues: 'https://github.com/sjtug/mirror-requests'
     group: https://github.com/sjtug
-- group: 'Tsinghua University TUNA Association'
+- group: '清华大学 TUNA 协会'
   mirror: 'mirrors.tuna.tsinghua.edu.cn'
   urls:
     pubhosted: 'https://mirrors.tuna.tsinghua.edu.cn/dart-pub'

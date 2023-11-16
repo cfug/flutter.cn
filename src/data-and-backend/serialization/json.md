@@ -110,6 +110,17 @@ For an example of manual encoding, see
 手动序列化数据可能是你要的开始的方式。关于手动编码的示例，请参阅
 [使用 dart:convert 手动序列化 JSON 数据][Serializing JSON manually using dart:convert]。
 
+{{site.alert.tip}}
+
+  For hands-on practice deserializing JSON and
+  taking advantage of Dart 3's new features,
+  check out the [Dive into Dart's patterns and records][] codelab.
+
+  关于反序列化 JSON 和利用 Dart 3 性功能的实践练习，
+  请查阅 [深入了解 Dart 的 patterns 和 records][Dive into Dart's patterns and records] codelab。
+
+{{site.alert.end}}
+
 ### Use code generation for medium to large projects
 
 ### 为中大型项目使用代码生成
@@ -792,6 +803,7 @@ For more information, see the following resources:
   Pub 中 [`json_serializable` package][`json_serializable`]
   
 * The [`json_serializable` examples][] on GitHub
+* The [Dive into Dart's patterns and records][] codelab
 
   GitHub 中 [`json_serializable` 的例子][`json_serializable` examples]
 
@@ -811,3 +823,4 @@ For more information, see the following resources:
 [Serializing JSON manually using dart:convert]: #manual-encoding
 [Serializing JSON using code generation libraries]: #code-generation
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
+[Dive into Dart's patterns and records]: {{site.codelabs}}/codelabs/dart-patterns-records

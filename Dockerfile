@@ -51,7 +51,9 @@ VOLUME /flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
-RUN flutter --version
+RUN flutter config --no-analytics  \
+    && flutter config --no-cli-animations  \
+    && flutter --version
 RUN dart pub get
 
 
@@ -67,9 +69,7 @@ RUN mkdir -p /etc/apt/keyrings \
     && npm install -g npm # Ensure latest npm
 
 # Install global Firebase CLI
-RUN npm install -g firebase-tools@12.7.0
-
-
+# RUN npm install -g firebase-tools@12.7.0
 
 # ============== FLUTTER CODE TESTS ==============
 FROM flutter AS tests

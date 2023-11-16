@@ -276,7 +276,7 @@ For more information on the build modes, see
 [Flutter's build modes][] 文档。
 
 [Android]: {{site.url}}/deployment/android
-[Assertions]: {{site.dart-site}}/language/control-flow#assert
+[Assertions]: {{site.dart-site}}/language/error-handling#assert
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [dartdevc]: {{site.dart-site}}/tools/dartdevc
 [DevTools]: {{site.url}}/tools/devtools

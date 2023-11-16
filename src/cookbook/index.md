@@ -142,18 +142,18 @@ reference to help you build up an application.
 
 ## 游戏
 
-{{site.alert.tip}}
+- [Add achievements and leaderboards to your mobile game]({{site.url}}/cookbook/games/achievements-leaderboard)
 
-  Check back soon for recipes that
-  can you help you build games with Flutter!
+  [在手机游戏中添加成就和排行榜]({{site.url}}/cookbook/games/achievements-leaderboard)
 
-  目前该部分内容尚未准备好。
+- [Add multiplayer support via Firestore]({{site.url}}/cookbook/games/firestore-multiplayer)
 
-  Until then, check out the [Casual Games Toolkit]({{site.main-url}}/games).
+  [通过 Firestore 添加多人游戏支持]({{site.url}}/cookbook/games/firestore-multiplayer)
 
-  在此之前，请参阅 [休闲游戏工具包]({{site.main-url}}/games) 了解更多。
+- [Add ads to your mobile Flutter app or game]({{site.url}}/cookbook/plugins/google-mobile-ads)
 
-{{site.alert.end}}
+  [在 Flutter 手机应用或游戏中添加广告]({{site.url}}/cookbook/plugins/google-mobile-ads)
+
 
 ## Gestures
 
@@ -326,6 +326,10 @@ reference to help you build up an application.
 - [Play and pause a video]({{site.url}}/cookbook/plugins/play-video)
 
   [视频的播放和暂停]({{site.url}}/cookbook/plugins/play-video)
+
+- [Add ads to your mobile Flutter app or game]({{site.url}}/cookbook/plugins/google-mobile-ads)
+
+  [在 Flutter 手机应用或游戏中添加广告]({{site.url}}/cookbook/plugins/google-mobile-ads)
 
 - [Take a picture using the camera]({{site.url}}/cookbook/plugins/picture-using-camera)
 

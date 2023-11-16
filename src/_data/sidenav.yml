@@ -61,6 +61,39 @@
     - title: Codelabs
       permalink: /docs/codelabs
 
+- title: 应用解决方案
+  children:
+    - title: 游戏
+      children:
+        - title: 介绍
+          permalink: /docs/resources/games-toolkit
+        - title: 添加成就和排行榜
+          permalink: /docs/cookbook/games/achievements-leaderboard
+        - title: 添加广告
+          permalink: /docs/cookbook/plugins/google-mobile-ads
+        - title: 添加多人游戏支持
+          permalink: /docs/cookbook/games/firestore-multiplayer
+        - title: 添加应用内购买
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+        - title: 添加用户身份验证
+          permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps#0
+        - title: 使用 Crashlytics 调试
+          permalink: https://firebase.flutter.dev/docs/crashlytics/overview/
+    - title: 新闻
+      children:
+        - title: 构建新闻应用程序
+          permalink: /docs/resources/news-toolkit
+    - title: 盈利
+      children:
+        - title: 介绍
+          permalink: https://flutter.cn/monetization
+        - title: 添加应用内购买
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+    - title: 地图
+      children:
+        - title: 为应用程序添加地图
+          permalink: https://developers.google.com/maps/flutter-package
+
 - divider
 - header: 用户界面
 - title: 介绍
@@ -403,6 +436,12 @@
     - title: 概览
       permalink: /docs/testing/overview
       match-page-url-exactly: true
+    - title: 单元测试
+      children:
+        - title: 介绍
+          permalink: /docs/cookbook/testing/unit/introduction
+        - title: 模拟依赖
+          permalink: /docs/cookbook/testing/unit/mocking
     - title: Widget 测试
       children:
         - title: 介绍
@@ -416,18 +455,12 @@
     - title: 集成测试
       children:
         - title: 介绍
-          permalink: /docs/testing/integration-tests
+          permalink: /docs/cookbook/testing/integration/introduction
           match-page-url-exactly: true
         - title: 编写并运行集成测试
-          permalink: /docs/cookbook/testing/integration/introduction
+          permalink: /docs/testing/integration-tests
         - title: 衡量集成测试的性能指标
           permalink: /docs/cookbook/testing/integration/profiling
-    - title: 单元测试
-      children:
-        - title: 介绍
-          permalink: /docs/cookbook/testing/unit/introduction
-        - title: 模拟依赖
-          permalink: /docs/cookbook/testing/unit/mocking
     - title: 测试插件
       permalink: /docs/testing/testing-plugins
     - title: 在测试中处理插件代码
@@ -620,11 +653,6 @@
       permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
     - title: 设计文档
       permalink: https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22design+doc%22
-    - header: 工具包
-    - title: 休闲游戏工具包
-      permalink: /docs/resources/games-toolkit
-    - title: 新闻内容工具包
-      permalink: /docs/resources/news-toolkit
 
 - title: 更多资料
   permalink: /docs/reference

@@ -15,10 +15,13 @@ js:
 {{site.alert.note}}
 
   This recipe uses Flutter's support for [Material 3][] and
-  the [google_fonts][] package.
+  the [google_fonts][] package. As of the Flutter 3.16 release,
+  Material 3 is Flutter's default theme.
 
   本文内容使用了 Flutter 的 [Material 3][]
   以及 [google_fonts][] package 的支持。
+  从 Flutter 3.16 版本开始，
+  Material 3 是 Flutter 的默认主题。
 
 {{site.alert.end}}
 
@@ -71,18 +74,16 @@ This property takes a [`ThemeData`][] instance.
 全局 Theme 会影响整个 app 的颜色和字体样式。
 只需要向 `MaterialApp` 构造器传入 [`ThemeData`][] 即可。
 
-To enable Material 3, set the [`useMaterial3`][] property
-to `true` in the `ThemeData` constructor.
+As of the Flutter 3.16 release, Material 3 is Flutter's
+default theme.
 
-要使用 Material 3，设置 `ThemeData` 中的
-[`useMaterial3`][] 属性为 `true` 即可。
+从 Flutter 3.16 版本开始，
+Material 3 是 Flutter 的默认主题。
 
 If you don't specify a theme in the constructor,
 Flutter creates a default theme for you.
 
 如果没有手动配置主题，Flutter 将会使用预设的样式。
-
-[`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
 <?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
 ```dart

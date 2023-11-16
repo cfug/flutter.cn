@@ -2,6 +2,7 @@
 title: Using Flutter in China
 title: 在中国网络环境下使用 Flutter
 description: How to use, access, and learn about Flutter in China.
+description: 如何中国使用、访问和了解 Flutter。
 toc: true
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
@@ -23,7 +24,7 @@ consider using a [mirror site][] or _mirror_.
   The Flutter team can't verify their reliability or security.
 
   Flutter 团队无法验证它们的可靠性和安全性。
-  只有在你信任提供商的情况下才使用镜像站点。
+  _只有_ 在你 _信任_ 提供商的情况下才使用镜像站点。
 
 {{site.alert.end}}
 
@@ -171,7 +172,7 @@ To learn more about publishing packages, check out the
 
 ## Known, trusted community-run mirror sites
 
-## 已知、可信的社区镜像站点
+## 已知可信的社区镜像站点
 
 The Flutter team can't guarantee long-term availability of any mirrors.
 You can use other mirrors if they become available.
@@ -222,14 +223,14 @@ $env:FLUTTER_STORAGE_BASE_URL="{{mirror.urls.flutterstorage}}"
 #### Get support for this mirror
 {:.no_toc}
 
-#### 获得镜像的帮助
+#### 向镜像反馈
 {:.no_toc}
 
 If you're running into issues that only occur when
 using the `{{mirror.mirror}}` mirror, report the issue to their
 [issue tracker]({{mirror.urls.issues}}).
 
-如果你的问题仅在使用镜像时才会出现，
+如果你的问题仅在使用 `{{mirror.mirror}}` 镜像时才会出现，
 请向他们的 [反馈]({{mirror.urls.issues}})。
 
 {% endfor %}

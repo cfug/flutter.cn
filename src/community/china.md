@@ -17,10 +17,12 @@ maintained by [The China Flutter User Group (CFUG)][].
 
 欢迎你来到由中国 Flutter 社区维护的中文 Flutter 资源网站。
 
+{% comment %}
 If you'd like to install Flutter using an 
 [installation bundle]({{site.url}}/release/archive),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
+{% endcomment %}
 
 如果你需要下载
 [Flutter SDK 的独立打包文件]({{site.url}}/development/tools/sdk/releases)，

@@ -19,7 +19,7 @@ $newPath = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"
 [System.Environment]::SetEnvironmentVariable('FLUTTER_STORAGE_BASE_URL','https://storage.flutter-io.cn',User)
    {% endcapture -%}
 {% else -%}
-   {% assign shell = 'your terminal' -%}
+   {% assign shell = 'terminal' -%}
    {% assign prompt = '$' -%}
    {% assign comtoset = 'export ' -%}
    {% assign installdirsuggestion = '`~/dev`' %}

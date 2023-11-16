@@ -22,7 +22,7 @@
 To download the {{include.ref-os}} 3.13 version of the Flutter SDK,
 you would change the original URL from:
 
-要下载 {{include.ref-os}} 3.16 版本的 Flutter SDK，
+要下载 {{include.ref-os}} 3.13 版本的 Flutter SDK，
 你需要将原始 URL：
 
 ```terminal

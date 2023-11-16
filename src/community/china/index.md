@@ -16,7 +16,7 @@ To speed the download and installation of Flutter in China,
 consider using a [mirror site][] or _mirror_.
 
 为加快 Flutter 在中国的下载以及安装速度，
-请考虑使用 [镜像站点][mirror site] 和 _镜像_
+请考虑使用 [镜像站点][mirror site] 和 **镜像**
 
 {{site.alert.important}}
 
@@ -24,7 +24,7 @@ consider using a [mirror site][] or _mirror_.
   The Flutter team can't verify their reliability or security.
 
   Flutter 团队无法验证它们的可靠性和安全性。
-  _只有_ 在你 _信任_ 提供商的情况下才使用镜像站点。
+  **只有** 在你 **信任** 提供商的情况下才使用镜像站点。
 
 {{site.alert.end}}
 
@@ -41,6 +41,8 @@ Other mirrors can be found at the [end of this guide](#known-trusted-community-r
 [China Flutter User Group][] (CFUG) 维护着一个 Flutter 简体中文网站 
 [https://flutter.cn](https://flutter.cn) 以及镜像。
 其他镜像可在 [本文末尾](#known-trusted-community-run-mirror-sites) 找到。
+
+[China Flutter User Group]: https://github.com/cfug
 
 ### Configure your machine to use a mirror site
 
@@ -186,23 +188,31 @@ Flutter 团队无法保证任何镜像的长期可用性。
 
 ### {{mirror.group}}
 
+{% comment %}
 [{{mirror.group}}][] maintains the `{{mirror.mirror}}` mirror.
 It includes the Flutter SDK and pub packages.
+{% endcomment %}
 
 [{{mirror.group}}][] 维护着 `{{mirror.mirror}}` 镜像。
 它包括 Flutter SDK 和 pub package。
 
+{% comment %}
 #### Configure your machine to use this mirror
 {:.no_toc}
+{% endcomment %}
 
 #### 配置你的机器使用镜像
 {:.no_toc}
 
+{% comment %}
 To set your machine to use this mirror, use these commands.
+{% endcomment %}
 
 请使用以下指令，设置你的机器使用该镜像。
 
+{% comment %}
 On macOS, Linux, or ChromeOS:
+{% endcomment %}
 
 macOS、Linux 或 ChromeOS：
 
@@ -211,7 +221,9 @@ export PUB_HOSTED_URL={{mirror.urls.pubhosted}};
 export FLUTTER_STORAGE_BASE_URL={{mirror.urls.flutterstorage}}
 ```
 
+{% comment %}
 On Windows:
+{% endcomment %}
 
 Windows：
 
@@ -220,15 +232,19 @@ $env:PUB_HOSTED_URL="{{mirror.urls.pubhosted}}";
 $env:FLUTTER_STORAGE_BASE_URL="{{mirror.urls.flutterstorage}}"
 ```
 
+{% comment %}
 #### Get support for this mirror
 {:.no_toc}
+{% endcomment %}
 
 #### 向镜像反馈
 {:.no_toc}
 
+{% comment %}
 If you're running into issues that only occur when
 using the `{{mirror.mirror}}` mirror, report the issue to their
 [issue tracker]({{mirror.urls.issues}}).
+{% endcomment %}
 
 如果你的问题仅在使用 `{{mirror.mirror}}` 镜像时才会出现，
 请向他们的 [反馈]({{mirror.urls.issues}})。
@@ -249,3 +265,30 @@ for assistance.
 
 如果你有兴趣建立自己的镜像，
 请联系 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com) 寻求帮助。
+
+## 社区运行的镜像站点
+
+如下列表为目前在国内提供镜像的社区以及其镜像配置，
+由于镜像的实现方式有所不同，可能会导致数据的滞后等问题。
+我们制作了一个 [镜像可用性监控页面](https://stats.uptimerobot.com/JZK3ZTql79) 供参考。
+
+### 其他已知问题
+
+- 所有 Flutter 镜像目前均不支持/也不应支持上传 packages 到 pub.dev 网站。
+  这个过程通常需要登录谷歌账号，而这将是一个无法绕开且复杂的挑战。
+- [上海大学的镜像](https://mirrornews.shuosc.org/p/6d7146f9.html) 
+  暂时只允许校内访问，故暂未展示，感谢上海大学 Linux 用户组的同学。
+- 腾讯云开源镜像站使用 TUNA 开源脚本制作，每天同步一次，
+  经测试，其数据延迟较大并尚未配置有效的回源策略，有待于社区成员进一步验证。
+- 任何其他与镜像相关的问题，请通过
+  [Issue 向我们反馈](https://github.com/cfug/flutter.cn/issues/new?template=2_mirror_issue.yml&title=&title=%5BMirror+issue%5D+使用+Flutter+中国镜像的问题)。
+- 部分镜像的问题已经特别标识，待镜像修复之后移除。
+
+## 致谢
+
+本页面列出的镜像由提供者分别维护，我们确保上述列出的镜像提供方不会对数据进行恶意修改，
+因为国内网络情况的复杂性和特殊性，我们无法保证镜像长期稳定性和访问速度，请谅解。
+
+如果在镜像使用中有任何问题，欢迎通过邮件与我们联系：cfug-dev@googlegroups.com。
+非常感谢所有帮助 Flutter 在国内维护社区基础设施建设资源的社区和公司，查看
+[详细致谢名单]({{site.main-url}}/about)。

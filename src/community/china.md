@@ -17,10 +17,12 @@ maintained by [The China Flutter User Group (CFUG)][].
 
 欢迎你来到由中国 Flutter 社区维护的中文 Flutter 资源网站。
 
+{% comment %}
 If you'd like to install Flutter using an 
 [installation bundle]({{site.url}}/release/archive),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
+{% endcomment %}
 
 如果你需要下载
 [Flutter SDK 的独立打包文件]({{site.url}}/development/tools/sdk/releases)，
@@ -239,7 +241,7 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 - 腾讯云开源镜像站使用 TUNA 开源脚本制作，每天同步一次，
   经测试，其数据延迟较大并尚未配置有效的回源策略，有待于社区成员进一步验证。
 - 任何其他与镜像相关的问题，请通过
-  [Issue 向我们反馈](https://github.com/cfug/flutter.cn/issues/new?template=mirrors_issue.md&title=%5Bmirrors%5D)。
+  [Issue 向我们反馈](https://github.com/cfug/flutter.cn/issues/new?template=2_mirror_issue.yml&title=&title=%5BMirror+issue%5D+使用+Flutter+中国镜像的问题)。
 - 部分镜像的问题已经特别标识，待镜像修复之后移除。
 
 ## 致谢
@@ -249,4 +251,4 @@ $ export FLUTTER_STORAGE_BASE_URL=https://mirrors.cloud.tencent.com/flutter
 
 如果在镜像使用中有任何问题，欢迎通过邮件与我们联系：cfug-dev@googlegroups.com。
 非常感谢所有帮助 Flutter 在国内维护社区基础设施建设资源的社区和公司，查看
-[详细致谢名单]({{site.url}}/about)。
+[详细致谢名单]({{site.main-url}}/about)。

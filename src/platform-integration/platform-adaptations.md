@@ -7,6 +7,19 @@ tags: Flutter参考资料
 keywords: 平台适配,研究,Flutter Android,Flutter iOS,Flutter跨平台
 ---
 
+{{site.alert.note}}
+
+  As of the Flutter 3.16 release, Material 3
+  replaces Material 2 as the default theme
+  on all Flutter apps that use Material.
+
+  从 Flutter 3.16 版本开始，
+  Material 3 取代了 Material 2，
+  成为所有使用 Material 的 Flutter 应用的
+  默认主题。
+
+{{site.alert.end}}
+
 ## Adaptation philosophy
 
 ## 适配哲学

@@ -4,7 +4,7 @@ npm install
 
 if [[ $JEKYLL_ENV == 'development' ]]; then
   bundle exec jekyll build --config _config.yml,_config_dev.yml
-else if [[ $JEKYLL_ENV == 'stage' ]]; then
+elif [[ $JEKYLL_ENV == 'stage' ]]; then
   bundle exec jekyll build --config _config.yml,_config_stage.yml
 else
   bundle exec jekyll build --config _config.yml

@@ -29,7 +29,7 @@ details about the product.
   
   **术语**: 在 Flutter 中，**屏 (screen)** 和 **页面 (page)** 都叫做 **路由 (route)**，
   在下文中统称为“路由 (route)”。
-  
+
 {{site.alert.end}}
 
 In Android, a route is equivalent to an Activity.

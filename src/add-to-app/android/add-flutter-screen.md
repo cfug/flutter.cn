@@ -282,7 +282,7 @@ is discussed next.
   那么你的 Flutter 应用会像是运行在一个大小为零的窗口中，
   直至 `FlutterEngine` 附属到一个 `FlutterActivity`，`FlutterFragment` 或 `FlutterView`。
   请确保你的应用在开始预热到你展示 Flutter 内容中间的这段时间里表现正常。
-  
+
 {{site.alert.end}}
 
 With a pre-warmed, cached `FlutterEngine`, you now need

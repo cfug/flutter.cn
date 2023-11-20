@@ -33,6 +33,7 @@ To launch a Flutter screen from an existing iOS, you start a
   `FlutterEngine` 充当 Dart VM 和 Flutter 运行时的主机；
   `FlutterViewController` 依附于 `FlutterEngine`，
   给 Flutter 传递 UIKit 的输入事件，并展示被 `FlutterEngine` 渲染的每一帧画面。
+
 {{site.alert.end}}
 
 The `FlutterEngine` might have the same lifespan as your
@@ -59,6 +60,7 @@ The `FlutterEngine` might have the same lifespan as your
     logic before showing the UI.
 
     在展示 UI 前，你的应用和 plugins 可以与 Flutter 和 Dart 逻辑交互。
+
 {{site.alert.end}}
 
 See [Loading sequence and performance][]
@@ -339,6 +341,7 @@ Now, you have a Flutter screen embedded in your iOS app.
   
   在上一个例子中，你的默认 Dart 库的默认入口函数 `main()`，
   将会在 `AppDelegate` 创建 `FlutterEngine` 并调用 `run` 方法时调用。
+
 {{site.alert.end}}
 
 ### _Alternatively_ - Create a FlutterViewController with an implicit FlutterEngine
@@ -792,6 +795,7 @@ a different Dart function.
   @pragma('vm:entry-point')
   void myOtherEntrypoint() { ... };
   ```
+
 {{site.alert.end}}
 
 ### Dart library
@@ -884,10 +888,11 @@ FlutterViewController* flutterViewController =
   如果在 `FlutterEngine` 启动后，迫切得需要在平台侧改变你当前的 Flutter 路由，
   可以使用 `FlutterViewController` 里的 [`pushRoute()`][] 或者 [`popRoute()`][]。
 
-To pop the iOS route from the Flutter side,
+  To pop the iOS route from the Flutter side,
   call [`SystemNavigator.pop()`][].
-  
-在 Flutter 侧推出 iOS 路由，调用 [`SystemNavigator.pop()`][]。
+
+  在 Flutter 侧推出 iOS 路由，调用 [`SystemNavigator.pop()`][]。
+
 {{site.alert.end}}
 
 See [Navigation and routing][] for more about Flutter's routes.

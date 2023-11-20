@@ -29,6 +29,7 @@ js:
   当然你可能更想去尝试 [编写你的第一个 Flutter 应用][first_flutter_codelab]。
   需要注意的是，在一切工具顺利安装的基础上，
   本页面上的 codelab 将可以在移动端和桌面端的网页浏览器里运行。
+
 {{site.alert.end}}
 
 <img src="/assets/images/docs/get-started/sign-up.gif" alt="The web app that you'll be building" class='site-image-right'>

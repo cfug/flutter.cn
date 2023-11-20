@@ -14,7 +14,7 @@ keywords: Flutter inspector,widget 树
   The inspector works with all Flutter applications.
   
   Flutter inspector 适用于所有 Flutter 应用。
-  
+
 {{site.alert.end}}
 
 ## What is it?
@@ -64,7 +64,7 @@ tab on the DevTools toolbar.
   
   你可以直接在 Android Studio/IntelliJ 中使用 Flutter inspector，
   但是你可能会更喜欢使用 DevTools 在浏览器中打开 Flutter inspector，这样你能得到更宽敞的视图。
-  
+
 {{site.alert.end}}
 
 ### Debugging layout issues visually

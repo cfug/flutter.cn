@@ -30,7 +30,7 @@ keywords: 国际化
   * How to define the locales an app supports.
   
     如何去定义 app 支持的语言环境。
-  
+
 {{site.alert.end}}
 
 If your app might be deployed to users who speak another

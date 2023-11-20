@@ -14,6 +14,7 @@ keywords: 调试,debug,设置断点,单步调试
 
   如果应用是从 VS Code 启动的，开发工具会隐藏调试器标签页，
   因为 VS Code 有内置的调试器。
+
 {{site.alert.end}}
 
 ## Getting started
@@ -35,6 +36,7 @@ breakpoints, stepping, and variable inspection.
   调试器可以用于所有的 Flutter 和 Dart 应用。
   如果你想要使用 GDB 远程调试运行在 Android 应用进程中的 Flutter 引擎，
   请查看 [`flutter_gdb`][]。
+
 {{site.alert.end}}
 
 [`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb

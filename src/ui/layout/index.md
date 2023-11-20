@@ -1254,11 +1254,12 @@ it automatically scrolls.
 {% endcomment %}
 
 {{site.alert.note}}
+
   When displaying a two-dimensional list where it's important which
   row and column a cell occupies (for example,
   it's the entry in the "calorie" column for the "avocado" row), use
   [`Table`][] or [`DataTable`][].
-  
+
   当展示二维列表中的单元格所在的行和列的位置很重要的
   （例如，它是 “calorie” 行和 “avocado” 列的条目）的时候，
   使用 [`Table`][] 或者 [`DataTable`][].。

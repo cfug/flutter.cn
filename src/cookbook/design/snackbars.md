@@ -151,7 +151,7 @@ final snackBar = SnackBar(
   注意: 这个例子是当用户点击一个按钮的时候显示一个 SnackBar。
   更多有关处理用户输入的信息，请查阅实用教程 (Cookbook) 的
   [Gestures][] 部分。
-  
+
 {{site.alert.end}}
 
 <?code-excerpt "lib/main.dart"?>

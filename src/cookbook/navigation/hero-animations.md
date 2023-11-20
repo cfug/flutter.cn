@@ -63,7 +63,7 @@ handle animations in the next steps.
   
   这个示例建立在 [导航到一个新页面和返回][Navigate to a new screen and back] 和 
   [处理点击事件][Handle taps] 这两个章节的基础上。
-  
+
 {{site.alert.end}}
 
 <?code-excerpt "lib/main_original.dart"?>
@@ -191,7 +191,7 @@ Hero(
   这份代码和第一个页面中的代码是相同的。
   实际上，可以创建一个可复用的组件来代替这些重复的代码。
   但是在这个示例中，重复的代码会更易于讲解和演示。
-  
+
 {{site.alert.end}}
 
 ## Interactive example

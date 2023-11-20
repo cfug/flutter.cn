@@ -45,7 +45,7 @@ which can be compiled into split AOT shared libraries.
   Also, note that this is an advanced feature.
   
   另外，请注意这是一个高级功能。
-  
+
 {{site.alert.end}}
 
 Though modules can be defer loaded,
@@ -409,7 +409,7 @@ any issues and guides you through suggested changes to fix them.
   这个标志会让 `pubspec.yaml` 中定义的所有延迟组件，被视为定义在 assets 部分的普通组件。
   所有 Dart 代码会被编译到一个共享库中，`loadLibrary()` 调用会在下一个事件循环中完成（异步时尽快完成）。
   此标志也等效于移除 `pubspec.yaml` 中的 `deferred-components:`。
-  
+
 {{site.alert.end}}
 
 <ol markdown="1">
@@ -448,7 +448,7 @@ of loading units.
   你可以通过 `--no-validate-deferred-components` 标志，来让工具尝试在不执行验证程序下构建应用。
   这可能导致由意外和错误的指令而引起的故障。
   此标志应当仅在不需要依赖验证程序检查的默认 Play-store-based 的自定义实现时使用。
-  
+
 {{site.alert.end}}
 
 The validator detects any new, changed, or removed

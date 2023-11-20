@@ -35,4 +35,4 @@ jobs:
           showDetailedUrls: true
           fileExtensionFilter: "md, html"
           originalPath: "src/"
-          replacedPath: "docs/"
+          replacedPath: "/docs/"

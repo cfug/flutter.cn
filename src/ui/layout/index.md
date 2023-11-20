@@ -47,11 +47,11 @@ But things you don't see are also widgets,
 such as the rows, columns, and grids that arrange,
 constrain, and align the visible widgets.
 
-Flutter 布局的核心机制是 widgets。
-在 Flutter 中，几乎所有东西都是 widget —— 甚至布局模型都是 widgets。
-你在 Flutter 应用程序中看到的图像，图标和文本都是 widgets。
-此外不能直接看到的也是 widgets，
-例如用来排列、限制和对齐可见 widgets 的行、列和网格。
+Flutter 布局的核心机制是 widget。
+在 Flutter 中，几乎所有东西都是 widget —— 甚至布局模型都是 widget。
+你在 Flutter 应用程序中看到的图像，图标和文本都是 widget。
+此外不能直接看到的也是 widget，
+例如用来排列、限制和对齐可见 widget 的行、列和网格。
 
 You create a layout by composing widgets to build more complex widgets.
 For example, the first screenshot below shows 3 icons with a label
@@ -296,24 +296,42 @@ class MyApp extends StatelessWidget {
 
 #### Cupertino apps
 
+#### 基于 Cupertino 的应用
+
 To create a `Cupertino` app, use `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
+
+你可以使用 `CupertionApp` 和 [`CupertinoPageScaffold`][] widget
+来创建一个基于 `Cupertino` 的应用。
 
 Unlike `Material`, it doesn't provide a default banner or background color.
 You need to set these yourself.
 
+与 `Material` 不同的是它并没有自带横幅和背景颜色。你需要手动设置它们。
+
 * To set default colors, pass in a configured [`CupertinoThemeData`][]
   to your app's `theme` property.
+
+  你可以通过 `theme` 属性设置配置好的 [`CupertinoThemeData`][] 来更改默认颜色。
+
 * To add an iOS-styled navigation bar to the top of your app, add a
   [`CupertinoNavigationBar`][] widget to the `navigationBar`
   property of your scaffold.
   You can use the colors that [`CupertinoColors`][] provides to
   configure your widgets to match iOS design.
 
+  你可以通过 `navigationBar` 属性设置 [`CupertinoNavigationBar`][]
+  来展示 iOS 风格的导航栏。
+
 * To layout the body of your app, set the `child` property of your scaffold
   with the desired widget as its value, like `Center` or `Column`.
 
+  你可以设置脚手架 (`CupertinoScaffold`) 的 `child` 属性来构建你的主体内容，
+  例如 `Center` 或者 `Column`。
+
 To learn what other UI components you can add, check out the
 [Cupertino library][].
+
+若你想了解更多可以添加的 UI 组件，参阅 [Cupertino 库][Cupertino library] 文档。
 
 <?code-excerpt "lib/cupertino.dart (MyApp)" title?>
 ```dart
@@ -348,12 +366,20 @@ class MyApp extends StatelessWidget {
 ```
 
 {{site.alert.note}}
+
   The [Cupertino library][] implements widgets that follow
   [Apple's Human Interface Guidelines for iOS][].
   When designing your UI, you can use
   widgets from the standard [widgets library][], or the Cupertino library.
   You can mix widgets from both libraries, you can customize existing widgets,
   or you can build your own set of custom widgets.
+
+  [Cupertino 库][Cupertino library] 实现了
+  [Apple 的 人机界面指南][Apple's Human Interface Guidelines for iOS]。
+  你可以利用基础 [widget 库] 和 Cupertino 库，把它们加入你的界面设计中。
+  无论是混合这些库、自定义已有的 widget，还是构建你自己的一套 widget，
+  都不失为一种选择。
+
 {{site.alert.end}}
 
 [`CupertinoColors`]: {{api}}/cupertino/CupertinoColors-class.html
@@ -1254,6 +1280,7 @@ it automatically scrolls.
 {% endcomment %}
 
 {{site.alert.note}}
+
   When displaying a two-dimensional list where it's important which
   row and column a cell occupies (for example,
   it's the entry in the "calorie" column for the "avocado" row), use
@@ -1777,6 +1804,10 @@ To fully understand Flutter's layout system, you need
 to learn how Flutter positions and sizes
 the components in a layout. For more information,
 see [Understanding constraints][].
+
+你需要学习 Flutter 如何在布局时定位组件和决定组件大小，
+才能掌握 Flutter 的布局系统。
+请参阅 [深入理解 Flutter 布局约束][Understanding constraints] 了解更多内容。
 
 ## Videos
 

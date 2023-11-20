@@ -34,5 +34,3 @@ jobs:
           projectId: flutter-cn-docs-prod
           showDetailedUrls: true
           fileExtensionFilter: "md, html"
-          originalPath: "src/"
-          replacedPath: "/docs/"

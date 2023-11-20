@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": "_site",
-    "cleanUrls": false,
+    "cleanUrls": true,
     "trailingSlash": false,
     "ignore": [
       "firebase.json",
@@ -11,7 +11,10 @@
       "**/node_modules/**"
     ],
     "rewrites": [],
-    "redirects": [],
+    "redirects": [
+      { "regex": "(?P<basename>.*)\\.html$", "destination": ":basename", "type": 301 },
+      { "regex": "(?P<basename>.*)\\.$", "destination": ":basename", "type": 301 }
+    ],
     "headers": [
       {
         "source": "/f/*.json",

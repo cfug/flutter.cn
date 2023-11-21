@@ -69,7 +69,7 @@ RUN mkdir -p /etc/apt/keyrings \
     && npm install -g npm # Ensure latest npm
 
 # Install global Firebase CLI
-# RUN npm install -g firebase-tools@12.7.0
+RUN npm install -g firebase-tools@12.7.0
 
 # ============== FLUTTER CODE TESTS ==============
 FROM flutter AS tests

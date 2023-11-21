@@ -3,11 +3,11 @@
 npm install
 
 if [ -z "$BUILD_CONFIGS" ] || [ -z "${BUILD_CONFIGS// }" ]; then
-  echo "Building on Jekyll with configs: $BUILD_CONFIGS"
-  bundle exec jekyll build --config "$BUILD_CONFIGS"
-else
   echo "Building on Jekyll with the default config."
   bundle exec jekyll build --config _config.yml
+else
+  echo "Building on Jekyll with configs: $BUILD_CONFIGS"
+  bundle exec jekyll build --config "$BUILD_CONFIGS"
 fi
 
 cp -r tool/translator/assets/* _site/assets/

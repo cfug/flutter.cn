@@ -148,7 +148,7 @@ deploy:
 
 stage-local:
 	make clean
-	DOCKER_BUILDKIT=1 docker build --rm --no-cache --target stage \
+	DOCKER_BUILDKIT=1 docker build --rm --no-cache --target build \
   		--build-arg BUILD_CONFIGS=${BUILD_CONFIGS},_config-stage.yml -t ${BUILD_TAG} .
 	docker run --rm -d --name ${BUILD_NAME} -t ${BUILD_TAG}
 	docker cp ${BUILD_NAME}:/app/_site _site

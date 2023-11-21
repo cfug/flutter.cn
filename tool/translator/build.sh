@@ -2,12 +2,11 @@
 
 npm install
 
-echo "Building on Jekyll environment: $JEKYLL_ENV"
-if [[ $JEKYLL_ENV == 'development' ]]; then
-  bundle exec jekyll build --config _config.yml,_config_dev.yml
-elif [[ $JEKYLL_ENV == 'stage' ]]; then
-  bundle exec jekyll build --config _config.yml,_config_stage.yml
+if [ -z "$BUILD_CONFIGS" ] || [ -z "${BUILD_CONFIGS// }" ]; then
+  echo "Building on Jekyll with configs: $BUILD_CONFIGS"
+  bundle exec jekyll build --config "$BUILD_CONFIGS"
 else
+  echo "Building on Jekyll with the default config."
   bundle exec jekyll build --config _config.yml
 fi
 

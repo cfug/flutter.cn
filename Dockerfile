@@ -115,7 +115,7 @@ FROM dev as dev-build
 RUN tool/move_docs.sh; tool/translator/build.sh
 
 # ============== BUILD PROD JEKYLL SITE ==============
-FROM node AS pre-build
+FROM node AS build
 
 ENV JEKYLL_ENV=production
 RUN gem install bundler
@@ -135,15 +135,6 @@ COPY ./ ./
 # ENV BUILD_CONFIGS=$BUILD_CONFIGS
 # RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
-# ============== BUILD STAGE JEKYLL SITE ==============
-FROM pre-build as stage
-
-ENV JEKYLL_ENV=stage
-RUN tool/move_docs.sh; tool/translator/build.sh
-
-FROM pre-build AS build
-
-ENV JEKYLL_ENV=production
 RUN tool/move_docs.sh; tool/translator/build.sh
 
 FROM build AS checklinks

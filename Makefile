@@ -79,7 +79,7 @@ serve:
 
 # Test hosting locally with FB emulator
 emulate:
-	make clean
+	firebase emulators:start --only hosting --project ${FIREBASE_ALIAS}
 
 
 # =================== Build / Test / Deploy Commands ==================

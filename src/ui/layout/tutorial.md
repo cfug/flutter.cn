@@ -57,7 +57,8 @@ layout widgets are covered.
 If you want a "big picture" understanding of the layout mechanism,
 start with [Flutter's approach to layout][].
 
-如果你想对布局机制有个"全局"的理解，可以先从 [Flutter 中的布局]({{site.url}}/development/ui/layout) 开始.
+如果你想对布局机制有个总体的理解，可以先从
+[Flutter 中的布局][Flutter's approach to layout] 开始。
 
 ## Step 0: Create the app base code
 

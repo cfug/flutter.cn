@@ -42,30 +42,30 @@ jobs:
         run: make test
         continue-on-error: ${{ matrix.experimental }}
 
-  # linkcheck:
-  #   name: Build site and check links
-  #   runs-on: ubuntu-latest
-  #   if: ${{ github.ref != 'refs/heads/main' }}
-  #   steps:
-  #     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-  #       with:
-  #         submodules: recursive
-  #     - name: Build site and check links
-  #       run: make build BUILD_CONFIGS=_config.yml,_config_stage.yml
-  #     - name: Install Node for Firebase install
-  #       uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
-  #       with:
-  #         node-version: ${{ env.NODE_VERSION }}
-  #     - name: Install Firebase CLI
-  #       run: npm install -g firebase-tools@12.9.1
-  #     - uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
-  #       with:
-  #         sdk: stable
-  #     - run: tool/check-links.sh
+  linkcheck:
+    name: Build site and check links
+    runs-on: ubuntu-latest
+    if: ${{ github.ref != 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - name: Build site and check links
+        run: make build BUILD_CONFIGS=_config.yml,_config_stage.yml
+      - name: Install Node for Firebase install
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools@12.9.1
+      - uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+          sdk: stable
+      - run: tool/check-links.sh
 
   deploy:
     name: Deploy to production
-    needs: test
+    needs: [test, linkcheck]
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'push'

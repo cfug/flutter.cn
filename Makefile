@@ -146,6 +146,15 @@ build:
 deploy:
 	bash tool/translator/deploy-cn.sh
 
+stage-local:
+	make clean
+	DOCKER_BUILDKIT=1 docker build --rm --no-cache --target build \
+  		--build-arg BUILD_CONFIGS=${BUILD_CONFIGS},_config_stage.yml -t ${BUILD_TAG} .
+	docker run --rm -d --name ${BUILD_NAME} -t ${BUILD_TAG}
+	docker cp ${BUILD_NAME}:/app/_site _site
+	docker stop ${BUILD_NAME}
+	docker rmi -f ${BUILD_TAG}
+
 # =================== Utility Commands ==================
 
 # Clean all caches, and test/build files

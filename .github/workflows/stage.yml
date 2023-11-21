@@ -21,7 +21,7 @@ jobs:
         with:
           submodules: recursive
       - name: Build site and check links
-        run: make move-docs & make build
+        run: make stage-local
       - name: Stage site on Firebase
         if: ${{
           github.repository == 'cfug/flutter.cn' &&
@@ -34,5 +34,3 @@ jobs:
           projectId: flutter-cn-docs-prod
           showDetailedUrls: true
           fileExtensionFilter: "md, html"
-          originalPath: "src/"
-          replacedPath: "/docs/"

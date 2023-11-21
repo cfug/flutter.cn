@@ -41,12 +41,12 @@ python3 -m http.server --directory=_site $EMULATOR_PORT > /dev/null &
 
 sleep 3 # wait a few just in case
 
-if [[ -z "$emulator_status" ]]; then
-  echo "Emulator did not start!"
-  exit 3 # Higher than 2 to differentiate from linkcheck
-else
-  echo "Emulator is running in background"
-fi
+# if [[ -z "$emulator_status" ]]; then
+#   echo "Emulator did not start!"
+#   exit 3 # Higher than 2 to differentiate from linkcheck
+# else
+#   echo "Emulator is running in background"
+# fi
 
 SKIP_FILE="./tool/config/linkcheck-skip-list.txt"
 

@@ -1060,7 +1060,7 @@ Dart DevTools, you might see a structure that is considerably deeper than what
 is in your original code.
 
 这就是为什么你在使用 Dart DevTools 的
-[Flutter inspector]({{site.url}}/development/tools/devtools/inspector)
+[Flutter inspector]({{site.url}}/tools/devtools/inspector)
 调试 widget 树结构时，会发现实际的结构比你原本代码中的结构层级更深。
 
 During the build phase, Flutter translates the widgets expressed in code into a
@@ -1262,7 +1262,7 @@ examples, can be found in the [Understanding
 constraints]({{site.url}}/ui/layout/constraints) topic.
 
 更多有关约束和布局系统的信息，及可参考的例子，可以在
-[深入理解 Flutter 布局约束]({{site.url}}/development/ui/layout/constraints)
+[深入理解 Flutter 布局约束]({{site.url}}/ui/layout/constraints)
 文章中查看。
 
 The root of all `RenderObject`s is the `RenderView`, which represents the total
@@ -1666,7 +1666,7 @@ can be found at the [Load sequence, performance and memory
 topic]({{site.url}}/add-to-app/performance).
 
 更多将 Flutter 集成至现有的 Android 和 iOS 应用的内容，可在
-[控制加载顺序，优化性能与内存]({{site.url}}/development/add-to-app/performance)
+[控制加载顺序，优化性能与内存]({{site.url}}/add-to-app/performance)
 文章中查看。
 
 ## Flutter web support

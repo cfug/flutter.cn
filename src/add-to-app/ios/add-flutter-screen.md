@@ -65,7 +65,7 @@ See [Loading sequence and performance][]
 for more analysis on the latency and memory
 trade-offs of pre-warming an engine.
 
-[加载顺序和性能]({{site.url}}/development/add-to-app/performance)
+[加载顺序和性能][Loading sequence and performance]
 里有更多关于预热 engine 的延迟和内存取舍的分析。
 
 ### Create a FlutterEngine

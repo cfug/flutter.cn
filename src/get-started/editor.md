@@ -35,7 +35,15 @@ and Ultimate editions.
 The [Flutter plugin][] _only_ works with
 Android Studio and the listed editions of IntelliJ IDEA.
 
+你可以为 Visual Studio Code、Android Studio 以及 
+IntelliJ IDEA （Community、Educational、Ultimate 版）
+添加受支持的插件。
+[Flutter 插件][Flutter plugin] **仅** 适用于 
+Android Studio 和 IntelliJ IDEA 所列的版本。
+
 (The [Dart plugin][] supports eight additional JetBrains IDEs.)
+
+（[Dart 插件][Dart plugin] 支持另外八个 JetBrains IDE。）
 
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [Dart plugin]: https://plugins.jetbrains.com/plugin/6351-dart

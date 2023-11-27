@@ -13,6 +13,7 @@ keywords: AndoridX, Android Studio, Flutter 里使用 AndroidX
   doesn't use AndroidX.
 
   如果 Flutter 监测到你的项目中未使用到 AndroidX，那么你会跳转到此页面。
+
 {{site.alert.end}}
 
 [AndroidX]({{site.android-dev}}/jetpack/androidx) is a major improvement

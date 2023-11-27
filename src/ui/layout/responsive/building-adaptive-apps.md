@@ -59,6 +59,9 @@ were built using the concepts described here.
 
 Original demo code for adaptive app development techniques from [flutter-adaptive-demo](https://github.com/gskinnerTeam/flutter-adaptive-demo).
 
+你可以在 [flutter-adaptive-demo](https://github.com/gskinnerTeam/flutter-adaptive-demo)
+仓库找到这个自适应应用效果的原始示例。
+
 ## Building adaptive layouts
 
 ## 构建自适应的布局

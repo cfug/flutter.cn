@@ -187,11 +187,12 @@ Flutter 中的 Dart 是不支持反射的（为了优化打包体积，关闭了
 
 {{site.alert.note}}
 
-简单说明下 Library 是什么东西，
-Dart 中的分包管理是根据 Library 来的，
-同一个 Library 内的类名不能重复，
-一般情况下一个 `.dart` 文件就是一个 Library，
-当然也有例外，比如：part of 和 export。
+  简单说明下 Library 是什么东西，
+  Dart 中的分包管理是根据 Library 来的，
+  同一个 Library 内的类名不能重复，
+  一般情况下一个 `.dart` 文件就是一个 Library，
+  当然也有例外，比如：part of 和 export。
+
 {{site.alert.end}}
 
 `vm_service` 有个 [invoke(isolateId, targetId, selector, argumentIds)](https://github.com/dart-lang/sdk/blob/master/runtime/vm/service/service.md#invoke) API，
@@ -344,7 +345,8 @@ Dev Tools 是调用了 `vm_service` 的
 
 {{site.alert.note}}
 
-通过 dev_tools dump 出来的对象来看，的确泄漏了！
+  通过 dev_tools dump 出来的对象来看，的确泄漏了！
+
 {{site.alert.end}}
 
 也就是 1.9.1 Framework 里面存在着泄漏，
@@ -441,7 +443,8 @@ Flutter 的 widget tree 的层次是非常深的。
 
 {{site.alert.note}}
 
-好消息是以上泄漏都在 1.12 版本之后修复了。
+  好消息是以上泄漏都在 1.12 版本之后修复了。
+
 {{site.alert.end}}
 
 修复完上述两个泄漏之后，

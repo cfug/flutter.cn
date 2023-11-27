@@ -126,7 +126,7 @@ Then construct an [AnimationController][] in
   
   继承的 `SingleTickerProviderStateMixin` 让 state 对象为 `AnimationController` 
   提供了 `TickerProvider` 的能力。要获得更多信息，请查看 [TickerProvider][] 文档。
-  
+
 {{site.alert.end}}
 
 <?code-excerpt "lib/{starter,step1}.dart"?>
@@ -414,7 +414,7 @@ onPanEnd: (details) {
   is no longer required.
   
   既然动画控制器使用了模拟，就不再需要指定 `duration` 参数。
-  
+
 {{site.alert.end}}
 
 ## Interactive Example

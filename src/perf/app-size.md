@@ -210,7 +210,7 @@ of the release build of their application.
   正如 [检查总大小](#checking-the-total-size) 一节所述，
   上传包的大小并不代表用户最终的下载大小。请注意，拆分工具中显示的冗余的原生库结构和资源密度，
   都可以通过 Play 商店和 App Store 过滤。
-  
+
 {{site.alert.end}}
 
 The size analysis tool is invoked by passing the `--analyze-size` flag when
@@ -258,6 +258,7 @@ native library is further broken down by package for quick analysis.
 编译后的 Dart 原生库会按包进一步拆分，以便快速分析。
 
 {{site.alert.warning}}
+
   This tool on iOS creates a .app rather than an IPA. Use this tool to
   evaluate the relative size of the .app's content. To get
   a closer estimate of the download size, reference the
@@ -266,7 +267,7 @@ native library is further broken down by package for quick analysis.
   在 iOS 上，该工具会创建一个 .app 文件，而不是一个 IPA 包文件。
   使用该工具可以评估 .app 内容的相对大小。为了获取更准确的下载大小的估算值，
   请参考上面的 [估算总大小](#estimating-total-size) 一节。
-  
+
 {{site.alert.end}}
 
 ### Deeper analysis in DevTools

@@ -36,7 +36,7 @@ keywords: 共享元素过渡,补间动画
     _shared element animations._
     
     Flutter 中的 Hero widget 实现的动画类型也称为 **共享元素过渡** 或 **共享元素动画**。
-    
+
 {{site.alert.end}}
 
 You've probably seen hero animations many times. For example, a screen displays
@@ -472,7 +472,7 @@ implement hero animations:
     image in a layout widget. These examples use `Container`.
     
     通过在布局 widget 中放置目标图像来改变图像位置。这些示例中使用 `Container`。
-    
+
 {{site.alert.end}}
 
 <a id="standard-hero-animation-code"></a>
@@ -750,7 +750,7 @@ Key information:
   * Build the destination route using `PageRouteBuilder`.
   
     使用 PageRouteBuilder 创建目标页。
-    
+
 {{site.alert.end}}
 
 Flying a hero from one route to another as it transforms

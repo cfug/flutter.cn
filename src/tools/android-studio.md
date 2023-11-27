@@ -247,7 +247,7 @@ Dart 插件的代码分析，可以做到：
   
   下面的介绍文章适用于 Android Studio 和 IntelliJ，更多关于开发者工具的信息，
   请参看文档：[在 Android Studio 上安装和运行开发者工具][Running DevTools from Android Studio]。
-  
+
 {{site.alert.end}}
 
 Running and debugging are controlled from the main toolbar:

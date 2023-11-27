@@ -102,7 +102,7 @@ Flutter 内置的平台特定 API 支持不依赖于任何生成代码，而是�
   在不同的平台上执行对应的代码。
   [不同平台操作体验的差异和适配][Platform adaptations] 文档中列举了部分
   Flutter 框架自动为你处理的平台适配行为。
-  
+
 {{site.alert.end}}
 
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
@@ -135,7 +135,7 @@ to ensure the user interface remains responsive.
   Flutter 是通过 Dart 异步发送消息的。
   即便如此，当你调用一个平台方法时，也需要在主线程上做调用。
   在 [这里][section on threading] 查看更多。
-  
+
 {{site.alert.end}}
 
 On the client side, [`MethodChannel`][] enables sending

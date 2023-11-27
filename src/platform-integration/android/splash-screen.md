@@ -76,6 +76,7 @@ initializes.
 {{site.alert.end}}
 
 {{site.alert.note}}
+
   For apps that embed one or more Flutter screens within an
   existing Android app, consider
   [pre-warming a `FlutterEngine`][] and reusing the

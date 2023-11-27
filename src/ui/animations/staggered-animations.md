@@ -10,6 +10,7 @@ keywords: 交织动画
 ---
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What you'll learn</h4>
 
   * A staggered animation consists of sequential or overlapping
@@ -32,7 +33,7 @@ keywords: 交织动画
   * For each property being animated, create a `Tween`.
   
     为每一个要执行动画的属性创建一个 Tween
-    
+
 {{site.alert.end}}
 
 {{site.alert.secondary}}
@@ -44,6 +45,7 @@ keywords: 交织动画
   **术语:**
   如果 tweens 或 tweening 的概念对你来说比较新，请看
   [Flutter 指南中的 Animation][Animations in Flutter tutorial]。
+
 {{site.alert.end}}
 
 Staggered animations are a straightforward concept: visual changes
@@ -107,6 +109,7 @@ This guide shows how to build a staggered animation in Flutter.
     然后，选择一个最小的图像，最大的图像会展开同时对勾消失。
     在最大的图像结束展开前，最小的图像会收缩并显示对勾。
     这个交织行为比较类似于你在 Google Photos 中看到的效果。
+
 {{site.alert.end}}
 
 The following video demonstrates the animation performed by
@@ -162,7 +165,7 @@ After running forward, the animation runs in reverse.
   **刚接触Flutter？**
   本文假定你已经知道如何使用 Flutter 的 widgets 创建一个布局。
   更多信息请看 [Flutter 中的布局][Building Layouts in Flutter].
-  
+
 {{site.alert.end}}
 
 ## Basic structure of a staggered animation
@@ -170,6 +173,7 @@ After running forward, the animation runs in reverse.
 ## 一个交织动画的基础结构
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What's the point?</h4>
   
   <h4 class="no_toc">重点是什么？</h4>

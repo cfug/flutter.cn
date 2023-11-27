@@ -43,7 +43,7 @@ Examples of user-data APIs include
   **不应该** 直接使用到 Flutter 应用中。
   直接使用需要将服务证书作为应用程序的一部分，这是不安全的。
   我们推荐创建一个中间服务，来使用这些 API。
-  
+
 {{site.alert.end}}
 
 To add authentication to Firebase explicitly, check out the

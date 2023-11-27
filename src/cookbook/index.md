@@ -386,4 +386,4 @@ reference to help you build up an application.
   [点击、拖拽事件和文本输入]({{site.url}}/cookbook/testing/widget/tap-drag)
 
 
-如果想看到更多的教程，可以参考我们的 [社区中文教程页面]({{site.url}}/community/tutorials)。
+如果想看到更多的教程，可以参考我们的 [社区中文教程页面]({{site.main-url}}/community/tutorials)。

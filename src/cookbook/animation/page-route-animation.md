@@ -67,17 +67,17 @@ To start, use a [`PageRouteBuilder`][] to create a [`Route`][].
 另一个则是创建一个路由的转换器（`transitionsBuilder`）。
 
 {{site.alert.note}}
-  
+
   The `child` parameter in transitionsBuilder is the widget returned from
   pageBuilder. The `pageBuilder` function is only called the first time the
   route is built. The framework can avoid extra work because `child` stays the
   same throughout the transition.
-  
+
   transitionsBuilder 的 `child` 参数是通过 `pageBuilder` 方法
   来返回一个 transitionsBuilder widget，这个 `pageBuilder` 方法仅会在
   第一次构建路由的时候被调用。框架能够自动避免做额外的工作，因为
   整个过渡期间 `child` 保存了同一个实例。
-  
+
 {{site.alert.end}}
 
 The following example creates two routes: a home route with a "Go!" button, and

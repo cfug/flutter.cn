@@ -1,4 +1,4 @@
-name: Check links and stage
+name: Stage site on Firebase
 
 on:
   pull_request:
@@ -20,9 +20,9 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           submodules: recursive
-      - name: Build site and check links
+      - name: Build site
         run: make stage-local
-      - name: Stage site on Firebase
+      - name: Stage
         if: ${{
           github.repository == 'cfug/flutter.cn' &&
           github.event.pull_request.user.login != 'dependabot[bot]' }}

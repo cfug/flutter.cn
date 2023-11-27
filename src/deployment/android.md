@@ -407,6 +407,7 @@ Release builds of your app will now be signed automatically.
 现在我们 app 的发布版本就会被自动签名了。
 
 {{site.alert.note}}
+
   You might need to run `flutter clean` after changing the gradle file.
   This prevents cached builds from affecting the signing process.
 
@@ -660,6 +661,7 @@ the Play Store.
 
   Google Play 更推荐使用 app bundle 格式的应用，
   更多信息可以参考 [Android App Bundle][bundle]。
+
 {{site.alert.end}}
 
 ### Build an app bundle

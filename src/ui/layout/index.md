@@ -320,7 +320,8 @@ You need to set these yourself.
   configure your widgets to match iOS design.
 
   你可以通过 `navigationBar` 属性设置 [`CupertinoNavigationBar`][]
-  来展示 iOS 风格的导航栏。
+  来展示 iOS 风格的导航栏。同时你还可以利用 [`CupertinoColors`][]
+  来为 widget 配置与 iOS 设计风格相符的颜色。
 
 * To layout the body of your app, set the `child` property of your scaffold
   with the desired widget as its value, like `Center` or `Column`.

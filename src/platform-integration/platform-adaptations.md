@@ -315,7 +315,8 @@ of the current Material theme).
 On **iOS**, scrolling past the edge of a scrollable
 [overscrolls][] with increasing resistance and snaps back.
 
-**iOS** 平台，滚动达到边界的时候，会显示一个 [滚动边界][overscrolls] 的弹簧效果。
+**iOS** 平台，滚动达到边界的时候，会显示一个
+[滚动边界][overscrolls] 的弹簧效果。
 
 <div class="container">
   <div class="row">
@@ -372,7 +373,8 @@ tapping the OS status bar scrolls the primary
 scroll controller to the top position.
 There is no equivalent behavior on **Android**.
 
-**iOS** 平台，点击操作系统的状态栏，主要的滚动条控制器会滚动到顶部。 **Android** 没有对应的行为。
+**iOS** 平台，点击操作系统的状态栏，主要的滚动条控制器会滚动到顶部。
+**Android** 没有对应的行为（部分国产系统自己实现了该特性）。
 
 <div class="container">
   <div class="row">
@@ -487,6 +489,8 @@ has a stem/shaft on Android.
 
 The material library also provides a set of platform-adaptive icons through [`Icons.adaptive`].
 
+Material 也通过 [`Icons.adaptive`][] 提供了一系列根据平台自适应的图标。
+
 ## Haptic feedback
 
 ## 触摸反馈
@@ -567,13 +571,15 @@ With **Material on Android**,
 the Android style selection toolbar is shown when
 a text selection is made in a text field.
 
-在 **Android** 平台上使用 **Material**，在文本输入框里面选中文本会显示一个 Android 风格的文本选中工具栏。
+在 **Android** 平台上使用 **Material**，
+在文本输入框里面选中文本会显示一个 Android 风格的文本选中工具栏。
 
 With **Material on iOS** or when using **Cupertino**,
 the iOS style selection toolbar is shown when a text
 selection is made in a text field.
 
-在 **iOS** 平台上使用 **Material** 或者在两个平台上都使用 **Cupertino**，在文本输入框里面选中文本会展示一个 iOS 风格的文本选中工具栏。
+在 **iOS** 平台上使用 **Material** 或者在两个平台上都使用 **Cupertino**，
+在文本输入框里面选中文本会展示一个 iOS 风格的文本选中工具栏。
 
 <div class="container">
   <div class="row">
@@ -615,7 +621,8 @@ With **Material on iOS** or when using **Cupertino**,
 a single tap in a text field puts the cursor at the
 nearest edge of the word tapped.
 
-在 **iOS** 平台使用 **Material** 或者在两个平台都使用 **Cupertino**，在文本空间中点击，会把光标移动到点击处最近的单词末尾。
+在 **iOS** 平台使用 **Material** 或者在两个平台都使用 **Cupertino**，
+在文本空间中点击，会把光标移动到点击处最近的单词末尾。
 
 Collapsed text selections don't have draggable handles on iOS.
 
@@ -749,16 +756,28 @@ Android 和 iOS 平台上，
 
 ## UI components
 
+## UI 组件
+
 This section includes preliminary recommendations on how to adapt 
 Material widgets to deliver a natural and compelling experience on iOS. 
 Your feedback is welcomed on [issue #8427][]. 
 
+本节包含有关如何调整 Material widget 以在
+iOS 上提供自然且亮眼的体验的初步提议。
+欢迎你对问题 [issue #8427][] 提出反馈。
+
 ### Widgets with .adaptive() constructors
+
+### 带有 .adaptive() 构造的 widget
 
 Several widgets support `.adaptive()` constructors. 
 The following table lists these widgets.
 Adaptive constructors substitute the corresponding Cupertino components 
 when the app is run on an iOS device. 
+
+部分 widget 带有 `.adaptive()` 构造。
+下方的表列出了这些 widget。
+当应用程序在 iOS 设备上运行时，它们会自动以 Cupertino 的组件构造。
 
 Widgets in the following table are used primarily for input, 
 selection, and to display system information. 
@@ -766,6 +785,9 @@ Because these controls are tightly integrated with the operating system,
 users have been trained to recognize and respond to them.
 Therefore, we recommend that you follow platform conventions. 
 
+这些 widget 主要用于输入、选择和显示系统信息。
+由于它们与系统高度相关，用户可能已经习惯于与它们产生对应的记忆和反应。
+因此我们建议你在应用程序中采用各自平台的转化内容。
 
 | Material Widget | Cupertino Widget | Adaptive Constructor |
 |---|---|---|---|---|
@@ -777,10 +799,15 @@ Therefore, we recommend that you follow platform conventions.
 
 ### Top app bar and navigation bar
 
+### 顶部应用栏和导航栏
+
 Since Android 12, the default UI for top app 
 bars follows the design guidelines defined in [Material 3][mat-appbar]. 
 On iOS, an equivalent component called "Navigation Bars" 
 is defined in [Apple's Human Interface Guidelines][hig-appbar] (HIG). 
+
+自 Android 12 起，顶部应用栏的界面遵循 [Material 3][mat-appbar] 中定义的设计指南。
+在 iOS 上，[Apple 的人机界面指南][hig-appbar] (HIG) 中定义了一个名为「导航栏」的等效组件。
 
 <div class="container">
   <div class="row">
@@ -811,6 +838,10 @@ These are already automatically adapted when using
 the Material `AppBar` and `SliverAppBar` widgets. 
 You can also further customize the properties of these widgets to better 
 match iOS platform styles, as shown below. 
+
+Flutter 应用程序中应用栏的某些属性，例如系统图标和页面转场，都应该进行调整。
+使用 Material `AppBar` 和 `SliverAppBar` widget 时，这些属性都已经自动调整。
+你还可以进一步自定义它们的属性，以更好地匹配 iOS 的平台风格，如下所示。
 
 ```dart
 // Map the text theme to iOS styles
@@ -847,12 +878,20 @@ so long as its cohesive with the rest of your application. You can see
 additional code samples and a further explanation in 
 [the GitHub discussion on app bar adaptations][appbar-post]. 
 
+但是，由于顶栏是与页面中的其他内容一起显示的，
+因此我们只建议调整样式，它只要能与应用程序的其余部分保持一致即可。
+你可以在 [有关应用栏适配的 GitHub 讨论中][appbar-post]
+查看其他代码示例和进一步说明。
+
 ### Bottom navigation bars
 
 Since Android 12, the default UI for bottom navigation 
 bars follow the design guidelines defined in [Material 3][mat-navbar]. 
 On iOS, an equivalent component called "Tab Bars" 
 is defined in [Apple's Human Interface Guidelines][hig-tabbar] (HIG). 
+
+自 Android 12 起，底部导航栏的界面遵循 [Material 3][mat-navbar] 中定义的设计指南。
+在 iOS 上，[Apple 的人机界面指南][hig-tabbar] (HIG) 中定义了一个名为「标签页栏」的等效组件。
 
 <div class="container">
   <div class="row">
@@ -882,11 +921,20 @@ own branding. However, if you choose to use Material's default
 styling on Android, you might consider adapting to the default iOS
 tab bars.
 
+由于标签栏在你的应用程序中是持续存在的，因此它们应该与你自己的品牌匹配。
+如果你选择在 Android 上使用 Material 的默认样式，
+你应该要在考虑在 iOS 平台上使用 iOS 的标签页栏。
+
 To implement platform-specific bottom navigation bars, 
 you can use Flutter's `NavigationBar` widget on Android 
 and the `CupertinoTabBar` widget on iOS. 
 Below is a code snippet you can 
 adapt to show a platform-specific navigation bars.
+
+如果你要实现特定于平台的底部导航栏，
+可以在 Android 上使用 Flutter 的 `NavigationBar` 小部件，
+在 iOS 上使用 `CupertinoTabBar` 小部件。
+下面是用于显示特定于平台的导航栏的代码片段。
 
 ```dart
 final Map<String, Icon> _navigationItems = {
@@ -929,10 +977,15 @@ Scaffold(
 ```
 ### Text fields
 
+### 文本输入
+
 Since Android 12, text fields follow the
 [Material 3][m3-text-field] (M3) design guidelines. 
 On iOS, Apple's [Human Interface Guidelines][hig-text-field] (HIG) define
 an equivalent component. 
+
+自 Android 12 起，文本输入组件的界面遵循 [Material 3][m3-text-field] 中定义的设计指南。
+在 iOS 上，[Apple 的人机界面指南][hig-text-field] (HIG) 中定义了一个名为「文本栏」的等效组件。
 
 <div class="container">
   <div class="row">
@@ -960,9 +1013,13 @@ an equivalent component.
 Since text fields require user input,  
 their design should follow platform conventions. 
 
+由于用户需要用文本栏来输入，因此它们应该遵循平台习惯来展示。
+
 To implement a platform-specific `TextField` 
 in Flutter, you can adapt the styling of the 
 Material `TextField`.
+
+你可以调整 Material 材质的 `TextField` 的样式来实现对应平台的 `TextField`。
 
 ```dart
 Widget _createAdaptiveTextField() {
@@ -995,13 +1052,22 @@ To learn more about adapting text fields, check out
 [the GitHub discussion on text fields][text-field-post].
 You can leave feedback or ask questions in the discussion.
 
+若你想要了解有关调整文本字段的更多信息，
+请查看 [有关文本字段的 GitHub 讨论][text-field-post]。
+你可以在讨论中留下反馈或提出问题。
+
 ### Alert dialog
+
+### 提醒对话框
 
 Since Android 12, the default UI of alert dialogs 
 (also known as a "basic dialog") follows the design guidelines 
 defined in [Material 3][m3-dialog] (M3). 
 On iOS, an equivalent component called "alert" is defined in Apple's 
 [Human Interface Guidelines][hig-alert] (HIG).
+
+自 Android 12 起，提醒对话框的界面遵循 [Material 3][m3-dialog] 中定义的设计指南。
+在 iOS 上，[Apple 的人机界面指南][hig-alert] (HIG) 中定义了一个名为「提醒」的等效组件。
 
 <div class="container">
   <div class="row">
@@ -1033,10 +1099,19 @@ about security, privacy, and destructive operations (e.g., deleting files
 permanently). As an exception, a branded alert dialog design can be used on 
 non-critical user flows to highlight specific information or messages.
 
+由于提醒与系统高度相关，通常应当遵循平台习惯来实现它们。
+对话框的实现对于使用对话框请求用户输入安全、隐私或破坏性操作（例如永久删除文件）而言至关重要。
+而与品牌相关的提醒对话框可以以不打断用户流程的方式，高亮特定的内容。
+
 To implement platform-specific alert dialogs, 
 you can use Flutter's `AlertDialog` widget on Android 
 and the `CupertinoAlertDialog` widget on iOS. Below is a code snippet you can 
 adapt to show a platform-specific alert dialog.
+
+如果你要实现特定于平台的提示对话框，
+可以在 Android 上使用 Flutter 的 `AlertDialog` 小部件，
+在 iOS 上使用 `CupertinoAlertDialog` 小部件。
+下面是用于显示特定于平台的提醒对话框的代码片段。
 
 ```dart
 void _showAdaptiveDialog(
@@ -1069,6 +1144,9 @@ To learn more about adapting alert dialogs, check out
 [the GitHub discussion on dialog adaptations][alert-post].
 You can leave feedback or ask questions in the discussion.
 
+若你想要了解有关提醒对话框适配问题的更多信息，
+请查看 [有关对话框适配的 GitHub 讨论][alert-post]。
+你可以在讨论中留下反馈或提出问题。
 
 [issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
 [android.app.AlertDialog]: {{site.android-dev}}/reference/android/app/AlertDialog.html

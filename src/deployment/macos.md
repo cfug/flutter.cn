@@ -557,6 +557,7 @@ keychain initialize
 ```
 
 {{site.alert.secondary}}
+
   **Restore Login Keychain!**
   After running `keychain initialize` you **must** run the following:<br>
 

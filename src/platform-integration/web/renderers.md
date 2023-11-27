@@ -132,7 +132,7 @@ Flutter engine 启动之后无法再在 `main.dart.js` 更换 web 渲染器。
   从 **Flutter 3.7.0** 开始，设置 `window.flutterWebRenderer`（以前版本中使用的一种方法）
   会在 JS 控制台中显示 **弃用通知**。
   有关详细信息，请查看 [自定义 Web 应用程序初始化][web-app-init]。
-  
+
 {{site.alert.end}}
 
 ## Choosing which option to use

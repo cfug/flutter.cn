@@ -104,7 +104,8 @@ Future<http.Response> fetchPhotos(http.Client client) async {
   This makes the function easier to test and use in different environments.
 
   在这个例子中你需要给方法添加了一个 `http.Client` 参数。
-  这将使得该方法测试起来更容易同时也可以在不同环境中使用。
+  这将使得该方法测试起来更容易，同时也可以在不同环境中使用。
+
 {{site.alert.end}}
 
 ## 3. Parse and convert the JSON into a list of photos

@@ -245,7 +245,7 @@ display a preview of the camera's feed.
   **请记住**： 在使用相机前，请确保控制器已经完成初始化。
   因此，你一定要等待前一个步骤创建 `_initializeControllerFuture()`
   执行完毕才去展示 `CameraPreview`。
-  
+
 {{site.alert.end}}
 
 Use a [`FutureBuilder`][] for exactly this purpose.

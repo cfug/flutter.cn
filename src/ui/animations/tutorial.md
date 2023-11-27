@@ -29,7 +29,7 @@ diff2html: true
   * When to use `AnimatedWidget` vs. `AnimatedBuilder`.
 
     `AnimatedWidget` 和 `AnimatedBuilder` 的应用区别。
-  
+
 {{site.alert.end}}
 
 This tutorial shows you how to build explicit animations in Flutter.
@@ -305,6 +305,7 @@ To use your custom State object as the `vsync`, include the
   根据所选曲线的不同，`CurvedAnimation` 的输出范围可能会超过输入。
   举个例子，弹性曲线（比如Curves.elasticIn）
   会明显超出或低于默认范围。
+
 {{site.alert.end}}
 
 ### Tween
@@ -388,6 +389,7 @@ Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
   not an [`Animatable`][].
   
   `animate()` 方法会返回一个 [`Animation`][]，而不是 [`Animatable`][]。
+
 {{site.alert.end}}
 
 The following example shows a controller, a curve, and a `Tween`:
@@ -445,6 +447,7 @@ Each section provides a link to the source code for that example.
 ### 渲染动画
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What's the point?</h4>
 
   <h4 class="no_toc">要点</h4>
@@ -472,7 +475,7 @@ Each section provides a link to the source code for that example.
   * To make a class private, start its name with an underscore (`_`).
   
     如需使类私有，在名字前面添加下划线（`_`）。
-    
+
 {{site.alert.end}}
 
 So far you've learned how to generate a sequence of numbers over time.
@@ -650,6 +653,7 @@ you've created your first animation in Flutter!
 
   要了解更多级联操作符的内容，请参考 [Dart 文档网站][Dart language documentation]
   里的文档 [Cascade notation][]。
+
 {{site.alert.end}}
 
 ###  Simplifying with Animated&shy;Widget
@@ -657,6 +661,7 @@ you've created your first animation in Flutter!
 ###  使用 Animated&shy;Widget 进行简化
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What's the point?</h4>
 
   <h4 class="no_toc">要点</h4>
@@ -688,6 +693,7 @@ you've created your first animation in Flutter!
     
     Flutter API 中的 `AnimatedWidget`：`AnimatedBuilder`,
     `RotationTransition`, `ScaleTransition`, `SizeTransition`, `SlideTransition`。
+
 {{site.alert.end}}
 
 The `AnimatedWidget` base class allows you to separate out
@@ -1181,6 +1187,7 @@ in the bullet points above.
 ### 同步动画
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What's the point?</h4>
 
   <h4 class="no_toc">重点提醒</h4>
@@ -1190,7 +1197,7 @@ in the bullet points above.
     use with a [`CurvedAnimation`][].
     
     [`Curves`][] 类定义了一列常用的曲线，您可以配合 [`CurvedAnimation`][] 来使用。
-    
+
 {{site.alert.end}}
 
 In this section, you'll build on the example from
@@ -1217,7 +1224,7 @@ opacity animates from transparent to opaque.
   每个补间动画控制一个动画的不同效果。
   仅用于说明目的。如果您需要在代码中加入渐变不透明度和尺寸效果，
   可能需要用 [`FadeTransition`][] 和 [`SizeTransition`][] 来代替。
-  
+
 {{site.alert.end}}
 
 Each tween manages an aspect of the animation. For example:

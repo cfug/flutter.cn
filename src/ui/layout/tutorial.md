@@ -18,6 +18,7 @@ diff2html: true
 <style>dl, dd { margin-bottom: 0; }</style>
 
 {{site.alert.secondary}}
+
   <h4 class="no_toc">What you'll learn</h4>
 
   <h4 class="no_toc">你将会学习到</h4>
@@ -279,6 +280,7 @@ Add the title section to the app body like this:
 ```
 
 {{site.alert.tip}}
+
   * When pasting code into your app, indentation can
     become skewed. You can fix this in your Flutter editor
     using the [automatic reformatting support][].
@@ -502,7 +504,7 @@ leaving only the image. Add the image file to the example:
   注意 `wget` 不能保存二进制文件。
   原始的图片虽然可以在 Creative Commons 许可下 [在线获取][available online]，
   但是文件较大，下载缓慢。
-  
+
 {{site.alert.end}}
 
 * Update the `pubspec.yaml` file to include an `assets` tag.
@@ -523,6 +525,7 @@ leaving only the image. Add the image file to the example:
   +    - images/lake.jpg
   ```
 {{site.alert.tip}}
+
   * Note that `pubspec.yaml` is case sensitive,
     so write `assets:` and the image URL
     as shown above.

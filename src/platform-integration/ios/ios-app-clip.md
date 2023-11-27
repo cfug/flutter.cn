@@ -13,7 +13,7 @@ description: 如何为您的 Flutter 工程加入 iOS 14 的 App Clip。
 
   目前该实验测试版本会突破 10MB 的未压缩 IPA 有效负载的大小限制，
   请勿在生产环境中使用([#71098][])。
-  
+
 {{site.alert.end}}
 
 This guide describes how to manually add another
@@ -460,7 +460,7 @@ into the App Clip bundle.
   to run Flutter apps with plugins.
 
   运行带有插件的 Flutter 应用程序需要 CocoaPods 1.10.0.beta.1 或更高版本。
-  
+
 {{site.alert.end}}
 
 **8.1**

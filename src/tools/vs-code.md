@@ -211,7 +211,7 @@ Flutter 扩展执行代码分析，它提供：
 
   以下说明描述了 VS Code 可用的功能。更多使用 DevTools 的详细信息请参考
   [DevTools][] 中的 [Running DevTools from VS Code][] 文档。
-  
+
 {{site.alert.end}}
 
 Start debugging by clicking **Run > Start Debugging**

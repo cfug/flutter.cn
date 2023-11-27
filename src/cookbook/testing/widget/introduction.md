@@ -242,7 +242,7 @@ Use one of the following methods to ask Flutter to rebuild the widget.
 
   要开始播放动画，则需要调用一次 `pump()`（不指定 duration）以启动 ticker。
   如果没有这一步骤，动画将不会执行。
-  
+
 {{site.alert.end}}
 
 [`tester.pumpAndSettle()`][]

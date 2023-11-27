@@ -53,7 +53,7 @@ we can use it to retrieve the text a user has typed into that text field.
   
   **记住:**当不再使用 `TextEditingController` 时，
   请销毁它以确保相关的资源得到释放。
-  
+
 {{site.alert.end}}
 
 <?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>

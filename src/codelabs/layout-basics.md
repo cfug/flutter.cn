@@ -69,6 +69,7 @@ and `Column` lays out its widgets vertically.
 
 {{site.alert.secondary}}
 {:.no_toc}
+
   The following example displays the differences between
   a `Row` and `Column`.
 
@@ -1167,7 +1168,7 @@ wrap a widget and force the widget to fill extra space.
 与 `Flexible` 非常相似。
 
 {{site.alert.tip}}
-  
+
   **What's the difference between Flexible and Expanded?**
   Use `Flexible` to resize widgets in a `Row` or `Column`.
   That way, you can adjust a child widget's spacing
@@ -1193,7 +1194,7 @@ wrap a widget and force the widget to fill extra space.
   The following example demonstrates how the
   `Expanded` widget forces its child widget to
   fill extra space.
-  
+
   下面的例子演示了 `Expanded` widget 是如何
   强制其子 widget 填满空间的。
 
@@ -1214,6 +1215,7 @@ wrap a widget and force the widget to fill extra space.
          and run again.
          
          选择 **Format** 按钮格式化代码，然后再次运行。
+
 {{site.alert.end}}
 
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
@@ -1674,6 +1676,7 @@ can create space between widgets.
   Use `Spacer` when you want to create space using a `flex` property.
   Use `SizedBox` when you want to create space
   using a specific number of logical pixels.
+
   **SizedBox 和 Spacer 有何不同？**
   如果你想用 `flex` 属性创建一段空间，请使用 `Spacer`。
   如果你想创建一个拥有特定逻辑像素值的空间，请使用 `SizedBox`。
@@ -1840,7 +1843,7 @@ for different fonts, sizes, and colors.
 {:.no_toc}
 
 {{site.alert.secondary}}
-  
+
   The following example displays "Hey!" three times,
   but at different font sizes and in different colors.
   `Row` specifies the `crossAxisAlignment`
@@ -2528,6 +2531,7 @@ Future<void> main() async {
       ],
      );
   ```
+
 {{site.alert.end}}
 
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60

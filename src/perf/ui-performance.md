@@ -33,7 +33,7 @@ keywords: 性能分析,性能调试工具,开发者工具,60fps,120fps,profile m
     
     当 UI 渲染不流畅的时候，卡顿就随之产生了。
     举例来说，如果一帧花了 10 倍的时间来渲染，这帧就会被丢弃，动画看起来就会卡。
-    
+
 {{site.alert.end}}
 
 It's been said that "a _fast_ app is great,
@@ -48,6 +48,7 @@ steps to take, and tools that can help.
 从哪里着手呢？本文展示了应该从哪里着手，步骤以及可以提供帮助的工具。
 
 {{site.alert.note}}
+
   * An app's performance is determined by more than one measure.
     Performance sometimes refers to raw speed, but also to the UI's
     smoothness and lack of stutter. Other examples of performance
@@ -609,7 +610,7 @@ other potentially expensive operations, such as clipping or shadows.
   透明度、裁剪以及阴影它们本身并不是个糟糕的主意。
   然而对 widget 树顶层 widget 的操作可能导致额外对
   `saveLayer` 的调用以及无用的处理。
-  
+
 {{site.alert.end}}
 
 When you encounter calls to `saveLayer`,

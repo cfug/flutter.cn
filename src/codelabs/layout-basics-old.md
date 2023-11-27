@@ -28,10 +28,11 @@ toc: false
   work in some browsers and not others. If you encounter any, please
   [create a DartPad issue](https://goo.gle/flutter_web_issue),
   labeling the issue with `platform-web`.
-  
+
   目前 codelab 是基于 Chrome 开发测试的。可能会有一些功能（短期内）在某些浏览器上可用，而在另一些浏览器上不可用。
-  如果您遇到任何问题，请 [create a DartPad issue](https://goo.gle/flutter_web_issue) ，并为这个 issue 加上
-   `platform-web` 标签。
+  如果您遇到任何问题，请 [create a DartPad issue](https://goo.gle/flutter_web_issue)
+  并为这个 issue 加上 `platform-web` 标签。
+
 {{site.alert.end}}
 
 `Row` and `Column` are two very important widgets in the Flutter universe.

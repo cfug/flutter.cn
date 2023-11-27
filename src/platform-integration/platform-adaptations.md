@@ -77,8 +77,6 @@ You can request additional guides by commenting on [issue #8427][].
 
 {{site.alert.end}}
 
-{{site.alert.end}}
-
 ## Page navigation
 
 ## 页面导航

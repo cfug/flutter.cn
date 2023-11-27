@@ -47,9 +47,11 @@ your development environment must meet these minimum requirements:
   如果你要在 [Apple 芯片的 Mac 电脑][] 上使用，你还需要安装
   Rosetta 2 环境因为 [一些辅助工具][some ancillary tools] 仍然需要，
   你可以通过手动运行下面的命令来安装：
+
   ```terminal
 $ sudo softwareupdate --install-rosetta --agree-to-license
   ```
+
 {{site.alert.end}}
 
 {% include_relative _get-sdk-mac.md %}

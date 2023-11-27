@@ -41,7 +41,7 @@ This recipe uses the following steps:
   to almost 1000 open-sourced font families.
 
   查看 [google_fonts][] 库，你将可以直接访问近 1000 个开源字体族。
-  
+
 {{site.alert.end}}
 
 ## 1. Add a font to a package

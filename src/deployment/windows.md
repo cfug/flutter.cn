@@ -30,7 +30,7 @@ of packaging and deploying a Flutter app in this way.
   亦或是你不想处理认证过程。
   微软提供的文档包括了关于使用 [Windows Installer][msidocs]
   进行传统安装的更多内容。
-  
+
 {{site.alert.end}}
 
 

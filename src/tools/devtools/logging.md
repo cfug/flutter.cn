@@ -12,7 +12,7 @@ keywords: 开发者工具,日志视图,Dart
   The logging view works with all Flutter and Dart applications.
 
   日志视图可用于所有 Flutter 和 Dart 应用。
-  
+
 {{site.alert.end}}
 
 ## What is it?

@@ -6,9 +6,9 @@
 
   Do _not_ test the performance of your app with debug and
   hot reload enabled.
-  
+
   **请勿** 在调试模式和热重载功能开启的情况下做性能测试。
-  
+
 {{site.alert.end}}
 
 So far you've been running your app in *debug* mode. Debug
@@ -27,12 +27,12 @@ build modes. For more details, see [Flutter's build modes][].
 [Flutter 的构建模式选择]({{site.url}}/testing/build-modes)。
 
 {{site.alert.important}}
-  
+
   If you're concerned about the package size of your app,
   see [Measuring your app's size][].
-  
+
   如果你关心应用大小，请参考 [这篇文档][Measuring your app's size]。
-  
+
 {{site.alert.end}}
 
 [Flutter's build modes]: {{site.url}}/testing/build-modes

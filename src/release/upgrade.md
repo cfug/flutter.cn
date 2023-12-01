@@ -97,7 +97,7 @@ Flutter 团队的插件和 packages 的持续集成包括
 The latest documentation for the **stable** branch
 is at: <https://api.flutter.dev>
 
-**stable** 分支的最新文档在： <https://api.flutter.cn>。
+**stable** 分支的最新文档在：<https://api.flutter-io.cn>。
 
 ### The **beta** channel
 
@@ -151,7 +151,7 @@ it is more likely to contain serious regressions.
 The latest documentation for the **master** branch
 is at: <https://main-api.flutter.dev>
 
-**master** 分支的最新文档在： <https://master-api.flutter-io.cn>。
+**master** 分支的最新文档在： <https://main-api.flutter-io.cn>。
 
 ### Changing channels
 

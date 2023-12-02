@@ -124,7 +124,7 @@ Android Studio 需要将你的 Flutter 模块作为依赖。
 
 1. Click **Flutter**.
 
-   选择 **Flutter。
+   选择 **Flutter**。
 
 1. If asked to provide your **Flutter SDK path**, do so and click **Next**.
 

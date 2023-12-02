@@ -482,7 +482,7 @@
       permalink: /docs/testing/errors
       match-page-url-exactly: true
     - title: 将错误上报到收集服务
-      permalink: /cookbook/maintenance/error-reporting
+      permalink: /docs/cookbook/maintenance/error-reporting
 
 - title: 性能优化
   permalink: /docs/perf

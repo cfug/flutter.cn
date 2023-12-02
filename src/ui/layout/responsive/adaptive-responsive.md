@@ -76,6 +76,16 @@ an app can be both, or neither.
   这也意味着应用的视觉密度、组件的选择（层级菜单或底部抽屉）、
   平台特定的行为（例如置顶的窗口）等内容将在不同的平台上有一定的差异。
 
+Learn more in the following 5-minute video:
+
+通过以下 5 分钟的视频了解更多：
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[Adaptive vs Responsive][]
+
+[自适应与响应式][Adaptive vs Responsive]
+
 ## Creating a responsive Flutter app
 
 ## 构建一个响应式的 Flutter 应用
@@ -259,6 +269,7 @@ in the following resources:
 
 [Adaptive layouts]: {{site.youtube-site}}/watch?v=n6Awpg1MO6M&t=694s
 [Adaptive layouts, part 2]: {{site.youtube-site}}/watch?v=eikOZzfc0l4&t=11s
+[Adaptive vs Responsive]: {{site.youtube-site}}/HD5gYnspYzk?si=5ItDD7UjXvGCRM0K
 [Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 
 [Designing truly adaptive user interfaces]: https://www.aloisdeniel.com/blog/designing-truly-adaptative-user-interfaces

@@ -100,7 +100,7 @@ the data from the network request.
 It includes a factory constructor that
 creates an `Album` from JSON.
 
-Converting JSON by hand is only one option.
+Converting JSON with [pattern matching][] is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
@@ -113,10 +113,17 @@ class Album {
   const Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      id: json['id'] as int,
-      title: json['title'] as String,
-    );
+    return switch (json) {
+      {
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 ```
@@ -278,10 +285,17 @@ class Album {
   const Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      id: json['id'] as int,
-      title: json['title'] as String,
-    );
+    return switch (json) {
+      {
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 
@@ -371,6 +385,7 @@ class _MyAppState extends State<MyApp> {
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
-[Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
+[Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
+[pattern matching]: {{site.dart-site}}/language/patterns
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

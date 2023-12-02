@@ -3081,15 +3081,19 @@ Future<void> _incrementCounter() async {
 
 ### 在 Flutter 中如何使用 SQLite？
 
-In Android, you use SQLite to store structured data that you can query
-using SQL.
+In Android, you use SQLite to store structured data
+that you can query using SQL.
 
-在 Android 中，你会使用 SQLite 来存储可以通过 SQL 进行查询的结构化数据。
+在 Android 中，
+你可以使用 SQLite 来存储结构化数据并通过 SQL 进行查询。
 
-In Flutter, access this functionality using the
+In Flutter, for macOS, Android, or iOS,
+access this functionality using the
 [SQFlite][] plugin.
 
-在 Flutter 中，使用 [SQFlite][] 插件实现此功能。
+在 Flutter 中，
+macOS、Android 和 iOS 平台，
+可以使用 [SQFlite][] 插件实现此功能。
 
 ## Debugging
 
@@ -3156,7 +3160,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
 [`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
-[Firebase Messaging]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages/firebase_messaging
+[Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter cookbook]: {{site.url}}/cookbook
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a

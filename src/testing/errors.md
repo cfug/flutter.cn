@@ -149,7 +149,7 @@ class MyApp extends StatelessWidget {
         }
         ErrorWidget.builder = (errorDetails) => error;
         if (widget != null) return widget;
-        throw ('widget is null');
+        throw StateError('widget is null');
       },
     );
   }
@@ -245,7 +245,7 @@ class MyApp extends StatelessWidget {
         }
         ErrorWidget.builder = (errorDetails) => error;
         if (widget != null) return widget;
-        throw ('widget is null');
+        throw StateError('widget is null');
       },
     );
   }

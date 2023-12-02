@@ -3368,10 +3368,13 @@ plugin to access SQLite databases.
 
 在 Xamarin.Forms 中大多数应用会使用 `sqlite-net-pcl` 插件来访问 SQLite 数据库。
 
-In Flutter, access this functionality using the
+In Flutter, on macOS, Android, and iOS,
+access this functionality using the
 [`sqflite`][] plugin.
 
-在 Flutter 中，使用 [SQFlite][`sqflite`] 插件来访问这个功能。
+在 Flutter 中，
+macOS、Android 和 iOS 平台，
+可以使用 [`sqflite`][] 插件来实现该功能。
 
 ## Debugging
 

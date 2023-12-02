@@ -12,7 +12,8 @@ keywords: SQLite,数据库
 {{site.alert.note}}
 
   This guide uses the [sqflite package][].
-  This package only supports apps that run on macOS, iOS, or Android.
+  This package only supports apps that run on
+  macOS, iOS, or Android.
 
   本示例使用了 [sqflite package][]。
   该 package 仅支持 macOS、iOS 和 Android。
@@ -87,9 +88,11 @@ This recipe uses the following steps:
 
 ## 1. 添加依赖
 
-To work with SQLite databases, import the `sqflite` and `path` packages.
+To work with SQLite databases, import the `sqflite` and
+`path` packages.
 
-为了使用 SQLite 数据库，首先需要导入 `sqflite` 和 `path` 这两个 package。
+为了使用 SQLite 数据库，首先需要导入 `sqflite` 和 
+`path` package。
 
   * The `sqflite` package provides classes and functions to
     interact with a SQLite database.

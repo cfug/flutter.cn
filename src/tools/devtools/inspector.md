@@ -810,6 +810,85 @@ the discussion on [common problems when debugging][].
 此功能可避免在调试构建中将其他相同的 `const` 的 Widgets 视为相同。
 有关更多详细信息，请参阅关于 [调试时常见问题][common problems when debugging] 的讨论。
 
+## Inspector settings
+
+## 设置 Inspector
+
+![The Flutter Inspector Settings dialog]({{site.url}}/assets/images/docs/tools/devtools/flutter_inspector_settings.png){:width="100%"}
+
+### Enable hover inspection
+
+### 启用 hover 检测 (Enable hover inspection)
+
+Hovering over any widget displays its properties and values.
+
+将鼠标悬停在任意 widget 上，
+会显示该 widget 的属性和值。
+
+Toggling this value enables or disables the hover inspection functionality.
+
+你可以切换 **Enable hover inspection** 
+启用或禁用 hover 检测功能。
+
+### Package directories
+
+### Package 目录
+
+By default, DevTools limits the widgets displayed in the widget tree
+to those from the project's root directory, and those from Flutter. This
+filtering only applies to the widgets in the Inspector Widget Tree (left side
+of the Inspector) -- not the Widget Details Tree (right side of the Inspector
+in the same tab view as the Layout Explorer). In the Widget Details Tree, you
+will be able to see all widgets in the tree from all packages.
+
+默认情况下，DevTools 会根据项目根目录中的 widget 和 Flutter 中的 widget，
+限制 widget 树中的显示。
+这种过滤仅适用于 Inspector Widget Tree（Inspector 左侧）中的 widget -- 
+不适用于 Widget Details Tree
+（Inspector 右侧，与 Layout Explorer 处于同一选项卡视图中）。
+在 Widget Details Tree 中，你可以看见树中所有 package 的 widget。
+
+In order to show other widgets, a parent directory of theirs must be added to the Package Directories.
+
+要显示其他 widget，必须在 Package Directories 中添加它们的父目录。
+
+For example, consider the following directory structure:
+
+例如，以下目录结构：
+
+```
+project_foo
+  pkgs
+    project_foo_app
+    widgets_A
+    widgets_B
+```
+
+Running your app from `project_foo_app` displays only widgets from
+`project_foo/pkgs/project_foo_app` in the widget inspector tree.
+
+从 `project_foo_app` 运行应用时，
+只会在 widget inspector 树中
+显示 `project_foo/pkgs/project_foo_app` 的 widget。
+
+To show widgets from `widgets_A` in the widget tree,
+add `project_foo/pkgs/widgets_A` to the package directories.
+
+如果需要在 widget 树中显示 `widgets_A` 的 widget，
+请在 Package Directories 中添加 `project_foo/pkgs/widgets_A`。
+
+To display _all_ widgets from your project root in the widget tree,
+add `project_foo` to the package directories.
+
+如果需要在 widget 树中显示项目根目录下的 **所有** widget，
+请在 Package Directories 中添加 `project_foo`。
+
+Changes to your package directories persist the next time the
+widget inspector is opened for the app.
+
+你对 Package Directories 的更改是一直存在的，
+下次打开应用程序的 widget inspector 时依旧生效，
+
 ## Other resources
 
 ## 其他资源

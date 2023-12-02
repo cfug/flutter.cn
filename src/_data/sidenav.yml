@@ -78,7 +78,7 @@
         - title: 添加用户身份验证
           permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps#0
         - title: 使用 Crashlytics 调试
-          permalink: https://firebase.flutter.dev/docs/crashlytics/overview/
+          permalink: https://firebase.google.com/docs/crashlytics/get-started?platform=flutter
     - title: 新闻
       children:
         - title: 构建新闻应用程序
@@ -186,6 +186,8 @@
           match-page-url-exactly: true
         - title: 处理点击
           permalink: /docs/cookbook/gestures/handling-taps
+        - title: 跨应用拖放对象
+          permalink: /docs/ui/interactivity/gestures/drag-outside
         - title: 拖动界面元素
           permalink: /docs/cookbook/effects/drag-a-widget
         - title: 添加 Material 风格的水波纹
@@ -510,6 +512,8 @@
       permalink: /docs/perf/shader
     - title: 性能指标
       permalink: /docs/perf/metrics
+    - title: 并发与隔离
+      permalink: /docs/perf/isolates
     - title: 性能常见问题和回答
       permalink: /docs/perf/faq
     - title: 附录

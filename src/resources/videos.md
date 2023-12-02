@@ -153,8 +153,12 @@ Each one-minute video highlights a Flutter widget.
 每周一分钟，为你种草一个 Flutter widget！
 
 <iframe width="560" height="315" src="//player.bilibili.com/player.html?bvid=BV15441157cc&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Introducing widget of the week<br>
 [Flutter widget of the week playlist][]
+
+每周 Flutter Widgets 介绍<br>
+[每周 Flutter Widgets 视频列表][Flutter widget of the week playlist]
 
 [Flutter widget of the week playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 
@@ -168,8 +172,12 @@ each of these videos highlights a Flutter package.
 这些视频会为你介绍一些精选 Flutter package。
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/QFcFEpFmNJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `flutter_slidable` package
 [Flutter package of the week playlist][]
+
+`flutter_slidable` package 介绍<br>
+[每周 Flutter Packages 视频列表][Flutter package of the week playlist]
 
 [Flutter package of the week playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1quF6ny8oFHJ2gBdrYN_AK
 

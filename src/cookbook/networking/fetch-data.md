@@ -335,13 +335,17 @@ and this happens surprisingly often.
 The `fetchAlbum()` method, if placed inside `build()`, is repeatedly 
 called on each rebuild causing the app to slow down.
 
+每当 Flutter 需要改变视图中的一些内容时（这个发生的频率非常高），
+就会调用 `build()` 方法。因此，如果你将数据请求置于 `build()` 内部，
+就会造成大量的无效调用，同时还会拖慢应用程序的速度。
+
 Storing the `fetchAlbum()` result in a state variable ensures that
 the `Future` is executed only once and then cached for subsequent
 rebuilds.
 
-每当 Flutter 需要改变视图中的一些内容时（这个发生的频率非常高），
-就会调用 `build()` 方法。因此，如果你将数据请求置于 `build()` 内部，
-就会造成大量的无效调用，同时还会拖慢应用程序的速度。
+将 fetchAlbum() 结果存储在状态变量中，
+可确保 `Future` 只执行一次，
+然后缓存(得到的数据)以备后续重新构建应用。
 
 ## Testing
 

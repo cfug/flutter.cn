@@ -20,11 +20,11 @@ This recipe uses the following steps:
 
   1. Add the `http` package.
 
-     添加 `http` 包
+     添加 `http` package
 
   2. Make a network request using the `http` package.
 
-     使用 `http` 包进行网络请求
+     使用 `http` package 进行网络请求
 
   3. Convert the response into a custom Dart object.
 
@@ -36,7 +36,7 @@ This recipe uses the following steps:
 
 ## 1. Add the `http` package
 
-## 1. 添加 `http` 包
+## 1. 添加 `http` package
 
 The [`http`][] package provides the
 simplest way to fetch data from the internet.
@@ -343,7 +343,7 @@ Storing the `fetchAlbum()` result in a state variable ensures that
 the `Future` is executed only once and then cached for subsequent
 rebuilds.
 
-将 fetchAlbum() 结果存储在状态变量中，
+将 `fetchAlbum()` 结果存储在状态变量中，
 可确保 `Future` 只执行一次，
 然后缓存(得到的数据)以备后续重新构建应用。
 

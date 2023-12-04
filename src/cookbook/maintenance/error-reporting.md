@@ -30,7 +30,7 @@ service, such as [Bugsnag][], [Datadog][],
 如何确定用户遇到 bug 的频率呢？
 解决方案是：当异常发生时，生成一份日志，日志中包含发生的异常及相关的堆栈信息。
 随后，可以将日志发送到异常监控报警平台，比如
-[Bugsnag][]、Fabric、[Firebase Crashlytics][Firebase Crashlytics CN]、
+[Bugsnag][]、Fabric、[Firebase Crashlytics][]、
 [Rollbar][] 或 Sentry。
 
 The error tracking service aggregates all of the crashes your users
@@ -200,5 +200,4 @@ see the [Sentry flutter example][] app.
 [`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
 [Sentry API]: {{site.pub-api}}/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
 [Sentry's site]: https://docs.sentry.io/platforms/flutter/
-[Firebase Crashlytics]: https://firebase.google.com/docs/crashlytics
-[Firebase Crashlytics CN]: https://firebase.google.cn/docs/crashlytics
+[Firebase Crashlytics]: {{site.firebase}}/docs/crashlytics

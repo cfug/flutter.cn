@@ -76,9 +76,9 @@
         - title: 添加应用内购买
           permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
         - title: 添加用户身份验证
-          permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps#0
+          permalink: https://firebase.google.cn/codelabs/firebase-auth-in-flutter-apps#0
         - title: 使用 Crashlytics 调试
-          permalink: https://firebase.google.com/docs/crashlytics/get-started?platform=flutter
+          permalink: https://firebase.google.cn/docs/crashlytics/get-started?platform=flutter
     - title: 新闻
       children:
         - title: 构建新闻应用程序

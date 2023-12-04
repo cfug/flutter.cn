@@ -1665,9 +1665,6 @@ are:
 在 Flutter 中，你可以用多种方式实现拖放。
 但是我们不在本篇文章中讨论这个话题，以下是一些更高级的选项：
 
-在 Flutter 中，你可以用多种方式实现拖放。
-但是我们不在本篇文章中讨论这个话题，以下是一些更高级的选项：
-
 * Use the [`Draggable`][] and [`DragTarget`][] APIs
   directly for a custom look and feel.
 

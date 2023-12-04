@@ -452,7 +452,7 @@ Invertase 还在继续为 FlutterFire 插件增添更多功能，包括在新版
 * 支持 [Firebase Local Emulator Suite](https://firebase.flutter.dev/docs/storage/usage/#emulator-usage)
 * 利用 [data bundles](https://firebase.flutter.dev/docs/firestore/usage#data-bundles) 优化您的数据查询
 
-FlutterFire 现在还支持 Firebase 新推出的 beta 版产品 [Firebase App Check](https://firebase.google.com/docs/app-check)。Firebase App Check 可帮助您保护 Cloud Storage 等后端资源，使其不受付费欺诈或钓鱼攻击等滥用行为的侵害。有了 App Check，运行您的 Flutter 应用的设备会通过一个应用身份证明提供方来证明应用实例的正当身份，并可检查应用是否运行在未受篡改的可信设备上。一旦您启用 App Check，相应证明信息会附加到您的应用向 Firebase 后端资源发出的每一个请求中。要了解详情，请参阅 [FlutterFire App Check 文档](https://firebase.flutter.dev/docs/app-check/overview)。
+FlutterFire 现在还支持 Firebase 新推出的 beta 版产品 [Firebase App Check](https://firebase.google.cn/docs/app-check)。Firebase App Check 可帮助您保护 Cloud Storage 等后端资源，使其不受付费欺诈或钓鱼攻击等滥用行为的侵害。有了 App Check，运行您的 Flutter 应用的设备会通过一个应用身份证明提供方来证明应用实例的正当身份，并可检查应用是否运行在未受篡改的可信设备上。一旦您启用 App Check，相应证明信息会附加到您的应用向 Firebase 后端资源发出的每一个请求中。要了解详情，请参阅 [FlutterFire App Check 文档](https://firebase.flutter.dev/docs/app-check/overview)。
 
 **Flutter DevTools 更新**
 

@@ -119,20 +119,7 @@ follow Microsoft's instructions for the relevant platform:
 
 ## Validate your VS Code setup
 
-1. Go to **View** <span aria-label="and then">></span> **Output**.
-
-   打开 **View** <span aria-label="and then">></span> **Output**。
-
-   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
-   <kbd>Shift</kbd> + <kbd>U</kbd>.
-
-   你也可以按下 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
-   <kbd>Shift</kbd> + <kbd>U</kbd>。
-
-1. In the dropdown on the upper right of the **Output** panel,
-   select **flutter (flutter)**.
-
-   在 **Output** 面板右上角的下拉菜单中选择 **flutter (flutter)**。
+## 验证 VS Code 的设置
 
 1. Go to **View** <span aria-label="and then">></span>
    **Command Palette...**.
@@ -147,13 +134,28 @@ follow Microsoft's instructions for the relevant platform:
 
 1. Type `doctor`.
 
-   输入 "doctor"。
+   输入 `doctor`。
 
 1. Select the **Flutter: Run Flutter Doctor**.
    Flutter Doctor runs and its response displays in the **Output** panel.
 
    选择 **Flutter: Run Flutter Doctor**。
    输出结果会显示在 **Output** 面板中。
+
+1. Go to **View** <span aria-label="and then">></span> **Output**.
+
+   打开 **View** <span aria-label="and then">></span> **Output**。
+
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>U</kbd>.
+
+   你也可以按下 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>U</kbd>。
+
+1. In the dropdown on the upper right of the **Output** panel,
+   select **flutter (flutter)**.
+
+   在 **Output** 面板右上角的下拉菜单中选择 **flutter (flutter)**。
 
 </div>
 <div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">

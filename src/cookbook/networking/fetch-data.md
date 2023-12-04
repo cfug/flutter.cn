@@ -2,7 +2,7 @@
 title: Fetch data from the internet
 title: 获取网络数据
 description: How to fetch data over the internet using the http package.
-description: 如何使用 http 包获取网络数据。
+description: 如何使用 http package 获取网络数据。
 ---
 
 <?code-excerpt path-base="cookbook/networking/fetch_data/"?>
@@ -20,23 +20,23 @@ This recipe uses the following steps:
 
   1. Add the `http` package.
 
-     添加 `http` 包
+     添加 `http` package。
 
   2. Make a network request using the `http` package.
 
-     使用 `http` 包进行网络请求
+     使用 `http` package 进行网络请求。
 
   3. Convert the response into a custom Dart object.
 
-     将返回的响应转换成一个自定义的 Dart 对象
+     将返回的响应转换成一个自定义的 Dart 对象。
 
   4. Fetch and display the data with Flutter.
 
-     使用 Flutter 对数据进行获取和展示
+     使用 Flutter 对数据进行获取和展示。
 
 ## 1. Add the `http` package
 
-## 1. 添加 `http` 包
+## 1. 添加 `http` package
 
 The [`http`][] package provides the
 simplest way to fetch data from the internet.
@@ -47,7 +47,7 @@ simplest way to fetch data from the internet.
 To add the `http` package as a dependency,
 run `flutter pub add`:
 
-要将 `http` 包添加到依赖中，
+要将 `http` package 添加到依赖中，
 运行 `flutter pub add` 命令：
 
 ```terminal
@@ -56,17 +56,38 @@ $ flutter pub add http
 
 Import the http package.
 
+导入 http package。
+
 <?code-excerpt "lib/main.dart (Http)"?>
 ```dart
 import 'package:http/http.dart' as http;
 ```
 
-Additionally, in your AndroidManifest.xml file, 
+If you are deploying to Android, edit your `AndroidManifest.xml` file to 
 add the Internet permission.
+
+如果你要部署 Android，
+请编辑 `AndroidManifest.xml` 文件，
+添加 Internet 权限。
 
 ```xml
 <!-- Required to fetch data from the internet. -->
 <uses-permission android:name="android.permission.INTERNET" />
+```
+
+Likewise, if you are deploying to macOS, edit your 
+`macos/Runner/DebugProfile.entitlements` and `macos/Runner/Release.entitlements`
+files to include the network client entitlement.
+
+同样，如果你要部署 macOS，
+请编辑 `macos/Runner/DebugProfile.entitlements` 和 
+`macos/Runner/Release.entitlements` 文件，
+添加 network client 权限。
+
+```xml
+<!-- Required to fetch data from the internet. -->
+<key>com.apple.security.network.client</key>
+<true/>
 ```
 
 ## 2. Make a network request
@@ -126,12 +147,12 @@ creates an `Album` from JSON.
 首先，创建一个包含网络请求返回数据的 `Album` 类，
 而且这个类还需要一个可以利用 json 创建 `Album` 的工厂构造器。
 
-Converting JSON by hand is only one option.
+Converting JSON using [pattern matching][] is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
-手动转换 JSON 是我们目前唯一的选项。想了解更多，
-请查看完整的文档 [JSON 和序列化数据][JSON and serialization]。
+使用 [模式匹配][pattern matching] 转换 JSON 只是其中一种方式。
+想了解更多，请查看完整的文档：[JSON 和序列化数据][JSON and serialization]。
 
 <?code-excerpt "lib/main.dart (Album)"?>
 ```dart
@@ -147,11 +168,19 @@ class Album {
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'] as int,
-      id: json['id'] as int,
-      title: json['title'] as String,
-    );
+    return switch (json) {
+      {
+        'userId': int userId,
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          userId: userId,
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 ```
@@ -169,7 +198,7 @@ function to return a `Future<Album>`:
   1. Convert the response body into a JSON `Map` with
      the `dart:convert` package.
 
-     用 `dart:convert` 包将响应体转换成一个 json `Map`。
+     用 `dart:convert` package 将响应体转换成一个 json `Map`。
 
   2. If the server does return an OK response with a status code of
      200, then convert the JSON `Map` into an `Album`
@@ -400,11 +429,19 @@ class Album {
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'] as int,
-      id: json['id'] as int,
-      title: json['title'] as String,
-    );
+    return switch (json) {
+      {
+        'userId': int userId,
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          userId: userId,
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 
@@ -471,4 +508,5 @@ class _MyAppState extends State<MyApp> {
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
+[pattern matching]: {{site.dart-site}}/language/patterns
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

@@ -584,7 +584,7 @@ to verify that the values are correct.
   默认为 `flutter.minSdkVersion`。
 
 `targetSdkVersion`
-<br> Specify the target API level on which on which you designed the app to run.
+<br> Specify the target API level on which you designed the app to run..
   Defaults to `flutter.targetSdkVersion`.
 
 `targetSdkVersion`

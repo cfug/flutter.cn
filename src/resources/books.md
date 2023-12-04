@@ -8,19 +8,33 @@ keywords: Flutter出版书籍
 toc: false
 ---
 
-Here's a collection of books about Flutter, in alphabetical order.
+Here's a collection of books about Flutter,
+in alphabetical order.
 If you find another one that we should add,
 [file an issue][] and (feel free to)
 submit a PR ([sample][]) to add it yourself.
-Also, check the Flutter version that the book
-was written under. See the [what's new][]
-page to view Flutter's latest release.
 
 这里收集了关于 Flutter 的书籍，按照字母顺序排列。
 如果你发现其他我们应该添加的书籍，
 你可以 [提出 issue][file an issue]
 并且（可选）[提交 PR][sample]，以便添加书籍。
-同时，你可能需要确认书籍撰写时基于的 Flutter 版本。
+
+Also, check the Flutter version that the book
+was written under. Anything published before
+Flutter 3.10/Dart 3 (May 2023),
+won't reflect the latest version of Dart and
+might not include null safety;
+anything published before Flutter 3.16 (November 2023)
+won't reflect that Material 3 is now
+Flutter's default theme.
+See the [what's new][]
+page to view Flutter's latest release.
+
+同时，你需要确认书籍撰写时基于的 Flutter 版本。
+Flutter 3.10 / Dart 3（2023年5月）之前发布的任何内容
+都不会体现 Dart 最新版本的新特性，也有可能不包括空安全；
+Flutter 3.16（2023年11月）之前发布的任何内容
+都不会体现 Flutter 当前默认的 Material 3 主题。
 你可以在 Flutter 最新发布页面看到 [版本更新内容][what's new]。
 
 [file an issue]: {{site.repo.this}}/issues/new

@@ -227,7 +227,7 @@ see our API usage guides at the following links:
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
-[FlutterFire]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages
+[FlutterFire]: {{site.github}}/firebase/flutterfire/tree/master/packages
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html

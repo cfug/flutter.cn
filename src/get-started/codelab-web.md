@@ -213,9 +213,8 @@ of the Flutter DevTools tooling.
 
 <li markdown="1"><t>The starting app is displayed in the following DartPad.</t><t>运行程序将在 DartPad 中显示。</t>
 
-<?code-excerpt "lib/starter.dart" replace="/\/\* //g;/ \*\///g;/_ignore_for_file/ignore_for_file/g"?>
+<?code-excerpt "lib/starter.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
-{$ begin main.dart $}
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SignUpApp());
@@ -316,11 +315,6 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 }
-{$ end main.dart $}
-{$ begin test.dart $}
-// Avoid warning on "double _formProgress = 0;"
-//ignore_for_file: prefer_final_fields
-{$ end test.dart $}
 ```
 
 {{site.alert.important}}

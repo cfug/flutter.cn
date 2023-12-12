@@ -13,7 +13,7 @@ toc: true
 
 △ Flutter 的 Dash、Firebase 的 Sparky、Android Jetpack 和 Chrome 的 Dino
 
-我们使用 [Flutter web](https://flutter.cn/web) 和 [Firebase](https://firebase.google.com/) 构建了 Flutter 照相亭。因为 [Flutter 现在支持打造 Web 应用](https://flutter.cn/posts/whats-new-in-flutter-2-0)，我们认为这将是一个很好的方式，可以让世界各地的与会者在线上轻松访问这一应用。Flutter web 消除了必须通过应用商店安装应用的障碍，同时用户还可以灵活选择运行应用的设备: 移动设备、桌面设备或平板电脑。因此，只要能使用浏览器，用户便可无需下载直接使用 Flutter 照相亭。
+我们使用 [Flutter web](https://flutter.cn/web) 和 [Firebase](https://firebase.google.cn/) 构建了 Flutter 照相亭。因为 [Flutter 现在支持打造 Web 应用](https://flutter.cn/posts/whats-new-in-flutter-2-0)，我们认为这将是一个很好的方式，可以让世界各地的与会者在线上轻松访问这一应用。Flutter web 消除了必须通过应用商店安装应用的障碍，同时用户还可以灵活选择运行应用的设备: 移动设备、桌面设备或平板电脑。因此，只要能使用浏览器，用户便可无需下载直接使用 Flutter 照相亭。
 
 尽管 Flutter 照相亭旨在提供 Web 体验，但所有代码均采用与平台无关的架构编写而成。当相机插件等原生功能的支持在各个平台就绪后，这套代码即可在所有平台 (桌面、Web 和移动设备) 通用。
 

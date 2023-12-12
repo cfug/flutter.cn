@@ -87,7 +87,8 @@ android {
 ### Integrate with Android Studio
 {:.no_toc}
 
-## 使用 Android Studio 集成
+### 使用 Android Studio 集成
+{:.no_toc}
 
 The Android Studio IDE can help integrate your Flutter module.
 Using Android Studio, you can edit both your Android and Flutter code
@@ -124,7 +125,7 @@ Android Studio 需要将你的 Flutter 模块作为依赖。
 
 1. Click **Flutter**.
 
-   选择 **Flutter。
+   选择 **Flutter**。
 
 1. If asked to provide your **Flutter SDK path**, do so and click **Next**.
 
@@ -190,7 +191,8 @@ Android Studio 需要将你的 Flutter 模块作为依赖。
 ### Integrate without Android Studio
 {:.no_toc}
 
-## 不使用 Android Studio 进行集成
+### 不使用 Android Studio 进行集成
+{:.no_toc}
 
 To integrate a Flutter module with an existing Android app
 manually, without using Flutter's Android Studio plugin,
@@ -202,7 +204,8 @@ follow these steps:
 #### Create a Flutter module
 {:.no_toc}
 
-### 创建 Flutter 模块
+#### 创建 Flutter 模块
+{:.no_toc}
 
 Let's assume that you have an existing Android app at
 `some/path/MyApp`, and that you want your Flutter
@@ -269,7 +272,8 @@ module an embeddable Android library.
 #### Java version requirement
 {:.no_toc}
 
-### Java 版本要求
+#### Java 版本要求
+{:.no_toc}
 
 Flutter requires your project to declare compatibility with Java 11 or later.
 
@@ -348,6 +352,7 @@ existing app in Gradle. You can achieve this in two ways.
 {:.no_toc}
 
 ### 依赖 Android Archive (AAR)
+{:.no_toc}
 
 This option packages your Flutter library as a generic local
 Maven repository composed of AARs and POMs artifacts.
@@ -471,6 +476,7 @@ dependencies {
 {:.no_toc}
 
 ### 依赖模块的源码
+{:.no_toc}
 
 This option enables a one-step build for both your
 Android project and Flutter project. This option is

@@ -152,13 +152,6 @@ like layout and animations:
 了解 Material Design 和 Flutter基本概念，
 例如布局和动画：
 
-* [Basic Flutter layout concepts][]<br>
-  Use DartPad in a browser (no downloads required!)
-  to learn the basics of creating a Flutter layout.
-
-  [Flutter 布局基础要点][Basic Flutter layout concepts]<br>
-  在网页浏览器里使用 DartPad 学习基础的 Flutter 布局知识。
-
 * [How to debug layout issues with the Flutter Inspector][]<br>
   Not an official codelab, but step-by-step instructions on
   how to debug common layout problems using the Flutter 
@@ -259,7 +252,6 @@ like layout and animations:
 [Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
-[Basic Flutter layout concepts]: {{site.url}}/codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [Building scrolling experiences in Flutter]: https://www.bilibili.com/video/BV11f4y187gV/
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db

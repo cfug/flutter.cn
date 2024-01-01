@@ -5,6 +5,8 @@ description: Learn more about the Flutter and Dart mascot, Dash.
 description: 了解关于 Flutter 和 Dart 的吉祥物 Dash 的内容。
 ---
 
+{% include docs/yt_shims.liquid %}
+
 This is Dash:
 
 这是 Dash：
@@ -101,8 +103,6 @@ Here are some early mockups and one of the first prototypes:
 ![First prototype]({{site.url}}/assets/images/dash/early-dash-sketches5.jpg){:width="50%"}<br>
 <t>The first prototype had uneven eyes</t><t>初版原型的单只眼睛并不是对称的</t>
 
-[event website]: https://events.dartlang.org/2018/dartconf/
-
 ## Why a hummingbird?
 
 ## 为什么是一只蜂鸟？
@@ -133,7 +133,7 @@ Shams 为 Dash 指定了颜色的应用范围、尾巴的形状、一小簇头�
 ![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
 <t>Introducing Dash at the January 2018 Dart Conference:</t><t>在 2018 Dart 会议上介绍 Dash：</t>
-<iframe width="541" height="350" src="{{ site.youtube-site }}/embed/R5vIUjRZaZA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="541" height="350" src="{{yt-embed}}/R5vIUjRZaZA" title="在 2018 Dart 会议上介绍 Dash" {{yt-set}}></iframe>
 
 While the manufacturing process was proceeding,
 Shams chose a name for the plushy: Dash,
@@ -152,8 +152,7 @@ They were eagerly adopted by Dart _and_ Flutter enthusiasts.
 许多箱 Dash 毛绒玩具赶在会议开始前送到了南加州。
 它们受到了大量 **Dart 和 Flutter** 爱好者的喜爱。
 
-The people have spoken,
-so Dash is now the mascot for Flutter **and** Dart.
+The people have spoken, so Dash is now the mascot for Flutter **and** Dart.
 
 Flutter 和 Dart 的演讲者都携带着 Dash 进行了演讲，
 所以 Dash 就成为了 **Flutter 和 Dart** 的吉祥物。
@@ -196,7 +195,7 @@ Dash 2.0 and 2.1
 
   Dash 有自己的 [Instagram 账户][Instagram account]。
 
-* Dash has a **straight** beak. 
+* Dash has a **straight** beak.
   **Please, don't depict Dash with a curved beak.**
 
   Dash 的喙是直的。**请不要用弯的喙描绘 Dash。**
@@ -215,7 +214,7 @@ Dash 2.0 and 2.1
   巨型 Dash 首次在 2019年 12 月 11 日纽约布鲁克林的
   [Flutter Interact][] 活动中亮相。
 
-  <iframe width="560" height="315" src="{{site.youtube-site}}/embed/EgBMGDtHZhE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="{{yt-embed}}/EgBMGDtHZhE" title="Watch the Flutter Interact 2019 highlights" {{yt-set}}></iframe>
   
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
@@ -232,20 +231,11 @@ Dash 2.0 and 2.1
   我们的许多 YouTube 视频都有 Dart 布偶的出镜，由我们早期（且深受大家喜爱）的
   Flutter 开发技术推广工程师 Emily Fortuna 配音。
 
-  <iframe width="560" height="315" src="{{site.youtube-site}}/embed/dsiLVNDJ3t0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="560" height="315" src="{{site.youtube-site}}/embed/oyy_1CjNdBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %}
-I haven't been able to figure out how to play the mp4 file...
-* Here is a sound recording of Dash's chirp, by Kathy Walrath,
-  the Dart writer.
-![Dash's chirp]({{site.url}}/assets/images/dash/DartDartDarrrrrrt.mp4){:width="50%"}<br>
-{% endcomment %}
+  <iframe width="560" height="315" src="{{yt-embed}}/oyy_1CjNdBU" title="构建基于 Flutter 的播客应用程序 DashCast" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{yt-embed}}/dsiLVNDJ3t0" title="重温基于 Flutter 的播客应用程序 DashCast" {{yt-set}}></iframe>
+
 <br>
 !["Born to Hot Reload" jacket]({{site.url}}/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
 
-[Flutter Interact]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
+[Flutter Interact]: {{yt-playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/
-
-{% comment %}
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/sPW7nDBqt8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% endcomment %}

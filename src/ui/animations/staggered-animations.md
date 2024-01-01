@@ -9,30 +9,33 @@ tags: 用户界面,Flutter UI,动画
 keywords: 交织动画
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 {{site.alert.secondary}}
 
   <h4 class="no_toc">What you'll learn</h4>
 
-  * A staggered animation consists of sequential or overlapping
+* A staggered animation consists of sequential or overlapping
     animations.
-    
-    一个交织动画由一组序列动画或重叠动画所组成。
-    
-  * To create a staggered animation, use multiple `Animation` objects.
-    
-    创建一个交织动画，要用到多个动画对象
-  
-  * One `AnimationController` controls all of the `Animation`s.
-  
-    一个 AnimationController 控制所有动画。
-  
-  * Each `Animation` object specifies the animation during an `Interval`.
-  
-    每个动画对象在一个间隔时间内指定一个动画。
-    
-  * For each property being animated, create a `Tween`.
-  
-    为每一个要执行动画的属性创建一个 Tween
+
+  一个交织动画由一组序列动画或重叠动画所组成。
+
+* To create a staggered animation, use multiple `Animation` objects.
+
+  创建一个交织动画，要用到多个动画对象
+
+* One `AnimationController` controls all of the `Animation`s.
+
+  一个 AnimationController 控制所有动画。
+
+* Each `Animation` object specifies the animation during an `Interval`.
+
+  每个动画对象在一个间隔时间内指定一个动画。
+
+* For each property being animated, create a `Tween`.
+
+  为每一个要执行动画的属性创建一个 Tween
 
 {{site.alert.end}}
 
@@ -117,12 +120,7 @@ basic_staggered_animation:
 
 以下视频演示了 basic_staggered_animation 所执行的动画：
 
-<div class="embedded-video-wrapper">
-  <iframe class="embedded-video-wrapper__frame"
-    src="//player.bilibili.com/player.html?bvid=BV1j441157TP&p=2&autoplay=false"
-    frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+<iframe width="560" height="315" src="{{bili-embed}}?bvid=BV1j441157TP&p=2&autoplay=false" title="Watch this example of a staggered animation in Flutter" {{bili-set-short}}></iframe>
 
 In the video, you see the following animation of a single widget,
 which begins as a bordered blue square with slightly rounded corners.
@@ -178,33 +176,33 @@ After running forward, the animation runs in reverse.
   
   <h4 class="no_toc">重点是什么？</h4>
 
-  * All of the animations are driven by the same
+* All of the animations are driven by the same
     [`AnimationController`][].
 
-    所有的动画都是由相同同样的 [`AnimationController`][] 驱动。
+  所有的动画都是由相同同样的 [`AnimationController`][] 驱动。
 
-  * Regardless of how long the animation lasts in real time,
-    the controller's values must be between 0.0 and 1.0, inclusive.
+* Regardless of how long the animation lasts in real time,
+  the controller's values must be between 0.0 and 1.0, inclusive.
 
-    无论动画在真实时间中播放多长时间，控制器的值必须在 0.0 和 1.0 之间，包括 0.0 和 1.0。
+  无论动画在真实时间中播放多长时间，控制器的值必须在 0.0 和 1.0 之间，包括 0.0 和 1.0。
 
-  * Each animation has an [`Interval`][]
-    between 0.0 and 1.0, inclusive.
+* Each animation has an [`Interval`][]
+  between 0.0 and 1.0, inclusive.
 
-    每个动画都有一个 [`Interval`][]，
-    值必须在 0.0 和 1.0 之间，包括 0.0 和 1.0。
+  每个动画都有一个 [`Interval`][]，
+  值必须在 0.0 和 1.0 之间，包括 0.0 和 1.0。
 
-  * For each property that animates in an interval, create a
-    [`Tween`][]. The `Tween` specifies the start and end
-    values for that property.
+* For each property that animates in an interval, create a
+  [`Tween`][]. The `Tween` specifies the start and end
+  values for that property.
 
-    对于每一个间隔内产生动画的属性，创建一个 [`Tween`][]。
-    `Tween` 可以指定该属性的开始值和结束值。 
+  对于每一个间隔内产生动画的属性，创建一个 [`Tween`][]。
+  `Tween` 可以指定该属性的开始值和结束值。 
 
-  * The `Tween` produces an [`Animation`][]
-    object that is managed by the controller.
+* The `Tween` produces an [`Animation`][]
+  object that is managed by the controller.
 
-    `Tween` 产生一个由控制器管理的 [`Animation`][] 对象。
+  `Tween` 产生一个由控制器管理的 [`Animation`][] 对象。
 
 {{site.alert.end}}
 
@@ -476,7 +474,7 @@ The animation runs forward, then backward.
 
 class _StaggerDemoState extends State<StaggerDemo>
     with TickerProviderStateMixin {
-  late AnimationController _controller;
+  late AnimationController_controller;
 
   @override
   void initState() {
@@ -521,7 +519,7 @@ class _StaggerDemoState extends State<StaggerDemo>
                 color:  Colors.black.withOpacity(0.5),
               ),
             ),
-            child: StaggerAnimation(controller: _controller.view),
+            child: StaggerAnimation(controller:_controller.view),
           ),
         ),
       ),
@@ -529,7 +527,6 @@ class _StaggerDemoState extends State<StaggerDemo>
   }
 }
 {% endprettify %}
-
 
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html
@@ -541,9 +538,6 @@ class _StaggerDemoState extends State<StaggerDemo>
 [staggered_pic_selection]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/staggered_pic_selection
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
-[flutter_sequence_animation]: {{site.pub}}/packages/flutter_sequence_animation
 [Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart
 [`Interval`]: {{site.api}}/flutter/animation/Interval-class.html
-[Material motion spec]: {{site.material}}/styles/motion/overview
-[pub.dev]: {{site.pub}}/packages
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html

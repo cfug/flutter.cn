@@ -137,7 +137,7 @@ you need to be able to access both Google Auth and the `pub.dev` site.
 才能将 package 发布到 `pub.dev`。
 
 {% comment %}
-From https://github.com/flutter/website/pull/9338#discussion_r1328077020
+From <https://github.com/flutter/website/pull/9338#discussion_r1328077020>
 {% endcomment %}
 
 To enable access to `pub.dev`:
@@ -167,8 +167,6 @@ To learn more about publishing packages, check out the
 
 了解关于发布 package 的更多信息，
 请查阅 [关于发布 package 的 Dart 文档][Dart documentation on publishing packages]。
-
-[Dart documentation on proxies]: {{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall
 
 [Dart documentation on publishing packages]: {{site.dart-site}}/tools/pub/publishing
 

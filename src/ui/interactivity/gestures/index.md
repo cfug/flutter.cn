@@ -8,6 +8,8 @@ tags: 用户界面,Flutter UI
 keywords: 进阶,手势,人机交互
 ---
 
+{% include docs/yt_shims.liquid %}
+
 This document explains how to listen for, and respond to,
 _gestures_ in Flutter.
 Examples of gestures include taps, drags, and scaling.
@@ -268,7 +270,7 @@ use a [`GestureDetector`][].
 
   了解更多，请参考下方「每周 Widget」的里关于 GestureDetector 的短视频：
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/WhVXkCFPmK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="full-width" src="{{yt-embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{yt-set}}></iframe>
 
 {{site.alert.end}}
 

@@ -1,348 +1,396 @@
 ---
-title: Building layouts
-title: 布局构建教程
-short-title: Tutorial
+title: Build a Flutter layout
+title: 构建 Flutter 布局
+short-title: Layout tutorial
 short-title: 布局教程
-description: Learn how to build a layout.
-description: 学习如何在 Flutter 里构建布局。
+description: Learn how to build a layout in Flutter.
+description: 学习如何在 Flutter 中构建布局。
 tags: 用户界面,Flutter UI,布局
 keywords: 布局教程,自动换行
 diff2html: true
 ---
 
-{% assign api = '{{site.api}}/flutter' -%}
+{% assign api = site.api | append: '/flutter' -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/main/examples' -%}
+{% assign rawExFile = '<https://raw.githubusercontent.com/flutter/website/main/examples>' -%}
 {% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/examples/flutter_gallery/lib/demo {%- endcapture -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
 {{site.alert.secondary}}
 
-  <h4 class="no_toc">What you'll learn</h4>
+## What you'll learn
 
-  <h4 class="no_toc">你将会学习到</h4>
-
-  * How Flutter's layout mechanism works.
-
-    Flutter 的布局机制是如何工作的。
-
-  * How to lay out widgets vertically and horizontally.
-
-    如何竖直或者水平地对 widgets 进行布局。
-
-  * How to build a Flutter layout.
-
-    如何构建一个 Flutter 布局。
-
+* How to lay out widgets next to each other.
+* How to add space between widgets.
+* How adding and nesting widgets results in a Flutter layout.
 {{site.alert.end}}
 
-This is a guide to building layouts in Flutter.
-You'll build the layout for the following app:
+This tutorial explains how to design and build layouts in Flutter.
 
-这是一份如何在 Flutter 中构建布局的指南。你将为如下 app 创建布局：
+If you use the example code provided, you can build the following app.
 
-{% include docs/app-figure.md img-class="site-mobile-screenshot border"
-    image="ui/layout/lakes.jpg" caption="The finished app" %}
+{% include docs/app-figure.liquid
+   img-class="site-mobile-screenshot border"
+   image="ui/layout/layout-demo-app.png"
+   caption="The finished app."
+   width="50%" %}
 
-This guide then takes a step back to explain Flutter's
-approach to layout, and shows how to place a single widget
-on the screen. After a discussion of how to lay widgets
-out horizontally and vertically, some of the most common
-layout widgets are covered.
+<figcaption class="figure-caption" markdown="1">
+Photo by [Dino Reichmuth][ch-photo] on [Unsplash][].
+Text by [Switzerland Tourism][].
+</figcaption>
 
-这份指南之前溯源一步解释了 Flutter 中的布局方式，以及展示了如何在屏幕中放置单个 widget。
-经过了如何水平以及竖直放置 widgets 的讨论之后，一些最常使用的 widgets 都涉及到了。
+To get a better overview of the layout mechanism, start with
+[Flutter's approach to layout][].
 
-If you want a "big picture" understanding of the layout mechanism,
-start with [Flutter's approach to layout][].
+## Diagram the layout
 
-如果你想对布局机制有个总体的理解，可以先从
-[Flutter 中的布局][Flutter's approach to layout] 开始。
+In this section, consider what type of user experience you want for
+your app users.
 
-## Step 0: Create the app base code
+Consider how to position the components of your user interface.
+A layout consists of the total end result of these positionings.
+Consider planning your layout to speed up your coding.
+Using visual cues to know where something goes on screen can be a great help.
 
-## 第一步: 创建 app 基础代码
+Use whichever method you prefer, like an interface design tool or a pencil
+and a sheet of paper. Figure out where you want to place elements on your
+screen before writing code. It's the programming version of the adage:
+"Measure twice, cut once."
 
-Make sure to [set up][] your environment,
-then do the following:
+<ol>
+<li markdown="1">
 
-确保你已经 [安装和配置][set up] 好了你的环境，
-然后做如下步骤：
+Ask these questions to break the layout down to its basic elements.
+
+* Can you identify the rows and columns?
+* Does the layout include a grid?
+* Are there overlapping elements?
+* Does the UI need tabs?
+* What do you need to align, pad, or border?
+
+</li>
+
+<li markdown="1">
+
+Identify the larger elements. In this example, you arrange the image, title,
+buttons, and description into a column.
+
+{% include docs/app-figure.liquid
+    img-class="site-mobile-screenshot border"
+    image="ui/layout/layout-sketch-intro.svg"
+    caption="Major elements in the layout: image, row, row, and text block"
+    width="50%" %}
+
+</li>
+<li markdown="1">
+
+Diagram each row.
+
+<ol type="a">
+
+<li markdown="1">
+
+Row 1, the **Title** section, has three children:
+a column of text, a star icon, and a number.
+Its first child, the column, contains two lines of text.
+That first column might need more space.
+
+{% include docs/app-figure.liquid
+   image="ui/layout/layout-sketch-title-block.svg"
+   caption="Title section with text blocks and an icon"
+   -%}
+
+</li>
+
+<li markdown="1">
+
+Row 2, the **Button** section, has three children: each child contains
+a column which then contains an icon and text.
+
+{% include docs/app-figure.liquid
+    image="ui/layout/layout-sketch-button-block.svg"
+    caption="The Button section with three labeled buttons"
+    width="50%" %}
+
+  </li>
+
+</ol>
+
+</li>
+</ol>
+
+After diagramming the layout, consider how you would code it.
+
+Would you write all the code in one class?
+Or, would you create one class for each part of the layout?
+
+To follow Flutter best practices, create one class, or Widget,
+to contain each part of your layout.
+When Flutter needs to re-render part of a UI,
+it updates the smallest part that changes.
+This is why Flutter makes "everything a widget".
+If the only the text changes in a `Text` widget, Flutter redraws only that text.
+Flutter changes the least amount of the UI possible in response to user input.
+
+For this tutorial, write each element you have identified as its own widget.
+
+## Create the app base code
+
+In this section, shell out the basic Flutter app code to start your app.
 
 <?code-excerpt path-base="layout/base"?>
 
- 1. [Create a new Flutter app][new-flutter-app].
+1. [Set up your Flutter environment][].
 
-    [创建一个新的 Flutter 应用][new-flutter-app]
+1. [Create a new Flutter app][new-flutter-app].
 
- 2. Replace the contents in `lib/main.dart` with the following code:
+1. Replace the contents of `lib/main.dart` with the following code.
+   This app uses a parameter for the app title and the title shown
+   on the app's `appBar`. This decision simplifies the code.
 
-    用下面的代码来替换你的 `lib/main.dart` 文件:
+   <?code-excerpt "lib/main.dart (all)" title?>
+   ```dart
+   import 'package:flutter/material.dart';
 
-    <?code-excerpt "lib/main.dart (all)" title?>
-    ```dart
-    import 'package:flutter/material.dart';
+   void main() => runApp(const MyApp());
 
-    void main() => runApp(const MyApp());
+   class MyApp extends StatelessWidget {
+     const MyApp({super.key});
 
-    class MyApp extends StatelessWidget {
-      const MyApp({super.key});
+     @override
+     Widget build(BuildContext context) {
+       const String appTitle = 'Flutter layout demo';
+       return MaterialApp(
+         title: appTitle,
+         home: Scaffold(
+           appBar: AppBar(
+             title: const Text(appTitle),
+           ),
+           body: const Center(
+             child: Text('Hello World'),
+           ),
+         ),
+       );
+     }
+   }
+   ```
 
-      @override
-      Widget build(BuildContext context) {
-        return MaterialApp(
-          title: 'Flutter layout demo',
-          home: Scaffold(
-            appBar: AppBar(
-              title: const Text('Flutter layout demo'),
-            ),
-            body: const Center(
-              child: Text('Hello World'),
+## Add the Title section
+
+In this section, create a `TitleSection` widget that resembles
+the following layout.
+
+<?code-excerpt path-base="layout/lakes"?>
+
+{% include docs/app-figure.liquid
+   image="ui/layout/layout-sketch-title-block-unlabeled.svg"
+   caption="The Title section as sketch and prototype UI" %}
+
+### Add the `TitleSection` Widget
+
+Add the following code after the `MyApp` class.
+
+<?code-excerpt "step2/lib/main.dart (titleSection)" title?>
+```dart
+class TitleSection extends StatelessWidget {
+  const TitleSection({
+    super.key,
+    required this.name,
+    required this.location,
+  });
+
+  final String name;
+  final String location;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(32),
+      child: Row(
+        children: [
+          Expanded(
+            /*1*/
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                /*2*/
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Text(
+                  location,
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                  ),
+                ),
+              ],
             ),
           ),
-        );
-      }
-    }
-    ```
-
-## Step 1: Diagram the layout
-
-## 第一步: 对布局进行图形分解
-
-The first step is to break the layout down to its basic elements:
-
-第一步需要将布局分解成它的各个基础元素：
-
-* Identify the rows and columns.
-
-  识别出它的行和列。
-
-* Does the layout include a grid?
-
-  这个布局是否包含网格布局？
-
-* Are there overlapping elements?
-
-  是否有重叠的元素？
-
-* Does the UI need tabs?
-
-  界面是否需要选项卡？
-
-* Notice areas that require alignment, padding, or borders.
-
-  留意需要对齐、内间距、或者边界的区域。
-
-First, identify the larger elements. In this example,
-four elements are arranged into a column: an image, two rows, and a block of text.  
-
-首先，识别出稍大的元素。在这个例子中，四个元素排成一列：一个图像，两个行区域，和一个文本区域。
-
-{% include docs/app-figure.md img-class="site-mobile-screenshot border"
-    image="ui/layout/lakes-column-elts.png" caption="Column elements (circled in red)" %}
-
-Next, diagram each row. The first row, called the Title
-section, has 3 children: a column of text, a star icon,
-and a number. Its first child, the column, contains 2 lines of text.
-That first column takes a lot of space, so it must be wrapped in an
-Expanded widget.
-
-接着，对每一行进行图解。第一行，也就是标题区域，
-有三个子元素：一个文本列，一个星形图标，和一个数字。
-它的第一个子元素，文本列，包含两行文本。
-第一列占据大量空间，因此它应当被封装在一个 Expanded widget 当中。
-
-{% include docs/app-figure.md image="ui/layout/title-section-parts.png" alt="Title section" %}
-
-The second row, called the Button section, also has
-3 children: each child is a column that contains an icon and text.
-
-第二行，也就是按钮区域，同样有三个子元素：
-每个子元素是一个包含图标和文本的列。
-
-{% include docs/app-figure.md image="ui/layout/button-section-diagram.png" alt="Button section" %}
-
-Once the layout has been diagrammed, it's easiest to
-take a bottom-up approach to implementing it.
-To minimize the visual confusion of deeply nested layout code,
-place some of the implementation in variables and functions.
-
-一旦图解好布局，采取自下而上的方法来实现它就变得尤为轻松了。
-为了最大程度减少，深层嵌套的布局代码带来的视觉混乱，
-需要用一些变量和函数来替代某些实现。
-
-## Step 2: Implement the title row
-
-## 第二步: 实现标题行
-
-<?code-excerpt path-base="layout/lakes/step2"?>
-
-First, you'll build the left column in the title section.
-Add the following code at the top of the `build()`
-method of the `MyApp` class:
-
-首先，你可以构建标题部分左侧列。添加如下代码到 `MyApp` 类的 `build()` 方法内顶部。
-
-<?code-excerpt "lib/main.dart (titleSection)" title?>
-```dart
-Widget titleSection = Container(
-  padding: const EdgeInsets.all(32),
-  child: Row(
-    children: [
-      Expanded(
-        /*1*/
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /*2*/
-            Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: const Text(
-                'Oeschinen Lake Campground',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Text(
-              'Kandersteg, Switzerland',
-              style: TextStyle(
-                color: Colors.grey[500],
-              ),
-            ),
-          ],
-        ),
+          /*3*/
+          Icon(
+            Icons.star,
+            color: Colors.red[500],
+          ),
+          const Text('41'),
+        ],
       ),
-      /*3*/
-      Icon(
-        Icons.star,
-        color: Colors.red[500],
-      ),
-      const Text('41'),
-    ],
-  ),
-);
+    );
+  }
+}
 ```
 
 {:.numbered-code-notes}
- 1. Putting a `Column` inside an `Expanded` widget stretches
-    the column to use all remaining free space in the row.
-    Setting the `crossAxisAlignment` property to
-    `CrossAxisAlignment.start` positions the column at
-    the start of the row.
 
-    将 Column 元素放到 Expanded widget 中可以拉伸该列，以利用该行中所有剩余的闲置空间。
-    设置 `crossAxisAlignment` 属性值为 `CrossAxisAlignment.start`，
-    这会将该列放置在行的起始位置。
+1. To use all remaining free space in the row, use the `Expanded` widget to
+   stretch the `Column` widget.
+   To place the column at the start of the row,
+   set the `crossAxisAlignment` property to `CrossAxisAlignment.start`.
+2. To add space between the rows of text, put those rows in a `Padding` widget.
+3. The title row ends with a red star icon and the text `41`.
+    The entire row falls inside a `Padding` widget and pads each edge
+    by 32 pixels.
 
- 2. Putting the first row of text inside a `Container`
-    enables you to add padding. The second child in the
-    `Column`, also text, displays as grey.
+### Change the app body to a scrolling view
 
-    将第一行文本放入 Container 容器中使得你可以增加内间距。
-    列中的第二个子元素，同样为文本，显示为灰色。
+In the `body` property, replace the `Center` widget with a
+`SingleChildScrollView` widget.
+Within the [`SingleChildScrollView`][] widget, replace the `Text` widget with a
+`Column` widget.
 
- 3. The last two items in the title row are a star icon,
-    painted red, and the text "41". The entire row is in
-    a `Container` and padded along each edge by 32 pixels.
-    Add the title section to the app body like this:
-
-    标题行中的最后两项是一个红色星形图标，和文字"41"。
-    整行都在一个 Container 容器布局中，
-    而且每条边都有 32 像素的内间距。
-
-Add the title section to the app body like this:
-
-如下添加标题部分到 app body 中：
-
-<?code-excerpt path-base="layout/lakes"?>
-<?code-excerpt "{../base,step2}/lib/main.dart" from="return MaterialApp"?>
+<?code-excerpt "{../base,step2}/lib/main.dart" from="body:" to="children: ["?>
 ```diff
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
-@@ -14,11 +48,13 @@
-     return MaterialApp(
-       title: 'Flutter layout demo',
-       home: Scaffold(
-         appBar: AppBar(
-           title: const Text('Flutter layout demo'),
-         ),
+@@ -21,2 +17,3 @@
 -        body: const Center(
 -          child: Text('Hello World'),
-+        body: Column(
-+          children: [
-+            titleSection,
-+          ],
-         ),
-       ),
-     );
++        body: const SingleChildScrollView(
++          child: Column(
++            children: [
+```
+
+These code updates change the app in the following ways.
+
+* A `SingleChildScrollView` widget can scroll.
+  This allows elements that don't fit on the current screen to display.
+* A `Column` widget displays any elements within its `children` property
+  in the order listed.
+  The first element listed in the `children` list displays at
+  the top of the list. Elements in the `children` list display
+  in array order on the screen from top to bottom.
+
+[`SingleChildScrollView`]: {{api}}/widgets/SingleChildScrollView-class.html
+
+### Update the app to display the title section
+
+Add the `TitleSection` widget as the first element in the `children` list.
+This places it at the top of the screen.
+Pass the provided name and location to the `TitleSection` constructor.
+
+<?code-excerpt "{../base,step2}/lib/main.dart" from="children:" to="],"?>
+```diff
+--- ../base/lib/main.dart
++++ step2/lib/main.dart
+@@ -23 +19,6 @@
++            children: [
++              TitleSection(
++                name: 'Oeschinen Lake Campground',
++                location: 'Kandersteg, Switzerland',
++              ),
++            ],
 ```
 
 {{site.alert.tip}}
 
-  * When pasting code into your app, indentation can
-    become skewed. You can fix this in your Flutter editor
-    using the [automatic reformatting support][].
-
-    在粘贴代码到你的 app 中时，行首缩进可能会发生偏移。
-    你可以通过使用 [代码自动格式化][automatic reformatting support] 来修复这个问题。
-
-  - For a faster development experience,
-    try Flutter's [hot reload][] feature.
-
-    为了获得更便捷的开发体验，请尝试 Flutter 的 [热重载][hot reload] 功能。
-
-  - If you have problems, compare your code to [`lib/main.dart`][].
-
-    如果你有任何问题，可以将你的代码与 [`lib/main.dart`][] 比对.
+* When pasting code into your app, indentation can become skewed.
+      To fix this in your Flutter editor, use [automatic reformatting support][].
+* To accelerate your development, try Flutter's [hot reload][] feature.
+* If you have problems, compare your code to [`lib/main.dart`][].
 
 {{site.alert.end}}
 
-## Step 3: Implement the button row
+## Add the Button section
 
-## 第三步: 实现按钮行
+In this section, add the buttons that will add functionality to your app.
 
 <?code-excerpt path-base="layout/lakes/step3"?>
 
-The button section contains 3 columns that use the same
-layout&mdash;an icon over a row of text.
-The columns in this row are evenly spaced,
-and the text and icons are painted with the primary color.
+The **Button** section contains three columns that use the same layout:
+an icon over a row of text.
 
-按钮区域包含三列使用相同布局－一行文本上面一个图标。
-此行的各列被等间隙放置，文本和图标被着以初始色。
+{% include docs/app-figure.liquid
+   image="ui/layout/layout-sketch-button-block-unlabeled.svg"
+   caption="The Button section as sketch and prototype UI" %}
 
-Since the code for building each column is almost identical,
-create a private helper method named `buildButtonColumn()`,
-which takes a color, an `Icon` and `Text`,
-and returns a column with its widgets painted in the given color.
+Plan to distribute these columns in one row so each takes the same
+amount of space. Paint all text and icons with the primary color.
 
-由于构建每列的代码基本相同，
-因此可以创建一个名为
-`buildButtonColumn()` 的私有辅助函数，
-以颜色、图标和文本为入参，
-返回一个以指定颜色绘制自身
-widgets 的一个 column 列对象。
+### Add the `ButtonSection` widget
 
-<?code-excerpt "lib/main.dart (_buildButtonColumn)" title?>
+Add the following code after the `TitleSection` widget to contain the code
+to build the row of buttons.
+
+<?code-excerpt "lib/main.dart (ButtonStart)" title?>
 ```dart
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ButtonSection extends StatelessWidget {
+  const ButtonSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // ···
+    final Color color = Theme.of(context).primaryColor;
+// ···
   }
+}
+```
 
-  Column _buildButtonColumn(Color color, IconData icon, String label) {
+### Create a widget to make buttons
+
+As the code for each column could use the same syntax,
+create a widget named `ButtonWithText`.
+The widget's constructor accepts a color, icon data, and a label for the button.
+Using these values, the widget builds a `Column` with an `Icon` and a stylized
+`Text` widget as its children.
+To help separate these children, a `Padding` widget the `Text` widget
+is wrapped with a `Padding` widget.
+
+Add the following code after the `ButtonSection` class.
+
+<?code-excerpt "lib/main.dart (ButtonWithText)" title?>
+```dart
+class ButtonSection extends StatelessWidget {
+  const ButtonSection({super.key});
+// ···
+}
+
+class ButtonWithText extends StatelessWidget {
+  const ButtonWithText({
+    super.key,
+    required this.color,
+    required this.icon,
+    required this.label,
+  });
+
+  final Color color;
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(icon, color: color),
-        Container(
-          margin: const EdgeInsets.only(top: 8),
+        Padding(
+          padding: const EdgeInsets.only(top: 8),
           child: Text(
             label,
             style: TextStyle(
@@ -355,285 +403,293 @@ class MyApp extends StatelessWidget {
       ],
     );
   }
+```
+
+### Position the buttons with a `Row` widget
+
+Add the following code into the `ButtonSection` widget.
+
+1. Add three instances of the `ButtonWithText` widget, once for each button.
+1. Pass the color, `Icon`, and text for that specific button.
+1. Align the columns along the main axis with the
+   `MainAxisAlignment.spaceEvenly` value.
+   The main axis for a `Row` widget is horizontal and the main axis for a
+   `Column` widget is vertical.
+   This value, then, tells Flutter to arrange the free space in equal amounts
+   before, between, and after each column along the `Row`.
+
+<?code-excerpt "lib/main.dart (ButtonSection)" title?>
+```dart
+class ButtonSection extends StatelessWidget {
+  const ButtonSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final Color color = Theme.of(context).primaryColor;
+    return SizedBox(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ButtonWithText(
+            color: color,
+            icon: Icons.call,
+            label: 'CALL',
+          ),
+          ButtonWithText(
+            color: color,
+            icon: Icons.near_me,
+            label: 'ROUTE',
+          ),
+          ButtonWithText(
+            color: color,
+            icon: Icons.share,
+            label: 'SHARE',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ButtonWithText extends StatelessWidget {
+  const ButtonWithText({
+    super.key,
+    required this.color,
+    required this.icon,
+    required this.label,
+  });
+
+  final Color color;
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+// ···
+    );
+  }
 }
 ```
 
-The function adds the icon directly to the column.
-The text is inside a `Container` with a top-only margin,
-separating the text from the icon.
+### Update the app to display the button section
 
-这个函数直接将图标添加到这列里。
-文本在以一个仅有上间距的 Container 容器中，
-使得文本与图标分隔开。
-
-Build the row containing these columns by calling the
-function and passing the color, `Icon`, and text specific
-to that column. Align the columns along the main axis
-using `MainAxisAlignment.spaceEvenly` to arrange the
-free space evenly before, between, and after each column.
-Add the following code just below the
-`titleSection` declaration inside the `build()` method:
-
-通过调用函数并传递针对某列的颜色，`Icon` 图标和文本，
-来构建包含这些列的行。
-然后在行的主轴方向通过使用 `MainAxisAlignment.spaceEvenly`，
-将剩余的空间均分到每列各自的前后及中间。
-只需在 `build()` 方法中的 `titleSection`
-声明下添加如下代码：
-
-<?code-excerpt "lib/main.dart (buttonSection)" title?>
-```dart
-Color color = Theme.of(context).primaryColor;
-
-Widget buttonSection = Row(
-  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  children: [
-    _buildButtonColumn(color, Icons.call, 'CALL'),
-    _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
-    _buildButtonColumn(color, Icons.share, 'SHARE'),
-  ],
-);
-```
-
-Add the button section to the body:
-
-添加按钮部分到 body 属性中去：
+Add the button section to the `children` list.
 
 <?code-excerpt path-base="layout/lakes"?>
-<?code-excerpt "{step2,step3}/lib/main.dart" from="return MaterialApp" to="}"?>
+
+<?code-excerpt "step{2,3}/lib/main.dart (addWidget)" title?>
 ```diff
---- step2/lib/main.dart
-+++ step3/lib/main.dart
-@@ -48,3 +59,3 @@
-     return MaterialApp(
-       title: 'Flutter layout demo',
-       home: Scaffold(
-@@ -54,8 +65,9 @@
-         body: Column(
-           children: [
-             titleSection,
-+            buttonSection,
-           ],
-         ),
+--- step2/lib/main.dart (addWidget)
++++ step3/lib/main.dart (addWidget)
+@@ -5,6 +5,7 @@
+         name: 'Oeschinen Lake Campground',
+         location: 'Kandersteg, Switzerland',
        ),
-     );
-   }
++      ButtonSection(),
+     ],
+   ),
+ ),
 ```
 
-## Step 4: Implement the text section
+## Add the Text section
 
-## 第四步: 实现文本区域
+In this section, add the text description to this app.
 
-<?code-excerpt path-base="layout/lakes/step4"?>
+{% include docs/app-figure.liquid
+   image="ui/layout/layout-sketch-add-text-block.svg"
+   caption="The text block as sketch and prototype UI" %}
 
-Define the text section as a variable. Put the text
-in a `Container` and add padding along each edge.
-Add the following code just below the `buttonSection`
-declaration:
+<?code-excerpt path-base="layout/lakes"?>
 
-将文本区域定义为一个变量，
-将文本放置到一个 Container 容器中，
-然后为每条边添加内边距。
-只需在 `buttonSection` 声明下添加如下代码：
+### Add the `TextSection` widget
 
-<?code-excerpt "lib/main.dart (textSection)" title?>
+Add the following code as a separate widget after the `ButtonSection` widget.
+
+<?code-excerpt "step4/lib/main.dart (TextSection)" title?>
 ```dart
-Widget textSection = Container(
-  padding: const EdgeInsets.all(32),
-  child: const Text(
-    'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-    'Alps. Situated 1,578 meters above sea level, it is one of the '
-    'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-    'half-hour walk through pastures and pine forest, leads you to the '
-    'lake, which warms to 20 degrees Celsius in the summer. Activities '
-    'enjoyed here include rowing, and riding the summer toboggan run.',
-    softWrap: true,
-  ),
-);
+class TextSection extends StatelessWidget {
+  const TextSection({
+    super.key,
+    required this.description,
+  });
+
+  final String description;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(32),
+      child: Text(
+        description,
+        softWrap: true,
+      ),
+    );
+  }
+}
 ```
 
-By setting `softwrap` to true, text lines will fill the column width before
+By setting [`softWrap`][] to `true`, text lines fill the column width before
 wrapping at a word boundary.
 
-通过设置 `softwrap` 为 true，
-文本将在填充满列宽后在单词边界处自动换行。
+[`softWrap`]: {{api}}/widgets/Text/softWrap.html
 
-Add the text section to the body:
+### Update the app to display the text section
 
-添加文本部分到 body 属性：
+Add a new `TextSection` widget as a child after the `ButtonSection`.
+When adding the `TextSection` widget, set its `description` property to
+the text of the location description.
 
-<?code-excerpt path-base="layout/lakes"?>
-<?code-excerpt "{step3,step4}/lib/main.dart" from="return MaterialApp"?>
+<?code-excerpt "step{3,4}/lib/main.dart (addWidget)" title?>
 ```diff
---- step3/lib/main.dart
-+++ step4/lib/main.dart
-@@ -59,3 +72,3 @@
-     return MaterialApp(
-       title: 'Flutter layout demo',
-       home: Scaffold(
-@@ -66,6 +79,7 @@
-           children: [
-             titleSection,
-             buttonSection,
-+            textSection,
-           ],
-         ),
+--- step3/lib/main.dart (addWidget)
++++ step4/lib/main.dart (addWidget)
+@@ -6,6 +6,16 @@
+         location: 'Kandersteg, Switzerland',
        ),
+       ButtonSection(),
++      TextSection(
++        description:
++            'Lake Oeschinen lies at the foot of the Blüemlisalp in the '
++            'Bernese Alps. Situated 1,578 meters above sea level, it '
++            'is one of the larger Alpine Lakes. A gondola ride from '
++            'Kandersteg, followed by a half-hour walk through pastures '
++            'and pine forest, leads you to the lake, which warms to 20 '
++            'degrees Celsius in the summer. Activities enjoyed here '
++            'include rowing, and riding the summer toboggan run.',
++      ),
+     ],
+   ),
+ ),
 ```
 
-## Step 5: Implement the image section
+## Add the Image section
 
-## 第五步: 实现图片区域
+In this section, add the image file to complete your layout.
 
-Three of the four column elements are now complete,
-leaving only the image. Add the image file to the example:
+### Configure your app to use supplied images
 
-四个列元素中的三个已经完成了，只剩下图片部分了。如下添加图片文件到示例工程中：
+To configure your app to reference images, modify its `pubspec.yaml` file.
 
-* Create an `images` directory at the top of the project.
-* Add [`lake.jpg`][].
+1. Create an `images` directory at the top of the project.
 
-  添加 [`lake.jpg`][]
+1. Download the [`lake.jpg`][] image and add it to the new `images` directory.
 
-{{site.alert.info}}
+   {{site.alert.info}}
+     You can't use `wget` to save this binary file.
+     You can download the [image][ch-photo] from [Unsplash][]
+     under the Unsplash License. The small size comes in at 94.4 kB.
+   {{site.alert.end}}
 
-  Note that `wget` doesn't work for saving this binary file.
-  The original image is [available online][] under a
-  Creative Commons license, but it's large and slow to fetch.
-  
-  注意 `wget` 不能保存二进制文件。
-  原始的图片虽然可以在 Creative Commons 许可下 [在线获取][available online]，
-  但是文件较大，下载缓慢。
+1. To include images, add an `assets` tag to the `pubspec.yaml` file
+   at the root directory of your app.
+   When you add `assets`, it serves as the set of pointers to the images
+   available to your code.
 
-{{site.alert.end}}
+   <?code-excerpt "{step4,step5}/pubspec.yaml"?>
+   ```diff
+   --- step4/pubspec.yaml
+   +++ step5/pubspec.yaml
+   @@ -19,3 +19,5 @@
 
-* Update the `pubspec.yaml` file to include an `assets` tag.
-  This makes the image available to your code.
+    flutter:
+      uses-material-design: true
+   +  assets:
+   +    - images/lake.jpg
+   ```
 
-  更新 `pubspec.yaml` 文件，添加一个 `assets` 标签。
-  这使得在你的代码中可以访问到该图片。
-
-  <?code-excerpt "{step4,step5}/pubspec.yaml"?>
-  ```diff
-  --- step4/pubspec.yaml
-  +++ step5/pubspec.yaml
-  @@ -19,3 +19,5 @@
-
-   flutter:
-     uses-material-design: true
-  +  assets:
-  +    - images/lake.jpg
-  ```
 {{site.alert.tip}}
 
-  * Note that `pubspec.yaml` is case sensitive,
-    so write `assets:` and the image URL
-    as shown above.
+Text in the `pubspec.yaml` respects whitespace and text case.
+Write the changes to the file as given in the previous example.
 
-    请注意，`pubspec.yaml` 区分大小写，
-    因此请编写如上所示的 `assets:` 和图像 URL。
-
-  * The pubspec file is also sensitive to white
-    space, so use proper indentation.
-
-    pubspec 文件对空格也很敏感，因此请使用适当的缩进。
-
-  * You might need to restart the running program
-    (either on the simulator or a connected device) for the
-    pubspec changes to take effect.
-
-    你可能需要重新启动正在运行的程序（在模拟器或连接的设备上）
-    才能使 pubspec 更改生效。
+This change might require you to restart the running program to
+display the image.
 
 {{site.alert.end}}
 
-Now you can reference the image from your code:
+### Create the `ImageSection` widget
 
-现在你可以在你的代码中引用该图片了：
+Define the following `ImageSection` widget after the other declarations.
 
-<?code-excerpt "{step4,step5}/lib/main.dart"?>
-```diff
---- step4/lib/main.dart
-+++ step5/lib/main.dart
-@@ -77,6 +77,12 @@
-         ),
-         body: Column(
-           children: [
-+            Image.asset(
-+              'images/lake.jpg',
-+              width: 600,
-+              height: 240,
-+              fit: BoxFit.cover,
-+            ),
-             titleSection,
-             buttonSection,
-             textSection,
+<?code-excerpt "step5/lib/main.dart (ImageSection)" title?>
+```dart
+class ImageSection extends StatelessWidget {
+  const ImageSection({super.key, required this.image});
+
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      image,
+      width: 600,
+      height: 240,
+      fit: BoxFit.cover,
+    );
+  }
+}
 ```
 
-`BoxFit.cover` tells the framework that the image should
-be as small as possible but cover its entire render box.
+The `BoxFit.cover` value tells Flutter to display the image with
+two constraints. First, display the image as small as possible.
+Second, cover all the space that the layout allotted, called the render box.
 
-`BoxFit.cover` 告诉系统图片应当尽可能等比缩小到刚好能够覆盖住整个渲染 box。
+### Update the app to display the image section
 
-## Step 6: Final touch
+Add an `ImageSection` widget as the first child in the `children` list.
+Set the `image` property to the path of the image you added in
+[Configure your app to use supplied images](#configure-your-app-to-use-supplied-images).
 
-## 第六步: 最终的收尾
-
-In this final step, arrange all of the elements in a
-`ListView`, rather than a `Column`, because a
-`ListView` supports app body scrolling when the app is run
-on a small device.
-
-在最后的步骤中，需要在一个 `ListView` 中排列好所有的元素，而不是在一个 `Column` 中，
-因为当 app 运行在某个小设备上时，`ListView` 支持 app body 的滚动。
-
-<?code-excerpt "{step5,step6}/lib/main.dart" diff-u="6" from="return MaterialApp"?>
+<?code-excerpt "step{4,5}/lib/main.dart (addWidget)" title?>
 ```diff
---- step5/lib/main.dart
-+++ step6/lib/main.dart
-@@ -72,13 +77,13 @@
-     return MaterialApp(
-       title: 'Flutter layout demo',
-       home: Scaffold(
-         appBar: AppBar(
-           title: const Text('Flutter layout demo'),
-         ),
--        body: Column(
-+        body: ListView(
-           children: [
-             Image.asset(
-               'images/lake.jpg',
-               width: 600,
-               height: 240,
-               fit: BoxFit.cover,
+--- step4/lib/main.dart (addWidget)
++++ step5/lib/main.dart (addWidget)
+@@ -1,6 +1,9 @@
+ body: const SingleChildScrollView(
+   child: Column(
+     children: [
++      ImageSection(
++        image: 'images/lake.jpg',
++      ),
+       TitleSection(
+         name: 'Oeschinen Lake Campground',
+         location: 'Kandersteg, Switzerland',
 ```
+
+## Congratulations
+
+That's it! When you hot reload the app, your app should look like this.
+
+{% include docs/app-figure.liquid
+   img-class="site-mobile-screenshot border"
+   image="ui/layout/layout-demo-app.png"
+   caption="The finished app"
+   width="50%" %}
+
+## Resources
+
+You can access the resources used in this tutorial from these locations:
 
 **Dart code:** [`main.dart`][]<br>
-**Image:** [images][]<br>
+**Image:** [ch-photo][]<br>
 **Pubspec:** [`pubspec.yaml`][]<br>
 
-That's it! When you hot reload the app,
-you should see the same app layout as
-the screenshot at the top of this page.
+## Next Steps
 
-大功告成！当你热加载 app 时，你应当可以看到和本页开头截图一样的 app 布局了。
-
-You can add interactivity to this layout by following
-[Adding Interactivity to Your Flutter App][].
-
-你可以参考文档
-[为你的 Flutter 应用加入交互体验][Adding Interactivity to Your Flutter App] 
-来给这个布局增加交互。
+To add interactivity to this layout, follow the
+[interactivity tutorial][Adding Interactivity to Your Flutter App].
 
 [Adding Interactivity to Your Flutter App]: {{site.url}}/ui/interactivity
 [automatic reformatting support]: {{site.url}}/tools/formatting
-[available online]: https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=
+[ch-photo]: https://unsplash.com/photos/red-and-gray-tents-in-grass-covered-mountain-5Rhl-kSRydQ
+[Unsplash]: https://unsplash.com
+[Switzerland Tourism]: https://www.myswitzerland.com/en-us/destinations/lake-oeschinen
 [Flutter's approach to layout]: {{site.url}}/ui/layout
 [new-flutter-app]: {{site.url}}/get-started/test-drive
-[images]: {{examples}}/layout/lakes/step6/images
 [`lake.jpg`]: {{rawExFile}}/layout/lakes/step5/images/lake.jpg
 [`lib/main.dart`]: {{examples}}/layout/lakes/step2/lib/main.dart
 [hot reload]: {{site.url}}/tools/hot-reload
 [`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
-[set up]: {{site.url}}/get-started/install
+[Set up your Flutter environment]: {{site.url}}/get-started/install

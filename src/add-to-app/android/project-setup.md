@@ -42,7 +42,6 @@ IDE with the [Flutter plugin][] or manually.
   具体操作如下：
 
 <?code-excerpt title="MyApp/app/build.gradle"?>
-
 ```gradle
 android {
   //...
@@ -215,8 +214,8 @@ project as a sibling:
 并且你希望 Flutter 项目作为同级项目：
 
 ```terminal
-$ cd some/path/
-$ flutter create -t module --org com.example flutter_module
+cd some/path/
+flutter create -t module --org com.example flutter_module
 ```
 
 This creates a `some/path/flutter_module/` Flutter module project
@@ -293,11 +292,45 @@ app's `build.gradle` file, under the `android { }` block.
 android {
   //...
   compileOptions {
-    sourceCompatibility 11 # The minimum value
-    targetCompatibility 11 # The minimum value
+    sourceCompatibility 11 // The minimum value
+    targetCompatibility 11 // The minimum value
   }
 }
 ```
+
+#### Centralize repository settings
+{:.no_toc}
+
+Starting with Gradle 7, Android recommends using centralized repository
+declarations in `settings.gradle` instead of project or module level
+declarations in `build.gradle` files.
+
+Before attempting to connect your Flutter module project to your
+host Android app, make the following changes.
+
+1. Remove the `repositories` block in all of your app's `build.gradle` files.
+
+   ```groovy
+   // Remove the following block, starting on the next line
+       repositories {
+           google()
+           mavenCentral()
+       }
+   // ...to the previous line
+   ```
+
+1. Add the `dependencyResolutionManagement` displayed in this step to the
+   `settings.gradle` file.
+
+   ```groovy
+   dependencyResolutionManagement {
+     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+     repositories {
+       google()
+       mavenCentral()
+     }
+   }
+   ```
 
 </div>
 </div>
@@ -370,8 +403,8 @@ Let's assume you built a Flutter module at
 假设你在 `some/path/flutter_module` 下构建 Flutter 模块，执行如下命令：
 
 ```terminal
-$ cd some/path/flutter_module
-$ flutter build aar
+cd some/path/flutter_module
+flutter build aar
 ```
 
 Then, follow the on-screen instructions to integrate.
@@ -414,35 +447,32 @@ to find these files.
 
 要依赖 AAR，宿主应用必须能够找到这些文件。
 
-To do that, edit `app/build.gradle` in your host app
+To do that, edit `settings.gradle` in your host app
 so that it includes the local repository and the dependency:
 
-为此，需要在宿主应用程序中修改 `app/build.gradle` 文件，
+为此，需要在宿主应用程序中修改 `settings.gradle` 文件，
 使其包含本地存储库和上述依赖项：
 
-<?code-excerpt title="MyApp/app/build.gradle"?>
 ```gradle
-android {
-  // ...
+dependencyResolutionManagement {
+  repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+  repositories {
+    google()
+    mavenCentral()
+
+  // Add the new repositories starting on the next line...
+    maven {
+      url 'some/path/flutter_module/build/host/outputs/repo'
+      // This is relative to the location of the build.gradle file
+      // if using a relative path.
+    }
+    maven {
+      url 'https://storage.googleapis.com/download.flutter.io'
+    }
+  // ...to before this line  
+  }
 }
 
-repositories {
-  maven {
-    url 'some/path/flutter_module/build/host/outputs/repo'
-    // This is relative to the location of the build.gradle file
-    // if using a relative path.
-  }
-  maven {
-    url 'https://storage.googleapis.com/download.flutter.io'
-  }
-}
-
-dependencies {
-  // ...
-  debugImplementation 'com.example.flutter_module:flutter_debug:1.0'
-  profileImplementation 'com.example.flutter_module:flutter_profile:1.0'
-  releaseImplementation 'com.example.flutter_module:flutter_release:1.0'
-}
 ```
 
 {{site.alert.important}}
@@ -558,7 +588,7 @@ Continue to the [Adding a Flutter screen to an Android app][] guide.
 [向 Android 应用中添加 Flutter 页面][Adding a Flutter screen to an Android app]
 继续进一步的集成。
 
-[`abiFilters`]: https://developer.android.com/reference/tools/gradle-api/4.2/com/android/build/api/dsl/Ndk#abiFilters:kotlin.collections.MutableSet
+[`abiFilters`]: {{site.android-dev}}/reference/tools/gradle-api/4.2/com/android/build/api/dsl/Ndk#abiFilters:kotlin.collections.MutableSet
 [Adding a Flutter screen to an Android app]: {{site.url}}/add-to-app/android/add-flutter-screen
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [local repository]: https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local

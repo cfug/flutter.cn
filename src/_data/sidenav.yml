@@ -1,14 +1,12 @@
 - title: 开始使用 Flutter
   children:
-    - title: 1. 安装和环境配置
+    - title: 安装和环境配置
       permalink: /docs/get-started/install
-    - title: 2. 编辑工具设定
-      permalink: /docs/get-started/editor
-    - title: 3. 开发体验初探
+    - title: 开发体验初探
       permalink: /docs/get-started/test-drive
-    - title: 4. 编写第一个 Flutter 应用
+    - title: 编写第一个 Flutter 应用
       permalink: /docs/get-started/codelab
-    - title: 5. 了解更多
+    - title: 了解更多
       permalink: /docs/get-started/learn-more
     - divider
     - title: 拥有其他平台开发经验？

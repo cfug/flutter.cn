@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bookworm@sha256:02a091c83d1aa1070c0f6fefcbd2aff58ddd3430e2d5661c6ef2142b1383349b AS base
+FROM ruby:3.3-slim-bookworm@sha256:763422273a15e307b044fcb3ad6b1ef6c290d2043ac73596842aba5659dc7318 as base
 
 SHELL ["/usr/bin/bash", "-c"]
 
@@ -85,6 +85,7 @@ FROM node AS dev
 #RUN bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
 
 ENV JEKYLL_ENV=development
+ENV RUBY_YJIT_ENABLE=1
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true
@@ -116,6 +117,7 @@ RUN tool/move_docs.sh; tool/translator/build.sh
 FROM node AS build
 
 ENV JEKYLL_ENV=production
+ENV RUBY_YJIT_ENABLE=1
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true

@@ -1,6 +1,8 @@
 ---
-title: Install
-title: 安装和环境配置
+title: Choose your development platform to get started
+title: 选择你的开发平台，开始使用
+short-title: Install
+short-title: 安装和环境配置
 description: Install Flutter and get started. Downloads available for Windows, macOS, Linux, and ChromeOS operating systems.
 description: Flutter安装和上手起步教程, 下载 Windows、macOS、Linux 和 ChromeOS 系统的 Flutter SDK。
 tags: Flutter安装,Flutter环境搭建
@@ -12,7 +14,8 @@ next:
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
 
-Select the operating system on which you are installing Flutter:
+<!-- ## Choose your development platform to get started
+{:.no_toc} -->
 
 你想把 Flutter 安装在哪个操作系统呢？
 

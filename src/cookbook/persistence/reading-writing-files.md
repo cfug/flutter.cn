@@ -7,6 +7,8 @@ tags: cookbook, 实用教程, 持久化
 keywords: 文件读写,临时文件夹,Documents目录
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/persistence/reading_writing_files/"?>
 
 In some cases, you need to read and write files to disk.
@@ -48,17 +50,17 @@ on the `path_provider` package:
 
 你可以观看每周 package 视频来了解更多关于 `path_provider` 的内容：
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/Ci4t-NkOY3I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="full-width" src="{{yt-embed}}/Ci4t-NkOY3I" title="了解 path_provider Flutter Package" {{yt-set}}></iframe>
 
 {{site.alert.note}}
 
   This recipe doesn't work with web apps at this time.
   To follow the discussion on this issue,
-  check out `flutter/flutter` [issue #45296]({{site.github}}/flutter/flutter/issues/45296).
+  check out `flutter/flutter` [issue #45296]({{site.repo.flutter}}/issues/45296).
 
   该方法目前在 Web 平台上不可用。
   若你想跟踪讨论，请访问 `flutter/flutter`
-  [issue #45296]({{site.github}}/flutter/flutter/issues/45296)。
+  [issue #45296]({{site.repo.flutter}}/issues/45296)。
 
 {{site.alert.end}}
 

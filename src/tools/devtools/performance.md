@@ -7,11 +7,13 @@ tags: Flutter开发工具,DevTools
 keywords: 开发者工具,性能视图,Dart,性能优化
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {{site.alert.note}}
 
   The DevTools performance view works for Flutter mobile and desktop apps.
   For web apps, Flutter adds timeline events to the
-  performance panel of Chrome DevTools instead. 
+  performance panel of Chrome DevTools instead.
   To learn about profiling web apps, check out [Debugging web performance][].
 
   性能视图可用于 Flutter 移动端、Flutter 桌面端、Dart 和 Flutter 网页端应用。
@@ -86,7 +88,7 @@ Flutter is designed to render its UI at 60 frames per second
 Each render is called a _frame_.
 This means that, approximately every 16ms, the UI updates
 to reflect animations or other changes to the UI. A frame
-that takes longer than 16ms to render causes jank 
+that takes longer than 16ms to render causes jank
 (jerky motion) on the display device.
 
 Flutter 的 UI 设计为每秒渲染 60 帧（fps），或者在支持 120Hz 更新的设备上为 120 帧。
@@ -131,7 +133,7 @@ The flutter frames chart updates when new frames
 are drawn in your app. To pause updates to this chart,
 click the pause button to the right of the chart.
 This chart can be collapsed to provide more viewing space
-for data below by clicking the **Flutter frames** button above the chart. 
+for data below by clicking the **Flutter frames** button above the chart.
 
 在应用程序运行过程中绘制新的帧时，会更新 Flutter 帧图表。
 点击图表右侧的暂停按钮就可以暂停图表的更新，
@@ -352,7 +354,7 @@ your application, click the refresh button
 
 ## 高级调试工具
 
-### Enhance tracing 
+### Enhance tracing
 
 ### 增强的追踪选项
 
@@ -391,6 +393,8 @@ The name of the widget is shown in the timeline event.
 
 ![Screenshot of track widget builds]({{site.url}}/assets/images/docs/tools/devtools/track-widget-builds.png)
 
+[Watch this video for an example of tracking widget builds][track-widgets]
+
 ### Track layouts
 
 ### 追踪布局
@@ -401,6 +405,8 @@ enable the **Track Layouts** option:
 想要在时间线中查看 `RenderObject` 布局构建的事件，启用 Track Layouts 选项：
 
 ![Screenshot of track layouts]({{site.url}}/assets/images/docs/tools/devtools/track-layouts.png)
+
+[Watch this video for an example of tracking layouts][track-layouts]
 
 ### Track paints
 
@@ -413,6 +419,8 @@ enable the **Track Paints** option:
 启用 **Track Paints** 选项：
 
 ![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
+
+[Watch this video for an example of tracking paints][track-paints]
 
 ## More debugging options
 
@@ -505,3 +513,6 @@ detect jank using DevTools, check out a guided
 [Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export
 [performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
+[track-widgets]: {{yt-watch}}/_EYk-E29edo?t=623
+[track-layouts]: {{yt-watch}}/_EYk-E29edo?t=676
+[track-paints]: {{yt-watch}}/_EYk-E29edo?t=748

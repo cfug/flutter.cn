@@ -9,6 +9,8 @@ tags: 用户界面,Flutter UI,动画
 keywords: 动画效果实现
 ---
 
+{% include docs/yt_shims.liquid %}
+
 Well-designed animations make a UI feel more intuitive,
 contribute to the slick look and feel of a polished app,
 and improve the user experience.
@@ -41,7 +43,7 @@ To help you decide, check out the video,
 [如何在 Flutter 中选择合适的动画 Widget][How to choose which Flutter Animation Widget is right for you?]
 （同时也发布了一篇 [配套文章][article1]。）
 
-<center><iframe width="560" height="315" src="{{site.youtube-site}}/embed/GXIJJkq_H8g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<iframe width="560" height="315" src="{{yt-embed}}/GXIJJkq_H8g" title="Learn how to choose the Flutter Animation Widget for your use case" {{yt-set}}></iframe>
 
 (To dive deeper into the decision process,
 watch the [Animations in Flutter done right][] video,
@@ -70,7 +72,11 @@ to implement) suits your needs, watch
 请观看 [隐式动画基础][Animation basics with implicit animations]。
 （同时也发布了一篇 [配套文章][article2]。）
 
-<center><iframe width="560" height="315" src="{{site.youtube-site}}/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<iframe width="560" height="315" src="{{yt-embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{yt-set}}></iframe>
+
+[Learn about Animation Basics with Implicit Animations]({{yt-watch}}/IVTjpW3W33s)
+
+[使用隐式动画了解动画基础知识]({{yt-watch}}/IVTjpW3W33s)
 
 To create a custom implicit animation, watch
 [Creating your own custom implicit animations with TweenAnimationBuilder][].
@@ -80,7 +86,11 @@ To create a custom implicit animation, watch
 [使用 TweenAnimationBuilder 创建独特的隐式动画][Creating your own custom implicit animations with TweenAnimationBuilder]。
 （同时也发布了一篇 [配套文章][article3]。）
 
-<center><iframe width="560" height="315" src="{{site.youtube-site}}/embed/6KiPEqzJIKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<iframe width="560" height="315" src="{{yt-embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{yt-set}}></iframe>
+
+[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{yt-watch}}/6KiPEqzJIKQ)
+
+[了解如何使用 TweenAnimationBuilder 构建自定义隐式动画]({{yt-watch}}/6KiPEqzJIKQ)
 
 To create an explicit animation (where you control the animation,
 rather than letting the framework control it), perhaps
@@ -96,7 +106,7 @@ built-in explicit animations][].
 built-in explicit animations]。
 （同时也发布了一篇 [配套文章][article4]。）
 
-<center><iframe width="560" height="315" src="{{site.youtube-site}}/embed/CunyH6unILQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<iframe width="560" height="315" src="{{yt-embed}}/CunyH6unILQ" title="Learn about the built-in explicit animations in Flutter" {{yt-set}}></iframe>
 
 If you need to build an explicit animation from scratch, watch
 [Creating custom explicit animations with
@@ -107,7 +117,7 @@ AnimatedBuilder and AnimatedWidget][].
 [通过 AnimatedBuilder 和 AnimatedWidget 创建一个自定义动画][Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]。
 （同时也发布了一篇[配套文章][article5]。）
 
-<center><iframe width="560" height="315" src="{{site.youtube-site}}/embed/fneC7t4R_B0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<iframe width="560" height="315" src="{{yt-embed}}/fneC7t4R_B0" title="Learn about building Custom Explicit Animations with the AnimatedBuilder and AnimatedWidget Flutter Widgets" {{yt-set}}></iframe>
 
 For a deeper understanding of just how animations work in Flutter, watch
 [Animation deep dive][].
@@ -117,9 +127,9 @@ For a deeper understanding of just how animations work in Flutter, watch
 请观看 [深入理解动画][Animation deep dive]。
 （同时也发布了一篇 [配套文章][article6]。）
 
-<center><iframe width="560" height="315" src="{{site.youtube-site}}/embed/PbcILiN8rbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<iframe width="560" height="315" src="{{yt-embed}}/PbcILiN8rbo" title="Take a deep dive into Flutter animation" {{yt-set}}></iframe>
 
-## Codelabs, tutorials, and articles 
+## Codelabs, tutorials, and articles
 
 ## Codelabs, 教程和文章
 
@@ -387,13 +397,13 @@ Learn more about Flutter animations at the following links:
 [Animate a widget using a physics simulation]: {{site.url}}/cookbook/animation/physics-simulation
 [`AnimatedList` example]: https://flutter.github.io/samples/animations.html
 [Animation and motion widgets]: {{site.url}}/ui/widgets/animation
-[Animation basics with implicit animations]: {{site.youtube-site}}/watch?v=IVTjpW3W33s&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=1
-[Animation deep dive]: {{site.youtube-site}}/watch?v=PbcILiN8rbo&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=5
+[Animation basics with implicit animations]: {{yt-watch}}?v=IVTjpW3W33s&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=1
+[Animation deep dive]: {{yt-watch}}?v=PbcILiN8rbo&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=5
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
 [Animation recipes]: {{site.url}}/cookbook/animation
-[Animation samples]: {{site.github}}/flutter/samples/tree/main/animations#animation-samples
+[Animation samples]: {{site.repo.samples}}/tree/main/animations#animation-samples
 [Animation videos]: {{site.social.youtube}}/search?query=animation
-[Animations in Flutter done right]: {{site.youtube-site}}/watch?v=wnARLByOtKA&t=3s
+[Animations in Flutter done right]: {{yt-watch}}?v=wnARLByOtKA&t=3s
 [Animations: overview]: {{site.url}}/ui/animations/overview
 [animations package]: {{site.pub}}/packages/animations
 [Animations tutorial]: {{site.url}}/ui/animations/tutorial
@@ -404,16 +414,16 @@ Learn more about Flutter animations at the following links:
 [article4]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
 [article5]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
 [article6]: {{site.flutter-medium}}/animation-deep-dive-39d3ffea111f
-[Creating your own custom implicit animations with TweenAnimationBuilder]: {{site.youtube-site}}/watch?v=6KiPEqzJIKQ&feature=youtu.be
-[Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.youtube-site}}/watch?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
+[Creating your own custom implicit animations with TweenAnimationBuilder]: {{yt-watch}}?v=6KiPEqzJIKQ&feature=youtu.be
+[Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{yt-watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [Flutter API documentation]: {{site.api}}
 [Flutter Gallery]: {{site.repo.gallery}}
 [`Grid`]: {{site.repo.gallery}}/blob/main/lib/demos/material/grid_list_demo.dart
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [Hero animations]: {{site.url}}/ui/animations/hero-animations
-[How to choose which Flutter Animation Widget is right for you?]: {{site.youtube-site}}/watch?v=GXIJJkq_H8g
+[How to choose which Flutter Animation Widget is right for you?]: {{yt-watch}}?v=GXIJJkq_H8g
 [Implicit animations codelab]: {{site.url}}/codelabs/implicit-animations
-[Making your first directional animations with built-in explicit animations]: {{site.youtube-site}}/watch?v=CunyH6unILQ&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=3
+[Making your first directional animations with built-in explicit animations]: {{yt-watch}}?v=CunyH6unILQ&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=3
 [Material widgets]: {{site.url}}/ui/widgets/material
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
@@ -422,6 +432,5 @@ Learn more about Flutter animations at the following links:
 [Shrine]: {{site.repo.gallery}}/tree/main/lib/studies/shrine
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: {{site.url}}/ui/animations/staggered-animations
-[Step 7 (Animate your app)]: {{site.codelabs}}/codelabs/flutter/#6
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 [Zero to One with Flutter, part 1]: {{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354

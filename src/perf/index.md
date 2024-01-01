@@ -7,12 +7,14 @@ tags: Flutter性能
 keywords: 性能评估,包体积,内存占用
 ---
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=243695231&bvid=BV1zv411B7gY&cid=207457008&page=1&autoplay=false" 
-frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
-picture-in-picture" allowfullscreen></iframe>
-[Flutter performance basics]({{site.youtube-site}}/watch?v=PKGguGUwSYE)
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
 
-[Flutter 性能入门](https://www.bilibili.com/video/BV1zv411B7gY/)
+<iframe width="560" height="315" src="{{bili-embed}}?aid=243695231&bvid=BV1zv411B7gY&cid=207457008&page=1&autoplay=false" title="了解提高 Flutter 性能的技巧" {{bili-set}}></iframe>
+
+[Flutter performance basics]({{yt-watch}}?v=PKGguGUwSYE)
+
+[Flutter 性能入门]({{bili-video}}/BV1zv411B7gY/)
 
 {{site.alert.note}}
 
@@ -31,9 +33,9 @@ What is performance? Why is performance important? How do I improve performance?
 
 什么是性能？为什么性能很重要？如何才能提升性能？
 
-Our goal is to answer those three questions (mainly the third one), and 
-anything related to them. This document should serve as the single entry 
-point or the root node of a tree of resources that addresses any questions 
+Our goal is to answer those three questions (mainly the third one), and
+anything related to them. This document should serve as the single entry
+point or the root node of a tree of resources that addresses any questions
 that you have about performance.
 
 我们的目标是回答这三个问题（主要是第三个）以及任何与之相关的话题。
@@ -42,6 +44,7 @@ that you have about performance.
 The answers to the first two questions are mostly philosophical,
 and not as helpful to many developers who visit this page with specific
 performance issues that need to be solved.
+Therefore, the answers to those
 questions are in the [appendix]({{site.url}}/perf/appendix).
 
 前两个问题的答案比较哲学，对于正在阅读这篇文章的开发者而言，当他们需要解决特定的性能问题时，并没有什么帮助。
@@ -57,9 +60,9 @@ and which tools and APIs are available to get the metrics.
 在 [指标]({{site.url}}/perf/metrics) 页面，你可以看到一些现有的指标，
 以及哪些工具和 API 可以用于获取这些指标。
 
-There is a list of [Frequently asked questions]({{site.url}}/perf/faq), 
-so you can find out if the questions you have or the problems you're having 
-were already answered or encountered, and whether there are existing solutions. 
+There is a list of [Frequently asked questions]({{site.url}}/perf/faq),
+so you can find out if the questions you have or the problems you're having
+were already answered or encountered, and whether there are existing solutions.
 (Alternatively, you can check the Flutter GitHub issue database using the
 [performance][performance] label.)
  
@@ -68,9 +71,9 @@ were already answered or encountered, and whether there are existing solutions.
 以及是否有现成的解决方案。
 （你也可以查看 GitHub issues 里含有 [性能][performance] 标签的内容。） 
 
-Finally, the performance issues are divided into four categories. They 
-correspond to the four labels that are used in the Flutter GitHub issue 
-database: "[perf: speed][speed]", "[perf: memory][memory]", 
+Finally, the performance issues are divided into four categories. They
+correspond to the four labels that are used in the Flutter GitHub issue
+database: "[perf: speed][speed]", "[perf: memory][memory]",
 "[perf: app size][size]", "[perf: energy][energy]".
 
 最后，性能问题可以分为四类，对应 GitHub issue 里的四个标签：
@@ -84,11 +87,12 @@ The rest of the content is organized using those four categories.
 Let's put "speed" (rendering) first as it's the most popular performance issue
 category.
 {% endcomment -%}
+
 ## Speed
 
 ## 流畅度
 
-Are your animations janky (not smooth)? Learn how to 
+Are your animations janky (not smooth)? Learn how to
 evaluate and fix rendering issues.
 
 你的动画是否卡顿（不流畅）？学习如何评估和修复渲染问题。
@@ -104,7 +108,7 @@ in some future pages.
 
 {% comment %}
 
-TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
+TODO(<https://github.com/flutter/website/issues/8249>): Reintroduce this article and add this link back.
 
 ## Memory
 
@@ -131,7 +135,7 @@ the quicker it is to download.
 
 {% comment %}
 
-TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
+TODO(<https://github.com/flutter/website/issues/8249>): Reintroduce this article and add this link back.
 
 ## Energy
 

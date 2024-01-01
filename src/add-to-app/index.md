@@ -221,7 +221,7 @@ see our API usage guides at the following links:
 
   Android 平台的 Flutter 模块仅支持适配了 AndroidX 的应用。
 
-[add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/main/add_to_app
+[add-to-app GitHub Samples repository]: {{site.repo.samples}}/tree/main/add_to_app
 [Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
 [Flutter plugins]: {{site.pub}}/flutter
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html

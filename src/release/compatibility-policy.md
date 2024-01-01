@@ -109,4 +109,4 @@ migration guide.
 这一类的改动不一定会被写入迁移指南。
 
 [separate breaking-change policy]: {{site.github}}/dart-lang/sdk/blob/main/docs/process/breaking-changes.md
-[Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart announce]: {{site.groups}}/a/dartlang.org/g/announce

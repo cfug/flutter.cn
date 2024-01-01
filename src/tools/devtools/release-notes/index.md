@@ -10,7 +10,7 @@ toc: false
 
 This page summarizes the changes in official stable releases of DevTools.
 To view a complete list of changes, check out the
-[DevTools git log](https://github.com/flutter/devtools/commits/master).
+[DevTools git log]({{site.repo.organization}}/devtools/commits/master).
 
 本篇链接的是 Flutter 和 Dart DevTools 的公告和发行注记。
 如果你想查看完整的变更内容，你可以查看

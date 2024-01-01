@@ -5,6 +5,9 @@ description: Some considerations and instructions on how to build adaptive apps 
 description: 针对多样化的平台构建自适应的应用的重点和指南。
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 <?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
 
 ## Overview
@@ -43,7 +46,7 @@ apps, but they fall into three major categories:
 
   [平台行为习惯与规范](#idioms-and-norms)
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=421723399&bvid=BV1i3411878z&cid=442392038&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{bili-embed}}?aid=421723399&bvid=BV1i3411878z&cid=442392038&page=1&autoplay=false" title="Learn how to build platform-adaptive Flutter apps" {{bili-set}}></iframe>
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.
@@ -69,7 +72,7 @@ Original demo code for adaptive app development techniques from [flutter-adaptiv
 One of the first things you must consider when writing
 your app for multiple platforms is how to adapt
 it to the various sizes and shapes of the screens that
-it will run on. 
+it will run on.
 
 在构建多平台的应用时，首要考虑的是如何针对不同大小的设备进行尺寸适配。
 
@@ -80,7 +83,7 @@ it will run on.
 If you've been building apps or websites,
 you're probably familiar with creating responsive interfaces.
 Luckily for Flutter developers,
-there are a large set of widgets to make this easier. 
+there are a large set of widgets to make this easier.
 
 如果你已经开发过应用或网站，那你可能已经熟悉如何构建自适应的界面。
 好消息是，对于 Flutter 开发者而言，有非常多的 widgets 让构建更为简单。
@@ -263,7 +266,7 @@ return MaterialApp(
 ```
 
 To use `VisualDensity` inside your own views,
-you can look it up: 
+you can look it up:
 
 若想在你的视图中使用 `VisualDensity`，你可以向上查找：
 
@@ -287,7 +290,7 @@ so it can mean different things to different views.
 In this example, 1 density unit equals 6 pixels,
 but this is totally up to your views to decide.
 The fact that it is unit-less makes it quite versatile,
-and it should work in most contexts. 
+and it should work in most contexts.
 
 我们可以看到，`VisualDensity` 是没有单位的，
 所以在不同的视图上可能有不同的含义。
@@ -301,7 +304,7 @@ use a value of around 4 logical pixels for each
 visual density unit. For more information about the
 supported components, see [`VisualDensity`][] API.
 For more information about density principles in general,
-see the [Material Design guide][]. 
+see the [Material Design guide][].
 
 值得注意的是，在 Material 的组件中，1 个单位的视觉密度通常等于 4 个逻辑像素。
 你可以查看 [`VisualDensity`][] API 文档了解更多支持视觉密度的组件。
@@ -318,7 +321,7 @@ If you need more than density changes and can't find a
 widget that does what you need, you can take a more
 procedural approach to adjust parameters, calculate sizes,
 swap widgets, or completely restructure your UI to suit
-a particular form factor. 
+a particular form factor.
 
 如果你需要的不仅是密度的变化，并且没有找到一个满足需求的 widget，
 那么你可以使用代码进行更细化的控制、计算尺寸、切换 widgets
@@ -332,7 +335,7 @@ The simplest form of procedural layouts uses
 screen-based breakpoints. In Flutter,
 this can be done with the `MediaQuery` API.
 There are no hard and fast rules for the sizes to use
-here, but these are general values: 
+here, but these are general values:
 
 最简单的代码控制布局方式是基于屏幕尺寸来定义分界点。
 在 Flutter 中，你可以使用 `MediaQuery` API 实现这些分界点。
@@ -381,11 +384,11 @@ ScreenSize getSize(BuildContext context) {
   return ScreenSize.small;
 }
 ```
- 
+
 Screen-based breakpoints are best used for making
 top-level decisions in your app. Changing things like
 visual density, paddings, or font-sizes are best when
-defined on a global basis. 
+defined on a global basis.
 
 使用基于屏幕大小的分界点的最佳场景，是在应用的顶层进行尺寸决策。
 在需要改变视觉密度、边距或者字体大小时，定义全局的基数是最好的方式。
@@ -407,7 +410,7 @@ return Flex(
 ```
 
 In another widget,
-you might swap some of the children completely: 
+you might swap some of the children completely:
 
 在其他的 widget 中，你也可以切换部分子级 widget：
 
@@ -477,8 +480,8 @@ There are times when you want to make layout decisions
 based on the actual platform you're running on,
 regardless of size. For example, when building a
 custom title bar, you might need to check the operating
-system type and tweak the layout of your title bar, so
-it doesn't get covered by the native window buttons. 
+system type and tweak the layout of your title bar,
+so it doesn't get covered by the native window buttons.
 
 有时你可能需要根据实际运行的平台进行布局处理，而不是基于大小。
 例如，在构建自定义的标题栏时，
@@ -489,8 +492,6 @@ you can use the [`Platform`][] API along with the `kIsWeb` value:
 
 想判断应用当前所处的平台，你可以使用 [`Platform`][] API 和 `kIsWeb` 组合进行判断：
 
-[`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
-
 <?code-excerpt "lib/global/device_type.dart (Platforms)"?>
 ```dart
 bool get isMobileDevice => !kIsWeb && (Platform.isIOS || Platform.isAndroid);
@@ -500,9 +501,9 @@ bool get isMobileDeviceOrWeb => kIsWeb || isMobileDevice;
 bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
 ```
 
-The `Platform` API can't be accessed from web builds without 
+The `Platform` API can't be accessed from web builds without
 throwing an exception, because the `dart.io` package isn't
-supported on the web target. As a result, this code checks 
+supported on the web target. As a result, the above code checks
 for web first, and because of short-circuiting,
 Dart never calls `Platform` on web targets.
 
@@ -510,6 +511,19 @@ Dart never calls `Platform` on web targets.
 导致使用 `Platform` API 时会异常。
 所以在上面的代码中，会首先判断是否在 Web 平台，
 基于这个条件，在 Web 平台上永远不会调用 `Platform` API。
+
+Use `Platform`/`kIsWeb` when the logic absolutely <i>must</i>
+run for a given platform. For example,
+talking to a plugin that only works on iOS,
+or displaying a widget that only conforms to
+Play Store policy and not the App Store's.
+
+当逻辑<i>必须</i>在特定平台上运行时，
+请使用 `Platform`/`kIsWeb`。
+例如，与仅适用于 iOS 的插件交互，
+或显示仅符合 Play Store 政策而非 App Store 政策的 widget。
+
+[`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
 
 ### Single source of truth for styling
 
@@ -568,6 +582,10 @@ return Padding(
 );
 ```
 
+Use `Theme.of(context).platform` for theming and
+design choices, like what kind of switches to show
+and general Cupertino/Material adaptions.
+
 With all views referencing the same shared-design system rules,
 they tend to look better and more consistent.
 Making a change or adjusting a value for a specific platform
@@ -580,11 +598,11 @@ of helping enforce consistency on the design side.
 使用共享的规则也对设计的一致性有所帮助。
 
 Some common design system categories that can be represented
-this way are: 
+this way are:
 
 常见的设计类型里，如下这些类别可以以这样的方式进行组织：
 
-* Animation timings 
+* Animation timings
 
   动画时间
 
@@ -604,7 +622,7 @@ this way are:
 
   阴影
 
-* Strokes 
+* Strokes
 
   笔画
 
@@ -672,7 +690,7 @@ you can leverage.
 ### 通过构建桌面应用程序进行快速测试
 
 One of the most effective ways to test adaptive
-interfaces is to take advantage of the desktop build targets. 
+interfaces is to take advantage of the desktop build targets.
 
 测试自适应界面的最快方式，是利用桌面端快速进行构建。
 
@@ -693,7 +711,7 @@ development of a responsive UI.
 Building a great touch UI can often be more difficult
 than a traditional desktop UI due, in part,
 to the lack of input accelerators like right-click,
-scroll wheel, or keyboard shortcuts. 
+scroll wheel, or keyboard shortcuts.
 
 在移动端构建优良的触摸交互式 UI 通常比传统的桌面端更为困难，
 因为它缺少类似右键单击、滚轮或键盘快捷键这样的快速输入设备。
@@ -702,7 +720,7 @@ One way to approach this challenge is to focus initially
 on a great touch-oriented UI. You can still do most of
 your testing using the desktop target for its iteration speed.
 But, remember to switch frequently to a mobile device to
-verify that everything feels right. 
+verify that everything feels right.
 
 在一开始就专注于提升触摸体验的 UI，足以应对这样的挑战。
 你依旧可以使用桌面端来提高你的开发效率，但要记得时不时切换回移动端，
@@ -846,7 +864,7 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
 To get more control over the order that
 widgets are focused on when the user presses tab,
 you can use [`FocusTraversalGroup`][] to define sections
-of the tree that should be treated as a group when tabbing. 
+of the tree that should be treated as a group when tabbing.
 
 想要控制用户按下 Tab 键时的 widget 切换顺序，
 你可以使用 [`FocusTraversalGroup`][] 来指定树中的区域，作为切换时的组别。
@@ -1111,10 +1129,6 @@ return MouseRegion(
 );
 ```
 
-
-[`MouseRegions`]: {{site.api}}/flutter/widgets/MouseRegion-class.html
-
-
 ## Idioms and norms
 
 ## 平台行为习惯与规范
@@ -1146,7 +1160,7 @@ significant benefits:
   Conversely, a UI that feels familiar can build user trust
   and can help improve the perception of quality.
   This often has the added benefit of better app store
-  ratings&mdash;something we can all appreciate! 
+  ratings&mdash;something we can all appreciate!
 
   **建立与用户之间的信任**&mdash;&mdash;在应用的交互表现不如预期时，
   用户会逐渐对应用本身产生怀疑。相反，使用让用户感到熟悉的 UI，
@@ -1180,7 +1194,7 @@ them completely. For example, a lifetime Android user is
 likely unaware of platform conventions on iOS,
 and the same holds true for macOS, Linux, and Windows.
 These differences might be subtle to you,
-but be painfully obvious to an experienced user. 
+but be painfully obvious to an experienced user.
 
 如果你本身不是这个平台的常用用户，这项工作就有一定的难度。
 某些特定的行为和习惯，很容易会被你完全忽略。
@@ -1224,7 +1238,7 @@ on a regular basis.
   **Important**: Advocates don't need to be developers or
   even full-time team members. They can be designers,
   stakeholders, or external testers that are provided
-  with regular builds. 
+  with regular builds.
 
   **重要**：负责人不需要是开发者或者一直在开发的团队成员，
   可以是设计师、利益相关的人士或是外部的版本定期测试人员。
@@ -1245,7 +1259,7 @@ and title bars.
 许多非常流行的多平台应用都有自成一派的 UI，包括自定义按钮、选项菜单和标题栏等。
 
 The more you can consolidate styling and behavior across platforms,
-the easier development and testing will be. 
+the easier development and testing will be.
 The trick is to balance creating a unique experience with a
 strong identity, while respecting the norms of each platform.
 
@@ -1271,7 +1285,7 @@ Desktop and mobile users expect scrollbars,
 but they expect them to behave differently on different platforms.
 Mobile users expect smaller scrollbars that only appear
 while scrolling, whereas desktop users generally expect
-omnipresent, larger scrollbars that they can click or drag. 
+omnipresent, larger scrollbars that they can click or drag.
 
 无论是桌面端还是移动端的用户，都需要滚动条，
 但他们对不同平台所期待的行为是不一样的。
@@ -1311,7 +1325,7 @@ comfortable on a given platform.
 #### 多选
 
 Dealing with multi-select within a list is another area
-with subtle differences across platforms: 
+with subtle differences across platforms:
 
 跨平台的另一个存在差异的地方，是如何处理列表中的多选：
 
@@ -1322,7 +1336,7 @@ static bool get isSpanSelectModifierDown =>
 ```
 
 To perform a platform-aware check for control or command,
-you can write something like this: 
+you can write something like this:
 
 要想监测不同平台的 Control 或 Command 键，你可以编写以下的代码：
 
@@ -1346,7 +1360,7 @@ static bool get isMultiSelectModifierDown {
 A final consideration for keyboard users is the **Select All** action.
 If you have a large list of items of selectable items,
 many of your keyboard users will expect that they can use
-`Control+A` to select all the items. 
+`Control+A` to select all the items.
 
 最后一项针对键盘用户需要考虑的是 **全选** 操作。
 如果你的列表里有很多的可选择内容，
@@ -1361,7 +1375,7 @@ with the expected behavior being similar to having the
 `isMultiSelectModifier` down on the desktop.
 You can select or deselect items using a single tap,
 and will usually have a button to **Select All** or
-**Clear** the current selection. 
+**Clear** the current selection.
 
 在触屏设备上，多选操作通常会被简化，
 与在桌面上按下了 `isMultiSelectModifier`（多选按钮）的行为类似。
@@ -1386,7 +1400,7 @@ users on the web tend to have an adverse reaction.
 对于 Web 平台（以及小部分的桌面平台）而言，大部分能看到的文字都是可以使用鼠标选择的。
 如果不能选择，用户可能会感到不正常。
 
-Luckily, this is easy to support with the [`SelectableText`][] widget: 
+Luckily, this is easy to support with the [`SelectableText`][] widget:
 
 幸运的是，使用 [`SelectableText`][] 就可以很简单地支持选择：
 
@@ -1395,7 +1409,7 @@ Luckily, this is easy to support with the [`SelectableText`][] widget:
 return const SelectableText('Select me!');
 ```
 
-To support rich text, then use `TextSpan`: 
+To support rich text, then use `TextSpan`:
 
 可以用 `TextSpan` 支持富文本：
 
@@ -1420,7 +1434,7 @@ return const SelectableText.rich(
 On modern desktop applications, it's common to customize
 the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
-vertical space in your main UI. 
+vertical space in your main UI.
 
 在现代的桌面应用程序中，经常会有定制应用窗口的标题栏、添加 Logo 或者其他控制的需求，
 能节省界面对于垂直空间的占用。
@@ -1500,7 +1514,7 @@ return const Tooltip(
 ```
 
 Flutter also provides built-in context menus when editing
-or selecting text. 
+or selecting text.
 
 Flutter 同时也为编辑和选择文字提供了内置的上下文菜单。
 
@@ -1512,7 +1526,7 @@ or build it yourself using a `Stack` or `Overlay`.
 若你想显示更高级的提示、悬浮面板或自定义的上下文菜单，
 你可以使用已有的 package，或利用 `Stack` 和 `Overlay` 进行构建。
 
-Some available packages include: 
+Some available packages include:
 
 可以使用的 package 包括：
 
@@ -1548,13 +1562,13 @@ On Windows, when presenting a row of buttons,
 the confirmation button is placed at the start of
 the row (left side). On all other platforms,
 it's the opposite. The confirmation button is
-placed at the end of the row (right side). 
+placed at the end of the row (right side).
 
 在 Windows 上展示一行按钮时，确认按钮会在一行的起始位置（左侧）。
 而在其他平台上，则是完全相反的，确认按钮显示在末尾位置（右侧）。
 
 This can be easily handled in Flutter using the
-`TextDirection` property on `Row`: 
+`TextDirection` property on `Row`:
 
 在 Flutter 里你可以很轻松地修改 `Row` 的 `TextDirection` 来达到这个效果：
 
@@ -1592,7 +1606,7 @@ return Row(
 
 Another common pattern on desktop apps is the menu bar.
 On Windows and Linux, this menu lives as part of the Chrome title bar,
-whereas on macOS, it's located along the top of the primary screen. 
+whereas on macOS, it's located along the top of the primary screen.
 
 桌面平台有另一种常见的内容：菜单栏。
 在 Windows 和 Linux 上，Chrome 的菜单栏整合在标题栏内，
@@ -1660,7 +1674,7 @@ this way: you just select an item and start dragging.
 In Flutter, you can implement drag and drop in many
 ways. Discussing specific implementations is outside
 the scope of this article, but some high level options
-are: 
+are:
 
 在 Flutter 中，你可以用多种方式实现拖放。
 但是我们不在本篇文章中讨论这个话题，以下是一些更高级的选项：
@@ -1690,7 +1704,7 @@ are:
 Of course, this page doesn't constitute an exhaustive list
 of the things you might consider. The more operating systems,
 form factors, and input devices you support,
-the more difficult it becomes to spec out every permutation in design. 
+the more difficult it becomes to spec out every permutation in design.
 
 当然，这篇文章并不代表你仅需要考虑这些内容。
 针对平台设计的规范，会随着你适配的平台、设备外形和输入设备数量的增加而变得更为复杂。
@@ -1703,7 +1717,7 @@ and results in improved productivity with better outcomes.
 作为开发人员，你应当花一些时间学习基本的可用性原则，帮助你做出更好的决策，
 减少由设计细节带来的返工时间消耗，从而提升自己的生产力，产出更好的结果。
 
-Here are some resources to get you started: 
+Here are some resources to get you started:
 
 你可以从下列的资源开始学习：
 

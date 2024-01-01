@@ -7,6 +7,9 @@ tags: Packages,插件
 keywords: 使用packages,Flutter第三方库
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 <?code-excerpt path-base="development/plugin_api_migration"?>
 
 Flutter supports using shared packages contributed by other developers
@@ -61,7 +64,7 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
     或其任意组合的平台编写。
     比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
 
-  <iframe width="560" height="315" src="https://player.bilibili.com/player.html?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="{{bili-embed}}?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="了解 package 和 plugin 的区别" {{bili-set}}></iframe>
 
 {{site.alert.end}}
 
@@ -91,7 +94,6 @@ see [Adding assets and images][].
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
 [developing packages]: {{site.url}}/packages-and-plugins/developing-packages
 [FlutterFire]: {{site.github}}/firebase/flutterfire
-
 
 [`go_router`]: {{site.pub-pkg}}/go_router
 [`http`]: {{site.url}}/cookbook/networking/fetch-data
@@ -422,15 +424,13 @@ well as a list of all prior versions
 （例如，参阅 [`url_launcher`][] package）以及所有先前版本的列表：
 [url_launcher 版本列表][`url_launcher` versions]。
 
-To ensure that the app doesn't break when a
-package is updated,
-specify a version range using one of the
-following formats:
+To ensure that the app doesn't break when you update a package,
+specify a version range using one of the following formats.
 
 为了确保在更新 package 的时候你的应用不会崩溃，
 我们建议使用以下格式之一来指定版本范围：
 
-* Range constraints: Specify a minimum and maximum version. For example:
+* **Ranged constraints:** Specify a minimum and maximum version.
 
   范围限制：指定一个最小和最大的版本号，例如：
 
@@ -439,8 +439,9 @@ following formats:
     url_launcher: '>=5.4.0 <6.0.0'
   ```
 
-* Range constraints with [*caret syntax*][]
-  are similar to regular range constraints:
+* **Ranged constraints using the [caret syntax][]:**
+  Specify the version that serves as the inclusive minimum version.
+  This covers all versions from that version to the next major version.
 
   使用 [*caret语法*][*caret syntax*] 的范围约束与常规的范围约束类似：
   
@@ -449,12 +450,15 @@ following formats:
     collection: '^5.4.0'
   ```
 
-For additional details,
-see the [package versioning guide][].
+  This syntax means the same as the one noted in the first bullet.
+
+  该语法与第一项中的语法含义相同。
+
+To learn more, check out the [package versioning guide][].
 
 了解更详细的信息，参阅 [Pub 版本管理指南][package versioning guide]。
 
-[*caret syntax*]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
+[caret syntax]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
 [package versioning guide]: {{site.dart-site}}/tools/pub/versioning
 [`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
 
@@ -462,16 +466,13 @@ see the [package versioning guide][].
 
 ### 更新 package 依赖
 
-When running `flutter pub get` (**Packages get** in IntelliJ
-or Android Studio) for the first time after adding a package,
-When running `flutter pub get` 
+When running `flutter pub get`
 for the first time after adding a package,
 Flutter saves the concrete package version found in the `pubspec.lock`
 [lockfile][]. This ensures that you get the same version again
 if you, or another developer on your team, run `flutter pub get`.
 
-当你添加一个 package 后首次运行
-`flutter pub get`（IntelliJ 或 Android Studio 中的 **Packages Get**），
+当添加 package 后首次运行 `flutter pub get` 时，
 Flutter 将会保存在 `pubspec.lock` [lockfile][] 中找到的具体 package 版本。
 这将确保当你或者团队中其他开发者运行
 `flutter pub get` 后能得到相同版本的 package。
@@ -671,7 +672,6 @@ To use this package:
     }
     ```
 
-
 [`css_colors`]: {{site.pub-pkg}}/css_colors
 
 1. Run the app. The app's background should now be orange.
@@ -774,4 +774,3 @@ To use this plugin:
    运行应用（如果你的应用在添加插件之前已经运行，请停止并重启应用）。
    当你点击 **Show Flutter homepage** 时，
    你将看到手机默认浏览器打开并出现 Flutter 主页。
-

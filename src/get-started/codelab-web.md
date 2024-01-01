@@ -17,9 +17,9 @@ js:
 {{site.alert.tip}}
 
   This codelab walks you through writing
-  your first Flutter app on the web, specifically. 
+  your first Flutter app on the web, specifically.
   You might prefer to try
-  [another codelab][first_flutter_codelab] 
+  [another codelab][first_flutter_codelab]
   that takes a more generic approach.
   Note that the codelab on this page
   does work on mobile and desktop
@@ -140,7 +140,7 @@ You'll start with a simple web app that we provide for you.
 启用 Web 开发。<br>
 
 At the command line, perform the following command to
-make sure that you have Flutter installed correctly. 
+make sure that you have Flutter installed correctly.
 
 在命令行观察输出内容，你应该可以看到如下类似的内容，
 说明 Flutter 安装的没问题：
@@ -205,7 +205,7 @@ web-javascript • Google Chrome 105.0.5195.125
 
 ```
 
-The **Chrome** device automatically starts Chrome and enables the use 
+The **Chrome** device automatically starts Chrome and enables the use
 of the Flutter DevTools tooling.
 
 **Chrome** 浏览器会自动启动并启用 Flutter 开发者工具。
@@ -574,7 +574,7 @@ You get that behavior for free.
 
 * The `const` keyword in front of the constructor is very
   important. When Flutter encounters a constant widget, it
-  short-circuits most of the rebuilding work under the hood 
+  short-circuits most of the rebuilding work under the hood
   making the rendering more efficient.
 
   构造函数前面的 `const` 关键字至关重要，
@@ -749,7 +749,7 @@ but becomes enabled when all three text fields contain
   The new widget tree must be created and rendered to screen
   in less than 1/60th of a second to create a smooth visual
   transition—especially for an animation.
-  Luckily Flutter *is* fast.
+  Luckily Flutter _is_ fast.
 
   调用 widget 的 `setState()` 方法通知 Flutter 页面上的 widget 需要重新构建。
   框架将销毁之前的不可变 widget （上面说过 widget 一旦创建不可更改）（包含它的子级 widget） ，
@@ -1461,11 +1461,9 @@ Dart DevTools, or Flutter animations, see the following:
 * [Implicit animations][] codelab
 * [Web samples][]
 
-
 [Android Studio and IntelliJ]: {{site.url}}/tools/devtools/android-studio
 [Animation docs]: {{site.url}}/ui/animations
 [Building a form with validation]: {{site.url}}/cookbook/forms/validation
-[Building a web application with Flutter]: {{site.url}}/platform-integration/web/building
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: {{site.url}}/get-started/test-drive
 [Dart DevTools]: {{site.url}}/tools/devtools/overview
@@ -1484,6 +1482,6 @@ Dart DevTools, or Flutter animations, see the following:
 [Material Design]: {{site.material}}/get-started
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: {{site.url}}/tools/devtools/vscode
-[Web samples]: {{site.github}}/flutter/samples/tree/main/web
+[Web samples]: {{site.repo.samples}}/tree/main/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
 [first_flutter_codelab]: {{site.url}}/get-started/codelab

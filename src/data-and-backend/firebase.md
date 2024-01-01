@@ -7,6 +7,11 @@ tags: Firebase,Firestore,数据调用和后端
 keywords: 使用Firebase服务
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
+## Introduction
+
 Firebase is a Backend-as-a-Service (BaaS) app development platform
 that provides hosted backend services such as a realtime database,
 cloud storage, authentication, crash reporting, machine learning,
@@ -16,63 +21,95 @@ Firebase 是一个用于开发 BaaS 应用的开发平台，
 它提供了诸如实时数据库、云存储、鉴权、Crash 上报、
 机器学习、远程配置以及托管你的静态文件等后台托管服务。
 
-Firebase supports Flutter. For more information, see:
+## Flutter and Firebase resources
 
-Firebase 可以支持 Flutter，如果你想获取更多信息，可以查阅下面这些链接：
+## Flutter 和 Firebase 资源
 
-* The [Firebase plugins][] page
+Firebase supports Flutter. To learn more,
+check out the following resources.
 
-  [Firebase 插件][Firebase plugins] 页面
+Firebase 支持 Flutter。
+请查看以下资源，了解更多信息。
+
+### Documentation
+
+### 文档
 
 * [Getting started with Firebase and Flutter][started]
 
   [将 Firebase 添加到您的 Flutter 应用][started]
 
-* [Get to know Firebase for Flutter][workshop] video workshop
-  based on the codelab
+* [Firebase plugins][]
 
-  (基于 workshop) [了解如何在 Flutter 中使用 Firebase][workshop]
+  [Firebase 插件][Firebase plugins]
 
-* [Get to know Firebase for Flutter][codelab1] codelab
+### Blog Posts
 
-  (基于 codelab) [了解如何在 Flutter 中使用 Firebase][codelab1]
+### 博客文章
 
-* [Use Firebase to host your Flutter app on the web][article]
+[Use Firebase to host your Flutter app on the web][article]
 
-  [使用 Firebase 来部署你的 Flutter Web 应用][article]
+[使用 Firebase 来部署你的 Flutter Web 应用][article]
 
-Also, the Flutter community has created docs and
-videos that you might find useful. Here are a few:
+### Tutorials
 
-当然，Flutter 社区也创建了一些可能会对你有用的文档：
-   
-* [Building chat app with Flutter and Firebase][chat app]
-   
-  [在 Flutter 中使用 Firebase 构建聊天应用][chat app]（文章）
+### 教程
 
-* [Using Firestore as a backend to your Flutter app][video] (video)
+Get to know Firebase for Flutter
 
-  [在你的 Flutter 应用中使用 Firestore 作为后端][video]（视频）
+了解如何在 Flutter 中使用 Firebase
 
-* [Live Coding Firebase Authentication with Flutter][video2] (video)
+* [tutorial][codelab1]
 
-  [在 Flutter 中使用 Firebase 进行验证的代码演示][video2]（视频）
+  [教程（基于 codelab）][codelab1]
 
-* [Flutter & Firebase Auth 01][video3] (video)
+* [video workshop][workshop]
 
-  [使用 Flutter & Firebase 进行验证 01][video3]（视频）
+  [教程（基于 workshop）][workshop]
 
-* [Flutter: Firebase Tutorial Part 1 - Auth and Sign in][video4] (video)
+## Flutter and Firebase community resources
 
-  [Flutter: Firebase 教程第一部分|验证与登录][video4]（视频）
+## Flutter 和 Firebase 社区资源
+
+The Flutter community created the following useful resources.
+
+Flutter 社区创建了以下实用的资源。
+
+### Blog Posts
+
+### 博客文章
+
+[Building chat app with Flutter and Firebase][chat app]
+
+[在 Flutter 中使用 Firebase 构建聊天应用][chat app]
+
+### Videos
+
+### 视频
+
+* [Using Firestore as a backend to your Flutter app][video]
+
+  [在你的 Flutter 应用中使用 Firestore 作为后端][video]
+
+* [Live Coding Firebase Authentication with Flutter][video2]
+
+  [在 Flutter 中使用 Firebase 进行验证的代码演示][video2]
+
+* [Flutter & Firebase Auth 01][video3]
+
+  [使用 Flutter & Firebase 进行验证 01][video3]
+
+* [Flutter: Firebase Tutorial Part 1 - Auth and Sign in][video4]
+
+  [Flutter: Firebase 教程第一部分|验证与登录][video4]
 
 [article]: {{site.flutter-medium}}/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
 [Firebase plugins]: {{site.firebase}}/docs/flutter/setup#available-plugins
 [started]: {{site.firebase}}/docs/flutter/setup
-[video]: https://www.bilibili.com/video/BV184411575K/
-[video2]: {{site.youtube-site}}/watch?v=OlcYP6UXlm8
-[video3]: {{site.youtube-site}}/watch?v=u_Lyx8KJWpg
-[video4]: {{site.youtube-site}}/watch?v=13-jNF984C0
-[workshop]: https://www.bilibili.com/video/BV14b4y1o7Wn/
+[video]: {{bili-video}}/BV184411575K/
+[video2]: {{yt-watch}}/OlcYP6UXlm8
+[video3]: {{yt-watch}}/u_Lyx8KJWpg
+[video4]: {{yt-watch}}/13-jNF984C0
+[workshop]: {{bili-video}}/BV14b4y1o7Wn/

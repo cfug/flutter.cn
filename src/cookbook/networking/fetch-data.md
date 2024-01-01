@@ -14,6 +14,19 @@ Luckily, Dart and Flutter provide tools, such as the
 对于大部分应用来说，获取网络数据都是必不可少的一个功能。
 幸运的是，Dart 和 Flutter 就为我们提供了这样的工具。
 
+{{site.alert.note}}
+
+  You should avoid directly using `dart:io` or `dart:html`
+  to make HTTP requests.
+  Those libraries are platform-dependent
+  and tied to a single implementation.
+
+  你需要避免直接使用 `dart:io` 或 `dart:html` 
+  来进行 HTTP 请求。
+  这些库依赖于平台并绑定单个实现。
+
+{{site.alert.end}}
+
 This recipe uses the following steps:
 
 这个教程包含以下步骤：

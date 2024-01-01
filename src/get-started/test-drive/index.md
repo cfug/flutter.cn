@@ -6,9 +6,9 @@ description: 如何使用 hot reload 创建一个 Flutter 应用模版。
 tags: Flutter安装,Flutter环境搭建
 keywords: Flutter IDE,Flutter编辑器,Android Studio,VS Code,Flutter插件
 prev:
-  title: Set up an editor
-  title: 编辑工具设定
-  path: /docs/get-started/editor
+  title: Install Flutter
+  title: 安装和环境配置
+  path: /docs/get-started/install
 next:
   title: Write your first Flutter app
   title: 编写第一个 Flutter 应用
@@ -16,43 +16,78 @@ next:
 toc: false
 ---
 
-This page describes the following tasks:
+{% case os %}
+{% when 'Windows' -%}
+   {% assign path='C:\dev\' %}
+   {% assign terminal='PowerShell' %}
+   {% assign prompt1='D:>' %}
+   {% assign prompt2=path | append: '>' %}
+   {% assign dirdl='%CSIDL_DEFAULT_DOWNLOADS%\' %}
+{% when "macOS" -%}
+   {% assign path='~/development/' %}
+   {% assign terminal='the Terminal' %}
+   {% assign prompt1='$' %}
+   {% assign prompt2='$' %}
+   {% assign dirdl='~/Downloads/' %}
+{% else -%}
+   {% assign path='/usr/bin/' %}
+   {% assign terminal='a shell' %}
+   {% assign prompt1='$' %}
+   {% assign prompt2='$' %}
+   {% assign dirdl='~/Downloads/' %}
+{% endcase -%}
 
-本篇文章讲解以下内容：
+## What you'll learn
 
-1. How to create a new Flutter app from templates.
+## 你将了解到什么
 
-   如何基于模板创建新的 Flutter 应用。
+1. How to create a new Flutter app from a sample template.
 
-1. How to run the created Flutter app.
+   如何基于示例模板创建新的 Flutter 应用。
 
-   如何运行创建好的 Flutter 应用。
+1. How to run the new Flutter app.
+
+   如何运行新的 Flutter 应用。
 
 1. How to use "hot reload" after you make changes to the app.
 
    如何在应用中使用「热重载」应用你的更改。
 
-Details for these tasks depend on the integrated development environment
-(IDE) you use.
 
-这些任务的细节会根据你使用的 IDE 的不同有所变化。
+## Guide depends on your IDE
 
-The first two options listed rely on the Flutter plugin for
-the respective IDE.
-Visual Studio Code, Android Studio, and IntelliJ IDEA Community,
-Educational, and Ultimate editions support Flutter development
-through plugins.
+## 指南（根据不同的 IDE）
 
-前两个任务依赖于 IDE 上的 Flutter 插件。
-Visual Studio Code、Android Studio、以及 IntelliJ IDEA 的
-Community、Educational 和 Ultimate 版本都通过插件支持 Flutter 开发。
+These tasks depend on which integrated development environment (IDE) you use.
 
-The third option explains how to use an editor of your choice and
-the terminal to run the commands.
+这些工作的细节会根据你使用 IDE 的不同，有所变化。
 
-第三个任务向你解释了如何用你使用的编辑器或者终端来运行命令。
+* **Option 1** explains how to code with Visual Studio Code and its Flutter extension.
+
+  **选项 1** 讲解如何使用 Visual Studio Code 及其 Flutter 扩展进行编码。
+
+* **Option 2** explains how to code with Android Studio or IntelliJ IDEA with
+  its Flutter plugin.
+
+  **选项 2** 讲解如何使用 Android Studio 或 IntelliJ IDEA 及其 Flutter 插件进行编码。
+
+  Flutter supports IntelliJ IDEA Community, Educational, and Ultimate editions.
+
+  Flutter 支持 IntelliJ IDEA Community、Educational 和 Ultimate editions。
+
+* **Option 3** uses explains how to code with an editor of your choice then use the
+  the terminal to compile and debug your code.
+
+  **选项 3** 讲解如何使用自己选择的编辑器编写代码，
+  然后使用终端编译和调试代码。
+
+## Choose your IDE
+
+## 选择你的 IDE
 
 Select your preferred IDE for Flutter apps.
+
+为 Flutter 应用选择你喜欢的 IDE。
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -69,7 +104,7 @@ Select your preferred IDE for Flutter apps.
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
-  {% include_relative _vscode.md %}
-  {% include_relative _androidstudio.md %}
-  {% include_relative _terminal.md %}
+  {% include docs/install/test-drive/vscode.md %}
+  {% include docs/install/test-drive/androidstudio.md %}
+  {% include docs/install/test-drive/terminal.md %}
 </div>

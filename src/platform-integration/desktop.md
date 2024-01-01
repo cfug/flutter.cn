@@ -514,7 +514,7 @@ Flokk [官宣文章][gskinner-flokk-blogpost]，[源代码仓库地址][gskinner
 [图片搜索应用][Photo Search app]
 <br> 使用支持桌面端的插件构建的一个桌面应用案例。
 
-[Photo Search app]: {{site.repo.organization}}/samples/tree/main/desktop_photo_search
+[Photo Search app]: {{site.repo.samples}}/tree/main/desktop_photo_search
 [running web app]: {{site.gallery}}
 [flutter-gallery-repo]: {{site.repo.gallery}}
 [README]: {{site.repo.gallery}}#readme

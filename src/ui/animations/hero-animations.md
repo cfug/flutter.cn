@@ -8,34 +8,37 @@ tags: 用户界面,Flutter UI,动画
 keywords: 共享元素过渡,补间动画
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 {{site.alert.secondary}}
 
   <h4 class="no_toc">What you'll learn</h4>
 
   <h4 class="no_toc">你将会在这里学到：</h4>
 
-  * The _hero_ refers to the widget that flies between screens.
+* The _hero_ refers to the widget that flies between screens.
+
+  **Hero** 指的是在屏幕间飞跃的 widget。
   
-    **Hero** 指的是在屏幕间飞跃的 widget。
-    
-  * Create a hero animation using Flutter's Hero widget.
+* Create a hero animation using Flutter's Hero widget.
+
+  用 Flutter's Hero widget 创建 hero 动画。
   
-    用 Flutter's Hero widget 创建 hero 动画。
-    
-  * Fly the hero from one screen to another.
+* Fly the hero from one screen to another.
+
+  使 hero 从原页面飞至新页面。
   
-    使 hero 从原页面飞至新页面。
+* Animate the transformation of a hero's shape from circular to
+  rectangular while flying it from one screen to another.
+  
+  当 hero 从原页面飞至新页面时，使 hero 的形状由圆形动态过渡为正方形。
+  
+* The Hero widget in Flutter implements a style of animation
+  commonly known as _shared element transitions_ or
+  _shared element animations._
     
-  * Animate the transformation of a hero's shape from circular to
-    rectangular while flying it from one screen to another.
-    
-    当 hero 从原页面飞至新页面时，使 hero 的形状由圆形动态过渡为正方形。
-    
-  * The Hero widget in Flutter implements a style of animation
-    commonly known as _shared element transitions_ or
-    _shared element animations._
-    
-    Flutter 中的 Hero widget 实现的动画类型也称为 **共享元素过渡** 或 **共享元素动画**。
+  Flutter 中的 Hero widget 实现的动画类型也称为 **共享元素过渡** 或 **共享元素动画**。
 
 {{site.alert.end}}
 
@@ -54,7 +57,7 @@ You might want to watch this one-minute video introducing the Hero widget:
 
 下面的一分钟视频介绍了 Hero widget：
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794187&cid=97537277&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=55794187&cid=97537277&page=1&autoplay=false" title="Learn about the Hero Flutter Widget" {{bili-set}}></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -69,13 +72,13 @@ during flight.
 
   **示例**: 这个指南在下面的链接中为每种类型的 hero 动画提供示例。
 
-  * [Standard hero animation code][]
+* [Standard hero animation code][]
 
-    [标准 hero 动画代码][Standard hero animation code]
+  [标准 hero 动画代码][Standard hero animation code]
 
-  * [Radial hero animation code][]
+* [Radial hero animation code][]
 
-    [径向 hero 动画代码][Radial hero animation code]
+  [径向 hero 动画代码][Radial hero animation code]
 
 {{site.alert.end}}
 
@@ -141,12 +144,7 @@ the original route.
 点击蓝色页面中的 flippers（或者使用设备的回到前页手势），
 它将返回原页面。
 
-<div class="embedded-video-wrapper">
-  <iframe class="embedded-video-wrapper__frame"
-    src="//player.bilibili.com/player.html?aid=55796337&cid=97541029&page=3&autoplay=false"
-    frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=55796337&cid=97541029&page=3&autoplay=false" title="Watch this example of a standard hero animation in Flutter" {{bili-set-short}}></iframe>
 
 <br>**Radial hero animations**<br>
 
@@ -171,12 +169,7 @@ the original route, displayed with a circular shape.
 其飞至新页面，并变成正方形。
 点击正方形图像，hero 返回至原页面，并变回圆形。
 
-<div class="embedded-video-wrapper">
-  <iframe class="embedded-video-wrapper__frame"
-    src="//player.bilibili.com/player.html?aid=55796337&cid=97540547&page=1&autoplay=false"
-    frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=55796337&cid=97540547&page=1&autoplay=false" title="Watch this example of a radial hero animation in Flutter" {{bili-set-short}}></iframe>
 
 <br>Before moving to the sections specific to
 [standard](#standard-hero-animations)
@@ -192,6 +185,7 @@ how Flutter performs a hero animation.
 以及 [幕后](#behind-the-scenes) 来了解 Flutter 如何显示一个 hero 动画。
 
 <a id="basic-structure"></a>
+
 ## Basic structure of a hero animation
 
 ## hero 动画基本结构
@@ -202,29 +196,29 @@ how Flutter performs a hero animation.
 
   <h4 class="no_toc">要点列表</h4>
 
-  * Use two hero widgets in different routes but with matching tags to
-    implement the animation.
+* Use two hero widgets in different routes but with matching tags to
+  implement the animation.
 
-    在不同页面分别使用两个 hero widgets，同时使用配对的标签来实现动画。
+  在不同页面分别使用两个 hero widgets，同时使用配对的标签来实现动画。
 
-  * The Navigator manages a stack containing the app's routes.
+* The Navigator manages a stack containing the app's routes.
 
-    Navigator 管理含有 app 页面的堆栈。
+  Navigator 管理含有 app 页面的堆栈。
 
-  * Pushing a route on or popping a route from the Navigator's stack
-    triggers the animation.
+* Pushing a route on or popping a route from the Navigator's stack
+  triggers the animation.
 
-    推送一个页面或弹出一个 Navigator 堆栈中的页面会触发动画。
+  推送一个页面或弹出一个 Navigator 堆栈中的页面会触发动画。
 
-  * The Flutter framework calculates a rectangle tween,
-    [`RectTween`][] that defines the hero's boundary
-    as it flies from the source to the destination route.
-    During its flight, the hero is moved to
-    an application overlay, so that it appears on top of both routes.
+* The Flutter framework calculates a rectangle tween,
+  [`RectTween`][] that defines the hero's boundary
+  as it flies from the source to the destination route.
+  During its flight, the hero is moved to
+  an application overlay, so that it appears on top of both routes.
 
-    Flutter 框架设置了一个 [RectTween 类][`RectTween`]，
-    用来定义 hero 从原页面飞至目标页面的边界。
-    在飞翔过程中，hero 移动到一个应用图层，这样它可以在两个页面上方显示。
+  Flutter 框架设置了一个 [RectTween 类][`RectTween`]，
+  用来定义 hero 从原页面飞至目标页面的边界。
+  在飞翔过程中，hero 移动到一个应用图层，这样它可以在两个页面上方显示。
 
 {{site.alert.end}}
 
@@ -456,22 +450,22 @@ implement hero animations:
 
   <h4 class="no_toc">要点</h4>
 
-  * Specify a route using `MaterialPageRoute`, `CupertinoPageRoute`,
-    or build a custom route using `PageRouteBuilder`.
-    The examples in this section use MaterialPageRoute.
+* Specify a route using `MaterialPageRoute`, `CupertinoPageRoute`,
+  or build a custom route using `PageRouteBuilder`.
+  The examples in this section use MaterialPageRoute.
 
-    使用 MaterialPageRoute，CupertinoPageRoute 指定页面，
-    或使用 PageRouteBuilder 创建自定义页面。本章节示例使用的时 MaterialPageRoute。
+  使用 MaterialPageRoute，CupertinoPageRoute 指定页面，
+  或使用 PageRouteBuilder 创建自定义页面。本章节示例使用的时 MaterialPageRoute。
 
-  * Change the size of the image at the end of the transition by
-    wrapping the destination's image in a `SizedBox`.
+* Change the size of the image at the end of the transition by
+  wrapping the destination's image in a `SizedBox`.
+  
+  在过渡的最后，通过在 `SizedBox` 中裹挟目标图像来改变图像大小。
+  
+* Change the location of the image by placing the destination's
+  image in a layout widget. These examples use `Container`.
     
-    在过渡的最后，通过在 `SizedBox` 中裹挟目标图像来改变图像大小。
-    
-  * Change the location of the image by placing the destination's
-    image in a layout widget. These examples use `Container`.
-    
-    通过在布局 widget 中放置目标图像来改变图像位置。这些示例中使用 `Container`。
+  通过在布局 widget 中放置目标图像来改变图像位置。这些示例中使用 `Container`。
 
 {{site.alert.end}}
 
@@ -557,7 +551,7 @@ The PhotoHero builds the following widget tree:
 
 <div class="text-center mb-4" markdown="1">
 
-  ![PhotoHero class widget tree]({{site.url}}/assets/images/docs/ui/animations/photohero-class.png)    
+  ![PhotoHero class widget tree]({{site.url}}/assets/images/docs/ui/animations/photohero-class.png)
 
 </div>
 
@@ -733,23 +727,23 @@ Key information:
 
   <h4 class="no_toc">要点</h4>
 
-  * A _radial transformation_ animates a circular shape into a square
-    shape.
-    
-    **径向过渡** 是由圆形变成正方形的过渡动画。
-    
-  * A radial _hero_ animation performs a radial transformation while
-    flying the hero from the source route to the destination route.
-    
-    径向 **hero** 动画在 hero 从原页面飞至目标页面时，执行径向过渡。
-    
-  * MaterialRectCenter&shy;Arc&shy;Tween defines the tween animation.
+* A _radial transformation_ animates a circular shape into a square
+  shape.
   
-    MaterialRectCenter&shy;Arc&shy;Tween 定义了补间动画。
+  **径向过渡** 是由圆形变成正方形的过渡动画。
   
-  * Build the destination route using `PageRouteBuilder`.
+* A radial _hero_ animation performs a radial transformation while
+  flying the hero from the source route to the destination route.
   
-    使用 PageRouteBuilder 创建目标页。
+  径向 **hero** 动画在 hero 从原页面飞至目标页面时，执行径向过渡。
+  
+* MaterialRectCenter&shy;Arc&shy;Tween defines the tween animation.
+
+  MaterialRectCenter&shy;Arc&shy;Tween 定义了补间动画。
+
+* Build the destination route using `PageRouteBuilder`.
+
+  使用 PageRouteBuilder 创建目标页。
 
 {{site.alert.end}}
 
@@ -978,7 +972,7 @@ To do this, it builds the following widget tree:
 
 <div class="text-center mb-4" markdown="1">
 
-  ![RadialExpansion widget tree]({{site.url}}/assets/images/docs/ui/animations/radial-expansion-class.png)    
+  ![RadialExpansion widget tree]({{site.url}}/assets/images/docs/ui/animations/radial-expansion-class.png)
 
 </div>
 
@@ -1019,22 +1013,22 @@ Key information:
 
 重要信息：
 
-- The hero wraps the `RadialExpansion` widget.
+* The hero wraps the `RadialExpansion` widget.
 
   hero 包裹 `RadialExpansion` widget。
 
-- As the hero flies, its size changes and,
+* As the hero flies, its size changes and,
   because it constrains its child's size,
   the `RadialExpansion` widget changes size to match.
   
   hero 飞翔时会改变大小，因为它限制了 child 的大小，
   所以 `RadialExpansion` widget 会改变大小以匹配。
   
-- The `RadialExpansion` animation is created by two overlapping clips.
+* The `RadialExpansion` animation is created by two overlapping clips.
 
   `RadialExpansion` 动画由两个重叠的剪裁创建。
 
-- The example defines the tweening interpolation using
+* The example defines the tweening interpolation using
   [`MaterialRectCenterArcTween`][].
   The default flight path for a hero animation
   interpolates the tweens using the corners of the heroes.
@@ -1091,4 +1085,3 @@ Key information:
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [Standard hero animation code]: #standard-hero-animation-code
 [Tween&lt;Rect&gt;]: {{site.api}}/flutter/animation/Tween-class.html
-[watch this issue]: {{site.repo.flutter}}/issues/10667

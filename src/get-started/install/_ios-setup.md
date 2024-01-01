@@ -23,8 +23,8 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
     从命令行中运行以下命令：
 
     ```terminal
-    $ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-    $ sudo xcodebuild -runFirstLaunch
+    sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+    sudo xcodebuild -runFirstLaunch
     ```
 
     To use the latest version of Xcode, use this path.
@@ -48,7 +48,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
        在终端输入命令并运行：
 
        ```terminal
-       $ sudo xcodebuild -license
+       sudo xcodebuild -license
        ```
 
 Versions older than the latest stable version might still work,
@@ -70,18 +70,18 @@ follow this procedure.
 
 如果想要在 iOS 模拟器中运行和测试 Flutter 应用，按照以下步骤即可：
 
- 1. If using Xcode 15 or greater, download and install the iOS Simulator 
+ 1. If using Xcode 15 or greater, download and install the iOS Simulator
     by running the following command:
 
     如果使用 Xcode 15 或更高的版本，
     请运行以下指令下载并安装 iOS 模拟器：
 
     ```terminal
-    $ xcodebuild -downloadPlatform iOS
+    xcodebuild -downloadPlatform iOS
     ```
 
-    If you want to use a different method of downloading and installing the 
-    iOS Simulator, check out 
+    If you want to use a different method of downloading and installing the
+    iOS Simulator, check out
     [Apple's documentation on installing Simulators][] for more options.
 
     如果你想使用其他方式下载和安装 iOS 模拟器，请查阅 
@@ -93,7 +93,7 @@ follow this procedure.
     运行以下指令启动模拟器：
 
     ```terminal
-    $ open -a Simulator
+    open -a Simulator
     ```
 
  1. Set your Simulator to use a 64-bit device (iPhone 5s or later).
@@ -667,7 +667,6 @@ flutter run --device-timeout 60
   要了解如何使用 `flutter attach` 配置无线调试，
   请查阅 [在混合开发模式下进行调试][Debugging your add-to-app module]。
 
-
 ##### Install CocoaPods
 
 ##### 安装 CocoaPods
@@ -683,7 +682,7 @@ To [Install and set up CocoaPods][], run the following commands:
 请运行以下指令，[安装并设置 CocoaPods][Install and set up CocoaPods]：
 
 ```terminal
-$ sudo gem install cocoapods
+sudo gem install cocoapods
 ```
 
 {{site.alert.note}}
@@ -700,7 +699,7 @@ $ sudo gem install cocoapods
   除此之外，如果你是在 Apple 芯片的 Mac 上安装，则需要运行下面的命令：
 
   ```terminal
-  $ sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
+  sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
   ```
 
 {{site.alert.end}}

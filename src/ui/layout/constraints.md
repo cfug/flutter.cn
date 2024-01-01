@@ -11,6 +11,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="layout/constraints/"?>
 
 <img src='/assets/images/docs/ui/layout/article-hero-image.png'
@@ -196,7 +198,7 @@ Flutter 的布局引擎的设计初衷是可以一次性完成整个布局的构
   当轮到父级决定其大小和位置的时候，同样的也取决于它自身的父级。
   所以，在不考虑整棵树的情况下，几乎不可能精确定义任何 widget 的大小和位置。
 
-* If a child wants a different size from its parent and 
+* If a child wants a different size from its parent and
   the parent doesn't have enough information to align it,
   then the child's size might be ignored.
   **Be specific when defining alignment.**
@@ -2469,7 +2471,7 @@ the tight constraints it received from its parent
 总的来说，`Center` 起的作用就是从其父级（屏幕）那里获得的严格约束，
 为其子级（`Container`）转换为宽松约束。
 
-If you revisit [Example 3](#example-3), 
+If you revisit [Example 3](#example-3),
 the `Center` allows the red `Container` to be smaller,
 but not bigger than the screen.
 
@@ -2482,6 +2484,7 @@ but not bigger than the screen.
 [`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
 
 <a id="unbounded"></a>
+
 ## Unbounded constraints
 
 {{site.alert.note}}
@@ -2617,8 +2620,6 @@ Here's an example:
 
 <img src='/assets/images/docs/ui/layout/layout-final.png' class="mw-100" alt="A goodbye layout">
 
-
-
 ---
 
 Original article by Marcelo Glasberg
@@ -2650,7 +2651,7 @@ header image at the top of the article.
 
   To better understand how Flutter implements layout
   constraints, check out the following 5-minute video:
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/jckqXR5CrPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="{{yt-embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{yt-set}}></iframe>
   <p>Decoding Flutter: Unbounded height and width</p>
 
   想要更好的了解 Flutter 如何实现布局限制，
@@ -2662,4 +2663,3 @@ header image at the top of the article.
   解构 Flutter：不受限制的高度和宽度
 
 {{site.alert.end}}
-

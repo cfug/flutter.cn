@@ -89,14 +89,18 @@ To add support for other languages,
 an application must specify additional
 `MaterialApp` (or `CupertinoApp`) properties,
 and include a package called `flutter_localizations`.
-As of June 2023, this package supports [113 languages][]
+As of December 2023, this package supports [115 languages][language-count]
 and language variants.
+
+{% comment %}
+Consider updating the number of languages when touching this page.
+{% endcomment %}
 
 默认情况下，Flutter 只提供美式英语的本地化。
 如果想要添加其他语言，你的应用必须指定额外的
 `MaterialApp` 或者 `CupertinoApp` 属性并且
 添加一个名为 `flutter_localizations` 的 package。
-截至到 2023 年 1 月份，这个 package 已经支持大约 [113 种语言][113 languages]。
+截至到 2023 年 12 月份，这个 package 已经支持 [115 种语言][language-count]。
 
 To begin, start by creating a new Flutter application
 in a directory of your choice with the `flutter create` command.
@@ -166,7 +170,7 @@ After introducing the `flutter_localizations` package
 and adding the previous code,
 the `Material` and `Cupertino`
 packages should now be correctly localized in
-one of the 113 supported locales.
+one of the 115 supported locales.
 Widgets should be adapted to the localized messages,
 along with correct left-to-right or right-to-left layout.
 
@@ -219,7 +223,7 @@ structured, is covered in this page.
 它们依赖的类型以及那些国际化的 Flutter app 通常是如何组织的，
 可以继续阅读下面内容。
 
-[113 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
+[language-count]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
 <a id="overriding-locale"></a>
 ### Overriding the locale
@@ -442,7 +446,8 @@ complete the following instructions:
    );
    ```
 
-8. Now you can use `AppLocalizations` anywhere in your app:
+8. Once the Material app has started,
+   you can use `AppLocalizations` anywhere in your app:
 
    现在，你可以在应用的任意地方使用 `AppLocalizations` 了:
 
@@ -456,6 +461,13 @@ complete the following instructions:
      title: Text(AppLocalizations.of(context)!.helloWorld),
    ),
    ```
+
+{{site.alert.note}}
+  The Material app has to actually be started to initialize
+  `AppLocalizations`. If the app hasn't yet started,
+  `AppLocalizations.of(context)!.helloWorld` causes a
+  null exception.
+{{site.alert.end}}
 
    This code generates a `Text` widget that displays "Hello World!"
    if the target device's locale is set to English,

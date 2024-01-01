@@ -443,7 +443,7 @@ specify a version range using one of the following formats.
   Specify the version that serves as the inclusive minimum version.
   This covers all versions from that version to the next major version.
 
-  使用 [*caret语法*][*caret syntax*] 的范围约束与常规的范围约束类似：
+  使用 [*caret语法*][caret syntax] 的范围约束与常规的范围约束类似：
   
   ```yaml
   dependencies:

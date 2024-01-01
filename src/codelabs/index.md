@@ -101,7 +101,7 @@ one of the following codelabs:
   that enable Dart's null-safe type system.
 
   [Dart 空安全实战][Dart null safety in Action] (workshop)<br>
-  基于 dart.cn 站点上的 [空安全 codelab][Null safety codelab] 的讲师指导版 workshop。
+  由讲师指导的 workshop，介绍 Dart 空安全类型系统的特性。
 
 * [How to manage application states using inherited widgets][inherited-widget-ws] (workshop)<br>
   Learn how to manage the state of your app's data by

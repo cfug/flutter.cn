@@ -209,7 +209,7 @@ If you've already built the app in the
 [building layouts tutorial][],
 skip to the next section.
 
-如果你已经在 [构建布局教程（第 6 步）][building layouts tutorial (step 6)]
+如果你已经在 [构建布局教程][building layouts tutorial]
 中成功创建了应用程序，你可以跳过下面的部分。
 
  1. Make sure you've [set up][] your environment.

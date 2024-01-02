@@ -6,6 +6,8 @@ tags: Flutter参考资料
 keywords: Flutter原理,Flutter架构指南,Flutter分层设计
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="resources/architectural_overview/"?>
 
 This article is intended to provide a high-level overview of the architecture of

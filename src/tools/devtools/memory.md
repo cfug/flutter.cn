@@ -7,6 +7,8 @@ tags: Flutter开发工具,DevTools
 keywords: 开发者工具,内存视图,Dart
 ---
 
+{% include docs/yt_shims.liquid %}
+
 The memory view provides insights into details
 of the application's memory allocation and
 tools to detect and debug specific issues.

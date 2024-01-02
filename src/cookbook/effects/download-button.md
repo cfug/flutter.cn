@@ -7,6 +7,8 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/effects/download_button"?>
 
 Apps are filled with buttons that execute long-running behaviors.

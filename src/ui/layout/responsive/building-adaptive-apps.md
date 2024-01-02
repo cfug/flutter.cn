@@ -586,6 +586,10 @@ Use `Theme.of(context).platform` for theming and
 design choices, like what kind of switches to show
 and general Cupertino/Material adaptions.
 
+使用 `Theme.of(context).platform` 进行主题和设计的选择，
+例如，需要显示什么样的开关，
+以及根据平台的不同显示 Cupertino/Material 的设计。
+
 With all views referencing the same shared-design system rules,
 they tend to look better and more consistent.
 Making a change or adjusting a value for a specific platform

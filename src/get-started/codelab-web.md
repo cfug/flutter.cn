@@ -756,7 +756,7 @@ but becomes enabled when all three text fields contain
   然后创建一个新的 widget （包含他的子级 widget 树）并将新的 widget 渲染到页面上。
   为了使应用运行顺畅， Flutter 需要快速的销毁和创建 widget。
   新创建的 widget 必须在不到 1/60 秒的时间渲染到页面上，才能创建一个流畅的动画效果。
-  幸运的是 Flutter 就是这么**这么快**。当然如果你愿意的话，也可以使用文本编辑器。
+  幸运的是 Flutter 就是**这么快**。当然如果你愿意的话，也可以使用文本编辑器。
 
 * The `progress` field is defined as a floating value,
   and is updated in the `_updateFormProgress` method.

@@ -386,17 +386,33 @@ Learn how to use Flutter with other technologies.
   to animate and remove components, along with the `google_fonts` and
   `flutter_animate` packages, to make the whole game look well designed.
 
+  [Flutter Flame 入门][Introduction to Flame with Flutter]<br>
+  使用 Flame 2D 游戏引擎制作一个 Breakout 克隆版，
+  并将其嵌入 Flutter wrapper 中。
+  你将使用 Flame 的 Effects 制作动画和组件的移除，
+  同时使用 `google_fonts` 和 `flutter_animate` package，
+  让整个游戏看起来有着精良的设计。
+
 * [Using FFI in a Flutter plugin][]<br>
   Learn how to use Dart's FFI (foreign function interface)
   library, ffigen, allowing you to leverage
   existing native libraries that provide a
   C interface.
 
+  [在 Flutter 插件中使用 FFI][Using FFI in a Flutter plugin]<br>
+  了解如何使用 Dart 的 FFI（外部函数接口）库和 ffigen，
+  让你可以使用提供了 C 语言接口的现有原生库。
+
 * [Create haikus about Google products with the PaLM API and Flutter][]<br>
   Learn how to build an app that uses the PaLM API to
   generate haikus based on Google product names. The
   PaLM API gives you access to Google's
   state-of-the-art large language models.
+
+  [使用 PaLM API 和 Flutter 创作有关 Google 产品的俳句 (haiku)][Create haikus about Google products with the PaLM API and Flutter]<br>
+  了解如何构建一个使用 PaLM API 并
+  根据 Google 产品名称生成俳句 (haiku) 的应用。
+  PaLM API 可让你访问 Google 最先进的大语言模型。
 
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview

@@ -432,7 +432,7 @@ specify a version range using one of the following formats.
 
 * **Ranged constraints:** Specify a minimum and maximum version.
 
-  范围限制：指定一个最小和最大的版本号，例如：
+  **范围限制：**指定一个最小和最大的版本号。
 
   ```yaml
   dependencies:
@@ -443,7 +443,8 @@ specify a version range using one of the following formats.
   Specify the version that serves as the inclusive minimum version.
   This covers all versions from that version to the next major version.
 
-  使用 [*caret语法*][caret syntax] 的范围约束与常规的范围约束类似：
+  **使用 [*caret语法*][caret syntax] 的范围约束：**
+  指定最小版本，这包括从该版本到下一个主要版本的所有版本。
   
   ```yaml
   dependencies:

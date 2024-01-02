@@ -15,10 +15,23 @@ keywords: Material Design 效果, 字体, 自定义字体, Flutter使用谷歌�
 
 ## What you'll learn
 
+## 你将学到什么
+
 * How to choose a font.
+
+  如何选择字体。
+
 * How to import font files.
+
+  如何导入字体文件。
+
 * How to set a font as a default.
+
+  如何设置默认字体。
+
 * How to use a font in a given widget.
+
+  如何在特定 widget 中使用字体。
 
 {{site.alert.end}}
 
@@ -28,8 +41,8 @@ You might have a custom-built font from a designer,
 or perhaps you downloaded a font from [Google Fonts][].
 
 尽管 Android 和 iOS 已经提供了一套高质量系统字体，
-然而通常设计师还是会要求使用自定义字体。
-例如，你可能需要使用设计师提供的自定义字体，或者从
+但设计师还是希望能支持自定义字体。
+你可能需要使用设计师提供的定制字体，或者从
 [Google Fonts][] 下载的字体。
 
 A typeface is the collection of glyphs or shapes that comprise

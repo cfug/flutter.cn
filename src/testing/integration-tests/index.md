@@ -197,6 +197,9 @@ void main() {
 If you are looking for more examples, take a look at the [testing_app][] of
 the [samples][] repository.
 
+如果你想了解更多示例，
+请查看 [samples][] 中的 [testing_app][]。
+
 ### Directory structure
 
 ### 目录结构

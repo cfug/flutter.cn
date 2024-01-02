@@ -141,8 +141,8 @@ widgets in [What is State?][]
 
 [first-app]: {{site.youtube-site}}/watch?v=xWV71C2kp38
 [What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
-[构建第一个 Flutter 应用]: https://www.bilibili.com/video/BV1Se4y1Z74p
-[什么是状态]: https://www.bilibili.com/video/BV14G4y167Tu
+[构建第一个 Flutter 应用]: {{bili-video}}/BV1Se4y1Z74p
+[什么是状态]: {{bili-video}}/BV14G4y167Tu
 
 {:.text-center}
 <b><t>Only have 60 seconds? Learn how to build and deploy a Flutter App!</t><t>一分钟！快速学习构建和部署 Flutter 应用</t></b>

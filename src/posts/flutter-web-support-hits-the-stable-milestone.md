@@ -3,6 +3,8 @@ title: Flutter Web 支持现已进入稳定版
 toc: true
 ---
 
+{% include docs/bili_shims.liquid %}
+
 ![](https://devrel.andfun.cn/devrel/posts/2021/03/90973fe9e93f5.png)
 
 *作者 / Mariam Hasnany, Product Manager, Flutter*
@@ -157,6 +159,6 @@ Flutter 2 特别适合实现渐进式 web 应用 (PWA)。我们建议开发者�
 
 借助 Dart 的可移植性、Web 平台的强大功能，以及 Flutter 框架的灵活性，您现在可以用同一套代码库，构建用于 iOS、Android 以及浏览器的应用。
 
-如果您已经开发了 Flutter web 应用，现在就可以在 [稳定渠道](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#stable) 中进行构建。如果您刚开始学习构建 Flutter web 应用，请移步官方文档访问我们的 [入门 codelab 课程](https://flutter.cn/docs/get-started/codelab-web)，以及 Flutter Engage 上的 [web 演讲](https://www.bilibili.com/video/BV1Jv411h7x6)。构建 web 应用时，如果您发现了任何问题，请随时 [前往 GitHub 提交给我们](https://goo.gle/flutter_web_issue)。
+如果您已经开发了 Flutter web 应用，现在就可以在 [稳定渠道](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#stable) 中进行构建。如果您刚开始学习构建 Flutter web 应用，请移步官方文档访问我们的 [入门 codelab 课程](https://flutter.cn/docs/get-started/codelab-web)，以及 Flutter Engage 上的 [web 演讲]({{bili-video}}/BV1Jv411h7x6)。构建 web 应用时，如果您发现了任何问题，请随时 [前往 GitHub 提交给我们](https://goo.gle/flutter_web_issue)。
 
 我们非常期待看到您使用 Flutter web 所构建的精彩应用！

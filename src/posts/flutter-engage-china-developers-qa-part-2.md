@@ -3,6 +3,8 @@ title: Flutter Engage China 开发者常见问题解答 — 下篇
 toc: true
 ---
 
+{% include docs/bili_shims.liquid %}
+
 ![](https://devrel.andfun.cn/devrel/posts/2021/04/14dcfcd1d2a09.jpg)
 
 再次感谢大家对 [Flutter Engage China 活动](https://flutter.cn/posts/flutter-engage-china-event-recap) 的关注和积极参与！我们在活动前后收到了很多来自开发者的反馈和问题，Flutter 团队和演讲嘉宾在直播 Q&A 环节中也针对部分问题在第一时间给出回复。现在我们将一些开发者关心的问题和回复整理出来分享给大家，希望对您有所帮助。由于问题数量较多，我们分为上下两期发布，上期的内容已经发布，欢迎大家 [前往回顾](https://flutter.cn/posts/flutter-engage-china-developers-qa-part-1)。您也可以观看 Flutter Engage China 视频回顾精彩内容:
@@ -50,7 +52,7 @@ toc: true
 
 如果前两步都没有发现问题的话，可以使用我分享的分帧渲染的思路，也可以减少 UI 和 Raster 线程的绘制耗时。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=247451014&bvid=BV1wv411h7Ni&cid=318242333&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=247451014&bvid=BV1wv411h7Ni&cid=318242333&page=1&autoplay=false" {{bili-set-short}}> </iframe>
 
 回到引擎层面上，UC 这边做的一些优化也会以 PR 的形式回馈到社区，大家可以关注我们的进展。
 

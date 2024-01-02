@@ -3,6 +3,8 @@ title: Flutter 状态管理：使用 MobX
 toc: true
 ---
 
+{% include docs/bili_shims.liquid %}
+
 ![](https://devrel.andfun.cn/devrel/posts/2021/04/2fbde82783576.jpg)
 
 _文 / Paul Halliday, developer.school 创始人_
@@ -10,7 +12,7 @@ _文 / Paul Halliday, developer.school 创始人_
 众所周知，状态管理是每个软件项目都需要持续迭代更新的方向。它并不是一个「一次性」的工作，
 而需要不断确保你遵循的最佳实践能够让你的工程保持良好的可维护性。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=62886932&bvid=BV1Gt411K7JD&cid=327927635&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=62886932&bvid=BV1Gt411K7JD&cid=327927635&page=1&autoplay=false" {{bili-set-short}}> </iframe>
 
 要在 Flutter 中高效地使用 MobX ，需要遵循以下原则：
 

@@ -5,9 +5,11 @@ toc: true
 description: 关于 Flutter 文档中文版
 ---
 
+{% include docs/bili_shims.liquid %}
+
 Flutter 的魅力之一是开源开放，Flutter 由 Google 主导，与全球的开发者共同协作。
 中国的开发者数量占全球的 20% 以上，也有大量贡献者为 Flutter 的生态提供了很大的帮助和贡献。
-请查看这个视频，了解更多 [Flutter 中国开发者的情况](https://www.bilibili.com/video/av68148864)。
+请查看这个视频，了解更多 [Flutter 中国开发者的情况]({{bili-video}}/BV1YJ411w7qX)。
 
 ### 关于 Flutter 文档中文版
 

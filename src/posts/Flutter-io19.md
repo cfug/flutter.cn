@@ -3,6 +3,8 @@ title: Flutter 1.5 正式发布：适用于移动、Web、嵌入式和桌面平�
 toc: true
 ---
 
+{% include docs/bili_shims.liquid %}
+
 **作者: Flutter 团队**
 
 I/O 期间我们迎来 [Flutter 框架](https://flutter.dev/) 的一个重要里程碑，因为我们的开发重点从移动平台扩展到了更广泛的设备和机型。在 I/O 大会上，我们发布了 [Web 版 Flutter 的首个技术预览版](https://flutter.dev/web)，宣布 Flutter 将为包括 Google Home Hub 在内的 Google Smart Display 平台提供技术支持，并迈出利用 Chrome 操作系统支持桌面级应用的第一步。
@@ -84,6 +86,6 @@ Smart Display 操作系统或许是 Flutter 目前已运行的最常见嵌入式
 
 我们在此宣布获胜者，您可前往 flutter.dev/create 查看获胜名单。祝贺总冠军 Zebiao Hu，其将荣获价值超过 1 万美元的全加载式 iMac Pro！
 
-<iframe src="//player.bilibili.com/player.html?aid=52416421&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe src="{{bili-embed}}?aid=52416421&page=1&autoplay=false" {{bili-set}}></iframe>
 
 Flutter 不再只是一个移动框架，更是一个多平台框架，可帮助您触及任何地方的用户。我们迫不及待地看到您利用 Flutter 在 Web、桌面、移动及其他平台上构建的内容！

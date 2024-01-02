@@ -3,6 +3,8 @@ title: 回顾 2021 Flutter 精彩时刻
 description: 祝愿各位 Flutter 开发者们虎年大吉、虎虎生威！
 ---
 
+{% include docs/bili_shims.liquid %}
+
 ![Flutter新年](https://devrel.andfun.cn/devrel/posts/2022/01/6879bbc9b157d.png)
 
 ![2](https://devrel.andfun.cn/devrel/posts/2022/01/752a1f9e5ac3f.png)
@@ -18,7 +20,7 @@ Flutter 生态里有一个非常重要的角色，就是围绕着 Flutter 发布
 
 ![2.5](https://devrel.andfun.cn/devrel/posts/2022/01/30914f7e0b7fe.png)
 
-21 年 9 月，Flutter 更新到了 [2.5 正式版](./whats-new-in-flutter-2-5)，Dart 也发布了 [2.14 正式版](./announcing-dart-2-14)，这个版本仍延续了过去的一些工作，继续进行一些重要的性能和工具改进，也同时加入了对 Material You 的支持等。从这个版本开始，Dart 对 Apple 芯片的支持正式在稳定版渠道推出，同时增加了很多共享的代码 lint 工具，pub.dev 上的评分引擎也开始使用其中的部分 lint 规则，package 发布工具也支持了识别和使用 `.gitignore` 来声明哪些需要忽略的内容，避免上传无用的代码片段等。随着 Dart 空安全特性的推出，有很多应用开发者和 package 开发者们已经开始跟进并应用了健全的空安全特性。除了稳步更新 Flutter 移动端的性能和开发体验，[Flutter Web 也发布了产品路线图](./flutter-2022-roadmap)，力求让 Flutter 应用在 Web 平台的体验更自然。Flutter 团队几乎完全依靠 GitHub 等开源开放平台协作，所有的流程和代码改进都是向社区公开透明的，因此我们也在非常努力的推动国内的开发者参与全球社区贡献，并 [在每次的开发者调查中发声](https://www.bilibili.com/video/BV1CP4y1V7c9)，很多新特性和改进都会在 GitHub Issue 上发布并公开征集反馈，开发者们的反馈和交互越多，Flutter 团队就越重视，越会投入资源去解决。
+21 年 9 月，Flutter 更新到了 [2.5 正式版](./whats-new-in-flutter-2-5)，Dart 也发布了 [2.14 正式版](./announcing-dart-2-14)，这个版本仍延续了过去的一些工作，继续进行一些重要的性能和工具改进，也同时加入了对 Material You 的支持等。从这个版本开始，Dart 对 Apple 芯片的支持正式在稳定版渠道推出，同时增加了很多共享的代码 lint 工具，pub.dev 上的评分引擎也开始使用其中的部分 lint 规则，package 发布工具也支持了识别和使用 `.gitignore` 来声明哪些需要忽略的内容，避免上传无用的代码片段等。随着 Dart 空安全特性的推出，有很多应用开发者和 package 开发者们已经开始跟进并应用了健全的空安全特性。除了稳步更新 Flutter 移动端的性能和开发体验，[Flutter Web 也发布了产品路线图](./flutter-2022-roadmap)，力求让 Flutter 应用在 Web 平台的体验更自然。Flutter 团队几乎完全依靠 GitHub 等开源开放平台协作，所有的流程和代码改进都是向社区公开透明的，因此我们也在非常努力的推动国内的开发者参与全球社区贡献，并 [在每次的开发者调查中发声]({{bili-video}}/BV1CP4y1V7c9)，很多新特性和改进都会在 GitHub Issue 上发布并公开征集反馈，开发者们的反馈和交互越多，Flutter 团队就越重视，越会投入资源去解决。
 
 从 Play 商店的应用数量看，Flutter 应用数量从 21 年第一季度的 15 万+ 上升到第二季度的 20 万+，同时，21 年 4 月到 5 月，Play 商店中有超过八分之一的新应用是采用 Flutter 构建，21 年年末 Play 商店的 Flutter 应用数量对比第二季度几乎翻番，达到了 37.5 万+ 款应用。这些数字证明着 Flutter 的流行，以及受到越来越多开发者们的采纳和喜爱。开发者们对 Flutter 的采纳和喜爱也同时体现在很多开发者报告里，分析公司 SlashData 的报告里显示：Flutter 是如今最流行的跨平台开发框架，有 45% 的受访开发者选用；RedMonk 排名中提到“Dart 有显著上升”；StackOverflow 的开发者调查体现出开发者喜爱的编程语言里，Dart 排名第七、喜爱的框架里，Flutter 排名第二；JetBrains 2021 开发者生态系统现状报告中显示，在跨平台移动框架选择上，Flutter 的受欢迎程度持续增长，已经超越 React Native 成为最流行的跨平台移动框架。使用 Flutter 的头部公司和应用也包含了 BMW、ByteDance、滴滴、eBay、Grab、Greggs、贝壳、Norton、Philips Hue、PUBG、SHEIN、trip.com、WeChat 等 (*排名不分先后)，截止 21 年末，全球的 Flutter 开发者数量已达 300 万以上，Flutter 也从最初的「便携式 UI 工具包」进化成「一个为环境计算打造的 UI 平台」。
 

@@ -9,6 +9,8 @@ tags: 发布, iOS
 keywords: 上传App Store,发布Flutter应用
 ---
 
+{% include docs/yt_shims.liquid %}
+
 This guide provides a step-by-step walkthrough of releasing a
 Flutter app to the [App Store][appstore] and [TestFlight][].
 
@@ -26,17 +28,14 @@ must use a device running macOS to follow this guide.
 你必须要有一个运行着 macOS 系统的设备来学习本指南文档。
 
 Before beginning the process of releasing your app,
-ensure that it meets
-Apple's [App Review Guidelines][appreview].
+ensure that it meets Apple's [App Review Guidelines][appreview].
 
 在开始发布你的 app 的进程之前，
 确保你已经看过了 Apple 的 [App Store 审核指南][appreview_cn]。
 
 To publish your app to the App Store,
-you must first enroll in the
-[Apple Developer Program][devprogram].
-You can read more about the various
-membership options in Apple's
+you must first enroll in the [Apple Developer Program][devprogram].
+You can read more about the various membership options in Apple's
 [Choosing a Membership][devprogram_membership] guide.
 
 想要发布你的 app 到 App Store，
@@ -50,13 +49,13 @@ membership options in Apple's
 
 For those who prefer video over text,
 the following video covers the same material as this guide.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 如果你想观看视频而非文字介绍，
 以下这个视频会指导你如何进行准备工作。
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-[Release an iOS app with Flutter in 7 steps](https://www.youtube.com/watch?v=iE2bpP56QKc)
+<iframe width="560" height="315" src="{{yt-embed}}/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="用 Flutter 发布 iOS 应用程序，只需 7 个步骤" {{yt-set}}></iframe>
+
+[Release an iOS app with Flutter in 7 steps]({{yt-watch}}?v=iE2bpP56QKc)
 
 ## Register your app on App Store Connect
 
@@ -307,13 +306,13 @@ app's icons:
 ## 添加启动图
 
 Similar to the app icon,
-you can also replace the placeholder launch image: 
+you can also replace the placeholder launch image:
 
 与应用图标类似，你可以通过下面的方法替换占位的启动图:
 
 1. In the Xcode project navigator,
    select `Assets.xcassets` in the `Runner` folder.
-   Update the placeholder launch image with your own launch image. 
+   Update the placeholder launch image with your own launch image.
 
    在 Xcode 的工程导航中选择 `Runner` 文件夹下的 `Assets.xcassets`，
    然后将自己的启动图替换掉占位启动图即可。
@@ -349,6 +348,7 @@ and update the following line:
 ```yaml
 version: 1.0.0+1
 ```
+
 The version number is three numbers separated by dots,
 such as `1.0.0` in the example above, followed by an optional
 build number such as `1` in the example above, separated by a `+`.
@@ -440,7 +440,6 @@ adding the option `--export-method ad-hoc`,
 
 {{site.alert.end}}
 
-
 ### Upload the app bundle to App Store Connect
 
 ### 上传应用套装到 App Store Connect
@@ -467,9 +466,11 @@ Drag and drop the `build/ios/ipa/*.ipa` app bundle into the app.
 Or upload the app bundle from the command line by running:
 
 也可以在命令行执行下面的命令将应用套装上传：
+
 ```bash
 xcrun altool --upload-app --type ios -f build/ios/ipa/*.ipa --apiKey your_api_key --apiIssuer your_issuer_id
 ```
+
 Run `man altool` for details about how to authenticate with the App Store Connect API key.
 
 运行 `man altool` 命令了解如何使用 App Store Connect API 密钥进行认证。
@@ -544,7 +545,7 @@ This step covers creating a build archive and uploading
 your build to App Store Connect using Flutter build commands
 and [Codemagic CLI Tools][codemagic_cli_tools] executed in a terminal
 in the Flutter project directory. This allows you to create a build archive
-with full control of distribution certificates in a temporary keychain 
+with full control of distribution certificates in a temporary keychain
 isolated from your login keychain.
 
 该步骤包含了在 Flutter 项目的目录下，
@@ -848,7 +849,6 @@ detailed overview of the process of releasing an app to the App Store.
 
 [分发你的应用][distributionguide] 指南，
 提供了详细的发布应用到 App Store 过程的内容。
-
 
 [appicon]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons/
 [appreview]: {{site.apple-dev}}/app-store/review/

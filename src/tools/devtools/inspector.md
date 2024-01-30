@@ -7,6 +7,9 @@ tags: Flutter开发工具,DevTools
 keywords: Flutter inspector,widget 树
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 <?code-excerpt path-base="../examples/visual_debugging/"?>
 
 {{site.alert.note}}
@@ -193,7 +196,7 @@ the Flutter Explorer video:
 
 有关此工具的操作概述，观看 Flutter Explorer 的介绍视频：
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/Jakrc3Tn_y4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/Jakrc3Tn_y4" title="Learn about the Layout Explorer in Flutter DevTools" {{yt-set}}></iframe>
 
 You might also find the following step-by-step article useful:
 
@@ -388,7 +391,7 @@ void setSlowAnimations() {
   timeDilation = 5.0;
 }
 ```
- 
+
 This slows the animations by 5x.
 
 这会让动画时长增加 5 倍（速度减慢 5 倍）。
@@ -401,7 +404,7 @@ The following links provide more info.
 
 以下的链接提供了更多细节内容。
 
-* [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html) 
+* [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html)
 
   [Flutter 文档：timeDilation 属性]({{site.api}}/flutter/scheduler/timeDilation.html) 
 
@@ -441,7 +444,7 @@ void showLayoutGuidelines() {
 
 #### RenderBox
 
-Widgets that draw to the screen create a [render box][], the 
+Widgets that draw to the screen create a [render box][], the
 building blocks of Flutter layouts. They're shown with a bright blue border:
 
 绘制在屏幕上的 widgets 会创建一个 [RenderBox][render box]，
@@ -717,7 +720,7 @@ This makes the engine decode this image at the specified size,
 and reduces memory usage (decoding and storage is still more expensive
 than if the image asset itself was shrunk).
 The image is rendered to the constraints of the layout or width and height
-regardless of these parameters. 
+regardless of these parameters.
 
 这样的方法可以让引擎以指定的大小解析图片，减少内存的消耗
 （解析开销和空间占用相较图片调整图片本身仍然较大）。
@@ -742,7 +745,7 @@ You can learn more at the following link:
 
 以下的链接提供了更多细节内容：
 
-- [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+* [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
 
   [Flutter 文档：debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
 
@@ -760,7 +763,6 @@ widget's properties, render object, and children.
 从这里，你可以收集关于 widget 属性、渲染对象和子节点的有用信息。
 
 ![The Details Tree view]({{site.url}}/assets/images/docs/tools/devtools/inspector_details_tree.png){:width="100%"}
-
 
 ## Track widget creation
 
@@ -910,20 +912,16 @@ using DevTools, check out a guided
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [common problems when debugging]: {{site.url}}/testing/debugging#common-problems
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
-[DartConf 2018 talk]: https://www.bilibili.com/video/BV1h4411575y/
+[DartConf 2018 talk]: {{bili-video}}/BV1h4411575y/
 [debug mode]: {{site.url}}/testing/build-modes#debug
-[Debugging Flutter apps]: {{site.url}}/testing/debugging
-[DevTools written in Flutter]: {{site.url}}/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter
 [`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
 [flex layouts]: {{site.api}}/flutter/widgets/Flex-class.html
 [`FlexFit`]: {{site.api}}/flutter/rendering/FlexFit.html
 [`FlexParentData.fit`]: {{site.api}}/flutter/rendering/FlexParentData/fit.html
 [`FlexParentData.flex`]: {{site.api}}/flutter/rendering/FlexParentData/flex.html
-[Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [`mainAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/mainAxisAlignment.html
 [`mainAxisSize`]: {{site.api}}/flutter/widgets/Flex/mainAxisSize.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
-[the performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
 [inspector-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7

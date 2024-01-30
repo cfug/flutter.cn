@@ -109,7 +109,7 @@ follow these steps:
     激活机器上的 
     [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration) 选项。
  
- 1. Launch **Android Studio**, click the **Device Manager**
+ 1. Start **Android Studio**, click the **Device Manager**
     icon, and select **Create Device** under **Virtual** tab...
 
     打开 **Android Studio**，点击 **Device Manager** 按钮，

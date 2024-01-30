@@ -11,7 +11,7 @@ and Flutter doesn't have a means to call it with the required parameters.
 然而，Chrome 浏览器本身是 ChromeOS 操作系统的一部分，
 Flutter 无法使用必要的参数来调用它。
 
-Track this issue at [Issue 121462: Improve the web debugging experience on Chromebooks]({{site.github}}/flutter/flutter/issues/121462).
+Track this issue at [Issue 121462: Improve the web debugging experience on Chromebooks]({{site.repo.flutter}}/issues/121462).
 
 追踪此问题：[Issue 121462: Improve the web debugging experience on Chromebooks]({{site.github}}/flutter/flutter/issues/121462).
 

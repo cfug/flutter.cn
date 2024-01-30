@@ -3,6 +3,8 @@ title: Flutter 1.7 版正式发布
 toc: true
 ---
 
+{% include docs/bili_shims.liquid %}
+
 文 / Tim Sneath，谷歌 Dart & Flutter 产品组产品经理
 
 今天，我们非常高兴地向大家宣布又一个正式版本的发布 —— Flutter 1.7，这是继上次 I/O 时众多重要功能发布以来的一次小更新。Flutter 1.7 包含了对 AndroidX 的支持，满足了 Play 商店近期对应用提出的要求，包含了一些新的和增强过的组件，修复了开发者们提出的 bug 等。
@@ -80,7 +82,7 @@ RangeSlider widget 支持连续或者分散的效果
 
 之前我们提到过 [Reflectly](https://www.forbes.com/sites/heatherfarmbrough/2018/05/01/reflectly-wants-to-be-an-adidas-of-the-mind/#572291294204)，它是一个丹麦的公司，他们在 iOS 和 Android 平台开发了非常有吸引力的应用程序。他们的应用程序被美国 iPhone 应用商店评为当日最佳应用。这也证明了 Flutter 的真正潜力远远超过实现体验流畅的应用（同时可以帮助开发者获得成功）。
 
-<iframe src="//player.bilibili.com/player.html?aid=56686514&cid=99031924&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315"> </iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=56686514&cid=99031924&page=1&autoplay=false" {{bili-set-short}}> </iframe>
 
 在柏林的  [WeAreDevelopers](https://events.wearedevelopers.com/) 大会中，[BMW 发布了他们基于 Flutter 的应用](https://youtu.be/80pRyn7fZRk?t=1234)，目前已经在开发中。下面这段描述来自 Guy Duncan，他是 BMW 集团互联公司的 CTO：
 

@@ -39,7 +39,7 @@ To see a working sample, see the [App Clip sample][] on GitHub.
 
 要查看完整可用的示例，请参阅 GitHub 上的 [App Clip 示例][App Clip sample]。
 
-[App Clip sample]: {{site.github}}/flutter/samples/tree/master/ios_app_clip
+[App Clip sample]: {{site.repo.samples}}/tree/master/ios_app_clip
 
 ## Step 1 - Open project
 

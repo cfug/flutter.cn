@@ -6,6 +6,9 @@ tags: Flutter参考资料
 keywords: Flutter原理,Flutter架构指南,Flutter分层设计
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 <?code-excerpt path-base="resources/architectural_overview/"?>
 
 This article is intended to provide a high-level overview of the architecture of
@@ -152,7 +155,7 @@ and compile toolchain.
 [Impeller]: {{site.url}}/perf/impeller
 
 The engine is exposed to the Flutter framework through
-[`dart:ui`]({{site.github}}/flutter/engine/tree/main/lib/ui),
+[`dart:ui`]({{site.repo.engine}}/tree/main/lib/ui),
 which wraps the underlying C++ code in Dart classes. This library
 exposes the lowest-level primitives, such as classes for driving input,
 graphics, and text rendering subsystems.
@@ -287,9 +290,9 @@ pieces of a Flutter app.
 
   由应用开发者进行管理。
 
-**Framework** ([source code]({{site.github}}/flutter/flutter/tree/main/packages/flutter/lib))
+**Framework** ([source code]({{site.repo.flutter}}/tree/main/packages/flutter/lib))
 
-**框架**（[源代码]({{site.github}}/flutter/flutter/tree/main/packages/flutter/lib)）
+**框架**（[源代码]({{site.repo.flutter}}/tree/main/packages/flutter/lib)）
 
 * Provides higher-level API to build high-quality apps
   (for example, widgets, hit-testing, gesture detection,
@@ -302,9 +305,9 @@ pieces of a Flutter app.
 
   将应用的 widget 树构建至一个 Scene 中。
 
-**Engine** ([source code]({{site.github}}/flutter/engine/tree/main/shell/common))
+**Engine** ([source code]({{site.repo.engine}}/tree/main/shell/common))
 
-**引擎**（[源代码]({{site.github}}/flutter/engine/tree/master/shell/common)）
+**引擎**（[源代码]({{site.repo.engine}}/tree/main/shell/common)）
 
 * Responsible for rasterizing composited scenes.
 
@@ -324,9 +327,9 @@ pieces of a Flutter app.
 
   使用 **嵌入层 API** 与平台进行整合。
 
-**Embedder** ([source code](https://github.com/flutter/engine/tree/main/shell/platform))
+**Embedder** ([source code]({{site.repo.engine}}/tree/main/shell/platform))
 
-**嵌入层**（[源代码]({{site.github}}/flutter/engine/tree/main/shell/platform)）
+**嵌入层**（[源代码]({{site.repo.engine}}/tree/main/shell/platform)）
 
 * Coordinates with the underlying operating system
   for access to services like rendering surfaces,
@@ -375,7 +378,7 @@ which includes a rethinking of many traditional design principles.
 ，其中包含了对传统设计理念的再度解构。
 
 [faq]: {{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use
-[fb]: {{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
+[fb]: {{yt-watch}}?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
 
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
@@ -1288,11 +1291,11 @@ GPU to render it.
 Further details of the composition and rasterization stages of the pipeline are
 beyond the scope of this high-level article, but more information can be found
 [in this talk on the Flutter rendering
-pipeline]({{site.youtube-site}}/watch?v=UUfXWzp0-DU).
+pipeline]({{yt-watch}}?v=UUfXWzp0-DU).
 
 有关渲染流程的合成和栅格化阶段的更多细节，将不在本篇深入文章中讨论，
 但可以在
-[关于 Flutter 渲染流程的讨论](https://www.bilibili.com/video/BV1Zx411o7tq/)
+[关于 Flutter 渲染流程的讨论]({{bili-video}}/BV1Zx411o7tq/)
 中了解更多。
 
 ## Platform embedding
@@ -1303,7 +1306,7 @@ itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
 unique concerns of that platform. The engine is platform-agnostic, presenting a
 [stable ABI (Application Binary
-Interface)]({{site.github}}/flutter/engine/blob/main/shell/platform/embedder/embedder.h)
+Interface)]({{site.repo.engine}}/blob/main/shell/platform/embedder/embedder.h)
 that provides a _platform embedder_ with a way to set up and use Flutter.
 
 我们都知道，Flutter 的界面构建、布局、合成和绘制全都由 Flutter 自己完成，
@@ -1452,9 +1455,9 @@ channel.setMethodCallHandler {
 }
 ```
 
-Further examples of using platform channels, including examples for macOS, can
-be found in the [flutter/packages]({{site.repo.packages}})
-repository<sup><a href="#a3">3</a></sup>. There are also [thousands of plugins
+Further examples of using platform channels, including examples for desktop
+platforms, can be found in the [flutter/packages]({{site.repo.packages}})
+repository. There are also [thousands of plugins
 already available]({{site.pub}}/flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and
 Bluetooth.
@@ -1543,7 +1546,7 @@ Flutter solves this by introducing platform view widgets
 ([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html)
 and [`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
 that let you embed this kind of content on each platform. Platform views can be
-integrated with other Flutter content<sup><a href="#a4">4</a></sup>. Each of
+integrated with other Flutter content<sup><a href="#a3">3</a></sup>. Each of
 these widgets acts as an intermediary to the underlying operating system. For
 example, on Android, `AndroidView` serves three primary functions:
 
@@ -1708,7 +1711,7 @@ While HTML mode offers the best code size characteristics,
 `CanvasKit` provides the fastest path to the
 browser's graphics stack,
 and offers somewhat higher graphical fidelity with the
-native mobile targets<sup><a href="#a5">5</a></sup>.
+native mobile targets<sup><a href="#a4">4</a></sup>.
 
 然而，使用 C++ 编写的 Flutter 引擎是为了与底层操作系统进行交互的，而不是 Web 浏览器。
 因此我们需要另辟蹊径。Flutter 在 Web 平台上以浏览器的标准 API 重新实现了引擎。
@@ -1793,25 +1796,15 @@ reading. In practice, the tree might be more complex.
 
 <sup><a id="a2">2</a></sup> 为了便于阅读，该图已进行简化。实际上的结构可能更为复杂。
 
-<sup><a id="a3">3</a></sup> While work is underway on Linux and Windows,
-examples for those platforms can be found in the [Flutter desktop embedding
-repository]({{site.github}}/google/flutter-desktop-embedding/tree/master/plugins).
-As development on those platforms reaches maturity, this content will be
-gradually migrated into the main Flutter repository.
-
-<sup><a id="a3">3</a></sup> 在 Linux 和 Windows 平台的开发进程中，平台对应的示例可以在
-[Flutter 桌面集成代码仓库]({{site.github}}/google/flutter-desktop-embedding/tree/master/plugins)
-中找到。随着这些平台的开发愈发成熟，这些内容会逐步迁移到 Flutter 主代码仓库中。
-
-<sup><a id="a4">4</a></sup> There are some limitations with this approach, for
+<sup><a id="a3">3</a></sup> There are some limitations with this approach, for
 example, transparency doesn't composite the same way for a platform view as it
 would for other Flutter widgets.
 
-<sup><a id="a4">4</a></sup> 该方法有一些局限性，例如，
+<sup><a id="a3">3</a></sup> 该方法有一些局限性，例如，
 平台视图的透明度计算与其他 Flutter widget 的计算不同。
 
-<sup><a id="a5">5</a></sup> One example is shadows, which have to be
+<sup><a id="a4">4</a></sup> One example is shadows, which have to be
 approximated with DOM-equivalent primitives at the cost of some fidelity.
 
-<sup><a id="a5">5</a></sup> 其中一个例子便是阴影，
+<sup><a id="a4">4</a></sup> 其中一个例子便是阴影，
 它必须以等效于 DOM 原语的内容来实现，并且需要丢失一定的保真度。

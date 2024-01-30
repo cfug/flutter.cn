@@ -7,221 +7,338 @@ tags: cookbook, 实用教程, 设计
 keywords: Material Design 效果, 字体, 自定义字体, Flutter使用谷歌字体
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/design/fonts/"?>
 
+{{site.alert.secondary}}
+
+## What you'll learn
+
+## 你将学到什么
+
+* How to choose a font.
+
+  如何选择字体。
+
+* How to import font files.
+
+  如何导入字体文件。
+
+* How to set a font as a default.
+
+  如何设置默认字体。
+
+* How to use a font in a given widget.
+
+  如何在特定 widget 中使用字体。
+
+{{site.alert.end}}
+
 Although Android and iOS offer high quality system fonts,
-one of the most common requests from designers is for custom fonts.
-For example, you might have a custom-built font from a designer,
+designers want support for custom fonts.
+You might have a custom-built font from a designer,
 or perhaps you downloaded a font from [Google Fonts][].
 
 尽管 Android 和 iOS 已经提供了一套高质量系统字体，
-然而通常设计师还是会要求使用自定义字体。
-例如，你可能需要使用设计师提供的自定义字体，或者从
+但设计师还是希望能支持自定义字体。
+你可能需要使用设计师提供的定制字体，或者从
 [Google Fonts][] 下载的字体。
 
-{{site.alert.note}}
+A typeface is the collection of glyphs or shapes that comprise
+a given style of lettering.
+A font is one representation of that typeface at a given weight or variation.
+Roboto is a typeface and Roboto Bold is a font.
 
-  Check out the [google_fonts][] package for direct access
-  to over 1,000 open-sourced font families.
+字体是指构成特定字体风格的字形或形状的集合。
+也是在特定字重或变化下的一种表现形式。
+Roboto 是一种字体，Roboto Bold 也是一种字体。
 
-  查看 [google_fonts][] 库，
-  你将可以直接访问 1000 个以上的开源字体。
+Flutter lets you apply a custom font across an entire app or to individual widgets.
+This recipe creates an app that uses custom fonts with the following steps.
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/8Vzv2CdbEY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{{site.alert.end}}
-
-{{site.alert.note}}
-
-  For another approach to using custom fonts, 
-  especially if you want to re-use one font over multiple projects, 
-  see [Export fonts from a package][].
-
-  这里还有另一个关于使用自定义字体的教程，
-  如果你想要在多项目中重用一份字体的情况下，
-  请参考 [将字体导出到 package][Export fonts from a package]。
-
-{{site.alert.end}}
-
-Flutter works with custom fonts and you can apply a custom
-font across an entire app or to individual widgets.
-This recipe creates an app that uses custom fonts with
-the following steps:
-
-Flutter 可以很方便的使用自定义字体，不仅能够将其用于整个应用里，
+Flutter 可以很方便地使用自定义字体，不仅能够将其用于整个应用里，
 还可以用在某个单独的 widget 中。
-请参照下面的步骤使用自定义字体：
+本指南参照下面的步骤使用自定义字体：
 
-  1. Import the font files.
+1. Choose your fonts.
 
-     导入字体文件。
+   选择你的字体。
 
-  2. Declare the font in the pubspec.
+1. Import the font files.
 
-     在 `pubspec.yaml` 中声明字体。
+   导入字体文件。
 
-  3. Set a font as the default.
+1. Declare the font in the pubspec.
 
-     设置默认字体。
+   在 `pubspec.yaml` 中声明字体。
 
-  4. Use a font in a specific widget.
+1. Set a font as the default.
+
+   设置默认字体。
+
+1. Use a font in a specific widget.
+
+   将字体用于特定 widget。
+
+You don't need to follow each step as you go. 
+The guide offers completed example files at the end.
+
+你不需要按照每个步骤进行操作。
+指南最后提供了已完成的示例文件。
+
+{{site.alert.note}}
+
+  This guide makes the following presumptions:
   
-     将字体用于特定 widget。
+  1. You've [set up your Flutter environment][].
+  1. You've [created a new Flutter app][new-flutter-app] named `custom_fonts`.
+     If you haven't completed these steps yet, do so before continuing
+     with this guide.
+  1. You're performing the provided commands in a macOS or Linux shell
+     and using `vi`. You can substitute any text editor for `vi`.
+     Windows users should use the appropriate commands and paths when
+     performing the steps.
+  1. You're adding the Raleway and RobotoMono fonts to your Flutter app.
 
-## 1. Import the font files
+{{site.alert.end}}
 
-## 1. 导入字体文件
+[set up your Flutter environment]: {{site.url}}/get-started/install
+[new-flutter-app]: {{site.url}}/get-started/test-drive
 
-To work with a font, import the font files into the project.
-It's common practice to put font files in a `fonts` or `assets`
-folder at the root of a Flutter project.
+## Choose a font
 
-要使用字体，你需要将字体文件导入到项目中。
-常见的做法是将字体文件放在项目根目录下的 `fonts` 或者 `assets` 文件夹中。
+## 字体的选择
 
-For example, to import the Raleway and Roboto Mono font
-files into a project, the folder structure might look like this:
+Your choice of font should be more than a preference.
+Consider which file formats work with Flutter and
+how the font could affect design options and app performance.
 
-例如，如果你想要在项目中导入 Raleway 和 Roboto Mono 字体，
-文件夹结构会像下面这样：
+字体的选择不应仅仅是一种偏好。
+请考虑哪些文件格式可与 Flutter 配合使用，
+以及字体会如何影响设计和应用的性能。
 
-```
-awesome_app/
-  fonts/
-    Raleway-Regular.ttf
-    Raleway-Italic.ttf
-    RobotoMono-Regular.ttf
-    RobotoMono-Bold.ttf
-```
+#### Pick a supported font format
 
-### Supported font formats
-
-### 已支持的字体格式
+#### 选择已支持的字体格式
 
 Flutter supports the following font formats:
 
 Flutter 支持以下的字体格式：
 
-* `.ttc`
-* `.ttf`
-* `.otf`
+* OpenType font collections: `.ttc`
 
-Flutter does not support `.woff` and `.woff2` fonts for all platforms.
+  OpenType 字体集：`.ttc`
 
-Flutter 在所有平台上均尚未支持 `.woff` 和 `.woff2` 字体。
+* TrueType fonts: `.ttf`
 
-## 2. Declare the font in the pubspec
+  TrueType 字体：`.ttf`
 
-## 2. 在 `pubspec.yaml` 中声明字体
+* OpenType fonts: `.otf`
 
-Once you've identified a font, tell Flutter where to find it.
-You can do this by including a font definition in the `pubspec.yaml` file.
+  OpenType 字体：`.otf`
 
-现在你已经有一个字体可以使用，接下来则需要告诉 Flutter 它在哪。
-你可以在 `pubspec.yaml` 中像下面这样声明：
+Flutter does not support fonts in the Web Open Font Format,
+`.woff` and `.woff2`, on desktop platforms.
 
-```yaml
-flutter:
-  fonts:
-    - family: Raleway
-      fonts:
-        - asset: fonts/Raleway-Regular.ttf
-        - asset: fonts/Raleway-Italic.ttf
-          style: italic
-    - family: RobotoMono
-      fonts:
-        - asset: fonts/RobotoMono-Regular.ttf
-        - asset: fonts/RobotoMono-Bold.ttf
-          weight: 700
+Flutter 在桌面平台上不支持 Web Open 字体格式（`.woff` 和 `.woff2`）
+的字体。
+
+#### Choose fonts for their specific benefits
+
+Few sources agree on what a font file type is or which uses less space.
+The key difference between font file types involves how the format 
+encodes the glyphs in the file.
+Most TrueType and OpenType font files have similiar capabilities as they
+borrowed from each other as the formats and fonts improved over time.
+
+Which font you should use depends on the following considerations.
+
+* How much variation you need for fonts in your app?
+* How much file size you can accept fonts using in your app?
+* How many languages you need to support in your app?
+
+Research what options a given font offers,
+like more than one weight or style per font file,
+[variable font capability][variable-fonts],
+the availabilty of multiple font files for a multiple font weights,
+or more than one width per font.
+
+Choose the typeface or font family that meets the design needs of your app.
+
+{{site.alert.secondary}}
+  To learn how to get direct access to over 1,000 open-sourced font families,
+  check out the [google_fonts][] package.
+
+  <iframe class="full-width" src="{{yt-embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{yt-set}}></iframe>
+
+  To learn about another approach to using custom fonts that allows you to
+  re-use one font over multiple projects,
+  check out [Export fonts from a package][].
+{{site.alert.end}}
+
+## Import the font files
+
+To work with a font, import its font files into your Flutter project.
+
+To import font files, perform the following steps.
+
+1. If necessary, to match the remaining steps in this guide,
+   change the name of your Flutter app to `custom_fonts`.
+
+   ```terminal
+   $ mv /path/to/my_app /path/to/custom_fonts
+   ```
+
+1. Navigate to the root of your Flutter project.
+
+   ```terminal
+   $ cd /path/to/custom_fonts
+   ```
+
+1. Create a `fonts` directory at the root of your Flutter project.
+
+   ```terminal
+   $ mkdir fonts
+   ```
+
+1. Move or copy the font files in a `fonts` or `assets`
+   folder at the root of your Flutter project.
+
+   ```terminal
+   $ cp ~/Downloads/*.ttf ./fonts
+   ```
+
+The resulting folder structure should resemble the following:
+
+```nocode
+custom_fonts/
+|- fonts/
+  |- Raleway-Regular.ttf
+  |- Raleway-Italic.ttf
+  |- RobotoMono-Regular.ttf
+  |- RobotoMono-Bold.ttf
 ```
 
-### `pubspec.yaml` option definitions
+## Declare the font in the pubspec.yaml file
 
-### `pubspec.yaml` 选项的定义
+After you've downloaded a font,
+include a font definition in the `pubspec.yaml` file.
+This font definition also specifies which font file should be used to
+render a given weight or style in your app.
 
-The `family` determines the name of the font, which you use in the
-[`fontFamily`][] property of a [`TextStyle`][] object.
+### Define fonts in the `pubspec.yaml` file
 
-`family` 属性决定了字体的名称，
-你将会在 [`TextStyle`][] 的 [`fontFamily`][] 属性中用到。
+To add font files to your Flutter app, complete the following steps.
 
-The `asset` is a path to the font file,
-relative to the `pubspec.yaml` file.
+1. Open the `pubspec.yaml` file at the root of your Flutter project.
+
+   ```terminal
+   $ vi pubspec.yaml
+   ```
+
+1. Paste the following YAML block after the `flutter` declaration.
+
+   ```yaml
+     fonts:
+       - family: Raleway
+         fonts:
+           - asset: fonts/Raleway-Regular.ttf
+           - asset: fonts/Raleway-Italic.ttf
+             style: italic
+       - family: RobotoMono
+         fonts:
+           - asset: fonts/RobotoMono-Regular.ttf
+           - asset: fonts/RobotoMono-Bold.ttf
+            weight: 700
+   ```
+
+This `pubspec.yaml` file defines the italic style for the
+`Raleway` font family as the `Raleway-Italic.ttf` font file.
+When you you set `style: TextStyle(fontStyle: FontStyle.italic)`,
+Flutter swaps `Raleway-Regular` with `Raleway-Italic`.
+
+The `family` value sets the name of the typeface.
+You use this name in the [`fontFamily`][] property of a [`TextStyle`][] object.
+
+The value of an `asset` is a relative path from the `pubspec.yaml` file
+to the font file.
 These files contain the outlines for the glyphs in the font.
 When building the app,
-these files are included in the app's asset bundle.
+Flutter includes these files in the app's asset bundle.
 
-`asset` 是字体文件对于 `pubspec.yaml` 文件的相对路径。
-这些文件包含了字体中字形的轮廓。
-构建应用时，这些文件将会被包含在应用程序的资源包中。
+### Include font files for each font
 
-A single font can reference many different files with different
-outline weights and styles:
+Different typefaces implement font files in different ways.
+If you need a typeface with a variety of font weights and styles,
+choose and import font files that represent that variety. 
 
-单个字体可以引用多个不同轮廓字重及风格的文件：
+When you import a font file that doesn't include either multiple fonts
+within it or variable font capabilities,
+don't use the `style` or `weight` property to adjust how they display.
+If you do use those properties on a regular font file,
+Flutter attempts to _simulate_ the look.
+The visual result will look quite different from using the correct font file. 
 
-  * The `weight` property specifies the weight of the outlines in
-    the file as an integer multiple of 100, between 100 and 900.
-    These values correspond to the [`FontWeight`][] and can be used in the
-    [`fontWeight`][fontWeight property] property of a [`TextStyle`][] object. 
-    For example, if you want to use the `RobotoMono-Bold` font defined above, 
-    you would set `fontWeight` to `FontWeight.w700` in your `TextStyle`.
+### Set styles and weights with font files
 
-    `weight` 属性指定了文件中字体轮廓的字重为 100 的整数倍，
-    并且范围在 100 和 900 之间。
-    这些值对应 [`FontWeight`][fontWeight property] 并能够在 [`TextStyle`][] 
-    对象的 [`fontWeight`][] 属性上使用。
-    例如，如果你想使用上面定义的 `RobotoMono-Bold` 字体，
-    你可以在 `TextStyle` 中将 `fontWeight` 设置为 `FontWeight.w700`。
-    
-    Note that defining the `weight` property does not
-    override the actual weight of the font. You would not be able to
-    access `RobotoMono-Bold` with `FontWeight.w100`, even if its `weight`
-    was set to 100.
+When you declare which font files represent styles or weights of a font,
+you can apply the `style` or `weight` properties.
 
-    需要注意的是，定义 `weight` 属性不会覆盖字体的实际粗细。
-    你无法使用 `FontWeight.w100` 访问 `RobotoMono-Bold`，
-    即使其 `weight` 设置为了 100。
+#### Set font weight
 
-  * The `style` property specifies whether the outlines in the file are
-    `italic` or `normal`. 
-    These values correspond to the [`FontStyle`][] and can be used in the
-    [`fontStyle`][fontStyle property] property of a [`TextStyle`][] object. 
-    For example, if you want to use the `Raleway-Italic` font defined above, 
-    you would set `fontStyle` to `FontStyle.italic` in your `TextStyle`.
+The `weight` property specifies the weight of the outlines in
+the file as an integer multiple of 100, between 100 and 900.
+These values correspond to the [`FontWeight`][] and can be used in the
+[`fontWeight`][fontWeight property] property of a [`TextStyle`][] object.
 
-    `style` 属性指定文件中字体的轮廓是否为 `italic` 或 `normal`。
-    这些值对应 [`FontStyle`][fontStyle property] 并能够在 [`TextStyle`][]
-    对象的 [`fontStyle`][] 属性上使用。例如，如果你想使用上面定义的 
-    `Raleway-Italic` 字体，你可以在 `TextStyle` 中
-    将 `fontStyle` 设置为 `FontStyle.italic`。
-    
-    Note that defining the `style` property does not
-    override the actual style of the font; You would not be able to
-    access `Raleway-Italic` with `FontStyle.normal`, even if its `style`
-    was set to normal.
+In the `pubspec.yaml` shown in this guide,
+you defined `RobotoMono-Bold` as the `700` weight of the font family.
+To use the `RobotoMono-Bold` font that you added to your app, 
+set `fontWeight` to `FontWeight.w700` in your `TextStyle` widget.
 
-    需要注意的是，定义 `style` 属性不会更改字体的实际样式；
-    你无法使用 `FontStyle.normal` 访问 `Raleway-Italic，
-    即使其 `style` 设置为了 normal。
+If hadn't added `RobotoMono-Bold` to your app,
+Flutter attempts to make the font look bold.
+The text then might appear to be somewhat darker.
 
-## 3. Set a font as the default
+You can't use the `weight` property to override the weight of the font.
+You can't set `RobotoMono-Bold` to any other weight than `700`.
+If you set `TextStyle(fontFamily: 'RobotoMono', fontWeight: FontWeight.w900)`,
+the displayed font would still render as however bold `RobotoMono-Bold` looks.
 
-## 3. 设置默认字体
+#### Set font style
 
-You have two options for how to apply fonts to text: as the default font
-or only within specific widgets.
+The `style` property specifies whether the glyphs in the font file display as
+either `italic` or `normal`.
+These values correspond to the [`FontStyle`][].
+You can use these styles in the [`fontStyle`][fontStyle property] property
+of a [`TextStyle`][] object.
 
-关于如何应用这些字体，你有两种选择：
-将其设为默认字体，或者仅在某些特定 widget 中使用。
+In the `pubspec.yaml` shown in this guide,
+you defined `Raleway-Italic` as being in the `italic` style. 
+To use the `Raleway-Italic` font that you added to your app, 
+set `style: TextStyle(fontStyle: FontStyle.italic)`.
+Flutter swaps `Raleway-Regular` with `Raleway-Italic` when rendering.
 
-To use a font as the default, set the `fontFamily` property
-as part of the app's `theme`. The value provided to
-`fontFamily` must match the `family`
-name declared in the `pubspec.yaml`.
+If hadn't added `Raleway-Italic` to your app,
+Flutter attempts to make the font _look_ italic.
+The text then might appear to be leaning to the right.
 
-如果你想要设为默认字体，
-请将 `fontFamily` 设为应用（全局）`theme` 的属性的一部分。
-提供的 `fontFamily` 的值必须与 `pubspec.yaml` 中声明的名称相匹配。
+You can't use the `style` property to override the glyphs of a font.
+If you set `TextStyle(fontFamily: 'Raleway', fontStyle: FontStyle.normal)`,
+the displayed font would still render as italic.
+The `regular` style of an italic font _is_ italic.
+
+## Set a font as the default
+
+To apply a font to text, you can set the font as the app's default font
+in its `theme`.
+
+To set a default font, set the `fontFamily` property in the app's `theme`.
+Match the `fontFamily` value to the `family` name declared in the
+`pubspec.yaml` file.
+
+The result would resemble the following code.
 
 <?code-excerpt "lib/main.dart (MaterialApp)"?>
 ```dart
@@ -233,29 +350,20 @@ return MaterialApp(
 );
 ```
 
-For more information on themes,
-see the [Using Themes to share colors and font styles][] recipe.
+To learn more about themes,
+check out the [Using Themes to share colors and font styles][] recipe.
 
-有关主题的更多信息，请参阅文档：
-[使用 Themes 统一颜色和字体风格][Using Themes to share colors and font styles]。
+## Set the font in a specific widget
 
-## 4. Use the font in a specific widget
-
-## 4. 将字体用于特定 Widget
-
-If you want to apply the font to a specific widget,
-such as a `Text` widget,
+To apply the font to a specific widget like a `Text` widget,
 provide a [`TextStyle`][] to the widget.
 
-如果你希望在特定 Widget（例如 `Text` Widget）中使用该字体，可以通过
-[`TextStyle`][] 中进行指定。
+For this guide, 
+try to apply the `RobotoMono` font to a single `Text` widget.
+Match the `fontFamily` value to the `family` name declared in the
+`pubspec.yaml` file.
 
-In this example, apply the RobotoMono font to a single `Text` widget.
-Once again, the `fontFamily` must match the `family` name declared in the
-`pubspec.yaml`.
-
-在这个例子中，我们将在一个 `Text` Widget 上使用 RobotoMono 字体。
-同样的，这里的 fontFamily 的值必须与 pubspec.yaml 中声明的值相匹配。
+The result would resemble the following code.
 
 <?code-excerpt "lib/main.dart (Text)"?>
 ```dart
@@ -265,107 +373,112 @@ child: Text(
 ),
 ```
 
-### TextStyle
+{{site.alert.important}}
+  If a [`TextStyle`][] object specifies a weight or style without a
+  corresponding font file, the engine uses a generic file for the font
+  and attempts to extrapolate outlines for the requested weight and style.
+  
+  Avoid relying on this capability. Import the proper font file instead.
+{{site.alert.end}}
 
-### 字体样式
+## Try the complete example
 
-If a [`TextStyle`][] object specifies a weight
-or style for which there is no exact font file,
-the engine uses one of the more generic files
-for the font and attempts to extrapolate outlines
-for the requested weight and style.
+### Download fonts
 
-如若 [`TextStyle`][] 指定的字体样式缺少相应的字体文件，
-Engine 则会使用一个更加通用的字体文件，
-并尝试推断所请求的字体 weight 和样式的轮廓。
+Download the Raleway and RobotoMono font files from [Google Fonts][].
 
-## Complete example
+### Update the `pubspec.yaml` file
 
-## 完整样例
+1. Open the `pubspec.yaml` file at the root of your Flutter project.
 
-### Fonts
+   ```terminal
+   $ vi pubspec.yaml
+   ```
 
-### 字体
+1. Replace its contents with the following YAML.
 
-The Raleway and RobotoMono fonts were downloaded from
-[Google Fonts][].
+   ```yaml
+   name: custom_fonts
+   description: An example of how to use custom fonts with Flutter
+   
+   dependencies:
+     flutter:
+       sdk: flutter
+   
+   dev_dependencies:
+     flutter_test:
+       sdk: flutter
+   
+   flutter:
+     fonts:
+       - family: Raleway
+         fonts:
+           - asset: fonts/Raleway-Regular.ttf
+           - asset: fonts/Raleway-Italic.ttf
+             style: italic
+       - family: RobotoMono
+         fonts:
+           - asset: fonts/RobotoMono-Regular.ttf
+           - asset: fonts/RobotoMono-Bold.ttf
+             weight: 700
+     uses-material-design: true
+   ```
 
-Raleway 和 RobotoMono 字体是从 [Google Fonts][] 下载的。
+### Use this `main.dart` file
 
-### `pubspec.yaml`
+1. Open the `main.dart` file in the `lib/` directory of your Flutter project.
 
-```yaml
-name: custom_fonts
-description: An example of how to use custom fonts with Flutter
+   ```terminal
+   $ vi lib/main.dart
+   ```
 
-dependencies:
-  flutter:
-    sdk: flutter
+1. Replace its contents with the following Dart code.
 
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
+   <?code-excerpt "lib/main.dart"?>
+   ```dart
+   import 'package:flutter/material.dart';
 
-flutter:
-  fonts:
-    - family: Raleway
-      fonts:
-        - asset: fonts/Raleway-Regular.ttf
-        - asset: fonts/Raleway-Italic.ttf
-          style: italic
-    - family: RobotoMono
-      fonts:
-        - asset: fonts/RobotoMono-Regular.ttf
-        - asset: fonts/RobotoMono-Bold.ttf
-          weight: 700
-  uses-material-design: true
-```
+   void main() => runApp(const MyApp());
 
-### `main.dart`
+   class MyApp extends StatelessWidget {
+     const MyApp({super.key});
 
-<?code-excerpt "lib/main.dart"?>
-```dart
-import 'package:flutter/material.dart';
+     @override
+     Widget build(BuildContext context) {
+       return MaterialApp(
+         title: 'Custom Fonts',
+         // Set Raleway as the default app font.
+         theme: ThemeData(fontFamily: 'Raleway'),
+         home: const MyHomePage(),
+       );
+     }
+   }
 
-void main() => runApp(const MyApp());
+   class MyHomePage extends StatelessWidget {
+     const MyHomePage({super.key});
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold(
+         // The AppBar uses the app-default Raleway font.
+         appBar: AppBar(title: const Text('Custom Fonts')),
+         body: const Center(
+           // This Text widget uses the RobotoMono font.
+           child: Text(
+             'Roboto Mono sample',
+             style: TextStyle(fontFamily: 'RobotoMono'),
+           ),
+         ),
+       );
+     }
+   }
+   ```
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Custom Fonts',
-      // Set Raleway as the default app font.
-      theme: ThemeData(fontFamily: 'Raleway'),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // The AppBar uses the app-default Raleway font.
-      appBar: AppBar(title: const Text('Custom Fonts')),
-      body: const Center(
-        // This Text widget uses the RobotoMono font.
-        child: Text(
-          'Roboto Mono sample',
-          style: TextStyle(fontFamily: 'RobotoMono'),
-        ),
-      ),
-    );
-  }
-}
-```
+The resulting Flutter app should display the following screen.
 
 ![Custom Fonts Demo]({{site.url}}/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
 
-
+[variable-fonts]: https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
 [Export fonts from a package]: {{site.url}}/cookbook/design/package-fonts
 [`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
 [fontStyle property]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html

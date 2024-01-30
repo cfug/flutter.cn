@@ -215,7 +215,7 @@ You can add any of the following optional parameters:
 
 </div>
 
-[jsflutterconfig-source]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
+[jsflutterconfig-source]: {{site.repo.engine}}/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
 [web-renderers]: {{site.url}}/platform-integration/web/renderers
 
 {{site.alert.note}}
@@ -271,7 +271,7 @@ file of the web engine.
 请查阅 web 引擎 [`configuration.dart`][config-dart] 文件中，
 文档的 **"Runtime parameters"** 部分。
 
-[config-dart]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L174
+[config-dart]: {{site.repo.engine}}/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L174
 
 #### Skipping this step
 
@@ -345,7 +345,7 @@ see the [initialization code][gallery-init] for the Flutter Gallery.
 更多关于实用的 CSS 动画示例，
 请查阅 Flutter Gallery 的 [初始化代码][gallery-init]。
 
-[gallery-init]: {{site.github}}/flutter/gallery/blob/master/web/index.html
+[gallery-init]: {{site.repo.gallery}}/blob/master/web/index.html
 
 ## Upgrading an older project
 

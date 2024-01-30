@@ -7,6 +7,8 @@ tags: Flutter教程,Flutter起步,Flutter入门
 keywords: Flutter iOS,iOS,用Flutter开发iOS,Cupertino
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
 
 iOS developers with experience using UIKit
@@ -37,7 +39,7 @@ to app behavior when running on iOS.
 To learn how, see [Platform adaptations][].
 
 {{site.alert.info}}
-  To integrate Flutter code into an **existing** iOS app, 
+  To integrate Flutter code into an **existing** iOS app,
   check out [Add Flutter to existing app][].
 {{site.alert.end}}
 
@@ -49,7 +51,7 @@ Jump around and find questions that address your most relevant needs.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/ceMsPBbcEGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="full-width" src="{{yt-embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{yt-set}}></iframe>
 
 ### Views vs. Widgets
 
@@ -2033,7 +2035,7 @@ implement yourself, making it simple to make network calls.
 To add the `http` package as a dependency, run `flutter pub add`:
 
 ```terminal
-$ flutter pub add http
+flutter pub add http
 ```
 
 To make a network call,

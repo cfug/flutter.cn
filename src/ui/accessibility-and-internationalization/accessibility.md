@@ -6,6 +6,9 @@ tags: Flutter开发
 keywords: 联合国关于残疾人权利,CRPD,无障碍
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 Ensuring apps are accessible to a broad range of users is an essential
 part of building a high-quality app. Applications that are poorly
 designed create barriers to people of all ages. The [UN Convention on
@@ -20,7 +23,7 @@ recognize the business advantages of maximizing access to their services.
 世界各地也都要求提供无障碍的环境；
 同样，公司也认识到了最大限度覆盖服务的优势所在。
 
-We strongly encourage you to include an accessibility checklist 
+We strongly encourage you to include an accessibility checklist
 as a key criteria before shipping your app. Flutter is committed to
 supporting developers in making their apps more accessible, and includes
 first-class framework support for accessibility in addition to that
@@ -64,9 +67,9 @@ we recommend using automated accessibility scanners:
 关于无障碍功能检测的细节，我们将在下面讨论。
 除了测试这些特定主题外，我们还建议您使用自动辅助功能扫描程序：
 
-  * For Android:
+* For Android:
 
-    对于 Android:
+  对于 Android:
 
     1. Install the [Accessibility Scanner][] for Android
 
@@ -83,9 +86,9 @@ we recommend using automated accessibility scanners:
 
        在导航栏找到辅助扫描仪复选框按钮启动扫描
 
-  * For iOS:
+* For iOS:
 
-    对于 iOS:
+  对于 iOS:
 
     1. Open the `iOS` folder of your Flutter app in Xcode
 
@@ -115,9 +118,9 @@ we recommend using automated accessibility scanners:
        在辅助检查器中，选择工具栏中的 **审核**，
        然后选择 **运行音频** 来获取潜在问题的报告
  
-  * For web:
+* For web:
 
-    对于 web:
+  对于 web:
 
     1. Open Chrome DevTools (or similar tools in other browsers)
 
@@ -127,7 +130,7 @@ we recommend using automated accessibility scanners:
 
        检查包含 Flutter 生成的 ARIA 属性的 HTML 树。
 
-    3. In Chrome, the "Elements" tab has a "Accessibility" sub-tab 
+    3. In Chrome, the "Elements" tab has a "Accessibility" sub-tab
        that can be used to inspect the data exported to semantics tree
 
        在 Chrome 中，「Elements」选项卡中有一个「Accessbility」子选项卡，
@@ -188,7 +191,7 @@ Flutter 应用程序，和使用 iOS 辅助功能设置中选择的最大字体
 For mobile, screen readers ([TalkBack][], [VoiceOver][])
 enable visually impaired users to get spoken feedback about
 the contents of the screen and interact with the UI by using
-gestures on mobile and keyboard shortcuts on desktop. 
+gestures on mobile and keyboard shortcuts on desktop.
 Turn on VoiceOver or TalkBack on your mobile device and
 navigate around your app.
 
@@ -243,7 +246,7 @@ accessibility features, view the following video.
 请观看以下视频，
 了解如何查找和自定义 Android 的辅助功能/无障碍。
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/FQyj_XTl01w" title="Customize accessibility features on Pixel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="560" height="315" src="{{yt-embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{yt-set}}>
 </iframe>
 
 </div>
@@ -264,7 +267,7 @@ accessibility features, view the following video.
 请观看以下视频，
 了解如何查找和自定义 iOS 的辅助功能。
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/qDm7GiKra28" title="How to navigate your iPhone or iPad with VoiceOver" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="560" height="315" src="{{yt-embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{yt-set}}>
 </iframe>
 
 </div>
@@ -330,8 +333,7 @@ which is included in macOS.
 
 在 Mac 上，你可以使用 macOS 自带的桌面版旁白 (VoiceOver)。
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/5R-6WvAihms" title="Screen Reader Basics: VoiceOver -- A11ycasts #07" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/5R-6WvAihms" title="Learn about the macOS VoiceOver screen reader" {{yt-set}}></iframe>
 
 On Linux, a popular screen reader is called Orca.
 It comes pre-installed with some distributions
@@ -352,15 +354,15 @@ To learn about using Orca, check out
 
 <br/>
 
-Check out the following [video demo][] to see 
-Victor Tsaran, who leads the Accessibility program for Material Design, 
+Check out the following [video demo][] to see
+Victor Tsaran, who leads the Accessibility program for Material Design,
 using VoiceOver with the Flutter Gallery web app.
 
 查看此 [视频演示][video demo]，了解 Victor Tsaran，
 他领导了 Material Design 的辅助功能计划，
 并在 Flutter Gallery Web 应用程序中使用了 VoiceOver。
 
-Flutter's standard widgets generate an accessibility tree automatically. 
+Flutter's standard widgets generate an accessibility tree automatically.
 However, if your app needs something different,
 it can be customized using the [`Semantics` widget][].
 
@@ -444,7 +446,7 @@ widgets to offer a dramatically more accessible experience.
 Flutter 内置的 widget，
 以提供更加便捷的体验。
 
-<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=630361140&bvid=BV1N84y1c7hW&cid=331074861&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=630361140&bvid=BV1N84y1c7hW&cid=331074861&page=1&autoplay=false" title="Learn about building Flutter apps with Accessibility in mind" {{bili-set}}></iframe>
 
 ## Testing accessibility on mobile
 
@@ -512,12 +514,12 @@ using the following command line flag in profile and release modes:
 使用以下命令行标志可视化为你的 Web 应用程序创建的语义节点来调试无障碍：
 
 ```terminal
-$ flutter run -d chrome --profile --dart-define=FLUTTER_WEB_DEBUG_SHOW_SEMANTICS=true
+flutter run -d chrome --profile --dart-define=FLUTTER_WEB_DEBUG_SHOW_SEMANTICS=true
 ```
- 
+
 With the flag activated, the semantic nodes appear on top of the widgets;
 you can verify that the semantic elements are placed where they should be.
-If the semantic nodes are incorrectly placed, please [file a bug report][]. 
+If the semantic nodes are incorrectly placed, please [file a bug report][].
 
 标记激活后，语义节点出现在 widget 的顶部；
 你可以验证语义元素是否放置在应有的位置。
@@ -532,7 +534,7 @@ app for release.
 
 这里是一些应用发布前的你需要考虑的部分清单。
 
-- **Active interactions**. Ensure that all active interactions do
+* **Active interactions**. Ensure that all active interactions do
 something. Any button that can
 be pushed should do something when pushed. For example, if you have a
 no-op callback for an `onPressed` event, change it to show a `SnackBar`
@@ -543,7 +545,7 @@ on the screen explaining which control you just pushed.
   例如，如果你有一个“onPressed”事件的无操作回调，
   请改为显示一个“SnackBar”，并告诉用户刚才按下了哪个控件。
 
-- **Screen reader testing**. The screen reader should be able to
+* **Screen reader testing**. The screen reader should be able to
 describe all controls on the page when you tap on them, and the
 descriptions should be intelligible. Test your app with [TalkBack][]
 (Android) and [VoiceOver][] (iOS).
@@ -553,15 +555,15 @@ descriptions should be intelligible. Test your app with [TalkBack][]
   并且描述应易于理解。请使用 [TalkBack][]（Android）
   以及 [VoiceOver][] (iOS) 测试你的应用。
 
-  **Contrast ratios**. We encourage you to have a contrast ratio of at
+* **Contrast ratios**. We encourage you to have a contrast ratio of at
 least 4.5:1 between controls or text and the background, with the
 exception of disabled components. Images should also be vetted for
-sufficient contrast. 
+sufficient contrast.
 
   **对比度**。我们建议你至少将控件或文本与背景之间的比例
   设为 4.5 : 1，禁用的组件除外。图片也应该经过审核足够的对比度。
 
-- **Context switching**. Nothing should change the user's context
+* **Context switching**. Nothing should change the user's context
 automatically while typing in information. Generally, the widgets
 should avoid changing the user's context without some sort of
 confirmation action.
@@ -570,25 +572,25 @@ confirmation action.
   通常来说，widget 应该避免在没有任何确认动作的情况下
   更改用户的上下文。
 
-- **Tappable targets**. All tappable targets should be at least 48x48
+* **Tappable targets**. All tappable targets should be at least 48x48
 pixels.
 
   **可点击的目标**。所有可点击的目标平均
   至少应为 48x48 像素。
 
-- **Errors**. Important actions should be able to be undone. In fields
+* **Errors**. Important actions should be able to be undone. In fields
 that show errors, suggest a correction if possible.
 
   **错误**。所有重要动作应该能够被撤销。
   在有限范围内显示错误原因，
   如果可能的话，提供订正建议。
 
-- **Color vision deficiency testing**. Controls should be usable and
+* **Color vision deficiency testing**. Controls should be usable and
 legible in colorblind and grayscale modes.
 
   **色觉不足测试**。控件应该可用并且在色盲和灰度模式下清晰可见。
 
-- **Scale factors**. The UI should remain legible and usable at very
+* **Scale factors**. The UI should remain legible and usable at very
 large scale factors for text size and display scaling.
 
   **比例系数**。 文本大小和显示比例的用户界面应保持清晰易用。
@@ -619,5 +621,5 @@ the following articles written by community members:
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
-[video demo]: {{site.youtube-site}}/watch?v=A6Sx0lBP8PI
+[video demo]: {{yt-watch}}?v=A6Sx0lBP8PI
 [file a bug report]: https://goo.gle/flutter_web_issue

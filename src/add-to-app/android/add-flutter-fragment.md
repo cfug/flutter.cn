@@ -797,7 +797,7 @@ surrounding `Activity`.
 
 {{site.alert.end}}
 
-[`Fragment`]: https://developer.android.com/guide/components/fragments
+[`Fragment`]: {{site.android-dev}}/guide/components/fragments
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
 [using a `FlutterActivity`]: {{site.url}}/add-to-app/android/add-flutter-screen
 [`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html

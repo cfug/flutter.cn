@@ -7,6 +7,8 @@ tags: cookbook, 实用教程, 使用图片
 keywords: Flutter使用图片,图片缓存,网络图片,API
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/images/cached_images"?>
 
 In some cases, it's handy to cache images as they're downloaded from the
@@ -22,7 +24,7 @@ use the [`cached_network_image`][] package.
 
   了解更多，请参考下方「每周 Widget」的里关于 cached_network_image 的短视频：
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/fnHr_rsQwDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="full-width" src="{{yt-embed}}/fnHr_rsQwDA" title="了解 cached_network_image Flutter Package" {{yt-set}}></iframe>
 
 {{site.alert.end}}
 
@@ -94,6 +96,5 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-
 
 [`cached_network_image`]: {{site.pub-pkg}}/cached_network_image

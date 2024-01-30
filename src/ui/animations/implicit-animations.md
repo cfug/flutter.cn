@@ -7,6 +7,9 @@ tags: 用户界面,Flutter UI,动画
 keywords: 隐式动画
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 With Flutter's [animation library][],
 you can add motion and create visual effects
 for the widgets in your UI.
@@ -64,13 +67,19 @@ The following videos cover topics
 that are relevant to implicit animations.
 
 聚焦 Flutter 视频以 5 到 10 分钟的实战代码为特点，涵盖了每个 Flutter 开发人员都需要从头到尾了解的技术。
-下列视频涵盖了所有与隐性动画相关的话题。
+下列视频涵盖了所有与隐式动画相关的话题。
 
-{% comment %} Animation Basics with Implicit Animations {% endcomment %}
+<iframe width="560" height="315" src="{{yt-embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{yt-set}}></iframe>
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %} Custom Implicit Animations with Tween Animation Builder {% endcomment %}
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/6KiPEqzJIKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Learn about Animation Basics with Implicit Animations]({{yt-watch}}/IVTjpW3W33s)
+
+[使用隐式动画了解动画基础知识]({{yt-watch}}/IVTjpW3W33s)
+
+<iframe width="560" height="315" src="{{yt-embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{yt-set}}></iframe>
+
+[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{yt-watch}}/6KiPEqzJIKQ)
+
+[了解如何使用 TweenAnimationBuilder 构建自定义隐式动画]({{yt-watch}}/6KiPEqzJIKQ)
 
 ## The Boring Show
 
@@ -81,9 +90,11 @@ using implicit animations in a news aggregator app.
 观看《The Boring Show》，跟随谷歌工程师用 Flutter 从零开始构建应用程序。
 下面这一集涉及在一个新闻聚合器应用中使用隐式动画。
 
-{% comment %} Implicitly animating the Hacker News app {% endcomment %}
+<iframe width="560" height="315" src="{{yt-embed}}/8ehlWchLVlQ" title="about implicitly animating the Hacker News app" {{yt-set}}></iframe>
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/8ehlWchLVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Learn about implicitly animating the Hacker News app]({{yt-watch}}/8ehlWchLVlQ)
+
+[了解 Hacker News 应用的隐式动画设计]({{yt-watch}}/8ehlWchLVlQ)
 
 ## Widget of the Week videos
 
@@ -100,15 +111,16 @@ implicitly animated widgets:
 在大约六十秒的时间里，你将会看到每个 widget 的实战代码，以及关于它是如何工作的演示。
 下列「每周 Widget」视频涉及了隐含动画 widget 有：
 
-{% comment %} Animated Opacity {% endcomment %}
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839306372&bvid=BV1W54y1U7ma&cid=225852916&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %} Animated Padding {% endcomment %}
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839226956&bvid=BV1354y1U7gU&cid=223412850&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %} Animated Positioned {% endcomment %}
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=839111170&bvid=BV1T54y1D7hk&cid=220295763&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %} Animated switcher {% endcomment %}
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=544022725&bvid=BV1dv4y1o7BG&cid=295191533&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% assign animated-widgets = 'AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedSwitcher' | split: ", " %}
+{% assign animated-urls = 'BV1W54y1U7ma, BV1354y1U7gU, BV1T54y1D7hk, BV1dv4y1o7BG' | split: ", " %}
 
+{% for widget in animated-widgets %}
+{% assign video-url = animated-urls[forloop.index0] %}
+
+<iframe width="560" height="315" src="{{bili-embed}}?bvid={{video-url}}&page=1&autoplay=false" title="了解 {{widget}} Flutter Widget" {{bili-set}}></iframe>
+[了解 {{widget}} Flutter Widget]({{bili-video}}/{{video-url}})
+
+{% endfor -%}
 
 [`AnimatedContainer` sample]: {{site.url}}/cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html

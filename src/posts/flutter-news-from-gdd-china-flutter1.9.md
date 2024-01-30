@@ -3,7 +3,8 @@ title: Flutter 1.9 正式发布
 toc: true
 ---
 
- 
+{% include docs/bili_shims.liquid %}
+
 ![Google Developer Days taking place in China](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot9-release/flutter1-9-gdd-keynote.jpg){:width="95%"}
 
 本周对 [Flutter](http://flutter.cn) 意义非凡。Google 面向中国开发者举办的重量级年度盛会——[中国 Google 开发者大会](https://events.google.cn/intl/en/developerdays2019/) 于今日正式拉开帷幕。在主题演讲环节，Flutter 团队宣布推出最新稳定版: Flutter 1.9。这是 Flutter 迄今为止最大的一次版本更新，100 余位贡献者提交共计超过 1,500 份 pull request。Flutter 1.9 引入的新特性与更新涵盖范围广泛，包括 macOS Catalina 和 iOS 13 支持、工具支持优化、多项 Dart 语言新特性以及全新的 Material widget。
@@ -81,9 +82,9 @@ ToggleButtons widget 可将同一行的多个 ToggleButton widget 组合到一�
 ## 社区
 
 Flutter 惊人的成长速度和采用率让我们倍感欣慰。在 Google 内部，有超过 20 个项目正在稳步推进中，凝集着数千位工程师的辛勤付出，其中有部分项目已成功落地，其余的则尚在开发阶段。在本周的 Google 开发者大会上，我们已经与大家分享了全球互联网巨头腾讯的成功经验，介绍了腾讯是如何把 Flutter 灵活地运用到越来越多的产品中，欢迎收看下方视频，了解更多。
-Bilibili 视频链接 https://www.bilibili.com/video/av67230699/
+Bilibili 视频链接 {{bili-video}}/av67230699/
 
-<iframe src="//player.bilibili.com/player.html?aid=67230699&cid=116573649&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="{{bili-embed}}?aid=67230699&cid=116573649&page=1&autoplay=false" {{bili-set-short}}> </iframe>
 
 现在，让我们插个轻松的话题，邀请您参加一个有趣的小游戏。请找到您手边的 Google Assistant 设备，然后对它说 “OK Google. Talk to Flutter Widget Quiz.” (OK Google, [为我接通 Flutter Widget 问答挑战赛](https://assistant.google.com/services/a/uid/000000f3a4034e91))。十分感谢 Flutter 社区对这份小测试的倾情贡献，期待各位小伙伴的精彩表现:
 

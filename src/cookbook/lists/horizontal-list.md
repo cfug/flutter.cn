@@ -60,6 +60,28 @@ ListView(
 
 ## 交互式样例
 
+{{site.alert.secondary}}
+
+  **Desktop and web only:**
+  This example works in the browser and on the desktop.
+  However, as this list scrolls on the horizontal axis
+  (left to right or right to left),
+  hold <kbd>Shift</kbd> while using the mouse scroll wheel to scroll the list.
+
+  **仅限桌面和 web：**
+  此示例在浏览器和桌面上能够正常交互：
+  但要注意的是，
+  需要按住 <kbd>Shift</kbd> 键的同时使用鼠标滚轮滚动列表，
+  才能让列表在水平轴上滚动（从左到右和从右到左）。
+  
+  To learn more, read the [breaking change][] page on the
+  default drag for scrolling devices.
+
+  了解更多信息，请参阅 [破坏性改动][breaking change] 页面中
+  关于滚动设备的默认拖动方式。
+
+{{site.alert.end}}
+
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
@@ -119,5 +141,5 @@ class MyApp extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/horizontal-list.gif" alt="Horizontal List Demo" class="site-mobile-screenshot" />
 </noscript>
 
-
+[breaking change]: {{site.url}}/release/breaking-changes/default-scroll-behavior-drag
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html

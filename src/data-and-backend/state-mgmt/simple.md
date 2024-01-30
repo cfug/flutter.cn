@@ -656,9 +656,8 @@ master these skills.
 创建一个包含状态管理应用的能力。
 试着自己用 `provider` 构建一个应用来掌握这些技能吧！
 
-
-[built with `provider`]: {{site.github}}/flutter/samples/tree/main/provider_counter
-[check out the example]: {{site.github}}/flutter/samples/tree/main/provider_shopper
+[built with `provider`]: {{site.repo.samples}}/tree/main/provider_counter
+[check out the example]: {{site.repo.samples}}/tree/main/provider_shopper
 [declarative UI programming]: {{site.url}}/data-and-backend/state-mgmt/declarative
 [ephemeral and app state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
 [options page]: {{site.url}}/data-and-backend/state-mgmt/options

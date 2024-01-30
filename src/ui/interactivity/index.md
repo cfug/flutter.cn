@@ -10,6 +10,9 @@ keywords: 交互,Flutter交互,有状态的widget,无状态,StatefulWidget,状�
 diff2html: true
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 {{site.alert.secondary}}
@@ -18,17 +21,17 @@ diff2html: true
 
   <h4 class="no_toc">你会学到什么</h4>
 
-  * How to respond to taps.
+* How to respond to taps.
 
-    如何响应点击。
+  如何响应点击。
 
-  * How to create a custom widget.
+* How to create a custom widget.
 
-    如何创建自定义 widget。
+  如何创建自定义 widget。
 
-  * The difference between stateless and stateful widgets.
+* The difference between stateless and stateful widgets.
 
-    无状态和有状态 widget 之间的区别。
+  无状态和有状态 widget 之间的区别。
 
 {{site.alert.end}}
 
@@ -146,22 +149,22 @@ Widget 的状态是一些可以更改的值，如一个滑动条的当前值或�
 
   <h4 class="no_toc">重点是什么？</h4>
 
-  * A stateful widget is implemented by two classes:
-    a subclass of `StatefulWidget` and a subclass of `State`.
+* A stateful widget is implemented by two classes:
+  a subclass of `StatefulWidget` and a subclass of `State`.
 
-    实现一个有状态 widget 需要创建两个类：
-    一个 `StatefulWidget` 的子类和一个 `State` 的子类。
+  实现一个有状态 widget 需要创建两个类：
+  一个 `StatefulWidget` 的子类和一个 `State` 的子类。
 
-  * The state class contains the widget's mutable state and
-    the widget's `build()` method.
+* The state class contains the widget's mutable state and
+  the widget's `build()` method.
 
-    State 类包含该 widget 的可变状态并定义该 widget 的 `build()` 方法。
+  State 类包含该 widget 的可变状态并定义该 widget 的 `build()` 方法。
 
-  * When the widget's state changes, the state object calls
-    `setState()`, telling the framework to redraw the widget.
+* When the widget's state changes, the state object calls
+  `setState()`, telling the framework to redraw the widget.
 
-    当 widget 状态改变时，State 对象调用 `setState()`，
-    告诉框架去重绘 widget。
+  当 widget 状态改变时，State 对象调用 `setState()`，
+  告诉框架去重绘 widget。
 
 {{site.alert.end}}
 
@@ -203,10 +206,10 @@ managed for `FavoriteWidget`.
 ### 步骤 0: 开始
 
 If you've already built the app in the
-[building layouts tutorial (step 6)][],
+[building layouts tutorial][],
 skip to the next section.
 
-如果你已经在 [构建布局教程（第 6 步）][building layouts tutorial (step 6)]
+如果你已经在 [构建布局教程][building layouts tutorial]
 中成功创建了应用程序，你可以跳过下面的部分。
 
  1. Make sure you've [set up][] your environment.
@@ -241,6 +244,7 @@ install), you are good to go!
 （Flutter 安装部分介绍过），你就可以开始了！
 
 <a id="step-1"></a>
+
 ### Step 1: Decide which object manages the widget's state
 
 ### Step 1: 决定哪个对象管理 widget 的状态
@@ -267,6 +271,7 @@ and how state might be managed, in [Managing state][].
 关于 widget 和状态的分离以及如何管理状态的信息。
 
 <a id="step-2"></a>
+
 ### Step 2: Subclass StatefulWidget
 
 ### Step 2: 创建 StatefulWidget 的子类
@@ -313,6 +318,7 @@ class FavoriteWidget extends StatefulWidget {
 {{site.alert.end}}
 
 <a id="step-3"></a>
+
 ### Step 3: Subclass State
 
 ### Step 3: 创建 State 的子类
@@ -437,6 +443,7 @@ void _toggleFavorite() {
 ```
 
 <a id="step-4"></a>
+
 ### Step 4: Plug the stateful widget into the widget tree
 
 ### Step 4: 将有 stateful widget 插入 widget 树中
@@ -455,10 +462,7 @@ In the same location, create the stateful widget:
 ```diff
 --- layout/lakes/step6/lib/main.dart
 +++ layout/lakes/interactive/lib/main.dart
-@@ -10,2 +5,2 @@
- class MyApp extends StatelessWidget {
-   const MyApp({super.key});
-@@ -40,11 +35,7 @@
+@@ -83,11 +83,7 @@
                ],
              ),
            ),
@@ -523,20 +527,19 @@ be managed, and lists other available interactive widgets.
 
   <h4 class="no_toc">重点是什么？</h4>
 
-  * There are different approaches for managing state.
+* There are different approaches for managing state.
 
-    有多种方法可以管理状态。
+  有多种方法可以管理状态。
 
-  * You, as the widget designer, choose which approach to use.
+* You, as the widget designer, choose which approach to use.
 
-    您作为 widget 的设计者，需要选择使用何种管理方法。
+  您作为 widget 的设计者，需要选择使用何种管理方法。
 
-  * If in doubt, start by managing state in the parent widget.
+* If in doubt, start by managing state in the parent widget.
 
-    如果不是很清楚时，就在父 widget 中管理状态。
+  如果不是很清楚时，就在父 widget 中管理状态。
 
 {{site.alert.end}}
-
 
 Who manages the stateful widget's state? The widget itself?
 The parent widget?  Both? Another object?
@@ -613,6 +616,7 @@ on the `Container`.
 这些示例使用 [`GestureDetector`][] 捕获 `Container` 上的用户动作。
 
 <a id="self-managed"></a>
+
 ### The widget manages its own state
 
 ### widget 管理自己的状态
@@ -726,6 +730,7 @@ class MyApp extends StatelessWidget {
 <hr>
 
 <a id="parent-managed"></a>
+
 ### The parent widget manages the widget's state
 
 ### 父 widget 管理 widget 的 state
@@ -856,6 +861,7 @@ class TapboxB extends StatelessWidget {
 <hr>
 
 <a id="mix-and-match"></a>
+
 ### A mix-and-match approach
 
 ### 混搭管理
@@ -1159,7 +1165,6 @@ Flutter Gallery [running app][], [repo][]
 <br> 此视频包含有关有状态和无状态 widget 的信息。
 由 Google 工程师 Ian Hickson 讲解。
 
-
 [Android emulator]: {{site.url}}/get-started/install/windows#set-up-the-android-emulator
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
@@ -1170,11 +1175,10 @@ Flutter Gallery [running app][], [repo][]
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: {{site.url}}/cookbook
-[Flutter's Layered Design CN]: https://www.bilibili.com/video/BV1b441157vV
-[Flutter's Layered Design]: {{site.youtube-site}}/watch?v=dkyY9WCGMi0
+[Flutter's Layered Design CN]: {{bili-video}}/BV1b441157vV
+[Flutter's Layered Design]: {{yt-watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
-[`foundation` library]: {{site.api}}/flutter/foundation/foundation-library.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [Gestures]: {{site.url}}/cookbook/gestures
 [Gestures in Flutter]: {{site.url}}/ui/interactivity/gestures
@@ -1185,7 +1189,6 @@ Flutter Gallery [running app][], [repo][]
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
 [iOS simulator]: {{site.url}}/get-started/install/macos#set-up-the-ios-simulator
 [building layouts tutorial]: {{site.url}}/ui/layout/tutorial
-[building layouts tutorial (step 6)]: {{site.url}}/ui/layout/tutorial#step-6-final-touch
 [community]: {{site.main-url}}/community
 [Handle taps]: {{site.url}}/cookbook/gestures/handling-taps
 [`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
@@ -1194,7 +1197,6 @@ Flutter Gallery [running app][], [repo][]
 [`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
 [Managing state]: #managing-state
 [Material Design guidelines]: {{site.material}}/styles
-[`meta.dart`]: {{site.pub}}/packages/meta
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html

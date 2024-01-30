@@ -6,6 +6,8 @@ description: 创建用于移动端和 Web 的应用非常重要，它们能够�
 short-title: 响应式且自适应
 ---
 
+{% include docs/yt_shims.liquid %}
+
 One of Flutter's primary goals is to create a framework
 that allows you to develop apps from a single codebase
 that look and feel great on any platform.
@@ -22,7 +24,7 @@ phone with two screens, to a high def monitor.
 
 Two terms that describe concepts for this
 scenario are _adaptive_ and _responsive_. Ideally,
-you'd want your app to be _both_ but what, 
+you'd want your app to be _both_ but what,
 exactly, does this mean?
 These terms are similar, but they are not the same.
 
@@ -80,7 +82,7 @@ Learn more in the following 5-minute video:
 
 通过以下 5 分钟的视频了解更多：
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="Learn the difference between adaptive and responsive Flutter apps" {{yt-set}}></iframe>
 
 [Adaptive vs Responsive][]
 
@@ -220,20 +222,20 @@ of The Boring Show:
 
 你也可以观看下面几期关于自适应布局的 The Boring Show：
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/n6Awpg1MO6M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/n6Awpg1MO6M" title="Learn about adaptative layouts on the Boring Show" {{yt-set}}></iframe>
 [Adaptive layouts][]
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/eikOZzfc0l4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/eikOZzfc0l4" title="Continue to learn about adaptative layouts on the Boring Show" {{yt-set}}></iframe>
 [Adaptive layouts, part 2][]
 
 For an excellent example of an adaptive app,
-check out Flutter Folio, a scrapbooking app created 
+check out Flutter Folio, a scrapbooking app created
 in collaboration with gskinner and the Flutter team:
 
 想要尝试精美的自适应应用，可以下载由 gskinner 和 Flutter
 团队共建的剪贴板应用 Flutter Folio：
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/yytBENOnF0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/yytBENOnF0w" title="Watch a demonstration of the Flutter Folio app" {{yt-set}}></iframe>
 
 The [Folio source code][] is also available on GitHub.
 Learn more on the [gskinner blog][].
@@ -267,8 +269,8 @@ in the following resources:
   以自适应应用为目标编写的
   [Flutter Gallery 应用][Flutter gallery app]（[源代码仓库][repo]）。
 
-[Adaptive layouts]: {{site.youtube-site}}/watch?v=n6Awpg1MO6M&t=694s
-[Adaptive layouts, part 2]: {{site.youtube-site}}/watch?v=eikOZzfc0l4&t=11s
+[Adaptive layouts]: {{yt-watch}}?v=n6Awpg1MO6M&t=694s
+[Adaptive layouts, part 2]: {{yt-watch}}?v=eikOZzfc0l4&t=11s
 [Adaptive vs Responsive]: {{site.youtube-site}}/HD5gYnspYzk?si=5ItDD7UjXvGCRM0K
 [Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 

@@ -8,6 +8,9 @@ tags: 用户界面,Flutter UI
 keywords: 滑动效果, slivers
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 A sliver is a portion of a scrollable area that you
 can define to behave in a special way.
 You can use slivers to achieve custom scrolling effects,
@@ -18,13 +21,13 @@ Sliver 是可滚动区域的一部分，你可以定义它以特殊的方式工�
 比如弹性滚动。
 
 For a free, instructor-led video workshop that uses DartPad,
-check out the following video about using slivers:
+check out the following video about using slivers.
 
 以下是一个关于使用 sliver 的免费指导视频，
 由讲师使用 DartPad Workshop 进行指导，
 请观看视频：
 
-<iframe width="560" height="315" src="https://player.bilibili.com/player.html?aid=291195426&bvid=BV11f4y187gV&cid=354814353&page=1&autoplay=false" title="Bilibili video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=291195426&bvid=BV11f4y187gV&cid=354814353&page=1&autoplay=false" title="Learn how to build beautiful scrolling examples in Flutter" {{bili-set}}></iframe>
 
 ## Resources
 
@@ -56,7 +59,7 @@ in Flutter, see the following resources:
 <p markdown="1">一段一分钟的「每周 Flutter Widgets」视频，
 概述了 `SliverAppBar` widget。</p>
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=586378022&bvid=BV19z4y1S7K7&cid=288732722&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=586378022&bvid=BV19z4y1S7K7&cid=288732722&page=1&autoplay=false" title="Learn about the SliverAppBar Widget" {{bili-set}}></iframe>
 </dd>
 
 <dt markdown="1">
@@ -70,7 +73,7 @@ in Flutter, see the following resources:
 <p markdown="1">一段一分钟的「每周 Flutter Widgets」视频，
 概述了 `SliverList` 和 `SliverGrid` widget。</p>
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=38437526&bvid=BV1Pt411v78y&cid=67565151&page=12&autoplay=false" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=38437526&bvid=BV1Pt411v78y&cid=67565151&page=12&autoplay=false" title="Learn about the SliverList and SliverBar Widget" {{bili-set}}></iframe>
 </dd>
 
 <dt markdown="1">
@@ -84,7 +87,7 @@ in Flutter, see the following resources:
 <p markdown="1">一集 50 分钟的 [The Boring Show][] 视频，
 Flutter 的技术负责人 Ian Hickson 和 Filip Hracek 讨论了 sliver 的能力。</p>
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=77325252&bvid=BV1EJ41197NB&cid=132272803&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=77325252&bvid=BV1EJ41197NB&cid=132272803&page=1&autoplay=false" title="Watch the Boring Show to learn about slivers" {{bili-set}}></iframe>
 </dd>
 </dl>
 
@@ -102,13 +105,12 @@ check out these related API docs:
 * [`SliverGrid`][]
 * [`SliverList`][]
 
-
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
-[sliver-app-bar-video]: {{site.youtube-site}}/watch?v=R9C5KMJKluE
+[sliver-app-bar-video]: {{yt-watch}}?v=R9C5KMJKluE
 [`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
 [`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
-[SliverList and SliverGrid]: {{site.youtube-site}}/watch?v=ORiTTaVY6mM
+[SliverList and SliverGrid]: {{yt-watch}}?v=ORiTTaVY6mM
 [`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
 [Slivers, DeMystified]: {{site.flutter-medium}}/slivers-demystified-6ff68ab0296f
-[Slivers explained - Making dynamic layouts]: https://www.bilibili.com/video/BV1EJ41197NB/
-[The Boring Show]: {{site.youtube-site}}/playlist?list=PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK
+[Slivers explained - Making dynamic layouts]: {{bili-video}}/BV1EJ41197NB/
+[The Boring Show]: {{yt-playlist}}PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK

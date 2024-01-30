@@ -9,6 +9,9 @@ tags: Flutter性能
 keywords: 性能分析,性能调试工具,开发者工具,60fps,120fps,profile mode
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 {% include docs/performance.md %}
 
 {{site.alert.secondary}}
@@ -803,7 +806,7 @@ Flutter's tools and debugging in Flutter:
 [devtools]: {{site.url}}/tools/devtools
 [Flutter API]: {{site.api}}
 [Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Flutter inspector talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
+[Flutter inspector talk]: {{yt-watch}}?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
-[video]: https://www.bilibili.com/video/BV1t54y1m7Qr/
+[video]: {{bili-video}}/BV1t54y1m7Qr/
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf

@@ -66,7 +66,7 @@ you need the following software:
   以及在 IDE 中重载你的 Web 应用。
   查看 [编辑工具设定][setting up an editor] 了解更多。
 
-[Android Studio]: https://developer.android.com/studio
+[Android Studio]: {{site.android-dev}}/studio
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [Visual Studio Code]: https://code.visualstudio.com/
 

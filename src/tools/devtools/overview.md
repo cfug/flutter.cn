@@ -5,6 +5,8 @@ description: How to use the DevTools with Flutter.
 description: 学习如何在 Flutter 里使用开发者工具。
 ---
 
+{% include docs/yt_shims.liquid %}
+
 ## What is DevTools?
 
 ## 开发工具是什么？
@@ -20,8 +22,8 @@ for Dart and Flutter.
 For a video introduction to DevTools, check out
 the following deep dive and use case walkthrough:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_EYk-E29edo" title="YouTube video player - Dive in to DevTools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-[Dive in to DevTools](https://www.youtube.com/watch?v=_EYk-E29edo)
+<iframe width="560" height="315" src="{{yt-embed}}/_EYk-E29edo" title="Dive in to Flutter DevTools" {{yt-set}}></iframe>
+[Dive in to DevTools]({{yt-watch}}?v=_EYk-E29edo)
 
 ## What can I do with DevTools?
 
@@ -72,6 +74,7 @@ your existing IDE or command-line based development workflow.
 我们希望您将开发工具与现有的 IDE 或基于命令行的开发流程结合起来使用。
 
 <a id="install-devtools"></a>
+
 ## How do I install DevTools?
 
 ## 如何安装开发工具？
@@ -141,8 +144,6 @@ Flutter 可能会利用这个机会来收集创建的对象，而不会影响性
 [Performance > Timeline]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 [UI frames]: {{site.url}}/perf/ui-performance
 
-
-
 ## Providing feedback
 
 ## 提交反馈
@@ -164,7 +165,7 @@ in particular, its list of [other resources][].
 请查阅 [调试][Debugging] 页面，尤其是
 [其他资源][other resources] 列表。
 
-For more information on using DevTools with Dart command-line apps, see the 
+For more information on using DevTools with Dart command-line apps, see the
 [DevTools documentation on dart.dev]({{site.dart-site}}/tools/dart-devtools).
 
 果你希望知道更多如何在命令行下使用开发者工具 (DevTools) 的话，

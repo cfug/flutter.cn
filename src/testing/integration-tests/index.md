@@ -194,6 +194,12 @@ void main() {
 
 {{site.alert.end}}
 
+If you are looking for more examples, take a look at the [testing_app][] of
+the [samples][] repository.
+
+如果你想了解更多示例，
+请查看 [samples][] 中的 [testing_app][]。
+
 ### Directory structure
 
 ### 目录结构
@@ -476,4 +482,6 @@ from the command line.
 [iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
 [Migrating from flutter_drive]: {{site.url}}/release/breaking-changes/flutter-driver-migration
 [Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
+[samples]: {{site.repo.samples}}
+[testing_app]: {{site.repo.samples}}/tree/main/testing_app/integration_test
 [widget tests]: {{site.url}}/testing/overview#widget-tests

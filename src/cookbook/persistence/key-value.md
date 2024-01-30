@@ -8,6 +8,8 @@ tags: cookbook, 实用教程, 持久化
 keywords: KV,SharedPreferences
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/persistence/key_value/"?>
 
 If you have a relatively small collection of key-values
@@ -48,7 +50,7 @@ This recipe uses the following steps:
   To learn more, watch this short Package of the Week video
   on the `shared_preferences` package:
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/sa_U0jffQII" title="YouTube video player - shared_preferences (Package of the Week)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+  <iframe class="full-width" src="{{yt-embed}}/sa_U0jffQII" title="Learn about the shared_preferences Flutter package" {{yt-set}}></iframe>
 {{site.alert.end}}
 
 ## 1. Add the dependency
@@ -65,7 +67,7 @@ run `flutter pub add`:
 运行 `flutter pub add` 将 `shared_preferences` 添加为依赖：
 
 ```terminal
-$ flutter pub add shared_preferences
+flutter pub add shared_preferences
 ```
 
 ## 2. Save data
@@ -274,6 +276,5 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-
 
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences

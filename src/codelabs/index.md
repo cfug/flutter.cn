@@ -1,43 +1,21 @@
 ---
-title: Codelabs & workshops
-description: "Codelabs and workshops help you quickly get started programming Flutter."
-description: "Codelabs 和 workshops 是一种引导式的动手编码教程体验，帮助你更好的掌握 Flutter 编程技巧"
+title: Codelabs
+description: >-
+  Codelabs to help you quickly get started programming Flutter.
+description: >-
+  Codelabs 是一种引导式的动手编码教程体验，帮助你更好地掌握 Flutter 编程技巧
 ---
+
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
 
 The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
 
-Flutter 的 codelabs 是一份为新手准备的入门指南。一些 codelabs 运行在
-DartPad&mdash;上，这意味着你不需要下载任何东西就能够轻松学习。
-
-Flutter workshops are similar to the codelabs,
-but are instructor led and always use DartPad.
-The provided workshop link takes you to the relevant YouTube video,
-which tells you where to find the associated DartPad link.
-
-Flutter workshops 与 codelabs 类似，
-但由讲师指导并始终使用 DartPad。
-workshop 链接也会提供给你相关的 YouTube 视频，
-该视频会告诉你在哪里可以找到相关的 DartPad 链接。
-
-{{site.alert.secondary}}
-
-  **New workshops for Google I/O!**
-  You might want to check out the workshops
-  created by our Google Developer Experts (GDEs).
-  You can find them on the [Flutter community blog][].
-
-  **Google I/O 大会更新了一批新的 Flutter workshops**
-  或许你想要看看由 Google 开发者专家 (GDE) 编写的代码实践教程 (workshop)。
-  你可以在 [Flutter 社区博客][Flutter community blog] 中找到它们。
-  或者查看 [社区教程][] 中的文章了解如何《[使用 DartPad 制作代码实践][]》。
-
-{{site.alert.end}}
-
-[Flutter community blog]: {{site.medium}}/flutter-community/dartpad-workshops-from-flutter-gdes-622b52f70173
-[社区教程]: {{site.main-url}}/community/tutorials/
-[使用 DartPad 制作代码实践]: {{site.main-url}}/community/tutorials/how-to-use-dartpad-workshop
+Flutter 的 codelabs 是一份为新手准备的入门指南。
+一些 codelabs 运行在 DartPad&mdash;上，
+这意味着你不需要下载任何东西就能够轻松学习。
 
 ## Good for beginners
 
@@ -87,7 +65,7 @@ one of the following codelabs:
   但如果你下载并配置好了 Android 以及 iOS 的工具，
   那么整个应用同样也能运行在 Android 以及 iOS 的设备上。
 
-[Building your first Flutter app]: {{site.youtube-site}}/watch?v=8sAyPDLorek
+[Building your first Flutter app]: {{yt-watch}}?v=8sAyPDLorek
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 
@@ -119,11 +97,11 @@ one of the following codelabs:
   并通过使用 sliver 增强它以创建奇特的自定义滚动效果。
 
 * [Dart null safety in Action][] (workshop)<br>
-  An instructor-led workshop based on the [Null safety codelab][]
-  on the dart.dev site.
+  An instructor-led workshop introducing the features
+  that enable Dart's null-safe type system.
 
   [Dart 空安全实战][Dart null safety in Action] (workshop)<br>
-  基于 dart.cn 站点上的 [空安全 codelab][Null safety codelab] 的讲师指导版 workshop。
+  由讲师指导的 workshop，介绍 Dart 空安全类型系统的特性。
 
 * [How to manage application states using inherited widgets][inherited-widget-ws] (workshop)<br>
   Learn how to manage the state of your app's data by
@@ -137,10 +115,9 @@ one of the following codelabs:
   管理应用数据的状态。
 
 [Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
-[Dart null safety in Action]: https://www.bilibili.com/video/BV1tK4y1u76N/
-[inherited-widget-ws]: https://www.bilibili.com/video/BV1Wv411W7yF/
+[Dart null safety in Action]: {{yt-watch}}?v=HdKwuHQvArY
+[inherited-widget-ws]: {{yt-watch}}?v=LFcGPS6cGrY
 [low-level state management]: {{site.url}}/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
-[Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
 
 ## Designing a Flutter UI
 
@@ -154,7 +131,7 @@ like layout and animations:
 
 * [How to debug layout issues with the Flutter Inspector][]<br>
   Not an official codelab, but step-by-step instructions on
-  how to debug common layout problems using the Flutter 
+  how to debug common layout problems using the Flutter
   Inspector and Layout Explorer.
   
   [如何使用 Flutter Inspector 调试布局][How to debug layout issues with the Flutter Inspector]<br>
@@ -229,8 +206,8 @@ like layout and animations:
   至此我们就结束了这个电子商务应用的构建
 
 * [Adaptive Apps in Flutter][]<br>
-  Learn how to build a Flutter app that adapts to the 
-  platform that it's running on, be that Android, iOS, 
+  Learn how to build a Flutter app that adapts to the
+  platform that it's running on, be that Android, iOS,
   the web, Windows, macOS, or Linux.
 
   [使用 Flutter 构建自适应应用][Adaptive Apps in Flutter]<br>
@@ -248,12 +225,11 @@ like layout and animations:
   了解如何构建一个使用 `flutter_animate`、片段着色器和粒子场的 Flutter 应用。
   你将构建一个用户界面，它会唤起我们在不编码时都喜欢看的科幻电影和电视节目。
 
-
 [Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
-[Building scrolling experiences in Flutter]: https://www.bilibili.com/video/BV11f4y187gV/
+[Building scrolling experiences in Flutter]: {{bili-video}}/BV11f4y187gV/
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: {{site.url}}/codelabs/implicit-animations
 [MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
@@ -268,7 +244,7 @@ like layout and animations:
 [MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type-cn]: {{site.codelabs}}/codelabs/mdc-103-flutter-cn
 [MDC-104 Flutter: Material Advanced Components-cn]: {{site.codelabs}}/codelabs/mdc-104-flutter-cn
 
-## Using Flutter with...
+## Using Flutter with
 
 ## 在 Flutter 应用中集成
 
@@ -346,7 +322,7 @@ Learn how to use Flutter with other technologies.
   the Auth and Firestore emulators.
 
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
-[firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
+[firebase-ws]: {{yt-watch}}?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter
 [Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
 
@@ -362,7 +338,7 @@ Learn how to use Flutter with other technologies.
 
 * [Train a comment-spam detection model with TensorFlow Lite Model Maker][]<br>
   Learn how to install the TensorFlow Lite Model Maker with Colab,
-  How to use a data loader, and how to build a model.
+  how to use a data loader, and how to build a model.
 
 [Create a custom text-classification model with TensorFlow Lite Model Maker]: {{site.developers}}/codelabs/classify-text-update-tensorflow-serving
 [Create a Flutter app to classify texts with TensorFlow]: {{site.developers}}/codelabs/classify-texts-flutter-tensorflow-serving
@@ -380,7 +356,7 @@ Learn how to use Flutter with other technologies.
   在应用里显示谷歌地图，接收网络传回的数据，在地图上显示一个标示。
 
 * [Adding WebView to your Flutter app][]<br>
-  With the WebView Flutter plugin you can add a WebView 
+  With the WebView Flutter plugin you can add a WebView
   widget to your Android or iOS Flutter app.
 
   [为你的 Flutter 应用添加 WebView][Adding WebView to your Flutter app]<br>
@@ -404,27 +380,45 @@ Learn how to use Flutter with other technologies.
   学习如何构建可以回答有关 Dialogflow 工具的最常见问题的移动式常见问题解答机器人。
   终端用户可以通过移动设备的内置麦克风与文本界面交互或流式传输语音交互。
 
-* [Building a game with Flutter and Flame][]<br> 
-  Learn how to create a platform game (featuring
-  Dash or Sparky), using the Flame package.
+* [Introduction to Flame with Flutter][]<br>
+  Build a Breakout clone using the Flame 2D game engine and
+  embed it in a Flutter wrapper. You will use Flame's Effects
+  to animate and remove components, along with the `google_fonts` and
+  `flutter_animate` packages, to make the whole game look well designed.
 
-* [Using FFI in a Flutter plugin][]<br> 
+  [Flutter Flame 入门][Introduction to Flame with Flutter]<br>
+  使用 Flame 2D 游戏引擎制作一个 Breakout 克隆版，
+  并将其嵌入 Flutter wrapper 中。
+  你将使用 Flame 的 Effects 制作动画和组件的移除，
+  同时使用 `google_fonts` 和 `flutter_animate` package，
+  让整个游戏看起来有着精良的设计。
+
+* [Using FFI in a Flutter plugin][]<br>
   Learn how to use Dart's FFI (foreign function interface)
   library, ffigen, allowing you to leverage
   existing native libraries that provide a
   C interface.
 
+  [在 Flutter 插件中使用 FFI][Using FFI in a Flutter plugin]<br>
+  了解如何使用 Dart 的 FFI（外部函数接口）库和 ffigen，
+  让你可以使用提供了 C 语言接口的现有原生库。
+
 * [Create haikus about Google products with the PaLM API and Flutter][]<br>
-  Learn how to build an app that uses the PaLM API to 
-  generate haikus based on Google product names. The 
-  PaLM API gives you access to Google's 
-  state-of-the-art large language models. 
+  Learn how to build an app that uses the PaLM API to
+  generate haikus based on Google product names. The
+  PaLM API gives you access to Google's
+  state-of-the-art large language models.
+
+  [使用 PaLM API 和 Flutter 创作有关 Google 产品的俳句 (haiku)][Create haikus about Google products with the PaLM API and Flutter]<br>
+  了解如何构建一个使用 PaLM API 并
+  根据 Google 产品名称生成俳句 (haiku) 的应用。
+  PaLM API 可让你访问 Google 最先进的大语言模型。
 
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
-[Build voice bots for mobile with Dialogflow and Flutter]: https://www.bilibili.com/video/BV1pX4y1A7SH/
-[Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
+[Build voice bots for mobile with Dialogflow and Flutter]: {{bili-video}}/BV1pX4y1A7SH/
+[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
 
@@ -516,9 +510,9 @@ iOS、Android、Web 和桌面端。
   小部件会展示在首页、锁屏页以及今日预览中。
 
 [Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
-[home-screen]:   {{site.codelabs}}/flutter-home-screen-widgets
+[home-screen]: {{site.codelabs}}/flutter-home-screen-widgets
 [How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
-[provider]: {{site.pub}}/packages/provider
+[provider]: {{site.pub-pkg}}/provider
 [Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
 
@@ -548,7 +542,7 @@ We also recommend the following online class:
 {{site.alert.note}}
 
   If you have trouble viewing any of the codelabs
-  on [`codelabs.developers.google.com`]({{site.codelabs}}), try 
+  on [`codelabs.developers.google.com`]({{site.codelabs}}), try
   [this mirror of the Flutter codelabs][].
 
   如果你在 [`codelabs.developers.google.com`](https://codelabs.developers.google.com/) 浏览这些 codelabs 的时候遇到问题，

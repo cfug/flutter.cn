@@ -9,6 +9,9 @@ tags: Flutter中文文档
 keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 {% for card in site.data.docs_cards -%}
   {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
   {% capture indexModulo3 -%}{{ forloop.index | modulo:3 }}{% endcapture -%}
@@ -60,7 +63,6 @@ Coming from another platform? Check out Flutter for:
 - [给 iOS SwiftUI 开发者的 Flutter 指南][SwiftUI]
 - [给 iOS UIKit 开发者的 Flutter 指南][UIKit]
 - [给 React Native 开发者的 Flutter 指南][React Native]
-- [给 Web 开发者的 Flutter 指南][Web]
 - [给 Xamarin.Forms 开发者的 Flutter 指南][Xamarin.Forms]
 
 [Building layouts][]
@@ -101,7 +103,6 @@ Coming from another platform? Check out Flutter for:
 [UIKit]: {{site.url}}/get-started/flutter-for/uikit-devs
 [React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
-[web]: {{site.url}}/get-started/flutter-for/web-devs
 [Xamarin.Forms]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs
 
 ### Videos
@@ -128,26 +129,26 @@ widgets in [What is State?][]
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="//player.bilibili.com/player.html?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{bili-embed}}?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false" title="构建第一个 Flutter 应用"  {{bili-set}}></iframe> 
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="//player.bilibili.com/player.html?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{bili-embed}}?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false" title="什么是状态？" {{bili-set}}></iframe> 
         </div>
     </div>
 </div>
 
 [first-app]: {{site.youtube-site}}/watch?v=xWV71C2kp38
 [What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
-[构建第一个 Flutter 应用]: https://www.bilibili.com/video/BV1Se4y1Z74p
-[什么是状态]: https://www.bilibili.com/video/BV14G4y167Tu
+[构建第一个 Flutter 应用]: {{bili-video}}/BV1Se4y1Z74p
+[什么是状态]: {{bili-video}}/BV14G4y167Tu
 
 {:.text-center}
 <b><t>Only have 60 seconds? Learn how to build and deploy a Flutter App!</t><t>一分钟！快速学习构建和部署 Flutter 应用</t></b>
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/ZnufaryH43s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{yt-set}}></iframe>
 </div>
 
 ## Want to skill up?
@@ -166,17 +167,17 @@ using helper methods][standalone-widgets] or
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/IOyq-eTRhvo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{yt-set}}></iframe>
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/rIaaH87z1-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{yt-set}}></iframe>
         </div>
     </div>
 </div>
 
-[standalone-widgets]: {{site.youtube-site}}/watch?v=IOyq-eTRhvo   
+[standalone-widgets]: {{site.youtube-site}}/watch?v=IOyq-eTRhvo
 [buildcontext]: {{site.youtube-site}}/watch?v=rIaaH87z1-g
 
 To learn about all of the Flutter video series,

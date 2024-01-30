@@ -6,13 +6,14 @@
   role="tabpanel" aria-labelledby="{{id}}-tab" markdown="1">
 
 1. Configure a proxy.
-   To configure a proxy, check out the [Dart documentation on proxies][].
+   To configure a proxy, check out the
+   [Dart documentation on proxies]({{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall).
 
    配置代理。
-   要配置代理，请查阅 [Dart 关于代理的文档][Dart documentation on proxies]。
+   要配置代理，请查阅 [Dart 关于代理的文档]({{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall)。
 
   {% comment %}
-  From https://github.com/flutter/website/issues/2556#issuecomment-481566476
+  From <https://github.com/flutter/website/issues/2556#issuecomment-481566476>
   {% endcomment %}
 
 1. Verify that your `PUB_HOSTED_URL` environment variable is either unset

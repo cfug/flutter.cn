@@ -10,6 +10,9 @@ keywords: Flutter布局核心介绍,核心机制,Flutter布局
 diff2html: true
 ---
 
+{% include docs/yt_shims.liquid %}
+{% include docs/bili_shims.liquid %}
+
 {% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
@@ -25,17 +28,17 @@ diff2html: true
 
   <h4 class="no_toc">要点</h4>
 
-  * Widgets are classes used to build UIs.
+* Widgets are classes used to build UIs.
 
-    Widgets 是用于构建 UI 的类。
+  Widgets 是用于构建 UI 的类。
 
-  * Widgets are used for both layout and UI elements.
+* Widgets are used for both layout and UI elements.
 
-    Widgets 可以用于布局和展示 UI 元素。
+  Widgets 可以用于布局和展示 UI 元素。
 
-  * Compose simple widgets to build complex widgets.
+* Compose simple widgets to build complex widgets.
 
-    通过组合简单的 widgets 来构建复杂的 widgets。
+  通过组合简单的 widgets 来构建复杂的 widgets。
 
 {{site.alert.end}}
 
@@ -177,10 +180,10 @@ Create an [`Image`][] widget:
 
 <?code-excerpt "layout/lakes/step5/lib/main.dart (Image-asset)" remove="/width|height/"?>
 ```dart
-Image.asset(
-  'images/lake.jpg',
+return Image.asset(
+  image,
   fit: BoxFit.cover,
-),
+);
 ```
 
 Create an [`Icon`][] widget:
@@ -261,11 +264,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const String appTitle = 'Flutter layout demo';
     return MaterialApp(
-      title: 'Flutter layout demo',
+      title: appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter layout demo'),
+          title: const Text(appTitle),
         ),
         body: const Center(
           child: Text('Hello World'),
@@ -441,11 +445,11 @@ color to white and the text to dark grey to mimic a Material app.
 
   App 源码:
 
-  - [Material app]({{examples}}/layout/base)
+* [Material app]({{examples}}/layout/base)
 
-  - [Non-Material app]({{examples}}/layout/non_material)
+* [Non-Material app]({{examples}}/layout/non_material)
 
-    [非 Material app]({{examples}}/layout/non_material)
+  [非 Material app]({{examples}}/layout/non_material)
 
 </div>
 <div class="col-md-6">
@@ -477,32 +481,32 @@ and a `Column` widget to arrange widgets vertically.
 
   <h4 class="no_toc">要点</h4>
 
-  * `Row` and `Column` are two of the most commonly used layout patterns.
+* `Row` and `Column` are two of the most commonly used layout patterns.
 
-    `Row` 和 `Column` 是两种最常用的布局模式。
+  `Row` 和 `Column` 是两种最常用的布局模式。
 
-  * `Row` and `Column` each take a list of child widgets.
+* `Row` and `Column` each take a list of child widgets.
 
-    `Row` 和 `Column` 每个都有一个子 widgets 列表。
+  `Row` 和 `Column` 每个都有一个子 widgets 列表。
 
-  * A child widget can itself be a `Row`, `Column`,
-    or other complex widget.
+* A child widget can itself be a `Row`, `Column`,
+  or other complex widget.
 
-    一个子 widget 本身可以是 `Row`、`Column` 或其他复杂 widget。
+  一个子 widget 本身可以是 `Row`、`Column` 或其他复杂 widget。
 
-  * You can specify how a `Row` or `Column` aligns its children,
-    both vertically and horizontally.
+* You can specify how a `Row` or `Column` aligns its children,
+  both vertically and horizontally.
 
-    可以指定 `Row` 或 `Column` 如何在垂直和水平方向上对齐其子项。
+  可以指定 `Row` 或 `Column` 如何在垂直和水平方向上对齐其子项。
 
-  * You can stretch or constrain specific child widgets.
+* You can stretch or constrain specific child widgets.
 
-    可以拉伸或限制特定的子 widgets。
+  可以拉伸或限制特定的子 widgets。
 
-  * You can specify how child widgets use the `Row`'s or
-    `Column`'s available space.
+* You can specify how child widgets use the `Row`'s or
+  `Column`'s available space.
 
-    可以指定子 widgets 如何占用 `Row` 或 `Column` 的可用空间。
+  可以指定子 widgets 如何占用 `Row` 或 `Column` 的可用空间。
 
 {{site.alert.end}}
 
@@ -1132,18 +1136,18 @@ color or image.
 
   <h4 class="no_toc">摘要 (Container)</h4>
 
-  * Add padding, margins, borders
+* Add padding, margins, borders
 
-    增加 padding、margins、borders
+  增加 padding、margins、borders
 
-  * Change background color or image
+* Change background color or image
 
-    改变背景色或者图片
+  改变背景色或者图片
 
-  * Contains a single child widget, but that child can be a Row,
-    Column, or even the root of a widget tree
+* Contains a single child widget, but that child can be a Row,
+  Column, or even the root of a widget tree
 
-    只包含一个子 widget，但是这个子 widget 可以是行、列或者是 widget 树的根 widget
+  只包含一个子 widget，但是这个子 widget 可以是行、列或者是 widget 树的根 widget
 
 </div>
 <div class="col-lg-6 text-center">
@@ -1726,6 +1730,7 @@ Widget _buildCard() {
   );
 }
 ```
+
 <hr>
 
 ### ListTile
@@ -1821,20 +1826,27 @@ explain `Stateless` and `Stateful` widgets.
 下面的视频是 [Flutter in Focus][] 系列的一部分，
 解释了 Stateless 和 Stateful 的 widget。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55794591&cid=97538062&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter in Focus playlist]({{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+<iframe width="560" height="315" src="{{bili-embed}}?bvid=BV15441157Jm&page=1&autoplay=false" title="Learn how to create stateless widgets" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?bvid=BV1s441157db&page=1&autoplay=false" title="Learn the best times to use stateful widgets" {{bili-set}}></iframe>
+
+[Flutter in Focus playlist]({{yt-playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+
+[Flutter in Focus 播放列表]({{yt-playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
 
 Each episode of the
-[Widget of the Week series]({{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget of the Week series]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 focuses on a widget. Several of them includes layout widgets.
 
-[每周 Widget 系列](https://www.bilibili.com/video/av55795672)
+[每周 Widget 系列]({{bili-video}}/BV15441157cc)
 的每一集都会介绍一个 widget。其中也包括一些布局的 widget。
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=55795672&cid=97539385&page=1&autoplay=false" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter Widget of the Week playlist]({{site.youtube-site}}/watch?v=yI-8QHpGIP4&index=5&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+<iframe width="560" height="315" src="{{bili-embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="Watch the Widget of the Week playlist" {{bili-set}}></iframe>
+
+[Flutter Widget of the Week playlist]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+
+[每周 Flutter Widget 播放列表]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 ## Other resources
 
@@ -1903,7 +1915,7 @@ The following resources might help when writing layout code.
 [`DataTable`]: {{api}}/material/DataTable-class.html
 [Elevation]: {{site.material}}/styles/elevation
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
-[Flutter in Focus]: {{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus]: {{yt-watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [`GridView`]: {{api}}/widgets/GridView-class.html
 [`GridTile`]: {{api}}/material/GridTile-class.html
 [HTML/CSS Analogs in Flutter]: {{site.url}}/get-started/flutter-for/web-devs
@@ -1934,5 +1946,4 @@ The following resources might help when writing layout code.
 [Debugging layout issues visually]: {{site.url}}/tools/devtools/inspector#debugging-layout-issues-visually
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
 [Using the Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Widget of the Week series]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

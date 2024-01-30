@@ -3,6 +3,8 @@ title: Flutter 1.12 正式发布，为这一年画上圆满的句号！
 description: Flutter 1.12 正式发布，包括多项性能改进等。
 ---
 
+{% include docs/bili_shims.liquid %}
+
 *作者 / Chris Sells，Flutter 开发者体验产品经理*
 
 我们很高兴正式推出 Flutter 最新稳定版: Flutter 1.12。自从去年 12 月发布 Flutter 1.0 以来，这已经是我们发布的第 5 个稳定版本了。多么精彩的一年！我们一共解决了 5,303 个报错，合并了来自 484 位贡献者的 5,950 份 pull request。我们在 Flutter 引擎和框架中添加了对 Android App Bundles、iOS 13 和 web 的支持，实现了鼠标与键盘事件，发布了应用内购插件，融合了[多项](https://github.com/flutter/engine/pull/12385)[重要](https://github.com/flutter/flutter/pull/36482)的[性能](https://github.com/flutter/engine/pull/10182)[改进](https://github.com/flutter/flutter/pull/37275)，还新增了 24 种语言支持和多个 widget。
@@ -164,7 +166,7 @@ Golden 图像指的是一个主图像文件，它是 widget、state、应用或�
 
 拥有这样一群了不起的开发者，真是 Flutter 社区的一大幸事。您们让全体 Flutter 团队成员深感骄傲！
 
-<iframe src="//player.bilibili.com/player.html?aid=86761188&cid=148257761&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="560" height="315"> </iframe>
+<iframe width="560" height="315" src="{{bili-embed}}?aid=86761188&cid=148257761&page=1&autoplay=false" {{bili-set-short}}> </iframe>
 
 **Flutter Favorite 代码包**
 

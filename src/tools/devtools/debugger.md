@@ -39,7 +39,7 @@ breakpoints, stepping, and variable inspection.
 
 {{site.alert.end}}
 
-[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
+[`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
 
 When you open the debugger tab, you should see the source for the main
 entry-point for your app loaded in the debugger.

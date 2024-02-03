@@ -252,7 +252,7 @@ $ flutter test integration_test
 [Download and install ChromeDriver][chromedriver]
 and run it on port 4444:
 
-[下载安装 ChromeDriver][Download and install ChromeDriver] 
+[下载安装 ChromeDriver][chromedriver] 
 并在 4444 端口运行：
 
 ```terminal

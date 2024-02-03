@@ -21,17 +21,6 @@ the [material library][].
 Flutter 自带的 [Material 库][material library] 
 可以帮助开发者们非常便捷的创建 tab 布局。
 
-{{site.alert.note}}
-
-  To create tabs in a Cupertino app, see the
-  [Building a Cupertino app with Flutter][] codelab.
-  
-  创建一个使用 tabs 布局、Cupertino 风格的 iOS 应用，
-  请参见这个 codelab:
-  [使用 Flutter 构建 iOS 风格的应用][Building a Cupertino app with Flutter]。
-
-{{site.alert.end}}
-
 This recipe creates a tabbed example using the following steps;
 
 这份教程将帮助你创建一个 tabs 布局样例，请参见如下步骤：
@@ -212,7 +201,6 @@ class TabBarDemo extends StatelessWidget {
 
 
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
-[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
 [`DefaultTabController`]: {{site.api}}/flutter/material/DefaultTabController-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html
 [`Tab`]: {{site.api}}/flutter/material/Tab-class.html

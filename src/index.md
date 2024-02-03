@@ -177,8 +177,8 @@ using helper methods][standalone-widgets] or
     </div>
 </div>
 
-[standalone-widgets]: {{site.youtube-site}}/watch?v=IOyq-eTRhvo
-[buildcontext]: {{site.youtube-site}}/watch?v=rIaaH87z1-g
+[standalone-widgets]: {{yt-watch}}?v=IOyq-eTRhvo
+[buildcontext]: {{yt-watch}}?v=rIaaH87z1-g
 
 To learn about all of the Flutter video series,
 see our [videos][] page.

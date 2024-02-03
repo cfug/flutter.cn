@@ -533,13 +533,15 @@ can assist in correcting it.
 Snippets can be used to speed up entering typical code structures.
 They are invoked by typing their prefix,
 and then selecting from the code completion window:
-![Snippets]({{site.url}}/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}-
--he Flutter extension includes the following -nippets:
 
 代码片段可以用来加速输入通用类型代码段。
 通过输入前缀来调用，然后从代码完成窗口中选择：
-![Snippets]({{site.url}}/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}-
--he Flutter extension includes the following -nippets:
+
+![Snippets]({{site.url}}/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}
+
+The Flutter extension includes the following snippets:
+
+Flutter 扩展包括以下片段：
 
 - Prefix `stless`: Create a new subclass of -StatelessWidget`.
 

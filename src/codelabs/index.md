@@ -452,17 +452,6 @@ like iOS, Android, desktop, or the web.
 学习如何撰写在特定的平台运行的代码，比如
 iOS、Android、Web 和桌面端。
 
-* [Building a Cupertino app with Flutter][]<br>
-  Build a version of the Shrine shopping app
-  (used in the Material Design codelabs) using the
-  Cupertino package to create an iOS style look and feel.
-  Create multiple tabs and navigate between them.
-  Use the [provider][] package to manage state between screens.
-
-  [使用 Flutter 构建 iOS 风格的应用][Building a Cupertino app with Flutter]
-  构建 iOS 风格和体验的购物应用 Shrine，创建多个选项卡，
-  使用 [provider][] package 来管理不同的页面。
-
 * [How to write a Flutter plugin][]<br>
   Learn how to write a plugin by creating a music plugin
   for iOS and Android that processes audio on the host platform.
@@ -505,18 +494,16 @@ iOS、Android、Web 和桌面端。
   on iOS. This applies to your home screen, lock screen, or the
   today view.
 
-  [为你的 Flutter 应用添加首页小部件][home-screen]<br>
+  [为你的 Flutter 应用添加首页小部件][home-screen]<br> **新**
   学习如何通过你的 Flutter 应用添加一个首页小部件。
   小部件会展示在首页、锁屏页以及今日预览中。
 
-[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
 [home-screen]: {{site.codelabs}}/flutter-home-screen-widgets
 [How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
 [provider]: {{site.pub-pkg}}/provider
 [Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
 
-[Building a Cupertino app with Flutter-cn]: {{site.codelabs}}/codelabs/flutter-cupertino-cn
 [How to write a Flutter plugin-cn]: {{site.codelabs}}/codelabs/write-flutter-plugin-cn
 [Using a plugin with a Flutter web app-cn]: {{site.codelabs}}/codelabs/web-url-launcher-cn
 [Write a Flutter desktop application-cn]: {{site.codelabs}}/codelabs/flutter-github-graphql-client-cn

@@ -1165,7 +1165,7 @@ Flutter Gallery [running app][], [repo][]
 <br> 此视频包含有关有状态和无状态 widget 的信息。
 由 Google 工程师 Ian Hickson 讲解。
 
-[Android emulator]: {{site.url}}/get-started/install/windows#set-up-the-android-emulator
+[Android emulator]: {{site.url}}/get-started/install/windows/mobile?tab=virtual#configure-your-target-android-device
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Dart language documentation]: {{site.dart-site}}/language
@@ -1187,7 +1187,7 @@ Flutter Gallery [running app][], [repo][]
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[iOS simulator]: {{site.url}}/get-started/install/macos#set-up-the-ios-simulator
+[iOS simulator]: {{site.url}}/get-started/install/macos/mobile-ios#configure-your-target-ios-device
 [building layouts tutorial]: {{site.url}}/ui/layout/tutorial
 [community]: {{site.main-url}}/community
 [Handle taps]: {{site.url}}/cookbook/gestures/handling-taps

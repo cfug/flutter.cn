@@ -74,7 +74,7 @@ click the **Clear logs** button.
 
 要清理日志视图的日志记录，请点击 **Clear logs**（清理日志）按钮。
 
-[Logging]: {{site.url}}/testing/code-debugging#logging
+[Logging]: {{site.url}}/testing/code-debugging#add-logging-to-your-application
 [Debugging Flutter apps programmatically]: {{site.url}}/testing/code-debugging
 
 ## Other resources

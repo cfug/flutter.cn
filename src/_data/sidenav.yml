@@ -151,6 +151,8 @@
       permalink: /docs/cookbook/design/themes
     - title: Material 设计
       permalink: /docs/ui/design/material
+    - title: 迁移至 Material 3
+      permalink: /docs/release/breaking-changes/material-3-migration
     - title: 文字
       permalink: /docs/ui/design/text
       children:
@@ -610,6 +612,8 @@
           permalink: /docs/tools/devtools/logging
         - title: 应用体积工具
           permalink: /docs/tools/devtools/app-size
+        - title: DevTools 扩展工具
+          permalink: /docs/tools/devtools/extensions
         - title: 发布日志
           permalink: /docs/tools/devtools/release-notes
     - title: SDK 概览

@@ -74,7 +74,7 @@ steps to take, and tools that can help.
 {{site.alert.end}}
 
 [Debugging]: {{site.url}}/testing/debugging
-[Tracing Dart code]: {{site.url}}/testing/debugging#tracing-dart-code
+[Tracing Dart code]: {{site.url}}/testing/code-debugging#trace-dart-code-performance
 
 ## Diagnosing performance problems
 
@@ -498,7 +498,7 @@ To enable the overlay programmatically, see
 [性能图层][Performance overlay] 章节。
 
 [Debugging Flutter apps programmatically]: {{site.url}}/testing/code-debugging
-[Performance overlay]: {{site.url}}/testing/code-debugging#performance-overlay
+[Performance overlay]: {{site.url}}/testing/code-debugging#add-performance-overlay
 
 ## Identifying problems in the UI graph
 
@@ -558,7 +558,7 @@ manipulated, a [`RepaintBoundary`][] might help.
 如果是一个静态场景的淡入、旋转或者其他操作，
 可以尝试使用重绘边界 ([`RepaintBoundary`][])。
 
-[programmatically]: {{site.url}}/testing/code-debugging#debugging-animations
+[programmatically]: {{site.url}}/testing/code-debugging#debug-animation-issues
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 [`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 

@@ -49,19 +49,39 @@ a single text field using the following steps:
 
 ## 1. 创建表单 `Form`，并以 `GlobalKey` 作为唯一性标识
 
-First, create a [`Form`][].
-The `Form` widget acts as a container for grouping
-and validating multiple form fields.
+Create a [`Form`][].
+The `Form` widget acts as a container for grouping and
+validating multiple form fields.
 
-首先，我们需要创建一个表单组件 [`Form`][] 作为容器承载和验证多个表单域。
+我们需要创建一个表单组件 [`Form`][] 作为容器承载和
+验证多个表单域。
 
 When creating the form, provide a [`GlobalKey`][].
-This uniquely identifies the `Form`,
-and allows validation of the form in a later step.
+This assigns a unique identifier to your `Form`.
+It also allows you to validate the form later.
 
 当我们创建表单 `Form` 的时候，需要提供一个 [`GlobalKey`][]。
 `GlobalKey` 唯一标识了这个表单 `Form`，
 在后续的表单验证步骤中，也起到了关键的作用。
+
+Create the form as a `StatefulWidget`.
+This allows you to create a unique `GlobalKey<FormState>()` once.
+You can then store it as a variable and access it at different points.
+
+将表单创建为 `StatefulWidget`。
+这样只需要创建一次唯一的 `GlobalKey<FormState>()`。
+我们可以将它存储到一个变量，
+并在需要使用它的地方进行访问。
+
+If you made this a `StatelessWidget`, you'd need to store this key *somewhere*.
+As it is resource expensive, you wouldn't want to generate a new
+`GlobalKey` each time you run the `build` method.
+
+如果你的表单是 `StatelessWidget`，
+你就需要把这个 GlobalKey 放在 build 以外的 *某个地方*。
+因为我们不希望每次运行 `build` 方法时，
+都会生成一个新的 `GlobalKey`，
+这样会耗费大量资源。
 
 <?code-excerpt "lib/form.dart"?>
 ```dart

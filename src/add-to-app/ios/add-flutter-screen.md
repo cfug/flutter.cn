@@ -914,8 +914,8 @@ in any way you'd like, before presenting the Flutter UI using a
 你可以在 `FlutterViewController` 展示 Flutter UI 之前，
 自由地选择你喜欢的，推入数据和准备 Flutter 环境的方式。
 
-[`FlutterEngine`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
-[`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
+[`FlutterEngine`]: {{site.api}}/ios-embedder/interface_flutter_engine.html
+[`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
 [Loading sequence and performance]: {{site.url}}/add-to-app/performance
 [local_auth]: {{site.pub}}/packages/local_auth
 [Navigation and routing]: {{site.url}}/ui/navigation
@@ -923,10 +923,10 @@ in any way you'd like, before presenting the Flutter UI using a
 [`NavigatorState`]: {{site.api}}/flutter/widgets/NavigatorState-class.html
 [`openURL`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623112-application
 [platform channels]: {{site.url}}/platform-integration/platform-channels
-[`popRoute()`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)popRoute
-[`pushRoute()`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)pushRoute:
+[`popRoute()`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html#ac89c8010fbf7a39f7aaab64f68c013d2
+[`pushRoute()`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html#ac7cffbf03f9c8c0b28d1f0dafddece4e
 [`runApp`]: {{site.api}}/flutter/widgets/runApp.html
-[`runWithEntrypoint`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:
+[`runWithEntrypoint`]: {{site.api}}/ios-embedder/interface_flutter_engine.html#a019d6b3037eff6cfd584fb2eb8e9035e
 [`SystemNavigator.pop()`]: {{site.api}}/flutter/services/SystemNavigator/pop.html
 [tree-shaken]: https://en.wikipedia.org/wiki/Tree_shaking
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html

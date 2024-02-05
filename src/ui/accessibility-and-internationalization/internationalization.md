@@ -10,6 +10,12 @@ keywords: 国际化
 
 <?code-excerpt path-base="internationalization"?>
 
+{% comment %}
+Consider updating the number of languages when touching this page.
+{% endcomment %}
+
+{% assign languageCount = '115' -%}
+
 {{site.alert.secondary}}
 
   <h4 class="no_toc">What you'll learn</h4>
@@ -89,18 +95,14 @@ To add support for other languages,
 an application must specify additional
 `MaterialApp` (or `CupertinoApp`) properties,
 and include a package called `flutter_localizations`.
-As of December 2023, this package supports [115 languages][language-count]
+As of December 2023, this package supports [{{languageCount}} languages][language-count]
 and language variants.
-
-{% comment %}
-Consider updating the number of languages when touching this page.
-{% endcomment %}
 
 默认情况下，Flutter 只提供美式英语的本地化。
 如果想要添加其他语言，你的应用必须指定额外的
 `MaterialApp` 或者 `CupertinoApp` 属性并且
 添加一个名为 `flutter_localizations` 的 package。
-截至到 2023 年 12 月份，这个 package 已经支持 [115 种语言][language-count]。
+截至到 2023 年 12 月份，这个 package 已经支持 [{{languageCount}} 种语言][language-count]。
 
 To begin, start by creating a new Flutter application
 in a directory of your choice with the `flutter create` command.
@@ -170,12 +172,12 @@ After introducing the `flutter_localizations` package
 and adding the previous code,
 the `Material` and `Cupertino`
 packages should now be correctly localized in
-one of the 115 supported locales.
+one of the {{languageCount}} supported locales.
 Widgets should be adapted to the localized messages,
 along with correct left-to-right or right-to-left layout.
 
 引入 `flutter_localizations` package 并添加了上面的代码之后，
-`Material` 和 `Cupertino` 包现在应该被正确地本地化为 115 个受支持的语言环境之一。
+`Material` 和 `Cupertino` 包现在应该被正确地本地化为 {{languageCount}} 个受支持的语言环境之一。
 widget 应当与本地化信息保持同步，并具有正确的从左到右或从右到左的布局。 
 
 Try switching the target platform's locale to
@@ -1103,11 +1105,11 @@ Locale myLocale = Localizations.localeOf(context);
 ### 指定应用程序 supported­Locales 参数
 
 Although the `flutter_localizations` library currently supports
-115 languages and language variants, only English language translations
+{{languageCount}} languages and language variants, only English language translations
 are available by default. It's up to the developer to decide exactly
 which languages to support.
 
-尽管 `flutter_localizations` 库目前支持 115 种语言和语言变体，
+尽管 `flutter_localizations` 库目前支持 {{languageCount}} 种语言和语言变体，
 但默认情况下仅提供英语译文。
 具体支持哪些语言由开发人员决定。
 

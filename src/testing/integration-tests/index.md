@@ -36,7 +36,7 @@ properties:
 
   The `integration_test` package is part of the Flutter SDK itself. 
   To use it, make sure that you update your app's pubspec file
-  to include this package as one of your `dev_dependencies`. 
+  to include this package as one of your `dev_dependencies`.
   For an example, see the [Project setup](#project-setup) section below.
 
   Flutter SDK 本身自带 `integration_test` package。
@@ -185,11 +185,10 @@ void main() {
 
 {{site.alert.note}}
 
-  Note: You should only use `testWidgets`
-  to declare your tests, or errors won't
-  be reported correctly.
+  Only use `testWidgets` to declare your tests.
+  Otherwise, Flutter could report errors incorrectly.
 
-  注意：你只能使用 `testWidgets` 来声明你的测试，
+  只能使用 `testWidgets` 来声明你的测试，
   否则错误将无法正确抛出。
 
 {{site.alert.end}}
@@ -232,8 +231,8 @@ in the output of the `flutter devices` command:
 这些测试可以用 `flutter test` 指令运行，
 其中 `<DEVICE_ID>`：是可选项，可以通过 `flutter devices` 指定设备 ID 或显示模式：
 
-```bash
-flutter test integration_test/foo_test.dart -d <DEVICE_ID>
+```terminal
+$ flutter test integration_test/foo_test.dart -d <DEVICE_ID>
 ```
 
 This runs the tests in `foo_test.dart`. To run all tests in this directory on
@@ -242,21 +241,22 @@ the default device, run:
 上面的指令将运行 `foo_test.dart` 中的测试。
 要在默认设备上运行该目录下的所有测试，请运行：
 
-```
-flutter test integration_test
+```terminal
+$ flutter test integration_test
 ```
 
-### Running in a browser 
+### Running in a browser
 
 ### 在浏览器中运行测试
 
-First, [Download and install ChromeDriver][]
+[Download and install ChromeDriver][chromedriver]
 and run it on port 4444:
 
-首先，[下载安装 ChromeDriver][Download and install ChromeDriver] 并在 4444 端口运行：
+[下载安装 ChromeDriver][chromedriver] 
+并在 4444 端口运行：
 
-```
-chromedriver --port=4444
+```terminal
+$ chromedriver --port=4444
 ```
 
 To run tests with `flutter drive`, create a new directory containing a new file,
@@ -272,7 +272,7 @@ import 'package:integration_test/integration_test_driver.dart';
 Future<void> main() => integrationDriver();
 ```
 
-Then add `IntegrationTestWidgetsFlutterBinding.ensureInitialized()` in your 
+Then add `IntegrationTestWidgetsFlutterBinding.ensureInitialized()` in your
 `integration_test/<name>_test.dart` file:
 
 然后将 `IntegrationTestWidgetsFlutterBinding.ensureInitialized()` 添加到
@@ -316,8 +316,8 @@ In a separate process, run `flutter_drive`:
 
 最后在一个独立的进程中，运行 `flutter_drive`：
 
-```
-flutter drive \
+```terminal
+$ flutter drive \
   --driver=test_driver/integration_test.dart \
   --target=integration_test/counter_test.dart \
   -d web-server
@@ -328,7 +328,7 @@ To learn more, see the
 
 了解更多信息，请查看 [Running Flutter driver tests with web][] 指南。
 
-## Testing on Firebase Test Lab 
+## Testing on Firebase Test Lab
 
 ## 在 Firebase Test Lab 进行测试
 
@@ -377,13 +377,13 @@ Create an APK using Gradle:
 
 使用 Gradle 构建一个 APK：
 
-```bash
-pushd android
+```terminal
+$ pushd android
 # flutter build generates files in android/ for building the app
 flutter build apk
 ./gradlew app:assembleAndroidTest
 ./gradlew app:assembleDebug -Ptarget=integration_test/<name>_test.dart
-popd
+$ popd
 ```
 
 Where `<name>_test.dart` is the file created in the
@@ -471,7 +471,7 @@ from the command line.
 请查看 `integration_test` README 中的 [iOS Device Testing][]。
 
 [Android Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#android-device-testing
-[Download and install ChromeDriver]: https://chromedriver.chromium.org/downloads
+[chromedriver]: https://googlechromelabs.github.io/chrome-for-testing/
 [Firebase Console]: http://console.firebase.google.com/
 [Firebase Test Lab]: {{site.firebase}}/docs/test-lab
 [Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/main/packages/integration_test#firebase-test-lab

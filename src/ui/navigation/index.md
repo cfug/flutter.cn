@@ -56,7 +56,7 @@ links:
 
 ```dart
 @override
-  Widget build(BuildContext context) {
+Widget build(BuildContext context) {
   return MaterialApp(
     routes: {
       '/': (context) => HomeScreen(),

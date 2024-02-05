@@ -499,7 +499,7 @@ was used on the Flutter client side.
 在 `configureFlutterEngine()` 方法中创建一个 `MethodChannel` 并调用
 `setMethodCallHandler()`。确保使用的通道名称与 Flutter 客户端使用的一致。
 
-<?code-excerpt title="MyActivity.kt"?>
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
 import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterActivity
@@ -531,7 +531,7 @@ First, add the needed imports at the top of the file:
 
 首先在文件头部添加所需的依赖：
 
-<?code-excerpt title="MyActivity.kt"?>
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
 import android.content.Context
 import android.content.ContextWrapper
@@ -547,7 +547,7 @@ below the `configureFlutterEngine()` method:
 
 然后在 `MainActivity` 类中的 `configureFlutterEngine()` 方法下方添加以下新方法：
 
-<?code-excerpt title="MyActivity.kt"?>
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
   private fun getBatteryLevel(): Int {
     val batteryLevel: Int
@@ -580,7 +580,7 @@ Remove the following code:
 
 删除以下代码：
 
-<?code-excerpt title="MyActivity.kt"?>
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
@@ -593,7 +593,7 @@ And replace with the following:
 
 并替换成以下内容：
 
-<?code-excerpt title="MyActivity.kt"?>
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       // This method is invoked on the main thread.
@@ -1810,7 +1810,7 @@ DispatchQueue.main.async {
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
-[`MethodChanneliOS`]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
+[`MethodChanneliOS`]: {{site.api}}/ios-embedder/interface_flutter_method_channel.html
 [Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [publishing packages]: {{site.url}}/packages-and-plugins/developing-packages#publish
 [`quick_actions`]: {{site.pub}}/packages/quick_actions

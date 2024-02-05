@@ -21,52 +21,56 @@ Flutter 支持构建在运行时下载额外 Dart 代码和静态资源的应用
 
 We refer to each uniquely downloadable bundle of Dart
 libraries and assets as a "deferred component".
-This is achieved by using Dart's deferred imports,
-which can be compiled into split AOT shared libraries.
+To load these components, use [Dart's deferred imports][dart-def-import].
+They can be compiled into split AOT and JavaScript shared libraries.
 
 我们将每个独立的可下载的 Dart 库和静态资源称为「延迟组件」。
-这是通过使用 Dart 的延迟导入来实现的，
-可以将其编译到拆分的 AOT 共享库中。
+请使用 [Dart 的延迟导入][dart-def-import] 加载这些组件。
+这些组件可以编译到拆分的 AOT 和 JavaScript 共享库中。
 
 {{site.alert.note}}
 
-  This feature is currently only available on Android,
-  taking advantage of Android and Google Play Stores'
-  [dynamic feature modules][] to deliver the
+  Flutter supports deferred, or "lazy", loading on Android and the web.
+  The implementations differ.
+  Android's [dynamic feature modules][] deliver the
   deferred components packaged as Android modules.
-  Deferred code does not impact other platforms,
+  The web creates these components as separate `*.js` files.
+  Deferred code doesn't impact other platforms,
   which continue to build as normal with all deferred
   components and assets included at initial install time.
   
-  此功能目前仅在 Android 上可用，
-  利用 Android 和 Google Play 商店的 [动态功能模块][dynamic feature modules] 提供打包为 Android module 的延迟组件。
-  延迟组件中的代码不会影响其他平台，其他平台在初始安装时会正常构建包含所有延迟组件和资源的应用。
-  
-  Also, note that this is an advanced feature.
-  
-  另外，请注意这是一个高级功能。
+  Flutter 在 Android 和 Web 上支持延迟加载或「懒」加载。
+  在不同平台实现方式有所不同。
+  Android 平台的 [动态功能模块][dynamic feature modules] 
+  提供打包为 Android module 的延迟组件。
+  Web 平台将这些组件创建为单独的 `*.js` 文件。
+  延迟组件中的代码不会影响其他平台，
+  其他平台在初始安装时会正常构建包含所有延迟组件和资源的应用。
 
 {{site.alert.end}}
 
-Though modules can be defer loaded,
-the entire application must be completely built and
-uploaded as a single Android App Bundle.
-Dispatching partial updates without re-uploading
-new Android App Bundles for the entire application
-is not supported.
+Though you can defer loading modules,
+you must build the entire app and upload that app as a single
+[Android App Bundle][android-app-bundle] (`*.aab`).
+Flutter doesn't support dispatching partial updates without re-uploading
+new Android App Bundles for the entire application.
 
-尽管模块可以延迟加载，但整个应用程序必须作为单个 App Bundle 完全构建和上传。
-不支持在没有重新上传整个新 Android 应用程序包的情况下发送部分更新。
+尽管模块可以延迟加载 module，
+但整个应用程序必须作为单个 [Android App Bundle][android-app-bundle] (`*.aab`) 
+完全构建和上传。
+不支持在没有重新上传整个新 Android App Bundle 的情况下发送部分更新。
 
-Deferred loading is only performed when the app
-is compiled to [release or profile mode][].
-In debug mode, all deferred components are treated
-as regular imports, so they are present
-at launch and load immediately. Therefore,
-debug builds can still hot reload.
+Flutter performs deferred loading when you compile your app
+in [release or profile mode][].
+Debug mode treats all deferred components as regular imports.
+The components are present at launch and load immediately.
+This allows debug builds to hot reload.
 
-延迟加载仅在应用程序编译为 [Release 或 Profile 模式][release or profile mode] 时可用。
-在 Debug 模式下，所有延迟组件都被视为常规导入，它们在启动时立即加载。
+在 [Release 或 Profile 模式][release or profile mode] 
+下编译应用程序时，
+Flutter 会执行延迟加载。
+在 Debug 模式下，所有延迟组件都被视为常规导入，
+它们在启动时立即加载。
 因此，Debug 模式下仍然可以热重载。
 
 For a deeper dive into the technical details of
@@ -320,8 +324,8 @@ class _SomeWidgetState extends State<SomeWidget> {
 
   @override
   void initState() {
-    _libraryFuture = box.loadLibrary();
     super.initState();
+    _libraryFuture = box.loadLibrary();
   }
 
   @override
@@ -800,3 +804,6 @@ Play store's delivery feature.
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
 [release or profile mode]: {{site.url}}/testing/build-modes
 [step 3.3]: #step-3.3
+[android-app-bundle]: {{site.android-dev}}/guide/app-bundle
+[dart-def-import]: https://dart.dev/language/libraries#lazily-loading-a-library
+

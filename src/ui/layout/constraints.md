@@ -116,10 +116,10 @@ The negotiation goes something like this:
 
 **Widget**: "嘿！我的父级。我的约束是多少？"
 
-**Parent**: "You must be from `80` to `300` pixels wide,
-   and `30` to `85` tall."
+**Parent**: "You must be from `0` to `300` pixels wide,
+   and `0` to `85` tall."
 
-**Parent**: "你的宽度必须在 `80` 到 `300` 像素之间，高度必须在 `30` 到 `85` 之间。"
+**Parent**: "你的宽度必须在 `0` 到 `300` 像素之间，高度必须在 `0` 到 `85` 之间。"
 
 **Widget**: "Hmmm, since I want to have `5` pixels of padding,
    then my children can have at most `290` pixels of width

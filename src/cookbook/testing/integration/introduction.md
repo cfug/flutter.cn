@@ -26,7 +26,7 @@ Unit tests 和 Widget tests 在测试独立的类、函数或者组件时非常�
 这些任务需要集成测试 (**integration tests**) 来处理。 
 
 Integration tests are written using the [integration_test][] package, provided
-by the SDK. 
+by the SDK.
 
 集成测试由 SDK 直接提供支持，使用 [integration_test][] 这个 package 实现。
 
@@ -157,7 +157,7 @@ section of the app's `pubspec.yaml` file.
 来编写集成测试，把依赖添加到应用`pubspec.yaml` 文件的
 `dev_dependencies` 区域。
 
-```console
+```terminal
 $ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}'  'dev:integration_test:{"sdk":"flutter"}'
 "flutter_test" is already in "dev_dependencies". Will try to update the constraint.
 Resolving dependencies... 
@@ -274,7 +274,7 @@ following command from the root of the project:
 首先需要连接设备并在工程的根目录运行下面的命令：
 
 ```terminal
-flutter test integration_test/app_test.dart
+$ flutter test integration_test/app_test.dart
 ```
 
 Or, you can specify the directory to run all integration tests:
@@ -282,7 +282,7 @@ Or, you can specify the directory to run all integration tests:
 或者你可以在指定目录下运行所有的集成测试：
 
 ```terminal
-flutter test integration_test
+$ flutter test integration_test
 ```
 
 This command runs the app and integration tests on the target device. For more
@@ -332,7 +332,7 @@ Launch `chromedriver` as follows:
 运行 `chromedriver`，执行如下命令：
 
 ```terminal
-chromedriver --port=4444
+$ chromedriver --port=4444
 ```
 
 From the root of the project, run the following command:
@@ -340,7 +340,7 @@ From the root of the project, run the following command:
 在工程的根目录下，运行如下命令：
 
 ```terminal
-flutter drive \
+$ flutter drive \
   --driver=test_driver/integration_test.dart \
   --target=integration_test/app_test.dart \
   -d chrome
@@ -359,7 +359,7 @@ flutter drive \
   -d web-server
 ```
 
-[Download ChromeDriver]: https://chromedriver.chromium.org/downloads
+[Download ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 [Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html

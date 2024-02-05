@@ -41,9 +41,9 @@ They can be compiled into split AOT and JavaScript shared libraries.
   
   Flutter 在 Android 和 Web 上支持延迟加载或「懒」加载。
   在不同平台实现方式有所不同。
-  Android 的 [动态功能模块][dynamic feature modules] 
+  Android 平台的 [动态功能模块][dynamic feature modules] 
   提供打包为 Android module 的延迟组件。
-  web 将这些组件创建为单独的 `*.js` 文件。
+  Web 平台将这些组件创建为单独的 `*.js` 文件。
   延迟组件中的代码不会影响其他平台，
   其他平台在初始安装时会正常构建包含所有延迟组件和资源的应用。
 

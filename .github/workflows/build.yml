@@ -45,6 +45,8 @@ jobs:
   linkcheck:
     name: Build site and check links
     runs-on: ubuntu-latest
+    if: |
+      github.repository == 'cfug/flutter.cn'
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:

@@ -45,7 +45,6 @@ jobs:
   linkcheck:
     name: Build site and check links
     runs-on: ubuntu-latest
-    if: ${{ github.ref != 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
@@ -75,7 +74,7 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           submodules: recursive
-      - name: Build site and check links
+      - name: Build site
         run: make build
 #     - name: Install Node for Firebase install
 #       uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8

@@ -10,7 +10,7 @@
 {% assign images = '**x86 Images**' -%}
 {% elsif include.os=='macOS' -%}
 <!-- {% assign images = '**x86 Images** if your Mac runs on an Intel CPU or **ARM Images** if your Mac runs on an Apple CPU' -%} -->
-{% assign images = '如果 Mac 使用 Intel CPU，则使用 **x86 Images** 如果 Mac 使用 Apple CPU，则使用 **ARM Images**' -%}
+{% assign images = '**x86 Images**（Intel CPU 的 Mac）或者 **ARM Images**（Apple CPU 的 Mac）' -%}
 {% endif -%}
 
 To configure your Flutter app to run in the Android emulator,

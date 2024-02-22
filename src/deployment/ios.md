@@ -159,7 +159,7 @@ Next, you'll register your app on App Store Connect:
 For a detailed overview, see
 [Add an app to your account][appstoreconnect_guide_register].
 
-想要获取更多信息，可以看这个帮助页面 [添加 App 至您的帐户][appstoreconnect_guide_register_cn]。
+想要获取更多信息，可以看这个帮助页面 [添加 App 至你的帐户][appstoreconnect_guide_register_cn]。
 
 ## Review Xcode project settings
 

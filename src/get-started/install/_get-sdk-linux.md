@@ -90,7 +90,7 @@ If you aren't using `snapd`, follow these steps to install Flutter.
 
    用这个命令添加 `PATH` 仅在当前的命令行视窗生效。
    要将 Flutter 永久添加到环境变量中，请参阅
-   [更新您的路径][Update your path]。
+   [更新你的路径][Update your path]。
 
 1. (Optional) Pre-download development binaries:
 

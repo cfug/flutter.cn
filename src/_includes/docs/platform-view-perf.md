@@ -53,7 +53,7 @@ platform view is rendered,
 then consider taking a screenshot of the
 native view and rendering it as a texture.
 
-例如，当 Dart 中发生动画时，您可以使用占位符纹理。
+例如，当 Dart 中发生动画时，你可以使用占位符纹理。
 换句话说，如果在渲染平台视图时动画很慢，
 请考虑对原生视图进行截图，并将其渲染为纹理。
 

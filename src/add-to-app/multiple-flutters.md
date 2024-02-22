@@ -139,7 +139,7 @@ or other planned work on enhancing multiple Flutter instances, check out
 You can find a sample demonstrating how to use `FlutterEngineGroup`
 on both Android and iOS on [GitHub][].
 
-您可以在 [GitHub 仓库][GitHub] 上找到在 Android 和 iOS 上
+你可以在 [GitHub 仓库][GitHub] 上找到在 Android 和 iOS 上
 使用 `FlutterEngineGroup` 的示例。
 
 {% include docs/app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}

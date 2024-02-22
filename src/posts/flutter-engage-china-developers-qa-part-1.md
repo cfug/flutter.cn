@@ -5,7 +5,7 @@ toc: true
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/04/84565efef718e.jpg)
 
-再次感谢大家对 [Flutter Engage China 活动](https://flutter.cn/posts/flutter-engage-china-event-recap) 的关注和积极参与！我们在活动前后收到了很多来自开发者的反馈和问题，Flutter 团队和演讲嘉宾在直播 Q&A 环节中也针对部分问题在第一时间给出回复。现在我们将一些开发者关心的问题和回复整理出来分享给大家，希望对您有所帮助。由于问题数量较多，我们会分为上下两期发布。您也可以观看 Flutter Engage China 视频回顾精彩内容:
+再次感谢大家对 [Flutter Engage China 活动](https://flutter.cn/posts/flutter-engage-china-event-recap) 的关注和积极参与！我们在活动前后收到了很多来自开发者的反馈和问题，Flutter 团队和演讲嘉宾在直播 Q&A 环节中也针对部分问题在第一时间给出回复。现在我们将一些开发者关心的问题和回复整理出来分享给大家，希望对你有所帮助。由于问题数量较多，我们会分为上下两期发布。你也可以观看 Flutter Engage China 视频回顾精彩内容:
 
 **➡️[点击这里观看直播回顾视频](https://www.bilibili.com/medialist/play/ml1214246458/BV1hh411D7mV)⬅️**
 
@@ -53,7 +53,7 @@ Flutter 2.0 版本的发布是一个比较主要的升级，从 release note 来
 如果在升级 Flutter 的过程中碰到 API 变更的问题，这里有两个建议:
 
 * 请考虑使用我们在 2.0 版本中同时发布的 [Flutter Fix](https://flutter.cn/docs/development/tools/flutter-fix) 工具。这个工具有命令行，也有和 IDE 进行集成，可以帮助大家更方便地自动进行 API 升级。
-* 建议大家放心及时地升级 Flutter 版本。如果您从一个相邻的版本升级到一个新的版本，那么需要更改的代码一般是比较少的。
+* 建议大家放心及时地升级 Flutter 版本。如果你从一个相邻的版本升级到一个新的版本，那么需要更改的代码一般是比较少的。
 
 ## **Flutter 的渲染默认不是平台的主线程，那在渲染的时候会不会由于线程优先级问题而影响流畅度？如果出现流畅度问题，该如何解决？**
 
@@ -65,7 +65,7 @@ Flutter 2.0 版本的发布是一个比较主要的升级，从 release note 来
 
 *回答者: 董韬，Google Flutter 用户体验研究负责人*
 
-Flutter 对 Linux 的支持其实是不仅限于 Ubuntu 的。只要您使用的 Linux 是 64 位的，就可以安装和使用 Flutter 去开发 App。具体可以参考 [Flutter 官方的 Linux 安装说明](https://flutter.cn/docs/get-started/install/linux)。
+Flutter 对 Linux 的支持其实是不仅限于 Ubuntu 的。只要你使用的 Linux 是 64 位的，就可以安装和使用 Flutter 去开发 App。具体可以参考 [Flutter 官方的 Linux 安装说明](https://flutter.cn/docs/get-started/install/linux)。
 
 Ubuntu 则更方便了一些，提供了一个官方的 Flutter 安装工具。另外 Ubuntu 也开始用 Flutter 开发一些内置的 App。
 

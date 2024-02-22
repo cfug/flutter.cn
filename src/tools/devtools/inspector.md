@@ -275,7 +275,7 @@ modify your source code and are reverted on hot reload.
 
 你可以在布局浏览器的下拉列表修改属性值，
 例如弹性系数、弹性适配和对齐方式。
-当修改 widget 的属性时，您会看到新的值同时在浏览器和运行 Flutter 应用程序的设备上生效。
+当修改 widget 的属性时，你会看到新的值同时在浏览器和运行 Flutter 应用程序的设备上生效。
 浏览器通过动画使更改的效果清晰可见。
 从布局浏览器中对 widget 属性的更改不会修改源代码，将在热重载时还原。
 
@@ -350,7 +350,7 @@ in the Layout Explorer. You can see size, constraint, and padding
 information for both the selected widget and its nearest upstream
 RenderObject.
 
-当您选择一个固定大小的 widget 而不是弹性 widget 时，它的布局信息将显示在布局浏览器中。
+当你选择一个固定大小的 widget 而不是弹性 widget 时，它的布局信息将显示在布局浏览器中。
 你可以看到所选 widget 及其最近的上一级 RenderObject 的大小、约束和填充信息。
 
 ![The Layout Explorer fixed size tool]({{site.url}}/assets/images/docs/tools/devtools/layout_explorer_fixed_layout.png){:width="100%"}

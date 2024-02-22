@@ -91,7 +91,7 @@ during flight.
   using Flutter's widgets. For more information, see
   [Building Layouts in Flutter][].
 
-  这部分假定您已经了解如何使用 Flutter 的 widget 创建布局。
+  这部分假定你已经了解如何使用 Flutter 的 widget 创建布局。
   更多信息请参考文档 [Flutter 中的布局][Building Layouts in Flutter]。
 
 {{site.alert.end}}
@@ -116,7 +116,7 @@ that both routes have in common. From the user's perspective
 the hero "flies" between the routes. This guide shows how
 to create the following hero animations:
 
-您可以在 Flutter 中使用 Hero widgets 创建这个动画。
+你可以在 Flutter 中使用 Hero widgets 创建这个动画。
 当 hero 动画从原页面到目标页面，目标页面（减去 hero）淡入视野。
 可以说，heroes 是 UI 的一小部分，就像图像，两个页面有共同之处。
 从用户的角度来说，hero 在页面间「飞翔」。
@@ -230,7 +230,7 @@ how Flutter performs a hero animation.
   If the concept of tweens or tweening is new to you,
   see the [Animations in Flutter tutorial][].
 
-  如果您不了解 tween 或者 tweening 的概念，请参考教程
+  如果你不了解 tween 或者 tweening 的概念，请参考教程
   [在 Flutter 应用里实现动画效果][Animations in Flutter tutorial]。
 
 {{site.alert.end}}
@@ -771,8 +771,8 @@ hero 从一个页面飞至另一页的同时由圆形过渡到矩形，
 This animation might seem complex (and it is), but you can **customize the
 provided example to your needs.** The heavy lifting is done for you.
 
-这个动画看起来复杂，但是您可以**根据自身需要自定义范例**。
-艰巨的工作已为您完成。
+这个动画看起来复杂，但是你可以**根据自身需要自定义范例**。
+艰巨的工作已为你完成。
 
 <a id="radial-hero-animation-code"></a>
 {{site.alert.secondary}}

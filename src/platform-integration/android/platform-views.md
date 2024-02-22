@@ -1,10 +1,10 @@
 ---
 title: Hosting native Android views in your Flutter app with Platform Views
-title: "在 Flutter 应用中使用集成平台视图托管您的原生 Android 视图"
+title: "在 Flutter 应用中使用集成平台视图托管你的原生 Android 视图"
 short-title: Android platform-views
 short-title: Android 平台视图
 description: Learn how to host native Android views in your Flutter app with Platform Views.
-description: 学习如何在 Flutter 应用中使用集成平台视图托管您的原生 Android 视图。
+description: 学习如何在 Flutter 应用中使用集成平台视图托管你的原生 Android 视图。
 ---
 
 <?code-excerpt path-base="development/platform_integration"?>
@@ -14,13 +14,13 @@ so you can apply transforms, clips, and opacity to the native view
 from Dart.
 
 集成平台视图（后称为平台视图）允许将原生视图嵌入到 Flutter 应用中，
-所以您可以通过 Dart 将变换、裁剪和不透明度等效果应用到原生视图。
+所以你可以通过 Dart 将变换、裁剪和不透明度等效果应用到原生视图。
 
 This allows you, for example, to use the native
 Google Maps from the Android SDK
 directly inside your Flutter app.
 
-例如，这使您可以通过使用平台视图直接在 Flutter 应用内部
+例如，这使你可以通过使用平台视图直接在 Flutter 应用内部
 使用 Android 和 iOS SDK 中的 Google Maps。
 
 {{site.alert.note}}
@@ -30,9 +30,9 @@ directly inside your Flutter app.
   If you'd like to embed native iOS views in your Flutter app,
   see [Hosting native iOS views][].
 
-  本篇文档讨论了如何在您的 Flutter 应用中托管您的 Android 原生视图。
+  本篇文档讨论了如何在你的 Flutter 应用中托管你的 Android 原生视图。
   如果你想了解如何嵌入到 iOS 视图中，阅读这篇文档：
-  [在 Flutter 应用中使用集成平台视图托管您的原生 iOS 视图][Hosting native iOS views]。
+  [在 Flutter 应用中使用集成平台视图托管你的原生 iOS 视图][Hosting native iOS views]。
 
 {{site.alert.end}}
 
@@ -229,7 +229,7 @@ in either Java or Kotlin:
 
 In your native code, implement the following:
 
-在您的原生代码中，实现如下方法：
+在你的原生代码中，实现如下方法：
 
 Extend `io.flutter.plugin.platform.PlatformView`
 to provide a reference to the `android.view.View`
@@ -324,7 +324,7 @@ For plugin registration,
 modify the plugin's main class
 (for example, `PlatformViewPlugin.kt`):
 
-要在插件中进行注册，修改您插件的主类 
+要在插件中进行注册，修改你插件的主类 
 (例如：`PlatformViewPlugin.kt`)：
 
 ```kotlin
@@ -348,7 +348,7 @@ class PlatformViewPlugin : FlutterPlugin {
 
 In your native code, implement the following:
 
-在您的原生代码中，实现如下方法：
+在你的原生代码中，实现如下方法：
 
 Extend `io.flutter.plugin.platform.PlatformView`
 to provide a reference to the `android.view.View`
@@ -499,7 +499,7 @@ For more information, see the API docs for:
 Finally, modify your `build.gradle` file
 to require one of the minimal Android SDK versions:
 
-最后，修改您的 `build.gradle` 文件
+最后，修改你的 `build.gradle` 文件
 来满足 Android SDK 最低版本的要求：
 
 ```gradle

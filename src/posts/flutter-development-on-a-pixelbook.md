@@ -1,6 +1,6 @@
 ---
 title: 在 Pixelbook 上开发 Flutter 应用
-description: Chrome OS 的新特性能够让您无需模拟器就能开发并测试 Flutter 应用程序。
+description: Chrome OS 的新特性能够让你无需模拟器就能开发并测试 Flutter 应用程序。
 toc: true
 ---
 
@@ -42,7 +42,7 @@ toc: true
 
 现在该来讲点有趣的事了。打开终端，然后使用 apt 进行检查，确保你正在使用较新版本的 Linux。你可以运行 `sudo apt update && sudo apt upgrade` 这个命令来完成这项操作。
 
-我们还将在接下来的步骤中安装一些您需要的其他工具包和依赖项。
+我们还将在接下来的步骤中安装一些你需要的其他工具包和依赖项。
 
 `$ sudo apt install libglu1-mesa lib32stdc++6`
 
@@ -155,6 +155,6 @@ $ flutter run
 
 ### 建议及注意事项
 
-您可能希望稍微调整屏幕 DPI 设置以获得更多空间。有些应用程序在这方面上比其他应用程序响应更好;特别是我发现一些 Android Studio 对话框对于给定的 DPI 设置来说太小了。
+你可能希望稍微调整屏幕 DPI 设置以获得更多空间。有些应用程序在这方面上比其他应用程序响应更好;特别是我发现一些 Android Studio 对话框对于给定的 DPI 设置来说太小了。
 
 然而总的来说，这似乎非常有用，特别是如果你愿意使用这些由各个团队完成的最新特性的话。如果你有 Pixelbook 并一直在等待一个学习 Flutter 或尝试构建应用的方法的话，它绝对值得你试一试！祝你玩得开心，欢迎告诉我们你的故事：你可以在 Twitter 上的 [@flutterio](https://twitter.com/flutterio) 中找到我们团队。

@@ -80,9 +80,9 @@ This page covers the following topics:
    your app's directory.
 
    在整个页面中，`[project]` 是指
-   您的应用所处的目录。同时关注
+   你的应用所处的目录。同时关注
    这些说明，替换 `[project]` 为
-   您的应用的目录。
+   你的应用的目录。
 
 {{site.alert.end}}
 
@@ -420,7 +420,7 @@ For more information on signing your app, check out
 [Sign your app][] on developer.android.com.
 
 有关应用签名的更多信息，请查看 developer.android.com 的
-[为您的应用设置签名][Sign your app]。
+[为你的应用设置签名][Sign your app]。
 
 ## Shrinking your code with R8
 

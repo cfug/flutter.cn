@@ -41,9 +41,9 @@ Specifically, you'll modify an icon to make it tappable
 by creating a custom stateful widget that manages two
 stateless widgets.
 
-如何修改您的应用程序以使其对用户输入做出反应？
-在本教程中，您将为仅包含非交互式 widget 的应用程序添加交互性。
-具体来说，您将通过创建一个管理两个无状态 widget 的自定义有状态 widget，
+如何修改你的应用程序以使其对用户输入做出反应？
+在本教程中，你将为仅包含非交互式 widget 的应用程序添加交互性。
+具体来说，你将通过创建一个管理两个无状态 widget 的自定义有状态 widget，
 修改一个图标实现使其可点击。
 
 The [building layouts tutorial][] showed you how to create
@@ -77,7 +77,7 @@ that includes both the star and the count,
 which are themselves widgets. Tapping the star changes state
 for both widgets, so the same widget should manage both.
 
-为了实现这个，您将创建一个包含星形图标和计数的自定义 widget，它们都是 widget。 
+为了实现这个，你将创建一个包含星形图标和计数的自定义 widget，它们都是 widget。 
 因为点击星形图标会更改这两个 widget 的状态，
 所以同一个 widget 应该同时管理这两个 widget。
 
@@ -86,8 +86,8 @@ You can get right to touching the code in
 If you want to try different ways of managing state,
 skip to [Managing state][].
 
-您可以直接查看 [第二步: 创建 StatefulWidget 的子类](#step-2)。
-如果您想尝试不同的管理状态方式，
+你可以直接查看 [第二步: 创建 StatefulWidget 的子类](#step-2)。
+如果你想尝试不同的管理状态方式，
 请跳至 [状态管理][Managing state]。
 
 ## Stateful and stateless widgets
@@ -173,8 +173,8 @@ star and the numeric count next to it&mdash;with a single
 custom stateful widget that manages a row with two
 children widgets: an `IconButton` and `Text`.
 
-在本节中，您将创建一个自定义有状态的 widget。
-您将使用一个自定义有状态 widget 来替换两个无状态 widget&mdash;&mdash;
+在本节中，你将创建一个自定义有状态的 widget。
+你将使用一个自定义有状态 widget 来替换两个无状态 widget&mdash;&mdash;
 红色实心星形图标和其旁边的数字计数&mdash;&mdash;
 该 widget 用两个子 widget 管理一行 `IconButton` 和 `Text`。
 
@@ -287,7 +287,7 @@ which you'll implement in the next step.
 因此它通过重写 `createState()` 来创建状态对象。
 框架会在构建 widget 时调用 `createState()`。
 在这个例子中，`createState()` 创建 `_FavoriteWidgetState` 的实例，
-您将在下一步中实现该实例。
+你将在下一步中实现该实例。
 
 <?code-excerpt path-base="layout/lakes/interactive"?>
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
@@ -452,7 +452,7 @@ the app's `build()` method. First, locate the code that
 creates the `Icon` and `Text`, and delete it.
 In the same location, create the stateful widget:
 
-将您自定义 stateful widget 在 `build()` 方法中添加到 widget 树中。
+将你自定义 stateful widget 在 `build()` 方法中添加到 widget 树中。
 首先，找到创建 `Icon` 和 `Text` 的代码，并删除它，
 在相同的位置创建有状态的 widget：
 
@@ -479,7 +479,7 @@ In the same location, create the stateful widget:
 That's it! When you hot reload the app,
 the star icon should now respond to taps.
 
-就是这样！当您热重载应用后，星形图标就会响应点击了。
+就是这样！当你热重载应用后，星形图标就会响应点击了。
 
 
 ### Problems?
@@ -491,7 +491,7 @@ IDE for possible errors.  [Debugging Flutter apps][] might help.
 If you still can't find the problem,
 check your code against the interactive lakes example on GitHub.
 
-如果您的代码无法运行，请在 IDE 中查找可能的错误。
+如果你的代码无法运行，请在 IDE 中查找可能的错误。
 [调试 Flutter 应用程序][Debugging Flutter apps] 可能会有所帮助。
 如果仍然无法找到问题，请根据 GitHub 上的示例检查代码。
 
@@ -506,7 +506,7 @@ TODO: replace the following links with tabbed code panes.
 If you still have questions, refer to any one of the developer
 [community][] channels.
 
-如果您仍有问题，可以咨询 [社区][community] 中的任何一位开发者。
+如果你仍有问题，可以咨询 [社区][community] 中的任何一位开发者。
 
 ---
 
@@ -532,7 +532,7 @@ be managed, and lists other available interactive widgets.
 
 * You, as the widget designer, choose which approach to use.
 
-  您作为 widget 的设计者，需要选择使用何种管理方法。
+  你作为 widget 的设计者，需要选择使用何种管理方法。
 
 * If in doubt, start by managing state in the parent widget.
 
@@ -568,7 +568,7 @@ Here are the most common ways to manage state:
 How do you decide which approach to use?
 The following principles should help you decide:
 
-如何决定使用哪种管理方法？以下原则可以帮助您决定：
+如何决定使用哪种管理方法？以下原则可以帮助你决定：
 
 * If the state in question is user data,
   for example the checked or unchecked
@@ -743,7 +743,7 @@ widget needs to know whether the button has been tapped,
 so it can take appropriate action.
 
 一般来说父 widget 管理状态并告诉其子 widget 何时更新通常是最合适的。
-例如，[`IconButton`][] 允许您将图标视为可点按的按钮。
+例如，[`IconButton`][] 允许你将图标视为可点按的按钮。
 `IconButton` 是一个无状态 widget，
 因为我们认为父 widget 需要知道该按钮是否被点击来采取相应的处理。
 
@@ -1125,7 +1125,7 @@ the prefabricated widgets. Here's a partial list:
 The following resources might help when adding interactivity
 to your app.
 
-以下资源可能会在给您的应用添加交互的时候有所帮助。
+以下资源可能会在给你的应用添加交互的时候有所帮助。
 
 [Gestures][], a section in the [Flutter cookbook][].
 

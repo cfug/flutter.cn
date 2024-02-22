@@ -44,11 +44,11 @@ Android App Bundles 是一种新的封装格式，它能有效减小应用的体
 每位开发者都有着不同的技术背景，偏爱的编程工具和编辑器也不尽相同。
 为此，Flutter 添加了多种工具支持，其中包括 Android Studio 和 Visual Studio Code 的 一级支持，以及支持命令行构建工具，这也就意味着开发者需要更加灵活的调试和运行时检查工具。
 
-所以我们在发布 Flutter 1.2 的同时，还带来了全新的[基于 Web 的调试工具套件](https://flutter.github.io/devtools/)，目的是帮助您更好地分析与调试应用性能。
+所以我们在发布 Flutter 1.2 的同时，还带来了全新的[基于 Web 的调试工具套件](https://flutter.github.io/devtools/)，目的是帮助你更好地分析与调试应用性能。
 这些工具支持与 Visual Studio Code 和 Android Studio 的扩展程序及加载项一同安装，并且提供多种功能：
 
 -   Widget 检查器: 对 Flutter 用于渲染的树状分级结构实现可视化和直观的探索；
--   时间线视图: 可帮助您逐帧诊断自己的应用，并识别可能造成应用动画 “卡顿” 的渲染和计算问题；
+-   时间线视图: 可帮助你逐帧诊断自己的应用，并识别可能造成应用动画 “卡顿” 的渲染和计算问题；
 -   源代码级调试器: 支持单步执行代码，设置断点并检查调用堆栈；
 -   日志记录视图: 显示应用所记录的活动以及网络、框架和垃圾回收等事件。
 
@@ -58,21 +58,21 @@ Android App Bundles 是一种新的封装格式，它能有效减小应用的体
 
 ## 下一步工作
 
-发布 Flutter 1.0 之后，除了日常开发工作之外，我们还规划了 [Flutter 2019 产品路线图](https://github.com/flutter/flutter/wiki/Roadmap)，从中您会发现我们未来仍很多工作要做。
+发布 Flutter 1.0 之后，除了日常开发工作之外，我们还规划了 [Flutter 2019 产品路线图](https://github.com/flutter/flutter/wiki/Roadmap)，从中你会发现我们未来仍很多工作要做。
 
 2019 年的一个工作重点是将 Flutter 的应用范围扩展到移动平台之外。我们在 Flutter Live 上启动了 [Hummingbird 计划](https://youtu.be/5SZZfpkVhwk?list=PLOU2XLYxmsILq4ysYNWXq5TOGLgYDJgVD&t=175)，加快推进 Flutter 在 Web 端的发展。我们会接下来的几个月里公布该项目的初步技术成果，请大家拭目以待！另外，我们还计划将 Flutter 引入到桌面开发中。因此，除了上述框架层面的开发工作之外，我们还会通过 [Flutter 跨平台桌面应用计划 (Flutter Desktop Embedding Project)](https://github.com/google/flutter-desktop-embedding) 帮助各位开发者在 Windows 和 Mac 等操作系统上封装和部署应用。
 
-## Flutter Create: 您能使用 5K 的 Dart 代码做些什么？
+## Flutter Create: 你能使用 5K 的 Dart 代码做些什么？
 
-[Flutter Create 挑战赛]({{site.url}}/create)将从本周起开始接收报名，你敢来参加吗？参赛者需要利用 Flutter 构建充满创意和趣味的精美应用，并把这一切全部浓缩到 5K 的 Dart 代码里。5K 并不多，按照普通 MP3 格式的标准来算，差不多相当于三分之一秒的音乐。但我们敢说，有了 Flutter 的帮助，即使是使用如此少量的代码，您也能制作出令人大开眼界的应用。
+[Flutter Create 挑战赛]({{site.url}}/create)将从本周起开始接收报名，你敢来参加吗？参赛者需要利用 Flutter 构建充满创意和趣味的精美应用，并把这一切全部浓缩到 5K 的 Dart 代码里。5K 并不多，按照普通 MP3 格式的标准来算，差不多相当于三分之一秒的音乐。但我们敢说，有了 Flutter 的帮助，即使是使用如此少量的代码，你也能制作出令人大开眼界的应用。
 
 ![flutter-create-contest](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/flutter-create-contest-heroimg.png){:width="85%"}
 
-挑战赛将于 4 月 7 日结束，因此您将有几周的时间来构建出色应用。我们准备了一些很棒的奖品，其中包括一台搭载 14 核处理器和 128GB 内存的[顶配版 iMac Pro 工作站](https://www.apple.com/imac-pro/specs/)，价值超过 10,000 美元！我们将在 [Google I/O 大会](https://events.google.com/io/)上宣布获胜者名单，并且还会在此期间开展多个 Flutter 演讲、Codelab 课程和活动，敬请期待！
+挑战赛将于 4 月 7 日结束，因此你将有几周的时间来构建出色应用。我们准备了一些很棒的奖品，其中包括一台搭载 14 核处理器和 128GB 内存的[顶配版 iMac Pro 工作站](https://www.apple.com/imac-pro/specs/)，价值超过 10,000 美元！我们将在 [Google I/O 大会](https://events.google.com/io/)上宣布获胜者名单，并且还会在此期间开展多个 Flutter 演讲、Codelab 课程和活动，敬请期待！
 
 ## 结语
 
-Flutter 现已进入 Github Top 20 软件库，与此同时，Flutter 全球社区也在以惊人的速度蓬勃发展，为世界各地的开发者正带去独特的编程乐趣——[印度清奈的开发者聚会](https://twitter.com/Nikkitagandhi/status/1099745911985467392)，[尼日利亚哈科特港的报道](https://twitter.com/Zfinix1/status/1079892033060392962)，[丹麦哥本哈根的应用](https://twitter.com/koorankka/status/1098579826355642368)，以及[美国纽约的孵化工作室](https://www.hotreload.io/) —— 从中我们可以清楚地看到 Flutter 正在成为一种全球现象，而这一切都离不开您的贡献！Flutter 作为移动开发领域一股不容小觑的新生力量，不仅为开发者赢得了[亿万用户](https://play.google.com/store/apps/details?id=com.alibaba.intl.android.apps.poseidon)，还[帮助创业者把理念推向市场](https://play.google.com/store/apps/details?id=com.kissaan.gomitra)。我们非常高兴看到您拥有如此多的创意，也希望能够帮助您使用 Flutter 来呈现这些创意。
+Flutter 现已进入 Github Top 20 软件库，与此同时，Flutter 全球社区也在以惊人的速度蓬勃发展，为世界各地的开发者正带去独特的编程乐趣——[印度清奈的开发者聚会](https://twitter.com/Nikkitagandhi/status/1099745911985467392)，[尼日利亚哈科特港的报道](https://twitter.com/Zfinix1/status/1079892033060392962)，[丹麦哥本哈根的应用](https://twitter.com/koorankka/status/1098579826355642368)，以及[美国纽约的孵化工作室](https://www.hotreload.io/) —— 从中我们可以清楚地看到 Flutter 正在成为一种全球现象，而这一切都离不开你的贡献！Flutter 作为移动开发领域一股不容小觑的新生力量，不仅为开发者赢得了[亿万用户](https://play.google.com/store/apps/details?id=com.alibaba.intl.android.apps.poseidon)，还[帮助创业者把理念推向市场](https://play.google.com/store/apps/details?id=com.kissaan.gomitra)。我们非常高兴看到你拥有如此多的创意，也希望能够帮助你使用 Flutter 来呈现这些创意。
 
 ![flutter-deep-dive-srmu](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot2-release/flutter-deep-dive-srmu.jpg){:width="85%"}
 

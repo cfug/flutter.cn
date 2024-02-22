@@ -5,7 +5,7 @@
   Flutter SDK you agree to the [Google Terms of Service][].
 
   Flutter 工具可能会偶尔从 Google 的服务器上下载资源，
-  下载了或使用 Flutter SDK 代表您同意了
+  下载了或使用 Flutter SDK 代表你同意了
   [Google 服务条款][Google Terms of Service]。
 
   For example, when installed from GitHub

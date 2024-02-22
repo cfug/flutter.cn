@@ -346,8 +346,8 @@ your actions on the UI thread have performance consequences
 on other threads.
 
 Flutter 使用多个线程来完成其必要的工作，图层中仅展示了其中两个线程。 
-您写的所有 Dart 代码都在 UI 线程上运行。尽管您没有直接访问其他线程的权限，
-但是您对 UI 线程的操作会对其他线程产生性能影响。
+你写的所有 Dart 代码都在 UI 线程上运行。尽管你没有直接访问其他线程的权限，
+但是你对 UI 线程的操作会对其他线程产生性能影响。
 
 <dl markdown="1">
 <dt>

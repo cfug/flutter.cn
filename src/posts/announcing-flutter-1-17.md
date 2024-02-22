@@ -11,11 +11,11 @@ toc: true
 
 今年对每个人来说都是充满挑战的一年。我们的目标是每季度发布一次稳定版，由于我们一直在 [针对新的发布流程调整基础设施](https://flutter.cn/posts/flutter-spring-2020-update)，本次版本发布有所推迟。然而品质依然是我们的第一要务，新的版本发布流程将提升我们为稳定分支提供高质量热修复的能力。本次发布的版本包含大量的修复，自 1.12 稳定版发布以来，我们已经解决了 6,339 个 Issue，这是史无前例的大进展。而这很大程度上要归功于我们 [与 Nevercode 的合作](https://blog.codemagic.io/flutter-and-codemagic-join-forces-on-github/)，在用户提出问题时我们可以更快地响应。截至现在，我们已经解决的 bug 数量超过新增数量，报错总数减少了大约 800 个。这些 bug 中相当的一部分已通过合并 3,164 个 pull request 进行了修复，它们来自 231 位贡献者。这些数据都令人振奋，我们也衷心感谢大家在这个特殊时期的勤奋工作和持续贡献。
 
-如果您想查看我们在这个版本中合并的所有 pull request，请前往 flutter.cn 了解详情。除了品质方面的改进，我们还设法在这个版本中加入了一些新功能，包括 iOS 系统中的 Metal 支持、全新的 Material 组件、全新的网络跟踪工具等等。这个版本还包括了 Dart 2.8，请阅读今天发布的二条文章详细了解。
+如果你想查看我们在这个版本中合并的所有 pull request，请前往 flutter.cn 了解详情。除了品质方面的改进，我们还设法在这个版本中加入了一些新功能，包括 iOS 系统中的 Metal 支持、全新的 Material 组件、全新的网络跟踪工具等等。这个版本还包括了 Dart 2.8，请阅读今天发布的二条文章详细了解。
 
 ## **移动端性能和文件体积优化**
 
-性能和内存方面的整体优化是 1.17 版的重点之一。只需将您的工程升级到使用 Flutter 1.17，您的用户就能体验到更快速流畅的动画、更小巧的应用尺寸，以及更低的内存占用。在默认的导航场景下 (不包含透明图层内容的导航路径) 1.17 版的 [速度提升了 20%-37%](https://github.com/flutter/flutter/pull/48900)。简单 iOS 动画的 CPU/GPU 占用可减少高达 40%，具体的减少量取决于硬件 (详见 [PR 14104](https://github.com/flutter/engine/pull/14104) 和 [PR 13976](https://github.com/flutter/engine/pull/13976))。
+性能和内存方面的整体优化是 1.17 版的重点之一。只需将你的工程升级到使用 Flutter 1.17，你的用户就能体验到更快速流畅的动画、更小巧的应用尺寸，以及更低的内存占用。在默认的导航场景下 (不包含透明图层内容的导航路径) 1.17 版的 [速度提升了 20%-37%](https://github.com/flutter/flutter/pull/48900)。简单 iOS 动画的 CPU/GPU 占用可减少高达 40%，具体的减少量取决于硬件 (详见 [PR 14104](https://github.com/flutter/engine/pull/14104) 和 [PR 13976](https://github.com/flutter/engine/pull/13976))。
 
 得益于我们的多项修复工作，新版本还在应用体积上做出了可观的改进。比如 Flutter Gallery 范例应用的 Android 版本在去年年底是 9.6MB，现在则是 8.1MB，体积减少了 18.5%。
 
@@ -47,13 +47,13 @@ Apple 的 Metal API 使开发者几乎直接访问底层 GPU，它也是 Apple �
 
 ## **Material widgets: NavigationRail, DatePicker, 以及更多**
 
-基于多方用户的反馈，我们也在持续推进 Material 设计系统在 Flutter 中落地。在新版本中我们加入了 [NavigationRail](https://master-api.flutter-io.cn/flutter/material/NavigationRail-class.html)，这是一个新的 widget，提供了响应式的应用导航模型。它由 Google Material Design 团队 [设计](https://material.io/components/navigation-rail) 并实现。NavigationRail 非常适合可以在移动和桌面设备之间切换的应用，当您的应用所在的屏幕尺寸增大时，您可以非常容易地从 BottomNavigator 切换成 NavigationRail。
+基于多方用户的反馈，我们也在持续推进 Material 设计系统在 Flutter 中落地。在新版本中我们加入了 [NavigationRail](https://master-api.flutter-io.cn/flutter/material/NavigationRail-class.html)，这是一个新的 widget，提供了响应式的应用导航模型。它由 Google Material Design 团队 [设计](https://material.io/components/navigation-rail) 并实现。NavigationRail 非常适合可以在移动和桌面设备之间切换的应用，当你的应用所在的屏幕尺寸增大时，你可以非常容易地从 BottomNavigator 切换成 NavigationRail。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/10uOeq.gif)
 
 > △ 新加入的 NavigationRail widget
 
-您可以在 [web_dashboard 样例](https://github.com/flutter/samples/tree/master/experimental/web_dashboard) 或者 [DartPad](https://dartpad.cn/b9c6cd345fd1cff643353c1f4902f888) 中实际体验 NavigationRail。
+你可以在 [web_dashboard 样例](https://github.com/flutter/samples/tree/master/experimental/web_dashboard) 或者 [DartPad](https://dartpad.cn/b9c6cd345fd1cff643353c1f4902f888) 中实际体验 NavigationRail。
 
 除了加入新的 widget 之外，新版本还更新了 Material [DatePicker](https://api.flutter.dev/flutter/material/showDatePicker.html) 以及修正了文字选择菜单 widget 的溢出显示问题。
 
@@ -79,11 +79,11 @@ DatePicker 基于更新过的 [Material 设计指南](https://material.io/compon
 
 > △ Animations Package 中的容器转场动画
 
-在《[实现动效太难了？试试 Material Design》](https://mp.weixin.qq.com/s/v9QGn4xkEIlQ6DAe_1t7tg) 一文中，Material Design 团队给出了组件与全屏视图之间的四种转场模式: 容器变换、共享轴、淡入淡出和弹出效果。虽然 Flutter 一直就可以实现这些动效，但 Animations Package 让您可以更轻松地实现它们。今天就在应用里试试这些动效，让您的用户们眼前一亮吧！
+在《[实现动效太难了？试试 Material Design》](https://mp.weixin.qq.com/s/v9QGn4xkEIlQ6DAe_1t7tg) 一文中，Material Design 团队给出了组件与全屏视图之间的四种转场模式: 容器变换、共享轴、淡入淡出和弹出效果。虽然 Flutter 一直就可以实现这些动效，但 Animations Package 让你可以更轻松地实现它们。今天就在应用里试试这些动效，让你的用户们眼前一亮吧！
 
 ## **Material 文字缩放: 现代化 Flutter 文字主题**
 
-在新版本中，Flutter 团队在不破坏现有 Flutter 应用的同时，完成了对 2018 年 [Material Design 规范文字排版](https://material.io/design/typography/the-type-system.html#type-scale) 缩放 (Type Scale) 的实现。2018 年 10 月，我们在 [PR 22330](https://github.com/flutter/flutter/pull/22330) 中添加了对新配置 (而不是新名称) 的可选支持。现有的文本样式名称没有更改，因为这属于重大的 API 更改，可能会影响到大多数应用。Flutter 1.17 更新了 TextTheme API，以遵循当前的 Material 规范，但保留了旧的名称，从而不影响您的代码。由于旧的名称已经被废弃，您将收到 warning 提示，建议采用新的名称。
+在新版本中，Flutter 团队在不破坏现有 Flutter 应用的同时，完成了对 2018 年 [Material Design 规范文字排版](https://material.io/design/typography/the-type-system.html#type-scale) 缩放 (Type Scale) 的实现。2018 年 10 月，我们在 [PR 22330](https://github.com/flutter/flutter/pull/22330) 中添加了对新配置 (而不是新名称) 的可选支持。现有的文本样式名称没有更改，因为这属于重大的 API 更改，可能会影响到大多数应用。Flutter 1.17 更新了 TextTheme API，以遵循当前的 Material 规范，但保留了旧的名称，从而不影响你的代码。由于旧的名称已经被废弃，你将收到 warning 提示，建议采用新的名称。
 
 2018 年 Material TextStyle 的名称和配置汇总如下表所示。
 
@@ -93,7 +93,7 @@ Material Design 规范中称为 `body1` 和 `body2` 的 TextStyle 在 Flutter Te
 
 ## **在 Flutter 中使用 Google Fonts**
 
-文本和字体总是密不可分，如果新的 Material 文字缩放实现让您眼前一亮，那么您可能也会对新的 [Google Fonts for Flutter v1.0](https://medium.com/flutter/introducing-google-fonts-for-flutter-v-1-0-0-c0e993617118) 颇感兴趣。
+文本和字体总是密不可分，如果新的 Material 文字缩放实现让你眼前一亮，那么你可能也会对新的 [Google Fonts for Flutter v1.0](https://medium.com/flutter/introducing-google-fonts-for-flutter-v-1-0-0-c0e993617118) 颇感兴趣。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/FJhCZx.gif)
 
@@ -109,7 +109,7 @@ Material Design 规范中称为 `body1` 和 `body2` 的 TextStyle 在 Flutter Te
 
 ## **工具: Dart DevTools 支持 Flutter**
 
-将当前版本的 Dart DevTools 替换成新的 Flutter 版本，这一进程通过 Flutter 1.17 已经接近完成。如果您想试试新的 Flutter 版 Dart DevTools，请在启动 DevTools 后点击右上角的 Beaker (烧瓶) 图标。
+将当前版本的 Dart DevTools 替换成新的 Flutter 版本，这一进程通过 Flutter 1.17 已经接近完成。如果你想试试新的 Flutter 版 Dart DevTools，请在启动 DevTools 后点击右上角的 Beaker (烧瓶) 图标。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/lbMHWp.png)
 
@@ -117,13 +117,13 @@ Material Design 规范中称为 `body1` 和 `body2` 的 TextStyle 在 Flutter Te
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/tpb7Pb.png)
 
-如果您在 Dart DevTools 的预发布版本中没有看到 Network 选项卡 (比如，您是通过命令行来使用 DevTools)，可以通过如下命令手动更新它:
+如果你在 Dart DevTools 的预发布版本中没有看到 Network 选项卡 (比如，你是通过命令行来使用 DevTools)，可以通过如下命令手动更新它:
 
 ```
 $ pub global activate devtools
 ```
 
-在按下 Record (录制) 按钮后， Network 选项卡会显示您的 Flutter 应用的网络流量情况。如果您想在应用启动时就立即开始监测网络流量，可以在您的 main() 方法中加入这行代码:
+在按下 Record (录制) 按钮后， Network 选项卡会显示你的 Flutter 应用的网络流量情况。如果你想在应用启动时就立即开始监测网络流量，可以在你的 main() 方法中加入这行代码:
 
 ```
 void main() {
@@ -133,21 +133,21 @@ void main() {
 }
 ```
 
-除了 Dart DevTools 的更新之外，这个版本还实验性地增加了 ["快速启动" 选项](https://github.com/flutter/flutter/pull/46140)，当您调试 Android 版 Flutter 应用时，其启动速度可以提升高达 70%。您可以通过 flutter run --fast-start -d <your Android device> 来启用这个选项。这个选项会安装一个只依赖您的插件代码的通用 Android 应用，而不包含任何 Dart 代码或资源。这会让重复运行的 flutter run 命令更快地启动，因为修改 Dart 代码或资源并不需要重新构建 APK。和通常的启动选项不同，快速启动选项将您的应用绑定到了一个通用的 Android "容器" 中，实际上并不会在您的设备上安装。在一些情况下，比如您使用的插件访问了后台执行的内容，快速启动选项将不起作用。如果您觉得 Android 调试的启动时间漫长得让人头疼，不妨试试这个全新的选项吧。
+除了 Dart DevTools 的更新之外，这个版本还实验性地增加了 ["快速启动" 选项](https://github.com/flutter/flutter/pull/46140)，当你调试 Android 版 Flutter 应用时，其启动速度可以提升高达 70%。你可以通过 flutter run --fast-start -d <your Android device> 来启用这个选项。这个选项会安装一个只依赖你的插件代码的通用 Android 应用，而不包含任何 Dart 代码或资源。这会让重复运行的 flutter run 命令更快地启动，因为修改 Dart 代码或资源并不需要重新构建 APK。和通常的启动选项不同，快速启动选项将你的应用绑定到了一个通用的 Android "容器" 中，实际上并不会在你的设备上安装。在一些情况下，比如你使用的插件访问了后台执行的内容，快速启动选项将不起作用。如果你觉得 Android 调试的启动时间漫长得让人头疼，不妨试试这个全新的选项吧。
 
-如果您的目标平台是 Android，您会注意到，现在创建新的 Flutter 项目时只提供 AndroidX 选项。[AndroidX](https://developer.android.google.cn/jetpack/androidx) 库提供了被称为 [Android Jetpack](https://developer.android.google.cn/jetpack/) 的高级 Android 功能。在上一个版本中，我们不再支持原先的 Android Support Library，转而将 AndroidX 作为所有新项目的默认选项。在 Flutter 1.17 中，flutter create 命令只有 --androidx 这一个选项。虽然现有的不使用 AndroidX 的 Flutter 应用依然可以编译，但 [是时候迁移至 AndroidX 了](https://zhuanlan.zhihu.com/p/136351588)。
+如果你的目标平台是 Android，你会注意到，现在创建新的 Flutter 项目时只提供 AndroidX 选项。[AndroidX](https://developer.android.google.cn/jetpack/androidx) 库提供了被称为 [Android Jetpack](https://developer.android.google.cn/jetpack/) 的高级 Android 功能。在上一个版本中，我们不再支持原先的 Android Support Library，转而将 AndroidX 作为所有新项目的默认选项。在 Flutter 1.17 中，flutter create 命令只有 --androidx 这一个选项。虽然现有的不使用 AndroidX 的 Flutter 应用依然可以编译，但 [是时候迁移至 AndroidX 了](https://zhuanlan.zhihu.com/p/136351588)。
 
-如果您使用 Android Studio 或 IntelliJ，您会发现 Hot Reload (热重载) 功能的容错性更强了。在本次更新之前，如果您的应用出现了任何分析错误，Hot Reload 将不会重新加载您的代码。如果分析错误并不涉及您当前正在运行的代码 (比如在单元测试中)，会让人很崩溃。但通过 [本次更新](https://groups.google.com/forum/m/#!topic/flutter-announce/tTgQcTgqrKg)，Hot Reload 将不再受分析错误影响，而取决于 VM 中的编译错误。
+如果你使用 Android Studio 或 IntelliJ，你会发现 Hot Reload (热重载) 功能的容错性更强了。在本次更新之前，如果你的应用出现了任何分析错误，Hot Reload 将不会重新加载你的代码。如果分析错误并不涉及你当前正在运行的代码 (比如在单元测试中)，会让人很崩溃。但通过 [本次更新](https://groups.google.com/forum/m/#!topic/flutter-announce/tTgQcTgqrKg)，Hot Reload 将不再受分析错误影响，而取决于 VM 中的编译错误。
 
-如果您想更早地体验 Android Studio 或 IntelliJ 的 Flutter 插件中类似的改进，我们现在也为 [IntelliJ 插件提供了 dev 渠道](https://groups.google.com/forum/m/#!topic/flutter-announce/tTgQcTgqrKg)，您可以选择加入，以更快获取到这些更新。这个 dev 渠道的目标是在公开发布新 IDE 集成功能前通过 Flutter 开发者收集反馈。如果您希望尝鲜并且愿意向 Flutter 工具团队提供早期反馈，请即刻 [加入我们的体验计划](https://groups.google.com/forum/m/#!topic/flutter-announce/tTgQcTgqrKg)！
+如果你想更早地体验 Android Studio 或 IntelliJ 的 Flutter 插件中类似的改进，我们现在也为 [IntelliJ 插件提供了 dev 渠道](https://groups.google.com/forum/m/#!topic/flutter-announce/tTgQcTgqrKg)，你可以选择加入，以更快获取到这些更新。这个 dev 渠道的目标是在公开发布新 IDE 集成功能前通过 Flutter 开发者收集反馈。如果你希望尝鲜并且愿意向 Flutter 工具团队提供早期反馈，请即刻 [加入我们的体验计划](https://groups.google.com/forum/m/#!topic/flutter-announce/tTgQcTgqrKg)！
 
-如果您使用的是 Visual Studio Code，我们推荐使用新的 **Dart: List Outdated Packages** 命令来运行新的 pub outdedated 命令。详情请见 Dart 2.8 发布 (今日微信二条文章)。
+如果你使用的是 Visual Studio Code，我们推荐使用新的 **Dart: List Outdated Packages** 命令来运行新的 pub outdedated 命令。详情请见 Dart 2.8 发布 (今日微信二条文章)。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/wRDc6Y.png)
 
 这个命令用于厘清依赖项中的版本问题。
 
-最后值得一提的是，现在当 Flutter 崩溃时，工具会提示您上报这个 bug:
+最后值得一提的是，现在当 Flutter 崩溃时，工具会提示你上报这个 bug:
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/05/mh6Izu.png)
 
@@ -178,4 +178,4 @@ Superformula 与 MGM Resorts 设计团队合作，为所有主要的网络、移
 
 ## **小结**
 
-随着移动端支持的不断成熟，以及 [Web 端逐步稳定](https://mp.weixin.qq.com/s/NGqF2OTvsV1A2KLiMXE2PQ)，Flutter 有望解决困扰行业几十年的问题: 如何通过单一代码库构建出多平台部署的优秀应用？Flutter 成长至今的表现让我们相信，我们正走在正确的道路上，也期待着您精彩的 Flutter 作品！
+随着移动端支持的不断成熟，以及 [Web 端逐步稳定](https://mp.weixin.qq.com/s/NGqF2OTvsV1A2KLiMXE2PQ)，Flutter 有望解决困扰行业几十年的问题: 如何通过单一代码库构建出多平台部署的优秀应用？Flutter 成长至今的表现让我们相信，我们正走在正确的道路上，也期待着你精彩的 Flutter 作品！

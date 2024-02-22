@@ -291,7 +291,7 @@ widget should re-render in Spanish.
 <a id="adding-localized-messages"></a>
 ### Adding your own localized messages
 
-### 添加您自己的本地化信息
+### 添加你自己的本地化信息
 
 After adding the `flutter_localizations` package,
 you can configure localization.
@@ -299,7 +299,7 @@ To add localized text to your application,
 complete the following instructions:
 
 引入 `flutter_localizations` package 后，
-请按照以下说明将本地化的文本添加到您的应用。
+请按照以下说明将本地化的文本添加到你的应用。
 
 1. Add the `intl` package as a dependency, pulling
    in the version pinned by `flutter_localizations`:
@@ -397,7 +397,7 @@ complete the following instructions:
    generate the same files without running the app.
 
    现在，运行 `flutter run` 命令，
-   您将在 `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n` 中看到生成的文件。
+   你将在 `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n` 中看到生成的文件。
    同样的，你可以在应用没有运行的时候运行
    `flutter gen-l10n` 来生成本地化文件。
 
@@ -929,7 +929,7 @@ use the following instructions:
 
 iOS 应用在内置于应用程序包中的 `Info.plist` 文件中
 定义了关键的应用程序元数据，其中包括了受支持的语言环境，
-要配置您的应用支持的语言环境，请按照以下步骤进行操作：
+要配置你的应用支持的语言环境，请按照以下步骤进行操作：
 
 1. Open your project's `ios/Runner.xcworkspace` Xcode file.
 
@@ -955,7 +955,7 @@ iOS 应用在内置于应用程序包中的 `Info.plist` 文件中
    This list should be consistent with the languages listed
    in the [`supportedLocales`][] parameter.
 
-   选择并展开新创建的 `Localizations` 项。对于您的应用程序支持的每种语言环境，
+   选择并展开新创建的 `Localizations` 项。对于你的应用程序支持的每种语言环境，
    请添加一个新项，然后从 **Value** 字段中的弹出菜单中选择要添加的语言环境。
    该列表应需要与 [`supportedLocales`][] 参数中列出的语言一致。
 

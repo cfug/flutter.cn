@@ -13,12 +13,12 @@ toc: true
 
 ![](https://devrel.andfun.cn/devrel/posts/2023/07/21/04KBGl.png)
 
-您可能已经了解到，Flutter 是一个界面工具包，它让应用开发者只需编写一套代码，即可构建移动应用、Web 应用、桌面应用和嵌入式设备应用。您可以使用 Flutter 构建精致**美观**的应用，完全掌控屏幕上的每一个像素。Flutter 具有如下独特优势:
+你可能已经了解到，Flutter 是一个界面工具包，它让应用开发者只需编写一套代码，即可构建移动应用、Web 应用、桌面应用和嵌入式设备应用。你可以使用 Flutter 构建精致**美观**的应用，完全掌控屏幕上的每一个像素。Flutter 具有如下独特优势:
 
 * **快速** 。支持硬件加速图形和原生编译的机器代码，可充分利用设备的各种功能。
-* **高效** 。支持有状态热重载等技术，让您可立即看到代码更改在应用中的实际效果。
+* **高效** 。支持有状态热重载等技术，让你可立即看到代码更改在应用中的实际效果。
 * **可移植** 。使用一套源代码即可部署到多种平台，而不会出现意外情况。
-* **开源** 。它是一个完全开源的工具包，您无需支付许可费，也不用为相关开发工具付费。
+* **开源** 。它是一个完全开源的工具包，你无需支付许可费，也不用为相关开发工具付费。
 
 ## **Flutter 持续发展**
 
@@ -28,17 +28,17 @@ toc: true
 
 * [全新的 Play 管理中心应用](https://play.google.com/store/apps/details?id=com.google.android.apps.playconsole)。这款应用目前已发布公开 Beta 版，开发者可以通过它查看应用统计信息并回复应用评价。
 
-* [Google Cloud 移动应用](https://cloud.google.com/blog/products/management-tools/google-cloud-mobile-app-with-uptime-checks)。这款应用让您可以通过全新的 Flutter 赋能体验来监控自己的服务。
+* [Google Cloud 移动应用](https://cloud.google.com/blog/products/management-tools/google-cloud-mobile-app-with-uptime-checks)。这款应用让你可以通过全新的 Flutter 赋能体验来监控自己的服务。
 
 * [Google 课堂练习集](https://workspaceupdates.googleblog.com/2023/04/practice-sets-for-google-classroom.html)。这是一款在线新工具，用于创建和分发交互式作业，为学生提供实时反馈和帮助。
 
 我们在 [Flutter Forward 大会上宣布](https://www.youtube.com/watch?v=JVJF_M9bgj4) 团队正在使用 Flutter 构建新版本的 Google 课堂移动应用。新版本现已开始在 iOS 上推出，Android 应用更新版本中的新功能也即将推出。此版本的 Google 课堂使用最新的 Flutter 技术，包括我们最新的 Impeller 图形渲染引擎，可保证界面快速响应、不卡顿。
 
-通过在 Flutter 中重写 Google 课堂，我们提升了 Google 课堂的性能。该应用的新版本比旧版本的冷启动时间更短，您可以观看下面这则对比视频了解详情:
+通过在 Flutter 中重写 Google 课堂，我们提升了 Google 课堂的性能。该应用的新版本比旧版本的冷启动时间更短，你可以观看下面这则对比视频了解详情:
 
 <video controls width="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/07/21/469PWC.mp4" poster="https://devrel.andfun.cn/devrel/posts/2023/07/21/ZkFYLQ.png"></video>
 
-我们正在持续投入资源开发 package，以便将您的 Flutter 应用运用到 Google 开发者生态系统的其他方面。这包括对原生广告的 [Google Ads 支持](https://medium.com/flutter/2023-google-mobile-ads-updates-for-flutter-16b603df9ec9) 进行了重大更新；[新增了 Firebase 对 Windows 平台的支持，并改善了 Firebase 对 Web 的支持](https://github.com/firebase/flutterfire)；同时还新增了对 [更深入的 Android 互操作性](https://io.google/2023/program/2f02692d-9a41-49c0-8786-1a22b7155628/) 的实验性支持。
+我们正在持续投入资源开发 package，以便将你的 Flutter 应用运用到 Google 开发者生态系统的其他方面。这包括对原生广告的 [Google Ads 支持](https://medium.com/flutter/2023-google-mobile-ads-updates-for-flutter-16b603df9ec9) 进行了重大更新；[新增了 Firebase 对 Windows 平台的支持，并改善了 Firebase 对 Web 的支持](https://github.com/firebase/flutterfire)；同时还新增了对 [更深入的 Android 互操作性](https://io.google/2023/program/2f02692d-9a41-49c0-8786-1a22b7155628/) 的实验性支持。
 
 由于 Flutter 支持在六大平台 (Android、iOS、Web、Windows、macOS 和 Linux)上使用，**现在已有超过一百万款已发布的应用在使用 Flutter**。这些应用来自世界各地，从法国铁路的火车旅行应用 [SNCF Connect](https://play.google.com/store/apps/details?id=com.vsct.vsc.mobile.horaireetresa.android&hl=en_US&gl=US) 到 Apple App of the Day 获奖应用 [SO VEGAN](https://apps.apple.com/us/app/so-vegan/id1572826611)；从 [Rive 开发的用于创建动画图形的超快桌面应用](https://rive.app/downloads) 到培养亲密关系的 [Agapé](https://www.getdailyagape.com/) 移动和平板电脑应用；从采用全新设计的精美 [Global Citizen 应用](https://www.globalcitizen.org/en/content/new-global-citizen-app-impact-activism-every-day/) 到 [最新的 Ubuntu Linux 安装程序](https://9to5linux.com/first-look-at-ubuntu-23-04s-brand-new-desktop-installer-written-in-flutter)，种类繁多。很高兴这些应用让 Flutter 的价值得到了证明！
 
@@ -62,7 +62,7 @@ toc: true
 
 影响感知性能的一个主要因素是 *加载时间*，即从用户请求页面到页面可交互所用的时间间隔。在此版本中，我们取得了飞跃性的进展，这要归功于在所有浏览器上缩减了 CanvasKit 的大小，并对基于 Chromium 的浏览器进行了其他方面的优化。在 Flutter 3.10 中，CanvasKit 的大小缩减到 1.5MB (之前版本中的大小为 2.7MB)。图标字体也去除了未使用的字形，在大多数情况下，其大小缩减至原来的百分之一。得益于这些优化，我们使用模拟数据线连接将默认计数器应用的加载时间缩短了 42%。
 
-正如 Flutter Forward 大会上预告的那样，我们现在 [支持在现有 HTML 网页中嵌入 Flutter 内容](https://flutter-forward-demos.web.app/#/)，而不是让 Flutter 占据整个页面。此外，Flutter 也不需要使用内嵌框架。在 Flutter 3.10 中，我们引入了*元素嵌入*功能。借助该功能，您可以像在页面上集成任何其他 CSS 元素一样集成 Flutter 内容。例如，您可以应用复杂的 CSS 过渡和转换。若想开始体验，不妨试试这些使用 [JavaScript](https://github.com/flutter/samples/tree/main/web_embedding/element_embedding_demo) 或将 Flutter 封装在 [Angular 组件](https://github.com/flutter/samples/tree/main/web_embedding/ng-flutter) 中的示例应用。
+正如 Flutter Forward 大会上预告的那样，我们现在 [支持在现有 HTML 网页中嵌入 Flutter 内容](https://flutter-forward-demos.web.app/#/)，而不是让 Flutter 占据整个页面。此外，Flutter 也不需要使用内嵌框架。在 Flutter 3.10 中，我们引入了*元素嵌入*功能。借助该功能，你可以像在页面上集成任何其他 CSS 元素一样集成 Flutter 内容。例如，你可以应用复杂的 CSS 过渡和转换。若想开始体验，不妨试试这些使用 [JavaScript](https://github.com/flutter/samples/tree/main/web_embedding/element_embedding_demo) 或将 Flutter 封装在 [Angular 组件](https://github.com/flutter/samples/tree/main/web_embedding/ng-flutter) 中的示例应用。
 
 Flutter 3.10 继续专注于发展突破性的图形性能，还支持 Web 上的 [fragment 着色器](https://docs.flutter.dev/development/ui/advanced/shaders)。自定义着色器可用于提供超出 Flutter SDK 所提供的丰富图形效果。着色器是一种使用类似于 Dart 的小型语言 (称为 [GLSL](https://www.khronos.org/opengl/wiki/Core_Language_(GLSL))) 编写的程序，它会在用户的 GPU 上执行。如需了解更多信息，请查看我们 [关于着色器的文档](https://docs.flutter.dev/ui/advanced/shaders) 以及 [新发布的 Codelab](https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis#0)。
 
@@ -76,7 +76,7 @@ WebAssembly 具有将原生代码的性能带到 Web 的潜力，这一点让我
 
 > "WebAssembly 具有将原生代码的性能带到 Web 的潜力，这一点让我们兴奋不已。"
 
-在翘首以盼浏览器支持变得更加普遍的同时，我们在预发布渠道中引入了对将 Flutter 应用编译为 WebAssembly 的预览支持。我们希望您能在自己的应用中试用该功能，并尽早与我们分享反馈。如需了解详情，您可以访问 [flutter.dev/wasm](https://flutter.dev/wasm)。
+在翘首以盼浏览器支持变得更加普遍的同时，我们在预发布渠道中引入了对将 Flutter 应用编译为 WebAssembly 的预览支持。我们希望你能在自己的应用中试用该功能，并尽早与我们分享反馈。如需了解详情，你可以访问 [flutter.dev/wasm](https://flutter.dev/wasm)。
 
 ## **对开发者体验的持续关注**
 
@@ -88,7 +88,7 @@ Dart 3 完成了为 Dart 生态系统带来可靠的空安全 (null safety) 的�
 
 > "Dart 3 完成了为 Dart 生态系统带来可靠的空安全的漫长旅程。"
 
-Dart 3 引入了许多其他新功能，包括记录、模式和类修饰符，这将提高 Dart 代码的可读性和流畅性。欢迎前往 [Dart 3 博客](https://medium.com/dartlang/announcing-dart-3-53f065a10635)，了解更多信息和示例。Flutter 本身已经在利用这些新的 Dart 3 功能，因此随着这些功能的推出，您会看到我们自己的代码库得到了改进。我们相信您会喜欢在自己的代码中使用这些功能。
+Dart 3 引入了许多其他新功能，包括记录、模式和类修饰符，这将提高 Dart 代码的可读性和流畅性。欢迎前往 [Dart 3 博客](https://medium.com/dartlang/announcing-dart-3-53f065a10635)，了解更多信息和示例。Flutter 本身已经在利用这些新的 Dart 3 功能，因此随着这些功能的推出，你会看到我们自己的代码库得到了改进。我们相信你会喜欢在自己的代码中使用这些功能。
 
 ## **SLSA 和软件供应链安全**
 
@@ -100,7 +100,7 @@ Dart 3 引入了许多其他新功能，包括记录、模式和类修饰符，�
 
 * 开源安全基金会 (OpenSSF) [最佳实践计划](https://bestpractices.coreinfrastructure.org/en) 是帮助项目遵守安全和漏洞管理最佳实践的实用基准。很高兴地宣布，我们已经达成了这个计划合格水平的 [全部合格要求](https://bestpractices.coreinfrastructure.org/en/projects/5631)，并继续努力朝着符合 [白银级](https://bestpractices.coreinfrastructure.org/en/projects/5631?criteria_level=1) 和 [黄金级](https://bestpractices.coreinfrastructure.org/en/projects/5631?criteria_level=2) 标准的方向前进。
 
-* Flutter 还在所有 Flutter 关键库上启用了 [OpenSSF Scorecards](https://securityscorecards.dev/) 和 [Dependabot](https://github.com/dependabot/dependabot-core)。OpenSSF Scorecards 是一种静态分析工具，用于检查您的库对最佳实践的遵守程度，并在这些实践没有被遵守时发现问题。Dependabot 可监控项目依赖项中是否存在漏洞，并创建拉取请求以便在必要时更新它们。利用这些工具，Flutter 团队已经在我们的网站和 Codelab 中发现并解决了 300 多个漏洞。
+* Flutter 还在所有 Flutter 关键库上启用了 [OpenSSF Scorecards](https://securityscorecards.dev/) 和 [Dependabot](https://github.com/dependabot/dependabot-core)。OpenSSF Scorecards 是一种静态分析工具，用于检查你的库对最佳实践的遵守程度，并在这些实践没有被遵守时发现问题。Dependabot 可监控项目依赖项中是否存在漏洞，并创建拉取请求以便在必要时更新它们。利用这些工具，Flutter 团队已经在我们的网站和 Codelab 中发现并解决了 300 多个漏洞。
 
 * Flutter 和 Dart SDK 以及这些 SDK 的发布工作流程最近已达到 [SLSA L1](https://slsa.dev/spec/v1.0/levels#build-l1) 等级。SLSA (软件制品的供应链等级) 框架可帮助开源项目保持强大的供应链安全性。达到 SLSA L1 等级是朝着保护 Flutter 开发者日常使用的工具迈出的重要一步。
 
@@ -110,7 +110,7 @@ Dart 3 引入了许多其他新功能，包括记录、模式和类修饰符，�
 
 此版本中还包含数以千计的其他更新，我们希望这些内容会让现有的 Flutter 开发者满意。但值得注意的是，这些贡献者中有相当一部分是 Google 以外的开发者，贡献内容包括开发新功能；改进文档；开发软件包，将 Flutter 扩展到我们从未想象到的领域；提交可重现的问题报告和功能请求，为我们提供了有关如何改进 Flutter 的新视角。
 
-Flutter 不只是一个 *Google* 项目，而是一个*全员参与*的项目。我们非常感谢社区的多样性和热情参与，让 Flutter 蜕变至此。很高兴能与您一起完成这一使命，Flutter 将迈向更加光明的未来！
+Flutter 不只是一个 *Google* 项目，而是一个*全员参与*的项目。我们非常感谢社区的多样性和热情参与，让 Flutter 蜕变至此。很高兴能与你一起完成这一使命，Flutter 将迈向更加光明的未来！
 
 <video controls width="690" height="480" src="https://devrel.andfun.cn/devrel/posts/2023/07/21/HSILcX.mp4" poster="https://devrel.andfun.cn/devrel/posts/2023/07/21/jUxloC.png"></video>
 

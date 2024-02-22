@@ -33,7 +33,7 @@ I/O 期间我们迎来 [Flutter 框架](https://flutter.dev/) 的一个重要里
 
 我们即将发布 Web 版 Flutter 的**首个技术预览版**。虽然这项技术还在开发中，但我们准备邀请尝鲜者来试用并提供反馈。对于 Web 版 Flutter，我们的最初设想并不是将其用作文档体验 (针对其优化 HTML ) 的通用替代品；相反，我们打算通过这种有效方式构建高度交互和图形丰富的内容，从而切实感受到成熟界面框架所带来的益处。
 
-为了展示 Web 版 Flutter，我们与《纽约时报》合作构建了一个演示版本。《纽约时报》不仅是世界一流的新闻媒体，而且以设计纵横字谜等益智游戏而闻名。由于狂热的解谜玩家希望能在当时使用的任何设备上玩游戏，所以《纽约时报》的开发团队把目光转向 Flutter，将其作为满足读者需求的潜在解决方案。发现能够利用同一组代码访问网页给他们带来了巨大裨益。在 Google I/O 大会上，您可以率先了解他们最近更新的 [KENKEN 解谜游戏](https://www.nytimes.com/games/prototype/kenken)。该游戏利用同一组代码在 Android、iOS、Web、Mac 和 Chrome 操作系统上运行。
+为了展示 Web 版 Flutter，我们与《纽约时报》合作构建了一个演示版本。《纽约时报》不仅是世界一流的新闻媒体，而且以设计纵横字谜等益智游戏而闻名。由于狂热的解谜玩家希望能在当时使用的任何设备上玩游戏，所以《纽约时报》的开发团队把目光转向 Flutter，将其作为满足读者需求的潜在解决方案。发现能够利用同一组代码访问网页给他们带来了巨大裨益。在 Google I/O 大会上，你可以率先了解他们最近更新的 [KENKEN 解谜游戏](https://www.nytimes.com/games/prototype/kenken)。该游戏利用同一组代码在 Android、iOS、Web、Mac 和 Chrome 操作系统上运行。
 
 ![ken-gratulations puzzle](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot5-release/nyt-game.gif){:width="85%"}
 
@@ -44,7 +44,7 @@ I/O 期间我们迎来 [Flutter 框架](https://flutter.dev/) 的一个重要里
 
 由于篇幅有限，我们无法在此一一详述 Web 版 Flutter。若有兴趣，请前往 [Flutter 博客](https://medium.com/flutter-io/bringing-flutter-to-the-web-904de05f0df0)，阅读专门介绍 Web 版 Flutter 的文章。
 
-鉴于目前处于早期开发阶段，我们非常希望收到您的反馈，了解您希望如何使用 Web 版 Flutter。我们希望以性能为重中之重，快速开发代码，并与 Flutter 项目的其他部分协调代码库。
+鉴于目前处于早期开发阶段，我们非常希望收到你的反馈，了解你希望如何使用 Web 版 Flutter。我们希望以性能为重中之重，快速开发代码，并与 Flutter 项目的其他部分协调代码库。
 
 ## 适用于移动设备的 Flutter
 
@@ -52,7 +52,7 @@ I/O 期间我们迎来 [Flutter 框架](https://flutter.dev/) 的一个重要里
 
 随着框架本身逐渐成熟，我们正在设法构建支持生态系统。Flutter 的架构模型一贯优先考虑小型核心框架，并辅以丰富的软件包社区。在过去的几个月，Google 为网页视图、Google 地图和 Firebase ML Vision 提供了产品级质量的软件包。我们还将新增对 [应用内支付](https://pub.flutter-io.cn/packages/in_app_purchase) 的初步支持。得益于 2,000 多个适用于 Flutter 的开放源代码软件包，大多数场景均有合适的选择。 
 
-在今年的 I/O 上，我们宣布推出一个尤其令人振奋的项目，即 [ML Kit 自定义图像分类器](http://github.com/firebase/mlkit-custom-image-classifier)。该工具利用 Flutter 和 Firebase 构建，可为创建自定义图像分类模型提供基于应用的简易工作流。您可以使用手机的摄像头收集训练数据、邀请他人为您的数据集贡献素材、触发模型训练以及使用训练过的模型，这些操作都可以在同一个应用中实现。
+在今年的 I/O 上，我们宣布推出一个尤其令人振奋的项目，即 [ML Kit 自定义图像分类器](http://github.com/firebase/mlkit-custom-image-classifier)。该工具利用 Flutter 和 Firebase 构建，可为创建自定义图像分类模型提供基于应用的简易工作流。你可以使用手机的摄像头收集训练数据、邀请他人为你的数据集贡献素材、触发模型训练以及使用训练过的模型，这些操作都可以在同一个应用中实现。
 
 ![Flutter ML Kit: create datasets, collaborate to collect data, train model, run inference](https://files.flutter-io.cn/posts/flutter-cn/2019/flutter-1dot5-release/flutter-mlkit.png){:width="85%"}
 
@@ -66,7 +66,7 @@ Flutter 越来越受欢迎，使用人数也越来越多。[有需求的客户](
 
 Flutter 目前也被用于桌面平台。在过去几个月，我们一直在研究桌面平台这一 [实验性项目](https://github.com/google/flutter-desktop-embedding)。但现在该项目逐渐演变成 Flutter 引擎，并将这项工作直接集成到 mainline repo 中。尽管这些目标尚未在生产环境中部署，但我们已发布早期说明，以便开发 [在 Mac、Windows 和 Linux 上运行的 Flutter 应用](https://github.com/flutter/flutter/wiki/Desktop-shells)。
 
-另一个快速发展的 Flutter 平台是 Chrome 操作系统，每年售出的 Chromebook 多达数百万台，尤其是在教育领域。无论是运行 Flutter 应用，还是作为开发者平台，Chrome 操作系统都为 Flutter 提供了绝佳环境，因为该系统支持执行 Android 和 Linux 应用。借助 Chrome 操作系统，您可以使用 Visual Studio Code 或 Android Studio 来开发 Flutter 应用，并在没有模拟器的情况下使用同一台设备本机测试和运行应用。您还可以在 Play Store 发布适用于 Chrome 操作系统的 Flutter 应用，让数百万用户因您的创作而受益。
+另一个快速发展的 Flutter 平台是 Chrome 操作系统，每年售出的 Chromebook 多达数百万台，尤其是在教育领域。无论是运行 Flutter 应用，还是作为开发者平台，Chrome 操作系统都为 Flutter 提供了绝佳环境，因为该系统支持执行 Android 和 Linux 应用。借助 Chrome 操作系统，你可以使用 Visual Studio Code 或 Android Studio 来开发 Flutter 应用，并在没有模拟器的情况下使用同一台设备本机测试和运行应用。你还可以在 Play Store 发布适用于 Chrome 操作系统的 Flutter 应用，让数百万用户因你的创作而受益。
 
 ## 适用于嵌入式设备的 Flutter
 
@@ -84,8 +84,8 @@ Smart Display 操作系统或许是 Flutter 目前已运行的最常见嵌入式
 
 许多开发者正在利用 Flutter 开发振奋人心的应用。在 Google I/O 大会的筹备阶段，我们举办了名为 Flutter Create 的挑战赛，鼓励开发者使用不超过 5KB 的 Dart 代码通过 Flutter 构建内容。我们收到来自世界各地的 750 多个独特参赛作品，其中一些作品让我们大开眼界，谁能想到如此少的代码竟然能创造出如此精彩的作品。
 
-我们在此宣布获胜者，您可前往 flutter.dev/create 查看获胜名单。祝贺总冠军 Zebiao Hu，其将荣获价值超过 1 万美元的全加载式 iMac Pro！
+我们在此宣布获胜者，你可前往 flutter.dev/create 查看获胜名单。祝贺总冠军 Zebiao Hu，其将荣获价值超过 1 万美元的全加载式 iMac Pro！
 
 <iframe src="{{bili-embed}}?aid=52416421&page=1&autoplay=false" {{bili-set}}></iframe>
 
-Flutter 不再只是一个移动框架，更是一个多平台框架，可帮助您触及任何地方的用户。我们迫不及待地看到您利用 Flutter 在 Web、桌面、移动及其他平台上构建的内容！
+Flutter 不再只是一个移动框架，更是一个多平台框架，可帮助你触及任何地方的用户。我们迫不及待地看到你利用 Flutter 在 Web、桌面、移动及其他平台上构建的内容！

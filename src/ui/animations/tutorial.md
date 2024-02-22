@@ -178,7 +178,7 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   or you can create your own. For example:
 
   [`Curves`][] 类定义了很多常用曲线，
-  或者您也可以自定义。例如：
+  或者你也可以自定义。例如：
 
   <?code-excerpt "animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
   {% prettify dart context="html" %}
@@ -258,7 +258,7 @@ You can see an example of this in [animate1][] on GitHub.
 创建 `AnimationController` 的同时，
 也赋予了一个 `vsync` 参数。
 `vsync` 的存在防止后台动画消耗不必要的资源。
-您可以通过添加 `SingleTickerProviderStateMixin` 到类定义，
+你可以通过添加 `SingleTickerProviderStateMixin` 到类定义，
 将有状态的对象用作 vsync。
 可参考 GitHub 网站 [animate1]({{examples}}/animation/animate1/lib/main.dart) 
 中的示例。
@@ -484,7 +484,7 @@ Nothing has been rendered to the screen. To render with an
 member of your widget, then use its value to decide how to draw.
 
 目前为止，我们学习了如何随着时间生成数字序列。但屏幕上并未显示任何内容。
-要显示一个 `Animation` 对象，需将 `Animation` 对象存储为您的 widget 成员，
+要显示一个 `Animation` 对象，需将 `Animation` 对象存储为你的 widget 成员，
 然后用它的值来决定如何绘制。
 
 Consider the following app that draws the Flutter logo without animation:
@@ -978,7 +978,7 @@ separate class in the render tree. Like `AnimatedWidget`,
 from the `Animation` object, and marks the widget tree
 dirty as necessary, so you don't need to call `addListener()`.
 
-您可以使用 `AnimatedBuilder` 类方法来完成分配。
+你可以使用 `AnimatedBuilder` 类方法来完成分配。
 `AnimatedBuilder` 作为渲染树的一个单独类。
 像 `AnimatedWidget`，`AnimatedBuilder` 自动监听动画对象提示，
 并在必要时在 widget 树中标出，
@@ -1196,7 +1196,7 @@ in the bullet points above.
     commonly used curves that you can
     use with a [`CurvedAnimation`][].
     
-    [`Curves`][] 类定义了一列常用的曲线，您可以配合 [`CurvedAnimation`][] 来使用。
+    [`Curves`][] 类定义了一列常用的曲线，你可以配合 [`CurvedAnimation`][] 来使用。
 
 {{site.alert.end}}
 
@@ -1207,7 +1207,7 @@ to animate in and out continuously. Consider the case
 where you want to animate in and out while the
 opacity animates from transparent to opaque.
 
-在这部分内容中，您会根据 [监控动画过程](#monitoring) ([animate3][]) 创建示例，
+在这部分内容中，你会根据 [监控动画过程](#monitoring) ([animate3][]) 创建示例，
 该示例将使用 `AnimatedWidget` 持续进行动画。
 可以用在需要对透明度进行从透明到不透明动画处理的情况。
 
@@ -1222,7 +1222,7 @@ opacity animates from transparent to opaque.
   
   这个示例展示了如何在同一个动画控制器中使用复合补间动画，
   每个补间动画控制一个动画的不同效果。
-  仅用于说明目的。如果您需要在代码中加入渐变不透明度和尺寸效果，
+  仅用于说明目的。如果你需要在代码中加入渐变不透明度和尺寸效果，
   可能需要用 [`FadeTransition`][] 和 [`SizeTransition`][] 来代替。
 
 {{site.alert.end}}

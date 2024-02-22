@@ -69,7 +69,7 @@ Here are some of the things you can do with DevTools:
 We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
 
-我们希望您将开发工具与现有的 IDE 或基于命令行的开发流程结合起来使用。
+我们希望你将开发工具与现有的 IDE 或基于命令行的开发流程结合起来使用。
 
 <a id="install-devtools"></a>
 

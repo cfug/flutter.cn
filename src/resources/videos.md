@@ -37,7 +37,7 @@ some in different languages.
 Even if you couldn't make it to Nairobi for the in-person
 event, you can enjoy the content created for Flutter Forward!
 
-即使您无法前往内罗毕参加现场活动，你也可以享受为 Flutter Forward 创建的内容！
+即使你无法前往内罗毕参加现场活动，你也可以享受为 Flutter Forward 创建的内容！
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/zKQYGKAe5W8?start=2778" title="Watch the livestream from Flutter Forward in Nairobi Kenya from 2023" {{site.yt.set}}></iframe>
 

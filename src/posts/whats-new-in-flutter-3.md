@@ -21,7 +21,7 @@ Linux 和 macOS 平台的支持已进入稳定状态，内含下列功能:
 
 ### **级联菜单和 macOS 系统菜单栏支持**
 
-现在您可以使用 `PlatformMenuBar` widget 在 macOS 上创建平台渲染的菜单栏，支持插入仅限该平台使用的菜单，并控制 macOS 应用菜单中的显示内容。
+现在你可以使用 `PlatformMenuBar` widget 在 macOS 上创建平台渲染的菜单栏，支持插入仅限该平台使用的菜单，并控制 macOS 应用菜单中的显示内容。
 
 ![△ 级联菜单示意](https://devrel.andfun.cn/devrel/posts/2022/05/QHCvSV.gif)
 
@@ -41,7 +41,7 @@ Flutter 支持 Windows、macOS 和 Linux 平台的无障碍服务，包括屏幕
 
 ### **不再支持使用 Windows 7/8 进行开发**
 
-此版本将建议的 Windows 开发版本提升为 Windows 10。虽然我们不会禁止使用旧版本 (Windows 7、Windows 8、Windows 8.1) 进行开发，但由于 [Microsoft 不再支持这些旧版本](https://docs.microsoft.com/en-us/lifecycle/faq/windows)，我们仅会针对这些版本提供有限的测试。尽管我们会尽力为旧版本提供支持，但还是建议您升级版本。
+此版本将建议的 Windows 开发版本提升为 Windows 10。虽然我们不会禁止使用旧版本 (Windows 7、Windows 8、Windows 8.1) 进行开发，但由于 [Microsoft 不再支持这些旧版本](https://docs.microsoft.com/en-us/lifecycle/faq/windows)，我们仅会针对这些版本提供有限的测试。尽管我们会尽力为旧版本提供支持，但还是建议你升级版本。
 
 *注意: 在 Windows 7 和 8 上依然可以运行 Flutter 应用，此更改只影响我们推荐使用的开发环境。*
 
@@ -67,11 +67,11 @@ Flutter 现已在使用 ProMotion 显示屏的 iOS 设备上支持可变刷新�
 
 ### **简化 iOS 发布**
 
-我们为 `flutter build ipa` 命令添加了 [新选项](https://github.com/flutter/flutter/pull/97672)，使得 iOS 应用发布更加简便。在您准备好分发至 TestFlight 或 App Store 时，请运行 flutter build ipa 构建 Xcode 归档 (.xcarchive 文件) 和应用软件包 (.ipa 文件)。您可选择添加 --export-method ad-hoc、--export-method development 或 --export-method enterprise 选项。应用软件包构建完成后，即可通过 [Apple Transport macOS 应用](https://apps.apple.com/us/app/transporter/id1450874784) 将其上传至 Apple，或使用 xcrun altool 在命令行中完成上传 (运行 man altool 获取 App Store Connect API 密钥验证说明)。上传完成后，您的应用即可发布至 [TestFlight 或 App Store](https://flutter.cn/docs/deployment/ios#release-your-app-to-the-app-store)。在完成应用显示名称、应用图标等初始 [Xcode 项目设置](https://flutter-io.cn/docs/deployment/ios#review-xcode-project-settings) 后，您在发布应用时就无需再打开 Xcode 了。
+我们为 `flutter build ipa` 命令添加了 [新选项](https://github.com/flutter/flutter/pull/97672)，使得 iOS 应用发布更加简便。在你准备好分发至 TestFlight 或 App Store 时，请运行 flutter build ipa 构建 Xcode 归档 (.xcarchive 文件) 和应用软件包 (.ipa 文件)。你可选择添加 --export-method ad-hoc、--export-method development 或 --export-method enterprise 选项。应用软件包构建完成后，即可通过 [Apple Transport macOS 应用](https://apps.apple.com/us/app/transporter/id1450874784) 将其上传至 Apple，或使用 xcrun altool 在命令行中完成上传 (运行 man altool 获取 App Store Connect API 密钥验证说明)。上传完成后，你的应用即可发布至 [TestFlight 或 App Store](https://flutter.cn/docs/deployment/ios#release-your-app-to-the-app-store)。在完成应用显示名称、应用图标等初始 [Xcode 项目设置](https://flutter-io.cn/docs/deployment/ios#review-xcode-project-settings) 后，你在发布应用时就无需再打开 Xcode 了。
 
 ### **Gradle 版本更新**
 
-使用 Flutter 工具创建新项目时，您或许已经注意到，生成的文件现在使用了最新版本的 Gradle 和 Android Gradle 插件。对于现有的项目而言，您需要手动将 Gradle 版本升级至 7.4，Android Gradle 插件版本升级至 7.1.2。
+使用 Flutter 工具创建新项目时，你或许已经注意到，生成的文件现在使用了最新版本的 Gradle 和 Android Gradle 插件。对于现有的项目而言，你需要手动将 Gradle 版本升级至 7.4，Android Gradle 插件版本升级至 7.1.2。
 
 ### **停止更新 32 位 iOS/iOS 9/iOS 10**
 
@@ -91,7 +91,7 @@ Flutter 现已在使用 ProMotion 显示屏的 iOS 设备上支持可变刷新�
 
 ### **Web 应用的生命周期**
 
-Flutter web 应用的新生命周期 API 提升了灵活性，可实现从托管 HTML 页面控制 Flutter 应用的引导程序，并支持使用 Lighthouse 分析您的应用的性能表现。这适用于许多用例，包括以下常被开发者们提及的场景:
+Flutter web 应用的新生命周期 API 提升了灵活性，可实现从托管 HTML 页面控制 Flutter 应用的引导程序，并支持使用 Lighthouse 分析你的应用的性能表现。这适用于许多用例，包括以下常被开发者们提及的场景:
 
 * 启动画面。
 * 加载指示器。
@@ -113,7 +113,7 @@ Lint package 2.0 版现已发布:
 
 使用 `flutter create` 生成的 Flutter 3 应用将自动启用 2.0 版 Lint 套件。我们建议大家运行 `flutter pub upgrade --major-versions flutter_lints`，将现有应用、package 和插件迁移到 2.0 版，以遵循 Flutter 最新、最优的最佳实践。
 
-Lint 2.0 版中新增的大多数警告都带有自动修复功能。因此，当您在应用的 `pubspec.yaml` 中升级至最新 package 版本后，即可在代码库中运行 `dart fix --apply` 自动修复大多数 Lint 警告 (某些警告仍需部分手动操作)。对于尚未使用 `package:flutter_lints` 的应用、package 或插件，建议开发者按照 [迁移指南](https://flutter-io.cn/docs/release/breaking-changes/flutter-lints-package#migration-guide) 迁移至最新版本。
+Lint 2.0 版中新增的大多数警告都带有自动修复功能。因此，当你在应用的 `pubspec.yaml` 中升级至最新 package 版本后，即可在代码库中运行 `dart fix --apply` 自动修复大多数 Lint 警告 (某些警告仍需部分手动操作)。对于尚未使用 `package:flutter_lints` 的应用、package 或插件，建议开发者按照 [迁移指南](https://flutter-io.cn/docs/release/breaking-changes/flutter-lints-package#migration-guide) 迁移至最新版本。
 
 ### **性能提升**
 
@@ -129,13 +129,13 @@ Lint 2.0 版中新增的大多数警告都带有自动修复功能。因此，�
 
 ### **Impeller**
 
-我们一直致力于解决 iOS 和其他平台上的早期卡顿问题。在 Flutter 3 中，您可以在 iOS 上预览一个名为 [Impeller](https://github.com/flutter/engine/tree/main/impeller) 的实验性渲染后端。Impeller 会在引擎构建时预编译一组 [较为小巧、简单的着色器](https://github.com/flutter/flutter/issues/77412)，从而避免在应用运行时编译，而后者是造成 Flutter 卡顿的主要原因。Impeller 尚未作好投产准备，距离完成也还有一段距离。目前 Impeller 尚未实现 Flutter 的所有功能特性，但我们对它在 [flutter/gallery](https://github.com/flutter/gallery) 应用中实现的保真度和性能感到满意，并且很高兴地在这里和大家分享开发进度。特别是，在 Gallery 应用的过场动画中，即便最差的帧速度也比之前快大约 [20 倍](https://flutter-flutter-perf.skia.org/e/?begin=1650297849&end=1651261748&queries=sub_result%3Dworst_frame_rasterizer_time_millis%26test%3Dnew_gallery_impeller_ios__transition_perf%26test%3Dnew_gallery_ios__transition_perf&requestType=0)。
+我们一直致力于解决 iOS 和其他平台上的早期卡顿问题。在 Flutter 3 中，你可以在 iOS 上预览一个名为 [Impeller](https://github.com/flutter/engine/tree/main/impeller) 的实验性渲染后端。Impeller 会在引擎构建时预编译一组 [较为小巧、简单的着色器](https://github.com/flutter/flutter/issues/77412)，从而避免在应用运行时编译，而后者是造成 Flutter 卡顿的主要原因。Impeller 尚未作好投产准备，距离完成也还有一段距离。目前 Impeller 尚未实现 Flutter 的所有功能特性，但我们对它在 [flutter/gallery](https://github.com/flutter/gallery) 应用中实现的保真度和性能感到满意，并且很高兴地在这里和大家分享开发进度。特别是，在 Gallery 应用的过场动画中，即便最差的帧速度也比之前快大约 [20 倍](https://flutter-flutter-perf.skia.org/e/?begin=1650297849&end=1651261748&queries=sub_result%3Dworst_frame_rasterizer_time_millis%26test%3Dnew_gallery_impeller_ios__transition_perf%26test%3Dnew_gallery_ios__transition_perf&requestType=0)。
 
-Impeller 可以带标记在 iOS 上使用。如果您要试用 Impeller，可以传递 `--enable-impeller` 标记至 `flutter run`，或将 `Info.plist` 文件中的 `FLTEnableImpeller` 标记为 `true`。Impeller 的开发会继续在 Flutter 主渠道进行，我们希望在未来的版本中提供进一步更新。
+Impeller 可以带标记在 iOS 上使用。如果你要试用 Impeller，可以传递 `--enable-impeller` 标记至 `flutter run`，或将 `Info.plist` 文件中的 `FLTEnableImpeller` 标记为 `true`。Impeller 的开发会继续在 Flutter 主渠道进行，我们希望在未来的版本中提供进一步更新。
 
 ### **Android 上的内联广** **告**
 
-使用 [google_mobile_ads](https://pub.flutter-io.cn/packages/google_mobile_ads) package 时，您应该可以感受到用户关键交互 (如页面之间的滚动和切换) 的性能有所提升。在新兴市场广为流行的设备上，这种性能提升尤其明显。最棒的是，您无需更改任何代码！
+使用 [google_mobile_ads](https://pub.flutter-io.cn/packages/google_mobile_ads) package 时，你应该可以感受到用户关键交互 (如页面之间的滚动和切换) 的性能有所提升。在新兴市场广为流行的设备上，这种性能提升尤其明显。最棒的是，你无需更改任何代码！
 
 在具体实现方面，Flutter 现在是异步组合 Android 视图 (即通常所说的 [平台视图](https://flutter-io.cn/docs/development/platform-integration/platform-views))。这意味着 Flutter 的光栅线程无需等待 Android 视图渲染。现在，Flutter 引擎使用它管理的 OpenGL 纹理将视图显示在屏幕上。
 
@@ -149,7 +149,7 @@ Flutter 3 支持新一代 Material Design，即 [Material Design 3](https://m3.m
 
 ### **主题扩展**
 
-借助 "主题扩展 (Theme extension)"，Flutter 现支持向 Material 库中的 `ThemeData` 添加任何内容。您现在可以指定 `ThemeData.extensions`，而无需 (在 Dart 中) 扩展 `ThemeData` 并重新实现其 `copyWith`、`lerp` 和其他方法。另外，package 开发者也可以提供 `ThemeExtension`。请参阅 [官方文档](https://docs.google.com/document/d/1LbD4JqBgAfHex02oR3r2jyu9lTBBNBmyec2ovT59Kr8/edit) 了解详情，并查看 GitHub 上的 [相关示例](https://github.com/guidezpl/flutter/blob/master/examples/api/lib/material/theme/theme_extension.1.dart)。
+借助 "主题扩展 (Theme extension)"，Flutter 现支持向 Material 库中的 `ThemeData` 添加任何内容。你现在可以指定 `ThemeData.extensions`，而无需 (在 Dart 中) 扩展 `ThemeData` 并重新实现其 `copyWith`、`lerp` 和其他方法。另外，package 开发者也可以提供 `ThemeExtension`。请参阅 [官方文档](https://docs.google.com/document/d/1LbD4JqBgAfHex02oR3r2jyu9lTBBNBmyec2ovT59Kr8/edit) 了解详情，并查看 GitHub 上的 [相关示例](https://github.com/guidezpl/flutter/blob/master/examples/api/lib/material/theme/theme_extension.1.dart)。
 
 ### **广告**
 
@@ -165,7 +165,7 @@ Flutter 3 支持新一代 Material Design，即 [Material Design 3](https://m3.m
 * [页面切换转为使用 ZoomPageTransitionsBuilder](https://flutter-io.cn/docs/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder)
 * [Chips 的 useDeleteButtonTooltip 迁移至 deleteButtonTooltipMessage](https://flutter-io.cn/docs/release/breaking-changes/chip-usedeletebuttontooltip-migration)
 
-如果您正在使用上述 API，请参阅 Flutter.dev 上的 [迁移指南](https://flutter-io.cn/docs/release/breaking-changes)。
+如果你正在使用上述 API，请参阅 Flutter.dev 上的 [迁移指南](https://flutter-io.cn/docs/release/breaking-changes)。
 
 ## **总结**
 

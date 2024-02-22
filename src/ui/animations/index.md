@@ -152,7 +152,7 @@ shows how to write animation code.
 
   [动画教程][Animations tutorial]<br>
   阐释了 Flutter 动画包中的基本类（控制器，动画，曲线，监听器，构建器），
-  这些可以帮助您使用不同的动画 APIs 完成补间动画。
+  这些可以帮助你使用不同的动画 APIs 完成补间动画。
 
 * [Zero to One with Flutter, part 1][] and [part 2][]<br>
   Medium articles showing how to create an animated chart using tweening.
@@ -175,7 +175,7 @@ The following sections explain what these terms mean,
 and point you to resources where you can learn more.
 
 动画分为两类：补间动画和基于物理动画。下面将解释这些术语的含义，
-并帮助您找到更多相关资源。在一些情况下，
+并帮助你找到更多相关资源。在一些情况下，
 我们现有的最佳文档是 Flutter gallery 中的示例代码。
 
 ### Tween animation
@@ -211,7 +211,7 @@ Similarly, dropping a ball attached to a spring falls
 (and bounces) differently than dropping a ball attached to a string.
 
 在基于物理基础的动画中，动作是模拟真实世界的行为来进行建模的。
-举个例子，当您抛球时，球落地的时间和位置取决于抛出的速度和距离地面的高度。
+举个例子，当你抛球时，球落地的时间和位置取决于抛出的速度和距离地面的高度。
 类似地，附在弹簧上的球和附在绳子上的球掉落（和反弹）方式是不一样的。
 
 * [Animate a widget using a physics simulation][]<br>
@@ -288,7 +288,7 @@ using the `Hero` widget.
 
 在这个模式中，用户从页面中选择一个元素，通常是图像，
 然后 UI 会在新页面中为指定元素添加动画，并生成更多细节。
-在 Flutter 中，您可以通过 Hero widget
+在 Flutter 中，你可以通过 Hero widget
 轻松实现路径（页面）间的共享元素转换动画。
 
 * [Hero animations][]

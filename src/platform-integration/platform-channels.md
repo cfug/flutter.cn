@@ -1557,7 +1557,7 @@ in the [`cloud_firestore`][] plugin,
 which is able to serialize and deserialize many more
 types than the default types.
 
-您还可以在 [`cloud_firestore`][] 插件中查看自定义编解码器的示例，
+你还可以在 [`cloud_firestore`][] 插件中查看自定义编解码器的示例，
 该插件可以序列化和反序列化比默认类型更多的类型。
 
 ## Channels and platform threading
@@ -1773,7 +1773,7 @@ You can accomplish this in iOS by executing a
 [block][] on the main [dispatch queue][]:
 
 为了符合通道跳转到 iOS 主线程的要求，
-您可能需要从后台线程跳转到 iOS 的主线程来执行通道方法。
+你可能需要从后台线程跳转到 iOS 的主线程来执行通道方法。
 在iOS中，这是通过在主 [dispatch queue][]上执行 [block][]来实现的：
 
 In Objective-C:

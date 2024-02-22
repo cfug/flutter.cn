@@ -407,4 +407,4 @@ class CupertinoWidgetsFactory extends IWidgetsFactory {
 
 Flutter / Dart 设计模式从南到北（简称 Flutter 设计模式）系列内容预计两周发布一篇，着重向开发者介绍 Flutter 应用开发中常见的设计模式以及开发方式，旨在推进 Flutter / Dart 语言特性的普及，以及帮助开发者更高效地开发出高质量、可维护的 Flutter 应用。
 
-我很乐意继续完善本系列中的文章，如果您对本文还有任何疑问或者文章的建议，欢迎向中文社区官方 Github 仓库提交 issue 或者直接与我联系，我会及时回复。
+我很乐意继续完善本系列中的文章，如果你对本文还有任何疑问或者文章的建议，欢迎向中文社区官方 Github 仓库提交 issue 或者直接与我联系，我会及时回复。

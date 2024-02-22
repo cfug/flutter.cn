@@ -49,24 +49,24 @@ Flutter 网站也在今天正式发布全新的设计，新版的网站更专注
 
 <iframe width="560" height="315" frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=f0041nmx1l2" allowFullScreen="true"></iframe>
 
-Flutter 现已支持移动、桌面、Web 等多达 6 个平台。了解相关最佳实践，让您的应用在良好适配每个平台的同时，实现最大程度的代码复用。
+Flutter 现已支持移动、桌面、Web 等多达 6 个平台。了解相关最佳实践，让你的应用在良好适配每个平台的同时，实现最大程度的代码复用。
 
 2. Google 软件工程师钱冠霖: Flutter 的 Deferred Components
 
 <iframe width="560" height="315" frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=h0041b043ig" allowFullScreen="true"></iframe>
 
-应用体积是开发者最大的顾虑之一。学习如何使用 Flutter 的延迟加载组件，让您实现在运行时下载预编译的代码和资源。
+应用体积是开发者最大的顾虑之一。学习如何使用 Flutter 的延迟加载组件，让你实现在运行时下载预编译的代码和资源。
 
 3. Google 软件工程师 Justin McCandless: 利用延迟加载提升 Flutter 应用性能
 
 <iframe width="560" height="315" frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=m0041hexsmo" allowFullScreen="true"></iframe>
 
-了解如何通过延迟加载内容来优化性能，它的局限性，以及 Flutter 如何让您默认即可实现更流畅的用户体验。
+了解如何通过延迟加载内容来优化性能，它的局限性，以及 Flutter 如何让你默认即可实现更流畅的用户体验。
 
 4. Google 软件工程师 Bob Nystrom: 为何要使用「空安全」
 
 <iframe width="560" height="315" frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=l0041a7jxo6" allowFullScreen="true"></iframe>
 
-「空安全」是一项新推出的基本语言功能，由多人共同开发。在这里，其中一位开发者将向您介绍如何利用该功能改善 Dart 代码编写体验、防止出错以及怎样生成更小且更快的二进制文件。
+「空安全」是一项新推出的基本语言功能，由多人共同开发。在这里，其中一位开发者将向你介绍如何利用该功能改善 Dart 代码编写体验、防止出错以及怎样生成更小且更快的二进制文件。
 
 感谢 Flutter 团队和社区成员们的帮助，希望 Flutter 可以更好的助力你获得成功！

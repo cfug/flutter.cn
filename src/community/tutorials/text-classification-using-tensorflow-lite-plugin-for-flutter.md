@@ -6,7 +6,7 @@ title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 
 文/ Amish Garg，Google Summer of Code(GSoC) 实习生，译/ Yuan，谷创字幕组，审校/ Xinlei、Lynn Wang，CFUG 社区。
 
-如果您希望能有一种简单、高效且灵活的方式把 TensorFlow 模型集成到 Flutter 应用里，那请您一定不要错过我们今天介绍的这个全新插件 [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter)。这个插件的开发者是 Google Summer of Code(GSoC) 的一名实习生 Amish Garg，本文来自他在 Medium 上的一篇文章[《在 Flutter 中使用 TensorFlow Lite 插件实现文字分类》](https://medium.com/@am15hg/text-classification-using-tensorflow-lite-plugin-for-flutter-3b92f6655982)。
+如果你希望能有一种简单、高效且灵活的方式把 TensorFlow 模型集成到 Flutter 应用里，那请你一定不要错过我们今天介绍的这个全新插件 [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter)。这个插件的开发者是 Google Summer of Code(GSoC) 的一名实习生 Amish Garg，本文来自他在 Medium 上的一篇文章[《在 Flutter 中使用 TensorFlow Lite 插件实现文字分类》](https://medium.com/@am15hg/text-classification-using-tensorflow-lite-plugin-for-flutter-3b92f6655982)。
 
 [tflite_flutter](https://pub.flutter-io.cn/packages/tflite_flutter) 插件的核心特性：
 
@@ -15,14 +15,14 @@ title: 在 Flutter 中使用 TensorFlow Lite 插件实现文字分类
 * 无需编写特定平台的代码。
 * 通过 NNAPI 提供加速支持，在 Android 上使用 GPU Delegate，在 iOS 上使用 Metal Delegate。
 
-本文中，我们将使用 tflite_flutter 构建一个 **文字分类 Flutter 应用** 带您体验 tflite_flutter 插件，首先从新建一个 Flutter 项目 `text_classification_app` 开始。
+本文中，我们将使用 tflite_flutter 构建一个 **文字分类 Flutter 应用** 带你体验 tflite_flutter 插件，首先从新建一个 Flutter 项目 `text_classification_app` 开始。
 
 ### （很重要）初始化配置
 
 #### Linux 和 Mac 用户
 
 
-将 [`install.sh`](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.sh) 拷贝到您应用的根目录，然后在根目录执行 `sh install.sh`，本例中就是目录 `text_classification_app/`。
+将 [`install.sh`](https://github.com/am15h/tflite_flutter_plugin/blob/master/install.sh) 拷贝到你应用的根目录，然后在根目录执行 `sh install.sh`，本例中就是目录 `text_classification_app/`。
   
 #### Windows 用户
 
@@ -204,7 +204,7 @@ class Classifier {
 创建解释器的代码
 
 
-如果您不希望将模型放在 `assets/` 目录下，tflite_flutter 还提供了工厂构造函数创建解释器，[更多信息](https://github.com/am15h/tflite_flutter_plugin#creating-the-interpreter)。
+如果你不希望将模型放在 `assets/` 目录下，tflite_flutter 还提供了工厂构造函数创建解释器，[更多信息](https://github.com/am15h/tflite_flutter_plugin#creating-the-interpreter)。
 
 **我们开始进行分析！**
 
@@ -386,7 +386,7 @@ class Classifier {
 
 ```
 
-现在，可以根据您的喜好实现 UI 的代码，分类器的用法比较简单。
+现在，可以根据你的喜好实现 UI 的代码，分类器的用法比较简单。
 
 <!-- skip -->
 ```dart

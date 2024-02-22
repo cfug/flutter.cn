@@ -5,7 +5,7 @@ description: 我们很高兴宣布 CodePen 现已提供 Flutter 支持。
 
 文/ Tim Sneath, 谷歌 Flutter & Dart 产品经理
 
-Flutter 希望成为任您挥洒创意的画布。
+Flutter 希望成为任你挥洒创意的画布。
 凭借在 iOS 和 Android 上的原生性能体验、
 对屏幕上每个像素点的精确控制
 以及通过有状态热重载实现的快速迭代能力，
@@ -26,33 +26,33 @@ Flutter 希望成为任您挥洒创意的画布。
 
 ## 从 Adobe XD 中导出 Flutter 代码
 
-在 XD 中使用 Flutter 插件很简单。您可以导出一个单独的绘图对象或组件，也可以导出整个画板 (artboard)。具体做法如下:
+在 XD 中使用 Flutter 插件很简单。你可以导出一个单独的绘图对象或组件，也可以导出整个画板 (artboard)。具体做法如下:
 
 首先，安装 Flutter 导出插件。在 Adobe XD 中，选择 *插件* > *发现插件* ( *Plugins* > *Discover Plugins* )，然后搜索 Flutter。安装完成后，选择 *插件* > *Flutter* > *UI 面板* ( *Plugins* > *Flutter* > *UI Panel* )，即可显示上图中的 UI 面板。
 
-现在将 [adobe_xd package](https://pub.flutter-io.cn/packages/adobe_xd) 添加到您的 Flutter 项目中，只需将其包含在您的 pubspec.yaml 文件中即可。这个 package 提供了帮助函数，用来减少生成的 XD 代码中的样板代码。
+现在将 [adobe_xd package](https://pub.flutter-io.cn/packages/adobe_xd) 添加到你的 Flutter 项目中，只需将其包含在你的 pubspec.yaml 文件中即可。这个 package 提供了帮助函数，用来减少生成的 XD 代码中的样板代码。
 
-要导出单个元素，只需选择您想导出至 Flutter 的单个 widget，然后点击 UI 面板中的 *复制所选项* ( *Copy Selected* ) 按钮。这会将元素对应的 Dart 代码复制到您的剪贴板中，您可以基于这些代码打造有状态或无状态的 widget:
+要导出单个元素，只需选择你想导出至 Flutter 的单个 widget，然后点击 UI 面板中的 *复制所选项* ( *Copy Selected* ) 按钮。这会将元素对应的 Dart 代码复制到你的剪贴板中，你可以基于这些代码打造有状态或无状态的 widget:
 
 ![flutter-plugin](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/export-demo.png){:width="90%"}
 
 △ 导出的代码可以整合进现有的项目中，而且更新时不需要调整其他文件
 
-另一种方法是导出整个项目。假设您已经有了一个 Flutter 应用，并且您想把内容添加到这个应用里 (包括 pubspec.yaml 中对 adobe_xd package 的引用)，您只需从 UI 面板中选择 *插件* > *Flutter* > *导出全部 Widget* ( *Plugins* > *Flutter* > *Export All Widgets* )，然后设置想要的附加选项即可。
+另一种方法是导出整个项目。假设你已经有了一个 Flutter 应用，并且你想把内容添加到这个应用里 (包括 pubspec.yaml 中对 adobe_xd package 的引用)，你只需从 UI 面板中选择 *插件* > *Flutter* > *导出全部 Widget* ( *Plugins* > *Flutter* > *Export All Widgets* )，然后设置想要的附加选项即可。
 
-这个操作会在项目的 lib/ 子文件夹中创建一系列的类，您可以直接使用。您也可以继续调整 XD 原型，然后用 ⇧⌘F (在 Windows 上是 Ctrl+Shift+F) 再次导出，如果您在 Visual Studio Code 中打开了 Dart 的 "[在 Save Watcher 上使用热重载](https://dartcode.org/docs/settings/#dartpreviewhotreloadonsavewatcher)" 选项，那么当您重新导出 widget 时，您的应用将自动重新加载它们。
+这个操作会在项目的 lib/ 子文件夹中创建一系列的类，你可以直接使用。你也可以继续调整 XD 原型，然后用 ⇧⌘F (在 Windows 上是 Ctrl+Shift+F) 再次导出，如果你在 Visual Studio Code 中打开了 Dart 的 "[在 Save Watcher 上使用热重载](https://dartcode.org/docs/settings/#dartpreviewhotreloadonsavewatcher)" 选项，那么当你重新导出 widget 时，你的应用将自动重新加载它们。
 
 ![flutter-plugin](https://files.flutter-io.cn/posts/flutter-cn/2020/announcing-adobe-xd-support-for-flutter/live-demo.png){:width="90%"}
 
 △ 从 XD 快速转出代码的功能，使得从原型到应用之间的路径又多了一条
 
-作为早期体验的预览版，这个插件现在也有一些限制，请阅读 [发布说明](https://github.com/AdobeXD/xd-to-flutter-plugin/blob/master/README.md#using-this-plugin) 了解详情。值得注意的是，响应式布局目前还不能使用，尚需等待新的 XD API 完成。不过请放心，当这些新功能上线时，您会自动获得插件更新。
+作为早期体验的预览版，这个插件现在也有一些限制，请阅读 [发布说明](https://github.com/AdobeXD/xd-to-flutter-plugin/blob/master/README.md#using-this-plugin) 了解详情。值得注意的是，响应式布局目前还不能使用，尚需等待新的 XD API 完成。不过请放心，当这些新功能上线时，你会自动获得插件更新。
 
 
 > Adobe 致力于帮助那些设计和打造应用的团队，简化让他们颇为困扰的设计-开发流程。今天我们很高兴推出这个全新工具的早期体验版，它诞生自我们与 Flutter 的合作，旨在消除设计-开发流程中含糊的沟通环节，提高决策速度，便于团队更快地将新体验推向市场。
 —— Vijay Vachani, Adobe Creative Cloud 平台与生态资深总监
 
-请访问 Adobe 的 [XD Flutter 导出插件页面](https://github.com/AdobeXD/xd-to-flutter-plugin) 了解更多信息。我们期待看到您用它创建的作品！
+请访问 Adobe 的 [XD Flutter 导出插件页面](https://github.com/AdobeXD/xd-to-flutter-plugin) 了解更多信息。我们期待看到你用它创建的作品！
 
 原文：[Announcing Adobe XD support for Flutter](https://medium.com/flutter/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e) 
 中文发布：谷歌开发者公众号

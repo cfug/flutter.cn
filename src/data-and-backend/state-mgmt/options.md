@@ -19,8 +19,8 @@ or that the approach described on these pages
 is not viable for your use cases, you are probably right.
 
 状态管理是一个相当复杂的话题。
-如果您在浏览后发现一些问题并未得到解答，或者并不适用于您的具体需求场景，
-自信些，您的实现就是对的。
+如果你在浏览后发现一些问题并未得到解答，或者并不适用于你的具体需求场景，
+自信些，你的实现就是对的。
 
 Learn more at the following links,
 many of which have been contributed by the Flutter community:
@@ -34,7 +34,7 @@ many of which have been contributed by the Flutter community:
 
 Things to review before selecting an approach.
 
-在选择一个具体内容前，您可以先查看以下几项。
+在选择一个具体内容前，你可以先查看以下几项。
 
 * [Introduction to state management][],
   which is the beginning of this very section
@@ -42,7 +42,7 @@ Things to review before selecting an approach.
   and missed the previous pages)
 
   [状态管理的介绍][Introduction to state management]。
-  这是本篇内容的总起。（当您直接跳转到了该页面，但错过了
+  这是本篇内容的总起。（当你直接跳转到了该页面，但错过了
   其他页面时，可以先从这里开始阅读）
 
 * [Pragmatic State Management in Flutter][],

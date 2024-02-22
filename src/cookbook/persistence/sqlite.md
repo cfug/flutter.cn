@@ -27,7 +27,7 @@ the local device, consider using a database instead of a local file or
 key-value store. In general, databases provide faster inserts, updates,
 and queries compared to other local persistence solutions.
 
-如果您正在编写一个需要持久化且查询大量本地设备数据的 app，
+如果你正在编写一个需要持久化且查询大量本地设备数据的 app，
 可考虑采用数据库，而不是本地文件夹或关键值库。
 总的来说，相比于其他本地持久化方案来说，
 数据库能够提供更为迅速的插入、更新、查询功能。

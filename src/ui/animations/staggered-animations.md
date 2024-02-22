@@ -74,7 +74,7 @@ This guide shows how to build a staggered animation in Flutter.
   You can also refer to a more complex example,
   staggered_pic_selection.
 
-  本指南主要介绍 basic_staggered_animation 示例，您也可参考更复杂的例子：staggered_pic_selection。
+  本指南主要介绍 basic_staggered_animation 示例，你也可参考更复杂的例子：staggered_pic_selection。
 
   [basic_staggered_animation][]
   <br> Shows a series of sequential and overlapping animations

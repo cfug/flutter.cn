@@ -1,10 +1,10 @@
 ---
 title: Hosting native iOS views in your Flutter app with Platform Views
-title: "在 Flutter 应用中使用集成平台视图托管您的原生 iOS 视图"
+title: "在 Flutter 应用中使用集成平台视图托管你的原生 iOS 视图"
 short-title: iOS platform-views
 short-title: iOS 平台视图
 description: Learn how to host native iOS views in your Flutter app with Platform Views.
-description: 学习如何在 Flutter 应用中使用集成平台视图托管您的原生  iOS 视图。
+description: 学习如何在 Flutter 应用中使用集成平台视图托管你的原生  iOS 视图。
 ---
 
 <?code-excerpt path-base="development/platform_integration"?>
@@ -14,13 +14,13 @@ so you can apply transforms, clips, and opacity to the native view
 from Dart.
 
 集成平台视图 (后称为平台视图) 允许将原生视图嵌入到 Flutter 应用中，
-所以您可以通过 Dart 将变换、裁剪和不透明度等效果应用到原生视图。
+所以你可以通过 Dart 将变换、裁剪和不透明度等效果应用到原生视图。
 
 This allows you, for example, to use the native
 Google Maps from the Android and iOS SDKs
 directly inside your Flutter app.
 
-例如，这使您可以通过使用平台视图直接在 Flutter 应用内部
+例如，这使你可以通过使用平台视图直接在 Flutter 应用内部
 使用 Android 和 iOS SDK 中的 Google Maps。
 
 {{site.alert.note}}
@@ -31,9 +31,9 @@ directly inside your Flutter app.
   in your Flutter app,
   see [Hosting native Android views][].
 
-  本篇文档讨论了如何在您的 Flutter 应用中托管您的 iOS 原生视图。
+  本篇文档讨论了如何在你的 Flutter 应用中托管你的 iOS 原生视图。
   如果你想了解如何嵌入到 Android 视图中，阅读这篇文档：
-  [在 Flutter 应用中使用集成平台视图托管您的原生 Android 视图][Hosting native Android views]。
+  [在 Flutter 应用中使用集成平台视图托管你的原生 Android 视图][Hosting native Android views]。
 
 {{site.alert.end}}
 
@@ -117,7 +117,7 @@ For more information, see the API docs for:
 
 On the platform side, use either Swift or Objective-C:
 
-在平台端，您可以使用 Swift 或是 Objective-C：
+在平台端，你可以使用 Swift 或是 Objective-C：
 
 {% samplecode ios-platform-views %}
 {% sample Swift %}
@@ -418,7 +418,7 @@ you can use [`defaultTargetPlatform`][]
 to detect the platform, and decide which widget to use:
 
 在 Dart 中实现 `build()` 方法时，
-您可以使用 [`defaultTargetPlatform`][] 
+你可以使用 [`defaultTargetPlatform`][] 
 来检测当前的平台，并且决定如何使用这个 widget：
 
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (TogetherWidget)"?>

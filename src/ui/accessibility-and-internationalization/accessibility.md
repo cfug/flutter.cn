@@ -64,7 +64,7 @@ In addition to testing for these specific topics,
 we recommend using automated accessibility scanners:
 
 关于无障碍功能检测的细节，我们将在下面讨论。
-除了测试这些特定主题外，我们还建议您使用自动辅助功能扫描程序：
+除了测试这些特定主题外，我们还建议你使用自动辅助功能扫描程序：
 
 * For Android:
 
@@ -365,7 +365,7 @@ it can be customized using the [`Semantics` widget][].
 
 Flutter 的标准 widget 会自动生成无障碍树。
 但是，如果你的应用需要不同的东西，则可以使用
-[语义 小部件][`Semantics` widget] 来自定义您应用程序的无障碍体验。
+[语义 小部件][`Semantics` widget] 来自定义你应用程序的无障碍体验。
 
 When there is text in your app that should be voiced
 with a specific voice, inform the screen reader
@@ -508,7 +508,7 @@ file (such as `test/a11y_test.dart` in the case of the Name Generator).
 You can debug accessibility by visualizing the semantic nodes created for your web app
 using the following command line flag in profile and release modes:
 
-您可以通过在配置文件和发布模式下
+你可以通过在配置文件和发布模式下
 使用以下命令行标志可视化为你的 Web 应用程序创建的语义节点来调试无障碍：
 
 ```terminal

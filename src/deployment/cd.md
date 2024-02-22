@@ -13,7 +13,7 @@ application is delivered to your beta testers and validated on a frequent basis
 without resorting to manual workflows.
 
 通过 Flutter 持续交付的最佳实践，
-确保您的应用程序交付给您的 Beta 版本测试人员并能够频繁予以验证，
+确保你的应用程序交付给你的 Beta 版本测试人员并能够频繁予以验证，
 而无需借助手动工作流程。
 
 ## CI/CD Options
@@ -76,7 +76,7 @@ migrating to a cloud-based system. You could also choose to perform continuous
 delivery from a local machine.
 
 建议在迁移到基于云计算的系统之前，先在本地测试其构建和部署流程。
-您还可以使用本地机器执行连续交付。
+你还可以使用本地机器执行连续交付。
 
 1. Install fastlane `gem install fastlane` or `brew install fastlane`.
 Visit the [fastlane docs][fastlane] for more info.
@@ -92,7 +92,7 @@ Visit the [fastlane docs][fastlane] for more info.
     
 1. Create your Flutter project, and when ready, make sure that your project builds via
 
-   创建您的 Flutter 项目，准备就绪后，确保通过如下途径构建项目：
+   创建你的 Flutter 项目，准备就绪后，确保通过如下途径构建项目：
 
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`; and
     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ipa`.
@@ -150,7 +150,7 @@ Visit the [fastlane docs][fastlane] for more info.
     environment variable with your iTunes Connect password. Otherwise, you'll be
     prompted when uploading to iTunes/TestFlight.
 
-      ![iOS]({{site.url}}//assets/images/docs/cd/ios.png)  iTunes Connect 用户名已经存在于您的
+      ![iOS]({{site.url}}//assets/images/docs/cd/ios.png)  iTunes Connect 用户名已经存在于你的
       `Appfile` 的 `apple_id` 字段中，
       你需要将你的 iTunes 密码设置到 `FASTLANE_PASSWORD` 这个环境变量里。
       否则，上传到 iTunes/TestFlight时会提示你。
@@ -168,7 +168,7 @@ Visit the [fastlane docs][fastlane] for more info.
       ready to test and deploy using TestFlight or App Store.
 
       ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) 在iOS上，
-      当您准备使用 TestFlight 或 App Store 进行测试和部署时，
+      当你准备使用 TestFlight 或 App Store 进行测试和部署时，
       使用分发证书而不是开发证书进行创建和签名。
 
         * Create and download a distribution certificate in your
@@ -299,7 +299,7 @@ secrets in pull requests that you accept and merge.
           an encrypted environment variable. You can deserialize it on your CI
           system during the install phase with
 
-          序列化您的上传密钥（例如，使用 base64）并将其另存为加密环境变量。
+          序列化你的上传密钥（例如，使用 base64）并将其另存为加密环境变量。
           可以可以在安装阶段在 CI 系统上对其进行反序列化
 
           ```bash

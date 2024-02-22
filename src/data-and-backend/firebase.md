@@ -36,7 +36,7 @@ Firebase 支持 Flutter。
 
 * [Getting started with Firebase and Flutter][started]
 
-  [将 Firebase 添加到您的 Flutter 应用][started]
+  [将 Firebase 添加到你的 Flutter 应用][started]
 
 * [Firebase plugins][]
 

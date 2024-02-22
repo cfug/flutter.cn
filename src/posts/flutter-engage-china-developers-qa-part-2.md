@@ -7,7 +7,7 @@ toc: true
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/04/14dcfcd1d2a09.jpg)
 
-再次感谢大家对 [Flutter Engage China 活动](https://flutter.cn/posts/flutter-engage-china-event-recap) 的关注和积极参与！我们在活动前后收到了很多来自开发者的反馈和问题，Flutter 团队和演讲嘉宾在直播 Q&A 环节中也针对部分问题在第一时间给出回复。现在我们将一些开发者关心的问题和回复整理出来分享给大家，希望对您有所帮助。由于问题数量较多，我们分为上下两期发布，上期的内容已经发布，欢迎大家 [前往回顾](https://flutter.cn/posts/flutter-engage-china-developers-qa-part-1)。您也可以观看 Flutter Engage China 视频回顾精彩内容:
+再次感谢大家对 [Flutter Engage China 活动](https://flutter.cn/posts/flutter-engage-china-event-recap) 的关注和积极参与！我们在活动前后收到了很多来自开发者的反馈和问题，Flutter 团队和演讲嘉宾在直播 Q&A 环节中也针对部分问题在第一时间给出回复。现在我们将一些开发者关心的问题和回复整理出来分享给大家，希望对你有所帮助。由于问题数量较多，我们分为上下两期发布，上期的内容已经发布，欢迎大家 [前往回顾](https://flutter.cn/posts/flutter-engage-china-developers-qa-part-1)。你也可以观看 Flutter Engage China 视频回顾精彩内容:
 
 [**➡️点击这里查看直播回顾视频⬅️**](https://www.bilibili.com/medialist/play/ml1214246458/BV1hh411D7mV)
 
@@ -32,11 +32,11 @@ toc: true
 
 从第一个方面来讲，我们去年对大的编译过程做了很多优化，主要是在 iOS 端。iOS 端产物的体积已经有了比较显著的缩小。目前来看，想要进一步缩小包产物的话，需要更多的由开发者根据自己 App 的实际情况做一些取舍，以及对 Flutter 引擎做一定的定制。
 
-我们最近也推出了一款工具，在 Dart DevTools 里面，叫做 [Code Size Analysis](https://flutter.cn/docs/development/tools/devtools/app-size#analysis-tab)，这个工具可以帮大家可视化包里具体有哪些内容，每个内容占用了多少空间。有的时候您可能会发现，有一些资源或者有一些依赖的库占用了过多的空间。这个工具也会帮您解析 Flutter 引擎里面具体的产物是什么，如果您有计划去对 Flutter 引擎进行定制的话，这些都会是很好的参考数据。
+我们最近也推出了一款工具，在 Dart DevTools 里面，叫做 [Code Size Analysis](https://flutter.cn/docs/development/tools/devtools/app-size#analysis-tab)，这个工具可以帮大家可视化包里具体有哪些内容，每个内容占用了多少空间。有的时候你可能会发现，有一些资源或者有一些依赖的库占用了过多的空间。这个工具也会帮你解析 Flutter 引擎里面具体的产物是什么，如果你有计划去对 Flutter 引擎进行定制的话，这些都会是很好的参考数据。
 
 *回答者: 袁辉辉，字节跳动 Flutter 技术负责人*
 
-我简单从 App 团队的角度来做一些补充。App 团队想缩小包体积的话，有三个可以做的优化。一个是压缩，主要是我们在代码端和数据端，可以对数据做一些压缩。二是裁剪，您可以看看哪些模块是不使用的，比如说您是国内使用的 App，那就并不需要国际化的一些功能模块，就可以裁剪掉。三是系统级的优化，比如说大的编译由 O3 变 Oz，或者是做指令集头部的一些精简，把 code source map 这样的东西去掉，以及做一些混淆，到了线上之后再通过后台平台还原回来，能使用的手段其实很多的。
+我简单从 App 团队的角度来做一些补充。App 团队想缩小包体积的话，有三个可以做的优化。一个是压缩，主要是我们在代码端和数据端，可以对数据做一些压缩。二是裁剪，你可以看看哪些模块是不使用的，比如说你是国内使用的 App，那就并不需要国际化的一些功能模块，就可以裁剪掉。三是系统级的优化，比如说大的编译由 O3 变 Oz，或者是做指令集头部的一些精简，把 code source map 这样的东西去掉，以及做一些混淆，到了线上之后再通过后台平台还原回来，能使用的手段其实很多的。
 
 我们接下来会加大对外的技术输出，后续我们会把这些技巧再梳理一下分享给大家。
 
@@ -62,7 +62,7 @@ toc: true
 
 教育这一块的话，我们在字节内部其实用 Flutter 比较多的就是我们的教育领域产品。我有了解到，很多公司会针对一款教育产品，按照课程进行拆分，比如数学、英语、思维，都会拆分出一个个独立的 App，这个开发的工作量是非常大的。在刚进入一个新的行业时，人员招聘可能一下子跟不上来，这个时候其实我们会很在乎一个技术能不能让研发效率实现快速提升，这时 Flutter 就是一个比较好的选择。
 
-昨天我还跟我们公司外的教育公司聊到 Flutter。他们现在有一款大的 App，想要拆成很多个教育子方向的 App，可能会裂变成 3 个、5 个甚至 10 个，但是他们团队可能 Android 和 iOS 端加在一起也只有几个开发小伙伴。聊下来的结果就是，Flutter 是一个很好的切入方式。我觉得不光是教育行业，其实对于一些新 (领域) 的 App，如果您比较注重研发效率，用 Flutter 都是一个不错的选择。
+昨天我还跟我们公司外的教育公司聊到 Flutter。他们现在有一款大的 App，想要拆成很多个教育子方向的 App，可能会裂变成 3 个、5 个甚至 10 个，但是他们团队可能 Android 和 iOS 端加在一起也只有几个开发小伙伴。聊下来的结果就是，Flutter 是一个很好的切入方式。我觉得不光是教育行业，其实对于一些新 (领域) 的 App，如果你比较注重研发效率，用 Flutter 都是一个不错的选择。
 
 ## **高延迟渲染管线如何分帧，是否使用 Isolate 分线程？**
 
@@ -78,5 +78,5 @@ toc: true
 
 . . .
 
-以上就是 Flutter Engage China 开发者常见问题解答 (下篇) 的内容，大家也可以随时回顾之前发布的 [上篇内容](https://flutter.cn/posts/flutter-engage-china-developers-qa-part-1)。如果您有任何疑问或者建议，欢迎大家 [GitHub](https://github.com/flutter) 积极分享您的反馈与想法.
+以上就是 Flutter Engage China 开发者常见问题解答 (下篇) 的内容，大家也可以随时回顾之前发布的 [上篇内容](https://flutter.cn/posts/flutter-engage-china-developers-qa-part-1)。如果你有任何疑问或者建议，欢迎大家 [GitHub](https://github.com/flutter) 积极分享你的反馈与想法.
 

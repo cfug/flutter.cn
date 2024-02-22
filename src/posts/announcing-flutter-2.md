@@ -3,15 +3,15 @@ title: Flutter 2 正式发布！
 toc: true
 ---
 
-3月4日凌晨，**Flutter 2** 正式发布: 开发者为*任何*平台创建美观、快速且可移植应用的能力得以更上一层楼。通过 Flutter 2，您可以使用相同的代码库为五种操作系统构建原生应用: iOS、Android、Windows、macOS 和 Linux；以及为 Chrome、Firefox、Safari 和 Edge 等浏览器打造 web 体验。Flutter 甚至可以嵌入到汽车、电视和智能家电，为环境计算提供最普适、可移植的体验。
+3月4日凌晨，**Flutter 2** 正式发布: 开发者为*任何*平台创建美观、快速且可移植应用的能力得以更上一层楼。通过 Flutter 2，你可以使用相同的代码库为五种操作系统构建原生应用: iOS、Android、Windows、macOS 和 Linux；以及为 Chrome、Firefox、Safari 和 Edge 等浏览器打造 web 体验。Flutter 甚至可以嵌入到汽车、电视和智能家电，为环境计算提供最普适、可移植的体验。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/03/0939e5e734a5c.png)
 
-我们的目标是*从根本上改变*开发者的应用构建思路，让体验先于平台。Flutter 可以让您尽情雕琢**精美**的应用体验，畅快表达自己的品牌和设计风格。Flutter 可以将您的源代码编译为机器码，并**快速**运行，同时借助有状态热重载功能为您带来了解释环境的**高效**生产力，让您可以在应用运行时做出更改并立即查看结果。而且 Flutter 是**开源**的，有成千上万的贡献者在为核心框架添砖加瓦，并围绕其打造了包含海量 package 的生态系统。
+我们的目标是*从根本上改变*开发者的应用构建思路，让体验先于平台。Flutter 可以让你尽情雕琢**精美**的应用体验，畅快表达自己的品牌和设计风格。Flutter 可以将你的源代码编译为机器码，并**快速**运行，同时借助有状态热重载功能为你带来了解释环境的**高效**生产力，让你可以在应用运行时做出更改并立即查看结果。而且 Flutter 是**开源**的，有成千上万的贡献者在为核心框架添砖加瓦，并围绕其打造了包含海量 package 的生态系统。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/03/f090329f06af7.png)
 
-在 [发布](https://flutter.dev/) 的 Flutter 2 中，我们将 Flutter 从移动框架扩展为**可移植**框架，让您的应用基本可以不加变动地在多种平台上运行。仅 Google Play 商店就已有**超过 15 万款 Flutter 应用**，而现在应用可以在无需重写的情况下部署到桌面设备和 web 平台，可以说每款应用都通过 Flutter 2 得到 "免费升级"。
+在 [发布](https://flutter.dev/) 的 Flutter 2 中，我们将 Flutter 从移动框架扩展为**可移植**框架，让你的应用基本可以不加变动地在多种平台上运行。仅 Google Play 商店就已有**超过 15 万款 Flutter 应用**，而现在应用可以在无需重写的情况下部署到桌面设备和 web 平台，可以说每款应用都通过 Flutter 2 得到 "免费升级"。
 
 世界各地的用户都在使用 Flutter，包括 [WeChat](https://apps.apple.com/us/app/wechat/id414478124)、[Grab](https://play.google.com/store/apps/details?id=com.grabtaxi.passenger)、[Yandex Go](https://play.google.com/store/apps/details?id=ru.yandex.taxi)、[Nubank](https://play.google.com/store/apps/details?id=com.nu.production)、[Sonos](https://apps.apple.com/us/app/sonos/id1488977981)、[Fastic](https://apps.apple.com/us/app/fastic-fasting-app/id1459260306)、[Betterment](https://play.google.com/store/apps/details?id=com.betterment) 和 [realtor.com](https://apps.apple.com/US/app/id336698281?mt=8) 等热门应用。Flutter 在 Google 也是备受依赖的重要工具，我们有一千多名工程师正在使用 Dart 和 Flutter 构建应用。许多产品已经发布，包括 Stadia、Google One 和 Google Nest Hub。
 
@@ -43,7 +43,7 @@ Web 的 [早期基础以文档为中心](https://tools.ietf.org/html/rfc1866)。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/03/384a963e53119.png)
 
-您可以从 [Flutter web 发布文章](https://medium.com/flutter/web-post-d6b84e83b425) 中了解更多信息。
+你可以从 [Flutter web 发布文章](https://medium.com/flutter/web-post-d6b84e83b425) 中了解更多信息。
 
 ## 桌面、可折叠和嵌入式设备上的 Flutter 2
 
@@ -85,9 +85,9 @@ Dart 为构建应用提供了一套独特的功能:
 
 没有其他语言可以同时提供这些功能，也许这就解释了为什么 Dart 能成为 [GitHub 上发展最快的语言](https://madnight.github.io/githut/#/pull_requests/2020/4) 之一。
 
-我们同期发布的 Dart 2.12 是自 2.0 以来最重大的版本更新，支持**健全的空安全**。健全的空安全能扫除令人头疼的空引用异常，除非开发者明确允许，否则类型在开发时和运行时不可能包含空值。最重要的是，此功能并非重要改动 (breaking change): 您可以按照自己的节奏将空安全逐步添加到代码中，我们也准备好了迁移工具，您可以在准备好之后使用它完成迁移。
+我们同期发布的 Dart 2.12 是自 2.0 以来最重大的版本更新，支持**健全的空安全**。健全的空安全能扫除令人头疼的空引用异常，除非开发者明确允许，否则类型在开发时和运行时不可能包含空值。最重要的是，此功能并非重要改动 (breaking change): 你可以按照自己的节奏将空安全逐步添加到代码中，我们也准备好了迁移工具，你可以在准备好之后使用它完成迁移。
 
-这一版本的更新还包括: [FFI 的稳定版本](https://dart.cn/guides/libraries/c-interop)，让您可以编写出高性能的代码与基于 C 语言的 API 进行互操作；使用 Flutter 编写的 [新的集成开发者和性能剖析器工具](https://flutter.cn/docs/development/tools/devtools/overview)；以及许多性能改进和尺寸优化，只需重新编译即可让代码得到长足的改进。如需了解详细信息，请查看 [Dart 2.12 发布文章](https://medium.com/dartlang/announcing-dart-2-12-499a6e689c87)。
+这一版本的更新还包括: [FFI 的稳定版本](https://dart.cn/guides/libraries/c-interop)，让你可以编写出高性能的代码与基于 C 语言的 API 进行互操作；使用 Flutter 编写的 [新的集成开发者和性能剖析器工具](https://flutter.cn/docs/development/tools/devtools/overview)；以及许多性能改进和尺寸优化，只需重新编译即可让代码得到长足的改进。如需了解详细信息，请查看 [Dart 2.12 发布文章](https://medium.com/dartlang/announcing-dart-2-12-499a6e689c87)。
 
 ## 即刻体验 Flutter 2
 
@@ -95,10 +95,10 @@ Dart 为构建应用提供了一套独特的功能:
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/03/46794d1264d83.png)
 
-我们还为大家准备了一款全新的示例应用，[Flutter Folio](https://flutterfolio.com)，由我们与加拿大埃德蒙顿的获奖设计团队 [gskinner](https://gskinner.com/) 合作完成，这个示例展示了我们刚刚提到的一切内容。Flutter Folio 是一款能在您所有的设备上运行的剪贴簿应用。在小屏幕上体验时会强调展示内容；而在大屏幕上体验时则支持以桌面和平板电脑的习惯用法进行内容编辑；web 体验则着重强调分享。这些定制化的体验都共享相同的开源代码库，可供您自由浏览。
+我们还为大家准备了一款全新的示例应用，[Flutter Folio](https://flutterfolio.com)，由我们与加拿大埃德蒙顿的获奖设计团队 [gskinner](https://gskinner.com/) 合作完成，这个示例展示了我们刚刚提到的一切内容。Flutter Folio 是一款能在你所有的设备上运行的剪贴簿应用。在小屏幕上体验时会强调展示内容；而在大屏幕上体验时则支持以桌面和平板电脑的习惯用法进行内容编辑；web 体验则着重强调分享。这些定制化的体验都共享相同的开源代码库，可供你自由浏览。
 
 ![](https://devrel.andfun.cn/devrel/posts/2021/03/7ef1cc3624d4e.png)
 
-如果您尚未尝试过 Flutter，我们相信它将为您的应用开发体验带来巨大的提升。Flutter，一个开源工具包，让您通过单一代码库为移动、桌面、web 和嵌入式设备打造美观、快速的应用，让您即便是在面对 Google 和广大用户的苛刻需求时也能游刃有余。
+如果你尚未尝试过 Flutter，我们相信它将为你的应用开发体验带来巨大的提升。Flutter，一个开源工具包，让你通过单一代码库为移动、桌面、web 和嵌入式设备打造美观、快速的应用，让你即便是在面对 Google 和广大用户的苛刻需求时也能游刃有余。
 
-而且 Flutter 是免费和开源的。您会使用 Flutter 2 构建怎样精彩的应用呢？我们拭目以待！
+而且 Flutter 是免费和开源的。你会使用 Flutter 2 构建怎样精彩的应用呢？我们拭目以待！

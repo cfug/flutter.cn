@@ -115,8 +115,8 @@ pass it to the `TabBar`.
 
 `TabBar` 默认将会在 Widget 树中向上寻找离它最近的一个
 `DefaultTabController` 节点作为自己的 `TabController`。
-如果您想手动创建 `TabController`，
-那么您必须将它作为参数传给 `TabBar`。
+如果你想手动创建 `TabController`，
+那么你必须将它作为参数传给 `TabBar`。
 
 ## 3. Create content for each tab
 

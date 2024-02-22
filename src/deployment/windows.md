@@ -221,7 +221,7 @@ GitHub Action 需要从合作伙伴中心获取环境秘钥。
 `AZURE_AD_TENANT_ID`，`AZURE_AD_ClIENT_ID` 和 `AZURE_AD_CLIENT_SECRET`
 在遵循 [Windows Store Publish Action](https://github.com/marketplace/actions/windows-store-publish#obtaining-your-credentials)
 的说明后，可以在 Dev Center 上看到。
-您还需要 `SELLER_ID` 秘钥，
+你还需要 `SELLER_ID` 秘钥，
 可以在 Dev Center 的 **帐户设置** > **组织简介** > **法律信息** 下找到。
 
 The application must already be present in the Microsoft Dev Center with at

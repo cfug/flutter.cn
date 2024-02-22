@@ -136,7 +136,7 @@ Flutter 生态系统委员会再次召开会议，将以下 package 指定为 Fl
 * 新路由 API (又名 Navigator 2) 的三个自定义路由 package: [beamer](https://pub.flutter-io.cn/packages/beamer)、[routemaster](https://pub.flutter-io.cn/packages/routemaster) 和 [go_router](https://pub.flutter-io.cn/packages/go_router)；
 * [drift](https://pub.flutter-io.cn/packages/drift): 对 Flutter 和 Dart 已经功能强大且流行的响应式持久性库的重命名，基于 sqlite 构建；
 * [freezed](https://pub.flutter-io.cn/packages/freezed): 一个 Dart「语言补丁」，为定义模型、克隆对象、模式匹配等提供简单的语法；
-* [dart_code_metrics](https://pub.flutter-io.cn/packages/dart_code_metrics): 一个帮助您分析和提高代码质量的静态分析工具；
+* [dart_code_metrics](https://pub.flutter-io.cn/packages/dart_code_metrics): 一个帮助你分析和提高代码质量的静态分析工具；
 * 以及有着漂亮界面的 package: [flex_color_scheme](https://pub.flutter-io.cn/packages/flex_color_scheme)、[flutter_svg](https://pub.flutter-io.cn/packages/flutter_svg)、[feedback](https://pub.flutter-io.cn/packages/feedback)、[toggle_switch](https://pub.flutter-io.cn/packages/toggle_switch) 和 [auto_size_text](https://pub.flutter-io.cn/packages/auto_size_text)。
 
 ![使用 flex_color_scheme 构建的可灵活折叠的应用](https://files.flutter-io.cn/posts/flutter-cn/2021/whats-new-in-flutter-2-8/flex_color_scheme-demo-in-2-8.gif)

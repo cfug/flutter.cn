@@ -134,7 +134,7 @@ dependencies, you can run the `flutter doctor` command again to
 verify that you've set everything up correctly.
 
 下面的章节介绍了对缺失的内容进行配置的方法。
-每当您安装了任何一个的依赖项，
+每当你安装了任何一个的依赖项，
 就可以随时执行 `flutter doctor` 来检查是否正确配置了所有内容。
 
 {{site.alert.note}}

@@ -30,9 +30,9 @@ for activity in your application.
 It consists of several tools to help you identify
 the cause of poor performance in your app:
 
-性能页面可以帮助您诊断应用中的性能问题和 UI 卡顿。
+性能页面可以帮助你诊断应用中的性能问题和 UI 卡顿。
 该页面提供了应用中活动的时间和性能信息。
-它由几个工具组成，可帮助您识别应用中性能不佳的原因：
+它由几个工具组成，可帮助你识别应用中性能不佳的原因：
 
 * Flutter frames chart (Flutter apps only)
 

@@ -1353,7 +1353,7 @@ platform-specific notes:
 
   在 iOS 和 macOS 上，
   Flutter 分别通过 `UIViewController` 和 `NSViewController` 载入到嵌入层。
-  这些嵌入层会创建一个 `FlutterEngine`，作为 Dart VM 和您的 Flutter 运行时的宿主，
+  这些嵌入层会创建一个 `FlutterEngine`，作为 Dart VM 和你的 Flutter 运行时的宿主，
   还有一个 `FlutterViewController`，关联对应的 `FlutterEngine`，
   传递 UIKit 或者 Cocoa 的输入事件到 Flutter，
   并将 `FlutterEngine` 渲染的帧内容通过 Metal 或 OpenGL 进行展示。
@@ -1490,7 +1490,7 @@ To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
 here's a fragment of code to call the traditional Win32 `MessageBox()` API:
 
-若您需要使用 FFI，请为每一个 Dart 和未经管理的函数的签名创建一个 `typedef`，
+若你需要使用 FFI，请为每一个 Dart 和未经管理的函数的签名创建一个 `typedef`，
 并且指示 Dart VM 为它们创建关联。
 下面这段代码片段是调用 Win32 的 `MessageBox()` API 的简单示例：
 

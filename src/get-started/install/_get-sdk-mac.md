@@ -166,7 +166,7 @@ or if you only have intermittent network availability).
 To do so, run the following command:
 
 如果你不使用归档，Flutter 将会下载必要的开发二进制文件（如果你使用的归档，那么这些文件已经包含在内了）。
-你也许会想要提前下载这些开发二进制文件（例如，您可能希望设置系统构建环境，或是您的网络可用性不佳）。
+你也许会想要提前下载这些开发二进制文件（例如，你可能希望设置系统构建环境，或是你的网络可用性不佳）。
 那么你可以运行以下命令：
 
 ```terminal

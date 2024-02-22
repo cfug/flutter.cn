@@ -14,16 +14,16 @@ keywords: 迁移,Android平台,开发,新特性
   You might be directed to this page if the framework detects that
   your app uses a plugin based on the old Android APIs.
 
-  如果我们检测到您的应用项目中使用的插件正在使用旧的 Android APIs ，
-  会提示您前往本页面。
+  如果我们检测到你的应用项目中使用的插件正在使用旧的 Android APIs ，
+  会提示你前往本页面。
 
 {{site.alert.end}}
 
 _If you don't write or maintain an Android Flutter plugin,
 you can skip this page._
 
-**如果您并非亲自开发或维护一个 Flutter 的 Android 插件，
-您可以跳过本页面。**
+**如果你并非亲自开发或维护一个 Flutter 的 Android 插件，
+你可以跳过本页面。**
 
 As of the 1.12 release,
 new plugin APIs are available for the Android platform.
@@ -35,7 +35,7 @@ but we encourage you to migrate to the new APIs based on
 自 1.12 版本发布后，
 Android 平台已可以使用新的 Android 插件 API 。
 基于 [`PluginRegistry.Registrar`][] 的 API 不会立刻废弃，
-但我们鼓励您向基于 [`FlutterPlugin`][] 的 API 进行迁移。
+但我们鼓励你向基于 [`FlutterPlugin`][] 的 API 进行迁移。
 
 The new API has the advantage of providing a cleaner set
 of accessors for lifecycle dependent components compared
@@ -92,7 +92,7 @@ The following instructions outline the steps for supporting the new API:
    require documentation.
    
    在插件的主类文件中 (`*Plugin.java`) 实现 [`FlutterPlugin`][] 接口。
-   对于稍微复杂的插件，您可以将 `FlutterPlugin` 与 `MethodCallHandler`
+   对于稍微复杂的插件，你可以将 `FlutterPlugin` 与 `MethodCallHandler`
    拆分到不同的类中。如需更多关于如何使用新版 API 获取资源的内容，请参考下一节
    [基础插件][Basic plugin] 。
    <br><br>
@@ -105,13 +105,13 @@ The following instructions outline the steps for supporting the new API:
 1. (Optional) If your plugin needs an `Activity` reference,
    also implement the [`ActivityAware`][] interface.
    
-   （可选）如果您的插件需要 `Activity` 的引用，请同时实现 [`ActivityAware`][] 接口。
+   （可选）如果你的插件需要 `Activity` 的引用，请同时实现 [`ActivityAware`][] 接口。
 
 1. (Optional) If your plugin is expected to be held in a
    background Service at any point in time, implement the
    [`ServiceAware`][] interface.
    
-   （可选）如果您的插件需要随时保持一个后台 Service ，请实现 [`ServiceAware`][] 接口。
+   （可选）如果你的插件需要随时保持一个后台 Service ，请实现 [`ServiceAware`][] 接口。
 
 1. Update the example app's `MainActivity.java` to use the
    v2 embedding `FlutterActivity`. For details, see
@@ -122,7 +122,7 @@ The following instructions outline the steps for supporting the new API:
    使用 `FlutterActivity` 将示例应用中的 `MainActivity.java`
    迁移到 v2 版本嵌入。
    更多信息请查看 [Upgrading pre 1.12 Android projects][] 。
-   如果您的插件类尚不存在，则必须添加一个公有构造函数。例如：
+   如果你的插件类尚不存在，则必须添加一个公有构造函数。例如：
 
    <?code-excerpt title="MainActivity.java"?>
    ```java
@@ -143,7 +143,7 @@ The following instructions outline the steps for supporting the new API:
    to use `io.flutter.embedding.android.FlutterActivity`.
    For example:
    
-   （可选）如果您移除了 `MainActivity.java`，请更新
+   （可选）如果你移除了 `MainActivity.java`，请更新
    `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`
    以使用 `io.flutter.embedding.android.FlutterActivity`。例如：
 
@@ -175,7 +175,7 @@ The following instructions outline the steps for supporting the new API:
    
    （可选）在 `MainActivity.java` 同级目录下创建一个 
    `EmbeddingV1Activity.java` 文件，使用 v1 版本嵌入以
-   持续测试您的项目对 v1 版本嵌入的兼容性。例如：
+   持续测试你的项目对 v1 版本嵌入的兼容性。例如：
 
     <?code-excerpt title="EmbeddingV1Activity.java"?>
     ```java
@@ -207,7 +207,7 @@ The following instructions outline the steps for supporting the new API:
    `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` file.
    For example:
    
-   （可选）如果上步您创建了 `EmbeddingV1Activity` ，
+   （可选）如果上步你创建了 `EmbeddingV1Activity` ，
    将 `EmbeddingV1Activity`
    添加至 `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` 文件。
    例如：
@@ -226,12 +226,12 @@ The following instructions outline the steps for supporting the new API:
 
 ## Testing your plugin
 
-## 测试您的插件
+## 测试你的插件
 
 The remaining steps address testing your plugin, which we encourage,
 but aren't required.
 
-剩下的步骤让您可以测试您的插件，我们鼓励您这样做，但这并不是必需的。
+剩下的步骤让你可以测试你的插件，我们鼓励你这样做，但这并不是必需的。
 
 1. Update `<plugin_name>/example/android/app/build.gradle`
    to replace references to `android.support.test` with `androidx.test`:
@@ -265,7 +265,7 @@ but aren't required.
    
    在 `<plugin_name>/example/android/app/src/androidTest/java/<plugin_path>/` 
    路径下添加针对 `MainActivity` 和 `EmbeddingV1Activity` 的测试文件，
-   并且您需要创建该目录。例如：
+   并且你需要创建该目录。例如：
 
     <?code-excerpt title="MainActivityTest.java"?>
     ```java
@@ -398,14 +398,14 @@ You should take care to initialize your plugin's behavior
 in `onAttachedToEngine()`, and then cleanup your plugin's
 references in `onDetachedFromEngine()`.
 
-如上述代码所示，您的插件在任意时刻都可能与 Flutter 的体验有关或无关。
-您需要特别注意，在 `onAttachedToEngine()` 进行初始化，并且在
+如上述代码所示，你的插件在任意时刻都可能与 Flutter 的体验有关或无关。
+你需要特别注意，在 `onAttachedToEngine()` 进行初始化，并且在
 `onDetachedFromEngine()` 中进行清理插件的各种引用。
 
 The FlutterPluginBinding provides your plugin with a few
 important references:
 
-FlutterPluginBinding 为您的插件提供了几个重要的引用：
+FlutterPluginBinding 为你的插件提供了几个重要的引用：
 
 **binding.getFlutterEngine()**
 <br> Returns the `FlutterEngine` that your plugin is attached to,
@@ -431,9 +431,9 @@ such as requesting permissions, or altering Android UI chrome,
 then you need to take additional steps to define your plugin.
 You must implement the `ActivityAware` interface.
 
-如果您的插件需要与 UI 进行交互，例如请求权限或更改 Android UI ，
-那么您就需要一些附加步骤来构建您的插件。
-您必须实现 `ActivityAware` 接口。
+如果你的插件需要与 UI 进行交互，例如请求权限或更改 Android UI ，
+那么你就需要一些附加步骤来构建你的插件。
+你必须实现 `ActivityAware` 接口。
 
 ```java
 public class MyPlugin implements FlutterPlugin, ActivityAware {
@@ -470,10 +470,10 @@ implement appropriate behavior at 4 stages. First, your plugin
 is attached to an `Activity`. You can access that `Activity` and
 a number of its callbacks through the provided `ActivityPluginBinding`.
 
-若需要与 `Activity` 交互，您已经实现 `ActivityAware` 的插件需要
+若需要与 `Activity` 交互，你已经实现 `ActivityAware` 的插件需要
 在 4 个不同的阶段实现不同的行为。
-首先，确保您的插件已经附加至 `Activity` 。
-您可以通过提供的 `ActivityPluginBinding` 获取到 `Activity` 及一些回调。
+首先，确保你的插件已经附加至 `Activity` 。
+你可以通过提供的 `ActivityPluginBinding` 获取到 `Activity` 及一些回调。
 
 Since `Activity`s can be destroyed during configuration changes,
 you must clean up any references to the given `Activity` in
@@ -481,7 +481,7 @@ you must clean up any references to the given `Activity` in
 and then re-establish those references in
 `onReattachedToActivityForConfigChanges()`.
 
-由于 `Activity` 有可能在配置变化时被销毁，您必须在
+由于 `Activity` 有可能在配置变化时被销毁，你必须在
 `onDetachedFromActivityForConfigChanges()` 方法中
 清理所有与 `Activity` 有关的引用，接着在 
 `onReattachedToActivityForConfigChanges()` 中重新建立它们。

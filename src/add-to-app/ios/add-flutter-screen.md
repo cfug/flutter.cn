@@ -46,7 +46,7 @@ The `FlutterEngine` might have the same lifespan as your
   It's generally recommended to pre-warm a long-lived
   `FlutterEngine` for your application because:
 
-  通常建议为您的应用预热一个“长寿”的 `FlutterEngine` 是因为:
+  通常建议为你的应用预热一个“长寿”的 `FlutterEngine` 是因为:
   
   * The first frame appears faster when showing the `FlutterViewController`.
     

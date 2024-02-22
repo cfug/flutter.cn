@@ -24,13 +24,13 @@ app's UI in Flutter. Or, just to run shared Dart logic.
 有时候，用 Flutter 一次性重写整个已有的应用是不切实际的。
 对于这些情况，Flutter 可以作为一个库或模块，
 集成进现有的应用当中。
-模块引入到您的 Android 或 iOS 应用（当前支持的平台）中，
+模块引入到你的 Android 或 iOS 应用（当前支持的平台）中，
 以使用 Flutter 来渲染一部分的 UI，或者仅运行多平台共享的 Dart 代码逻辑。
 
 In a few steps, you can bring the productivity and the expressiveness of
 Flutter into your own app.
 
-仅需几步，你就可以将高效而富有表现力的 Flutter 引入您的应用。
+仅需几步，你就可以将高效而富有表现力的 Flutter 引入你的应用。
 
 The `add-to-app` feature supports integrating multiple instances of any screen size.
 This can help scenarios such as a hybrid navigation stack with mixed
@@ -70,7 +70,7 @@ memory resources. See more in the [multiple Flutters][] page.
   with AndroidX.
 
   将 Flutter 模块构建为通用的 [Android Archive (AAR)][Android Archive (AAR)]
-  以便集成到您自己的构建系统中，并提高 Jetifier 与 AndroidX 的互操作性；
+  以便集成到你自己的构建系统中，并提高 Jetifier 与 AndroidX 的互操作性；
 
 * [`FlutterEngine`][java-engine] API for starting and persisting
   your Flutter environment independently of attaching a
@@ -117,7 +117,7 @@ memory resources. See more in the [multiple Flutters][] page.
   for integration into your own build system.
 
   将 Flutter 模块构建为通用的 [iOS Framework][]
-  以便集成到您自己的构建系统中；
+  以便集成到你自己的构建系统中；
   
 * [`FlutterEngine`][ios-engine] API for starting and persisting
   your Flutter environment independently of attaching a
@@ -182,7 +182,7 @@ Android and iOS:
 After Flutter is integrated into your project,
 see our API usage guides at the following links:
 
-将 Flutter 集成进您的工程后，可以查看以下 API 使用指南
+将 Flutter 集成进你的工程后，可以查看以下 API 使用指南
 
 <div class="card-deck mb-8">
   <a class="card" href="{{site.url}}/add-to-app/android/add-flutter-screen">

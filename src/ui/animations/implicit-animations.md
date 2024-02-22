@@ -7,7 +7,6 @@ tags: 用户界面,Flutter UI,动画
 keywords: 隐式动画
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 With Flutter's [animation library][],
@@ -69,17 +68,17 @@ that are relevant to implicit animations.
 聚焦 Flutter 视频以 5 到 10 分钟的实战代码为特点，涵盖了每个 Flutter 开发人员都需要从头到尾了解的技术。
 下列视频涵盖了所有与隐式动画相关的话题。
 
-<iframe width="560" height="315" src="{{yt-embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{site.yt.set}}></iframe>
 
-[Learn about Animation Basics with Implicit Animations]({{yt-watch}}/IVTjpW3W33s)
+[Learn about Animation Basics with Implicit Animations]({{site.yt.watch}}/IVTjpW3W33s)
 
-[使用隐式动画了解动画基础知识]({{yt-watch}}/IVTjpW3W33s)
+[使用隐式动画了解动画基础知识]({{site.yt.watch}}/IVTjpW3W33s)
 
-<iframe width="560" height="315" src="{{yt-embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{site.yt.set}}></iframe>
 
-[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{yt-watch}}/6KiPEqzJIKQ)
+[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{site.yt.watch}}/6KiPEqzJIKQ)
 
-[了解如何使用 TweenAnimationBuilder 构建自定义隐式动画]({{yt-watch}}/6KiPEqzJIKQ)
+[了解如何使用 TweenAnimationBuilder 构建自定义隐式动画]({{site.yt.watch}}/6KiPEqzJIKQ)
 
 ## The Boring Show
 
@@ -90,11 +89,11 @@ using implicit animations in a news aggregator app.
 观看《The Boring Show》，跟随谷歌工程师用 Flutter 从零开始构建应用程序。
 下面这一集涉及在一个新闻聚合器应用中使用隐式动画。
 
-<iframe width="560" height="315" src="{{yt-embed}}/8ehlWchLVlQ" title="about implicitly animating the Hacker News app" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/8ehlWchLVlQ" title="about implicitly animating the Hacker News app" {{site.yt.set}}></iframe>
 
-[Learn about implicitly animating the Hacker News app]({{yt-watch}}/8ehlWchLVlQ)
+[Learn about implicitly animating the Hacker News app]({{site.yt.watch}}/8ehlWchLVlQ)
 
-[了解 Hacker News 应用的隐式动画设计]({{yt-watch}}/8ehlWchLVlQ)
+[了解 Hacker News 应用的隐式动画设计]({{site.yt.watch}}/8ehlWchLVlQ)
 
 ## Widget of the Week videos
 

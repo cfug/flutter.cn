@@ -11,7 +11,6 @@ prev:
   path: /docs/data-and-backend/state-mgmt/simple
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 State management is a complex topic.
@@ -59,7 +58,7 @@ Things to review before selecting an approach.
 
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [Introduction to state management]: {{site.url}}/data-and-backend/state-mgmt/intro
-[Pragmatic State Management in Flutter]: {{yt-watch}}?v=d_m5csmrf7I
+[Pragmatic State Management in Flutter]: {{site.yt.watch}}?v=d_m5csmrf7I
 
 ## Provider
 
@@ -161,6 +160,18 @@ Other useful docs include:
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 
+## June
+
+A lightweight and modern state management library that focuses on providing
+a pattern similar to Flutter's built-in state management.
+
+一个轻量级的现代状态管理库，
+专注于提供与 Flutter 内置状态管理类似的模式。
+
+* [june package][]
+
+[june package]: {{site.pub-pkg}}/june
+
 ## Redux
 
 A state container approach familiar to many web developers.
@@ -229,10 +240,10 @@ A state container approach familiar to many web developers.
   [使用 Redux 更好地组织 Flutter 应用的代码以管理项目目标 (Redux and epics for better-organized code in Flutter apps)][Redux and epics for better-organized code in Flutter apps]，Nihad Delic 著。
 
 [Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
-[Animation Management with Redux and Flutter]: {{yt-watch}}?v=9ZkLtr0Fbgk
+[Animation Management with Redux and Flutter]: {{site.yt.watch}}?v=9ZkLtr0Fbgk
 [Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
-[Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: {{yt-watch}}?v=Wj216eSBBWs
+[Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: {{site.yt.watch}}?v=Wj216eSBBWs
 [Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
 [Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
 [Flutter meets Redux: The Redux way of managing Flutter applications state]: {{site.medium}}/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
@@ -313,7 +324,7 @@ doesn't need a `BuildContext`.
 {{site.alert.note}}
   To learn more, watch this short Package of the Week video on the GetIt package:
 
-  <iframe class="full-width" src="{{yt-embed}}/f9XQD5mf6FY" title="Learn about the GetIt Flutter Package" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/f9XQD5mf6FY" title="Learn about the GetIt Flutter Package" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 [Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
@@ -430,7 +441,7 @@ For more information, refer to the following resources:
 [Flutter Triple package]: {{site.pub-pkg}}/flutter_triple
 [Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/overview#-segmented-state-pattern-ssp
 [Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
-[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{yt-watch}}?v=dXc3tR15AoA
+[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{site.yt.watch}}?v=dXc3tR15AoA
 
 ## solidart
 

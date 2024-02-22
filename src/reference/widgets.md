@@ -8,7 +8,6 @@ short-title: Widget 目录
 show_breadcrumbs: false
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 {% assign sorted = site.data.catalog.widgets | sort:'name' -%}
@@ -31,9 +30,9 @@ our [videos]({{site.url}}/resources/videos) page.
 
 <iframe width="560" height="315" src="{{bili-embed}}?aid=55795672&cid=97539385&page=1&autoplay=false" title="每周 Flutter Widget 介绍" {{bili-set}}></iframe>
 
-[Widget of the Week playlist]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
-[Widget 视频的每周播放列表]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget 视频的每周播放列表]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 <div class="card-deck card-deck--responsive">
 {% for comp in sorted %}

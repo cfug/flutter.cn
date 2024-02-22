@@ -104,9 +104,9 @@ Dart dev 频道中的 API 已经可用：
 
 [Dart API reference documentation]: {{site.dart.api}}/dev/
 
-## Step 1: Create a plugin
+## Create an FFI plugin
 
-## 步骤 1：创建插件
+## 创建 FFI 插件
 
 If you already have a plugin, skip this step.
 
@@ -119,7 +119,7 @@ do the following:
 您需要这么做：
 
 ```terminal
-$ flutter create --platforms=macos --template=plugin native_add
+$ flutter create --platforms=macos --template=plugin_ffi native_add
 $ cd native_add
 ```
 
@@ -134,116 +134,40 @@ $ cd native_add
 
 {{site.alert.end}}
 
-## Step 2: Add C/C++ sources
+This will create a plugin with C/C++ sources in `native_add/src`.
+These sources are built by the native build files in the various
+os build folders.
 
-## 步骤 2：添加 C/C++ 源码
-
-You need to inform the macOS build system about the
-native code so the code can be compiled
-and linked appropriately into the final application.
-
-您需要让 macOS 构建系统知道本地代码的存在，
-以便代码可以被编译并链接到最终的应用程序中。
-
-Add the sources to the `macos` folder,
-because CocoaPods doesn't allow including sources
-above the `podspec` file.
-
-您可以将源代码添加到 `macos` 文件夹，
-因为 CocoaPods 不允许源码处于比 `podspec` 文件更高的目录层级，
+C/C++ 源代码会被创建至 `native_add/src`。
+这些源代码在不同平台构建时会生成对应平台的构建文件夹。
 
 The FFI library can only bind against C symbols,
-so in C++ these symbols must be marked `extern C`.
+so in C++ these symbols are marked `extern "C"`.
+
+FFI 库只能绑定 C 语言的符号，
+所以 C++ 语言的符号会被标记为 `extern "C"`。
+
 You should also add attributes to indicate that the
 symbols are referenced from Dart,
 to prevent the linker from discarding the symbols
 during link-time optimization.
+`__attribute__((visibility("default"))) __attribute__((used))`.
 
-FFI 库只能与 C 符号绑定，因此在 C++ 中，
-这些符号添加 `extern C` 标记。
-还应该添加属性来表明符号是需要被 Dart 引用的，
+你还应该添加属性来表明符号是需要被 Dart 引用的，
 以防止链接器在优化链接时会丢弃符号。
+`__attribute__((visibility("default"))) __attribute__((used))`.
 
-For example,
-to create a C++ file named `macos/Classes/native_add.cpp`,
-use the following instructions. (Note that the template
-has already created this file for you.) Start from the
-root directory of your project:
+On iOS, the `native_add/macos/native_add.podspec` links the code.
 
-作为示例，创建一个 C++ 文件，
-路径为：`macos/Classes/native_add.cpp`。
-（请注意，模板已经为您创建了此文件。）
-在项目的根目录下中执行以下命令：
+在 iOS 上，`native_add/macos/native_add.podspec` 负责关联这些代码。
 
-```bash
-cat > macos/Classes/native_add.cpp << EOF
-#include <stdint.h>
+The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
-extern "C" __attribute__((visibility("default"))) __attribute__((used))
-int32_t native_add(int32_t x, int32_t y) {
-    return x + y;
-}
-EOF
-```
+原生代码会从 `lib/native_add_bindings_generated.dart` 中被 Dart 调用。
 
-On macOS, you need to tell Xcode to statically link the file:
+The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
 
-在 macOS 中，您需要告诉 Xcode 如何静态链接这个文件：
-
- 1. In Xcode, open `Runner.xcworkspace`.
-
-    在 Xcode 中，打开 `Runner.xcworkspace`。
-
- 2. Add the C/C++/Objective-C/Swift
-    source files to the Xcode project.
-
-    添加 C/C++/Objective-C/Swift
-    源码文件到 Xcode 工程中。
-
-## Step 3: Load the code using the FFI library
-
-In this example, you can add the following code to
-`lib/native_add.dart`. However the location of the
-Dart binding code isn't important.
-
-在示例中，您需要添加如下的代码到 `lib/native_add.dart`。
-但是，Dart 在何处进行代码绑定并不重要。
-
-First, you must create a `DynamicLibrary` handle to
-the native code.
-
-首先，您需要创建一个 `DynamicLibrary` 来处理本地代码。
-
-```dart
-import 'dart:ffi'; // For FFI
-
-final DynamicLibrary nativeAddLib = DynamicLibrary.process();
-```
-
-With a handle to the enclosing library,
-you can resolve the `native_add` symbol:
-
-您可以通过使用库的句柄来解析 `native_add` 符号：
-
-<?code-excerpt "lib/c_interop.dart (NativeAdd)"?>
-```dart
-final int Function(int x, int y) nativeAdd = nativeAddLib
-    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>('native_add')
-    .asFunction();
-```
-
-Finally, you can call it. To demonstrate this within
-the auto-generated "example" app (`example/lib/main.dart`):
-
-现在，您可以调用它了。在自动生成的 example 项目
-（`example/lib/main.dart`）中演示它。
-
-```nocode
-// Inside of _MyAppState.build:
-        body: Center(
-          child: Text('1 + 2 == ${nativeAdd(1, 2)}'),
-        ),
-```
+绑定代码由 [package:ffigen]({{site.pub-pkg}}/ffigen) 生成。
 
 ## Other use cases
 

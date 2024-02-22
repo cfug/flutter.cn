@@ -195,13 +195,6 @@ to create a new project with desktop support.
 
 ### 配置步骤
 
-On Windows, desktop support is enabled on
-Flutter 2.10 or higher. On macOS and Linux,
-desktop support is enabled on Flutter 3 or higher.
-
-Flutter 2.10 以及更高版本中加入了对 Windows 操作系统的桌面端支持。
-mac OS 和 Linux 的桌面端支持需要使用 Flutter 3 及更高版本。
-
 You might run `flutter doctor` to see if
 there are any unresolved issues.
 You should see a checkmark for each successfully
@@ -209,7 +202,7 @@ configured area. It should look something like
 the following on Windows,
 with an entry for "develop for Windows":
 
-你也可以运行 `flutter doctor` 来查看是否存在未解决的问题。
+你可以运行 `flutter doctor` 来查看是否存在未解决的问题。
 每一个成功的配置都有一个对勾，比如在 Windows 上你可能会看到如下内容:
 
 ```terminal
@@ -484,19 +477,19 @@ learn more about Flutter desktop support.
 你可以运行下面的桌面应用案例，也可以下载并阅读源代码，
 以了解更多关于 Flutter 桌面支持的信息。
 
-Flutter Gallery [running web app][], [repo][flutter-gallery-repo]
-<br> A samples project hosted on GitHub to help developers
-  evaluate and use Flutter. The Gallery consists of a
-  collection of Material design widgets, behaviors,
-  and vignettes implemented with Flutter.
-  You can clone the project and run Gallery as a desktop app
-  by following the instructions provided in the [README][].
+Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
+<br> A showcase app that uses Flutter to create a highly expressive user interface.
+  Wonderous focuses on delivering an accessible and high-quality user experience
+  while including engaging interactions and novel animations.
+  To run Wonderous as a desktop app, clone the project and
+  follow the instructions provided in the [README][wonderous-readme].
 
-Flutter Gallery [线上运行的 Web 应用][running web app]，[源代码仓库地址][flutter-gallery-repo]
-<br> 一个托管在 GitHub 上案例项目，可以用来帮助开发人员评估和使用 Flutter。
-  Gallery 的构成部分有：Material design widgets 的集合、
-  behaviors 和用 Flutter 实现的 vignettes。
-  你可以克隆该项目，并按照 [README][] 中的说明，将 Gallery 作为桌面应用程序运行。
+Wonderous 应用 [在线访问][wonderous-app]，[源代码仓库地址][wonderous-repo]
+<br> 这是一款使用 Flutter 创建的应用，它拥有极具表现力的用户界面。
+  Wonderous 专注于提供可访问的高质量用户体验，
+  同时包含引人入胜的交互体验以及新颖的动画效果。
+  如果你想要将 Wonderous 作为桌面应用运行，
+  你可以克隆该项目，并按照 [README][wonderous-readme] 中的说明进行体验。
 
 Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-repo]
 <br> A Google contacts manager that integrates with GitHub and Twitter.
@@ -514,10 +507,10 @@ Flokk [官宣文章][gskinner-flokk-blogpost]，[源代码仓库地址][gskinner
 [图片搜索应用][Photo Search app]
 <br> 使用支持桌面端的插件构建的一个桌面应用案例。
 
+[wonderous-app]: {{site.wonderous}}/web
+[wonderous-repo]: {{site.repo.wonderous}}
+[wonderous-readme]: {{site.repo.wonderous}}#wonderous
 [Photo Search app]: {{site.repo.samples}}/tree/main/desktop_photo_search
-[running web app]: {{site.gallery}}
-[flutter-gallery-repo]: {{site.repo.gallery}}
-[README]: {{site.repo.gallery}}#readme
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

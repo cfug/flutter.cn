@@ -9,8 +9,6 @@ tags: 发布, iOS
 keywords: 上传App Store,发布Flutter应用
 ---
 
-{% include docs/yt_shims.liquid %}
-
 This guide provides a step-by-step walkthrough of releasing a
 Flutter app to the [App Store][appstore] and [TestFlight][].
 
@@ -53,9 +51,9 @@ the following video covers the same material as this guide.
 如果你想观看视频而非文字介绍，
 以下这个视频会指导你如何进行准备工作。
 
-<iframe width="560" height="315" src="{{yt-embed}}/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="用 Flutter 发布 iOS 应用程序，只需 7 个步骤" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="用 Flutter 发布 iOS 应用程序，只需 7 个步骤" {{site.yt.set}}></iframe>
 
-[Release an iOS app with Flutter in 7 steps]({{yt-watch}}?v=iE2bpP56QKc)
+[Release an iOS app with Flutter in 7 steps]({{site.yt.watch}}?v=iE2bpP56QKc)
 
 ## Register your app on App Store Connect
 

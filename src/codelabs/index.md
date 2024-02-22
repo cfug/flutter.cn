@@ -6,7 +6,6 @@ description: >-
   Codelabs 是一种引导式的动手编码教程体验，帮助你更好地掌握 Flutter 编程技巧
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 The Flutter codelabs provide a guided,
@@ -65,7 +64,7 @@ one of the following codelabs:
   但如果你下载并配置好了 Android 以及 iOS 的工具，
   那么整个应用同样也能运行在 Android 以及 iOS 的设备上。
 
-[Building your first Flutter app]: {{yt-watch}}?v=8sAyPDLorek
+[Building your first Flutter app]: {{site.yt.watch}}?v=8sAyPDLorek
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 
@@ -115,8 +114,8 @@ one of the following codelabs:
   管理应用数据的状态。
 
 [Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
-[Dart null safety in Action]: {{yt-watch}}?v=HdKwuHQvArY
-[inherited-widget-ws]: {{yt-watch}}?v=LFcGPS6cGrY
+[Dart null safety in Action]: {{site.yt.watch}}?v=HdKwuHQvArY
+[inherited-widget-ws]: {{site.yt.watch}}?v=LFcGPS6cGrY
 [low-level state management]: {{site.url}}/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
 
 ## Designing a Flutter UI
@@ -322,7 +321,7 @@ Learn how to use Flutter with other technologies.
   the Auth and Firestore emulators.
 
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
-[firebase-ws]: {{yt-watch}}?v=wUSkeTaBonA
+[firebase-ws]: {{site.yt.watch}}?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter
 [Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
 

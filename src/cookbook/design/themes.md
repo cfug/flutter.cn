@@ -10,7 +10,6 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 <?code-excerpt path-base="cookbook/design/themes"?>
@@ -264,7 +263,7 @@ To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
 想要了解更多，你可以观看 Widget of the Week 中关于 `Theme` 的短视频：
 
-<iframe class="full-width" src="{{yt-embed}}/oTvQDJOBXmM" title="了解 Theme Flutter Widget" {{yt-set}}></iframe>
+<iframe class="full-width" src="{{site.yt.embed}}/oTvQDJOBXmM" title="了解 Theme Flutter Widget" {{site.yt.set}}></iframe>
 
 ## Try an interactive example
 

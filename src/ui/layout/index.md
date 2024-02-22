@@ -10,13 +10,10 @@ keywords: Flutter布局核心介绍,核心机制,Flutter布局
 diff2html: true
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 {% assign api = site.api | append: '/flutter' -%}
-{% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-{% capture demo -%} {{site.repo.gallery}}/tree/{{site.branch}}/lib/demos {%- endcapture -%}
 
 <?code-excerpt path-base=""?>
 
@@ -79,12 +76,12 @@ The second screenshot displays the visual layout, showing a row of
 {{site.alert.note}}
 
   Most of the screenshots in this tutorial are displayed with
-  `debugPaintSizeEnabled` set to true so you can see the visual layout.
+  `debugPaintSizeEnabled` set to `true` so you can see the visual layout.
   For more information, see
   [Debugging layout issues visually][], a section in
   [Using the Flutter inspector][].
   
-  本教程中的大多数截图都是将 `debugPaintSizeEnabled` 设置为 true 以后的效果，
+  本教程中的大多数截图都是将 `debugPaintSizeEnabled` 设置为 `true` 以后的效果，
   因此你可以看到可视布局。更多信息可以查看文档中的 
   [可视化调试][Debugging layout issues visually]，
   它是 [调试 Flutter 应用][Using the Flutter inspector] 中的一节。
@@ -327,7 +324,7 @@ You need to set these yourself.
   来展示 iOS 风格的导航栏。同时你还可以利用 [`CupertinoColors`][]
   来为 widget 配置与 iOS 设计风格相符的颜色。
 
-* To layout the body of your app, set the `child` property of your scaffold
+* To lay out the body of your app, set the `child` property of your scaffold
   with the desired widget as its value, like `Center` or `Column`.
 
   你可以设置脚手架 (`CupertinoScaffold`) 的 `child` 属性来构建你的主体内容，
@@ -426,7 +423,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-By default a non-Material app doesn't include an `AppBar`, title,
+By default, a non-Material app doesn't include an `AppBar`, title,
 or background color. If you want these features in a non-Material app,
 you have to build them yourself. This app changes the background
 color to white and the text to dark grey to mimic a Material app.
@@ -1221,11 +1218,10 @@ Widget _buildImageRow(int imageIndex) => Row(
     );
 ```
 
-You can find more `Container` examples in the [tutorial][]
-and the Flutter Gallery ([running app][], [repo][]).
+You can find more `Container` examples in the [tutorial][].
 
-你可以在 [布局构建教程][tutorial] 和 [Flutter Gallery][running app]
-中可以发现更多关于 `Container` 的例子。
+你可以在 [布局构建教程][tutorial] 中
+发现更多关于 `Container` 的例子。
 
 **App source:** [container]({{examples}}/layout/container)
 
@@ -1331,11 +1327,11 @@ it automatically scrolls.
   使用 `GridView.count` 创建一个网格，它在竖屏模式下有两行，在横屏模式下有三行。
   可以通过为每个 [`GridTile`][] 设置 `footer` 属性来创建标题。
 
-  **Dart code:** [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
-  from the [Flutter Gallery][repo]
+  **Dart code:** 
+  [`grid_list_demo.dart`]({{examples}}/layout/gallery/lib/grid_list_demo.dart)
 
-  **Dart 代码：** [Flutter Gallery][repo] 中的
-  [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
+  **Dart 代码：** 
+  [`grid_list_demo.dart`]({{examples}}/layout/gallery/lib/grid_list_demo.dart)
 
 </div>
 </div>
@@ -1414,22 +1410,22 @@ its render box.
 
 </div>
 <div class="col-lg-6" markdown="1">
-  <img src='/assets/images/docs/ui/layout/listview-flutter-gallery.png' class="border mw-100"
+  <img src='/assets/images/docs/ui/layout/listview-color-gallery.png' class="border mw-100"
       alt="ListView containing shades of blue">
   {:.text-center}
 
   Uses `ListView` to display the [`Colors`][] from
-  the [Material Design palette][]
+  the [Material 2 Design palette][]
   for a particular color family.
 
   使用 `ListView` 展示特定颜色系列 
   [Material Design 调色板][Material Design palette] 中的 [`Colors`][]。
 
-  **Dart code:** [colors_demo.dart]({{demo}}/reference/colors_demo.dart) from the
-  [Flutter Gallery][repo]
+  **Dart code:**
+  [`colors_demo.dart`]({{examples}}/layout/gallery/lib/colors_demo.dart)
 
-  **Dart 代码：** [Flutter Gallery][repo] 中的
-  [colors_demo.dart]({{demo}}/reference/colors_demo.dart)。
+  **Dart 代码：** 
+  [`colors_demo.dart`]({{examples}}/layout/gallery/lib/colors_demo.dart)
   
 </div>
 </div>
@@ -1540,11 +1536,11 @@ widget 可以完全或者部分覆盖基础 widget。
   使用 `Stack` 将渐变叠加到图片的顶部，
   渐变可以将工具栏的图标和图片区分开来。
 
-  **Dart code:** [bottom_navigation_demo.dart]({{demo}}/material/bottom_navigation_demo.dart)
-  from the [Flutter Gallery][repo]
+  **Dart code:**
+  [`bottom_navigation_demo.dart`]({{examples}}/layout/gallery/lib/bottom_navigation_demo.dart)
 
-  **Dart 代码：** [Flutter Gallery][repo] 中的
-  [bottom_navigation_demo.dart]({{demo}}/material/bottom_navigation_demo.dart)。
+  **Dart 代码：**
+  [`bottom_navigation_demo.dart`]({{examples}}/layout/gallery/lib/bottom_navigation_demo.dart)
 
 </div>
 </div>
@@ -1671,18 +1667,18 @@ Specifying an unsupported value disables the drop shadow entirely.
 </div>
 <div class="col-lg-6" markdown="1">
   <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' class="mw-100"
-      alt="Card containing an image, text and buttons">
+      alt="Tappable card containing an image and multiple forms of text">
   {:.text-center}
 
   A `Card` containing an image and text.
 
   包含图片和文本的 `Card`。
 
-  **Dart code:** [cards_demo.dart]({{demo}}/material/cards_demo.dart)
-  from the [Flutter Gallery][repo]
+  **Dart code:**
+  [`cards_demo.dart`]({{examples}}/layout/gallery/lib/cards_demo.dart)
 
-  **Dart 代码：** [Flutter Gallery][repo] 中的
-  [cards_demo.dart]({{demo}}/material/cards_demo.dart)
+  **Dart 代码：**
+  [`cards_demo.dart`]({{examples}}/layout/gallery/lib/cards_demo.dart)
 
 </div>
 </div>
@@ -1789,15 +1785,15 @@ and trailing icons. `ListTile` is most commonly used in
       alt="4 ListTiles, each containing a leading avatar">
   {:.text-center}
 
-  Uses `ListTile` with leading widgets.<br>
+  Uses `ListTile` with leading widgets.
 
   leading wiget 使用 `ListTile`。
 
-  **Dart code:** [list_demo.dart]({{demo}}/material/list_demo.dart)
-  from the [Flutter Gallery][repo]
+  **Dart code:**
+  [`list_demo.dart`]({{examples}}/layout/gallery/lib/list_demo.dart)
 
-  **Dart 代码：** [Flutter Gallery][repo] 中的
-  [list_demo.dart]({{demo}}/material/list_demo.dart)。
+  **Dart 代码：**
+  [`list_demo.dart`]({{examples}}/layout/gallery/lib/list_demo.dart)
 
 </div>
 </div>
@@ -1829,14 +1825,14 @@ explain `Stateless` and `Stateful` widgets.
 <iframe width="560" height="315" src="{{bili-embed}}?bvid=BV15441157Jm&page=1&autoplay=false" title="Learn how to create stateless widgets" {{bili-set}}></iframe>
 <iframe width="560" height="315" src="{{bili-embed}}?bvid=BV1s441157db&page=1&autoplay=false" title="Learn the best times to use stateful widgets" {{bili-set}}></iframe>
 
-[Flutter in Focus playlist]({{yt-playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+[Flutter in Focus playlist]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
-[Flutter in Focus 播放列表]({{yt-playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+[Flutter in Focus 播放列表]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
 
 Each episode of the
-[Widget of the Week series]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget of the Week series]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 focuses on a widget. Several of them includes layout widgets.
 
 [每周 Widget 系列]({{bili-video}}/BV15441157cc)
@@ -1844,9 +1840,9 @@ focuses on a widget. Several of them includes layout widgets.
 
 <iframe width="560" height="315" src="{{bili-embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="Watch the Widget of the Week playlist" {{bili-set}}></iframe>
 
-[Flutter Widget of the Week playlist]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
-[每周 Flutter Widget 播放列表]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[每周 Flutter Widget 播放列表]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 ## Other resources
 
@@ -1874,13 +1870,6 @@ The following resources might help when writing layout code.
 
   [给 Web 开发者的 Flutter 指南][HTML/CSS Analogs in Flutter]
 <br> 对那些熟悉 web 开发的人来说，这页将 HTML/CSS 的功能映射到 Flutter 特性上。
-
-* Flutter Gallery [running app][], [repo][]
-<br> Demo app showcasing many Material Design widgets and other
-  Flutter features.
-
-  Flutter Gallery [应用][running app]和 [代码仓库][repo]
-<br> Demo app 展示了很多 Material Design widget 和其他的 Flutter 特性。
 
 * [API reference docs][]
 <br> Reference documentation for all of the Flutter libraries.
@@ -1915,7 +1904,7 @@ The following resources might help when writing layout code.
 [`DataTable`]: {{api}}/material/DataTable-class.html
 [Elevation]: {{site.material}}/styles/elevation
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
-[Flutter in Focus]: {{yt-watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [`GridView`]: {{api}}/widgets/GridView-class.html
 [`GridTile`]: {{api}}/material/GridTile-class.html
 [HTML/CSS Analogs in Flutter]: {{site.url}}/get-started/flutter-for/web-devs
@@ -1928,13 +1917,11 @@ The following resources might help when writing layout code.
 [`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
 [Material card]: {{site.material}}/components/cards
 [Material Design]: {{site.material}}/styles
-[Material Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
+[Material 2 Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
 [Material library]: {{api}}/material/material-library.html
 [pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
 [`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
-[repo]: {{site.repo.gallery}}/tree/main
 [`Row`]: {{api}}/widgets/Row-class.html
-[running app]: {{site.gallery}}
 [`Scaffold`]: {{api}}/material/Scaffold-class.html
 [`SizedBox`]: {{api}}/widgets/SizedBox-class.html
 [`Stack`]: {{api}}/widgets/Stack-class.html

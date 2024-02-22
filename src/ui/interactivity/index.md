@@ -10,7 +10,6 @@ keywords: 交互,Flutter交互,有状态的widget,无状态,StatefulWidget,状�
 diff2html: true
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
@@ -1150,12 +1149,11 @@ to your app.
 [Flutter API 文档][Flutter API documentation]
 <br> 所有 Flutter API 的参考文档。
 
-Flutter Gallery [running app][], [repo][]
-<br> Demo app showcasing many Material components and
-  other Flutter features.
+Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
+<br> Flutter showcase app with a custom design and engaging interactions.
 
-[Flutter Gallery][running app] 应用，[代码仓库][repo]
-<br> 一个 Demo 应用程序，展示了许多 Material 和其他 Flutter 功能。
+[Wonderous app][wonderous-app] 应用，[代码仓库][wonderous-repo]
+<br> Flutter 展示应用，采用独特的设计和引人入胜的交互方式。
 
 [Flutter's Layered Design][] (video)
 <br> This video includes information about state and
@@ -1176,7 +1174,7 @@ Flutter Gallery [running app][], [repo][]
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: {{site.url}}/cookbook
 [Flutter's Layered Design CN]: {{bili-video}}/BV1b441157vV
-[Flutter's Layered Design]: {{yt-watch}}?v=dkyY9WCGMi0
+[Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
@@ -1200,8 +1198,8 @@ Flutter Gallery [running app][], [repo][]
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[repo]: {{site.repo.gallery}}
-[running app]: {{site.gallery}}
+[wonderous-app]: {{site.wonderous}}/web
+[wonderous-repo]: {{site.repo.wonderous}}
 [set up]: {{site.url}}/get-started/install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html

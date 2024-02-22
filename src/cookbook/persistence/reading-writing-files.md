@@ -7,8 +7,6 @@ tags: cookbook, 实用教程, 持久化
 keywords: 文件读写,临时文件夹,Documents目录
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/persistence/reading_writing_files/"?>
 
 In some cases, you need to read and write files to disk.
@@ -50,7 +48,7 @@ on the `path_provider` package:
 
 你可以观看每周 package 视频来了解更多关于 `path_provider` 的内容：
 
-<iframe class="full-width" src="{{yt-embed}}/Ci4t-NkOY3I" title="了解 path_provider Flutter Package" {{yt-set}}></iframe>
+<iframe class="full-width" src="{{site.yt.embed}}/Ci4t-NkOY3I" title="了解 path_provider Flutter Package" {{site.yt.set}}></iframe>
 
 {{site.alert.note}}
 

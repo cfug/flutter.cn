@@ -8,7 +8,6 @@ tags: 用户界面,Flutter UI
 keywords: 滑动效果, slivers
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 A sliver is a portion of a scrollable area that you
@@ -106,11 +105,11 @@ check out these related API docs:
 * [`SliverList`][]
 
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
-[sliver-app-bar-video]: {{yt-watch}}?v=R9C5KMJKluE
+[sliver-app-bar-video]: {{site.yt.watch}}?v=R9C5KMJKluE
 [`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
 [`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
-[SliverList and SliverGrid]: {{yt-watch}}?v=ORiTTaVY6mM
+[SliverList and SliverGrid]: {{site.yt.watch}}?v=ORiTTaVY6mM
 [`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
 [Slivers, DeMystified]: {{site.flutter-medium}}/slivers-demystified-6ff68ab0296f
 [Slivers explained - Making dynamic layouts]: {{bili-video}}/BV1EJ41197NB/
-[The Boring Show]: {{yt-playlist}}PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK
+[The Boring Show]: {{site.yt.playlist}}PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK

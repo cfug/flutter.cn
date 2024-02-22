@@ -44,26 +44,23 @@ Image.network(
     'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif');
 ```
 
-## Placeholders and caching
+## Image fade in with placeholders
 
-## 占位符与缓存
+## 使用占位符淡入图像
 
 The default `Image.network` constructor doesn't handle more advanced
-functionality, such as fading images in after loading, or caching images
-to the device after they're downloaded. To accomplish these tasks, see
-the following recipes:
+functionality, such as fading images in after loading.
+To accomplish this task,
+check out [Fade in images with a placeholder][].
 
-默认的 `Image.network` 构造函数并没有提供诸如加载后的图片淡入或
-下载之后将图片缓存到设备等更进一步的功能。
-请参阅以下链接来实现这些功能：
+默认的 `Image.network` 构造函数并没有提供诸如加载后的图片淡入
+等更进一步的功能。
+要完成这样的功能，请查阅 
+[占位符和网络图片淡入][Fade in images with a placeholder]。
 
 * [Fade in images with a placeholder][]
-  
+
   [占位符和网络图片淡入][Fade in images with a placeholder]
-  
-* [Work with cached images][]
-  
-  [使用缓存图片][Work with cached images]
 
 ## Interactive example
 
@@ -103,4 +100,3 @@ class MyApp extends StatelessWidget {
 [Fade in images with a placeholder]: {{site.url}}/cookbook/images/fading-in-images
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [`Image.network()`]: {{site.api}}/flutter/widgets/Image/Image.network.html
-[Work with cached images]: {{site.url}}/cookbook/images/cached-images

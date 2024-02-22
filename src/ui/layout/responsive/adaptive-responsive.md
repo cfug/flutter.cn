@@ -6,8 +6,6 @@ description: 创建用于移动端和 Web 的应用非常重要，它们能够�
 short-title: 响应式且自适应
 ---
 
-{% include docs/yt_shims.liquid %}
-
 One of Flutter's primary goals is to create a framework
 that allows you to develop apps from a single codebase
 that look and feel great on any platform.
@@ -82,7 +80,7 @@ Learn more in the following 5-minute video:
 
 通过以下 5 分钟的视频了解更多：
 
-<iframe width="560" height="315" src="{{yt-embed}}/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="Learn the difference between adaptive and responsive Flutter apps" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="Learn the difference between adaptive and responsive Flutter apps" {{site.yt.set}}></iframe>
 
 [Adaptive vs Responsive][]
 
@@ -222,10 +220,10 @@ of The Boring Show:
 
 你也可以观看下面几期关于自适应布局的 The Boring Show：
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/n6Awpg1MO6M" title="Learn about adaptative layouts on the Boring Show" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/n6Awpg1MO6M" title="Learn about adaptive layouts on the Boring Show" {{site.yt.set}}></iframe>
 [Adaptive layouts][]
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/eikOZzfc0l4" title="Continue to learn about adaptative layouts on the Boring Show" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/eikOZzfc0l4" title="Continue to learn about adaptive layouts on the Boring Show" {{site.yt.set}}></iframe>
 [Adaptive layouts, part 2][]
 
 For an excellent example of an adaptive app,
@@ -235,7 +233,7 @@ in collaboration with gskinner and the Flutter team:
 想要尝试精美的自适应应用，可以下载由 gskinner 和 Flutter
 团队共建的剪贴板应用 Flutter Folio：
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/yytBENOnF0w" title="Watch a demonstration of the Flutter Folio app" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/yytBENOnF0w" title="Watch a demonstration of the Flutter Folio app" {{site.yt.set}}></iframe>
 
 The [Folio source code][] is also available on GitHub.
 Learn more on the [gskinner blog][].
@@ -257,26 +255,25 @@ in the following resources:
   [不同平台操作体验的差异和适配][Platform-specific behaviors and adaptations]，
   站内的另一篇文档。
 
+* [Extreme UI Adaptability in Flutter][], the story of how Google Earth is
+  using Flutter to take adaptability to the next level.
+
+  [Flutter 极致的用户界面自适应][Extreme UI Adaptability in Flutter]，
+  讲述 Google 地球如何使用 Flutter 将自适应提升到新的水平。
+
 * [Designing truly adaptive user interfaces][] a blog post and video by
   Aloïs Deniel, presented at the Flutter Vikings 2020 conference.
 
   [设计真正能够自适应的用户交互][Designing truly adaptive user interfaces]，
   由 Aloïs Deniel 在 2020 年的 FlutterViking 会议上发布的文章和视频。
 
-* The [Flutter gallery app][] ([repo][]) has been written as an
-  adaptive app.
-
-  以自适应应用为目标编写的
-  [Flutter Gallery 应用][Flutter gallery app]（[源代码仓库][repo]）。
-
-[Adaptive layouts]: {{yt-watch}}?v=n6Awpg1MO6M&t=694s
-[Adaptive layouts, part 2]: {{yt-watch}}?v=eikOZzfc0l4&t=11s
+[Adaptive layouts]: {{site.yt.watch}}?v=n6Awpg1MO6M&t=694s
+[Adaptive layouts, part 2]: {{site.yt.watch}}?v=eikOZzfc0l4&t=11s
 [Adaptive vs Responsive]: {{site.youtube-site}}/HD5gYnspYzk?si=5ItDD7UjXvGCRM0K
 [Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 
 [Designing truly adaptive user interfaces]: https://www.aloisdeniel.com/blog/designing-truly-adaptative-user-interfaces
-[Flutter gallery app]: {{site.gallery}}
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
 [Platform-specific behaviors and adaptations]: {{site.url}}/platform-integration/platform-adaptations
-[repo]: {{site.repo.gallery}}
+[Extreme UI Adaptability in Flutter]: {{site.flutter-medium}}/extreme-ui-adaptability-in-flutter-how-google-earth-supports-every-use-case-on-earth-6db4661e7a17

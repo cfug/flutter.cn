@@ -9,7 +9,6 @@ tags: Flutter中文文档
 keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 {% for card in site.data.docs_cards -%}
@@ -139,8 +138,8 @@ widgets in [What is State?][]
     </div>
 </div>
 
-[first-app]: {{site.youtube-site}}/watch?v=xWV71C2kp38
-[What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
+[first-app]: {{site.yt.watch}}?v=xWV71C2kp38
+[What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
 [构建第一个 Flutter 应用]: {{bili-video}}/BV1Se4y1Z74p
 [什么是状态]: {{bili-video}}/BV14G4y167Tu
 
@@ -148,7 +147,7 @@ widgets in [What is State?][]
 <b><t>Only have 60 seconds? Learn how to build and deploy a Flutter App!</t><t>一分钟！快速学习构建和部署 Flutter 应用</t></b>
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{yt-set}}></iframe>
+  <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{site.yt.set}}></iframe>
 </div>
 
 ## Want to skill up?
@@ -167,18 +166,18 @@ using helper methods][standalone-widgets] or
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{yt-set}}></iframe>
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{site.yt.set}}></iframe>
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{yt-set}}></iframe>
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{site.yt.set}}></iframe>
         </div>
     </div>
 </div>
 
-[standalone-widgets]: {{yt-watch}}?v=IOyq-eTRhvo
-[buildcontext]: {{yt-watch}}?v=rIaaH87z1-g
+[standalone-widgets]: {{site.yt.watch}}?v=IOyq-eTRhvo
+[buildcontext]: {{site.yt.watch}}?v=rIaaH87z1-g
 
 To learn about all of the Flutter video series,
 see our [videos][] page.

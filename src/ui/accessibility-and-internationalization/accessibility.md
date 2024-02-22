@@ -6,7 +6,6 @@ tags: Flutter开发
 keywords: 联合国关于残疾人权利,CRPD,无障碍
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 Ensuring apps are accessible to a broad range of users is an essential
@@ -246,7 +245,7 @@ accessibility features, view the following video.
 请观看以下视频，
 了解如何查找和自定义 Android 的辅助功能/无障碍。
 
-<iframe width="560" height="315" src="{{yt-embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{yt-set}}>
+<iframe width="560" height="315" src="{{site.yt.embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{site.yt.set}}>
 </iframe>
 
 </div>
@@ -267,7 +266,7 @@ accessibility features, view the following video.
 请观看以下视频，
 了解如何查找和自定义 iOS 的辅助功能。
 
-<iframe width="560" height="315" src="{{yt-embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{yt-set}}>
+<iframe width="560" height="315" src="{{site.yt.embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{site.yt.set}}>
 </iframe>
 
 </div>
@@ -289,7 +288,7 @@ Desktop browsers:
 
 桌面浏览器：
 
-* MacOS - VoiceOver
+* macOS - VoiceOver
 * Windows - JAWs & NVDA
 
 Screen readers users on web must toggle the
@@ -333,7 +332,7 @@ which is included in macOS.
 
 在 Mac 上，你可以使用 macOS 自带的桌面版旁白 (VoiceOver)。
 
-<iframe width="560" height="315" src="{{yt-embed}}/5R-6WvAihms" title="Learn about the macOS VoiceOver screen reader" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/5R-6WvAihms" title="Learn about the macOS VoiceOver screen reader" {{site.yt.set}}></iframe>
 
 On Linux, a popular screen reader is called Orca.
 It comes pre-installed with some distributions
@@ -354,13 +353,11 @@ To learn about using Orca, check out
 
 <br/>
 
-Check out the following [video demo][] to see
-Victor Tsaran, who leads the Accessibility program for Material Design,
-using VoiceOver with the Flutter Gallery web app.
+Check out the following [video demo][] to see Victor Tsaran,
+using VoiceOver with the now-archived [Flutter Gallery][] web app.
 
-查看此 [视频演示][video demo]，了解 Victor Tsaran，
-他领导了 Material Design 的辅助功能计划，
-并在 Flutter Gallery Web 应用程序中使用了 VoiceOver。
+查看此 [视频演示][video demo]，了解 Victor Tsaran 
+如何在 [Flutter Gallery][]（已归档）Web 应用程序中使用 VoiceOver。
 
 Flutter's standard widgets generate an accessibility tree automatically.
 However, if your app needs something different,
@@ -384,6 +381,7 @@ except where you explicitly set it with `TextSpan.locale`.
 并不会影响屏幕阅读器对语言的选择。
 通常来说，除非你设置了 `TextSpan.locale`，否则屏幕阅读器都会使用系统语言。
 
+[Flutter Gallery]: {{site.gallery-archive}}
 [`TextSpan.locale`]: {{site.api}}/flutter/painting/TextSpan/locale.html
 
 ## Sufficient contrast
@@ -621,5 +619,5 @@ the following articles written by community members:
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
-[video demo]: {{yt-watch}}?v=A6Sx0lBP8PI
+[video demo]: {{site.yt.watch}}?v=A6Sx0lBP8PI
 [file a bug report]: https://goo.gle/flutter_web_issue

@@ -5,7 +5,6 @@ description: Some considerations and instructions on how to build adaptive apps 
 description: 针对多样化的平台构建自适应的应用的重点和指南。
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 <?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
@@ -925,19 +924,19 @@ depending on your goals.
 根据目标的不同，在 Flutter 中可以通过几种方式实现利用键盘提升用户操作速度。
 
 If you have a single widget like a `TextField` or a `Button` that
-already has a focus node, you can wrap it in a
-[`RawKeyboardListener`][] and listen for keyboard events:
+already has a focus node, you can wrap it in a [`KeyboardListener`][]
+or a [`Focus`][] widget and listen for keyboard events:
 
 如果你已经有一个包含焦点的 widget，例如 `TextField` 或者 `Button`，
-你可以嵌套一个 [`RawKeyboardListener`][] 监听键盘事件：
+你可以嵌套一个 [`KeyboardListener`][] 或者 [`Focus`][] widget 来监听键盘事件：
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (FocusRawKeyboardListener)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (focus-keyboard-listener)"?>
 ```dart
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (node, event) {
-        if (event is RawKeyDownEvent) {
+      onKeyEvent: (node, event) {
+        if (event is KeyDownEvent) {
           print(event.logicalKey);
         }
         return KeyEventResult.ignored;
@@ -1002,29 +1001,29 @@ The final option is a global listener. This listener
 can be used for always-on, app-wide shortcuts or for
 panels that can accept shortcuts whenever they're visible
 (regardless of their focus state). Adding global listeners
-is easy with [`RawKeyboard`][]:
+is easy with [`HardwareKeyboard`][]:
 
 最后，你还可以全局添加监听。这样的监听可以用于始终需要监听，且为应用全局的快捷键，
 或是在任何时候（无论是否已聚焦）都接收快捷键的部分。
-使用 [`RawKeyboard`][] 添加全局监听非常简单：
+使用 [`HardwareKeyboard`][] 添加全局监听非常简单：
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RawKeyboard)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (hardware-keyboard)"?>
 ```dart
 @override
 void initState() {
   super.initState();
-  RawKeyboard.instance.addListener(_handleKey);
+  HardwareKeyboard.instance.addHandler(_handleKey);
 }
 
 @override
 void dispose() {
-  RawKeyboard.instance.removeListener(_handleKey);
+  HardwareKeyboard.instance.removeHandler(_handleKey);
   super.dispose();
 }
 ```
 
 To check key combinations with the global listener,
-you can use the `RawKeyboard.instance.keysPressed` map.
+you can use the `HardwareKeyboard.instance.logicalKeysPressed` set.
 For example, a method like the following can check whether any
 of the provided keys are being held down:
 
@@ -1035,7 +1034,9 @@ of the provided keys are being held down:
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (KeysPressed)"?>
 ```dart
 static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
-  return keys.intersection(RawKeyboard.instance.keysPressed).isNotEmpty;
+  return keys
+      .intersection(HardwareKeyboard.instance.logicalKeysPressed)
+      .isNotEmpty;
 }
 ```
 
@@ -1046,16 +1047,18 @@ you can fire an action when `Shift+N` is pressed:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (HandleKey)"?>
 ```dart
-void _handleKey(event) {
-  if (event is RawKeyDownEvent) {
-    bool isShiftDown = isKeyDown({
-      LogicalKeyboardKey.shiftLeft,
-      LogicalKeyboardKey.shiftRight,
-    });
-    if (isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN) {
-      _createNewItem();
-    }
+bool _handleKey(KeyEvent event) {
+  bool isShiftDown = isKeyDown({
+    LogicalKeyboardKey.shiftLeft,
+    LogicalKeyboardKey.shiftRight,
+  });
+
+  if (isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN) {
+    _createNewItem();
+    return true;
   }
+
+  return false;
 }
 ```
 
@@ -1063,7 +1066,7 @@ One note of caution when using the static listener,
 is that you often need to disable it when the user
 is typing in a field or when the widget it's associated with
 is hidden from view.
-Unlike with `Shortcuts` or `RawKeyboardListener`,
+Unlike with `Shortcuts` or `KeyboardListener`,
 this is your responsibility to manage. This can be especially
 important when you're binding a Delete/Backspace accelerator for
 `Delete`, but then have child `TextFields` that the user
@@ -1071,12 +1074,12 @@ might be typing in.
 
 使用静态的监听时有一件值得注意的事情，当用户在输入框中输入内容，
 或关联的 widget 从视图中隐藏时，通常需要禁用监听。
-与 `Shortcuts` 和 `RawKeyboardListener` 不同，你需要自己对它们进行管理。
+与 `Shortcuts` 和 `KeyboardListener` 不同，你需要自己对它们进行管理。
 当你在为 `Delete` 键构建一个删除或退格行为的监听时，需要尤其注意，
 因为用户可能会在 `TextField` 中输入内容时受到影响。
 
-[`RawKeyboard`]: {{site.api}}/flutter/services/RawKeyboard-class.html
-[`RawKeyboardListener`]: {{site.api}}/flutter/widgets/RawKeyboardListener-class.html
+[`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
+[`KeyboardListener`]: {{site.api}}/flutter/widgets/KeyboardListener-class.html
 
 ### Mouse enter, exit, and hover
 

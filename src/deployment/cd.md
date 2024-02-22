@@ -42,10 +42,6 @@ You can use fastlane with the following tooling:
 你可以通过下面的工具使用 fastlane：
 
 * [GitHub Actions][]
-  * Example: Flutter Gallery's [Github Actions workflows][]
-
-    样例：Flutter Galley 的 [GitHub Actions 工作流][Github Actions workflows]
-
   * Example: [Github Action in Flutter Project][]
 
     样例：[适用于 Flutter 项目的 GitHub Actions][Github Action in Flutter Project]
@@ -574,7 +570,7 @@ This can be achieved by using the following Files and Folders conditions:
 Xcode Cloud defaults the build number for new workflows to `1` and increments
 it per successful build. If you're using an existing app with a higher build
 number, you'll need to configure Xcode Cloud to use the correct build number
-for it's builds by simply specifying the `Next Build Number` in your iteration.
+for its builds by simply specifying the `Next Build Number` in your iteration.
 
 Xcode Cloud 对于新的工作流来说默认的构建版本数字是 `1`，
 然后在每次成功构建后递增。如果你已经在一个已有应用中，
@@ -599,10 +595,8 @@ information.
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[Flutter Gallery Project]: {{site.repo.gallery}}
 [Github Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
 [GitHub Actions]: {{site.github}}/features/actions
-[Github Actions workflows]: {{site.repo.gallery}}/tree/main/.github/workflows
 [GitLab]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [CircleCI]: https://circleci.com
 [Building and deploying Flutter apps with Fastlane]: https://circleci.com/blog/deploy-flutter-android

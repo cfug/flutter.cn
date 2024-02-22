@@ -23,10 +23,12 @@
     {{site.alert.tip}}
 
       To determine whether your Mac uses an Apple silicon processor,
-      refer to [Mac computers with Apple silicon]{:target="_blank"}
+      refer to [Mac computers with Apple silicon][]{:target="_blank"}
       on apple.com
 
-      若要确定你的 Mac 是否是使用了 Apple 芯片处理器，请查阅苹果官网的说明页面: [搭载 Apple 芯片的 Mac 电脑][]。
+      若要确定你的 Mac 是否是使用了 Apple 芯片处理器，
+      请查阅苹果官网的说明页面：
+      [搭载 Apple 芯片的 Mac 电脑][]{:target="_blank"}。
 
     {{site.alert.end}}</div>
 

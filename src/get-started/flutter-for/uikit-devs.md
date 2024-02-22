@@ -7,8 +7,6 @@ tags: Flutter教程,Flutter起步,Flutter入门
 keywords: Flutter iOS,iOS,用Flutter开发iOS,Cupertino
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
 
 iOS developers with experience using UIKit
@@ -51,7 +49,7 @@ Jump around and find questions that address your most relevant needs.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-<iframe class="full-width" src="{{yt-embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{yt-set}}></iframe>
+<iframe class="full-width" src="{{site.yt.embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{site.yt.set}}></iframe>
 
 ### Views vs. Widgets
 
@@ -1127,7 +1125,7 @@ allows a user to scroll your content if needed.
 
 In Flutter the easiest way to do this is using the `ListView` widget.
 This acts as both a `ScrollView` and an iOS `TableView`,
-as you can layout widgets in a vertical format.
+as you can lay out widgets in a vertical format.
 
 <?code-excerpt "lib/layout.dart (ListView)"?>
 ```dart
@@ -1719,7 +1717,7 @@ Future<void> loadData() async {
 
 Once the `await`ed network call is done,
 update the UI by calling `setState()`,
-which triggers a rebuild of the widget sub-tree
+which triggers a rebuild of the widget subtree
 and updates the data.
 
 The following example loads data asynchronously and
@@ -2052,7 +2050,7 @@ Future<void> loadData() async {
 }
 ```
 
-### Showing the progress on long running tasks
+### Showing the progress on long-running tasks
 
 In UIKit, you typically use a `UIProgressView`
 while executing a long-running task in the background.

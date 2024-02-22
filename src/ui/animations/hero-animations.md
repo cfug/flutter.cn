@@ -8,7 +8,6 @@ tags: 用户界面,Flutter UI,动画
 keywords: 共享元素过渡,补间动画
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 {{site.alert.secondary}}

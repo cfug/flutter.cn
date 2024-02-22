@@ -467,7 +467,7 @@ The `FlutterAppDelegate` performs functions such as:
 
 ### 创建 FlutterAppDelegate 子类
 
-Creating a subclass of the the `FlutterAppDelegate` in UIKit apps was shown 
+Creating a subclass of the `FlutterAppDelegate` in UIKit apps was shown 
 in the [Start a FlutterEngine and FlutterViewController section][]. 
 In a SwiftUI app, you can create a subclass of the 
 `FlutterAppDelegate` that conforms to the `ObservableObject` protocol as follows:

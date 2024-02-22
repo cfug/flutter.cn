@@ -94,7 +94,7 @@ or further tasks to perform.
 需要执行的其他任务。
 
 If you change the configuration of your Flutter SDK or its related components,
-run `flutter doctor` again to verify the install.
+run `flutter doctor` again to verify the installation.
 
 如果你更改了 Flutter SDK 或其他相关组件的配置，
 请再次运行 `flutter doctor` 来检查安装。

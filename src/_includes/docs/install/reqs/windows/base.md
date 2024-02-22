@@ -74,9 +74,9 @@ Download and install the Windows version of the following packages:
 
 下载并安装以下软件包的 Windows 版本：
 
-* [Git for Windows][] {{site.appmin.github_win}} or later to manage source code.
+* [Git for Windows][] {{site.appmin.git_win}} or later to manage source code.
 
-  [Git for Windows][] {{site.appmin.github_win}} 或更高的版本来管理源代码。
+  [Git for Windows][] {{site.appmin.git_win}} 或更高的版本来管理源代码。
 
 {% include docs/install/reqs/windows/software.md target=include.target %}
 
@@ -94,7 +94,7 @@ To troubleshoot installation issues, consult that product's documentation.
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with
-Flutter’s command-line tools.
+Flutter's command-line tools.
 
 你可以使用任意文本编辑器或集成开发环境 (IDE)，
 并结合 Flutter 的命令行工具，

@@ -17,9 +17,10 @@ repo:
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
   packages: https://github.com/flutter/packages
-  gallery: https://github.com/flutter/gallery
+  gallery-archive: https://github.com/flutter/gallery
   engine: https://github.com/flutter/engine
   uxr: https://github.com/flutter/uxr
+  wonderous: https://github.com/gskinnerTeam/flutter-wonderous-app
 dart:
   api: https://api.dart.cn
   sdk:
@@ -39,7 +40,7 @@ pub-pkg: https://pub-web.flutter-io.cn/packages
 flutter-medium: https://medium.com/flutter
 medium: https://medium.com
 dartpad: https://dartpad.cn
-gallery: https://gallery.flutter.cn
+gallery-archive: https://gallery.flutter.cn
 material: https://m3.material-io.cn
 material2: https://m2.material.io
 so: https://stackoverflow.com
@@ -52,51 +53,56 @@ developers: https://developers.google.cn
 codelabs: https://codelabs.flutter-io.cn
 groups: https://groups.google.com
 firebase: https://firebase.google.cn
-flutterfire: https://firebase.flutter.dev
-dartpadx-dart: https://dartpad.cn/experimental/embed-new-dart.html ## Adding the exp version for dart here.
+wonderous: https://wonderous.app/
 youtube-site: https://youtube.com
+
+yt:
+  set: 'frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"'
+  set-short: 'frameborder="0" allowfullscreen loading="lazy"'
+  watch: 'https://www.youtube.com/watch'
+  embed: 'https://www.youtube.com/embed'
+  playlist: 'https://www.youtube.com/playlist?list='
 
 ## Software minimum versions
 
 appmin:
-  github_win: 2.4
-  github_mac: 2.4
-  vscode: 1.75
-  android_studio: '2022.3 (Giraffe)'
-  intellij_idea: '2022.3'
-  android_sdk: 19
+  git_win: 2.27
+  git_mac: 2.27
+  vscode: 1.77
+  android_studio: '2023.1 (Hedgehog)'
+  intellij_idea: '2023.1'
+  android_sdk: 21
   powershell: 5.0
   xcode: '14'
-  ios: '16'
-  cocoapods: '1.9'
+  ios: '17'
+  cocoapods: '1.10'
 devmin:
   windows: '64-bit version of Microsoft Windows 10'
   macos: '10.15 (Catalina)'
   linux: 
-    debian: 10
-    ubuntu: '18.04 LTS'
+    debian: 11
+    ubuntu: '20.04 LTS'
 targetmin:
   windows: 'Microsoft Windows 7'
-  macos: '10.13 (Ventura)'
+  macos: '10.14 (Ventura)'
   linux:
-    debian: 9
+    debian: 10
     ubuntu: '18.04 LTS'
-  ios: 11
-  android: 'Android API level 19'
+  ios: 12
+  android: 'Android API level 21'
 
 ## Software current versions
 
 appnow:
-  flutter: '3.13.4'
-  github_win: 2.4
-  vscode: '1.81.1'
-  android_studio: '2022.3 (Giraffe) or later'
-  android_sdk: '33.0.0'
-  intellij: '2023.1'
-  powershell: 5.0
+  flutter: '3.19.0'
+  vscode: '1.86'
+  android_studio: '2023.1 (Hedgehog) or later'
+  android_sdk: '34.0.0'
+  intellij: '2023.3'
+  powershell: 5.1
   xcode: '15'
   ios: '17'
-  cocoapods: '1.12'
+  cocoapods: '1.13'
 
 ########### Jekyll ###########
 
@@ -213,16 +219,16 @@ alert:
     **Bonus questions!**
   important: >-
     <aside class="alert alert-warning alert-icon" role="alert" markdown="1">
-    <i class="material-symbols" aria-hidden="true">error</i> **重点提醒:**
+    <i class="material-symbols" aria-hidden="true">error</i> **重点提醒：**
   info: >-
     <aside class="alert alert-info" role="alert" markdown="1">
     <i class="material-symbols" aria-hidden="true">info</i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="material-symbols" aria-hidden="true">info</i> **提示:**
+    <i class="material-symbols" aria-hidden="true">info</i> **提示：**
   version-note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="material-symbols" aria-hidden="true">merge_type</i> **版本提示:**
+    <i class="material-symbols" aria-hidden="true">merge_type</i> **版本提示：**
   recommend: >-
     <aside class="alert alert-success alert-icon" role="alert" markdown="1">
     <i class="material-symbols" aria-hidden="true">bolt</i>
@@ -230,10 +236,10 @@ alert:
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
-    <i class="material-symbols" aria-hidden="true">lightbulb</i> **小提示:**
+    <i class="material-symbols" aria-hidden="true">lightbulb</i> **小提示：**
   warning: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="material-symbols" aria-hidden="true">warning</i> **请注意:**
+    <i class="material-symbols" aria-hidden="true">warning</i> **请注意：**
   end: </aside>
 
 

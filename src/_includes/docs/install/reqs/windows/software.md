@@ -28,13 +28,13 @@
 
 {% else -%}
 
-* [Visual Studio 2022][] to debug and compile native C++ Windows code.
-  Make sure to install the **Desktop development with C++** workload.
+* [Visual Studio 2022][] with the the **Desktop development with C++** workload
+  or [Build Tools for Visual Studio 2022][].
   This enables building Windows app including all of its default components.
   **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.
 
-  [Visual Studio 2022][] 调试和编译原生 C++ Windows 代码。
-  确保安装 **Desktop development with C++**。
+  [Visual Studio 2022][] 安装 **Desktop development with C++**
+  或者使用 [Visual Studio 2022 生成工具][Build Tools for Visual Studio 2022]。
   这样就可以构建 Windows 应用以及所有默认组件。
   **Visual Studio** 是独立于 **[Visual Studio _Code_][]** 的 IDE。
 
@@ -54,5 +54,6 @@
 
 [Android Studio]: https://developer.android.com/studio/install#windows
 [Visual Studio 2022]: https://learn.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2022
+[Build Tools for Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022
 [Google Chrome]: https://www.google.com/chrome/dr/download/
 [Visual Studio _Code_]: https://code.visualstudio.com/

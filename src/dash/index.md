@@ -5,8 +5,6 @@ description: Learn more about the Flutter and Dart mascot, Dash.
 description: 了解关于 Flutter 和 Dart 的吉祥物 Dash 的内容。
 ---
 
-{% include docs/yt_shims.liquid %}
-
 This is Dash:
 
 这是 Dash：
@@ -132,8 +130,8 @@ Shams 为 Dash 指定了颜色的应用范围、尾巴的形状、一小簇头�
 
 ![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
-<t>Introducing Dash at the January 2018 Dart Conference:</t><t>在 2018 Dart 会议上介绍 Dash：</t>
-<iframe width="541" height="350" src="{{yt-embed}}/R5vIUjRZaZA" title="在 2018 Dart 会议上介绍 Dash" {{yt-set}}></iframe>
+<t>Introducing Dash at the January 2018 Dart Conference.</t><t>在 2018 Dart 会议上介绍 Dash。</t>
+<iframe width="541" height="350" src="{{site.yt.embed}}/R5vIUjRZaZA" title="在 2018 Dart 会议上介绍 Dash" {{site.yt.set}}></iframe>
 
 While the manufacturing process was proceeding,
 Shams chose a name for the plushy: Dash,
@@ -214,7 +212,7 @@ Dash 2.0 and 2.1
   巨型 Dash 首次在 2019年 12 月 11 日纽约布鲁克林的
   [Flutter Interact][] 活动中亮相。
 
-  <iframe width="560" height="315" src="{{yt-embed}}/EgBMGDtHZhE" title="Watch the Flutter Interact 2019 highlights" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/EgBMGDtHZhE" title="Watch the Flutter Interact 2019 highlights" {{site.yt.set}}></iframe>
   
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
@@ -231,11 +229,11 @@ Dash 2.0 and 2.1
   我们的许多 YouTube 视频都有 Dart 布偶的出镜，由我们早期（且深受大家喜爱）的
   Flutter 开发技术推广工程师 Emily Fortuna 配音。
 
-  <iframe width="560" height="315" src="{{yt-embed}}/oyy_1CjNdBU" title="构建基于 Flutter 的播客应用程序 DashCast" {{yt-set}}></iframe>
-  <iframe width="560" height="315" src="{{yt-embed}}/dsiLVNDJ3t0" title="重温基于 Flutter 的播客应用程序 DashCast" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/oyy_1CjNdBU" title="构建基于 Flutter 的播客应用程序 DashCast" {{site.yt.set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/dsiLVNDJ3t0" title="重温基于 Flutter 的播客应用程序 DashCast" {{site.yt.set}}></iframe>
 
 <br>
 !["Born to Hot Reload" jacket]({{site.url}}/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
 
-[Flutter Interact]: {{yt-playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
+[Flutter Interact]: {{site.yt.playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/

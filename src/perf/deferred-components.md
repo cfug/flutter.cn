@@ -366,10 +366,10 @@ trigger a pre-load to help mask the loading time.
 也可以提前调用 `loadLibrary()` 函数进行预加载，以帮助屏蔽加载时间。
 
 You can find another example of deferred import loading in
-[Flutter Gallery's lib/deferred_widget.dart][].
+[Flutter Gallery's `lib/deferred_widget.dart`][].
 
 你可以在
-[Flutter Gallery 的 lib/deferred_widget.dart 文件][Flutter Gallery's lib/deferred_widget.dart]
+[Flutter Gallery 的 `lib/deferred_widget.dart` 文件][Flutter Gallery's `lib/deferred_widget.dart`]
 中找到其他延迟加载组件的示例。
 
 </li>
@@ -379,8 +379,8 @@ You can find another example of deferred import loading in
 
 ### 步骤 3：构建应用程序
 
-Use the following `flutter` command to build a deferred
-components app:
+Use the following `flutter` command to build a
+deferred components app:
 
 使用以下 `flutter` 命令构建延迟组件应用：
 
@@ -798,7 +798,7 @@ Play store's delivery feature.
 [Deferred Components]: {{site.repo.flutter}}/wiki/Deferred-Components
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
-[Flutter Gallery's lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/main/lib/deferred_widget.dart
+[Flutter Gallery's `lib/deferred_widget.dart`]: {{site.repo.gallery-archive}}/blob/main/lib/deferred_widget.dart
 [Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library

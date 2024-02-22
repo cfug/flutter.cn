@@ -7,7 +7,6 @@ tags: Flutter开发工具,DevTools
 keywords: Flutter inspector,widget 树
 ---
 
-{% include docs/yt_shims.liquid %}
 {% include docs/bili_shims.liquid %}
 
 <?code-excerpt path-base="../examples/visual_debugging/"?>
@@ -196,7 +195,7 @@ the Flutter Explorer video:
 
 有关此工具的操作概述，观看 Flutter Explorer 的介绍视频：
 
-<iframe width="560" height="315" src="{{yt-embed}}/Jakrc3Tn_y4" title="Learn about the Layout Explorer in Flutter DevTools" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/Jakrc3Tn_y4" title="Learn about the Layout Explorer in Flutter DevTools" {{site.yt.set}}></iframe>
 
 You might also find the following step-by-step article useful:
 

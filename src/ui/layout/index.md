@@ -1419,7 +1419,7 @@ its render box.
   for a particular color family.
 
   使用 `ListView` 展示特定颜色系列 
-  [Material Design 调色板][Material Design palette] 中的 [`Colors`][]。
+  [Material 2 Design 调色板][Material 2 Design palette] 中的 [`Colors`][]。
 
   **Dart code:**
   [`colors_demo.dart`]({{examples}}/layout/gallery/lib/colors_demo.dart)

@@ -11,8 +11,6 @@ prev:
   path: /docs/data-and-backend/state-mgmt/simple
 ---
 
-{% include docs/bili_shims.liquid %}
-
 State management is a complex topic.
 If you feel that some of your questions haven't been answered,
 or that the approach described on these pages
@@ -125,7 +123,7 @@ use `InheritedWidget`:
 
 以下讲师指导的视频 workshop 介绍了如何使用 `InheritedWidget`：
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1&autoplay=false" title="如何使用 inherited widget 管理应用状态" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=248744553&bvid=BV1Wv411W7yF&cid=354736130&page=1&autoplay=false" title="如何使用 inherited widget 管理应用状态" {{site.bili.set}}></iframe>
 
 Other useful docs include:
 
@@ -350,7 +348,7 @@ A popular library based on observables and reactions.
 
   [Flutter：使用 MobX 进行状态管理 (Flutter: State Management with Mobx)][Flutter: State Management with Mobx]
 
-[Flutter: State Management with Mobx]: {{bili-video}}/BV1Gt411K7JD/
+[Flutter: State Management with Mobx]: {{site.bili.video}}/BV1Gt411K7JD/
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
 

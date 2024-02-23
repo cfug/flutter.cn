@@ -9,8 +9,6 @@ tags: 用户界面,Flutter UI,动画
 keywords: 交织动画
 ---
 
-{% include docs/bili_shims.liquid %}
-
 {{site.alert.secondary}}
 
   <h4 class="no_toc">What you'll learn</h4>
@@ -119,7 +117,7 @@ basic_staggered_animation:
 
 以下视频演示了 basic_staggered_animation 所执行的动画：
 
-<iframe width="560" height="315" src="{{bili-embed}}?bvid=BV1j441157TP&p=2&autoplay=false" title="Watch this example of a staggered animation in Flutter" {{bili-set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1j441157TP&p=2&autoplay=false" title="Watch this example of a staggered animation in Flutter" {{site.bili.set-short}}></iframe>
 
 In the video, you see the following animation of a single widget,
 which begins as a bordered blue square with slightly rounded corners.

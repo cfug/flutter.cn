@@ -8,8 +8,6 @@ tags: Flutter参考资料
 keywords: Flutter视频资料,Flutter学习,Flutter社区视频
 ---
 
-{% include docs/bili_shims.liquid %}
-
 These Flutter videos, produced both internally
 at Google and by the Flutter community,
 might help if you are a visual learner.
@@ -154,7 +152,7 @@ Each one-minute video highlights a Flutter widget.
 
 每周一分钟，为你种草一个 Flutter widget！
 
-<iframe width="560" height="315" src="{{bili-embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="Watch this series on different Flutter Widgets: Widget of the Week" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV15441157cc&page=1&autoplay=false" title="Watch this series on different Flutter Widgets: Widget of the Week" {{site.bili.set}}></iframe>
 
 Introducing widget of the week<br>
 [Flutter widget of the week playlist][]
@@ -194,7 +192,7 @@ unscripted and in real time. Mistakes, solutions
 该系列以 Flutter 程序员 0 剧本、现场写代码为特色。
 视频中包含了一些代码错误和解决方案。
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=55815727&bvid=BV18441157SS&cid=97573460&page=1&autoplay=false" title="Watch this live Flutter coding series: The Boring Show" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55815727&bvid=BV18441157SS&cid=97573460&page=1&autoplay=false" title="Watch this live Flutter coding series: The Boring Show" {{site.bili.set}}></iframe>
 
 Introducing the Boring Flutter show<br>
 [The Boring Flutter show playlist][]
@@ -288,7 +286,7 @@ Here are a some Flutter talks given at various conferences.
 
 以下是各种会议上的一些 Flutter 会谈。
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=55833267&cid=97603337&page=1&autoplay=false" title="Watch this series on Flutter talks given at other conferences" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55833267&cid=97603337&page=1&autoplay=false" title="Watch this series on Flutter talks given at other conferences" {{site.bili.set}}></iframe>
 
 [Conference talks playlist][]
 
@@ -307,7 +305,7 @@ millions of downloads.
 视频展示了艾比路工作室 (Abbey Road Studio)、汉密尔顿 (Hamilton) 和阿里巴巴 (Alibaba)
 等开发者 / 公司如何使用 Flutter 开发出百万级别下载量，引人注目的应用程序。
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=55812033&cid=97567456&page=1&autoplay=false" title="Watch this series on Flutter developer stories" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=55812033&cid=97567456&page=1&autoplay=false" title="Watch this series on Flutter developer stories" {{site.bili.set}}></iframe>
 
 [Flutter developer stories playlist][]
 

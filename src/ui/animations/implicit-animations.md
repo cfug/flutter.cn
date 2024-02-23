@@ -7,8 +7,6 @@ tags: 用户界面,Flutter UI,动画
 keywords: 隐式动画
 ---
 
-{% include docs/bili_shims.liquid %}
-
 With Flutter's [animation library][],
 you can add motion and create visual effects
 for the widgets in your UI.
@@ -116,8 +114,8 @@ implicitly animated widgets:
 {% for widget in animated-widgets %}
 {% assign video-url = animated-urls[forloop.index0] %}
 
-<iframe width="560" height="315" src="{{bili-embed}}?bvid={{video-url}}&page=1&autoplay=false" title="了解 {{widget}} Flutter Widget" {{bili-set}}></iframe>
-[了解 {{widget}} Flutter Widget]({{bili-video}}/{{video-url}})
+<iframe width="560" height="315" src="{{site.bili.embed}}?bvid={{video-url}}&page=1&autoplay=false" title="了解 {{widget}} Flutter Widget" {{site.bili.set}}></iframe>
+[了解 {{widget}} Flutter Widget]({{site.bili.video}}/{{video-url}})
 
 {% endfor -%}
 

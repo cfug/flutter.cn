@@ -7,8 +7,6 @@ tags: Web平台
 keywords: Flutter web, web跨端
 ---
 
-{% include docs/bili_shims.liquid %}
-
 Flutter's web support delivers the same experiences on the web as on mobile.
 Building on the portability of Dart, the power of the web platform and the
 flexibility of the Flutter framework, you can now build apps for iOS, Android,
@@ -73,7 +71,7 @@ experiences into these websites.
 For a glimpse into how to migrate your mobile app to web, see
 the following video:
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=246950294&bvid=BV1Jv411h7x6&cid=305745348&page=1&autoplay=false" title="了解如何使用 Flutter 从移动应用转向 Web 应用" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=246950294&bvid=BV1Jv411h7x6&cid=305745348&page=1&autoplay=false" title="了解如何使用 Flutter 从移动应用转向 Web 应用" {{site.bili.set}}></iframe>
 
 <a id="web"></a>
 

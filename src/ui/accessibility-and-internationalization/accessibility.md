@@ -6,8 +6,6 @@ tags: Flutter开发
 keywords: 联合国关于残疾人权利,CRPD,无障碍
 ---
 
-{% include docs/bili_shims.liquid %}
-
 Ensuring apps are accessible to a broad range of users is an essential
 part of building a high-quality app. Applications that are poorly
 designed create barriers to people of all ages. The [UN Convention on
@@ -444,7 +442,7 @@ widgets to offer a dramatically more accessible experience.
 Flutter 内置的 widget，
 以提供更加便捷的体验。
 
-<iframe width="560" height="315" src="{{bili-embed}}?aid=630361140&bvid=BV1N84y1c7hW&cid=331074861&page=1&autoplay=false" title="Learn about building Flutter apps with Accessibility in mind" {{bili-set}}></iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=630361140&bvid=BV1N84y1c7hW&cid=331074861&page=1&autoplay=false" title="Learn about building Flutter apps with Accessibility in mind" {{site.bili.set}}></iframe>
 
 ## Testing accessibility on mobile
 

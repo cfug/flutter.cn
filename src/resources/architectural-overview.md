@@ -6,8 +6,6 @@ tags: Flutter参考资料
 keywords: Flutter原理,Flutter架构指南,Flutter分层设计
 ---
 
-{% include docs/bili_shims.liquid %}
-
 <?code-excerpt path-base="resources/architectural_overview/"?>
 
 This article is intended to provide a high-level overview of the architecture of
@@ -1294,7 +1292,7 @@ pipeline]({{site.yt.watch}}?v=UUfXWzp0-DU).
 
 有关渲染流程的合成和栅格化阶段的更多细节，将不在本篇深入文章中讨论，
 但可以在
-[关于 Flutter 渲染流程的讨论]({{bili-video}}/BV1Zx411o7tq/)
+[关于 Flutter 渲染流程的讨论]({{site.bili.video}}/BV1Zx411o7tq/)
 中了解更多。
 
 ## Platform embedding

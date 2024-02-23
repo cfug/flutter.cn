@@ -7,8 +7,6 @@ tags: Flutter开发工具,DevTools
 keywords: Flutter inspector,widget 树
 ---
 
-{% include docs/bili_shims.liquid %}
-
 <?code-excerpt path-base="../examples/visual_debugging/"?>
 
 {{site.alert.note}}
@@ -911,7 +909,7 @@ using DevTools, check out a guided
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [common problems when debugging]: {{site.url}}/testing/debugging#common-problems
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
-[DartConf 2018 talk]: {{bili-video}}/BV1h4411575y/
+[DartConf 2018 talk]: {{site.bili.video}}/BV1h4411575y/
 [debug mode]: {{site.url}}/testing/build-modes#debug
 [`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
 [flex layouts]: {{site.api}}/flutter/widgets/Flex-class.html

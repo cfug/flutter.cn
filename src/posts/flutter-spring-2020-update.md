@@ -3,8 +3,6 @@ title: 2020 春季速递：Flutter 势头正盛
 toc: true
 ---
 
-{% include docs/bili_shims.liquid %}
-
 文 / Patrick Sosinski & Tim Sneath
 
 在过去的几个月中，
@@ -45,7 +43,7 @@ Flutter 的企业用户增长迅速。我们的研究结果持续表明，
 Nubank 选择了 Flutter，并在此后将其前端开发团队统一在同一个框架内，
 这也使得他们能在 iOS 和 Android 上同时发布新功能。
 
-请观看他们的 [开发者故事]({{bili-video}}/BV1zi4y1t77J/)，了解他们如何用 Flutter 的优势改进团队开发体验以及打造跨平台优质应用:
+请观看他们的 [开发者故事]({{site.bili.video}}/BV1zi4y1t77J/)，了解他们如何用 Flutter 的优势改进团队开发体验以及打造跨平台优质应用:
 
 企业用户普遍要求使用专业组件。我们正在与 [SyncFusion](https://www.syncfusion.com/) 合作，
 他们的 Essential Studio 产品现在包含了一系列

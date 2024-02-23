@@ -7,13 +7,11 @@ image:
     path: https://devrel.andfun.cn/devrel/posts/2023/02/lVFv2g.jpg
 ---
 
-{% include docs/bili_shims.liquid %}
-
 > _由光子工作室及 Krafton 联合研发的 PUBG MOBILE 依然保持着_[_极高的人气_](https://101.dev/t/google-play-2022/823)_，目前全球有 10 亿玩家，日活跃 5,000 万 (不包括中国大陆地区)。从游戏策划伊始，团队就打算为各个平台的玩家们打造功能完善的社区模块。_
 
 在 PUBG MOBILE 中，玩家们被空投到一个荒岛上，孤身奋战或与队友合作，努力与对手周旋，幸存到最后赢得胜利。想要在这个游戏里 "吃鸡"，玩家的敏捷反应和大局意识都很重要——而对负责开发游戏内社区模块的团队来说，这两点正好也是他们成功的秘诀。
 
-<iframe width="690" height="480" src="{{bili-embed}}?aid=393503978&bvid=BV1sd4y1H7G7&cid=985504987&page=1&autoplay=false" {{bili-set-short}}> </iframe>
+<iframe width="690" height="480" src="{{site.bili.embed}}?aid=393503978&bvid=BV1sd4y1H7G7&cid=985504987&page=1&autoplay=false" {{site.bili.set-short}}> </iframe>
 
 △ PUBG MOBILE 如何连接 10 亿玩家 | Flutter 开发者故事
     

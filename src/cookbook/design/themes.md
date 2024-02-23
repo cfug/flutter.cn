@@ -10,8 +10,6 @@ js:
     url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-{% include docs/bili_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/design/themes"?>
 
 {{site.alert.note}}

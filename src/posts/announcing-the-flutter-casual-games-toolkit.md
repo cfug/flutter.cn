@@ -7,8 +7,6 @@ image:
     path: https://devrel.andfun.cn/devrel/posts/2022/05/dSsVED.png
 ---
 
-{% include docs/bili_shims.liquid %}
-
 ![](https://devrel.andfun.cn/devrel/posts/2022/05/dSsVED.png)
 
 *作者 / Zoey Fan, Product Manager for Flutter, Google*
@@ -38,7 +36,7 @@ image:
 
 ## **视频教程**
 
-如果想要上手开发游戏，请查看我们准备的关于如何使用游戏模板的 [视频教程]({{bili-video}}/BV12Y4y1z7m9/ "视频教程：使用 Flutter 开发游戏")。它为你提供了创建一个 [井字棋游戏](https://github.com/filiph/tictactoe "井字棋游戏的 GitHub 开源仓库地址") (你也可从 [iOS](https://apps.apple.com/us/app/tic-tac-toe-puzzle-game/id1611729977 "井字棋游戏 iOS 版下载地址")/[Android](https://play.google.com/store/apps/details?id=dev.flutter.tictactoe "井字棋游戏 Android 版下载地址") 应用商店下载这个游戏) 的逐步教学。如果你想要了解 Filip 在开发这款游戏时经历的所有细节，欢迎阅读他的 [游戏开发日志](https://files.flutter-io.cn/posts/flutter-cn/2022/announcing-the-flutter-casual-games-toolkit/flutter-game-sample-devlog/ "Filip 的游戏开发日志")。
+如果想要上手开发游戏，请查看我们准备的关于如何使用游戏模板的 [视频教程]({{site.bili.video}}/BV12Y4y1z7m9/ "视频教程：使用 Flutter 开发游戏")。它为你提供了创建一个 [井字棋游戏](https://github.com/filiph/tictactoe "井字棋游戏的 GitHub 开源仓库地址") (你也可从 [iOS](https://apps.apple.com/us/app/tic-tac-toe-puzzle-game/id1611729977 "井字棋游戏 iOS 版下载地址")/[Android](https://play.google.com/store/apps/details?id=dev.flutter.tictactoe "井字棋游戏 Android 版下载地址") 应用商店下载这个游戏) 的逐步教学。如果你想要了解 Filip 在开发这款游戏时经历的所有细节，欢迎阅读他的 [游戏开发日志](https://files.flutter-io.cn/posts/flutter-cn/2022/announcing-the-flutter-casual-games-toolkit/flutter-game-sample-devlog/ "Filip 的游戏开发日志")。
 
 ## 预集成的服务
 

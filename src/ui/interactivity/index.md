@@ -10,8 +10,6 @@ keywords: 交互,Flutter交互,有状态的widget,无状态,StatefulWidget,状�
 diff2html: true
 ---
 
-{% include docs/bili_shims.liquid %}
-
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 {{site.alert.secondary}}
@@ -1173,7 +1171,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: {{site.url}}/cookbook
-[Flutter's Layered Design CN]: {{bili-video}}/BV1b441157vV
+[Flutter's Layered Design CN]: {{site.bili.video}}/BV1b441157vV
 [Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html

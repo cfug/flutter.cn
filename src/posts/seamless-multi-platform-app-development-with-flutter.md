@@ -3,8 +3,6 @@ title: 借助 Flutter 顺畅地开发多平台应用
 toc: true
 ---
 
-{% include docs/bili_shims.liquid %}
-
 ![](https://devrel.andfun.cn/devrel/posts/2021/04/VdWBeY.png)
 
 Flutter 已于近期发布了 [Flutter 2](https://flutter.cn/posts/announcing-flutter-2)，Flutter 和 Dart 的产品总监 Tim Sneath 在 2021 年三月上旬举办的 [Flutter Engage](https://flutter.cn/posts/flutter-engage-event-recap) 活动中表示，Flutter 致力于成为多平台 UI 工具包，为了 "彻底改变开发者眼中的应用构建方式，让他们从期望打造的体验来入手进行开发，而无需优先考虑目标平台"。
@@ -52,7 +50,7 @@ Flutter 的 *dev_compiler* 具有与 JIT 编译相同的智能功能。因此，
 
 可折叠的设备类型也使得这些设备中的应用可以和其他应用互相分享内容。例如，为你的应用添加拖放功能后，你可以在并排运行的应用间互相移动内容。
 
-在 [Flutter Engage](https://flutter.cn/posts/flutter-engage-event-recap) 活动中，[Microsoft 宣布]({{bili-video}}/bv1g64y117Jo) 正在与 Google 合作，使 Flutter 支持可折叠设备。Microsoft 将提供代码，使 Flutter 应用把握这些新机会，在 Surface Duo 设备和三星等制造商生产的设备上大展拳脚。
+在 [Flutter Engage](https://flutter.cn/posts/flutter-engage-event-recap) 活动中，[Microsoft 宣布]({{site.bili.video}}/bv1g64y117Jo) 正在与 Google 合作，使 Flutter 支持可折叠设备。Microsoft 将提供代码，使 Flutter 应用把握这些新机会，在 Surface Duo 设备和三星等制造商生产的设备上大展拳脚。
 
 有了 [Flutter 2](https://flutter.cn/posts/whats-new-in-flutter-2-0)，所有 Flutter widgets 均将支持可折叠设备。例如，在你使用对话框时，应用能感知到其位于折叠设备上，将内容显示在右边或左边的窗格中。
 
@@ -64,7 +62,7 @@ Flutter 的 *dev_compiler* 具有与 JIT 编译相同的智能功能。因此，
 
 [Flutter 2](https://flutter.cn/posts/whats-new-in-flutter-2-0) 可以帮助开发者构建出适用于移动端、web 端、桌面端，甚至是新兴设备类型的精美应用，但这只是 Flutter 灵活性的冰山一角。想要成为真正的可移植性平台，支持发布应用至客户所在的任意平台，Flutter 还需要为嵌入式设备提供支持。丰田已于近日宣布，其车辆的信息娱乐系统未来将由 Flutter 提供动力支持，届时，Flutter 将为全球最大的汽车制造商之一带来最佳的数字化体验。
 
-来自丰田北美汽车公司 (Toyota Motor North America) 总工程师 Daniel Hall 在 [Flutter Engage 活动](https://flutter.cn/posts/flutter-engage-event-recap) 中介绍了此次合作以及 [选择 Flutter 的原因]({{bili-video}}/bv1g64y117Jo):
+来自丰田北美汽车公司 (Toyota Motor North America) 总工程师 Daniel Hall 在 [Flutter Engage 活动](https://flutter.cn/posts/flutter-engage-event-recap) 中介绍了此次合作以及 [选择 Flutter 的原因]({{site.bili.video}}/bv1g64y117Jo):
 
 * 丰田的客户期望享受到高性能车载用户体验，使之与丰田汽车的整体质量相符。Flutter 的渲染引擎可在受限的环境下提供优异性能，且其自带的 AOT 编译功能可为丰田提供其在车载技术中所追求的一致性特色。
 * 在 Flutter 的助力下，丰田提供的车载用户体验可以与客户期待在智能手机中获得的体验相媲美。丰田相信 Flutter 的跨平台机制所包含的触控机制能使其适应任何运行环境。这种跨平台机制可帮助丰田规避许多嵌入式系统都会遇到的问题，如性能迟滞，用户体验差等。

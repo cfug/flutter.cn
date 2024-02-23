@@ -3,9 +3,7 @@ title: 贝壳找房携手 Flutter，为三亿家庭提供更好的居住服务 �
 toc: true
 ---
 
-{% include docs/bili_shims.liquid %}
-
-<iframe width="560" height="315" src="{{bili-embed}}?aid=374785860&bvid=BV1oZ4y1w7xu&cid=314283572&page=1&autoplay=false" {{bili-set-short}}> </iframe>
+<iframe width="560" height="315" src="{{site.bili.embed}}?aid=374785860&bvid=BV1oZ4y1w7xu&cid=314283572&page=1&autoplay=false" {{site.bili.set-short}}> </iframe>
 
 贝壳找房是科技驱动的新居住服务平台，致力于在二手房、新房、租房以及装修等居住领域为三亿家庭提供全方位的品质居住服务。如此庞大的用户群体，自然也有着十分多样和复杂的使用场景和需求。以往使用原生开发模式时没有碰到过的问题，也在业务迅速增长后逐渐暴露出来。
 

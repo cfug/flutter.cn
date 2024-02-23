@@ -9,8 +9,6 @@ tags: Flutter中文文档
 keywords: Flutter文档,Flutter汉语文档,Flutter开发导航
 ---
 
-{% include docs/bili_shims.liquid %}
-
 {% for card in site.data.docs_cards -%}
   {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
   {% capture indexModulo3 -%}{{ forloop.index | modulo:3 }}{% endcapture -%}
@@ -128,20 +126,20 @@ widgets in [What is State?][]
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{bili-embed}}?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false" title="构建第一个 Flutter 应用"  {{bili-set}}></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.bili.embed}}?aid=557525809&bvid=BV1Se4y1Z74p&cid=818071255&page=1&autoplay=false" title="构建第一个 Flutter 应用"  {{site.bili.set}}></iframe> 
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{bili-embed}}?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false" title="什么是状态？" {{bili-set}}></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.bili.embed}}?aid=815087524&bvid=BV14G4y167Tu&cid=818431224&page=1&autoplay=false" title="什么是状态？" {{site.bili.set}}></iframe> 
         </div>
     </div>
 </div>
 
 [first-app]: {{site.yt.watch}}?v=xWV71C2kp38
 [What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
-[构建第一个 Flutter 应用]: {{bili-video}}/BV1Se4y1Z74p
-[什么是状态]: {{bili-video}}/BV14G4y167Tu
+[构建第一个 Flutter 应用]: {{site.bili.video}}/BV1Se4y1Z74p
+[什么是状态]: {{site.bili.video}}/BV14G4y167Tu
 
 {:.text-center}
 <b><t>Only have 60 seconds? Learn how to build and deploy a Flutter App!</t><t>一分钟！快速学习构建和部署 Flutter 应用</t></b>

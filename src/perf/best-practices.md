@@ -7,8 +7,6 @@ description: How to ensure that your Flutter app is performant.
 description: 确保 Flutter 应用的性能。
 ---
 
-{% include docs/bili_shims.liquid %}
-
 {% include docs/performance.md %}
 
 Generally, Flutter applications are performant by default,
@@ -645,7 +643,7 @@ check out the video [Why 60fps?][]
 请看视频 [60fps 是啥意思？][Why 60fps?]
 
 [profile mode]: {{site.url}}/testing/build-modes#profile
-[Why 60fps?]: {{bili-video}}/BV1b441157sA/
+[Why 60fps?]: {{site.bili.video}}/BV1b441157sA/
 
 ## Pitfalls
 

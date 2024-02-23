@@ -5,8 +5,6 @@ description: Some considerations and instructions on how to build adaptive apps 
 description: 针对多样化的平台构建自适应的应用的重点和指南。
 ---
 
-{% include docs/bili_shims.liquid %}
-
 <?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
 
 ## Overview
@@ -45,7 +43,7 @@ apps, but they fall into three major categories:
 
   [平台行为习惯与规范](#idioms-and-norms)
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{bili-embed}}?aid=421723399&bvid=BV1i3411878z&cid=442392038&page=1&autoplay=false" title="Learn how to build platform-adaptive Flutter apps" {{bili-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.bili.embed}}?aid=421723399&bvid=BV1i3411878z&cid=442392038&page=1&autoplay=false" title="Learn how to build platform-adaptive Flutter apps" {{site.bili.set}}></iframe>
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.

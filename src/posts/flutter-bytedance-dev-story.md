@@ -7,11 +7,9 @@ image:
     path: https://devrel.andfun.cn/devrel/posts/2022/05/3o1bOf.png
 ---
 
-{% include docs/bili_shims.liquid %}
-
 字节跳动旗下运营着一系列成功的用户产品、企业应用以及服务，覆盖信息、教育、娱乐等不同领域。随着产品阵容的不断发展，传统的原生双平台开发已经难以满足团队更高效、更灵活、更精美，以及更多样的产品研发需求。Google 首次发布 Flutter 的时候，团队就果断决定用手上的 iOS 和 Android 应用来测试其跨平台开发能力，而 Flutter 也用不逊于原生框架的性能表现和极高的生产力迅速征服了团队成员们的心。
 
-<iframe width="690" height="480" src="{{bili-embed}}?aid=596724784&bvid=BV1xB4y197Tc&cid=722160670&page=1&autoplay=false" {{bili-set-short}}> </iframe>
+<iframe width="690" height="480" src="{{site.bili.embed}}?aid=596724784&bvid=BV1xB4y197Tc&cid=722160670&page=1&autoplay=false" {{site.bili.set-short}}> </iframe>
 
 
 > Flutter 拥有令人难以置信的超高效率，与原生双端开发相比，Flutter 为我们的团队节省了大约 1/3 的开发时间。

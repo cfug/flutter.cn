@@ -7,8 +7,6 @@ tags: Packages,插件
 keywords: 使用packages,Flutter第三方库
 ---
 
-{% include docs/bili_shims.liquid %}
-
 <?code-excerpt path-base="development/plugin_api_migration"?>
 
 Flutter supports using shared packages contributed by other developers
@@ -63,7 +61,7 @@ Flutter 支持使用其他开发者向 Flutter 和 Dart 生态系统贡献的共
     或其任意组合的平台编写。
     比如：某个插件可以为 Flutter 应用提供使用原生平台的摄像头的功能。
 
-  <iframe width="560" height="315" src="{{bili-embed}}?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="了解 package 和 plugin 的区别" {{bili-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.bili.embed}}?bvid=BV1dY4y1r7xD&page=1&autoplay=false" title="了解 package 和 plugin 的区别" {{site.bili.set}}></iframe>
 
 {{site.alert.end}}
 
